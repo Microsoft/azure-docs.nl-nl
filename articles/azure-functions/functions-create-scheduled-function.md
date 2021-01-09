@@ -1,20 +1,20 @@
 ---
-title: Een functie maken die wordt uitgevoerd volgens een planning in azure
-description: Ontdek hoe u in Azure een functie maakt die wordt uitgevoerd op basis van een schema dat u definieert.
+title: Een functie in azure maken die volgens een planning wordt uitgevoerd
+description: Meer informatie over het gebruik van de Azure Portal om een functie te maken die wordt uitgevoerd op basis van een schema dat u definieert.
 ms.assetid: ba50ee47-58e0-4972-b67b-828f2dc48701
 ms.topic: how-to
 ms.date: 04/16/2020
 ms.custom: mvc, cc996988-fb4f-47
-ms.openlocfilehash: 9e542c493c02174364072f91d092f05ad9ec69cf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14d918cc41f49b954f5cabf48572db5df829fd10
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90973090"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035186"
 ---
-# <a name="create-a-function-in-azure-that-is-triggered-by-a-timer"></a>Maak een functie in Azure die wordt geactiveerd door een timer
+# <a name="create-a-function-in-the-azure-portal-that-runs-on-a-schedule"></a>Een functie maken in de Azure Portal die volgens een planning wordt uitgevoerd
 
-Meer informatie over het gebruik van Azure Functions om een functie zonder [Server](https://azure.microsoft.com/solutions/serverless/) te maken die wordt uitgevoerd op basis van een schema dat u definieert.
+Meer informatie over het gebruik van de Azure Portal voor het maken van een functie die [serverloze](https://azure.microsoft.com/solutions/serverless/) op Azure uitvoert op basis van een schema dat u definieert.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -22,7 +22,7 @@ Vereisten voor het voltooien van deze zelfstudie:
 
 + Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-## <a name="create-an-azure-function-app"></a>Een Azure-functie-app maken
+## <a name="create-a-function-app"></a>Een functie-app maken
 
 [!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 
@@ -34,17 +34,17 @@ Uw nieuwe functie-app is klaar voor gebruik. Vervolgens maakt u een functie in d
 
 ## <a name="create-a-timer-triggered-function"></a>Een door een timer geactiveerde functie maken
 
-1. Selecteer in de functie-app **functies**en selecteer vervolgens **+ toevoegen** 
+1. Selecteer in de functie-app **functies** en selecteer vervolgens **+ toevoegen** 
 
-   :::image type="content" source="./media/functions-create-scheduled-function/function-add-function.png" alt-text="De functie-app is gemaakt." border="true":::
+   :::image type="content" source="./media/functions-create-scheduled-function/function-add-function.png" alt-text="Een functie toevoegen in de Azure Portal." border="true":::
 
 1. Selecteer de **trigger** sjabloon voor timer. 
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-select-timer-trigger.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-select-timer-trigger.png" alt-text="Selecteer de trigger timer in het Azure Portal." border="true":::
 
 1. Configureer de nieuwe trigger met de instellingen zoals opgegeven in de tabel onder de afbeelding en selecteer vervolgens **functie maken**.
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-configure-timer-trigger.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-configure-timer-trigger.png" alt-text="Scherm afbeelding toont de nieuwe functie pagina waarop de timer trigger sjabloon is geselecteerd." border="true":::
     
     | Instelling | Voorgestelde waarde | Beschrijving |
     |---|---|---|
@@ -55,11 +55,11 @@ Uw nieuwe functie-app is klaar voor gebruik. Vervolgens maakt u een functie in d
 
 1. Selecteer in uw functie **code + test** en vouw de logboeken uit.
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-test-timer-trigger.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-test-timer-trigger.png" alt-text="Test de timer trigger in het Azure Portal." border="true":::
 
 1. Controleer de uitvoering door de informatie weer te geven die naar de logboeken wordt geschreven.
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-view-timer-logs.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-view-timer-logs.png" alt-text="Bekijk de trigger timer in de Azure Portal." border="true":::
 
 U kunt het schema van de functie nu wijzigen zodat deze één keer per uur wordt uitgevoerd in plaats van elke minuut.
 
@@ -69,11 +69,11 @@ U kunt het schema van de functie nu wijzigen zodat deze één keer per uur wordt
 
 1. Selecteer **Timer (myTimer)**.
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-update-timer-schedule.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-update-timer-schedule.png" alt-text="Werk de timer planning bij in de Azure Portal." border="true":::
 
 1. Werk de **plannings** waarde bij naar `0 0 */1 * * *` en selecteer vervolgens **Opslaan**.  
 
-    :::image type="content" source="./media/functions-create-scheduled-function/function-edit-timer-schedule.png" alt-text="De functie-app is gemaakt." border="true":::
+    :::image type="content" source="./media/functions-create-scheduled-function/function-edit-timer-schedule.png" alt-text="Werk timer schema voor functies in de Azure Portal." border="true":::
 
 U hebt nu een functie die één keer per uur wordt uitgevoerd, op het uur.
 

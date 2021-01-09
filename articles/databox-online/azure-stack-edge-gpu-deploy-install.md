@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 09/02/2020
+ms.date: 12/21/2020
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to install Azure Stack Edge Pro in datacenter so I can use it to transfer data to Azure.
-ms.openlocfilehash: 52f0bcbb332b5d5e47440accff9d9895dcef7056
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 830e0a8733d3f5a49cede09b331dc0298ee1ce4d
+ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449364"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97734701"
 ---
 # <a name="tutorial-install-azure-stack-edge-pro-with-gpu"></a>Zelfstudie: Azure Stack Edge Pro met GPU installeren
 
@@ -159,14 +159,14 @@ Zoek de onderdelen voor het installeren van de railkit-assembly:
 
 Leg de kabels op hun plek en bekabel het apparaat. In de volgende procedures wordt uitgelegd hoe uw Azure Stack Edge Pro-apparaat kunt bekabelen voor stroomtoevoer en aansluiting op het netwerk.
 
-Voordat u begint met de bekabeling van uw apparaat, zorgt u ervoor dat u over de volgende zaken beschikt:
+Voordat u begint met de bekabeling van uw apparaat, zorgt u ervoor dat u over de volgende dingen beschikt:
 
 - Uw fysieke Azure Stack Edge Pro-apparaat, uitgepakt en in het rek gemonteerd.
 - Twee netsnoeren.
 - Ten minste één 1-GbE RJ-45-netwerkkabel voor verbinding met de beheerinterface. Er zijn twee 1-GbE-netwerkinterfaces, één beheerinterface en één gegevensinterface, op het apparaat aanwezig.
 - Eén koperen 25-GbE SFP+-kabel voor elke te configureren netwerkinterface. Ten minste één netwerkinterface (PORT 2, PORT 3, PORT 4, PORT 5 of PORT 6) moet worden verbonden met internet (en met Azure).  
 - Toegang tot twee Power Distribution Units (aanbevolen).
-- Ten minste één GbE-netwerkswitch voor het verbinden van een 1-GbE-netwerkinterface met internet voor gegevens. De lokale webinterface is niet toegankelijk als de aangesloten switch niet ten minste 1 GbE is. Als u een 25/10 GbE-interface gebruikt voor gegevens, hebt u een switch van 25 GbE of 10 GbE nodig. 
+- Ten minste één GbE-netwerkswitch voor het verbinden van een 1-GbE-netwerkinterface met internet voor gegevens. De lokale webinterface is niet toegankelijk als de aangesloten switch niet minstens 1 GbE is. Als u een 25/10 GbE-interface gebruikt voor gegevens, hebt u een switch van 25 GbE of 10 GbE nodig.
 
 > [!NOTE]
 > - Als u slechts één netwerkinterface verbindt, wordt u aangeraden een 25/10-GbE netwerkinterface, zoals PORT 3, PORT 4, PORT 5 of PORT 6, te gebruiken om gegevens naar Azure te verzenden. 
@@ -186,14 +186,14 @@ Op uw Azure Stack Edge Pro-apparaat:
     - Vier 25-Gbps-interfaces die ook kunnen fungeren als 10-Gbps-interfaces.
     - Een BMC (basiskaartbeheercontroller).
 
-- Het achterpaneel heeft twee netwerkkaarten die horen bij de 6 poorten:
+- Het achterpaneel heeft twee netwerkkaarten die horen bij de zes poorten:
 
-    - **Aangepaste Microsoft Qlogic Cavium 25G NDC-adapter**: poort 1 tot en met poort 4.
+    - **Aangepaste Microsoft `Qlogic` Cavium 25G NDC-adapter** - poort 1 tot en met poort 4.
     - **Mellanox dual-port 25G Connectx-4 kanaalnetwerkadapter**: poort 5 en poort 6.
 
 Voor een volledige lijst met ondersteunde kabels, schakelaars en ontvangers voor deze netwerkkaarten gaat u naar:
 
-- [MARVELL FastLinQ® 41000 Series Adapters Interoperability Matrix](https://www.marvell.com/documents/xalflardzafh32cfvi0z/)
+- [`Qlogic` Cavium 25G NDC-adapter Interoperability Matrix](https://www.marvell.com/documents/xalflardzafh32cfvi0z/).
 - [Producten die compatibel zijn met Mellanox dual-port 25G Connectx-4 kanaalnetwerkadapter](https://docs.mellanox.com/display/ConnectX4LxFirmwarev14271016/Firmware+Compatible+Products)  
 
  
@@ -201,15 +201,15 @@ Voer de volgende stappen uit om uw apparaat te bekabelen voor stroom en verbindi
 
 1. Hieronder ziet u de verschillende poorten en aansluitingen op het achterpaneel van het apparaat. Mogelijk hebt u een van de volgende apparaten uit de fabriek ontvangen, afhankelijk van het aantal GPU's in het apparaat.
 
-    - Apparaat met 2 PCI-sleuven (Peripheral Component Interconnect) en één GPU
+    - Apparaat met twee PCI-sleuven (Peripheral Component Interconnect) en één GPU
 
         ![Achterpaneel van een bekabeld apparaat](./media/azure-stack-edge-gpu-deploy-install/ase-two-pci-slots.png)
 
-    - Apparaat met 3 PCI-sleuven en één GPU
+    - Apparaat met drie PCI-sleuven en één GPU
 
         ![Achterpaneel van een bekabeld apparaat 2](./media/azure-stack-edge-gpu-deploy-install/ase-three-pci-slots-one-gpu.png)
 
-    - Apparaat met 3 PCI-sleuven en twee GPU's
+    - Apparaat met drie PCI-sleuven en twee GPU's
 
         ![Achterpaneel van een bekabeld apparaat 3](./media/azure-stack-edge-gpu-deploy-install/ase-three-pci-slots-two-gpu.png)
 

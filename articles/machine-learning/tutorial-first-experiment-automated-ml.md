@@ -9,14 +9,14 @@ ms.topic: tutorial
 author: cartacioS
 ms.author: sacartac
 ms.reviewer: nibaccam
-ms.date: 07/10/2020
+ms.date: 12/21/2020
 ms.custom: automl
-ms.openlocfilehash: 4b2769139e74289c4760b5c398c80380afea351f
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 90c827774f38f07b9791a6399a53b0304bbe28c8
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921892"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97695215"
 ---
 # <a name="tutorial-create-a-classification-model-with-automated-ml-in-azure-machine-learning"></a>Zelfstudie: Een classificatiemodel maken met geautomatiseerde ML in Azure Machine Learning
 
@@ -102,9 +102,7 @@ Voordat u uw experiment gaat configureren, uploadt u uw gegevensbestand naar uw 
         Kolomkoppen| Geeft aan hoe eventuele koppen van de gegevensset worden behandeld.| Alle bestanden hebben dezelfde koppen
         Rijen overslaan | Geeft aan hoeveel rijen er eventueel worden overgeslagen in de gegevensset.| Geen
 
-    1. Met het formulier **Schema** kunt u uw gegevens verder configureren voor dit experiment. Selecteer voor dit voorbeeld de schakeloptie voor de functie **day_of_week** zodat deze geen deel uitmaakt van dit experiment. Selecteer **Next**.
-
-        ![Voorbeeld tabblad configuratie](./media/tutorial-first-experiment-automated-ml/schema-tab-config.gif)
+    1. Met het formulier **Schema** kunt u uw gegevens verder configureren voor dit experiment. Voor dit voorbeeld maken we geen selecties. Selecteer **Next**.
 
     1. Controleer of de informatie in het formulier **Details bevestigen** overeenkomt met wat voorheen in de formulieren **Basisinformatie, Gegevensarchief en bestandselectie** en **Instellingen en voorbeeld** is ingevuld.
     
@@ -112,32 +110,44 @@ Voordat u uw experiment gaat configureren, uploadt u uw gegevensbestand naar uw 
     
     1. Selecteer uw gegevensset wanneer deze verschijnt in de lijst.
     
-    1. Controleer het **Voorbeeld van de gegevens** om te controleren dat u **day_of_week** niet heeft opgenomen en selecteer vervolgens **OK.**
+    1. Controleer het **Voorbeeld van de gegevens** om te controleren of u **day_of_week** niet hebt  opgenomen, en selecteer **Sluiten**.
 
     1. Selecteer **Volgende**.
 
-## <a name="configure-experiment-run"></a>Uitgevoerde experiment configureren
+## <a name="configure-run"></a>Uitvoering configureren
 
 Nadat u uw gegevens hebt geladen en geconfigureerd, kunt u uw experiment instellen. Dit installatieprogramma bevat ontwerptaken voor het experiment, zoals, het selecteren van de grootte van uw rekenomgeving en het opgeven van de kolom die u wilt voorspellen. 
+
+1. Selecteer het keuzerondje **Nieuwe maken**.
 
 1. Vul het formulier **Uitvoering configureren** als volgt in:
     1. Voer de naam van het nieuwe experiment in: `my-1st-automl-experiment`
 
     1. Selecteer **y** als doelkolom, wat u wilt voorspellen. Deze kolom geeft aan of de klant een termijnrekening heeft geopend of niet.
     
-    1. Selecteer **Een nieuwe berekening maken** en configureer uw rekendoel. Een rekendoel is een resource-omgeving, lokaal of in de cloud, die gebruikt wordt om uw trainingsscript uit te voeren of uw service-implementatie te hosten. Voor dit experiment gebruiken we berekening in de cloud. 
+    1. Selecteer **+ Een nieuwe berekening maken** en configureer uw rekendoel. Een rekendoel is een resource-omgeving, lokaal of in de cloud, die gebruikt wordt om uw trainingsscript uit te voeren of uw service-implementatie te hosten. Voor dit experiment gebruiken we berekening in de cloud. 
+        1. Vul het formulier **Virtuele machine** in om de berekening in te stellen.
 
-        Veld | Beschrijving | Waarde voor zelfstudie
-        ----|---|---
-        Naam berekening |Een unieke naam die de context van uw berekening identificeert.|automl-compute
-        Virtuele&nbsp;machine&nbsp;type| Selecteer het type van de virtuele machine voor uw berekening.|CPU (Central Processing Unit, centrale verwerkingseenheid)
-        Grootte&nbsp;virtuele&nbsp;machine| Selecteer de grootte van de virtuele machine voor uw berekening.|Standard_DS12_V2
-        Min / Max knooppunten| U moet u één of meer knooppunten opgeven om gegevens te profileren.|Min. knooppunten: 1<br>Max. knooppunten: 6
-        Seconden wachten voor omlaag schalen | Niet-actieve tijd voordat het cluster automatisch omlaag wordt geschaald naar het minimum aantal knooppunten.|120 (standaardinstelling)
-        Geavanceerde instellingen | Instellingen voor het configureren en autoriseren van een virtueel netwerk voor uw experiment.| Geen
-        1. Selecteer **Maken** om het rekendoel op te halen. 
+            Veld | Beschrijving | Waarde voor zelfstudie
+            ----|---|---
+            Prioriteit van virtuele&nbsp;machine&nbsp; |Selecteer de prioriteit die het experiment moet krijgen| Toegewezen
+            Virtuele&nbsp;machine&nbsp;type| Selecteer het type van de virtuele machine voor uw berekening.|CPU (Central Processing Unit, centrale verwerkingseenheid)
+            Grootte&nbsp;virtuele&nbsp;machine| Selecteer de grootte van de virtuele machine voor uw berekening. Er wordt een lijst met aanbevolen grootten geboden, op basis van uw gegevens en het type experiment. |Standard_DS12_V2
+        
+        1. Selecteer **Volgende** om het **formulier Instellingen configureren** in te vullen.
+        
+            Veld | Beschrijving | Waarde voor zelfstudie
+            ----|---|---
+            Naam berekening |  Een unieke naam die de context van uw berekening identificeert. | automl-compute
+            Min / Max knooppunten| U moet u één of meer knooppunten opgeven om gegevens te profileren.|Min. knooppunten: 1<br>Max. knooppunten: 6
+            Seconden wachten voor omlaag schalen | Niet-actieve tijd voordat het cluster automatisch omlaag wordt geschaald naar het minimum aantal knooppunten.|120 (standaardinstelling)
+            Geavanceerde instellingen | Instellingen voor het configureren en autoriseren van een virtueel netwerk voor uw experiment.| Geen               
+
+        1. Selecteer **Maken** om uw rekendoel te maken. 
 
             **Dit duurt enkele minuten.** 
+
+             ![Pagina Instellingen](./media/tutorial-first-experiment-automated-ml/compute-settings.png)
 
         1. Wanneer dit is voltooid, selecteert u uw nieuwe rekendoel uit de vervolgkeuzelijst.
 
@@ -159,14 +169,18 @@ Nadat u uw gegevens hebt geladen en geconfigureerd, kunt u uw experiment instell
         Gelijktijdigheid| Het maximum aantal parallelle iteraties uitgevoerd per iteratie| Maximum aantal&nbsp;gelijktijdige&nbsp;iteraties: 5
         
         Selecteer **Opslaan**.
+    
+    1. Selecteer **Instellingen voor featurization weergeven**. Selecteer voor dit voorbeeld de schakeloptie voor de functie **day_of_week**, zodat deze geen deel uitmaakt van featurization in dit experiment.
 
-1. Selecteer **Voltooien** om het experiment uit te voeren. Het scherm **Details uitvoering** opent en de **Uitvoeringsstatus** wordt bovenaan weergegeven terwijl de voorbereidingen voor het experiment beginnen.
+        ![Featurization-selectie](./media/tutorial-first-experiment-automated-ml/featurization-setting-config.gif)   
+ 
+        Selecteer **Opslaan**.
+
+1. Selecteer **Voltooien** om het experiment uit te voeren. Het scherm **Details uitvoering** opent en de **Uitvoeringsstatus** wordt bovenaan weergegeven terwijl de voorbereidingen voor het experiment beginnen. Deze status wordt bijgewerkt wanneer het experiment wordt uitgevoerd. Meldingen worden ook weergegeven in de rechterbovenhoek van Studio, zodat u op de hoogte blijft van de status van het experiment.
 
 >[!IMPORTANT]
 > Het duurt **10-15 minuten** om de experimentele uitvoerbewerking voor te bereiden.
-> Zodra de uitvoering is gestart duurt het **2-3 minuten langer per iteratie**.  
-> Selecteer regelmatig **Vernieuwen** om de status van de uitvoering te zien tijdens het experiment.
->
+> Zodra de uitvoering is gestart duurt het **2-3 minuten langer per iteratie**.  <br> <br>
 > Bij een productie zou u waarschijnlijk even weggaan. Maar voor deze zelfstudie raden we aan om onder het tabblad **Modellen** de geteste algoritmen te bekijken die voltooid zijn terwijl de andere nog worden uitgevoerd. 
 
 ##  <a name="explore-models"></a>Modellen bekijken
@@ -238,7 +252,7 @@ Verwijder alleen het implementatie-exemplaar van Azure Machine Learning op https
 In deze zelfstudie over geautomatiseerde machine learning heeft u de geautomatiseerde ML-interface van Azure Machine Learning gebruikt om een classificatiemodel te maken en implementeren. Raadpleeg de volgende artikelen voor meer informatie en de volgende stappen:
 
 > [!div class="nextstepaction"]
-> [Een webservice gebruiken](how-to-consume-web-service.md#consume-the-service-from-power-bi)
+> [Een webservice gebruiken](https://docs.microsoft.com/power-bi/connect-data/service-aml-integrate?context=azure/machine-learning/context/ml-context)
 
 + Meer informatie over [geautomatiseerde machine learning](concept-automated-ml.md).
 + Raadpleeg het artikel [Geautomatiseerde machine learning-resultaten begrijpen](how-to-understand-automated-ml.md) voor meer informatie over metrische classificatiegegevens en grafieken.

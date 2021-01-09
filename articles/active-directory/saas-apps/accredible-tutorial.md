@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 3329d092e27e7d8885daa87650734cd8e84202c9
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: cf74b563352ccd0f62e583bccccd72078cbb2046
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92313655"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673786"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-accredible"></a>Zelfstudie: Integratie van Azure Active Directory met Accredible
 
@@ -63,7 +63,7 @@ Voor het configureren van de integratie van Accredible met Microsoft Azure Activ
 
 4. Typ in het zoekvak **Accredible**, selecteer **Accredible** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![Accredible in de lijst met resultaten](common/search-new-app.png)
+    ![Accredible in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -148,7 +148,7 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
     a. Voer in het veld **Naam** **Britta Simon** in.
-  
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -172,7 +172,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -184,7 +184,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 ### <a name="create-accredible-test-user"></a>Accredible-testgebruiker maken
 
-In deze sectie gaat u een gebruiker maken met de naam Britta Simon in Accredible. U moet de e-mail-id van de gebruiker verzenden naar het [Accredible-ondersteuningsteam](mailto:support@accredible.com). Dit team verifieert de e-mail en stuurt u de uitnodigingsmail zodat u de gebruiker aan het Accredible-platform kunt toevoegen.
+In deze sectie gaat u een gebruiker maken met de naam Britta Simon in Accredible. U moet de e-mail-id van de gebruiker verzenden naar het[Accredible-ondersteuningsteam](mailto:support@accredible.com). Dit team verifieert de e-mail en stuurt u de uitnodigingsmail zodat u de gebruiker kunt toevoegen aan het Accredible-platform.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

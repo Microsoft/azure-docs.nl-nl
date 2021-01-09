@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 09/03/2020
-ms.openlocfilehash: 21ccbc83c80e1b659dd240973a609d624f270835
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: cb7a441a6d86cd64847300d1e597cf6f86067282
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97028509"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740943"
 ---
 # <a name="quickstart-create-an-azure-sql-database-single-database"></a>Quickstart: Een individuele database maken in Azure SQL Database
 
@@ -141,7 +141,7 @@ az sql server firewall-rule create \
 ```
 
 
-## <a name="create-a-single-database"></a>Een individuele database maken
+## <a name="create-a-single-database-with-azure-cli"></a>Een individuele database maken met Azure CLI
 
 Maak een database met de opdracht [az sql db create](/cli/azure/sql/db). Met de volgende code wordt gemaakt
 
@@ -230,7 +230,7 @@ Maak een serverfirewallregel met de cmdlet [New-AzSqlServerFirewallRule](/powers
 ```
 
 
-## <a name="create-a-single-database"></a>Een individuele database maken
+## <a name="create-a-single-database-with-powershell"></a>Een individuele database maken met PowerShell
 
 Maak één database met de cmdlet [New-AzSqlDatabase](/powershell/module/az.sql/new-azsqldatabase).
 

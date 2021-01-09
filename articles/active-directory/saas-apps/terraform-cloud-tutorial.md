@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/29/2020
+ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: a960bb3590138ca5efa5146988240db1707a3cf0
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c26224f388c09ec758373c877004f5485bb420df
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96182118"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97725074"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-terraform-cloud"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Terraform Cloud
 
@@ -76,7 +76,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-1. Voer in de sectie **Standaard SAML-configuratie** de waarden voor de volgende velden in, als u de toepassing in de met **IDP** geïnitieerde modus wilt configureren:
+1. In het gedeelte **Standaard SAML-configuratie** voert u de volgende stappen uit als u de toepassing in de door **IDP** geïnitieerde modus wilt configureren:
 
     In het tekstvak **Id** typt u een URL met het volgende patroon: `https://app.terraform.io/sso/saml/samlconf-<ID>/metadata`
 
@@ -116,7 +116,15 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="configure-terraform-cloud-sso"></a>Eenmalige aanmelding voor Terraform Cloud configureren
 
-1. Meld u in een ander browservenster als beheerder aan bij de website van Terraform Cloud.
+1. Als u de configuratie in Terraform Cloud wilt automatiseren, moet u de **Mijn apps-browserextensie voor veilig aanmelden** installeren door op **De extensie installeren** te klikken.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Als u op **Terraform Cloud instellen** klikt nadat u de extensie hebt toegevoegd aan de browser, wordt u doorgestuurd naar de Terraform Cloud-toepassing. Geef hier de beheerdersreferenties op om u aan te melden bij Terraform Cloud. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3 t/m 5 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u Terraform Cloud handmatig wilt instellen, meldt u zich in een ander webbrowservenster aan als beheerder bij uw Terraform Cloud-bedrijfssite.
 
 2. Ga naar **Instellingen > Eenmalige aanmelding > Instellingen bewerken**
 

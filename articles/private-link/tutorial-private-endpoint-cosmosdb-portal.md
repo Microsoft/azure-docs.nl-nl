@@ -7,12 +7,12 @@ ms.author: allensu
 ms.service: private-link
 ms.topic: tutorial
 ms.date: 9/25/2020
-ms.openlocfilehash: c9866ac2c14e4deb29326ffdd1a93a7d8eae1ea3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 477856bd5772cdc0a9ec00d81adf9c50847afdd0
+ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484801"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97631946"
 ---
 # <a name="tutorial-connect-to-an-azure-cosmos-account-using-an-azure-private-endpoint"></a>Zelfstudie: Verbinding maken met een Azure Cosmos-account met behulp van een privé-eindpunt in Azure
 
@@ -208,13 +208,9 @@ In deze sectie maakt u een Cosmos DB-account en configureert u het privé-eindpu
 
 5. Selecteer **OK**.
 
-10. Selecteer in de sectie **Instellingen** van het CosmosDB-account **Sleutels**.
+6. Selecteer in de sectie **Instellingen** van het CosmosDB-account **Sleutels**.
 
-11. Selecteer **myResourceGroup**.
-
-12. Selecteer het opslagaccount dat u in de vorige stappen hebt gemaakt.
-
-14. Selecteer en kopieer de **PRIMAIRE VERBINDINGSREEKS**.
+7. Selecteer en kopieer de **PRIMAIRE VERBINDINGSREEKS**.
 
 ## <a name="test-connectivity-to-private-endpoint"></a>Privé-eindpuntconnectiviteit testen
 
@@ -234,7 +230,7 @@ In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaa
 
 7. Open Windows PowerShell op de server nadat u verbinding hebt gemaakt.
 
-8. Voer `nslookup <storage-account-name>.documents.azure.com` in. Vervang **\<storage-account-name>** door de naam op van het opslagaccount dat u in de eerdere stappen hebt gemaakt. 
+8. Voer `nslookup <cosmosdb-account-name>.documents.azure.com` in. Vervang **\<cosmosdb-account-name>** door de naam op van het Cosmos DB-account dat u in de eerdere stappen hebt gemaakt. 
 
     ```powershell
     Server:  UnKnown

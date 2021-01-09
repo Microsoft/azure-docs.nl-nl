@@ -5,12 +5,12 @@ author: mumian
 ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: f044863be7d0bfaaad57d3974a1d2856b27927ea
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: bc6dc5b385a39ddb1c4f1663649ea21e5ed14767
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589131"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97669309"
 ---
 # <a name="tutorial-use-condition-in-arm-templates"></a>Zelfstudie: Voorwaarden gebruiken in ARM-sjablonen
 
@@ -34,6 +34,8 @@ Deze zelfstudie behandelt alleen een basisscenario voor het gebruik van voorwaar
 * [Een resource voorwaardelijk implementeren in een ARM-sjabloon](/azure/architecture/building-blocks/extending-templates/conditional-deploy).
 * [Sjabloonfunctie: if](./template-functions-logical.md#if).
 * [Vergelijkingsfuncties voor ARM-sjablonen](./template-functions-comparison.md)
+
+Raadpleeg [Complexe cloudimplementaties beheren met behulp van geavanceerde functies voor ARM-sjablonen](/learn/modules/manage-deployments-advanced-arm-template-features/) voor een Microsoft Learn-module over de voorwaarden.
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 

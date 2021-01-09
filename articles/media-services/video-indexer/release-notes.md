@@ -10,14 +10,14 @@ ms.service: media-services
 ms.subservice: video-indexer
 ms.workload: na
 ms.topic: article
-ms.date: 10/30/2020
+ms.date: 01/06/2021
 ms.author: juliako
-ms.openlocfilehash: 81e52d4a6827492931179055d040b541d51228eb
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 3552d55d995608dd0d471c84cd5e9f9988ebe2c0
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916657"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028638"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
 
@@ -44,12 +44,15 @@ Video Indexer ondersteunt detectie, groepering en herkenning van tekens in inhou
 
 ### <a name="planned-video-indexer-website-authenticatication-changes"></a>Geplande Video Indexer website wijzigingen authenticatication
 
-Vanaf 1 januari 2021 kunt u zich niet meer registreren en u aanmelden bij de [video indexer](https://www.videoindexer.ai/) website (proef versie) met behulp van Facebook of LinkedIn.
+Vanaf 1 maart 2021 kunt u zich niet meer registreren en u aanmelden bij de [video indexer](https://www.videoindexer.ai/) website met Facebook of LinkedIn.
 
 U kunt zich aanmelden en aanmelden met een van deze providers: Azure AD, micro soft en Google.
 
 > [!NOTE]
-> U wordt aangeraden uw inhoud te exporteren vóór 1 januari 2021, omdat accounts die zijn verbonden met LinkedIn en Facebook worden verwijderd en de inhoud niet langer toegankelijk is.
+> De Video Indexer accounts die zijn verbonden met LinkedIn en Facebook, zijn na 2021 1 maart niet toegankelijk. 
+> 
+> U moet een e-mail bericht van Azure AD, micro soft of Google [uitnodigen](invite-users.md) voor het video indexer-account, zodat u nog steeds toegang hebt.<br/>
+> U kunt ook een betaald account maken en de gegevens migreren.
 
 ## <a name="august-2020"></a>Augustus 2020
 
@@ -239,7 +242,7 @@ Meerdere verbeteringen aangekondigd op IBC 2019:
     
     Het model voor het defragmenteren van het onderwerp ondersteunt nu een diepere granulatie van de IPTC-taxonomie. Lees de volledige details op [Azure Media Services nieuwe, AI-innovaties](https://azure.microsoft.com/blog/azure-media-services-new-ai-powered-innovation/).
 
-## <a name="august-2019"></a>Augustus 2019
+## <a name="august-2019"></a>augustus 2019
  
 ### <a name="video-indexer-deployed-in-uk-south"></a>Video Indexer geïmplementeerd in UK-zuid
 

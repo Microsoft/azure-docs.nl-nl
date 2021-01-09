@@ -8,12 +8,12 @@ ms.date: 10/16/2020
 ms.service: azure-resource-manager
 ms.topic: quickstart
 ms.custom: subject-armqs
-ms.openlocfilehash: feabac62564729338e41bf30eaf8d9f5a6317126
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 56505c95e65911cafbaaa403cd09332695439d97
+ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149002"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97825671"
 ---
 # <a name="quickstart-create-an-azure-app-configuration-store-by-using-an-arm-template"></a>Quickstart: Een Azure App Configuration-archief maken met behulp van een ARM-sjabloon
 
@@ -25,7 +25,7 @@ In deze quickstart wordt het volgende beschreven:
 
 [!INCLUDE [About Azure Resource Manager](../../includes/resource-manager-quickstart-introduction.md)]
 
-Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure** . De sjabloon wordt in Azure Portal geopend.
+Als uw omgeving voldoet aan de vereisten en u benkend bent met het gebruik van ARM-sjablonen, selecteert u de knop **Implementeren naar Azure**. De sjabloon wordt in Azure Portal geopend.
 
 [![Implementeren in Azure](../media/template-deployments/deploy-to-azure.svg)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure%2Fazure-quickstart-templates%2Fmaster%2F101-app-configuration-store-kv%2Fazuredeploy.json)
 
@@ -46,10 +46,10 @@ De quickstart maakt gebruik van het element `copy` voor het maken van meerdere e
 
 Er worden twee Azure-resources gedefinieerd in de sjabloon:
 
-- [Microsoft.AppConfiguration/configurationStores](/azure/templates/microsoft.appconfiguration/2020-06-01/configurationstores): een App Configuration-archief maken.
-- Microsoft.AppConfiguration/configurationStores/keyValues: maak een sleutelwaarde in het App Configuration-archief.
+- [Microsoft.AppConfiguration/configurationStores](/azure/templates/microsoft.appconfiguration/2020-07-01-preview/configurationstores): een App Configuration-archief maken.
+- [Microsoft.AppConfiguration/configurationStores/keyValues](/azure/templates/microsoft.appconfiguration/2020-07-01-preview/configurationstores/keyvalues): maak een sleutelwaarde in het App Configuration-archief.
 
-> [!NOTE]
+> [!TIP]
 > De naam van de `keyValues`-resource is een combinatie van sleutel en label. De sleutel en het label worden samengevoegd met het scheidingsteken `$`. Het label is optioneel. In het bovenstaande voorbeeld maakt de `keyValues`-resource met de naam `myKey` een sleutelwaarde zonder label.
 >
 > Met procentcodering, ook wel URL-codering genoemd, kunnen sleutels of labels tekens bevatten die niet zijn toegestaan in de resourcenamen van ARM-sjablonen. `%` is ook geen toegestaan teken, dus `~` wordt gebruikt in plaats daarvan. Voer de volgende stappen uit om een naam correct te coderen:
@@ -59,6 +59,13 @@ Er worden twee Azure-resources gedefinieerd in de sjabloon:
 > 3. Vervang `%` door `~`
 >
 > Als u bijvoorbeeld een sleutelwaardepaar met sleutelnaam `AppName:DbEndpoint` en labelnaam `Test` wilt maken, moet de resourcenaam `AppName~3ADbEndpoint$Test` zijn.
+
+> [!NOTE]
+> In App Configuration is toegang tot sleutelwaardegegevens toegestaan via een [privékoppeling](concept-private-endpoint.md) vanuit het virtuele netwerk. Wanneer de functie is ingeschakeld, worden alle aanvragen voor uw App Configuration-gegevens via het openbare netwerk standaard geweigerd. Omdat de ARM-sjabloon buiten het virtuele netwerk wordt uitgevoerd, is toegang tot gegevens vanuit een ARM-sjabloon niet toegestaan. Als u toegang tot gegevens vanuit een ARM-sjabloon bij gebruik van een privékoppeling wilt toestaan, kunt u toegang via het openbare netwerk inschakelen met behulp van de volgende Azure CLI-opdracht. Het is van belang om rekening te houden met de beveiligingsimplicaties van het inschakelen van toegang via het openbare netwerk in dit scenario.
+>
+> ```azurecli-interactive
+> az appconfig update -g MyResourceGroup -n MyAppConfiguration --enable-public-network true
+> ```
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 

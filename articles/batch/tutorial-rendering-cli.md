@@ -1,34 +1,34 @@
 ---
 title: 'Zelfstudie: Een scène weergeven in de cloud'
-description: 'Zelfstudie: Een Autodesk 3ds Max-scène renderen met Arnold met behulp van de Batch-renderingservice en de Azure-opdrachtregelinterface'
+description: Leer hoe u een Autodesk 3ds Max-scène kunt renderen met Arnold, met behulp van de Batch-renderingservice en de Azure-opdrachtregelinterface
 ms.topic: tutorial
-ms.date: 03/05/2020
+ms.date: 12/30/2020
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: e0858e838ba73862ef7f15040915c5f5cd3c751b
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 3518e074589284e6d6cd7432dc77ba8bdd457045
+ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106339"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97827526"
 ---
-# <a name="tutorial-render-a-scene-with-azure-batch"></a>Zelfstudie: Een scène renderen met Azure Batch 
+# <a name="tutorial-render-a-scene-with-azure-batch"></a>Zelfstudie: Een scène renderen met Azure Batch
 
 Azure Batch biedt mogelijkheden voor rendering in de cloud waarbij u betaalt op basis van gebruik. Azure Batch ondersteunt rendering-apps zoals Autodesk Maya, 3ds Max, Arnold en V-Ray. In deze zelfstudie wordt stapsgewijs uitgelegd hoe u een kleine scène rendert met Batch met behulp van de Azure-opdrachtregelinterface. In deze zelfstudie leert u procedures om het volgende te doen:
 
 > [!div class="checklist"]
-> * Een scène uploaden naar Azure Storage
-> * Een Batch-pool voor rendering maken
-> * Een scène met één frame renderen
-> * De pool schalen en een scène met meerdere frames renderen
-> * Gerenderde uitvoer downloaden
+> - Een scène uploaden naar Azure Storage
+> - Een Batch-pool voor rendering maken
+> - Een scène met één frame renderen
+> - De pool schalen en een scène met meerdere frames renderen
+> - Gerenderde uitvoer downloaden
 
 In deze zelfstudie rendert u een 3ds Max-scène met Batch met behulp van de ray-tracing renderer [Arnold](https://www.autodesk.com/products/arnold/overview). De Azure Batch-pool maakt gebruik van een Microsoft Azure Marketplace-installatiekopie met vooraf geïnstalleerde grafische en renderingtoepassingen die betalen per gebruik-licenties bieden.
 
 ## <a name="prerequisites"></a>Vereisten
 
- - U hebt een abonnement op basis van betalen-per-gebruik of een andere betaalde Azure-optie nodig om renderingtoepassingen in Batch te kunnen gebruiken op basis van betalen per gebruik. **Licenties op basis van betalen per gebruik worden niet ondersteund als u gebruikmaakt van een gratis Azure-aanbieding die een financieel tegoed biedt.**
+- U hebt een abonnement op basis van betalen-per-gebruik of een andere betaalde Azure-optie nodig om renderingtoepassingen in Batch te kunnen gebruiken op basis van betalen per gebruik. **Licenties op basis van betalen per gebruik worden niet ondersteund als u gebruikmaakt van een gratis Azure-aanbieding die een financieel tegoed biedt.**
 
- - De 3ds Max-voorbeeldscène voor deze zelfstudie staat op [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/batch/render-scene), samen met een Bash-voorbeeldscript en JSON-configuratiebestanden. De 3ds Max-scène is afkomstig uit de [voorbeeldbestanden van Autodesk 3ds Max](https://download.autodesk.com/us/support/files/3dsmax_sample_files/2017/Autodesk_3ds_Max_2017_English_Win_Samples_Files.exe). (Autodesk 3ds Max-voorbeeldbestanden zijn beschikbaar onder de Creative Commons-licentie Naamsvermelding-NietCommercieel-GelijkDelen. Copyright &copy; Autodesk, Inc.)
+- De 3ds Max-voorbeeldscène voor deze zelfstudie staat op [GitHub](https://github.com/Azure/azure-docs-cli-python-samples/tree/master/batch/render-scene), samen met een Bash-voorbeeldscript en JSON-configuratiebestanden. De 3ds Max-scène is afkomstig uit de [voorbeeldbestanden van Autodesk 3ds Max](https://download.autodesk.com/us/support/files/3dsmax_sample_files/2017/Autodesk_3ds_Max_2017_English_Win_Samples_Files.exe). (Autodesk 3ds Max-voorbeeldbestanden zijn beschikbaar onder de Creative Commons-licentie Naamsvermelding-NietCommercieel-GelijkDelen. Copyright &copy; Autodesk, Inc.)
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
@@ -36,13 +36,14 @@ In deze zelfstudie rendert u een 3ds Max-scène met Batch met behulp van de ray-
 
 > [!TIP]
 > U kunt [Arnold-taaksjablonen](https://github.com/Azure/batch-extension-templates/tree/master/templates/arnold/render-windows-frames) weergeven in de GitHub-opslagplaats met Azure Batch-extensiesjablonen.
+
 ## <a name="create-a-batch-account"></a>Batch-account maken
 
-Als u dat nog niet hebt gedaan, maakt u een resourcegroep, een Batch-account en een gekoppeld opslagaccount in uw abonnement. 
+Als u dat nog niet hebt gedaan, maakt u een resourcegroep, een Batch-account en een gekoppeld opslagaccount in uw abonnement.
 
 Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus2*.
 
-```azurecli-interactive 
+```azurecli-interactive
 az group create \
     --name myResourceGroup \
     --location eastus2
@@ -57,9 +58,10 @@ az storage account create \
     --location eastus2 \
     --sku Standard_LRS
 ```
+
 Maak een Batch-account met behulp van de opdracht [az batch account create](/cli/azure/batch/account#az-batch-account-create). In het volgende voorbeeld wordt een Batch-account met de naam *mybatchaccount* gemaakt in *myResourceGroup*, en wordt het gemaakte opslagaccount gekoppeld.  
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch account create \
     --name mybatchaccount \
     --storage-account mystorageaccount \
@@ -69,12 +71,13 @@ az batch account create \
 
 Als u rekenpools en -taken wilt maken en beheren, moet u zich verifiëren bij Batch. Meld u aan bij het account met behulp van de opdracht [az batch account login](/cli/azure/batch/account#az-batch-account-login). Nadat u zich hebt aangemeld, maken de `az batch`-opdrachten gebruik van deze accountcontext. In het volgende voorbeeld wordt verificatie met gedeelde sleutels gebruikt, op basis van de naam en sleutel van het Batch-account. Batch ondersteunt ook verificatie via [Azure Active Directory](batch-aad-auth.md) om afzonderlijke gebruikers of een toepassing zonder toezicht te verifiëren.
 
-```azurecli-interactive 
+```azurecli-interactive
 az batch account login \
     --name mybatchaccount \
     --resource-group myResourceGroup \
     --shared-key-auth
 ```
+
 ## <a name="upload-a-scene-to-storage"></a>Een scène uploaden naar de opslag
 
 Als u de bronscène wilt uploaden naar de opslag, moet u eerst toegang krijgen tot het opslagaccount en een doelcontainer voor de blobs maken. Exporteer de omgevingsvariabelen `AZURE_STORAGE_KEY` en `AZURE_STORAGE_ACCOUNT` om daarmee toegang te krijgen tot het Azure-opslagaccount. De eerste Bash-shell-opdracht gebruikt de opdracht [az storage account keys list](/cli/azure/storage/account/keys#az-storage-account-keys-list) om de eerste accountsleutel op te halen. Nadat u deze omgevingsvariabelen hebt ingesteld, gebruiken de opslagopdrachten deze accountcontext.
@@ -135,16 +138,18 @@ Maak een Batch-pool voor rendering met de opdracht [az batch pool create](/cli/a
   "enableInterNodeCommunication": false 
 }
 ```
-Batch ondersteunt toegewezen knooppunten en [knooppunten met een lage prioriteit](batch-low-pri-vms.md) en u kunt een of beide gebruiken in uw pools. Toegewezen rekenknooppunten zijn gereserveerd voor uw pool. Knooppunten met een lage prioriteit worden aangeboden tegen een lagere prijs en worden gehaald uit het overschot van de VM-capaciteit in Azure. Knooppunten met een lage prioriteit zijn niet beschikbaar als Azure onvoldoende capaciteit heeft. 
+
+Batch ondersteunt toegewezen knooppunten en [knooppunten met een lage prioriteit](batch-low-pri-vms.md) en u kunt een of beide gebruiken in uw pools. Toegewezen rekenknooppunten zijn gereserveerd voor uw pool. Knooppunten met een lage prioriteit worden aangeboden tegen een lagere prijs en worden gehaald uit het overschot van de VM-capaciteit in Azure. Knooppunten met een lage prioriteit zijn niet beschikbaar als Azure onvoldoende capaciteit heeft.
 
 De opgegeven pool bevat één knooppunt met lage prioriteit waarop een installatiekopie van Windows Server wordt uitgevoerd met software voor de Batch-renderingservice. Deze pool heeft een licentie om te renderen met 3ds Max en Arnold. In een latere stap schaalt u de pool naar een groter aantal knooppunten.
 
-Maak de pool door het JSON-bestand door te geven aan de opdracht `az batch pool create`:
+Als u nog niet bent aangemeld bij uw Batch-account, gebruikt u de opdracht [az batch account login](/cli/azure/batch/account#az-batch-account-login) om dit te doen. Maak vervolgens de pool door het JSON-bestand door te geven aan de opdracht `az batch pool create`:
 
 ```azurecli-interactive
 az batch pool create \
     --json-file mypool.json
-``` 
+```
+
 Het inrichten van de pool duurt enkele minuten. Als u de status van de pool wilt zien, voert u de opdracht [az batch pool show](/cli/azure/batch/pool#az-batch-pool-show) uit. Met de volgende opdracht wordt de toewijzingsstatus van de pool opgehaald:
 
 ```azurecli-interactive
@@ -157,7 +162,7 @@ Ga door met de volgende stappen om een Batch-taak en taken te maken terwijl de s
 
 ## <a name="create-a-blob-container-for-output"></a>Een blobcontainer voor uitvoer maken
 
-In de voorbeelden in deze zelfstudie maakt elke taak in de renderingtaak een uitvoerbestand. Voordat u de taak plant, maakt u een blobcontainer in uw opslagaccount als bestemming voor de uitvoerbestanden. In het volgende voorbeeld wordt de opdracht [az storage container create](/cli/azure/storage/container#az-storage-container-create) gebruikt om de container *job-myrenderjob* met openbare leestoegang te maken. 
+In de voorbeelden in deze zelfstudie maakt elke taak in de renderingtaak een uitvoerbestand. Voordat u de taak plant, maakt u een blobcontainer in uw opslagaccount als bestemming voor de uitvoerbestanden. In het volgende voorbeeld wordt de opdracht [az storage container create](/cli/azure/storage/container#az-storage-container-create) gebruikt om de container *job-myrenderjob* met openbare leestoegang te maken.
 
 ```azurecli-interactive
 az storage container create \
@@ -165,21 +170,19 @@ az storage container create \
     --name job-myrenderjob
 ```
 
-Batch moet een SAS-token (Shared Access Signature) gebruiken om uitvoerbestanden naar de container te kunnen schrijven. Maak het token met de opdracht [az storage account generate-sas](/cli/azure/storage/account#az-storage-account-generate-sas). In dit voorbeeld wordt een token gemaakt om te schrijven naar elke blobcontainer in het account en het token verloopt op 15 november 2020:
+Batch moet een SAS-token (Shared Access Signature) gebruiken om uitvoerbestanden naar de container te kunnen schrijven. Maak het token met de opdracht [az storage account generate-sas](/cli/azure/storage/account#az-storage-account-generate-sas). In dit voorbeeld wordt een token gemaakt om te schrijven naar elke blobcontainer in het account. Het token verloopt op 15 november 2021:
 
 ```azurecli-interactive
 az storage account generate-sas \
     --permissions w \
     --resource-types co \
     --services b \
-    --expiry 2020-11-15
+    --expiry 2021-11-15
 ```
 
 Noteer het token dat wordt geretourneerd door de opdracht. Dit token ziet er ongeveer als volgt uit. U gebruikt dit token in een latere stap.
 
-```
-se=2020-11-15&sp=rw&sv=2019-09-24&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-```
+`se=2021-11-15&sp=rw&sv=2019-09-24&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 
 ## <a name="render-a-single-frame-scene"></a>Een scène met één frame renderen
 
@@ -202,11 +205,7 @@ De taak geeft een 3ds Max-opdracht op om één frame van de scène *MotionBlur D
 Wijzig de elementen `blobSource` en `containerURL` in het JSON-bestand, zodat ze de naam van uw opslagaccount en uw SAS-token bevatten. 
 
 > [!TIP]
-> Uw `containerURL` eindigt op uw SAS-token en ziet er ongeveer zo uit:
-> 
-> ```
-> https://mystorageaccount.blob.core.windows.net/job-myrenderjob/$TaskOutput?se=2018-11-15&sp=rw&sv=2017-04-17&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-> ```
+> Uw `containerURL` eindigt op uw SAS-token en ziet er ongeveer zo uit: `https://mystorageaccount.blob.core.windows.net/job-myrenderjob/$TaskOutput?se=2018-11-15&sp=rw&sv=2017-04-17&ss=b&srt=co&sig=xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`
 
 ```json
 {
@@ -250,7 +249,6 @@ az batch task create \
 
 Batch plant de taak en de taak wordt uitgevoerd zodra een knooppunt in de pool beschikbaar is.
 
-
 ### <a name="view-task-output"></a>Taakuitvoer weergeven
 
 Het uitvoeren van de taak duurt enkele minuten. Gebruik de opdracht [az batch task show](/cli/azure/batch/task#az-batch-task-show) om details over de taak weer te geven.
@@ -274,7 +272,6 @@ az storage blob download \
 Open *dragon.jpg* op uw computer. De gerenderde afbeelding ziet er ongeveer als volgt uit:
 
 ![Gerenderde draak, frame 1](./media/tutorial-rendering-cli/dragon-frame.png) 
-
 
 ## <a name="scale-the-pool"></a>De pool schalen
 
@@ -313,7 +310,7 @@ az batch task show \
     --job-id myrenderjob \
     --task-id mymultitask1
 ```
- 
+
 De taken genereren uitvoerbestanden met genaamd *dragon0002.jpg* - *dragon0007.jpg* op de rekenknooppunten en uploaden ze naar de container *job-myrenderjob* in uw opslagaccount. Als u de uitvoer wilt bekijken, downloadt u de bestanden naar een map op uw lokale computer met de opdracht [az storage blob download-batch](/cli/azure/storage/blob). Bijvoorbeeld:
 
 ```azurecli-interactive
@@ -326,12 +323,11 @@ Open een van de bestanden op uw computer. Het gerenderde frame 6 ziet er als vol
 
 ![Gerenderde draak, frame 6](./media/tutorial-rendering-cli/dragon-frame6.png) 
 
-
 ## <a name="clean-up-resources"></a>Resources opschonen
 
 U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken om de resourcegroep, het Batch-account, de pools en alle gerelateerde resources te verwijderen wanneer u deze niet meer nodig hebt. U verwijdert de resources als volgt:
 
-```azurecli-interactive 
+```azurecli-interactive
 az group delete --name myResourceGroup
 ```
 
@@ -340,11 +336,11 @@ az group delete --name myResourceGroup
 In deze zelfstudie hebt u het volgende geleerd:
 
 > [!div class="checklist"]
-> * Scènes uploaden naar Azure Storage
-> * Een Batch-pool voor rendering maken
-> * Een scène met één frame renderen met Arnold
-> * De pool schalen en een scène met meerdere frames renderen
-> * Gerenderde uitvoer downloaden
+> - Scènes uploaden naar Azure Storage
+> - Een Batch-pool voor rendering maken
+> - Een scène met één frame renderen met Arnold
+> - De pool schalen en een scène met meerdere frames renderen
+> - Gerenderde uitvoer downloaden
 
 Raadpleeg de documentatie over de Batch-renderingservice voor meer informatie over rendering op cloudschaal.
 

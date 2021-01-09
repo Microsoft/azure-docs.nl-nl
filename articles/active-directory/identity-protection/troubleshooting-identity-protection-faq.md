@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: troubleshooting
-ms.date: 10/07/2020
+ms.date: 01/07/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6eb63a4a0b7b7fdefd636d3460b182f8d907dd36
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 0d80b8f41e11f2fffa86dc7597fdf44dd27825fc
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558926"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028893"
 ---
 # <a name="frequently-asked-questions-identity-protection-in-azure-active-directory"></a>Veelgestelde vragen over identiteits beveiliging in Azure Active Directory
 
@@ -35,7 +35,7 @@ Er is een huidige bekend probleem waardoor er een latentie in de stroom van de g
 
 Als u een Azure AD Identity Protection klant bent, gaat u naar de weer gave [Risk ante gebruikers](howto-identity-protection-investigate-risk.md#risky-users) en klikt u op een gebruiker met een risico. In de lade aan de onderkant worden in het tabblad risico geschiedenis alle gebeurtenissen weer gegeven die hebben geleid tot een wijziging in de gebruikers risico. Als u alle Risk ante aanmeldingen voor de gebruiker wilt weer geven, klikt u op Risk ante aanmeldingen van gebruiker. Als u alle risico detecties voor deze gebruiker wilt weer geven, klikt u op risico detectie gebruiker.
 
-## <a name="why-was-my-sign-in-blocked-but-identity-protection-didnt-generate-a-risk-detection"></a>Waarom is mijn aanmelding geblokkeerd, maar heeft de identiteits beveiliging geen risico detectie gegenereerd?
+### <a name="why-was-my-sign-in-blocked-but-identity-protection-didnt-generate-a-risk-detection"></a>Waarom is mijn aanmelding geblokkeerd, maar heeft de identiteits beveiliging geen risico detectie gegenereerd?
 Aanmeldingen kunnen om verschillende redenen worden geblokkeerd. Het is belang rijk te weten dat identiteits beveiliging alleen risico detecties genereert wanneer de juiste referenties worden gebruikt in de verificatie aanvraag. Als een gebruiker onjuiste referenties gebruikt, wordt deze niet gemarkeerd door identiteits beveiliging, omdat er geen risico is op referentie inbreuk, tenzij een ongeldige actor de juiste referenties gebruikt. Er zijn een aantal redenen waarom een gebruiker kan worden geblokkeerd bij het ondertekenen waarbij geen detectie van identiteits beveiliging wordt gegenereerd:
 * De **IP kan worden geblokkeerd** vanwege schadelijke activiteiten van het IP-adres. Het door de IP geblokkeerde bericht niet onderscheidt of de referenties juist zijn of niet. Als het IP-adres wordt geblokkeerd en de juiste referenties niet worden gebruikt, wordt er geen detectie van identiteits beveiliging gegenereerd
 * **[Slimme vergren deling](../authentication/howto-password-smart-lockout.md)** kan het account blok keren van aanmelden na meerdere mislukte pogingen
@@ -96,3 +96,7 @@ Omdat het gebruikers risico cumulatief is en niet verloopt, kan een gebruiker ee
 ### <a name="why-does-a-sign-in-have-a-sign-in-risk-aggregate-score-of-high-when-the-detections-associated-with-it-are-of-low-or-medium-risk"></a>Waarom heeft een aanmelding een hoge score voor een ' Sign-in-risico (aggregatie) ' wanneer de detecties zijn van een laag of gemiddeld risico?
 
 De hoge cumulatieve risico Score kan worden gebaseerd op andere functies van de aanmelding of het feit dat er meer dan één detectie voor die aanmelding is geactiveerd. Het is ook mogelijk dat een aanmelding een normaal risico (aggregatie) van het medium heeft, zelfs als de detecties die zijn gekoppeld aan de aanmelding, een hoog risico opleveren.
+
+### <a name="what-is-the-difference-between-the-activity-from-anonymous-ip-address-and-anonymous-ip-address-detections"></a>Wat is het verschil tussen de detecties ' activiteit van anoniem IP-adres ' en ' anonieme IP-adres '?
+
+De bron van de detectie van het anonieme IP-adres is Azure AD Identity Protection, terwijl de detectie ' activiteit vanaf anonieme IP-adres ' is geïntegreerd vanuit MCAS (Microsoft Cloud App Security). Hoewel ze een zeer vergelijk bare naam hebben en het mogelijk lijkt te overlappen in deze signalen, hebben ze verschillende back-end-detecties.

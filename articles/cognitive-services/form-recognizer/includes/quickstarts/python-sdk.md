@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 12b49bf81328cc405337b682241aef2cd965c3de
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9762ca79f73b3333045d1c11376ab315aac2d55e
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96356542"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808654"
 ---
 > [!IMPORTANT]
 > * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Zie de referentiedocumentatie hieronder. 
@@ -36,17 +36,23 @@ ms.locfileid: "96356542"
 
 Nadat u Python hebt geïnstalleerd, kunt u de meest recente versie van de Form Recognizer-clientbibliotheek installeren met:
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 
 ```console
 pip install azure-ai-formrecognizer
 ```
 
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+> [!NOTE]
+> De meest recente Form Recognizer SDK weerspiegelt API-versie 2.0
+
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 ```console
 pip install azure-ai-formrecognizer --pre
 ```
+
+> [!NOTE]
+> De preview-versie van Form Recognizer SDK weerspiegelt API-versie 2.1 (preview)
 
 ---
 
@@ -91,7 +97,7 @@ Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `for
 
 Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de clientbibliotheek van Form Recognizer voor Python:
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 
 * [De client verifiëren](#authenticate-the-client)
 * [Formulierinhoud herkennen](#recognize-form-content)
@@ -100,7 +106,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
 
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 * [De client verifiëren](#authenticate-the-client)
 * [Formulierinhoud herkennen](#recognize-form-content)
@@ -123,7 +129,9 @@ Hier gaat u twee clientobjecten verifiëren met behulp van de abonnementsvariabe
 ## <a name="get-assets-for-testing"></a>Assets voor testen ophalen
 
 U moet verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens.
-* Als u de SAS-URL voor de trainingsgegevens van uw aangepaste model wilt ophalen, opent u de Microsoft Azure Storage Explorer, klikt u met de rechtermuisknop op uw container en selecteert u **Handtekening voor gedeelde toegang ophalen**. Controleer of de machtigingen **Lezen** en **Lijst** zijn ingeschakeld en klik op **Maken**. Kopieer vervolgens de waarde in de sectie **URL**. Deze moet de notatie `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>` hebben.
+* [!INCLUDE [get SAS URL](../../includes/sas-instructions.md)]
+  
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
 * Gebruik het voorbeeldformulier en de ontvangstbewijsafbeeldingen die zijn opgenomen in de onderstaande voorbeelden. Ze zijn ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms). U kunt tevens de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in Blob Storage op te halen. 
 
 > [!NOTE]
@@ -194,11 +202,15 @@ Tax: 104.4 has confidence 0.713
 Total: 1203.39 has confidence 0.774
 ```
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
-
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
 
 ## <a name="recognize-business-cards"></a>Visitekaartjes herkennen
+
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 In deze sectie wordt beschreven hoe u veelvoorkomende velden in Engelse visitekaartjes kunt herkennen en extraheren, met behulp van een vooraf getraind model. Gebruik de methode `begin_recognize_business_cards_from_url` om visitekaartjes te herkennen vanuit een URL. 
 
@@ -207,7 +219,16 @@ In deze sectie wordt beschreven hoe u veelvoorkomende velden in Engelse visiteka
 > [!TIP]
 > U kunt ook lokale afbeeldingen van visitekaartjes herkennen. Zie de [FormRecognizerClient](/python/api/azure-ai-formrecognizer/azure.ai.formrecognizer.formrecognizerclient?view=azure-python)-methoden, bijvoorbeeld `begin_recognize_business_cards`. Of bekijk de voorbeeldcode op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples) voor scenario's met betrekking tot lokale afbeeldingen.
 
+---
+
 ## <a name="recognize-invoices"></a>Facturen herkennen
+
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 In deze sectie wordt beschreven hoe u veelvoorkomende velden in verkoopfacturen kunt herkennen en extraheren, met behulp van een vooraf getraind model. Gebruik de methode `begin_recognize_invoices_from_url` om facturen te herkennen vanuit een URL. 
 

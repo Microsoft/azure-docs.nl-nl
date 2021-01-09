@@ -5,12 +5,12 @@ ms.date: 02/07/2020
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-js
 zone_pivot_groups: programming-languages-set-functions
-ms.openlocfilehash: 1729e0b27dd50519359cf6a39bfa81ba7b3b41e9
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: e280fddbe83da2a7ee89185046883f6c2c77167a
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185144"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739809"
 ---
 # <a name="connect-azure-functions-to-azure-storage-using-visual-studio-code"></a>Azure Functions verbinden met Azure Storage met behulp van Visual Studio Code
 
@@ -148,6 +148,8 @@ Nadat de binding is gedefinieerd, kunt u de `name` van de binding gebruiken om d
 
 [!INCLUDE [functions-add-storage-binding-java-code](../../includes/functions-add-storage-binding-java-code.md)]
 
+## <a name="update-the-test-set"></a>De testset bijwerken
+
 [!INCLUDE [functions-add-output-binding-java-test](../../includes/functions-add-output-binding-java-test.md)]
 
 ::: zone-end  
@@ -169,6 +171,8 @@ Nadat de binding is gedefinieerd, kunt u de `name` van de binding gebruiken om d
 Wanneer de uitvoerbinding voor het eerst wordt gebruikt, wordt er door de runtime van Functions een nieuwe wachtrij met de naam **outqueue** gemaakt in uw opslagaccount. U gebruikt Storage Explorer om te controleren of de wachtrij is gemaakt met het nieuwe bericht.
 
 ::: zone pivot="programming-language-java"  
+
+## <a name="update-the-tests"></a>De tests bijwerken
 
 [!INCLUDE [functions-add-output-binding-java-test](../../includes/functions-add-output-binding-java-test.md)]
 

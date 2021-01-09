@@ -8,12 +8,12 @@ ms.date: 11/19/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: df7462cf047dd113c34669d9a5f68f2589cc50f4
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 47883c742d77a88adb662e8dded0723f0e105385
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672990"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044183"
 ---
 # <a name="query-the-azure-digital-twins-twin-graph"></a>Query's uitvoeren op de Azure Digital Apparaatdubbels dubbele grafiek
 
@@ -28,43 +28,28 @@ Dit artikel begint met voorbeeld query's die de query taal structuur en algemene
 
 Dit is de basis query waarmee een lijst met alle digitale apparaatdubbels in het exemplaar wordt geretourneerd:
 
-```sql
-SELECT *
-FROM DIGITALTWINS
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="GetAllTwins":::
 
 ## <a name="query-by-property"></a>Query op eigenschap
 
 Digitale apparaatdubbels ophalen op basis van **Eigenschappen** (waaronder id en meta gegevens):
 
-```sql
-SELECT  *
-FROM DigitalTwins T  
-WHERE T.firmwareVersion = '1.1'
-AND T.$dtId in ['123', '456']
-AND T.Temperature = 70
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByProperty1":::
 
 > [!TIP]
 > De ID van een digitale dubbele query wordt uitgevoerd met behulp van het veld meta gegevens `$dtId` .
 
 U kunt ook apparaatdubbels ophalen op basis van **het feit of een bepaalde eigenschap is gedefinieerd**. Hier volgt een query waarmee apparaatdubbels worden opgehaald die een gedefinieerde *locatie* -eigenschap hebben:
 
-```sql
-SELECT * FROM DIGITALTWINS WHERE IS_DEFINED(Location)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByProperty2":::
 
 Dit kan u helpen apparaatdubbels te verkrijgen op basis van de *code* -eigenschappen, zoals beschreven in [Tags toevoegen aan digitale apparaatdubbels](how-to-use-tags.md). Hier volgt een query waarmee alle apparaatdubbels met *rood* worden opgehaald:
 
-```sql
-SELECT * FROM DIGITALTWINS WHERE IS_DEFINED(tags.red)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryMarkerTags1":::
 
 U kunt ook apparaatdubbels ophalen op basis van het **type van een eigenschap**. Dit is een query die apparaatdubbels ophaalt waarvan de eigenschap *Tempe ratuur* een getal is:
 
-```sql
-SELECT * FROM DIGITALTWINS T WHERE IS_NUMBER(T.Temperature)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByProperty3":::
 
 ## <a name="query-by-model"></a>Query op model
 
@@ -82,30 +67,22 @@ Als u bijvoorbeeld een query uitvoert voor apparaatdubbels van het model `dtmi:e
 Het eenvoudigste gebruik van `IS_OF_MODEL` heeft alleen een `twinTypeName` para meter: `IS_OF_MODEL(twinTypeName)` .
 Hier volgt een query voorbeeld waarin een waarde in deze para meter wordt door gegeven:
 
-```sql
-SELECT * FROM DIGITALTWINS WHERE IS_OF_MODEL('dtmi:example:thing;1')
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByModel1":::
 
 Als u een dubbele verzameling wilt opgeven wanneer er meer dan één moet worden gezocht `JOIN` , voegt u de `twinCollection` para meter: toe als u er meer dan een wilt zoeken `IS_OF_MODEL(twinCollection, twinTypeName)` .
 Hier volgt een query voorbeeld waarmee een waarde voor deze para meter wordt toegevoegd:
 
-```sql
-SELECT * FROM DIGITALTWINS DT WHERE IS_OF_MODEL(DT, 'dtmi:example:thing;1')
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByModel2":::
 
 Als u een exacte overeenkomst wilt, voegt u de `exact` para meter: toe `IS_OF_MODEL(twinTypeName, exact)` .
 Hier volgt een query voorbeeld waarmee een waarde voor deze para meter wordt toegevoegd:
 
-```sql
-SELECT * FROM DIGITALTWINS WHERE IS_OF_MODEL('dtmi:example:thing;1', exact)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByModel3":::
 
 U kunt ook alle drie de argumenten tegelijk door geven: `IS_OF_MODEL(twinCollection, twinTypeName, exact)` .
 Hier volgt een query voorbeeld waarin een waarde voor alle drie de para meters wordt opgegeven:
 
-```sql
-SELECT ROOM FROM DIGITALTWINS DT WHERE IS_OF_MODEL(DT, 'dtmi:example:thing;1', exact)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByModel4":::
 
 ## <a name="query-by-relationship"></a>Query's uitvoeren op relatie
 
@@ -127,12 +104,7 @@ Als u een gegevensset wilt ophalen die relaties bevat, gebruikt u één `FROM` i
 
 Hier volgt een voor beeld van een op relaties gebaseerde query. Dit code fragment selecteert alle digitale-apparaatdubbels met de *id-* eigenschap ' ABC ' en alle digitale apparaatdubbels met betrekking tot deze digitale apparaatdubbels via een *contains* -relatie.
 
-```sql
-SELECT T, CT
-FROM DIGITALTWINS T
-JOIN CT RELATED T.contains
-WHERE T.$dtId = 'ABC'
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByRelationship1":::
 
 > [!NOTE]
 > De ontwikkelaar hoeft dit niet te correleren `JOIN` met een sleutel waarde in de `WHERE` -component (of geef een sleutel waarde op in de `JOIN` definitie). Deze correlatie wordt automatisch berekend door het systeem, omdat de relatie-eigenschappen zelf de doel entiteit identificeren.
@@ -144,13 +116,7 @@ Met de Azure Digital Apparaatdubbels-query taal kunnen relaties worden gefilterd
 
 Denk bijvoorbeeld aan een *servicedBy* -relatie die een *reportedCondition* -eigenschap heeft. In de onderstaande query krijgt deze relatie een alias van ' R ' om te kunnen verwijzen naar de eigenschap.
 
-```sql
-SELECT T, SBT, R
-FROM DIGITALTWINS T
-JOIN SBT RELATED T.servicedBy R
-WHERE T.$dtId = 'ABC'
-AND R.reportedCondition = 'clean'
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByRelationship2":::
 
 In het bovenstaande voor beeld ziet u hoe *reportedCondition* een eigenschap is van de *servicedBy* -relatie zelf (niet van een digitale dubbele verbinding met een *servicedBy* -relatie).
 
@@ -160,58 +126,27 @@ Maxi maal vijf `JOIN` s worden ondersteund in één query. Zo kunt u meerdere ni
 
 Hier volgt een voor beeld van een meervoudige samenvoeg query, waarmee alle gloei lampen in de licht panelen in de ruimten 1 en 2 worden opgehaald.
 
-```sql
-SELECT LightBulb
-FROM DIGITALTWINS Room
-JOIN LightPanel RELATED Room.contains
-JOIN LightBulb RELATED LightPanel.contains
-WHERE IS_OF_MODEL(LightPanel, 'dtmi:contoso:com:lightpanel;1')
-AND IS_OF_MODEL(LightBulb, 'dtmi:contoso:com:lightbulb ;1')
-AND Room.$dtId IN ['room1', 'room2']
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="QueryByRelationship3":::
 
 ## <a name="count-items"></a>Items tellen
 
 U kunt het aantal items in een resultatenset tellen met behulp van de- `Select COUNT` component:
 
-```sql
-SELECT COUNT()
-FROM DIGITALTWINS
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="SelectCount1":::
 
 Voeg een- `WHERE` component toe om het aantal items te tellen dat aan een bepaald criterium voldoet. Hier volgen enkele voor beelden van tellingen met een toegepast filter op basis van het type dubbele model (Zie voor meer informatie over deze syntaxis [*query per model*](#query-by-model) ):
 
-```sql
-SELECT COUNT()
-FROM DIGITALTWINS
-WHERE IS_OF_MODEL('dtmi:sample:Room;1')
-
-SELECT COUNT()
-FROM DIGITALTWINS c
-WHERE IS_OF_MODEL('dtmi:sample:Room;1') AND c.Capacity > 20
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="SelectCount2":::
 
 U kunt ook `COUNT` samen met de- `JOIN` component gebruiken. Hier volgt een query waarmee alle gloei lampen in de lichte deel Vensters van de kamers 1 en 2 worden geteld:
 
-```sql
-SELECT COUNT()  
-FROM DIGITALTWINS Room  
-JOIN LightPanel RELATED Room.contains  
-JOIN LightBulb RELATED LightPanel.contains  
-WHERE IS_OF_MODEL(LightPanel, 'dtmi:contoso:com:lightpanel;1')  
-AND IS_OF_MODEL(LightBulb, 'dtmi:contoso:com:lightbulb ;1')  
-AND Room.$dtId IN ['room1', 'room2']
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="SelectCount3":::
 
 ## <a name="filter-results-select-top-items"></a>Resultaten filteren: bovenste items selecteren
 
 U kunt de verschillende ' top ' items in een query selecteren met behulp van de- `Select TOP` component.
 
-```sql
-SELECT TOP (5)
-FROM DIGITALTWINS
-WHERE ...
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="SelectTop":::
 
 ## <a name="filter-results-specify-return-set-with-projections"></a>Resultaten filteren: retour sets met projecties opgeven
 
@@ -222,54 +157,25 @@ Door projecties in de `SELECT` -instructie te gebruiken, kunt u kiezen welke kol
 
 Hier volgt een voor beeld van een query die projectie gebruikt voor het retour neren van apparaatdubbels en relaties. Met de volgende query worden de *Consumer*, de *fabriek* en de *rand* van een scenario waarin een *Factory* met de id *ABC* is gerelateerd aan de *consument* gekoppeld via een relatie van *Factory. Customer*, en die relatie wordt weer gegeven als de *rand*.
 
-```sql
-SELECT Consumer, Factory, Edge
-FROM DIGITALTWINS Factory
-JOIN Consumer RELATED Factory.customer Edge
-WHERE Factory.$dtId = 'ABC'
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="Projections1":::
 
 U kunt projectie ook gebruiken om een eigenschap van een dubbele waarde te retour neren. Met de volgende query wordt de eigenschap *name* van de *consumenten* projecten die zijn gerelateerd aan de *fabriek* met een id van *ABC* door middel van een relatie van *Factory. Customer*.
 
-```sql
-SELECT Consumer.name
-FROM DIGITALTWINS Factory
-JOIN Consumer RELATED Factory.customer Edge
-WHERE Factory.$dtId = 'ABC'
-AND IS_PRIMITIVE(Consumer.name)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="Projections2":::
 
 U kunt ook projectie gebruiken om een eigenschap van een relatie te retour neren. Net als in het vorige voor beeld, met de volgende query worden de eigenschap *name* van de *consumenten* met betrekking tot de *fabriek* met een id van *ABC* door middel van een relatie van *Factory. Customer*; het resultaat is nu ook twee eigenschappen van die relatie, *prop1* en *prop2*. Dit doet u door de relatie *rand* te benoemen en de eigenschappen ervan te verzamelen.  
 
-```sql
-SELECT Consumer.name, Edge.prop1, Edge.prop2, Factory.area
-FROM DIGITALTWINS Factory
-JOIN Consumer RELATED Factory.customer Edge
-WHERE Factory.$dtId = 'ABC'
-AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name) AND IS_PRIMITIVE(Edge.prop1) AND IS_PRIMITIVE(Edge.prop2)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="Projections3":::
 
 U kunt ook aliassen gebruiken om query's te vereenvoudigen met projectie.
 
 Met de volgende query worden dezelfde bewerkingen uitgevoerd als in het vorige voor beeld, maar er wordt een alias voor de eigenschaps namen toegepast op `consumerName` , `first` , en `second` `factoryArea` .
 
-```sql
-SELECT Consumer.name AS consumerName, Edge.prop1 AS first, Edge.prop2 AS second, Factory.area AS factoryArea
-FROM DIGITALTWINS Factory
-JOIN Consumer RELATED Factory.customer Edge
-WHERE Factory.$dtId = 'ABC'
-AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name) AND IS_PRIMITIVE(Edge.prop1) AND IS_PRIMITIVE(Edge.prop2)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="Projections4":::
 
 Hier volgt een soort gelijke query die de bovenstaande set doorzoekt, maar alleen projecten de eigenschap *Consumer.name* als `consumerName` en projecteert de volledige *fabriek* als een twee.
 
-```sql
-SELECT Consumer.name AS consumerName, Factory
-FROM DIGITALTWINS Factory
-JOIN Consumer RELATED Factory.customer Edge
-WHERE Factory.$dtId = 'ABC'
-AND IS_PRIMITIVE(Factory.area) AND IS_PRIMITIVE(Consumer.name)
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="Projections5":::
 
 ## <a name="build-efficient-queries-with-the-in-operator"></a>Efficiënte query's bouwen met de IN-operator
 
@@ -279,12 +185,7 @@ Denk bijvoorbeeld aan een scenario waarin *gebouwen* *vloeren* en *vloeren* *bev
 
 1. Zoek in het gebouw vloeren op basis van de `contains` relatie.
 
-    ```sql
-    SELECT Floor
-    FROM DIGITALTWINS Building
-    JOIN Floor RELATED Building.contains
-    WHERE Building.$dtId = @buildingId
-    ```
+    :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="INOperatorWithout":::
 
 2. Als u wilt zoeken naar ruimten, in plaats van de vloeren één voor één te overwegen en een `JOIN` query uit te voeren om de kamers voor elke plaats te vinden, kunt u een query uitvoeren op een verzameling van de vloeren in het gebouw (met de naam *vloer* in de onderstaande query).
 
@@ -296,26 +197,18 @@ Denk bijvoorbeeld aan een scenario waarin *gebouwen* *vloeren* en *vloeren* *bev
     
     In query:
     
-    ```sql
-    
-    SELECT Room
-    FROM DIGITALTWINS Floor
-    JOIN Room RELATED Floor.contains
-    WHERE Floor.$dtId IN ['floor1','floor2', ..'floorn']
-    AND Room. Temperature > 72
-    AND IS_OF_MODEL(Room, 'dtmi:com:contoso:Room;1')
-    
-    ```
+    :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="INOperatorWith":::
 
 ## <a name="other-compound-query-examples"></a>Andere samengestelde query voorbeelden
 
 U kunt elk van de bovenstaande typen query's **combi neren** met behulp van combi Naties om meer details in één query op te halen. Hier volgen enkele aanvullende voor beelden van samengestelde query's waarmee een query wordt uitgevoerd voor meer dan één type dubbele descriptor tegelijk.
 
-| Beschrijving | Query’s uitvoeren |
-| --- | --- |
-| Van de apparaten die *ruimte 123* heeft, retour neren ze de MxChip-apparaten die de rol van operator gebruiken | `SELECT device`<br>`FROM DigitalTwins space`<br>`JOIN device RELATED space.has`<br>`WHERE space.$dtid = 'Room 123'`<br>`AND device.$metadata.model = 'dtmi:contoso:com:DigitalTwins:MxChip:3'`<br>`AND has.role = 'Operator'` |
-| Apparaatdubbels ophalen die een relatie met de naam *contains bevat* met een andere dubbele id en een *id1* | `SELECT Room`<br>`FROM DIGITALTWINS Room`<br>`JOIN Thermostat RELATED Room.Contains`<br>`WHERE Thermostat.$dtId = 'id1'` |
-| Alle kamers van dit room-model ophalen die zijn opgenomen in *floor11* | `SELECT Room`<br>`FROM DIGITALTWINS Floor`<br>`JOIN Room RELATED Floor.Contains`<br>`WHERE Floor.$dtId = 'floor11'`<br>`AND IS_OF_MODEL(Room, 'dtmi:contoso:com:DigitalTwins:Room;1')` |
+* Van de apparaten die *ruimte 123* heeft, retour neren ze de MxChip-apparaten die de rol van operator gebruiken
+    :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="OtherExamples1":::
+* Apparaatdubbels ophalen die een relatie met de naam *contains bevat* met een andere dubbele id en een *id1*
+    :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="OtherExamples2":::
+* Alle kamers van dit room-model ophalen die zijn opgenomen in *floor11*
+    :::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="OtherExamples3":::
 
 ## <a name="run-queries-with-the-api"></a>Query's uitvoeren met de API
 
@@ -325,42 +218,13 @@ U kunt de API rechtstreeks aanroepen of een van de [sdk's](how-to-use-apis-sdks.
 
 Het volgende code fragment illustreert de [.net (C#) SDK-](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true) aanroep van een client-app:
 
-```csharp
-    string adtInstanceEndpoint = "https://<your-instance-hostname>";
-
-    var credential = new DefaultAzureCredential();
-    DigitalTwinsClient client = new DigitalTwinsClient(new Uri(adtInstanceEndpoint), credential);
-
-    // Run a query for all twins   
-    string query = "SELECT * FROM DIGITALTWINS";
-    AsyncPageable<BasicDigitalTwin> result = client.QueryAsync<BasicDigitalTwin>(query);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/queries.cs" id="RunQuery":::
 
 Deze aanroep retourneert query resultaten in de vorm van een [BasicDigitalTwin](/dotnet/api/azure.digitaltwins.core.basicdigitaltwin?view=azure-dotnet&preserve-view=true) -object.
 
 Query aanroepen ondersteunen paginering. Hier volgt een volledig voor beeld `BasicDigitalTwin` dat wordt gebruikt als query resultaat type met fout afhandeling en paging:
 
-```csharp
-try
-{
-    await foreach(BasicDigitalTwin twin in result)
-        {
-            // You can include your own logic to print the result
-            // The logic below prints the twin's ID and contents
-            Console.WriteLine($"Twin ID: {twin.Id} \nTwin data");
-            IDictionary<string, object> contents = twin.Contents;
-            foreach (KeyValuePair<string, object> kvp in contents)
-            {
-                Console.WriteLine($"{kvp.Key}  {kvp.Value}");
-            }
-        }
-}
-catch (RequestFailedException e)
-{
-    Console.WriteLine($"Error {e.Status}: {e.Message}");
-    throw;
-}
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/queries.cs" id="FullQuerySample":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

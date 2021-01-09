@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/20/2020
+ms.date: 12/21/2020
 ms.author: memildin
-ms.openlocfilehash: 4188181943778c932775b269c2bd6cdb03b4f742
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 38d1471cf96f09f51559a28e116a99e1e718f812
+ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949391"
+ms.lasthandoff: 12/21/2020
+ms.locfileid: "97709262"
 ---
 # <a name="security-recommendations---a-reference-guide"></a>Aanbevelingen voor beveiliging: een naslaggids
 

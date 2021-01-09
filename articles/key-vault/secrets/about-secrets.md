@@ -1,6 +1,6 @@
 ---
 title: Over Azure Key Vault-geheimen - Azure Key Vault
-description: Overzicht van REST-interface van Azure Key Vault en details over geheimen voor ontwikkelaars.
+description: Overzicht van Azure Key Vault-geheimen.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,16 +10,16 @@ ms.subservice: secrets
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 7aa2feba5a2b2fa47bbb0c055a2f556b8997ab34
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 4ded48fe8f04d2cdba40650974fd5002d659e381
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82930468"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705265"
 ---
 # <a name="about-azure-key-vault-secrets"></a>Over Azure Key Vault-geheimen
 
-Key Vault biedt beveiligde opslag van geheimen, zoals wachtwoorden en databaseverbindingsreeksen.
+[Key Vault](../general/overview.md) biedt beveiligde opslag van algemene geheimen, zoals wachtwoorden en databaseverbindingsreeksen.
 
 Vanuit het oogpunt van een ontwikkelaar worden geheime waarden door Key Vault-API's als tekenreeksen geaccepteerd en geretourneerd. Intern worden geheimen in Key Vault opgeslagen en beheerd als reeksen van octetten (8-bits bytes), met een maximale grootte van 25.000 bytes elk. De Key Vault-service biedt geen semantiek voor geheimen. Alleen de gegevens worden geaccepteerd, versleuteld, opgeslagen en er wordt een geheime id ('id') geretourneerd. De id kan worden gebruikt om het geheim op een later tijdstip op te halen.  
 
@@ -44,9 +44,11 @@ Er zijn aanvullende alleen-lezen kenmerken die in elk antwoord zijn opgenomen da
 - *created*: IntDate, optioneel. Het kenmerk created geeft aan wanneer deze versie van het geheim is gemaakt. Deze waarde is null voor geheimen die vóór het toevoegen van dit kenmerk zijn gemaakt. De waarde moet een getal zijn dat een IntDate-waarde bevat.  
 - *updated*: IntDate, optioneel. Het kenmerk updated geeft aan wanneer deze versie van het geheim is bijgewerkt. Deze waarde is null voor geheimen die voor het laatst zijn bijgewerkt vóór het toevoegen van dit kenmerk. De waarde moet een getal zijn dat een IntDate-waarde bevat.
 
+Raadpleeg [Overzicht van sleutels, geheimen en certificaten in Azure Key Vault](../general/about-keys-secrets-certificates.md) voor informatie over de algemene kenmerken voor elk objecttype voor een sleutelkluis
+
 ### <a name="date-time-controlled-operations"></a>Bewerkingen met datum-/tijdcontrole
 
-De bewerking **get** van een geheim werkt voor nog-niet-geldige of verlopen geheimen, buiten het tijdvenster *nbf* / *exp*. Het aanroepen van de bewerking **get** van een geheim voor een nog-niet-geldig geheim, kan voor testdoeleinden worden gebruikt. Het ophalen (**get**ting) van een verlopen geheim kan voor herstelbewerkingen worden gebruikt.
+De bewerking **get** van een geheim werkt voor nog-niet-geldige of verlopen geheimen, buiten het tijdvenster *nbf* / *exp*. Het aanroepen van de bewerking **get** van een geheim voor een nog-niet-geldig geheim, kan voor testdoeleinden worden gebruikt. Het ophalen (**get** ting) van een verlopen geheim kan voor herstelbewerkingen worden gebruikt.
 
 ## <a name="secret-access-control"></a>Toegangsbeheer voor geheimen
 
@@ -68,6 +70,12 @@ De volgende machtigingen kunnen per principal worden gebruikt in de toegangsbehe
 
 Zie [Geheimbewerkingen in de REST API-naslag voor Key Vault](/rest/api/keyvault) voor meer informatie over het werken met geheimen. Raadpleeg [Kluizen: maken of bijwerken](/rest/api/keyvault/vaults/createorupdate) en [Kluizen: toegangsbeleid bijwerken](/rest/api/keyvault/vaults/updateaccesspolicy) voor meer informatie over het instellen van machtigingen. 
 
+Instructiegidsen voor het beheren van de toegang in Key Vault:
+- [Key Vault-toegangsbeleid toewijzen met behulp van CLI](../general/assign-access-policy-cli.md)
+- [Key Vault-toegangsbeleid toewijzen met behulp van PowerShell](../general/assign-access-policy-powershell.md)
+- [Key Vault-toegangsbeleid toewijzen met behulp van Azure Portal](../general/assign-access-policy-portal.md)
+- [Toegang bieden tot sleutels, certificaten en geheimen in Key Vault met op rollen gebaseerd toegangsbeheer in Azure (preview)](../general/rbac-guide.md)
+
 ## <a name="secret-tags"></a>Geheimtags  
 U kunt aanvullende toepassingsspecifieke metagegevens opgeven in de vorm van tags. Key Vault ondersteunt maximaal 15 tags, die elk een naam van 256 tekens en een waarde van 256 tekens kunnen bevatten.  
 
@@ -76,14 +84,17 @@ U kunt aanvullende toepassingsspecifieke metagegevens opgeven in de vorm van tag
 
 ## <a name="azure-storage-account-key-management"></a>Azure Storage-accountsleutelbeheer
 
-Key Vault kan Azure Storage-accountsleutels beheren:
+In Key Vault kunnen [Azure Storage-accountsleutels](https://docs.microsoft.com/azure/storage/common/storage-account-overview) worden beheerd:
 
 - Intern kan Key Vault sleutels synchroniseren met een Azure Storage-account. 
 - Key Vault genereert de sleutels regelmatig opnieuw (roteren van sleutels).
 - Sleutelwaarden worden nooit geretourneerd als antwoord op een oproepende functie.
 - Key Vault beheert sleutels voor opslagaccounts en klassieke opslagaccounts.
 
-Zie [Azure Key Vault Storage-accountsleutels](../secrets/overview-storage-keys.md) voor meer informatie
+Zie voor meer informatie:
+- [Toegangssleutels voor opslagaccount](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)
+- [Beheer van opslagaccountsleutels in Azure Key Vault ](../secrets/overview-storage-keys.md))
+
 
 ## <a name="storage-account-access-control"></a>Toegangsbeheer voor opslagaccount
 
@@ -109,11 +120,18 @@ De volgende machtigingen kunnen worden gebruikt voor het autoriseren van een geb
 
 Zie [Opslagaccountbewerkingen in de REST API-naslag voor Key Vault](/rest/api/keyvault) voor meer informatie. Raadpleeg [Kluizen: maken of bijwerken](/rest/api/keyvault/vaults/createorupdate) en [Kluizen: toegangsbeleid bijwerken](/rest/api/keyvault/vaults/updateaccesspolicy) voor meer informatie over het instellen van machtigingen.
 
+Instructiegidsen voor het beheren van de toegang in Key Vault:
+- [Key Vault-toegangsbeleid toewijzen met behulp van CLI](../general/assign-access-policy-cli.md)
+- [Key Vault-toegangsbeleid toewijzen met behulp van PowerShell](../general/assign-access-policy-powershell.md)
+- [Key Vault-toegangsbeleid toewijzen met behulp van Azure Portal](../general/assign-access-policy-portal.md)
+- [Toegang bieden tot sleutels, certificaten en geheimen in Key Vault met op rollen gebaseerd toegangsbeheer in Azure (preview)](../general/rbac-guide.md)
+
+
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Informatie over Key Vault](../general/overview.md)
 - [Informatie over sleutels, geheimen en certificaten](../general/about-keys-secrets-certificates.md)
 - [Over sleutels](../keys/about-keys.md)
 - [Over certificaten](../certificates/about-certificates.md)
-- [Verificatie, aanvragen en antwoorden](../general/authentication-requests-and-responses.md)
+- [Veilige toegang tot een sleutelkluis](../general/secure-your-key-vault.md)
 - [Gids voor Key Vault-ontwikkelaars](../general/developers-guide.md)

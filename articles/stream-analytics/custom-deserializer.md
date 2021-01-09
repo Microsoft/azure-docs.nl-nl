@@ -6,19 +6,19 @@ ms.author: mamccrea
 ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: tutorial
-ms.date: 05/06/2019
-ms.openlocfilehash: 1fffeec1434cb066487bf383589554edec2e6a86
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 12/17/2020
+ms.openlocfilehash: 2353d15707fe215bfcab7912f2a9c598c4af7e49
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75443697"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822009"
 ---
 # <a name="tutorial-custom-net-deserializers-for-azure-stream-analytics"></a>Zelfstudie: Aangepaste .NET-deserializers voor Azure Stream Analytics
 
 Azure Stream Analytics heeft [ingebouwde ondersteuning voor drie gegevensindelingen](stream-analytics-parsing-json.md): JSON, CSV en Avro. Met aangepaste .NET-deserializers kunt u gegevens lezen uit andere indelingen, zoals [Protocol Buffer](https://developers.google.com/protocol-buffers/), [Bond](https://github.com/Microsoft/bond) en andere door de gebruiker gedefinieerde indelingen voor zowel cloud- als Edge-taken.
 
-In deze zelfstudie wordt gedemonstreerd hoe u een aangepaste .NET-deserializer maakt voor een Azure Stream Analytics-cloudtaak met behulp van Visual Studio. 
+In deze zelfstudie wordt gedemonstreerd hoe u een aangepaste .NET-deserializer maakt voor een Azure Stream Analytics-cloudtaak met behulp van Visual Studio. Raadpleeg [.NET-deserializers voor Azure Stream Analytics-taken maken in Visual Studio Code](visual-studio-code-custom-deserializer.md) voor meer informatie over het maken van .NET-deserializers in Visual Studio Code.
 
 In deze zelfstudie leert u het volgende:
 
@@ -26,17 +26,16 @@ In deze zelfstudie leert u het volgende:
 > * Een aangepaste deserializer maken voor protocol buffer.
 > * Een Azure Stream Analytics-taak maken in Visual Studio.
 > * Uw Stream Analytics-taak configureren voor het gebruik van de aangepaste deserializer.
-> * Uw Stream Analytics-taak lokaal uitvoeren om de aangepaste deserializer te testen.
+> * Uw Stream Analytics-taak lokaal testen om de aangepaste deserializer te testen en fouten op te sporen.
+
 
 ## <a name="prerequisites"></a>Vereisten
 
 * Als u nog geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan.
 
-* Installeer [Visual Studio 2017](https://www.visualstudio.com/downloads/) of [Visual Studio 2015](https://www.visualstudio.com/vs/older-downloads/). Enterprise- (Ultimate/Premium), Professional- en Community-edities worden ondersteund. De Express-editie wordt niet ondersteund.
+* Installeer [Visual Studio 2019 (aanbevolen)](https://www.visualstudio.com/downloads/) of [Visual Studio 2017](https://www.visualstudio.com/vs/older-downloads/). Enterprise- (Ultimate/Premium), Professional- en Community-edities worden ondersteund. De Express-editie wordt niet ondersteund. 
 
-* [Installeer de Stream Analytics-hulpprogramma's voor Visual Studio](stream-analytics-tools-for-visual-studio-install.md) of werk bij naar de nieuwste versie. De volgende versies van Visual Studio worden ondersteund:
-   * Visual Studio 2015
-   * Visual Studio 2017
+* [Installeer de Stream Analytics-hulpprogramma's voor Visual Studio](stream-analytics-tools-for-visual-studio-install.md) of werk bij naar de nieuwste versie. 
 
 * Open **Cloud Explorer-** in Visual Studio en meld u aan bij uw Azure-abonnement.
 
@@ -116,11 +115,13 @@ U hebt een aangepaste deserializer geïmplementeerd voor uw Stream Analytics-taa
 
 ## <a name="debug-your-deserializer"></a>Fouten opsporen in uw deserializer
 
-U kunt lokaal fouten opsporen in uw .NET-deserializer, op dezelfde manier als dat u fouten opspoort in standaard .NET-code. 
+U kunt lokaal fouten opsporen in uw .NET-deserializer, op dezelfde manier als dat u fouten opspoort in standaard .NET-code.
 
-1. Voeg onderbrekingspunten in uw functie toe.
+1. Klik met de rechtermuisknop op de projectnaam **ProtobufCloudDeserializer** en stel dit project in als opstartproject.
 
-2. Druk op **F5** om de foutopsporing te starten. Het programma stopt bij de onderbrekingspunten, zoals verwacht.
+2. Voeg onderbrekingspunten in uw functie toe.
+
+3. Druk op **F5** om de foutopsporing te starten. Het programma stopt bij de onderbrekingspunten, zoals verwacht.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

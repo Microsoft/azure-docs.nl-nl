@@ -11,12 +11,12 @@ ms.workload: infrastructure
 ms.date: 1/3/2020
 ms.author: ushan
 ms.custom: devops, devx-track-js
-ms.openlocfilehash: 6bc6776df889c5c8ccc6acfe5764549ccf7354a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d26da693d83fd680c644849d581ea35ca7b49af
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320197"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739702"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Zelfstudie: Uw app implementeren naar virtuele Linux-machines in Azure met behulp van Azure DevOps Services en Azure Pipelines
 
@@ -118,7 +118,7 @@ U maakt een omgeving in de hub **Omgevingen** in het gedeelte **Pijplijnen**.
 
     ![VMresource_view](media/tutorial-deploy-vms-azure-pipelines/vm-resourceview.png)
 
-9. U kunt tags toevoegen aan de VM als onderdeel van het interactieve PS-registratiescript (of) u kunt deze toevoegen aan/verwijderen uit de resourceweergave door te klikken op de drie puntjes aan het einde van elke VM-resource in de weergave Resources.
+9. U kunt tags toevoegen aan de VM als onderdeel van het interactieve PowerShell-registratiescript (of) u kunt deze toevoegen aan/verwijderen uit de resourceweergave door te klikken op de drie puntjes aan het einde van elke VM-resource in de weergave Resources.
 
    Met de tags die u toewijst kunt u de implementatie beperken tot specifieke virtuele machines wanneer de omgeving wordt gebruikt in een implementatietaak. Tags mogen maximaal 256 tekens bevatten, maar er is geen limiet voor het aantal tags dat u kunt gebruiken.
 
@@ -202,7 +202,7 @@ Volg de stappen in [Node.js-app bouwen met gulp](/azure/devops/pipelines/ecosyst
 
 - Bekijk de pijplijn om te zien wat die doet. Zorg ervoor dat alle standaardinvoer geschikt is voor uw code.
 
-- Selecteer **Save and run**, selecteer vervolgens **Commit directly to the master branch** en kies ten slotte nogmaals **Save and run**.
+- Selecteer **Opslaan en uitvoeren**, selecteer vervolgens **Rechtstreeks doorvoeren naar de hoofdbranch**, en kies ten slotte opnieuw **Opslaan en uitvoeren**.
 
 - Er wordt een nieuwe run gestart. Wacht tot de run is voltooid.
 

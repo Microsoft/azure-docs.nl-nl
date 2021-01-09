@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 09/20/2019
-ms.openlocfilehash: 034f2b3884d732487a9f7aff4d14740691983885
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 269ecdf8998707ac375339edb4e11bb24380e27d
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95536775"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98027703"
 ---
 # <a name="designing-your-azure-monitor-logs-deployment"></a>De implementatie van uw Azure Monitor-logboeken ontwerpen
 
@@ -27,7 +27,7 @@ Een Log Analytics-werk ruimte biedt:
 * Gegevens isolatie door verschillende gebruikers toegangs rechten te verlenen volgens een van onze aanbevolen ontwerp strategieën.
 * Bereik voor configuratie van instellingen, zoals de [prijs categorie](./manage-cost-storage.md#changing-pricing-tier), [retentie](./manage-cost-storage.md#change-the-data-retention-period)en het beperken van [gegevens](./manage-cost-storage.md#manage-your-maximum-daily-data-volume).
 
-Werk ruimten worden gehost op een fysiek cluster. Standaard worden deze clusters door het systeem gemaakt en beheerd. Klanten die meer dan 4 TB/dag hebben opgenomen, zullen hun eigen toegewezen clusters voor hun werk ruimten maken. Hiermee kunnen ze betere controle en een hoger opname niveau krijgen.
+Werk ruimten worden gehost op fysieke clusters. Standaard worden deze clusters door het systeem gemaakt en beheerd. Klanten die meer dan 4 TB/dag hebben opgenomen, zullen hun eigen toegewezen clusters voor hun werk ruimten maken. Hiermee kunnen ze betere controle en een hoger opname niveau krijgen.
 
 Dit artikel bevat een gedetailleerd overzicht van de overwegingen voor het ontwerpen en migreren, het overzicht van toegangs beheer en een uitleg van de ontwerp implementaties die wij voor uw IT-organisatie raden.
 
@@ -67,7 +67,7 @@ De gegevens waartoe een gebruiker toegang heeft, wordt bepaald door een combi na
 | Factor | Beschrijving |
 |:---|:---|
 | [Toegangsmodus](#access-mode) | De methode die de gebruiker gebruikt voor toegang tot de werk ruimte.  Hiermee definieert u het bereik van de beschik bare gegevens en de toegangs beheer modus die wordt toegepast. |
-| [Toegangs beheer modus](#access-control-mode) | Instelling in de werk ruimte die definieert of machtigingen worden toegepast op het niveau van de werk ruimte of de resource. |
+| [Toegangsbeheermodus](#access-control-mode) | Instelling in de werk ruimte die definieert of machtigingen worden toegepast op het niveau van de werk ruimte of de resource. |
 | [Machtigingen](manage-access.md) | Machtigingen die worden toegepast op afzonderlijke of groepen gebruikers voor de werk ruimte of resource. Hiermee definieert u welke gegevens de gebruiker toegang heeft. |
 | [Azure RBAC voor tabel niveau](manage-access.md#table-level-azure-rbac) | Optionele gedetailleerde machtigingen die van toepassing zijn op alle gebruikers, ongeacht de toegangs modus of de toegangs beheer modus. Hiermee definieert u welke gegevens typen een gebruiker kan openen. |
 
@@ -99,14 +99,14 @@ Azure Monitor bepaalt automatisch de juiste modus, afhankelijk van de context wa
 
 De volgende tabel bevat een overzicht van de toegangs modi:
 
-| Probleem | Werk ruimte-context | Resource-context |
+| Probleem | Werkruimtecontext | Resourcecontext |
 |:---|:---|:---|
 | Voor wie is elk model bedoeld? | Centraal beheer. Beheerders die gegevens verzameling en gebruikers moeten configureren die toegang nodig hebben tot een groot aantal verschillende bronnen. Dit is ook vereist voor gebruikers die toegang moeten hebben tot logboeken voor bronnen buiten Azure. | Toepassings teams. Beheerders van Azure-resources die worden bewaakt. |
 | Wat heeft een gebruiker nodig om logboeken weer te geven? | Machtigingen voor de werk ruimte. Zie **machtigingen voor werk ruimten** in [toegang beheren via werkruimte machtigingen](manage-access.md#manage-access-using-workspace-permissions). | Lees toegang tot de resource. Zie **resource machtigingen** in [toegang beheren met Azure-machtigingen](manage-access.md#manage-access-using-azure-permissions). Machtigingen kunnen worden overgenomen (bijvoorbeeld van de container resource groep) of rechtstreeks worden toegewezen aan de resource. De machtigingen voor de logboeken voor de resource worden automatisch toegewezen. |
 | Wat is het bereik van machtigingen? | Werk ruimte. Gebruikers met toegang tot de werk ruimte kunnen alle logboeken in de werk ruimte opvragen van tabellen waarvoor ze machtigingen hebben. Zie [Table Access Control](manage-access.md#table-level-azure-rbac) | Azure-resource. De gebruiker kan Logboeken zoeken voor specifieke resources, resource groepen of abonnementen waartoe ze toegang hebben vanuit een wille keurige werk ruimte, maar geen logboeken kunnen doorzoeken voor andere resources. |
 | Hoe kan de gebruiker toegang krijgen tot logboeken? | <ul><li>Start **Logboeken** vanuit **Azure monitor** menu.</li></ul> <ul><li>Start **Logboeken** vanuit **log Analytics werk ruimten**.</li></ul> <ul><li>Vanuit Azure Monitor [werkmappen](../visualizations.md#workbooks).</li></ul> | <ul><li>**Logboeken** starten vanuit het menu voor de Azure-resource</li></ul> <ul><li>Start **Logboeken** vanuit **Azure monitor** menu.</li></ul> <ul><li>Start **Logboeken** vanuit **log Analytics werk ruimten**.</li></ul> <ul><li>Vanuit Azure Monitor [werkmappen](../visualizations.md#workbooks).</li></ul> |
 
-## <a name="access-control-mode"></a>Toegangs beheer modus
+## <a name="access-control-mode"></a>Toegangsbeheermodus
 
 De *Access Control-modus* is een instelling voor elke werk ruimte die definieert hoe machtigingen voor de werk ruimte worden bepaald.
 

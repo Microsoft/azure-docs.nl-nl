@@ -4,12 +4,12 @@ description: Meer informatie over het verwerken van menselijke interacties en ti
 ms.topic: conceptual
 ms.date: 12/07/2018
 ms.author: azfuncdf
-ms.openlocfilehash: 4e0f71369bc02fdce5625d9c74e1d52264ed86be
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: cba3cd0fd5d8727c4ffa4d1b42d7cd9250f21032
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80335748"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028300"
 ---
 # <a name="human-interaction-in-durable-functions---phone-verification-sample"></a>Menselijke interactie in het voor beeld van een Durable Functions-telefoon verificatie
 
@@ -21,11 +21,11 @@ Dit voor beeld implementeert een verificatie systeem op basis van een SMS-toeste
 
 ## <a name="scenario-overview"></a>Overzicht van scenario's
 
-Verificatie via telefoon wordt gebruikt om te controleren of eind gebruikers van uw toepassing geen spammers zijn en dat ze zijn wie ze zeggen. Multi-factor Authentication is een veelvoorkomende use case voor het beveiligen van gebruikers accounts van hackers. De uitdaging bij het implementeren van uw eigen telefoon verificatie is dat er een **stateful interactie** is vereist met een menselijk. Een eind gebruiker krijgt meestal een code (bijvoorbeeld een nummer van vier cijfers) en moet **in een redelijke tijd**reageren.
+Verificatie via telefoon wordt gebruikt om te controleren of eind gebruikers van uw toepassing geen spammers zijn en dat ze zijn wie ze zeggen. Multi-factor Authentication is een veelvoorkomende use case voor het beveiligen van gebruikers accounts van hackers. De uitdaging bij het implementeren van uw eigen telefoon verificatie is dat er een **stateful interactie** is vereist met een menselijk. Een eind gebruiker krijgt meestal een code (bijvoorbeeld een nummer van vier cijfers) en moet **in een redelijke tijd** reageren.
 
 Gewone Azure Functions zijn stateless (net als veel andere Cloud eindpunten op andere platforms), zodat deze typen interacties een expliciete status van extern beheer in een Data Base of een andere permanente Store moeten beheren. Daarnaast moet de interactie worden opgesplitst in meerdere functies die samen kunnen worden gecoördineerd. U hebt bijvoorbeeld ten minste één functie nodig om te beslissen over een code, ergens op te slaan en deze naar de telefoon van de gebruiker te verzenden. Daarnaast moet u ten minste één andere functie gebruiken om een reactie van de gebruiker te ontvangen en deze vervolgens weer te koppelen aan de oorspronkelijke functie aanroep om de code validatie uit te voeren. Een time-out is ook een belang rijk aspect om beveiliging te garanderen. Dit kan tamelijk complex zijn.
 
-De complexiteit van dit scenario wordt sterk verkleind wanneer u Durable Functions gebruikt. Zoals u in dit voor beeld ziet, kan een Orchestrator-functie de stateful-interactie eenvoudig en zonder externe gegevens opslag beheren. Omdat Orchestrator-functies *duurzaam*zijn, zijn deze interactieve stromen ook zeer betrouwbaar.
+De complexiteit van dit scenario wordt sterk verkleind wanneer u Durable Functions gebruikt. Zoals u in dit voor beeld ziet, kan een Orchestrator-functie de stateful-interactie eenvoudig en zonder externe gegevens opslag beheren. Omdat Orchestrator-functies *duurzaam* zijn, zijn deze interactieve stromen ook zeer betrouwbaar.
 
 ## <a name="configuring-twilio-integration"></a>Twilio-integratie configureren
 
@@ -45,7 +45,7 @@ In dit artikel worden de volgende functies in de voor beeld-app behandeld:
 [!code-csharp[Main](~/samples-durable-functions/samples/precompiled/PhoneVerification.cs?range=17-70)]
 
 > [!NOTE]
-> Het is mogelijk niet altijd duidelijk, maar deze Orchestrator-functie is volledig deterministisch. Het is deterministisch omdat de `CurrentUtcDateTime` eigenschap wordt gebruikt om de verloop tijd van de timer te berekenen en retourneert dezelfde waarde bij elke herspeel op dit punt in de Orchestrator-code. Dit gedrag is belang rijk om ervoor te zorgen dat dezelfde `winner` resultaten van elke herhaalde aanroep naar `Task.WhenAny` .
+> Het is mogelijk niet altijd duidelijk, maar deze Orchestrator schendt de [deterministische Orchestration-beperking](durable-functions-code-constraints.md)niet. Het is deterministisch omdat de `CurrentUtcDateTime` eigenschap wordt gebruikt om de verloop tijd van de timer te berekenen en retourneert dezelfde waarde bij elke herspeel op dit punt in de Orchestrator-code. Dit gedrag is belang rijk om ervoor te zorgen dat dezelfde `winner` resultaten van elke herhaalde aanroep naar `Task.WhenAny` .
 
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
@@ -58,7 +58,20 @@ Hier volgt de code voor het implementeren van de functie:
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SmsPhoneVerification/index.js)]
 
 > [!NOTE]
-> Het is mogelijk niet altijd duidelijk, maar deze Orchestrator-functie is volledig deterministisch. Het is deterministisch omdat de `currentUtcDateTime` eigenschap wordt gebruikt om de verloop tijd van de timer te berekenen en retourneert dezelfde waarde bij elke herspeel op dit punt in de Orchestrator-code. Dit gedrag is belang rijk om ervoor te zorgen dat dezelfde `winner` resultaten van elke herhaalde aanroep naar `context.df.Task.any` .
+> Het is mogelijk niet altijd duidelijk, maar deze Orchestrator schendt de [deterministische Orchestration-beperking](durable-functions-code-constraints.md)niet. Het is deterministisch omdat de `currentUtcDateTime` eigenschap wordt gebruikt om de verloop tijd van de timer te berekenen en retourneert dezelfde waarde bij elke herspeel op dit punt in de Orchestrator-code. Dit gedrag is belang rijk om ervoor te zorgen dat dezelfde `winner` resultaten van elke herhaalde aanroep naar `context.df.Task.any` .
+
+# <a name="python"></a>[Python](#tab/python)
+
+De functie **E4_SmsPhoneVerification** maakt gebruik van de standaard *function.js* voor Orchestrator-functies.
+
+[!code-json[Main](~/samples-durable-functions-python/samples/human_interaction/E4_SmsPhoneVerification/function.json)]
+
+Hier volgt de code voor het implementeren van de functie:
+
+[!code-python[Main](~/samples-durable-functions-python/samples/human_interaction/E4_SmsPhoneVerification/\_\_init\_\_.py)]
+
+> [!NOTE]
+> Het is mogelijk niet altijd duidelijk, maar deze Orchestrator schendt de [deterministische Orchestration-beperking](durable-functions-code-constraints.md)niet. Het is deterministisch omdat de `currentUtcDateTime` eigenschap wordt gebruikt om de verloop tijd van de timer te berekenen en retourneert dezelfde waarde bij elke herspeel op dit punt in de Orchestrator-code. Dit gedrag is belang rijk om ervoor te zorgen dat dezelfde `winner` resultaten van elke herhaalde aanroep naar `context.df.Task.any` .
 
 ---
 
@@ -94,6 +107,16 @@ De *function.jsop* wordt als volgt gedefinieerd:
 En dit is de code waarmee de code van vier cijfers wordt gegenereerd en het SMS-bericht wordt verzonden:
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E4_SendSmsChallenge/index.js)]
+
+# <a name="python"></a>[Python](#tab/python)
+
+De *function.jsop* wordt als volgt gedefinieerd:
+
+[!code-json[Main](~/samples-durable-functions-python/samples/human_interaction/SendSMSChallenge/function.json)]
+
+En dit is de code waarmee de code van vier cijfers wordt gegenereerd en het SMS-bericht wordt verzonden:
+
+[!code-python[Main](~/samples-durable-functions-python/samples/human_interaction/SendSMSChallenge/\_\_init\_\_.py)]
 
 ---
 

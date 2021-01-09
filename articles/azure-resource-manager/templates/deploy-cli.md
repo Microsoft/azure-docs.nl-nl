@@ -3,12 +3,12 @@ title: Resources implementeren met Azure CLI en sjabloon
 description: Gebruik Azure Resource Manager en Azure CLI om resources te implementeren in Azure. De resources zijn gedefinieerd in een Resource Manager-sjabloon.
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: 7b1639f31b696f300177d05107a98effc3f3ae23
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: a2caea70a51a737bfa433a089c03b43f252b5d6e
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676197"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028145"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-cli"></a>Resources implementeren met ARM-sjablonen en Azure CLI
 
@@ -18,19 +18,19 @@ De implementatie-opdrachten zijn gewijzigd in azure CLI-versie 2.2.0. Voor de vo
 
 [!INCLUDE [sample-cli-install](../../../includes/sample-cli-install.md)]
 
-Als Azure CLI niet is geïnstalleerd, kunt u de Cloud Shell gebruiken. Zie [arm-sjablonen implementeren vanaf Cloud shell](deploy-cloud-shell.md)voor meer informatie.
+Als Azure CLI niet is geïnstalleerd, kunt u Azure Cloud Shell gebruiken. Zie [arm-sjablonen implementeren vanaf Azure Cloud shell](deploy-cloud-shell.md)voor meer informatie.
 
 ## <a name="deployment-scope"></a>Implementatie bereik
 
 U kunt uw implementatie richten op een resource groep, een abonnement, een beheer groep of een Tenant. Afhankelijk van het bereik van de implementatie, gebruikt u verschillende opdrachten.
 
-* Gebruik [AZ Deployment Group Create](/cli/azure/deployment/group#az-deployment-group-create)om te implementeren in een **resource groep** :
+* Gebruik [AZ Deployment Group Create](/cli/azure/deployment/group#az-deployment-group-create)om te implementeren in een **resource groep**:
 
   ```azurecli-interactive
   az deployment group create --resource-group <resource-group-name> --template-file <path-to-template>
   ```
 
-* Gebruik [AZ Deployment sub Create](/cli/azure/deployment/sub#az-deployment-sub-create)om te implementeren in een **abonnement** :
+* Gebruik [AZ Deployment sub Create](/cli/azure/deployment/sub#az-deployment-sub-create)om te implementeren in een **abonnement**:
 
   ```azurecli-interactive
   az deployment sub create --location <location> --template-file <path-to-template>
@@ -38,7 +38,7 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 
   Zie [resource groepen en-resources op abonnements niveau maken](deploy-to-subscription.md)voor meer informatie over implementaties op abonnements niveau.
 
-* Gebruik [AZ Deployment mg Create](/cli/azure/deployment/mg#az-deployment-mg-create)om te implementeren in een **beheer groep** :
+* Gebruik [AZ Deployment mg Create](/cli/azure/deployment/mg#az-deployment-mg-create)om te implementeren in een **beheer groep**:
 
   ```azurecli-interactive
   az deployment mg create --location <location> --template-file <path-to-template>
@@ -46,7 +46,7 @@ U kunt uw implementatie richten op een resource groep, een abonnement, een behee
 
   Zie [resources maken op het niveau van de beheer groep](deploy-to-management-group.md)voor meer informatie over implementaties op het niveau van beheer groepen.
 
-* Gebruik [AZ Deployment Tenant Create](/cli/azure/deployment/tenant#az-deployment-tenant-create)om te implementeren naar een **Tenant** :
+* Gebruik [AZ Deployment Tenant Create](/cli/azure/deployment/tenant#az-deployment-tenant-create)om te implementeren naar een **Tenant**:
 
   ```azurecli-interactive
   az deployment tenant create --location <location> --template-file <path-to-template>
@@ -169,7 +169,7 @@ Als u parameter waarden wilt door geven, kunt u inline-para meters of een parame
 
 ### <a name="inline-parameters"></a>Inline-para meters
 
-Geef de waarden op in om inline-para meters door te geven `parameters` . Als u bijvoorbeeld een teken reeks en een matrix wilt door geven aan een sjabloon, gebruikt u:
+Geef de waarden op in om inline-para meters door te geven `parameters` . Als u bijvoorbeeld een teken reeks en een matrix wilt door geven aan een sjabloon in een bash-shell, gebruikt u:
 
 ```azurecli-interactive
 az deployment group create \
@@ -191,7 +191,7 @@ az deployment group create \
 
 Het ophalen van een parameter waarde uit een bestand is handig wanneer u configuratie waarden moet opgeven. U kunt bijvoorbeeld [Cloud-init-waarden opgeven voor een virtuele Linux-machine](../../virtual-machines/linux/using-cloud-init.md).
 
-De arrayContent.jsin de indeling is:
+De _arrayContent.jsin_ de indeling is:
 
 ```json
 [
@@ -228,7 +228,7 @@ In plaats van parameters als inline waarden door te geven in uw script, is het w
 
 Zie [Een Resource Manager-parameterbestand maken](parameter-files.md) voor meer informatie over het parameterbestand.
 
-Als u een lokaal parameter bestand wilt door geven, gebruikt `@` u om een lokaal bestand met de naam storage.parameters.jsop te geven.
+Als u een lokaal parameter bestand wilt door geven, gebruikt `@` u om een lokaal bestand met de naam _storage.parameters.jsop_ te geven.
 
 ```azurecli-interactive
 az deployment group create \

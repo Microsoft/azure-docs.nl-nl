@@ -8,12 +8,12 @@ ms.topic: overview
 author: peterclu
 ms.author: peterlu
 ms.date: 08/24/2020
-ms.openlocfilehash: 018a0e3a244d1f0e36ce638d646ab05861c10e38
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: f59ed16f98a22f77b2e67ec2bf829f58dccef611
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94565905"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97740501"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>What is Azure Machine Learning-studio?
 
@@ -25,6 +25,11 @@ In dit artikel leert u het volgende:
 > - Informatie over het [beheren van assets en resources](#manage-assets-and-resources) in de studio.
 > - De verschillen tussen [Azure Machine Learning Studio en ML Studio (klassiek)](#ml-studio-classic-vs-azure-machine-learning-studio).
 
+U wordt aangeraden om de meest recente browser te gebruiken die compatibel is met het besturingssysteem. De volgende browsers worden ondersteund:
+  * Microsoft Edge (de nieuwe, meest recente versie van Microsoft Edge. Geen verouderde versie van Microsoft Edge)
+  * Safari (meest recente versie, alleen Mac)
+  * Chrome (meest recente versie)
+  * Firefox (meest recente versie)
 
 ## <a name="author-machine-learning-projects"></a>Machine learning-projecten ontwerpen
 
@@ -33,6 +38,8 @@ De studio biedt meerdere ontwerpfuncties, afhankelijk van het type project en de
 + **Notebooks**
 
   Uw eigen code schrijven en uitvoeren in beheerde [Jupyter Notebook-servers](how-to-run-jupyter-notebooks.md) die rechtstreeks zijn geïntegreerd in de studio. 
+
+:::image type="content" source="media/overview-what-is-azure-ml-studio/notebooks.gif" alt-text="Schermopname: code schrijven en uitvoeren in een notebook":::
 
 + **Azure Machine Learning-ontwerpprogramma**
 
@@ -94,6 +101,9 @@ De volgende tabel bevat een overzicht van enkele van de belangrijkste verschille
 | Gegevensdriftdetectie | Niet ondersteund | [Ondersteund](how-to-monitor-datasets.md) |
 | Projecten voor gegevenslabels | Niet ondersteund | [Ondersteund](how-to-create-labeling-projects.md) |
 
+## <a name="troubleshooting"></a>Problemen oplossen
+
+* **Ontbrekende items van de Studio-gebruikersinterface**. In Azure kan op rollen gebaseerd toegangsbeheer worden gebruikt om de acties te beperken die u kunt uitvoeren met Azure Machine Learning. Door deze beperkingen kan het gebeuren dat bepaalde items van de gebruikersinterface niet worden weergegeven in Azure Machine Learning Studio. Als aan u bijvoorbeeld een rol is toegewezen op basis waarvan u geen rekenproces kunt maken, wordt de optie voor het maken van rekenprocessen niet weergegeven in Studio. Zie [Gebruikers en rollen beheren](how-to-assign-roles.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

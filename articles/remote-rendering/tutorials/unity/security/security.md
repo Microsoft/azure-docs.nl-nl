@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 06/15/2020
 ms.topic: tutorial
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 200d23f390c9c22af90099e1e136c832287aa10d
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: d8a7bb620b7fcc9c878986d3575e22bb6f0f77bc
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207526"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724112"
 ---
 # <a name="tutorial-securing-azure-remote-rendering-and-model-storage"></a>Zelfstudie: Azure Remote Rendering en modelopslag beveiligen
 
@@ -255,6 +255,14 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
             get => azureRemoteRenderingAccountID.Trim();
             set => azureRemoteRenderingAccountID = value;
         }
+    
+        [SerializeField]
+        private string azureRemoteRenderingAccountAuthenticationDomain;
+        public string AzureRemoteRenderingAccountAuthenticationDomain
+        {
+            get => azureRemoteRenderingAccountAuthenticationDomain.Trim();
+            set => azureRemoteRenderingAccountAuthenticationDomain = value;
+        }
 
         public override event Action<string> AuthenticationInstructions;
 
@@ -262,7 +270,7 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
 
         string redirect_uri = "https://login.microsoftonline.com/common/oauth2/nativeclient";
 
-        string[] scopes => new string[] { "https://sts.mixedreality.azure.com/mixedreality.signin" };
+        string[] scopes => new string[] { "https://sts." + AzureRemoteRenderingAccountAuthenticationDomain + "/mixedreality.signin" };
 
         public void OnEnable()
         {
@@ -279,7 +287,7 @@ Aan de Azure-zijde is alles gereed. Nu moet u de code aanpassen om verbinding te
 
                 var AD_Token = result.AccessToken;
 
-                return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
+                return await Task.FromResult(new AzureFrontendAccountInfo(AzureRemoteRenderingAccountAuthenticationDomain, AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
             }
             else
             {
@@ -369,7 +377,7 @@ Het belangrijkste deel van deze klasse vanuit het perspectief van ARR is deze re
 return await Task.FromResult(new AzureFrontendAccountInfo(AccountDomain, AzureRemoteRenderingAccountID, "", AD_Token, ""));
 ```
 
-Hier maken we een nieuw **AzureFrontendAccountInfo**-object met behulp van het accountdomein, de account-id en het toegangstoken. Dit token wordt vervolgens gebruikt door de ARR-service om Remote Rendering-sessies op te vragen, te maken en samen te voegen zolang de gebruiker is geautoriseerd op basis van de op rollen gebaseerde machtigingen die eerder zijn geconfigureerd.
+Hier maken we een nieuw **AzureFrontendAccountInfo**-object met behulp van accountdomein, account-id, accountverificatiedomein, en toegangstoken. Dit token wordt vervolgens gebruikt door de ARR-service om Remote Rendering-sessies op te vragen, te maken en samen te voegen zolang de gebruiker is geautoriseerd op basis van de op rollen gebaseerde machtigingen die eerder zijn geconfigureerd.
 
 Na deze wijziging ziet de huidige status van de toepassing en de toegang tot uw Azure-resources er als volgt uit:
 
@@ -391,6 +399,7 @@ Als AAD-verificatie actief is, moet u zich telkens wanneer u de toepassing start
     * De **client-id van de Active Directory-toepassing** is de *toepassings-id (of client-id)* die te vinden is in de registratie van uw AAD-app (zie de onderstaande afbeelding).
     * De **Azure-tenant-id** is de *directory-id (tenant-id)* die te vinden is in de registratie van uw AAD-app (zie de onderstaande afbeelding).
     * De **account-id van Azure Remote Rendering** is de **account-id** die u hebt gebruikt voor **RemoteRenderingCoordinator**.
+    * **Accountverificatiedomein** is hetzelfde **Accountverificatiedomein** dat u hebt gebruikt in **RemoteRenderingCoordinator**.
 
     ![Schermopname waarin de Application (client) ID en Directory (tenant) ID zijn gemarkeerd.](./media/app-overview-data.png)
 

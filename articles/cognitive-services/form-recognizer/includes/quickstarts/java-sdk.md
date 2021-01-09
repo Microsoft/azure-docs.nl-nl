@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: d53863ccf71970cca3900707c844a2e5add050fa
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 6768f46f39920c975e7eccef72563fc0bb7e5180
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96356508"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808586"
 ---
 > [!IMPORTANT]
 > De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud.
@@ -58,7 +58,7 @@ Deze quickstart maakt gebruik van de Gradle-afhankelijkheidsmanager. U vindt de 
 
 Zorg ervoor dat u in het bestand *build.gradle.kts* de clientbibliotheek opneemt als een `implementation`-instructie, samen met de vereiste invoegtoepassen en instellingen.
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 ```kotlin
 plugins {
     java
@@ -74,6 +74,10 @@ dependencies {
     implementation(group = "com.azure", name = "azure-ai-formrecognizer", version = "3.0.0")
 }
 ```
+
+> [!NOTE]
+> De Form Recognizer 3.0.0 SDK weerspiegelt API-versie 2.0
+
 #### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
 ```kotlin
 plugins {
@@ -90,6 +94,10 @@ dependencies {
     implementation(group = "com.azure", name = "azure-ai-formrecognizer", version = "3.1.0-beta.1")
 }
 ```
+
+> [!NOTE]
+> De Form Recognizer 3.1.0 SDK weerspiegelt API-versie 2.1 (preview)
+
 ---
 
 ### <a name="create-a-java-file"></a>Een Java-bestand maken
@@ -120,15 +128,17 @@ Maak in de klasse **FormRecognizer** van de toepassing variabelen voor de sleute
 
 Voeg in de **hoofdmethode** van de toepassing aanroepen toe voor de methoden die in deze quickstart worden gebruikt. U definieert deze later. U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens.
 
-* Als u de SAS-URL voor de trainingsgegevens van uw aangepaste model wilt ophalen, opent u de Microsoft Azure Storage Explorer, klikt u met de rechtermuisknop op uw container en selecteert u **Handtekening voor gedeelde toegang ophalen**. Controleer of de machtigingen **Lezen** en **Lijst** zijn ingeschakeld en klik op **Maken**. Kopieer vervolgens de waarde in de sectie **URL**. Deze moet de notatie `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>` hebben.
+* [!INCLUDE [get SAS URL](../../includes/sas-instructions.md)]
+  
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
 * Als u een URL wilt ophalen van een formulier dat u wilt testen, kunt u de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in Blob Storage op te halen. U kunt ook de URL gebruiken van een document dat zich elders bevindt.
 * Gebruik de bovenstaande methode ook om de URL te verkrijgen van een kopie van een ontvangstbewijs.
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_mainvars)]
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_maincalls)]
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_mainvars)]
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_maincalls)]
@@ -165,14 +175,14 @@ Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `For
 
 Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de clientbibliotheek van Form Recognizer voor Java:
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 * [De client verifiëren](#authenticate-the-client)
 * [Formulierinhoud herkennen](#recognize-form-content)
 * [Ontvangstbewijzen herkennen](#recognize-receipts)
 * [Aangepast model trainen](#train-a-custom-model)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 * [De client verifiëren](#authenticate-the-client)
 * [Formulierinhoud herkennen](#recognize-form-content)
 * [Ontvangstbewijzen herkennen](#recognize-receipts)
@@ -259,11 +269,14 @@ Quantity: null, confidence: 0.927s]
 Total Price: null, confidence: 0.93
 ```
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
-
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
-
 ## <a name="recognize-business-cards"></a>Visitekaartjes herkennen
+
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 In deze sectie wordt beschreven hoe u veelvoorkomende velden in Engelse visitekaartjes kunt herkennen en extraheren, met behulp van een vooraf getraind model.
 
@@ -278,7 +291,16 @@ De geretourneerde waarde is een verzameling **RecognizedForm**-objecten: één v
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer-preview.java?name=snippet_bc_print)]
 
+---
+
 ## <a name="recognize-invoices"></a>Facturen herkennen
+
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 In deze sectie wordt beschreven hoe u veelvoorkomende velden in verkoopfacturen kunt herkennen en extraheren, met behulp van een vooraf getraind model.
 

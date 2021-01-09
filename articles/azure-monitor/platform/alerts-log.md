@@ -6,12 +6,12 @@ ms.author: yalavi
 ms.topic: conceptual
 ms.date: 07/29/2019
 ms.subservice: alerts
-ms.openlocfilehash: a8dbadd3af9dc21ced54af151e4de705f854e011
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 950482a96604165a8f1ff20cab9e3eafe1224c90
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97696066"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028995"
 ---
 # <a name="create-view-and-manage-log-alerts-using-azure-monitor"></a>Logboek waarschuwingen maken, weer geven en beheren met behulp van Azure Monitor
 
@@ -33,7 +33,7 @@ U kunt ook waarschuwings regels voor logboeken maken met behulp van Azure Resour
 
 Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor waarschuwingen:
 
-1. Ga naar de resource waarvoor u een waarschuwing wilt ontvangen.
+1. Ga naar de resource waarvoor u een waarschuwing wilt ontvangen. Overweeg waarschuwings regels in te stellen voor meerdere resources door waar mogelijk een abonnement of een resource groeps bereik te selecteren. Als u een waarschuwing voor meerdere resources maakt, vermindert u de kosten en hoeft u meerdere waarschuwings regels te beheren.
 1. Onder **monitor** selecteert u **Logboeken**.
 1. Voer een query uit op de logboekgegevens die het probleem kunnen aanduiden. U kunt het [onderwerp voor beelden van waarschuwings query's](../log-query/example-queries.md) gebruiken om te begrijpen wat u kunt detecteren of [aan de slag gaat met het schrijven van uw eigen query](../log-query/log-analytics-tutorial.md). U kunt ook [leren hoe u geoptimaliseerde waarschuwingsquery's maakt](alerts-log-query.md).
 1. Druk op de knop + nieuwe waarschuwings regel om de stroom voor het maken van waarschuwingen te starten.
@@ -155,7 +155,7 @@ Hier volgen de stappen om aan de slag te gaan met het schrijven van query's voor
     1. Kies zo nodig [waarschuwingen voor het splitsen per dimensie](alerts-unified-log.md#split-by-alert-dimensions): 
        - De **kolom Resource-id** wordt automatisch geselecteerd, indien gedetecteerd, en wijzigt de context van de geactiveerde waarschuwing in de resource van de record. 
        - De **resource-id-kolom** kan worden uitgeschakeld voor het activeren van waarschuwingen voor abonnementen of resource groepen. Het selecteren van de selectie is handig wanneer query resultaten zijn gebaseerd op cross-resources. Een query die controleert of 80% van de virtuele machines van de resource groep een hoog CPU-gebruik ondervindt, is bijvoorbeeld.
-       - Er kunnen Maxi maal zes extra splitsingen worden geselecteerd voor elk type getallen of tekst kolommen met behulp van de tabel dimensies.
+       - Er kunnen Maxi maal zes meer splitsingen worden geselecteerd voor elk type getallen of tekst kolommen met behulp van de tabel dimensies.
        - Waarschuwingen worden afzonderlijk gestart op basis van het splitsen van unieke combi Naties en payload van waarschuwingen bevat deze informatie.
     
         ![Aggregatie parameters selecteren en splitsen](media/alerts-log/select-aggregation-parameters-and-splitting.png)

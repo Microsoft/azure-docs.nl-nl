@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 1f3de29e5f046da56638876a35ca983792a4ce6c
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: d2e7935de23dcbdccfa6f4efa602dbab42931075
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319124"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673841"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-360-online"></a>Zelfstudie: Azure Active Directory-integratie met 360 Online
 
@@ -63,7 +63,7 @@ Als u de integratie van 360 Online in Azure Active Directory wilt configureren, 
 
 4. Typ in het zoekvak **360 Online**, selecteer **360 Online** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![360 Online in de lijst met resultaten](common/search-new-app.png)
+    ![360 Online in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -140,8 +140,8 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Voer in het veld **Naam** **Britta Simon**in.
-  
+    a. Voer in het veld **Naam** **Britta Simon** in.
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -165,7 +165,7 @@ In dit gedeelte stelt u Britta Simon in staat om gebruik te maken van eenmalige 
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -177,7 +177,7 @@ In dit gedeelte stelt u Britta Simon in staat om gebruik te maken van eenmalige 
 
 ### <a name="create-360-online-test-user"></a>360 Online testgebruiker maken
 
-In deze sectie gaat u in 360 Online een gebruiker maken met de naam Britta Simon. Werk met het  [360 Online-ondersteuningsteam](mailto:360online@software-innovation.com) om gebruikers toe te voegen in het platform 360 Online. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie gaat u in 360 Online een gebruiker maken met de naam Britta Simon. Werk met het [ondersteuningsteam van 360 Online](mailto:360online@software-innovation.com) om gebruikers toe te voegen in het platform 360 Online. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

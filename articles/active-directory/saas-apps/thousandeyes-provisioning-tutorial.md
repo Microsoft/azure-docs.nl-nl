@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: gebruikers inrichten voor ThousandEyes-Azure AD'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op ThousandEyes.
+title: 'Zelfstudie: Inrichting van gebruikers voor ThousandEyes - Azure AD'
+description: Ontdek hoe u Azure Active Directory configureert om gebruikersaccounts automatisch in te richten en de inrichting van gebruikersaccounts ongedaan te maken voor ThousandEyes.
 services: active-directory
 author: ArvindHarinder1
 manager: CelesteDG
@@ -10,88 +10,122 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/28/2019
 ms.author: arvinh
-ms.openlocfilehash: ff55528013ac89be48454c25e1fc86deac2bca6f
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 885ee993748a0a571f396cc0dc28f2c0c1a4a0c3
+ms.sourcegitcommit: 00aa5afaa9fac91f1059cfed3d8dbc954caaabe2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357229"
+ms.lasthandoff: 12/27/2020
+ms.locfileid: "97792514"
 ---
-# <a name="tutorial-configure-thousandeyes-for-automatic-user-provisioning"></a>Zelf studie: ThousandEyes configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-thousandeyes-for-automatic-user-provisioning"></a>Zelfstudie: ThousandEyes configureren voor automatische inrichting van gebruikers
 
-Het doel van deze zelf studie is om u te laten zien welke stappen u moet uitvoeren in ThousandEyes en Azure AD om gebruikers accounts van Azure AD automatisch in te richten en te deactiveren naar ThousandEyes. 
+Het doel van deze zelfstudie is om u te laten zien welke stappen u moet uitvoeren in ThousandEyes en Azure AD om automatisch gebruikersaccounts van Azure AD in te richten in ThousandEyes, of de inrichting van gebruikersaccounts ongedaan te maken. 
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over de volgende items:
 
-* Een Azure Active Directory-Tenant
-* Een ThousandEyes-Tenant met het [Standard-abonnement](https://www.thousandeyes.com/pricing) of beter ingeschakeld 
-* Een gebruikers account in ThousandEyes met beheerders machtigingen 
+* Een Azure Active Directory-tenant
+* Een ThousandEyes-tenant waarvoor het [Standard-plan](https://www.thousandeyes.com/pricing) of beter is ingeschakeld 
+* Een gebruikersaccount in ThousandEyes met beheerdersmachtigingen 
 
 > [!NOTE]
-> De integratie van Azure AD-inrichting is afhankelijk van de [THOUSANDEYES scim-API](https://success.thousandeyes.com/PublicArticlePage?articleIdParam=kA044000000CnWrCAK), die beschikbaar is voor ThousandEyes-teams in het Standard-abonnement of beter.
+> De integratie van Azure AD-inrichting is afhankelijk van de [ThousandEyes SCIM-API](https://success.thousandeyes.com/PublicArticlePage?articleIdParam=kA044000000CnWrCAK), die beschikbaar is voor ThousandEyes SCIM-teams met een Standard-abonnement of een beter abonnement.
 
 ## <a name="assigning-users-to-thousandeyes"></a>Gebruikers toewijzen aan ThousandEyes
 
-Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers accounts worden alleen de gebruikers en groepen die zijn toegewezen aan een toepassing in azure AD gesynchroniseerd. 
+Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikersaccounts worden alleen de gebruikers en groepen gesynchroniseerd die zijn 'toegewezen' aan een toepassing in Azure AD. 
 
-Voordat u de inrichtings service configureert en inschakelt, moet u bepalen welke gebruikers en/of groepen in azure AD de gebruikers vertegenwoordigen die toegang nodig hebben tot uw ThousandEyes-app. Nadat u hebt besloten, kunt u deze gebruikers toewijzen aan uw ThousandEyes-app door de volgende instructies te volgen:
+Voordat u de inrichtingsservice configureert en inschakelt, moet u bepalen welke gebruikers en/of groepen in Azure AD de gebruikers vertegenwoordigen die toegang nodig hebben tot uw ThousandEyes-app. Daarna kunt u deze gebruikers toewijzen aan de ThousandEyes-app door deze instructies te volgen:
 
 [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-### <a name="important-tips-for-assigning-users-to-thousandeyes"></a>Belang rijke tips voor het toewijzen van gebruikers aan ThousandEyes
+### <a name="important-tips-for-assigning-users-to-thousandeyes"></a>Belangrijke tips voor het toewijzen van gebruikers aan ThousandEyes
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan ThousandEyes om de inrichtings configuratie te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om eerst één Azure AD-gebruiker toe te wijzen aan ThousandEyes om de configuratie van de inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan ThousandEyes, moet u **de gebruikersrol** of een andere geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. De **standaard-Access** -rol werkt niet voor inrichten en deze gebruikers worden overgeslagen.
+* Als u een gebruiker aan ThousandEyes toewijst, moet u de **gebruikersrol** of een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. De rol **Standaardtoegang** werkt niet voor inrichting. Deze gebruikers worden overgeslagen.
 
-## <a name="configuring-user-provisioning-to-thousandeyes"></a>Gebruikers inrichten configureren voor ThousandEyes 
+## <a name="configuring-user-provisioning-to-thousandeyes"></a>Gebruikersinrichting configureren voor ThousandEyes 
 
-In deze sectie vindt u instructies voor het verbinden van uw Azure AD-ThousandEyes en het configureren van de inrichtings service om toegewezen gebruikers accounts in ThousandEyes te maken, bij te werken en uit te scha kelen op basis van de gebruikers-en groeps toewijzing in azure AD.
+In deze sectie wordt u begeleid bij het verbinden van de API voor het inrichten van uw Azure AD-gebruikersaccounts voor ThousandEyes en het configureren van de inrichtingsservice om toegewezen gebruikersaccounts in ThousandEyes te maken, bij te werken en uit te schakelen op basis van de gebruikers- en groepstoewijzing in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om op SAML gebaseerde enkelvoudige Sign-On voor ThousandEyes in te scha kelen, gevolgd door de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, maar deze twee functies gelden voor elkaar.
+> U kunt er ook voor kiezen om op SAML gebaseerde eenmalige aanmelding in te schakelen voor ThousandEyes, volgens de instructies in [Azure Portal](https://portal.azure.com). Eenmalige aanmelding kan onafhankelijk van automatische inrichting worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
 
-### <a name="configure-automatic-user-account-provisioning-to-thousandeyes-in-azure-ad"></a>Automatische toewijzing van gebruikers accounts configureren voor ThousandEyes in azure AD
+### <a name="configure-automatic-user-account-provisioning-to-thousandeyes-in-azure-ad"></a>Automatische inrichting van gebruikersaccounts in ThousandEyes configureren in Azure AD
 
-1. Blader in het [Azure Portal](https://portal.azure.com)naar het gedeelte **Azure Active Directory > Enter prise-apps > alle toepassingen**  .
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**.
 
-2. Als u ThousandEyes al hebt geconfigureerd voor eenmalige aanmelding, zoekt u naar uw instantie van ThousandEyes met behulp van het zoek veld. Als dat niet het geval is, selecteert u **toevoegen** en zoeken naar **ThousandEyes** in de toepassings galerie. Selecteer ThousandEyes in de zoek resultaten en voeg deze toe aan uw lijst met toepassingen.
+    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Selecteer uw exemplaar van ThousandEyes en selecteer vervolgens het tabblad **inrichten** .
+2. Als u ThousandEyes al hebt geconfigureerd voor eenmalige aanmelding, zoekt u met het zoekveld naar uw instantie van ThousandEyes. Selecteer anders **Toevoegen** en zoek in de galerie met toepassingen naar **ThousandEyes**. Selecteer ThousandEyes in de zoekresultaten en voeg de toepassing toe aan uw lijst met toepassingen.
+
+    ![De ThousandEyes-koppeling in de lijst met toepassingen](common/all-applications.png)
+    
+3. Selecteer uw exemplaar van ThousandEyes en selecteer vervolgens het tabblad **Inrichten**.
+
+    ![Tabblad Inrichting](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding toont het tabblad inrichten voor ThousandEyes met automatische selectie voor de inrichtings modus.](./media/thousandeyes-provisioning-tutorial/ThousandEyes1.png)
+![Schermopname met het tabblad Inrichten voor ThousandEyes met Automatisch geselecteerd voor de modus Inrichting.](./media/thousandeyes-provisioning-tutorial/ThousandEyes1.png)
+    
 
-5. Voer in het gedeelte **beheerders referenties**  het **OAuth Bearer-token** in dat is gegenereerd door het account van uw ThousandEyes (u kunt een token vinden en genereren onder uw ThousandEyes-account **profiel** sectie).
+5. Voer in de sectie **Beheerdersreferenties** het **OAuth Bearer-token** in dat is gegenereerd door uw ThousandEyes-account (u kunt een token vinden of genereren in de sectie **Profiel** van uw ThousandEyes-account).
 
-    ![Scherm afbeelding laat zien waar u de koppeling account instellingen voor de huidige account groep kunt vinden.](./media/thousandeyes-provisioning-tutorial/ThousandEyes2.png)
+    ![Schermopname waarin wordt getoond waar u de koppeling Accountinstellingen voor de huidige accountgroep kunt vinden.](./media/thousandeyes-provisioning-tutorial/ThousandEyes2.png)
 
-6. Klik in het Azure Portal op **verbinding testen** om ervoor te zorgen dat Azure AD verbinding kan maken met uw ThousandEyes-app. Als de verbinding mislukt, zorgt u ervoor dat uw ThousandEyes-account beheerders machtigingen heeft en voert u stap 5 opnieuw uit.
+6. Klik in Azure Portal op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met uw ThousandEyes-app. Als de verbinding mislukt, controleert u of het ThousandEyes-account beheerdersmachtigingen heeft. Herhaal vervolgens stap 5.
 
-7. Voer het e-mail adres in van een persoon of groep die in het veld met de **meldings-e-mail** inrichtings fout meldingen moet ontvangen en schakel het selectie vakje e-mail meldingen verzenden als er een fout optreedt.
+7. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en schakel het selectievakje **Een e-mailmelding verzenden als een fout optreedt** in.
+
+    ![E-mailadres voor meldingen](common/provisioning-notification-email.png)
 
 8. Klik op **Opslaan**.
 
-9. Selecteer in de sectie toewijzingen de optie **Azure Active Directory gebruikers synchroniseren met ThousandEyes**.
+9. Selecteer in de sectie Toewijzingen de optie **Azure Active Directory-gebruikers synchroniseren met ThousandEyes**.
 
-10. Controleer in de sectie **kenmerk toewijzingen** de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar ThousandEyes. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in ThousandEyes voor bijwerk bewerkingen. Selecteer de knop Opslaan om eventuele wijzigingen door te voeren.
+10. Controleer in de sectie **Kenmerktoewijzing** de gebruikerskenmerken die vanuit Azure AD worden gesynchroniseerd met ThousandEyes. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in Parsable te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes) te wijzigen, moet u ervoor zorgen dat de Parsable-API het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-11. Als u de Azure AD-inrichtings service voor ThousandEyes wilt inschakelen, wijzigt u de **inrichtings status** **in in het** gedeelte **instellingen**
+     |Kenmerk|Type|Ondersteund voor filteren|
+     |---|---|---|
+     |externalId|Tekenreeks|&check;|
+     |userName|Tekenreeks|&check;|
+     |actief|Booleaans|
+     |displayName|Tekenreeks|
+     |emails[type eq "work"].value|Tekenreeks|
+     |name.formatted|Tekenreeks|
 
-12. Klik op **Opslaan**.
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn toegewezen aan ThousandEyes in de sectie gebruikers en groepen. Het duurt langer voordat de initiële synchronisatie is uitgevoerd dan volgende synchronisaties, die ongeveer elke 40 minuten plaatsvinden, zolang de service wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen te volgen naar activiteiten logboeken voor inrichtingen, die alle acties beschrijven die door de inrichtings service worden uitgevoerd.
+11. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md).
 
-Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
+12. Wijzig in de sectie **Instellingen** de **Inrichtingsstatus** in **Aan** om de Azure AD-inrichtingsservice in te schakelen voor ThousandEyes.
+
+    ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
+
+13. Definieer de gebruikers en/of groepen die u wilt inrichten in ThousandEyes, door in de sectie **Instellingen** de gewenste waarden te kiezen bij **Bereik**.
+
+    ![Inrichtingsbereik](common/provisioning-scope.png)
+
+14. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
+
+    ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
+
+Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruikers en groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële cyclus duurt langer dan volgende cycli, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
+
+## <a name="step-6-monitor-your-deployment"></a>Stap 6. Uw implementatie bewaken
+Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:
+
+1. Gebruik de [inrichtingslogboeken](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
+2. Controleer de [voortgangsbalk](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
+3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status) voor meer informatie over quarantainestatussen.  
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [Gebruikersaccountinrichting voor zakelijke apps beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Gebruikersaccountinrichting voor zakelijke apps beheren](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)
+* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../manage-apps/check-status-user-account-provisioning.md)

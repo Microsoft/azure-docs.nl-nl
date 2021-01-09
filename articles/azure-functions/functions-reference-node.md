@@ -5,12 +5,12 @@ ms.assetid: 45dedd78-3ff9-411f-bb4b-16d29a11384c
 ms.topic: conceptual
 ms.date: 11/17/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: bf6ebd01a18a0ebf0ab5dd7d7ac3aa34256b4696
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 0b32efe3738dedbe8178889b3e9008964d485b00
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936801"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034914"
 ---
 # <a name="azure-functions-javascript-developer-guide"></a>Ontwikkelaarshandleiding voor Azure Functions Javascript
 
@@ -20,7 +20,7 @@ Als Express.js, Node.js of Java script-ontwikkelaar, als u geen ervaring hebt me
 
 | Aan de slag | Concepten| Begeleide training |
 | -- | -- | -- | 
-| <ul><li>[Node.js functie met Visual Studio code](./create-first-function-vs-code-node.md)</li><li>[Node.js functie met Terminal/opdracht prompt](./create-first-function-cli-java.md)</li></ul> | <ul><li>[Ontwikkelaarsgids](functions-reference.md)</li><li>[Hostingopties](functions-scale.md)</li><li>[Type script-functies](#typescript)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li></ul> | <ul><li>[Serverloze toepassingen maken](/learn/paths/create-serverless-applications/)</li><li>[Refactorion-Node.js en Express-Api's naar Serverloze Api's](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
+| <ul><li>[Node.js functie met Visual Studio code](./create-first-function-vs-code-node.md)</li><li>[Node.js functie met Terminal/opdracht prompt](./create-first-function-cli-node.md)</li></ul> | <ul><li>[Ontwikkelaarsgids](functions-reference.md)</li><li>[Hostingopties](functions-scale.md)</li><li>[Type script-functies](#typescript)</li><li>[Prestatie &nbsp; overwegingen](functions-best-practices.md)</li></ul> | <ul><li>[Serverloze toepassingen maken](/learn/paths/create-serverless-applications/)</li><li>[Refactorion-Node.js en Express-Api's naar Serverloze Api's](/learn/modules/shift-nodejs-express-apis-serverless/)</li></ul> |
 
 ## <a name="javascript-function-basics"></a>Basis beginselen van Java script-functies
 

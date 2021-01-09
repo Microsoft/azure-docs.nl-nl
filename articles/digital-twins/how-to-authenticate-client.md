@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/7/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: bf7b829d70af27850affe619d47ed4a4f5ec1bea
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 2502fdd14acae206b8440fe602639aa49be55f4e
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93279914"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045917"
 ---
 # <a name="write-client-app-authentication-code"></a>Verificatie code voor client-app schrijven
 
@@ -53,10 +53,7 @@ Voeg eerst het SDK-pakket `Azure.DigitalTwins.Core` en het `Azure.Identity` pakk
 
 U moet ook de volgende using-instructies toevoegen aan de project code:
 
-```csharp
-using Azure.Identity;
-using Azure.DigitalTwins.Core;
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/authentication.cs" id="Azure_Digital_Twins_dependencies":::
 
 Voeg vervolgens code toe om referenties te verkrijgen met een van de methoden in `Azure.Identity` .
 
@@ -68,23 +65,7 @@ Als u de standaard Azure-referenties wilt gebruiken, hebt u de URL van het Azure
 
 Hier volgt een code voorbeeld om een `DefaultAzureCredential` aan het project toe te voegen:
 
-```csharp
-// The URL of your instance, starting with the protocol (https://)
-private static string adtInstanceUrl = "https://<your-Azure-Digital-Twins-instance-URL>";
-
-//...
-
-DigitalTwinsClient client;
-try
-{
-    var credential = new DefaultAzureCredential();
-    client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
-} catch(Exception e)
-{
-    Console.WriteLine($"Authentication or client creation error: {e.Message}");
-    Environment.Exit(0);
-}
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/authentication.cs" id="DefaultAzureCredential_full":::
 
 #### <a name="set-up-local-azure-credentials"></a>Lokale Azure-referenties instellen
 
@@ -100,45 +81,20 @@ Als u de standaard Azure-referenties wilt gebruiken, hebt u de URL van het Azure
 
 In een Azure-functie kunt u de referenties van de beheerde identiteit als volgt gebruiken:
 
-```csharp
-ManagedIdentityCredential cred = new ManagedIdentityCredential(adtAppId);
-DigitalTwinsClientOptions opts = 
-    new DigitalTwinsClientOptions { Transport = new HttpClientTransport(httpClient) });
-client = new DigitalTwinsClient(new Uri(adtInstanceUrl), cred, opts);
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/authentication.cs" id="ManagedIdentityCredential":::
 
 ### <a name="interactivebrowsercredential-method"></a>Methode InteractiveBrowserCredential
 
 De methode [InteractiveBrowserCredential](/dotnet/api/azure.identity.interactivebrowsercredential?preserve-view=true&view=azure-dotnet) is bedoeld voor interactieve toepassingen en brengt een webbrowser voor verificatie. U kunt dit in plaats van gebruiken `DefaultAzureCredential` in gevallen waarin u interactieve verificatie nodig hebt.
 
 Als u de interactieve browser referenties wilt gebruiken, hebt u een **app-registratie** nodig die machtigingen heeft voor de Azure Digital Apparaatdubbels-api's. Zie [*How to: Create a app Registration*](how-to-create-app-registration.md)(Engelstalig) voor de stappen voor het instellen van deze app-registratie. Zodra de app-registratie is ingesteld, hebt u nodig...
-* de *toepassings-id* van de app-registratie (client) ( [te vinden instructies](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
-* de *Directory-id (Tenant)* van de app-registratie ( [te vinden instructies](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
+* de *toepassings-id* van de app-registratie (client) ([te vinden instructies](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
+* de *Directory-id (Tenant)* van de app-registratie ([te vinden instructies](how-to-create-app-registration.md#collect-client-id-and-tenant-id))
 * de URL van het Azure Digital Apparaatdubbels-exemplaar ([instructies om te vinden](how-to-set-up-instance-portal.md#verify-success-and-collect-important-values))
 
 Hier volgt een voor beeld van de code voor het maken van een geverifieerde SDK-client met `InteractiveBrowserCredential` .
 
-```csharp
-// Your client / app registration ID
-private static string clientId = "<your-client-ID>"; 
-// Your tenant / directory ID
-private static string tenantId = "<your-tenant-ID>";
-// The URL of your instance, starting with the protocol (https://)
-private static string adtInstanceUrl = "https://<your-Azure-Digital-Twins-instance-URL>";
-
-//...
-
-DigitalTwinsClient client;
-try
-{
-    var credential = new InteractiveBrowserCredential(tenantId, clientId);
-    client = new DigitalTwinsClient(new Uri(adtInstanceUrl), credential);
-} catch(Exception e)
-{
-    Console.WriteLine($"Authentication or client creation error: {e.Message}");
-    Environment.Exit(0);
-}
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/authentication.cs" id="InteractiveBrowserCredential":::
 
 >[!NOTE]
 > Hoewel u de client-ID, Tenant-ID en instantie-URL rechtstreeks in de code kunt plaatsen zoals hierboven wordt weer gegeven, is het een goed idee om uw code deze waarden te laten ophalen uit een configuratie bestand of omgevings variabele.

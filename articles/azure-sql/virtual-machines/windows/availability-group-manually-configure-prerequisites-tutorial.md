@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 03/29/2018
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 1a9a2f9d999a51f2b4600e8379d4a8913675b338
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 33233e8a6aa54e65094e0cc6130e804241d7201c
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360013"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044285"
 ---
 # <a name="tutorial-prerequisites-for-creating-availability-groups-on-sql-server-on-azure-virtual-machines"></a>Zelf studie: vereisten voor het maken van beschikbaarheids groepen op SQL Server op Azure Virtual Machines
 
@@ -96,7 +96,7 @@ Het virtuele netwerk maken in de Azure Portal:
    | **Subnetadresbereik** |10.33.0.0/29 |
    | **Abonnement** |Geef het abonnement op dat u wilt gebruiken. Het **abonnement** is leeg als u slechts één abonnement hebt. |
    | **Resourcegroep** |Kies **bestaande gebruiken** en kies de naam van de resource groep. |
-   | **location**: |De Azure-locatie opgeven. |
+   | **Locatie** |De Azure-locatie opgeven. |
 
    De adres ruimte en het adres bereik van het subnet kunnen afwijken van de tabel. Afhankelijk van uw abonnement stelt de portal een beschik bare adres ruimte en een bijbehorend adres bereik voor het subnet voor. Als er onvoldoende adres ruimte beschikbaar is, gebruikt u een ander abonnement.
 
@@ -141,7 +141,7 @@ De volgende tabel geeft een overzicht van de netwerk configuratie-instellingen:
 | **Subnetadresbereik** |Deze waarde is afhankelijk van de beschik bare adresbereiken in uw abonnement. Een typische waarde is 10.0.1.0/24. |
 | **Abonnement** |Geef het abonnement op dat u wilt gebruiken. |
 | **Resourcegroep** |**SQL-HA-RG** |
-| **location**: |Geef dezelfde locatie op die u hebt gekozen voor de resource groep. |
+| **Locatie** |Geef dezelfde locatie op die u hebt gekozen voor de resource groep. |
 
 ## <a name="create-availability-sets"></a>Beschikbaarheidssets maken
 
@@ -193,7 +193,7 @@ De volgende tabel bevat de instellingen voor deze twee computers:
 | **Wachtwoord** |Contoso! 0000 |
 | **Abonnement** |*Uw abonnement* |
 | **Resourcegroep** |SQL-HA-RG |
-| **location**: |*Uw locatie* |
+| **Locatie** |*Uw locatie* |
 | **Grootte** |DS1_V2 |
 | **Storage** | **Beheerde schijven gebruiken**  -  **Ja** |
 | **Virtueel netwerk** |autoHAVNET |
@@ -337,7 +337,7 @@ In de volgende stappen configureert u de Active Directory accounts. De volgende 
 
 | |Installatie account<br/> |sqlserver-0 <br/>SQL Server-en SQL Agent-service account |sqlserver-1<br/>SQL Server-en SQL Agent-service account
 | --- | --- | --- | ---
-|**Voornaam** |Installeren |SQLSvc1 | SQLSvc2
+|**Voor naam** |Installeren |SQLSvc1 | SQLSvc2
 |**SamAccountName van gebruiker** |Installeren |SQLSvc1 | SQLSvc2
 
 Gebruik de volgende stappen om elk account te maken.
@@ -539,7 +539,7 @@ Herhaal de stappen op de andere SQL Server VM.
 
 ### <a name="tuning-failover-cluster-network-thresholds"></a>Drempel waarden voor failover cluster-netwerken afstemmen
 
-Bij het uitvoeren van Windows-Failoverclusterknooppunten in azure-Vm's met SQL Server AlwaysOn, wordt het wijzigen van de cluster instelling in een meer beperkte bewakings status aanbevolen.  Hierdoor is het cluster veel stabieler en betrouwbaarder.  Zie voor meer informatie [IaaS met SQL AlwaysOn-failover cluster network drempels](/windows-server/troubleshoot/iaas-sql-failover-cluster).
+Wanneer u Windows-Failoverclusterknooppunten uitvoert in azure Vm's met SQL Server-beschikbaarheids groepen, wijzigt u de cluster instelling in een meer beperkte bewakings status.  Hierdoor is het cluster veel stabieler en betrouwbaarder.  Zie voor meer informatie [IaaS met de drempel waarden voor het SQL Server-failover cluster netwerk](/windows-server/troubleshoot/iaas-sql-failover-cluster).
 
 
 ## <a name="configure-the-firewall-on-each-sql-server-vm"></a><a name="endpoint-firewall"></a> De firewall op elke SQL Server VM configureren

@@ -6,12 +6,12 @@ ms.date: 04/23/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: fc1401959adb97f8c4caf6d413a212d9f3b62801
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: e669e27547633639a88674ffee499fb1d84facdf
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588111"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673950"
 ---
 # <a name="tutorial-create-multiple-resource-instances-with-arm-templates"></a>Zelfstudie: Meerdere resource-instanties maken met ARM-sjablonen
 
@@ -27,6 +27,8 @@ Deze zelfstudie bestaat uit de volgende taken:
 > * De sjabloon implementeren
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+
+Raadpleeg [Complexe cloudimplementaties beheren met behulp van geavanceerde functies voor ARM-sjablonen](/learn/modules/manage-deployments-advanced-arm-template-features/) voor een Microsoft Learn-module over het kopiëren van resources.
 
 ## <a name="prerequisites"></a>Vereisten
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/02/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 3225fff1c82822dee990804f934ada86068841e8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 22600f6519a44e71ae5c4b59b0165401b54e55fd
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011251"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964538"
 ---
 # <a name="tutorial-coding-with-the-azure-digital-twins-apis"></a>Zelfstudie: Coderen met de Azure Digital Twins-API's
 
@@ -57,9 +57,9 @@ Hiermee maakt u een aantal bestanden in uw map, met daarin de naam *Program.cs* 
 
 Houd het opdrachtvenster geopend, omdat u het in de zelfstudie blijft gebruiken.
 
-Vervolgens voegt u **twee afhankelijkheden toe aan uw project** die nodig zijn om te werken met Azure Digital Twins. U kunt de onderstaande links gebruiken om naar de pakketten op NuGet te navigeren, waar u de consoleopdrachten (inclusief voor .NET CLI) kunt vinden om de meest recente versie van elk aan uw project toe te voegen.
-* [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Dit is het pakket voor de [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). 
-* [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Deze bibliotheek biedt hulpprogramma's voor de verificatie bij Azure.
+Vervolgens voegt u **twee afhankelijkheden toe aan uw project** die nodig zijn om te werken met Azure Digital Twins. U kunt de onderstaande koppelingen gebruiken om naar de pakketten op NuGet te navigeren. Hier vindt u de consoleopdrachten (inclusief voor .NET CLI) om elk pakket aan uw project toe te voegen.
+* [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Dit is het pakket voor de [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). Voeg de nieuwste versie toe.
+* [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Deze bibliotheek biedt hulpprogramma's voor de verificatie bij Azure. Voeg versie 1.2.2 toe.
 
 ## <a name="get-started-with-project-code"></a>Aan de slag met projectcode
 
@@ -271,7 +271,7 @@ Voer in het opdrachtvenster de programma uit met `dotnet run`. Zoek in de uitvoe
 
 Voer vervolgens het programma opnieuw uit. 
 
-U ziet dat er geen fout wordt gegenereerd wanneer de tweelingen de tweede keer worden gemaakt, zelfs als de tweeling al bestaan na de eerste uitvoering. In tegenstelling tot het maken van een model, is het maken van tweelingen op het REST-niveau een *PUT*-aanroep met *upsert*-semantiek. Dit betekent dat als er al een tweeling bestaat, er door een poging om dezelfde tweeling nog een keer te maken, de oorspronkelijke tweeling gewoon wordt vervangen. Er wordt geen fout gegenereerd.
+U ziet dat er geen fout wordt gegenereerd wanneer de tweelingen de tweede keer worden gemaakt, zelfs als tweeling al bestaan na de eerste uitvoering. In tegenstelling tot het maken van een model, is het maken van tweelingen op het REST-niveau een *PUT*-aanroep met *upsert*-semantiek. Dit betekent dat als er al een tweeling bestaat, er door een poging om dezelfde tweeling nog een keer te maken, de oorspronkelijke tweeling gewoon wordt vervangen. Er wordt geen fout gegenereerd.
 
 ### <a name="create-relationships"></a>Relaties maken
 

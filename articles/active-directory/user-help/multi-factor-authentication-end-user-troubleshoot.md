@@ -13,12 +13,12 @@ ms.date: 09/01/2020
 ms.author: curtand
 ms.reviewer: kexia
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: caa2c66d66cce09f5b5b0fe0948ab924389d756e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 0cb5e3463eda5d77bbbdefe223954105fd125c71
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033779"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033979"
 ---
 # <a name="common-problems-with-two-factor-verification-and-your-work-or-school-account"></a>Veelvoorkomende problemen met verificatie in twee stappen en uw werk- of schoolaccount
 
@@ -74,7 +74,7 @@ Het ontvangen van uw verificatie code is een veelvoorkomend probleem. Het proble
 
 Probeer dit eens | Informatie over begeleiding
 --------- | ------------
-De micro soft Authenticator-app of verificatie codes gebruiken | U krijgt onze limiet voor de verificatie aanroepen, of u hebt de limiet bereikt voor de tekst verificatie codes, fout berichten tijdens het aanmelden. <br/><br/>Micro soft kan in korte tijd herhaalde verificatie pogingen beperken die door dezelfde gebruiker worden uitgevoerd. Deze beperking is niet van toepassing op de Microsoft Authenticator of de verificatie code. Als u deze limieten hebt bereikt, kunt u de verificator-app gebruiken, verificatie code of het aanmelden over een paar minuten opnieuw proberen.
+De micro soft Authenticator-app of verificatie codes gebruiken | U krijgt onze limiet voor de verificatie aanroepen, of u hebt de limiet bereikt voor de tekst verificatie codes, fout berichten tijdens het aanmelden. <br/><br/>Micro soft kan in korte tijd herhaalde verificatie pogingen beperken die door dezelfde gebruiker worden uitgevoerd. Deze beperking is niet van toepassing op de Microsoft Authenticator of de verificatie code. Als u deze limieten hebt bereikt, kunt u de verificator-app gebruiken, verificatie code of het aanmelden over een paar minuten opnieuw proberen. <br/><br/> U krijgt problemen met het verifiëren van uw account tijdens het aanmelden, het fout bericht wordt niet weer gegeven. <br/><br/> Micro soft mag spraak-of SMS-verificatie pogingen die door dezelfde gebruiker, hetzelfde telefoon nummer of dezelfde organisatie worden uitgevoerd, beperken of blok keren als gevolg van een groot aantal mislukte spraak-of SMS-verificatie pogingen. Als u dit probleem ondervindt, kunt u een andere methode proberen, zoals de verificator-app of verificatie code, of contact met uw beheerder maken voor ondersteuning.
 Uw mobiele apparaat opnieuw opstarten | Soms moet uw apparaat gewoon worden vernieuwd. Wanneer u uw apparaat opnieuw opstart, worden alle achtergrond processen en-services beëindigd. Bij het opnieuw opstarten worden ook de kern onderdelen van het apparaat afgesloten. Elke service of elk onderdeel wordt vernieuwd wanneer u het apparaat opnieuw opstart.
 Controleer of uw beveiligings gegevens juist zijn | Zorg ervoor dat de gegevens van de beveiligings verificatie methode nauw keurig zijn, met name uw telefoon nummers. Als u het verkeerde telefoon nummer plaatst, wordt al uw waarschuwingen naar een onjuist nummer gegaan. Gelukkig kan deze gebruiker niets doen met de waarschuwingen, maar ook niet om u aan te melden bij uw account. Zie de instructies in het artikel [uw twee ledige verificatie methode-instellingen beheren](multi-factor-authentication-end-user-manage-settings.md) om ervoor te zorgen dat uw gegevens correct zijn.
 Controleren of uw meldingen zijn ingeschakeld | Controleer of er meldingen zijn ingeschakeld op het mobiele apparaat. Zorg ervoor dat de volgende meldings modi zijn toegestaan: <br/><br/> &bull; Telefoon gesprekken <br/> &bull; Uw verificatie-app <br/> &bull; Uw app voor tekst berichten <br/><br/> Zorg ervoor dat deze modi een waarschuwing maken die _zichtbaar_ is op het apparaat.

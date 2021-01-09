@@ -10,19 +10,17 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: f22213bf192b12e046bab12346e5d5d83fb36b96
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: baaf907d2fafe23805e6b49582ecc7592ee05e0b
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94364272"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028230"
 ---
 # <a name="translator-v2-to-v3-migration"></a>Migratie van Translator v2 naar v3
 
 > [!NOTE]
-> V2 is op 30 april 2018 afgeschaft. Migreer uw toepassingen naar v3 om te kunnen profiteren van de nieuwe functionaliteit die alleen beschikbaar is in v3.
-> 
-> De micro soft Translator-hub wordt ingetrokken op 17 mei 2019. [Belang rijke migratie-informatie en-datums weer geven](https://www.microsoft.com/translator/business/hub/).  
+> V2 is op 30 april 2018 afgeschaft. Migreer uw toepassingen naar v3 om te kunnen profiteren van de nieuwe functionaliteit die alleen beschikbaar is in v3. V2 zal worden ingetrokken op 24 mei 2021. 
 
 Het micro soft Translator-team heeft versie 3 (v3) van het conversie programma uitgebracht. Deze release bevat nieuwe functies, afgeschafte methoden en een nieuwe indeling voor het verzenden van en het ontvangen van gegevens van de micro soft Translator-service. Dit document bevat informatie over het wijzigen van toepassingen voor het gebruik van v3. 
 

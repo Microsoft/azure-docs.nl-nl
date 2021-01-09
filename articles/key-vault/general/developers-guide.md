@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 895b8441f340d085932cade513c9f8929491b374
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: b7980bfc58ed696a74d3da259e23fb7e428621a9
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904258"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028910"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Gids voor Azure Key Vault-ontwikkelaars
 
@@ -41,7 +41,7 @@ Toegang tot de Management-laag wordt beheerd door op [rollen gebaseerd toegangs 
 
 | Azure CLI | PowerShell | REST-API | Resource Manager | .NET | Python | Java | Javascript |  
 |--|--|--|--|--|--|--|--|
-|[Verwijzing](/cli/azure/keyvault)<br>[Snelstartgids](quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault)<br>[Snelstartgids](quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/)|[Verwijzing](/azure/templates/microsoft.keyvault/vaults)|[Verwijzing](/dotnet/api/microsoft.azure.management.keyvault)|[Verwijzing](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)|[Verwijzing](/java/api/com.microsoft.azure.management.keyvault)|[Verwijzing](/javascript/api/@azure/arm-keyvault)|
+|[Verwijzing](/cli/azure/keyvault)<br>[Snelstartgids](quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault)<br>[Snelstartgids](quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/)|[Verwijzing](/azure/templates/microsoft.keyvault/vaults)|[Verwijzing](/dotnet/api/microsoft.azure.management.keyvault)<br>[Snelstartgids](https://docs.microsoft.com/azure/key-vault/general/vault-create-template)|[Verwijzing](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)|[Verwijzing](/java/api/com.microsoft.azure.management.keyvault)|[Verwijzing](/javascript/api/@azure/arm-keyvault)|
 
 Zie [client bibliotheken](client-libraries.md) voor installatie pakketten en bron code.
 
@@ -68,9 +68,13 @@ De bovenstaande verificaties scenario's worden ondersteund door de **Azure Ident
 Voor meer informatie over Azure Identity client libarary raadpleegt u:
 
 ### <a name="azure-identity-client-libraries"></a>Azure Identity client-bibliotheken
+
 | .NET | Python | Java | Javascript |
 |--|--|--|--|
 |[Azure Identity SDK .NET](/dotnet/api/overview/azure/identity-readme)|[Azure Identity SDK python](/python/api/overview/azure/identity-readme)|[Azure Identity SDK java](/java/api/overview/azure/identity-readme)|[Azure Identity SDK java script](/javascript/api/overview/azure/identity-readme)|     
+
+>[!Note]
+> De [bibliotheek voor app-verificatie](https://docs.microsoft.com/dotnet/api/overview/azure/service-to-service-authentication) die is aanbevolen voor Key Vault .NET SDK-versie 3, die momenteel depracated is. Volg de [AppAuthentication naar Azure. richt lijnen voor identiteits migratie](https://docs.microsoft.com/dotnet/api/overview/azure/app-auth-migration) om naar Key Vault .NET SDK versie 4 te migreren.
 
 Voor zelf studies over het verifiëren van Key Vault in toepassingen raadpleegt u:
 - [Verifiëren bij Key Vault in de toepassing die in de virtuele machine wordt gehost in .NET](./tutorial-net-virtual-machine.md)
@@ -86,14 +90,14 @@ Toegang tot sleutels, geheimen en certificaten wordt bepaald door het gegevens v
 
 | Azure CLI | PowerShell | REST-API | Resource Manager | .NET | Python | Java | Javascript |  
 |--|--|--|--|--|--|--|--|
-|[Verwijzing](/cli/azure/keyvault/key)<br>[Snelstartgids](../keys/quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault/)<br>[Snelstartgids](../keys/quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/#key-operations)|N.v.t.|[Verwijzing](/dotnet/api/azure.security.keyvault.keys)|[Verwijzing](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Snelstartgids](../keys/quick-create-python.md)|[Verwijzing](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)|[Verwijzing](/javascript/api/@azure/keyvault-keys/)|
+|[Verwijzing](/cli/azure/keyvault/key)<br>[Snelstartgids](../keys/quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault/)<br>[Snelstartgids](../keys/quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/#key-operations)|[Verwijzing](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/keys)<br>[Snelstartgids](../keys/quick-create-template.md)|[Verwijzing](/dotnet/api/azure.security.keyvault.keys)<br>[Snelstartgids](../keys/quick-create-net.md)|[Verwijzing](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Snelstartgids](../keys/quick-create-python.md)|[Verwijzing](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)<br>[Snelstartgids](../keys/quick-create-java.md)|[Verwijzing](/javascript/api/@azure/keyvault-keys/)<br>[Snelstartgids](../keys/quick-create-node.md)|
 
 **Certificaten Api's en Sdk's**
 
 
 | Azure CLI | PowerShell | REST-API | Resource Manager | .NET | Python | Java | Javascript |  
 |--|--|--|--|--|--|--|--|
-|[Verwijzing](/cli/azure/keyvault/certificate)<br>[Snelstartgids](../certificates/quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault)<br>[Snelstartgids](../certificates/quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/#certificate-operations)|N.v.t.|[Verwijzing](/dotnet/api/azure.security.keyvault.certificates)|[Verwijzing](/python/api/overview/azure/keyvault-certificates-readme)<br>[Snelstartgids](../certificates/quick-create-python.md)|[Verwijzing](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)|[Verwijzing](/javascript/api/@azure/keyvault-certificates/)|
+|[Verwijzing](/cli/azure/keyvault/certificate)<br>[Snelstartgids](../certificates/quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault)<br>[Snelstartgids](../certificates/quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/#certificate-operations)|N.v.t.|[Verwijzing](/dotnet/api/azure.security.keyvault.certificates)<br>[Snelstartgids](../certificates/quick-create-net.md)|[Verwijzing](/python/api/overview/azure/keyvault-certificates-readme)<br>[Snelstartgids](../certificates/quick-create-python.md)|[Verwijzing](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-certificates/4.1.0/index.html)<br>[Snelstartgids](../certificates/quick-create-java.md)|[Verwijzing](/javascript/api/@azure/keyvault-certificates/)<br>[Snelstartgids](../certificates/quick-create-node.md)|
 
 **Secrets-Api's en Sdk's**
 

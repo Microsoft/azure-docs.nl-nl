@@ -3,15 +3,15 @@ title: Overzicht van Durable Functions - Azure
 description: Inleiding tot de extensie Durable Functions voor Azure Functions.
 author: cgillum
 ms.topic: overview
-ms.date: 03/12/2020
+ms.date: 12/23/2020
 ms.author: cgillum
 ms.reviewer: azfuncdf
-ms.openlocfilehash: 28c494bf2867ec5d2d3ee99ef7ee45f8181cfd90
-ms.sourcegitcommit: 5d7f8c57eaae91f7d9cf1f4da059006521ed4f9f
+ms.openlocfilehash: 2079a3a7c9ce6817186e743bb09d31facdecf0e7
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/10/2020
-ms.locfileid: "89669249"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97931718"
 ---
 # <a name="what-are-durable-functions"></a>Wat is Durable Functions?
 
@@ -23,9 +23,11 @@ Durable Functions ondersteunt momenteel de volgende talen:
 
 * **C#**: zowel [vooraf gecompileerde klassebibliotheken](../functions-dotnet-class-library.md) als [C#-script](../functions-reference-csharp.md).
 * **JavaScript**: alleen ondersteund voor versie 2.x van de Azure Functions-runtime. Versie 1.7.0 of hoger van de Durable Functions-extensie vereist. 
-* **Python**: versie 1.8.5 of hoger van de Durable Functions-extensie vereist. Ondersteuning voor Durable Functions is momenteel beschikbaar als openbare preview.
+* **Python**: vereist versie 2.3.1 of hoger van de Durable Functions-extensie. Ondersteuning voor Durable Functions is momenteel beschikbaar als openbare preview.
 * **F#**: vooraf gecompileerde klassebibliotheken en F#-script. F#-script wordt alleen ondersteund voor versie 1.x van de Azure Functions-runtime.
 * **PowerShell**: ondersteuning voor Durable Functions is momenteel beschikbaar als openbare preview. Wordt alleen ondersteund voor versie 3.x van de Azure Functions-runtime en PowerShell 7. Versie 2.2.2 of hoger van de Durable Functions-extensie vereist. Alleen de volgende patronen worden momenteel ondersteund: [Functiekoppeling](#chaining), [uit-/inwaaieren](#fan-in-out) [asynchrone HTTP-API's](#async-http).
+
+Voor toegang tot de nieuwste functies en updates wordt aanbevolen om de nieuwste versies van de Durable Functions-extensie en de taalspecifieke Durable Functions-bibliotheken te gebruiken. Meer informatie over [versies van Durable Functions](durable-functions-versions.md).
 
 Durable Functions heeft als doel alle [Azure Functions-talen](../supported-languages.md) te ondersteunen. Zie [Durable Functions issues list](https://github.com/Azure/azure-functions-durable-extension/issues) voor de laatste voortgangsstatus van de ondersteuning voor meer talen.
 
@@ -696,7 +698,7 @@ Om betrouwbare en langdurige uitvoeringsgaranties te bieden, beschikken orchestr
 
 ## <a name="billing"></a>Billing
 
-Durable Functions worden op dezelfde manier in rekening gebracht als Azure Functions. Zie [Prijzen voor Azure Functions](https://azure.microsoft.com/pricing/details/functions/) voor meer informatie. Wanneer u orchestrator-functies in het [Verbruiksabonnement](../functions-scale.md#consumption-plan) van Azure Functions uitvoert, dient u op enkele factureringseigenschappen te letten. Zie het artikel [Durable Functions-facturering](durable-functions-billing.md) voor meer informatie hierover.
+Durable Functions worden op dezelfde manier in rekening gebracht als Azure Functions. Zie [Prijzen voor Azure Functions](https://azure.microsoft.com/pricing/details/functions/) voor meer informatie. Wanneer u orchestrator-functies in het [Verbruiksabonnement](../consumption-plan.md) van Azure Functions uitvoert, dient u op enkele factureringseigenschappen te letten. Zie het artikel [Durable Functions-facturering](durable-functions-billing.md) voor meer informatie hierover.
 
 ## <a name="jump-right-in"></a>Duik er meteen in
 

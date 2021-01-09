@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 707c69efddeda364f0c62e9719ae1a6073dfe9ad
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 993cd614f150866817e8d71dbd9dca9be606465f
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935730"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035152"
 ---
 # <a name="azure-security-baseline-for-azure-functions"></a>Azure-beveiligings basislijn voor Azure Functions
 
@@ -56,16 +56,16 @@ Als u netwerk beveiligings groepen (Nsg's) met uw Azure Functions-implementatie 
 
 ### <a name="13-protect-critical-web-applications"></a>1,3: essentiële webtoepassingen beveiligen
 
-**Richt lijnen**: als u uw Azure function-eind punten in productie volledig wilt beveiligen, kunt u overwegen om een van de volgende functie-beveiligings opties op app-niveau te implementeren:
+**Hulp**: als u uw Azure functions-eind punten in productie volledig wilt beveiligen, kunt u overwegen om een van de volgende functie-beveiligings opties op app-niveau te implementeren:
 - Schakel App Service verificatie/autorisatie in voor uw functie-app,
 - Azure API Management (APIM) gebruiken om aanvragen te verifiëren, of
 - Implementeer uw functie-app in een Azure App Service Environment.
 
-Zorg er bovendien voor dat externe fout opsporing is uitgeschakeld voor uw productie Azure Functions. Daarnaast mogen door middel van cross-Origin Resource Sharing (CORS) niet alle domeinen toegang hebben tot uw Azure-functie-app. Stel alleen vereiste domeinen in staat te communiceren met uw Azure-functie-app.
+Zorg er bovendien voor dat externe fout opsporing is uitgeschakeld voor uw productie Azure Functions. Daarnaast mogen door middel van cross-Origin Resource Sharing (CORS) niet alle domeinen toegang hebben tot uw functie-app in Azure. Sta toe dat alleen de vereiste domeinen kunnen communiceren met uw functie-app.
 
 Overweeg om Azure Web Application firewall (WAF) te implementeren als onderdeel van de netwerk configuratie voor extra inspectie van binnenkomend verkeer. Schakel de diagnostische instelling voor WAF-en opname Logboeken in een opslag account, Event hub of Log Analytics werk ruimte in. 
 
-- [Azure function-eind punten in productie beveiligen](./functions-bindings-http-webhook-trigger.md?tabs=csharp#secure-an-http-endpoint-in-production)
+- [Azure Functions-eind punten in de productie omgeving beveiligen](./functions-bindings-http-webhook-trigger.md?tabs=csharp#secure-an-http-endpoint-in-production)
 
 - [Azure WAF implementeren](../web-application-firewall/ag/create-waf-policy-ag.md)
 
@@ -76,7 +76,7 @@ Overweeg om Azure Web Application firewall (WAF) te implementeren als onderdeel 
 ### <a name="14-deny-communications-with-known-malicious-ip-addresses"></a>1,4: communicatie met bekende schadelijke IP-adressen weigeren
 
 **Hulp**: Schakel DDoS Protection standaard in op de virtuele netwerken die zijn gekoppeld aan uw functions-apps om te beschermen tegen DDoS-aanvallen. Gebruik Azure Security Center geïntegreerde bedreigings informatie om communicatie met bekende of ongebruikte open bare IP-adressen te weigeren.
-Daarnaast kunt u een front-end-gateway, zoals Azure Web Application firewall, configureren om alle inkomende aanvragen te verifiëren en schadelijk verkeer te filteren. Met de firewall van Azure Web Application kunt u uw Azure-functie-apps beveiligen door inkomend webverkeer te inspecteren om SQL-injecties, cross-site scripting, uploads van malware en DDoS-aanvallen te blok keren. De introductie van een WAF vereist een App Service Environment of het gebruik van privé-eind punten (preview-versie). Zorg ervoor dat privé-eind punten niet meer in (preview) zijn voordat u ze gebruikt met productie werkbelastingen.
+Daarnaast kunt u een front-end-gateway, zoals Azure Web Application firewall, configureren om alle inkomende aanvragen te verifiëren en schadelijk verkeer te filteren. Met de firewall van Azure Web Application kunt u uw functie-app beveiligen door inkomend webverkeer te controleren om SQL-injecties, cross-site scripting, uploads van malware en DDoS-aanvallen te blok keren. De introductie van een WAF vereist een App Service Environment of het gebruik van privé-eind punten (preview-versie). Zorg ervoor dat privé-eind punten niet meer in (preview) zijn voordat u ze gebruikt met productie werkbelastingen.
 
 - [Netwerkopties van Azure Functions](./functions-networking-options.md)
 
@@ -175,9 +175,9 @@ Het is ook mogelijk dat er meerdere Marketplace-opties zijn, zoals de Barracuda 
 ### <a name="19-maintain-standard-security-configurations-for-network-devices"></a>1,9: standaard beveiligings configuraties voor netwerk apparaten onderhouden
 
 **Hulp**: Definieer en implementeer standaard beveiligings configuraties voor netwerk instellingen met betrekking tot uw Azure functions. Gebruik Azure Policy aliassen in de naam ruimten ' micro soft. Web ' en ' micro soft. Network ' om aangepaste beleids regels te maken om de netwerk configuratie van uw Azure Functions te controleren of af te dwingen. U kunt ook gebruik maken van ingebouwde beleids definities voor Azure Functions, zoals:
-- Gebruik van CORS mag er niet toe leiden dat elke resource toegang heeft tot uw Function-apps
-- Functie-app mag alleen toegankelijk zijn via HTTPS
-- De nieuwste TLS-versie moet worden gebruikt in uw functie-app
+- CORS mag niet elke resource toestaan om toegang te krijgen tot uw functie-apps
+- De functie-app mag alleen toegankelijk zijn via HTTPS
+- De laatste TLS-versie moet worden gebruikt in uw functie-app
 
 U kunt ook Azure-blauw drukken gebruiken om grootschalige Azure-implementaties te vereenvoudigen door sleutel omgevings artefacten, zoals Azure Resource Manager sjablonen, Toegangs beheer op basis van rollen (Azure RBAC) en beleids regels in één blauw definitie te verpakken. U kunt de blauw druk eenvoudig Toep assen op nieuwe abonnementen, omgevingen en het beheer en de verwerkings mogelijkheden van versies.
 
@@ -233,7 +233,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 Azure Functions biedt ook ingebouwde integratie met Azure-toepassing inzichten om functies te bewaken. Application Insights verzamelt logboek-, prestatie-en fout gegevens. Het detecteert automatisch prestatie afwijkingen en bevat krachtige analyse hulpprogramma's waarmee u problemen kunt vaststellen en inzicht krijgt in de manier waarop uw functies worden gebruikt.
 
-Als u in uw Azure function-app ingebouwde beveiligings-en controle logboek registratie hebt, schakelt u de diagnostische instelling ' FunctionAppLogs ' in en verzendt u de logboeken naar een Log Analytics-werk ruimte, Azure Event Hub of Azure Storage-account voor archivering. 
+Als u in uw functie-app ingebouwde beveiligings-en controle logboek registratie hebt, schakelt u de diagnostische instelling ' FunctionAppLogs ' in en verzendt u de logboeken naar een Log Analytics-werk ruimte, een Azure Event Hub of een Azure-opslag account voor archivering. 
 
 Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden. 
 
@@ -253,7 +253,7 @@ Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van 
 
 **Richt lijnen**: voor het bijhouden van de controle op vliegtuig controles, schakelt u Diagnostische instellingen voor Azure-activiteiten logboek in en verzendt u de logboeken naar een log Analytics-werk ruimte, Azure Event hub of Azure Storage-account voor archivering. Met Azure-activiteiten logboek gegevens kunt u de ' What, wie en wanneer ' bepalen voor schrijf bewerkingen (PUT, POST, DELETE) die zijn uitgevoerd op het niveau van het controle vlak voor uw Azure-resources.
 
-Als u in uw Azure function-app ingebouwde beveiligings-en controle logboek registratie hebt, schakelt u de diagnostische instelling ' FunctionAppLogs ' in en verzendt u de logboeken naar een Log Analytics-werk ruimte, Azure Event Hub of Azure Storage-account voor archivering. 
+Als u in uw functie-app ingebouwde beveiligings-en controle logboek registratie hebt, schakelt u de diagnostische instelling ' FunctionAppLogs ' in en verzendt u de logboeken naar een Log Analytics-werk ruimte, een Azure Event Hub of een Azure-opslag account voor archivering. 
 
 - [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../azure-monitor/platform/activity-log.md)
 
@@ -273,7 +273,7 @@ Als u in uw Azure function-app ingebouwde beveiligings-en controle logboek regis
 
 ### <a name="25-configure-security-log-storage-retention"></a>2,5: Bewaar beveiliging van het beveiligings logboek configureren
 
-**Richt lijnen**: stel in azure monitor de Bewaar periode voor logboek registratie In voor log Analytics werk ruimten die zijn gekoppeld aan uw Azure functions-apps volgens de nalevings voorschriften van uw organisatie.
+**Richt lijnen**: in azure monitor stelt u de Bewaar periode voor het logboek In voor log Analytics werk ruimten die zijn gekoppeld aan uw functie-apps volgens de nalevings voorschriften van uw organisatie.
 
 - [Para meters voor het bewaren van Logboeken instellen](../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period)
 
@@ -283,11 +283,11 @@ Als u in uw Azure function-app ingebouwde beveiligings-en controle logboek regis
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
 
-**Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in, evenals de diagnostische instellingen voor uw Azure functions-app en verzend de logboeken naar een log Analytics-werk ruimte. Query's uitvoeren in Log Analytics om termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de verzamelde gegevens.
+**Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en de diagnostische instellingen voor uw functie-app en verzend de logboeken naar een log Analytics-werk ruimte. Query's uitvoeren in Log Analytics om termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de verzamelde gegevens.
 
-Schakel Application Insights in voor uw Azure Functions-apps om logboek-, prestatie-en fout gegevens te verzamelen. U kunt de telemetriegegevens weer geven die zijn verzameld door Application Insights binnen het Azure Portal.
+Schakel Application Insights in voor uw functie-apps voor het verzamelen van logboek-, prestatie-en fout gegevens. U kunt de telemetriegegevens weer geven die zijn verzameld door Application Insights binnen het Azure Portal.
 
-Als u in uw Azure function-app ingebouwde beveiligings-en controle logboek registratie hebt, schakelt u de diagnostische instelling ' FunctionAppLogs ' in en verzendt u de logboeken naar een Log Analytics-werk ruimte, Azure Event Hub of Azure Storage-account voor archivering. 
+Als u in uw functie-app ingebouwde beveiligings-en controle logboek registratie hebt, schakelt u de diagnostische instelling ' FunctionAppLogs ' in en verzendt u de logboeken naar een Log Analytics-werk ruimte, een Azure Event Hub of een Azure-opslag account voor archivering. 
 
 Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden. 
 
@@ -305,9 +305,9 @@ Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van 
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteit
 
-**Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in, evenals de diagnostische instellingen voor uw Azure functions-app en verzend de logboeken naar een log Analytics-werk ruimte. Query's uitvoeren in Log Analytics om termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de verzamelde gegevens. U kunt waarschuwingen maken op basis van uw Log Analytics werkruimte query's.
+**Hulp**: Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en de diagnostische instellingen voor uw functie-app en verzend de logboeken naar een log Analytics-werk ruimte. Query's uitvoeren in Log Analytics om termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de verzamelde gegevens. U kunt waarschuwingen maken op basis van uw Log Analytics werkruimte query's.
 
-Schakel Application Insights in voor uw Azure Functions-apps om logboek-, prestatie-en fout gegevens te verzamelen. U kunt de telemetriegegevens weer geven die zijn verzameld door Application Insights en waarschuwingen maken binnen de Azure Portal.
+Schakel Application Insights in voor uw functie-apps voor het verzamelen van logboek-, prestatie-en fout gegevens. U kunt de telemetriegegevens weer geven die zijn verzameld door Application Insights en waarschuwingen maken binnen de Azure Portal.
 
 Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van derden. 
 
@@ -327,7 +327,7 @@ Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van 
 
 ### <a name="28-centralize-anti-malware-logging"></a>2,8: registratie van anti-malware centraliseren
 
-**Richt lijnen**: niet van toepassing; Azure Functions-apps kunnen geen anti-malware-gerelateerde logboeken verwerken of maken.
+**Richt lijnen**: niet van toepassing; functie-apps verwerken geen aan anti-malware gerelateerde logboeken en maken deze niet.
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -335,7 +335,7 @@ Optioneel kunt u gegevens in-en inschakelen voor Azure Sentinel of een SIEM van 
 
 ### <a name="29-enable-dns-query-logging"></a>2,9: DNS-query logboek registratie inschakelen
 
-**Richt lijnen**: niet van toepassing; Azure Functions-apps verwerken geen door de gebruiker toegankelijke logboeken die betrekking hebben op DNS.
+**Richt lijnen**: niet van toepassing; functie-apps verwerken geen door de gebruiker toegankelijke, aan DNS gerelateerde Logboeken.
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -399,7 +399,7 @@ Om u te helpen bij het bijhouden van specifieke beheerders accounts, kunt u ook 
 
 ### <a name="34-use-single-sign-on-sso-with-azure-active-directory"></a>3,4: eenmalige aanmelding (SSO) met Azure Active Directory gebruiken
 
-**Richt lijnen**: gebruik waar mogelijk Azure Active Directory-SSO in plaats van afzonderlijke zelfstandige referenties voor gegevens toegang tot uw functie-app te configureren. Gebruik Azure Security Center aanbevelingen voor identiteits-en toegangs beheer. Implementeer eenmalige aanmelding voor uw Azure Functions-apps met behulp van de functie voor App Service verificatie/autorisatie.
+**Richt lijnen**: gebruik waar mogelijk Azure Active Directory-SSO in plaats van afzonderlijke zelfstandige referenties voor gegevens toegang tot uw functie-app te configureren. Gebruik Azure Security Center aanbevelingen voor identiteits-en toegangs beheer. Implementeer eenmalige aanmelding voor uw functie-apps met behulp van de functie voor App Service verificatie/autorisatie.
 
 - [Meer informatie over verificatie en autorisatie in Azure Functions](../app-service/overview-authentication-authorization.md#identity-providers)
 
@@ -459,9 +459,9 @@ Daarnaast kunt u met Azure AD-risico detectie waarschuwingen en rapporten bekijk
 
 ### <a name="39-use-azure-active-directory"></a>3,9: Azure Active Directory gebruiken
 
-**Hulp**: gebruik Azure Active Directory (AD) als centraal verificatie-en autorisatie systeem voor uw Azure functions-apps. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties.
+**Hulp**: gebruik Azure Active Directory (AD) als centrale verificatie-en autorisatie systeem voor uw functie-apps. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties.
 
-- [Uw Azure Functions-app configureren voor het gebruik van Azure AD-aanmelding](../app-service/configure-authentication-provider-aad.md)
+- [De functie-app configureren voor het gebruik van Azure AD-aanmelding](../app-service/configure-authentication-provider-aad.md)
 
 - [Een Azure AD-instantie maken en configureren](../active-directory/fundamentals/active-directory-access-create-new-tenant.md)
 
@@ -483,13 +483,13 @@ Daarnaast kunt u met Azure AD-risico detectie waarschuwingen en rapporten bekijk
 
 ### <a name="311-monitor-attempts-to-access-deactivated-accounts"></a>3,11: controle pogingen om toegang te krijgen tot gedeactiveerde accounts
 
-**Hulp**: gebruik Azure Active Directory (AD) als centraal verificatie-en autorisatie systeem voor uw Azure function-apps. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties.
+**Hulp**: gebruik Azure Active Directory (AD) als centrale verificatie-en autorisatie systeem voor uw functie-apps. Azure AD beveiligt gegevens door gebruik te maken van sterke versleuteling voor gegevens in rust en onderweg. Azure AD bevat ook zouten, hashes en veilige gebruikers referenties.
 
 U hebt toegang tot de Azure AD-aanmeldings activiteit, de controle-en risico gebeurtenis logboek bronnen, waarmee u kunt integreren met Azure Sentinel of een SIEM van derden.
 
 U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. U kunt de gewenste logboek waarschuwingen configureren in Log Analytics.
 
-- [Uw Azure Functions-app configureren voor het gebruik van Azure AD-aanmelding](../app-service/configure-authentication-provider-aad.md)
+- [De functie-app configureren voor het gebruik van Azure AD-aanmelding](../app-service/configure-authentication-provider-aad.md)
 
 - [Azure-activiteitenlogboeken integreren in Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
@@ -501,7 +501,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van accounts
 
-**Hulp**: gebruik Azure Active Directory (AD) als centraal verificatie-en autorisatie systeem voor uw Azure functions-apps. Voor de afwijking van het gedrag van de account aanmelding op het besturings vlak (de Azure Portal), gebruikt u de functies Azure Active Directory (AD) identiteits beveiliging en risico detectie om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
+**Hulp**: gebruik Azure Active Directory (AD) als centrale verificatie-en autorisatie systeem voor uw functie-apps. Voor de afwijking van het gedrag van de account aanmelding op het besturings vlak (de Azure Portal), gebruikt u de functies Azure Active Directory (AD) identiteits beveiliging en risico detectie om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. U kunt ook gegevens opnemen in azure Sentinel voor verder onderzoek.
 
 - [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
@@ -539,9 +539,9 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 ### <a name="42-isolate-systems-storing-or-processing-sensitive-information"></a>4,2: systemen isoleren die gevoelige informatie opslaan of verwerken
 
-**Richt lijnen**: afzonderlijke abonnementen en/of beheer groepen implementeren voor ontwikkeling, testen en productie. Azure function-apps moeten worden gescheiden door de/subnet van het virtuele netwerk (VNet) en moeten op de juiste wijze worden gelabeld.
+**Richt lijnen**: afzonderlijke abonnementen en/of beheer groepen implementeren voor ontwikkeling, testen en productie. functie-apps moeten worden gescheiden door de/subnet van het virtuele netwerk (VNet) en moeten op de juiste wijze worden gelabeld.
 
-U kunt ook privé-eind punten gebruiken om netwerk isolatie uit te voeren. Een persoonlijk Azure-eind punt is een netwerk interface waarmee u privé en veilig kunt verbinden met een service (bijvoorbeeld: Azure Functions HTTPs-eind punt van de app) met een persoonlijke Azure-koppeling. Private Endpoint maakt gebruik van een privé-IP-adres van uw VNet, waarbij de service effectief in uw VNet wordt geplaatst. Persoonlijke eind punten zijn in (preview) voor functie-apps die worden uitgevoerd in het Premium-abonnement. Zorg ervoor dat privé-eind punten niet meer in (preview) zijn voordat u ze gebruikt met productie werkbelastingen.
+U kunt ook privé-eind punten gebruiken om netwerk isolatie uit te voeren. Een persoonlijk Azure-eind punt is een netwerk interface waarmee u privé en veilig kunt verbinden met een service (bijvoorbeeld: functie-app HTTPs-eind punt) met een persoonlijke Azure-koppeling. Private Endpoint maakt gebruik van een privé-IP-adres van uw VNet, waarbij de service effectief in uw VNet wordt geplaatst. Persoonlijke eind punten zijn in (preview) voor functie-apps die worden uitgevoerd in het Premium-abonnement. Zorg ervoor dat privé-eind punten niet meer in (preview) zijn voordat u ze gebruikt met productie werkbelastingen.
 
 - [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
@@ -575,7 +575,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure Functions en heef
 
 ### <a name="44-encrypt-all-sensitive-information-in-transit"></a>4,4: alle gevoelige gegevens in de overdracht versleutelen
 
-**Richt lijnen**: Schakel In de Azure portal voor uw Azure function-apps onder ' platform functies: netwerken: SSL ' de instelling ' alleen https ' in en stel de minimale TLS-versie in op 1,2.
+**Richt lijnen**: Schakel In de Azure portal voor uw functie-apps onder ' platform functies: netwerken: SSL ' de instelling ' alleen https ' in en stel de minimale TLS-versie in op 1,2.
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -595,7 +595,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 ### <a name="46-use-azure-rbac-to-control-access-to-resources"></a>4,6: Azure RBAC gebruiken om de toegang tot resources te beheren
 
-**Richt lijnen**: gebruik Azure op rollen gebaseerd toegangs beheer (Azure RBAC) voor het beheren van de toegang tot het Azure function Control-vlak (het Azure Portal). 
+**Richt lijnen**: gebruik Azure RBAC (op rollen gebaseerd toegangs beheer) om de toegang tot het besturings element voor de functie-app (de Azure Portal) te beheren. 
 
 - [Azure RBAC configureren](../role-based-access-control/role-assignments-portal.md)
 
@@ -629,7 +629,7 @@ Micro soft beheert de onderliggende infra structuur voor Azure Functions en heef
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 
-**Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer er wijzigingen worden aangebracht in de productie-apps van Azure en op andere kritieke of verwante resources.
+**Hulp**: gebruik Azure monitor met het Azure-activiteiten logboek om waarschuwingen te maken voor wanneer wijzigingen worden aangebracht in productie functie-apps, evenals andere kritieke of verwante resources.
 
 - [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
 
@@ -643,9 +643,9 @@ Micro soft beheert de onderliggende infra structuur voor Azure Functions en heef
 
 ### <a name="51-run-automated-vulnerability-scanning-tools"></a>5,1: automatische hulpprogram ma's voor het scannen van beveiligings problemen uitvoeren
 
-**Richt lijnen**: Stel een DevSecOps-praktijk in om ervoor te zorgen dat uw Azure functions-toepassingen veilig zijn en zo veilig mogelijk blijven, gedurende de loop tijd van hun levens cyclus. DevSecOps maakt gebruik van het beveiligings team van uw organisatie en hun mogelijkheden in uw DevOps-procedures om de verantwoordelijkheid van iedereen op het team te beveiligen.
+**Richt lijnen**: Stel een DevSecOps-praktijk in om ervoor te zorgen dat uw functie-apps veilig zijn en zo veilig mogelijk blijven gedurende de levens cyclus. DevSecOps maakt gebruik van het beveiligings team van uw organisatie en hun mogelijkheden in uw DevOps-procedures om de verantwoordelijkheid van iedereen op het team te beveiligen.
 
-Volg daarnaast aanbevelingen van Azure Security Center om uw Azure function-apps te beveiligen.
+Volg daarnaast de aanbevelingen van Azure Security Center om uw functie-apps te beveiligen.
 
 - [Continue beveiligings validatie toevoegen aan uw CI/CD-pijp lijn](/azure/devops/migrate/security-validation-cicd-pipeline?view=azure-devops)
 
@@ -821,9 +821,9 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen h
 
 ### <a name="613-physically-or-logically-segregate-high-risk-applications"></a>6,13: toepassingen met een hoog risico fysiek of logisch scheiden
 
-**Richt lijnen**: voor Azure function-apps met een gevoelige of hoge risico kunt u afzonderlijke abonnementen en/of beheer groepen implementeren om isolatie te bieden.
+**Richt lijnen**: voor functie-apps met gevoelige of hoog risico kunt u afzonderlijke abonnementen en/of beheer groepen implementeren om isolatie te bieden.
 
-Implementeer Azure function-apps met een hoog risico in hun eigen Virtual Network (VNet). De beveiliging van de verbinding in Azure Functions wordt bereikt via VNets. Functies die worden uitgevoerd in het Premium-abonnement of App Service Environment (ASE) kunnen worden geïntegreerd met VNets. Kies de beste architectuur voor uw use-case.
+Implementeer functie-apps met een hoog risico in hun eigen Virtual Network (VNet). De beveiliging van de verbinding voor functie-apps wordt bereikt via VNets. Functies die worden uitgevoerd in het Premium-abonnement of App Service Environment (ASE) kunnen worden geïntegreerd met VNets. Kies de beste architectuur voor uw use-case.
 
 - [Netwerkopties van Azure Functions](./functions-networking-options.md)
 
@@ -849,10 +849,10 @@ Een interne ASE maken:
 
 ### <a name="71-establish-secure-configurations-for-all-azure-resources"></a>7,1: veilige configuraties instellen voor alle Azure-resources
 
-**Richt lijnen**: standaard beveiligings configuraties voor uw Azure function-app definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. Web ' om aangepaste beleids regels te maken om de configuratie van uw Azure Functions apps te controleren of af te dwingen. U kunt ook gebruik maken van ingebouwde beleids definities zoals:
-- Er moet een beheerde identiteit worden gebruikt in uw Function-app
-- Externe foutopsporing moet worden uitgeschakeld voor Function-apps
-- Functie-app mag alleen toegankelijk zijn via HTTPS
+**Richt lijnen**: standaard beveiligings configuraties voor uw functie-app definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. Web ' om aangepaste beleids regels te maken om de configuratie van uw functie-apps te controleren of af te dwingen. U kunt ook gebruik maken van ingebouwde beleids definities zoals:
+- Er moet een beheerde identiteit worden gebruikt in uw functie-app
+- Fout opsporing op afstand moet worden uitgeschakeld voor functie-apps
+- De functie-app mag alleen toegankelijk zijn via HTTPS
 
 - [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
 
@@ -972,7 +972,7 @@ Een interne ASE maken:
 
 ### <a name="712-manage-identities-securely-and-automatically"></a>7,12: identiteiten veilig en automatisch beheren
 
-**Richt lijnen**: gebruik beheerde identiteiten om uw Azure-functie-app te voorzien van een automatisch beheerde identiteit in azure AD. Met beheerde identiteiten kunt u zich verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie, met inbegrip van Key Vault, zonder enige referenties in uw code.
+**Richt lijnen**: gebruik beheerde identiteiten om uw functie-app te voorzien van een automatisch beheerde identiteit in azure AD. Met beheerde identiteiten kunt u zich verifiëren bij elke service die ondersteuning biedt voor Azure AD-verificatie, met inbegrip van Key Vault, zonder enige referenties in uw code.
 
 - [Beheerde identiteiten gebruiken voor App Service en Azure Functions](../app-service/overview-managed-identity.md)
 

@@ -5,16 +5,16 @@ author: cgillum
 ms.topic: conceptual
 ms.date: 11/29/2019
 ms.author: azfuncdf
-ms.openlocfilehash: b117fca23b26919f3c404dd32ba64c0c89d66ae7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8223b1273c2a487e15e3c10d7c6852a119e4cdc
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87033561"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028247"
 ---
 # <a name="function-chaining-in-durable-functions---hello-sequence-sample"></a>Functie koppeling in Durable Functions-Hello-reeks voorbeeld
 
-Functie koppeling heeft betrekking op het patroon van het uitvoeren van een reeks functies in een bepaalde volg orde. Vaak moet de uitvoer van de ene functie worden toegepast op de invoer van een andere functie. In dit artikel wordt de keten volgorde beschreven die u maakt wanneer u de Durable Functions Quick Start ([C#](durable-functions-create-first-csharp.md) of [Java script](quickstart-js-vscode.md)) voltooit. Zie [Durable functions Overview](durable-functions-overview.md)voor meer informatie over Durable functions.
+Functie koppeling heeft betrekking op het patroon van het uitvoeren van een reeks functies in een bepaalde volg orde. Vaak moet de uitvoer van de ene functie worden toegepast op de invoer van een andere functie. In dit artikel wordt de keten volgorde beschreven die u maakt wanneer u de Durable functions Quick Start ([C#](durable-functions-create-first-csharp.md),  [Java script](quickstart-js-vscode.md)of [python](quickstart-python-vscode.md)) hebt voltooid. Zie [Durable functions Overview](durable-functions-overview.md)voor meer informatie over Durable functions.
 
 [!INCLUDE [durable-functions-prerequisites](../../../includes/durable-functions-prerequisites.md)]
 
@@ -24,7 +24,7 @@ In dit artikel worden de volgende functies in de voor beeld-app uitgelegd:
 
 * `E1_HelloSequence`: Een [Orchestrator-functie](durable-functions-bindings.md#orchestration-trigger) die `E1_SayHello` meerdere keren in een reeks aanroept. De uitvoer van de `E1_SayHello` aanroepen wordt opgeslagen en de resultaten worden vastgelegd.
 * `E1_SayHello`: Een [activiteit functie](durable-functions-bindings.md#activity-trigger) die een teken reeks samenvoegt met ' Hello '.
-* `HttpStart`: Een door HTTP geactiveerde functie waarmee een exemplaar van de Orchestrator wordt gestart.
+* `HttpStart`: Een door HTTP geactiveerde [duurzame client](durable-functions-bindings.md#orchestration-client) functie waarmee een exemplaar van de Orchestrator wordt gestart.
 
 ### <a name="e1_hellosequence-orchestrator-function"></a>E1_HelloSequence Orchestrator-functie
 
@@ -39,7 +39,7 @@ De code roept `E1_SayHello` drie keer op met verschillende parameter waarden. De
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 > [!NOTE]
-> Java script-Durable Functions zijn alleen beschikbaar voor de functies 2,0 runtime.
+> Java script-Durable Functions zijn alleen beschikbaar voor de functies 3,0 runtime.
 
 #### <a name="functionjson"></a>function.json
 
@@ -54,17 +54,47 @@ De belang rijke ding is het `orchestrationTrigger` bindings type. Alle Orchestra
 
 #### <a name="indexjs"></a>index.js
 
-Dit is de functie:
+Dit is de Orchestrator-functie:
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_HelloSequence/index.js)]
 
-Alle Java script-Orchestration-functies moeten de [ `durable-functions` module](https://www.npmjs.com/package/durable-functions)bevatten. Het is een bibliotheek waarmee u Durable Functions kunt schrijven in Java script. Er zijn drie belang rijke verschillen tussen een Orchestration-functie en andere Java script-functies:
+Alle Java script-Orchestration-functies moeten de [ `durable-functions` module](https://www.npmjs.com/package/durable-functions)bevatten. Het is een bibliotheek waarmee u Durable Functions kunt schrijven in Java script. Er zijn drie belang rijke verschillen tussen een Orchestrator-functie en andere Java script-functies:
 
-1. De functie is een [functie generator.](/scripting/javascript/advanced/iterators-and-generators-javascript)
+1. De Orchestrator-functie is een [functie Generator](/scripting/javascript/advanced/iterators-and-generators-javascript).
 2. De functie wordt ingepakt in een aanroep naar de `durable-functions` methode van de module `orchestrator` (hier `df` ).
 3. De functie moet synchroon zijn. Omdat de ' Orchestrator '-methode de aanroep van ' context. done ' verwerkt, moet de functie gewoon ' return ' zijn.
 
 Het `context` object bevat een `df` duurzaam Orchestration context-object waarmee u andere *activiteiten* functies kunt aanroepen en invoer parameters met behulp van de methode kan door geven `callActivity` . De code roept `E1_SayHello` drie keer op met verschillende parameter waarden, met `yield` om aan te geven dat de uitvoering moet wachten op de functie aanroepen van de async-activiteit die moeten worden geretourneerd. De geretourneerde waarde van elke aanroep wordt toegevoegd aan de `outputs` matrix, die aan het einde van de functie wordt geretourneerd.
+
+# <a name="python"></a>[Python](#tab/python)
+
+> [!NOTE]
+> Python-Durable Functions zijn alleen beschikbaar voor de functies 3,0-runtime.
+
+
+#### <a name="functionjson"></a>function.json
+
+Als u Visual Studio code of de Azure Portal voor ontwikkeling gebruikt, is dit de inhoud van de *function.jsin* het bestand voor de Orchestrator-functie. De meeste Orchestrator- *function.jsop* bestanden zien bijna precies zo.
+
+[!code-json[Main](~/samples-durable-functions-python/samples/function_chaining/E1_HelloSequence/function.json)]
+
+De belang rijke ding is het `orchestrationTrigger` bindings type. Alle Orchestrator-functies moeten dit trigger type gebruiken.
+
+> [!WARNING]
+> Als u de regel ' geen I/O ' van Orchestrator-functies wilt gebruiken, gebruikt u geen invoer-of uitvoer bindingen wanneer u de `orchestrationTrigger` trigger binding gebruikt.  Als er andere invoer-of uitvoer bindingen nodig zijn, moeten ze in plaats daarvan worden gebruikt in de context van `activityTrigger` functions, die worden aangeroepen door de Orchestrator. Zie het artikel [Orchestrator functie code constraints](durable-functions-code-constraints.md) voor meer informatie.
+
+#### <a name="__init__py"></a>\_\_init\_\_.py
+
+Dit is de Orchestrator-functie:
+
+[!code-python[Main](~/samples-durable-functions-python/samples/function_chaining/E1_HelloSequence/\_\_init\_\_.py)]
+
+Alle python-Orchestration-functies moeten het [ `durable-functions` pakket](https://pypi.org/project/azure-functions-durable)bevatten. Het is een bibliotheek waarmee u Durable Functions in python kunt schrijven. Er zijn twee belang rijke verschillen tussen een Orchestrator-functie en andere python-functies:
+
+1. De Orchestrator-functie is een [functie Generator](https://wiki.python.org/moin/Generators).
+2. Het _bestand_ moet de Orchestrator-functie als Orchestrator registreren door `main = df.Orchestrator.create(<orchestrator function name>)` aan het einde van het bestand te vermelden. Dit helpt het onderscheid te maken tussen andere, hulp, functies die in het bestand zijn gedeclareerd.
+
+Met het- `context` object kunt u andere *activiteiten* functies aanroepen en invoer parameters door geven met behulp van de `call_activity` methode. De code roept `E1_SayHello` drie keer op met verschillende parameter waarden, met `yield` om aan te geven dat de uitvoering moet wachten op de functie aanroepen van de async-activiteit die moeten worden geretourneerd. De geretourneerde waarde van elke aanroep wordt aan het einde van de functie geretourneerd.
 
 ---
 
@@ -91,7 +121,7 @@ De *function.jsin* het bestand voor de functie activiteit `E1_SayHello` is verge
 [!code-json[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/function.json)]
 
 > [!NOTE]
-> Een functie die wordt aangeroepen door een Orchestration-functie, moet de `activityTrigger` binding gebruiken.
+> Alle activiteit functies die worden aangeroepen door een Orchestration-functie, moeten de `activityTrigger` binding gebruiken.
 
 De implementatie van `E1_SayHello` is een relatief tamelijk opmaak bewerking voor teken reeksen.
 
@@ -99,7 +129,26 @@ De implementatie van `E1_SayHello` is een relatief tamelijk opmaak bewerking voo
 
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/E1_SayHello/index.js)]
 
-In tegens telling tot een Java script-Orchestration-functie heeft een activiteit functie geen speciale configuratie nodig. De invoer die wordt door gegeven door de Orchestrator-functie bevindt zich op het `context.bindings` object onder de naam van de `activityTrigger` binding-in dit geval `context.bindings.name` . De naam van de binding kan worden ingesteld als een para meter van de geëxporteerde functie en direct worden geopend. Dit is de voorbeeld code.
+In tegens telling tot de Orchestration-functie heeft een activiteit functie geen speciale configuratie nodig. De invoer die wordt door gegeven door de Orchestrator-functie bevindt zich op het `context.bindings` object onder de naam van de `activityTrigger` binding-in dit geval `context.bindings.name` . De naam van de binding kan worden ingesteld als een para meter van de geëxporteerde functie en direct worden geopend. Dit is de voorbeeld code.
+
+# <a name="python"></a>[Python](#tab/python)
+
+#### <a name="e1_sayhellofunctionjson"></a>E1_SayHello/function.jsop
+
+De *function.jsin* het bestand voor de functie activiteit `E1_SayHello` is vergelijkbaar met die van `E1_HelloSequence` , behalve dat er een `activityTrigger` bindings type wordt gebruikt in plaats van een `orchestrationTrigger` bindings type.
+
+[!code-json[Main](~/samples-durable-functions-python/samples/function_chaining/E1_SayHello/function.json)]
+
+> [!NOTE]
+> Alle activiteit functies die worden aangeroepen door een Orchestration-functie, moeten de `activityTrigger` binding gebruiken.
+
+De implementatie van `E1_SayHello` is een relatief tamelijk opmaak bewerking voor teken reeksen.
+
+#### <a name="e1_sayhello__init__py"></a>E1_SayHello/ \_ \_ init \_ \_ . py
+
+[!code-python[Main](~/samples-durable-functions-python/samples/function_chaining/E1_SayHello/\_\_init\_\_.py)]
+
+In tegens telling tot de Orchestrator-functie heeft een activiteit functie geen speciale configuratie nodig. De invoer die door de Orchestrator-functie wordt door gegeven, is rechtstreeks toegankelijk als de para meter voor de functie.
 
 ---
 
@@ -126,6 +175,20 @@ De functie moet een invoer binding bevatten om te kunnen communiceren met Orches
 [!code-javascript[Main](~/samples-durable-functions/samples/javascript/HttpStart/index.js)]
 
 Gebruiken `df.getClient` om een object te verkrijgen `DurableOrchestrationClient` . U gebruikt de-client om een indeling te starten. Het kan ook helpen u een HTTP-antwoord met Url's te retour neren voor het controleren van de status van de nieuwe indeling.
+
+# <a name="python"></a>[Python](#tab/python)
+
+#### <a name="httpstartfunctionjson"></a>HttpStart/function.jsop
+
+[!code-json[Main](~/samples-durable-functions-python/samples/function_chaining/HttpStart/function.json)]
+
+De functie moet een invoer binding bevatten om te kunnen communiceren met Orchestrator `durableClient` .
+
+#### <a name="httpstart__init__py"></a>HttpStart/ \_ \_ init \_ \_ . py
+
+[!code-python[Main](~/samples-durable-functions-python/samples/function_chaining/HttpStart/\_\_init\_\_.py)]
+
+Gebruik de `DurableOrchestrationClient` constructor om een Durable functions-client te verkrijgen. U gebruikt de-client om een indeling te starten. Het kan ook helpen u een HTTP-antwoord met Url's te retour neren voor het controleren van de status van de nieuwe indeling.
 
 ---
 

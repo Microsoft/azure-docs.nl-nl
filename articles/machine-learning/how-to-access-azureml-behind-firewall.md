@@ -11,12 +11,12 @@ author: aashishb
 ms.reviewer: larryfr
 ms.date: 11/18/2020
 ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 0fa3492555b2870ae7b95abec08bbd3280cdc985
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 8ffbe5debaa980385a2c6dc0078de5f1cc2e9bde
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705061"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045509"
 ---
 # <a name="use-workspace-behind-a-firewall-for-azure-machine-learning"></a>De werk ruimte achter een firewall gebruiken voor Azure Machine Learning
 
@@ -27,7 +27,7 @@ In dit artikel vindt u informatie over het configureren van Azure Firewall voor 
 
 ## <a name="azure-firewall"></a>Azure Firewall
 
-Gebruik bij het gebruik van Azure Firewall __doel-Network Address Translation (DNAT)__ om nat-regels voor inkomend verkeer te maken. Maak voor uitgaand verkeer __netwerk__ -en/of __toepassings__ regels. Deze regel verzamelingen worden uitgebreid beschreven in [wat Azure firewall-concepten zijn](../firewall/firewall-faq.md#what-are-some-azure-firewall-concepts).
+Gebruik bij het gebruik van Azure Firewall __doel-Network Address Translation (DNAT)__ om nat-regels voor inkomend verkeer te maken. Maak voor uitgaand verkeer __netwerk__ -en/of __toepassings__ regels. Deze regel verzamelingen worden uitgebreid beschreven in [wat Azure firewall-concepten zijn](../firewall/firewall-faq.yml#what-are-some-azure-firewall-concepts).
 
 ### <a name="inbound-configuration"></a>Binnenkomende configuratie
 

@@ -9,12 +9,12 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.custom: data4ml
-ms.openlocfilehash: 5abb222a6211e2f3f92c002a49987ac54edc78e2
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: cd35cea28e23e88ba97bb7a27dc252d6bebd65e4
+ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97346653"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97739651"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Een gegevenslabelproject maken en labels exporteren 
 
@@ -256,6 +256,17 @@ U kunt de labelgegevens voor Machine Learning-experimenten op elk gewenst moment
 Het COCO-bestand wordt gemaakt in de Blob-standaardopslag van de Azure Machine Learning-werkruimte in een map binnen *export/coco*. U hebt toegang tot de geëxporteerde Azure Machine Learning-gegevensset in de sectie **Gegevenssets** van Machine Learning. De pagina met details van de gegevensset biedt ook voorbeeldcode voor toegang tot uw labels vanuit Python.
 
 ![Geëxporteerde gegevens](./media/how-to-create-labeling-projects/exported-dataset.png)
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+Gebruik deze tips als een van deze problemen optreedt.
+
+|Probleem  |Oplossing  |
+|---------|---------|
+|Er kunnen alleen gegevenssets worden gebruikt die zijn gemaakt in blobgegevensopslag.     |  Dit is een bekende beperking in de huidige release.       |
+|Na het maken van een project heeft het lange tijd de status Initialiseren.     | Vernieuw de pagina handmatig. De initialisatievoortgang moet ongeveer 20 gegevenspunten per seconde zijn. Het ontbreken van automatisch vernieuwen is een bekend probleem.         |
+|Bij het weergeven van afbeeldingen zijn onlangs gelabelde afbeeldingen niet zichtbaar.     |   Als u alle gelabelde afbeeldingen wilt laden, kiest u de knop **Eerste**. De knop **Eerste** brengt u naar het begin van de lijst, maar alle gelabelde gegevens worden geladen.      |
+|Als u op de knop Esc drukt tijdens het labelen voor objectdetectie, wordt in de linkerbovenhoek een label met grootte nul gemaakt. In dit geval mislukt het verzenden van labels.     |   Verwijder het label door op het kruis ernaast te klikken.  |
 
 ## <a name="next-steps"></a>Volgende stappen
 

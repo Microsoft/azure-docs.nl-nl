@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 6eff662ac0140e7a64cc3bab28856178708cb9b2
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: edb1d419900147b586ba1ff257d4307b237be537
+ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400672"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97746725"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -89,9 +89,67 @@ U kunt de volgende combinaties van autorisatie- en Azure Storage-typen gebruiken
 
 \* SAS-token en Azure AD Identity kunnen worden gebruikt om toegang te krijgen tot opslag die niet wordt beveiligd door de firewall.
 
-> [!IMPORTANT]
-> Wanneer u toegang krijgt tot opslag die wordt beveiligd door de firewall, kan alleen Beheerde identiteit worden gebruikt. U moet de instelling [Vertrouwde Microsoft-services toestaan](../../storage/common/storage-network-security.md#trusted-microsoft-services) inschakelen en expliciet [een Azure-rol toewijzen](../../storage/common/storage-auth-aad.md#assign-azure-roles-for-access-rights) aan de [door het systeem toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) voor dat resource-exemplaar. In dit geval komt het toegangsbereik voor het exemplaar overeen met de Azure-rol die aan de beheerde identiteit is toegewezen.
->
+
+### <a name="querying-firewall-protected-storage"></a>Query uitvoeren op een opslag die wordt beveiligd met de firewall
+
+Wanneer u toegang wilt tot opslag die wordt beveiligd met de firewall, kunt u **Gebruikersidentiteit** of **Beheerde identiteit** gebruiken.
+
+#### <a name="user-identity"></a>Gebruikersidentiteit
+
+Als u via Gebruikersidentiteit toegang wilt tot opslag die wordt beveiligd met de firewall, kunt u de PowerShell-module Az.Storage gebruiken.
+#### <a name="configuration-via-powershell"></a>Configuratie via PowerShell
+
+Volg deze stappen om de firewall voor uw opslagaccount te configureren en een uitzondering toe te voegen voor Synapse-werkruimte.
+
+1. Open PowerShell of [installeer PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1&preserve-view=true )
+2. Installeer de bijgewerkte module Az. Storage: 
+    ```powershell
+    Install-Module -Name Az.Storage -RequiredVersion 3.0.1-preview -AllowPrerelease
+    ```
+    > [!IMPORTANT]
+    > Zorg ervoor dat u versie 3.0.1 of nieuwer gebruikt. U kunt uw Az.Storage-versie controleren door deze opdracht uit te voeren:  
+    > ```powershell 
+    > Get-Module -ListAvailable -Name  Az.Storage | select Version
+    > ```
+    > 
+
+3. Verbinding maken met de Azure-tenant: 
+    ```powershell
+    Connect-AzAccount
+    ```
+4. Variabelen definiëren in PowerShell: 
+    - Naam van resourcegroep: u vindt deze in de Azure-portal, in het overzicht van Synapse-werkruimte.
+    - Accountnaam: naam van het opslagaccount dat wordt beveiligd met firewallregels.
+    - Tenant-id: u vindt deze in de Azure-portal in Azure Active Directory, bij tenantgegevens.
+    - Resource-id: u vindt deze in de Azure-portal, in het overzicht van Synapse-werkruimte.
+
+    ```powershell
+        $resourceGroupName = "<resource group name>"
+        $accountName = "<storage account name>"
+        $tenantId = "<tenant id>"
+        $resourceId = "<Synapse workspace resource id>"
+    ```
+    > [!IMPORTANT]
+    > Zorg ervoor dat de resource-id overeenkomt met deze sjabloon.
+    >
+    > Het is belangrijk om **resourcegroups** met kleine letters te schrijven.
+    > Voorbeeld van één resource-id: 
+    > ```
+    > /subscriptions/{subscription-id}/resourcegroups/{resource-group}/providers/Microsoft.Synapse/workspaces/{name-of-workspace}
+    > ```
+    > 
+5. Storage-netwerkregel toevoegen: 
+    ```powershell
+        Add-AzStorageAccountNetworkRule -ResourceGroupName $resourceGroupName -Name $accountName -TenantId $tenantId -ResourceId $resourceId
+    ```
+6. Controleer of de regel is toegepast in uw opslagaccount: 
+    ```powershell
+        $rule = Get-AzStorageAccountNetworkRuleSet -ResourceGroupName $resourceGroupName -Name $accountName
+        $rule.ResourceAccessRules
+    ```
+
+#### <a name="managed-identity"></a>Beheerde identiteit
+U moet de instelling [Vertrouwde Microsoft-services toestaan](../../storage/common/storage-network-security.md#trusted-microsoft-services) inschakelen en expliciet [een Azure-rol toewijzen](../../storage/common/storage-auth-aad.md#assign-azure-roles-for-access-rights) aan de [door het systeem toegewezen beheerde identiteit](../../active-directory/managed-identities-azure-resources/overview.md) voor dat resource-exemplaar. In dit geval komt het toegangsbereik voor het exemplaar overeen met de Azure-rol die aan de beheerde identiteit is toegewezen.
 
 ## <a name="credentials"></a>Referenties
 

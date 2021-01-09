@@ -8,18 +8,18 @@ ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: scottnap
 Customer intent: As someone with a networking background, I want to learn about Network Virtual Appliances in the Virtual WAN hub.
-ms.openlocfilehash: 1e4b8a2d801d7d7eccfaf558c3926ead1ab0a953
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 365ed60e73be9bb2098022fa767f4ae54b93c37c
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91313770"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028077"
 ---
 # <a name="about-network-virtual-appliance-in-an-azure-virtual-wan-hub-preview"></a>Over virtuele netwerk apparaten in een virtuele WAN-hub van Azure (preview)
 
 Azure Virtual WAN heeft met netwerk partners gewerkt om automatisering te bouwen waarmee het eenvoudig is om hun klant locatie-uitrusting (CPE) te verbinden met een Azure VPN-gateway in de virtuele hub. Azure werkt met geselecteerde netwerk partners om klanten in staat te stellen een virtueel netwerk apparaat (NVA) van derden rechtstreeks naar de virtuele hub te implementeren. Hierdoor kunnen klanten die hun vertakking CPE willen verbinden met dezelfde merk NVA in de virtuele hub, zodat ze profiteren van eigen end-to-end SD-WAN-mogelijkheden.
 
-Barracuda Networks is de eerste partner die een NVA-aanbieding biedt die rechtstreeks kan worden geïmplementeerd naar de virtuele WAN-hub met hun [Barracuda CLOUDGEN WAN](https://www.barracuda.com/products/cloudgenwan) -product. Azure werkt samen met meer partners, zodat u rekening moet houden met andere aanbiedingen.
+Barracuda Networks en Cisco Systems zijn de eerste partners die de Nva's bieden die rechtstreeks op de virtuele WAN-hub kunnen worden geïmplementeerd.  Zie [Barracuda CLOUDGEN WAN](https://www.barracuda.com/products/cloudgenwan) en [Cisco Cloud opstap voor multi-Cloud](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) voor hun respectieve product documentatie. Azure werkt met meer partners, zodat u rekening moet houden met andere aanbiedingen.
 
 > [!NOTE]
 > Alleen NVA-aanbiedingen die beschikbaar zijn om te worden geïmplementeerd in de virtuele WAN-hub, kunnen in de virtuele WAN-hub worden geïmplementeerd. Ze kunnen niet worden geïmplementeerd in een wille keurig virtueel netwerk in Azure.
@@ -50,7 +50,7 @@ NVA-partners kunnen verschillende resources maken, afhankelijk van hun toestel-i
 * **Resource groep van klant** : dit bevat een tijdelijke aanduiding voor de toepassing voor de beheerde toepassing. Partners kunnen deze gebruiken om te zien welke klant eigenschappen ze hier kiezen.
 * **Beheerde resource groep** : klanten kunnen resources in deze resource groep niet rechtstreeks configureren of wijzigen, omdat dit wordt bepaald door de uitgever van de beheerde toepassing. Deze resource groep bevat de **NetworkVirtualAppliances** -resource.
 
-:::image type="content" source="./media/about-nva-hub/managed-app.png" alt-text="Overzicht van het proces":::
+:::image type="content" source="./media/about-nva-hub/managed-app.png" alt-text="Resource groepen voor beheerde toepassingen":::
 
 ### <a name="nva-infrastructure-units"></a><a name="units"></a>NVA-infrastructuur eenheden
 
@@ -60,7 +60,7 @@ Wanneer u een NVA in de virtuele WAN-hub maakt, moet u het aantal NVA-infrastruc
 * Azure ondersteunt van 1-80 NVA-infrastructuur eenheden voor een bepaalde implementatie van een virtuele NVA-hub.
 * Elke partner kan verschillende NVA infrastructuur eenheid-bundels zijn die een subset zijn van alle ondersteunde configuraties van de NVA-infrastructuur eenheid.
 
-Net als bij VPN-schaal eenheden kunt u, als u *1 NVA-infrastructuur eenheid = 500 Mbps*kiest, er twee exemplaren voor redundantie worden gemaakt, elk met een maximale door voer van 500 Mbps. Als u bijvoorbeeld vijf vertakkingen hebt, elk met een doorvoer van 10 Mbps, hebt u aan het eind van de vertakkingen een totaal van 50 Mbps nodig. Het plannen van de totale capaciteit van de NVA moet worden uitgevoerd na het beoordelen van de capaciteit die nodig is om het aantal branches naar de hub te ondersteunen.
+Net als bij VPN-schaal eenheden kunt u, als u *1 NVA-infrastructuur eenheid = 500 Mbps* kiest, er twee exemplaren voor redundantie worden gemaakt, elk met een maximale door voer van 500 Mbps. Als u bijvoorbeeld vijf vertakkingen hebt, elk met een doorvoer van 10 Mbps, hebt u aan het eind van de vertakkingen een totaal van 50 Mbps nodig. Het plannen van de totale capaciteit van de NVA moet worden uitgevoerd na het beoordelen van de capaciteit die nodig is om het aantal branches naar de hub te ondersteunen.
 
 ## <a name="network-virtual-appliance-configuration-process"></a><a name="configuration"></a>Configuratie proces van virtueel netwerk apparaat
 
@@ -93,11 +93,11 @@ Helaas hebben we op dit moment geen capaciteit voor nieuwe partner aanbiedingen.
 
 ### <a name="can-i-deploy-any-nva-from-azure-marketplace-into-the-virtual-wan-hub"></a>Kan ik een wille keurige NVA implementeren vanuit Azure Marketplace in de virtuele WAN-hub?
 
-Nee. Op dit moment is alleen [Barracuda CLOUDGEN WAN](https://aka.ms/BarracudaMarketPlaceOffer) beschikbaar om te worden geïmplementeerd in de virtuele WAN-hub.
+Op dit moment zijn alleen [Barracuda CLOUDGEN WAN](https://aka.ms/BarracudaMarketPlaceOffer) -en [Cisco Cloud vWAN-toepassing](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/cisco.cisco_cloud_vwan_app?tab=Overview) beschikbaar om te worden GEÏMPLEMENTEERD in de virtuele WAN-hub.
 
 ### <a name="what-is-the-cost-of-the-nva"></a>Wat zijn de kosten van de NVA?
 
-U moet een licentie aanschaffen voor uw Barracuda CloudGen WAN NVA van Barracuda. Zie [de WAN-pagina van Barracuda van CloudGen](https://www.barracuda.com/products/cloudgenwan)voor meer informatie over licenties. Daarnaast worden er ook kosten van micro soft in rekening gebracht voor de NVA-infrastructuur eenheden die u verbruikt en alle andere resources die u gebruikt. Zie [prijs begrippen](pricing-concepts.md)voor meer informatie.
+U moet een licentie voor de NVA aanschaffen bij de NVA-leverancier.  Voor uw Barracuda CloudGen WAN NVA van Barracuda-licentie raadpleegt u [Barracuda CLOUDGEN WAN-pagina](https://www.barracuda.com/products/cloudgenwan). Cisco biedt momenteel alleen BYOL (neem uw eigen licentie mee) die rechtstreeks van Cisco moeten worden aangeschaft. Daarnaast worden er ook kosten van micro soft in rekening gebracht voor de NVA-infrastructuur eenheden die u verbruikt en alle andere resources die u gebruikt. Zie [prijs begrippen](pricing-concepts.md)voor meer informatie.
 
 ### <a name="can-i-deploy-an-nva-to-a-basic-hub"></a>Kan ik een NVA implementeren op een Basic-hub?
 
@@ -109,7 +109,7 @@ Ja. Barracuda CloudGen WAN kan worden geïmplementeerd in een hub met Azure Fire
 
 ### <a name="can-i-connect-any-cpe-device-in-my-branch-office-to-barracuda-cloudgen-wan-nva-in-the-hub"></a>Kan ik een CPE-apparaat in mijn filiaal aansluiten op Barracuda CloudGen WAN NVA in de hub?
 
-Nee. Barracuda CloudGen WAN is alleen compatibel met Barracuda CPE-apparaten. Zie [de CLOUDGEN WAN-pagina van Barracuda](https://www.barracuda.com/products/cloudgenwan)voor meer informatie over CloudGen WAN-vereisten.
+Nee. Barracuda CloudGen WAN is alleen compatibel met Barracuda CPE-apparaten. Zie [de CLOUDGEN WAN-pagina van Barracuda](https://www.barracuda.com/products/cloudgenwan)voor meer informatie over CloudGen WAN-vereisten. Voor Cisco zijn er verschillende SD-WAN-apparaten die compatibel zijn. Zie [Cisco Cloud opstap for multi-Cloud](https://www.cisco.com/c/en/us/td/docs/routers/sdwan/configuration/cloudonramp/ios-xe-17/cloud-onramp-book-xe/cloud-onramp-multi-cloud.html#Cisco_Concept.dita_c61e0e7a-fff8-4080-afee-47b81e8df701) Documenation voor compatibele CPES.
 
 ### <a name="what-routing-scenarios-are-supported-with-nva-in-the-hub"></a>Welke routerings scenario's worden ondersteund met NVA in de hub?
 

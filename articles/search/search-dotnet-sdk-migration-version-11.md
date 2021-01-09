@@ -8,14 +8,14 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.devlang: dotnet
 ms.topic: conceptual
-ms.date: 12/02/2020
+ms.date: 01/07/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 260df85f3e380e40d153fc17ce77bd56ca068982
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: c5f070f59df69bb186041af450e6ca922469d960
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96532819"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98043741"
 ---
 # <a name="upgrade-to-azure-cognitive-search-net-sdk-version-11"></a>Upgrade uitvoeren naar Azure Cognitive Search .NET SDK versie 11
 
@@ -30,8 +30,7 @@ Enkele belang rijke verschillen in de nieuwe versie zijn:
 + Drie clients in plaats van twee: `SearchClient` , `SearchIndexClient` , `SearchIndexerClient`
 + Benoemt verschillen over een reeks Api's en kleine structurele verschillen die sommige taken vereenvoudigen
 
-> [!NOTE]
-> Bekijk het [**wijzigingslog bestand**](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md) voor een lijst met wijzigingen in .NET SDK versie 11.
+Naast dit artikel, kunt u het [wijzigings logboek](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md) controleren op een lijst met wijzigingen in .NET SDK versie 11.
 
 ## <a name="package-and-library-consolidation"></a>Pakket-en bibliotheek consolidatie
 
@@ -75,7 +74,7 @@ Naast de verschillen tussen de client (eerder vermeld en daarom wegge laten), he
 | [Veld](/dotnet/api/microsoft.azure.search.models.field) | [SearchField](/dotnet/api/azure.search.documents.indexes.models.searchfield) |
 | [Param1](/dotnet/api/microsoft.azure.search.models.datatype) | [SearchFieldDataType](/dotnet/api/azure.search.documents.indexes.models.searchfielddatatype) |
 | [ItemError](/dotnet/api/microsoft.azure.search.models.itemerror) | [SearchIndexerError](/dotnet/api/azure.search.documents.indexes.models.searchindexererror) |
-| [Analyse](/dotnet/api/microsoft.azure.search.models.analyzer) | [LexicalAnalyzer](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer) (ook `AnalyzerName` naar `LexicalAnalyzerName` ) |
+| [Procedures](/dotnet/api/microsoft.azure.search.models.analyzer) | [LexicalAnalyzer](/dotnet/api/azure.search.documents.indexes.models.lexicalanalyzer) (ook `AnalyzerName` naar `LexicalAnalyzerName` ) |
 | [AnalyzeRequest](/dotnet/api/microsoft.azure.search.models.analyzerequest) | [AnalyzeTextOptions](/dotnet/api/azure.search.documents.indexes.models.analyzetextoptions) |
 | [StandardAnalyzer](/dotnet/api/microsoft.azure.search.models.standardanalyzer) | [LuceneStandardAnalyzer](/dotnet/api/azure.search.documents.indexes.models.lucenestandardanalyzer) |
 | [StandardTokenizer](/dotnet/api/microsoft.azure.search.models.standardtokenizer) | [LuceneStandardTokenizer](/dotnet/api/azure.search.documents.indexes.models.lucenestandardtokenizer) (ook `StandardTokenizerV2` naar `LuceneStandardTokenizerV2` ) |
@@ -110,6 +109,41 @@ Veld definities worden gestroomlijnd: [SearchableField](/dotnet/api/azure.search
 | [DocumentSuggestResult](/dotnet/api/microsoft.azure.search.models.documentsuggestresult-1) | [SuggestResults](/dotnet/api/azure.search.documents.models.suggestresults-1) |
 | [SearchParameters](/dotnet/api/microsoft.azure.search.models.searchparameters) |  [Search Options worden](/dotnet/api/azure.search.documents.searchoptions)  |
 
+### <a name="json-serialization"></a>JSON-serialisatie
+
+De Azure SDK maakt standaard gebruik van [System.Text.Js](/dotnet/api/system.text.json) voor JSON-serialisatie, afhankelijk van de mogelijkheden van deze api's voor het verwerken van tekst transformaties die eerder zijn geïmplementeerd via een systeem eigen [SerializePropertyNamesAsCamelCaseAttribute](/dotnet/api/microsoft.azure.search.models.serializepropertynamesascamelcaseattribute) -klasse, die geen equivalent in de nieuwe bibliotheek heeft.
+
+Als u eigenschaps namen wilt serialiseren in camelCase, kunt u de [JsonPropertyNameAttribute](/dotnet/api/system.text.json.serialization.jsonpropertynameattribute) gebruiken (vergelijkbaar met [dit voor beeld](https://github.com/Azure/azure-sdk-for-net/tree/d263f23aa3a28ff4fc4366b8dee144d4c0c3ab10/sdk/search/Azure.Search.Documents#use-c-types-for-search-results)).
+
+U kunt ook een [JsonNamingPolicy](/dotnet/api/system.text.json.jsonnamingpolicy) instellen die is opgegeven in [JsonSerializerOptions](/dotnet/api/system.text.json.jsonserializeroptions). De volgende System.Text.Jsin code voorbeeld van het Leesmij- [bestand micro soft. Azure. core. ruimtelijk](https://github.com/Azure/azure-sdk-for-net/blob/259df3985d9710507e2454e1591811f8b3a7ad5d/sdk/core/Microsoft.Azure.Core.Spatial/README.md#deserializing-documents) demonstreert het gebruik van camelCase zonder dat u elke eigenschap hoeft te kenmerken:
+
+```csharp
+// Get the Azure Cognitive Search endpoint and read-only API key.
+Uri endpoint = new Uri(Environment.GetEnvironmentVariable("SEARCH_ENDPOINT"));
+AzureKeyCredential credential = new AzureKeyCredential(Environment.GetEnvironmentVariable("SEARCH_API_KEY"));
+
+// Create serializer options with our converter to deserialize geographic points.
+JsonSerializerOptions serializerOptions = new JsonSerializerOptions
+{
+    Converters =
+    {
+        new MicrosoftSpatialGeoJsonConverter()
+    },
+    PropertyNamingPolicy = JsonNamingPolicy.CamelCase
+};
+
+SearchClientOptions clientOptions = new SearchClientOptions
+{
+    Serializer = new JsonObjectSerializer(serializerOptions)
+};
+
+SearchClient client = new SearchClient(endpoint, "mountains", credential, clientOptions);
+Response<SearchResults<Mountain>> results = client.Search<Mountain>("Rainier");
+```
+
+Als u Newtonsoft.Jsgebruikt voor JSON-serialisatie, kunt u globaal naamgevings beleid door geven met vergelijk bare kenmerken of met behulp van eigenschappen op [JsonSerializerSettings](https://www.newtonsoft.com/json/help/html/T_Newtonsoft_Json_JsonSerializerSettings.htm). Zie het voor beeld voor het [deserialiseren van documenten](https://github.com/Azure/azure-sdk-for-net/blob/259df3985d9710507e2454e1591811f8b3a7ad5d/sdk/core/Microsoft.Azure.Core.Spatial.NewtonsoftJson/README.md) in de Newtonsoft.Jsin Leesmij voor een voor beeld dat overeenkomt met het bovenstaande.
+
+
 <a name="WhatsNew"></a>
 
 ## <a name="whats-in-version-11"></a>Wat is er in versie 11
@@ -135,7 +169,7 @@ Versie 11,1 voegt het volgende toe:
 De volgende versie 10-functies zijn nog niet beschikbaar in versie 11. Als u deze functies nodig hebt, moet u de migratie uitschakelen totdat deze worden ondersteund.
 
 + georuimtelijke typen
-+ [Kennisarchief](knowledge-store-concept-intro.md)
++ [Knowledge Store](knowledge-store-concept-intro.md)
 
 <a name="UpgradeSteps"></a>
 
@@ -202,7 +236,7 @@ Met de volgende stappen kunt u aan de slag gaan met een code migratie door de ee
 
 <a name="ListOfChanges"></a>
 
-## <a name="breaking-changes-in-version-11"></a>Belang rijke wijzigingen in versie 11
+## <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
 
 Gezien de veranderingen in bibliotheken en Api's, is een upgrade naar versie 11 niet-trivial en vormt het een belang rijke wijziging in de zin dat uw code niet langer compatibel is met versie 10 en eerder. Zie het [wijzigingslog bestand](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/search/Azure.Search.Documents/CHANGELOG.md) voor voor een grondige beoordeling van de verschillen `Azure.Search.Documents` .
 

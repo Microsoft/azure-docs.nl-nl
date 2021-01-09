@@ -10,12 +10,12 @@ ms.subservice: secrets
 ms.topic: tutorial
 ms.date: 06/22/2020
 ms.author: jalichwa
-ms.openlocfilehash: 72541b8d8f8d8865c680c36f7f84cd91a4ce8ba2
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: c2496959f851b55f8cc66c0e793b641cdafb003a
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96903323"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808331"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-have-two-sets-of-authentication-credentials"></a>Het roteren van een geheim automatiseren voor resources met twee sets verificatiereferenties
 
@@ -39,15 +39,16 @@ In deze oplossing worden afzonderlijke toegangssleutels voor opslagaccounts opge
 
 ## <a name="prerequisites"></a>Vereisten
 * Een Azure-abonnement. [Maak gratis een account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+* Azure [Cloud Shell](https://shell.azure.com/). In deze zelfstudie wordt gebruikgemaakt van de portal Cloud Shell met PowerShell-omgeving
 * Azure Key Vault.
 * Twee Azure-opslagaccounts.
 
 U kunt deze implementatiekoppeling gebruiken als u geen bestaande sleutelkluis en bestaande opslagaccounts hebt:
 
-[![Koppeling met het label Implementeren in Azure.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FInitial-Setup%2Fazuredeploy.json)
+[![Koppeling met het label Implementeren in Azure.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2FARM-Templates%2FInitial-Setup%2Fazuredeploy.json)
 
-1. Selecteer onder **Resourcegroep** de optie **Nieuwe maken**. Geef de groep de naam **akvrotation** en selecteer vervolgens **OK**.
-1. Selecteer **Controleren + maken**.
+1. Selecteer onder **Resourcegroep** de optie **Nieuwe maken**. Geef de groep de naam **vaultrotation** en selecteer vervolgens **OK**.
+1. Selecteer **Controleren en maken**.
 1. Selecteer **Maken**.
 
     ![Schermopname van het maken van een resourcegroep.](../media/secrets/rotation-dual/dual-rotation-1.png)
@@ -55,7 +56,7 @@ U kunt deze implementatiekoppeling gebruiken als u geen bestaande sleutelkluis e
 U hebt nu een sleutelkluis en twee opslagaccounts. U kunt deze configuratie controleren in Azure CLI door deze opdracht uit te voeren:
 
 ```azurecli
-az resource list -o table -g akvrotation
+az resource list -o table -g vaultrotation
 ```
 
 De resultaten zien er ongeveer uit zoals deze uitvoer:
@@ -63,9 +64,9 @@ De resultaten zien er ongeveer uit zoals deze uitvoer:
 ```console
 Name                     ResourceGroup         Location    Type                               Status
 -----------------------  --------------------  ----------  ---------------------------------  --------
-akvrotation-kv         akvrotation      eastus      Microsoft.KeyVault/vaults
-akvrotationstorage     akvrotation      eastus      Microsoft.Storage/storageAccounts
-akvrotationstorage2    akvrotation      eastus      Microsoft.Storage/storageAccounts
+vaultrotation-kv         vaultrotation      westus      Microsoft.KeyVault/vaults
+vaultrotationstorage     vaultrotation      westus      Microsoft.Storage/storageAccounts
+vaultrotationstorage2    vaultrotation      westus      Microsoft.Storage/storageAccounts
 ```
 
 ## <a name="create-and-deploy-the-key-rotation-function"></a>De sleutelrotatiefunctie maken en implementeren
@@ -82,70 +83,79 @@ De volgende onderdelen en configuratie zijn vereist voor de rotatiefunctie van d
 
 1. Selecteer de koppeling voor de Azure-sjabloonimplementatie: 
 
-   [![Koppeling voor de Azure-sjabloonimplementatie.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FFunction%2Fazuredeploy.json)
+   [![Koppeling voor de Azure-sjabloonimplementatie.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2FARM-Templates%2FFunction%2Fazuredeploy.json)
 
-1. Selecteer in de lijst **Resourcegroep** de optie **akvrotation**.
+1. Selecteer in de lijst **Resourcegroep** de optie **vaultrotation**.
 1. Voer in het vak **Opslagaccount-RG** de naam in van de resourcegroep waarin het opslagaccount zich bevindt. Behoud de standaardwaarde **[resourceGroup().name]** als het opslagaccount zich al in dezelfde resourcegroep bevindt waar u de sleutelrotatiefunctie implementeert.
-1. Voer in het vak **Naam van opslagaccount** de naam in van het opslagaccount dat de toegangssleutels bevat die moeten worden geroteerd.
+1. Voer in het vak **Naam van opslagaccount** de naam in van het opslagaccount dat de toegangssleutels bevat die moeten worden geroteerd. Laat de standaardwaarde **[concat(resourceGroup().name, 'storage')]** ongewijzigd als u het opslagaccount gebruikt dat u hebt gemaakt in [Vereisten](#prerequisites).
 1. Voer in het vak **Sleutelkluis-RG** de naam in van de resourcegroep waarin uw sleutelkluis zich bevindt. Behoud de standaardwaarde **[resourceGroup().name]** als de sleutelkluis al bestaat in dezelfde resourcegroep waar u de sleutelrotatiefunctie implementeert.
-1. Voer in het vak **Naam van sleutelkluis** de naam in van de sleutelkluis.
+1. Voer in het vak **Naam van sleutelkluis** de naam in van de sleutelkluis. Laat de standaardwaarde **[concat(resourceGroup().name, '-kv')]** ongewijzigd als u de sleutelkluis gebruikt die u hebt gemaakt in [Vereisten](#prerequisites).
+1. Selecteer in het vak **Type App Service-plan** het hostingabonnement. **Een Premium-abonnement** hebt u alleen nodig als uw sleutelkluis zich achter een firewall bevindt.
 1. Voer in het vak **Naam van functie-app** de naam in van de functie-app.
 1. Voer in het vak **Naam van geheim** de naam in van het geheim waar u de toegangssleutels wilt opslaan.
-1. Voer in het vak **Opslagplaats-URL** de GitHub-locatie in van de functiecode: **https://github.com/jlichwa/KeyVault-Rotation-StorageAccountKey-PowerShell.git** .
-1. Selecteer **Controleren + maken**.
+1. Voer in het vak **Opslagplaats-URL** de GitHub-locatie in van de functiecode. In deze zelfstudie kunt u gebruikmaken van **https://github.com/Azure-Samples/KeyVault-Rotation-StorageAccountKey-PowerShell.git** .
+1. Selecteer **Controleren en maken**.
 1. Selecteer **Maken**.
 
-   ![Schermopname van het maken van het eerste opslagaccount.](../media/secrets/rotation-dual/dual-rotation-2.png)
+   ![Schermopname waarin u ziet hoe u een functie-app maakt en implementeert.](../media/secrets/rotation-dual/dual-rotation-2.png)
 
-Als u de voorgaande stappen hebt voltooid, beschikt u over een opslagaccount, een serverfarm, een functie-app, en Application Insights. Wanneer de implementatie is voltooid, ziet u deze pagina: ![Schermopname van de pagina Uw implementatie is voltooid.](../media/secrets/rotation-dual/dual-rotation-3.png)
+Als u de voorgaande stappen hebt voltooid, beschikt u over een opslagaccount, een serverfarm, een functie-app, en Application Insights. Wanneer de implementatie is voltooid, ziet u deze pagina:
+
+   ![Schermopname van de pagina Uw implementatie is voltooid.](../media/secrets/rotation-dual/dual-rotation-3.png)
 > [!NOTE]
 > Als er een fout optreedt, kunt u **Opnieuw implementeren** selecteren om de implementatie van onderdelen te voltooien.
 
 
-In [GitHub](https://github.com/jlichwa/KeyVault-Rotation-StorageAccountKey-PowerShell) vindt u implementatiesjablonen en code voor de roulatiefunctie.
+In [Azure-voorbeelden](https://github.com/Azure-Samples/KeyVault-Rotation-StorageAccountKey-PowerShell) vindt u implementatiesjablonen en code voor de rotatiefunctie.
 
 ## <a name="add-the-storage-account-access-keys-to-key-vault"></a>De toegangssleutels voor een opslagaccount toevoegen aan Key Vault
 
-Stel eerst uw toegangsbeleid in om machtigingen voor het **beheren van geheimen** te verlenen aan gebruikers:
+Stel eerst uw toegangsbeleid in om machtigingen voor het **beheren van geheimen** te verlenen aan uw user principal:
 
 ```azurecli
-az keyvault set-policy --upn <email-address-of-user> --name akvrotation-kv --secret-permissions set delete get list
+az keyvault set-policy --upn <email-address-of-user> --name vaultrotation-kv --secret-permissions set delete get list
 ```
 
 U kunt nu een nieuw geheim maken met een toegangssleutel voor het opslagaccount als bijbehorende waarde. U moet ook de resource-id van het opslagaccount, de geldigheidsperiode van het geheim, en de sleutel-id toevoegen aan het geheim, zodat de rotatiefunctie de sleutel in het opslagaccount opnieuw kan genereren.
 
 Achterhaal de resource-id voor het opslagaccount. U vindt deze waarde in de eigenschap `id`.
+
 ```azurecli
-az storage account show -n akvrotationstorage
+az storage account show -n vaultrotationstorage
 ```
 
 Vermeld de toegangssleutels van het opslagaccount zodat u de sleutelwaarden kunt ophalen:
 
 ```azurecli
-az storage account keys list -n akvrotationstorage 
+az storage account keys list -n vaultrotationstorage 
 ```
 
-Voer deze opdracht uit met behulp van de opgehaalde waarden voor `key1Value` en `storageAccountResourceId`:
+Voeg een geheim toe aan de sleutelkluis waarvan de vervaldatum is ingesteld op morgen, stel de geldigheidsperiode in op 60 dagen en voeg de resource-id van het opslagaccount toe. Voer deze opdracht uit met behulp van de opgehaalde waarden voor `key1Value` en `storageAccountResourceId`:
 
 ```azurecli
-$tomorrowDate = (get-date).AddDays(+1).ToString("yyy-MM-ddThh:mm:ssZ")
-az keyvault secret set --name storageKey --vault-name akvrotation-kv --value <key1Value> --tags "CredentialId=key1" "ProviderAddress=<storageAccountResourceId>" "ValidityPeriodDays=60" --expires $tomorrowDate
+$tomorrowDate = (get-date).AddDays(+1).ToString("yyy-MM-ddTHH:mm:ssZ")
+az keyvault secret set --name storageKey --vault-name vaultrotation-kv --value <key1Value> --tags "CredentialId=key1" "ProviderAddress=<storageAccountResourceId>" "ValidityPeriodDays=60" --expires $tomorrowDate
 ```
 
-Als u een geheim maakt met een korte verloopdatum, wordt binnen enkele minuten een gebeurtenis `SecretNearExpiry` gepubliceerd. Deze gebeurtenis activeert vervolgens de functie voor het roteren van het geheim.
+In het bovenstaande geheim wordt gebeurtenis `SecretNearExpiry` binnen enkele minuten geactiveerd. Deze gebeurtenis activeert vervolgens de functie voor het roteren van het geheim waarvoor de vervaldatum van 60 dagen is ingesteld. In die configuratie wordt de gebeurtenis 'SecretNearExpiry' elke 30 dagen geactiveerd (30 dagen vóór de vervaldatum) en zal de rotatiefunctie om en om tussen sleutel1 en sleutel2 roteren.
 
 U kunt controleren of de toegangssleutels opnieuw zijn gegenereerd door de opslagaccountsleutel en het Key Vault-geheim op te halen en te vergelijken.
 
 Gebruik deze opdracht om de informatie over het geheim op te halen:
 ```azurecli
-az keyvault secret show --vault-name akvrotation-kv --name storageKey
+az keyvault secret show --vault-name vaultrotation-kv --name storageKey
 ```
-U ziet dat `CredentialId` is bijgewerkt naar de andere `keyName`, en dat `value` opnieuw is gegenereerd: ![Schermopname van de uitvoer van de opdracht a z keyvault secret show voor het eerste opslagaccount.](../media/secrets/rotation-dual/dual-rotation-4.png)
+
+U ziet dat `CredentialId` is bijgewerkt naar de andere `keyName`, en dat `value` opnieuw is gegenereerd:
+
+![Schermopname van de uitvoer van de opdracht a z keyvault secret show voor het eerste opslagaccount.](../media/secrets/rotation-dual/dual-rotation-4.png)
 
 Haal de toegangssleutels op om de waarden te vergelijken:
 ```azurecli
-az storage account keys list -n akvrotationstorage 
+az storage account keys list -n vaultrotationstorage 
 ```
+U ziet dat `value` van de sleutel gelijk is aan het geheim in de sleutelkluis:
+
 ![Schermopname van de uitvoer van de opdracht a z storage account keys list voor het eerste opslagaccount.](../media/secrets/rotation-dual/dual-rotation-5.png)
 
 ## <a name="add-storage-accounts-for-rotation"></a>Opslagaccounts toevoegen voor rotatie
@@ -158,10 +168,12 @@ Als u opslagaccountsleutels wilt toevoegen aan een bestaande functie voor rotati
 
 1. Selecteer de koppeling voor de Azure-sjabloonimplementatie: 
 
-   [![Koppeling voor de Azure-sjabloonimplementatie.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2Fjlichwa%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2Farm-templates%2FAdd-Event-Subscriptions%2Fazuredeploy.json)
+   [![Koppeling voor de Azure-sjabloonimplementatie.](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/1-CONTRIBUTION-GUIDE/images/deploytoazure.png)](https://portal.azure.com/#create/Microsoft.Template/uri/https%3A%2F%2Fraw.githubusercontent.com%2FAzure-Samples%2FKeyVault-Rotation-StorageAccountKey-PowerShell%2Fmaster%2FARM-Templates%2FAdd-Event-Subscriptions%2Fazuredeploy.json)
 
-1. Selecteer in de lijst **Resourcegroep** de optie **akvrotation**.
+1. Selecteer in de lijst **Resourcegroep** de optie **vaultrotation**.
+1. Voer in het vak **Opslagaccount-RG** de naam in van de resourcegroep waarin het opslagaccount zich bevindt. Behoud de standaardwaarde **[resourceGroup().name]** als het opslagaccount zich al in dezelfde resourcegroep bevindt waar u de sleutelrotatiefunctie implementeert.
 1. Voer in het vak **Naam van opslagaccount** de naam in van het opslagaccount dat de toegangssleutels bevat die moeten worden geroteerd.
+1. Voer in het vak **Sleutelkluis-RG** de naam in van de resourcegroep waarin uw sleutelkluis zich bevindt. Behoud de standaardwaarde **[resourceGroup().name]** als de sleutelkluis al bestaat in dezelfde resourcegroep waar u de sleutelrotatiefunctie implementeert.
 1. Voer in het vak **Naam van sleutelkluis** de naam in van de sleutelkluis.
 1. Voer in het vak **Naam van functie-app** de naam in van de functie-app.
 1. Voer in het vak **Naam van geheim** de naam in van het geheim waar u de toegangssleutels wilt opslaan.
@@ -174,40 +186,48 @@ Als u opslagaccountsleutels wilt toevoegen aan een bestaande functie voor rotati
 
 Achterhaal de resource-id voor het opslagaccount. U vindt deze waarde in de eigenschap `id`.
 ```azurecli
-az storage account show -n akvrotationstorage2
+az storage account show -n vaultrotationstorage2
 ```
 
 Vermeld de toegangssleutels van het opslagaccount zodat u de waarde van sleutel 2 kunt ophalen:
 
 ```azurecli
-az storage account keys list -n akvrotationstorage2 
+az storage account keys list -n vaultrotationstorage2 
 ```
 
-Voer deze opdracht uit met behulp van de opgehaalde waarden voor `key2Value` en `storageAccountResourceId`:
+Voeg een geheim toe aan de sleutelkluis waarvan de vervaldatum is ingesteld op morgen, stel de geldigheidsperiode in op 60 dagen en voeg de resource-id van het opslagaccount toe. Voer deze opdracht uit met behulp van de opgehaalde waarden voor `key2Value` en `storageAccountResourceId`:
 
 ```azurecli
-tomorrowDate=`date -d tomorrow -Iseconds -u | awk -F'+' '{print $1"Z"}'`
-az keyvault secret set --name storageKey2 --vault-name akvrotation-kv --value <key2Value> --tags "CredentialId=key2" "ProviderAddress=<storageAccountResourceId>" "ValidityPeriodDays=60" --expires $tomorrowDate
+$tomorrowDate = (get-date).AddDays(+1).ToString("yyy-MM-ddTHH:mm:ssZ")
+az keyvault secret set --name storageKey2 --vault-name vaultrotation-kv --value <key2Value> --tags "CredentialId=key2" "ProviderAddress=<storageAccountResourceId>" "ValidityPeriodDays=60" --expires $tomorrowDate
 ```
 
 Gebruik deze opdracht om de informatie over het geheim op te halen:
 ```azurecli
-az keyvault secret show --vault-name akvrotation-kv --name storageKey2
+az keyvault secret show --vault-name vaultrotation-kv --name storageKey2
 ```
-U ziet dat `CredentialId` is bijgewerkt naar de andere `keyName`, en dat `value` opnieuw is gegenereerd: ![Schermopname van de uitvoer van de opdracht a z keyvault secret show voor het tweede opslagaccount.](../media/secrets/rotation-dual/dual-rotation-8.png)
+
+U ziet dat `CredentialId` is bijgewerkt naar de andere `keyName`, en dat `value` opnieuw is gegenereerd:
+
+![Schermopname van de uitvoer van de opdracht a z keyvault secret show voor het tweede opslagaccount.](../media/secrets/rotation-dual/dual-rotation-8.png)
 
 Haal de toegangssleutels op om de waarden te vergelijken:
 ```azurecli
-az storage account keys list -n akvrotationstorage 
+az storage account keys list -n vaultrotationstorage 
 ```
+
+U ziet dat `value` van de sleutel gelijk is aan het geheim in de sleutelkluis:
+
 ![Schermopname van de uitvoer van de opdracht a z storage account keys list voor het tweede opslagaccount.](../media/secrets/rotation-dual/dual-rotation-9.png)
 
-## <a name="key-vault-dual-credential-rotation-functions"></a>Key Vault-rotatiefuncties voor dubbele referenties
+## <a name="key-vault-rotation-functions-for-two-sets-of-credentials"></a>Rotatiefuncties van Key Vault voor twee referentiesets
 
 - [Opslagaccount](https://github.com/jlichwa/KeyVault-Rotation-StorageAccountKey-PowerShell)
 - [Redis Cache](https://github.com/jlichwa/KeyVault-Rotation-RedisCacheKey-PowerShell)
 
 ## <a name="next-steps"></a>Volgende stappen
+
+- Zelfstudie: [Geheimen roteren voor één referentieset](https://docs.microsoft.com/azure/key-vault/secrets/tutorial-rotation)
 - Overzicht: [Key Vault bewaken met Azure Event Grid](../general/event-grid-overview.md)
 - Procedure: [Uw eerste functie maken in de Azure-portal](../../azure-functions/functions-create-first-azure-function.md)
 - Procedure: [E-mail ontvangen wanneer een Key Vault-geheim is gewijzigd](../general/event-grid-logicapps.md)

@@ -3,14 +3,14 @@ title: Uw eerste Durable Function maken in Azure met behulp van Python
 description: Maak en publiceer in Python een duurzame Azure-functie met behulp van Visual Studio Code.
 author: anthonychu
 ms.topic: quickstart
-ms.date: 04/04/2020
+ms.date: 12/23/2020
 ms.reviewer: azfuncdf, antchu
-ms.openlocfilehash: 5d624027259212d804ced26a6daaffb853984a98
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 749dea2d9d46cb69d0c7c8a799a3f82c04d020e8
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96012626"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936172"
 ---
 # <a name="create-your-first-durable-function-in-python"></a>Uw eerste Durable Function maken in Python
 
@@ -40,7 +40,7 @@ Vereisten voor het voltooien van deze zelfstudie:
 
 In deze sectie gebruikt u Visual Studio Code om een lokaal Azure Functions-project te maken. 
 
-1. Druk in Visual Studio Code op F1 (of Ctrl+Shift+P) om het opdrachtenpalet te openen. In het opdrachtenpalet zoekt en selecteert u `Azure Functions: Create New Project...`.
+1. Druk in Visual Studio Code op F1 (of <kbd>Ctrl/Cmd+Shift+P</kbd>) om het opdrachtenpalet te openen. In het opdrachtenpalet zoekt en selecteert u `Azure Functions: Create New Project...`.
 
     ![Functie maken](media/quickstart-python-vscode/functions-create-project.png)
 
@@ -60,18 +60,33 @@ Visual Studio Code installeert zo nodig de Azure Functions Core Tools. Er wordt 
 
 Er wordt ook een requirement.txt-bestand gemaakt in de hoofdmap. Dit geeft de Python-pakketten op die nodig zijn om uw functie-app uit te voeren.
 
+## <a name="update-azure-functions-extension-bundles-version"></a>Versie van Azure Functions-extensiebundels bijwerken
+
+Voor Python Azure Functions is versie 2.x van [Azure Functions-extensiebundels](../functions-bindings-register.md#access-extensions-in-non-net-languages) vereist. Extensiebundels worden geconfigureerd in *host.json*.
+
+1. Open *host.json* in het project. Werk de extensiebundel `version` bij naar `[2.*, 3.0.0)`. Hiermee wordt een versiebereik weergegeven die 2.0 of hoger is, maar lager dan 3.0.
+
+    ```json
+    "extensionBundle": {
+        "id": "Microsoft.Azure.Functions.ExtensionBundle",
+        "version": "[2.*, 3.0.0)"
+    }
+    ```
+
+1. VS Code moet opnieuw worden geladen voordat de bijgewerkte versie van de extensiebundel wordt weergegeven. Voer in het opdrachtenpalet een zoekopdracht uit voor de opdracht *Ontwikkelaar: venster opnieuw laden*, en voer deze uit.
+
 ## <a name="install-azure-functions-durable-from-pypi"></a>Azure-functions-durable installeren vanaf PyPI
 
 Toen u het project heeft aangemaakt, heeft de Azure Functions VS Code-extensie automatisch een virtuele omgeving gemaakt met de geselecteerde Python-versie. U activeert de virtuele omgeving in een terminal en installeert enkele afhankelijkheden die vereist zijn voor Azure Functions en Durable Functions.
 
-1. Open `requirements.txt` in de editor en wijzig de inhoud als volgt:
+1. Open *vereisten.txtt* in de editor en wijzig de inhoud als volgt:
 
     ```
     azure-functions
-    azure-functions-durable>=1.0.0b6
+    azure-functions-durable>=1.0.0b12
     ```
 
-1. Open de geïntegreerde terminal van de editor in de huidige map (`` Ctrl-Shift-` ``).
+1. Open de geïntegreerde terminal van de editor in de huidige map (<kbd>Ctrl+Shift+`</kbd>).
 
 1. Activeer vanuit de geïntegreerde terminal de virtuele omgeving in de huidige map:
 
@@ -182,7 +197,7 @@ Met Azure Functions Core-hulpprogramma's kunt u een Azure Functions-project uitv
 
    De reactie is het eerste resultaat van de HTTP-functie dat u laat weten dat de duurzame indeling is gestart. Dit is nog niet het eindresultaat van de orchestrator. De reactie bevat enkele nuttige URL's. Maar eerst gaan we de status van de orchestrator opvragen.
 
-1. Kopieer de URL-waarde voor `statusQueryGetUri`, plak deze in de adresbalk van de browser en voer de aanvraag uit. U kunt ook Postman blijven gebruiken om de GET-aanvraag uit te voeren.
+1. Kopieer de URL-waarde voor `statusQueryGetUri`, plak deze in de adresbalk van de browser en voer de aanvraag uit. Eventueel kunt u Postman blijven gebruiken om de GET-aanvraag uit te voeren.
 
    De aanvraag voert een query uit op het orchestrator-exemplaar voor de status. U moet een eindige reactie krijgen, die laat zien dat de instantie is voltooid en die de uitvoer of resultaten van de Durable Function bevat. Deze ziet er als volgt uit: 
 
@@ -203,7 +218,7 @@ Met Azure Functions Core-hulpprogramma's kunt u een Azure Functions-project uitv
     }
     ```
 
-1. Druk op **Shift + F5** in VS Code als u het opsporen van fouten wilt opsporen.
+1. Druk op <kbd>Shift + F5</kbd> in VS Code als u het opsporen van fouten wilt opsporen.
 
 Nadat u hebt gecontroleerd of de functie correct wordt uitgevoerd op uw lokale computer, is het tijd om het project te publiceren in Azure.
 

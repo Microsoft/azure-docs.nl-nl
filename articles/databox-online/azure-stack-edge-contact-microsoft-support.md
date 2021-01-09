@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/17/2020
+ms.date: 01/07/2021
 ms.author: alkohli
-ms.openlocfilehash: a457c2816d4075190a2174339f7e52a2ea41730a
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 5bbd02f9e15a4ee29e244b2a0307accd151ba487
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97696028"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033945"
 ---
 # <a name="open-a-support-ticket-for-azure-stack-edge-pro-and-azure-data-box-gateway"></a>Open een ondersteunings ticket voor Azure Stack Edge Pro en Azure Data Box Gateway
 
@@ -78,7 +78,7 @@ Deze informatie is alleen van toepassing op Azure Stack apparaat. Het proces voo
     * Er wordt een veld vervangings eenheid (FRU) voor het defecte hardwareonderdeel verzonden. Stroom eenheden en schijven met een Solid-status worden momenteel de enige ondersteunde FRUs.
     * Alleen FRUs worden in de volgende werkdag vervangen. voor alle andere zaken moet een FSR (Full-System replacement) worden verzonden.
 
-3. Als een ondersteunings ticket vóór 4:30 uur plaatselijke tijd (maandag t/m vrijdag) wordt gerepareerd, wordt de volgende werkdag verzonden naar uw locatie om een FRU-vervanging te kunnen uitvoeren. Een volledig systeem vervanging duurt doorgaans veel langer omdat de onderdelen worden verzonden vanuit onze fabriek en kunnen worden onderhevig aan het vervoer en de douane vertragingen.
+3. Als wordt vastgesteld dat een FRU-vervanging met 1 uur plaatselijke tijd (maandag tot en met vrijdag) nodig is, wordt de volgende werkdag verzonden naar uw locatie om een FRU-vervanging te kunnen uitvoeren. Een volledig systeem vervanging duurt doorgaans veel langer omdat de onderdelen worden verzonden vanuit onze fabriek en kunnen worden onderhevig aan het vervoer en de douane vertragingen.
 
 ## <a name="manage-a-support-request"></a>Een ondersteunings aanvraag beheren
 

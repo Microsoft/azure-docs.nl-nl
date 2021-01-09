@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 26302fa67394e6c3122b159866c3814fb5677ba6
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 8e82f8974b53224b3e471d1628a1ca5819ce2955
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92494965"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044472"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-cli"></a>Een Azure Digital Apparaatdubbels-exemplaar en-authenticatie (CLI) instellen
 
@@ -35,12 +35,12 @@ Deze versie van dit artikel doorloopt deze stappen hand matig, één voor één,
 ## <a name="create-the-azure-digital-twins-instance"></a>Het Azure Digital Apparaatdubbels-exemplaar maken
 
 In deze sectie **maakt u een nieuw exemplaar van Azure Digital apparaatdubbels** met behulp van de Cloud shell opdracht. U moet het volgende opgeven:
-* Een resource groep om deze in te implementeren. Als u nog geen bestaande resource groep hebt, kunt u er nu een maken met de volgende opdracht:
+* Een resource groep waar het exemplaar wordt geïmplementeerd. Als u nog geen bestaande resource groep hebt, kunt u er nu een maken met de volgende opdracht:
     ```azurecli-interactive
     az group create --location <region> --name <name-for-your-resource-group>
     ```
 * Een regio voor de implementatie. Als u wilt zien welke regio's Azure Digital Apparaatdubbels ondersteunen, gaat u naar [*Azure-producten beschikbaar per regio*](https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins).
-* Een naam voor uw exemplaar. De naam van het nieuwe exemplaar moet uniek zijn binnen de regio voor uw abonnement (wat betekent dat als uw abonnement een ander Azure Digital Apparaatdubbels-exemplaar heeft in de regio die al gebruikmaakt van de naam die u kiest, wordt u gevraagd een andere naam te kiezen).
+* Een naam voor uw exemplaar. Als uw abonnement een ander Azure Digital Apparaatdubbels-exemplaar heeft in de regio waarin de opgegeven naam al wordt gebruikt, wordt u gevraagd een andere naam te kiezen.
 
 Gebruik deze waarden in de volgende opdracht om het exemplaar te maken:
 
@@ -54,7 +54,7 @@ Als het exemplaar is gemaakt, wordt het resultaat in Cloud Shell er ongeveer als
 
 :::image type="content" source="media/how-to-set-up-instance/cloud-shell/create-instance.png" alt-text="Opdrachtvenster met het maken van een resource groep en een Azure Digital Apparaatdubbels-exemplaar":::
 
-Noteer de *hostnaam*, *naam*en *ResourceGroup* van het Azure Digital apparaatdubbels-exemplaar van de uitvoer. Dit zijn alle belang rijke waarden die u mogelijk nodig hebt wanneer u met uw Azure Digital Apparaatdubbels-exemplaar blijft werken om verificatie en gerelateerde Azure-resources in te stellen. Als andere gebruikers op het exemplaar worden geprogrammeerd, moet u deze waarden met hen delen.
+Noteer de **hostnaam**, **naam** en **ResourceGroup** van het Azure Digital apparaatdubbels-exemplaar van de uitvoer. Dit zijn alle belang rijke waarden die u mogelijk nodig hebt wanneer u met uw Azure Digital Apparaatdubbels-exemplaar blijft werken om verificatie en gerelateerde Azure-resources in te stellen. Als andere gebruikers op het exemplaar worden geprogrammeerd, moet u deze waarden met hen delen.
 
 > [!TIP]
 > U kunt deze eigenschappen, samen met alle eigenschappen van uw exemplaar, op elk gewenst moment weer geven door uit te voeren `az dt show --dt-name <your-Azure-Digital-Twins-instance>` .
@@ -78,9 +78,9 @@ Het resultaat van deze opdracht is een gegenereerde informatie over de roltoewij
 >
 > Wijs in plaats daarvan de rol toe met behulp van de *object-id* van de gebruiker. Dit kan gebeuren voor gebruikers op persoonlijke [micro soft-accounts (msa's)](https://account.microsoft.com/account). 
 >
-> Gebruik de [pagina Azure portal van Azure Active Directory gebruikers](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) om het gebruikers account te selecteren en de bijbehorende gegevens te openen. De *ObjectID*van de gebruiker kopiëren:
+> Gebruik de [pagina Azure portal van Azure Active Directory gebruikers](https://portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/AllUsers) om het gebruikers account te selecteren en de bijbehorende gegevens te openen. De *ObjectID* van de gebruiker kopiëren:
 >
-> :::image type="content" source="media/includes/user-id.png" alt-text="Opdrachtvenster met het maken van een resource groep en een Azure Digital Apparaatdubbels-exemplaar" lightbox="media/includes/user-id.png":::
+> :::image type="content" source="media/includes/user-id.png" alt-text="Weer gave van de gebruikers pagina in Azure Portal markeren van de GUID in het veld object-ID" lightbox="media/includes/user-id.png":::
 >
 > Herhaal vervolgens de opdracht lijst met roltoewijzingen met de *object-id* van de gebruiker voor de `assignee` bovenstaande para meter.
 

@@ -8,12 +8,12 @@ ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 90a425fe64424c946a02f3c113889b62b58fbeb4
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: aa6429e27faf92f047c580986d5b434c9a418730
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032317"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044370"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-portal"></a>Een Azure Digital Apparaatdubbels-exemplaar en-verificatie (Portal) instellen
 
@@ -44,7 +44,7 @@ Vul op de pagina de volgende *resource maken* de waarden in die hieronder zijn o
 * **Abonnement**: het Azure-abonnement dat u gebruikt
   - **Resource groep**: een resource groep waarin het exemplaar moet worden geïmplementeerd. Als u nog geen bestaande resource groep hebt, kunt u hier een maken door de *nieuwe koppeling maken* te selecteren en een naam in te voeren voor een nieuwe resource groep.
 * **Locatie**: een Azure Digital apparaatdubbels-regio voor de implementatie. Ga voor meer informatie over regionale ondersteuning naar [*Azure-producten die beschikbaar zijn per regio (Azure Digital apparaatdubbels)*](https://azure.microsoft.com/global-infrastructure/services/?products=digital-twins).
-* **Resource naam**: een naam voor uw Azure Digital apparaatdubbels-exemplaar. De naam van het nieuwe exemplaar moet uniek zijn binnen de regio voor uw abonnement (wat betekent dat als uw abonnement een ander Azure Digital Apparaatdubbels-exemplaar heeft in de regio die al gebruikmaakt van de naam die u kiest, wordt u gevraagd een andere naam te kiezen).
+* **Resource naam**: een naam voor uw Azure Digital apparaatdubbels-exemplaar. Als uw abonnement een ander Azure Digital Apparaatdubbels-exemplaar heeft in de regio waarin de opgegeven naam al wordt gebruikt, wordt u gevraagd een andere naam te kiezen.
 
 :::image type="content" source= "media/how-to-set-up-instance/portal/create-azure-digital-twins-2.png" alt-text="De beschreven waarden invullen om een Azure Digital Apparaatdubbels-resource te maken":::
 

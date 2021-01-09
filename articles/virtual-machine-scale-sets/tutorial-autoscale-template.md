@@ -9,12 +9,12 @@ ms.subservice: autoscale
 ms.date: 03/27/2018
 ms.reviewer: avverma
 ms.custom: avverma, devx-track-azurecli
-ms.openlocfilehash: 7e727d06670c9d07ec1aa18b92504433f6c519d6
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 88cec878ca5d3ccab3a232888ff3a3c0b0faa1db
+ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94518291"
+ms.lasthandoff: 12/20/2020
+ms.locfileid: "97705248"
 ---
 # <a name="tutorial-automatically-scale-a-virtual-machine-scale-set-with-an-azure-template"></a>Zelfstudie: Een virtuele-machineschaalset automatisch schalen met een Azure-sjabloon
 Wanneer u een schaalset maakt, definieert u het aantal VM-exemplaren dat u wilt uitvoeren. Wanneer de vraag van de toepassing verandert, kunt u het aantal VM-exemplaren automatisch vergroten of verkleinen. De mogelijkheid van automatisch schalen stelt u in staat om altijd te voldoen aan de vraag van klanten houden of om gedurende de levenscyclus van uw app te reageren op wijzigingen in de prestaties van de toepassing. In deze zelfstudie leert u het volgende:
@@ -143,10 +143,10 @@ Maak eerst een resourcegroep met [az group create](/cli/azure/group). In het vol
 az group create --name myResourceGroup --location eastus
 ```
 
-Maak nu een schaalset voor virtuele machines met [az group deployment create](/cli/azure/group/deployment). Geef desgevraagd uw eigen gebruikersnaam en wachtwoord op, zoals *azureuser*, voor gebruik als de referenties voor elk VM-exemplaar:
+Maak nu een schaalset voor virtuele machines met [az deployment group create](/cli/azure/deployment/group). Geef desgevraagd uw eigen gebruikersnaam en wachtwoord op, zoals *azureuser*, voor gebruik als de referenties voor elk VM-exemplaar:
 
 ```azurecli-interactive
-az group deployment create \
+az deployment group create \
   --resource-group myResourceGroup \
   --template-uri https://raw.githubusercontent.com/Azure-Samples/compute-automation-configurations/master/scale_sets/autoscale.json
 ```

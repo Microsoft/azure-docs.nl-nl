@@ -5,12 +5,12 @@ author: florianborn71
 ms.author: flborn
 ms.date: 01/23/2020
 ms.topic: quickstart
-ms.openlocfilehash: 74bad563de60abc0c1eb7623a81c83fea03f5ee6
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 6258365ab00ab538f3f3502682078d29a391578c
+ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207220"
+ms.lasthandoff: 12/22/2020
+ms.locfileid: "97724923"
 ---
 # <a name="quickstart-render-a-model-with-unity"></a>Quickstart: Een model weergeven met Unity
 
@@ -74,8 +74,8 @@ Het standaardmodel dat we genereren, is een [ingebouwd voorbeeldmodel](../sample
 ![ARR-accountgegevens](./media/arr-sample-account-info.png)
 
 > [!IMPORTANT]
-> In Azure Portal wordt het domein van uw account alleen weergegeven als *mixedreality.azure.com*. Dit is onvoldoende om verbinding te maken.
 > Stel **AccountDomain** in op `<region>.mixedreality.azure.com`, waarbij `<region>` staat voor [een van de beschikbare regio's bij u in de buurt](../reference/regions.md).
+> Stel **AccountAuthenticationDomain** in op [accountdomein](../how-tos/create-an-account.md#retrieve-the-account-information), zoals weergegeven in de Azure-portal.
 
 Later willen we dit project implementeren op een HoloLens-apparaat en vanaf dat apparaat verbinding maken met de Azure Remote Rendering-service. Omdat er geen eenvoudige manier is om de referenties op het apparaat in te voeren, worden in het quickstart-voorbeeld **de referenties opgeslagen in de scène Unity**.
 
@@ -92,9 +92,7 @@ Gefeliciteerd! U bekijkt nu een model dat extern is gegenereerd.
 
 ## <a name="inspecting-the-scene"></a>De scène controleren
 
-Wanneer de verbinding voor externe rendering actief is, wordt het deelvenster Inspector bijgewerkt met aanvullende statusinformatie:
-
-![Unity-voorbeeld wordt afgespeeld](./media/arr-sample-configure-session-running.png)
+Wanneer de verbinding voor externe rendering actief is, wordt het deelvenster Inspector bijgewerkt met aanvullende statusinformatie: ![Unity-voorbeeld wordt afgespeeld](./media/arr-sample-configure-session-running.png)
 
 U kunt de scèneafbeelding nu verkennen door het nieuwe knooppunt te selecteren en op **Onderliggende items tonen** in de Inspector te klikken.
 

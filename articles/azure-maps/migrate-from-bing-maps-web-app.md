@@ -9,29 +9,46 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: devx-track-js
-ms.openlocfilehash: 6037deb484ca966ab3a54cc60b0d53ac8299d500
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: ef2c69409ce3f479338ffc9d418b3469f197ad30
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589998"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679395"
 ---
-# <a name="tutorial---migrate-a-web-app-from-bing-maps"></a>Zelfstudie: een web-app migreren vanuit Bing Kaarten
+# <a name="tutorial-migrate-a-web-app-from-bing-maps"></a>Zelfstudie: Een web-app migreren vanuit Bing Kaarten
 
-Web-apps die Bing Kaarten gebruiken, maken vaak gebruik van de Bing Kaarten v8 JavaScript-SDK. De Azure Maps Web-SDK is de geschikte op Azure gebaseerde SDK om naar te migreren. Met de Azure Maps Web-SDK kunt u interactieve kaarten aanpassen met uw eigen inhoud en beeldmateriaal om weer te geven in uw web- of mobiele toepassingen. Dit besturingselement maakt gebruik van WebGL, zodat u grote gegevenssets kunt weergeven met hoge prestaties. U kunt ontwikkelen met deze SDK met behulp van JavaScript of TypeScript.
+Web-apps die Bing Kaarten gebruiken, maken vaak gebruik van de Bing Kaarten v8 JavaScript-SDK. De Azure Maps Web-SDK is de geschikte op Azure gebaseerde SDK om naar te migreren. Met de Azure Maps Web-SDK kunt u interactieve kaarten aanpassen met uw eigen inhoud en beeldmateriaal om weer te geven in uw web- of mobiele toepassingen. Dit besturingselement maakt gebruik van WebGL, zodat u grote gegevenssets kunt weergeven met hoge prestaties. U kunt ontwikkelen met deze SDK met behulp van JavaScript of TypeScript. In deze zelfstudie leert u het volgende:
+
+> [!div class="checklist"]
+> * Een kaart laden
+> * Een kaar lokaliseren
+> * Punaises, polylijnen en polygonen toevoegen.
+> * Informatie weergeven in een pop-up of infobox
+> * KML- en GeoJSON-gegevens laden en weergeven
+> * Punaises clusteren
+> * Een tegellaag als overlay gebruiken
+> * Verkeergegevens weergeven
+> * Een terrein-overlay toevoegen
 
 Als u een bestaande webtoepassing wilt migreren, controleert u of deze een opensource-bibliotheek voor kaartbesturingselementen gebruikt, zoals Cesium, Leaflet of OpenLayers. Als dat het geval is en u liever deze bibliotheek wilt blijven gebruiken, kunt u deze verbinden met de Azure Maps-tegelservices ([wegtegels](/rest/api/maps/render/getmaptile) \| [satelliettegels](/rest/api/maps/render/getmapimagerytile)). De onderstaande koppelingen bieden meer informatie over het gebruik van Azure Maps in een aantal veelgebruikte opensource-bibliotheken voor kaartbesturingselementen.
 
--   Cesium: een 3D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20Cesium%20JS) \| [Documentatie](https://cesiumjs.org/)
--   Leaflet: een lichtgewicht 2D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Azure%20Maps%20Raster%20Tiles%20in%20Leaflet%20JS) \| [Documentatie](https://leafletjs.com/)
--   OpenLayers: een 2D-kaartbesturingselement voor het web dat projecties ondersteunt. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20OpenLayers) \| [Documentatie](https://openlayers.org/)
+* Cesium: een 3D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20Cesium%20JS) \| [Documentatie](https://cesiumjs.org/)
+* Leaflet: een lichtgewicht 2D-kaartbesturingselement voor het web. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Azure%20Maps%20Raster%20Tiles%20in%20Leaflet%20JS) \| [Documentatie](https://leafletjs.com/)
+* OpenLayers: een 2D-kaartbesturingselement voor het web dat projecties ondersteunt. [Codevoorbeeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Raster%20Tiles%20in%20OpenLayers) \| [Documentatie](https://openlayers.org/)
 
 Bij het ontwikkelen met behulp van een JavaScript-framework kan een van de volgende opensource-projecten nuttig zijn:
 
-- [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps): Angular 10-wrapper rond Azure-kaarten.
-- [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components): een Azure Maps Blazor-onderdeel.
-- [Azure Maps React-onderdeel](https://github.com/WiredSolutions/react-azure-maps): een react-wrapper voor het Azure Maps-besturingselement.
-- [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps): een Azure Maps-onderdeel voor de Vue-toepassing.
+* [ng-azure-maps](https://github.com/arnaudleclerc/ng-azure-maps): Angular 10-wrapper rond Azure-kaarten.
+* [AzureMapsControl.Components](https://github.com/arnaudleclerc/AzureMapsControl.Components): een Azure Maps Blazor-onderdeel.
+* [Azure Maps React-onderdeel](https://github.com/WiredSolutions/react-azure-maps): een react-wrapper voor het Azure Maps-besturingselement.
+* [Vue Azure Maps](https://github.com/rickyruiz/vue-azure-maps): een Azure Maps-onderdeel voor de Vue-toepassing.
+
+## <a name="prerequisites"></a>Vereisten
+
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+2. [Een Azure Maps-account maken](quick-demo-map-app.md#create-an-azure-maps-account)
+3. [Een primaire sleutel voor een abonnement verkrijgen](quick-demo-map-app.md#get-the-primary-key-for-your-account), ook wel bekend als de primaire sleutel of de abonnementssleutel. Zie [Verificatie beheren in Azure Maps](how-to-manage-authentication.md) voor meer informatie over verificatie in Azure Maps.
 
 ## <a name="key-features-support"></a>Belangrijkste ondersteunde functies
 
@@ -68,24 +85,24 @@ Azure Maps heeft ook veel extra [opensource-modules voor de web-SDK](open-source
 
 Dit zijn enkele van de belangrijkste verschillen tussen de Bing Kaarten- en Azure Maps Web-SDK waarmee u rekening moet houden:
 
--   Naast het leveren van een gehost eindpunt om toegang te krijgen tot de Azure Maps Web-SDK is er een NPM-pakket beschikbaar om de Web-SDK desgewenst in apps in te sluiten. Raadpleeg deze [documentatie](./how-to-use-map-control.md) voor meer informatie. Dit pakket bevat ook TypeScript-definities.
--   Bing Kaarten biedt twee gehoste vertakkingen van de SDK: Release en Experimental. De Experimental-vertakking kan meerdere updates per dag ontvangen wanneer er nieuwe ontwikkelingen plaatsvinden. Azure Maps host alleen een releasevertakking. Er worden echter experimentele functies als aangepaste modules gemaakt in het opensource-project met codevoorbeelden voor Azure Maps. Ook had Bing Kaarten een bevroren vertakking die minder vaak werd bijgewerkt, waardoor er minder kans was dat door wijzigingen vanwege de release fouten werden veroorzaakt. In Azure Maps kunt u de NPM-module gebruiken en verwijzen naar een eerdere release van een secundaire versie.
+* Naast het leveren van een gehost eindpunt om toegang te krijgen tot de Azure Maps Web-SDK is er een NPM-pakket beschikbaar om de Web-SDK desgewenst in apps in te sluiten. Raadpleeg deze [documentatie](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control) voor meer informatie. Dit pakket bevat ook TypeScript-definities.
+* Bing Kaarten biedt twee gehoste vertakkingen van de SDK: Release en Experimental. De Experimental-vertakking kan meerdere updates per dag ontvangen wanneer er nieuwe ontwikkelingen plaatsvinden. Azure Maps host alleen een releasevertakking. Er worden echter experimentele functies als aangepaste modules gemaakt in het opensource-project met codevoorbeelden voor Azure Maps. Ook had Bing Kaarten een bevroren vertakking die minder vaak werd bijgewerkt, waardoor er minder kans was dat door wijzigingen vanwege de release fouten werden veroorzaakt. In Azure Maps kunt u de NPM-module gebruiken en verwijzen naar een eerdere release van een secundaire versie.
 
 > [!TIP]
 > Met Azure Maps worden zowel geminimaliseerde versies van de SDK gepubliceerd als versies waarvan de minimalisatie ongedaan is gemaakt. Verwijder gewoon `.min` uit de bestandsnamen. De versie waarbij de minimalisatie ongedaan is gemaakt, is handig bij het oplossen van problemen, maar zorg ervoor dat u de geminimaliseerde versie in productie gebruikt om van de kleinere bestandsgrootte te profiteren.
 
--   Nadat u een exemplaar van de Map-klasse hebt gemaakt in Azure Maps, moet de code wachten op de gebeurtenis `ready` of `load` van de kaart om te worden gestart voordat er interactie met de kaart kan plaatsvinden. Deze gebeurtenissen zorgen ervoor dat alle kaartresources zijn geladen en klaar zijn voor gebruik.
--   Beide platforms gebruiken een soortgelijk tegelsysteem voor de basiskaarten, maar de tegels in Bing Kaarten zijn 256 pixels groot terwijl de tegels in Azure Maps 512 pixels groot zijn. Als u dezelfde kaartweergave in Azure Maps en Bing Kaarten wilt hebben, moet van het zoomniveau in Bing Kaarten 1 worden afgetrokken van het zoomniveau in Azure Maps.
--   Coördinaten in Bing Kaarten worden aangeduid als `latitude, longitude` terwijl in Azure Maps `longitude, latitude` wordt gebruikt. Deze notatie komt overeen met het standaard gebruikte `[x, y]` dat wordt gevolgd door de meeste GIS-platforms.
+* Nadat u een exemplaar van de Map-klasse hebt gemaakt in Azure Maps, moet de code wachten op de gebeurtenis `ready` of `load` van de kaart om te worden gestart voordat er interactie met de kaart kan plaatsvinden. Deze gebeurtenissen zorgen ervoor dat alle kaartresources zijn geladen en klaar zijn voor gebruik.
+* Beide platforms gebruiken een soortgelijk tegelsysteem voor de basiskaarten, maar de tegels in Bing Kaarten zijn 256 pixels groot terwijl de tegels in Azure Maps 512 pixels groot zijn. Als u dezelfde kaartweergave in Azure Maps en Bing Kaarten wilt hebben, moet van het zoomniveau in Bing Kaarten 1 worden afgetrokken van het zoomniveau in Azure Maps.
+* Coördinaten in Bing Kaarten worden aangeduid als `latitude, longitude` terwijl in Azure Maps `longitude, latitude` wordt gebruikt. Deze notatie komt overeen met het standaard gebruikte `[x, y]` dat wordt gevolgd door de meeste GIS-platforms.
 
--   Vormen in de Web-SDK van Azure Maps zijn gebaseerd op het GeoJSON-schema. Helperklassen worden weergegeven via de [naamruimte atlas.data](/javascript/api/azure-maps-control/atlas.data). Ook bestaat er een klasse [atlas.Shape](/javascript/api/azure-maps-control/atlas.shape) die kan worden gebruikt om GeoJSON-objecten te verpakken en om deze gemakkelijk te kunnen bijwerken en onderhouden op een manier waarop gegevens kunnen worden verbonden.
--   Coördinaten in Azure Maps worden gedefinieerd als Position-objecten die kunnen worden opgegeven als een eenvoudige getallenmatrix in de notatie `[longitude, latitude]` of `new atlas.data.Position(longitude, latitude)`.
+* Vormen in de Web-SDK van Azure Maps zijn gebaseerd op het GeoJSON-schema. Helperklassen worden weergegeven via de [naamruimte atlas.data](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data). Ook bestaat er een klasse [atlas.Shape](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape) die kan worden gebruikt om GeoJSON-objecten te verpakken en om deze gemakkelijk te kunnen bijwerken en onderhouden op een manier waarop gegevens kunnen worden verbonden.
+* Coördinaten in Azure Maps worden gedefinieerd als Position-objecten die kunnen worden opgegeven als een eenvoudige getallenmatrix in de notatie `[longitude, latitude]` of `new atlas.data.Position(longitude, latitude)`.
 
 > [!TIP]
 > De klasse Position heeft een statische helperfunctie voor het importeren van coördinaten met de notatie `latitude, longitude`. De [atlas.data.Position.fromLatLng](/javascript/api/azure-maps-control/atlas.data.position)-functie kan vaak de `new Microsoft.Maps.Location`-functie in de Bing Kaarten-code vervangen.
 
--   In plaats van stijlgegevens op te geven voor elke vorm die wordt toegevoegd aan de kaart, houdt Azure Maps stijlen gescheiden van de gegevens. Gegevens worden opgeslagen in gegevensbronnen en worden verbonden met renderinglagen die door Azure Maps-code worden gebruikt om de gegevens weer te geven. Deze aanpak leidt tot verbeterde prestaties. Daarnaast ondersteunen veel lagen gegevensgestuurde stijlen, waarbij bedrijfslogica kan worden toegevoegd aan laagstijlopties waarmee wordt gewijzigd hoe afzonderlijke vormen worden weergegeven in een laag op basis van de eigenschappen die in de vorm zijn gedefinieerd.
--   Azure Maps biedt een aantal handige ruimtelijke wiskundige functies in de `atlas.math`-naamruimte, maar deze verschillen van die in de ruimtelijke wiskundige Bing Kaarten-module. Het belangrijkste verschil is dat Azure Maps geen ingebouwde functies biedt voor binaire bewerkingen zoals union en doorsnede, maar omdat Azure Maps is gebaseerd op de open standaard GeoJSON, zijn veel opensource-bibliotheken beschikbaar. Een populaire optie die goed werkt voor Azure Maps en die heel veel ruimtelijke wiskundige mogelijkheden biedt, is [turf js](http://turfjs.org/).
+* In plaats van stijlgegevens op te geven voor elke vorm die wordt toegevoegd aan de kaart, houdt Azure Maps stijlen gescheiden van de gegevens. Gegevens worden opgeslagen in gegevensbronnen en worden verbonden met renderinglagen die door Azure Maps-code worden gebruikt om de gegevens weer te geven. Deze aanpak leidt tot verbeterde prestaties. Daarnaast ondersteunen veel lagen gegevensgestuurde stijlen, waarbij bedrijfslogica kan worden toegevoegd aan laagstijlopties waarmee wordt gewijzigd hoe afzonderlijke vormen worden weergegeven in een laag op basis van de eigenschappen die in de vorm zijn gedefinieerd.
+* Azure Maps biedt een aantal handige ruimtelijke wiskundige functies in de `atlas.math`-naamruimte, maar deze verschillen van die in de ruimtelijke wiskundige Bing Kaarten-module. Het belangrijkste verschil is dat Azure Maps geen ingebouwde functies biedt voor binaire bewerkingen zoals union en doorsnede, maar omdat Azure Maps is gebaseerd op de open standaard GeoJSON, zijn veel opensource-bibliotheken beschikbaar. Een populaire optie die goed werkt voor Azure Maps en die heel veel ruimtelijke wiskundige mogelijkheden biedt, is [turf js](http://turfjs.org/).
 
 Zie ook de [Azure Maps-woordenlijst](./glossary.md) voor een gedetailleerd overzicht van de terminologie voor Azure Maps.
 
@@ -95,41 +112,40 @@ Hier volgen diverse codevoorbeelden voor elk platform die u in algemene scenario
 
 **Onderwerpen**
 
-- [Een kaart laden](#load-a-map)
-- [Lokaliseren van de kaart](#localizing-the-map)
-- [De kaartweergave instellen](#setting-the-map-view)
-- [Een punaise toevoegen](#adding-a-pushpin)
-- [Een aangepaste punaise toevoegen](#adding-a-custom-pushpin)
-- [Een polylijn toevoegen](#adding-a-polyline)
-- [Een veelhoek toevoegen](#adding-a-polygon)
-- [Een informatievenster weergeven](#display-an-infobox)
-- [Clustering van punaises](#pushpin-clustering)
-- [Een heatmap toevoegen](#add-a-heat-map)
-- [Een tegellaag als overlay gebruiken](#overlay-a-tile-layer)
-- [Verkeergegevens weergeven](#show-traffic-data)
-- [Een terrein-overlay toevoegen](#add-a-ground-overlay)
-- [KML-gegevens toevoegen aan de kaart](#add-kml-data-to-the-map)
-- [Tekenhulpmiddelen toevoegen](#add-drawing-tools)
-
+* [Een kaart laden](#load-a-map)
+* [Lokaliseren van de kaart](#localizing-the-map)
+* [De kaartweergave instellen](#setting-the-map-view)
+* [Een punaise toevoegen](#adding-a-pushpin)
+* [Een aangepaste punaise toevoegen](#adding-a-custom-pushpin)
+* [Een polylijn toevoegen](#adding-a-polyline)
+* [Een veelhoek toevoegen](#adding-a-polygon)
+* [Een informatievenster weergeven](#display-an-infobox)
+* [Clustering van punaises](#pushpin-clustering)
+* [Een heatmap toevoegen](#add-a-heat-map)
+* [Een tegellaag als overlay gebruiken](#overlay-a-tile-layer)
+* [Verkeergegevens weergeven](#show-traffic-data)
+* [Een terrein-overlay toevoegen](#add-a-ground-overlay)
+* [KML-gegevens toevoegen aan de kaart](#add-kml-data-to-the-map)
+* [Tekenhulpmiddelen toevoegen](#add-drawing-tools)
 
 ### <a name="load-a-map"></a>Een kaart laden
 
 Voor het laden van een kaart worden in beide SDK's dezelfde stappen gevolgd;
 
--   Voeg een verwijzing toe naar de kaart-SDK.
--   Voeg een tag `div` toe aan de hoofdtekst van de pagina die als tijdelijke aanduiding voor de kaart fungeert.
--   Maak een JavaScript-functie die wordt aangeroepen wanneer de pagina is geladen.
--   Maak een instantie van de betreffende Map-klasse.
+* Voeg een verwijzing toe naar de kaart-SDK.
+* Voeg een tag `div` toe aan de hoofdtekst van de pagina die als tijdelijke aanduiding voor de kaart fungeert.
+* Maak een JavaScript-functie die wordt aangeroepen wanneer de pagina is geladen.
+* Maak een instantie van de betreffende Map-klasse.
 
 **Enkele belangrijke verschillen**
 
--   Voor Bing Kaarten moet een accountsleutel worden opgegeven in de scriptverwijzing van de API of als kaartoptie. Verificatiereferenties voor Azure Maps worden opgegeven als opties van de Map-klasse. Deze kunnen bestaan uit een abonnementssleutel of Azure Active Directory-gegevens.
--   Bing Kaarten maakt gebruik van een callback-functie in de scriptverwijzing van de API die wordt gebruikt om een initialisatiefunctie aan te roepen voor het laden van de kaart. Met Azure Maps moet de gebeurtenis onload van de pagina worden gebruikt.
--   Wanneer u een id gebruikt om te verwijzen naar het `div`-element waarin de kaart wordt weergegeven, gebruikt Bing Kaarten een HTML-selector (dat wil zeggen `#myMap`), terwijl Azure Maps alleen de id-waarde gebruikt (bijvoorbeeld `myMap`).
--   Coördinaten in Azure Maps worden gedefinieerd als Position-objecten die kunnen worden opgegeven als een eenvoudige getallenmatrix in de notatie `[longitude, latitude]`.
--   Het zoomniveau in Azure Maps is één niveau lager dan het Bing Kaarten-voorbeeld vanwege het verschil in tegelsysteemgrootten tussen de platforms.
--   Met Azure Maps worden standaard geen navigatiebesturingselementen, zoals zoomknoppen en knoppen voor kaartstijlen, toegevoegd aan het kaartcanvas. Er zijn echter wel besturingselementen beschikbaar voor het toevoegen van een kaartstijlkiezer, zoomknoppen, besturingselementen voor kompas- of rotatieregeling en kantelregeling.
--   Er wordt een gebeurtenis-handler toegevoegd in Azure Maps om de gebeurtenis `ready` van de kaartinstantie te controleren. Deze wordt geactiveerd wanneer het laden van de WebGL-context voor de kaart en alle benodigde resources is voltooid. In deze gebeurtenis-handler kunt u alle gewenste code voor na het laden toevoegen.
+* Voor Bing Kaarten moet een accountsleutel worden opgegeven in de scriptverwijzing van de API of als kaartoptie. Verificatiereferenties voor Azure Maps worden opgegeven als opties van de Map-klasse. Deze kunnen bestaan uit een abonnementssleutel of Azure Active Directory-gegevens.
+* Bing Kaarten maakt gebruik van een callback-functie in de scriptverwijzing van de API die wordt gebruikt om een initialisatiefunctie aan te roepen voor het laden van de kaart. Met Azure Maps moet de gebeurtenis onload van de pagina worden gebruikt.
+* Wanneer u een id gebruikt om te verwijzen naar het `div`-element waarin de kaart wordt weergegeven, gebruikt Bing Kaarten een HTML-selector (dat wil zeggen `#myMap`), terwijl Azure Maps alleen de id-waarde gebruikt (bijvoorbeeld `myMap`).
+* Coördinaten in Azure Maps worden gedefinieerd als Position-objecten die kunnen worden opgegeven als een eenvoudige getallenmatrix in de notatie `[longitude, latitude]`.
+* Het zoomniveau in Azure Maps is één niveau lager dan het Bing Kaarten-voorbeeld vanwege het verschil in tegelsysteemgrootten tussen de platforms.
+* Met Azure Maps worden standaard geen navigatiebesturingselementen, zoals zoomknoppen en knoppen voor kaartstijlen, toegevoegd aan het kaartcanvas. Er zijn echter wel besturingselementen beschikbaar voor het toevoegen van een kaartstijlkiezer, zoomknoppen, besturingselementen voor kompas- of rotatieregeling en kantelregeling.
+* Er wordt een gebeurtenis-handler toegevoegd in Azure Maps om de gebeurtenis `ready` van de kaartinstantie te controleren. Deze wordt geactiveerd wanneer het laden van de WebGL-context voor de kaart en alle benodigde resources is voltooid. In deze gebeurtenis-handler kunt u alle gewenste code voor na het laden toevoegen.
 
 In de onderstaande voorbeelden ziet u hoe u een basiskaart zo kunt laden dat New York in het midden wordt weergegeven (op lengtegraad -73,985, breedtegraad 40,747) en het zoomniveau in Bing Kaarten 12 is.
 
@@ -152,7 +168,7 @@ De volgende code is een voorbeeld van hoe u een Bing-kaart gecentreerd en ingezo
         function initMap() {
             map = new Microsoft.Maps.Map('#myMap', {
                 credentials: '<Your Bing Maps Key>',
-          center: new Microsoft.Maps.Location(40.747, -73.985),
+                center: new Microsoft.Maps.Location(40.747, -73.985),
                 zoom: 12
             });
         }
@@ -169,9 +185,7 @@ De volgende code is een voorbeeld van hoe u een Bing-kaart gecentreerd en ingezo
 
 Als deze code wordt uitgevoerd in een browser, ziet u een kaart die eruitziet als de volgende afbeelding:
 
-<center>
-
-![Kaart van Bing Kaarten](media/migrate-bing-maps-web-app/bing-maps-load-map.jpg)</center>
+![Kaart van Bing Kaarten](media/migrate-bing-maps-web-app/bing-maps-load-map.jpg)
 
 **Na: Azure Maps**
 
@@ -209,10 +223,10 @@ In de volgende code is te zien hoe een kaart wordt geladen met dezelfde weergave
             map.events.add('ready', function () {
                 //Add zoom and map style controls to top right of map.
                 map.controls.add([
-                    new atlas.control.StyleControl(),
-                    new atlas.control.ZoomControl()
-                ], {
-                    position: 'top-right'
+                        new atlas.control.StyleControl(),
+                        new atlas.control.ZoomControl()
+                    ], {
+                        position: 'top-right'
                 });
             });
         }
@@ -226,22 +240,20 @@ In de volgende code is te zien hoe een kaart wordt geladen met dezelfde weergave
 
 Als deze code wordt uitgevoerd in een browser, ziet u een kaart die eruitziet als de volgende afbeelding:
 
-<center>
+![Kaart van Azure Maps](media/migrate-bing-maps-web-app/azure-maps-load-map.jpg)
 
-![Kaart van Azure Maps](media/migrate-bing-maps-web-app/azure-maps-load-map.jpg)</center>
-
-U vindt [hier](./how-to-use-map-control.md) uitgebreide informatie over het instellen en gebruiken van het Azure Maps-kaartbesturingselement in een web-app.
+U vindt [hier](how-to-use-map-control.md) uitgebreide informatie over het instellen en gebruiken van het Azure Maps-kaartbesturingselement in een web-app.
 
 > [!TIP]
 > Met Azure Maps worden zowel geminimaliseerde versies van de SDK gepubliceerd als versies waarvan de minimalisatie ongedaan is gemaakt. Verwijder `.min` uit de bestandsnamen. De versie waarbij de minimalisatie ongedaan is gemaakt, is handig bij het oplossen van problemen, maar zorg ervoor dat u de geminimaliseerde versie in productie gebruikt om van de kleinere bestandsgrootte te profiteren.
 
 **Aanvullende bronnen**
 
--   Azure Maps biedt ook navigatiebesturingselementen voor het draaien en kantelen van de kaartweergave, zoals [hier](./map-add-controls.md) wordt beschreven.
+* Azure Maps biedt ook navigatiebesturingselementen voor het draaien en kantelen van de kaartweergave, zoals [hier](map-add-controls.md) wordt beschreven.
 
 ### <a name="localizing-the-map"></a>Lokaliseren van de kaart
 
-Lokalisatie is belangrijk als uw doelgroep zich in meerdere landen bevindt of verschillende talen spreekt.
+Lokalisatie is belangrijk als uw doelgroep zich in meerdere landen/regio's bevindt of verschillende talen spreekt.
 
 **Vóór: Bing Kaarten**
 
@@ -253,13 +265,11 @@ Voor het lokaliseren van Bing Kaarten worden de taal en regio opgegeven met behu
 
 Hier volgt een voorbeeld van Bing Kaarten waarbij de taal is ingesteld op fr-FR.
 
-<center>
-
-![Gelokaliseerde kaart van Bing Kaarten](media/migrate-bing-maps-web-app/bing-maps-localized-map.jpg)</center>
+![Gelokaliseerde kaart van Bing Kaarten](media/migrate-bing-maps-web-app/bing-maps-localized-map.jpg)
 
 **Na: Azure Maps**
 
-Azure Maps biedt alleen opties voor het instellen van de taal en de regionale weergave van de kaart. Er wordt geen marktparameters gebruikt om functies te beperken. Er zijn twee verschillende manieren om de taal en de regionale weergave van de kaart in te stellen. De eerste optie is om deze informatie toe te voegen aan de globale `atlas`-naamruimte. Dit leidt ertoe dat voor alle kaartbesturingselementen in uw app standaard deze waarden worden ingesteld. Met de volgende code stelt u de taal in op Frans (fr-FR) en de regionale weergave op `"auto"`:
+Azure Maps biedt alleen opties voor het instellen van de taal en de regionale weergave van de kaart. Er wordt geen marktparameters gebruikt om functies te beperken. Er zijn twee verschillende manieren om de taal en de regionale weergave van de kaart in te stellen. De eerste optie is om deze informatie toe te voegen aan de globale `atlas`-naamruimte. Dit leidt ertoe dat voor alle kaartbesturingselementen in uw app standaard deze waarden worden ingesteld. Met de volgende code stelt u de taal in op Frans (fr-FR) en de regionale weergave op `"Auto"`:
 
 ```javascript
 atlas.setLanguage('fr-FR');
@@ -285,9 +295,7 @@ map = new atlas.Map('myMap', {
 
 Hier volgt een voorbeeld van Azure Maps waarbij de taal is ingesteld op 'fr-FR' en de gebruikersregio op 'fr'.
 
-<center>
-
-![Gelokaliseerde kaart van Azure Maps](media/migrate-bing-maps-web-app/bing-maps-localized-map.jpg)</center>
+![Gelokaliseerde kaart van Azure Maps](media/migrate-bing-maps-web-app/bing-maps-localized-map.jpg)
 
 ### <a name="setting-the-map-view"></a>De kaartweergave instellen
 
@@ -308,9 +316,7 @@ map.setView({
 });
 ```
 
-<center>
-
-![Bing Kaarten - kaartweergave instellen](media/migrate-bing-maps-web-app/bing-maps-set-map-view.jpg)</center>
+![Bing Kaarten - kaartweergave instellen](media/migrate-bing-maps-web-app/bing-maps-set-map-view.jpg)
 
 **Na: Azure Maps**
 
@@ -327,9 +333,7 @@ map.setStyle({
 });
 ```
 
-<center>
-
-![Azure Maps - kaartweergave instellen](media/migrate-bing-maps-web-app/azure-maps-set-map-view.jpg)</center>
+![Azure Maps - kaartweergave instellen](media/migrate-bing-maps-web-app/azure-maps-set-map-view.jpg)
 
 **Aanvullende bronnen**
 
@@ -340,9 +344,9 @@ map.setStyle({
 
 In Azure Maps kunt u op verschillende manieren puntgegevens weergeven op de kaart;
 
--   HTML-markeringen: punten weergeven met behulp van traditionele DOM-elementen. HTML-markeringen ondersteunen slepen.
--   Symboollaag: punten weergeven met een pictogram en/of tekst binnen de WebGL-context.
--   Bellenlaag: punten weergeven als cirkels op de kaart. De stralen van de cirkels kunnen worden geschaald op basis van eigenschappen in de gegevens.
+* HTML-markeringen: punten weergeven met behulp van traditionele DOM-elementen. HTML-markeringen ondersteunen slepen.
+* Symboollaag: punten weergeven met een pictogram en/of tekst binnen de WebGL-context.
+* Bellenlaag: punten weergeven als cirkels op de kaart. De stralen van de cirkels kunnen worden geschaald op basis van eigenschappen in de gegevens.
 
 Zowel symbool- als bellenlagen worden weergegeven binnen de WebGL-context en kunnen zeer grote hoeveelheden punten op de kaart weergeven. Voor deze lagen moeten gegevens worden opgeslagen in een gegevensbron. Gegevensbronnen en renderinglagen moeten worden toegevoegd aan de kaart nadat de gebeurtenis `ready` is geactiveerd. HTML-markeringen worden op de pagina weergegeven als DOM-elementen en maken geen gebruik van een gegevensbron. Hoe meer DOM-elementen er op een pagina staan, des te langzamer de pagina wordt. Als er meer dan een paar honderd punten moeten worden weergegeven op een kaart, is het beter om een van de renderinglagen te gebruiken.
 
@@ -374,9 +378,7 @@ var pushpin = new Microsoft.Maps.Pushpin(new Microsoft.Maps.Location(51.5, -0.2)
 map.entities.add(pushpin);
 ```
 
-<center>
-
-![Bing Kaarten - punaise toevoegen](media/migrate-bing-maps-web-app/bing-maps-add-pushpin.jpg)</center>
+![Bing Kaarten - punaise toevoegen](media/migrate-bing-maps-web-app/bing-maps-add-pushpin.jpg)
 
 **Na: Azure Maps met HTML-markeringen**
 
@@ -390,9 +392,7 @@ map.markers.add(new atlas.HtmlMarker({
 }));
 ```
 
-<center>
-
-![Azure Maps - markering toevoegen](media/migrate-bing-maps-web-app/azure-maps-add-pushpin.jpg)</center>
+![Azure Maps - markering toevoegen](media/migrate-bing-maps-web-app/azure-maps-add-pushpin.jpg)
 
 **Na: Azure Maps met een symboollaag**
 
@@ -456,9 +456,7 @@ Wanneer u een symboollaag gebruikt, moeten de gegevens worden toegevoegd aan een
 </html>
 ```
 
-<center>
-
-![Azure Maps - symboollaag toevoegen](media/migrate-bing-maps-web-app/azure-maps-add-pushpin.jpg)</center>
+![Azure Maps - symboollaag toevoegen](media/migrate-bing-maps-web-app/azure-maps-add-pushpin.jpg)
 
 **Aanvullende bronnen**
 
@@ -481,7 +479,6 @@ Er kunnen aangepaste afbeeldingen worden gebruikt om punten op een kaart weer te
 |:-----------------------------------------------------------------------:|
 | yellow-pushpin.png                                                        |
 
-
 **Vóór: Bing Kaarten**
 
 In Bing Kaarten wordt een aangepaste markering gemaakt door een URL door te geven aan een afbeelding in de `icon`-opties van een punaise. De optie `anchor` wordt gebruikt om de punt van de punaise uit te lijnen met de coördinaat op de kaart. De ankerwaarde in Bing Kaarten is relatief ten opzichte van de linkerbovenhoek van de afbeelding.
@@ -497,16 +494,14 @@ layer.add(pushpin);
 map.layers.insert(layer);
 ```
 
-<center>
-
-![Bing Kaarten - aangepaste punaise toevoegen](media/migrate-bing-maps-web-app/bing-maps-add-custom-pushpin.jpg)</center>
+![Bing Kaarten - aangepaste punaise toevoegen](media/migrate-bing-maps-web-app/bing-maps-add-custom-pushpin.jpg)
 
 **Na: Azure Maps met HTML-markeringen**
 
 Als u een HTML-markering in Azure Maps wilt aanpassen, geeft u een HTML-`string` of `HTMLElement` door aan de optie `htmlContent` van de markering. In Azure Maps wordt een `anchor`-optie gebruikt om de relatieve positie van de markering ten opzichte van de positiecoördinaat op te geven met behulp van een van de negen gedefinieerde referentiepunten: center, top, bottom, left, right, top-left, top-right, bottom-left en bottom-right. De inhoud is verankerd en is standaard ingesteld op bottom (het midden aan de onderzijde aan de HTML-inhoud). Om het gemakkelijker te maken code te migreren vanuit Bing Kaarten, stelt u het anker in op top-left en gebruikt u vervolgens de optie `offset` met de offset die wordt gebruikt in Bing Kaarten. De offsets in Azure Maps worden in de tegenovergestelde richting verplaatst van de offsets in Bing Kaarten. Vermenigvuldig deze dus met -1.
 
 > [!TIP]
-> Voeg `pointer-events:none` als stijl toe aan de HTML-inhoud om het standaardgedrag voor slepen in MS Edge uit te schakelen, waardoor een ongewenst pictogram wordt weergegeven.
+> Voeg `pointer-events:none` als stijl toe aan de HTML-inhoud om het standaardgedrag voor slepen in Microsoft Edge uit te schakelen, waardoor een ongewenst pictogram wordt weergegeven.
 
 ```html
 map.markers.add(new atlas.HtmlMarker({
@@ -517,9 +512,7 @@ map.markers.add(new atlas.HtmlMarker({
 }));
 ```
 
-<center>
-
-![Azure Maps - aangepaste markering toevoegen](media/migrate-bing-maps-web-app/azure-maps-add-custom-marker.jpg)</center>
+![Azure Maps - aangepaste markering toevoegen](media/migrate-bing-maps-web-app/azure-maps-add-custom-marker.jpg)
 
 **Na: Azure Maps met een symboollaag**
 
@@ -584,9 +577,7 @@ In de symboollagen van Azure Maps worden ook aangepaste afbeeldingen ondersteund
 </html>
 ```
 
-<center>
-
-![Bing Kaarten - aangepaste symboollaag toevoegen](media/migrate-bing-maps-web-app/azure-maps-add-custom-symbol-layer.jpg)</center>
+![Bing Kaarten - aangepaste symboollaag toevoegen](media/migrate-bing-maps-web-app/azure-maps-add-custom-symbol-layer.jpg)
 
 > [!TIP]
 > Als u een geavanceerde aangepaste weergave van punten wilt maken, gebruikt u meerdere renderinglagen tegelijk. Als u bijvoorbeeld meerdere punaises met hetzelfde pictogram op verschillende gekleurde cirkels wilt hebben, kunt u in plaats van een aantal afbeeldingen te maken voor elke kleur, een symboollaag weergeven boven op een bellenlaag en deze naar dezelfde gegevensbron laten verwijzen. Deze benadering is efficiënter dan het maken en onderhouden van een aantal verschillende afbeeldingen.
@@ -631,9 +622,7 @@ layer.add(polyline);
 map.layers.insert(layer);
 ```
 
-<center>
-
-![Bing Kaarten - polylijn](media/migrate-bing-maps-web-app/bing-maps-line.jpg)</center>
+![Bing Kaarten - polylijn](media/migrate-bing-maps-web-app/bing-maps-line.jpg)
 
 **Na: Azure Maps**
 
@@ -662,9 +651,7 @@ map.layers.add(new atlas.layer.LineLayer(datasource, null, {
 }));
 ```
 
-<center>
-
-![Azure Maps - lijn](media/migrate-bing-maps-web-app/azure-maps-line.jpg)</center>
+![Azure Maps - lijn](media/migrate-bing-maps-web-app/azure-maps-line.jpg)
 
 **Aanvullende bronnen**
 
@@ -702,9 +689,7 @@ layer.add(polygon);
 map.layers.insert(layer);
 ```
 
-<center>
-
-![Bing Kaarten - veelhoek](media/migrate-bing-maps-web-app/azure-maps-polygon.jpg)</center>
+![Bing Kaarten - veelhoek](media/migrate-bing-maps-web-app/azure-maps-polygon.jpg)
 
 **Na: Azure Maps**
 
@@ -738,9 +723,7 @@ map.layers.add(new atlas.layer.LineLayer(datasource, null, {
 }));
 ```
 
-<center>
-
-![Azure Maps - veelhoek](media/migrate-bing-maps-web-app/azure-maps-polygon.jpg)</center>
+![Azure Maps - veelhoek](media/migrate-bing-maps-web-app/azure-maps-polygon.jpg)
 
 **Aanvullende bronnen**
 
@@ -780,9 +763,7 @@ Microsoft.Maps.Events.addHandler(pushpin, 'click', function () {
 });
 ```
 
-<center>
-
-![Bing Kaarten - informatievenster](media/migrate-bing-maps-web-app/bing-maps-infobox.jpg)</center>
+![Bing Kaarten - informatievenster](media/migrate-bing-maps-web-app/bing-maps-infobox.jpg)
 
 **Na: Azure Maps**
 
@@ -811,9 +792,7 @@ map.events.add('click', marker, function () {
 });
 ```
 
-<center>
-
-![Pop-up in Azure Maps](media/migrate-bing-maps-web-app/azure-maps-popup.jpg)</center>
+![Pop-up in Azure Maps](media/migrate-bing-maps-web-app/azure-maps-popup.jpg)
 
 > [!NOTE]
 > U kunt hetzelfde doen met een symbool-, bellen-, lijn-of polygoonlaag door de laag door te geven aan de gebeurteniscode van de kaart in plaats van een markering.
@@ -883,7 +862,7 @@ In Bing Kaarten kunnen GeoJSON-gegevens worden geladen met behulp van de GeoJSON
             var clusterSize = cluster.containedPushpins.length;
 
             var radius = 20;    //Default radius to 20 pixels.
-            var fillColor = 'lime';   //Default to lime green.
+            var fillColor = 'lime';     //Default to lime green.
 
             if (clusterSize >= 750) {
                 radius = 40;   //If point_count >= 750, radius is 40 pixels.
@@ -917,18 +896,16 @@ In Bing Kaarten kunnen GeoJSON-gegevens worden geladen met behulp van de GeoJSON
 </html>
 ```
 
-<center>
-
-![Bing Kaarten - clustering](media/migrate-bing-maps-web-app/bing-maps-clustering.jpg)</center>
+![Bing Kaarten - clustering](media/migrate-bing-maps-web-app/bing-maps-clustering.jpg)
 
 **Na: Azure Maps**
 
 In Azure Maps worden gegevens toegevoegd en beheerd door een gegevensbron. Lagen maken verbinding met gegevensbronnen en geven de gegevens hierin weer. De klasse `DataSource` in Azure Maps biedt verschillende opties voor clustering.
 
--   `cluster`: geeft de gegevensbron opdracht om puntgegevens te clusteren. 
--   `clusterRadius`: de straal in pixels waarbinnen punten moeten worden geclusterd.
--   `clusterMaxZoom`: het maximale zoomniveau voor de clustering. Als u verder inzoomt, worden alle punten weergegeven als symbolen.
--   `clusterProperties`: aangepaste eigenschappen die worden berekend met behulp van expressies voor alle punten binnen elk cluster en die worden toegevoegd aan de eigenschappen van elk clusterpunt.
+* `cluster`: geeft de gegevensbron opdracht om puntgegevens te clusteren. 
+* `clusterRadius`: de straal in pixels waarbinnen punten moeten worden geclusterd.
+* `clusterMaxZoom`: het maximale zoomniveau voor de clustering. Als u verder inzoomt, worden alle punten weergegeven als symbolen.
+* `clusterProperties`: aangepaste eigenschappen die worden berekend met behulp van expressies voor alle punten binnen elk cluster en die worden toegevoegd aan de eigenschappen van elk clusterpunt.
 
 Wanneer clustering is ingeschakeld, verstuurt de gegevensbron geclusterde en niet-geclusterde gegevenspunten naar lagen om daar te worden weergegeven. De gegevensbron kan honderdduizenden gegevenspunten clusteren. Een geclusterd gegevenspunt heeft de volgende eigenschappen:
 
@@ -1045,9 +1022,7 @@ GeoJSON-gegevens kunnen rechtstreeks worden geïmporteerd in Azure Maps met behu
 </html>
 ```
 
-<center>
-
-![Clustering in Azure Maps](media/migrate-bing-maps-web-app/azure-maps-clustering.jpg)</center>
+![Clustering in Azure Maps](media/migrate-bing-maps-web-app/azure-maps-clustering.jpg)
 
 **Aanvullende bronnen**
 
@@ -1113,9 +1088,7 @@ In Bing Kaarten kunt u een heatmap maken door de heatmapmodule te laden. Op deze
 </html>
 ```
 
-<center>
-
-![Bing Kaarten - heatmap](media/migrate-bing-maps-web-app/bing-maps-heatmap.jpg)</center>
+![Bing Kaarten - heatmap](media/migrate-bing-maps-web-app/bing-maps-heatmap.jpg)
 
 **Na: Azure Maps**
 
@@ -1177,9 +1150,7 @@ Laad de GeoJSON-gegevens in Azure Maps in een gegevensbron en verbind de gegeven
 </html>
 ```
 
-<center>
-
-![Azure Maps-heatmap](media/migrate-bing-maps-web-app/azure-maps-heatmap.jpg)</center>
+![Azure Maps-heatmap](media/migrate-bing-maps-web-app/azure-maps-heatmap.jpg)
 
 **Aanvullende bronnen**
 
@@ -1207,9 +1178,7 @@ var weatherTileLayer = new Microsoft.Maps.TileLayer({
 map.layers.insert(weatherTileLayer);
 ```
 
-<center>
-
-![Bing Kaarten - gewogen heatmap](media/migrate-bing-maps-web-app/bing-maps-weighted-heatmap.jpg)</center>
+![Bing Kaarten - gewogen heatmap](media/migrate-bing-maps-web-app/bing-maps-weighted-heatmap.jpg)
 
 **Na: Azure Maps**
 
@@ -1217,7 +1186,7 @@ In Azure Maps kan een tegellaag op vrijwel dezelfde manier als elke andere laag 
 
 > [!TIP]
 > In Azure Maps kunnen lagen eenvoudig onder andere lagen worden weergegeven, waaronder basiskaartlagen. Vaak is het wenselijk om tegellagen onder de kaartlabels weer te geven, zodat ze goed leesbaar zijn. Voor de functie `map.layers.add` is een tweede parameter nodig (de id van een tweede laag) om de nieuwe laag eronder in te voegen. Als u een tegellaag onder de kaartlabels wilt invoegen, kunt u de volgende code gebruiken:
-> 
+>
 > `map.layers.add(myTileLayer, "labels");`
 
 ```javascript
@@ -1229,9 +1198,7 @@ map.layers.add(new atlas.layer.TileLayer({
 }), 'labels');
 ```
 
-<center>
-
-![Azure Maps - gewogen heatmap](media/migrate-bing-maps-web-app/azure-maps-weighted-heatmap.jpg)</center>
+![Azure Maps - gewogen heatmap](media/migrate-bing-maps-web-app/azure-maps-weighted-heatmap.jpg)
 
 > [!TIP]
 > Tegelaanvragen kunnen worden vastgelegd met behulp van de optie `transformRequest` van de kaart. Op deze manier kunt u desgewenst kopteksten in de aanvraag wijzigen of eraan toevoegen.
@@ -1257,9 +1224,7 @@ Microsoft.Maps.loadModule('Microsoft.Maps.Traffic', function () {
 });
 ```
 
-<center>
-
-![Bing Kaarten - verkeer](media/migrate-bing-maps-web-app/bing-maps-traffic.jpg)</center>
+![Bing Kaarten - verkeer](media/migrate-bing-maps-web-app/bing-maps-traffic.jpg)
 
 **Na: Azure Maps**
 
@@ -1272,15 +1237,11 @@ map.setTraffic({
 });
 ```
 
-<center>
-
-![Verkeer in Azure Maps](media/migrate-bing-maps-web-app/azure-maps-traffic.jpg)</center>
+![Verkeer in Azure Maps](media/migrate-bing-maps-web-app/azure-maps-traffic.jpg)
 
 Als u op een van de verkeerspictogrammen in Azure Maps klikt, wordt er extra informatie weergegeven in een pop-up.
 
-<center>
-
-![Azure Maps - pop-up voor verkeer](media/migrate-bing-maps-web-app/azure-maps-traffic-popup.jpg)</center>
+![Azure Maps - pop-up voor verkeer](media/migrate-bing-maps-web-app/azure-maps-traffic-popup.jpg)
 
 **Aanvullende bronnen**
 
@@ -1335,9 +1296,7 @@ Wanneer u een terrein-overlay in Bing Kaarten maakt, geeft u de URL op naar de a
 
 Als deze code wordt uitgevoerd in een browser, ziet u een kaart die eruitziet als de volgende afbeelding:
 
-<center>
-
-![Bing Kaarten - terrein-overlay](media/migrate-bing-maps-web-app/bing-maps-ground-overlay.jpg)</center>
+![Bing Kaarten - terrein-overlay](media/migrate-bing-maps-web-app/bing-maps-ground-overlay.jpg)
 
 **Na: Azure Maps**
 
@@ -1398,9 +1357,7 @@ In Azure Maps is een overlay van afbeeldingen met georeferenties mogelijk met be
 </html>
 ```
 
-<center>
-
-![Azure Maps - terrein-overlay](media/migrate-bing-maps-web-app/azure-maps-ground-overlay.jpg)</center>
+![Azure Maps - terrein-overlay](media/migrate-bing-maps-web-app/azure-maps-ground-overlay.jpg)
 
 **Aanvullende bronnen**
 
@@ -1433,7 +1390,7 @@ Als deze code wordt uitgevoerd in een browser, ziet u een kaart die eruitziet al
                 center: new Microsoft.Maps.Location(40.747, -73.985),
                 zoom: 12
             });
-
+                
             Microsoft.Maps.loadModule('Microsoft.Maps.GeoXml', function () {
                 var callback = function (dataset) {
                     if (dataset.shapes) {
@@ -1461,9 +1418,7 @@ Als deze code wordt uitgevoerd in een browser, ziet u een kaart die eruitziet al
 </html>
 ```
 
-<center>
-
-![Bing Kaarten - kml](media/migrate-bing-maps-web-app/bing-maps-kml.jpg)</center>
+![Bing Kaarten - kml](media/migrate-bing-maps-web-app/bing-maps-kml.jpg)
 
 **Na: Azure Maps**
 
@@ -1558,9 +1513,7 @@ In Azure Maps is GeoJSON de belangrijkste gegevensindeling die wordt gebruikt in
 </html>
 ```
 
-<center>
-
-![Azure Maps-kml](media/migrate-bing-maps-web-app/azure-maps-kml.jpg)</center>
+![Azure Maps-kml](media/migrate-bing-maps-web-app/azure-maps-kml.jpg)
 
 **Aanvullende bronnen**
 
@@ -1617,9 +1570,7 @@ In Bing Kaarten wordt de module `DrawingTools` geladen met behulp van de functie
 
 ```
 
-<center>
-
-![Bing Kaarten - tekenhulpmiddelen](media/migrate-bing-maps-web-app/bing-maps-drawing-tools.jpg)</center>
+![Bing Kaarten - tekenhulpmiddelen](media/migrate-bing-maps-web-app/bing-maps-drawing-tools.jpg)
 
 **Na: Azure Maps**
 
@@ -1649,8 +1600,8 @@ In Azure Maps moet de module voor tekenhulpmiddelen worden geladen door de JavaS
             //Initialize a map instance.
             map = new atlas.Map('myMap', {
                 view: 'Auto',
-                
-                //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.
+
+                //Add your Azure Maps key to the map SDK. Get an Azure Maps key at https://azure.com/maps. NOTE: The primary key should be used as the key.                
                 authOptions: {
                     authType: 'subscriptionKey',
                     subscriptionKey: '<Your Azure Maps Key>'
@@ -1674,9 +1625,7 @@ In Azure Maps moet de module voor tekenhulpmiddelen worden geladen door de JavaS
 </html>
 ```
 
-<center>
-
-![Azure Maps - tekenhulpmiddelen](media/migrate-bing-maps-web-app/azure-maps-drawing-tools.jpg)</center>
+![Azure Maps - tekenhulpmiddelen](media/migrate-bing-maps-web-app/azure-maps-drawing-tools.jpg)
 
 > [!TIP]
 > In Azure Maps-lagen bieden de tekenhulpmiddelen meerdere manieren waarop gebruikers vormen kunnen tekenen. Bij het tekenen van een veelhoek bijvoorbeeld kan de gebruiker klikken om een punt toe te voegen of de linkermuisknop ingedrukt houden en de muis slepen om een pad te tekenen. Dit kan worden gewijzigd met behulp van de `interactionType`-optie van de `DrawingManager`.
@@ -1686,7 +1635,7 @@ In Azure Maps moet de module voor tekenhulpmiddelen worden geladen door de JavaS
 -   [Documentatie](./set-drawing-options.md)
 -   [Codevoorbeelden](https://azuremapscodesamples.azurewebsites.net/#Drawing-Tools-Module)
 
-## <a name="next-steps"></a>Volgende stappen
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 Bekijk de [opensource-modules van de Azure Maps Web-SDK](open-source-projects.md#open-web-sdk-modules). Deze modules bieden veel extra functionaliteit en zijn volledig aanpasbaar.
 
@@ -1733,3 +1682,14 @@ Lees hier meer over de Azure Maps Web-SDK.
 
 > [!div class="nextstepaction"]
 > [Naslagdocumentatie over de API voor de web-SDK-service van Azure Maps](/javascript/api/azure-maps-control/)
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources om op te schonen.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Meer informatie over migreren van Bing Kaarten naar Azure Maps.
+
+> [!div class="nextstepaction"]
+> [Een webservice migreren](migrate-from-bing-maps-web-services.md)

@@ -5,14 +5,14 @@ author: rahulg1190
 ms.author: rahugup
 ms.manager: bsiva
 ms.topic: tutorial
-ms.date: 04/15/2020
+ms.date: 01/02/2021
 ms.custom: MVC
-ms.openlocfilehash: af1c321e5c537fbd3af770cb392c538e6056e075
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: bd560a6ef4a3b4ab5eb4632e7741c764f6e314e1
+ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752869"
+ms.lasthandoff: 01/03/2021
+ms.locfileid: "97854924"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Machines als fysieke servers migreren naar Azure
 
@@ -109,7 +109,7 @@ Bereid de implementatie van het apparaat als volgt voor:
 - U bereidt een machine voor die het replicatieapparaat gaat hosten. [Bekijk](migrate-replication-appliance.md#appliance-requirements) de machinevereisten.
 - Het replicatieapparaat maakt gebruik van MySQL. Bekijk de [opties](migrate-replication-appliance.md#mysql-installation) voor het installeren van MySQL op het apparaat.
 - Controleer de vereiste Azure-URL's voor het replicatieapparaat om toegang te krijgen tot [openbare](migrate-replication-appliance.md#url-access) clouds en [overheidsclouds](migrate-replication-appliance.md#azure-government-url-access).
-- Controleer de toegangsvereisten [poort] (migrate-replication-appliance.md#port-access) voor het replicatieapparaat.
+- Controleer de [poorttoegangsvereisten](migrate-replication-appliance.md#port-access) voor het replicatieapparaat.
 
 > [!NOTE]
 > Het replicatieapparaat mag niet worden geïnstalleerd op een bronmachine die u wilt repliceren of op het detectie- en beoordelingsapparaat voor Azure Migrate dat u eerder hebt geïnstalleerd.

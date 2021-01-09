@@ -2,16 +2,16 @@
 title: 'Zelfstudie: sjabloon maken en implementeren'
 description: Uw eerste ARM-sjabloon (Azure Resource Manager) maken. In deze zelfstudie krijgt u meer informatie over de syntaxis van sjabloonbestanden en het implementeren van een opslagaccount.
 author: mumian
-ms.date: 09/28/2020
+ms.date: 12/17/2020
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 191eacbc9cc66ccfb9b378cb5e8a90b4e0fb20e6
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 001a20c38a82d053ae22a2614a32f0be9d8aabce
+ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107020"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97656985"
 ---
 # <a name="tutorial-create-and-deploy-your-first-arm-template"></a>Zelfstudie: Uw eerste ARM-sjabloon maken en implementeren
 
@@ -19,7 +19,7 @@ Deze zelfstudie is een introductie tot Azure Resource Manager-sjablonen (ARM-sja
 
 Deze zelfstudie is de eerste van een reeks. Naarmate u vordert in de reeks, past u de basissjabloon stap voor stap aan totdat alle kernonderdelen van een ARM-sjabloon zijn behandeld. Deze elementen zijn de bouwstenen voor veel complexere sjablonen. We hopen dat u aan het einde van de reeks in staat bent uw eigen sjablonen te maken en klaar bent om uw implementaties te automatiseren met sjablonen.
 
-Zie [Overzicht van ARM-sjablonen](overview.md) als u meer wilt weten over de voordelen van het gebruik van sjablonen en het automatiseren van implementaties met sjablonen.
+Zie [Overzicht van ARM-sjablonen](overview.md) als u meer wilt weten over de voordelen van het gebruik van sjablonen en het automatiseren van implementaties met sjablonen. Raadpleeg [Resources implementeren en beheren in Azure met behulp van ARM-sjablonen](/learn/paths/deploy-manage-resource-manager-templates/) voor meer informatie over ARM-sjablonen via een begeleide set modules.
 
 Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 

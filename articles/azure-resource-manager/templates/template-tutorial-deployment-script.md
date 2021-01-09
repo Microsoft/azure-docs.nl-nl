@@ -8,15 +8,15 @@ ms.service: azure-resource-manager
 ms.workload: multiple
 ms.tgt_pltfrm: na
 ms.devlang: na
-ms.date: 12/14/2020
+ms.date: 12/16/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: ec7b951581efd0a25b44d298b1f1bfb997167d88
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 7eda805a5fdf24a7a55b9296a0f0a1c9a5bfc576
+ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589097"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97683492"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate"></a>Zelfstudie: Implementatiescripts gebruiken om een zelfondertekend certificaat te maken
 
@@ -34,13 +34,15 @@ Deze zelfstudie bestaat uit de volgende taken:
 > * Fouten in een mislukt script opsporen
 > * Resources opschonen
 
+Raadpleeg [ARM-sjablonen uitbreiden met behulp van implementatiescripts](/learn/modules/extend-resource-manager-template-deployment-scripts/) voor een Microsoft Learn-module over implementatiescripts.
+
 ## <a name="prerequisites"></a>Vereisten
 
 Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
 * **[Visual Studio Code](https://code.visualstudio.com/) met de Resource Manager Tools-extensie**. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](./quickstart-create-templates-use-visual-studio-code.md).
 
-* **Een door de gebruiker toegewezen beheerde identiteit met de rol van de inzender op abonnementsniveau maken**. Deze identiteit wordt gebruikt om implementatiescripts uit te voeren. Zie [Een door een gebruiker toegewezen beheerde identiteit maken](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md) als u wilt weten hoe u er een maakt. U hebt de identiteits-id nodig wanneer u de sjabloon implementeert. De indeling van de identiteit is als volgt:
+* **Een door een gebruiker toegewezen beheerde identiteit**. Deze identiteit wordt gebruikt om Azure-specifieke acties uit te voeren in het script. Zie [Een door een gebruiker toegewezen beheerde identiteit maken](../../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md) als u wilt weten hoe u er een maakt. U hebt de identiteits-id nodig wanneer u de sjabloon implementeert. De indeling van de identiteit is als volgt:
 
   ```json
   /subscriptions/<SubscriptionID>/resourcegroups/<ResourceGroupName>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<IdentityID>
@@ -253,7 +255,7 @@ Het implementatiescript voegt een certificaat toe aan de sleutelkluis. Configure
 
     De `deploymentScripts`-resource is afhankelijk van de resource van de sleutelkluis en de resource van de roltoewijzing. Deze heeft de volgende eigenschappen:
 
-    * `identity`: Het implementatiescript maakt gebruik van een door de gebruiker toegewezen beheerde identiteit voor het uitvoeren van de scripts.
+    * `identity`: Het implementatiescript maakt gebruik van een door de gebruiker toegewezen beheerde identiteit om de bewerkingen in het script uit te voeren.
     * `kind`: Geef het type script op. Momenteel worden alleen PowerShell-scripts ondersteund.
     * `forceUpdateTag`: Bepaal of het implementatiescript ook moet worden uitgevoerd als de scriptbron niet is gewijzigd. Dit kan een actueel tijdstempel of een GUID zijn. Zie [Script meerdere keren uitvoeren](./deployment-script-template.md#run-script-more-than-once) voor meer informatie.
     * `azPowerShellVersion`: Hiermee geeft u de versie van de Azure PowerShell-module op die moet worden gebruikt. Op dit moment ondersteunt het implementatiescript versie 2.7.0, 2.8.0 en 3.0.0.

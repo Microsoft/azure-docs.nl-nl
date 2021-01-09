@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 06/15/2020
+ms.date: 12/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 7bb74732074482c12d3bc760e259bb014ccf006f
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d9e118620cb38e94cfc18d01d31888ac0a444bb7
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96179251"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813425"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-ekarda"></a>Zelfstudie: Azure Active Directory-integratie met eenmalige aanmelding (SSO) met ekarda
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u ekarda integreert met Azure AD (Active Director
 * Beheren in Azure AD wie toegang heeft tot ekarda.
 * Ervoor zorgen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij ekarda.
 * Uw accounts op één centrale locatie beheren: de Azure-portal.
-
-Zie [Wat is eenmalige aanmelding?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps (Software as a Service) met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -41,13 +39,12 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * ekarda biedt ondersteuning voor met SP en IDP geïnitieerde eenmalige aanmelding.
 * ekarda biedt ondersteuning voor Just-In-Time-inrichting van gebruikers.
-* Nadat u ekarda hebt geconfigureerd, kunt u sessiebeheer afdwingen. Deze voorzorgsmaatregel biedt in realtime bescherming tegen de exfiltratie en infiltratie van gevoelige gegevens in uw organisatie. Sessiebeheer is een uitbreiding van App-beheer voor voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).
 
 ## <a name="add-ekarda-from-the-gallery"></a>Ekarda toevoegen vanuit de galerie
 
 Als u de integratie van ekarda in Azure AD wilt configureren, voegt u ekarda vanuit de galerie toe aan de lijst met beheerde SaaS-apps:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com) met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u aan bij de Azure-portal met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 
 1. Selecteer in het linkerdeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
@@ -55,11 +52,11 @@ Als u de integratie van ekarda in Azure AD wilt configureren, voegt u ekarda van
 1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **ekarda**.
 1. Selecteer **ekarda** in het resultatenpaneel en voeg de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-ekarda"></a>Eenmalige aanmelding van Azure AD configureren en testen voor ekarda
+## <a name="configure-and-test-azure-ad-sso-for-ekarda"></a>Eenmalige aanmelding van Azure AD configureren en testen voor ekarda
 
 Configureer en test eenmalige aanmelding van Azure AD met ekarda met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in ekarda.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met ekarda te configureren en testen:
+Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met ekarda te configureren en te testen:
 
 1. [Configureer eenmalige aanmelding van Azure AD](#configure-azure-ad-sso) zodat uw gebruikers deze functie kunnen gebruiken.
 
@@ -73,7 +70,7 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met ekarda te c
 
 Volg deze stappen in de Azure-portal om eenmalige aanmelding van Azure AD in te schakelen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij Azure Portal.
 1. Ga op de integratiepagina van de toepassing **ekarda** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Selecteer op de pagina **Eenmalige aanmelding instellen met SAML** het potloodpictogram bij **Standaard-SAML-configuratie** om de instellingen te bewerken.
@@ -95,7 +92,7 @@ Volg deze stappen in de Azure-portal om eenmalige aanmelding van Azure AD in te 
 
 1. Als u de toepassing wilt configureren in de met SP geïnitieerde modus, selecteert u **Extra URL's instellen**:
 
-    * Typ in het tekstvak **Aanmeldings-URL** een URL met het volgende patroon: `https://my.ekarda.com/users/saml_sso/<COMPANY_ID>`
+    Typ in het tekstvak **Aanmeldings-URL** een URL met het volgende patroon: `https://my.ekarda.com/users/saml_sso/<COMPANY_ID>`
 
     > [!NOTE]
     > De waarden in de twee voorgaande stappen zijn niet echt. Werk ze bij met de waarden van de werkelijke id, antwoord-URL en aanmeldings-URL. Neem contact op met het [klantondersteuningsteam van ekarda](mailto:contact@ekarda.com) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
@@ -129,19 +126,24 @@ In deze sectie stelt u B.Simon in staat om eenmalige aanmelding van Azure te geb
 1. Selecteer **ekarda** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 
-   ![Schermopname van de sectie Beheren, met Gebruikers en groepen gemarkeerd.](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
-    ![Schermopname van de sectie Gebruikers en groepen, met Gebruiker toevoegen gemarkeerd.](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** **B.Simon** in de lijst met gebruikers. Kies vervolgens **Selecteren** onderaan het scherm.
-1. Als u een rolwaarde verwacht in de SAML-bewering, selecteert u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst. Kies vervolgens **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen**.
 
 ## <a name="configure-ekarda-sso"></a>Eenmalige aanmelding bij ekarda configureren
 
-1. Meld u in een ander browservenster als beheerder aan bij de ekarda-bedrijfssite.
+1. Als u de configuratie in ekarda wilt automatiseren, moet u de **Mijn apps-browserextensie voor veilig aanmelden** installeren door op **De extensie installeren** te klikken.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Als u op **ekarda instellen** klikt nadat u de extensie hebt toegevoegd aan de browser, wordt u doorgestuurd naar de ekarda-toepassing. Geef hier de beheerdersreferenties op om u aan te melden bij ekarda. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3 t/m 6 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u ekarda handmatig wilt instellen, meldt u zich in een ander webbrowservenster aan als beheerder bij uw ekarda-bedrijfssite.
+
 1. Selecteer **Beheerder** > **Mijn account**.
 
     ![Schermopname van de gebruikersinterface van de ekarda-site, met Mijn account gemarkeerd in het menu Beheerder.](./media/ekarda-tutorial/ekarda.png)
@@ -166,16 +168,20 @@ In deze sectie wordt een gebruiker met de naam B.Simon gemaakt in ekarda. ekarda
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In dit gedeelte test u de configuratie voor eenmalige aanmelding met Azure AD met behulp van de portal Mijn apps.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-Wanneer u in de Mijn apps-portal op de tegel ekarda klikt, wordt u automatisch aangemeld bij de ekarda-site waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the My Apps portal](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot de portal Mijn apps) voor meer informatie over de portal Mijn apps.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van ekarda, waar u de aanmeldingsstroom kunt initiëren.
 
-* [Lijst met zelfstudies voor het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
-* [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-* [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
-* [ekarda uitproberen met Azure AD](https://aad.portal.azure.com/)
-* Gebruik de [enterprise eCard-oplossing van ekarda](https://ekarda.com/ecards-ecards-with-logo-for-business-corporate-enterprise) om het gewenste aantal medewerkers in te richten om eCards met uw bedrijfslogo naar hun klanten en collega's te verzenden. Meer informatie over het inrichten van [ekarda als een oplossing voor eenmalige aanmelding](https://support.ekarda.com/#SSO-Implementation).
-* [Wat is sessiebeheer in Microsoft Cloud App Security?](/cloud-app-security/proxy-intro-aad)
-* [ekarda beveiligen met geavanceerde zichtbaarheid en besturingselementen](/cloud-app-security/proxy-intro-aad)
+* Ga rechtstreeks naar de aanmeldings-URL van ekarda en initieer hier de aanmeldingsstroom.
+
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
+
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt automatisch aangemeld bij het exemplaar van ekarda waarvoor u eenmalige aanmelding hebt ingesteld
+
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in Mijn apps op de tegel ekarda klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij het ekarda-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Nadat u ekarda hebt geconfigureerd, kunt u sessiebeheer afdwingen. Deze voorzorgsmaatregel biedt in realtime bescherming tegen de exfiltratie en infiltratie van gevoelige gegevens in uw organisatie. Sessiebeheer is een uitbreiding van App-beheer voor voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

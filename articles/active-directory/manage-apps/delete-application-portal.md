@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.topic: quickstart
 ms.workload: identity
-ms.date: 07/01/2020
+ms.date: 12/28/2020
 ms.author: kenwith
-ms.openlocfilehash: 677c9c0123c174fdf2cf8e94f9c8110656d21306
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e2b8bd47f7d124562a38413d36b849d1f7efacee
+ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649395"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97802759"
 ---
 # <a name="quickstart-delete-an-application-from-your-azure-active-directory-azure-ad-tenant"></a>Quickstart: Een toepassing verwijderen uit uw Azure Active Directory-tenant (Azure AD)
 
@@ -53,6 +53,6 @@ Als u de quickstart-reeks hebt voltooid, kunt u de app verwijderen om uw testten
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U hebt de quickstart-reeks voltooid! Lees als volgende stap meer over best practices in app-beheer.
+U hebt de quickstart-reeks voltooid! Vervolgens kunt u [Wat is SSO?](what-is-single-sign-on.md) raadplegen voor meer informatie over eenmalige aanmelding (SSO). Of lees over de best practices in app-beheer.
 > [!div class="nextstepaction"]
 > [Best practices voor toepassingsbeheer](application-management-fundamentals.md)

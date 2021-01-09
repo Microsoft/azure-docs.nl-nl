@@ -3,12 +3,12 @@ title: Resources implementeren met REST API en sjabloon
 description: Gebruik Azure Resource Manager en Resource Manager-REST API om resources te implementeren in Azure. De resources zijn gedefinieerd in een Resource Manager-sjabloon.
 ms.topic: conceptual
 ms.date: 10/22/2020
-ms.openlocfilehash: d1c8a365153007d3337d922bc163ba3767eeddc9
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 77192aff9ed4fe33269b5e11891c30e15bc312dd
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675412"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028961"
 ---
 # <a name="deploy-resources-with-arm-templates-and-azure-resource-manager-rest-api"></a>Resources implementeren met ARM-sjablonen en Azure Resource Manager REST API
 
@@ -20,13 +20,13 @@ U kunt uw sjabloon insluiten in de hoofd tekst van de aanvraag of een koppeling 
 
 U kunt uw implementatie richten op een resource groep, een Azure-abonnement, een beheer groep of een Tenant. Afhankelijk van het bereik van de implementatie, gebruikt u verschillende opdrachten.
 
-* Gebruik [implementaties-maken](/rest/api/resources/deployments/createorupdate)om te implementeren in een **resource groep** . De aanvraag wordt verzonden naar:
+- Gebruik [implementaties-maken](/rest/api/resources/deployments/createorupdate)om te implementeren in een **resource groep**. De aanvraag wordt verzonden naar:
 
   ```HTTP
   PUT https://management.azure.com/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
   ```
 
-* Als u wilt implementeren in een **abonnement** , gebruikt u [implementaties-maken bij abonnements bereik](/rest/api/resources/deployments/createorupdateatsubscriptionscope). De aanvraag wordt verzonden naar:
+- Als u wilt implementeren in een **abonnement**, gebruikt u [implementaties-maken bij abonnements bereik](/rest/api/resources/deployments/createorupdateatsubscriptionscope). De aanvraag wordt verzonden naar:
 
   ```HTTP
   PUT https://management.azure.com/subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
@@ -34,7 +34,7 @@ U kunt uw implementatie richten op een resource groep, een Azure-abonnement, een
 
   Zie [resource groepen en-resources op abonnements niveau maken](deploy-to-subscription.md)voor meer informatie over implementaties op abonnements niveau.
 
-* Als u wilt implementeren in een **beheer groep** , gebruikt u [implementaties-maken voor het bereik van de beheer groep](/rest/api/resources/deployments/createorupdateatmanagementgroupscope). De aanvraag wordt verzonden naar:
+- Als u wilt implementeren in een **beheer groep**, gebruikt u [implementaties-maken voor het bereik van de beheer groep](/rest/api/resources/deployments/createorupdateatmanagementgroupscope). De aanvraag wordt verzonden naar:
 
   ```HTTP
   PUT https://management.azure.com/providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
@@ -42,7 +42,7 @@ U kunt uw implementatie richten op een resource groep, een Azure-abonnement, een
 
   Zie [resources maken op het niveau van de beheer groep](deploy-to-management-group.md)voor meer informatie over implementaties op het niveau van beheer groepen.
 
-* Als u wilt implementeren in een **Tenant** , gebruikt u [implementaties-maken of bijwerken in het Tenant bereik](/rest/api/resources/deployments/createorupdateattenantscope). De aanvraag wordt verzonden naar:
+- Als u wilt implementeren in een **Tenant**, gebruikt u [implementaties-maken of bijwerken in het Tenant bereik](/rest/api/resources/deployments/createorupdateattenantscope). De aanvraag wordt verzonden naar:
 
   ```HTTP
   PUT https://management.azure.com/providers/Microsoft.Resources/deployments/{deploymentName}?api-version=2020-06-01
@@ -83,7 +83,7 @@ In de voor beelden in dit artikel worden de implementaties van resource groepen 
 
    Geef in de hoofd tekst van de aanvraag een koppeling op naar uw sjabloon en parameter bestand. Zie [Een Resource Manager-parameterbestand maken](parameter-files.md) voor meer informatie over het parameterbestand.
 
-   U ziet dat de **modus** is ingesteld op **Incrementeel** . Stel de **modus** in op **voltooid** als u een volledige implementatie wilt uitvoeren. Wees voorzichtig met het gebruik van de volledige modus, omdat u per ongeluk resources kunt verwijderen die zich niet in uw sjabloon bevinden.
+   U ziet `mode` dat de is ingesteld op **Incrementeel**. Stel `mode` in op **volt ooien** als u een volledige implementatie wilt uitvoeren. Wees voorzichtig met het gebruik van de volledige modus, omdat u per ongeluk resources kunt verwijderen die zich niet in uw sjabloon bevinden.
 
    ```json
    {
@@ -122,9 +122,9 @@ In de voor beelden in dit artikel worden de implementaties van resource groepen 
    }
    ```
 
-    U kunt uw opslag account instellen om een SAS-token (Shared Access Signature) te gebruiken. Zie [toegang overdragen met een Shared Access Signature](/rest/api/storageservices/delegating-access-with-a-shared-access-signature)voor meer informatie.
+    U kunt uw opslag account instellen om een SAS-token (Shared Access Signature) te gebruiken. Zie [Toegang delegeren met een hand tekening voor gedeelde toegang](/rest/api/storageservices/delegate-access-with-shared-access-signature)voor meer informatie.
 
-    Als u een gevoelige waarde voor een para meter (bijvoorbeeld een wacht woord) moet opgeven, voegt u die waarde toe aan een sleutel kluis. Haal de sleutel kluis op tijdens de implementatie, zoals wordt weer gegeven in het vorige voor beeld. Zie [veilige waarden door geven tijdens de implementatie](key-vault-parameter.md)voor meer informatie.
+    Als u een gevoelige waarde voor een para meter (bijvoorbeeld een wacht woord) moet opgeven, voegt u die waarde toe aan een sleutel kluis. Haal de sleutel kluis op tijdens de implementatie, zoals wordt weer gegeven in het vorige voor beeld. Zie [Azure Key Vault gebruiken om de waarde van een beveiligde para meter door te geven tijdens de implementatie](key-vault-parameter.md)voor meer informatie.
 
 1. In plaats van te koppelen aan bestanden voor de sjabloon en para meters, kunt u deze in de hoofd tekst van de aanvraag toevoegen. In het volgende voor beeld wordt de hoofd tekst van de aanvraag met de sjabloon en de parameter inline weer gegeven:
 
@@ -217,4 +217,3 @@ Geef elke implementatie een unieke naam om conflicten met gelijktijdige implemen
 - Zie [Azure Resource Manager implementatie modi](deployment-modes.md)om op te geven hoe u resources wilt afhandelen die in de resource groep aanwezig zijn, maar die niet zijn gedefinieerd in de sjabloon.
 - Zie [asynchrone Azure-bewerkingen volgen](../management/async-operations.md)voor meer informatie over het verwerken van asynchrone rest-bewerkingen.
 - Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over sjablonen.
-

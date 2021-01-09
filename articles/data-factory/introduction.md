@@ -9,12 +9,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: overview
 ms.date: 09/30/2019
-ms.openlocfilehash: d8b6a852ff0aeb287b12d63bfa689a38a56d418f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 00ae812536e73f432b9bddb93fc1b4a958b379f5
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485009"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97812865"
 ---
 # <a name="what-is-azure-data-factory"></a>Wat is Azure Data Factory?
 
@@ -56,8 +56,7 @@ Nadat de gegevens in een gecentraliseerd gegevensarchief in de cloud zijn opgeno
 Als u liever transformaties handmatig codeert, ondersteunt ADF externe activiteiten voor het uitvoeren van uw transformaties op berekeningsservices zoals HDInsight Hadoop, Spark, Data Lake Analytics en Machine Learning.
 
 ### <a name="cicd-and-publish"></a>CI/CD en publiceren
-Data Factory biedt volledige ondersteuning voor CI/CD van uw gegevenspijplijnen met behulp van Azure DevOps en GitHub. Zo kunt u uw ETL-processen stapsgewijs ontwikkelen en leveren voordat u het voltooide product publiceert. Nadat de onbewerkte gegevens zijn omgezet in gebruiksklare bedrijfsgegevens, laadt u de gegevens in Azure Data Warehouse, Azure SQL Database, Azure CosmosDB of een andere analyse-engine waar gebruikers in uw bedrijf naar kunnen verwijzen met hun hulpprogramma's voor business intelligence.
-
+[Data Factory biedt volledige ondersteuning voor CI/CD](continuous-integration-deployment.md) van uw gegevenspijplijnen met behulp van Azure DevOps en GitHub. Zo kunt u uw ETL-processen stapsgewijs ontwikkelen en leveren voordat u het voltooide product publiceert. Nadat de onbewerkte gegevens zijn omgezet in gebruiksklare bedrijfsgegevens, laadt u de gegevens in Azure Data Warehouse, Azure SQL Database, Azure CosmosDB of een andere analyse-engine waar gebruikers in uw bedrijf naar kunnen verwijzen met hun hulpprogramma's voor business intelligence.
 ### <a name="monitor"></a>Controleren
 Nadat u uw pijplijn voor gegevensintegratie hebt gemaakt en geïmplementeerd, en op die manier toegevoegde waarde biedt met getransformeerde gegevens, controleert u hoe vaak de geplande activiteiten en pijplijnen slagen en mislukken. Azure Data Factory heeft ingebouwde ondersteuning voor pijplijnbewaking via Azure Monitor, API, PowerShell, Azure Monitor-logboeken en statusvensters in de Azure-portal.
 

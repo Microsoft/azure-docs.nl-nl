@@ -1,40 +1,40 @@
 ---
-title: Een Azure-functie instellen om gegevens te verwerken
+title: Een functie in azure instellen voor het verwerken van gegevens
 titleSuffix: Azure Digital Twins
-description: Zie een Azure-functie maken die kan worden geopend en geactiveerd door Digital apparaatdubbels.
+description: Zie een functie maken in azure die kan worden geopend en geactiveerd door Digital apparaatdubbels.
 author: baanders
 ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 5352a95b865851be937af7b9f19268afd23148db
-ms.sourcegitcommit: 58f12c358a1358aa363ec1792f97dae4ac96cc4b
+ms.openlocfilehash: 7f491bbe61e8574a7275d9ef5c87d05fa61dc7c4
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93280039"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035305"
 ---
-# <a name="connect-azure-functions-apps-for-processing-data"></a>Azure Functions-apps verbinden voor het verwerken van gegevens
+# <a name="connect-function-apps-in-azure-for-processing-data"></a>Functie-apps in azure verbinden voor het verwerken van gegevens
 
-Het bijwerken van digitale apparaatdubbels op basis van gegevens wordt verwerkt met behulp van [**gebeurtenis routes**](concepts-route-events.md) via Compute-resources, zoals [Azure functions](../azure-functions/functions-overview.md). Een Azure-functie kan worden gebruikt om een digitale dubbele taak bij te werken als reactie op:
+Het bijwerken van digitale apparaatdubbels op basis van gegevens wordt verwerkt met behulp van [**gebeurtenis routes**](concepts-route-events.md) via Compute-resources, zoals een functie die is gemaakt met behulp van [Azure functions](../azure-functions/functions-overview.md). Functies kunnen worden gebruikt voor het bijwerken van een digitale dubbele in reactie op:
 * telemetrie-gegevens van apparaten die afkomstig zijn van IoT Hub
 * eigenschaps wijziging of andere gegevens die afkomstig zijn van een andere digitale twee in het dubbele diagram
 
-Dit artikel helpt u bij het maken van een Azure-functie voor gebruik met Azure Digital Apparaatdubbels. 
+Dit artikel helpt u bij het maken van een functie in azure voor gebruik met Azure Digital Apparaatdubbels. 
 
 Hier volgt een overzicht van de stappen die het bevat:
 
-1. Een Azure Functions-app maken in Visual Studio
-2. Een Azure-functie schrijven met een [Event grid](../event-grid/overview.md) trigger
+1. Een Azure Functions-project in Visual Studio maken
+2. Een functie schrijven met een [Event grid](../event-grid/overview.md) trigger
 3. Voeg verificatie code toe aan de functie (om toegang te krijgen tot Azure Digital Apparaatdubbels)
 4. De functie-app publiceren in azure
-5. [Beveiligings](concepts-security.md) toegang instellen voor de Azure function-app
+5. [Beveiligings](concepts-security.md) toegang instellen voor de functie-app
 
 ## <a name="prerequisite-set-up-azure-digital-twins-instance"></a>Voor waarde: Stel het Azure Digital Apparaatdubbels-exemplaar in
 
 [!INCLUDE [digital-twins-prereq-instance.md](../../includes/digital-twins-prereq-instance.md)]
 
-## <a name="create-an-azure-functions-app-in-visual-studio"></a>Een Azure Functions-app maken in Visual Studio
+## <a name="create-a-function-app-in-visual-studio"></a>Een functie-app maken in Visual Studio
 
 Selecteer in Visual Studio 2019 _bestand > nieuw > project_ en zoek naar de _Azure functions_ sjabloon en selecteer _volgende_.
 
@@ -46,15 +46,15 @@ Geef een naam op voor de functie-app en selecteer _maken_.
 
 Selecteer het type functie-app *Event grid trigger* en selecteer _maken_.
 
-:::image type="content" source="media/how-to-create-azure-function/eventgridtrigger-function.png" alt-text="Visual Studio: dialoog venster activering van Azure function-project":::
+:::image type="content" source="media/how-to-create-azure-function/eventgridtrigger-function.png" alt-text="Visual Studio: dialoog venster Azure Functions project activeren":::
 
-Als uw functie-app is gemaakt, heeft uw Visual Studio automatisch een code voorbeeld in het **Function.cs** -bestand in de projectmap. Deze korte Azure-functie wordt gebruikt om gebeurtenissen te registreren.
+Als uw functie-app is gemaakt, heeft uw Visual Studio automatisch een code voorbeeld in het **Function.cs** -bestand in de projectmap. Deze korte functie wordt gebruikt om gebeurtenissen te registreren.
 
 :::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Visual Studio: Project venster met voorbeeld code":::
 
-## <a name="write-an-azure-function-with-an-event-grid-trigger"></a>Een Azure-functie schrijven met een Event Grid trigger
+## <a name="write-a-function-with-an-event-grid-trigger"></a>Een functie schrijven met een Event Grid trigger
 
-U kunt een Azure-functie schrijven door de SDK toe te voegen aan uw functie-app. De functie-app communiceert met Azure Digital Apparaatdubbels met behulp van de [Azure Digital APPARAATDUBBELS SDK voor .net (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). 
+U kunt een functie schrijven door de SDK toe te voegen aan uw functie-app. De functie-app communiceert met Azure Digital Apparaatdubbels met behulp van de [Azure Digital APPARAATDUBBELS SDK voor .net (C#)](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true). 
 
 Als u de SDK wilt gebruiken, moet u de volgende pakketten in uw project toevoegen. U kunt de pakketten installeren met behulp van Visual Studio NuGet package manager of de pakketten toevoegen met behulp van het `dotnet` opdracht regel programma. Kies een van de volgende methoden: 
 
@@ -78,7 +78,7 @@ dotnet add package Azure.identity --version 1.2.2
 dotnet add package System.Net.Http
 dotnet add package Azure.Core.Pipeline
 ```
-Open vervolgens in uw Visual Studio-Solution Explorer het _Function.cs_ -bestand _met_ voorbeeld code en voeg de volgende instructies toe aan uw Azure-functie. 
+Open vervolgens in uw Visual Studio-Solution Explorer het _Function.cs_ -bestand met voorbeeld code en voeg _de volgende instructies_ toe aan uw functie. 
 
 ```csharp
 using Azure.DigitalTwins.Core;
@@ -86,9 +86,9 @@ using Azure.Identity;
 using System.Net.Http;
 using Azure.Core.Pipeline;
 ```
-## <a name="add-authentication-code-to-the-azure-function"></a>Verificatie code toevoegen aan de Azure-functie
+## <a name="add-authentication-code-to-the-function"></a>Verificatie code toevoegen aan de functie
 
-U declareert nu variabelen op klasseniveau en voegt een verificatie code toe waarmee de functie toegang kan krijgen tot Azure Digital Apparaatdubbels. U gaat het volgende toevoegen aan uw Azure-functie in het bestand {uw functie naam}. cs.
+U declareert nu variabelen op klasseniveau en voegt een verificatie code toe waarmee de functie toegang kan krijgen tot Azure Digital Apparaatdubbels. U voegt het volgende toe aan uw functie in het bestand {uw functie naam}. cs.
 
 * Lees de URL van de ADT-service als een omgevings variabele. Het is een goed idee om de service-URL te lezen uit een omgevings variabele in plaats van deze op te harden in de functie.
 ```csharp     
@@ -98,7 +98,7 @@ private static readonly string adtInstanceUrl = Environment.GetEnvironmentVariab
 ```csharp
 private static readonly HttpClient httpClient = new HttpClient();
 ```
-* U kunt de referenties beheerde identiteit in azure gebruiken.
+* U kunt de referenties van de beheerde identiteit gebruiken in Azure Functions.
 ```csharp
 ManagedIdentityCredential cred = new ManagedIdentityCredential("https://digitaltwins.azure.net");
 ```
@@ -159,16 +159,16 @@ namespace adtIngestFunctionSample
 
 ## <a name="publish-the-function-app-to-azure"></a>De functie-app publiceren in azure
 
-Als u de functie-app naar Azure wilt publiceren, selecteert u het functie project (niet de oplossing) in Solution Explorer en kiest u **publiceren**.
+Als u het project wilt publiceren naar een functie-app in azure, klikt u met de rechter muisknop op het functie project (niet de oplossing) in Solution Explorer en kiest u **publiceren**.
 
 > [!IMPORTANT] 
-> Als u een Azure-functie publiceert, worden er extra kosten in rekening gebracht voor uw abonnement, onafhankelijk van Azure Digital Apparaatdubbels.
+> Wanneer u publiceert naar een functie-app in azure, worden extra kosten in rekening gebracht voor uw abonnement, onafhankelijk van Azure Digital Apparaatdubbels.
 
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function.png" alt-text="Visual Studio: Azure-functie publiceren ":::
+:::image type="content" source="media/how-to-create-azure-function/publish-azure-function.png" alt-text="Visual Studio: functie publiceren naar Azure":::
 
 Selecteer **Azure** als publicatie doel en selecteer **volgende**.
 
-:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-1.png" alt-text="Visual Studio: Azure function-dialoog venster publiceren, selecteer Azure ":::
+:::image type="content" source="media/how-to-create-azure-function/publish-azure-function-1.png" alt-text="Visual Studio: Azure Functions dialoog venster publiceren, selecteer Azure ":::
 
 :::image type="content" source="media/how-to-create-azure-function/publish-azure-function-2.png" alt-text="Visual Studio: functie dialoog venster publiceren, selecteer Azure functie-app (Windows) of (Linux) op basis van uw computer":::
 
@@ -179,16 +179,16 @@ Selecteer **Azure** als publicatie doel en selecteer **volgende**.
 :::image type="content" source="media/how-to-create-azure-function/publish-azure-function-5.png" alt-text="Visual Studio: functie dialoog venster publiceren, de functie-app in de lijst selecteren en volt ooien":::
 
 Voer op de volgende pagina de gewenste naam in voor de nieuwe functie-app, een resource groep en andere gegevens.
-Als u wilt dat uw functions-app toegang kan krijgen tot Azure Digital Apparaatdubbels, moet deze een door een systeem beheerde identiteit hebben en gemachtigd zijn om toegang te krijgen tot uw Azure Digital Apparaatdubbels-exemplaar.
+De functie-app kan alleen toegang krijgen tot Azure Digital Apparaatdubbels als het een door een systeem beheerde identiteit heeft en toegang heeft tot uw Azure Digital Apparaatdubbels-exemplaar.
 
 Vervolgens kunt u beveiligings toegang voor de functie instellen met behulp van CLI of Azure Portal. Kies een van de volgende methoden:
 
-## <a name="set-up-security-access-for-the-azure-function-app"></a>Beveiligings toegang instellen voor de Azure function-app
-U kunt de beveiligings toegang voor de Azure function-app instellen met een van de volgende opties:
+## <a name="set-up-security-access-for-the-function-app"></a>Beveiligings toegang instellen voor de functie-app
+U kunt de beveiligings toegang voor de functie-app instellen met een van de volgende opties:
 
-### <a name="option-1-set-up-security-access-for-the-azure-function-app-using-cli"></a>Optie 1: beveiligings toegang voor de Azure function-app instellen met behulp van CLI
+### <a name="option-1-set-up-security-access-for-the-function-app-using-cli"></a>Optie 1: beveiligings toegang instellen voor de functie-app met behulp van CLI
 
-De Azure function-skelet van eerdere voor beelden vereist dat er een Bearer-token wordt door gegeven, zodat het kan worden geverifieerd met Azure Digital Apparaatdubbels. Als u er zeker van wilt zijn dat dit Bearer-token is door gegeven, moet u [Managed Service Identity (MSI)](../active-directory/managed-identities-azure-resources/overview.md) instellen voor de functie-app. U hoeft dit slechts één keer te doen voor elke functie-app.
+De functie skelet van eerdere voor beelden vereist dat er een Bearer-token wordt door gegeven, zodat het kan worden geverifieerd met Azure Digital Apparaatdubbels. Als u er zeker van wilt zijn dat dit Bearer-token is door gegeven, moet u [Managed Service Identity (MSI)](../active-directory/managed-identities-azure-resources/overview.md) instellen voor de functie-app. U hoeft dit slechts één keer te doen voor elke functie-app.
 
 U kunt door het systeem beheerde identiteit maken en de identiteit van de functie-app toewijzen aan de rol _**Azure Digital Apparaatdubbels data owner**_ voor uw Azure Digital apparaatdubbels-instantie. Hiermee geeft u de functie-app toestemming in het exemplaar voor het uitvoeren van activiteiten voor gegevens vlak. Vervolgens stelt u de URL van het Azure Digital Apparaatdubbels-exemplaar toegankelijk te maken voor uw functie door een omgevings variabele in te stellen.
 
@@ -214,7 +214,7 @@ Ten slotte kunt u de URL van uw Azure Digital Apparaatdubbels-exemplaar toeganke
 ```azurecli-interactive 
 az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=https://<your-Azure-Digital-Twins-instance-hostname>"
 ```
-### <a name="option-2-set-up-security-access-for-the-azure-function-app-using-azure-portal"></a>Optie 2: beveiligings toegang instellen voor de Azure function-app met behulp van Azure Portal
+### <a name="option-2-set-up-security-access-for-the-function-app-using-azure-portal"></a>Optie 2: beveiligings toegang instellen voor de functie-app met behulp van Azure Portal
 
 Met een door het systeem toegewezen beheerde identiteit kunnen Azure-bronnen worden geverifieerd bij Cloud Services (bijvoorbeeld Azure Key Vault) zonder dat referenties in code worden opgeslagen. Wanneer deze functie is ingeschakeld, kunnen alle benodigde machtigingen worden verleend via Azure Role-based-Access-Control. De levens cyclus van dit type beheerde identiteit is gekoppeld aan de levens cyclus van deze resource. Daarnaast kan elke resource (bijvoorbeeld virtuele machine) slechts één door het systeem toegewezen beheerde identiteit hebben.
 
@@ -244,10 +244,10 @@ Selecteer de knop _Azure Role Assignments_ , waarmee de pagina met *Azure-roltoe
 
 Selecteer op de pagina _roltoewijzing toevoegen (preview)_ die wordt geopend:
 
-* _Bereik_ : resourcegroep
-* _Abonnement_ : Selecteer uw Azure-abonnement
-* _Resource groep_ : Selecteer de resource groep in de vervolg keuzelijst
-* _Rol_ : Selecteer de _Azure Digital Apparaatdubbels-gegevens eigenaar_ uit de vervolg keuzelijst
+* _Bereik_: resourcegroep
+* _Abonnement_: Selecteer uw Azure-abonnement
+* _Resource groep_: Selecteer de resource groep in de vervolg keuzelijst
+* _Rol_: Selecteer de _Azure Digital Apparaatdubbels-gegevens eigenaar_ uit de vervolg keuzelijst
 
 Sla uw gegevens vervolgens op door te klikken op de knop _Opslaan_ .
 
@@ -265,11 +265,11 @@ U kunt ADT_INSTANCE_URL ophalen door **_https://_** toe te voegen aan de hostnaa
 
 U kunt nu een toepassings instelling maken aan de hand van de volgende stappen:
 
-* Zoek uw Azure-functie met behulp van de functie naam in de zoek balk en selecteer de functie in de lijst
+* Zoek naar uw app met behulp van de naam van de functie-app in de zoek balk en selecteer de functie-app in de lijst
 * Selecteer _configuratie_ op de navigatie balk aan de linkerkant om een nieuwe toepassings instelling te maken
 * Selecteer op het tabblad _Toepassings instellingen_ _+ nieuwe toepassings instelling_
 
-:::image type="content" source="media/how-to-create-azure-function/search-for-azure-function.png" alt-text="Azure Portal: zoeken naar een bestaande Azure-functie":::
+:::image type="content" source="media/how-to-create-azure-function/search-for-azure-function.png" alt-text="Azure Portal: zoeken naar een bestaande functie-app":::
 
 :::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Azure Portal: toepassings instellingen configureren":::
 
@@ -295,10 +295,10 @@ U kunt zien dat de toepassings instellingen worden bijgewerkt door het pictogram
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u de stappen voor het instellen van een Azure-functie gevolgd voor gebruik met Azure Digital Apparaatdubbels. Vervolgens kunt u uw Azure-functie abonneren op Event Grid om te Luis teren naar een eind punt. Dit eind punt kan het volgende zijn:
+In dit artikel hebt u de stappen voor het instellen van een functie-app in azure gevolgd voor gebruik met Azure Digital Apparaatdubbels. Vervolgens kunt u uw functie abonneren op Event Grid om te Luis teren naar een eind punt. Dit eind punt kan het volgende zijn:
 * Een Event Grid-eind punt dat is gekoppeld aan Azure Digital Apparaatdubbels om berichten te verwerken die afkomstig zijn van Azure Digital Apparaatdubbels zelf (zoals wijzigings berichten van eigenschappen, telemetrie-berichten die worden gegenereerd door [digitale apparaatdubbels](concepts-twins-graph.md) in het dubbele diagram of levenscyclus berichten)
 * De IoT-systeem onderwerpen die door IoT Hub worden gebruikt voor het verzenden van telemetrie en andere gebeurtenissen voor apparaten
 * Een Event Grid-eind punt dat berichten van andere services ontvangt
 
-Bekijk vervolgens hoe u uw eenvoudige Azure function bouwt om IoT Hub gegevens op te nemen in azure Digital Apparaatdubbels:
+Bekijk vervolgens hoe u de basis functie bouwt om IoT Hub gegevens op te nemen in azure Digital Apparaatdubbels:
 * [*Instructies: telemetrie opnemen van IoT Hub*](how-to-ingest-iot-hub-data.md)

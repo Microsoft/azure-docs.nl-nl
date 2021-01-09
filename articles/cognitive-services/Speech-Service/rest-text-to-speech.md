@@ -8,15 +8,15 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 03/23/2020
+ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: bfdea5f2e2bd20a35ee948e99b3be9bf55038b13
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.openlocfilehash: 9bee5fa6b76aad9305947ebe460f37c399340038
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760653"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98033442"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API voor tekst-naar-spraak
 
@@ -35,7 +35,7 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 * De tekst-naar-spraak-REST API vereist een autorisatie-header. Dit betekent dat u een token uitwisseling moet volt ooien om toegang te krijgen tot de service. Zie [Verificatie](#authentication) voor meer informatie.
 
 > [!TIP]
-> Zie de [documentatie van Azure Government](/azure/azure-government/compare-azure-government-global-azure) voor Government Cloud (FairFax)-eind punten.
+> Zie [dit artikel](sovereign-clouds.md) voor Azure Government en Azure China-eind punten.
 
 [!INCLUDE [](../../../includes/cognitive-services-speech-service-rest-auth.md)]
 
@@ -76,7 +76,10 @@ In deze tabel vindt u de vereiste en optionele kopteksten voor tekst-naar-spraak
 
 | Header | Beschrijving | Vereist/optioneel |
 |--------|-------------|---------------------|
-| `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Vereist |
+| `Ocp-Apim-Subscription-Key` | De abonnementssleutel voor de Speech-service. | Deze header of `Authorization` is vereist. |
+| `Authorization` | Een autorisatie token dat wordt voorafgegaan door het woord `Bearer` . Zie [Verificatie](#authentication) voor meer informatie. | Deze header of `Ocp-Apim-Subscription-Key` is vereist. |
+
+
 
 ### <a name="request-body"></a>Aanvraagbody
 
@@ -90,7 +93,7 @@ Voor deze aanvraag is alleen een autorisatie-header vereist.
 GET /cognitiveservices/voices/list HTTP/1.1
 
 Host: westus.tts.speech.microsoft.com
-Authorization: Bearer [Base64 access_token]
+Ocp-Apim-Subscription-Key: YOUR_SUBSCRIPTION_KEY
 ```
 
 ### <a name="sample-response"></a>Voorbeeldantwoord

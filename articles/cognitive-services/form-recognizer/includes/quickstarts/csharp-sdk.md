@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/06/2020
 ms.author: pafarley
-ms.openlocfilehash: d7577668d87ecaf2d769136d64990f95fc212fe6
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 4b44a8375bc13709959e2401f9d772fdeab00f52
+ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96356525"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97808603"
 ---
 > [!IMPORTANT]
 > De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud.
@@ -58,17 +58,24 @@ Build succeeded.
 
 Installeer in de toepassingsmap de Form Recognizer-clientbibliotheek voor .NET met de volgende opdracht:
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 
 ```console
 dotnet add package Azure.AI.FormRecognizer --version 3.0.0
 ```
 
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+> [!NOTE]
+> De Form Recognizer 3.0.0 SDK weerspiegelt API-versie 2.0
+
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 ```console
 dotnet add package Azure.AI.FormRecognizer --version 3.1.0-beta.1
 ```
+
+> [!NOTE]
+> De Form Recognizer 3.1.0 SDK weerspiegelt API-versie 2.1 (preview)
+
 ---
 
 > [!TIP]
@@ -89,9 +96,9 @@ Maak in de klasse **Programma** van de toepassing variabelen voor de sleutel en 
 
 Voeg in de **Hoofd** methode van de toepassing een aanroep toe aan de asynchrone taken die in deze quickstart wordt gebruikt. U gaat ze later implementeren.
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_main)]
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_main)]
 
 ---
@@ -127,7 +134,7 @@ Zie de voorbeelden voor [Een model trainen](#train-a-custom-model) en [Aangepast
 
 Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de clientbibliotheek van Form Recognizer voor .NET:
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 
 * [De client verifiëren](#authenticate-the-client)
 * [Formulierinhoud herkennen](#recognize-form-content)
@@ -136,7 +143,7 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
 
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 * [De client verifiëren](#authenticate-the-client)
 * [Formulierinhoud herkennen](#recognize-form-content)
@@ -168,13 +175,15 @@ Herhaal de bovenstaande stappen voor een nieuwe methode om een trainingsclient t
 
 U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens. Voeg deze toe aan de hoofdmap van uw **Programma**-klasse.
 
-* Als u de SAS-URL voor de trainingsgegevens van uw aangepaste model wilt ophalen, opent u de Microsoft Azure Storage Explorer, klikt u met de rechtermuisknop op uw container en selecteert u **Handtekening voor gedeelde toegang ophalen**. Controleer of de machtigingen **Lezen** en **Lijst** zijn ingeschakeld en klik op **Maken**. Kopieer vervolgens de waarde in de sectie **URL**. Deze moet de notatie `https://<storage account>.blob.core.windows.net/<container name>?<SAS value>` hebben.
-* Gebruik vervolgens de bovenstaande stappen om de SAS-URL van een afzonderlijk document in Blob Storage op te halen.
+* [!INCLUDE [get SAS URL](../sas-instructions.md)]
+
+   :::image type="content" source="../../media/quickstarts/get-sas-url.png" alt-text="SAS-URL ophalen":::
+* Herhaal vervolgens de bovenstaande stappen om de SAS-URL van een afzonderlijk document in Blob Storage-container op te halen. Sla het bestand ook op een tijdelijke locatie op.
 * Sla tot slot de URL op van de voorbeeldafbeelding(en) die hieronder zijn opgenomen (ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms)). 
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart.cs?name=snippet_urls)]
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_urls)]
 
 ---
@@ -289,11 +298,15 @@ Item:
 Total: '1203.39', with confidence '0.774'
 ```
 
-#### <a name="version-30"></a>[versie 3.0](#tab/ga)
-
-#### <a name="version-31-preview"></a>[versie 3.1 preview](#tab/preview)
-
 ## <a name="recognize-business-cards"></a>Visitekaartjes herkennen
+
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
+
 
 In deze sectie wordt beschreven hoe u veelvoorkomende velden in Engelse visitekaartjes kunt herkennen en extraheren, met behulp van een vooraf getraind model.
 
@@ -308,7 +321,16 @@ De geretourneerde waarde is een verzameling `RecognizedForm`-objecten: één voo
 
 [!code-csharp[](~/cognitive-services-quickstart-code/dotnet/FormRecognizer/FormRecognizerQuickstart-preview.cs?name=snippet_bc_print)]
 
+---
+
 ## <a name="recognize-invoices"></a>Facturen herkennen
+
+#### <a name="version-20"></a>[versie 2.0](#tab/ga)
+
+> [!IMPORTANT]
+> Deze functie is niet beschikbaar in de geselecteerde API-versie.
+
+#### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 In deze sectie wordt beschreven hoe u veelvoorkomende velden in verkoopfacturen kunt herkennen en extraheren, met behulp van een vooraf getraind model.
 

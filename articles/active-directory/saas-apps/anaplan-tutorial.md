@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/17/2019
 ms.author: jeedes
-ms.openlocfilehash: 92a878c60ba2a7c08a17ce2833132b389ef49435
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 9b6fcec6f564e944f0e73d151b61d46af4b4cc03
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92318736"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673134"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-anaplan"></a>Zelfstudie: Azure Active Directory-integratie met Anaplan
 
@@ -63,7 +63,7 @@ Om de integratie van Anaplan in Azure AD te configureren, moet u Anaplan uit de 
 
 4. Typ in het zoekvak **Anaplan**, selecteer **Anaplan** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
 
-     ![Anaplan in de lijst met resultaten](common/search-new-app.png)
+    ![Anaplan in de lijst met resultaten](common/search-new-app.png)
 
 ## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
 
@@ -142,8 +142,8 @@ Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam 
 
     ![Het dialoogvenster Gebruiker](common/user-properties.png)
 
-    a. Voer in het veld **Naam** **Britta Simon**in.
-  
+    a. Voer in het veld **Naam** **Britta Simon** in.
+
     b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
     Bijvoorbeeld: BrittaSimon@contoso.com
 
@@ -167,7 +167,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
     ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
 
-4. Klik op de knop**Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 
     ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
 
@@ -179,7 +179,7 @@ In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige
 
 ### <a name="create-anaplan-test-user"></a>Testgebruiker voor Anaplan maken
 
-In deze sectie gaat u in Anaplan een gebruiker maken met de naam Britta Simon. Werk samen met het [ondersteuningsteam van Anaplan](mailto:support@anaplan.com) om de gebruikers toe te voegen aan het Anaplan-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+In deze sectie gaat u in Anaplan een gebruiker maken met de naam Britta Simon. Werk samen met het[ondersteuningsteam van Anaplan](mailto:support@anaplan.com) om de gebruikers toe te voegen op het Anaplan-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
 ### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
 

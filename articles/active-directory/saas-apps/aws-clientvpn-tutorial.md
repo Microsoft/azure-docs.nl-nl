@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/11/2020
+ms.date: 12/29/2020
 ms.author: jeedes
-ms.openlocfilehash: 3a53a5b7e60ef214a3db58d9e280e9dee8fec609
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 11aac69816714611c168cd05c2828dd1ae85786e
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355848"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97813646"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-aws-clientvpn"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AWS ClientVPN
 
@@ -89,7 +89,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     |
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en antwoord-URL. Neem contact op met het [klantondersteuningsteam van AWS ClientVPN](https://aws.amazon.com/contact-us/) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden.  Werk deze waarden bij met de werkelijke aanmeldings-URL en antwoord-URL.  De aanmeldings-URL en antwoord-URL kunnen dezelfde waarde hebben (http://127.0.0.1:35001).  Raadpleeg de [AWS ClientVPN-documentatie](https://docs.aws.amazon.com/vpn/latest/clientvpn-admin/client-authentication.html#ad) voor de details.   U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal. Neem bij configuratieproblemen contact op met het [ondersteuningsteam van AWS ClientVPN](https://aws.amazon.com/contact-us/). 
 
 1. Ga in de Azure Active Directory-service naar **App-registraties** en selecteer **Alle toepassingen**.
 

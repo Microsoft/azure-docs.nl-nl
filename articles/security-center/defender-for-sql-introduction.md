@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: e9a2259f1e15a94ad1f2a9eabf7d3a2f3ed419f1
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 16f903e34c64214d54fc01fa621f561f1786de08
+ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387799"
+ms.lasthandoff: 12/23/2020
+ms.locfileid: "97755987"
 ---
 # <a name="introduction-to-azure-defender-for-sql"></a>Inleiding tot Azure Defender voor SQL
 
@@ -53,7 +53,9 @@ Deze twee abonnementen bevatten functionaliteit voor het identificeren en beperk
 
 - [Evaluatie van beveiligingsproblemen](../azure-sql/database/sql-vulnerability-assessment.md): de scanservice waarmee u potentiële zwakke plekken in de beveiliging van de database kunt detecteren, volgen en verhelpen. Evaluatiescans bieden een overzicht van de beveiligingsstatus van uw SQL-machines en details van eventuele beveiligingsresultaten.
 
-- [Geavanceerde beveiliging tegen bedreigingen](../azure-sql/database/threat-detection-overview.md): de detectieservice die uw SQL-servers continu bewaakt als het gaat om bedreigingen, zoals SQL-injectie, brute-force aanvallen en misbruik van bevoegdheden. Deze service biedt actiegerichte beveiligingswaarschuwingen in Azure Security Center met details van de verdachte activiteit, richtlijnen voor het oplossen van problemen met de bedreigingen en opties voor het voortzetten van uw onderzoeken met Azure Sentinel.
+- [Geavanceerde beveiliging tegen bedreigingen](../azure-sql/database/threat-detection-overview.md): de detectieservice die uw SQL-servers continu bewaakt als het gaat om bedreigingen, zoals SQL-injectie, brute-force aanvallen en misbruik van bevoegdheden. Deze service biedt actiegerichte beveiligingswaarschuwingen in Azure Security Center met details van de verdachte activiteit, richtlijnen voor het oplossen van problemen met de bedreigingen en opties voor het voortzetten van uw onderzoeken met Azure Sentinel. 
+    > [!TIP]
+    > Bekijk de lijst met beveiligingswaarschuwingen voor SQL-servers [op de referentiepagina voor waarschuwingen](alerts-reference.md#alerts-sql-db-and-warehouse).
 
 
 ## <a name="what-kind-of-alerts-does-azure-defender-for-sql-provide"></a>Wat voor soort waarschuwingen biedt Azure Defender voor SQL?
@@ -74,8 +76,3 @@ In dit artikel bent u meer te weten gekomen over Azure Defender voor SQL.
 
 > [!div class="nextstepaction"]
 > [Uw SQL-servers scannen op beveiligingsproblemen met Azure Defender](defender-for-sql-usage.md)
-
-Raadpleeg de volgende artikelen voor gerelateerd materiaal: 
-
-- [Azure Defender voor SQL inschakelen voor databaseservers](../azure-sql/database/azure-defender-for-sql.md)
-- [De lijst met beveiligingswaarschuwingen voor SQL-servers](alerts-reference.md#alerts-sql-db-and-warehouse)

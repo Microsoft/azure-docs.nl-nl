@@ -10,12 +10,12 @@ ms.subservice: text-analytics
 ms.topic: sample
 ms.date: 12/04/2020
 ms.author: aahi
-ms.openlocfilehash: 4f5c47000355a004f8d76d8b740b705618748380
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 6ea7b992a682537471ce0e78385b37674199d687
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505219"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97673050"
 ---
 # <a name="how-to-sentiment-analysis-and-opinion-mining"></a>Procedure: Sentimentanalyse en meninganalyse
 
@@ -24,8 +24,6 @@ De functie Sentimentanalyse van Text Analytics-API biedt u twee manieren om posi
 De AI-modellen die door de API worden gebruikt, worden door de service verschaft. U hoeft alleen maar inhoud voor analyse te verzenden.
 
 ## <a name="sentiment-analysis-versions-and-features"></a>Versies en functies van Sentimentanalyse
-
-[!INCLUDE [v3 region availability](../includes/v3-region-availability.md)]
 
 | Functie                                   | Sentimentanalyse v3 | Sentimentanalyse v3.1 (preview) |
 |-------------------------------------------|-----------------------|-----------------------------------|
@@ -47,7 +45,7 @@ De labels zijn *positief*, *negatief* en *neutraal*. Op documentniveau kan ook h
 | Het document bevat ten minste één `negative` zin en ten minste één `positive` zin.    | `mixed`                 |
 | Alle zinnen in het document zijn `neutral`.                                                  | `neutral`               |
 
-Betrouwbaarheidsscores kunnen variëren van 1 tot 0. Scores die dichter bij 1 liggen, geven een hogere betrouwbaarheid in de classificatie van het label aan. Lagere scores geven een lagere betrouwbaarheid aan. Voor elk document of elke zin zijn de voorspelde scores behorende bij de labels (positief, negatief en neutraal) opgeteld 1.
+Betrouwbaarheidsscores kunnen variëren van 1 tot 0. Scores die dichter bij 1 liggen, geven een hogere betrouwbaarheid in de classificatie van het label aan. Lagere scores geven een lagere betrouwbaarheid aan. Voor elk document of elke zin zijn de voorspelde scores behorende bij de labels (positief, negatief en neutraal) opgeteld 1. Lees de [opmerking over Text Analytics-transparantie](/legal/cognitive-services/text-analytics/transparency-note?context=/azure/cognitive-services/text-analytics/context/context)voor meer informatie. 
 
 ## <a name="opinion-mining"></a>Meninganalyse
 

@@ -8,12 +8,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 12/11/2020
 ms.author: cherylmc
-ms.openlocfilehash: b0937bbd72460b1d46ce0394af1933e858424966
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: c2efd9ac137c226c1d3a77e2cb6ebe17d75cb496
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97360319"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051527"
 ---
 # <a name="manage-secure-access-to-resources-in-spoke-vnets-for-user-vpn-clients"></a>Veilige toegang tot bronnen in spoke VNets voor VPN-clients van gebruikers beheren
 
@@ -147,4 +147,4 @@ Controleer de installatie van de beveiligde hub.
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie de [Veelgestelde vragen over virtuele WAN](virtual-wan-faq.md)voor meer informatie over Virtual WAN.
-* Zie de [Azure firewall Veelgestelde vragen](../firewall/firewall-faq.md)voor meer informatie over Azure firewall.
+* Zie de [Azure firewall Veelgestelde vragen](../firewall/firewall-faq.yml)voor meer informatie over Azure firewall.

@@ -5,13 +5,13 @@ author: ThomasWeiss
 ms.author: thweiss
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 12/23/2020
-ms.openlocfilehash: a6f8b79ecc8dcac71dc8f5d1be2bb58a0288a307
-ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
+ms.date: 01/08/2021
+ms.openlocfilehash: 3f5c3400f319a3f9d5f1544457b009f90d479634
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97760245"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98049827"
 ---
 # <a name="how-to-choose-between-provisioned-throughput-and-serverless"></a>Kiezen tussen ingerichte door Voer en serverloos
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -25,11 +25,11 @@ Azure Cosmos DB is beschikbaar in twee verschillende capaciteits modi: [ingerich
 | Criteria | Ingerichte doorvoer | Serverloos |
 | --- | --- | --- |
 | Status | Algemeen beschikbaar | In preview |
-| Geschikt voor | Essentiële werk belastingen waarvoor voorspel bare prestaties zijn vereist | Kleine tot middel grote workloads met licht en onregelmatige verkeer dat moeilijk te voors pellen is |
+| Geschikt voor | Workloads met aanhoudende verkeer waarvoor voorspel bare prestaties zijn vereist | Werk belastingen met onregelmatige of onvoorspelbaar verkeer en lage gemiddelde-piek verhouding van verkeer |
 | Uitleg | Voor elk van uw containers voorziet u een bepaalde hoeveelheid door Voer, uitgedrukt in [aanvraag eenheden](request-units.md) per seconde. Elke seconde is deze hoeveelheid aanvraag eenheden beschikbaar voor uw database bewerkingen. Ingerichte door Voer kan hand matig worden bijgewerkt of automatisch worden aangepast met automatische [schaling](provision-throughput-autoscale.md). | U voert uw database bewerkingen uit op uw containers zonder dat u enige capaciteit hoeft in te richten. |
 | Geo-distributie | Beschikbaar (onbeperkt aantal Azure-regio's) | Niet beschikbaar (serverloze accounts kunnen alleen worden uitgevoerd in één Azure-regio) |
 | Maximale opslag per container | Onbeperkt | 50 GB |
-| Prestaties | 99,99% tot 99,999% Beschik baarheid gedekt door SLA<br>< 10 MS latentie voor punt-en schrijf bewerkingen onder SLA<br>99,99% gegarandeerde door Voer gedekt door SLA | 99,9% tot 99,99% Beschik baarheid gedekt door SLA<br>< 10 MS-latentie voor punt-en < 30 MS voor schrijf bewerkingen die worden gedekt door SLO<br>95% burstie gedekt door SLO |
+| Prestaties | < 10 MS latentie voor punt-en schrijf bewerkingen onder SLA | < 10 MS-latentie voor punt-en < 30 MS voor schrijf bewerkingen die worden gedekt door SLO |
 | Factureringsmodel | Facturering geschiedt per uur voor de ingerichte RU/s, ongeacht het aantal verbruikte i/o's. | Facturering geschiedt per uur voor het bedrag van RUs dat door uw database bewerkingen wordt gebruikt. |
 
 > [!IMPORTANT]

@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleids definities
 description: Een lijst met Azure Policy ingebouwde beleids definities voor Azure Synapse Analytics. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 11/17/2020
+ms.date: 01/08/2021
 ms.topic: reference
 author: julieMSFT
 ms.author: jrasnick
 ms.service: synapse-analytics
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 655cf05ece748ae66ffd99bb170c59af74fb1f07
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 85486f92c0b19d341255e74c714b41ddd4449135
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446751"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051192"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-synapse-analytics"></a>Azure Policy ingebouwde definities voor Azure Synapse Analytics 
 
@@ -20,7 +20,7 @@ Deze pagina bevat een index van [Azure Policy](../governance/policy/overview.md)
 
 De naam van elke ingebouwde beleidsdefinitie linkt naar de beleidsdefinitie in de Azure-portal. Gebruik de koppeling in de kolom **Versie** om de bron te bekijken in de [Azure Policy GitHub-opslagplaats](https://github.com/Azure/azure-policy).
 
-## <a name="azure-synapse"></a>Azure-Synapse
+## <a name="azure-synapse"></a>Azure Synapse
 
 [!INCLUDE [azure-policy-reference-rp-synapse](../../includes/policy/reference/byrp/microsoft.synapse.md)]
 

@@ -8,12 +8,12 @@ ms.date: 6/3/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 3e5eb49a91e2c8bbd73f5dd37ed90f10b406fa3d
-ms.sourcegitcommit: d6a739ff99b2ba9f7705993cf23d4c668235719f
+ms.openlocfilehash: 7b2039f8b1aebef65112067e4fd9184777192015
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92496044"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051578"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Azure Digital Apparaatdubbels gebruiken voor het bijwerken van een Azure Maps binnenste kaart
 
@@ -31,7 +31,7 @@ Deze procedure geldt voor:
     * U gaat dit twee verlengen met een extra eind punt en route. U kunt ook een andere functie toevoegen aan uw functie-app vanuit deze zelf studie. 
 * Volg de Azure Maps [*zelf studie: gebruik Azure Maps Maker voor het maken van plattegronden*](../azure-maps/tutorial-creator-indoor-maps.md) om een Azure Maps binnenste kaart te maken met een *functie statusset*.
     * [Functie-statesets](../azure-maps/creator-indoor-maps.md#feature-statesets) zijn verzamelingen van dynamische eigenschappen (statussen) die zijn toegewezen aan functies van gegevensset, zoals kamers of apparatuur. In de bovenstaande zelf studie van Azure Maps is de statusset voor de functie statusset opgeslagen die u op een kaart wilt weer geven.
-    * U hebt uw functie *statusset-id* en Azure Maps *abonnements-id*nodig.
+    * U hebt uw functie *statusset-id* en Azure Maps *abonnements-id* nodig.
 
 ### <a name="topology"></a>Topologie
 
@@ -78,60 +78,7 @@ Raadpleeg het volgende document voor referentie-informatie: [*Azure Event grid t
 
 Vervang de functie code door de volgende code. Er worden alleen updates voor de ruimte apparaatdubbels, lees de bijgewerkte Tempe ratuur en verzend die informatie naar Azure Maps.
 
-```C#
-using Microsoft.Azure.EventGrid.Models;
-using Microsoft.Azure.WebJobs;
-using Microsoft.Azure.WebJobs.Extensions.EventGrid;
-using Microsoft.Extensions.Logging;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Threading.Tasks;
-using System.Net.Http;
-
-namespace SampleFunctionsApp
-{
-    public static class ProcessDTUpdatetoMaps
-    {   //Read maps credentials from application settings on function startup
-        private static string statesetID = Environment.GetEnvironmentVariable("statesetID");
-        private static string subscriptionKey = Environment.GetEnvironmentVariable("subscription-key");
-        private static HttpClient httpClient = new HttpClient();
-
-        [FunctionName("ProcessDTUpdatetoMaps")]
-        public static async Task Run([EventGridTrigger]EventGridEvent eventGridEvent, ILogger log)
-        {
-            JObject message = (JObject)JsonConvert.DeserializeObject(eventGridEvent.Data.ToString());
-            log.LogInformation("Reading event from twinID:" + eventGridEvent.Subject.ToString() + ": " +
-                eventGridEvent.EventType.ToString() + ": " + message["data"]);
-
-            //Parse updates to "space" twins
-            if (message["data"]["modelId"].ToString() == "dtmi:contosocom:DigitalTwins:Space;1")
-            {   //Set the ID of the room to be updated in your map. 
-                //Replace this line with your logic for retrieving featureID. 
-                string featureID = "UNIT103";
-
-                //Iterate through the properties that have changed
-                foreach (var operation in message["data"]["patch"])
-                {
-                    if (operation["op"].ToString() == "replace" && operation["path"].ToString() == "/Temperature")
-                    {   //Update the maps feature stateset
-                        var postcontent = new JObject(new JProperty("States", new JArray(
-                            new JObject(new JProperty("keyName", "temperature"),
-                                 new JProperty("value", operation["value"].ToString()),
-                                 new JProperty("eventTimestamp", DateTime.Now.ToString("s"))))));
-
-                        var response = await httpClient.PostAsync(
-                            $"https://atlas.microsoft.com/featureState/state?api-version=1.0&statesetID={statesetID}&featureID={featureID}&subscription-key={subscriptionKey}",
-                            new StringContent(postcontent.ToString()));
-
-                        log.LogInformation(await response.Content.ReadAsStringAsync());
-                    }
-                }
-            }
-        }
-    }
-}
-```
+:::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/updateMaps.cs":::
 
 U moet twee omgevings variabelen instellen in uw functie-app. De ene is uw [Azure Maps primaire abonnements sleutel](../azure-maps/quick-demo-map-app.md#get-the-primary-key-for-your-account)en een van uw [Azure Maps stateset-id](../azure-maps/tutorial-creator-indoor-maps.md#create-a-feature-stateset).
 
@@ -145,14 +92,14 @@ az functionapp config appsettings set --settings "statesetID=<your-Azure-Maps-st
 Volg de onderstaande stappen om de Tempe ratuur voor Live bijwerken te bekijken:
 
 1. Begin met het verzenden van gesimuleerde IoT-gegevens door het **DeviceSimulator** -project uit te voeren vanuit de Azure Digital Apparaatdubbels- [*zelf studie: verbinding maken met een end-to-end oplossing*](tutorial-end-to-end.md). De instructies hiervoor vindt u in de sectie [*simulatie configureren en uitvoeren*](././tutorial-end-to-end.md#configure-and-run-the-simulation) .
-2. Gebruik [de module Azure Maps in het **binnenste** ](../azure-maps/how-to-use-indoor-module.md) om uw binnenste kaarten weer te geven die zijn gemaakt in azure Maps Maker.
+2. Gebruik [de module Azure Maps in het **binnenste**](../azure-maps/how-to-use-indoor-module.md) om uw binnenste kaarten weer te geven die zijn gemaakt in azure Maps Maker.
     1. Kopieer de HTML uit het [*voor beeld: gebruik de module binnenste kaarten*](../azure-maps/how-to-use-indoor-module.md#example-use-the-indoor-maps-module) van de zelf studie over de binnenste kaarten [*: gebruik de module Azure Maps binnenste*](../azure-maps/how-to-use-indoor-module.md) kaarten naar een lokaal bestand.
     1. Vervang *tilesetId* en *statesetID* in het lokale HTML-bestand door uw waarden.
     1. Open dat bestand in uw browser.
 
 Beide steek proeven verzenden temperatuur in een compatibel bereik, zodat u de kleur van de room 121-update op de kaart ongeveer elke 30 seconden zou moeten zien.
 
-:::image type="content" source="media/how-to-integrate-maps/maps-temperature-update.png" alt-text="Een weer gave van Azure-Services in een end-to-end-scenario, waarbij u het integratie gedeelte over de binnenste kaarten markeert":::
+:::image type="content" source="media/how-to-integrate-maps/maps-temperature-update.png" alt-text="Een Office-kaart met room 121 gekleurd oranje":::
 
 ## <a name="store-your-maps-information-in-azure-digital-twins"></a>Sla uw kaarten gegevens op in azure Digital Apparaatdubbels
 

@@ -8,27 +8,25 @@ ms.topic: include
 ms.date: 09/16/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: 6fc70d92d08432de2fed99783d774d73463408ce
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: ba62bf6b926ded5f3d976f096cee44c7341b4e50
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97531830"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98052739"
 ---
 SMB meerdere kanalen voor Azure-bestands shares is momenteel alleen beschikbaar in de volgende regio's:
 
-- Australië - oost
-- Brazilië - zuid
-- Canada - midden
-- Canada - oost
-- India - centraal
-- Frankrijk - centraal
-- Duitsland - west-centraal
-- Japan East
-- VS - noord-centraal
-- VS - zuid-centraal
-- VAE - noord
-- Verenigd Koninkrijk Zuid
-- Verenigd Koninkrijk West
-- VS - west-centraal
-- India - west
+| Geografische regio | Azure-regio |
+|-------------|-------------------|
+| Australië | Australië - oost |
+| Brazilië | Brazil South |
+| Canada | Canada-centraal, Canada-oost |
+| Frankrijk | Frankrijk - centraal |
+| Duitsland | Duitsland - west-centraal |
+| India | Centraal-India, West-India |
+| Japan | Japan-Oost, Japan-West |
+| Korea | Korea-centraal, Korea-West |
+| Verenigde Arabische Emiraten | VAE - noord |
+| Verenigd Koninkrijk | UK-zuid, UK-west |
+| Verenigde Staten | Noord-Centraal VS, Zuid-Centraal VS, VS-West-Centraal |

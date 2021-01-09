@@ -1,20 +1,20 @@
 ---
 title: Overzicht van opslagaccounts
 titleSuffix: Azure Storage
-description: Lees een overzicht van opslag accounts in Azure Storage. Bekijk de naamgeving van accounts, prestatie lagen, toegangs lagen, redundantie, versleuteling, eind punten en meer.
+description: Meer informatie over de verschillende typen opslag accounts in Azure Storage. Bekijk de naamgeving van accounts, prestatie lagen, toegangs lagen, redundantie, versleuteling, eind punten en meer.
 services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 12/11/2020
+ms.date: 01/08/2021
 ms.author: tamram
 ms.subservice: common
-ms.openlocfilehash: 2c9c4cd643e2e4b89f9a7d8f44a6569d0dde2b37
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 5cf43310c68c8446b9465a39d85f84c8273a68d8
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97357378"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051221"
 ---
 # <a name="storage-account-overview"></a>Overzicht van opslagaccounts
 
@@ -24,7 +24,40 @@ Zie [Een opslagaccount maken](storage-account-create.md) voor meer informatie ov
 
 ## <a name="types-of-storage-accounts"></a>Typen opslagaccounts
 
-[!INCLUDE [storage-account-types-include](../../../includes/storage-account-types-include.md)]
+Azure Storage biedt verschillende soorten opslagaccounts. Elk type ondersteunt verschillende functies en heeft een eigen prijsmodel. Neem deze verschillen in overweging voordat u een opslagaccount maakt om het type account te kiezen dat het best bij uw toepassingen past. De typen opslagaccounts zijn:
+
+- **Algemeen v2-accounts**: Eenvoudig opslagaccounttype voor blobs, bestanden, wachtrijen en tabellen. Aanbevolen voor de meeste scenario's die gebruikmaken van Azure Storage.
+- **Algemeen v1-accounts**: Verouderd accounttype voor blobs, bestanden, wachtrijen en tabellen. Gebruik, indien mogelijk, algemeen v2-accounts.
+- **BlockBlobStorage-accounts**: Opslagaccounts met Premium-prestatiekenmerken voor blok-blobs en toevoeg-blobs. Aanbevolen voor scenario's met hoge transactiesnelheden of scenario's die kleinere objecten gebruiken of een consistente lage opslaglatentie vereisen.
+- **FileStorage-accounts**: Opslagaccounts voor alleen bestanden met Premium-prestatie kenmerken. Aanbevolen voor toepassingen voor ondernemingen of high performance-prestaties.
+- **BlobStorage-accounts**: Verouderde opslagaccounts voor alleen blobs. Gebruik, indien mogelijk, algemeen v2-accounts.
+
+In de volgende tabel worden de typen opslag accounts, de services die worden ondersteund en de ondersteunde implementatie modellen voor elk account type beschreven:
+
+| Type opslagaccount | Ondersteunde services | Redundantie opties | Implementatie model<sup>1</sup> |
+|--|--|--|--|
+| Algemeen v2 | BLOB, bestand, wachtrij, tabel, schijf en Data Lake Gen2<sup>2</sup> | LRS, GRS, RA-GRS, ZRS, GZRS, RA-GZRS<sup>3</sup> | Resource Manager |
+| Algemeen v1 | Blob, bestand, wachtrij, tabel en schijf | LRS, GRS, RA-GRS | Resource Manager, klassiek |
+| BlockBlobStorage | Blob (alleen blok-blobs en toevoeg-blobs) | LRS, ZRS<sup>3</sup> | Resource Manager |
+| FileStorage | Alleen bestanden | LRS, ZRS<sup>3</sup> | Resource Manager |
+| BlobStorage | Blob (alleen blok-blobs en toevoeg-blobs) | LRS, GRS, RA-GRS | Resource Manager |
+
+<sup>1</sup>Het wordt aanbevolen het Azure Resource Manager-implementatiemodel te gebruiken. Opslagaccounts die gebruikmaken van het klassieke implementatiemodel, kunnen in sommige locaties nog steeds worden gemaakt; bestaande klassieke accounts blijven ondersteund worden. Zie voor meer informatie [Azure Resource Manager versus klassieke implementatie: inzicht in implementatiemodellen en de status van uw resources](../../azure-resource-manager/management/deployment-models.md).
+
+<sup>2</sup> Azure Data Lake Storage Gen2 is een set mogelijkheden die is toegewezen aan big data Analytics, gebouwd op Azure Blob-opslag. Data Lake Storage Gen2 wordt alleen ondersteund voor algemeen v2-opslagaccounts waarvoor hiërarchische naamruimte is ingeschakeld. Zie [Inleiding tot Azure Data Lake Storage Gen2](../blobs/data-lake-storage-introduction.md) voor meer informatie over Data Lake Storage Gen2.
+
+<sup>3</sup> Zone-redundante opslag (ZRS) en geo-zone-redundante opslag (GZRS/RA-GZRS) zijn alleen beschikbaar voor standaard v2-, BlockBlobStorage-en FileStorage-accounts voor algemeen gebruik in bepaalde regio's. Zie [Azure Storage-redundantie](storage-redundancy.md) voor meer informatie over opties voor Azure Storage-redundantie.
+
+### <a name="storage-account-redundancy"></a>Redundantie van opslag account
+
+De volgende redundantieopties zijn beschikbaar voor een opslagaccount:
+
+- **Lokaal redundante opslag (LRS)**: een eenvoudige, voordelige redundantie strategie. Gegevens worden synchroon drie keer binnen één fysieke locatie in de primaire regio gekopieerd.
+- **Zone-redundante opslag (ZRS)**: redundantie voor scenario's die hoge Beschik baarheid vereisen. Gegevens worden synchroon gekopieerd naar drie Azure-beschikbaarheidszones in de primaire regio.
+- **Geografisch redundante opslag (GRS)**: Kruis regionale redundantie om te beschermen tegen regionale storingen. Gegevens worden synchroon drie keer in de primaire regio gekopieerd en vervolgens asynchroon gekopieerd naar de secundaire regio. Voor leestoegang tot gegevens in de secundaire regio schakelt u geografisch redundante opslag met leestoegang (RA-GRS) in.
+- **Geo-zone-redundante opslag (GZRS)**: redundantie voor scenario's waarbij hoge Beschik baarheid en maximale duurzaamheid zijn vereist. Gegevens worden synchroon gekopieerd naar drie Azure-beschikbaarheidszones in de primaire regio en vervolgens asynchroon gekopieerd naar de secundaire regio. Voor leestoegang tot gegevens in de secundaire regio schakelt u geografisch zone-redundante opslag met lees toegang (RA-GZRS) in.
+
+Zie [Azure Storage-redundantie](storage-redundancy.md) voor meer informatie over opties voor redundantie in Azure Storage.
 
 ### <a name="general-purpose-v2-accounts"></a>V2-accounts voor algemeen gebruik
 
@@ -32,7 +65,7 @@ V2-opslag accounts voor algemeen gebruik ondersteunen de nieuwste functies van A
 
 - Blobs (alle typen: blok keren, toevoegen, pagina)
 - Data Lake Gen2
-- Files
+- Bestanden
 - Disks
 - Wachtrijen
 - Tabellen
@@ -49,7 +82,7 @@ V2-opslag accounts voor algemeen gebruik bieden meerdere toegangs lagen voor het
 V1-opslag accounts voor algemeen gebruik bieden toegang tot alle Azure Storage-services, maar hebben mogelijk niet de nieuwste functies of de laagste prijzen per gigabyte. V1-opslag accounts voor algemeen gebruik ondersteunen deze Azure Storage services:
 
 - Blobs (alle typen)
-- Files
+- Bestanden
 - Disks
 - Wachtrijen
 - Tabellen
@@ -83,7 +116,17 @@ Neem de volgende regels in acht als u het opslagaccount een naam geeft:
 
 ## <a name="performance-tiers"></a>Prestatielagen
 
-Afhankelijk van het type opslag account dat u maakt, kunt u kiezen tussen Standard-en Premium-prestatie lagen.
+Afhankelijk van het type opslag account dat u maakt, kunt u kiezen tussen Standard-en Premium-prestatie lagen. De volgende tabel bevat een overzicht van de prestatie lagen die beschikbaar zijn voor welk type opslag account.
+
+| Type opslagaccount | Ondersteunde prestatielagen |
+|--|--|
+| Algemeen v2 | Standard, Premium<sup>1</sup> |
+| Algemeen v1 | Standard, Premium<sup>1</sup> |
+| BlockBlobStorage | Premium |
+| FileStorage | Premium |
+| BlobStorage | Standard |
+
+<sup>1</sup> Premium-prestaties voor algemeen gebruik v2 en algemeen v1-accounts zijn alleen beschikbaar voor schijven en pagina-blobs. Premium-prestaties voor blok- en toevoeg-blobs zijn alleen beschikbaar voor BlockBlobStorage-accounts. Premium-prestaties voor bestanden zijn alleen beschikbaar voor FileStorage-accounts.
 
 ### <a name="general-purpose-storage-accounts"></a>Opslagaccounts voor algemeen gebruik
 
@@ -112,12 +155,20 @@ De beschik bare toegangs lagen zijn:
 
 Als er een wijziging is in het gebruiks patroon van uw gegevens, kunt u op elk gewenst moment scha kelen tussen deze toegangs lagen. Zie [Azure Blob Storage: warme, cool en archief toegangs lagen](../blobs/storage-blob-storage-tiers.md)voor meer informatie over toegangs lagen.
 
+In de volgende tabel ziet u welke toegangs lagen er beschikbaar zijn voor blobs in elk type opslag account.
+
+| Type opslagaccount | Ondersteunde toegangslagen |
+|--|--|
+| Algemeen v2 | Warm, koud, archief<sup>1</sup> |
+| Algemeen v1 | N.v.t. |
+| BlockBlobStorage | N.v.t. |
+| FileStorage | N.v.t. |
+| BlobStorage | Warm, koud, archief<sup>1</sup> |
+
+<sup>1</sup> archief opslag en lagen op BLOB-niveau bieden alleen ondersteuning voor blok-blobs. De archieflaag is alleen beschikbaar op het niveau van een afzonderlijke blob, niet op opslagaccountniveau. Zie [toegangs lagen voor Azure Blob Storage-hot, cool en Archive](../blobs/storage-blob-storage-tiers.md)voor meer informatie.
+
 > [!IMPORTANT]
-> Als u de toegangs laag voor een bestaand opslag account of BLOB wijzigt, kunnen er extra kosten in rekening worden gebracht. Zie de sectie facturering van het [opslag account](#storage-account-billing)voor meer informatie.
-
-## <a name="redundancy"></a>Redundantie
-
-[!INCLUDE [storage-common-redundancy-options](../../../includes/storage-common-redundancy-options.md)]
+> Als u de toegangs laag voor een bestaand opslag account of BLOB wijzigt, kunnen er extra kosten in rekening worden gebracht. Zie [facturering van opslag accounts](#storage-account-billing)voor meer informatie.
 
 ## <a name="encryption"></a>Versleuteling
 
@@ -127,13 +178,15 @@ Alle gegevens in uw opslag account worden versleuteld aan de kant van de service
 
 Een opslagaccount biedt een unieke naamruimte in Azure voor uw gegevens. Elk object dat u in Azure Storage opslaat, heeft een adres dat uw unieke accountnaam bevat. De combinatie van de accountnaam en het service-eindpunt voor Azure Storage vormen de eindpunten voor uw opslagaccount.
 
-Als uw opslag account voor algemeen gebruik bijvoorbeeld *mystorageaccount* heet, zijn de standaard eindpunten voor dat account:
+De volgende tabel geeft een lijst van de eind punten voor elk van de Azure Storage services.
 
-- Blob-opslag: `https://*mystorageaccount*.blob.core.windows.net`
-- Tabel opslag: `https://*mystorageaccount*.table.core.windows.net`
-- Wachtrij opslag: `https://*mystorageaccount*.queue.core.windows.net`
-- Azure Files: `https://*mystorageaccount*.file.core.windows.net`
-- Azure Data Lake Storage Gen2: `https://*mystorageaccount*.dfs.core.windows.net` (maakt gebruik [van het ABFS-stuur programma dat specifiek is geoptimaliseerd voor Big Data](../blobs/data-lake-storage-introduction.md#key-features-of-data-lake-storage-gen2).)
+| Opslag service | Eindpunt |
+|--|--|
+| Blob Storage | `https://<storage-account>.blob.core.windows.net` |
+| Azure Data Lake Storage Gen2 | `https://<storage-account>.dfs.core.windows.net` |
+| Azure Files | `https://<storage-account>.file.core.windows.net` |
+| Queue Storage | `https://<storage-account>.queue.core.windows.net` |
+| Table Storage | `https://<storage-account>.table.core.windows.net` |
 
 > [!NOTE]
 > Blok-Blob en Blob Storage-accounts bieden alleen het Blob service-eind punt.
@@ -184,7 +237,17 @@ Zie [Azure Storage Services rest API Reference](/rest/api/storageservices/)(Enge
 
 ## <a name="storage-account-billing"></a>Facturering voor opslagaccounts
 
-[!INCLUDE [storage-account-billing-include](../../../includes/storage-account-billing-include.md)]
+Azure Storage facturen op basis van het gebruik van uw opslag account. Alle objecten in een opslagaccount worden samen gefactureerd als een groep. Opslagkosten worden berekend op basis van de volgende factoren:
+
+- **Regio** verwijst naar de geografische regio waarin uw account is gebaseerd.
+- **Accounttype** verwijst naar het type opslagaccount dat u gebruikt.
+- **Toegangslaag** verwijst naar het gegevensgebruikpatroon dat u hebt opgegeven voor het v2- of blob-opslagaccount voor algemeen gebruik.
+- De **capaciteit** verwijst naar het gedeelte van het opslag account dat u gebruikt om gegevens op te slaan.
+- **Replicatie** bepaalt hoeveel kopieën van uw gegevens gelijktijdig worden bewaard en op welke locaties.
+- **Transacties** verwijst naar alle lees- en schrijfbewerkingen naar Azure Storage.
+- **Uitgaande gegevens** verwijst naar alle gegevens die buiten een Azure-regio zijn overgedragen. Wanneer de gegevens in uw opslagaccount worden geopend door een toepassing die niet wordt uitgevoerd in dezelfde regio, wordt er een bedrag in rekening gebracht voor uitgaande gegevens. Zie [Wat is een Azure-resourcegroep?](/azure/cloud-adoption-framework/govern/resource-consistency/resource-access-management#what-is-an-azure-resource-group) voor informatie over het gebruik van resourcegroepen om uw gegevens en services in dezelfde regio te groeperen om de uitstaande kosten te beperken.
+
+Op de pagina [Prijzen voor Azure Storage](https://azure.microsoft.com/pricing/details/storage/) vindt u gedetailleerde prijsinformatie op basis van accounttype, opslagcapaciteit, replicatie en transacties. In [Prijsinformatie over gegevensoverdracht](https://azure.microsoft.com/pricing/details/data-transfers/) vindt u gedetailleerde informatie over de prijzen voor uitgaande gegevens. Met de [Prijscalculator van Azure Storage](https://azure.microsoft.com/pricing/calculator/?scenario=data-management) kunt u een schatting maken van uw kosten.
 
 [!INCLUDE [cost-management-horizontal](../../../includes/cost-management-horizontal.md)]
 

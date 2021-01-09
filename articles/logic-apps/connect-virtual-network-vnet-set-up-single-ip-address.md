@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: jonfan, logicappspm
 ms.topic: conceptual
 ms.date: 05/06/2020
-ms.openlocfilehash: 9ee804f7bed01ca0c7f365a04e6108afd9598157
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 40f4845ecc21d05ca5e8394dccba080f8a1f8936
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87066398"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98049708"
 ---
 # <a name="set-up-a-single-ip-address-for-one-or-more-integration-service-environments-in-azure-logic-apps"></a>Stel één IP-adres in voor een of meer integratie service omgevingen in Azure Logic Apps
 
@@ -41,7 +41,7 @@ In dit onderwerp wordt beschreven hoe u uitgaand verkeer via een Azure Firewall 
 
    * Gaat naar het privé-IP-adres voor de firewall instantie als het adres van de volgende hop.
 
-     Als u dit IP-adres wilt zoeken, selecteert u in het menu Firewall de optie **overzicht**en zoekt u het adres onder **persoonlijk IP-adres**, bijvoorbeeld:
+     Als u dit IP-adres wilt zoeken, selecteert u in het menu Firewall de optie **overzicht** en zoekt u het adres onder **persoonlijk IP-adres**, bijvoorbeeld:
 
      ![Privé-IP-adres van firewall zoeken](./media/connect-virtual-network-vnet-set-up-single-ip-address/find-firewall-private-ip-address.png)
 
@@ -61,7 +61,7 @@ In dit onderwerp wordt beschreven hoe u uitgaand verkeer via een Azure Firewall 
 
 ## <a name="set-up-network-rule"></a>Netwerk regel instellen
 
-1. Zoek en selecteer uw firewall in de Azure Portal. Selecteer in het menu Firewall onder **instellingen**de optie **regels**. Selecteer in het deel venster regels **netwerk regel verzameling**  >  **netwerk regel verzameling toevoegen**.
+1. Zoek en selecteer uw firewall in de Azure Portal. Selecteer in het menu Firewall onder **instellingen** de optie **regels**. Selecteer in het deel venster regels **netwerk regel verzameling**  >  **netwerk regel verzameling toevoegen**.
 
    ![Netwerk regel verzameling toevoegen aan firewall](./media/connect-virtual-network-vnet-set-up-single-ip-address/add-network-rule-collection.png)
 
@@ -76,7 +76,7 @@ In dit onderwerp wordt beschreven hoe u uitgaand verkeer via een Azure Firewall 
    | Eigenschap | Waarde | Beschrijving |
    |----------|-------|-------------|
    | **Naam** | <*netwerk-regel-verzameling-naam*> | De naam voor uw netwerk regel verzameling |
-   | **Priority** | <*prioriteits niveau*> | De volg orde van prioriteit die moet worden gebruikt voor het uitvoeren van de regel verzameling. Zie [Wat zijn enkele Azure firewall concepten](../firewall/firewall-faq.md#what-are-some-azure-firewall-concepts)? voor meer informatie. |
+   | **Priority** | <*prioriteits niveau*> | De volg orde van prioriteit die moet worden gebruikt voor het uitvoeren van de regel verzameling. Zie [Wat zijn enkele Azure firewall concepten](../firewall/firewall-faq.yml#what-are-some-azure-firewall-concepts)? voor meer informatie. |
    | **Actie** | **Toestaan** | Het actie type dat moet worden uitgevoerd voor deze regel |
    |||
 
@@ -95,7 +95,7 @@ In dit onderwerp wordt beschreven hoe u uitgaand verkeer via een Azure Firewall 
 
    * [Een netwerkregel configureren](../firewall/tutorial-firewall-deploy-portal.md#configure-a-network-rule)
    * [Regels voor de logicaverwerking in Azure Firewall](../firewall/rule-processing.md#network-rules-and-applications-rules)
-   * [Veelgestelde vragen over Azure Firewall](../firewall/firewall-faq.md)
+   * [Veelgestelde vragen over Azure Firewall](../firewall/firewall-faq.yml)
    * [Azure PowerShell: New-AzFirewallNetworkRule](/powershell/module/az.network/new-azfirewallnetworkrule)
    * [Azure CLI: AZ Network Firewall Network-Rule](/cli/azure/ext/azure-firewall/network/firewall/network-rule?view=azure-cli-latest#ext-azure-firewall-az-network-firewall-network-rule-create)
 

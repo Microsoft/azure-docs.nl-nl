@@ -2,14 +2,14 @@
 title: Azure Monitor instellen voor containers live data (preview) | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u de real-time-weer gave van container Logboeken (stdout/stderr) en gebeurtenissen kunt instellen zonder kubectl te gebruiken met Azure Monitor voor containers.
 ms.topic: conceptual
-ms.date: 02/14/2019
+ms.date: 01/08/2020
 ms.custom: references_regions
-ms.openlocfilehash: 62bc7613995296504dfba551cdb631ac3386aa75
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: d5b978e7138e10ed88f5748b84ff62ddd22bebec
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97830782"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050779"
 ---
 # <a name="how-to-set-up-the-live-data-preview-feature"></a>De functie voor live data (preview) instellen
 
@@ -29,8 +29,6 @@ In dit artikel wordt uitgelegd hoe u verificatie configureert om de toegang tot 
 - Kubernetes op rollen gebaseerd toegangs beheer (Kubernetes RBAC) ingeschakeld AKS-cluster
 - Azure Active Directory geïntegreerde AKS-cluster.
 
->[!NOTE]
->AKS-clusters die zijn ingeschakeld als [persoonlijke clusters](https://azure.microsoft.com/updates/aks-private-cluster/) , worden niet ondersteund met deze functie. Deze functie is afhankelijk van het rechtstreeks openen van de Kubernetes-API via een proxy server vanuit uw browser. Door netwerk beveiliging in te scha kelen, wordt dit verkeer geblokkeerd door de Kubernetes-API van deze proxy te blok keren.
 
 ## <a name="authentication-model"></a>Verificatiemodel
 

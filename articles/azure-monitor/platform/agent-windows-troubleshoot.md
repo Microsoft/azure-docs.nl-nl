@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 3d99293ea83c883f8d0870d78dfbec58f74c9bd1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4e2531d511193586ef4605cc3732968b6db28d9f
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87927314"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050558"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-windows"></a>Problemen met de Log Analytics-agent voor Windows oplossen 
 
@@ -21,6 +21,40 @@ Als geen van deze stappen voor u werkt, zijn de volgende ondersteunings kanalen 
 * Klanten met premier-ondersteunings voordelen kunnen een ondersteunings aanvraag openen met [premier](https://premier.microsoft.com/).
 * Klanten met ondersteunings overeenkomsten voor Azure kunnen een ondersteunings aanvraag openen [in de Azure Portal](https://manage.windowsazure.com/?getsupport=true).
 * Ga naar de Log Analytics feedback pagina om de verzonden ideeën en bugs te bekijken [https://aka.ms/opinsightsfeedback](https://aka.ms/opinsightsfeedback) of een nieuwe bestand te openen. 
+
+## <a name="log-analytics-troubleshooting-tool"></a>Hulp programma voor probleem oplossing Log Analytics
+
+Het Windows-hulp programma voor probleem oplossing van Log Analytics agent is een verzameling Power shell-scripts die zijn ontworpen om problemen met de Log Analytics-agent te vinden en te onderzoeken. Het wordt bij de installatie automatisch opgenomen in de-agent. Het uitvoeren van het hulp programma moet de eerste stap zijn bij het vaststellen van een probleem.
+
+### <a name="how-to-use"></a>Gebruik
+1. Open Power shell-prompt als Administrator op de computer waarop Log Analytics-agent is geïnstalleerd.
+1. Ga naar de map waarin het hulp programma zich bevindt.
+   * `cd "C:\Program Files\Microsoft Monitoring Agent\Agent\Troubleshooter"`
+1. Voer het hoofd script uit met behulp van de volgende opdracht:
+   * `.\GetAgentInfo.ps1`
+1. Selecteer een scenario voor het oplossen van problemen.
+1. Volg de instructies op de console. (Opmerking: voor de stappen van traceer logboeken moet hand matige interventie worden uitgevoerd om de logboek verzameling te stoppen. Op basis van de reproduceer baarheid van het probleem, wacht u tot de tijds duur en druk op ' om de logboek verzameling te stoppen en door te gaan naar de volgende stap).
+
+   Locaties van het bestand met resultaten worden geregistreerd na voltooiing en een nieuw Verkenner-venster wordt geopend.
+
+### <a name="installation"></a>Installatie
+Het hulp programma voor probleem oplossing wordt automatisch opgenomen bij de installatie van de Log Analytics agent build 10.20.18053.0 en later.
+
+### <a name="scenarios-covered"></a>Scenario's die worden behandeld
+Hieronder ziet u een lijst met scenario's die worden gecontroleerd door het hulp programma voor probleem oplossing:
+
+- Agent die geen gegevens of vitale gegevens rapporteert, ontbreken
+- Implementatie van agent-extensie mislukt
+- Agent loopt vast
+- Agent die hoge CPU/geheugen verbruikt
+- Mislukte installatie/verwijdering
+- Probleem met aangepaste logboeken
+- Probleem met OMS-gateway
+- Probleem met prestatie meter items
+- Alle logboeken verzamelen
+
+>[!NOTE]
+>Voer het hulp programma voor probleem oplossing uit wanneer u een probleem ondervindt. Bij het openen van een ticket helpt het ondersteunings team het probleem sneller op te lossen met de logboeken.
 
 ## <a name="important-troubleshooting-sources"></a>Belang rijke bronnen voor probleem oplossing
 
@@ -59,7 +93,7 @@ Er zijn verschillende manieren waarop u kunt controleren of de agent met succes 
 
     ![Resultaten van de uitvoering van het TestCloudConnection-hulp programma](./media/agent-windows-troubleshoot/output-testcloudconnection-tool-01.png)
 
-- Filter het *Operations Manager* gebeurtenis logboek op **gebeurtenis bronnen**  -  *Health Service modules*, *HealthService*en *service connector* en filter op **gebeurtenis niveau** *waarschuwing* en *fout* om te bevestigen of het een geschreven gebeurtenis in de volgende tabel heeft. Als dat het geval is, raadpleegt u de oplossings stappen die voor elke mogelijke gebeurtenis zijn opgenomen.
+- Filter het *Operations Manager* gebeurtenis logboek op **gebeurtenis bronnen**  -  *Health Service modules*, *HealthService* en *service connector* en filter op **gebeurtenis niveau** *waarschuwing* en *fout* om te bevestigen of het een geschreven gebeurtenis in de volgende tabel heeft. Als dat het geval is, raadpleegt u de oplossings stappen die voor elke mogelijke gebeurtenis zijn opgenomen.
 
     |Gebeurtenis-id |Bron |Beschrijving |Oplossing |
     |---------|-------|------------|-----------|

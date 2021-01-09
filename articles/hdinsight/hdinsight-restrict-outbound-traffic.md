@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: seoapr2020
 ms.date: 04/17/2020
-ms.openlocfilehash: dc6412a85beba67551e7683c8127a65730f9218f
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 4c703fc1ddac4af2e3cf8716764a21da7e870b19
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92535464"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98048671"
 ---
 # <a name="configure-outbound-network-traffic-for-azure-hdinsight-clusters-using-firewall"></a>Uitgaand netwerk verkeer voor Azure HDInsight-clusters configureren met behulp van Firewall
 
@@ -53,7 +53,7 @@ Maak een toepassings regel verzameling waarmee het cluster belang rijke communic
 
 1. Selecteer de nieuwe firewall **test-FW01** van de Azure Portal.
 
-1. Navigeer naar **instellingen**  >  **regels**  >  **toepassings regel verzameling**  >  **+ toepassings regel verzameling toevoegen** .
+1. Navigeer naar **instellingen**  >  **regels**  >  **toepassings regel verzameling**  >  **+ toepassings regel verzameling toevoegen**.
 
     ![Titel: toepassings regel verzameling toevoegen](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection.png)
 
@@ -69,13 +69,13 @@ Maak een toepassings regel verzameling waarmee het cluster belang rijke communic
 
     **Sectie FQDN-Tags**
 
-    | Naam | Bron adres | FQDN-label | Notities |
+    | Naam | Bron adres | FQDN-label | Opmerkingen |
     | --- | --- | --- | --- |
     | Rule_1 | * | WindowsUpdate en HDInsight | Vereist voor HDI-Services |
 
     **Sectie FQDN-doel items**
 
-    | Naam | Bron adressen | Protocol:Poort | Doel-FQDN-naam | Notities |
+    | Naam | Bron adressen | Protocol:Poort | Doel-FQDN-naam | Opmerkingen |
     | --- | --- | --- | --- | --- |
     | Rule_2 | * | https:443 | login.windows.net | Windows-aanmeldings activiteit toestaan |
     | Rule_3 | * | https:443 | login.microsoftonline.com | Windows-aanmeldings activiteit toestaan |
@@ -83,13 +83,13 @@ Maak een toepassings regel verzameling waarmee het cluster belang rijke communic
 
    ![Titel: Details van toepassings regel verzameling invoeren](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-app-rule-collection-details.png)
 
-1. Selecteer **Toevoegen** .
+1. Selecteer **Toevoegen**.
 
 ### <a name="configure-the-firewall-with-network-rules"></a>De firewall met netwerk regels configureren
 
 Maak de netwerk regels om uw HDInsight-cluster correct te configureren.
 
-1. Ga verder met de vorige stap, navigeer naar **netwerk regel verzameling**  >  **+ verzameling netwerk regels toevoegen** .
+1. Ga verder met de vorige stap, navigeer naar **netwerk regel verzameling**  >  **+ verzameling netwerk regels toevoegen**.
 
 1. Geef in het scherm **verzameling van netwerk regels toevoegen** de volgende informatie op:
 
@@ -103,50 +103,50 @@ Maak de netwerk regels om uw HDInsight-cluster correct te configureren.
 
     **Sectie Service Tags**
 
-    | Naam | Protocol | Bron adressen | Servicetags | Doel poorten | Notities |
+    | Naam | Protocol | Bron adressen | Servicetags | Doel poorten | Opmerkingen |
     | --- | --- | --- | --- | --- | --- |
-    | Rule_5 | TCP | * | SQL | 1433 | Als u de standaard SQL-servers gebruikt die door HDInsight worden meegeleverd, configureert u een netwerk regel in het gedeelte service tags voor SQL waarmee u SQL-verkeer kunt registreren en controleren. Tenzij u service-eind punten voor SQL Server op het HDInsight-subnet hebt geconfigureerd, waardoor de firewall wordt overgeslagen. Als u een aangepaste SQL Server gebruikt voor Ambari, Oozie, zwerver en Hive metastroes, hoeft u alleen het verkeer naar uw eigen aangepaste SQL-servers toe te staan.|
+    | Rule_5 | TCP | * | SQL | 1433 | Als u de standaard SQL-servers gebruikt die door HDInsight worden meegeleverd, configureert u een netwerk regel in het gedeelte service tags voor SQL waarmee u SQL-verkeer kunt registreren en controleren. Tenzij u service-eind punten voor SQL Server op het HDInsight-subnet hebt geconfigureerd, waardoor de firewall wordt overgeslagen. Als u een aangepaste SQL Server gebruikt voor Ambari, Oozie, zwerver en Hive-meta Stores, hoeft u alleen het verkeer naar uw eigen aangepaste SQL-servers toe te staan.|
     | Rule_6 | TCP | * | Azure Monitor | * | Beschrijving Klanten die de functie voor automatisch schalen willen gebruiken, moeten deze regel toevoegen. |
     
    ![Titel: toepassings regel verzameling invoeren](./media/hdinsight-restrict-outbound-traffic/hdinsight-restrict-outbound-traffic-add-network-rule-collection.png)
 
-1. Selecteer **Toevoegen** .
+1. Selecteer **Toevoegen**.
 
 ### <a name="create-and-configure-a-route-table"></a>Een route tabel maken en configureren
 
 Maak een route tabel met de volgende vermeldingen:
 
-* Alle IP-adressen van [status-en beheer Services](../hdinsight/hdinsight-management-ip-addresses.md#health-and-management-services-all-regions) met het volgende hop-type **Internet** . Het moet 4 Ip's van de algemene regio's en 2 Ip's bevatten voor uw specifieke regio. Deze regel is alleen nodig als de ResourceProviderConnection is ingesteld op *binnenkomend* . Als de ResourceProviderConnection is ingesteld op *outbound* , zijn deze IP-adressen niet nodig in de UDR. 
+* Alle IP-adressen van [status-en beheer Services](../hdinsight/hdinsight-management-ip-addresses.md#health-and-management-services-all-regions) met het volgende hop-type **Internet**. Het moet 4 Ip's van de algemene regio's en 2 Ip's bevatten voor uw specifieke regio. Deze regel is alleen nodig als de ResourceProviderConnection is ingesteld op *binnenkomend*. Als de ResourceProviderConnection is ingesteld op *outbound* , zijn deze IP-adressen niet nodig in de UDR. 
 
 * Eén virtuele-toestel route voor IP-adres 0.0.0.0/0 met de volgende hop wordt uw Azure Firewall privé-IP-adres.
 
 Gebruik bijvoorbeeld de volgende stappen om de route tabel te configureren voor een cluster dat is gemaakt in de regio VS-Oost VS:
 
-1. Selecteer uw Azure Firewall **-test-FW01** . Kopieer het **privé-IP-adres** dat wordt weer gegeven op de pagina **overzicht** . In dit voor beeld gebruiken we een voor beeld **van een adres van 10.0.2.4** .
+1. Selecteer uw Azure Firewall **-test-FW01**. Kopieer het **privé-IP-adres** dat wordt weer gegeven op de pagina **overzicht** . In dit voor beeld gebruiken we een voor beeld **van een adres van 10.0.2.4**.
 
-1. Ga vervolgens naar **alle services**  >  **netwerk**  >  **route tabellen** en **Maak een route tabel** .
+1. Ga vervolgens naar **alle services**  >  **netwerk**  >  **route tabellen** en **Maak een route tabel**.
 
-1. Navigeer vanuit uw nieuwe route naar **instellingen**  >  **routes**  >  **en toevoegen** . Voeg de volgende routes toe:
+1. Navigeer vanuit uw nieuwe route naar **instellingen**  >  **routes**  >  **en toevoegen**. Voeg de volgende routes toe:
 
 | Routenaam | Adresvoorvoegsel | Volgend hoptype | Adres van de volgende hop |
 |---|---|---|---|
-| 168.61.49.99 | 168.61.49.99/32 | Internet | N.v.t. |
-| 23.99.5.239 | 23.99.5.239/32 | Internet | N.v.t. |
-| 168.61.48.131 | 168.61.48.131/32 | Internet | N.v.t. |
-| 138.91.141.162 | 138.91.141.162/32 | Internet | N.v.t. |
-| 13.82.225.233 | 13.82.225.233/32 | Internet | N.v.t. |
-| 40.71.175.99 | 40.71.175.99/32 | Internet | N.v.t. |
+| 168.61.49.99 | 168.61.49.99/32 | Internet | NA |
+| 23.99.5.239 | 23.99.5.239/32 | Internet | NA |
+| 168.61.48.131 | 168.61.48.131/32 | Internet | NA |
+| 138.91.141.162 | 138.91.141.162/32 | Internet | NA |
+| 13.82.225.233 | 13.82.225.233/32 | Internet | NA |
+| 40.71.175.99 | 40.71.175.99/32 | Internet | NA |
 | 0.0.0.0 | 0.0.0.0/0 | Virtueel apparaat | 10.0.2.4 |
 
 De configuratie van de route tabel volt ooien:
 
 1. Wijs de route tabel die u hebt gemaakt aan uw HDInsight-subnet toe door **subnetten** onder **instellingen** te selecteren.
 
-1. Selecteer **+ koppelen** .
+1. Selecteer **+ koppelen**.
 
 1. Selecteer in het scherm **subnet koppelen** het virtuele netwerk waarin het cluster is gemaakt. En het **subnet** dat u hebt gebruikt voor uw HDInsight-cluster.
 
-1. Selecteer **OK** .
+1. Selecteer **OK**.
 
 ## <a name="edge-node-or-custom-application-traffic"></a>Edge-knoop punt of aangepast toepassings verkeer
 
@@ -170,7 +170,7 @@ AzureDiagnostics | where msg_s contains "Deny" | where TimeGenerated >= ago(1h)
 
 Het integreren van Azure Firewall met Azure Monitor-Logboeken is handig wanneer u voor het eerst een toepassing werkt. Met name wanneer u niet op de hoogte bent van alle toepassings afhankelijkheden. U kunt meer informatie over Azure Monitor logboeken van het [analyseren van logboek gegevens in azure monitor](../azure-monitor/log-query/log-query-overview.md)
 
-Zie [Dit](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-firewall-limits) document of Raadpleeg de [Veelgestelde vragen](../firewall/firewall-faq.md)voor meer informatie over de schaal limieten van Azure firewall en het aanvragen van verg Roten.
+Zie [Dit](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-firewall-limits) document of Raadpleeg de [Veelgestelde vragen](../firewall/firewall-faq.yml)voor meer informatie over de schaal limieten van Azure firewall en het aanvragen van verg Roten.
 
 ## <a name="access-to-the-cluster"></a>Toegang tot het cluster
 

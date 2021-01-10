@@ -13,12 +13,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 520b2eff91faf2e333ab0a5df7bcc85e6a47c80a
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 4a789574b736eb22bd8d13fcf1a9facec5e241c9
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585187"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98058664"
 ---
 # <a name="customize-the-user-interface-in-azure-active-directory-b2c"></a>De gebruikers interface in Azure Active Directory B2C aanpassen
 
@@ -74,7 +74,7 @@ Wanneer u uw eigen HTML-en CSS-bestanden gebruikt om de gebruikers interface aan
 ## <a name="guidelines-for-using-custom-page-content"></a>Richt lijnen voor het gebruik van aangepaste pagina-inhoud
 
 - Gebruik een absolute URL wanneer u externe resources zoals media, CSS en Java script-bestanden opneemt in uw HTML-bestand.
-- Met de [pagina-indeling versie](page-layout.md) 1.2.0 en hoger kunt u het `data-preload="true"` kenmerk toevoegen aan uw HTML-tags om de laad volgorde voor CSS en Java script te bepalen. Met wordt `data-preload=true` de pagina samengesteld voordat deze wordt weer gegeven aan de gebruiker. Met dit kenmerk wordt voor komen dat de pagina wordt ' Flik keren ' door het CSS-bestand vooraf te laden, zonder dat de HTML ongedaan wordt weer gegeven voor de gebruiker. Het volgende HTML-code fragment toont het gebruik van de `data-preload` tag.
+- Met de [pagina-indeling versie](page-layout.md) 1.2.0 en hoger kunt u het `data-preload="true"` kenmerk toevoegen aan uw HTML-tags om de laad volgorde voor CSS en Java script te bepalen. Met wordt `data-preload="true"` de pagina samengesteld voordat deze wordt weer gegeven aan de gebruiker. Met dit kenmerk wordt voor komen dat de pagina wordt ' Flik keren ' door het CSS-bestand vooraf te laden, zonder dat de HTML ongedaan wordt weer gegeven voor de gebruiker. Het volgende HTML-code fragment toont het gebruik van de `data-preload` tag.
   ```HTML
   <link href="https://path-to-your-file/sample.css" rel="stylesheet" type="text/css" data-preload="true"/>
   ```

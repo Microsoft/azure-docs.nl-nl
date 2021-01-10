@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: conceptual
 ms.date: 09/09/2020
 ms.author: surmb
-ms.openlocfilehash: dc5efd6ad478710ba839634a49f041211756af71
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 732054ae2cd8f93d17694e9ea1bdd85680e9c314
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397668"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98058647"
 ---
 # <a name="application-gateway-front-end-ip-address-configuration"></a>Configuratie van het front-end-IP-adres Application Gateway
 
@@ -25,7 +25,7 @@ Application Gateway v2 biedt momenteel geen ondersteuning voor de modus Private 
 * Privé-IP-adres en openbaar IP-adres
 * Alleen openbaar IP-adres
 
-Zie [Veelgestelde vragen over Application Gateway](application-gateway-faq.md#how-do-i-use-application-gateway-v2-with-only-private-frontend-ip-address)voor meer informatie.
+Zie [Veelgestelde vragen over Application Gateway](application-gateway-faq.yml#how-do-i-use-application-gateway-v2-with-only-private-frontend-ip-address)voor meer informatie.
 
 
 Een openbaar IP-adres is niet vereist voor een intern eind punt dat niet beschikbaar is op internet. Dit wordt ook wel een intern ILB-eind punt ( *Load-Balancer* ) of een persoonlijk frontend-IP-adres genoemd. Een Application Gateway ILB is handig voor interne line-of-business-toepassingen die niet worden blootgesteld aan Internet. Het is ook nuttig voor services en lagen in een toepassing met meerdere lagen binnen een beveiligings grens die niet beschikbaar is op internet, maar waarvoor Round Robin-taak verdeling, sessie persistentie of TLS-beëindiging vereist is.
@@ -36,7 +36,7 @@ Er wordt slechts één openbaar IP-adres of één privé-IP-adres ondersteund. U
 
 - Voor een privé-IP-adres kunt u een privé-IP-adres opgeven in het subnet waar de toepassings gateway is gemaakt. Als u er geen opgeeft, wordt er automatisch een wille keurig IP-adres geselecteerd in het subnet. Het IP-adres type dat u selecteert (statisch of dynamisch) kan niet later worden gewijzigd. Zie [een toepassings gateway maken met een interne Load Balancer](./application-gateway-ilb-arm.md)voor meer informatie.
 
-Een front-end-IP-adres is gekoppeld aan een *listener* , waarmee wordt gecontroleerd op binnenkomende aanvragen op de front-end-IP.
+Een front-end-IP-adres is gekoppeld aan een *listener*, waarmee wordt gecontroleerd op binnenkomende aanvragen op de front-end-IP.
 
 ## <a name="next-steps"></a>Volgende stappen
 

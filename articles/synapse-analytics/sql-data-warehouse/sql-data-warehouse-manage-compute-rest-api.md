@@ -11,12 +11,12 @@ ms.date: 03/29/2019
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 49702051b5399d5079aacc97c00233a23ba8712d
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 243a7fd71e7b4f762130db2383f449021129cc62
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94556009"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060296"
 ---
 # <a name="rest-apis-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>REST-Api's voor toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics
 
@@ -32,7 +32,7 @@ Content-Type: application/json; charset=UTF-8
 
 {
     "properties": {
-        "requestedServiceObjectiveName": DW1000
+        "requestedServiceObjectiveName": "DW1000c"
     }
 }
 ```
@@ -82,14 +82,14 @@ PUT https://management.azure.com/subscriptions/{subscription-id}/resourceGroups/
     "properties": {
         "timeRanges": [
                 {
-                                "dayOfWeek": Saturday,
-                                "startTime": 00:00,
-                                "duration": 08:00,
+                                "dayOfWeek": "Saturday",
+                                "startTime": "00:00",
+                                "duration": "08:00",
                 },
                 {
-                                "dayOfWeek": Wednesday
-                                "startTime": 00:00,
-                                "duration": 08:00,
+                                "dayOfWeek": "Wednesday",
+                                "startTime": "00:00",
+                                "duration": "08:00",
                 }
                 ]
     }

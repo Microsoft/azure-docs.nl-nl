@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 11/09/2017
 ms.author: msangapu
 ms.custom: seodec18
-ms.openlocfilehash: 370b84f451e22c20c798018951a7a801e0bba826
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 9763835142e66bbbce51cd5c863dff87f261c270
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763941"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060157"
 ---
 # <a name="best-practices-and-troubleshooting-guide-for-node-applications-on-azure-app-service-windows"></a>Aanbevolen procedures en richt lijnen voor probleem oplossing voor knooppunt toepassingen op Azure App Service Windows
 
@@ -245,9 +245,8 @@ Uw toepassing ontstaat niet-onderschepte uitzonde ringen `d:\\home\\LogFiles\\Ap
 De veelvoorkomende oorzaak van de start tijden van toepassingen is een groot aantal bestanden in de knooppunt \_ modules. De toepassing probeert het meren deel van deze bestanden te laden tijdens het starten. Omdat uw bestanden standaard worden opgeslagen op de netwerk share op Azure App Service, kan het laden van veel bestanden tijd duren.
 Enkele oplossingen om dit proces sneller uit te voeren:
 
-1. Zorg ervoor dat u een platte afhankelijkheids structuur hebt en geen dubbele afhankelijkheden met behulp van npm3 om uw modules te installeren.
-2. Probeer de knooppunt modules langzaam te laden \_ en laad niet alle modules in de start van de toepassing. Voor Lazy load modules moet de aanroep to vereist (' module ') worden uitgevoerd wanneer u de module in de functie daad werkelijk nodig hebt vóór de eerste uitvoering van module code.
-3. Azure App Service biedt een functie met de naam lokale cache. Deze functie kopieert uw inhoud van de netwerk share naar de lokale schijf op de virtuele machine. Omdat de bestanden lokaal zijn, is de laad tijd van knooppunt \_ modules veel sneller.
+1. Probeer de knooppunt modules langzaam te laden \_ en laad niet alle modules in de start van de toepassing. Voor Lazy load modules moet de aanroep to vereist (' module ') worden uitgevoerd wanneer u de module in de functie daad werkelijk nodig hebt vóór de eerste uitvoering van module code.
+2. Azure App Service biedt een functie met de naam lokale cache. Deze functie kopieert uw inhoud van de netwerk share naar de lokale schijf op de virtuele machine. Omdat de bestanden lokaal zijn, is de laad tijd van knooppunt \_ modules veel sneller.
 
 ## <a name="iisnode-http-status-and-substatus"></a>Http-status en-substatus IISNODE
 

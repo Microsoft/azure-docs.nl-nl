@@ -1,15 +1,15 @@
 ---
 title: Hyperledger Fabric consortium implementeren op Azure Kubernetes service
 description: Een Hyperledger Fabric consortium-netwerk implementeren en configureren op de Azure Kubernetes-service
-ms.date: 08/06/2020
+ms.date: 01/08/2021
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: 081c7a10ee091f573e8f999c94588ef85c784f74
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ab5b9fadfbb0f1c9c1cdf25ee319c7775a593ed
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89651565"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060313"
 ---
 # <a name="deploy-hyperledger-fabric-consortium-on-azure-kubernetes-service"></a>Hyperledger Fabric consortium implementeren op Azure Kubernetes service
 
@@ -66,13 +66,13 @@ Om te beginnen moet u een Azure-abonnement hebben dat ondersteuning biedt voor h
 
 Als u aan de slag wilt gaan met de implementatie van Hyperledger Fabric-netwerk onderdelen, gaat u naar de [Azure Portal](https://portal.azure.com).
 
-1. Selecteer **een resource maken**  >  **Block Chain**en zoek vervolgens naar **Hyperledger Fabric op de Azure Kubernetes-service (preview)**.
+1. Selecteer **een resource maken**  >  **Block Chain** en zoek vervolgens naar **Hyperledger Fabric op de Azure Kubernetes-service (preview)**.
 
 2. Voer de project details in op het tabblad **basis beginselen** .
 
     ![Scherm opname van het tabblad basis beginselen.](./media/hyperledger-fabric-consortium-azure-kubernetes-service/create-for-hyperledger-fabric-basics.png)
 
-3. Voer de volgende details in:
+3. Voer de volgende gegevens in:
     - **Abonnement**: Kies de naam van het abonnement waarin u de Hyperledger Fabric-netwerk onderdelen wilt implementeren.
     - **Resource groep**: Maak een nieuwe resource groep of kies een bestaande lege resource groep. Alle resources die zijn geïmplementeerd als onderdeel van de sjabloon, worden in de resource groep bewaard.
     - **Regio**: Kies de Azure-regio waar u het Azure Kubernetes service-cluster wilt implementeren voor de Hyperledger Fabric-onderdelen. De sjabloon is beschikbaar in alle regio's waar AKS beschikbaar is. Kies een regio waar uw abonnement niet de quotum limiet van de virtuele machine (VM) aanneemt.
@@ -81,9 +81,9 @@ Als u aan de slag wilt gaan met de implementatie van Hyperledger Fabric-netwerk 
 
     ![Scherm opname van het tabblad Fabric Settings.](./media/hyperledger-fabric-consortium-azure-kubernetes-service/create-for-hyperledger-fabric-settings.png)
 
-5. Voer de volgende details in:
+5. Voer de volgende gegevens in:
     - **Organisatie naam**: Voer de naam in van de Hyperledger Fabric-organisatie, die vereist is voor diverse bewerkingen voor gegevenslaag. De naam van de organisatie moet uniek zijn per implementatie.
-    - **Infrastructuur netwerk onderdeel**: Kies **bestellingen service** of **peer-knoop punten**op basis van het block chain-netwerk onderdeel dat u wilt instellen.
+    - **Infrastructuur netwerk onderdeel**: Kies **bestellingen service** of **peer-knoop punten** op basis van het block chain-netwerk onderdeel dat u wilt instellen.
     - **Aantal knoop punten**: de volgende twee typen knoop punten zijn:
         - **Bestel service**: Selecteer het aantal knoop punten om fout tolerantie voor het netwerk op te geven. Het aantal ondersteunde order knooppunten is 3, 5 en 7.
         - **Knoop punten op hetzelfde niveau**: u kunt 1 tot 10 knoop punten kiezen op basis van uw vereiste.
@@ -100,13 +100,13 @@ Als u aan de slag wilt gaan met de implementatie van Hyperledger Fabric-netwerk 
 
     ![Scherm opname van het tabblad K S cluster Settings.](./media/hyperledger-fabric-consortium-azure-kubernetes-service/create-for-hyperledger-fabric-aks-cluster-settings-1.png)
 
-7. Voer de volgende details in:
+7. Voer de volgende gegevens in:
     - **Kubernetes-cluster naam**: Wijzig de naam van het AKS-cluster, indien nodig. Dit veld wordt vooraf ingevuld op basis van het resource voorvoegsel dat wordt gegeven.
     - **Kubernetes-versie**: Kies de versie van Kubernetes die in het cluster wordt geïmplementeerd. Op basis van de regio die u hebt geselecteerd op het tabblad **basis beginselen** , kunnen de beschik bare ondersteunde versies worden gewijzigd.
     - **DNS-voor voegsel**: Voer een voor voegsel voor de Domain Name System (DNS)-naam in voor het AKS-cluster. U gebruikt DNS om verbinding te maken met de Kubernetes-API wanneer u containers beheert nadat u het cluster hebt gemaakt.
     - **Knooppunt grootte**: voor de grootte van het Kubernetes-knoop punt kunt u kiezen uit de lijst met vm's (Stock-Keeping Units) die beschikbaar zijn op Azure. Voor optimale prestaties raden wij standaard DS3 v2 aan.
     - **Knooppunt telling**: Voer het aantal Kubernetes-knoop punten in dat in het cluster moet worden geïmplementeerd. Het is raadzaam om dit aantal knoop punten te houden dat gelijk is aan of meer is dan het aantal Hyperledger-infrastructuur knooppunten dat is opgegeven op het tabblad **Fabric Settings** .
-    - **Service-Principal-client-id**: Voer de client-id van een bestaande Service-Principal in of maak een nieuwe. Een Service-Principal is vereist voor AKS-verificatie. Zie de [stappen voor het maken van een Service-Principal](/powershell/azure/create-azure-service-principal-azureps?view=azps-3.2.0#create-a-service-principal).
+    - **Service-Principal-client-id**: Voer de client-id van een bestaande Service-Principal in of maak een nieuwe. Een Service-Principal is vereist voor AKS-verificatie. Zie de [stappen voor het maken van een Service-Principal](/powershell/azure/create-azure-service-principal-azureps#create-a-service-principal).
     - **Service-Principal-client geheim**: Voer het client geheim in van de service-principal die is opgegeven in de client-id voor de Service-Principal.
     - **Client geheim bevestigen**: Bevestig het client geheim voor de Service-Principal.
     - **Container bewaking inschakelen**: Selecteer deze optie om AKS-bewaking in te scha kelen, waarmee de AKS-logboeken naar de opgegeven log Analytics-werk ruimte kunnen pushen.
@@ -393,23 +393,35 @@ Geef de naam van de query functie en de lijst met door spaties gescheiden argume
 
 ## <a name="troubleshoot"></a>Problemen oplossen
 
-Voer de volgende opdrachten uit om de versie van de sjabloon implementatie te vinden.
+### <a name="find-deployed-version"></a>Geïmplementeerde versie zoeken
 
-Stel omgevings variabelen in op basis van de resource groep waar de sjabloon is geïmplementeerd.
-
-```bash
-
-SWITCH_TO_AKS_CLUSTER() { az aks get-credentials --resource-group $1 --name $2 --subscription $3; }
-AKS_CLUSTER_SUBSCRIPTION=<AKSClusterSubscriptionID>
-AKS_CLUSTER_RESOURCE_GROUP=<AKSClusterResourceGroup>
-AKS_CLUSTER_NAME=<AKSClusterName>
-```
-Voer de volgende opdracht uit om de sjabloon versie af te drukken.
+Voer de volgende opdrachten uit om de versie van de sjabloon implementatie te vinden. Stel omgevings variabelen in op basis van de resource groep waar de sjabloon is geïmplementeerd.
 
 ```bash
 SWITCH_TO_AKS_CLUSTER $AKS_CLUSTER_RESOURCE_GROUP $AKS_CLUSTER_NAME $AKS_CLUSTER_SUBSCRIPTION
 kubectl describe pod fabric-tools -n tools | grep "Image:" | cut -d ":" -f 3
+```
 
+### <a name="patch-previous-version"></a>Eerdere versie van patch
+
+Als u problemen ondervindt met het uitvoeren van chaincode op alle implementaties van de sjabloon versie onder v 3.0.0, volgt u de onderstaande stappen om uw peer knooppunten met een oplossing te patchen.
+
+Down load het script voor peer-implementatie.
+
+```bash
+curl https://raw.githubusercontent.com/Azure/Hyperledger-Fabric-on-Azure-Kubernetes-Service/master/scripts/patchPeerDeployment.sh -o patchPeerDeployment.sh; chmod 777 patchPeerDeployment.sh
+```
+
+Voer het script uit met behulp van de volgende opdracht, waarbij de para meters voor uw peer worden vervangen.
+
+```bash
+source patchPeerDeployment.sh <peerOrgSubscription> <peerOrgResourceGroup> <peerOrgAKSClusterName>
+```
+
+Wacht tot alle peer knooppunten een patch hebben ontvangen. U kunt de status van uw knoop punten op hetzelfde niveau altijd controleren, in verschillende instanties van de shell met behulp van de volgende opdracht.
+
+```bash
+kubectl get pods -n hlf
 ```
 
 ## <a name="support-and-feedback"></a>Ondersteuning en feedback

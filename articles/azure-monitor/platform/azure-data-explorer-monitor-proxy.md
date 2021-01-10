@@ -1,18 +1,18 @@
 ---
 title: Query's uitvoeren op gegevens in Azure Monitor met behulp van Azure Data Explorer (preview-versie)
 description: Gebruik Azure Data Explorer om query's voor meerdere producten uit te voeren tussen Azure Data Explorer, Log Analytics werk ruimten en klassieke Application Insights toepassingen in Azure Monitor.
-author: orens
+author: osalzberg
 ms.author: bwren
 ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: dd29b18dda46a00966a0e5adea7e06be8f43ad35
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8942735ed65f8aa0cf6d315568e00412adcb353a
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444964"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060534"
 ---
 # <a name="query-data-in-azure-monitor-using-azure-data-explorer-preview"></a>Query's uitvoeren op gegevens in Azure Monitor met behulp van Azure Data Explorer (preview-versie)
 

@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 06/06/2020
 ms.author: victorh
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 8c989e426faa77025a84515fe0a19424cb6bfa89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fad6e27c4ee7e8c10237cb3face5cfab9329b2ed
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91826623"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059718"
 ---
 # <a name="autoscaling-and-zone-redundant-application-gateway-v2"></a>Automatisch schalen en zone-redundantie in Application Gateway v2 
 
@@ -101,7 +101,7 @@ In deze sectie worden de functies en beperkingen beschreven van de v2-SKU die ve
 |Verificatie certificaat|Niet ondersteund.<br>Zie [overzicht van end-to-end-TLS met Application Gateway](ssl-overview.md#end-to-end-tls-with-the-v2-sku)voor meer informatie.|
 |Standard_v2 en standaard Application Gateway op hetzelfde subnet mengen|Niet ondersteund|
 |User-Defined route (UDR) op Application Gateway subnet|Ondersteund (specifieke scenario's). In de preview-versie.<br> Zie [Application Gateway configuratie-overzicht](configuration-infrastructure.md#supported-user-defined-routes)voor meer informatie over ondersteunde scenario's.|
-|NSG voor binnenkomend poort bereik| -65200 tot 65535 voor Standard_v2 SKU<br>-65503 tot 65534 voor standaard-SKU.<br>Raadpleeg de [Veelgestelde vragen](application-gateway-faq.md#are-network-security-groups-supported-on-the-application-gateway-subnet)voor meer informatie.|
+|NSG voor binnenkomend poort bereik| -65200 tot 65535 voor Standard_v2 SKU<br>-65503 tot 65534 voor standaard-SKU.<br>Raadpleeg de [Veelgestelde vragen](application-gateway-faq.yml#are-network-security-groups-supported-on-the-application-gateway-subnet)voor meer informatie.|
 |Prestatie Logboeken in azure Diagnostics|Niet ondersteund.<br>De metrische gegevens van Azure moeten worden gebruikt.|
 |Billing|De facturering is gepland om te beginnen op 1 juli 2019.|
 |FIPS-modus|Deze worden momenteel niet ondersteund.|
@@ -118,4 +118,4 @@ Een Azure PowerShell script is beschikbaar in de Power shell Gallery, waarmee u 
 - [Quickstart: Webverkeer omleiden met Azure Application Gateway - Azure Portal](quick-create-portal.md)
 - [Een automatische schaling maken, een zone redundante toepassings gateway met een gereserveerd virtueel IP-adres met behulp van Azure PowerShell](tutorial-autoscale-ps.md)
 - Meer informatie over [Application Gateway](overview.md).
-- Meer informatie over [Azure firewall](../firewall/overview.md).
+- Meer informatie over [Azure Firewall](../firewall/overview.md).

@@ -1,22 +1,22 @@
 ---
-title: Indexering beheren in de API van Azure Cosmos DB voor MongoDB
+title: Indexering beheren voor de API voor MongoDB van Azure Cosmos DB
 description: Dit artikel bevat een overzicht van Azure Cosmos DB indexerings mogelijkheden met behulp van de API van Azure Cosmos DB voor MongoDB
 ms.service: cosmos-db
 ms.subservice: cosmosdb-mongo
 ms.devlang: nodejs
 ms.topic: how-to
-ms.date: 11/06/2020
+ms.date: 01/08/2020
 author: timsander1
 ms.author: tisande
 ms.custom: devx-track-js
-ms.openlocfilehash: e920af85c511387e66bcafcb6a140844d25f204c
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 34caca47746814046a894494ec43d9b5c977389a
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369287"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060070"
 ---
-# <a name="manage-indexing-in-azure-cosmos-dbs-api-for-mongodb"></a>Indexering beheren in de API van Azure Cosmos DB voor MongoDB
+# <a name="manage-indexing-in-azure-cosmos-dbs-api-for-mongodb"></a>Indexering beheren voor de API voor MongoDB van Azure Cosmos DB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
 
 Azure Cosmos DB-API voor MongoDB maakt gebruik van de belangrijkste mogelijkheden voor index beheer van Azure Cosmos DB. In dit artikel wordt uitgelegd hoe u indexen toevoegt met behulp van de API van Azure Cosmos DB voor MongoDB. U kunt ook een [overzicht van het indexeren in azure Cosmos DB](index-overview.md) lezen dat relevant is voor alle api's.
@@ -29,6 +29,16 @@ Als u extra velden wilt indexeren, past u de opdrachten voor MongoDB-indexbeheer
 
 Als u een sortering op een query wilt Toep assen, moet u een index maken voor de velden die in de sorteer bewerking worden gebruikt.
 
+### <a name="editing-indexing-policy"></a>Indexerings beleid bewerken
+
+Het is raadzaam om het indexerings beleid te bewerken in de Data Explorer in het Azure Portal.
+. U kunt één veld-en Joker teken index toevoegen uit de editor voor indexering in de Data Explorer:
+
+:::image type="content" source="./media/mongodb-indexing/indexing-policy-editor.png" alt-text="Editor voor indexerings beleid":::
+
+> [!NOTE]
+> U kunt geen samengestelde indexen maken met de editor voor indexerings beleid in de Data Explorer.
+
 ## <a name="index-types"></a>Indextypen
 
 ### <a name="single-field"></a>Eén veld
@@ -36,6 +46,10 @@ Als u een sortering op een query wilt Toep assen, moet u een index maken voor de
 U kunt indexen maken voor één veld. De sorteer volgorde van de enkelvoudige veld index is niet van belang. Met de volgende opdracht maakt u een index voor het veld `name` :
 
 `db.coll.createIndex({name:1})`
+
+U kunt dezelfde enkelvoudige veld index maken op `name` in de Azure portal:
+
+:::image type="content" source="./media/mongodb-indexing/add-index.png" alt-text="Naam index toevoegen in editor voor indexerings beleid":::
 
 Bij een query worden meerdere enkelvoudige veld indexen gebruikt, waar beschikbaar. U kunt Maxi maal 500 enkelvoudige veld indexen per container maken.
 
@@ -135,6 +149,10 @@ Hier kunt u een Joker teken index maken voor alle velden:
 
 `db.coll.createIndex( { "$**" : 1 } )`
 
+U kunt ook indexen voor joker tekens maken met behulp van de Data Explorer in het Azure Portal:
+
+:::image type="content" source="./media/mongodb-indexing/add-wildcard-index.png" alt-text="Een Joker teken index toevoegen in de editor voor het indexerings beleid":::
+
 > [!NOTE]
 > Als u net begint met de ontwikkeling, raden we u **ten zeerste** aan om te beginnen met een Joker teken index voor alle velden. Dit kan de ontwikkeling vereenvoudigen en zo eenvoudiger query's optimaliseren.
 
@@ -144,13 +162,13 @@ Documenten met veel velden kunnen een hoge aanvraag eenheid (RU) in rekening bre
 
 Joker tekens bieden geen ondersteuning voor een van de volgende index typen of eigenschappen:
 
-- Stelling
+- Samenstelling
 - TTL
 - Uniek
 
-In **tegens telling tot in MongoDb** , in de API van Azure Cosmos DB voor MongoDb **kunt u geen** Joker teken indexen gebruiken voor:
+In **tegens telling tot in MongoDb**, in de API van Azure Cosmos DB voor MongoDb **kunt u geen** Joker teken indexen gebruiken voor:
 
-- Een Joker teken index maken die meerdere specifieke velden bevat
+- Een jokertekenindex maken die meerdere specifieke velden bevat
 
 `db.coll.createIndex(
     { "$**" : 1 },
@@ -162,7 +180,7 @@ In **tegens telling tot in MongoDb** , in de API van Azure Cosmos DB voor MongoD
     }
 )`
 
-- Een Joker teken index maken waarmee meerdere specifieke velden worden uitgesloten
+- Een jokertekenindex maken die geen meerdere specifieke velden bevat
 
 `db.coll.createIndex(
     { "$**" : 1 },
@@ -174,7 +192,7 @@ In **tegens telling tot in MongoDb** , in de API van Azure Cosmos DB voor MongoD
     }
 )`
 
-Als alternatief kunt u meerdere Joker teken indexen maken.
+Als alternatief kunt u meerdere jokertekenindexen maken.
 
 ## <a name="index-properties"></a>Indexeigenschappen
 

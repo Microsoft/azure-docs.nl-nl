@@ -1,18 +1,18 @@
 ---
 title: "Meerdere resources: query's uitvoeren op Azure Data Explorer met behulp van Azure Monitor"
 description: Gebruik Azure Monitor om query's in meerdere producten uit te voeren tussen Azure Data Explorer, Log Analytics werk ruimten en klassieke Application Insights toepassingen in Azure Monitor.
-author: orens
+author: osalzberg
 ms.author: bwren
 ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 12/02/2020
-ms.openlocfilehash: cb586d15e762f88620fe0c91152af41b3f607d74
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 1a35b80ceec12b378a01555f42b7a0500b8f6229
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97674426"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060449"
 ---
 # <a name="cross-resource-query-azure-data-explorer-by-using-azure-monitor"></a>Meerdere resources: query's uitvoeren op Azure Data Explorer met behulp van Azure Monitor
 Azure Monitor ondersteunt query's tussen de verschillende services van Azure Data Explorer, [Application Insights](/azure/azure-monitor/app/app-insights-overview)en [log Analytics](/azure/azure-monitor/platform/data-platform-logs). U kunt vervolgens een query uitvoeren op uw Azure Data Explorer-cluster met behulp van Log Analytics/Application Insights-hulpprogram ma's en hiernaar verwijzen in een query's voor meerdere services. In dit artikel wordt beschreven hoe u een query voor meerdere services maakt.
@@ -22,7 +22,7 @@ In het volgende diagram ziet u de Azure Monitor cross-service flow:
 :::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-monitor-data-explorer-flow.png" alt-text="Diagram waarin de stroom van query's tussen een gebruiker, Azure Monitor, een proxy en Azure Data Explorer wordt weer gegeven.":::
 
 >[!NOTE]
-> Azure Monitor query's voor meerdere services bevindt zich in een persoonlijke preview. Allowlisting is vereist. Neem contact op met het [service team](mailto:ADXProxy@microsoft.com) .
+> Azure Monitor query's voor meerdere services bevindt zich in de open bare preview. Neem contact op met het [service team](mailto:ADXProxy@microsoft.com) .
 
 ## <a name="cross-query-your-log-analytics-or-application-insights-resources-and-azure-data-explorer"></a>Query's uitvoeren op uw Log Analytics of Application Insights resources en Azure Data Explorer
 

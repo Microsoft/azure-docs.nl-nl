@@ -3,12 +3,12 @@ title: Verificatie en autorisatie Azure Service Bus | Microsoft Docs
 description: Verifieer apps om te Service Bus met de verificatie van Shared Access Signature (SAS).
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: a71cef6aad973f3c39ef61a8dbab313ebfca44ef
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 7b287b209fbcd5bc2782505095aeae4390107803
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517277"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060211"
 ---
 # <a name="service-bus-authentication-and-authorization"></a>Vereenvoudigde Service Bus-verificatie en -autorisatie
 Er zijn twee manieren om toegang tot Azure Service Bus-resources te verifiëren en te autoriseren: Azure activity Directory (Azure AD) en Shared Access signatures (SAS). In dit artikel vindt u informatie over het gebruik van deze twee typen beveiligings mechanismen. 
@@ -25,7 +25,7 @@ Raadpleeg de volgende artikelen voor meer informatie over verificatie met Azure 
 > [Service Bus rest API](/rest/api/servicebus/) ondersteunt OAuth-verificatie met Azure AD.
 
 > [!IMPORTANT]
-> Het autoriseren van gebruikers of toepassingen die gebruikmaken van het OAuth 2,0-token dat wordt geretourneerd door Azure AD, biedt een superieure beveiliging en gebruiks vriendelijk gebruik van Shared Access signatures (SAS). Met Azure AD hoeft u geen tokens op te slaan in uw code en mogelijke beveiligings problemen met Risico's. U wordt aangeraden gebruik te maken van Azure AD als dat mogelijk is met uw Azure Service Bus toepassingen. 
+> Het autoriseren van gebruikers of toepassingen die gebruikmaken van het OAuth 2,0-token dat wordt geretourneerd door Azure AD, biedt een superieure beveiliging en gebruiks vriendelijk gebruik van Shared Access signatures (SAS). Met Azure AD hoeft u geen tokens op te slaan in uw code en mogelijke beveiligings problemen met Risico's. U wordt aangeraden Azure AD zo mogelijk te gebruiken met uw Azure Service Bus toepassingen. 
 
 ## <a name="shared-access-signature"></a>Shared Access Signature
 Met [SAS-verificatie](service-bus-sas.md) kunt u een gebruiker toegang verlenen tot Service Bus resources, met specifieke rechten. SAS-verificatie in Service Bus omvat de configuratie van een cryptografische sleutel met bijbehorende rechten op een Service Bus bron. Clients kunnen vervolgens toegang krijgen tot deze bron door een SAS-token te presen teren, dat bestaat uit de bron-URI waartoe toegang wordt verkregen en een verloop datum dat met de geconfigureerde sleutel is ondertekend.
@@ -34,10 +34,10 @@ U kunt sleutels voor SAS voor een Service Bus naam ruimte configureren. De sleut
 
 Als u SAS wilt gebruiken, kunt u een [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) -object configureren in een naam ruimte, wachtrij of onderwerp. Deze regel bestaat uit de volgende elementen:
 
-* *Naam*van de regel: geeft aan.
+* *Naam* van de regel: geeft aan.
 * *PrimaryKey*: een cryptografische sleutel die wordt gebruikt voor het ondertekenen/valideren van SAS-tokens.
 * *Secundaire sleutel*: een cryptografische sleutel die wordt gebruikt voor het ondertekenen/valideren van SAS-tokens.
-* *Rechten*: vertegenwoordigt de **verzameling van**verleende, **verzonden**of **beheerde** rechten.
+* *Rechten*: vertegenwoordigt de **verzameling van** verleende, **verzonden** of **beheerde** rechten.
 
 Autorisatie regels die op het niveau van de naam ruimte zijn geconfigureerd, kunnen toegang verlenen tot alle entiteiten in een naam ruimte voor clients met tokens die zijn ondertekend met behulp van de bijbehorende sleutel. U kunt Maxi maal 12 dergelijke autorisatie regels configureren voor een Service Bus naam ruimte, wachtrij of onderwerp. Standaard wordt een [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messaging.sharedaccessauthorizationrule) met alle rechten voor elke naam ruimte geconfigureerd wanneer deze voor het eerst wordt ingericht.
 

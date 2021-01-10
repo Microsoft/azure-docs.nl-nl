@@ -1,5 +1,5 @@
 ---
-title: Een Azure Arc-Kubernetes-cluster verbinden (preview-versie)
+title: Een verbinding instellen voor een Kubernetes-cluster met Azure Arc (preview)
 services: azure-arc
 ms.service: azure-arc
 ms.date: 05/19/2020
@@ -9,14 +9,14 @@ ms.author: mlearned
 description: Een Azure Arc-Kubernetes-cluster verbinden met Azure Arc
 keywords: Kubernetes, Arc, azure, K8s, containers
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 7f402d86ac1287753bc2deab53b24bb796644992
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 8155ed709045626dee44fb499304ff5244a61b54
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97583929"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060245"
 ---
-# <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Een Azure Arc-Kubernetes-cluster verbinden (preview-versie)
+# <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Een verbinding instellen voor een Kubernetes-cluster met Azure Arc (preview)
 
 In dit document wordt het proces beschreven voor het verbinden van een CNCF-Kubernetes-cluster (native computing Foundation) van de Cloud, zoals AKS-engine op Azure, AKS-engine op Azure Stack hub, GKE, EKS en VMware vSphere cluster naar Azure Arc.
 
@@ -30,7 +30,7 @@ Controleer of u de volgende vereisten hebt voor bereid:
 * U hebt een kubeconfig-bestand nodig om toegang te krijgen tot de rol cluster en Cluster beheerder op het cluster voor de implementatie van Kubernetes-agents die zijn ingeschakeld voor Arc.
 * De gebruiker of service-principal die wordt gebruikt met `az login` en `az connectedk8s connect` opdrachten moeten de machtigingen lezen en schrijven hebben voor het resource type micro soft. Kubernetes/connectedclusters. De rol ' Kubernetes cluster-Azure Arc-onboarding ' heeft deze machtigingen en kan worden gebruikt voor roltoewijzingen op de gebruiker of Service-Principal.
 * Helm 3 is vereist voor de onboarding van het cluster met behulp van de connectedk8s-extensie. [Installeer de nieuwste versie van helm 3](https://helm.sh/docs/intro/install) om te voldoen aan deze vereiste.
-* De Azure CLI-versie 2.3 + is vereist voor de installatie van de Azure Arc enabled Kubernetes CLI-extensies. [Installeer Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) of werk bij naar de nieuwste versie om ervoor te zorgen dat u beschikt over Azure CLI-versie 2.3 +.
+* Azure CLI versie 2.15 + is vereist voor de installatie van de Kubernetes CLI-uitbrei dingen van Azure Arc ingeschakeld. [Installeer Azure cli](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) of werk bij naar de nieuwste versie om te controleren of u Azure CLI-versie 2.15 + hebt.
 * De Arc enabled Kubernetes CLI-extensies installeren:
   
   Installeer de `connectedk8s` extensie, waarmee u Kubernetes-clusters kunt verbinden met Azure:
@@ -52,7 +52,7 @@ Controleer of u de volgende vereisten hebt voor bereid:
   az extension update --name k8sconfiguration
   ```
 
-## <a name="supported-regions"></a>Ondersteunde regio's
+## <a name="supported-regions"></a>Ondersteunde regio’s
 
 * VS - oost
 * Europa -west

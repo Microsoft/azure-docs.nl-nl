@@ -16,12 +16,12 @@ ms.date: 12/11/2020
 ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6299f9ad660252ae39903401672d493b1c1ad52c
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 8f08c25749bbd21e3624dee898d9a8c97fd74164
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347486"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059378"
 ---
 # <a name="add-a-connected-organization-in-azure-ad-entitlement-management"></a>Een verbonden organisatie toevoegen in het beheer van rechten van Azure AD
 
@@ -135,8 +135,6 @@ Als u geen relatie meer hebt met een extern Azure AD-adres lijst of-domein, kunt
 1. Selecteer **verbonden organisaties** in het linkerdeel venster en selecteer vervolgens de verbonden organisatie om deze te openen.
 
 1. Selecteer **verwijderen** in het overzichts venster van de verbonden organisatie om deze te verwijderen.
-
-    Op dit moment kunt u een verbonden organisatie alleen verwijderen als er geen verbonden gebruikers zijn.
 
     ![De knop verbonden organisatie verwijderen](./media/entitlement-management-organization/organization-delete.png)
 

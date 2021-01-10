@@ -3,12 +3,12 @@ title: Live video Analytics op IoT Edge opmerkingen bij de release-Azure
 description: Dit onderwerp bevat opmerkingen bij de release van live video Analytics over IoT Edge releases, verbeteringen, fout oplossingen en bekende problemen.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: 2800d41340e45867ea4126733cdb5968cf8b91c5
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 7761fee8f23b5be259f9a5c278f761fa4ce92fbf
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400842"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059973"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Opmerkingen bij de release van live video op IoT Edge
 
@@ -33,7 +33,7 @@ Deze versie is de open bare preview-versie voor het vernieuwen van live video-an
 * Er is ondersteuning toegevoegd voor het gebruik van meer dan één HTTP-uitbreidings processor en gRPC extension-processor per grafiek topologie.
 * Er is ondersteuning toegevoegd voor het beheer van schijf ruimte voor Sink-knoop punten.
 * `MediaGraphGrpcExtension` het knoop punt ondersteunt nu de eigenschap [extensionConfiguration](grpc-extension-protocol.md) voor het gebruik van meerdere AI-modellen binnen één gRPC-server.
-* Er is ondersteuning toegevoegd voor het verzamelen van metrische gegevens van de module live video Analytics in de [Prometheus-indeling](https://prometheus.io/docs/practices/naming/) 
+* Er is ondersteuning toegevoegd voor het verzamelen van metrische gegevens van de module live video Analytics in de [Prometheus-indeling](https://prometheus.io/docs/practices/naming/). Meer informatie over het [verzamelen van metrische gegevens en weer gave in azure monitor.](monitoring-logging.md#azure-monitor-collection-via-telegraf) 
 * Processor voor frame frequentie filter is **afgeschaft**.  
     * Het beheer van de frame frequentie is nu beschikbaar in de processor knooppunten van de grafiek extensie zelf.
 

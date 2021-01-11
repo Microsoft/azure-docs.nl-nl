@@ -49,6 +49,8 @@
               href: how-to-set-up-instance-portal.md
             - name: CLI-versie
               href: how-to-set-up-instance-cli.md
+            - name: PowerShell-versie
+              href: how-to-set-up-instance-powershell.md
             - name: Scriptversie
               href: how-to-set-up-instance-scripted.md
         - name: Verificatiecode voor app schrijven

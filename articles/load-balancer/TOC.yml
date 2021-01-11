@@ -146,11 +146,15 @@
       items:
         - name: Problemen met Azure Load Balancer oplossen
           href: load-balancer-troubleshoot.md
-        - name: Veelvoorkomende implementatiefouten oplossen
+        - name: Status van statustest
+          href: load-balancer-troubleshoot-health-probe-status.md
+        - name: Verkeer van back-end-pool (VM)
+          href: load-balancer-troubleshoot-backend-traffic.md
+        - name: Veelvoorkomende implementatiefouten
           href: load-balancer-common-deployment-errors.md
-        - name: Veelvoorkomende problemen met uitgaande verbindingen oplossen
+        - name: Veelvoorkomende problemen met uitgaande verbindingen
           href: troubleshoot-outbound-connection.md
-        - name: Problemen met resourcestatus en binnenkomend verkeer oplossen
+        - name: Problemen met resourcestatus en binnenkomend verkeer
           href: troubleshoot-rhc.md
 - name: Naslaginformatie
   items:

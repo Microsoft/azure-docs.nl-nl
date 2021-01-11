@@ -54,7 +54,7 @@
           href: enable-dynamic-configuration-java-spring-app.md
     - name: Functievlaggen gebruiken
       items:
-        - name: .NET Core
+        - name: ASP.NET Core
           href: use-feature-flags-dotnet-core.md
         - name: Spring Boot
           href: use-feature-flags-spring-boot.md
@@ -110,7 +110,7 @@
           href: concept-disaster-recovery.md
 - name: Instructiegidsen
   items:
-    - name: Een functie inschakelen om voor een percentage van de gebruikers
+    - name: Voorwaardelijke functievlaggen gebruiken
       href: howto-feature-filters-aspnet-core.md
     - name: Een functie inschakelen voor gespecificeerde gebruikers/groepen
       href: howto-targetingfilter-aspnet-core.md

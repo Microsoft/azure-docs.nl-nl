@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 11/24/2020
+ms.date: 12/17/2020
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 01f61eac31c388cd0bf8a857beb7a10944187c6b
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 1814555f738f37523c5b23ae729bf20bff62e1f9
+ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027897"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97679527"
 ---
 # <a name="what-is-azure-cognitive-search"></a>Wat is Azure Cognitive Search?
 
@@ -25,8 +25,8 @@ Wanneer u een Cognitive Search-service maakt, krijgt u:
 + een zoekprogramma dat indexering en query's uitvoert
 + permanente opslag van zoekindexen die u maakt en beheert
 + een querytaal voor het opstellen van eenvoudige tot complexe query's
-+ op AI-gebaseerde analyse, het maken van doorzoekbare inhoud van afbeeldingen, onbewerkte tekst, toepassingsbestanden
-+ integratie met Azure-gegevens via zoekindexen, automatisch importeren en vernieuwen van gegevens
++ [Verrijkingen op basis van AI](cognitive-search-concept-intro.md), het maken van doorzoekbare inhoud uit afbeeldingen, onbewerkte tekst, toepassingsbestanden
++ Integratie met andere Azure-services voor gegevens, machine learning/AI, en beveiliging
 
 In de architectuur wordt een zoekservice geplaatst tussen de externe gegevensarchieven die uw niet-geïndexeerde gegevens bevatten en een client-app die query-aanvragen naar een zoekindex verzendt en het antwoord verwerkt.
 
@@ -89,11 +89,11 @@ Azure Cognitive Search is van alle cloudproviders het sterkst op het gebied van 
 Belangrijke pluspunten zijn onder andere:
 
 + Azure-gegevensintegratie (verkenners) in de indexeringslaag
-+ Azure Portal voor centraal beheer
-+ Schaling, betrouwbaarheid en beschikbaarheid van wereldklasse in Azure
-+ AI-verwerking van onbewerkte gegevens om ze beter doorzoekbaar te maken, met inbegrip van afbeeldingen of het vinden van patronen in ongestructureerde inhoud.
++ Azure Private Link-integratie om offline ondersteuning te bieden voor beveiligingsvereisten
++ Integratie met AI-verwerking om tekst in niet-doorzoekbare inhoudstypen doorzoekbaar te maken.
 + Taalkundige en aangepaste analyse met analysefuncties voor grondig zoeken in volledige tekst in 56 talen
-+ [Kernfuncties die eigen zijn aan zoekgerichte apps](search-features-list.md): scoren, facetten, suggesties, synoniemen, op geografische locaties zoeken, en meer.
++ [Kritieke functies](search-features-list.md): rijke querytaal, relevantie afstemmen, facetteren, automatisch aanvullen, synoniemen, geo-zoekopdracht, en resultaatcompositie.
++ Schaling, betrouwbaarheid en beschikbaarheid van wereldklasse in Azure
 
 Onder onze klanten bevinden zich degenen die het breedste scala aan functies in Azure Cognitive Search gebruiken, onder andere onlinecatalogussen, Line-Of-Business-programma’s en toepassingen voor het ontdekken van documenten.
 

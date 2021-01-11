@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/09/2020
 ms.author: mlottner
-ms.openlocfilehash: 859f1c4a1ed1b3d9139307c52f44a14e3089e31f
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 66b5694823096f0747ea099b631a53198a819816
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90943784"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835037"
 ---
 # <a name="quickstart-investigate-security-recommendations"></a>Quickstart: Beveiligingsaanbevelingen onderzoeken
 
@@ -33,11 +33,11 @@ Aan de slag.
 
 In de lijst met IoT Hub-aanbevelingen worden alle geaggregeerde beveiligingsaanbevelingen voor uw IoT Hub weergegeven.
 
-1.  Open in Azure Portal de  **IoT Hub**  die u wilt onderzoeken op nieuwe aanbevelingen.
+1.  Open in de Azure-portal de **IoT Hub** die u wilt onderzoeken op nieuwe aanbevelingen.
 
-1.  Selecteer in het  **Beveiliging**-menu    **Aanbevelingen**. Alle beveiligingsaanbevelingen voor de IoT Hub worden weergegeven en de aanbevelingen met een markering  **Nieuw**   markeren uw aanbevelingen van de afgelopen 24 uur. 
+1.  Selecteer **Aanbevelingen** in het menu **Beveiliging**. Alle beveiligingsaanbevelingen voor de IoT Hub worden weergegeven, en de aanbevelingen met een markering **Nieuw** markeren uw aanbevelingen van de afgelopen 24 uur. 
 
-    [ ![Beveiligingsaanbevelingen met ASC voor IoT onderzoeken](media/quickstart/investigate-security-recommendations-inline.png)](media/quickstart/investigate-security-recommendations-expanded.png#lightbox)
+    :::image type="content" source="media/quickstart/investigate-security-recommendations-expanded.png#lightbox" alt-text="Beveiligingsaanbevelingen onderzoeken met ASC for IoT](media/quickstart/investigate-security-recommendations-inline.png)":::
 
 
 1.  Selecteer en open een aanbeveling in de lijst om de details van de aanbeveling te openen en in te zoomen op de specificaties van de waarschuwing.
@@ -46,21 +46,21 @@ In de lijst met IoT Hub-aanbevelingen worden alle geaggregeerde beveiligingsaanb
 
 Open elke geaggregeerde aanbeveling om de gedetailleerde beschrijving van de aanbeveling, herstelstappen en apparaat-id weer te geven voor elk apparaat dat een aanbeveling heeft geactiveerd. Ook wordt de ernst van de aanbeveling en directe toegang tot onderzoek weergegeven met behulp van Log Analytics.
 
-1.  Selecteer en open een beveiligingsaanbeveling in de lijst  **IoT Hub** \> **Beveiliging** \> **Aanbevelingen** .
+1.  Selecteer en open een willekeurige beveiligingsaanbeveling in de lijst **IoT Hub** \> **Beveiliging** \> **Aanbevelingen**.
 
-1.  Bekijk de **beschrijving** en  **ernst** van de aanbeveling en de  **apparaatgegevens**  van alle apparaten die deze aanbeveling tijdens de aggregatie hebben uitgegeven. 
+1.  Bekijk de **beschrijving**, **ernst** **apparaatgegevens** voor de aanbeveling van alle apparaten die deze aanbeveling hebben uitgegeven tijdens de aggregatie. 
 
-1.  Nadat u de details van de aanbeveling hebt bekeken, gebruikt u de instructies uit de  **stap handmatig herstel**  om het probleem dat de aanbeveling heeft veroorzaakt, te herstellen en op te lossen. 
+1.  Nadat u de details van de aanbeveling hebt bekeken, gebruikt u de instructies uit de **stap handmatig herstel** om het probleem dat de aanbeveling heeft veroorzaakt, te herstellen en op te lossen. 
 
-    [ ![Beveiligingsaanbevelingen met ASC voor IoT opvolgen](media/quickstart/remediate-security-recommendations-inline.png)](media/quickstart/remediate-security-recommendations-expanded.png#lightbox)
+    [ :::image type="content" source="media/quickstart/remediate-security-recommendations-expanded.png#lightbox" alt-text="Beveiligingsaanbevelingen herstellen met ASC for IoT](media/quickstart/remediate-security-recommendations-inline.png)":::
 
 
 1.  Bekijk de aanbevelingsdetails voor een specifiek apparaat door het gewenste apparaat te selecteren op de inzoompagina.
 
-    [![Onderzoek specifieke beveiligingsaanbevelingen voor een apparaat met ASC voor IoT](media/quickstart/explore-security-recommendation-detail-inline.png)](media/quickstart/explore-security-recommendation-detail-expanded.png#lightbox)
+    [ :::image type="content" source="media/quickstart/explore-security-recommendation-detail-expanded.png#lightbox" alt-text="Specifieke beveiligingsaanbevelingen voor een apparaat onderzoeken met ASC for IoT](media/quickstart/explore-security-recommendation-detail-inline.png)":::
 
 
-1.  Als verder onderzoek is vereist,  **onderzoek dan de aanbevelingen in Log Analytics**  met behulp van de koppeling. 
+1.  Als verder onderzoek is vereist, kunt u **De aanbevelingen onderzoeken in Log Analytics** via de koppeling. 
 
 
 ## <a name="next-steps"></a>Volgende stappen

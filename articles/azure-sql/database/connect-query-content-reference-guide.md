@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 05/29/2020
-ms.openlocfilehash: e25469e23358ade32e050bed0818338dc290e71f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7dccce597dcfbcedd5083befafa79b8ba6f3adac
+ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451393"
+ms.lasthandoff: 12/19/2020
+ms.locfileid: "97693469"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-connect-and-query-articles"></a>Verbinding maken met Azure SQL Database en Azure SQL Managed Instance en query's uitvoeren voor artikelen
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -42,6 +42,29 @@ Het volgende document bevat koppelingen naar voorbeelden van Azure die laten zie
 |[Ruby](connect-query-ruby.md)|In deze quickstart wordt uitgelegd hoe u Ruby gebruikt om een programma te maken dat verbinding maakt met een database en hoe u Transact-SQL-instructies gebruikt om gegevens te doorzoeken.|
 |[R](connect-query-r.md)|In deze quickstart wordt uitgelegd hoe u R gebruikt met Azure SQL Database Machine Learning Services om een programma te maken waarmee u verbinding met een database in Azure SQL Database kunt maken en Transact-SQL-instructies kunt gebruiken om een query voor gegevens uit te voeren.|
 |||
+
+## <a name="get-server-connection-information"></a>Serververbindingsgegevens ophalen
+
+Haal de verbindingsgegevens op die u nodig hebt om verbinding te maken met de database in Azure SQL Database. U hebt de volledig gekwalificeerde servernaam of hostnaam, databasenaam en aanmeldingsgegevens nodig voor de volgende procedures.
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+
+2. Navigeer naar de pagina **SQL Databases** of **SQL Managed Instances**.
+
+3. Bekijk op de pagina **Overzicht** de volledig gekwalificeerde servernaam naast **Servernaam** voor de database in Azure SQL Database, of de volledig gekwalificeerde servernaam (of het IP-adres) naast **Host** voor een met Azure SQL beheerd exemplaar of SQL Server op een Azure-VM. Als u de servernaam of hostnaam wilt kopiëren, plaatst u de muisaanwijzer erboven en selecteert u het pictogram **Kopiëren**.
+
+> [!NOTE]
+> Zie [Verbinding met een SQL Server-exemplaar](../virtual-machines/windows/sql-vm-create-portal-quickstart.md#connect-to-sql-server) voor meer informatie over de verbinding van SQL Server op een Azure-VM.
+
+## <a name="get-adonet-connection-information-optional---sql-database-only"></a>ADO.NET-verbindingsgegevens ophalen (optioneel - alleen SQL Database)
+
+1. Ga naar de databaseblade in de Azure-portal en selecteer onder **Instellingen** de optie **Verbindingsreeksen**.
+
+2. Bekijk de volledige **ADO.NET**-verbindingsreeks.
+
+    ![ADO.NET-verbindingsreeks](./media/connect-query-dotnet-core/adonet-connection-string2.png)
+
+3. Kopieer de **ADO.NET**-verbindingsreeks als u van plan bent om deze te gebruiken.
 
 ## <a name="tls-considerations-for-database-connectivity"></a>TLS-overwegingen voor de connectiviteit van databases
 

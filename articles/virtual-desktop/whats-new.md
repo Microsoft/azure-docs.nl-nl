@@ -8,12 +8,12 @@ ms.author: helohr
 ms.reviewer: thhickli; darank
 manager: lizross
 ms.custom: references_regions
-ms.openlocfilehash: e267de136271991446444a47a470dd52789b3613
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: e42e49f69a159bf3bfdc732d41dc66a9a707f42f
+ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533958"
+ms.lasthandoff: 12/17/2020
+ms.locfileid: "97617354"
 ---
 # <a name="whats-new-in-windows-virtual-desktop"></a>Nieuwe functies in Windows Virtual Desktop
 
@@ -49,7 +49,7 @@ Versie 2.0.1 van de Windows Virtual Desktop-cmdlets is uitgebracht. Deze update 
 
 ### <a name="azure-advisor-updates"></a>Updates voor Azure Advisor
 
-Azure Advisor heeft nu een nieuwe aanbeveling voor nabijheidsrichtlijnen in Windows Virtual Desktop. Meer informatie vindt u op [de website van Azure](https://azure.microsoft.com/updates/new-recommendations-from-azure-advisor/).
+Azure Advisor biedt nu een nieuwe aanbeveling voor nabijheidsrichtlijnen in Windows Virtual Desktop, en een nieuwe aanbeveling voor het optimaliseren van prestaties in hostpools met diepte-eerst taakverdeling. Meer informatie vindt u op [de website van Azure](https://azure.microsoft.com/updates/new-recommendations-from-azure-advisor/).
 
 ## <a name="october-2020"></a>Oktober 2020
 

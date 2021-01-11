@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/18/2020
 ms.author: danlep
 ms.custom: include file
-ms.openlocfilehash: 3fe1b966b56142fd312850ac5d77839b7d9db434
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: e451171859efc49753131b145642aec4864db45d
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97706225"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98015659"
 ---
 | Resource | Basic | Standard | Premium |
 |---|---|---|---|
@@ -22,8 +22,8 @@ ms.locfileid: "97706225"
 | Maximale grootte van de installatiekopielaag (GiB) | 200 | 200 | 200 |
 | ReadOps per minuut<sup>2, 3</sup> | 1000 | 3000 | 10.000 |
 | WriteOps per minuut<sup>2, 4</sup> | 100 | 500 | 2.000 |
-| Downloadbandbreedte Mbps<sup>2</sup> | 30 | 60 | 100 |
-| Uploadbandbreedte Mbps<sup>2</sup> | 10 | 20 | 50 |
+| Downloadbandbreedte<sup>2</sup> (Mbps) | 30 | 60 | 100 |
+| Uploadbandbreedte <sup>2</sup> (Mbps) | 10 | 20 | 50 |
 | Webhooks | 2 | 10 | 500 |
 | Geo-replicatie | N.v.t. | N.v.t. | [Ondersteund][geo-replication] |
 | Beschikbaarheidszones | N.v.t. | N.v.t. | [Preview][zones] |
@@ -38,7 +38,7 @@ ms.locfileid: "97706225"
 | &bull; Opslagplaatsen per bereiktoewijzing | N.v.t. | N.v.t. | 500 |
 
 
-<sup>1</sup> Opslag inbegrepen in het dagelijkse tarief voor elke laag. Voor extra opslag wordt een extra dagelijks tarief per GiB in rekening gebracht, tot aan de opslaglimiet. Zie voor meer tariefinformatie [Prijzen voor Azure Container Registry][pricing].
+<sup>1</sup> Opslag inbegrepen in het dagelijkse tarief voor elke laag. Er kan extra opslag worden gebruikt tot aan de registeropslaglimiet tegen een extra dagelijks tarief per GiB. Zie voor meer tariefinformatie [Prijzen voor Azure Container Registry][pricing].
 
 <sup>2</sup>*ReadOps*, *WriteOps* en *bandbreedte* zijn minimale schattingen. Azure Container Registry streeft ernaar de prestaties te verbeteren op basis van de gebruiksvereisten.
 

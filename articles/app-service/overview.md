@@ -5,12 +5,12 @@ ms.assetid: 94af2caf-a2ec-4415-a097-f60694b860b3
 ms.topic: overview
 ms.date: 07/06/2020
 ms.custom: devx-track-dotnet, mvc, seodec18
-ms.openlocfilehash: e9c49d472f6cf0b9f0e5b3e2f7728417034059b1
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: d59dfe5b0fe3268dcda20fbc83aa31bba8a8713b
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007090"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936206"
 ---
 # <a name="app-service-overview"></a>Overzicht van App Service
 
@@ -45,6 +45,12 @@ App Service kan web-apps ook systeemeigen hosten op Linux voor ondersteunde toep
 ### <a name="built-in-languages-and-frameworks"></a>Ingebouwde talen en frameworks
 
 App Service op Linux ondersteunt een aantal taalspecifieke ingebouwde afbeeldingen. Implementeer gewoon uw code. Enkele ondersteunde talen: Node.js, Java (JRE 8 & JRE 11), PHP, Python, .NET Core en Ruby. Voer [`az webapp list-runtimes --linux`](/cli/azure/webapp#az-webapp-list-runtimes) uit om de nieuwste talen en ondersteunde versies te zien. Als de runtime die uw toepassing nodig heeft, niet wordt ondersteund in de ingebouwde afbeeldingen, kunt u deze implementeren met een aangepaste container.
+
+Verouderde runtimes worden regelmatig verwijderd van de blades Web-apps maken en Configuratie in de portal. Deze runtimes zijn verborgen in de portal wanneer ze zijn afgeschaft via de organisatie die ze onderhoudt, of wanneer ze beveiligingsproblemen bevatten. Deze opties zijn verborgen om klanten naar de meest recente runtimes te leiden, waarmee ze het meest succes behalen. 
+
+Wanneer een verouderde runtime is verborgen in de portal, blijven al uw eventuele bestaande sites die deze versie gebruiken, actief. Als een runtime volledig is verwijderd van het App Service-platform, ontvangen alle eigenaren van uw Azure-abonnement een vóór de verwijdering e-mailmelding.
+
+Als u nog een web-app wilt maken met een verouderde runtimeversie die niet meer wordt weergegeven in de portal, raadpleegt u de handleidingen voor taalconfiguratie, voor instructies over het ophalen van de runtimeversie voor uw site. U kunt Azure CLI gebruiken om nog een site te maken met dezelfde runtime. U kunt ook de knop **Sjabloon exporteren** gebruiken op de blade Web-app in de portal om een ARM-sjabloon van de site te exporteren. U kunt deze sjabloon opnieuw gebruiken om een nieuwe site te implementeren met dezelfde runtime en configuratie.
 
 ### <a name="limitations"></a>Beperkingen
 

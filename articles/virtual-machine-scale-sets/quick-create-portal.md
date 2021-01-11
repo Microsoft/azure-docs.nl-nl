@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 06/30/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt
-ms.openlocfilehash: 33f7f407c1df45131b0ebb5b14e8fcad2626bffd
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8243619bc7a32c5fa86b6e108d954674b54394e5
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87077552"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913720"
 ---
 # <a name="quickstart-create-a-virtual-machine-scale-set-in-the-azure-portal"></a>Quickstart: Een schaalset voor virtuele machines maken in Azure Portal
 
@@ -60,13 +60,12 @@ U kunt een schaalset implementeren met een installatiekopie van Windows Server o
 1. Zorg ervoor dat op het tabblad **Basics** onder **Projectgegevens** het juiste abonnement is geselecteerd, en kies **Nieuwe maken** om een nieuwe resourcegroep te maken. Typ *myVMSSResourceGroup* voor de naam en selecteer **OK**. 
 1. Typ *myScaleSet* als de naam van de schaalset.
 1. Selecteer bij **Regio** een regio die zich dichtbij uw gebied bevindt.
-1. Behoud de standaardwaarde van **VM’s van schaalset** voor **Orchestration-modus**.
 1. Selecteer een Marketplace-installatiekopie bij **Installatiekopie**. In dit voorbeeld hebben we gekozen voor *Ubuntu Server 18.04 LTS*.
 1. Voer de gewenste gebruikersnaam in en selecteer het verificatietype dat u wilt gebruiken.
    - Een **wachtwoord** moet ten minste 12 tekens lang zijn en aan drie van de vier volgende complexiteitsvereisten voldoen: ten minste één kleine letter, één hoofdletter, één cijfer en één speciaal teken. Zie [Wat zijn de wachtwoordvereisten bij het maken van een virtuele machine?](../virtual-machines/windows/faq.md#what-are-the-username-requirements-when-creating-a-vm) voor meer informatie.
    - Als u een installatiekopie voor een Linux-besturingssysteem selecteert, kunt u ook **Openbare SSH-sleutel** kiezen. Geef alleen de openbare sleutel op, zoals *~/.ssh/id_rsa.pub*. U kunt vanuit de portal de Azure Cloud-Shell gebruiken om [SSH-sleutels te maken en gebruiken](../virtual-machines/linux/mac-create-ssh-keys.md).
    
-    ![Een virtuele-machineschaalset maken](./media/virtual-machine-scale-sets-create-portal/quick-create-scaleset.png)
+    :::image type="content" source="./media/virtual-machine-scale-sets-create-portal/quick-create-scale-set.png" alt-text="Afbeelding van de opties voor het maken van schaalsets in de Azure-portal.":::
 
 1. Selecteer **Volgende** om de andere pagina's te verplaatsen. 
 1. Accepteer de standaardwaarden voor de pagina's **Instantie** en **Schijven**.

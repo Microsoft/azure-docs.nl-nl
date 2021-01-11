@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 03/24/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 0a2c1b39f5688b4fc544e5456666ccb8b4801517
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: e55c0832638105ad681f74cbeb6429a6704b7fb2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91281046"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935135"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-the-azure-portal"></a>Quickstart: Een certificaat uit Azure Key Vault instellen en ophalen met behulp van de Azure-portal
 
@@ -88,4 +88,4 @@ In deze quickstart hebt u een Key Vault gemaakt en daar een certificaat in opges
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Bekijk de [best practices voor Azure Key Vault](../general/best-practices.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)

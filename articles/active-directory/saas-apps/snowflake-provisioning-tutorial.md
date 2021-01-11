@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/26/2019
 ms.author: zhchia
-ms.openlocfilehash: ac6981d998f25b8df7cea553fe152d68cd43fee5
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: cc88712dd686983baed858de47e11dfa44e85350
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181421"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955515"
 ---
 # <a name="tutorial-configure-snowflake-for-automatic-user-provisioning"></a>Zelfstudie: Snowflake configureren voor automatische gebruikersinrichting
 
@@ -159,6 +159,12 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 ## <a name="connector-limitations"></a>Connectorbeperkingen
 
 * In Snowflake gegenereerde SCIM-tokens verlopen na 6 maanden. Houd er rekening mee dat deze moeten worden vernieuwd voordat deze verlopen om de inrichtingssynchronisaties te kunnen blijven gebruiken. 
+
+## <a name="troubleshooting-tips"></a>Tips voor probleemoplossing
+
+* **IP-bereiken** 
+
+   De Azure AD-inrichtingsservice werkt momenteel onder bepaalde IP-bereiken. Indien nodig kunt u andere IP-bereiken beperken en deze specifieke IP-bereiken aan de acceptatielijst van uw toepassing toevoegen om verkeer van de Azure AD-inrichtingsservice naar uw toepassing te laten stromen. Raadpleeg de documentatie onder [IP-bereiken](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#ip-ranges).
 
 ## <a name="change-log"></a>Wijzigingslogboek
 

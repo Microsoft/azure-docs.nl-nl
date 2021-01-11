@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 12/08/2020
 ms.author: mbaldwin
-ms.openlocfilehash: b5f4f3d2b3eda9f00049cee26ae95850d65257d6
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 729b6ccf1092679a71aa35f49be7d3199d4f4918
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96778866"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936272"
 ---
 # <a name="quickstart-create-a-key-vault-using-the-azure-portal"></a>Quickstart: een sleutelkluis maken met behulp van de Azure-portal
 
@@ -70,5 +70,5 @@ Als u die niet meer nodig hebt, verwijdert u de resourcegroep. Hierdoor worden o
 In deze quickstart hebt u een sleutelkluis gemaakt met behulp van Azure Portal. Voor meer informatie over Key Vault en hoe u Key Vault integreert met uw toepassingen gaat u verder naar de artikelen hieronder.
 
 - Lees een [Overzicht van Azure Key Vault](overview.md)
+- Raadpleeg het [Overzicht voor Azure Key Vault-beveiliging](security-overview.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)
-- Bekijk de [best practices voor Azure Key Vault](best-practices.md)

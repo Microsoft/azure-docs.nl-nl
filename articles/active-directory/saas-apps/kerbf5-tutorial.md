@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 161348f7566ff64858d563f34ad8f3f4c7511adf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 16fff00f04c4cd57ad46759cceb50134e58d5e01
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009157"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97933095"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-f5"></a>Zelfstudie: Integratie van eenmalige aanmelding via Azure Active Directory met F5
 
@@ -195,7 +195,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 1. Klik op **Voorwaardelijke toegang**.
 1. Klik op **Nieuw beleid**.
-1. U kunt uw F5-app nu zien als een resource voor CA-beleid en voorwaardelijke toegang toepassen, waaronder meervoudige verificatie, toegangsbeheer op basis van apparaten of beleid voor identiteitsbeveiliging.
+1. U kunt uw F5-app nu zien als een resource voor beleid voor voorwaardelijke toegang en voorwaardelijke toegang toepassen, waaronder meervoudige verificatie, toegangsbeheer op basis van apparaten of beleid voor identiteitsbeveiliging.
 
 ## <a name="configure-f5-sso"></a>Eenmalige aanmelding bij F5 configureren
 

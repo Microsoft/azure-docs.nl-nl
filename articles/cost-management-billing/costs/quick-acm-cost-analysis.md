@@ -3,18 +3,18 @@ title: 'Quickstart: Azure-kosten verkennen met kostenanalyse'
 description: Deze snelstart helpt u kostenanalyse te gebruiken om de kosten van Azure voor uw bedrijf te verkennen en te analyseren.
 author: bandersmsft
 ms.author: banders
-ms.date: 11/20/2020
+ms.date: 01/04/2021
 ms.topic: quickstart
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 1926a5a2ee81b6be4abee5e4064a4a23354da1a1
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 83f2d87e3f4a03ff17526ea5706e4f87b8f39487
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033575"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882446"
 ---
 # <a name="quickstart-explore-and-analyze-costs-with-cost-analysis"></a>Quickstart: Kosten verkennen en analyseren met kostenanalyse
 
@@ -72,6 +72,8 @@ In de kostenprognose wordt een schatting van de kosten voor de geselecteerde per
 
 Het model gebruikt een maximum van zes maanden aan trainingsgegevens om kosten voor een heel jaar te schatten. Er zijn minimaal zeven dagen aan trainingsgegevens nodig om de voorspelling te wijzigen. De voorspelling is gebaseerd op opvallende wijzigingen, zoals pieken en dalen, in kosten- en gebruikspatronen. De prognose genereert geen afzonderlijke schattingen voor elk item in **Groeperen op**-eigenschappen. Er wordt alleen een schatting gegeven van het totaal aan samengevoegde kosten. Als u meerdere valuta's gebruikt, geeft het model prognoses voor de kosten alleen in Amerikaanse dollars.
 
+Omdat het model gebruikmaakt van gegevenspieken en -dalen, zorgen grote aankopen zoals gereserveerde instanties ervoor dat uw prognose kunstmatig wordt opgedreven. De prognoseperiode en de grootte van de aankopen bepalen hoelang de prognose wordt beïnvloed. De prognose wordt weer normaal zodra de uitgaven zich stabiliseren.
+
 ## <a name="customize-cost-views"></a>Kostenweergaven aanpassen
 
 Kostenanalyse heeft vier ingebouwde weergaven die zijn geoptimaliseerd voor de meest voorkomende doelstellingen:
@@ -88,7 +90,7 @@ Factuurgegevens | Welke kosten staan op mijn laatste factuur?
 
 Er zijn echter veel gevallen waar u een meer gedetailleerde analyse nodig hebt. Het aanpassen begint bovenaan de pagina, met de selectie van de datum.
 
-Kostenanalyse toont standaard de gegevens voor de huidige maand. Gebruik de datumselector om snel naar veelgebruikte datumbereiken over te schakelen. Voorbeelden hiervan zijn de laatste zeven dagen, de afgelopen maand, het huidige jaar of een aangepast datumbereik. Betalen per gebruik-abonnementen omvatten ook datumbereiken op basis van uw factureringsperiode, die niet is gekoppeld aan de kalendermaand, zoals de huidige factureringsperiode of de laatste factuur. Gebruik de koppelingen **< VORIGE** en **VOLGENDE >** boven aan het menu om naar respectievelijk de vorige of volgende periode te gaan. Met **< VORIGE** gaat u bijvoorbeeld van de **Afgelopen 7 dagen** naar **8-14 dagen geleden** of **15-21 dagen geleden**. U kunt bij het selecteren van een aangepast datumbereik maximaal één volledig jaar selecteren (bijvoorbeeld 1 januari tot en met 31 december).
+Kostenanalyse toont standaard de gegevens voor de huidige maand. Gebruik de datumselector om snel naar veelgebruikte datumbereiken over te schakelen. Voorbeelden hiervan zijn de laatste zeven dagen, de afgelopen maand, het huidige jaar of een aangepast datumbereik. Betalen per gebruik-abonnementen omvatten ook datumbereiken op basis van uw factureringsperiode, die niet is gekoppeld aan de kalendermaand, zoals de huidige factureringsperiode of de laatste factuur. Gebruik de koppelingen **< VORIGE** en **VOLGENDE >** boven aan het menu om naar respectievelijk de vorige of volgende periode te gaan. Met **< VORIGE** gaat u bijvoorbeeld van de **Afgelopen 7 dagen** naar **8-14 dagen geleden** of **15-21 dagen geleden**. U kunt bij het selecteren van een aangepast datumbereik maximaal één volledig jaar selecteren (bijv. 1 januari tot en met 31 december).
 
 ![Datumselector met een voorbeeldselectie voor deze maand](./media/quick-acm-cost-analysis/date-selector.png)
 
@@ -123,7 +125,7 @@ Standaard worden in een kostenanalyse alle gebruiks- en aankoopkosten weergegeve
 
 ![Schakel van de werkelijke kosten over naar de afgeschreven kosten als u de reserveringsaankopen die zijn toegewezen aan de resources die van de reservering gebruik hebben gemaakt, verspreid over de hele periode wilt bekijken.](./media/quick-acm-cost-analysis/metric-picker.png)
 
-Afgeschreven kosten worden weergegeven als reserveringsaankopen die zijn uitgesplitst in dagelijkse segmenten en verspreid over de duur van de reserveringsperiode. Zo ziet u in bijvoorbeeld in plaats van een aankoop van € 365 op 1 januari, een aankoop van € 1,00 voor elke dag van 1 januari tot en met 31 december. Naast de basisafschrijving ervan, worden deze kosten ook opnieuw toegewezen en gekoppeld met behulp van de specifieke resources die van de reservering gebruik hebben gemaakt. Als bijvoorbeeld de dagelijkse kosten van € 1,00 zijn uitgesplitst over twee virtuele machines, ziet u twee kostenposten van € 0,50 per dag. Als een deel van de reservering voor een bepaalde dag niet wordt gebruikt, ziet u één kostenpost van € 0,50 die is gekoppeld aan de desbetreffende virtuele machine en een extra kostenpost van € 0,50 met een kostentype `UnusedReservation`. Houd er rekening mee dat ongebruikte reserveringskosten alleen kunnen worden weergegeven als afgeschreven kosten worden weergegeven.
+Afgeschreven kosten worden weergegeven als reserveringsaankopen die zijn uitgesplitst in dagelijkse segmenten en verspreid over de duur van de reserveringsperiode. Zo ziet u in bijvoorbeeld in plaats van een aankoop van € 365 op 1 januari, een aankoop van € 1,00 voor elke dag van 1 januari tot en met 31 december. Naast de basisafschrijving ervan, worden deze kosten ook opnieuw toegewezen en gekoppeld met behulp van de specifieke resources die van de reservering gebruik hebben gemaakt. Als bijvoorbeeld de dagelijkse kosten van € 1,00 zijn uitgesplitst over twee virtuele machines, ziet u twee kostenposten van € 0,50 per dag. Als een deel van de reservering voor een bepaalde dag niet wordt gebruikt, ziet u één kostenpost van € 0,50 die is gekoppeld aan de desbetreffende virtuele machine en een extra kostenpost van € 0,50 met een kostentype `UnusedReservation`. Kosten voor ongebruikte reserveringen kunnen alleen worden bekeken wanneer de afgeschreven kosten worden weergegeven.
 
 Omdat er een andere manier wordt gebruikt om kosten weer te geven, is het belangrijk om er rekening mee te houden dat de weergave van werkelijke kosten en de weergave van afgeschreven kosten andere totaalbedragen laten zien. Over het algemeen nemen de totale kosten voor maanden met een reserveringsaankoop af als deze in de weergave van afgeschreven kosten worden bekeken, en nemen deze in de maanden na een reserveringsaankoop toe. Afschrijving is alleen beschikbaar voor reserveringsaankopen en is op dit moment niet van toepassing op aankopen via Azure Marketplace.
 
@@ -151,19 +153,19 @@ Bekijk de video [Sharing and saving views in Azure Cost Management](https://www.
 
 >[!VIDEO https://www.youtube.com/embed/kQkXXj-SmvQ]
 
-Als u de kostenanalyse wilt vastmaken, selecteert u de speld in de rechterbovenhoek of vlak na <Subscription Name> | Kostenanalyse. Als u de kostenanalyse vastmaakt, wordt alleen de hoofdgrafiek of de tabelweergave opgeslagen. Deel het dashboard zodat anderen toegang tot de tegel hebben. Houd er wel rekening mee dat hiermee alleen de dashboardconfiguratie wordt gedeeld en dat andere gebruikers geen toegang tot de onderliggende gegevens krijgen. Als u geen toegang hebt tot kosten maar wel toegang hebt tot een gedeeld dashboard, wordt een bericht weergegeven met de strekking dat toegang is geweigerd.
+Als u de kostenanalyse wilt vastmaken, selecteert u de speld in de rechterbovenhoek of vlak na <Subscription Name> | Kostenanalyse. Als u de kostenanalyse vastmaakt, wordt alleen de hoofdgrafiek of de tabelweergave opgeslagen. Deel het dashboard zodat anderen toegang tot de tegel hebben. Door te delen, wordt alleen de dashboardconfiguratie gedeeld en krijgen andere gebruikers geen toegang tot de onderliggende gegevens. Als u geen toegang hebt tot kosten maar wel toegang hebt tot een gedeeld dashboard, wordt een bericht weergegeven met de strekking dat toegang is geweigerd.
 
-Als u een koppeling naar de kostenanalyse wilt delen, selecteert u **Delen** boven aan de blade. Er wordt een aangepaste URL weergegeven, waarmee deze specifieke weergave voor dit specifieke bereik kan worden geopend. Als u geen toegang tot de kosten hebt en deze URL ontvangt, wordt er een bericht weergegeven dat aangeeft dat toegang is geweigerd.
+Als u een koppeling naar de kostenanalyse wilt delen, selecteert u **Delen** bovenaan het venster. Er wordt een aangepaste URL weergegeven, waarmee deze specifieke weergave voor dit specifieke bereik kan worden geopend. Als u geen toegang tot de kosten hebt en deze URL ontvangt, wordt er een bericht weergegeven dat aangeeft dat toegang is geweigerd.
 
 ## <a name="download-usage-data"></a>Gebruiksgegevens downloaden
 
 ### <a name="portal"></a>[Portal](#tab/azure-portal)
 
-Er zijn momenten waarop u de gegevens wilt downloaden voor verdere analyse, deze wilt samenvoegen met uw eigen gegevens of deze integreert in uw eigen systemen. Cost Management biedt een aantal verschillende opties. Als u behoefte hebt aan een tijdelijk kostenoverzicht dat de grote lijnen bevat, zoals het overzicht dat in een kostenanalyse beschikbaar is, moet u om te beginnen de weergave bouwen die u nodig hebt. Download deze vervolgens door **Exporteren** en **Gegevens naar CSV downloaden** of **Gegevens naar Excel downloaden** te selecteren. Het gedownloade Excel-bestand biedt aanvullende context voor de weergave die u hebt gebruikt om de download te genereren, zoals het bereik, de configuratie van de query, de totalen en de datum waarop de download is gegenereerd.
+Er zijn momenten waarop u de gegevens wilt downloaden voor verdere analyse, deze wilt samenvoegen met uw eigen gegevens of deze integreert in uw eigen systemen. Cost Management biedt een aantal verschillende opties. Als u behoefte hebt aan een beknopt kostenoverzicht, zoals het overzicht dat in een kostenanalyse beschikbaar is, moet u om te beginnen de weergave bouwen die u nodig hebt. Download deze vervolgens door **Exporteren** en **Gegevens naar CSV downloaden** of **Gegevens naar Excel downloaden** te selecteren. Het gedownloade Excel-bestand biedt meer context voor de weergave die u hebt gebruikt om de download te genereren, zoals het bereik, de configuratie van de query, de totalen en de datum waarop de download is gegenereerd.
 
-Als u de volledige, niet-geaggregeerde gegevensset nodig hebt, kunt u deze downloaden vanuit het factureringsaccount. Ga vervolgens in de lijst met services in het linkerdeelvenster in de portal naar **Kostenbeheer en facturering**. Selecteer uw factureringsaccount, indien van toepassing. Ga naar **Gebruik + kosten** en selecteer vervolgens het pictogram **Downloaden** voor de gewenste factureringsperiode.
+Als u de volledige, niet-geaggregeerde gegevensset nodig hebt, kunt u deze downloaden vanuit het factureringsaccount. Ga vervolgens in de lijst met services in het linkerdeelvenster in de portal naar **Kostenbeheer en facturering**. Selecteer uw factureringsaccount, indien van toepassing. Ga naar **Gebruik + kosten** en selecteer vervolgens het pictogram **Downloaden** voor een factureringsperiode.
 
-### <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+### <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
 
 Begin door de omgeving voor te bereiden op de Azure CLI:
 

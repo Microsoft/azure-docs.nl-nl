@@ -10,12 +10,12 @@ ms.topic: quickstart
 ms.custom: mvc,subject-armqs
 ms.date: 10/14/2020
 ms.author: sebansal
-ms.openlocfilehash: 73c52963df65dc4037f087a93108ccfacb3fb5d4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 566ddae3893a5499ddefe0ccd1ade8caff4567c2
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461558"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934982"
 ---
 # <a name="quickstart-create-an-azure-key-vault-and-a-key-by-using-arm-template-preview"></a>Quickstart: Een Azure-sleutelkluis en een sleutel maken met behulp van een ARM-sjabloon (preview)
 
@@ -217,4 +217,4 @@ In deze quickstart hebt u een sleutelkluis en een sleutel gemaakt met behulp van
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Meer informatie over [Azure Resource Manager](../../azure-resource-manager/management/overview.md)
-- Bekijk de [best practices voor Azure Key Vault](../general/best-practices.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)

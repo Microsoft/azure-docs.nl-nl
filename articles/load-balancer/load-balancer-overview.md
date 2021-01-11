@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 1/14/2020
 ms.author: allensu
-ms.openlocfilehash: 96c0242414c67d97fc324977b1259f63c27c3a26
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: e8d0afab14d02ffe16db535f173456b55ab53d69
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696809"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97860929"
 ---
 # <a name="what-is-azure-load-balancer"></a>Wat is Azure Load Balancer?
 
@@ -66,7 +66,7 @@ De belangrijkste scenario's die u kunt uitvoeren met Standard Load Balancer zijn
 
 ### <a name="secure-by-default"></a><a name="securebydefault"></a>Standaardbeveiliging
 
-Standard Load Balancer is gebouwd op basis van het beveiligingsmodel voor vertrouwensrelaties van het netwerk. Standard Load Balancer zorgt standaard voor beveiliging en maakt deel uit van uw virtuele netwerk. Het virtuele netwerk is een privé- en geïsoleerd netwerk.  Dit betekent dat Standard Load Balancers en standaard openbare IP-adressen zijn gesloten voor inkomende stromen, tenzij ze worden geopend door netwerkbeveiligingsgroepen. Netwerkbeveiligingsgroepen worden gebruikt om toegestaan verkeer expliciet toe te staan.  Als u geen netwerkbeveiligingsgroep op een subnet of NIC van uw virtuele-machineresource hebt, mag het verkeer deze bron niet bereiken. Zie [Netwerkbeveiligingsgroepen](../virtual-network/network-security-groups-overview.md) voor meer informatie over netwerkbeveiligingsgroepen en hoe u deze toepast voor uw scenario.
+Standard Load Balancer is gebouwd op basis van het beveiligingsmodel voor vertrouwensrelaties van het netwerk. Standard Load Balancer is standaard beveiligd en maakt deel uit van uw virtuele netwerk. Het virtuele netwerk is een privé- en geïsoleerd netwerk.  Dit betekent dat Standard Load Balancers en standaard openbare IP-adressen zijn gesloten voor inkomende stromen, tenzij ze worden geopend door netwerkbeveiligingsgroepen. Netwerkbeveiligingsgroepen worden gebruikt om toegestaan verkeer expliciet toe te staan.  Als u geen netwerkbeveiligingsgroep op een subnet of NIC van uw virtuele-machineresource hebt, mag het verkeer deze bron niet bereiken. Zie [Netwerkbeveiligingsgroepen](../virtual-network/network-security-groups-overview.md) voor meer informatie over netwerkbeveiligingsgroepen en hoe u deze toepast voor uw scenario.
 Basis Load Balancer is standaard open voor internet. Daarnaast slaat Load Balancer geen klantgegevens op.
 
 ## <a name="pricing-and-sla"></a>Prijzen en SLA

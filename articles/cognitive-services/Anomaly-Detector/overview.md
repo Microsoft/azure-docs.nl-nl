@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: overview
-ms.date: 11/23/2020
+ms.date: 01/05/2021
 ms.author: mbullwin
 keywords: afwijkingsdetectie, machine learning, algoritmes
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: d8698a17db8be6a3d5b26d764ef86702320ebfa4
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 425c6cab4a4a5e1329e2d38f49c5058ec8ffc5b9
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705078"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901365"
 ---
 # <a name="what-is-the-anomaly-detector-api"></a>Wat is de Anomaly Detector-API?
 
@@ -83,8 +83,17 @@ Nadat u zich hebt geregistreerd:
 
 U kunt de paper [Time-Series Anomaly Detection Service at Microsoft](https://arxiv.org/abs/1906.03821) (goedgekeurd door KDD 2019) lezen voor meer informatie over de SR-CNN-algoritmen die zijn ontwikkeld door Microsoft.
 
-
 > [!VIDEO https://www.youtube.com/embed/ERTaAnwCarM]
+
+## <a name="service-availability-and-redundancy"></a>Servicebeschikbaarheid en redundantie
+
+### <a name="is-the-anomaly-detector-service-zone-resilient"></a>Is de Anomaly Detector-service zonetolerant?
+
+Ja. De Anomaly Detector-service is standaard zonetolerant.
+
+### <a name="how-do-i-configure-the-anomaly-detector-service-to-be-zone-resilient"></a>Hoe kan ik de Anomaly Detector-service zo configureren dat deze zonetolerant wordt?
+
+Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zonetolerantie voor Anomaly Detector-bronnen is standaard beschikbaar en wordt beheerd door de service zelf.
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
 

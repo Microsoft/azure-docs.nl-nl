@@ -11,19 +11,19 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: b8b6383c7808fd6c298d7776fc10572631bc6ddc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f6725045064b74079e00ca5bbe1d560f3b19f3ff
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006214"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937124"
 ---
 # <a name="tutorial-configure-zscaler-one-for-automatic-user-provisioning"></a>Zelfstudie: Zscaler One configureren voor automatische inrichting van gebruikers
 
 In deze zelfstudie worden de stappen weergegeven die u moet uitvoeren in Zscaler One en Azure AD (Azure Active Directory) om Azure AD te configureren om automatisch gebruikers en groepen in te richten in Zscaler One, of de inrichting ervan ongedaan te maken.
 
 > [!NOTE]
-> In deze zelfstudie wordt een connector beschreven die is gebouwd op de Azure AD-service voor de inrichting van gebruikers. Raadpleeg [Inrichting en ongedaan maken van inrichting van gebruikers in SaaS-toepassingen (software-as-a-service) automatiseren met Azure Active Directory](../app-provisioning/user-provisioning.md) voor informatie over wat deze service doet, hoe het werkt en veelgestelde vragen.
+> In deze zelfstudie wordt een connector beschreven die is gebouwd op de Azure AD-service voor de inrichting van gebruikers. Zie voor informatie over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar software-as-a-service (SaaS)-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -77,6 +77,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 > [!TIP]
 > U kunt ook op SAML gebaseerde eenmalige aanmelding inschakelen voor Zscaler One. Volg de instructies in de zelfstudie [Eenmalige aanmelding voor Zscaler One](zscaler-One-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, hoewel deze twee functies een aanvulling op elkaar vormen.
+
+> [!NOTE]
+> Wanneer gebruikers en groepen zijn ingericht of als de inrichting ongedaan is gemaakt, wordt u aangeraden het inrichten periodiek opnieuw te starten om ervoor te zorgen dat groepslidmaatschappen correct worden bijgewerkt. Als het inrichten opnieuw wordt gestart, wordt de service gedwongen om alle groepen opnieuw te evalueren en de lidmaatschappen bij te werken.  
 
 ### <a name="configure-automatic-user-provisioning-for-zscaler-one-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Zscaler One in Azure AD
 
@@ -148,7 +151,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Opslaan in Zscaler One](./media/zscaler-one-provisioning-tutorial/save-provisioning.png)
 
-Met deze bewerking wordt de initiële synchronisatie gestart van alle gebruikers of groepen die zijn gedefinieerd in **Bereik** in de sectie **Instellingen**. Het uitvoeren van de initiële synchronisatie duurt langer dan bij latere synchronisaties. Ze vinden ongeveer elke 40 minuten plaats, zolang de Azure AD-inrichtingsservice actief is. 
+Met deze bewerking wordt de initiële synchronisatie gestart van alle gebruikers of groepen die zijn gedefinieerd in **Bereik** in de sectie **Instellingen**. Het uitvoeren van de initiële synchronisatie duurt langer dan bij latere synchronisaties. Ze vinden ongeveer elke 40 minuten plaats, zolang de Azure AD-inrichtingsservice wordt uitgevoerd. 
 
 U kunt de sectie **Synchronisatiedetails** gebruiken om de voortgang te bewaken en koppelingen te volgen naar het rapport over de inrichtingsactiviteit. In het rapport worden alle acties beschreven die met de Azure AD-inrichtingsservice worden uitgevoerd in Zscaler One.
 
@@ -156,7 +159,7 @@ Zie [Rapportage over automatische toewijzing van gebruikersaccounts](../app-prov
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [Inrichting van gebruikersaccounts beheren voor bedrijfsapps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Het inrichten van gebruikersaccounts beheren voor bedrijfsapps](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen

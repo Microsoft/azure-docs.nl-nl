@@ -10,18 +10,18 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 14ae8b8670db53761d085bc019711e829633601b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 93602e522338166abac98c3e4a198e1aff392d21
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451819"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97934965"
 ---
 # <a name="azure-synapse-analytics-shared-database"></a>Gedeelde Azure Synapse Analytics-databases
 
-Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen tussen de serverloze Apache Spark-pools en serverloze SQL-poolengine.
+Met Azure Synapse Analytics kunnen de verschillende rekenengines voor de werkruimte databases en tabellen delen. Momenteel worden de databases en Parquet-tabellen die zijn gemaakt in de Apache Spark-pools, automatisch gedeeld met de serverloze SQL-poolengine.
 
-Een database die is gemaakt met een Spark-taak wordt weergegeven met dezelfde naam in alle huidige en toekomstige Spark-pools in de werkruimte, met inbegrip van de serverloze SQL-poolengine.
+Een database die is gemaakt met een Spark-taak wordt weergegeven met dezelfde naam in alle huidige en toekomstige Spark-pools in de werkruimte, met inbegrip van de serverloze SQL-poolengine. U kunt aangepaste objecten (externe tabellen, weergaven, procedures) niet rechtstreeks toevoegen in deze gerepliceerde database met behulp van de serverloze SQL-pool.
 
 De standaard Spark-database met de naam `default` wordt ook weergegeven in de context van de serverloze SQL-pool met de naam `default`.
 

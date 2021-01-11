@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 10/07/2019
 ms.author: Zhchia
-ms.openlocfilehash: da3ad4f70e0cc41fe95327eb74093c1471c877bd
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 14708ddcc5c0e06ee58f5e9db5945c4e9f1a1d08
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96351568"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937141"
 ---
 # <a name="tutorial-configure-zscaler-private-access-zpa-for-automatic-user-provisioning"></a>Zelfstudie: Zscaler Private Access (ZPA) configureren voor het automatisch inrichten van gebruikers
 
@@ -117,6 +117,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 > U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Zscaler Private Access (ZPA), waarvoor u de instructies in de [zelfstudie over eenmalige aanmelding voor Zscaler Private Access (ZPA)](./zscalerprivateaccess-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, hoewel deze twee functies een aanvulling op elkaar vormen.
 
 > [!NOTE]
+> Wanneer gebruikers en groepen zijn ingericht of als de inrichting ongedaan is gemaakt, wordt u aangeraden het inrichten periodiek opnieuw te starten om ervoor te zorgen dat groepslidmaatschappen correct worden bijgewerkt. Als het inrichten opnieuw wordt gestart, wordt de service gedwongen om alle groepen opnieuw te evalueren en de lidmaatschappen bij te werken.  
+
+> [!NOTE]
 > Voor meer informatie over het SCIM-eindpunt van Zscaler Private Access raadpleegt u [dit](https://www.zscaler.com/partners/microsoft).
 
 ### <a name="to-configure-automatic-user-provisioning-for-zscaler-private-access-zpa-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Zscaler Private Access (ZPA) in Azure AD:
@@ -131,7 +134,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van de beheeropties met de optie Inrichting gemarkeerd.](common/provisioning.png)
+    ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 

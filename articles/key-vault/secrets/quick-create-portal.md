@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.date: 09/03/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 3d7e6357fd8f1091509cbf27875c028d3af310cb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 904c00c26171854a32234d7b6ba5cac81ac43e5c
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445907"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936665"
 ---
 # <a name="quickstart-set-and-retrieve-a-secret-from-azure-key-vault-using-the-azure-portal"></a>Quickstart: Een geheim uit Azure Key Vault instellen en ophalen met behulp van de Azure Portal
 
@@ -86,4 +86,4 @@ In deze quickstart hebt u een Key Vault gemaakt en daar een geheim in opgeslagen
 - Zie [Key Vault gebruiken met App Service-web-app](../general/tutorial-net-create-vault-azure-web-app.md)
 - Zie [Key Vault gebruiken met toepassing die is geïmplementeerd op VM](../general/tutorial-net-virtual-machine.md)
 - Zie de [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- Bekijk de [best practices voor Azure Key Vault](../general/best-practices.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)

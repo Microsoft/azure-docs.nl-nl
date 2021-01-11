@@ -2,13 +2,13 @@
 title: Vastgelegde gegevens van Azure Event Hubs lezen vanuit een Python-app (nieuwste versie)
 description: In dit artikel leest u hoe u Python-code kunt schrijven om gegevens vast te leggen die naar een Event Hub worden verzonden en de vastgelegde gebeurtenisgegevens van een Azure-opslagaccount te lezen.
 ms.topic: quickstart
-ms.date: 06/23/2020
-ms.openlocfilehash: f513b35e300141f16ee4c4880bc54aaf37945d65
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.date: 01/04/2021
+ms.openlocfilehash: acc2ce04add5fd837e9edc789e9616a9f04fb4b9
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109909"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97883194"
 ---
 # <a name="capture-event-hubs-data-in-azure-storage-and-read-it-by-using-python-azure-eventhub"></a>Gegevens van Event Hubs vastleggen in Azure Storage en deze lezen met behulp van Python (azure-eventhub)
 
@@ -27,7 +27,11 @@ In deze snelstart, gaat u het volgende doen:
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Python 2.7 en 3.5 of hoger, waarbij PIP is geïnstalleerd en bijgewerkt.  
+- Python met PIP en de volgende pakketten moeten zijn geïnstalleerd. De code in dit artikel is getest voor deze versies. 
+    - Python 3.7
+    - azure-eventhub 5.2.0
+    - azure-storage-blob 12.6.0
+    - avro-python3 1.10.1
 - Een Azure-abonnement. Als u nog geen abonnement hebt, [maakt u een gratis account](https://azure.microsoft.com/free/) voordat u begint.  
 - Een actieve Azure Event Hubs-naamruimte en Event Hub.
 [Maak een Event Hubs-naamruimte en een Event Hub](event-hubs-create.md). Noteer de naam van de Event Hubs-naamruimte, de naam van de Event Hub en de primaire toegangssleutel voor de naamruimte. Zie [Een Event Hubs-verbindingsreeks ophalen](event-hubs-get-connection-string.md#get-connection-string-from-the-portal) om een toegangssleutel op te halen. De naam van de standaardsleutel is *RootManageSharedAccessKey*. Voor deze quickstart hebt u alleen de primaire sleutel nodig. De verbindingsreeks hebt u niet nodig.  
@@ -155,6 +159,13 @@ In dit voorbeeld worden de vastgelegde gegevens opgeslagen in Azure Blob-opslag.
    pip install azure-eventhub
    pip install avro-python3
    ```
+
+    > [!NOTE]
+    > De code in dit artikel is getest voor deze versies. 
+    > - Python 3.7
+    > - azure-eventhub 5.2.0
+    > - azure-storage-blob 12.6.0
+    > - avro-python3 1.10.1
 2. Wijzig uw map in de map waarin u *sender.py* en *capturereader.py* hebt opgeslagen en voer de volgende opdracht uit:
    
    ```

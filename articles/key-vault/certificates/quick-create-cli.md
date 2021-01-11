@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.custom: mvc, seo-javascript-september2019, seo-javascript-october2019, devx-track-azurecli
 ms.date: 09/03/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 55a25f4f40668172aa8a9c80dd08d9fafcef78af
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 2bb718d038dd7b3f5aa6f3bac1ce1de572c8e829
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94516472"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936359"
 ---
 # <a name="quickstart-set-and-retrieve-a-certificate-from-azure-key-vault-using-azure-cli"></a>Quickstart: Een certificaat uit Azure Key Vault instellen en ophalen met behulp van de Azure CLI
 
@@ -91,4 +91,4 @@ In deze quickstart hebt u een Key Vault gemaakt en daar een certificaat in opges
 
 - Lees een [Overzicht van Azure Key Vault](../general/overview.md)
 - Raadpleeg de naslaginformatie voor de [az keyvault-opdrachten van de Azure CLI](/cli/azure/keyvault?view=azure-cli-latest)
-- Bekijk de [best practices voor Azure Key Vault](../general/best-practices.md)
+- Raadpleeg het [Overzicht voor Key Vault-beveiliging](../general/security-overview.md)

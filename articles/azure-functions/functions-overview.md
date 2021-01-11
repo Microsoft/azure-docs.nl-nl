@@ -7,16 +7,16 @@ ms.topic: overview
 ms.date: 11/20/2020
 ms.author: cshoe
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: d0641129d641043f10cdb94d9e7f634fb35fbbef
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 41b627259d84539c868f95eb3cf33db5dbdab52c
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032997"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97862397"
 ---
 # <a name="introduction-to-azure-functions"></a>Een inleiding tot Azure Functions
 
-Azure Functions is een serverloze oplossing waarmee u minder code hoeft te schrijven, minder infrastructuur hoeft te onderhouden en kunt besparen op kosten. In plaats van u zorgen te maken over het implementeren en onderhouden van servers, biedt de cloudinfrastructuur alle servers om uw toepassingen uit te voeren.
+Azure Functions is een serverloze oplossing waarmee u minder code hoeft te schrijven, minder infrastructuur hoeft te onderhouden en kunt besparen op kosten. In plaats van u zorgen te maken over het implementeren en onderhouden van servers, biedt de cloudinfrastructuur alle bijgewerkte resources die nodig zijn om uw toepassingen uit te voeren.
 
 U richt zich op de stukken code die voor u het belangrijkst zijn en Azure Functions doet de rest.<br /><br />
 

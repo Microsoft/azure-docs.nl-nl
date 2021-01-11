@@ -13,12 +13,12 @@ ms.date: 03/12/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40, fasttrack-edit
-ms.openlocfilehash: 60d789c4297c400b812cd6c5c19c8c6148cb347d
-ms.sourcegitcommit: a422b86148cba668c7332e15480c5995ad72fa76
+ms.openlocfilehash: f43cb80a148f5dadb409f506f237cb1210a2000a
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/30/2020
-ms.locfileid: "91575976"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97933996"
 ---
 # <a name="quickstart-set-up-a-tenant"></a>Quickstart: Een tenant instellen
 
@@ -55,7 +55,7 @@ Veel ontwikkelaars hebben al tenants via services of abonnementen die zijn gekop
 > [!TIP]
 > Als u de tenant-id wilt zoeken, kunt u:
 > * De muisaanwijzer op uw accountnaam houden om de directory/tenant-ID te zien, of
-> * **Azure Active Directory > Eigenschappen > Directory-ID** selecteren in Azure Portal.
+> * Zoek en selecteer **Azure Active Directory > Eigenschappen > Tenant-id** in de Azure-portal
 
 Als er geen bestaande tenant is gekoppeld aan uw account, ziet u een GUID onder de accountnaam. U moet dan eerst een nieuwe tenant maken voordat u bewerkingen kunt uitvoeren zoals het registreren van apps. Daarvoor volgt u de stappen in het volgende gedeelte.
 

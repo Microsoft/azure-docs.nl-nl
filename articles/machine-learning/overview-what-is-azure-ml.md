@@ -9,12 +9,12 @@ author: j-martens
 ms.author: jmartens
 ms.date: 11/04/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 85080c018749f9aab716eff0a4527363da987007
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 53e6d6e67a90cd1f39aed7f9cd7c2368282b2d1f
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620474"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97916589"
 ---
 # <a name="what-is-azure-machine-learning"></a>Wat is Azure Machine Learning?
 
@@ -118,7 +118,7 @@ Azure Machine Learning werkt met andere services op het Azure-platform en kan oo
 + __Virtuele netwerken van Azure__. Zie [Overzicht van isolatie van virtueel netwerk en privacy](how-to-network-security-overview.md).
 + __Azure Pipelines__. Zie [Machine Learning-modellen trainen en implementeren](/azure/devops/pipelines/targets/azure-machine-learning) voor meer informatie.
 + __Logboeken van Git-opslagplaats__. Zie [Git-integratie](concept-train-model-git-integration.md) voor meer informatie.
-+ __MLFlow__. Zie [MLflow to track metrics and deploy models](how-to-use-mlflow.md) (MLflow voor het bijhouden van metrische gegevens en het implementeren van modellen) voor meer informatie 
++ __MLFlow__. Zie [MLFlow om metrische gegevens bij te houden](how-to-use-mlflow.md) en [MLFlow-modellen implementeren als een webservice](how-to-deploy-mlflow-models.md) voor meer informatie 
 + __Kubeflow__. Zie [Build end-to-end workflow pipelines](https://www.kubeflow.org/docs/azure/) (End-to-end werkstroompijplijnen bouwen) voor meer informatie.
 
 ### <a name="secure-communications"></a>Beveiligde communicatie

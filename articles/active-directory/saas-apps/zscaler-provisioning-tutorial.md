@@ -1,6 +1,6 @@
 ---
-title: 'Zelf studie: Zscaler configureren voor het automatisch inrichten van gebruikers met Azure Active Directory | Microsoft Docs'
-description: Meer informatie over het configureren van Azure Active Directory voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers accounts op Zscaler.
+title: 'Zelfstudie: Zscaler configureren voor automatische inrichting van gebruikers met Azure Active Directory | Microsoft Docs'
+description: Ontdek hoe u automatisch gebruikersaccounts van Azure Active Directory inricht in Zscaler, of de inrichting ervan ongedaan maakt.
 services: active-directory
 author: zchia
 writer: zchia
@@ -11,16 +11,16 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 2c7f4aebc70ff831459fe111bcc30f5385088028
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 9f368a4aebc4d5de38ebbab800241366650633e6
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357671"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936580"
 ---
-# <a name="tutorial-configure-zscaler-for-automatic-user-provisioning"></a>Zelf studie: Zscaler configureren voor automatische gebruikers inrichting
+# <a name="tutorial-configure-zscaler-for-automatic-user-provisioning"></a>Zelfstudie: Zscaler configureren voor automatische inrichting van gebruikers
 
-Het doel van deze zelf studie is het demonstreren van de stappen die moeten worden uitgevoerd in Zscaler en Azure Active Directory (Azure AD) om Azure AD te configureren voor het automatisch inrichten en ongedaan maken van de inrichting van gebruikers en/of groepen in Zscaler.
+Het doel van deze zelfstudie is om de stappen te laten zien die moeten worden uitgevoerd in Zscaler en Azure AD (Azure Active Directory) om Azure AD te configureren voor het automatisch inrichten en het ongedaan maken van de inrichting van gebruikers en/of groepen voor Zscaler.
 
 > [!NOTE]
 > In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
@@ -28,22 +28,22 @@ Het doel van deze zelf studie is het demonstreren van de stappen die moeten word
 
 ## <a name="prerequisites"></a>Vereisten
 
-In het scenario dat in deze zelf studie wordt beschreven, wordt ervan uitgegaan dat u het volgende al hebt:
+In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over het volgende:
 
 * Een Azure AD-tenant.
-* Een Zscaler-Tenant.
-* Een gebruikers account in Zscaler met beheerders machtigingen.
+* Een Zscaler-tenant.
+* Een gebruikersaccount in Zscaler met beheerdersmachtigingen.
 
 > [!NOTE]
-> De integratie van Azure AD-inrichting is afhankelijk van de Zscaler SCIM-API, die beschikbaar is voor Zscaler-ontwikkel aars voor accounts met het ondernemings pakket.
+> De integratie van Azure AD-inrichting is afhankelijk van de Zscaler SCIM API, die beschikbaar is voor Zscaler-ontwikkelaars voor accounts met het Enterprise-pakket.
 
 ## <a name="adding-zscaler-from-the-gallery"></a>Zscaler toevoegen vanuit de galerie
 
-Voordat u Zscaler configureert voor het automatisch inrichten van gebruikers met Azure AD, moet u Zscaler van de Azure AD-toepassings galerie toevoegen aan uw lijst met beheerde SaaS-toepassingen.
+Voordat u Zscaler configureert voor automatische gebruikersinrichting met Azure AD, moet u Zscaler vanuit de Azure AD-toepassingsgalerie toevoegen aan de lijst met beheerde SaaS-toepassingen.
 
-**Voer de volgende stappen uit om Zscaler toe te voegen vanuit de Azure AD-toepassings galerie:**
+**Voer de volgende stappen uit om Zscaler toe te voegen vanuit de Azure AD-toepassingsgalerie:**
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
 
     ![De knop Azure Active Directory](common/select-azuread.png)
 
@@ -55,7 +55,7 @@ Voordat u Zscaler configureert voor het automatisch inrichten van gebruikers met
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
-4. Typ **Zscaler** in het zoekvak, selecteer **Zscaler** in het resultaten paneel en klik vervolgens op de knop **toevoegen** om de toepassing toe te voegen.
+4. Typ in het zoekvak **Zscaler**, selecteer **Zscaler** in het resultatenpaneel en klik op de knop **Toevoegen** om de toepassing toe te voegen.
 
     ![Zscaler in de lijst met resultaten](common/search-new-app.png)
 
@@ -63,26 +63,29 @@ Voordat u Zscaler configureert voor het automatisch inrichten van gebruikers met
 
 Azure Active Directory gebruikt een concept met de naam 'toewijzingen' om te bepalen welke gebruikers toegang moeten krijgen tot geselecteerde apps. In de context van het automatisch inrichten van gebruikers worden alleen de gebruikers en/of groepen gesynchroniseerd die zijn toegewezen aan een toepassing in Azure AD.
 
-Voordat u automatische gebruikers inrichting configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in azure AD toegang nodig hebben tot Zscaler. Eenmaal besloten, kunt u deze gebruikers en/of groepen toewijzen aan Zscaler door de volgende instructies te volgen:
+Voordat u automatische inrichting van gebruikers configureert en inschakelt, moet u beslissen welke gebruikers en/of groepen in Azure AD toegang nodig hebben tot Zscaler. Als u dit eenmaal hebt besloten, kunt u deze gebruikers en/of groepen aan Zscaler toewijzen door deze instructies te volgen:
 
 * [Een gebruiker of groep toewijzen aan een bedrijfs-app](../manage-apps/assign-user-or-group-access-portal.md)
 
-### <a name="important-tips-for-assigning-users-to-zscaler"></a>Belang rijke tips voor het toewijzen van gebruikers aan Zscaler
+### <a name="important-tips-for-assigning-users-to-zscaler"></a>Belangrijke tips voor het toewijzen van gebruikers aan Zscaler
 
-* U wordt aangeraden één Azure AD-gebruiker toe te wijzen aan Zscaler om de configuratie van automatische gebruikers inrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
+* Het wordt aanbevolen om eerst één Azure AD-gebruiker toe te wijzen aan Zscaler om de configuratie van de automatische gebruikersinrichting te testen. Extra gebruikers en/of groepen kunnen later worden toegewezen.
 
-* Wanneer u een gebruiker toewijst aan Zscaler, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het dialoog venster toewijzing. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
+* Als u een gebruiker toewijst aan Zscaler, moet u een geldige toepassingsspecifieke rol (indien beschikbaar) selecteren in het toewijzingsdialoogvenster. Gebruikers met de rol **Standaard toegang** worden uitgesloten van het inrichten.
 
-## <a name="configuring-automatic-user-provisioning-to-zscaler"></a>Automatische gebruikers inrichting configureren voor Zscaler
+## <a name="configuring-automatic-user-provisioning-to-zscaler"></a>Automatische gebruikersinrichting voor Zscaler configureren
 
-In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtings service om gebruikers en/of groepen in Zscaler te maken, bij te werken en uit te scha kelen op basis van gebruikers-en/of groeps toewijzingen in azure AD.
+In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azure AD-inrichtingsservice om gebruikers en/of groepen in Zscaler te maken, bij te werken en uit te schakelen op basis van gebruikers- en/of groepstoewijzingen in Azure AD.
 
 > [!TIP]
-> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te scha kelen voor Zscaler, gevolgd door de instructies in de [Zscaler-zelf studie voor eenmalige aanmelding](zscaler-tutorial.md). Eenmalige aanmelding kan onafhankelijk van automatische gebruikers inrichting worden geconfigureerd, hoewel deze twee functies elkaar behoeven.
+> U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Zscaler, waarvoor u de instructies in de [Zelfstudie eenmalige aanmelding voor Zscaler](zscaler-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
 
-### <a name="to-configure-automatic-user-provisioning-for-zscaler-in-azure-ad"></a>Automatische gebruikers inrichting configureren voor Zscaler in azure AD:
+> [!NOTE]
+> Wanneer gebruikers en groepen zijn ingericht of als de inrichting ongedaan is gemaakt, wordt u aangeraden het inrichten periodiek opnieuw te starten om ervoor te zorgen dat groepslidmaatschappen correct worden bijgewerkt. Als het inrichten opnieuw wordt gestart, wordt de service gedwongen om alle groepen opnieuw te evalueren en de lidmaatschappen bij te werken. 
 
-1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en selecteer **bedrijfs toepassingen** , selecteer **alle toepassingen** en selecteer vervolgens **Zscaler**.
+### <a name="to-configure-automatic-user-provisioning-for-zscaler-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Zscaler in Azure AD:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com) en selecteer **Bedrijfstoepassingen**. Selecteer **Alle toepassingen** en selecteer **Zscaler**.
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
@@ -92,65 +95,65 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Scherm opname van de Zscaler van de Enter prise-toepassing met de inrichtings optie gemarkeerd.](./media/zscaler-provisioning-tutorial/provisioning-tab.png)
+    ![Schermopname van de zijbalk Bedrijfstoepassing inrichten van Zscaler, met de optie Inrichten gemarkeerd.](./media/zscaler-provisioning-tutorial/provisioning-tab.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Scherm afbeelding van de inrichtings pagina waarvoor de inrichtings modus is ingesteld op automatisch.](./media/zscaler-provisioning-tutorial/provisioning-credentials.png)
+    ![Schermopname van de pagina Inrichten met de inrichtingsmodus ingesteld op Automatisch.](./media/zscaler-provisioning-tutorial/provisioning-credentials.png)
 
-5. Voer in het gedeelte **beheerders referenties** de **Tenant-URL** en het **geheime token** van uw Zscaler-account in, zoals beschreven in stap 6.
+5. Voer in de sectie **Referenties voor beheerder** de **tenant-URL** en **token voor geheim** van uw Zscaler-account in, zoals wordt beschreven in stap 6.
 
-6. Als u de **Tenant-URL** en het **geheime token** wilt ophalen, gaat u naar **beheer > authenticatie-instellingen** in de gebruikers interface van de Zscaler-Portal en klikt u op **SAML** onder **verificatie type**.
+6. Als u de **Tenant-URL** en het **Token voor geheim** wilt ophalen, gaat u naar **Beheer > Verificatie-instellingen** in de gebruikersinterface van de Zscaler-portal en klikt u onder **Verificatietype** op **SAML**.
 
-    ![Scherm afbeelding van de pagina verificatie-instellingen.](./media/zscaler-provisioning-tutorial/secret-token-1.png)
+    ![Schermopname van de pagina Verificatie-instellingen.](./media/zscaler-provisioning-tutorial/secret-token-1.png)
 
-    Klik op **SAML configureren** om SAML-opties voor **configuratie** te openen.
+    Klik op **SAML configureren** om opties voor **SAML configureren** te openen.
 
-    ![Scherm afbeelding van het dialoog venster S A M L configureren met de tekst vakken basis U R L en Bearer-token.](./media/zscaler-provisioning-tutorial/secret-token-2.png)
+    ![Schermopname van het dialoogvenster SAML configureren met de tekstvakken Basis-URL en Bearer-token gemarkeerd.](./media/zscaler-provisioning-tutorial/secret-token-2.png)
 
-    Selecteer **SCIM-Based inrichting inschakelen** om basis- **URL** en **Bearer-token** op te halen en sla de instellingen op. Kopieer de **basis-URL** naar de **Tenant-URL** en **Bearer-token**  naar een **geheim token** in de Azure Portal.
+    Selecteer **Inrichting op basis van SCIM inschakelen** om de **Basis-URL** en het **Bearer-token** op te halen. Sla de instellingen vervolgens op. Kopieer de **Basis-URL** naar **Tenant-URL** en **Bearer-token** naar **Geheim token** in de Azure-portal.
 
-7. Klik bij het invullen van de velden die worden weer gegeven in stap 5 op **verbinding testen** om te controleren of Azure AD verbinding kan maken met Zscaler. Als de verbinding mislukt, zorg er dan voor dat uw Zscaler-account beheerders machtigingen heeft en probeer het opnieuw.
+7. Klik bij het invullen van de velden die worden weergegeven in stap 5 op **Verbinding testen** om ervoor te zorgen dat Azure AD verbinding kan maken met Zscaler. Als de verbinding mislukt, moet u controleren of uw Zscaler-account beheerdersmachtigingen heeft. Probeer het vervolgens opnieuw.
 
-    ![Scherm afbeelding van de sectie beheerders referenties met de optie voor het testen van de verbinding.](./media/zscaler-provisioning-tutorial/test-connection.png)
+    ![Schermopname van de sectie Referenties voor beheerder met de optie Verbinding testen gemarkeerd.](./media/zscaler-provisioning-tutorial/test-connection.png)
 
-8. Voer in het veld **e-mail melding** het e-mail adres in van een persoon of groep die de inrichtings fout meldingen moet ontvangen en schakel het selectie vakje **e-mail melding verzenden als er een fout optreedt**.
+8. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en vink het vakje **Een e-mailmelding verzenden als een fout optreedt** aan.
 
-    ![Scherm afbeelding van het tekstvak voor de meldings-e-mail.](./media/zscaler-provisioning-tutorial/notification.png)
+    ![Schermopname van het tekstvak E-mailadres voor meldingen.](./media/zscaler-provisioning-tutorial/notification.png)
 
 9. Klik op **Opslaan**.
 
-10. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met Zscaler**.
+10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met Zscaler**.
 
-    ![Scherm afbeelding van de sectie toewijzingen met de optie Azure Active Directory gebruikers synchroniseren met Zscaler gemarkeerd.](./media/zscaler-provisioning-tutorial/user-mappings.png)
+    ![Schermopname van de sectie Toewijzingen met de optie Azure Active Directory-gebruikers synchroniseren met Zscaler gemarkeerd.](./media/zscaler-provisioning-tutorial/user-mappings.png)
 
-11. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Zscaler in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Zscaler voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD zijn gesynchroniseerd met Zscaler. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikersaccounts in Zscaler te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
     ![Schermopname van de sectie Kenmerktoewijzingen met zeven toewijzingen weergegeven.](./media/zscaler-provisioning-tutorial/user-attribute-mappings.png)
 
-12. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory groepen synchroniseren met Zscaler**.
+12. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Zscaler**.
 
-    ![Scherm afbeelding van de sectie toewijzingen met de optie Azure Active Directory groepen synchroniseren met Zscaler gemarkeerd.](./media/zscaler-provisioning-tutorial/group-mappings.png)
+    ![Schermopname van de sectie Toewijzingen met de optie Azure Active Directory-groepen synchroniseren, met Zscaler gemarkeerd.](./media/zscaler-provisioning-tutorial/group-mappings.png)
 
-13. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Zscaler in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in Zscaler te vergelijken voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+13. Controleer in de sectie **Kenmerktoewijzingen** de groepskenmerken die vanuit Azure AD worden gesynchroniseerd met Zscaler. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de groepen in Zscaler te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
     ![Schermopname van de sectie Kenmerktoewijzingen met drie toewijzingen weergegeven.](./media/zscaler-provisioning-tutorial/group-attribute-mappings.png)
 
 14. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-15. Als u de Azure AD-inrichtings service voor **Zscaler wilt inschakelen, wijzigt u de** **inrichtings status** in in het gedeelte **instellingen** .
+15. Wijzig **Inrichtingsstatus** naar **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor Zscaler.
 
-    ![Scherm afbeelding van de optie voor de inrichtings status is ingesteld op aan.](./media/zscaler-provisioning-tutorial/provisioning-status.png)
+    ![Schermopname van de optie Inrichtingsstatus is ingesteld op Aan.](./media/zscaler-provisioning-tutorial/provisioning-status.png)
 
-16. Definieer de gebruikers en/of groepen die u wilt inrichten voor Zscaler door de gewenste waarden in het **bereik** te kiezen in de sectie **instellingen** .
+16. Definieer de gebruikers en/of groepen die u aan Zscaler wilt toevoegen door de gewenste waarden te kiezen bij **Bereik** in de sectie **Instellingen**.
 
-    ![Scherm afbeelding van de bereik instelling met de optie alleen toegewezen gebruikers en groepen synchroniseren gemarkeerd.](./media/zscaler-provisioning-tutorial/scoping.png)
+    ![Schermopname van de instelling Bereik met de optie Alleen toegewezen gebruikers en groepen synchroniseren gemarkeerd.](./media/zscaler-provisioning-tutorial/scoping.png)
 
 17. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
 
-    ![Scherm opname van de Zscaler van de Enter prise-toepassing met de optie voor het opslaan van de naam.](./media/zscaler-provisioning-tutorial/save-provisioning.png)
+    ![Schermopname van de zijbalk Bedrijfstoepassing inrichten van Zscaler, met de optie Opslaan uitgelicht.](./media/zscaler-provisioning-tutorial/save-provisioning.png)
 
-Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **synchronisatie Details** gebruiken om de voortgang te bewaken en koppelingen naar het rapport inrichtings activiteiten te volgen, waarin alle acties worden beschreven die worden uitgevoerd door de Azure AD Provisioning-Service op Zscaler.
+Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt de sectie **Synchronisatiedetails** gebruiken om de voortgang te bewaken en koppelingen te volgen naar het rapport over de inrichtingsactiviteit, waarin alle acties worden beschreven die met de Azure AD-inrichtingsservice zijn uitgevoerd in Zscaler.
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 

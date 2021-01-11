@@ -4,12 +4,12 @@ ms.service: app-service
 ms.topic: include
 ms.date: 03/04/2020
 ms.author: jroth
-ms.openlocfilehash: 6265a7cde8e276570409238cadfd5ebc777b4527
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 71782661fd960cae3248005a8b90944eff9bef45
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97532003"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98024251"
 ---
 | Resource | Gratis | Gedeeld | Basic | Standard | Premium (v1-v3) | Geïsoleerd </th> |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -31,6 +31,7 @@ ms.locfileid: "97532003"
 | Aangepast domein voor [SSL-ondersteuning](../articles/app-service/configure-ssl-certificate.md) |Niet ondersteund, jokertekencertificaat voor \*. azurewebsites.net is standaard beschikbaar|Niet ondersteund, jokertekencertificaat voor \*. azurewebsites.net is standaard beschikbaar|Onbeperkte SNI SSL-verbindingen |Onbeperkte SNI SSL- en 1 IP SSL-verbindingen inbegrepen |Onbeperkte SNI SSL- en 1 IP SSL-verbindingen inbegrepen | Onbeperkte SNI SSL- en 1 IP SSL-verbindingen inbegrepen|
 | Hybride verbindingen | | | 5 per abonnement | 25 per abonnement | 200 per app | 200 per app |
 | [Integratie van virtueel netwerk](../articles/app-service/web-sites-integrate-with-vnet.md) | | |   |  X |  X  |  X  |
+| [Privé-eindpunten](../articles/app-service/networking/private-endpoint.md) | | |   |   |  100 per app  |    |
 | Geïntegreerde load balancer | |X |X |X |X |X<sup>10</sup> |
 | [Toegangsbeperkingen](../articles/app-service/networking-features.md#access-restrictions) | 512 regels per app | 512 regels per app | 512 regels per app | 512 regels per app | 512 regels per app | 512 regels per app |
 | [Altijd aan](../articles/app-service/configure-common.md) | | |X |X |X |X |

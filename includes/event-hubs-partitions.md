@@ -5,15 +5,15 @@ services: event-hubs
 author: spelluru
 ms.service: event-hubs
 ms.topic: include
-ms.date: 11/24/2020
+ms.date: 01/05/2021
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: ce906ad62b51956cb85f854846740fa09e06895d
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 780da47e6f071d854a16ca1d1c5cd02dbdd6bef0
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97665001"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955638"
 ---
 Met Event Hub worden reeksen van gebeurtenissen in een of meer partities georganiseerd. Als er nieuwere gebeurtenissen plaatsvinden, worden deze toegevoegd aan het einde van deze reeks. Een partitie kan worden beschouwd als een 'doorvoerlogboek'.
 
@@ -21,11 +21,11 @@ Partities bevatten gebeurtenisgegevens met de hoofdtekst van de gebeurtenis, een
 
 ![Diagram waarin de reeks gebeurtenissen van oud naar nieuw wordt weergegeven.](./media/event-hubs-partitions/partition.png)
 
-Event Hubs is ontworpen om te helpen bij het verwerken van zeer grote hoeveelheden gebeurtenissen. Partitioneren draagt hier op twee manieren aan bij:
+Event Hubs is ontworpen om te helpen bij het verwerken van grote hoeveelheden gebeurtenissen. Partitioneren draagt hier op twee manieren aan bij:
 
 Ten eerste, hoewel Event Hubs een PaaS-service is, is er wel een onderliggende fysieke realiteit. Het bijhouden van een logboek waarbij de volgorde van gebeurtenissen wordt behouden, vereist dat deze gebeurtenissen samen in de bijbehorende opslag en replica's worden bewaard. Dit betekent dat er een doorvoerplafond is voor een dergelijk logboek. Partitioneren maakt het mogelijk om meerdere parallelle logboeken te gebruiken voor dezelfde Event Hub en zo de beschikbare doorvoercapaciteit voor onbewerkte IO-gegevens te vermenigvuldigen.
 
-Ten tweede moeten uw eigen toepassingen de verwerking van het volume aan gebeurtenissen dat naar een Event Hub wordt verzonden bij kunnen houden. Dat kan zeer complex zijn en vereist aanzienlijke, uitgeschaalde en parallelle verwerkingscapaciteit. De reden voor partities is dezelfde als hierboven: De capaciteit van één proces voor het afhandelen van gebeurtenissen is beperkt en daarom hebt u verschillende processen nodig. Partities zijn de manier waarop uw oplossing deze processen voedt en zorgen ervoor dat elke gebeurtenis een duidelijke verwerkingseigenaar heeft. 
+Ten tweede moeten uw eigen toepassingen de verwerking van het volume aan gebeurtenissen dat naar een Event Hub wordt verzonden bij kunnen houden. Dit kan complex zijn en vereist aanzienlijke, uitgeschaalde en parallelle verwerkingscapaciteit. De reden voor partities is dezelfde als hierboven: De capaciteit van één proces voor het afhandelen van gebeurtenissen is beperkt en daarom hebt u verschillende processen nodig. Partities zijn de manier waarop uw oplossing deze processen voedt en zorgen ervoor dat elke gebeurtenis een duidelijke verwerkingseigenaar heeft. 
 
 Event Hubs bewaart gebeurtenissen voor een geconfigureerde bewaartijd die wordt toegepast op het niveau van alle partities. Gebeurtenissen worden automatisch verwijderd wanneer de retentieperiode is bereikt. Als u een retentieperiode van één dag opgeeft, wordt de gebeurtenis precies 24 uur nadat deze is geaccepteerd onbeschikbaar. U kunt gebeurtenissen niet expliciet verwijderen. 
 
@@ -51,7 +51,7 @@ Als u een partitiesleutel opgeeft, kunnen gerelateerde gebeurtenissen in dezelfd
 
 Een reeks gebeurtenissen die wordt geïdentificeerd door een partitiesleutel is een *stroom*. Een partitie is een multiplex-logboekopslag voor veel van zulke stromen. 
 
-Het aantal partities van een Event Hub kan worden verhoogd nadat de Event Hub is gemaakt, maar de distributie van stromen over partities verandert als deze klaar is, omdat de toewijzing van partitiesleutels aan partities verandert. U kunt dus het beste proberen om dergelijke wijzigingen zoveel mogelijk te vermijden als de relatieve volgorde van gebeurtenissen in uw toepassing van belang is.
+Het aantal partities van een Event Hub in een [toegewezen Event Hubs-cluster](../articles/event-hubs/event-hubs-dedicated-overview.md) kan worden [verhoogd](../articles/event-hubs/dynamically-add-partitions.md) nadat de Event Hub is gemaakt, maar de distributie van stromen over partities verandert als deze klaar is, omdat de toewijzing van partitiesleutels aan partities verandert. U kunt dus het beste proberen om dergelijke wijzigingen zoveel mogelijk te vermijden als de relatieve volgorde van gebeurtenissen in uw toepassing van belang is.
 
 Het instellen van het aantal partities op de maximaal toegestane waarde is verleidelijk, maar u moet er altijd rekening mee houden dat uw gebeurtenissenstromen zo moeten worden gestructureerd dat u wel kunt profiteren van meerdere partities. Als u de volgorde van alle gebeurtenissen of voor een klein aantal substromen echt moet behouden, kunt u misschien niet profiteren van het gebruik van veel partities. Daarnaast maken veel partities de verwerkingszijde complexer. 
 

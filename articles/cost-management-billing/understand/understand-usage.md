@@ -7,14 +7,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 01/04/2021
 ms.author: banders
-ms.openlocfilehash: 559fe43bbd9b8951a97733ae1250046f65f10404
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 07e3cfdce238d5fc4e2737a49dde6fd624de8506
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149363"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882497"
 ---
 # <a name="understand-the-terms-in-your-azure-usage-and-charges-file"></a>Meer informatie over de gebruiksvoorwaarden in uw bestand voor Azure-gebruik en -kosten
 
@@ -126,12 +126,26 @@ UsageDate | Date
 UsageEnd | Date
 UsageStart | Date
 
-
 ## <a name="ensure-charges-are-correct"></a>Controleer of de kosten juist zijn
 
 Voor meer informatie over gedetailleerd gebruik en gedetailleerde kosten, leest u hoe u uw [betalen per gebruik-factuur](review-individual-bill.md) of [factuur voor uw Microsoft-klantenovereenkomst](review-customer-agreement-bill.md) moet interpreteren.
 
-## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
+## <a name="unexpected-usage-or-charges"></a>Onverwacht gebruik of onverwachte kosten
+
+Als u gebruik of kosten hebt die u niet herkent, zijn er verschillende dingen die u kunt doen om te begrijpen waarom:
+
+- De factuur met kosten voor de resource bekijken
+- Uw gefactureerde kosten bekijken in Kostenanalyse
+- Vaststellen welke personen verantwoordelijk zijn voor de resource en met hen overleggen
+- De auditlogboeken analyseren
+- Gebruikersmachtigingen voor het bovenliggende bereik van de resource analyseren
+- Een [Azure-ondersteuningsaanvraag maken](https://go.microsoft.com/fwlink/?linkid=2083458) om de kosten te helpen identificeren
+
+Raadpleeg [Onverwachte kosten analyseren](analyze-unexpected-charges.md) voor meer informatie.
+
+Houd er rekening mee dat de meeste gebruikersacties niet worden vastgelegd in Azure. In plaats hiervan wordt resourcegebruik voor facturering vastgelegd door Microsoft. Als u een piek in het gebruik ziet in het verleden, en u logboekregistratie niet hebt ingeschakeld, kan Microsoft de oorzaak niet achterhalen. Schakel logboekregistratie in voor de service waarvoor u het toegenomen gebruik wilt bekijken, zodat het juiste technische team u kan helpen met het probleem.
+
+## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
 
 Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://go.microsoft.com/fwlink/?linkid=2083458).
 

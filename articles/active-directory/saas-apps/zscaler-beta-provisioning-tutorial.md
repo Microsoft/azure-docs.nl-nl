@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 59784b6e618e875a6eedc947ce75afdf3bd1df74
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 0d4945ee97a46c78aac3c4ac508c5f89f5942296
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327386"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937158"
 ---
 # <a name="tutorial-configure-zscaler-beta-for-automatic-user-provisioning"></a>Zelfstudie: Zscaler Beta configureren voor automatische inrichting van gebruikers
 
@@ -80,6 +80,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 > [!TIP]
 > U kunt er ook voor kiezen om eenmalige aanmelding op basis van SAML in te schakelen voor Zscaler Beta, waarvoor u de instructies in de [Zelfstudie eenmalige aanmelding voor Zscaler Beta](zscaler-beta-tutorial.md) moet volgen. Eenmalige aanmelding kan onafhankelijk van automatische inrichting van gebruikers worden geconfigureerd, maar deze twee functies vormen een aanvulling op elkaar.
+
+> [!NOTE]
+> Wanneer gebruikers en groepen zijn ingericht of als de inrichting ongedaan is gemaakt, wordt u aangeraden het inrichten periodiek opnieuw te starten om ervoor te zorgen dat groepslidmaatschappen correct worden bijgewerkt. Als het inrichten opnieuw wordt gestart, wordt de service gedwongen om alle groepen opnieuw te evalueren en de lidmaatschappen bij te werken.  
 
 ### <a name="to-configure-automatic-user-provisioning-for-zscaler-beta-in-azure-ad"></a>Automatische inrichting van gebruikers configureren voor Zscaler Beta in Azure AD:
 

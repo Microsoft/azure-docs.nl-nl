@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: c801a276f3a116f00b34d750ca8bfec7e56d377b
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: e0fff67d6998e55854d4dc3c8db261bc4499f0be
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680731"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936053"
 ---
 # <a name="calling-client-library-overview"></a>Overzicht van de aanroepende clientbibliotheek
 
@@ -96,8 +96,8 @@ De aanroepende clientbibliotheek in Communication Services biedt ondersteuning v
 
 |           |Web | Android/iOS|
 |-----------|----|------------|
-|Aantal uitgaande streams dat tegelijkertijd kan worden verzonden |1 video + 1 scherm delen | 1 video + 1 scherm delen|
-|Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven |1 video + 1 scherm delen| 6 video + 1 scherm delen |
+|**Aantal uitgaande streams dat tegelijkertijd kan worden verzonden** |1 video + 1 scherm delen | 1 video + 1 scherm delen|
+|**Aantal binnenkomende streams dat tegelijkertijd kan worden weergegeven** |1 video + 1 scherm delen| 6 video + 1 scherm delen |
 
 
 ## <a name="next-steps"></a>Volgende stappen

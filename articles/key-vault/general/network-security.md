@@ -10,16 +10,18 @@ ms.topic: tutorial
 ms.date: 10/01/2020
 ms.author: sudbalas
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d1b1c27fe0136220d5a1851af4a5c24102a37da1
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3639237a0dc34c521fd3fa52631fdb19c26ec284
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015550"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936342"
 ---
 # <a name="configure-azure-key-vault-firewalls-and-virtual-networks"></a>Azure Key Vault-firewalls en virtuele netwerken configureren
 
 Dit artikel bevat richtlijnen voor het configureren van de Azure Key Vault-firewall. In dit document worden de verschillende configuraties voor de Key Vault-firewall in detail beschreven en vindt u stapsgewijze instructies voor het configureren van Azure Key Vault om met andere toepassingen en Azure-Services te werken.
+
+Zie [Service-eindpunten voor een virtueel netwerk voor Azure Key Vault](overview-vnet-service-endpoints.md) voor meer informatie.
 
 ## <a name="firewall-settings"></a>Firewallinstellingen
 
@@ -167,10 +169,10 @@ U kunt als volgt Key Vault-firewalls en virtuele netwerken configureren met behu
 
 ## <a name="references"></a>Verwijzingen
 * ARM-sjabloonreferentie: [ARM-sjabloonreferentie voor Azure Key Vault](/azure/templates/Microsoft.KeyVault/vaults)
-* Azure CLI-opdrachten: [az keyvault network-rule](/cli/azure/keyvault/network-rule?view=azure-cli-latest)
+* Azure CLI-opdrachten: [az keyvault network-rule](/cli/azure/keyvault/network-rule)
 * Azure PowerShell-cmdlets: [Get-AzKeyVault](/powershell/module/az.keyvault/get-azkeyvault), [Add-AzKeyVaultNetworkRule](/powershell/module/az.KeyVault/Add-azKeyVaultNetworkRule), [Remove-AzKeyVaultNetworkRule](/powershell/module/az.KeyVault/Remove-azKeyVaultNetworkRule), [Update-AzKeyVaultNetworkRuleSet](/powershell/module/az.KeyVault/Update-azKeyVaultNetworkRuleSet)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Service-eindpunten voor virtuele netwerken voor Key Vault](overview-vnet-service-endpoints.md)
-* [Uw Key Vault beveiligen](secure-your-key-vault.md)
+* [Overzicht van Azure Key Vault-beveiliging](security-overview.md)

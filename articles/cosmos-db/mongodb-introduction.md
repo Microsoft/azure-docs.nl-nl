@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 11/25/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 8205ecab3abfc7a944c12db1aca2bf594f6cd98f
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ab335c8cc682f6b33dcb30509d682186a178c676
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349449"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "97861069"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb"></a>Azure Cosmos DB-API voor MongoDB
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -24,7 +24,7 @@ ms.locfileid: "96349449"
 
 ## <a name="wire-protocol-compatibility"></a>Compatibiliteit met wire-protocollen
 
-Azure Cosmos DB implementeert het wire-protocol voor MongoDB. Deze implementatie maakt transparante compatibiliteit mogelijk met de systeemeigen SDK's, stuurprogramma's en hulpprogramma's van de MongoDB-client. Azure Cosmos DB fungeert als host voor de MongoDB-database-engine. De details van de functies die worden ondersteund door MongoDB vindt u hier: 
+Azure Cosmos DB implementeert het wire-protocol voor MongoDB. Deze implementatie maakt transparante compatibiliteit mogelijk met de systeemeigen SDK's, stuurprogramma's en hulpprogramma's van de MongoDB-client. Azure Cosmos DB fungeert niet als host voor de MongoDB-database-engine. De details van de functies die worden ondersteund door MongoDB vindt u hier: 
 - [Azure Cosmos DB's API for Mongo DB-engine versie 3.6](mongodb-feature-support-36.md)
 - [Azure Cosmos DB's API for Mongo DB-engine versie 3.2](mongodb-feature-support.md)
 

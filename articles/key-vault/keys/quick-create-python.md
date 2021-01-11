@@ -8,12 +8,12 @@ ms.service: key-vault
 ms.subservice: keys
 ms.topic: quickstart
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: d3d5fd34ee6c1d73429af63693094acdaed6c9d2
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 7d1e4018382d26e4df289838ffbb03f1c87505e6
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92784606"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935016"
 ---
 # <a name="quickstart-azure-key-vault-keys-client-library-for-python"></a>Quickstart: Azure Key Vault-sleutelclientbibliotheek voor Python
 
@@ -86,7 +86,7 @@ set KEY_VAULT_NAME=<your-key-vault-name>
 ````
 Windows PowerShell
 ```powershell
-$Env:KEY_VAULT_NAME=<your-key-vault-name>
+$Env:KEY_VAULT_NAME="<your-key-vault-name>"
 ```
 
 macOS of Linux
@@ -211,5 +211,5 @@ az group delete --resource-group KeyVault-PythonQS-rg
 - [Overzicht van Azure Key Vault](../general/overview.md)
 - [Veilige toegang tot een sleutelkluis](../general/secure-your-key-vault.md)
 - [Gids voor Azure Key Vault-ontwikkelaars](../general/developers-guide.md)
-- [Best practices voor Azure Key Vault](../general/best-practices.md)
+- [Overzicht van Key Vault-beveiliging](../general/security-overview.md)
 - [Verifiëren met Key Vault](../general/authentication.md)

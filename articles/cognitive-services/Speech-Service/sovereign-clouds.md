@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 01/07/2021
 ms.author: alexeyo
-ms.openlocfilehash: 539ea6f80604eabdbbe56a3280cf5ddb367c0439
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: f30b1f0f14bba54b8b4fcd7c5190f3c533f199a6
+ms.sourcegitcommit: 63caac7871df9d999ca5a5f1b8c036ae7014231c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97966780"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98061749"
 ---
 # <a name="speech-services-in-sovereign-clouds"></a>Spraak Services in soevereine Clouds
 
@@ -36,9 +36,10 @@ Alleen beschikbaar voor Amerikaanse overheids instanties en hun partners. Zie hi
     - Aangepaste spraak (akoestische model (AM) en taal model (LM) aanpassing)
       - [Speech Studio](https://speech.azure.us/)
   - Tekst naar spraak
+    - Standaard spraak
+    - Neurale Voice
   - Spraak conversie
 - **Niet-ondersteunde functies:**
-  - Neurale Voice
   - Aangepaste stem
 - **Ondersteunde talen:**
   - Zie de lijst met ondersteunde talen [hier](language-support.md)
@@ -105,20 +106,13 @@ Beschikbaar voor organisaties met een zakelijke aanwezigheid in China. Meer info
     - Aangepaste spraak (akoestische model (AM) en taal model (LM) aanpassing)
       - [Speech Studio](https://speech.azure.cn/)
   - Tekst naar spraak
+    - Standaard spraak
+    - Neurale Voice
   - Spraak conversie
 - **Niet-ondersteunde functies:**
-  - Neurale Voice
   - Aangepaste stem
 - **Ondersteunde talen:**
-  - Arabisch (AR-*)
-  - Chinees (ZH-*)
-  - Engels (en-*)
-  - Frans (FR-*)
-  - Duits (de-*)
-  - Hindi (Hi-IN)
-  - Koreaans (ko-KR)
-  - Russisch (ru-RU)
-  - Spaans (ES-*)
+  - Zie de lijst met ondersteunde talen [hier](language-support.md)
 
 ### <a name="endpoint-information"></a>Eindpunt gegevens
 

@@ -12,20 +12,27 @@ ms.topic: quickstart
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/22/2020
+ms.date: 12/30/2020
 ms.author: memildin
-ms.openlocfilehash: bd8c5c31579ac22cd6c77dffd31103680e393f69
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d3ed064547b1202aa562fffdfde85a28cbe8514e
+ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187167"
+ms.lasthandoff: 12/29/2020
+ms.locfileid: "97809544"
 ---
-# <a name="quickstart-setting-up-azure-security-center"></a>Quickstart: Azure Security Center instellen
+# <a name="quickstart-set-up-azure-security-center"></a>Quickstart: Azure Security Center instellen
 
 Azure Security Center biedt geïntegreerd beveiligingsbeheer en bedreigingsbeveiliging voor uw verschillende hybride cloudworkloads. De gratis functies bieden beperkte beveiliging voor alleen uw Azure-resources, maar Azure Defender biedt deze mogelijkheden ook voor on-premises en andere clouds. Azure Defender van Security Center helpt u beveiligingsproblemen te vinden en op te lossen, toegangs- en toepassingsbesturingselementen toe te passen om schadelijke activiteiten te blokkeren, bedreigingen te detecteren met behulp van analyses en gegevens en snel te reageren bij aanvallen. U kunt Azure Defender gratis uitproberen. Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/security-center/) voor meer informatie.
 
-In dit artikel gaat u upgraden naar Azure Defender voor extra beveiliging en de Log Analytics-agent installeren op uw virtuele machines om te controleren op beveiligingsproblemen en bedreigingen.
+In deze quickstart wordt u stapsgewijs begeleid bij het inschakelen van Azure Defender voor extra beveiliging en het installeren van de Log Analytics-agent op uw machines om te controleren op beveiligingsproblemen en bedreigingen.
+
+U voert de volgende stappen uit:
+
+> [!div class="checklist"]
+> * Security Center inschakelen voor uw Azure-abonnement
+> * Azure Defender inschakelen voor uw Azure-abonnement
+> * Automatische gegevensverzameling inschakelen
 
 ## <a name="prerequisites"></a>Vereisten
 U moet over een abonnement op Microsoft Azure beschikken om met Security Center aan de slag te gaan. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/pricing/free-trial/).

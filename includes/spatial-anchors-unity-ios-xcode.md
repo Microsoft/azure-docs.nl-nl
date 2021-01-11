@@ -4,12 +4,12 @@ ms.service: azure-spatial-anchors
 ms.topic: include
 ms.date: 11/20/2020
 ms.author: parkerra
-ms.openlocfilehash: d969b1639dbb39b920c985964abe1239f068d740
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 81d2804d99896200ea6f68592ea168112e172c20
+ms.sourcegitcommit: 6cca6698e98e61c1eea2afea681442bd306487a4
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185264"
+ms.lasthandoff: 12/24/2020
+ms.locfileid: "97762595"
 ---
 Selecteer **Build**. Selecteer in het deelvenster dat wordt geopend een map waarnaar u het Xcode-project wilt exporteren.
 
@@ -30,9 +30,9 @@ open ./Unity-iPhone.xcodeproj
 
 Selecteer het hoofdknooppunt **Unity-iPhone** om de projectinstellingen weer te geven en selecteer vervolgens het tabblad **General**.
 
-Controleer of onder **Signing** de instelling **Automatically manage signing** is ingeschakeld. Als dat niet het geval is, schakelt u deze in en selecteert u **Enable Automatic** in het dialoogvenster dat wordt weergegeven om de opbouwinstellingen opnieuw in te stellen.
+Controleer of het implementatiedoel onder **Deployment Info** is ingesteld op **iOS 11.0**.
 
-Controleer of onder **Deployment Info** de optie **Deployment Target** is ingesteld op **11.0**.
+Selecteer het tabblad **Ondertekening en mogelijkheden**, en controleer of **Ondertekening automatisch beheren** is ingeschakeld. Als dat niet het geval is, schakelt u deze in en selecteert u **Enable Automatic** in het dialoogvenster dat wordt weergegeven om de opbouwinstellingen opnieuw in te stellen.
 
 ## <a name="deploy-the-app-to-your-ios-device"></a>De app implementeren op uw iOS-apparaat
 

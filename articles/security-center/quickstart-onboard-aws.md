@@ -3,16 +3,16 @@ title: Uw AWS-account verbinden met Azure Security Center
 description: Uw AWS-resources bewaken vanuit Azure Security Center
 author: memildin
 ms.author: memildin
-ms.date: 9/22/2020
+ms.date: 12/29/2020
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 23609613cace2f9be90ad5c88d4d51bb1c2f1a9b
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 4c919115efb39a8e8c008eab69dc087792f7b105
+ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573507"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97814309"
 ---
 #  <a name="connect-your-aws-accounts-to-azure-security-center"></a>Uw AWS-accounts verbinden met Azure Security Center
 
@@ -41,7 +41,7 @@ In de onderstaande schermopname ziet u de AWS-accounts die worden weergegeven in
 |----|:----|
 |Releasestatus:|Preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
 |Prijzen:|[Azure Defender voor servers](defender-for-servers-introduction.md) is vereist|
-|Vereiste rollen en machtigingen:|**Eigenaar** of **Inzender** voor het relevante Azure-abonnement|
+|Vereiste rollen en machtigingen:|**Eigenaar**: voor het relevante Azure-abonnement<br>**Inzender**: kan ook verbinding maken met een AWS-account, indien een eigenaar de details van de service-principal levert|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
 |||
 

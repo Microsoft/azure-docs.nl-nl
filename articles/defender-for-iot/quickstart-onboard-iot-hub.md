@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/06/2020
 ms.author: mlottner
-ms.openlocfilehash: 786fcd1a0c6d7df2c38a086a830a63f7179d7d40
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: e3768ef233c60f1687bc804778c3dabf32666e1d
+ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352504"
+ms.lasthandoff: 12/31/2020
+ms.locfileid: "97835156"
 ---
 # <a name="quickstart-onboard-azure-defender-for-iot-service-in-iot-hub"></a>Quickstart: De Azure Defender for IoT-service onboarden in IoT Hub
 
@@ -33,7 +33,7 @@ In dit artikel wordt uitgelegd hoe u de Defender for IoT-service in uw bestaande
   - Er worden door Defender Center for IoT standaard twee soorten informatie opgeslagen in uw Log Analytics-werkruimte. **beveiligingswaarschuwingen** en **aanbevelingen**.
   - U kunt ervoor kiezen om opslagruimte toe te voegen voor een extra gegevenstype **onbewerkte gebeurtenissen**. Houd er rekening mee dat bij het opslaan van **onbewerkte gebeurtenissen** in Log Analytics extra opslagkosten worden berekend.
 - Azure IoT Hub (Standard-laag)
-- Bekijk alle [servicevereisten](service-prerequisites.md)
+- Voldoe aan alle [Systeemvereisten](quickstart-system-prerequisites.md).
 
 ## <a name="enable-defender-for-iot-on-your-iot-hub"></a>Defender for IoT inschakelen op uw IoT Hub
 

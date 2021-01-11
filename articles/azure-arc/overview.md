@@ -3,12 +3,12 @@ title: Overzicht van Azure Arc
 description: Lees meer over wat Azure Arc is en hoe het klanten helpt om het beheer en de governance van hun hybride resources met andere Azure-services en -functies mogelijk te maken.
 ms.date: 09/23/2020
 ms.topic: overview
-ms.openlocfilehash: 8e48378e5032768b3f56a5d99c1189e282ff37f8
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 8f39dff16037b5f52a050b7d07193b0ad7cab93d
+ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91714147"
+ms.lasthandoff: 12/18/2020
+ms.locfileid: "97672683"
 ---
 # <a name="azure-arc-overview"></a>Overzicht van Azure Arc
 
@@ -50,7 +50,7 @@ Hieronder vindt u de prijsinformatie voor de functies die momenteel beschikbaar 
 
 ### <a name="arc-enabled-servers"></a>Servers met ingeschakelde Arc
 
-De functionaliteit van het beheerpaneel van Azure Arc wordt gratis aangeboden.Dit omvat:
+De functionaliteit van het beheerpaneel van Azure Arc wordt gratis aangeboden. Dit omvat:
 
 * Resource-organisatie via Azure-beheergroepen en -tags.
 
@@ -79,3 +79,5 @@ In de huidige preview-fase worden gegevensservices met Azure Arc aangeboden zond
 * Zie de volgende [overzicht](./kubernetes/overview.md) voor meer informatie over Kubernetes met Arc
 
 * Zie de volgende [overzicht](https://azure.microsoft.com/services/azure-arc/hybrid-data-services/) voor meer informatie over gegevensservices met Arc
+
+* Probeer services met Arc uit vanuit het artikel over [aan de slag gaan met het proof-of-concept](https://azurearcjumpstart.io/azure_arc_jumpstart/)

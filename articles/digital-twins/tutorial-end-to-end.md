@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: f788c9e78790e6872870869e2bc153e1b1451e51
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 64e648cf6ae3c763d3e9ab1a6970f48c84331bad
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566534"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845625"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Zelfstudie: Een end-to-end-oplossing bouwen
 
@@ -52,8 +52,6 @@ Hier volgen de onderdelen die worden geïmplementeerd door de voorbeeld-app *Adt
 * Console-interface voor het aanroepen van de Azure Digital Twins-API
 * *SampleClientApp*: een voorbeeld van een Azure Digital Twins-oplossing
 * *SampleFunctionsApp*: een Azure Functions-app die uw Azure Digital Twins-grafiek bijgewerkt als resultaat van telemetrie van IoT Hub en Azure Digital Twins-gebeurtenissen
-
-Het voorbeeldproject bevat ook een interactieve autorisatiecomponent. Telkens wanneer u het project start, wordt er een browservenster geopend waarin u wordt gevraagd om u aan te melden met uw Azure-account.
 
 ### <a name="instantiate-the-pre-created-twin-graph"></a>De vooraf gemaakte tweelinggrafiek instantiëren
 
@@ -134,7 +132,7 @@ Kies voor een specifiek doel **Azure-functie-app (Windows)** en klik op *Next*.
 
 Kies uw abonnement op de pagina *Functions Instance*. Hiermee wordt een vak gevuld met de *resourcegroepen* in uw abonnement.
 
-Selecteer de resourcegroep van uw instantie en klik op *+ Create a new Azure Function...* (een nieuwe Azure-functie maken).
+Selecteer de resourcegroep van uw exemplaar, en klik op *+* om een nieuwe Azure-functie maken.
 
 :::image type="content" source="media/tutorial-end-to-end/publish-azure-function-3.png" alt-text="Azure-functie publiceren in Visual Studio: Functions-instantie (voor functie-app)":::
 

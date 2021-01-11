@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: contperf-fy21q1
 ms.topic: overview
 ms.date: 09/21/2020
-ms.openlocfilehash: 176b89c9fc80b198a8a639afdd14185ab0008aed
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: e75661b54ce9a74013938d11ca7f13d9c3698c76
+ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029437"
+ms.lasthandoff: 12/30/2020
+ms.locfileid: "97822043"
 ---
 # <a name="what-is-apache-spark-in-azure-hdinsight"></a>Wat is Apache Spark in Azure HDInsight?
 
@@ -32,7 +32,7 @@ Spark-clusters in HDInsight bieden een volledig beheerde Spark-service. Dit zijn
 | Functie | Beschrijving |
 | --- | --- |
 | Eenvoudig te maken |U kunt binnen enkele minuten een nieuw Spark-cluster in HDInsight maken met Azure Portal, Azure PowerShell of de .NET-SDK voor HDInsight. Zie [Aan de slag met Apache Spark-clusters in HDInsight](apache-spark-jupyter-spark-sql-use-portal.md). |
-| Gebruiksgemak |Spark-cluster in HDInsight bevat Jupyter- en Apache Zeppelin-notebooks. U kunt deze notebooks gebruiken voor interactieve gegevensverwerking en visualisatie. Zie [Apache Zeppelin-notebooks gebruiken met Apache Spark](apache-spark-zeppelin-notebook.md) en [Gegevens laden en query's uitvoeren op een Apache Spark-cluster](apache-spark-load-data-run-query.md).|
+| Gebruiksgemak |Spark-cluster in HDInsight bevat Jupyter-notebooks en Apache Zeppelin-notebooks. U kunt deze notebooks gebruiken voor interactieve gegevensverwerking en visualisatie. Zie [Apache Zeppelin-notebooks gebruiken met Apache Spark](apache-spark-zeppelin-notebook.md) en [Gegevens laden en query's uitvoeren op een Apache Spark-cluster](apache-spark-load-data-run-query.md).|
 | REST-API’s |Apache Spark-clusters in HDInsight omvatten [Apache Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server), een op REST API gebaseerde Apache Spark-taakserver om op afstand taken te verzenden en te controleren. Zie [Apache Spark REST API gebruiken voor het verzenden van externe taken naar een HDInsight Spark-cluster](apache-spark-livy-rest-interface.md).|
 | Ondersteuning voor Azure Storage | Spark-clusters in HDInsight kunnen Azure Data Lake Storage Gen1/Gen2 gebruiken als de primaire opslag of als extra opslag. Zie [Azure Data Lake Storage Gen1](../../data-lake-store/data-lake-store-overview.md) voor meer informatie over Data Lake Storage Gen1. Zie [Azure Data Lake Storage Gen2](../../storage/blobs/data-lake-storage-introduction.md) voor meer informatie over Data Lake Storage Gen2.|
 | Integratie met Azure-services |Spark-clusters in HDInsight worden geleverd met een connector voor Azure Event Hubs. U kunt met de Event Hubs streamingtoepassingen bouwen. Dit is inclusief Apache Kafka, die al beschikbaar is als onderdeel van Spark. |
@@ -50,7 +50,7 @@ Apache Spark-clusters in HDInsight omvatten de volgende onderdelen die standaard
 * [Spark Core](https://spark.apache.org/docs/latest/). Omvat Spark Core, Spark SQL, Spark-streaming-API's, GraphX en MLlib.
 * [Anaconda](https://docs.continuum.io/anaconda/)
 * [Apache Livy](https://github.com/cloudera/hue/tree/master/apps/spark/java#welcome-to-livy-the-rest-spark-server)
-* [Jupyter-notebook](https://jupyter.org)
+* [Jupyter Notebook](https://jupyter.org)
 * [Apache Zeppelin-notebook](http://zeppelin-project.org/)
 
 HDInsight Spark clustert een [ODBC-stuurprogramma](https://go.microsoft.com/fwlink/?LinkId=616229) voor connectiviteit met BI-hulpprogramma's zoals Microsoft Power BI.

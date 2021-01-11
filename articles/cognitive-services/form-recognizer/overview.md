@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: geautomatiseerde gegevensverwerking, documentverwerking, geautomatiseerde gegevensinvoer, formulierverwerking
-ms.openlocfilehash: 39243f4428d055ee5d4491c3e87b4b91213f63f1
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: ed940622f72271ef3e606c5068babcb6366c31b6
+ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353677"
+ms.lasthandoff: 01/01/2021
+ms.locfileid: "97845533"
 ---
 # <a name="what-is-form-recognizer"></a>Wat is Form Recognizer?
 
@@ -108,23 +108,21 @@ Het vooraf samengesteld model voor visitekaartjes haalt informatie, zoals naam, 
 
 Gebruik het [voorbeeldhulpprogramma voor Form Recognizer](https://fott.azurewebsites.net/) of volg een quickstart om aan de slag te gaan met het extraheren van gegevens uit uw formulieren. U wordt aangeraden de gratis service te gebruiken wanneer u de technologie leert. Houd er rekening mee dat het aantal gratis pagina's beperkt is tot 500 per maand.
 
-* [Quickstarts voor clientbibliotheek](./quickstarts/client-library.md) (alle talen, meerdere scenario's)
+* [Quickstart voor clientbibliotheek / REST API](./quickstarts/client-library.md) (alle talen, meerdere scenario's)
 * Quickstarts voor webinterface
   * [Trainen met labels: voorbeeldhulpprogramma voor labelen](quickstarts/label-tool.md)
-* Quickstarts voor REST
+* REST-voorbeelden (GitHub)
  * Tekst, selectiemarkeringen en tabelstructuur extraheren uit documenten
-    * [Indelingsgegevens extraheren - Python](quickstarts/python-layout.md)
+    * [Indelingsgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-layout.md)
   * Aangepaste modellen trainen en formuliergegevens extraheren
-    * [Trainen zonder labels - cURL](quickstarts/curl-train-extract.md)
-    * [Trainen zonder labels - Python](quickstarts/python-train-extract.md)
-    * [Trainen met labels - Python](quickstarts/python-labeled-data.md)
+    * [Trainen zonder labels - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-train-extract.md)
+    * [Trainen met labels - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-labeled-data.md)
   * Gegevens extraheren uit facturen
-    * [Factuurgegevens extraheren - Python](quickstarts/python-invoices.md)
+    * [Factuurgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-invoices.md)
   * Gegevens extraheren uit aankoopbewijzen
-    * [Ontvangstgegevens extraheren - cURL](quickstarts/curl-receipts.md)
-    * [Ontvangstgegevens extraheren - Python](quickstarts/python-receipts.md)
+    * [Ontvangstgegevens extraheren - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-receipts.md)
   * Gegevens extraheren uit visitekaartjes
-    * [Gegevens extraheren uit visitekaartjes - Python](quickstarts/python-business-cards.md)
+    * [Gegevens extraheren uit visitekaartjes - Python](https://github.com/Azure-Samples/cognitive-services-quickstart-code/blob/master/python/FormRecognizer/rest/python-business-cards.md)
 
 ### <a name="review-the-rest-apis"></a>De REST API's bekijken
 
@@ -162,4 +160,4 @@ Zoals geldt voor alle services van Cognitive Services, dienen ontwikkelaars die 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voltooi een [quickstart voor de clientbibliotheek](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een formulierverwerkingsapp met een Form Recognizer in de taal van uw keuze.
+Voltooi een [quickstart](quickstarts/client-library.md) om aan de slag te gaan met het schrijven van een formulierverwerkingsapp met een Form Recognizer in de taal van uw keuze.

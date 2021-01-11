@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/27/2020
 ms.author: albecker1
 ms.custom: include file
-ms.openlocfilehash: 1a51cd242eb26709464aa502938cd04807aea721
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 28c92004fe67de35e5776cd7dc24cf534ec6f8f3
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97805599"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98061132"
 ---
 ## <a name="common-scenarios"></a>Algemene scenario's
 De volgende scenario's kunnen aanzienlijk van bursting profiteren:
@@ -28,7 +28,7 @@ Het bursting-krediet systeem is op dezelfde manier van toepassing op het niveau 
 
 ![Bucket diagram voor burstisatie](media/managed-disks-bursting/bucket-diagram.jpg)
 
-Volledig aan u om te bepalen hoe u de 30 minuten van de bursting wilt gebruiken. U kunt deze gedurende 30 minuten opeenvolgend of per dag gebruiken. Wanneer het product wordt geïmplementeerd, is het gratis met een volledig tegoed en wanneer het de tegoeden afneemt, neemt het minder dan een dag in beslag. U kunt hun burstse tegoeden verzamelen en best Eden aan uw keuze en de Bucket van 30 minuten hoeft niet opnieuw te worden gevuld naar burst. Een ding om te weten over burst accumulatie is dat deze verschilt voor elke resource, omdat deze is gebaseerd op de ongebruikte IOPS en MB/s onder hun prestatie aantallen. Dit betekent dat hogere prestatie producten met een basis lijn hun burst-bedragen sneller kunnen samen voegen dan lagere basis producten. Bijvoorbeeld: een P1-schijf stationair draaien zonder activiteit zal 120 IOPS per seconde toenemen, terwijl een P20-schijf 2.300 IOPS per seconde toeneemt tijdens het stationair draaien zonder activiteit.
+U kunt het beste de 30 minuten van de bursting gebruiken. U kunt deze gedurende 30 minuten opeenvolgend of per dag gebruiken. Wanneer het product wordt geïmplementeerd, is het gratis met een volledig tegoed en wanneer het de tegoeden afneemt, neemt het minder dan een dag in beslag. U kunt hun burstse tegoeden verzamelen en best Eden aan uw keuze en de Bucket van 30 minuten hoeft niet opnieuw te worden gevuld naar burst. Een ding om te weten over burst accumulatie is dat deze verschilt voor elke resource, omdat deze is gebaseerd op de ongebruikte IOPS en MB/s onder hun prestatie aantallen. Dit betekent dat hogere prestatie producten met een basis lijn hun burst-bedragen sneller kunnen samen voegen dan lagere basis producten. Bijvoorbeeld: een P1-schijf stationair draaien zonder activiteit zal 120 IOPS per seconde toenemen, terwijl een P20-schijf 2.300 IOPS per seconde toeneemt tijdens het stationair draaien zonder activiteit.
 
 ## <a name="bursting-states"></a>Bursting-statussen
 Er zijn drie statussen die uw resource kan hebben met bursting ingeschakeld:

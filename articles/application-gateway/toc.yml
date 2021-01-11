@@ -109,7 +109,7 @@
     - name: Inzicht krijgen in prijzen
       href: understanding-pricing.md
     - name: Veelgestelde vragen
-      href: application-gateway-faq.md
+      href: application-gateway-faq.yml
 - name: Instructiegidsen
   items:
     - name: Eén site hosten

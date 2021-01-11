@@ -12,12 +12,12 @@ metadata:
   ms.author: kumud
   manager: mtillman
   ms.date: 09/28/2020
-  ms.openlocfilehash: e348e1e93506a668f448e834ad1eaa5ce0c36d4a
-  ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+  ms.openlocfilehash: efc78307a4b03c9b5a7546dd899f83b0eed76457
+  ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/28/2020
-  ms.locfileid: "92900316"
+  ms.lasthandoff: 01/10/2021
+  ms.locfileid: "98059735"
 highlightedContent:
   items:
   - title: Wat is Azure-netwerken?
@@ -115,7 +115,7 @@ conceptualContent:
       text: Wat is Azure Load Balancer?
     - url: https://azure.microsoft.com/updates/?category=networking&query=load%20balancer
       itemType: whats-new
-      text: Nieuw
+      text: Nieuwe functies
     - url: ../load-balancer/quickstart-load-balancer-standard-public-portal.md
       itemType: quickstart
       text: Internetverkeer gelijkmatig verdelen over VM's
@@ -150,7 +150,7 @@ conceptualContent:
     - url: ../application-gateway/quick-create-portal.md
       itemType: quickstart
       text: Webverkeer omleiden via de portal
-    - url: ../application-gateway/application-gateway-faq.md
+    - url: ../application-gateway/application-gateway-faq.yml
       itemType: concept
       text: Veelgestelde vragen
     - url: ../application-gateway/application-gateway-troubleshooting-502.md

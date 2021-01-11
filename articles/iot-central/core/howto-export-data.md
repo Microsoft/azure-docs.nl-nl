@@ -7,21 +7,18 @@ ms.author: viviali
 ms.date: 11/05/2020
 ms.topic: how-to
 ms.service: iot-central
-ms.custom: contperf-fy21q1
-ms.openlocfilehash: b84f1efd77ca757fd2ceaa8bb5605e3fc78297d0
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.custom: contperf-fy21q1, contperf-fy21q3
+ms.openlocfilehash: 3079b8384a24642322d6f6eb86e2ca7f0927db15
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032368"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065385"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export"></a>IoT-gegevens exporteren naar Cloud bestemmingen met behulp van gegevens export
 
 > [!Note]
-> In dit artikel worden de functies voor gegevens export in IoT Central beschreven.
->
-> - Zie [IOT-gegevens naar Cloud bestemmingen exporteren met behulp van gegevens export (verouderd)](./howto-export-data-legacy.md)voor meer informatie over de verouderde functies voor gegevens export.
-> - Zie de onderstaande [vergelijkings tabel](#comparison-of-legacy-data-export-and-data-export) voor meer informatie over de verschillen tussen de functies voor het exporteren van gegevens en verouderde gegevens export.
+> In dit artikel worden de functies voor gegevens export in IoT Central beschreven. Zie [IOT-gegevens naar Cloud bestemmingen exporteren met behulp van gegevens export (verouderd)](./howto-export-data-legacy.md)voor meer informatie over de verouderde functies voor gegevens export.
 
 In dit artikel wordt beschreven hoe u de nieuwe functie voor gegevens export kunt gebruiken in azure IoT Central. Gebruik deze functie om voortdurend gefilterde en verrijkt IoT-gegevens te exporteren uit uw IoT Central-toepassing. Gegevens export pusht wijzigingen in bijna realtime aan andere onderdelen van uw Cloud oplossing voor inzichten, analyses en opslag van warme paden.
 
@@ -276,7 +273,7 @@ In het volgende voor beeld ziet u het wijzigings bericht voor een geëxporteerde
 
 In de volgende tabel ziet u de verschillen tussen de [verouderde gegevens export](howto-export-data-legacy.md) en de nieuwe functies voor gegevens export:
 
-| Functies  | Verouderde gegevens export | Nieuwe gegevens export |
+| Functionaliteit  | Verouderde gegevens export | Nieuwe gegevens export |
 | :------------- | :---------- | :----------- |
 | Beschik bare gegevens typen | Telemetrie, apparaten, apparaatprofielen | Telemetrie, eigenschaps wijzigingen |
 | Filteren | Geen | Is afhankelijk van het geëxporteerde gegevens type. Filteren op telemetrie, bericht eigenschappen, eigenschaps waarden |

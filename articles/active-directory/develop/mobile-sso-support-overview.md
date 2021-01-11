@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: nichola
-ms.openlocfilehash: 59924c1f876d08aa504f19c5d6c86dca32fbd1e2
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 9c53ea5bad88eb79940274c409218045c06d7981
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173461"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064965"
 ---
 # <a name="support-single-sign-on-and-app-protection-policies-in-mobile-apps-you-develop"></a>Ondersteuning voor eenmalige aanmelding en app-beveiligings beleid in mobiele apps die u ontwikkelt
 
@@ -36,7 +36,7 @@ Wanneer u eenmalige aanmelding inschakelt in uw app, worden nieuwe verificatie m
 
 We raden u aan het volgende te doen om ervoor te zorgen dat uw app kan profiteren van eenmalige aanmelding.
 
-### <a name="use-microsoft-authentication-library-msal"></a>Micro soft Authentication Library (MSAL) gebruiken
+### <a name="use-the-microsoft-authentication-library-msal"></a>De micro soft Authentication Library (MSAL) gebruiken
 
 De beste optie voor het implementeren van eenmalige aanmelding in uw toepassing is het gebruik van [de micro soft Authentication Library (MSAL)](msal-overview.md). Door MSAL te gebruiken, kunt u verificatie toevoegen aan uw app met minimale code-en API-aanroepen, de volledige functies van het [micro soft-identiteits platform](./index.yml)ophalen en micro soft de handhaving van een veilige verificatie oplossing laten afhandelen. MSAL voegt standaard SSO-ondersteuning toe voor uw toepassing. Daarnaast is het gebruik van MSAL een vereiste als u ook van plan bent om app-beveiligings beleid te implementeren.
 

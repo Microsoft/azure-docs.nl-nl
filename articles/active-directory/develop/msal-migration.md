@@ -1,7 +1,7 @@
 ---
-title: Migreren naar micro soft Authentication Library (MSAL)
+title: Migreren naar de micro soft Authentication Library (MSAL)
 titleSuffix: Microsoft identity platform
-description: Meer informatie over de verschillen tussen micro soft Authentication Library (MSAL) en Azure AD Authentication Library (ADAL) en hoe u migreert naar MSAL.
+description: Meer informatie over de verschillen tussen de micro soft Authentication Library (MSAL) en Azure AD Authentication Library (ADAL) en hoe u migreert naar MSAL.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,14 +13,14 @@ ms.date: 08/07/2020
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: ac9264ea8d6cc71d19d2c9bbd23b2123bdf1f924
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a1428f05d1a5f7563b2715a9142cf73dc5063a9
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88224353"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063651"
 ---
-# <a name="migrate-applications-to-microsoft-authentication-library-msal"></a>Toepassingen migreren naar micro soft Authentication Library (MSAL)
+# <a name="migrate-applications-to-the-microsoft-authentication-library-msal"></a>Toepassingen migreren naar de micro soft Authentication Library (MSAL)
 
 Veel ontwikkel aars hebben toepassingen gebouwd en geïmplementeerd met behulp van de Azure Active Directory Authentication Library (ADAL). We raden u nu aan de micro soft Authentication Library (MSAL) te gebruiken voor verificatie en autorisatie van Azure AD-entiteiten.
 

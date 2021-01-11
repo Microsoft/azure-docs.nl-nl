@@ -1,7 +1,7 @@
 ---
 title: UWP overwegingen (MSAL.NET) | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over overwegingen voor het gebruik van Universeel Windows-platform (UWP) met micro soft Authentication Library voor .NET (MSAL.NET).
+description: Meer informatie over overwegingen voor het gebruik van Universeel Windows-platform (UWP) met de micro soft Authentication Library voor .NET (MSAL.NET).
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.date: 07/16/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: c71c55adbf79af780169380269b5081322f94baf
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 6451368baf9c047f0318eb74d53ffac075d4a184
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93083436"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063447"
 ---
 # <a name="considerations-for-using-universal-windows-platform-with-msalnet"></a>Overwegingen voor het gebruik van Universeel Windows-platform met MSAL.NET
 Ontwikkel aars van toepassingen die gebruikmaken van Universeel Windows-platform (UWP) met MSAL.NET, moeten rekening houden met de concepten in dit artikel.

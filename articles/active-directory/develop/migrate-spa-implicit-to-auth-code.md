@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 391febcf8852147aedf5ef61d2442b2f50b4c9ae
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 2c03e6940d392e3e2c03bf6508de41a7a19aef3b
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014736"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063770"
 ---
 # <a name="migrate-a-javascript-single-page-app-from-implicit-grant-to-auth-code-flow"></a>Een JavaScript-app met één pagina migreren van impliciete toekenning naar autorisatiecodestroom
 
-Microsoft Authentication Library voor JavaScript (MSAL.js) v2.0 biedt ondersteuning voor de autorisatiecodestroom met PKCE en CORS voor toepassingen met één pagina op het Microsoft Identity-platform. Volg de stappen in de onderstaande secties om de MSAL.js 1.x-toepassing met impliciete toekenning te migreren naar MSAL.js 2.0+ (hierna *2. x*) en de authenticatiecodestroom.
+Met de micro soft-verificatie bibliotheek voor Java script (MSAL.js) v 2.0 wordt ondersteuning geboden voor de autorisatie code stroom met PKCE en CORS voor toepassingen met één pagina op het micro soft Identity-platform. Volg de stappen in de onderstaande secties om de MSAL.js 1.x-toepassing met impliciete toekenning te migreren naar MSAL.js 2.0+ (hierna *2. x*) en de authenticatiecodestroom.
 
 MSAL.js 2.x verbetert MSAL.js 1.x door de autorisatiecodestroom in de browser te ondersteunen in plaats van de impliciete toekenningsstroom. MSAL.js 2.x biedt **GEEN** ondersteuning voor de impliciete stroom.
 

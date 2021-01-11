@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: 2d7c732771749c0c0372c5433b76c3e30469e2b0
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: eacdf0cf80414c44aaccf6925e466b914c66da03
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968412"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065300"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -64,7 +64,7 @@ Nadat u uw ITSM-hulpprogram ma's hebt bereid, voert u de volgende stappen uit om
 
 1. Zoek in **alle resources** naar **Service Desk (*de naam van uw werk ruimte*)**:
 
-   ![Scherm opname van recente resources in het Azure Portal.](media/itsmc-overview/itsm-connections.png)
+   ![Scherm opname van recente resources in het Azure Portal.](media/itsmc-definition/create-new-connection-from-resource.png)
 
 1. Selecteer onder **gegevens bronnen voor werk ruimte** in het linkerdeel venster **ITSM-verbindingen**:
 

@@ -13,12 +13,13 @@ ms.date: 10/01/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur
 ms.custom: aaddev, seoapril2019
-ms.openlocfilehash: e9724bb2e5377f84904dc77c33375c39f3077dd4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: deb923a52e5d6cd5384dbf94d2249572b25b1a61
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91631406"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063838"
 ---
 # <a name="integrating-with-microsoft-identity-platform"></a>Integreren met micro soft Identity platform
 
@@ -82,7 +83,7 @@ Integratie met micro soft Identity platform wordt geleverd met voor delen waarbi
 
 **Industrie standaard protocollen.**  Micro soft hecht veel belang aan de ondersteuning van industrie normen. Het micro soft Identity-platform biedt ondersteuning voor de industrie standaard OAuth 2,0 en OpenID Connect Connect 1,0-protocollen. Meer informatie over [verificatie protocollen voor micro soft-identiteits platform](active-directory-v2-protocols.md).
 
-**Open-source-bibliotheken.**  Micro soft biedt volledig ondersteunde open source-bibliotheken voor populaire talen en platforms om de ontwikkeling te versnellen. De bron code wordt in licentie gegeven onder Apache 2,0 en u kunt de projecten splitsen en er een bijdrage aan leveren. Meer informatie over [micro soft Authentication Library (MSAL)](reference-v2-libraries.md).
+**Open-source-bibliotheken.**  Micro soft biedt volledig ondersteunde open source-bibliotheken voor populaire talen en platforms om de ontwikkeling te versnellen. De bron code wordt in licentie gegeven onder Apache 2,0 en u kunt de projecten splitsen en er een bijdrage aan leveren. Meer informatie over de [micro soft Authentication Library (MSAL)](reference-v2-libraries.md).
 
 ### <a name="worldwide-presence-and-high-availability"></a>Wereld wijde aanwezigheid en hoge Beschik baarheid
 

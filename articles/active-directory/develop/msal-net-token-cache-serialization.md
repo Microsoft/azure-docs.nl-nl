@@ -1,7 +1,7 @@
 ---
 title: Token cache-serialisatie (MSAL.NET) | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over serialisatie en klant-serialisatie van de token cache met behulp van micro soft Authentication Library voor .NET (MSAL.NET).
+description: Meer informatie over serialisatie en klant-serialisatie van de token cache met behulp van de micro soft Authentication Library voor .NET (MSAL.NET).
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,15 +13,15 @@ ms.date: 09/16/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 4a0d5af8faafac8b733bd2daa9655e663da6fe71
-ms.sourcegitcommit: fbb620e0c47f49a8cf0a568ba704edefd0e30f81
+ms.openlocfilehash: 7e80123f21efded92ab6d59d550965ca72427b1c
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91873520"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064654"
 ---
 # <a name="token-cache-serialization-in-msalnet"></a>Serialisatie van token cache in MSAL.NET
-Nadat een [token is verkregen](msal-acquire-cache-tokens.md), wordt het in de cache opgeslagen door micro soft Authentication Library (MSAL).  De toepassings code moet proberen een token op te halen uit de cache voordat een token wordt verkregen met een andere methode.  In dit artikel wordt de standaard-en aangepaste serialisatie van de token cache in MSAL.NET beschreven.
+Nadat een [token is verkregen](msal-acquire-cache-tokens.md), wordt het in de cache opgeslagen door de micro soft Authentication Library (MSAL).  De toepassings code moet proberen een token op te halen uit de cache voordat een token wordt verkregen met een andere methode.  In dit artikel wordt de standaard-en aangepaste serialisatie van de token cache in MSAL.NET beschreven.
 
 Dit artikel is voor MSAL.NET 3. x. Als u geïnteresseerd bent in MSAL.NET 2. x, Zie [token cache serialisatie in MSAL.net 2. x](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Token-cache-serialization-2x).
 

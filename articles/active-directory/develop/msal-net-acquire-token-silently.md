@@ -13,16 +13,16 @@ ms.date: 07/16/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 95cfb937ce236d0acd1a3369068afc6f3b505aed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 94e4a4d5b80e246ce822e977deafe5c41c9ff4ad
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88166243"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064773"
 ---
 # <a name="get-a-token-from-the-token-cache-using-msalnet"></a>Een Token ophalen uit de token cache met behulp van MSAL.NET
 
-Wanneer u een toegangs token aanschaft met behulp van micro soft Authentication Library voor .NET (MSAL.NET), wordt het token in de cache opgeslagen. Wanneer de toepassing een token vereist, moet het eerst de methode aanroepen `AcquireTokenSilent` om te controleren of een acceptabel token zich in de cache bevindt. In veel gevallen is het mogelijk om een andere token te verkrijgen met meer scopes op basis van een token in de cache. Het is ook mogelijk om een token te vernieuwen wanneer het bijna is verlopen (omdat de token cache ook een vernieuwings token bevat).
+Wanneer u een toegangs token aanschaft met behulp van de micro soft Authentication Library voor .NET (MSAL.NET), wordt het token in de cache opgeslagen. Wanneer de toepassing een token vereist, moet het eerst de methode aanroepen `AcquireTokenSilent` om te controleren of een acceptabel token zich in de cache bevindt. In veel gevallen is het mogelijk om een andere token te verkrijgen met meer scopes op basis van een token in de cache. Het is ook mogelijk om een token te vernieuwen wanneer het bijna is verlopen (omdat de token cache ook een vernieuwings token bevat).
 
 Het aanbevolen patroon is om eerst de methode aan te roepen `AcquireTokenSilent` .  Als dit `AcquireTokenSilent` mislukt, verschaf dan een token met behulp van andere methoden.
 

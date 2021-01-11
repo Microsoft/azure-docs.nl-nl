@@ -13,16 +13,16 @@ ms.date: 05/18/2020
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: d7cad0592c5c4c0487f582ce5405c275b94b7bd0
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 018b5396563ac3a4b92b371d396c38afa3d2962f
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444024"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064263"
 ---
 # <a name="call-a-web-api-from-a-mobile-app"></a>Een web-API aanroepen vanuit een mobiele app
 
-Nadat uw app een gebruiker heeft ondertekend en tokens ontvangt, wordt er informatie weer gegeven over de gebruiker, de omgeving van de gebruiker en de uitgegeven tokens. Uw app kan deze waarden gebruiken om een web-API aan te roepen of een welkomst bericht voor de gebruiker weer te geven.
+Nadat uw app een gebruiker heeft ondertekend en tokens ontvangt, wordt in de micro soft Authentication Library (MSAL) informatie weer gegeven over de gebruiker, de omgeving van de gebruiker en de uitgegeven tokens. Uw app kan deze waarden gebruiken om een web-API aan te roepen of een welkomst bericht voor de gebruiker weer te geven.
 
 In dit artikel kijken we eerst naar het MSAL-resultaat. Vervolgens gaan we kijken hoe u een toegangs token van gebruikt `AuthenticationResult` of `result` een beveiligde web-API aanroept.
 
@@ -119,9 +119,9 @@ task.resume()
 
 Als u dezelfde API meerdere keren moet aanroepen, of als u meerdere Api's moet aanroepen, moet u rekening houden met de volgende onderwerpen wanneer u uw app bouwt:
 
-- **Incrementele toestemming** : met het micro soft Identity-platform kunnen Apps gebruikers toestemming krijgen wanneer er machtigingen zijn vereist in plaats van aan het begin. Telkens wanneer uw app klaar is om een API aan te roepen, moet deze alleen de bereiken aanvragen die het nodig heeft.
+- **Incrementele toestemming**: met het micro soft Identity-platform kunnen Apps gebruikers toestemming krijgen wanneer er machtigingen zijn vereist in plaats van aan het begin. Telkens wanneer uw app klaar is om een API aan te roepen, moet deze alleen de bereiken aanvragen die het nodig heeft.
 
-- **Voorwaardelijke toegang** : wanneer u meerdere API-aanvragen maakt, moet u mogelijk voldoen aan aanvullende vereisten voor voorwaardelijke toegang. De vereisten kunnen op deze manier toenemen als de eerste aanvraag geen beleids regels voor voorwaardelijke toegang heeft en uw app probeert op de achtergrond toegang te krijgen tot een nieuwe API waarvoor voorwaardelijke toegang is vereist. Als u dit probleem wilt verhelpen, moet u ervoor zorgen dat u fouten opvangt van Silent-aanvragen en een interactieve aanvraag maakt.  Zie [richt lijnen voor voorwaardelijke toegang](../azuread-dev/conditional-access-dev-guide.md)voor meer informatie.
+- **Voorwaardelijke toegang**: wanneer u meerdere API-aanvragen maakt, moet u mogelijk voldoen aan aanvullende vereisten voor voorwaardelijke toegang. De vereisten kunnen op deze manier toenemen als de eerste aanvraag geen beleids regels voor voorwaardelijke toegang heeft en uw app probeert op de achtergrond toegang te krijgen tot een nieuwe API waarvoor voorwaardelijke toegang is vereist. Als u dit probleem wilt verhelpen, moet u ervoor zorgen dat u fouten opvangt van Silent-aanvragen en een interactieve aanvraag maakt.  Zie [richt lijnen voor voorwaardelijke toegang](../azuread-dev/conditional-access-dev-guide.md)voor meer informatie.
 
 ## <a name="call-several-apis-by-using-incremental-consent-and-conditional-access"></a>Meerdere Api's aanroepen met behulp van incrementele toestemming en voorwaardelijke toegang
 

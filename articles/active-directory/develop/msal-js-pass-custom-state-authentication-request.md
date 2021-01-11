@@ -13,16 +13,16 @@ ms.date: 01/16/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 840c371e63aacf8ef410cbf84cc9f68137dd77df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c1fad96ea6e3b75b3afdfd4a4d3baac43308541
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85477580"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063668"
 ---
 # <a name="pass-custom-state-in-authentication-requests-using-msaljs"></a>Aangepaste status in verificatie aanvragen door geven met behulp van MSAL.js
 
-De para meter *State* , zoals gedefinieerd door OAuth 2,0, wordt opgenomen in een verificatie aanvraag en wordt ook geretourneerd in het token antwoord om vervalsing van aanvragen op meerdere sites te voor komen. Micro soft Authentication Library voor Java script (MSAL.js) geeft standaard een wille keurige, door de para meter gegenereerde unieke *status* waarde in de verificatie aanvragen door.
+De para meter *State* , zoals gedefinieerd door OAuth 2,0, wordt opgenomen in een verificatie aanvraag en wordt ook geretourneerd in het token antwoord om vervalsing van aanvragen op meerdere sites te voor komen. Standaard geeft de micro soft-verificatie bibliotheek voor Java script (MSAL.js) een wille keurig gegenereerde para meter waarde voor een unieke *status* in de verificatie aanvragen door.
 
 De para meter State kan ook worden gebruikt om informatie over de status van de app te coderen voordat deze wordt omgeleid. U kunt de status van de gebruiker in de app door geven, zoals de pagina of weer gave waarin deze zich bevonden, als invoer voor deze para meter. Met de MSAL.js-bibliotheek kunt u uw aangepaste status door geven als para meter State in het `Request` object:
 

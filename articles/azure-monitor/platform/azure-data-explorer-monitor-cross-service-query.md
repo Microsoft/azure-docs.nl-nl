@@ -1,18 +1,18 @@
 ---
 title: Query's tussen meerdere services tussen Azure Monitor en Azure Data Explorer (preview-versie)
 description: Query's uitvoeren op Azure Data Explorer gegevens via Azure Log Analytics-hulpprogram ma's omgekeerd, zodat u al uw gegevens op één plek kunt samen voegen en analyseren.
-author: orens
+author: osalzberg
 ms.author: bwren
 ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: 0af9111223bb16f1c5843223e7fe1661ce99c623
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
+ms.openlocfilehash: 5aadd9d96f538f92e1b9e0100b2c1055ee0b0633
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96749242"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065266"
 ---
 # <a name="cross-service-query---azure-monitor-and-azure-data-explorer-preview"></a>Query's voor meerdere services, Azure Monitor en Azure Data Explorer (preview-versie)
 Query's tussen meerdere services en [Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/), [Application Insights](/azure/azure-monitor/app/app-insights-overview)en [log Analytics](/azure/azure-monitor/platform/data-platform-logs)maken.

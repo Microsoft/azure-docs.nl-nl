@@ -11,12 +11,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 07/15/2019
 ms.author: ryanwi
-ms.openlocfilehash: d865ac8bae475365dbfc6c8bad990a1acc7998f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: a075cfa921a17d47cbef84f1e7e8ec8e306c38d5
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88116747"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063022"
 ---
 # <a name="how-to-configure-a-new-multi-tenant-application"></a>Een nieuwe toepassing met meerdere tenants configureren
 

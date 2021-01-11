@@ -8,15 +8,15 @@ ms.author: keli19
 ms.reviewer: peterlu
 ms.service: machine-learning
 ms.subservice: core
-ms.date: 11/25/2020
+ms.date: 01/11/2021
 ms.topic: conceptual
 ms.custom: designer
-ms.openlocfilehash: 29d83f4acddfce6294457f87519d62e35f52bf15
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
+ms.openlocfilehash: b940f5c9bd14bcec404827daaef666da802d969b
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709415"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065249"
 ---
 # <a name="enable-logging-in-azure-machine-learning-designer-pipelines"></a>Logboek registratie inschakelen in Azure Machine Learning Designer-pijp lijnen
 
@@ -27,7 +27,7 @@ Voor meer informatie over het vastleggen van metrische gegevens met behulp van d
 
 ## <a name="enable-logging-with-execute-python-script"></a>Logboek registratie inschakelen met python-script uitvoeren
 
-Gebruik de __script module python uitvoeren__ om logboek registratie in Designer-pijp lijnen in te scha kelen. Hoewel u elke wille keurige waarde kunt registreren bij deze werk stroom, is het vooral nuttig om metrische gegevens vast te leggen in de module __Evaluate model__ om de model prestaties voor uitvoeringen bij te houden.
+Gebruik de [script module python uitvoeren](./algorithm-module-reference/execute-python-script.md) om logboek registratie in Designer-pijp lijnen in te scha kelen. Hoewel u elke wille keurige waarde kunt registreren bij deze werk stroom, is het vooral nuttig om metrische gegevens vast te leggen in de module __Evaluate model__ om de model prestaties voor uitvoeringen bij te houden.
 
 In het volgende voor beeld ziet u hoe u de gemiddelde fout van twee getrainde modellen kunt vastleggen met behulp van het model evalueren en python-script modules uitvoeren.
 
@@ -53,7 +53,7 @@ In het volgende voor beeld ziet u hoe u de gemiddelde fout van twee getrainde mo
         
         # Log left output port result of Evaluate Model. This also works when evaluate only 1 model.
         parent_run.log(name='Mean_Absolute_Error (left port)', value=dataframe1['Mean_Absolute_Error'][0])
-        # Log right output port result of Evaluate Model.
+        # Log right output port result of Evaluate Model. The following line should be deleted if you only connect one Score Module to the` left port of Evaluate Model module.
         parent_run.log(name='Mean_Absolute_Error (right port)', value=dataframe1['Mean_Absolute_Error'][1])
 
         return dataframe1,
@@ -81,3 +81,4 @@ In dit artikel hebt u geleerd hoe u Logboeken in de ontwerp functie kunt gebruik
 
 * Meer informatie over het oplossen van problemen met Designer-pijp lijnen vindt u in [Debug & Troubleshooting ml-pijp lijnen oplossen](how-to-debug-pipelines.md#azure-machine-learning-designer).
 * Meer informatie over het gebruik van de python-SDK voor het vastleggen van metrische gegevens in de ontwikkel ervaring van de SDK raadpleegt u [logboek registratie inschakelen in azure ml-trainings uitvoeringen](how-to-track-experiments.md).
+* Meer informatie over het gebruik van [python-script uitvoeren](./algorithm-module-reference/execute-python-script.md) in de ontwerp functie.

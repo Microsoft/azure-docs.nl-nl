@@ -10,12 +10,12 @@ ms.custom: troubleshooting
 author: likebupt
 ms.author: keli19
 ms.date: 11/25/2020
-ms.openlocfilehash: 846c5519dced06ed16f5a0d12b0bb25443961f93
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: b917e3fc93c59de85c5236c18e31d7bbc9d891f0
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753906"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065470"
 ---
 # <a name="exceptions-and-error-codes-for-the-designer"></a>Uitzonde ringen en fout codes voor de ontwerper
 
@@ -1532,3 +1532,8 @@ Als u meer hulp nodig hebt, raden we u aan het gedetailleerde bericht te plaatse
 |Bibliotheek uitzondering.|
 |Bibliotheek uitzondering: {Exception}.|
 |Onbekende bibliotheek uitzondering: {Exception}. {customer_support_guidance}.|
+
+
+## <a name="execute-python-script-module"></a>Python-script module uitvoeren
+
+Zoek **in de azureml_main** in **70_Driver_logs** van de **python-script module Execute** en ga na welke regel fout is opgetreden. Bijvoorbeeld: ' file '/tmp/tmp01_ID/user_script. py ', line 17, in azureml_main ' geeft aan dat de fout is opgetreden in de 17-regel van uw python-script.

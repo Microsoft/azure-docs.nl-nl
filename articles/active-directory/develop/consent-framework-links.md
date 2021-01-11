@@ -11,12 +11,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: ryanwi
-ms.openlocfilehash: 15270a998aff174c04acf2969d984eb022852635
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: 5db45ea49f7e0be674f07a3f8e077656f3d6dee2
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88117359"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064984"
 ---
 # <a name="how-application-consent-works"></a>Hoe toepassingstoestemming werkt
 

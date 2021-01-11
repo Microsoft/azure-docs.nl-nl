@@ -9,13 +9,13 @@ ms.topic: reference
 ms.custom: devx-track-python
 author: likebupt
 ms.author: keli19
-ms.date: 12/02/2020
-ms.openlocfilehash: d1e4ffa525c5628d0b6c9a3ca67f3e069c44e823
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.date: 01/02/2021
+ms.openlocfilehash: 7b5bc77375d684340116a21b7f95cf576d99dad2
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679197"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065351"
 ---
 # <a name="execute-python-script-module"></a>Python-script module uitvoeren
 
@@ -60,7 +60,7 @@ if spec is None:
 > [!WARNING]
 > De excute python-script module biedt geen ondersteuning voor het installeren van pakketten die afhankelijk zijn van extra systeem eigen bibliotheken met opdracht als ' apt-get ', zoals Java, PyODBC en etc. Dit is omdat deze module wordt uitgevoerd in een eenvoudige omgeving met python vooraf geïnstalleerd en met niet-beheerders machtigingen.  
 
-## <a name="access-to-registered-datasets"></a>Toegang tot geregistreerde gegevens sets
+## <a name="access-to-current-workspace-and-registered-datasets"></a>Toegang tot de huidige werk ruimte en geregistreerde gegevens sets
 
 U kunt de volgende voorbeeld code gebruiken om toegang te krijgen tot de [geregistreerde gegevens sets](../how-to-create-register-datasets.md) in uw werk ruimte:
 
@@ -71,8 +71,10 @@ def azureml_main(dataframe1 = None, dataframe2 = None):
     print(f'Input pandas.DataFrame #1: {dataframe1}')
     from azureml.core import Run
     run = Run.get_context(allow_offline=True)
+    #access to current workspace
     ws = run.experiment.workspace
 
+    #access to registered dataset of current workspace
     from azureml.core import Dataset
     dataset = Dataset.get_by_name(ws, name='test-register-tabular-in-designer')
     dataframe1 = dataset.to_pandas_dataframe()
@@ -219,7 +221,9 @@ De script module python uitvoeren bevat een voor beeld van python-code die u als
 
 6. Verzend de pijp lijn.
 
-    Alle gegevens en code worden in een virtuele machine geladen en uitgevoerd met behulp van de opgegeven python-omgeving.
+    Als de module is voltooid, controleert u de uitvoer indien dit wordt verwacht.
+
+    Als de module is mislukt, moet u een aantal problemen oplossen. Selecteer de module en open **uitvoer en logboeken** in het rechterdeel venster. Open **70_driver_log.txt** en zoek **in azureml_main op** welke regel de fout is veroorzaakt. Bijvoorbeeld: ' file '/tmp/tmp01_ID/user_script. py ', line 17, in azureml_main ' geeft aan dat de fout is opgetreden in de 17-regel van uw python-script.
 
 ## <a name="results"></a>Resultaten
 

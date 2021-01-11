@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: 83917214705546b21553e997ccab11a7511f77fd
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 5af4eb931015e386e35470f2b36341e15f76150f
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353303"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065402"
 ---
 # <a name="manage-qna-maker-resources"></a>QnA Maker-resources beheren
 
@@ -114,7 +114,7 @@ De app service, die de QnA Maker Voorspellings runtime voor een gepubliceerde ke
 
 Als u de app voor Voorspellings eindpunt wilt laden, zelfs wanneer er geen verkeer is, stelt u de niet-actief in op altijd aan.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Zoek en selecteer de app service van uw QnA Maker-resource. Deze heeft dezelfde naam als de QnA Maker resource, maar heeft een ander **type** app service.
 1. Zoek **instellingen** en selecteer **configuratie**.
 1. In het deel venster configuratie selecteert u **algemene instellingen**, vervolgens **altijd zoeken in** **en selecteert u** als waarde.
@@ -128,12 +128,18 @@ Als u de app voor Voorspellings eindpunt wilt laden, zelfs wanneer er geen verke
 Meer informatie over het configureren van de App Service [algemene instellingen](../../../app-service/configure-common.md#configure-general-settings).
 
 ### <a name="configure-app-service-environment-to-host-qna-maker-app-service"></a>App Service Environment voor het hosten van QnA Maker configureren App Service
-De App Service Environment kan worden gebruikt om QnA Maker app service te hosten. Als de App Service Environment intern is, moet u deze stappen volgen:
-1. Maak een app service en een Azure Search-service.
-2. Maak de app-service beschikbaar en sta QnA Maker Beschik baarheid toe als:
-    * Openbaar beschikbaar-standaard
-    * Label voor de DNS-service: `CognitiveServicesManagement`
-3. Maak een QnA Maker cognitieve service-exemplaar (micro soft. CognitiveServices/accounts) met behulp van Azure Resource Manager, waarbij QnA Maker eind punt moet worden ingesteld op App Service Environment.
+De App Service Environment (ASE) kan worden gebruikt om QnA Maker app service te hosten. Volg de onderstaande stappen:
+
+1. Maak een App Service Environment en markeer deze als ' Extern '. Volg de [zelf studie](https://docs.microsoft.com/azure/app-service/environment/create-external-ase) voor instructies.
+2.  Maak een app-service in de App Service Environment.
+    * Controleer de configuratie voor de app service en voeg ' PrimaryEndpointKey ' toe als een toepassings instelling. De waarde voor ' PrimaryEndpointKey ' moet worden ingesteld op ' \<app-name\> -PrimaryEndpointKey '. De naam van de app wordt gedefinieerd in de app service-URL. Als de app service-URL bijvoorbeeld ' mywebsite.myase.p.azurewebsite.net ' is, is de app-naam ' MyWebSite '. In dit geval moet de waarde voor ' PrimaryEndpointKey ' worden ingesteld op ' mywebsite-PrimaryEndpointKey '.
+    * Maak een Azure Search-service.
+    * Zorg ervoor dat Azure Search en app-instellingen op de juiste wijze zijn geconfigureerd. 
+      Volg deze [zelf studie](https://docs.microsoft.com/azure/cognitiveservices/qnamaker/reference-app-service#app-service).
+3.  De netwerk beveiligings groep die is gekoppeld aan de App Service Environment, bijwerken
+    * Werk vooraf gemaakte regels voor inkomende beveiliging bij volgens uw vereisten.
+    * Voeg een nieuwe regel voor binnenkomende beveiliging met bron als servicetag en bron service-tag toe als ' CognitiveServicesManagement '.
+4.  Maak een QnA Maker cognitieve service-exemplaar (micro soft. CognitiveServices/accounts) met behulp van Azure Resource Manager, waarbij QnA Maker eind punt moet worden ingesteld op het App Service eind punt dat hierboven is gemaakt (https://mywebsite.myase.p.azurewebsite.net).
 
 ### <a name="network-isolation-for-app-service"></a>Netwerk isolatie voor App Service
 
@@ -254,15 +260,15 @@ Meer informatie over het bijwerken van de resources die worden gebruikt door uw 
 
 # <a name="qna-maker-ga-stable-release"></a>[QnA Maker GA (stabiele release)](#tab/v1)
 
-Als u van plan bent een groot aantal Knowledge bases te hebben, moet u de prijs categorie van uw Azure Cognitive Search-service bijwerken.
+Als u een groot aantal knowledge bases wilt hebben, moet u de prijscategorie van de Azure Cognitive Search-service upgraden.
 
-Op dit moment kunt u geen in-place upgrade van de SKU voor Azure Search uitvoeren. U kunt echter een nieuwe Azure Search-resource met de gewenste SKU maken, de gegevens herstellen naar de nieuwe resource en deze vervolgens koppelen aan de QnA Maker-stack. Volg hiervoor de volgende stappen:
+Op dit moment kunt u geen in-place upgrade van de SKU voor Azure Search uitvoeren. U kunt echter een nieuwe Azure Search-resource met de gewenste SKU maken, de gegevens herstellen naar de nieuwe resource en deze vervolgens koppelen aan de QnA Maker-stack. Voer hiervoor de volgende stappen uit:
 
 1. Maak een nieuwe Azure-Zoek resource in het Azure Portal en selecteer de gewenste SKU.
 
     ![QnA Maker Azure Search-resource](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-azuresearch-new.png)
 
-1. Herstel de indexen van de oorspronkelijke Azure Search-resource naar de nieuwe. Zie de [voorbeeld code voor het terugzetten van back-ups](https://github.com/pchoudhari/QnAMakerBackupRestore).
+1. Herstel de indexen van de oorspronkelijke Azure Search-resource naar de nieuwe. Raadpleeg de [voorbeeldcode voor back-up herstellen](https://github.com/pchoudhari/QnAMakerBackupRestore).
 
 1. Nadat de gegevens zijn hersteld, gaat u naar uw nieuwe Azure Search-resource, selecteert u **sleutels** en noteert u de **naam** en de **beheerders sleutel**:
 
@@ -272,11 +278,11 @@ Op dit moment kunt u geen in-place upgrade van de SKU voor Azure Search uitvoere
 
     ![App Service instantie QnA Maker](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-resource-list-appservice.png)
 
-1. Selecteer **Toepassings instellingen** en wijzig de instellingen in de velden **AzureSearchName** en **AzureSearchAdminKey** uit stap 3.
+1. Selecteer **Toepassingsinstellingen** en wijzig de instellingen in de velden **AzureSearchName** en **AzureSearchAdminKey** uit stap 3.
 
     ![Instelling voor QnA Maker App Service](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-appservice-settings.png)
 
-1. Start het App Service-exemplaar opnieuw.
+1. Start het App Service-exemplaar opnieuw op.
 
     ![Het QnA Maker App Service-exemplaar opnieuw starten](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-appservice-restart.png)
 
@@ -343,15 +349,15 @@ Gratis Zoek bronnen worden na 90 dagen verwijderd zonder dat er een API-aanroep 
 
 # <a name="qna-maker-managed-preview-release"></a>[QnA Maker beheerd (preview-release)](#tab/v2)
 
-Als u van plan bent een groot aantal Knowledge bases te hebben, moet u de prijs categorie van uw Azure Cognitive Search-service bijwerken.
+Als u een groot aantal knowledge bases wilt hebben, moet u de prijscategorie van de Azure Cognitive Search-service upgraden.
 
-Op dit moment kunt u geen in-place upgrade van de SKU voor Azure Search uitvoeren. U kunt echter een nieuwe Azure Search-resource met de gewenste SKU maken, de gegevens herstellen naar de nieuwe resource en deze vervolgens koppelen aan de QnA Maker-stack. Volg hiervoor de volgende stappen:
+Op dit moment kunt u geen in-place upgrade van de SKU voor Azure Search uitvoeren. U kunt echter een nieuwe Azure Search-resource met de gewenste SKU maken, de gegevens herstellen naar de nieuwe resource en deze vervolgens koppelen aan de QnA Maker-stack. Voer hiervoor de volgende stappen uit:
 
 1. Maak een nieuwe Azure-Zoek resource in het Azure Portal en selecteer de gewenste SKU.
 
     ![QnA Maker Azure Search-resource](../media/qnamaker-how-to-upgrade-qnamaker/qnamaker-azuresearch-new.png)
 
-1. Herstel de indexen van de oorspronkelijke Azure Search-resource naar de nieuwe. Zie de [voorbeeld code voor het terugzetten van back-ups](https://github.com/pchoudhari/QnAMakerBackupRestore).
+1. Herstel de indexen van de oorspronkelijke Azure Search-resource naar de nieuwe. Raadpleeg de [voorbeeldcode voor back-up herstellen](https://github.com/pchoudhari/QnAMakerBackupRestore).
 
 1. Als u de nieuwe Azure Search-resource wilt koppelen aan de service voor QnA Maker Managed (preview), raadpleegt u het onderstaande onderwerp.
 

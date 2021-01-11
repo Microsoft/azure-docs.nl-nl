@@ -12,12 +12,13 @@ ms.date: 12/18/2019
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: hirsin
-ms.openlocfilehash: 41ea41b4d7c181dad9246653a68c329387ac5381
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ROBOTS: NOINDEX
+ms.openlocfilehash: ffd9b415d3b2a8e1aa716caa0e8289c6ae127b71
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80884678"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065079"
 ---
 # <a name="microsoft-identity-platform-authentication-protocols"></a>Verificatie protocollen voor micro soft-identiteits platform
 
@@ -33,7 +34,7 @@ Micro soft Identity platform ondersteunt verschillende van de meest gebruikte ve
 * [Service-to-service-aanroepen met](v2-oauth2-on-behalf-of-flow.md) namens een stroom-meer informatie over het gebruik van OAuth 2,0-stroom voor service-naar-service-aanroepen.
 * [SAML-protocol referentie](active-directory-saml-protocol-reference.md) -meer informatie over de SAML-profielen single Sign-On en Single Sign-out van micro soft Identity platform.
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 * [Overzicht van het Microsoft-identiteitsplatform](v2-overview.md)
 * [Voor beelden van Active Directory code](sample-v2-code.md)

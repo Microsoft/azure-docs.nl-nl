@@ -13,12 +13,13 @@ ms.topic: conceptual
 ms.date: 09/11/2018
 ms.author: ryanwi
 ms.reviewer: jeedes
-ms.openlocfilehash: 0df811f4e8b5d6a95868dfebe192e96fbfa80ed9
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ROBOTS: NOINDEX
+ms.openlocfilehash: de0231a49c4f806660ea0cb305fdc1a70e2b36d3
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169253"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063124"
 ---
 # <a name="add-a-multitenant-application-to-the-azure-ad-application-gallery"></a>Een toepassing met meerdere tenants toevoegen aan de Azure AD-toepassingsgalerie
 

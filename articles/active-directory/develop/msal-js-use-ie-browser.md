@@ -13,16 +13,16 @@ ms.date: 05/16/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 633166f3bb46212991920d6720737f8268b3f401
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 428405fc200751d2581ad9ca6e8ec97382594c09
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87026851"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064841"
 ---
 # <a name="known-issues-on-internet-explorer-browsers-msaljs"></a>Bekende problemen met browsers in Internet Explorer (MSAL.js)
 
-Micro soft-verificatie bibliotheek voor Java script (MSAL.js) wordt gegenereerd voor [Java script-ES5](https://fr.wikipedia.org/wiki/ECMAScript#ECMAScript_Edition_5_.28ES5.29) zodat deze kan worden uitgevoerd in Internet Explorer. Er zijn echter enkele dingen die u moet weten.
+De micro soft-verificatie bibliotheek voor Java script (MSAL.js) wordt gegenereerd voor [Java script-ES5](https://fr.wikipedia.org/wiki/ECMAScript#ECMAScript_Edition_5_.28ES5.29) zodat deze kan worden uitgevoerd in Internet Explorer. Er zijn echter enkele dingen die u moet weten.
 
 ## <a name="run-an-app-in-internet-explorer"></a>Een app uitvoeren in Internet Explorer
 Als u van plan bent om MSAL.js te gebruiken in toepassingen die kunnen worden uitgevoerd in Internet Explorer, moet u een verwijzing toevoegen aan de polyvulling van een Promise voordat u naar het MSAL.js script gaat.
@@ -51,7 +51,7 @@ Als u lokaal wilt uitvoeren en fouten wilt opsporen in uw toepassing die in Inte
     1. Start Internet Explorer opnieuw.
     1. Uw toepassing uitvoeren en fouten opsporen.
 
-Wanneer u klaar bent, herstelt u de beveiligings instellingen van Internet Explorer.  **Instellingen**selecteren  ->  **Internet opties**  ->  **beveiliging**  ->  **alle zones opnieuw instellen op standaard niveau**.
+Wanneer u klaar bent, herstelt u de beveiligings instellingen van Internet Explorer.  **Instellingen** selecteren  ->  **Internet opties**  ->  **beveiliging**  ->  **alle zones opnieuw instellen op standaard niveau**.
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over [bekende problemen bij het gebruik van MSAL.js in Internet Explorer](msal-js-use-ie-browser.md).

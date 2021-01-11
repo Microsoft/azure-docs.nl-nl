@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 04/12/2020
-ms.openlocfilehash: 01e492072bd75af9f80656b71d2cc1c473d64263
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: cea4503c4e3b9dd58cc475aaec355a2bb2e0bd29
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803796"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065180"
 ---
 # <a name="troubleshooting-problems-in-itsm-connector"></a>Problemen oplossen in ITSM-connector
 
@@ -23,13 +23,38 @@ ITSM biedt u de mogelijkheid om de waarschuwingen te verzenden naar het externe 
 
 ## <a name="visualize-and-analyze-the-incident-and-change-request-data"></a>Het incident en de gegevens van de wijzigings aanvraag visualiseren en analyseren
 
-Afhankelijk van uw configuratie wanneer u een verbinding instelt, kan ITSMC tot 120 dagen aan incidenten en wijzigings aanvraag gegevens worden gesynchroniseerd. Het logboek record schema voor deze gegevens vindt u in de [sectie aanvullende informatie](./itsmc-overview.md) van dit artikel.
+Afhankelijk van uw configuratie wanneer u een verbinding instelt, kan ITSMC tot 120 dagen aan incidenten en wijzigings aanvraag gegevens worden gesynchroniseerd. Het logboek record schema voor deze gegevens vindt u in de [sectie aanvullende informatie](./itsmc-synced-data.md) van dit artikel.
 
 U kunt het incident visualiseren en gegevens wijzigen met behulp van het ITSMC-dash board:
 
 ![Scherm opname van het ITSMC-dash board.](media/itsmc-overview/itsmc-overview-sample-log-analytics.png)
 
 Het dash board bevat ook informatie over de status van de connector, die u als uitgangs punt kunt gebruiken om problemen met de verbindingen te analyseren.
+
+### <a name="error-investigation-using-the-dashboard"></a>Fout onderzoek met behulp van het dash board
+
+Volg de volgende stappen om de fouten in het dash board weer te geven:
+
+1. Zoek in **alle resources** naar **Service Desk (*de naam van uw werk ruimte*)**:
+
+   ![Scherm opname van recente resources in het Azure Portal.](media/itsmc-definition/create-new-connection-from-resource.png)
+
+2. Selecteer onder **gegevens bronnen voor werk ruimte** in het linkerdeel venster **ITSM-verbindingen**:
+
+   ![Scherm opname van het menu-item ITSM-verbindingen.](media/itsmc-overview/add-new-itsm-connection.png)
+
+3. Onder **samen vatting** in het linkervak **IT Service Management-connector** selecteert u **samen vatting weer geven**:
+
+    ![Scherm opname van de weer gave-samen vatting.](media/itsmc-resync-servicenow/dashboard-view-summary.png)
+
+4. Klik onder **samen vatting** in het linkervak **IT Service Management-connector** op de grafiek:
+
+    ![Scherm opname van de weer gave van de grafiek.](media/itsmc-resync-servicenow/dashboard-graph-click.png)
+
+5. Met dit dash board kunt u de status en de fouten in uw connector controleren.
+    ![Scherm opname van de status van de connector.](media/itsmc-resync-servicenow/connector-dashboard.png)
+
+### <a name="service-map"></a>Service overzicht
 
 U kunt ook visualiseren van de incidenten die zijn gesynchroniseerd met de betrokken computers in Servicetoewijzing.
 

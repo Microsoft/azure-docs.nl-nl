@@ -1,7 +1,7 @@
 ---
 title: Xamarin Android-code configuratie en probleem oplossing (MSAL.NET) | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over overwegingen voor het gebruik van Xamarin Android met micro soft Authentication Library voor .NET (MSAL.NET).
+description: Meer informatie over overwegingen voor het gebruik van Xamarin Android met de micro soft Authentication Library voor .NET (MSAL.NET).
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,16 +13,16 @@ ms.date: 08/28/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 320d48535c4792a4d610888c6a7030568ccf16bc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 34f2b146dda6e739f977c4894b5ec333c79d74d4
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995179"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063430"
 ---
 # <a name="configuration-requirements-and-troubleshooting-tips-for-xamarin-android-with-msalnet"></a>Configuratie vereisten en tips voor probleem oplossing voor Xamarin Android met MSAL.NET
 
-Er zijn verschillende configuratie wijzigingen die u moet aanbrengen in uw code bij gebruik van Xamarin Android met micro soft Authentication Library voor .NET (MSAL.NET). In de volgende secties worden de vereiste wijzigingen beschreven, gevolgd door een sectie voor het [oplossen van problemen](#troubleshooting) , waarmee u een aantal van de meest voorkomende problemen kunt voor komen.
+Er zijn verschillende configuratie wijzigingen die u moet aanbrengen in uw code bij gebruik van Xamarin Android met de micro soft-verificatie bibliotheek voor .NET (MSAL.NET). In de volgende secties worden de vereiste wijzigingen beschreven, gevolgd door een sectie voor het [oplossen van problemen](#troubleshooting) , waarmee u een aantal van de meest voorkomende problemen kunt voor komen.
 
 ## <a name="set-the-parent-activity"></a>De bovenliggende activiteit instellen
 

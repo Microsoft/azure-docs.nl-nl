@@ -11,12 +11,13 @@ ms.workload: identity
 ms.topic: conceptual
 ms.date: 06/28/2019
 ms.author: ryanwi
-ms.openlocfilehash: 3c540c1b032676e07450eccfea3f9618ddc3ee64
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ROBOTS: NOINDEX
+ms.openlocfilehash: 222c961f9e5587cd5526778e6ef1c800f5085a69
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017066"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064297"
 ---
 # <a name="azure-portal-registration-fields-for-custom-developed-apps"></a>Registratievelden in Azure-portal voor zelf ontwikkelde apps
 

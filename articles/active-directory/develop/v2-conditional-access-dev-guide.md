@@ -1,5 +1,5 @@
 ---
-title: Hulp voor ontwikkelaars bij voorwaardelijke toegang van Azure Active Directory
+title: Ontwikkelaars richtlijnen voor voorwaardelijke toegang Azure Active Directory
 titleSuffix: Microsoft identity platform
 description: Richt lijnen voor ontwikkel aars en scenario's voor voorwaardelijke toegang tot Azure AD en het micro soft Identity-platform.
 services: active-directory
@@ -14,14 +14,14 @@ ms.subservice: develop
 ms.custom: aaddev
 ms.topic: conceptual
 ms.workload: identity
-ms.openlocfilehash: b1bfefb3b72c151e7a61068b3c0ad9f3e2bc4a6f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8935cb3208aadc2822af1f57067877f9cedcb931
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88120623"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064365"
 ---
-# <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Hulp voor ontwikkelaars bij voorwaardelijke toegang van Azure Active Directory
+# <a name="developer-guidance-for-azure-active-directory-conditional-access"></a>Ontwikkelaars richtlijnen voor voorwaardelijke toegang Azure Active Directory
 
 De functie voor voorwaardelijke toegang in Azure Active Directory (Azure AD) biedt een van de volgende manieren om uw app te beveiligen en een service te beveiligen. Met voorwaardelijke toegang kunnen ontwikkel aars en zakelijke klanten services op talrijke manieren beveiligen, waaronder:
 
@@ -43,7 +43,7 @@ Er wordt uitgegaan van kennis van apps met [één](quickstart-register-app.md) e
 
 ### <a name="app-types-impacted"></a>Beïnvloede app-typen
 
-In de meeste gevallen wordt de werking van een app door voorwaardelijke toegang niet gewijzigd of zijn wijzigingen van de ontwikkelaar vereist.In bepaalde gevallen, wanneer een app indirect of op de achtergrond een token voor een service aanvraagt, vereist een app code wijzigingen voor het afhandelen van voorwaardelijke toegang ' uitdagingen '.Het kan net zo eenvoudig zijn als het uitvoeren van een interactieve aanmeldings aanvraag.
+In de meeste gevallen wordt de werking van een app door voorwaardelijke toegang niet gewijzigd of zijn wijzigingen van de ontwikkelaar vereist. In bepaalde gevallen, wanneer een app indirect of op de achtergrond een token voor een service aanvraagt, vereist een app code wijzigingen voor het afhandelen van voorwaardelijke toegang ' uitdagingen '. Het kan net zo eenvoudig zijn als het uitvoeren van een interactieve aanmeldings aanvraag.
 
 Met name de volgende scenario's vereisen code voor het afhandelen van voorwaardelijke toegang "uitdagingen":
 
@@ -178,10 +178,10 @@ Onze app moet worden onderschept `error=interaction_required` . De toepassing ka
 
 Als u dit scenario wilt uitproberen, raadpleegt u ons [js Spa-code voorbeeld](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/blob/a2b257381b410c765ee01ecb611aa6f98c099eb1/2.%20Web%20API%20now%20calls%20Microsoft%20Graph/README.md). Dit code voorbeeld maakt gebruik van het beleid voor voorwaardelijke toegang en de Web-API die u eerder hebt geregistreerd met een JS SPA om dit scenario te demonstreren. Hier ziet u hoe u de claim Challenge goed kunt afhandelen en een toegangs token krijgt dat kan worden gebruikt voor uw web-API. U kunt ook het voor beeld van de algemene [Angular.js code](https://github.com/Azure-Samples/active-directory-javascript-graphapi-v2) uitchecken voor hulp bij een hoek Spa
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 * Zie [voorwaardelijke toegang in azure Active Directory](../conditional-access/overview.md)voor meer informatie over de mogelijkheden.
 * Zie voor [beelden](sample-v2-code.md)voor meer Azure ad-code voorbeelden.
-* Voor meer informatie over de MSAL-SDK en toegang tot de referentie documentatie raadpleegt u [overzicht van micro soft Authentication Library](msal-overview.md).
+* Zie het [overzicht van micro soft-verificatie bibliotheek](msal-overview.md)voor meer informatie over de MSAL-SDK en toegang tot de referentie documentatie.
 * Zie [gebruikers aanmelden met het multi tenant-patroon](howto-convert-app-to-be-multi-tenant.md)voor meer informatie over scenario's met meerdere tenants.
 * Meer informatie over [voorwaardelijke toegang en het beveiligen van de toegang tot IOT-apps](/azure/architecture/example-scenario/iot-aad/iot-aad).

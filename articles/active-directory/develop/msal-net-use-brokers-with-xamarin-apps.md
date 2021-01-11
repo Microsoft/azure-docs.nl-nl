@@ -1,7 +1,7 @@
 ---
 title: Brokers gebruiken met Xamarin iOS & Android | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over het instellen van Xamarin iOS-toepassingen die Microsoft Authenticator en micro soft Authentication Library voor .NET (MSAL.NET) kunnen gebruiken. Meer informatie over het migreren van Azure AD-verificatie bibliotheek voor .NET (ADAL.NET) naar micro soft Authentication Library voor .NET (MSAL.NET).
+description: Meer informatie over het instellen van Xamarin iOS-toepassingen die gebruikmaken van de Microsoft Authenticator en de micro soft-verificatie bibliotheek voor .NET (MSAL.NET). Meer informatie over hoe u migreert van Azure AD Authentication Library voor .NET (ADAL.NET) naar de micro soft Authentication Library voor .NET (MSAL.NET).
 author: jmprieur
 manager: CelesteDG
 ms.service: active-directory
@@ -12,12 +12,12 @@ ms.date: 09/08/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 10fb55cc133d5d6b39ca2809474ff20dfe500708
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 73fbda9a3356e2877617391430a7f2b555b1a0e5
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017796"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063481"
 ---
 # <a name="use-microsoft-authenticator-or-intune-company-portal-on-xamarin-applications"></a>Microsoft Authenticator of Intune-bedrijfsportal gebruiken in Xamarin-toepassingen
 
@@ -183,7 +183,7 @@ Voeg de omleidings-URI toe aan de registratie van de app in de [Azure Portal](ht
 
 **De omleidings-URI genereren:**
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>.
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Selecteer **Azure Active Directory**  >  **app-registraties** > de geregistreerde app
 1. **Verificatie** selecteren  >  **een platform toevoegen**  >  **IOS/macOS**
 1. Voer uw bundel-ID in en selecteer vervolgens **configureren**.

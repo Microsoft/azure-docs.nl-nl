@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 9b6ea9491575236a3ef84d660ead8022d13e01ef
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 80cacdcda39d3a7c443c1c94a797e69ba9a52bfd
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964125"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065453"
 ---
 # <a name="eav4-and-easv4-series"></a>Eav4- en Easv4-serie
 
@@ -32,15 +32,15 @@ De grootte van de Eav4-serie is gebaseerd op de 2.35 GHz AMD EPYC<sup>TM</sup> 7
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maximale tijdelijke opslagdoorvoer: IOPS / MBps lezen / MBps schrijven | Max. aantal NIC's | Verwachte netwerk bandbreedte (Mbps) |
 | -----|-----|-----|-----|-----|-----|-----|-----|
-| Standard \_ E2a \_ v4|2|16|50|4|3000 / 46 / 23|2 | 1000 |
-| Standard \_ E4a \_ v4|4|32|100|8|6000 / 93 / 46|2 | 2000 |
-| Standard \_ E8a \_ v4|8|64|200|16|12.000 / 187 / 93|4 | 4000 |
-| Standard \_ E16a \_ v4|16|128|400|32|24.000 / 375 / 187|8 | 8000 |
-| Standard \_ E20a \_ v4|20|160|500|32|30000/468/234|8 | 10.000 |
-| Standard \_ E32a \_ v4|32|256|800|32|48.000 / 750 / 375|8 | 16000 |
-| Standard \_ E48a \_ v4|48|384|1200|32|96000/1000 (500)|8 | 24000 |
-| Standard \_ E64a \_ v4|64|512|1600|32|96000/1000 (500)|8 | 30.000 |
-| Standard \_ E96a \_ v4|96|672|2400|32|96000/1000 (500)|8 | 30.000 |
+| Standard \_ E2a \_ v4|2|16|50|4|3000 / 46 / 23|2 | 800 |
+| Standard \_ E4a \_ v4|4|32|100|8|6000 / 93 / 46|2 | 1600 |
+| Standard \_ E8a \_ v4|8|64|200|16|12.000 / 187 / 93|4 | 3200 |
+| Standard \_ E16a \_ v4|16|128|400|32|24.000 / 375 / 187|8 | 6400 |
+| Standard \_ E20a \_ v4|20|160|500|32|30000/468/234|8 | 8000 |
+| Standard \_ E32a \_ v4|32|256|800|32|48.000 / 750 / 375|8 | 12800 |
+| Standard \_ E48a \_ v4|48|384|1200|32|96000/1000 (500)|8 | 19200 |
+| Standard \_ E64a \_ v4|64|512|1600|32|96000/1000 (500)|8 | 25600 |
+| Standard \_ E96a \_ v4|96|672|2400|32|96000/1000 (500)|8 | 32000 |
 
 ## <a name="easv4-series"></a>Easv4-serie
 
@@ -56,15 +56,15 @@ De grootte van de Easv4-serie is gebaseerd op de 2.35 GHz AMD EPYC<sup>TM</sup> 
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maximale doorvoer voor schijven met caching en tijdelijke opslag: IOPS / MBps (cachegrootte in GiB) | Max. doorvoer voor schijf zonder caching: IOPS/MBps | Max. aantal NIC's | Verwachte netwerk bandbreedte (Mbps) |
 |-----|-----|-----|-----|-----|-----|-----|-----|-----|
-| Standard_E2as_v4|2|16|32|4|4000/32 (50)|3200/48|2 | 1000 |
-| Standard_E4as_v4|4|32|64|8|8000/64 (100)|6400/96|2 | 2000 |
-| Standard_E8as_v4|8|64|128|16|16000/128 (200)|12800/192|4 | 4000 |
-| Standard_E16as_v4|16|128|256|32|32000/255 (400)|25600/384|8 | 8000 |
-| Standard_E20as_v4|20|160|320|32|40000/320 (500)|32000/480|8 | 10.000 |
-| Standard_E32as_v4|32|256|512|32|64000/510 (800)|51200/768|8 | 16000 |
-| Standard_E48as_v4|48|384|768|32|96000/1020 (1200)|76800/1148|8 | 24000 |
-| Standard_E64as_v4|64|512|1024|32|128000/1020 (1600)|80000/1200|8 | 30.000 |
-| Standard_E96as_v4 <sup>1</sup>|96|672|1344|32|192000/1020 (2400)|80000/1200|8 | 30.000 |
+| Standard_E2as_v4|2|16|32|4|4000/32 (50)|3200/48|2 | 800 |
+| Standard_E4as_v4|4|32|64|8|8000/64 (100)|6400/96|2 | 1600 |
+| Standard_E8as_v4|8|64|128|16|16000/128 (200)|12800/192|4 | 3200 |
+| Standard_E16as_v4|16|128|256|32|32000/255 (400)|25600/384|8 | 6400 |
+| Standard_E20as_v4|20|160|320|32|40000/320 (500)|32000/480|8 | 8000 |
+| Standard_E32as_v4|32|256|512|32|64000/510 (800)|51200/768|8 | 12800 |
+| Standard_E48as_v4|48|384|768|32|96000/1020 (1200)|76800/1148|8 | 19200 |
+| Standard_E64as_v4|64|512|1024|32|128000/1020 (1600)|80000/1200|8 | 25600 |
+| Standard_E96as_v4 <sup>1</sup>|96|672|1344|32|192000/1020 (2400)|80000/1200|8 | 32000 |
 
 Er zijn <sup>1</sup> [beperkte core-grootten beschikbaar](./constrained-vcpu.md).
 
@@ -72,9 +72,9 @@ Er zijn <sup>1</sup> [beperkte core-grootten beschikbaar](./constrained-vcpu.md)
 
 ## <a name="other-sizes-and-information"></a>Andere grootten en informatie
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

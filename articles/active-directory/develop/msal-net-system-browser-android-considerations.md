@@ -1,7 +1,7 @@
 ---
 title: Xamarin Android-systeem browser overwegingen (MSAL.NET) | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over overwegingen voor het gebruik van systeem browsers op Xamarin Android met micro soft Authentication Library voor .NET (MSAL.NET).
+description: Meer informatie over overwegingen voor het gebruik van systeem browsers op Xamarin Android met de micro soft-verificatie bibliotheek voor .NET (MSAL.NET).
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -13,16 +13,16 @@ ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 8f755b42249a88a2d37117003d561f79aea6b170
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4230a194fb18587a209c100a39b0924e6170502d
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88165988"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063464"
 ---
 #  <a name="xamarin-android-system-browser-considerations-for-using-msalnet"></a>Xamarin Android-systeem browser overwegingen voor het gebruik van MSAL.NET
 
-In dit artikel wordt beschreven wat u moet overwegen wanneer u de systeem browser gebruikt op Xamarin Android met micro soft Authentication Library voor .NET (MSAL.NET).
+In dit artikel wordt beschreven wat u moet overwegen wanneer u de systeem browser op Xamarin Android gebruikt met de micro soft Authentication Library voor .NET (MSAL.NET).
 
 Vanaf MSAL.NET 2.4.0 Preview ondersteunt MSAL.NET andere browsers dan Chrome. Het is niet meer nodig om Chrome te installeren op het Android-apparaat voor authenticatie.
 
@@ -44,16 +44,16 @@ De volgende tabel geeft een lijst van de apparaten en browsers die zijn getest v
 
 | Apparaat | Browser     |  Resultaat  | 
 | ------------- |:-------------:|:-----:|
-| Huawei/één + | Chrome\* | Door|
-| Huawei/één + | Edge\* | Door|
-| Huawei/één + | Firefox\* | Door|
-| Huawei/één + | Brave\* | Door|
-| Eén + | Ecosia\* | Door|
-| Eén + | Kiwi\* | Door|
-| Huawei/één + | Opera | Door|
-| Huawei | OperaMini | Door|
-| Huawei/één + | Inbrowser | Door|
-| Eén + | Maxthon | Door|
+| Huawei/één + | Chrome\* | Geslaagd|
+| Huawei/één + | Edge\* | Geslaagd|
+| Huawei/één + | Firefox\* | Geslaagd|
+| Huawei/één + | Brave\* | Geslaagd|
+| Eén + | Ecosia\* | Geslaagd|
+| Eén + | Kiwi\* | Geslaagd|
+| Huawei/één + | Opera | Geslaagd|
+| Huawei | OperaMini | Geslaagd|
+| Huawei/één + | Inbrowser | Geslaagd|
+| Eén + | Maxthon | Geslaagd|
 | Huawei/één + | DuckDuckGo | Door de gebruiker geannuleerde authenticatie|
 | Huawei/één + | UC-browser | Door de gebruiker geannuleerde authenticatie|
 | Eén + | Dolfijnen | Door de gebruiker geannuleerde authenticatie|

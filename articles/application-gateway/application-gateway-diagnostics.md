@@ -8,12 +8,12 @@ ms.service: application-gateway
 ms.topic: article
 ms.date: 11/22/2019
 ms.author: victorh
-ms.openlocfilehash: 9d2fba48762e11a92f6f3925c969b01aebbe3630
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: e18267d5a810826e41e05eb3dde3cd82a8eb9197
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347588"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065317"
 ---
 # <a name="back-end-health-and-diagnostic-logs-for-application-gateway"></a>Back-end status-en Diagnostische logboeken voor Application Gateway
 
@@ -222,7 +222,7 @@ Het toegangs logboek wordt alleen gegenereerd als u het hebt ingeschakeld op elk
 |serverRouted| De back-endserver die Application Gateway naar verzendt.|
 |serverStatus| HTTP-status code van de back-endserver.|
 |serverResponseLatency| Latentie van het antwoord van de back-endserver.|
-|host| Het adres dat wordt vermeld in de host-header van de aanvraag. Bij herschreven bevat dit veld de bijgewerkte hostnaam|
+|host| Het adres dat wordt vermeld in de host-header van de aanvraag. Als herschreven met behulp van header herschrijven, bevat dit veld de bijgewerkte hostnaam|
 |originalRequestUriWithArgs| Dit veld bevat de oorspronkelijke aanvraag-URL |
 |requestUri| Dit veld bevat de URL na de herschrijf bewerking op Application Gateway |
 |originalHost| Dit veld bevat de oorspronkelijke naam van de aanvraag-host

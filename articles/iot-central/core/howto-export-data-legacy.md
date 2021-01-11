@@ -7,19 +7,19 @@ ms.author: viviali
 ms.date: 06/25/2020
 ms.topic: how-to
 ms.service: iot-central
-ms.openlocfilehash: 9e5f4fd14f56f0a2dff45dd2650ea552b07fecd7
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: d4c099d29a843b4c354ffb218887dc7ffab51771
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94987351"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065436"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export-legacy"></a>IoT-gegevens exporteren naar Cloud bestemmingen met behulp van gegevens export (verouderd)
 
 > [!Note]
 > In dit artikel worden de verouderde functies voor gegevens export in IoT Central beschreven.
 >
-> - Zie [IOT-gegevens naar Cloud bestemmingen exporteren met behulp van gegevens export](./howto-export-data.md)voor meer informatie over de nieuwe functies voor het exporteren van gegevens.
+> - Zie [IOT-gegevens exporteren naar Cloud bestemmingen met behulp van gegevens export](./howto-export-data.md)voor meer informatie over de nieuwste functies voor het exporteren van gegevens.
 > - Zie voor meer informatie over de verschillen tussen de functies voor het exporteren van de voorbeeld gegevens en verouderde gegevens export de [vergelijkings tabel](./howto-export-data.md#comparison-of-legacy-data-export-and-data-export).
 
 In dit artikel wordt beschreven hoe u de functie voor gegevens export kunt gebruiken in azure IoT Central. Met deze functie kunt u uw gegevens continu exporteren naar **azure Event hubs**, **Azure service bus** of **Azure Blob Storage** -exemplaren. Gegevens export maakt gebruik van de JSON-indeling en kan informatie over telemetrie, apparaatgegevens en apparaatinstellingen bevatten. De geëxporteerde gegevens gebruiken voor:

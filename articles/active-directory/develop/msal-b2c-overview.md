@@ -1,7 +1,7 @@
 ---
 title: MSAL.js gebruiken met Azure AD B2C
 titleSuffix: Microsoft identity platform
-description: Met micro soft-verificatie bibliotheek voor Java script (MSAL.js) kunnen toepassingen met Azure AD B2C werken en tokens verkrijgen om beveiligde web-Api's aan te roepen. Deze web-Api's kunnen worden Microsoft Graph, andere Api's van micro soft, Web-Api's van anderen of uw eigen web-API.
+description: Met de micro soft-verificatie bibliotheek voor Java script (MSAL.js) kunnen toepassingen met Azure AD B2C werken en tokens verkrijgen om beveiligde web-Api's aan te roepen. Deze web-Api's kunnen worden Microsoft Graph, andere Api's van micro soft, Web-Api's van anderen of uw eigen web-API.
 services: active-directory
 author: negoe
 manager: CelesteDG
@@ -13,14 +13,14 @@ ms.date: 06/05/2020
 ms.author: negoe
 ms.reviewer: nacanuma
 ms.custom: aaddev devx-track-js
-ms.openlocfilehash: ef1c0003978251dd2637915e56dc396e85f4438f
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 53294a30b38bed7ab7516443277cac24e4fef4c1
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107869"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063719"
 ---
-# <a name="use-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Micro soft-verificatie bibliotheek voor Java script gebruiken om te werken met Azure AD B2C
+# <a name="use-the-microsoft-authentication-library-for-javascript-to-work-with-azure-ad-b2c"></a>Gebruik de micro soft-verificatie bibliotheek voor Java script om met Azure AD B2C te werken
 
 Met de [micro soft-verificatie bibliotheek voor Java script (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) kunnen java script-ontwikkel aars gebruikers verifiëren met sociale en lokale identiteiten met behulp van [Azure Active Directory B2C](../../active-directory-b2c/overview.md) (Azure AD B2C).
 
@@ -215,6 +215,6 @@ Wanneer een gebruiker een **verg eten wacht woord** selecteert, genereert uw toe
 
 Meer informatie over deze Azure AD B2C-concepten:
 
-- [Gebruikersstromen](../../active-directory-b2c/tutorial-create-user-flows.md)
+- [Gebruikers stromen](../../active-directory-b2c/tutorial-create-user-flows.md)
 - [Aangepast beleid](../../active-directory-b2c/custom-policy-get-started.md)
 - [UX-aanpassing](../../active-directory-b2c/configure-user-input.md)

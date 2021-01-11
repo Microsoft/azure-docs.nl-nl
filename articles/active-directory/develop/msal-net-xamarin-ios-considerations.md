@@ -1,7 +1,7 @@
 ---
 title: Xamarin iOS-overwegingen (MSAL.NET) | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over overwegingen voor het gebruik van Xamarin iOS met micro soft Authentication Library voor .NET (MSAL.NET).
+description: Meer informatie over overwegingen voor het gebruik van Xamarin iOS met de micro soft Authentication Library voor .NET (MSAL.NET).
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,16 +13,16 @@ ms.date: 09/09/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: 70ab4a151fe73b59663fd8fa16170b2e507c2511
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62eb4ab9eb6e4b0e7be0f7aadae1173950d21615
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91258056"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064484"
 ---
 # <a name="considerations-for-using-xamarin-ios-with-msalnet"></a>Overwegingen voor het gebruik van Xamarin iOS met MSAL.NET
 
-Wanneer u micro soft Authentication Library voor .NET (MSAL.NET) op Xamarin iOS gebruikt, moet u het volgende doen:
+Wanneer u de micro soft Authentication Library voor .NET (MSAL.NET) op Xamarin iOS gebruikt, moet u het volgende doen:
 
 - De functie overschrijven en implementeren `OpenUrl` in `AppDelegate` .
 - Sleutel hanger groepen inschakelen.
@@ -98,7 +98,7 @@ Uw toepassing kan Microsoft Authenticator als een Broker gebruiken om het volgen
 
 - **SSO**: wanneer u SSO inschakelt, hoeven uw gebruikers zich niet aan te melden bij elke toepassing.
 - **Apparaat-id**: gebruik apparaat-id om te verifiëren door toegang te krijgen tot het certificaat van het apparaat. Dit certificaat wordt gemaakt op het apparaat wanneer het is gekoppeld aan de werk plek. Uw toepassing is gereed als de Tenant beheerders voorwaardelijke toegang met betrekking tot de apparaten inschakelen.
-- **Verificatie**van de toepassings-id: wanneer een toepassing de Broker aanroept, wordt de omleidings-URL door gegeven. De Broker controleert de omleidings-URL.
+- **Verificatie** van de toepassings-id: wanneer een toepassing de Broker aanroept, wordt de omleidings-URL door gegeven. De Broker controleert de omleidings-URL.
 
 Zie [Microsoft Authenticator of Microsoft Intune bedrijfsportal in Xamarin IOS-en Android-toepassingen gebruiken](msal-net-use-brokers-with-xamarin-apps.md)voor meer informatie over het inschakelen van een Broker.
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 12/08/2020
 ms.author: kenwith
 ms.reviewer: paulgarn
-ms.openlocfilehash: 5841af4225f88b36fe727b60a597af208ac830f5
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: 92d0dad86b3f048eb96dd7b17ed09f6e20d7cde2
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827169"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063294"
 ---
 # <a name="microsoft-identity-platform-token-exchange-scenarios-with-saml-and-oidcoauth"></a>Scenario's voor uitwisseling van micro soft Identity platform-tokens met SAML en OIDC/OAuth
 
@@ -30,7 +30,7 @@ Veel apps worden geïmplementeerd met SAML. De Graph API maakt echter gebruik va
 De algemene strategie bestaat uit het toevoegen van de OIDC/OAuth-stack aan uw app. Met uw app die beide standaarden implementeert, kunt u een sessie cookie gebruiken. U hoeft geen token expliciet uit te wisselen. U meldt zich aan bij een gebruiker met SAML, waarmee een sessie cookie wordt gegenereerd. Wanneer de Graph API een OAuth-stroom aanroept, gebruikt u de sessie cookie om te verifiëren. Deze strategie gaat ervan uit dat de controles voor voorwaardelijke toegang worden goedgekeurd en dat de gebruiker gemachtigd is.
 
 > [!NOTE]
-> De aanbevolen bibliotheek voor het toevoegen van het gedrag OIDC/OAuth is de micro soft Authentication Library (MSAL). Zie [overzicht van micro soft Authentication Library (MSAL)](msal-overview.md)voor meer informatie over MSAL. De vorige bibliotheek heeft Active Directory Authentication Library (ADAL) genoemd, maar dit wordt niet aanbevolen omdat MSAL deze vervangt.
+> De aanbevolen bibliotheek voor het toevoegen van het gedrag OIDC/OAuth is de micro soft Authentication Library (MSAL). Zie [overzicht van de micro soft Authentication Library (MSAL)](msal-overview.md)voor meer informatie over MSAL. De vorige bibliotheek heeft Active Directory Authentication Library (ADAL) genoemd, maar dit wordt niet aanbevolen omdat MSAL deze vervangt.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Verificatiestromen en app-scenario's](authentication-flows-app-scenarios.md)

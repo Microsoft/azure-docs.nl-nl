@@ -13,15 +13,15 @@ ms.date: 05/29/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 5eb30f7dcf4b459b0af0bd8de965971fbbe44863
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0c96d161e55261af1bbe04eae6ead1d245158d02
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85477648"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064824"
 ---
 # <a name="avoid-page-reloads-when-acquiring-and-renewing-tokens-silently-using-msaljs"></a>Voor komen dat pagina's opnieuw worden geladen bij het terughalen en vernieuwen van tokens op de achtergrond met behulp van MSAL.js
-Micro soft Authentication Library voor Java script (MSAL.js) gebruikt verborgen `iframe` elementen voor het op de achtergrond verkrijgen en vernieuwen van tokens. Azure AD retourneert het token terug naar de geregistreerde redirect_uri die in de token aanvraag is opgegeven (standaard is dit de hoofd pagina van de app). Omdat het antwoord een 302 is, resulteert dit in de HTML-code die overeenkomt met de `redirect_uri` geladen in de `iframe` . Normaal gesp roken is de app `redirect_uri` de hoofd pagina, waardoor deze opnieuw wordt geladen.
+In de micro soft-verificatie bibliotheek voor Java script (MSAL.js) worden verborgen `iframe` elementen gebruikt voor het op de achtergrond verkrijgen en vernieuwen van tokens. Azure AD retourneert het token terug naar de geregistreerde redirect_uri die in de token aanvraag is opgegeven (standaard is dit de hoofd pagina van de app). Omdat het antwoord een 302 is, resulteert dit in de HTML-code die overeenkomt met de `redirect_uri` geladen in de `iframe` . Normaal gesp roken is de app `redirect_uri` de hoofd pagina, waardoor deze opnieuw wordt geladen.
 
 Als er in andere gevallen verificatie is vereist voor het navigeren naar de hoofd pagina van de app, kan dit leiden tot geneste `iframe` elementen of `X-Frame-Options: deny` fouten.
 

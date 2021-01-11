@@ -13,15 +13,15 @@ ms.date: 04/25/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 9c3292a31e5f750c16933acf94509e0ad226080a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ef29f6fe3403809d01fcea382474c514319b7c0
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81534309"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063753"
 ---
 # <a name="public-client-and-confidential-client-applications"></a>Open bare client-en vertrouwelijke client toepassingen
-Micro soft Authentication Library (MSAL) definieert twee typen clients: open bare clients en vertrouwelijke clients. De twee client typen zijn herkenbaar aan de mogelijkheid om veilig te verifiëren met de autorisatie server en de vertrouwelijkheid van hun client referenties te hand haven. Azure AD Authentication Library (ADAL) gebruikt daarentegen de zogenaamde *verificatie context* (een verbinding met Azure AD).
+De micro soft Authentication Library (MSAL) definieert twee typen clients: open bare clients en vertrouwelijke clients. De twee client typen zijn herkenbaar aan de mogelijkheid om veilig te verifiëren met de autorisatie server en de vertrouwelijkheid van hun client referenties te hand haven. Azure AD Authentication Library (ADAL) gebruikt daarentegen de zogenaamde *verificatie context* (een verbinding met Azure AD).
 
 - **Vertrouwelijke client toepassingen** zijn apps die worden uitgevoerd op servers (Web apps, Web API-apps of zelfs service/daemon-apps). Ze worden beschouwd als moeilijk te benaderen en daarom kan een toepassings geheim worden bewaard. Vertrouwelijke clients kunnen configuratie-en tijd geheimen bevatten. Elk exemplaar van de client heeft een afzonderlijke configuratie (inclusief client-ID en client geheim). Deze waarden zijn moeilijk te extra heren voor eind gebruikers. Een web-app is de meest voorkomende vertrouwelijke client. De client-ID wordt weer gegeven via de webbrowser, maar het geheim wordt alleen door gegeven in het back-upkanaal en nooit rechtstreeks zichtbaar.
 
@@ -43,7 +43,7 @@ Hier volgen enkele overeenkomsten en verschillen tussen open bare client-en vert
 - Beide typen apps beheren gebruikers accounts en kunnen een account ophalen uit de gebruikers token cache, een account ophalen uit de id of een account verwijderen.
 - Open bare client-apps hebben vier manieren om een token (vier verificatie stromen) te verkrijgen. Vertrouwelijke client-apps hebben drie manieren om een token te verkrijgen (en een manier om de URL van het eind punt van de identiteits provider te bemachtigen). Zie [tokens ophalen](msal-acquire-cache-tokens.md)voor meer informatie.
 
-Als u ADAL hebt gebruikt, ziet u mogelijk dat, in tegens telling tot de verificatie context van ADAL, in MSAL de client-ID (ook wel de *toepassings-id* of *App-ID*genoemd) wordt door gegeven na de constructie van de toepassing. Het hoeft niet opnieuw te worden door gegeven wanneer de app een token ophaalt. Dit geldt voor zowel voor open bare als vertrouwelijke client-apps. Voor constructors van vertrouwelijke client-apps worden ook client referenties door gegeven: het geheim dat ze delen met de ID-provider.
+Als u ADAL hebt gebruikt, ziet u mogelijk dat, in tegens telling tot de verificatie context van ADAL, in MSAL de client-ID (ook wel de *toepassings-id* of *App-ID* genoemd) wordt door gegeven na de constructie van de toepassing. Het hoeft niet opnieuw te worden door gegeven wanneer de app een token ophaalt. Dit geldt voor zowel voor open bare als vertrouwelijke client-apps. Voor constructors van vertrouwelijke client-apps worden ook client referenties door gegeven: het geheim dat ze delen met de ID-provider.
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over:

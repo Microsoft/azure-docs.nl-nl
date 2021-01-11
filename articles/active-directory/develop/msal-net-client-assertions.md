@@ -1,7 +1,7 @@
 ---
 title: Client verklaringen (MSAL.NET) | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over ondertekende client verklaringen ondersteuning voor vertrouwelijke client toepassingen in micro soft Authentication Library voor .NET (MSAL.NET).
+description: Meer informatie over ondertekende client verklaringen ondersteuning voor vertrouwelijke client toepassingen in de micro soft Authentication Library voor .NET (MSAL.NET).
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.date: 9/30/2020
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: bb1ce0a8ba568dc651accdc5f8c84e9c2c980e73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f1ff679bddf2afc355516f2a04b3307d4a260a5c
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91612809"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063617"
 ---
 # <a name="confidential-client-assertions"></a>Verklaringen van vertrouwelijke client
 

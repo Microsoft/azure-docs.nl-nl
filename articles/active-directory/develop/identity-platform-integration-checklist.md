@@ -12,12 +12,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.reviewer: lenalepa, sureshja, jesakowi
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 47c3c091e767cac63bb814469397ef1a0aeca3a4
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 011acdf98c8430bfb7ba1b02ec24a170f829e48f
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516494"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063787"
 ---
 # <a name="microsoft-identity-platform-best-practices-and-recommendations"></a>Best practices en aanbevelingen voor het Microsoft-identiteitsplatform
 
@@ -30,7 +30,7 @@ Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effecti
 > [!TIP]
 > De *integratie-assistent* in de Azure Portal kan u helpen bij het Toep assen van veel van deze aanbevolen procedures en aanbevelingen. Selecteer een van de [app-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) in de Azure Portal en selecteer vervolgens het menu-item van de **integratie-assistent** om aan de slag te gaan met de-assistent.
 
-## <a name="basics"></a>Basisbeginselen
+## <a name="basics"></a>Basisinstellingen
 
 ![in ](./media/active-directory-integration-checklist/checkbox-two.svg) het selectie vakje [wordt het micro soft-platform beleid](/legal/microsoft-identity-platform/terms-of-use)gelezen en begrepen. Zorg ervoor dat uw toepassing voldoet aan de voor waarden die worden beschreven, zoals ze zijn ontworpen om gebruikers en het platform te beveiligen.
 
@@ -38,7 +38,7 @@ Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effecti
 
 ![selectievakje](./media/active-directory-integration-checklist/checkbox-two.svg) Zorg ervoor dat de informatie die is gekoppeld aan het account dat u hebt gebruikt voor het registreren en beheren van apps up-to-date is.
 
-## <a name="branding"></a>Branding
+## <a name="branding"></a>Huisstijl
 
 ![het selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) voldoet aan de [huisstijl richtlijnen voor toepassingen](howto-add-branding-in-azure-ad-apps.md).
 
@@ -70,7 +70,7 @@ Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effecti
 
 ![selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) niet rechtstreeks Program meren op protocollen zoals OAuth 2,0 en open id. Maak in plaats daarvan gebruik van de [micro soft Authentication Library (MSAL)](msal-overview.md). De MSAL-bibliotheken beveiligen beveiligings protocollen veilig in een gemakkelijk te gebruiken bibliotheek en u krijgt ingebouwde ondersteuning voor scenario's voor [voorwaardelijke toegang](../conditional-access/overview.md) , [SSO (single sign-on)](../manage-apps/what-is-single-sign-on.md)voor het apparaat en ingebouwde ondersteuning voor het opslaan van tokens. Zie de lijst met door micro soft ondersteunde [client bibliotheken](reference-v2-libraries.md#microsoft-supported-client-libraries) en middleware- [bibliotheken](reference-v2-libraries.md#microsoft-supported-server-middleware-libraries) en de lijst met [compatibele client bibliotheken](reference-v2-libraries.md#compatible-client-libraries)van derden voor meer informatie.<br/><br/>Als u code nodig hebt voor de verificatie protocollen, moet u een methodologie zoals [micro soft sdl](https://www.microsoft.com/sdl/default.aspx)volgen. Let op de beveiligings overwegingen in de standaard specificaties van elk protocol.
 
-![selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) Migreer bestaande apps van [Azure Active Directory Authentication Library (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) naar [micro soft-verificatie bibliotheek](msal-overview.md). MSAL is de nieuwste identiteits platform oplossing van micro soft en verdient de voor keur aan ADAL. Het is beschikbaar op .NET, java script, Android, iOS, macOS en is ook in open bare Preview voor python en Java. Meer informatie over het migreren van [ADAL.net](msal-net-migration.md)-, [ADAL.js](msal-compare-msal-js-and-adal-js.md)-en [ADAL.net-en IOS Broker](msal-net-migration-ios-broker.md) -apps.
+![selectie vakje ](./media/active-directory-integration-checklist/checkbox-two.svg) Migreer bestaande apps van [Azure Active Directory Authentication Library (ADAL)](../azuread-dev/active-directory-authentication-libraries.md) naar de [micro soft-verificatie bibliotheek](msal-overview.md). MSAL is de nieuwste identiteits platform oplossing van micro soft en verdient de voor keur aan ADAL. Het is beschikbaar op .NET, java script, Android, iOS, macOS en is ook in open bare Preview voor python en Java. Meer informatie over het migreren van [ADAL.net](msal-net-migration.md)-, [ADAL.js](msal-compare-msal-js-and-adal-js.md)-en [ADAL.net-en IOS Broker](msal-net-migration-ios-broker.md) -apps.
 
 ![selectievakje](./media/active-directory-integration-checklist/checkbox-two.svg) Configureer voor mobiele apps elk platform met de ervaring voor het registreren van toepassingen. Om ervoor te zorgen dat uw toepassing kan profiteren van de Microsoft Authenticator of micro soft Bedrijfsportal voor eenmalige aanmelding, moet uw app een ' Broker omleidings-URI ' hebben geconfigureerd. Hiermee kan micro soft de controle over de toepassing terugsturen na verificatie. Bij het configureren van elk platform helpt de app registratie-ervaring u door het proces. Gebruik de Snelstartgids om een werkend voor beeld te downloaden. Gebruik op iOS, indien mogelijk, brokers en systeem-webweergave.
 
@@ -100,7 +100,7 @@ Gebruik de volgende controle lijst om ervoor te zorgen dat uw toepassing effecti
 
 ![selectievakje](./media/active-directory-integration-checklist/checkbox-two.svg) Test uw toepassing met alle mogelijke accounts die u wilt ondersteunen (bijvoorbeeld werk-of school accounts, persoonlijke micro soft-accounts, onderliggende accounts en soevereine accounts).
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 Gedetailleerde informatie over v2.0 verkennen:
 

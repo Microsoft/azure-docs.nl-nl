@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 5/8/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: a9d8c42432d619ab120afd0bd5734f6fa269b514
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: db85bf19c1b040fea1ed2f5d6dcf904288366c7f
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458107"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050235"
 ---
 # <a name="tutorial-explore-azure-digital-twins-with-a-sample-client-app"></a>Zelfstudie: Azure Digital Twins verkennen met een voorbeeldclient-app
 
@@ -51,27 +51,15 @@ Selecteer *Room.json* om het in het bewerkingsvenster te openen, en pas het als 
 1. **Wijzig een eigenschap**. Wijzig de naam van eigenschap `Humidity` in *HumidityLevel* (of iets anders als u dat wilt. Als u iets anders gebruikt dan *HumidityLevel*, onthoud dan wat u hebt gebruikt en gebruik het overal in de zelfstudie in plaats van *HumidityLevel*).
 1. **Voeg een eigenschap toe**. Plak onder de eigenschap `HumidityLevel` die eindigt op regel 15 de volgende code om de eigenschap `RoomName` toe te voegen aan de ruimte:
 
-    ```json
-    ,
-    {
-      "@type": "Property",
-      "name": "RoomName",
-      "schema": "string"
-    }
-    ```
+    :::code language="json" source="~/digital-twins-docs-samples/models/Room.json" range="16-20":::
+
 1. **Voeg een relatie toe**. Plak onder de eigenschap `RoomName` die u zojuist hebt toegevoegd de volgende code om de mogelijkheid toe te voegen dat deze tweeling *contains*-relaties kan maken met andere tweelingen:
 
-    ```json
-    ,
-    {
-      "@type": "Relationship",
-      "name": "contains"
-    }
-    ```
+    :::code language="json" source="~/digital-twins-docs-samples/models/Room.json" range="21-24":::
 
-Wanneer u klaar bent, zou het bijgewerkte model er als volgt uit moeten zien:
+Wanneer u klaar bent, zou het bijgewerkte model moeten overeenkomen met:
 
-:::image type="content" source="media/tutorial-command-line-app/room-model.png" alt-text="Bewerkte Room.json met bijgewerkte eigenschappen HumidityLevel en RoomName en de relatie 'contains'" border="false":::
+:::code language="json" source="~/digital-twins-docs-samples/models/Room.json":::
 
 Vergeet niet het bestand op te slaan voordat u verdergaat.
 

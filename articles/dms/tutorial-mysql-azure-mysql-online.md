@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 01/08/2020
-ms.openlocfilehash: 41c0bd23bbd2d69506a979c5a36ac40f73258f2c
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: ab03e0bdf7761e45a134ec90685955403fbc433b
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605510"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060381"
 ---
 # <a name="tutorial-migrate-mysql-to-azure-database-for-mysql-online-using-dms"></a>Zelfstudie: MySQL online migreren naar Azure Database for MySQL met behulp van DMS
 
@@ -237,7 +237,7 @@ Nadat de service is gemaakt, zoek deze op in de Azure-portal, open hem en maak v
 
     ![Toewijzen aan doeldatabases](media/tutorial-mysql-to-azure-mysql-online/dms-map-target-details.png)
    > [!NOTE] 
-   > Hoewel u meerdere databases kunt selecteren in deze stap, biedt elke instantie van Azure Database Migration Service ondersteuning voor maximaal vier databases voor gelijktijdige migratie. Ook is er een limiet van twee Azure Database Migration Service-instanties per regio in een abonnement. Als u bijvoorbeeld 40 databases hebt om te migreren, kunt u slechts 8 hiervan gelijktijdig migreren, en alleen als u twee Azure Database Migration Service-instanties hebt gemaakt.
+   > Hoewel u meerdere databases kunt selecteren in deze stap, biedt elke instantie van Azure Database Migration Service ondersteuning voor maximaal vier databases voor gelijktijdige migratie. Ook is er een limiet van tien Azure Database Migration Service-instanties per abonnement per regio. Als u bijvoorbeeld 80 databases hebt om te migreren, kunt u 40 hiervan gelijktijdig migreren naar dezelfde regio, maar alleen als u tien Azure Database Migration Service-instanties hebt gemaakt.
 
 3. Selecteer **Opslaan**, geef op het scherm **Migratieoverzicht** in het tekstvak **Naam activiteit** een naam op voor de migratieactiviteit, en controleer vervolgens het overzicht om te verzekeren dat de bron- en doeldetails overeenkomen met wat u eerder hebt opgegeven.
 

@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: a3427be85314f06b5408c4450e0415768122879f
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: a5764a9f230540d58edf71e8c00781e86589aa9a
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913002"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070164"
 ---
 # <a name="configure-and-submit-training-runs"></a>Trainingsuitvoering configureren en verzenden
 
@@ -216,6 +216,8 @@ Bekijk deze notebooks voor voor beelden van het configureren van uitvoeringen vo
     4. Installeren met behulp van `pip install 'PyJWT<2.0.0'`
     
     Als u een door de gebruiker gemaakte omgeving met uw run verzendt, kunt u overwegen de nieuwste versie van de azureml-core in die omgeving te gebruiken. Versies >= 1.18.0 van azureml-core al pincode PyJWT < 2.0.0. Als u een versie van de azureml-core < 1.18.0 moet gebruiken in de omgeving die u verzendt, moet u ervoor zorgen dat u PyJWT < 2.0.0 in uw PIP-afhankelijkheden opgeeft.
+
+* Het starten van het **reken doel duurt erg lang**: de docker-installatie kopieën voor reken doelen worden geladen van Azure container Registry (ACR). Azure Machine Learning maakt standaard een ACR die gebruikmaakt van de *Basic* -servicelaag. Het wijzigen van de ACR voor uw werk ruimte in de standaard-of Premium-laag kan de tijd verminderen die nodig is om installatie kopieën te bouwen en te laden. Zie [Azure container Registry service lagen](../container-registry/container-registry-skus.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

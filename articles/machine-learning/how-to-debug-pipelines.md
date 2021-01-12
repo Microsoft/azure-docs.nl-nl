@@ -10,12 +10,12 @@ ms.author: laobri
 ms.date: 10/22/2020
 ms.topic: troubleshooting
 ms.custom: troubleshooting, devx-track-python, contperf-fy21q2
-ms.openlocfilehash: 9baf305ab72354c150cb06e594ed8909f2fa1dda
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: d55a9ff4dc2a639fca67d19d9323b9397aa0f409
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739311"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070368"
 ---
 # <a name="troubleshooting-machine-learning-pipelines"></a>Problemen met machine learning pijp lijnen oplossen
 
@@ -33,6 +33,7 @@ De volgende tabel bevat veelvoorkomende problemen bij het ontwikkelen van pijp l
 | Pijp lijn waarbij de stappen niet opnieuw worden gebruikt | Het opnieuw gebruiken van de stap is standaard ingeschakeld, maar zorg ervoor dat u deze niet hebt uitgeschakeld in een pijplijn stap. Als opnieuw gebruiken is uitgeschakeld, `allow_reuse` wordt de para meter in de stap ingesteld op `False` . |
 | De pijp lijn wordt onnodig opnieuw uitgevoerd | Om ervoor te zorgen dat de stappen alleen worden uitgevoerd wanneer de onderliggende gegevens of scripts worden gewijzigd, moet u de bron code mappen voor elke stap loskoppelen. Als u dezelfde bron directory voor meerdere stappen gebruikt, kan het nodig zijn om niet-uitgevoerde opnieuw uit te voeren. Gebruik de `source_directory` para meter voor een pijplijn stap object om naar uw geïsoleerde map voor die stap te verwijzen en zorg ervoor dat u niet hetzelfde `source_directory` pad gebruikt voor meerdere stappen. |
 | Stap langzamer over trainings-epochen of andere herhalings gedrag | Schakel eventuele bestands schrijfopdrachten, inclusief logboek registratie, van `as_mount()` naar in `as_upload()` . De **koppel** modus maakt gebruik van een extern gevirtualiseerde bestands systeem en uploadt het hele bestand telkens wanneer het wordt toegevoegd aan. |
+| Het starten van het reken doel duurt lang | Docker-installatie kopieën voor reken doelen worden geladen van Azure Container Registry (ACR). Azure Machine Learning maakt standaard een ACR die gebruikmaakt van de *Basic* -servicelaag. Het wijzigen van de ACR voor uw werk ruimte in de standaard-of Premium-laag kan de tijd verminderen die nodig is om installatie kopieën te bouwen en te laden. Zie [Azure container Registry service lagen](../container-registry/container-registry-skus.md)voor meer informatie. |
 
 ### <a name="authentication-errors"></a>Verificatiefouten
 

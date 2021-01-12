@@ -13,12 +13,12 @@ ms.date: 01/04/2021
 ms.author: damendo
 ms.reviewer: vinigam
 ms.custom: references_regions
-ms.openlocfilehash: 8b1eedc47d2a89b9552c22b3ae770f655f926945
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 6cd1965ab51e7a7bbcc65836383000f0773b9b82
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97898773"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070931"
 ---
 # <a name="traffic-analytics"></a>Traffic Analytics
 
@@ -131,7 +131,7 @@ De Log Analytics-werk ruimte moet in de volgende regio's bestaan:
       VS-Oost 2 EUAP  
       Frankrijk - centraal  
       Duitsland - west-centraal  
-      Japan - oost  
+      Japan East  
       Korea - centraal  
       VS - noord-centraal  
       Europa - noord  
@@ -269,7 +269,7 @@ Enkele van de inzichten die u mogelijk wilt krijgen nadat Traffic Analytics voll
 - Statistieken van het geblokkeerde verkeer.
     - Waarom blokkeert een host een aanzienlijk volume aan goed aardig verkeer? Dit gedrag vereist verder onderzoek en waarschijnlijk optimalisatie van de configuratie
 - Statistieken van schadelijk toegestaan/geblokkeerd verkeer
-  - Waarom ontvangt een host kwaad aardig verkeer en waarom stromen van schadelijke bronnen worden toegestaan? Dit gedrag vereist verder onderzoek en waarschijnlijk optimalisatie van de configuratie.
+  - Waarom ontvangt een host kwaad aardig verkeer en waarom zijn stromen van schadelijke bronnen toegestaan? Dit gedrag vereist verder onderzoek en waarschijnlijk optimalisatie van de configuratie.
 
     Selecteer **alles weer geven** onder **host**, zoals wordt weer gegeven in de volgende afbeelding:
 

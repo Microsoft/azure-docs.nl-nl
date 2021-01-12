@@ -4,12 +4,12 @@ description: In dit artikel vindt u meer informatie over de ondersteunde scenari
 ms.topic: conceptual
 ms.date: 11/7/2019
 ms.custom: references_regions
-ms.openlocfilehash: cb7f31986b9ebd91c631d2b896600039c93084de
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 7f287206c40e4556db2ee4b38bb46ef8e5352102
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96607089"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072187"
 ---
 # <a name="support-matrix-for-backup-of-sap-hana-databases-on-azure-vms"></a>Ondersteuningsmatrix voor back-up van SAP HANA-databases in virtuele Azure-machines
 
@@ -27,7 +27,7 @@ Azure Backup ondersteunt de back-up van SAP HANA-data bases naar Azure. In dit a
 | **Versies van besturings systemen**            | SLES 12 met SP2, SP3, SP4 en SP5; SLES 15 met SP0, SP1, SP2 <br><br>  Per 1 augustus 2020 is SAP HANA backup for RHEL (7.4, 7.6, 7.7 en 8.1) algemeen beschikbaar.                |                                             |
 | **HANA-versies**          | Dit SDC op HANA 1. x, MDC op HANA 2. x <= SPS04 Rev 48, SPS05 (nog moeten worden gevalideerd voor scenario's waarbij versleuteling is ingeschakeld)      |                                                            |
 | **HANA-implementaties**       | SAP HANA op één Azure VM: alleen omhoog schalen. <br><br> Voor implementaties met een hoge Beschik baarheid worden de knoop punten op de twee verschillende machines beschouwd als afzonderlijke knoop punten met afzonderlijke gegevens ketens.               | Uitschalen <br><br> Bij implementaties met een hoge Beschik baarheid wordt er niet automatisch een failover naar het secundaire knoop punt gemaakt. Het configureren van de back-up moet afzonderlijk worden uitgevoerd voor elk knoop punt.                                           |
-| **HANA-instanties**         | Eén SAP HANA-exemplaar op één Azure VM: alleen omhoog schalen | Meerdere exemplaren van SAP HANA op één virtuele machine                  |
+| **HANA-instanties**         | Eén SAP HANA-exemplaar op één Azure VM: alleen omhoog schalen | Meerdere SAP HANA exemplaren op één virtuele machine. U kunt slechts één van deze meerdere exemplaren tegelijk beveiligen.                  |
 | **HANA-database typen**    | Individuele database container (dit SDC) op 1. x, meerdere database container (MDC) op 2. x | MDC in HANA 1. x                                              |
 | **HANA-database grootte**     | HANA-data bases van grootte <= 2 TB (dit is niet de geheugen grootte van het HANA-systeem)               |                                                              |
 | **Back-uptypen**           | Volledig, Differentieel, incrementeel (preview) en logboek back-ups                          |  Momentopnamen                                       |

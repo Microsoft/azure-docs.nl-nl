@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 454ac9a377800bd11a53250569c3e7b65bac713a
-ms.sourcegitcommit: 65a4f2a297639811426a4f27c918ac8b10750d81
+ms.openlocfilehash: 779b66412319ec8422977a7e56570a4d16f89aa9
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96558790"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071541"
 ---
 # <a name="azure-cosmos-db-output-binding-for-azure-functions-2x-and-higher"></a>Azure Cosmos DB uitvoer binding voor Azure Functions 2. x en hoger
 
@@ -248,136 +248,6 @@ public static async Task Run(ToDoItem[] toDoItemsIn, IAsyncCollector<ToDoItem> t
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-In het volgende voor beeld ziet u een Azure Cosmos DB uitvoer binding in een *function.jsin* een bestand en een [Java script-functie](functions-reference-node.md) die gebruikmaakt van de binding. De functie maakt gebruik van een wachtrij-invoer binding voor een wachtrij die JSON ontvangt in de volgende indeling:
-
-```json
-{
-    "name": "John Henry",
-    "employeeId": "123456",
-    "address": "A town nearby"
-}
-```
-
-De functie maakt Azure Cosmos DB documenten in de volgende indeling voor elke record:
-
-```json
-{
-    "id": "John Henry-123456",
-    "name": "John Henry",
-    "employeeId": "123456",
-    "address": "A town nearby"
-}
-```
-
-Hier vindt u de bindings gegevens in de *function.js* in het bestand:
-
-```json
-{
-    "name": "employeeDocument",
-    "type": "cosmosDB",
-    "databaseName": "MyDatabase",
-    "collectionName": "MyCollection",
-    "createIfNotExists": true,
-    "connectionStringSetting": "MyAccount_COSMOSDB",
-    "direction": "out"
-}
-```
-
-In de [configuratie](#configuration) sectie worden deze eigenschappen uitgelegd.
-
-Dit is de JavaScript-code:
-
-```javascript
-    module.exports = function (context) {
-
-      context.bindings.employeeDocument = JSON.stringify({
-        id: context.bindings.myQueueItem.name + "-" + context.bindings.myQueueItem.employeeId,
-        name: context.bindings.myQueueItem.name,
-        employeeId: context.bindings.myQueueItem.employeeId,
-        address: context.bindings.myQueueItem.address
-      });
-
-      context.done();
-    };
-```
-
-Voor bulksgewijs invoegen vormen de objecten eerst en voert u vervolgens de functie stringify uit. Dit is de JavaScript-code:
-
-```javascript
-    module.exports = function (context) {
-    
-        context.bindings.employeeDocument = JSON.stringify([
-        {
-            "id": "John Henry-123456",
-            "name": "John Henry",
-            "employeeId": "123456",
-            "address": "A town nearby"
-        },
-        {
-            "id": "John Doe-123457",
-            "name": "John Doe",
-            "employeeId": "123457",
-            "address": "A town far away"
-        }]);
-    
-      context.done();
-    };
-```
-
-# <a name="python"></a>[Python](#tab/python)
-
-In het volgende voor beeld ziet u hoe u een document naar een Azure CosmosDB-data base schrijft als uitvoer van een functie.
-
-De definitie van de binding wordt gedefinieerd in *function.jsvan* waar *type* is ingesteld op `cosmosDB` .
-
-```json
-{
-  "scriptFile": "__init__.py",
-  "bindings": [
-    {
-      "authLevel": "function",
-      "type": "httpTrigger",
-      "direction": "in",
-      "name": "req",
-      "methods": [
-        "get",
-        "post"
-      ]
-    },
-    {
-      "type": "cosmosDB",
-      "direction": "out",
-      "name": "doc",
-      "databaseName": "demodb",
-      "collectionName": "data",
-      "createIfNotExists": "true",
-      "connectionStringSetting": "AzureCosmosDBConnectionString"
-    },
-    {
-      "type": "http",
-      "direction": "out",
-      "name": "$return"
-    }
-  ]
-}
-```
-
-Als u naar de Data Base wilt schrijven, geeft u een document object door aan de `set` methode van de data base-para meter.
-
-```python
-import azure.functions as func
-
-def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpResponse:
-
-    request_body = req.get_body()
-
-    doc.set(func.Document.from_json(request_body))
-
-    return 'OK'
-```
-
 # <a name="java"></a>[Java](#tab/java)
 
 * [Wachtrij trigger, bericht opslaan in data base via retour waarde](#queue-trigger-save-message-to-database-via-return-value-java)
@@ -545,6 +415,165 @@ In het volgende voor beeld ziet u een Java-functie die meerdere documenten naar 
 
 Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@CosmosDBOutput` aantekening voor para meters die worden geschreven naar Cosmos db.  Het parameter type van de aantekening moet zijn ```OutputBinding<T>``` , waarbij T een systeem eigen Java-type of een POJO is.
 
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+In het volgende voor beeld ziet u een Azure Cosmos DB uitvoer binding in een *function.jsin* een bestand en een [Java script-functie](functions-reference-node.md) die gebruikmaakt van de binding. De functie maakt gebruik van een wachtrij-invoer binding voor een wachtrij die JSON ontvangt in de volgende indeling:
+
+```json
+{
+    "name": "John Henry",
+    "employeeId": "123456",
+    "address": "A town nearby"
+}
+```
+
+De functie maakt Azure Cosmos DB documenten in de volgende indeling voor elke record:
+
+```json
+{
+    "id": "John Henry-123456",
+    "name": "John Henry",
+    "employeeId": "123456",
+    "address": "A town nearby"
+}
+```
+
+Hier vindt u de bindings gegevens in de *function.js* in het bestand:
+
+```json
+{
+    "name": "employeeDocument",
+    "type": "cosmosDB",
+    "databaseName": "MyDatabase",
+    "collectionName": "MyCollection",
+    "createIfNotExists": true,
+    "connectionStringSetting": "MyAccount_COSMOSDB",
+    "direction": "out"
+}
+```
+
+In de [configuratie](#configuration) sectie worden deze eigenschappen uitgelegd.
+
+Dit is de JavaScript-code:
+
+```javascript
+    module.exports = function (context) {
+
+      context.bindings.employeeDocument = JSON.stringify({
+        id: context.bindings.myQueueItem.name + "-" + context.bindings.myQueueItem.employeeId,
+        name: context.bindings.myQueueItem.name,
+        employeeId: context.bindings.myQueueItem.employeeId,
+        address: context.bindings.myQueueItem.address
+      });
+
+      context.done();
+    };
+```
+
+Voor bulksgewijs invoegen vormen de objecten eerst en voert u vervolgens de functie stringify uit. Dit is de JavaScript-code:
+
+```javascript
+    module.exports = function (context) {
+    
+        context.bindings.employeeDocument = JSON.stringify([
+        {
+            "id": "John Henry-123456",
+            "name": "John Henry",
+            "employeeId": "123456",
+            "address": "A town nearby"
+        },
+        {
+            "id": "John Doe-123457",
+            "name": "John Doe",
+            "employeeId": "123457",
+            "address": "A town far away"
+        }]);
+    
+      context.done();
+    };
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+In het volgende voor beeld ziet u hoe u gegevens naar Cosmos DB schrijft met behulp van een uitvoer binding. De binding wordt gedeclareerd in het configuratie bestand van de functie (_functions.jsaan_) en neemt gegevens op uit een wachtrij bericht en schrijft naar een Cosmos DB document.
+
+```json
+{ 
+  "name": "EmployeeDocument",
+  "type": "cosmosDB",
+  "databaseName": "MyDatabase",
+  "collectionName": "MyCollection",
+  "createIfNotExists": true,
+  "connectionStringSetting": "MyStorageConnectionAppSetting",
+  "direction": "out" 
+} 
+```
+
+In het _run.ps1_ bestand is het object dat door de functie wordt geretourneerd, toegewezen aan een `EmployeeDocument` object, dat persistent is in de-data base.
+
+```powershell
+param($QueueItem, $TriggerMetadata) 
+
+Push-OutputBinding -Name EmployeeDocument -Value @{ 
+    id = $QueueItem.name + '-' + $QueueItem.employeeId 
+    name = $QueueItem.name 
+    employeeId = $QueueItem.employeeId 
+    address = $QueueItem.address 
+} 
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+In het volgende voor beeld ziet u hoe u een document naar een Azure CosmosDB-data base schrijft als uitvoer van een functie.
+
+De definitie van de binding wordt gedefinieerd in *function.jsvan* waar *type* is ingesteld op `cosmosDB` .
+
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "doc",
+      "databaseName": "demodb",
+      "collectionName": "data",
+      "createIfNotExists": "true",
+      "connectionStringSetting": "AzureCosmosDBConnectionString"
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    }
+  ]
+}
+```
+
+Als u naar de Data Base wilt schrijven, geeft u een document object door aan de `set` methode van de data base-para meter.
+
+```python
+import azure.functions as func
+
+def main(req: func.HttpRequest, doc: func.Out[func.Document]) -> func.HttpResponse:
+
+    request_body = req.get_body()
+
+    doc.set(func.Document.from_json(request_body))
+
+    return 'OK'
+```
+
 ---
 
 ## <a name="attributes-and-annotations"></a>Kenmerken en aantekeningen
@@ -569,17 +598,21 @@ De constructor van het kenmerk neemt de naam van de data base en de verzameling.
 
 Kenmerken worden niet ondersteund door C# Script.
 
+# <a name="java"></a>[Java](#tab/java)
+
+De `CosmosDBOutput` aantekening is beschikbaar voor het schrijven van gegevens naar Cosmos db. U kunt de aantekening Toep assen op de functie of op een afzonderlijke functie parameter. Wanneer u gebruikt voor de functie methode, is de geretourneerde waarde van de functie wat naar Cosmos DB wordt geschreven. Als u de aantekening met een para meter gebruikt, moet het parameter type worden gedeclareerd als een `OutputBinding<T>` locatie van `T` een systeem eigen Java-type of een POJO.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Kenmerken worden niet ondersteund door JavaScript.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Kenmerken worden niet ondersteund door Power shell.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Kenmerken worden niet ondersteund door Python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-De `CosmosDBOutput` aantekening is beschikbaar voor het schrijven van gegevens naar Cosmos db. U kunt de aantekening Toep assen op de functie of op een afzonderlijke functie parameter. Wanneer u gebruikt voor de functie methode, is de geretourneerde waarde van de functie wat naar Cosmos DB wordt geschreven. Als u de aantekening met een para meter gebruikt, moet het parameter type worden gedeclareerd als een `OutputBinding<T>` locatie van `T` een systeem eigen Java-type of een POJO.
 
 ---
 

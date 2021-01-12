@@ -11,12 +11,12 @@ ms.reviewer: larryfr
 ms.date: 12/11/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: dd7a336df5ff187b874876db32abb45915e00f3b
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 195f1c527185fbd55450b6151f26525074db75f7
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739379"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070419"
 ---
 # <a name="deploy-models-with-azure-machine-learning"></a>Modellen implementeren met Azure Machine Learning
 
@@ -51,7 +51,7 @@ Zie [modellen beheren, implementeren en bewaken met Azure machine learning](conc
 
 ## <a name="connect-to-your-workspace"></a>Verbinding maken met uw werkruimte
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
 Volg de instructies in de Azure CLI-documentatie voor [het instellen van uw abonnements context](/cli/azure/manage-azure-subscriptions-azure-cli#change-the-active-subscription).
 
@@ -91,7 +91,7 @@ Een geregistreerd model is een logische container voor een of meer bestanden die
 
 De volgende voor beelden laten zien hoe u een model kunt registreren.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
 ### <a name="register-a-model-from-an-azure-ml-training-run"></a>Een model registreren vanuit een Azure ML-trainings uitvoering
 
@@ -186,7 +186,7 @@ Zie [een bestaand model implementeren](how-to-deploy-existing-model.md)voor meer
 
 Een configuratie voor het afwijzen van een interferentie beschrijft het instellen van de webservice die uw model bevat. Het wordt later gebruikt wanneer u het model implementeert.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
 Er kan een minimale configuratie van de inmodus worden geschreven als:
 
@@ -239,7 +239,7 @@ Zie de documentatie van [InferenceConfig](/python/api/azureml-core/azureml.core.
 
 ## <a name="define-a-deployment-configuration"></a>Een implementatie configuratie definiëren
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
 De beschik bare opties voor een implementatie configuratie zijn afhankelijk van het reken doel dat u kiest.
 
@@ -273,7 +273,7 @@ from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservic
 
 U bent nu klaar om uw model te implementeren. 
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
 ### <a name="using-a-registered-model"></a>Een geregistreerd model gebruiken
 
@@ -322,6 +322,8 @@ In de volgende tabel worden de verschillende service statussen beschreven:
 | Mislukt | De implementatie van de service is mislukt vanwege een fout of een crash. | Ja |
 | In orde | De service is in orde en het eind punt is beschikbaar. | Ja |
 
+> [!TIP]
+> Tijdens de implementatie worden docker-installatie kopieën voor Compute-doelen gemaakt en geladen van Azure Container Registry (ACR). Azure Machine Learning maakt standaard een ACR die gebruikmaakt van de *Basic* -servicelaag. Het wijzigen van de ACR voor uw werk ruimte in de standaard-of Premium-laag kan de tijd verminderen die nodig is om installatie kopieën te bouwen en implementeren in uw reken doelen. Zie [Azure container Registry service lagen](../container-registry/container-registry-skus.md)voor meer informatie.
 
 ### <a name="batch-inference"></a><a id="azuremlcompute"></a> Batch-deinterferentie
 Azure Machine Learning Compute-doelen worden gemaakt en beheerd door Azure Machine Learning. Ze kunnen worden gebruikt voor batch voorspelling van Azure Machine Learning pijp lijnen.
@@ -333,7 +335,7 @@ Ondersteuning voor het implementeren naar de rand is in preview. Zie [Deploy Azu
 
 ## <a name="delete-resources"></a>Resources verwijderen
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azcli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azcli)
 
 Als u een geïmplementeerde webservice wilt verwijderen, gebruikt u `az ml service <name of webservice>` .
 

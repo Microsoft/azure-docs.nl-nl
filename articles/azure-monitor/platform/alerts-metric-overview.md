@@ -1,17 +1,17 @@
 ---
-title: Begrijpen hoe metrische waarschuwingen werken in Azure Monitor.
+title: 'Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor:'
 description: Bekijk een overzicht van wat u met metrische waarschuwingen kunt doen en hoe ze werken in Azure Monitor.
-ms.date: 09/30/2020
+ms.date: 01/11/2021
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: 066ffff5979e658a7c06fe10bd668a9fac839a14
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 424cc9db01f1eb6300c2915795f3e2c37b34449f
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460841"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071048"
 ---
-# <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor
+# <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Begrijpen hoe metrische waarschuwingen werken in Azure Monitor
 
 Metrische waarschuwingen in Azure Monitor werken bovenop meerdere dimensies. Deze metrische gegevens zijn mogelijk [platform metrieken](alerts-metric-near-real-time.md#metrics-and-dimensions-supported), [aangepaste metrische gegevens](./metrics-custom-overview.md), [populaire logboeken van Azure monitor geconverteerd naar metrische gegevens](./alerts-metric-logs.md) en Application Insights metrische gegevens. Metrische waarschuwingen bepalen regel matig of er voor waarden in een of meer metrische time-series waar zijn en u wordt gewaarschuwd wanneer aan de evaluaties wordt voldaan. Metrische waarschuwingen zijn stateful, dat wil zeggen dat ze alleen meldingen verzenden wanneer de status wordt gewijzigd.
 
@@ -74,7 +74,7 @@ Stel dat u een App Service abonnement hebt voor uw website. U het CPU-gebruik wi
 - Doel resource: myAppServicePlan
 - Metriek: percentage CPU
 - Voorwaarde type: statisch
-- Afmetingen
+- Dimensies
   - Instantie = InstanceName1, InstanceName2
 - Tijd aggregatie: gemiddeld
 - Period: in de afgelopen 5 minuten
@@ -89,7 +89,7 @@ Stel dat u een web-app hebt die een enorme vraag ziet, en u moet meer exemplaren
 - Doel resource: myAppServicePlan
 - Metriek: percentage CPU
 - Voorwaarde type: statisch
-- Afmetingen
+- Dimensies
   - Instantie = *
 - Tijd aggregatie: gemiddeld
 - Period: in de afgelopen 5 minuten
@@ -106,7 +106,7 @@ Stel dat u een web-app hebt met veel instanties en u niet weet wat de meest gesc
 - Doel resource: myAppServicePlan
 - Metriek: percentage CPU
 - Voorwaarde type: dynamisch
-- Afmetingen
+- Dimensies
   - Instantie = *
 - Tijd aggregatie: gemiddeld
 - Period: in de afgelopen 5 minuten
@@ -137,7 +137,7 @@ Deze functie wordt momenteel ondersteund voor platform metrieken (geen aangepast
 
 | Service | Open bare Azure | Overheid | China |
 |:--------|:--------|:--------|:--------|
-| Virtuele machines<sup>1</sup>  | **Ja** | Nee | Nee |
+| Virtuele machines<sup>1</sup>  | **Ja** | **Ja** | Nee |
 | SQL server-data bases | **Ja** | **Ja** | **Ja** |
 | Elastische Pools van SQL Server | **Ja** | **Ja** | **Ja** |
 | NetApp-bestands capaciteits groepen | **Ja** | **Ja** | **Ja** |

@@ -7,18 +7,17 @@ author: vladvino
 manager: erikre
 editor: ''
 ms.service: api-management
-ms.workload: mobile
 ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/10/2020
 ms.author: apimpm
 ms.custom: references_regions
-ms.openlocfilehash: e36f7c6085908630d5e7aa2593fe4d57202d6ee7
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: d0d5434de747b48464df1c07f8c7b6a7e785c858
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107648"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070928"
 ---
 # <a name="how-to-use-azure-api-management-with-virtual-networks"></a>Azure API Management gebruiken met virtuele netwerken
 Met Azure Virtual Networks (VNETs) kunt u uw Azure-resources in een routeerbaar netwerk (buiten internet) plaatsen waarvan u de toegang beheert. Deze netwerken kunnen vervolgens worden verbonden met uw on-premises netwerken met behulp van verschillende VPN-technologieën. Voor meer informatie over Azure Virtual Networks begint u met de informatie hier: [overzicht van azure Virtual Network](../virtual-network/virtual-networks-overview.md).
@@ -148,6 +147,9 @@ Hieronder vindt u een lijst met veelvoorkomende fouten die zich kunnen voordoen 
 
 + **Regionale service Tags**: NSG regels voor het toestaan van uitgaande connectiviteit naar opslag-, SQL-en Event hubs-service tags kunnen de regionale versies van deze tags gebruiken die overeenkomen met de regio die het API Management-exemplaar bevat (bijvoorbeeld Storage. westus voor een API Management-exemplaar in de regio vs-West). In implementaties met meerdere regio's moet de NSG in elke regio verkeer naar de service tags voor die regio en de primaire regio toestaan.
 
+    > [!IMPORTANT]
+    > Als u het publiceren van de [ontwikkelaars Portal](api-management-howto-developer-portal.md) wilt inschakelen voor een API Management-exemplaar in een virtueel netwerk, moet u ervoor zorgen dat u ook uitgaande connectiviteit met Blob Storage in de regio vs West toestaat. Gebruik bijvoorbeeld het tag **Storage. westus** service in een NSG-regel. Connectiviteit met Blob Storage in de regio vs-West is momenteel vereist voor het publiceren van de ontwikkelaars portal voor een API Management exemplaar.
+
 + **SMTP-relay**: uitgaande netwerk verbinding voor de SMTP-relay, die wordt omgezet onder de host `smtpi-co1.msn.com` ,, `smtpi-ch1.msn.com` `smtpi-db3.msn.com` `smtpi-sin.msn.com` en `ies.global.microsoft.com`
 
 + **Ontwikkelaars Portal CAPTCHA**: uitgaand netwerk connectiviteit voor de CAPTCHA van de ontwikkelaars Portal, die wordt omgezet onder de hosts `client.hip.live.com` en `partner.hip.live.com` .
@@ -240,7 +242,7 @@ De IP-adressen worden gedeeld door **Azure-omgeving**. Wanneer het IP-adres voor
 | Openbare Azure-peering| Zuid-Afrika - noord| 102.133.130.197|
 | Openbare Azure-peering| Canada - midden| 52.139.20.34|
 | Openbare Azure-peering| Korea - zuid| 40.80.232.185|
-| Openbare Azure-peering| India - centraal| 13.71.49.1|
+| Openbare Azure-peering| Central India| 13.71.49.1|
 | Openbare Azure-peering| VS - west| 13.64.39.16|
 | Openbare Azure-peering| Australia Southeast| 20.40.160.107|
 | Openbare Azure-peering| Australië - centraal| 20.37.52.67|

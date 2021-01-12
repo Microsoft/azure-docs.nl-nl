@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: 95c3ad6f689893195e0e5c17c59ab31143cf238d
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 473353c3f61d1096beb11c521c08ac723d54b780
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93346516"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071596"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Besturings elementen voor adaptieve toepassingen gebruiken om de kwets bare Opper vlakken van uw computers te verminderen
 
@@ -157,11 +157,6 @@ De regels voor een groep machines bewerken:
     Dit deel venster toont de naam van de groep (die kan worden gewijzigd), het type besturings systeem, de locatie en andere relevante informatie.
 
     :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-group-settings.png" alt-text="De pagina groeps instellingen voor besturings elementen voor adaptieve toepassingen" lightbox="./media/security-center-adaptive-application/adaptive-application-group-settings.png":::
-
-    > [!IMPORTANT]
-    > De optie **afdwingen** , in de instellingen voor de beveiligings modus voor bestands typen, wordt in **alle** scenario's grijs weer gegeven. Er zijn op dit moment geen afdwingings opties beschikbaar. 
-    >
-    > :::image type="content" source="./media/security-center-adaptive-application/adaptive-application-modes.png" alt-text="De afdwingings modus voor bestands beveiliging wordt permanent grijs weer gegeven. Er zijn geen afdwingings opties beschikbaar.":::
 
 1. U kunt desgewenst de naam van de groep of de beveiligings modus voor het bestands type wijzigen.
 

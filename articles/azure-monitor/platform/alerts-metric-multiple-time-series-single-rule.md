@@ -4,14 +4,14 @@ description: Waarschuwing op schaal met één waarschuwings regel voor meerdere 
 author: harelbr
 ms.author: harelbr
 ms.topic: conceptual
-ms.date: 11/12/2020
+ms.date: 01/11/2021
 ms.subservice: alerts
-ms.openlocfilehash: 66987a28acc8a2c9ae71d89ff5760fa508e32963
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 47a2fb9240f6826ed862f7a857264c09b79de9bc
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566500"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071082"
 ---
 # <a name="monitor-multiple-time-series-in-a-single-metric-alert-rule"></a>Meerdere tijd reeksen bewaken in één metrische waarschuwings regel
 
@@ -43,7 +43,7 @@ Een voor beeld van een dergelijke waarschuwings regel (waarbij alleen de relevan
 
 
 Voor deze waarschuwings regel wordt één metrische time-reeks gecontroleerd:
--   Percentage CPU waarbij *resource* = ' myVM1 ' > 70%
+-   Percentage CPU waarbij *resource*= ' myVM1 ' > 70%
 
 ![Een waarschuwings regel voor één tijd reeks](media/alerts-metric-multiple-time-series-single-rule/simple-alert-rule.png)
 
@@ -65,8 +65,8 @@ Een voor beeld van een dergelijke waarschuwings regel:
 -   Drempel waarde: *70*
 
 Voor deze waarschuwings regel worden twee metrische time-series afzonderlijk bewaakt:
--   Percentage CPU waarbij *resource* = ' myVM1 ' > 70%
--   Percentage CPU waarbij *resource* = ' myVM2 ' > 70%
+-   Percentage CPU waarbij *resource*= ' myVM1 ' > 70%
+-   Percentage CPU waarbij *resource*= ' myVM2 ' > 70%
 
 ![Een regel voor een waarschuwing met meerdere bronnen](media/alerts-metric-multiple-time-series-single-rule/multi-resource-alert-rule.png)
  
@@ -76,7 +76,7 @@ Stel dat we de bovenstaande waarschuwings regel hebben ingesteld op het bewaken 
 -   Het *percentage CPU* van *myVM1* is groter dan 70% 
 -   Het *percentage CPU* van *myVM2* is 50%
 
-De waarschuwings regel wordt geactiveerd op *myVM1* , maar niet *myVM2*. Deze geactiveerde waarschuwingen zijn onafhankelijk. Ze kunnen ook worden omgezet op verschillende tijdstippen, afhankelijk van het individuele gedrag van elk van de virtuele machines.
+De waarschuwings regel wordt geactiveerd op *myVM1*, maar niet *myVM2*. Deze geactiveerde waarschuwingen zijn onafhankelijk. Ze kunnen ook worden omgezet op verschillende tijdstippen, afhankelijk van het individuele gedrag van elk van de virtuele machines.
 
 Zie [bewaking op schaal met behulp van metrische waarschuwingen in azure monitor](alerts-metric-overview.md#monitoring-at-scale-using-metric-alerts-in-azure-monitor)voor meer informatie over regels voor meerdere resources en de resource typen die voor deze mogelijkheid worden ondersteund.
 
@@ -101,8 +101,8 @@ Bijvoorbeeld:
 
 Voor deze waarschuwings regel worden twee metrische time-series gecontroleerd:
 
-- Percentage CPU waarbij *resource* = ' myVM1 ' > 70%
-- Netwerk in totaal waarbij *resource* = ' myVM1 ' > 20 MB
+- Percentage CPU waarbij *resource*= ' myVM1 ' > 70%
+- Netwerk in totaal waarbij *resource*= ' myVM1 ' > 20 MB
 
 ![Een waarschuwings regel voor meerdere voor waarden](media/alerts-metric-multiple-time-series-single-rule/multi-condition-alert-rule.png)
  
@@ -114,7 +114,7 @@ Er wordt een operator AND gebruikt tussen de voor waarden. Met de waarschuwings 
 
 ## <a name="multiple-dimensions-multi-dimension"></a>Meerdere dimensies (Multi-Dimension)
 
-Eén metrische waarschuwings regel kan ook meerdere dimensie waarden van een metriek bewaken. De afmetingen van een metriek zijn naam/waarde-paren die extra gegevens bevatten om de metrische waarde te beschrijven. De waarde van de **trans acties** van een opslag account heeft bijvoorbeeld een dimensie met de naam **API name** , waarmee de naam van de API wordt beschreven door elke trans actie (bijvoorbeeld GetBlob, DeleteBlob, PutPage). Het gebruik van dimensies is optioneel, maar het filtert de metrische gegevens en alleen de bewaking specifieke time series, in plaats van de metriek als een aggregatie van alle gedefinieerde dimensionale waarden. 
+Eén metrische waarschuwings regel kan ook meerdere dimensie waarden van een metriek bewaken. De afmetingen van een metriek zijn naam/waarde-paren die extra gegevens bevatten om de metrische waarde te beschrijven. De waarde van de **trans acties** van een opslag account heeft bijvoorbeeld een dimensie met de naam **API name**, waarmee de naam van de API wordt beschreven door elke trans actie (bijvoorbeeld GetBlob, DeleteBlob, PutPage). Het gebruik van dimensies is optioneel, maar het filtert de metrische gegevens en alleen de bewaking specifieke time series, in plaats van de metriek als een aggregatie van alle gedefinieerde dimensionale waarden. 
 
 U kunt bijvoorbeeld aangeven dat er een waarschuwing moet worden geactiveerd wanneer het aantal trans acties hoog is voor alle API-namen (die de geaggregeerde gegevens zijn), of ze verder wilt opsplitsen in een waarschuwing wanneer het aantal trans acties hoog is voor specifieke API-namen. 
 
@@ -122,16 +122,16 @@ Een voor beeld van een waarschuwings regel voor het bewaken van meerdere dimensi
 
 - Doel resource: *myStorage1*
 - Metriek: *trans acties*
-- Afmetingen
+- Dimensies
   * API-naam = *GetBlob, DeleteBlob, PutPage*
 - Operator: *groter dan*
 - Drempel waarde: *70*
 
 Voor deze waarschuwings regel worden drie meet tijd-Series bewaakt:
 
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' GetBlob ' > 70
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' DeleteBlob ' > 70
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' PutPage ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' GetBlob ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' DeleteBlob ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' PutPage ' > 70
 
 ![Een waarschuwings regel met meerdere dimensies met waarden van een dimensie](media/alerts-metric-multiple-time-series-single-rule/multi-dimension-1.png)
 
@@ -141,7 +141,7 @@ Een voor beeld van dit type waarschuwings regel:
 
 - Doel resource: *myStorage1*
 - Metriek: *trans acties*
-- Afmetingen
+- Dimensies
   * API-naam = *GetBlob, DeleteBlob, PutPage*
   * Verificatie = *SAS, AccountKey*
 - Operator: *groter dan*
@@ -149,12 +149,12 @@ Een voor beeld van dit type waarschuwings regel:
 
 Voor deze waarschuwings regel worden zes metrische time-series afzonderlijk bewaakt:
 
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' GetBlob ' en *Authentication* = ' SAS ' > 70
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' GetBlob ' en *Authentication* = ' AccountKey ' > 70
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' DeleteBlob ' en *Authentication* = ' SAS ' > 70
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' DeleteBlob ' en *Authentication* = ' AccountKey ' > 70
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' PutPage ' en *Authentication* = ' SAS ' > 70
-- Trans acties waarbij *resource* = ' myStorage1 ' en *API name* = ' PutPage ' en *Authentication* = ' AccountKey ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' GetBlob ' en *Authentication*= ' SAS ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' GetBlob ' en *Authentication*= ' AccountKey ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' DeleteBlob ' en *Authentication*= ' SAS ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' DeleteBlob ' en *Authentication*= ' AccountKey ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' PutPage ' en *Authentication*= ' SAS ' > 70
+- Trans acties waarbij *resource*= ' myStorage1 ' en *API name*= ' PutPage ' en *Authentication*= ' AccountKey ' > 70
 
 ![Een waarschuwings regel met meerdere dimensies met waarden van meerdere dimensies](media/alerts-metric-multiple-time-series-single-rule/multi-dimension-2.png)
  
@@ -162,7 +162,7 @@ Voor deze waarschuwings regel worden zes metrische time-series afzonderlijk bewa
 
 1.  **Alle huidige en toekomstige dimensies selecteren** : u kunt ervoor kiezen om alle mogelijke waarden van een dimensie te bewaken, met inbegrip van toekomstige waarden. Een dergelijke waarschuwings regel schaalt automatisch om alle waarden van de dimensie te bewaken zonder dat u de waarschuwings regel telkens wanneer een dimensie waarde wordt toegevoegd of verwijderd, moet wijzigen.
 2.  **Uitgezonderd dimensies** : als u de operator ' ≠ ' (uitsluiten) voor een dimensie waarde selecteert, is dit gelijk aan het selecteren van alle andere waarden van die dimensie, inclusief toekomstige waarden.
-3.  **Nieuwe en aangepaste dimensies** : de dimensie waarden die worden weer gegeven in de Azure Portal zijn gebaseerd op de metrische gegevens die in de afgelopen drie dagen zijn verzameld. Als de dimensie waarde die u zoekt nog niet is verzonden, kunt u een aangepaste dimensie waarde toevoegen.
+3.  **Nieuwe en aangepaste dimensies** : de dimensie waarden die worden weer gegeven in de Azure Portal zijn gebaseerd op metrische gegevens die in de afgelopen dag zijn verzameld. Als de dimensie waarde die u zoekt nog niet is verzonden, kunt u een aangepaste dimensie waarde toevoegen.
 4. **Overeenkomende dimensies met een voor voegsel** : u kunt ervoor kiezen om alle dimensie waarden te bewaken die beginnen met een specifiek patroon, door de operator ' begint met ' te selecteren en een aangepast voor voegsel in te voeren.
 
 ![Geavanceerde functies voor meerdere dimensies](media/alerts-metric-multiple-time-series-single-rule/advanced-features.png)

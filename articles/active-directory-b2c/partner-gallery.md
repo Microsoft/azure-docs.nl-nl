@@ -8,15 +8,15 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 06/08/2020
+ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 4592742b99d7c3e915c31ca5a202355d32e76d68
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 15b4b61fd250dfb7d68c563f9f42c7d288a0019c
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97356120"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070861"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C ISV-partners
 
@@ -54,7 +54,7 @@ Micro soft-partners met de volgende Isv's voor MFA en verificatie zonder wacht w
 | ![Scherm afbeelding van een Nevis-logo](./media/partner-gallery/nevis-logo.png) | [Nevis](./partner-nevis.md) maakt verificatie zonder wacht woord mogelijk en biedt een volledige, volledig brandende eindgebruikers ervaring met Nevis Access-app voor sterke klant verificatie en om te voldoen aan de PSD2-transactie vereisten. |
 | ![Scherm afbeelding van een trusona-logo](./media/partner-gallery/trusona-logo.png) | [Trusona](./partner-trusona.md) -integratie helpt u veilig te registreren en maakt verificatie zonder wacht woord, MFA en digitale licentie controle mogelijk. |
 | ![Scherm opname van een twilio-logo.](./media/partner-gallery/twilio-logo.png) | [Twilio verify app](./partner-twilio.md) biedt meerdere oplossingen om MFA in te scha kelen via EENMALIGe SMS-wacht woord (OTP), op tijd gebaseerd wacht woord (mobiele totp) en push meldingen, en om te voldoen aan de vereisten voor de SCA voor PSD2. |
-| ![Scherm afbeelding van een typingDNA-logo](./media/partner-gallery/typingdna-logo.png) | [TypingDNA](./partner-twilio.md) maakt sterke klanten verificatie mogelijk door het type patroon van een gebruiker te analyseren. Het helpt bedrijven een stille MFA in te scha kelen en te voldoen aan de SCA-vereisten voor PSD2. |
+| ![Scherm afbeelding van een typingDNA-logo](./media/partner-gallery/typingdna-logo.png) | [TypingDNA](./partner-typingdna.md) maakt sterke klanten verificatie mogelijk door het type patroon van een gebruiker te analyseren. Het helpt bedrijven een stille MFA in te scha kelen en te voldoen aan de SCA-vereisten voor PSD2. |
 | ![Scherm afbeelding van een whoiam-logo](./media/partner-gallery/whoiam-logo.png) | [WhoIAM](./partner-whoiam.md) is een BRIMS-toepassing (merk bare identiteits beheersysteem) waarmee organisaties hun gebruikers basis kunnen verifiëren door middel van spraak, SMS en e-mail. |
 
 ## <a name="role-based-access-control"></a>Op rollen gebaseerd toegangsbeheer 

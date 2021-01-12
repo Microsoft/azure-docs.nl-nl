@@ -9,18 +9,18 @@ ms.date: 12/08/2020
 ms.author: tamram
 ms.reviewer: santoshc
 ms.subservice: common
-ms.openlocfilehash: c2074402225c8134329e00003e4fbdfd95b5dba6
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 13d1ad0b1b5e32ea2ca86e7556dd910c542bcbe2
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938405"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070555"
 ---
-# <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Firewalls en virtuele netwerken voor Azure Storage configureren
+# <a name="configure-azure-storage-firewalls-and-virtual-networks"></a>Azure Storage-firewalls en virtuele netwerken configureren
 
 Azure Storage biedt een gelaagd beveiligingsmodel. Met dit model kunt u het niveau van toegang tot uw opslagaccounts beveiligen en beheren die uw toepassingen en bedrijfsomgevingen vereisen, op basis van het type en de subset van netwerken die worden gebruikt. Wanneer netwerk regels zijn geconfigureerd, hebben alleen toepassingen die gegevens aanvragen via de opgegeven set netwerken toegang tot een opslag account. U kunt de toegang tot uw opslag account beperken tot aanvragen die afkomstig zijn van opgegeven IP-adressen, IP-adresbereiken of uit een lijst met subnetten in een Azure Virtual Network (VNet).
 
-Opslag accounts hebben een openbaar eind punt dat toegankelijk is via internet. U kunt ook [privé-eind punten maken voor uw opslag account](storage-private-endpoints.md), waarmee een privé-IP-adres van uw vnet wordt toegewezen aan het opslag account, en waarmee al het verkeer tussen uw vnet en het opslag account via een persoonlijke verbinding wordt beveiligd. De firewall van Azure Storage biedt toegang tot toegangs beheer voor het open bare eind punt van uw opslag account. U kunt ook de firewall gebruiken om alle toegang via het open bare eind punt te blok keren bij het gebruik van privé-eind punten. Met de firewall configuratie van de opslag kunt u ook vertrouwde Azure platform-services selecteren om het opslag account veilig te benaderen.
+Opslag accounts hebben een openbaar eind punt dat toegankelijk is via internet. U kunt ook [privé-eind punten maken voor uw opslag account](storage-private-endpoints.md), waarmee een privé-IP-adres van uw vnet wordt toegewezen aan het opslag account, en waarmee al het verkeer tussen uw vnet en het opslag account via een persoonlijke verbinding wordt beveiligd. De firewall van Azure Storage biedt toegangs beheer voor het open bare eind punt van uw opslag account. U kunt ook de firewall gebruiken om alle toegang via het open bare eind punt te blok keren bij het gebruik van privé-eind punten. Met de firewall configuratie van de opslag kunt u ook vertrouwde Azure platform-services selecteren om het opslag account veilig te benaderen.
 
 Een toepassing die toegang heeft tot een opslag account wanneer er netwerk regels actief zijn, hebben nog steeds de juiste autorisatie voor de aanvraag. Autorisatie wordt ondersteund met Azure Active Directory-referenties (Azure AD) voor blobs en wacht rijen, met een geldige account toegangs sleutel of met een SAS-token.
 
@@ -33,13 +33,13 @@ Een toepassing die toegang heeft tot een opslag account wanneer er netwerk regel
 
 ## <a name="scenarios"></a>Scenario's
 
-Als u uw opslag account wilt beveiligen, moet u eerst een regel configureren om de toegang tot verkeer van alle netwerken (met inbegrip van Internet verkeer) op het open bare eind punt standaard te weigeren. Vervolgens configureert u regels die toegang verlenen tot verkeer van specifieke VNets. U kunt ook regels configureren voor het verlenen van toegang tot verkeer van open bare IP-adresbereiken voor het Internet, het inschakelen van verbindingen van specifieke internet-of lokale clients. Met deze configuratie kunt u een beveiligde netwerk grens maken voor uw toepassingen.
+Als u uw opslag account wilt beveiligen, moet u eerst een regel configureren om de toegang tot verkeer van alle netwerken (met inbegrip van Internet verkeer) op het open bare eind punt standaard te weigeren. Vervolgens configureert u regels die toegang verlenen tot verkeer van specifieke VNets. U kunt ook regels configureren voor het verlenen van toegang tot verkeer van geselecteerde open bare IP-adresbereiken, en het inschakelen van verbindingen van specifieke internet-of lokale clients. Met deze configuratie kunt u een beveiligde netwerk grens maken voor uw toepassingen.
 
 U kunt Firewall regels combi neren die toegang toestaan vanaf specifieke virtuele netwerken en vanaf open bare IP-adresbereiken op hetzelfde opslag account. Opslag firewall regels kunnen worden toegepast op bestaande opslag accounts of bij het maken van nieuwe opslag accounts.
 
 De firewall regels voor opslag zijn van toepassing op het open bare eind punt van een opslag account. U hebt geen firewall toegangs regels nodig om verkeer voor privé-eind punten van een opslag account toe te staan. Het proces voor het goed keuren van het maken van een persoonlijk eind punt verleent impliciete toegang tot verkeer van het subnet dat als host fungeert voor het persoonlijke eind punt.
 
-Netwerk regels worden op alle netwerk protocollen afgedwongen voor Azure Storage, inclusief REST en SMB. Om toegang te krijgen tot gegevens met behulp van hulpprogram ma's zoals de Azure Portal, Storage Explorer en AZCopy, moeten expliciete netwerk regels worden geconfigureerd.
+Netwerk regels worden afgedwongen voor alle netwerk protocollen voor Azure Storage, inclusief REST en SMB. Om toegang te krijgen tot gegevens met behulp van hulpprogram ma's zoals de Azure Portal, Storage Explorer en AZCopy, moeten expliciete netwerk regels worden geconfigureerd.
 
 Zodra de netwerk regels zijn toegepast, worden ze afgedwongen voor alle aanvragen. SAS-tokens die toegang verlenen tot een specifiek IP-adres, kunnen de toegang tot de token houder beperken, maar geen nieuwe toegang verlenen naast geconfigureerde netwerk regels.
 

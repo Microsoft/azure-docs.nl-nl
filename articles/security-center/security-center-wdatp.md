@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 10fa47a8f613218b1331259040be77df867ade95
-ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
+ms.openlocfilehash: 9a8dba99435e1616b1c49d5209b30c3c523876db
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/03/2021
-ms.locfileid: "97854839"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071337"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -121,13 +121,19 @@ Een goed aardige micro soft Defender for Endpoint-test waarschuwing genereren:
 
 ## <a name="faq-for-security-centers-integrated-microsoft-defender-for-endpoint"></a>Veelgestelde vragen over het geïntegreerde micro soft Defender voor eind punt van Security Center
 
-### <a name="what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint"></a>Wat zijn de licentie vereisten voor micro soft Defender voor eind punt?
+- [Wat zijn de licentie vereisten voor micro soft Defender voor eind punt?](#what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint)
+- [Als ik al een licentie voor micro soft Defender voor eind punt heb, kan ik dan een korting voor Azure Defender krijgen?](#if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender)
+- [Hoe kan ik overschakelen van een EDR-hulp programma van derden?](#how-do-i-switch-from-a-third-party-edr-tool)
 
+### <a name="what-are-the-licensing-requirements-for-microsoft-defender-for-endpoint"></a>Wat zijn de licentie vereisten voor micro soft Defender voor eind punt?
 Defender voor het eind punt is zonder extra kosten inbegrepen bij **Azure Defender voor servers**. U kunt dit ook afzonderlijk aanschaffen voor 50-computers of meer.
 
+### <a name="if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender"></a>Als ik al een licentie voor micro soft Defender voor eind punt heb, kan ik dan een korting voor Azure Defender krijgen?
+Als u al een licentie voor micro soft Defender voor eind punt hebt, hoeft u niet te betalen voor dat deel van uw Azure Defender-licentie.
+
+Neem contact op met het ondersteunings team van Security Center om de korting te bevestigen en geef de relevante werk ruimte-ID, regio en licentie gegevens op.
 
 ### <a name="how-do-i-switch-from-a-third-party-edr-tool"></a>Hoe kan ik overschakelen van een EDR-hulp programma van derden?
-
 Volledige instructies voor het overschakelen van een niet-micro soft-eindpunt oplossing vindt u in de documentatie van micro soft Defender voor endpoint: [migratie overzicht](/windows/security/threat-protection/microsoft-defender-atp/switch-to-microsoft-defender-migration).
   
 

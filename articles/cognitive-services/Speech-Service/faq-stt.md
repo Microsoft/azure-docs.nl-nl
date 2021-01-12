@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
-ms.openlocfilehash: 25848d313fc01fc41ef8874707bd10b2fa9912d3
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: a6f75a80fd73844c975b332db8a0e8919cde9f0d
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033509"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072170"
 ---
 # <a name="speech-to-text-frequently-asked-questions"></a>Veelgestelde vragen over spraak naar tekst
 
@@ -136,7 +136,9 @@ Zie de [quota en limieten voor spraak Services](speech-services-quotas-and-limit
 
 **V: hoe lang duurt het om een aangepast model met audio gegevens te trainen?**
 
-**A**: een model trainen met audio gegevens is een lang proces. Afhankelijk van de hoeveelheid gegevens kan het enkele dagen duren voordat een aangepast model is gemaakt. Als deze niet binnen een week kan worden voltooid, kan de service de trainings bewerking afbreken en het model rapporteren als mislukt. Voor snellere resultaten gebruikt u een van de [regio's](custom-speech-overview.md#set-up-your-azure-account) waar speciale hardware beschikbaar is voor training. U kunt het volledig getrainde model naar een andere regio kopiëren met behulp van de [rest API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription). Training met alleen tekst is veel sneller en eindigt doorgaans binnen enkele minuten.
+**A**: het trainen van een model met audio gegevens kan een langdurige procedure zijn. Afhankelijk van de hoeveelheid gegevens kan het enkele dagen duren voordat een aangepast model is gemaakt. Als deze niet binnen een week kan worden voltooid, kan de service de trainings bewerking afbreken en het model rapporteren als mislukt.
+
+Voor snellere resultaten gebruikt u een van de [regio's](custom-speech-overview.md#set-up-your-azure-account) waar speciale hardware beschikbaar is voor training. Over het algemeen verwerkt de service ongeveer 10 uur aan audio gegevens per dag in regio's met dergelijke hardware. Het kan alleen ongeveer 1 uur aan audio gegevens per dag in andere regio's verwerken. U kunt het volledig getrainde model naar een andere regio kopiëren met behulp van de [rest API](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0/operations/CopyModelToSubscription). Training met alleen tekst is veel sneller en eindigt doorgaans binnen enkele minuten.
 
 Sommige basis modellen kunnen niet worden aangepast met audio gegevens. Voor hen gebruikt de service alleen de tekst van de transcriptie voor training en worden de audio gegevens genegeerd. De training wordt vervolgens veel sneller uitgevoerd en de resultaten zijn hetzelfde als training met alleen tekst.
 

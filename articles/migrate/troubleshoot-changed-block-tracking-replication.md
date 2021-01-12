@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: troubleshooting
 ms.date: 08/17/2020
-ms.openlocfilehash: e19c5064dd69538dfc025b0d244baf4fa74706b2
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 33e2bf641b75a5dd360498478f1ea70c7614fb38
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753532"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071371"
 ---
 # <a name="troubleshooting-replication-issues-in-agentless-vmware-vm-migration"></a>Problemen met replicatie oplossen in VMware VM-migratie zonder agent
 
@@ -297,6 +297,24 @@ Dit is een bekend VMware-probleem waarin de schijf grootte die wordt aangegeven 
 ### <a name="error-message-an-internal-error-occurred-memory-allocation-failed-out-of-memory"></a>Fout bericht: er is een interne fout opgetreden. [Geheugen toewijzing is mislukt. Onvoldoende geheugen.]
 
 Dit gebeurt wanneer de NFC-host buffer onvoldoende geheugen heeft. Om dit probleem op te lossen, moet u de virtuele machine (Compute vMotion) verplaatsen naar een andere host, die vrije bronnen heeft.
+
+## <a name="replication-cycle-failed"></a>Replicatie cyclus is mislukt
+
+**Fout-id:** 181008
+
+**Fout bericht:** VM: ' VMName '. Fout: er zijn geen disksnapshots gevonden voor de momentopname replicatie met de moment opname-id: ' SnapshotID '.
+
+**Mogelijke oorzaken:**
+
+Mogelijke oorzaken zijn:
+1. Het pad van een of meer inbegrepen schijven is gewijzigd door de opslag-VMotion.
+2. Een of meer inbegrepen schijven zijn niet meer gekoppeld aan de VM.
+      
+**Advies**
+
+De volgende aanbevelingen worden gegeven
+1. Herstel de inbegrepen schijven in het oorspronkelijke pad met behulp van Storage vMotion en schakel vervolgens Storage VMotion uit.
+2. Schakel Storage VMotion uit, indien ingeschakeld, stop de replicatie op de virtuele machine en repliceer de virtuele machine opnieuw. Neem contact op met de ondersteuning als het probleem zich blijft voordoen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

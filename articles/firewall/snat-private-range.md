@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 01/11/2021
 ms.author: victorh
-ms.openlocfilehash: c5613dda7adbbc47f989bc2a772777e716620b3c
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 0df91680dadbc4ac19299a4df48a585a11f044e8
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97348030"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072238"
 ---
 # <a name="azure-firewall-snat-private-ip-address-ranges"></a>Persoonlijke IP-adresbereiken van Azure Firewall SNAT
 
@@ -25,6 +25,9 @@ Als uw organisatie gebruikmaakt van een openbaar IP-adres bereik voor particulie
 - Als u Azure Firewall wilt configureren op **nooit** -SNAT ongeacht het doel-IP-adres, gebruikt u **0.0.0.0/0** als privé-IP-adres bereik. Met deze configuratie kan Azure Firewall verkeer nooit rechtstreeks naar Internet routeren. 
 
 - Als u de firewall wilt configureren op **altijd** SNAT, ongeacht het doel adres, gebruikt u **255.255.255.255/32** als uw privé-IP-adres bereik.
+
+> [!IMPORTANT]
+> Het persoonlijke adres bereik dat u opgeeft, is alleen van toepassing op netwerk regels. Op dit moment worden toepassings regels altijd SNAT.
 
 > [!IMPORTANT]
 > Als u uw eigen persoonlijke IP-adresbereiken wilt opgeven en de standaard IANA RFC 1918-adresbereiken wilt behouden, moet u ervoor zorgen dat uw aangepaste lijst nog steeds het IANA RFC 1918-bereik bevat. 

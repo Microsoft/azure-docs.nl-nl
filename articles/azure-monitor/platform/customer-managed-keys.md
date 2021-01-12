@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
-ms.date: 11/18/2020
-ms.openlocfilehash: 6037b372f73bcf3554120e305f4b3031b26e97d4
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.date: 01/10/2021
+ms.openlocfilehash: 66a3276863b05cb2fe0dd80a2195f7fd2af1443c
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831649"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071932"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -36,7 +36,7 @@ Log Analytics toegewezen clusters gebruiken een [prijs model](../log-query/logs-
 
 ## <a name="how-customer-managed-key-works-in-azure-monitor"></a>Hoe Customer-Managed sleutel werkt in Azure Monitor
 
-Azure Monitor maakt gebruik van door het systeem toegewezen beheerde identiteit om toegang tot uw Azure Key Vault te verlenen. De identiteit van het Log Analytics cluster wordt ondersteund op het cluster niveau en Customer-Managed sleutel op meerdere werk ruimten toestaan, een nieuwe Log Analytics *cluster* bron wordt uitgevoerd als een tussenliggende identiteits verbinding tussen uw Key Vault en uw log Analytics-werk ruimten. De Log Analytics cluster opslag maakt gebruik van de beheerde identiteit die \' aan de *cluster* bron is gekoppeld om de Azure Key Vault via Azure Active Directory te verifiëren. 
+Azure Monitor gebruikt beheerde identiteit om toegang tot uw Azure Key Vault te verlenen. De identiteit van het Log Analytics cluster wordt ondersteund op cluster niveau. Als u Customer-Managed sleutel beveiliging op meerdere werk ruimten wilt toestaan, wordt een nieuwe Log Analytics *cluster* resource uitgevoerd als een tussenliggende identiteits verbinding tussen uw Key Vault en uw log Analytics-werk ruimten. De opslag van het cluster maakt gebruik van de beheerde identiteit die \' is gekoppeld aan de *cluster* bron om de Azure Key Vault via Azure Active Directory te verifiëren. 
 
 Na de configuratie van de door de klant beheerde sleutel, worden nieuwe opgenomen gegevens aan werk ruimten die zijn gekoppeld aan uw toegewezen cluster, versleuteld met uw sleutel. U kunt werk ruimten op elk gewenst moment ontkoppelen van het cluster. Nieuwe gegevens worden vervolgens opgenomen in Log Analytics opslag en versleuteld met de micro soft-sleutel, terwijl u uw nieuwe en oude gegevens naadloos kunt opvragen.
 
@@ -85,7 +85,7 @@ Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet 
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 N.v.t.
 
@@ -125,6 +125,11 @@ Deze instellingen kunnen worden bijgewerkt in Key Vault via CLI en Power shell:
 
 ## <a name="create-cluster"></a>Cluster maken
 
+> [! INFORMATION]-clusters ondersteunen twee [typen beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types). Door het systeem toegewezen beheerde identiteit wordt gemaakt met het cluster wanneer u het `SystemAssigned` identiteits type invoert. Dit kan later worden gebruikt om toegang te verlenen tot uw Key Vault. Als u een cluster wilt maken dat is geconfigureerd voor door de klant beheerde sleutel bij het maken, maakt u het cluster met een door de gebruiker toegewezen beheerde identiteit die in uw Key Vault is toegestaan. werk het cluster bij met het `UserAssigned` identiteits type, de resource-id van de identiteit in `UserAssignedIdentities` en geef uw sleutel gegevens op in `keyVaultProperties` .
+
+> [!IMPORTANT]
+> U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt. Deze beperking is niet van toepassing op door het systeem toegewezen beheerde identiteit.
+
 Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](../log-query/logs-dedicated-clusters.md#creating-a-cluster). 
 
 ## <a name="grant-key-vault-permissions"></a>Key Vault machtigingen verlenen
@@ -132,7 +137,7 @@ Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](.
 Maak een toegangs beleid in Key Vault om machtigingen te verlenen aan uw cluster. Deze machtigingen worden gebruikt door de aan-Azure Monitor opslag. Open uw Key Vault in Azure Portal en klik vervolgens op *toegangs beleid* en vervolgens op *toegangs beleid toevoegen* om een beleid te maken met de volgende instellingen:
 
 - Sleutel machtigingen: Selecteer *Get*, de *tekst ' wrap* ' en *' uitpakken sleutel*'.
-- Selecteer Principal: Voer de naam van het cluster of de principal-id in.
+- Selecteer Principal: afhankelijk van het identiteits type dat in het cluster (door systeem of gebruiker toegewezen beheerde identiteit) wordt gebruikt, voert u de cluster naam of de ID van het cluster-Principal in voor door het systeem toegewezen beheerde identiteit of de door de gebruiker toegewezen beheerde identiteits naam.
 
 ![Key Vault machtigingen verlenen](media/customer-managed-keys/grant-key-vault-permissions-8bit.png)
 
@@ -156,7 +161,7 @@ De bewerking is asynchroon en kan enige tijd duren.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 az monitor log-analytics cluster update --name "cluster-name" --resource-group "resource-group-name" --key-name "key-name" --key-vault-uri "key-uri" --key-version "key-version"
@@ -237,11 +242,15 @@ Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](.
 
 ## <a name="key-revocation"></a>Intrekking van sleutel
 
-U kunt de toegang tot gegevens intrekken door de sleutel uit te scha kelen of door het toegangs beleid van het cluster in uw Key Vault te verwijderen. De Log Analytics-cluster opslag respecteert altijd wijzigingen in de sleutel machtigingen binnen een uur of eerder, en de opslag wordt niet meer beschikbaar. Nieuwe gegevens die zijn opgenomen in werk ruimten die zijn gekoppeld aan het cluster, worden verwijderd en kunnen niet worden hersteld, gegevens zijn niet toegankelijk en query's naar deze werk ruimten mislukken. Eerder opgenomen gegevens blijven in de opslag, zolang uw cluster en uw werk ruimten niet worden verwijderd. Ontoegankelijke gegevens zijn onderworpen aan het Bewaar beleid voor gegevens en worden verwijderd wanneer de Bewaar termijn wordt bereikt. 
+U kunt de toegang tot gegevens intrekken door de sleutel uit te scha kelen of door het toegangs beleid van het cluster in uw Key Vault te verwijderen. 
 
-Opgenomen gegevens in de afgelopen 14 dagen worden ook opgeslagen in een hot-cache (met SSD-back-ups) voor een efficiënte bewerking van query-engine. Dit wordt verwijderd bij het verwijderen van de sleutel en wordt ook niet toegankelijk.
+> [!IMPORTANT]
+> - Als uw cluster is ingesteld met een door de gebruiker toegewezen beheerde identiteit, wordt `UserAssignedIdentities` `None` het cluster onderbroken en wordt de toegang tot uw gegevens voor komen, maar u kunt de intrekking niet herstellen en het cluster activeren zonder dat er een ondersteunings aanvraag wordt geopend. Deze beperking is niet van toepassing op door het systeem toegewezen beheerde identiteit.
+> - De aanbevolen actie voor het intrekken van de sleutel is door de sleutel in uw Key Vault uit te scha kelen.
 
-Met opslag worden uw Key Vault periodiek gecontroleerd om te proberen om de versleutelings sleutel op te slaan en na het openen van de gegevens en het hervatten van query's binnen 30 minuten.
+De cluster opslag respecteert altijd wijzigingen in de sleutel machtigingen binnen een uur of binnenkort en de opslag wordt niet meer beschikbaar. Nieuwe gegevens die zijn opgenomen in werk ruimten die zijn gekoppeld aan het cluster, worden verwijderd en kunnen niet worden hersteld, gegevens worden ontoegankelijk en query's op deze werk ruimten mislukken. Eerder opgenomen gegevens blijven in de opslag, zolang uw cluster en uw werk ruimten niet worden verwijderd. Ontoegankelijke gegevens zijn onderworpen aan het Bewaar beleid voor gegevens en worden verwijderd wanneer de Bewaar termijn wordt bereikt. Opgenomen gegevens in de afgelopen 14 dagen worden ook opgeslagen in een hot-cache (met SSD-back-ups) voor een efficiënte bewerking van query-engine. Dit wordt verwijderd bij het verwijderen van de sleutel en wordt ook niet toegankelijk.
+
+In de opslag ruimte van het cluster worden uw Key Vault periodiek gecontroleerd om te proberen de versleutelings sleutel op te halen en eenmaal te zijn geopend, gegevens opname en query's te hervatten binnen 30 minuten.
 
 ## <a name="key-rotation"></a>Sleutelroulatie
 
@@ -275,7 +284,7 @@ Een opslag account voor een *query* aan uw werk ruimte koppelen: *opgeslagen Zoe
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 $storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
@@ -319,7 +328,7 @@ Een opslag account voor *waarschuwingen* aan uw werk ruimte koppelen: query's vo
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 $storageAccountId = '/subscriptions/<subscription-id>/resourceGroups/<resource-group-name>/providers/Microsoft.Storage/storageAccounts/<storage name>'
@@ -404,6 +413,37 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
   - Als u een cluster maakt en er een fout melding krijgt met de naam ' <regio-name> ondersteunt geen dubbele versleuteling voor clusters. ' kunt u het cluster nog steeds maken zonder dubbele versleuteling. Voeg `"properties": {"isDoubleEncryptionEnabled": false}` de eigenschap toe aan de hoofd tekst van de rest-aanvraag.
   - De instelling voor dubbele versleuteling kan niet worden gewijzigd nadat het cluster is gemaakt.
 
+  - Als uw cluster is ingesteld met een door de gebruiker toegewezen beheerde identiteit, wordt `UserAssignedIdentities` `None` het cluster onderbroken en wordt de toegang tot uw gegevens voor komen, maar u kunt de intrekking niet herstellen en het cluster activeren zonder dat er een ondersteunings aanvraag wordt geopend. Deze beperking hebben ' toegepast op door het systeem toegewezen beheerde identiteit.
+
+  - U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt. Deze beperking is niet van toepassing op door het systeem toegewezen beheerde identiteit.
+
+## <a name="troubleshooting"></a>Problemen oplossen
+
+- Gedrag met Key Vault Beschik baarheid
+  - In normale werking: opslag caches AEK gedurende korte tijd en terugvallen op Key Vault om regel matig de vertraging op te lossen.
+    
+  - Tijdelijke verbindings fouten--opslag verwerkt tijdelijke fouten (time-outs, verbindings fouten, DNS-problemen) doordat sleutels gedurende langere tijd in de cache blijven staan. Dit geeft een kleine problemen in Beschik baarheid. De mogelijkheden voor het uitvoeren van query's en opname worden zonder onderbreking voortgezet.
+    
+  - Live site--de niet-beschik baarheid van ongeveer 30 minuten leidt ertoe dat het opslag account niet meer beschikbaar is. De query mogelijkheid is niet beschikbaar en opgenomen gegevens worden gedurende enkele uren in de cache opgeslagen met behulp van micro soft-code om gegevens verlies te voor komen. Wanneer de toegang tot Key Vault wordt hersteld, wordt de query beschikbaar en worden de gegevens in de tijdelijke cache opgenomen in de gegevens opslag en versleuteld met Customer-Managed sleutel.
+
+  - Toegangs snelheid van Key Vault: de frequentie waarmee Azure Monitor toegang tot Key Vault voor verpakte en onverpakte bewerkingen tussen 6 en 60 seconden ligt.
+
+- Als u een cluster maakt en de KeyVaultProperties onmiddellijk opgeeft, kan de bewerking mislukken omdat het toegangs beleid niet kan worden gedefinieerd totdat de systeem identiteit is toegewezen aan het cluster.
+
+- Als u een bestaand cluster bijwerkt met KeyVaultProperties en het sleutel toegangs beleid Get ontbreekt in Key Vault, mislukt de bewerking.
+
+- Als er een conflict fout optreedt tijdens het maken van een cluster, is het mogelijk dat u uw cluster in de afgelopen 14 dagen hebt verwijderd en dat het een tijdelijke, verwijderings periode is. De cluster naam blijft gereserveerd tijdens de tijdelijke periode en u kunt geen nieuw cluster met die naam maken. De naam wordt vrijgegeven na de periode voor voorlopig verwijderen wanneer het cluster permanent wordt verwijderd.
+
+- Als u het cluster bijwerkt terwijl er een bewerking wordt uitgevoerd, mislukt de bewerking.
+
+- Als u het cluster niet implementeert, controleert u of uw Azure Key Vault-, cluster-en gekoppelde Log Analytics-werk ruimten zich in dezelfde regio bevinden. De kan zich in verschillende abonnementen bevindt.
+
+- Als u de sleutel versie bijwerkt in Key Vault en de nieuwe sleutel-id-Details in het cluster niet bijwerkt, blijft de Log Analytics cluster uw vorige sleutel gebruiken en worden uw gegevens niet meer toegankelijk. Update de nieuwe sleutel-id in het cluster om gegevens opname en de mogelijkheid om gegevens op te vragen te hervatten.
+
+- Sommige bewerkingen zijn lang en kunnen even duren: Dit zijn clusters maken, cluster sleutel updates en cluster verwijdering. U kunt de bewerkings status op twee manieren controleren:
+  1. Wanneer u REST gebruikt, kopieert u de waarde van de Azure-AsyncOperation-URL uit het antwoord en volgt u de controle van de [asynchrone bewerkings status](#asynchronous-operations-and-status-check).
+  2. Verzend aanvraag verzenden naar cluster of werk ruimte en Bekijk het antwoord. Niet-gekoppelde werk ruimte heeft bijvoorbeeld niet de *clusterResourceId* onder *functies*.
+
 - Foutberichten
   
   **Cluster maken**
@@ -441,34 +481,6 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
   **Werk ruimte ontkoppelen**
   -  404--werk ruimte is niet gevonden. De werk ruimte die u hebt opgegeven, bestaat niet of is verwijderd.
   -  409--werk ruimte koppeling of ontkoppelen bewerking in verwerking.
-
-## <a name="troubleshooting"></a>Problemen oplossen
-
-- Gedrag met Key Vault Beschik baarheid
-  - In normale werking: opslag caches AEK gedurende korte tijd en terugvallen op Key Vault om regel matig de vertraging op te lossen.
-    
-  - Tijdelijke verbindings fouten--opslag verwerkt tijdelijke fouten (time-outs, verbindings fouten, DNS-problemen) doordat sleutels gedurende langere tijd in de cache blijven staan. Dit geeft een kleine problemen in Beschik baarheid. De mogelijkheden voor het uitvoeren van query's en opname worden zonder onderbreking voortgezet.
-    
-  - Live site--de niet-beschik baarheid van ongeveer 30 minuten leidt ertoe dat het opslag account niet meer beschikbaar is. De query mogelijkheid is niet beschikbaar en opgenomen gegevens worden gedurende enkele uren in de cache opgeslagen met behulp van micro soft-code om gegevens verlies te voor komen. Wanneer de toegang tot Key Vault wordt hersteld, wordt de query beschikbaar en worden de gegevens in de tijdelijke cache opgenomen in de gegevens opslag en versleuteld met Customer-Managed sleutel.
-
-  - Toegangs snelheid van Key Vault: de frequentie waarmee Azure Monitor toegang tot Key Vault voor verpakte en onverpakte bewerkingen tussen 6 en 60 seconden ligt.
-
-- Als u een cluster maakt en de KeyVaultProperties onmiddellijk opgeeft, kan de bewerking mislukken omdat het toegangs beleid niet kan worden gedefinieerd totdat de systeem identiteit is toegewezen aan het cluster.
-
-- Als u een bestaand cluster bijwerkt met KeyVaultProperties en het sleutel toegangs beleid Get ontbreekt in Key Vault, mislukt de bewerking.
-
-- Als er een conflict fout optreedt tijdens het maken van een cluster, is het mogelijk dat u uw cluster in de afgelopen 14 dagen hebt verwijderd en dat het een tijdelijke, verwijderings periode is. De cluster naam blijft gereserveerd tijdens de tijdelijke periode en u kunt geen nieuw cluster met die naam maken. De naam wordt vrijgegeven na de periode voor voorlopig verwijderen wanneer het cluster permanent wordt verwijderd.
-
-- Als u het cluster bijwerkt terwijl er een bewerking wordt uitgevoerd, mislukt de bewerking.
-
-- Als u het cluster niet implementeert, controleert u of uw Azure Key Vault-, cluster-en gekoppelde Log Analytics-werk ruimten zich in dezelfde regio bevinden. De kan zich in verschillende abonnementen bevindt.
-
-- Als u de sleutel versie bijwerkt in Key Vault en de nieuwe sleutel-id-Details in het cluster niet bijwerkt, blijft de Log Analytics cluster uw vorige sleutel gebruiken en worden uw gegevens niet meer toegankelijk. Update de nieuwe sleutel-id in het cluster om gegevens opname en de mogelijkheid om gegevens op te vragen te hervatten.
-
-- Sommige bewerkingen zijn lang en kunnen even duren: Dit zijn clusters maken, cluster sleutel updates en cluster verwijdering. U kunt de bewerkings status op twee manieren controleren:
-  1. Wanneer u REST gebruikt, kopieert u de waarde van de Azure-AsyncOperation-URL uit het antwoord en volgt u de controle van de [asynchrone bewerkings status](#asynchronous-operations-and-status-check).
-  2. Verzend aanvraag verzenden naar cluster of werk ruimte en Bekijk het antwoord. Niet-gekoppelde werk ruimte heeft bijvoorbeeld niet de *clusterResourceId* onder *functies*.
-
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [log Analytics toegewezen cluster facturering](../platform/manage-cost-storage.md#log-analytics-dedicated-clusters)

@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/18/2020
-ms.openlocfilehash: 68f536e06ec5a40083d96745f5b72e511e423f64
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.date: 01/11/2021
+ms.openlocfilehash: a411f4ce261ee6d203e274efe3cf23ca23203453
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695180"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070878"
 ---
 # <a name="copy-and-transform-data-in-azure-synapse-analytics-by-using-azure-data-factory"></a>Gegevens in azure Synapse Analytics kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -391,7 +391,7 @@ Als u gegevens wilt kopiëren naar Azure Synapse Analytics, stelt u het sink-typ
 | writeBatchTimeout | Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt.<br/><br/>De toegestane waarde is **time span**. Voor beeld: "00:30:00" (30 minuten). | Nee.<br/>Toep assen bij het gebruik van bulksgewijs invoegen.        |
 | preCopyScript     | Geef een SQL-query voor de Kopieer activiteit op die moet worden uitgevoerd voordat er in elke uitvoering gegevens naar Azure Synapse Analytics worden geschreven. Gebruik deze eigenschap om de vooraf geladen gegevens op te schonen. | Nee                                            |
 | tableOption | Hiermee wordt aangegeven of [de Sink-tabel automatisch](copy-activity-overview.md#auto-create-sink-tables) moet worden gemaakt als deze niet bestaat op basis van het bron schema. Toegestane waarden zijn: `none` (standaard), `autoCreate` . |Nee |
-| disableMetricsCollection | Data Factory verzamelt metrische gegevens zoals Azure Synapse Analytics Dwu's voor het optimaliseren van Kopieer prestaties en aanbevelingen. Als u zich zorgen maakt over dit gedrag, geeft u `true` op dat u deze functie wilt uitschakelen. | Nee (standaard instelling `false` ) |
+| disableMetricsCollection | Data Factory verzamelt metrische gegevens, zoals Azure Synapse Analytics Dwu's voor het optimaliseren van de Kopieer prestaties en aanbevelingen, waarmee extra toegang tot de hoofd database wordt geïntroduceerd. Als u zich zorgen maakt over dit gedrag, geeft u `true` op dat u deze functie wilt uitschakelen. | Nee (standaard instelling `false` ) |
 
 #### <a name="azure-synapse-analytics-sink-example"></a>Voor beeld van Azure Synapse Analytics-Sink
 
@@ -853,7 +853,7 @@ Wanneer u gegevens kopieert vanuit of naar Azure Synapse Analytics, worden de vo
 | nchar                                 | Teken reeks, char []                 |
 | numeriek                               | Decimaal                        |
 | nvarchar                              | Teken reeks, char []                 |
-| werkelijk                                  | Enkelvoudig                         |
+| werkelijk                                  | Enkel                         |
 | rowversion                            | Byte []                         |
 | smalldatetime                         | DateTime                       |
 | smallint                              | Int16                          |

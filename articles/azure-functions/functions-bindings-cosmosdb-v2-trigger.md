@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/24/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: e845efa2c1df47c80fcc10e7fb758f05af9fbecc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a2f57fd6a369fba4a78799f768eb3fd2f3d27050
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002133"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071473"
 ---
 # <a name="azure-cosmos-db-trigger-for-azure-functions-2x-and-higher"></a>Azure Cosmos DB trigger voor Azure Functions 2. x en hoger
 
@@ -91,6 +91,27 @@ Dit is de C# Script-code:
     }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+Deze functie wordt aangeroepen wanneer er invoeg-of update bewerkingen zijn in de opgegeven Data Base en verzameling.
+
+```java
+    @FunctionName("cosmosDBMonitor")
+    public void cosmosDbProcessor(
+        @CosmosDBTrigger(name = "items",
+            databaseName = "ToDoList",
+            collectionName = "Items",
+            leaseCollectionName = "leases",
+            createLeaseCollectionIfNotExists = true,
+            connectionStringSetting = "AzureCosmosDBConnection") String[] items,
+            final ExecutionContext context ) {
+                context.getLogger().info(items.length + "item(s) is/are changed.");
+            }
+```
+
+
+Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@CosmosDBTrigger` annotatie voor para meters waarvan de waarde afkomstig is van Cosmos db.  Deze aantekening kan worden gebruikt met systeemeigen Java-typen, POJO's of nullbare waarden met `Optional<T>`.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 In het volgende voor beeld ziet u een Cosmos DB trigger binding in een *function.jsin* een bestand en een [Java script-functie](functions-reference-node.md) die gebruikmaakt van de binding. De functie schrijft logboek berichten wanneer Cosmos DB records worden toegevoegd of gewijzigd.
@@ -118,6 +139,31 @@ Dit is de JavaScript-code:
 
       context.done();
     }
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+In het volgende voor beeld ziet u hoe u een functie kunt uitvoeren als gegevens wijzigingen in Cosmos DB.
+
+```json
+{
+  "type": "cosmosDBTrigger",
+  "name": "Documents",
+  "direction": "in",
+  "leaseCollectionName": "leases",
+  "connectionStringSetting": "MyStorageConnectionAppSetting",
+  "databaseName": "Tasks",
+  "collectionName": "Items",
+  "createLeaseCollectionIfNotExists": true
+}
+```
+
+In het _run.ps1_ -bestand hebt u toegang tot het document waarmee de functie wordt geactiveerd via de `$Documents` para meter.
+
+```powershell
+param($Documents, $TriggerMetadata) 
+
+Write-Host "First document Id modified : $($Documents[0].id)" 
 ```
 
 # <a name="python"></a>[Python](#tab/python)
@@ -151,27 +197,6 @@ Dit is de Python-code:
             logging.info('First document Id modified: %s', documents[0]['id'])
 ```
 
-# <a name="java"></a>[Java](#tab/java)
-
-Deze functie wordt aangeroepen wanneer er invoeg-of update bewerkingen zijn in de opgegeven Data Base en verzameling.
-
-```java
-    @FunctionName("cosmosDBMonitor")
-    public void cosmosDbProcessor(
-        @CosmosDBTrigger(name = "items",
-            databaseName = "ToDoList",
-            collectionName = "Items",
-            leaseCollectionName = "leases",
-            createLeaseCollectionIfNotExists = true,
-            connectionStringSetting = "AzureCosmosDBConnection") String[] items,
-            final ExecutionContext context ) {
-                context.getLogger().info(items.length + "item(s) is/are changed.");
-            }
-```
-
-
-Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@CosmosDBTrigger` annotatie voor para meters waarvan de waarde afkomstig is van Cosmos db.  Deze aantekening kan worden gebruikt met systeemeigen Java-typen, POJO's of nullbare waarden met `Optional<T>`.
-
 ---
 
 ## <a name="attributes-and-annotations"></a>Kenmerken en aantekeningen
@@ -198,17 +223,21 @@ Zie [trigger](#example)voor een volledig voor beeld.
 
 Kenmerken worden niet ondersteund door C# Script.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@CosmosDBInput` annotatie voor para meters die gegevens uit Cosmos DB lezen.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Kenmerken worden niet ondersteund door JavaScript.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Kenmerken worden niet ondersteund door Power shell.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Kenmerken worden niet ondersteund door Python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@CosmosDBInput` annotatie voor para meters die gegevens uit Cosmos DB lezen.
 
 ---
 

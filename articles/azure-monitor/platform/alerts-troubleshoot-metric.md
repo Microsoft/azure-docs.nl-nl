@@ -4,14 +4,14 @@ description: Veelvoorkomende problemen met Azure Monitor metrische waarschuwinge
 author: harelbr
 ms.author: harelbr
 ms.topic: troubleshooting
-ms.date: 01/03/2021
+ms.date: 01/11/2021
 ms.subservice: alerts
-ms.openlocfilehash: 9a05fe509e032681a0bf5ed989595a25f66d33c6
-ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
+ms.openlocfilehash: e4e876b58c82605df0c005b225dcf2cdbcda1b34
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857338"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070725"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
@@ -91,9 +91,9 @@ Als u een specifieke metrische waarschuwing wilt instellen maar deze niet ziet b
 Als u op zoek bent naar [specifieke dimensie waarden van een metriek](./alerts-metric-overview.md#using-dimensions), maar deze waarden niet kunt vinden, moet u rekening houden met het volgende:
 
 1. Het kan enkele minuten duren voordat de dimensiewaarden worden weergegeven onder de lijst **Dimensiewaarden**.
-1. De weergegeven dimensiewaarden zijn gebaseerd op de metrische gegevens die in de afgelopen drie dagen zijn verzameld.
-1. Als de dimensie waarde nog niet is verzonden, klikt u op het plus teken (+) om een aangepaste waarde toe te voegen
-1. Als u wilt waarschuwen voor alle mogelijke waarden van een dimensie (inclusief toekomstige waarden), schakelt u het selectie vakje selecteren in
+1. De weer gegeven dimensie waarden zijn gebaseerd op metrische gegevens die in de afgelopen dag zijn verzameld
+1. Als de dimensie waarde nog niet is verzonden of niet wordt weer gegeven, kunt u de optie aangepaste waarde toevoegen gebruiken om een aangepaste dimensie waarde toe te voegen
+1. Als u wilt waarschuwen voor alle mogelijke waarden van een dimensie (met inbegrip van toekomstige waarden), kiest u de optie alle huidige en toekomstige waarden selecteren
 
 ## <a name="metric-alert-rules-still-defined-on-a-deleted-resource"></a>De regels voor metrische waarschuwingen zijn nog steeds gedefinieerd voor een verwijderde resource 
 

@@ -4,14 +4,14 @@ description: Meer informatie over het gebruik van Azure Portal of CLI om metrisc
 author: harelbr
 ms.author: harelbr
 ms.topic: conceptual
-ms.date: 08/11/2020
+ms.date: 01/11/2021
 ms.subservice: alerts
-ms.openlocfilehash: 8b1015573e4c01f01d82c7c152b66db80bef0aee
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 0518d3a2e1b67b33b9cb6bceb9754df302710f70
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342158"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071031"
 ---
 # <a name="create-view-and-manage-metric-alerts-using-azure-monitor"></a>Metrische waarschuwing maken, bekijken en beheren met Azure Monitor
 
@@ -30,7 +30,7 @@ In de volgende procedure wordt beschreven hoe u een regel voor metrische waarsch
     > [!TIP]
     > De meeste resource-Blades hebben ook **waarschuwingen** in het resource menu onder **bewaking**, u kunt hier ook waarschuwingen van maken.
 
-3. Klik op **doel selecteren**in het context deel venster dat wordt geladen, selecteer een doel resource waarop u een waarschuwing wilt ontvangen. Gebruik de vervolg keuzelijst **abonnement** en **resource type** om de resource te vinden die u wilt bewaken. U kunt ook de zoek balk gebruiken om uw bron te vinden.
+3. Klik op **doel selecteren** in het context deel venster dat wordt geladen, selecteer een doel resource waarop u een waarschuwing wilt ontvangen. Gebruik de vervolg keuzelijst **abonnement** en **resource type** om de resource te vinden die u wilt bewaken. U kunt ook de zoek balk gebruiken om uw bron te vinden.
 
 4. Als de geselecteerde resource metrische gegevens bevat, kunt u waarschuwingen maken op **beschik bare signalen** onder aan de rechter kant, zoals metrische gegevens. U kunt de volledige lijst met resource typen die worden ondersteund voor metrische waarschuwingen in dit [artikel](./alerts-metric-near-real-time.md#metrics-and-dimensions-supported)weer geven.
 
@@ -41,23 +41,23 @@ In de volgende procedure wordt beschreven hoe u een regel voor metrische waarsch
 7. Er wordt een grafiek weer gegeven met de metrische gegevens voor de afgelopen zes uur. Gebruik de vervolg keuzelijst **grafiek periode** om de meer geschiedenis voor de metrische gegevens weer te geven.
 
 8. Als de metriek dimensies heeft, wordt er een tabel weer gegeven. Selecteer een of meer waarden per dimensie.
-    - De weer gegeven dimensie waarden zijn gebaseerd op de metrische gegevens van de afgelopen drie dagen.
-    - Als de dimensie waarde die u zoekt niet wordt weer gegeven, klikt u op + om een aangepaste waarde toe te voegen.
-    - U kunt ook **selecteren \* *_ voor een van de dimensies. _*Selecteer \* *_ de selectie wordt dynamisch geschaald naar alle huidige en toekomstige waarden voor een dimensie.
+    - De weer gegeven dimensie waarden zijn gebaseerd op metrische gegevens van de afgelopen dag.
+    - Als de dimensie waarde die u zoekt niet wordt weer gegeven, klikt u op aangepaste waarde toevoegen om een aangepaste dimensie waarde toe te voegen.
+    - U kunt ook **alle huidige en toekomstige waarden** voor een van de dimensies selecteren. Hiermee wordt de selectie dynamisch geschaald naar alle huidige en toekomstige waarden voor een dimensie.
 
     De metrische waarschuwings regel evalueert de voor waarde voor alle combi Naties van geselecteerde waarden. Meer [informatie over hoe waarschuwingen voor multidimensionale metrische gegevens werken](alerts-metric-overview.md).
 
-9. Selecteer _*drempel waarde** type, **operator**en **aggregatie type**. Hiermee wordt de logica bepaald die door de metrische waarschuwings regel wordt geëvalueerd.
+9. Selecteer het type **drempel waarde** , de **operator** en het **samenvoegings type**. Hiermee wordt de logica bepaald die door de metrische waarschuwings regel wordt geëvalueerd.
     - Als u een **statische** drempel waarde gebruikt, gaat u door met het definiëren van een **drempelwaarde**. De metrische grafiek kan helpen om te bepalen wat een redelijke drempel waarde kan hebben.
     - Als u een **dynamische** drempel waarde gebruikt, gaat u door met het definiëren van de **drempel gevoeligheid**. De metrische grafiek geeft de berekende drempel waarden weer op basis van recente gegevens. Meer [informatie over de drempel waarde voor het type en gevoeligheids opties voor dynamische waarden](alerts-dynamic-thresholds.md).
 
-10. U kunt de voor waarde eventueel verfijnen door de **granulariteit van aggregatie** en de **frequentie van de evaluatie aan**te passen. 
+10. U kunt de voor waarde eventueel verfijnen door de **granulariteit van aggregatie** en de **frequentie van de evaluatie aan** te passen. 
 
 11. Klik op **Gereed**.
 
 12. Voeg eventueel nog andere criteria toe als u een complexe waarschuwings regel wilt bewaken. Momenteel kunnen gebruikers waarschuwings regels met dynamische drempel waarden criteria hebben als één criterium.
 
-13. Vul de **waarschuwings Details** in, zoals de naam, **Beschrijving**en **Ernst**van de **waarschuwings regel**.
+13. Vul de **waarschuwings Details** in, zoals de naam, **Beschrijving** en **Ernst** van de **waarschuwings regel**.
 
 14. Voeg een actie groep toe aan de waarschuwing door een bestaande actie groep te selecteren of een nieuwe actie groep te maken.
 
@@ -74,7 +74,7 @@ U kunt metrische waarschuwings regels weer geven en beheren met behulp van de Bl
 
 2. Klik op **waarschuwingen** en **beheer regels**
 
-3. Op de Blade **regels beheren** kunt u al uw waarschuwings regels weer geven in abonnementen. U kunt de regels verder filteren met  **resource groep**, **resource type**en **resource**. Als u alleen metrische waarschuwingen wilt weer geven, selecteert u **signaal type** als metrische gegevens.
+3. Op de Blade **regels beheren** kunt u al uw waarschuwings regels weer geven in abonnementen. U kunt de regels verder filteren met  **resource groep**, **resource type** en **resource**. Als u alleen metrische waarschuwingen wilt weer geven, selecteert u **signaal type** als metrische gegevens.
 
     > [!TIP]
     > Op de Blade **regels beheren** kunt u meerdere waarschuwings regels selecteren en deze inschakelen/uitschakelen. Dit kan handig zijn wanneer bepaalde doel resources onder onderhoud moeten worden geplaatst.

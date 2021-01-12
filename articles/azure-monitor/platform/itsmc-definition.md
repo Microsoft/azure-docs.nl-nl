@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: eacdf0cf80414c44aaccf6925e466b914c66da03
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: a7e39bb8ed742007a13a222771b430372d50e889
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065300"
+ms.locfileid: "98071694"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -131,11 +131,11 @@ Gebruik de volgende procedure om actie groepen te maken:
 
     >[!NOTE]
     >
-    > * Deze sectie is alleen relevant voor het vastleggen van zoek waarschuwingen in een logboek.
-    > * Met metrische waarschuwingen en waarschuwingen voor activiteiten Logboeken wordt altijd één werk item per waarschuwing gemaakt.
+    > * Deze sectie is alleen relevant voor waarschuwingen voor logboek registratie.
+    > * Voor alle andere waarschuwings typen wordt per waarschuwing één werk item gemaakt.
 
-    * In het geval dat u selecteert in de vervolg keuzelijst voor werk items "incident" of "waarschuwing":
-        * Als u het selectie vakje **' afzonderlijke werk items voor elk configuratie-item maken '** inschakelt, wordt in elk configuratie-item in elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één werk item per configuratie-item in het ITSM-systeem zijn.
+    * In een geval selecteert u in de vervolg keuzelijst werk item of waarschuwing: ![ scherm opname waarin het ITSM-incident venster wordt weer gegeven.](media/itsmc-overview/itsm-action-configuration.png)
+        * Als u het selectie vakje **' afzonderlijke werk items voor elk configuratie-item maken '** inschakelt, wordt in elk configuratie-item in elke waarschuwing een nieuw werk item gemaakt. Als gevolg van een waarschuwing voor dezelfde configuratie-items is er meer dan één werk item voor elk configuratie-item.
 
              Bijvoorbeeld:
              1) Waarschuwing 1 met 3 configuratie-items: A, B, C-worden drie werk items gemaakt.
@@ -148,15 +148,13 @@ Gebruik de volgende procedure om actie groepen te maken:
 
         Bijvoorbeeld:
          1) Waarschuwing 1 met 3 configuratie-items: A, B, C-maakt 1 werk item.
-         2) Waarschuwing 2 voor dezelfde waarschuwings regel als fase 1 met 1 configuratie-item: D-wordt samengevoegd met het werk item in fase 1.
+         2) Waarschuwing 2 voor dezelfde waarschuwings regel als in stap a met 1 configuratie-item: D-D wordt gekoppeld aan de lijst met betrokken configuratie-items in het werk item dat u in de stap a hebt gemaakt.
          3) Waarschuwing 3 voor een andere waarschuwings regel met 1 configuratie-item: E-maakt 1 werk item.
 
-       ![Scherm opname van het ITSM-incident venster.](media/itsmc-overview/itsm-action-configuration.png)
+    * In het geval dat u selecteert in de vervolg keuzelijst voor werk items: ![ scherm afbeelding waarin het gebeurtenis venster ITSM wordt weer gegeven.](media/itsmc-overview/itsm-action-configuration-event.png)
 
-    * In het geval dat u selecteert in de vervolg keuzelijst werk item:
         * Als u **' afzonderlijke werk items maken voor elke logboek vermelding (configuratie-item) selecteert, is dit veld niet ingevuld. Kan resulteren in grote hoeveel heden werk items.) "** in de keuze rondjes selectie wordt een werk item gemaakt per rij in de zoek resultaten van de waarschuwing zoek opdracht in Logboeken. In de payload van het werk item krijgt de eigenschap Description de rij uit de zoek resultaten.
         * Als u in de selectie keuze rondjes **' afzonderlijke werk items maken voor elk configuratie-item '** selecteert, wordt voor elk configuratie-item in elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één werk item per configuratie-item in het ITSM-systeem zijn. Dit komt overeen met het selectie vakje inschakelen in de sectie incident/waarschuwing.
-    ![Scherm opname van het ITSM-gebeurtenis venster.](media/itsmc-overview/itsm-action-configuration-event.png)
 
 10. Selecteer **OK**.
 

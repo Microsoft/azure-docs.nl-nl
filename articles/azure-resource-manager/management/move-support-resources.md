@@ -2,13 +2,13 @@
 title: Ondersteuning voor het verplaatsen van bewerkingen per resource type
 description: Een lijst met de Azure-resource typen die kunnen worden verplaatst naar een nieuwe resource groep of een nieuw abonnement.
 ms.topic: conceptual
-ms.date: 12/07/2020
-ms.openlocfilehash: 72cc2bd1b391acd2065cc4b775c50af94510a840
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.date: 01/11/2021
+ms.openlocfilehash: fe8f6705fdce1a692dd8a969cfc4b3b21d2d2a11
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97795898"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072102"
 ---
 # <a name="move-operation-support-for-resources"></a>Ondersteuning voor het verplaatsen van resources voor bronnen
 
@@ -754,7 +754,7 @@ Ga naar de naam ruimte van een resource provider:
 > | Resourcetype | Resourcegroep | Abonnement |
 > | ------------- | ----------- | ---------- |
 > | availableskus | Nee | Nee |
-> | databoxedgedevices | Ja | Ja |
+> | databoxedgedevices | Nee | Nee |
 
 ## <a name="microsoftdatabricks"></a>Micro soft. Databricks
 

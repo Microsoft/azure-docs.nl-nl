@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: 075f113975e5f340493fe33584d8072190be77c8
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 130fcaacedc8aaea7790f6aa9ca7463b4e378e02
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97896478"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070708"
 ---
 # <a name="select-a-vmware-migration-option"></a>Selecteer een VMware-migratie optie
 
@@ -32,7 +32,7 @@ Gebruik deze geselecteerde vergelijkingen om u te helpen beslissen welke methode
 **Implementatie van het apparaat** | Het [Azure migrate apparaat](migrate-appliance.md) wordt on-premises geïmplementeerd. | Het [Azure migrate replicatie apparaat](migrate-replication-appliance.md) wordt on-premises geïmplementeerd.
 **Site Recovery compatibiliteit** | Browsercompatibele. | U kunt niet repliceren met Azure Migrate server migratie als u replicatie voor een machine hebt ingesteld met behulp van Site Recovery.
 **Doel schijf** | Managed Disks | Managed Disks
-**Schijf limieten** | BESTURINGSSYSTEEM schijf: 2 TB<br/><br/> Gegevens schijf: 32 TB<br/><br/> Maximum aantal schijven: 60 | BESTURINGSSYSTEEM schijf: 2 TB<br/><br/> Gegevens schijf: 8 TB<br/><br/> Maximum aantal schijven: 63
+**Schijf limieten** | BESTURINGSSYSTEEM schijf: 2 TB<br/><br/> Gegevens schijf: 32 TB<br/><br/> Maximum aantal schijven: 60 | BESTURINGSSYSTEEM schijf: 2 TB<br/><br/> Gegevens schijf: 32 TB<br/><br/> Maximum aantal schijven: 63
 **Passthrough-schijven** | Niet ondersteund | Ondersteund
 **UEFI-opstart** | Ondersteund. | Ondersteund.
 

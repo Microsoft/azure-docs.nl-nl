@@ -7,12 +7,12 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: 408ba76c44d1161a4b91ccc037721796c7b94661
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 3ae300ca2746ab9e3478d3fe14fd6fc49c95a93d
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500747"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071728"
 ---
 # <a name="azure-boot-diagnostics"></a>Diagnostische gegevens over Azure-opstarten
 
@@ -21,10 +21,14 @@ Diagnostische gegevens over opstarten is een functie voor het opsporen van foute
 ## <a name="boot-diagnostics-storage-account"></a>Opslag account voor diagnostische gegevens over opstarten
 Bij het maken van een virtuele machine in Azure Portal is diagnostische gegevens over opstarten standaard ingeschakeld. De aanbevolen diagnostische gegevens over het opstarten zijn het gebruik van een beheerd opslag account, omdat het de prestaties van een Azure-VM aanzienlijk verduidelijkt. Dit komt doordat er een Azure Managed Storage-account wordt gebruikt, waarbij de tijd die nodig is om een nieuw gebruikers opslag account te maken voor het opslaan van de diagnostische gegevens over opstarten wordt verwijderd.
 
-Een alternatieve ervaring voor het opstarten van diagnostische gegevens is het gebruik van een door de gebruiker beheerd opslag account. Een gebruiker kan een nieuw opslag account maken of een bestaande gebruiken. 
-
 > [!IMPORTANT]
 > De gegevens-blobs van de opstart diagnose (met inbegrip van Logboeken en moment opnamen) worden opgeslagen in een beheerd opslag account. Klanten worden alleen in rekening gebracht op gebruikte GiBs door de blobs, niet op de ingerichte grootte van de schijf. De momentopname meters worden gebruikt voor de facturering van het beheerde opslag account. Omdat de beheerde accounts worden gemaakt op standaard-LRS of standaard-ZRS, worden klanten op $0,05/GB per maand gefactureerd voor de grootte van de blobs van de diagnostische gegevens. Zie [prijzen van Managed disks](https://azure.microsoft.com/pricing/details/managed-disks/)voor meer informatie over deze prijzen. Klanten krijgen deze kosten te zien die zijn gekoppeld aan hun VM-resource-URI. 
+
+Een alternatieve ervaring voor het opstarten van de diagnose is het gebruik van een door de gebruiker beheerd opslag account. Een gebruiker kan een nieuw opslag account maken of een bestaande gebruiken.
+> [!NOTE]
+> Voor door de gebruiker beheerde opslag accounts die zijn gekoppeld aan de diagnostische gegevens over opstarten, moeten het opslag account en de bijbehorende virtuele machines zich in hetzelfde abonnement bevinden. 
+
+
 
 ## <a name="boot-diagnostics-view"></a>Weer gave diagnostische gegevens over opstarten
 De optie diagnostische gegevens over opstarten bevindt zich op de Blade van de virtuele machine onder het gedeelte *ondersteuning en probleem oplossing* in de Azure Portal. Als u Diagnostische gegevens over opstarten selecteert, wordt een scherm opname en seriële logboek informatie weer gegeven. Het seriële logboek bevat kernel-berichten en de scherm opname is een moment opname van de huidige status van uw virtuele machines. Op basis van als op de virtuele machine Windows of Linux wordt uitgevoerd, wordt bepaald hoe de verwachte scherm afbeelding eruitziet. Voor Windows krijgen gebruikers een bureaublad achtergrond en voor Linux te zien, zien gebruikers een aanmeldings prompt.

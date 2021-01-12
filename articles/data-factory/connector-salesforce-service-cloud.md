@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 07/13/2020
-ms.openlocfilehash: 47ee4c71abadc4d4e3cb60d54aef1d8262e41119
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.date: 01/11/2021
+ms.openlocfilehash: 755346c1da38f66c0c0fef6144d34eea62735273
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637306"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072074"
 ---
 # <a name="copy-data-from-and-to-salesforce-service-cloud-by-using-azure-data-factory"></a>Gegevens kopiëren van en naar de Sales Force-Service-Cloud met behulp van Azure Data Factory
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -37,7 +37,7 @@ Deze Sales Force-Service Cloud connector ondersteunt het volgende:
 - Edities van Sales Force Developer, Professional, Enter prise of Unlimited.
 - Gegevens kopiëren van en naar Sales Force-productie, sandbox en aangepast domein.
 
-De Sales Force-connector is gebaseerd op de REST/bulk API Sales Force. De connector gebruikt standaard [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) om gegevens uit Sales Force te kopiëren en maakt gebruik van [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) om gegevens te kopiëren naar Sales Force. U kunt ook expliciet de API-versie instellen die wordt gebruikt om gegevens te lezen/schrijven via de [ `apiVersion` eigenschap](#linked-service-properties) in de gekoppelde service.
+De Sales Force-connector is gebaseerd op de REST/bulk API Sales Force. Bij het kopiëren van gegevens uit Sales Force maakt de connector standaard gebruik van [V45](https://developer.salesforce.com/docs/atlas.en-us.218.0.api_rest.meta/api_rest/dome_versions.htm) en wordt er automatisch gekozen tussen rest-en bulk-api's op basis van de gegevens grootte – wanneer de resultatenset groot is, wordt er voor betere prestaties een bulk-API gebruikt. Wanneer u gegevens naar Sales Force schrijft, gebruikt de connector [V40](https://developer.salesforce.com/docs/atlas.en-us.208.0.api_asynch.meta/api_asynch/asynch_api_intro.htm) van de bulk-API. U kunt ook expliciet de API-versie instellen die wordt gebruikt om gegevens te lezen/schrijven via de [ `apiVersion` eigenschap](#linked-service-properties) in de gekoppelde service.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -64,7 +64,7 @@ De volgende eigenschappen worden ondersteund voor de gekoppelde service Sales Fo
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type |De eigenschap type moet worden ingesteld op **SalesforceServiceCloud** . |Ja |
+| type |De eigenschap type moet worden ingesteld op **SalesforceServiceCloud**. |Ja |
 | environmentUrl | Geef de URL van het Sales Force Service-Cloud exemplaar op. <br> -Standaard is `"https://login.salesforce.com"` . <br> -Als u gegevens wilt kopiëren uit de sandbox, geeft u op `"https://test.salesforce.com"` . <br> -Als u gegevens wilt kopiëren uit een aangepast domein, geeft u bijvoorbeeld op `"https://[domain].my.salesforce.com"` . |Nee |
 | gebruikersnaam |Geef een gebruikers naam op voor het gebruikers account. |Ja |
 | wachtwoord |Geef een wacht woord op voor het gebruikers account.<br/><br/>Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). |Ja |
@@ -143,7 +143,7 @@ De volgende eigenschappen worden ondersteund om gegevens van en naar de Sales Fo
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type moet worden ingesteld op **SalesforceServiceCloudObject** .  | Ja |
+| type | De eigenschap type moet worden ingesteld op **SalesforceServiceCloudObject**.  | Ja |
 | objectApiName | De naam van het Sales Force-object waaruit gegevens worden opgehaald. | Nee voor bron, ja voor Sink |
 
 > [!IMPORTANT]
@@ -172,7 +172,7 @@ De volgende eigenschappen worden ondersteund om gegevens van en naar de Sales Fo
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de DataSet moet worden ingesteld op **RelationalTable** . | Ja |
+| type | De eigenschap type van de DataSet moet worden ingesteld op **RelationalTable**. | Ja |
 | tableName | De naam van de tabel in de Sales Force-Service-Cloud. | Nee (als ' query ' in de activiteit bron is opgegeven) |
 
 ## <a name="copy-activity-properties"></a>Eigenschappen van de kopieeractiviteit
@@ -185,9 +185,9 @@ Als u gegevens wilt kopiëren uit de Sales Force-Service-Cloud, worden de volgen
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **SalesforceServiceCloudSource** . | Ja |
+| type | De eigenschap type van de bron van de Kopieer activiteit moet zijn ingesteld op **SalesforceServiceCloudSource**. | Ja |
 | query |Gebruik de aangepaste query om gegevens te lezen. U kunt de [Sales Force object query language-query (SOQL)](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql.htm) of SQL-92-query gebruiken. Meer tips vindt u in de sectie [query tips](#query-tips) . Als er geen query is opgegeven, worden alle gegevens van het Cloud object Sales Force-service dat is opgegeven in ' objectApiName ' in dataset opgehaald. | Nee (als "objectApiName" in de gegevensset is opgegeven) |
-| readBehavior | Hiermee wordt aangegeven of een query moet worden doorzocht op de bestaande records, of dat alle records moeten worden opgevraagd met een query. Als deze niet wordt opgegeven, is het standaard gedrag het voormalige. <br>Toegestane waarden: **query** (standaard), **queryAll** .  | Nee |
+| readBehavior | Hiermee wordt aangegeven of een query moet worden doorzocht op de bestaande records, of dat alle records moeten worden opgevraagd met een query. Als deze niet wordt opgegeven, is het standaard gedrag het voormalige. <br>Toegestane waarden: **query** (standaard), **queryAll**.  | Nee |
 
 > [!IMPORTANT]
 > Het deel ' __c ' van de **API-naam** is vereist voor een aangepast object.
@@ -232,11 +232,11 @@ Als u gegevens wilt kopiëren naar de Sales Force-Service-Cloud, worden de volge
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
-| type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **SalesforceServiceCloudSink** . | Ja |
-| writeBehavior | Het schrijf gedrag voor de bewerking.<br/>Toegestane waarden zijn **Insert** en **Upsert** . | Nee (standaard waarde is invoegen) |
+| type | De eigenschap type van de Sink voor kopieer activiteiten moet worden ingesteld op **SalesforceServiceCloudSink**. | Ja |
+| writeBehavior | Het schrijf gedrag voor de bewerking.<br/>Toegestane waarden zijn **Insert** en **Upsert**. | Nee (standaard waarde is invoegen) |
 | externalIdFieldName | De naam van het veld externe ID voor de bewerking upsert. Het opgegeven veld moet worden gedefinieerd als een externe ID-veld in het Cloud object van de Sales Force-service. De waarde mag geen NULL-waarden bevatten in de bijbehorende invoer gegevens. | Ja voor ' Upsert ' |
 | writeBatchSize | Het aantal rijen van gegevens dat is geschreven naar de Sales Force-Service-Cloud in elke batch. | Nee (de standaard waarde is 5.000) |
-| ignoreNullValues | Hiermee wordt aangegeven of NULL-waarden moeten worden genegeerd uit de invoer gegevens tijdens een schrijf bewerking.<br/>Toegestane waarden zijn **waar** en **Onwaar** .<br>- **Waar** : laat de gegevens in het doel object ongewijzigd wanneer u een upsert of update-bewerking doet. Voeg een gedefinieerde standaard waarde in wanneer u een INSERT-bewerking wilt uitvoeren.<br/>- **Onwaar** : werk de gegevens in het doel object bij naar NULL wanneer u een upsert of update-bewerking uitgevoerd. Voeg een NULL-waarde toe wanneer u een INSERT-bewerking uitgevoerd. | Nee (standaard waarde is False) |
+| ignoreNullValues | Hiermee wordt aangegeven of NULL-waarden moeten worden genegeerd uit de invoer gegevens tijdens een schrijf bewerking.<br/>Toegestane waarden zijn **waar** en **Onwaar**.<br>- **Waar**: laat de gegevens in het doel object ongewijzigd wanneer u een upsert of update-bewerking doet. Voeg een gedefinieerde standaard waarde in wanneer u een INSERT-bewerking wilt uitvoeren.<br/>- **Onwaar**: werk de gegevens in het doel object bij naar NULL wanneer u een upsert of update-bewerking uitgevoerd. Voeg een NULL-waarde toe wanneer u een INSERT-bewerking uitgevoerd. | Nee (standaard waarde is False) |
 
 **Voorbeeld:**
 
@@ -291,7 +291,7 @@ Bij het kopiëren van gegevens uit de Sales Force-Service-Cloud kunt u de SOQL-q
 |:--- |:--- |:--- |
 | Kolom selectie | U moet de velden opsommen die moeten worden gekopieerd in de query, bijvoorbeeld `SELECT field1, filed2 FROM objectname` | `SELECT *` wordt ondersteund naast kolom selectie. |
 | Aanhalings tekens | Gearchiveerde/object namen kunnen niet worden opgenomen in een aanhalings teken. | De namen van velden/objecten kunnen worden opgenomen in een aanhalings teken, bijvoorbeeld `SELECT "id" FROM "Account"` |
-| Datum notatie |  Raadpleeg [hier](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm) de details en voor beelden in de volgende sectie. | Raadpleeg [hier](/sql/odbc/reference/develop-app/date-time-and-timestamp-literals?view=sql-server-2017) de details en voor beelden in de volgende sectie. |
+| Datum notatie |  Raadpleeg [hier](https://developer.salesforce.com/docs/atlas.en-us.soql_sosl.meta/soql_sosl/sforce_api_calls_soql_select_dateformats.htm) de details en voor beelden in de volgende sectie. | Raadpleeg [hier](/sql/odbc/reference/develop-app/date-time-and-timestamp-literals) de details en voor beelden in de volgende sectie. |
 | Booleaanse waarden | Wordt weer gegeven als `False` en `True` , bijvoorbeeld `SELECT … WHERE IsDeleted=True` | Wordt weer gegeven als 0 of 1, bijvoorbeeld `SELECT … WHERE IsDeleted=1` . |
 | Kolom naam wijzigen | Niet ondersteund. | Ondersteund, bijvoorbeeld: `SELECT a AS b FROM …` . |
 | Relatie | Ondersteund, bijvoorbeeld `Account_vod__r.nvs_Country__c` . | Niet ondersteund. |
@@ -300,8 +300,8 @@ Bij het kopiëren van gegevens uit de Sales Force-Service-Cloud kunt u de SOQL-q
 
 Wanneer u de SOQL of SQL-query opgeeft, moet u rekening best Eden aan het verschil in datum-en tijd notatie. Bijvoorbeeld:
 
-* Voor **beeld van SOQL** :`SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
-* **SQL** -voor beeld: `SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
+* Voor **beeld van SOQL**:`SELECT Id, Name, BillingCity FROM Account WHERE LastModifiedDate >= @{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-ddTHH:mm:ssZ')} AND LastModifiedDate < @{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-ddTHH:mm:ssZ')}`
+* **SQL**-voor beeld: `SELECT * FROM Account WHERE LastModifiedDate >= {ts'@{formatDateTime(pipeline().parameters.StartTime,'yyyy-MM-dd HH:mm:ss')}'} AND LastModifiedDate < {ts'@{formatDateTime(pipeline().parameters.EndTime,'yyyy-MM-dd HH:mm:ss')}'}`
 
 ### <a name="error-of-malformed_query-truncated"></a>Fout van MALFORMED_QUERY: afgekapt
 
@@ -314,15 +314,15 @@ Wanneer u gegevens van de Sales Force-service-cloud kopieert, worden de volgende
 | Cloud gegevens type Sales Force-service | Data Factory tussentijds gegevens type |
 |:--- |:--- |
 | Automatisch nummer |Tekenreeks |
-| Checkbox |Boolean-waarde |
+| Checkbox |Booleaans |
 | Valuta |Decimaal |
 | Date |DateTime |
 | Datum/tijd |DateTime |
-| Email |Tekenreeks |
+| E-mail |Tekenreeks |
 | Id |Tekenreeks |
 | Opzoek relatie |Tekenreeks |
 | Meervoudige selectie lijst |Tekenreeks |
-| Getal |Decimaal |
+| Aantal |Decimaal |
 | Percentage |Decimaal |
 | Telefoon |Tekenreeks |
 | Picklist |Tekenreeks |

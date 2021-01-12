@@ -5,17 +5,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: reference
-ms.reviewer: jmartens
 ms.author: jordane
 author: jpe316
 ms.date: 06/22/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: a413cabf59fbd89cfe53b581d1018231c0e22e84
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: e88fbaed77113896f818710497a544fbab486246
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93323929"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072272"
 ---
 # <a name="install--use-the-cli-extension-for-azure-machine-learning"></a>Installeer & gebruik de CLI-extensie voor Azure Machine Learning
 
@@ -34,7 +33,7 @@ De CLI is geen vervanging voor de Azure Machine Learning SDK. Het is een aanvull
 
 * Als u de CLI wilt gebruiken, moet u een Azure-abonnement hebben. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 
-* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving** , hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
+* Als u de CLI-opdrachten in dit document wilt gebruiken vanuit uw **lokale omgeving**, hebt u de [Azure CLI nodig](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest).
 
     Als u [Azure Cloud Shell](https://azure.microsoft.com//features/cloud-shell/) gebruikt, opent u de CLI via de browser en bevindt deze zich in de cloud.
 
@@ -159,7 +158,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt om resources te beheren 
 
 + Een nieuw beheerd reken cluster maken met beheerde identiteit
 
-  + Door een gebruiker toegewezen beheerde identiteit
+  + Door de gebruiker toegewezen beheerde identiteit
 
     ```azurecli
     az ml computetarget create amlcompute --name cpu-cluster --vm-size Standard_NC6 --max-nodes 5 --assign-identity '/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'
@@ -172,7 +171,7 @@ De volgende opdrachten laten zien hoe u de CLI gebruikt om resources te beheren 
     ```
 + Een beheerde identiteit toevoegen aan een bestaand cluster:
 
-    + Door een gebruiker toegewezen beheerde identiteit
+    + Door de gebruiker toegewezen beheerde identiteit
         ```azurecli
         az ml computetarget amlcompute identity assign --name cpu-cluster '/subscriptions/<subcription_id>/resourcegroups/<resource_group>/providers/Microsoft.ManagedIdentity/userAssignedIdentities/<user_assigned_identity>'
         ```

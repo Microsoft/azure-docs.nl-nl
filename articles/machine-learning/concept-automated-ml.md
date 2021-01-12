@@ -6,17 +6,16 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
-ms.reviewer: jmartens
 author: cartacioS
 ms.author: sacartac
 ms.date: 10/27/2020
 ms.custom: automl
-ms.openlocfilehash: 2d759a8ed58d5b323f9894a5127c222ce1f75c52
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: ee9267637c5e3250bfcd543ca46c39d513725819
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97345973"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072221"
 ---
 # <a name="what-is-automated-machine-learning-automl"></a>Wat is geautomatiseerde machine learning (AutoML)?
 
@@ -117,7 +116,7 @@ Voor automatische machine learning experimenten wordt parametrisatie automatisch
 
 In elk automatisch machine learning experiment worden uw gegevens automatisch geschaald of genormaliseerd om de Help-algoritmen goed uit te voeren. Tijdens de model training wordt een van de volgende schalen of normalisatie technieken toegepast op elk model. Meer informatie over hoe AutoML helpt [om te voor komen dat gegevens in uw modellen worden gespreid en niet in evenwicht worden gegeven](concept-manage-ml-pitfalls.md) .
 
-|Normalisatie aanpassen &nbsp; & &nbsp;| Description |
+|Normalisatie aanpassen &nbsp; & &nbsp;| Beschrijving |
 | ------------- | ------------- |
 | [StandardScaleWrapper](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.StandardScaler.html)  | Functies standaardiseren door het gemiddelde en de schaal aanpassing te verwijderen voor eenheids variantie  |
 | [MinMaxScalar](https://scikit-learn.org/stable/modules/generated/sklearn.preprocessing.MinMaxScaler.html)  | Transformeert functies door elke functie te schalen op basis van het minimum en maximum van die kolom  |
@@ -224,7 +223,7 @@ Met de volgende instellingen kunt u uw geautomatiseerde ML experiment configurer
 |**Prognose horizon, target lags & Rolling venster configureren**|✓|✓
 |**Afsluit criteria instellen** |✓|✓ 
 |**Gelijktijdige herhalingen instellen**| ✓|✓
-|**Kolommen neerzetten**| ✓|✓
+|**Kolommen verwijderen**| ✓|✓
 |**Blok algoritmen**|✓|✓
 |**Kruis validatie** |✓|✓
 |**Ondersteunt training op Azure Databricks clusters**| ✓|

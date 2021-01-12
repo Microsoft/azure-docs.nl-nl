@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/25/2020
 ms.author: anvang
 ms.reviewer: jrasnick
-ms.openlocfilehash: a1fbc6eede6c82020b765185602c672c1162fdf8
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 769ca4cf0ecbdba5fd80d977eb69c8a4f58df55f
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96548185"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071184"
 ---
 # <a name="enabling-synapse-workspace-features-for-a-dedicated-sql-pool-formerly-sql-dw"></a>Functies van Synapse-werk ruimte inschakelen voor een toegewezen SQL-groep (voorheen SQL DW)
 
@@ -57,6 +57,9 @@ De volgende stappen moeten worden uitgevoerd om ervoor te zorgen dat uw bestaand
 4. Selecteer een van de toegewezen SQL-groeps exemplaren (voorheen SQL DW) die worden gehost op de logische server. Op de pagina Overzicht selecteert u **Synapse Studio starten** of gaat u naar de [Synapse Studio](https://web.azuresynapse.net) en meldt u zich aan bij uw werk ruimte.
 
 5. Open de **Data hub** en vouw de exclusieve SQL-groep in de object Verkenner uit om ervoor te zorgen dat u toegang hebt tot uw data warehouse en query's kunt uitvoeren.
+
+    > [!NOTE] 
+    > Een verbonden werk ruimte kan op elk gewenst moment worden verwijderd. Als u de werk ruimte verwijdert, wordt de verbonden toegewezen SQL-groep (voorheen SQL DW) niet verwijderd. Werkruimte functies kunnen opnieuw worden ingeschakeld op de toegewezen SQL-groep (voorheen SQL DW) wanneer de bewerking delete is voltooid.
 
 ## <a name="next-steps"></a>Volgende stappen
 Aan de slag met [Synapse-werk ruimte en Studio](../get-started.md).

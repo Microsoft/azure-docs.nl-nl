@@ -5,18 +5,17 @@ description: Meer informatie over het inschakelen van HTTPS met TLS-versie 1,2 o
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
-ms.reviewer: jmartens
 ms.author: aashishb
 author: aashishb
 ms.date: 01/04/2021
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 14e4fda6ef36dd8fc57529046473d8afa916ef2c
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 8399cfb4ceed9f50a5c9de0d3d16912a718bbfaa
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880967"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070113"
 ---
 # <a name="use-tls-to-secure-a-web-service-through-azure-machine-learning"></a>TLS gebruiken om een webservice te beveiligen via Azure Machine Learning
 

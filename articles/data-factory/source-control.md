@@ -11,12 +11,12 @@ ms.reviewer: ''
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: e839b8a22da50ce172043f57a4467219a1771175
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 27f14834e45dd32bdf3a26d22d38ab250aa1bcbe
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584198"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127733"
 ---
 # <a name="source-control-in-azure-data-factory"></a>Broncode beheer in Azure Data Factory
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
@@ -25,6 +25,7 @@ Standaard Azure Data Factory gebruikers interface-schrijvers (UX) direct voor de
 
 - De Data Factory-service bevat geen opslag plaats voor het opslaan van de JSON-entiteiten voor uw wijzigingen. De enige manier om wijzigingen op te slaan is via de knop **Alles publiceren** en alle wijzigingen worden rechtstreeks naar de Data Factory-service gepubliceerd.
 - De Data Factory-service is niet geoptimaliseerd voor samen werking en versie beheer.
+- De Azure Resource Manager sjabloon die is vereist voor de implementatie van Data Factory zelf, is niet opgenomen.
 
 Azure Data Factory kunt u een Git-opslag plaats met behulp van Azure opslag plaatsen of GitHub configureren om een betere ontwerp ervaring te bieden. Git is een versie beheersysteem waarmee u eenvoudiger wijzigingen kunt bijhouden en samen werken. In dit artikel wordt beschreven hoe u in een Git-opslag plaats kunt configureren en gebruiken, samen met het markeren van aanbevolen procedures en een probleemoplossings handleiding.
 

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 34d8881eb072c4c723bf68b7c6ccfd24ab19cd3c
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 553151aebeadf4ad4764e747b1bf6dcd8c552721
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98116276"
+ms.locfileid: "98126849"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -71,7 +71,7 @@ Door Defender voor het eind punt met Security Center te integreren, profiteert u
 
 Wanneer u Azure Security Center gebruikt om uw servers te bewaken, wordt automatisch een micro soft Defender for Endpoint-Tenant gemaakt. Gegevens die worden verzameld door Defender voor het eind punt, worden opgeslagen in de geo-locatie van de Tenant, zoals wordt geïdentificeerd tijdens het inrichten. Klant gegevens: in pseudoniem vorm-kan ook worden opgeslagen in de centrale opslag-en verwerkings systemen in de Verenigde Staten. 
 
-Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw gegevens naar een andere locatie wilt verplaatsen, neemt u contact op met Microsoft Ondersteuning om de Tenant opnieuw in te stellen.
+Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw eigen licentie voor micro soft Defender voor het eind punt hebt en u uw gegevens naar een andere locatie wilt verplaatsen, neemt u contact op met Microsoft Ondersteuning om de Tenant opnieuw in te stellen.
 
 
 ## <a name="enabling-the-microsoft-defender-for-endpoint-integration"></a>De integratie van micro soft Defender voor endpoint inschakelen

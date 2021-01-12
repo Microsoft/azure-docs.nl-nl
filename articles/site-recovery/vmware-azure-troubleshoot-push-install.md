@@ -7,12 +7,12 @@ ms.service: site-recovery
 ms.topic: conceptual
 ms.author: ramamill
 ms.date: 04/03/2020
-ms.openlocfilehash: 8ee6449f357a578b30809bb03723ac1556e4f459
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 62c8240a4d2e50aa3b584f322baf7d2ee217c6d3
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88816162"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127869"
 ---
 # <a name="troubleshoot-mobility-service-push-installation"></a>Problemen met push-installatie van Mobility service oplossen
 
@@ -106,7 +106,22 @@ De configuratie server/scale-out proces server probeert verbinding te maken met 
 
 Om de fout op te lossen:
 
+* Controleer of het gebruikers account beheerders rechten heeft op de bron computer, met een lokaal account of een domein account. Als u geen domein account gebruikt, moet u toegangs beheer voor externe gebruikers uitschakelen op de lokale computer.
+  * Hand matig een register sleutel toevoegen die toegangs beheer voor externe gebruikers uitschakelt:
+    * `HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System`
+    * Nieuwe toevoegen `DWORD` : `LocalAccountTokenFilterPolicy`
+    * Stel de waarde in op `1`
+  * Voer de volgende opdracht uit vanaf een opdracht prompt om de register sleutel toe te voegen:
+
+    `REG ADD HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v LocalAccountTokenFilterPolicy /t REG_DWORD /d 1`
+
 * Zorg ervoor dat u de bron computer kunt pingen vanaf de configuratie server. Als u tijdens het inschakelen van de replicatie de scale-out proces server hebt gekozen, moet u ervoor zorgen dat u de bron computer kunt pingen vanaf de proces server.
+
+* Zorg ervoor dat de service Bestands-en printer deling is ingeschakeld op de virtuele machine. Raadpleeg de stappen die [hier](vmware-azure-troubleshoot-push-install.md#file-and-printer-sharing-services-check-errorid-95105--95106)worden beschreven.
+
+* Zorg ervoor dat de WMI-service is ingeschakeld op de virtuele machine. Raadpleeg de stappen die [hier](vmware-azure-troubleshoot-push-install.md#windows-management-instrumentation-wmi-configuration-check-error-code-95103)worden beschreven.
+
+* Zorg ervoor dat de gedeelde netwerk mappen op uw virtuele machine toegankelijk zijn vanaf de proces server. Raadpleeg de stappen die [hier](vmware-azure-troubleshoot-push-install.md#check-access-for-network-shared-folders-on-source-machine-errorid-9510595523)worden beschreven.
 
 * Gebruik de opdracht regel van de bron server `Telnet` om de configuratie server of scale-out proces server op HTTPS-poort 135 te pingen, zoals wordt weer gegeven in de volgende opdracht. Met deze opdracht wordt gecontroleerd of er problemen zijn met de netwerk verbinding of het blok keren van de firewall poort.
 
@@ -159,16 +174,16 @@ Controleer na een connectiviteits controle of de service Bestands-en printer del
 Voor **Windows 2008 R2 en eerdere versies**:
 
 * Om bestands-en printer deling via Windows Firewall in te scha kelen,
-  1. Open **configuratie scherm**  >  **systeem-en beveiligings**  >  **Windows Firewall**. **Selecteer in**het linkerdeel venster de optie  >  **regels voor inkomend verkeer** in de console structuur.
+  1. Open **configuratie scherm**  >  **systeem-en beveiligings**  >  **Windows Firewall**. **Selecteer in** het linkerdeel venster de optie  >  **regels voor inkomend verkeer** in de console structuur.
   1. Regels bestand en printer deling (NB-session-in) en bestands-en printer deling (SMB-in) zoeken.
   1. Voor elke regel klikt u met de rechter muisknop op de regel en klikt u vervolgens op **regel inschakelen**.
 
 * Het delen van bestanden met groepsbeleid inschakelen:
   1. Ga naar **Start**, typ `gpmc.msc` en zoek.
-  1. Open in het navigatie deel venster de volgende mappen: gebruikers configuratie van het **lokale computer beleid**  >  **User Configuration**  >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **netwerk delen**.
+  1. Open in het navigatie deel venster de volgende mappen: gebruikers configuratie van het **lokale computer beleid**  >    >  **Beheersjablonen**  >  **Windows-onderdelen**  >  **netwerk delen**.
   1. Dubbel klik in het detail venster op **voor komen dat gebruikers bestanden binnen hun profiel delen**.
 
-     Selecteer **uitgeschakeld**om de instelling Groepsbeleid uit te scha kelen en de gebruiker in staat te stellen bestanden te delen.
+     Selecteer **uitgeschakeld** om de instelling Groepsbeleid uit te scha kelen en de gebruiker in staat te stellen bestanden te delen.
 
   1. Selecteer **OK** om uw wijzigingen op te slaan.
 
@@ -182,7 +197,7 @@ Nadat u de bestands-en printer services hebt gecontroleerd, schakelt u de WMI-se
 
 WMI inschakelen:
 
-1. Ga naar beveiliging van **het configuratie scherm**  >  **Security** en selecteer **Windows Firewall**.
+1. Ga naar beveiliging van **het configuratie scherm**  >   en selecteer **Windows Firewall**.
 1. Selecteer **instellingen wijzigen** en selecteer vervolgens het tabblad **uitzonde ringen** .
 1. Schakel in het venster **uitzonde ringen** het selectie vakje voor Windows Management INSTRUMENTATION (WMI) in om WMI-verkeer via de firewall in te scha kelen.
 
@@ -224,7 +239,7 @@ Vóór de 9,20-versie werd een basis partitie of het instellen van een volume op
 
 ### <a name="possible-cause"></a>Mogelijke oorzaak
 
-De Grand Unified Bootloader (GRUB) configuratie bestanden (_/boot/grub/menu.lst_, _/boot/grub/grub.cfg_, _/boot/grub2/grub.cfg_of _/etc/default/grub_) kunnen de waarde voor de **hoofdmap** van para meters bevatten en **hervatten** als de werkelijke apparaatnamen in plaats van een Universally Unique Identifier (UUID). Site Recovery moet de UUID-benadering hebben als de apparaatnamen kunnen veranderen tijdens het opnieuw opstarten van de virtuele machine. Het is bijvoorbeeld mogelijk dat de virtuele machine niet online is met dezelfde naam als de failover en dat er problemen zijn.
+De Grand Unified Bootloader (GRUB) configuratie bestanden (_/boot/grub/menu.lst_, _/boot/grub/grub.cfg_, _/boot/grub2/grub.cfg_ of _/etc/default/grub_) kunnen de waarde voor de **hoofdmap** van para meters bevatten en **hervatten** als de werkelijke apparaatnamen in plaats van een Universally Unique Identifier (UUID). Site Recovery moet de UUID-benadering hebben als de apparaatnamen kunnen veranderen tijdens het opnieuw opstarten van de virtuele machine. Het is bijvoorbeeld mogelijk dat de virtuele machine niet online is met dezelfde naam als de failover en dat er problemen zijn.
 
 Bijvoorbeeld:
 
@@ -254,7 +269,7 @@ De apparaatnamen moeten worden vervangen door de bijbehorende UUID.
    /dev/sda2: UUID="62927e85-f7ba-40bc-9993-cc1feeb191e4" TYPE="ext3"
    ```
 
-1. Vervang nu de naam van het apparaat door de bijbehorende UUID in de indeling zoals `root=UUID=\<UUID>` . Als we bijvoorbeeld de apparaatnaam vervangen door UUID voor de para meter root en resume die wordt vermeld in de bestanden _/boot/grub2/grub.cfg_, _/boot/grub2/grub.cfg_of _/etc/default/grub_ , zien de regels in de bestanden eruit als in de volgende regel:
+1. Vervang nu de naam van het apparaat door de bijbehorende UUID in de indeling zoals `root=UUID=\<UUID>` . Als we bijvoorbeeld de apparaatnaam vervangen door UUID voor de para meter root en resume die wordt vermeld in de bestanden _/boot/grub2/grub.cfg_, _/boot/grub2/grub.cfg_ of _/etc/default/grub_ , zien de regels in de bestanden eruit als in de volgende regel:
 
    `kernel /boot/vmlinuz-3.0.101-63-default root=UUID=62927e85-f7ba-40bc-9993-cc1feeb191e4 resume=UUID=6f614b44-433b-431b-9ca1-4dd2f6f74f6b splash=silent crashkernel=256M-:128M showopts vga=0x314`
 
@@ -286,7 +301,7 @@ De mogelijke fout-Id's voor dit probleem zijn 95572 en 95573. Dit probleem treed
 
 ## <a name="vss-installation-failures"></a>VSS-installatie fouten
 
-De installatie van de Volume Shadow Copy-service (VSS) is onderdeel van de installatie van de Mobility-agent. Deze service wordt in het proces gebruikt voor het genereren van toepassings consistente herstel punten. Fouten tijdens de installatie van VSS kunnen om verschillende redenen optreden. Raadpleeg _C:\ProgramData\ASRSetupLogs\ASRUnifiedAgentInstaller.log_om de exacte fouten te identificeren. Enkele veelvoorkomende fouten en de oplossings stappen worden in de volgende sectie gemarkeerd.
+De installatie van de Volume Shadow Copy-service (VSS) is onderdeel van de installatie van de Mobility-agent. Deze service wordt in het proces gebruikt voor het genereren van toepassings consistente herstel punten. Fouten tijdens de installatie van VSS kunnen om verschillende redenen optreden. Raadpleeg _C:\ProgramData\ASRSetupLogs\ASRUnifiedAgentInstaller.log_ om de exacte fouten te identificeren. Enkele veelvoorkomende fouten en de oplossings stappen worden in de volgende sectie gemarkeerd.
 
 ### <a name="vss-error--2147023170-0x800706be---exit-code-511"></a>VSS-fout-2147023170 [0x800706BE]-afsluit code 511
 

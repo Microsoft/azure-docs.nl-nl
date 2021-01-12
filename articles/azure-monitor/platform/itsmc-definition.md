@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 05/24/2018
 ms.custom: references_regions
-ms.openlocfilehash: a7e39bb8ed742007a13a222771b430372d50e889
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 717a1bc4361ba4a7366f4864c1fe44f93b6f4b5e
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071694"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127852"
 ---
 # <a name="connect-azure-to-itsm-tools-by-using-it-service-management-connector"></a>Verbinding maken tussen Azure en ITSM-hulpprogram ma's met behulp van IT Service Management-connector
 
@@ -153,7 +153,7 @@ Gebruik de volgende procedure om actie groepen te maken:
 
     * In het geval dat u selecteert in de vervolg keuzelijst voor werk items: ![ scherm afbeelding waarin het gebeurtenis venster ITSM wordt weer gegeven.](media/itsmc-overview/itsm-action-configuration-event.png)
 
-        * Als u **' afzonderlijke werk items maken voor elke logboek vermelding (configuratie-item) selecteert, is dit veld niet ingevuld. Kan resulteren in grote hoeveel heden werk items.) "** in de keuze rondjes selectie wordt een werk item gemaakt per rij in de zoek resultaten van de waarschuwing zoek opdracht in Logboeken. In de payload van het werk item krijgt de eigenschap Description de rij uit de zoek resultaten.
+        * Als u **' afzonderlijke werk items maken voor elke logboek vermelding (configuratie-item) selecteert, is dit veld niet ingevuld. Kan resulteren in grote hoeveel heden werk items.) "** in de keuze rondjes selectie wordt een werk item gemaakt per rij in de zoek resultaten van de waarschuwing zoek opdracht in Logboeken. De eigenschap Description in de payload van het werk item bevat de rij uit de zoek resultaten.
         * Als u in de selectie keuze rondjes **' afzonderlijke werk items maken voor elk configuratie-item '** selecteert, wordt voor elk configuratie-item in elke waarschuwing een nieuw werk item gemaakt. Er kan meer dan één werk item per configuratie-item in het ITSM-systeem zijn. Dit komt overeen met het selectie vakje inschakelen in de sectie incident/waarschuwing.
 
 10. Selecteer **OK**.

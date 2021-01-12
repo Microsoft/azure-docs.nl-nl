@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/12/2018
-ms.openlocfilehash: 1780b4a64de349c1e272158fe6bfde9cab6f8369
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: fc6b2e4c944394d811abc19f70aeb34a0ae3c9a4
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486042"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127665"
 ---
 # <a name="system-variables-supported-by-azure-data-factory"></a>Systeem variabelen die door Azure Data Factory worden ondersteund
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -30,27 +30,41 @@ Naar deze systeem variabelen kan ergens worden verwezen in de JSON van de pijp l
 | --- | --- |
 | @pipeline(). DataFactory |De naam van de data factory de pijplijn uitvoering wordt uitgevoerd in |
 | @pipeline(). Pijp lijn |Naam van de pijp lijn |
-| @pipeline(). RunId | ID van de specifieke pijplijn uitvoering |
-| @pipeline(). Trigger type | Type trigger waarmee de pijp lijn is aangeroepen (hand matig, Scheduler) |
-| @pipeline(). TriggerId| ID van de trigger die de pijp lijn aanroept |
-| @pipeline(). TriggerName| De naam van de trigger die de pijp lijn aanroept |
-| @pipeline(). TriggerTime| Tijd waarop de trigger de pijp lijn heeft aangeroepen. De trigger tijd is de werkelijke tijd die wordt geactiveerd, niet de geplande tijd. Bijvoorbeeld, `13:20:08.0149599Z` wordt geretourneerd in plaats van `13:20:00.00Z` |
+| @pipeline(). RunId |ID van de specifieke pijplijn uitvoering |
+| @pipeline(). Trigger type |Het type trigger dat de pijp lijn heeft aangeroepen (bijvoorbeeld `ScheduleTrigger` , `BlobEventsTrigger` ). Voor een lijst met ondersteunde trigger typen raadpleegt u [pijp lijnen uitvoeren en triggers in azure Data Factory](concepts-pipeline-execution-triggers.md). Een trigger type `Manual` geeft aan dat de pijp lijn hand matig is geactiveerd. |
+| @pipeline(). TriggerId|ID van de trigger die de pijp lijn heeft aangeroepen |
+| @pipeline(). TriggerName|Naam van de trigger die de pijp lijn heeft aangeroepen |
+| @pipeline(). TriggerTime|Tijdstip waarop de trigger wordt uitgevoerd en die de pijp lijn heeft aangeroepen. Dit is het tijdstip waarop de trigger **daad werkelijk** is geactiveerd om de pijp lijn uit te voeren en kan enigszins afwijken van de geplande tijd van de trigger.  |
+
+>[!NOTE]
+>Trigger-gerelateerde datum/tijd systeem variabelen (in zowel pijp lijn-als trigger bereik) retour neren UTC-datums in ISO 8601-notatie, bijvoorbeeld `2017-06-01T22:20:00.4061448Z` .
 
 ## <a name="schedule-trigger-scope"></a>Trigger bereik plannen
-Naar deze systeem variabelen kan overal in de JSON van de trigger worden verwezen als de trigger van het volgende type is: "ScheduleTrigger."
+Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [ScheduleTrigger](concepts-pipeline-execution-triggers.md#schedule-trigger).
 
 | Naam variabele | Beschrijving |
 | --- | --- |
-| @trigger().scheduledTime |Tijdstip waarop de trigger is gepland voor het aanroepen van de pijplijn uitvoering. Bijvoorbeeld, voor een trigger die elke vijf minuten wordt geactiveerd, retourneert deze variabele `2017-06-01T22:20:00Z` `2017-06-01T22:25:00Z` `2017-06-01T22:30:00Z` respectievelijk.|
-| @trigger(). startTime |Tijdstip waarop de trigger **daad werkelijk** is gestart om de pijplijn uitvoering aan te roepen. Voor een trigger die elke vijf minuten wordt geactiveerd, kan deze variabele bijvoorbeeld als volgt `2017-06-01T22:20:00.4061448Z` worden geretourneerd `2017-06-01T22:25:00.7958577Z` `2017-06-01T22:30:00.9935483Z` . (Opmerking: de tijds tempel is standaard in ISO 8601-indeling)|
+| @trigger().scheduledTime |Tijdstip waarop de trigger is gepland voor het aanroepen van de pijplijn uitvoering. |
+| @trigger(). startTime |Tijdstip waarop de trigger **daad werkelijk** is gestart om de pijplijn uitvoering aan te roepen. Dit kan enigszins verschillen van de geplande tijd van de trigger. |
 
 ## <a name="tumbling-window-trigger-scope"></a>Tumblingvenstertriggers-venster trigger bereik
-Naar deze systeem variabelen kan overal in de JSON van de trigger worden verwezen als de trigger van het volgende type is: "TumblingWindowTrigger."
-(Opmerking: de tijds tempel is standaard in ISO 8601-indeling)
+Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [TumblingWindowTrigger](concepts-pipeline-execution-triggers.md#tumbling-window-trigger).
 
 | Naam variabele | Beschrijving |
 | --- | --- |
-| @trigger(). outputs. windowStartTime |Begin van het venster wanneer de trigger is gepland voor het aanroepen van de pijplijn uitvoering. Als de trigger van het tumblingvenstertriggers-venster een frequentie van elk uur heeft, is dit de tijd aan het begin van het uur.|
-| @trigger(). outputs. windowEndTime |Het einde van het venster wanneer de trigger is gepland voor het aanroepen van de pijplijn uitvoering. Als de trigger van het tumblingvenstertriggers-venster een frequentie van elk uur heeft, is dit de tijd aan het einde van het uur.|
+| @trigger(). outputs. windowStartTime |Begin van het venster dat is gekoppeld aan de uitvoering van de trigger. |
+| @trigger(). outputs. windowEndTime |Einde van het venster dat is gekoppeld aan de uitvoering van de trigger. |
+| @trigger().scheduledTime |Tijdstip waarop de trigger is gepland voor het aanroepen van de pijplijn uitvoering. |
+| @trigger(). startTime |Tijdstip waarop de trigger **daad werkelijk** is gestart om de pijplijn uitvoering aan te roepen. Dit kan enigszins verschillen van de geplande tijd van de trigger. |
+
+## <a name="event-based-trigger-scope"></a>Op gebeurtenissen gebaseerd trigger bereik
+Naar deze systeem variabelen kan worden verwezen overal in de trigger JSON voor triggers van het type [BlobEventsTrigger](concepts-pipeline-execution-triggers.md#event-based-trigger).
+
+| Naam variabele | Beschrijving |
+| --- | --- |
+| @triggerBody(). fileName  |De naam van het bestand waarvan het maken of verwijderen heeft geleid tot het starten van de trigger.   |
+| @triggerBody(). mapnaam  |Pad naar de map die het bestand bevat dat is opgegeven door `@triggerBody().fileName` . Het eerste segment van het mappad is de naam van de Azure Blob Storage-container.  |
+| @trigger(). startTime |Tijdstip waarop de trigger is geactiveerd om de pijplijn uitvoering aan te roepen. |
+
 ## <a name="next-steps"></a>Volgende stappen
 Zie [expressie language & functions (Engelstalig](control-flow-expression-language-functions.md)) voor meer informatie over hoe deze variabelen worden gebruikt in expressies.

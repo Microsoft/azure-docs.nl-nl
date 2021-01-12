@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 0ecf47ecdc66c0005f0d793d91a67af102fb1c76
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 4ba06af98714004e4429fe802a206acdfa8fb148
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98107902"
+ms.locfileid: "98127614"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -27,8 +27,6 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
 + **Oplossingen en verbeteringen voor oplossingen**
   + **Azure-cli-ml**
     + framework_version toegevoegd in OptimizationConfig. Het wordt gebruikt wanneer model is geregistreerd met Framework MULTI.
-  + **azureml-automl-runtime**
-    + In deze update hebben we Holt winters exponentiële smoothing toegevoegd aan de voor spellingen van de werkset van AutoML SDK. Op basis van een tijd reeks wordt het beste model geselecteerd door [AICc (gecorrigeerd Akaike Information criterium)](https://otexts.com/fpp3/selecting-predictors.html#selecting-predictors) en geretourneerd.
   + **azureml-contrib-optimalisatie**
     + framework_version toegevoegd in OptimizationConfig. Het wordt gebruikt wanneer model is geregistreerd met Framework MULTI.
   + **azureml-pipeline-steps**

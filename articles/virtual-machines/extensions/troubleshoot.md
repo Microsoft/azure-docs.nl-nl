@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/29/2016
 ms.author: kundanap
-ms.openlocfilehash: bca826cda8dfe47c341886faaf4a0d66f09d37d2
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b8b7a03d5176f5dbd8500b5ff9044c2f22ecbfc0
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94966340"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127138"
 ---
 # <a name="troubleshooting-azure-windows-vm-extension-failures"></a>Problemen met extensie fouten van Azure Windows VM oplossen
 [!INCLUDE [virtual-machines-common-extensions-troubleshoot](../../../includes/virtual-machines-common-extensions-troubleshoot.md)]
@@ -85,19 +85,23 @@ Het certificaat wordt automatisch opnieuw gegenereerd door de Windows-gast agent
 - Klik met de rechter muisknop en selecteer taak beëindigen. Het proces wordt automatisch opnieuw gestart
 
 
-U kunt ook een nieuwe GoalState naar de virtuele machine activeren door een lege update uit te voeren:
+U kunt ook een nieuwe GoalState naar de virtuele machine activeren door een ' VM reapply ' uit te voeren. VM [opnieuw Toep assen](https://docs.microsoft.com/rest/api/compute/virtualmachines/reapply) is een API die is geïntroduceerd in 2020 om de status van een virtuele machine opnieuw toe te passen. We raden u aan dit op een bepaald moment te doen wanneer u een korte uitval tijd van de VM kunt verdragen. Als zichzelf opnieuw wordt toegepast, is het niet mogelijk om een VM opnieuw op te starten en de meeste keren dat opnieuw wordt aangeroepen, wordt de VM niet opnieuw opgestart. er is een zeer klein risico dat een andere in behandeling zijnde update voor het VM-model wordt toegepast wanneer het opnieuw Toep assen van triggers een nieuwe doel status heeft en die andere wijziging kan vereisen dat de computer opnieuw wordt opgestart. 
 
-Azure PowerShell:
+Azure Portal:
+
+Selecteer in de Portal de virtuele machine en klik in het linkerdeel venster onder **ondersteuning en probleem oplossing** op **opnieuw implementeren + opnieuw Toep assen** en selecteer **opnieuw Toep assen**.
+
+
+Azure PowerShell *(Vervang de naam van RG en de VM-naam door de waarden)*:
 
 ```azurepowershell
-$vm = Get-AzureRMVM -ResourceGroupName <RGName> -Name <VMName>  
-Update-AzureRmVM -ResourceGroupName <RGName> -VM $vm  
+Set-AzVM -ResourceGroupName <RG Name> -Name <VM Name> -Reapply
 ```
 
-Azure CLI:
+Azure CLI *(Vervang de naam en de VM-naam van RG door uw waarden)*:
 
 ```azurecli
-az vm update -g <rgname> -n <vmname>
+az vm reapply -g <RG Name> -n <VM Name>
 ```
 
-Als een lege update niet werkt, kunt u een nieuwe, lege gegevens schijf toevoegen aan de VM vanuit de Azure Beheerportal en deze later verwijderen zodra het certificaat weer is toegevoegd.
+Als het niet lukt om een VM opnieuw toe te passen, kunt u een nieuwe, lege gegevens schijf toevoegen aan de VM vanuit de Azure-Beheerportal en deze later verwijderen zodra het certificaat weer is toegevoegd.

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 02/20/2020
-ms.openlocfilehash: c231ac95841043e5576f064e683dd86d9695b108
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: d6e52da7fce39a259107fe60a21fb5ead7b18709
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353184"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127818"
 ---
 # <a name="add-a-secured-sharepoint-data-source-to-your-knowledge-base"></a>Een beveiligde share point-gegevens bron toevoegen aan uw Knowledge Base
 
@@ -127,12 +127,16 @@ The Active Directory manager will get a pop-up window requesting permissions to 
 
 
 
+
+## <a name="add-sharepoint-data-source-with-apis"></a>Share point-gegevens bron toevoegen met Api's
+
+Er is een tijdelijke oplossing voor het toevoegen van de nieuwste share point-inhoud via een API met behulp van Azure Blob-opslag. Hieronder volgen de stappen: 
+1.  Down load de share Point-bestanden lokaal. De gebruiker die de API aanroept, moet toegang hebben tot share point. 
+1.  Upload ze op de Azure Blob stoarge. Hiermee maakt u een beveiligde gedeelde toegang met [behulp van SAS-token.](https://docs.microsoft.com/azure/storage/common/storage-sas-overview#how-a-shared-access-signature-works) 
+1. Geef de BLOB-URL die is gegenereerd met het SAS-token door aan de QnA Maker-API. Als u wilt toestaan dat de vraag wordt opgehaald uit de bestanden, moet u het achtervoegsel bestands type toevoegen als ' &ext = PDF ' of ' &ext = doc ' aan het einde van de URL voordat deze wordt door gegeven aan QnA Maker-API>  
+
+
 <!--
-
-## Add SharePoint data source with APIs
-
-You need to get the SharePoint file's URI before adding it to QnA Maker.
-
 ## Get SharePoint File URI
 
 Use the following steps to transform the SharePoint URL into a sharing token.

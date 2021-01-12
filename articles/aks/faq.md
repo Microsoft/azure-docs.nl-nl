@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Kubernetes service (AKS)
 description: Vind antwoorden op enkele veelgestelde vragen over Azure Kubernetes service (AKS).
 ms.topic: conceptual
 ms.date: 08/06/2020
-ms.openlocfilehash: 94cbaf417413b3e11071fb8c7237cbb3ac7b9a37
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 7fc348ae7b3edb79e75aa1acd08941fec447da6f
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780345"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127631"
 ---
 # <a name="frequently-asked-questions-about-azure-kubernetes-service-aks"></a>Veelgestelde vragen over AKS (Azure Kubernetes Service)
 
@@ -146,7 +146,7 @@ Het verplaatsen van uw AKS-cluster tussen tenants wordt momenteel niet ondersteu
 
 Het verplaatsen van clusters tussen abonnementen wordt momenteel niet ondersteund.
 
-## <a name="can-i-move-my-aks-clusters-from-the-current-azure-subscription-to-another"></a>Kan ik mijn AKS-clusters van het huidige Azure-abonnement naar een andere verplaatsen? 
+## <a name="can-i-move-my-aks-clusters-from-the-current-azure-subscription-to-another"></a>Kan ik mijn AKS-clusters van het huidige Azure-abonnement naar een andere verplaatsen?
 
 Het verplaatsen van uw AKS-cluster en de bijbehorende resources tussen Azure-abonnementen wordt niet ondersteund.
 
@@ -154,7 +154,7 @@ Het verplaatsen van uw AKS-cluster en de bijbehorende resources tussen Azure-abo
 
 Het verplaatsen of hernoemen van uw AKS-cluster en de bijbehorende resources worden niet ondersteund.
 
-## <a name="why-is-my-cluster-delete-taking-so-long"></a>Waarom duurt het verwijderen van een cluster? 
+## <a name="why-is-my-cluster-delete-taking-so-long"></a>Waarom duurt het verwijderen van een cluster?
 
 De meeste clusters worden verwijderd bij de gebruikers aanvraag; in sommige gevallen, met name waarbij klanten hun eigen resource groep halen of het verwijderen van cross-RG taken, kan het langer duren of mislukken. Als u een probleem met verwijderingen ondervindt, controleert u of u geen vergren delingen op de RG hebt, of bronnen buiten de RG zijn ontkoppeling van de RG, enzovoort.
 
@@ -166,7 +166,7 @@ Dit kan, maar AKS wordt dit niet aanbevolen. Upgrades moeten worden uitgevoerd w
 
 Nee, verwijderen/verwijderen van knoop punten met een mislukte status of anderszins verwijderd uit het cluster vóór de upgrade.
 
-## <a name="i-ran-a-cluster-delete-but-see-the-error-errno-11001-getaddrinfo-failed"></a>Ik heb een cluster verwijderd, maar zie de fout `[Errno 11001] getaddrinfo failed` 
+## <a name="i-ran-a-cluster-delete-but-see-the-error-errno-11001-getaddrinfo-failed"></a>Ik heb een cluster verwijderd, maar zie de fout `[Errno 11001] getaddrinfo failed`
 
 Dit wordt meestal veroorzaakt door gebruikers die een of meer netwerk beveiligings groepen (Nsg's) nog in gebruik hebben en aan het cluster zijn gekoppeld.  Verwijder ze en probeer opnieuw te verwijderen.
 
@@ -174,7 +174,7 @@ Dit wordt meestal veroorzaakt door gebruikers die een of meer netwerk beveiligin
 
 Bevestig dat uw Service-Principal niet is verlopen.  Zie: [AKS Service Principal](./kubernetes-service-principal.md) and [AKS update credentials](./update-credentials.md).
 
-## <a name="my-cluster-was-working-but-suddenly-cant-provision-loadbalancers-mount-pvcs-etc"></a>Mijn cluster werkte, maar kan plotseling geen LoadBalancers, Mount-Pvc's, enzovoort inrichten? 
+## <a name="my-cluster-was-working-but-suddenly-cant-provision-loadbalancers-mount-pvcs-etc"></a>Mijn cluster werkte, maar kan plotseling geen LoadBalancers, Mount-Pvc's, enzovoort inrichten?
 
 Bevestig dat uw Service-Principal niet is verlopen.  Zie: [AKS Service Principal](./kubernetes-service-principal.md)  and [AKS update credentials](./update-credentials.md).
 
@@ -254,6 +254,25 @@ Hieronder ziet u een voor beeld van een configuratie van een IP-route van de tra
 - Een van de hoek gevallen in de brug modus is dat de Azure CNI de aangepaste DNS-Server lijsten die gebruikers toevoegen aan VNET of NIC niet kunnen blijven bijwerken. Dit leidt ertoe dat de CNI alleen de eerste instantie van de lijst met DNS-servers ophaalt. Opgelost in de transparante modus als CNI geen eth0-eigenschappen wijzigt. Meer informatie vindt u [hier](https://github.com/Azure/azure-container-networking/issues/713).
 - Biedt een betere afhandeling van UDP-verkeer en-beperking voor UDP-flood Storm wanneer er een time-out optreedt voor ARP. Als Bridge in de brug modus geen MAC-adres van de doel-pod in de intra-VM-Pod-to-pod-communicatie kent, resulteert dit in een ontwerp van het pakket naar alle poorten. Opgelost in de transparante modus omdat er geen L2-apparaten aanwezig zijn in het pad. Meer informatie vindt u [hier](https://github.com/Azure/azure-container-networking/issues/704).
 - De transparante modus voert betere Pod-to-pod-communicatie binnen de virtuele machine uit met betrekking tot de door Voer en latentie in vergelijking met de brug modus.
+
+## <a name="how-to-avoid-permission-ownership-setting-slow-issues-when-the-volume-has-a-lot-of-files"></a>Hoe voorkom ik dat machtigingen eigendom trage problemen instellen wanneer het volume veel bestanden heeft?
+
+Traditioneel als uw Pod wordt uitgevoerd als een niet-hoofd gebruiker (wat u moet doen), moet u een `fsGroup` in de beveiligings context van de pod opgeven, zodat het volume kan worden gelezen en schrijfbaar door de pod. Deze vereiste wordt verderop in dit [onderwerp](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/)beschreven.
+
+Maar een neven effect van de instelling `fsGroup` is dat elke keer dat er een volume wordt gekoppeld, Kubernetes recursief `chown()` en `chmod()` alle bestanden en mappen in het volume zijn, met enkele uitzonde ringen die hieronder zijn vermeld. Dit gebeurt zelfs als het groeps eigendom van het volume al overeenkomt met het aangevraagde `fsGroup` , en kan een aanzienlijke duur zijn voor grotere volumes met veel kleine bestanden, waardoor het opstarten van de pod lange tijd in beslag neemt. Dit scenario is een bekend probleem vóór v 1.20 en de tijdelijke oplossing is het instellen van de pod run as root:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: security-context-demo
+spec:
+  securityContext:
+    runAsUser: 0
+    fsGroup: 0
+```
+
+Het probleem is opgelost door Kubernetes v 1.20, raadpleegt u [Kubernetes 1,20: nauw keurigheid van volume machtigingen wijzigen](https://kubernetes.io/blog/2020/12/14/kubernetes-release-1.20-fsgroupchangepolicy-fsgrouppolicy/) voor meer informatie.
 
 
 <!-- LINKS - internal -->

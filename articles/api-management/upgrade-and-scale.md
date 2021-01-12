@@ -11,12 +11,12 @@ ms.workload: integration
 ms.topic: article
 ms.date: 04/20/2020
 ms.author: apimpm
-ms.openlocfilehash: 466af29a3f073f73d4a0fc62d74709cd59f82425
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: bd36434bbfe435a53567c46728610627f99f987f
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183784"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127784"
 ---
 # <a name="upgrade-and-scale-an-azure-api-management-instance"></a>Een Azure API Management-exemplaar bijwerken en schalen  
 
@@ -88,4 +88,5 @@ Als uw beveiligings vereisten [reken isolatie](../azure-government/azure-secure-
 
 - [Exemplaar van Azure API Management-service implementeren in meerdere Azure-regio's](api-management-howto-deploy-multi-region.md)
 - [Een Azure API Management service-exemplaar automatisch schalen](api-management-howto-autoscale.md)
-- [Optimaliseer en sla uw Cloud uitgaven op](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn)
+- [Kosten plannen en beheren voor API Management](plan-manage-costs.md)
+- [API Management limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#api-management-limits)

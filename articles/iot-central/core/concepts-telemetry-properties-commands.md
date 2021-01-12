@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: iot-central
 services: iot-central
 ms.custom: device-developer
-ms.openlocfilehash: 87fb7f0eb4017a39aca081f73de543a67400d4b5
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 5a9f6fa79da59425e4972dddd21ffdea15af73e7
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97969058"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127903"
 ---
 # <a name="telemetry-property-and-command-payloads"></a>Payloads van telemetrie, eigenschappen en opdrachten
 
@@ -187,6 +187,9 @@ In het volgende code fragment van een apparaatprofiel wordt de definitie van een
   "schema": "geopoint"
 }
 ```
+
+> [!NOTE]
+> Het type **geopunt** schema maakt geen deel uit van de specificatie van de [Digital apparaatdubbels Definition Language](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). IoT Central ondersteunt momenteel het type van het **geopunt** schema en het semantische **locatie** type voor achterwaartse compatibiliteit.
 
 Een apparaatclient moet de telemetrie als JSON verzenden die eruitziet als in het volgende voor beeld. IoT Central wordt de waarde weer gegeven als een pincode op een kaart:
 
@@ -576,6 +579,9 @@ In het volgende code fragment van een model van een apparaat wordt de definitie 
 }
 ```
 
+> [!NOTE]
+> Het type **geopunt** schema maakt geen deel uit van de specificatie van de [Digital apparaatdubbels Definition Language](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). IoT Central ondersteunt momenteel het type van het **geopunt** schema en het semantische **locatie** type voor achterwaartse compatibiliteit.
+
 Een apparaatclient moet een JSON-nettolading verzenden die lijkt op het volgende voor beeld als een gerapporteerde eigenschap in het apparaat dubbele:
 
 ```json
@@ -827,7 +833,7 @@ Het apparaat moet de volgende JSON-Payload verzenden naar IoT Central nadat de u
 }
 ```
 
-## <a name="commands"></a>Opdrachten
+## <a name="commands"></a>Opdracht
 
 Het volgende code fragment van een model van een apparaat toont de definitie van een opdracht die geen para meters heeft en die niet verwacht dat het apparaat iets retourneert:
 

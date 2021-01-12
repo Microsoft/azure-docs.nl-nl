@@ -7,38 +7,40 @@ author: tamram
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.date: 06/17/2020
+ms.date: 01/12/2021
 ms.author: tamram
 ms.custom: security-recommendations
-ms.openlocfilehash: 5be3652d7fca62a0740888ad458f8564f555169e
-ms.sourcegitcommit: 84e3db454ad2bccf529dabba518558bd28e2a4e6
+ms.openlocfilehash: 1593c47b7a6cf3b861f3e1af148b7a5fbfae9a19
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96518903"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127376"
 ---
 # <a name="security-recommendations-for-blob-storage"></a>Beveiligings aanbevelingen voor Blob Storage
 
-Dit artikel bevat beveiligings aanbevelingen voor Blob Storage. Als u deze aanbevelingen implementeert, kunt u voldoen aan uw beveiligings verplichtingen, zoals beschreven in ons gedeelde verantwoordelijkheids model. Lees de [gedeelde verantwoordelijkheden voor Cloud Computing](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/225366/1/Shared%20Responsibility%20for%20Cloud%20Computing-2019-10-25.pdf)voor meer informatie over wat micro soft doet aan de verantwoordelijkheden van de service provider.
+Dit artikel bevat beveiligings aanbevelingen voor Blob Storage. Als u deze aanbevelingen implementeert, kunt u voldoen aan uw beveiligings verplichtingen, zoals beschreven in ons gedeelde verantwoordelijkheids model. Lees voor meer informatie over hoe micro soft voldoet aan de verantwoordelijkheden van de service provider de [gedeelde verantwoordelijkheden voor Cloud Computing](https://gallery.technet.microsoft.com/Shared-Responsibilities-81d0ff91/file/225366/1/Shared%20Responsibility%20for%20Cloud%20Computing-2019-10-25.pdf).
 
-Enkele van de aanbevelingen in dit artikel kunnen automatisch worden bewaakt door Azure Security Center. Azure Security Center is de eerste verdedigings linie bij het beveiligen van uw resources in Azure. Voor informatie over Azure Security Center raadpleegt u het [Azure Security Center?](../../security-center/security-center-introduction.md).
+Enkele van de aanbevelingen in dit artikel kunnen automatisch worden bewaakt door Azure Security Center. Azure Security Center is de eerste verdedigings linie bij het beveiligen van uw resources in Azure. Zie [Wat is er Azure Security Center?](../../security-center/security-center-introduction.md) voor informatie over Azure Security Center.
 
 Azure Security Center regel matig de beveiligings status van uw Azure-resources analyseren om mogelijke beveiligings problemen te identificeren. Vervolgens krijgt u aanbevelingen over hoe u deze kunt aanpakken. Zie [beveiligings aanbevelingen in azure Security Center](../../security-center/security-center-recommendations.md)voor meer informatie over Azure Security Center aanbevelingen.
 
 ## <a name="data-protection"></a>Gegevensbescherming
 
-| Aanbeveling | Opmerkingen | Security Center |
+| Aanbeveling | Opmerkingen | Beveiligingscentrum |
 |-|----|--|
 | Het Azure Resource Manager-implementatie model gebruiken | Maak nieuwe opslag accounts met behulp van het Azure Resource Manager-implementatie model voor belang rijke verbeteringen in de beveiliging, waaronder superieure Azure-functies voor op rollen gebaseerd toegangs beheer (Azure RBAC) en controle, implementatie en beheer op basis van een resource manager, toegang tot beheerde identiteiten, toegang tot Azure Key Vault voor geheimen en verificatie en autorisatie op basis van Azure AD voor toegang tot Azure Storage gegevens en bronnen. Als dat mogelijk is, migreert u bestaande opslag accounts die gebruikmaken van het klassieke implementatie model om Azure Resource Manager te gebruiken. Zie [Azure Resource Manager Overview](../../azure-resource-manager/management/overview.md)voor meer informatie over Azure Resource Manager. | - |
 | Azure Defender inschakelen voor al uw opslag accounts | Azure Defender voor Azure Storage biedt een extra beveiligingslaag die ongebruikelijke en mogelijk schadelijke pogingen detecteert om toegang te krijgen tot of misbruik te maken van opslag accounts. Beveiligings waarschuwingen worden in Azure Security Center geactiveerd wanneer afwijkingen in de activiteit optreden en ook via e-mail worden verzonden naar abonnements beheerders, met details over verdachte activiteiten en aanbevelingen voor het onderzoeken en oplossen van bedreigingen. Zie [Azure Defender configureren voor Azure Storage](../common/azure-defender-storage-configure.md)voor meer informatie. | [Ja](../../security-center/security-center-sql-service-recommendations.md) |
-| Zacht verwijderen inschakelen voor BLOB-gegevens | Met zacht verwijderen kunt u BLOB-gegevens herstellen nadat deze is verwijderd. Voor meer informatie over zacht verwijderen, Zie [voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md). | - |
-| Vergrendel het opslag account om onbedoelde verwijdering te voor komen | U kunt een abonnement, resource groep of resource vergren delen om te voor komen dat andere gebruikers in uw organisatie per ongeluk deze verwijderen of wijzigen. Zie voor meer informatie [bronnen vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md).
+| Zacht verwijderen inschakelen voor blobs | Met zacht verwijderen kunt u BLOB-gegevens herstellen nadat deze is verwijderd. Voor meer informatie over zacht verwijderen, Zie [voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md). | - |
+| Voorlopig verwijderen inschakelen voor containers | ???. | - |
+| Het opslag account vergren delen om te voor komen dat er onbedoeld accounts worden verwijderd | U kunt een Azure Resource Manager resources, zoals een abonnement, een resource groep of een opslag account, vergren delen om te voor komen dat andere gebruikers in uw organisatie per ongeluk deze verwijderen of wijzigen. Het vergren delen van een opslag account voor komt niet dat gegevens in dat account kunnen worden verwijderd. Hiermee wordt alleen voor komen dat het account zelf wordt verwijderd. Zie voor meer informatie [bronnen vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md).
 | Bedrijfs kritieke gegevens opslaan in onveranderbare blobs | Configureer juridische bewaringen en bewaar beleidsregels op basis van tijd voor het opslaan van BLOB-gegevens in een WORM (Write Once, Read Many). De opgeslagen immutably van blobs kunnen worden gelezen, maar kunnen niet worden gewijzigd of verwijderd voor de duur van de Bewaar periode. Zie voor meer informatie [bedrijfs kritieke BLOB-gegevens opslaan met onveranderlijke opslag](storage-blob-immutable-storage.md). | - |
+| Beveiligde overdracht (HTTPS) naar het opslag account vereisen | ??? | - |
 | Alleen SAS-tokens (Shared Access Signature) beperken tot HTTPS-verbindingen | HTTPS vereisen wanneer een client een SAS-token gebruikt voor toegang tot BLOB-gegevens helpt het risico op inbreuk te minimaliseren. Zie [beperkte toegang verlenen tot Azure storage-resources met behulp van Shared Access signatures (SAS)](../common/storage-sas-overview.md)voor meer informatie. | - |
 
 ## <a name="identity-and-access-management"></a>Identiteits- en toegangsbeheer
 
-| Aanbeveling | Opmerkingen | Security Center |
+| Aanbeveling | Opmerkingen | Beveiligingscentrum |
 |-|----|--|
 | Azure Active Directory (Azure AD) gebruiken om toegang te verlenen tot BLOB-gegevens | Azure AD biedt een superieure beveiliging en gebruiks gemak over gedeelde sleutel voor het machtigen van aanvragen voor Blob-opslag. Zie [toegang tot Azure-blobs en-wacht rijen toestaan met Azure Active Directory](../common/storage-auth-aad.md)voor meer informatie. | - |
 | Houd bij het toewijzen van machtigingen aan een Azure AD-beveiligings-principal met behulp van Azure RBAC de belangrijkste bevoegdheid. | Wanneer u een rol aan een gebruiker, groep of toepassing toewijst, moet u die beveiligings-principal alleen de machtigingen verlenen die nodig zijn om hun taken uit te voeren. Het beperken van de toegang tot bronnen voor komt zowel onbedoelde als kwaad aardige misbruik van uw gegevens. | - |
@@ -53,7 +55,7 @@ Azure Security Center regel matig de beveiligings status van uw Azure-resources 
 
 ## <a name="networking"></a>Netwerken
 
-| Aanbeveling | Opmerkingen | Security Center |
+| Aanbeveling | Opmerkingen | Beveiligingscentrum |
 |-|----|--|
 | Configureer de mini maal vereiste versie van Transport Layer Security (TLS) voor een opslag account.  | Vereisen dat clients een veiligere versie van TLS gebruiken om aanvragen voor een Azure Storage account te maken door de minimale versie van TLS voor dat account te configureren. Zie voor meer informatie [Mini maal vereiste versie van Transport Layer Security (TLS) configureren voor een opslag account](../common/transport-layer-security-configure-minimum-version.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)| - |
 | Schakel de optie **veilige overdracht vereist** in al uw opslag accounts in | Wanneer u de optie **beveiligde overdracht vereist** inschakelt, moeten alle aanvragen voor het opslag account via beveiligde verbindingen plaatsvinden. Aanvragen die via HTTP worden verzonden, mislukken. Zie [veilige overdracht vereisen in azure Storage](../common/storage-require-secure-transfer.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json)voor meer informatie. | [Ja](../../security-center/security-center-remediate-recommendations.md) |
@@ -66,7 +68,7 @@ Azure Security Center regel matig de beveiligings status van uw Azure-resources 
 
 ## <a name="loggingmonitoring"></a>Loggen/bewaken
 
-| Aanbeveling | Opmerkingen | Security Center |
+| Aanbeveling | Opmerkingen | Beveiligingscentrum |
 |-|----|--|
 | Bijhouden hoe aanvragen worden geautoriseerd | Schakel Azure Storage logboek registratie in om bij te houden hoe elke aanvraag voor Azure Storage is geautoriseerd. De logboeken geven aan of een aanvraag anoniem is gemaakt door gebruik te maken van een OAuth 2,0-token, met behulp van gedeelde sleutel of door gebruik te maken van een Shared Access Signature (SAS). Zie [Azure Blob Storage bewaken met Azure monitor](monitor-blob-storage.md) of [Azure Storage Analytics-logboek registratie met klassieke bewaking](../common/storage-analytics-logging.md)voor meer informatie. | - |
 | Waarschuwingen instellen in Azure Monitor | Logboek waarschuwingen configureren om bronnen logboeken te evalueren met een ingestelde frequentie en een waarschuwing te activeren op basis van de resultaten. Zie [waarschuwingen in Logboeken vastleggen in azure monitor](../../azure-monitor/platform/alerts-unified-log.md)voor meer informatie. | - |

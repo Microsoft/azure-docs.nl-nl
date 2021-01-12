@@ -8,12 +8,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: danis
-ms.openlocfilehash: 065b4348675fcd48088fd26db0e0293eb2d7a387
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 751d447c164c602b9b1524d4945d61556bf71932
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97896461"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127291"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure"></a>Een op Red Hat gebaseerde virtuele machine voor Azure voorbereiden
 In dit artikel wordt beschreven hoe u een virtuele Red Hat Enterprise Linux-machine (RHEL) voorbereidt voor gebruik in Azure. De versies van RHEL die in dit artikel worden behandeld, zijn 6,7 + en 7.1 +. De Hyper visors voor voor bereidingen die in dit artikel worden behandeld, zijn Hyper-V, op kernel gebaseerde virtuele machine (KVM) en VMware. Voor meer informatie over de geschiktheids vereisten voor deelname aan het Cloud Access-programma van Red Hat raadpleegt u [de Cloud Access-website van Red Hat](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) en [voert u RHEL uit op Azure](https://access.redhat.com/ecosystem/ccsp/microsoft-azure). Zie de [opbouw functie voor Azure-installatie kopieën](./image-builder-overview.md)voor manieren om het bouwen van RHEL-installatie kopieën te automatiseren.
@@ -200,11 +200,14 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
 
 1. Wijzig de kernel-opstart regel in de grub-configuratie zodat er aanvullende kernel-para meters voor Azure zijn. Als u deze wijziging wilt door voeren, opent u `/etc/default/grub` in een tekst editor en bewerkt u de `GRUB_CMDLINE_LINUX` para meter. Bijvoorbeeld:
 
+    
     ```config-grub
-    GRUB_CMDLINE_LINUX="rootdelay=300 console=ttyS0 earlyprintk=ttyS0 net.ifnames=0"
+    GRUB_CMDLINE_LINUX="rootdelay=300 console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200 earlyprintk=ttyS0 net.ifnames=0"
+    GRUB_TERMINAL_OUTPUT="serial console"
+    GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1
     ```
    
-   Dit zorgt er ook voor dat alle console berichten worden verzonden naar de eerste seriële poort, die ondersteuning voor Azure kan helpen bij het oplossen van problemen. Deze configuratie schakelt ook de nieuwe RHEL 7-naamgevings conventies voor Nic's uit. Daarnaast wordt u aangeraden de volgende para meters te verwijderen:
+    Dit zorgt er ook voor dat alle console berichten worden verzonden naar de eerste seriële poort en interactie met de seriële console inschakelen, die ondersteuning voor Azure kan helpen bij het oplossen van problemen. Deze configuratie schakelt ook de nieuwe RHEL 7-naamgevings conventies voor Nic's uit.
 
     ```config
     rhgb quiet crashkernel=auto
@@ -217,6 +220,8 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     ```console
     # sudo grub2-mkconfig -o /boot/grub2/grub.cfg
     ```
+    > [!NOTE]
+    > Als u een met UEFI ingeschakelde VM uploadt, is de opdracht voor het bijwerken van grub `grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg` .
 
 1. Zorg ervoor dat de SSH-server is geïnstalleerd en geconfigureerd om te starten bij het opstarten. Dit is meestal de standaard instelling. Wijzig `/etc/ssh/sshd_config` de volgende regel in:
 
@@ -230,31 +235,40 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     # subscription-manager repos --enable=rhel-7-server-extras-rpms
     ```
 
-1. Installeer de Azure Linux-agent door de volgende opdracht uit te voeren:
+1. Installeer de Azure Linux-agent, Cloud-init en andere nood zakelijke hulpprogram ma's door de volgende opdracht uit te voeren:
 
     ```console
-    # sudo yum install WALinuxAgent
+    # sudo yum install -y WALinuxAgent cloud-init cloud-utils-growpart gdisk hyperv-daemons
 
     # sudo systemctl enable waagent.service
+    # sudo systemctl enable cloud-init.service
     ```
 
-1. Cloud-init installeren voor het afhandelen van de inrichting
+1. Cloud-init configureren voor het afhandelen van de inrichting:
+
+    1. Waagent configureren voor Cloud-init:
 
     ```console
-    yum install -y cloud-init cloud-utils-growpart gdisk hyperv-daemons
-
-    # Configure waagent for cloud-init
-    sed -i 's/Provisioning.UseCloudInit=n/Provisioning.UseCloudInit=y/g' /etc/waagent.conf
-    sed -i 's/Provisioning.Enabled=y/Provisioning.Enabled=n/g' /etc/waagent.conf
+    sed -i 's/Provisioning.Agent=auto/Provisioning.Agent=cloud-init/g' /etc/waagent.conf
     sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
     sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+    ```
+    > [!NOTE]
+    > Als u een specifieke virtuele machine migreert en geen gegeneraliseerde installatie kopie wilt maken, stelt u `Provisioning.Agent=disabled` de `/etc/waagent.conf` configuratie in.
+    
+    1. Koppels configureren:
 
+    ```console
     echo "Adding mounts and disk_setup to init stage"
     sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
     sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
     sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
     sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+    ```
+    
+    1. Azure data source configureren:
 
+    ```console
     echo "Allow only Azure datasource, disable fetching network setting via IMDS"
     cat > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg <<EOF
     datasource_list: [ Azure ]
@@ -262,13 +276,206 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     Azure:
         apply_network_config: False
     EOF
+    ```
 
+    1. Als deze is geconfigureerd, verwijdert u de bestaande swapfile:
+
+    ```console
     if [[ -f /mnt/resource/swapfile ]]; then
-    echo Removing swapfile - RHEL uses a swapfile by default
+    echo "Removing swapfile" #RHEL uses a swapfile by defaul
     swapoff /mnt/resource/swapfile
     rm /mnt/resource/swapfile -f
     fi
+    ```
+    1. Cloud-init-logboek registratie configureren:
+    ```console
+    echo "Add console log file"
+    cat >> /etc/cloud/cloud.cfg.d/05_logging.cfg <<EOF
 
+    # This tells cloud-init to redirect its stdout and stderr to
+    # 'tee -a /var/log/cloud-init-output.log' so the user can see output
+    # there without needing to look on the console.
+    output: {all: '| tee -a /var/log/cloud-init-output.log'}
+    EOF
+
+    ```
+
+1. Wisselings configuratie maakt geen wissel ruimte op de schijf met het besturings systeem.
+
+    Voorheen werd de Azure Linux-agent gebruikt om de wissel ruimte automatisch te configureren met behulp van de lokale bron schijf die is gekoppeld aan de virtuele machine nadat de virtuele machine is ingericht op Azure. Dit wordt nu echter verwerkt door Cloud-init, u **moet** de Linux-agent niet gebruiken om de bron schijf te Format teren Maak het wissel bestand, wijzig de volgende para meters op de `/etc/waagent.conf` juiste manier:
+
+    ```console
+    ResourceDisk.Format=n
+    ResourceDisk.EnableSwap=n
+    ```
+
+    Als u koppelen, Format teren en wisselen wilt maken, kunt u het volgende doen:
+    * Deze in als Cloud-init-configuratie door geven telkens wanneer u een virtuele machine maakt
+    * Gebruik een Cloud-init-instructie geïntegreerde in de installatie kopie die dit doet wanneer de virtuele machine wordt gemaakt:
+
+        ```console
+        cat > /etc/cloud/cloud.cfg.d/00-azure-swap.cfg << EOF
+        #cloud-config
+        # Generated by Azure cloud image build
+        disk_setup:
+          ephemeral0:
+            table_type: mbr
+            layout: [66, [33, 82]]
+            overwrite: True
+        fs_setup:
+          - device: ephemeral0.1
+            filesystem: ext4
+          - device: ephemeral0.2
+            filesystem: swap
+        mounts:
+          - ["ephemeral0.1", "/mnt"]
+          - ["ephemeral0.2", "none", "swap", "sw", "0", "0"]
+        EOF
+        ```
+1. Als u de registratie van het abonnement wilt opheffen, voert u de volgende opdracht uit:
+
+    ```console
+    # sudo subscription-manager unregister
+    ```
+
+1. Inrichting
+
+    Voer de volgende opdrachten uit om de inrichting van de virtuele machine ongedaan te maken en deze voor te bereiden voor de inrichting van Azure:
+
+    > [!CAUTION]
+    > Als u een specifieke virtuele machine migreert en geen gegeneraliseerde installatie kopie wilt maken, slaat u de stap voor het opheffen van de inrichting over. Als u de opdracht uitvoert `waagent -force -deprovision` , wordt de bron machine onbruikbaar. deze stap is alleen bedoeld voor het maken van een gegeneraliseerde installatie kopie.
+    ```console
+    # sudo waagent -force -deprovision
+
+    # export HISTSIZE=0
+
+    # logout
+    ```
+    
+
+1. Klik op **actie**  >  **Afsluiten** in Hyper-V-beheer. Uw Linux-VHD is nu gereed om te worden geüpload naar Azure.
+
+### <a name="rhel-8-using-hyper-v-manager"></a>RHEL 8 met Hyper-V-beheer
+
+1. Selecteer de virtuele machine in Hyper-V-beheer.
+
+1. Klik op **verbinding maken** om een console venster voor de virtuele machine te openen.
+
+1. Zorg ervoor dat de netwerk beheer-service wordt gestart op het moment van opstarten door de volgende opdracht uit te voeren:
+
+    ```console
+    # sudo systemctl enable NetworkManager.service
+    ```
+
+1. Configureer de netwerk interface zodanig dat deze automatisch wordt gestart bij het opstarten en DHCP gebruikt:
+
+    ```console
+    # nmcli con mod eth0 connection.autoconnect yes ipv4.method auto
+    ```
+
+
+1. Registreer uw Red Hat-abonnement om de installatie van pakketten vanuit de RHEL-opslag plaats mogelijk te maken door de volgende opdracht uit te voeren:
+
+    ```console
+    # sudo subscription-manager register --auto-attach --username=XXX --password=XXX
+    ```
+
+1. Wijzig de kernel-opstart regel in uw grub-configuratie zodat u aanvullende kernel-para meters voor Azure kunt gebruiken en de seriële console kunt inschakelen. 
+
+    1. Huidige GRUB-para meters verwijderen:
+    ```console
+    # grub2-editenv - unset kernelopts
+    ```
+
+    1. Bewerk `/etc/default/grub` in een tekst editor en voeg de volgende para meters toe:
+
+    ```config-grub
+    GRUB_CMDLINE_LINUX="rootdelay=300 console=tty1 console=ttyS0,115200n8 earlyprintk=ttyS0,115200 earlyprintk=ttyS0 net.ifnames=0"
+    GRUB_TERMINAL_OUTPUT="serial console"
+    GRUB_SERIAL_COMMAND="serial --speed=115200 --unit=0 --word=8 --parity=no --stop=1"
+    ```
+   
+   Dit zorgt er ook voor dat alle console berichten worden verzonden naar de eerste seriële poort en interactie met de seriële console inschakelen, die ondersteuning voor Azure kan helpen bij het oplossen van problemen. Deze configuratie schakelt ook de nieuwe RHEL 7-naamgevings conventies voor Nic's uit.
+   
+   1. Daarnaast wordt u aangeraden de volgende para meters te verwijderen:
+
+    ```config
+    rhgb quiet crashkernel=auto
+    ```
+   
+    Grafisch en stil opstarten zijn niet handig in een cloud omgeving waar alle logboeken moeten worden verzonden naar de seriële poort. U kunt de `crashkernel` optie zo nodig laten configureren. Houd er rekening mee dat deze para meter de hoeveelheid beschikbaar geheugen in de virtuele machine met 128 MB of meer reduceert. Dit kan problemen opleveren bij kleinere VM-grootten.
+
+1. Wanneer u klaar bent `/etc/default/grub` met bewerken, voert u de volgende opdracht uit om de configuratie van grub opnieuw samen te stellen:
+
+    ```console
+    # sudo grub2-mkconfig -o /boot/grub2/grub.cfg
+    ```
+    Voer de volgende opdracht uit voor een virtuele-machine met UEFI:
+
+    ```console
+    # sudo grub2-mkconfig -o /boot/efi/EFI/redhat/grub.cfg
+    ```
+
+1. Zorg ervoor dat de SSH-server is geïnstalleerd en geconfigureerd om te starten bij het opstarten. Dit is meestal de standaard instelling. Wijzig `/etc/ssh/sshd_config` de volgende regel in:
+
+    ```config
+    ClientAliveInterval 180
+    ```
+
+1. Installeer de Azure Linux-agent, Cloud-init en andere nood zakelijke hulpprogram ma's door de volgende opdracht uit te voeren:
+
+    ```console
+    # sudo yum install -y WALinuxAgent cloud-init cloud-utils-growpart gdisk hyperv-daemons
+
+    # sudo systemctl enable waagent.service
+    # sudo systemctl enable cloud-init.service
+    ```
+
+1. Cloud-init configureren voor het afhandelen van de inrichting:
+
+    1. Waagent configureren voor Cloud-init:
+
+    ```console
+    sed -i 's/Provisioning.Agent=auto/Provisioning.Agent=cloud-init/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.Format=y/ResourceDisk.Format=n/g' /etc/waagent.conf
+    sed -i 's/ResourceDisk.EnableSwap=y/ResourceDisk.EnableSwap=n/g' /etc/waagent.conf
+    ```
+    > [!NOTE]
+    > Als u een specifieke virtuele machine migreert en geen gegeneraliseerde installatie kopie wilt maken, stelt u `Provisioning.Agent=disabled` de `/etc/waagent.conf` configuratie in.
+    
+    1. Koppels configureren:
+
+    ```console
+    echo "Adding mounts and disk_setup to init stage"
+    sed -i '/ - mounts/d' /etc/cloud/cloud.cfg
+    sed -i '/ - disk_setup/d' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - mounts' /etc/cloud/cloud.cfg
+    sed -i '/cloud_init_modules/a\\ - disk_setup' /etc/cloud/cloud.cfg
+    ```
+    
+    1. Azure data source configureren:
+
+    ```console
+    echo "Allow only Azure datasource, disable fetching network setting via IMDS"
+    cat > /etc/cloud/cloud.cfg.d/91-azure_datasource.cfg <<EOF
+    datasource_list: [ Azure ]
+    datasource:
+    Azure:
+        apply_network_config: False
+    EOF
+    ```
+
+    1. Als deze is geconfigureerd, verwijdert u de bestaande swapfile:
+
+    ```console
+    if [[ -f /mnt/resource/swapfile ]]; then
+    echo "Removing swapfile" #RHEL uses a swapfile by defaul
+    swapoff /mnt/resource/swapfile
+    rm /mnt/resource/swapfile -f
+    fi
+    ```
+    1. Cloud-init-logboek registratie configureren:
+    ```console
     echo "Add console log file"
     cat >> /etc/cloud/cloud.cfg.d/05_logging.cfg <<EOF
 
@@ -323,14 +530,15 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
     Voer de volgende opdrachten uit om de inrichting van de virtuele machine ongedaan te maken en deze voor te bereiden voor de inrichting van Azure:
 
     ```console
-    # Note: if you are migrating a specific virtual machine and do not wish to create a generalized image,
-    # skip the deprovision step
     # sudo waagent -force -deprovision
 
     # export HISTSIZE=0
 
     # logout
     ```
+    > [!CAUTION]
+    > Als u een specifieke virtuele machine migreert en geen gegeneraliseerde installatie kopie wilt maken, slaat u de stap voor het opheffen van de inrichting over. Als u de opdracht uitvoert `waagent -force -deprovision` , wordt de bron machine onbruikbaar. deze stap is alleen bedoeld voor het maken van een gegeneraliseerde installatie kopie.
+
 
 1. Klik op **actie**  >  **Afsluiten** in Hyper-V-beheer. Uw Linux-VHD is nu gereed om te worden geüpload naar Azure.
 

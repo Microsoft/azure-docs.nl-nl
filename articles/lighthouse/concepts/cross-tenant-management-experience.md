@@ -3,12 +3,12 @@ title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
 ms.date: 12/16/2020
 ms.topic: conceptual
-ms.openlocfilehash: 111e5310f1dac01053eebc6592d7b56105358c41
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: b789f241fba4b77223272f81d1a69c8fcb050008
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630085"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127155"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 

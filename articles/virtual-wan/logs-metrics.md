@@ -8,18 +8,24 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 06/05/2020
 ms.author: cherylmc
-ms.openlocfilehash: 53b8d74d6eb35347d6ac5b27d12fa5b5eaed2582
-ms.sourcegitcommit: 04fb3a2b272d4bbc43de5b4dbceda9d4c9701310
+ms.openlocfilehash: 62979a2cbe2a5912476ca65327a06eef9c36c1cb
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94566364"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127886"
 ---
 # <a name="azure-virtual-wan-logs-and-metrics"></a>Virtuele WAN-logboeken en-metrische gegevens van Azure
 
-U kunt Azure Virtual WAN bewaken met behulp van Azure Monitor. Virtual WAN is een netwerk service die veel netwerk-, beveiligings-en routerings functionaliteit biedt om één operationele interface te bieden. Virtuele WAN-VPN-gateways, ExpressRoute-gateways en Azure Firewall hebben logboek registratie en metrische gegevens die via Azure Monitor kunnen worden weer gegeven. Zie voor Azure Firewall informatie [Azure firewall logboeken en metrische](../firewall/logs-and-metrics.md)gegevens.
+U kunt Azure Virtual WAN bewaken met behulp van Azure Monitor. Virtual WAN is een netwerk service die veel netwerk-, beveiligings-en routerings functionaliteit biedt om één operationele interface te bieden. Virtuele WAN-VPN-gateways, ExpressRoute-gateways en Azure Firewall hebben logboek registratie en metrische gegevens die via Azure Monitor kunnen worden weer gegeven.
 
 In dit artikel worden metrische gegevens en diagnostische gegevens beschreven die beschikbaar zijn via de portal. Metrische gegevens zijn licht gewicht en kunnen bijna realtime-scenario's ondersteunen, waardoor ze nuttig zijn voor waarschuwingen en snelle detectie van problemen.
+
+## <a name="monitoring-secured-hub-azure-firewall"></a>Bewaken van beveiligde hub (Azure Firewall) 
+
+U kunt de beveiligde hub bewaken met Azure Firewall-Logboeken. U kunt ook activiteitenlogboeken gebruiken om bewerkingen in Azure Firewall-resources te controleren.
+
+Als u ervoor hebt gekozen om uw virtuele hub te beveiligen met Azure Firewall, zijn relevante logboeken en metrische gegevens hier beschikbaar: [Azure firewall logboeken en metrische gegevens](../firewall/logs-and-metrics.md).
 
 ## <a name="metrics"></a>Metrische gegevens
 
@@ -109,7 +115,7 @@ De logboeken bevinden zich in **Azure log Analytics-werk ruimte**. U kunt een qu
 
 ```AzureDiagnostics | where Category == "RouteDiagnosticLog"```
 
-Vervang de onderstaande waarden na de **= =** , indien nodig.
+Vervang de onderstaande waarden na de **= =**, indien nodig.
 
 * "GatewayDiagnosticLog"
 * "IKEDiagnosticLog"
@@ -119,7 +125,7 @@ Vervang de onderstaande waarden na de **= =** , indien nodig.
 
 ## <a name="activity-logs"></a><a name="activity-logs"></a>Activiteiten logboeken
 
-Vermeldingen in het **activiteiten logboek** worden standaard verzameld en kunnen worden weer gegeven in de Azure Portal. U kunt Azure-activiteiten Logboeken (voorheen bekend als *operationele logboeken* en *audit logboeken* ) gebruiken om alle bewerkingen weer te geven die zijn verzonden naar uw Azure-abonnement.
+Vermeldingen in het **activiteiten logboek** worden standaard verzameld en kunnen worden weer gegeven in de Azure Portal. U kunt Azure-activiteiten Logboeken (voorheen bekend als *operationele logboeken* en *audit logboeken*) gebruiken om alle bewerkingen weer te geven die zijn verzonden naar uw Azure-abonnement.
 
 ## <a name="next-steps"></a>Volgende stappen
 

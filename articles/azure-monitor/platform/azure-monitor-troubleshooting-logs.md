@@ -7,12 +7,12 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 12/29/2020
-ms.openlocfilehash: 816cdddc1f3d0a9bc9ebc3f277bc223a688cba31
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: b3d1ad2d327da60874d2d07ba697b8f5ab815189
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98067362"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127087"
 ---
 # <a name="azure-monitor-troubleshooting-logs-preview"></a>Azure Monitor probleemoplossings Logboeken (preview-versie)
 Gebruik Azure Monitor om snel en/of periodiek problemen te onderzoeken, problemen met code of configuratie op te lossen of service-ondersteunings cases, die vaak afhankelijk zijn van het zoeken in grote hoeveel heden gegevens voor specifieke inzichten.
@@ -48,7 +48,7 @@ Response:
         },
         "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/tables/{tableName}",
         "name": "{tableName}"
-      }
+}
 ```
 ## <a name="check-if-the-troubleshooting-logs-feature-is-enabled-for-a-given-table"></a>Controleer of de functie Logboeken voor probleem oplossing is ingeschakeld voor een bepaalde tabel
 Als u wilt controleren of het logboek voor probleem oplossing is ingeschakeld voor een bepaalde tabel, kunt u de volgende API-aanroep gebruiken.
@@ -65,6 +65,7 @@ Response:
         },
         "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.operationalinsights/workspaces/{workspaceName}/tables/{tableName}",
         "name": " {tableName}"
+                }
 
 ```
 ## <a name="check-if-the-troubleshooting-logs-feature-is-enabled-for-all-of-the-tables-in-a-workspace"></a>Controleer of de functie Logboeken voor probleem oplossing is ingeschakeld voor alle tabellen in een werk ruimte
@@ -83,7 +84,7 @@ Response:
           },
           "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/microsoft.operationalinsights/workspaces/{workspaceName}/tables/table1",
           "name": "table1"
-        },
+ },
         {
           "properties": {
             "retentionInDays": 7,
@@ -119,7 +120,7 @@ Response:
         },
         "id": "/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}/tables/{tableName}",
         "name": "{tableName}"
-      }
+}
 ```
 >[!TIP]
 >* U kunt elk REST API-hulp programma gebruiken om de opdrachten uit te voeren. [Meer informatie](https://docs.microsoft.com/rest/api/azure/)

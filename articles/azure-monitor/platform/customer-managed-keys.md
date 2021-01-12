@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: 07562167131d1839bc0827c74fae09c683302c08
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 6c1f323828eb48b61b38370bc2fe56d4c93bf036
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118605"
+ms.locfileid: "98127206"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -126,10 +126,10 @@ Deze instellingen kunnen worden bijgewerkt in Key Vault via CLI en Power shell:
 ## <a name="create-cluster"></a>Cluster maken
 
 > [!NOTE]
-> Clusters ondersteunen twee [beheerde identiteits typen](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types), aan het systeem toegewezen en door de gebruiker toegewezen, die kunnen worden gebruikt op basis van uw scenario. Door het systeem toegewezen beheerde identiteit is eenvoudiger en automatisch gemaakt met het maken van een cluster wanneer u de identiteit instelt `type` als `SystemAssigned` ---deze identiteit kan later worden gebruikt om toegang te verlenen tot uw Key Vault. Als u een cluster moet maken met door de klant beheerde sleutel configuratie bij het maken, moet er een sleutel zijn gedefinieerd en door de gebruiker toegewezen identiteit in uw Key Vault vooraf worden verleend. vervolgens maakt u het cluster met de identiteit `type` als `UserAssigned` `UserAssignedIdentities` met de resource-id van de identiteits-en sleutel gegevens in `keyVaultProperties` .
+> Clusters ondersteunen twee [typen beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types): aan het systeem toegewezen en door de gebruiker toegewezen en elk type kan worden gebaseerd, afhankelijk van uw scenario. Door het systeem toegewezen beheerde identiteit is eenvoudiger en wordt automatisch gemaakt met het maken van een cluster wanneer de identiteit `type` is ingesteld als '*SystemAssigned*'. deze identiteit kan later worden gebruikt om het cluster toegang te verlenen tot uw Key Vault. Als u een cluster wilt maken terwijl door de klant beheerde sleutel wordt gedefinieerd tijdens het maken van het cluster, moet u een sleutel hebben gedefinieerd en de door de gebruiker toegewezen identiteit in uw Key Vault vooraf hebben opgegeven. vervolgens maakt u het cluster met de volgende instellingen: identiteit `type` als '*UserAssigned*', `UserAssignedIdentities` met de resource-id van de identiteit en `keyVaultProperties` met belang rijke gegevens.
 
 > [!IMPORTANT]
-> U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt. Deze beperking is niet van toepassing op door het systeem toegewezen beheerde identiteit.
+> U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt en u in dit geval de door het systeem toegewezen beheerde identiteit wilt gebruiken.
 
 Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](../log-query/logs-dedicated-clusters.md#creating-a-cluster). 
 
@@ -416,7 +416,7 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
   - Als uw cluster is ingesteld met een door de gebruiker toegewezen beheerde identiteit, wordt `UserAssignedIdentities` `None` het cluster onderbroken en wordt de toegang tot uw gegevens voor komen, maar u kunt de intrekking niet herstellen en het cluster activeren zonder dat er een ondersteunings aanvraag wordt geopend. Deze beperking hebben ' toegepast op door het systeem toegewezen beheerde identiteit.
 
-  - U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt. Deze beperking is niet van toepassing op door het systeem toegewezen beheerde identiteit.
+  - U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt en u in dit geval de door het systeem toegewezen beheerde identiteit wilt gebruiken.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

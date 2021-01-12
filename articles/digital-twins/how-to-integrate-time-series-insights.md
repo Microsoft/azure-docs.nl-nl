@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 7/14/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 22ee57592af838a236d75fa7f56a0c8e1ed89403
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: f776482c684004c8d661f69d8158ba9597c923b2
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046521"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127030"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Azure Digital Apparaatdubbels integreren met Azure Time Series Insights
 
@@ -84,13 +84,13 @@ De zelf studie over Azure Digital Apparaatdubbels [*: verbinding maken met een e
 
 Voordat u doorgaat, noteert u uw *Event hubs naam ruimte* en *resource groep*, omdat u deze opnieuw gaat gebruiken om nog een event hub later in dit artikel te maken.
 
-## <a name="create-an-azure-function"></a>Een Azure-functie maken 
+## <a name="create-a-function-in-azure"></a>Een maken functie in Azure
 
-Vervolgens maakt u een door Event Hubs geactiveerde functie binnen een functie-app. U kunt de functie-app die u in de end-to-end zelf studie hebt gemaakt, gebruiken ([*zelf studie: een end-to-end-oplossing verbinden*](./tutorial-end-to-end.md)) of uw eigen. 
+Vervolgens gebruikt u Azure Functions om een door Event Hubs geactiveerde functie in een functie-app te maken. U kunt de functie-app die u in de end-to-end zelf studie hebt gemaakt, gebruiken ([*zelf studie: een end-to-end-oplossing verbinden*](./tutorial-end-to-end.md)) of uw eigen. 
 
 Met deze functie worden deze dubbele update gebeurtenissen van hun oorspronkelijke formulier geconverteerd als JSON-patch-documenten naar JSON-objecten, die alleen bijgewerkte en toegevoegde waarden van uw apparaatdubbels bevatten.
 
-Zie [*Azure Event hubs trigger voor Azure functions*](../azure-functions/functions-bindings-event-hubs-trigger.md)voor meer informatie over het gebruik van Event hubs met Azure functions.
+Zie voor meer informatie over het gebruik van Event Hubs met Azure Functions [*Azure Event hubs trigger voor Azure functions*](../azure-functions/functions-bindings-event-hubs-trigger.md).
 
 Vervang de functie code door de volgende code in de gepubliceerde functie-app.
 

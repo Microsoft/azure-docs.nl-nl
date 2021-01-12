@@ -10,17 +10,17 @@ ms.service: active-directory
 ms.subservice: enterprise-users
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/03/2020
+ms.date: 01/11/2020
 ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 296679135063e2c7e1b7f0e3ffd193c8f18c3acf
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 5038bde01a6b183a25a47f3b4e206c1ce80e6b6d
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576261"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127835"
 ---
 # <a name="user-management-enhancements-preview-in-azure-active-directory"></a>Verbeteringen in gebruikers beheer (preview) in Azure Active Directory
 
@@ -60,6 +60,9 @@ Hieronder ziet u de eigenschappen van de gebruiker op de pagina **alle gebruiker
 - Naam: de weergave naam van de gebruiker.
 - Principal-naam van gebruiker: de user principal name (UPN) van de gebruiker.
 - Gebruikers type: lid, gast, geen.
+- Aanmaak tijd: de datum en tijd waarop de gebruiker is gemaakt.
+- Functie: de functie van de gebruiker.
+- Afdeling: de afdeling waarmee de gebruiker werkt.
 - Directory-synchronisatie: geeft aan of de gebruiker is gesynchroniseerd vanuit een on-premises Directory.
 - Identiteits verlener: de verleners van de identiteit die wordt gebruikt om zich aan te melden bij een gebruikers account.
 - Object-ID: de object-ID van de gebruiker.
@@ -76,7 +79,8 @@ Hieronder ziet u de eigenschappen van de gebruiker op de pagina **alle gebruiker
 De pagina **Verwijderde gebruikers** bevat alle kolommen die beschikbaar zijn op de pagina **alle gebruikers** en enkele extra kolommen, namelijk:
 
 - Verwijderings datum: de datum waarop de gebruiker voor het eerst is verwijderd uit de organisatie (de gebruiker is herstorbaar).
-- Permanente verwijderings datum: de datum waarna het proces van het permanent verwijderen van de gebruiker uit de organisatie automatisch wordt gestart. 
+- Permanente verwijderings datum: de datum waarna het proces van het permanent verwijderen van de gebruiker uit de organisatie automatisch wordt gestart.
+- Origineel user principal name: de oorspronkelijke UPN van de gebruiker voordat de object-ID is toegevoegd als voor voegsel voor de verwijderde UPN.
 
 > [!NOTE]
 > Verwijderings datums worden weer gegeven in Coordinated Universal Time (UTC).
@@ -105,6 +109,10 @@ Hieronder ziet u de eigenschappen die kunnen worden gefilterd op de pagina **all
 - Gebruikers type: lid, gast, geen
 - Status Directory gesynchroniseerd: Ja, nee
 - Type maken: uitnodiging, E-mail geverifieerd, lokaal account
+- Aanmaak tijd: afgelopen 7, 14, 30, 90, 360 of >360 dagen geleden
+- Functie: Voer een taak titel in
+- Afdeling: Voer een afdelings naam in
+- Groep: zoeken naar een groep
 - Uitnodigings status: acceptatie in behandeling, geaccepteerd
 - Domein naam: Voer een domein naam in
 - Bedrijfs naam: Voer een bedrijfs naam in
@@ -117,6 +125,9 @@ De pagina **Verwijderde gebruikers** bevat extra filters, niet op de pagina **al
 - Gebruikers type: lid, gast, geen
 - Status Directory gesynchroniseerd: Ja, nee
 - Type maken: uitnodiging, E-mail geverifieerd, lokaal account
+- Aanmaak tijd: afgelopen 7, 14, 30, 90, 360 of > 360 dagen geleden
+- Functie: Voer een taak titel in
+- Afdeling: Voer een afdelings naam in
 - Uitnodigings status: acceptatie in behandeling, geaccepteerd
 - Verwijderings datum: afgelopen 7, 14 of 30 dagen
 - Domein naam: Voer een domein naam in

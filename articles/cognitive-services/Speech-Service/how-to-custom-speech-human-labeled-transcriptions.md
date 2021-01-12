@@ -10,18 +10,21 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: erhopf
-ms.openlocfilehash: 4516bbddd3fda593021288a440e1b354d4d7f1e3
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: cc373a67ee0f4ed2e900e7b41cbcb96d31d67b34
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340234"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98126883"
 ---
 # <a name="how-to-create-human-labeled-transcriptions"></a>Transcripties met menselijke labels maken
 
 Als u de nauw keurigheid van de herkenning wilt verbeteren, met name problemen die worden veroorzaakt wanneer woorden worden verwijderd of onjuist zijn vervangen, kunt u transcripties met menselijke labels samen met uw audio gegevens gebruiken. Wat zijn transcripties van menselijke labels? Dat is eenvoudig, ze zijn woord-voor-Word, Verbatim transcripties van een audio bestand.
 
-Er is een grote steek proef van transcriptie-gegevens vereist om de herkenning te verbeteren, maar we raden u aan om te bieden tussen 10 en 1.000 uur aan transcriptie-gegevens. Op deze pagina bekijken we richt lijnen die zijn ontworpen om u te helpen bij het maken van transcripties met hoge kwaliteit. Deze hand leiding is opgedeeld op land instellingen, met secties voor Engels (Verenigde Staten), Mandarijn Chinees en Duits.
+Er is een grote steek proef van transcriptie-gegevens vereist om de herkenning te verbeteren, maar we raden u aan om te bieden tussen 10 en 20 uur aan transcriptie-gegevens. Op deze pagina bekijken we richt lijnen die zijn ontworpen om u te helpen bij het maken van transcripties met hoge kwaliteit. Deze hand leiding is opgedeeld op land instellingen, met secties voor Engels (Verenigde Staten), Mandarijn Chinees en Duits.
+
+> [!NOTE]
+> Niet alle basis modellen ondersteunen aanpassing met audio bestanden. Als een basis model dit niet ondersteunt, wordt de tekst van de transcripties op dezelfde manier gebruikt als gerelateerde tekst.
 
 ## <a name="us-english-en-us"></a>Amerikaans Engels (nl-nl)
 

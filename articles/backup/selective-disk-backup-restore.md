@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over selectieve back-ups en herst
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: references_regions , devx-track-azurecli
-ms.openlocfilehash: 95104f231e7b4d4d2135ac3c5dde27512d465775
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 1f4d27563cf292632c6b14c82e36542b86c5d356
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92746983"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127716"
 ---
 # <a name="selective-disk-backup-and-restore-for-azure-virtual-machines"></a>Back-up en herstel van selectieve schijven voor virtuele Azure-machines
 
@@ -46,7 +46,7 @@ az account set -s {subscriptionID}
 
 ### <a name="configure-backup-with-azure-cli"></a>Back-up configureren met Azure CLI
 
-Tijdens het configureren van de beveiliging moet u de schijf lijst instelling opgeven met een **inclusion**  /  **uitsluitings** parameter opnemen, zodat de LUN-nummers van de schijven in de back-up worden opgenomen of uitgesloten.
+Tijdens het configureren van de beveiliging moet u de schijf lijst instelling opgeven met een   /  **uitsluitings** parameter opnemen, zodat de LUN-nummers van de schijven in de back-up worden opgenomen of uitgesloten.
 
 ```azurecli
 az backup protection enable-for-vm --resource-group {resourcegroup} --vault-name {vaultname} --vm {vmname} --policy-name {policyname} --disk-list-setting include --diskslist {LUN number(s) separated by space}
@@ -189,14 +189,25 @@ Wanneer u deze opdrachten uitvoert, ziet u `"diskExclusionProperties": null` .
 
 Zorg ervoor dat u Azure PowerShell versie 3.7.0 of hoger gebruikt.
 
+Tijdens het configureren van de beveiliging moet u de schijf lijst instelling opgeven met een para meter voor insluiting/uitsluitingen, zodat de LUN-nummers van de schijven in de back-up worden opgenomen of uitgesloten.
+
 ### <a name="enable-backup-with-powershell"></a>Back-up inschakelen met Power shell
 
+Bijvoorbeeld:
+
 ```azurepowershell
-Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1"  -InclusionDisksList[Strings] -VaultId $targetVault.ID
+$disks = ("0","1")
+$targetVault = Get-AzRecoveryServicesVault -ResourceGroupName "rg-p-recovery_vaults" -Name "rsv-p-servers"
+Get-AzRecoveryServicesBackupProtectionPolicy
+$pol = Get-AzRecoveryServicesBackupProtectionPolicy -Name "P-Servers"
 ```
 
 ```azurepowershell
-Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1"  -ExclusionDisksList[Strings] -VaultId $targetVault.ID
+Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1"  -InclusionDisksList $disks -VaultId $targetVault.ID
+```
+
+```azurepowershell
+Enable-AzRecoveryServicesBackupProtection -Policy $pol -Name "V2VM" -ResourceGroupName "RGName1"  -ExclusionDisksList $disks -VaultId $targetVault.ID
 ```
 
 ### <a name="backup-only-os-disk-during-configure-backup-with-powershell"></a>Alleen back-ups van besturingssysteem schijf tijdens configureren van back-up met Power shell

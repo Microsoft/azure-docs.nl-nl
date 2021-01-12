@@ -4,12 +4,12 @@ description: Meer informatie over opslag in azure Kubernetes service (AKS), incl
 services: container-service
 ms.topic: conceptual
 ms.date: 08/17/2020
-ms.openlocfilehash: 0ed38625703397c9ba5021e84cd3118f30fa83c7
-ms.sourcegitcommit: 693df7d78dfd5393a28bf1508e3e7487e2132293
+ms.openlocfilehash: bf910c66694a62505f259c0a95a88f7dfed05d19
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92900938"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127954"
 ---
 # <a name="storage-options-for-applications-in-azure-kubernetes-service-aks"></a>Opslag opties voor toepassingen in azure Kubernetes service (AKS)
 
@@ -19,7 +19,7 @@ Toepassingen die worden uitgevoerd in azure Kubernetes service (AKS), moeten mog
 
 In dit artikel worden de belangrijkste concepten geïntroduceerd die opslag aan uw toepassingen bieden in AKS:
 
-- [Omvang](#volumes)
+- [Volumes](#volumes)
 - [Permanente volumes](#persistent-volumes)
 - [Opslag klassen](#storage-classes)
 - [Claims voor permanente volumes](#persistent-volume-claims)
@@ -30,13 +30,13 @@ Toepassingen moeten vaak gegevens kunnen opslaan en ophalen. Net als Kubernetes 
 
 Traditionele volumes voor het opslaan en ophalen van gegevens worden gemaakt als Kubernetes bronnen die door Azure Storage worden ondersteund. U kunt deze gegevens volumes hand matig maken en deze rechtstreeks aan een Peul toewijzen, of Kubernetes automatisch laten maken. Deze gegevens volumes kunnen gebruikmaken van Azure-schijven of Azure Files:
 
-- *Azure-schijven* kunnen worden gebruikt om een Kubernetes *DataDisk* -resource te maken. Schijven kunnen gebruikmaken van Azure Premium Storage, ondersteund door Ssd's met hoge prestaties of Azure Standard-opslag, ondersteund door gewone Hdd's. Voor de meeste werk belastingen voor productie en ontwikkeling gebruikt u Premium Storage. Azure-schijven zijn gekoppeld als *ReadWriteOnce* , dus zijn alleen beschikbaar voor één pod. Gebruik Azure Files voor opslag volumes die gelijktijdig toegankelijk zijn voor meerdere peulen.
+- *Azure-schijven* kunnen worden gebruikt om een Kubernetes *DataDisk* -resource te maken. Schijven kunnen gebruikmaken van Azure Premium Storage, ondersteund door Ssd's met hoge prestaties of Azure Standard-opslag, ondersteund door gewone Hdd's. Voor de meeste werk belastingen voor productie en ontwikkeling gebruikt u Premium Storage. Azure-schijven zijn gekoppeld als *ReadWriteOnce*, dus zijn alleen beschikbaar voor één pod. Gebruik Azure Files voor opslag volumes die gelijktijdig toegankelijk zijn voor meerdere peulen.
 - *Azure files* kan worden gebruikt om een SMB 3,0-share die wordt ondersteund door een Azure Storage-account, te koppelen aan het gehele volume. Met bestanden kunt u gegevens delen op meerdere knoop punten en een Peul. Bestanden kunnen Azure Standard-opslag gebruiken die wordt ondersteund door gewone Hdd's of Azure Premium Storage, ondersteund door Ssd's met hoge prestaties.
 
 In Kubernetes kunnen volumes meer vormen dan alleen een traditionele schijf waar informatie kan worden opgeslagen en opgehaald. Kubernetes-volumes kunnen ook worden gebruikt als een manier om gegevens in een pod te injecteren voor gebruik door de containers. Veelvoorkomende aanvullende volume typen in Kubernetes zijn onder andere:
 
 - *emptyDir* : dit volume wordt meestal gebruikt als tijdelijke ruimte voor een pod. Alle containers in een pod hebben toegang tot de gegevens op het volume. Gegevens die naar dit volume type zijn geschreven, blijven behouden voor de levens duur van de pod-wanneer de Pod wordt verwijderd, wordt het volume verwijderd. Dit volume maakt gewoonlijk gebruik van de onderliggende schijf opslag van het lokale knoop punt, maar kan ook alleen bestaan in het geheugen van het knoop punt.
-- *geheim* : dit volume wordt gebruikt voor het injecteren van gevoelige gegevens in een Peul, zoals wacht woorden. U maakt eerst een geheim met behulp van de Kubernetes-API. Wanneer u uw Pod of implementatie definieert, kan een specifiek geheim worden aangevraagd. Geheimen worden alleen door gegeven aan knoop punten met een geplande pod waarvoor deze zijn vereist en het geheim wordt opgeslagen in *tmpfs* , niet naar de schijf geschreven. Wanneer de laatste pod op een knoop punt dat een geheim vereist, wordt verwijderd, wordt het geheim verwijderd uit de tmpfs van het knoop punt. Geheimen worden opgeslagen in een opgegeven naam ruimte en kunnen alleen worden gebruikt door een Peul binnen dezelfde naam ruimte.
+- *geheim* : dit volume wordt gebruikt voor het injecteren van gevoelige gegevens in een Peul, zoals wacht woorden. U maakt eerst een geheim met behulp van de Kubernetes-API. Wanneer u uw Pod of implementatie definieert, kan een specifiek geheim worden aangevraagd. Geheimen worden alleen door gegeven aan knoop punten met een geplande pod waarvoor deze zijn vereist en het geheim wordt opgeslagen in *tmpfs*, niet naar de schijf geschreven. Wanneer de laatste pod op een knoop punt dat een geheim vereist, wordt verwijderd, wordt het geheim verwijderd uit de tmpfs van het knoop punt. Geheimen worden opgeslagen in een opgegeven naam ruimte en kunnen alleen worden gebruikt door een Peul binnen dezelfde naam ruimte.
 - *configMap* : dit volume type wordt gebruikt om de eigenschappen van sleutel/waarde-paren in te voeren, zoals informatie over de configuratie van de toepassing. In plaats van de configuratie gegevens van de toepassing te definiëren in een container installatie kopie, kunt u deze definiëren als een Kubernetes-resource die eenvoudig kan worden bijgewerkt en toegepast op nieuwe exemplaren van het Peul wanneer ze worden geïmplementeerd. Net als bij het gebruik van een geheim maakt u eerst een ConfigMap met behulp van de Kubernetes-API. Deze ConfigMap kan vervolgens worden aangevraagd wanneer u een pod of implementatie definieert. ConfigMaps worden opgeslagen in een opgegeven naam ruimte en kunnen alleen worden gebruikt door een Peul binnen dezelfde naam ruimte.
 
 ## <a name="persistent-volumes"></a>Permanente volumes
@@ -51,7 +51,7 @@ Een PersistentVolume kan *statisch* worden gemaakt door een cluster beheerder of
 
 ## <a name="storage-classes"></a>Opslag klassen
 
-Als u verschillende opslag lagen wilt definiëren, zoals Premium en Standard, kunt u een *StorageClass* maken. De StorageClass definieert ook de *reclaimPolicy* . Deze reclaimPolicy bepaalt het gedrag van de onderliggende Azure Storage-Resource wanneer de Pod wordt verwijderd en het permanente volume mogelijk niet meer nodig is. De onderliggende opslag resource kan worden verwijderd of blijvend worden gebruikt met een toekomstige pod.
+Als u verschillende opslag lagen wilt definiëren, zoals Premium en Standard, kunt u een *StorageClass* maken. De StorageClass definieert ook de *reclaimPolicy*. Deze reclaimPolicy bepaalt het gedrag van de onderliggende Azure Storage-Resource wanneer de Pod wordt verwijderd en het permanente volume mogelijk niet meer nodig is. De onderliggende opslag resource kan worden verwijderd of blijvend worden gebruikt met een toekomstige pod.
 
 In AKS worden vier initialen `StorageClasses` voor het cluster gemaakt met behulp van de modules voor opslag in de boom structuur:
 
@@ -107,7 +107,7 @@ spec:
       storage: 5Gi
 ```
 
-Wanneer u een pod-definitie maakt, wordt de permanente volume claim opgegeven om de gewenste opslag aan te vragen. U geeft ook de *volumeMount* voor uw toepassingen op om gegevens te lezen en te schrijven. In het volgende voor beeld YAML-manifest ziet u hoe de vorige permanente volume claim kan worden gebruikt om een volume te koppelen aan */mnt/Azure* :
+Wanneer u een pod-definitie maakt, wordt de permanente volume claim opgegeven om de gewenste opslag aan te vragen. U geeft ook de *volumeMount* voor uw toepassingen op om gegevens te lezen en te schrijven. In het volgende voor beeld YAML-manifest ziet u hoe de vorige permanente volume claim kan worden gebruikt om een volume te koppelen aan */mnt/Azure*:
 
 ```yaml
 kind: Pod
@@ -125,6 +125,18 @@ spec:
     - name: volume
       persistentVolumeClaim:
         claimName: azure-managed-disk
+```
+
+Voor het koppelen van een volume in een Windows-container geeft u de stationsletter en het pad op. Bijvoorbeeld:
+
+```yaml
+...      
+       volumeMounts:
+        - mountPath: "d:"
+          name: volume
+        - mountPath: "c:\k"
+          name: k-dir
+...
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

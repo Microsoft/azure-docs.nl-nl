@@ -1,20 +1,20 @@
 ---
 title: Zone-redundant REGI ster voor hoge Beschik baarheid
-description: Meer informatie over het inschakelen van zone redundantie in Azure Container Registry door het maken van een container register of replicatie in een Azure-beschikbaarheids zone. Zone redundantie is een functie van de service laag Premium.
+description: Meer informatie over het inschakelen van zone redundantie in Azure Container Registry. Maak een container register of replicatie in een Azure-beschikbaarheids zone. Zone redundantie is een functie van de service laag Premium.
 ms.topic: article
-ms.date: 12/11/2020
-ms.openlocfilehash: 1553beef47a3d493f066e47cd39751093d83fc24
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.date: 01/07/2021
+ms.openlocfilehash: 8c03b2bb093f8d0fa70ff5132f7448ce86e8779d
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803507"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127346"
 ---
 # <a name="enable-zone-redundancy-in-azure-container-registry-for-resiliency-and-high-availability"></a>Zone redundantie inschakelen in Azure Container Registry voor tolerantie en hoge Beschik baarheid
 
 Naast [geo-replicatie](container-registry-geo-replication.md), waarmee register gegevens worden gerepliceerd over een of meer Azure-regio's om Beschik baarheid te bieden en de latentie voor regionale bewerkingen te verminderen, Azure container Registry ondersteuning biedt voor optionele *zone redundantie*. [Zone redundantie](../availability-zones/az-overview.md#availability-zones) biedt een tolerantie en hoge Beschik baarheid van een REGI ster of replicatie bron (replica) in een specifieke regio.
 
-In dit artikel wordt beschreven hoe u een zone-redundante container register of zone-redundante replica instelt met behulp van de Azure Portal of een Azure Resource Manager sjabloon. 
+In dit artikel wordt beschreven hoe u een zone-redundant container register of replica instelt met behulp van de Azure CLI-, Azure Portal-of Azure Resource Manager-sjabloon. 
 
 Zone redundantie is een **Preview** -functie van de service tier van het Premium-container register. Zie [Azure container Registry service lagen](container-registry-skus.md)voor meer informatie over de service lagen en limieten van het REGI ster.
 
@@ -24,7 +24,6 @@ Zone redundantie is een **Preview** -functie van de service tier van het Premium
 * Regionale conversies naar beschikbaarheids zones worden momenteel niet ondersteund. Als u ondersteuning voor beschikbaarheids zones in een regio wilt inschakelen, moet u het REGI ster in de gewenste regio maken, waarbij ondersteuning voor beschikbaarheids zone is ingeschakeld, of dat er een gerepliceerde regio moet worden toegevoegd met ondersteuning voor beschikbaarheids zone ingeschakeld.
 * Zone redundantie kan niet worden uitgeschakeld in een regio.
 * [ACR-taken](container-registry-tasks-overview.md) bieden nog geen ondersteuning voor beschikbaarheids zones.
-* Momenteel ondersteund via Azure Resource Manager sjablonen of de Azure Portal. Ondersteuning voor Azure CLI wordt in een toekomstige versie ingeschakeld.
 
 ## <a name="about-zone-redundancy"></a>Over zone redundantie
 
@@ -33,6 +32,61 @@ Gebruik Azure- [beschikbaarheids zones](../availability-zones/az-overview.md) om
 Azure Container Registry biedt ook ondersteuning voor [geo-replicatie](container-registry-geo-replication.md), waarmee de service wordt gerepliceerd over meerdere regio's, waardoor redundantie en beschik baarheid worden berekend voor het berekenen van resources op andere locaties. De combi natie van beschikbaarheids zones voor redundantie binnen een regio en geo-replicatie tussen meerdere regio's, verbetert de betrouw baarheid en prestaties van een REGI ster.
 
 Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Tolerantie wordt gegarandeerd door aanwezigheid van minimaal drie afzonderlijke zones in alle actieve regio's. Elke zone heeft een of meer data centers met onafhankelijke voeding, koeling en netwerken. Wanneer het is geconfigureerd voor zone redundantie, wordt een REGI ster (of een register replica in een andere regio) gerepliceerd over alle beschikbaarheids zones in de regio, zodat deze beschikbaar blijven als er problemen met data centers zijn.
+
+## <a name="create-a-zone-redundant-registry---cli"></a>Een zone maken-redundant REGI ster-CLI
+
+Als u de Azure CLI wilt gebruiken om zone redundantie in te scha kelen, hebt u Azure CLI versie 2.17.0 of hoger nodig of Azure Cloud Shell. Zie [Azure CLI installeren](/cli/azure/install-azure-cli) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+
+### <a name="create-a-resource-group"></a>Een resourcegroep maken
+
+Als dat nodig is, voert u de opdracht [AZ Group Create](/cli/az/group#az_group_create) uit om een resource groep te maken voor het REGI ster.
+
+```azurecli
+az group create --name <resource-group-name> --location <location>
+```
+
+### <a name="create-zone-enabled-registry"></a>REGI ster met zone-ingeschakeld maken
+
+Voer de opdracht [AZ ACR Create](/cli/az/acr#az_acr_create) uit om een zone-redundant REGI ster te maken in de laag Premium-Service. Kies een regio die [beschikbaarheids zones](../availability-zones/az-region.md) voor Azure container Registry ondersteunt. In het volgende voor beeld wordt zone redundantie ingeschakeld in de regio *oostus* . Raadpleeg de `az acr create` Help van de opdracht voor meer Register opties.
+
+```azurecli
+az acr create \
+  --resource-group <resource-group-name> \
+  --name <container-registry-name> \
+  --location eastus \
+  --zone-redundancy enabled \
+  --sku Premium
+```
+
+In de uitvoer van de opdracht noteert u de `zoneRedundancy` eigenschap van het REGI ster. Wanneer deze functie is ingeschakeld, is het REGI ster zone redundant:
+
+```JSON
+{
+ [...]
+"zoneRedundancy": "Enabled",
+}
+```
+
+### <a name="create-zone-redundant-replication"></a>Zone-redundante replicatie maken
+
+Voer de opdracht [AZ ACR Replication Create](/cli/az/acr/replication#az_acr_replication_create) uit om een zone-redundante register replica te maken in een regio die [beschikbaarheids zones ondersteunt](../availability-zones/az-region.md) voor Azure container Registry, zoals *westus2*. 
+
+```azurecli
+az acr replication create \
+  --location westus2 \
+  --resource-group <resource-group-name> \
+  --registry <container-registry-name> \
+  --zone-redundancy enabled
+```
+ 
+In de uitvoer van de opdracht noteert u de `zoneRedundancy` eigenschap voor de replica. Wanneer deze functie is ingeschakeld, is de replica zone redundant:
+
+```JSON
+{
+ [...]
+"zoneRedundancy": "Enabled",
+}
+```
 
 ## <a name="create-a-zone-redundant-registry---portal"></a>Een zone maken-redundant REGI ster-Portal
 
@@ -50,22 +104,24 @@ Beschikbaarheidszones zijn unieke, fysieke locaties binnen een Azure-regio. Tole
 Een zone-redundante replicatie maken:
 
 1. Navigeer naar het container register voor de Premium-laag en selecteer **replicaties**.
-1. Op de kaart die wordt weer gegeven, selecteert u een groene zeshoek in een regio die ondersteuning biedt voor zone redundantie voor Azure Container Registry, zoals **VS-West 2**. Selecteer vervolgens **Maken**.
-1. Selecteer in het venster **replicatie maken** in **beschikbaarheids zones** **ingeschakeld** en selecteer vervolgens **maken**.
+1. Op de kaart die wordt weer gegeven, selecteert u een groene zeshoek in een regio die ondersteuning biedt voor zone redundantie voor Azure Container Registry, zoals **VS-West 2**. Of selecteer **+ toevoegen**.
+1. Bevestig in het venster **replicatie maken** de **locatie**. Selecteer **ingeschakeld** in **beschikbaarheids zones** en selecteer vervolgens **maken**.
+
+    :::image type="content" source="media/zone-redundancy/enable-availability-zones-replication-portal.png" alt-text="Zone-redundante replicatie inschakelen in Azure Portal":::
 
 ## <a name="create-a-zone-redundant-registry---template"></a>Een zone maken-redundant REGI ster-sjabloon
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Als dat nodig is, voert u de opdracht [AZ Group Create](/cli/azure/group) uit om een resource groep te maken voor het REGI ster in een regio die [beschikbaarheids zones ondersteunt](../availability-zones/az-region.md) voor Azure container Registry, zoals *oostus*.
+Als dat nodig is, voert u de opdracht [AZ Group Create](/cli/az/group#az_group_create) uit om een resource groep te maken voor het REGI ster in een regio die [beschikbaarheids zones ondersteunt](../availability-zones/az-region.md) voor Azure container Registry, zoals *oostus*. Deze regio wordt gebruikt door de sjabloon om de register locatie in te stellen.
 
 ```azurecli
-az group create --name <resource-group-name> --location <location>
+az group create --name <resource-group-name> --location eastus
 ```
 
 ### <a name="deploy-the-template"></a>De sjabloon implementeren 
 
-U kunt de volgende Resource Manager-sjabloon gebruiken om een zone-redundant, geo-gerepliceerd REGI ster te maken. Met de sjabloon wordt standaard zone redundantie in het REGI ster en een extra regionale replica ingeschakeld. 
+U kunt de volgende Resource Manager-sjabloon gebruiken om een zone-redundant, geo-gerepliceerd REGI ster te maken. Met de sjabloon wordt standaard zone redundantie in het REGI ster en een regionale replica ingeschakeld. 
 
 Kopieer de volgende inhoud naar een nieuw bestand en sla het op met een bestands naam zoals `registryZone.json` .
 
@@ -163,7 +219,7 @@ Kopieer de volgende inhoud naar een nieuw bestand en sla het op met een bestands
   }
 ```
 
-Voer de volgende opdracht [AZ Deployment Group Create](/cli/azure/deployment?view=azure-cli-latest) uit om het REGI ster te maken met het voor gaande sjabloon bestand. Indien aangegeven, bieden:
+Voer de volgende opdracht [AZ Deployment Group Create](/cli/az/deployment#az_group_deployment_create) uit om het REGI ster te maken met het voor gaande sjabloon bestand. Indien aangegeven, bieden:
 
 * een unieke register naam of implementeer de sjabloon zonder para meters, zodat er een unieke naam voor u wordt gemaakt
 * een locatie voor de replica die beschikbaarheids zones ondersteunt, zoals *westus2*

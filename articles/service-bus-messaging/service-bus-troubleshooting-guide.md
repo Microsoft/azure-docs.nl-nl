@@ -3,12 +3,12 @@ title: Gids voor probleem oplossing voor Azure Service Bus | Microsoft Docs
 description: Meer informatie over tips en aanbevelingen voor het oplossen van problemen die kunnen optreden bij het gebruik van Azure Service Bus.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: aab7fa53b4af309c68cd91fdb1d25c5771f89828
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c31d252d75a2ba75528cd12d3a94bad5bd9f677
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91261121"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98126866"
 ---
 # <a name="troubleshooting-guide-for-azure-service-bus"></a>Gids voor probleem oplossing voor Azure Service Bus
 In dit artikel vindt u tips en aanbevelingen voor het oplossen van problemen die kunnen optreden bij het gebruik van Azure Service Bus. 
@@ -26,7 +26,7 @@ De volgende stappen kunnen u helpen bij het oplossen van problemen met connectiv
     
     Een voor beeld van een fout bericht:
 
-    ```json
+    ```xml
     <Error>
         <Code>400</Code>
         <Detail>

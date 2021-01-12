@@ -6,12 +6,12 @@ ms.author: bwren
 ms.subservice: metrics
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 6ce9183fad50c43ea7070f5fa09e0d445caf89df
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5dcb86ff4af2a68ecf0bb361e6da4f788ea32b62
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451256"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881290"
 ---
 # <a name="tutorial-create-a-metrics-chart-in-azure-monitor"></a>Zelfstudie: Een grafiek met metrische gegevens maken in Azure Monitor
 Metrics Explorer is een functie van Azure Monitor in Azure Portal waarmee u grafieken kunt maken op basis van metrische waarden, trends visueel kunt correleren en pieken en dalen in metrische waarden kunt onderzoeken. Gebruik Metrics Explorer om de status en het gebruik van uw Azure-resources te onderzoeken of grafieken te tekenen op basis van aangepaste metrische gegevens. 
@@ -40,7 +40,7 @@ U kunt de verkenner voor metrische gegevens openen vanuit het menu van Azure Mon
 
 1. Selecteer **Metrische gegevens** in het menu van **Azure Monitor** of in de sectie **Controle** van het menu van een resource.
 
-1. Selecteer **Bereik**. Dit is de resource waarvoor u de metrische gegevens wilt weergeven. Het bereik is al ingevuld als u de verkenner voor metrische gegevens hebt geopend vanuit het menu van een resource.
+1. Selecteer **Bereik**. Dit is de resource waarvoor u de metrische gegevens wilt weergeven. Het bereik is al ingevuld als u de verkenner voor metrische gegevens hebt geopend vanuit het menu van een resource. Ga naar [dit artikel](../platform/metrics-charts.md#resource-scope-picker) voor meer informatie over de diverse mogelijkheden van de resourcebereikkiezer.
 
     ![Een bereik selecteren](media/tutorial-metrics-explorer/scope-picker.png)
 

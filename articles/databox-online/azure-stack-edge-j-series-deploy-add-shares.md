@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 12/22/2020
+ms.date: 01/04/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to add and connect to shares on Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 845eef6e119823af789c9a263bfb750845d55bc0
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 919ec1c3c2b71b7d9aecb90d434aa919c7188d38
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740909"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897599"
 ---
 # <a name="tutorial-transfer-data-via-shares-with-azure-stack-edge-pro-gpu"></a>Zelfstudie: Gegevens overdragen via shares met Azure Stack Edge Pro GPU
 
@@ -43,7 +43,7 @@ Voordat u shares aan Azure Stack Edge Pro gaat toevoegen, controleert u het volg
 
 Ga als volgt te werk om een share te maken:
 
-1. Selecteer in [Azure Portal](https://portal.azure.com/) uw Azure Stack Edge-resource en ga naar het **Overzicht**. Als het goed is, is uw apparaat online.
+1. Selecteer in [Azure Portal](https://portal.azure.com/) uw Azure Stack Edge-resource en ga naar het **Overzicht**. Als het goed is, is uw apparaat online. Selecteer **Cloudopslaggateway**.
 
    ![Apparaat is online](./media/azure-stack-edge-j-series-deploy-add-shares/device-online-1.png)
 
@@ -51,7 +51,7 @@ Ga als volgt te werk om een share te maken:
 
    ![Een share toevoegen](./media/azure-stack-edge-j-series-deploy-add-shares/select-add-share-1.png)
 
-3. Ga als volgt te werk in het deelvenster **Share delen**:
+3. Voer in het deelvenster **Share toevoegen** de volgende stappen uit:
 
     a. Geef in het vak **Naam** een unieke naam op voor de share.  
     De naam van de share mag alleen bestaan uit letters, cijfers en afbreekstreepjes. De naam moet tussen de 3 en 63 tekens lang zijn en beginnen met een letter of cijfer. Afbreekstreepjes moeten worden voorafgegaan door een letter of cijfer.

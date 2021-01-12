@@ -6,19 +6,19 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 12/16/2020
+ms.date: 01/04/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro R so I can use it to transfer data to Azure.
-ms.openlocfilehash: 7ca9b21838d35b54b4ed84d5aaf3aa797b02d9e0
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: dd0b6833c4c51c218497cea4fec04390200edff4
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630765"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935347"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro-r"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro R
 
-Dit is de eerste zelfstudie in de reeks zelfstudies over implementaties die vereist zijn om Azure Stack Edge Pro R volledig te implementeren. In deze zelfstudie wordt beschreven hoe u Azure Portal voorbereidt om een Azure Stack Edge-resource te implementeren. In de zelfstudie wordt gebruikgemaakt van een Azure Stack Edge Pro R-apparaat met één knooppunt dat wordt geleverd met een noodvoeding (UPS).
+Deze zelfstudie is de eerste in de reeks zelfstudies over implementaties die vereist zijn om Azure Stack Edge Pro R volledig te implementeren. In deze zelfstudie wordt beschreven hoe u Azure Portal voorbereidt om een Azure Stack Edge-resource te implementeren. In de zelfstudie wordt gebruikgemaakt van een Azure Stack Edge Pro R-apparaat met één knooppunt dat wordt geleverd met een noodvoeding (UPS).
 
 U hebt beheerdersbevoegdheden nodig om het installatie- en configuratieproces uit te voeren. Het voorbereiden van de portal duurt minder dan 10 minuten.
 
@@ -37,7 +37,7 @@ Raadpleeg de volgende zelfstudies in de voorgeschreven volgorde voor het impleme
 | --- | --- |
 | **Voorbereiding** |Deze moeten worden voltooid ter voorbereiding van de implementatie. |
 | **[Configuratiecontrolelijst voor implementatie](#deployment-configuration-checklist)** |Gebruik deze controlelijst om informatie te verzamelen en te registreren voorafgaand aan en tijdens de implementatie. |
-| **[Vereisten voor implementatie](#prerequisites)** |Hiermee wordt gecontroleerd of de omgeving gereed is voor implementatie. |
+| **[Vereisten voor implementatie](#prerequisites)** |Aan de hand van deze vereisten wordt gecontroleerd of de omgeving gereed is voor implementatie. |
 |  | |
 |**Zelfstudies voor implementatie** |Deze zelfstudies zijn vereist als u uw Azure Stack Edge Pro R-apparaat in productie wilt implementeren. |
 |**[1. Azure Portal voorbereiden voor apparaat](azure-stack-edge-pro-r-deploy-prep.md)** |Maak en configureer uw Azure Stack Edge-resource voordat u een fysiek Azure Stack Edge-apparaat installeert. |
@@ -47,7 +47,7 @@ Raadpleeg de volgende zelfstudies in de voorgeschreven volgorde voor het impleme
 |**[5. Apparaatinstellingen configureren](azure-stack-edge-pro-r-deploy-set-up-device-update-time.md)** |Wijs een apparaatnaam en een DNS-domein toe, configureer de updateserver en de apparaattijd. |
 |**[6. Beveiligingsinstellingen configureren](azure-stack-edge-pro-r-deploy-configure-certificates-vpn-encryption.md)** |Configureer de instellingen voor certificaten, VPN en versleuteling-at-rest voor het apparaat. Gebruik certificaten die door het apparaat zijn gegenereerd of gebruik uw eigen certificaten.   |
 |**[7. Het apparaat activeren](azure-stack-edge-pro-r-deploy-activate.md)** |Gebruik de activeringssleutel van de service om het apparaat te activeren. Het apparaat is klaar om er SMB- of NFS-shares op in te stellen of om via REST verbinding te maken. |
-|**[8. Rekenproces configureren](azure-stack-edge-gpu-deploy-configure-compute.md)** |Configureer de rekenprocesrol op het apparaat. Er wordt dan ook een Kubernetes-cluster gemaakt. |
+|**[8. Rekenproces configureren](azure-stack-edge-gpu-deploy-configure-compute.md)** |Configureer de rekenprocesrol op het apparaat. Er wordt ook een Kubernetes-cluster gemaakt. |
 
 U kunt nu Azure Portal gaan instellen.
 
@@ -109,7 +109,7 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
     
     |Instelling  |Waarde  |
     |---------|---------|
-    |Abonnement    |Dit wordt automatisch ingevuld op basis van de eerdere selectie. Abonnement is gekoppeld aan uw factureringsrekening. |
+    |Abonnement    |Het abonnement wordt automatisch ingevuld op basis van de eerdere selectie. Abonnement is gekoppeld aan uw factureringsrekening. |
     |Resourcegroep  |Maak een nieuwe groep of selecteer een bestaande groep.<br>Meer informatie over [Azure-resourcegroepen](../azure-resource-manager/management/overview.md).     |
 
 7. Voer de volgende **exemplaardetails** in of selecteer deze.
@@ -150,7 +150,7 @@ Nadat de resource succesvol is gemaakt en geïmplementeerd, wordt u daarvan op d
 
 Nadat de bestelling is geplaatst, controleert Microsoft de bestelling en neemt contact met u op (via e-mail) met verzendgegevens.
 
-<!--![Notification for review of the Azure Stack Edge Pro order](media/azure-stack-edge-gpu-deploy-prep/azure-stack-edge-resource-2.png)-->
+<!--![Notification for review of the Azure Stack Edge Pro order](media/azure-stack-edge-gpu-deploy-prep/azure-stack-edge-resource-2.png) - If this is restored, it must go above "After the resource is successfully created." The azure-stack-edge-resource-1.png would seem superfluous in that case.--> 
 
 Als u problemen ondervindt tijdens het bestelproces, raadpleegt u [Problemen met de bestelling oplossen](azure-stack-edge-troubleshoot-ordering.md).
 
@@ -158,20 +158,17 @@ Als u problemen ondervindt tijdens het bestelproces, raadpleegt u [Problemen met
 
 Nadat de Azure Stack Edge-resource is geactiveerd, hebt u de activeringssleutel nodig. Deze sleutel wordt gebruikt om uw Azure Stack Edge Pro-apparaat te activeren en te verbinden met de resource. U kunt deze sleutel nu ophalen, terwijl u Azure Portal geopend hebt.
 
-1. Selecteer de resource die u hebt gemaakt. Selecteer **Overzicht** en selecteer vervolgens **Apparaatinstallatie**.
+1. Selecteer de resource die u hebt gemaakt en selecteer vervolgens **Overzicht**.
 
-    ![Apparaatinstallatie selecteren](media/azure-stack-edge-pro-r-deploy-prep/azure-stack-edge-resource-2.png)
+2. Geef in het rechterdeelvenster een naam op voor de Azure Key Vault of accepteer de standaardnaam. De naam van de sleutelkluis mag tussen de 3 en 24 tekens lang zijn.
 
-2. Geef op de tegel **Activeren** een naam op voor de Azure Key Vault of accepteer de standaardnaam. De naam van de sleutelkluis mag tussen de 3 en 24 tekens lang zijn. 
+   Er wordt een sleutelkluis gemaakt voor elke Azure Stack Edge-resource die met uw apparaat wordt geactiveerd. Met de sleutelkluis kunt u geheimen opslaan en openen, de CIK (Channel Integrity Key) voor de service wordt bijvoorbeeld opgeslagen in de sleutelkluis.
 
-    Er wordt een sleutelkluis gemaakt voor elke Azure Stack Edge-resource die met uw apparaat wordt geactiveerd. Met de sleutelkluis kunt u geheimen opslaan en openen, de CIK (Channel Integrity Key) voor de service wordt bijvoorbeeld opgeslagen in de sleutelkluis. 
+   Wanneer u een naam voor de sleutelkluis hebt opgegeven, selecteert u **Activeringssleutel genereren** om een activeringssleutel te maken.
 
-    Wanneer u een naam voor de sleutelkluis hebt opgegeven, selecteert u **Sleutel genereren** om een activeringssleutel te maken. 
+   ![Activeringssleutel ophalen](media/azure-stack-edge-pro-r-deploy-prep/azure-stack-edge-resource-3.png)
 
-    ![Activeringssleutel ophalen](media/azure-stack-edge-pro-r-deploy-prep/azure-stack-edge-resource-3.png)
-
-    Wacht enkele minuten terwijl de sleutelkluis en de activeringssleutel worden gemaakt. Selecteer het kopieerpictogram om de sleutel te kopiëren en op te slaan voor later gebruik.
-
+   Wacht enkele minuten terwijl de sleutelkluis en de activeringssleutel worden gemaakt. Selecteer het kopieerpictogram om de sleutel te kopiëren en op te slaan voor later gebruik.<!--Verify that the new screen has a copy icon.-->
 
 > [!IMPORTANT]
 > - De activeringssleutel verloopt drie dagen nadat deze is gegenereerd.

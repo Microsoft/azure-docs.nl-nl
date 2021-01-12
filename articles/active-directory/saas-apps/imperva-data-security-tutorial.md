@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/17/2020
 ms.author: jeedes
-ms.openlocfilehash: 0ea08f8ec98ff8ddd4a9f15f12a0224db440b7b0
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 710164fa3712058d64e5d23006b986eb3dc3eaba
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97675649"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882752"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-imperva-data-security"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Imperva Data Security
 
@@ -24,20 +24,20 @@ In deze zelfstudie leert u hoe u Imperva Data Security integreert met Azure Acti
 
 * In Azure AD bepalen wie toegang heeft tot Imperva Data Security.
 * Ervoor zorgen dat uw gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Imperva Data Security.
-* Uw accounts op een centrale locatie beheren: Azure Portal.
+* Uw accounts op één centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
 U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een[gratis account](https://azure.microsoft.com/free/).
 * Een abonnement op Imperva Data Security waarvoor eenmalige aanmelding is ingeschakeld.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Imperva Data Security biedt ondersteuning voor met **IDP** geïnitieerde eenmalige aanmelding
+* Imperva Data Security biedt ondersteuning voor met **SP** geïnitieerde eenmalige aanmelding
 
 ## <a name="adding-imperva-data-security-from-the-gallery"></a>Imperva Data Security toevoegen vanuit de galerie
 
@@ -59,7 +59,7 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Imperva Da
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
-    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** : zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
 1. **[Eenmalige aanmelding voor Imperva Data Security configureren](#configure-imperva-data-security-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
     1. **[Testgebruiker maken voor Imperva Data Security](#create-imperva-data-security-test-user)** : als u een tegenhanger van B. Simon in Imperva Data Security wilt hebben die is gekoppeld aan de weergave van de gebruiker in Azure AD.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
@@ -76,9 +76,13 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** voert u de waarden voor de volgende velden in:
 
-    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://<IMPERVA_DNS_NAME>:8443`
+    a. In het tekstvak **Id** typt u een id met het volgende patroon: `application-name`
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<IMPERVA_DNS_NAME>:8443`
+    
+    c. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<IMPERVA_DNS_NAME>:8443`
+    
+    d. Typ in het tekstvak **Afmeldings-URL** een URL met het volgende patroon: `https://<IMPERVA_DNS_NAME>:8443`    
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Neem contact op met het [klantondersteuningsteam van Imperva Data Security](mailto:support@jsonar.imperva.com) om deze waarden op te vragen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.

@@ -11,12 +11,12 @@ author: sdgilley
 ms.reviewer: ranku
 ms.date: 04/09/2020
 ms.custom: data4ml
-ms.openlocfilehash: 5aec3d6bb2afeadda64ac19563f8334a6aef3b77
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 238801171d19191bcac505f0c95395320f96d75c
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347503"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97882463"
 ---
 # <a name="tutorial-create-a-labeling-project-for-multi-class-image-classification"></a>Zelfstudie: Een labelproject maken voor een afbeeldingsclassificatie met meerdere klassen 
 
@@ -104,7 +104,8 @@ Nu u toegang hebt tot de gegevens die u wilt voorzien van een label, maakt u het
 1. Gebruik de volgende invoer voor het formulier **Gegevensset maken vanuit gegevensarchief**:
 
     1. Voeg op het formulier **Basisgegevens** een naam toe. Hier gebruiken we **images-for-tutorial**.  Voeg desgewenst een beschrijving toe.  Selecteer vervolgens **Volgende**.
-    1. Op het formulier **Selectie gegevensarchief** gebruikt u de vervolgkeuzelijst om uw **Eerder gemaakte gegevensarchief** te selecteren, bijvoorbeeld **tutorial_images (Azure Blob Storage)**
+    1. Op het formulier **Gegevensarchiefselectie** selecteert u **Eerder gemaakt gegevensarchief** en klikt u op de naam van het gegevensarchief. Selecteer vervolgens **Gegevensarchief selecteren**.
+    1. Controleer op de volgende pagina of het momenteel geselecteerde gegevensarchief juist is. Als dat niet het geval is, selecteert u **Eerder gemaakt gegevensarchief** en herhaalt u de vorige stap.
     1. Selecteer vervolgens op het formulier **Selectie gegevensarchief** **Bladeren** en selecteer vervolgens **MultiClass - DogsCats**.  Selecteer **Opslaan** om **/MultiClass - DogsCats** als pad te gebruiken.
     1. Selecteer **Volgende** om de details te bevestigen en vervolgens **Maken** om de gegevensset te maken.
     1. Selecteer in de lijst de cirkel naast de naam van de gegevensset, bijvoorbeeld **images-for-tutorial**.

@@ -16,12 +16,12 @@ ms.date: 11/25/2019
 ms.author: rolyon
 ms.reviewer: skwan
 ms.custom: it-pro
-ms.openlocfilehash: 846e1a83f3cba5f87210ae4f825b5fac4f1569c6
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: a18fc3e4851c2daf03c662cf40cef58cc7d9e77a
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648375"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117704"
 ---
 # <a name="add-or-remove-azure-role-assignments-for-external-guest-users-using-the-azure-portal"></a>Azure-roltoewijzingen toevoegen of verwijderen voor externe gast gebruikers met behulp van de Azure Portal
 
@@ -29,9 +29,7 @@ ms.locfileid: "94648375"
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om roltoewijzingen toe te voegen of te verwijderen, hebt u het volgende nodig:
-
-- Machtigingen voor `Microsoft.Authorization/roleAssignments/write` en `Microsoft.Authorization/roleAssignments/delete`, zoals [Beheerder van gebruikerstoegang](built-in-roles.md#user-access-administrator) of [Eigenaar](built-in-roles.md#owner)
+[!INCLUDE [Azure role assignment prerequisites](../../includes/role-based-access-control/prerequisites-role-assignments.md)]
 
 ## <a name="when-would-you-invite-guest-users"></a>Wanneer wilt u gast gebruikers uitnodigen?
 
@@ -77,7 +75,7 @@ In azure RBAC wijst u een rol toe om toegang te verlenen. Als u een roltoewijzin
 
 1. Klik op de specifieke resource.
 
-1. Klik op **Toegangsbeheer (IAM)** .
+1. Klik op **Toegangsbeheer (IAM)**.
 
     In de volgende schermopname ziet u een voorbeeld van de blade Toegangsbeheer (IAM) voor een resourcegroep. Als u hier toegangscontrole wijzigingen aanbrengt, zijn deze alleen van toepassing op de resource groep.
 
@@ -115,7 +113,7 @@ Als de gast gebruiker zich nog niet in uw directory bevindt, kunt u de gebruiker
 
 1. Klik op de specifieke resource.
 
-1. Klik op **Toegangsbeheer (IAM)** .
+1. Klik op **Toegangsbeheer (IAM)**.
 
 1. Klik op **het tabblad roltoewijzingen om** alle roltoewijzingen in dit bereik weer te geven.
 

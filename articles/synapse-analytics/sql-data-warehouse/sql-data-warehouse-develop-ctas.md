@@ -11,12 +11,12 @@ ms.date: 03/26/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seoapril2019, azure-synapse
-ms.openlocfilehash: 3d9a842af5e1d3fac73515d96644bef250d7d0c4
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 95158193a978702392106c8aa3347de211fd1a3e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93334566"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115443"
 ---
 # <a name="create-table-as-select-ctas"></a>CREATE TABLE ALS SELECTEREN (CTAS)
 
@@ -208,7 +208,7 @@ DROP TABLE CTAS_acs;
 
 ## <a name="ansi-join-replacement-for-merge"></a>Vervanging van ANSI-koppeling voor samen VOEGen 
 
-In azure Synapse Analytics, [Merge](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=sql-server-ver15) (preview) met niet-OVEREENKOMEND op doel moet het doel een gedistribueerde hash-tabel zijn.  Gebruikers kunnen de ANSI-JOIN met [Update](https://docs.microsoft.com/sql/t-sql/queries/update-transact-sql?view=sql-server-ver15) of [Delete](https://docs.microsoft.com/sql/t-sql/statements/delete-transact-sql?view=sql-server-ver15) als tijdelijke oplossing gebruiken om de gegevens van de doel tabel te wijzigen op basis van het resultaat van het samen voegen met een andere tabel.  Hier volgt een voorbeeld.
+In azure Synapse Analytics, [Merge](/sql/t-sql/statements/merge-transact-sql?view=sql-server-ver15) (preview) met niet-OVEREENKOMEND op doel moet het doel een gedistribueerde hash-tabel zijn.  Gebruikers kunnen de ANSI-JOIN met [Update](/sql/t-sql/queries/update-transact-sql?view=sql-server-ver15) of [Delete](/sql/t-sql/statements/delete-transact-sql?view=sql-server-ver15) als tijdelijke oplossing gebruiken om de gegevens van de doel tabel te wijzigen op basis van het resultaat van het samen voegen met een andere tabel.  Hier volgt een voorbeeld.
 
 ```sql
 CREATE TABLE dbo.Table1   

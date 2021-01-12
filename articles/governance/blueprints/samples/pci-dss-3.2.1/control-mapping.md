@@ -3,18 +3,18 @@ title: Beheeropties van het blauwdrukvoorbeeld voor PCI-DSS v3.2.1
 description: Beheer de toewijzing van het blauwdrukvoorbeeld voor de Payment Card Industry Data Security Standard v3.2.1 aan Azure Policy en Azure RBAC.
 ms.date: 08/19/2020
 ms.topic: sample
-ms.openlocfilehash: c634e8cc64f6376251e2cd07725c5c5a643b27c7
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 7391b32b23f6f0fb8b337a8178b83cffd7dba69b
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91931424"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955685"
 ---
 # <a name="control-mapping-of-the-pci-dss-v321-blueprint-sample"></a>Toewijzing van het blauwdrukvoorbeeld voor PCI-DSS v3.2.1 beheren
 
 Het volgende artikel bevat informatie over de manier waarop het Azure Blueprints PCI-DSS v3.2.1-blauwdrukvoorbeeld wordt toegewezen aan de PCI-DSS v3.2.1-beheeropties. Zie [PCI-DSS v3.2.1](https://www.pcisecuritystandards.org/documents/PCI_DSS_v3-2-1.pdf) voor meer informatie over de beheeropties.
 
-De volgende toewijzingen zijn voor de **PCI-DSS v3.2.1:2018**-beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**. Zoek en selecteer vervolgens het ingebouwde beleidsinitiatief **\[Preview\] PCI-DSS v3.2.1:2018-beheeropties controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten**.
+De volgende toewijzingen zijn voor de **PCI-DSS v3.2.1:2018**-beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**. Selecteer het ingebouwde beleidsinitiatief **PCI v3.2.1:2018**.
 
 > [!IMPORTANT]
 > Elke beheeroptie hieronder is gekoppeld aan een of meer [Azure Policy](../../../policy/overview.md)-definities. Met deze beleidsregels kunt u de [compliance beoordelen](../../../policy/how-to/get-compliance-data.md) met de beheeroptie. Er is echter vaak geen één-op-één- of volledige overeenkomst tussen een beheeroptie en een of meer beleidsregels. Als zodanig verwijst de term **Conform** in Azure Policy alleen naar de beleidsregels zelf. Dit garandeert niet dat u volledig conform bent met alle vereisten van een beheeroptie. Daarnaast bevat de compliance standaard beheeropties die op dit moment nog niet worden beschreven door Azure Policy-definities. Daarom is compliance in Azure Policy slechts een gedeeltelijke weergave van uw algemene compliancestatus. De koppelingen tussen de beheeropties en Azure Policy definities voor dit blauwdrukvoorbeeld voor compliance kunnen na verloop van tijd veranderen. Als u de wijzigingsgeschiedenis wilt bekijken, raadpleegt u de [GitHub Commit-geschiedenis](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/pci-dss-3.2.1/control-mapping.md).

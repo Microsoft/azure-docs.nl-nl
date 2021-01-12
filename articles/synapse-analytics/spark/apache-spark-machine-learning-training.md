@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: machine-learning
 ms.date: 09/13/2020
-ms.openlocfilehash: 242ff1d7c16ca952b19f44fb139f8fae7562524a
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 56b9a98eb72b375aacfeb7cb147997028d3d9ba7
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048314"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116803"
 ---
 # <a name="train-machine-learning-models"></a>machine learning modellen trainen
 Met Apache Spark in azure Synapse Analytics kunt u machine learning met big data, waardoor u waardevolle inzicht kunt krijgen in grote hoeveel heden gestructureerde, ongestructureerde en snel te verplaatsen gegevens. Er zijn verschillende opties voor het trainen van machine learning modellen met behulp van Azure Spark in azure Synapse Analytics: Apache Spark MLlib, Azure Machine Learning en verschillende andere open-source-bibliotheken. 
@@ -53,7 +53,7 @@ Bij gebruik van automatische ML in azure Synapse Analytics kunt u gebruikmaken v
 > U vindt meer informatie over het maken van een Azure Machine Learning-experiment voor automatische ML door deze [zelf studie](./spark/../apache-spark-azure-machine-learning-tutorial.md)te volgen.
 
 ## <a name="azure-cognitive-services"></a>Azure Cognitive Services
-[Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/what-are-cognitive-services) biedt machine learning mogelijkheden om algemene problemen op te lossen, zoals het analyseren van tekst voor emotioneel sentiment of het analyseren van installatie kopieën om objecten of gezichten te herkennen. U hebt geen speciale machine learning- of data science-kennis nodig om deze services te kunnen gebruiken. Een cognitieve service biedt deel of alle onderdelen in een machine learning oplossing: gegevens, algoritme en getraind model. Deze services zijn bedoeld om algemene kennis van uw gegevens te vereisen zonder dat u ervaring hoeft te hebben met machine learning of gegevens wetenschap. U kunt deze vooraf getrainde Cognitive Services automatisch gebruiken in azure Synapse Analytics.
+[Azure Cognitive Services](../../cognitive-services/what-are-cognitive-services.md) biedt machine learning mogelijkheden om algemene problemen op te lossen, zoals het analyseren van tekst voor emotioneel sentiment of het analyseren van installatie kopieën om objecten of gezichten te herkennen. U hebt geen speciale machine learning- of data science-kennis nodig om deze services te kunnen gebruiken. Een cognitieve service biedt deel of alle onderdelen in een machine learning oplossing: gegevens, algoritme en getraind model. Deze services zijn bedoeld om algemene kennis van uw gegevens te vereisen zonder dat u ervaring hoeft te hebben met machine learning of gegevens wetenschap. U kunt deze vooraf getrainde Cognitive Services automatisch gebruiken in azure Synapse Analytics.
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit artikel vindt u een overzicht van de verschillende opties voor het trainen van machine learning modellen binnen Apache Spark Pools in azure Synapse Analytics. U kunt meer te weten komen over model training door onderstaande zelf studie te volgen:

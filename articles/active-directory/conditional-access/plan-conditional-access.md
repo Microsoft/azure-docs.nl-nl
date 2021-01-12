@@ -11,12 +11,12 @@ author: BarbaraSelden
 manager: daveba
 ms.reviewer: joflore
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a43200985820779c56983f09b81a86989261c36f
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 13756be041f88883d84f9558308c7fe5c9be2d0e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934999"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116004"
 ---
 # <a name="plan-a-conditional-access-deployment"></a>Een implementatie van voorwaardelijke toegang plannen
 
@@ -223,14 +223,6 @@ Het maken van een beleid voor elke app is niet efficiënt en leidt tot moeilijk 
 Als u een beleid hebt geconfigureerd, kan het de organisaties van de Azure Portal vergren delen. Het beperken van de impact van de onbedoelde beheerder vergrendeling door twee of meer [accounts voor toegang tot een nood geval](../roles/security-emergency-access.md) in uw organisatie te maken.
 
 * Maak een gebruikers account dat is toegewezen aan beleids beheer en uitgesloten is van al uw beleids regels.
-
-* Het scenario voor een schei glas voor hybride omgevingen:
-
-  * Een on-premises beveiligings groep maken en deze synchroniseren met Azure AD. De beveiligings groep moet uw toegewezen beleids beheer account bevatten. 
-
-   * Deze beveiligings groep uitsluiten alle beleids regels voor voorwaardelijke toegang.
-
-   * Wanneer er een service storing optreedt, voegt u uw andere beheerders toe aan de on-premises groep en dwingt u een synchronisatie af. Hiermee wordt de uitzonde ring op beleids regels voor voorwaardelijke toegang van animatie voorzien.
 
 ### <a name="set-up-report-only-mode"></a>Modus alleen rapport instellen
 
@@ -493,4 +485,4 @@ Wanneer u de gegevens hebt verzameld, raadpleegt u de volgende bronnen:
 
 [Meer informatie over identiteits beveiliging](../identity-protection/overview-identity-protection.md)
 
-[Beleid voor voorwaardelijke toegang beheren met Microsoft Graph-API](/graph/api/resources/conditionalaccesspolicy?view=graph-rest-beta.md)
+[Beleid voor voorwaardelijke toegang beheren met Microsoft Graph-API](https://docs.microsoft.com/graph/api/resources/conditionalaccesspolicy)

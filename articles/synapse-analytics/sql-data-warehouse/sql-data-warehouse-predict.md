@@ -11,16 +11,16 @@ ms.date: 07/21/2020
 ms.author: anjangsh
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: b1a2e802f66132a88060fb74831781055897b077
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 9e7d45a588e60cd082f1eef43d1d1b6681b9e912
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093652"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117738"
 ---
 # <a name="score-machine-learning-models-with-predict"></a>Score machine learning modellen met voor spel
 
-Een toegewezen SQL-groep biedt u de mogelijkheid om machine learning modellen te scoren met behulp van de vertrouwde T-SQL-taal. Met T-SQL-voor [spel](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true)kunt u uw bestaande machine learning-modellen getraind met historische gegevens en ze een score geven binnen de beveiligde grenzen van uw data warehouse. De functie voors PELLEn heeft een [ONNX-model (open Neural Network Exchange)](https://onnx.ai/) en gegevens als invoer. Deze functie elimineert de stap voor het verplaatsen van waardevolle gegevens buiten het Data Warehouse voor een score. Het is erop gericht om data professionals in staat te stellen om eenvoudig machine learning modellen te implementeren met de vertrouwde T-SQL-interface en naadloos samen te werken met gegevens wetenschappers die samen werken met het juiste Framework voor hun taak.
+Een toegewezen SQL-groep biedt u de mogelijkheid om machine learning modellen te scoren met behulp van de vertrouwde T-SQL-taal. Met T-SQL-voor [spel](/sql/t-sql/queries/predict-transact-sql?preserve-view=true&view=azure-sqldw-latest)kunt u uw bestaande machine learning-modellen getraind met historische gegevens en ze een score geven binnen de beveiligde grenzen van uw data warehouse. De functie voors PELLEn heeft een [ONNX-model (open Neural Network Exchange)](https://onnx.ai/) en gegevens als invoer. Deze functie elimineert de stap voor het verplaatsen van waardevolle gegevens buiten het Data Warehouse voor een score. Het is erop gericht om data professionals in staat te stellen om eenvoudig machine learning modellen te implementeren met de vertrouwde T-SQL-interface en naadloos samen te werken met gegevens wetenschappers die samen werken met het juiste Framework voor hun taak.
 
 > [!NOTE]
 > Deze functionaliteit wordt momenteel niet ondersteund in een serverloze SQL-groep.
@@ -35,7 +35,7 @@ De toegewezen SQL-Groep verwacht een vooraf getraind model. Houd rekening met de
 
 - De toegewezen SQL-pool ondersteunt alleen ONNX-indelings modellen. ONNX is een open-source model indeling waarmee u modellen tussen verschillende Frameworks kunt uitwisselen om interoperabiliteit mogelijk te maken. U kunt uw bestaande modellen converteren naar de ONNX-indeling met behulp van frameworks die de systeem eigen ondersteuning bieden of pakketten converteren. Bijvoorbeeld [sklearn-onnx-](https://github.com/onnx/sklearn-onnx) pakket converteren scikit-modellen naar onnx. [ONNX github-opslag plaats](https://github.com/onnx/tutorials#converting-to-onnx-format) bevat een lijst met ondersteunde frameworks en voor beelden.
 
-   Als u gebruikmaakt van [automatische ml](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) voor training, moet u de para meter *ENABLE_ONNX_COMPATIBLE_MODELS* instellen op True om een onnx-indelings model te maken. [Automatische machine learning notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) toont een voor beeld van het gebruik van geautomatiseerd ml voor het maken van een machine learning model van de ONNX-indeling.
+   Als u gebruikmaakt van [automatische ml](../../machine-learning/concept-automated-ml.md) voor training, moet u de para meter *ENABLE_ONNX_COMPATIBLE_MODELS* instellen op True om een onnx-indelings model te maken. [Automatische machine learning notebook](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/automated-machine-learning/classification-bank-marketing-all-features/auto-ml-classification-bank-marketing-all-features.ipynb) toont een voor beeld van het gebruik van geautomatiseerd ml voor het maken van een machine learning model van de ONNX-indeling.
 
 - De volgende gegevens typen worden ondersteund voor de invoer gegevens:
     - int, bigint, Real, float
@@ -66,7 +66,7 @@ GO
 
 ```
 
-Zodra het model is geconverteerd naar een hexadecimale teken reeks en de definitie van de tabel, gebruikt u de [Kopieer opdracht](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) of poly Base om het model in de toegewezen SQL-groeps tabel te laden. In het volgende code voorbeeld wordt de Kopieer opdracht gebruikt om het model te laden.
+Zodra het model is geconverteerd naar een hexadecimale teken reeks en de definitie van de tabel, gebruikt u de [Kopieer opdracht](/sql/t-sql/statements/copy-into-transact-sql?preserve-view=true&view=azure-sqldw-latest) of poly Base om het model in de toegewezen SQL-groeps tabel te laden. In het volgende code voorbeeld wordt de Kopieer opdracht gebruikt om het model te laden.
 
 ```sql
 -- Copy command to load hexadecimal string of the model from Azure Data Lake storage location
@@ -80,9 +80,9 @@ WITH (
 
 ## <a name="scoring-the-model"></a>Het model scoren
 
-Zodra het model en de gegevens in het Data Warehouse zijn geladen, gebruikt u de functie voor het voors **pellen van T-SQL** om het model te scoren. Zorg ervoor dat de nieuwe invoer gegevens zich in dezelfde indeling bevinden als de trainings gegevens die worden gebruikt voor het bouwen van het model. T-SQL-voor SPELing heeft twee invoer: model en nieuwe score invoer gegevens en genereert nieuwe kolommen voor de uitvoer. Het model kan worden opgegeven als een variabele, een letterlijke of scalaire sub_query. Gebruik [WITH common_table_expression](https://docs.microsoft.com/sql/t-sql/queries/with-common-table-expression-transact-sql?view=azure-sqldw-latest&preserve-view=true) om een benoemde resultatenset voor de para meter data op te geven.
+Zodra het model en de gegevens in het Data Warehouse zijn geladen, gebruikt u de functie voor het voors **pellen van T-SQL** om het model te scoren. Zorg ervoor dat de nieuwe invoer gegevens zich in dezelfde indeling bevinden als de trainings gegevens die worden gebruikt voor het bouwen van het model. T-SQL-voor SPELing heeft twee invoer: model en nieuwe score invoer gegevens en genereert nieuwe kolommen voor de uitvoer. Het model kan worden opgegeven als een variabele, een letterlijke of scalaire sub_query. Gebruik [WITH common_table_expression](/sql/t-sql/queries/with-common-table-expression-transact-sql?preserve-view=true&view=azure-sqldw-latest) om een benoemde resultatenset voor de para meter data op te geven.
 
-In het onderstaande voor beeld ziet u een voorbeeld query met de functie voor spelling controle. Er wordt een extra kolom met de naam *Score* en het gegevens type *float* gemaakt met de Voorspellings resultaten. Alle kolommen met invoer gegevens en uitvoer Voorspellings kolommen kunnen met de instructie SELECT worden weer gegeven. Zie voor [spel (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true)voor meer informatie.
+In het onderstaande voor beeld ziet u een voorbeeld query met de functie voor spelling controle. Er wordt een extra kolom met de naam *Score* en het gegevens type *float* gemaakt met de Voorspellings resultaten. Alle kolommen met invoer gegevens en uitvoer Voorspellings kolommen kunnen met de instructie SELECT worden weer gegeven. Zie voor [spel (Transact-SQL)](/sql/t-sql/queries/predict-transact-sql?preserve-view=true&view=azure-sqldw-latest)voor meer informatie.
 
 ```sql
 -- Query for ML predictions
@@ -93,4 +93,4 @@ DATA = dbo.mytable AS d, RUNTIME = ONNX) WITH (Score float) AS p;
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor [speling (Transact-SQL)](https://docs.microsoft.com/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true)voor meer informatie over de functie VOORs pellen.
+Zie voor [speling (Transact-SQL)](/sql/t-sql/queries/predict-transact-sql?preserve-view=true&view=azure-sqldw-latest)voor meer informatie over de functie VOORs pellen.

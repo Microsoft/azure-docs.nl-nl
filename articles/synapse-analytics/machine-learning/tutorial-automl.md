@@ -1,6 +1,6 @@
 ---
-title: 'Zelfstudie: Een model trainen met behulp van geautomatiseerde ML'
-description: Zelfstudie over hoe u een machine learning-model traint zonder code in Azure Synapse met Apache Spark en geautomatiseerde ML.
+title: 'Zelfstudie: Een model trainen met geautomatiseerde machine learning'
+description: Zelfstudie over hoe u een machine learning-model zonder code traint in Azure Synapse Analytics.
 services: synapse-analytics
 ms.service: synapse-analytics
 ms.subservice: machine-learning
@@ -9,123 +9,113 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 4967d5305b4b438f3baa6fca078d7b3169612590
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: e219531a88787f19197a2e8c2a80040497c6dc1e
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093397"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901416"
 ---
-# <a name="tutorial-train-a-machine-learning-model-code-free-in-azure-synapse-with-apache-spark-and-automated-ml"></a>Zelfstudie: Een machine learning-model trainen zonder code in Azure Synapse met Apache Spark en geautomatiseerde ML
+# <a name="tutorial-train-a-machine-learning-model-without-code"></a>Zelfstudie: een machine learning-model trainen zonder code
 
-Leer hoe u eenvoudig uw gegevens in Spark-tabellen kunt verrijken met nieuwe machine learning-modellen die u traint met behulp van [geautomatiseerde ML in Azure Machine Learning](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml).  Een gebruiker kan in Synapse gewoon een Spark-tabel selecteren in de Azure Synapse-werkruimte, en deze gebruiken als trainingsgegevensset om zonder code machine learning-modellen te bouwen.
+U kunt uw gegevens in Spark-tabellen uitbreiden met nieuwe machine learning-modellen die u traint met behulp van [geautomatiseerde machine learning](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml). In Azure Synapse Analytics kunt u een Spark-tabel selecteren in de werkruimte en deze gebruiken als trainingsgegevensset om zonder code machine learning-modellen te bouwen.
 
-In deze zelfstudie leert u het volgende:
-
-> [!div class="checklist"]
-> - Machine learning-modellen trainen zonder code te gebruiken, in Azure Synapse Studio dat gebruikmaakt van geautomatiseerde ML in Azure Machine Learning. Het type model dat u traint, is afhankelijk van het probleem dat u wilt oplossen.
+In deze zelfstudie leert u hoe u zonder code machine learning-modellen traint in de Azure Synapse Analytics-studio. U gebruikt geautomatiseerde machine learning in Azure Machine Learning in plaats van handmatig te coderen. Het type model dat u traint, is afhankelijk van het probleem dat u wilt oplossen.
 
 Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](https://azure.microsoft.com/free/).
 
 ## <a name="prerequisites"></a>Vereisten
 
-- [Synapse Analytics-werkruimte](../get-started-create-workspace.md) met een ADLS Gen2-opslagaccount dat is geconfigureerd als de standaard opslag. U moet de **Inzender van de Storage Blob-gegevens** zijn van het ADLS Gen2-bestandssysteem waar u mee werkt.
-- Spark-pool in uw Azure Synapse Analytics-werkruimte. Zie [Een Spark-pool maken in Azure Synapse](../quickstart-create-sql-pool-studio.md) voor meer informatie.
-- Met Azure Machine Learning gekoppelde service in uw Azure Synapse Analytics-werkruimte. Raadpleeg [Een met Azure Machine Learning gekoppelde service maken in Azure Synapse](quickstart-integrate-azure-machine-learning.md) voor meer informatie.
+- Een [Azure Synapse Analytics-werkruimte](../get-started-create-workspace.md). Zorg ervoor dat deze het volgende opslagaccount heeft, geconfigureerd als standaardopslag: Azure Data Lake Storage Gen2. Voor het Data Lake Storage Gen2-bestandssysteem waarmee u werkt, moet u ervoor zorgen dat u de **inzender voor Storage Blob-gegevens bent**.
+- Een Apache Spark-pool in uw Azure Synapse Analytics-werkruimte. Voor meer informatie raadpleegt u [Quickstart: Een toegewezen SQL-pool maken met behulp van de Azure Synapse Analytics-studio](../quickstart-create-sql-pool-studio.md).
+- Een gekoppelde Azure Machine Learning-service in uw Azure Synapse Analytics-werkruimte. Voor meer informatie raadpleegt u [Quickstart: een nieuwe gekoppelde Azure Machine Learning-service maken in Azure Synapse Analytics](quickstart-integrate-azure-machine-learning.md).
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal
 
-Meld u aan bij [Azure Portal](https://portal.azure.com/)
+Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 ## <a name="create-a-spark-table-for-training-dataset"></a>Een Spark-tabel maken voor een trainingsgegevensset
 
-Voor deze zelfstudie hebt u een Spark-tabel nodig. Met het volgende notebook wordt een Spark-tabel gemaakt.
+Voor deze zelfstudie hebt u een Spark-tabel nodig. Met het volgende notebook wordt er een gemaakt.
 
-1. Download het notebook [Create-Spark-Table-NYCTaxi- Data.ipynb](https://go.microsoft.com/fwlink/?linkid=2149229)
+1. Download het notebook [Create-Spark-Table-NYCTaxi- Data.ipynb](https://go.microsoft.com/fwlink/?linkid=2149229).
 
-1. Importeer het notebook in Azure Synapse Studio.
-![Notebook importeren](media/tutorial-automl-wizard/tutorial-automl-wizard-00a.png)
+1. Importeer het notebook in de Azure Synapse Analytics-studio.
+![Schermopname van Azure Synapse Analytics, met de optie importeren gemarkeerd.](media/tutorial-automl-wizard/tutorial-automl-wizard-00a.png)
 
-1. Selecteer de Spark-pool die u wilt gebruiken, en klik op `Run all`. Als u dit notebook uitvoert, worden taxigegevens uit New York opgehaald uit de open gegevensset en opgeslagen in uw standaarddatabase in Spark.
-![Alles uitvoeren](media/tutorial-automl-wizard/tutorial-automl-wizard-00b.png)
+1. Selecteer de Spark-pool die u wilt gebruiken en selecteer **Alle uitvoeren**. Hiermee worden taxigegevens uit New York opgehaald uit de open gegevensset en opgeslagen in uw standaarddatabase in Spark.
+![Schermopname van Azure Synapse Analytics, met Alle uitvoeren en de Spark-database gemarkeerd.](media/tutorial-automl-wizard/tutorial-automl-wizard-00b.png)
 
-1. Nadat de uitvoering van het notebook is voltooid, wordt een nieuwe Spark-tabel gemaakt in de standaarddatabase in Spark. Ga naar de Data Hub en zoek de tabel met de naam met `nyc_taxi`.
-![Spark-tabel](media/tutorial-automl-wizard/tutorial-automl-wizard-00c.png)
+1. Nadat de uitvoering van het notebook is voltooid, ziet u een nieuwe Spark-tabel in de standaarddatabase in Spark. Zoek vanuit **Gegevens** de tabel met de naam **nyc_taxi**.
+![Schermopname van het tabblad Gegevens in Azure Synapse Analytics, met de nieuwe tabel gemarkeerd.](media/tutorial-automl-wizard/tutorial-automl-wizard-00c.png)
 
-## <a name="launch-automated-ml-wizard-to-train-a-model"></a>Wizard Geautomatiseerde ML starten om een model te trainen
+## <a name="launch-automated-machine-learning-wizard"></a>Start de wizard voor geautomatiseerde machine learning
 
-Klik met de rechtermuisknop op de Spark-tabel die u in de vorige stap hebt gemaakt. Selecteer Machine Learning -> Verrijken met nieuw model om de wizard te openen.
-![Wizard Geautomatiseerd ML starten](media/tutorial-automl-wizard/tutorial-automl-wizard-00d.png)
+U doet dit als volgt:
 
-Er wordt een configuratiescherm weergegeven en u wordt gevraagd om de configuratiedetails op te geven om een experiment met geautomatiseerde ML te maken in Azure Machine Learning. Met deze uitvoering worden meerdere modellen getraind. Het beste model van een geslaagde uitvoering wordt geregistreerd in het Azure Machine Learning-modelregister:
+1. Klik met de rechtermuisknop op de Spark-tabel die u in de vorige stap hebt gemaakt. Selecteer **Machine Learning** > **Verrijken met nieuw model** om de wizard te openen.
+![Schermopname van de Spark-tabel, met Machine Learning en Verrijken met nieuw model gemarkeerd.](media/tutorial-automl-wizard/tutorial-automl-wizard-00d.png)
 
-![Uitvoering configureren - stap 1](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00a.png)
+1. U kunt vervolgens uw configuratiegegevens opgeven om een geautomatiseerd ML-experiment te maken dat in Azure Machine Learning wordt uitgevoerd. Met deze uitvoering worden meerdere modellen getraind. Het beste model van een geslaagde uitvoering wordt geregistreerd in het Azure Machine Learning-modelregister.
 
-- **Azure Machine Learning-werkruimte**: Er is een Azure Machine Learning-werkruimte vereist om de uitvoering van het geautomatiseerde ML-experiment te maken. U moet ook uw Azure Synapse-werkruimte koppelen aan de Azure Machine Learning-werkruimte met behulp van een [gekoppelde service](quickstart-integrate-azure-machine-learning.md). Zodra u beschikt over alle vereisten, kunt u de Azure Machine Learning-werkruimte opgeven die u wilt gebruiken voor deze geautomatiseerde ML-uitvoering.
+   ![Schermopname van de configuratiespecificaties voor Verrijken met nieuw model.](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00a.png)
 
-- **Naam van experiment**: Geef de naam van het experiment op. Wanneer u een geautomatiseerde ML-uitvoering verzendt, geeft u een naam op voor het experiment. Informatie over de uitvoering wordt opgeslagen bij dit experiment in de Azure Machine Learning-werkruimte. Er wordt standaard een nieuw experiment gemaakt, en er wordt een suggestie voor een naam gegenereerd. U kunt echter ook de naam van een bestaand experiment opgeven.
+    - **Azure Machine Learning-werkruimte**: Er is een Azure Machine Learning-werkruimte is vereist om de uitvoering van het geautomatiseerde ML-experiment te maken. U moet ook uw Azure Synapse Analytics-werkruimte koppelen aan de Azure Machine Learning-werkruimte met behulp van een [gekoppelde service](quickstart-integrate-azure-machine-learning.md). Zodra u aan alle vereisten voldoet, kunt u de Azure Machine Learning-werkruimte opgeven die u wilt gebruiken voor deze geautomatiseerde uitvoering.
 
-- **Beste model**: Geef de naam op van het beste model uit de geautomatiseerde ML-uitvoering. Het beste model krijgt deze naam, en wordt na deze uitvoering automatisch opgeslagen in het Azure Machine Learning-modelregister. Bij een geautomatiseerde ML-uitvoering worden veel machine learning-modellen gemaakt. Deze modellen kunnen worden vergeleken en het beste model kan worden geselecteerd op basis van de primaire metrische gegevens die u in een latere stap selecteert.
+    - **Naam van experiment**: Geef de naam van het experiment op. Wanneer u een geautomatiseerde ML-uitvoering verzendt, geeft u een naam op voor het experiment. Informatie over de uitvoering wordt opgeslagen bij dit experiment in de Azure Machine Learning-werkruimte. Er wordt standaard een nieuw experiment gemaakt en er wordt een suggestie voor een naam gegenereerd. U kunt echter ook de naam van een bestaand experiment opgeven.
 
-- **Doelkolom**: Het model is getraind om dit te voorspellen. Kies de kolom die u wilt voorspellen.
+    - **Beste model**: Geef de naam op van het beste model uit de geautomatiseerde uitvoering. Het beste model krijgt deze naam. Deze wordt na deze uitvoering automatisch opgeslagen in het Azure Machine Learning-modelregister. In een geautomatiseerde ML-uitvoering worden veel ML-modellen gemaakt. Deze modellen kunnen worden vergeleken en het beste model kan worden geselecteerd op basis van de primaire metrische gegevens die u in een latere stap selecteert.
 
-- **Spark-pool**: De Spark-pool die u wilt gebruiken voor de uitvoering van het geautomatiseerde ML-experiment. De berekeningen worden uitgevoerd voor de pool die u opgeeft.
+    - **Doelkolom**: Het model is getraind om dit te voorspellen. Kies de kolom die u wilt voorspellen. (In deze zelfstudie wordt de numerieke kolom `fareAmount` als doelkolom geselecteerd.)
 
-- **Spark-configuratiedetails**: Naast de Spark-pool hebt u ook de mogelijkheid om configuratiedetails voor de sessie op te geven.
+    - **Spark-pool**: De Spark-pool die u wilt gebruiken voor de uitvoering van het geautomatiseerde experiment. De berekeningen worden uitgevoerd voor de pool die u opgeeft.
 
-In deze zelfstudie selecteren we de numerieke kolom `fareAmount` als doelkolom.
+    - **Spark-configuratiedetails**: Naast de Spark-pool hebt u ook de mogelijkheid om configuratiedetails voor de sessie op te geven.
 
-Klik op Doorgaan.
+1. Selecteer **Doorgaan**.
 
 ## <a name="choose-task-type"></a>Kies het taaktype
 
-Selecteer het type machine learning-model voor het experiment, op basis van de vraag die u wilt beantwoorden. Omdat we `fareAmount` hebben geselecteerd als doelkolom, en dit een numerieke waarde is, selecteren we *Regressie*.
+Selecteer het type machine learning-model voor het experiment op basis van de vraag die u wilt beantwoorden. Aangezien `fareAmount` de doelkolom is en dit een numerieke waarde is, selecteert u hier **Regressie**. Selecteer vervolgens **Doorgaan**.
 
-Klik op Doorgaan om aanvullende instellingen te configureren.
-
-![Selectie van taaktype](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00b.png)
+![Schermopname van Verrijken met nieuw model, met Regressie gemarkeerd.](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00b.png)
 
 ## <a name="additional-configurations"></a>Aanvullende configuraties
 
-Als u het type *Classificatie* of *Regressie* selecteert, zijn de aanvullende configuraties:
+Als u **Regressie** of **Classificatie** als uw modeltype in de vorige sectie selecteert, zijn de volgende configuraties beschikbaar:
 
-- **Primaire metrische gegevens**: De metrische gegevens die worden gebruikt om te meten hoe goed het model is. Dit zijn de metrische gegevens die worden gebruikt om verschillende modellen te vergelijken die zijn gemaakt bij de geautomatiseerde ML-uitvoering. Deze geven aan welk model het beste heeft gepresteerd.
+- **Primaire metrische gegevens**: De metrische gegevens die worden gebruikt om te meten hoe goed het model is. Dit zijn de metrische gegevens die worden gebruikt om verschillende modellen te vergelijken die zijn gemaakt bij de geautomatiseerde uitvoering. Deze geven aan welk model het beste heeft gepresteerd.
 
-- **Duur van trainingstaak (in uren)** : De maximale tijdsduur, in uren, om een experiment uit te voeren en modellen te trainen. Opmerking: u kunt ook waarden opgeven die kleiner zijn dan 1. Bijvoorbeeld `0.5`.
+- **Duur van trainingstaak (in uren)** : De maximale tijdsduur, in uren, om een experiment uit te voeren en modellen te trainen. U kunt ook waarden opgeven die kleiner zijn dan 1 (bijvoorbeeld `0.5`).
 
 - **Maximum aantal gelijktijdige herhalingen**: Vertegenwoordigt het maximum aantal herhalingen die parallel worden uitgevoerd.
 
-- **Compatibiliteit met ONNX-modellen**: Als dit is ingeschakeld, worden de modellen die zijn getraind met geautomatiseerde ML, geconverteerd naar de ONNX-indeling. Dit is vooral relevant als u het model wilt gebruiken in SQL-pools van Azure Synapse.
+- **Compatibiliteit met ONNX-modellen**: Als u deze optie inschakelt, worden de modellen die met automatische machine learning zijn getraind, geconverteerd naar de ONNX-indeling. Dit is met name relevant als u het model wilt gebruiken in SQL-pools van Azure Synapse Analytics.
 
 Deze instellingen hebben allemaal een standaardwaarde die u kunt aanpassen.
-![aanvullende configuraties](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00c.png)
+![Schermopname van aanvullende configuraties voor Verrijken met nieuw model.](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00c.png)
 
-> Opmerking: als u Prognose voor tijdreeksen selecteert, zijn er meer configuraties vereist. Het maken van een prognose biedt ook geen ondersteuning voor compatibiliteit met ONNX-modellen.
+Zodra alle vereiste configuraties zijn uitgevoerd, kunt u de geautomatiseerde uitvoering starten. U kunt **Create run** kiezen, waarmee de uitvoering rechtstreeks, zonder code, wordt gestart. Als u liever code gebruikt, kunt u **Openen in notebook** selecteren. Met deze optie kunt u de code zien waarmee de uitvoering wordt gemaakt en die het notebook uitvoert.
 
-Zodra alle vereiste configuraties zijn uitgevoerd, kunt u geautomatiseerde ML uitvoeren.
+>[!NOTE]
+>Als u **Prognose voor tijdreeksen** als modeltype in de vorige sectie selecteert, moet u aanvullende configuraties maken. Het maken van een prognose biedt ook geen ondersteuning voor compatibiliteit met ONNX-modellen.
 
-Er zijn twee manieren om een geautomatiseerde ML-uitvoering te starten in Azure Synapse. Als u geen code wilt gebruiken, kunt u **Direct uitvoering maken** kiezen. Als u liever werkt met code, kunt u **Openen in notebook** selecteren. U ziet dan de code waarmee de uitvoering wordt gemaakt en kunt het notebook uitvoeren.
+### <a name="create-run-directly"></a>Uitvoering rechtstreeks maken
 
-### <a name="create-run-directly"></a>Direct uitvoering maken
-
-Klik op Uitvoering starten om geautomatiseerde ML direct uit te voeren. U ziet een melding waarin wordt aangegeven dat de geautomatiseerde ML-uitvoering wordt gestart.
-
-Nadat de geautomatiseerde ML-uitvoering is gestart, ziet u nog een melding over de geslaagde uitvoering. U kunt ook op de knop Melding klikken om de status van de verzending van de uitvoering te controleren.
-Azure Machine Learning door te klikken op de koppeling in de melding over de geslaagde uitvoering.
-![Melding over geslaagde uitvoering](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00d.png)
+Als u uw geautomatiseerde machine learning direct wilt uitvoeren, selecteert u **Uitvoering starten**. U ziet een melding waarin wordt aangegeven dat de uitvoering wordt gestart. Vervolgens ziet u een andere melding die aangeeft dat de uitvoering is geslaagd. U kunt ook de status in Azure Machine Learning controleren door de koppeling in de melding te selecteren.
+![Schermopname van geslaagde melding.](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00d.png)
 
 ### <a name="create-run-with-notebook"></a>Uitvoering maken met notebook
 
-Selecteer *Openen in notebook* om een notebook te genereren. Klik op *Alles uitvoeren* om het notebook uit te voeren.
-Dit biedt u ook de mogelijkheid om extra instellingen toe te voegen aan de geautomatiseerde ML-uitvoering.
+Selecteer **Openen in notebook** om een notebook te genereren. Selecteer vervolgens **Alle uitvoeren**. Dit biedt u ook de mogelijkheid om extra instellingen toe te voegen aan de geautomatiseerde ML-uitvoering.
 
-![Notebook openen](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00e.png)
+![Schermopname van notebook, met Alle uitvoeren gemarkeerd.](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00e.png)
 
-Nadat de uitvoering van het notebook is verzonden, verschijnt er een koppeling naar de uitvoering van het experiment in de Azure Machine Learning-werkruimte in de uitvoer van het notebook. U kunt op de koppeling klikken om de geautomatiseerde ML-uitvoering te bewaken in Azure Machine Learning.
-![Notebook - alles uitvoeren](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00f.png))
+Nadat de uitvoering is verzonden, verschijnt er in de uitvoer van het notebook een koppeling naar de uitvoering van het experiment in de Azure Machine Learning-werkruimte. Selecteer de koppeling om de geautomatiseerde uitvoering te bewaken in Azure Machine Learning.
+![Schermopname van Azure Synapse Analytics, met de koppeling gemarkeerd.](media/tutorial-automl-wizard/tutorial-automl-wizard-configure-run-00f.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Zelfstudie: Scoren van het Machine learning-model in toegewezen SQL-pools van Azure Synapse](tutorial-sql-pool-model-scoring-wizard.md).
-- [Snelstart: Een nieuwe gekoppelde Azure Machine Learning-service maken in Azure Synapse](quickstart-integrate-azure-machine-learning.md)
+- [Zelfstudie: Wizard voor scoren van het Machine learning-model voor toegewezen SQL-pools](tutorial-sql-pool-model-scoring-wizard.md)
+- [Snelstart: een nieuwe gekoppelde Azure Machine Learning-service maken in Azure Synapse Analytics](quickstart-integrate-azure-machine-learning.md)
 - [Mogelijkheden voor machine learning in Azure Synapse Analytics](what-is-machine-learning.md)

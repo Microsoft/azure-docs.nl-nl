@@ -3,7 +3,7 @@ title: 'Zelfstudie: Een Python Django-app met Postgres implementeren'
 description: Een Python-web-app maken met een PostgreSQL-database en deze implementeren naar Azure. Deze zelfstudie gebruikt het Django-framework en de app wordt gehost op Azure App Service op Linux.
 ms.devlang: python
 ms.topic: tutorial
-ms.date: 11/02/2020
+ms.date: 01/04/2021
 ms.custom:
 - mvc
 - seodec18
@@ -11,12 +11,12 @@ ms.custom:
 - cli-validate
 - devx-track-python
 - devx-track-azurecli
-ms.openlocfilehash: b106b403022f3407a3838b7f65222baf41cbfff5
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: ffde74a0567661d6b9f77e45a80bfd585e5c7212
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96852962"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97898586"
 ---
 # <a name="tutorial-deploy-a-django-web-app-with-postgresql-in-azure-app-service"></a>Zelfstudie: Een Django-web-app implementeren met PostgreSQL in Azure App Service
 
@@ -236,14 +236,11 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
 1. Voer in de SSH-sessie de volgende opdrachten uit (u kunt opdrachten plakken met **CTRL**+**Shift**+**V**):
 
     ```bash
-    # Change to the folder where the app code is deployed
-    cd site/wwwroot
+    # Change to the app folder
+    cd $APP_PATH
     
-    # Activate default virtual environment in App Service container
+    # Activate the venv (requirements.txt is installed automatically)
     source /antenv/bin/activate
-
-    # Install packages
-    pip install -r requirements.txt
 
     # Run database migrations
     python manage.py migrate
@@ -251,6 +248,8 @@ Django-databasemigraties zorgen ervoor dat het schema in de PostgreSQL van de Az
     # Create the super user (follow prompts)
     python manage.py createsuperuser
     ```
+
+    Als u fouten ondervindt met betrekking tot het maken van verbinding met de database, controleert u de waarden van de toepassingsinstellingen die in de vorige sectie zijn gemaakt.
 
 1. De `createsuperuser`-opdracht vraagt u om de referenties van de super gebruiker op te geven. Gebruik voor deze zelfstudie de standaard gebruikersnaam `root`, druk op **Enter** voor het e-mailadres om het leeg te laten en voer `Pollsdb1` in bij het wachtwoord.
 
@@ -260,13 +259,13 @@ Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van pr
     
 ### <a name="44-create-a-poll-question-in-the-app"></a>4.4 Een poll-vraag maken in de app
 
-1. Open de URL `http://<app-name>.azurewebsites.net` in een browser. De app zou het bericht 'Er zijn geen polls beschikbaar' moeten weergeven, omdat er nog geen specifieke polls in de database zitten.
+1. Open de URL `http://<app-name>.azurewebsites.net` in een browser. De app moet de berichten 'Polls-app' en 'Er zijn geen polls beschikbaar' weergeven, omdat de database nog geen specifieke polls bevat.
 
     Als u 'Toepassingsfout' ziet, is het waarschijnlijk dat u de vereiste instellingen niet hebt gemaakt in de vorige stap, [Omgevingsvariabelen configureren om verbinding te maken met de database](#42-configure-environment-variables-to-connect-the-database), of dat deze waarde fouten bevat. Voer de opdracht `az webapp config appsettings list` uit om de instellingen te controleren. U kunt ook [de diagnostische logboeken controleren](#6-stream-diagnostic-logs) om specifieke fouten te bekijken tijdens het opstarten van de app. Als u de instellingen bijvoorbeeld niet hebt gemaakt, wordt de fout `KeyError: 'DBNAME'` weergegeven in de logboeken.
 
     Nadat u de instellingen hebt bijgewerkt om eventuele fouten te corrigeren, geeft u de app een minuut om opnieuw op te starten en vernieuwt u vervolgens de browser.
 
-1. Blader naar `http://<app-name>.azurewebsites.net/admin`. Meld u aan met de beheerdersreferenties uit het vorige onderdeel (`root` en `Pollsdb1`). Selecteer onder **Polls** **Toevoegen** naast **Vragen** en maak een poll-vraag met enkele antwoordmogelijkheden.
+1. Blader naar `http://<app-name>.azurewebsites.net/admin`. Meld u aan met de referenties voor de Django-superuser uit de vorige sectie (`root` en `Pollsdb1`). Selecteer onder **Polls** **Toevoegen** naast **Vragen** en maak een poll-vraag met enkele antwoordmogelijkheden.
 
 1. Ga opnieuw naar `http://<app-name>.azurewebsites.net` om te controleren of de gebruiker nu de vragen te zien krijgt. Beantwoord vragen zoals u wilt om wat gegevens de genereren in de database.
 
@@ -292,7 +291,7 @@ Voer in een terminalvenster de volgende opdrachten uit. Volg de aanwijzingen wan
 python3 -m venv venv
 source venv/bin/activate
 
-# Install packages
+# Install dependencies
 pip install -r requirements.txt
 # Run Django migrations
 python manage.py migrate
@@ -310,7 +309,7 @@ py -3 -m venv venv
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned -Force
 venv\scripts\activate
 
-# Install packages
+# Install dependencies
 pip install -r requirements.txt
 # Run Django migrations
 python manage.py migrate
@@ -327,7 +326,7 @@ python manage.py runserver
 py -3 -m venv venv
 venv\scripts\activate
 
-:: Install packages
+:: Install dependencies
 pip install -r requirements.txt
 :: Run Django migrations
 python manage.py migrate
@@ -397,11 +396,8 @@ Omdat u wijzigingen hebt aangebracht in het gegevensmodel, moet u databasemigrat
 Open opnieuw een SSH-sessie in de browser door naar `https://<app-name>.scm.azurewebsites.net/webssh/host` te gaan. Voer vervolgens de volgende opdrachten uit:
 
 ```
-cd site/wwwroot
-
-# Activate default virtual environment in App Service container
+cd $APP_PATH
 source /antenv/bin/activate
-# Run database migrations
 python manage.py migrate
 ```
 

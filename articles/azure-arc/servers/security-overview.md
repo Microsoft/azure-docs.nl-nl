@@ -3,12 +3,12 @@ title: Beveiligingsoverzicht
 description: Beveiligings informatie over servers met Azure Arc ingeschakeld.
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: be79be3030af76425b54fd683784d0e216ac2cf5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: aa8653b783e7eb3e211b7514831604dd5642cfbe
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329037"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117024"
 ---
 # <a name="azure-arc-for-servers-security-overview"></a>Overzicht van Azure Arc for servers-beveiliging
 
@@ -16,7 +16,7 @@ In dit artikel worden de beveiligings configuratie en overwegingen beschreven di
 
 ## <a name="identity-and-access-control"></a>Identiteits- en toegangsbeheer
 
-Elke Azure Arc-server heeft een beheerde identiteit als onderdeel van een resource groep binnen een Azure-abonnement. deze identiteit vertegenwoordigt de server waarop on-premises of andere Cloud omgevingen worden uitgevoerd. Toegang tot deze bron wordt beheerd door standaard [toegangs beheer op basis van rollen](../../role-based-access-control/overview.md). Op de pagina [**Access Control (IAM)**](../../role-based-access-control/role-assignments-portal.md#access-control-iam) in de Azure Portal kunt u controleren wie toegang heeft tot uw Azure Arc-server.
+Elke Azure Arc-server heeft een beheerde identiteit als onderdeel van een resource groep binnen een Azure-abonnement. deze identiteit vertegenwoordigt de server waarop on-premises of andere Cloud omgevingen worden uitgevoerd. Toegang tot deze bron wordt beheerd door standaard [toegangs beheer op basis van rollen](../../role-based-access-control/overview.md). Op de pagina [**Access Control (IAM)**](../../role-based-access-control/role-assignments-portal.md) in de Azure Portal kunt u controleren wie toegang heeft tot uw Azure Arc-server.
 
 :::image type="content" source="./media/security-overview/access-control-page.png" alt-text="Toegangs beheer voor Server voor Azure Arc ingeschakeld" border="false" lightbox="./media/security-overview/access-control-page.png":::
 

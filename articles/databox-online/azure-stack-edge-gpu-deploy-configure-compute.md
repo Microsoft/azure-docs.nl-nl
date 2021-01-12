@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 08/28/2020
+ms.date: 01/05/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 711da24b3edf08f4867109d0d70165955236c39a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c884ad6850b8f94baa7c658d685651c3241be33f
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184651"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935646"
 ---
 # <a name="tutorial-configure-compute-on-azure-stack-edge-pro-gpu-device"></a>Zelfstudie: Compute configureren op Azure Stack Edge Pro GPU-apparaat
 
@@ -45,40 +45,38 @@ Zorg dat aan deze voorwaarde wordt voldaan voordat u een rekenprocesrol configur
 
 Als u het rekenproces wilt configureren voor uw Azure Stack Edge Pro, maakt u een IoT Hub-resource via de Azure-portal.
 
-1. Ga in Azure Portal van uw Azure Stack Edge-resource naar **Overzicht**. Selecteer in het rechterdeelvenster op de tegel **Compute** **Aan de slag**.
+1. Ga in de Azure Portal van uw Azure Stack Edge-resource naar **Overzicht**. Selecteer vervolgens **IoT Edge**.
 
-    ![Aan de slag met rekenproces](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-1.png)
+   ![Aan de slag met rekenproces](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-1.png)
 
-2. Selecteer op de tegel **Het Edge-rekenproces configureren** **Rekenproces configureren**.
+2. Selecteer in **IoT Edge-service inschakelen** de optie **Toevoegen**.
 
-    ![Rekenproces configureren](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-2.png)
+   ![Rekenproces configureren](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-2.png)
 
-3. Voer op de blade **Het Edge-rekenproces configureren** het volgende in:
-
+3. Voer op de blade **Het Edge-rekenproces configureren** de volgende informatie in:
    
-    |Veld  |Waarde  |
-    |---------|---------|
-    |IoT Hub     | Kies uit **Nieuwe** of **Bestaande**. <br> Standaard wordt er een standaard-laag (S1) gebruikt voor het maken van een IoT-resource. Als u een IoT-resource in een gratis laag wilt gebruiken, maakt u er een en selecteert u vervolgens de bestaande resource. <br> In elk geval gebruikt de IoT Hub-resource hetzelfde abonnement en dezelfde resourcegroep die wordt gebruikt door de resource Azure Stack Edge.     |
-    |Naam     |Voer een naam in voor uw IoT Hub-resource.         |
+   |Veld  |Waarde  |
+   |---------|---------|
+   |IoT Hub     | Kies uit **Nieuwe** of **Bestaande**. <br> Standaard wordt er een standaard-laag (S1) gebruikt voor het maken van een IoT-resource. Als u een IoT-resource in een gratis laag wilt gebruiken, maakt u er een en selecteert u vervolgens de bestaande resource. <br> In elk geval gebruikt de IoT Hub-resource hetzelfde abonnement en dezelfde resourcegroep die wordt gebruikt door de resource Azure Stack Edge.     |
+   |Naam     |Voer een naam in voor uw IoT Hub-resource.         |
 
-    ![Aan de slag met rekenproces 2](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-3.png)
+   ![Aan de slag met rekenproces 2](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-3.png)
 
-4. Selecteer **Maken**. Het maken van de IoT Hub-resource duurt enkele minuten. Nadat de IoT Hub-resource is gemaakt, wordt de tegel **Rekenproces configureren** bijgewerkt om de configuratie van het rekenproces weer te geven. 
+4. Wanneer u de instellingen hebt voltooid, selecteert u **Bekijken en maken**. Controleer de instellingen voor uw IoT Hub-resource en selecteer **Maken**.
 
-    ![Aan de slag met rekenproces 3](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-4.png)
+   Het maken van de IoT Hub-resource duurt enkele minuten. Nadat de resource is gemaakt, wordt in het **Overzicht** aangegeven dat de IoT Edge-service nu wordt uitgevoerd.
 
-5. Als u wilt bevestigen dat de Edge-rekenprocesrol is geconfigureerd, selecteert u **Rekenproces weergeven** op de tegel **Rekenproces configureren**.
-    
-    ![Aan de slag met rekenproces 4](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-5.png)
+   ![Aan de slag met rekenproces 3](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-4.png)
 
-    > [!NOTE]
-    > Als het dialoogvenster **Rekenproces configureren** wordt gesloten voordat de IoT Hub aan het Azure Stack Edge Pro-apparaat is gekoppeld, wordt de IoT Hub gemaakt, maar wordt deze niet weergegeven in de rekenprocesconfiguratie. 
-    
-Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden er twee apparaten aangemaakt: een IoT-apparaat en een IoT Edge-apparaat. Beide apparaten kunnen worden weergegeven in de IoT Hub-resource. Er wordt ook een IoT Edge-runtime op dit IoT Edge-apparaat uitgevoerd. Op dit moment is alleen het Linux-platform beschikbaar voor uw IoT Edge-apparaat.
+5. Selecteer **Eigenschappen** om te controleren of de rol van het Edge-rekenproces is geconfigureerd.
 
-Het kan 20-30 minuten duren om het rekenproces te configureren aangezien er op de achtergrond virtuele machines en een Kubernetes-cluster worden gemaakt. 
+   ![Aan de slag met rekenproces 4](./media/azure-stack-edge-gpu-deploy-configure-compute/configure-compute-5.png)
 
-Nadat u het rekenproces in de Azure-portal hebt geconfigureerd, beschikt u over een Kubernetes-cluster en een standaardgebruiker die is gekoppeld aan de IoT-naamruimte (een naamruimte van het systeem die wordt beheerd door Azure Stack Edge Pro). 
+   Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden er twee apparaten aangemaakt: een IoT-apparaat en een IoT Edge-apparaat. Beide apparaten kunnen worden weergegeven in de IoT Hub-resource. Er wordt ook een IoT Edge-runtime op dit IoT Edge-apparaat uitgevoerd. Op dit moment is alleen het Linux-platform beschikbaar voor uw IoT Edge-apparaat.
+
+Het kan 20 tot 30 minuten duren om het rekenproces te configureren. Dit komt doordat er op de achtergrond virtuele machines en een Kubernetes-cluster worden gemaakt.
+
+Nadat u het rekenproces in de Azure Portal hebt geconfigureerd, beschikt u over een Kubernetes-cluster en een standaardgebruiker die is gekoppeld aan de IoT-naamruimte (een naamruimte van het systeem die wordt beheerd door Azure Stack Edge Pro).
 
 ## <a name="get-kubernetes-endpoints"></a>Kubernetes-eindpunten ophalen
 
@@ -89,11 +87,11 @@ Als u een client wilt configureren voor toegang tot het Kubernetes-cluster, hebt
 
     ![Pagina Apparaat in lokale webinterface](./media/azure-stack-edge-j-series-create-kubernetes-cluster/device-kubernetes-endpoint-1.png)
 
-3. Sla de tekenreeks met het eindpunt op. U gebruikt deze later bij het configureren van een client voor toegang tot het Kubernetes-cluster via kubectl.
+3. Sla de tekenreeks met het eindpunt op. U gebruikt deze eindpunttekenreeks later, wanneer u een client voor toegang tot het Kubernetes-cluster configureert via kubectl.
 
 4. Als u zich in de lokale webinterface bevindt, kunt u het volgende doen:
 
-    - Ga naar de Kubernetes-API, selecteer **Geavanceerde instellingen** en down load een geavanceerd configuratiebestand voor Kubernetes. 
+    - Ga naar de Kubernetes-API, selecteer **Geavanceerde instellingen** en download een geavanceerd configuratiebestand voor Kubernetes. 
 
         ![Pagina Apparaat in lokale webinterface 1](./media/azure-stack-edge-gpu-deploy-configure-compute/download-advanced-config-1.png)
 

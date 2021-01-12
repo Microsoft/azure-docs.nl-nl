@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/06/2020
 ms.author: Zhchia
-ms.openlocfilehash: 4851dfb4a96ab2ca19ba6ea67139772f9c091a69
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: c3f61c3fe688a0b7533902fb0caa19b67f883482
+ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763641"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97901586"
 ---
 # <a name="tutorial-configure-g-suite-for-automatic-user-provisioning"></a>Zelfstudie: G Suite configureren voor automatische gebruikersinrichting
 
@@ -24,13 +24,6 @@ In deze zelfstudie worden de stappen beschreven die u moet uitvoeren in zowel G 
 
 > [!NOTE]
 > In deze zelfstudie wordt een connector beschreven die is gebaseerd op de Azure AD-service voor het inrichten van gebruikers. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md).
-
-> [!NOTE]
-> De G Suite-connector is onlangs bijgewerkt in oktober 2019. De volgende wijzigingen zijn aangebracht in de G Suite-connector:
->
-> * Ondersteuning toegevoegd voor aanvullende gebruikers -en groepskenmerken van G Suite.
-> * Bijgewerkte namen van G Suite-doelkenmerken zodat deze overeenkomen met wat [hier](https://developers.google.com/admin-sdk/directory) is gedefinieerd.
-> * Bijgewerkte standaard kenmerktoewijzingen.
 
 > [!NOTE]
 > Dit artikel bevat verwijzingen naar de term *whitelist*, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
@@ -63,15 +56,15 @@ Voordat u G Suite configureert voor het automatisch inrichten van gebruikers met
 
 1. Meld u aan bij de [beheerconsole van G Suite](https://admin.google.com/) met uw beheerdersaccount en selecteer vervolgens **Beveiliging**. Als u de koppeling niet ziet, is deze mogelijk verborgen in het menu **Meer besturingselementen** onder aan het scherm.
 
-    ![G Suite-beveiliging](./media/google-apps-provisioning-tutorial/gapps-security.png)
+    ![G Suite-beveiliging](./media/g-suite-provisioning-tutorial/gapps-security.png)
 
 2. Selecteer op de pagina **Beveiliging** de optie **API-verwijzing**.
 
-    ![G Suite-API](./media/google-apps-provisioning-tutorial/gapps-api.png)
+    ![G Suite-API](./media/g-suite-provisioning-tutorial/gapps-api.png)
 
 3. Selecteer **API-toegang inschakelen**.
 
-    ![G Suite-API ingeschakeld](./media/google-apps-provisioning-tutorial/gapps-api-enabled.png)
+    ![G Suite-API ingeschakeld](./media/g-suite-provisioning-tutorial/gapps-api-enabled.png)
 
     > [!IMPORTANT]
    > Voor elke gebruiker die u wilt inrichten voor G Suite, **moet** de gebruikersnaam in Azure AD zijn gekoppeld aan een aangepast domein. Bijvoorbeeld: gebruikersnamen die eruitzien als bob@contoso.onmicrosoft.com worden niet geaccepteerd door G Suite. bob@contoso.com wordt daarentegen geaccepteerd. U kunt een bestaand gebruikersdomein wijzigen door de instructies [hier](../fundamentals/add-custom-domain.md) te volgen.
@@ -80,15 +73,15 @@ Voordat u G Suite configureert voor het automatisch inrichten van gebruikers met
 
     a. Selecteer in de [G Suite-beheerconsole](https://admin.google.com/) **Domeinen**.
 
-    ![G Suite-domeinen](./media/google-apps-provisioning-tutorial/gapps-domains.png)
+    ![G Suite-domeinen](./media/g-suite-provisioning-tutorial/gapps-domains.png)
 
     b. Selecteer **Een domein of een domeinalias toevoegen**.
 
-    ![G Suite domein toevoegen](./media/google-apps-provisioning-tutorial/gapps-add-domain.png)
+    ![G Suite domein toevoegen](./media/g-suite-provisioning-tutorial/gapps-add-domain.png)
 
     c. Selecteer **Nog een domein toevoegen** en typ de naam van het domein dat u wilt toevoegen.
 
-    ![G Suite Nog een toevoegen](./media/google-apps-provisioning-tutorial/gapps-add-another.png)
+    ![G Suite Nog een toevoegen](./media/g-suite-provisioning-tutorial/gapps-add-another.png)
 
     d. Selecteer **Doorgaan en domeineigendom verifiëren**. Volg vervolgens de stappen om te controleren of u eigenaar bent van de domeinnaam. Zie [Uw site-eigendom verifiëren](https://support.google.com/webmasters/answer/35179) voor uitgebreide instructies voor het verifiëren van uw domein met Google.
 
@@ -96,11 +89,11 @@ Voordat u G Suite configureert voor het automatisch inrichten van gebruikers met
 
 5. Bepaal vervolgens welk beheerdersaccount u wilt gebruiken voor het beheren van gebruikersinrichting in G Suite. Navigeer naar **Beheerdersrollen**.
 
-    ![G Suite-beheer](./media/google-apps-provisioning-tutorial/gapps-admin.png)
+    ![G Suite-beheer](./media/g-suite-provisioning-tutorial/gapps-admin.png)
 
 6. Voor de **Beheerdersrol** van dat account bewerkt u de **Bevoegdheden** voor die rol. Zorg ervoor dat alle **Beheer-API-bevoegdheden** zijn ingeschakeld zodat dit account kan worden gebruikt voor het inrichten.
 
-    ![G Suite-beheerdersbevoegdheden](./media/google-apps-provisioning-tutorial/gapps-admin-privileges.png)
+    ![G Suite-beheerdersbevoegdheden](./media/g-suite-provisioning-tutorial/gapps-admin-privileges.png)
 
 ## <a name="step-3-add-g-suite-from-the-azure-ad-application-gallery"></a>Stap 3. G Suite toevoegen vanuit de galerie met Azure AD-toepassingen
 
@@ -126,9 +119,9 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Bedrijfstoepassingen** en vervolgens **Alle toepassingen**. Gebruikers moeten zich aanmelden bij portal.azure.com en kunnen aad.portal.azure.com niet gebruiken
 
-    ![De blade Bedrijfstoepassingen](./media/google-apps-provisioning-tutorial/enterprise-applications.png)
+    ![De blade Bedrijfstoepassingen](./media/g-suite-provisioning-tutorial/enterprise-applications.png)
 
-    ![Blade Alle toepassingen](./media/google-apps-provisioning-tutorial/all-applications.png)
+    ![Blade Alle toepassingen](./media/g-suite-provisioning-tutorial/all-applications.png)
 
 2. Selecteer **G Suite** in de lijst met toepassingen.
 
@@ -138,7 +131,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Schermopname van de opties onder Beheren met de optie Inrichten gemarkeerd.](common/provisioning.png)
 
-      ![Blade Aan de slag](./media/google-apps-provisioning-tutorial/get-started.png)
+      ![Blade Aan de slag](./media/g-suite-provisioning-tutorial/get-started.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
@@ -146,11 +139,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 5. Klik onder de sectie **Referenties voor beheerder** op **Autoriseren**. U wordt doorgestuurd naar een dialoogvenster voor Google-autorisatie in een nieuw browservenster.
 
-      ![G Suite autoriseren](./media/google-apps-provisioning-tutorial/authorize-1.png)
+      ![G Suite autoriseren](./media/g-suite-provisioning-tutorial/authorize-1.png)
 
 6. Bevestig dat u Azure AD machtigingen wilt verlenen om wijzigingen aan te brengen in uw G Suite-tenant. Selecteer **Accepteren**.
 
-     ![G Suite-tenant autoriseren](./media/google-apps-provisioning-tutorial/gapps-auth.png)
+     ![G Suite-tenant autoriseren](./media/g-suite-provisioning-tutorial/gapps-auth.png)
 
 7. Klik in de Azure-portal op **Verbinding testen** om te controleren of Azure AD verbinding kan maken met G Suite. Als de verbinding mislukt, moet u controleren of uw G Suite-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw. Probeer daarna opnieuw de stap **Autoriseren**.
 
@@ -276,7 +269,13 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 
 1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
 2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
-3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.
+3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.  
+
+## <a name="change-log"></a>Wijzigingenlogboek
+
+* 17-10-2020: ondersteuning toegevoegd voor aanvullende gebruikers -en groepskenmerken van G Suite.
+* 17-10-2020: bijgewerkte namen van G Suite-doelkenmerken zodat deze overeenkomen met wat [hier](https://developers.google.com/admin-sdk/directory) is gedefinieerd.
+* 17-10-2020: bijgewerkte standaardkenmerktoewijzingen.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

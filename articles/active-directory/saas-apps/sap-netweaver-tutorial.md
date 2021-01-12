@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/10/2020
+ms.date: 12/11/2020
 ms.author: jeedes
-ms.openlocfilehash: 688c496239becad7d1462f41afee9c6f88af9f95
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: a282e1be019c697ad15d86df56ad191043ab4ae9
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676684"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935836"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-netweaver"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met SAP NetWeaver
 
@@ -36,7 +36,7 @@ U hebt het volgende nodig om aan de slag te gaan:
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
-* SAP NetWeaver ondersteunt zowel **SAML** ( **door SP geïnitieerde SSO** ) als **OAuth** . In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen. 
+* SAP NetWeaver ondersteunt zowel **SAML** (**door SP geïnitieerde SSO**) als **OAuth**. In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen. 
 
 > [!NOTE]
 > De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
@@ -49,15 +49,15 @@ U hebt het volgende nodig om aan de slag te gaan:
 Voor het configureren van de integratie van SAP NetWeaver met Azure AD moet u SAP NetWeaver uit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **SAP NetWeaver** .
+1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **SAP NetWeaver**.
 1. Selecteer **SAP NetWeaver** in het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-sso-for-sap-netweaver"></a>Eenmalige aanmelding van Azure AD voor SAP NetWeaver configureren en testen
 
-Configureer en test Azure AD-eenmalige aanmelding met SAP NetWeaver met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in SAP NetWeaver.
+Configureer en test Azure AD-eenmalige aanmelding met SAP NetWeaver met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in SAP NetWeaver.
 
 Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met SAP NetWeaver te configureren en te testen:
 
@@ -77,11 +77,11 @@ Voor het configureren van Azure AD-eenmalige aanmelding met SAP NetWeaver moet u
 
 1. Open een nieuw browservenster en meld u aan als beheerder bij de SAP NetWeaver-site van uw bedrijf
 
-1. Zorg ervoor dat **http** - en **https** -services actief zijn en de juiste poorten zijn toegewezen in T-code **SMICM** .
+1. Zorg ervoor dat **http**- en **https**-services actief zijn en de juiste poorten zijn toegewezen in T-code **SMICM**.
 
 1. Meld u aan bij de bedrijfsclient van het SAP-systeem (T01), waarvoor eenmalige aanmelding is vereist, en activeer HTTP-beveiligingssessie Management.
 
-    a. Ga naar transactiecode **SICF_SESSIONS** . Hier worden alle relevante profielparameters met de huidige waarden weergegeven. Deze zien eruit als hieronder:
+    a. Ga naar transactiecode **SICF_SESSIONS**. Hier worden alle relevante profielparameters met de huidige waarden weergegeven. Deze zien eruit als hieronder:
     ```
     login/create_sso2_ticket = 2
     login/accept_sso2_ticket = 1
@@ -113,31 +113,31 @@ Voor het configureren van Azure AD-eenmalige aanmelding met SAP NetWeaver moet u
 
     ![Transactiecode](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_sapbusinessclient.png)
 
-1. Voer uw gebruikersnaam en wachtwoord in de gebruikersinterface in en klik op **Edit** .
+1. Voer uw gebruikersnaam en wachtwoord in de gebruikersinterface in en klik op **Edit**.
 
     ![gebruikersnaam en wachtwoord](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_userpwd.png)
 
-1. Vervang **Provider Name** T01122 door `http://T01122` en klik op **Save** .
+1. Vervang **Provider Name** T01122 door `http://T01122` en klik op **Save**.
 
     > [!NOTE]
     > Standaard wordt Provider Name in de indeling `<sid><client>` weergegeven, maar in Azure AD wordt verwacht dat de naam in de indeling `<protocol>://<name>` wordt weergegeven, waarbij wordt aangeraden Provider Name als `https://<sid><client>` te handhaven zodat meerdere SAP NetWeaver ABAP-engines in Azure AD kunnen worden geconfigureerd.
 
     ![De verschillende SAP NetWeaver ABAP-engines](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_providername.png)
 
-1. **Metagegevens van de serviceprovider genereren** : als de instellingen **Local Provider** en **Trusted Providers** in de SAML 2.0-gebruikersinterface zijn geconfigureerd, bestaat de volgende stap uit het genereren van het bestand met metagegevens van de serviceprovider (dat alle instellingen, contexten voor verificatie en overige configuraties in SAP bevat). Als dit bestand is gegenereerd, moet het in Azure AD worden geüpload.
+1. **Metagegevens van de serviceprovider genereren**: als de instellingen **Local Provider** en **Trusted Providers** in de SAML 2.0-gebruikersinterface zijn geconfigureerd, bestaat de volgende stap uit het genereren van het bestand met metagegevens van de serviceprovider (dat alle instellingen, contexten voor verificatie en overige configuraties in SAP bevat). Als dit bestand is gegenereerd, moet het in Azure AD worden geüpload.
 
     ![Metagegevens van serviceprovider genereren](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_generatesp.png)
 
-    a. Ga naar het tabblad **Local Provider** .
+    a. Ga naar het tabblad **Local Provider**.
 
-    b. Klik op **Metadata** .
+    b. Klik op **Metadata**.
 
     c. Sla het gegenereerde **XML-bestand met metagegevens** op de computer op en upload het naar de sectie **Basic SAML Configuration** om de waarden **Identifier** en **Reply URL** automatisch in Azure Portal in te vullen.
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in Azure Portal op de integratiepagina van de toepassing **SAP NetWeaver** de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
+1. Zoek in Azure Portal op de integratiepagina van de toepassing **SAP NetWeaver** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
@@ -146,9 +146,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     a. Klik op **Metagegevensbestand uploaden** om het **metagegevensbestand van de serviceprovider** te uploaden dat u eerder hebt verkregen.
 
-    b. Klik op het **mappictogram** om het metagegevensbestand te selecteren en klik op **Uploaden** .
+    b. Klik op het **mappictogram** om het metagegevensbestand te selecteren en klik op **Uploaden**.
 
-    c. Nadat het bestand met metagegevens is geüpload, worden de waarden voor **Identifier** en **Reply URL** automatisch ingevuld in het tekstvak van de sectie **Standaard SAML-configuratie** , zoals hieronder weergegeven:
+    c. Nadat het bestand met metagegevens is geüpload, worden de waarden voor **Identifier** en **Reply URL** automatisch ingevuld in het tekstvak van de sectie **Standaard SAML-configuratie**, zoals hieronder weergegeven:
 
     d. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon: `https://<your company instance of SAP NetWeaver>`
 
@@ -171,11 +171,11 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
     ![image](./media/sapnetweaver-tutorial/nameidattribute1.png)
 
-    b. Selecteer in de lijst **Transformatie****ExtractMailPrefix()** .
+    b. Selecteer in de lijst **Transformatie****ExtractMailPrefix()**.
 
-    c. Selecteer **user.userprincipalname** in de lijst **Parameter 1** .
+    c. Selecteer **user.userprincipalname** in de lijst **Parameter 1**.
 
-    d. Klik op **Opslaan** .
+    d. Klik op **Opslaan**.
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 
@@ -189,25 +189,25 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
     1. Voer in het veld **Naam**`B.Simon` in.  
     1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-    1. Klik op **Create** .
+    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+    1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot SAP NetWeaver.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Typ en selecteer **SAP NetWeaver** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
 1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-sap-netweaver-using-saml"></a>SAP NetWeaver configureren met SAML
 
@@ -229,7 +229,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Eenmalige aanmelding configureren 4](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_aliasname.png)
 
-6. Zorg ervoor dat **Digest Algorithm****SHA-256** is, vereis geen wijzigingen en druk op **Next** .
+6. Zorg ervoor dat **Digest Algorithm****SHA-256** is, vereis geen wijzigingen en druk op **Next**.
 
     ![Eenmalige aanmelding configureren 5](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_identityprovider.png)
 
@@ -245,11 +245,11 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Eenmalige aanmelding configureren 8](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_artifactendpoint.png)
 
-10. Klik bij **Authentication Requirements** op **Finish** .
+10. Klik bij **Authentication Requirements** op **Finish**.
 
     ![Eenmalige aanmelding configureren 9](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_authentication.png)
 
-11. Ga naar het tabblad **Trusted Provider** > **Identity Federation** (vanaf de onderkant van het scherm). Klik op **Bewerken** .
+11. Ga naar het tabblad **Trusted Provider** > **Identity Federation** (vanaf de onderkant van het scherm). Klik op **Bewerken**.
 
     ![Eenmalige aanmelding configureren 10](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_trustedprovider.png)
 
@@ -261,7 +261,11 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Eenmalige aanmelding configureren 12](./media/sapnetweaver-tutorial/tutorial_sapnetweaver_nameid.png)
 
-14. De waarden **user ID Source** en **user id mapping mode** bepalen de koppeling tussen de SAP-gebruiker en de Azure AD-claim.  
+1. Geef de waarde voor **User ID Source** op als **Assertion Attribute**, de waarde voor de **User ID mapping mode** op als **Email** en geef de **Assertion Attribute Name** op als `http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name`.
+
+    ![Eenmalige aanmelding configureren ](./media/sapnetweaver-tutorial/nameid-format.png)
+
+14. De waarden **User ID Source** en **User ID mapping mode** bepalen de koppeling tussen de SAP-gebruiker en de Azure AD-claim.
 
     #### <a name="scenario-sap-user-to-azure-ad-user-mapping"></a>Scenario: Toewijzing van SAP-gebruiker aan Azure AD-gebruiker.
 
@@ -320,7 +324,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 1. SAP-gedocumenteerd proces is beschikbaar op de locatie: [Inschakelen NetWeaver Gateway Service en Aanmaken bereik OAuth 2.0](https://wiki.scn.sap.com/wiki/display/Security/NetWeaver+Gateway+Service+Enabling+and+OAuth+2.0+Scope+Creation)
 
-2. Ga naar SPRO en zoek **Services activeren en onderhouden** .
+2. Ga naar SPRO en zoek **Services activeren en onderhouden**.
 
     ![Services activeren en onderhouden](./media/sapnetweaver-tutorial/oauth01.png)
 
@@ -350,9 +354,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ### <a name="register-the-new-oauth-20-client-id-with-the-creation-wizard"></a>De nieuwe OAuth 2.0-client-id registreren met de wizard voor het maken
 
-1. Om een nieuwe **OAuth 2.0-client** te registreren start u transactie **SOAUTH2** . In de transactie wordt een overzicht weergegeven van de OAuth 2.0-clients die al zijn geregistreerd. Kies **Maken** om de wizard te starten voor de nieuwe OAuth-client met de naam CLIENT1 in dit voorbeeld.
+1. Om een nieuwe **OAuth 2.0-client** te registreren start u transactie **SOAUTH2**. In de transactie wordt een overzicht weergegeven van de OAuth 2.0-clients die al zijn geregistreerd. Kies **Maken** om de wizard te starten voor de nieuwe OAuth-client met de naam CLIENT1 in dit voorbeeld.
 
-2. Ga naar T-Code: **SOAUTH2** en geef de beschrijving op en klik vervolgens op **volgende** .
+2. Ga naar T-Code: **SOAUTH2** en geef de beschrijving op en klik vervolgens op **volgende**.
 
     ![SOAUTH2](./media/sapnetweaver-tutorial/oauth04.png)
 
@@ -372,7 +376,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![scopetoewijzing](./media/sapnetweaver-tutorial/oauth10.png)
 
-5. Klik op **voltooien** .
+5. Klik op **voltooien**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

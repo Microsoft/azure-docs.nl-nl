@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/31/2019
+ms.date: 12/17/2020
 ms.author: jeedes
-ms.openlocfilehash: eda584f2cb531cbf526c43eab00831b218a14f93
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: c29a1b409a2deb3695470f5bbec4865afdbae8e1
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92514415"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913988"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netskope-administrator-console"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Netskope Administrator Console
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u Netskope Administrator Console kunt integreren 
 * In Azure AD bepalen wie toegang heeft tot Netskope Administrator Console.
 * Uw gebruikers zich automatisch laten aanmelden bij Netskope Administrator Console met hun Azure AD-account.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -41,48 +39,50 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Netskope Administrator Console biedt ondersteuning voor door **SP en IDP** geïnitieerde eenmalige aanmelding
 
+> [!NOTE]
+> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
+
+
 ## <a name="adding-netskope-administrator-console-from-the-gallery"></a>Netskope Administrator Console toevoegen vanuit de galerie
 
 Voor het configureren van de integratie van Netskope Administrator Console in Azure AD moet u Netskope Administrator Console vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen uit de galerie** **Netskope Administrator Console** in het zoekvak.
 1. Selecteer **Netskope Administrator Console** in de resultaten en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-netskope-administrator-console"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Netskope Administrator Console
+## <a name="configure-and-test-azure-ad-sso-for-netskope-administrator-console"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Netskope Administrator Console
 
-Configureer en test eenmalige aanmelding van Azure AD bij Netskope Administrator Console met behulp van een testgebruiker met de naam **B.Simon** . Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Netskope Administrator Console.
+Configureer en test eenmalige aanmelding van Azure AD bij Netskope Administrator Console met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Netskope Administrator Console.
 
-Als u eenmalige aanmelding van Azure AD bij Netskope Administrator Console wilt configureren en testen, moet u de volgende stappen voltooien:
+Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren en te testen voor Netskope Administrator Console:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
-    * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
-    * **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
 1. **[Eenmalige aanmelding voor Netskope Administrator Console configureren](#configure-netskope-administrator-console-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
-    * **[Een testgebruiker maken in Netskope Administrator Console](#create-netskope-administrator-console-test-user)** : voor een equivalent van B.Simon in Netskope Administrator Console dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
+    1. **[Een testgebruiker maken in Netskope Administrator Console](#create-netskope-administrator-console-test-user)** : voor een equivalent van B.Simon in Netskope Administrator Console dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
 1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Netskope Administrator Console** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Zoek in Azure Portal, op de integratiepagina van de toepassing **Netskope Administrator Console**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. Voer in de sectie **Standaard SAML-configuratie** de waarden voor de volgende velden in, als u de toepassing in de met **IDP** geïnitieerde modus wilt configureren:
 
-    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `<OrgKey>`
-
-    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://<tenant_host_name>/saml/acs`
+    In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon: `https://<tenant_host_name>/saml/acs`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Deze waarden worden verderop in de zelfstudie uitgelegd.
+    > De waarde is niet echt. Werk de waarde bij met de werkelijke antwoord-URL. De waarde wordt later in de zelfstudie uitgelegd.
 
 1. Klik op **Extra URL's instellen** en voer de volgende stap uit als u de toepassing in de door **SP** geïnitieerde modus wilt configureren:
 
@@ -102,7 +102,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | admin-role | user.assignedroles |
 
     > [!NOTE]
-    > Klik [hier](../develop/active-directory-enterprise-app-role-management.md) om te leren hoe u rollen maakt in Azure AD.
+    > Klik [hier](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) om te leren hoe u rollen maakt in Azure AD.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
@@ -116,45 +116,39 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Netskope Administrator Console.
 
-1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Netskope Administrator Console** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u de rollen hebt ingesteld zoals hierboven beschreven, kunt u deze selecteren in de vervolgkeuzelijst **Selecteer een rol**.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-netskope-administrator-console-sso"></a>Eenmalige aanmelding configureren in Netskope Administrator Console
 
 1. Open een nieuw tabblad in uw browser en meld u als beheerder aan bij de bedrijfssite van Netskope Administrator Console.
 
-1. Klik in het linkernavigatievenster op het tabblad **Settings** .
+1. Klik in het linkernavigatievenster op het tabblad **Settings**.
 
     ![Schermopname met Settings (Instellingen) geselecteerd in het navigatievenster.](./media/netskope-cloud-security-tutorial/config-settings.png)
 
-1. Klik op het tabblad **Administration** .
+1. Klik op het tabblad **Administration**.
 
     ![Schermopname met Administration (Beheer) geselecteerd vanuit Settings (Instellingen).](./media/netskope-cloud-security-tutorial/config-administration.png)
 
-1. Klik op het tabblad **SSO** .
+1. Klik op het tabblad **SSO**.
 
     ![Schermopname met SSO (Eenmalige aanmelding) geselecteerd in Administration (Beheer).](./media/netskope-cloud-security-tutorial/config-sso.png)
 
@@ -166,7 +160,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     b. Kopieer de waarde van **Service Provider Entity ID** en plak deze in het tekstvak **Id** in de sectie **Standaard SAML-configuratie** in Azure Portal.
 
-1. Klik op **EDIT SETTINGS** onder de sectie **SSO/SLO Settings** .
+1. Klik op **EDIT SETTINGS** onder de sectie **SSO/SLO Settings**.
 
     ![Schermopname van SSO/SLO Settings waar u EDIT SETTINGS kunt selecteren.](./media/netskope-cloud-security-tutorial/config-editsettings.png)
 
@@ -174,56 +168,60 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
     ![Schermopname van het dialoogvenster Settings waar u de beschreven waarden kunt invoeren.](./media/netskope-cloud-security-tutorial/configuration.png)
 
-    a. Selecteer **Enable SSO** .
+    a. Selecteer **Enable SSO**.
 
     b. Plak in het tekstvak **IDP URL** de waarde van de **aanmeldings-URL** die u uit Azure Portal hebt gekopieerd.
 
     c. Plak in het tekstvak **IDP ENTITY ID** de waarde van de **Azure AD-id** die u uit Azure Portal hebt gekopieerd.
 
-    d. Open in Kladblok het met Base64 gecodeerde certificaat dat u hebt gedownload, kopieer de inhoud ervan naar het klembord en plak deze vervolgens in het tekstvak **IDP CERTIFICATE** .
+    d. Open in Kladblok het met Base64 gecodeerde certificaat dat u hebt gedownload, kopieer de inhoud ervan naar het klembord en plak deze vervolgens in het tekstvak **IDP CERTIFICATE**.
 
-    e. Selecteer **Enable SSO** .
+    e. Selecteer **Enable SSO**.
 
-    f. Plak in het tekstvak **IDP SLO URL** de waarde van **Afmeldings-URL** , die u uit Azure Portal hebt gekopieerd
+    f. Plak in het tekstvak **IDP SLO URL** de waarde van **Afmeldings-URL**, die u uit Azure Portal hebt gekopieerd
 
-    g. Klik op **SUBMIT** .
+    g. Klik op **SUBMIT**.
 
 ### <a name="create-netskope-administrator-console-test-user"></a>Testgebruiker maken voor Netskope Administrator Console
 
 1. Open een nieuw tabblad in uw browser en meld u als beheerder aan bij de bedrijfssite van Netskope Administrator Console.
 
-1. Klik in het linkernavigatievenster op het tabblad **Settings** .
+1. Klik in het linkernavigatievenster op het tabblad **Settings**.
 
     ![Schermopname met Settings geselecteerd.](./media/netskope-cloud-security-tutorial/config-settings.png)
 
-1. Klik op het tabblad **Active Platform** .
+1. Klik op het tabblad **Active Platform**.
 
-    ![Schermopname met Active Platform (Actief platform) geselecteerd vanuit Settings.](./media/netskope-cloud-security-tutorial/user1.png)
+    ![Schermopname met de optie Actief platform geselecteerd in Instellingen.](./media/netskope-cloud-security-tutorial/user1.png)
 
-1. Klik op het tabblad **Users** .
+1. Klik op het tabblad **Users**.
 
-    ![Schermopname met Users (Gebruikers) geselecteerd vanuit Active Platform.](./media/netskope-cloud-security-tutorial/add-user.png)
+    ![Schermopname met Gebruikers geselecteerd in Actief platform.](./media/netskope-cloud-security-tutorial/add-user.png)
 
-1. Klik op **ADD USERS** .
+1. Klik op **ADD USERS**.
 
-    ![Schermopname van het dialoogvenster Users, waar u ADD USERS kunt selecteren.](./media/netskope-cloud-security-tutorial/user-add.png)
+    ![Schermopname met het dialoogvenster Gebruikers waarin u GEBRUIKERS TOEVOEGEN kunt selecteren.](./media/netskope-cloud-security-tutorial/user-add.png)
 
-1. Voer het e-mailadres van de gebruiker in die u wilt toevoegen en klik op **ADD** .
+1. Voer het e-mailadres van de gebruiker in die u wilt toevoegen en klik op **ADD**.
 
-    ![Schermopname van Add Users (Gebruikers toevoegen) waarin u een lijst met gebruikers kunt invoeren.](./media/netskope-cloud-security-tutorial/add-user-popup.png)
+    ![Schermopname van Gebruikers toevoegen waarin u een lijst met gebruikers kunt invoeren.](./media/netskope-cloud-security-tutorial/add-user-popup.png)
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel Netskope Administrator Console klikt, wordt u automatisch aangemeld bij de instantie van Netskope Administrator Console waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+#### <a name="sp-initiated"></a>Met SP geïnitieerd:
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Netskope Administrator Console, waar u de aanmeldingsstroom kunt initiëren.  
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* Ga rechtstreeks naar de aanmeldings-URL van Netskope Administrator Console en initieer hier de aanmeldingsstroom.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+#### <a name="idp-initiated"></a>Met IDP geïnitieerd:
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt automatisch aangemeld bij de instantie van Netskope Administrator Console waarvoor u eenmalige aanmelding hebt ingesteld 
 
-- [Netskope Administrator Console uitproberen met Azure AD](https://aad.portal.azure.com/)
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in 'Mijn apps' op de tegel 'Netskope Administrator Console' klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij het Andromeda-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Zodra u Netskope Administrator Console hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

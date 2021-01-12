@@ -10,18 +10,18 @@ ms.author: justinha
 author: justinha
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 32228e90e3cfc064cd5be9cd0655f321ab3e2809
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: f2e8bf2ccbf7a53563013c7ba653a6f6e8905337
+ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741147"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97881307"
 ---
 # <a name="tutorial-secure-user-sign-in-events-with-azure-ad-multi-factor-authentication"></a>Zelfstudie: Aanmeldingen van gebruikers beveiligen met Azure AD Multi-Factor Authentication
 
 Multi-Factor Authentication (MFA) is een proces waarbij een gebruiker tijdens een aanmelding wordt gevraagd naar aanvullende vormen van identificatie. U kunt dit doen door een code in te voeren op de mobiele telefoon of door een vingerafdruk te scannen. Wanneer u een tweede vorm van verificatie vereist, neemt de beveiliging toe omdat deze aanvullende factor niet eenvoudig door een aanvaller kan worden verkregen of gedupliceerd.
 
-Het beleid van Azure AD Multi-Factor Authentication en van Conditional Access bieden de flexibiliteit om MFA voor gebruikers in te schakelen tijdens specifieke aanmeldingen.
+Het beleid van Azure AD Multi-Factor Authentication en van Conditional Access bieden de flexibiliteit om MFA voor gebruikers in te schakelen tijdens specifieke aanmeldingen. Hier ziet u [video over het configureren en afdwingen van meervoudige verificatie in uw tenant](https://www.youtube.com/watch?v=qNndxl7gqVM) (**aanbevolen**)
 
 > [!IMPORTANT]
 > Deze zelfstudie laat zien hoe een beheerder Azure AD Multi-Factor Authentication kan inschakelen.
@@ -37,7 +37,7 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om deze zelfstudie te voltooien, hebt u de volgende resources en machtigingen nodig:
+Voor het voltooien van deze zelfstudie hebt u de volgende resources en machtigingen nodig:
 
 * Een werkende Azure AD-tenant waarop minimaal een Azure AD Premium P1- of -proeflicentie is ingeschakeld.
     * [Maak er gratis een](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) indien nodig.

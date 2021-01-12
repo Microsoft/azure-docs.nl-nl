@@ -11,16 +11,16 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 4886cf6c24e7e96676b9ca5e74b431685cd5a8bb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4f881dcc0d26589c4029246019119fa0555dcd5d
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452861"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117772"
 ---
 # <a name="load-data-from-azure-data-lake-storage-into-dedicated-sql-pools-in-azure-synapse-analytics"></a>Gegevens van Azure Data Lake Storage laden in toegewezen SQL-groepen in azure Synapse Analytics
 
-In deze hand leiding wordt beschreven hoe u de [instructie Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) kunt gebruiken om gegevens uit Azure data Lake Storage te laden. Voor snelle voor beelden over het gebruik van de instructie COPY voor alle verificatie methoden gaat u naar de volgende documentatie: [gegevens veilig laden met behulp van toegewezen SQL-groepen](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples).
+In deze hand leiding wordt beschreven hoe u de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) kunt gebruiken om gegevens uit Azure data Lake Storage te laden. Voor snelle voor beelden over het gebruik van de instructie COPY voor alle verificatie methoden gaat u naar de volgende documentatie: [gegevens veilig laden met behulp van toegewezen SQL-groepen](./quickstart-bulk-load-copy-tsql-examples.md).
 
 > [!NOTE]  
 > Als u feedback wilt geven of problemen wilt melden voor de instructie COPY, stuurt u een e-mail naar de volgende distributie lijst: sqldwcopypreview@service.microsoft.com .
@@ -65,7 +65,7 @@ WITH
 
 ## <a name="create-the-copy-statement"></a>De instructie COPY maken
 
-Maak verbinding met uw SQL-toegewezen pool en voer de instructie COPY uit. Voor een volledige lijst met voor beelden gaat u naar de volgende documentatie: [gegevens veilig laden met behulp van exclusieve SQL-groepen](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples).
+Maak verbinding met uw SQL-toegewezen pool en voer de instructie COPY uit. Voor een volledige lijst met voor beelden gaat u naar de volgende documentatie: [gegevens veilig laden met behulp van exclusieve SQL-groepen](./quickstart-bulk-load-copy-tsql-examples.md).
 
 ```sql
 -- B: Create and execute the COPY statement
@@ -133,6 +133,6 @@ Het laden van gegevens is de eerste stap bij het ontwikkelen van een Data Wareho
 > [Meer informatie over het ontwikkelen van tabellen voor gegevens opslag](sql-data-warehouse-tables-overview.md)
 
 Raadpleeg de volgende documentatie voor meer informatie over het laden van voor beelden en verwijzingen:
-- [Naslag documentatie over het kopiëren van instructies](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax)
-- [Voor beelden kopiëren voor elke authenticatie methode](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql-examples)
-- [Quick start voor één tabel kopiëren](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-bulk-load-copy-tsql)
+- [Naslag documentatie over het kopiëren van instructies](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax)
+- [Voor beelden kopiëren voor elke authenticatie methode](./quickstart-bulk-load-copy-tsql-examples.md)
+- [Quick start voor één tabel kopiëren](./quickstart-bulk-load-copy-tsql.md)

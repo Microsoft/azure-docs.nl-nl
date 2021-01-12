@@ -9,12 +9,12 @@ ms.subservice: machine-learning
 ms.date: 11/13/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: ca55186a53b228aa97cc82d33a09aa3ffe455eee
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 0485f697b9360b0f2dfe94fdf07629978b5127c1
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092003"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116922"
 ---
 # <a name="machine-learning-with-apache-spark"></a>Machine learning met Apache Spark
 
@@ -44,7 +44,7 @@ Raadpleeg het artikel over het [trainen van modellen in azure Synapse Analytics]
 Met de mogelijkheden van de gedistribueerde reken kracht van Spark in het geheugen is het een goede keuze voor de iteratieve algoritmen die worden gebruikt in machine learning-en grafiek berekeningen. ```spark.ml``` biedt een uniforme set Api's op hoog niveau waarmee gebruikers machine learning pijp lijnen kunnen maken en afstemmen. ```spark.ml```Ga naar de [Apache Spark ml-programmeer gids](https://spark.apache.org/docs/1.2.2/ml-guide.html)voor meer informatie over.
 
 ### <a name="azure-machine-learning-automated-ml"></a>Azure Machine Learning automatische ML
-[Azure machine learning automaten](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) (geautomatiseerd machine learning) helpt u bij het automatiseren van het proces voor het ontwikkelen van machine learning modellen. Zo kunnen gegevens wetenschappers, analisten en ontwikkel aars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit, terwijl de kwaliteit van het model goed wordt. De onderdelen voor het uitvoeren van de Azure Machine Learning Automated ML SDK worden rechtstreeks in de Synapse-runtime gebouwd.
+[Azure machine learning automaten](../../machine-learning/concept-automated-ml.md) (geautomatiseerd machine learning) helpt u bij het automatiseren van het proces voor het ontwikkelen van machine learning modellen. Zo kunnen gegevens wetenschappers, analisten en ontwikkel aars ML-modellen bouwen met een hoge schaal, efficiëntie en productiviteit, terwijl de kwaliteit van het model goed wordt. De onderdelen voor het uitvoeren van de Azure Machine Learning Automated ML SDK worden rechtstreeks in de Synapse-runtime gebouwd.
 
 ### <a name="open-source-libraries"></a>Open-source-bibliotheken
 Elke Apache Spark pool in azure Synapse Analytics wordt geleverd met een set vooraf geladen en populaire machine learning bibliotheken.  Enkele van de relevante machine learning bibliotheken die standaard zijn opgenomen, zijn:
@@ -56,13 +56,13 @@ Elke Apache Spark pool in azure Synapse Analytics wordt geleverd met een set voo
 - [PyTorch](https://pytorch.org/)  &  [Tensor flow](https://www.tensorflow.org/) zijn krachtige python-bibliotheken met diepe lessen. Binnen een Apache Spark pool in azure Synapse Analytics kunt u deze bibliotheken gebruiken om modellen voor één machine te bouwen door het aantal uitvoerende machines in uw pool in te stellen op nul. Hoewel Apache Spark niet functioneel is in deze configuratie, is het een eenvoudige en rendabele manier om modellen voor één machine te maken.
 
 ## <a name="track-model-development"></a>Ontwikkeling van traceringsmodellen
-[MLFlow](https://www.mlflow.org/) is een open-source bibliotheek voor het beheren van de levens cyclus van uw machine learning experimenten. MLFlow tracking is een onderdeel van MLflow dat de metrische gegevens van uw training en model artefacten registreert en registreert. Ga naar deze zelf studie over het [gebruik van MLFlow](https://docs.microsoft.com/azure/machine-learning/how-to-use-mlflow)voor meer informatie over hoe u MLFlow tracking kunt gebruiken via Azure Synapse Analytics en Azure machine learning.
+[MLFlow](https://www.mlflow.org/) is een open-source bibliotheek voor het beheren van de levens cyclus van uw machine learning experimenten. MLFlow tracking is een onderdeel van MLflow dat de metrische gegevens van uw training en model artefacten registreert en registreert. Ga naar deze zelf studie over het [gebruik van MLFlow](../../machine-learning/how-to-use-mlflow.md)voor meer informatie over hoe u MLFlow tracking kunt gebruiken via Azure Synapse Analytics en Azure machine learning.
 
 ## <a name="model-scoring"></a>Model Score
 Model scores of detraining is de fase waarin een model wordt gebruikt voor het maken van voor spellingen. Voor een model Score met SparkML of MLLib kunt u gebruikmaken van de systeem eigen Spark-methoden om het dezicht rechtstreeks op een Spark-data frame uit te voeren. Voor andere open source-bibliotheken en-model typen kunt u ook een Spark UDF maken om de deinterferentie van grote gegevens sets te verruimen. Voor kleinere gegevens sets kunt u ook gebruikmaken van de methoden van het systeem eigen model voor invallen van de bibliotheek.
 
 ## <a name="register-and-serve-models"></a>Modellen registreren en gebruiken
-Als u een model registreert, kunt u meta gegevens over modellen in uw werk ruimte opslaan, versie en bijhouden. Nadat u klaar bent met het trainen van uw model, kunt u uw model registreren bij het [REGI ster van het Azure machine learning model](https://docs.microsoft.com/azure/machine-learning/concept-model-management-and-deployment#register-package-and-deploy-models-from-anywhere). Na registratie kunnen ONNX-modellen ook worden gebruikt voor [het verrijken van de gegevens](../machine-learning/tutorial-sql-pool-model-scoring-wizard.md) die zijn opgeslagen in toegewezen SQL-groepen.
+Als u een model registreert, kunt u meta gegevens over modellen in uw werk ruimte opslaan, versie en bijhouden. Nadat u klaar bent met het trainen van uw model, kunt u uw model registreren bij het [REGI ster van het Azure machine learning model](../../machine-learning/concept-model-management-and-deployment.md#register-package-and-deploy-models-from-anywhere). Na registratie kunnen ONNX-modellen ook worden gebruikt voor [het verrijken van de gegevens](../machine-learning/tutorial-sql-pool-model-scoring-wizard.md) die zijn opgeslagen in toegewezen SQL-groepen.
 
 ## <a name="next-steps"></a>Volgende stappen
 Bekijk de volgende zelf studies om aan de slag te gaan met machine learning in azure Synapse Analytics:
@@ -71,4 +71,3 @@ Bekijk de volgende zelf studies om aan de slag te gaan met machine learning in a
 - [Een machine learning model trainen met automatische MILLILITERs](../spark/apache-spark-azure-machine-learning-tutorial.md)
 
 - [Een machine learning model trainen met Apache Spark MLlib](../spark/apache-spark-machine-learning-mllib-notebook.md)
-  

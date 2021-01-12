@@ -4,12 +4,12 @@ ms.service: virtual-machines
 ms.topic: include
 ms.date: 02/10/2020
 ms.author: cynthn
-ms.openlocfilehash: 45c959bc3cb71a965f254867798ae32d86ba1e70
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: cd3ff3fce80e66d7cd61636b4416cb2fc28f5e77
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97612617"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97956586"
 ---
 | Resource | Limiet |
 | --- | --- |
@@ -19,6 +19,7 @@ ms.locfileid: "97612617"
 | VM's per reeks, bijvoorbeeld Dv2 en F, cores per [abonnement](https://azure.microsoft.com/pricing/) |20<sup>1</sup> per regio. Neem contact op met de ondersteuning om de limiet te verhogen. |
 | [Beschikbaarheidssets](../articles/virtual-machines/manage-availability.md#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy) per abonnement |2500 per regio. |
 | Beschikbaarheidsset per virtuele machine | 200 |
+| [Nabijheidsplaatsingsgroep ](https://docs.microsoft.com/azure/virtual-machines/windows/proximity-placement-groups-portal) per [resourcegroup](../articles/azure-resource-manager/management/overview.md#resource-groups) | 800 | 
 | Certificaten per beschikbaarheidsset | 199<sup>2</sup> |
 | Certificaten per abonnement |Onbeperkt<sup>3</sup> |
 

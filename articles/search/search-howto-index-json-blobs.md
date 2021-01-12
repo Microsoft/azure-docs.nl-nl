@@ -9,12 +9,12 @@ ms.devlang: rest-api
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 09/25/2020
-ms.openlocfilehash: a3c44d667b6baaf16e109dfb88c22c16a1ea2ce1
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 1fc6c7086917f2bcd6e4991d2dac37ea24cbfa83
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697200"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116378"
 ---
 # <a name="how-to-index-json-blobs-using-a-blob-indexer-in-azure-cognitive-search"></a>JSON-blobs indexeren met behulp van een BLOB-Indexeer functie in azure Cognitive Search
 
@@ -108,7 +108,7 @@ U kunt de REST API gebruiken voor het indexeren van JSON-blobs, het volgen van e
 
 Aan het einde van deze sectie kunt u de code van de [rest-voorbeeld](#rest-example) weergave bekijken, waarin wordt uitgelegd hoe u alle drie de objecten maakt. Deze sectie bevat ook informatie over [JSON-parserings modi](#parsing-modes), [één BLOB](#parsing-single-blobs), [JSON-matrices](#parsing-arrays)en [geneste matrices](#nested-json-arrays).
 
-Voor op code gebaseerde JSON-indexering gebruikt u [postman of Visual Studio code](search-get-started-rest.md) en de rest API om deze objecten te maken:
+Voor op code gebaseerde JSON-indexering gebruikt u [postman](search-get-started-rest.md) of [Visual Studio code](search-get-started-vs-code.md) en de rest API om deze objecten te maken:
 
 + [TabIndex](/rest/api/searchservice/create-index)
 + [gegevens bron](/rest/api/searchservice/create-data-source)
@@ -455,7 +455,7 @@ U kunt ook verwijzen naar afzonderlijke matrix elementen met behulp van een inde
 ## <a name="help-us-make-azure-cognitive-search-better"></a>Help ons Azure Cognitive Search beter te maken
 Als u een functie verzoek of ideeën voor verbeteringen hebt, geeft u uw invoer op [UserVoice](https://feedback.azure.com/forums/263029-azure-search/)op. Als u hulp nodig hebt bij het gebruik van de bestaande functie, plaatst u uw vraag op [stack overflow](https://stackoverflow.microsoft.com/questions/tagged/18870).
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 + [Indexeerfuncties in Azure Cognitive Search](search-indexer-overview.md)
 + [Azure Blob Storage indexeren met Azure Cognitive Search](search-howto-index-json-blobs.md)

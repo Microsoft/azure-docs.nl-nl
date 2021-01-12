@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/03/2020
 ms.author: jeedes
-ms.openlocfilehash: bbea6a0aa31034cd1c04145fb50b72432c9f8520
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 9e5d12bcea1bd7a587568c30b49c8c4ee95f8362
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92319016"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97937379"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-akamai"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Akamai
 
@@ -53,7 +53,7 @@ Samen bieden Microsoft en Akamai EAA de flexibiliteit om aan uw bedrijfsvereiste
 
 #### <a name="integration-scenario-1"></a>Integratiescenario 1
 
-Akamai EAA is geconfigureerd als één toepassing in Azure AD. De beheerder kan het CA-beleid voor de toepassing configureren en wanneer aan de voorwaarden wordt voldaan, kunnen gebruikers toegang krijgen tot de Akamai EAA-portal.
+Akamai EAA is geconfigureerd als één toepassing in Azure AD. De beheerder kan het beleid voor voorwaardelijke toegang voor de toepassing configureren en wanneer aan de voorwaarden wordt voldaan, kunnen gebruikers toegang krijgen tot de Akamai EAA-portal.
 
 **Voordelen**:
 
@@ -63,13 +63,13 @@ Akamai EAA is geconfigureerd als één toepassing in Azure AD. De beheerder kan 
 
 * Gebruikers krijgen twee toepassingsportals
 
-* Eén gemeenschappelijke CA-beleidsdekking voor alle toepassingen.
+* Eén gemeenschappelijke dekking voor beleid voor voorwaardelijke toegang voor alle toepassingen.
 
 ![Integratiescenario 1](./media/header-akamai-tutorial/scenario1.png)
 
 #### <a name="integration-scenario-2"></a>Integratiescenario 2
 
-De Akamai EAA-toepassing wordt afzonderlijk ingesteld in de Azure AD-portal. De beheerder kan afzonderlijke instanties van het CA-beleid configureren voor de toepassing(en) en zodra aan de voorwaarden wordt voldaan, kunnen gebruikers rechtstreeks worden omgeleid naar de specifieke toepassing.
+De Akamai EAA-toepassing wordt afzonderlijk ingesteld in de Azure AD-portal. De beheerder kan afzonderlijke instanties van het beleid voor voorwaardelijke toegang configureren voor de toepassing(en) en zodra aan de voorwaarden wordt voldaan, kunnen gebruikers rechtstreeks worden omgeleid naar de specifieke toepassing.
 
 **Voordelen**:
 

@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 07/15/2020
-ms.openlocfilehash: aa7c06c3bad59bad11fa288631042cca86109706
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 3d5663177bb087e936a49dd7289659b684d85860
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701130"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116191"
 ---
 # <a name="create-a-basic-search-index-in-azure-cognitive-search"></a>Een eenvoudige zoek index maken in azure Cognitive Search
 
@@ -70,7 +70,7 @@ Het aankomen van een laatste index ontwerp is een iteratief proces. Het is gebru
 Plan tijdens de ontwikkeling regel matig opnieuw samen stellen. Omdat fysieke structuren in de service zijn gemaakt, is het [verwijderen en opnieuw maken van indexen](search-howto-reindex.md) nood zakelijk voor de meeste wijzigingen in een bestaande veld definitie. U kunt ook met een subset van uw gegevens werken om het opnieuw opbouwen sneller te laten verlopen. 
 
 > [!Tip]
-> Code in plaats van een portal-benadering wordt aanbevolen voor het samen werken aan index ontwerp en het importeren van gegevens. Als alternatief kunt u hulpprogram ma's zoals [postman en Visual Studio code](search-get-started-rest.md) nuttig vinden bij het testen van de test omgeving wanneer ontwikkel projecten nog steeds in vroege fasen zijn. U kunt incrementele wijzigingen aanbrengen in een index definitie in een aanvraag tekst en vervolgens de aanvraag verzenden naar uw service om een index opnieuw te maken met behulp van een bijgewerkt schema.
+> Code in plaats van een portal-benadering wordt aanbevolen voor het samen werken aan index ontwerp en het importeren van gegevens. Als alternatief kunt u hulpprogram ma's zoals [postman](search-get-started-rest.md) of [Visual Studio code](search-get-started-vs-code.md) nuttig vinden bij het testen van de test omgeving wanneer ontwikkel projecten nog steeds in vroege fasen zijn. U kunt incrementele wijzigingen aanbrengen in een index definitie in een aanvraag tekst en vervolgens de aanvraag verzenden naar uw service om een index opnieuw te maken met behulp van een bijgewerkt schema.
 
 ## <a name="index-schema"></a>Index schema
 

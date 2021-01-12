@@ -11,12 +11,12 @@ ms.date: 11/22/2019
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 271922a4181f4be3ed6900b3f81cefaf5ed21191
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 5b33f10a0cb969d5fc0118eee0be371929f918a9
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060279"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117636"
 ---
 # <a name="data-warehouse-units-dwus-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Data warehouse units (Dwu's) voor toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics
 
@@ -76,7 +76,7 @@ Elke SQL-server (bijvoorbeeld myserver.database.windows.net) heeft een [DTU-quot
 
 ## <a name="capacity-limits"></a>Capaciteitslimieten
 
-Elke SQL-server (bijvoorbeeld myserver.database.windows.net) heeft een [DTU-quotum (Database Transaction Unit)](../../sql-database/sql-database-what-is-a-dtu.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) dat een specifiek aantal DWU's toestaat. Zie de [Capaciteitslimieten voor workloadbeheer](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#workload-management) voor meer informatie.
+Elke SQL-server (bijvoorbeeld myserver.database.windows.net) heeft een [DTU-quotum (Database Transaction Unit)](../../azure-sql/database/service-tiers-dtu.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) dat een specifiek aantal DWU's toestaat. Zie de [Capaciteitslimieten voor workloadbeheer](../sql-data-warehouse/sql-data-warehouse-service-capacity-limits.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json#workload-management) voor meer informatie.
 
 ## <a name="how-many-data-warehouse-units-do-i-need"></a>Hoeveel DWU's heb ik nodig?
 

@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: identity
 ms.date: 09/30/2020
 ms.author: rolyon
-ms.openlocfilehash: 565b84603a14452dd2ec49f8cf61da128503bc03
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: e746c7d09bb568d457ab1037b56c7c2973b29ad7
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964249"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117245"
 ---
 # <a name="steps-to-add-a-role-assignment"></a>Stappen om een roltoewijzing toe te voegen
 
@@ -31,7 +31,7 @@ U moet eerst bepalen wie toegang moet hebben. U kunt een rol toewijzen aan een g
 - Service-principal: een beveiligings-id die wordt gebruikt door toepassingen of services om toegang tot specifieke Azure-resources te krijgen. U kunt het zien als een *gebruikersidentiteit* (gebruikersnaam en wachtwoord of certificaat) voor een toepassing.
 - Beheerde identiteit - een identiteit in Azure Active Directory die automatisch wordt beheerd door Azure. [Beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md) worden doorgaans gebruikt bij het ontwikkelen van cloudtoepassingen voor het beheren van de referenties voor verificatie bij Azure-services.
 
-## <a name="step-2-find-the-appropriate-role"></a>Stap 2: de juiste rol zoeken
+## <a name="step-2-select-the-appropriate-role"></a>Stap 2: Selecteer de juiste rol
 
 Machtigingen worden samen in een *roldefinitie* gegroepeerd. Het wordt meestal gewoon een *rol* genoemd. U kunt kiezen uit een lijst met verschillende ingebouwde rollen. Als de ingebouwde rollen niet voldoen aan de specifieke behoeften van uw organisatie, kunt u uw eigen aangepaste rollen maken.
 

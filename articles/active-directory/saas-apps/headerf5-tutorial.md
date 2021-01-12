@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: jeedes
-ms.openlocfilehash: 8706ac588f2cc868805de7126140a1edd4b8c735
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 6bf21205c028eaff08eef91757424f8b52764ada
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92445508"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97936138"
 ---
 # <a name="tutorial-configure-single-sign-on-sso-between-azure-active-directory-and-f5"></a>Zelfstudie: Eenmalige aanmelding (SSO) configureren tussen Azure Active Directory en F5
 
@@ -168,9 +168,9 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
    1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
@@ -195,7 +195,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 1. Klik op **Voorwaardelijke toegang**.
 1. Klik op **Nieuw beleid**.
-1. U kunt uw F5-app nu zien als een resource voor CA-beleid en voorwaardelijke toegang toepassen, waaronder meervoudige verificatie, toegangsbeheer op basis van apparaten of beleid voor identiteitsbeveiliging.
+1. U kunt uw F5-app nu zien als een resource voor beleid voor voorwaardelijke toegang en voorwaardelijke toegang toepassen, waaronder meervoudige verificatie, toegangsbeheer op basis van apparaten of beleid voor identiteitsbeveiliging.
 
 ## <a name="configure-f5-sso"></a>Eenmalige aanmelding bij F5 configureren
 
@@ -293,7 +293,7 @@ Gebruik deze sectie als u de begeleide configuratie niet kunt gebruiken of als u
  
     ![Schermopname van de pagina Application Services met Template Selection.](./media/headerf5-tutorial/configure18.png)
 
-1. We gaan in dit geval onze HeaderApp2 extern publiceren als HTTPS, **hoe moet het BIG-IP-systeem SSL-verkeer afhandelen** ? We geven **Terminate SSL from Client, Plaintext to servers (SSL Offload)** op. Geef uw certificaat en sleutel op onder **Which SSL certificate do you want to use?** en **Which SSL private key do you want to use?** . Geef het IP-adres van de virtuele server op onder **What IP Address do you want to use for the Virtual Server?** . 
+1. We gaan in dit geval onze HeaderApp2 extern publiceren als HTTPS, **hoe moet het BIG-IP-systeem SSL-verkeer afhandelen**? We geven **Terminate SSL from Client, Plaintext to servers (SSL Offload)** op. Geef uw certificaat en sleutel op onder **Which SSL certificate do you want to use?** en **Which SSL private key do you want to use?** . Geef het IP-adres van de virtuele server op onder **What IP Address do you want to use for the Virtual Server?** . 
 
     * **Andere details opgeven**
 
@@ -337,7 +337,7 @@ Gebruik deze sectie als u de begeleide configuratie niet kunt gebruiken of als u
 
 ### <a name="create-idp-connector"></a>IdP-connector maken
 
-1. Klik op de knop **Bind/Unbind IdP Connectors** , selecteer **Create New IdP Connector** en maak een keuze bij de optie **Metadata**. Voer vervolgens de volgende stappen uit:
+1. Klik op de knop **Bind/Unbind IdP Connectors**, selecteer **Create New IdP Connector** en maak een keuze bij de optie **Metadata**. Voer vervolgens de volgende stappen uit:
  
     ![Schermopname van het dialoogvenster Edit SAML I d Ps that use this S P met Create New I d P Connector geselecteerd.](./media/headerf5-tutorial/configure29.png)
 
@@ -351,7 +351,7 @@ Gebruik deze sectie als u de begeleide configuratie niet kunt gebruiken of als u
 
     d. Configureer F5BIG-IP om alle aanvragen naar Azure AD te verzenden.
 
-    e. Klik op **Add New Row** , kies **AzureIDP** (zoals gemaakt in de vorige stappen) 
+    e. Klik op **Add New Row**, kies **AzureIDP** (zoals gemaakt in de vorige stappen) 
 
     f. **Matching Source   =  %{session.server.landinguri}** 
 

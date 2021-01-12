@@ -11,12 +11,12 @@ ms.date: 2/19/2020
 ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: e3daf89b80daf47049150b05ca392eede360bd3e
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: d778844fee8cad9359532ffa23e177bf7b13c4b8
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673413"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117687"
 ---
 # <a name="capacity-limits-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Capaciteits limieten voor exclusieve SQL-groep in azure Synapse Analytics
 
@@ -43,7 +43,7 @@ De maximum waarden die zijn toegestaan voor verschillende onderdelen van een toe
 | Tabel |Tabellen per data base | 100.000 |
 | Tabel |Kolommen per tabel |1024 kolommen |
 | Tabel |Bytes per kolom |Afhankelijk van het [gegevens type](sql-data-warehouse-tables-data-types.md)van de kolom. De limiet is 8000 voor char-gegevens typen, 4000 voor nvarchar of 2 GB voor de maximale gegevens typen. |
-| Tabel |Bytes per rij, gedefinieerde grootte |8060 bytes<br/><br/>Het aantal bytes per rij wordt op dezelfde manier berekend als voor SQL Server met pagina compressie. Net als bij SQL Server wordt opslag voor de rij-overloop ondersteund, waardoor kolommen met een **variabele lengte** buiten rijen kunnen worden geplaatst. Wanneer variabele length-rijen uit de rij worden gepusht, wordt alleen de basis van 24 bytes in de hoofd record opgeslagen. Zie overloop gegevens van meer [dan 8 KB](https://msdn.microsoft.com/library/ms186981.aspx)voor meer informatie. |
+| Tabel |Bytes per rij, gedefinieerde grootte |8060 bytes<br/><br/>Het aantal bytes per rij wordt op dezelfde manier berekend als voor SQL Server met pagina compressie. Net als bij SQL Server wordt opslag voor de rij-overloop ondersteund, waardoor kolommen met een **variabele lengte** buiten rijen kunnen worden geplaatst. Wanneer variabele length-rijen uit de rij worden gepusht, wordt alleen de basis van 24 bytes in de hoofd record opgeslagen. Zie overloop gegevens van meer [dan 8 KB](/previous-versions/sql/sql-server-2008-r2/ms186981(v=sql.105))voor meer informatie. |
 | Tabel |Partities per tabel |15.000<br/><br/>Voor hoge prestaties raden we u aan het aantal partities dat u nodig hebt, te minimaliseren en toch uw bedrijfs vereisten te ondersteunen. Naarmate het aantal partities groeit, neemt de overhead voor DDL (Data Definition Language) en DML-bewerkingen (data manipulatie Language) toe en leidt dit tot tragere prestaties. |
 | Tabel |Tekens per partitie grenswaarde. |4000 |
 | Index |Niet-geclusterde indexen per tabel. |50<br/><br/>Is alleen van toepassing op rowstore-tabellen. |

@@ -13,14 +13,14 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
-ms.date: 10/22/2020
+ms.date: 01/11/2021
 ms.author: radeltch
-ms.openlocfilehash: c275d3fc1bb2372b36a3a29ae3b72f3e5e9b758a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d30a9d0abf6984df502283f06b2745f8ee4b1966
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484223"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116293"
 ---
 # <a name="azure-virtual-machines-high-availability-for-sap-netweaver-on-red-hat-enterprise-linux"></a>Azure Virtual Machines hoge Beschik baarheid voor SAP NetWeaver op Red Hat Enterprise Linux
 
@@ -93,7 +93,7 @@ SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS en de SAP HANA-Data Bas
   * IP-adres 10.0.0.7
 * Test poort
   * Poort 620<strong> &lt; Nr &gt; </strong>
-* Taakverdelings regels
+* Taakverdelingsregels
   * Als u Standard Load Balancer gebruikt, selecteert u **ha-poorten**
   * Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
     * 32<strong> &lt; Nr &gt; </strong> TCP
@@ -110,7 +110,7 @@ SAP NetWeaver ASCS, SAP NetWeaver SCS, SAP NetWeaver ERS en de SAP HANA-Data Bas
   * IP-adres 10.0.0.8
 * Test poort
   * Poort 621<strong> &lt; Nr &gt; </strong>
-* Taakverdelings regels
+* Taakverdelingsregels
   * Als u Standard Load Balancer gebruikt, selecteert u **ha-poorten**
   * Als u basis Load Balancer gebruikt, maakt u regels voor taak verdeling voor de volgende poorten
     * 32<strong> &lt; Nr &gt; </strong> TCP
@@ -193,7 +193,7 @@ U moet eerst de virtuele machines voor dit cluster maken. Daarna maakt u een loa
          1. Klik op OK
       1. Poort 621 **02** voor ASCS ers
          * Herhaal de bovenstaande stappen voor het maken van een status test voor de ERS (bijvoorbeeld 621 **02** en **NW1-Aers-HP**)
-   1. Taakverdelings regels
+   1. Taakverdelingsregels
       1. Taakverdelings regels voor ASCS
          1. Open de load balancer, selecteer taakverdelings regels en klik op toevoegen
          1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **NW1-lb-ascs**)
@@ -227,7 +227,7 @@ U moet eerst de virtuele machines voor dit cluster maken. Daarna maakt u een loa
          1. Klik op OK
       1. Poort 621 **02** voor ASCS ers
          * Herhaal de bovenstaande stappen voor het maken van een status test voor de ERS (bijvoorbeeld 621 **02** en **NW1-Aers-HP**)
-   1. Taakverdelings regels
+   1. Taakverdelingsregels
       1. 32 **00** TCP voor ASCS
          1. Open de load balancer, selecteer taakverdelings regels en klik op toevoegen
          1. Voer de naam in van de nieuwe load balancer regel (bijvoorbeeld **NW1-lb-3200**)
@@ -623,6 +623,8 @@ De volgende items worden voorafgegaan door **[A]** , van toepassing op alle knoo
    # Probe Port of ERS
    sudo firewall-cmd --zone=public --add-port=621<b>02</b>/tcp --permanent
    sudo firewall-cmd --zone=public --add-port=621<b>02</b>/tcp
+   sudo firewall-cmd --zone=public --add-port=32<b>02</b>/tcp --permanent
+   sudo firewall-cmd --zone=public --add-port=32<b>02</b>/tcp
    sudo firewall-cmd --zone=public --add-port=33<b>02</b>/tcp --permanent
    sudo firewall-cmd --zone=public --add-port=33<b>02</b>/tcp
    sudo firewall-cmd --zone=public --add-port=5<b>02</b>13/tcp --permanent
@@ -896,7 +898,7 @@ Volg deze stappen om een SAP-toepassings server te installeren.
 
    Voer de volgende opdrachten uit als root om het proces van de berichten server te identificeren en af te breken.
 
-   <pre><code>[root@nw1-cl-0 ~]# pgrep ms.sapNW1 | xargs kill -9
+   <pre><code>[root@nw1-cl-0 ~]# pgrep -f ms.sapNW1 | xargs kill -9
    </code></pre>
 
    Als u de berichten server alleen eenmaal beëindigt, wordt deze opnieuw opgestart door `sapstart` . Als u deze regel matig beëindigt, wordt de ASCS-instantie uiteindelijk door pacemaker naar het andere knoop punt verplaatst. Voer de volgende opdrachten uit als root om de resource status van het ASCS-en ERS-exemplaar na de test op te schonen.
@@ -939,7 +941,11 @@ Volg deze stappen om een SAP-toepassings server te installeren.
 
    Voer de volgende opdrachten uit als root op het knoop punt waar het ASCS-exemplaar wordt uitgevoerd om de bewerkings server af te breken.
 
-   <pre><code>[root@nw1-cl-1 ~]# pgrep en.sapNW1 | xargs kill -9
+   <pre><code>
+    #If using ENSA1 
+    [root@nw1-cl-1 ~]# pgrep -f en.sapNW1 | xargs kill -9
+    #If using ENSA2
+    [root@nw1-cl-1 ~]# pgrep -f enq.sapNW1 | xargs kill -9
    </code></pre>
 
    Het ASCS-exemplaar moet direct een failover uitvoeren naar het andere knoop punt. Na het starten van het ASCS-exemplaar moet ook een failover worden uitgevoerd voor het ERS-exemplaar. Voer de volgende opdrachten uit als root om de resource status van het ASCS-en ERS-exemplaar na de test op te schonen.
@@ -982,7 +988,11 @@ Volg deze stappen om een SAP-toepassings server te installeren.
 
    Voer de volgende opdracht uit als hoofd server op het knoop punt waar het ERS-exemplaar wordt uitgevoerd om het proces voor het repliceren van de wachtrij te beëindigen.
 
-   <pre><code>[root@nw1-cl-1 ~]# pgrep er.sapNW1 | xargs kill -9
+   <pre><code>
+    #If using ENSA1
+    [root@nw1-cl-1 ~]# pgrep -f er.sapNW1 | xargs kill -9
+    #If using ENSA2
+    [root@nw1-cl-1 ~]# pgrep -f enqr.sapNW1 | xargs kill -9
    </code></pre>
 
    Als u de opdracht slechts eenmaal uitvoert, `sapstart` wordt het proces opnieuw gestart. Als u dit vaak genoeg uitvoert, `sapstart` wordt het proces niet opnieuw gestart en wordt de bron gestopt. Voer de volgende opdrachten uit als root om de resource status van het ERS-exemplaar na de test op te schonen.

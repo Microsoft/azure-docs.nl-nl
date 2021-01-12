@@ -2,13 +2,13 @@
 title: Zelfstudie - On-premises omgevingen peeren met een privécloud
 description: Meer informatie over hoe u ExpressRoute Global Reach-peering maakt met een privécloud in een Azure VMware Solution.
 ms.topic: tutorial
-ms.date: 09/21/2020
-ms.openlocfilehash: 4d10972a693f7c4c3ae25a5bc986f6c15e978294
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.date: 1/5/2021
+ms.openlocfilehash: 613aece6ed548f70840349e017de4416883d6cf3
+ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912494"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97913155"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Zelfstudie: On-premises omgevingen peeren met een privécloud
 
@@ -19,7 +19,7 @@ Het ExpressRoute-circuit dat u gebruikt wanneer u [een netwerkverbinding tussen 
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
-> * Een tweede autorisatiesleutel maken voor _circuit 2_ , het ExpressRoute-circuit van de privécloud
+> * Een tweede autorisatiesleutel maken voor _circuit 2_, het ExpressRoute-circuit van de privécloud
 > * Gebruik de [Azure Portal](#azure-portal-method) of de [Azure CLI gebruiken in een Cloud Shell-methode](#azure-cli-in-a-cloud-shell-method) in het abonnement van _circuit 1_ om peering van on-premises naar een privécloud van ExpressRoute Global Reach in te schakelen
 
 
@@ -33,6 +33,7 @@ Raadpleeg de documentatie over het [inschakelen van connectiviteit in verschille
 - Vastgelegde connectiviteit naar en van een Azure VMware Solution-privécloud met een ExpressRoute-circuit die is gekoppeld aan een ExpressRoute-gateway in een virtueel Azure-netwerk (VNet). Dit is _circuit 2_ vanuit procedures voor peering.  
 - Een afzonderlijk, functionerend ExpressRoute-circuit dat wordt gebruikt om on-premises omgevingen te verbinden met Azure. Dit is _circuit 1_ vanuit het perspectief van de procedures voor peering.
 - Een/29 niet-overlappend [blok met netwerkadressen](../expressroute/expressroute-routing.md#ip-addresses-used-for-peerings) voor de ExpressRoute Global Reach-peering.
+- Controleer of alle routers, inclusief de service van de ExpressRoute-provider, ASN (Autonomous System Number) van 4 bytes ondersteunen. Azure VMware Solution maakt gebruik van openbare ASN's van 4 bytes om routes te adverteren.
 
 > [!TIP]
 > In de context van deze vereisten is uw on-premises ExpressRoute-circuit _circuit 1_ en het ExpressRoute-circuit van de privécloud in een ander abonnement _circuit 2_. 

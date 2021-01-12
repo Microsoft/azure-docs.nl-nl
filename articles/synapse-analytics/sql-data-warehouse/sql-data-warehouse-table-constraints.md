@@ -11,12 +11,12 @@ ms.date: 09/05/2019
 ms.author: emtehran
 ms.reviewer: nibruno; jrasnick
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: bdb27c5c9f5ec8a7be433ab6e421ecabf5c8c254
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 88b63ce30000340a70811e9f623e4273ccbb272a
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505576"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117279"
 ---
 # <a name="primary-key-foreign-key-and-unique-key-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Primaire sleutel, refererende sleutel en unieke sleutel met behulp van een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -28,7 +28,7 @@ De toegewezen SQL-groep ondersteunt deze tabel beperkingen:
 - De primaire sleutel wordt alleen ondersteund als niet-geclusterd en niet afgedwongen worden gebruikt.    
 - EEN unieke beperking wordt alleen ondersteund als er geen afgedwongen wordt toegepast.
 
-Raadpleeg voor syntaxis [ALTER TABLE](https://docs.microsoft.com/sql/t-sql/statements/alter-table-transact-sql) en [Create Table](https://docs.microsoft.com/sql/t-sql/statements/create-table-azure-sql-data-warehouse). 
+Raadpleeg voor syntaxis [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql) en [Create Table](/sql/t-sql/statements/create-table-azure-sql-data-warehouse). 
 
 REFERERende-sleutel beperking wordt niet ondersteund in een toegewezen SQL-groep.  
 

@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 08/28/2020
+ms.date: 01/05/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to configure compute on Azure Stack Edge Pro so I can use it to transform the data before sending it to Azure.
-ms.openlocfilehash: 75428b28095b0e425a1670caffcf960aa6ae58f6
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 28b5c107fb35c7bda9b1680050b92004436b98ff
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185501"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97935459"
 ---
 # <a name="tutorial-transform-data-with-azure-stack-edge-pro"></a>Zelfstudie: Gegevens transformeren met Azure Stack Edge Pro
 
@@ -37,7 +37,6 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 Zorg dat aan deze voorwaarde wordt voldaan voordat u een rekenprocesrol configureert op uw Azure Stack Edge Pro-apparaat:
-
 - U hebt uw Azure Stack Edge Pro-apparaat geactiveerd zoals beschreven in [Azure Stack Edge Pro activeren](azure-stack-edge-gpu-deploy-activate.md).
 
 
@@ -45,36 +44,36 @@ Zorg dat aan deze voorwaarde wordt voldaan voordat u een rekenprocesrol configur
 
 Als u de rekenproces wilt configureren voor uw Azure Stack Edge Pro, maakt u een IoT Hub-resource.
 
-1. Ga in Azure Portal van uw Azure Stack Edge-resource naar **Overzicht**. Selecteer in het rechterdeelvenster op de tegel **Compute** **Aan de slag**.
+1. Ga in de Azure Portal van uw Azure Stack Edge-resource naar **Overzicht**. Selecteer vervolgens **IoT Edge**.
 
-    ![Aan de slag met rekenproces](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-1.png)
+   ![Aan de slag met rekenproces](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-1.png)
 
-2. Selecteer op de tegel **Het Edge-rekenproces configureren** **Rekenproces configureren**.
+2. Selecteer, in **IoT Edge-service inschakelen**, **Toevoegen**.
 
-    ![Rekenproces configureren](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-2.png)
+   ![Rekenproces configureren](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-2.png)
 
-3. Voer op de blade **Het Edge-rekenproces configureren** het volgende in:
+3. Voer in **IoT Edge-service maken** de instellingen voor uw IoT Hub-resource in:
 
-   
-    |Veld  |Waarde  |
-    |---------|---------|
-    |IoT Hub     | Kies uit **Nieuwe** of **Bestaande**. <br> Standaard wordt er een standaard-laag (S1) gebruikt voor het maken van een IoT-resource. Als u een IoT-resource in een gratis laag wilt gebruiken, maakt u er een en selecteert u vervolgens de bestaande resource. <br> In elk geval gebruikt de IoT Hub-resource hetzelfde abonnement en dezelfde resourcegroep die wordt gebruikt door de resource Azure Stack Edge.     |
-    |Naam     |Voer een naam in voor uw IoT Hub-resource.         |
+   |Veld   |Waarde    |
+   |--------|---------|
+   |Abonnement      | Het abonnement dat wordt gebruikt door de Azure Stack Edge-resource. |
+   |Resourcegroep    | De resourcegroep dat wordt gebruikt door de Azure Stack Edge-resource. |
+   |IoT Hub           | Maak een keuze tussen **Nieuwe maken** en **Bestaande gebruiken**. <br> Standaard wordt er een standaard-laag (S1) gebruikt voor het maken van een IoT-resource. Als u een IoT-resource in een gratis laag wilt gebruiken, maakt u er een en selecteert u vervolgens de bestaande resource. <br> In elk geval gebruikt de IoT Hub-resource hetzelfde abonnement en dezelfde resourcegroep die wordt gebruikt door de resource Azure Stack Edge.     |
+   |Naam              | Als u de standaardnaam van een nieuwe IoT Hub-resource niet wilt gebruiken, voert u een andere naam in. |
 
     ![Aan de slag met rekenproces 2](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-3.png)
 
-4. Selecteer **Maken**. Het maken van de IoT Hub-resource duurt enkele minuten. Nadat de IoT Hub-resource is gemaakt, wordt de tegel **Rekenproces configureren** bijgewerkt om de configuratie van het rekenproces weer te geven. 
+4. Wanneer u de instellingen hebt voltooid, selecteert u **Bekijken en maken**. Controleer de instellingen voor uw IoT Hub-resource en selecteer **Maken**.
+
+   Het maken van de IoT Hub-resource duurt enkele minuten. Nadat de resource is gemaakt, wordt in het **Overzicht** aangegeven dat de IoT Edge-service nu wordt uitgevoerd.
 
     ![Aan de slag met rekenproces 3](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-4.png)
 
-5. Als u wilt bevestigen dat de Edge-rekenprocesrol is geconfigureerd, selecteert u **Rekenproces weergeven** op de tegel **Rekenproces configureren**.
-    
-    ![Aan de slag met rekenproces 4](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-5.png)
+5. Selecteer **Eigenschappen** om te controleren of de rol van het Edge-rekenproces is geconfigureerd.
 
-    > [!NOTE]
-    > Als het dialoogvenster **Rekenproces configureren** wordt gesloten voordat de IoT Hub aan het Azure Stack Edge Pro-apparaat is gekoppeld, wordt de IoT Hub gemaakt, maar wordt deze niet weergegeven in de rekenprocesconfiguratie. 
-    
-    Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden er twee apparaten aangemaakt: een IoT-apparaat en een IoT Edge-apparaat. Beide apparaten kunnen worden weergegeven in de IoT Hub-resource. Er wordt ook een IoT Edge-runtime op dit IoT Edge-apparaat uitgevoerd. Op dit moment is alleen het Linux-platform beschikbaar voor uw IoT Edge-apparaat.
+   ![Aan de slag met rekenproces 4](./media/azure-stack-edge-j-series-deploy-configure-compute/configure-compute-5.png)
+
+   Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden er twee apparaten aangemaakt: een IoT-apparaat en een IoT Edge-apparaat. Beide apparaten kunnen worden weergegeven in de IoT Hub-resource. Er wordt ook een IoT Edge-runtime op dit IoT Edge-apparaat uitgevoerd. Op dit moment is alleen het Linux-platform beschikbaar voor uw IoT Edge-apparaat.
 
 
 ## <a name="add-shares"></a>Shares toevoegen
@@ -94,11 +93,11 @@ Voor de eenvoudige implementatie in deze zelfstudie hebt u twee shares nodig: é
 
         ![Een Edge-share toevoegen](./media/azure-stack-edge-j-series-deploy-configure-compute/add-edge-share-1.png) 
 
-    Als u een lokale NFS-share hebt gemaakt, gebruikt u de volgende optie van de opdracht rsync (op afstand synchroniseren) om bestanden naar de share te kopiëren:
+    Als u een lokale NFS-share hebt gemaakt, kunt u bestanden naar de share kopiëren. Gebruik hiervoor de volgende opdrachtoptie om op afstand te synchroniseren (`rsync`):
 
     `rsync <source file path> < destination file path>`
 
-    Voor meer informatie over de opdracht `rsync` raadpleegt u de [Rsync-documentatie](https://www.computerhope.com/unix/rsync.htm).
+    Voor meer informatie over de opdracht `rsync` raadpleegt u de [`Rsync` documentatie](https://www.computerhope.com/unix/rsync.htm).
 
     > [!NOTE]
     > Om de NFS-share te koppelen aan het rekenproces, moet het rekennetwerk zijn geconfigureerd op hetzelfde subnet als het virtuele IP-adres van NFS. Ga naar [Rekennetwerk inschakelen op uw Azure Stack Edge Pro](azure-stack-edge-gpu-deploy-configure-network-compute-web-proxy.md) voor meer informatie over het configureren van rekennetwerken.
@@ -154,15 +153,15 @@ Doe het volgende om te controleren of de module wordt uitgevoerd:
  
 1. Maak via Verkenner verbinding met zowel de lokale Edge-share als de Edge-shares die u eerder hebt gemaakt.
 
-    ![Gegevenstransformatie controleren](./media/azure-stack-edge-j-series-deploy-configure-compute/verify-data-2.png) 
+    ![Gegevenstransformatie controleren - 1](./media/azure-stack-edge-j-series-deploy-configure-compute/verify-data-2.png) 
  
 1. Voeg gegevens toe aan de lokale share.
 
-    ![Gegevenstransformatie controleren](./media/azure-stack-edge-j-series-deploy-configure-compute/verify-data-3.png) 
+    ![Gegevenstransformatie controleren - 2](./media/azure-stack-edge-j-series-deploy-configure-compute/verify-data-3.png) 
  
    De gegevens worden verplaatst naar de cloudshare.
 
-    ![Gegevenstransformatie controleren](./media/azure-stack-edge-j-series-deploy-configure-compute/verify-data-4.png)  
+    ![Gegevenstransformatie controleren -3](./media/azure-stack-edge-j-series-deploy-configure-compute/verify-data-4.png)  
 
    De gegevens worden vervolgens vanuit de cloudshare naar het opslagaccount gepusht. U kunt Storage Explorer gebruiken om de gegevens te bekijken.
 

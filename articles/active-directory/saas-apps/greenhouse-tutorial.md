@@ -9,33 +9,32 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 02/18/2019
+ms.date: 11/25/2020
 ms.author: jeedes
-ms.openlocfilehash: 2206f0e1cfbe9e362937c6299c65eee2ebbb6253
-ms.sourcegitcommit: 9b8425300745ffe8d9b7fbe3c04199550d30e003
+ms.openlocfilehash: 0eb64ebe5e55bc054b6a280ac249cf451bb027db
+ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92447966"
+ms.lasthandoff: 01/05/2021
+ms.locfileid: "97897362"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-greenhouse"></a>Zelfstudie: Azure Active Directory-integratie met Greenhouse
 
-In deze zelfstudie leert u hoe u Greenhouse kunt integreren met Azure Active Directory (Azure AD).
-De integratie van Greenhouse met Azure AD biedt de volgende voordelen:
+In deze zelfstudie leert u hoe u Greenhouse kunt integreren met Azure Active Directory (Azure AD). Wanneer u Greenhouse integreert met Azure AD, kunt u het volgende doen:
 
 * U kunt in Azure AD bepalen wie er toegang heeft tot Greenhouse.
-* U kunt inschakelen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Greenhouse (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Zorg ervoor dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Greenhouse.
+* Uw accounts op één centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Om Azure AD-integratie te configureren met Greenhouse hebt u het volgende nodig:
+U hebt het volgende nodig om aan de slag te gaan:
 
-* Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Een abonnement op Greenhouse waarvoor eenmalige aanmelding is ingeschakeld
+* Een Azure AD-abonnement Als u geen abonnement hebt, kunt u zich aanmelden voor een[gratis account](https://azure.microsoft.com/free/).
+* Een abonnement op Greenhouse waarvoor eenmalige aanmelding is ingeschakeld.
+
+> [!NOTE] 
+> Deze integratie is ook beschikbaar voor gebruik vanuit de Azure AD US Government Cloud-omgeving. U kunt deze toepassing vinden in de toepassingsgalerie van Azure AD US Government Cloud en deze op dezelfde manier configureren als vanuit een openbare cloud. 
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -47,59 +46,38 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Voor het configureren van de integratie van Greenhouse in Azure AD moet u Greenhouse vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-**Als u vanuit de galerie wilt toevoegen handel, moet u de volgende stappen uitvoeren:**
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in de sectie **Toevoegen uit de galerie** **Greenhouse** in het zoekvak.
+1. Selecteer **Greenhouse** in het resultatenvenster en voeg daarna de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+## <a name="configure-and-test-azure-ad-sso-for-greenhouse"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Greenhouse
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen** .
+Eenmalige aanmelding van Azure AD configureren en testen voor Greenhouse met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Greenhouse.
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+Voer de volgende stappen uit om eenmalige aanmelding van Azure AD te configureren en te testen voor Greenhouse:
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
+    1. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
+2. **[Eenmalige aanmelding voor Greenhouse configureren](#configure-greenhouse-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
+    1. **[Testgebruiker voor Greenhouse maken](#create-greenhouse-test-user)**: als u een tegenhanger van Britta Simon in Greenhouse wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+3. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-4. Typ in het zoekvak **Greenhouse** , selecteer **Greenhouse** in het resultaatvenster en klik vervolgens op de knop **Toevoegen** om de toepassing toe te voegen.
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-     ![Greenhouse toevoegen vanuit de galerie](common/search-new-app.png)
-
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Greenhouse configureren en testen op basis van een testgebruiker met de naam **Britta Simon** .
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Greenhouse tot stand is gebracht.
-
-Om Azure AD-eenmalige aanmelding met Greenhouse te configureren en te testen, moet u de volgende bouwstenen uitvoeren:
-
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Greenhouse voor eenmalige aanmelding configureren](#configure-greenhouse-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wil configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker voor Greenhouse maken](#create-greenhouse-test-user)** : als u een tegenhanger van Britta Simon in Greenhouse wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voor het configureren van eenmalige aanmelding bij Azure Active Directory met Greenhouse moet u de volgende stappen uitvoeren:
-
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Eenmalige aanmelding** op de integratiepagina van de toepassing **Greenhouse** .
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
+1. Zoek in Azure Portal, op de integratiepagina van de toepassing **Greenhouse**, de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
     ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 4. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
-
-    ![Domein- en URL-gegevens voor eenmalige aanmelding bij Greenhouse](common/sp-identifier.png)
 
     a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://<companyname>.greenhouse.io`
 
@@ -116,66 +94,57 @@ Voor het configureren van eenmalige aanmelding bij Azure Active Directory met Gr
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
 
-    b. Azure AD-id
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-    c. Afmeldings-URL
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-### <a name="configure-greenhouse-single-sign-on"></a>Eenmalige aanmelding voor Greenhouse configureren
-
-Als u eenmalige aanmelding aan de zijde van **Greenhouse** wilt configureren, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste uit de Azure-portal gekopieerde URL's naar het [Greenhouse-ondersteuningsteam](https://www.greenhouse.io/contact) verzenden. Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
-
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-  
-    b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
-    Bijvoorbeeld: BrittaSimon@contoso.com
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In dit gedeelte gaat u Britta Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Greenhouse.
+In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen tot Greenhouse.
 
-1. Selecteer **Bedrijfstoepassingen** in de Azure-portal, selecteer **Alle toepassingen** en selecteer vervolgens **Greenhouse** .
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Greenhouse** in de lijst met toepassingen.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+## <a name="configure-greenhouse-sso"></a>Eenmalige aanmelding voor Greenhouse configureren
 
-2. Selecteer **Greenhouse** in de lijst met toepassingen.
+1. Meld u, in een ander browservenster, als beheerder aan bij de website van Greenhouse.
 
-    ![De Greenhouse-koppeling in de lijst met toepassingen](common/all-applications.png)
+1. Ga naar **Configureren > Ontwikkelaarscentrum > Eenmalige aanmelding configureren**.
 
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
+    ![Schermopname van de pagina voor eenmalige aanmelding](./media/greenhouse-tutorial/configure.png)
 
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
+1. Voer op de pagina 'Eenmalige aanmelding' de volgende stappen uit.
 
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+    ![Schermopname van de configuratiepagina voor eenmalige aanmelding](./media/greenhouse-tutorial/sso-page.png)
 
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
+    a. Kopieer de waarde van **Assertion Consumer-URL voor eenmalige aanmelding** en plak deze in het tekstvak **Antwoord-URL** in de sectie **Standaard SAML-configuratie** van de Azure Portal.
 
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
+    b. Plak in het tekstvak **Entiteits-id/verlener** de waarde van de **Azure AD-id** die u uit Azure Portal hebt gekopieerd.
 
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
+    c. Plak in het tekstvak **Eenmalige aanmeldings-URL** de waarde van de **Aanmeldings-URL** die u uit de Azure Portal hebt gekopieerd.
 
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+    d. Open het gedownloade **Federation Metadata XML** van de Azure Portal in Kladblok. Plak vervolgens de inhoud in het tekstvak **IdP Certificate Fingerprint**.
+
+    e. Selecteer de waarde **Indeling voor naam-id** uit de vervolgkeuzelijst.
+
+    f. Klik op **Starten met testen**.
+
+    >[!NOTE]
+    >U kunt ook het **XML-bestand met federatieve metagegevens** uploaden door op de optie **Choose File** te klikken.
 
 ### <a name="create-greenhouse-test-user"></a>Greenhouse-testgebruiker maken
 
@@ -186,37 +155,34 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij Greenhouse, moeten 
 
 **Ga als volgt te werk om een gebruikersaccount in te richten:**
 
-1. Meld u aan bij uw **Greenhouse** -bedrijfssite als beheerder.
+1. Meld u aan bij uw **Greenhouse**-bedrijfssite als beheerder.
 
-2. Klik in het menu bovenaan op **Configureren** en klik vervolgens op **Gebruikers** .
+2. Ga naar de **Configureren > Gebruikers > Nieuwe gebruikers**
    
-    ![Gebruikers](./media/greenhouse-tutorial/ic790791.png "Gebruikers")
+    ![Gebruikers](./media/greenhouse-tutorial/create-user-1.png "Gebruikers")
 
-3. Klik op **Nieuwe gebruikers** .
+4. Voer in het gedeelte **Nieuwe gebruikers toevoegen** de volgende stappen uit:
    
-    ![Nieuwe gebruiker](./media/greenhouse-tutorial/ic790792.png "Nieuwe gebruiker")
-
-4. Voer in het gedeelte **Add New User** de volgende stappen uit:
-   
-    ![Nieuwe gebruiker toevoegen](./media/greenhouse-tutorial/ic790793.png "Nieuwe gebruiker toevoegen")
+    ![Nieuwe gebruiker toevoegen](./media/greenhouse-tutorial/create-user-2.png "Nieuwe gebruiker toevoegen")
 
     a. Typ in het tekstvak **E-mails gebruiker invoeren** het e-mailadres van een geldig Azure Active Directory-account dat u wilt inrichten.
 
-    b. Klik op **Opslaan** .    
+    b. Klik op **Opslaan**.    
    
       >[!NOTE]
       >De houder van het Azure Active Directory-account ontvangt een e-mail met een koppeling om het account te bevestigen voordat het actief wordt.
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
+### <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u op de tegel Greenhouse in het toegangsvenster klikt, wordt u automatisch aangemeld bij het Greenhouse-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Greenhouse, waar u de aanmeldingsstroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende resources
+* Ga rechtstreeks naar de aanmeldings-URL van Greenhouse en initieer hier de aanmeldingsstroom.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in 'Mijn apps' op de tegel 'Greenhouse' klikt, wordt u omgeleid naar de aanmeldings-URL van Greenhouse. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Volgende stappen
+
+Zodra u Greenhouse hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

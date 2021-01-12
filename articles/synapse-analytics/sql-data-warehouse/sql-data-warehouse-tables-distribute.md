@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: c452d51018ef3f204cd7281971c07fb6337d39bf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3b61df954e913671eafff4b739e0f53a4d420c28
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96449702"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117296"
 ---
 # <a name="guidance-for-designing-distributed-tables-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Richt lijnen voor het ontwerpen van gedistribueerde tabellen met een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -68,7 +68,7 @@ Overweeg het gebruik van round-robin distributie voor uw tabel in de volgende sc
 - Als de samen voeging minder significant is dan andere samen voegingen in de query
 - Wanneer de tabel een tijdelijke faserings tabel is
 
-De zelf studie [over taxi's gegevens van New York laden](load-data-from-azure-blob-storage-using-polybase.md#load-the-data-into-your-data-warehouse) biedt een voor beeld van het laden van gegevens in een faserings tabel met Round Robin.
+De zelf studie [over taxi's gegevens van New York laden](./load-data-from-azure-blob-storage-using-copy.md#load-the-data-into-your-data-warehouse) biedt een voor beeld van het laden van gegevens in een faserings tabel met Round Robin.
 
 ## <a name="choosing-a-distribution-column"></a>Een distributie kolom kiezen
 

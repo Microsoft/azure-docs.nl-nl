@@ -1,17 +1,17 @@
 ---
 title: Door de klant beheerde sleutel van Azure Monitor
-description: Informatie en stappen voor het configureren van Customer-Managed sleutel voor het versleutelen van gegevens in uw Log Analytics-werk ruimten met behulp van een Azure Key Vault sleutel.
+description: Informatie en stappen voor het configureren van door de klant beheerde sleutel voor het versleutelen van gegevens in uw Log Analytics-werk ruimten met behulp van een Azure Key Vault sleutel.
 ms.subservice: logs
 ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: 66a3276863b05cb2fe0dd80a2195f7fd2af1443c
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 07562167131d1839bc0827c74fae09c683302c08
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071932"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118605"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -25,25 +25,25 @@ U wordt aangeraden [beperkingen en beperkingen](#limitationsandconstraints) hier
 
 Azure Monitor zorgt ervoor dat alle gegevens en opgeslagen query's op rest worden versleuteld met behulp van door micro soft beheerde sleutels (MMK). Azure Monitor biedt ook een optie voor versleuteling met behulp van uw eigen sleutel die is opgeslagen in uw [Azure Key Vault](../../key-vault/general/overview.md), waarmee u de toegang tot uw gegevens op elk gewenst moment kunt intrekken. Azure Monitor versleuteling is hetzelfde als de manier waarop [Azure Storage versleuteling](../../storage/common/storage-service-encryption.md#about-azure-storage-encryption) werkt.
 
-Customer-Managed sleutel wordt geleverd op [toegewezen clusters](../log-query/logs-dedicated-clusters.md) met een hoger beveiligings niveau en controle. Gegevens die zijn opgenomen in toegewezen clusters, worden twee maal versleuteld: eenmaal op service niveau met door micro soft beheerde sleutels of door de klant beheerde sleutels, en eenmaal op het niveau van de infra structuur met twee verschillende versleutelings algoritmen en twee verschillende sleutels. [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) beschermt tegen een scenario waarbij een van de versleutelings algoritmen of-sleutels mogelijk is aangetast. In dit geval blijft de extra laag versleuteling uw gegevens beveiligen. Met toegewezen cluster kunt u uw gegevens ook beveiligen met behulp van een [lockbox](#customer-lockbox-preview) -besturings element.
+Door de klant beheerde sleutel wordt geleverd op [toegewezen clusters](../log-query/logs-dedicated-clusters.md) met een hoger beveiligings niveau en controle. Gegevens die zijn opgenomen in toegewezen clusters, worden twee maal versleuteld: eenmaal op service niveau met door micro soft beheerde sleutels of door de klant beheerde sleutels, en eenmaal op het niveau van de infra structuur met twee verschillende versleutelings algoritmen en twee verschillende sleutels. [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) beschermt tegen een scenario waarbij een van de versleutelings algoritmen of-sleutels mogelijk is aangetast. In dit geval blijft de extra laag versleuteling uw gegevens beveiligen. Met toegewezen cluster kunt u uw gegevens ook beveiligen met behulp van een [lockbox](#customer-lockbox-preview) -besturings element.
 
-De gegevens die in de afgelopen 14 dagen zijn opgenomen, worden ook opgeslagen in de Hot-cache (met SSD-back-ups) voor een efficiënte query-engine bewerking. Deze gegevens blijven versleuteld met micro soft-sleutels, ongeacht de configuratie van de door de klant beheerde sleutel, maar uw controle over SSD-gegevens voldoet aan de [sleutel intrekking](#key-revocation). Er wordt gewerkt aan SSD-gegevens die zijn versleuteld met Customer-Managed sleutel in de eerste helft van 2021.
+De gegevens die in de afgelopen 14 dagen zijn opgenomen, worden ook opgeslagen in de Hot-cache (met SSD-back-ups) voor een efficiënte query-engine bewerking. Deze gegevens blijven versleuteld met micro soft-sleutels, ongeacht de configuratie van de door de klant beheerde sleutel, maar uw controle over SSD-gegevens voldoet aan de [sleutel intrekking](#key-revocation). Er wordt gewerkt aan SSD-gegevens die zijn versleuteld met door de klant beheerde sleutel in de eerste helft van 2021.
 
 Log Analytics toegewezen clusters gebruiken een [prijs model](../log-query/logs-dedicated-clusters.md#cluster-pricing-model) voor capaciteits reservering, te beginnen bij 1000 GB per dag.
 
 > [!IMPORTANT]
 > Als gevolg van tijdelijke capaciteits beperkingen, moet u zich vooraf registreren bij voordat u een cluster maakt. Gebruik uw contact personen in micro soft of open de ondersteunings aanvraag om uw abonnementen-Id's te registreren.
 
-## <a name="how-customer-managed-key-works-in-azure-monitor"></a>Hoe Customer-Managed sleutel werkt in Azure Monitor
+## <a name="how-customer-managed-key-works-in-azure-monitor"></a>Hoe door de klant beheerde sleutel werkt in Azure Monitor
 
-Azure Monitor gebruikt beheerde identiteit om toegang tot uw Azure Key Vault te verlenen. De identiteit van het Log Analytics cluster wordt ondersteund op cluster niveau. Als u Customer-Managed sleutel beveiliging op meerdere werk ruimten wilt toestaan, wordt een nieuwe Log Analytics *cluster* resource uitgevoerd als een tussenliggende identiteits verbinding tussen uw Key Vault en uw log Analytics-werk ruimten. De opslag van het cluster maakt gebruik van de beheerde identiteit die \' is gekoppeld aan de *cluster* bron om de Azure Key Vault via Azure Active Directory te verifiëren. 
+Azure Monitor gebruikt beheerde identiteit om toegang tot uw Azure Key Vault te verlenen. De identiteit van het Log Analytics cluster wordt ondersteund op cluster niveau. Om door de klant beheerde sleutel beveiliging op meerdere werk ruimten toe te staan, wordt een nieuwe Log Analytics *cluster* resource uitgevoerd als een tussenliggende identiteits verbinding tussen uw Key Vault en uw log Analytics-werk ruimten. De opslag van het cluster maakt gebruik van de beheerde identiteit die \' is gekoppeld aan de *cluster* bron om de Azure Key Vault via Azure Active Directory te verifiëren. 
 
 Na de configuratie van de door de klant beheerde sleutel, worden nieuwe opgenomen gegevens aan werk ruimten die zijn gekoppeld aan uw toegewezen cluster, versleuteld met uw sleutel. U kunt werk ruimten op elk gewenst moment ontkoppelen van het cluster. Nieuwe gegevens worden vervolgens opgenomen in Log Analytics opslag en versleuteld met de micro soft-sleutel, terwijl u uw nieuwe en oude gegevens naadloos kunt opvragen.
 
 > [!IMPORTANT]
-> De functionaliteit van Customer-Managed-sleutel is regionaal. Uw Azure Key Vault-, cluster-en gekoppelde Log Analytics-werk ruimten moeten zich in dezelfde regio bevinden, maar ze kunnen zich in verschillende abonnementen bevinden.
+> Door de klant beheerde sleutel mogelijkheid is regionaal. Uw Azure Key Vault-, cluster-en gekoppelde Log Analytics-werk ruimten moeten zich in dezelfde regio bevinden, maar ze kunnen zich in verschillende abonnementen bevinden.
 
-![Overzicht van Customer-Managed-sleutel](media/customer-managed-keys/cmk-overview.png)
+![Overzicht van door de klant beheerde sleutels](media/customer-managed-keys/cmk-overview.png)
 
 1. Key Vault
 2. Log Analytics *cluster* bron met beheerde identiteit met machtigingen voor Key Vault--de identiteit wordt door gegeven aan de toegewezen log Analytics-cluster opslag van aan
@@ -54,7 +54,7 @@ Na de configuratie van de door de klant beheerde sleutel, worden nieuwe opgenome
 
 Er zijn drie soorten sleutels betrokken bij het versleutelen van opslag gegevens:
 
-- **Kek** -sleutel versleutelings sleutel (uw Customer-Managed sleutel)
+- **Kek** -sleutel versleutelings sleutel (uw door de klant beheerde sleutel)
 - **AEK** -account versleutelings sleutel
 - **Dek** -gegevens versleutelings sleutel
 
@@ -75,13 +75,13 @@ De volgende regels zijn van toepassing:
 1. Het cluster bijwerken met sleutel-id-Details
 1. Log Analytics-werk ruimten koppelen
 
-Customer-Managed-sleutel configuratie wordt niet ondersteund in Azure Portal momenteel en inrichten kan worden uitgevoerd via [Power shell](/powershell/module/az.operationalinsights/), [cli](/cli/azure/monitor/log-analytics) of [rest](/rest/api/loganalytics/) -aanvragen.
+Configuratie van door de klant beheerde sleutel wordt niet ondersteund in Azure Portal momenteel en inrichten kan worden uitgevoerd via [Power shell](/powershell/module/az.operationalinsights/), [cli](/cli/azure/monitor/log-analytics) of [rest](/rest/api/loganalytics/) -aanvragen.
 
 ### <a name="asynchronous-operations-and-status-check"></a>Asynchrone bewerkingen en status controle
 
 Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. De `status` in-reactie kan een van de volgende zijn: ' InProgress ', ' Updating ', ' deleted ', ' geslaagd ' of ' failed ' met de fout code.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
@@ -125,7 +125,8 @@ Deze instellingen kunnen worden bijgewerkt in Key Vault via CLI en Power shell:
 
 ## <a name="create-cluster"></a>Cluster maken
 
-> [! INFORMATION]-clusters ondersteunen twee [typen beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types). Door het systeem toegewezen beheerde identiteit wordt gemaakt met het cluster wanneer u het `SystemAssigned` identiteits type invoert. Dit kan later worden gebruikt om toegang te verlenen tot uw Key Vault. Als u een cluster wilt maken dat is geconfigureerd voor door de klant beheerde sleutel bij het maken, maakt u het cluster met een door de gebruiker toegewezen beheerde identiteit die in uw Key Vault is toegestaan. werk het cluster bij met het `UserAssigned` identiteits type, de resource-id van de identiteit in `UserAssignedIdentities` en geef uw sleutel gegevens op in `keyVaultProperties` .
+> [!NOTE]
+> Clusters ondersteunen twee [beheerde identiteits typen](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types), aan het systeem toegewezen en door de gebruiker toegewezen, die kunnen worden gebruikt op basis van uw scenario. Door het systeem toegewezen beheerde identiteit is eenvoudiger en automatisch gemaakt met het maken van een cluster wanneer u de identiteit instelt `type` als `SystemAssigned` ---deze identiteit kan later worden gebruikt om toegang te verlenen tot uw Key Vault. Als u een cluster moet maken met door de klant beheerde sleutel configuratie bij het maken, moet er een sleutel zijn gedefinieerd en door de gebruiker toegewezen identiteit in uw Key Vault vooraf worden verleend. vervolgens maakt u het cluster met de identiteit `type` als `UserAssigned` `UserAssignedIdentities` met de resource-id van de identiteits-en sleutel gegevens in `keyVaultProperties` .
 
 > [!IMPORTANT]
 > U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt. Deze beperking is niet van toepassing op door het systeem toegewezen beheerde identiteit.
@@ -157,7 +158,7 @@ KeyVaultProperties in cluster bijwerken met sleutel-id-Details.
 
 De bewerking is asynchroon en kan enige tijd duren.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
@@ -254,20 +255,20 @@ In de opslag ruimte van het cluster worden uw Key Vault periodiek gecontroleerd 
 
 ## <a name="key-rotation"></a>Sleutelroulatie
 
-Voor het roteren van Customer-Managed sleutels is een expliciete update van het cluster vereist met de nieuwe sleutel versie in Azure Key Vault. [Cluster met sleutel-id-Details bijwerken](#update-cluster-with-key-identifier-details). Als u de nieuwe sleutel versie in het cluster niet bijwerkt, blijft de Log Analytics cluster opslag uw vorige sleutel gebruiken voor versleuteling. Als u de oude sleutel uitschakelt of verwijdert voordat u de nieuwe sleutel in het cluster bijwerkt, krijgt u een [belang rijke intrekkings](#key-revocation) status.
+Voor de door de klant beheerde sleutel rotatie is een expliciete update van het cluster met de nieuwe sleutel versie in Azure Key Vault vereist. [Cluster met sleutel-id-Details bijwerken](#update-cluster-with-key-identifier-details). Als u de nieuwe sleutel versie in het cluster niet bijwerkt, blijft de Log Analytics cluster opslag uw vorige sleutel gebruiken voor versleuteling. Als u de oude sleutel uitschakelt of verwijdert voordat u de nieuwe sleutel in het cluster bijwerkt, krijgt u een [belang rijke intrekkings](#key-revocation) status.
 
 Al uw gegevens blijven toegankelijk na de bewerking voor het wijzigen van de sleutel, omdat gegevens altijd worden versleuteld met de account versleutelings sleutel (AEK) terwijl AEK nu wordt versleuteld met uw nieuwe Key Encryption Key (KEK)-versie in Key Vault.
 
-## <a name="customer-managed-key-for-queries"></a>Customer-Managed sleutel voor query's
+## <a name="customer-managed-key-for-queries"></a>Door de klant beheerde sleutel voor query's
 
-De query taal die in Log Analytics wordt gebruikt, is een exprestje en kan gevoelige informatie bevatten in opmerkingen die u toevoegt aan query's of in de query syntaxis. Sommige organisaties vereisen dat dergelijke informatie wordt beveiligd onder Customer-Managed-sleutel beleid en dat u uw query's die met uw sleutel zijn versleuteld, moet opslaan. Met Azure Monitor kunt u *opgeslagen Zoek opdrachten* en *waarschuwingen voor logboek registraties* die zijn versleuteld met uw sleutel in uw eigen opslag account opslaan wanneer u verbinding hebt met uw werk ruimte. 
+De query taal die in Log Analytics wordt gebruikt, is een exprestje en kan gevoelige informatie bevatten in opmerkingen die u toevoegt aan query's of in de query syntaxis. Sommige organisaties vereisen dat dergelijke informatie wordt beveiligd onder het door de klant beheerde sleutel beleid en dat u uw query's die zijn versleuteld met uw sleutel, moet opslaan. Met Azure Monitor kunt u *opgeslagen Zoek opdrachten* en *waarschuwingen voor logboek registraties* die zijn versleuteld met uw sleutel in uw eigen opslag account opslaan wanneer u verbinding hebt met uw werk ruimte. 
 
 > [!NOTE]
-> Log Analytics query's kunnen worden opgeslagen in verschillende winkels, afhankelijk van het gebruikte scenario. Query's blijven versleuteld met micro soft-sleutel (MMK) in de volgende scenario's, ongeacht Customer-Managed sleutel configuratie: werkmappen in Azure Monitor, Azure-Dash boards, Azure Logic app, Azure Notebooks en Automation-Runbooks.
+> Log Analytics query's kunnen worden opgeslagen in verschillende winkels, afhankelijk van het gebruikte scenario. Query's blijven versleuteld met micro soft-sleutel (MMK) in de volgende scenario's, ongeacht de door de klant beheerde sleutel configuratie: werkmappen in Azure Monitor, Azure-Dash boards, Azure Logic app, Azure Notebooks en Automation-Runbooks.
 
-Wanneer u uw eigen opslag (BYOS) meebrengt en deze aan uw werk ruimte koppelt, worden de door de service *opgeslagen Zoek opdrachten* en *waarschuwingen voor logboek meldingen* naar uw opslag account geüpload. Dit betekent dat u het opslag account en het [beleid voor versleuteling op rest](../../storage/common/customer-managed-keys-overview.md) beheert met behulp van dezelfde sleutel die u gebruikt voor het versleutelen van gegevens in log Analytics cluster of een andere sleutel. U bent echter verantwoordelijk voor de kosten van het opslag account. 
+Wanneer u uw eigen opslag (BYOS) meebrengt en deze aan uw werk ruimte koppelt, worden de door de service *opgeslagen Zoek opdrachten* en *waarschuwingen voor logboek meldingen* naar uw opslag account geüpload. Dit betekent dat u het opslag account en het [beleid voor versleuteling op rest](../../storage/common/customer-managed-keys-overview.md) beheert met behulp van dezelfde sleutel die u gebruikt voor het versleutelen van gegevens in log Analytics cluster of een andere sleutel. U bent echter verantwoordelijk voor de kosten van het betreffende opslagaccount. 
 
-**Overwegingen voor het instellen van Customer-Managed sleutel voor query's**
+**Overwegingen voor het instellen van door de klant beheerde sleutel voor query's**
 * U moet schrijf machtigingen hebben voor de werk ruimte en het opslag account
 * Zorg ervoor dat u uw opslag account in dezelfde regio maakt als uw Log Analytics werk ruimte zich bevindt
 * De *opgeslagen Zoek opdrachten* in opslag worden beschouwd als service artefacten en de indeling ervan kan veranderen
@@ -280,7 +281,7 @@ Wanneer u uw eigen opslag (BYOS) meebrengt en deze aan uw werk ruimte koppelt, w
 
 Een opslag account voor een *query* aan uw werk ruimte koppelen: *opgeslagen Zoek opdrachten* query's worden opgeslagen in uw opslag account. 
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
@@ -324,7 +325,7 @@ Na de configuratie wordt een nieuwe *opgeslagen zoek opdracht* opgeslagen in uw 
 
 Een opslag account voor *waarschuwingen* aan uw werk ruimte koppelen: query's voor *logboek waarschuwingen* worden opgeslagen in uw opslag account. 
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
@@ -385,7 +386,7 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
 ## <a name="limitations-and-constraints"></a>Beperkingen en beperkingen
 
-- Customer-Managed sleutel wordt ondersteund op toegewezen Log Analytics cluster en is geschikt voor klanten die 1 TB per dag of langer verzenden.
+- Door de klant beheerde sleutel wordt ondersteund op toegewezen Log Analytics cluster en is geschikt voor klanten die 1 TB per dag of langer verzenden.
 
 - Het maximale aantal clusters per regio en abonnement is 2
 
@@ -395,7 +396,7 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
 - Werkruimte koppeling naar het cluster moet alleen worden uitgevoerd nadat u hebt gecontroleerd of de inrichting van het Log Analytics cluster is voltooid. Gegevens die vóór de voltooiing naar uw werk ruimte worden verzonden, worden verwijderd en kunnen niet worden hersteld.
 
-- Customer-Managed sleutel versleuteling is van toepassing op nieuwe opgenomen gegevens na de configuratie tijd. Gegevens die vóór de configuratie zijn opgenomen, blijven versleuteld met de micro soft-sleutel. U kunt een query uitvoeren op gegevens die zijn opgenomen voor en na de configuratie van de Customer-Managed-sleutel naadloos.
+- Door de klant beheerde sleutel versleuteling is van toepassing op nieuwe opgenomen gegevens na de configuratie tijd. Gegevens die vóór de configuratie zijn opgenomen, blijven versleuteld met de micro soft-sleutel. U kunt een query uitvoeren op gegevens die zijn opgenomen voor en na de configuratie van de door de klant beheerde sleutel naadloos.
 
 - De Azure Key Vault moet worden geconfigureerd als herstelbaar. Deze eigenschappen zijn niet standaard ingeschakeld en moeten worden geconfigureerd met CLI of Power shell:<br>
   - [Voorlopig verwijderen](../../key-vault/general/soft-delete-overview.md)
@@ -424,7 +425,7 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
     
   - Tijdelijke verbindings fouten--opslag verwerkt tijdelijke fouten (time-outs, verbindings fouten, DNS-problemen) doordat sleutels gedurende langere tijd in de cache blijven staan. Dit geeft een kleine problemen in Beschik baarheid. De mogelijkheden voor het uitvoeren van query's en opname worden zonder onderbreking voortgezet.
     
-  - Live site--de niet-beschik baarheid van ongeveer 30 minuten leidt ertoe dat het opslag account niet meer beschikbaar is. De query mogelijkheid is niet beschikbaar en opgenomen gegevens worden gedurende enkele uren in de cache opgeslagen met behulp van micro soft-code om gegevens verlies te voor komen. Wanneer de toegang tot Key Vault wordt hersteld, wordt de query beschikbaar en worden de gegevens in de tijdelijke cache opgenomen in de gegevens opslag en versleuteld met Customer-Managed sleutel.
+  - Live site--de niet-beschik baarheid van ongeveer 30 minuten leidt ertoe dat het opslag account niet meer beschikbaar is. De query mogelijkheid is niet beschikbaar en opgenomen gegevens worden gedurende enkele uren in de cache opgeslagen met behulp van micro soft-code om gegevens verlies te voor komen. Wanneer toegang tot Key Vault wordt hersteld, wordt de query beschikbaar en worden de gegevens in de tijdelijke cache opgenomen in de gegevens opslag en versleuteld met door de klant beheerde sleutel.
 
   - Toegangs snelheid van Key Vault: de frequentie waarmee Azure Monitor toegang tot Key Vault voor verpakte en onverpakte bewerkingen tussen 6 en 60 seconden ligt.
 

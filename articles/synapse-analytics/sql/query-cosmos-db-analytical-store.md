@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 12/04/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 22103ad580fa474f44eaf42c696d19bbbd137c8e
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: a0458264b6ea0c741244531fc104a7637108b06e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095097"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121342"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Azure Cosmos DB gegevens opvragen met een serverloze SQL-groep in azure Synapse link preview
 
@@ -222,7 +222,7 @@ FROM OPENROWSET(
     ) with ( date_rep varchar(20), cases bigint, geo_id varchar(6) ) as rows
 ```
 
-Gebruik niet `OPENROWSET` zonder expliciet gedefinieerd schema, omdat dit van invloed kan zijn op de prestaties. Zorg ervoor dat u de kleinst mogelijke grootten voor uw kolommen gebruikt (bijvoorbeeld VARCHAR (100) in plaats van standaard VARCHAR (8000)). U moet een van de volgende UTF-8-sorteringen gebruiken als standaard database sortering of instellen als expliciete kolom sortering om [conversie probleem met UTF-8](/azure/synapse-analytics/troubleshoot/reading-utf8-text)te voor komen. Sortering `Latin1_General_100_BIN2_UTF8` biedt de beste prestaties wanneer Yu filter gegevens gebruikt in bepaalde teken reeks kolommen.
+Gebruik niet `OPENROWSET` zonder expliciet gedefinieerd schema, omdat dit van invloed kan zijn op de prestaties. Zorg ervoor dat u de kleinst mogelijke grootten voor uw kolommen gebruikt (bijvoorbeeld VARCHAR (100) in plaats van standaard VARCHAR (8000)). U moet een van de volgende UTF-8-sorteringen gebruiken als standaard database sortering of instellen als expliciete kolom sortering om [conversie probleem met UTF-8](../troubleshoot/reading-utf8-text.md)te voor komen. Sortering `Latin1_General_100_BIN2_UTF8` biedt de beste prestaties wanneer Yu filter gegevens gebruikt in bepaalde teken reeks kolommen.
 
 ## <a name="query-nested-objects-and-arrays"></a>Geneste objecten en matrices doorzoeken
 
@@ -259,7 +259,7 @@ WITH (  paper_id    varchar(8000),
 
 Het resultaat van deze query kan eruitzien als in de volgende tabel:
 
-| paper_id | title | metagegevens | verbergen |
+| paper_id | titel | metagegevens | verbergen |
 | --- | --- | --- |
 | bb11206963e831f... | Aanvullende informatie een eco-epidemi... | `{"title":"Supplementary Informati…` | `[{"first":"Julien","last":"Mélade","suffix":"","af…`| 
 | bb1206963e831f1... | Het gebruik van Convalescent sera in ongestoorde E... | `{"title":"The Use of Convalescent…` | `[{"first":"Antonio","last":"Lavazza","suffix":"", …` |
@@ -268,8 +268,8 @@ Het resultaat van deze query kan eruitzien als in de volgende tabel:
 Meer informatie over het analyseren van [complexe gegevens typen in azure Synapse-koppeling](../how-to-analyze-complex-schema.md) en [geneste structuren in een serverloze SQL-pool](query-parquet-nested-types.md).
 
 > [!IMPORTANT]
-> Als er onverwachte tekens in uw tekst worden weer geven `MÃƒÂ©lade` , zoals in plaats van `Mélade` , is de sortering van de data base niet ingesteld op [UTF-8-](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support#utf8) sortering.
-> [Sortering van de data base wijzigen](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-database-collation#to-change-the-database-collation) naar UTF-8-sortering met behulp van een SQL-instructie zoals `ALTER DATABASE MyLdw COLLATE LATIN1_GENERAL_100_CI_AS_SC_UTF8` .
+> Als er onverwachte tekens in uw tekst worden weer geven `MÃƒÂ©lade` , zoals in plaats van `Mélade` , is de sortering van de data base niet ingesteld op [UTF-8-](/sql/relational-databases/collations/collation-and-unicode-support#utf8) sortering.
+> [Sortering van de data base wijzigen](/sql/relational-databases/collations/set-or-change-the-database-collation#to-change-the-database-collation) naar UTF-8-sortering met behulp van een SQL-instructie zoals `ALTER DATABASE MyLdw COLLATE LATIN1_GENERAL_100_CI_AS_SC_UTF8` .
 
 ## <a name="flatten-nested-arrays"></a>Geneste matrices samen voegen
 
@@ -317,7 +317,7 @@ FROM
 
 Het resultaat van deze query kan eruitzien als in de volgende tabel:
 
-| title | verbergen | instantie | duren | betrokkenheid |
+| titel | verbergen | instantie | duren | betrokkenheid |
 | --- | --- | --- | --- | --- |
 | Aanvullende informatie een eco-epidemi... |   `[{"first":"Julien","last":"Mélade","suffix":"","affiliation":{"laboratory":"Centre de Recher…` | Julien | Mélade | `   {"laboratory":"Centre de Recher…` |
 Aanvullende informatie een eco-epidemi... | `[{"first":"Nicolas","last":"4#","suffix":"","affiliation":{"laboratory":"","institution":"U…` | Nicolas | 3 # |`{"laboratory":"","institution":"U…` | 
@@ -325,7 +325,7 @@ Aanvullende informatie een eco-epidemi... | `[{"first":"Nicolas","last":"4#","su
 | Aanvullende informatie een eco-epidemi... |   `[{"first":"Olivier","last":"Flores","suffix":"","affiliation":{"laboratory":"UMR C53 CIRAD, …` | Olivier | Flores |`{"laboratory":"UMR C53 CIRAD, …` |     
 
 > [!IMPORTANT]
-> Als er onverwachte tekens in uw tekst worden weer geven `MÃƒÂ©lade` , zoals in plaats van `Mélade` , is de sortering van de data base niet ingesteld op [UTF-8-](https://docs.microsoft.com/sql/relational-databases/collations/collation-and-unicode-support#utf8) sortering. [Sortering van de data base wijzigen](https://docs.microsoft.com/sql/relational-databases/collations/set-or-change-the-database-collation#to-change-the-database-collation) naar UTF-8-sortering met behulp van een SQL-instructie zoals `ALTER DATABASE MyLdw COLLATE LATIN1_GENERAL_100_CI_AS_SC_UTF8` .
+> Als er onverwachte tekens in uw tekst worden weer geven `MÃƒÂ©lade` , zoals in plaats van `Mélade` , is de sortering van de data base niet ingesteld op [UTF-8-](/sql/relational-databases/collations/collation-and-unicode-support#utf8) sortering. [Sortering van de data base wijzigen](/sql/relational-databases/collations/set-or-change-the-database-collation#to-change-the-database-collation) naar UTF-8-sortering met behulp van een SQL-instructie zoals `ALTER DATABASE MyLdw COLLATE LATIN1_GENERAL_100_CI_AS_SC_UTF8` .
 
 ## <a name="azure-cosmos-db-to-sql-type-mappings"></a>Toewijzingen van het SQL-type Azure Cosmos DB
 
@@ -335,7 +335,7 @@ Azure Cosmos DB-accounts van de SQL-API (core) ondersteunen JSON-eigenschaps typ
 
 | Azure Cosmos DB eigenschaps type | SQL-kolom Type |
 | --- | --- |
-| Booleaans | bit |
+| Boolean | bit |
 | Geheel getal | bigint |
 | Decimaal | float |
 | Tekenreeks | varchar (UTF-8-database sortering) |

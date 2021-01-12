@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 05/26/2020
-ms.openlocfilehash: 5a666d265550de6e24d791db6daa954d50ddde38
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: cefbdce88d49598998e8f985821088778eee3ae8
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094179"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117653"
 ---
 #  <a name="security-considerations-for-data-movement-in-azure-data-factory"></a>Beveiligings overwegingen voor het verplaatsen van gegevens in Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van de Data Factory-service die u gebruikt:"]
@@ -32,9 +32,9 @@ In een Data Factory-oplossing maakt u een of meer gegevens[pijplijnen](concepts-
 
 Hoewel Data Factory in slechts enkele regio's beschikbaar is, is de service voor gegevens verplaatsing [wereld wijd beschikbaar](concepts-integration-runtime.md#integration-runtime-location) om te zorgen voor de naleving van de gegevens, de efficiëntie en de verminderde kosten voor het netwerk verkeer. 
 
-Azure Data Factory inclusief Integration Runtime geen gegevens opslaat, behalve voor gekoppelde service referenties voor gegevens archieven in de Cloud, die zijn versleuteld met behulp van certificaten. Met Data Factory kunt u gegevensgestuurde werk stromen maken om de verplaatsing van gegevens te organiseren tussen [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats)en gegevens verwerking met behulp van [Compute Services](compute-linked-services.md) in andere regio's of in een on-premises omgeving. U kunt werk stromen ook controleren en beheren met behulp van Sdk's en Azure Monitor.
+Azure Data Factory met inbegrip van Azure Integration Runtime en zelf-hostende Integration Runtime slaat geen tijdelijke gegevens op, worden geen gegevens of Logboeken in de cache opgeslagen, met uitzonde ring van gekoppelde service referenties voor Cloud gegevensopslag, die zijn versleuteld met behulp van certificaten. Met Data Factory kunt u gegevensgestuurde werk stromen maken om de verplaatsing van gegevens te organiseren tussen [ondersteunde gegevens archieven](copy-activity-overview.md#supported-data-stores-and-formats)en gegevens verwerking met behulp van [Compute Services](compute-linked-services.md) in andere regio's of in een on-premises omgeving. U kunt werk stromen ook controleren en beheren met behulp van Sdk's en Azure Monitor.
 
-Data Factory is gecertificeerd voor:
+Data Factory is gecertificeerd voor: 
 
 | **[CSA ster certificering](https://www.microsoft.com/trustcenter/compliance/csa-star-certification)** |
 | :----------------------------------------------------------- |

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive
 ms.date: 04/15/2020
-ms.openlocfilehash: 4d9a5900990ea41788ced5f25690619fbde68d33
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 87bc2338ecc48f1115a406c276ef221cb185a4c5
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91854984"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118622"
 ---
 # <a name="managed-identities-in-azure-hdinsight"></a>Beheerde identiteiten in azure HDInsight
 
@@ -55,6 +55,7 @@ Als u al een langlopend cluster met meerdere verschillende beheerde identiteiten
  * Bij het wijzigen van het LDAPS-certificaat van AAD-DS in ESP-clusters worden de LDAPS-certificaten niet automatisch bijgewerkt en daarom kan LDAP-synchronisatie en-schaal nood voeding worden gestart.
  * MSI-toegang tot ADLS Gen2 kan niet worden gestart.
  * Versleutelings sleutels kunnen niet worden gedraaid in het CMK-scenario.
+
 vervolgens moet u de vereiste rollen en machtigingen voor de bovenstaande scenario's toewijzen aan al deze beheerde identiteiten die worden gebruikt in het cluster. Als u bijvoorbeeld verschillende beheerde identiteiten voor ADLS Gen2-en ESP-clusters hebt gebruikt, moeten beide de rollen Storage BLOB data owner en "HDInsight Domain Services contributor" hebben toegewezen om te voor komen dat deze problemen worden uitgevoerd.
 
 ## <a name="faq"></a>Veelgestelde vragen

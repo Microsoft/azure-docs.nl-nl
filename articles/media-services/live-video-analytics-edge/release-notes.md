@@ -3,12 +3,12 @@ title: Live video Analytics op IoT Edge opmerkingen bij de release-Azure
 description: Dit onderwerp bevat opmerkingen bij de release van live video Analytics over IoT Edge releases, verbeteringen, fout oplossingen en bekende problemen.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: 7761fee8f23b5be259f9a5c278f761fa4ce92fbf
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 7f8957d1ec93259cf6defe7980f19298f782ea5e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98059973"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121240"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Opmerkingen bij de release van live video op IoT Edge
 
@@ -20,6 +20,23 @@ In dit artikel vindt u informatie over:
 * Bekende problemen
 * Opgeloste fouten
 * Afgeschafte functionaliteit
+
+<hr width=100%>
+
+## <a name="january-12-2021"></a>12 januari 2021
+
+Deze release code is voor de januari 2021 vernieuwen van de module is:
+
+```
+mcr.microsoft.com/media/live-video-analytics:2.0.1
+```
+
+> [!NOTE]
+> In de Quick starts en zelf studies maakt de implementatie manifesten gebruik van een tag van 2 (live-video-Analytics: 2). Als u dergelijke manifesten opnieuw implementeert, moet de module worden bijgewerkt op uw rand > apparaten.
+### <a name="bug-fixes"></a>Opgeloste fouten 
+
+* De velden `ActivationSignalOffset` `MinimumActivationTime` en de `MaximumActivationTime` Signal Gate-processors zijn onjuist ingesteld als vereiste eigenschappen. Ze zijn nu **optionele** eigenschappen.
+* Er is een fout opgetreden bij het gebruik van een probleem dat ertoe leidt dat de module live video Analytics op IoT Edge vastloopt wanneer deze in bepaalde regio's wordt geïmplementeerd.
 
 <hr width=100%>
 

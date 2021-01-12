@@ -11,12 +11,12 @@ ms.date: 09/04/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f8db19b209ddefebd4a297f18fb9b178fcf40f21
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8826dff6d347f78625272a5620a1f168b8804db
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89457903"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120033"
 ---
 # <a name="development-best-practices-for-synapse-sql-pool"></a>Aanbevolen procedures voor het ontwikkelen van de Synapse SQL-groep
 
@@ -55,7 +55,7 @@ Als u bijvoorbeeld een ordertabel hebt die is gedistribueerd op order_id, en een
 
 Zorg er bij het laden van een distributietabel voor dat uw inkomende gegevens niet zijn gedistribueerd volgens de verdeelsleutel. Dit vertraagt het laden.  De volgende artikelen bevatten meer informatie over het verbeteren van de prestaties door een distributie kolom te selecteren en een gedistribueerde tabel te definiëren in de WITH-component van uw instructie CREATE TABLES.
 
-Zie ook [tabel Overzicht](sql-data-warehouse-tables-overview.md), [tabel distributie](sql-data-warehouse-tables-distribute.md), [tabel distributie](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/), [Create Table](sql-data-warehouse-tables-overview.md)en Create Table selecteren [als selecteren](sql-data-warehouse-develop-ctas.md)
+Zie ook [tabel Overzicht](sql-data-warehouse-tables-overview.md), [tabel distributie](sql-data-warehouse-tables-distribute.md), [tabel distributie](/archive/blogs/sqlcat/choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service), [Create Table](sql-data-warehouse-tables-overview.md)en Create Table selecteren [als selecteren](sql-data-warehouse-develop-ctas.md)
 
 ## <a name="do-not-over-partition"></a>Niet te veel partities maken
 
@@ -120,7 +120,7 @@ Zie ook [tabel indexen](sql-data-warehouse-tables-index.md), [Column Store-index
 
 Als u in dit artikel niet vindt wat u zoekt, kunt u het document ' zoeken naar docs ' aan de linkerkant van deze pagina gebruiken om alle Azure Synapse-documenten te doorzoeken.  
 
-De [pagina van micro soft Q&een vraag voor Azure Synapse](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html) is een plek waar u vragen kunt stellen aan andere gebruikers en aan de Azure Synapse-Product groep.  We controleren het forum regelmatig om er zeker van te zijn dat uw vragen worden beantwoord door een andere gebruiker of een van ons.  
+De [pagina van micro soft Q&een vraag voor Azure Synapse](/answers/topics/azure-synapse-analytics.html) is een plek waar u vragen kunt stellen aan andere gebruikers en aan de Azure Synapse-Product groep.  We controleren het forum regelmatig om er zeker van te zijn dat uw vragen worden beantwoord door een andere gebruiker of een van ons.  
 
 Als u liever vragen hebt over Stack Overflow, hebben we ook een [Azure Synapse Analytics stack overflow-forum](https://stackoverflow.com/questions/tagged/azure-sqldw).
 

@@ -9,12 +9,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 12/17/2020
-ms.openlocfilehash: 5d291ad745122d929c4b664e9da5e4649e463529
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: bdd7fd8e19bf2de6d0b3c6b2edd4515771fae237
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679102"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119004"
 ---
 # <a name="execute-r-script-module"></a>R-script module uitvoeren
 
@@ -49,10 +49,12 @@ azureml_main <- function(dataframe1, dataframe2){
 Als u extra R-pakketten wilt installeren, gebruikt u de- `install.packages()` methode. Pakketten worden voor elke Execute R-script module geïnstalleerd. Ze worden niet gedeeld in andere uitvoerings-R-script modules.
 
 > [!NOTE]
+> Het is **niet** raadzaam R-pakket te installeren vanuit de script bundel. Het is raadzaam om pakketten rechtstreeks in de script editor te installeren.
 > Geef de KRANs opslagplaats op wanneer u pakketten installeert, zoals `install.packages("zoo",repos = "http://cran.us.r-project.org")` .
 
 > [!WARNING]
 > De excute R-script module biedt geen ondersteuning voor het installeren van pakketten waarvoor systeem eigen compilatie is vereist, zoals `qdap` pakket waarvoor Java en pakket vereist zijn `drc` waarvoor C++ vereist is. Dit komt doordat deze module wordt uitgevoerd in een vooraf geïnstalleerde omgeving met niet-beheerders machtigingen.
+> Installeer geen pakketten die vooraf zijn gebouwd op/voor Windows, omdat de ontwerp modules worden uitgevoerd op Ubuntu. Als u wilt controleren of een pakket vooraf is gebouwd op Windows, gaat u naar [kranen](https://cran.r-project.org/) en zoekt u naar het pakket, downloadt u een binair bestand volgens uw besturings systeem en controleert u het **volgende:** deel in het **beschrijvings** bestand. Hier volgt een voor beeld: :::image type="content" source="media/module/r-package-description.png" alt-text="R-pakket beschrijving" lightbox="media/module/r-package-page.png":::
 
 In dit voor beeld ziet u hoe u Zoo installeert:
 ```R

@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 64ba24eb0eab581310122908fc05d1d671ac1d40
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 1a988dba52b36b1d27407316200bfa6897de7cf5
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96531570"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120152"
 ---
 # <a name="data-loading-strategies-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Strategieën voor het laden van gegevens voor een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -42,7 +42,7 @@ De basis stappen voor het implementeren van ELT zijn:
 5. Transformeer de gegevens.
 6. Voeg de gegevens in productietabellen in.
 
-Zie [gegevens laden uit Azure Blob-opslag](load-data-from-azure-blob-storage-using-polybase.md)voor een zelf studie over het laden van.
+Zie [gegevens laden uit Azure Blob-opslag](./load-data-from-azure-blob-storage-using-copy.md)voor een zelf studie over het laden van.
 
 ## <a name="1-extract-the-source-data-into-text-files"></a>1. Extraheer de bron gegevens in tekst bestanden
 
@@ -123,7 +123,7 @@ Gebruik de volgende SQL-gegevens type toewijzing bij het laden van Parquet-besta
 >- De volgende fout kan optreden als de typen niet overeenkomen tussen Parquet en SQL of als u niet-ondersteunde Parquet-gegevens typen hebt: **"HdfsBridge:: recordReaderFillBuffer-onverwachte fout aangetroffen bij het invullen van de buffer voor record lezer: ClassCastException:...**
 >- Het laden van een waarde buiten het bereik van 0-127 in een kolom tinyint voor de Parquet-en ORC-bestands indeling wordt niet ondersteund.
 
-Zie voor een voor beeld van het maken van externe objecten [externe tabellen maken](https://docs.microsoft.com/azure/synapse-analytics/sql/develop-tables-external-tables?tabs=sql-pool).
+Zie voor een voor beeld van het maken van externe objecten [externe tabellen maken](../sql/develop-tables-external-tables.md?tabs=sql-pool).
 
 ### <a name="format-text-files"></a>Tekst bestanden opmaken
 
@@ -142,11 +142,11 @@ Het is best practice om gegevens in een faserings tabel te laden. Met faserings 
 
 Als u gegevens wilt laden, kunt u een van de volgende laad opties gebruiken:
 
-- De [instructie Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) is het aanbevolen laad hulpprogramma waarmee u gegevens naadloos en flexibel kunt laden. De instructie bevat veel extra laad mogelijkheden die poly Base niet biedt. 
-- [Poly Base met T-SQL](load-data-from-azure-blob-storage-using-polybase.md) vereist dat u externe gegevens objecten definieert.
+- De [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) is het aanbevolen laad hulpprogramma waarmee u gegevens naadloos en flexibel kunt laden. De instructie bevat veel extra laad mogelijkheden die poly Base niet biedt. 
+- [Poly Base met T-SQL](./load-data-from-azure-blob-storage-using-copy.md) vereist dat u externe gegevens objecten definieert.
 - [Poly base-en copy-instructie met Azure Data Factory (ADF)](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) is een andere Orchestration-tool.  Hierin worden een pijp lijn en plannings taken gedefinieerd.
 - [Poly Base met SSIS](/sql/integration-services/load-data-to-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) werkt goed als uw bron gegevens zich in SQL Server bevinden. SSIS definieert de bron-naar-doel tabel toewijzingen en organiseert ook de belasting. Als u al SSIS-pakketten hebt, kunt u de pakketten wijzigen om met de nieuwe Data Warehouse-bestemming te werken.
-- [Poly Base met Azure Databricks](../../azure-databricks/databricks-extract-load-sql-data-warehouse.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) gegevens overdraagt van een tabel naar een Databricks data frame en/of schrijft gegevens van een Databricks data frame naar een tabel met poly base.
+- [Poly Base met Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json) gegevens overdraagt van een tabel naar een Databricks data frame en/of schrijft gegevens van een Databricks data frame naar een tabel met poly base.
 
 ### <a name="other-loading-options"></a>Andere opties voor laden
 

@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: xiaoyul
 ms.reviewer: igorstan
-ms.openlocfilehash: a5e514602668c96d63562e45fb114cf9770a54a9
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 1fd7649cac6b636873ca529fe9780429d86697c6
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321490"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120900"
 ---
 # <a name="development-best-practices-for-synapse-sql"></a>Aanbevolen procedures voor het ontwikkelen van Synapse-SQL
 
@@ -53,7 +53,7 @@ Dit betekent dat gegevens verplaatsings bewerkingen worden geëlimineerd.  Minde
 
 Raadpleeg de volgende koppelingen voor meer informatie over het selecteren van een distributie kolom kan de prestaties verbeteren en het definiëren van een gedistribueerde tabel in de WITH-component van uw instructie CREATE TABLES.
 
-Zie ook [tabel Overzicht](develop-tables-overview.md), [tabel distributie](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [selecteren van tabel distributie](https://blogs.msdn.microsoft.com/sqlcat/20../../choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service/), [Create Table](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)en [Create Table als selecteren](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+Zie ook [tabel Overzicht](develop-tables-overview.md), [tabel distributie](../sql-data-warehouse/sql-data-warehouse-tables-distribute.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json), [selecteren van tabel distributie](/archive/blogs/sqlcat/choosing-hash-distributed-table-vs-round-robin-distributed-table-in-azure-sql-dw-service), [Create Table](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)en [Create Table als selecteren](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ### <a name="do-not-over-partition"></a>Niet te veel partities maken
 Hoewel het partitioneren van gegevens effectief kan zijn voor het onderhouden van uw gegevens via partitie wisseling of het optimaliseren van scans met behulp van partitie-eliminatie, waardoor er te veel partities zijn, kunnen de query's worden vertraagd.  Vaak is het mogelijk dat een hoge granulatie strategie die goed werkt op SQL Server wellicht niet goed werkt op een toegewezen SQL-groep.  
@@ -147,7 +147,7 @@ Als dat mogelijk is, kunt u bestanden voorbereiden voor betere prestaties:
 - Het verdient de voor keur om even grote bestanden te hebben voor één OPENROWSET-pad of een externe tabel locatie.
 - Uw gegevens partitioneren door partities op te slaan in verschillende mappen of bestands namen. Controleer de [functies bestands naam en bestandspad gebruiken om specifieke partities te bereiken](#use-fileinfo-and-filepath-functions-to-target-specific-partitions).
 
-### <a name="use-fileinfo-and-filepath-functions-to-target-specific-partitions"></a>De functies file info en filepath gebruiken om specifieke partities te bereiken
+### <a name="use-fileinfo-and-filepath-functions-to-target-specific-partitions"></a>Gebruik de functies fileinfo en filepath om specifieke partities te bereiken
 
 Gegevens zijn vaak ingedeeld in partities. U kunt een serverloze SQL-groep instrueren voor het opvragen van specifieke mappen en bestanden. Hierdoor beperkt u het aantal bestanden en de hoeveelheid gegevens die de query moet lezen en verwerken. 
 
@@ -167,7 +167,6 @@ Omdat CETAS Parquet-bestanden genereert, worden er automatisch statistieken gema
 
 ### <a name="next-steps"></a>Volgende stappen
 
-Als u informatie nodig hebt die niet in dit artikel wordt vermeld, gebruikt u de functie **zoeken naar document** aan de linkerkant van deze pagina om alle documenten van de SQL-groep te doorzoeken.  De [pagina micro soft Q&een vraag voor Azure Synapse Analytics](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html) is een plek waar u vragen kunt stellen aan andere gebruikers en aan de Azure Synapse Analytics-product groep. We controleren het forum regelmatig om er zeker van te zijn dat uw vragen worden beantwoord door een andere gebruiker of een van ons.  
+Als u informatie nodig hebt die niet in dit artikel wordt vermeld, gebruikt u de functie **zoeken naar document** aan de linkerkant van deze pagina om alle documenten van de SQL-groep te doorzoeken.  De [pagina micro soft Q&een vraag voor Azure Synapse Analytics](/answers/topics/azure-synapse-analytics.html) is een plek waar u vragen kunt stellen aan andere gebruikers en aan de Azure Synapse Analytics-product groep. We controleren het forum regelmatig om er zeker van te zijn dat uw vragen worden beantwoord door een andere gebruiker of een van ons.  
 
 Als u liever vragen hebt over Stack Overflow, hebben we ook een [Azure Synapse Analytics stack overflow-forum](https://stackoverflow.com/questions/tagged/azure-sqldw).
- 

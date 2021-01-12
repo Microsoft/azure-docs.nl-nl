@@ -9,12 +9,12 @@ ms.subservice: synapse-link
 ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0e4bcc13a2eaddbf394d8468b29eeff475119e2d
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 5316f74ee38f597592ae4582aef31837f0f05fda
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96459026"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119829"
 ---
 # <a name="connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
 
@@ -24,8 +24,8 @@ In dit artikel wordt beschreven hoe u toegang krijgt tot een Azure Cosmos DB-dat
 
 Voordat u een Azure Cosmos DB-database verbindt met uw werkruimte, hebt u het volgende nodig:
 
-* Een bestaande Azure Cosmos DB-database, of u kunt een nieuw account maken door de stappen te volgen in: [Quickstart: Een Azure Cosmos DB-account beheren](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-database-account).
-* Een bestaande Azure Synapse-werkruimte, of u kunt een nieuwe werkruimte maken door de stappen te volgen in [Quickstart: Een Synapse-werkruimte maken](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace).
+* Een bestaande Azure Cosmos DB-database, of u kunt een nieuw account maken door de stappen te volgen in: [Quickstart: Een Azure Cosmos DB-account beheren](../../cosmos-db/how-to-manage-database-account.md).
+* Een bestaande Azure Synapse-werkruimte, of u kunt een nieuwe werkruimte maken door de stappen te volgen in [Quickstart: Een Synapse-werkruimte maken](../quickstart-create-workspace.md).
 
 > [!IMPORTANT]
 > Azure Synapse Link voor Azure Cosmos DB wordt momenteel ondersteund voor werkruimten waarvoor geen beheerd virtueel netwerk is ingeschakeld.

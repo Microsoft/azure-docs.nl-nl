@@ -11,12 +11,12 @@ ms.date: 04/09/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: f66efb9112a9342122f5b56ab11b862ce3c7c61b
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 75c0058f2d4878016281656935cbd82f79b859fd
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93314433"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119999"
 ---
 # <a name="monitoring-resource-utilization-and-query-activity-in-azure-synapse-analytics"></a>Resource gebruik en query activiteit bewaken in azure Synapse Analytics
 
@@ -24,18 +24,18 @@ Azure Synapse Analytics biedt een uitgebreide bewakings ervaring in het Azure Po
 
 ## <a name="resource-utilization"></a>Resourcegebruik
 
-De volgende metrische gegevens zijn beschikbaar in de Azure Portal voor Synapse SQL. Deze metrische gegevens worden geoppereerd via [Azure monitor](../../azure-monitor/platform/data-collection.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#metrics).
+De volgende metrische gegevens zijn beschikbaar in de Azure Portal voor Synapse SQL. Deze metrische gegevens worden geoppereerd via [Azure monitor](../../azure-monitor/platform/data-platform.md?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json#metrics).
 
 | Naam meetwaarde             | Beschrijving                                                  | Aggregatietype |
 | ----------------------- | ------------------------------------------------------------ | ---------------- |
 | CPU-percentage          | CPU-gebruik in alle knoop punten voor het Data Warehouse      | Gem, min, Max    |
 | Gegevens-I/O-percentage      | IO-gebruik over alle knoop punten voor het Data Warehouse       | Gem, min, Max    |
 | Geheugen percentage       | Geheugen gebruik (SQL Server) op alle knoop punten voor het Data Warehouse | Gem, min, Max   |
-| Actieve Query's          | Aantal actieve query's dat op het systeem wordt uitgevoerd             | Som              |
-| Query's in de wachtrij          | Aantal query's in de wachtrij dat wacht om te worden uitgevoerd          | Som              |
+| Actieve Query's          | Aantal actieve query's dat op het systeem wordt uitgevoerd             | Sum              |
+| Query's in de wachtrij          | Aantal query's in de wachtrij dat wacht om te worden uitgevoerd          | Sum              |
 | Geslaagde verbindingen  | Aantal geslaagde verbindingen (aanmeldingen) voor de data base | Som, aantal       |
 | Mislukte verbindingen      | Aantal mislukte verbindingen (aanmeldingen) voor de data base | Som, aantal       |
-| Geblokkeerd door de firewall     | Aantal aanmeldingen bij het data warehouse dat is geblokkeerd     | Som, aantal       |
+| Geblokkeerd door firewall     | Aantal aanmeldingen bij het data warehouse dat is geblokkeerd     | Som, aantal       |
 | Limiet voor DWU               | Serviceniveau doelstelling van het Data Warehouse                | Gem, min, Max    |
 | Percentage DWU          | Maximum tussen CPU-percentage en gegevens-i/o-percentage        | Gem, min, Max    |
 | DWU gebruikt                | Limiet voor DWU * DWU percentage                                   | Gem, min, Max    |
@@ -57,7 +57,7 @@ Raadpleeg deze [documentatie](../sql/reference-tsql-system-views.md#dedicated-sq
 
 ## <a name="metrics-and-diagnostics-logging"></a>Metrische gegevens en diagnoselogboeken 
 
-Zowel metrische gegevens als logboeken kunnen worden geëxporteerd naar Azure Monitor, met name de [Azure monitor-logboeken](../../azure-monitor/log-query/log-query-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) component en via een programma kunnen worden geopend via [logboek query's](../../azure-monitor/log-query/get-started-portal.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). De logboek latentie voor Synapse SQL is ongeveer 10-15 minuten. Raadpleeg de volgende documentatie voor meer informatie over de factoren die van invloed zijn op de latentie.
+Zowel metrische gegevens als logboeken kunnen worden geëxporteerd naar Azure Monitor, met name de [Azure monitor-logboeken](../../azure-monitor/log-query/log-query-overview.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) component en via een programma kunnen worden geopend via [logboek query's](../../azure-monitor/log-query/log-analytics-tutorial.md?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json). De logboek latentie voor Synapse SQL is ongeveer 10-15 minuten. Raadpleeg de volgende documentatie voor meer informatie over de factoren die van invloed zijn op de latentie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

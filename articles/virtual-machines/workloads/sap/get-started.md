@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 01/05/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: f74e6435af9084b0c8f222c33dc922fe678bc4c7
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: e3a4c367bbe0770495a63c00ca33861ac815460f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914516"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121002"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Azure gebruiken om SAP-werkbelasting scenario's te hosten en uit te voeren
 
@@ -83,6 +83,7 @@ In deze sectie vindt u documenten over integratie van micro soft Power BI in SAP
 
 ## <a name="change-log"></a>Wijzigingslogboek
 
+- 01/11/2021: kleine wijzigingen in [ha voor SAP NW op Azure-vm's op RHEL voor SAP-toepassingen](./high-availability-guide-rhel.md), [ha voor SAP NW op Azure vm's op RHEL met ANF](./high-availability-guide-rhel-netapp-files.md) en [ha voor SAP NW op Azure VM'S in RHEL multi-sid-hand leiding](./high-availability-guide-rhel-multi-sid.md) voor het aanpassen van opdrachten voor zowel RHEL8 als RHEL7, en ENSA1 en ENSA2
 - 01/05/2021: wijzigingen in [SAP Hana uitschalen met het stand-by-knoop punt op virtuele machines van Azure met ANF op SLES](./sap-hana-scale-out-standby-netapp-files-suse.md) en [SAP Hana uitschalen met het knoop punt stand-by op virtuele machines van Azure met ANF op RHEL](./sap-hana-scale-out-standby-netapp-files-rhel.md), waarbij de aanbevolen configuratie wordt aangepast zodat SAP host agent het lokale poort bereik kan beheren  
 - 01/04/2021: nieuwe Azure-regio's die worden ondersteund door HLI toevoegen aan [Wat is SAP Hana op Azure (grote exemplaren)](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-overview-architecture)
 - 12/29/2020: aanbevelingen voor de architectuur toevoegen voor specifieke Azure-regio's in [SAP-werkbelasting configuraties met Azure-beschikbaarheidszones](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/sap-ha-availability-zones)

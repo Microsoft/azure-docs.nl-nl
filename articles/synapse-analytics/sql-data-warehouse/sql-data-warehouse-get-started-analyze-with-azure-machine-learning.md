@@ -12,27 +12,27 @@ ms.author: martinle
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
 tag: azure-Synapse
-ms.openlocfilehash: ea4038e88d41a089958d4199e4c5a00f0d2acabd
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 5348c0ed5d80e2738bb865ca3ec1ddf5aaed009a
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92015563"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118044"
 ---
 # <a name="analyze-data-with-azure-machine-learning"></a>Gegevens analyseren met Azure Machine Learning
 
-In deze zelf studie wordt [Azure machine learning Designer](https://docs.microsoft.com/azure/machine-learning/concept-designer) gebruikt voor het bouwen van een voorspellend machine learning model. Het model is gebaseerd op de gegevens die zijn opgeslagen in azure Synapse. Het scenario voor de zelf studie is om te voors pellen of een klant waarschijnlijk een fiets koopt of niet, dat wil zeggen dat de fiets winkel een gerichte marketing campagne kan bouwen.
+In deze zelf studie wordt [Azure machine learning Designer](../../machine-learning/concept-designer.md) gebruikt voor het bouwen van een voorspellend machine learning model. Het model is gebaseerd op de gegevens die zijn opgeslagen in azure Synapse. Het scenario voor de zelf studie is om te voors pellen of een klant waarschijnlijk een fiets koopt of niet, dat wil zeggen dat de fiets winkel een gerichte marketing campagne kan bouwen.
 
 ## <a name="prerequisites"></a>Vereisten
 
 Voor deze zelfstudie hebt u het volgende nodig:
 
-* een SQL-pool vooraf geladen met AdventureWorksDW-voorbeeld gegevens. Zie [een SQL-groep maken](create-data-warehouse-portal.md) en kiezen om de voorbeeld gegevens te laden om deze SQL-groep in te richten. Als u al een Data Warehouse hebt, maar geen voorbeeld gegevens hebt, kunt u [hand matig voorbeeld gegevens laden](load-data-from-azure-blob-storage-using-polybase.md).
-* een Azure machine learning-werk ruimte. Volg [deze zelf studie](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace) om een nieuwe te maken.
+* een SQL-pool vooraf geladen met AdventureWorksDW-voorbeeld gegevens. Zie [een SQL-groep maken](create-data-warehouse-portal.md) en kiezen om de voorbeeld gegevens te laden om deze SQL-groep in te richten. Als u al een Data Warehouse hebt, maar geen voorbeeld gegevens hebt, kunt u [hand matig voorbeeld gegevens laden](./load-data-from-azure-blob-storage-using-copy.md).
+* een Azure machine learning-werk ruimte. Volg [deze zelf studie](../../machine-learning/how-to-manage-workspace.md) om een nieuwe te maken.
 
 ## <a name="get-the-data"></a>De gegevens ophalen
 
-De gebruikte gegevens bevindt zich in de weer gave dbo. vTargetMail in AdventureWorksDW. Als u gegevens opslag in deze zelf studie wilt gebruiken, worden deze eerst geëxporteerd naar Azure Data Lake Storage account, omdat Azure Synapse momenteel geen gegevens sets ondersteunt. Azure Data Factory kunnen worden gebruikt om gegevens uit het Data Warehouse te exporteren naar Azure Data Lake Storage met behulp van de [Kopieer activiteit](https://docs.microsoft.com/azure/data-factory/copy-activity-overview). Gebruik de volgende query voor het importeren:
+De gebruikte gegevens bevindt zich in de weer gave dbo. vTargetMail in AdventureWorksDW. Als u gegevens opslag in deze zelf studie wilt gebruiken, worden deze eerst geëxporteerd naar Azure Data Lake Storage account, omdat Azure Synapse momenteel geen gegevens sets ondersteunt. Azure Data Factory kunnen worden gebruikt om gegevens uit het Data Warehouse te exporteren naar Azure Data Lake Storage met behulp van de [Kopieer activiteit](../../data-factory/copy-activity-overview.md). Gebruik de volgende query voor het importeren:
 
 ```sql
 SELECT [CustomerKey]
@@ -54,7 +54,7 @@ SELECT [CustomerKey]
 FROM [dbo].[vTargetMail]
 ```
 
-Wanneer de gegevens beschikbaar zijn in Azure Data Lake Storage, worden data stores in Azure Machine Learning gebruikt om [verbinding te maken met Azure Storage-services](https://docs.microsoft.com/azure/machine-learning/how-to-access-data). Volg de onderstaande stappen om een gegevens opslag en een bijbehorende gegevensset te maken:
+Wanneer de gegevens beschikbaar zijn in Azure Data Lake Storage, worden data stores in Azure Machine Learning gebruikt om [verbinding te maken met Azure Storage-services](../../machine-learning/how-to-access-data.md). Volg de onderstaande stappen om een gegevens opslag en een bijbehorende gegevensset te maken:
 
 1. Start Azure Machine Learning Studio vanuit Azure Portal of Meld u aan bij [Azure machine learning Studio](https://ml.azure.com/).
 
@@ -66,9 +66,9 @@ Wanneer de gegevens beschikbaar zijn in Azure Data Lake Storage, worden data sto
 
 1. Klik vervolgens op **gegevens sets** in het linkerdeel venster van de sectie **assets** . Selecteer **gegevensset maken** met de optie **uit gegevens opslag**.
 
-1. Geef de naam van de gegevensset op en selecteer het type dat in de **tabel**moet worden getypt. Klik vervolgens op **volgende** om door te gaan.
+1. Geef de naam van de gegevensset op en selecteer het type dat in de **tabel** moet worden getypt. Klik vervolgens op **volgende** om door te gaan.
 
-1. Selecteer in de **sectie een gegevens archief selecteren of maken**de optie **eerder het gegevens archief is gemaakt**. Selecteer de gegevens opslag die u eerder hebt gemaakt. Klik op volgende en geef het pad en de bestands instellingen op. Zorg ervoor dat u de kolomkop opgeeft als de bestanden er een bevatten.
+1. Selecteer in de **sectie een gegevens archief selecteren of maken** de optie **eerder het gegevens archief is gemaakt**. Selecteer de gegevens opslag die u eerder hebt gemaakt. Klik op volgende en geef het pad en de bestands instellingen op. Zorg ervoor dat u de kolomkop opgeeft als de bestanden er een bevatten.
 
 1. Klik tot slot op **maken** om de gegevensset te maken.
 
@@ -90,7 +90,7 @@ Volg vervolgens de stappen hieronder voor de ontwerp configuratie:
 
 1. Sleep de gegevensset die u eerder hebt gemaakt, naar het canvas.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/import-dataset.png" alt-text="Scherm opname van het linkerdeel venster van Azure Machine Learning interface":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/import-dataset.png" alt-text="Scherm opname van module gegevensset op het canvas.":::
 
 ## <a name="clean-the-data"></a>De gegevens opschonen
 
@@ -100,13 +100,13 @@ Als u de gegevens wilt opschonen, verwijdert u kolommen die niet relevant zijn v
 
 1. Sleep de module **select columns in dataset** onder **Data Transformation < manipulatie** in het canvas. Deze module verbinden met de module **gegevensset** .
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-in.png" alt-text="Scherm opname van het linkerdeel venster van Azure Machine Learning interface" lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-out.png":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-in.png" alt-text="Scherm afbeelding van de module voor kolom selectie op het canvas." lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/select-columns-zoomed-out.png":::
 
 1. Klik op de module om het eigenschappen venster te openen. Klik op kolom bewerken om op te geven welke kolommen u wilt neerzetten.
 
 1. Sluit twee kolommen uit: CustomerAlternateKey en GeographyKey. Klik op **Opslaan**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/drop-columns.png" alt-text="Scherm opname van het linkerdeel venster van Azure Machine Learning interface":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/drop-columns.png" alt-text="Scherm opname waarin kolommen worden weer gegeven die worden verwijderd.":::
 
 ## <a name="build-the-model"></a>Het model bouwen
 
@@ -116,7 +116,7 @@ De gegevens worden gesplitst 80-20:80% om een machine learning model te trainen 
 
 1. Voer in het deel venster Eigenschappen 0,8 **in voor het gedeelte van rijen in de eerste uitvoer gegevensset**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/split-data.png" alt-text="Scherm opname van het linkerdeel venster van Azure Machine Learning interface":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/split-data.png" alt-text="Scherm afbeelding met de Splits ratio van 0,8.":::
 
 1. Sleep de module **Two-Class Boosted Decision Tree** (Beslissingsstructuur op basis van twee klassen) naar het canvas.
 
@@ -124,9 +124,9 @@ De gegevens worden gesplitst 80-20:80% om een machine learning model te trainen 
 
 1. Selecteer in het deel venster Eigenschappen voor Train model model de optie kolom bewerken bij **Label kolom** . Selecteer de kolom **BikeBuyer** als de kolom die u wilt voors pellen en selecteer **Opslaan**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/label-column.png" alt-text="Scherm opname van het linkerdeel venster van Azure Machine Learning interface":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/label-column.png" alt-text="Scherm opname met een label kolom, BikeBuyer, geselecteerd.":::
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/train-model.png" alt-text="Scherm opname van het linkerdeel venster van Azure Machine Learning interface":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/train-model.png" alt-text="Scherm afbeelding met Train model module die is verbonden met Two-Class versterkte beslissings structuur en gesplitste gegevens modules.":::
 
 ## <a name="score-the-model"></a>Het model beoordelen
 
@@ -142,11 +142,11 @@ Nu kunt u testen hoe het model presteert op test gegevens. Er worden twee versch
 
 1. Klik op **verzenden** om de pijplijn uitvoering in te stellen.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-in.png" alt-text="Scherm opname van het linkerdeel venster van Azure Machine Learning interface" lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-out.png":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-in.png" alt-text="Scherm afbeelding van alle resterende modules op het canvas." lightbox="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/algo-comparison-zoomed-out.png":::
 
 1. Zodra de uitvoering is voltooid, klikt u met de rechter muisknop op de module **Evaluate model** en klikt u op **evaluatie resultaten visualiseren**.
 
-    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/result-visualize-zoomed-out.png" alt-text="Scherm opname van het linkerdeel venster van Azure Machine Learning interface":::
+    :::image type="content" source="./media/sql-data-warehouse-get-started-analyze-with-azure-machine-learning/result-visualize-zoomed-out.png" alt-text="Scherm opname van de resultaten.":::
 
 De gegeven metrische gegevens zijn de ROC-curve, het diagram met precisie terughalen en de kromme voor liften. Bekijk deze metrische gegevens om te zien dat het eerste model beter is uitgevoerd dan het tweede. Klik met de rechter muisknop op de module score model om te zien wat het eerste model is voorspeld en op gescoorde gegevensset visualiseren om de voorspelde resultaten te zien.
 
@@ -155,10 +155,10 @@ U ziet twee meer kolommen die worden toegevoegd aan de gegevensset voor de test.
 * Scored Probabilities (Berekende kansen): de waarschijnlijkheid dat een klant een fiets koopt.
 * Scored Labels (Berekende Labels): de classificatie die door het model is uitgevoerd: fietskoper (1) of niet (0). Deze drempelwaarde voor waarschijnlijkheid voor labeling is ingesteld op 50% en kan worden aangepast.
 
-Vergelijk de kolom BikeBuyer (werkelijk) met de gescoorde labels (voor spelling) om te zien hoe goed het model is uitgevoerd. Vervolgens kunt u dit model gebruiken om voor spellingen te doen voor nieuwe klanten. U kunt [dit model publiceren als een webservice](https://docs.microsoft.com/azure/machine-learning/tutorial-designer-automobile-price-deploy) of resultaten terugschrijven naar Azure Synapse.
+Vergelijk de kolom BikeBuyer (werkelijk) met de gescoorde labels (voor spelling) om te zien hoe goed het model is uitgevoerd. Vervolgens kunt u dit model gebruiken om voor spellingen te doen voor nieuwe klanten. U kunt [dit model publiceren als een webservice](../../machine-learning/tutorial-designer-automobile-price-deploy.md) of resultaten terugschrijven naar Azure Synapse.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg [Introduction to machine learning on Azure](https://docs.microsoft.com/azure/machine-learning/overview-what-is-azure-ml)voor meer informatie over Azure machine learning.
+Raadpleeg [Introduction to machine learning on Azure](../../machine-learning/overview-what-is-azure-ml.md)voor meer informatie over Azure machine learning.
 
 Meer informatie over de ingebouwde Score in het data [Warehouse.](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest)

@@ -12,12 +12,12 @@ ms.workload: na
 ms.topic: article
 ms.date: 01/06/2021
 ms.author: juliako
-ms.openlocfilehash: 3552d55d995608dd0d471c84cd5e9f9988ebe2c0
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: b6e18e077b717da65ca8d70b9bda6a133dba1f5c
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98028638"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120084"
 ---
 # <a name="azure-media-services-video-indexer-release-notes"></a>Release opmerkingen bij Azure Media Services Video Indexer
 
@@ -44,7 +44,7 @@ Video Indexer ondersteunt detectie, groepering en herkenning van tekens in inhou
 
 ### <a name="planned-video-indexer-website-authenticatication-changes"></a>Geplande Video Indexer website wijzigingen authenticatication
 
-Vanaf 1 maart 2021 kunt u zich niet meer registreren en u aanmelden bij de [video indexer](https://www.videoindexer.ai/) website met Facebook of LinkedIn.
+Vanaf 1 maart 2021 kunt u zich niet meer registreren en u aanmelden bij de [ontwikkelaars Portal](video-indexer-use-apis.md) van [video indexer website](https://www.videoindexer.ai/) met behulp van Facebook of LinkedIn.
 
 U kunt zich aanmelden en aanmelden met een van deze providers: Azure AD, micro soft en Google.
 

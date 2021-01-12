@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 60a995f78b9b696197d9bd45e04becb19e4129f0
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: c91310d9d1e67dd77098ee13a87190ee6d411607
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653058"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120101"
 ---
 # <a name="best-practices-for-loading-data-using-dedicated-sql-pools-in-azure-synapse-analytics"></a>Aanbevolen procedures voor het laden van gegevens met behulp van exclusieve SQL-groepen in azure Synapse Analytics
 
@@ -47,7 +47,7 @@ In dit voor beeld wordt een door een gebruiker geclassificeerde belasting gemaak
    CREATE LOGIN loader WITH PASSWORD = 'a123STRONGpassword!';
 ```
 
-Verbinding maken met de toegewezen SQL-groep en een gebruiker aanmaken. In de volgende code wordt ervan uitgegaan dat u bent verbonden met de data base met de naam mySampleDataWarehouse. Hier ziet u hoe u een gebruiker met de naam loader maakt en de gebruiker machtigingen geeft om tabellen te maken en te laden met behulp van de [instructie Copy](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Vervolgens wordt de gebruiker geclassificeerd met de werkbelasting groep DataLoads met het maximum aantal resources. 
+Verbinding maken met de toegewezen SQL-groep en een gebruiker aanmaken. In de volgende code wordt ervan uitgegaan dat u bent verbonden met de data base met de naam mySampleDataWarehouse. Hier ziet u hoe u een gebruiker met de naam loader maakt en de gebruiker machtigingen geeft om tabellen te maken en te laden met behulp van de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Vervolgens wordt de gebruiker geclassificeerd met de werkbelasting groep DataLoads met het maximum aantal resources. 
 
 ```sql
    -- Connect to the dedicated SQL pool
@@ -179,5 +179,5 @@ Er hoeven geen andere wijzigingen te worden aangebracht aan onderliggende extern
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie [ontwerp ELT voor Azure Synapse Analytics voor](design-elt-data-loading.md)meer informatie over de instructie copy of poly Base bij het ontwerpen van een proces voor extract, Load en Transform (ELT).
-- Voor het laden van een zelf studie [gebruikt u de instructie Copy om gegevens van Azure Blob-opslag te laden naar Synapse SQL](load-data-from-azure-blob-storage-using-polybase.md).
+- Voor het laden van een zelf studie [gebruikt u de instructie Copy om gegevens van Azure Blob-opslag te laden naar Synapse SQL](./load-data-from-azure-blob-storage-using-copy.md).
 - Zie [Uw workload controleren met DMV's](sql-data-warehouse-manage-monitor.md) voor het controleren van het laden van gegevens.

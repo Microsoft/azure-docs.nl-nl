@@ -10,19 +10,19 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 45c7f89f773095a102429c07f7441223de3c2dec
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: c537d3109f770c1ce77be6495bdacd24270dad5f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448253"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119591"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-architecture-in-azure-synapse-analytics"></a>Exclusieve architectuur van een SQL-groep (voorheen SQL DW) in azure Synapse Analytics
 
 Azure Synapse Analytics is een analyseservice die datawarehousing voor ondernemingen en big data-analyses combineert. Het biedt u de vrijheid om gegevens op basis van uw voor waarden op te vragen.
 
 > [!NOTE]
->Verken de [Azure Synapse Analytics-documentatie](../overview-what-is.md).
+>Verken de [Documentatie voor Azure Synapse Analytics](../overview-what-is.md).
 >
 
 
@@ -47,7 +47,7 @@ Bij het gebruik van een toegewezen SQL-groep (voorheen SQL DW) kan een exclusiev
 
 ### <a name="azure-storage"></a>Azure Storage
 
-De exclusieve SQL-groep SQL (voorheen SQL DW) maakt gebruik van Azure Storage om uw gebruikers gegevens veilig te maken.  Omdat uw gegevens worden opgeslagen en beheerd door Azure Storage, worden er afzonderlijke kosten in rekening gebracht voor uw opslag verbruik. De gegevens worden in **distributies** Shard om de prestaties van het systeem te optimaliseren. U kunt kiezen welk sharding-patroon u wilt gebruiken om de gegevens te distribueren wanneer u de tabel definieert. Deze sharding-patronen worden ondersteund:
+De exclusieve SQL-groep SQL (voorheen SQL DW) maakt gebruik van Azure Storage om uw gebruikers gegevens veilig te maken.  Omdat uw gegevens worden opgeslagen en beheerd door Azure Storage, worden er afzonderlijke kosten in rekening gebracht voor uw opslag verbruik. De gegevens worden in **distributies** Shard om de prestaties van het systeem te optimaliseren. Bij het definiëren van de tabel kunt u kiezen welk sharding-patroon u wilt gebruiken om de gegevens te distribueren. Deze sharding-patronen worden ondersteund:
 
 - Hash
 - Round Robin
@@ -107,13 +107,13 @@ In het onderstaande diagram ziet u een gerepliceerde tabel die in de cache wordt
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u een beetje kent over Azure Synapse, leert u hoe u snel [een toegewezen SQL-groep (voorheen SQL DW) maakt](create-data-warehouse-portal.md) en [voorbeeld gegevens laadt](load-data-from-azure-blob-storage-using-polybase.md). Als u niet bekend bent met Azure, kan de [Azure-woordenlijst](../../azure-glossary-cloud-terminology.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) handig zijn bij het opzoeken van nieuwe terminologie. Of Bekijk enkele van deze andere Azure Synapse-resources.  
+Nu u een beetje kent over Azure Synapse, leert u hoe u snel [een toegewezen SQL-groep (voorheen SQL DW) maakt](create-data-warehouse-portal.md) en [voorbeeld gegevens laadt](./load-data-from-azure-blob-storage-using-copy.md). Als u niet bekend bent met Azure, kan de [Azure-woordenlijst](../../azure-glossary-cloud-terminology.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) handig zijn bij het opzoeken van nieuwe terminologie. Of Bekijk enkele van deze andere Azure Synapse-resources.  
 
 - [Succesverhalen van klanten](https://azure.microsoft.com/case-studies/?service=sql-data-warehouse)
 - [Blogs](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/)
 - [Functieverzoeken](https://feedback.azure.com/forums/307516-sql-data-warehouse)
 - [Video's](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
 - [Ondersteuningsticket maken](sql-data-warehouse-get-started-create-support-ticket.md)
-- [Microsoft Q&A-vragenpagina](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html)
+- [Microsoft Q&A-vragenpagina](/answers/topics/azure-synapse-analytics.html)
 - [Stack Overflow forum](https://stackoverflow.com/questions/tagged/azure-sqldw)
 - [Twitter](https://twitter.com/hashtag/SQLDW)

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 02/04/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 53c68f44273b14658bd4d95ce7cf3cf847c077d0
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.openlocfilehash: f780d5404d99435a61c4e3f9e90b1acbd9539af9
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93025949"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118435"
 ---
 # <a name="monitor-workload---azure-portal"></a>Workload bewaken-Azure Portal
 
@@ -23,8 +23,8 @@ In dit artikel wordt beschreven hoe u de Azure Portal kunt gebruiken om uw workl
 
 ## <a name="prerequisites"></a>Vereisten
 
-- Azure-abonnement: als u geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
-- SQL-groep: er worden logboeken verzameld voor een SQL-groep. Als u geen SQL-groep hebt ingericht, raadpleegt u de instructies in [een SQL-groep maken](load-data-from-azure-blob-storage-using-polybase.md).
+- Azure-abonnement: Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+- SQL-groep: er worden logboeken verzameld voor een SQL-groep. Als u geen SQL-groep hebt ingericht, raadpleegt u de instructies in [een SQL-groep maken](./load-data-from-azure-blob-storage-using-copy.md).
 
 ## <a name="create-a-log-analytics-workspace"></a>Een Log Analytics-werkruimte maken
 
@@ -63,7 +63,7 @@ Navigeer naar uw Log Analytics-werk ruimte waar u het volgende kunt doen:
 - Logboekwaarschuwingen maken
 - Query resultaten vastmaken aan een dash board
 
-Raadpleeg de volgende [documentatie](../../azure-monitor/log-query/query-language.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json)voor meer informatie over de mogelijkheden van logboek query's.
+Raadpleeg de volgende [documentatie](/azure/data-explorer/kusto/query/?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json)voor meer informatie over de mogelijkheden van logboek query's.
 
 ![Log Analytics werkruimte editor](./media/sql-data-warehouse-monitor-workload-portal/log_analytics_workspace_editor.png)
 

@@ -9,18 +9,18 @@ ms.subservice: machine-learning
 ms.date: 06/30/2020
 ms.author: midesa
 ms.reviewer: jrasnick
-ms.openlocfilehash: e547d047e8d736acbd1cdda5ffe3a78dbe8259f7
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 2594e25bff3ca949b329f8b66f4427eb1f6950b0
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901030"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118707"
 ---
 # <a name="tutorial-train-a-model-in-python-with-automated-machine-learning"></a>Zelfstudie: Een model trainen in Python met geautomatiseerde machine learning
 
 Azure Machine Learning is een cloudomgeving die u kunt gebruiken voor het trainen, implementeren, automatiseren, beheren en volgen van machine learning-modellen. 
 
-In deze zelfstudie gebruikt u [geautomatiseerde machine learning](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml) in Azure Machine Learning om een regressiemodel te maken om de ritprijzen van taxi’s te voorspellen. Dit proces gebruikt trainingsgegevens en configuratie-instellingen en doorloopt automatisch combinaties van verschillende methoden voor het normaliseren/standaardiseren van functies, modellen en instellingen van hyperparameters om het beste model te bepalen.
+In deze zelfstudie gebruikt u [geautomatiseerde machine learning](../../machine-learning/concept-automated-ml.md) in Azure Machine Learning om een regressiemodel te maken om de ritprijzen van taxi’s te voorspellen. Dit proces gebruikt trainingsgegevens en configuratie-instellingen en doorloopt automatisch combinaties van verschillende methoden voor het normaliseren/standaardiseren van functies, modellen en instellingen van hyperparameters om het beste model te bepalen.
 
 In deze zelfstudie leert u het volgende:
 - De gegevens downloaden met behulp van Apache Spark en Azure Open Datasets.
@@ -31,7 +31,7 @@ In deze zelfstudie leert u het volgende:
 ## <a name="before-you-begin"></a>Voordat u begint
 
 - Maak een serverloze Apache Spark-pool door de stappen te volgen in de [quickstart Een serverloze Apache Spark-pool maken](../quickstart-create-apache-spark-pool-studio.md).
-- Voltooi de [zelfstudie Azure Machine Learning-werkruimte instellen](https://docs.microsoft.com/azure/machine-learning/tutorial-1st-experiment-sdk-setup) als u niet beschikt over een bestaande Azure Machine Learning-werkruimte. 
+- Voltooi de [zelfstudie Azure Machine Learning-werkruimte instellen](../../machine-learning/tutorial-1st-experiment-sdk-setup.md) als u niet beschikt over een bestaande Azure Machine Learning-werkruimte. 
 
 ## <a name="understand-regression-models"></a>Regressiemodellen begrijpen
 
@@ -48,7 +48,7 @@ In dit voorbeeld gebruikt u Spark om een analyse uit te voeren voor gegevens ove
 
 U doet dit als volgt:
 
-1. Maak een notebook met behulp van de PySpark-kernel. Zie [Een notebook maken](https://docs.microsoft.com/azure/synapse-analytics/quickstart-apache-spark-notebook#create-a-notebook) voor instructies.
+1. Maak een notebook met behulp van de PySpark-kernel. Zie [Een notebook maken](../quickstart-apache-spark-notebook.md#create-a-notebook) voor instructies.
    
     > [!Note]
     > Vanwege de PySpark-kernel hoeft u niet expliciet contexten te maken. De Spark-context wordt automatisch voor u gemaakt wanneer u de eerste codecel uitvoert.
@@ -144,7 +144,7 @@ ws = Workspace(workspace_name = workspace_name,
 ```
 
 ## <a name="convert-a-dataframe-to-an-azure-machine-learning-dataset"></a>Een gegevensframe converteren naar een Azure Machine Learning-gegevensset
-Als u een extern experiment wilt verzenden, moet u de gegevensset converteren naar een Azure Machine Learning-```TabularDatset```. Een [TabularDataset](https://docs.microsoft.com/python/api/azureml-core/azureml.data.tabulardataset?view=azure-ml-py&preserve-view=true) vertegenwoordigt gegevens in een tabellaire indeling door het opgegeven bestand te parseren.
+Als u een extern experiment wilt verzenden, moet u de gegevensset converteren naar een Azure Machine Learning-```TabularDatset```. Een [TabularDataset](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py) vertegenwoordigt gegevens in een tabellaire indeling door het opgegeven bestand te parseren.
 
 Met de volgende code worden de bestaande werkruimte en de standaard-Azure Machine Learning-gegevensopslag opgehaald. Vervolgens worden de gegevensopslag en bestandslocaties doorgegeven aan de padparameter om een nieuwe ```TabularDataset``` te maken. 
 
@@ -170,7 +170,7 @@ dataset_training = Dataset.Tabular.from_delimited_files(path = [(datastore, 'tra
 In de volgende secties wordt stapsgewijs uitgelegd hoe u een geautomatiseerd machine learning-experiment verzendt.
 
 ### <a name="define-training-settings"></a>Trainingsinstellingen definiëren
-1. U moet de experimentparameter en modelinstellingen voor training definiëren om een experiment te verzenden. Zie [geautomatiseerde machine learning-experimenten configureren in Python](https://docs.microsoft.com/azure/machine-learning/how-to-configure-auto-train) voor een volledige lijst met instellingen.
+1. U moet de experimentparameter en modelinstellingen voor training definiëren om een experiment te verzenden. Zie [geautomatiseerde machine learning-experimenten configureren in Python](../../machine-learning/how-to-configure-auto-train.md) voor een volledige lijst met instellingen.
 
    ```python
    import logging
@@ -338,5 +338,5 @@ Ten slotte kunt u ook de resultaten van herhalingen bekijken door naar het exper
 ![Schermopname van Azure Machine Learning-werkruimte.](./media/azure-machine-learning-spark-notebook/azure-machine-learning-workspace.png)
 
 ## <a name="next-steps"></a>Volgende stappen
-- [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
+- [Azure Synapse Analytics](../index.yml)
 - [Zelfstudie: Een machine learning-app bouwen met Apache Spark MLlib en Azure Synapse Analytics](./apache-spark-machine-learning-mllib-notebook.md)

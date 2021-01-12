@@ -7,16 +7,16 @@ ms.date: 11/06/2020
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: a517f7a796b6543c8d60f0d1ebdba16afa0bc4b7
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 36329987e510372ff286a10584a115ea259afc60
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96751424"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119081"
 ---
 # <a name="use-properties-in-an-azure-iot-central-solution"></a>Eigenschappen in een Azure IoT Central-oplossing gebruiken
 
-In dit artikel leest u hoe u apparaateigenschappen kunt gebruiken die zijn gedefinieerd in een sjabloon in uw Azure IoT Central-toepassing.
+In deze hand leiding wordt uitgelegd hoe u als een ontwikkel aars van een apparaat apparaateigenschappen kunt gebruiken die zijn gedefinieerd in een sjabloon in uw Azure IoT Central-toepassing.
 
 Eigenschappen vertegenwoordigen waarden van het tijdstip. Een apparaat kan bijvoorbeeld een eigenschap gebruiken om de doel temperatuur te rapporteren die het probeert te bereiken. Standaard zijn de apparaateigenschappen alleen-lezen in IoT Central. Met Beschrijf bare eigenschappen kunt u de status synchroniseren tussen uw apparaat en uw Azure IoT Central-toepassing.
 
@@ -35,7 +35,7 @@ De volgende tabel bevat de configuratie-instellingen voor een eigenschaps mogeli
 | Veld           | Beschrijving                                                                                                                                                                                                                        |
 |-----------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Weergavenaam    | De weergave naam voor de waarde van de eigenschap die wordt gebruikt in dash boards en formulieren.                                                                                                                                                              |
-| Naam            | De naam van de eigenschap. Azure IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn.                                                 |
+| Naam            | De naam van de eigenschap. Azure IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn.  De apparaatcode gebruikt deze **naam** waarde.           |
 | Type capaciteit | Eigenschap.                                                                                                                                                                                                                          |
 | Semantisch type   | Het semantische type van de eigenschap, zoals de Tempe ratuur, de status of de gebeurtenis. De keuze van semantisch type bepaalt welke van de volgende velden beschikbaar zijn.                                                                       |
 | Schema          | Het gegevens type van de eigenschap, zoals double, String of vector. Welke opties beschikbaar zijn, wordt bepaald door het semantische type. Schema is niet beschikbaar voor de semantische typen gebeurtenis en status.                                               |
@@ -160,7 +160,7 @@ hubClient.getTwin((err, twin) => {
 });
 ```
 
-In dit artikel wordt Node.js gebruikt voor eenvoud. Zie de volgende zelf studie [een client toepassing maken en verbinden met uw Azure IOT Central-toepassing](tutorial-connect-device.md) voor meer informatie over de voor beelden van Device Application.
+In dit artikel wordt Node.js gebruikt voor eenvoud. Zie voor voor beelden van andere talen de zelf studie [een client toepassing maken en verbinden met uw Azure IOT Central-toepassing](tutorial-connect-device.md) .
 
 In de volgende weer gave in azure IoT Central-toepassing worden de eigenschappen weer gegeven die u kunt zien. De weer gave maakt de eigenschap **apparaat model** automatisch een _eigenschap met het kenmerk alleen-lezen_.
 

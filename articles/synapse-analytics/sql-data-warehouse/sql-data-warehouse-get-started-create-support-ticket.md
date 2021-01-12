@@ -10,12 +10,12 @@ author: kevinvngo
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: de45e338b0b863dc2364af399a6991f56658b0e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6042b5be48144ce6730a9bf4f342d7735a262643
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85212272"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118061"
 ---
 # <a name="request-quota-increases-and-get-support-for-azure-synapse-analytics"></a>Vraag quota toe en ontvang ondersteuning voor Azure Synapse Analytics
 
@@ -25,12 +25,12 @@ In dit artikel wordt beschreven hoe u een ondersteunings ticket kunt verzenden i
 
 Gebruik de volgende stappen om een nieuwe ondersteunings aanvraag te maken op basis van de Azure Portal voor Azure Synapse Analytics.
 
-1. Selecteer **Help en ondersteuning**in het menu [Azure Portal](https://portal.azure.com) .
+1. Selecteer **Help en ondersteuning** in het menu [Azure Portal](https://portal.azure.com) .
 
    ![De koppeling Help en ondersteuning](./media/sql-data-warehouse-get-started-create-support-ticket/help-plus-support.png)
 
 
-1. Selecteer **nieuwe ondersteunings aanvraag**in **Help en ondersteuning**.
+1. Selecteer **nieuwe ondersteunings aanvraag** in **Help en ondersteuning**.
 
     ![Een nieuwe ondersteunings aanvraag maken](./media/sql-data-warehouse-get-started-create-support-ticket/new-support-request.png)
 
@@ -42,12 +42,12 @@ Gebruik de volgende stappen om een nieuwe ondersteunings aanvraag te maken op ba
 
    Als u een premier-ondersteunings abonnement hebt, kunt u ook problemen met Azure Synapse Analytics melden op de [micro soft Premier Online-Portal](https://premier.microsoft.com/). Raadpleeg [ondersteunings abonnementen voor Azure](https://azure.microsoft.com/support/plans/?WT.mc_id=Support_Plan_510979/) voor meer informatie over de verschillende ondersteunings plannen, waaronder bereik, reactie tijden, prijzen enzovoort.  Zie Veelgestelde vragen over [ondersteuning](https://azure.microsoft.com/support/faq/)van Azure voor meer informatie over ondersteuning voor Azure.
 
-1. Selecteer bij **probleem type**het juiste probleem type. Selecteer **Technical**voor problemen oplossen. Voor quota verhogings aanvragen selecteert u **service-en abonnements limieten (quota's)**.
+1. Selecteer bij **probleem type** het juiste probleem type. Selecteer **Technical** voor problemen oplossen. Voor quota verhogings aanvragen selecteert u **service-en abonnements limieten (quota's)**.
 
    ![Selecteer een probleem type](./media/sql-data-warehouse-get-started-create-support-ticket/select-quota-issue-type.png)  
 
    > [!NOTE]
-   > In deze rest van dit artikel focusses de aanvragen voor quotum verhoging. Maar u kunt hier ook **technisch** selecteren voor ondersteunings aanvragen voor probleem oplossing. Als u **technisch**selecteert, wordt u gevraagd een samen vatting op te geven en vervolgens een probleem type te identificeren door **probleem type selecteren**te selecteren. Mogelijk ziet u oplossingen om het probleem op te lossen. Als het probleem niet wordt opgelost met de oplossingen die worden weer gegeven, selecteert u **volgende: Details** en vult u het formulier in om het ondersteunings ticket in te dienen.
+   > In deze rest van dit artikel focusses de aanvragen voor quotum verhoging. Maar u kunt hier ook **technisch** selecteren voor ondersteunings aanvragen voor probleem oplossing. Als u **technisch** selecteert, wordt u gevraagd een samen vatting op te geven en vervolgens een probleem type te identificeren door **probleem type selecteren** te selecteren. Mogelijk ziet u oplossingen om het probleem op te lossen. Als het probleem niet wordt opgelost met de oplossingen die worden weer gegeven, selecteert u **volgende: Details** en vult u het formulier in om het ondersteunings ticket in te dienen.
 
 1. Voor quota verhogings aanvragen selecteert u **Azure Synapse Analytics** voor het **quota type**. Selecteer vervolgens **volgende: oplossingen >>**.
 
@@ -121,7 +121,7 @@ Selecteer **andere quotum aanvraag** in het vervolg keuzemenu quotum type voor a
 
 ## <a name="submit-your-request"></a>De aanvraag verzenden
 
-De laatste stap is het invullen van de resterende Details van de ondersteunings aanvraag van SQL Database. Selecteer **volgende: controleren +>>maken **.
+De laatste stap is het invullen van de resterende Details van de ondersteunings aanvraag van SQL Database. Selecteer **volgende: controleren +>>maken**.
 
 ![Details van maken controleren](./media/sql-data-warehouse-get-started-create-support-ticket/review-create-details.png)
 
@@ -137,5 +137,4 @@ Nadat u het ondersteunings verzoek hebt ingediend, neemt het ondersteunings team
 
 ## <a name="other-resources"></a>Meer informatie
 
-U kunt ook verbinding maken met de Azure Synapse Analytics-Community op [stack overflow](https://stackoverflow.com/questions/tagged/azure-synapse+or+azure-sql-data-warehouse) of via de [pagina micro soft Q&een vraag voor Azure Synapse Analytics](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html).
-
+U kunt ook verbinding maken met de Azure Synapse Analytics-Community op [stack overflow](https://stackoverflow.com/questions/tagged/azure-synapse+or+azure-sql-data-warehouse) of via de [pagina micro soft Q&een vraag voor Azure Synapse Analytics](/answers/topics/azure-synapse-analytics.html).

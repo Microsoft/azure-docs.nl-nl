@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 11/02/2020
 ms.custom: references_regions
-ms.openlocfilehash: 8295e619cfda0d4b83a7356d5fd21d4b80f83849
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 6b1079797f1a753fa8362d6e920f3394087d7e9f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96530881"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119285"
 ---
 # <a name="configure-customer-managed-keys-for-data-encryption-in-azure-cognitive-search"></a>Door de klant beheerde sleutels voor gegevens versleuteling configureren in azure Cognitive Search
 
@@ -33,7 +33,7 @@ Sleutels hoeven niet allemaal in dezelfde sleutel kluis te zijn. Eén zoek servi
 
 Voor services die zijn gemaakt na 1 augustus 2020 en in specifieke regio's, omvat het bereik van door de klant beheerde sleutel versleuteling tijdelijke schijven, met [volledige dubbele versleuteling](search-security-overview.md#double-encryption), die momenteel beschikbaar is in deze regio's: 
 
-+ US - west 2
++ West US 2
 + VS - oost
 + VS - zuid-centraal
 + VS (overheid) - Virginia
@@ -52,7 +52,7 @@ De volgende hulpprogram ma's en services worden in dit scenario gebruikt.
 U moet een zoek toepassing hebben die het versleutelde object kan maken. In deze code verwijzen we naar een sleutel kluis sleutel en Active Directory registratie gegevens. Deze code kan een werk-app zijn, of prototype code, zoals de [C#-code voorbeeld DotNetHowToEncryptionUsingCMK](https://github.com/Azure-Samples/search-dotnet-getting-started/tree/master/DotNetHowToEncryptionUsingCMK).
 
 > [!TIP]
-> U kunt [postman of Visual Studio code](search-get-started-rest.md)of [Azure POWERSHELL](./search-get-started-powershell.md)gebruiken om rest-api's aan te roepen waarmee indexen en synoniemen worden gemaakt die een versleutelings sleutel parameter bevatten. Er is op dit moment geen portal ondersteuning voor het toevoegen van een sleutel aan indexen of synoniemen.
+> U kunt [postman](search-get-started-rest.md), [Visual Studio code](search-get-started-vs-code.md)of [Azure PowerShell](./search-get-started-powershell.md)gebruiken om rest-api's aan te roepen waarmee indexen en synoniemen worden gemaakt die een versleutelings sleutel parameter bevatten. Er is op dit moment geen portal ondersteuning voor het toevoegen van een sleutel aan indexen of synoniemen.
 
 ## <a name="1---enable-key-recovery"></a>1-sleutel herstel inschakelen
 

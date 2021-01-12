@@ -11,12 +11,12 @@ ms.date: 06/26/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 667629b7f613b11f40528b039c7525339b7a62d0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: bd32b9690f8a9aef92eb1f2fbcc4ec926a65584e
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462867"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121189"
 ---
 # <a name="azure-advisor-recommendations-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Aanbevelingen voor Azure Advisor voor toegewezen SQL-groep in azure Synapse Analytics
 
@@ -26,7 +26,7 @@ Exclusieve SQL-groep biedt aanbevelingen om ervoor te zorgen dat de werk belasti
 
 U kunt [uw aanbevelingen](https://aka.ms/Azureadvisor) vandaag nog controleren. 
 
-## <a name="data-skew"></a>Gegevens scheef trekken
+## <a name="data-skew"></a>Ongelijkheid in gegevens
 
 Gegevens scheefheid kan leiden tot extra gegevens bewegingen of bron knelpunten wanneer uw werk belasting wordt uitgevoerd. In de volgende documentatie wordt beschreven hoe u het scheef trekken van gegevens identificeert en voor komt dat dit gebeurt door een optimale distributie sleutel te selecteren.
 
@@ -65,12 +65,12 @@ Momenteel worden in Advisor alleen Maxi maal vier gerepliceerde tabel kandidaten
 
 
 ## <a name="adaptive-gen2-cache-utilization"></a>Adaptief (Gen2) cache gebruik
-Wanneer u een grote werkset hebt, kunt u een lage cache treffer percentage en een hoog cache gebruik ervaren. Voor dit scenario moet u omhoog schalen om de cache capaciteit te verhogen en de workload opnieuw uit te voeren. Raadpleeg de volgende [documentatie](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-how-to-monitor-cache)voor meer informatie. 
+Wanneer u een grote werkset hebt, kunt u een lage cache treffer percentage en een hoog cache gebruik ervaren. Voor dit scenario moet u omhoog schalen om de cache capaciteit te verhogen en de workload opnieuw uit te voeren. Raadpleeg de volgende [documentatie](./sql-data-warehouse-how-to-monitor-cache.md)voor meer informatie. 
 
 ## <a name="tempdb-contention"></a>TempDB-conflicten
 
-De prestaties van query's kunnen afnemen wanneer er hoge TempDB-conflicten zijn.  TempDB-conflicten kunnen optreden via door de gebruiker gedefinieerde tijdelijke tabellen of wanneer er sprake is van een grote hoeveelheid gegevens verplaatsing. Voor dit scenario kunt u schalen voor meer TempDB-toewijzing en [resource klassen en werkbelasting beheer configureren](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/sql-data-warehouse-workload-management) om meer geheugen te bieden voor uw query's. 
+De prestaties van query's kunnen afnemen wanneer er hoge TempDB-conflicten zijn.  TempDB-conflicten kunnen optreden via door de gebruiker gedefinieerde tijdelijke tabellen of wanneer er sprake is van een grote hoeveelheid gegevens verplaatsing. Voor dit scenario kunt u schalen voor meer TempDB-toewijzing en [resource klassen en werkbelasting beheer configureren](./sql-data-warehouse-workload-management.md) om meer geheugen te bieden voor uw query's. 
 
 ## <a name="data-loading-misconfiguration"></a>Onjuiste configuratie van gegevens laden
 
-U moet altijd gegevens laden van een opslag account in dezelfde regio als uw toegewezen SQL-groep om latentie te minimaliseren. Gebruik de [instructie Copy voor gegevens opname met hoge door Voer](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) en Splits uw gefaseerde bestanden in uw opslag account om de door voer te maximaliseren. Als u de instructie COPY niet kunt gebruiken, gebruikt u de SqlBulkCopy-API of BCP met een hoge Batch grootte voor een betere door voer. Raadpleeg de volgende [documentatie](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/guidance-for-loading-data)voor meer informatie over het laden van gegevens. 
+U moet altijd gegevens laden van een opslag account in dezelfde regio als uw toegewezen SQL-groep om latentie te minimaliseren. Gebruik de [instructie Copy voor gegevens opname met hoge door Voer](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) en Splits uw gefaseerde bestanden in uw opslag account om de door voer te maximaliseren. Als u de instructie COPY niet kunt gebruiken, gebruikt u de SqlBulkCopy-API of BCP met een hoge Batch grootte voor een betere door voer. Raadpleeg de volgende [documentatie](./guidance-for-loading-data.md)voor meer informatie over het laden van gegevens.

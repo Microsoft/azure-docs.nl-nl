@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 91f612ba7f19deb739dbb6004e275ea044a5a3d3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 45e1ae5b8a1084334b7596f62c272e16294c4c14
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462557"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118758"
 ---
 # <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Geneste typen in Parquet-en JSON-bestanden doorzoeken met serverloze SQL-groep in azure Synapse Analytics
 
@@ -24,7 +24,7 @@ Geneste typen zijn complexe structuren die objecten of matrices vertegenwoordige
 - Hiërarchische [json-bestanden](query-json-files.md), waar u een complex JSON-document als één kolom kunt lezen.
 - Azure Cosmos DB verzamelingen (momenteel in de open bare preview-fase), waarbij elk document complexe geneste eigenschappen kan bevatten.
 
-Met serverloze SQL-pool worden alle geneste typen als JSON-objecten en-matrices opgemaakt. U kunt [complexe objecten dus extra heren of wijzigen met behulp van JSON-functies](https://docs.microsoft.com/sql/relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server) of JSON- [gegevens parseren met behulp van de openjson-functie](https://docs.microsoft.com/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server). 
+Met serverloze SQL-pool worden alle geneste typen als JSON-objecten en-matrices opgemaakt. U kunt [complexe objecten dus extra heren of wijzigen met behulp van JSON-functies](/sql/relational-databases/json/validate-query-and-change-json-data-with-built-in-functions-sql-server) of JSON- [gegevens parseren met behulp van de openjson-functie](/sql/relational-databases/json/convert-json-data-to-rows-and-columns-with-openjson-sql-server). 
 
 Hier volgt een voor beeld van een query waarmee scalaire en object waarden worden geëxtraheerd uit het JSON [-bestand COVID-19 open Research dataset](https://azure.microsoft.com/services/open-datasets/catalog/covid-19-open-research/) dat geneste objecten bevat: 
 
@@ -117,11 +117,11 @@ FROM
 
 Het resultaat wordt weer gegeven in de volgende tabel:
 
-|title  | first_author_name | body_text | complex_column |
+|titel  | first_author_name | body_text | complex_column |
 | --- | --- | --- | --- |
 | Aanvullende informatie een eco-epidemiolo... | Julien   | -Afbeelding S1: Phylogeny van... | `{    "paper_id": "000b7d1517ceebb34e1e3e817695b6de03e2fa78",    "metadata": {        "title": "Supplementary Information An eco-epidemiological study of Morbilli-related paramyxovirus infection in Madagascar bats reveals host-switching as the dominant macro-evolutionary mechanism",        "authors": [            {                "first": "Julien"` |
 
-In tegens telling tot JSON-bestanden, die in de meeste gevallen één kolom retour neren die een complex JSON-object bevat, kunnen Parquet-bestanden meerdere complexe kolommen hebben. U kunt de eigenschappen van geneste kolommen lezen met behulp `JSON_VALUE` van de functie voor elke kolom. `OPENROWSET` Hiermee kunt u de paden van de geneste eigenschappen in een `WITH` component rechtstreeks opgeven. U kunt de paden instellen als de naam van een kolom, maar u kunt ook een [JSON-padexpressie](https://docs.microsoft.com/sql/relational-databases/json/json-path-expressions-sql-server) toevoegen achter het kolom Type.
+In tegens telling tot JSON-bestanden, die in de meeste gevallen één kolom retour neren die een complex JSON-object bevat, kunnen Parquet-bestanden meerdere complexe kolommen hebben. U kunt de eigenschappen van geneste kolommen lezen met behulp `JSON_VALUE` van de functie voor elke kolom. `OPENROWSET` Hiermee kunt u de paden van de geneste eigenschappen in een `WITH` component rechtstreeks opgeven. U kunt de paden instellen als de naam van een kolom, maar u kunt ook een [JSON-padexpressie](/sql/relational-databases/json/json-path-expressions-sql-server) toevoegen achter het kolom Type.
 
 Met de volgende query wordt het bestand structExample. Parquet gelezen en wordt weer gegeven hoe u de Opper vlakken van een geneste kolom laat zien. Er zijn twee manieren om te verwijzen naar een geneste waarde:
 - Door de expressie pad naar geneste waarde op te geven na de type specificatie.

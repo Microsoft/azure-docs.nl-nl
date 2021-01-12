@@ -9,16 +9,16 @@ ms.subservice: sql-dw
 ms.date: 07/10/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: de446209104c113b10346645f79b461239c3efab
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 25c692ea9a2dce4723472f6812ac46d82b2b318d
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901268"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120985"
 ---
 # <a name="securely-load-data-using-synapse-sql"></a>Gegevens veilig laden met Synapse SQL
 
-In dit artikel vindt u voorbeelden over de veilige verificatiemechanismen voor de [COPY-instructie](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). De instructie COPY is de meest flexibele en veilige manier om gegevens bulksgewijs te laden in Synapse SQL.
+In dit artikel vindt u voorbeelden over de veilige verificatiemechanismen voor de [COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). De instructie COPY is de meest flexibele en veilige manier om gegevens bulksgewijs te laden in Synapse SQL.
 ## <a name="supported-authentication-mechanisms"></a>Ondersteunde verificatiemechanismen
 
 De volgende matrix beschrijft de ondersteunde verificatiemethoden voor elk bestandstype en opslagaccount. Dit geldt voor de bronopslaglocatie en de locatie van het foutbestand.
@@ -136,7 +136,7 @@ Beheerde identiteitsverificatie is vereist wanneer uw opslagaccount is gekoppeld
 
     ![Azure RBAC-machtiging verlenen om te laden](./media/quickstart-bulk-load-copy-tsql-examples/rbac-load-permissions.png)
 
-2. Configureer Azure AD-verificatie door middel van de volgende [documentatie](https://docs.microsoft.com/azure/sql-database/sql-database-aad-authentication-configure?tabs=azure-powershell#create-an-azure-ad-administrator-for-azure-sql-server). 
+2. Configureer Azure AD-verificatie door middel van de volgende [documentatie](../../azure-sql/database/authentication-aad-configure.md?tabs=azure-powershell). 
 
 3. Maak verbinding met uw SQL-groep met Active Directory waarbij u nu de instructie COPY kunt uitvoeren zonder referenties op te geven:
 
@@ -152,11 +152,11 @@ Beheerde identiteitsverificatie is vereist wanneer uw opslagaccount is gekoppeld
 ## <a name="e-service-principal-authentication"></a>E. Verificatie van service-principal
 #### <a name="steps"></a>Stappen
 
-1. [Een Azure Active Directory-toepassing maken](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-an-azure-active-directory-application)
-2. [Toepassings-id ophalen](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#get-values-for-signing-in)
-3. [De verificatiesleutel ophalen](https://docs.microsoft.com/azure/active-directory/develop/howto-create-service-principal-portal#create-a-new-application-secret)
-4. [Het token-eindpunt V1 OAuth 2.0 ophalen](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#step-4-get-the-oauth-20-token-endpoint-only-for-java-based-applications)
-5. [Lees-, schrijf- en uitvoeringsmachtigingen toewijzen aan uw Azure AD-toepassing](https://docs.microsoft.com/azure/data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#step-3-assign-the-azure-ad-application-to-the-azure-data-lake-storage-gen1-account-file-or-folder) in uw opslagaccount
+1. [Een Azure Active Directory-toepassing maken](../..//active-directory/develop/howto-create-service-principal-portal.md#register-an-application-with-azure-ad-and-create-a-service-principal)
+2. [Toepassings-id ophalen](../..//active-directory/develop/howto-create-service-principal-portal.md#get-tenant-and-app-id-values-for-signing-in)
+3. [De verificatiesleutel ophalen](../../active-directory/develop/howto-create-service-principal-portal.md#authentication-two-options)
+4. [Het token-eindpunt V1 OAuth 2.0 ophalen](../../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json#step-4-get-the-oauth-20-token-endpoint-only-for-java-based-applications)
+5. [Lees-, schrijf- en uitvoeringsmachtigingen toewijzen aan uw Azure AD-toepassing](../../data-lake-store/data-lake-store-service-to-service-authenticate-using-active-directory.md?bc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2fsql-data-warehouse%2ftoc.json#step-3-assign-the-azure-ad-application-to-the-azure-data-lake-storage-gen1-account-file-or-folder) in uw opslagaccount
 6. U kunt nu de instructie COPY uitvoeren:
 
     ```sql
@@ -176,5 +176,5 @@ Beheerde identiteitsverificatie is vereist wanneer uw opslagaccount is gekoppeld
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Raadpleeg het [artikel over COPY-instructie](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax) voor de gedetailleerde syntaxis
-- Controleer het overzichtsartikel [gegevens laden](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/design-elt-data-loading#what-is-elt) voor het laden van aanbevolen procedures
+- Raadpleeg het [artikel over COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax) voor de gedetailleerde syntaxis
+- Controleer het overzichtsartikel [gegevens laden](./design-elt-data-loading.md#what-is-elt) voor het laden van aanbevolen procedures

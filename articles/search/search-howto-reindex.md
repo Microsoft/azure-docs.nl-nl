@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 06/18/2020
-ms.openlocfilehash: ae8fd7f405beb20d516835ccb80b86e769fd0393
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 47e9b80bb25b7ff14695cc67682265fe338ff76f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697081"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119098"
 ---
 # <a name="how-to-rebuild-an-index-in-azure-cognitive-search"></a>Een index opnieuw samen stellen in azure Cognitive Search
 
@@ -37,7 +37,7 @@ Zolang u de structuur van de index niet wijzigt, kunt u een index vernieuwen met
 
 Verwijder een index en maak deze opnieuw als aan een van de volgende voor waarden wordt voldaan. 
 
-| Conditie | Beschrijving |
+| Voorwaarde | Beschrijving |
 |-----------|-------------|
 | Een veld definitie wijzigen | Voor het wijzigen van een veld naam, gegevens type of specifieke [index kenmerken](/rest/api/searchservice/create-index) (doorzoekbaar, filterbaar, sorteerbaar, facetable) is een volledige heropbouw vereist. |
 | Een analyse functie toewijzen aan een veld | [Analyse](search-analyzers.md) functies worden gedefinieerd in een index en vervolgens toegewezen aan velden. U kunt op elk gewenst moment een nieuwe analyse definitie aan een index toevoegen, maar u kunt alleen een analyse *toewijzing toewijzen* wanneer het veld wordt gemaakt. Dit geldt voor de eigenschappen **Analyzer** en **indexAnalyzer** . De eigenschap **searchAnalyzer** is een uitzonde ring (u kunt deze eigenschap toewijzen aan een bestaand veld). |
@@ -91,11 +91,11 @@ Wanneer u de index laadt, wordt de omgekeerde index van elk veld gevuld met alle
 
 Zodra het eerste document is geladen, kunt u beginnen met het uitvoeren van een query op een index. Als u de ID van een document kent, retourneert het [opzoek document rest API](/rest/api/searchservice/lookup-document) het specifieke document. Voor uitgebreid testen moet u wachten tot de index volledig is geladen en vervolgens query's gebruiken om de context te controleren die u verwacht te zien.
 
-U kunt [Search Explorer](search-explorer.md) of een hulp programma voor het testen van webtoepassingen zoals [postman of Visual Studio code](search-get-started-rest.md) gebruiken om te controleren op bijgewerkte inhoud.
+U kunt [Search Explorer](search-explorer.md) of een hulp programma voor het testen van webtoepassingen zoals [postman](search-get-started-rest.md) of [Visual Studio code](search-get-started-vs-code.md) gebruiken om te controleren op bijgewerkte inhoud.
 
 Als u een veld hebt toegevoegd of een andere naam hebt gegeven, gebruikt u [$Select](search-query-odata-select.md) om dat veld te retour neren: `search=*&$select=document-id,my-new-field,some-old-field&$count=true`
 
-## <a name="see-also"></a>Zie ook
+## <a name="see-also"></a>Zie tevens
 
 + [Overzicht van de indexeerfunctie](search-indexer-overview.md)
 + [Grote gegevens sets op schaal indexeren](search-howto-large-index.md)

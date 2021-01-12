@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/14/2020
-ms.openlocfilehash: db36a77d93735b151ad893b7e25ba86f104e7b90
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 9bee391ddb0fa6c270c6d833fb7e81d5f4880497
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510461"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118639"
 ---
 # <a name="create-a-query-in-azure-cognitive-search"></a>Een query maken in azure Cognitive Search
 
@@ -26,7 +26,7 @@ U hebt een hulp programma of API nodig om een query te maken. Een van de volgend
 | Methodologie | Beschrijving |
 |-------------|-------------|
 | Portal| [Search Explorer (Portal)](search-explorer.md) is een query interface in de Azure portal die query's uitvoert op indexen voor de onderliggende zoek service. De portal maakt REST API aanroepen achter de schermen aan de bewerking [Zoeken in documenten](/rest/api/searchservice/search-documents) , maar kan geen automatisch aanvullen, suggesties of het opzoeken van documenten aanroepen.<br/><br/> U kunt een wille keurige index en REST API versie selecteren, inclusief preview. Een query reeks kan eenvoudige of volledige syntaxis gebruiken, met ondersteuning voor alle query parameters (filter, SELECT, searchFields, enzovoort). Wanneer u in de portal een index opent, kunt u met Search Explorer naast de definitie van de index-JSON in tabbladen naast elkaar werken voor eenvoudige toegang tot veld kenmerken. Controleer welke velden doorzoekbaar, sorteerbaar, filterbaar en bruikbaar zijn tijdens het testen van query's. <br/>Wordt aanbevolen voor vroegtijdig onderzoek, testen en validatie. [Meer informatie.](search-explorer.md) |
-| Hulpprogram ma's voor webtest| [Postman of Visual Studio code](search-get-started-rest.md) is een goede keuze voor het formuleren van een aanvraag voor een [Zoek opdracht](/rest/api/searchservice/search-documents) en een andere aanvraag, in rest. De REST Api's ondersteunen elke mogelijke programmatische bewerking in azure Cognitive Search en wanneer u een hulp programma zoals postman of Visual Studio code gebruikt, kunt u aanvragen interactief verlenen om te begrijpen hoe de functie werkt voordat u in code investeert. Een hulp programma voor het testen van webtoepassingen is een goede keuze als u geen Inzender of beheerders rechten hebt in de Azure Portal. Als u een zoek-URL en een query-API-sleutel hebt, kunt u de hulpprogram ma's gebruiken om query's uit te voeren op basis van een bestaande index. |
+| Hulpprogram ma's voor webtest| [Postman](search-get-started-rest.md) of [Visual Studio code](search-get-started-vs-code.md) is een goede keuze voor het formuleren van een aanvraag voor een [Zoek opdracht](/rest/api/searchservice/search-documents) en een andere aanvraag, in rest. De REST Api's ondersteunen elke mogelijke programmatische bewerking in azure Cognitive Search en wanneer u een hulp programma zoals postman of Visual Studio code gebruikt, kunt u aanvragen interactief verlenen om te begrijpen hoe de functie werkt voordat u in code investeert. Een hulp programma voor het testen van webtoepassingen is een goede keuze als u geen Inzender of beheerders rechten hebt in de Azure Portal. Als u een zoek-URL en een query-API-sleutel hebt, kunt u de hulpprogram ma's gebruiken om query's uit te voeren op basis van een bestaande index. |
 | Azure SDK | Wanneer u klaar bent voor het schrijven van code, kunt u de Azure.Search.Document-client bibliotheken gebruiken in de Azure-Sdk's voor .NET, Python, java script of Java. Elke SDK bevindt zich op een eigen release schema, maar u kunt al indexen maken en er query's op uitvoeren. <br/><br/>[SearchClient (.net)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt voor het opvragen van een zoek index in C#.  [Meer informatie.](search-howto-dotnet-sdk.md)<br/><br/>[SearchClient (python)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt om een zoek index in python op te vragen. [Meer informatie.](search-get-started-python.md)<br/><br/>[SearchClient (Java script)](/dotnet/api/azure.search.documents.searchclient) kan worden gebruikt voor het opvragen van een zoek index in Java script. [Meer informatie.](search-get-started-javascript.md) |
 
 ## <a name="set-up-a-search-client"></a>Een Search-client instellen

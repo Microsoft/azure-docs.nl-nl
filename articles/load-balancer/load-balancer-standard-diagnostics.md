@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/14/2019
 ms.author: allensu
-ms.openlocfilehash: da4c5f7891b518f4e6393f3fb4e153d464f4f2a2
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 386e0051a64f73b18c1ff76ed33af5f9eebe8aa0
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955532"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121410"
 ---
 # <a name="standard-load-balancer-diagnostics-with-metrics-alerts-and-resource-health"></a>Diagnose van Standard Load Balancer met metrische gegevens, meldingen en status van resources
 
@@ -35,19 +35,22 @@ Azure Load Balancer biedt multidimensionale metrische gegevens via de metrische 
 
 De verschillende Standard Load Balancer configuraties bieden de volgende metrische gegevens:
 
-| Gegevens | Resourcetype | Beschrijving | Aanbevolen aggregatie |
+| Metrisch | Resourcetype | Beschrijving | Aanbevolen aggregatie |
 | --- | --- | --- | --- |
 | Gegevenspadbeschikbaarheid | Openbare en interne load balancer | Standard Load Balancer oefent doorlopend het gegevenspad vanuit een regio naar de front-end van de load balancer, helemaal tot de SDN-stack die ondersteuning biedt voor de VM. Zolang de gezonde instanties blijven bestaan, volgt de meting hetzelfde pad als het verkeer met gelijke taak verdeling van uw toepassing. Het gegevenspad dat uw klanten gebruiken, wordt ook gevalideerd. De meting is onzichtbaar voor de toepassing en heeft geen invloed op andere bewerkingen.| Average |
 | Status van statustest | Openbare en interne load balancer | Standard Load Balancer maakt gebruik van een gedistribueerde status-probing-service die de status van uw toepassings eindpunt bewaakt volgens de configuratie-instellingen. Deze metriek biedt een gefilterde weergave van een aggregatie of per-eindpunt van elk exemplaareindpunt in de load balancer-groep. U ziet hoe in Load Balancer de status van de toepassing wordt weergegeven, zoals aangeduid via de statustestconfiguratie. |  Average |
-| SYN-pakketten (synchroniseren) | Openbare en interne load balancer | Standard Load Balancer beëindigt TCP-verbindingen (Transmission Control Protocol) niet, of communiceert niet met TCP- of UDP-pakketstromen. Stromen en hun handshakes vinden altijd plaats de bron en het VM-exemplaar. U kunt tellers voor SYN-pakketten gebruiken om te ontdekken hoeveel TCP-verbindingspogingen zijn ondernomen, om problemen in uw scenario’s voor TCP-protocollen beter te kunnen oplossen. Via de metriek wordt het aantal TCP SYN-pakketten gerapporteerd dat is ontvangen.| Average |
-| SNAT-verbindingen | Openbare load balancer |Standard Load Balancer rapporteert het aantal uitgaande stromen dat is gemaskerd voor de front-end van het openbare IP-adres. SNAT-poorten (adresvertaling van bronnetwerk) zijn een onuitputtelijke resource. Met deze metriek kan een indicatie worden gegeven van hoe sterk de toepassing vertrouwt op SNAT voor uitgaande stromen. Tellers voor geslaagde en mislukte uitgaande SNAT-stromen worden gerapporteerd, en kunnen worden gebruikt om problemen op te lossen en de status van uitgaande stromen te begrijpen.| Average |
+| SYN-aantal (synchroniseren) | Openbare en interne load balancer | Standard Load Balancer beëindigt TCP-verbindingen (Transmission Control Protocol) niet, of communiceert niet met TCP- of UDP-pakketstromen. Stromen en hun handshakes vinden altijd plaats de bron en het VM-exemplaar. U kunt tellers voor SYN-pakketten gebruiken om te ontdekken hoeveel TCP-verbindingspogingen zijn ondernomen, om problemen in uw scenario’s voor TCP-protocollen beter te kunnen oplossen. Via de metriek wordt het aantal TCP SYN-pakketten gerapporteerd dat is ontvangen.| Sum |
+| Aantal SNAT-verbindingen | Openbare load balancer |Standard Load Balancer rapporteert het aantal uitgaande stromen dat is gemaskerd voor de front-end van het openbare IP-adres. SNAT-poorten (adresvertaling van bronnetwerk) zijn een onuitputtelijke resource. Met deze metriek kan een indicatie worden gegeven van hoe sterk de toepassing vertrouwt op SNAT voor uitgaande stromen. Tellers voor geslaagde en mislukte uitgaande SNAT-stromen worden gerapporteerd, en kunnen worden gebruikt om problemen op te lossen en de status van uitgaande stromen te begrijpen.| Sum |
 | Toegewezen SNAT-poorten | Openbare load balancer | Standard Load Balancer rapporteert het aantal toegewezen SNAT-poorten per back-end-exemplaar | Evenredig. |
 | Gebruikte SNAT-poorten | Openbare load balancer | Standard Load Balancer rapporteert het aantal SNAT-poorten die worden gebruikt per back-end-exemplaar. | Average | 
-| Bytetellers |  Openbare en interne load balancer | Standard Load Balancer rapporteert de verwerkte gegevens per front-end. U ziet misschien dat de bytes niet gelijkmatig zijn verdeeld over de back-endexemplaren. Dit wordt verwacht omdat het Load Balancer-algoritme van Azure is gebaseerd op stromen | Average |
-| Pakkettellers |  Openbare en interne load balancer | Standard Load Balancer rapporteert de verwerkte pakketten per front-end.| Average |
+| Aantal bytes |  Openbare en interne load balancer | Standard Load Balancer rapporteert de verwerkte gegevens per front-end. U ziet misschien dat de bytes niet gelijkmatig zijn verdeeld over de back-endexemplaren. Dit wordt verwacht omdat het Load Balancer-algoritme van Azure is gebaseerd op stromen | Sum |
+| Aantal pakketten |  Openbare en interne load balancer | Standard Load Balancer rapporteert de verwerkte pakketten per front-end.| Sum |
 
   >[!NOTE]
-  >Wanneer u het distribueren van verkeer van een interne load balancer via een NVA-of firewall SYN-pakket, een byte teller en metrische gegevens over de pakket teller zijn niet beschikbaar en worden weer gegeven als nul. 
+  >Wanneer u het distribueren van verkeer van een interne load balancer via een NVA-of firewall SYN-pakket, de byte telling en de metrische gegevens over het aantal pakketten zijn niet beschikbaar en worden weer gegeven als nul. 
+  
+  >[!NOTE]
+  >De maximale en minimale aggregaties zijn niet beschikbaar voor het SYN-aantal, het aantal pakketten, het aantal SNAT-verbindingen en de metrische gegevens over het aantal bytes. 
   
 ### <a name="view-your-load-balancer-metrics-in-the-azure-portal"></a>Uw load balancer metrische gegevens weer geven in de Azure Portal
 

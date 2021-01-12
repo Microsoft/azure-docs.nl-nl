@@ -11,18 +11,31 @@ author: nabhishek
 manager: anansub
 ms.custom: seo-lt-2019
 ms.date: 06/10/2020
-ms.openlocfilehash: 8734247a913bdf6a44a9156f6f87705b618f7228
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 3f0cf3de4c2cffca6540fcd727872372103ac98f
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92632886"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98118231"
 ---
 # <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Een gedeelde zelf-hostende Integration runtime maken in Azure Data Factory
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
 In deze hand leiding wordt beschreven hoe u een gedeelde zelf-hostende Integration runtime maakt in Azure Data Factory. Vervolgens kunt u de gedeelde zelf-hostende Integration runtime in een andere data factory gebruiken.
+
+## <a name="create-a-shared-self-hosted-integration-runtime-in-azure-data-factory"></a>Een gedeelde zelf-hostende Integration runtime maken in Azure Data Factory
+
+U kunt een bestaande zelf-hostende Integration runtime-infra structuur die u al in een data factory hebt ingesteld, opnieuw gebruiken. Met dit hergebruik kunt u een gekoppelde zelf-hostende Integration runtime in een andere data factory maken door te verwijzen naar een bestaande gedeelde zelf-hostende IR.
+
+Bekijk de volgende video van 12 minuten om een inleiding en demonstratie van deze functie weer te geven:
+
+> [!VIDEO https://channel9.msdn.com/Shows/Azure-Friday/Hybrid-data-movement-across-multiple-Azure-Data-Factories/player]
+
+### <a name="terminology"></a>Terminologie
+
+- **Gedeelde IR**: een originele zelf-hostende IR die wordt uitgevoerd op een fysieke infra structuur.  
+- **Gekoppelde IR**: een IR die verwijst naar een andere gedeelde IR. De gekoppelde IR is een logische IR en maakt gebruik van de infra structuur van een andere gedeelde zelf-hostende IR.
 
 ## <a name="create-a-shared-self-hosted-ir-using-azure-data-factory-ui"></a>Een gedeelde zelf-hostende IR maken met Azure Data Factory gebruikers interface
 
@@ -55,18 +68,18 @@ Als u een gedeelde zelf-hostende IR wilt maken met behulp van Azure PowerShell, 
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- **Azure-abonnement** . Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint. 
+- **Azure-abonnement**. Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint. 
 
-- **Azure PowerShell** . Volg de instructies in [Install Azure PowerShell in Windows met PowerShellGet](/powershell/azure/install-az-ps). U kunt Power shell gebruiken om een script uit te voeren om een zelf-hostende Integration runtime te maken die kan worden gedeeld met andere gegevens fabrieken. 
+- **Azure PowerShell**. Volg de instructies in [Install Azure PowerShell in Windows met PowerShellGet](/powershell/azure/install-az-ps). U kunt Power shell gebruiken om een script uit te voeren om een zelf-hostende Integration runtime te maken die kan worden gedeeld met andere gegevens fabrieken. 
 
 > [!NOTE]  
 > Voor een lijst met Azure-regio's waarin Data Factory op dit moment beschikbaar is, selecteert u de regio's die u interesseren op de  [beschik bare producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory).
 
-### <a name="create-a-data-factory"></a>Een gegevensfactory maken
+### <a name="create-a-data-factory"></a>Een data factory maken
 
 1. Start Windows PowerShell ISE (Integrated Scripting Environment).
 
-1. Variabelen maken. Kopieer en plak het volgende script. Vervang de variabelen, zoals **subscriptionname** en **ResourceGroupName** , door de werkelijke waarden: 
+1. Variabelen maken. Kopieer en plak het volgende script. Vervang de variabelen, zoals **subscriptionname** en **ResourceGroupName**, door de werkelijke waarden: 
 
     ```powershell
     # If input contains a PSH special character, e.g. "$", precede it with the escape character "`" like "`$". 
@@ -213,6 +226,37 @@ Remove-AzDataFactoryV2IntegrationRuntime `
     -Links `
     -LinkedDataFactoryName $LinkedDataFactoryName
 ```
+
+### <a name="monitoring"></a>Bewaking
+
+#### <a name="shared-ir"></a>Gedeelde IR
+
+![Selecties voor het vinden van een gedeelde Integration runtime](media/create-self-hosted-integration-runtime/Contoso-shared-IR.png)
+
+![Een gedeelde integratie-runtime bewaken](media/create-self-hosted-integration-runtime/contoso-shared-ir-monitoring.png)
+
+#### <a name="linked-ir"></a>Gekoppelde IR
+
+![Selecties voor het vinden van een gekoppelde Integration runtime](media/create-self-hosted-integration-runtime/Contoso-linked-ir.png)
+
+![Een gekoppelde integratie-runtime bewaken](media/create-self-hosted-integration-runtime/Contoso-linked-ir-monitoring.png)
+
+
+### <a name="known-limitations-of-self-hosted-ir-sharing"></a>Bekende beperkingen van zelf-hostende IR-delen
+
+* De data factory waarin een gekoppelde IR wordt gemaakt, moet een [beheerde identiteit](../active-directory/managed-identities-azure-resources/overview.md)hebben. Standaard hebben de gegevens fabrieken die zijn gemaakt in de Azure Portal-of Power shell-cmdlets een impliciet gemaakte beheerde identiteit. Maar wanneer een data factory wordt gemaakt via een Azure Resource Manager sjabloon of SDK, moet u de **identiteits** eigenschap expliciet instellen. Deze instelling zorgt ervoor dat Resource Manager een data factory maakt die een beheerde identiteit bevat.
+
+* De Data Factory .NET SDK die deze functie ondersteunt, moet versie 1.1.0 of hoger zijn.
+
+* Als u machtigingen wilt verlenen, moet u de rol eigenaar of de overgenomen rol eigenaar hebben in de data factory waar de gedeelde IR zich bevindt.
+
+* De functie voor delen werkt alleen voor gegevens fabrieken binnen dezelfde Azure AD-Tenant.
+
+* Voor Azure AD- [gast gebruikers](../active-directory/governance/manage-guest-access-with-access-reviews.md), de zoek functie in de gebruikers interface, met alle gegevens fabrieken met behulp van een zoek woord, werkt niet. Maar zolang de gast gebruiker de eigenaar van het data factory is, kunt u de IR delen zonder de zoek functionaliteit. Voor de beheerde identiteit van de data factory die de IR moet delen, voert u die beheerde identiteit in het vak **machtiging toewijzen** in en selecteert u **toevoegen** in de Data Factory gebruikers interface.
+
+  > [!NOTE]
+  > Deze functie is alleen beschikbaar in Data Factory v2.
+
 
 ### <a name="next-steps"></a>Volgende stappen
 

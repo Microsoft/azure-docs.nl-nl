@@ -3,12 +3,12 @@ title: Geo-nood herstel-Azure Event Hubs | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood gevallen in azure Event Hubs
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: e10ac5847a38190c8feaae5e51f9b55bee4c4fbc
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 8824334e762237c3f18cb763d5b39fa55d6415a3
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861479"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108460"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Azure-Event Hubs-geo-nood herstel 
 
@@ -70,7 +70,29 @@ De volgende sectie bevat een overzicht van het failoverproces en legt uit hoe de
 
 ### <a name="setup"></a>Instellen
 
-U maakt of gebruikt eerst een bestaande primaire naam ruimte en een nieuwe secundaire naam ruimte en koppelt deze twee. Met deze koppeling krijgt u een alias die u kunt gebruiken om verbinding te maken. Omdat u een alias gebruikt, hoeft u geen verbindings reeksen te wijzigen. U kunt alleen nieuwe naam ruimten toevoegen aan uw failover-koppeling. Ten slotte moet u bewaking toevoegen om te detecteren of een failover nood zakelijk is. In de meeste gevallen is de service een deel van een groot ecosysteem, waardoor automatische failovers zelden mogelijk zijn, omdat vaak failovers moeten worden uitgevoerd in synchronisatie met het resterende subsysteem of infra structuur.
+U maakt of gebruikt eerst een bestaande primaire naam ruimte en een nieuwe secundaire naam ruimte en koppelt deze twee. Met deze koppeling krijgt u een alias die u kunt gebruiken om verbinding te maken. Omdat u een alias gebruikt, hoeft u geen verbindings reeksen te wijzigen. U kunt alleen nieuwe naam ruimten toevoegen aan uw failover-koppeling. 
+
+1. Maak de primaire naam ruimte.
+1. Maak de secundaire naam ruimte. Deze stap is optioneel. U kunt de secundaire naam ruimte maken terwijl u de koppeling in de volgende stap maakt. 
+1. Ga in het Azure Portal naar uw primaire naam ruimte.
+1. Selecteer **geo-Recovery** in het menu links en selecteer **koppelen starten** op de werk balk. 
+
+    :::image type="content" source="./media/event-hubs-geo-dr/primary-namspace-initiate-pairing-button.png" alt-text="Koppeling vanuit de primaire naam ruimte initiëren":::    
+1. Selecteer op de pagina **koppeling** maken de optie een bestaande secundaire naam ruimte of maak er een, en selecteer vervolgens **maken**. In het volgende voor beeld wordt een bestaande secundaire naam ruimte geselecteerd. 
+
+    :::image type="content" source="./media/event-hubs-geo-dr/initiate-pairing-page.png" alt-text="Secundaire naam ruimte selecteren":::        
+1. Wanneer u vervolgens **geo-Recovery** selecteert voor de primaire naam ruimte, ziet u de pagina **geo-Dr-alias** die eruitziet als de volgende afbeelding:
+
+    :::image type="content" source="./media/event-hubs-geo-dr/geo-dr-alias-page.png" alt-text="Geo-DR-alias pagina":::    
+1. Op deze pagina **overzicht** kunt u de volgende acties uitvoeren: 
+    1. Verbreek de koppeling tussen de primaire en secundaire naam ruimte. Selecteer **koppeling verbreekt** op de werk balk. 
+    1. Hand matig een failover naar de secundaire naam ruimte. Selecteer **failover** in de werk balk. 
+    
+        > [!WARNING]
+        > Als er een failover wordt uitgevoerd, wordt de secundaire naam ruimte geactiveerd en wordt de primaire naam ruimte verwijderd uit de Geo-Disaster herstel koppeling. Maak een andere naam ruimte om een nieuw geo-nood herstel paar te maken. 
+1. Op de pagina **geo-Dr-alias** selecteert u **beleid voor gedeelde toegang** om toegang te krijgen tot de primaire Connection String voor de alias. Gebruik deze connection string in plaats van de connection string rechtstreeks naar de primaire/secundaire naam ruimte te gebruiken. 
+
+Ten slotte moet u bewaking toevoegen om te detecteren of een failover nood zakelijk is. In de meeste gevallen is de service een deel van een groot ecosysteem, waardoor automatische failovers zelden mogelijk zijn, omdat vaak failovers moeten worden uitgevoerd in synchronisatie met het resterende subsysteem of infra structuur.
 
 ### <a name="example"></a>Voorbeeld
 
@@ -133,7 +155,7 @@ U kunt Beschikbaarheidszones alleen inschakelen voor nieuwe naam ruimten, met be
 ![3][]
 
 ## <a name="private-endpoints"></a>Privé-eindpunten
-Deze sectie bevat aanvullende overwegingen bij het gebruik van geo-nood herstel met naam ruimten die persoonlijke eind punten gebruiken. Zie [persoonlijke eind punten configureren](private-link-service.md)voor meer informatie over het gebruik van privé-eind punten met Event hubs in het algemeen.
+In deze sectie vindt u meer aandachtspunten bij het gebruik van geo-nood herstel met naam ruimten die persoonlijke eind punten gebruiken. Zie [persoonlijke eind punten configureren](private-link-service.md)voor meer informatie over het gebruik van privé-eind punten met Event hubs in het algemeen.
 
 ### <a name="new-pairings"></a>Nieuwe paren
 Als u probeert een koppeling te maken tussen een primaire naam ruimte met een persoonlijk eind punt en een secundaire naam ruimte zonder persoonlijk eind punt, mislukt de koppeling. De koppeling kan alleen worden uitgevoerd als zowel de primaire als de secundaire naam ruimte persoonlijke eind punten hebben. U wordt aangeraden dezelfde configuraties te gebruiken voor de primaire en secundaire naam ruimten en op virtuele netwerken waarin privé-eind punten worden gemaakt.  

@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 07/11/2018
 ms.author: cynthn
-ms.openlocfilehash: 7fbdeda4cce737a6220d42642473e5f86ef8e525
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 608cfca3343b02101ac5e08acf0bec62900d1443
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96295958"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108650"
 ---
 # <a name="install-mysql-on-a-virtual-machine-running-opensuse-linux-in-azure"></a>MySQL installeren op een virtuele machine met OpenSUSE Linux in azure
 
@@ -37,7 +37,7 @@ Maak de VM. In dit voor beeld heeft de virtuele machine de naam *myVM* en is de 
 ```azurecli-interactive
 az vm create --resource-group mySQLSUSEResourceGroup \
    --name myVM \
-   --image openSUSE-Leap \
+   --image SUSE:openSUSE-Leap:15-2:latest \
    --size Standard_D2s_v3 \
    --generate-ssh-keys
 ```

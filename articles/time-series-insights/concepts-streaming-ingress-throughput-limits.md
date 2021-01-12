@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/26/2020
 ms.custom: seodec18
-ms.openlocfilehash: c8be18049e6ae74a198f5885a46b70df581e0cd7
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7496a7a40df49fa1b9f8410526cb9ec00c10478b
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187456"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108769"
 ---
 # <a name="streaming-ingestion-throughput-limits"></a>Doorvoer limieten voor stroom inslikken
 
@@ -34,7 +34,7 @@ Standaard kan Azure Time Series Insights Gen2 binnenkomende gegevens opnemen met
 
 > [!TIP]
 >
-> * Omgevings ondersteuning voor het opnemen van snelheden van Maxi maal 8 MBps kan worden geboden door de aanvraag.
+> * Omgevings ondersteuning voor opname snelheden van Maxi maal 2 MBps kan worden geboden door een aanvraag.
 > * Neem contact met ons op als u een hogere door voer nodig hebt door een ondersteunings ticket in te dienen via de Azure Portal.
 
 * **Voor beeld 1:**
@@ -47,10 +47,10 @@ Standaard kan Azure Time Series Insights Gen2 binnenkomende gegevens opnemen met
 
 * **Voor beeld 2:**
 
-    Contoso vloot Analytics heeft 40.000 apparaten die elke seconde een gebeurtenis verzenden. Ze gebruiken een event hub met een aantal partities van 2 als de Azure Time Series Insights gebeurtenis bron Gen2. De grootte van een gebeurtenis is 200 bytes.
+    Contoso vloot Analytics heeft 10.000 apparaten die elke seconde een gebeurtenis verzenden. Ze gebruiken een event hub met een aantal partities van 2 als de Azure Time Series Insights gebeurtenis bron Gen2. De grootte van een gebeurtenis is 200 bytes.
 
-  * Het opname tempo van de omgeving is: **40.000 apparaten * 200 bytes/gebeurtenis * 1 gebeurtenis/SEC = 8 Mbps**.
-    * Uitgebalanceerde partities, de frequentie per partitie is 4 MBps.
+  * Het opname tempo van de omgeving zou zijn: **10.000-apparaten * 200 bytes/gebeurtenis * 1 gebeurtenis/SEC = 2 Mbps**.
+    * Uitgebalanceerde partities, de frequentie per partitie is 1 MBps.
     * De opname frequentie van Contoso vloot Analytics ligt boven de omgeving en de partitie limieten. Ze kunnen een aanvraag indienen bij Azure Time Series Insights Gen2 via de Azure Portal om de opname frequentie voor hun omgeving te verhogen en een event hub te maken met meer partities die binnen de grenzen vallen.
 
 ## <a name="hub-partitions-and-per-partition-limits"></a>Hub-partities en limieten per partitie

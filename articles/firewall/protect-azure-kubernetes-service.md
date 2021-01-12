@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall
 services: firewall
 ms.topic: how-to
-ms.date: 09/03/2020
+ms.date: 01/11/2021
 ms.author: victorh
-ms.openlocfilehash: 43755b312a64c429b38a07c8c4fad8c85b08342a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51af9ff4972f5edef02426a6e81e8582123c9a7a
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89437850"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107851"
 ---
 # <a name="use-azure-firewall-to-protect-azure-kubernetes-service-aks-deployments"></a>Azure Firewall gebruiken om implementaties van Azure Kubernetes service (AKS) te beveiligen
 
@@ -47,7 +47,7 @@ Azure Firewall biedt een AKS FQDN-code om de configuratie te vereenvoudigen. Voe
    - TCP [*IPAddrOfYourAPIServer*]: 443 is vereist als u een app hebt die moet communiceren met de API-server. Deze wijziging kan worden ingesteld nadat het cluster is gemaakt.
    - TCP-poort 9000 en UDP-poort 1194 voor de tunnel-front-pod om te communiceren met het tunnel einde op de API-server.
 
-      Zie voor meer specifieke informatie de **. hcp. <location> . azmk8s.io* en adressen in de volgende tabel:
+      Zie de adressen in de volgende tabel voor meer specifieke informatie:
 
    | Doel eindpunt                                                             | Protocol | Poort    | Gebruik  |
    |----------------------------------------------------------------------------------|----------|---------|------|

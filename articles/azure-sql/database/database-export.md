@@ -9,14 +9,14 @@ author: stevestein
 ms.custom: sqldbrb=2
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 07/16/2019
+ms.date: 01/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 7dc6cd580687544226b61a29ca9ccf2d1b8dff42
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: f874803e0ae361255754477ca68184255f35b91f
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92671531"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107375"
 ---
 # <a name="export-to-a-bacpac-file---azure-sql-database-and-azure-sql-managed-instance"></a>Exporteren naar een BACPAC-bestand-Azure SQL Database en Azure SQL Managed instance
 
@@ -30,6 +30,7 @@ Wanneer u een Data Base voor archivering wilt exporteren of als u wilt overstapp
 - Als u exporteert naar Blob Storage, is de maximale grootte van een BACPAC-bestand 200 GB. Als u een groter BACPAC-bestand wilt archiveren, exporteert u het naar lokale opslag.
 - Het exporteren van een BACPAC-bestand naar Azure Premium Storage met behulp van de methoden die in dit artikel worden beschreven, wordt niet ondersteund.
 - Opslag achter een firewall wordt momenteel niet ondersteund.
+- De naam van het opslag bestand of de invoer waarde voor StorageURI moet kleiner zijn dan 128 tekens en mag niet eindigen op '. ' en mag geen speciale tekens bevatten zoals een spatie teken of ' <, >, *,%, &,:, \, /,? '. 
 - Als de export bewerking 20 uur overschrijdt, kan deze worden geannuleerd. Als u de prestaties tijdens het exporteren wilt verbeteren, kunt u het volgende doen:
 
   - Uw reken grootte tijdelijk verhogen.
@@ -54,9 +55,9 @@ Het exporteren van een BACPAC van een Data Base vanuit een [Azure SQL Managed in
 
     ![Data base exporteren](./media/database-export/database-export2.png)
 
-3. Klik op **OK** .
+3. Klik op **OK**.
 
-4. Als u de voortgang van de export bewerking wilt controleren, opent u de pagina voor de server die de Data Base bevat die wordt geëxporteerd. Onder **instellingen** en klikt u op **geschiedenis van importeren/exporteren** .
+4. Als u de voortgang van de export bewerking wilt controleren, opent u de pagina voor de server die de Data Base bevat die wordt geëxporteerd. Onder **instellingen** en klikt u op **geschiedenis van importeren/exporteren**.
 
    ![Geschiedenis exporteren](./media/database-export/export-history.png)
 
@@ -89,7 +90,7 @@ $exportRequest = New-AzSqlDatabaseExport -ResourceGroupName $ResourceGroupName -
   -AdministratorLogin $creds.UserName -AdministratorLoginPassword $creds.Password
 ```
 
-Als u de status van de export aanvraag wilt controleren, gebruikt u de cmdlet [Get-AzSqlDatabaseImportExportStatus](/powershell/module/az.sql/get-azsqldatabaseimportexportstatus) . Als deze onmiddellijk wordt uitgevoerd, wordt de status van de aanvraag meestal geretourneerd **: InProgress** . Wanneer u **status ziet: geslaagd** dat de export is voltooid.
+Als u de status van de export aanvraag wilt controleren, gebruikt u de cmdlet [Get-AzSqlDatabaseImportExportStatus](/powershell/module/az.sql/get-azsqldatabaseimportexportstatus) . Als deze onmiddellijk wordt uitgevoerd, wordt de status van de aanvraag meestal geretourneerd **: InProgress**. Wanneer u **status ziet: geslaagd** dat de export is voltooid.
 
 ```powershell
 $exportStatus = Get-AzSqlDatabaseImportExportStatus -OperationStatusLink $exportRequest.OperationStatusLink

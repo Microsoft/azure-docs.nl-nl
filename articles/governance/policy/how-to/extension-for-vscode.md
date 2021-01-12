@@ -1,22 +1,22 @@
 ---
 title: Azure Policy-extensie voor Visual Studio code
 description: Meer informatie over het gebruik van de Azure Policy extensie voor Visual Studio code voor het opzoeken van Azure Resource Manager aliassen.
-ms.date: 10/20/2020
+ms.date: 01/11/2021
 ms.topic: how-to
-ms.openlocfilehash: 8c7357d70323fa74ec77cf43bd11f149a2f99154
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 4c4ba0eeb0506179ff92ead0ee86f048600d157e
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96906298"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107936"
 ---
 # <a name="use-azure-policy-extension-for-visual-studio-code"></a>Azure Policy-extensie voor Visual Studio code gebruiken
 
-> Van toepassing op Azure Policy extensie versie **0.1.0** en hoger
+> Van toepassing op Azure Policy extensie versie **0.1.1** en hoger
 
 Meer informatie over het gebruik van de Azure Policy extensie voor Visual Studio code voor het opzoeken van [aliassen](../concepts/definition-structure.md#aliases), het controleren van resources en beleid, het exporteren van objecten en het evalueren van beleids definities. Eerst wordt beschreven hoe u de extensie van de Azure Policy installeert in Visual Studio code. Vervolgens wordt uitgelegd hoe u aliassen opzoekt.
 
-De uitbrei ding van de Azure Policy voor Visual Studio code kan worden geïnstalleerd op alle platforms die worden ondersteund door Visual Studio code. Deze ondersteuning omvat Windows, Linux en macOS.
+De Azure Policy-extensie voor Visual Studio code kan worden geïnstalleerd in Windows.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -30,7 +30,7 @@ De volgende items zijn vereist voor het voltooien van de stappen in dit artikel:
 Nadat u aan de vereisten hebt voldaan, kunt u Azure Policy extensie voor Visual Studio code installeren door de volgende stappen uit te voeren:
 
 1. Open Visual Studio Code.
-1. Ga in de menu balk naar **View**  >  **uitbrei dingen** weer geven.
+1. Ga in de menu balk naar   >  **uitbrei dingen** weer geven.
 1. Voer in het zoekvak **Azure Policy** in.
 1. Selecteer **Azure Policy** in de zoek resultaten en selecteer vervolgens **installeren**.
 1. Selecteer zo nodig **Opnieuw laden**.
@@ -62,7 +62,7 @@ Als u resources en lookup-aliassen wilt evalueren, moet u verbinding maken met u
 
    - Opdracht palet
 
-     Ga in de menu balk naar het **View**  >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
+     Ga in de menu balk naar het   >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
 
      :::image type="content" source="../media/extension-for-vscode/azure-cloud-sign-in-command-palette.png" alt-text="Scherm opname van de Azure Cloud-aanmeld opties voor Visual Studio code vanuit het opdracht palet." border="false":::
 
@@ -76,7 +76,7 @@ Wanneer u zich voor het eerst aanmeldt, worden alleen de standaard-abonnements b
 
    - Opdracht palet:
 
-     Ga in de menu balk naar het **View** > **opdracht palet** weer geven en voer **Azure in: Selecteer abonnementen**.
+     Ga in de menu balk naar het  > **opdracht palet** weer geven en voer **Azure in: Selecteer abonnementen**.
 
    - Venster voet tekst
 
@@ -105,7 +105,7 @@ Klanten met honderden of duizenden resources in één abonnement kunnen een Door
 
    - Opdracht palet:
 
-     Ga in de menu balk naar het **View** > **opdracht palet** weer geven en voer **resources in: resources zoeken**.
+     Ga in de menu balk naar het  > **opdracht palet** weer geven en voer **resources in: resources zoeken**.
 
 1. Als er meer dan één abonnement is geselecteerd voor weer gave, gebruikt u het filter om te selecteren welk abonnement u wilt zoeken.
 
@@ -136,7 +136,7 @@ In de uitbrei ding Azure Policy worden beleids typen en beleids toewijzingen wee
 
    - Opdracht palet:
 
-     Ga in de menu balk naar het **View** > **opdracht palet** weer geven en voer **beleid in: Zoek beleid**.
+     Ga in de menu balk naar het  > **opdracht palet** weer geven en voer **beleid in: Zoek beleid**.
 
 1. Als er meer dan één abonnement is geselecteerd voor weer gave, gebruikt u het filter om te selecteren welk abonnement u wilt zoeken.
 
@@ -198,7 +198,7 @@ De evaluatie resultaten bevatten informatie over de beleids definitie en beleids
 
 ### <a name="sign-out"></a>Afmelden
 
-Ga in de menu balk naar het **View**  >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
+Ga in de menu balk naar het   >  **opdracht palet** weer geven en voer **Azure in: Meld** u aan.
 
 ## <a name="next-steps"></a>Volgende stappen
 

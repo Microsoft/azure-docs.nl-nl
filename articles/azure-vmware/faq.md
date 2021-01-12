@@ -3,12 +3,12 @@ title: Veelgestelde vragen
 description: Hier vindt u antwoorden op enkele veelgestelde vragen over de Azure VMware-oplossing.
 ms.topic: conceptual
 ms.date: 1/4/2020
-ms.openlocfilehash: d0228739a6ee4eac20d2fa04e47cf86b6fddb84e
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 1420fba40492e1a5f45f4ad5e58da2caa29ae7e7
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881222"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107953"
 ---
 # <a name="frequently-asked-questions-about-azure-vmware-solution"></a>Veelgestelde vragen over de Azure VMware-oplossing
 
@@ -29,6 +29,10 @@ De service wordt doorlopend toegevoegd aan nieuwe regio's, dus Bekijk de [meest 
 #### <a name="can-workloads-running-in-an-azure-vmware-solution-instance-consume-or-integrate-with-azure-services"></a>Kunnen werk belastingen die worden uitgevoerd in een exemplaar van de Azure VMware-oplossing worden gebruikt of worden geïntegreerd met Azure-Services?
 
 Alle Azure-Services zijn beschikbaar voor klanten met Azure VMware-oplossingen. De beperkingen voor de prestaties en de beschik baarheid van specifieke services moeten per geval worden behandeld.
+
+#### <a name="what-guest-operating-systems-are-compatible-with-azure-vmware-solution"></a>Welke gast besturingssystemen zijn compatibel met de Azure VMware-oplossing?
+
+U kunt informatie over de compatibiliteit van gast besturingssystemen met vSphere vinden met behulp van de [VMware-Compatibiliteits gids](https://www.vmware.com/resources/compatibility/search.php?deviceCategory=software&details=1&releases=485&page=1&display_interval=10&sortColumn=Partner&sortOrder=Asc&testConfig=16).  Zie [VMware-software versies](concepts-private-clouds-clusters.md#vmware-software-versions)voor het identificeren van de versie van vSphere die wordt uitgevoerd in de Azure VMware-oplossing.
 
 #### <a name="do-i-use-the-same-tools-that-i-use-now-to-manage-private-cloud-resources"></a>Gebruik ik dezelfde hulp middelen die ik nu gebruik voor het beheren van persoonlijke Cloud bronnen?
 

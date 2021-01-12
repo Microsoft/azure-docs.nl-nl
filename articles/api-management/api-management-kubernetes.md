@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/14/2019
 ms.author: apimpm
-ms.openlocfilehash: f8c6fce5b22d67dd1022fbaac763ea5df3b0930f
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 293a47bc3e8499d7eda4e64bb68bc95eb4c85ab0
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505372"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108395"
 ---
 # <a name="use-azure-api-management-with-microservices-deployed-in-azure-kubernetes-service"></a>Azure API Management gebruiken met micro services die zijn geïmplementeerd in azure Kubernetes service
 
@@ -99,7 +99,7 @@ In sommige gevallen kunnen klanten met wettelijke beperkingen of strikte beveili
 
 Er zijn twee modi voor [het implementeren van API Management in een VNet](./api-management-using-with-vnet.md) – extern en intern. 
 
-Als API-gebruikers zich niet in het cluster-VNet bevinden, moet de externe modus (figuur 4) worden gebruikt. In deze modus wordt de API Management-Gateway in het cluster-VNet geïnjecteerd, maar via een extern load balancer toegankelijk vanaf het open bare Internet. Het helpt het cluster volledig te verbergen terwijl externe clients de micro Services toch kunnen gebruiken. Daarnaast kunt u Azure-netwerk mogelijkheden, zoals netwerk beveiligings groepen (NSG), gebruiken om het netwerk verkeer te beperken.
+Als API-gebruikers zich niet in het cluster-VNet bevinden, moet de externe modus (figuur 4) worden gebruikt. In deze modus wordt de API Management-Gateway in het cluster-VNet geïnjecteerd, maar via een extern load balancer toegankelijk vanaf het open bare Internet. Het helpt het cluster volledig te verbergen terwijl externe clients toch de micro Services kunnen gebruiken. Daarnaast kunt u Azure-netwerk mogelijkheden, zoals netwerk beveiligings groepen (NSG), gebruiken om het netwerk verkeer te beperken.
 
 ![Externe VNet-modus](./media/api-management-aks/vnet-external.png)
 

@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.subservice: develop
 ms.workload: identity
 ms.topic: conceptual
-ms.date: 08/14/2020
+ms.date: 01/11/2021
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 6648cfb717ade4b842e8ff470a46bf744b630363
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 580ec0761c997a0ee7611f7104aa48650c8573e7
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88612313"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107409"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-authorization-code-flow"></a>Micro soft Identity platform en OAuth 2,0-autorisatie code stroom
 
@@ -58,7 +58,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &response_type=code
 &redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 &response_mode=query
-&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fmail.read
+&scope=https%3A%2F%2Fgraph.microsoft.com%2Fmail.read%20api%3A%2F%2F
 &state=12345
 &code_challenge=YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl
 &code_challenge_method=S256
@@ -72,10 +72,10 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 |--------------|-------------|--------------|
 | `tenant`    | vereist    | De `{tenant}` waarde in het pad van de aanvraag kan worden gebruikt om te bepalen wie zich kan aanmelden bij de toepassing. De toegestane waarden zijn `common` , `organizations` , `consumers` en Tenant-id's. Zie [basis beginselen van protocollen](active-directory-v2-protocols.md#endpoints)voor meer informatie.  |
 | `client_id`   | vereist    | De **client-id** van de toepassing die de [Azure Portal – app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) ervaring die aan uw app is toegewezen.  |
-| `response_type` | vereist    | Moet `code` de autorisatie code stroom bevatten.       |
+| `response_type` | vereist    | Moet `code` de autorisatie code stroom bevatten. Kan ook `id_token` `token` de [hybride stroom](#request-an-id-token-as-well-hybrid-flow)bevatten of gebruiken. |
 | `redirect_uri`  | vereist | De redirect_uri van uw app, waar verificatie reacties kunnen worden verzonden en ontvangen door uw app. Het moet exact overeenkomen met een van de redirect_uris die u in de portal hebt geregistreerd, behalve het moet een URL-code ring zijn. Voor systeem eigen & mobiele apps moet u de standaard waarde van gebruiken `https://login.microsoftonline.com/common/oauth2/nativeclient` .   |
 | `scope`  | vereist    | Een lijst met door spaties gescheiden [bereiken](v2-permissions-and-consent.md) waarvan u wilt dat de gebruiker toestemming geeft.  In het `/authorize` gedeelte van de aanvraag kan dit meerdere resources omvatten, zodat uw app toestemming kan krijgen voor meerdere web-api's die u wilt aanroepen. |
-| `response_mode`   | aanbevelingen | Hiermee geeft u de methode op die moet worden gebruikt om het resulterende token terug naar uw app te verzenden. Dit kan een van de volgende zijn:<br/><br/>- `query`<br/>- `fragment`<br/>- `form_post`<br/><br/>`query` levert de code als een query reeks parameter op de omleidings-URI. Als u een ID-token met behulp van de impliciete stroom aanvraagt, kunt u niet gebruiken `query` zoals opgegeven in de [OpenID Connect-specificatie](https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#Combinations). Als u alleen de code wilt aanvragen, kunt u `query` , `fragment` of gebruiken `form_post` . `form_post` Hiermee wordt een bericht met de code uitgevoerd naar de omleidings-URI. Zie [OpenID Connect Connect protocol](../azuread-dev/v1-protocols-openid-connect-code.md)(Engelstalig) voor meer informatie.  |
+| `response_mode`   | aanbevelingen | Hiermee geeft u de methode op die moet worden gebruikt om het resulterende token terug naar uw app te verzenden. Dit kan een van de volgende zijn:<br/><br/>- `query`<br/>- `fragment`<br/>- `form_post`<br/><br/>`query` levert de code als een query reeks parameter op de omleidings-URI. Als u een ID-token met behulp van de impliciete stroom aanvraagt, kunt u niet gebruiken `query` zoals opgegeven in de [OpenID Connect-specificatie](https://openid.net/specs/oauth-v2-multiple-response-types-1_0.html#Combinations). Als u alleen de code wilt aanvragen, kunt u `query` , `fragment` of gebruiken `form_post` . `form_post` Hiermee wordt een bericht met de code uitgevoerd naar de omleidings-URI. |
 | `state`                 | aanbevelingen | Een waarde die in de aanvraag is opgenomen en die ook wordt geretourneerd in de token reactie. Dit kan een teken reeks zijn van alle inhoud die u wilt. Een wille keurig gegenereerde unieke waarde wordt doorgaans gebruikt om [vervalsing van aanvragen op meerdere sites](https://tools.ietf.org/html/rfc6749#section-10.12)te voor komen. Met de waarde kan ook informatie over de status van de gebruiker in de app worden gecodeerd voordat de verificatie aanvraag is uitgevoerd, zoals de pagina of weer gave waarin ze zich bevonden. |
 | `prompt`  | optioneel    | Hiermee wordt het type gebruikers interactie aangegeven dat vereist is. De enige geldige waarden op dit moment zijn `login` , `none` , en `consent` .<br/><br/>- `prompt=login` dwingt de gebruiker de referenties op die aanvraag in te voeren, waarbij eenmalige aanmelding wordt genegeerd.<br/>- `prompt=none` is het tegenovergestelde: Hiermee zorgt u ervoor dat de gebruiker niet in een interactieve prompt wordt weer gegeven. Als de aanvraag niet op de achtergrond kan worden voltooid via eenmalige aanmelding, wordt door het micro soft Identity platform-eind punt een `interaction_required` fout geretourneerd.<br/>- `prompt=consent` het dialoog venster OAuth-toestemming wordt geactiveerd nadat de gebruiker zich heeft aangemeld, waarbij de gebruiker wordt gevraagd om machtigingen te verlenen aan de app.<br/>- `prompt=select_account` onderbreekt eenmalige aanmelding voor het aanbieden van accounts selectie alle accounts in een sessie of een eventueel onthouden account of een optie om ervoor te kiezen om een ander account samen te gebruiken.<br/> |
 | `login_hint`  | optioneel    | Kan worden gebruikt om het veld gebruikers naam/e-mail adres vooraf in te vullen op de aanmeldings pagina voor de gebruiker, als u de gebruikers naam van tevoren kent. Vaak gebruiken apps deze para meter tijdens het opnieuw verifiëren, waarbij de gebruikers naam al is geëxtraheerd van een eerdere aanmelding met de `preferred_username` claim.   |
@@ -103,7 +103,7 @@ code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
 | `code` | Het authorization_code dat door de app is aangevraagd. De app kan de autorisatie code gebruiken om een toegangs token aan te vragen voor de doel bron. Authorization_codes zijn korte tijd en verlopen doorgaans na ongeveer 10 minuten. |
 | `state` | Als een para meter State is opgenomen in de aanvraag, moet dezelfde waarde in het antwoord worden weer gegeven. De app moet controleren of de status waarden in de aanvraag en het antwoord identiek zijn. |
 
-U kunt ook een toegangs token en ID-token ontvangen als u er een hebt aangevraagd en de impliciete toekenning hebt ingeschakeld in de registratie van uw toepassing.  Dit wordt ook wel de ' hybride stroom ' genoemd en wordt gebruikt door frameworks zoals ASP.NET.
+U kunt ook een ID-token ontvangen als u er een hebt aangevraagd en de impliciete toekenning hebt ingeschakeld in de registratie van uw toepassing.  Dit wordt ook wel de [' hybride stroom '](#request-an-id-token-as-well-hybrid-flow)genoemd en wordt gebruikt door frameworks zoals ASP.net.
 
 #### <a name="error-response"></a>Fout bericht
 
@@ -129,12 +129,59 @@ In de volgende tabel worden de verschillende fout codes beschreven die kunnen wo
 | `invalid_request` | Protocol fout, zoals een ontbrekende vereiste para meter. | Corrigeer en verzend de aanvraag opnieuw. Dit is een ontwikkelings fout die doorgaans tijdens de eerste test is opgetreden. |
 | `unauthorized_client` | De client toepassing mag geen autorisatie code aanvragen. | Deze fout treedt meestal op wanneer de client toepassing niet is geregistreerd in azure AD of niet is toegevoegd aan de Azure AD-Tenant van de gebruiker. De toepassing kan de gebruiker vragen met instructies voor het installeren van de toepassing en het toevoegen aan Azure AD. |
 | `access_denied`  | De resource-eigenaar heeft toestemming geweigerd  | De client toepassing kan de gebruiker hiervan op de hoogte stellen dat deze niet kan door gaan, tenzij de gebruiker ermee akkoord gaat. |
-| `unsupported_response_type` | De autorisatie server biedt geen ondersteuning voor het antwoord type in de aanvraag. | Corrigeer en verzend de aanvraag opnieuw. Dit is een ontwikkelings fout die doorgaans tijdens de eerste test is opgetreden.  |
+| `unsupported_response_type` | De autorisatie server biedt geen ondersteuning voor het antwoord type in de aanvraag. | Corrigeer en verzend de aanvraag opnieuw. Dit is een ontwikkelings fout die doorgaans tijdens de eerste test is opgetreden. Wanneer de [hybride stroom](#request-an-id-token-as-well-hybrid-flow)wordt weer gegeven, geeft u aan dat u de instelling id-token impliciete toekenning moet inschakelen voor de registratie van de client-app. |
 | `server_error`  | Er is een onverwachte fout opgetreden op de server.| Voer de aanvraag opnieuw uit. Deze fouten kunnen worden veroorzaakt door tijdelijke voor waarden. De client toepassing kan bijvoorbeeld verklaren dat het antwoord van de gebruiker is vertraagd tot een tijdelijke fout. |
 | `temporarily_unavailable`   | De server is tijdelijk niet actief om de aanvraag af te handelen. | Voer de aanvraag opnieuw uit. De client toepassing kan bijvoorbeeld verklaren dat de reactie van de gebruiker is vertraagd vanwege een tijdelijke voor waarde. |
 | `invalid_resource`  | De doel resource is ongeldig omdat deze niet bestaat, Azure AD niet kan worden gevonden of niet juist is geconfigureerd. | Deze fout geeft aan dat de bron, indien aanwezig, niet is geconfigureerd in de Tenant. De toepassing kan de gebruiker vragen met instructies voor het installeren van de toepassing en het toevoegen aan Azure AD. |
 | `login_required` | Er zijn te veel of geen gebruikers gevonden | De client heeft authenticatie op de achtergrond ( `prompt=none` ) aangevraagd, maar er is geen enkele gebruiker gevonden. Dit kan betekenen dat er meerdere gebruikers actief zijn in de sessie of dat er zich geen gebruikers bevinden. Hierbij wordt rekening gehouden met de gekozen Tenant (bijvoorbeeld als er twee Azure AD-accounts actief zijn en een Microsoft-account, en `consumers` wordt gekozen, wordt de stille verificatie uitgevoerd). |
 | `interaction_required` | De aanvraag vereist een gebruikers interactie. | Er is een extra verificatie stap of toestemming vereist. Voer de aanvraag zonder uit `prompt=none` . |
+
+### <a name="request-an-id-token-as-well-hybrid-flow"></a>Een ID-token ook aanvragen (hybride stroom)
+
+Als u wilt weten wie de gebruiker is voordat een autorisatie code wordt ingewisseld, is het gebruikelijk dat toepassingen ook een ID-token aanvragen wanneer ze de autorisatie code aanvragen. Dit wordt de *hybride stroom* genoemd, omdat de impliciete toekenning wordt gemengd met de autorisatie code stroom. De hybride stroom wordt vaak gebruikt in web-apps die een pagina voor een gebruiker willen weer geven zonder dat de code wordt ingewisseld, met name [ASP.net](quickstart-v2-aspnet-core-webapp.md). Apps met één pagina en traditionele web-apps profiteren van een beperkte latentie in dit model.
+
+De hybride stroom is hetzelfde als de eerder beschreven verificatie code stroom, met drie toevoegingen, die allemaal vereist zijn voor het aanvragen van een ID-token: nieuwe bereiken, een nieuwe response_type en een nieuwe `nonce` query parameter.
+
+```
+// Line breaks for legibility only
+
+https://login.microsoftonline.com/{tenant}/oauth2/v2.0/authorize?
+client_id=6731de76-14a6-49ae-97bc-6eba6914391e
+&response_type=code%20id_token
+&redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
+&response_mode=fragment
+&scope=openid%20offline_access%20https%3A%2F%2Fgraph.microsoft.com%2Fuser.read
+&state=12345
+&nonce=abcde
+&code_challenge=YTFjNjI1OWYzMzA3MTI4ZDY2Njg5M2RkNmVjNDE5YmEyZGRhOGYyM2IzNjdmZWFhMTQ1ODg3NDcxY2Nl
+&code_challenge_method=S256
+```
+
+| Bijgewerkte para meter | Vereist/optioneel | Beschrijving |
+|---------------|-------------|--------------|
+|`response_type`| Vereist | Het toevoegen van `id_token` geeft aan de server aan dat de toepassing een ID-token zou hebben in de reactie van het `/authorize` eind punt.  |
+|`scope`| Vereist | Voor ID-tokens moet worden bijgewerkt met de ID-token bereik- `openid` , en optioneel `profile` en `email` . |
+|`nonce`| Vereist|     Een waarde die is opgenomen in de aanvraag, gegenereerd door de app, die wordt opgenomen in de resulterende id_token als een claim. De app kan vervolgens deze waarde verifiëren om token replay-aanvallen te verhelpen. De waarde is doorgaans een wille keurige, unieke teken reeks die kan worden gebruikt om de oorsprong van de aanvraag te identificeren. |
+|`response_mode`| Aanbevolen | Hiermee geeft u de methode op die moet worden gebruikt om het resulterende token terug naar uw app te verzenden. De standaard instelling `query` is alleen voor een autorisatie code, maar `fragment` als de aanvraag een id_token bevat `response_type` .|
+
+Het gebruik van `fragment` als antwoord modus kan problemen veroorzaken voor web-apps die de code van de omleiding lezen, omdat browsers het fragment niet door geven aan de webserver.  In deze situaties wordt het aanbevolen dat apps de `form_post` antwoord modus gebruiken om ervoor te zorgen dat alle gegevens naar de server worden verzonden. 
+
+#### <a name="successful-response"></a>Geslaagde reactie
+
+Een geslaagde reactie met `response_mode=fragment` ziet eruit als:
+
+```HTTP
+GET https://login.microsoftonline.com/common/oauth2/nativeclient#
+code=AwABAAAAvPM1KaPlrEqdFSBzjqfTGBCmLdgfSTLEMPGYuNHSUYBrq...
+&id_token=eYj...
+&state=12345
+```
+
+| Parameter | Beschrijving  |
+|-----------|--------------|
+| `code` | De autorisatie code die door de app is aangevraagd. De app kan de autorisatie code gebruiken om een toegangs token aan te vragen voor de doel bron. Autorisatie codes zijn korte tijd, doorgaans verlopen na ongeveer 10 minuten. |
+| `id_token` | Een ID-token voor de gebruiker, uitgegeven via *impliciete toekenning*. Bevat een speciale `c_hash` claim die de hash van de `code` in dezelfde aanvraag is. |
+| `state` | Als een para meter State is opgenomen in de aanvraag, moet dezelfde waarde in het antwoord worden weer gegeven. De app moet controleren of de status waarden in de aanvraag en het antwoord identiek zijn. |
 
 ## <a name="request-an-access-token"></a>Een toegangstoken aanvragen
 
@@ -167,7 +214,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | `scope`      | optioneel   | Een lijst met door spaties gescheiden bereiken. De scopes moeten allemaal van één resource zijn, samen met OIDC-bereiken ( `profile` , `openid` , `email` ). Raadpleeg [machtigingen, toestemming en bereiken](v2-permissions-and-consent.md)voor een gedetailleerdere uitleg van scopes. Dit is een micro soft-uitbrei ding van de autorisatie code stroom, bedoeld om apps toe te staan de resource te declareren waarvoor het token moet worden ingewisseld.|
 | `code`          | vereist  | Het authorization_code dat u hebt verkregen in het eerste gedeelte van de stroom. |
 | `redirect_uri`  | vereist  | Dezelfde redirect_uri waarde die is gebruikt om de authorization_code op te halen. |
-| `client_secret` | vereist voor vertrouwelijke web-apps | Het toepassings geheim dat u hebt gemaakt in de app-registratie portal voor uw app. U moet het toepassings geheim niet gebruiken in een systeem eigen app of een app met één pagina omdat client_secrets niet betrouwbaar kan worden opgeslagen op apparaten of webpagina's. Het is vereist voor web-apps en Web-Api's, die de mogelijkheid hebben om de client_secret veilig op te slaan aan de server zijde.  Het client geheim moet URL-gecodeerd zijn voordat het wordt verzonden. Zie voor meer informatie over URI-code ring de [generieke URI-syntaxis specificatie](https://tools.ietf.org/html/rfc3986#page-12). |
+| `client_secret` | vereist voor vertrouwelijke web-apps | Het toepassings geheim dat u hebt gemaakt in de app-registratie portal voor uw app. U moet het toepassings geheim niet gebruiken in een systeem eigen app of een app met één pagina omdat client_secrets niet betrouwbaar kan worden opgeslagen op apparaten of webpagina's. Het is vereist voor web-apps en Web-Api's, die de mogelijkheid hebben om de client_secret veilig op te slaan aan de server zijde.  Net als bij alle hier beschreven para meters moet het client geheim URL-gecodeerd zijn voordat het wordt verzonden. Dit is een stap die meestal door de SDK wordt uitgevoerd. Zie voor meer informatie over URI-code ring de [generieke URI-syntaxis specificatie](https://tools.ietf.org/html/rfc3986#page-12). |
 | `code_verifier` | aanbevelingen  | Hetzelfde code_verifier dat is gebruikt om de authorization_code op te halen. Vereist als PKCE is gebruikt in de aanvraag voor autorisatie code toekenning. Zie [PKCE RFC](https://tools.ietf.org/html/rfc7636)(Engelstalig) voor meer informatie. |
 
 ### <a name="successful-response"></a>Geslaagde reactie

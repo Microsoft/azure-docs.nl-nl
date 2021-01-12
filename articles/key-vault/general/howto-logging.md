@@ -9,12 +9,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/01/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 5e0007f3b0dad8a68e9d81cebbe9fe24b5a7db3c
-ms.sourcegitcommit: 7863fcea618b0342b7c91ae345aa099114205b03
+ms.openlocfilehash: 0e1ce841f6da8f15bd977437bca6b835a7b0d745
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93285647"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108735"
 ---
 # <a name="how-to-enable-key-vault-logging"></a>Key Vault-logboekregistratie inschakelen
 
@@ -25,20 +25,10 @@ Nadat u een of meer sleutelkluizen hebt gemaakt, wilt u wellicht controleren hoe
 Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 
 * Een bestaande sleutelkluis die u hebt gebruikt.  
-* De Azure CLI of Azure PowerShell.
+* [Azure Cloud shell](https://shell.azure.com) -bash omgeving
 * Voldoende opslagruimte op Azure voor uw Sleutelkluis-logboeken.
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, hebt u de Azure CLI-versie 2.0.4 of hoger nodig. Voer `az --version` uit om de versie te bekijken. Als u uw CLI wilt installeren of upgraden, raadpleegt u [De Azure CLI installeren](/cli/azure/install-azure-cli). Als u zich wilt aanmelden bij Azure met behulp van de CLI, typt u:
-
-```azurecli-interactive
-az login
-```
-
-Als u Power shell lokaal wilt installeren en gebruiken, hebt u de Azure PowerShell module versie 1.0.0 of hoger nodig. Typ `$PSVersionTable.PSVersion` om de versie te bekijken. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Als u PowerShell lokaal uitvoert, moet u ook `Connect-AzAccount` uitvoeren om verbinding te kunnen maken met Azure.
-
-```powershell-interactive
-Connect-AzAccount
-```
+Deze gids opdrachten zijn opgemaakt voor [Cloud shell](https://shell.azure.com) met bash als een omgeving.
 
 ## <a name="connect-to-your-key-vault-subscription"></a>Verbinding maken met uw Key Vault-abonnement
 
@@ -64,7 +54,7 @@ Set-AzContext -SubscriptionId "<subscriptionID>"
 
 Hoewel u een bestaand opslag account voor uw logboeken kunt gebruiken, maken we een nieuw opslag account dat is toegewezen aan Key Vault Logboeken. 
 
-En om het ons nog gemakkelijker te maken, gebruiken we de resourcegroep die de sleutelkluis bevat. In de [Snelstartgids van Azure cli](quick-create-cli.md) en [Azure PowerShell Quick](quick-create-powershell.md)start is deze resource groep de naam **myResourceGroup** en is de locatie *Oost* -out. Vervang deze waarden door uw eigen waarde, zoals van toepassing. 
+En om het ons nog gemakkelijker te maken, gebruiken we de resourcegroep die de sleutelkluis bevat. In de [Snelstartgids van Azure cli](quick-create-cli.md) en [Azure PowerShell Quick](quick-create-powershell.md)start is deze resource groep de naam **myResourceGroup** en is de locatie *Oost*-out. Vervang deze waarden door uw eigen waarde, zoals van toepassing. 
 
 U moet ook een naam voor het opslag account opgeven. Namen van opslag accounts moeten uniek zijn, tussen 3 en 24 tekens lang zijn en mogen alleen cijfers en kleine letters bevatten.  Tot slot wordt er een opslag account van de SKU ' Standard_LRS ' gemaakt.
 
@@ -162,7 +152,7 @@ az storage blob list --account-name "<your-unique-storage-account-name>" --conta
 Gebruik Azure PowerShell de lijst [Get-AzStorageBlob](/powershell/module/az.storage/get-azstorageblob?view=azps-4.7.0) alle blobs in deze container en voer het volgende in:
 
 ```powershell
-Get-AzStorageBlob -Container $container -Context $sa.Context
+Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context
 ```
 
 Zoals u ziet vanuit de uitvoer van de Azure CLI-opdracht of de cmdlet Azure PowerShell, heeft de naam van de blobs de indeling `resourceId=<ARM resource ID>/y=<year>/m=<month>/d=<day of month>/h=<hour>/m=<minute>/filename.json` . De datum- en tijdwaarden maken gebruik van UTC.
@@ -178,7 +168,7 @@ az storage blob download --container-name "insights-logs-auditevent" --file <pat
 Gebruik Azure PowerShell met de [gt-AzStorageBlobs](/powershell/module/az.storage/get-azstorageblob?view=azps-4.7.0) -cmdlet om een lijst van de blobs op te halen. vervolgens pipet u naar de cmdlet [Get-AzStorageBlobContent](/powershell/module/az.storage/get-azstorageblobcontent?view=azps-4.7.0) om de logboeken te downloaden naar het gekozen pad.
 
 ```powershell-interactive
-$blobs = Get-AzStorageBlob -Container $container -Context $sa.Context | Get-AzStorageBlobContent -Destination "<path-to-file>"
+$blobs = Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context | Get-AzStorageBlobContent -Destination "<path-to-file>"
 ```
 
 Wanneer u deze tweede cmdlet in Power shell uitvoert, **/** maakt het scheidings teken in de naam van de BLOB een volledige mapstructuur onder de doelmap. U gebruikt deze structuur voor het downloaden en opslaan van de blobs als bestanden.
@@ -188,19 +178,19 @@ Als u alleen specifieke blobs wilt downloaden, moet u jokertekens gebruiken. Bij
 * Als u meerdere sleutelkluizen hebt en het logboek voor slechts één sleutelkluis wilt downloaden met de naam CONTOSOKEYVAULT3:
 
   ```powershell
-  Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/VAULTS/CONTOSOKEYVAULT3
+  Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context -Blob '*/VAULTS/CONTOSOKEYVAULT3
   ```
 
 * Als u meerdere resourcegroepen hebt en logboeken voor slechts één resourcegroep wilt downloaden, gebruikt u `-Blob '*/RESOURCEGROUPS/<resource group name>/*'`:
 
   ```powershell
-  Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/RESOURCEGROUPS/CONTOSORESOURCEGROUP3/*'
+  Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context -Blob '*/RESOURCEGROUPS/CONTOSORESOURCEGROUP3/*'
   ```
 
 * Als u alle logboeken voor de maand januari 2019 wilt downloaden, gebruikt u `-Blob '*/year=2019/m=01/*'`:
 
   ```powershell
-  Get-AzStorageBlob -Container $container -Context $sa.Context -Blob '*/year=2016/m=01/*'
+  Get-AzStorageBlob -Container "insights-logs-auditevent" -Context $sa.Context -Blob '*/year=2016/m=01/*'
   ```
 
 We gaan zo kijken wat er precies in de logboeken staat. Maar eerst moet u nog twee opdrachten kennen:

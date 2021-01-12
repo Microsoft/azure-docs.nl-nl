@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: cfd7b5ac981fcb87d0fc929d944205dec9432b74
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: d482f21955b76e6b90523afe3b4933378c91d36e
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575819"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107358"
 ---
 # <a name="how-to-manage-the-local-administrators-group-on-azure-ad-joined-devices"></a>De lokale groep Administrators beheren op apparaten die zijn toegevoegd aan Azure AD
 
@@ -24,7 +24,7 @@ Als u een Windows-apparaat wilt beheren, moet u lid zijn van de lokale groep Adm
 
 In dit artikel wordt uitgelegd hoe de update van het lokale beheerders lidmaatschap werkt en hoe u deze kunt aanpassen tijdens een Azure AD-deelname. De inhoud van dit artikel is niet van toepassing op een **hybride Azure AD gekoppelde** apparaten.
 
-## <a name="how-it-works"></a>Hoe werkt het?
+## <a name="how-it-works"></a>Uitleg
 
 Wanneer u een Windows-apparaat met Azure AD verbindt met een Azure AD-deelname, voegt Azure AD de volgende beveiligings-principals toe aan de lokale groep Administrators op het apparaat:
 
@@ -32,8 +32,7 @@ Wanneer u een Windows-apparaat met Azure AD verbindt met een Azure AD-deelname, 
 - De rol van Azure AD-Apparaatbeheer 
 - De gebruiker die de Azure AD-deelname uitvoert   
 
-Door Azure AD-rollen toe te voegen aan de lokale groep Administrators, kunt u de gebruikers die een apparaat op elk gewenst moment in azure AD kunnen beheren, zonder dat u iets hoeft te wijzigen op het apparaat. Op dit moment kunt u geen groepen aan een beheerdersrol toewijzen.
-Azure AD voegt ook de rol van Azure AD-apparaat beheerder toe aan de lokale groep Administrators om het principe van minimale bevoegdheden (PoLP) te ondersteunen. Naast de globale beheerders kunt u ook gebruikers inschakelen waaraan *alleen* de rol van apparaat-beheerder is toegewezen om een apparaat te beheren. 
+Door Azure AD-rollen toe te voegen aan de lokale groep Administrators, kunt u de gebruikers die een apparaat op elk gewenst moment in azure AD kunnen beheren, zonder dat u iets hoeft te wijzigen op het apparaat. Azure AD voegt ook de rol van Azure AD-apparaat beheerder toe aan de lokale groep Administrators om het principe van minimale bevoegdheden (PoLP) te ondersteunen. Naast de globale beheerders kunt u ook gebruikers inschakelen waaraan *alleen* de rol van apparaat-beheerder is toegewezen om een apparaat te beheren. 
 
 ## <a name="manage-the-global-administrators-role"></a>De rol globale beheerder beheren
 

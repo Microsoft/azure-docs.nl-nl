@@ -12,19 +12,21 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 8b95c5a45992c895713e0be056856172b14b830d
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 52b52c4c19b22fb1afd76d1e8dfa4163326c0244
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740671"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108587"
 ---
 # <a name="train-with-datasets-in-azure-machine-learning"></a>Train met gegevens sets in Azure Machine Learning
 
 
-In dit artikel leert u hoe u kunt werken met [Azure machine learning gegevens sets](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) in uw trainings experimenten.  U kunt gegevens sets gebruiken in uw lokale of externe Compute-doel zonder dat u zich zorgen hoeft te maken over verbindings reeksen of gegevens paden.
+In dit artikel leert u hoe u [Azure machine learning gegevens sets](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) kunt gebruiken om machine learning modellen te trainen.  U kunt gegevens sets gebruiken in uw lokale of externe Compute-doel zonder dat u zich zorgen hoeft te maken over verbindings reeksen of gegevens paden. 
 
 Azure Machine Learning gegevens sets bieden een naadloze integratie met Azure Machine Learning trainings functionaliteit, zoals [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrunconfig?preserve-view=true&view=azure-ml-py), [HyperDrive](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py) en [Azure machine learning pijp lijnen](how-to-create-your-first-pipeline.md).
+
+Als u niet klaar bent om uw gegevens beschikbaar te maken voor model training, maar u uw gegevens wilt laden naar uw notitie blok voor het verkennen van gegevens, raadpleegt u hoe u [de gegevens in uw gegevensset kunt verkennen](how-to-create-register-datasets.md#explore-data). 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -34,7 +36,7 @@ Als u gegevens sets wilt maken en trainen, hebt u het volgende nodig:
 
 * Een [Azure machine learning-werk ruimte](how-to-manage-workspace.md).
 
-* De [Azure machine learning SDK voor python geïnstalleerd](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.13.0), waaronder het pakket met de azureml-gegevens sets.
+* De [Azure machine learning SDK voor python geïnstalleerd](/python/api/overview/azure/ml/install?preserve-view=true&view=azure-ml-py) (>= 1.13.0), inclusief het `azureml-datasets` pakket.
 
 > [!Note]
 > Voor sommige verzamelings klassen zijn afhankelijkheden van het pakket voor [azureml-dataprep](/python/api/azureml-dataprep/?preserve-view=true&view=azure-ml-py) . Voor Linux-gebruikers worden deze klassen alleen ondersteund in de volgende distributies: Red Hat Enterprise Linux, Ubuntu, Fedora en CentOS.
@@ -65,7 +67,7 @@ Met de volgende code wordt een script argument geconfigureerd `--input-data` dat
 > [!Note]
 > Als de oorspronkelijke gegevens bron NaN, lege teken reeksen of lege waarden bevat, `to_pandas_dataframe()` worden deze waarden vervangen als een *Null* -waarde.
 
-Als u de voor bereide gegevens wilt laden in een nieuwe gegevensset vanuit een in-Memory-Panda data frame, schrijft u de gegevens naar een lokaal bestand, zoals een Parquet, en maakt u een nieuwe gegevensset vanuit dat bestand. U kunt ook gegevens sets maken op basis van lokale bestanden of paden in gegevens opslag. Meer informatie over [het maken van gegevens sets](how-to-create-register-datasets.md).
+Als u de voor bereide gegevens wilt laden in een nieuwe gegevensset vanuit een in-Memory-Panda data frame, schrijft u de gegevens naar een lokaal bestand, zoals een Parquet, en maakt u een nieuwe gegevensset vanuit dat bestand. Meer informatie over [het maken van gegevens sets](how-to-create-register-datasets.md).
 
 ```Python
 %%writefile $script_folder/train_titanic.py

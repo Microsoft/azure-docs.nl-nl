@@ -9,12 +9,12 @@ author: SQLSourabh
 ms.author: sourabha
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 86e84c60aec99246f58b5dc9d67584b23a3969f3
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: dddaad3e171c757b353deb81ffcb77cfbe706340
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394919"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108259"
 ---
 # <a name="track-data-changes-in-azure-sql-edge"></a>Wijzigingen in de gegevens bijhouden in Azure SQL Edge
 
@@ -35,6 +35,9 @@ Zie change data capture in- [en uitschakelen](/sql/relational-databases/track-ch
 Zie [Change Data Capture beheren en controleren](/sql/relational-databases/track-changes/administer-and-monitor-change-data-capture-sql-server)als u deze functie wilt beheren en controleren.
 
 Zie [werken met gegevens wijzigen](/sql/relational-databases/track-changes/work-with-change-data-sql-server)als u wilt weten hoe u de gewijzigde gegevens kunt opvragen en ermee kunt werken.
+
+> [!NOTE]
+> Change Data Capture-functies die afhankelijk zijn van CLR, worden niet ondersteund in Azure SQL Edge.
 
 ## <a name="change-tracking"></a>Wijzigingen bijhouden
 

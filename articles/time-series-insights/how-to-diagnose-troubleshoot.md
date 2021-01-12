@@ -10,12 +10,12 @@ services: time-series-insights
 ms.topic: conceptual
 ms.date: 10/01/2020
 ms.custom: seodec18
-ms.openlocfilehash: eca2009ee0470dec9c9ce60d8754f8f7a71619d3
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: d9dd07e3a35d83ff6bd9c7c493768d1197667c39
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740535"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108786"
 ---
 # <a name="diagnose-and-troubleshoot-an-azure-time-series-insights-gen2-environment"></a>Een Azure Time Series Insights Gen2-omgeving diagnosticeren en problemen oplossen
 
@@ -71,7 +71,7 @@ Mogelijk verzendt u gegevens zonder de tijd reeks-ID.
 - Dit probleem kan optreden omdat uw omgeving wordt beperkt.
 
     > [!NOTE]
-    > Op dit moment ondersteunt Time Series Insights een maximum opname snelheid van 6 Mbps.
+    > Op dit moment ondersteunt Time Series Insights een maximum opname snelheid van 1 Mbps.
 
 ## <a name="problem-data-was-showing-but-now-ingestion-has-stopped"></a>Probleem: gegevens worden weer gegeven, maar de opname is gestopt
 

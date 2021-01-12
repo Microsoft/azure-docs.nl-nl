@@ -9,16 +9,36 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 1cc6c8cd49a2388ad66a276f4a1667b4c3ee3826
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 0ecf47ecdc66c0005f0d793d91a67af102fb1c76
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070317"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98107902"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
+
+
+ ## <a name="2021-01-11"></a>2021-01-11
+
+### <a name="azure-machine-learning-sdk-for-python-v1200"></a>Azure Machine Learning SDK voor python v-1.20.0
++ **Oplossingen en verbeteringen voor oplossingen**
+  + **Azure-cli-ml**
+    + framework_version toegevoegd in OptimizationConfig. Het wordt gebruikt wanneer model is geregistreerd met Framework MULTI.
+  + **azureml-automl-runtime**
+    + In deze update hebben we Holt winters exponentiële smoothing toegevoegd aan de voor spellingen van de werkset van AutoML SDK. Op basis van een tijd reeks wordt het beste model geselecteerd door [AICc (gecorrigeerd Akaike Information criterium)](https://otexts.com/fpp3/selecting-predictors.html#selecting-predictors) en geretourneerd.
+  + **azureml-contrib-optimalisatie**
+    + framework_version toegevoegd in OptimizationConfig. Het wordt gebruikt wanneer model is geregistreerd met Framework MULTI.
+  + **azureml-pipeline-steps**
+    + Inleiding tot CommandStep, die de opdracht zal verwerken. Opdracht kan uitvoer bare bestanden, shell-opdrachten, scripts enzovoort bevatten.
+  + **azureml-core**
+    + Het maken van werk ruimten wordt nu door de gebruiker toegewezen identiteit ondersteund. De UAI-ondersteuning van SDK/CLI toevoegen
+    + Er is een probleem opgelost met de service. opnieuw laden () om wijzigingen in score.py op te halen in de lokale implementatie.
+    + `run.get_details()` bevat een extra veld met de naam ' submittedBy ', waarin de auteurnaam voor deze uitvoering wordt weer gegeven.
+    + Bewerkings model. REGI ster-methode documentatie om te vermelden hoe model moet worden geregistreerd bij het rechtstreeks uitvoeren
+   
 
 ## <a name="2020-12-31"></a>2020-12-31
 ### <a name="azure-machine-learning-studio-notebooks-experience-december-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van december)
@@ -31,6 +51,7 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
   + Verbeterde laad tijden voor pagina's
   + Verbeterde prestaties 
   + Verbeterde snelheid en kernel-betrouw baarheid
+
   
 ## <a name="2020-12-07"></a>2020-12-07
 

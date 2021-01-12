@@ -3,12 +3,12 @@ title: Ondersteunde talen in Azure Functions
 description: Meer informatie over welke talen worden ondersteund (GA) en in de preview-versie en hoe u de ontwikkeling van functies kunt uitbreiden naar andere talen.
 ms.topic: conceptual
 ms.date: 11/27/2019
-ms.openlocfilehash: 91a6ea886c3828678771b24d69bb7987af1fb105
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: da3100521faae61e9803aaa82dbf91045a7ecbc9
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83994898"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108548"
 ---
 # <a name="supported-languages-in-azure-functions"></a>Ondersteunde talen in Azure Functions
 
@@ -27,9 +27,9 @@ Er zijn [drie versies van de Azure functions runtime](functions-versions.md) bes
 
 [!INCLUDE [functions-supported-languages](../../includes/functions-supported-languages.md)]
 
-## <a name="custom-handlers-preview"></a>Aangepaste handlers (preview-versie) 
+## <a name="custom-handlers"></a>Aangepaste handlers
 
-Aangepaste handlers zijn Lightweight webservers die gebeurtenissen van de Azure Functions host ontvangen. Elke taal die HTTP-primitieven ondersteunt, kan een aangepaste handler implementeren. Dit betekent dat aangepaste handlers kunnen worden gebruikt voor het maken van functies in talen die niet officieel worden ondersteund. Zie [Azure functions Custom handlers (preview)](functions-custom-handlers.md)voor meer informatie.
+Aangepaste handlers zijn Lightweight webservers die gebeurtenissen van de Azure Functions host ontvangen. Elke taal die HTTP-primitieven ondersteunt, kan een aangepaste handler implementeren. Dit betekent dat aangepaste handlers kunnen worden gebruikt voor het maken van functies in talen die niet officieel worden ondersteund. Zie [Azure functions aangepaste handlers](functions-custom-handlers.md)voor meer informatie.
 
 ## <a name="language-extensibility"></a>Taal uitbreid baarheid
 

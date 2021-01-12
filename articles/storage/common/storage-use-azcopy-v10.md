@@ -8,12 +8,12 @@ ms.date: 12/08/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 6232b315abf8840d6fd77d02e3e928c0004746a0
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: ab3cb403a8757f424a141206f99f9c29bf3e0b49
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029325"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108145"
 ---
 # <a name="get-started-with-azcopy"></a>Aan de slag met AzCopy
 
@@ -105,7 +105,7 @@ Zie een van deze artikelen om voorbeeld opdrachten te vinden.
 
 | Service | Artikel |
 |--------|-----------|
-|Azure Blob Storage |[Bestanden uploaden naar Azure Blob Storage](storage-use-azcopy-blobs-upload.md)<br><br>[Blobs downloaden van Azure Blob-opslag](storage-use-azcopy-blobs-download.md)<br><br>[Blobs kopiëren tussen Azure-opslag accounts](storage-use-azcopy-blobs-download.md)<br><br>[Synchroniseren met Azure Blob Storage](storage-use-azcopy-blobs-download.md)|
+|Azure Blob Storage |[Bestanden uploaden naar Azure Blob Storage](storage-use-azcopy-blobs-upload.md)<br><br>[Blobs downloaden van Azure Blob-opslag](storage-use-azcopy-blobs-download.md)<br><br>[Blobs kopiëren tussen Azure-opslag accounts](storage-use-azcopy-blobs-copy.md)<br><br>[Synchroniseren met Azure Blob Storage](storage-use-azcopy-blobs-synchronize.md)|
 |Azure Files |[Gegevens overdragen met AzCopy en bestandsopslag](storage-use-azcopy-files.md)|
 |Amazon S3|[Gegevens overdragen met AzCopy en Amazon S3-opslag](storage-use-azcopy-s3.md)|
 |Opslag Azure Stack|[Gegevens overdragen met AzCopy en Azure Stack Storage](/azure-stack/user/azure-stack-storage-transfer#azcopy)|

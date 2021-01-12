@@ -11,12 +11,12 @@ author: shkale-msft
 ms.author: shkale
 ms.reviewer: mathoma, stevestein, danil
 ms.date: 11/18/2020
-ms.openlocfilehash: c6754e6f0e3f0d6208bd34c96c8bc473429c943c
-ms.sourcegitcommit: f6236e0fa28343cf0e478ab630d43e3fd78b9596
+ms.openlocfilehash: e4917d03e3c0fb8109f9ad9bdcea9e7c1cdcd5df
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94917899"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108055"
 ---
 # <a name="automated-backups---azure-sql-database--sql-managed-instance"></a>Automatische back-ups-Azure SQL Database & SQL Managed instance
 
@@ -122,7 +122,7 @@ Voor het verbruik van back-upopslag tot de maximale gegevens grootte voor een Da
 
 ## <a name="backup-retention"></a>Back-upretentie
 
-Voor alle nieuwe, herstelde en gekopieerde data bases Azure SQL Database en Azure SQL Managed instance voldoende back-ups behouden zodat PITR in de afgelopen 7 dagen standaard is toegestaan. Met uitzonde ring van grootschalige-data bases, kunt u de [Bewaar periode voor back-ups wijzigen](#change-the-pitr-backup-retention-period) per actieve data base in het bereik van 1-35 dagen. Zoals beschreven in [back-upopslag](#backup-storage-consumption), is het mogelijk dat back-ups die zijn opgeslagen om PITR in te scha kelen, ouder zijn dan de retentie periode. Alleen voor Azure SQL Managed instance is het mogelijk om de retentie frequentie van PITR-back-ups in te stellen wanneer een Data Base binnen het bereik van 0-35 dagen is verwijderd. 
+Voor alle nieuwe, herstelde en gekopieerde data bases Azure SQL Database en Azure SQL Managed instance voldoende back-ups behouden zodat PITR in de afgelopen 7 dagen standaard is toegestaan. Met uitzonde ring van grootschalige-en Basic-laag databases, kunt u de [Bewaar periode voor back-ups wijzigen](#change-the-pitr-backup-retention-period) per actieve data base in het bereik van 1-35 dagen. Zoals beschreven in [back-upopslag](#backup-storage-consumption), is het mogelijk dat back-ups die zijn opgeslagen om PITR in te scha kelen, ouder zijn dan de retentie periode. Alleen voor Azure SQL Managed instance is het mogelijk om de retentie frequentie van PITR-back-ups in te stellen wanneer een Data Base binnen het bereik van 0-35 dagen is verwijderd. 
 
 Als u een Data Base verwijdert, houdt het systeem back-ups op dezelfde manier als voor een online-data base met de specifieke Bewaar periode. U kunt de Bewaar periode voor back-ups niet wijzigen voor een verwijderde data base.
 

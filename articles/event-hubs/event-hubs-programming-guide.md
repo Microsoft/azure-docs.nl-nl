@@ -4,12 +4,12 @@ description: Dit artikel bevat informatie over het schrijven van code voor Azure
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 17bec931f79a6dbb3d98270ab0ff6e2d1d4c6541
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4f95abe3668bb400d84e354c3bca9eac289c5795
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89013908"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108684"
 ---
 # <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>.NET-programmeer handleiding voor Azure Event Hubs (verouderd micro soft. Azure. Event hubs-pakket)
 In dit artikel worden enkele algemene scenario's beschreven voor het schrijven van code met behulp van Azure Event Hubs. Er wordt uitgegaan van een basisbegrip van Event Hubs. Zie het [Overzicht van Event Hubs](./event-hubs-about.md) voor een conceptueel overzicht van Event Hubs.
@@ -144,7 +144,6 @@ Naast de geavanceerde runtime functies van Event processor host, kan de Event Hu
 > [!NOTE]
 > Op dit moment wordt deze functie alleen door REST API ondersteund ([intrekken](/rest/api/eventhub/revoke-publisher)van de uitgever).
 
-Zie het voorbeeld [Op grote schaal veilig publiceren met Event Hubs](https://code.msdn.microsoft.com/Service-Bus-Event-Hub-99ce67ab) voor meer informatie over het intrekken van uitgevers en over het als uitgever verzenden naar Event Hubs.
 
 ## <a name="next-steps"></a>Volgende stappen
 

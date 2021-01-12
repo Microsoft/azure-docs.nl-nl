@@ -12,12 +12,12 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: 28e70a5d5a6ac4cd51f5ed3fc85afd47a5af68d8
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: fa6cdeaa47c7fdf9e90cdab96397473d8498afa0
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033269"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108701"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Azure Machine Learning-gegevenssets maken
 
@@ -173,9 +173,42 @@ titanic_ds.take(3).to_pandas_dataframe()
 -|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
 0|1|Niet waar|3|Braund, Mr. Owen Harris|man|22,0|1|0|A/5 21171|7,2500||S
 1|2|Waar|1|Cumings, Mevr. John Bradley (Florence Briggs th...|vrouwelijk|38,0|1|0|PC 17599|71,2833|C85|C
-2|3|Waar|3|Heikkinen, missen. Laina|vrouwelijk|26,0|0|0|STON/O2. 3101282|7,9250||S
+2|3|Waar|3|Heikkinen, missen. Laina|vrouwelijk|26.0|0|0|STON/O2. 3101282|7,9250||S
 
 Als u gegevens sets wilt hergebruiken en delen in experimenten in uw werk ruimte, moet [u uw gegevensset registreren](#register-datasets).
+
+
+## <a name="explore-data"></a>Gegevens verkennen
+
+Nadat u uw gegevensset hebt gemaakt en [geregistreerd](#register-datasets) , kunt u deze in uw notebook laden voor het verkennen van gegevens voorafgaand aan de model training. Als u geen gegevens meer hoeft te verkennen, raadpleegt u gegevens sets in uw trainings scripts gebruiken voor het indienen van ML-experimenten in [trein met gegevens sets](how-to-train-with-datasets.md).
+
+Voor FileDatasets kunt u uw gegevensset **koppelen** of **downloaden** en de python-bibliotheken Toep assen die u normaal gesp roken gebruikt voor het verkennen van gegevens. Meer [informatie over koppeling en down load](how-to-train-with-datasets.md#mount-vs-download).
+
+```python
+# download the dataset 
+dataset.download(target_path='.', overwrite=False) 
+
+# mount dataset to the temp directory at `mounted_path`
+
+import tempfile
+mounted_path = tempfile.mkdtemp()
+mount_context = dataset.mount(mounted_path)
+
+mount_context.start()
+```
+
+Gebruik voor TabularDatasets de [`to_pandas_dataframe()`](/python/api/azureml-core/azureml.data.tabulardataset?preserve-view=true&view=azure-ml-py#to-pandas-dataframe-on-error--null---out-of-range-datetime--null--) methode om uw gegevens in een data frame weer te geven. 
+
+```python
+# preview the first 3 rows of titanic_ds
+titanic_ds.take(3).to_pandas_dataframe()
+```
+
+|TabIndex|PassengerId|Dummy tekst|Pclass|Naam|Seks|Leeftijd|SibSp|Parch|Ticket|Tickets|Hand|Ingeschepend
+-|-----------|--------|------|----|---|---|-----|-----|------|----|-----|--------|
+0|1|Niet waar|3|Braund, Mr. Owen Harris|man|22,0|1|0|A/5 21171|7,2500||S
+1|2|Waar|1|Cumings, Mevr. John Bradley (Florence Briggs th...|vrouwelijk|38,0|1|0|PC 17599|71,2833|C85|C
+2|3|Waar|3|Heikkinen, missen. Laina|vrouwelijk|26.0|0|0|STON/O2. 3101282|7,9250||S
 
 ## <a name="create-a-dataset-from-pandas-dataframe"></a>Een gegevensset maken op basis van Pandas data frame
 

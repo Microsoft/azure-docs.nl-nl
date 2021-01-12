@@ -5,14 +5,14 @@ services: expressroute
 author: duongau
 ms.service: expressroute
 ms.topic: tutorial
-ms.date: 01/07/2021
+ms.date: 01/11/2021
 ms.author: duau
-ms.openlocfilehash: 3e106bc313d6189b2fae8cf6a4dd7ce862294b8f
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: f780c8c2f932b612ee42e13906f72983b324eefd
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019235"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108531"
 ---
 # <a name="tutorial-create-and-modify-peering-for-an-expressroute-circuit-using-the-azure-portal"></a>Zelfstudie: Peering voor een ExpressRoute-circuit maken en wijzigen met de Azure-portal
 
@@ -136,7 +136,7 @@ Deze sectie helpt u bij het maken, verkrijgen, bijwerken en verwijderen van de c
 
 2. Configureer persoonlijke Azure-peering voor het circuit. Zorg ervoor dat u de volgende items hebt voordat u verdergaat met de volgende stappen:
 
-   * Een paar /30-subnetten die eigendom zijn van u en die zijn geregistreerd in een RIR/IRR. Eén /30-subnet wordt gebruikt voor de primaire koppeling en het andere wordt gebruikt voor de secundaire koppeling. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt. Er zijn drie opties voor dit paar subnetten:
+   * Een paar /30-subnetten in uw bezit. Eén /30-subnet wordt gebruikt voor de primaire koppeling en het andere wordt gebruikt voor de secundaire koppeling. Vanuit deze subnetten wijst u het eerste bruikbare IP-adres toe aan uw router, aangezien Microsoft de tweede bruikbare IP voor de eigen router gebruikt.
    * Een geldige VLAN-id waarop u deze peering wilt instellen. Controleer of er geen andere peering in het circuit is die dezelfde VLAN-id gebruikt. Zowel primaire als secundaire links moeten dezelfde VLAN-id gebruiken.
    * AS-nummer voor peering. U kunt 2-bytes en 4-bytes AS-nummers gebruiken. U kunt een persoonlijk AS-nummer gebruiken voor deze peering, behalve voor 65515 tot en met 65520.
    * U moet de routes van uw on-premises Edge-router naar Azure via BGP adverteren wanneer u persoonlijke peering configureert.

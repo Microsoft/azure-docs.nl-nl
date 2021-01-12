@@ -644,34 +644,6 @@
       href: identity-videos.md
     - name: Ontwikkelaarsblog van het Microsoft-identiteitsplatform
       href: 'https://developer.microsoft.com/en-us/identity/blogs/'
-    - name: Help-artikelen over de Azure-portal
-      items:
-        - name: Standaardlevensduur van tokens voor een zelf ontwikkelde toepassing
-          href: registration-config-change-token-lifetime-how-to.md
-        - name: Eindpunten ontdekken
-          href: registration-config-how-to.md
-        - name: Machtigingen selecteren voor een bepaalde API
-          href: perms-for-given-api.md
-        - name: Verificatieprotocollen
-          href: active-directory-authentication-protocols.md
-        - name: Verschillen tussen gedelegeerde en toepassingstoestemmingen
-          href: delegated-and-app-perms.md
-        - name: Hoe toepassingstoestemming werkt
-          href: consent-framework-links.md
-        - name: Een specifieke API zoeken die nodig is voor een zelf ontwikkelde toepassing
-          href: api-find-an-api-how-to.md
-        - name: Naslaginformatie over app-registratie
-          href: active-directory-v2-registration-portal.md
-        - name: Registratievelden in Azure-portal voor zelf ontwikkelde apps
-          href: registration-config-specific-application-property-how-to.md
-        - name: Een nieuwe toepassing met meerdere tenants configureren
-          href: setup-multi-tenant-app.md
-        - name: Een toepassing met meerdere tenants toevoegen aan de Azure AD-toepassingsgalerie
-          href: registration-config-multi-tenant-application-add-to-gallery-how-to.md
-        - name: Integreren met Azure Active Directory
-          href: active-directory-how-to-integrate.md
-        - name: Eenmalige aanmelding voor een toepassing configureren
-          href: registration-config-sso-how-to.md
     - name: Azure AD-blog
       href: 'https://cloudblogs.microsoft.com/enterprisemobility/?product=azure-active-directory'
     - name: Azure-roadmap

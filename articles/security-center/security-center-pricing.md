@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/13/2020
 ms.author: memildin
-ms.openlocfilehash: 0b6a9d081d2b81124b0cae15e81e4b233f7824bb
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 99f47df86d89e9daf2bc8878b868b04b7038ffd5
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629337"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071201"
 ---
 # <a name="pricing-of-azure-security-center"></a>Prijzen van Azure Security Center
 Azure Security Center biedt geïntegreerd beveiligingsbeheer en geavanceerde bedreigingsbeveiliging voor werkbelastingen die worden uitgevoerd in Azure, on-premises en in andere clouds. Het biedt zichtbaarheid en controle over hybride cloudwerkbelastingen, actieve beveiligingen die uw blootstelling aan bedreigingen verminderen en intelligente detectie om u te helpen snel ontwikkelende cyberrisico's voor te blijven.
@@ -72,6 +72,7 @@ Hieronder volgt de prijspagina voor een voorbeeldabonnement. U ziet dat elk abon
 - [Welke abonnementen worden aangeboden in Security Center?](#what-are-the-plans-offered-by-security-center)
 - [Hoe schakel ik Azure Defender in voor mijn abonnement?](#how-do-i-enable-azure-defender-for-my-subscription)
 - [Kan ik Azure Defender voor servers inschakelen op een subset servers in mijn abonnement?](#can-i-enable-azure-defender-for-servers-on-a-subset-of-servers-in-my-subscription)
+- [Als ik al een licentie heb voor Microsoft Defender for Endpoint, kan ik dan korting krijgen voor Azure Defender?](#if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender)
 - [Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers?](#my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers)
 - [Worden er kosten in rekening gebracht voor machines waarop de Log Analytics-agent is geïnstalleerd?](#will-i-be-charged-for-machines-without-the-log-analytics-agent-installed)
 - [Als een Log Analytics-agent aan meerdere werkruimten rapporteert, worden er dan tweemaal kosten in rekening gebracht?](#if-a-log-analytics-agent-reports-to-multiple-workspaces-will-i-be-charged-twice)
@@ -111,6 +112,10 @@ Nee. Als u [Azure Defender voor servers](defender-for-servers-introduction.md) i
 
 U kunt Azure Defender voor servers ook inschakelen op het niveau van de Log Analytics-werkruimte. Als u dit doet, worden alleen servers die aan die werkruimte rapporteren, beveiligd en gefactureerd. Een aantal mogelijkheden is dan echter niet beschikbaar. Hiertoe behoren onder meer Just-in-Time-VM-toegang, netwerkdetectie, naleving van regelgeving, adaptieve netwerkbeveiliging en adaptieve toepassingsregelaars. 
 
+### <a name="if-i-already-have-a-license-for-microsoft-defender-for-endpoint-can-i-get-a-discount-for-azure-defender"></a>Als ik al een licentie heb voor Microsoft Defender for Endpoint, kan ik dan korting krijgen voor Azure Defender?
+Als u al een licentie hebt voor Microsoft Defender for Endpoint, hoeft u niet te betalen voor dat deel van uw Azure Defender-licentie.
+
+Neem contact op met het ondersteuningsteam van Security Center en geef de relevante werkruimte-ID, regio en licentiegegevens op om uw korting te bevestigen.
 
 ### <a name="my-subscription-has-azure-defender-for-servers-enabled-do-i-pay-for-not-running-servers"></a>Azure Defender voor servers is ingeschakeld in mijn abonnement. Moet ik betalen voor niet-actieve servers? 
 Nee. Wanneer u [Azure Defender voor servers](defender-for-servers-introduction.md) inschakelt in een abonnement, worden alleen actieve servers per uur gefactureerd. Er worden geen kosten in rekening gebracht voor servers die waren uitgeschakeld gedurende die tijd. 

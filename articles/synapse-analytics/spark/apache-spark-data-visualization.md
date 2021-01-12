@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: conceptual
 ms.subservice: spark
 ms.date: 09/13/2020
-ms.openlocfilehash: 73b18d15ad054f1c485d6f61cdefe54993148bc4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: f11693b34048b11c02668e086561b9a6521a5213
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450542"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121522"
 ---
 # <a name="visualize-data"></a>Gegevens visualiseren
 Azure Synapse is een geïntegreerde analyse service waarmee tijd kan worden versneld, in data warehouses en big data Analytics-systemen. Gegevens visualisatie is een belang rijk onderdeel waarmee u inzicht kunt krijgen in uw gegevens. Het helpt grote en kleine gegevens gemakkelijker te maken voor mensen. Daarnaast is het gemakkelijker om patronen, trends en uitschieters in groepen gegevens te detecteren. 
@@ -227,7 +227,7 @@ U kunt de Azure Synapse Analytics runtime- [documentatie](./spark/../apache-spar
 ## <a name="connect-to-power-bi-using-apache-spark--sql-on-demand"></a>Verbinding maken met Power BI met behulp van Apache Spark & SQL op aanvraag
 Azure Synapse Analytics integreert diep met Power BI zodat data engineers analyse oplossingen kunnen bouwen.
 
-Met Azure Synapse Analytics kunnen de verschillende reken kundige engines voor werk ruimten data bases en tabellen uitwisselen tussen de Spark-Pools en serverloze SQL-groep. Met behulp van het [gedeelde meta gegevens model](https://docs.microsoft.com/azure/synapse-analytics/metadata/overview)kunt u een query uitvoeren op uw Apache Spark tabellen met behulp van SQL op aanvraag. Als u klaar bent, kunt u uw SQL on-demand-eind punt verbinden met Power BI om eenvoudig een query uit te voeren op uw gesynchroniseerde Spark-tabellen.
+Met Azure Synapse Analytics kunnen de verschillende reken kundige engines voor werk ruimten data bases en tabellen uitwisselen tussen de Spark-Pools en serverloze SQL-groep. Met behulp van het [gedeelde meta gegevens model](../metadata/overview.md)kunt u een query uitvoeren op uw Apache Spark tabellen met behulp van SQL op aanvraag. Als u klaar bent, kunt u uw SQL on-demand-eind punt verbinden met Power BI om eenvoudig een query uit te voeren op uw gesynchroniseerde Spark-tabellen.
 
 
 ## <a name="next-steps"></a>Volgende stappen

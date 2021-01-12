@@ -15,6 +15,8 @@
   items:
     - name: Een attestatiebeleid ontwerpen
       href: author-sign-policy.md
+    - name: Een privé-eindpunt maken - PowerShell
+      href: private-endpoint-powershell.md
     - name: Codevoorbeelden van SGX Attestation
       href: /samples/browse/?expanded=azure&terms=attestation
 - name: Voorbeelden
@@ -37,7 +39,7 @@
       href: workflow.md
     - name: Auditlogboeken weergeven
       href: audit-logs.md
-- name: Referenties
+- name: Verwijzingen
   items:
     - name: Regionale beschikbaarheid
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=azure-attestation'

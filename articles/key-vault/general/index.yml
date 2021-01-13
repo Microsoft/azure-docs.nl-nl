@@ -5,18 +5,19 @@ metadata:
   title: Documentatie voor Azure Key Vault
   description: Meer informatie over hoe u Key Vault gebruikt om sleutels te maken en te onderhouden waarmee u de resources, apps en oplossingen in de cloud kunt openen en versleutelen. Zelfstudies, API-verwijzingen en meer.
   services: key-vault
+  ms.subservice: general
   ms.service: key-vault
   ms.topic: landing-page
   author: msmbaldwin
   ms.author: mbaldwin
   manager: rkarlin
   ms.date: 09/19/2019
-  ms.openlocfilehash: 1d0fdf9042ccbe2ab433db2f861b6d4e58e7a1c3
-  ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+  ms.openlocfilehash: d1b3d48f89fc979775c0ee71df29e3af0ff5f5fa
+  ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/06/2021
-  ms.locfileid: "97935917"
+  ms.lasthandoff: 01/12/2021
+  ms.locfileid: "98133426"
 landingContent:
 - title: Over Azure Key Vault
   linkLists:

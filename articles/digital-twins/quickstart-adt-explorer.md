@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 9/24/2020
 ms.topic: quickstart
 ms.service: digital-twins
-ms.openlocfilehash: d42a32e236eb73f2aa9f2f61d9708314783564dd
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: f6bd6b13ab4a2e654bdabc86355f2c3388abed31
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187291"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98050524"
 ---
 # <a name="quickstart---explore-a-sample-azure-digital-twins-scenario-using-adt-explorer"></a>Snelstart - Een voorbeeld van een Azure Digital Twins-scenario verkennen met behulp van ADT Explorer
 
@@ -251,9 +251,7 @@ In deze sectie voert u een query uit om erachter te komen hoeveel dubbels in uw 
 
 Als u het antwoord wilt zien, voert u de volgende query uit in het vak **QUERY EXPLORER** (QUERYVERKENNER).
 
-```SQL
-SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="TemperatureQuery":::
 
 Eerder hebben we in de tweelingeigenschappen gezien dat Room0 de temperatuur 70 °F heeft, en Room1 de temperatuur 80 °F. Daarom wordt alleen Room1 in de resultaten weergegeven.
     
@@ -284,9 +282,7 @@ Nu ziet u het venster **Patch Information** (Patchinformatie) met de patchcode d
 
 Verifieer dat de graaf uw update van de temperatuur voor Room0 inderdaad heeft geregistreerd door de eerdere query nogmaals uit te voeren om alle dubbels in de omgeving met een temperatuur van meer dan 75 op te halen.
 
-```SQL
-SELECT * FROM DigitalTwins T WHERE T.Temperature > 75
-```
+:::code language="sql" source="~/digital-twins-docs-samples/queries/queries.sql" id="TemperatureQuery":::
 
 Nu de temperatuur van Room0 is gewijzigd van 70 in 76, moeten beide tweelingen in het resultaat worden weergegeven.
 

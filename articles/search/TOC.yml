@@ -25,9 +25,8 @@
           href: knowledge-store-create-portal.md
         - name: Query uitvoeren met Search Explorer
           href: search-explorer.md
-    - name: ARM-sjabloon
-      displayName: Resource Manager
-      href: search-get-started-arm.md
+    - name: Visual Studio Code
+      href: search-get-started-vs-code.md
     - name: C#
       href: search-get-started-dotnet.md
     - name: Java
@@ -40,6 +39,9 @@
       href: search-get-started-powershell.md
     - name: Python
       href: search-get-started-python.md
+    - name: ARM-sjabloon
+      displayName: Resource Manager
+      href: search-get-started-arm.md
 - name: Zelfstudies
   items:
     - name: Een C#-app maken

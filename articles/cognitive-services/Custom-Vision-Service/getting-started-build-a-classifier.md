@@ -12,12 +12,12 @@ ms.date: 09/29/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: afbeeldingsherkenning, app voor afbeeldingsherkenning, Custom Vision
-ms.openlocfilehash: b57720b9d8fb05a605b9eace279b70b060c18450
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d644c323cb60e5ef9a89670cd9b828e3e9676299
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91596869"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131692"
 ---
 # <a name="quickstart-build-a-classifier-with-the-custom-vision-website"></a>Snelstart: Een classificatie bouwen met de Custom Vision-website
 

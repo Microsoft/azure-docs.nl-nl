@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 06/11/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: edb1d419900147b586ba1ff257d4307b237be537
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: e693bd15e5255fda135a7a1dc416dd67f24f7f25
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746725"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120407"
 ---
 # <a name="control-storage-account-access-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot opslagaccounts beheren voor serverloze SQL-pools in Azure Synapse Analytics
 
@@ -63,7 +63,7 @@ Voordat de gegevens worden vrijgegeven, moet de Azure Storage-beheerder machtigi
 
 ### <a name="anonymous-access"></a>[Anonieme toegang](#tab/public-access)
 
-U kunt toegang krijgen tot openbaar beschikbare bestanden die in Azure-opslagaccounts zijn geplaatst die [anonieme toegang toestaan](/azure/storage/blobs/storage-manage-access-to-resources).
+U kunt toegang krijgen tot openbaar beschikbare bestanden die in Azure-opslagaccounts zijn geplaatst die [anonieme toegang toestaan](../../storage/blobs/anonymous-read-access-configure.md).
 
 ---
 
@@ -101,7 +101,7 @@ Als u via Gebruikersidentiteit toegang wilt tot opslag die wordt beveiligd met d
 
 Volg deze stappen om de firewall voor uw opslagaccount te configureren en een uitzondering toe te voegen voor Synapse-werkruimte.
 
-1. Open PowerShell of [installeer PowerShell](https://docs.microsoft.com/powershell/scripting/install/installing-powershell-core-on-windows?view=powershell-7.1&preserve-view=true )
+1. Open PowerShell of [installeer PowerShell](/powershell/scripting/install/installing-powershell-core-on-windows?preserve-view=true&view=powershell-7.1)
 2. Installeer de bijgewerkte module Az. Storage: 
     ```powershell
     Install-Module -Name Az.Storage -RequiredVersion 3.0.1-preview -AllowPrerelease

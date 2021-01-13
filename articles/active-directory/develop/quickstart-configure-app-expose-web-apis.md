@@ -13,12 +13,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, contperf-fy21q1
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: 4ebae7e97f9128bb9302e9076e71dd3164f0c29e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: bf8b705aff8ac608d0eb3626026797f1d106414b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030957"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017749"
 ---
 # <a name="quickstart-configure-an-application-to-expose-a-web-api"></a>Quickstart: Een toepassing configureren om een web-API beschikbaar te maken
 
@@ -45,7 +45,7 @@ De code in een clienttoepassing vraagt machtigingen aan voor het uitvoeren van b
 
 Voer eerst de volgende stappen uit om een voorbeeldbereik te maken met de naam `Employees.Read.All`:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/quickstart-configure-app-expose-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren die de registratie van uw clienttoepassing bevat.
 1. Selecteer **Azure Active Directory** > **App-registraties** en selecteer de app-registratie van uw API.
 1. Selecteer **Een API weergeven** > **Een bereik toevoegen**.

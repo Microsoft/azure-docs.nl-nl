@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: b605c2c9f3c7468d0fe1f2cccd8c3602c556714b
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 949b7e55569cc6fceacc37677ed06a28bb85d7c2
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501070"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116361"
 ---
 # <a name="azure-synapse-analytics-managed-virtual-network"></a>Beheerd virtueel netwerk in Azure Synapse Analytics
 
@@ -41,7 +41,7 @@ Toegewezen SQL-pools en serverloze SQL-pools bieden mogelijkheden voor meerdere 
 
 ## <a name="create-an-azure-synapse-workspace-with-a-managed-workspace-virtual-network"></a>Een Azure Synapse-werkruimte maken met een beheerd, aan de werkruimte gekoppeld virtueel netwerk
 
-Registreer de resourceprovider van het netwerk, als u dit nog niet hebt gedaan. Als u een resourceprovider registreert, wordt uw abonnement zo geconfigureerd dat dit kan worden gebruikt met de resourceprovider. Kies *Microsoft.Network* in de lijst met resourceproviders tijdens het [registreren](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types).
+Registreer de resourceprovider van het netwerk, als u dit nog niet hebt gedaan. Als u een resourceprovider registreert, wordt uw abonnement zo geconfigureerd dat dit kan worden gebruikt met de resourceprovider. Kies *Microsoft.Network* in de lijst met resourceproviders tijdens het [registreren](../../azure-resource-manager/management/resource-providers-and-types.md).
 
 Als u een Azure Synapse-werkruimte wilt maken waaraan een beheerd virtueel werkruimtenetwerk is gekoppeld, selecteert u het tabblad **Beveiliging** in Azure Portal, en schakelt u het selectievakje **Beheerd virtueel netwerk inschakelen** in.
 

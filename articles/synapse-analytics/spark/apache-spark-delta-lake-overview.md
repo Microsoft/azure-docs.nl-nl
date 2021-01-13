@@ -11,12 +11,12 @@ ms.date: 07/28/2020
 ms.author: euang
 ms.custom: devx-track-csharp
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: 655daeb0149228d78d5288b0e5d0d705a5743d28
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: d960b64d71861044aa1b0344ccbfdaf5e6328e6a
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89008638"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120322"
 ---
 # <a name="linux-foundation-delta-lake-overview"></a>Overzicht van Linux Foundation Delta Lake
 
@@ -997,4 +997,4 @@ Zie [Delta Lake-project](https://github.com/delta-io/delta) voor meer informatie
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Documentatie voor .NET voor Apache Spark](/dotnet/spark?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
-* [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
+* [Azure Synapse Analytics](../index.yml)

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: 2f9ab6dacde0259905368d8a0cb788dde77bbfb2
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b8738b46359287ce1d4e410292cdce213ab80999
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453618"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115817"
 ---
 # <a name="what-is-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Wat is een toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics?
 
@@ -51,7 +51,7 @@ De analyseresultaten kunnen worden verzonden naar wereldwijde rapportagedatabase
 
 - [Azure Synapse-architectuur](massively-parallel-processing-mpp-architecture.md) verkennen
 - Snel [een toegewezen SQL-pool maken](create-data-warehouse-portal.md)
-- [Voorbeeldgegevens laden](load-data-from-azure-blob-storage-using-polybase.md).
+- [Voorbeeldgegevens laden](./load-data-from-azure-blob-storage-using-copy.md).
 - [Video's verkennen](https://azure.microsoft.com/documentation/videos/index/?services=sql-data-warehouse)
 
 Of bekijk enkele andere Azure Synapse-resources.
@@ -59,5 +59,5 @@ Of bekijk enkele andere Azure Synapse-resources.
 - Zoeken in [Blogs](https://azure.microsoft.com/blog/tag/azure-sql-data-warehouse/)
 - [Functieaanvragen](https://feedback.azure.com/forums/307516-sql-data-warehouse) indienen
 - [Een ondersteuningsticket maken](sql-data-warehouse-get-started-create-support-ticket.md)
-- Zoeken op de [Microsoft Q&A-vragenpagina](https://docs.microsoft.com/answers/topics/azure-synapse-analytics.html)
+- Zoeken op de [Microsoft Q&A-vragenpagina](/answers/topics/azure-synapse-analytics.html)
 - Zoeken in het [Stack Overflow-forum](https://stackoverflow.com/questions/tagged/azure-sqldw)

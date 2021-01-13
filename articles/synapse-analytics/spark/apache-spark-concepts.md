@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 04/15/2020
 ms.author: euang
 ms.reviewer: euang
-ms.openlocfilehash: 8df7a2ecd2a6732a011267eb0efe00e8eaf2bef4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 51b2e8cd968c4c14777d196d90686b13158aef42
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458745"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120305"
 ---
 # <a name="apache-spark-in-azure-synapse-analytics-core-concepts"></a>Basisconcepten van Apache Spark in Azure Synapse Analytics
 
@@ -80,7 +80,7 @@ In het volgende artikel wordt beschreven hoe u een toename van het vCore-quotum 
 - Selecteer 'Azure Synapse Analytics' als het servicetype.
 - Selecteer in het venster Quotumgegevens de optie Apache Spark (vCore) per werkruimte
 
-[Een capaciteitstoename aanvragen via Azure Portal](https://docs.microsoft.com/azure/azure-portal/supportability/per-vm-quota-requests#request-a-standard-quota-increase-from-help--support)
+[Een capaciteitstoename aanvragen via Azure Portal](../../azure-portal/supportability/per-vm-quota-requests.md#request-a-standard-quota-increase-from-help--support)
 
 ### <a name="spark-pool-level"></a>Niveau van Spark-pool
 
@@ -95,5 +95,5 @@ Om dit probleem op te lossen, moet u uw gebruik van de poolresources verminderen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Synapse Analytics](https://docs.microsoft.com/azure/synapse-analytics)
+- [Azure Synapse Analytics](../index.yml)
 - [Documentatie voor Apache Spark](https://spark.apache.org/docs/2.4.5/)

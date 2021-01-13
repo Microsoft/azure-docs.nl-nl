@@ -11,16 +11,16 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 83b5804888379316b855c36f803f646cec102d9e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 939a74a2bbedf6b00159f0c33a50eeb93595cda4
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95024582"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116072"
 ---
 # <a name="quickstart-bulk-load-data-using-the-copy-statement"></a>Quickstart: Gegevens bulksgewijs laden met behulp van de instructie COPY
 
-In deze quickstart laadt u gegevens bulksgewijs in uw toegewezen SQL-pool met behulp van de eenvoudige en flexibele [COPY-instructie](https://docs.microsoft.com/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) voor gegevensopname met hoge doorvoer. De instructie COPY is het aanbevolen hulpprogramma voor het laden omdat u er naadloos en flexibel gegevens mee kunt laden door middel van de volgende functionaliteit:
+In deze quickstart laadt u gegevens bulksgewijs in uw toegewezen SQL-pool met behulp van de eenvoudige en flexibele [COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) voor gegevensopname met hoge doorvoer. De instructie COPY is het aanbevolen hulpprogramma voor het laden omdat u er naadloos en flexibel gegevens mee kunt laden door middel van de volgende functionaliteit:
 
 - Sta gebruikers met een beperkte bevoegdheid toe om gegevens te laden zonder dat er strikte CONTROL-machtigingen voor het datawarehouse nodig zijn
 - Gebruik slechts één T-SQL-instructie zonder extra databaseobjecten te hoeven maken
@@ -138,5 +138,5 @@ GROUP BY r.[request_id]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Aanbevolen procedures voor het laden van gegevens](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/guidance-for-loading-data) voor aanbevolen procedures voor het laden van gegevens.
-- Zie [Isolatie van workload](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-configure-workload-isolation-tsql) voor meer informatie over het beheren van de resources voor het laden van gegevens. 
+- Zie [Aanbevolen procedures voor het laden van gegevens](./guidance-for-loading-data.md) voor aanbevolen procedures voor het laden van gegevens.
+- Zie [Isolatie van workload](./quickstart-configure-workload-isolation-tsql.md) voor meer informatie over het beheren van de resources voor het laden van gegevens.

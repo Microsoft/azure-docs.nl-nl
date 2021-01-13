@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 3cbd9fd697bbae8779f5b2b9fa4ab817efce30ac
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 12966503bfa17030fc4ebcb4d790a2f4655142a2
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96454637"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98116531"
 ---
 # <a name="azure-synapse-analytics-ip-firewall-rules"></a>IP-firewallregels voor Azure Synapse Analytics
 
@@ -43,7 +43,7 @@ Zorg ervoor dat de firewall in uw netwerk en op uw lokale computer uitgaande com
 
 U moet ook uitgaande communicatie toestaan op UDP-poort 53 voor Synapse Studio. Als u verbinding wilt maken met via hulpprogramma's zoals SSMS en Power BI, moet u uitgaande communicatie toestaan op TCP-poort 1433.
 
-Als u de standaardinstelling voor het verbindingsbeleid voor omleidingen gebruikt, moet u mogelijk uitgaande communicatie toestaan op extra poorten. U vindt [hier](https://docs.microsoft.com/azure/sql-database/sql-database-connectivity-architecture#connection-policy) meer informatie over verbindingsbeleid.
+Als u de standaardinstelling voor het verbindingsbeleid voor omleidingen gebruikt, moet u mogelijk uitgaande communicatie toestaan op extra poorten. U vindt [hier](../../azure-sql/database/connectivity-architecture.md#connection-policy) meer informatie over verbindingsbeleid.
 
 ## <a name="next-steps"></a>Volgende stappen
 

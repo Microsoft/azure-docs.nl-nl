@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 04/15/2020
 ms.author: vvasic
 ms.reviewer: jrasnick
-ms.openlocfilehash: efa160eb422658aeeb2eea3ad3c1d305b4b9f8be
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 1217cf74ab36a8fe865e47009616b1ccb240df67
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462403"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119880"
 ---
 # <a name="sql-authentication"></a>SQL-verificatie
 
@@ -111,7 +111,7 @@ Om een database te maken, moet de gebruiker een gebruiker zijn op basis van een 
    CREATE USER Mary FROM LOGIN Mary;  -- To create a SQL Server user based on a SQL Server authentication login
    ```
 
-4. Voeg de nieuwe gebruiker toe aan de databaserol **dbmanager** in `master` met behulp van de procedure [sp_addrolemember](https://docs.microsoft.com/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=azure-sqldw-latest) (de instructie [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) wordt niet ondersteund in ingerichte SQL). Voorbeeldinstructies:
+4. Voeg de nieuwe gebruiker toe aan de databaserol **dbmanager** in `master` met behulp van de procedure [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?view=azure-sqldw-latest) (de instructie [ALTER ROLE](/sql/t-sql/statements/alter-role-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) wordt niet ondersteund in ingerichte SQL). Voorbeeldinstructies:
 
    ```sql
    EXEC sp_addrolemember 'dbmanager', 'Mary'; 
@@ -133,7 +133,7 @@ De andere beheerdersrol is de rol voor aanmeldingsbeheerder. Leden van deze rol 
 
 ## <a name="non-administrator-users"></a>Niet-beheerders
 
-Niet-beheerdersaccounts hebben doorgaans geen toegang nodig tot de hoofddatabase. Maak ingesloten databasegebruikers op databaseniveau met de instructie [CREATE USER (Transact-SQL)](https://msdn.microsoft.com/library/ms173463.aspx). 
+Niet-beheerdersaccounts hebben doorgaans geen toegang nodig tot de hoofddatabase. Maak ingesloten databasegebruikers op databaseniveau met de instructie [CREATE USER (Transact-SQL)](/sql/t-sql/statements/create-user-transact-sql). 
 
 De gebruiker kan een ingesloten databasegebruiker op basis van Azure Active Directory-verificatie zijn (als u uw omgeving hebt geconfigureerd voor Azure AD-verificatie), maar ook een ingesloten databasegebruiker op basis van SQL Server-verificatie of een gebruiker op basis van SQL Server-verificatie met aanmelding voor SQL Server-verificatie (gemaakt in de vorige stap).  
 
@@ -191,7 +191,7 @@ Bij de databaserollen kan het gaan om de ingebouwde rollen als **db_owner**, **d
 
 De vaste databaserol **db_datareader** verleent bijvoorbeeld leestoegang tot alle tabellen in de database, wat doorgaans meer is dan strikt noodzakelijk. 
 
-Het is veel beter de instructie [CREATE ROLE](https://msdn.microsoft.com/library/ms187936.aspx) te gebruiken om uw eigen gebruikergedefinieerde databaserollen te maken en zorgvuldig elke rol de minimale machtigingen te verlenen die nodig zijn voor de gerelateerde zakelijke behoeften. Als een gebruiker lid is van meerdere rollen, worden de machtigingen van alle rollen samengevoegd.
+Het is veel beter de instructie [CREATE ROLE](/sql/t-sql/statements/create-role-transact-sql) te gebruiken om uw eigen gebruikergedefinieerde databaserollen te maken en zorgvuldig elke rol de minimale machtigingen te verlenen die nodig zijn voor de gerelateerde zakelijke behoeften. Als een gebruiker lid is van meerdere rollen, worden de machtigingen van alle rollen samengevoegd.
 
 ## <a name="permissions"></a>Machtigingen
 
@@ -199,7 +199,7 @@ Er zijn meer dan 100 machtigingen die afzonderlijk kunnen worden verleend of gew
 
 Vanwege de geneste aard en het aantal machtigingen kan een nauwkeurig onderzoek nodig zijn om een geschikt machtigingssysteem te ontwerpen voor een goede bescherming van uw database. 
 
-Start met de lijst van machtigingen in [Machtigingen (Database-engine)](https://docs.microsoft.com/sql/relational-databases/security/permissions-database-engine) en controleer de [afbeelding op postergrootte](https://docs.microsoft.com/sql/relational-databases/security/media/database-engine-permissions.png) van de machtigingen.
+Start met de lijst van machtigingen in [Machtigingen (Database-engine)](/sql/relational-databases/security/permissions-database-engine) en controleer de [afbeelding op postergrootte](/sql/relational-databases/security/media/database-engine-permissions.png) van de machtigingen.
 
 ### <a name="considerations-and-restrictions"></a>Overwegingen en beperkingen
 
@@ -236,5 +236,4 @@ Bij het beheren van aanmeldingen en gebruikers in SQL Database, moet u de volgen
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Ingesloten databasegebruikers: een draagbare database maken](https://msdn.microsoft.com/library/ff929188.aspx) voor meer informatie.
- 
+Zie [Ingesloten databasegebruikers: een draagbare database maken](/sql/relational-databases/security/contained-database-users-making-your-database-portable) voor meer informatie.

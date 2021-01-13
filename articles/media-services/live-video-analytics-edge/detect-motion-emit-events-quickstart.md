@@ -4,12 +4,12 @@ description: In deze quickstart leert u hoe u Live Video Analytics in IoT Edge k
 ms.topic: quickstart
 ms.date: 08/10/2020
 zone_pivot_groups: ams-lva-edge-programming-languages
-ms.openlocfilehash: 4d8b91529eaf5a9ee93cff28153b28b26fb7e685
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 09a17712287c73fa165b4bec77682831a51edfa3
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89566897"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060567"
 ---
 # <a name="quickstart-detect-motion-and-emit-events"></a>Quickstart: Beweging detecteren en gebeurtenissen verzenden
 
@@ -34,6 +34,17 @@ Deze quickstart begeleidt u door de stappen om aan de slag te gaan met Live Vide
 ::: zone pivot="programming-language-python"
 [!INCLUDE [prerequisites](includes/detect-motion-emit-events-quickstart/python/prerequisites.md)]
 ::: zone-end
+
+## <a name="review-the-sample-video"></a>De voorbeeldvideo bekijken
+
+::: zone pivot="programming-language-csharp"
+[!INCLUDE [review-sample-video](includes/detect-motion-emit-events-quickstart/csharp/review-sample-video.md)]
+::: zone-end
+
+::: zone pivot="programming-language-python"
+[!INCLUDE [review-sample-video](includes/detect-motion-emit-events-quickstart/python/review-sample-video.md)]
+::: zone-end
+
 
 ## <a name="set-up-azure-resources"></a>Azure-resources instellen
 

@@ -3,17 +3,16 @@ title: Taken in een Azure Stream Analytics-cluster maken en verwijderen
 description: Meer informatie over het beheren van privé-eindpunten in een Azure Stream Analytics-cluster
 author: sidramadoss
 ms.author: sidram
-ms.reviewer: mamccrea
 ms.service: stream-analytics
 ms.topic: overview
 ms.custom: mvc
 ms.date: 09/22/2020
-ms.openlocfilehash: 01efb5736d7becf1b46c7c2898c22648b0421dd1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 09a67d11ac4daf3e87a50ee2171f1ca49060c5bf
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93305817"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018119"
 ---
 # <a name="add-and-remove-jobs-in-an-azure-stream-analytics-cluster"></a>Taken toevoegen en verwijderen in een Azure Stream Analytics-cluster
 

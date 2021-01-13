@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/19/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 82a4ded3a64a8a8bbc62f99a8854eb6d2b5f0d0b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: f398f80e4e283f971e0d947d0dda131e12fe88a7
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446574"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120390"
 ---
 # <a name="access-external-storage-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Toegang tot externe opslag met behulp van een serverloze SQL-pool in Azure Synapse Analytics
 
@@ -116,7 +116,7 @@ CREATE EXTERNAL DATA SOURCE MyAzureInvoices
 
 Een gebruiker met de machtigingen voor het lezen van de tabel kan toegang krijgen tot externe bestanden met behulp van een EXTERNAL TABLE die wordt gemaakt boven op de set Azure Storage-mappen en -bestanden.
 
-Een gebruiker met [-machtigingen voor het maken van een externe tabel](https://docs.microsoft.com/sql/t-sql/statements/create-external-table-transact-sql?view=sql-server-ver15#permissions&preserve-view=true) (bijvoorbeeld CREATE TABLE en ALTER ANY CREDENTIAL of REFERENCES DATABASE SCOPED CREDENTIAL) kunnen het volgende script gebruiken om een tabel boven op Azure Storage-gegevensbron te maken:
+Een gebruiker met [-machtigingen voor het maken van een externe tabel](/sql/t-sql/statements/create-external-table-transact-sql?preserve-view=true&view=sql-server-ver15#permissions) (bijvoorbeeld CREATE TABLE en ALTER ANY CREDENTIAL of REFERENCES DATABASE SCOPED CREDENTIAL) kunnen het volgende script gebruiken om een tabel boven op Azure Storage-gegevensbron te maken:
 
 ```sql
 CREATE EXTERNAL TABLE [dbo].[DimProductexternal]

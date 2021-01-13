@@ -11,12 +11,12 @@ ms.date: 05/28/2019
 ms.author: pimorano
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 78a0982081b8e34461fb2910cc7ce21be622cb6a
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 4da99200079557ab9d1674635c0df26c9e62d488
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922770"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120271"
 ---
 # <a name="quickstart-create-and-query-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-the-azure-portal"></a>Quickstart: Een toegewezen SQL-pool (voorheen SQL DW) maken en een query uitvoeren in Azure Synapse Analytics met behulp van Azure Portal
 
@@ -153,7 +153,7 @@ In deze sectie wordt gebruikgemaakt van [SSMS](/sql/ssms/download-sql-server-man
 
 ## <a name="run-some-queries"></a>Een aantal query's uitvoeren
 
-Het is niet raadzaam om grote query's uit te voeren terwijl u bent geregistreerd als de serverbeheerder, omdat deze rol gebruikmaakt van een [beperkte resourceklasse](resource-classes-for-workload-management.md). In plaats daarvan configureert u de [Isolatie van workloads](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/quickstart-configure-workload-isolation-tsql) zoals [aangegeven in de zelfstudies](https://docs.microsoft.com/azure/synapse-analytics/sql-data-warehouse/load-data-wideworldimportersdw#create-a-user-for-loading-data).
+Het is niet raadzaam om grote query's uit te voeren terwijl u bent geregistreerd als de serverbeheerder, omdat deze rol gebruikmaakt van een [beperkte resourceklasse](resource-classes-for-workload-management.md). In plaats daarvan configureert u de [Isolatie van workloads](./quickstart-configure-workload-isolation-tsql.md) zoals [aangegeven in de zelfstudies](./load-data-wideworldimportersdw.md#create-a-user-for-loading-data).
 
 Azure Synapse Analytics gebruikt T-SQL als de querytaal. Gebruik de volgende stappen om een queryvenster te openen en een aantal T-SQL-query’s uit te voeren:
 

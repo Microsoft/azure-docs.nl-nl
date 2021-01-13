@@ -10,12 +10,12 @@ ms.workload: identity
 ms.date: 12/09/2020
 ms.author: rolyon
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 7cf4020ad38224b25ea8bb7dc7f0fdea7dd6f3b1
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 5e4f3314ba580dddbd995855bc0f0512b7597107
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034000"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98115723"
 ---
 # <a name="quickstart-check-access-for-a-user-to-azure-resources"></a>Quickstart: Toegang voor een gebruiker tot Azure-resources controleren
 
@@ -37,7 +37,7 @@ Volg deze stappen om de set Azure-resources te openen waarvoor u de toegang wilt
 
     Hieronder ziet u een voorbeeld van een resourcegroep.
 
-    ![Overzicht van resourcegroep](./media/check-access/rg-overview.png)
+    ![Overzicht van resourcegroep](./media/shared/rg-overview.png)
 
 ## <a name="step-2-check-access-for-a-user"></a>Stap 2: Toegang voor een gebruiker controleren
 
@@ -47,7 +47,7 @@ Volg deze stappen om de toegang voor één gebruiker, groep, service-principal, 
 
     Hieronder ziet u een voorbeeld van de pagina IAM (Toegangsbeheer) voor een resourcegroep.
 
-    ![Toegangsbeheer voor resourcegroep - Tabblad Toegang controleren](./media/check-access/rg-access-control.png)
+    ![Toegangsbeheer voor resourcegroep - Tabblad Toegang controleren](./media/shared/rg-access-control.png)
 
 1. Selecteer op het tabblad **Toegang controleren** de lijst **Zoeken**. Selecteer de gebruiker, groep, service-principal of beheerde identiteit waarvoor u de toegang wilt controleren.
 

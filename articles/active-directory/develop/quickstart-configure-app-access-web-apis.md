@@ -13,12 +13,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, contperf-fy21q1
 ms.reviewer: lenalepa, aragra, sureshja
-ms.openlocfilehash: 2630984d54134ca8fca94fdc1960265ba71935a6
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: fdaaf935dc458a6a5b2a87a81bb98a1392f1034a
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031297"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012118"
 ---
 # <a name="quickstart-configure-a-client-application-to-access-a-web-api"></a>Quickstart: Een clienttoepassing configureren voor toegang tot een web-API
 
@@ -42,7 +42,7 @@ Dit diagram laat de relatie tussen de twee app-registraties zijn. In deze sectie
 
 Wanneer u zowel de clienttoepassing als de Web-API hebt geregistreerd en u de API hebt weergegeven door bereiken te maken, kunt u de machtigingen van de client voor de API configureren door de volgende stappen uit te voeren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren die de registratie van uw clienttoepassing bevat.
 1. Selecteer **Azure Active Directory** > **App-registraties** en selecteer uw clienttoepassing (dus *niet* uw web-API).
 1. Selecteer **API-machtigingen** > **Een machtiging toevoegen** > **Mijn API's**.
@@ -71,7 +71,7 @@ Naast toegang tot uw eigen web-API namens de aangemelde gebruiker, moet uw toepa
 
 Configureer gedelegeerde machtigingen voor Microsoft Graph om ervoor te zorgen dat uw clienttoepassing bewerkingen namens de aangemelde gebruiker kan uitvoeren, bijvoorbeeld door hun e-mail te lezen of hun profiel te wijzigen. Standaard worden gebruikers van uw clienttoepassing gevraagd wanneer ze zich aanmelden om toestemming te geven voor de gedelegeerde machtigingen die u hiervoor hebt geconfigureerd.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren die de registratie van uw clienttoepassing bevat.
 1. Selecteer **Azure Active Directory** > **App-registraties** en selecteer uw clienttoepassing.
 1. Selecteer **API-machtigingen** > **Een machtiging toevoegen** > **Microsoft Graph**
@@ -96,7 +96,7 @@ Configureer app-machtigingen voor een app die als zichzelf moet worden geverifie
 
 In de volgende stappen verleent u machtigingen voor de *Files.Read.All*-machtiging van Microsoft Graph als voorbeeld.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/quickstart-configure-app-access-web-apis/portal-01-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren die de registratie van uw clienttoepassing bevat.
 1. Selecteer **Azure Active Directory** > **App-registraties** en selecteer uw clienttoepassing.
 1. Selecteer **API-machtigingen** > **Een machtiging toevoegen** > **Microsoft Graph** > **App-machtigingen**.

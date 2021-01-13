@@ -6,12 +6,12 @@ ms.author: nimag
 ms.date: 08/11/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: d35e51d097c2d5e0b66c23efa27ae70c065d547c
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: f3d6023ffd3043bc57727fc39f077dd0ce7eccb8
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96584525"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98024222"
 ---
 In deze snelstart leert u hoe u de clientbibliotheek voor oproepen van Azure Communication Services voor JavaScript.
 
@@ -22,52 +22,10 @@ In deze snelstart leert u hoe u de clientbibliotheek voor oproepen van Azure Com
 - Een actieve Communication Services-resource. [Een Communication Services maken](../../create-communication-resource.md).
 - Een token voor gebruikerstoegang voor het instantiëren van de client voor oproepen. Meer informatie over [tokens voor gebruikerstoegang maken en beheren](../../access-tokens.md).
 
-## <a name="setting-up"></a>Instellen
 
-### <a name="create-a-new-nodejs-application"></a>Een nieuwe Node.js-toepassing maken
+[!INCLUDE [Calling with JavaScript](./get-started-javascript-setup.md)]
 
-Open uw terminal of opdrachtvenster, maak een nieuwe map voor uw app en navigeer daar naartoe.
-
-```console
-mkdir calling-quickstart && cd calling-quickstart
-```
-
-Voer `npm init -y` uit om een **package.json**-bestand te maken met de standaardinstellingen.
-
-```console
-npm init -y
-```
-
-### <a name="install-the-package"></a>Het pakket installeren
-
-Gebruik de opdracht `npm install` voor het installeren van de clientbibliotheek voor oproepen voor Javascript in Azure Communication Services.
-
-```console
-npm install @azure/communication-common --save
-npm install @azure/communication-calling --save
-```
-
-De volgende versies van webpack worden aanbevolen voor deze quickstart:
-
-```console
-"webpack": "^4.42.0",
-"webpack-cli": "^3.3.11",
-"webpack-dev-server": "^3.10.3"
-```
-
-De optie `--save` geeft de bibliotheek weer als afhankelijkheid in het **package.json**-bestand.
-
-### <a name="set-up-the-app-framework"></a>Het app-framework instellen
-
-In deze snelstart wordt webpack gebruikt om de toepassingsassets te bundelen. Voer de volgende opdracht uit om de webpack-, webpack-CLI- en webpack-dev-server npm-pakketten te installeren en deze weer te geven als ontwikkelingsafhankelijkheden in uw **package.json**:
-
-```console
-npm install webpack@4.42.0 webpack-cli@3.3.11 webpack-dev-server@3.10.3 --save-dev
-```
-
-Maak een **index. html**-bestand in de hoofdmap van uw project. Dit bestand wordt gebruikt voor het configureren van een basisindeling waarmee de gebruiker een oproep naar een Azure Communications-bot kan plaatsen.
-
-Dit is de code:
+Hier volgt de code:
 
 ```html
 <!DOCTYPE html>

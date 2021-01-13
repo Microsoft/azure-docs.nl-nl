@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 12ff369cb931eb36014b7c9598b036afdc158750
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4c3b5095da4e55dc8f881a610f80f1150422e739
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457179"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119914"
 ---
 # <a name="self-help-for-serverless-sql-pool"></a>Zelfondersteuning voor serverloze SQL-pools
 
@@ -25,7 +25,7 @@ Dit artikel bevat informatie over het oplossen van de meest voorkomende probleme
 Als Synapse Studio geen verbinding kan maken met een serverloze SQL-pool, ziet u dat de serverloze SQL-pool niet beschikbaar is of dat de status 'Offline' wordt weergegeven. Dit probleem treedt meestal op in een van de volgende gevallen:
 
 1) Uw netwerk verhindert communicatie met de back-end van Azure Synapse. Het meest voorkomende probleem is dat poort 1443 wordt geblokkeerd. Als u de serverloze SQL-pool wilt laten werken, heft u de blokkering van deze poort op. Er kunnen ook andere problemen zijn waardoor de serverloze SQL-pool niet werkt, [raadpleeg de volledige gids voor probleemoplossing voor meer informatie](../troubleshoot/troubleshoot-synapse-studio.md).
-2) U bent niet gemachtigd om u aan te melden bij de serverloze SQL-pool. Als u toegang wilt krijgen, moet een van de beheerders van de Azure Synapse-werkruimte u toevoegen aan de rol Werkruimtebeheerder of SQL-beheerder. [Bekijk de volledige handleiding over toegangsbeheer voor meer informatie](access-control.md).
+2) U bent niet gemachtigd om u aan te melden bij de serverloze SQL-pool. Als u toegang wilt krijgen, moet een van de beheerders van de Azure Synapse-werkruimte u toevoegen aan de rol Werkruimtebeheerder of SQL-beheerder. [Bekijk de volledige handleiding over toegangsbeheer voor meer informatie](../security/synapse-workspace-access-control-overview.md).
 
 ## <a name="query-fails-because-file-cannot-be-opened"></a>De query is mislukt omdat het bestand niet kan worden geopend
 

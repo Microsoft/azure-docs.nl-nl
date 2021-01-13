@@ -1,17 +1,17 @@
 ---
 title: 'Quickstart: een Azure Stream Analytics-taak maken met behulp van Visual Studio'
 description: In deze snelstart wordt getoond hoe u aan de slag kunt door een Stream Analytics-taak te maken, invoer en uitvoer te configureren en een query te definiëren met Visual Studio.
-author: mamccrea
-ms.author: mamccrea
+author: enkrumah
+ms.author: ebnkruma
 ms.date: 06/11/2019
 ms.topic: quickstart
 ms.service: stream-analytics
-ms.openlocfilehash: 034f1497cb6262ca86cd440b914f3ae67356eef9
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 7a02d0914ae111d6e2e00493fe27613e27d836b1
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93124608"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98012356"
 ---
 # <a name="quickstart-create-an-azure-stream-analytics-job-by-using-visual-studio"></a>Quickstart: Een Azure Stream Analytics-taak maken met behulp van Visual Studio
 
@@ -89,7 +89,7 @@ Voordat u de Stream Analytics-taak definieert, moet u de gegevens voorbereiden d
 
 3. Selecteer **Stream Analytics** in de sjablonenlijst aan de linkerkant en selecteer vervolgens **Azure Stream Analytics Application**.  
 
-4. Voer de **Naam** , **Locatie** en **Oplossingsnaam** van het project in en selecteer **OK**.
+4. Voer de **Naam**, **Locatie** en **Oplossingsnaam** van het project in en selecteer **OK**.
 
    ![Een Stream Analytics-project maken](./media/stream-analytics-quick-create-vs/create-stream-analytics-project.png)
 
@@ -102,7 +102,7 @@ Let op de elementen die zijn opgenomen in een Azure Stream Analytics-project.
 
 1. Selecteer in Visual Studio in het menu **Beeld** de optie **Server Explorer**.
 
-2. Klik met de rechtermuisknop op **Azure** , selecteer **Verbinding maken met Microsoft Azure-abonnement** en meld u aan met uw Azure-account.
+2. Klik met de rechtermuisknop op **Azure**, selecteer **Verbinding maken met Microsoft Azure-abonnement** en meld u aan met uw Azure-account.
 
 ## <a name="define-input"></a>Invoer definiëren
 
@@ -160,7 +160,7 @@ Let op de elementen die zijn opgenomen in een Azure Stream Analytics-project.
 
 1. Selecteer in de **Query-editor** **Verzenden naar Azure** in de scripteditor.
 
-2. Selecteer **Een nieuwe Azure Stream Analytics-taak** maken en voer een **taaknaam** in. Kies het **Abonnement** , de **Resourcegroep** en de **Locatie** die u aan het begin van de snelstart hebt gebruikt.
+2. Selecteer **Een nieuwe Azure Stream Analytics-taak** maken en voer een **taaknaam** in. Kies het **Abonnement**, de **Resourcegroep** en de **Locatie** die u aan het begin van de snelstart hebt gebruikt.
 
    ![Verzenden van de taak naar Azure](./media/stream-analytics-quick-create-vs/stream-analytics-job-to-azure.png)
 
@@ -198,7 +198,7 @@ Wanneer u een resourcegroep niet meer nodig hebt, verwijdert u de resourcegroep,
 
 1. Selecteer in het menu aan de linkerkant in Azure Portal de optie **Resourcegroepen** en selecteer vervolgens de resource die u hebt gemaakt.  
 
-2. Selecteer op de pagina van uw resourcegroep de optie **Verwijderen** , typ de naam van de resource die u wilt verwijderen in het tekstvak en selecteer vervolgens **Verwijderen**.
+2. Selecteer op de pagina van uw resourcegroep de optie **Verwijderen**, typ de naam van de resource die u wilt verwijderen in het tekstvak en selecteer vervolgens **Verwijderen**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

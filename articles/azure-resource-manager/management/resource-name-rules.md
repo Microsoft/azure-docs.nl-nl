@@ -3,12 +3,12 @@ title: Naamgevings beperkingen voor resources
 description: Hier worden de regels en beperkingen voor het benoemen van Azure-resources weer gegeven.
 ms.topic: conceptual
 ms.date: 12/29/2020
-ms.openlocfilehash: edcf3f09b57ed7628611c482effddb210ef8e456
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 59babd9298fdca96b450b2dc67832c86c043c49c
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814377"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132746"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Naamgevingsregels en -beperkingen voor Azure-resources
 
@@ -83,7 +83,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | Entiteit | Bereik | Lengte | Geldige tekens |
 > | --- | --- | --- | --- |
 > | vergren delingen | toewijzings bereik | 1-90 | Alfanumerieken, punten, onderstrepings tekens, afbreek streepjes en haakjes.<br><br>Kan niet eindigen met een periode. |
-> | policyAssignments | toewijzings bereik | weergave naam 1-128<br><br>resource naam voor 1-64 | De weergave naam mag tekens bevatten.<br><br>De resource naam mag niet bevatten `%` en mag niet eindigen met een punt of spatie. |
+> | policyAssignments | toewijzings bereik | weergave naam 1-128<br><br>resource naam voor 1-64<br><br>1-24-resource naam in het beheer groeps bereik | De weergave naam mag tekens bevatten.<br><br>De resource naam mag niet bevatten `%` en mag niet eindigen met een punt of spatie. |
 > | policyDefinitions | bereik van definitie | weergave naam 1-128<br><br>resource naam voor 1-64 | De weergave naam mag tekens bevatten.<br><br>De resource naam mag niet bevatten `%` en mag niet eindigen met een punt of spatie. |
 > | policySetDefinitions | bereik van definitie | weergave naam 1-128<br><br>resource naam voor 1-64<br><br>1-24-resource naam in het beheer groeps bereik | De weergave naam mag tekens bevatten.<br><br>De resource naam mag niet bevatten `%` en mag niet eindigen met een punt of spatie.  |
 
@@ -655,7 +655,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | Storage accounts/managementPolicies | opslagaccount |  | Moet zijn `default` . |
 > | blob | container | 1-1024 | Wille keurige URL-tekens, hoofdletter gevoelig |
 > | wachtrij | opslagaccount | 3-63 | Kleine letters, cijfers en afbreek streepjes.<br><br>Kan niet beginnen of eindigen met een afbreek streepje. Kan geen opeenvolgende afbreek streepjes gebruiken. |
-> | table | opslagaccount | 3-63 | Alfanumerieke tekens.<br><br>Begin met letter. |
+> | tabel | opslagaccount | 3-63 | Alfanumerieke tekens.<br><br>Begin met letter. |
 
 ## <a name="microsoftstoragesync"></a>Micro soft. StorageSync
 

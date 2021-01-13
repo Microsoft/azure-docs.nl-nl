@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: laobri
 author: lobrien
-ms.date: 08/17/2020
+ms.date: 01/11/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: c29ee87ab177357f4289134bb39353c764a0d75b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: ee3d7d1cf285573db894d64549cf79babb517d95
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535296"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131284"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Wat zijn Azure Machine Learning pijp lijnen?
 
@@ -28,7 +28,7 @@ In dit artikel leert u hoe u met Azure Machine Learning pijp lijnen machine lear
 + Versie beheer en tracering
 + Modulariteit 
 + Kwaliteitscontrole
-+ Kosten beheer
++ Kostenbeheer
 
 Deze voor delen worden aanzienlijk zodra uw machine learning project wordt verplaatst naar een niet-versneld onderzoek en naar herhalingen. Zelfs eenvoudige pijp lijnen met één stap kunnen waardevol zijn. Machine learning-projecten zijn vaak in een complexe status en kunnen een vrijs telling zijn om een enkele werk stroom een trivial proces te maken.
 
@@ -40,8 +40,8 @@ De Azure-Cloud biedt verschillende andere pijp lijnen, elk met een ander doel. D
 | Scenario | Primaire persoon | Azure-aanbieding | OSS-aanbieding | Canonieke pijp | Sterke punten | 
 | -------- | --------------- | -------------- | ------------ | -------------- | --------- | 
 | Model indeling (machine learning) | Data scientist | Azure Machine Learning pijp lijnen | Kubeflow-pijp lijnen | Model voor gegevens > | Distributie, caching, code, opnieuw gebruiken | 
-| Gegevens indeling (gegevens voorbereiding) | Gegevensingenieur | [Azure Data Factory-pijplijnen](../data-factory/concepts-pipelines-activities.md) | Apache-lucht flow | Gegevens > gegevens | Sterk getypte bewegingen, gegevens gerichte activiteiten |
-| App-indeling voor code & (CI/CD) | App-ontwikkelaar/OPS | [Azure DevOps-pijp lijnen](https://azure.microsoft.com/services/devops/pipelines/) | Jenkins | Code + model-> app/service | De meeste open en flexibele activiteiten ondersteuning, goedkeurings wachtrijen, fasen met beperking | 
+| Gegevens indeling (gegevens voorbereiding) | Data engineer | [Azure Data Factory-pijplijnen](../data-factory/concepts-pipelines-activities.md) | Apache-lucht flow | Gegevens > gegevens | Sterk getypte bewegingen, gegevens gerichte activiteiten |
+| App-indeling voor code & (CI/CD) | App-ontwikkelaar/OPS | [Azure-pijp lijnen](https://azure.microsoft.com/services/devops/pipelines/) | Jenkins | Code + model-> app/service | De meeste open en flexibele activiteiten ondersteuning, goedkeurings wachtrijen, fasen met beperking | 
 
 ## <a name="what-can-azure-ml-pipelines-do"></a>Wat kunnen Azure ML-pijp lijnen doen?
 
@@ -107,15 +107,18 @@ experiment = Experiment(ws, 'MyExperiment')
 input_data = Dataset.File.from_files(
     DataPath(datastore, '20newsgroups/20news.pkl'))
 
-output_data = PipelineData("output_data", datastore=blob_store)
-
+dataprep_step = PythonScriptStep(
+    name="prep_data",
+    script_name="dataprep.py",
+    compute_target=cluster,
+    arguments=[input_dataset.as_named_input('raw_data').as_mount(), dataprep_output]
+    )
+output_data = OutputFileDatasetConfig()
 input_named = input_data.as_named_input('input')
 
 steps = [ PythonScriptStep(
     script_name="train.py",
     arguments=["--input", input_named.as_download(), "--output", output_data],
-    inputs=[input_data],
-    outputs=[output_data],
     compute_target=compute_target,
     source_directory="myfolder"
 ) ]
@@ -126,7 +129,9 @@ pipeline_run = experiment.submit(pipeline)
 pipeline_run.wait_for_completion()
 ```
 
-Het fragment begint met algemene Azure Machine Learning objecten, a `Workspace` , a `Datastore` , een [ComputeTarget](/python/api/azureml-core/azureml.core.computetarget?preserve-view=true&view=azure-ml-py)en een `Experiment` . Vervolgens maakt de code de objecten die moeten worden bewaard `input_data` en `output_data` . De matrix `steps` bevat één element, een `PythonScriptStep` dat de gegevens objecten gaat gebruiken en wordt uitgevoerd op de `compute_target` . Vervolgens maakt de code een instantie `Pipeline` van het object zelf, waarbij de werk ruimte en de stappen matrix worden door gegeven. De aanroep om `experiment.submit(pipeline)` de Azure ml-pijplijn uitvoering te starten. De aanroep naar `wait_for_completion()` blokken tot de pijp lijn is voltooid. 
+Het fragment begint met algemene Azure Machine Learning objecten, a `Workspace` , a `Datastore` , een [ComputeTarget](/python/api/azureml-core/azureml.core.computetarget?preserve-view=true&view=azure-ml-py)en een `Experiment` . Vervolgens maakt de code de objecten die moeten worden bewaard `input_data` en `output_data` . Het `input_data` is een exemplaar van [FileDataset](https://docs.microsoft.com/python/api/azureml-core/azureml.data.filedataset?view=azure-ml-py&preserve-view=true) en de `output_data` is een exemplaar van  [OutputFileDatasetConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true). Voor `OutputFileDatasetConfig` het standaard gedrag is het kopiëren van de uitvoer naar de `workspaceblobstore` gegevens opslag onder het pad `/dataset/{run-id}/{output-name}` , waarbij `run-id` de id van de uitvoeringsrun is en `output-name` een automatisch gegenereerde waarde als niet is opgegeven door de ontwikkelaar.
+
+De matrix `steps` bevat één element, een `PythonScriptStep` dat de gegevens objecten gaat gebruiken en wordt uitgevoerd op de `compute_target` . Vervolgens maakt de code een instantie `Pipeline` van het object zelf, waarbij de werk ruimte en de stappen matrix worden door gegeven. De aanroep om `experiment.submit(pipeline)` de Azure ml-pijplijn uitvoering te starten. De aanroep naar `wait_for_completion()` blokken tot de pijp lijn is voltooid. 
 
 Zie voor meer informatie over het verbinden van uw pijp lijn met uw gegevens de artikelen [gegevens toegang in azure machine learning](concept-data.md) en het [verplaatsen van gegevens naar en tussen ml-pijplijn stappen (python)](how-to-move-data-in-out-of-pipelines.md). 
 

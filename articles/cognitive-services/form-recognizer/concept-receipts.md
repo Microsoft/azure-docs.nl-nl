@@ -10,16 +10,16 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: 82f6c5989149b50a1ef5e6c6fb5350d474476436
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: 43eae43d11a48ee6c395e4a86b8e8c1353843991
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845468"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131442"
 ---
-# <a name="receipt-concepts"></a>Concepten van ontvangsten
+# <a name="form-recognizer-prebuilt-receipt-model"></a>Vooraf gegenereerde ontvangst model voor formulier herkenning
 
-Met een van de vooraf ontwikkelde modellen van Azure Form Recognizer kunt u ontvangst bevestigingen analyseren. De ontvangst-API extraheert belang rijke informatie uit verkoop ontvangsten in het Engels, zoals de naam van de verkoper, de transactie datum, het transactie totaal, de regel items en meer. 
+Azure Form Recognizer kan gegevens van verkoop ontvangsten analyseren en extra heren met behulp van het vooraf gegenereerde ontvangst model. Het combineert onze krachtige functies voor [optische teken herkenning (OCR)](https://docs.microsoft.com/azure/cognitive-services/computer-vision/concept-recognizing-text) met behulp van uitgebreide leer modellen voor het extra heren van belang rijke informatie uit de bevestigingen in het Engels. De ontvangst-API extraheert belang rijke informatie uit verkoop ontvangsten in het Engels, zoals de naam van de verkoper, de transactie datum, het transactie totaal, de regel items en meer. 
 
 ## <a name="understanding-receipts"></a>Over ontvangst bevestigingen 
 
@@ -27,32 +27,39 @@ Veel bedrijven en mede werkers vertrouwen nog steeds op hand matig gegevens uit 
 
 Het automatisch extra heren van gegevens van deze Ontvangstsen kan gecompliceerd zijn. Ontvangst bewijzen kunnen crumpled en moeilijk te lezen, gedrukte of handgeschreven onderdelen en smartphone installatie kopieën van kwitanties een lage kwaliteit hebben. Bovendien kunnen ontvangst sjablonen en-velden aanzienlijk verschillen per markt, regio en handelaar. Deze uitdagingen in zowel gegevens extractie als veld detectie maken ontvangst verwerking een uniek probleem.  
 
-Met behulp van optische teken herkenning (OCR) en ons vooraf gegenereerde ontvangst model kunnen de ontvangst-API deze scenario's voor ontvangst verwerking inschakelen en gegevens ophalen uit de bevestigingen, zoals de naam van de verkoper, de tip, het totaal, de regel items en nog veel meer. Bij deze API is het niet nodig om een model te trainen. u hoeft alleen maar de kwitantie naar de API voor het analyseren van gegevens te sturen.
+Met behulp van optische teken herkenning (OCR) en ons vooraf gegenereerde ontvangst model kunnen de ontvangst-API deze scenario's voor ontvangst verwerking inschakelen en gegevens ophalen uit de bevestigingen, zoals de naam van de verkoper, de tip, het totaal, de regel items en nog veel meer. Bij deze API is het niet nodig om een model te trainen. u hoeft alleen maar de ontvangst kopie te verzenden naar de API voor het analyseren van de kwitantie en de gegevens worden geëxtraheerd.
 
-![voorbeeld van aankoopbewijs](./media/contoso-receipt-small.png)
+![voorbeeld van aankoopbewijs](./media/receipts-example.jpg)
 
-## <a name="what-does-the-receipt-api-do"></a>Wat doet de ontvangst-API? 
 
-Met de vooraf samengestelde ontvangstbewijs-API wordt de inhoud van de verkoop ontvangsten uitgepakt op basis van &mdash; het type ontvangst bewijs dat u vaak bij een restaurant, een detail handelaar of een boodschappen winkel ontvangt.
+## <a name="what-does-the-receipt-service-do"></a>Wat doet de ontvangst service? 
+
+De vooraf ontwikkelde service voor ontvangst behaalt de inhoud van de verkoop ontvangsten &mdash; het type ontvangst bewijs dat u vaak bij een restaurant, een detail handelaar of een boodschappen archief ontvangt.
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden
 
-* Naam van handelaar 
-* Bedrijfs adres 
-* Telefoon nummer van handelaar 
-* Transactie datum 
-* Transactie tijd 
-* Subtotaal 
-* Btw 
-* Totaal 
-* Tip 
-* Extractie van regel items (bijvoorbeeld artikel aantal, artikel prijs, artikel naam)
+|Naam| Type | Beschrijving | Tekst | Waarde (gestandaardiseerde uitvoer) |
+|:-----|:----|:----|:----| :----|
+| ReceiptType | tekenreeks | Type verkoop ontvangst | Gespecificeerd |  |
+| Adverteerder | tekenreeks | Naam van de handelaar die de ontvangst heeft uitgegeven | Contoso |  |
+| MerchantPhoneNumber | phoneNumber | Weer gegeven telefoon nummer van handelaar | 987-654-3210 | + 19876543210 |
+| MerchantAddress | tekenreeks | Vermeld adres van handelaar | 123 Main St Redmond WA 98052 |  |
+| TransactionDate | date | De datum waarop de ontvangst is verzonden | 6 juni 2019 | 2019-06-26  |
+| TransactionTime | tijd | Tijdstip waarop de ontvangst is verzonden | 4:49 UUR | 16:49:00  |
+| Totaal | getal | Volledige transactie totaal van ontvangst | $14,34 | 14,34 |
+| Subtotaal | getal | Subtotaal van de ontvangst, vaak voordat belastingen worden toegepast | $12,34 | 12.34 |
+| Btw | getal | Belasting op ontvangst, vaak BTW of equivalent | $ 2,00 | 2,00 |
+| Tip | getal | Tip inbegrepen door de koper | $1,00 | 1,00 |
+| Items | matrix van objecten | Geëxtraheerde regel items, met naam, hoeveelheid, eenheids prijs en totale prijs geëxtraheerd | |
+| Naam | tekenreeks | Itemnaam | Surface Pro 6 | |
+| Aantal | getal | Hoeveelheid van elk item | 1 | |
+| Prijs | getal | Individuele prijs van elke artikel eenheid | $999,00 | 999,00 |
+| Totale prijs | getal | Totale prijs van het regel item | $999,00 | 999,00 |
 
 ### <a name="additional-features"></a>Aanvullende functies
 
 De kwitantie-API retourneert ook de volgende informatie:
 
-* Ontvangstbewijs type (zoals gespecificeerd, Credit Card, enzovoort)
 * Betrouwbaarheids niveau van veld (elk veld retourneert een bijbehorende betrouwbaarheids waarde)
 * OCR-onbewerkte tekst (OCR: geëxtraheerde tekst uitvoer voor de volledige ontvangst)
 * Selectie kader voor elke waarde, regel en woord

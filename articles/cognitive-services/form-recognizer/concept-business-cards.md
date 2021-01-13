@@ -10,39 +10,43 @@ ms.subservice: forms-recognizer
 ms.topic: conceptual
 ms.date: 08/17/2019
 ms.author: pafarley
-ms.openlocfilehash: ed57c496443c9d1541bfa9933e7718213da116d7
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: 1fd4279cd35e54e2e04f88973c4a825218a75142
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845615"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131119"
 ---
-# <a name="business-card-concepts"></a>Concepten van visitekaartjes
+# <a name="form-recognizer-prebuilt-business-cards-model"></a>Model voor het maken van een webkaart met formulier herkenning 
 
-Met een van de vooraf ontwikkelde modellen van Azure Form Recognizer kunt u contact gegevens van visite kaartjes analyseren en ophalen. De Business Card-API combineert krachtige functies voor optische teken herkenning (OCR) met ons model voor visite kaartjes voor het extra heren van belang rijke informatie uit visite kaartjes in het Engels. Hiermee worden persoonlijke contact gegevens, bedrijfs naam, functie titel en meer opgehaald. De vooraf ontwikkelde Business Card-API is openbaar beschikbaar in de preview-versie van de formulier Recognizer v 2.1. 
+Met Azure Form Recognizer kunnen contact gegevens van visite kaartjes worden geanalyseerd en geëxtraheerd met behulp van het vooraf ontwikkelde model voor visite kaartjes. U kunt krachtige functies voor optische teken herkenning (OCR) combi neren met ons model voor visite kaartjes voor het extra heren van belang rijke informatie uit visite kaartjes in het Engels. Hiermee worden persoonlijke contact gegevens, bedrijfs naam, functie titel en meer opgehaald. De vooraf ontwikkelde Business Card-API is openbaar beschikbaar in de preview-versie van de formulier Recognizer v 2.1. 
 
-## <a name="what-does-the-business-card-api-do"></a>Wat doet de Business Card API?
+## <a name="what-does-the-business-card-service-do"></a>Wat doet de Business Card-service?
 
-De Business Card-API extraheert belang rijke velden van visite kaartjes en retourneert deze in een geordend JSON-antwoord.
+De vooraf ontwikkelde Business Card-API extraheert belang rijke velden van visite kaartjes en retourneert deze in een geordend JSON-antwoord.
 
-![Contoso-geitemde installatie kopie van FOTT + JSON-uitvoer](./media/business-card-english.jpg)
+![Contoso-geitemde installatie kopie van FOTT + JSON-uitvoer](./media/business-card-example.jpg)
+
+
 
 ### <a name="fields-extracted"></a>Geëxtraheerde velden:
 
-* Namen van contact personen 
-  * Voor namen
-  * Achternamen
-* Bedrijfs namen 
-* Afdelingen 
-* Taak titels 
-* E-mails 
-* Websites 
-* Adressen 
-* Telefoonnummers 
-  * Mobiele telefoons 
-  * Faxberichten 
-  * Werk telefoons 
-  * Andere telefoons 
+|Naam| Type | Beschrijving | Tekst | 
+|:-----|:----|:----|:----|
+| ContactNames | matrix van objecten | Naam van contact persoon geëxtraheerd uit visite kaartje | [{"FirstName": "John", "LastName": "Jansen"}] |
+| FirstName | tekenreeks | Eerste (gegeven) naam van contact persoon | Letterlijk | 
+| LastName | tekenreeks | Naam van de laatste persoon (familie) |   Vries | 
+| Bedrijfs naam | tekenreeksmatrix | Bedrijfs naam opgehaald uit visite kaartje | ["Contoso"] | 
+| Afdelingen | tekenreeksmatrix | Afdeling of organisatie van contact persoon | ["R&D"] | 
+| JobTitles | tekenreeksmatrix | Titel van de vermelde functie van de contact persoon | [' Software-Engineer '] | 
+| E-mails | tekenreeksmatrix | Contact opnemen met e-mail opgehaald uit visite kaartje | ["johndoe@contoso.com"] | 
+| Websites | tekenreeksmatrix | Website geëxtraheerd uit visite kaartje | ["https://www.contoso.com"] | 
+| Adressen | tekenreeksmatrix | Adres opgehaald uit visite kaartje | ["123 hoofd straat, Redmond, WA 98052"] | 
+| MobilePhones | matrix van telefoon nummers | Mobiel telefoon nummer opgehaald uit visite kaartje | ["+ 19876543210"] |
+| Faxberichten | matrix van telefoon nummers | Telefoon nummer van Fax geëxtraheerd uit visite kaartje | ["+ 19876543211"] |
+| WorkPhones | matrix van telefoon nummers | Telefoon nummer werk geëxtraheerd uit visite kaartje | ["+ 19876543231"] |
+| OtherPhones    | matrix van telefoon nummers | Ander telefoon nummer opgehaald van visite kaartje | ["+ 19876543233"] |
+
 
 De API voor het visite kaartje kan ook alle herkende tekst van de visite kaart retour neren. Deze OCR-uitvoer is opgenomen in het JSON-antwoord.  
 

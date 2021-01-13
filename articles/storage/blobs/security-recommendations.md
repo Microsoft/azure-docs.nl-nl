@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: tamram
 ms.custom: security-recommendations
-ms.openlocfilehash: 1593c47b7a6cf3b861f3e1af148b7a5fbfae9a19
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 55c4fa00cfd20a83e65a3d57c6020991734f9d9f
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127376"
+ms.locfileid: "98132474"
 ---
 # <a name="security-recommendations-for-blob-storage"></a>Beveiligings aanbevelingen voor Blob Storage
 
@@ -31,8 +31,8 @@ Azure Security Center regel matig de beveiligings status van uw Azure-resources 
 |-|----|--|
 | Het Azure Resource Manager-implementatie model gebruiken | Maak nieuwe opslag accounts met behulp van het Azure Resource Manager-implementatie model voor belang rijke verbeteringen in de beveiliging, waaronder superieure Azure-functies voor op rollen gebaseerd toegangs beheer (Azure RBAC) en controle, implementatie en beheer op basis van een resource manager, toegang tot beheerde identiteiten, toegang tot Azure Key Vault voor geheimen en verificatie en autorisatie op basis van Azure AD voor toegang tot Azure Storage gegevens en bronnen. Als dat mogelijk is, migreert u bestaande opslag accounts die gebruikmaken van het klassieke implementatie model om Azure Resource Manager te gebruiken. Zie [Azure Resource Manager Overview](../../azure-resource-manager/management/overview.md)voor meer informatie over Azure Resource Manager. | - |
 | Azure Defender inschakelen voor al uw opslag accounts | Azure Defender voor Azure Storage biedt een extra beveiligingslaag die ongebruikelijke en mogelijk schadelijke pogingen detecteert om toegang te krijgen tot of misbruik te maken van opslag accounts. Beveiligings waarschuwingen worden in Azure Security Center geactiveerd wanneer afwijkingen in de activiteit optreden en ook via e-mail worden verzonden naar abonnements beheerders, met details over verdachte activiteiten en aanbevelingen voor het onderzoeken en oplossen van bedreigingen. Zie [Azure Defender configureren voor Azure Storage](../common/azure-defender-storage-configure.md)voor meer informatie. | [Ja](../../security-center/security-center-sql-service-recommendations.md) |
-| Zacht verwijderen inschakelen voor blobs | Met zacht verwijderen kunt u BLOB-gegevens herstellen nadat deze is verwijderd. Voor meer informatie over zacht verwijderen, Zie [voorlopig verwijderen voor Azure Storage-blobs](./soft-delete-blob-overview.md). | - |
-| Voorlopig verwijderen inschakelen voor containers | ???. | - |
+| Zacht verwijderen inschakelen voor blobs | Met zacht verwijderen voor blobs kunt u BLOB-gegevens herstellen nadat deze is verwijderd. Zie voor meer informatie over het voorlopig verwijderen van blobs de [voor het voorlopig verwijderen van Azure Storage-blobs](./soft-delete-blob-overview.md). | - |
+| Voorlopig verwijderen inschakelen voor containers | Met zacht verwijderen voor containers kunt u een container herstellen nadat deze is verwijderd. Zie [voorlopig verwijderen voor containers (preview)](./soft-delete-container-overview.md)voor meer informatie over het voorlopig verwijderen van containers. | - |
 | Het opslag account vergren delen om te voor komen dat er onbedoeld accounts worden verwijderd | U kunt een Azure Resource Manager resources, zoals een abonnement, een resource groep of een opslag account, vergren delen om te voor komen dat andere gebruikers in uw organisatie per ongeluk deze verwijderen of wijzigen. Het vergren delen van een opslag account voor komt niet dat gegevens in dat account kunnen worden verwijderd. Hiermee wordt alleen voor komen dat het account zelf wordt verwijderd. Zie voor meer informatie [bronnen vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md).
 | Bedrijfs kritieke gegevens opslaan in onveranderbare blobs | Configureer juridische bewaringen en bewaar beleidsregels op basis van tijd voor het opslaan van BLOB-gegevens in een WORM (Write Once, Read Many). De opgeslagen immutably van blobs kunnen worden gelezen, maar kunnen niet worden gewijzigd of verwijderd voor de duur van de Bewaar periode. Zie voor meer informatie [bedrijfs kritieke BLOB-gegevens opslaan met onveranderlijke opslag](storage-blob-immutable-storage.md). | - |
 | Beveiligde overdracht (HTTPS) naar het opslag account vereisen | ??? | - |

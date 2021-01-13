@@ -13,12 +13,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 12/01/2020
 tags: azure-synapse
-ms.openlocfilehash: c3f1209c2c903399617bd60258cc152a6ce90b80
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: ece76f0017a72484f5c4e66b2ab8c7e71d32f1a7
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462075"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132017"
 ---
 # <a name="data-discovery--classification"></a>Gegevensdetectie en -classificatie
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -28,7 +28,7 @@ Gegevens detectie & classificatie is ingebouwd in Azure SQL Database, Azure SQL 
 Uw meest gevoelige gegevens kunnen bedrijfs-, financiële, gezondheids zorg of persoonlijke informatie bevatten. Het detecteren en classificeren van deze gegevens kan een draai functie spelen in de aanpak van de gegevens beveiliging van uw organisatie. Dit kan dienen als infrastructuur om:
 
 - Helpt te voldoen aan normen voor gegevens bescherming en vereisten voor naleving van de regelgeving.
-- Diverse beveiligings scenario's, zoals controle (controle) en waarschuwingen over afwijkende toegang tot gevoelige gegevens.
+- Diverse beveiligings scenario's, zoals controle (controle), toegang tot gevoelige gegevens.
 - Het beheren van de toegang tot en het beveiligen van de beveiliging van data bases die uiterst gevoelige gegevens bevatten.
 
 > [!NOTE]
@@ -75,7 +75,7 @@ Nadat u het beleid voor de hele organisatie hebt gedefinieerd, kunt u afzonderli
 > [!NOTE]
 > In het onderstaande voor beeld wordt Azure SQL Database gebruikt, maar u moet het juiste product selecteren dat u wilt configureren voor de classificatie van gegevens detectie &.
 
-1. Ga naar [Azure Portal](https://portal.azure.com).
+1. Ga naar de [Azure Portal](https://portal.azure.com).
 
 1. Ga naar **gegevens detectie & classificatie** onder de kop **beveiliging** in het deel venster Azure SQL database. Het tabblad Overzicht bevat een samen vatting van de huidige classificatie status van de data base. De samen vatting bevat een gedetailleerde lijst met alle geclassificeerde kolommen, die u ook kunt filteren om alleen specifieke schema onderdelen, informatie typen en labels weer te geven. Als u nog geen kolommen hebt geclassificeerd, [gaat u verder met stap 4](#step-4).
 

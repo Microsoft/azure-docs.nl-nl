@@ -11,12 +11,12 @@ ms.reviewer: nibaccam
 ms.date: 03/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 8c9beaca0fb3ee7881559ffcc955f171bc2ddd7b
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 7eb8010853ba370f4502b6bc155c6a098e64965b
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886444"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133443"
 ---
 # <a name="version-and-track-datasets-in-experiments"></a>Versie gegevens sets in experimenten bijhouden
 
@@ -166,9 +166,7 @@ Hier volgen enkele scenario's waarin uw gegevens worden bijgehouden als een **in
 Hier volgen enkele scenario's waarin uw gegevens worden bijgehouden als een **uitvoer gegevensset**.  
 
 * Geef een `OutputFileDatasetConfig` object door via de `outputs` `arguments` para meter of bij het verzenden van een experiment dat moet worden uitgevoerd. `OutputFileDatasetConfig` objecten kunnen ook worden gebruikt om gegevens op te slaan tussen pijplijn stappen. Zie [gegevens verplaatsen tussen ml-pijplijn stappen.](how-to-move-data-in-out-of-pipelines.md)
-    > [!TIP]
-    > [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) is een open bare preview-klasse met [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#&preserve-view=truestable-vs-experimental) preview-functies die op elk gewenst moment kunnen worden gewijzigd.
-
+  
 * Registreer een gegevensset in het script. Voor dit scenario is de naam die is toegewezen aan de gegevensset wanneer u deze registreert in de werk ruimte, de naam die wordt weer gegeven. In het volgende voor beeld `training_ds` is de naam die wordt weer gegeven.
 
     ```Python

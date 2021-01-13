@@ -4,12 +4,12 @@ description: Dit artikel bevat informatie over het schrijven van code voor Azure
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4f95abe3668bb400d84e354c3bca9eac289c5795
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 46bd0c3c1488d6dd7afbae5e88e0b83f56654bb8
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108684"
+ms.locfileid: "98131233"
 ---
 # <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>.NET-programmeer handleiding voor Azure Event Hubs (verouderd micro soft. Azure. Event hubs-pakket)
 In dit artikel worden enkele algemene scenario's beschreven voor het schrijven van code met behulp van Azure Event Hubs. Er wordt uitgegaan van een basisbegrip van Event Hubs. Zie het [Overzicht van Event Hubs](./event-hubs-about.md) voor een conceptueel overzicht van Event Hubs.
@@ -77,7 +77,7 @@ Bij het verzenden van gebeurtenis gegevens kunt u een waarde opgeven die wordt g
 
 ### <a name="availability-considerations"></a>Beschikbaarheidsoverwegingen
 
-Het gebruik van een partitie sleutel is optioneel en Overweeg zorgvuldig of u er een moet gebruiken. Als u bij het publiceren van een gebeurtenis geen partitiesleutel opgeeft, wordt er gebruikgemaakt van round robin-toewijzing. In veel gevallen is het gebruik van een partitie sleutel een goede keuze als de volg orde van de gebeurtenissen belang rijk is. Wanneer u een partitie sleutel gebruikt, zijn voor deze partities Beschik baarheid op één knoop punt vereist en kunnen er storingen optreden in de loop van de tijd. bijvoorbeeld wanneer reken knooppunten opnieuw worden opgestart en patch. Als u een partitie-ID instelt en deze partitie om een of andere reden niet meer beschikbaar is, mislukt de poging om toegang te krijgen tot de gegevens in die partitie. Als hoge Beschik baarheid het belangrijkst is, hoeft u geen partitie sleutel op te geven. in dat geval worden gebeurtenissen naar partities verzonden met behulp van het Round-Robin model dat eerder is beschreven. In dit scenario maakt u een expliciete keuze tussen Beschik baarheid (geen partitie-ID) en consistentie (het vastmaken van gebeurtenissen aan een partitie-ID).
+Het gebruik van een partitie sleutel is optioneel en Overweeg zorgvuldig of u er een moet gebruiken. Als u geen partitie sleutel opgeeft bij het publiceren van een gebeurtenis, Event Hubs balanceert u de belasting tussen de partities. In veel gevallen is het gebruik van een partitie sleutel een goede keuze als de volg orde van de gebeurtenissen belang rijk is. Wanneer u een partitie sleutel gebruikt, zijn voor deze partities Beschik baarheid op één knoop punt vereist en kunnen er storingen optreden in de loop van de tijd. bijvoorbeeld wanneer reken knooppunten opnieuw worden opgestart en patch. Als u een partitie-ID instelt en deze partitie om een of andere reden niet meer beschikbaar is, mislukt de poging om toegang te krijgen tot de gegevens in die partitie. Als hoge Beschik baarheid het belangrijkst is, geeft u geen partitie sleutel op. In dat geval worden gebeurtenissen via een intern taakverdelings algoritme verzonden naar partities. In dit scenario maakt u een expliciete keuze tussen Beschik baarheid (geen partitie-ID) en consistentie (het vastmaken van gebeurtenissen aan een partitie-ID).
 
 Een andere overweging is het verwerken van vertragingen bij het verwerken van gebeurtenissen. In sommige gevallen kan het beter zijn om gegevens te verwijderen en opnieuw te proberen dan om de verwerking te blijven uitvoeren. Dit kan leiden tot verdere downstream verwerkings vertragingen. Met een aandelen tikker is het echter beter te wachten op de volledige actuele gegevens, maar in een live chat-of VOIP-scenario kunt u in plaats daarvan snel de gegevens gebruiken, zelfs als deze niet volledig zijn.
 

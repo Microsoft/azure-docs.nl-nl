@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.custom: mvc
 ms.topic: troubleshooting
 ms.date: 02/20/2020
-ms.openlocfilehash: 200753c6458698d515b02252933e4fdf6d88df55
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 460380d9435528dcd8cbb3f877c8034fdc34f50c
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019088"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134144"
 ---
 # <a name="faq-about-using-azure-database-migration-service"></a>Veelgestelde vragen over het gebruik van Azure Database Migration Service
 
@@ -109,7 +109,7 @@ Tijdens een typische, eenvoudige database migratie:
 ## <a name="troubleshooting-and-optimization"></a>Problemen oplossen en optimaliseren
 
 **Nils. Ik stel een migratie project in op DMS en ik ondervind problemen bij het maken van verbinding met mijn bron database. Wat moet ik doen?**
-Als u problemen ondervindt bij het maken van verbinding met uw bron database systeem tijdens het werken met de migratie, maakt u een virtuele machine in het virtuele netwerk waarmee u uw DMS-exemplaar hebt ingesteld. In de virtuele machine moet u een verbindings test kunnen uitvoeren, zoals het gebruik van een UDL-bestand om een verbinding met SQL Server te testen of om Robo 3T gebruiken te downloaden om MongoDB-verbindingen te testen. Als de verbindings test is geslaagd, hebt u geen probleem met het maken van verbinding met de bron database. Als de verbindings test niet slaagt, neemt u contact op met uw netwerk beheerder.
+Als u problemen ondervindt bij het maken van verbinding met uw bron database systeem tijdens het werken met de migratie, maakt u een virtuele machine in hetzelfde subnet van het virtuele netwerk waarmee u uw DMS-exemplaar hebt ingesteld. In de virtuele machine moet u een verbindings test kunnen uitvoeren, zoals het gebruik van een UDL-bestand om een verbinding met SQL Server te testen of om Robo 3T gebruiken te downloaden om MongoDB-verbindingen te testen. Als de verbindings test is geslaagd, hebt u geen probleem met het maken van verbinding met de bron database. Als de verbindings test niet slaagt, neemt u contact op met uw netwerk beheerder.
 
 **Nils. Waarom is mijn Azure Database Migration Service niet beschikbaar of gestopt?**
 Als de gebruiker de Azure Database Migration Service (DMS) expliciet stopt of als de service gedurende een periode van 24 uur inactief is, wordt de status van de service gestopt of automatisch onderbroken. In elk geval is de service niet beschikbaar en is de status gestopt.  Als u actieve migraties wilt hervatten, start u de service opnieuw.

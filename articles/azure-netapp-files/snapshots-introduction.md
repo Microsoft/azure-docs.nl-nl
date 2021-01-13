@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/11/2021
+ms.date: 01/12/2021
 ms.author: b-juche
-ms.openlocfilehash: 4d21f7c4e74a87e409a73b22fc6b316e97e24a4e
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: beadd250ec4472b894f0f474b1057ad44cf474ed
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122363"
+ms.locfileid: "98133511"
 ---
 # <a name="how-azure-netapp-files-snapshots-work"></a>Hoe Azure NetApp Files moment opnamen werken?
 
@@ -37,11 +37,11 @@ De volgende diagrammen illustreren de concepten:
 
 ![Diagrammen waarin de belangrijkste concepten van moment opnamen worden weer gegeven](../media/azure-netapp-files/snapshot-concepts.png)
 
-In de bovenstaande diagrammen wordt een moment opname gemaakt in afbeelding 1a. In afbeelding 1b worden gewijzigde gegevens naar een *nieuw blok* geschreven en wordt de aanwijzer bijgewerkt. De snap shot-pointer wijst echter wel naar het *eerder geschreven blok*, waardoor u een live en een historisch overzicht van de gegevens krijgt. In afbeelding 1C wordt een andere moment opname gemaakt. U hebt nu toegang tot drie generaties gegevens (de dynamische gegevens, moment opname 2 en moment opnamen 1, in volg orde van leeftijd), zonder de volume ruimte te nemen die drie volledige kopieën nodig zouden hebben. 
+In de diagrammen wordt een moment opname gemaakt in afbeelding 1a. In afbeelding 1b worden gewijzigde gegevens naar een *nieuw blok* geschreven en wordt de aanwijzer bijgewerkt. De snap shot-pointer wijst echter wel naar het *eerder geschreven blok*, waardoor u een live en een historisch overzicht van de gegevens krijgt. In afbeelding 1C wordt een andere moment opname gemaakt. U hebt nu toegang tot drie generaties gegevens (de dynamische gegevens, moment opname 2 en moment opnamen 1, in volg orde van leeftijd), zonder de volume ruimte te nemen die drie volledige kopieën nodig zouden hebben. 
 
 Een moment opname heeft alleen een kopie van de meta gegevens van het volume (*inode-tabel*). Het duurt slechts enkele seconden om te maken, ongeacht de grootte van het volume, de gebruikte capaciteit of het niveau van de activiteit op het volume. Het maken van een moment opname van een 100-volume duurt dus hetzelfde (na nul) wanneer een moment opname van een 100-GiB-volume wordt gemaakt. Nadat een moment opname is gemaakt, worden wijzigingen in gegevens bestanden weer gegeven in de actieve versie van de bestanden, zoals normaal.
 
-Ondertussen blijven de gegevens blokken die naar van een moment opname verwijzen, stabiel en onveranderbaar. Vanwege de aard ' omleiden bij schrijven ' van Azure NetApp Files moment opnamen, maakt een moment opname geen gebruik van eventuele ruimte op de prestatie overhead. U kunt Maxi maal 255 moment opnamen per volume in de loop van de tijd opslaan, die allemaal toegankelijk zijn als alleen-lezen en online versies van de gegevens, waarbij net zo weinig capaciteit wordt verbruikt als het aantal gewijzigde blokken tussen elke moment opname. Gewijzigde blokken worden opgeslagen in het actieve volume. Blokken naar in moment opnamen worden bewaard (als alleen-lezen) in het volume voor het bewaren van Bewaar doeleinden, zodat ze alleen kunnen worden gewijzigd wanneer alle moment opnamen (aanwijzers) zijn gewist. Daarom neemt het volume gebruik toe gedurende een periode, omdat er nieuwe gegevens blokken of (gewijzigde) gegevens blokken worden bewaard in moment opnamen.
+Ondertussen blijven de gegevens blokken die naar van een moment opname verwijzen, stabiel en onveranderbaar. Vanwege de aard ' omleiden bij schrijven ' van Azure NetApp Files volumes, maakt een moment opname geen gebruik van de prestatie overhead en wordt er geen ruimte verbruikt. U kunt Maxi maal 255 moment opnamen per volume in de loop van de tijd opslaan, die allemaal toegankelijk zijn als alleen-lezen en online versies van de gegevens, waarbij net zo weinig capaciteit wordt verbruikt als het aantal gewijzigde blokken tussen elke moment opname. Gewijzigde blokken worden opgeslagen in het actieve volume. Blokken waarnaar in moment opnamen wordt gewijsd, worden in het volume bewaard (als alleen-lezen), zodat ze alleen opnieuw kunnen worden besteld wanneer alle pointers (in het actieve volume en moment opnamen) zijn gewist. Daarom neemt het volume gebruik toe gedurende een periode, omdat er nieuwe gegevens blokken of (gewijzigde) gegevens blokken worden bewaard in moment opnamen.
 
  In het volgende diagram ziet u de moment opnamen van een volume en gebruikte ruimte gedurende een bepaalde periode: 
 
@@ -56,7 +56,7 @@ Omdat een volume momentopname alleen de wijzigingen van het blok heeft geregistr
     Het duurt slechts enkele seconden om een moment opname te maken, te repliceren, te herstellen of te klonen, ongeacht de grootte van het volume en het niveau van de activiteiten. U kunt [op aanvraag](azure-netapp-files-manage-snapshots.md#create-an-on-demand-snapshot-for-a-volume)een moment opname van een volume maken. U kunt ook een [momentopname beleid](azure-netapp-files-manage-snapshots.md#manage-snapshot-policies) gebruiken om op te geven wanneer Azure NetApp files automatisch een moment opname moet maken en hoeveel moment opnamen voor een volume moeten worden bewaard.  Toepassings consistentie kan worden bereikt door moment opnamen te organiseren met de toepassingslaag, bijvoorbeeld met behulp van het [hulp programma AzAcSnap](azacsnap-introduction.md) voor SAP Hana.
 
 _ Moment opnamen hebben geen invloed op het volume ***prestaties** _.   
-    Vanwege het ' omleiden van de aard van de onderhouds technologie, het opslaan of bewaren van Azure NetApp Files moment opnamen heeft geen invloed op de prestaties, zelfs met een zware gegevens activiteit. Het verwijderen van een moment opname heeft in veel gevallen ook weinig gevolgen voor de prestaties. 
+    Vanwege het ' omleiden van de aard van de onderhouds technologie, het opslaan of bewaren van Azure NetApp Files moment opnamen heeft geen invloed op de prestaties, zelfs met een zware gegevens activiteit. Het verwijderen van een moment opname heeft in de meeste gevallen ook weinig gevolgen voor de prestaties. 
 
 _ Moment opnamen bieden ***schaal baarheid** _ omdat ze regel matig kunnen worden gemaakt en veel kunnen worden bewaard.   
     Azure NetApp Files-volumes bieden ondersteuning voor Maxi maal 255 moment opnamen. De mogelijkheid om een groot aantal, vaak gemaakte moment opnamen met weinig effect op te slaan, verhoogt de kans dat de gewenste versie van gegevens correct kan worden hersteld.
@@ -66,7 +66,7 @@ De hoge prestaties, schaal baarheid en stabiliteit van Azure NetApp Files snap s
 
 ## <a name="ways-to-create-snapshots"></a>Manieren om moment opnamen te maken   
 
-Azure NetApp Files moment opnamen zijn veelzijdig in gebruik. Zo zijn er meerdere methoden beschikbaar voor het maken en onderhouden van moment opnamen:
+U kunt verschillende methoden gebruiken om moment opnamen te maken en te onderhouden:
 
 _ Hand matig (op aanvraag) door gebruik te maken van:   
     * De [Azure Portal](azure-netapp-files-manage-snapshots.md#create-an-on-demand-snapshot-for-a-volume), [rest API](/rest/api/netapp/snapshots), [Azure cli](/cli/azure/netappfiles/snapshot)of [Power shell](/powershell/module/az.netappfiles/new-aznetappfilessnapshot) -hulpprogram ma's
@@ -78,7 +78,7 @@ _ Hand matig (op aanvraag) door gebruik te maken van:
 
 ## <a name="how-volumes-and-snapshots-are-replicated-cross-region-for-dr"></a>Hoe volumes en moment opnamen worden gerepliceerd tussen regio's voor DR  
 
-Azure NetApp Files ondersteunt [replicatie tussen regio's](cross-region-replication-introduction.md) voor nood herstel (Dr). Azure NetApp Files replicatie tussen regio's maakt gebruik van de SnapMirror-technologie. Alleen gewijzigde blokken worden via het netwerk verzonden met een gecomprimeerde, efficiënte indeling. Nadat een replicatie tussen de verschillende regio's tussen de volumes is gestart, worden de gehele volume-inhoud (dat wil zeggen, de daad werkelijke opgeslagen gegevens blokken) slechts één keer overgedragen. Deze bewerking wordt een *basislijn overdracht* genoemd. Na de eerste overdracht worden alleen gewijzigde blokken (zoals vastgelegd in moment opnamen) overgedragen. Er wordt een asynchrone 1:1-replica van het bron volume gemaakt (met inbegrip van alle moment opnamen).  Dit gedrag volgt een volledig en incrementeel replicatie mechanisme. Deze bedrijfseigen technologie minimaliseert de hoeveelheid gegevens die nodig zijn replicatie tussen regio's uit te voeren, waardoor kosten voor gegevensoverdracht worden bespaard. Ook wordt de replicatie tijd verkort. U kunt een kleinere RPO (Recovery Point objectief) bewezenlijken, omdat er meer moment opnamen kunnen worden gemaakt en vaker worden overgedragen met beperkte gegevens overdrachten.
+Azure NetApp Files ondersteunt [replicatie tussen regio's](cross-region-replication-introduction.md) voor nood herstel (Dr). Azure NetApp Files replicatie tussen regio's maakt gebruik van de SnapMirror-technologie. Alleen gewijzigde blokken worden via het netwerk verzonden met een gecomprimeerde, efficiënte indeling. Nadat een replicatie tussen de verschillende regio's tussen de volumes is gestart, worden de gehele volume-inhoud (dat wil zeggen, de daad werkelijke opgeslagen gegevens blokken) slechts één keer overgedragen. Deze bewerking wordt een *basislijn overdracht* genoemd. Na de eerste overdracht worden alleen gewijzigde blokken (zoals vastgelegd in moment opnamen) overgedragen. Het resultaat is een asynchrone 1:1 replica van het bron volume, inclusief alle moment opnamen. Dit gedrag volgt een volledig en incrementeel replicatie mechanisme. Deze technologie minimaliseert de hoeveelheid gegevens die nodig zijn voor replicatie over de regio's, waardoor de kosten voor gegevens overdracht worden bespaard. Ook wordt de replicatie tijd verkort. U kunt een kleinere RPO (Recovery Point objectief) bewezenlijken, omdat er meer moment opnamen kunnen worden gemaakt en vaker worden overgedragen met beperkte gegevens overdrachten. Verder is er geen behoefte aan replicatie mechanismen op basis van hosts, waardoor de kosten voor de virtuele machine en software licenties worden voor komen.
 
 Het volgende diagram toont het verkeer van de moment opname in scenario's voor replicatie tussen regio's: 
 
@@ -90,7 +90,7 @@ De Azure NetApp Files snap shot-technologie verbetert de frequentie en de betrou
 
 ### <a name="restoring-files-or-directories-from-snapshots"></a>Bestanden of mappen terugzetten vanuit moment opnamen 
 
-Als [zicht baarheid van moment opnamen](azure-netapp-files-manage-snapshots.md#edit-the-hide-snapshot-path-option) niet is verborgen, kunnen gebruikers rechtstreeks toegang krijgen tot moment opnamen om ze te herstellen tegen onbedoeld verwijderen, beschadiging of wijziging van hun gegevens. De beveiliging van bestanden en mappen wordt in de moment opname bewaard en moment opnamen zijn alleen-lezen. Als zodanig is de herstel bewerking veilig en eenvoudig. 
+Als de [zicht baarheid van het pad naar de moment opname](azure-netapp-files-manage-snapshots.md#edit-the-hide-snapshot-path-option) niet is ingesteld op `hidden` , kunnen gebruikers rechtstreeks toegang krijgen tot moment opnamen om ze te herstellen van onopzettelijke verwijderingen, beschadigingen of wijzigingen van hun gegevens. De beveiliging van bestanden en mappen wordt in de moment opname bewaard en moment opnamen zijn alleen-lezen. Als zodanig is de herstel bewerking veilig en eenvoudig. 
 
 In het volgende diagram wordt weer gegeven dat het bestand of de map toegang heeft tot een moment opname: 
 
@@ -108,7 +108,7 @@ Zie [een bestand herstellen vanuit een moment opname met een client over het](az
 
 ### <a name="restoring-cloning-a-snapshot-to-a-new-volume"></a>Een moment opname terugzetten (klonen) naar een nieuw volume
 
-Azure NetApp Files moment opnamen kunnen worden hersteld naar een afzonderlijk, onafhankelijk volume. Deze bewerking bevindt zich bijna onmiddellijk, ongeacht de grootte van het volume en de verbruikte capaciteit. Het zojuist gemaakte volume is bijna onmiddellijk beschikbaar voor toegang, terwijl de werkelijke volume-en momentopname gegevens blokken worden gekopieerd. Afhankelijk van de grootte en capaciteit van het volume kan dit proces veel tijd in beslag nemen, waardoor het bovenliggende volume en de moment opname niet kunnen worden verwijderd. Het volume kan echter al worden geopend na het maken van de eerste keer dat het kopieer proces op de achtergrond wordt uitgevoerd. Met deze mogelijkheid maakt u snel een volume voor het maken van gegevens herstel of het klonen van volumes voor testen en ontwikkeling. Op basis van het proces van het kopiëren van gegevens wordt het verbruik van de opslag capaciteit verdubbeld wanneer de herstel bewerking is voltooid. het nieuwe volume toont de volledige actieve capaciteit van de oorspronkelijke moment opname. Nadat dit proces is voltooid, is het volume onafhankelijk en niet gekoppeld aan het oorspronkelijke volume en kunnen bron volumes en moment opnamen onafhankelijk van het nieuwe volume worden beheerd of verwijderd.
+U kunt Azure NetApp Files moment opnamen herstellen naar een afzonderlijk, onafhankelijk volume. Deze bewerking bevindt zich bijna onmiddellijk, ongeacht de grootte van het volume en de verbruikte capaciteit. Het zojuist gemaakte volume is bijna onmiddellijk beschikbaar voor toegang, terwijl de werkelijke volume-en momentopname gegevens blokken worden gekopieerd. Afhankelijk van de grootte en capaciteit van het volume kan dit proces veel tijd in beslag nemen, waardoor het bovenliggende volume en de moment opname niet kunnen worden verwijderd. Het volume kan echter al worden geopend na het maken van de eerste keer dat het kopieer proces op de achtergrond wordt uitgevoerd. Met deze mogelijkheid maakt u snel een volume voor het maken van gegevens herstel of het klonen van volumes voor testen en ontwikkeling. Op basis van het proces van het kopiëren van gegevens wordt het verbruik van de opslag capaciteit verdubbeld wanneer de herstel bewerking is voltooid. het nieuwe volume toont de volledige actieve capaciteit van de oorspronkelijke moment opname. Nadat dit proces is voltooid, is het volume onafhankelijk en niet gekoppeld aan het oorspronkelijke volume en kunnen bron volumes en moment opnamen onafhankelijk van het nieuwe volume worden beheerd of verwijderd.
 
 In het volgende diagram ziet u een nieuw volume dat is gemaakt door een moment opname te herstellen (te klonen):   
 
@@ -124,7 +124,7 @@ Zie [een moment opname herstellen naar een nieuw volume](azure-netapp-files-mana
 
 ### <a name="restoring-reverting-a-snapshot-in-place"></a>Een moment opname op locatie terugzetten (herstellen)
 
-In sommige gevallen, omdat het nieuwe volume de opslag capaciteit gebruikt, is het maken van een nieuw volume van een moment opname mogelijk niet nodig of niet nodig. Als u gegevens beschadiging wilt herstellen (bijvoorbeeld beschadigingen van de data base of Ransomware-aanvallen), is het wellicht beter om een moment opname te herstellen binnen het volume zelf. Deze bewerking kan worden uitgevoerd met behulp van de functie voor het terugzetten van Azure NetApp Files moment opnamen. Deze functie stelt u in staat om snel een volume terug te zetten naar de status waarin deze zich bevond toen een bepaalde moment opname werd gemaakt. In de meeste gevallen is het herstellen van een volume veel sneller dan het herstellen van afzonderlijke bestanden van een moment opname naar het actieve bestands systeem, met name op grote volumes met meerdere TiB. 
+In sommige gevallen, omdat het nieuwe volume de opslag capaciteit gebruikt, is het maken van een nieuw volume van een moment opname mogelijk niet nodig of niet nodig. Als u snel gegevens beschadiging wilt herstellen (bijvoorbeeld beschadigingen van de data base of Ransomware-aanvallen), is het wellicht beter om een moment opname te herstellen binnen het volume zelf. Deze bewerking kan worden uitgevoerd met behulp van de functie voor het terugzetten van Azure NetApp Files moment opnamen. Deze functie stelt u in staat om snel een volume terug te zetten naar de status waarin deze zich bevond toen een bepaalde moment opname werd gemaakt. In de meeste gevallen is het herstellen van een volume veel sneller dan het herstellen van afzonderlijke bestanden van een moment opname naar het actieve bestands systeem, met name op grote volumes met meerdere TiB. 
 
 Het terugdraaien van een volume momentopname is bijna onmiddellijk en duurt slechts enkele seconden, zelfs voor de grootste volumes. De meta gegevens van het actieve volume (*inode-tabel*) worden vervangen door de meta gegevens van de moment opname van de moment opname, waardoor het volume wordt teruggedraaid naar het specifieke punt in de tijd. Er hoeven geen gegevens blokken te worden gekopieerd om de wijziging door te voeren. Daarom is het meer ruimte efficiënt dan het herstellen van een moment opname naar een nieuw volume. 
 
@@ -142,11 +142,11 @@ Zie [een volume herstellen met behulp van moment opnamen reverteren](azure-netap
 Moment opnamen gebruiken de opslag capaciteit. Daarom worden ze doorgaans niet voor onbepaalde tijd bewaard. Voor gegevens bescherming, retentie en herstel baarheid wordt een aantal moment opnamen (die op verschillende tijdstippen zijn gemaakt) doorgaans online gehouden voor een bepaalde duur, afhankelijk van de RPO-, RTO-en bewaar vereisten. Oudere moment opnamen hoeven echter vaak niet op de opslag service te worden bewaard en moeten mogelijk worden verwijderd om ruimte vrij te maken. Een moment opname kan op elk gewenst moment worden verwijderd (niet noodzakelijkerwijs om te worden gemaakt) door een beheerder. 
 
 > [!IMPORTANT]
-> De bewerking voor het verwijderen van de moment opname kan niet ongedaan worden gemaakt. 
+> De bewerking voor het verwijderen van de moment opname kan niet ongedaan worden gemaakt. U moet offline kopieën van het volume behouden voor gegevens bescherming en bewaar doeleinden. 
 
 Wanneer een moment opname wordt verwijderd, worden alle verwijzingen van die moment opname naar bestaande gegevens blokken verwijderd. Wanneer een gegevens blok geen aanwijzers meer aanwijst (door het actieve volume of andere moment opnamen in het volume), wordt het gegevens blok teruggestuurd naar de vrije ruimte op het volume voor toekomstig gebruik. Daarom vrijmaakt moment opnamen meestal meer capaciteit op een volume dan het verwijderen van gegevens van het actieve volume, omdat gegevens blokken vaak worden vastgelegd in eerder gemaakte moment opnamen. 
 
-In het volgende diagram ziet u het effect van het opslag verbruik van moment opnamen verwijderen voor een volume:  
+In het volgende diagram ziet u het effect van het opslag verbruik van moment opname 3 verwijdering van een volume:  
 
 ![Diagram dat het effect van het opslag verbruik van moment opnamen verwijderen weergeeft](../media/azure-netapp-files/snapshot-delete-storage-consumption.png)
 

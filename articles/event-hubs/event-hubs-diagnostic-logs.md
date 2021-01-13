@@ -3,21 +3,21 @@ title: Diagnostische logboeken instellen-Azure Event hub | Microsoft Docs
 description: Meer informatie over het instellen van activiteiten logboeken en Diagnostische logboeken voor Event hubs in Azure.
 ms.topic: article
 ms.date: 10/27/2020
-ms.openlocfilehash: a7230746dc4225b04b0507c872416368aa14442b
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: 015814b9a56ec963f5209f971f096ac6c173d7e1
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92912596"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131981"
 ---
 # <a name="set-up-diagnostic-logs-for-an-azure-event-hub"></a>Diagnostische logboeken instellen voor een Azure Event Hub
 
 U kunt twee typen logboeken voor Azure Event Hubs bekijken:
 
-* **[Activiteiten logboeken](../azure-monitor/platform/platform-logs-overview.md)** : deze logboeken bevatten informatie over bewerkingen die zijn uitgevoerd voor een taak. De logboeken zijn altijd ingeschakeld. U kunt de vermeldingen in het activiteiten logboek bekijken door **activiteiten logboek** te selecteren in het linkerdeel venster voor uw event hub naam ruimte in de Azure Portal. Bijvoorbeeld: ' naam ruimte maken of bijwerken ', ' event hub maken of bijwerken '.
+* **[Activiteiten logboeken](../azure-monitor/platform/platform-logs-overview.md)**: deze logboeken bevatten informatie over bewerkingen die zijn uitgevoerd voor een taak. De logboeken zijn altijd ingeschakeld. U kunt de vermeldingen in het activiteiten logboek bekijken door **activiteiten logboek** te selecteren in het linkerdeel venster voor uw event hub naam ruimte in de Azure Portal. Bijvoorbeeld: ' naam ruimte maken of bijwerken ', ' event hub maken of bijwerken '.
 
     ![Activiteiten logboek voor een Event Hubs naam ruimte](./media/event-hubs-diagnostic-logs/activity-log.png)
-* **[Diagnostische logboeken](../azure-monitor/platform/platform-logs-overview.md)** : Diagnostische logboeken bieden uitgebreide informatie over bewerkingen en acties die worden uitgevoerd op uw naam ruimte met behulp van de API of via beheer-clients in de taal-SDK. 
+* **[Diagnostische logboeken](../azure-monitor/platform/platform-logs-overview.md)**: Diagnostische logboeken bieden uitgebreide informatie over bewerkingen en acties die worden uitgevoerd op uw naam ruimte met behulp van de API of via beheer-clients in de taal-SDK. 
     
     In de volgende sectie wordt beschreven hoe u Diagnostische logboeken inschakelt voor een Event Hubs naam ruimte.
 
@@ -25,7 +25,7 @@ U kunt twee typen logboeken voor Azure Event Hubs bekijken:
 Diagnostische logboeken zijn standaard uitgeschakeld. Voer de volgende stappen uit om Diagnostische logboeken in te scha kelen:
 
 1.  Navigeer in het [Azure Portal](https://portal.azure.com)naar uw event hubs naam ruimte. 
-2. Selecteer **Diagnostische instellingen** onder **bewaking** in het linkerdeel venster en selecteer **+ Diagnostische instelling toevoegen** . 
+2. Selecteer **Diagnostische instellingen** onder **bewaking** in het linkerdeel venster en selecteer **+ Diagnostische instelling toevoegen**. 
 
     ![Pagina Diagnostische instellingen-diagnostische instelling toevoegen](./media/event-hubs-diagnostic-logs/diagnostic-settings-page.png)
 4. Selecteer in de sectie **categorie Details** de **typen Diagnostische logboeken** die u wilt inschakelen. Verderop in dit artikel vindt u meer informatie over deze categorieën. 
@@ -100,12 +100,12 @@ De JSON-teken reeksen van het operationele logboek bevatten elementen die in de 
 Naam | Beschrijving
 ------- | -------
 `ActivityId` | Interne ID, gebruikt voor tracking doeleinden |
-`EventName` | Naam van bewerking |
+`EventName` | naam van bewerking. Voor een lijst met waarden voor dit element, zie de [gebeurtenis namen](#event-names) |
 `resourceId` | Resource-ID Azure Resource Manager |
 `SubscriptionId` | Abonnements-id |
 `EventTimeString` | Bewerkings tijd |
-`EventProperties` | Bewerkings eigenschappen |
-`Status` | Bewerkingsstatus |
+`EventProperties` |Eigenschappen voor de bewerking. Dit element bevat meer informatie over de gebeurtenis, zoals wordt weer gegeven in het volgende voor beeld. |
+`Status` | Bewerkings status. De waarde kan ofwel **geslaagd** of **mislukt** zijn.  |
 `Caller` | Aanroeper van de bewerking (Azure Portal of Management-client) |
 `Category` | OperationalLogs |
 
@@ -125,6 +125,13 @@ Example:
    "category": "OperationalLogs"
 }
 ```
+
+### <a name="event-names"></a>Gebeurtenis namen
+De gebeurtenis naam wordt ingevuld als bewerkings type + resource type van de volgende opsommingen. Bijvoorbeeld, `Create Queue` `Retrieve Event Hu` of `Delete Rule` . 
+
+| Het type bewerking | Resourcetype | 
+| -------------- | ------------- | 
+| <ul><li>Maken</li><li>Bijwerken</li><li>Verwijderen</li><li>Ophalen</li><li>Onbekend</li></ul> | <ul><li>Naamruimte</li><li>Wachtrij</li><li>Onderwerp</li><li>Abonnement</li><li>EventHub</li><li>EventHubSubscription</li><li>NotificationHub</li><li>NotificationHubTier</li><li>SharedAccessPolicy</li><li>UsageCredit</li><li>NamespacePnsCredentials</li>Regel</li>ConsumerGroup</li> |
 
 ## <a name="autoscale-logs-schema"></a>Schema voor automatisch schalen van Logboeken
 JSON van het logboek voor automatisch schalen bevat elementen die in de volgende tabel worden weer gegeven:
@@ -195,12 +202,12 @@ De JSON-verbindings gebeurtenis van het Event Hubs virtuele netwerk (VNet) bevat
 | `SubscriptionId` | Azure-abonnements-ID |
 | `NamespaceName` | Naam van naamruimte |
 | `IPAddress` | IP-adres van een client die verbinding maakt met de Event Hubs-service |
-| `Action` | De actie die door de Event Hubs-service wordt uitgevoerd bij de evaluatie van verbindings aanvragen. Ondersteunde acties zijn **verbinding accepteren** en **verbinding weigeren** . |
+| `Action` | De actie die door de Event Hubs-service wordt uitgevoerd bij de evaluatie van verbindings aanvragen. Ondersteunde acties zijn **verbinding accepteren** en **verbinding weigeren**. |
 | `Reason` | Geeft een reden waarom de actie is uitgevoerd |
 | `Count` | Aantal exemplaren voor de opgegeven actie |
 | `ResourceId` | Azure Resource Manager-resource-id. |
 
-Virtuele netwerk logboeken worden alleen gegenereerd als de naam ruimte toegang toestaat vanuit **geselecteerde netwerken** of van **specifieke IP-adressen** (IP-filter regels). Als u de toegang tot uw naam ruimte niet wilt beperken met behulp van deze functies en toch virtuele netwerk logboeken wilt ophalen voor het bijhouden van IP-adressen van clients die verbinding maken met de naam ruimte Event Hubs, kunt u de volgende tijdelijke oplossing gebruiken. Schakel IP-filtering in en voeg het totale adresseer bare IPv4-bereik toe (1.0.0.0/1-255.0.0.0/1). Event Hubs biedt geen ondersteuning voor IPv6-bereiken. 
+Virtuele netwerk logboeken worden alleen gegenereerd als de naam ruimte toegang toestaat vanuit **geselecteerde netwerken** of van **specifieke IP-adressen** (IP-filter regels). Als u de toegang tot uw naam ruimte niet wilt beperken met behulp van deze functies en toch virtuele netwerk logboeken wilt ophalen om IP-adressen te volgen van clients die verbinding maken met de naam ruimte Event Hubs, kunt u de volgende tijdelijke oplossing gebruiken. Schakel IP-filtering in en voeg het totale adresseer bare IPv4-bereik toe (1.0.0.0/1-255.0.0.0/1). Event Hubs biedt geen ondersteuning voor IPv6-bereiken. 
 
 ### <a name="example"></a>Voorbeeld
 

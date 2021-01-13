@@ -5,12 +5,12 @@ services: automation
 ms.subservice: shared-capabilities
 ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: d064eb0b748c361b76139b1a21d25cec8996e818
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 6db0c82c034aab97deee1be4aa8bdc54368521bc
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734773"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131522"
 ---
 # <a name="manage-variables-in-azure-automation"></a>Variabelen in Azure Automation beheren
 
@@ -26,7 +26,7 @@ Automation-variabelen zijn handig voor de volgende scenario's:
 
 Azure Automation persistente variabelen en maakt deze beschikbaar, zelfs als een runbook-of DSC-configuratie mislukt. Dit gedrag maakt het mogelijk dat een runbook of DSC-configuratie een waarde instelt die vervolgens wordt gebruikt door een ander runbook of door hetzelfde runbook of de DSC-configuratie de volgende keer dat deze wordt uitgevoerd.
 
-Azure Automation elke versleutelde variabele veilig op te slaan. Wanneer u een variabele maakt, kunt u de versleuteling en opslag opgeven door Azure Automation als een beveiligd activum. Nadat u de variabele hebt gemaakt, kunt u de versleutelingsstatus ervan niet meer wijzigen zonder de variabele opnieuw te maken. Als u met Automation-accountvariabelen gevoelige gegevens opslaat die nog niet zijn versleuteld, moet u deze verwijderen en opnieuw maken als versleutelde variabelen. Azure Security Center raadt aan om alle Azure Automation-variabelen te versleutelen, zoals beschreven in [Automation-accountvariabelen moeten worden versleuteld](../../security-center/recommendations-reference.md#recs-computeapp). Als u niet-versleutelde variabelen hebt die u wilt uitsluiten van deze beveiligingsaanbeveling, raadpleegt u [Een resource uitsluiten van aanbevelingen en de beveiligingsscore](../../security-center/exempt-resource.md) om een uitzonderingsregel te maken.
+Azure Automation elke versleutelde variabele veilig op te slaan. Wanneer u een variabele maakt, kunt u de versleuteling en opslag opgeven door Azure Automation als een beveiligd activum. Nadat u de variabele hebt gemaakt, kunt u de versleutelingsstatus ervan niet meer wijzigen zonder de variabele opnieuw te maken. Als u met Automation-accountvariabelen gevoelige gegevens opslaat die nog niet zijn versleuteld, moet u deze verwijderen en opnieuw maken als versleutelde variabelen. Azure Security Center raadt aan om alle Azure Automation-variabelen te versleutelen, zoals beschreven in [Automation-accountvariabelen moeten worden versleuteld](../../security-center/recommendations-reference.md#recs-compute). Als u niet-versleutelde variabelen hebt die u wilt uitsluiten van deze beveiligingsaanbeveling, raadpleegt u [Een resource uitsluiten van aanbevelingen en de beveiligingsscore](../../security-center/exempt-resource.md) om een uitzonderingsregel te maken.
 
 >[!NOTE]
 >Beveilig assets in Azure Automation referenties, certificaten, verbindingen en versleutelde variabelen bevatten. Deze assets worden versleuteld en opgeslagen in Azure Automation met behulp van een unieke sleutel die wordt gegenereerd voor elk Automation-account. Azure Automation slaat de sleutel op in de door het systeem beheerde Key Vault. Voordat u een beveiligde Asset opslaat, laadt Automation de sleutel van Key Vault en gebruikt deze om de Asset te versleutelen.
@@ -38,7 +38,7 @@ Wanneer u een variabele met de Azure Portal maakt, moet u een gegevens type in d
 * Tekenreeks
 * Geheel getal
 * DateTime
-* Booleaans
+* Boolean
 * Null
 
 De variabele is niet beperkt tot het opgegeven gegevens type. U moet de variabele instellen met behulp van Windows Power shell als u een waarde van een ander type wilt opgeven. Als u opgeeft `Not defined` , wordt de waarde van de variabele ingesteld op null. U moet de waarde instellen met de cmdlet [set-AzAutomationVariable](/powershell/module/az.automation/set-azautomationvariable) of de interne `Set-AutomationVariable` cmdlet.

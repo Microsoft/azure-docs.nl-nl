@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 12/12/2019
 ms.author: cynthn
-ms.openlocfilehash: 94db8ce46fc240a6c48c0919b6d2c2cd148522ac
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 6e3333ac780cfca02a6ce4f28d2b0e312016f713
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976047"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131505"
 ---
 # <a name="upload-a-generalized-vhd-and-use-it-to-create-new-vms-in-azure"></a>Een gegeneraliseerde VHD uploaden en deze gebruiken om nieuwe virtuele machines te maken in Azure
 
@@ -38,13 +38,15 @@ Zorg ervoor dat de server functies die op de computer worden uitgevoerd, worden 
 > 
 
 1. Meld u aan bij de Windows-VM.
-2. Open het venster met de opdrachtprompt als beheerder. Wijzig de Directory in%windir%\system32\sysprep en voer uit `sysprep.exe` .
-3. Selecteer in het dialoog venster **hulp programma voor systeem voorbereiding** de optie **systeem out-of-Box Experience (OOBE) opgeven**en zorg ervoor dat het selectie vakje **generalize** is ingeschakeld.
-4. Selecteer voor **afsluit opties**de optie **Afsluiten**.
-5. Selecteer **OK**.
+1. Open het venster met de opdrachtprompt als beheerder. 
+1. Verwijder de Panther-map (C:\Windows\Panther).
+1. Wijzig de Directory in%windir%\system32\sysprep en voer uit `sysprep.exe` .
+1. Selecteer in het dialoog venster **hulp programma voor systeem voorbereiding** de optie **systeem out-of-Box Experience (OOBE) opgeven** en zorg ervoor dat het selectie vakje **generalize** is ingeschakeld.
+1. Selecteer voor **afsluit opties** de optie **Afsluiten**.
+1. Selecteer **OK**.
    
     ![Sysprep starten](./media/upload-generalized-managed/sysprepgeneral.png)
-6. Wanneer Sysprep is voltooid, wordt de virtuele machine afgesloten. Start de VM niet opnieuw.
+1. Wanneer Sysprep is voltooid, wordt de virtuele machine afgesloten. Start de VM niet opnieuw.
 
 
 ## <a name="upload-the-vhd"></a>De VHD uploaden 
@@ -91,7 +93,7 @@ $image = New-AzImage `
    -Image $imageConfig
 ```
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+## <a name="create-the-vm"></a>De VM maken
 
 Nu u een installatiekopie hebt gemaakt, kunt u een of meer nieuwe VM's van de installatiekopie maken met behulp. In dit voor beeld wordt een VM gemaakt met de naam *myVM* van *MyImage*, in *myResourceGroup*.
 

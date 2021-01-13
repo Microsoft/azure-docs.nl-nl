@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 09/12/2020
 ms.author: memildin
-ms.openlocfilehash: 08bcb74fd50be0eeb7a73c0743db2c4f3a57be32
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: dfa562be4561e8aaec66d4bff51aadeba77cf35f
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030846"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131335"
 ---
 # <a name="protect-your-kubernetes-workloads"></a>Kubernetes-workloads beveiligen
 
@@ -21,13 +21,13 @@ Op deze pagina wordt beschreven hoe u de beveiligings aanbevelingen van Azure Se
 
 Meer informatie over deze functies in [Aanbevolen procedures voor workload Protection met behulp van Kubernetes Admission Control](container-security.md#workload-protection-best-practices-using-kubernetes-admission-control)
 
-Security Center biedt meer container beveiligings functies als u Azure Defender inschakelt. Specifiek:
+Security Center biedt meer container beveiligings functies als u Azure Defender inschakelt. Met name:
 
 - Uw container registers scannen op beveiligings problemen met [Azure Defender voor container registers](defender-for-container-registries-introduction.md)
 - Ontvang realtime waarschuwingen voor bedreigingen detectie voor uw K8s-clusters [Azure Defender voor Kubernetes](defender-for-kubernetes-introduction.md)
 
 > [!TIP]
-> Zie de [sectie container](recommendations-reference.md#recs-containers) van de naslag tabel met aanbevelingen voor een lijst met *alle* beveiligings aanbevelingen die kunnen worden weer gegeven voor Kubernetes-clusters en-knoop punten.
+> Zie de [sectie Compute](recommendations-reference.md#recs-compute) in de naslag tabel met aanbevelingen voor een lijst met *alle* beveiligings aanbevelingen die voor Kubernetes-clusters en-knoop punten kunnen worden weer gegeven.
 
 
 
@@ -51,7 +51,7 @@ Azure Security Center bevat een bundel van aanbevelingen die beschikbaar zijn wa
 
 Als u de aanbevelingen wilt configureren, installeert u de  **Azure Policy-invoeg toepassing voor Kubernetes**. 
 
-- U kunt deze invoeg toepassing automatisch implementeren, zoals wordt uitgelegd in [automatische inrichting van uitbrei dingen inschakelen](security-center-enable-data-collection.md#enable-auto-provisioning-of-extensions). Als automatisch inrichten voor de invoeg toepassing is ingesteld op aan, wordt de uitbrei ding standaard ingeschakeld in alle bestaande en toekomstige clusters (die voldoen aan de vereisten voor de installatie van de invoeg toepassing).
+- U kunt deze invoeg toepassing automatisch implementeren, zoals wordt uitgelegd in [automatische inrichting van uitbrei dingen inschakelen](security-center-enable-data-collection.md#enable-auto-provisioning-of-extensions). Als automatische inrichting voor de invoegtoepassing is ingeschakeld, wordt de uitbreiding standaard ingeschakeld in alle bestaande en toekomstige clusters (die voldoen aan de installatievereisten van de invoegtoepassing).
 
 - De invoeg toepassing hand matig implementeren:
 
@@ -78,12 +78,12 @@ Als u de aanbevelingen wilt configureren, installeert u de  **Azure Policy-invoe
 
     | Naam aanbeveling                                                         | Beveiligingsmaatregelen                         | Configuratie vereist |
     |-----------------------------------------------------------------------------|------------------------------------------|------------------------|
-    | De CPU- en geheugenlimieten van containers moeten worden afgedwongen                          | Toepassingen beveiligen tegen DDoS-aanval | No                     |
-    | Bevoegde containers moeten worden vermeden                                     | Toegang en machtigingen beheren            | No                     |
-    | Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers     | Toegang en machtigingen beheren            | No                     |
-    | Container met escalatie van bevoegdheden moet worden vermeden                       | Toegang en machtigingen beheren            | No                     |
-    | Het uitvoeren van containers als hoofdgebruiker moet worden vermeden                           | Toegang en machtigingen beheren            | No                     |
-    | Containers die gevoelige hostnaamruimten delen, moeten worden vermeden              | Toegang en machtigingen beheren            | No                     |
+    | De CPU- en geheugenlimieten van containers moeten worden afgedwongen                          | Toepassingen beveiligen tegen DDoS-aanval | Nee                     |
+    | Bevoegde containers moeten worden vermeden                                     | Toegang en machtigingen beheren            | Nee                     |
+    | Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers     | Toegang en machtigingen beheren            | Nee                     |
+    | Container met escalatie van bevoegdheden moet worden vermeden                       | Toegang en machtigingen beheren            | Nee                     |
+    | Het uitvoeren van containers als hoofdgebruiker moet worden vermeden                           | Toegang en machtigingen beheren            | Nee                     |
+    | Containers die gevoelige hostnaamruimten delen, moeten worden vermeden              | Toegang en machtigingen beheren            | Nee                     |
     | Er moeten mini maal bevoegde Linux-mogelijkheden worden afgedwongen voor containers       | Toegang en machtigingen beheren            | **Ja**                |
     | Het gebruik van HostPath-volumekoppelingen voor pods moet worden beperkt tot een bekende lijst    | Toegang en machtigingen beheren            | **Ja**                |
     | Containers mogen alleen op toegestane poorten luisteren                              | Onbevoegde netwerk toegang beperken     | **Ja**                |
@@ -251,6 +251,6 @@ In dit artikel hebt u geleerd hoe u Kubernetes werk belasting beveiliging kunt c
 
 Zie de volgende pagina's voor meer gerelateerde materialen: 
 
-- [Aanbevelingen voor Security Center voor containers](recommendations-reference.md#recs-containers)
+- [Security Center aanbevelingen voor compute](recommendations-reference.md#recs-compute)
 - [Waarschuwingen voor het AKS-cluster niveau](alerts-reference.md#alerts-akscluster)
 - [Waarschuwingen voor container niveau hostniveau](alerts-reference.md#alerts-containerhost)

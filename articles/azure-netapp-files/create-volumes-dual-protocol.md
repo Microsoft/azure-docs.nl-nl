@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 01/05/2020
+ms.date: 01/12/2020
 ms.author: b-juche
-ms.openlocfilehash: d296f80d85bb5081c466b27e6a8624e8b3f2c924
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: c914ab007f482e4d2b560b1cb461e27d4f4442ec
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914982"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133154"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Een NFSv3-en SMB-volume (Dual-Protocol) maken voor Azure NetApp Files
 
@@ -39,7 +39,6 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
 * Maak een zone voor reverse lookup op de DNS-server en voeg vervolgens een PTR-record (pointer) van de AD-hostcomputer toe aan de zone voor reverse lookup. Als dat niet het geval is, mislukt het maken van het volume met twee protocollen.
 * Zorg ervoor dat de NFS-client up-to-date is en de meest recente updates voor het besturingssysteem worden uitgevoerd.
 * Zorg ervoor dat de Active Directory (AD) LDAP-server op de AD actief is. U kunt dit doen door de functie [Active Directory Lightweight Directory Services (AD LDS)](/previous-versions/windows/it-pro/windows-server-2012-r2-and-2012/hh831593(v=ws.11)) op de AD-machine te installeren en configureren.
-* Zorg ervoor dat er een certificerings instantie (CA) is gemaakt voor de AD met behulp van de functie voor het [Active Directory Certificate Services (AD CS)](/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority) om het zelfondertekende basis-CA-certificaat te genereren en te exporteren.   
 * Dual-protocol volumes bieden momenteel geen ondersteuning voor Azure Active Directory Domain Services (AADDS).  
 * De NFS-versie die door een volume met dubbele protocollen wordt gebruikt, is NFSv3. Daarom gelden de volgende overwegingen:
     * Het dubbele protocol biedt geen ondersteuning voor de uitgebreide kenmerken van Windows-ACL'S `set/get` van NFS-clients.
@@ -105,9 +104,6 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
 3. Klik op **Protocol** en voer de volgende acties uit:  
     * Selecteer **Dual-Protocol (NFSv3 en SMB)** als protocol type voor het volume.   
 
-    * Selecteer de **Active Directory** verbinding in de vervolg keuzelijst.  
-    Het Active Directory dat u gebruikt, moet een server basis-CA-certificaat hebben. 
-
     * Geef het **pad** naar het volume voor het volume op.   
     Dit pad naar het volume is de naam van het gedeelde volume. De naam moet beginnen met een alfabetisch teken en moet uniek zijn binnen elk abonnement en elke regio.  
 
@@ -122,32 +118,6 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
     Het volume dat u hebt gemaakt, wordt weer gegeven op de pagina volumes. 
  
     Een volume neemt het abonnement, de resourcegroep en de locatiekenmerken over van de bijbehorende capaciteitspool. U kunt de implementatiestatus van het volume controleren vanuit het tabblad Meldingen.
-
-## <a name="upload-active-directory-certificate-authority-public-root-certificate"></a>Openbaar basis certificaat voor Active Directory certificerings instantie uploaden  
-
-1.  Volg [de installatie van de certificerings instantie](/windows-server/networking/core-network-guide/cncg/server-certs/install-the-certification-authority) die u wilt installeren en configureren certificerings instantie toevoegen. 
-
-2.  Volg [certificaten weer geven met de MMC-module](/dotnet/framework/wcf/feature-details/how-to-view-certificates-with-the-mmc-snap-in) om de MMC-module en het hulp programma certificaat beheer te gebruiken.  
-    Gebruik de module certificaat beheer om het basis-of verlenings certificaat voor het lokale apparaat te zoeken. U moet de opdrachten van de module certificaat beheer uitvoeren vanuit een van de volgende instellingen:  
-    * Een Windows-client die lid is van het domein en waarop het basis certificaat is geïnstalleerd 
-    * Een andere computer in het domein met het basis certificaat  
-
-3. Exporteer het basis-CA-certificaat.  
-    Basis-CA-certificaten kunnen worden geëxporteerd vanuit de map persoonlijke of vertrouwde basis certificerings instanties, zoals wordt weer gegeven in de volgende voor beelden:   
-    ![scherm opname van persoonlijke certificaten](../media/azure-netapp-files/personal-certificates.png)   
-    ![scherm opname van vertrouwde basis certificerings instanties](../media/azure-netapp-files/trusted-root-certification-authorities.png)    
-
-    Zorg ervoor dat het certificaat wordt geëxporteerd in de base-64 Encoded X. 509 (. CER)-indeling: 
-
-    ![Wizard Certificaat exporteren](../media/azure-netapp-files/certificate-export-wizard.png)
-
-4. Ga naar het NetApp-account van het Dual-protocol volume, klik op **Active Directory verbindingen** en upload het basis-CA-certificaat met behulp van het venster **lid worden Active Directory** :  
-
-    ![Server basis-CA-certificaat](../media/azure-netapp-files/server-root-ca-certificate.png)
-
-    Zorg ervoor dat de naam van de certificerings instantie kan worden omgezet door DNS. Deze naam is het veld "verleend door" of "verlener" in het certificaat:  
-
-    ![Certificaat gegevens](../media/azure-netapp-files/certificate-information.png)
 
 ## <a name="manage-ldap-posix-attributes"></a>LDAP POSIX-kenmerken beheren
 

@@ -1,7 +1,7 @@
 ---
-title: Hyper parameters voor uw model afstemmen
+title: Een model afstemming afstemmen
 titleSuffix: Azure Machine Learning
-description: Hyper parameters efficiënt afstemmen op diep gaande lessen en machine learning modellen met behulp van Azure Machine Learning.
+description: Automatiseer afstemming tuning voor diep leren en machine learning modellen met behulp van Azure Machine Learning.
 ms.author: swatig
 author: swatig007
 ms.reviewer: sgilley
@@ -11,14 +11,14 @@ ms.subservice: core
 ms.date: 03/30/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: a1a0b89dee5a6d57e6f317c5f6c8b61ffeda3c33
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: e9f9f73a8e0dbc851efdba07bf1e103f58ae9e75
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029070"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133846"
 ---
-# <a name="tune-hyperparameters-for-your-model-with-azure-machine-learning"></a>Hyper parameters voor uw model afstemmen met Azure Machine Learning
+# <a name="hyperparameter-tuning-a-model-with-azure-machine-learning"></a>Afstemming afstemmen op een model met Azure Machine Learning
 
 
 Automatiseer efficiënt afstemmen van afstemming met behulp van Azure Machine Learning [HyperDrive-pakket](/python/api/azureml-train-core/azureml.train.hyperdrive?preserve-view=true&view=azure-ml-py). Meer informatie over het uitvoeren van de stappen die nodig zijn om Hyper parameters af te stemmen met de [Azure machine learning SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py):
@@ -31,11 +31,11 @@ Automatiseer efficiënt afstemmen van afstemming met behulp van Azure Machine Le
 1. De trainings uitvoeringen visualiseren
 1. De beste configuratie voor uw model selecteren
 
-## <a name="what-are-hyperparameters"></a>Wat zijn Hyper parameters?
+## <a name="what-is-hyperparameter-tuning"></a>Wat is afstemming tuning?
 
 **Hyper parameters** zijn aanpas bare para meters waarmee u het model trainings proces kunt beheren. Met Neural-netwerken bepaalt u bijvoorbeeld het aantal verborgen lagen en het aantal knoop punten in elke laag. Model prestaties zijn sterk afhankelijk van Hyper parameters.
 
- **Afstemming tuning** is het proces van het vinden van de configuratie van Hyper parameters die de beste prestaties oplevert. Het proces is doorgaans kostbaar en hand matig.
+ **Afstemming tuning**, ook wel **afstemming Optimization** genoemd, is het proces van het vinden van de configuratie van Hyper parameters dat resulteert in de beste prestaties. Het proces is doorgaans kostbaar en hand matig.
 
 Met Azure Machine Learning kunt u afstemming-tuning automatiseren en experimenten parallel gebruiken om Hyper parameters efficiënt te optimaliseren.
 
@@ -46,7 +46,7 @@ Hyper parameters afstemmen door het bereik van waarden te verkennen dat voor elk
 
 Hyper parameters kan afzonderlijk of doorlopend zijn en heeft een distributie van waarden die worden beschreven door een [parameter expressie](/python/api/azureml-train-core/azureml.train.hyperdrive.parameter_expressions?preserve-view=true&view=azure-ml-py).
 
-### <a name="discrete-hyperparameters"></a>Discrete Hyper parameters 
+### <a name="discrete-hyperparameters"></a>Discrete Hyper parameters
 
 Discrete Hyper parameters zijn opgegeven als een `choice` onder discrete waarden. `choice` kan zijn:
 
@@ -296,7 +296,7 @@ max_concurrent_runs=4
 
 Met deze code wordt het afstemming-afstemmings experiment geconfigureerd voor gebruik van Maxi maal 20 volledige uitvoeringen, waarbij vier configuraties tegelijk worden uitgevoerd.
 
-## <a name="configure-experiment"></a>Experiment configureren
+## <a name="configure-hyperparameter-tuning-experiment"></a>Afstemming tuning-experiment configureren
 
 Als u [uw afstemming tuning](/python/api/azureml-train-core/azureml.train.hyperdrive.hyperdriverunconfig?preserve-view=true&view=azure-ml-py) -experiment wilt configureren, geeft u het volgende op:
 * De gedefinieerde afstemming-Zoek ruimte
@@ -323,7 +323,7 @@ hd_config = HyperDriveConfig(run_config=src,
                              max_concurrent_runs=4)
 ```
 
-## <a name="submit-experiment"></a>Experiment verzenden
+## <a name="submit-hyperparameter-tuning-experiment"></a>Afstemming-afstemmings experiment verzenden
 
 Nadat u de afstemming-afstemmings configuratie hebt gedefinieerd, moet u [het experiment verzenden](/python/api/azureml-core/azureml.core.experiment%28class%29?preserve-view=true&view=azure-ml-py#&preserve-view=truesubmit-config--tags-none----kwargs-):
 
@@ -333,7 +333,7 @@ experiment = Experiment(workspace, experiment_name)
 hyperdrive_run = experiment.submit(hd_config)
 ```
 
-## <a name="warm-start-your-hyperparameter-tuning-experiment-optional"></a>Start uw afstemming tuning-experiment warme (optioneel)
+## <a name="warm-start-hyperparameter-tuning-optional"></a>Warme start afstemming tuning (optioneel)
 
 Het zoeken naar de beste afstemming-waarden voor uw model kan een iteratief proces zijn. U kunt kennis van de vijf vorige uitvoeringen hergebruiken om afstemming-afstemming te versnellen.
 
@@ -380,7 +380,7 @@ hd_config = HyperDriveConfig(run_config=src,
                              max_concurrent_runs=4)
 ```
 
-## <a name="visualize-experiment"></a>Experimenteren met visualiseren
+## <a name="visualize-hyperparameter-tuning-runs"></a>Afstemming tuning-uitvoeringen visualiseren
 
 Gebruik de [widget notitie blok](/python/api/azureml-widgets/azureml.widgets.rundetails?preserve-view=true&view=azure-ml-py) om de voortgang van uw trainings uitvoeringen te visualiseren. In het volgende code fragment worden alle afstemming-afstemmings uitvoeringen op één plek in een Jupyter-notebook gevisualiseerd:
 
@@ -391,15 +391,15 @@ RunDetails(hyperdrive_run).show()
 
 Met deze code wordt een tabel weer gegeven met informatie over de trainings uitvoeringen voor elk van de afstemming-configuraties.
 
-![afstemming tuning Table](./media/how-to-tune-hyperparameters/HyperparameterTuningTable.png)
+![afstemming tuning Table](./media/how-to-tune-hyperparameters/hyperparameter-tuning-table.png)
 
 U kunt ook de prestaties van elk van de uitvoeringen visualiseren als de voortgang van de training. 
 
-![afstemming-afstemmings plot](./media/how-to-tune-hyperparameters/HyperparameterTuningPlot.png)
+![afstemming-afstemmings plot](./media/how-to-tune-hyperparameters/hyperparameter-tuning-plot.png)
 
 U kunt de correlatie tussen de prestaties en waarden van afzonderlijke Hyper parameters visueel identificeren met behulp van een parallelle coördinaten tekening. 
 
-[![parallelle coördinaten voor afstemming afstemmen](./media/how-to-tune-hyperparameters/HyperparameterTuningParallelCoordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
+[![parallelle coördinaten voor afstemming afstemmen](./media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates.png)](media/how-to-tune-hyperparameters/hyperparameter-tuning-parallel-coordinates-expanded.png)
 
 U kunt ook al uw afstemming-afstemmings uitvoeringen visualiseren in de Azure-webportal. Zie [experimenten volgen](how-to-monitor-view-training-logs.md#view-the-experiment-in-the-web-portal)voor meer informatie over het weer geven van een experiment in de portal.
 
@@ -420,6 +420,7 @@ print('\n batch size:',parameter_values[7])
 ```
 
 ## <a name="sample-notebook"></a>Voorbeeldnotebook
+
 Raadpleeg Train-afstemming-*-notebooks in deze map:
 * [procedures voor het gebruik van azureml/ml-Frameworks](https://github.com/Azure/MachineLearningNotebooks/tree/master/how-to-use-azureml/ml-frameworks)
 

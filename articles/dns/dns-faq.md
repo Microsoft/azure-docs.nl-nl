@@ -5,14 +5,14 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: article
-ms.date: 6/15/2019
+ms.date: 01/11/2021
 ms.author: rohink
-ms.openlocfilehash: 2f7e4eadc25028db4668db8d245803c7ddba8688
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c468b1216670ce7e6b5d252a7f7fee807199d20c
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968244"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131488"
 ---
 # <a name="azure-dns-faq"></a>Veelgestelde vragen over Azure DNS
 
@@ -194,6 +194,10 @@ Ja. Azure DNS naam servers zijn dubbele stack. Dual stack betekent dat ze IPv4-e
 Geinternational Domain names (Idn's) versleutelt elke DNS-naam met behulp van [punycode](https://en.wikipedia.org/wiki/Punycode). DNS-query's worden gemaakt met behulp van deze met punycode gecodeerde namen.
 
 Als u Idn's wilt configureren in Azure DNS, zet u de naam van de zone of de recordset om in punycode. Azure DNS biedt momenteel geen ondersteuning voor ingebouwde conversie naar of van punycode.
+
+### <a name="does-azure-dns-private-zones-store-any-customer-content"></a>Slaat Azure DNS privé zones eventuele klant inhoud op?
+
+Nee, Azure DNS persoonlijke zones slaan geen klant inhoud op.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -10,18 +10,18 @@ ms.subservice: text-analytics
 ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: aahi
-ms.openlocfilehash: 180de56e3c158802460d2ff995041e8572d4dcd7
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: a0cd968c90a27d6f1ae79d08fb2bd027169233db
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97844973"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133783"
 ---
 # <a name="text-analytics-api-v3-language-support"></a>Ondersteuning voor Text Analytics-API v3-taal 
 
 #### <a name="sentiment-analysis"></a>[Sentimentanalyse](#tab/sentiment-analysis)
 
-| Taal              | Taalcode | v2-ondersteuning | v3-ondersteuning | De versie van het v3-model wordt gestart: |              Opmerkingen |
+| Taal              | Taalcode | v2-ondersteuning | v3-ondersteuning | De versie van het v3-model wordt gestart: |              Notities |
 |:----------------------|:-------------:|:----------:|:----------:|:--------------------------:|-------------------:|
 | Chinese-Simplified    |   `zh-hans`   |     ✓      |     ✓      |         2019-10-01         | `zh` ook geaccepteerd |
 | Chinese-Traditional   |   `zh-hant`   |            |     ✓      |         2019-10-01         |                    |
@@ -47,18 +47,18 @@ ms.locfileid: "97844973"
 
 ### <a name="opinion-mining-v31-preview-only"></a>Opinie-analyse (alleen v 3.1-Preview-versie)
 
-| Taal              | Taalcode | Starten met versie van v3-model: |              Opmerkingen |
+| Taal              | Taalcode | Starten met versie van v3-model: |              Notities |
 |:----------------------|:-------------:|:------------------------------------:|-------------------:|
 | Engels               |     `en`      |              2020-04-01              |                    |
 
 
-#### <a name="named-entity-recognition-ner"></a>[NER (Herkenning van benoemde entiteiten)](#tab/named-entity-recognition)
+#### <a name="named-entity-recognition-ner"></a>[Herkenning van benoemde entiteiten (NER)](#tab/named-entity-recognition)
 
 > [!NOTE]
 > * NER v3 ondersteunt momenteel alleen Engelse en Spaanse talen. Als u NER v3 aanroept met een andere taal, retourneert de API v 2.1-resultaten, op voor waarde dat de taal wordt ondersteund in versie 2,1.
 > * v 2.1 retourneert alleen de volledige set beschik bare entiteiten voor het Engels, vereenvoudigd Chinees, Frans, Duits en Spaans.  De entiteiten ' persoon ', ' locatie ' en ' organisatie ' worden geretourneerd voor de andere ondersteunde talen.
 
-| Taal               | Taalcode | v 2.1-ondersteuning | v3-ondersteuning | Starten met versie van v3-model: |       Opmerkingen        |
+| Taal               | Taalcode | v 2.1-ondersteuning | v3-ondersteuning | Starten met versie van v3-model: |       Notities        |
 |:-----------------------|:-------------:|:----------:|:----------:|:-------------------------------:|:------------------:|
 | Arabisch                |     `ar`      |     ✓      |            |                                 |                    |
 | Chinese-Simplified     |   `zh-hans`   |     ✓      |            |                                 | `zh` ook geaccepteerd |
@@ -86,11 +86,9 @@ ms.locfileid: "97844973"
 
 #### <a name="key-phrase-extraction"></a>[Sleuteltermextractie](#tab/key-phrase-extraction)
 
-> [!NOTE]
-> Model versies van Sleuteltermextractie vóór 2020-07-01 hebben een limiet van 64 tekens. Deze limiet is niet aanwezig in latere model versies.
-
-| Taal              | Taalcode | v2-ondersteuning | v3-ondersteuning | Beschikbaar vanaf versie van v3-model: |       Opmerkingen        |
+| Taal              | Taalcode | v2-ondersteuning | v3-ondersteuning | Beschikbaar vanaf versie van v3-model: |       Notities        |
 |:----------------------|:-------------:|:----------:|:----------:|:-----------------------------------------:|:------------------:|
+| Deens                |     `da`      |     ✓      |      ✓     |                2019-10-01                 |                    |
 | Nederlands                 |     `nl`      |     ✓      |     ✓      |                2019-10-01                 |                    |
 | Engels               |     `en`      |     ✓      |     ✓      |                2019-10-01                 |                    |
 | Fins               |     `fi`      |     ✓      |     ✓      |                2019-10-01                 |                    |
@@ -109,7 +107,7 @@ ms.locfileid: "97844973"
 
 #### <a name="entity-linking"></a>[Entiteiten koppelen](#tab/entity-linking)
 
-| Taal | Taalcode | v2-ondersteuning | v3-ondersteuning | Beschikbaar vanaf versie van v3-model: | Opmerkingen |
+| Taal | Taalcode | v2-ondersteuning | v3-ondersteuning | Beschikbaar vanaf versie van v3-model: | Notities |
 |:---------|:-------------:|:----------:|:----------:|:-----------------------------------------:|:-----:|
 | Engels  |     `en`      |     ✓      |     ✓      |                2019-10-01                 |       |
 | Spaans  |     `es`      |     ✓      |     ✓      |                2019-10-01                 |       |

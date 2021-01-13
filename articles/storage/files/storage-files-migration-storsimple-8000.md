@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 1e45c39a8f562ca6264ab631dfadc84315b58030
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 08ed07adbfe0fc4b22d8a3d0afcfc9ab1312dba4
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97723975"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134344"
 ---
 # <a name="storsimple-8100-and-8600-migration-to-azure-file-sync"></a>StorSimple 8100 en 8600 migratie naar Azure File Sync
 
@@ -441,6 +441,9 @@ Op dit moment zijn er verschillen tussen uw on-premises Windows Server-exemplaar
 1. Sommige bestanden zijn mogelijk achtergelaten door de gegevens transformatie taak vanwege ongeldige tekens. Als dit het geval is, kopieert u deze naar het Windows Server-exemplaar met Azure File Sync. Later kunt u ze aanpassen zodat ze worden gesynchroniseerd. Als u Azure File Sync niet gebruikt voor een bepaalde share, is het beter om de namen van de bestanden te wijzigen met ongeldige tekens op het StorSimple-volume. Voer vervolgens de RoboCopy rechtstreeks uit op de Azure-bestands share.
 
 > [!WARNING]
+> Robocopy in Windows Server 2019 heeft momenteel een probleem waardoor bestanden die worden gelaagd door Azure File Sync op de doel server, opnieuw moeten worden gekopieerd van de bron en opnieuw moeten worden geüpload naar Azure wanneer u de functie/MIR van Robocopy gebruikt. Het is essentieel dat u Robocopy gebruikt op een andere Windows-Server dan 2019. Een voorkeurs keuze is Windows Server 2016. Deze notitie wordt bijgewerkt als het probleem wordt opgelost via Windows Update.
+
+> [!WARNING]
 > U *moet* de Robocopy niet starten voordat de server de naam ruimte heeft voor een Azure-bestands share die volledig is gedownload. Zie [bepalen wanneer uw naam ruimte volledig is gedownload naar uw server](#determine-when-your-namespace-has-fully-synced-to-your-server)voor meer informatie.
 
  U wilt alleen bestanden kopiëren die zijn gewijzigd nadat de migratie taak voor het laatst werd uitgevoerd en bestanden die niet via deze taken zijn verplaatst. U kunt het probleem oplossen om te voor komen dat ze later op de server worden verplaatst nadat de migratie is voltooid. Zie [Azure file sync Troubleshooting](storage-sync-files-troubleshoot.md#how-do-i-see-if-there-are-specific-files-or-folders-that-are-not-syncing)(Engelstalig) voor meer informatie.
@@ -448,7 +451,7 @@ Op dit moment zijn er verschillen tussen uw on-premises Windows Server-exemplaar
 RoboCopy heeft verschillende para meters. In het volgende voor beeld wordt een voltooide opdracht weer geven en een lijst met redenen voor het kiezen van deze para meters.
 
 ```console
-Robocopy /MT:16 /UNILOG:<file name> /TEE /NP /B /MIR /COPYALL /DCOPY:DAT <SourcePath> <Dest.Path>
+Robocopy /MT:16 /UNILOG:<file name> /TEE /NP /B /MIR /IT /COPYALL /DCOPY:DAT <SourcePath> <Dest.Path>
 ```
 
 Achtergrondbitmap
@@ -499,6 +502,14 @@ Achtergrondbitmap
    :::column-end:::
    :::column span="1":::
       Hiermee kan voor RoboCopy alleen verschillen worden overwogen tussen de bron (StorSimple-apparaat) en het doel (Windows Server-map).
+   :::column-end:::
+:::row-end:::
+:::row:::
+   :::column span="1":::
+      /IT
+   :::column-end:::
+   :::column span="1":::
+      Zorgt dat de betrouw baarheid in bepaalde spiegel scenario's blijft behouden.</br>Voor beeld: tussen twee Robocopy wordt een bestand met een ACL-wijziging en een kenmerk update uitgevoerd, zoals het is gemarkeerd als *verborgen*. Zonder/IT kan de ACL-wijziging niet worden gemist door Robocopy en dus niet worden overgedragen naar de doel locatie.
    :::column-end:::
 :::row-end:::
 :::row:::

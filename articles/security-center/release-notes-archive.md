@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/07/2020
 ms.author: memildin
-ms.openlocfilehash: 7325ba1a8a90fec90182f9780c1fb18d29d3c0f1
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 835950cc68ca22ea3958d614d669d7a105fefe62
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955260"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132916"
 ---
 # <a name="archive-for-whats-new-in-azure-security-center"></a>Wilt u archiveren wat er nieuw is in Azure Security Center?
 
@@ -110,7 +110,7 @@ Zie de volgende artikelen voor meer informatie over containerbeveiliging van Sec
 - [Uw registers scannen en uw Docker-hosts beveiligen](container-security.md)
 - [Beveiligingswaarschuwingen van de functies voor beveiliging tegen bedreigingen voor Azure Kubernetes Service clusters](alerts-reference.md#alerts-akscluster)
 - [Beveiligingswaarschuwingen van de functies voor beveiliging tegen bedreigingen voor Azure Kubernetes Service-hosts](alerts-reference.md#alerts-containerhost)
-- [Beveiligingsaanbevelingen voor containers](recommendations-reference.md#recs-containers)
+- [Beveiligingsaanbevelingen voor containers](recommendations-reference.md#recs-compute)
 
 
 
@@ -124,7 +124,7 @@ De functie voor adaptieve toepassingsregelaars heeft twee belangrijke updates on
 
     * Een jokerteken aan het einde van een pad gebruiken om alle uitvoerbare bestanden in deze map en submappen toe te staan
 
-    * Een Joker teken gebruiken in het midden van een pad om een bekende naam voor een uitvoerbaar bestand met een veranderende mapnaam (bijvoorbeeld persoonlijke gebruikers mappen met een bekend uitvoerbaar bestand, automatisch gegenereerde mapnamen enz.) in te scha kelen.
+    * Een jokerteken in het midden van een pad gebruiken om het mogelijk te maken een bekende naam van een uitvoerbaar bestand te gebruiken met een veranderende mapnaam (bijvoorbeeld persoonlijke gebruikersmappen met een bekend uitvoerbaar bestand, automatisch gegenereerde mapnamen, etc.).
 
 
 [Meer informatie over adaptieve toepassingsregelaars](security-center-adaptive-application.md).
@@ -195,7 +195,7 @@ Deze nieuwe aanbevelingen worden weergegeven in dezelfde vier besturingselemente
 
 De aanbevelingen omvatten ook de mogelijkheid voor snelle oplossingen om het implementatieproces te versnellen. 
 
-Meer informatie over deze twee nieuwe aanbevelingen vindt u in de tabel [Compute- en app-aanbevelingen](recommendations-reference.md#recs-computeapp).
+Meer informatie over deze twee nieuwe aanbevelingen vindt u in de tabel [Compute- en app-aanbevelingen](recommendations-reference.md#recs-compute).
 
 Meer informatie over hoe Azure Security Center de agent gebruikt, vindt u in [Wat is de Log Analytics-agent?](faq-data-collection-agents.md#what-is-the-log-analytics-agent).
 
@@ -232,7 +232,7 @@ Het besturingselement voor beveiliging 'aanbevolen procedures voor beveiliging i
 
 In een bestaande aanbeveling, **Op internet gerichte virtuele machines moeten worden beveiligd met netwerkbeveiligingsgroepen**, werd geen onderscheid gemaakt tussen op internet gerichte en niet op internet gerichte virtuele machines. Voor beide werd een aanbeveling met een hoge urgentie gegenereerd als een virtuele machine niet aan een netwerkbeveiligingsgroep was toegewezen. In deze nieuwe aanbeveling wordt een onderscheid gemaakt met niet op internet gerichte machines om de fout-positieven te verminderen en onnodige waarschuwingen met hoge urgentie te voorkomen.
 
-Meer informatie vindt u in de tabel [Aanbevelingen voor netwerken](recommendations-reference.md#recs-network).
+Meer informatie vindt u in de tabel [Aanbevelingen voor netwerken](recommendations-reference.md#recs-networking).
 
 
 
@@ -432,7 +432,7 @@ Voorbeelden van aanbevelingen voor identiteit en toegang zijn onder meer:
 
 Als u abonnementen hebt in de gratis laag, worden de beveiligingsscores ervan beïnvloed door deze wijziging omdat ze nooit zijn geëvalueerd op hun identiteits- en toegangsbeveiliging.
 
-Meer informatie over [aanbevelingen voor identiteit en toegang](recommendations-reference.md#recs-identity).
+Meer informatie over [aanbevelingen voor identiteit en toegang](recommendations-reference.md#recs-identityandaccess).
 
 Meer informatie over [bewaking van identiteit en toegang](security-center-identity-access.md).
 
@@ -692,7 +692,7 @@ De aanbeveling van Azure Security Center voor het oplossen van beveiligings prob
 Als u uw ingeschakelde beveiligings beleid wilt bekijken, opent u de pagina beveiligings beleid vanuit Security Center.
 
 
-## <a name="august-2019"></a>Augustus 2019
+## <a name="august-2019"></a>augustus 2019
 
 De updates in augustus zijn onder meer:
 
@@ -737,7 +737,7 @@ Meer [informatie over de ervaring voor cross-Tenant beheer](security-center-cros
 
 Azure Security Center (ASC) heeft nieuwe aanbevelingen van het netwerk gelanceerd en een aantal bestaande verbeteringen verbeterd. Nu met behulp van Security Center hebt u nog meer netwerk beveiliging voor uw resources. 
 
-Meer [informatie over aanbevelingen voor het netwerk](recommendations-reference.md#recs-network).
+Meer [informatie over aanbevelingen voor het netwerk](recommendations-reference.md#recs-networking).
 
 
 ## <a name="june-2019"></a>Juni 2019

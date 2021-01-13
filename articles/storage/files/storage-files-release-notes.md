@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: wgries
 ms.subservice: files
-ms.openlocfilehash: 739e59ea8e5737abbc6f0f0799129be5f59fb9b0
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 3bf3ecefb17f4c9fda6405da7fb2bdc2650f5324
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97674494"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131471"
 ---
 # <a name="release-notes-for-the-azure-file-sync-agent"></a>Releaseopmerkingen voor de Azure File Sync-agent
 Met Azure File Sync kunt u bestandsshares van uw organisatie in Azure Files centraliseren zonder in te leveren op de flexibiliteit, prestaties en compatibiliteit van een on-premises bestandsserver. Uw installaties van Windows Server worden getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server gebruiken voor lokale toegang tot uw gegevens (inclusief SMB, NFS en FTPS) en u kunt zoveel caches hebben als u waar ook ter wereld nodig hebt.
@@ -236,14 +236,14 @@ De volgende release opmerkingen zijn voor versie 9.0.0.0 van de Azure File Sync-
 ### <a name="improvements-and-issues-that-are-fixed"></a>Verbeteringen en problemen die zijn opgelost
 
 - Ondersteuning voor herstel door self-service
-    - Gebruikers kunnen nu hun bestanden herstellen met behulp van de functie voor eerdere versies. Vóór de v9-release werd de functie vorige versie niet ondersteund op volumes waarop Cloud lagen zijn ingeschakeld. Deze functie moet voor elk volume afzonderlijk worden ingeschakeld, waarbij een eind punt waarvoor Cloud lagen zijn ingeschakeld, bestaat. Zie voor meer informatie  
+    - Gebruikers kunnen nu ook gelaagde bestanden (samen met bestanden op schijf) herstellen met behulp van de functie vorige versie, van de VSS-moment opnamen die zijn gemaakt nadat de functie voor het terugzetten van selfservice herstel is ingeschakeld op het volume. Vóór de v9-release werd de functie vorige versie niet ondersteund voor gelaagde bestanden. Deze functie moet voor elk volume afzonderlijk worden ingeschakeld, waarbij een eind punt waarvoor Cloud lagen zijn ingeschakeld, bestaat. Zie voor meer informatie  
 [Self-service herstellen via eerdere versies en VSS (Volume Shadow Copy Service)](./storage-sync-files-deployment-guide.md#self-service-restore-through-previous-versions-and-vss-volume-shadow-copy-service). 
  
 - Ondersteuning voor grotere grootte van bestands shares 
     - Azure File Sync ondersteunt nu Maxi maal 64TiB en 100.000.000 bestanden in één naam ruimte die wordt gesynchroniseerd.  
  
 - Ondersteuning voor gegevensontdubbeling op server 2019 
-    - Gegevensontdubbeling wordt nu ondersteund met Cloud lagen die zijn ingeschakeld op Windows Server 2019. Voor de ondersteuning van Gegevensontdubbeling op volumes met Cloud lagen moet Windows Update [KB4520062](https://support.microsoft.com/help/4520062) zijn geïnstalleerd. 
+    - Gegevensontdubbeling wordt nu ondersteund (ongeacht of Cloud lagen zijn ingeschakeld of uitgeschakeld op een of meer server eindpunten op het volume) in Windows Server 2016 en Windows Server 2019. Voor de ondersteuning van Gegevensontdubbeling op volumes met Cloud lagen op server 2019 moet Windows Update [KB4520062](https://support.microsoft.com/help/4520062) zijn geïnstalleerd. 
  
 - Verbeterde minimale bestands grootte voor een bestand dat kan worden gelaagd 
     - De minimale bestands grootte voor een bestand op laag is nu gebaseerd op de grootte van het bestandssysteem cluster (dubbel de grootte van het bestandssysteem cluster). Standaard is de cluster grootte van het NTFS-bestands systeem 4KB, de resulterende minimale bestands grootte voor een bestand dat moet worden ingesteld op laag 8 KB. 

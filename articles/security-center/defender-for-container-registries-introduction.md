@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: ad880b7c23c687530a79ca1123474e94c923e150
-ms.sourcegitcommit: b849ecdc8aa97337299b0f09970b7810c59cd044
+ms.openlocfilehash: 79a428c322b65bfbb982be7a7e0c8b9fab7eed18
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96310388"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132729"
 ---
 # <a name="introduction-to-azure-defender-for-container-registries"></a>Inleiding tot Azure Defender voor containerregisters
 
@@ -28,7 +28,7 @@ Security Center identificeert op Azure Resource Manager gebaseerde ACR-registers
 
 **Azure Defender voor containerregisters** bevat een scanner voor beveiligingsproblemen die de installatiekopieën in uw op Azure Resource Manager gebaseerde Azure Container Registry-registers scant en dieper inzicht biedt in de beveiligingsproblemen van uw installatiekopieën. De geïntegreerde scanner wordt aangestuurd door Qualys, de toonaangevende leverancier voor het scannen op beveiligingsproblemen.
 
-Als er problemen worden gevonden - door Qualys of Security Center - krijgt u een melding in het dashboard van Security Center. Security Center geeft voor elk beveiligingsprobleem praktische aanbevelingen, een classificatie van de ernst en richtlijnen voor het oplossen van het probleem. Zie voor meer informatie over de aanbevelingen van Security Center voor containers de [Verwijzingenlijst met aanbevelingen](recommendations-reference.md#recs-containers).
+Als er problemen worden gevonden - door Qualys of Security Center - krijgt u een melding in het dashboard van Security Center. Security Center geeft voor elk beveiligingsprobleem praktische aanbevelingen, een classificatie van de ernst en richtlijnen voor het oplossen van het probleem. Zie voor meer informatie over de aanbevelingen van Security Center voor containers de [Verwijzingenlijst met aanbevelingen](recommendations-reference.md#recs-compute).
 
 Security Center filtert en classificeert de resultaten van de scanner. Wanneer een installatiekopie in orde is, wordt deze als zodanig gemarkeerd door Security Center. Security Center genereert alleen aanbevelingen voor de beveiliging ten aanzien van installatiekopieën waarvoor problemen moeten worden opgelost. Security Center geeft details en een classificatie van de ernst voor elk gemeld beveiligingsprobleem. Daarnaast geeft het richtlijnen voor het herstellen van de specifieke beveiligingsproblemen die in elke installatiekopie worden gevonden.
 

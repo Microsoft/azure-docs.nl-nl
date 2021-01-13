@@ -6,12 +6,12 @@ ms.date: 03/14/2019
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 6b578cd03daa6e996a69c03afd327097d6123045
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 3144633f76d1c4738f2323f1e047d6f32329909f
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607895"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133239"
 ---
 # <a name="troubleshooting-and-q-and-a-for-application-insights-for-java-sdk"></a>Probleem oplossing en Q en A voor Application Insights voor Java SDK
 
@@ -23,7 +23,7 @@ Vragen of problemen met [Azure-toepassing inzichten in Java][java]? Hier volgen 
 ## <a name="build-errors"></a>Build-fouten
 **Bij een eclips-of IntelliJ-idee wordt bij het toevoegen van de Application Insights SDK via maven of Gradle de validatie fouten build of checksum weer geven.**
 
-* Als het afhankelijkheids `<version>` element een patroon met Joker tekens (bijvoorbeeld Maven) `<version>[2.0,)</version>` of (Gradle) `version:'2.0.+'` ) gebruikt, probeert u een specifieke versie op te geven in plaats van op een manier `2.0.1` . Zie de [release opmerkingen](https://github.com/Microsoft/ApplicationInsights-Java/releases) voor de meest recente versie.
+* Als het afhankelijkheids `<version>` element een patroon met Joker tekens (bijvoorbeeld Maven) `<version>[2.0,)</version>` of (Gradle) `version:'2.+'` ) gebruikt, probeert u een specifieke versie op te geven in plaats van op een manier `2.6.2` .
 
 ## <a name="no-data"></a>Geen gegevens
 **Ik heb Application Insights toegevoegd en mijn app uitgevoerd, maar ik heb nooit gegevens in de portal gezien.**
@@ -36,7 +36,7 @@ Vragen of problemen met [Azure-toepassing inzichten in Java][java]? Hier volgen 
 * [Schakel logboek registratie](#debug-data-from-the-sdk) in door een element toe te voegen `<SDKLogger />` onder het hoofd knooppunt in het ApplicationInsights.xml-bestand (in de map resources in uw project) en te controleren op vermeldingen die zijn voorafgegaan door AI: info/waarschuwing/fout voor verdachte Logboeken. 
 * Controleer of het juiste ApplicationInsights.xml bestand door de Java-SDK is geladen door te kijken naar de uitvoer berichten van de console voor een configuratie bestand is gevonden.
 * Als het configuratie bestand niet wordt gevonden, controleert u de uitvoer berichten om te zien waar het configuratie bestand wordt doorzocht en zorgt u ervoor dat de ApplicationInsights.xml zich op een van deze zoek locaties bevindt. Als vuist regel kunt u het configuratie bestand in de buurt van de Application Insights SDK-potten plaatsen. Bijvoorbeeld: in Tomcat is dit de map WEB-INF/classes. Tijdens de ontwikkeling kunt u ApplicationInsights.xml in de map resources van uw webproject plaatsen.
-* Raadpleeg ook de [pagina met github-problemen](https://github.com/Microsoft/ApplicationInsights-Java/issues) voor bekende problemen met de SDK.
+* Raadpleeg ook de [pagina met github-problemen](https://github.com/microsoft/ApplicationInsights-Java/issues) voor bekende problemen met de SDK.
 * Zorg ervoor dat u dezelfde versie van Application Insights-kern-, Web-, agent-en logboek registratie-toevoegers gebruikt om problemen met versie conflicten te voor komen.
 
 #### <a name="i-used-to-see-data-but-it-has-stopped"></a>Ik heb de gegevens weer gegeven, maar deze zijn gestopt
@@ -194,7 +194,7 @@ Application Insights gebruikt `org.apache.http` . Dit wordt verplaatst binnen Ap
 
 ## <a name="get-help"></a>Hulp vragen
 * [Stack Overflow](https://stackoverflow.com/questions/tagged/ms-application-insights)
-* [Een probleem in GitHub bestand oplossen](https://github.com/Microsoft/ApplicationInsights-Java/issues)
+* [Een probleem in GitHub bestand oplossen](https://github.com/microsoft/ApplicationInsights-Java/issues)
 
 <!--Link references-->
 

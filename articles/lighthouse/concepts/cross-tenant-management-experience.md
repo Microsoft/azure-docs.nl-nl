@@ -1,14 +1,14 @@
 ---
 title: Beheerervaring in meerdere tenants
 description: Azure delegated Resource Management maakt een cross-Tenant beheer mogelijk.
-ms.date: 12/16/2020
+ms.date: 01/07/2020
 ms.topic: conceptual
-ms.openlocfilehash: b789f241fba4b77223272f81d1a69c8fcb050008
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: a550655b8076a1e3946ff015239715ddf0712236
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127155"
+ms.locfileid: "98131760"
 ---
 # <a name="cross-tenant-management-experiences"></a>Beheerervaring in meerdere tenants
 
@@ -97,7 +97,7 @@ De meeste taken en services kunnen worden uitgevoerd op gedelegeerde resources i
 
 - Waarschuwingen voor gedelegeerde abonnementen weer geven, met de mogelijkheid om waarschuwingen voor alle abonnementen weer te geven en te vernieuwen
 - Details van het activiteiten logboek voor gedelegeerde abonnementen weer geven
-- Log Analytics: gegevens opvragen uit externe werk ruimten in meerdere tenants
+- Log Analytics: gegevens opvragen uit externe werk ruimten in meerdere tenants (Houd er rekening mee dat Automation-accounts die worden gebruikt voor toegang tot gegevens uit werk ruimten in de tenants van de klant, moeten worden gemaakt in dezelfde Tenant)
 - Maak waarschuwingen in klant tenants die automatisering activeren, zoals Azure Automation runbooks of Azure Functions, in de Tenant beheren via webhooks
 - [Diagnostische instellingen](../..//azure-monitor/platform/diagnostic-settings.md) maken in de tenants van de klant om resource logboeken te verzenden naar werk ruimten in de Tenant beheren
 - Voor SAP-workloads [bewaakt u de metrische gegevens van SAP-oplossingen met een geaggregeerde weer gave van alle tenants van de klant](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/using-azure-lighthouse-and-azure-monitor-for-sap-solutions-to/ba-p/1537293)

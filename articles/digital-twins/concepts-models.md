@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: dfea6d531dfb87a5344c5d8e53570b6e1ae8e598
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 599bb93e747acf504a4ebf43aaea771ed5064886
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98049317"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131386"
 ---
 # <a name="understand-twin-models-in-azure-digital-twins"></a>Meer informatie over dubbele modellen in azure Digital Apparaatdubbels
 
@@ -140,7 +140,7 @@ Bij het ontwerpen van modellen om de entiteiten in uw omgeving weer te geven, ka
 
 Het gebruik van modellen die zijn gebaseerd op industrie normen of het gebruik van de standaard Ontology-vertegenwoordiging, zoals RDF of OWL, biedt een rijk begin punt bij het ontwerpen van uw Azure Digital Apparaatdubbels-modellen. Het gebruik van industrie modellen helpt ook bij standaardisatie en het delen van gegevens.
 
-Als u wilt gebruiken met Azure Digital Apparaatdubbels, moet een model worden weer gegeven in de op JSON-LD gebaseerde [**Digital Apparaatdubbels Definition Language (DTDL)**](concepts-models.md). In dit artikel wordt daarom beschreven hoe u uw industrie standaard modellen in DTDL aanduidt, de bestaande principes van de industrie integreert met DTDL semantiek zodat Azure Digital Apparaatdubbels deze kan gebruiken. Het DTDL-model fungeert vervolgens als de bron van waarheid voor het model in azure Digital Apparaatdubbels.
+Als u wilt gebruiken met Azure Digital Apparaatdubbels, moet een model worden weer gegeven in de op JSON-LD gebaseerde [**Digital Apparaatdubbels Definition Language (DTDL)**](concepts-models.md). Daarom moet u deze eerst converteren naar DTDL, zodat deze door Azure Digital Apparaatdubbels kunnen worden gebruikt. Het DTDL-model fungeert vervolgens als de bron van waarheid voor het model in azure Digital Apparaatdubbels.
 
 Er zijn twee hoofd paden voor het integreren van industrie standaard modellen met DTDL, afhankelijk van uw situatie:
 * Als u uw modellen nog hebt gemaakt, kunt u deze ontwerpen rond **bestaande starter DTDL-Ontologies** die taalspecifieke taal voor uw branche bevatten.

@@ -6,12 +6,12 @@ ms.date: 11/22/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 6bdad71f0b36995abdeb3b1edb87cbef32df8b67
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 115e1ec347cdcd80904b47a0c8798206360d0dad
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96919426"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131777"
 ---
 # <a name="quickstart-get-started-with-application-insights-in-a-java-web-project"></a>Quickstart: Aan de slag met Application Insights in een Java-webproject
 
@@ -32,7 +32,7 @@ Application Insights is een uitbreidbare analyseservice voor webontwikkelaars di
 
 > [!IMPORTANT]
 > Nieuwe Azure-regio's **vereisen** het gebruik van verbindings reeksen in plaats van instrumentatie sleutels. Met de [verbindings reeks](./sdk-connection-string.md?tabs=java) wordt de resource geïdentificeerd waaraan u de telemetriegegevens wilt koppelen. U kunt ook de eind punten wijzigen die door de resource worden gebruikt als een bestemming voor uw telemetrie. U moet de connection string kopiëren en toevoegen aan de code van uw toepassing of aan een omgevings variabele.
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Maak in de Azure Portaleen Application Insights-resource. Stel het toepassingstype in op Java-webtoepassing.
 
 3. Zoek de instrumentatiesleutel van de nieuwe resource. U moet deze sleutel zo dadelijk in de code van uw project plakken.
@@ -56,7 +56,7 @@ Vervolgens vernieuwt u de projectafhankelijkheden om de binaire bestanden te dow
         <artifactId>applicationinsights-web-auto</artifactId>
         <!-- or applicationinsights-web for manual web filter registration -->
         <!-- or applicationinsights-core for bare API -->
-        <version>2.5.0</version>
+        <version>2.6.2</version>
       </dependency>
     </dependencies>
 ```
@@ -69,15 +69,11 @@ Vervolgens vernieuwt u de projectafhankelijkheden om de binaire bestanden te dow
 
 ```gradle
     dependencies {
-      compile group: 'com.microsoft.azure', name: 'applicationinsights-web-auto', version: '2.5.0'
+      compile group: 'com.microsoft.azure', name: 'applicationinsights-web-auto', version: '2.6.2'
       // or applicationinsights-web for manual web filter registration
       // or applicationinsights-core for bare API
     }
 ```
-
-# <a name="other-types"></a>[Andere typen](#tab/other)
-
-Download de [nieuwste versie](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) en kopieer de vereiste bestanden in uw project, waarbij eventuele vorige versies worden vervangen.
 
 ---
 
@@ -88,10 +84,7 @@ Download de [nieuwste versie](https://github.com/Microsoft/ApplicationInsights-J
   * `applicationinsights-core` geeft u alleen de bare API, bijvoorbeeld als uw toepassing niet op servlet is gebaseerd.
   
 * *Hoe moet ik de SDK bijwerken naar de nieuwste versie?*
-  * Als u Gradle of maven gebruikt...
-    * Werk uw build-bestand bij om de meest recente versie op te geven.
-  * Als u afhankelijkheden hand matig beheert...
-    * Download de meest recente [Application Insights-SDK voor Java](https://github.com/Microsoft/ApplicationInsights-Java/releases/latest) en vervang de oude versie. De wijzigingen worden beschreven in de [SDK-releaseopmerkingen](https://github.com/Microsoft/ApplicationInsights-Java#release-notes).
+  * Vanaf november 2020 wordt voor het bewaken van Java-toepassingen de automatische instrumentatie aanbevolen met de Azure Monitor Application Insights Java 3,0-agent. Zie [Application Insights Java 3,0-agent](./java-in-process-agent.md)voor meer informatie over hoe u aan de slag kunt gaan.
 
 ## <a name="add-an-applicationinsightsxml-file"></a>Een *ApplicationInsights.xml* -bestand toevoegen
 Voeg *ApplicationInsights.xml* toe aan de map resources in uw project of zorg ervoor dat deze is toegevoegd aan het pad van de implementatie klasse van uw project. Kopieer de volgende XML-code naar het bestand.
@@ -168,10 +161,6 @@ Gegevens van HTTP-aanvragen worden weergegeven op de overzichtsblade. (Als dit n
 Klik in een grafiek voor gedetailleerdere cumulatieve metrische gegevens.
 
 ![Deel venster met Application Insights fouten met grafieken](./media/java-get-started/006-barcharts.png)
-
-<!--
-[TODO update image with 2.5.0 operation naming provided by agent]
--->
 
 ### <a name="instance-data"></a>Gegevens van exemplaren
 Klik op een specifiek aanvraagtype om de afzonderlijke exemplaren weer te geven.

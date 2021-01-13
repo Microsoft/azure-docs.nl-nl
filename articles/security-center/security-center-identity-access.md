@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/08/2020
 ms.author: memildin
-ms.openlocfilehash: b36f52fd97a9f7ff294f14ec394ff9a9f607b5b0
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 3c0dd2b4e7e48eeb76d82c26eb52b89b61e9f668
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187150"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134106"
 ---
 # <a name="monitor-identity-and-access"></a>Identiteit en toegang bewaken
 
@@ -44,7 +44,7 @@ Voor beelden van aanbevelingen die u kunt zien in deze twee besturings elementen
 - Afgeschafte accounts moeten worden verwijderd uit uw abonnement (afgeschafte accounts zijn accounts die niet meer nodig zijn, en zijn geblokkeerd voor het aanmelden door Azure Active Directory)
 
 > [!TIP]
-> Zie [aanbevelingen voor identiteits-en toegangs rechten](recommendations-reference.md#recs-identity)voor meer informatie over deze aanbevelingen en andere in deze besturings elementen.
+> Zie [aanbevelingen voor identiteits-en toegangs rechten](recommendations-reference.md#recs-identityandaccess)voor meer informatie over deze aanbevelingen en andere in deze besturings elementen.
 
 ### <a name="limitations"></a>Beperkingen
 

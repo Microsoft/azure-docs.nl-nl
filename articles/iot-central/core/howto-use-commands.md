@@ -7,12 +7,12 @@ ms.date: 01/07/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: dd05a4880bdf077f63dc58575828e6180e415260
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 52872175eb799785674c331ad4d687ff8ef427a4
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122353"
+ms.locfileid: "98134276"
 ---
 # <a name="how-to-use-commands-in-an-azure-iot-central-solution"></a>Opdrachten gebruiken in een Azure IoT Central-oplossing
 
@@ -219,10 +219,8 @@ In de volgende scherm afbeelding ziet u de IoT Central-gebruikers interface wann
 
 In deze sectie wordt beschreven hoe een apparaat een offline opdracht verwerkt. Als een apparaat online is, kan het de offline opdracht afhandelen zodra het wordt ontvangen. Als een apparaat offline is, wordt de offline opdracht verwerkt wanneer de volgende verbinding maakt met IoT Central. Apparaten kunnen geen retour waarde verzenden als reactie op een offline opdracht.
 
-Het volgende code fragment toont hoe een apparaat een offline opdracht kan implementeren:
-
 > [!NOTE]
-> In dit artikel wordt Node.js gebruikt voor eenvoud. Zie voor voor beelden van andere talen de zelf studie [een client toepassing maken en verbinden met uw Azure IOT Central-toepassing](tutorial-connect-device.md) .
+> In dit artikel wordt Node.js gebruikt voor eenvoud.
 
 De volgende scherm afbeelding toont een offline opdracht met de naam **GenerateDiagnostics**. De aanvraag parameter is een object met de eigenschap datetime met de naam **StartTime** en een opsommings eigenschap met de naam **Bank**:
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/19/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 036cab033e5b70a8940a488c07374e9092d52b33
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 04f873763b087bfd5168abc2c558cc9d7161c361
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533652"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132134"
 ---
 # <a name="azure-security-baseline-for-azure-hpc-cache"></a>Azure-beveiligings basislijn voor Azure HPC-cache
 
@@ -108,7 +108,7 @@ Azure HPC cache is niet bedoeld voor het uitvoeren van webtoepassingen. u hoeft 
 
 - [Azure DDoS Protection Standard beheren met de Azure Portal](../ddos-protection/manage-ddos-protection.md) 
 
-- [Aanbevelingen voor Azure Security Center](../security-center/recommendations-reference.md#recs-network)
+- [Aanbevelingen voor Azure Security Center](../security-center/recommendations-reference.md#recs-networking)
 
 **Monitoring door Azure Security Center**: Ja
 

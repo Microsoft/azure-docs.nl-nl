@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: conceptual
 ms.custom: hdinsightactive,seoapr2020
-ms.date: 05/04/2020
-ms.openlocfilehash: 2d6d18cc73c02d3139074555fdd22a40c797ce40
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.date: 01/12/2021
+ms.openlocfilehash: 429f0b2ffe486279a1c429fc7a153e6528642f54
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825142"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131658"
 ---
 # <a name="plan-a-virtual-network-for-azure-hdinsight"></a>Een virtueel netwerk plannen voor Azure HDInsight
 
@@ -51,7 +51,8 @@ Hieronder vindt u de vragen die u moet beantwoorden bij het plannen van HDInsigh
 Volg de stappen in deze sectie om te ontdekken hoe u een nieuwe HDInsight kunt toevoegen aan een bestaand Azure-Virtual Network.
 
 > [!NOTE]  
-> U kunt een bestaand HDInsight-cluster niet toevoegen aan een virtueel netwerk.
+> - U kunt een bestaand HDInsight-cluster niet toevoegen aan een virtueel netwerk.
+> - Het VNET en het cluster dat wordt gemaakt, moeten zich in hetzelfde abonnement benemen.
 
 1. Gebruikt u een klassiek of Resource Manager-implementatie model voor het virtuele netwerk?
 

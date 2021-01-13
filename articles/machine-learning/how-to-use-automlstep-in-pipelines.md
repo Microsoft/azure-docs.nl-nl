@@ -8,15 +8,15 @@ ms.subservice: core
 ms.author: laobri
 author: lobrien
 manager: cgronlun
-ms.date: 08/26/2020
+ms.date: 12/04/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, automl
-ms.openlocfilehash: 4cbe43f224ddf349db6b182feb3a717bb2bfd32e
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 1b9d515c197b56f7e0520539b23be60504059675
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93358827"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131250"
 ---
 # <a name="use-automated-ml-in-an-azure-machine-learning-pipeline-in-python"></a>Automatische ML gebruiken in een Azure Machine Learning pijp lijn in python
 
@@ -37,11 +37,7 @@ Automatische ML in een pijp lijn wordt vertegenwoordigd door een `AutoMLStep` ob
 
 Er zijn verschillende subklassen van `PipelineStep` . Naast de wordt in `AutoMLStep` dit artikel een `PythonScriptStep` voor bereiding van gegevens weer gegeven en een andere voor het registreren van het model.
 
-De voorkeurs manier _om gegevens naar_ een ml-pijp lijn te verplaatsen, is met `Dataset` objecten. Als u gegevens _tussen_ stappen wilt verplaatsen, is de voorkeurs manier met `PipelineData` objecten. Voor gebruik met `AutoMLStep` `PipelineData` moet het object worden omgezet in een- `PipelineOutputTabularDataset` object. Zie [invoer-en uitvoer gegevens van ml-pijp lijnen](how-to-move-data-in-out-of-pipelines.md)voor meer informatie.
-
-
-> [!TIP]
-> Een verbeterde ervaring voor het door geven van tijdelijke gegevens tussen pijplijn stappen is beschikbaar in de open bare preview-klassen  [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) en [`OutputTabularDatasetConfig`](/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?preserve-view=true&view=azure-ml-py) .  Deze klassen zijn [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#&preserve-view=truestable-vs-experimental) preview-functies en kunnen op elk gewenst moment worden gewijzigd.
+De voorkeurs manier _om gegevens naar_ een ml-pijp lijn te verplaatsen, is met `Dataset` objecten. Als u gegevens wilt verplaatsen _tussen_ stappen en mogelijke gegevens uitvoer wilt opslaan van uitvoeringen, is de voorkeurs manier voor [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) en [`OutputTabularDatasetConfig`](/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?preserve-view=true&view=azure-ml-py) objecten. Voor gebruik met `AutoMLStep` `PipelineData` moet het object worden omgezet in een- `PipelineOutputTabularDataset` object. Zie [invoer-en uitvoer gegevens van ml-pijp lijnen](how-to-move-data-in-out-of-pipelines.md)voor meer informatie.
 
 De `AutoMLStep` is geconfigureerd via een- `AutoMLConfig` object. `AutoMLConfig` is een flexibele klasse, zoals beschreven in [automatische ml experimenten configureren in python](./how-to-configure-auto-train.md#configure-your-experiment-settings). 
 
@@ -149,8 +145,7 @@ De Titanic-gegevensset van de basis lijn bestaat uit gemengde numerieke en tekst
 - Categorische-gegevens transformeren naar gehele getallen
 - Kolommen verwijderen die u niet wilt gebruiken
 - De gegevens splitsen in trainings-en test sets
-- Schrijf de getransformeerde gegevens naar
-    - `PipelineData` uitvoer paden
+- De getransformeerde gegevens naar de `OutputFileDatasetConfig` uitvoer paden schrijven
 
 ```python
 %%writefile dataprep.py
@@ -220,7 +215,7 @@ Het bovenstaande code fragment is een volledige, maar minimale, voor beeld van h
 
 De verschillende `prepare_` functies in het bovenstaande code fragment wijzigen de relevante kolom in de invoer gegevensset. Deze functies werken aan de gegevens zodra deze zijn gewijzigd in een `DataFrame` object Panda. In elk geval worden ontbrekende gegevens gevuld met representatieve wille keurige gegevens of categorische gegevens die duiden op ' Unknown '. Op tekst gebaseerde categorische-gegevens worden toegewezen aan gehele getallen. Kolommen die niet meer nodig zijn, worden overschreven of verwijderd. 
 
-Nadat de code de functies voor gegevens voorbereiding heeft gedefinieerd, parseert de code het argument invoer. Dit is het pad waarnaar we onze gegevens willen schrijven. (Deze waarden worden bepaald door `PipelineData` objecten die worden besproken in de volgende stap.) Met de code wordt de registratie opgehaald `'titanic_cs'` `Dataset` , geconverteerd naar een Panda `DataFrame` en worden de verschillende functies voor gegevens voorbereiding aangeroepen. 
+Nadat de code de functies voor gegevens voorbereiding heeft gedefinieerd, parseert de code het argument invoer. Dit is het pad waarnaar we onze gegevens willen schrijven.  (Deze waarden worden bepaald door `OutputFileDatasetConfig` objecten die worden besproken in de volgende stap.) Met de code wordt de registratie opgehaald `'titanic_cs'` `Dataset` , geconverteerd naar een Panda `DataFrame` en worden de verschillende functies voor gegevens voorbereiding aangeroepen. 
 
 Omdat de `output_path` is volledig gekwalificeerd, wordt de functie `os.makedirs()` gebruikt om de mapstructuur voor te bereiden. Op dit moment kunt u gebruiken `DataFrame.to_csv()` om de uitvoer gegevens te schrijven, maar Parquet-bestanden zijn efficiënter. Deze efficiency is waarschijnlijk niet irrelevant met een dergelijke kleine gegevensset, maar het gebruik van de **PyArrow** en-functies van het pakket `from_pandas()` `write_table()` zijn slechts een paar toetsaanslagen dan `to_csv()` .
 
@@ -228,30 +223,27 @@ Parquet-bestanden worden standaard ondersteund door de automatische ML-stap die 
 
 ### <a name="write-the-data-preparation-pipeline-step-pythonscriptstep"></a>De pijp lijn stap voor gegevens voorbereiding schrijven ( `PythonScriptStep` )
 
-De hierboven beschreven code voor gegevens voorbereiding moet worden gekoppeld aan een `PythonScripStep` object dat met een pijp lijn moet worden gebruikt. Het pad waarnaar de uitvoer van de Parquet-gegevens voorbereiding wordt geschreven, wordt gegenereerd door een `PipelineData` object. De bronnen die eerder zijn voor bereid, zoals de `ComputeTarget` , `RunConfig` en `'titanic_ds' Dataset` worden gebruikt om de specificatie te volt ooien.
+De hierboven beschreven code voor gegevens voorbereiding moet worden gekoppeld aan een `PythonScripStep` object dat met een pijp lijn moet worden gebruikt. Het pad waarnaar de uitvoer van de Parquet-gegevens voorbereiding wordt geschreven, wordt gegenereerd door een `OutputFileDatasetConfig` object. De bronnen die eerder zijn voor bereid, zoals de `ComputeTarget` , `RunConfig` en `'titanic_ds' Dataset` worden gebruikt om de specificatie te volt ooien.
 
 PipelineData gebruikers
 ```python
-from azureml.pipeline.core import PipelineData
-
+from azureml.data import OutputFileDatasetConfig
 from azureml.pipeline.steps import PythonScriptStep
-prepped_data_path = PipelineData("titanic_train", datastore).as_dataset()
+
+prepped_data_path = OutputFileDatasetConfig(name="titanic_train", (destination=(datastore, 'outputdataset')))
 
 dataprep_step = PythonScriptStep(
     name="dataprep", 
     script_name="dataprep.py", 
     compute_target=compute_target, 
     runconfig=aml_run_config,
-    arguments=["--output_path", prepped_data_path],
+    arguments=[titanic_ds.as_named_input('titanic_ds').as_mount(), prepped_data_path],
     inputs=[titanic_ds.as_named_input("titanic_ds")],
     outputs=[prepped_data_path],
     allow_reuse=True
 )
 ```
-Het `prepped_data_path` object is van het type `PipelineOutputFileDataset` . U ziet dat deze zowel in de als-argumenten is opgegeven `arguments` `outputs` . Als u de vorige stap bekijkt, ziet u dat in de code voor gegevens voorbereiding de waarde van het argument `'--output_path'` het bestandspad is waarnaar het Parquet-bestand is geschreven. 
-
-> [!TIP]
-> Een verbeterde ervaring voor het door geven van tussenliggende gegevens tussen pijplijn stappen is beschikbaar in de open bare preview-klasse [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) . `OutputFileDatasetConfig`Zie [een pijp lijn met twee stappen maken](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/work-with-data/datasets-tutorial/pipeline-with-datasets/pipeline-for-image-classification.ipynb)voor een code voorbeeld met behulp van de-klasse.
+Het `prepped_data_path` object is van het type `OutputFileDatasetConfig` dat verwijst naar een map.  U ziet dat deze is opgegeven in de `arguments` para meter. Als u de vorige stap bekijkt, ziet u dat in de code voor gegevens voorbereiding de waarde van het argument `'--output_path'` het bestandspad is waarnaar het Parquet-bestand is geschreven. 
 
 ## <a name="train-with-automlstep"></a>Trainen met AutoMLStep
 
@@ -259,18 +251,13 @@ Het configureren van een automatische ML-pijplijn stap wordt uitgevoerd met de- 
 
 ### <a name="send-data-to-automlstep"></a>Gegevens verzenden naar `AutoMLStep`
 
-In een ML-pijp lijn moeten de invoer gegevens een `Dataset` object zijn. De hoogst presterende manier is om de invoer gegevens op te geven in de vorm van `PipelineOutputTabularDataset` objecten. U maakt een object van dat type met de `parse_parquet_files()` of `parse_delimited_files()` op een `PipelineOutputFileDataset` , zoals het `prepped_data_path` object.
+In een ML-pijp lijn moeten de invoer gegevens een `Dataset` object zijn. De hoogst presterende manier is om de invoer gegevens op te geven in de vorm van `OutputTabularDatasetConfig` objecten. U maakt een object van dat type met de  `read_delimited_files()` op a `OutputFileDatasetConfig` , zoals het `prepped_data_path` `prepped_data_path` object.
 
 ```python
-# type(prepped_data_path) == PipelineOutputFileDataset
-# type(prepped_data) == PipelineOutputTabularDataset
-prepped_data = prepped_data_path.parse_parquet_files(file_extension=None)
+# type(prepped_data_path) == OutputFileDatasetConfig
+# type(prepped_data) == OutputTabularDatasetConfig
+prepped_data = prepped_data_path.read_delimited_files()
 ```
-
-Met het bovenstaande code fragment maakt u een hoge uitvoering van `PipelineOutputTabularDataset` de `PipelineOutputFileDataset` uitvoer van de stap voor het voorbereiden van gegevens.
-
-> [!TIP]
-> De open bare preview-klasse, [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) , bevat de methode [read_delimited_files ()](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py#&preserve-view=trueread-delimited-files-include-path-false--separator------header--promoteheadersbehavior-all-files-have-same-headers--3---partition-format-none--path-glob-none--set-column-types-none-) waarmee een `OutputFileDatasetConfig` in een wordt omgezet in een [`OutputTabularDatasetConfig`](/python/api/azureml-core/azureml.data.output_dataset_config.outputtabulardatasetconfig?preserve-view=true&view=azure-ml-py) for-verbruik in AutoML-uitvoeringen.
 
 Een andere optie is `Dataset` het gebruik van objecten die zijn geregistreerd in de werk ruimte:
 
@@ -282,10 +269,10 @@ Vergelijking van de twee technieken:
 
 | Techniek | Voor delen en nadelen | 
 |-|-|
-|`PipelineOutputTabularDataset`| Hogere prestaties | 
+|`OutputTabularDatasetConfig`| Hogere prestaties | 
 || Natuurlijke route van `PipelineData` | 
 || De gegevens zijn niet behouden na de pijplijn uitvoering |
-|| [Laptop met `PipelineOutputTabularDataset` techniek](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/nyc-taxi-data-regression-model-building/nyc-taxi-data-regression-model-building.ipynb) |
+|| [Laptop met `OutputTabularDatasetConfig` techniek](https://github.com/Azure/MachineLearningNotebooks/blob/master/how-to-use-azureml/machine-learning-pipelines/nyc-taxi-data-regression-model-building/nyc-taxi-data-regression-model-building.ipynb) |
 | Registratie `Dataset` | Lagere prestaties |
 | | Kunnen op verschillende manieren worden gegenereerd | 
 | | Gegevens blijven behouden en worden weer gegeven in de werk ruimte |
@@ -294,7 +281,7 @@ Vergelijking van de twee technieken:
 
 ### <a name="specify-automated-ml-outputs"></a>Automatische ML-uitvoer opgeven
 
-De uitvoer van de `AutoMLStep` zijn de laatste metrische scores van het model met de hogere prestaties en het model zelf. Als u deze uitvoer in verdere pijplijn stappen wilt gebruiken, moet `PipelineData` u objecten voorbereiden om ze te ontvangen.
+De uitvoer van de `AutoMLStep` zijn de laatste metrische scores van het model met de hogere prestaties en het model zelf. Als u deze uitvoer in verdere pijplijn stappen wilt gebruiken, moet `OutputFileDatasetConfig` u objecten voorbereiden om ze te ontvangen.
 
 ```python
 

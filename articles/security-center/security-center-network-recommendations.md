@@ -13,17 +13,17 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 04/05/2019
 ms.author: memildin
-ms.openlocfilehash: 28d0d7b14c18a1d98be1872b1555930b2e1650c3
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: 366a9a63e4577a9b8470faec68f8d4a25114dd48
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342447"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133698"
 ---
 # <a name="protect-your-network-resources"></a>Uw netwerk bronnen beveiligen
 Azure Security Center de beveiligings status van uw Azure-resources voortdurend geanalyseerd op de aanbevolen procedures voor netwerk beveiliging. Wanneer Security Center mogelijke beveiligings problemen identificeert, worden er aanbevelingen gemaakt die u door het proces van het configureren van de benodigde besturings elementen leiden om uw resources te beschermen en te beveiligen.
 
-Zie [aanbevelingen voor netwerken](recommendations-reference.md#recs-network)voor een volledige lijst met aanbevelingen voor netwerken.
+Zie [aanbevelingen voor netwerken](recommendations-reference.md#recs-networking)voor een volledige lijst met aanbevelingen voor netwerken.
 
 In dit artikel worden aanbevelingen gedaan die van toepassing zijn op uw Azure-resources op basis van een netwerk beveiligings perspectief. Aanbevelingen voor netwerken rond de volgende generatie firewalls, netwerk beveiligings groepen, JIT-VM-toegang, meer regels voor binnenkomend verkeer, en meer. Zie [beveiligings aanbevelingen beheren in azure Security Center](security-center-recommendations.md)voor een lijst met aanbevelingen en herstel acties voor netwerken.
 
@@ -48,9 +48,9 @@ De netwerk kaart openen:
 
 1. Open in het menu van Security Center het Azure Defender-dash board en selecteer **netwerk overzicht**.
 
-    :::image type="content" source="./media/security-center-network-recommendations/opening-network-map.png" alt-text="Netwerk resource typen activa inventaris" lightbox="./media/security-center-network-recommendations/opening-network-map.png":::
+    :::image type="content" source="./media/security-center-network-recommendations/opening-network-map.png" alt-text="De netwerk kaart openen vanuit het Azure Defender-dash board" lightbox="./media/security-center-network-recommendations/opening-network-map.png":::
 
-1. Selecteer in het menu **lagen** de optie **topologie**kiezen.
+1. Selecteer in het menu **lagen** de optie **topologie** kiezen.
  
 De standaard weergave van de topologie kaart geeft het volgende weer:
 

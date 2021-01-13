@@ -7,12 +7,12 @@ ms.service: bastion
 ms.topic: troubleshooting
 ms.date: 10/16/2019
 ms.author: charwen
-ms.openlocfilehash: d4f5d4b7fed8f14f048794616ee272342d1e8343
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 23b7a66afcc91cf1cf4a5dd9f720aad24ad40071
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915552"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133987"
 ---
 # <a name="troubleshoot-azure-bastion"></a>Problemen met Azure Bastion oplossen
 
@@ -22,11 +22,7 @@ In dit artikel leest u hoe u problemen met Azure Bastion kunt oplossen.
 
 **V:** Wanneer ik een NSG op het Azure Bastion-subnet probeer te maken, krijg ik de volgende fout melding: *' de netwerk beveiligings groep heeft <NSG name> niet de vereiste regels voor het Azure Bastion-subnet AzureBastionSubnet '*.
 
-**A:** Als u een NSG maakt en toepast op *AzureBastionSubnet*, moet u ervoor zorgen dat u de volgende regels in uw NSG hebt toegevoegd. Als u deze regels niet toevoegt, mislukt het maken/bijwerken van de NSG.
-
-1. Besturings vlak connectiviteit: inkomend op 443 van GatewayManager
-2. Logboek registratie van diagnostische gegevens en anderen: uitgaand op 443 tot Cloud (regionale Tags in deze servicetag worden nog niet ondersteund.)
-3. Doel-VM: uitgaand voor 3389 en 22 tot VirtualNetwork
+**A:** Als u een NSG maakt en toepast op *AzureBastionSubnet*, moet u ervoor zorgen dat u de vereiste regels aan de NSG hebt toegevoegd. Zie [werken met NSG Access en Azure Bastion](./bastion-nsg.md)voor een lijst met vereiste regels. Als u deze regels niet toevoegt, mislukt het maken/bijwerken van de NSG.
 
 Een voor beeld van de NSG-regels is beschikbaar als referentie in de Quick Start- [sjabloon](https://github.com/Azure/azure-quickstart-templates/tree/master/101-azure-bastion-nsg).
 Zie [NSG-richt lijnen voor Azure Bastion](bastion-nsg.md)voor meer informatie.

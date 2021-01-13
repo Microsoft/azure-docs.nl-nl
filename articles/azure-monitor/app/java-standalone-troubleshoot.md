@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van problemen met de Java-Agent v
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 14644f76b7de53b2b6ee3f04131daaf59267a5ff
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 54bf2440dff20fc757f37e3f31a53c57ebd59120
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507639"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133188"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Gids voor probleem oplossing: Azure Monitor Application Insights voor Java
 
@@ -20,6 +20,10 @@ In dit artikel worden enkele veelvoorkomende problemen besproken die u kunt tege
 De Java 3,0-agent voor Application Insights produceert standaard een logboek bestand met `applicationinsights.log` de naam in dezelfde map waarin het bestand zich bevindt `applicationinsights-agent-3.0.0.jar` .
 
 Dit logboek bestand is de eerste plaats om te controleren of er hints zijn voor eventuele problemen die zich voordoen.
+
+## <a name="jvm-fails-to-start"></a>JVM kan niet worden gestart
+
+Als de JVM niet kan worden gestart met ' fout bij openen van zip-bestand of JAR-manifest ontbreekt ', moet u het jar-bestand van de agent opnieuw downloaden omdat het mogelijk tijdens de bestands overdracht is beschadigd.
 
 ## <a name="upgrade-from-the-application-insights-java-2x-sdk"></a>Upgrade van de Application Insights Java 2. x SDK
 

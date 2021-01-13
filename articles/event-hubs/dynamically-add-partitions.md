@@ -3,15 +3,15 @@ title: Dynamisch partities toevoegen aan een Event Hub in azure Event Hubs
 description: Dit artikel laat u zien hoe u dynamisch partities kunt toevoegen aan een Event Hub in azure Event Hubs.
 ms.topic: how-to
 ms.date: 06/23/2020
-ms.openlocfilehash: 4a729147eaa11497c66f82a9764dfee9492786b9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ebe4491338c24a331812041f4d3e6d37b934117
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87002536"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132168"
 ---
 # <a name="dynamically-add-partitions-to-an-event-hub-apache-kafka-topic-in-azure-event-hubs"></a>Dynamisch partities toevoegen aan een Event Hub (Apache Kafka onderwerp) in azure Event Hubs
-Event Hubs daarentegen biedt streaming van berichten via een model op basis van gepartitioneerd gebruik, waarbij elke consumer slechts een specifieke subset of partitie van de berichtenstroom leest. Dit patroon maakt een horizontale schaal voor de verwerking van gebeurtenissen mogelijk en biedt andere stroomgerichte functies die niet beschikbaar zijn in wachtrijen en onderwerpen. Een partitie is een geordende reeks gebeurtenissen die in een Event Hub wordt bewaard. Als nieuwere gebeurtenissen arriveren, worden ze toegevoegd aan het einde van deze reeks. Zie [partities](event-hubs-scalability.md#partitions) voor meer informatie over partities in het algemeen.
+Event Hubs daarentegen biedt streaming van berichten via een model op basis van gepartitioneerd gebruik, waarbij elke consumer slechts een specifieke subset of partitie van de berichtenstroom leest. Dit patroon maakt een horizontale schaal voor de verwerking van gebeurtenissen mogelijk en biedt andere stroomgerichte functies die niet beschikbaar zijn in wachtrijen en onderwerpen. Een partitie is een geordende reeks gebeurtenissen die in een Event Hub wordt bewaard. Als er nieuwere gebeurtenissen plaatsvinden, worden deze toegevoegd aan het einde van deze reeks. Zie [partities](event-hubs-scalability.md#partitions) voor meer informatie over partities in het algemeen.
 
 U kunt het aantal partities opgeven op het moment van het maken van een Event Hub. In sommige scenario's moet u mogelijk partities toevoegen nadat de Event Hub is gemaakt. In dit artikel wordt beschreven hoe u dynamisch partities kunt toevoegen aan een bestaande Event Hub. 
 
@@ -71,7 +71,7 @@ Event Hubs biedt drie opties voor de afzender:
 
 - **Afzender partitioneren** : in dit scenario verzenden clients rechtstreeks naar een partitie. Hoewel partities herkenbaar zijn en gebeurtenissen rechtstreeks naar hen kunnen worden verzonden, wordt dit patroon niet aangeraden. Het toevoegen van partities heeft geen invloed op dit scenario. U wordt aangeraden toepassingen opnieuw te starten zodat ze nieuwe partities kunnen detecteren. 
 - Verzender van de **partitie sleutel** : in dit scenario worden clients de gebeurtenissen met een sleutel verzonden zodat alle gebeurtenissen die bij die sleutel horen, in dezelfde partitie eindigen. In dit geval wordt de sleutel en routes naar de bijbehorende partitie gehasht. De update van het aantal partities kan leiden tot problemen met de hash-wijziging. Als u dus een bestelling maakt, moet u ervoor zorgen dat uw toepassing alle gebeurtenissen van bestaande partities verbruikt voordat u het aantal partities verhoogt.
-- **Round Robin (standaard)** : in dit scenario worden de gebeurtenissen in het event hubs service Round Robin. Event Hubs-service is op de hoogte van het aantal partities dat wordt gewijzigd en verzonden naar nieuwe partities binnen enkele seconden van het wijzigen van het aantal partities.
+- **Round Robin (standaard)** : in dit scenario wordt de Event hubs service Round Robin van de gebeurtenissen verdeeld over partities en wordt ook een taakverdelings algoritme gebruikt. Event Hubs-service is op de hoogte van het aantal partities dat wordt gewijzigd en verzonden naar nieuwe partities binnen enkele seconden van het wijzigen van het aantal partities.
 
 ### <a name="receiverconsumer-clients"></a>Ontvanger/consumenten clients
 Event Hubs biedt directe ontvangers en een eenvoudige consumenten bibliotheek met de naam van de [Event processor host (oude SDK)](event-hubs-event-processor-host.md)  of de [gebeurtenis processor (nieuwe SDK)](event-processor-balance-partition-load.md).
@@ -99,7 +99,7 @@ Wanneer een lid van een consument groep een meta gegevens vernieuwt en de zojuis
     > [!IMPORTANT]
     > Terwijl de bestaande gegevens worden geordend, wordt de partitie-hashing verbroken voor berichten die worden gehasht nadat het aantal partities is gewijzigd.
 - Het is raadzaam om een partitie toe te voegen aan een bestaand onderwerp of Event Hub exemplaar wordt aanbevolen in de volgende gevallen:
-    - Wanneer u de round robin (standaard) methode voor het verzenden van gebeurtenissen gebruikt
+    - Wanneer u de standaard methode voor het verzenden van gebeurtenissen gebruikt
      - Kafka standaard strategieën voor partitioneren, voor beeld – de strategie voor het koppelen van een gebruiker
 
 

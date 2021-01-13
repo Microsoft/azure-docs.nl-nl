@@ -3,12 +3,12 @@ title: Azure Relay Veelgestelde vragen | Microsoft Docs
 description: In dit artikel vindt u antwoorden op enkele veelgestelde vragen over de Azure Relay-service.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 9d967d926c6ab59e027fe4d4cf98e8418a8ff9bc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77d3122942289654c0f651f9f648307123b23546
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89299283"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131845"
 ---
 # <a name="azure-relay-faqs"></a>Veelgestelde vragen over Azure Relay
 
@@ -50,7 +50,6 @@ Hier volgen drie voor beelden van facturerings scenario's voor Hybride verbindin
     *   U verzendt gedurende de maand 6 GB aan gegevens in verbinding B.
     *   Uw totale kosten zijn $10,50. Dat is $5 voor verbinding A + $5 voor verbinding B + $0,50 (voor de zesde Gigabyte op verbinding B).
 
-De prijzen die in de voor beelden worden gebruikt, zijn alleen van toepassing tijdens de preview-periode van Hybride verbindingen. Prijzen kunnen worden gewijzigd bij algemene Beschik baarheid van Hybride verbindingen.
 
 ### <a name="how-are-hours-calculated-for-relay"></a>Hoe worden uren berekend voor relay?
 

@@ -2,13 +2,13 @@
 title: Resources implementeren in resource groepen
 description: Hierin wordt beschreven hoe u resources in een Azure Resource Manager sjabloon implementeert. U ziet hoe u meer dan één resource groep kunt bereiken.
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: 9d0bec51fa55ee377eb647a11fb554ec3b81e9eb
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.date: 01/13/2021
+ms.openlocfilehash: 8fe503cc95d71772c07427438b17e2ff0d4620a7
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95807727"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178888"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Implementaties van resource groepen met ARM-sjablonen
 
@@ -42,7 +42,7 @@ Gebruik voor parameter bestanden:
 
 Als u wilt implementeren in een resource groep, gebruikt u de implementatie opdrachten voor de resource groep.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment Group Create](/cli/azure/deployment/group#az_deployment_group_create)voor Azure cli. In het volgende voor beeld wordt een sjabloon geïmplementeerd voor het maken van een resource groep:
 
@@ -85,7 +85,8 @@ Wanneer u naar een resource groep implementeert, kunt u resources implementeren 
 * andere resource groepen in hetzelfde abonnement of andere abonnementen
 * elk abonnement in de Tenant
 * de Tenant voor de resource groep
-* [uitbreidings bronnen](scope-extension-resources.md) kunnen worden toegepast op resources
+
+Een [extensie resource](scope-extension-resources.md) kan worden ingedeeld naar een doel dat verschilt van het implementatie doel.
 
 De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
 
@@ -201,7 +202,7 @@ New-AzResourceGroupDeployment `
   -secondSubscriptionID $secondSub
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u twee opslag accounts wilt implementeren voor twee resource groepen in **hetzelfde abonnement**, gebruikt u:
 

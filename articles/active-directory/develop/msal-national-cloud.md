@@ -13,12 +13,12 @@ ms.date: 11/22/2019
 ms.author: negoe
 ms.reviewer: marsma, nacanuma
 ms.custom: aaddev
-ms.openlocfilehash: 22b3ea9eb0e4c3379438b6c3fb58ccfb13b4ed32
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 5a032f45027cc4bffc7f2bc46c6ea1a69a1b83e4
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064790"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178616"
 ---
 # <a name="use-msal-in-a-national-cloud-environment"></a>MSAL gebruiken in een nationale cloud omgeving
 
@@ -70,19 +70,21 @@ Uw MSAL.js-toepassing voor soevereine Clouds inschakelen:
 
 ### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.us/).
+1. Meld u aan bij <a href="https://portal.azure.us/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 
    Zie [app-registratie-eind punten](authentication-national-cloud.md#app-registration-endpoints)voor informatie over Azure Portal eind punten voor andere nationale Clouds.
 
-1. Als uw account u toegang geeft tot meer dan één Tenant, selecteert u uw account in de rechter bovenhoek en stelt u uw portal sessie in op de gewenste Azure AD-Tenant.
-1. Ga naar de pagina [app-registraties](https://aka.ms/ra/ff) op het micro soft-identiteits platform voor ontwikkel aars.
-1. Wanneer de pagina **Een toepassing registreren** wordt weergegeven, voert u een naam in voor de toepassing.
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 1. Onder **ondersteunde account typen** selecteert u **accounts in elke organisatie Directory**.
 1. Selecteer in de sectie de **omleidings-URI** het **webplatform en** Stel de waarde in op de URL van de toepassing op basis van de webserver. Zie de volgende secties voor instructies over het instellen en verkrijgen van de omleidings-URL in Visual Studio en het knoop punt.
 1. Selecteer **Registreren**.
-1. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht**.
-1. Voor deze zelf studie moet u de [impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md)inschakelen. Selecteer in het linkerdeelvenster van de geregistreerde toepassing de optie **Verificatie**.
-1. Schakel in **Geavanceerde instellingen**, onder **Impliciete toekenning**, de selectievakjes **Id-tokens** en **Toegangstokens** in. ID-tokens en toegangs tokens zijn vereist omdat deze app gebruikers moet aanmelden en een API kan aanroepen.
+1. Noteer op de pagina **overzicht** de waarde voor de **toepassings-id (client)** voor later gebruik.
+    Voor deze zelf studie moet u de [impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md)inschakelen. 
+1. Selecteer **Verificatie** onder **Beheren**.
+1. Onder **impliciete toekenning** selecteert u **id-tokens** en **toegangs tokens**. ID-tokens en toegangs tokens zijn vereist omdat deze app gebruikers moet aanmelden en een API kan aanroepen.
 1. Selecteer **Opslaan**.
 
 ### <a name="step-2--set-up-your-web-server-or-project"></a>Stap 2: de webserver of het project instellen

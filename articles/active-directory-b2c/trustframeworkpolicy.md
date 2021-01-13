@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 01/31/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 354c6f9710b7cbd70e0631bc973b2482ea8d8bb3
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: a87b4c6b845006a9f9f3cf82815277c67c09bef0
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97386881"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178837"
 ---
 # <a name="trustframeworkpolicy"></a>TrustFrameworkPolicy
 
@@ -46,7 +46,7 @@ Het **TrustFrameworkPolicy** -element bevat de volgende kenmerken:
 | PolicyId | Yes | De unieke id voor het beleid. Deze id moet worden voorafgegaan door *B2C_1A_* |
 | PublicPolicyUri | Yes | De URI voor het beleid, dat een combi natie is van de Tenant-ID en de beleids-ID. |
 | Als Deployment mode | No | Mogelijke waarden: `Production` , of `Development` . `Production` is de standaardwaarde. Gebruik deze eigenschap om fouten in uw beleid op te sporen. Zie [Logboeken verzamelen](troubleshoot-with-application-insights.md)voor meer informatie. |
-| UserJourneyRecorderEndpoint | No | Het eind punt dat wordt gebruikt wanneer **als Deployment mode** is ingesteld op `Development` . De waarde moet zijn `urn:journeyrecorder:applicationinsights` . Zie [Logboeken verzamelen](troubleshoot-with-application-insights.md)voor meer informatie. |
+| UserJourneyRecorderEndpoint | No | Het eind punt dat wordt gebruikt voor logboek registratie. De waarde moet worden ingesteld op `urn:journeyrecorder:applicationinsights` als het kenmerk bestaat. Zie [Logboeken verzamelen](troubleshoot-with-application-insights.md)voor meer informatie. |
 
 
 In het volgende voor beeld ziet u hoe u het **TrustFrameworkPolicy** -element opgeeft:

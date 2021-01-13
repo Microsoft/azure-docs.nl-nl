@@ -2,21 +2,24 @@
 title: Bereik voor uitbreidings resource typen
 description: Hierin wordt beschreven hoe u de eigenschap scope gebruikt bij het implementeren van uitbreidings bron typen.
 ms.topic: conceptual
-ms.date: 10/22/2020
-ms.openlocfilehash: bd468d31454c38bd314269243702d7df4f279a5e
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.date: 01/13/2021
+ms.openlocfilehash: 75c2c8b8409cc9f8e7a8e71965589ece6660607a
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92681582"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179976"
 ---
 # <a name="setting-scope-for-extension-resources-in-arm-templates"></a>Bereik instellen voor uitbreidings resources in ARM-sjablonen
 
-Een extensie resource is een resource die een andere resource wijzigt. U kunt bijvoorbeeld een rol toewijzen aan een resource om de toegang te beperken. De roltoewijzing is een uitbreidings resource type.
+Een extensie resource is een resource die een andere resource wijzigt. U kunt bijvoorbeeld een rol toewijzen aan een resource. De roltoewijzing is een uitbreidings resource type.
 
 Zie voor een volledige lijst met resource typen voor extensies [resource typen die de mogelijkheden van andere bronnen uitbreiden](../management/extension-resource-types.md).
 
 In dit artikel wordt uitgelegd hoe u het bereik voor een uitbreidings resource type kunt instellen wanneer het wordt geïmplementeerd met een Azure Resource Manager sjabloon (ARM-sjabloon). De eigenschap scope wordt beschreven die beschikbaar is voor uitbreidings resources wanneer deze op een resource wordt toegepast.
+
+> [!NOTE]
+> De eigenschap scope is alleen beschikbaar voor uitbreidings resource typen. Als u een ander bereik voor een resource type wilt opgeven dat geen extensie type is, gebruikt u een geneste of gekoppelde implementatie. Zie [implementaties van resource groepen](deploy-to-resource-group.md), [abonnements implementaties](deploy-to-subscription.md), [implementaties van beheer groepen](deploy-to-management-group.md)en [Tenant implementaties](deploy-to-tenant.md)voor meer informatie.
 
 ## <a name="apply-at-deployment-scope"></a>Toep assen bij implementatie bereik
 
@@ -28,7 +31,7 @@ Met de volgende sjabloon wordt een vergren deling geïmplementeerd.
 
 Wanneer het wordt geïmplementeerd in een resource groep, wordt de resource groep vergrendeld.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az deployment group create \
@@ -52,7 +55,7 @@ In het volgende voor beeld wordt een rol toegewezen.
 
 Wanneer het wordt geïmplementeerd in een abonnement, wordt de rol toegewezen aan het abonnement.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli-interactive
 az deployment sub create \

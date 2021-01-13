@@ -2,13 +2,13 @@
 title: Resources implementeren in beheer groep
 description: Hierin wordt beschreven hoe u resources kunt implementeren in het bereik van de beheer groep in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: 79cdb35de40501dfc0794155dcf807cced94bfa7
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.date: 01/13/2021
+ms.openlocfilehash: f847e481670d7f9afd4b40cfb8fcbec65d1e28c8
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95798593"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178922"
 ---
 # <a name="management-group-deployments-with-arm-templates"></a>Implementaties van beheer groepen met ARM-sjablonen
 
@@ -71,7 +71,7 @@ Het schema voor een parameter bestand is hetzelfde voor alle implementatie berei
 
 Als u wilt implementeren in een beheer groep, gebruikt u de opdrachten voor de implementatie van beheer groepen.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment mg Create](/cli/azure/deployment/mg#az-deployment-mg-create)voor Azure cli:
 
@@ -123,7 +123,8 @@ Wanneer u implementeert in een beheer groep, kunt u resources implementeren voor
 * abonnementen in de beheer groep
 * resource groepen in de beheer groep
 * de Tenant voor de resource groep
-* [uitbreidings bronnen](scope-extension-resources.md) kunnen worden toegepast op resources
+
+Een [extensie resource](scope-extension-resources.md) kan worden ingedeeld naar een doel dat verschilt van het implementatie doel.
 
 De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
 

@@ -7,12 +7,12 @@ ms.reviewer: deli, logicappspm
 ms.topic: article
 ms.date: 12/07/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 1736a1d22ccfb0f00061534d1c733ab72da4c7b0
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 3f88fa38d62778bc3c4c1e29571d1d0ae4eeb5ff
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922507"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179602"
 ---
 # <a name="add-and-run-code-snippets-by-using-inline-code-in-azure-logic-apps"></a>Code fragmenten toevoegen en uitvoeren met inline code in Azure Logic Apps
 
@@ -31,7 +31,7 @@ Als u een stukje code in uw logische app wilt uitvoeren, kunt u de ingebouwde in
   > [!NOTE]
   > De `require()` functie wordt niet ondersteund door de inline code actie voor het uitvoeren van Java script.
 
-Met deze actie wordt het code fragment uitgevoerd en wordt de uitvoer van het fragment geretourneerd als een token met de naam `Result` . U kunt dit token gebruiken met de volgende acties in de werk stroom van de logische app. Voor andere scenario's waarin u een functie voor uw code wilt maken, probeert u in [plaats daarvan een Azure-functie te maken en](../logic-apps/logic-apps-azure-functions.md) aan te roepen in uw logische app.
+Met deze actie wordt het code fragment uitgevoerd en wordt de uitvoer van het fragment geretourneerd als een token met de naam `Result` . U kunt dit token gebruiken met de volgende acties in de werk stroom van de logische app. Voor andere scenario's waarin u een functie voor uw code wilt maken, probeert u [een functie te maken en aan te roepen via Azure functions in plaats](../logic-apps/logic-apps-azure-functions.md) in uw logische app.
 
 In dit artikel wordt de logische app geactiveerd wanneer een nieuwe e-mail binnenkomt in een werk-of school account. Het code fragment extraheert en retourneert alle e-mail adressen die worden weer gegeven in de hoofd tekst van de e-mail.
 
@@ -147,7 +147,7 @@ Het `workflowContext` object heeft deze structuur, die de `actions` `trigger` su
 
 Deze tabel bevat meer informatie over deze subeigenschappen:
 
-| Eigenschap | Type | Description |
+| Eigenschap | Type | Beschrijving |
 |----------|------|-------|
 | `actions` | Object verzameling | Resultaat objecten van acties die worden uitgevoerd voordat uw code fragment wordt uitgevoerd. Elk object heeft een *sleutel/waarde-* paar waarbij de sleutel de naam van een actie is en de waarde komt overeen met het aanroepen van de [functie Actions ()](../logic-apps/workflow-definition-language-functions-reference.md#actions) met `@actions('<action-name>')` . De naam van de actie gebruikt dezelfde actie naam die wordt gebruikt in de onderliggende werk stroom definitie, waardoor spaties ("") in de naam van de actie worden vervangen door onderstrepings tekens (_). Dit object biedt toegang tot actie-eigenschaps waarden van het huidige werk stroom exemplaar dat wordt uitgevoerd. |
 | `trigger` | Object | Resultaat object van de trigger en komt overeen met het aanroepen van de [trigger ()-functie](../logic-apps/workflow-definition-language-functions-reference.md#trigger). Dit object biedt toegang tot trigger eigenschaps waarden van het huidige werk stroom exemplaar dat wordt uitgevoerd. |
@@ -279,7 +279,7 @@ Als u **acties** selecteert, wordt u gevraagd naar de acties die u wilt toevoege
 
 1. Selecteer **Nieuw item toevoegen** om een andere actie toe te voegen.
 
-## <a name="reference"></a>Referentie
+## <a name="reference"></a>Naslaginformatie
 
 Voor meer informatie over de structuur en syntaxis van de actie **Java script-code uitvoeren** in de onderliggende werk stroom definitie van uw logische app met de werk stroom definitie taal, zie de [sectie referentie](../logic-apps/logic-apps-workflow-actions-triggers.md#run-javascript-code)van deze actie.
 

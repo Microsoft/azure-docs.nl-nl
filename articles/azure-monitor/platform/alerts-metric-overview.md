@@ -1,15 +1,15 @@
 ---
 title: 'Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor:'
 description: Bekijk een overzicht van wat u met metrische waarschuwingen kunt doen en hoe ze werken in Azure Monitor.
-ms.date: 01/11/2021
+ms.date: 01/13/2021
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: 424cc9db01f1eb6300c2915795f3e2c37b34449f
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: d8e0621f88455a68ad0ee1b236f6b423c9d54b52
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071048"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179891"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Begrijpen hoe metrische waarschuwingen werken in Azure Monitor
 
@@ -64,6 +64,10 @@ Zeg het gebruik op ' myVM ' blijft boven de drempel waarde bij volgende controle
 Na enige tijd wordt het gebruik op ' myVM ' weer gegeven op normaal (onder de drempel waarde). De waarschuwings regel controleert de voor waarde voor twee keer dat er een opgeloste melding wordt verzonden. De waarschuwings regel verzendt een opgelost/gedeactiveerd bericht wanneer niet wordt voldaan aan de waarschuwings voorwaarde voor drie opeenvolgende Peri Oden om ruis in het geval van gaat en neer-voor waarden te verminderen.
 
 Wanneer het opgeloste bericht via webhooks of e-mail wordt verzonden, wordt de status van het waarschuwings exemplaar (Monitor status) in Azure Portal ook ingesteld op opgelost.
+
+> [!NOTE]
+>
+> Wanneer een waarschuwings regel meerdere voor waarden bewaakt, wordt een gebrande waarschuwing opgelost als aan ten minste één van de voor waarden niet meer wordt voldaan voor drie opeenvolgende Peri Oden.
 
 ### <a name="using-dimensions"></a>Dimensies gebruiken
 

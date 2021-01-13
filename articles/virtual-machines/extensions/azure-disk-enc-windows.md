@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: ejarvi
-ms.openlocfilehash: e5a0069e02c5285a950d23abc0ec4bee6e9e467b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 361751107212d556aaee6886902d2798c014ff39
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968380"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98180180"
 ---
 # <a name="azure-disk-encryption-for-windows-microsoftazuresecurityazurediskencryption"></a>Azure Disk Encryption voor Windows (micro soft. Azure. Security. AzureDiskEncryption)
 
@@ -140,16 +140,16 @@ Gebruiken `AADClientCertificate` :
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-| Name | Waarde/voor beeld | Gegevenstype |
+| Naam | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2019-07-01 | datum |
+| apiVersion | 2019-07-01 | date |
 | publisher | Micro soft. Azure. Security | tekenreeks |
 | type | AzureDiskEncryption | tekenreeks |
 | typeHandlerVersion | 2,2, 1,1 | tekenreeks |
-| (1,1-schema) AADClientID | XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX | guid | 
+| (1,1-schema) AADClientID | xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx | guid | 
 | (1,1-schema) AADClientSecret | wachtwoord | tekenreeks |
 | (1,1-schema) AADClientCertificate | vingerafdruk | tekenreeks |
-| EncryptionOperation | EnableEncryption, EnableEncryptionFormatAll | tekenreeks | 
+| EncryptionOperation | EnableEncryption | tekenreeks | 
 | (optioneel-standaard-RSA-OAEP) KeyEncryptionAlgorithm | ' RSA-OAEP ', ' RSA-OAEP-256 ', ' RSA1_5 ' | tekenreeks |
 | KeyVaultURL | url | tekenreeks |
 | KeyVaultResourceId | url | tekenreeks |

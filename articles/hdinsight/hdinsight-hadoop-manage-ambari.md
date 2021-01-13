@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
-ms.date: 04/16/2020
-ms.openlocfilehash: f21b72cd519c1615d8273bf316a8d0ccad039672
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.date: 01/12/2021
+ms.openlocfilehash: 8195cffed077a77c0ad66fda1126e2f3ea53d5f0
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92546157"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179143"
 ---
 # <a name="manage-hdinsight-clusters-by-using-the-apache-ambari-web-ui"></a>HDInsight-clusters beheren met behulp van de Apache Ambari-webinterface
 
@@ -82,7 +82,7 @@ U kunt de groepen beheren via het menu **acties** en vervolgens **waarschuwings 
 
 ![Apache Ambari-waarschuwings groepen beheren](./media/hdinsight-hadoop-manage-ambari/ambari-manage-alerts.png)
 
-U beheert waarschuwings methoden en u maakt waarschuwings meldingen in het menu **acties** door __meldingen beheren__ te selecteren. Alle huidige meldingen worden weer gegeven. Hier kunt u meldingen maken. Meldingen kunnen worden verzonden via **e-mail** of **SNMP** wanneer specifieke combi Naties van waarschuwingen en ernst optreden. U kunt bijvoorbeeld een e-mail bericht verzenden wanneer een van de waarschuwingen in de **standaard groep garen** is ingesteld op **kritiek** .
+U beheert waarschuwings methoden en u maakt waarschuwings meldingen in het menu **acties** door __meldingen beheren__ te selecteren. Alle huidige meldingen worden weer gegeven. Hier kunt u meldingen maken. Meldingen kunnen worden verzonden via **e-mail** of **SNMP** wanneer specifieke combi Naties van waarschuwingen en ernst optreden. U kunt bijvoorbeeld een e-mail bericht verzenden wanneer een van de waarschuwingen in de **standaard groep garen** is ingesteld op **kritiek**.
 
 ![Apache Ambari-waarschuwing maken](./media/hdinsight-hadoop-manage-ambari/create-alert-notification.png)
 
@@ -92,7 +92,7 @@ Zie [Configure Apache Ambari Email Notifications in azure HDInsight](./apache-am
 
 ### <a name="cluster"></a>Cluster
 
-Het tabblad **metrische gegevens** van het dash board bevat een reeks widgets waarmee u in één oogopslag de status van uw cluster kunt bewaken. Verschillende widgets, zoals **CPU-gebruik** , bieden aanvullende informatie wanneer erop wordt geklikt.
+Het tabblad **metrische gegevens** van het dash board bevat een reeks widgets waarmee u in één oogopslag de status van uw cluster kunt bewaken. Verschillende widgets, zoals **CPU-gebruik**, bieden aanvullende informatie wanneer erop wordt geklikt.
 
 ![Apache Ambari-dash board met metrische gegevens](./media/hdinsight-hadoop-manage-ambari/hdi-metrics-dashboard.png)
 
@@ -139,7 +139,7 @@ Als u een van deze koppelingen selecteert, wordt er een nieuw tabblad in de brow
 Werken met gebruikers, groepen en machtigingen wordt ondersteund. Zie [gebruikers autoriseren voor Apache Ambari-weer gaven](./hdinsight-authorize-users-to-ambari.md)voor lokaal beheer. Zie [HDInsight-clusters](./domain-joined/hdinsight-security-overview.md)die zijn gekoppeld aan een domein voor clusters die lid zijn van een domein.
 
 > [!WARNING]  
-> Wijzig het wacht woord van de Ambari-watchdog (hdinsightwatchdog) niet in uw HDInsight-cluster op basis van Linux. Als u het wacht woord wijzigt, is het niet meer mogelijk om script acties te gebruiken of om schaal bewerkingen uit te voeren met uw cluster.
+> Verwijder of wijzig het wacht woord van de Ambari-watchdog (hdinsightwatchdog) niet op uw op Linux gebaseerde HDInsight-cluster. Als u het wacht woord wijzigt, is het niet meer mogelijk om script acties te gebruiken of om schaal bewerkingen uit te voeren met uw cluster.
 
 ### <a name="hosts"></a>Hosts
 
@@ -167,7 +167,7 @@ Op de pagina **hosts** worden alle hosts in het cluster weer gegeven. Voer de vo
     |Uit bedrijf nemen|Hiermee verwijdert u een host uit het cluster. **Gebruik deze actie niet op HDInsight-clusters.**|
     |Opnieuw provisie|Voegt een eerder buiten gebruik gestelde host toe aan het cluster. **Gebruik deze actie niet op HDInsight-clusters.**|
 
-### <a name="services"></a><a id="service"></a>Onderzoeksservices
+### <a name="services"></a><a id="service"></a>Services
 
 Gebruik op de pagina **dash board** of **Services** de knop **acties** onder aan de lijst met Services om alle services te stoppen en te starten.
 
@@ -200,7 +200,7 @@ Als u een service wilt configureren, gebruikt u de volgende stappen:
 
     ![Configuratie van Apache Ambari-service](./media/hdinsight-hadoop-manage-ambari/ambari-service-configs.png)
 
-3. Gebruik de weer gegeven velden om de configuratie te wijzigen en selecteer vervolgens **Opslaan** . Of selecteer een vorige configuratie en selecteer vervolgens **huidige maken** om de vorige instellingen terug te draaien.
+3. Gebruik de weer gegeven velden om de configuratie te wijzigen en selecteer vervolgens **Opslaan**. Of selecteer een vorige configuratie en selecteer vervolgens **huidige maken** om de vorige instellingen terug te draaien.
 
 ## <a name="ambari-views"></a>Ambari weer gaven
 
@@ -214,7 +214,7 @@ Met Ambari-weer gaven kunnen ontwikkel aars UI-elementen aan de Ambari-webgebrui
 
 De volgende Ambari-bewerkingen worden niet ondersteund op HDInsight:
 
-* __De metrische Collector service wordt verplaatst__ . Bij het weer geven van informatie over de metrische Collector-service wordt een van de acties die beschikbaar zijn via het menu Service acties, de __Collector van metrische gegevens verplaatsen__ . Deze actie wordt niet ondersteund met HDInsight.
+* __De metrische Collector service wordt verplaatst__. Bij het weer geven van informatie over de metrische Collector-service wordt een van de acties die beschikbaar zijn via het menu Service acties, de __Collector van metrische gegevens verplaatsen__. Deze actie wordt niet ondersteund met HDInsight.
 
 ## <a name="next-steps"></a>Volgende stappen
 

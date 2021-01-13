@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: kumud
-ms.openlocfilehash: 3ee9e165ce9c24968b072d19367e0285f5438259
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 5ce5f5cea5d689720455dd8d60f6fff4692a9d3d
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938797"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179296"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Veelgestelde vragen over virtuele Azure-netwerken (FAQ)
 
@@ -392,6 +392,9 @@ Wanneer service-eind punten van het virtuele netwerk zijn ingeschakeld, worden d
 
 ### <a name="does-the-service-endpoint-route-always-take-precedence"></a>Heeft de route van het service-eind punt altijd voor rang?
 Service-eind punten voegen een systeem route toe die voor rang heeft boven BGP-routes en een optimale route ring biedt voor het verkeer van service-eind punten. Service-eind punten nemen altijd direct service verkeer van uw virtuele netwerk naar de service in het backbone-netwerk Microsoft Azure. Voor meer informatie over hoe Azure een route selecteert, Zie [route ring van virtueel netwerk verkeer van Azure](virtual-networks-udr-overview.md).
+
+### <a name="do-service-endpoints-work-with-icmp"></a>Werken service-eind punten met ICMP?
+Nee, ICMP-verkeer dat is gebrond vanuit een subnet met Service-eind punten ingeschakeld, neemt het pad naar de service tunnel niet naar het gewenste eind punt. Service-eind punten verwerken alleen TCP-verkeer. Dit betekent dat als u de latentie of connectiviteit met een eind punt via service-eind punten wilt testen, de hulpprogram ma's zoals ping en tracert niet het werkelijke pad weer geven dat de bronnen in het subnet zullen overnemen.
  
 ### <a name="how-does-nsg-on-a-subnet-work-with-service-endpoints"></a>Hoe werkt NSG op een subnet met Service-eind punten?
 Voor het bereiken van de Azure-service moet Nsg's de uitgaande connectiviteit toestaan. Als uw Nsg's zijn geopend voor al het uitgaande verkeer van Internet, zou het service-eindpunt verkeer moeten werken. U kunt het uitgaande verkeer ook beperken tot service-Ip's alleen met behulp van de service tags.  

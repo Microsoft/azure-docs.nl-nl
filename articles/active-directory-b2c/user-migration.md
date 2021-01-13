@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5d680da7a5f09a55bec5d791642b80fd76c6088e
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: fea8d93121fcb5622f86257febcc7d834b444098
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509611"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178803"
 ---
 # <a name="migrate-users-to-azure-ad-b2c"></a>Gebruikers migreren naar Azure AD B2C
 
@@ -97,7 +97,7 @@ Voordat u met het migratie proces begint, kunt u de mogelijkheid om uw directory
 
 ### <a name="password-policy"></a>Wachtwoord beleid
 
-Als de accounts die u wilt migreren, een zwakkere wachtwoord sterkte hebben dan de [sterke wachtwoord sterkte](../active-directory/authentication/concept-sspr-policy.md) die wordt afgedwongen door Azure AD B2C, kunt u de vereiste voor sterke wacht woorden uitschakelen. Zie voor meer informatie [wachtwoord beleid-eigenschap](manage-user-accounts-graph-api.md#password-policy-property).
+Als de accounts die u wilt migreren, een zwakkere wachtwoord sterkte hebben dan de [sterke wachtwoord sterkte](../active-directory/authentication/concept-sspr-policy.md) die wordt afgedwongen door Azure AD B2C, kunt u de vereiste voor sterke wacht woorden uitschakelen. Zie voor meer informatie [wachtwoord beleid-eigenschap](user-profile-attributes.md#password-policy-attribute).
 
 ## <a name="next-steps"></a>Volgende stappen
 

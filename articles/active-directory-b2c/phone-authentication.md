@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9d4fa80f669493e4dc47a9ad0f9bfe9390d4ab24
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 8d41f8959d0a1ec0d6e48cf2fa4711a8ef8d8ae5
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953573"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178939"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c"></a>Stel aanmelding via de telefoon in en meld u aan met aangepast beleid in Azure AD B2C
 
@@ -39,7 +39,7 @@ Met de telefoon registratie en aanmelding kan de gebruiker zich aanmelden voor d
 >
 > *&lt;invoegen: een koppeling naar de privacyverklaring&gt;*<br/>*&lt;invoegen: een koppeling naar uw service voorwaarden&gt;*
 
-Als u uw eigen toestemming wilt geven, past u het volgende voor beeld aan en neemt u het op in de LocalizedResources voor de ContentDefinition die wordt gebruikt door de zelfbevestigende pagina met het besturings element voor weer gave (het Phone-Email-Base.xml bestand in het aanmeldings & aanmeld pakket voor de telefoon):
+Als u uw eigen toestemming wilt geven, past u het volgende voor beeld aan en neemt u het op in de LocalizedResources voor de ContentDefinition die wordt gebruikt door de zelfbevestigende pagina met het besturings element voor weer gave (het *Phone_Email_Base.xml* -bestand in het [telefoon registratie-en aanmeldings-Start pakket][starter-pack-phone]):
 
 ```xml
 <LocalizedResources Id="phoneSignUp.en">        

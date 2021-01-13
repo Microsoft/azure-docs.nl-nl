@@ -7,15 +7,15 @@ author: tamram
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
-ms.date: 01/12/2021
+ms.date: 01/13/2021
 ms.author: tamram
 ms.custom: security-recommendations
-ms.openlocfilehash: 55c4fa00cfd20a83e65a3d57c6020991734f9d9f
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: e3cfede444b65ee6990afd006d3b174d65f9cfad
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132474"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179160"
 ---
 # <a name="security-recommendations-for-blob-storage"></a>Beveiligings aanbevelingen voor Blob Storage
 
@@ -35,7 +35,7 @@ Azure Security Center regel matig de beveiligings status van uw Azure-resources 
 | Voorlopig verwijderen inschakelen voor containers | Met zacht verwijderen voor containers kunt u een container herstellen nadat deze is verwijderd. Zie [voorlopig verwijderen voor containers (preview)](./soft-delete-container-overview.md)voor meer informatie over het voorlopig verwijderen van containers. | - |
 | Het opslag account vergren delen om te voor komen dat er onbedoeld accounts worden verwijderd | U kunt een Azure Resource Manager resources, zoals een abonnement, een resource groep of een opslag account, vergren delen om te voor komen dat andere gebruikers in uw organisatie per ongeluk deze verwijderen of wijzigen. Het vergren delen van een opslag account voor komt niet dat gegevens in dat account kunnen worden verwijderd. Hiermee wordt alleen voor komen dat het account zelf wordt verwijderd. Zie voor meer informatie [bronnen vergren delen om onverwachte wijzigingen te voor komen](../../azure-resource-manager/management/lock-resources.md).
 | Bedrijfs kritieke gegevens opslaan in onveranderbare blobs | Configureer juridische bewaringen en bewaar beleidsregels op basis van tijd voor het opslaan van BLOB-gegevens in een WORM (Write Once, Read Many). De opgeslagen immutably van blobs kunnen worden gelezen, maar kunnen niet worden gewijzigd of verwijderd voor de duur van de Bewaar periode. Zie voor meer informatie [bedrijfs kritieke BLOB-gegevens opslaan met onveranderlijke opslag](storage-blob-immutable-storage.md). | - |
-| Beveiligde overdracht (HTTPS) naar het opslag account vereisen | ??? | - |
+| Beveiligde overdracht (HTTPS) naar het opslag account vereisen | Wanneer u een beveiligde overdracht van een opslag account nodig hebt, moeten alle aanvragen voor het opslag account via HTTPS worden ingediend. Aanvragen die via HTTP worden verzonden, worden geweigerd. Micro soft raadt u aan om altijd een veilige overdracht te vereisen voor al uw opslag accounts. Zie [veilige overdracht vereisen voor beveiligde verbindingen](../common/storage-require-secure-transfer.md)voor meer informatie. | - |
 | Alleen SAS-tokens (Shared Access Signature) beperken tot HTTPS-verbindingen | HTTPS vereisen wanneer een client een SAS-token gebruikt voor toegang tot BLOB-gegevens helpt het risico op inbreuk te minimaliseren. Zie [beperkte toegang verlenen tot Azure storage-resources met behulp van Shared Access signatures (SAS)](../common/storage-sas-overview.md)voor meer informatie. | - |
 
 ## <a name="identity-and-access-management"></a>Identiteits- en toegangsbeheer

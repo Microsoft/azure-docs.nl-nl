@@ -2,13 +2,13 @@
 title: Resources implementeren voor Tenant
 description: Hierin wordt beschreven hoe u resources implementeert in het Tenant bereik in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: 5733c5d6eb6cbd86207589244c22badc17fe7073
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.date: 01/13/2021
+ms.openlocfilehash: a397678488921744f076d93235304c8d217d961f
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95807638"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178956"
 ---
 # <a name="tenant-deployments-with-arm-templates"></a>Tenant implementaties met ARM-sjablonen
 
@@ -96,7 +96,7 @@ De principal heeft nu de vereiste machtigingen voor het implementeren van de sja
 
 De opdrachten voor Tenant implementaties wijken af van de opdrachten voor het implementeren van resource groepen.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment Tenant Create](/cli/azure/deployment/tenant#az-deployment-tenant-create)voor Azure cli:
 
@@ -145,7 +145,8 @@ Wanneer u implementeert naar een Tenant, kunt u resources implementeren voor het
 * beheer groepen binnen de Tenant
 * geabonneerd
 * Resourcegroepen
-* [uitbreidings bronnen](scope-extension-resources.md) kunnen worden toegepast op resources
+
+Een [extensie resource](scope-extension-resources.md) kan worden ingedeeld naar een doel dat verschilt van het implementatie doel.
 
 De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
 

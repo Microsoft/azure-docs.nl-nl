@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/20/2020
 ms.author: jushiman
-ms.openlocfilehash: 1809194ce551fc828389cc31f5c7d6f28a2cddd6
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 1cbd4c92ec4c124cfd384f45a4cd6f47fdc60be6
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972370"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98180163"
 ---
 # <a name="dcsv2-series"></a>DCsv2-serie
 
@@ -25,7 +25,7 @@ Voor beelden van use cases zijn: vertrouwelijk delen van gegevens, fraude detect
 [Premium Storage caching](premium-storage-performance.md): ondersteund<br>
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
-[Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
+[Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 2<br>
 
 * Met uitzonde ring van Standard_DC8_v2
 
@@ -45,9 +45,9 @@ Voor beelden van use cases zijn: vertrouwelijk delen van gegevens, fraude detect
 
 ## <a name="other-sizes-and-information"></a>Andere grootten en informatie
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

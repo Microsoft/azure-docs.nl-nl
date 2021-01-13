@@ -6,16 +6,16 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: conceptual
-ms.date: 11/13/2020
+ms.date: 01/13/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 47a2aae39be93361e1e0e581efb56cc678b444cd
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: ff2408e35d76a6ea0d5221e04c7a41ed6cde7ac9
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96549086"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178973"
 ---
 # <a name="object-replication-for-block-blobs"></a>Object replicatie voor blok-blobs
 
@@ -89,6 +89,16 @@ Wanneer u een replicatie regel maakt, worden standaard alleen de nieuwe blok-blo
 U kunt ook een of meer filters opgeven als onderdeel van een replicatie regel voor het filteren van blok-blobs op voor voegsel. Wanneer u een voor voegsel opgeeft, worden alleen blobs die overeenkomen met het voor voegsel in de bron container gekopieerd naar de doel container.
 
 De bron-en doel containers moeten beide bestaan voordat u ze in een regel kunt opgeven. Nadat u het replicatiebeleid hebt gemaakt, wordt de doelcontainer alleen-lezen. Pogingen om naar de doelcontainer te schrijven, mislukken met foutcode 409 (Conflict). U kunt echter de bewerking [BLOB-laag instellen](/rest/api/storageservices/set-blob-tier) aanroepen op een BLOB in de doel container om deze naar de laag archief te verplaatsen. Zie voor meer informatie over de laag archief [Azure Blob-opslag: dynamische, koude en archief toegangs lagen](storage-blob-storage-tiers.md#archive-access-tier).
+
+## <a name="replication-status"></a>Replicatiestatus
+
+U kunt de replicatie status voor een BLOB in het bron account controleren. Zie [de replicatie status van een BLOB controleren](object-replication-configure.md#check-the-replication-status-of-a-blob)voor meer informatie.
+
+Als de replicatie status voor een BLOB in het bron account mislukt, wordt de volgende mogelijke oorzaken onderzocht:
+
+- Zorg ervoor dat het object replicatie beleid is geconfigureerd op het doel account.
+- Controleer of de doel container nog bestaat.
+- Als de bron-blob is versleuteld met een door de klant verschafte sleutel als onderdeel van een schrijf bewerking, mislukt de object replicatie. Zie [een versleutelings sleutel voor een aanvraag voor Blob-opslag bieden](encryption-customer-provided-keys.md)voor meer informatie over door de klant geleverde sleutels.
 
 ## <a name="billing"></a>Billing
 

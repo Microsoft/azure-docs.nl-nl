@@ -13,16 +13,16 @@ ms.topic: end-user-help
 ms.date: 05/28/2020
 ms.author: curtand
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: c9d8bb85aac87503ca641f6633668a6dc582882f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 07303a0b0b3007ade9adb90af7397855a5014cc0
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90056078"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179419"
 ---
-# <a name="manage-app-passwords-for-two-step-verification"></a>App-wacht woorden beheren voor verificatie in twee stappen
+# <a name="manage-app-passwords-for-two-step-verification"></a>App-wachtwoorden beheren voor verificatie in twee stappen
 
->[!Important]
+> [!Important]
 >Uw beheerder staat mogelijk niet toe dat u app-wacht woorden gebruikt. Als u app- **wacht woorden** niet ziet als een optie, zijn ze niet beschikbaar in uw organisatie.
 
 Wanneer u app-wachtwoorden gebruikt, is het belangrijk om het volgende te onthouden:
@@ -66,15 +66,15 @@ U kunt app-wacht woorden maken en verwijderen op de pagina **aanvullende beveili
 
 4. Controleer op de pagina **app-wacht woorden** of uw app wordt weer gegeven.
 
-     ![Pagina app-wacht woorden, met een nieuwe app die in de lijst wordt weer gegeven](media/multi-factor-authentication-end-user-app-passwords/mfa-app-passwords-page-with-new-password.png)  
+    ![Pagina app-wacht woorden, met een nieuwe app die in de lijst wordt weer gegeven](media/multi-factor-authentication-end-user-app-passwords/mfa-app-passwords-page-with-new-password.png)  
 
 5. Open de app waarvoor u het app-wacht woord hebt gemaakt (bijvoorbeeld Outlook 2010) en plak het app-wacht woord wanneer u daarom wordt gevraagd. U hoeft dit slechts één keer per app uit te voeren.
 
 ### <a name="to-delete-an-app-password-using-the-app-passwords-page"></a>Een app-wacht woord verwijderen met de pagina app-wacht woorden
 
-1. Selecteer op de pagina **app-wacht woorden** **verwijderen** naast het app-wacht woord dat u wilt verwijderen.
+1. Selecteer op de pagina **app-wacht woorden** de optie **verwijderen** naast het app-wacht woord dat u wilt verwijderen.
 
-   ![Een app-wacht woord verwijderen](media/multi-factor-authentication-end-user-app-passwords/mfa-app-passwords-page-delete.png)
+   ![Scherm opname van het verwijderen van een app-wacht woord op de pagina app-wacht woorden](media/multi-factor-authentication-end-user-app-passwords/mfa-app-passwords-page-delete.png)
 
 2. Selecteer **Ja** om te bevestigen dat u het wacht woord wilt verwijderen en selecteer vervolgens **sluiten**.
 
@@ -86,35 +86,35 @@ Als u verificatie in twee stappen gebruikt met uw werk-of school account en uw M
 
 ### <a name="to-create-app-passwords-using-the-office-365-portal"></a>App-wacht woorden maken met behulp van de Office 365-Portal
 
-1. Meld u aan bij uw werk-of school account, ga naar de [pagina Mijn account](https://portal.office.com), selecteer **beveiliging & privacy**en vouw vervolgens **extra beveiligings verificatie**uit.
+1. Meld u aan bij uw werk-of school account, ga naar de [pagina Mijn account](https://myaccount.microsoft.com)en selecteer **beveiligings gegevens**.
 
-    ![Office-Portal met uitgebreid extra beveiligings verificatie gebied](media/multi-factor-authentication-end-user-app-passwords/mfa-app-passwords-o365-my-account-page.png)
+    ![Office-Portal met het tabblad beveiligings gegevens](media/multi-factor-authentication-end-user-app-passwords/mfa-security-info.png)
 
-2. Selecteer de tekst waarin wordt vermeld, **Maak en beheer app-wacht woorden** om de pagina **app-wacht woorden** te openen.
+2. Selecteer **methode toevoegen**, kies **app-wacht woord** in de vervolg keuzelijst en klik vervolgens op **toevoegen**.
 
-    ![Pagina app-wacht woorden, met het tabblad app-wacht woorden gemarkeerd](media/multi-factor-authentication-end-user-app-passwords/mfa-app-passwords-page.png)
+    ![Pagina beveiligings informatie, met de lijst drowpdown van een methode toevoegen](media/multi-factor-authentication-end-user-app-passwords/mfa-add-method.png)
 
-3. Selecteer **maken**, typ de naam van de app waarvoor het app-wacht woord is vereist en selecteer **volgende**.
+3. Voer een naam in voor het app-wacht woord en selecteer **volgende**.
 
-    ![Pagina app-wacht woorden maken, met de naam van de app waarvoor het wacht woord is vereist](media/multi-factor-authentication-end-user-app-passwords/mfa-create-app-password-page.png)
+    ![Pagina app-wacht woorden maken, met de naam van het app-wacht woord](media/multi-factor-authentication-end-user-app-passwords/mfa-enter-app-password-name.png)
 
-4. Kopieer het wacht woord van de pagina **uw app-wacht woord** en selecteer vervolgens **sluiten**.
+4. Kopieer het wacht woord van de pagina **app-wacht** woord en selecteer vervolgens **gereed**.
 
-    ![Uw app-wacht woord pagina met het wacht woord voor uw opgegeven app](media/multi-factor-authentication-end-user-app-passwords/mfa-your-app-password-page.png)
+    ![Pagina app-wacht woord met het nieuwe app-wacht woord dat u hebt gemaakt](media/multi-factor-authentication-end-user-app-passwords/mfa-copy-app-password.png)
 
-5. Controleer op de pagina **app-wacht woorden** of uw app wordt weer gegeven.
+5. Controleer op de pagina **beveiligings gegevens** of uw app-wacht woord wordt weer gegeven.
 
-     ![Pagina app-wacht woorden, met een nieuwe app die in de lijst wordt weer gegeven](media/multi-factor-authentication-end-user-app-passwords/mfa-app-passwords-page-with-new-password.png)  
+    ![Pagina beveiligings informatie, met nieuw app-wacht woord weer gegeven in lijst](media/multi-factor-authentication-end-user-app-passwords/mfa-verify-app-password.png)  
 
-6. Open de app waarvoor u het app-wacht woord hebt gemaakt (bijvoorbeeld Outlook 2010) en plak het app-wacht woord wanneer u daarom wordt gevraagd. U hoeft dit slechts één keer per app uit te voeren.
+6. Open de app waarvoor u het app-wacht woord hebt gemaakt (bijvoorbeeld Outlook 2016) en plak het app-wacht woord wanneer u daarom wordt gevraagd. U hoeft dit slechts één keer per app uit te voeren.
 
-### <a name="to-delete-app-passwords-using-the-app-passwords-page"></a>App-wacht woorden verwijderen met de pagina app-wacht woorden
+### <a name="to-delete-app-passwords-using-the-security-info-page"></a>App-wacht woorden verwijderen via de pagina met beveiligings gegevens
 
-1. Selecteer op de pagina **app-wacht woorden** **verwijderen** naast het app-wacht woord dat u wilt verwijderen.
+1. Op de pagina **beveiligings gegevens** selecteert u **verwijderen** naast het app-wacht woord dat u wilt verwijderen.
 
-   ![Een app-wacht woord verwijderen](media/multi-factor-authentication-end-user-app-passwords/mfa-app-passwords-page-delete.png)
+   ![Scherm opname van het verwijderen van een app-wacht woord op de pagina beveiligings gegevens](media/multi-factor-authentication-end-user-app-passwords/mfa-delete-app-password.png)
 
-2. Selecteer **Ja** in het bevestigings venster en selecteer vervolgens **sluiten**.
+2. Selecteer **OK** in het bevestigings venster.
 
     Het app-wacht woord is verwijderd.
 

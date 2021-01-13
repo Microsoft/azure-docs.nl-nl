@@ -7,34 +7,44 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 09/25/2020
+ms.date: 01/11/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 305682812896bb74474b5065cfd56a071a73ed15
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 0405db2b68abefbfdc424def9e35e363e45043cd
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358776"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98180129"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Indexeerfuncties in Azure Cognitive Search
 
-Een *Indexeer functie* in azure Cognitive Search is een crawler die Doorzoek bare gegevens en meta gegevens ophaalt uit een externe Azure-gegevens bron en een index vult op basis van veld-naar-veld Toewijzingen tussen de index en uw gegevens bron. Deze methode wordt ook wel ' pull model ' genoemd, omdat de service gegevens ophaalt zonder dat u code hoeft te schrijven waarmee gegevens worden toegevoegd aan een index.
+Een *Indexeer functie* in azure Cognitive Search is een crawler waarmee Doorzoek bare gegevens en meta gegevens worden geëxtraheerd uit een externe Azure-gegevens bron en waarmee een zoek index wordt gevuld met veld-naar-veld Toewijzingen tussen bron gegevens en uw index. Deze methode wordt ook wel ' pull model ' genoemd, omdat de service gegevens ophaalt zonder dat u code hoeft te schrijven waarmee gegevens worden toegevoegd aan een index.
 
-Indexeer functies zijn gebaseerd op gegevens bron typen of-platformen, met afzonderlijke Indexeer functies voor SQL Server op Azure, Cosmos DB, Azure Table Storage en Blob Storage. Blob Storage-Indexeer functies hebben aanvullende eigenschappen die specifiek zijn voor BLOB-inhouds typen.
-
-U kunt een indexeerfunctie gebruiken voor de opname van gegevens of een combinatie van technieken gebruiken, waaronder een indexeerfunctie voor het laden van slechts enkele velden in de index.
+Indexeer functies zijn alleen Azure, met afzonderlijke Indexeer functies voor Azure SQL, Azure Cosmos DB, Azure Table Storage en Blob Storage. Wanneer u een Indexeer functie configureert, geeft u een gegevens bron op (oorsprong), evenals een index (doel). Verschillende gegevens bronnen, zoals Blob Storage-Indexeer functies, hebben extra eigenschappen die specifiek zijn voor dat inhouds type.
 
 U kunt op aanvraag Indexeer functies of een periodiek schema voor gegevens vernieuwing uitvoeren dat wordt uitgevoerd op elke vijf minuten. Voor frequentere updates is een push model vereist waarmee gelijktijdig gegevens worden bijgewerkt in zowel Azure Cognitive Search als uw externe gegevens bron.
+
+## <a name="usage-scenarios"></a>Gebruiksscenario's
+
+U kunt een Indexeer functie gebruiken als enige manier voor het opnemen van gegevens, of een combi natie van technieken gebruiken die het laden van een deel van de velden in uw index omvatten, waarbij u eventueel inhoud kunt transformeren of verrijken. De volgende tabel bevat een overzicht van de belangrijkste scenario's.
+
+| Scenario |Strategie |
+|----------|---------|
+| Eén bron | Dit patroon is de eenvoudigste: één gegevens bron is de enige inhouds provider voor een zoek index. Vanuit de bron identificeert u een veld dat unieke waarden bevat om als document sleutel in de zoek index te dienen. De unieke waarde wordt gebruikt als een id. Alle andere bron velden worden impliciet of expliciet toegewezen aan overeenkomende velden in een index. </br></br>Een belang rijke maakt is dat de waarde van een document sleutel afkomstig is uit bron gegevens. Met een zoek service worden geen sleutel waarden gegenereerd. Bij volgende uitvoeringen worden inkomende documenten met nieuwe sleutels toegevoegd, terwijl inkomende documenten met bestaande sleutels worden samengevoegd of overschreven, afhankelijk van het feit of de index velden null of leeg zijn. |
+| Meerdere bronnen| Een index kan inhoud van meerdere bronnen accepteren, waarbij elke uitvoering nieuwe inhoud van een andere bron brengt. </br></br>Een resultaat kan een index zijn die documenten verkrijgt nadat elke Indexeer functie is uitgevoerd, waarbij volledige documenten volledig van elke bron worden gemaakt. De uitdaging voor dit scenario is het ontwerpen van een index schema dat geschikt is voor alle inkomende gegevens en een document sleutel die uniform in de zoek index staat. Als de waarden die een document uniek identificeren bijvoorbeeld zijn metadata_storage_path in een BLOB-container en een primaire sleutel in een SQL-tabel, kunt u er Voorst Ellen dat een of beide bronnen moeten worden gewijzigd om sleutel waarden in een gemeen schappelijke indeling te bieden, ongeacht de oorsprong van de inhoud. Voor dit scenario moet u een bepaald niveau van vooraf-verwerking uitvoeren om de gegevens te vermengen zodat deze kunnen worden opgenomen in één index.</br></br>Een alternatieve uitkomst kan zoeken in documenten die gedeeltelijk zijn ingevuld bij de eerste uitvoering en vervolgens verder worden ingevuld door volgende uitvoeringen om waarden uit andere bronnen te halen. De uitdaging van dit patroon is ervoor te zorgen dat de uitvoering van elke index hetzelfde document heeft. Voor het samen voegen van velden in een bestaand document is een overeenkomst vereist voor de document sleutel. Zie [zelf studie: index uit meerdere gegevens bronnen](tutorial-multiple-data-sources.md)voor een demonstratie van dit scenario. |
+| Inhouds transformatie | Cognitive Search ondersteunt optionele [AI-verrijkings](cognitive-search-concept-intro.md) gedragingen waarmee afbeeldings analyse en natuurlijke taal verwerking worden toegevoegd om nieuwe Doorzoek bare inhoud en structuur te maken. AI-verrijking wordt gedefinieerd door een [vaardig heden](cognitive-search-working-with-skillsets.md)die aan een Indexeer functie is gekoppeld. Voor het uitvoeren van AI-verrijking heeft de Indexeer functie nog steeds een index en gegevens bron nodig, maar in dit scenario voegt de vaardigheidset-verwerking toe aan de uitvoering van de Indexeer functie. |
 
 ## <a name="approaches-for-creating-and-managing-indexers"></a>Strategieën voor het maken en beheren van indexeerfuncties
 
 U kunt op de volgende manieren indexeerfuncties maken en beheren:
 
-* [Wizard Portal-> gegevens importeren](search-import-data-portal.md)
-* [Service REST API](/rest/api/searchservice/Indexer-operations)
-* [.NET SDK](/dotnet/api/azure.search.documents.indexes.models.searchindexer)
++ [Wizard Portal-> gegevens importeren](search-import-data-portal.md)
++ [Service REST API](/rest/api/searchservice/Indexer-operations)
++ [.NET SDK](/dotnet/api/azure.search.documents.indexes.models.searchindexer)
 
-Een nieuwe indexeerfunctie wordt in eerste instantie aangekondigd als preview-functie. Preview-functies worden geïntroduceerd in API's (REST en .NET) en vervolgens geïntegreerd in de portal nadat ze geleidelijk algemeen beschikbaar zijn gesteld. Als u een nieuwe indexeerfunctie evalueert, moet u er rekening mee houden dat u code moet schrijven.
+Als u een SDK gebruikt, maakt u een [SearchIndexerClient](/dotnet/api/azure.search.documents.indexes.searchindexerclient) om te werken met Indexeer functies, gegevens bronnen en vaardig heden. De bovenstaande koppeling is voor de .NET SDK, maar alle Sdk's bieden een SearchIndexerClient en vergelijk bare Api's.
+
+In eerste instantie worden nieuwe gegevens bronnen aangekondigd als preview-functies en alleen-REST. Na het afronden van de algemene Beschik baarheid is volledige ondersteuning ingebouwd in de portal en in de verschillende Sdk's, die allemaal op hun eigen release planningen zijn opgenomen.
 
 ## <a name="permissions"></a>Machtigingen
 
@@ -46,15 +56,15 @@ Voor alle bewerkingen met betrekking tot Indexeer functies, waaronder GET-aanvra
 
 Indexeer functies verkennen gegevens archieven in Azure.
 
-* [Azure Blob Storage](search-howto-indexing-azure-blob-storage.md)
-* [Azure data Lake Storage Gen2](search-howto-index-azure-data-lake-storage.md) (in preview-versie)
-* [Azure-tabelopslag](search-howto-indexing-azure-tables.md)
-* [Azure Cosmos DB](search-howto-index-cosmosdb.md)
-* [Azure SQL Database](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [SQL Managed Instance](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
-* [SQL Server op virtuele machines in Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
++ [Azure Blob Storage](search-howto-indexing-azure-blob-storage.md)
++ [Azure data Lake Storage Gen2](search-howto-index-azure-data-lake-storage.md) (in preview-versie)
++ [Azure-tabelopslag](search-howto-indexing-azure-tables.md)
++ [Azure Cosmos DB](search-howto-index-cosmosdb.md)
++ [Azure SQL Database](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
++ [SQL Managed Instance](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
++ [SQL Server op virtuele machines in Azure](search-howto-connecting-azure-sql-iaas-to-azure-search-using-indexers.md)
 
-## <a name="indexer-stages"></a>Indexerings fasen
+## <a name="stages-of-indexing"></a>Stadia van indexeren
 
 Bij een eerste uitvoering, wanneer de index leeg is, leest een Indexeer functie alle gegevens die zijn opgegeven in de tabel of container. Bij volgende uitvoeringen kan de Indexeer functie normaal gesp roken alleen de gewijzigde gegevens detecteren en ophalen. Voor BLOB-gegevens wordt de detectie van wijzigingen automatisch. Voor andere gegevens bronnen, zoals Azure SQL of Cosmos DB, moet u de functie voor het detecteren van wijzigingen inschakelen.
 
@@ -68,9 +78,9 @@ Het kraken van documenten is het proces van het openen van bestanden en het uitp
 
 Voorbeelden:  
 
-* Wanneer het document een record in een [Azure SQL-gegevens bron](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)is, haalt de Indexeer functie elk van de velden voor de record op.
-* Wanneer het document een PDF-bestand is in een [Azure Blob Storage-gegevens bron](search-howto-indexing-azure-blob-storage.md), worden de tekst, afbeeldingen en meta gegevens voor het bestand geëxtraheerd door de Indexeer functie.
-* Wanneer het document een record in een [Cosmos DB gegevens bron](search-howto-index-cosmosdb.md)is, haalt de Indexeer functie de velden en subvelden uit het Cosmos DB document.
++ Wanneer het document een record in een [Azure SQL-gegevens bron](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)is, haalt de Indexeer functie elk van de velden voor de record op.
++ Wanneer het document een PDF-bestand is in een [Azure Blob Storage-gegevens bron](search-howto-indexing-azure-blob-storage.md), worden de tekst, afbeeldingen en meta gegevens door de Indexeer functie opgehaald.
++ Wanneer het document een record in een [Cosmos DB gegevens bron](search-howto-index-cosmosdb.md)is, haalt de Indexeer functie de velden en subvelden uit het Cosmos DB document.
 
 ### <a name="stage-2-field-mappings"></a>Fase 2: veld toewijzingen 
 
@@ -95,18 +105,21 @@ De volgende afbeelding toont een voor beeld van een debug-sessie voor het [opspo
 Indexeerfuncties kunnen functies bieden die uniek voor de gegevensbron zijn. In dit opzicht variëren bepaalde aspecten van de configuratie van de indexeerfunctie of de gegevensbron al naar gelang het type indexeerfunctie. Alle indexeerfuncties hebben echter dezelfde basissamenstelling en voor alle indexeerfuncties gelden dezelfde vereisten. Hieronder vindt u de stappen die voor alle indexeerfuncties gemeenschappelijk zijn.
 
 ### <a name="step-1-create-a-data-source"></a>Stap 1: Een gegevensbron maken
+
 Met een Indexeer functie wordt een gegevens bron verbinding opgehaald van een *gegevens bron* object. De definitie van de gegevens bron biedt een connection string en mogelijk referenties. Roep de-klasse [Create data source](/rest/api/searchservice/create-data-source) rest API of [SearchIndexerDataSourceConnection](/dotnet/api/azure.search.documents.indexes.models.searchindexerdatasourceconnection) aan om de resource te maken.
 
 Gegevensbronnen worden geconfigureerd en onafhankelijk van de indexeerfuncties beheerd die gebruikmaken van de gegevensbronnen. Dit betekent dat een gegevensbron door meerdere indexeerfuncties kan worden gebruikt om tegelijkertijd meer dan één index te laden.
 
 ### <a name="step-2-create-an-index"></a>Stap 2: een index maken
+
 Een indexeerfunctie automatiseert bepaalde taken met betrekking tot de opname van gegevens, maar het maken van een index behoort hier niet toe. Een vereiste is dat u een vooraf gedefinieerde index moet hebben met velden die overeenkomen met de velden in uw externe gegevensbron. Velden moeten overeenkomen met de naam en het gegevens type. Zie [Create a index (Azure Cognitive Search rest API)](/rest/api/searchservice/Create-Index) of [SearchIndex-klasse](/dotnet/api/azure.search.documents.indexes.models.searchindex)voor meer informatie over het structureren van een index. Zie [veld toewijzingen in Azure Cognitive Search-Indexeer functies](search-indexer-field-mappings.md)voor hulp bij veld koppelingen.
 
 > [!Tip]
 > Hoewel indexeerfuncties een index niet voor u kunnen genereren, kan de wizard **Gegevens importeren** in de portal helpen. In de meeste gevallen kan de wizard een indexschema afleiden uit bestaande metagegevens in de bron, met een voorlopig indexschema dat u kunt bewerken terwijl de wizard actief is. Als de index eenmaal is aangemaakt op de service, blijven verdere bewerkingen in de portal meestal beperkt tot het toevoegen van nieuwe velden. Overweeg de wizard voor het maken, maar niet voor het herzien van een index. Doorloop het [Portaloverzicht](search-get-started-portal.md) om aan de slag te gaan.
 
 ### <a name="step-3-create-and-schedule-the-indexer"></a>Stap 3: de indexeerfunctie maken en plannen
-De definitie van de Indexeer functie is een constructie waarmee alle elementen worden gecombineerd die zijn gerelateerd aan gegevens opname. De vereiste elementen bevatten een gegevens bron en index. Optionele elementen bevatten een schema-en veld toewijzingen. Veld toewijzing is alleen optioneel als bron velden en index velden duidelijk overeenkomen. Zie [Indexeer functie maken (Azure Cognitive Search rest API)](/rest/api/searchservice/Create-Indexer)voor meer informatie over het structureren van een Indexeer functie.
+
+De definitie van de Indexeer functie is een constructie waarmee alle elementen worden gecombineerd die zijn gerelateerd aan gegevens opname. De vereiste elementen bevatten een gegevens bron en index. Optionele elementen bevatten een schema-en veld toewijzingen. Veld Toewijzingen zijn alleen optioneel als bron velden en index velden duidelijk overeenkomen. Zie [Indexeer functie maken (Azure Cognitive Search rest API)](/rest/api/searchservice/Create-Indexer)voor meer informatie over het structureren van een Indexeer functie.
 
 <a id="RunIndexer"></a>
 
@@ -120,9 +133,9 @@ api-key: [Search service admin key]
 ```
 
 > [!NOTE]
-> Wanneer run API wordt geretourneerd, is de aanroep van de Indexeer functie gepland, maar wordt de daad werkelijke verwerking asynchroon uitgevoerd. 
+> Wanneer run API een succes code retourneert, is de aanroep van de Indexeer functie gepland, maar wordt de daad werkelijke verwerking asynchroon uitgevoerd. 
 
-U kunt de status van de Indexeer functie bewaken in de portal of via de API van de Indexeer functie ophalen. 
+U kunt de status van de Indexeer functie bewaken in de portal of via de API van de [Indexeer functie ophalen](/rest/api/searchservice/get-indexer-status). 
 
 <a name="GetIndexerStatus"></a>
 
@@ -168,11 +181,12 @@ Het antwoord bevat de algemene status van de Indexeer functie, de laatste (of in
 De uitvoerings geschiedenis bevat tot de 50 meest recente voltooide uitvoeringen, die in omgekeerde chronologische volg orde worden gesorteerd (zodat de meest recente uitvoering eerst in het antwoord komt).
 
 ## <a name="next-steps"></a>Volgende stappen
+
 Nu u het uitgangspunt hebt begrepen, is de volgende stap de vereisten en taken te bekijken die specifiek zijn voor elk gegevensbrontype.
 
-* [Azure SQL Database, SQL Managed instance of SQL Server op een virtuele machine van Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
-* [Azure Cosmos DB](search-howto-index-cosmosdb.md)
-* [Azure Blob Storage](search-howto-indexing-azure-blob-storage.md)
-* [Azure-tabelopslag](search-howto-indexing-azure-tables.md)
-* [CSV-blobs indexeren met de Azure Cognitive Search BLOB-Indexer](search-howto-index-csv-blobs.md)
-* [JSON-blobs indexeren met Azure Cognitive Search BLOB-Indexer](search-howto-index-json-blobs.md)
++ [Azure SQL Database, SQL Managed instance of SQL Server op een virtuele machine van Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
++ [Azure Cosmos DB](search-howto-index-cosmosdb.md)
++ [Azure Blob Storage](search-howto-indexing-azure-blob-storage.md)
++ [Azure-tabelopslag](search-howto-indexing-azure-tables.md)
++ [CSV-blobs indexeren met de Azure Cognitive Search BLOB-Indexer](search-howto-index-csv-blobs.md)
++ [JSON-blobs indexeren met Azure Cognitive Search BLOB-Indexer](search-howto-index-json-blobs.md)

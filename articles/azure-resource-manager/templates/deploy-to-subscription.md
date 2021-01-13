@@ -2,13 +2,13 @@
 title: Resources implementeren voor het abonnement
 description: Hierin wordt beschreven hoe u een resource groep maakt in een Azure Resource Manager sjabloon. Ook wordt uitgelegd hoe u resources kunt implementeren in het bereik van Azure-abonnementen.
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: 2d4bd0db32a4bf0224b9da3af6e03ca86d7b496e
-ms.sourcegitcommit: 6a770fc07237f02bea8cc463f3d8cc5c246d7c65
+ms.date: 01/13/2021
+ms.openlocfilehash: ba055970a8fac71b798fca9d3c76550cb7d482a7
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95807709"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178990"
 ---
 # <a name="subscription-deployments-with-arm-templates"></a>Implementaties van abonnementen met ARM-sjablonen
 
@@ -90,7 +90,7 @@ Het schema voor een parameter bestand is hetzelfde voor alle implementatie berei
 
 Gebruik de implementatie opdrachten op abonnements niveau om te implementeren in een abonnement.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik [AZ Deployment sub Create](/cli/azure/deployment/sub#az-deployment-sub-create)voor Azure cli. In het volgende voor beeld wordt een sjabloon geïmplementeerd voor het maken van een resource groep:
 
@@ -142,7 +142,8 @@ Wanneer u naar een abonnement implementeert, kunt u resources implementeren voor
 * elk abonnement in de Tenant
 * resource groepen binnen het abonnement of andere abonnementen
 * de Tenant voor het abonnement
-* [uitbreidings bronnen](scope-extension-resources.md) kunnen worden toegepast op resources
+
+Een [extensie resource](scope-extension-resources.md) kan worden ingedeeld naar een doel dat verschilt van het implementatie doel.
 
 De gebruiker die de sjabloon implementeert, moet toegang hebben tot het opgegeven bereik.
 

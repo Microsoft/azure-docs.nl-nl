@@ -7,20 +7,22 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: jgao
-ms.openlocfilehash: 13dc072e31f0d27768de8d9a62ea942d55460713
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: f731236b235883f019c74ef0b32f5066ca5b7514
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936393"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179364"
 ---
 # <a name="configure-development-environment-for-deployment-scripts-in-arm-templates"></a>Ontwikkel omgeving configureren voor implementatie scripts in ARM-sjablonen
 
-Meer informatie over het maken van een ontwikkel omgeving voor het ontwikkelen en testen van implementatie scripts met een implementatie script installatie kopie. U kunt een [exemplaar van Azure container](../../container-instances/container-instances-overview.md) maken of [docker](https://docs.docker.com/get-docker/)gebruiken. Beide zijn opgenomen in dit artikel.
+Meer informatie over het maken van een ontwikkel omgeving voor het ontwikkelen en testen van ARM-sjabloon implementatie scripts met een implementatie script installatie kopie. U kunt een exemplaar van [Azure container](../../container-instances/container-instances-overview.md) maken of [docker](https://docs.docker.com/get-docker/)gebruiken. Beide opties zijn opgenomen in dit artikel.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u geen implementatie script hebt, kunt u een _hello.ps1_ -bestand maken met de volgende inhoud:
+### <a name="azure-powershell-container"></a>Azure PowerShell-container
+
+Als u geen Azure PowerShell-implementatie script hebt, kunt u een *hello.ps1* bestand maken met behulp van de volgende inhoud:
 
 ```powershell
 param([string] $name)
@@ -30,14 +32,29 @@ $DeploymentScriptOutputs = @{}
 $DeploymentScriptOutputs['text'] = $output
 ```
 
-## <a name="use-azure-container-instance"></a>Azure container instance gebruiken
+### <a name="azure-cli-container"></a>Azure CLI-container
+
+Voor een Azure CLI-container installatie kopie kunt u een *Hello.sh* -bestand maken met behulp van de volgende inhoud:
+
+```bash
+firstname=$1
+lastname=$2
+output="{\"name\":{\"displayName\":\"$firstname $lastname\",\"firstName\":\"$firstname\",\"lastName\":\"$lastname\"}}"
+echo -n "Hello "
+echo $output | jq -r '.name.displayName'
+```
+
+> [!NOTE]
+> Wanneer u een Azure CLI-implementatie script uitvoert, wordt `AZ_SCRIPTS_OUTPUT_PATH` de locatie van het script uitvoer bestand opgeslagen in een omgevings variabele met de naam. De omgevings variabele is niet beschikbaar in de container voor de ontwikkel omgeving. Zie [werken met uitvoer van CLI-script](deployment-script-template.md#work-with-outputs-from-cli-script)voor meer informatie over het werken met Azure cli-uitvoer.
+
+## <a name="use-azure-powershell-container-instance"></a>Azure PowerShell container exemplaar gebruiken
 
 Als u uw scripts op uw computer wilt schrijven, moet u een opslag account maken en het opslag account koppelen aan het container exemplaar. Zodat u uw script kunt uploaden naar het opslag account en het script moet uitvoeren op het container exemplaar.
 
 > [!NOTE]
 > Het opslag account dat u maakt om uw script te testen, is niet hetzelfde opslag account als de implementatie script service gebruikt om het script uit te voeren. De implementatie script service maakt tijdens elke uitvoering een unieke naam als een bestands share.
 
-### <a name="create-an-azure-container-instance"></a>Een Azure-container exemplaar maken
+### <a name="create-an-azure-powershell-container-instance"></a>Een Azure PowerShell container exemplaar maken
 
 Met de volgende Azure Resource Manager sjabloon (ARM-sjabloon) maakt u een container exemplaar en een bestands share, waarna u de bestands share koppelt aan de container installatie kopie.
 
@@ -54,21 +71,21 @@ Met de volgende Azure Resource Manager sjabloon (ARM-sjabloon) maakt u een conta
     },
     "containerImage": {
       "type": "string",
-      "defaultValue": "mcr.microsoft.com/azuredeploymentscripts-powershell:az4.3",
+      "defaultValue": "mcr.microsoft.com/azuredeploymentscripts-powershell:az5.2",
       "metadata": {
         "description": "Specify the container image."
       }
     },
     "mountPath": {
       "type": "string",
-      "defaultValue": "deploymentScript",
+      "defaultValue": "/mnt/azscripts/azscriptinput",
       "metadata": {
         "description": "Specify the mount path."
       }
     }
   },
   "variables": {
-    "storageAccountName": "[concat(parameters('projectName'), 'store')]",
+    "storageAccountName": "[tolower(concat(parameters('projectName'), 'store'))]",
     "fileShareName": "[concat(parameters('projectName'), 'share')]",
     "containerGroupName": "[concat(parameters('projectName'), 'cg')]",
     "containerName": "[concat(parameters('projectName'), 'container')]"
@@ -154,14 +171,11 @@ Met de volgende Azure Resource Manager sjabloon (ARM-sjabloon) maakt u een conta
 }
 ```
 
-De standaard waarde voor het koppelingspad is `deploymentScript` . Dit is het pad in het container exemplaar waarnaar het is gekoppeld aan de bestands share.
+De standaard waarde voor het koppelingspad is `/mnt/azscripts/azscriptinput` . Dit is het pad in het container exemplaar waar het is gekoppeld aan de bestands share.
 
-De standaard container installatie kopie die in de sjabloon is opgegeven, is `mcr.microsoft.com/azuredeploymentscripts-powershell:az4.3` . Een lijst met [ondersteunde versies van Azure PowerShell](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list)weer geven. Een lijst met [ondersteunde Azure cli-versies](https://mcr.microsoft.com/v2/azure-cli/tags/list)weer geven.
+De standaard container installatie kopie die in de sjabloon is opgegeven, is **MCR.Microsoft.com/azuredeploymentscripts-PowerShell:az5.2**. Een lijst met alle [ondersteunde Azure PowerShell versies](https://mcr.microsoft.com/v2/azuredeploymentscripts-powershell/tags/list)weer geven.
 
-  >[!IMPORTANT]
-  > Het implementatie script maakt gebruik van de beschik bare CLI-installatie kopieën van micro soft Container Registry (MCR). Het duurt ongeveer één maand om een CLI-installatie kopie te certificeren voor het implementatie script. Gebruik de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie opmerkingen bij de [release van Azure cli](/cli/azure/release-notes-azure-cli?view=azure-cli-latest&preserve-view=true)om de release datums voor de installatie kopieën te vinden. Als er een niet-ondersteunde versie wordt gebruikt, wordt in het fout bericht een lijst met ondersteunde versies weer gegeven.
-
-De sjabloon onderbreekt het container exemplaar 1800 seconden. U hebt 30 minuten voordat de container instantie de Terminal status krijgt en de sessie wordt beëindigd.
+De sjabloon onderbreekt het container exemplaar na 1.800 seconden. U hebt 30 minuten voordat de container instantie de status beëindigd krijgt en de sessie wordt beëindigd.
 
 De sjabloon implementeren:
 
@@ -171,11 +185,195 @@ $location = Read-Host -Prompt "Enter the location (i.e. centralus)"
 $templateFile = Read-Host -Prompt "Enter the template file path and file name"
 $resourceGroupName = "${projectName}rg"
 
-New-azResourceGroup -Location $location -name $resourceGroupName
+New-AzResourceGroup -Location $location -name $resourceGroupName
 New-AzResourceGroupDeployment -resourceGroupName $resourceGroupName -TemplateFile $templatefile -projectName $projectName
 ```
 
-### <a name="upload-deployment-script"></a>Implementatie script uploaden
+### <a name="upload-the-deployment-script"></a>Het implementatie script uploaden
+
+Upload uw implementatie script naar het opslag account. Hier volgt een voor beeld van een Power shell-script:
+
+```azurepowershell
+$projectName = Read-Host -Prompt "Enter the same project name that you used earlier"
+$fileName = Read-Host -Prompt "Enter the deployment script file name with the path"
+
+$resourceGroupName = "${projectName}rg"
+$storageAccountName = "${projectName}store"
+$fileShareName = "${projectName}share"
+
+$context = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $storageAccountName).Context
+Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fileName -Force
+```
+
+U kunt het bestand ook uploaden met behulp van de Azure Portal of de Azure CLI.
+
+### <a name="test-the-deployment-script"></a>Het implementatie script testen
+
+1. Open in de Azure Portal de resource groep waarin u het container exemplaar en het opslag account hebt geïmplementeerd.
+2. Open de container groep. De standaard naam van de container groep is de project naam die is toegevoegd aan *cg*. De container instantie heeft de status **bezig met uitvoeren** .
+3. Selecteer **containers** in het menu resource. De naam van het container exemplaar is de project naam die is toegevoegd aan de *container*.
+
+    ![Scherm opname van het implementatie script van de container instantie Connect in de Azure Portal.](./media/deployment-script-template-configure-dev/deployment-script-container-instance-connect.png)
+
+4. Selecteer **verbinding maken** en selecteer vervolgens **verbinding maken**. Als u geen verbinding kunt maken met het container exemplaar, start u de container groep opnieuw en probeert u het opnieuw.
+5. Voer de volgende opdrachten uit in het console venster:
+
+    ```console
+    cd /mnt/azscripts/azscriptinput
+    ls
+    pwsh ./hello.ps1 "John Dole"
+    ```
+
+    De uitvoer is **Hello John Davids**.
+
+    ![Scherm afbeelding van de test uitvoer van het Connect-container exemplaar in de-console.](./media/deployment-script-template-configure-dev/deployment-script-container-instance-test.png)
+
+## <a name="use-an-azure-cli-container-instance"></a>Een Azure CLI-container exemplaar gebruiken
+
+Als u uw scripts op uw computer wilt schrijven, maakt u een opslag account en koppelt u het opslag account aan het container exemplaar. Vervolgens kunt u uw script uploaden naar het opslag account en het script uitvoeren op het container exemplaar.
+
+> [!NOTE]
+> Het opslag account dat u maakt om uw script te testen, is niet hetzelfde opslag account als de implementatie script service gebruikt om het script uit te voeren. De implementatie script service maakt tijdens elke uitvoering een unieke naam als een bestands share.
+
+### <a name="create-an-azure-cli-container-instance"></a>Een Azure CLI-container exemplaar maken
+
+Met de volgende ARM-sjabloon maakt u een container exemplaar en een bestands share, waarna u de bestands share koppelt aan de container installatie kopie:
+
+```json
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "projectName": {
+      "type": "string",
+      "metadata": {
+        "description": "Specify a project name that is used for generating resource names."
+      }
+    },
+    "containerImage": {
+      "type": "string",
+      "defaultValue": "mcr.microsoft.com/azure-cli:2.9.1",
+      "metadata": {
+        "description": "Specify the container image."
+      }
+    },
+    "mountPath": {
+      "type": "string",
+      "defaultValue": "/mnt/azscripts/azscriptinput",
+      "metadata": {
+        "description": "Specify the mount path."
+      }
+    }
+  },
+  "variables": {
+    "storageAccountName": "[tolower(concat(parameters('projectName'), 'store'))]",
+    "fileShareName": "[concat(parameters('projectName'), 'share')]",
+    "containerGroupName": "[concat(parameters('projectName'), 'cg')]",
+    "containerName": "[concat(parameters('projectName'), 'container')]"
+  },
+  "resources": [
+    {
+      "type": "Microsoft.Storage/storageAccounts",
+      "apiVersion": "2019-06-01",
+      "name": "[variables('storageAccountName')]",
+      "location": "[resourceGroup().location]",
+      "sku": {
+        "name": "Standard_LRS",
+        "tier": "Standard"
+      },
+      "kind": "StorageV2",
+      "properties": {
+        "accessTier": "Hot"
+      }
+    },
+    {
+      "type": "Microsoft.Storage/storageAccounts/fileServices/shares",
+      "apiVersion": "2019-06-01",
+      "name": "[concat(variables('storageAccountName'), '/default/', variables('fileShareName'))]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+      ]
+    },
+    {
+      "type": "Microsoft.ContainerInstance/containerGroups",
+      "apiVersion": "2019-12-01",
+      "name": "[variables('containerGroupName')]",
+      "location": "[resourceGroup().location]",
+      "dependsOn": [
+        "[resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName'))]"
+      ],
+      "properties": {
+        "containers": [
+          {
+            "name": "[variables('containerName')]",
+            "properties": {
+              "image": "[parameters('containerImage')]",
+              "resources": {
+                "requests": {
+                  "cpu": 1,
+                  "memoryInGb": 1.5
+                }
+              },
+              "ports": [
+                {
+                  "protocol": "TCP",
+                  "port": 80
+                }
+              ],
+              "volumeMounts": [
+                {
+                  "name": "filesharevolume",
+                  "mountPath": "[parameters('mountPath')]"
+                }
+              ],
+              "command": [
+                "/bin/bash",
+                "-c",
+                "echo hello; sleep 1800"
+              ]
+            }
+          }
+        ],
+        "osType": "Linux",
+        "volumes": [
+          {
+            "name": "filesharevolume",
+            "azureFile": {
+              "readOnly": false,
+              "shareName": "[variables('fileShareName')]",
+              "storageAccountName": "[variables('storageAccountName')]",
+              "storageAccountKey": "[listKeys(resourceId('Microsoft.Storage/storageAccounts', variables('storageAccountName')), '2019-06-01').keys[0].value]"
+            }
+          }
+        ]
+      }
+    }
+  ]
+}
+```
+
+De standaard waarde voor het koppelingspad is `/mnt/azscripts/azscriptinput` . Dit is het pad in het container exemplaar waar het is gekoppeld aan de bestands share.
+
+De standaard container installatie kopie die in de sjabloon is opgegeven, is **MCR.Microsoft.com/azure-cli:2.9.1**. Een lijst met [ondersteunde Azure cli-versies](https://mcr.microsoft.com/v2/azure-cli/tags/list)weer geven.
+
+> [!IMPORTANT]
+> Het implementatie script maakt gebruik van de beschik bare CLI-installatie kopieën van micro soft Container Registry (MCR). Het duurt ongeveer één maand om een CLI-installatie kopie te certificeren voor een implementatie script. Gebruik de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie opmerkingen bij de [release van Azure cli](/cli/azure/release-notes-azure-cli?view=azure-cli-latest&preserve-view=true)om de release datums voor de installatie kopieën te vinden. Als u een niet-ondersteunde versie gebruikt, wordt in het fout bericht een lijst met ondersteunde versies weer gegeven.
+
+De sjabloon onderbreekt het container exemplaar na 1.800 seconden. U hebt 30 minuten voordat het container exemplaar in een Terminal status komt en de sessie wordt beëindigd.
+
+De sjabloon implementeren:
+
+```azurepowershell
+$projectName = Read-Host -Prompt "Enter a project name that is used to generate resource names"
+$location = Read-Host -Prompt "Enter the location (i.e. centralus)"
+$templateFile = Read-Host -Prompt "Enter the template file path and file name"
+$resourceGroupName = "${projectName}rg"
+
+New-AzResourceGroup -Location $location -name $resourceGroupName
+New-AzResourceGroupDeployment -resourceGroupName $resourceGroupName -TemplateFile $templatefile -projectName $projectName
+```
+
+### <a name="upload-the-deployment-script"></a>Het implementatie script uploaden
 
 Upload uw implementatie script naar het opslag account. Hier volgt een Power shell-voor beeld:
 
@@ -191,13 +389,13 @@ $context = (Get-AzStorageAccount -ResourceGroupName $resourceGroupName -Name $st
 Set-AzStorageFileContent -Context $context -ShareName $fileShareName -Source $fileName -Force
 ```
 
-U kunt het bestand ook uploaden met behulp van de Azure Portal en Azure CLI.
+U kunt het bestand ook uploaden met behulp van de Azure Portal of de Azure CLI.
 
 ### <a name="test-the-deployment-script"></a>Het implementatie script testen
 
-1. Open vanuit het Azure Portal de resource groep waarin u het container exemplaar en het opslag account hebt geïmplementeerd.
-1. Open de container groep. De standaard naam van de container groep is de naam van het project waaraan **cg** is toegevoegd. U ziet dat de container instantie de status **actief** heeft.
-1. Selecteer **containers** in het menu links. Er wordt een container exemplaar weer geven. De naam van het container exemplaar is de project naam waaraan de **container** is toegevoegd.
+1. Open in de Azure Portal de resource groep waarin u het container exemplaar en het opslag account hebt geïmplementeerd.
+1. Open de container groep. De standaard naam van de container groep is de project naam die is toegevoegd aan *cg*. De container instantie wordt weer gegeven in de status wordt **uitgevoerd** .
+1. Selecteer **containers** in het menu resource. De naam van het container exemplaar is de project naam die is toegevoegd aan de *container*.
 
     ![implementatie script Connect-container exemplaar](./media/deployment-script-template-configure-dev/deployment-script-container-instance-connect.png)
 
@@ -205,22 +403,14 @@ U kunt het bestand ook uploaden met behulp van de Azure Portal en Azure CLI.
 1. Voer de volgende opdrachten uit in het console venster:
 
     ```console
-    cd deploymentScript
+    cd /mnt/azscripts/azscriptinput
     ls
-    pwsh ./hello.ps1 "John Dole"
+    ./hello.sh John Dole
     ```
 
     De uitvoer is **Hello John Davids**.
 
-    ![test voor implementatie script container exemplaar](./media/deployment-script-template-configure-dev/deployment-script-container-instance-test.png)
-
-1. Als u de AZ CLI-container installatie kopie gebruikt, voert u deze code uit:
-
-   ```console
-   cd /mnt/azscripts/azscriptinput
-   ls
-   ./userscript.sh
-   ```
+    ![test voor implementatie script container exemplaar](./media/deployment-script-template-configure-dev/deployment-script-container-instance-test-cli.png)
 
 ## <a name="use-docker"></a>Docker gebruiken
 
@@ -235,7 +425,7 @@ U moet ook het delen van bestanden configureren om de map te koppelen. Deze beva
 
     In het voor beeld wordt gebruikgemaakt van versie Power Shell 4.3.0.
 
-    Een CLI-installatie kopie ophalen uit een micro soft Container Registry (MCR):
+    Een CLI-installatie kopie uit een MCR halen:
 
     ```command
     docker pull mcr.microsoft.com/azure-cli:2.0.80
@@ -263,7 +453,7 @@ U moet ook het delen van bestanden configureren om de map te koppelen. Deze beva
     docker run -v d:/docker:/data -it mcr.microsoft.com/azure-cli:2.0.80
     ```
 
-1. In de volgende scherm afbeelding ziet u hoe u een Power shell-script uitvoert, op voorwaarde dat u een _helloworld.ps1_ bestand in het gedeelde station hebt.
+1. In de volgende scherm afbeelding ziet u hoe u een Power shell-script uitvoert, op voorwaarde dat u een *helloworld.ps1* bestand in het gedeelde station hebt.
 
     ![Docker-opdracht voor implementatie script van Resource Manager-sjabloon](./media/deployment-script-template/resource-manager-deployment-script-docker-cmd.png)
 

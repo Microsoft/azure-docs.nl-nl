@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.author: tamram
 ms.reviewer: ozgun
 ms.subservice: common
-ms.openlocfilehash: 8eaadc031039b22e209db1023c65da39e1e096b1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 9afce964652d2bedbe105a8a750a93d2f37eef85
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483280"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179028"
 ---
 # <a name="customer-managed-keys-for-azure-storage-encryption"></a>Door de klant beheerde sleutels voor Azure Storage versleuteling
 
@@ -78,7 +78,7 @@ Wanneer u versleuteling configureert met door de klant beheerde sleutels, hebt u
 
     Wanneer de sleutel versie expliciet is opgegeven, moet u het opslag account hand matig bijwerken om de nieuwe sleutel versie-URI te gebruiken wanneer een nieuwe versie wordt gemaakt. Raadpleeg [Configure Encryption with door de klant beheerde sleutels die zijn opgeslagen in azure Key Vault](customer-managed-keys-configure-key-vault.md) of [Configureer versleuteling met door de klant beheerde sleutels die zijn opgeslagen in azure Key Vault beheerde HSM (preview)](customer-managed-keys-configure-key-vault-hsm.md)voor meer informatie over het bijwerken van het opslag account om een nieuwe versie van de sleutel te gebruiken.
 
-Wanneer u de sleutel versie voor een door de klant beheerde sleutel bijwerkt, wordt het opnieuw versleutelen van gegevens in het opslag account niet geactiveerd. Er is geen verdere actie vereist van de gebruiker.
+Wanneer u de sleutel versie bijwerkt, wordt de beveiliging van de hoofd versleutelings sleutel gewijzigd, maar de gegevens in uw Azure Storage-account worden niet opnieuw versleuteld. Er is geen verdere actie vereist van de gebruiker.
 
 > [!NOTE]
 > Als u een sleutel wilt draaien, maakt u een nieuwe versie van de sleutel in de sleutel kluis of beheerde HSM volgens uw nalevings beleid. U kunt uw sleutel hand matig draaien of een functie maken om deze te draaien volgens een planning.

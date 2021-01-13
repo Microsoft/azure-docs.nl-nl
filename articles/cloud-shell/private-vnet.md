@@ -14,16 +14,14 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: damaerte
-ms.openlocfilehash: 722d935c242a51ddfc01377676f026b71a8951b8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a820fb4ec5d6c2053b1104b68dbda0ae70f624c0
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89468535"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179194"
 ---
 # <a name="deploy-cloud-shell-into-an-azure-virtual-network"></a>Cloud Shell implementeren in een virtueel Azure-netwerk
-> [!NOTE]
-> Deze functionaliteit bevindt zich in de open bare preview.
 
 Een gewone Cloud Shell sessie wordt uitgevoerd in een container in een micro soft-netwerk gescheiden van uw resources. Dit betekent dat opdrachten die in de container worden uitgevoerd, geen toegang hebben tot bronnen die alleen toegankelijk zijn vanuit een specifiek virtueel netwerk. U kunt SSH bijvoorbeeld niet gebruiken om verbinding te maken van Cloud Shell naar een virtuele machine die alleen een privé-IP-adres heeft, of gebruik kubectl om verbinding te maken met een Kubernetes-cluster dat de toegang heeft vergrendeld. 
 
@@ -64,7 +62,7 @@ Zoals in de standaard Cloud Shell, is een opslag account vereist tijdens het geb
 ## <a name="virtual-network-deployment-limitations"></a>Beperkingen voor de implementatie van virtuele netwerken
 * Als gevolg van de betrokken extra netwerk bronnen is het starten van Cloud Shell in een virtueel netwerk meestal trager dan een standaard Cloud Shell sessie.
 
-* Tijdens de preview worden minder regio's ondersteund voor Cloud Shell in een virtueel netwerk. Dit is momenteel beperkt tot: Westus en WestCentralUS.
+* Alle Cloud Shell regio's van Centraal-India worden momenteel ondersteund. 
 
 * [Azure relay](../azure-relay/relay-what-is-it.md) is geen gratis service, Bekijk hun [prijzen](https://azure.microsoft.com/pricing/details/service-bus/). In het Cloud Shell scenario wordt één hybride verbinding voor elke beheerder gebruikt wanneer ze Cloud Shell gebruiken. De verbinding wordt automatisch afgesloten nadat de Cloud Shell sessie is voltooid.
 

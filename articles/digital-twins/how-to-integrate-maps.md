@@ -1,19 +1,19 @@
 ---
 title: Integreren met Azure Maps
 titleSuffix: Azure Digital Twins
-description: Bekijk hoe u een Azure-functie maakt die de dubbele grafiek en Azure Digital Apparaatdubbels-meldingen kan gebruiken om een Azure Maps binnenste kaart bij te werken.
+description: Zie Azure Functions gebruiken om een functie te maken die de dubbele grafiek en Azure Digital Apparaatdubbels-meldingen kan gebruiken voor het bijwerken van een Azure Maps binnenste kaart.
 author: alexkarcher-msft
 ms.author: alkarche
 ms.date: 6/3/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 7b2039f8b1aebef65112067e4fd9184777192015
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: e582415d9a83dc506b77d506f3e0803002129a07
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051578"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98180044"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Azure Digital Apparaatdubbels gebruiken voor het bijwerken van een Azure Maps binnenste kaart
 
@@ -22,7 +22,7 @@ In dit artikel worden de stappen beschreven die nodig zijn om Azure Digital Appa
 Deze procedure geldt voor:
 
 1. Uw Azure Digital Apparaatdubbels-exemplaar configureren voor het verzenden van dubbele update gebeurtenissen naar een functie in [Azure functions](../azure-functions/functions-overview.md).
-2. Een Azure-functie maken voor het bijwerken van een Azure Maps de functie statusset voor de binnenste kaarten.
+2. Het maken van een functie voor het bijwerken van een Azure Maps functie statusset van binnenste kaarten.
 3. Het opslaan van uw Maps ID en de ID van de functie statusset in de Azure Digital Apparaatdubbels-grafiek.
 
 ### <a name="prerequisites"></a>Vereisten
@@ -41,9 +41,9 @@ In de onderstaande afbeelding ziet u waar de integratie-elementen in de binnenst
 
 ## <a name="create-a-function-to-update-a-map-when-twins-update"></a>Een functie maken om een kaart bij te werken wanneer apparaatdubbels update
 
-Eerst maakt u een route in azure Digital Apparaatdubbels om alle dubbele update gebeurtenissen door te sturen naar een event grid-onderwerp. Vervolgens gebruikt u een Azure-functie om deze update berichten te lezen en een functie statusset in Azure Maps bij te werken. 
+Eerst maakt u een route in azure Digital Apparaatdubbels om alle dubbele update gebeurtenissen door te sturen naar een event grid-onderwerp. Vervolgens gebruikt u een functie om die update berichten te lezen en een functie statusset in Azure Maps bij te werken. 
 
-## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Een route maken en filteren op dubbele update meldingen
+## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Een route en filter maken voor updatemeldingen van de dubbel
 
 Azure Digital Apparaatdubbels-instanties kunnen dubbele update gebeurtenissen verzenden wanneer de status van een twee is bijgewerkt. De zelf studie over Azure Digital Apparaatdubbels [*: verbinding maken met een end-to-end oplossing*](./tutorial-end-to-end.md) die hierboven wordt beschreven, wordt een scenario waarbij een thermo meter wordt gebruikt voor het bijwerken van een temperatuur kenmerk dat is gekoppeld aan de dubbele. U gaat deze oplossing uitbreiden door u te abonneren op update meldingen voor apparaatdubbels en deze informatie te gebruiken om uw kaarten bij te werken.
 
@@ -59,7 +59,7 @@ Dit patroon leest van de ruimte tussen direct, in plaats van het IoT-apparaat, d
     az dt endpoint create eventgrid --endpoint-name <Event-Grid-endpoint-name> --eventgrid-resource-group <Event-Grid-resource-group-name> --eventgrid-topic <your-Event-Grid-topic-name> -n <your-Azure-Digital-Twins-instance-name>
     ```
 
-3. Maak een route in azure Digital Apparaatdubbels om dubbele update gebeurtenissen naar uw eind punt te verzenden.
+3. Maak een route in Azure Digital Twins om updategebeurtenissen van de dubbel naar uw eindpunt te verzenden.
 
     >[!NOTE]
     >Er is momenteel een **bekend probleem** in Cloud Shell dat deze opdrachtgroepen beïnvloedt: `az dt route`, `az dt model`, `az dt twin`.
@@ -70,7 +70,7 @@ Dit patroon leest van de ruimte tussen direct, in plaats van het IoT-apparaat, d
     az dt route create -n <your-Azure-Digital-Twins-instance-name> --endpoint-name <Event-Grid-endpoint-name> --route-name <my_route> --filter "type = 'Microsoft.DigitalTwins.Twin.Update'"
     ```
 
-## <a name="create-an-azure-function-to-update-maps"></a>Een Azure-functie maken om kaarten bij te werken
+## <a name="create-a-function-to-update-maps"></a>Een functie maken om kaarten bij te werken
 
 U gaat vanuit de end-to-end-zelf studie een door Event Grid geactiveerde functie maken in uw functie-app ([*zelf studie: een end-to-end oplossing verbinden*](./tutorial-end-to-end.md)). Met deze functie worden deze meldingen uitgepakt en worden updates naar een Azure Maps-functie statusset verzonden om de Tempe ratuur van één kamer bij te werken. 
 

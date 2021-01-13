@@ -12,12 +12,12 @@ ms.date: 09/23/2020
 ms.author: ryanwi
 ms.reviewer: hirsin, jesakowi, jmprieur, marsma
 ms.custom: aaddev, fasttrack-edit, contperf-fy21q1, identityplatformtop40
-ms.openlocfilehash: 14b6d6ecc6523199102fd3ef9370fe901c4ff51d
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: d3edadd4878dbd6e06648f7fb67a0c3e111665d1
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97355695"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178123"
 ---
 # <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform
 
@@ -166,10 +166,11 @@ Toepassingen kunnen weten welke machtigingen ze nodig hebben (zowel gedelegeerde
 
 #### <a name="to-configure-the-list-of-statically-requested-permissions-for-an-application"></a>De lijst met statisch aangevraagde machtigingen voor een toepassing configureren
 
-1. Ga naar uw toepassing in de [Azure Portal-app-registraties-](https://go.microsoft.com/fwlink/?linkid=2083908) ervaring of [Maak een app](quickstart-register-app.md) als u dat nog niet hebt gedaan.
-2. Ga naar de sectie **API-machtigingen** en klik in de API-machtigingen op een machtiging toevoegen.
-3. Selecteer **Microsoft Graph** in de lijst met beschik bare api's en voeg vervolgens de machtigingen toe die uw app nodig heeft.
-3. **Sla** de app-registratie op.
+1. Ga naar uw toepassing in de <a href="https://go.microsoft.com/fwlink/?linkid=2083908" target="_blank">Azure Portal-app-registraties <span class="docon docon-navigate-external x-hidden-focus"></span> </a> Snelstartgids.
+1. Selecteer een toepassing of [Maak een app](quickstart-register-app.md) als u dat nog niet hebt gedaan.
+1. Selecteer op de pagina **overzicht** van de toepassing onder **beheren** de optie **API-machtigingen**  >  **een machtiging toevoegen**.
+1. Selecteer **Microsoft Graph** in de lijst met beschik bare api's en voeg vervolgens de machtigingen toe die uw app nodig heeft.
+1. Selecteer **machtigingen toevoegen**.
 
 ### <a name="recommended-sign-the-user-into-your-app"></a>Aanbevolen: Onderteken de gebruiker in uw app
 

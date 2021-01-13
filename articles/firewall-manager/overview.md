@@ -5,14 +5,14 @@ author: vhorne
 ms.service: firewall-manager
 services: firewall-manager
 ms.topic: overview
-ms.date: 11/23/2020
+ms.date: 01/12/2021
 ms.author: victorh
-ms.openlocfilehash: 84ecea7764ddf48d68c983eaa5bccbac5f332d9b
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 63e2aac4c12ecc5d832cb037fda91bd2c6ad0bf1
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95489691"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132440"
 ---
 # <a name="what-is-azure-firewall-manager"></a>Wat is Azure Firewall Manager?
 
@@ -86,7 +86,6 @@ Azure Firewall Manager heeft de volgende bekende problemen:
 |Verkeer tussen vertakkingen met filteren van privéverkeer ingeschakeld|Verkeer tussen vertakkingen wordt niet ondersteund als het filteren van privéverkeer is ingeschakeld. |Wordt onderzocht.<br><br>Beveilig geen privéverkeer als de connectiviteit tussen vertakkingen essentieel is.|
 |Alle beveiligde virtuele hubs die dezelfde virtuele WAN delen, moeten zich in dezelfde resourcegroep bevinden.|Dit gedrag wordt vandaag afgestemd met andere virtuele WAN-hubs.|Maak meerdere virtuele WAN's om ervoor te zorgen dat beveiligde virtuele hubs kunnen worden gemaakt in andere resourcegroepen.|
 |Het toevoegen van een bulk-IP-adres mislukt|De firewall van de beveiligde hub krijgt de status Mislukt als u meerdere openbare IP-adressen toevoegt.|Voeg de openbare IP-adressen in kleinere stappen toe. Voeg er bijvoorbeeld tien per keer toe.|
-|Toepassingsregels mislukken in een beveiligde hub waarin een aangepast DNS (preview) is geconfigureerd.|Aangepaste DNS (preview-versie) werkt niet in beveiligde hub-implementaties en implementaties van virtuele hubnetwerken waarvoor geforceerde tunneling is ingeschakeld.|Een oplossing wordt onderzocht.|
 |DDoS Protection Standard wordt niet ondersteund met beveiligde virtuele hubs|DDoS Protection Standard is niet geïntegreerd met vWAN's.|Wordt onderzocht|
 |Activiteitenlogboeken worden niet volledig ondersteund|Het firewallbeleid biedt momenteel geen ondersteuning voor activiteitenlogboeken.|Wordt onderzocht|
 |Privé IP-adresbereiken van SNAT configureren|[Instellingen voor privé IP-adresbereiken](../firewall/snat-private-range.md) worden genegeerd als Azure Firewall-beleid is geconfigureerd. Het standaard Azure Firewall-gedrag wordt gebruikt. SNAT-netwerkregels worden toegepast wanneer het doel-IP-adres zich in een privé IP-adresbereik bevindt per [IANA RFC 1918](https://tools.ietf.org/html/rfc1918).|Wordt onderzocht|

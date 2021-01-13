@@ -12,12 +12,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
 ms.date: 12/14/2020
-ms.openlocfilehash: 9ee7440b10bc348d3ba87a4779208791a7b0e9ac
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: b5a30846a6e2aaf85ded2e55641aa5fba9507a29
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97512025"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165770"
 ---
 # <a name="azure-sql-database-and-azure-sql-managed-instance-service-tiers"></a>Service lagen van Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -44,7 +44,7 @@ In de volgende tabel worden de belangrijkste verschillen tussen service lagen vo
 | **Reken grootte**| SQL Database | 1 tot 80 vCores | 1 tot 80 vCores | 1 tot 80 vCores |
 | | SQL Managed Instance | 4, 8, 16, 24, 32, 40, 64, 80 vCores | N.v.t. | 4, 8, 16, 24, 32, 40, 64, 80 vCores |
 | | Door SQL beheerde exemplaar groepen | 2, 4, 8, 16, 24, 32, 40, 64, 80 vCores | N.v.t. | N.v.t. |
-| **Opslag type** | Alles | Premium externe opslag (per instantie) | Niet-gekoppelde opslag met lokale SSD-cache (per instantie) | Super snelle lokale SSD-opslag (per instantie) |
+| **Opslagtype** | Alle | Premium externe opslag (per instantie) | Niet-gekoppelde opslag met lokale SSD-cache (per instantie) | Super snelle lokale SSD-opslag (per instantie) |
 | **Databasegrootte** | SQL Database | 5 GB – 4 TB | Tot 100 TB | 5 GB – 4 TB |
 | | SQL Managed Instance  | 32 GB – 8 TB | N.v.t. | 32 GB – 4 TB |
 | **Opslag grootte** | SQL Database | 5 GB – 4 TB | Tot 100 TB | 5 GB – 4 TB |
@@ -53,8 +53,8 @@ In de volgende tabel worden de belangrijkste verschillen tussen service lagen vo
 | | SQL Managed Instance  | [24 GB per vCore](../managed-instance/resource-limits.md#service-tier-characteristics) | N.v.t. | Tot 4 TB, [beperkt door de opslag grootte](../managed-instance/resource-limits.md#service-tier-characteristics) |
 | **Schrijf doorvoer vastleggen in logboek** | SQL Database | [1,875 MB/s per vCore (Maxi maal 30 MB/s)](resource-limits-vcore-single-databases.md#general-purpose---provisioned-compute---gen4) | 100 MB/s | [6 MB/s per vCore (max. 96 MB/s)](resource-limits-vcore-single-databases.md#business-critical---provisioned-compute---gen4) |
 | | SQL Managed Instance | [3 MB/s per vCore (Maxi maal 22 MB/s)](../managed-instance/resource-limits.md#service-tier-characteristics) | N.v.t. | [4 MB/s per VCore (max. 48 MB/s)](../managed-instance/resource-limits.md#service-tier-characteristics) |
-|**Beschikbaarheid**|Alles| 99,99% |  [99,95% met één secundaire replica, 99,99% met meer replica's](service-tier-hyperscale-frequently-asked-questions-faq.md#what-slas-are-provided-for-a-hyperscale-database) | 99,99% <br/> [99,995% met zone redundante single data base](https://azure.microsoft.com/blog/understanding-and-leveraging-azure-sql-database-sla/) |
-|**Back-ups**|Alles|RA-GRS, 7-35 dagen (standaard zeven dagen). De maximale Bewaar periode voor de Basic-laag is 7 dagen. | RA-GRS, 7 dagen, constant tijdstip herstel (PITR) | RA-GRS, 7-35 dagen (standaard 7 dagen) |
+|**Beschikbaarheid**|Alle| 99,99% |  [99,95% met één secundaire replica, 99,99% met meer replica's](service-tier-hyperscale-frequently-asked-questions-faq.md#what-slas-are-provided-for-a-hyperscale-database) | 99,99% <br/> [99,995% met zone redundante single data base](https://azure.microsoft.com/blog/understanding-and-leveraging-azure-sql-database-sla/) |
+|**Back-ups**|Alle|RA-GRS, 7-35 dagen (standaard zeven dagen). De maximale Bewaar periode voor de Basic-laag is 7 dagen. | RA-GRS, 7 dagen, constant tijdstip herstel (PITR) | RA-GRS, 7-35 dagen (standaard 7 dagen) |
 |**OLTP in het geheugen** | | N.v.t. | N.v.t. | Beschikbaar |
 |**Alleen-lezen replica's**| | 0 ingebouwde <br> 0-4 met [geo-replicatie](active-geo-replication-overview.md) | 0-4-ingebouwde | 1 ingebouwde, inclusief prijs <br> 0-4 met [geo-replicatie](active-geo-replication-overview.md) |
 |**Prijzen/facturering** | SQL Database | [vCore, gereserveerde opslag en back-upopslag](https://azure.microsoft.com/pricing/details/sql-database/single/) worden in rekening gebracht. <br/>Voor IOPS worden geen kosten in rekening gebracht. | [vCore voor elke replica en gebruikte opslag](https://azure.microsoft.com/pricing/details/sql-database/single/) worden in rekening gebracht. <br/>IOPS nog niet gefactureerd. | [vCore, gereserveerde opslag en back-upopslag](https://azure.microsoft.com/pricing/details/sql-database/single/) worden in rekening gebracht. <br/>Voor IOPS worden geen kosten in rekening gebracht. |
@@ -78,6 +78,7 @@ De volgende factoren zijn van invloed op de hoeveelheid opslag die wordt gebruik
   - Verg root of verklein de grootte in stappen van 250 GB voor opslag in de essentiële of bedrijfs kritieke service lagen.
 - In de servicelaag voor algemeen gebruik wordt `tempdb` een bijgevoegde SSD gebruikt. deze opslag kosten worden opgenomen in de vCore prijs.
 - In de laag bedrijfskritische service `tempdb` deelt u de gekoppelde SSD met de MDF-en LDF-bestanden en `tempdb` worden de opslag kosten opgenomen in de vCore-prijs.
+- In de service tier DTU Premium `tempdb` deelt u de gekoppelde SSD met MDF-en LDF-bestanden.
 - De opslag grootte voor een SQL Managed instance moet worden opgegeven in veelvouden van 32 GB.
 
 

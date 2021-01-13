@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: ravenn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: dd438a09b929274808984322981f6d21da0bf68f
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 73946eea846b06b28d0a0f017ea1317c8cc7326d
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860946"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165141"
 ---
 # <a name="azure-active-directory-device-management-faq"></a>Veelgestelde vragen over het beheer van apparaten Azure Active Directory
 
@@ -142,6 +142,12 @@ Hieronder ziet u hoe deze acties kunnen worden verholpen.
 >* Als een apparaat wordt verwijderd uit een synchronisatie bereik op Azure AD Connect en weer is toegevoegd.
 >
 >In beide gevallen moet u het apparaat hand matig opnieuw registreren op elk van deze apparaten. Als u wilt controleren of het apparaat eerder is geregistreerd, kunt u [problemen oplossen met behulp van de dsregcmd-opdracht](troubleshoot-device-dsregcmd.md).
+
+---
+
+### <a name="q-i-cannot-add-more-than-3-azure-ad-user-accounts-under-the-same-user-session-on-a-windows-10-device-why"></a>V: Ik kan niet meer dan 3 Azure AD-gebruikers accounts toevoegen onder dezelfde gebruikers sessie op een Windows 10-apparaat, waarom?
+
+**A**: Azure AD heeft ondersteuning toegevoegd voor meerdere Azure AD-accounts in Windows 10 1803 release. Windows 10 beperkt het aantal Azure AD-accounts op een apparaat echter tot 3 om de grootte van token aanvragen te beperken en betrouw bare eenmalige aanmelding (SSO) in te scha kelen. Zodra 3 accounts zijn toegevoegd, zien gebruikers een fout voor volgende accounts. De aanvullende probleem informatie op het scherm fout geeft het volgende bericht weer waarin wordt aangegeven dat de bewerking voor het toevoegen van een account is geblokkeerd omdat de limiet voor account is bereikt. 
 
 ---
 ## <a name="azure-ad-join-faq"></a>Veelgestelde vragen over Azure AD-deelname
@@ -291,7 +297,7 @@ UPN-wijzigingen worden ondersteund met update voor Windows 10 2004. Gebruikers o
 
 **Één** 
 - Voor Windows 10 geregistreerde Azure ad-apparaten gaat u naar **instellingen**  >  **accounts**  >  **toegang tot werk of school**. Selecteer uw account en selecteer **verbinding verbreken**. Apparaatregistratie is per gebruikers profiel in Windows 10.
-- Voor IOS en Android kunt u het apparaat voor de Microsoft Authenticator toepassings **instellingen** gebruiken en de registratie  >  **Device Registration** **van apparaat** opheffen selecteren.
+- Voor IOS en Android kunt u het apparaat voor de Microsoft Authenticator toepassings **instellingen** gebruiken en de registratie  >   **van apparaat** opheffen selecteren.
 - Voor macOS kunt u de Microsoft Intune Bedrijfsportal toepassing gebruiken om de inschrijving van het apparaat bij beheer ongedaan te maken en alle registraties te verwijderen. 
 
 ---

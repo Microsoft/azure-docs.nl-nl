@@ -6,13 +6,13 @@ ms.author: jonels
 ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: conceptual
-ms.date: 7/1/2020
-ms.openlocfilehash: 8dc70eaeb9e2c2f5d4cdfef37619e4b04217782e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 1/12/2021
+ms.openlocfilehash: 48537483501165d4a978afdbd05560613170d187
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85964512"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165608"
 ---
 # <a name="azure-database-for-postgresql--hyperscale-citus-configuration-options"></a>Configuratie opties Azure Database for PostgreSQL – grootschalige (Citus)
 
@@ -118,6 +118,10 @@ Opslag op coördinator-en worker-knoop punten kan worden geschaald (verhoogd), m
 ### <a name="storage-size"></a>Opslag grootte
 
 Er worden Maxi maal 2 TiB opslag ruimte ondersteund op coördinator-en worker-knoop punten. Zie de beschik bare opslag opties en de berekening van IOPS [hierboven](#compute-and-storage) voor de grootte van knoop punten en clusters.
+
+### <a name="database-creation"></a>Data base maken
+
+De Azure Portal biedt referenties om verbinding te maken met precies één data base per grootschalige-Server groep (Citus), de- `citus` Data Base. Het maken van een andere data base is momenteel niet toegestaan en de opdracht CREATE data base mislukt met een fout.
 
 ## <a name="pricing"></a>Prijzen
 Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/postgresql/)voor services voor de meest actuele prijs informatie.

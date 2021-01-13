@@ -7,14 +7,14 @@ ms.service: postgresql
 ms.subservice: hyperscale-citus
 ms.topic: how-to
 ms.date: 1/5/2021
-ms.openlocfilehash: 90f8b74168f1b02647f14645aa4dc7a3dff8c2ba
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 4858f650aca1b704ac79482e0158fd83fc0264b8
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937607"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165238"
 ---
-# <a name="useful-diagnostic-queries"></a>Nuttige diagnostische query's
+# <a name="useful-diagnostic-queries"></a>Nuttige diagnostische Query's
 
 ## <a name="finding-which-node-contains-data-for-a-specific-tenant"></a>Zoeken welk knoop punt gegevens bevat voor een specifieke Tenant
 
@@ -278,6 +278,31 @@ Voorbeelduitvoer:
 │ 10.0.0.20 │ 0.89           │
 └───────────┴────────────────┘
 ```
+
+## <a name="cache-hit-rate"></a>Aantal treffers in cache
+
+De meeste toepassingen gebruiken meestal een kleine fractie van de totale gegevens tegelijk. PostgreSQL houdt regel matig toegang tot gegevens in het geheugen om trage Lees bewerkingen van de schijf te voor komen. U kunt statistieken hierover bekijken in de weer gave [pg_statio_user_tables](https://www.postgresql.org/docs/current/monitoring-stats.html#MONITORING-PG-STATIO-ALL-TABLES-VIEW) .
+
+Een belang rijke meting is welk percentage van de gegevens afkomstig is uit de geheugen cache versus de schijf in uw workload:
+
+``` postgresql
+SELECT
+  sum(heap_blks_read) AS heap_read,
+  sum(heap_blks_hit)  AS heap_hit,
+  sum(heap_blks_hit) / (sum(heap_blks_hit) + sum(heap_blks_read)) AS ratio
+FROM
+  pg_statio_user_tables;
+```
+
+Voorbeelduitvoer:
+
+```
+ heap_read | heap_hit |         ratio
+-----------+----------+------------------------
+         1 |      132 | 0.99248120300751879699
+```
+
+Als u een ratio hebt gevonden die aanzienlijk lager is dan 99%, wilt u waarschijnlijk overwegen om de beschik bare cache voor uw data base te verg Roten.
 
 ## <a name="next-steps"></a>Volgende stappen
 

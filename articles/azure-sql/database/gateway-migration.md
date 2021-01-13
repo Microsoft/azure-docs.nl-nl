@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: 7fadbecc2c00a739afb2f94dd1d049805915cfa5
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 0542d7e0ea204d1e9279e89c9f36b9bc6c6c88fa
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427103"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165855"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Azure SQL Database verkeer migratie naar nieuwere gateways
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -27,6 +27,25 @@ Klanten worden op de hoogte gesteld via e-mail en in het Azure Portal goed van e
 ## <a name="status-updates"></a>Status updates
 
 # <a name="in-progress"></a>[Actief](#tab/in-progress-ip)
+## <a name="january-2021"></a>Januari 2021
+Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
+
+- Australië-centraal: 20.36.104.6, 20.36.104.7 
+- Australië-centraal 2:20.36.112.6 
+- Brazilië-zuid: 191.234.144.16, 191.234.152.3 
+- Canada-oost: 40.69.105.9, 40.69.105.10
+- India centraal: 104.211.86.30, 104.211.86.31 
+- Azië-oost: 13.75.32.14 
+- Frankrijk-centraal: 40.79.137.8, 40.79.145.12 
+- Frankrijk-zuid: 40.79.177.10, 40.79.177.12
+- Korea-centraal: 52.231.17.22, 52.231.17.23
+- India-West: 104.211.144.4
+
+Deze SQL-gateways beginnen met het accepteren van klant verkeer op 31 januari 2021
+
+# <a name="completed"></a>[Voltooid](#tab/completed-ip)
+De volgende gateway migraties zijn voltooid: 
+
 ### <a name="october-2020"></a>Oktober 2020
 
 Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
@@ -70,9 +89,6 @@ Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's. Deze SQL-gateways
 Bestaande SQL-gateways gaan het verkeer accepteren in de volgende regio's. Deze SQL-gateways beginnen het accepteren van klant verkeer op **1 September 2020** :
 - Japan-Oost: 40.79.184.8, 40.79.192.5
 
-# <a name="completed"></a>[Voltooid](#tab/completed-ip)
-
-De volgende gateway migraties zijn voltooid: 
 
 ### <a name="august-2020"></a>Augustus 2020
 
@@ -96,7 +112,7 @@ Deze SQL-gateways beginnen het accepteren van klant verkeer op 10 augustus 2020.
 - VS - noord-centraal
 - Japan - west
 - Japan East
-- US - oost 2
+- VS - oost 2
 - Azië - oost
 
 ---

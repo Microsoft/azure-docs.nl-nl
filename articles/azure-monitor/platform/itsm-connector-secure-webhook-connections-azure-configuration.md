@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/03/2021
-ms.openlocfilehash: 5eb58c48acc7974a4379cf1993a73228c99f5e6d
-ms.sourcegitcommit: 697638c20ceaf51ec4ebd8f929c719c1e630f06f
+ms.openlocfilehash: 03a16bfbcb3a8d46a6cb4faa03aa6b6e96cf3db3
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97857570"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165957"
 ---
 # <a name="configure-azure-to-connect-itsm-tools-using-secure-export"></a>Azure configureren om verbinding te maken met ITSM-hulpprogram ma's met behulp van beveiligde export
 
@@ -39,9 +39,9 @@ Volg deze stappen om de toepassing te registreren bij Azure AD:
 
 ## <a name="define-service-principal"></a>Service-Principal definiëren
 
-De Action Group-service heeft toestemming nodig voor het verkrijgen van verificatie tokens van uw AAD-toepassing om verificatie met service nu te kunnen doen. Als u deze machtigingen wilt verlenen, moet u een service-principal maken voor de Action Group-service in uw Tenant.
-U kunt deze [Power shell-opdrachten](./action-groups.md#secure-webhook-powershell-script) voor dit doel gebruiken. (Vereist Tenant beheerders bevoegdheden).
-Als optionele stap kunt u de toepassingsrol definiëren in het manifest van de gemaakte app, zodat u de toegang kunt beperken tot een manier waarop alleen bepaalde toepassingen met die specifieke rol berichten kunnen verzenden. Deze rol moet vervolgens worden toegewezen aan de service-principal van de actie groep. \
+De Action Group-service is een eerste toepassing die daarom toestemming heeft om verificatie tokens van uw AAD-toepassing te verkrijgen om verificatie met service nu te kunnen doen.
+Als optionele stap kunt u de toepassingsrol definiëren in het manifest van de gemaakte app, zodat u de toegang kunt beperken tot een manier waarop alleen bepaalde toepassingen met die specifieke rol berichten kunnen verzenden. Deze rol moet vervolgens worden toegewezen aan de service-principal van de actie groep (vereist Tenant beheerders bevoegdheden).
+
 Deze stap kan worden uitgevoerd met dezelfde [Power shell-opdrachten](./action-groups.md#secure-webhook-powershell-script).
 
 ## <a name="create-a-secure-webhook-action-group"></a>Een actie groep voor een beveiligde webhook maken

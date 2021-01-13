@@ -12,21 +12,17 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/07/2021
 ms.author: vinigam
-ms.openlocfilehash: 3eb456dad2836bed55c45e7be9e898fdf72ac4d2
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 59e266274d6b65182ad63513ecf9bf3b5ab95490
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017932"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98164835"
 ---
 # <a name="migrate-to-connection-monitor-from-network-performance-monitor"></a>Migreren naar verbindings monitor vanaf Netwerkprestatiemeter
 
 U kunt tests migreren van Netwerkprestatiemeter (NPM) naar een nieuwe, verbeterde verbindings monitor met één klik en met een downtime van nul. Zie [verbindings monitor](./connection-monitor-overview.md)voor meer informatie over de voor delen.
 
-
->[!NOTE]
-> Alleen tests van de service verbindings monitor kunnen worden gemigreerd naar de verbindings monitor.
->
 
 ## <a name="key-points-to-note"></a>Belangrijkste punten om te noteren
 
@@ -52,7 +48,7 @@ Ga als volgt te werk om de tests te migreren van Netwerkprestatiemeter naar verb
 
     :::image type="content" source="./media/connection-monitor-2-preview/migrate-npm-to-cm-preview.png" alt-text="Testen van Netwerkprestatiemeter naar verbindings monitor migreren" lightbox="./media/connection-monitor-2-preview/migrate-npm-to-cm-preview.png":::
     
-1. Selecteer uw abonnement en werk ruimte in de vervolg keuzelijst en selecteer vervolgens de NPM-functie die u wilt migreren. Op dit moment kunt u alleen testen migreren vanuit de service verbindings monitor.  
+1. Selecteer uw abonnement en werk ruimte in de vervolg keuzelijst en selecteer vervolgens de NPM-functie die u wilt migreren. 
 1. Selecteer **importeren** om de tests te migreren.
 
 Nadat de migratie is gestart, worden de volgende wijzigingen doorgevoerd: 
@@ -74,5 +70,5 @@ Na de migratie, moet u het volgende doen:
 ## <a name="next-steps"></a>Volgende stappen
 
 Zie voor meer informatie over verbindings monitor:
-* [Migreren van verbindings monitor naar verbindings monitor](./migrate-to-connection-monitor-from-connection-monitor-classic.md)
+* [Migreren van verbindings monitor (klassiek) naar verbindings monitor](./migrate-to-connection-monitor-from-connection-monitor-classic.md)
 * [Verbindings monitor maken met behulp van de Azure Portal](./connection-monitor-create-using-portal.md)

@@ -1,5 +1,5 @@
 ---
-title: Azure SQL Database-connectiviteitsarchitectuur
+title: Azure SQL Database connectiviteits architectuur
 description: In dit document wordt de Azure SQL Database connectiviteits architectuur voor database verbindingen vanuit Azure of van buiten Azure uitgelegd.
 services: sql-database
 ms.service: sql-database
@@ -12,20 +12,20 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: sstein, vanto
 ms.date: 06/26/2020
-ms.openlocfilehash: d0242ceec62db6548d91e5e58c21981a4f0246a0
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 74dd3a6b19d241fdf05e6438226227147ba4afbd
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92672508"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165940"
 ---
-# <a name="azure-sql-database-and-azure-synapse-analytics-connectivity-architecture"></a>Azure SQL Database-en Azure Synapse Analytics-connectiviteits architectuur
+# <a name="azure-sql-database-and-azure-synapse-analytics-connectivity-architecture"></a>Azure SQL Database- en Azure Synapse Analytics-connectiviteitsarchitectuur
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
 
 In dit artikel wordt de architectuur van verschillende onderdelen beschreven die het netwerk verkeer naar een server in Azure SQL Database of Azure Synapse Analytics omleiden. Er wordt ook uitgelegd dat er verschillende verbindings beleidsregels zijn en hoe deze invloed heeft op clients die verbinding maken vanuit Azure en clients die verbinding maken van buiten Azure.
 
 > [!IMPORTANT]
-> Dit artikel is *niet* van toepassing op **Azure SQL Managed Instance** . Raadpleeg [de verbindings architectuur voor een beheerd exemplaar](../managed-instance/connectivity-architecture-overview.md).
+> Dit artikel is *niet* van toepassing op **Azure SQL Managed Instance**. Raadpleeg [de verbindings architectuur voor een beheerd exemplaar](../managed-instance/connectivity-architecture-overview.md).
 
 ## <a name="connectivity-architecture"></a>Connectiviteitsarchitectuur
 
@@ -76,31 +76,32 @@ Meer informatie over hoe verkeer moet worden gemigreerd naar nieuwe gateways in 
 
 | Regio naam          | IP-adressen van Gateway |
 | --- | --- |
-| Australië - centraal    | 20.36.105.0 |
-| Australië-Central2   | 20.36.113.0 |
+| Australië - centraal    | 20.36.105.0, 20.36.104.6, 20.36.104.7 |
+| Australië - centraal 2   | 20.36.113.0, 20.36.112.6 |
 | Australië - oost       | 13.75.149.87, 40.79.161.1, 13.70.112.9 |
 | Australië - zuidoost | 191.239.192.109, 13.73.109.251, 13.77.48.10 |
-| Brazilië - zuid         | 104.41.11.5, 191.233.200.14 |
+| Brazil South         | 104.41.11.5, 191.233.200.14, 191.234.144.16, 191.234.152.3 |
 | Canada - midden       | 40.85.224.249, 52.246.152.0, 20.38.144.1 |
-| Canada - oost          | 40.86.226.166, 52.242.30.154 |
-| VS - centraal           | 13.67.215.62, 52.182.137.15, 23.99.160.139, 104.208.16.96, 104.208.21.1 |
+| Canada - oost          | 40.86.226.166, 52.242.30.154, 40.69.105.9 , 40.69.105.10 |
+| Central US           | 13.67.215.62, 52.182.137.15, 23.99.160.139, 104.208.16.96, 104.208.21.1 |
 | China East           | 139.219.130.35     |
 | China - oost 2         | 40.73.82.1         |
 | China - noord          | 139.219.15.17      |
 | China - noord 2        | 40.73.50.0         |
-| Azië - oost            | 191.234.2.139, 52.175.33.150, 13.75.32.4 |
+| Azië - oost            | 191.234.2.139, 52.175.33.150, 13.75.32.4, 13.75.32.14 |
 | VS - oost              | 40.121.158.30, 40.79.153.12, 191.238.6.43, 40.78.225.32 |
 | VS - oost 2            | 40.79.84.180, 52.177.185.181, 52.167.104.0, 191.239.224.107, 104.208.150.3 |
-| Frankrijk - centraal       | 40.79.137.0, 40.79.129.1 |
+| Frankrijk - centraal       | 40.79.137.0, 40.79.129.1, 40.79.137.8, 40.79.145.12 |
+| Frankrijk - zuid         | 40.79.177.10 ,40.79.177.12 |
 | Duitsland - centraal      | 51.4.144.100       |
 | Duitsland-noord Oost   | 51.5.144.179       |
 | Duitsland - west-centraal | 51.116.240.0, 51.116.248.0, 51.116.152.0 |
-| India - centraal        | 104.211.96.159     |
+| India - centraal        | 104.211.96.159, 104.211.86.30 , 104.211.86.31 |
 | India - zuid          | 104.211.224.146    |
-| India - west           | 104.211.160.80     |
-| Japan - oost           | 13.78.61.196, 40.79.184.8, 13.78.106.224, 191.237.240.43, 40.79.192.5 |
+| India - west           | 104.211.160.80, 104.211.144.4 |
+| Japan East           | 13.78.61.196, 40.79.184.8, 13.78.106.224, 191.237.240.43, 40.79.192.5 |
 | Japan - west           | 104.214.148.156, 40.74.100.192, 191.238.68.11, 40.74.97.10 |
-| Korea - centraal        | 52.231.32.42       |
+| Korea - centraal        | 52.231.32.42, 52.231.17.22 ,52.231.17.23 |
 | Korea - zuid          | 52.231.200.86      |
 | VS - noord-centraal     | 23.96.178.199, 23.98.55.75, 52.162.104.33 |
 | Europa - noord         | 40.113.93.91, 191.235.193.75, 52.138.224.1, 13.74.104.113 |
@@ -108,7 +109,7 @@ Meer informatie over hoe verkeer moet worden gemigreerd naar nieuwe gateways in 
 | Noorwegen - west          | 51.120.216.0       |
 | Zuid-Afrika - noord   | 102.133.152.0, 102.133.120.2       |
 | Zuid-Afrika - west    | 102.133.24.0       |
-| VS - zuid-centraal     | 13.66.62.124, 23.98.162.75, 104.214.16.32, 20.45.121.1, 20.49.88.1   |
+| South Central US     | 13.66.62.124, 23.98.162.75, 104.214.16.32, 20.45.121.1, 20.49.88.1   |
 | Azië - zuidoost      | 104.43.15.0, 23.100.117.95, 40.78.232.3   |
 | Zwitserland - noord    | 51.107.56.0, 51.107.57.0 |
 | Zwitserland - west     | 51.107.152.0, 51.107.153.0 |

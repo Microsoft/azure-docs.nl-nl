@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 05/01/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: b8b93471b6d7f2555cfd71e524718ed0ea1ee191
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 93ac8cd3e462c244840a5ed569d685a9d67fa6c2
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96457901"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165872"
 ---
 # <a name="best-practices-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Aanbevolen procedures voor serverloze SQL-groepen in azure Synapse Analytics
 
@@ -25,9 +25,9 @@ In dit artikel vindt u een verzameling aanbevolen procedures voor het gebruik va
 
 Met serverloze SQL-pool kunt u een query uitvoeren op bestanden in uw Azure-opslag accounts. Het bevat geen lokale opslag-of opname mogelijkheden. Alle bestanden waarvan de query doelen zijn, zijn dus extern naar een serverloze SQL-groep. Alles wat verband houdt met het lezen van bestanden uit de opslag kan gevolgen hebben voor de prestaties van query's.
 
-## <a name="colocate-your-azure-storage-account-and-serverless-sql-pool"></a>Uw Azure Storage-account en serverloze SQL-groep
+## <a name="colocate-your-storage-and-serverless-sql-pool"></a>Uw opslag-en serverloze SQL-groep opzoeken
 
-Als u de latentie wilt beperken, moet u uw Azure Storage-account en uw serverloze SQL-groeps eindpunt vinden. Opslag accounts en eind punten die zijn ingericht tijdens het maken van de werk ruimte bevinden zich in dezelfde regio.
+Als u de latentie wilt minimaliseren, gaat u naar uw Azure Storage-account of CosmosDB analytische opslag en uw serverloze SQL-groeps eindpunt. Opslag accounts en eind punten die zijn ingericht tijdens het maken van de werk ruimte bevinden zich in dezelfde regio.
 
 Voor optimale prestaties kunt u, als u toegang krijgt tot andere opslag accounts met serverloze SQL-groep, ervoor zorgen dat ze zich in dezelfde regio bevinden. Als ze zich niet in dezelfde regio bevinden, wordt de latentie verhoogd voor de netwerk overdracht van de gegevens tussen de externe regio en de regio van het eind punt.
 
@@ -44,9 +44,9 @@ Wanneer beperking wordt gedetecteerd, heeft de serverloze SQL-pool een ingebouwd
 
 Als dat mogelijk is, kunt u bestanden voorbereiden voor betere prestaties:
 
-- Converteer CSV en JSON naar Parquet. Parquet is een kolom indeling. Omdat het gecomprimeerd is, zijn de bestands grootten kleiner dan CSV-of JSON-bestanden die dezelfde gegevens bevatten. Een serverloze SQL-pool heeft minder tijd en minder opslag aanvragen nodig om deze te lezen.
+- Converteer grote CSV-en JSON-naar-Parquet. Parquet is een kolom indeling. Omdat het gecomprimeerd is, zijn de bestands grootten kleiner dan CSV-of JSON-bestanden die dezelfde gegevens bevatten. Serverloze SQL-groep kan de kolommen en rijen die niet nodig zijn in de query overs Laan als u Parquet-bestanden leest. Een serverloze SQL-pool heeft minder tijd en minder opslag aanvragen nodig om deze te lezen.
 - Als een query is gericht op één groot bestand, kunt u deze in meerdere kleinere bestanden splitsen.
-- Probeer de grootte van het CSV-bestand onder 10 GB te laten staan.
+- Probeer de grootte van het CSV-bestand te hand haven tussen 100 MB en 10 GB.
 - Het is beter om even grote bestanden te hebben voor één OPENROWSET-pad of een externe tabel locatie.
 - Partitioneer uw gegevens door partities op te slaan in verschillende mappen of bestands namen. Zie [functies filename en filepath gebruiken om specifieke partities te bereiken](#use-filename-and-filepath-functions-to-target-specific-partitions).
 

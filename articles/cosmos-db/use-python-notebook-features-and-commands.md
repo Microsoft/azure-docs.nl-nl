@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 05/19/2020
 ms.author: dech
-ms.openlocfilehash: 381aa88326440aba91e02393cfe2bdb1e2c38097
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: b89fcf32ed033f359b4db601e36cc69bb899944d
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93340410"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165821"
 ---
 # <a name="use-built-in-notebook-commands-and-features-in-azure-cosmos-db-python-notebooks-preview"></a>Ingebouwde notebook opdrachten en-functies gebruiken in Azure Cosmos DB python-notebooks (preview)
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -123,6 +123,8 @@ Total time taken : 00:00:38.1228087 hours
 Total RUs consumed : 25022.58
 ```
 Met de uitvoer statistieken kunt u de daad werkelijke RU/s berekenen die worden gebruikt voor het uploaden van de items. Als 25.000 RUs bijvoorbeeld meer dan 38 seconden is verbruikt, is de daad werkelijke RU/s 25.000 RUs/38 seconden = 658 RU/s.
+
+U kunt bestanden (zoals CSV-of JSON-bestanden) opslaan in de lokale notebook-werk ruimte. We raden u aan een cel in uw notitie blok toe te voegen om bestanden op te slaan. U kunt deze bestanden weer geven vanuit de geïntegreerde terminal in de notebook-omgeving. U kunt de opdracht ' ls ' gebruiken om de opgeslagen bestanden weer te geven. Deze bestanden worden echter verwijderd als u de werk ruimte opnieuw instelt. Het is daarom het beste om permanente opslag te gebruiken, zoals GitHub of een opslag account in plaats van de lokale werk ruimte.
 
 ## <a name="run-another-notebook-in-current-notebook"></a>Een ander notitie blok in het huidige notitie blok uitvoeren 
 U kunt de ``%%run`` opdracht Magic gebruiken om een ander notitie blok in uw werk ruimte uit te voeren vanuit uw huidige notitie blok. Gebruik de syntaxis:

@@ -11,16 +11,18 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 10/14/2020
 ms.author: nichola
-ms.openlocfilehash: 9c53ea5bad88eb79940274c409218045c06d7981
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 4f0588667df6acb11a43e8c3469c67f65ed3cdd9
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064965"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165175"
 ---
 # <a name="support-single-sign-on-and-app-protection-policies-in-mobile-apps-you-develop"></a>Ondersteuning voor eenmalige aanmelding en app-beveiligings beleid in mobiele apps die u ontwikkelt
 
 Eenmalige aanmelding (SSO) is een belang rijke aanbieding van het micro soft Identity platform en Azure Active Directory, waarmee u eenvoudig en veilig aanmeldingen voor gebruikers van uw app kunt leveren. Daarnaast wordt door app-beveiligings beleid (APP) ondersteuning geboden voor het belangrijkste beveiligings beleid waarmee de gegevens van uw gebruiker veilig blijven. Met deze functies worden de beveiligde gebruikers aanmeldingen en het beheer van de gegevens van uw app ingeschakeld.
+
+> [!VIDEO https://www.youtube.com/embed/JpeMeTjQJ04]
 
 In dit artikel wordt uitgelegd waarom SSO en APP belang rijk zijn en biedt de richt lijnen op hoog niveau voor het bouwen van mobiele toepassingen die ondersteuning bieden voor deze functies. Dit geldt voor telefoon-en Tablet-apps. Als u een IT-beheerder bent die SSO wil implementeren in de Azure Active Directory Tenant van uw organisatie, raadpleegt u onze [richt lijnen voor het plannen van de implementatie van eenmalige aanmelding](../manage-apps/plan-sso-deployment.md)
 
@@ -68,7 +70,7 @@ Daarnaast moet u een Broker-app gebruiken voor verificatie. De Broker vereist da
 
 Voeg tot slot [de intune-SDK](/mem/intune/developer/app-sdk-get-started) toe aan uw app om beveiligings beleid voor apps in te scha kelen. De SDK voor het meest deel maakt gebruik van een interceptie model en past automatisch beleids regels voor app-beveiliging toe om te bepalen of acties die door de app worden uitgevoerd, zijn toegestaan. Er zijn ook Api's die u hand matig kunt aanroepen om de app te laten weten of er beperkingen gelden voor bepaalde acties.
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 - [Een Azure Active Directory implementatie van eenmalige aanmelding plannen](../manage-apps/plan-sso-deployment.md)
 - [Procedure: SSO configureren in macOS en iOS](single-sign-on-macos-ios.md)

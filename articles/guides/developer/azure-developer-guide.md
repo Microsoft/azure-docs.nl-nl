@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/18/2019
 ms.author: glenga
-ms.openlocfilehash: 8694c403b14234a70b0a67f9f4defb7817ba3ae3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9999b2fa116a2336f8e50fb166e5d870ae4b5a5f
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005381"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165056"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Introductiehandleiding voor Azure-ontwikkelaars
 
@@ -105,6 +105,21 @@ Service Fabric ondersteunt WebAPI met open web interface voor .NET (OWIN) en ASP
 > **Wanneer gebruiken:** Service Fabric is een goede keuze bij het maken van een toepassing of het herschrijven van een bestaande toepassing voor het gebruik van een micro service-architectuur. Gebruik Service Fabric wanneer u meer controle nodig hebt over, of rechtstreekse toegang tot, de onderliggende infra structuur.
 >
 > **Aan de slag:** [Maak uw eerste Azure service Fabric-toepassing](../../service-fabric/service-fabric-tutorial-create-dotnet-app.md).
+
+#### <a name="azure-spring-cloud"></a>Azure Spring Cloud
+
+Azure lente Cloud is een serverloos micro services-platform dat u in staat stelt om uw toepassingen in de cloud te bouwen, te implementeren, te schalen en te bewaken. Gebruik een lente-Cloud om moderne micro service-patronen naar veer boot-apps te brengen, waarbij standaard code wordt geëlimineerd om snel robuuste java-apps te bouwen.
+
+- Gebruik beheerde versies van de lente-Cloud service detectie-en configuratie server, terwijl we ervoor zorgen dat deze essentiële onderdelen in optimale omstandigheden worden uitgevoerd.
+- Richt u op het bouwen van uw bedrijfs logica en wij zorgen ervoor dat uw service-runtime wordt uitgevoerd met beveiligings patches, nalevings standaarden en hoge Beschik baarheid.
+- De levens cyclus van toepassingen beheren (bijvoorbeeld: implementeren, starten, stoppen, schalen) boven op de Azure Kubernetes-service.
+- BIND verbindingen tussen uw apps en Azure-Services, zoals Azure Database for MySQL en Azure cache voor redis, eenvoudig.
+- Bewaak en Los Micro Services en toepassingen op met gecombineerde bewakings hulpprogramma's op ondernemings niveau die diepe inzichten bieden op toepassings afhankelijkheden en operationele telemetrie.
+
+> **Wanneer gebruiken:** Als volledig beheerde service Azure lente-Cloud is een goede keuze bij het minimaliseren van de operationele kosten voor de voor bereiding op de Cloud op Azure. 
+>
+> **Aan de slag:** [uw eerste Azure lente-Cloud toepassing implementeren](../../spring-cloud/spring-cloud-quickstart.md).
+
 
 ### <a name="enhance-your-applications-with-azure-services"></a>Verbeter uw toepassingen met Azure-Services
 
@@ -313,7 +328,7 @@ Met Azure Resource Manager kunt u aangepaste labels toewijzen aan afzonderlijke 
 
 * In de portal
 * In de sjabloon Azure Resource Manager
-* Met behulp van de REST API
+* De REST API gebruiken
 * Met behulp van de Azure CLI
 * PowerShell gebruiken
 

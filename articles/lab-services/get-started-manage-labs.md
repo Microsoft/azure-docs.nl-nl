@@ -3,12 +3,12 @@ title: Aan de slag met Azure Lab Services
 description: In dit artikel wordt beschreven hoe u aan de slag gaat met Azure Lab Services.
 ms.topic: article
 ms.date: 11/18/2020
-ms.openlocfilehash: 44afe13fb6f555b12dfce939ce8e88e3af8dc7ef
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: d260ace7d7819c3ca2db96d6c4984bf834e170da
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602662"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165039"
 ---
 # <a name="get-started-with-lab-services"></a>Aan de slag met Lab-Services 
 
@@ -109,56 +109,7 @@ Docenten kunnen verbinding maken met een student-VM zolang deze is ingeschakeld 
 
 ## <a name="manage-users-in-a-lab"></a>Gebruikers beheren in een Lab
 
-Docenten kunnen student gebruikers toevoegen aan een lab en hun uren quota's bewaken. 
-
-### <a name="add-users-by-email-address"></a>Gebruikers toevoegen op e-mail adres
-
-1. Klik op de [website van Azure Lab Services](https://labs.azure.com/) op **gebruikers** aan de linkerkant van het venster.
-1. Klik boven in het venster op **gebruikers toevoegen** en selecteer **toevoegen per e-mail adres**. 
-1. In het deel venster **gebruikers toevoegen** dat rechts wordt weer gegeven, voert u de e-mail adressen van studenten in op afzonderlijke regels of op één regel, gescheiden door punt komma's.
-1. Klik op **Opslaan**.
-1. Uw lijst met gebruikers wordt nu bijgewerkt met e-mail berichten, status, uitnodiging en quotum uren.
-
-    Nadat studenten zijn geregistreerd voor een lab, worden hun namen bijgewerkt met de voor-en achternaam van Azure Active Directory.
-
-    > [!NOTE]
-    > De optie voor het beperken van de toegang van de gebruiker is ingeschakeld voor gebruikers. Dit betekent dat alleen gebruikers die u vermeld bij het lab kunnen registreren met behulp van de registratie koppeling die u verzendt.
-
-### <a name="add-users-using-a-spreadsheet"></a>Gebruikers toevoegen met een werk blad 
-
-U kunt ook gebruikers toevoegen door een CSV-bestand te uploaden dat hun e-mail adressen bevat.
-
-1. Maak in micro soft Excel een CSV-bestand met een lijst met e-mail adressen van studenten in één kolom.
-1. Klik op de [Azure Lab Services website](https://labs.azure.com/)boven aan de pagina **gebruikers** op de knop **gebruikers toevoegen** .
-1. Selecteer **CSV**-bestand uploaden.
-1. Selecteer het CSV-bestand dat de e-mail adressen van de studenten bevat en klik op **openen**.
-
-    :::image type="content" source="./media/get-started-manage-labs/add-users-spreadsheet.png" alt-text="Gebruikers toevoegen met een werk blad":::
-1. De e-mail berichten worden nu weer gegeven in het venster aan de rechter kant. Klik op **Opslaan**.
-
-    :::image type="content" source="./media/get-started-manage-labs/register-users.png" alt-text="Gebruikers registreren":::
-
-### <a name="register-users"></a>Gebruikers registreren
-
-Wanneer gebruikers zijn toegevoegd aan het lab, moeten ze zich registreren om toegang te krijgen tot de Vm's. U kunt dit doen door gebruikers uit de portal uit te nodigen, waarna een e-mail wordt verzonden met de registratie koppeling voor het lab. U kunt ook de registratie koppeling kopiëren en plakken in een e-mail bericht of een andere vorm van communicatie met de studenten.
-
-1. Selecteer op de pagina **gebruikers** een student of meerdere studenten in de lijst.
-
-    Selecteer in de rij voor de student die u hebt geselecteerd het pictogram envelop in de lijst of, klik boven aan het scherm op **uitnodigen** .
-
-    :::image type="content" source="./media/get-started-manage-labs/send-invitation.png" alt-text="Een uitnodiging verzenden":::
-    
-    Voer in het venster uitnodiging per e-mail **verzenden** een optioneel bericht (zoals een gebruikers naam en wacht woord) aan studenten in en klik vervolgens op **verzenden**. 
-    
-    :::image type="content" source="./media/get-started-manage-labs/send-invitation-mail.png" alt-text="Een uitnodiging per e-mail verzenden":::
-
-    U kunt ook op de pagina van dezelfde **gebruikers** klikken op de knop **registratie koppeling** boven aan het scherm. 
-
-    :::image type="content" source="./media/get-started-manage-labs/registration-link.png" alt-text="Gebruikers registratie koppeling":::
-    
-    Kopieer de registratie koppeling uit het tekst veld en plak deze in e-mail of uw favoriete hulp programma voor beveiligde berichten.  
-    
-    :::image type="content" source="./media/get-started-manage-labs/user-registration.png" alt-text="Gebruikers registratie verzenden":::
+Docenten kunnen student gebruikers toevoegen aan een lab en hun uren quota's bewaken. Zie [Lab-gebruikers toevoegen en beheren](how-to-configure-student-usage.md)voor meer informatie over het toevoegen van gebruikers op e-mail adres of het gebruik van een spreadsheet lijst en het registreren van gebruikers.
 
 Nadat u gebruikers hebt uitgenodigd of de koppeling hebt gedeeld, kunt u controleren welke gebruikers zijn geregistreerd op de pagina **gebruikers** in de kolom **status** . 
 

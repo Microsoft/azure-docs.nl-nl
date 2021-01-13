@@ -12,12 +12,12 @@ ms.date: 11/15/2018
 ms.author: kenwith
 ms.reviewer: japere
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8086bd2a193ac52e76bf8da245063163ab2ea2f9
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: a2d4cec57eb6ac23c191e504c305c2c6d11268ac
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97591052"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98164999"
 ---
 # <a name="understand-azure-ad-application-proxy-connectors"></a>Azure AD-toepassingsproxy-connectors begrijpen
 
@@ -25,7 +25,7 @@ Connectors zijn wat Azure AD-toepassingsproxy mogelijk maakt. Ze zijn eenvoudig,
 
 ## <a name="what-is-an-application-proxy-connector"></a>Wat is een Application proxy-connector?
 
-Connectors zijn lichte agents die on-premises zijn en de uitgaande verbinding met de Application proxy-service vergemakkelijken. Connectors moeten worden geïnstalleerd op een Windows-Server die toegang heeft tot de back-end-toepassing. U kunt connectors in connector groepen indelen, waarbij elke groep verkeer naar specifieke toepassingen verwerkt.
+Connectors zijn lichte agents die on-premises zijn en de uitgaande verbinding met de Application proxy-service vergemakkelijken. Connectors moeten worden geïnstalleerd op een Windows-Server die toegang heeft tot de back-end-toepassing. U kunt connectors in connector groepen indelen, waarbij elke groep verkeer naar specifieke toepassingen verwerkt. Zie [Azure AD-toepassingsproxy gebruiken voor het publiceren van on-premises apps voor externe gebruikers](what-is-application-proxy.md#application-proxy-connectors) voor meer informatie over toepassings proxy en een diagram representatie van de toepassings proxy architectuur.
 
 ## <a name="requirements-and-deployment"></a>Vereisten en implementatie
 

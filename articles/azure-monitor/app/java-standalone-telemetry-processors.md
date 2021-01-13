@@ -6,12 +6,12 @@ ms.date: 10/29/2020
 author: kryalama
 ms.custom: devx-track-java
 ms.author: kryalama
-ms.openlocfilehash: ba4e6b8b5e9db494ab4c0c372c2086087a2d58cb
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 39897e490e4653fbaad7a64ecc0b33f161d1264b
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133171"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165787"
 ---
 # <a name="telemetry-processors-preview---azure-monitor-application-insights-for-java"></a>Telemetrie-processors (preview)-Azure Monitor Application Insights voor Java
 
@@ -23,58 +23,48 @@ De Java 3,0-agent voor Application Insights heeft nu de mogelijkheid om telemetr
 Hier volgen enkele gebruiks voorbeelden van telemetrie-processors:
  * Masker gevoelige gegevens
  * Aangepaste dimensies voorwaardelijk toevoegen
- * De naam van de telemetrie bijwerken die wordt gebruikt voor aggregatie en weer gave
- * Attributen voor neerzetten of filteren om opname kosten te bepalen
+ * De naam bijwerken die wordt gebruikt voor aggregatie en weer geven in de Azure Portal
+ * Kenmerken van de drop span om opname kosten te bepalen
 
 ## <a name="terminology"></a>Terminologie
 
-Voordat we naar telemetrie-processors gaan, is het belang rijk om te begrijpen wat traceringen en beslagen zijn.
+Voordat we naar telemetrie-processors gaan, is het belang rijk om te begrijpen waar de term vallen naar verwijst.
 
-### <a name="traces"></a>Traceringen
+Een reeks is een algemene term voor een van de volgende drie dingen:
 
-Traceringen volgen de voortgang van een enkele aanvraag, een zogenaamde `trace` ,, omdat deze wordt verwerkt door services die deel uitmaken van een toepassing. De aanvraag kan worden geïnitieerd door een gebruiker of een toepassing. Elke werk eenheid in a `trace` wordt een `span` `trace` boom structuur genoemd. Een `trace` bestaat uit de enkelvoudige basis periode en een aantal onderliggende reeksen.
+* Een binnenkomende aanvraag
+* Een uitgaande afhankelijkheid (bijvoorbeeld een externe aanroep naar een andere service)
+* Een in-process afhankelijkheid (bijvoorbeeld werk dat door subonderdelen van de service wordt uitgevoerd)
 
-### <a name="span"></a>Verdelen
+Voor de telemetrie-processors zijn de belang rijke onderdelen van een reeks:
 
-Omvat objecten die de werkzaamheden vertegenwoordigen die worden uitgevoerd door afzonderlijke services of onderdelen die zijn betrokken bij een aanvraag, wanneer deze via een systeem worden verzonden. A `span` bevat een `span context` , een set van globale unieke id's die de unieke aanvraag vertegenwoordigen waarvan elke reeks deel uitmaakt. 
+* Naam
+* Kenmerken
 
-Omvat het inkapselen:
+De naam van de reeks is de primaire weer gave die wordt gebruikt voor aanvragen en afhankelijkheden in de Azure Portal.
 
-* De naam van de span
-* Een onveranderbaar `SpanContext` die een unieke identificatie vormt van de reeks
-* Een bovenliggende bereik in de vorm van een `Span` , `SpanContext` , of Null
-* Een `SpanKind`
-* Een begin-time stamp
-* Een eind punt time stamp
-* [`Attributes`](#attributes)
-* Een lijst met verstempelde gebeurtenissen
-* A `Status` .
+De span-kenmerken vertegenwoordigen zowel de standaard eigenschappen als de aangepaste eigenschap van een bepaalde aanvraag of afhankelijkheid.
 
-De levens cyclus van een span lijkt doorgaans op het volgende:
+## <a name="telemetry-processor-types"></a>Typen telemetrie-processor
 
-* Een aanvraag wordt ontvangen door een service. De reeks context wordt opgehaald uit de aanvraag headers, als deze bestaat.
-* Er wordt een nieuwe reeks gemaakt als onderliggend element van de geëxtraheerde-reeks context; Als er geen bestaat, wordt er een nieuwe hoofd spanne gemaakt.
-* De service handelt de aanvraag af. Aanvullende kenmerken en gebeurtenissen worden toegevoegd aan de reeks die nuttig is voor het leren van de context van de aanvraag, zoals de hostnaam van de computer die de aanvraag verwerkt, of klant-id's.
-* Nieuwe reeksen kunnen worden gemaakt voor werk dat door subonderdelen van de service wordt uitgevoerd.
-* Wanneer de service een externe aanroep naar een andere service uitvoert, wordt de huidige periode context geserialiseerd en doorgestuurd naar de volgende service door de reeks context in te voegen in de kop-of bericht envelop.
-* Het werk dat door de service wordt uitgevoerd, is voltooid of niet. De duur van de reeks is op de juiste wijze ingesteld en de reeks is gemarkeerd als voltooid.
+Er zijn momenteel twee soorten telemetrie-processors.
 
-### <a name="attributes"></a>Kenmerken
+#### <a name="attribute-processor"></a>Kenmerk processor
 
-`Attributes` een lijst met nul of meer sleutel-waardeparen die in een zijn ingekapseld `span` . Een kenmerk moet de volgende eigenschappen hebben:
+Een kenmerk processor kan kenmerken invoegen, bijwerken, verwijderen of hashen.
+Het kan ook worden geëxtraheerd (via een reguliere expressie) een of meer nieuwe kenmerken van een bestaand kenmerk.
 
-De kenmerk sleutel, die een niet-null-of niet-lege teken reeks moet zijn.
-De waarde van het kenmerk, ofwel:
-* Een primitief type: teken reeks, Booleaanse waarde, drijvende komma met dubbele precisie (IEEE 754-1985) of een ondertekend 64 bits geheel getal.
-* Een matrix met waarden voor primitieve typen. De matrix moet homo geen zijn, d.w.z. deze mag geen waarden van verschillende typen bevatten. Voor protocollen die geen systeem eigen ondersteuning bieden voor matrix waarden, moeten waarden worden weer gegeven als JSON-teken reeksen.
+#### <a name="span-processor"></a>Span processor
 
-## <a name="supported-processors"></a>Ondersteunde processors:
- * Kenmerk processor
- * Span processor
+Een bereik processor biedt de mogelijkheid om de naam van de telemetrie bij te werken.
+Het kan ook worden geëxtraheerd (via een reguliere expressie) een of meer nieuwe kenmerken van de span-naam.
 
-## <a name="to-get-started"></a>Om aan de slag te gaan
+> [!NOTE]
+> De huidige telemetrie-processors verwerken alleen kenmerken van het type teken reeks en verwerken geen kenmerken van het type Boolean of getal.
 
-Maak een configuratie bestand met de naam `applicationinsights.json` en plaats het in dezelfde map als `applicationinsights-agent-***.jar` de volgende sjabloon.
+## <a name="getting-started"></a>Aan de slag
+
+Maak een configuratie bestand met de naam `applicationinsights.json` en plaats het in dezelfde map als `applicationinsights-agent-*.jar` de volgende sjabloon.
 
 ```json
 {
@@ -98,9 +88,14 @@ Maak een configuratie bestand met de naam `applicationinsights.json` en plaats h
 }
 ```
 
-## <a name="includeexclude-spans"></a>Insluitingen opnemen/uitsluiten
+## <a name="includeexclude-criteria"></a>Criteria voor opnemen/uitsluiten
 
-De kenmerk processor en de bereik processor bieden de optie om een reeks eigenschappen van een reeks te leveren om te bepalen of de reeks moet worden opgenomen of uitgesloten van de telemetrie-processor. Als u deze optie wilt configureren, onder `include` en/of `exclude` ten minste één of `matchType` `spanNames` `attributes` is vereist. De configuratie voor opnemen/uitsluiten wordt ondersteund om meer dan één opgegeven voor waarde te hebben. Alle opgegeven voor waarden moeten worden geëvalueerd als waar om een overeenkomst te vinden. 
+Zowel kenmerk-processors als-processors ondersteunen optionele `include` en `exclude` criteria.
+Een processor wordt alleen toegepast op de beschik bare reeksen die voldoen aan de `include` criteria (indien van toepassing) _en_ komen niet overeen met de bijbehorende `exclude` criteria (indien opgegeven).
+
+Als u deze optie wilt configureren, onder `include` en/of `exclude` ten minste één of `matchType` `spanNames` `attributes` is vereist.
+De configuratie voor opnemen/uitsluiten wordt ondersteund om meer dan één opgegeven voor waarde te hebben.
+Alle opgegeven voor waarden moeten worden geëvalueerd als waar om een overeenkomst te vinden. 
 
 **Vereist veld**: 
 * `matchType` Hiermee wordt bepaald hoe items in `spanNames` en `attributes` matrices worden geïnterpreteerd. Mogelijke waarden zijn `regexp` en `strict`. 
@@ -150,7 +145,7 @@ De kenmerk processor en de bereik processor bieden de optie om een reeks eigensc
 ```
 Raadpleeg de documentatie van de [telemetrie-processor](./java-standalone-telemetry-processors-examples.md) voor voor meer informatie.
 
-## <a name="attribute-processor"></a>Kenmerk processor 
+## <a name="attribute-processor"></a>Kenmerk processor
 
 De kenmerken processor wijzigt kenmerken van een reeks. Het biedt optioneel ondersteuning voor de mogelijkheid om reeksen op te nemen of uit te sluiten. Er wordt een lijst weer gegeven met acties die worden uitgevoerd in de volg orde die is opgegeven in het configuratie bestand. De ondersteunde acties zijn:
 
@@ -167,7 +162,7 @@ Hiermee wordt een nieuw kenmerk ingevoegd in de spans waar de sleutel nog niet b
         "key": "attribute1",
         "value": "value1",
         "action": "insert"
-      },
+      }
     ]
   }
 ]
@@ -190,7 +185,7 @@ Hiermee wordt een kenmerk bijgewerkt in de beslagen waar de sleutel bestaat
         "key": "attribute1",
         "value": "newValue",
         "action": "update"
-      },
+      }
     ]
   }
 ]
@@ -213,7 +208,7 @@ Hiermee wordt een kenmerk uit een bereik verwijderd
       {
         "key": "attribute1",
         "action": "delete"
-      },
+      }
     ]
   }
 ]
@@ -234,7 +229,7 @@ Hashes (SHA1) een bestaande kenmerk waarde
       {
         "key": "attribute1",
         "action": "hash"
-      },
+      }
     ]
   }
 ]
@@ -259,7 +254,7 @@ Retourneert waarden met behulp van een reguliere expressie regel van de invoer s
         "key": "attribute1",
         "pattern": "<regular pattern with named matchers>",
         "action": "extract"
-      },
+      }
     ]
   }
 ]
@@ -271,7 +266,7 @@ Voor de `extract` actie zijn de volgende acties vereist
 
 Raadpleeg de documentatie van de [telemetrie-processor](./java-standalone-telemetry-processors-examples.md) voor voor meer informatie.
 
-## <a name="span-processors"></a>Span-processors
+## <a name="span-processor"></a>Span processor
 
 De reeks processor wijzigt de naam van de reeks of kenmerken van een reeks op basis van de naam van de span. Het biedt optioneel ondersteuning voor de mogelijkheid om reeksen op te nemen of uit te sluiten.
 

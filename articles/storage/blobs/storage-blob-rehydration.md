@@ -4,17 +4,17 @@ description: U kunt de blobs uit archief opslag opnieuw gebruiken zodat u toegan
 services: storage
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 04/08/2020
+ms.date: 01/08/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: conceptual
 ms.reviewer: hux
-ms.openlocfilehash: f74d4ffdd724039354a311234317dac889cd7cfe
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 5a89e5a9eca653a2d15e5b09605b78bc18d76b8f
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95545926"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165668"
 ---
 # <a name="rehydrate-blob-data-from-the-archive-tier"></a>BLOB-gegevens worden opnieuw gehydrateerd op basis van de opslaglaag
 
@@ -29,9 +29,13 @@ Terwijl een BLOB zich in de Access-laag Archive bevindt, wordt deze als offline 
 
 [!INCLUDE [storage-blob-rehydration](../../../includes/storage-blob-rehydrate-include.md)]
 
+## <a name="monitor-rehydration-progress"></a>Voortgang van rehydratatie bewaken
+
+Gebruik tijdens rehydratatie de bewerking BLOB eigenschappen ophalen om het kenmerk **Archive status** te controleren en te bevestigen wanneer de laag wijziging is voltooid. De status is "rehydrate-pending-to-hot" of "rehydrate-pending-to-cool", afhankelijk van de doellaag. Na voltooiing wordt de eigenschap archief status verwijderd en de BLOB-eigenschap van de **Access-laag** weerspiegelt de nieuwe hot of cool-laag.
+
 ## <a name="copy-an-archived-blob-to-an-online-tier"></a>Een gearchiveerde blob naar een online laag kopiëren
 
-Als u de archief-BLOB niet opnieuw wilt laten worden gehydrateerd, kunt u ervoor kiezen om een [Kopieer-BLOB](/rest/api/storageservices/copy-blob) bewerking uit te voeren. De oorspronkelijke BLOB blijft ongewijzigd in archief terwijl er een nieuwe BLOB wordt gemaakt in de online hot of cool-laag, zodat u kunt werken. In de bewerking BLOB kopiëren kunt u ook de optionele *x-MS-autohydrat-Priority-* eigenschap instellen op Standard of High om de prioriteit op te geven waarop u de BLOB-kopie wilt maken.
+Als u de archief-BLOB niet opnieuw wilt laten worden gehydrateerd, kunt u ervoor kiezen om een [Kopieer-BLOB](/rest/api/storageservices/copy-blob) bewerking uit te voeren. De oorspronkelijke BLOB blijft ongewijzigd in archief terwijl er een nieuwe BLOB wordt gemaakt in de online hot of cool-laag, zodat u kunt werken. In de bewerking **BLOB kopiëren** kunt u ook de optionele *x-MS-autohydrat-Priority-* eigenschap instellen op Standard of High om de prioriteit op te geven waarop u de BLOB-kopie wilt maken.
 
 Het kopiëren van een BLOB uit het archief kan uren duren, afhankelijk van de geselecteerde opnieuw te maken prioriteit. Achter de schermen leest de bewerking **BLOB kopiëren** de bron-blob van het archief om een nieuwe online-Blob in de geselecteerde doellaag te maken. De nieuwe blob is mogelijk zichtbaar wanneer u blobs vermeldte, maar de gegevens zijn pas beschikbaar als de Lees bewerking van de blob van het bron archief is voltooid en de gegevens naar de nieuwe online-doel-BLOB zijn geschreven. De nieuwe blob is een onafhankelijke kopie en een wijziging of verwijdering hiervan heeft geen invloed op de bron archief-blob.
 
@@ -61,7 +65,7 @@ Blobs in de archief laag moeten mini maal 180 dagen worden opgeslagen. Als u gea
 
 ### <a name="rehydrate-an-archive-blob-to-an-online-tier"></a>Een archief-BLOB naar een online-laag opnieuw gehydrateerd
 # <a name="portal"></a>[Portal](#tab/azure-portal)
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 1. Zoek in het Azure Portal **alle resources** en selecteer deze.
 

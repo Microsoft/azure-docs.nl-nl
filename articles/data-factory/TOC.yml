@@ -629,15 +629,19 @@
         - name: Azure Integration Runtime
           href: create-azure-integration-runtime.md
         - name: Zelf-hostende Integration Runtime
-          href: create-self-hosted-integration-runtime.md
+          items:
+            - name: Zelf-hostende Integration Runtime maken en configureren
+              href: create-self-hosted-integration-runtime.md
+            - name: Melding voor automatisch bijwerken en verlopen van zelf-hostende IR
+              href: self-hosted-integration-runtime-auto-update.md
+            - name: 'Gedeelde, zelf-hostende integratie-runtime'
+              href: create-shared-self-hosted-integration-runtime-powershell.md
+            - name: Automation-scripts van zelf-hostende Information Runtime
+              href: self-hosted-integration-runtime-automation-scripts.md
+            - name: Voer zelf-hostende Information Runtime in Windows-container uit
+              href: how-to-run-self-hosted-integration-runtime-in-windows-container.md
         - name: Azure-SSIS-integratie-runtime
           href: create-azure-ssis-integration-runtime.md
-        - name: 'Gedeelde, zelf-hostende integratie-runtime'
-          href: create-shared-self-hosted-integration-runtime-powershell.md
-        - name: Automation-scripts van zelf-hostende Information Runtime
-          href: self-hosted-integration-runtime-automation-scripts.md
-        - name: Voer zelf-hostende Information Runtime in Windows-container uit
-          href: how-to-run-self-hosted-integration-runtime-in-windows-container.md
     - name: SSIS-pakketten uitvoeren in Azure
       items:
         - name: SSIS-pakketten uitvoeren in Azure vanuit SSDT

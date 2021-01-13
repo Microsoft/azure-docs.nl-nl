@@ -38,6 +38,9 @@
     - name: Een gedeelde query maken - Azure CLI
       displayName: 'extension, docker, queries'
       href: ./shared-query-azure-cli.md
+    - name: Een gedeelde query maken - Azure PowerShell
+      displayName: 'powershell, queries, Az.ResourceGraph'
+      href: ./shared-query-azure-powershell.md
     - name: 'Een gedeelde query implementeren: ARM-sjabloon'
       displayName: 'resource manager, queries'
       href: ./shared-query-template.md

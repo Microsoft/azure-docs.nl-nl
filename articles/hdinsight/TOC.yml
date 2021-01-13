@@ -355,6 +355,8 @@
               href: ./spark/optimize-cluster-configuration.md
         - name: Migreren naar Spark 2.3 of 2.4
           href: ./spark/migrate-versions.md
+        - name: .NET bijwerken naar 1.0 voor Apache Spark
+          href: ./spark/spark-dotnet-version-update.md
     - name: Instructiegidsen
       items:
         - name: Hulpprogramma's gebruiken

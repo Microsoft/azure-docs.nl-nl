@@ -85,8 +85,14 @@
       items:
         - name: Een sjabloon van het apparaat instellen
           href: howto-set-up-template.md
+        - name: Apparaten naar IoT verplaatsen
+          href: how-to-move-device-to-iot.md
         - name: Eigenschappen gebruiken
           href: howto-use-properties.md
+        - name: Opdrachten gebruiken
+          href: howto-use-commands.md
+        - name: Locatiegegevens gebruiken
+          href: howto-use-location-data.md
         - name: Een Azure Sphere DevKit voorbereiden en verbinden
           href: howto-connect-sphere.md
         - name: Een RuuviTag-apparaat voorbereiden en verbinden

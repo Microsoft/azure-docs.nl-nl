@@ -226,8 +226,6 @@
               href: platform/service-providers.md
             - name: Toegewezen clusters
               href: log-query/logs-dedicated-clusters.md
-            - name: Problemen met logboeken oplossen
-              href: platform/azure-monitor-troubleshooting-logs.md
         - name: Log Analytics
           items:
             - name: Overzicht
@@ -701,7 +699,11 @@
                     - name: Configuratie-opties
                       href: app/java-standalone-config.md
                     - name: Telemetrieverwerkers
-                      href: app/java-standalone-telemetry-processors.md
+                      items:
+                        - name: Overzicht
+                          href: app/java-standalone-telemetry-processors.md
+                        - name: Voorbeelden
+                          href: app/java-standalone-telemetry-processors-examples.md
                     - name: Configuratie van JVM-argumenten
                       href: app/java-standalone-arguments.md
                     - name: Upgraden van SDK 2.x
@@ -1217,6 +1219,10 @@
               href: platform/workbooks-move-region.md
             - name: Werkmapsjablonen verplaatsen naar een andere regio
               href: platform/workbook-templates-move-region.md
+        - name: Koppelingen
+          items:
+            - name: Acties koppelen
+              href: platform/workbooks-link-actions.md
         - name: Weergaven converteren naar workbooks
           items:
             - name: Conversieoverzicht

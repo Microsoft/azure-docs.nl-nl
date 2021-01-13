@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to,automl,contperf-fy21q2
 ms.date: 12/18/2020
-ms.openlocfilehash: b26b0d9086f464556cbca2c70773374c3cccbd52
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 5fcb57d1ef909d7c15e21b34c3f584c6615a6a44
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915858"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134412"
 ---
 # <a name="data-featurization-in-automated-machine-learning"></a>Gegevens parametrisatie in geautomatiseerde machine learning
 
@@ -122,6 +122,9 @@ Ondersteunde aanpassingen zijn onder andere:
 |**Para meter bijwerken van trans formatie** |De para meters voor de opgegeven transformator bijwerken. *Biedt momenteel* ondersteuning voor toerekening (gemiddelde, meest frequente en gemiddelde) en *HashOneHotEncoder*.|
 |**Kolommen verwijderen** |Hiermee geeft u kolommen op die moeten worden featurized.|
 |**Trans formaties blok keren**| Hiermee geeft u de Block-trans formaties op die moeten worden gebruikt in het parametrisatie-proces.|
+
+>[!NOTE]
+> De functionaliteit **Drop columns** is afgeschaft vanaf SDK-versie 1,19. Verwijder kolommen uit uw gegevensset als onderdeel van het opschonen van gegevens, voordat u deze in uw geautomatiseerde ML experiment gebruikt. 
 
 Het object maken met `FeaturizationConfig` API-aanroepen:
 

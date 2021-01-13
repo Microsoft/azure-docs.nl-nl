@@ -9,12 +9,12 @@ ms.subservice: text-analytics
 ms.topic: include
 ms.date: 10/02/2020
 ms.author: aahi
-ms.openlocfilehash: 308b2a9cb00f44f0e330d4fef5592d8855ee3394
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 00c1c8ddab9214bf7698c21b05c24afa36ec20d9
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94553086"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98147475"
 ---
 ## <a name="text-analytics-for-health-categories-entities-and-attributes"></a>Text Analytics voor status Categorieën, entiteiten en kenmerken
 
@@ -23,15 +23,15 @@ In [Text Analytics status](../../how-tos/text-analytics-for-health.md) worden me
 
 | Categorie  | Beschrijving  |
 |---------|---------|
-| STRUCTUUR | concepten die informatie vastleggen over hoofd-en Anatomic-systemen,-sites,-locaties of-regio's. |
- | DEMOGRAFISCHE gegevens | concepten die informatie over geslacht en leeftijd vastleggen. |
- | BESTUDEREN | concepten die informatie vastleggen over diagnostische procedures en tests. |
- | GENOMICS | concepten die informatie over genen en varianten vastleggen. |
- | GEZONDHEIDS zorg | concepten die informatie vastleggen over administratieve gebeurtenissen, careische omgevingen en gezondheids zorg. |
- | MEDISCHE VOOR WAARDE | concepten die informatie vastleggen over diagnoses, symptomen of symptomen. |
- | GENEES | concepten die informatie over medicijnen vastleggen, waaronder medicijnen namen, klassen, dosering en route van beheer. |
- | BURGER | concepten die informatie vastleggen over medische relevante sociale aspecten, zoals familie relatie. |
- | GERICHT | concepten die informatie over therapeutische procedures vastleggen. |
+| [STRUCTUUR](#anatomy) | concepten die informatie vastleggen over hoofd-en Anatomic-systemen,-sites,-locaties of-regio's. |
+ | [DEMOGRAFISCHE gegevens](#demographics) | concepten die informatie over geslacht en leeftijd vastleggen. |
+ | [BESTUDEREN](#examinations) | concepten die informatie vastleggen over diagnostische procedures en tests. |
+ | [GENOMICS](#genomics) | concepten die informatie over genen en varianten vastleggen. |
+ | [GEZONDHEIDS zorg](#healthcare) | concepten die informatie vastleggen over administratieve gebeurtenissen, careische omgevingen en gezondheids zorg. |
+ | [MEDISCHE VOOR WAARDE](#medical-condition) | concepten die informatie vastleggen over diagnoses, symptomen of symptomen. |
+ | [GENEES](#medication) | concepten die informatie over medicijnen vastleggen, waaronder medicijnen namen, klassen, dosering en route van beheer. |
+ | [BURGER](#social) | concepten die informatie vastleggen over medische relevante sociale aspecten, zoals familie relatie. |
+ | [GERICHT](#treatment) | concepten die informatie over therapeutische procedures vastleggen. |
   
 Elke categorie kan twee concept groepen bevatten:
 
@@ -267,7 +267,15 @@ Voor waarden voor **CONDITION_QUALIFIER** kwaliteit die worden gebruikt om een m
 +   **FREQUENCY_OF_MEDICATION**
 +   **ROUTE_OF_MEDICATION**
 +   **TIME_OF_MEDICATION**
-  
+
+## <a name="social"></a>Sociaal netwerken
+
+### <a name="entities"></a>Entiteiten
+
+**FAMILY_RELATION** – vermeldingen van familie leden van het onderwerp. Bijvoorbeeld: vader, dochter, item op hetzelfde niveau, ouders.
+
+:::image type="content" source="../../media/ta-for-health/family-relation.png" alt-text="Scherm afbeelding toont een ander voor beeld van een kenmerk voor een verwerkings tijd.":::
+
 ## <a name="treatment"></a>Gericht
 
 ### <a name="entities"></a>Entiteiten
@@ -294,17 +302,8 @@ Voor waarden voor **CONDITION_QUALIFIER** kwaliteit die worden gebruikt om een m
 
 :::image type="content" source="../../media/ta-for-health/treatment-time.png" alt-text="Scherm afbeelding toont een voor beeld van een kenmerk voor een behandelings tijd.":::
 
-
 ### <a name="supported-relations"></a>Ondersteunde relaties
 
 + **DIRECTION_OF_TREATMENT**
 +   **TIME_OF_TREATMENT**
 +   **FREQUENCY_OF_TREATMENT**
-
-## <a name="social"></a>Sociaal netwerken
-
-### <a name="entities"></a>Entiteiten
-
-**FAMILY_RELATION** – vermeldingen van familie leden van het onderwerp. Bijvoorbeeld: vader, dochter, item op hetzelfde niveau, ouders.
-
-:::image type="content" source="../../media/ta-for-health/family-relation.png" alt-text="Scherm afbeelding toont een ander voor beeld van een kenmerk voor een verwerkings tijd.":::

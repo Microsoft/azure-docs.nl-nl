@@ -1,20 +1,20 @@
 ---
 title: Beheeropties blauwdrukvoorbeeld FedRAMP Moderate
 description: Hier vindt u informatie over de toewijzing van beheeropties aan het blauwdrukvoorbeeld FedRAMP Moderate. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 10/26/2020
+ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: 3963e8915903ed91f28fc49bab33d6d8eeb4b12d
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 30fd8030150613e6e429501ec27d5cad5cbe2a45
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92675881"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98034795"
 ---
 # <a name="control-mapping-of-the-fedramp-moderate-blueprint-sample"></a>Informatie over toewijzing van beheeropties aan het blauwdrukvoorbeeld FedRAMP Moderate
 
 In het volgende artikel wordt uitgelegd hoe het blauwdrukvoorbeeld FedRAMP Moderate van Azure Blueprints is gekoppeld aan de beheeropties van FedRAMP Moderate. Zie [de website van FedRAMP](https://www.fedramp.gov/) voor meer informatie over de beheeropties.
 
-De volgende toewijzingen gelden voor de **FedRAMP Moderate** -beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities** . Zoek en selecteer vervolgens het ingebouwde beleidsinitiatief **\[Preview\]: FedRAMP Moderate-controles controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten** .
+De volgende toewijzingen gelden voor de **FedRAMP Moderate**-beheeropties. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifieke beheeroptie te gaan. Veel van de toegewezen beheeropties worden geïmplementeerd met een [Azure Policy](../../../policy/overview.md)-initiatief. Als u het complete initiatief wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**. Zoek en selecteer vervolgens het ingebouwde beleidsinitiatief **\[Preview\]: FedRAMP Moderate-controles controleren en specifieke VM-extensies implementeren ter ondersteuning van de controlevereisten**.
 
 > [!IMPORTANT]
 > Elke beheeroptie hieronder is gekoppeld aan een of meer [Azure Policy](../../../policy/overview.md)-definities. Met deze beleidsregels kunt u de [compliance beoordelen](../../../policy/how-to/get-compliance-data.md) met de beheeroptie. Er is echter vaak geen één-op-één- of volledige overeenkomst tussen een beheeroptie en een of meer beleidsregels. Als zodanig verwijst de term **Conform** in Azure Policy alleen naar de beleidsregels zelf. Dit garandeert niet dat u volledig conform bent met alle vereisten van een beheeroptie. Daarnaast bevat de compliance standaard beheeropties die op dit moment nog niet worden beschreven door Azure Policy-definities. Daarom is compliance in Azure Policy slechts een gedeeltelijke weergave van uw algemene compliancestatus. De koppelingen tussen de beheeropties en Azure Policy definities voor dit blauwdrukvoorbeeld voor compliance kunnen na verloop van tijd veranderen. Als u de wijzigingsgeschiedenis wilt bekijken, raadpleegt u de [GitHub Commit-geschiedenis](https://github.com/MicrosoftDocs/azure-docs/commits/master/articles/governance/blueprints/samples/fedramp-m/control-mapping.md).
@@ -55,7 +55,7 @@ Als er slechts één eigenaar van een Azure-abonnement is, is er geen administra
 
 - Er moeten maximaal drie eigenaren worden aangewezen voor uw abonnement
 - Windows VM's controleren waarvoor de groep Administrators een van de opgegeven leden bevat
-- Windows VM's controleren waarvoor de groep Administrators niet alle opgegeven leden bevat
+- Windows-VM's controleren waarvoor de groep Administrators niet alle opgegeven leden bevat
 - Vereisten implementeren om Windows-VM's te controleren waarvoor de groep Administrators een van de opgegeven leden bevat
 - Vereisten implementeren om Windows-VM's te controleren waarop de groep Administrators niet alle opgegeven leden bevat
 - Er moet meer dan één eigenaar zijn toegewezen aan uw abonnement

@@ -8,12 +8,12 @@ ms.topic: sample
 ms.date: 08/23/2019
 ms.author: dech
 ms.custom: devx-track-js
-ms.openlocfilehash: 261ffc97d12202b588e519502895d338453c4380
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 192af33c6f07d38daef3a183fa8d746ff082ce2b
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097240"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98018969"
 ---
 # <a name="nodejs-examples-to-manage-data-in-azure-cosmos-db"></a>Node.js-voorbeelden voor het beheren van gegevens in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -88,7 +88,7 @@ In het bestand [ItemManagement](https://github.com/Azure/azure-cosmos-js/blob/ma
 
 ## <a name="indexing-examples"></a>Voorbeelden van indexen
 
-In het [IndexManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/IndexManagement.ts)-bestand ziet u hoe u de indexering beheert. Zie de conceptuele artikelen [Indexeringsbeleid](index-policy.md), [Indexeringstypen](index-overview.md#index-kinds) en [Indexeringspaden](index-policy.md#include-exclude-paths) voor meer informatie over het indexeren in Azure Cosmos DB voordat u de volgende voorbeelden uitvoert. 
+In het [IndexManagement](https://github.com/Azure/azure-cosmos-js/blob/master/samples/IndexManagement.ts)-bestand ziet u hoe u de indexering beheert. Zie de conceptuele artikelen [Indexeringsbeleid](index-policy.md), [Indexeringstypen](index-overview.md#index-types) en [Indexeringspaden](index-policy.md#include-exclude-paths) voor meer informatie over het indexeren in Azure Cosmos DB voordat u de volgende voorbeelden uitvoert. 
 
 | Taak | API-verwijzing |
 | --- | --- |

@@ -1,14 +1,14 @@
 ---
 title: Het blauwdrukvoorbeeld voor PCI-DSS v3.2.1 implementeren
 description: Implementeer stappen voor het blauwdrukvoorbeeld voor Payment Card Industry Data Security Standard v3.2.1, inclusief de parametergegevens voor blauwdrukartefacten.
-ms.date: 08/19/2020
+ms.date: 01/08/2021
 ms.topic: sample
-ms.openlocfilehash: a0b1d635a073dc19e41a7ba73e130d6028daca99
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 37e39231ee7395b951f69035cd98f2e14028ba1c
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955668"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045050"
 ---
 # <a name="deploy-the-pci-dss-v321-blueprint-sample"></a>Het blauwdrukvoorbeeld voor PCI-DSS v3.2.1 implementeren
 

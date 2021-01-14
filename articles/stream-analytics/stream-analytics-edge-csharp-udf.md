@@ -1,19 +1,18 @@
 ---
 title: 'Zelfstudie: door de gebruiker gedefinieerde C#-functies schrijven voor Azure Stream Analytics-taken in Visual Studio (preview)'
 description: Deze zelfstudie laat zien hoe door de gebruiker gedefinieerde C#-functies voor Stream Analytics-taken in Visual Studio worden geschreven.
-author: mamccrea
-ms.author: mamccrea
-ms.reviewer: mamccrea
+author: sidramadoss
+ms.author: sidram
 ms.service: stream-analytics
 ms.topic: tutorial
 ms.date: 12/06/2018
 ms.custom: seodec18, devx-track-csharp
-ms.openlocfilehash: d53f13cb740b3feb39dc64ce012ff320afbb1db5
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 851229e441aa2fbdf7b6eec05390c0ce2b149da2
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93130490"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020465"
 ---
 # <a name="tutorial-write-a-c-user-defined-function-for-azure-stream-analytics-job-preview"></a>Zelfstudie: Een door de gebruiker gedefinieerde C#-functie schrijven voor een Azure Stream Analytics-taak (preview)
 
@@ -46,7 +45,7 @@ De container die u maakt, wordt gebruikt om het gecompileerde C#-pakket op te sl
 
 3. Selecteer **Stream Analytics** in de sjablonenlijst aan de linkerkant en selecteer vervolgens **Azure Stream Analytics Edge Application** of **Azure Stream Analytics Application**.
 
-4.  Voer de **Naam** , **Locatie** en **Oplossingsnaam** van het project in en selecteer **OK**.
+4.  Voer de **Naam**, **Locatie** en **Oplossingsnaam** van het project in en selecteer **OK**.
 
     ![Een Azure Stream Analytics Edge-project in Visual Studio maken](./media/stream-analytics-edge-csharp-udf/stream-analytics-create-edge-app.png)
 

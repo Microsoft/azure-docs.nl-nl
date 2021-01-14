@@ -11,12 +11,12 @@ ms.topic: tutorial
 ms.date: 01/26/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5e61510965693e123c724d7b40d2fa6071fdd94c
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 61e1e729ab0aeac1f7b8e5ee6787da38c5fef108
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97824803"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98020142"
 ---
 # <a name="automate-the-rotation-of-a-secret-for-resources-that-use-one-set-of-authentication-credentials"></a>Het rouleren van een geheim voor resources met één set verificatiereferenties automatiseren
 
@@ -244,7 +244,7 @@ Voor de web-app zijn de volgende onderdelen vereist:
 
 Ga naar de URL van de geïmplementeerde toepassing:
  
-https://akvrotation-app.azurewebsites.net/
+'https://akvrotation-app.azurewebsites.net/'
 
 Wanneer de toepassing in de browser wordt geopend, ziet u de **gegenereerde waarde van het geheim** en de waarde voor de **databaseverbinding** ingesteld op *true*.
 

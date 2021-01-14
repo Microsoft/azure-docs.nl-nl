@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 9762ca79f73b3333045d1c11376ab315aac2d55e
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: fb9d74da6030c430cce4a2a3c4c5e4299183ca15
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808654"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132275"
 ---
 > [!IMPORTANT]
 > * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Zie de referentiedocumentatie hieronder. 
@@ -100,8 +100,8 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 #### <a name="version-20"></a>[versie 2.0](#tab/ga)
 
 * [De client verifiëren](#authenticate-the-client)
-* [Formulierinhoud herkennen](#recognize-form-content)
-* [Ontvangstbewijzen herkennen](#recognize-receipts)
+* [Indeling analyseren](#analyze-layout)
+* [Ontvangstbewijzen analyseren](#analyze-receipts)
 * [Aangepast model trainen](#train-a-custom-model)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
@@ -109,10 +109,10 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 #### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 
 * [De client verifiëren](#authenticate-the-client)
-* [Formulierinhoud herkennen](#recognize-form-content)
-* [Ontvangstbewijzen herkennen](#recognize-receipts)
-* [Visitekaartjes herkennen](#recognize-business-cards)
-* [Facturen herkennen](#recognize-invoices)
+* [Indeling analyseren](#analyze-layout)
+* [Ontvangstbewijzen analyseren](#analyze-receipts)
+* [Visitekaartjes analyseren](#analyze-business-cards)
+* [Facturen analyseren](#analyze-invoices)
 * [Aangepast model trainen](#train-a-custom-model)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
@@ -137,7 +137,7 @@ U moet verwijzingen naar de URL's toevoegen voor uw trainings- en testgegevens.
 > [!NOTE]
 > De codefragmenten in deze gids gebruiken externe formulieren die worden geopend middels URL's. Als u in plaats daarvan lokale formulierdocumenten wilt verwerken, raadpleegt u de gerelateerde methoden in de [referentiedocumentatie](/python/api/azure-ai-formrecognizer) en [voorbeelden](https://github.com/Azure/azure-sdk-for-python/tree/master/sdk/formrecognizer/azure-ai-formrecognizer/samples).
 
-## <a name="recognize-form-content"></a>Formulierinhoud herkennen
+## <a name="analyze-layout"></a>Indeling analyseren
 
 U kunt Form Recognizer gebruiken om tabellen, regels en woorden in documenten te herkennen, zonder dat u een model hoeft te trainen.
 
@@ -171,7 +171,7 @@ Confidence score: 1.0
 
 ```
 
-## <a name="recognize-receipts"></a>Ontvangstbewijzen herkennen
+## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
 
 In deze sectie wordt beschreven hoe u algemene velden in Amerikaanse ontvangstbewijzen kunt herkennen en uitpakken met behulp van een vooraf getraind ontvangstmodel. Om ontvangstbewijzen te herkennen vanuit een URL, gebruikt u de methode `begin_recognize_receipts_from_url`. 
 
@@ -203,7 +203,7 @@ Total: 1203.39 has confidence 0.774
 ```
 
 
-## <a name="recognize-business-cards"></a>Visitekaartjes herkennen
+## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
 
 #### <a name="version-20"></a>[versie 2.0](#tab/ga)
 
@@ -221,7 +221,7 @@ In deze sectie wordt beschreven hoe u veelvoorkomende velden in Engelse visiteka
 
 ---
 
-## <a name="recognize-invoices"></a>Facturen herkennen
+## <a name="analyze-invoices"></a>Facturen analyseren
 
 #### <a name="version-20"></a>[versie 2.0](#tab/ga)
 

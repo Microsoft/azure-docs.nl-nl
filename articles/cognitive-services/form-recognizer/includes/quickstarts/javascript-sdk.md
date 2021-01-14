@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: 45654d55ac07bc9056a41cacba6f8f5890c56580
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: 6520c1e326dc95584030d3187fdaaaa7e06c498a
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808637"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132274"
 ---
 > [!IMPORTANT]
 > * De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud. Zie de referentiedocumentatie hieronder. 
@@ -102,8 +102,8 @@ Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `For
 Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de clientbibliotheek van Form Recognizer voor JavaScript:
 
 * [De client verifiëren](#authenticate-the-client)
-* [Formulierinhoud herkennen](#recognize-form-content)
-* [Ontvangstbewijzen herkennen](#recognize-receipts)
+* [Indeling analyseren](#analyze-layout)
+* [Ontvangstbewijzen analyseren](#analyze-receipts)
 * [Aangepast model trainen](#train-a-custom-model)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
@@ -126,7 +126,7 @@ U moet ook verwijzingen naar de URL's toevoegen voor uw trainings- en testgegeve
 * Gebruik het voorbeeldformulier en de ontvangstbewijsafbeeldingen die zijn opgenomen in de onderstaande voorbeelden. Ze zijn ook beschikbaar op [GitHub](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/formrecognizer/ai-form-recognizer/test-assets). U kunt tevens de bovenstaande stappen gebruiken om de SAS-URL van een afzonderlijk document in Blob Storage op te halen. 
 
 
-## <a name="recognize-form-content"></a>Formulierinhoud herkennen
+## <a name="analyze-layout"></a>Indeling analyseren
 
 U kunt Form Recognizer gebruiken om tabellen, regels en woorden in documenten te herkennen, zonder dat u een model hoeft te trainen. Als u de inhoud van een bestand op een bepaalde URI wilt herkennen, gebruikt u de methode `beginRecognizeContentFromUrl`.
 
@@ -152,7 +152,7 @@ cell [1,3] has text $56,651.49
 cell [1,5] has text PT
 ```
 
-## <a name="recognize-receipts"></a>Ontvangstbewijzen herkennen
+## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
 
 In deze sectie wordt beschreven hoe u algemene velden in Amerikaanse ontvangstbewijzen kunt herkennen en uitpakken met behulp van een vooraf getraind ontvangstmodel.
 

@@ -13,12 +13,12 @@ metadata:
   author: BlackMist
   ms.date: 09/21/2020
   ms.custom: contperf-fy21q1
-  ms.openlocfilehash: ddf39e9822d55f8e7bec8a0e36659757ac9b4770
-  ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+  ms.openlocfilehash: 015dcc240d75500e7c145ba2544f27c13c0c3493
+  ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/11/2021
-  ms.locfileid: "98071983"
+  ms.lasthandoff: 01/13/2021
+  ms.locfileid: "98165379"
 landingContent:
 - title: 'Aan de slag: Code-first'
   linkLists:
@@ -58,7 +58,7 @@ landingContent:
     links:
     - text: Uw model in de cloud implementeren
       url: how-to-deploy-existing-model.md
-    - text: MLflow0modellen volgen en implementeren
+    - text: MLflow-modellen bijhouden
       url: how-to-use-mlflow.md
 - title: Modellen implementeren en beheren (MLOps)
   linkLists:
@@ -68,6 +68,8 @@ landingContent:
       url: concept-model-management-and-deployment.md
     - text: Hoe en waar implementeren
       url: how-to-deploy-and-where.md
+    - text: MLflow-modellen implementeren
+      url: how-to-deploy-mlflow-models.md
   - linkListType: reference
     links:
     - text: Python-SDK

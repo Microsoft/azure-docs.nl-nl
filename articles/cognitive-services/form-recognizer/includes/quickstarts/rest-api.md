@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
-ms.openlocfilehash: a677623c030ff26567f14a4526f6d07bc6631a37
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: 31e1a0d912c6623f57d4ea256968102604ce42ff
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97853725"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132278"
 ---
 > [!NOTE]
 > In deze handleiding wordt gebruikgemaakt van cURL om REST API-aanroepen uit te voeren. Er is ook [voorbeeldcode op GitHub](https://github.com/Azure-Samples/cognitive-services-quickstart-code/tree/master/python/FormRecognizer/rest) die laat zien hoe u de REST-API‘s aanroept met Python.
@@ -32,7 +32,7 @@ ms.locfileid: "97853725"
 * Een URL voor een afbeelding van een factuur. U kunt voor deze quickstart een [voorbeelddocument](https://raw.githubusercontent.com/Azure/azure-sdk-for-python/master/sdk/formrecognizer/azure-ai-formrecognizer/samples/sample_forms/forms/Invoice_1.pdf) gebruiken.
 
 
-## <a name="recognize-form-content"></a>Formulierinhoud herkennen
+## <a name="analyze-layout"></a>Indeling analyseren
 
 U kunt Form Recognizer gebruiken om tabellen, regels en woorden in documenten te herkennen en te extraheren, zonder dat u een model hoeft te trainen. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
@@ -319,7 +319,7 @@ Bekijk de volgende factuurafbeelding en de bijbehorende JSON-uitvoer. De uitvoer
 
 ---
 
-## <a name="recognize-receipts"></a>Ontvangstbewijzen herkennen
+## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
 
 Als u wilt beginnen met het analyseren van een ontvangstbewijs, roept u de **[Ontvangstbewijs analyseren](https://westcentralus.dev.cognitive.microsoft.com/docs/services/form-recognizer-api-v2-1-preview-2/operations/AnalyzeReceiptAsync)** -API aan met de cURL-opdracht hieronder. Voordat u de opdracht uitvoert, moet u de volgende wijzigingen aanbrengen:
 
@@ -699,7 +699,7 @@ Het knooppunt `"readResults"` bevat alle herkende tekst (als u de optionele para
 }
 ```
 
-## <a name="recognize-business-cards"></a>Visitekaartjes herkennen
+## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
 
 # <a name="v20"></a>[v2.0](#tab/v2-0)  
 
@@ -861,7 +861,7 @@ Met het script worden antwoorden naar de console afgedrukt totdat de **Visitekaa
 
 ---
 
-## <a name="recognize-invoices"></a>Facturen herkennen
+## <a name="analyze-invoices"></a>Facturen analyseren
 
 # <a name="version-20"></a>[versie 2.0](#tab/v2-0)
 

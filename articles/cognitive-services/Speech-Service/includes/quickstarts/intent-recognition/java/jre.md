@@ -6,12 +6,12 @@ ms.date: 04/04/2020
 ms.topic: include
 ms.author: trbye
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: 09b537d82ce4e9e44c36df628d120623e69abfaf
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: 9c0a0cb2cf6e291c42d72d6f46ff28b4d3fbf405
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425022"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109315"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -70,6 +70,13 @@ Voeg deze code toe onder uw `IntentRecognizer`. Zorg ervoor dat u `"YourLanguage
 [!code-java[](~/samples-cognitive-services-speech-sdk/quickstart/java/jre/intent-recognition/src/speechsdk/quickstart/Main.java?range=33-35)]
 
 In dit voorbeeld wordt de functie `addIntent()` gebruikt om intenties afzonderlijk toe te voegen. Als u alle intenties uit een model wilt toevoegen, gebruikt u `addAllIntents(model)` en geeft u het model door.
+
+> [!NOTE]
+> Speech SDK ondersteunt alleen LUIS v2.0-eindpunten.
+> U moet de URL van het v3.0-eindpunt in het veld van de voorbeeldquery handmatig wijzigen om een v2.0 URL-patroon te gebruiken.
+> LUIS v2.0-eindpunten volgen altijd een van deze twee patronen:
+> * `https://{AzureResourceName}.cognitiveservices.azure.com/luis/v2.0/apps/{app-id}?subscription-key={subkey}&verbose=true&q=`
+> * `https://{Region}.api.cognitive.microsoft.com/luis/v2.0/apps/{app-id}?subscription-key={subkey}&verbose=true&q=`
 
 ## <a name="recognize-an-intent"></a>Een intentie herkennen
 

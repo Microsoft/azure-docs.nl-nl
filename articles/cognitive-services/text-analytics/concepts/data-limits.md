@@ -11,12 +11,12 @@ ms.topic: overview
 ms.date: 11/19/2020
 ms.author: aahi
 ms.reviewer: chtufts
-ms.openlocfilehash: c60adb09da05ba945bcf6ccb55e71c395f064211
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2adca03a820d02731bca252dee99c76debc85e2e
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965099"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028128"
 ---
 # <a name="data-and-rate-limits-for-the-text-analytics-api"></a>Gegevens- en frequentielimieten voor de Text Analytics-API
 <a name="data-limits"></a>
@@ -35,7 +35,15 @@ Lees dit artikel voor informatie over de limieten voor de grootte en de frequent
 | Maximale grootte van één document (`/analyze` eindpunt)  | 125 K tekens, gemeten volgens [StringInfo.LengthInTextElements](/dotnet/api/system.globalization.stringinfo.lengthintextelements). Geldt niet voor Text Analytics voor status. |
 | Maximale grootte van de hele aanvraag | 1 MB. Geldt ook voor Text Analytics voor status. |
 
-Het maximumaantal documenten dat u in één aanvraag kunt verzenden, is afhankelijk van de API-versie en functie die u gebruikt. Het eindpunt `/analyze` weigert de hele aanvraag als een of meer van de documenten de maximale grootte overschrijdt (125 K tekens)
+
+Als een document de tekenlimiet overschrijdt, gedraagt de API anders afhankelijk van het eindpunt dat u gebruikt:
+
+* `/analyze`-eindpunt:
+  * De API weigert de volledige aanvraag en retourneert een `400 bad request`-fout als een document daarin de maximumgrootte overschrijdt.
+* Alle andere eindpunten:  
+  * De API verwerkt geen document dat de maximumgrootte overschrijdt en retourneert er een ongeldige documentfout voor. Als een API-aanvraag meerdere documenten heeft, zal de API deze blijven verwerken als ze binnen de tekenlimiet vallen.
+
+Het maximumaantal documenten dat u in één aanvraag kunt verzenden, is afhankelijk van de API-versie en functie die u gebruikt. Dit wordt in de onderstaande tabel beschreven.
 
 #### <a name="version-3"></a>[Versie 3](#tab/version-3)
 

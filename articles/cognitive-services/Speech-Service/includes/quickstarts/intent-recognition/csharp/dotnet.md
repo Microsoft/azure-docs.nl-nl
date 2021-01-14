@@ -7,12 +7,12 @@ ms.topic: include
 ms.author: trbye
 ms.custom: devx-track-csharp
 zone_pivot_groups: programming-languages-set-two
-ms.openlocfilehash: c242bbb803e359664eb2fb63262f0c540723f9c6
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: c14dfadfb7e8724c196b125e9b93c439fac249c3
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94424851"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109479"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -74,6 +74,13 @@ U moet een `LanguageUnderstandingModel` koppelen aan de intentieherkenning en de
 
 In dit voorbeeld wordt de functie `AddIntent()` gebruikt om intenties afzonderlijk toe te voegen. Als u alle intenties uit een model wilt toevoegen, gebruikt u `AddAllIntents(model)` en geeft u het model door. 
 
+> [!NOTE]
+> Speech SDK ondersteunt alleen LUIS v 2.0-eindpunten.
+> U moet de URL van het v3.0-eindpunt in het veld van de voorbeeldquery handmatig wijzigen om een v2.0 URL-patroon te gebruiken.
+> LUIS v2.0-eindpunten volgen altijd een van deze twee patronen:
+> * `https://{AzureResourceName}.cognitiveservices.azure.com/luis/v2.0/apps/{app-id}?subscription-key={subkey}&verbose=true&q=`
+> * `https://{Region}.api.cognitive.microsoft.com/luis/v2.0/apps/{app-id}?subscription-key={subkey}&verbose=true&q=`
+
 ## <a name="recognize-an-intent"></a>Een intentie herkennen
 
 Vanuit het `IntentRecognizer`-object roept u de methode `RecognizeOnceAsync()` aan. Met deze methode laat u de Speech-service weten dat u één woordgroep verstuurt voor herkenning en dat er kan worden gestopt met het herkennen van spraak zodra de woordgroep is geïdentificeerd.
@@ -103,9 +110,9 @@ Op dit punt moet uw code er als volgt uitzien:
 
 U bent nu klaar om uw app te bouwen en de spraakherkenning te testen met behulp van de Speech-service.
 
-1. **De code compileren** : kies in de menubalk van Visual Studio **Build** > **Build Solution**.
-2. **Start uw app** : kies in de menubalk **Debug** > **Start Debugging** of druk op <kbd>F5</kbd>.
-3. **Herkenning starten** : u wordt gevraagd om een woordgroep uit te spreken in het Engels. Uw spraak wordt verzonden naar de Speech-service, getranscribeerd als tekst en weergegeven in de console.
+1. **De code compileren**: kies in de menubalk van Visual Studio **Build** > **Build Solution**.
+2. **Start uw app**: kies in de menubalk **Debug** > **Start Debugging** of druk op <kbd>F5</kbd>.
+3. **Herkenning starten**: u wordt gevraagd om een woordgroep uit te spreken in het Engels. Uw spraak wordt verzonden naar de Speech-service, getranscribeerd als tekst en weergegeven in de console.
 
 ## <a name="next-steps"></a>Volgende stappen
 

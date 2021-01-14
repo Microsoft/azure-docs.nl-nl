@@ -5,12 +5,12 @@ ms.topic: include
 ms.date: 04/03/2020
 ms.author: trbye
 ms.custom: devx-track-js
-ms.openlocfilehash: 4ac8ae4fd4218bbf74bbb6760d8344096c214a76
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: bbd7091eb2139801956d77ec8b3ca821c935ac64
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97820708"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98109533"
 ---
 ## <a name="start-with-some-boilerplate-code"></a>Beginnen met standaardcode
 
@@ -187,6 +187,14 @@ Voeg deze code toe onder uw `IntentRecognizer`. Zorg ervoor dat u `"YourLanguage
           recognizer.addAllIntents(lm);
         }
 ```
+
+> [!NOTE]
+> Speech SDK ondersteunt alleen LUIS v 2.0-eindpunten.
+> U moet de URL van het v3.0-eindpunt in het veld van de voorbeeldquery handmatig wijzigen om een v2.0 URL-patroon te gebruiken.
+> LUIS v2.0-eindpunten volgen altijd een van deze twee patronen:
+> * `https://{AzureResourceName}.cognitiveservices.azure.com/luis/v2.0/apps/{app-id}?subscription-key={subkey}&verbose=true&q=`
+> * `https://{Region}.api.cognitive.microsoft.com/luis/v2.0/apps/{app-id}?subscription-key={subkey}&verbose=true&q=`
+
 ## <a name="recognize-an-intent"></a>Een intentie herkennen
 
 Vanuit het `IntentRecognizer`-object roept u de methode `recognizeOnceAsync()` aan. Met deze methode laat u de Speech-service weten dat u één woordgroep verstuurt voor herkenning en dat er kan worden gestopt met het herkennen van spraak zodra de woordgroep is geïdentificeerd.

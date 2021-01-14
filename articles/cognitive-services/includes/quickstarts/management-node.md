@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 08/05/2020
 ms.author: pafarley
-ms.openlocfilehash: eddee6bc0fdcd636b7b9ffb81b121052499251b2
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 97b8f889bf625ac36917debe2cc2848cb1a97e37
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97745701"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97956444"
 ---
 [Referentiedocumentatie](/javascript/api/@azure/arm-cognitiveservices/?view=azure-node-latest) | [Bibliotheekbroncode](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices) | [Pakket (NPM)](https://www.npmjs.com/package/@azure/arm-cognitiveservices) | [Voorbeelden](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/cognitiveservices/arm-cognitiveservices#sample-code)
 
@@ -74,7 +74,7 @@ Voeg vervolgens de volgende `quickstart`-functie toe om het belangrijkste werk v
 
 Voeg de volgende code toe aan het einde van uw `quickstart`-functie om beschikbare resources weer te geven, maak een voorbeeldresource, vermeld uw eigen resources en verwijder vervolgens de voorbeeldresource. U gaat deze functies in de volgende stappen definiëren.
 
-## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
+## <a name="create-a-cognitive-services-resource-nodejs"></a>Een Cognitive Services-resource maken (Node.js)
 
 Als u een nieuwe Cognitive Services-resource wilt maken en zich hierop wilt abonneren, gebruikt u de functie **Maken**. Met deze functie voegt u een nieuwe factureerbare resource toe aan de resourcegroep die u doorgeeft. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie. Met de volgende functie worden al deze argumenten gebruikt en wordt een resource gemaakt.
 

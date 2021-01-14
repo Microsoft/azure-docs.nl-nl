@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 09/21/2020
 ms.custom: devx-track-java
 ms.author: pafarley
-ms.openlocfilehash: 6768f46f39920c975e7eccef72563fc0bb7e5180
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: 93552d203508fb893bd2e85d27a3a991fc539472
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808586"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132277"
 ---
 > [!IMPORTANT]
 > De code in dit artikel maakt gebruik van synchrone methoden en onbeveiligde referentieopslag voor de eenvoud.
@@ -156,8 +156,8 @@ Met Form Recognizer kunt u twee verschillende clienttypen maken. De eerste, `For
 `FormRecognizerClient` biedt bewerkingen voor:
 
 - Het herkennen van formuliervelden en -inhoud met aangepaste modellen die zijn getraind om uw aangepaste formulieren te herkennen.  Deze waarden worden geretourneerd in een verzameling `RecognizedForm`-objecten. Zie het voorbeeld [Aangepaste formulieren analyseren](#analyze-forms-with-a-custom-model).
-- Het herkennen van formulierinhoud, met inbegrip van tabellen, regels en woorden, zonder dat u een model hoeft te trainen.  Formulierinhoud wordt geretourneerd in een verzameling `FormPage`-objecten. Zie het voorbeeld [Formulierinhoud herkennen](#recognize-form-content).
-- Het herkennen van algemene velden van Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel in de Form Recognizer-service.  Deze velden en metagegevens worden geretourneerd in een verzameling `RecognizedForm`-objecten. Zie het voorbeeld [Ontvangstbewijzen herkennen](#recognize-receipts).
+- Het herkennen van formulierinhoud, met inbegrip van tabellen, regels en woorden, zonder dat u een model hoeft te trainen.  Formulierinhoud wordt geretourneerd in een verzameling `FormPage`-objecten. Bekijk het voorbeeld [Indeling analyseren](#analyze-layout).
+- Het herkennen van algemene velden van Amerikaanse ontvangstbewijzen met behulp van een vooraf getraind ontvangstbewijsmodel in de Form Recognizer-service.  Deze velden en metagegevens worden geretourneerd in een verzameling `RecognizedForm`-objecten. Bekijk het voorbeeld [Ontvangsten analyseren](#analyze-receipts).
 
 ### <a name="formtrainingclient"></a>FormTrainingClient
 
@@ -177,17 +177,17 @@ Deze codefragmenten laten zien hoe u de volgende taken kunt uitvoeren met de cli
 
 #### <a name="version-20"></a>[versie 2.0](#tab/ga)
 * [De client verifiëren](#authenticate-the-client)
-* [Formulierinhoud herkennen](#recognize-form-content)
-* [Ontvangstbewijzen herkennen](#recognize-receipts)
+* [Indeling analyseren](#analyze-layout)
+* [Ontvangstbewijzen analyseren](#analyze-receipts)
 * [Aangepast model trainen](#train-a-custom-model)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
 #### <a name="version-21-preview"></a>[versie 2.1 (preview)](#tab/preview)
 * [De client verifiëren](#authenticate-the-client)
-* [Formulierinhoud herkennen](#recognize-form-content)
-* [Ontvangstbewijzen herkennen](#recognize-receipts)
-* [Visitekaartjes herkennen](#recognize-business-cards)
-* [Facturen herkennen](#recognize-invoices)
+* [Indeling analyseren](#analyze-layout)
+* [Ontvangstbewijzen analyseren](#analyze-receipts)
+* [Visitekaartjes analyseren](#analyze-business-cards)
+* [Facturen analyseren](#analyze-invoices)
 * [Aangepast model trainen](#train-a-custom-model)
 * [Formulieren analyseren met een aangepast model](#analyze-forms-with-a-custom-model)
 * [Uw aangepaste modellen beheren](#manage-your-custom-models)
@@ -200,7 +200,7 @@ Voeg de volgende code toe bovenaan uw **hoofd** methode. Hier gaat u twee client
 
 [!code-java[](~/cognitive-services-quickstart-code/java/FormRecognizer/FormRecognizer.java?name=snippet_auth)]
 
-## <a name="recognize-form-content"></a>Formulierinhoud herkennen
+## <a name="analyze-layout"></a>Indeling analyseren
 
 U kunt Form Recognizer gebruiken om tabellen, regels en woorden in documenten te herkennen, zonder dat u een model hoeft te trainen.
 
@@ -233,7 +233,7 @@ Cell has text $89,024.34.
 Cell has text ET.
 ```
 
-## <a name="recognize-receipts"></a>Ontvangstbewijzen herkennen
+## <a name="analyze-receipts"></a>Ontvangstbewijzen analyseren
 
 In deze sectie wordt beschreven hoe u algemene velden in Amerikaanse ontvangstbewijzen kunt herkennen en uitpakken met behulp van een vooraf getraind ontvangstmodel.
 
@@ -269,7 +269,7 @@ Quantity: null, confidence: 0.927s]
 Total Price: null, confidence: 0.93
 ```
 
-## <a name="recognize-business-cards"></a>Visitekaartjes herkennen
+## <a name="analyze-business-cards"></a>Visitekaartjes analyseren
 
 #### <a name="version-20"></a>[versie 2.0](#tab/ga)
 
@@ -293,7 +293,7 @@ De geretourneerde waarde is een verzameling **RecognizedForm**-objecten: één v
 
 ---
 
-## <a name="recognize-invoices"></a>Facturen herkennen
+## <a name="analyze-invoices"></a>Facturen analyseren
 
 #### <a name="version-20"></a>[versie 2.0](#tab/ga)
 

@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 09/01/2020
 ms.author: pafarley
-ms.openlocfilehash: ed85faf9ffe38489eb00ed5a71b3eb841c399d24
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 62726b9da5166d365c6e386363d0a65007259f10
+ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97745700"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97956541"
 ---
 [Referentiedocumentatie](/java/api/com.microsoft.azure.management.cognitiveservices?view=azure-java-stable) | [Broncode van bibliotheek](https://github.com/Azure/azure-sdk-for-java/tree/master/sdk/cognitiveservices/mgmt-v2017_04_18/src/main/java/com/microsoft/azure/management/cognitiveservices/v2017_04_18) | [Pakket (Maven)](https://mvnrepository.com/artifact/com.microsoft.azure/azure-mgmt-cognitiveservices)
 
@@ -94,7 +94,7 @@ Voeg de volgende code toe aan uw **Main**-methode om beschikbare resources weer 
 
 [!code-java[](~/cognitive-services-quickstart-code/java/azure_management_service/quickstart.java?name=snippet_calls)]
 
-## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
+## <a name="create-a-cognitive-services-resource-java"></a>Een Cognitive Services-resource maken (Java)
 
 Als u een nieuwe Cognitive Services-resource wilt maken en zich hierop wilt abonneren, gebruikt u de methode **maken**. Deze methode voegt een nieuwe factureerbare resource toe aan de resourcegroep die u doorgeeft. Wanneer u uw nieuwe resource maakt, moet u weten welk soort service u wilt gebruiken, samen met de prijscategorie (of SKU) en een Azure-locatie. Met de volgende methode worden al deze argumenten gebruikt en wordt een resource gemaakt.
 

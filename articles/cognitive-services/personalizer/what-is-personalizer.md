@@ -7,16 +7,16 @@ ms.topic: overview
 ms.date: 08/27/2020
 ms.custom: cog-serv-seo-aug-2020
 keywords: personalizer, Azure personalizer, machine learning
-ms.openlocfilehash: 28aae130d062eaf57a66a9b90a6602c3874f1494
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 33c1770c5c8722a55d8f1df4aff9b1637d903977
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094145"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028774"
 ---
 # <a name="what-is-personalizer"></a>Wat is Personalizer?
 
-Azure Personalizer is een cloudservice waarmee u voor uw toepassingen het beste inhoudsitem kunt selecteren om voor uw gebruikers weer te geven. U kunt de Personalizer-service gebruiken om te bepalen welk product aan gebruikers moet worden voorgesteld of om de optimale positie voor een advertentie te bepalen. Nadat de inhoud aan de gebruiker is weergegeven, wordt het gedrag van de gebruiker in realtime bewaakt en stuurt het systeem een score terug naar de Personalizer-service. Dit garandeert continue verbetering van het machine learning-model en het vermogen van Personalizer om het beste inhoudsitem te selecteren op basis van de contextinformatie die het ontvangt.
+Azure Personalizer is een cloudservice waarmee u voor uw toepassingen het beste inhoudsitem kunt selecteren om voor uw gebruikers weer te geven. U kunt de Personalizer-service gebruiken om te bepalen welk product aan gebruikers moet worden voorgesteld of om de optimale positie voor een advertentie te bepalen. Nadat de inhoud is weergegeven aan de gebruiker, bewaakt de uw toepassing de reactie van de gebruiker en wordt er een score gerapporteerd aan de Personalizer-service. Dit garandeert continue verbetering van het machine learning-model en het vermogen van Personalizer om het beste inhoudsitem te selecteren op basis van de contextinformatie die het ontvangt.
 
 > [!TIP]
 > Inhoud bestaat uit verschillende informatie-eenheden, zoals tekst, afbeeldingen, URL's, e-mailadressen of andere items die u wilt selecteren van en wilt weergeven aan uw gebruikers.
@@ -65,7 +65,7 @@ De **belonings**-[API](https://westus2.dev.cognitive.microsoft.com/docs/services
 
 Gebruik Personalizer wanneer uw inhoud:
 
-* Een beperkte set items (maximaal 50) bevat waaruit u een selectie kunt maken. [Gebruik een aanbevelingsengine](where-can-you-use-personalizer.md#how-to-use-personalizer-with-a-recommendation-solution) om de lijst in te korten tot 50 items als u een grotere lijst hebt.
+* Heeft een beperkte set acties of items (maximaal ~50) om uit te kiezen in elk gepersonaliseerde gebeurtenis. [Gebruik een aanbevelingsengine](where-can-you-use-personalizer.md#how-to-use-personalizer-with-a-recommendation-solution) om de lijst elke keer dat u Rang aanroep in de Personalizer-service in te korten tot 50 items als u een grotere lijst hebt.
 * Informatie bevat waarmee de inhoud die u wilt classificeren, wordt beschreven: _acties met functies_ en _contextfuncties_.
 * Minimaal 1000 aan inhoud gerelateerde gebeurtenissen per dag nodig heeft om Personalizer te activeren. Als Personalizer niet de minimaal vereiste hoeveelheid verkeer ontvangt, duurt het langer om met de service het beste inhoudsitem te bepalen.
 

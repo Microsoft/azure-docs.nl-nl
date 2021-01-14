@@ -11,12 +11,12 @@ ms.date: 11/23/2020
 ms.author: pafarley
 ms.custom: cog-serv-seo-aug-2020
 keywords: geautomatiseerde gegevensverwerking, documentverwerking, geautomatiseerde gegevensinvoer, formulierverwerking
-ms.openlocfilehash: ed940622f72271ef3e606c5068babcb6366c31b6
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: e1e5a4abf8eab96af62b160e28f98d95cf527eaf
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845533"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98044761"
 ---
 # <a name="what-is-form-recognizer"></a>Wat is Form Recognizer?
 
@@ -42,11 +42,11 @@ Als u de Form Recognizer-service wilt uitproberen, gaat u online naar de gebruik
 
 # <a name="v20"></a>[v2.0](#tab/v2-0)
 > [!div class="nextstepaction"]
-> [Vooraf gebouwde modellen uitproberen](https://fott.azurewebsites.net/)
+> [Form Recognizer proberen](https://fott.azurewebsites.net/)
 
 # <a name="v21-preview"></a>[Preview van v2.1](#tab/v2-1)
 > [!div class="nextstepaction"]
-> [Vooraf gebouwde modellen uitproberen](https://fott-preview.azurewebsites.net/)
+> [Form Recognizer proberen](https://fott-preview.azurewebsites.net/)
 
 ---
 
@@ -152,7 +152,18 @@ Lees het [naslagmateriaal bij de REST API](https://westus2.dev.cognitive.microso
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers
 
-[Gebruik Form Recognizer-containers (preview)](form-recognizer-container-howto.md) om API-functies on-premises te implementeren. Deze Docker-container stelt u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen.
+[Gebruik Form Recognizer-containers (preview)](form-recognizer-container-howto.md) om API-functies on-premises te implementeren. Deze Docker-container stelt u in staat om de service dichter bij uw gegevens te brengen voor naleving, beveiliging en andere operationele redenen. 
+
+## <a name="service-availability-and-redundancy"></a>Servicebeschikbaarheid en redundantie
+
+### <a name="is-form-recognizer-service-zone-resilient"></a>Is de Form Recognizer-service zonetolerant?
+
+Ja. De Form Recognizer-service is standaard zonetolerant.
+
+### <a name="how-do-i-configure-the-form-recognizer-service-to-be-zone-resilient"></a>Hoe kan ik de Form Recognizer-service zo configureren dat deze zonetolerant wordt?
+
+Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zonetolerantie voor Form Recognizer-bronnen is standaard beschikbaar en wordt beheerd door de service zelf.
+
 
 ## <a name="data-privacy-and-security"></a>Gegevensprivacy en -beveiliging
 

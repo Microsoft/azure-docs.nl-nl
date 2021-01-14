@@ -70,8 +70,6 @@
       items:
         - name: Een verwijderd dashboard herstellen
           href: recover-shared-deleted-dashboard.md
-        - name: Abonnementsproblemen gerelateerd aan regio of SKU oplossen
-          href: supportability/sku-series-unavailable.md
         - name: Een browsertracering vastleggen om problemen op te lossen
           href: capture-browser-trace.md
 - name: Naslaginformatie

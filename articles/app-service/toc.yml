@@ -102,6 +102,8 @@
   items:
     - name: App Service-abonnementen
       href: overview-hosting-plans.md
+    - name: Kostenbeheer
+      href: overview-manage-costs.md
     - name: OS-functionaliteit
       href: operating-system-functionality.md
     - name: Aanbevolen best practices voor implementatie

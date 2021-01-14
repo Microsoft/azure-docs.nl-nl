@@ -3,12 +3,12 @@ title: Versleuteling van back-upgegevens met door de klant beheerde sleutels
 description: Meer informatie over hoe u met Azure Backup uw back-upgegevens kunt versleutelen met behulp van door de klant beheerde sleutels (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 6e3eea4b5f44203b68c1263c0fb3ae843cabbe72
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: cc6ad2f67b84bcd62bcc18566a4ac5d159ea32c4
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895984"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197741"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Versleuteling van back-upgegevens met door de klant beheerde sleutels
 
@@ -66,7 +66,7 @@ Azure Backup maakt gebruik van door het systeem toegewezen beheerde identiteit o
 
     ![Identiteits instellingen](./media/encryption-at-rest-with-cmk/managed-identity.png)
 
-1. Wijzig de **status** in **op aan** en selecteer **Opslaan** .
+1. Wijzig de **status** in **op aan** en selecteer **Opslaan**.
 
 1. Er wordt een object-ID gegenereerd. Dit is de door het systeem toegewezen beheerde identiteit van de kluis.
 
@@ -74,11 +74,11 @@ Azure Backup maakt gebruik van door het systeem toegewezen beheerde identiteit o
 
 U moet nu toestaan dat de Recovery Services kluis toegang heeft tot de Azure Key Vault die de versleutelings sleutel bevat. Dit wordt gedaan door de beheerde identiteit van de Recovery Services kluis toegang te geven tot de Key Vault.
 
-1. Ga naar uw Azure Key Vault-> **toegangs beleid** . Ga door naar **+ toegangs beleid toevoegen** .
+1. Ga naar uw Azure Key Vault-> **toegangs beleid**. Ga door naar **+ toegangs beleid toevoegen**.
 
     ![Toegangs beleid toevoegen](./media/encryption-at-rest-with-cmk/access-policies.png)
 
-1. Selecteer onder **sleutel machtigingen** **ophalen** , **lijst** , **uitpakken van sleutel** en **ingepakte sleutel** bewerkingen. Hiermee geeft u de acties op de sleutel die wordt toegestaan.
+1. Selecteer onder **sleutel machtigingen** **ophalen**, **lijst**, **uitpakken van sleutel** en **ingepakte sleutel** bewerkingen. Hiermee geeft u de acties op de sleutel die wordt toegestaan.
 
     ![Sleutel machtigingen toewijzen](./media/encryption-at-rest-with-cmk/key-permissions.png)
 
@@ -148,25 +148,33 @@ De sleutel toewijzen:
 
     ![Versleutelingsinstellingen](./media/encryption-at-rest-with-cmk/encryption-settings.png)
 
-1. Selecteer **Update** onder **versleutelings instellingen** .
+1. Selecteer **Update** onder **versleutelings instellingen**.
 
 1. Selecteer in het deel venster versleutelings instellingen de optie **uw eigen sleutel gebruiken** en ga door met het opgeven van de sleutel op een van de volgende manieren. **Zorg ervoor dat de sleutel die u wilt gebruiken een RSA 2048-sleutel is die de status ingeschakeld heeft.**
 
     1. Voer de **sleutel-URI** in waarmee u de gegevens in deze Recovery Services kluis wilt versleutelen. U moet ook het abonnement opgeven waarin de Azure Key Vault (die deze sleutel bevat) aanwezig is. Deze sleutel-URI kan worden opgehaald uit de bijbehorende sleutel in uw Azure Key Vault. Zorg ervoor dat de sleutel-URI correct is gekopieerd. Het is raadzaam om de knop **kopiëren naar klem bord te** gebruiken die is opgenomen in de sleutel-id.
 
+        >[!NOTE]
+        >Wanneer u de versleutelings sleutel opgeeft met behulp van de sleutel-URI, wordt de sleutel niet automatisch gedraaid. Sleutel updates moeten dus hand matig worden uitgevoerd door de nieuwe sleutel op te geven wanneer dat nodig is.
+
         ![Sleutel-URI invoeren](./media/encryption-at-rest-with-cmk/key-uri.png)
 
     1. Blader en selecteer de sleutel in de Key Vault in het deel venster sleutel kiezer.
 
+        >[!NOTE]
+        >Wanneer u de versleutelings sleutel opgeeft met het deel venster sleutel kiezer, wordt de sleutel automatisch gedraaid wanneer een nieuwe versie van de sleutel is ingeschakeld.
+
         ![Selecteer een sleutel in de sleutel kluis](./media/encryption-at-rest-with-cmk/key-vault.png)
 
-1. Selecteer **Opslaan** .
+1. Selecteer **Opslaan**.
 
-1. **Voortgang van de update van de versleutelings sleutel bijhouden:** U kunt de voortgang van de sleutel toewijzing volgen met behulp van het **activiteiten logboek** in de Recovery Services kluis. De status moet binnenkort worden gewijzigd in **geslaagd** . In uw kluis worden nu alle gegevens met de opgegeven sleutel als KEK versleuteld.
+1. **Voortgang en status van versleutelings sleutel bijwerken**: u kunt de voortgang en status van de toewijzing van de versleutelings sleutel bijhouden met behulp van de weer gave **back-uptaken** op de linkernavigatiebalk. De status moet binnenkort worden gewijzigd in **voltooid**. In uw kluis worden nu alle gegevens met de opgegeven sleutel als KEK versleuteld.
 
-    ![De voortgang bijhouden met het activiteiten logboek](./media/encryption-at-rest-with-cmk/activity-log.png)
+    ![Status voltooid](./media/encryption-at-rest-with-cmk/status-succeeded.png)
 
-    ![Status geslaagd](./media/encryption-at-rest-with-cmk/status-succeeded.png)
+    De versleutelings sleutel updates worden ook geregistreerd in het activiteiten logboek van de kluis.
+
+    ![Activiteitenlogboek](./media/encryption-at-rest-with-cmk/activity-log.png)
 
 >[!NOTE]
 > Dit proces blijft hetzelfde wanneer u de versleutelings sleutel wilt bijwerken of wijzigen. Als u een sleutel van een andere Key Vault wilt bijwerken en gebruiken (anders dan de versie die momenteel wordt gebruikt), zorgt u ervoor dat:
@@ -192,7 +200,7 @@ Voordat u kunt door gaan met het configureren van de beveiliging, wordt u aanger
 >
 >Als alle bovenstaande stappen zijn bevestigd, gaat u alleen verder met het configureren van back-up.
 
-Het proces voor het configureren en uitvoeren van back-ups op een Recovery Services kluis die is versleuteld met door de klant beheerde sleutels is hetzelfde als voor een kluis die door het platform beheerde sleutels gebruikt, zonder **wijzigingen in de ervaring** . Dit geldt voor [back-ups van virtuele Azure-machines](./quick-backup-vm-portal.md) en voor het maken van een back-up van werk belastingen die worden uitgevoerd in een virtuele machine (bijvoorbeeld [SAP Hana](./tutorial-backup-sap-hana-db.md), [SQL Server](./tutorial-sql-backup.md) data bases).
+Het proces voor het configureren en uitvoeren van back-ups op een Recovery Services kluis die is versleuteld met door de klant beheerde sleutels is hetzelfde als voor een kluis die door het platform beheerde sleutels gebruikt, zonder **wijzigingen in de ervaring**. Dit geldt voor [back-ups van virtuele Azure-machines](./quick-backup-vm-portal.md) en voor het maken van een back-up van werk belastingen die worden uitgevoerd in een virtuele machine (bijvoorbeeld [SAP Hana](./tutorial-backup-sap-hana-db.md), [SQL Server](./tutorial-sql-backup.md) data bases).
 
 ## <a name="restoring-data-from-backup"></a>Gegevens terugzetten vanuit een back-up
 
@@ -214,7 +222,7 @@ U kunt de herstelde schijf/VM versleutelen nadat de herstel bewerking is voltooi
 
 De schijf versleutelings set is opgegeven onder versleutelings instellingen in het deel venster herstellen, zoals hieronder wordt weer gegeven:
 
-1. Selecteer in de **schijf of schijven versleutelen met behulp van de sleutel** **Ja** .
+1. Selecteer in de **schijf of schijven versleutelen met behulp van de sleutel** **Ja**.
 
 1. Selecteer in de vervolg keuzelijst de DES die u wilt gebruiken voor de herstelde schijven. **Zorg ervoor dat u toegang hebt tot de DES.**
 

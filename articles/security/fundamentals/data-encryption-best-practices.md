@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/09/2020
 ms.author: terrylan
-ms.openlocfilehash: c88a2cf33cf1149a17af4a82dcf2858822f0c6d4
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 3808da24c1baf6dd6e3332d4bd26fd176b761c65
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94696146"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196075"
 ---
 # <a name="azure-data-security-and-encryption-best-practices"></a>Best practices voor gegevensbeveiliging en -versleuteling in Azure
 In dit artikel worden aanbevolen procedures beschreven voor gegevens beveiliging en-versleuteling.
@@ -74,7 +74,7 @@ Gebruik Azure RBAC om te bepalen wat gebruikers toegang hebben tot. Als u bijvoo
 Omdat de meeste aanvallen de eind gebruiker bedoelt, wordt het eind punt een van de primaire aanvallen. Een aanvaller die het eind punt verkrijgt, kan de referenties van de gebruiker gebruiken om toegang te krijgen tot de gegevens van de organisatie. De meeste endpoint-aanvallen profiteren van het feit dat gebruikers beheerders zijn op hun lokale werk station.
 
 **Best Practice**: gebruik een veilig beheer werkstation om gevoelige accounts, taken en gegevens te beveiligen.   
-**Details**: gebruik een [privileged Access-werk station](/windows-server/identity/securing-privileged-access/privileged-access-workstations) om de kwets baarheid op werk stations te verminderen. Deze beveiligde beheer werkstations kunnen u helpen een aantal van deze aanvallen te beperken en ervoor te zorgen dat uw gegevens veiliger zijn.
+**Details**: gebruik een [privileged Access-werk station](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) om de kwets baarheid op werk stations te verminderen. Deze beveiligde beheer werkstations kunnen u helpen een aantal van deze aanvallen te beperken en ervoor te zorgen dat uw gegevens veiliger zijn.
 
 **Aanbevolen procedure**: zorg voor Endpoint Protection.   
 **Details**: beveiligings beleid afdwingen op alle apparaten die worden gebruikt voor het verbruiken van gegevens, ongeacht de gegevens locatie (Cloud of on-premises).

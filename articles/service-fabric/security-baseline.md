@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 9eab908d2767bcdc9305daa625c70be9b63b9756
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1ba23b73836f1a2dbe73932ba920649ca5bb8b33
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485543"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98195701"
 ---
 # <a name="azure-security-baseline-for-service-fabric"></a>Azure-beveiligings basislijn voor Service Fabric
 
@@ -64,7 +64,7 @@ Overweeg het implementeren van Azure Web Application firewall (WAF) voor essenti
 
 * [Overzicht van Service Fabric met Azure API Management](./service-fabric-api-management-overview.md)
 
-* [API Management integreren in een intern VNET met Application Gateway](../api-management/api-management-howto-integrate-internal-vnet-appgateway.md)
+* [API Management in een intern VNET integreren met Application Gateway](../api-management/api-management-howto-integrate-internal-vnet-appgateway.md)
 
 * [Azure WAF implementeren](../web-application-firewall/ag/create-waf-policy-ag.md)
 
@@ -380,7 +380,7 @@ Daarnaast kunt u de aanbevelingen van Azure Security Center identiteits-en toega
 
 **Hulp**: gebruik paw's (privileged Access workstations) met multi-factor Authentication (MFA) die is geconfigureerd om u aan te melden en uw Azure service Fabric-clusters en gerelateerde resources te configureren.
 
-* [Meer informatie over privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 

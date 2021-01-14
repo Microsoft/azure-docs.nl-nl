@@ -7,15 +7,15 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 05/08/2019
 ms.author: cynthn
-ms.openlocfilehash: d5dda567d0cfa89863731a3e8e651aede4ab5957
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: eaa3f56389e8cc101b57aefce833266fa20f66f7
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87825188"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197469"
 ---
 # <a name="frequently-asked-question-about-windows-virtual-machines"></a>Veelgestelde vragen over Windows Virtual Machines
-In dit artikel worden enkele veelgestelde vragen over virtuele Windows-machines die zijn gemaakt in azure, behandeld met het Resource Manager-implementatie model. Voor de Linux-versie van dit onderwerp raadpleegt u [Veelgestelde vragen over Linux virtual machines](../linux/faq.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+In dit artikel worden enkele veelgestelde vragen over virtuele Windows-machines die zijn gemaakt in azure, behandeld met het Resource Manager-implementatie model. Voor de Linux-versie van dit onderwerp raadpleegt u [Veelgestelde vragen over Linux virtual machines](../linux/faq.md).
 
 ## <a name="what-can-i-run-on-an-azure-vm"></a>Wat kan ik uitvoeren op een VM van Azure?
 Alle abonnees kunnen serversoftware uitvoeren op een virtuele machine van Azure. Voor informatie over het ondersteunings beleid voor het uitvoeren van micro soft server-software in azure, Zie [micro soft-server software ondersteuning voor azure virtual machines](https://support.microsoft.com/kb/2721672).
@@ -23,14 +23,14 @@ Alle abonnees kunnen serversoftware uitvoeren op een virtuele machine van Azure.
 Bepaalde versies van Windows 7, Windows 8,1 en Windows 10 zijn beschikbaar voor MSDN Azure-voor delen-abonnees en MSDN dev en test betalen per gebruik, voor ontwikkel-en test taken. Zie het Engelstalige blogbericht [Windows Client images for MSDN subscribers](https://azure.microsoft.com/blog/2014/05/29/windows-client-images-on-azure/) voor meer informatie, zoals instructies en beperkingen. 
 
 ## <a name="how-much-storage-can-i-use-with-a-virtual-machine"></a>Hoeveel opslagruimte kan ik gebruiken met een virtuele machine?
-Elke gegevens schijf kan Maxi maal 32.767 GiB zijn. Het aantal gegevensschijven dat u kunt gebruiken, is afhankelijk van de grootte van de virtuele machine. Zie [Grootten voor virtuele machines](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) voor meer informatie.
+Elke gegevens schijf kan Maxi maal 32.767 GiB zijn. Het aantal gegevensschijven dat u kunt gebruiken, is afhankelijk van de grootte van de virtuele machine. Zie [Grootten voor virtuele machines](../sizes.md) voor meer informatie.
 
 Azure Managed Disks zijn de aanbevolen aanbiedingen voor schijf opslag voor gebruik met Azure Virtual Machines voor een permanente opslag van gegevens. U kunt meerdere Managed Disks gebruiken voor elke virtuele machine. Managed Disks bieden twee soorten duurzame opslag opties: Premium en Standard Managed Disks. Zie [Managed disks prijzen](https://azure.microsoft.com/pricing/details/managed-disks)voor prijs informatie.
 
 Azure Storage-accounts kunnen ook opslag bieden voor de schijf met het besturings systeem en alle gegevens schijven. Elke schijf is een VHD-bestand dat wordt opgeslagen als een pagina-blob. Zie [deze pagina](https://azure.microsoft.com/pricing/details/storage/) voor prijsinformatie.
 
 ## <a name="how-can-i-access-my-virtual-machine"></a>Hoe kan ik toegang krijgen tot mijn virtuele machine?
-Een externe verbinding tot stand brengen met behulp van Verbinding met extern bureaublad (RDP) voor een Windows-VM. Zie [verbinding maken en aanmelden bij een virtuele Azure-machine met Windows](connect-logon.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)voor instructies. Er worden Maxi maal twee gelijktijdige verbindingen ondersteund, tenzij de server is geconfigureerd als een Extern bureaublad-services-sessiehost.  
+Een externe verbinding tot stand brengen met behulp van Verbinding met extern bureaublad (RDP) voor een Windows-VM. Zie [verbinding maken en aanmelden bij een virtuele Azure-machine met Windows](connect-logon.md)voor instructies. Er worden Maxi maal twee gelijktijdige verbindingen ondersteund, tenzij de server is geconfigureerd als een Extern bureaublad-services-sessiehost.  
 
 Als u problemen ondervindt met Extern bureaublad, raadpleegt u [extern bureaublad verbindingen met een op Windows gebaseerde Azure Virtual Machine oplossen](../troubleshooting/troubleshoot-rdp-connection.md?toc=/azure/virtual-machines/windows/toc.json). 
 
@@ -39,11 +39,11 @@ Als u bekend bent met Hyper-V, is het mogelijk dat u op zoek bent naar een hulp 
 ## <a name="can-i-use-the-temporary-disk-the-d-drive-by-default-to-store-data"></a>Kan ik de tijdelijke schijf (standaard D: station) gebruiken om gegevens op te slaan?
 Gebruik niet de tijdelijke schijf om gegevens op te slaan. Het is alleen tijdelijke opslag, waardoor het risico bestaat dat er gegevens verloren gaan die niet kunnen worden hersteld. Gegevens verlies kan optreden wanneer de virtuele machine naar een andere host wordt verplaatst. Hiervoor zijn verschillende redenen te bedenken, zoals het aanpassen van de grootte van een virtuele machine, het bijwerken van de host of een hardwarefout op de host.
 
-Als u een toepassing hebt die de D: stationsletter moet gebruiken, kunt u stationsletters opnieuw toewijzen zodat de tijdelijke schijf iets anders dan D:. gebruikt. Zie [Use the D: drive as a data drive on a Windows VM](change-drive-letter.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json) (Het station D: als gegevensstation gebruiken op een Windows-VM) voor instructies.
+Als u een toepassing hebt die de D: stationsletter moet gebruiken, kunt u stationsletters opnieuw toewijzen zodat de tijdelijke schijf iets anders dan D:. gebruikt. Zie [Use the D: drive as a data drive on a Windows VM](change-drive-letter.md) (Het station D: als gegevensstation gebruiken op een Windows-VM) voor instructies.
 
 
 ## <a name="how-can-i-change-the-drive-letter-of-the-temporary-disk"></a>Hoe wijzig ik de stationsletter van de tijdelijke schijf?
-U kunt de stationsletter wijzigen door het wissel bestand te verplaatsen en stationsletters opnieuw toe te wijzen, maar u moet er wel voor zorgen dat u de stappen in een specifieke volg orde uitvoert. Zie [Use the D: drive as a data drive on a Windows VM](change-drive-letter.md?toc=%2fazure%2fvirtual-machines%2fwindows%2fclassic%2ftoc.json) (Het station D: als gegevensstation gebruiken op een Windows-VM) voor instructies.
+U kunt de stationsletter wijzigen door het wissel bestand te verplaatsen en stationsletters opnieuw toe te wijzen, maar u moet er wel voor zorgen dat u de stappen in een specifieke volg orde uitvoert. Zie [Use the D: drive as a data drive on a Windows VM](change-drive-letter.md) (Het station D: als gegevensstation gebruiken op een Windows-VM) voor instructies.
 
 ## <a name="can-i-add-an-existing-vm-to-an-availability-set"></a>Kan ik een bestaande VM toevoegen aan een beschikbaarheidsset?
 Nee. Als u wilt dat uw VM deel uitmaakt van een beschikbaarheidsset, moet u de virtuele machine in de set maken. Er is momenteel geen manier om een virtuele machine toe te voegen aan een beschikbaarheidsset nadat deze is gemaakt.
@@ -52,7 +52,7 @@ Nee. Als u wilt dat uw VM deel uitmaakt van een beschikbaarheidsset, moet u de v
 Ja. Zie [on-premises Vm's migreren naar Azure](on-prem-to-azure.md)voor instructies.
 
 ## <a name="can-i-resize-the-os-disk"></a>Kan ik het formaat van de besturingssysteem schijf wijzigen?
-Ja. Zie [het station van het besturings systeem uitbreiden van een virtuele machine in een Azure-resource groep](expand-os-disk.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)voor instructies.
+Ja. Zie [het station van het besturings systeem uitbreiden van een virtuele machine in een Azure-resource groep](expand-os-disk.md)voor instructies.
 
 ## <a name="can-i-copy-or-clone-an-existing-azure-vm"></a>Kan ik een bestaande virtuele machine van Azure kopiëren of klonen?
 Ja. Met beheerde installatie kopieën kunt u een installatie kopie van een virtuele machine maken en vervolgens de installatie kopie gebruiken om meerdere nieuwe Vm's te bouwen. Zie [een aangepaste installatie kopie van een virtuele machine maken](tutorial-custom-images.md)voor instructies.

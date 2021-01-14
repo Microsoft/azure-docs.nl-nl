@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/21/2019
-ms.openlocfilehash: 2b811b1ace646cc4e0a93b937fbb90cfbf7aec0f
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 26fb70592a75910ae21d327e53569eda12dfea97
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704891"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197367"
 ---
 # <a name="how-to-troubleshoot-issues-with-the-log-analytics-agent-for-linux"></a>Problemen met de Log Analytics-agent voor Linux oplossen 
 
@@ -66,7 +66,7 @@ We hebben gezien dat een schone herinstallatie van de agent de meeste problemen 
 
 ## <a name="important-log-locations-and-log-collector-tool"></a>Belang rijke logboek locaties en logboek verzamelaar-hulp programma
 
- File | Pad
+ Bestand | Pad
  ---- | -----
  Log Analytics agent voor Linux-logboek bestand | `/var/opt/microsoft/omsagent/<workspace id>/log/omsagent.log`
  Logboek bestand voor configuratie van Log Analytics agent | `/var/opt/microsoft/omsconfig/omsconfig.log`
@@ -96,6 +96,7 @@ We hebben gezien dat een schone herinstallatie van de agent de meeste problemen 
 | 5 | De shell bundel moet worden uitgevoerd als root of er is een 403-fout geretourneerd tijdens het onboarden. Voer de opdracht uit met `sudo` . |
 | 6 | Ongeldige pakket architectuur of er is een fout opgetreden 200 fout opgetreden tijdens het voorbereiden; omsagent-*x64.sh-pakketten kunnen alleen worden geïnstalleerd op 64-bits systemen en omsagent-x86.sh-* pakketten kunnen alleen worden geïnstalleerd op 32-bits systemen. Down load het juiste pakket voor uw architectuur vanuit de [nieuwste versie](https://github.com/Microsoft/OMS-Agent-for-Linux/releases/latest). |
 | 17 | Installatie van het OMS-pakket is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |
+| 18 | Installatie van OMSConfig-pakket is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |
 | 19 | Installatie van OMI-pakket is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |
 | 20 | Installatie van het SCX-pakket is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |
 | 21 | De installatie van de provider kits is mislukt. Bekijk de uitvoer van de opdracht voor de hoofd fout. |

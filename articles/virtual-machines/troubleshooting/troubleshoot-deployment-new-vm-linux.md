@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 09/09/2016
 ms.author: daberry
-ms.openlocfilehash: f48963a4d18e80cb67bfbbdc532d34f89b8b5d8a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d94f7389ce96c2e3bda35413cbcc7b1e8a992683
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87028444"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197537"
 ---
 # <a name="troubleshoot-resource-manager-deployment-issues-with-creating-a-new-linux-virtual-machine-in-azure"></a>Problemen met de implementatie van Resource Manager oplossen met het maken van een nieuwe virtuele Linux-machine in azure
 [!INCLUDE [virtual-machines-troubleshoot-deployment-new-vm-opening](../../../includes/virtual-machines-troubleshoot-deployment-new-vm-opening-include.md)]
@@ -46,9 +46,9 @@ Om te beginnen met het oplossen van problemen, verzamelt u de activiteiten Logbo
 
 **Upload fouten:**
 
-**N<sup>1</sup>:** Als het besturings systeem wordt gegeneraliseerd door Linux en het is geüpload als gespecialiseerd, ontvangt u een time-outfout voor inrichting omdat de virtuele machine zich in de inrichtings fase bevindt.
+**N <sup>1</sup>:** Als het besturings systeem wordt gegeneraliseerd door Linux en het is geüpload als gespecialiseerd, ontvangt u een time-outfout voor inrichting omdat de virtuele machine zich in de inrichtings fase bevindt.
 
-**N<sup>2</sup>:** Als het besturings systeem Linux gespecialiseerd is en het is geüpload als gegeneraliseerd, krijgt u een inrichtings fout, omdat de nieuwe virtuele machine wordt uitgevoerd met de oorspronkelijke computer naam, gebruikers naam en wacht woord.
+**N <sup>2</sup>:** Als het besturings systeem Linux gespecialiseerd is en het is geüpload als gegeneraliseerd, krijgt u een inrichtings fout, omdat de nieuwe virtuele machine wordt uitgevoerd met de oorspronkelijke computer naam, gebruikers naam en wacht woord.
 
 **Oplossing:**
 
@@ -56,13 +56,13 @@ Als u beide fouten wilt oplossen, uploadt u de oorspronkelijke VHD, die beschikb
 
 **Fouten vastleggen:**
 
-**N<sup>3</sup>:** Als het besturings systeem Linux gegeneraliseerd is en het is vastgelegd als gespecialiseerd, krijgt u een time-outfout van inrichting omdat de oorspronkelijke virtuele machine niet bruikbaar is omdat deze is gemarkeerd als gegeneraliseerd.
+**N <sup>3</sup>:** Als het besturings systeem Linux gegeneraliseerd is en het is vastgelegd als gespecialiseerd, krijgt u een time-outfout van inrichting omdat de oorspronkelijke virtuele machine niet bruikbaar is omdat deze is gemarkeerd als gegeneraliseerd.
 
-**N<sup>4</sup>:** Als het besturings systeem Linux gespecialiseerd is en het is vastgelegd als gegeneraliseerd, krijgt u een inrichtings fout omdat de nieuwe virtuele machine wordt uitgevoerd met de oorspronkelijke computer naam, gebruikers naam en wacht woord. De oorspronkelijke virtuele machine kan ook niet worden gebruikt omdat deze is gemarkeerd als gespecialiseerd.
+**N <sup>4</sup>:** Als het besturings systeem Linux gespecialiseerd is en het is vastgelegd als gegeneraliseerd, krijgt u een inrichtings fout omdat de nieuwe virtuele machine wordt uitgevoerd met de oorspronkelijke computer naam, gebruikers naam en wacht woord. De oorspronkelijke virtuele machine kan ook niet worden gebruikt omdat deze is gemarkeerd als gespecialiseerd.
 
 **Oplossing:**
 
-Om beide fouten op te lossen, verwijdert u de huidige installatie kopie uit de portal en [legt u deze opnieuw vast vanaf de huidige vhd's](../linux/capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) met dezelfde instelling als voor het besturings systeem (gegeneraliseerd/gespecialiseerd).
+Om beide fouten op te lossen, verwijdert u de huidige installatie kopie uit de portal en [legt u deze opnieuw vast vanaf de huidige vhd's](../linux/capture-image.md) met dezelfde instelling als voor het besturings systeem (gegeneraliseerd/gespecialiseerd).
 
 ## <a name="issue-custom-gallery-marketplace-image-allocation-failure"></a>Probleem: afbeelding voor aangepast/galerie/Marketplace; toewijzings fout
 Deze fout treedt op wanneer de nieuwe VM-aanvraag is vastgemaakt aan een cluster dat de aangevraagde VM-grootte niet kan ondersteunen of waarvoor er geen beschik bare ruimte beschikbaar is om aan de aanvraag te voldoen.
@@ -74,7 +74,7 @@ Deze fout treedt op wanneer de nieuwe VM-aanvraag is vastgemaakt aan een cluster
 * Voer de aanvraag opnieuw uit met een kleinere VM-grootte.
 * Als de grootte van de aangevraagde virtuele machine niet kan worden gewijzigd:
   * Stop alle virtuele machines in de beschikbaarheidsset.
-    Klik op **resource groepen**  >  *uw resource groep*  >  **resources**  >  *uw beschikbaarheidsset*  >  **virtual machines**  >  *de virtuele machine*wordt  >  **gestopt**.
+    Klik op **resource groepen**  >  *uw resource groep*  >  **resources**  >  *uw beschikbaarheidsset*  >  **virtual machines**  >  *de virtuele machine* wordt  >  **gestopt**.
   * Nadat alle Vm's zijn gestopt, maakt u de nieuwe virtuele machine op de gewenste grootte.
   * Start eerst de nieuwe VM en selecteer vervolgens elk van de gestopte Vm's en klik op **Start**.
 

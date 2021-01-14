@@ -4,12 +4,12 @@ description: Meer informatie over het integreren van Azure NetApp Files met de A
 services: container-service
 ms.topic: article
 ms.date: 10/23/2020
-ms.openlocfilehash: bc65c3dfad4c27c1650054c6836fbbbf07a7dbf2
-ms.sourcegitcommit: 857859267e0820d0c555f5438dc415fc861d9a6b
+ms.openlocfilehash: 19727d3c3322b05f340463d94a2bc3884e5d9d93
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93126250"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196007"
 ---
 # <a name="integrate-azure-netapp-files-with-azure-kubernetes-service"></a>Azure NetApp Files integreren met de Azure Kubernetes-service
 
@@ -28,14 +28,14 @@ Ook moet de Azure CLI-versie 2.0.59 of hoger zijn geïnstalleerd en geconfiguree
 De volgende beperkingen zijn van toepassing wanneer u Azure NetApp Files gebruikt:
 
 * Azure NetApp Files is alleen beschikbaar [in de geselecteerde Azure-regio's][anf-regions].
-* Voordat u Azure NetApp Files kunt gebruiken, moet u toegang krijgen tot de Azure NetApp Files-service. Als u toegang wilt Toep assen, kunt u het [Waitlist-inzendings formulier Azure NetApp files][anf-waitlist]gebruiken. U hebt geen toegang tot de Azure NetApp Files-service totdat u het officiële bevestigings bericht van het Azure NetApp Files team ontvangt.
+* Voordat u Azure NetApp Files kunt gebruiken, moet u toegang krijgen tot de Azure NetApp Files-service. Als u de toegang wilt Toep assen, kunt u het [Waitlist-inzendings formulier van Azure NetApp files][anf-waitlist] gebruiken of gaat u naar https://azure.microsoft.com/services/netapp/#getting-started . U hebt geen toegang tot de Azure NetApp Files-service totdat u het officiële bevestigings bericht van het Azure NetApp Files team ontvangt.
 * Na de eerste implementatie van een AKS-cluster wordt alleen statische inrichting van Azure NetApp Files ondersteund.
 * Als u dynamische inrichting met Azure NetApp Files wilt gebruiken, installeert en configureert u [NetApp Trident](https://netapp-trident.readthedocs.io/) -versie 19,07 of hoger.
 
 ## <a name="configure-azure-netapp-files"></a>Azure NetApp Files configureren
 
 > [!IMPORTANT]
-> Voordat u de resource provider  *micro soft. NetApp* kunt registreren, moet u het [Verzend formulier van de Azure NetApp files Waitlist][anf-waitlist] voor uw abonnement volt ooien. U kunt de levering van resources pas registreren nadat u de officiële bevestigings-e-mail van het Azure NetApp Files-team hebt ontvangen.
+> Voordat u de  *micro soft. NetApp* -resource provider kunt registreren, moet u het [Verzend formulier van de Azure NetApp files Waitlist][anf-waitlist] volt ooien of naar https://azure.microsoft.com/services/netapp/#getting-started uw abonnement gaan. U kunt de levering van resources pas registreren nadat u de officiële bevestigings-e-mail van het Azure NetApp Files-team hebt ontvangen.
 
 Registreer de resource provider *micro soft. NetApp* :
 
@@ -46,7 +46,7 @@ az provider register --namespace Microsoft.NetApp --wait
 > [!NOTE]
 > Dit kan enige tijd duren voordat de bewerking is voltooid.
 
-Wanneer u een Azure NetApp-account maakt voor gebruik met AKS, moet u het account maken in de resource groep van het **knoop punt** . Haal eerst de naam van de resource groep op met de opdracht [AZ AKS show][az-aks-show] en voeg de `--query nodeResourceGroup` query parameter toe. In het volgende voor beeld wordt de resource groep node opgehaald voor het AKS-cluster met de naam *myAKSCluster* in de naam van de resource groep *myResourceGroup* :
+Wanneer u een Azure NetApp-account maakt voor gebruik met AKS, moet u het account maken in de resource groep van het **knoop punt** . Haal eerst de naam van de resource groep op met de opdracht [AZ AKS show][az-aks-show] en voeg de `--query nodeResourceGroup` query parameter toe. In het volgende voor beeld wordt de resource groep node opgehaald voor het AKS-cluster met de naam *myAKSCluster* in de naam van de resource groep *myResourceGroup*:
 
 ```azurecli-interactive
 az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv
@@ -158,6 +158,8 @@ spec:
     storage: 100Gi
   accessModes:
     - ReadWriteMany
+  mountOptions:
+    - vers=3
   nfs:
     server: 10.0.0.4
     path: /myfilepath2

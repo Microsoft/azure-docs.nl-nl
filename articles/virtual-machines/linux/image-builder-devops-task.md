@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: a3016900b6265bfd56ad1a5a71f70efc01181af5
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 43447454b82b74c10b1d53c41c7883b0b9bef242
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499251"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196500"
 ---
 # <a name="azure-image-builder-service-devops-task"></a>Azure Image Builder service DevOps-taak
 
@@ -55,7 +55,7 @@ Er zijn twee taken voor Azure VM Image Builder (AIB) DevOps:
 
 ## <a name="add-task-to-release-pipeline"></a>Taak toevoegen aan pijp lijn vrijgeven
 
-Bewerkings **pijplijn voor release**  >  **Edit** selecteren
+Bewerkings **pijplijn voor release**  >   selecteren
 
 Selecteer op de gebruikers agent *+* om toe te voegen en vervolgens naar de **opbouw functie voor installatie kopieën** te zoeken. Selecteer **Toevoegen**.
 
@@ -194,7 +194,7 @@ In het volgende voor beeld wordt uitgelegd hoe dit werkt:
     
 #### <a name="total-length-of-image-build"></a>Totale lengte van de afbeeldings opbouw
 
-De totale lengte kan nog niet worden gewijzigd in de pijplijn taak DevOps. De standaard instelling is 240 minuten. Als u de [buildTimeoutInMinutes](./image-builder-json.md?bc=%2fazure%2fvirtual-machines%2fwindows%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#properties-buildtimeoutinminutes)wilt verhogen, kunt u een AZ cli-taak gebruiken in de release pijplijn. Configureer de taak om een sjabloon te kopiëren en in te dienen. Zie deze [oplossing](https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/4_Using_ENV_Variables#using-environment-variables-and-parameters-with-image-builder)voor een voor beeld of gebruik AZ Power shell.
+De totale lengte kan nog niet worden gewijzigd in de pijplijn taak DevOps. De standaard instelling is 240 minuten. Als u de [buildTimeoutInMinutes](./image-builder-json.md#properties-buildtimeoutinminutes)wilt verhogen, kunt u een AZ cli-taak gebruiken in de release pijplijn. Configureer de taak om een sjabloon te kopiëren en in te dienen. Zie deze [oplossing](https://github.com/danielsollondon/azvmimagebuilder/tree/master/solutions/4_Using_ENV_Variables#using-environment-variables-and-parameters-with-image-builder)voor een voor beeld of gebruik AZ Power shell.
 
 
 #### <a name="storage-account"></a>Opslagaccount
@@ -239,7 +239,7 @@ U kunt geen waarden door geven. met de opbouw functie voor installatie kopieën 
 
 * [VM-grootte](image-builder-json.md#vmprofile) : u kunt de grootte van de virtuele machine overschrijven van de standaard waarde van *Standard_D1_v2*. U kunt overschrijven om de totale aanpassings tijd te verminderen of omdat u de installatie kopieën wilt maken die afhankelijk zijn van bepaalde VM-grootten, zoals GPU/HPC, enzovoort.
 
-## <a name="how-it-works"></a>Hoe werkt het?
+## <a name="how-it-works"></a>Uitleg
 
 Wanneer u de release maakt, maakt de taak een container in het opslag account met de naam *ImageBuilder-vststask*. Het zips en uploadt uw bouw artefacten en maakt een SAS-token voor het zip-bestand.
 

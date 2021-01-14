@@ -14,18 +14,18 @@ ms.workload: infrastructure
 ms.date: 06/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 9254b3d19bd840b62d2f5f7023eba9a91e605d1e
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2729369347de92153e9e8b84e008e5e22e732081
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967513"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197435"
 ---
 # <a name="sap-hana-large-instances-storage-architecture"></a>Opslag architectuur van SAP HANA (grote exemplaren)
 
 De opslag indeling voor SAP HANA op Azure (grote instanties) wordt geconfigureerd door SAP HANA op het klassieke implementatie model per door SAP aanbevolen richt lijnen. De richt lijnen worden beschreven in het Witboek [SAP Hana Storage-vereisten](https://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html) .
 
-De HANA grote instantie van de klasse type I wordt geleverd met vier keer zoveel geheugen als opslag volume. Voor de klasse type II van HANA grote instantie-eenheden is de opslag niet vier keer meer. De eenheden worden geleverd met een volume dat is bedoeld voor het opslaan van de back-ups van HANA-transactie Logboeken. Zie [SAP Hana (grote exemplaren) installeren en configureren op Azure](hana-installation.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)voor meer informatie.
+De HANA grote instantie van de klasse type I wordt geleverd met vier keer zoveel geheugen als opslag volume. Voor de klasse type II van HANA grote instantie-eenheden is de opslag niet vier keer meer. De eenheden worden geleverd met een volume dat is bedoeld voor het opslaan van de back-ups van HANA-transactie Logboeken. Zie [SAP Hana (grote exemplaren) installeren en configureren op Azure](hana-installation.md)voor meer informatie.
 
 Zie de volgende tabel voor meer informatie over de opslag toewijzing. De tabel bevat de ruwe capaciteit voor de verschillende volumes die worden meegeleverd met de verschillende HANA grote instantie-eenheden.
 
@@ -94,7 +94,7 @@ Deze grootten zijn ruwe volume nummers die enigszins kunnen variëren op basis v
 
 Mogelijk hebt u meer opslag ruimte nodig. U kunt opslag toevoegen door extra opslag ruimte te kopen in 1 TB eenheden. Deze extra opslag ruimte kan worden toegevoegd als aanvullend volume. Het kan ook worden gebruikt om een of meer van de bestaande volumes uit te breiden. Het is niet mogelijk om de grootte van de volumes te verlagen zoals oorspronkelijk geïmplementeerd en voornamelijk gedocumenteerd door de vorige tabellen. Het is ook niet mogelijk om de namen van de volumes of koppel namen te wijzigen. De eerder beschreven opslag volumes worden gekoppeld aan de HANA grote instantie-eenheden als NFS4-volumes.
 
-U kunt opslag momentopnamen gebruiken voor back-up-en herstel bewerkingen en herstel na een nood geval. Zie [SAP Hana (grote instanties) hoge Beschik baarheid en herstel na nood gevallen op Azure](hana-overview-high-availability-disaster-recovery.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)voor meer informatie.
+U kunt opslag momentopnamen gebruiken voor back-up-en herstel bewerkingen en herstel na een nood geval. Zie [SAP Hana (grote instanties) hoge Beschik baarheid en herstel na nood gevallen op Azure](hana-overview-high-availability-disaster-recovery.md)voor meer informatie.
 
 Raadpleeg [HLI ondersteunde scenario's](hana-supported-scenario.md) voor de details van de opslag indeling voor uw scenario.
 

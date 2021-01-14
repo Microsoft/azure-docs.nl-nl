@@ -13,18 +13,18 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 04/25/2019
 ms.author: genli
-ms.openlocfilehash: 4cec8f77cacc5d3492dd6a5f8a8baa060f910763
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2cc6ef9b1d9ca8336162b524356ea6e0d1bf5fd2
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91650593"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197656"
 ---
 # <a name="reset-local-windows-password-for-azure-vm-offline"></a>Offline een lokaal Windows-wachtwoord opnieuw instellen voor een virtuele Azure-machine
-U kunt het lokale Windows-wacht woord van een virtuele machine in azure opnieuw instellen met behulp van de [Azure portal of Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) , op voor waarde dat de Azure-gast agent is geïnstalleerd. Deze methode is de belangrijkste manier om een wacht woord opnieuw in te stellen voor een Azure-VM. Als u problemen ondervindt met de Azure Guest agent die niet reageert of als u niet kunt installeren na het uploaden van een aangepaste installatie kopie, kunt u een Windows-wacht woord hand matig opnieuw instellen. In dit artikel wordt beschreven hoe u een wacht woord voor een lokaal account opnieuw instelt door de virtuele schijf van het bron besturingssysteem te koppelen aan een andere virtuele machine. De stappen die in dit artikel worden beschreven, zijn niet van toepassing op Windows-domein controllers. 
+U kunt het lokale Windows-wacht woord van een virtuele machine in azure opnieuw instellen met behulp van de [Azure portal of Azure PowerShell](reset-rdp.md) , op voor waarde dat de Azure-gast agent is geïnstalleerd. Deze methode is de belangrijkste manier om een wacht woord opnieuw in te stellen voor een Azure-VM. Als u problemen ondervindt met de Azure Guest agent die niet reageert of als u niet kunt installeren na het uploaden van een aangepaste installatie kopie, kunt u een Windows-wacht woord hand matig opnieuw instellen. In dit artikel wordt beschreven hoe u een wacht woord voor een lokaal account opnieuw instelt door de virtuele schijf van het bron besturingssysteem te koppelen aan een andere virtuele machine. De stappen die in dit artikel worden beschreven, zijn niet van toepassing op Windows-domein controllers. 
 
 > [!WARNING]
-> Gebruik deze methode alleen als laatste redmiddel. Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure portal of Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) eerst.
+> Gebruik deze methode alleen als laatste redmiddel. Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure portal of Azure PowerShell](reset-rdp.md) eerst.
 
 ## <a name="overview-of-the-process"></a>Overzicht van het proces
 De belangrijkste stappen voor het uitvoeren van een lokale wacht woord opnieuw instellen voor een Windows-VM in azure wanneer er geen toegang tot de Azure-gast agent is:
@@ -41,7 +41,7 @@ De belangrijkste stappen voor het uitvoeren van een lokale wacht woord opnieuw i
 > [!NOTE]
 > De stappen zijn niet van toepassing op Windows-domein controllers. Het werkt alleen op een zelfstandige server of op een server die lid is van een domein.
 
-Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure portal of Azure PowerShell](reset-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) voordat u de volgende stappen uitvoert. Zorg ervoor dat u een back-up van uw VM hebt voordat u begint.
+Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure portal of Azure PowerShell](reset-rdp.md) voordat u de volgende stappen uitvoert. Zorg ervoor dat u een back-up van uw VM hebt voordat u begint.
 
 1. Maak een moment opname van de besturingssysteem schijf van de betreffende virtuele machine, maakt een schijf van de moment opname en koppel de schijf vervolgens aan een virtuele machine voor probleem oplossing. Zie [problemen met een Windows-VM oplossen door de besturingssysteem schijf te koppelen aan een herstel-VM met behulp van de Azure Portal](troubleshoot-recovery-disks-portal-windows.md)voor meer informatie.
 2. Maak verbinding met de virtuele machine voor probleem oplossing met behulp van Extern bureaublad.
@@ -71,10 +71,17 @@ Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure po
      0Parameters=
      ```
      
-     :::image type="content" source="./media/reset-local-password-without-agent/create-scripts-ini-1.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand." <username> /add
+     :::image type="content" source="./media/reset-local-password-without-agent/create-scripts-ini-1.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het script.ini-bestand.":::
+
+5. Maak `FixAzureVM.cmd` in `\Windows\System32\GroupPolicy\Machine\Scripts\Startup\` met de volgende inhoud, vervang `<username>` en `<newpassword>` door uw eigen waarden:
+   
+    ```
+    net user <username> <newpassword> /add /Y
+    net localgroup administrators <username> /add
+    net localgroup "remote desktop users" <username> /add
     ```
 
-    :::image type="content" source="./media/reset-local-password-without-agent/create-fixazure-cmd-1.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+    :::image type="content" source="./media/reset-local-password-without-agent/create-fixazure-cmd-1.png" alt-text="Scherm opname van het zojuist gemaakte FixAzureVM. cmd-bestand waarin u de gebruikers naam en het wacht woord bijwerkt.":::
    
     U moet voldoen aan de geconfigureerde wachtwoord complexiteits vereisten voor uw virtuele machine bij het definiëren van het nieuwe wacht woord.
 
@@ -106,31 +113,31 @@ Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure po
    
    * Selecteer de virtuele machine in de Azure Portal en klik vervolgens op *verwijderen*:
      
-     :::image type="content" source="./media/reset-local-password-without-agent/delete-vm-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+     :::image type="content" source="./media/reset-local-password-without-agent/delete-vm-classic.png" alt-text="Bestaande klassieke VM verwijderen":::
 
 2. Koppel de besturingssysteem schijf van de bron-VM aan de virtuele machine voor probleem oplossing. De virtuele machine voor probleem oplossing moet zich in dezelfde regio bevinden als de besturingssysteem schijf van de bron-VM (zoals `West US` ):
    
    1. Selecteer de virtuele machine voor probleem oplossing in de Azure Portal. Klik op *schijven*  |  *bestaande koppelen*:
      
-      :::image type="content" source="./media/reset-local-password-without-agent/disks-attach-existing-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-attach-existing-classic.png" alt-text="Bestaande schijf koppelen-klassiek":::
      
    2. Selecteer *VHD-bestand* en selecteer vervolgens het opslag account dat uw bron-VM bevat:
      
-      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-storage-account-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-storage-account-classic.png" alt-text="Opslag account selecteren-klassiek":::
      
-   3. Schakel het selectie vakje *klassieke opslag accounts weer geven*in en selecteer vervolgens de bron container. De bron container is doorgaans *vhd's*:
+   3. Schakel het selectie vakje *klassieke opslag accounts weer geven* in en selecteer vervolgens de bron container. De bron container is doorgaans *vhd's*:
      
-      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-container-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-container-classic.png" alt-text="Selecteer een opslag container-klassiek":::
 
-      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-container-vhds-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-container-vhds-classic.png" alt-text="Opslag container selecteren-VHD-klassiek":::
      
    4. Selecteer de VHD van het besturings systeem die u wilt koppelen. Klik op *selecteren* om het proces te volt ooien:
      
-      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-source-vhd-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-select-source-vhd-classic.png" alt-text="Virtuele bron schijf selecteren-klassiek":::
 
    5. Klik op OK om de schijf te koppelen
 
-      :::image type="content" source="./media/reset-local-password-without-agent/disks-attach-okay-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+      :::image type="content" source="./media/reset-local-password-without-agent/disks-attach-okay-classic.png" alt-text="Bestaande schijf koppelen-dialoog venster-klassiek":::
 
 3. Maak verbinding met de virtuele machine voor probleem oplossing met Extern bureaublad en zorg ervoor dat de besturingssysteem schijf van de bron-VM zichtbaar is:
 
@@ -140,7 +147,7 @@ Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure po
 
    3. Zoek in Verkenner naar de gegevens schijf die u hebt toegevoegd. Als de VHD van de bron-VM de enige gegevens schijf is die is gekoppeld aan de virtuele machine voor probleem oplossing, moet deze het station F: zijn:
      
-      :::image type="content" source="./media/reset-local-password-without-agent/troubleshooting-vm-file-explorer-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+      :::image type="content" source="./media/reset-local-password-without-agent/troubleshooting-vm-file-explorer-classic.png" alt-text="Gekoppelde gegevens schijf weer geven":::
 
 4. Maken `gpt.ini` in `\Windows\System32\GroupPolicy` op het station van de bron-VM (indien `gpt.ini` aanwezig, naam wijzigen in `gpt.ini.bak` ):
    
@@ -156,7 +163,7 @@ Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure po
      Version=1
      ```
      
-     :::image type="content" source="./media/reset-local-password-without-agent/create-gpt-ini-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+     :::image type="content" source="./media/reset-local-password-without-agent/create-gpt-ini-classic.png" alt-text="gpt.ini maken-klassiek":::
 
 5. Maken `scripts.ini` in `\Windows\System32\GroupPolicy\Machine\Scripts\` . Zorg ervoor dat verborgen mappen worden weer gegeven. Als dat nodig is, maakt u de `Machine` `Scripts` mappen of.
    
@@ -168,10 +175,17 @@ Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure po
      0Parameters=
      ```
      
-     :::image type="content" source="./media/reset-local-password-without-agent/create-scripts-ini-classic-1.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand." <username> /add
+     :::image type="content" source="./media/reset-local-password-without-agent/create-scripts-ini-classic-1.png" alt-text="scripts.ini maken-klassiek":::
+
+6. Maak `FixAzureVM.cmd` in `\Windows\System32\GroupPolicy\Machine\Scripts\Startup\` met de volgende inhoud, vervang `<username>` en `<newpassword>` door uw eigen waarden:
+   
+    ```
+    net user <username> <newpassword> /add /Y
+    net localgroup administrators <username> /add
+    net localgroup "remote desktop users" <username> /add
     ```
 
-    :::image type="content" source="./media/reset-local-password-without-agent/create-fixazure-cmd-1.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+    :::image type="content" source="./media/reset-local-password-without-agent/create-fixazure-cmd-1.png" alt-text="FixAzureVM. cmd maken-klassiek":::
    
     U moet voldoen aan de geconfigureerde wachtwoord complexiteits vereisten voor uw virtuele machine bij het definiëren van het nieuwe wacht woord.
 
@@ -179,19 +193,19 @@ Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure po
    
    1. Selecteer de virtuele machine voor probleem oplossing in de Azure Portal, klik op *schijven*.
    
-   2. Selecteer de gegevens schijf die is gekoppeld in stap 2, klik op **ontkoppelen**en klik vervolgens op **OK**.
+   2. Selecteer de gegevens schijf die is gekoppeld in stap 2, klik op **ontkoppelen** en klik vervolgens op **OK**.
 
-     :::image type="content" source="./media/reset-local-password-without-agent/data-disks-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+     :::image type="content" source="./media/reset-local-password-without-agent/data-disks-classic.png" alt-text="Schijf ontkoppelen: problemen met virtuele machine oplossen-klassiek":::
      
-     :::image type="content" source="./media/reset-local-password-without-agent/detach-disk-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+     :::image type="content" source="./media/reset-local-password-without-agent/detach-disk-classic.png" alt-text="Schijf ontkoppelen: problemen met de VM oplossen-dialoog venster-klassiek":::
 
 8. Maak een VM op basis van de besturingssysteem schijf van de bron-VM:
    
-     :::image type="content" source="./media/reset-local-password-without-agent/create-new-vm-from-template-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+     :::image type="content" source="./media/reset-local-password-without-agent/create-new-vm-from-template-classic.png" alt-text="Een VM maken op basis van sjabloon-klassiek":::
 
-     :::image type="content" source="./media/reset-local-password-without-agent/choose-subscription-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+     :::image type="content" source="./media/reset-local-password-without-agent/choose-subscription-classic.png" alt-text="Een VM maken op basis van een sjabloon-abonnement kiezen-klassiek":::
 
-     :::image type="content" source="./media/reset-local-password-without-agent/create-vm-classic.png" alt-text="Scherm afbeelding met de updates die zijn aangebracht in het gpt.ini-bestand.":::
+     :::image type="content" source="./media/reset-local-password-without-agent/create-vm-classic.png" alt-text="Een virtuele machine maken op basis van een sjabloon-VM maken-klassiek":::
 
 ## <a name="complete-the-create-virtual-machine-experience"></a>De ervaring voor het maken van virtuele machines volt ooien
 
@@ -207,4 +221,4 @@ Probeer altijd een wacht woord opnieuw in te stellen met behulp van de [Azure po
       * Verwijder `gpt.ini` (indien `gpt.ini` aanwezig voor, en u de naam ervan hebt gewijzigd in `gpt.ini.bak` ), wijzig de naam van het `.bak` bestand in `gpt.ini` )
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie de [hand leiding voor probleem oplossing van RDP](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)als u nog steeds geen verbinding kunt maken met behulp van extern bureaublad. De [gedetailleerde hand leiding](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) voor het oplossen van problemen met RDP ziet u in plaats van specifieke stappen op probleemoplossings methoden. U kunt ook [een ondersteunings aanvraag voor Azure openen](https://azure.microsoft.com/support/options/) voor praktische hulp.
+Zie de [hand leiding voor probleem oplossing van RDP](troubleshoot-rdp-connection.md)als u nog steeds geen verbinding kunt maken met behulp van extern bureaublad. De [gedetailleerde hand leiding](detailed-troubleshoot-rdp.md) voor het oplossen van problemen met RDP ziet u in plaats van specifieke stappen op probleemoplossings methoden. U kunt ook [een ondersteunings aanvraag voor Azure openen](https://azure.microsoft.com/support/options/) voor praktische hulp.

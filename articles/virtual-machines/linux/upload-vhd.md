@@ -14,12 +14,12 @@ ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: df2b58e0067932edd9dfa21ee1a6fbb2a5c1fdf7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 941be52f25b08589134f693b9c0fe17a8a87ff28
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87289758"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196398"
 ---
 # <a name="create-a-linux-vm-from-a-custom-disk-with-the-azure-cli"></a>Een virtuele Linux-machine maken op basis van een aangepaste schijf met de Azure CLI
 
@@ -38,12 +38,12 @@ U hebt twee opties voor het maken van een aangepaste schijf:
 Als u de volgende stappen wilt uitvoeren, moet u:
 
 - Een virtuele Linux-machine die is voor bereid voor gebruik in Azure. In het gedeelte [de VM voorbereiden](#prepare-the-vm) van dit artikel wordt beschreven hoe u distributie informatie kunt vinden over het installeren van de Azure Linux-agent (waagent), die nodig is om verbinding te maken met een virtuele machine via SSH.
-- Het VHD-bestand van een bestaande door [Azure goedgekeurde Linux-distributie](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) (of Zie [informatie over niet-goedgekeurde distributies](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)) naar een virtuele schijf in de VHD-indeling. Er zijn meerdere hulpprogram ma's voor het maken van een virtuele machine en VHD:
+- Het VHD-bestand van een bestaande door [Azure goedgekeurde Linux-distributie](endorsed-distros.md) (of Zie [informatie over niet-goedgekeurde distributies](create-upload-generic.md)) naar een virtuele schijf in de VHD-indeling. Er zijn meerdere hulpprogram ma's voor het maken van een virtuele machine en VHD:
   - Installeer en configureer [qemu](https://en.wikibooks.org/wiki/QEMU/Installing_QEMU) of [KVM](https://www.linux-kvm.org/page/RunningKVM), waarbij u gebruik maakt van VHD als uw installatie kopie-indeling. Als dat nodig is, kunt u [een installatie kopie converteren](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) met `qemu-img convert` .
   - U kunt ook Hyper-V gebruiken [in Windows 10](/virtualization/hyper-v-on-windows/quick-start/enable-hyper-v) of [op Windows Server 2012/2012 R2](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/hh846766(v=ws.11)).
 
 > [!NOTE]
-> De nieuwere VHDX-indeling wordt niet ondersteund in Azure. Wanneer u een virtuele machine maakt, geeft u VHD op als de indeling. Indien nodig kunt u VHDX-schijven converteren naar VHD met [qemu-img Convert](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) of de [Convert-VHD](/powershell/module/hyper-v/convert-vhd?view=win10-ps) Power shell-cmdlet. Azure biedt geen ondersteuning voor het uploaden van dynamische Vhd's. Daarom moet u dergelijke schijven converteren naar statische Vhd's voordat u deze uploadt. U kunt hulpprogram ma's zoals [Azure VHD-Hulpprogram ma's gebruiken voor](https://github.com/Microsoft/azure-vhd-utils-for-go) het converteren van dynamische schijven tijdens het proces van het uploaden naar Azure.
+> De nieuwere VHDX-indeling wordt niet ondersteund in Azure. Wanneer u een virtuele machine maakt, geeft u VHD op als de indeling. Indien nodig kunt u VHDX-schijven converteren naar VHD met [qemu-img Convert](https://en.wikibooks.org/wiki/QEMU/Images#Converting_image_formats) of de [Convert-VHD](/powershell/module/hyper-v/convert-vhd) Power shell-cmdlet. Azure biedt geen ondersteuning voor het uploaden van dynamische Vhd's. Daarom moet u dergelijke schijven converteren naar statische Vhd's voordat u deze uploadt. U kunt hulpprogram ma's zoals [Azure VHD-Hulpprogram ma's gebruiken voor](https://github.com/Microsoft/azure-vhd-utils-for-go) het converteren van dynamische schijven tijdens het proces van het uploaden naar Azure.
 > 
 > 
 
@@ -56,20 +56,20 @@ Vervang in de volgende voor beelden voorbeeld parameter namen met uw eigen waard
 
 ## <a name="prepare-the-vm"></a>De virtuele machine voorbereiden
 
-Azure ondersteunt diverse Linux-distributies (Zie [goedgekeurde distributies](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)). In de volgende artikelen wordt beschreven hoe u de verschillende Linux-distributies voorbereidt die worden ondersteund in Azure:
+Azure ondersteunt diverse Linux-distributies (Zie [goedgekeurde distributies](endorsed-distros.md)). In de volgende artikelen wordt beschreven hoe u de verschillende Linux-distributies voorbereidt die worden ondersteund in Azure:
 
-* [CentOS-distributies](create-upload-centos.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Debian Linux](debian-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Oracle Linux](oracle-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Red Hat Enterprise Linux](redhat-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [SLES en OpenSUSE](suse-create-upload-vhd.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Ubuntu](create-upload-ubuntu.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Overige: niet-goedgekeurde distributies](create-upload-generic.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [CentOS-distributies](create-upload-centos.md)
+* [Debian Linux](debian-create-upload-vhd.md)
+* [Oracle Linux](oracle-create-upload-vhd.md)
+* [Red Hat Enterprise Linux](redhat-create-upload-vhd.md)
+* [SLES en OpenSUSE](suse-create-upload-vhd.md)
+* [Ubuntu](create-upload-ubuntu.md)
+* [Overige: niet-goedgekeurde distributies](create-upload-generic.md)
 
 Zie ook de [installatie notities van Linux](create-upload-generic.md#general-linux-installation-notes) voor meer algemene tips over het voorbereiden van Linux-installatie kopieën voor Azure.
 
 > [!NOTE]
-> De [Sla](https://azure.microsoft.com/support/legal/sla/virtual-machines/) van het Azure-platform is alleen van toepassing op Vm's waarop Linux wordt uitgevoerd wanneer een van de getekende distributies wordt gebruikt met de configuratie details zoals opgegeven onder ondersteunde versies in [Linux op Azure-Endorsed distributies](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+> De [Sla](https://azure.microsoft.com/support/legal/sla/virtual-machines/) van het Azure-platform is alleen van toepassing op Vm's waarop Linux wordt uitgevoerd wanneer een van de getekende distributies wordt gebruikt met de configuratie details zoals opgegeven onder ondersteunde versies in [Linux op Azure-Endorsed distributies](endorsed-distros.md).
 > 
 > 
 
@@ -117,7 +117,7 @@ az disk create \
     --source $snapshotId
 ```
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+## <a name="create-the-vm"></a>De VM maken
 
 Maak een virtuele machine met [AZ VM Create](/cli/azure/vm#az-vm-create) en attach (--attach-OS-disk) de beheerde schijf als de besturingssysteem schijf. In het volgende voor beeld wordt een VM gemaakt met de naam *myNewVM* met behulp van de beheerde schijf die u hebt gemaakt op basis van de GEÜPLOADe VHD
 
@@ -133,4 +133,4 @@ az vm create \
 U moet met de referenties van de bron-VM een SSH-verbinding met de virtuele machine kunnen maken. 
 
 ## <a name="next-steps"></a>Volgende stappen
-Nadat u uw aangepaste virtuele schijf hebt voor bereid en geüpload, kunt u meer lezen over het [gebruik van Resource Manager en sjablonen](../../azure-resource-manager/management/overview.md). Het is ook mogelijk dat u [een gegevens schijf wilt toevoegen](add-disk.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) aan de nieuwe virtuele machines. Als u toepassingen hebt die worden uitgevoerd op uw Vm's die u wilt openen, moet u [poorten en eind punten openen](nsg-quickstart.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Nadat u uw aangepaste virtuele schijf hebt voor bereid en geüpload, kunt u meer lezen over het [gebruik van Resource Manager en sjablonen](../../azure-resource-manager/management/overview.md). Het is ook mogelijk dat u [een gegevens schijf wilt toevoegen](add-disk.md) aan de nieuwe virtuele machines. Als u toepassingen hebt die worden uitgevoerd op uw Vm's die u wilt openen, moet u [poorten en eind punten openen](nsg-quickstart.md).

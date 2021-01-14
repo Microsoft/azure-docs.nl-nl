@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 12/03/2020
-ms.openlocfilehash: c824e0abea7320a20441e51caa2a05d534ff61b3
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 003a71f962652b1a1436f5d9875835534090a77a
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092683"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196585"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -33,8 +33,9 @@ In controle sfeer liggen zijn classificaties vergelijkbaar met de labels van tag
 Controle sfeer liggen maakt gebruik van dezelfde classificaties, ook wel aangeduid als gevoelige informatie typen, als Microsoft 365.  MIP-gevoeligheids labels worden gemaakt in de Microsoft 365 Security and Compliance Center (SCC). Op deze manier kunt u uw bestaande gevoelige labels uitbreiden over uw Azure controle sfeer liggen-assets.
 
 > [!NOTE]
-> Hoewel classificaties rechtstreeks overeenkomen (een sociaal-fiscaal nummer heeft een classificatie van het **sofi-nummer**), worden labels van gevoeligheid toegepast wanneer een of meer classificaties en scenario's samen worden gevonden. 
-> 
+> Classificaties worden rechtstreeks overeenkomen, zoals een sofi-nummer, dat een classificatie heeft van het **sofi-nummer**. 
+>
+> In contrast worden labels van gevoeligheid toegepast wanneer een of meer classificaties en voor waarden samen worden gevonden. In deze context verwijzen de [voor waarden](/microsoft-365/compliance/apply-sensitivity-label-automatically) naar alle para meters die u kunt definiëren voor ongestructureerde gegevens, zoals **nabijheid van een andere classificatie** en **% betrouw baarheid**. 
 
 Gevoeligheids labels in azure controle sfeer liggen kunnen worden gebruikt om automatisch labels toe te passen op bestanden en database kolommen.
 
@@ -91,11 +92,6 @@ Door de gevoeligheids labels van MIP uit te breiden met Azure controle sfeer lig
 > Omdat Microsoft 365 en Azure controle sfeer liggen afzonderlijke services zijn, is het mogelijk dat ze in verschillende regio's worden geïmplementeerd. Label namen en aangepaste gevoelige informatie typen worden beschouwd als klant gegevens en worden op dezelfde geografische locatie bewaard, standaard om de gevoeligheid van uw gegevens te beschermen en AVG wetten te voor komen.
 >
 > Daarom worden labels en aangepaste gevoelige informatie typen niet standaard gedeeld met Azure controle sfeer liggen en vereisen uw toestemming om ze te gebruiken in azure controle sfeer liggen.
-
-> [!IMPORTANT]
-> Met uw toestemming kan micro soft de label naam en de naam van het aangepaste gevoelige informatie type delen aan *zowel* Azure controle sfeer liggen als Azure Security Center (ASC). Micro soft gebruikt de label gegevens van Azure controle sfeer liggen om uw aanbevelingen en waarschuwingen in ASC te verrijken. 
->
-> De toestemming van Microsoft 365 compliance Center is van toepassing op het delen van deze gegevens met beide services. Er is momenteel geen optie voor het delen van label gegevens met Azure controle sfeer liggen.
 
 **Gevoeligheids labels uitbreiden naar controle sfeer liggen:**
 
@@ -185,11 +181,11 @@ Scan uw gegevens in azure controle sfeer liggen om automatisch de labels toe te 
 
 Voor meer informatie over het instellen van scans op diverse assets in azure controle sfeer liggen raadpleegt u:
 
-|Bron  |Naslaginformatie  |
+|Bron  |Referentie  |
 |---------|---------|
 |**Azure Blob Storage**     |[Azure-Blob Storage registreren en controleren](register-scan-azure-blob-storage-source.md)         |
 |**Azure Data Lake Storage**     |[Azure Data Lake Storage Gen1 registreren en scannen](register-scan-adls-gen1.md) </br>[Azure Data Lake Storage Gen2 registreren en scannen](register-scan-adls-gen2.md)         |
-|**Azure SQL Databases**|[Een Azure SQL Database registreren en scannen](register-scan-azure-sql-database.md) </br>[Een door Azure SQL Database beheerd exemplaar registreren en scannen](register-scan-azure-sql-database-managed-instance.md)|
+|**Azure SQL Databases**|[Een Azure SQL Database registeren en scannen](register-scan-azure-sql-database.md) </br>[Azure SQL Database Managed Instance registeren en scannen](register-scan-azure-sql-database-managed-instance.md)|
 | | |
 
 ## <a name="view-labels-on-assets"></a>Labels op assets weer geven

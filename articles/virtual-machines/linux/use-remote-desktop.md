@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 09/12/2019
 ms.author: cynthn
-ms.openlocfilehash: efcfb2fd431dd9626ddcf918127964672b0e5ce0
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: bea7e38c35ceddafb64937d6e1a6f69d7c727f44
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500475"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98196381"
 ---
 # <a name="install-and-configure-remote-desktop-to-connect-to-a-linux-vm-in-azure"></a>Extern bureaublad installeren en configureren om verbinding te maken met een virtuele Linux-machine in azure
 Virtuele Linux-machines (Vm's) in Azure worden meestal beheerd vanaf de opdracht regel met behulp van een SSH-verbinding (Secure Shell). Wanneer u geen ervaring hebt met Linux of voor snelle probleemoplossings scenario's, is het gebruik van extern bureau blad mogelijk eenvoudiger. In dit artikel wordt beschreven hoe u een desktop-omgeving ([xfce](https://www.xfce.org)) en extern bureau blad ([xrdp](http://xrdp.org)) installeert en configureert voor uw virtuele Linux-machine met behulp van het Resource Manager-implementatie model.
@@ -84,7 +84,7 @@ sudo passwd azureuser
 
 
 ## <a name="create-a-network-security-group-rule-for-remote-desktop-traffic"></a>Een regel voor de netwerk beveiligings groep voor Extern bureaublad verkeer maken
-Als u wilt toestaan dat Extern bureaublad verkeer uw virtuele Linux-machine bereikt, moet er een regel voor de netwerk beveiligings groep worden gemaakt waarmee TCP op poort 3389 uw virtuele machine kan bereiken. Zie [Wat is een netwerk beveiligings groep?](../../virtual-network/network-security-groups-overview.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) voor meer informatie over regels voor netwerk beveiligings groepen. U kunt ook [de Azure Portal gebruiken om een regel voor een netwerk beveiligings groep te maken](../windows/nsg-quickstart-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Als u wilt toestaan dat Extern bureaublad verkeer uw virtuele Linux-machine bereikt, moet er een regel voor de netwerk beveiligings groep worden gemaakt waarmee TCP op poort 3389 uw virtuele machine kan bereiken. Zie [Wat is een netwerk beveiligings groep?](../../virtual-network/network-security-groups-overview.md) voor meer informatie over regels voor netwerk beveiligings groepen. U kunt ook [de Azure Portal gebruiken om een regel voor een netwerk beveiligings groep te maken](../windows/nsg-quickstart-portal.md).
 
 In het volgende voor beeld wordt een regel voor een netwerk beveiligings groep gemaakt met [AZ VM Open-Port](/cli/azure/vm#az-vm-open-port) op poort *3389*. Open vanuit de Azure CLI, niet de SSH-sessie naar uw virtuele machine, de volgende regel voor de netwerk beveiligings groep:
 

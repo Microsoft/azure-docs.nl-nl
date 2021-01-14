@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 06/17/2019
 ms.author: hrasheed
-ms.openlocfilehash: 3c1c7ac8fe8b7adf287bcde30a054df5ebaa63d7
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: 2b6ea68d069b90293ab35024bebf3fbdc8acb592
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94337437"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197673"
 ---
 # <a name="install-third-party-apache-hadoop-applications-on-azure-hdinsight"></a>Apache Hadoop-toepassingen van derden installeren op Azure HDInsight
 
@@ -37,7 +37,7 @@ De volgende lijst bevat de gepubliceerde toepassingen:
 |[Sterren explosie Presto voor Azure HDInsight](https://azuremarketplace.microsoft.com/marketplace/apps/starburstdatainc1579800938563.starburst-presto?tab=Overview) |Hadoop |Presto is een snelle en schaal bare gedistribueerde SQL-query-engine. Presto is ontworpen voor de schei ding van opslag en Compute en is ideaal voor het opvragen van gegevens in Azure Data Lake Storage, Azure Blob Storage, SQL-en NoSQL-data bases en andere gegevens bronnen. |
 |[StreamSets gegevens verzamelaar voor HDInsight-Cloud](https://azuremarketplace.microsoft.com/marketplace/apps/streamsets.streamsets-data-collector-hdinsight) |Hadoop, HBase, Spark, Kafka |StreamSets Data Collector is een licht gewicht krachtige engine waarmee gegevens in realtime worden gestreamd. Gebruik gegevens verzamelaar om gegevens in uw gegevens stromen te routeren en te verwerken. Het wordt geleverd met een proef licentie van 30 dagen. |
 |[Trifacta Wrangler Enter prise](https://azuremarketplace.microsoft.com/marketplace/apps/trifacta.trifacta-db?tab=Overview) |Hadoop, Spark, HBase |Trifacta Wrangler Enter prise voor HDInsight biedt ondersteuning voor zakelijke gegevens wrangling voor elke schaal van gegevens. De kosten voor het uitvoeren van Trifacta op Azure zijn een combi natie van kosten voor het Trifacta-abonnement plus de kosten van de Azure-infra structuur voor de virtuele machines. |
-|[Unifi-gegevens platform](https://unifisoftware.com/platform/) |Hadoop, HBase, Storm, Spark |Het Unifi-gegevens platform is een naadloos geïntegreerde suite van self-service data tools, ontworpen om de zakelijke gebruiker in staat te stellen gegevens uitdagingen aan te pakken waarmee incrementele omzet wordt gestimuleerd, de kosten en de operationele complexiteit worden verminderd. |
+|[Unifi-gegevens platform](https://www.crunchbase.com/organization/unifi-software) |Hadoop, HBase, Storm, Spark |Het Unifi-gegevens platform is een naadloos geïntegreerde suite van self-service data tools, ontworpen om de zakelijke gebruiker in staat te stellen gegevens uitdagingen aan te pakken waarmee incrementele omzet wordt gestimuleerd, de kosten en de operationele complexiteit worden verminderd. |
 |[Unraveldata APM](https://azuremarketplace.microsoft.com/marketplace/apps/unravel-data.unravel-app) |Spark |Unravel data-app voor HDInsight Spark-cluster. |
 |[AI-Driven van water lijn Data Catalog](https://azuremarketplace.microsoft.com/marketplace/apps/waterline_data.waterline_data) |Spark |De water Raad catalogi, organiseert en bestuurt gegevens met behulp van AI om gegevens automatisch te labelen met bedrijfs voorwaarden. De Business-transcrib Catalog van de water lijn is een essentieel onderdeel van het succes van self-service analyses, naleving en governance en IT-beheer. |
 
@@ -85,7 +85,7 @@ De portal toont een lijst van de geïnstalleerde HDInsight-toepassingen voor een
 
     |Eigenschap | Beschrijving |
     |---|---|
-    |Naam van app |Toepassings naam. |
+    |Naam van app |Toepassingsnaam. |
     |Status |Toepassings status. |
     |Webpagina |De URL van de webtoepassing die u hebt geïmplementeerd op het Edge-knoop punt. De referenties zijn dezelfde als de HTTP-gebruikersreferenties die u hebt geconfigureerd voor het cluster. |
     |SSH-eind punt |U kunt SSH gebruiken om verbinding te maken met het Edge-knoop punt. De SSH-referenties zijn dezelfde als de SSH-gebruikersreferenties die u hebt geconfigureerd voor het cluster. Zie [SSH-sleutels gebruiken met HDInsight](hdinsight-hadoop-linux-use-ssh-unix.md) voor informatie. |

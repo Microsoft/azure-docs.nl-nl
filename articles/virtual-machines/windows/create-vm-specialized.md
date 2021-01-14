@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 10/10/2019
 ms.author: cynthn
-ms.openlocfilehash: cddc7f4f453f22b0cb36b1d3a1e9c2fba2dcabaf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 577b8527d95a6410deca8002cddfaae31be1fc97
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455097"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98197486"
 ---
 # <a name="create-a-windows-vm-from-a-specialized-disk-by-using-powershell"></a>Een virtuele Windows-machine maken vanaf een speciale schijf met PowerShell
 
@@ -54,7 +54,7 @@ U kunt de VHD uploaden vanaf een gespecialiseerde virtuele machine die is gemaak
 ### <a name="prepare-the-vm"></a>De virtuele machine voorbereiden
 Gebruik de VHD als-is om een nieuwe virtuele machine te maken. 
   
-  * [Bereid een Windows VHD voor om te uploaden naar Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Generaliseer de virtuele machine **niet** met behulp van Sysprep.
+  * [Bereid een Windows VHD voor om te uploaden naar Azure](prepare-for-upload-vhd-image.md). Generaliseer de virtuele machine **niet** met behulp van Sysprep.
   * Verwijder alle hulpprogram ma's voor gast-virtualisatie en de agents die zijn geïnstalleerd op de virtuele machine (zoals VMware-hulpprogram ma's).
   * Zorg ervoor dat de virtuele machine is geconfigureerd om het IP-adres en DNS-instellingen van DHCP op te halen. Dit zorgt ervoor dat de server een IP-adres binnen het virtuele netwerk verkrijgt wanneer het wordt gestart. 
 
@@ -193,7 +193,7 @@ $nsg = New-AzNetworkSecurityGroup `
     
 ```
 
-Zie [poorten openen voor een virtuele machine in azure met behulp van Power shell](nsg-quickstart-powershell.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)voor meer informatie over eind punten en NSG regels.
+Zie [poorten openen voor een virtuele machine in azure met behulp van Power shell](nsg-quickstart-powershell.md)voor meer informatie over eind punten en NSG regels.
 
 ### <a name="create-a-public-ip-address-and-nic"></a>Een openbaar IP-adres en een NIC maken
 Als u communicatie met de virtuele machine in het virtuele netwerk wilt inschakelen, hebt u een [openbaar IP-adres](../../virtual-network/public-ip-addresses.md) en een netwerk interface nodig.
@@ -264,7 +264,7 @@ RequestId IsSuccessStatusCode StatusCode ReasonPhrase
 ```
 
 ### <a name="verify-that-the-vm-was-created"></a>Controleren of de virtuele machine is gemaakt
-U ziet de zojuist gemaakte vm in de [Azure Portal](https://portal.azure.com) onder **Browse**  >  **virtuele machines** bladeren of met behulp van de volgende Power shell-opdrachten.
+U ziet de zojuist gemaakte vm in de [Azure Portal](https://portal.azure.com) onder   >  **virtuele machines** bladeren of met behulp van de volgende Power shell-opdrachten.
 
 ```powershell
 $vmList = Get-AzVM -ResourceGroupName $destinationResourceGroup

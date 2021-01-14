@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 01/04/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c06988bf9c3558f5ef82862bdbcd821dc42ca28a
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 5ec3500c124d3e4f8cb1b46445c28c6a64c93526
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97880984"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98195446"
 ---
 #  <a name="what-is-sap-hana-on-azure-large-instances"></a>Wat is SAP HANA on Azure (grote exemplaren)?
 
@@ -52,11 +52,11 @@ Dit document is een van de documenten die betrekking hebben SAP HANA op Azure (g
 
 De verschillende documenten van de HANA-ondersteuning voor grote instanties omvatten de volgende gebieden:
 
-- [Overzicht en architectuur van SAP HANA (grote exemplaren) op Azure](hana-overview-architecture.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Infra structuur en connectiviteit van SAP HANA (grote instanties) op Azure](hana-overview-infrastructure-connectivity.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [SAP HANA (grote exemplaren) installeren en configureren op Azure](hana-installation.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [SAP HANA (grote instanties) hoge Beschik baarheid en herstel na nood geval op Azure](hana-overview-high-availability-disaster-recovery.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-- [Problemen met SAP HANA (grote instanties) oplossen en controleren op Azure](troubleshooting-monitoring.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Overzicht en architectuur van SAP HANA (grote exemplaren) op Azure](hana-overview-architecture.md)
+- [Infra structuur en connectiviteit van SAP HANA (grote instanties) op Azure](hana-overview-infrastructure-connectivity.md)
+- [SAP HANA (grote exemplaren) installeren en configureren op Azure](hana-installation.md)
+- [SAP HANA (grote instanties) hoge Beschik baarheid en herstel na nood geval op Azure](hana-overview-high-availability-disaster-recovery.md)
+- [Problemen met SAP HANA (grote instanties) oplossen en controleren op Azure](troubleshooting-monitoring.md)
 - [Hoge Beschik baarheid die in SUSE is ingesteld met behulp van de STONITH](./ha-setup-with-stonith.md)
 - [Back-up en herstel van het besturings systeem voor de type II Sku's van Revision 3-stem pels](./os-backup-type-ii-skus.md)
 - [Besparen op SAP HANA Large Instances met een Azure-reservering](../../../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md)

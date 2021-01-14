@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla, dawoo
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a96f01d38fb41f64336d0a2b1d2aa33a96ca9f1a
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: fc0be7e50c5cce511fafd7d8b407626bd57659bd
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96742745"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183129"
 ---
 # <a name="manage-user-authentication-methods-for-azure-ad-multi-factor-authentication"></a>Gebruikers authenticatie methoden voor Azure AD Multi-Factor Authentication beheren
 
@@ -73,7 +73,7 @@ Get-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com
 Maak een verificatie methode voor mobiele telefoons voor een specifieke gebruiker.
 
 ```powershell
-New-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com -phoneType “mobile” -phoneNumber "+1 7748933135"
+New-MgUserAuthenticationPhoneMethod -UserId balas@contoso.com -phoneType "mobile" -phoneNumber "+1 7748933135"
 ```
 
 Een specifieke telefoon methode voor een gebruiker verwijderen

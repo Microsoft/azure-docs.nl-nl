@@ -11,12 +11,12 @@ author: johnpaulkee
 ms.author: joke
 ms.reviwer: sstein
 ms.date: 10/21/2020
-ms.openlocfilehash: 27cd35eba7320022ea9b137a7b8bb079a1226751
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 1fc5653f08f8fc7916257dfdba570f451c0afa75
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427288"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131930"
 ---
 # <a name="create-an-elastic-job-agent-using-powershell-preview"></a>Een elastische-taakagent maken met behulp van PowerShell (preview)
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -59,7 +59,7 @@ Import-Module Az.Sql
 Get-Module Az.Sql
 ```
 
-Voor deze zelfstudie heeft u niet alleen de module **Az.Sql** nodig, maar ook de PowerShell-module *sqlserver* . Zie [SQL Server PowerShell-module installeren](/sql/powershell/download-sql-server-ps-module) voor meer informatie.
+Voor deze zelfstudie heeft u niet alleen de module **Az.Sql** nodig, maar ook de PowerShell-module *sqlserver*. Zie [SQL Server PowerShell-module installeren](/sql/powershell/download-sql-server-ps-module) voor meer informatie.
 
 ## <a name="create-required-resources"></a>Vereiste resources maken
 
@@ -123,19 +123,11 @@ $db2 = New-AzSqlDatabase -ResourceGroupName $resourceGroupName -ServerName $targ
 $db2
 ```
 
-## <a name="use-elastic-jobs"></a>Elastic Jobs gebruiken
-
-Als u Elastic Jobs wilt gebruiken, moet u de functie in uw Azure-abonnement registreren door de volgende opdracht uit te voeren. Voer deze opdracht één keer uit voor het abonnement waaraan u de Elastic Job-agent wilt toewijzen. Abonnementen met alleen databases die taakdoelen zijn, hoeven niet te worden geregistreerd.
-
-```powershell
-Register-AzProviderFeature -FeatureName sqldb-JobAccounts -ProviderNamespace Microsoft.Sql
-```
-
 ### <a name="create-the-elastic-job-agent"></a>De Elastic Jobs-agent maken
 
 Een Elastic Jobs-agent is een Azure-resource voor het maken, uitvoeren en beheren van taken. De agent voert taken uit op basis van een planning of als eenmalige taak.
 
-De **New-AzSqlElasticJobAgent** -cmdlet vereist een reeds bestaande Microsoft Azure SQL-database, dus de parameters van de *ResourceGroupName* , *ServerName* en *DatabaseName* moeten allemaal naar bestaande bronnen verwijzen.
+De **New-AzSqlElasticJobAgent**-cmdlet vereist een reeds bestaande Microsoft Azure SQL-database, dus de parameters van de *ResourceGroupName*, *ServerName* en *DatabaseName* moeten allemaal naar bestaande bronnen verwijzen.
 
 ```powershell
 Write-Output "Creating job agent..."
@@ -152,7 +144,7 @@ De databasereferenties moeten worden gemaakt in de taakdatabase. Alle doeldataba
 
 ![Referenties voor Elastic Jobs](./media/elastic-jobs-powershell-create/job-credentials.png)
 
-Let behalve op de inloggegevens in de afbeelding op de toevoeging van de **GRANT** -opdrachten in het volgende script. Deze machtigingen zijn vereist voor het script dat we hebben gekozen voor deze voorbeeldtaak. Omdat in het voorbeeld een nieuwe tabel in de doeldatabases wordt gemaakt, heeft elke doeldatabase de juiste machtigingen nodig om met succes te worden uitgevoerd.
+Let behalve op de inloggegevens in de afbeelding op de toevoeging van de **GRANT**-opdrachten in het volgende script. Deze machtigingen zijn vereist voor het script dat we hebben gekozen voor deze voorbeeldtaak. Omdat in het voorbeeld een nieuwe tabel in de doeldatabases wordt gemaakt, heeft elke doeldatabase de juiste machtigingen nodig om met succes te worden uitgevoerd.
 
 Voer het volgende script uit om de vereiste taakreferenties (in de taakdatabase) te maken:
 
@@ -205,7 +197,7 @@ $jobCred = $jobAgent | New-AzSqlElasticJobCredential -Name "jobuser" -Credential
 
 Een [doelgroep](job-automation-overview.md#target-group) definieert een verzameling van een of meer databases waarop een taakstap wordt uitgevoerd.
 
-Met het volgende codefragment worden twee doelgroepen gemaakt: *ServerGroup* en *ServerGroupExcludingDb2* . *ServerGroup* zijn alle databases die bestaan ​​op de server op het moment van uitvoering en *ServerGroupExcludingDb2* zijn alle databases op de server behalve *TargetDb2* :
+Met het volgende codefragment worden twee doelgroepen gemaakt: *ServerGroup* en *ServerGroupExcludingDb2*. *ServerGroup* zijn alle databases die bestaan ​​op de server op het moment van uitvoering en *ServerGroupExcludingDb2* zijn alle databases op de server behalve *TargetDb2*:
 
 ```powershell
 Write-Output "Creating test target groups..."
@@ -221,7 +213,7 @@ $serverGroupExcludingDb2 | Add-AzSqlElasticJobTarget -ServerName $targetServerNa
 
 ### <a name="create-a-job-and-steps"></a>Een taak en stappen maken
 
-In dit voorbeeld worden een taak en twee taakstappen gedefinieerd voor de taak die moet worden uitgevoerd. Met de eerste taakstap ( *stap 1* ) wordt een nieuwe tabel ( *Step1Table* ) gemaakt in elke database in de doelgroep *ServerGroup* . Met de tweede taakstap ( *stap2* ) wordt een nieuwe tabel ( *Step2Table* ) gemaakt in elke database behalve in *TargetDb2* , omdat in de doelgroep die eerder is gedefinieerd is opgegeven dat deze moet worden uitgesloten.
+In dit voorbeeld worden een taak en twee taakstappen gedefinieerd voor de taak die moet worden uitgevoerd. Met de eerste taakstap (*stap 1*) wordt een nieuwe tabel (*Step1Table*) gemaakt in elke database in de doelgroep *ServerGroup*. Met de tweede taakstap (*stap2*) wordt een nieuwe tabel (*Step2Table*) gemaakt in elke database behalve in *TargetDb2*, omdat in de doelgroep die eerder is gedefinieerd is opgegeven dat deze moet worden uitgesloten.
 
 ```powershell
 Write-Output "Creating a new job..."

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 11/06/2020
+ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 9b9390b498f28fc8f9029f1c11805b970aaca73d
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: de011fb0f827ea90efe33e237bbf1c5100dc76a7
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014557"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183469"
 ---
 # <a name="how-to-deploy-a-people-counting-web-application"></a>Procedure: een web-app voor het tellen van een persoon implementeren
 
@@ -63,12 +63,12 @@ az iot hub device-identity create --hub-name "<IoT Hub Name>" --device-id "<Edge
 
 ### <a name="deploy-the-container-on-azure-iot-edge-on-the-host-computer"></a>De container implementeren op Azure IoT Edge op de hostcomputer
 
-Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer met behulp van de Azure CLI. Voor het implementatie proces is een manifest bestand voor implementatie vereist waarin de vereiste containers, variabelen en configuraties voor uw implementatie worden beschreven. U vindt een voor beeld [Azure stack Edge-specifiek implementatie manifest](https://github.com/Azure-Samples/cognitive-services-rest-api-samples/) en een [niet-Azure stack Edge-specifiek implementatie manifest](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) op github, dat een eenvoudige implementatie configuratie bevat voor de container *met ruimtelijke analyse* . 
+Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer met behulp van de Azure CLI. Voor het implementatie proces is een manifest bestand voor implementatie vereist waarin de vereiste containers, variabelen en configuraties voor uw implementatie worden beschreven. U vindt een voor beeld [Azure stack Edge-specifiek](https://go.microsoft.com/fwlink/?linkid=2142179)implementatie manifest [, niet-Azure stack Edge-specifiek implementatie](https://go.microsoft.com/fwlink/?linkid=2152189)manifest en [Azure VM met GPU-specifiek implementatie manifest](https://go.microsoft.com/fwlink/?linkid=2152189) op github, die een eenvoudige implementatie configuratie voor de container *met ruimtelijke analyse* bevatten. 
 
 U kunt ook de Azure IoT-uitbrei dingen voor Visual Studio code gebruiken om bewerkingen uit te voeren met uw IoT-hub. Ga naar [Deploy Azure IOT Edge-modules van Visual Studio code](../../iot-edge/how-to-deploy-modules-vscode.md) voor meer informatie.
 
 > [!NOTE] 
-> De containers *ruimtelijke analyse-telegrafie* en *ruimtelijke analyse* zijn optioneel. U kunt ervoor kiezen om deze te verwijderen uit de *DeploymentManifest.jsin* het bestand. Raadpleeg het artikel over [telemetrie en probleem oplossing](./spatial-analysis-logging.md) voor meer informatie. U kunt twee voorbeeld *DeploymentManifest.jsvinden op* bestanden op github voor een [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179) of een andere [desktop computer](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)
+> De containers *ruimtelijke analyse-telegrafie* en *ruimtelijke analyse* zijn optioneel. U kunt ervoor kiezen om deze te verwijderen uit de *DeploymentManifest.jsin* het bestand. Raadpleeg het artikel over [telemetrie en probleem oplossing](./spatial-analysis-logging.md) voor meer informatie. U kunt drie voorbeeld *DeploymentManifest.jsvinden op* bestanden op github, voor [Azure stack edge-apparaten](https://go.microsoft.com/fwlink/?linkid=2142179), een [desktop machine](https://go.microsoft.com/fwlink/?linkid=2152189)of een [Azure-VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189)
 
 ### <a name="set-environment-variables"></a>Omgevingsvariabelen instellen
 
@@ -185,7 +185,7 @@ Wacht totdat de installatie is voltooid en navigeer naar uw resource in de Azure
 * `EventHubConsumerGroup` : De teken reeks naam van de Consumer groep van uw Azure IoT Hub, u kunt een nieuwe consumenten groep maken in uw IoT Hub of de standaard groep gebruiken. 
 * `IotHubConnectionString` : De connection string naar uw Azure IoT Hub, kan dit worden opgehaald uit de sectie sleutels van de Azure IoT Hub resource ![ para meters configureren](./media/spatial-analysis/solution-app-config-page.png)
 
-Zodra deze twee instellingen zijn toegevoegd, klikt u op **Opslaan**. Klik vervolgens op **verificatie/autorisatie** in het navigatie menu links en werk het bij met het gewenste verificatie niveau. We raden Azure Active Director (Azure AD) Express aan. 
+Zodra deze twee instellingen zijn toegevoegd, klikt u op **Opslaan**. Klik vervolgens op **verificatie/autorisatie** in het navigatie menu links en werk het bij met het gewenste verificatie niveau. U kunt het beste Azure Active Directory (Azure AD) Express. 
 
 ### <a name="test-the-app"></a>De app testen
 

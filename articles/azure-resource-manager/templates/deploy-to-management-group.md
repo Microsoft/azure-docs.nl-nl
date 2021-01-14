@@ -3,12 +3,12 @@ title: Resources implementeren in beheer groep
 description: Hierin wordt beschreven hoe u resources kunt implementeren in het bereik van de beheer groep in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: f847e481670d7f9afd4b40cfb8fcbec65d1e28c8
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: d6c6b925ad1533fc1f3bf490a9b996280164bd57
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178922"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184013"
 ---
 # <a name="management-group-deployments-with-arm-templates"></a>Implementaties van beheer groepen met ARM-sjablonen
 
@@ -44,6 +44,8 @@ Voor geneste sjablonen die worden geïmplementeerd op abonnementen of resource g
 Gebruik voor het beheren van uw resources:
 
 * [Koptags](/azure/templates/microsoft.resources/tags)
+
+Beheer groepen zijn resources op Tenant niveau. U kunt echter beheer groepen maken in een implementatie van een beheer groep door het bereik van de nieuwe beheer groep in te stellen op de Tenant. Zie [beheer groep](#management-group).
 
 ## <a name="schema"></a>Schema
 
@@ -168,9 +170,55 @@ U kunt een geneste implementatie gebruiken met `scope` en `location` instellen.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/management-group-to-tenant.json" highlight="9,10,14":::
 
-Of u kunt het bereik instellen op `/` voor sommige resource typen, zoals beheer groepen.
+Of u kunt het bereik instellen op `/` voor sommige resource typen, zoals beheer groepen. Het maken van een nieuwe beheer groep wordt in de volgende sectie beschreven.
+
+## <a name="management-group"></a>Beheergroep
+
+Als u een beheer groep in een implementatie van een beheer groep wilt maken, moet u het bereik instellen op `/` voor de beheer groep.
+
+In het volgende voor beeld wordt een nieuwe beheer groep gemaakt in de hoofd beheer groep.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/management-group-create-mg.json" highlight="12,15":::
+
+In het volgende voor beeld wordt een nieuwe beheer groep gemaakt in de beheer groep die is opgegeven als het bovenliggende item. U ziet dat het bereik is ingesteld op `/` .
+
+```json
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-08-01/managementGroupDeploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "mgName": {
+            "type": "string",
+            "defaultValue": "[concat('mg-', uniqueString(newGuid()))]"
+        },
+        "parentMG": {
+            "type": "string"
+        }
+    },
+    "resources": [
+        {
+            "name": "[parameters('mgName')]",
+            "type": "Microsoft.Management/managementGroups",
+            "apiVersion": "2020-05-01",
+            "scope": "/",
+            "location": "eastus",
+            "properties": {
+                "details": {
+                    "parent": {
+                        "id": "[tenantResourceId('Microsoft.Management/managementGroups', parameters('parentMG'))]"
+                    }
+                }
+            }
+        }
+    ],
+    "outputs": {
+        "output": {
+            "type": "string",
+            "value": "[parameters('mgName')]"
+        }
+    }
+}
+```
 
 ## <a name="azure-policy"></a>Azure Policy
 

@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.subservice: spark
 ms.topic: tutorial
 ms.date: 11/16/2020
-ms.openlocfilehash: 791cab369dcbf9cab8d1256377cfee4a433c21b9
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 53fb256d3a0fba1cc10cafb239ff7f7bb21ac4eb
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450896"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121070"
 ---
 # <a name="tutorial-create-a-power-bi-report-using-apache-spark-and-azure-synapse-analytics"></a>Zelfstudie: Een Power BI-rapport maken met behulp van Apache Spark en Azure Synapse Analytics
 
@@ -22,7 +22,7 @@ Organisaties moeten vaak grote hoeveelheden gegevens verwerken voordat ze worden
 
 ## <a name="before-you-begin"></a>Voordat u begint
 - [Azure Synapse Analytics-werkruimte](../quickstart-create-workspace.md) met een ADLS Gen2-opslagaccount dat is geconfigureerd als de standaardopslag. 
-- Power BI-werkruimte en Power BI Desktop voor het visualiseren van gegevens. Zie [een Power BI-werkruimte maken](https://docs.microsoft.com/power-bi/service-create-the-new-workspaces) en [Power BI desktop installeren](https://powerbi.microsoft.com/downloads/) voor meer informatie
+- Power BI-werkruimte en Power BI Desktop voor het visualiseren van gegevens. Zie [een Power BI-werkruimte maken](/power-bi/service-create-the-new-workspaces) en [Power BI desktop installeren](https://powerbi.microsoft.com/downloads/) voor meer informatie
 - Gekoppelde service om uw Azure Synapse Analytics- en Power BI-werkruimten met elkaar te verbinden. Zie [koppeling naar een Power BI-werkruimte](../quickstart-power-bi.md) voor meer informatie
 - Serverloze Apache Spark-pool in uw Synapse Analytics-werkruimte. Zie [een serverloze Apache Spark-pool maken ](../quickstart-create-apache-spark-pool-studio.md) voor meer informatie
   
@@ -89,7 +89,7 @@ Een query uitvoeren op uw Apache Spark-tabel met behulp van een serverloze SQL-p
 Daarna gaan we onze serverloze SQL-pool koppelen aan onze Power BI-werkruimte. Nadat u uw werkruimte hebt verbonden, kunt u zowel vanuit Azure Synapse Analytics als vanuit Power BI desktop rechtstreeks Power BI-rapporten maken.
 
 >[!Note]
-> Voordat u begint, moet u een gekoppelde service instellen op uw [Power BI-werkruimte](../quickstart-power-bi.md) en de [Power BI desktop](https://docs.microsoft.com/power-bi/service-create-the-new-workspaces) downloaden.  
+> Voordat u begint, moet u een gekoppelde service instellen op uw [Power BI-werkruimte](../quickstart-power-bi.md) en de [Power BI desktop](/power-bi/service-create-the-new-workspaces) downloaden.  
 
 Om onze serverloze SQL-pool te verbinden met onze Power BI-werkruimte:
 

@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/17/2018
 ms.author: duau
-ms.openlocfilehash: 3cf493beab6dfe1767ae35ea36732dc364e29736
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0eb49f3c2acc31cba7b245995cf3bcb579113e4c
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401653"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183810"
 ---
 # <a name="traffic-manager-routing-methods"></a>Methoden voor het doorsturen van Traffic Manager
 
@@ -28,7 +28,7 @@ De volgende methoden voor verkeers routering zijn beschikbaar in Traffic Manager
 * **[Prestaties](#performance):** Selecteer **prestaties** wanneer u eind punten op verschillende geografische locaties hebt en u wilt dat eind gebruikers het ' dichtstbijgelegen ' eind punt gebruiken in termen van de laagste netwerk latentie.
 * **[Geografisch](#geographic):** Selecteer **geografisch** zodat gebruikers naar specifieke eind punten (Azure, extern of genest) worden geleid op basis van de geografische locatie waarvan hun DNS-query afkomstig is. Dit biedt Traffic Manager klanten de mogelijkheid om scenario's in te scha kelen waarbij de geografische regio van een gebruiker wordt gewerkt en deze op basis van het belang rijk is. Voor beelden zijn het voldoen aan data soevereiniteit-mandaten, lokalisatie van inhoud & gebruikers ervaring en het meten van verkeer van verschillende regio's.
 * **[Meerdere waarden](#multivalue):** Selecteer **meerdere waarden** voor Traffic Manager profielen die alleen IPv4/IPv6-adressen kunnen hebben als eind punten. Wanneer er een query voor dit profiel wordt ontvangen, worden alle in orde zijnde eind punten geretourneerd.
-* **[Subnet](#subnet):** Selecteer **subnet** Traffic-routerings methode om sets van IP-adresbereiken voor eind gebruikers toe te wijzen aan een bepaald eind punt binnen een Traffic Manager profiel. Wanneer een aanvraag wordt ontvangen, wordt het eind punt geretourneerd dat is toegewezen aan het bron-IP-adres van de aanvraag. 
+* **[Subnet](#subnet):** Selecteer **subnet** Traffic-routerings methode om sets van IP-adresbereiken voor eind gebruikers toe te wijzen aan een bepaald eind punt binnen een Traffic Manager profiel. Wanneer een aanvraag wordt ontvangen, wordt het eind punt geretourneerd dat is toegewezen aan het bron-IP-adres van de aanvraag. 
 
 
 Alle Traffic Manager profielen bevatten bewaking van de eindpunt status en automatische endpoint-failover. Zie [Traffic Manager endpoint monitoring](traffic-manager-monitoring.md)voor meer informatie. Eén Traffic Manager profiel kan slechts één routerings methode voor verkeer gebruiken. U kunt op elk gewenst moment een andere methode voor verkeers routering voor uw profiel selecteren. Wijzigingen worden binnen één minuut toegepast en er wordt geen downtime in rekening gebracht. Verkeers routerings methoden kunnen worden gecombineerd met geneste Traffic Manager profielen. Met nesten kunt u geavanceerde en flexibele verkeer routerings configuraties maken die voldoen aan de behoeften van grotere, complexe toepassingen. Zie [geneste Traffic Manager profielen](traffic-manager-nested-profiles.md)voor meer informatie.
@@ -125,36 +125,36 @@ Zoals uitgelegd in de werking van [Traffic Manager](traffic-manager-how-it-works
 
 ### <a name="faqs"></a>Veelgestelde vragen
 
-* [Wat zijn enkele gebruiks voorbeelden waarbij geografische route ring nuttig is?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-geographic-routing-is-useful)
+* [Wat zijn enkele gebruiks voorbeelden waarbij geografische route ring nuttig is?](./traffic-manager-faqs.md#what-are-some-use-cases-where-geographic-routing-is-useful)
 
-* [Hoe kan ik bepalen of ik de routerings methode voor prestaties of de geografische routerings methode moet gebruiken?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-decide-if-i-should-use-performance-routing-method-or-geographic-routing-method)
+* [Hoe kan ik bepalen of ik de routerings methode voor prestaties of de geografische routerings methode moet gebruiken?](./traffic-manager-faqs.md#how-do-i-decide-if-i-should-use-performance-routing-method-or-geographic-routing-method)
 
-* [Wat zijn de regio's die door Traffic Manager worden ondersteund voor geografische route ring?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-the-regions-that-are-supported-by-traffic-manager-for-geographic-routing)
+* [Wat zijn de regio's die door Traffic Manager worden ondersteund voor geografische route ring?](./traffic-manager-faqs.md#what-are-the-regions-that-are-supported-by-traffic-manager-for-geographic-routing)
 
-* [Hoe bepaalt Traffic Manager of een gebruiker een query uitvoert?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-determine-where-a-user-is-querying-from)
+* [Hoe bepaalt Traffic Manager of een gebruiker een query uitvoert?](./traffic-manager-faqs.md#how-does-traffic-manager-determine-where-a-user-is-querying-from)
 
-* [Is het gegarandeerd dat Traffic Manager de exacte geografische locatie van de gebruiker in elk geval correct kunt bepalen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-it-guaranteed-that-traffic-manager-can-correctly-determine-the-exact-geographic-location-of-the-user-in-every-case)
+* [Is het gegarandeerd dat Traffic Manager de exacte geografische locatie van de gebruiker in elk geval correct kunt bepalen?](./traffic-manager-faqs.md#is-it-guaranteed-that-traffic-manager-can-correctly-determine-the-exact-geographic-location-of-the-user-in-every-case)
 
-* [Moet een eind punt zich fysiek bevinden in dezelfde regio als de versie die is geconfigureerd met voor geografische route ring?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-an-endpoint-need-to-be-physically-located-in-the-same-region-as-the-one-it-is-configured-with-for-geographic-routing)
+* [Moet een eind punt zich fysiek bevinden in dezelfde regio als de versie die is geconfigureerd met voor geografische route ring?](./traffic-manager-faqs.md#does-an-endpoint-need-to-be-physically-located-in-the-same-region-as-the-one-it-is-configured-with-for-geographic-routing)
 
-* [Kan ik geografische regio's toewijzen aan eind punten in een profiel dat niet is geconfigureerd voor geografische route ring?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-assign-geographic-regions-to-endpoints-in-a-profile-that-is-not-configured-to-do-geographic-routing)
+* [Kan ik geografische regio's toewijzen aan eind punten in een profiel dat niet is geconfigureerd voor geografische route ring?](./traffic-manager-faqs.md#can-i-assign-geographic-regions-to-endpoints-in-a-profile-that-is-not-configured-to-do-geographic-routing)
 
-* [Waarom krijg ik een fout melding wanneer ik de routerings methode van een bestaand profiel probeer te wijzigen in geografisch?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-getting-an-error-when-i-try-to-change-the-routing-method-of-an-existing-profile-to-geographic)
+* [Waarom krijg ik een fout melding wanneer ik de routerings methode van een bestaand profiel probeer te wijzigen in geografisch?](./traffic-manager-faqs.md#why-am-i-getting-an-error-when-i-try-to-change-the-routing-method-of-an-existing-profile-to-geographic)
 
-* [Waarom wordt het ten zeerste aanbevolen dat klanten geneste profielen maken in plaats van eind punten onder een profiel waarvoor geografische route ring is ingeschakeld?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-is-it-strongly-recommended-that-customers-create-nested-profiles-instead-of-endpoints-under-a-profile-with-geographic-routing-enabled)
+* [Waarom wordt het ten zeerste aanbevolen dat klanten geneste profielen maken in plaats van eind punten onder een profiel waarvoor geografische route ring is ingeschakeld?](./traffic-manager-faqs.md#why-is-it-strongly-recommended-that-customers-create-nested-profiles-instead-of-endpoints-under-a-profile-with-geographic-routing-enabled)
 
-* [Zijn er beperkingen voor de API-versie die ondersteuning biedt voor dit routerings type?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#are-there-any-restrictions-on-the-api-version-that-supports-this-routing-type)
+* [Zijn er beperkingen voor de API-versie die ondersteuning biedt voor dit routerings type?](./traffic-manager-faqs.md#are-there-any-restrictions-on-the-api-version-that-supports-this-routing-type)
 
 ## <a name="multivalue-traffic-routing-method"></a><a name = "multivalue"></a>Meerdere waarden verkeer-routerings methode
 Met de routerings methode met meerdere **waarden** kunt u in één antwoord op een DNS-query meer in orde zijnde eind punten ophalen. Hierdoor kan de aanroeper aan client zijde nieuwe pogingen uitvoeren met andere eind punten in het geval van een geretourneerd eind punt dat niet meer reageert. Dit patroon kan de beschikbaarheid van een service vergroten en de latentie verminderen die is gekoppeld aan een nieuwe DNS-query om een gezond eindpunt op te halen. De methode voor het routeren van meerdere waarden werkt alleen als alle eind punten van het type extern zijn en zijn opgegeven als IPv4-of IPv6-adres. Wanneer een query voor dit profiel wordt ontvangen, worden alle gezonde eind punten geretourneerd en onderhevig aan het Configureer bare maximum aantal retour waarden.
 
 ### <a name="faqs"></a>Veelgestelde vragen
 
-* [Wat zijn enkele situaties waarbij de route ring met meerdere waarden nuttig is?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-multivalue-routing-is-useful)
+* [Wat zijn enkele situaties waarbij de route ring met meerdere waarden nuttig is?](./traffic-manager-faqs.md#what-are-some-use-cases-where-multivalue-routing-is-useful)
 
-* [Hoeveel eind punten worden er geretourneerd wanneer meerdere waarden worden geroutingeerd?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-endpoints-are-returned-when-multivalue-routing-is-used)
+* [Hoeveel eind punten worden er geretourneerd wanneer meerdere waarden worden geroutingeerd?](./traffic-manager-faqs.md#how-many-endpoints-are-returned-when-multivalue-routing-is-used)
 
-* [Krijgt ik dezelfde set eind punten als de route ring met meerdere waarden wordt gebruikt?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#will-i-get-the-same-set-of-endpoints-when-multivalue-routing-is-used)
+* [Krijgt ik dezelfde set eind punten als de route ring met meerdere waarden wordt gebruikt?](./traffic-manager-faqs.md#will-i-get-the-same-set-of-endpoints-when-multivalue-routing-is-used)
 
 ## <a name="subnet-traffic-routing-method"></a><a name = "subnet"></a>Subnet Traffic-routerings methode
 Met de routerings methode voor het **subnet** Traffic kunt u een set IP-adresbereiken voor eind gebruikers toewijzen aan specifieke eind punten in een profiel. Als Traffic Manager vervolgens een DNS-query voor dat profiel ontvangt, wordt het bron-IP-adres van de aanvraag gecontroleerd (in de meeste gevallen is dit het uitgaande IP-adres van de DNS-resolver dat door de oproepende functie wordt gebruikt), te bepalen aan welk eind punt de toewijzing wordt toegewezen en wordt dat eind punt geretourneerd in het antwoord van de query. 
@@ -166,21 +166,17 @@ Subnet routering kan worden gebruikt om een andere ervaring te bieden voor gebru
 
 ### <a name="faqs"></a>Veelgestelde vragen
 
-* [Wat zijn enkele gebruiks voorbeelden waarbij subnet routering nuttig is?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-some-use-cases-where-subnet-routing-is-useful)
+* [Wat zijn enkele gebruiks voorbeelden waarbij subnet routering nuttig is?](./traffic-manager-faqs.md#what-are-some-use-cases-where-subnet-routing-is-useful)
 
-* [Hoe kent Traffic Manager het IP-adres van de eind gebruiker?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-manager-know-the-ip-address-of-the-end-user)
+* [Hoe kent Traffic Manager het IP-adres van de eind gebruiker?](./traffic-manager-faqs.md#how-does-traffic-manager-know-the-ip-address-of-the-end-user)
 
-* [Hoe kan ik IP-adressen opgeven wanneer ik een subnet routering gebruik?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-ip-addresses-when-using-subnet-routing)
+* [Hoe kan ik IP-adressen opgeven wanneer ik een subnet routering gebruik?](./traffic-manager-faqs.md#how-can-i-specify-ip-addresses-when-using-subnet-routing)
 
-* [Hoe kan ik een terugval-eind punt opgeven bij het gebruik van subnet routering?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-a-fallback-endpoint-when-using-subnet-routing)
+* [Hoe kan ik een terugval-eind punt opgeven bij het gebruik van subnet routering?](./traffic-manager-faqs.md#how-can-i-specify-a-fallback-endpoint-when-using-subnet-routing)
 
-* [Wat gebeurt er als een eind punt wordt uitgeschakeld in een type profiel voor een subnet routering?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-happens-if-an-endpoint-is-disabled-in-a-subnet-routing-type-profile)
+* [Wat gebeurt er als een eind punt wordt uitgeschakeld in een type profiel voor een subnet routering?](./traffic-manager-faqs.md#what-happens-if-an-endpoint-is-disabled-in-a-subnet-routing-type-profile)
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het ontwikkelen van toepassingen met een hoge Beschik baarheid met behulp van [Traffic Manager endpoint-bewaking](traffic-manager-monitoring.md)
-
-
-
-

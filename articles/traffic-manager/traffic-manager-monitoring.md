@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/04/2018
 ms.author: duau
-ms.openlocfilehash: 78a1681c743f65081b30657f4fd747ff8aaef5f5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31048a0abd939c81b64e87b4a146ae3b6934803f
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89392830"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183906"
 ---
 # <a name="traffic-manager-endpoint-monitoring"></a>Eindpuntbewaking in Traffic Manager
 
@@ -40,7 +40,7 @@ Als u eindpunt bewaking wilt configureren, moet u de volgende instellingen opgev
 
 ## <a name="how-endpoint-monitoring-works"></a>Hoe eindpunt controle werkt
 
-Als het bewakings protocol is ingesteld als HTTP of HTTPS, wordt door de agent van Traffic Manager zoeken een GET-aanvraag naar het eind punt gemaakt met behulp van het Protocol, de poort en het relatieve pad dat is opgegeven. Als er een 200-OK-antwoord wordt teruggestuurd of een van de antwoorden die zijn geconfigureerd in de **verwachte status codes \* **, wordt dat eind punt als gezond beschouwd. Als het antwoord een andere waarde is, of als er geen reactie wordt ontvangen binnen de opgegeven time-outperiode, wordt de Traffic Manager hand leiding van de agent opnieuw geprobeerd, afhankelijk van de instelling van het getolerantiete aantal fouten (er worden geen nieuwe pogingen gedaan als deze instelling 0 is). Als het aantal opeenvolgende fouten hoger is dan het aantal ingestelde fouten, wordt het eind punt als beschadigd gemarkeerd. 
+Als het bewakings protocol is ingesteld als HTTP of HTTPS, wordt door de agent van Traffic Manager zoeken een GET-aanvraag naar het eind punt gemaakt met behulp van het Protocol, de poort en het relatieve pad dat is opgegeven. Als er een 200-OK-antwoord wordt teruggestuurd of een van de antwoorden die zijn geconfigureerd in de **verwachte status codes \***, wordt dat eind punt als gezond beschouwd. Als het antwoord een andere waarde is, of als er geen reactie wordt ontvangen binnen de opgegeven time-outperiode, wordt de Traffic Manager hand leiding van de agent opnieuw geprobeerd, afhankelijk van de instelling van het getolerantiete aantal fouten (er worden geen nieuwe pogingen gedaan als deze instelling 0 is). Als het aantal opeenvolgende fouten hoger is dan het aantal ingestelde fouten, wordt het eind punt als beschadigd gemarkeerd. 
 
 Als het bewakings protocol TCP is, initieert de Traffic Manager zoeken-agent een TCP-verbindings aanvraag met behulp van de opgegeven poort. Als het eind punt reageert op de aanvraag met een reactie op het tot stand brengen van de verbinding, wordt die status controle gemarkeerd als geslaagd en wordt de TCP-verbinding door de agent van de Traffic Manager gezocht. Als het antwoord een andere waarde is, of als er geen reactie wordt ontvangen binnen de opgegeven time-outperiode, wordt de Traffic Manager hand leiding van de agent opnieuw geprobeerd, afhankelijk van het aantal ingestelde fouten (er worden geen nieuwe pogingen gedaan als deze instelling 0 is). Als het aantal opeenvolgende fouten hoger is dan het aantal ingestelde fouten, is dat eind punt gemarkeerd als beschadigd.
 
@@ -79,7 +79,7 @@ Status van eindpunt monitor is een door Traffic Manager gegenereerde waarde waar
 Zie [geneste Traffic Manager profielen](traffic-manager-nested-profiles.md)voor meer informatie over het berekenen van de status van de eindpunt monitor voor geneste eind punten.
 
 >[!NOTE]
-> Als uw webtoepassing niet wordt uitgevoerd in de Standard-laag of hierboven, kan de status van de eindpunt monitor niet worden gestopt op App Service. Zie [integratie met App Service Traffic Manager](/azure/app-service/web-sites-traffic-manager)voor meer informatie.
+> Als uw webtoepassing niet wordt uitgevoerd in de Standard-laag of hierboven, kan de status van de eindpunt monitor niet worden gestopt op App Service. Zie [integratie met App Service Traffic Manager](../app-service/web-sites-traffic-manager.md)voor meer informatie.
 
 ### <a name="profile-monitor-status"></a>Status van profiel monitor
 
@@ -137,7 +137,7 @@ Wanneer een eind punt een gedegradeerde status heeft, wordt deze niet meer geret
 * **Prestaties**. Het eind punt dat het dichtst bij de eind gebruiker ligt, wordt geretourneerd. Als dat eind punt niet beschikbaar is, Traffic Manager verplaatst het verkeer naar de eind punten in de dichtstbijzijnde Azure-regio. U kunt alternatieve failover plannen configureren voor prestatie verkeer-route ring door gebruik te maken van [geneste Traffic Manager profielen](traffic-manager-nested-profiles.md#example-4-controlling-performance-traffic-routing-between-multiple-endpoints-in-the-same-region).
 * **Geografisch**. Het eind punt dat is toegewezen om de geografische locatie te leveren op basis van het IP-adres van de query aanvraag, wordt geretourneerd. Als dat eind punt niet beschikbaar is, wordt een ander eind punt niet geselecteerd voor failover naar, omdat een geografische locatie alleen kan worden toegewezen aan één eind punt in een profiel (meer informatie vindt u in de [Veelgestelde vragen](traffic-manager-FAQs.md#traffic-manager-geographic-traffic-routing-method)). Als best practice als u geografische route ring gebruikt, raden we klanten aan om geneste Traffic Manager profielen met meer dan één eind punt te gebruiken als de eind punten van het profiel.
 * **Meerdere waarden** Er zijn meerdere eind punten geretourneerd die aan IPv4/IPv6-adressen zijn toegewezen. Wanneer een query voor dit profiel wordt ontvangen, worden in goede eind punten geretourneerd op basis van het **maximum aantal records in de reactie** waarde die u hebt opgegeven. Het standaard aantal antwoorden is twee eind punten.
-* **Subnet** Het eind punt dat is toegewezen aan een set IP-adresbereiken wordt geretourneerd. Wanneer een aanvraag wordt ontvangen van dat IP-adres, wordt het eind punt geretourneerd dat is toegewezen aan dat IP-adres. 
+* **Subnet** Het eind punt dat is toegewezen aan een set IP-adresbereiken wordt geretourneerd. Wanneer een aanvraag wordt ontvangen van dat IP-adres, wordt het eind punt geretourneerd dat is toegewezen aan dat IP-adres. 
 
 Zie [Traffic Manager methoden voor het routeren van verkeer](traffic-manager-routing-methods.md)voor meer informatie.
 
@@ -155,43 +155,43 @@ Zie voor meer informatie over het oplossen van problemen met mislukte status con
 
 ## <a name="faqs"></a>Veelgestelde vragen
 
-* [Is het Traffic Managerbaar voor problemen met Azure-regio's?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-traffic-manager-resilient-to-azure-region-failures)
+* [Is het Traffic Managerbaar voor problemen met Azure-regio's?](./traffic-manager-faqs.md#is-traffic-manager-resilient-to-azure-region-failures)
 
-* [Wat is de invloed van de locatie van de resource groep op Traffic Manager?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-the-choice-of-resource-group-location-affect-traffic-manager)
+* [Wat is de invloed van de locatie van de resource groep op Traffic Manager?](./traffic-manager-faqs.md#how-does-the-choice-of-resource-group-location-affect-traffic-manager)
 
-* [Hoe kan ik de huidige status van elk eind punt bepalen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-determine-the-current-health-of-each-endpoint)
+* [Hoe kan ik de huidige status van elk eind punt bepalen?](./traffic-manager-faqs.md#how-do-i-determine-the-current-health-of-each-endpoint)
 
-* [Kan ik HTTPS-eind punten controleren?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-monitor-https-endpoints)
+* [Kan ik HTTPS-eind punten controleren?](./traffic-manager-faqs.md#can-i-monitor-https-endpoints)
 
-* [Moet ik een IP-adres of een DNS-naam gebruiken wanneer ik een eind punt toevoeg?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-use-an-ip-address-or-a-dns-name-when-adding-an-endpoint)
+* [Moet ik een IP-adres of een DNS-naam gebruiken wanneer ik een eind punt toevoeg?](./traffic-manager-faqs.md#do-i-use-an-ip-address-or-a-dns-name-when-adding-an-endpoint)
 
-* [Welke typen IP-adressen kan ik gebruiken bij het toevoegen van een eind punt?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-types-of-ip-addresses-can-i-use-when-adding-an-endpoint)
+* [Welke typen IP-adressen kan ik gebruiken bij het toevoegen van een eind punt?](./traffic-manager-faqs.md#what-types-of-ip-addresses-can-i-use-when-adding-an-endpoint)
 
-* [Kan ik verschillende typen eindpunt adresseren gebruiken binnen één profiel?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-different-endpoint-addressing-types-within-a-single-profile)
+* [Kan ik verschillende typen eindpunt adresseren gebruiken binnen één profiel?](./traffic-manager-faqs.md#can-i-use-different-endpoint-addressing-types-within-a-single-profile)
 
-* [Wat gebeurt er wanneer het record type van een binnenkomende query verschilt van het record type dat is gekoppeld aan het adresserings type van de eind punten?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-happens-when-an-incoming-querys-record-type-is-different-from-the-record-type-associated-with-the-addressing-type-of-the-endpoints)
+* [Wat gebeurt er wanneer het record type van een binnenkomende query verschilt van het record type dat is gekoppeld aan het adresserings type van de eind punten?](./traffic-manager-faqs.md#what-happens-when-an-incoming-querys-record-type-is-different-from-the-record-type-associated-with-the-addressing-type-of-the-endpoints)
 
-* [Kan ik een profiel gebruiken met door IPv4/IPv6 geadresseerde eind punten in een genest profiel?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-a-profile-with-ipv4--ipv6-addressed-endpoints-in-a-nested-profile)
+* [Kan ik een profiel gebruiken met door IPv4/IPv6 geadresseerde eind punten in een genest profiel?](./traffic-manager-faqs.md#can-i-use-a-profile-with-ipv4--ipv6-addressed-endpoints-in-a-nested-profile)
 
-* [Ik heb een eind punt van een webtoepassing in mijn Traffic Manager profiel gestopt, maar ik heb geen verkeer ontvangen, zelfs nadat ik het heb gestart. Hoe kan ik dit oplossen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#i-stopped-an-web-application-endpoint-in-my-traffic-manager-profile-but-i-am-not-receiving-any-traffic-even-after-i-restarted-it-how-can-i-fix-this)
+* [Ik heb een eind punt van een webtoepassing in mijn Traffic Manager profiel gestopt, maar ik heb geen verkeer ontvangen, zelfs nadat ik het heb gestart. Hoe kan ik dit oplossen?](./traffic-manager-faqs.md#i-stopped-an-web-application-endpoint-in-my-traffic-manager-profile-but-i-am-not-receiving-any-traffic-even-after-i-restarted-it-how-can-i-fix-this)
 
-* [Kan ik Traffic Manager gebruiken, zelfs als mijn toepassing geen ondersteuning voor HTTP of HTTPS heeft?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-even-if-my-application-does-not-have-support-for-http-or-https)
+* [Kan ik Traffic Manager gebruiken, zelfs als mijn toepassing geen ondersteuning voor HTTP of HTTPS heeft?](./traffic-manager-faqs.md#can-i-use-traffic-manager-even-if-my-application-does-not-have-support-for-http-or-https)
 
-* [Welke specifieke antwoorden zijn vereist van het eind punt bij het gebruik van TCP-bewaking?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-specific-responses-are-required-from-the-endpoint-when-using-tcp-monitoring)
+* [Welke specifieke antwoorden zijn vereist van het eind punt bij het gebruik van TCP-bewaking?](./traffic-manager-faqs.md#what-specific-responses-are-required-from-the-endpoint-when-using-tcp-monitoring)
 
-* [Hoe snel Traffic Manager kan ik mijn gebruikers weghalen uit een beschadigd eind punt?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-fast-does-traffic-manager-move-my-users-away-from-an-unhealthy-endpoint)
+* [Hoe snel Traffic Manager kan ik mijn gebruikers weghalen uit een beschadigd eind punt?](./traffic-manager-faqs.md#how-fast-does-traffic-manager-move-my-users-away-from-an-unhealthy-endpoint)
 
-* [Hoe kan ik verschillende bewakings instellingen opgeven voor verschillende eind punten in een profiel?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-specify-different-monitoring-settings-for-different-endpoints-in-a-profile)
+* [Hoe kan ik verschillende bewakings instellingen opgeven voor verschillende eind punten in een profiel?](./traffic-manager-faqs.md#how-can-i-specify-different-monitoring-settings-for-different-endpoints-in-a-profile)
 
-* [Hoe kan ik HTTP-headers toewijzen aan de Traffic Manager status controles voor mijn eind punten?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-assign-http-headers-to-the-traffic-manager-health-checks-to-my-endpoints)
+* [Hoe kan ik HTTP-headers toewijzen aan de Traffic Manager status controles voor mijn eind punten?](./traffic-manager-faqs.md#how-can-i-assign-http-headers-to-the-traffic-manager-health-checks-to-my-endpoints)
 
-* [Welke host-header gebruikt de eindpunt status controles?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-host-header-do-endpoint-health-checks-use)
+* [Welke host-header gebruikt de eindpunt status controles?](./traffic-manager-faqs.md#what-host-header-do-endpoint-health-checks-use)
 
-* [Wat zijn de IP-adressen waarvan de status controles afkomstig zijn?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-the-ip-addresses-from-which-the-health-checks-originate)
+* [Wat zijn de IP-adressen waarvan de status controles afkomstig zijn?](./traffic-manager-faqs.md#what-are-the-ip-addresses-from-which-the-health-checks-originate)
 
-* [Hoeveel status controles voor mijn eind punt kan ik verwachten van Traffic Manager?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-health-checks-to-my-endpoint-can-i-expect-from-traffic-manager)
+* [Hoeveel status controles voor mijn eind punt kan ik verwachten van Traffic Manager?](./traffic-manager-faqs.md#how-many-health-checks-to-my-endpoint-can-i-expect-from-traffic-manager)
 
-* [Hoe kan ik een melding krijgen als een van mijn eind punten uitvalt?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-get-notified-if-one-of-my-endpoints-goes-down)
+* [Hoe kan ik een melding krijgen als een van mijn eind punten uitvalt?](./traffic-manager-faqs.md#how-can-i-get-notified-if-one-of-my-endpoints-goes-down)
 
 ## <a name="next-steps"></a>Volgende stappen
 

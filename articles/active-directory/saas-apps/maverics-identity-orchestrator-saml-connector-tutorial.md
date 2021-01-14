@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 08/12/2020
 ms.author: jeedes
-ms.openlocfilehash: a4bfe2b87f3f2242189a78d9a31a89d82720fd37
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 31392c1fa3d14d6f1e01a8b302575e9b592e42cd
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862068"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183146"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-with-maverics-identity-orchestrator-saml-connector"></a>Zelfstudie: Eenmalige aanmelding van Microsoft Azure AD integreren met Maverics Identity Orchestrator SAML Connector
 
@@ -167,27 +167,27 @@ U kunt een Azure-sleutelkluis instellen met behulp van de Azure-portal of de Azu
 
 1. Open de [Azure CLI](/cli/azure/install-azure-cli) en voer de volgende opdracht in:
 
-    ```shell
+    ```azurecli
     az login
     ```
 
 1. Maak een nieuwe sleutelkluis door de volgende opdracht uit te voeren:
-    ```shell
+    ```azurecli
     az keyvault create --name "[VAULT_NAME]" --resource-group "[RESOURCE_GROUP]" --location "[REGION]"
     ```
 
 1. Voeg de geheimen aan de sleutelkluis toe door de volgende opdracht uit te voeren:
-    ```shell
+    ```azurecli
     az keyvault secret set --vault-name "[VAULT_NAME]" --name "[SECRET_NAME]" --value "[SECRET_VALUE]"
     ```
 
 1. Registreer een toepassing bij Azure AD door de volgende opdracht uit te voeren:
-    ```shell
+    ```azurecli
     az ad sp create-for-rbac -n "MavericsKeyVault" --skip-assignment > azure-credentials.json
     ```
 
 1. Verleen een toepassing toestemming een geheim te gebruiken door de volgende opdracht uit te voeren:
-    ```shell
+    ```azurecli
     az keyvault set-policy --name "[VAULT_NAME]" --spn [APPID] --secret-permissions list get
     #APPID can be found in the azure-credentials.json
     generated in the previous step
@@ -239,7 +239,7 @@ Maverics Identity Orchestrator Azure AD Connector ondersteunt OpenID Connect en 
 
 1. Genereer een JWT-ondertekeningssleutel (JSON Web Token). Dit wordt gebruikt om de Maverics Identity Orchestrator-sessiegegevens te beveiligen met behulp van het [hulpprogramma OpenSSL](https://www.openssl.org/source/):
 
-    ```shell 
+    ```console 
     openssl rand 64 | base64
     ```
 1. Kopieer het antwoord naar de configuratie-eigenschap `jwtSigningKey`: `jwtSigningKey: TBHPvTtu6NUqU84H3Q45grcv9WDJLHgTioqRhB8QGiVzghKlu1mHgP1QHVTAZZjzLlTBmQwgsSoWxGHRcT4Bcw==`.

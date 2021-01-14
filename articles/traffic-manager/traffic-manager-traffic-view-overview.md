@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: duau
 ms.custom: ''
-ms.openlocfilehash: f1a3cc5ccb326d6a198895f9f459e661f7805b1e
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b20357413c62460aba55a2d354b90995a2aa4815
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003834"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183690"
 ---
 # <a name="traffic-manager-traffic-view"></a>Traffic Manager Verkeersweergave
 
@@ -72,29 +72,29 @@ Wanneer u Verkeersweergave gebruikt, wordt u gefactureerd op basis van het aanta
 
 ## <a name="faqs"></a>Veelgestelde vragen
 
-* [Wat doet Verkeersweergave?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-does-traffic-view-do)
+* [Wat doet Verkeersweergave?](./traffic-manager-faqs.md#what-does-traffic-view-do)
 
-* [Hoe kan ik profiteren van het gebruik van Verkeersweergave?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-benefit-from-using-traffic-view)
+* [Hoe kan ik profiteren van het gebruik van Verkeersweergave?](./traffic-manager-faqs.md#how-can-i-benefit-from-using-traffic-view)
 
-* [Hoe wijkt Verkeersweergave af van de Traffic Manager metrische gegevens die beschikbaar zijn via Azure monitor?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-is-traffic-view-different-from-the-traffic-manager-metrics-available-through-azure-monitor)
+* [Hoe wijkt Verkeersweergave af van de Traffic Manager metrische gegevens die beschikbaar zijn via Azure monitor?](./traffic-manager-faqs.md#how-is-traffic-view-different-from-the-traffic-manager-metrics-available-through-azure-monitor)
 
-* [Gebruikt Verkeersweergave informatie over het subnet van EDNS-client?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-view-use-edns-client-subnet-information)
+* [Gebruikt Verkeersweergave informatie over het subnet van EDNS-client?](./traffic-manager-faqs.md#does-traffic-view-use-edns-client-subnet-information)
 
-* [Hoeveel dagen aan gegevens Verkeersweergave gebruik?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-days-of-data-does-traffic-view-use)
+* [Hoeveel dagen aan gegevens Verkeersweergave gebruik?](./traffic-manager-faqs.md#how-many-days-of-data-does-traffic-view-use)
 
-* [Hoe verwerkt Verkeersweergave externe eind punten?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-handle-external-endpoints)
+* [Hoe verwerkt Verkeersweergave externe eind punten?](./traffic-manager-faqs.md#how-does-traffic-view-handle-external-endpoints)
 
-* [Moet ik Verkeersweergave inschakelen voor elk profiel in mijn abonnement?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-need-to-enable-traffic-view-for-each-profile-in-my-subscription)
+* [Moet ik Verkeersweergave inschakelen voor elk profiel in mijn abonnement?](./traffic-manager-faqs.md#do-i-need-to-enable-traffic-view-for-each-profile-in-my-subscription)
 
-* [Hoe kan ik Verkeersweergave uitschakelen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-turn-off-traffic-view)
+* [Hoe kan ik Verkeersweergave uitschakelen?](./traffic-manager-faqs.md#how-can-i-turn-off-traffic-view)
 
-* [Hoe werkt Verkeersweergave facturering?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-does-traffic-view-billing-work)
+* [Hoe werkt Verkeersweergave facturering?](./traffic-manager-faqs.md#how-does-traffic-view-billing-work)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie [over de werking van Traffic Manager](traffic-manager-overview.md)
 - Meer informatie over de [routerings methoden voor verkeer](traffic-manager-routing-methods.md) die door Traffic Manager worden ondersteund
-- Meer informatie over het [maken van een Traffic Manager profiel](traffic-manager-create-profile.md)
+- Meer informatie over het [maken van een Traffic Manager profiel](./quickstart-create-traffic-manager-profile.md)
 
 <!--Image references-->
 [1]: ./media/traffic-manager-traffic-view-overview/trafficview.png

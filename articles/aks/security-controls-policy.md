@@ -1,16 +1,16 @@
 ---
 title: Besturingselementen voor Naleving van Azure Policy-regelgeving voor AKS (Azure Kubernetes Service)
 description: Geef beschikbare besturingselementen voor Naleving van Azure Policy-regelgeving voor AKS (Azure Kubernetes Service) weer. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 11/20/2020
+ms.date: 01/08/2021
 ms.topic: sample
 ms.service: container-service
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: b3c25c80c9ed4ce8c3184a562eafa5550aeb6d8d
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 398702d0110b9430d55a0c90f751e8cf14eb33f7
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94989736"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98049458"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-kubernetes-service-aks"></a>Besturingselementen voor Naleving van Azure Policy-regelgeving voor AKS (Azure Kubernetes Service)
 

@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: duau
 ms.custom: ''
-ms.openlocfilehash: 45c889ef8d67570fb075ec710616f20d110b7f50
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 618f8fff532da0f6ae315ad9e4cda35a289949d1
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401602"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183707"
 ---
 # <a name="traffic-manager-real-user-measurements-overview"></a>Overzicht voor real-user-metingen in Traffic Manager
 
@@ -37,48 +37,47 @@ Wanneer u Real-user-metingen gebruikt, wordt u gefactureerd op basis van het aan
 
 ## <a name="faqs"></a>Veelgestelde vragen
 
-* [Wat zijn de voor delen van het gebruik van Real-user-metingen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-are-the-benefits-of-using-real-user-measurements)
+* [Wat zijn de voor delen van het gebruik van Real-user-metingen?](./traffic-manager-faqs.md#what-are-the-benefits-of-using-real-user-measurements)
 
-* [Kan ik Real-user-metingen gebruiken met niet-Azure-regio's?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-real-user-measurements-with-non-azure-regions)
+* [Kan ik Real-user-metingen gebruiken met niet-Azure-regio's?](./traffic-manager-faqs.md#can-i-use-real-user-measurements-with-non-azure-regions)
 
-* [Welke routerings methode heeft voor delen van Real-user-metingen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#which-routing-method-benefits-from-real-user-measurements)
+* [Welke routerings methode heeft voor delen van Real-user-metingen?](./traffic-manager-faqs.md#which-routing-method-benefits-from-real-user-measurements)
 
-* [Moet ik elk profiel afzonderlijk inschakelen Real-user-metingen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-need-to-enable-real-user-measurements-each-profile-separately)
+* [Moet ik elk profiel afzonderlijk inschakelen Real-user-metingen?](./traffic-manager-faqs.md#do-i-need-to-enable-real-user-measurements-each-profile-separately)
 
-* [Hoe kan ik Real-user-metingen voor mijn abonnement uitschakelen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-do-i-turn-off-real-user-measurements-for-my-subscription)
+* [Hoe kan ik Real-user-metingen voor mijn abonnement uitschakelen?](./traffic-manager-faqs.md#how-do-i-turn-off-real-user-measurements-for-my-subscription)
 
-* [Kan ik Real-user-metingen gebruiken met andere client toepassingen dan webpagina's?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-real-user-measurements-with-client-applications-other-than-web-pages)
+* [Kan ik Real-user-metingen gebruiken met andere client toepassingen dan webpagina's?](./traffic-manager-faqs.md#can-i-use-real-user-measurements-with-client-applications-other-than-web-pages)
 
-* [Hoeveel metingen worden er uitgevoerd telkens wanneer mijn Real-user-metingen ingeschakelde webpagina wordt weer gegeven?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-many-measurements-are-made-each-time-my-real-user-measurements-enabled-web-page-is-rendered)
+* [Hoeveel metingen worden er uitgevoerd telkens wanneer mijn Real-user-metingen ingeschakelde webpagina wordt weer gegeven?](./traffic-manager-faqs.md#how-many-measurements-are-made-each-time-my-real-user-measurements-enabled-web-page-is-rendered)
 
-* [Is er een vertraging voordat Real-user-metingen script wordt uitgevoerd op mijn webpagina?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#is-there-a-delay-before-real-user-measurements-script-runs-in-my-webpage)
+* [Is er een vertraging voordat Real-user-metingen script wordt uitgevoerd op mijn webpagina?](./traffic-manager-faqs.md#is-there-a-delay-before-real-user-measurements-script-runs-in-my-webpage)
 
-* [Kan ik Real-user-metingen gebruiken met alleen de Azure-regio's die ik wil meten?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-real-user-measurements-with-only-the-azure-regions-i-want-to-measure)
+* [Kan ik Real-user-metingen gebruiken met alleen de Azure-regio's die ik wil meten?](./traffic-manager-faqs.md#can-i-use-real-user-measurements-with-only-the-azure-regions-i-want-to-measure)
 
-* [Kan ik het aantal metingen beperken dat is uitgevoerd op een specifiek aantal?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-limit-the-number-of-measurements-made-to-a-specific-number)
+* [Kan ik het aantal metingen beperken dat is uitgevoerd op een specifiek aantal?](./traffic-manager-faqs.md#can-i-limit-the-number-of-measurements-made-to-a-specific-number)
 
-* [Kan ik zien welke metingen worden uitgevoerd door mijn client toepassing als onderdeel van Real-user-metingen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-see-the-measurements-taken-by-my-client-application-as-part-of-real-user-measurements)
+* [Kan ik zien welke metingen worden uitgevoerd door mijn client toepassing als onderdeel van Real-user-metingen?](./traffic-manager-faqs.md#can-i-see-the-measurements-taken-by-my-client-application-as-part-of-real-user-measurements)
 
-* [Kan ik het meting script van Traffic Manager wijzigen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-modify-the-measurement-script-provided-by-traffic-manager)
+* [Kan ik het meting script van Traffic Manager wijzigen?](./traffic-manager-faqs.md#can-i-modify-the-measurement-script-provided-by-traffic-manager)
 
-* [Is het mogelijk dat anderen de sleutel zien die ik gebruik met Real-user-metingen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#will-it-be-possible-for-others-to-see-the-key-i-use-with-real-user-measurements)
+* [Is het mogelijk dat anderen de sleutel zien die ik gebruik met Real-user-metingen?](./traffic-manager-faqs.md#will-it-be-possible-for-others-to-see-the-key-i-use-with-real-user-measurements)
 
-* [Kunnen anderen mijn RUM-sleutel misbruiken?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-others-abuse-my-rum-key)
+* [Kunnen anderen mijn RUM-sleutel misbruiken?](./traffic-manager-faqs.md#can-others-abuse-my-rum-key)
 
-* [Moet ik de meting java script in al mijn webpagina's plaatsen?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-need-to-put-the-measurement-javascript-in-all-my-web-pages)
+* [Moet ik de meting java script in al mijn webpagina's plaatsen?](./traffic-manager-faqs.md#do-i-need-to-put-the-measurement-javascript-in-all-my-web-pages)
 
-* [Kan informatie over mijn eind gebruikers worden geïdentificeerd door Traffic Manager als ik Real-user-metingen gebruik?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-information-about-my-end-users-be-identified-by-traffic-manager-if-i-use-real-user-measurements)
+* [Kan informatie over mijn eind gebruikers worden geïdentificeerd door Traffic Manager als ik Real-user-metingen gebruik?](./traffic-manager-faqs.md#can-information-about-my-end-users-be-identified-by-traffic-manager-if-i-use-real-user-measurements)
 
-* [Moet de afmeting van de webpagina Real-user-metingen Traffic Manager voor route ring gebruiken?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-the-webpage-measuring-real-user-measurements-need-to-be-using-traffic-manager-for-routing)
+* [Moet de afmeting van de webpagina Real-user-metingen Traffic Manager voor route ring gebruiken?](./traffic-manager-faqs.md#does-the-webpage-measuring-real-user-measurements-need-to-be-using-traffic-manager-for-routing)
 
-* [Moet ik een service op Azure-regio's hosten om met Real-user-metingen te gebruiken?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#do-i-need-to-host-any-service-on-azure-regions-to-use-with-real-user-measurements)
+* [Moet ik een service op Azure-regio's hosten om met Real-user-metingen te gebruiken?](./traffic-manager-faqs.md#do-i-need-to-host-any-service-on-azure-regions-to-use-with-real-user-measurements)
 
-* [Neemt mijn Azure-bandbreedte gebruik toe wanneer ik Real-user-metingen gebruik?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#will-my-azure-bandwidth-usage-increase-when-i-use-real-user-measurements)
+* [Neemt mijn Azure-bandbreedte gebruik toe wanneer ik Real-user-metingen gebruik?](./traffic-manager-faqs.md#will-my-azure-bandwidth-usage-increase-when-i-use-real-user-measurements)
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over het gebruik [van Real-User-metingen met](traffic-manager-create-rum-web-pages.md) webpagina's
 - Meer informatie [over de werking van Traffic Manager](traffic-manager-overview.md)
-- Meer informatie over [mobiel centrum](https://docs.microsoft.com/mobile-center/)
+- Meer informatie over [mobiel centrum](/mobile-center/)
 - Meer informatie over de [routerings methoden voor verkeer](traffic-manager-routing-methods.md) die door Traffic Manager worden ondersteund
-- Meer informatie over het [maken van een Traffic Manager profiel](traffic-manager-create-profile.md)
-
+- Meer informatie over het [maken van een Traffic Manager profiel](./quickstart-create-traffic-manager-profile.md)

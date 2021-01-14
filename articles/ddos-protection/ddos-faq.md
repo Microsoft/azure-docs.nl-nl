@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 4196515463611f51dddb79438b1d4e827f1b32c2
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: e87fd8724ab9a967bf3b75579eb0e375a324a7b1
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165396"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183095"
 ---
 # <a name="azure-ddos-protection-standard-frequent-asked-questions"></a>Veelgestelde vragen over Azure DDoS Protection
 
@@ -32,6 +32,8 @@ Azure DDoS Protection Standard, gecombineerd met de aanbevolen procedures voor h
 DDoS-beschermings plannen hebben een vaste maandelijkse kosten van $2.944 per maand, die betrekking hebben op een open bare IP-adres van 100. Voor de beveiliging van extra resources wordt een extra $30 per resource per maand berekend. 
 
 Onder een Tenant kan één DDoS-beveiligings plan worden gebruikt voor meerdere abonnementen, zodat er niet meer dan één DDoS-beveiligings plan hoeft te worden gemaakt.
+
+Zie [Azure DDoS Protection Standard prijzen](https://azure.microsoft.com/pricing/details/ddos-protection/) voor meer informatie.
 
 ## <a name="what-about-protection-at-the-service-layer-layer-7"></a>Hoe zit het met de beveiliging van de service laag (laag 7)?
 Klanten kunnen Azure DDoS Protection Service in combi natie met een Web Application firewall (WAF) gebruiken voor de beveiliging op de netwerklaag (laag 3 en 4, aangeboden door Azure DDoS Protection Standard) en op de toepassingslaag (laag 7, aangeboden door een WAF). WAF-aanbiedingen zijn onder andere Azure [Application Gateway WAF-SKU](../web-application-firewall/ag/ag-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en Web Application firewall aanbiedingen van derden die beschikbaar zijn op de [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=web%20application%20firewall).

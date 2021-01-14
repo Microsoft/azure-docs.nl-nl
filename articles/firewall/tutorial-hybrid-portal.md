@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/17/2020
 ms.author: victorh
 customer intent: As an administrator, I want to control network access from an on-premises network to an Azure virtual network.
-ms.openlocfilehash: 78e934a90b8d4e8feccf18a5cada3ec4920e1642
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 86e27c190b269763d8dd2f562a207b3f2020da29
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94734447"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051068"
 ---
 # <a name="tutorial-deploy-and-configure-azure-firewall-in-a-hybrid-network-using-the-azure-portal"></a>Zelfstudie: Azure Firewall implementeren en configureren in een hybride netwerk met behulp van de Azure-portal
 
@@ -84,7 +84,7 @@ Maak eerst de resourcegroep voor de resources in deze zelfstudie:
 Maak nu het VNet:
 
 > [!NOTE]
-> De grootte van het subnet AzureFirewallSubnet is /26. Zie [Veelgestelde vragen over Azure Firewall](firewall-faq.md#why-does-azure-firewall-need-a-26-subnet-size) voor meer informatie over de grootte van het subnet.
+> De grootte van het subnet AzureFirewallSubnet is /26. Zie [Veelgestelde vragen over Azure Firewall](firewall-faq.yml#why-does-azure-firewall-need-a--26-subnet-size) voor meer informatie over de grootte van het subnet.
 
 1. Selecteer op de startpagina van de Azure-portal **Een resource maken**.
 2. Selecteer **Virtueel netwerk** onder **Netwerken**.

@@ -9,12 +9,12 @@ ms.service: synapse-analytics
 ms.topic: tutorial
 ms.subservice: spark
 ms.date: 04/15/2020
-ms.openlocfilehash: 75cc23df41741a95e87ad64d168aea4fa4f45733
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 39f39b6f53944510b5f3692bb8b3fdd472004454
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96451042"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121223"
 ---
 # <a name="tutorial-create-an-apache-spark-application-with-intellij-using-a-synapse-workspace"></a>Zelfstudie: een Apache Spark-toepassing met IntelliJ maken met behulp van een Synapse-werkruimte
 
@@ -36,7 +36,7 @@ In deze zelfstudie leert u het volgende:
 - [IntelliJ IDEA-communityversie](https://www.jetbrains.com/idea/download/download-thanks.html?platform=windows&code=IIC).
 - Invoegtoepassing Azure-toolkit 3.27.0-2019.2 – Installeren vanuit [Opslagplaats voor IntelliJ-invoegtoepassingen](/java/azure/intellij/azure-toolkit-for-intellij-installation?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 - [JDK (versie 1.8)](https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-- Scala-invoegtoepassing – Installeren vanuit [Opslagplaats voor IntelliJ-invoegtoepassingen](/azure/hdinsight/spark/apache-spark-intellij-tool-plugin#install-scala-plugin-for-intellij-idea).
+- Scala-invoegtoepassing – Installeren vanuit [Opslagplaats voor IntelliJ-invoegtoepassingen](../../hdinsight/spark/apache-spark-intellij-tool-plugin.md#install-scala-plugin-for-intellij-idea).
 - De volgende vereiste geldt alleen voor Windows-gebruikers:
 
   Terwijl u de lokale Spark Scala-toepassing uitvoert op een Windows-computer, kan er een uitzondering optreden, zoals uitgelegd in [SPARK-2356](https://issues.apache.org/jira/browse/SPARK-2356). De uitzondering treedt op omdat WinUtils.exe ontbreekt op Windows.

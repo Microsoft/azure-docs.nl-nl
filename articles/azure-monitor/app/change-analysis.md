@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cawams
 ms.author: cawa
 ms.date: 05/04/2020
-ms.openlocfilehash: 50e199d2d56016086bb409f8690e9828f1d19984
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 0cdb82bbf38244bc91ed54ffb7d7d734cefe9dd2
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881506"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183316"
 ---
 # <a name="use-application-change-analysis-preview-in-azure-monitor"></a>Toepassings wijzigings analyse (preview) gebruiken in Azure Monitor
 
@@ -194,6 +194,27 @@ Als dit de eerste keer is dat u het wijzigings overzicht bekijkt na de integrati
 ### <a name="azure-lighthouse-subscription-is-not-supported"></a>Azure Lighthouse-abonnement wordt niet ondersteund
 
 - **Kan geen query uitvoeren op de micro soft. ChangeAnalysis-resource provider** met *het bericht Azure Lighthouse-abonnement wordt niet ondersteund. de wijzigingen zijn alleen beschikbaar in de thuis Tenant van het abonnement*. Er is nu een beperking voor de resource provider voor wijzigings analyse die wordt geregistreerd via een Azure Lighthouse-abonnement voor gebruikers die zich niet in de thuis Tenant bevinden. We verwachten dat deze beperking in de nabije toekomst wordt opgelost. Als dit probleem zich voordoet, is er een tijdelijke oplossing waarbij u een Service-Principal moet maken en de rol expliciet kunt toewijzen om de toegang toe te staan.  Neem contact changeanalysishelp@microsoft.com op met meer informatie.
+
+### <a name="an-error-occurred-while-getting-changes-please-refresh-this-page-or-come-back-later-to-view-changes"></a>Er is een fout opgetreden tijdens het ophalen van wijzigingen. Vernieuw deze pagina of kom later terug om de wijzigingen weer te geven
+
+Dit is het algemene fout bericht dat door de service voor het wijzigen van de toepassings wijziging wordt weer gegeven wanneer de wijzigingen niet kunnen worden geladen. Enkele bekende oorzaken zijn:
+- Fout met Internet verbinding van het client apparaat
+- Wijziging van de analyse service is tijdelijk niet beschikbaar. Als u de pagina na een paar minuten vernieuwt, wordt dit probleem doorgaans opgelost. Als de fout zich blijft voordoen, neemt u contact op met changeanalysishelp@micorosoft.com
+
+### <a name="you-dont-have-enough-permissions-to-view-some-changes-contact-your-azure-subscription-administrator"></a>U hebt onvoldoende machtigingen om enkele wijzigingen weer te geven. Neem contact op met de beheerder van uw Azure-abonnement
+
+Dit is het algemene niet-geautoriseerde fout bericht, waarin wordt uitgelegd dat de huidige gebruiker niet voldoende machtigingen heeft om de wijziging weer te geven. Er is ten minste toegang tot de lezer vereist voor de resource om de wijzigingen in de infra structuur weer te geven die door Azure resource Graph en Azure Resource Manager zijn geretourneerd. Voor de wijzigingen van de web-app in het gast bestand en configuratie wijzigingen is ten minste de rol Inzender vereist.
+
+### <a name="failed-to-register-microsoftchangeanalysis-resource-provider"></a>Kan de micro soft. ChangeAnalysis-resource provider niet registreren
+ 
+**U hebt onvoldoende machtigingen om de resource provider micro soft. ChangeAnalysis te registreren. Neem contact op met de beheerder van uw Azure-abonnement.** Dit fout bericht betekent dat aan uw rol in het huidige abonnement geen **micro soft. support/registreer/Action-** bereik is gekoppeld. Dit kan gebeuren als u niet de eigenaar van een abonnement bent en gedeelde toegangs machtigingen hebt via een collega. bijvoorbeeld toegang tot een resource groep weer geven. U kunt dit probleem oplossen door contact op te nemen met de eigenaar van uw abonnement om de resource provider **micro soft. ChangeAnalysis** te registreren. Dit kan worden gedaan in Azure Portal via **abonnementen | Resource providers** en zoeken ```Microsoft.ChangeAnalysis``` en registreren in de gebruikers interface of via Azure PowerShell of Azure cli.
+
+Registreer de resource provider via Power shell: 
+
+```PowerShell
+# Register resource provider
+Register-AzResourceProvider -ProviderNamespace "Microsoft.ChangeAnalysis"
+```
 
 ## <a name="next-steps"></a>Volgende stappen
 

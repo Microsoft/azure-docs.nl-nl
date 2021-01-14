@@ -1,16 +1,16 @@
 ---
 title: 'Zelfstudie: een gekoppelde sjabloon implementeren'
 description: Meer informatie over het implementeren van een gekoppelde sjabloon
-ms.date: 03/13/2020
+ms.date: 01/12/2021
 ms.topic: tutorial
 ms.author: jgao
 ms.custom: ''
-ms.openlocfilehash: 81a8b6cd5044b31ee80f50448d6610ba6a57281e
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 4ec49fad35e958f010461abf2ee0e3dab8077d55
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585646"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134191"
 ---
 # <a name="tutorial-deploy-a-linked-template"></a>Zelfstudie: Een gekoppelde sjabloon implementeren
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/02/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8b18da5e41e235b560918ad26117a0162078862c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e8915e1c15972341befd176b412925f4e87c94f6
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91540979"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201447"
 ---
 # <a name="azure-policy-security-baseline-for-azure-security-benchmark"></a>Azure Policy beveiligings basislijn voor Azure Security Bench Mark
 
@@ -36,9 +36,9 @@ Azure Policy gebruikt het _eigendom_ van de term in plaats van _verantwoordelijk
 * [Logboek registratie en verschillende logboek typen in azure](../../../azure-monitor/platform/platform-logs-overview.md)
 
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="identity-and-access-control"></a>Identiteits- en toegangsbeheer
 
@@ -51,22 +51,22 @@ Azure Policy gebruikt het _eigendom_ van de term in plaats van _verantwoordelijk
 U kunt ook een just-in-time-of just-out-Access-oplossing inschakelen met behulp van [Azure AD privileged Identity Management](../../../active-directory/privileged-identity-management/pim-configure.md) geprivilegieerde rollen of [Azure Resource Manager](../../../azure-resource-manager/management/overview.md).
 
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
 
 **Richt lijnen**: gebruik paw's (privileged Access workstations) met MFA dat is geconfigureerd om Azure-resources aan te melden en te configureren.
 
-* [Meer informatie over privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-* [MFA inschakelen in azure](../../../active-directory/authentication/howto-mfa-getstarted.md)
+* [MFA inschakelen in Azure](../../../active-directory/authentication/howto-mfa-getstarted.md)
 
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="data-protection"></a>Gegevensbeveiliging
 
@@ -81,9 +81,9 @@ U kunt ook een just-in-time-of just-out-Access-oplossing inschakelen met behulp 
 * [Azure RBAC configureren](../../../role-based-access-control/role-assignments-portal.md)
 
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="49-log-and-alert-on-changes-to-critical-azure-resources"></a>4,9: wijzigingen in essentiële Azure-resources vastleggen en waarschuwen
 
@@ -92,9 +92,9 @@ U kunt ook een just-in-time-of just-out-Access-oplossing inschakelen met behulp 
 * [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../../../azure-monitor/platform/alerts-activity-log.md)
 
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="inventory-and-asset-management"></a>Inventarisatie en asset-management
 
@@ -109,17 +109,17 @@ U kunt ook een just-in-time-of just-out-Access-oplossing inschakelen met behulp 
 * [Zelfstudie: Tag governance beheren](../tutorials/govern-tags.md)
 
 
-**Azure Security Center bewaking**: momenteel niet beschikbaar
+**Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="64-define-and-maintain-an-inventory-of-approved-azure-resources"></a>6,4: een inventaris van goedgekeurde Azure-resources definiëren en onderhouden
 
 **Richt lijnen**: een inventaris van goedgekeurde beleids definities en beleids toewijzingen maken conform uw organisatie behoeften.
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ### <a name="65-monitor-for-unapproved-azure-resources"></a>6,5: monitor voor niet-goedgekeurde Azure-resources
 
@@ -128,11 +128,11 @@ U kunt ook een just-in-time-of just-out-Access-oplossing inschakelen met behulp 
 * [Azure Policy configureren en beheren](../tutorials/create-and-manage.md)
 
 
-**Azure Security Center bewaking**: niet van toepassing
+**Azure Security Center-bewaking**: Niet van toepassing
 
-**Verantwoordelijkheid**: klant
+**Verantwoordelijkheid**: Klant
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie de [Azure Security-Bench Mark](../../../security/benchmarks/overview.md)
-- Meer informatie over [Azure-beveiligings basislijnen](../../../security/benchmarks/security-baselines-overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../../../security/benchmarks/security-baselines-overview.md)

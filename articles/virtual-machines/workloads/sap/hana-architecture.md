@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a23a177945316bca89aa5cbcc46f840213dbe832
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: cd81139c15e6bba65fe9b9a53a2e8e950ebd754b
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964810"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201753"
 ---
 # <a name="sap-hana-large-instances-architecture-on-azure"></a>Architectuur van SAP HANA (grote instanties) op Azure
 
@@ -43,7 +43,7 @@ De weer gegeven architectuur is onderverdeeld in drie secties:
    Voor SAP NetWeaver-toepassingen en-data bases die worden ondersteund voor uitvoering in azure, raadpleegt u [SAP-ondersteuning opmerking #1928533: SAP-toepassingen op Azure: ondersteunde producten en typen Azure VM](https://launchpad.support.sap.com/#/notes/1928533). Zie voor documentatie over het implementeren van SAP-oplossingen in Azure:
 
   -  [SAP op virtuele Windows-machines gebruiken](./get-started.md?toc=/azure/virtual-machines/linux/toc.json)
-  -  [SAP-oplossingen gebruiken op virtuele machines van Azure](get-started.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+  -  [SAP-oplossingen gebruiken op virtuele machines van Azure](get-started.md)
 
 - **Links**: toont de SAP Hana TDI-gecertificeerde hardware in de Azure-stempel voor grote instanties. De HANA-eenheden voor grote instanties zijn verbonden met de virtuele netwerken van uw Azure-abonnement met behulp van dezelfde technologie als de connectiviteit van on-premises in Azure. Vanaf mei 2019 werd een Optima Lise ring geïntroduceerd waarmee kan worden gecommuniceerd tussen de HANA-grote exemplaar eenheden en de virtuele Azure-machines zonder betrokkenheid van de ExpressRoute-gateway. Deze optimalisatie met de naam ExpressRoute Fast path wordt weer gegeven in deze architectuur (rode lijnen). 
 

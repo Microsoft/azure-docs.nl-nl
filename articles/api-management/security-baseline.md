@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 05/04/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: ab4ae6980af9556f973ece93634b614d01c615e9
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 1825767d8140421d4f0e22f9ebfde42f8262da5e
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132661"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201073"
 ---
 # <a name="azure-security-baseline-for-api-management"></a>Azure-beveiligings basislijn voor API Management
 
@@ -446,7 +446,7 @@ U kunt ook het aanmeldings-en aanmeldings proces verder aanpassen via delegering
 
 **Hulp**: gebruik paw (privileged Access workstations) met multi-factor Authentication (MFA) die zijn geconfigureerd voor aanmelding bij en configureren van Azure-resources.
 
-* [Meer informatie over privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -568,7 +568,7 @@ Configureer geavanceerde bewaking met API Management met behulp van het `log-to-
 
 **Verantwoordelijkheid**: Klant
 
-## <a name="data-protection"></a>Gegevensbescherming
+## <a name="data-protection"></a>Gegevensbeveiliging
 
 *Zie [beveiligings beheer: gegevens beveiliging](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 

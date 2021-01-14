@@ -8,18 +8,18 @@ ms.topic: how-to
 ms.date: 07/12/2017
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: f56118750fc980c249c88b796728f4ecb2641a88
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 83c054a9e2dd829dbfb34a3873f06332e504b832
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86510953"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201192"
 ---
 # <a name="move-files-to-and-from-a-linux-vm-using-scp"></a>Bestanden verplaatsen van en naar een virtuele Linux-machine met behulp van SCP
 
 In dit artikel wordt beschreven hoe u bestanden van uw werk station kunt verplaatsen naar een virtuele Azure Linux-machine of van een Azure Linux-VM naar uw werk station met behulp van Secure Copy (SCP). Het verplaatsen van bestanden tussen uw werk station en een virtuele Linux-machine, is essentieel voor het beheren van uw Azure-infra structuur. 
 
-Voor dit artikel hebt u een Linux-VM in azure geïmplementeerd met [open bare en persoonlijke SSH-sleutel bestanden](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). U hebt ook een SCP-client nodig voor uw lokale computer. Het is gebouwd op SSH en is opgenomen in de standaard bash-shell van de meeste Linux-en Mac-computers en enkele Windows-shells.
+Voor dit artikel hebt u een Linux-VM in azure geïmplementeerd met [open bare en persoonlijke SSH-sleutel bestanden](mac-create-ssh-keys.md). U hebt ook een SCP-client nodig voor uw lokale computer. Het is gebouwd op SSH en is opgenomen in de standaard bash-shell van de meeste Linux-en Mac-computers en enkele Windows-shells.
 
 ## <a name="quick-commands"></a>Snelle opdrachten
 
@@ -43,7 +43,7 @@ Als voor beeld wordt een Azure-configuratie bestand naar een virtuele Linux-mach
 
 SCP gebruikt SSH voor de transportlaag. SSH verwerkt de verificatie op de doelhost en verplaatst het bestand in een versleutelde tunnel die standaard wordt meegeleverd met SSH. Voor SSH-verificatie kunnen gebruikers namen en wacht woorden worden gebruikt. De open bare en persoonlijke sleutel verificatie van SSH wordt echter aanbevolen als een beveiligings best practice. Nadat de verbinding is geverifieerd door de SSH, begint SCP het bestand te kopiëren. Door gebruik te maken van een juist geconfigureerde `~/.ssh/config` en open bare en persoonlijke SSH-sleutel, kan de SCP-verbinding tot stand worden gebracht door alleen een server naam (of IP-adres) te gebruiken. Als u slechts één SSH-sleutel hebt, wordt deze in de `~/.ssh/` directory gezocht en wordt deze standaard gebruikt om u aan te melden bij de virtuele machine.
 
-Zie SSH-sleutels maken voor meer informatie over het configureren van `~/.ssh/config` open bare [Create SSH keys](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)en persoonlijke sleutels voor SSH.
+Zie SSH-sleutels maken voor meer informatie over het configureren van `~/.ssh/config` open bare [](mac-create-ssh-keys.md)en persoonlijke sleutels voor SSH.
 
 ## <a name="scp-a-file-to-a-linux-vm"></a>Een bestand aan een virtuele Linux-machine SCP
 

@@ -7,12 +7,12 @@ ms.service: vpn-gateway
 ms.topic: article
 ms.date: 12/02/2020
 ms.author: yushwang
-ms.openlocfilehash: fdb7b1964bf4b8e2dbf6afd541e4415c0345347c
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 4c6bd62e96d85305036626a8672c39ff1b9f6b26
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631462"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201090"
 ---
 # <a name="about-vpn-devices-and-ipsecike-parameters-for-site-to-site-vpn-gateway-connections"></a>VPN-apparaten en IPSec-/IKE-parameters voor site-naar-site-VPN-gateway-verbindingen
 
@@ -67,7 +67,7 @@ Raadpleeg de koppelingen die overeenkomen met de juiste familie voor meer inform
 | Sophos | XG Firewall van de volgende generatie | XG v17 | (niet getest) | [Configuratie handleiding](https://community.sophos.com/kb/127546)<br><br>[Configuratie handleiding-meerdere SAs](https://community.sophos.com/kb/en-us/133154) |
 | Synology | MR2200ac <br>RT2600ac <br>RT1900ac | 1.1.5/VpnPlusServer-1.2.0 | (niet getest) | [Configuratie handleiding](https://www.synology.com/en-global/knowledgebase/SRM/tutorial/VPN/How_to_set_up_Site_to_Site_VPN_between_Synology_Router_and_MS_Azure) |
 | Ubiquiti | EdgeRouter | EdgeOS v 1,10 | (niet getest) | [BGP via IKEv2/IPsec](https://help.ubnt.com/hc/en-us/articles/115012374708)<br><br>[VTI via IKEv2/IPsec](https://help.ubnt.com/hc/en-us/articles/115012305347) |
-| Ultra | 3E-636L3 | 5.2.0. T3-build-13  | (niet getest) | [Configuratie handleiding](https://ultra-3eti.com/wp-content/uploads/2020/07/Azure-VPN-636L3-Site-to-Site-Test-Notes.pdf) |
+| Ultra | 3E-636L3 | 5.2.0. T3-build-13  | (niet getest) | Configuratie handleiding |
 | WatchGuard |Alles |Fireware XTM<br> PolicyBased: v11.11.x<br>RouteBased: v11.12.x |[Configuratie handleiding](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA2F00000000LI7KAM&lang=en_US) |[Configuratie handleiding](http://watchguardsupport.force.com/publicKB?type=KBArticle&SFDCID=kA22A000000XZogSAG&lang=en_US)|
 | ZyXEL |ZyWALL USG-serie<br>ZyWALL ATP-serie<br>ZyWALL VPN-serie | ZLD v 4.32 + | (niet getest) | [VTI via IKEv2/IPsec](https://businessforum.zyxel.com/discussion/2648/)<br><br>[BGP via IKEv2/IPsec](https://businessforum.zyxel.com/discussion/2650/)|
 
@@ -142,7 +142,7 @@ In de volgende tabellen:
 | Versleutelings- en hash-algoritmen |1. AES256, SHA256<br>2. AES256, SHA1<br>3. AES128, SHA1<br>4. 3DES, SHA1 |[RouteBased QM SA-aanbiedingen](#RouteBasedOffers) |
 | SA-levensduur (tijd)            |3.600 seconden  |27.000 seconden                               |
 | SA-levensduur (bytes)           |102.400.000 kB |102.400.000 kB                               |
-| Perfect Forward Secrecy (PFS) |Nee             |[RouteBased QM SA-aanbiedingen](#RouteBasedOffers) |
+| Perfect Forward Secrecy (PFS) |No             |[RouteBased QM SA-aanbiedingen](#RouteBasedOffers) |
 | Dead Peer Detection (DPD)     |Niet ondersteund  |Ondersteund                                    |
 
 

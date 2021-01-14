@@ -10,12 +10,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: article
 ms.date: 12/13/2018
 ms.author: akjosh
-ms.openlocfilehash: ffbafb76fd2c6dd06a88bfd79746557889039cd6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2e831b3c091b18a5c739275e4c932094ce088ba4
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94956021"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202603"
 ---
 # <a name="use-linux-diagnostic-extension-to-monitor-metrics-and-logs"></a>De diagnostische Linux-extensie gebruiken voor het bewaken van metrische gegevens en logboeken
 
@@ -229,7 +229,7 @@ Deze set configuratie-informatie bevat gevoelige informatie die moet worden beve
 }
 ```
 
-Name | Waarde
+Naam | Waarde
 ---- | -----
 storageAccountName | De naam van het opslag account waarin de gegevens worden geschreven door de extensie.
 storageAccountEndPoint | Beschrijving Het eind punt dat de Cloud aanduidt waarin het opslag account zich bevindt. Als deze instelling niet aanwezig is, LAD standaard ingesteld op de open bare Azure-Cloud `https://core.windows.net` . Als u een opslag account in azure Duitsland, Azure Government of Azure China wilt gebruiken, stelt u deze waarde dienovereenkomstig in.
@@ -403,7 +403,7 @@ Voor beelden van de metrische gegevens die zijn opgegeven in de sectie Performan
 
 Deze optionele sectie bepaalt het verzamelen van metrische gegevens. Onbewerkte voor beelden worden geaggregeerd voor elke [scheduledTransferPeriod](#metrics) om deze waarden te produceren:
 
-* mean
+* gemiddeld
 * minimum
 * maximum
 * laatst verzamelde waarde
@@ -488,7 +488,7 @@ Element | Waarde
 ------- | -----
 naamruimte | Beschrijving De OMI-naam ruimte waarbinnen de query moet worden uitgevoerd. Als u deze niet opgeeft, is de standaard waarde ' root/SCx ', geïmplementeerd door de [System Center-providers voor meerdere platforms](https://github.com/Microsoft/SCXcore).
 query | De OMI-query die moet worden uitgevoerd.
-table | Beschrijving De Azure Storage-tabel, in het toegewezen opslag account (Zie [beveiligde instellingen](#protected-settings)).
+tabel | Beschrijving De Azure Storage-tabel, in het toegewezen opslag account (Zie [beveiligde instellingen](#protected-settings)).
 frequency | Beschrijving Het aantal seconden tussen de uitvoering van de query. De standaard waarde is 300 (5 minuten); de minimum waarde is 15 seconden.
 wastafel | Beschrijving Een door komma's gescheiden lijst met namen van extra sinks waarmee de resultaten van onbewerkte voorbeeld gegevens moeten worden gepubliceerd. Geen aggregatie van deze onbewerkte voor beelden wordt berekend door de uitbrei ding of door de metrische gegevens van Azure.
 
@@ -514,7 +514,7 @@ Hiermee bepaalt u het vastleggen van logboek bestanden. LAD legt nieuwe tekst re
 Element | Waarde
 ------- | -----
 file | De volledige padnaam van het logboek bestand dat moet worden bekeken en vastgelegd. De padnaam moet een naam hebben van één bestand; de naam van een map kan niet worden genoemd of joker tekens bevatten. Het gebruikers account ' omsagent ' moet lees toegang hebben tot het bestandspad.
-table | Beschrijving De Azure Storage-tabel, in het toegewezen opslag account (zoals opgegeven in de beveiligde configuratie), waarin nieuwe regels van de "staart" van het bestand worden geschreven.
+tabel | Beschrijving De Azure Storage-tabel, in het toegewezen opslag account (zoals opgegeven in de beveiligde configuratie), waarin nieuwe regels van de "staart" van het bestand worden geschreven.
 wastafel | Beschrijving Een door komma's gescheiden lijst met namen van extra sinks waarnaar logboek regels worden verzonden.
 
 U moet ' Table ' of ' sinks ' of beide opgeven.
@@ -636,7 +636,7 @@ Als uw beveiligde instellingen zich in het bestand bevinden ProtectedSettings.js
 az vm extension set --publisher Microsoft.Azure.Diagnostics --name LinuxDiagnostic --version 3.0 --resource-group <resource_group_name> --vm-name <vm_name> --protected-settings ProtectedSettings.json --settings PublicSettings.json
 ```
 
-De opdracht gaat ervan uit dat u gebruikmaakt van de Azure-resource beheer modus van de Azure CLI. Als u LAD wilt configureren voor Vm's van het klassieke implementatie model (ASM), schakelt u over naar de modus ASM ( `azure config mode asm` ) en laat u de naam van de resource groep weg in de opdracht. Zie de [documentatie over PLATFORMOVERSCHRIJDENDE cli](/cli/azure/authenticate-azure-cli?view=azure-cli-latest)voor meer informatie.
+De opdracht gaat ervan uit dat u gebruikmaakt van de Azure-resource beheer modus van de Azure CLI. Als u LAD wilt configureren voor Vm's van het klassieke implementatie model (ASM), schakelt u over naar de modus ASM ( `azure config mode asm` ) en laat u de naam van de resource groep weg in de opdracht. Zie de [documentatie over PLATFORMOVERSCHRIJDENDE cli](/cli/azure/authenticate-azure-cli)voor meer informatie.
 
 ### <a name="powershell"></a>PowerShell
 

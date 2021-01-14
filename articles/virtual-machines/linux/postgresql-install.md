@@ -9,12 +9,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 02/01/2016
 ms.author: cynthn
-ms.openlocfilehash: fdde7613627c9fec0694f3985f78cf10e52f59c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4052a9c8614a17c3b5cdd871ad78be8cc3258c5a
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91397093"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202586"
 ---
 # <a name="install-and-configure-postgresql-on-azure"></a>PostgreSQL op Azure installeren en configureren
 PostgreSQL is een geavanceerde open source-data base, vergelijkbaar met Oracle en DB2. Het bevat bedrijfs klare functies, zoals volwaardige naleving, betrouw bare transactionele verwerking en gelijktijdigheids beheer met meerdere versies. Het biedt ook ondersteuning voor standaarden zoals ANSI SQL en SQL/MED (waaronder Foreign data-wrappers voor Oracle, MySQL, MongoDB en vele andere). Het is zeer uitbreidbaar met ondersteuning voor meer dan 12 procedurele talen, EGINNEN-en concept indexen, ondersteuning voor ruimtelijke gegevens en meerdere NoSQL functies voor JSON of op sleutel waarde gebaseerde toepassingen.
@@ -24,13 +24,13 @@ In dit artikel wordt beschreven hoe u PostgreSQL kunt installeren en configurere
 
 ## <a name="install-postgresql"></a>PostgreSQL installeren
 > [!NOTE]
-> U moet al een virtuele Azure-machine met Linux hebben om deze zelf studie te kunnen volt ooien. Als u een virtuele Linux-machine wilt maken en instellen voordat u doorgaat, raadpleegt u de [zelf studie voor Azure Linux VM](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+> U moet al een virtuele Azure-machine met Linux hebben om deze zelf studie te kunnen volt ooien. Als u een virtuele Linux-machine wilt maken en instellen voordat u doorgaat, raadpleegt u de [zelf studie voor Azure Linux VM](quick-create-cli.md).
 > 
 > 
 
 Gebruik in dit geval poort 1999 als de PostgreSQL-poort.  
 
-Maak verbinding met de virtuele Linux-machine die u hebt gemaakt via PuTTy. Als dit de eerste keer is dat u een virtuele machine van Azure Linux gebruikt, raadpleegt u [SSH gebruiken met Linux op Azure](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) voor meer informatie over het gebruik van putty om verbinding te maken met een virtuele Linux-machine.
+Maak verbinding met de virtuele Linux-machine die u hebt gemaakt via PuTTy. Als dit de eerste keer is dat u een virtuele machine van Azure Linux gebruikt, raadpleegt u [SSH gebruiken met Linux op Azure](mac-create-ssh-keys.md) voor meer informatie over het gebruik van putty om verbinding te maken met een virtuele Linux-machine.
 
 1. Voer de volgende opdracht uit om over te scha kelen naar het hoofd niveau (beheerder):
 
@@ -259,7 +259,7 @@ Voeg eerst gegevens in een rij in:
 INSERT INTO potluck (name, food, confirmed, signup_date) VALUES('John', 'Casserole', 'Y', '2012-04-11');
 ```
 
-De uitvoer moet er ongeveer als volgt uitzien:
+U hoort deze uitvoer te zien:
 
 ![Scherm opname van de rij-informatie die u hebt toegevoegd.](./media/postgresql-install/no6.png)
 
@@ -280,7 +280,7 @@ Gebruik de volgende opdracht om een tabel weer te geven:
 select * from potluck;
 ```
 
-De uitvoer is:
+Dit is de uitvoer:
 
 ![Scherm opname van de uitvoer van de opdracht voor het weer geven van een tabel.](./media/postgresql-install/no7.png)
 
@@ -291,7 +291,7 @@ Gebruik de volgende opdracht om gegevens in een tabel te verwijderen:
 delete from potluck where name=’John’;
 ```
 
-Hiermee verwijdert u alle gegevens in de rij ' Johan '. De uitvoer is:
+Hiermee verwijdert u alle gegevens in de rij ' Johan '. Dit is de uitvoer:
 
 ![image](./media/postgresql-install/no8.png)
 

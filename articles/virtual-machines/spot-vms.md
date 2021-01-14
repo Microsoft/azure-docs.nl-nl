@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: e1666b7e74ceefd7e7e4fe6e499667b09efa0ac7
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 1e3934a8ff91d764a5148b3d490b44f30983a284
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97963790"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202127"
 ---
 # <a name="use-spot-vms-in-azure"></a>Gebruik van een spot Vm's in azure
 
@@ -121,4 +121,4 @@ Gebruik de [cli](./linux/spot-cli.md)-, [Portal](spot-portal.md)-, [arm-sjabloon
 
 U kunt ook een [schaalset implementeren met steun-VM-exemplaren](../virtual-machine-scale-sets/use-spot.md).
 
-Als er een fout optreedt, raadpleegt u [fout codes](./error-codes-spot.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Als er een fout optreedt, raadpleegt u [fout codes](./error-codes-spot.md).

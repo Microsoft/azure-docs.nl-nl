@@ -7,16 +7,16 @@ ms.date: 05/05/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
-ms.openlocfilehash: 62d80426dec6f5d63d8fa5d67d64d6aafb881110
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ca9f9ad0fb724884e865469ba118af4c7e6cea2f
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320010"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202841"
 ---
 # <a name="preview-create-a-windows-vm-with-azure-image-builder"></a>Voor beeld: een Windows-VM maken met Azure Image Builder
 
-In dit artikel wordt uitgelegd hoe u een aangepaste installatie kopie van Windows kunt maken met behulp van de opbouw functie voor installatie kopieën van Azure VM. In het voor beeld in dit artikel worden [aanpassingen](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#properties-customize) gebruikt voor het aanpassen van de installatie kopie:
+In dit artikel wordt uitgelegd hoe u een aangepaste installatie kopie van Windows kunt maken met behulp van de opbouw functie voor installatie kopieën van Azure VM. In het voor beeld in dit artikel worden [aanpassingen](../linux/image-builder-json.md#properties-customize) gebruikt voor het aanpassen van de installatie kopie:
 - Power shell (ScriptUri): down load en voer een [Power shell-script](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/testPsScript.ps1)uit.
 - Windows opnieuw starten: Hiermee wordt de virtuele machine opnieuw opgestart.
 - Power shell (inline)-een specifieke opdracht uitvoeren. In dit voor beeld maakt het een map op de VM met behulp van `mkdir c:\\buildActions` .
@@ -211,7 +211,7 @@ Wacht tot het build is voltooid. Dit kan ongeveer 15 minuten duren.
 Als er fouten optreden, raadpleegt u deze [probleemoplossings](../linux/image-builder-troubleshoot.md#troubleshoot-common-build-errors) stappen.
 
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+## <a name="create-the-vm"></a>De VM maken
 
 Maak de virtuele machine met behulp van de installatie kopie die u hebt gemaakt. Vervang door *\<password>* uw eigen wacht woord voor de `aibuser` op de virtuele machine.
 
@@ -271,4 +271,4 @@ az group delete -n $imageResourceGroup
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie voor meer informatie over de onderdelen van het JSON-bestand dat in dit artikel wordt gebruikt [Image Builder-sjabloon verwijzing](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Zie voor meer informatie over de onderdelen van het JSON-bestand dat in dit artikel wordt gebruikt [Image Builder-sjabloon verwijzing](../linux/image-builder-json.md).

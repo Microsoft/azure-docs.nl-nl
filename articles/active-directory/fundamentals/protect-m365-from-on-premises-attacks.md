@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 71d64552520db28b3fe38cc354a30ee5470ee091
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 97893dece068dfdde85159f734095401288231d2
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060711"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201345"
 ---
 # <a name="protecting-microsoft-365-from-on-premises-attacks"></a>Microsoft 365 beveiligen tegen on-premises aanvallen
 
@@ -131,7 +131,7 @@ Inrichting verwijst naar het maken van gebruikers accounts en-groepen in toepass
 
    *  Toegang tot gasten beperken tot navigatie van groepen en andere eigenschappen in de Directory. Gebruik de instellingen voor externe samen werking om de functionaliteit van de gast te beperken tot het lezen van groepen die geen deel uitmaken van. 
 
-    *   Toegang tot de Azure Portal blok keren. U kunt zeldzame nood zakelijke uitzonde ringen maken.  Een beleid voor voorwaardelijke toegang maken dat alle gasten en externe gebruikers bevat en vervolgens [een beleid implementeert om de toegang te blok keren](https://docs.microsoft.com/azure/role-based-access-control/conditional-access-azure-management.md). 
+    *   Toegang tot de Azure Portal blok keren. U kunt zeldzame nood zakelijke uitzonde ringen maken.  Een beleid voor voorwaardelijke toegang maken dat alle gasten en externe gebruikers bevat en vervolgens [een beleid implementeert om de toegang te blok keren](/azure/role-based-access-control/conditional-access-azure-management). 
 
 * Niet- **verbonden forests:** Gebruik [Azure AD Cloud inrichting](../cloud-provisioning/what-is-cloud-provisioning.md). Op die manier kunt u verbinding maken met niet-verbonden forests, waardoor u geen verbinding met meerdere forests of vertrouwens relaties hoeft te maken, waarmee de impact van een on-premises inbreuk kan worden uitgebreid. * 
  
@@ -199,7 +199,7 @@ Gebruik voorwaardelijke toegang van Azure AD om signalen te interpreteren en ver
 
    * Zie de [prijs gids voor Azure AD](https://azure.microsoft.com/pricing/details/active-directory/)voor meer informatie over de licentie verlening voor Azure AD-functies.
 
-## <a name="monitoring"></a>Bewaking 
+## <a name="monitoring"></a>Controleren 
 
 Nadat u uw omgeving hebt geconfigureerd om uw Microsoft 365 te beschermen tegen een on-premises inbreuk, controleert u de omgeving [proactief](../reports-monitoring/overview-monitoring.md) .
 ### <a name="scenarios-to-monitor"></a>Te bewaken scenario's

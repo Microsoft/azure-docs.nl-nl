@@ -7,12 +7,12 @@ ms.date: 05/05/2020
 ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
-ms.openlocfilehash: 96603d27f53161c72c9e81bb7b84fdc6ab5d1ca2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6699db280c4d82867d5559255eab08fd6b55b65a
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91320061"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201515"
 ---
 # <a name="preview-create-a-windows-image-and-distribute-it-to-a-shared-image-gallery"></a>Voor beeld: een Windows-installatie kopie maken en deze distribueren naar een gedeelde installatie kopie galerie 
 
@@ -20,7 +20,7 @@ In dit artikel wordt uitgelegd hoe u de opbouw functie voor installatie kopieën
 
 Er wordt een JSON-sjabloon gebruikt om de installatie kopie te configureren. Het JSON-bestand dat we gebruiken, is hier: [armTemplateWinSIG.jsop](https://raw.githubusercontent.com/danielsollondon/azvmimagebuilder/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/armTemplateWinSIG.json). We gaan een lokale versie van de sjabloon downloaden en bewerken, zodat dit artikel wordt geschreven met behulp van een lokale Power shell-sessie.
 
-De sjabloon maakt gebruik van [sharedImage](../linux/image-builder-json.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#distribute-sharedimage) als de waarde voor de `distribute` sectie van de sjabloon om de installatie kopie naar een galerie met gedeelde afbeeldingen te distribueren.
+De sjabloon maakt gebruik van [sharedImage](../linux/image-builder-json.md#distribute-sharedimage) als de waarde voor de `distribute` sectie van de sjabloon om de installatie kopie naar een galerie met gedeelde afbeeldingen te distribueren.
 
 Azure Image Builder voert automatisch Sysprep uit om de installatie kopie te generaliseren. Dit is een generieke Sysprep-opdracht, die u zo nodig kunt [overschrijven](../linux/image-builder-troubleshoot.md#vms-created-from-aib-images-do-not-create-successfully) . 
 
@@ -240,7 +240,7 @@ Het maken van de installatie kopie en het repliceren naar beide regio's kan enig
 Zie het [Leesmij-bestand](https://github.com/danielsollondon/azvmimagebuilder/blob/master/quickquickstarts/1_Creating_a_Custom_Win_Shared_Image_Gallery_Image/readme.md#get-status-of-the-image-build-and-query) voor deze sjabloon op github voor informatie over opties voor het automatiseren van de status van de installatie kopie.
 
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+## <a name="create-the-vm"></a>De VM maken
 
 Maak een virtuele machine op basis van de installatie kopie versie die is gemaakt door de opbouw functie voor installatie kopieën van Azure.
 

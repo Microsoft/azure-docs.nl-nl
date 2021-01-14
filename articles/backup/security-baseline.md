@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: a2cbd2dd4dd32be137e461985e9f10fd07ed8a60
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: ee4c364012b32ff8ee938dec2a7446853c32ba0b
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325635"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203079"
 ---
 # <a name="azure-security-baseline-for-backup"></a>Azure-beveiligings basislijn voor back-up
 
@@ -186,7 +186,7 @@ Daarnaast verzendt Azure Backup diagnostische gebeurtenissen die kunnen worden v
 
 ### <a name="26-monitor-and-review-logs"></a>2,6: Logboeken bewaken en controleren
 
-**Hulp**: Azure Backup biedt ingebouwde mogelijkheden voor bewaking en waarschuwingen in een Recovery Services kluis. Deze functionaliteit is beschikbaar zonder enige extra beheerinfrastructuur. U kunt tevens de schaal van uw bewaking en rapportage vergroten door Azure Monitor te gebruiken.
+**Hulp**: Azure Backup biedt ingebouwde mogelijkheden voor bewaking en waarschuwingen in een Recovery Services kluis. Deze mogelijkheden zijn beschikbaar zonder enige extra beheerinfrastructuur. U kunt tevens de schaal van uw bewaking en rapportage vergroten door Azure Monitor te gebruiken.
 
 Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een Log Analytics-werk ruimte. Voer query's uit in Log Analytics om zoek termen te zoeken, trends te identificeren, patronen te analyseren en veel andere inzichten te bieden op basis van de activiteiten logboek gegevens die mogelijk zijn verzameld voor Recovery Services kluizen.
 
@@ -202,7 +202,7 @@ Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend
 
 ### <a name="27-enable-alerts-for-anomalous-activity"></a>2,7: waarschuwingen inschakelen voor afwijkende activiteit
 
-**Hulp**: Azure Backup biedt ingebouwde mogelijkheden voor bewaking en waarschuwingen in een Recovery Services kluis. Deze functionaliteit is beschikbaar zonder enige extra beheerinfrastructuur. U kunt tevens de schaal van uw bewaking en rapportage vergroten door Azure Monitor te gebruiken.
+**Hulp**: Azure Backup biedt ingebouwde mogelijkheden voor bewaking en waarschuwingen in een Recovery Services kluis. Deze mogelijkheden zijn beschikbaar zonder enige extra beheerinfrastructuur. U kunt tevens de schaal van uw bewaking en rapportage vergroten door Azure Monitor te gebruiken.
 
 Waarschuwingen zijn voornamelijk scenario's waarin gebruikers een melding ontvangen dat ze relevante actie kunnen ondernemen. In het gedeelte back-upwaarschuwingen worden waarschuwingen weer gegeven die zijn gegenereerd door Azure Backup service. Deze waarschuwingen worden gedefinieerd door de service en u kunt geen aangepaste waarschuwingen maken.
 
@@ -302,7 +302,7 @@ Om u te helpen bij het bijhouden van specifieke beheerders accounts, kunt u ook 
 
 - [Multi-Factor Authentication in Azure Backup](./backup-azure-security-feature.md)
 
-- [Een implementatie van Azure AD Multi-Factor Authentication in de Cloud plannen](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Planning van een cloudimplementatie van Azure AD Multi-Factor Authentication](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -312,9 +312,9 @@ Om u te helpen bij het bijhouden van specifieke beheerders accounts, kunt u ook 
 
 **Richt lijnen**: gebruik een privileged Access-werk station (Paw) met Azure AD multi-factor Authentication (MFA) dat is geconfigureerd voor aanmelding bij en configureren van uw Azure backup-resources.
 
-- [Privileged Access Workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Privileged Access Workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
-- [Een implementatie van Azure AD Multi-Factor Authentication in de Cloud plannen](../active-directory/authentication/howto-mfa-getstarted.md)
+- [Planning van een cloudimplementatie van Azure AD Multi-Factor Authentication](../active-directory/authentication/howto-mfa-getstarted.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

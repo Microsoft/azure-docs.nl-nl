@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 972788e04e12553e7c05f30cc246c6fb562031a4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 65985e05be1061bb69eb160cf5be559cb271d5cd
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461364"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202926"
 ---
 # <a name="azure-security-baseline-for-azure-synapse-analytics"></a>Azure-beveiligings basislijn voor Azure Synapse Analytics
 
@@ -393,7 +393,7 @@ Als u de beheerders accounts voor een Data Base wilt identificeren, opent u de A
 
 **Richt lijnen**: gebruik een privileged Access-werk station (Paw) met multi-factor Authentication (MFA) dat is geconfigureerd om Azure-resources aan te melden en te configureren.
 
-* [Meer informatie over privileged Access workstations](https://docs.microsoft.com/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [MFA inschakelen in Azure](https://docs.microsoft.com/azure/active-directory/authentication/howto-mfa-getstarted)
 

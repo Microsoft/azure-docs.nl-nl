@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/26/2020
 ms.author: cynthn
 ms.reviewer: jagaveer
-ms.openlocfilehash: 44d23710db169fa27aaba8928d421918bef93fec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ca3c99aed8160161c125a89da3cb176c6e745f6
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91825135"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202059"
 ---
 # <a name="deploy-spot-vms-using-azure-powershell"></a>Plaats virtuele machines met behulp van Azure PowerShell
 
@@ -25,7 +25,7 @@ Prijzen voor spot Vm's zijn variabel, op basis van de regio en de SKU. Zie prijz
 U hebt de mogelijkheid om een maximum prijs voor de virtuele machine in te stellen die u wilt betalen, per uur. De maximale prijs voor een steun-VM kan worden ingesteld in Amerikaanse dollars (USD), met Maxi maal vijf decimalen. De waarde `0.98765` is bijvoorbeeld een maximum prijs van $0,98765 USD per uur. Als u de maximale prijs instelt op `-1` , wordt de VM niet verwijderd op basis van de prijs. De prijs voor de virtuele machine is de huidige prijs voor steun of de prijs voor een standaard-VM, die ooit kleiner is, zolang er capaciteit en quota beschikbaar zijn.
 
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+## <a name="create-the-vm"></a>De VM maken
 
 Maak een spotVM met [New-AzVmConfig](/powershell/module/az.compute/new-azvmconfig) om de configuratie te maken. Insluiten `-Priority Spot` en instellen `-MaxPrice` op:
 - `-1` de virtuele machine wordt dus niet verwijderd op basis van de prijs.
@@ -94,4 +94,4 @@ U kunt ook een spot-VM maken met behulp van de [Azure cli](../linux/spot-cli.md)
 
 Zoek actuele prijs informatie met behulp van de [Azure retail-prijs-API](/rest/api/cost-management/retail-prices/azure-retail-prices) voor meer informatie over de prijzen. De `meterName` en `skuName` zijn beide opgenomen `Spot` .
 
-Als er een fout optreedt, raadpleegt u [fout codes](../error-codes-spot.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+Als er een fout optreedt, raadpleegt u [fout codes](../error-codes-spot.md).

@@ -1,19 +1,19 @@
 ---
-title: Door de klant beheerde opslag accounts gebruiken in Azure Monitor Log Analytics
+title: Door de klant beheerde opslagaccounts gebruiken in Azure Monitor Log Analytics
 description: Uw eigen opslag account gebruiken voor Log Analytics scenario's
 ms.subservice: logs
 ms.topic: conceptual
 author: noakup
 ms.author: noakuper
 ms.date: 09/03/2020
-ms.openlocfilehash: bb5c6439f2e0b919e422c7a72f98468f0efc01f1
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 706392d95e371fe303bb9f2c18f59e4a224d83c0
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901305"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201056"
 ---
-# <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Door de klant beheerde opslag accounts gebruiken in Azure Monitor Log Analytics
+# <a name="using-customer-managed-storage-accounts-in-azure-monitor-log-analytics"></a>Door de klant beheerde opslagaccounts gebruiken in Azure Monitor Log Analytics
 
 Log Analytics is afhankelijk van Azure Storage in verschillende scenario's. Dit gebruik wordt doorgaans automatisch beheerd. In sommige gevallen moet u echter uw eigen opslag account opgeven en beheren, ook wel een door de klant beheerd opslag account genoemd. Dit document bevat informatie over het gebruik van door de klant beheerde opslag voor WAD/LAD-logboeken, persoonlijke koppelingen en versleuteling van door de klant beheerde sleutel (CMK). 
 
@@ -23,7 +23,7 @@ Log Analytics is afhankelijk van Azure Storage in verschillende scenario's. Dit 
 ## <a name="ingesting-azure-diagnostics-extension-logs-wadlad"></a>Azure Diagnostics extensie logboeken opnemen (WAD/LAD)
 De Azure Diagnostics extensie agents (ook wel WAD-en LAD voor Windows-en Linux-agents genoemd) verzamelen verschillende besturings systeem logboeken en slaan ze op in een door de klant beheerd opslag account. U kunt deze logboeken vervolgens opnemen in Log Analytics om ze te bekijken en te analyseren.
 ### <a name="how-to-collect-azure-diagnostics-extension-logs-from-your-storage-account"></a>Azure Diagnostics extensie logboeken van uw opslag account verzamelen
-Verbind het opslag account met uw Log Analytics-werk ruimte als een opslag gegevens bron met behulp van [de Azure Portal](./diagnostics-extension-logs.md#collect-logs-from-azure-storage) of door de [opslag Insights-API](/rest/api/loganalytics/connectedsources/storage%20insights/createorupdate)aan te roepen.
+Verbind het opslag account met uw Log Analytics-werk ruimte als een opslag gegevens bron met behulp van [de Azure Portal](./diagnostics-extension-logs.md#collect-logs-from-azure-storage) of door de [opslag Insights-API](/rest/api/loganalytics/storage%20insights/createorupdate)aan te roepen.
 
 Ondersteunde gegevens typen:
 * Syslog

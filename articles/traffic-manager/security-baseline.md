@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 5d5ecf95289bf7860363b7e97d834372ee6c2268
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 13515f2428b1fc95c31b04c984dd77dd316a4315
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185254"
+ms.locfileid: "98202195"
 ---
 # <a name="azure-security-baseline-for-azure-traffic-manager"></a>Azure-beveiligings basislijn voor Azure Traffic Manager
 
@@ -170,7 +170,7 @@ U kunt ook Just-in-time-toegang inschakelen met behulp van Azure AD Privileged I
 
 **Hulp**: gebruik een beveiligd, door Azure beheerd werk station (ook wel een privileged Access Workstation of paw) voor beheer taken waarvoor verhoogde bevoegdheden zijn vereist.
 
-- [Meer informatie over veilige, door Azure beheerde werk stations](/security/compass/concept-azure-managed-workstation)
+- [Meer informatie over veilige, door Azure beheerde werk stations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 - [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -250,7 +250,7 @@ U kunt dit proces stroom lijnen door Diagnostische instellingen voor Azure AD-ge
 
 **Verantwoordelijkheid**: Klant
 
-## <a name="data-protection"></a>Gegevensbescherming
+## <a name="data-protection"></a>Gegevensbeveiliging
 
 *Zie [Azure Security Bench Mark: Data Protection](../security/benchmarks/security-control-data-protection.md)voor meer informatie.*
 

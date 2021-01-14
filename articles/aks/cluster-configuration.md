@@ -3,15 +3,15 @@ title: Cluster configuratie in azure Kubernetes Services (AKS)
 description: Meer informatie over het configureren van een cluster in azure Kubernetes service (AKS)
 services: container-service
 ms.topic: article
-ms.date: 09/21/2020
+ms.date: 01/13/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: ab9e2a5483f0699ad7bfca991539025adff34b11
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: eacca50e00dfe8625d86362c444544e2fd5d5511
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606909"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201107"
 ---
 # <a name="configure-an-aks-cluster"></a>Een AKS-cluster configureren
 
@@ -21,10 +21,52 @@ Als onderdeel van het maken van een AKS-cluster moet u mogelijk uw cluster confi
 
 AKS ondersteunt nu Ubuntu 18,04 als het besturings systeem van het knoop punt (OS) in algemene Beschik baarheid voor clusters in kubernetes-versies hoger dan 1.18.8. Voor versies onder 1.18. x is AKS Ubuntu 16,04 nog steeds de standaard basis installatie kopie. Van kubernetes v 1.18. x en later is de standaard basis AKS Ubuntu 18,04.
 
-> [!IMPORTANT]
-> Knooppunt groepen die zijn gemaakt op Kubernetes v 1.18 of meer standaard naar `AKS Ubuntu 18.04` knooppunt installatie kopie. Knooppunt Pools op een ondersteunde Kubernetes-versie kleiner dan 1,18 `AKS Ubuntu 16.04` worden als de knooppunt afbeelding ontvangen, maar worden bijgewerkt naar een moment dat `AKS Ubuntu 18.04` de Kubernetes-versie van de knooppunt groep wordt bijgewerkt naar v 1.18 of hoger.
-> 
-> Het wordt sterk aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt Pools voordat u clusters op 1,18 of hoger gebruikt. Meer informatie over het [testen van Ubuntu 18,04-knooppunt groepen](#use-aks-ubuntu-1804-existing-clusters-preview).
+### <a name="use-aks-ubuntu-1804-generally-available-on-new-clusters"></a>Gebruik AKS Ubuntu 18,04 algemeen beschikbaar in nieuwe clusters
+
+Clusters die zijn gemaakt op Kubernetes v 1.18 of meer standaard naar `AKS Ubuntu 18.04` knooppunt installatie kopie. Knooppunt Pools op een ondersteunde Kubernetes-versie lager dan 1,18 worden nog steeds `AKS Ubuntu 16.04` als de knooppunt afbeelding ontvangen, maar worden bijgewerkt naar een moment dat `AKS Ubuntu 18.04` de cluster-of knooppunt groep Kubernetes versie wordt bijgewerkt naar v 1.18 of hoger.
+
+Het wordt sterk aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt Pools voordat u clusters op 1,18 of hoger gebruikt. Meer informatie over het [testen van Ubuntu 18,04-knooppunt groepen](#test-aks-ubuntu-1804-generally-available-on-existing-clusters).
+
+Als u een cluster met een `AKS Ubuntu 18.04` knooppunt installatie kopie wilt maken, maakt u gewoon een cluster met kubernetes v 1.18 of hoger, zoals hieronder wordt weer gegeven
+
+```azurecli
+az aks create --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
+```
+
+### <a name="use-aks-ubuntu-1804-generally-available-on-existing-clusters"></a>AKS Ubuntu 18,04 algemeen beschikbaar op bestaande clusters gebruiken
+
+Clusters die zijn gemaakt op Kubernetes v 1.18 of meer standaard naar `AKS Ubuntu 18.04` knooppunt installatie kopie. Knooppunt Pools op een ondersteunde Kubernetes-versie lager dan 1,18 worden nog steeds `AKS Ubuntu 16.04` als de knooppunt afbeelding ontvangen, maar worden bijgewerkt naar een moment dat `AKS Ubuntu 18.04` de cluster-of knooppunt groep Kubernetes versie wordt bijgewerkt naar v 1.18 of hoger.
+
+Het wordt sterk aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt Pools voordat u clusters op 1,18 of hoger gebruikt. Meer informatie over het [testen van Ubuntu 18,04-knooppunt groepen](#test-aks-ubuntu-1804-generally-available-on-existing-clusters).
+
+Als uw clusters of knooppunt groepen gereed zijn voor `AKS Ubuntu 18.04` knooppunt installatie kopie, kunt u ze gewoon upgraden naar een v-1.18 of hoger.
+
+```azurecli
+az aks upgrade --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
+```
+
+Als u slechts één knooppunt groep wilt upgraden:
+
+```azurecli
+az aks nodepool upgrade -name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
+```
+
+### <a name="test-aks-ubuntu-1804-generally-available-on-existing-clusters"></a>Test AKS Ubuntu 18,04 algemeen beschikbaar op bestaande clusters
+
+Knooppunt groepen die zijn gemaakt op Kubernetes v 1.18 of meer standaard naar `AKS Ubuntu 18.04` knooppunt installatie kopie. Knooppunt Pools op een ondersteunde Kubernetes-versie lager dan 1,18 worden nog steeds `AKS Ubuntu 16.04` als de knooppunt afbeelding ontvangen, maar worden bijgewerkt naar een moment dat `AKS Ubuntu 18.04` de Kubernetes-versie van de knooppunt groep wordt bijgewerkt naar v 1.18 of hoger.
+
+Het wordt ten zeerste aanbevolen om uw workloads te testen op AKS Ubuntu 18,04-knooppunt groepen voordat u uw productie knooppunt groepen bijwerkt.
+
+Als u een knooppunt groep wilt maken met behulp van een `AKS Ubuntu 18.04` knooppunt afbeelding, maakt u gewoon een knooppunt groep met kubernetes v 1.18 of hoger. Uw cluster beheergebied moet mini maal op v 1.18 of hoger zijn, maar de andere knooppunt groepen kunnen zich op een oudere kubernetes-versie blijven.
+Hieronder worden eerst het besturings vlak bijgewerkt en vervolgens een nieuwe knooppunt groep gemaakt met v 1.18, die de nieuwe besturingssysteem versie van de installatie kopie van het knoop punt ontvangt.
+
+```azurecli
+az aks upgrade --name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14 --control-plane-only
+
+az aks nodepool add --name ubuntu1804 --cluster-name myAKSCluster --resource-group myResourceGroup --kubernetes-version 1.18.14
+```
+
+### <a name="use-aks-ubuntu-1804-on-new-clusters-preview"></a>AKS Ubuntu 18,04 gebruiken voor nieuwe clusters (preview-versie)
 
 In het volgende gedeelte wordt uitgelegd hoe u AKS Ubuntu 18,04 gebruikt en test op clusters die nog geen kubernetes-versie 1.18. x of hoger gebruiken, of die zijn gemaakt voordat deze functie algemeen beschikbaar werd, met behulp van de configuratie voorbeeld van het besturings systeem.
 
@@ -57,8 +99,6 @@ Wanneer de status wordt weer gegeven als geregistreerd, vernieuwt u de registrat
 ```azurecli
 az provider register --namespace Microsoft.ContainerService
 ```
-
-### <a name="use-aks-ubuntu-1804-on-new-clusters-preview"></a>AKS Ubuntu 18,04 gebruiken voor nieuwe clusters (preview-versie)
 
 Configureer het cluster voor het gebruik van Ubuntu 18,04 wanneer het cluster wordt gemaakt. Gebruik de `--aks-custom-headers` markering om Ubuntu 18,04 in te stellen als het standaard besturingssysteem.
 

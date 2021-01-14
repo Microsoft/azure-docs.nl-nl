@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: troubleshooting
 ms.date: 05/30/2017
 ms.author: genli
-ms.openlocfilehash: 43e2f1c304a2ede10445fa656dbdd16a4b60ca3c
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 63c1e388ecd53d9b827e45a1fa78bdb6feeaab21
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978948"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201940"
 ---
 # <a name="troubleshoot-ssh-connections-to-an-azure-linux-vm-that-fails-errors-out-or-is-refused"></a>Het oplossen van problemen met SSH-verbindingen naar een virtuele Azure Linux-machine waarop zich fouten voordoen, die afsluit vanwege fouten of die wordt geweigerd
 Dit artikel helpt u bij het vinden en corrigeren van de problemen die zich voordoen als gevolg van SSH-fouten (Secure Shell), SSH-verbindings fouten of SSH worden geweigerd wanneer u verbinding probeert te maken met een virtuele Linux-machine (VM). U kunt de Azure Portal-, Azure CLI-of VM-extensie voor toegang voor Linux gebruiken om verbindings problemen op te lossen
@@ -52,7 +52,7 @@ U kunt de referenties of de SSH-configuratie opnieuw instellen met een van de vo
 
 Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken met uw VM. Als u nog steeds geen verbinding kunt maken, voert u de volgende stap uit.
 
-## <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+## <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 De Azure Portal biedt een snelle manier om de SSH-configuratie of gebruikers referenties opnieuw in te stellen zonder dat er hulpprogram ma's op de lokale computer hoeven te worden geïnstalleerd.
 
 Selecteer uw virtuele machine in de Azure Portal om te beginnen. Schuif omlaag naar de sectie **ondersteuning en probleem oplossing** en selecteer **wacht woord opnieuw instellen** , zoals in het volgende voor beeld:
@@ -279,7 +279,7 @@ Voer de volgende stappen uit om de meest voorkomende SSH-verbindings fouten op t
 * Controleer de resource status van de VM voor problemen met het platform.<br>
      Selecteer de VM en blader door de **instellingen**  >  **status controleren**.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
-* Als u nog steeds niet kunt overstappen op uw virtuele machine na de volgende stappen, raadpleegt u [meer gedetailleerde stappen voor probleem oplossing](detailed-troubleshoot-ssh-connection.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) om uw probleem op te lossen.
+## <a name="additional-resources"></a>Aanvullende resources
+* Als u nog steeds niet kunt overstappen op uw virtuele machine na de volgende stappen, raadpleegt u [meer gedetailleerde stappen voor probleem oplossing](detailed-troubleshoot-ssh-connection.md) om uw probleem op te lossen.
 * Zie [problemen oplossen met toegang tot een toepassing die wordt uitgevoerd op een virtuele machine van Azure](./troubleshoot-app-connection.md?toc=/azure/virtual-machines/linux/toc.json) voor meer informatie over het oplossen van toepassings toegang
 * Voor meer informatie over het oplossen van problemen met virtuele machines die zijn gemaakt met behulp van het klassieke implementatie model raadpleegt [u een wacht woord of ssh opnieuw instellen voor op Linux gebaseerde virtuele machines](/previous-versions/azure/virtual-machines/linux/classic/reset-access-classic).

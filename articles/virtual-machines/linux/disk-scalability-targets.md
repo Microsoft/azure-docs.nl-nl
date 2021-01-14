@@ -7,18 +7,18 @@ ms.date: 11/15/2017
 ms.topic: conceptual
 ms.service: virtual-machines-linux
 ms.subservice: disks
-ms.openlocfilehash: e986348c063626bd6a0b5a834854bad09d73c952
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d2a0bf27d44746ff9cf688df179ad3b602353907
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88814192"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201158"
 ---
 # <a name="scalability-and-performance-targets-for-vm-disks-on-linux"></a>Schaalbaarheids- en prestatiedoelen voor VM-schijven op Linux
 
 [!INCLUDE [azure-storage-limits-vm-disks](../../../includes/azure-storage-limits-vm-disks.md)]
 
-Zie [VM-grootten voor Linux](../sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) voor meer informatie.
+Zie [VM-grootten voor Linux](../sizes.md) voor meer informatie.
 
 ## <a name="managed-virtual-machine-disks"></a>Beheerde schijven van virtuele machines
 

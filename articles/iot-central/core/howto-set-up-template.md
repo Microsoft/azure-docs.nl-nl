@@ -10,12 +10,12 @@ services: iot-central
 ms.custom:
 - contperf-fy21q1
 - device-developer
-ms.openlocfilehash: 9e5e96d97494f4ba9aa28e84b046cd057fe8eba7
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 236acc2ded3fcb651295e0342ab4e1e88174be46
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033405"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202960"
 ---
 # <a name="define-a-new-iot-device-type-in-your-azure-iot-central-application"></a>Een nieuw IoT-apparaattype definiëren in uw Azure IoT Central-toepassing
 
@@ -42,8 +42,16 @@ In een IoT Central-toepassing gebruikt een apparaatprofiel een model voor het be
 
 - Ontwerp de sjabloon voor het apparaat in IoT Central en [Implementeer vervolgens het model van het apparaat in de code van uw apparaat](concepts-telemetry-properties-commands.md).
 - Importeer een apparaatprofiel vanuit de [Azure Certified voor IOT-apparaat Catalog](https://aka.ms/iotdevcat). Pas de sjabloon voor het apparaat aan aan uw vereisten in IoT Central.
+> [!NOTE]
+> Voor IoT Central is het volledige model vereist met alle interfaces waarnaar wordt verwezen in hetzelfde bestand; wanneer u een model uit de model opslagplaats importeert, gebruikt u het tref woord ' uitgebreid ' om de volledige versie op te halen.
+Bijvoorbeeld. https://devicemodels.azure.com/dtmi/com/example/thermostat-1.expanded.json
+
 - Maak een model voor een apparaat met de [Digital Apparaatdubbels Definition Language (DTDL)-versie 2](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md). Visual Studio code heeft een uitbrei ding die ondersteuning biedt voor het ontwerpen van DTDL modellen. Zie voor meer informatie [De DTDL-ontwerptools installeren en gebruiken](../../iot-pnp/howto-use-dtdl-authoring-tools.md). Publiceer het model vervolgens naar de open bare model opslagplaats. Zie [device model-opslag plaats](../../iot-pnp/concepts-model-repository.md)voor meer informatie. Implementeer uw apparaatcode vanuit het model en verbind uw echte apparaat met uw IoT Central-toepassing. IoT Central zoekt en importeert het model van het apparaat uit de open bare opslag plaats en genereert een sjabloon voor het apparaat. U kunt vervolgens alle Cloud eigenschappen, aanpassingen en dash boards toevoegen die uw IoT Central toepassing nodig heeft voor de sjabloon voor het apparaat.
 - Maak een model voor een apparaat met behulp van de DTDL. Implementeer uw apparaatcode vanuit het model. Importeer het model van het apparaat hand matig in uw IoT Central-toepassing en voeg vervolgens alle Cloud eigenschappen, aanpassingen en dash boards toe die uw IoT Central toepassing nodig heeft.
+
+> [!TIP]
+> IoT Central vereist het volledige model met alle interfaces waarnaar wordt verwezen in hetzelfde bestand. Wanneer u een model uit de model opslagplaats importeert, gebruikt u het tref woord *uitgevouwen* om de volledige versie op te halen.
+> Bijvoorbeeld [https://devicemodels.azure.com/dtmi/com/example/thermostat-1.expanded.json](https://devicemodels.azure.com/dtmi/com/example/thermostat-1.expanded.json) .
 
 U kunt ook apparaatprofielen toevoegen aan een IoT Central-toepassing met behulp van de [rest API](/learn/modules/manage-iot-central-apps-with-rest-api/) of de [cli](howto-manage-iot-central-from-cli.md).
 

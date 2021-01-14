@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 03/22/2019
 ms.author: cynthn
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ddd8166dd29d2210fecdd72d5be446df47a6c5df
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c327f5ffbf7c0fbfadf443e80cc1f7540855f59e
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89072295"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201821"
 ---
 # <a name="create-a-windows-virtual-machine-from-a-resource-manager-template"></a>Een virtuele Windows-machine maken op basis van een Resource Manager-sjabloon
 
@@ -26,7 +26,7 @@ U kunt de sjabloon ook implementeren vanuit de Azure Portal. Als u de sjabloon w
 
 Het maken van een virtuele machine in azure omvat meestal twee stappen:
 
-- Maak een resourcegroep. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Voordat een virtuele machine wordt gemaakt, moet een resourcegroep worden gemaakt.
+- Een resourcegroep maken. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. Voordat een virtuele machine wordt gemaakt, moet een resourcegroep worden gemaakt.
 - Hiermee maakt u een virtuele machine.
 
 In het volgende voor beeld wordt een VM gemaakt op basis van een [Azure Quick](https://raw.githubusercontent.com/Azure/azure-quickstart-templates/master/101-vm-simple-windows/azuredeploy.json)start-sjabloon. Hier volgt een kopie van de sjabloon:
@@ -71,11 +71,11 @@ In de laatste Power shell-opdracht uit het vorige script ziet u de naam van de v
 ## <a name="next-steps"></a>Volgende stappen
 
 - Als er problemen zijn met de implementatie, kunt u een kijkje nemen bij het [oplossen van veelvoorkomende problemen met Azure-implementaties met Azure Resource Manager](../../azure-resource-manager/templates/common-deployment-errors.md).
-- Meer informatie over het maken en beheren van een virtuele machine in [Windows-Vm's maken en beheren met de module Azure PowerShell](tutorial-manage-vm.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+- Meer informatie over het maken en beheren van een virtuele machine in [Windows-Vm's maken en beheren met de module Azure PowerShell](tutorial-manage-vm.md).
 
 Voor meer informatie over het maken van sjablonen bekijkt u de JSON-syntaxis en de eigenschappen voor de typen resources die u hebt geïmplementeerd:
 
 - [Microsoft.Network/publicIPAddresses](/azure/templates/microsoft.network/publicipaddresses)
 - [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks)
-- [Microsoft.Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
-- [Microsoft.Compute/virtualMachines](/azure/templates/microsoft.compute/virtualmachines)
+- [Micro soft. Network/networkInterfaces](/azure/templates/microsoft.network/networkinterfaces)
+- [Micro soft. Compute/informatie](/azure/templates/microsoft.compute/virtualmachines)

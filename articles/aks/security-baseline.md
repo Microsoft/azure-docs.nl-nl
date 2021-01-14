@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 29bcf2fdd3e20b28b1f2cb014137cfba37ccaf2e
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 4cf623ed960fd2efe6fdf506751858796008cef4
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931806"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202025"
 ---
 # <a name="azure-security-baseline-for-azure-kubernetes-service"></a>Azure-beveiligings basislijn voor Azure Kubernetes-service
 
@@ -445,7 +445,7 @@ Schakel Azure AD Multi-Factor Authentication (MFA) in en volg de aanbevelingen v
 ### <a name="36-use-dedicated-machines-privileged-access-workstations-for-all-administrative-tasks"></a>3,6: gebruik speciale machines (privileged Access workstations) voor alle beheer taken
 
 **Richt lijnen**: gebruik een privileged Access Workstation (Paw), met multi-factor Authentication (MFA), dat is geconfigureerd om u aan te melden bij uw opgegeven Azure Kubernetes service (AKS)-clusters en gerelateerde bronnen.
-- [Meer informatie over privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+- [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 - [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 

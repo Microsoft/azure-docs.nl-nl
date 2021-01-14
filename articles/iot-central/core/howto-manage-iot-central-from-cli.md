@@ -9,12 +9,12 @@ ms.date: 03/27/2020
 ms.topic: how-to
 ms.custom: devx-track-azurecli
 manager: philmea
-ms.openlocfilehash: 201318a5a5680f248b831bb480888f106286fbe1
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6496e944d30724fe9e8db7168f9c9cb1552dcd1b
+ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660029"
+ms.lasthandoff: 01/04/2021
+ms.locfileid: "98203322"
 ---
 # <a name="manage-iot-central-from-azure-cli"></a>IoT Central beheren vanuit Azure CLI
 
@@ -26,11 +26,13 @@ In plaats van IoT Central-toepassingen te maken en te beheren op de website van 
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../../includes/azure-cli-prepare-your-environment.md)]
 
- - Als u uw CLI-opdrachten moet uitvoeren in een ander Azure-abonnement, raadpleegt u [het actieve abonnement wijzigen](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#change-the-active-subscription).
+ - Als u uw CLI-opdrachten moet uitvoeren in een ander Azure-abonnement, raadpleegt u [het actieve abonnement wijzigen](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest#change-the-active-subscription&preserve-view=true).
 
 ## <a name="create-an-application"></a>Een app maken
 
-Gebruik de opdracht [AZ IOT Central app Create](/cli/azure/iot/central/app?view=azure-cli-latest#az-iot-central-app-create) om een IOT Central-toepassing te maken in uw Azure-abonnement. Bijvoorbeeld:
+[!INCLUDE [Warning About Access Required](../../../includes/iot-central-warning-contribitorrequireaccess.md)]
+
+Gebruik de opdracht [AZ IOT Central app Create](/cli/azure/iot/central/app?view=azure-cli-latest#az-iot-central-app-create&preserve-view=true) om een IOT Central-toepassing te maken in uw Azure-abonnement. Bijvoorbeeld:
 
 ```azurecli-interactive
 # Create a resource group for the IoT Central application
@@ -63,11 +65,11 @@ Met deze opdrachten maakt u eerst een resource groep in de regio VS-Oost voor de
 
 ## <a name="view-your-applications"></a>Uw toepassingen bekijken
 
-Gebruik de opdracht [AZ IOT Central app List](/cli/azure/iot/central/app?view=azure-cli-latest#az-iot-central-app-list) om uw IOT Central toepassingen te vermelden en meta gegevens weer te geven.
+Gebruik de opdracht [AZ IOT Central app List](/cli/azure/iot/central/app?view=azure-cli-latest#az-iot-central-app-list&preserve-view=true) om uw IOT Central toepassingen te vermelden en meta gegevens weer te geven.
 
 ## <a name="modify-an-application"></a>Een toepassing wijzigen
 
-Gebruik de opdracht [AZ IOT Central App Update](/cli/azure/iot/central/app?view=azure-cli-latest#az-iot-central-app-update) om de meta gegevens van een IOT Central-toepassing bij te werken. Als u bijvoorbeeld de weergave naam van uw toepassing wilt wijzigen:
+Gebruik de opdracht [AZ IOT Central App Update](/cli/azure/iot/central/app?view=azure-cli-latest#az-iot-central-app-update&preserve-view=true) om de meta gegevens van een IOT Central-toepassing bij te werken. Als u bijvoorbeeld de weergave naam van uw toepassing wilt wijzigen:
 
 ```azurecli-interactive
 az iot central app update --name myiotcentralapp \
@@ -77,7 +79,7 @@ az iot central app update --name myiotcentralapp \
 
 ## <a name="remove-an-application"></a>Een toepassing verwijderen
 
-Gebruik de opdracht [AZ IOT Central app delete](/cli/azure/iot/central/app?view=azure-cli-latest#az-iot-central-app-delete) om een IOT Central-toepassing te verwijderen. Bijvoorbeeld:
+Gebruik de opdracht [AZ IOT Central app delete](/cli/azure/iot/central/app?view=azure-cli-latest#az-iot-central-app-delete&preserve-view=true) om een IOT Central-toepassing te verwijderen. Bijvoorbeeld:
 
 ```azurecli-interactive
 az iot central app delete --name myiotcentralapp \

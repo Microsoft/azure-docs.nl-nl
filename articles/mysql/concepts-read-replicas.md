@@ -5,13 +5,14 @@ author: savjani
 ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 10/26/2020
-ms.openlocfilehash: 730b634f23599c5eef8c4c6c988820ae5e4fa9c8
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.date: 01/13/2021
+ms.custom: references_regions
+ms.openlocfilehash: f4a97f5534e4fd3847bf1cce6874de0f006cce38
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535109"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201005"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql"></a>Leesreplica's in Azure Database for MySQL
 
@@ -24,32 +25,35 @@ Zie de [MySQL-replicatie documentatie](https://dev.mysql.com/doc/refman/5.7/en/r
 > [!NOTE]
 > Oordeelloze communicatie
 >
-> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar het woord _slaaf_. In de [stijlgids voor oordeelloze communicatie](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) wordt dit woord herkend als uitsluitend. Het woord wordt in dit artikel gebruikt voor consistentie, omdat het momenteel het woord is dat wordt weergegeven in de software. Wanneer de software is bijgewerkt om het woord te verwijderen, wordt dit artikel ook bijgewerkt zodat het is afgestemd.
+> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar de woorden _Master_ en _Slave_. In de micro soft- [stijl gids voor bias-free Communication](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) worden deze herkend als uitgesloten woorden. De woorden worden in dit artikel gebruikt voor consistentie omdat ze momenteel de woorden zijn die in de software worden weer gegeven. Wanneer de software is bijgewerkt om de woorden te verwijderen, wordt dit artikel zodanig bijgewerkt dat het in uitlijning is.
 >
 
 ## <a name="when-to-use-a-read-replica"></a>Wanneer moet u een lees replica gebruiken?
 
-De functie voor het lezen van replica's helpt bij het verbeteren van de prestaties en schaal baarheid van Lees bare werk belastingen. Leeswerkbelastingen kunnen worden geïsoleerd naar de replica's, terwijl schrijfwerkbelastingen kunnen worden omgeleid naar de hoofdserver.
+De functie voor het lezen van replica's helpt bij het verbeteren van de prestaties en schaal baarheid van Lees bare werk belastingen. Lees werkbelastingen kunnen worden geïsoleerd voor de replica's, terwijl schrijf werkbelastingen kunnen worden omgeleid naar de bron.
 
 Een veelvoorkomend scenario is om BI-en analytische werk belastingen de Lees replica te laten gebruiken als gegevens bron voor rapportage.
 
-Omdat replica's alleen-lezen zijn, worden ze niet rechtstreeks op de Master gereduceerd. Deze functie is niet gericht op schrijfintensieve werkbelastingen.
+Omdat replica's alleen-lezen zijn, worden ze niet rechtstreeks op de bron gereduceerd. Deze functie is niet gericht op schrijfintensieve werkbelastingen.
 
-De functie replica lezen maakt gebruik van MySQL-asynchrone replicatie. De functie is niet bedoeld voor synchrone replicatie scenario's. Er is een meet bare vertraging tussen de bron en de replica. De gegevens op de replica worden uiteindelijk consistent met de gegevens op de Master. Gebruik deze functie voor werk belastingen die deze vertraging kunnen bevatten.
+De functie replica lezen maakt gebruik van MySQL-asynchrone replicatie. De functie is niet bedoeld voor synchrone replicatie scenario's. Er is een meet bare vertraging tussen de bron en de replica. De gegevens op de replica worden uiteindelijk consistent met de gegevens op de bron. Gebruik deze functie voor werk belastingen die deze vertraging kunnen bevatten.
 
 ## <a name="cross-region-replication"></a>Replicatie in meerdere regio's
+
 U kunt een lees replica maken in een andere regio dan de bron server. Replicatie tussen regio's kan handig zijn voor scenario's zoals het plannen van herstel na nood gevallen of gegevens dichter bij uw gebruikers te brengen.
 
-U kunt een bron server in een [Azure database for MySQL regio](https://azure.microsoft.com/global-infrastructure/services/?products=mysql)hebben.  Een bron server kan een replica hebben in het gekoppelde gebied of in de universele replica regio's. In de onderstaande afbeelding ziet u welke replica regio's er beschikbaar zijn, afhankelijk van de bron regio.
+U kunt een bron server in een [Azure database for MySQL regio](https://azure.microsoft.com/global-infrastructure/services/?products=mysql)hebben.  Een bron server kan een replica hebben in het gekoppelde gebied of in de universele replica regio's. In de volgende afbeelding ziet u welke replica regio's er beschikbaar zijn, afhankelijk van de bron regio.
 
 [:::image type="content" source="media/concepts-read-replica/read-replica-regions.png" alt-text="Replica regio's lezen":::](media/concepts-read-replica/read-replica-regions.png#lightbox)
 
 ### <a name="universal-replica-regions"></a>Universele replica regio's
+
 U kunt in een van de volgende regio's een lees replica maken, ongeacht waar de bron server zich bevindt. De ondersteunde regio's voor universele replica's zijn:
 
 Australië-oost, Australië-zuidoost, Brazilië-zuid, Canada-centraal, Canada-oost, VS, Azië-oost, VS-Oost, VS-Oost 2, Japan-Oost, Japan-West, Korea-centraal, Korea-zuid, Noord-Centraal VS, Europa-noord, Zuid-Centraal VS, Zuidoost-Azië, UK-zuid, UK-west, Europa-west, VS-West, VS-West-Centraal vs.
 
 ### <a name="paired-regions"></a>Gekoppelde regio's
+
 Naast de universele replica regio's, kunt u een lees replica maken in het gekoppelde Azure-gebied van de bron server. Als u het paar van uw regio niet weet, kunt u meer informatie vinden in het [artikel gekoppelde regio's in azure](../best-practices-availability-paired-regions.md).
 
 Als u verschillende regio's replica's gebruikt voor het plannen van herstel na nood gevallen, raden we u aan om de replica in het gekoppelde gebied te maken in plaats van een van de andere regio's. Gekoppelde regio's vermijden gelijktijdige updates en geven geen prioriteiten voor fysieke isolatie en gegevens locatie.  
@@ -57,9 +61,9 @@ Als u verschillende regio's replica's gebruikt voor het plannen van herstel na n
 Er zijn echter beperkingen om rekening mee te houden: 
 
 * Regionale Beschik baarheid: Azure Database for MySQL is beschikbaar in Frankrijk-centraal, UAE-noord en Duitsland-centraal. De gekoppelde regio's zijn echter niet beschikbaar.
-    
-* Uni-directionele paren: sommige Azure-regio's zijn in slechts één richting gekoppeld. Deze regio's omvatten West-India, Brazilië-zuid en US Gov-Virginia. 
-   Dit betekent dat een bron server in West-India een replica kan maken in India-zuid. Een bron server in India-zuid kan echter geen replica maken in West-India. Dit komt doordat de secundaire regio van West-India India-zuid is, India-zuid maar de secundaire regio van het westen is niet West-India.
+
+* Uni-directionele paren: sommige Azure-regio's zijn in slechts één richting gekoppeld. Deze regio's omvatten West-India, Brazilië-zuid en US Gov-Virginia.
+   Dit betekent dat een bron server in West-India een replica kan maken in India-zuid. Een bron server in India-zuid kan echter geen replica maken in West-India. Dit komt doordat de secundaire regio van West-India India-zuid is, maar de secundaire regio van het India-zuid niet West-India is.
 
 ## <a name="create-a-replica"></a>Replica's maken
 
@@ -108,22 +112,22 @@ Meer informatie over het [stoppen van replicatie naar een replica](howto-read-re
 
 ## <a name="failover"></a>Failover
 
-Er is geen automatische failover tussen bron-en replica servers. 
+Er is geen automatische failover tussen bron-en replica servers.
 
-Omdat replicatie asynchroon is, is er sprake van een vertraging tussen de bron en de replica. De hoeveelheid vertraging kan worden beïnvloed door een aantal factoren, zoals hoe zwaar de werk belasting die wordt uitgevoerd op de bron server en de latentie tussen data centers. In de meeste gevallen varieert replicavertraging tussen enkele seconden en een paar minuten. U kunt uw werkelijke replicatie vertraging bijhouden met behulp van de metrische *replica vertraging* , die beschikbaar is voor elke replica. Met deze metriek wordt de tijd weer gegeven sinds de laatste geplayte trans actie. U wordt aangeraden om te bepalen wat uw gemiddelde vertraging is door uw replica vertraging te bestuderen gedurende een bepaalde periode. U kunt een waarschuwing instellen voor replica vertraging, zodat u actie kunt ondernemen als deze buiten het verwachte bereik komt.
+Omdat de replicatie asynchroon is, is er sprake van een vertraging tussen de bron en de replica. De hoeveelheid vertraging kan worden beïnvloed door veel factoren, zoals hoe zwaar de werk belasting op de bron server wordt uitgevoerd en de latentie tussen data centers. In de meeste gevallen varieert replicavertraging tussen enkele seconden en een paar minuten. U kunt uw werkelijke replicatie vertraging bijhouden met behulp van de metrische *replica vertraging*, die beschikbaar is voor elke replica. Met deze metriek wordt de tijd weer gegeven sinds de laatste geplayte trans actie. U wordt aangeraden om te bepalen wat uw gemiddelde vertraging is door uw replica vertraging te bestuderen gedurende een bepaalde periode. U kunt een waarschuwing instellen voor replica vertraging, zodat u actie kunt ondernemen als deze buiten het verwachte bereik komt.
 
 > [!Tip]
 > Als u een failover naar de replica doorzoekt, geeft de vertraging op het moment dat u de replica loskoppelt van de bron aan hoeveel gegevens er verloren zijn gegaan.
 
-Zodra u hebt vastgesteld dat u een failover naar een replica wilt uitvoeren, 
+Nadat u hebt vastgesteld dat u een failover naar een replica wilt:
 
 1. Replicatie naar de replica stoppen<br/>
-   Deze stap is nodig om de replica-server in staat te stellen schrijf bewerkingen te accepteren. Als onderdeel van dit proces wordt de replica server ontkoppeld van de Master. Zodra u stopt met de replicatie, duurt het back-end doorgaans ongeveer twee minuten om te volt ooien. Zie de sectie [Replicatie stoppen](#stop-replication) in dit artikel voor meer informatie over de implicaties van deze actie.
-    
+   Deze stap is nodig om de replica-server in staat te stellen schrijf bewerkingen te accepteren. Als onderdeel van dit proces wordt de replica server ontkoppeld van de bron. Nadat u de replicatie stoppen hebt gestart, duurt het back-end doorgaans ongeveer twee minuten. Zie de sectie [Replicatie stoppen](#stop-replication) in dit artikel voor meer informatie over de implicaties van deze actie.
+
 2. Uw toepassing naar de (voormalige) replica laten wijzen<br/>
-   Elke server heeft een unieke connection string. Werk uw toepassing bij zodat deze verwijst naar de (voormalige) replica in plaats van het hoofd bestand.
-    
-Zodra uw toepassing Lees-en schrijf bewerkingen heeft verwerkt, hebt u de failover voltooid. De uitval tijd van uw toepassings ervaring is afhankelijk van wanneer u een probleem detecteert en de stappen 1 en 2 hierboven uitvoert.
+   Elke server heeft een unieke connection string. Werk uw toepassing bij zodat deze verwijst naar de (voormalige) replica in plaats van de bron.
+
+Nadat uw toepassing Lees-en schrijf bewerkingen heeft verwerkt, hebt u de failover voltooid. De uitval tijd van uw toepassings ervaring is afhankelijk van wanneer u een probleem detecteert en de eerder genoemde stappen 1 en 2 uitvoert.
 
 ## <a name="global-transaction-identifier-gtid"></a>Algemene trans actie-id (GTID)
 
@@ -133,13 +137,13 @@ MySQL ondersteunt twee typen trans acties: GTID trans acties (aangeduid met GTID
 
 De volgende server parameters zijn beschikbaar voor het configureren van GTID: 
 
-|**Server parameter**|**Beschrijving**|**Standaard waarde**|**Waarden**|
+|**Server parameter**|**Beschrijving**|**Standaardwaarde**|**Waarden**|
 |--|--|--|--|
 |`gtid_mode`|Hiermee wordt aangegeven of GTIDs worden gebruikt om trans acties te identificeren. Wijzigingen tussen modi kunnen slechts één stap per keer in oplopende volg orde worden uitgevoerd (bijvoorbeeld `OFF` -> `OFF_PERMISSIVE` -> `ON_PERMISSIVE` -> `ON`)|`OFF`|`OFF`: Zowel nieuwe als replicatie transacties moeten anoniem zijn <br> `OFF_PERMISSIVE`: Nieuwe trans acties zijn anoniem. Gerepliceerde trans acties kunnen anoniem of GTID-trans acties zijn. <br> `ON_PERMISSIVE`: Nieuwe trans acties zijn GTID trans acties. Gerepliceerde trans acties kunnen anoniem of GTID-trans acties zijn. <br> `ON`: Zowel nieuwe als gerepliceerde trans acties moeten GTID trans acties zijn.|
 |`enforce_gtid_consistency`|Dwingt consistentie van GTID af door alleen de instructies toe te staan die op transactionele veilige wijze kunnen worden geregistreerd. Deze waarde moet worden ingesteld op `ON` voordat u GTID-replicatie inschakelt. |`OFF`|`OFF`: Alle trans acties mogen GTID-consistentie schenden.  <br> `ON`: Geen enkele trans actie mag GTID-consistentie schenden. <br> `WARN`: Alle trans acties mogen GTID-consistentie schenden, maar er wordt een waarschuwing gegenereerd. | 
 
 > [!NOTE]
-> Als GTID is ingeschakeld, kunt u deze niet meer uitschakelen. Als u GTID wilt uitschakelen, neemt u contact op met de ondersteuning. 
+> Nadat GTID is ingeschakeld, kunt u deze niet meer uitschakelen. Als u GTID wilt uitschakelen, neemt u contact op met de ondersteuning. 
 
 Als u GTID wilt inschakelen en het consistentie gedrag wilt configureren, moet `gtid_mode` `enforce_gtid_consistency` u de para meters en server bijwerken met behulp van de [Azure Portal](howto-server-parameters.md), [Azure cli](howto-configure-server-parameters-using-cli.md)of [Power shell](howto-configure-server-parameters-using-powershell.md).
 
@@ -164,10 +168,10 @@ Er wordt een lees replica gemaakt als een nieuwe Azure Database for MySQL-server
 
 ### <a name="replica-configuration"></a>Replica configuratie
 
-Een replica wordt gemaakt met behulp van dezelfde server configuratie als de Master. Nadat een replica is gemaakt, kunnen verschillende instellingen onafhankelijk van de bron server worden gewijzigd: generatie van compute, vCores, opslag en back-up van Bewaar periode. De prijs categorie kan ook onafhankelijk worden gewijzigd, met uitzonde ring van of van de Basic-laag.
+Een replica wordt gemaakt met behulp van dezelfde server configuratie als de bron. Nadat een replica is gemaakt, kunnen verschillende instellingen onafhankelijk van de bron server worden gewijzigd: generatie van compute, vCores, opslag en back-up van Bewaar periode. De prijs categorie kan ook onafhankelijk worden gewijzigd, met uitzonde ring van of van de Basic-laag.
 
 > [!IMPORTANT]
-> Voordat een configuratie van een bronserver wordt bijgewerkt naar nieuwe waarden, moet u de configuratie van de replica bijwerken naar gelijke of hogere waarden. Met deze actie wordt ervoor gezorgd dat in de replica alle wijzigingen worden doorgevoerd die in de hoofdserver zijn aangebracht.
+> Voordat een configuratie van een bronserver wordt bijgewerkt naar nieuwe waarden, moet u de configuratie van de replica bijwerken naar gelijke of hogere waarden. Met deze actie wordt ervoor gezorgd dat in de replica alle wijzigingen worden doorgevoerd die in de bronserver zijn aangebracht.
 
 Firewall regels en parameter instellingen worden overgenomen van de bron server naar de replica wanneer de replica wordt gemaakt. Daarna zijn de regels van de replica onafhankelijk.
 
@@ -188,31 +192,33 @@ Gebruikers op de bron server worden gerepliceerd naar de Lees replica's. U kunt 
 Om problemen met de synchronisatie van gegevens en mogelijk verlies of beschadiging van gegevens te voorkomen, worden bepaalde serverparameters vergrendeld zodat ze niet kunnen worden bijgewerkt bij gebruik van replica's voor lezen.
 
 De volgende server parameters zijn vergrendeld op de bron-en replica servers:
-- [`innodb_file_per_table`](https://dev.mysql.com/doc/refman/8.0/en/innodb-file-per-table-tablespaces.html) 
-- [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators)
 
-De [`event_scheduler`](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_event_scheduler) para meter is vergrendeld op de replica servers. 
+* [`innodb_file_per_table`](https://dev.mysql.com/doc/refman/8.0/en/innodb-file-per-table-tablespaces.html) 
+* [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators)
 
-Als u een van de bovenstaande para meters op de bron server wilt bijwerken, verwijdert u de replica servers, werkt u de parameter waarde op de Master bij en maakt u de replica's opnieuw.
+De [`event_scheduler`](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_event_scheduler) para meter is vergrendeld op de replica servers.
+
+Als u een van de bovenstaande para meters op de bron server wilt bijwerken, verwijdert u replica servers, werkt u de parameter waarde bij op de bron en maakt u de replica's opnieuw.
 
 ### <a name="gtid"></a>GTID
 
 GTID wordt ondersteund op:
-- MySQL-versies 5,7 en 8,0 
-- Servers die ondersteuning bieden voor opslag van Maxi maal 16 TB. Raadpleeg het artikel [prijs categorie](concepts-pricing-tiers.md#storage) voor de volledige lijst met regio's die ondersteuning bieden voor 16 TB opslag. 
 
-GTID is standaard uitgeschakeld. Als GTID is ingeschakeld, kunt u deze niet meer uitschakelen. Als u GTID wilt uitschakelen, neemt u contact op met de ondersteuning. 
+* MySQL-versies 5,7 en 8,0.
+* Servers die ondersteuning bieden voor opslag van Maxi maal 16 TB. Raadpleeg het artikel [prijs categorie](concepts-pricing-tiers.md#storage) voor de volledige lijst met regio's die ondersteuning bieden voor 16 TB opslag.
+
+GTID is standaard uitgeschakeld. Nadat GTID is ingeschakeld, kunt u deze niet meer uitschakelen. Als u GTID wilt uitschakelen, neemt u contact op met de ondersteuning.
 
 Als GTID is ingeschakeld op een bron server, is voor nieuw gemaakte replica's ook GTID ingeschakeld en wordt GTID-replicatie gebruikt. Om replicatie consistent te blijven, kunt u niet bijwerken `gtid_mode` op de bron-of replica server (s).
 
 ### <a name="other"></a>Anders
 
-- Het maken van een replica van een replica wordt niet ondersteund.
-- In-Memory tabellen kunnen ertoe leiden dat replica's niet meer synchroon zijn. Dit is een beperking van de MySQL-replicatie technologie. Meer informatie vindt u in de [referentie documentatie voor mysql](https://dev.mysql.com/doc/refman/5.7/en/replication-features-memory.html) .
-- Zorg ervoor dat de bron Server tabellen primaire sleutels hebben. Het ontbreken van primaire sleutels kan leiden tot replicatie latentie tussen de bron en de replica's.
-- Bekijk de volledige lijst met MySQL-replicatie beperkingen in de [MySQL-documentatie](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html)
+* Het maken van een replica van een replica wordt niet ondersteund.
+* In-Memory tabellen kunnen ertoe leiden dat replica's niet meer synchroon zijn. Dit is een beperking van de MySQL-replicatie technologie. Meer informatie vindt u in de [referentie documentatie voor mysql](https://dev.mysql.com/doc/refman/5.7/en/replication-features-memory.html) .
+* Zorg ervoor dat de bron Server tabellen primaire sleutels hebben. Het ontbreken van primaire sleutels kan leiden tot replicatie latentie tussen de bron en de replica's.
+* Bekijk de volledige lijst met MySQL-replicatie beperkingen in de [MySQL-documentatie](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [het maken en beheren van Lees replica's met behulp van de Azure Portal](howto-read-replicas-portal.md)
-- Meer informatie over [het maken en beheren van Lees replica's met behulp van Azure CLI en rest API](howto-read-replicas-cli.md)
+* Meer informatie over [het maken en beheren van Lees replica's met behulp van de Azure Portal](howto-read-replicas-portal.md)
+* Meer informatie over [het maken en beheren van Lees replica's met behulp van Azure CLI en rest API](howto-read-replicas-cli.md)

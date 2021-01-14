@@ -8,12 +8,12 @@ ms.tgt_pltfrm: vm-linux
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: danis
-ms.openlocfilehash: 751d447c164c602b9b1524d4945d61556bf71932
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: d5caacc7ebbb39a5d6d4fa3d4e9757e8e83420f9
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127291"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202688"
 ---
 # <a name="prepare-a-red-hat-based-virtual-machine-for-azure"></a>Een op Red Hat gebaseerde virtuele machine voor Azure voorbereiden
 In dit artikel wordt beschreven hoe u een virtuele Red Hat Enterprise Linux-machine (RHEL) voorbereidt voor gebruik in Azure. De versies van RHEL die in dit artikel worden behandeld, zijn 6,7 + en 7.1 +. De Hyper visors voor voor bereidingen die in dit artikel worden behandeld, zijn Hyper-V, op kernel gebaseerde virtuele machine (KVM) en VMware. Voor meer informatie over de geschiktheids vereisten voor deelname aan het Cloud Access-programma van Red Hat raadpleegt u [de Cloud Access-website van Red Hat](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) en [voert u RHEL uit op Azure](https://access.redhat.com/ecosystem/ccsp/microsoft-azure). Zie de [opbouw functie voor Azure-installatie kopieën](./image-builder-overview.md)voor manieren om het bouwen van RHEL-installatie kopieën te automatiseren.
@@ -30,7 +30,7 @@ In deze sectie wordt ervan uitgegaan dat u al een ISO-bestand hebt verkregen van
 * Azure biedt geen ondersteuning voor de VHDX-indeling. Azure ondersteunt alleen vaste VHD. U kunt Hyper-V-beheer gebruiken om de schijf te converteren naar VHD-indeling, of u kunt de cmdlet Convert-VHD gebruiken. Als u VirtualBox gebruikt, selecteert u **vaste grootte** in plaats van de standaard optie voor dynamisch toegewezen wanneer u de schijf maakt.
 * Azure biedt ondersteuning voor gen1 (BIOS Boot) & Gen2 (UEFI boot) virtuele machines.
 * De maximale grootte die is toegestaan voor de VHD is 1.023 GB.
-* Logical Volume Manager (LVM) wordt ondersteund en kan worden gebruikt op de besturingssysteem schijf of gegevens schijven in virtuele machines van Azure. Over het algemeen is het echter raadzaam om standaard partities op de besturingssysteem schijf te gebruiken in plaats van LVM. Met deze procedure wordt voor komen dat LVM naam strijdig is met gekloonde virtuele machines, met name als u ooit een besturingssysteem schijf moet koppelen aan een andere identieke virtuele machine voor het oplossen van problemen. Zie ook  [LVM](configure-lvm.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) en [RAID](configure-raid.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) -documentatie.
+* Logical Volume Manager (LVM) wordt ondersteund en kan worden gebruikt op de besturingssysteem schijf of gegevens schijven in virtuele machines van Azure. Over het algemeen is het echter raadzaam om standaard partities op de besturingssysteem schijf te gebruiken in plaats van LVM. Met deze procedure wordt voor komen dat LVM naam strijdig is met gekloonde virtuele machines, met name als u ooit een besturingssysteem schijf moet koppelen aan een andere identieke virtuele machine voor het oplossen van problemen. Zie ook  [LVM](configure-lvm.md) en [RAID](configure-raid.md) -documentatie.
 * **Kernel-ondersteuning voor het koppelen van UDF-bestands systemen (Universal Disk Format) is vereist**. Bij de eerste keer opstarten op Azure wordt de inrichtings configuratie door de UDF-indelings media die aan de gast is gekoppeld, door gegeven aan de virtuele Linux-machine. De Azure Linux-agent moet het UDF-bestands systeem kunnen koppelen om de configuratie te lezen en de virtuele machine zo in te richten, mislukt het inrichten.
 * Configureer geen swap partitie op de schijf met het besturings systeem. Meer informatie hierover vindt u in de volgende stappen.
 

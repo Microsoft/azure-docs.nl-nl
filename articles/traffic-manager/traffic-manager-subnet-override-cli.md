@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: traffic-manager
 ms.date: 09/18/2019
 ms.author: duau
-ms.openlocfilehash: 984cdfb3e60717f7632ea1fdcd05a4681dd6a1fd
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 7a448afb85a35674921ce74a25eaf2a97430dc61
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517934"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201413"
 ---
 # <a name="traffic-manager-subnet-override-using-azure-cli"></a>Onderdrukking van het subnet Traffic Manager met behulp van Azure CLI
 
@@ -36,10 +36,10 @@ Als u een Traffic Manager subnet overschrijven wilt maken, kunt u Azure CLI gebr
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Voor dit artikel is versie 2.0.28 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="update-the-traffic-manager-endpoint-with-subnet-override"></a>Werk het Traffic Manager-eind punt bij met het overschrijven van het subnet.
-Gebruik Azure CLI om uw eind punt bij te werken met [AZ Network Traffic-Manager endpoint update](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update).
+Gebruik Azure CLI om uw eind punt bij te werken met [AZ Network Traffic-Manager endpoint update](/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update).
 
 ```azurecli-interactive
 ### Add a range of IPs ###
@@ -59,7 +59,7 @@ az network traffic-manager endpoint update \
     --type AzureEndpoints
 ```
 
-U kunt de IP-adresbereiken verwijderen door het uitvoeren van de [Update AZ Network Traffic-Manager endpoint](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update) met de optie **--Remove** .
+U kunt de IP-adresbereiken verwijderen door het uitvoeren van de [Update AZ Network Traffic-Manager endpoint](/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-update) met de optie **--Remove** .
 
 ```azurecli-interactive
 az network traffic-manager endpoint update \
@@ -74,4 +74,4 @@ az network traffic-manager endpoint update \
 
 Meer informatie over methoden voor het [routeren](traffic-manager-routing-methods.md)van Traffic Manager verkeer.
 
-Meer informatie over het [subnet Traffic-routerings methode](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-routing-methods#subnet-traffic-routing-method)
+Meer informatie over het [subnet Traffic-routerings methode](./traffic-manager-routing-methods.md#subnet-traffic-routing-method)

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/23/2018
 ms.author: akjosh
-ms.openlocfilehash: ba6dda86475456b6797d27e11727d70261be2e1a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 66e4ea622f546981d1f0651b20368590e59056d3
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91440002"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201617"
 ---
 # <a name="troubleshoot-remote-desktop-connections-to-an-azure-virtual-machine"></a>Problemen met Extern bureaublad verbindingen met een virtuele machine van Azure oplossen
 De RDP-verbinding (Remote Desktop Protocol) met uw Windows Azure VM (Virtual Machine) kan om verschillende redenen worden onderbroken, waardoor u geen toegang hebt tot uw VM. Het probleem kan in Extern bureaublad in de VM zitten, in de netwerkverbinding of in de Extern bureaublad-client in de hostcomputer. In dit artikel wordt u door sommige van de meest voorkomende methoden geleid om RDP-verbindingsfouten op te lossen. 
@@ -62,7 +62,7 @@ U vindt hier ook stappen voor het oplossen van problemen met Vm's die zijn gemaa
 ## <a name="troubleshoot-using-the-azure-portal"></a>Problemen oplossen met behulp van de Azure Portal
 Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken met uw VM. Als u nog steeds geen verbinding kunt maken, voert u de volgende stap uit.
 
-1. **Stel de RDP-verbinding opnieuw**in. Met deze stap voor het oplossen van problemen wordt de RDP-configuratie opnieuw ingesteld wanneer externe verbindingen worden uitgeschakeld of door Windows Firewall regels RDP worden geblokkeerd.
+1. **Stel de RDP-verbinding opnieuw** in. Met deze stap voor het oplossen van problemen wordt de RDP-configuratie opnieuw ingesteld wanneer externe verbindingen worden uitgeschakeld of door Windows Firewall regels RDP worden geblokkeerd.
    
     Selecteer uw virtuele machine in de Azure Portal. Schuif omlaag in het deel venster instellingen naar de sectie **ondersteuning en probleem oplossing** onder in de lijst. Klik op de knop **wacht woord opnieuw instellen** . Stel de **modus** in op **alleen configuratie herstellen** en klik vervolgens op de knop **bijwerken** :
    
@@ -84,12 +84,12 @@ Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken
     Selecteer uw virtuele machine in de Azure Portal. Schuif omlaag in het deel venster instellingen naar de sectie **ondersteuning en probleem oplossing** onder in de lijst. Klik op de knop **wacht woord opnieuw instellen** . Zorg ervoor dat de **modus** is ingesteld op **wacht woord opnieuw instellen** en voer uw gebruikers naam en een nieuw wacht woord in. Klik ten slotte op de knop **bijwerken** :
    
     ![Stel de gebruikers referenties in de Azure Portal opnieuw in.](./media/troubleshoot-rdp-connection/reset-password.png)
-7. **Start de VM opnieuw**op. Deze stap voor het oplossen van problemen kan eventuele onderliggende problemen met de VM zelf corrigeren.
+7. **Start de VM opnieuw** op. Deze stap voor het oplossen van problemen kan eventuele onderliggende problemen met de VM zelf corrigeren.
    
     Selecteer uw virtuele machine in de Azure Portal en klik op het tabblad **overzicht** . Klik op de knop **opnieuw opstarten** :
    
     ![Start de V M opnieuw op in de Azure Portal.](./media/troubleshoot-rdp-connection/restart-vm.png)
-8. **Implementeer uw VM**opnieuw. Met deze stap voor probleem oplossing wordt uw virtuele machine opnieuw geïmplementeerd naar een andere host in azure om eventuele onderliggende problemen met het platform of netwerk op te lossen.
+8. **Implementeer uw VM** opnieuw. Met deze stap voor probleem oplossing wordt uw virtuele machine opnieuw geïmplementeerd naar een andere host in azure om eventuele onderliggende problemen met het platform of netwerk op te lossen.
    
     Selecteer uw virtuele machine in de Azure Portal. Schuif omlaag in het deel venster instellingen naar de sectie **ondersteuning en probleem oplossing** onder in de lijst. Klik op de knop opnieuw **implementeren** en klik vervolgens op opnieuw **implementeren**:
    
@@ -101,7 +101,7 @@ Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken
 
 10. Zorg ervoor dat een on-premises firewall, of firewall op uw computer, uitgaande TCP 3389-verkeer naar Azure toestaat.
 
-Als u nog steeds RDP-problemen ondervindt, kunt u [een ondersteunings aanvraag openen](https://azure.microsoft.com/support/options/) of [meer informatie over het oplossen van problemen met interacties en stappen voor probleem oplossing](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)lezen.
+Als u nog steeds RDP-problemen ondervindt, kunt u [een ondersteunings aanvraag openen](https://azure.microsoft.com/support/options/) of [meer informatie over het oplossen van problemen met interacties en stappen voor probleem oplossing](detailed-troubleshoot-rdp.md)lezen.
 
 ## <a name="troubleshoot-using-azure-powershell"></a>Problemen oplossen met behulp van Azure PowerShell
 Als u dat nog niet hebt [gedaan, installeert en configureert u de nieuwste Azure PowerShell](/powershell/azure/).
@@ -113,7 +113,7 @@ In de volgende voor beelden worden variabelen `myResourceGroup` , zoals, en, geb
 
 Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken met uw VM. Als u nog steeds geen verbinding kunt maken, voert u de volgende stap uit.
 
-1. **Stel de RDP-verbinding opnieuw**in. Met deze stap voor het oplossen van problemen wordt de RDP-configuratie opnieuw ingesteld wanneer externe verbindingen worden uitgeschakeld of door Windows Firewall regels RDP worden geblokkeerd.
+1. **Stel de RDP-verbinding opnieuw** in. Met deze stap voor het oplossen van problemen wordt de RDP-configuratie opnieuw ingesteld wanneer externe verbindingen worden uitgeschakeld of door Windows Firewall regels RDP worden geblokkeerd.
    
     In het volgende voor beeld wordt de RDP-verbinding opnieuw ingesteld op een virtuele machine met de naam op `myVM` de `WestUS` locatie en in de resource groep met de naam `myResourceGroup` :
    
@@ -154,7 +154,7 @@ Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken
     Direction                : Inbound
     ```
    
-    Als u geen regel hebt waarmee RDP-verkeer is toegestaan, [maakt u een regel voor de netwerk beveiligings groep](../windows/nsg-quickstart-powershell.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). TCP-poort 3389 toestaan.
+    Als u geen regel hebt waarmee RDP-verkeer is toegestaan, [maakt u een regel voor de netwerk beveiligings groep](../windows/nsg-quickstart-powershell.md). TCP-poort 3389 toestaan.
 3. **Gebruikers referenties opnieuw instellen**. Deze stap voor het oplossen van problemen stelt het wacht woord voor het lokale beheerders account dat u opgeeft wanneer u niet zeker weet of u bent verg eten, de referenties.
    
     Geef eerst de gebruikers naam en het nieuwe wacht woord op door de volgende referenties aan de variabele toe te wijzen `$cred` :
@@ -171,14 +171,14 @@ Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken
         -UserName $cred.GetNetworkCredential().Username `
         -Password $cred.GetNetworkCredential().Password
     ```
-4. **Start de VM opnieuw**op. Deze stap voor het oplossen van problemen kan eventuele onderliggende problemen met de VM zelf corrigeren.
+4. **Start de VM opnieuw** op. Deze stap voor het oplossen van problemen kan eventuele onderliggende problemen met de VM zelf corrigeren.
    
     In het volgende voor beeld wordt de virtuele machine `myVM` met de naam in de resource groep met de naam `myResourceGroup` :
    
     ```powershell
     Restart-AzVM -ResourceGroup "myResourceGroup" -Name "myVM"
     ```
-5. **Implementeer uw VM**opnieuw. Met deze stap voor probleem oplossing wordt uw virtuele machine opnieuw geïmplementeerd naar een andere host in azure om eventuele onderliggende problemen met het platform of netwerk op te lossen.
+5. **Implementeer uw VM** opnieuw. Met deze stap voor probleem oplossing wordt uw virtuele machine opnieuw geïmplementeerd naar een andere host in azure om eventuele onderliggende problemen met het platform of netwerk op te lossen.
    
     In het volgende voor beeld wordt de virtuele machine `myVM` met de naam op de `WestUS` locatie en in de resource groep met de naam `myResourceGroup` :
    
@@ -190,7 +190,7 @@ Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken
 
 7. Zorg ervoor dat een on-premises firewall, of firewall op uw computer, uitgaande TCP 3389-verkeer naar Azure toestaat.
 
-Als u nog steeds RDP-problemen ondervindt, kunt u [een ondersteunings aanvraag openen](https://azure.microsoft.com/support/options/) of [meer informatie over het oplossen van problemen met interacties en stappen voor probleem oplossing](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)lezen.
+Als u nog steeds RDP-problemen ondervindt, kunt u [een ondersteunings aanvraag openen](https://azure.microsoft.com/support/options/) of [meer informatie over het oplossen van problemen met interacties en stappen voor probleem oplossing](detailed-troubleshoot-rdp.md)lezen.
 
 ## <a name="troubleshoot-vms-created-using-the-classic-deployment-model"></a>Problemen met Vm's die zijn gemaakt met het klassieke implementatie model oplossen
 
@@ -199,9 +199,9 @@ Als u nog steeds RDP-problemen ondervindt, kunt u [een ondersteunings aanvraag o
 
 Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken met de virtuele machine.
 
-1. **Stel de RDP-verbinding opnieuw**in. Met deze stap voor het oplossen van problemen wordt de RDP-configuratie opnieuw ingesteld wanneer externe verbindingen worden uitgeschakeld of door Windows Firewall regels RDP worden geblokkeerd.
+1. **Stel de RDP-verbinding opnieuw** in. Met deze stap voor het oplossen van problemen wordt de RDP-configuratie opnieuw ingesteld wanneer externe verbindingen worden uitgeschakeld of door Windows Firewall regels RDP worden geblokkeerd.
    
-    Selecteer uw virtuele machine in de Azure Portal. Klik op de **... ** Klik op de knop meer en vervolgens op **externe toegang opnieuw instellen**:
+    Selecteer uw virtuele machine in de Azure Portal. Klik op de **...** Klik op de knop meer en vervolgens op **externe toegang opnieuw instellen**:
    
     ![De R D P-configuratie opnieuw instellen in de Azure Portal voor V M met het klassieke implementatie model.](./media/troubleshoot-rdp-connection/classic-reset-rdp.png)
 2. **Controleer Cloud Services-eind punten**. Deze stap voor het oplossen van problemen controleert of u eind punten hebt in uw Cloud Services om RDP-verkeer toe te staan. De standaard poort voor RDP is TCP-poort 3389. Een regel voor het toestaan van RDP-verkeer wordt mogelijk niet automatisch gemaakt wanneer u de virtuele machine maakt.
@@ -226,7 +226,7 @@ Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken
     Selecteer uw virtuele machine in de Azure Portal. Schuif omlaag in het deel venster instellingen naar de sectie **ondersteuning en probleem oplossing** onder in de lijst. Klik op de knop **wacht woord opnieuw instellen** . Voer uw gebruikers naam en een nieuw wacht woord in. Klik ten slotte op de knop **Opslaan** :
    
     ![Stel de gebruikers referenties in de Azure Portal voor V M opnieuw in met het klassieke implementatie model.](./media/troubleshoot-rdp-connection/classic-reset-password.png)
-6. **Start de VM opnieuw**op. Deze stap voor het oplossen van problemen kan eventuele onderliggende problemen met de VM zelf corrigeren.
+6. **Start de VM opnieuw** op. Deze stap voor het oplossen van problemen kan eventuele onderliggende problemen met de VM zelf corrigeren.
    
     Selecteer uw virtuele machine in de Azure Portal en klik op het tabblad **overzicht** . Klik op de knop **opnieuw opstarten** :
    
@@ -234,7 +234,7 @@ Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken
 
 7. Zorg ervoor dat een on-premises firewall, of firewall op uw computer, uitgaande TCP 3389-verkeer naar Azure toestaat.
 
-Als u nog steeds RDP-problemen ondervindt, kunt u [een ondersteunings aanvraag openen](https://azure.microsoft.com/support/options/) of [meer informatie over het oplossen van problemen met interacties en stappen voor probleem oplossing](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)lezen.
+Als u nog steeds RDP-problemen ondervindt, kunt u [een ondersteunings aanvraag openen](https://azure.microsoft.com/support/options/) of [meer informatie over het oplossen van problemen met interacties en stappen voor probleem oplossing](detailed-troubleshoot-rdp.md)lezen.
 
 ## <a name="troubleshoot-specific-rdp-errors"></a>Specifieke RDP-fouten oplossen
 Er kan een specifiek fout bericht worden weer gegeven wanneer u probeert verbinding te maken met uw virtuele machine via RDP. Hier volgen de meest voorkomende fout berichten:
@@ -245,7 +245,7 @@ Er kan een specifiek fout bericht worden weer gegeven wanneer u probeert verbind
 * [Windows-beveiligings fout: uw referenties werken niet](troubleshoot-specific-rdp-errors.md#wincred).
 * [Deze computer kan geen verbinding maken met de externe computer](troubleshoot-specific-rdp-errors.md#rdpconnect).
 
-## <a name="additional-resources"></a>Aanvullende bronnen
-Lees de gedetailleerde [hand leiding voor het oplossen extern bureaublad van problemen](detailed-troubleshoot-rdp.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)als er geen van deze fouten optrad en u nog steeds geen verbinding met de virtuele machine kunt maken via Extern bureaublad.
+## <a name="additional-resources"></a>Aanvullende resources
+Lees de gedetailleerde [hand leiding voor het oplossen extern bureaublad van problemen](detailed-troubleshoot-rdp.md)als er geen van deze fouten optrad en u nog steeds geen verbinding met de virtuele machine kunt maken via Extern bureaublad.
 * Zie [problemen oplossen met toegang tot een toepassing die wordt uitgevoerd op](./troubleshoot-app-connection.md?toc=/azure/virtual-machines/linux/toc.json)een virtuele machine van Azure voor informatie over het oplossen van problemen bij het openen van toepassingen die op een VM worden uitgevoerd.
 * Zie [problemen met ssh-verbindingen met een virtuele Linux-machine in azure oplossen](./troubleshoot-ssh-connection.md?toc=/azure/virtual-machines/linux/toc.json)als u problemen ondervindt met het gebruik van Secure Shell (SSH) om verbinding te maken met een virtuele Linux-machine in Azure.

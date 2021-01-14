@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 07ef3da9f67de92c3526b83222c1c8088660d7c7
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: f393c5df23b9552f598e05d25aaf09e529324abe
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499863"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201991"
 ---
 # <a name="azure-security-baseline-for-azure-cognitive-search"></a>Azure-beveiligings basislijn voor Azure Cognitive Search
 
@@ -340,7 +340,7 @@ Stel een proces in om het aantal identiteiten en referenties te verminderen door
 
 **Hulp**: gebruik een privileged Access-werk station (Paw) met multi-factor Authentication (MFA) dat is geconfigureerd om u aan te melden bij en toegang te krijgen tot Azure-resources.
 
-- [Meer informatie over veilige, door Azure beheerde werk stations](../active-directory/devices/concept-azure-managed-workstation.md)
+- [Meer informatie over veilige, door Azure beheerde werk stations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
  
 
 - [Azure AD MFA inschakelen](../active-directory/authentication/howto-mfa-getstarted.md)

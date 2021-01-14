@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: acdddcd95883d13393838a47281fb888ac2f9274
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 26ef07269c9451c2e9d05d42e2247fbfcdae4844
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500390"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201957"
 ---
 # <a name="azure-premium-storage-design-for-high-performance"></a>Azure Premium-opslag: ontwerpen voor hoge prestaties
 
@@ -152,7 +152,7 @@ Zie [grootten voor virtuele machines in azure](sizes.md)voor meer informatie ove
 | **Prestatie factoren** | &nbsp; | &nbsp; | &nbsp; |
 | **I/o-grootte** |Bij een kleinere IO-grootte wordt een hogere IOPS als resultaat verkregen. |Grotere IO-grootte om een hogere door voer te leveren. | &nbsp;|
 | **VM-grootte** |Gebruik een VM-grootte die IOPS groter is dan de vereiste van uw toepassing. |Gebruik een VM-grootte met een doorvoer limiet van meer dan uw toepassings vereiste. |Gebruik een VM-grootte die groter is dan de vereiste schaal limieten. |
-| **Schijfgrootte** |Gebruik een schijf grootte met IOPS die groter is dan de vereiste van uw toepassing. |Gebruik een schijf grootte met een doorvoer limiet van meer dan uw toepassings vereiste. |Gebruik een schijf grootte die hoger is dan de vereiste voor uw toepassing. |
+| **Schijf grootte** |Gebruik een schijf grootte met IOPS die groter is dan de vereiste van uw toepassing. |Gebruik een schijf grootte met een doorvoer limiet van meer dan uw toepassings vereiste. |Gebruik een schijf grootte die hoger is dan de vereiste voor uw toepassing. |
 | **Schaal limieten voor VM'S en schijven** |De limiet voor IOPS van de gekozen VM-grootte moet groter zijn dan het totale aantal IOPS dat wordt aangestuurd door de opslag schijven die eraan zijn gekoppeld. |De doorvoer limiet van de gekozen VM-grootte moet groter zijn dan de totale door Voer die wordt aangestuurd door de Premium-opslag schijven die eraan zijn gekoppeld. |De schaal limieten van de gekozen VM-grootte moeten groter zijn dan de totale schaal limieten van gekoppelde Premium Storage-schijven. |
 | **Schijf cache** |Schakel alleen-lezen cache op Premium-opslag schijven in met zware bewerkingen om meer Lees-IOPS te krijgen. | &nbsp; |Schakel alleen-lezen cache op Premium-opslag schijven met kant-en-klare bewerkingen uit om zeer weinig lees latentie te verkrijgen. |
 | **Schijf striping** |Gebruik meerdere schijven en strip deze samen om een gecombineerde hogere IOPS en doorvoer limiet te verkrijgen. De gecombineerde limiet per VM moet hoger zijn dan de gecombineerde limieten van gekoppelde Premium-schijven. | &nbsp; | &nbsp; |
@@ -222,7 +222,7 @@ Als u echter dezelfde toepassing op Premium Storage hebt gehost, hebt u een klei
 
 Onderstaande tabel bevat een overzicht van de kosten analyse van dit scenario voor Standard en Premium Storage.
 
-| &nbsp; | **Standard** | **Ultieme** |
+| &nbsp; | **Standard** | **Premium** |
 | --- | --- | --- |
 | **Kosten van VM per maand** |$1.570,58 (standaard \_ D14) |$1.003,66 (standaard \_ DS13) |
 | **Kosten van schijven per maand** |$1.638,40 (32 x 1 TB schijven) |$544,34 (4 x P30 schijven) |
@@ -230,7 +230,7 @@ Onderstaande tabel bevat een overzicht van de kosten analyse van dit scenario vo
 
 *Linux-distributies*  
 
-Met Azure Premium Storage beschikt u over hetzelfde prestatie niveau voor Vm's met Windows en Linux. We ondersteunen veel soorten Linux-distributies en u kunt [hier](linux/endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)de volledige lijst zien. Het is belang rijk te weten dat verschillende distributies beter geschikt zijn voor verschillende soorten workloads. U ziet verschillende prestatie niveaus, afhankelijk van de distributie waarop uw werk belasting wordt uitgevoerd. Test de Linux-distributies met uw toepassing en kies de versie die het beste werkt.
+Met Azure Premium Storage beschikt u over hetzelfde prestatie niveau voor Vm's met Windows en Linux. We ondersteunen veel soorten Linux-distributies en u kunt [hier](linux/endorsed-distros.md)de volledige lijst zien. Het is belang rijk te weten dat verschillende distributies beter geschikt zijn voor verschillende soorten workloads. U ziet verschillende prestatie niveaus, afhankelijk van de distributie waarop uw werk belasting wordt uitgevoerd. Test de Linux-distributies met uw toepassing en kies de versie die het beste werkt.
 
 Wanneer u Linux met Premium Storage uitvoert, controleert u de meest recente updates over de vereiste Stuur Programma's om hoge prestaties te garanderen.
 

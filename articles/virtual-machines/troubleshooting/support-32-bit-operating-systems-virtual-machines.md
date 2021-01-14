@@ -13,16 +13,20 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: 91e5ca10e97e8fc1646367ac6d575d6813f3a291
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1b801bac28b131ff43c47024649bfe0986f768c7
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87079856"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202892"
 ---
 # <a name="support-for-32-bit-operating-systems-in-azure-virtual-machines"></a>Ondersteuning voor 32-bits besturingssystemen in virtuele Azure-machines
 
 Microsoft Azure kunnen gebruikers nu hun 32-bits Windows-besturings systemen overzetten naar Azure. Alleen gespecialiseerde Vhd's worden ondersteund en gegeneraliseerde installatie kopieën werken niet in Azure. Omdat sommige van deze besturings systemen al hun einde van de levens cyclus voor ondersteuning hebben bereikt, biedt micro soft mogelijk geen aanvullende ondersteuning voor hen. Er wordt ook geen ondersteuning geboden voor op Linux of Berkeley (Software Distribution) gebaseerde besturings systemen die worden uitgevoerd op een Microsoft Azure virtuele machine (VM).
+
+> [!NOTE]
+> Azure-platform heeft een beperking van de geheugen ruimte die is opgelegd op Vm's met 32-bits besturings systemen, waarbij slechts 1 GB aan geheugen beschikbaar wordt gemaakt voor de virtuele machine, en de rest van het geheugen voor de virtuele machine wordt weer gegeven als gereserveerd in de gast-VM. Dit is een bekend probleem en we hebben momenteel geen ETA voor een oplossing. We raden u aan om over te stappen op 64-bits besturingssysteem versies.
+> 
 
 ## <a name="more-information"></a>Meer informatie
 

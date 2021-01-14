@@ -8,12 +8,12 @@ ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: sttsinar
-ms.openlocfilehash: 5ba5c6799db6a32bce64a730f4888f59080300dd
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 14c8584699ddc981fc24cc29b78c187288c6fb57
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657172"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203385"
 ---
 # <a name="b-series-burstable-virtual-machine-sizes"></a>Grootte van de B-serie bebreekbaar virtuele machines
 
@@ -21,7 +21,7 @@ De virtuele machines uit de B-serie zijn ideaal voor werk belastingen die de vol
 
 De B-serie is beschikbaar in de volgende VM-grootten:
 
-[Azure Compute Unit (ACU)](./acu.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json): varieert *<br>
+[Azure Compute Unit (ACU)](./acu.md): varieert *<br>
 [Premium Storage](premium-storage-performance.md): ondersteund<br>
 [Premium Storage caching](premium-storage-performance.md): niet ondersteund<br>
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
@@ -140,10 +140,10 @@ bijvoorbeeld: in het bovenstaande exemplaar is uw basis lijn 20%. Als u 10% van 
 
 ## <a name="other-sizes-and-information"></a>Andere grootten en informatie
 
-- [Algemeen doel](sizes-general.md)
+- [Algemeen gebruik](sizes-general.md)
 - [Geoptimaliseerde rekenkracht](sizes-compute.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 

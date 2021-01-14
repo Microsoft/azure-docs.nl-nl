@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 12/08/2020
-ms.openlocfilehash: 925a0270c50d20790c093eaf193d66e0acd4cd11
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.date: 01/14/2021
+ms.openlocfilehash: 82871a09916b2b64f74e25088f5e75ac60a40678
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347401"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202501"
 ---
 # <a name="copy-data-from-amazon-simple-storage-service-by-using-azure-data-factory"></a>Gegevens kopiëren uit de Amazon Simple Storage-service met behulp van Azure Data Factory
 > [!div class="op_single_selector" title1="Selecteer de versie van Data Factory service die u gebruikt:"]
@@ -71,6 +71,7 @@ De volgende eigenschappen worden ondersteund voor een gekoppelde service van Ama
 | secretAccessKey | De geheime toegangs sleutel zelf. Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). |Yes |
 | sessionToken | Van toepassing bij gebruik van verificatie van [tijdelijke beveiligings referenties](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp.html) . Meer informatie over het [aanvragen van tijdelijke beveiligings referenties](https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#api_getsessiontoken) van AWS.<br>Opmerking AWS tijdelijke referentie verloopt tussen 15 minuten en 36 uur op basis van instellingen. Zorg ervoor dat uw referenties geldig zijn wanneer de activiteit wordt uitgevoerd, met name voor het uitvoeren van een operationele werk belasting, bijvoorbeeld, kunt u deze regel matig vernieuwen en opslaan in Azure Key Vault.<br>Markeer dit veld als **SecureString** om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). |No |
 | serviceUrl | Geef het aangepaste S3-eind punt op als u gegevens kopieert van een andere S3-compatibele opslag provider dan de officiële service van Amazon S3. Als u bijvoorbeeld gegevens uit Google Cloud Storage wilt kopiëren, geeft u op `https://storage.googleapis.com` . | No |
+| forcePathStyle | Hiermee wordt aangegeven of S3 [-paden](https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html#path-style-access) worden gebruikt in plaats van Virtual hosted-Style Access. Toegestane waarden zijn: **False** (standaard), **True**.<br>Als u verbinding maakt met een S3-compatibele opslag provider dan de officiële service van de Amazon S3, en dit gegevens archief vereist toegang tot een pad-stijl (bijvoorbeeld [Oracle-Cloud opslag](https://docs.oracle.com/iaas/Content/Object/Tasks/s3compatibleapi.htm)), stelt u deze eigenschap in op waar. Controleer de documentatie van elke gegevens opslag op als er wel of geen toegang tot het pad is vereist. |No |
 | connectVia | De [Integration runtime](concepts-integration-runtime.md) die moet worden gebruikt om verbinding te maken met het gegevens archief. U kunt de Azure Integration runtime of de zelf-hostende Integration runtime gebruiken (als uw gegevens archief zich in een particulier netwerk bevindt). Als deze eigenschap niet is opgegeven, gebruikt de service de standaard Azure Integration runtime. |No |
 
 >[!TIP]

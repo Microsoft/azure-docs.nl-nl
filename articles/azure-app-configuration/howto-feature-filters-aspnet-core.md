@@ -8,12 +8,12 @@ author: AlexandraKemperMS
 ms.author: alkemper
 ms.topic: conceptual
 ms.date: 3/9/2020
-ms.openlocfilehash: 9a6ae1581b3958495010b032980b0de2e267088b
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 13857580d434736fbf0b12f52d39537ca864a497
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931874"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203121"
 ---
 # <a name="use-feature-filters-to-enable-conditional-feature-flags"></a>Functie filters gebruiken om voorwaardelijke functie vlaggen in te scha kelen
 
@@ -56,19 +56,19 @@ U kunt deze instellingen configureren voor functie vlaggen die zijn gedefinieerd
     > [!div class="mx-imgBorder"]
     > ![Bèta-functie vlag bewerken](./media/edit-beta-feature-flag.png)
 
-1. Selecteer in het **bewerkings** scherm **het keuze** rondje als dit nog niet is geselecteerd. Klik vervolgens op de knop **filter toevoegen** . (Het label **op** de radio knop wordt gewijzigd in **voorwaardelijke** tekst lezen.)
+1. Selecteer in het **bewerkings** scherm de knop **functie vlag inschakelen** als dit nog niet is geselecteerd. Klik vervolgens op de knop **functie filter gebruiken** en selecteer **aangepast**. 
 
 1. Voer *micro soft. percentage* in het veld **sleutel** in.
 
     > [!div class="mx-imgBorder"]
     > ![Functie filter toevoegen](./media/feature-flag-add-filter.png)
 
-1. Klik op het context menu naast de functie filter sleutel. Klik op **para meters bewerken**.
+1. Klik op het context menu naast de functie filter sleutel. Klik op **filter parameters bewerken**.
 
     > [!div class="mx-imgBorder"]
-    > ![Para meters voor functie filter bewerken](./media/feature-flag-edit-filter-parameters.png)
+    > ![Para meters voor functie filter bewerken](./media/feature-flags-edit-filter-parameters.png)
 
-1. Beweeg de muis aanwijzer onder de **naam** van de koptekst zodat er tekst vakken worden weer gegeven in het raster. Voer een **naam** in voor de *waarde* en de **waarde** 50. Het veld **waarde** geeft het percentage aanvragen aan waarvoor het functie filter moet worden ingeschakeld.
+1. Voer een **naam** in voor de *waarde* en de **waarde** 50. Het veld **waarde** geeft het percentage aanvragen aan waarvoor het functie filter moet worden ingeschakeld.
 
     > [!div class="mx-imgBorder"]
     > ![Para meters voor functie filter instellen](./media/feature-flag-set-filter-parameters.png)

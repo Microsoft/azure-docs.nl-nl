@@ -4,21 +4,21 @@ description: BYOS configureren (gebruik uw eigen opslag) voor Profiler & Snapsho
 ms.topic: conceptual
 author: renatosalas
 ms.author: regutier
-ms.date: 04/14/2020
+ms.date: 01/14/2021
 ms.reviewer: mbullwin
-ms.openlocfilehash: 719f0cfa0a1f80568acf3231ce3ffab441e5f6b7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f82432c1dd8c66e8ce845831ff35d534a34e3e04
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87117379"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202535"
 ---
 # <a name="configure-bring-your-own-storage-byos-for-application-insights-profiler-and-snapshot-debugger"></a>Uw eigen opslag (BYOS) configureren voor Application Insights Profiler en Snapshot Debugger
 
 ## <a name="what-is-bring-your-own-storage-byos-and-why-might-i-need-it"></a>Wat is uw eigen opslag (BYOS) en waarom heb ik deze mogelijk nodig? 
 Wanneer u Application Insights Profiler of Snapshot Debugger gebruikt, worden artefacten die zijn gegenereerd door uw toepassing, geüpload naar Azure Storage-accounts via het open bare Internet. Deze accounts worden betaald en beheerd door micro soft voor verwerking en analyse. Micro soft beheert de beleids regels voor het versleutelen van de rest-en levensduur beheer van die artefacten.
 
-Met uw eigen opslag kunt u deze artefacten uploaden naar een opslag account dat u beheert. Dit betekent dat u het beleid voor versleuteling op rest, het levens duur beheer beleid en netwerk toegang beheert. U bent echter verantwoordelijk voor de kosten van het opslag account.
+Met uw eigen opslag kunt u deze artefacten uploaden naar een opslag account dat u beheert. Dit betekent dat u het beleid voor versleuteling op rest, het levens duur beheer beleid en netwerk toegang beheert. U bent echter verantwoordelijk voor de kosten van het betreffende opslagaccount.
 
 > [!NOTE]
 > Als u een persoonlijke koppeling inschakelt, moet u uw eigen opslag ruimte maken. [Raadpleeg de documentatie](../platform/private-link-security.md) voor meer informatie over persoonlijke koppelingen voor Application Insights.
@@ -53,11 +53,11 @@ Stappen:
 1. Zoek & de app ' vertrouwde opslag voor diagnostische toegang ' selecteren 
 1. Wijzigingen opslaan
 
-_ ![ Afbeelding 1,0](media/profiler-bring-your-own-storage/figure-10.png)_ 
+_![ Afbeelding 1,0](media/profiler-bring-your-own-storage/figure-10.png)_ 
  _afbeelding 1,0_ 
 
 Nadat u de rol hebt toegevoegd, wordt deze weer gegeven onder de sectie roltoewijzingen, zoals in de onderstaande afbeelding 1,1. 
-_ ![ Afbeelding 1,1](media/profiler-bring-your-own-storage/figure-11.png)_ 
+_![ Afbeelding 1,1](media/profiler-bring-your-own-storage/figure-11.png)_ 
  _afbeelding 1,1_ 
 
 Als u ook een persoonlijke koppeling gebruikt, hebt u één aanvullende configuratie nodig om verbinding met onze vertrouwde micro soft-service van uw Virtual Network mogelijk te maken. Raadpleeg de [documentatie voor opslag netwerk beveiliging](../../storage/common/storage-network-security.md#trusted-microsoft-services).
@@ -91,7 +91,7 @@ Er zijn drie opties voor het configureren van BYOS voor diagnostische gegevens o
 
     Pattern
     ```powershell
-    $appInsights = Get-AzApplicationInsights -ResourceGroupName "{resource_group_name}" -Name "{storage_account_name}"
+    $appInsights = Get-AzApplicationInsights -ResourceGroupName "{resource_group_name}" -Name "{application_insights_name}"
     Remove-AzApplicationInsightsLinkedStorageAccount -ResourceId $appInsights.Id
     ```
 
@@ -226,7 +226,7 @@ Er zijn drie opties voor het configureren van BYOS voor diagnostische gegevens o
     DeploymentDebugLogLevel :
     ```
 
-1. Schakel diagnostische gegevens op code niveau (Profiler/Debugger) in voor de werk belasting van belang via de Azure Portal. (App Service > Application Insights) _ ![ Afbeelding 2,0](media/profiler-bring-your-own-storage/figure-20.png)_ 
+1. Schakel diagnostische gegevens op code niveau (Profiler/Debugger) in voor de werk belasting van belang via de Azure Portal. (App Service > Application Insights) _![ Afbeelding 2,0](media/profiler-bring-your-own-storage/figure-20.png)_ 
  _afbeelding 2,0_
 
 ## <a name="troubleshooting"></a>Problemen oplossen

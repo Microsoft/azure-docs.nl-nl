@@ -7,12 +7,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 12/06/2019
 ms.author: cynthn
-ms.openlocfilehash: 33ba816227db4cf958fd30c9dac1a0745505c504
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7a6971bce2ba4cb3e18455aad34e2d10b73dc066
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87513686"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203419"
 ---
 # <a name="quick-steps-create-and-use-an-ssh-public-private-key-pair-for-linux-vms-in-azure"></a>Snelle stappen: maken en gebruiken van een openbaar persoonlijk sleutel paar met SSH voor Linux-Vm's in azure
 
@@ -47,9 +47,9 @@ az vm create --name VMname --resource-group RGname --image UbuntuLTS --generate-
 
 Als u een virtuele Linux-machine wilt maken die gebruikmaakt van SSH-sleutels voor verificatie, geeft u uw open bare SSH-sleutel op bij het maken van de VM met behulp van de Azure Portal, Azure CLI, Azure Resource Manager sjablonen of andere methoden:
 
-* [Een virtuele Linux-machine maken met Azure Portal](quick-create-portal.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Een virtuele Linux-machine maken met de Azure CLI](quick-create-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Een virtuele Linux-machine maken met een Azure-sjabloon](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Een virtuele Linux-machine maken met Azure Portal](quick-create-portal.md)
+* [Een virtuele Linux-machine maken met de Azure CLI](quick-create-cli.md)
+* [Een virtuele Linux-machine maken met een Azure-sjabloon](create-ssh-secured-vm-from-template.md)
 
 Als u niet bekend bent met de indeling van een open bare SSH-sleutel, kunt u uw open bare sleutel weer geven met de volgende `cat` opdracht, `~/.ssh/id_rsa.pub` indien nodig vervangen door het pad en de bestands naam van uw eigen open bare-sleutel bestand:
 
@@ -65,7 +65,7 @@ ssh-rsa AAAAB3NzaC1yc2EAABADAQABAAACAQC1/KanayNr+Q7ogR5mKnGpKWRBQU7F3Jjhn7utdf7Z
 
 Als u de inhoud van het open bare-sleutel bestand kopieert en plakt voor gebruik in de Azure Portal of een resource manager-sjabloon, moet u ervoor zorgen dat u geen afsluitende spaties kopieert. Als u een open bare sleutel in macOS wilt kopiëren, kunt u het open bare-sleutel bestand door sluizen naar `pbcopy` . Op dezelfde manier kunt u in Linux het open bare-sleutel bestand door sluizen naar Program ma's zoals `xclip` .
 
-De open bare sleutel die u op uw virtuele Linux-machine in azure plaatst, wordt standaard opgeslagen in ~/.ssh/id_rsa. pub, tenzij u een andere locatie hebt opgegeven tijdens het maken van het sleutel paar. Als u de [Azure CLI 2,0](/cli/azure) wilt gebruiken om uw virtuele machine te maken met een bestaande open bare sleutel, geeft u de waarde en optioneel de locatie van deze open bare sleutel op met behulp van de opdracht [AZ VM Create](/cli/azure/vm#az-vm-create) met de `--ssh-key-values` optie. Vervang in de volgende opdracht *myVM*, *myResourceGroup*, *UbuntuLTS*, *azureuser*en *mysshkey. pub* door uw eigen waarden:
+De open bare sleutel die u op uw virtuele Linux-machine in azure plaatst, wordt standaard opgeslagen in ~/.ssh/id_rsa. pub, tenzij u een andere locatie hebt opgegeven tijdens het maken van het sleutel paar. Als u de [Azure CLI 2,0](/cli/azure) wilt gebruiken om uw virtuele machine te maken met een bestaande open bare sleutel, geeft u de waarde en optioneel de locatie van deze open bare sleutel op met behulp van de opdracht [AZ VM Create](/cli/azure/vm#az-vm-create) met de `--ssh-key-values` optie. Vervang in de volgende opdracht *myVM*, *myResourceGroup*, *UbuntuLTS*, *azureuser* en *mysshkey. pub* door uw eigen waarden:
 
 
 ```azurecli

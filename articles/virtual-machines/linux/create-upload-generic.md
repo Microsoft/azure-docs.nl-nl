@@ -6,23 +6,23 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 10/08/2018
 ms.author: guybo
-ms.openlocfilehash: ef4175d24cfd02bb5cb6470b6334fea190b5bec2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 9888cde8bca9fb0646dbdc8bb601b0887908ad1d
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500594"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203232"
 ---
 # <a name="information-for-non-endorsed-distributions"></a>Informatie over niet-goedgekeurde distributies
 
-De SLA van het Azure-platform is alleen van toepassing op virtuele machines waarop het Linux-besturings systeem wordt uitgevoerd wanneer een van de [goedgekeurde distributies](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) wordt gebruikt. Voor deze geplaatste distributies zijn vooraf geconfigureerde Linux-installatie kopieën opgenomen in de Azure Marketplace.
+De SLA van het Azure-platform is alleen van toepassing op virtuele machines waarop het Linux-besturings systeem wordt uitgevoerd wanneer een van de [goedgekeurde distributies](endorsed-distros.md) wordt gebruikt. Voor deze geplaatste distributies zijn vooraf geconfigureerde Linux-installatie kopieën opgenomen in de Azure Marketplace.
 
-* [Linux op door Azure goedgekeurde distributies](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Linux op door Azure goedgekeurde distributies](endorsed-distros.md)
 * [Ondersteuning voor Linux-installatie kopieën in Microsoft Azure](https://support.microsoft.com/kb/2941892)
 
 Alle distributies die worden uitgevoerd op Azure, hebben een aantal vereisten. Dit artikel kan niet uitgebreid worden, aangezien elke distributie anders is. Zelfs als u voldoet aan alle onderstaande criteria, moet u mogelijk uw Linux-systeem ingrijpend aanpassen zodat het correct kan worden uitgevoerd.
 
-U wordt aangeraden te beginnen met een van de [Linux in azure goedgekeurde distributies](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json). In de volgende artikelen wordt uitgelegd hoe u de verschillende getekende Linux-distributies die worden ondersteund op Azure voorbereidt:
+U wordt aangeraden te beginnen met een van de [Linux in azure goedgekeurde distributies](endorsed-distros.md). In de volgende artikelen wordt uitgelegd hoe u de verschillende getekende Linux-distributies die worden ondersteund op Azure voorbereidt:
 
 - [CentOS-distributies](create-upload-centos.md)
 - [Debian Linux](debian-create-upload-vhd.md)
@@ -38,7 +38,7 @@ Dit artikel richt zich op algemene richt lijnen voor het uitvoeren van uw Linux-
 * De indeling van de virtuele harde schijf (VHDX) van Hyper-V wordt niet ondersteund in azure, alleen *vaste VHD*.  U kunt de schijf converteren naar VHD-indeling met behulp van Hyper-V-beheer of de cmdlet [Convert-VHD](/powershell/module/hyper-v/convert-vhd) . Als u VirtualBox gebruikt, selecteert u **vaste grootte** in plaats van de standaard waarde (dynamisch toegewezen) bij het maken van de schijf.
 * Azure biedt ondersteuning voor gen1 (BIOS Boot) & Gen2 (UEFI boot) virtuele machines.
 * De maximale grootte die is toegestaan voor de VHD is 1.023 GB.
-* Bij de installatie van het Linux-systeem raden we u aan om standaard partities te gebruiken in plaats van Logical Volume Manager (LVM). Dit is de standaard instelling voor veel installaties. Het gebruik van standaard partities voor komt dat LVM naam strijdig is met gekloonde Vm's, met name als een besturingssysteem schijf ooit is gekoppeld aan een andere identieke virtuele machine voor het oplossen van problemen. [LVM](/previous-versions/azure/virtual-machines/linux/configure-lvm?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) of [RAID](/previous-versions/azure/virtual-machines/linux/configure-raid?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) kan worden gebruikt op gegevens schijven.
+* Bij de installatie van het Linux-systeem raden we u aan om standaard partities te gebruiken in plaats van Logical Volume Manager (LVM). Dit is de standaard instelling voor veel installaties. Het gebruik van standaard partities voor komt dat LVM naam strijdig is met gekloonde Vm's, met name als een besturingssysteem schijf ooit is gekoppeld aan een andere identieke virtuele machine voor het oplossen van problemen. [LVM](/previous-versions/azure/virtual-machines/linux/configure-lvm) of [RAID](/previous-versions/azure/virtual-machines/linux/configure-raid) kan worden gebruikt op gegevens schijven.
 * Kernel-ondersteuning voor het koppelen van UDF-bestands systemen is nood zakelijk. Bij de eerste keer opstarten in azure wordt de inrichtings configuratie door gegeven aan de Linux-VM met behulp van UDF-geformatteerde media die aan de gast zijn gekoppeld. De Azure Linux-agent moet het UDF-bestands systeem koppelen om de configuratie te lezen en de virtuele machine in te richten.
 * Linux-kernel-versies ouder dan 2.6.37 bieden geen ondersteuning voor NUMA op Hyper-V met grotere VM-grootten. Dit probleem heeft voornamelijk betrekking op oudere distributies met behulp van de upstream Red Hat 2.6.32 kernel en is opgelost in Red Hat Enterprise Linux (RHEL) 6,6 (kernel-2.6.32-504). Systemen met aangepaste kernels die ouder zijn dan 2.6.37 of op RHEL gebaseerde kernels die ouder zijn dan 2.6.32-504, moeten de opstart parameter instellen `numa=off` op de kernel-opdracht regel in grub. conf. Zie [Red Hat KB 436883](https://access.redhat.com/solutions/436883)voor meer informatie.
 * Configureer geen swap partitie op de besturingssysteem schijf. De Linux-agent kan worden geconfigureerd voor het maken van een wissel bestand op de tijdelijke bron schijf, zoals wordt beschreven in de volgende stappen.
@@ -67,7 +67,7 @@ VHD-installatie kopieën in azure moeten een virtuele grootte hebben die is afge
 
 * De VHD http: \/ / \<mystorageaccount> . blob.core.Windows.net/VHDs/MyLinuxVM.VHD heeft een niet-ondersteunde virtuele grootte van 21475270656 bytes. De grootte moet een geheel getal zijn (in MB).
 
-In dit geval kunt u de grootte van de virtuele machine wijzigen met de Hyper-V-beheer console of met de Power shell [-cmdlet resize-VHD](/powershell/module/hyper-v/resize-vhd?view=win10-ps) .  Als u niet in een Windows-omgeving wordt uitgevoerd, raden we u `qemu-img` aan om (indien nodig) te converteren en de grootte van de VHD te wijzigen.
+In dit geval kunt u de grootte van de virtuele machine wijzigen met de Hyper-V-beheer console of met de Power shell [-cmdlet resize-VHD](/powershell/module/hyper-v/resize-vhd) .  Als u niet in een Windows-omgeving wordt uitgevoerd, raden we u `qemu-img` aan om (indien nodig) te converteren en de grootte van de VHD te wijzigen.
 
 > [!NOTE]
 > Er is een [bekende fout in qemu-img-](https://bugs.launchpad.net/qemu/+bug/1490611) versies >= 2.2.1 dat resulteert in een VHD met een onjuiste indeling. Het probleem is opgelost in QEMU 2,6. We raden u `qemu-img` aan om 2.2.0 of lager of 2,6 of hoger te gebruiken.
@@ -114,7 +114,7 @@ In dit geval kunt u de grootte van de virtuele machine wijzigen met de Hyper-V-b
 
 ## <a name="linux-kernel-requirements"></a>Vereisten voor Linux-kernel
 
-De LIS-Stuur programma's (Linux Integration Services) voor Hyper-V en Azure zijn rechtstreeks aan de upstream Linux-kernel bijgedragen. Veel distributies die een recente versie van de Linux-kernel bevatten (zoals 3. x), hebben deze Stuur Programma's al beschikbaar of bieden Backported-versies van deze Stuur Programma's aan hun kernels.  Deze Stuur Programma's worden voortdurend bijgewerkt in de upstream-kernel met nieuwe oplossingen en functies. als dat mogelijk is, wordt u aangeraden een [officiële distributie](endorsed-distros.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) uit te voeren die deze oplossingen en updates bevat.
+De LIS-Stuur programma's (Linux Integration Services) voor Hyper-V en Azure zijn rechtstreeks aan de upstream Linux-kernel bijgedragen. Veel distributies die een recente versie van de Linux-kernel bevatten (zoals 3. x), hebben deze Stuur Programma's al beschikbaar of bieden Backported-versies van deze Stuur Programma's aan hun kernels.  Deze Stuur Programma's worden voortdurend bijgewerkt in de upstream-kernel met nieuwe oplossingen en functies. als dat mogelijk is, wordt u aangeraden een [officiële distributie](endorsed-distros.md) uit te voeren die deze oplossingen en updates bevat.
 
 Als u een variant van Red Hat Enterprise Linux versie 6,0 tot 6,3 uitvoert, moet u de [meest recente Lis-Stuur Programma's voor Hyper-V](https://go.microsoft.com/fwlink/p/?LinkID=254263&clcid=0x409)installeren. Vanaf RHEL 6.4 + (en derivaten) zijn de LIS-Stuur Programma's al opgenomen in de kernel en zijn er geen aanvullende installatie pakketten nodig.
 

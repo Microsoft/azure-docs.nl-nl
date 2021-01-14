@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: conceptual
 ms.date: 11/06/2020
 ms.author: yajin1
-ms.openlocfilehash: 505176758e1dbba1d6bf262554568edd8a197a4d
-ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
+ms.openlocfilehash: bdda89483661eb6f6d006c3d8ea42b46d162de05
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97707670"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201651"
 ---
 # <a name="troubleshooting-guide-for-azure-signalr-service-common-issues"></a>Probleemoplossings gids voor veelvoorkomende problemen met de Azure signalerings service
 
@@ -26,7 +26,7 @@ In deze richt lijnen vindt u nuttige richt lijnen voor probleem oplossing op bas
 * 413 Payload is te groot
 * Het toegangs token mag niet langer zijn dan 4 KB. de 413-aanvraag entiteit is te groot
 
-### <a name="root-cause"></a>Hoofd oorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak:
 
 Voor HTTP/2 is de maximale lengte voor één header **4 K**, dus als u een browser gebruikt om toegang te krijgen tot de Azure-service, wordt er een fout `ERR_CONNECTION_` voor deze beperking weer geven.
 
@@ -73,7 +73,7 @@ services.MapAzureSignalR(GetType().FullName, options =>
 * ASP.NET "de verbinding is niet actief, gegevens kunnen niet naar de service worden verzonden." fout [#324](https://github.com/Azure/azure-signalr/issues/324)
 * ' Er is een fout opgetreden tijdens het maken van de HTTP-aanvraag voor https:// <API endpoint> . Deze fout kan worden veroorzaakt door het feit dat het server certificaat niet correct is geconfigureerd met HTTP.SYS in het HTTPS-geval. Deze fout kan ook worden veroorzaakt doordat de beveiligings binding tussen de client en de server niet overeenkomt.
 
-### <a name="root-cause"></a>Hoofd oorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak:
 
 Azure service ondersteunt alleen TLS 1.2 voor beveiligings problemen. Met .NET Framework is het mogelijk dat TLS 1.2 niet het standaard protocol is. Als gevolg hiervan kunnen de server verbindingen met ASRS niet tot stand worden gebracht.
 
@@ -242,7 +242,7 @@ Wanneer de client is verbonden met de Azure-Signa lering, kan de permanente verb
 * `{"type":7,"error":"Connection closed with an error."}`
 * `{"type":7,"error":"Internal server error."}`
 
-### <a name="root-cause"></a>Hoofd oorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak:
 
 Client verbindingen kunnen onder verschillende omstandigheden worden verwijderd:
 * Bij `Hub` het genereren van uitzonde ringen met de inkomende aanvraag.
@@ -268,7 +268,7 @@ Client verbindingen lopen voortdurend lange tijd in de metrische gegevens van Az
 
 :::image type="content" source="./media/signalr-howto-troubleshoot-guide/client-connection-increasing-constantly.jpg" alt-text="Client verbinding wordt voortdurend verhoogd":::
 
-### <a name="root-cause"></a>Hoofd oorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak:
 
 De verbinding van de seingevings client `DisposeAsync` wordt nooit aangeroepen. de verbinding blijft geopend.
 
@@ -330,7 +330,7 @@ In deze sectie worden verschillende mogelijkheden voor Server verbinding verwijd
 * `The remote party closed the WebSocket connection without completing the close handshake`
 * `Service timeout. 30.00ms elapsed without receiving a message from service.`
 
-### <a name="root-cause"></a>Hoofd oorzaak:
+### <a name="root-cause"></a>Hoofdoorzaak:
 
 Verbinding met Server-service is gesloten door **ASRS**(**een** zure **S** ignal **R** **s** erviceniveaudoelstelling).
 
@@ -368,7 +368,7 @@ Neem ASP.NET Core een voor beeld (ASP.NET één is vergelijkbaar):
 
     * [ASP.NET Core C#-client](https://github.com/Azure/azure-signalr/tree/dev/samples/ChatSample/ChatSample.CSharpClient/Program.cs#L64)
 
-    * [ASP.NET Core java script-client](https://github.com/Azure/azure-signalr/tree/dev/samples/ChatSample/ChatSample/wwwroot/index.html#L164)
+    * [ASP.NET Core java script-client](https://github.com/Azure/azure-signalr/blob/release/1.0.0-preview1/samples/ChatSample/wwwroot/index.html#L164)
 
     * [ASP.NET C#-client](https://github.com/Azure/azure-signalr/tree/dev/samples/AspNet.ChatSample/AspNet.ChatSample.CSharpClient/Program.cs#L78)
 

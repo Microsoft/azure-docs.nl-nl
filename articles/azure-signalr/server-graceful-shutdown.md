@@ -6,12 +6,12 @@ ms.author: tefa
 ms.date: 11/12/2020
 ms.service: signalr
 ms.topic: conceptual
-ms.openlocfilehash: 06aa91ff414e5575f7b1a743d2cc17765437ef72
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: d9dd7ce9cf321628598a7bb866c5d1b1a6fb0e1e
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797506"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201668"
 ---
 # <a name="server-graceful-shutdown"></a>Server kan correct worden afgesloten
 Microsoft Azure Signalr-service biedt twee modi voor het op de juiste wijze afsluiten van een server. 
@@ -43,7 +43,7 @@ Over het algemeen zijn er vier fasen in een correct afsluit proces:
 
     U moet mogelijk een manier ontwerpen, zoals het verzenden van een Afsluitings bericht naar alle clients, en de clients vervolgens laten bepalen wanneer ze zichzelf sluiten/opnieuw verbinding maken.
 
-    Lees [ChatSample](https://github.com/Azure/azure-signalr/tree/dev/samples/ChatSample/ChatSample) voor het voor beeld van het gebruik, waarbij we een ' exit ' bericht verzenden om de client te sluiten in de afsluit haak.
+    Lees [ChatSample](https://github.com/Azure/azure-signalr/tree/dev/samples/ChatSample) voor het voor beeld van het gebruik, waarbij we een ' exit ' bericht verzenden om de client te sluiten in de afsluit haak.
 
     **Modus ingesteld op MigrateClients**
 

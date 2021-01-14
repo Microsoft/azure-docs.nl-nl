@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 02/28/2020
 ms.author: banders
-ms.openlocfilehash: d7af95b9fe2f6d31faa239985f8e8165fd968372
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: bd312f64bd04f4aff6623aa2b911d5e4bffe9f9a
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91978591"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201923"
 ---
 # <a name="save-costs-with-azure-dedicated-host-reservations"></a>Bespaar kosten met Azure dedicated host Reservations
 
@@ -22,9 +22,9 @@ Wanneer u een gereserveerd exemplaar van voor Azure toegewezen hosts doorvoert, 
 ## <a name="determine-the-right-dedicated-host-sku-before-you-buy"></a>Bepaal de juiste specifieke host-SKU voordat u deze aanschaft
 
 
-Voordat u een reserve ring koopt, moet u bepalen welke specifieke host u nodig hebt. Er wordt een SKU gedefinieerd voor een toegewezen host die de VM-reeksen en het type vertegenwoordigt. 
+Voordat u een reserve ring koopt, moet u bepalen welke specifieke host u nodig hebt. Er wordt een SKU gedefinieerd voor een toegewezen host die de VM-reeksen en het type vertegenwoordigt. 
 
-Ga eerst naar de ondersteunde grootten voor [virtuele Windows-machines](./sizes.md) of [Linux](./sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) om de VM-serie te identificeren.
+Ga eerst naar de ondersteunde grootten voor [virtuele Windows-machines](./sizes.md) of [Linux](./sizes.md) om de VM-serie te identificeren.
 
 Controleer vervolgens of het wordt ondersteund op met Azure toegewezen hosts. De pagina prijs informatie voor [Azure dedicated hosts](https://aka.ms/ADHPricing) bevat de volledige lijst met gereserveerde hosts sku's, hun CPU-gegevens en diverse prijs opties (inclusief gereserveerde instanties).
 
@@ -38,35 +38,35 @@ Gereserveerde instanties zijn beschikbaar voor de meeste specifieke hostnamen, m
 
 Er gelden geen reserve ring kortingen voor het volgende:
 
-- **Clouds**   -Reserve ringen zijn niet beschikbaar voor aankopen in Duitsland-of China-regio's.
+- **Clouds** -reserve ringen zijn niet beschikbaar voor aankopen in de regio's Duitsland en China.
 
-- **Onvoldoende quotum**   -Een reserve ring die binnen het bereik van één abonnement valt, moet vCPU quota hebben in het abonnement voor het nieuwe gereserveerde exemplaar. Als het doel abonnement bijvoorbeeld een quotum limiet van 10 Vcpu's voor DSv3-Series heeft, kunt u geen gereserveerde gereserveerde hosts die deze serie ondersteunen, kopen. De quotum controle voor reserve ringen omvat de Vm's en toegewezen hosts die al zijn geïmplementeerd in het abonnement. U kunt een [aanvraag voor quotum verhoging maken](../azure-portal/supportability/resource-manager-core-quotas-request.md)   om dit probleem op te lossen.
+- **Onvoldoende quotum** : voor een reserve ring die is toegewezen aan één abonnement, moet vCPU quotum beschikbaar zijn in het abonnement voor het nieuwe gereserveerde exemplaar. Als het doel abonnement bijvoorbeeld een quotum limiet van 10 Vcpu's voor DSv3-Series heeft, kunt u geen gereserveerde gereserveerde hosts die deze serie ondersteunen, kopen. De quotum controle voor reserve ringen omvat de Vm's en toegewezen hosts die al zijn geïmplementeerd in het abonnement. U kunt een [aanvraag voor quotum verhoging maken](../azure-portal/supportability/resource-manager-core-quotas-request.md) om dit probleem op te lossen.
 
-- **Capaciteits beperkingen**   -In zeldzame gevallen beperkt Azure de aanschaf van nieuwe reserve ringen voor subset van speciale host-Sku's, vanwege een geringe capaciteit in een regio.
+- **Capaciteits beperkingen** : in zeldzame omstandigheden beperkt Azure de aanschaf van nieuwe reserve ringen voor subset van speciale host-sku's, vanwege een geringe capaciteit in een regio.
 
 ## <a name="buy-a-reservation"></a>Een reservering kopen
 
-U kunt een gereserveerd exemplaar van een voor Azure toegewezen host-exemplaar kopen in de [Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22VirtualMachines%22%7D).
+U kunt een gereserveerd exemplaar van een voor Azure toegewezen host-exemplaar kopen in de [Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22VirtualMachines%22%7D).
 
-Betaal voor de reserve ring [vóór of met maandelijkse betalingen](../cost-management-billing/reservations/prepare-buy-reservation.md). Deze vereisten zijn van toepassing op het kopen van een gereserveerde, toegewezen host-instantie:
+Betaal [vooraf of per maand](../cost-management-billing/reservations/prepare-buy-reservation.md) voor de reservering. Deze vereisten zijn van toepassing op het kopen van een gereserveerde, toegewezen host-instantie:
 
 - U moet een rol van eigenaar zijn voor ten minste één EA-abonnement of een abonnement met een betalen naar gebruik-tarief.
 
-- Voor EA-abonnementen moet de optie **gereserveerde instanties toevoegen**   zijn ingeschakeld in de [EA-Portal](https://ea.azure.com/). Of, als deze instelling is uitgeschakeld, moet u een EA-beheerder van het abonnement zijn.
+- Voor EA-abonnementen moet de optie **gereserveerde instanties toevoegen** zijn ingeschakeld in de [EA-Portal](https://ea.azure.com/). Of, als deze instelling is uitgeschakeld, moet u een EA-beheerder van het abonnement zijn.
 
 - Voor het programma Cloud Solution Provider (CSP) kunnen alleen de beheerders of verkoop medewerkers reserve ringen kopen.
 
 Een instantie kopen:
 
-1. Meld u aan bij de  [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 
-2. Selecteer **alle services**-   \>  **reserve ringen**.
+2. Selecteer **Alle services** \> **Reserveringen**.
 
-3. Selecteer **toevoegen**   om een nieuwe reserve ring te kopen en klik vervolgens op **toegewezen hosts**.
+3. Selecteer **toevoegen** om een nieuwe reserve ring te kopen en klik vervolgens op **toegewezen hosts**.
 
 4. Vul de verplichte velden in. Het uitvoeren van speciale hosts-instanties die overeenkomen met de kenmerken die u selecteert, komen in aanmerking voor de reserverings korting. Het werkelijke aantal toegewezen host-instanties dat de korting krijgt, is afhankelijk van het bereik en de geselecteerde hoeveelheid.
 
-Als u een EA-overeenkomst hebt, kunt u de **optie meer toevoegen**gebruiken   om snel extra instanties toe te voegen. De optie is niet beschikbaar voor andere typen abonnementen.
+Als u een EA-overeenkomst hebt, kunt u de **optie meer toevoegen** gebruiken om snel extra instanties toe te voegen. De optie is niet beschikbaar voor andere typen abonnementen.
 
 | **Veld**           | **Beschrijving**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 |---------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -74,20 +74,20 @@ Als u een EA-overeenkomst hebt, kunt u de **optie meer toevoegen**gebruiken   
 | Bereik               | Het bereik van de reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u het volgende selecteert:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
 | Regio              | De Azure-regio die wordt gedekt door de reserve ring.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
 | Toegewezen grootte van host | De grootte van de toegewezen exemplaren van de host.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Termijn                | Eén jaar of drie jaar.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| Term                | Eén jaar of drie jaar.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
 | Aantal            | Het aantal exemplaren dat wordt aangeschaft binnen de reserve ring. De hoeveelheid is het aantal actieve toegewezen instanties dat de facturerings korting kan krijgen.                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
-- Bereik van één **resource groep**   : De reserverings korting wordt alleen toegepast op de overeenkomende resources in de geselecteerde resource groep.
+- **Bereik van één resourcegroep**: de reserveringskorting wordt alleen toegepast op de overeenkomende resources in de geselecteerde resourcegroep.
 
-- Bereik voor één **abonnement**   : Past de reserverings korting toe op de overeenkomende resources in het geselecteerde abonnement.
+- **Bereik van één abonnement**: de reserveringskorting wordt toegepast op de overeenkomende resources in het geselecteerde abonnement.
 
-- **Gedeeld bereik**   : Past de reserverings korting toe op overeenkomende resources in in aanmerking komende abonnementen in de facturerings context. Voor EA-klanten is de facturerings context de inschrijving. Voor afzonderlijke abonnementen met tarieven voor betalen per gebruik is het factureringsbereik alle in aanmerking komende abonnementen die zijn gemaakt door de accountbeheerder.
+- **Gedeeld bereik**: de reserveringskorting wordt toegepast op overeenkomende resources binnen in aanmerking komende abonnementen die zich in de factureringscontext bevinden. Voor EA-klanten is de facturerings context de inschrijving. Voor afzonderlijke abonnementen met tarieven voor betalen per gebruik is het factureringsbereik alle in aanmerking komende abonnementen die zijn gemaakt door de accountbeheerder.
 
 ## <a name="usage-data-and-reservation-utilization"></a>Gebruiks gegevens en reserverings gebruik
 
 Uw gebruiksgegevens kosten niets voor het deel waarvoor u een reserveringskorting verkrijgt. U kunt zien welke VM-instantie de reserverings korting voor elke reserve ring heeft ontvangen.
 
-Zie het [gebruik van Azure-reserve ringen voor uw Enter prise-inschrijving](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)   Als u een EA-klant bent voor meer informatie over hoe reserverings kortingen worden weer gegeven in gebruiks gegevens. Zie [het gebruik van Azure-reserve ringen voor uw abonnement op basis van betalen per gebruik voor meer informatie](../cost-management-billing/reservations/understand-reserved-instance-usage.md)over een afzonderlijk abonnement.
+Zie het [gebruik van Azure-reserve ringen voor uw Enter prise-inschrijving](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md) als u een EA-klant bent voor meer informatie over hoe reserverings kortingen worden weer gegeven in gebruiks gegevens. Zie [het gebruik van Azure-reserve ringen voor uw abonnement op basis van betalen per gebruik voor meer informatie](../cost-management-billing/reservations/understand-reserved-instance-usage.md)over een afzonderlijk abonnement.
 
 ## <a name="change-a-reservation-after-purchase"></a>Een reserve ring wijzigen na aankoop
 
@@ -111,19 +111,19 @@ U kunt de volgende typen wijzigingen na de aankoop niet rechtstreeks aanbrengen:
 
 - Duur
 
-U kunt echter wel *exchange*   een reserve ring uitwisselen als u wijzigingen wilt aanbrengen.
+U kunt echter wel een reserve ring *uitwisselen* als u wijzigingen wilt aanbrengen.
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Reserveringen annuleren, ruilen of terugbetalen
 
-Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde beperkingen. Zie [self-service-uitwisseling en terugbetalingen voor Azure Reservations](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md)voor meer informatie.
+Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde beperkingen. Zie [Selfserviceopties voor inwisselen en retourneren van Azure-reserveringen](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) voor meer informatie.
 
-## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
+## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
 
-Als u vragen hebt of hulp nodig hebt,  [kunt u een ondersteuningsaanvraag maken](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
+Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Azure Reservations beheren](../cost-management-billing/reservations/manage-reserved-vm-instance.md)voor meer informatie over het beheren van een reserve ring.
+Zie [Azure-reserveringen beheren](../cost-management-billing/reservations/manage-reserved-vm-instance.md) voor meer informatie over het beheren van een reservering.
 
 Raadpleeg de volgende artikelen voor meer informatie over Azure-reserveringen:
 
@@ -141,6 +141,6 @@ Raadpleeg de volgende artikelen voor meer informatie over Azure-reserveringen:
 
 - [Inzicht in het gebruik van reserveringen voor Enterprise-inschrijvingen](../cost-management-billing/reservations/understand-reserved-instance-usage-ea.md)
 
-- [Kosten van Windows-software zijn niet inbegrepen bij reserveringen](../cost-management-billing/reservations/reserved-instance-windows-software-costs.md)
+- [Kosten van Windows-software zijn niet inbegrepen in reserveringen](../cost-management-billing/reservations/reserved-instance-windows-software-costs.md)
 
 - [Azure-reserveringen in CSP-programma (Cloud Solution Provider) van partnercentrum](/partner-center/azure-reservations)

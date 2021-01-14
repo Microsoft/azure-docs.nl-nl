@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 6/8/2020
-ms.openlocfilehash: bea618b34809544308caba46a0ffbdecee91d69f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 199810f835924ccbb51948169244622a19c5e8ed
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541807"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201430"
 ---
 # <a name="connect-to-azure-database-for-mysql-with-redirection"></a>Verbinding maken met Azure Database for MySQL met omleiding
 
@@ -21,6 +21,9 @@ In dit onderwerp wordt uitgelegd hoe u met de omleidings modus verbinding maakt 
 Meld u aan bij de [Azure-portal](https://portal.azure.com). Een Azure Database for MySQL-server met Engine versie 5,6, 5,7 of 8,0 maken. 
 
 Zie een Azure Database for MySQL-server maken met behulp van de [Azure Portal](quickstart-create-mysql-server-database-using-azure-portal.md) of [Azure cli](quickstart-create-mysql-server-database-using-azure-cli.md)voor meer informatie.
+
+> [!IMPORTANT]
+> Omleiding wordt momenteel niet ondersteund met een [persoonlijke koppeling voor Azure database for MySQL](concepts-data-access-security-private-link.md).
 
 ## <a name="enable-redirection"></a>Omleiding inschakelen
 

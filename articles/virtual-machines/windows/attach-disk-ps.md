@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: baeeeae54829fad7378df597965eec5ba2039d20
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: d2f283aa8b049602d25cf8969bc2327ebcfafe08
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972812"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202875"
 ---
 # <a name="attach-a-data-disk-to-a-windows-vm-with-powershell"></a>Een gegevens schijf koppelen aan een virtuele Windows-machine met Power shell
 
@@ -20,7 +20,7 @@ Dit artikel laat u zien hoe u met behulp van Power shell zowel nieuwe als bestaa
 
 Lees eerst de volgende tips:
 
-* De grootte van de virtuele machine bepaalt hoeveel gegevens schijven u kunt bijvoegen. Zie [grootten voor virtuele machines](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)voor meer informatie.
+* De grootte van de virtuele machine bepaalt hoeveel gegevens schijven u kunt bijvoegen. Zie [grootten voor virtuele machines](../sizes.md)voor meer informatie.
 * Als u Premium Ssd's wilt gebruiken, moet u een [VM-type met Premium-opslag capaciteit](../sizes-memory.md)hebben, zoals de virtuele machine van de DS-serie of GS-serie.
 
 In dit artikel wordt Power shell gebruikt in de [Azure Cloud shell](../../cloud-shell/overview.md), die voortdurend wordt bijgewerkt naar de nieuwste versie. Als u de Cloud Shell wilt openen, selecteert u **Probeer het** bovenaan een willekeurig codeblok.
@@ -49,7 +49,7 @@ Update-AzVM -VM $vm -ResourceGroupName $rgName
 
 ### <a name="using-managed-disks-in-an-availability-zone"></a>Beheerde schijven in een beschikbaarheids zone gebruiken
 
-Als u een schijf in een beschikbaarheids zone wilt maken, gebruikt u [New-AzDiskConfig](/powershell/module/az.compute/new-azdiskconfig) met de `-Zone` para meter. In het volgende voor beeld wordt een schijf in zone *1*gemaakt.
+Als u een schijf in een beschikbaarheids zone wilt maken, gebruikt u [New-AzDiskConfig](/powershell/module/az.compute/new-azdiskconfig) met de `-Zone` para meter. In het volgende voor beeld wordt een schijf in zone *1* gemaakt.
 
 ```powershell
 $rgName = 'myResourceGroup'

@@ -16,12 +16,12 @@ ms.topic: article
 ms.date: 05/31/2017
 ms.author: mimckitt
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 181f226a4d7aa37ffd8c667db4736a96450e2be5
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: a91e21994dda126e14c100bcf1d2a69c36b13e1e
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955953"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202161"
 ---
 # <a name="use-monitoring-and-diagnostics-with-a-windows-vm-and-azure-resource-manager-templates"></a>Bewaking en diagnose gebruiken met een Windows-VM en Azure Resource Manager sjablonen
 De uitbrei ding van de Azure Diagnostics biedt de bewakings-en diagnostische mogelijkheden van een Azure virtual machine op basis van Windows. U kunt deze mogelijkheden inschakelen op de virtuele machine door de uitbrei ding op te nemen als onderdeel van de Azure Resource Manager sjabloon. Zie [Azure Resource Manager sjablonen ontwerpen met VM-extensies](../windows/template-description.md#extensions) voor meer informatie over het opnemen van uitbrei dingen als onderdeel van een sjabloon voor een virtuele machine. In dit artikel wordt beschreven hoe u de Azure Diagnostics extensie kunt toevoegen aan een virtuele-machine sjabloon van Windows.  
@@ -179,5 +179,5 @@ Elke WADMetrics-tabel bevat de volgende kolommen:
 
 ## <a name="next-steps"></a>Volgende stappen
 * Voor een volledige voorbeeld sjabloon van een virtuele Windows-machine met diagnostische uitbrei ding raadpleegt u [201-VM-bewaking-Diagnostics-extension](https://github.com/Azure/azure-quickstart-templates/tree/master/201-vm-monitoring-diagnostics-extension)   
-* De Azure Resource Manager-sjabloon implementeren met behulp van [Azure PowerShell](../windows/ps-template.md) of de [Azure-opdracht regel](../linux/create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+* De Azure Resource Manager-sjabloon implementeren met behulp van [Azure PowerShell](../windows/ps-template.md) of de [Azure-opdracht regel](../linux/create-ssh-secured-vm-from-template.md)
 * Meer informatie over het [ontwerpen van Azure Resource Manager sjablonen](../../azure-resource-manager/templates/template-syntax.md)

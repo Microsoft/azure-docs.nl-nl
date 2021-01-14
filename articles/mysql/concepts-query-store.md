@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 5/12/2020
-ms.openlocfilehash: 70e1e5d06ef025801322e15e589d26e31f116fc3
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 82482b260233994672e603c16fe8cf919c92337f
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94535075"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201022"
 ---
 # <a name="monitor-azure-database-for-mysql-performance-with-query-store"></a>Azure Database for MySQL prestaties bewaken met query Store
 
@@ -69,7 +69,7 @@ SELECT * FROM mysql.query_store_wait_stats;
 ## <a name="finding-wait-queries"></a>Wacht query's zoeken
 
 > [!NOTE]
-> Wacht statistieken mogen niet worden ingeschakeld tijdens piek uren van de werk belasting of voor onbepaalde tijd worden ingeschakeld voor gevoelige werk belastingen. <br>Voor workloads die worden uitgevoerd met een hoog CPU-gebruik of op servers die zijn geconfigureerd met een lagere vCores, moet u voorzichtig zijn bij het inschakelen van wacht statistieken. Deze moet niet voor onbepaalde tijd worden ingeschakeld. 
+> Wacht statistieken mogen niet worden ingeschakeld tijdens piek uren van de werk belasting of voor onbepaalde tijd worden ingeschakeld voor gevoelige werk belastingen. <br>Voor workloads die worden uitgevoerd met een hoog CPU-gebruik of op servers die zijn geconfigureerd met een lagere vCores, moet u voorzichtig zijn bij het inschakelen van wacht statistieken. Deze moet niet voor onbepaalde tijd worden ingeschakeld.
 
 Wacht gebeurtenis typen combi neren verschillende wacht gebeurtenissen in buckets op vergelijk bare wijze. Het query archief bevat het type wacht gebeurtenis, specifieke wacht gebeurtenis naam en de query in kwestie. Als u deze wacht gegevens wilt correleren met de statistieken voor de runtime van query's, betekent dit dat u meer inzicht krijgt in wat bijdragen aan de prestatie kenmerken van de query.
 
@@ -79,7 +79,7 @@ Hier volgen enkele voor beelden van hoe u meer inzicht kunt krijgen in uw werk b
 |---|---|
 |Wacht tijden met hoge vergren deling | Controleer de query teksten voor de betrokken query's en Identificeer de doel entiteiten. Zoek in query Store naar andere query's die dezelfde entiteit wijzigen, die regel matig wordt uitgevoerd en/of een hoge duur hebben. Nadat u deze query's hebt geïdentificeerd, kunt u overwegen om de toepassings logica te wijzigen om gelijktijdig gebruik te kunnen verbeteren of een minder beperkend isolatie niveau te gebruiken. |
 |Hoge buffer-IO-wacht tijden | Zoek de query's met een groot aantal fysieke Lees bewerkingen in query Store. Als ze overeenkomen met de query's met hoge i/o-wacht tijden, kunt u een index voor de onderliggende entiteit introduceren, om te zoeken in plaats van scans. Hierdoor worden de i/o-overhead van de query's geminimaliseerd. Controleer de **prestatie aanbevelingen** voor uw server in de portal om te zien of er index aanbevelingen voor deze server zijn die de query's optimaliseren. |
-|Hoog geheugen wacht tijden | Zoek het hoogste geheugen gebruik query's in query Store. Deze query's vertragen waarschijnlijk verdere voortgang van de betrokken query's. Controleer de **prestatie aanbevelingen** voor uw server in de portal om te zien of er index aanbevelingen zijn waarmee deze query's kunnen worden geoptimaliseerd.|
+|Hoog geheugen wacht tijden | Zoek het hoogste geheugen gebruik query's in query Store. Deze query's vertragen waarschijnlijk verdere voortgang van de betrokken query's. Controleer de **prestatie aanbevelingen** voor uw server in de portal om te zien of er index aanbevelingen zijn waarmee deze query's kunnen worden geoptimaliseerd. |
 
 ## <a name="configuration-options"></a>Configuratie-opties
 
@@ -87,7 +87,7 @@ Wanneer query Store is ingeschakeld, worden gegevens opgeslagen in een periode v
 
 De volgende opties zijn beschikbaar voor het configureren van query Store-para meters.
 
-| **Parameter** | **Beschrijving** | **Standaard** | **Bereik** |
+| **Parameter** | **Beschrijving** | **Prijs** | **Bereik** |
 |---|---|---|---|
 | query_store_capture_mode | De functie query Store in-of uitschakelen op basis van de waarde. Opmerking: als performance_schema is uitgeschakeld, wordt performance_schema en een subset van de performance schema-instrumenten die voor deze functie zijn vereist query_store_capture_mode, ingeschakeld. | ALL | GEEN, ALLE |
 | query_store_capture_interval | De interval voor het vastleggen van de query opslag in minuten. Hiermee kunt u het interval opgeven waarin de metrische gegevens van de query worden geaggregeerd | 15 | 5 - 60 |
@@ -96,7 +96,7 @@ De volgende opties zijn beschikbaar voor het configureren van query Store-para m
 
 De volgende opties zijn specifiek van toepassing op wacht statistieken.
 
-| **Parameter** | **Beschrijving** | **Standaard** | **Bereik** |
+| **Parameter** | **Beschrijving** | **Prijs** | **Bereik** |
 |---|---|---|---|
 | query_store_wait_sampling_capture_mode | Hiermee kunt u de wacht statistieken in-of uitschakelen. | GEEN | GEEN, ALLE |
 | query_store_wait_sampling_frequency | Wijzigt de frequentie van wacht-sampling in seconden. 5 tot 300 seconden. | 30 | 5-300 |
@@ -108,7 +108,7 @@ Gebruik de [Azure Portal](howto-server-parameters.md) of [Azure cli](howto-confi
 
 ## <a name="views-and-functions"></a>Weer gaven en functies
 
-Bekijk en beheer query Store met behulp van de volgende weer gaven en functies. Iedereen in de [publieke rol Select-bevoegdheid](howto-create-users.md#to-create-additional-admin-users-in-azure-database-for-mysql) kan deze weer gaven gebruiken om de gegevens in query Store te bekijken. Deze weer gaven zijn alleen beschikbaar in de **MySQL** -data base.
+Bekijk en beheer query Store met behulp van de volgende weer gaven en functies. Iedereen in de [publieke rol Select-bevoegdheid](howto-create-users.md#to-create-more-admin-users-in-azure-database-for-mysql) kan deze weer gaven gebruiken om de gegevens in query Store te bekijken. Deze weer gaven zijn alleen beschikbaar in de **MySQL** -data base.
 
 Query's worden genormaliseerd door de structuur te bekijken na het verwijderen van letterlijke waarden en constanten. Als twee query's identiek zijn, met uitzonde ring van letterlijke waarden, hebben ze dezelfde hash.
 
@@ -161,7 +161,7 @@ Met deze weer gave worden wachtende gebeurtenis gegevens in query Store geretour
 | `count_star` | bigint (20) | NO| Aantal wacht gebeurtenissen dat wordt voor bereid tijdens het interval voor de query |
 | `sum_timer_wait_ms` | double | NO| Totale wacht tijd (in milliseconden) van deze query tijdens het interval |
 
-### <a name="functions"></a>Functions
+### <a name="functions"></a>Functies
 
 | **Naam**| **Beschrijving** |
 |---|---|

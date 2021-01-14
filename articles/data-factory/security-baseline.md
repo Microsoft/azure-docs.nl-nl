@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: e48b1357b8576baca0e8defca94f4c5248c6f74e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4e82b4adbfde7623de9497c94e56a9ae303131ad
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461284"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202773"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Azure-beveiligings basislijn voor Azure Data Factory
 
@@ -408,7 +408,7 @@ Als u uw Integration Runtime uitvoert op een virtuele machine van Azure, kunnen 
 
 **Hulp**: gebruik paw (privileged Access workstations) met multi-factor Authentication (MFA) die zijn geconfigureerd voor aanmelding bij en configureren van Azure-resources.
 
-* [Meer informatie over privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)
+* [Meer informatie over privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)
 
 * [MFA inschakelen in Azure](../active-directory/authentication/howto-mfa-getstarted.md)
 
@@ -656,7 +656,7 @@ U kunt referenties of geheime waarden opslaan in een Azure Key Vault en deze geb
 
 * [Waarschuwingen maken voor gebeurtenissen in het Azure-activiteiten logboek](../azure-monitor/platform/alerts-activity-log.md)
 
-* [Logboekregistratie van Azure Opslaganalyse](../storage/common/storage-analytics-logging.md)
+* [Azure Storage-analyselogboeken](../storage/common/storage-analytics-logging.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 

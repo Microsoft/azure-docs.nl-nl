@@ -16,12 +16,12 @@ ms.date: 11/05/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: edace0298514d1fc3cfd3afcff73fa0d29e18f0c
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 73376994e01ed89891726a8f6e1b727f89dab2fb
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96858770"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98201719"
 ---
 # <a name="prerequisites-for-azure-ad-connect"></a>Vereisten voor Azure AD Connect
 In dit artikel worden de vereisten en de hardwarevereisten voor Azure Active Directory (Azure AD)-verbinding beschreven.
@@ -83,7 +83,7 @@ We raden u aan uw Azure AD Connect-server te beveiligen om het beveiligings risi
 - Volg de richt lijnen voor het [beveiligen van bevoegde toegang](/windows-server/identity/securing-privileged-access/securing-privileged-access). 
 - Het gebruik van NTLM-verificatie met de AADConnect-server weigeren. Hier volgen enkele manieren om dit te doen: [NTLM beperken op de AADConnect-server](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-outgoing-ntlm-traffic-to-remote-servers) en [NTLM beperken op een domein](/windows/security/threat-protection/security-policy-settings/network-security-restrict-ntlm-ntlm-authentication-in-this-domain)
 - Zorg ervoor dat elke computer een uniek wacht woord voor de lokale beheerder heeft. Zie [Local Administrator Password Solution (verval)](https://support.microsoft.com/help/3062591/microsoft-security-advisory-local-administrator-password-solution-laps) voor meer informatie. kan unieke wille keurige wacht woorden configureren op elk werk station en de server slaat ze op Active Directory beveiligd door een ACL. Alleen in aanmerking komende geautoriseerde gebruikers kunnen de wacht woorden van deze lokale beheerders accounts lezen of aanvragen. U kunt het verval verkrijgen voor gebruik op werk stations en servers vanuit het [micro soft Download centrum](https://www.microsoft.com/download/details.aspx?id=46899). Aanvullende richt lijnen voor het gebruik van een omgeving met verval en privileged Access Workstation (Paw's) vindt u in [operationele standaarden op basis van het schone bron principe](/windows-server/identity/securing-privileged-access/securing-privileged-access-reference-material#operational-standards-based-on-clean-source-principle). 
-- Implementeer toegewezen [privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations) voor alle mede werkers met uitgebreide toegang tot de gegevens systemen van uw organisatie. 
+- Implementeer toegewezen [privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/) voor alle mede werkers met uitgebreide toegang tot de gegevens systemen van uw organisatie. 
 - Volg deze [aanvullende richt lijnen](/windows-server/identity/ad-ds/plan/security-best-practices/reducing-the-active-directory-attack-surface) om de kwets baarheid van uw Active Directory omgeving te verminderen.
 
 

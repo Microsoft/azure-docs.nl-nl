@@ -8,14 +8,14 @@ ms.date: 04/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 31fe62aabfff77342726158c3b72b61afb518682
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: e549a79930cf599b89cd549691e23f3587e8a85c
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97031518"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202705"
 ---
-# <a name="introduction-to-azure-managed-disks"></a>Inleiding tot Azure Managed disks
+# <a name="introduction-to-azure-managed-disks"></a>Inleiding tot beheerde Azure-schijven
 
 Azure Managed disks zijn opslag volumes op blok niveau die worden beheerd door Azure en worden gebruikt met Azure Virtual Machines. Managed disks zijn vergelijkbaar met een fysieke schijf op een on-premises server, maar zijn gevirtualiseerd. Met Managed disks hoeft u alleen maar de schijf grootte en het schijf type op te geven en de schijf in te richten. Wanneer u de schijf hebt ingericht, wordt de rest door Azure afgehandeld.
 
@@ -96,7 +96,7 @@ Deze schijf heeft een maximale capaciteit van 4.095 GiB.
 
 ### <a name="temporary-disk"></a>Tijdelijke schijf
 
-De meeste Vm's bevatten een tijdelijke schijf, die geen beheerde schijf is. De tijdelijke schijf biedt kortetermijnbeveiliging voor toepassingen en processen en is bedoeld om alleen gegevens op te slaan, zoals pagina-of Wissel bestanden. Gegevens op de tijdelijke schijf kunnen verloren gaan tijdens een [onderhoudsgebeurtenis](./manage-availability.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json#understand-vm-reboots---maintenance-vs-downtime) of wanneer u een [virtuele machine opnieuw implementeert](troubleshooting/redeploy-to-new-node-windows.md?toc=/azure/virtual-machines/windows/toc.json). Tijdens een geslaagde standaard herstart van de virtuele machine blijven de gegevens op de tijdelijke schijf behouden. Voor meer informatie over virtuele machines zonder tijdelijke schijven raadpleegt u [Azure VM-grootten met geen lokale tijdelijke schijf](azure-vms-no-temp-disk.md).
+De meeste Vm's bevatten een tijdelijke schijf, die geen beheerde schijf is. De tijdelijke schijf biedt kortetermijnbeveiliging voor toepassingen en processen en is bedoeld om alleen gegevens op te slaan, zoals pagina-of Wissel bestanden. Gegevens op de tijdelijke schijf kunnen verloren gaan tijdens een [onderhoudsgebeurtenis](./manage-availability.md#understand-vm-reboots---maintenance-vs-downtime) of wanneer u een [virtuele machine opnieuw implementeert](troubleshooting/redeploy-to-new-node-windows.md?toc=/azure/virtual-machines/windows/toc.json). Tijdens een geslaagde standaard herstart van de virtuele machine blijven de gegevens op de tijdelijke schijf behouden. Voor meer informatie over virtuele machines zonder tijdelijke schijven raadpleegt u [Azure VM-grootten met geen lokale tijdelijke schijf](azure-vms-no-temp-disk.md).
 
 Op virtuele machines van Azure Linux is de tijdelijke schijf doorgaans /dev/sdb en op virtuele Windows-machines is de tijdelijke schijf standaard D:. De tijdelijke schijf wordt niet versleuteld door versleuteling aan serverzijde tenzij u versleuteling inschakelt op de host.
 

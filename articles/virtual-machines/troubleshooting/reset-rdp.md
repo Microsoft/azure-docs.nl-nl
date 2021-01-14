@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/25/2019
 ms.author: genli
-ms.openlocfilehash: 80bcac36271d86334e11cb3cd161cd96777e6fe5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2f242de3bfa6a2bc95dc46b4ca5c10222b755a2f
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87832447"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200920"
 ---
 # <a name="reset-remote-desktop-services-or-its-administrator-password-in-a-windows-vm"></a>Extern bureaublad-services of het beheerders wachtwoord opnieuw instellen in een Windows-VM
 Als u geen verbinding kunt maken met een virtuele Windows-machine (VM), kunt u het lokale beheerders wachtwoord opnieuw instellen of de Extern bureaublad-services configuratie opnieuw instellen (niet ondersteund op Windows-domein controllers). Voor het opnieuw instellen van het wachtwoord gebruikt u de Azure-portal of de VM-toegangsextensie in Azure PowerShell. Wanneer u zich bij de VM hebt aangemeld, stelt u het wachtwoord van die lokale beheerder opnieuw in.  
@@ -86,14 +86,14 @@ Controleer eerst of de [meest recente Power shell-module is geïnstalleerd en ge
     > [!TIP]
     > Een virtuele machine kan op elk gewenst moment slechts één VM-toegangs agent hebben. Gebruik de optie om de eigenschappen van de VM-toegangs agent in te stellen `-ForceRerun` . Wanneer u gebruikt `-ForceRerun` , moet u ervoor zorgen dat u dezelfde naam gebruikt als voor de VM-toegangs agent die u mogelijk in een van de vorige opdrachten hebt gebruikt.
 
-1. Als u nog steeds geen externe verbinding met uw virtuele machine kunt maken, raadpleegt u [problemen met extern bureaublad verbindingen met een virtuele Windows-machine voor Azure oplossen](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Als u de verbinding met de Windows-domein controller kwijtraakt, moet u deze herstellen vanaf een back-up van een domein controller.
+1. Als u nog steeds geen externe verbinding met uw virtuele machine kunt maken, raadpleegt u [problemen met extern bureaublad verbindingen met een virtuele Windows-machine voor Azure oplossen](troubleshoot-rdp-connection.md). Als u de verbinding met de Windows-domein controller kwijtraakt, moet u deze herstellen vanaf een back-up van een domein controller.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Als de toegang tot de Azure VM-extensie niet reageert en u het wacht woord niet opnieuw kunt instellen, [stelt u het lokale Windows-wacht woord offline opnieuw](reset-local-password-without-agent.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)in. Deze methode is Geavanceerd en vereist dat u de virtuele harde schijf van de problematische VM verbindt met een andere virtuele machine. Volg de stappen die in dit artikel worden beschreven eerst en probeer de methode voor offline wachtwoord herstel alleen uit te voeren als deze stappen niet werken.
+- Als de toegang tot de Azure VM-extensie niet reageert en u het wacht woord niet opnieuw kunt instellen, [stelt u het lokale Windows-wacht woord offline opnieuw](reset-local-password-without-agent.md)in. Deze methode is Geavanceerd en vereist dat u de virtuele harde schijf van de problematische VM verbindt met een andere virtuele machine. Volg de stappen die in dit artikel worden beschreven eerst en probeer de methode voor offline wachtwoord herstel alleen uit te voeren als deze stappen niet werken.
 
-- [Meer informatie over Azure VM-extensies en-functies](../extensions/features-windows.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+- [Meer informatie over Azure VM-extensies en-functies](../extensions/features-windows.md).
 
 - [Verbinding maken met een virtuele machine van Azure met RDP of SSH](/previous-versions/azure/dn535788(v=azure.100)).
 
-- [Problemen met extern bureaublad verbindingen met een virtuele Azure-machine op basis van Windows oplossen](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+- [Problemen met extern bureaublad verbindingen met een virtuele Azure-machine op basis van Windows oplossen](troubleshoot-rdp-connection.md).

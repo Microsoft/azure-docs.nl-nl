@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 05/25/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: d8f69f94c53227dc86fbbf9e9936a2fc3c97ec55
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: af248b4ee3ccd079d41317fdb1db3de82ad0f835
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967870"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98199033"
 ---
 # <a name="connecting-azure-vms-to-hana-large-instances"></a>Azure-VM's verbinden met grote HANA-instanties
 
@@ -41,7 +41,7 @@ Als u meer wilt weten over het virtuele Azure-netwerk, hebt u het volgende nodig
 >[!Note]
 >Het virtuele Azure-netwerk voor HANA grote instanties moet worden gemaakt met behulp van het Azure Resource Manager-implementatie model. Het oudere Azure-implementatie model, ook wel bekend als het klassieke implementatie model, wordt niet ondersteund door de HANA-oplossing voor grote exemplaren.
 
-U kunt de Azure Portal, Power shell, een Azure-sjabloon of de Azure CLI gebruiken om het virtuele netwerk te maken. (Zie [een virtueel netwerk maken met behulp van de Azure Portal](../../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#create-a-virtual-network)) voor meer informatie. In het volgende voor beeld bekijken we een virtueel netwerk dat is gemaakt met behulp van de Azure Portal.
+U kunt de Azure Portal, Power shell, een Azure-sjabloon of de Azure CLI gebruiken om het virtuele netwerk te maken. (Zie [een virtueel netwerk maken met behulp van de Azure Portal](../../../virtual-network/manage-virtual-network.md#create-a-virtual-network)) voor meer informatie. In het volgende voor beeld bekijken we een virtueel netwerk dat is gemaakt met behulp van de Azure Portal.
 
 Wanneer wordt verwezen naar de **adres ruimte** in deze documentatie, naar de adres ruimte die het virtuele Azure-netwerk mag gebruiken. Deze adres ruimte is ook het adres bereik dat het virtuele netwerk gebruikt voor het door sturen van BGP-routes. Deze **adres ruimte** kan hier worden weer gegeven:
 

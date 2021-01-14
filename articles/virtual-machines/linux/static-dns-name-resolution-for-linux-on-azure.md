@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: how-to
 ms.date: 02/16/2017
 ms.author: cynthn
-ms.openlocfilehash: 38f231e63ad4974a23a1201aad4d290685860b50
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d68ac7aa9927e62011c58b17139d7232ce4a10c
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292155"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200750"
 ---
 # <a name="create-virtual-network-interface-cards-and-use-internal-dns-for-vm-name-resolution-on-azure"></a>Virtuele netwerk interface kaarten maken en interne DNS gebruiken voor VM-naam omzetting in azure
 
@@ -22,7 +22,7 @@ Dit artikel laat u zien hoe u statische interne DNS-namen voor Linux-Vm's kunt i
 De vereisten zijn:
 
 * [een Azure-account](https://azure.microsoft.com/pricing/free-trial/)
-* [bestanden voor openbare en persoonlijke SSH-sleutels](mac-create-ssh-keys.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [bestanden voor openbare en persoonlijke SSH-sleutels](mac-create-ssh-keys.md)
 
 ## <a name="quick-commands"></a>Snelle opdrachten
 Als u de taak snel moet uitvoeren, wordt in de volgende sectie meer informatie over de benodigde opdrachten beschreven. Meer gedetailleerde informatie en context voor elke stap vindt u in de rest van het document, [beginnend hier](#detailed-walkthrough). Als u deze stappen wilt uitvoeren, moet u de nieuwste [Azure cli](/cli/azure/install-az-cli2) installeren en u aanmelden bij een Azure-account met [AZ login](/cli/azure/reference-index).
@@ -71,7 +71,7 @@ az group create --name myResourceGroup --location westus
 
 ## <a name="create-the-virtual-network"></a>Het virtuele netwerk maken
 
-De volgende stap bestaat uit het bouwen van een virtueel netwerk om de Vm's in te starten. Het virtuele netwerk bevat één subnet voor deze walkthrough. Zie [een virtueel netwerk maken](../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#create-a-virtual-network)voor meer informatie over virtuele Azure-netwerken. 
+De volgende stap bestaat uit het bouwen van een virtueel netwerk om de Vm's in te starten. Het virtuele netwerk bevat één subnet voor deze walkthrough. Zie [een virtueel netwerk maken](../../virtual-network/manage-virtual-network.md#create-a-virtual-network)voor meer informatie over virtuele Azure-netwerken. 
 
 Maak het virtuele netwerk met [AZ Network vnet Create](/cli/azure/network/vnet). In het volgende voor beeld wordt een virtueel netwerk gemaakt met de naam `myVnet` en het subnet met de naam `mySubnet` :
 
@@ -85,7 +85,7 @@ az network vnet create \
 ```
 
 ## <a name="create-the-network-security-group"></a>De netwerk beveiligings groep maken
-Azure-netwerk beveiligings groepen zijn gelijk aan een firewall op de netwerklaag. Zie [nsg's maken in de Azure cli](../../virtual-network/tutorial-filter-network-traffic-cli.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)voor meer informatie over netwerk beveiligings groepen. 
+Azure-netwerk beveiligings groepen zijn gelijk aan een firewall op de netwerklaag. Zie [nsg's maken in de Azure cli](../../virtual-network/tutorial-filter-network-traffic-cli.md)voor meer informatie over netwerk beveiligings groepen. 
 
 Maak de netwerk beveiligings groep met [AZ Network NSG Create](/cli/azure/network/nsg). In het volgende voor beeld wordt een netwerk beveiligings groep gemaakt met de naam `myNetworkSecurityGroup` :
 
@@ -157,5 +157,5 @@ az vm create \
 Door gebruik te maken van de CLI-vlaggen om bestaande resources aan te roepen, geven we Azure de opdracht om de virtuele machine in het bestaande netwerk te implementeren. Als u wilt herhalen, kunt u, nadat een VNet en subnet is geïmplementeerd, worden uitgevoerd als statische of permanente resources binnen uw Azure-regio.  
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Rechtstreeks uw eigen aangepaste omgeving maken voor een virtuele Linux-machine met Azure CLI-opdrachten](create-cli-complete.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
-* [Een virtuele Linux-machine in azure maken met behulp van sjablonen](create-ssh-secured-vm-from-template.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+* [Rechtstreeks uw eigen aangepaste omgeving maken voor een virtuele Linux-machine met Azure CLI-opdrachten](create-cli-complete.md)
+* [Een virtuele Linux-machine in azure maken met behulp van sjablonen](create-ssh-secured-vm-from-template.md)

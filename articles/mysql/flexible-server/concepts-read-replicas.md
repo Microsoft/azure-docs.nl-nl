@@ -5,13 +5,13 @@ author: ambhatna
 ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
-ms.date: 10/26/2020
-ms.openlocfilehash: 3fe63deb8115c0043023301c6d0dc3731e97743f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 01/14/2021
+ms.openlocfilehash: ccae7b3f201e55af0e9e6b4ca9e7fd4ffb9c4897
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492622"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200971"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql---flexible-server"></a>Replica's in Azure Database for MySQL-flexibele server lezen
 
@@ -24,14 +24,14 @@ Aan de kant van de toepassingen wordt de toepassing doorgaans ontwikkeld in Java
 
 Met de functie leesreplica kunt u gegevens van een flexibele Azure Database for MySQL-server repliceren naar een server voor alleen-lezen. U kunt van de bron server naar Maxi maal **tien** replica's repliceren. Replica's worden asynchroon bijgewerkt met behulp van de systeemeigen, op de positie van het binlog-bestand (binair logboekbestand) gebaseerde replicatietechnologie van het MySQL-systeem. Meer informatie over binlog-replicatie vindt u in het [overzicht van MySQL binlog-replicatie](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html).
 
-Replica's zijn nieuwe servers die u op dezelfde manier beheert als uw bron Azure Database for MySQL flexibele servers. U maakt facturerings kosten voor elke Lees replica op basis van de ingerichte Compute in vCores en Storage in GB/maand. Zie [prijzen](./concepts-compute-storage.md#pricing)voor meer informatie.
+Replica's zijn nieuwe servers die u op dezelfde manier beheert als uw bron Azure Database for MySQL flexibele servers. U maakt facturerings kosten voor elke Lees replica op basis van de ingerichte Compute in vCores en Storage in GB/maand. Ga voor meer informatie naar het overzicht van [prijzen](./concepts-compute-storage.md#pricing).
 
 Zie de [MySQL-replicatie documentatie](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html)voor meer informatie over MySQL-replicatie functies en-problemen.
 
 > [!NOTE]
 > Oordeelloze communicatie
 >
-> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar het woord _slaaf_. In de [stijlgids voor oordeelloze communicatie](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) wordt dit woord herkend als uitsluitend. Het woord wordt in dit artikel gebruikt voor consistentie, omdat het momenteel het woord is dat wordt weergegeven in de software. Wanneer de software is bijgewerkt om het woord te verwijderen, wordt dit artikel ook bijgewerkt zodat het is afgestemd.
+> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar de woorden _Master_ en _Slave_. In de micro soft- [stijl gids voor bias-free Communication](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) worden deze herkend als uitgesloten woorden. De woorden worden in dit artikel gebruikt voor consistentie omdat ze momenteel de woorden zijn die in de software worden weer gegeven. Wanneer de software is bijgewerkt om de woorden te verwijderen, wordt dit artikel zodanig bijgewerkt dat het in uitlijning is.
 >
 
 ## <a name="common-use-cases-for-read-replica"></a>Veelvoorkomende use-cases voor het lezen van replica's
@@ -40,7 +40,7 @@ De functie voor het lezen van replica's helpt bij het verbeteren van de prestati
 
 Veelvoorkomende scenario's zijn:
 
-* Het schalen van Lees-workloads die afkomstig zijn van de toepassing met behulp van een licht gewicht verbindings proxy zoals [ProxySQL](https://aka.ms/ProxySQLLoadBalanceReplica) of op basis van het gebruik van op micro services gebaseerd patroon voor het uitschalen van uw Lees query's die afkomstig zijn uit de toepassing om replica's te lezen
+* Het schalen van Lees-workloads die afkomstig zijn van de toepassing met behulp van een lichte verbindings proxy zoals [ProxySQL](https://aka.ms/ProxySQLLoadBalanceReplica) of op basis van een op micro services gebaseerd patroon voor het uitschalen van uw Lees query's die afkomstig zijn uit de toepassing om replica's te lezen
 * BI of analytische rapportage werk belastingen kunnen replica's als gegevens bron voor rapportage gebruiken
 * Voor IoT of productie scenario waarbij telemetriegegevens worden opgenomen in de MySQL-data base-engine terwijl meerdere Lees replica's worden gebruikt voor de rapportage van gegevens
 
@@ -93,24 +93,24 @@ Meer informatie over het [stoppen van replicatie naar een replica](how-to-read-r
 
 ## <a name="failover"></a>Failover
 
-Er is geen automatische failover tussen bron-en replica servers. 
+Er is geen automatische failover tussen bron-en replica servers.
 
 Het lezen van replica's is bedoeld voor het schalen van intensieve workloads voor lezen en is niet ontworpen om te voldoen aan de vereisten voor hoge Beschik baarheid van een server. Er is geen automatische failover tussen bron-en replica servers. Het stoppen van de replicatie bij het lezen van een replica om deze online te brengen in de lees schrijf modus is de manier waarop deze hand matige failover wordt uitgevoerd.
 
-Omdat replicatie asynchroon is, is er sprake van een vertraging tussen de bron en de replica. De hoeveelheid vertraging kan worden beïnvloed door een aantal factoren, zoals hoe zwaar de werk belasting die wordt uitgevoerd op de bron server en de latentie tussen data centers. In de meeste gevallen varieert replicavertraging tussen enkele seconden en een paar minuten. U kunt uw werkelijke replicatie vertraging bijhouden met behulp van de metrische *replica vertraging*, die beschikbaar is voor elke replica. Met deze metriek wordt de tijd weer gegeven sinds de laatste geplayte trans actie. U wordt aangeraden om te bepalen wat uw gemiddelde vertraging is door uw replica vertraging te bestuderen gedurende een bepaalde periode. U kunt een waarschuwing instellen voor replica vertraging, zodat u actie kunt ondernemen als deze buiten het verwachte bereik komt.
+Omdat replicatie asynchroon is, is er sprake van een vertraging tussen de bron en de replica. De hoeveelheid vertraging kan worden beïnvloed door veel factoren, zoals hoe zwaar de werk belasting op de bron server wordt uitgevoerd en de latentie tussen data centers. In de meeste gevallen varieert replicavertraging tussen enkele seconden en een paar minuten. U kunt uw werkelijke replicatie vertraging bijhouden met behulp van de metrische *replica vertraging*, die beschikbaar is voor elke replica. Met deze metriek wordt de tijd weer gegeven sinds de laatste geplayte trans actie. U wordt aangeraden om te bepalen wat uw gemiddelde vertraging is door uw replica vertraging te bestuderen gedurende een bepaalde periode. U kunt een waarschuwing instellen voor replica vertraging, zodat u actie kunt ondernemen als deze buiten het verwachte bereik komt.
 
 > [!Tip]
 > Als u een failover naar de replica doorzoekt, geeft de vertraging op het moment dat u de replica loskoppelt van de bron aan hoeveel gegevens er verloren zijn gegaan.
 
-Zodra u hebt vastgesteld dat u een failover naar een replica wilt uitvoeren, 
+Nadat u hebt vastgesteld dat u een failover naar een replica wilt doen:
 
 1. Replicatie naar de replica stoppen<br/>
-   Deze stap is nodig om de replica-server in staat te stellen schrijf bewerkingen te accepteren. Als onderdeel van dit proces wordt de replica server ontkoppeld van de bron. Zodra u stopt met de replicatie, duurt het back-end doorgaans ongeveer twee minuten om te volt ooien. Zie de sectie [Replicatie stoppen](#stop-replication) in dit artikel voor meer informatie over de implicaties van deze actie.
-    
+   Deze stap is nodig om de replica-server in staat te stellen schrijf bewerkingen te accepteren. Als onderdeel van dit proces wordt de replica server ontkoppeld van de bron. Nadat u de replicatie stoppen hebt gestart, duurt het back-end doorgaans ongeveer twee minuten. Zie de sectie [Replicatie stoppen](#stop-replication) in dit artikel voor meer informatie over de implicaties van deze actie.
+
 2. Uw toepassing naar de (voormalige) replica laten wijzen<br/>
    Elke server heeft een unieke connection string. Werk uw toepassing bij zodat deze verwijst naar de (voormalige) replica in plaats van de bron.
-    
-Zodra uw toepassing Lees-en schrijf bewerkingen heeft verwerkt, hebt u de failover voltooid. De uitval tijd van uw toepassings ervaring is afhankelijk van wanneer u een probleem detecteert en de stappen 1 en 2 hierboven uitvoert.
+
+Nadat uw toepassing Lees-en schrijf bewerkingen heeft verwerkt, hebt u de failover voltooid. De uitval tijd van uw toepassings ervaring is afhankelijk van wanneer u een probleem detecteert en de stappen 1 en 2 hierboven uitvoert.
 
 ## <a name="considerations-and-limitations"></a>Overwegingen en beperkingen
 
@@ -125,10 +125,10 @@ Zodra uw toepassing Lees-en schrijf bewerkingen heeft verwerkt, hebt u de failov
 | Gestopte replica's | Als u de replicatie tussen een bron server en een lees replica stopt, wordt de gestopte replica een zelfstandige server die zowel lees-als schrijf bewerkingen accepteert. De zelfstandige server kan niet opnieuw in een replica worden gemaakt. |
 | Verwijderde bron-en zelfstandige servers | Wanneer een bron server wordt verwijderd, wordt replicatie gestopt met alle replica's lezen. Deze replica's worden automatisch zelfstandige servers en kunnen Lees-en schrijf bewerkingen accepteren. De bron server zelf wordt verwijderd. |
 | Gebruikersaccounts | Gebruikers op de bron server worden gerepliceerd naar de Lees replica's. U kunt alleen verbinding maken met een lees replica met behulp van de beschik bare gebruikers accounts op de bron server. |
-| Serverparameters | Om problemen met de synchronisatie van gegevens en mogelijk verlies of beschadiging van gegevens te voorkomen, worden bepaalde serverparameters vergrendeld zodat ze niet kunnen worden bijgewerkt bij gebruik van replica's voor lezen. <br> De volgende server parameters zijn vergrendeld op de bron-en replica servers:<br> - [`innodb_file_per_table`](https://dev.mysql.com/doc/refman/8.0/en/innodb-file-per-table-tablespaces.html) <br> - [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators) <br> De [`event_scheduler`](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_event_scheduler) para meter is vergrendeld op de replica servers. <br> Als u een van de bovenstaande para meters op de bron server wilt bijwerken, verwijdert u de replica servers, werkt u de parameter waarde op de bron bij en maakt u de replica's opnieuw. |
+| Serverparameters | Om problemen met de synchronisatie van gegevens en mogelijk verlies of beschadiging van gegevens te voorkomen, worden bepaalde serverparameters vergrendeld zodat ze niet kunnen worden bijgewerkt bij gebruik van replica's voor lezen. <br> De volgende server parameters zijn vergrendeld op de bron-en replica servers:<br> - [`innodb_file_per_table`](https://dev.mysql.com/doc/refman/8.0/en/innodb-file-per-table-tablespaces.html) <br> - [`log_bin_trust_function_creators`](https://dev.mysql.com/doc/refman/5.7/en/replication-options-binary-log.html#sysvar_log_bin_trust_function_creators) <br> De [`event_scheduler`](https://dev.mysql.com/doc/refman/5.7/en/server-system-variables.html#sysvar_event_scheduler) para meter is vergrendeld op de replica servers. <br> Als u een van de bovenstaande para meters op de bron server wilt bijwerken, verwijdert u replica servers, werkt u de parameter waarde bij op de bron en maakt u de replica's opnieuw. |
 | Anders | Het maken van een replica van een replica wordt niet ondersteund. <br> -In-Memory tabellen kunnen ertoe leiden dat replica's niet meer synchroon zijn. Dit is een beperking van de MySQL-replicatie technologie. Meer informatie vindt u in de [referentie documentatie voor mysql](https://dev.mysql.com/doc/refman/5.7/en/replication-features-memory.html) . <br>-Zorg ervoor dat de bron Server tabellen primaire sleutels hebben. Het ontbreken van primaire sleutels kan leiden tot replicatie latentie tussen de bron en de replica's.<br>-Bekijk de volledige lijst met MySQL-replicatie beperkingen in de [MySQL-documentatie](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html) |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [het maken en beheren van Lees replica's met behulp van de Azure Portal](how-to-read-replicas-portal.md)
-- Meer informatie over [het maken en beheren van Lees replica's met behulp van Azure cli](how-to-read-replicas-cli.md)
+* Meer informatie over [het maken en beheren van Lees replica's met behulp van de Azure Portal](how-to-read-replicas-portal.md)
+* Meer informatie over [het maken en beheren van Lees replica's met behulp van Azure cli](how-to-read-replicas-cli.md)

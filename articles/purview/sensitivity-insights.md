@@ -1,18 +1,18 @@
 ---
-title: Gevoeligheid label rapportage over uw gegevens in Azure Blob Storage
-description: In deze hand leiding wordt beschreven hoe u de controle sfeer liggen-gevoeligheids label rapportage voor uw gegevens in Azure Blob Storage kunt weer geven en gebruiken.
+title: Gevoeligheid label rapportage over uw gegevens in azure controle sfeer liggen met behulp van controle sfeer liggen Insights
+description: In deze hand leiding wordt beschreven hoe u de controle sfeer liggen-gevoeligheids label rapportage voor uw gegevens kunt weer geven en gebruiken.
 author: batamig
 ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/24/2020
-ms.openlocfilehash: e6a92282d2bcd316a771742048dacd9a7181de4f
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: dffecb48a8faa869cb3df450cc220e86195bbc87
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746179"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98199373"
 ---
 # <a name="sensitivity-label-insights-about-your-data-in-azure-purview"></a>Gevoeligheid label inzichten over uw gegevens in azure controle sfeer liggen
 
@@ -27,6 +27,11 @@ In deze hand leiding leert u het volgende:
 > - Gevoeligheid van inzichten op uw gegevens weer geven
 > - Inzoomen voor meer gevoeligheid voor het labelen van Details over uw gegevens
 
+> [!NOTE]
+> Gevoeligheids labels gevonden op [Power bi assets](register-scan-power-bi-tenant.md) die worden gescand door controle sfeer liggen, worden momenteel niet weer gegeven in het rapport gevoeligheid labeling Insights. 
+>
+> Als u de gevoeligheids labels op Power BI activa wilt weer geven, bekijkt u de asset in het [controle sfeer liggen Data Catalog](how-to-search-catalog.md).
+> 
 ## <a name="prerequisites"></a>Vereisten
 
 Voordat u aan de slag gaat met controle sfeer liggen Insights, moet u ervoor zorgen dat u de volgende stappen hebt uitgevoerd:
@@ -37,6 +42,8 @@ Voordat u aan de slag gaat met controle sfeer liggen Insights, moet u ervoor zor
 
 - Een scan voor de test gegevens in elke gegevens bron instellen en volt ooien
 
+- Meld u aan bij controle sfeer liggen met een account met een [gegevens lezer of gegevens curator rol](catalog-permissions.md#azure-purviews-pre-defined-data-plane-roles).
+
 Zie [gegevens bronnen beheren in azure controle sfeer liggen (preview)](manage-data-sources.md) en [automatisch labelen voor uw gegevens in azure controle sfeer liggen](create-sensitivity-label.md)voor meer informatie.
 
 ## <a name="use-purview-sensitivity-labeling-insights"></a>Controle sfeer liggen-gevoeligheid gebruiken voor het labelen van inzichten
@@ -45,9 +52,11 @@ In controle sfeer liggen zijn classificaties vergelijkbaar met de labels van tag
 
 Met gevoeligheids labels kunt u aangeven hoe gevoelige bepaalde gegevens zich in uw organisatie bevindt. Een specifieke project naam kan bijvoorbeeld zeer vertrouwelijk zijn binnen uw organisatie, terwijl dezelfde term niet vertrouwelijk is voor andere organisaties. 
 
-Hoewel classificaties rechtstreeks overeenkomen (een sociaal-fiscaal nummer heeft een classificatie van het **sofi-nummer**), worden labels van gevoeligheid toegepast wanneer een of meer classificaties en scenario's samen worden gevonden. 
+Classificaties worden rechtstreeks overeenkomen, zoals een sofi-nummer, dat een classificatie heeft van het **sofi-nummer**. 
 
-Controle sfeer liggen maakt gebruik van dezelfde classificaties, ook wel aangeduid als gevoelige informatie typen, als Microsoft 365. Op deze manier kunt u uw bestaande gevoelige labels uitbreiden over uw Azure controle sfeer liggen-assets.
+In contrast worden labels van gevoeligheid toegepast wanneer een of meer classificaties en voor waarden samen worden gevonden. In deze context verwijzen de [voor waarden](/microsoft-365/compliance/apply-sensitivity-label-automatically) naar alle para meters die u kunt definiëren voor ongestructureerde gegevens, zoals **nabijheid van een andere classificatie** en **% betrouw baarheid**. 
+
+Controle sfeer liggen maakt gebruik van dezelfde classificaties, ook wel aangeduid als [gevoelige informatie typen](/microsoft-365/compliance/sensitive-information-type-entity-definitions), als Microsoft 365. Op deze manier kunt u uw bestaande gevoelige labels uitbreiden over uw Azure controle sfeer liggen-assets.
 
 > [!NOTE]
 > Nadat u uw bron typen hebt gescand, geeft u met de **gevoeligheid** een aantal uur inzicht in de nieuwe activa.
@@ -100,7 +109,7 @@ Ga op een van de volgende manieren te werk om meer te weten te komen:
 |**Het raster sorteren** |Selecteer een kolomkop om het raster op die kolom te sorteren. | 
 |**Kolommen bewerken**     |  Als u meer of minder kolommen in het raster wilt weer geven, selecteert u **kolommen bewerken** :::image type="icon" source="media/insights/ico-columns.png" border="false"::: en selecteert u vervolgens de kolommen die u wilt weer geven of de volg orde wijzigen.    <br><br>Selecteer een kolomkop om het raster op die kolom te sorteren.   |
 |**Meer inzoomen**     | Als u wilt inzoomen op een specifiek label, selecteert u een naam in de kolom **gevoeligheids label** om het **label op bron** rapport weer te geven. <br><br>In dit rapport worden gegevens weer gegeven voor het geselecteerde label, met inbegrip van de bron naam, het bron type, de abonnements-ID en het aantal geclassificeerde bestanden en tabellen.      |
-|**Door assets bladeren**     |  Selecteer een of meer labels of bronnen, afhankelijk van het rapport dat u bekijkt, om door de activa te bladeren die zijn gevonden met een specifiek label of een specifieke bron **Browse assets** en selecteer vervolgens in :::image type="icon" source="media/insights/ico-browse-assets.png" border="false"::: de filters bladeren. <br><br>In de zoek resultaten worden alle gelabelde activa weer gegeven die voor het geselecteerde filter zijn gevonden.  Zie [Search the Azure controle sfeer liggen Data Catalog](how-to-search-catalog.md)voor meer informatie.       |
+|**Door assets bladeren**     |  Selecteer een of meer labels of bronnen, afhankelijk van het rapport dat u bekijkt, om door de activa te bladeren die zijn gevonden met een specifiek label of een specifieke bron  en selecteer vervolgens in :::image type="icon" source="media/insights/ico-browse-assets.png" border="false"::: de filters bladeren. <br><br>In de zoek resultaten worden alle gelabelde activa weer gegeven die voor het geselecteerde filter zijn gevonden.  Zie [Search the Azure controle sfeer liggen Data Catalog](how-to-search-catalog.md)voor meer informatie.       |
 | | |
 
 ## <a name="sensitivity-label-integration-with-microsoft-365-compliance"></a>Integratie van gevoeligheids label met Microsoft 365 naleving

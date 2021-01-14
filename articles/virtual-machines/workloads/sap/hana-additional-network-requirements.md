@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 09/10/2018
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 44e9712466734c0e42fd2bea05c5110cbff6924b
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 308d30118349e020d3b407243f106d9ad8368118
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964793"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98198982"
 ---
 # <a name="additional-network-requirements-for-large-instances"></a>Aanvullende netwerk vereisten voor grote instanties
 
@@ -31,7 +31,7 @@ Gebruik de Azure Portal, Power shell of de Azure CLI wanneer u meer IP-adressen 
 
 Voeg het nieuwe IP-adres bereik als een nieuw bereik toe aan de adres ruimte van het virtuele netwerk in plaats van een nieuw samengevoegd bereik te genereren. Deze wijziging verzenden naar micro soft. Hierdoor kunt u verbinding maken vanaf het nieuwe IP-adres bereik tot de HANA grote instantie-eenheden in uw client. U kunt een ondersteunings aanvraag voor Azure openen om de nieuwe adres ruimte van het virtuele netwerk toe te voegen. Nadat u een bevestiging hebt ontvangen, voert u de volgende stappen uit.
 
-Zie [een virtueel netwerk maken met behulp van de Azure Portal](../../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#create-a-virtual-network)om een extra subnet te maken op basis van de Azure Portal. Zie [een virtueel netwerk maken met Power shell](../../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#create-a-virtual-network)voor informatie over het maken van een van Power shell.
+Zie [een virtueel netwerk maken met behulp van de Azure Portal](../../../virtual-network/manage-virtual-network.md#create-a-virtual-network)om een extra subnet te maken op basis van de Azure Portal. Zie [een virtueel netwerk maken met Power shell](../../../virtual-network/manage-virtual-network.md#create-a-virtual-network)voor informatie over het maken van een van Power shell.
 
 ## <a name="add-virtual-networks"></a>Virtuele netwerken toevoegen
 
@@ -51,11 +51,11 @@ Wanneer het nieuwe circuit is gemaakt en de SAP HANA op de configuratie van micr
 
 Als u een subnet van een virtueel netwerk wilt verwijderen, kunt u de Azure Portal, Power shell of de Azure CLI gebruiken. Als uw IP-adres bereik of adres ruimte van het virtuele netwerk van Azure een geaggregeerd bereik was, is er geen follow-up voor u met micro soft. (Houd er wel rekening mee dat het virtuele netwerk nog bezig is met het door geven van de BGP-route adres ruimte die het verwijderde subnet bevat.) Mogelijk hebt u het adres bereik of de adres ruimte van het virtuele netwerk van Azure gedefinieerd als meerdere IP-adresbereiken, waarvan er een is toegewezen aan het verwijderde subnet. Zorg ervoor dat u dit verwijdert uit de adres ruimte van uw virtuele netwerk. Informeer vervolgens SAP HANA over micro soft-Service beheer om het te verwijderen uit de bereiken die SAP HANA op Azure (grote instanties) kunnen communiceren met.
 
-Zie [een subnet verwijderen](../../../virtual-network/virtual-network-manage-subnet.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#delete-a-subnet)voor meer informatie.
+Zie [een subnet verwijderen](../../../virtual-network/virtual-network-manage-subnet.md#delete-a-subnet)voor meer informatie.
 
 ## <a name="delete-a-virtual-network"></a>Een virtueel netwerk verwijderen
 
-Zie [een virtueel netwerk verwijderen](../../../virtual-network/manage-virtual-network.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#delete-a-virtual-network)voor meer informatie.
+Zie [een virtueel netwerk verwijderen](../../../virtual-network/manage-virtual-network.md#delete-a-virtual-network)voor meer informatie.
 
 SAP HANA op Service beheer van micro soft verwijdert de bestaande autorisaties op het SAP HANA op Azure (grote instanties) ExpressRoute-circuit. Ook wordt het IP-adres bereik of de adres ruimte van het virtuele netwerk van Azure voor de communicatie met HANA grote instanties verwijderd.
 

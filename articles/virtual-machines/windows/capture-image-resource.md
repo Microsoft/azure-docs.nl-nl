@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 09/27/2018
 ms.author: cynthn
 ms.custom: legacy
-ms.openlocfilehash: 751fa9f9fe2ba17a982b71a6332be302804f0dcc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d06dc03a016f057a9a3407a82a114f8df6757599
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89047289"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200682"
 ---
 # <a name="create-a-managed-image-of-a-generalized-vm-in-azure"></a>Een beheerde installatiekopie maken van een gegeneraliseerde VM in Azure
 
@@ -33,7 +33,7 @@ Zorg ervoor dat de server functies die op de computer worden uitgevoerd, worden 
 >
 >Sysprep vereist dat de stations volledig worden ontsleuteld. Als u versleuteling op uw virtuele machine hebt ingeschakeld, schakelt u versleuteling uit voordat u Sysprep uitvoert.
 >
-> Als u van plan bent om Sysprep uit te voeren voordat u de virtuele harde schijf (VHD) voor het eerst uploadt naar Azure, moet u ervoor zorgen dat u [uw VM hebt voor bereid](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).  
+> Als u van plan bent om Sysprep uit te voeren voordat u de virtuele harde schijf (VHD) voor het eerst uploadt naar Azure, moet u ervoor zorgen dat u [uw VM hebt voor bereid](prepare-for-upload-vhd-image.md).  
 > 
 > 
 
@@ -47,7 +47,7 @@ Voer de volgende stappen uit om uw Windows-VM te generaliseren:
    
 4. In het dialoog venster **hulp programma voor systeem voorbereiding** selecteert u **systeem out-of-Box Experience (OOBE) opgeven** en schakelt u het selectie vakje **generalize** in.
    
-5. Selecteer voor **afsluit opties**de optie **Afsluiten**.
+5. Selecteer voor **afsluit opties** de optie **Afsluiten**.
    
 6. Selecteer **OK**.
    
@@ -73,13 +73,13 @@ Voer de volgende stappen uit om uw Windows-VM te generaliseren:
 
 2. Selecteer uw virtuele machine in de lijst.
 
-3. Selecteer op de pagina **virtuele machine** voor de VM de optie **vastleggen**in het bovenste menu.
+3. Selecteer op de pagina **virtuele machine** voor de VM de optie **vastleggen** in het bovenste menu.
 
    De pagina **afbeelding maken** wordt weer gegeven.
 
-4. Voor **naam**accepteert u de vooraf ingevulde naam of voert u een naam in die u wilt gebruiken voor de installatie kopie.
+4. Voor **naam** accepteert u de vooraf ingevulde naam of voert u een naam in die u wilt gebruiken voor de installatie kopie.
 
-5. Voor **resource groep**selecteert u **Nieuw maken** en voert u een naam in of selecteert u een resource groep die u wilt gebruiken in de vervolg keuzelijst.
+5. Voor **resource groep** selecteert u **Nieuw maken** en voert u een naam in of selecteert u een resource groep die u wilt gebruiken in de vervolg keuzelijst.
 
 6. Als u de bron-VM wilt verwijderen nadat de installatie kopie is gemaakt, selecteert u **deze virtuele machine automatisch verwijderen na het maken van de installatie kopie**.
 
@@ -217,7 +217,7 @@ U kunt een beheerde installatie kopie maken op basis van een moment opname van e
 
 ## <a name="create-an-image-from-a-vm-that-uses-a-storage-account"></a>Een installatie kopie maken van een virtuele machine die gebruikmaakt van een opslag account
 
-Als u een beheerde installatie kopie wilt maken op basis van een virtuele machine die geen beheerde schijven gebruikt, hebt u de URI van de besturingssysteem-VHD in het opslag account nodig, in de volgende indeling: https://*mystorageaccount*. blob.core.Windows.net/*vhdcontainer* / *vhdfilename. VHD*. In dit voor beeld bevindt de VHD zich in *mystorageaccount*, in een container met de naam *VHDCONTAINER*en de VHD-bestands naam *vhdfilename. VHD*.
+Als u een beheerde installatie kopie wilt maken op basis van een virtuele machine die geen beheerde schijven gebruikt, hebt u de URI van de besturingssysteem-VHD in het opslag account nodig, in de volgende indeling: https://*mystorageaccount*. blob.core.Windows.net/*vhdcontainer* / *vhdfilename. VHD*. In dit voor beeld bevindt de VHD zich in *mystorageaccount*, in een container met de naam *VHDCONTAINER* en de VHD-bestands naam *vhdfilename. VHD*.
 
 
 1.  Maak enkele variabelen.
@@ -250,4 +250,4 @@ Als u een beheerde installatie kopie wilt maken op basis van een virtuele machin
 
     
 ## <a name="next-steps"></a>Volgende stappen
-- [Een virtuele machine maken op basis van een beheerde installatie kopie](create-vm-generalized-managed.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).    
+- [Een virtuele machine maken op basis van een beheerde installatie kopie](create-vm-generalized-managed.md). 

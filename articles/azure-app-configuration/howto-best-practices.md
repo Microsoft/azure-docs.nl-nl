@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 05/02/2019
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 038d19270fbdb672d397eb2bd56bd27e17ea7af9
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: f407f9ee2ea0ca73b29e4fde9d542c005f78a929
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929086"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200444"
 ---
 # <a name="azure-app-configuration-best-practices"></a>Aanbevolen procedures voor Azure-app configuratie
 
@@ -89,6 +89,10 @@ App-configuratie biedt de mogelijkheid om uw configuratie-instellingen bulksgewi
 ## <a name="multi-region-deployment-in-app-configuration"></a>Implementatie met meerdere regio's in app-configuratie
 
 App-configuratie is regionale service. Voor toepassingen met verschillende configuraties per regio kunt u deze configuraties in één exemplaar opslaan om een Single Point of Failure te maken. Het implementeren van één app-configuratie-instanties per regio in meerdere regio's is mogelijk een betere optie. Dit kan helpen bij het herstellen van regionale nood herstel, prestaties en beveiligings Silo. Het configureren per regio verbetert ook de latentie en maakt gebruik van gescheiden beperkings quota's, omdat beperking per instantie is. Voor het Toep assen van herstel na nood gevallen kunt u [meerdere configuratie archieven](./concept-disaster-recovery.md)gebruiken. 
+
+## <a name="client-applications-in-app-configuration"></a>Client toepassingen in app-configuratie 
+
+Buitensporige aanvragen voor app-configuratie kunnen leiden tot beperking of overschrijding kosten. Toepassingen maken gebruik van de cache en intelligent vernieuwen die op dit moment beschikbaar zijn om het aantal verzonden aanvragen te optimaliseren. Dit proces kan worden gespiegeld in client toepassingen met een hoog volume door directe verbindingen met de configuratie opslag te voor komen. Client toepassingen maken in plaats daarvan verbinding met een aangepaste service en deze service communiceert met de configuratie opslag. Deze proxy oplossing kan ervoor zorgen dat de client toepassingen niet de beperkings limiet voor het configuratie archief benadert. Raadpleeg [de veelgestelde vragen](https://docs.microsoft.com/azure/azure-app-configuration/faq#are-there-any-limits-on-the-number-of-requests-made-to-app-configuration)voor meer informatie over beperking.  
 
 ## <a name="next-steps"></a>Volgende stappen
 

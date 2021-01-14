@@ -6,33 +6,36 @@ author: savjani
 ms.author: pariks
 ms.service: mysql
 ms.topic: troubleshooting
-ms.date: 10/25/2020
-ms.openlocfilehash: 30ac28ef996c42e99ebece27ec156777f0d033d2
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.date: 01/13/2021
+ms.openlocfilehash: 34210d08ad5328f200f5b92c13bfcf85cfead3ec
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587873"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98199475"
 ---
 # <a name="troubleshoot-replication-latency-in-azure-database-for-mysql"></a>Troubleshoot replication latency in Azure Database for MySQL (Problemen vanwege replicavertraging oplossen in Azure Database for MySQL)
 
 [!INCLUDE[applies-to-single-flexible-server](./includes/applies-to-single-flexible-server.md)]
 
-Met de functie [replica lezen](concepts-read-replicas.md) kunt u gegevens van een Azure database for mysql server repliceren naar een replica server met het kenmerk alleen-lezen. U kunt werk belastingen uitschalen door lees-en rapport query's van de toepassing naar replica servers te routeren. Deze installatie vermindert de druk op de bron server. Het verbetert ook de algehele prestaties en latentie van de toepassing terwijl deze wordt geschaald. 
+Met de functie [replica lezen](concepts-read-replicas.md) kunt u gegevens van een Azure database for mysql server repliceren naar een replica server met het kenmerk alleen-lezen. U kunt werk belastingen uitschalen door lees-en rapport query's van de toepassing naar replica servers te routeren. Deze installatie vermindert de druk op de bron server. Het verbetert ook de algehele prestaties en latentie van de toepassing terwijl deze wordt geschaald.
 
-Replica's worden asynchroon bijgewerkt door gebruik te maken van de systeem eigen binaire logboek bestand (binlog) van de MySQL-engine. Zie voor meer informatie [het overzicht van de configuratie van het MySQL binlog-bestand op basis van de replicatie](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html). 
+Replica's worden asynchroon bijgewerkt door gebruik te maken van de systeem eigen binaire logboek bestand (binlog) van de MySQL-engine. Zie voor meer informatie [het overzicht van de configuratie van het MySQL binlog-bestand op basis van de replicatie](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html).
 
-De replicatie vertraging op de secundaire Lees replica's is afhankelijk van verschillende factoren. Deze factoren omvatten, maar zijn niet beperkt tot: 
+De replicatie vertraging op de secundaire Lees replica's is afhankelijk van verschillende factoren. Deze factoren omvatten, maar zijn niet beperkt tot:
 
 - Netwerk latentie.
 - Trans actie-volume op de bron server.
 - Compute-laag van de bron server en secundaire replica server voor lezen.
-- Query's die worden uitgevoerd op de bron server en de secundaire server. 
+- Query's die worden uitgevoerd op de bron server en de secundaire server.
 
 In dit artikel leert u hoe u de replicatie latentie in Azure Database for MySQL kunt oplossen. U begrijpt ook enkele veelvoorkomende oorzaken van verhoogde replicatie latentie op replica servers.
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term slave, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+> Oordeelloze communicatie
+>
+> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar de woorden _Master_ en _Slave_. In de micro soft- [stijl gids voor bias-free Communication](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) worden deze herkend als uitgesloten woorden. De woorden worden in dit artikel gebruikt voor consistentie omdat ze momenteel de woorden zijn die in de software worden weer gegeven. Wanneer de software is bijgewerkt om de woorden te verwijderen, wordt dit artikel zodanig bijgewerkt dat het in uitlijning is.
+>
 
 ## <a name="replication-concepts"></a>Concepten voor replicatie
 
@@ -47,7 +50,7 @@ Azure Database for MySQL geeft de metriek voor replicatie vertraging in seconden
 
 Als u wilt weten wat de oorzaak is van een verhoogde replicatie latentie, maakt u verbinding met de replica server met behulp van [MySQL Workbench](connect-workbench.md) of [Azure Cloud shell](https://shell.azure.com). Voer vervolgens de volgende opdracht uit.
 
->[!NOTE] 
+>[!NOTE]
 > Vervang de voorbeeld waarden in uw code door de naam van de replica server en de gebruikers naam van de beheerder. De gebruikers naam van de beheerder vereist `@\<servername>` voor Azure database for MySQL.
 
 ```azurecli-interactive
@@ -92,7 +95,6 @@ Hier volgt een typische uitvoer:
 >[!div class="mx-imgBorder"]
 > :::image type="content" source="./media/howto-troubleshoot-replication-latency/show-status.png" alt-text="Replicatie latentie controleren":::
 
-
 De uitvoer bevat veel informatie. Normaal gesp roken moet u zich richten op de rijen die in de volgende tabel worden beschreven.
 
 |Gegevens|Beschrijving|
@@ -122,7 +124,7 @@ De volgende secties bevatten een overzicht van de scenario's waarin een hoge rep
 
 ### <a name="network-latency-or-high-cpu-consumption-on-the-source-server"></a>Netwerk latentie of hoog CPU-gebruik op de bron server
 
-Als u de volgende waarden ziet, wordt de replicatie latentie waarschijnlijk veroorzaakt door een hoge netwerk latentie of een hoog CPU-verbruik op de bron server. 
+Als u de volgende waarden ziet, wordt de replicatie latentie waarschijnlijk veroorzaakt door een hoge netwerk latentie of een hoog CPU-verbruik op de bron server.
 
 ```
 Slave_IO_State: Waiting for master to send event
@@ -132,7 +134,7 @@ Relay_Master_Log_File: the file sequence is smaller than Master_Log_File, e.g. m
 
 In dit geval wordt de i/o-thread uitgevoerd en wacht op de bron server. De bron server is al geschreven naar het binaire logboek bestand 20. De replica heeft alleen een bericht ontvangen van Maxi maal het bestands nummer 10. De belangrijkste factoren voor een hoge replicatie latentie in dit scenario zijn de netwerk snelheid of het hoge CPU-gebruik op de bron server.  
 
-In azure kan de netwerk latentie binnen een regio doorgaans in milliseconden worden gemeten. In verschillende regio's bereiken latentie tussen milliseconden en seconden. 
+In azure kan de netwerk latentie binnen een regio doorgaans in milliseconden worden gemeten. In verschillende regio's bereiken latentie tussen milliseconden en seconden.
 
 In de meeste gevallen wordt de verbindings vertraging tussen de i/o-threads en de bron server veroorzaakt door een hoog CPU-gebruik op de bron server. De i/o-threads worden langzaam verwerkt. U kunt dit probleem detecteren met behulp van Azure Monitor om het CPU-gebruik en het aantal gelijktijdige verbindingen op de bron server te controleren.
 
@@ -148,18 +150,17 @@ Master_Log_File: the binary file sequence is larger then Relay_Master_Log_File, 
 Relay_Master_Log_File: the file sequence is smaller then Master_Log_File, e.g. mysql-bin.00010
 ```
 
-De uitvoer laat zien dat de replica het binaire logboek achter de bron server kan ophalen. Maar de replica-IO-thread geeft aan dat de relay-logboek ruimte al vol is. 
+De uitvoer laat zien dat de replica het binaire logboek achter de bron server kan ophalen. Maar de replica-IO-thread geeft aan dat de relay-logboek ruimte al vol is.
 
-De netwerk snelheid veroorzaakt niet de vertraging. De replica wordt geprobeerd op te halen. De bijgewerkte binaire logboek grootte overschrijdt echter de bovengrens van de logboek ruimte van de relay. 
+De netwerk snelheid veroorzaakt niet de vertraging. De replica wordt geprobeerd op te halen. De bijgewerkte binaire logboek grootte overschrijdt echter de bovengrens van de logboek ruimte van de relay.
 
 U kunt dit probleem oplossen door het [langzame query logboek](concepts-server-logs.md) op de bron server in te scha kelen. Gebruik langzame query Logboeken om langlopende trans acties op de bron server te identificeren. Stem vervolgens de geïdentificeerde query's af om de latentie op de server te verminderen. 
 
 De replicatie latentie van deze sortering wordt meestal veroorzaakt door het laden van gegevens op de bron server. Wanneer bron servers wekelijks of maandelijks gegevens laadt, is replicatie latentie helaas niet te voor komen. De replica servers die uiteindelijk worden uitgevoerd nadat het laden van de gegevens op de bron server is voltooid.
 
-
 ### <a name="slowness-on-the-replica-server"></a>Vertraging op de replica-server
 
-Als u de volgende waarden bekijkt, is het probleem mogelijk op de replica server. 
+Als u de volgende waarden bekijkt, is het probleem mogelijk op de replica server.
 
 ```
 Slave_IO_State: Waiting for master to send event
@@ -172,7 +173,7 @@ Exec_Master_Log_Pos: The position of slave reads from master binary log file is 
 Seconds_Behind_Master: There is latency and the value here is greater than 0
 ```
 
-In dit scenario ziet u dat zowel de IO-thread als de SQL-thread goed worden uitgevoerd. De replica leest het binaire logboek bestand dat door de bron server wordt geschreven. Sommige latentie op de replica-server weerspiegelt echter dezelfde trans actie van de bron server. 
+In dit scenario ziet u dat zowel de IO-thread als de SQL-thread goed worden uitgevoerd. De replica leest het binaire logboek bestand dat door de bron server wordt geschreven. Sommige latentie op de replica-server weerspiegelt echter dezelfde trans actie van de bron server.
 
 In de volgende secties worden veelvoorkomende oorzaken van dit type latentie beschreven.
 
@@ -180,13 +181,13 @@ In de volgende secties worden veelvoorkomende oorzaken van dit type latentie bes
 
 Azure Database for MySQL maakt gebruik van op rijen gebaseerde replicatie. De bron server schrijft gebeurtenissen naar het binaire logboek, waarbij wijzigingen in afzonderlijke tabel rijen worden vastgelegd. De SQL-thread repliceert die wijzigingen vervolgens naar de corresponderende tabel rijen op de replica-server. Wanneer een tabel geen primaire sleutel of unieke sleutel heeft, scant de SQL-thread alle rijen in de doel tabel om de wijzigingen toe te passen. Deze scan kan leiden tot replicatie latentie.
 
-In MySQL is de primaire sleutel een gekoppelde index die snelle query prestaties garandeert, omdat deze geen NULL-waarden kan bevatten. Als u de InnoDB-opslag engine gebruikt, zijn de tabel gegevens fysiek ingedeeld zodat ze zeer snel kunnen worden gevonden en gesorteerd op basis van de primaire sleutel. 
+In MySQL is de primaire sleutel een gekoppelde index die snelle query prestaties garandeert, omdat deze geen NULL-waarden kan bevatten. Als u de InnoDB-opslag engine gebruikt, zijn de tabel gegevens fysiek ingedeeld zodat ze zeer snel kunnen worden gevonden en gesorteerd op basis van de primaire sleutel.
 
 U wordt aangeraden een primaire sleutel voor tabellen toe te voegen aan de bron server voordat u de replica-server maakt. Primaire sleutels toevoegen op de bron server en vervolgens lees replica's opnieuw maken om de replicatie latentie te verbeteren.
 
 Gebruik de volgende query om erachter te komen welke tabellen een primaire sleutel op de bron server ontbreken:
 
-```sql 
+```sql
 select tab.table_schema as database_name, tab.table_name 
 from information_schema.tables tab left join 
 information_schema.table_constraints tco 
@@ -202,19 +203,19 @@ order by tab.table_schema, tab.table_name;
 
 #### <a name="long-running-queries-on-the-replica-server"></a>Langlopende query's op de replica server
 
-De werk belasting op de replica server kan de SQL-thread vertraging achter de i/o-thread maken. Langlopende query's op de replica server zijn een van de veelvoorkomende oorzaken van een hoge replicatie latentie. U kunt dit probleem oplossen door het [langzame query logboek](concepts-server-logs.md) op de replica server in te scha kelen. 
+De werk belasting op de replica server kan de SQL-thread vertraging achter de i/o-thread maken. Langlopende query's op de replica server zijn een van de veelvoorkomende oorzaken van een hoge replicatie latentie. U kunt dit probleem oplossen door het [langzame query logboek](concepts-server-logs.md) op de replica server in te scha kelen.
 
 Trage query's kunnen het Resource verbruik verhogen of de server vertragen zodat de replica niet kan worden opgevangen met de bron server. In dit scenario kunt u de langzame query's afstemmen. Snellere query's verhinderen het blok keren van de SQL-thread en verbeteren de replicatie latentie aanzienlijk.
 
-
 #### <a name="ddl-queries-on-the-source-server"></a>DDL-query's op de bron server
+
 Op de bron server kan een Data Definition Language-opdracht (DDL), zoals [`ALTER TABLE`](https://dev.mysql.com/doc/refman/5.7/en/alter-table.html) een lange tijd duren. Terwijl de DDL-opdracht wordt uitgevoerd, kunnen duizenden andere query's parallel worden uitgevoerd op de bron server. 
 
 Wanneer de DDL wordt gerepliceerd, om consistentie van de data base te garanderen, voert de MySQL-engine de DDL uit in één replicatie thread. Tijdens deze taak worden alle andere gerepliceerde query's geblokkeerd en moeten wacht totdat de DDL-bewerking op de replica server is voltooid. Zelfs online DDL-bewerkingen veroorzaken deze vertraging. DDL-bewerkingen verhogen replicatie latentie.
 
-Als u het [langzame query logboek](concepts-server-logs.md) op de bron server hebt ingeschakeld, kunt u dit latentie probleem detecteren door te controleren of er een DDL-opdracht is uitgevoerd op de bron server. Via het weghalen van de index, het wijzigen van de naam en het maken van, kunt u het InPlace-algoritme voor de ALTER TABLE gebruiken. Mogelijk moet u de tabel gegevens kopiëren en de tabel opnieuw samen stellen. 
+Als u het [langzame query logboek](concepts-server-logs.md) op de bron server hebt ingeschakeld, kunt u dit latentie probleem detecteren door te controleren of er een DDL-opdracht is uitgevoerd op de bron server. Via het weghalen van de index, het wijzigen van de naam en het maken van, kunt u het InPlace-algoritme voor de ALTER TABLE gebruiken. Mogelijk moet u de tabel gegevens kopiëren en de tabel opnieuw samen stellen.
 
-Normaal gesp roken wordt gelijktijdige DML ondersteund voor het InPlace-algoritme. U kunt echter kort een exclusieve meta gegevens vergrendeling voor de tabel nemen wanneer u de bewerking voorbereidt en uitvoert. Voor de instructie CREATE INDEX kunt u de-componenten ALGORITHM en LOCK gebruiken om de methode voor het kopiëren van tabellen en het niveau van gelijktijdigheid voor lezen en schrijven te beïnvloeden. U kunt nog steeds DML-bewerkingen voor komen door een index met volledige tekst of ruimtelijke index toe te voegen. 
+Normaal gesp roken wordt gelijktijdige DML ondersteund voor het InPlace-algoritme. U kunt echter kort een exclusieve meta gegevens vergrendeling voor de tabel nemen wanneer u de bewerking voorbereidt en uitvoert. Voor de instructie CREATE INDEX kunt u de-componenten ALGORITHM en LOCK gebruiken om de methode voor het kopiëren van tabellen en het niveau van gelijktijdigheid voor lezen en schrijven te beïnvloeden. U kunt nog steeds DML-bewerkingen voor komen door een index met volledige tekst of ruimtelijke index toe te voegen.
 
 In het volgende voor beeld wordt een index gemaakt met behulp van de ALGORITME-en LOCK-componenten.
 
@@ -226,24 +227,25 @@ Voor een DDL-instructie waarvoor een vergren deling is vereist, kunt u de replic
 
 #### <a name="downgraded-replica-server"></a>Downgrade-replica server
 
-In Azure Database for MySQL worden bij het lezen van replica's dezelfde server configuratie gebruikt als voor de bron server. U kunt de configuratie van de replica server wijzigen nadat deze is gemaakt. 
+In Azure Database for MySQL worden bij het lezen van replica's dezelfde server configuratie gebruikt als voor de bron server. U kunt de configuratie van de replica server wijzigen nadat deze is gemaakt.
 
-Als de replica server downgrade heeft uitgevoerd, kan de werk belasting meer resources verbruiken, die op zijn beurt kunnen leiden tot replicatie latentie. Als u dit probleem wilt detecteren, gebruikt u Azure Monitor om het CPU-en geheugen gebruik van de replica server te controleren. 
+Als de replica server downgrade heeft uitgevoerd, kan de werk belasting meer resources verbruiken, die op zijn beurt kunnen leiden tot replicatie latentie. Als u dit probleem wilt detecteren, gebruikt u Azure Monitor om het CPU-en geheugen gebruik van de replica server te controleren.
 
 In dit scenario raden we u aan de configuratie van de replica server te laten staan op waarden die gelijk zijn aan of groter zijn dan de waarden van de bron server. Met deze configuratie kan de replica worden bewaard bij de bron server.
 
 #### <a name="improving-replication-latency-by-tuning-the-source-server-parameters"></a>Replicatie latentie verbeteren door de para meters van de bron server te optimaliseren
 
-In Azure Database for MySQL is replicatie standaard geoptimaliseerd om te worden uitgevoerd met parallelle threads op replica's. Wanneer hoge-gelijktijdigheids workloads op de bron server ertoe leiden dat de replica server achterblijft, kunt u de replicatie latentie verbeteren door het configureren van de para meter binlog_group_commit_sync_delay op de bron server. 
+In Azure Database for MySQL is replicatie standaard geoptimaliseerd om te worden uitgevoerd met parallelle threads op replica's. Wanneer hoge-gelijktijdigheids workloads op de bron server ertoe leiden dat de replica server achterblijft, kunt u de replicatie latentie verbeteren door het configureren van de para meter binlog_group_commit_sync_delay op de bron server.
 
-De binlog_group_commit_sync_delay para meter bepaalt hoeveel micro seconden het binaire logboek door voeren wacht voordat het binaire logboek bestand wordt gesynchroniseerd. Het voor deel van deze para meter is dat in plaats van onmiddellijk elke vastgelegde trans actie wordt toegepast, de bron server de binaire logboek updates bulksgewijs verzendt. Deze vertraging vermindert de i/o van de replica en helpt de prestaties te verbeteren. 
+De binlog_group_commit_sync_delay para meter bepaalt hoeveel micro seconden het binaire logboek door voeren wacht voordat het binaire logboek bestand wordt gesynchroniseerd. Het voor deel van deze para meter is dat in plaats van onmiddellijk elke vastgelegde trans actie wordt toegepast, de bron server de binaire logboek updates bulksgewijs verzendt. Deze vertraging vermindert de i/o van de replica en helpt de prestaties te verbeteren.
 
-Het kan handig zijn om de binlog_group_commit_sync_delay-para meter in te stellen op 1000. Controleer vervolgens de replicatie latentie. Stel deze para meter voorzichtig in en gebruik deze alleen voor werk belastingen met hoge gelijktijdigheid. 
+Het kan handig zijn om de binlog_group_commit_sync_delay-para meter in te stellen op 1000. Controleer vervolgens de replicatie latentie. Stel deze para meter voorzichtig in en gebruik deze alleen voor werk belastingen met hoge gelijktijdigheid.
 
-> [!IMPORTANT] 
+> [!IMPORTANT]
 > In replica server wordt binlog_group_commit_sync_delay para meter aanbevolen als 0. Dit wordt aanbevolen omdat de replica server in tegens telling tot de bron server geen hoge gelijktijdigheid heeft en de waarde voor binlog_group_commit_sync_delay op de replica server onbedoeld kan leiden tot een verhoging van de replicatie vertraging.
 
-Bij een laag gelijktijdigheids werk belasting die veel Singleton-trans acties bevat, kan de binlog_group_commit_sync_delay-instelling de latentie verhogen. De latentie kan toenemen omdat de IO-thread wacht op bulk binaire logboek updates, zelfs als er slechts enkele trans acties worden doorgevoerd. 
+Bij een laag gelijktijdigheids werk belasting die veel Singleton-trans acties bevat, kan de binlog_group_commit_sync_delay-instelling de latentie verhogen. De latentie kan toenemen omdat de IO-thread wacht op bulk binaire logboek updates, zelfs als er slechts enkele trans acties worden doorgevoerd.
 
 ## <a name="next-steps"></a>Volgende stappen
+
 Bekijk het overzicht van de [MySQL binlog-replicatie](https://dev.mysql.com/doc/refman/5.7/en/binlog-replication-configuration-overview.html).

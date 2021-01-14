@@ -8,18 +8,18 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 01/09/2019
 ms.author: vikancha
-ms.openlocfilehash: c3443abaa1157122f7bcd43277a0ae00a2cd4407
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 7af13147804fd1e50a033635985c08b9c62f76ba
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98059089"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200988"
 ---
 # <a name="install-nvidia-gpu-drivers-on-n-series-vms-running-linux"></a>NVIDIA GPU-Stuur Programma's installeren op Vm's met N-serie waarop Linux wordt uitgevoerd
 
 Als u gebruik wilt maken van de GPU-mogelijkheden van virtuele machines van Azure N-serie die worden ondersteund door NVIDIA-Gpu's, moet u NVIDIA GPU-Stuur Programma's installeren. Met de [uitbrei ding NVIDIA GPU-stuur programma](../extensions/hpccompute-gpu-linux.md) worden de juiste NVIDIA-CUDA of raster Stuur Programma's geïnstalleerd op een virtuele machine uit de N-serie. De uitbrei ding installeren of beheren met de Azure Portal of hulpprogram ma's, zoals de Azure CLI-of Azure Resource Manager-sjablonen. Zie de [documentatie voor NVIDIA GPU-Stuur Programma's](../extensions/hpccompute-gpu-linux.md) voor ondersteunde distributies en implementaties tappen.
 
-Als u ervoor kiest om de NVIDIA GPU-Stuur Programma's hand matig te installeren, worden in dit artikel ondersteunde distributies, stuur Programma's en installatie-en verificatie stappen beschreven. Informatie over hand matige installatie van Stuur Programma's is ook beschikbaar voor [Windows-vm's](../windows/n-series-driver-setup.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+Als u ervoor kiest om de NVIDIA GPU-Stuur Programma's hand matig te installeren, worden in dit artikel ondersteunde distributies, stuur Programma's en installatie-en verificatie stappen beschreven. Informatie over hand matige installatie van Stuur Programma's is ook beschikbaar voor [Windows-vm's](../windows/n-series-driver-setup.md).
 
 Zie [GPU Linux VM-grootten](../sizes-gpu.md?toc=/azure/virtual-machines/linux/toc.json)voor virtuele machines van de N-serie, opslag capaciteit en schijf Details. 
 
@@ -388,4 +388,4 @@ Maak vervolgens een vermelding voor uw update script in `/etc/rc.d/rc3.d` zodat 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [een virtuele Linux-machine generaliseren en vastleggen](capture-image.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)voor het vastleggen van een Linux VM-installatie kopie met de geïnstalleerde NVIDIA-Stuur Programma's.
+* Zie [een virtuele Linux-machine generaliseren en vastleggen](capture-image.md)voor het vastleggen van een Linux VM-installatie kopie met de geïnstalleerde NVIDIA-Stuur Programma's.

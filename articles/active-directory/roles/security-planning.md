@@ -14,12 +14,12 @@ ms.subservice: roles
 ms.custom: it-pro
 ms.reviewer: martincoetzer; MarkMorow
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 3a7304ffbb7718205ead48e27989d4a169375997
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: c981bde4e0699c4da33ada7e287b16e54b899a58
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861983"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98198914"
 ---
 # <a name="securing-privileged-access-for-hybrid-and-cloud-deployments-in-azure-ad"></a>Bevoegde toegang beveiligen voor hybride implementaties en cloudimplementaties in Azure AD
 
@@ -255,7 +255,7 @@ Kwaadwillende personen kunnen proberen om geautoriseerde accounts te richten, zo
 * Imitatie aanvallen
 * Referentie diefstal aanvallen, zoals toetsaanslag registratie, Pass-the-hash en Pass-the-ticket
 
-Door privileged Access workstations te implementeren, kunt u het risico dat beheerders hun referenties invoeren, beperken in een bureaublad omgeving die niet is gehard. Zie [privileged Access workstations](/windows-server/identity/securing-privileged-access/privileged-access-workstations)(Engelstalig) voor meer informatie.
+Door privileged Access workstations te implementeren, kunt u het risico dat beheerders hun referenties invoeren, beperken in een bureaublad omgeving die niet is gehard. Zie [privileged Access workstations](https://4sysops.com/archives/understand-the-microsoft-privileged-access-workstation-paw-security-model/)(Engelstalig) voor meer informatie.
 
 #### <a name="review-national-institute-of-standards-and-technology-recommendations-for-handling-incidents"></a>Bestudeer het National Institute of Standards and Technology aanbevelingen voor het afhandelen van incidenten
 

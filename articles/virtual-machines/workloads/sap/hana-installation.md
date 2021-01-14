@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 01/16/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: a1430b32c0e74be7a0e50fa4c5c183018b2b55e0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 81d44dae0fed45d4a4df76973c7e233fd71baff1
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96006299"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98198965"
 ---
 # <a name="how-to-install-and-configure-sap-hana-large-instances-on-azure"></a>SAP HANA (grote instanties) installeren en configureren in azure
 
@@ -125,11 +125,11 @@ Voor SAP HANA op Azure (grote instanties), is de tijd synchronisatie die wordt u
 Als gevolg hiervan moet u een afzonderlijke tijd server instellen die kan worden gebruikt door SAP-toepassings servers die worden uitgevoerd op virtuele Azure-machines en op de SAP HANA data base-exemplaren die worden uitgevoerd op HANA grote instanties. De opslag infrastructuur in grote instantie stempels is tijd gesynchroniseerd met NTP-servers.
 
 
-## <a name="networking"></a>Netwerken
+## <a name="networking"></a>Networking
 We gaan ervan uit dat u de aanbevelingen bij het ontwerpen van uw virtuele Azure-netwerken hebt gevolgd en dat deze virtuele netwerken worden verbonden met de HANA grote instanties, zoals beschreven in de volgende documenten:
 
 - [Overzicht en architectuur van SAP HANA (grote instanties) op Azure](./hana-overview-architecture.md)
-- [Infra structuur en connectiviteit van SAP HANA (grote instanties) op Azure](hana-overview-infrastructure-connectivity.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)
+- [Infra structuur en connectiviteit van SAP HANA (grote instanties) op Azure](hana-overview-infrastructure-connectivity.md)
 
 Er zijn enkele details over de netwerken van de afzonderlijke eenheden. Elke HANA grote instantie-eenheid wordt geleverd met twee of drie IP-adressen die zijn toegewezen aan twee of drie NIC-poorten. In HANA scale-out configuraties en het HANA-systeem replicatie scenario worden drie IP-adressen gebruikt. Een van de IP-adressen die zijn toegewezen aan de NIC van de eenheid, bevindt zich buiten de IP-adres groep van de server die wordt beschreven in [SAP Hana (grote exemplaren) overzicht en architectuur op Azure](./hana-overview-architecture.md).
 
@@ -139,7 +139,7 @@ Zie voor meer informatie over Ethernet-Details voor uw architectuur de door [HLI
 
 De opslag indeling voor SAP HANA op Azure (grote instanties) wordt geconfigureerd door SAP HANA op Azure `service management` via door SAP aanbevolen richt lijnen. Deze richt lijnen zijn gedocumenteerd in het Witboek [SAP Hana Storage-vereisten](https://go.sap.com/documents/2015/03/74cdb554-5a7c-0010-82c7-eda71af511fa.html) . 
 
-De ruwe grootte van de verschillende volumes met de verschillende HANA grote instanties Sku's wordt beschreven in [SAP Hana (grote exemplaren) overzicht en architectuur op Azure](hana-overview-architecture.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json).
+De ruwe grootte van de verschillende volumes met de verschillende HANA grote instanties Sku's wordt beschreven in [SAP Hana (grote exemplaren) overzicht en architectuur op Azure](hana-overview-architecture.md).
 
 De naam conventies van de opslag volumes worden weer gegeven in de volgende tabel:
 
@@ -161,7 +161,7 @@ Voor scale-out-omgevingen, gegevens, logboeken en logboek back-upvolumes worden 
 
 Wanneer u een exemplaar van de HANA-grote instantie bekijkt, realiseert u zich dat de eenheden worden geleverd met een ruimer schijf volume voor HANA/Data, en dat er een volume HANA/logboek/back-up is. De reden waarom de HANA/gegevens zo groot zijn gemaakt, is dat de opslag momentopnamen die u als klant hebt aangeboden, gebruikmaken van hetzelfde schijf volume. Hoe meer opslag momentopnamen u uitvoert, hoe meer ruimte wordt gebruikt door moment opnamen in de toegewezen opslag volumes. 
 
-De HANA/logboek/back-upvolume is niet het volume voor database back-ups. Het formaat kan worden gebruikt als het back-upvolume voor het HANA-transactie logboek back-ups. Zie [SAP Hana (grote instanties) hoge Beschik baarheid en herstel na nood gevallen op Azure](hana-overview-high-availability-disaster-recovery.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json)voor meer informatie. 
+De HANA/logboek/back-upvolume is niet het volume voor database back-ups. Het formaat kan worden gebruikt als het back-upvolume voor het HANA-transactie logboek back-ups. Zie [SAP Hana (grote instanties) hoge Beschik baarheid en herstel na nood gevallen op Azure](hana-overview-high-availability-disaster-recovery.md)voor meer informatie. 
 
 Naast de opslag die wordt weer gegeven, kunt u extra opslag capaciteit kopen in stappen van 1 TB. Deze extra opslag ruimte kan worden toegevoegd als nieuwe volumes aan een HANA grote instantie.
 

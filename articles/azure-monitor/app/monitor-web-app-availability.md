@@ -4,12 +4,12 @@ description: Stel webtests in Application Insights in. Ontvang een waarschuwing 
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.reviewer: sdash
-ms.openlocfilehash: 82b433407906c09d38a46c842334153525fb3c17
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 1b51c70dcebbfad5417a8478f4a956fb5d0608b1
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007922"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98198659"
 ---
 # <a name="monitor-the-availability-of-any-website"></a>Beschik baarheid van alle websites bewaken
 
@@ -26,6 +26,9 @@ Er zijn drie soorten beschikbaarheids tests:
 * [Aangepaste beschikbaarheids testen](/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability?view=azure-dotnet): als u besluit een aangepaste toepassing te maken om beschikbaarheids tests uit te voeren, `TrackAvailability()` kunt u de methode gebruiken om de resultaten naar Application Insights te verzenden.
 
 **U kunt Maxi maal 100 beschik bare beschikbaarheids tests maken per Application Insights resource.**
+
+> [!IMPORTANT]
+> Beide, [URL-ping testen](#create-a-url-ping-test) en [webtest met meerdere stappen](availability-multistep.md) zijn afhankelijk van de open bare Internet-DNS-infra structuur om de domein namen van de geteste eind punten op te lossen. Dit betekent dat als u Privé-DNS gebruikt, u ervoor moet zorgen dat elke domein naam van uw test ook kan worden omgezet door de open bare domeinnaam servers, of dat wanneer dit niet mogelijk is, u in plaats daarvan [aangepaste beschikbaarheids tests](/dotnet/api/microsoft.applicationinsights.telemetryclient.trackavailability?view=azure-dotnet) kunt gebruiken.
 
 ## <a name="create-an-application-insights-resource"></a>Een Application Insights-resource maken
 
@@ -69,7 +72,7 @@ Als u uw eerste beschikbaarheids aanvraag wilt maken, opent u het deel venster B
 |Instelling| Uitleg
 |----|----|----|
 |**Bijna realtime (preview-versie)** | We raden u aan bijna realtime waarschuwingen te gebruiken. Het configureren van dit type waarschuwing wordt uitgevoerd nadat de beschikbaarheids test is gemaakt.  |
-|**Klassiek** | Het gebruik van klassieke waarschuwingen voor nieuwe beschikbaarheids tests wordt niet meer aanbevolen.|
+|**Klassieke** | Het gebruik van klassieke waarschuwingen voor nieuwe beschikbaarheids tests wordt niet meer aanbevolen.|
 |**Drempel waarde voor waarschuwings locatie**|We raden aan dat er mini maal 3/5 locaties zijn. De optimale relatie tussen de drempel waarde van de waarschuwings locatie en het aantal test locaties is drempel waarde voor **waarschuwings locaties**  =  **aantal test locaties-2, met een minimum van vijf test locaties.**|
 
 ### <a name="location-population-tags"></a>Locatie populatie Tags
@@ -92,7 +95,7 @@ De volgende populatie Tags kunnen worden gebruikt voor het kenmerk geo-locatie b
 |----------------------------------------|-------------------|
 | Australië - oost                         | EMEA-au-Syd-Edge  |
 | Brazil South                           | latam-BR-Gru-Edge |
-| Central US                             | VS-FL-quote-Edge    |
+| US - centraal                             | VS-FL-quote-Edge    |
 | Azië - oost                              | Apac-HK-hkn-AZR   |
 | VS - oost                                | US-VA-Ash-AZR     |
 | Frankrijk-zuid (voorheen Frankrijk-centraal) | EMEA-CH-ZRH-Edge  |

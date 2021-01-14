@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/07/2017
 ms.author: rogarana
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 32cbfbcc8feeff66101ab5e2c95f476a4a4215e9
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 55f7c68df1e339f0f9eda809bbb0acbb2e9131b5
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91973900"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200886"
 ---
 # <a name="migrate-from-amazon-web-services-aws-and-other-platforms-to-managed-disks-in-azure"></a>Migreren van Amazon Web Services (AWS) en andere platforms naar Managed Disks in azure
 
@@ -26,7 +26,7 @@ U kunt zowel gegeneraliseerde als speciale Vhd's uploaden.
 - **Gespecialiseerde VHD** : onderhoudt de gebruikers accounts, toepassingen en andere status gegevens van de oorspronkelijke VM. 
 
 > [!IMPORTANT]
-> Voordat u een VHD naar Azure uploadt, moet u [een Windows-VHD of VHDX voorbereiden om te uploaden naar Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+> Voordat u een VHD naar Azure uploadt, moet u [een Windows-VHD of VHDX voorbereiden om te uploaden naar Azure](prepare-for-upload-vhd-image.md)
 >
 >
 
@@ -64,20 +64,20 @@ Bekijk de prestatie kenmerken van virtuele machines die met Premium Storage werk
 
 Er zijn zeven soorten Premium Managed disks die kunnen worden gebruikt met uw virtuele machine en elk specifieke IOPs-en doorvoer limieten heeft. Houd rekening met deze beperkingen bij het kiezen van het Premium-schijf type voor uw virtuele machine op basis van de behoeften van uw toepassing in termen van capaciteit, prestaties, schaal baarheid en piek belasting.
 
-| Type Premium-schijven  | P4    | P6    | P10   | P15   | P20   | P30   | P40   | P50   | 
+| Type Premium-schijven  | P4    | P6    | P10   | P15   | P20   | P30   | P40   | P50   | 
 |---------------------|-------|-------|-------|-------|-------|-------|-------|-------|
-| Schijfgrootte           | 32 GB| 64 GB| 128 GB| 256 GB|512 GB | 1024 GB (1 TB)    | 2048 GB (2 TB)    | 4095 GB (4 TB)    | 
-| IOP's per schijf       | 120   | 240   | 500   | 1100  |2300              | 5000              | 7500              | 7500              | 
-| Doorvoer per schijf | 25 MB per seconde  | 50 MB per seconde  | 100 MB per seconde | 125 MB per seconde |150 MB per seconde | 200 MB per seconde | 250 MB per seconde | 250 MB per seconde |
+| Schijfgrootte           | 32 GB| 64 GB| 128 GB| 256 GB|512 GB | 1024 GB (1 TB)    | 2048 GB (2 TB)    | 4095 GB (4 TB)    | 
+| IOP's per schijf       | 120   | 240   | 500   | 1100  |2300              | 5000              | 7500              | 7500              | 
+| Doorvoer per schijf | 25 MB per seconde  | 50 MB per seconde  | 100 MB per seconde | 125 MB per seconde |150 MB per seconde | 200 MB per seconde | 250 MB per seconde | 250 MB per seconde |
 
 **Standaard Managed Disks**
 
 Er zijn zeven soorten standaard Managed disks die kunnen worden gebruikt met uw VM. Elk daarvan heeft verschillende capaciteit, maar heeft dezelfde IOPS-en doorvoer limieten. Kies het type standaard Managed disks op basis van de capaciteits behoeften van uw toepassing.
 
-| Standard-schijftype  | S4               | S6               | S10              | S15              | S20              | S30              | S40              | S50              | 
+| Standard-schijftype  | S4               | S6               | S10              | S15              | S20              | S30              | S40              | S50              | 
 |---------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------|------------------| 
-| Schijfgrootte           | 30 GB            | 64 GB            | 128 GB           | 256 GB           |512 GB           | 1024 GB (1 TB)   | 2048 GB (2 TB)    | 4095 GB (4 TB)   | 
-| IOP's per schijf       | 500              | 500              | 500              | 500              |500              | 500              | 500             | 500              | 
+| Schijfgrootte           | 30 GB            | 64 GB            | 128 GB           | 256 GB           |512 GB           | 1024 GB (1 TB)   | 2048 GB (2 TB)    | 4095 GB (4 TB)   | 
+| IOP's per schijf       | 500              | 500              | 500              | 500              |500              | 500              | 500             | 500              | 
 | Doorvoer per schijf | 60 MB per seconde | 60 MB per seconde | 60 MB per seconde | 60 MB per seconde |60 MB per seconde | 60 MB per seconde | 60 MB per seconde | 60 MB per seconde | 
 
 ### <a name="disk-caching-policy"></a>Beleid voor schijf cache 
@@ -93,4 +93,4 @@ Bekijk de [prijzen voor Managed disks](https://azure.microsoft.com/pricing/detai
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voordat u een VHD naar Azure uploadt, moet u [een Windows-VHD of VHDX voorbereiden om te uploaden naar Azure](prepare-for-upload-vhd-image.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json)
+- Voordat u een VHD naar Azure uploadt, moet u [een Windows-VHD of VHDX voorbereiden om te uploaden naar Azure](prepare-for-upload-vhd-image.md)

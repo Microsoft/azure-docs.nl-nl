@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 76c3f729a8520c7bff7b49a1d2200d7950f8a9f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 55dcd65e901a5ce8665ef8d3a2a29d7943581df9
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87074299"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200716"
 ---
 # <a name="vm-is-unresponsive-with-c01a001d-error-when-applying-windows-update"></a>De VM reageert niet met de fout ' C01A001D ' bij het Toep assen van Windows Update
 
@@ -56,7 +56,7 @@ Een kern bestand kan niet worden gemaakt in het bestands systeem. Het besturings
 
 Als de schijf niet al 1 TB is, moet u het formaat ervan wijzigen. Zodra de schijf 1 TB is, voert u een schijf opruiming en een defragmentatie van het station uit.
 
-1. Controleer of de schijf vol is. Als de schijf kleiner is dan 1 TB, [kunt u deze uitbreiden tot Maxi maal 1 TB met behulp van Power shell](../windows/expand-os-disk.md?toc=%2Fazure%2Fvirtual-machines%2Fwindows%2Ftoc.json).
+1. Controleer of de schijf vol is. Als de schijf kleiner is dan 1 TB, [kunt u deze uitbreiden tot Maxi maal 1 TB met behulp van Power shell](../windows/expand-os-disk.md).
 2. Als de schijf 1 TB is, voert u een schijf opruiming uit.
     - [Ontkoppel de gegevens schijf van de verbroken virtuele machine](../windows/detach-disk.md).
     - [Koppel de gegevens schijf aan een WERKENDE VM](../windows/attach-disk-ps.md#attach-an-existing-data-disk-to-a-vm).

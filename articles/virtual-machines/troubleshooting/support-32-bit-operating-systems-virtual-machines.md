@@ -13,19 +13,19 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: 1b801bac28b131ff43c47024649bfe0986f768c7
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 81b7efdd6bca0471719c11d130be95405f4d54e1
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202892"
+ms.locfileid: "98210185"
 ---
 # <a name="support-for-32-bit-operating-systems-in-azure-virtual-machines"></a>Ondersteuning voor 32-bits besturingssystemen in virtuele Azure-machines
 
 Microsoft Azure kunnen gebruikers nu hun 32-bits Windows-besturings systemen overzetten naar Azure. Alleen gespecialiseerde Vhd's worden ondersteund en gegeneraliseerde installatie kopieën werken niet in Azure. Omdat sommige van deze besturings systemen al hun einde van de levens cyclus voor ondersteuning hebben bereikt, biedt micro soft mogelijk geen aanvullende ondersteuning voor hen. Er wordt ook geen ondersteuning geboden voor op Linux of Berkeley (Software Distribution) gebaseerde besturings systemen die worden uitgevoerd op een Microsoft Azure virtuele machine (VM).
 
 > [!NOTE]
-> Azure-platform heeft een beperking van de geheugen ruimte die is opgelegd op Vm's met 32-bits besturings systemen, waarbij slechts 1 GB aan geheugen beschikbaar wordt gemaakt voor de virtuele machine, en de rest van het geheugen voor de virtuele machine wordt weer gegeven als gereserveerd in de gast-VM. Dit is een bekend probleem en we hebben momenteel geen ETA voor een oplossing. We raden u aan om over te stappen op 64-bits besturingssysteem versies.
+> Het Azure-platform heeft een beperking van de geheugen ruimte die is opgelegd op Vm's met 32-bits besturings systemen, waarbij slechts 1 GB aan geheugen beschikbaar kan worden gemaakt voor de VM (*met name op client-sku's zoals Win7 of Win10*), en de rest van het geheugen voor de virtuele machine wordt weer gegeven als gereserveerd in de gast-VM. Dit is een bekend probleem en we hebben momenteel geen ETA voor een oplossing. We raden u aan om over te stappen op 64-bits besturingssysteem versies.
 > 
 
 ## <a name="more-information"></a>Meer informatie

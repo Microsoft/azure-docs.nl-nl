@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/09/2020
-ms.openlocfilehash: 182ec758a8764a959b39296163e63e800cf5108c
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: a7171d656ec9f839aea4ae73763ec6ebd20c2bb3
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008481"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209828"
 ---
 # <a name="how-to-work-with-search-results-in-azure-cognitive-search"></a>Werken met zoek resultaten in azure Cognitive Search
 
@@ -103,7 +103,7 @@ Zoek scores geven algemeen inzicht in de relevantie aan, die overeenkomen met de
 
 ### <a name="how-to-get-consistent-ordering"></a>Consistente volg orde krijgen
 
-Als consistente volg orde een toepassings vereiste is, kunt u expliciet een [ **`$orderby`** ]-expressie (query-odata-filter-OrderBy-syntax.MD) definiëren voor een veld. Alleen velden die zijn geïndexeerd als **`sortable`** kunnen worden gebruikt om resultaten te best Ellen. Velden die meestal worden gebruikt in de **`$orderby`** velden classificatie, datum en locatie als u de waarde van de **`orderby`** para meter opgeeft om veld namen op te vragen en de [**`geo.distance()` functie**](query-odata-filter-orderby-syntax.md) voor georuimtelijke waarden te gebruiken.
+Als consistente volg orde een toepassings vereiste is, kunt u expliciet een [ **`$orderby`** expressie](query-odata-filter-orderby-syntax.md) definiëren voor een veld. Alleen velden die zijn geïndexeerd als **`sortable`** kunnen worden gebruikt om resultaten te best Ellen. Velden die meestal worden gebruikt in de **`$orderby`** velden classificatie, datum en locatie als u de waarde van de **`orderby`** para meter opgeeft om veld namen op te vragen en de [**`geo.distance()` functie**](query-odata-filter-orderby-syntax.md) voor georuimtelijke waarden te gebruiken.
 
 Een andere benadering die consistentie bevordert, is het gebruik van een [aangepast Score profiel](index-add-scoring-profiles.md). Score profielen bieden u meer controle over de rang schikking van items in de zoek resultaten, met de mogelijkheid om overeenkomsten te verhogen die in specifieke velden worden gevonden. De extra waarderings logica kan u helpen kleine verschillen tussen replica's te overschrijven omdat de zoek scores voor elk document verder uit elkaar liggen. U wordt aangeraden het [classificatie algoritme](index-ranking-similarity.md) voor deze benadering te hanteren.
 

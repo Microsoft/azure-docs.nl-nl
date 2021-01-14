@@ -4,15 +4,15 @@ description: Meer informatie over het beheren van afzonderlijke Sens oren, waaro
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/22/2020
+ms.date: 01/10/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: daaca1d7c6cf43f69241e6a23f8bdfaf4015ba23
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: b61bef89d53da280961b818425d11a6f81bbf5ea
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97976942"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210236"
 ---
 # <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren
 
@@ -455,7 +455,7 @@ Om toegang te krijgen tot systeem eigenschappen:
 
 3. Selecteer **systeem eigenschappen** in de sectie **Algemeen** .
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Onderzoek en pakketten voor bedreigings informatie](how-to-work-with-threat-intelligence-packages.md)
 

@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 05/01/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 93ac8cd3e462c244840a5ed569d685a9d67fa6c2
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: c752bc6ae49f009056067545fde292dc29027d5d
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165872"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208128"
 ---
 # <a name="best-practices-for-serverless-sql-pool-in-azure-synapse-analytics"></a>Aanbevolen procedures voor serverloze SQL-groepen in azure Synapse Analytics
 
@@ -129,7 +129,7 @@ U kunt een met prestaties geoptimaliseerde parser gebruiken wanneer u CSV-bestan
 
 ## <a name="manually-create-statistics-for-csv-files"></a>Hand matig statistieken maken voor CSV-bestanden
 
-Een serverloze SQL-groep is afhankelijk van de statistieken voor het genereren van optimale query-uitvoerings plannen. Statistieken worden automatisch gemaakt voor kolommen in Parquet-bestanden wanneer dat nodig is. Op dit moment worden er geen statistieken automatisch gemaakt voor kolommen in CSV-bestanden. u moet statistieken hand matig maken voor kolommen die u in query's gebruikt, met name die in DISTINCT, samen voegen, waar, sorteren op en groeperen op. Controleer [statistieken in serverloze SQL-groep] (ontwikkeling-Tables-Statistics. MD # Statistics-in-serverloze-SQL-pool voor meer informatie.
+Een serverloze SQL-groep is afhankelijk van de statistieken voor het genereren van optimale query-uitvoerings plannen. Statistieken worden automatisch gemaakt voor kolommen in Parquet-bestanden wanneer dat nodig is. Op dit moment worden er geen statistieken automatisch gemaakt voor kolommen in CSV-bestanden. u moet statistieken hand matig maken voor kolommen die u in query's gebruikt, met name die in DISTINCT, samen voegen, waar, sorteren op en groeperen op. Controleer de [statistieken in de serverloze SQL-groep](develop-tables-statistics.md#statistics-in-serverless-sql-pool) voor meer informatie.
 
 ## <a name="use-cetas-to-enhance-query-performance-and-joins"></a>CETAS gebruiken om de query prestaties te verbeteren en samen te voegen
 

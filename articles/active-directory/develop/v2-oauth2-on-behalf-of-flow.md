@@ -13,12 +13,12 @@ ms.date: 08/7/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 018d67b3e4e730cd46eb524a8927b3a6d68d74e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c8167142876dfac0ae0aeff51e85b66c65c607b
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88958657"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208845"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Micro soft Identity platform en OAuth 2,0-of-flow
 
@@ -27,8 +27,8 @@ De OAuth 2,0-of-flow (OBO) wordt gebruikt als een toepassing een service/Web-API
 
 In dit artikel wordt beschreven hoe u direct kunt Program meren met het protocol in uw toepassing.  Als dat mogelijk is, kunt u het beste de ondersteunde micro soft-verificatie bibliotheken (MSAL) gebruiken in plaats van [tokens te verkrijgen en beveiligde web-api's](authentication-flows-app-scenarios.md#scenarios-and-supported-authentication-flows)aan te roepen.  Bekijk ook de voor beeld- [apps die gebruikmaken van MSAL](sample-v2-code.md).
 
-> [!NOTE]
-> Vanaf mei 2018 kan enige impliciete stroom `id_token` die is afgeleid niet worden gebruikt voor OBO-stroom. Apps met één pagina (SPAs) moeten een **toegangs** token door geven aan een vertrouwelijke client voor de middelste laag om in plaats daarvan OBO stromen uit te voeren. Zie [beperkingen](#client-limitations)voor meer informatie over welke clients OBO-aanroepen kunnen uitvoeren.
+
+Vanaf mei 2018 kan enige impliciete stroom `id_token` die is afgeleid niet worden gebruikt voor OBO-stroom. Apps met één pagina (SPAs) moeten een **toegangs** token door geven aan een vertrouwelijke client voor de middelste laag om in plaats daarvan OBO stromen uit te voeren. Zie [beperkingen](#client-limitations)voor meer informatie over welke clients OBO-aanroepen kunnen uitvoeren.
 
 ## <a name="protocol-diagram"></a>Protocol diagram
 
@@ -42,10 +42,9 @@ De volgende stappen vormen de OBO-stroom en worden uitgelegd in de Help van het 
 1. API A wordt geverifieerd bij het micro soft Identity platform token uitgifte-eind punt en vraagt een token aan voor toegang tot API B.
 1. Met het micro soft Identity platform uitgifte-eind punt worden de referenties van de API A gevalideerd samen met token A en wordt het toegangs token voor API B (token B) naar API A uitgegeven.
 1. Token B wordt ingesteld door API A in de autorisatie-header van de aanvraag voor API B.
-1. Gegevens van de beveiligde bron worden door API B naar API A en van daaruit naar de client geretourneerd.
+1. Gegevens van de beveiligde bron worden geretourneerd door API B naar API A en vervolgens naar de client.
 
-> [!NOTE]
-> In dit scenario heeft de middelste laag service geen interactie van de gebruiker om de toestemming van de gebruiker voor toegang tot de downstream API te verkrijgen. Daarom wordt de optie voor het verlenen van toegang tot de downstream API vooraf weer gegeven als onderdeel van de stap voor toestemming tijdens de verificatie. Zie [toestemming geven voor de middelste toepassing](#gaining-consent-for-the-middle-tier-application)voor meer informatie over het instellen van dit voor uw app.
+In dit scenario heeft de middelste laag service geen interactie van de gebruiker om de toestemming van de gebruiker voor toegang tot de downstream API te krijgen. Daarom wordt de optie voor het verlenen van toegang tot de downstream API vooraf weer gegeven als onderdeel van de stap voor toestemming tijdens de verificatie. Zie [toestemming geven voor de middelste toepassing](#gaining-consent-for-the-middle-tier-application)voor meer informatie over het instellen van dit voor uw app.
 
 ## <a name="middle-tier-access-token-request"></a>Aanvraag voor toegangs token op middelste laag
 
@@ -152,10 +151,9 @@ Het volgende voor beeld toont een geslaagde reactie op een aanvraag voor een toe
 }
 ```
 
-> [!NOTE]
-> Het bovenstaande toegangs token is een token met v 1.0-indeling voor Microsoft Graph. Dit komt doordat de token indeling is gebaseerd op de **bron** waartoe toegang wordt verkregen en die niet gerelateerd is aan de eind punten die worden gebruikt om deze te vragen. De Microsoft Graph is ingesteld om v 1.0-tokens te accepteren, waardoor het micro soft Identity-platform v 1.0 toegangs tokens produceert wanneer een client tokens voor Microsoft Graph aanvraagt. Andere apps kunnen aangeven dat ze v 2.0-indelings tokens, v 1.0-notatie tokens of zelfs eigen of versleutelde token-indelingen willen hebben.  Zowel de eind punten van de v 1.0 als van de v 2.0 kunnen een wille keurige indeling van het token geven: de resource kan altijd de juiste indeling van token verkrijgen, ongeacht hoe of waar het token door de client is aangevraagd. 
->
-> Alleen toepassingen moeten de toegangs tokens bekijken. Clients **mogen deze niet** controleren. Als de toegangs tokens voor andere apps in uw code worden geïnspecteerd, wordt de app onverwacht verbroken wanneer de app de indeling van de tokens wijzigt of versleutelt. 
+Het bovenstaande toegangs token is een token met v 1.0-indeling voor Microsoft Graph. Dit komt doordat de token indeling is gebaseerd op de **bron** waartoe toegang wordt verkregen en die niet gerelateerd is aan de eind punten die worden gebruikt om deze te vragen. De Microsoft Graph is ingesteld om v 1.0-tokens te accepteren, waardoor het micro soft Identity-platform v 1.0 toegangs tokens produceert wanneer een client tokens voor Microsoft Graph aanvraagt. Andere apps kunnen aangeven dat ze v 2.0-indelings tokens, v 1.0-notatie tokens of zelfs eigen of versleutelde token-indelingen willen hebben.  Zowel de eind punten van de v 1.0 als van de v 2.0 kunnen een wille keurige indeling van het token geven: de resource kan altijd de juiste indeling van token verkrijgen, ongeacht hoe of waar het token door de client is aangevraagd. 
+
+Alleen toepassingen moeten de toegangs tokens bekijken. Clients **mogen deze niet** controleren. Als de toegangs tokens voor andere apps in uw code worden geïnspecteerd, wordt de app onverwacht verbroken wanneer de app de indeling van de tokens wijzigt of versleutelt. 
 
 ### <a name="error-response-example"></a>Voor beeld van fout antwoorden
 
@@ -189,8 +187,7 @@ Authorization: Bearer eyJ0eXAiO ... 0X2tnSQLEANnSPHY0gKcgw
 
 Sommige op OAuth gebaseerde webservices moeten toegang hebben tot andere web service-Api's die SAML-bevestigingen in niet-interactieve stromen accepteren. Azure Active Directory kunt een SAML-verklaring geven in reactie op een naam van een stroom die gebruikmaakt van een SAML-gebaseerde webservice als doel bron.
 
->[!NOTE]
->Dit is een niet-standaard extensie voor de OAuth 2,0-stroom, waarmee een OAuth2 toepassing toegang kan krijgen tot Web Service API-eind punten die gebruikmaken van SAML-tokens.
+Dit is een niet-standaard extensie voor de OAuth 2,0-stroom, waarmee een OAuth2 toepassing toegang kan krijgen tot Web Service API-eind punten die gebruikmaken van SAML-tokens.
 
 > [!TIP]
 > Wanneer u een met SAML beveiligde webservice aanroept vanuit een front-end-webtoepassing, kunt u gewoon de API aanroepen en een normale interactieve verificatie stroom initiëren met de bestaande sessie van de gebruiker. U hoeft alleen een OBO-stroom te gebruiken wanneer een service-naar-service-oproep een SAML-token vereist om gebruikers context te bieden.
@@ -204,7 +201,7 @@ Afhankelijk van de architectuur of het gebruik van uw toepassing, kunt u verschi
 
 ### <a name="default-and-combined-consent"></a>/.default en gecombineerde toestemming
 
-De middelste laag toepassing voegt de client toe aan de lijst met bekende client toepassingen in het manifest en vervolgens kan de client een gecombineerde toestemmings stroom voor zowel zichzelf als de middelste laag toepassing activeren. Op het micro soft Identity platform-eind punt wordt dit gedaan met de [ `/.default` Scope](v2-permissions-and-consent.md#the-default-scope). Wanneer er een goedkeurings scherm wordt geactiveerd met behulp van bekende client toepassingen en `/.default` , wordt in **both** het venster toestemming de machtigingen voor de client voor de middelste laag weer gegeven en wordt ook elke machtiging gevraagd die nodig is voor de API van het tweede niveau. De gebruiker geeft toestemming voor beide toepassingen en vervolgens werkt de OBO-stroom.
+De middelste laag toepassing voegt de client toe aan de lijst met bekende client toepassingen in het manifest en vervolgens kan de client een gecombineerde toestemmings stroom voor zowel zichzelf als de middelste laag toepassing activeren. Op het micro soft Identity platform-eind punt wordt dit gedaan met de [ `/.default` Scope](v2-permissions-and-consent.md#the-default-scope). Wanneer er een goedkeurings scherm wordt geactiveerd met behulp van bekende client toepassingen en `/.default` , wordt in  het venster toestemming de machtigingen voor de client voor de middelste laag weer gegeven en wordt ook elke machtiging gevraagd die nodig is voor de API van het tweede niveau. De gebruiker geeft toestemming voor beide toepassingen en vervolgens werkt de OBO-stroom.
 
 ### <a name="pre-authorized-applications"></a>Vooraf geautoriseerde toepassingen
 

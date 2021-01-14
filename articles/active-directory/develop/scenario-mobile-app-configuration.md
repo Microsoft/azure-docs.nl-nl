@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: a18a36b8583f8534b2a2e643e5c155dc7a2d65e2
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: e2c632de3d602fe2d3e5bfa74f78e90f48412067
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444058"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208910"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>Een mobiele app configureren die web-Api's aanroept
 
@@ -148,8 +148,8 @@ Zie [UWP-specifieke overwegingen met MSAL.net](msal-net-uwp-considerations.md)vo
 
 Op Android en iOS bieden makelaars de volgende opties:
 
-- **Eenmalige aanmelding (SSO)** : u kunt SSO gebruiken voor apparaten die zijn geregistreerd bij Azure Active Directory (Azure AD). Wanneer u SSO gebruikt, hoeven uw gebruikers zich niet aan te melden bij elke toepassing.
-- **Apparaat-id** : met deze instelling schakelt u beleids regels voor voorwaardelijke toegang in die betrekking hebben op Azure ad-apparaten. Het verificatie proces maakt gebruik van het certificaat van het apparaat dat is gemaakt toen het apparaat werd toegevoegd aan de werk plek.
+- **Eenmalige aanmelding (SSO)**: u kunt SSO gebruiken voor apparaten die zijn geregistreerd bij Azure Active Directory (Azure AD). Wanneer u SSO gebruikt, hoeven uw gebruikers zich niet aan te melden bij elke toepassing.
+- **Apparaat-id**: met deze instelling schakelt u beleids regels voor voorwaardelijke toegang in die betrekking hebben op Azure ad-apparaten. Het verificatie proces maakt gebruik van het certificaat van het apparaat dat is gemaakt toen het apparaat werd toegevoegd aan de werk plek.
 - **Verificatie** van de toepassings-id: wanneer een toepassing de Broker aanroept, wordt de omleidings-URL door gegeven. Vervolgens wordt de Broker gecontroleerd.
 
 ### <a name="enable-the-broker-on-xamarin"></a>De Broker inschakelen op Xamarin
@@ -249,8 +249,8 @@ Voer de volgende stappen uit om het URL-schema van uw app te registreren:
 
    Hier kunt `BundleId` u uw apparaat uniek identificeren. Als dat zo `BundleId` is `yourcompany.xforms` , is uw URL-schema `msauth.com.yourcompany.xforms` .
 
-   > [!NOTE]
-   > Dit URL-schema wordt onderdeel van de omleidings-URI die uw app op unieke wijze identificeert wanneer het de reactie van de Broker ontvangt.
+  
+      Dit URL-schema wordt onderdeel van de omleidings-URI die uw app op unieke wijze identificeert wanneer het de reactie van de Broker ontvangt.
 
    ```XML
     <key>CFBundleURLTypes</key>
@@ -310,10 +310,9 @@ Wanneer MSAL voor iOS en macOS de Broker aanroept, wordt de Broker teruggebeld n
     }
 ```
 
-> [!NOTE]
-> Als u hebt aangenomen `UISceneDelegate` op Ios 13 of hoger, plaatst u de retour AANROEP MSAL `scene:openURLContexts:` in `UISceneDelegate` plaats daarvan. MSAL `handleMSALResponse:sourceApplication:` moet slechts één keer worden aangeroepen voor elke URL.
->
-> Zie de [Apple-documentatie](https://developer.apple.com/documentation/uikit/uiscenedelegate/3238059-scene?language=objc)voor meer informatie.
+Als u hebt aangenomen `UISceneDelegate` op Ios 13 of hoger, plaatst u de retour AANROEP MSAL `scene:openURLContexts:` in `UISceneDelegate` plaats daarvan. MSAL `handleMSALResponse:sourceApplication:` moet slechts één keer worden aangeroepen voor elke URL.
+
+Zie de [Apple-documentatie](https://developer.apple.com/documentation/uikit/uiscenedelegate/3238059-scene?language=objc)voor meer informatie.
 
 #### <a name="step-2-register-a-url-scheme"></a>Stap 2: een URL-schema registreren
 
@@ -329,8 +328,7 @@ Een schema voor uw app registreren:
 
    Hier kunt `BundleId` u uw apparaat uniek identificeren. Als dat zo `BundleId` is `yourcompany.xforms` , is uw URL-schema `msauth.com.yourcompany.xforms` .
 
-   > [!NOTE]
-   > Dit URL-schema wordt onderdeel van de omleidings-URI die uw app op unieke wijze identificeert wanneer het de reactie van de Broker ontvangt. Zorg ervoor dat de omleidings-URI in de indeling `msauth.(BundleId)://auth` is geregistreerd voor uw toepassing in de [Azure Portal](https://portal.azure.com).
+    Dit URL-schema wordt onderdeel van de omleidings-URI die uw app op unieke wijze identificeert wanneer het de reactie van de Broker ontvangt. Zorg ervoor dat de omleidings-URI in de indeling `msauth.(BundleId)://auth` is geregistreerd voor uw toepassing in de [Azure Portal](https://portal.azure.com).
 
    ```XML
    <key>CFBundleURLTypes</key>

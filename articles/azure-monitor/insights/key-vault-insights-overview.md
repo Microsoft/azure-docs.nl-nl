@@ -3,15 +3,15 @@ title: Key Vault met Azure Monitor bewaken voor Key Vault | Microsoft Docs
 description: In dit artikel wordt de Azure Monitor voor sleutel kluizen beschreven.
 services: azure-monitor
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 09/10/2020
-ms.openlocfilehash: d28138b251cf159b7cbc5cc6942bb287e57a95d7
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 41b058cf41aa1a8fb1def68851457385c8187823
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93088094"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209879"
 ---
 # <a name="monitoring-your-key-vault-service-with-azure-monitor-for-key-vault"></a>Bewaken van uw sleutel kluis service met Azure Monitor voor Key Vault
 Azure Monitor voor Key Vault biedt uitgebreide bewaking van uw sleutel kluizen door een uniforme weer gave te bieden van uw Key Vault-aanvragen, prestaties, fouten en latentie.
@@ -34,7 +34,7 @@ Voer de volgende stappen uit om het gebruik en de bewerkingen van uw sleutel klu
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/)
 
-2. Selecteer **monitor** in het linkerdeel venster in het Azure Portal en selecteer in de sectie inzichten de optie **sleutel kluizen** .
+2. Selecteer **monitor** in het linkerdeel venster in het Azure Portal en selecteer in de sectie inzichten de optie **sleutel kluizen**.
 
 ![Scherm afbeelding van overzichts ervaring met meerdere grafieken](./media/key-vaults-insights-overview/overview.png)
 

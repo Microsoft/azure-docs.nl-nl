@@ -14,12 +14,12 @@ ms.tgt_pltfrm: NA
 ms.workload: TBD
 ms.date: 06/05/2017
 ms.author: alkohli
-ms.openlocfilehash: 805ab0e78f0679ce483af3a73203b41132be2a59
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: df2d74701e21c3773d96564f1b06d80ddb9fce9d
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022952"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209216"
 ---
 # <a name="use-storsimple-snapshot-manager-to-create-and-manage-volume-groups"></a>StorSimple Snapshot Manager gebruiken om volume groepen te maken en te beheren
 ## <a name="overview"></a>Overzicht
@@ -50,7 +50,7 @@ Als u op het knoop punt **volume groepen** klikt, wordt in het deel venster met 
 
 | Kolom met resultaten | Beschrijving |
 |:--- |:--- |
-| Name |De **naam** kolom bevat de naam van de volume groep. |
+| Naam |De **naam** kolom bevat de naam van de volume groep. |
 | Toepassing |De kolom **toepassingen** toont het aantal VSS-schrijvers dat momenteel is geïnstalleerd en wordt uitgevoerd op de Windows-host. |
 | Geselecteerd |In de **geselecteerde** kolom ziet u het aantal volumes dat is opgenomen in de volume groep. Een nul (0) geeft aan dat er geen toepassing is gekoppeld aan de volumes in de volume groep. |
 | Voeren |In de **geïmporteerde** kolom ziet u het aantal geïmporteerde volumes. Als deze eigenschap is ingesteld op **True**, wordt met deze kolom aangegeven dat een volume groep is geïmporteerd uit het Azure Portal en niet is gemaakt in StorSimple Snapshot Manager. |
@@ -72,7 +72,7 @@ Gebruik de volgende procedure om een volume groep te maken.
     Het dialoog venster **een volume groep maken** wordt weer gegeven.
    
     ![Een dialoog venster voor een volume groep maken](./media/storsimple-snapshot-manager-manage-volume-groups/HCS_SSM_CreateVolumeGroup_dialog.png)
-3. Voer de volgende gegevens in:
+3. Voer de volgende informatie in:
    
    1. Typ in het vak **naam** een unieke naam voor de nieuwe volume groep.
    2. Selecteer in het vak **toepassingen** de optie toepassingen die zijn gekoppeld aan de volumes die u aan de volume groep wilt toevoegen.
@@ -107,7 +107,7 @@ Gebruik de volgende procedure om een volume groep te bewerken.
 #### <a name="to-edit-a-volume-group"></a>Een volume groep bewerken
 1. Klik op het pictogram bureau blad om StorSimple Snapshot Manager te starten.
 2. Vouw in het deel venster **bereik** het knoop punt **volume groepen** uit, klik met de rechter muisknop op de naam van de volume groep en klik vervolgens op **bewerken**.
-3. Het dialoog venster * * een volume groep maken * * wordt weer gegeven. U kunt de **naam**, de **toepassingen** en de **volume** vermeldingen wijzigen.
+3. Het dialoog venster **een volume groep maken** wordt weer gegeven. U kunt de **naam**, de **toepassingen** en de **volume** vermeldingen wijzigen.
 4. Klik op **OK** om uw wijzigingen op te slaan.
 
 ## <a name="delete-a-volume-group"></a>Een volume groep verwijderen

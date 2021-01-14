@@ -12,12 +12,12 @@ ms.date: 09/23/2020
 ms.author: ryanwi
 ms.reviewer: hirsin, jesakowi, jmprieur, marsma
 ms.custom: aaddev, fasttrack-edit, contperf-fy21q1, identityplatformtop40
-ms.openlocfilehash: d3edadd4878dbd6e06648f7fb67a0c3e111665d1
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: da432ee3877af4de931ee6d55860b647090d8e3d
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178123"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208774"
 ---
 # <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform
 
@@ -31,8 +31,7 @@ Het micro soft Identity-platform implementeert het [OAuth 2,0](active-directory-
 * Microsoft 365-mail-API: `https://outlook.office.com`
 * Azure Key Vault: `https://vault.azure.net`
 
-> [!NOTE]
-> We raden u ten zeerste aan om Microsoft Graph te gebruiken in plaats van Microsoft 365 e-mail-API, enzovoort.
+We raden u ten zeerste aan om Microsoft Graph te gebruiken in plaats van Microsoft 365 e-mail-API, enzovoort.
 
 Dit geldt ook voor alle resources van derden die zijn geïntegreerd met het micro soft Identity platform. Elk van deze resources kan ook een set machtigingen definiëren die kunnen worden gebruikt om de functionaliteit van die bron te verdelen in kleinere segmenten. [Microsoft Graph](https://graph.microsoft.com) heeft bijvoorbeeld machtigingen gedefinieerd om de volgende taken uit te voeren, onder andere:
 
@@ -115,8 +114,7 @@ De `scope` para meter is een door spaties gescheiden lijst met gedelegeerde mach
 
 Nadat de gebruiker zijn of haar referenties heeft ingevoerd, controleert het micro soft Identity platform-eind punt een overeenkomende record van de toestemming van de *gebruiker*. Als de gebruiker zich in het verleden niet heeft ingestemd met een van de aangevraagde machtigingen, noch een beheerder heeft ingestemd met deze machtigingen namens de hele organisatie, wordt de gebruiker door het micro soft Identity platform-eind punt gevraagd om de aangevraagde machtigingen te verlenen.
 
-> [!NOTE]
->Op dit moment worden de `offline_access` machtigingen ("toegang tot gegevens waartoe u toegang hebt verleend") en `user.read` (waarbij u zich aanmeldt en uw profiel lezen ") automatisch opgenomen in de eerste toestemming voor een toepassing.  Deze machtigingen zijn over het algemeen vereist voor de juiste functionaliteit van de app: `offline_access` geeft de app toegang tot het vernieuwen van tokens, kritiek voor systeem eigen en web-apps, terwijl `user.read` u toegang hebt tot de claim, waardoor de gebruiker in de loop van de `sub` tijd en toegang kan krijgen tot elementaire gebruikers gegevens.
+Op dit moment worden de `offline_access` machtigingen ("toegang tot gegevens waartoe u toegang hebt verleend") en `user.read` (waarbij u zich aanmeldt en uw profiel lezen ") automatisch opgenomen in de eerste toestemming voor een toepassing.  Deze machtigingen zijn over het algemeen vereist voor de juiste functionaliteit van de app: `offline_access` geeft de app toegang tot het vernieuwen van tokens, kritiek voor systeem eigen en web-apps, terwijl `user.read` u toegang hebt tot de claim, waardoor de gebruiker in de loop van de `sub` tijd en toegang kan krijgen tot elementaire gebruikers gegevens.
 
 ![Voor beeld van een scherm opname met de toestemming van een werk account](./media/v2-permissions-and-consent/work_account_consent.png)
 
@@ -148,8 +146,7 @@ Als de toepassing toepassings machtigingen aanvraagt en een beheerder deze macht
 
 ## <a name="using-the-admin-consent-endpoint"></a>Het afstemmings eindpunt van de beheerder gebruiken
 
-> [!NOTE]
-> Let op: nadat u toestemming van de beheerder hebt verleend met behulp van het uitnodigings eindpunt van de beheerder, hebt u de toestemming van de beheerder voltooid. gebruikers hoeven geen verdere aanvullende acties uit te voeren. Nadat de beheerder toestemming heeft gegeven, kunnen gebruikers een toegangs token verkrijgen via een typische verificatie stroom en krijgt het resulterende toegangs token de machtigings machtigingen.
+Nadat u toestemming van de beheerder hebt verleend met behulp van het uitnodigings eindpunt van de beheerder, hebt u de toestemming van de beheerder voltooid. gebruikers hoeven geen verdere aanvullende acties uit te voeren. Nadat de beheerder toestemming heeft gegeven, kunnen gebruikers een toegangs token verkrijgen via een typische verificatie stroom en krijgt het resulterende toegangs token de machtigings machtigingen.
 
 Wanneer een bedrijfs beheerder uw toepassing gebruikt en wordt omgeleid naar het toestemming eind punt, detecteert micro soft Identity-platform de rol van de gebruiker en vragen ze om toestemming te geven namens de volledige Tenant voor de machtigingen die u hebt aangevraagd. Er is echter ook een speciaal beheerders toestemmings eindpunt dat u kunt gebruiken als u proactief wilt aanvragen dat een beheerder toestemming geeft namens de hele Tenant. Het gebruik van dit eind punt is ook nodig voor het aanvragen van toepassings machtigingen (die niet kunnen worden aangevraagd met het toestemming eind punt).
 
@@ -263,8 +260,7 @@ U kunt het `/.default` bereik gebruiken om uw apps van het v 1.0-eind punt te mi
 
 Het/.default-bereik kan worden gebruikt in een OAuth 2,0-stroom, maar is wel nodig in de stroom [voor namens-](v2-oauth2-on-behalf-of-flow.md) en [client referenties](v2-oauth2-client-creds-grant-flow.md)en bij gebruik van het v2-eind punt voor de beheerder om toepassings machtigingen aan te vragen.
 
-> [!NOTE]
-> Clients kunnen statisch ( `/.default` ) en dynamische toestemming niet combi neren in één aanvraag. Daarom `scope=https://graph.microsoft.com/.default+mail.read` resulteert dit in een fout als gevolg van de combi natie van bereik typen.
+Clients kunnen statisch ( `/.default` ) en dynamische toestemming niet combi neren in één aanvraag. Daarom `scope=https://graph.microsoft.com/.default+mail.read` resulteert dit in een fout als gevolg van de combi natie van bereik typen.
 
 ### <a name="default-and-consent"></a>/.default en toestemming
 

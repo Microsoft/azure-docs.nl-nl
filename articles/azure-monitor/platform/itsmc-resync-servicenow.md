@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 04/12/2020
-ms.openlocfilehash: cea4503c4e3b9dd58cc475aaec355a2bb2e0bd29
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 9a6e46c0b52c22df0682034deaebd58bbfeb34a7
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065180"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210049"
 ---
 # <a name="troubleshooting-problems-in-itsm-connector"></a>Problemen oplossen in ITSM-connector
 
@@ -53,6 +53,25 @@ Volg de volgende stappen om de fouten in het dash board weer te geven:
 
 5. Met dit dash board kunt u de status en de fouten in uw connector controleren.
     ![Scherm opname van de status van de connector.](media/itsmc-resync-servicenow/connector-dashboard.png)
+
+### <a name="dashboard-elements"></a>Dashboard items
+
+Het dash board bevat informatie over de waarschuwingen die zijn verzonden naar het ITSM-hulp programma met behulp van deze connector.
+Het dash board is opgesplitst in 4 onderdelen:
+
+1. Werk item gemaakt: in de grafiek en de onderstaande tabel wordt het aantal werk items per type opgenomen. Als u op de grafiek of in de tabel klikt, kunt u meer informatie over de werk items bekijken.
+    ![Scherm opname van het werk item dat wordt gemaakt.](media/itsmc-resync-servicenow/itsm-dashboard-workitems.png)
+2. Betrokken computers: de tabellen bevatten details over de configuratie-items die configuratie-items hebben gemaakt.
+    Als u op rijen in de tabellen klikt, kunt u meer informatie krijgen over de configuratie-items.
+    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
+    ![Scherm opname van de betrokken computers.](media/itsmc-resync-servicenow/itsm-dashboard-impacted-comp.png)
+3. Connector status: in de grafiek en de onderstaande tabel staan berichten over de status van de connector. Door te klikken op de grafiek op rijen in de tabel, kunt u meer informatie krijgen over de berichten van de connector status.
+    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
+    ![Scherm opname van de status van de connector.](media/itsmc-resync-servicenow/itsm-dashboard-connector-status.png)
+4. Waarschuwings regels: de tabellen bevatten de informatie over het aantal waarschuwings regels dat is gedetecteerd.
+    Als u op rijen in de tabellen klikt, kunt u meer informatie krijgen over de regels die zijn gedetecteerd.
+    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
+    ![Scherm opname van waarschuwings regels.](media/itsmc-resync-servicenow/itsm-dashboard-alert-rules.png)
 
 ### <a name="service-map"></a>Service overzicht
 

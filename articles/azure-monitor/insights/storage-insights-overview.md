@@ -3,15 +3,15 @@ title: Azure Storage services bewaken met Azure Monitor voor opslag | Microsoft 
 description: In dit artikel wordt de Azure Monitor voor opslag functie beschreven waarmee opslag beheerders een duidelijk beeld krijgen van de prestaties en het gebruik van problemen met hun Azure Storage accounts.
 ms.subservice: ''
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 05/11/2020
-ms.openlocfilehash: 2538bc91be59ff12b39ee3f5f629e4c016480a97
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 47799898251923b327954c764dcccb8157ba5119
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296332"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208638"
 ---
 # <a name="monitoring-your-storage-service-with-azure-monitor-for-storage"></a>Uw opslag service controleren met Azure Monitor voor opslag
 
@@ -187,7 +187,7 @@ U kunt dezelfde wijzigingen uitvoeren op een van de vooraf gebouwde **fouten**, 
 
     ![Kolom instellingen bewerken](./media/storage-insights-overview/edit-capacity-workbook-resource-grid.png)
 
-5. Selecteer in het deel venster **kolom instellingen bewerken** onder het **Columns** gedeelte kolommen **micro soft. Storage/Storage accounts-capacity-UsedCapacity Timeline $ | Gebruikte capaciteit tijd lijn voor account $**, en onder de vervolg keuzelijst **kolom renderer** selecteert **verborgen**.
+5. Selecteer in het deel venster **kolom instellingen bewerken** onder het  gedeelte kolommen **micro soft. Storage/Storage accounts-capacity-UsedCapacity Timeline $ | Gebruikte capaciteit tijd lijn voor account $**, en onder de vervolg keuzelijst **kolom renderer** selecteert **verborgen**.
 
 6. Selecteer **opslaan en sluiten** om de wijziging door te voeren.
 
@@ -195,7 +195,7 @@ We gaan nu het kleuren thema wijzigen voor de metrische gegevens over capaciteit
 
 1. Selecteer **kolom instellingen** in het raster metrische gegevens.
 
-2. Selecteer in het deel venster **kolom instellingen bewerken** onder het **Columns** gedeelte kolommen **micro soft. Storage/Storage accounts-capacity-UsedCapacity $ micro soft. Storage/ `|` Storage accounts/blobservices-capacity-BlobCapacity $ `|` micro soft. Storage/Storage accounts/fileservices-capacity `|` `|`**-FileCapacity $ micro soft. Storage/Storage accounts/queueservices-capacity-QueueCapacity $ micro soft. Storage/Storage accounts/tableservices-capacity-TableCapacity $. Selecteer **groen** onder het **kleuren palet** vervolg keuzelijst.
+2. Selecteer in het deel venster **kolom instellingen bewerken** onder het  gedeelte kolommen **micro soft. Storage/Storage accounts-capacity-UsedCapacity $ micro soft. Storage/ `|` Storage accounts/blobservices-capacity-BlobCapacity $ `|` micro soft. Storage/Storage accounts/fileservices-capacity `|` `|`**-FileCapacity $ micro soft. Storage/Storage accounts/queueservices-capacity-QueueCapacity $ micro soft. Storage/Storage accounts/tableservices-capacity-TableCapacity $. Selecteer **groen** onder het **kleuren palet** vervolg keuzelijst.
 
 3. Selecteer **opslaan en sluiten** om de wijziging door te voeren.
 

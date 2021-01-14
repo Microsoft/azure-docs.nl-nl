@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/16/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: c0ceae8727681c045c3bbf3e6626937633b38997
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: ba06a0f9d520f445965329203aecd6c576666737
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98013529"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209726"
 ---
 # <a name="using-an-app-service-environment"></a>Een App Service Environment gebruiken
 
@@ -51,7 +51,7 @@ Een app maken in een ASE:
     > Linux-apps en Windows-apps kunnen zich niet in hetzelfde App Service plan bevinden, maar ze kunnen zich in dezelfde App Service Environment bevinden.
     >
 
-1. Selecteer * * volgende: bewaking * * als u app Insights met uw app wilt inschakelen, kunt u dit hier doen tijdens de aanmaak stroom. 
+1. Selecteer **volgende: bewaken**  als u app Insights met uw app wilt inschakelen, kunt u dit hier doen tijdens de aanmaak stroom. 
 
 1.  Selecteer **volgende: Labels** labels toevoegen aan de app  
 

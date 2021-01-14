@@ -13,12 +13,12 @@ ms.date: 04/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: sureshja
-ms.openlocfilehash: b29d8007ba7c6fb41209ad4f792069667416616b
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: d855e124c84dee8554073d05fa04fe078b92ddaa
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011540"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208886"
 ---
 # <a name="azure-active-directory-app-manifest"></a>Azure Active Directory-app-manifest
 
@@ -105,7 +105,7 @@ Voorbeeld:
 
 | Sleutel | Waardetype |
 | :--- | :--- |
-| allowPublicClient | Boolean-waarde |
+| allowPublicClient | Boolean |
 
 Hiermee wordt het type terugval toepassing opgegeven. Azure AD leidt het toepassings type standaard af van de replyUrlsWithType. Er zijn bepaalde scenario's waarin het app-type van de client niet kan worden bepaald door Azure AD. Een voor beeld hiervan is de [ROPC](https://tools.ietf.org/html/rfc6749#section-4.3) -stroom waarbij een HTTP-aanvraag wordt uitgevoerd zonder URL-omleiding). In dergelijke gevallen interpreteert Azure AD het toepassings type op basis van de waarde van deze eigenschap. Als deze waarde is ingesteld op True, wordt het type terugval toepassing ingesteld als open bare client, zoals een geïnstalleerde app die wordt uitgevoerd op een mobiel apparaat. De standaard waarde is False. Dit betekent dat het type terugval toepassing vertrouwelijk is, zoals web-app.
 
@@ -114,17 +114,6 @@ Voorbeeld:
 ```json
     "allowPublicClient": false,
 ```
-
-### <a name="availabletoothertenants-attribute"></a>availableToOtherTenants-kenmerk
-
-| Sleutel | Waardetype |
-| :--- | :--- |
-| availableToOtherTenants | Boolean-waarde |
-
-Stel deze waarde in op True als de toepassing wordt gedeeld met andere tenants. anders false.
-
-> [!NOTE]
-> Dit kenmerk is alleen beschikbaar in de ervaring **app-registraties (verouderd)** . Vervangen door `signInAudience` in de [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) -ervaring.
 
 ### <a name="appid-attribute"></a>appId-kenmerk
 
@@ -165,17 +154,6 @@ Voorbeeld:
     ],
 ```
 
-### <a name="displayname-attribute"></a>kenmerk displayName
-
-| Sleutel | Waardetype |
-| :--- | :--- |
-| displayName | Tekenreeks |
-
-De weergave naam voor de app.
-
-> [!NOTE]
-> Dit kenmerk is alleen beschikbaar in de ervaring **app-registraties (verouderd)** . Vervangen door `name` in de [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) -ervaring.
-
 ### <a name="errorurl-attribute"></a>errorUrl-kenmerk
 
 | Sleutel | Waardetype |
@@ -203,33 +181,6 @@ Voorbeeld:
     "groupMembershipClaims": "SecurityGroup",
 ```
 
-### <a name="homepage-attribute"></a>Start-kenmerk
-
-| Sleutel | Waardetype |
-| :--- | :--- |
-| gaan |Tekenreeks |
-
-De URL van de start pagina van de toepassing.
-
-> [!NOTE]
-> Dit kenmerk is alleen beschikbaar in de ervaring **app-registraties (verouderd)** . Vervangen door `signInUrl` in de [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) -ervaring.
-
-### <a name="objectid-attribute"></a>objectId-kenmerk
-
-| Sleutel | Waardetype |
-| :--- | :--- |
-|objectId | Tekenreeks |
-
-De unieke id voor de app in de Directory.
-
-Dit is alleen beschikbaar in de ervaring **app-registraties (verouderd)** . Vervangen door `id` in de [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) -ervaring.
-
-Voorbeeld:
-
-```json
-    "objectId": "f7f9acfc-ae0c-4d6c-b489-0a81dc1652dd",
-```
-
 ### <a name="optionalclaims-attribute"></a>optionalClaims-kenmerk
 
 | Sleutel | Waardetype |
@@ -245,7 +196,6 @@ Voorbeeld:
 ```json
     "optionalClaims": null,
 ```
-
 
 
 ### <a name="identifieruris-attribute"></a>identifierUris-kenmerk
@@ -365,7 +315,7 @@ Voorbeeld:
 
 | Sleutel | Waardetype |
 | :--- | :--- |
-| oauth2AllowImplicitFlow | Boolean-waarde |
+| oauth2AllowImplicitFlow | Boolean |
 
 Hiermee geeft u op of deze web-app OAuth 2.0 impliciet flow-toegangs tokens kan aanvragen. De standaardwaarde is false. Deze markering wordt gebruikt voor apps die zijn gebaseerd op de browser, zoals Java script-apps met één pagina. Als u meer wilt weten, voert u `OAuth 2.0 implicit grant flow` in de inhouds opgave in en raadpleegt u de onderwerpen over impliciete stroom.
 
@@ -379,7 +329,7 @@ Voorbeeld:
 
 | Sleutel | Waardetype |
 | :--- | :--- |
-| oauth2AllowIdTokenImplicitFlow | Boolean-waarde |
+| oauth2AllowIdTokenImplicitFlow | Boolean |
 
 Hiermee geeft u op of deze web-app OAuth 2.0 impliciete stroom-ID-tokens kan aanvragen. De standaardwaarde is false. Deze markering wordt gebruikt voor apps die zijn gebaseerd op de browser, zoals Java script-apps met één pagina.
 
@@ -418,7 +368,7 @@ Voorbeeld:
 
 | Sleutel | Waardetype |
 | :--- | :--- |
-| oauth2RequiredPostResponse | Boolean-waarde |
+| oauth2RequiredPostResponse | Boolean |
 
 Hiermee geeft u op of door Azure AD POST-aanvragen worden toegestaan als onderdeel van OAuth 2,0-token aanvragen. De standaard waarde is False. Hiermee wordt aangegeven dat alleen GET-aanvragen worden toegestaan.
 
@@ -489,16 +439,6 @@ Voorbeeld:
     ],
 ```
 
-### <a name="publicclient-attribute"></a>publicClient-kenmerk
-
-| Sleutel | Waardetype |
-| :--- | :--- |
-| publicClient | Boolean-waarde|
-
-Hiermee geeft u op of deze toepassing een open bare client is (zoals een geïnstalleerde toepassing die wordt uitgevoerd op een mobiel apparaat).
-
-Deze eigenschap is alleen beschikbaar in de ervaring **app-registraties (verouderd)** . Vervangen door `allowPublicClient` in de [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) -ervaring.
-
 ### <a name="publisherdomain-attribute"></a>publisherDomain-kenmerk
 
 | Sleutel | Waardetype |
@@ -511,17 +451,7 @@ Voorbeeld:
 
 ```json
     "publisherDomain": "https://www.contoso.com",
-````
-
-### <a name="replyurls-attribute"></a>replyUrls-kenmerk
-
-| Sleutel | Waardetype |
-| :--- | :--- |
-| replyUrls | Stringarray |
-
-Deze eigenschap met meerdere waarden bevat de lijst met geregistreerde redirect_uri waarden die Azure AD accepteert als doelen bij het retour neren van tokens.
-
-Deze eigenschap is alleen beschikbaar in de ervaring **app-registraties (verouderd)** . Vervangen door `replyUrlsWithType` in de [app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) -ervaring.
+```
 
 ### <a name="replyurlswithtype-attribute"></a>replyUrlsWithType-kenmerk
 

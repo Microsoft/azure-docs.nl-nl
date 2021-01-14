@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 10/30/2018
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: de16c947c59f5a0111b9325dbefe7daf1268fb40
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 006aaf7ca5066c552f9c0b797549d7e90ac9beb7
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94649157"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208689"
 ---
 # <a name="develop-line-of-business-apps-for-azure-active-directory"></a>Line-of-Business-Apps ontwikkelen voor Azure Active Directory
 Deze hand leiding bevat een overzicht van het ontwikkelen van LoB-toepassingen (line-of-Business) voor Azure Active Directory (AD). De beoogde doel groep is Active Directory/Microsoft 365 globale beheerders.
@@ -70,7 +70,7 @@ Elke gebruiker krijgt standaard een toestemmings ervaring om zich aan te melden.
 
 Voor toepassingen die u vertrouwt, kunt u de gebruikers ervaring vereenvoudigen door namens uw organisatie toestemming te bieden voor de toepassing.
 
-Zie [toepassingen integreren met Azure Active Directory](../develop/quickstart-register-app.md)voor meer informatie over de toestemming van de gebruiker en de toestemming van Azure.
+Zie inzicht krijgen in [Azure AD-toepassings vereisten](../develop/application-consent-experience.md)voor meer informatie over de toestemming en toestemming van de gebruiker in Azure.
 
 ## <a name="related-articles"></a>Gerelateerde artikelen
 * [Veilige externe toegang tot on-premises toepassingen met Azure AD-toepassingsproxy inschakelen](application-proxy.md)

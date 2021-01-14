@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 10/18/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 5d950598e4a0af86ac37b53722e80eb4ef0a71a4
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 53c0d37d4a25c2f2092a9e52bcae8ea494046bb0
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183053"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210015"
 ---
 # <a name="app-service-networking-features"></a>App Service-netwerk functies
 
@@ -110,7 +110,7 @@ Met deze functie kunt u een lijst met regels voor toestaan en weigeren maken die
 
 De functie toegangs beperkingen op basis van IP helpt bij het beperken van de IP-adressen die kunnen worden gebruikt om uw app te bereiken. Zowel IPv4 als IPv6 worden ondersteund. Enkele gebruiks voorbeelden voor deze functie:
 * Beperk de toegang tot uw app vanuit een reeks goed gedefinieerde adressen. 
-* Beperk de toegang tot verkeer dat afkomstig is van een service voor taak verdeling, zoals de voor deur van Azure. Als u uw inkomende verkeer wilt vergren delen naar Azure front deur, maakt u regels om verkeer toe te staan van 147.243.0.0/16 en 2a01:111:2050::/44. 
+* Beperk de toegang tot verkeer dat afkomstig is van een externe service voor taak verdeling of andere netwerk apparaten met bekende uitstaande IP-adressen. 
 
 Zie [toegangs beperkingen configureren][iprestrictions]voor meer informatie over het inschakelen van deze functie.
 
@@ -126,7 +126,20 @@ Enkele gebruiks voorbeelden voor deze functie:
 ![Diagram dat het gebruik van service-eind punten met Application Gateway illustreert.](media/networking-features/service-endpoints-appgw.png)
 
 Zie [Azure app service-toegangs beperkingen][serviceendpoints]voor meer informatie over het configureren van service-eind punten met uw app.
+#### <a name="access-restriction-rules-based-on-service-tags-preview"></a>Toegangs beperkings regels op basis van service tags (preview-versie)
+[Azure-service Tags][servicetags] zijn duidelijk gedefinieerde sets met IP-adressen voor Azure-Services. Service Tags groep de IP-bereiken die worden gebruikt in verschillende Azure-Services en is vaak ook gericht op specifieke regio's. Hiermee kunt u *Inkomend* verkeer filteren vanuit specifieke Azure-Services. 
 
+Voor een volledige lijst met tags en meer informatie gaat u naar de bovenstaande service label koppeling. Zie [toegangs beperkingen configureren][iprestrictions]voor meer informatie over het inschakelen van deze functie.
+#### <a name="http-header-filtering-for-access-restriction-rules-preview"></a>Filteren van http-headers voor toegangs beperkings regels (preview-versie)
+U kunt voor elke toegangs beperkings regel extra http-header filters toevoegen. Zo kunt u de inkomende aanvraag en het filter verder controleren op basis van de specifieke waarden van de http-header. Elke kop kan Maxi maal 8 waarden per regel bevatten. De volgende lijst met HTTP-headers wordt momenteel ondersteund: 
+* X-doorgestuurd-voor
+* X-doorgestuurd-host
+* X-Azure-FDID
+* X-FD-HealthProbe
+
+Enkele use cases voor http-header filters zijn:
+* De toegang tot verkeer van proxy servers die de hostnaam door sturen beperken
+* Beperk de toegang tot een specifiek exemplaar van de Azure-front-deur met een servicetag regel en X-Azure-FDID-header beperking
 ### <a name="private-endpoint"></a>Privé-eindpunt
 
 Privé-eind punt is een netwerk interface waarmee u privé en veilig verbinding maakt met uw web-app met behulp van een persoonlijke Azure-koppeling. Persoonlijk eind punt maakt gebruik van een privé-IP-adres van uw virtuele netwerk, waardoor de web-app effectief in uw virtuele netwerk wordt gezet. Deze functie is alleen voor *inkomende* stromen naar uw web-app.
@@ -243,7 +256,7 @@ Met deze implementatie stijl krijgt u geen toegewezen adres voor uitgaand verkee
 
 ### <a name="create-multitier-applications"></a>Toepassingen met meerdere lagen maken
 
-Een toepassing met meerdere lagen is een toepassing waarin de API-back-end-apps alleen kunnen worden geopend vanuit de front-end-laag. Er zijn twee manieren om een toepassing met meerdere lagen te maken. Beide beginnen met VNet-integratie om uw front-end-web-app te verbinden met een subnet in een virtueel netwerk. Hierdoor kan uw web-app aanroepen naar uw virtuele netwerk. Nadat de front-end-app is verbonden met het virtuele netwerk, moet u bepalen hoe u de toegang tot uw API-toepassing wilt vergren delen. U kunt het volgende doen:
+Een toepassing met meerdere lagen is een toepassing waarin de API-back-end-apps alleen kunnen worden geopend vanuit de front-end-laag. Er zijn twee manieren om een toepassing met meerdere lagen te maken. Beide beginnen met VNet-integratie om uw front-end-web-app te verbinden met een subnet in een virtueel netwerk. Hierdoor kan uw web-app aanroepen naar uw virtuele netwerk. Nadat de front-end-app is verbonden met het virtuele netwerk, moet u bepalen hoe u de toegang tot uw API-toepassing wilt vergren delen. U kunt:
 
 * Host zowel de front-end als de API-app in dezelfde ILB ASE en maak de front-end-app beschikbaar op internet met behulp van een toepassings gateway.
 * Host de front-end in de multi tenant-service en de back-end in een ILB-ASE.
@@ -299,3 +312,4 @@ Als u App Service scant, vindt u verschillende poorten die beschikbaar zijn voor
 [networkinfo]: ./environment/network-info.md
 [appgwserviceendpoints]: ./networking/app-gateway-with-service-endpoints.md
 [privateendpoints]: ./networking/private-endpoint.md
+[servicetags]: ../virtual-network/service-tags-overview.md

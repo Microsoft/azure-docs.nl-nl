@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 10/19/2020
-ms.openlocfilehash: 56c3475ae6a03600723e7a12b3f3809f003ce7c4
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.date: 1/13/2021
+ms.openlocfilehash: 4b5020b6cf7ac2f7aec586d7e6499285c1447b68
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922263"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209760"
 ---
 # <a name="hyperscale-service-tier"></a>Hyperscale-servicelaag
 
@@ -168,16 +168,15 @@ Als u een grootschalige-data base in Azure SQL Database moet herstellen naar een
 2. Volg de instructies in het onderwerp [geo-Restore](./recovery-using-backups.md#geo-restore) van de pagina voor het herstellen van een data base in Azure SQL database van automatische back-ups.
 
 > [!NOTE]
-> Omdat de bron en het doel zich in verschillende regio's bevinden, kan de data base geen momentopname opslag delen met de bron database als in niet-geografische herstel bewerkingen, die zeer snel zijn voltooid. In het geval van een geo-Restore van een grootschalige-data base is het een grootte-of-Data-bewerking, zelfs als het doel zich in het gekoppelde gebied van de geo-gerepliceerde opslag bevindt.  Dit betekent dat het uitvoeren van een geo-herstel tijd evenredig is met de grootte van de data base die wordt hersteld.  Als het doel zich in het gekoppelde gebied bevindt, wordt de kopie binnen een regio weer gegeven. Dit is aanzienlijk sneller dan een kopie van een andere regio, maar het is nog steeds een bewerking voor de grootte van de gegevens.
+> Omdat de bron en het doel zich in verschillende regio's bevinden, kan de data base geen momentopname opslag delen met de bron database als in niet-geografische herstel bewerkingen, die snel worden voltooid, ongeacht de grootte van de data base. In het geval van een geo-Restore van een grootschalige-data base is het een grootte-of-Data-bewerking, zelfs als het doel zich in het gekoppelde gebied van de geo-gerepliceerde opslag bevindt. Een geo-herstel bewerking heeft daarom enige tijd in verhouding tot de grootte van de data base die wordt hersteld. Als het doel zich in het gekoppelde gebied bevindt, is de gegevens overdracht binnen een regio, die aanzienlijk sneller verloopt dan een gegevens overdracht voor meerdere regio's, maar dit is nog steeds een bewerking voor de grootte van gegevens.
 
 ## <a name="available-regions"></a><a name=regions></a>Beschikbare regio's
 
-De laag Azure SQL Database grootschalige is beschikbaar in alle regio's, maar is standaard beschikbaar in de volgende regio's die hieronder worden weer gegeven.
-Als u een grootschalige-Data Base wilt maken in een regio die niet wordt weer gegeven als ondersteund, kunt u een aanvraag voor onboarding verzenden via Azure Portal. Zie [aanvraag quotum verhogingen voor Azure SQL database](quota-increase-request.md) voor instructies voor instructies. Gebruik de volgende richt lijnen bij het verzenden van uw aanvraag:
+De laag Azure SQL Database grootschalige is beschikbaar in alle regio's, maar is standaard ingeschakeld in de volgende regio's die hieronder worden weer gegeven. Als u een grootschalige-Data Base wilt maken in een regio waarin grootschalige niet standaard is ingeschakeld, kunt u een aanvraag voor onboarding verzenden via Azure Portal. Zie [aanvraag quotum verhogingen voor Azure SQL database](quota-increase-request.md) voor instructies voor instructies. Gebruik de volgende richt lijnen bij het verzenden van uw aanvraag:
 
 - Gebruik het quotum type [toegang voor regio's](quota-increase-request.md#region) SQL database.
-- Voeg in de tekst informatie de reken-SKU/totale kernen toe, waaronder Lees bare replica's.
-- Geef ook de geschatte TB op.
+- Voeg in de beschrijving de reken-SKU/totaal kernen toe, inclusief Lees bare replica's, en geef aan dat u grootschalige-capaciteit aanvraagt.
+- Geef ook een projectie op van de totale grootte van alle data bases in de loop van de tijd in TB.
 
 Ingeschakelde regio's:
 - Australië - oost
@@ -223,12 +222,12 @@ Dit zijn de huidige beperkingen voor het grootschalige van de service tier.  We 
 | Probleem | Beschrijving |
 | :---- | :--------- |
 | In het deel venster Back-ups beheren voor een server worden geen grootschalige-data bases weer gegeven. Deze worden gefilterd op basis van de weer gave.  | Grootschalige heeft een afzonderlijke methode voor het beheren van back-ups, zodat de Long-Term retentie en tijdstippen voor het bewaren van back-ups niet van toepassing zijn. Daarom worden grootschalige-data bases niet weer gegeven in het deel venster back-up beheren.<br><br>Voor data bases die zijn gemigreerd naar grootschalige van andere Azure SQL Database Service lagen, worden back-ups vóór de migratie bewaard voor de duur van de [back-](automated-backups-overview.md#backup-retention) upperiode van de bron database. Deze back-ups kunnen worden gebruikt om de bron database te [herstellen](recovery-using-backups.md#programmatic-recovery-using-automated-backups) naar een tijdstip vóór de migratie.|
-| Terugzetten naar eerder tijdstip | Een niet-grootschalige-data base kan niet worden hersteld als een grootschalige-data base en een grootschalige-data base kan niet worden hersteld als een niet-grootschalige-data base. Voor een niet-grootschalige-data base die is gemigreerd naar grootschalige door de servicelaag te wijzigen, herstelt u een tijdstip voordat de migratie en binnen de Bewaar periode voor back-ups van de data base mogelijk [is.](recovery-using-backups.md#programmatic-recovery-using-automated-backups) De herstelde data base is niet-grootschalige. |
-| Als een Data Base een of meer gegevens bestanden heeft die groter zijn dan 1 TB, mislukt de migratie | In sommige gevallen is het mogelijk om dit probleem te omzeilen door de grote bestanden kleiner te maken dan 1 TB. Als u een Data Base migreert die tijdens het migratie proces wordt gebruikt, moet u ervoor zorgen dat er geen bestanden groter zijn dan 1 TB. Gebruik de volgende query om de grootte van database bestanden te bepalen. `SELECT *, name AS file_name, size * 8. / 1024 / 1024 AS file_size_GB FROM sys.database_files WHERE type_desc = 'ROWS'`;|
+| Terugzetten naar eerder tijdstip | Een niet-grootschalige-data base kan niet worden hersteld als een grootschalige-data base en een grootschalige-data base kan niet worden hersteld als een niet-grootschalige-data base. Voor een niet-grootschalige-data base die is gemigreerd naar grootschalige door de servicelaag te wijzigen, herstelt u een tijdstip voordat de migratie en binnen de Bewaar periode voor back-ups van de Data Base [programmatisch](recovery-using-backups.md#programmatic-recovery-using-automated-backups)worden ondersteund. De herstelde data base is niet-grootschalige. |
+| Als Azure SQL Database servicelaag wijzigt in grootschalige, mislukt de bewerking als de data base gegevens bestanden heeft die groter zijn dan 1 TB | In sommige gevallen [is het mogelijk](file-space-manage.md#shrinking-data-files) om dit probleem te omzeilen door de grote bestanden kleiner te maken dan 1 TB voordat u probeert de servicelaag te wijzigen in grootschalige. Gebruik de volgende query om de huidige grootte van database bestanden te bepalen. `SELECT file_id, name AS file_name, size * 8. / 1024 / 1024 AS file_size_GB FROM sys.database_files WHERE type_desc = 'ROWS'`;|
 | SQL Managed Instance | Azure SQL Managed instance wordt momenteel niet ondersteund met grootschalige-data bases. |
 | Elastische pools |  Elastische Pools worden momenteel niet ondersteund met grootschalige.|
 | Migratie naar grootschalige is momenteel een eenrichtings bewerking | Wanneer een Data Base wordt gemigreerd naar grootschalige, kan deze niet rechtstreeks worden gemigreerd naar een niet-grootschalige. Op dit moment is de enige manier om een Data Base te migreren van grootschalige naar een niet-grootschalige, het exporteren/importeren met behulp van een Bacpac-bestand of andere technologieën voor gegevens verplaatsing (Bulk Copy, Azure Data Factory, Azure Databricks, SSIS, enzovoort). Bacpac exporteren/importeren uit Azure Portal, vanuit Power shell met [New-AzSqlDatabaseExport](/powershell/module/az.sql/new-azsqldatabaseexport) of [New-AzSqlDatabaseImport](/powershell/module/az.sql/new-azsqldatabaseimport), vanuit Azure CLI met [AZ SQL DB export](/cli/azure/sql/db#az-sql-db-export) en [az SQL DB import](/cli/azure/sql/db#az-sql-db-import), en van [rest API](/rest/api/sql/databases%20-%20import%20export) wordt niet ondersteund. Bacpac import/export voor kleinere grootschalige-data bases (tot 200 GB) wordt ondersteund met behulp van SSMS en [SqlPackage](/sql/tools/sqlpackage) versie 18,4 of hoger. Voor grotere data bases kan het maken van een Bacpac-export/-import enige tijd duren en kan om verschillende redenen mislukken.|
-| Migratie van data bases met In-Memory OLTP-objecten | Grootschalige ondersteunt een subset van In-Memory OLTP-objecten, waaronder door het geheugen geoptimaliseerde tabel typen, tabel variabelen en systeem eigen, gecompileerde modules. Wanneer echter een soort In-Memory OLTP-objecten aanwezig zijn in de data base die wordt gemigreerd, wordt de migratie van Premium-en Bedrijfskritiek-service lagen naar grootschalige niet ondersteund. Als u een dergelijke Data Base wilt migreren naar grootschalige, moeten alle In-Memory OLTP-objecten en de bijbehorende afhankelijkheden worden verwijderd. Nadat de data base is gemigreerd, kunnen deze objecten opnieuw worden gemaakt. Duurzame en niet-duurzame tabellen die zijn geoptimaliseerd voor geheugen, worden momenteel niet ondersteund in grootschalige en moeten opnieuw worden gemaakt als schijf tabellen.|
+| Migratie van data bases met In-Memory OLTP-objecten | Grootschalige ondersteunt een subset van In-Memory OLTP-objecten, waaronder door het geheugen geoptimaliseerde tabel typen, tabel variabelen en systeem eigen, gecompileerde modules. Wanneer echter een soort In-Memory OLTP-objecten aanwezig zijn in de data base die wordt gemigreerd, wordt de migratie van Premium-en Bedrijfskritiek-service lagen naar grootschalige niet ondersteund. Als u een dergelijke Data Base wilt migreren naar grootschalige, moeten alle In-Memory OLTP-objecten en de bijbehorende afhankelijkheden worden verwijderd. Nadat de data base is gemigreerd, kunnen deze objecten opnieuw worden gemaakt. Duurzame en niet-duurzame tabellen die zijn geoptimaliseerd voor geheugen, worden momenteel niet ondersteund in grootschalige en moeten worden gewijzigd in schijf tabellen.|
 | Geo-replicatie  | U kunt geo-replicatie voor Azure SQL Database grootschalige nog niet configureren. |
 | Data base kopiëren | Het kopiëren van de Data Base op grootschalige is nu beschikbaar als open bare preview. |
 | Intelligente database functies | Met uitzonde ring van de optie ' plan forceren ' worden alle andere opties voor automatisch afstemmen nog niet ondersteund op grootschalige: mogelijk lijkt het alsof de opties zijn ingeschakeld, maar zijn er geen aanbevelingen of acties gedaan. |

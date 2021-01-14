@@ -2,15 +2,15 @@
 title: Azure Monitor voor Azure-cache voor redis | Microsoft Docs
 description: In dit artikel wordt de Azure Monitor voor Azure Redis Cache functie beschreven, die eigen aren van caches biedt met een duidelijk beeld van de prestaties en het gebruik van problemen.
 ms.topic: conceptual
-author: mrbullwinkle
-ms.author: mbullwin
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 09/10/2020
-ms.openlocfilehash: e7b8a8e131cf7e0aae051f42043abf0640c927e4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 35f575410caa7a8a8ffbda35bdfa876418db8945
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90887007"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210372"
 ---
 # <a name="explore-azure-monitor-for-azure-cache-for-redis"></a>Azure Monitor voor Azure cache verkennen voor redis
 
@@ -44,9 +44,9 @@ Voor deze functie hoeft u niets in te scha kelen of te configureren. De Azure-ca
 
 Voer de volgende stappen uit om het gebruik en de prestaties van uw opslag accounts voor al uw abonnementen weer te geven:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
-1. Zoek naar **monitor**en selecteer **monitor**.
+1. Zoek naar **monitor** en selecteer **monitor**.
 
     ![Zoekvak met het woord ' Monitor ' en het Zoek resultaat van de service waarbij ' Monitor ' wordt weer gegeven met een snelheids meter](./media/cosmosdb-insights-overview/search-monitor.png)
 
@@ -54,7 +54,7 @@ Voer de volgende stappen uit om het gebruik en de prestaties van uw opslag accou
 
 ### <a name="overview"></a>Overzicht
 
-In het **overzicht**wordt in de tabel interactieve Azure-cache weer gegeven voor redis-metrische gegevens. U kunt de resultaten filteren op basis van de opties die u selecteert in de volgende vervolg keuzelijsten:
+In het **overzicht** wordt in de tabel interactieve Azure-cache weer gegeven voor redis-metrische gegevens. U kunt de resultaten filteren op basis van de opties die u selecteert in de volgende vervolg keuzelijsten:
 
 - **Abonnementen**: er worden alleen abonnementen weer gegeven met een Azure-cache voor de redis-resource.  
 
@@ -87,7 +87,7 @@ Wanneer u **bewerkingen** boven aan de pagina selecteert, wordt de tabel **bewer
 - **Tijdlijn voor totaalaantal bewerkingen**
 - **Bewerkingen per seconde**
 - **Ophalingen**
-- **Instellingen**
+- **Sets**
 
 ![Scherm afbeelding van de Operations-ervaring](./media/redis-cache-insights-overview/operations.png)
 
@@ -170,7 +170,7 @@ Als u alle weer gaven in een werkmap wilt uitvouwen of samen vouwen, selecteert 
 
 ## <a name="customize-azure-monitor-for-azure-cache-for-redis"></a>Azure Monitor voor Azure-cache voor redis aanpassen
 
-Omdat deze ervaring is gebouwd hierop Azure monitor werkmap sjablonen, kunt u de **optie voor**het  >  opslaan van**wijzigingen bewerken**selecteren  >  **Save** om een kopie van uw gewijzigde versie in een aangepaste werkmap op te slaan.
+Omdat deze ervaring is gebouwd hierop Azure monitor werkmap sjablonen, kunt u de **optie voor** het  >  opslaan van **wijzigingen bewerken** selecteren  >   om een kopie van uw gewijzigde versie in een aangepaste werkmap op te slaan.
 
 ![Een opdracht balk met gemarkeerde aanpassen](./media/cosmosdb-insights-overview/customize.png)
 

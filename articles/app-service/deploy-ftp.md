@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/18/2019
 ms.reviewer: dariac
 ms.custom: seodec18
-ms.openlocfilehash: ce8c32b1afdf4178e3ffdc09e9c9176436fa771b
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: cfec5ec5f14afc8c4eba5c21c5904687c9b187cc
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605073"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209250"
 ---
 # <a name="deploy-your-app-to-azure-app-service-using-ftps"></a>Uw app implementeren op Azure App Service met behulp van FTP/S
 
@@ -111,7 +111,7 @@ Zie implementatie-en [runtime problemen](https://github.com/projectkudu/kudu/wik
 ### <a name="im-not-able-to-ftp-and-publish-my-code-how-can-i-resolve-the-issue"></a>Ik kan FTP niet gebruiken en mijn code niet publiceren. Hoe kan ik het probleem oplossen?
 Controleer of u de juiste hostnaam en [referenties](#open-ftp-dashboard)hebt ingevoerd. Controleer ook of de volgende FTP-poorten op uw computer niet zijn geblokkeerd door een firewall:
 
-- Verbindingspoort voor FTP-besturingselement: 21
+- Verbindings poort voor FTP-besturings element: 21, 990
 - FTP-gegevens verbindings poort: 989, 10001-10300
  
 ### <a name="how-can-i-connect-to-ftp-in-azure-app-service-via-passive-mode"></a>Hoe kan ik verbinding maken met FTP in Azure App Service via de passieve modus?

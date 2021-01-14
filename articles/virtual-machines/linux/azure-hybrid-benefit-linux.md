@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: mathapli
-ms.openlocfilehash: ba7081c877f3c3adae6e678280592c9445a95d1b
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 990c396c859477c83e0ef421659a299920ee0c35
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858804"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209131"
 ---
 # <a name="how-azure-hybrid-benefit-applies-for-linux-virtual-machines"></a>Hoe Azure Hybrid Benefit van toepassing is op virtuele Linux-machines
 
@@ -47,6 +47,9 @@ Azure Hybrid Benefit voor RHEL is beschikbaar voor Red Hat-klanten die aan beide
 
 - Actieve of ongebruikte RHEL-abonnementen hebben die in aanmerking komen voor gebruik in azure
 - Een of meer van deze abonnementen hebben ingeschakeld voor gebruik in azure met het [Red Hat Cloud Access](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) -programma
+
+> [!IMPORTANT]
+> Zorg ervoor dat het juiste abonnement is ingeschakeld op het [Cloud-Access](https://www.redhat.com/en/technologies/cloud-computing/cloud-access) -programma.
 
 Begin met het gebruik van het voor deel voor Red Hat:
 

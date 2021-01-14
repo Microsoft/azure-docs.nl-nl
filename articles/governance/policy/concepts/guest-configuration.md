@@ -1,14 +1,14 @@
 ---
 title: Meer informatie over het controleren van de inhoud van virtuele machines
 description: Meer informatie over hoe Azure Policy de gast configuratie-client gebruikt om instellingen in virtuele machines te controleren.
-ms.date: 10/14/2020
+ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: 5ec43516c60d2fe5d923a7b87cddbea0ad640453
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: c141169545379f1ac0dd18a97e85652f97b90e6f
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071830"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210117"
 ---
 # <a name="understand-azure-policys-guest-configuration"></a>Gastconfiguratie van Azure Policy begrijpen
 
@@ -101,11 +101,11 @@ Voor Arc connected servers in private data centers, verkeer toestaan met de volg
 
 ## <a name="managed-identity-requirements"></a>Vereisten voor beheerde identiteit
 
-Met beleids definities in het initiatief [voor het implementeren van vereisten om gast configuratie beleid in te scha kelen op virtuele machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F12794019-7a00-42cf-95c2-882eed337cc8) , kan een door het systeem toegewezen beheerde identiteit worden ingeschakeld als er geen bestaat. Er zijn twee beleids definities in het initiatief die het maken van identiteiten beheren. De IF-voor waarden in de beleids definities zorgen voor het juiste gedrag op basis van de huidige status van de machine resource in Azure.
+Met beleids definities in het initiatief _voor het implementeren van vereisten om gast configuratie beleid in te scha kelen op virtuele machines_ , kan een door het systeem toegewezen beheerde identiteit worden ingeschakeld als er geen bestaat. Er zijn twee beleids definities in het initiatief die het maken van identiteiten beheren. De IF-voor waarden in de beleids definities zorgen voor het juiste gedrag op basis van de huidige status van de machine resource in Azure.
 
-Als de computer momenteel geen beheerde identiteiten heeft, is het effectief beleid: [ \[ voor beeld \] : een door het systeem toegewezen beheerde identiteit toevoegen om gast configuratie toewijzingen op virtuele machines zonder identiteiten in te scha kelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3cf2ab00-13f1-4d0c-8971-2ac904541a7e)
+Als de computer momenteel geen beheerde identiteiten heeft, is het effectief beleid: aan het [systeem toegewezen beheerde identiteit toevoegen om gast configuratie toewijzingen op virtuele machines zonder identiteiten in te scha kelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3cf2ab00-13f1-4d0c-8971-2ac904541a7e)
 
-Als de computer momenteel een door de gebruiker toegewezen systeem identiteit heeft, is het effectief beleid: [ \[ voor beeld: een door het \] systeem toegewezen beheerde identiteit toevoegen om gast configuratie toewijzingen op virtuele machines met een door de gebruiker toegewezen identiteit in te scha kelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F497dff13-db2a-4c0f-8603-28fa3b331ab6)
+Als de computer momenteel een door de gebruiker toegewezen systeem identiteit heeft, is het effectief beleid: door het [systeem toegewezen beheerde identiteit toevoegen om gast configuratie toewijzingen op vm's met een door de gebruiker toegewezen identiteit in te scha kelen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F497dff13-db2a-4c0f-8603-28fa3b331ab6)
 
 ## <a name="guest-configuration-definition-requirements"></a>Vereisten voor gast configuratie definitie
 
@@ -120,7 +120,7 @@ Azure Policy maakt gebruik van de eigenschap **complianceStatus** van de gast co
 
 #### <a name="auditing-operating-system-settings-following-industry-baselines"></a>De instellingen van het besturings systeem controleren volgens de industrie basislijnen
 
-Een initiatief in Azure Policy biedt de mogelijkheid om de instellingen van het besturings systeem te controleren na een ' basis lijn '. De definitie, _\[ Preview \] : controleren van Windows-vm's die niet overeenkomen met de basis instellingen van Azure Security_ bevat een set regels op basis van Active Directory groepsbeleid.
+Een initiatief in Azure Policy controleert de instellingen van het besturings systeem na een basis lijn. De definitie, _\[ Preview \] : Windows-computers moeten voldoen aan de vereisten voor de basis lijn van Azure Security_ bevat een set regels op basis van Active Directory groepsbeleid.
 
 De meeste instellingen zijn beschikbaar als para meters. Met para meters kunt u bepalen wat er wordt gecontroleerd.
 Lijn het beleid uit met uw vereisten of wijs het beleid toe aan gegevens van derden, zoals industriële regelgevende normen.

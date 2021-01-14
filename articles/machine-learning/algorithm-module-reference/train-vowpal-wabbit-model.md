@@ -8,12 +8,12 @@ ms.topic: reference
 author: likebupt
 ms.author: keli19
 ms.date: 07/02/2020
-ms.openlocfilehash: 6bc9f69440be772910ea8200b5ccf7d5a5122ae6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9894da7486ec3c0dfb92c94c7c7f4db2247ebeb7
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90907810"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210202"
 ---
 # <a name="train-vowpal-wabbit-model"></a>Vowpal Wabbit-model trainen
 In dit artikel wordt beschreven hoe u de **Wabbit-model module Train Vowpal** in azure machine learning Designer kunt gebruiken om een machine learning model te maken met behulp van Vowpal Wabbit.  
@@ -22,7 +22,7 @@ Als u Vowpal Wabbit voor machine learning wilt gebruiken, formatteert u uw invoe
 
 Wanneer de pijp lijn wordt uitgevoerd, wordt een exemplaar van Vowpal Wabbit geladen in de runtime-uitvoering, samen met de opgegeven gegevens. Wanneer de training is voltooid, wordt het model teruggezet naar de werk ruimte. U kunt het model direct gebruiken voor het beoordelen van gegevens. 
 
-Als u een bestaand model op nieuwe gegevens stapsgewijs wilt trainen, verbindt u een opgeslagen model met de **vooraf getrainde Vowpal Wabbit model** invoer poort van **Train Vowpal Wabbit model**en voegt u de nieuwe gegevens toe aan de andere invoer poort.  
+Als u een bestaand model op nieuwe gegevens stapsgewijs wilt trainen, verbindt u een opgeslagen model met de **vooraf getrainde Vowpal Wabbit model** invoer poort van **Train Vowpal Wabbit model** en voegt u de nieuwe gegevens toe aan de andere invoer poort.  
 
 ## <a name="what-is-vowpal-wabbit"></a>Wat is Vowpal Wabbit?  
 
@@ -86,8 +86,8 @@ Vowpal Wabbit ondersteunt incrementele training door nieuwe gegevens toe te voeg
 1. Voeg de module **Train Vowpal Wabbit model** toe aan de pijp lijn.  
 2. Verbind het eerder getrainde model met de **vooraf getrainde Vowpal Wabbit model** -invoer poort van de module.
 3. Verbind de nieuwe trainings gegevens met de gegevens invoer poort van de module voor **training** .
-4. Geef in het deel venster para meters van het **Wabbit-Model Train Vowpal**de indeling van de nieuwe trainings gegevens op, en ook de naam van het bestand met trainings gegevens als de invoer-gegevensset een directory is.
-5. Selecteer de * * uitvoer Lees bare model bestand * * en de opties **uitvoer van omgekeerd hash-bestand** als de bijbehorende bestanden moeten worden opgeslagen in de uitvoerings records.
+4. Geef in het deel venster para meters van het **Wabbit-Model Train Vowpal** de indeling van de nieuwe trainings gegevens op, en ook de naam van het bestand met trainings gegevens als de invoer-gegevensset een directory is.
+5. Selecteer het **model bestand uitvoer leesbaar** en **uitvoer teruggedraaid hash-bestand** als de bijbehorende bestanden moeten worden opgeslagen in de uitvoerings records.
 
 6. Verzend de pijp lijn.  
 7. Selecteer de module en selecteer **gegevensset registreren** onder **uitvoer, tabblad logboeken** in het rechterdeel venster, om het bijgewerkte model in uw Azure machine learning-werk ruimte te bewaren.  Als u geen nieuwe naam opgeeft, wordt het bestaande opgeslagen model overschreven door het bijgewerkte model.

@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/2/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 5e33a7adc7b529df8c7c821cbfdcb0ad5709803b
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 2bd994f14863715274e137bce2dd6873eeec1135
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839963"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208757"
 ---
 # <a name="defender-for-iot-installation"></a>Defender voor IoT-installatie
 
@@ -230,9 +230,9 @@ In dit artikel wordt beschreven hoe u het BIOS configureert met behulp van het c
 
 4. De referenties van het apparaat zijn:
 
-   - Gebruikers naam: **cyberx**
+   - Gebruikers naam: **xxx**
 
-   - Wacht woord: **xhxvhttju @4338 ,**
+   - Wacht woord: **xxx**
 
      De bewerking van het import Server profiel wordt gestart.
 
@@ -274,7 +274,7 @@ Hand matig configureren:
 
    - Als het apparaat geen Defender voor IoT-apparaat is, opent u een browser en gaat u naar het IP-adres dat eerder is geconfigureerd. Meld u aan met de standaard beheerders bevoegdheden van Dell. Gebruik het **toegangs punt** voor de gebruikers naam en het **Calvin** voor het wacht woord.
 
-   - Als het apparaat een Defender voor IoT-apparaat is, meldt u zich aan met **cyberx** voor de gebruikers naam en **@4338 xhxvhttju** voor het wacht woord.
+   - Als het apparaat een Defender voor IoT-apparaat is, meldt u zich aan met **xxx** voor de gebruikers naam en **xxx** voor het wacht woord.
 
 2. Nadat u het BIOS hebt geopend, gaat u naar **Apparaatinstellingen**.
 

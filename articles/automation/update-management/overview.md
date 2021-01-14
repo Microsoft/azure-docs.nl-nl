@@ -3,14 +3,14 @@ title: Overzicht van Azure Automation Updatebeheer
 description: Dit artikel bevat een overzicht van de functie Updatebeheer die updates implementeert voor uw Windows-en Linux-computers.
 services: automation
 ms.subservice: update-management
-ms.date: 12/09/2020
+ms.date: 01/13/2021
 ms.topic: conceptual
-ms.openlocfilehash: 4b557c9772e76b6b61cdf01799ee30ba6bc11807
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: d66d4d32c788317d8b0781f9f24120fbce2f6f8f
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928423"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185611"
 ---
 # <a name="update-management-overview"></a>Overzicht van Updatebeheer
 
@@ -65,16 +65,16 @@ Het is niet mogelijk om een computer te registreren voor Updatebeheer in meer da
 
 ## <a name="clients"></a>Clients
 
-### <a name="supported-client-types"></a>Ondersteunde client typen
+### <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
-De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor update-evaluaties en patches. Voor patching is een Hybrid Runbook Worker vereist, dat automatisch wordt geïnstalleerd wanneer u de virtuele machine of server voor beheer inschakelt door Updatebeheer. Zie een [Windows-Hybrid Runbook worker implementeren](../automation-windows-hrw-install.md) en een [Linux-Hybrid Runbook worker implementeren](../automation-linux-hrw-install.md)voor meer informatie over Hybrid Runbook worker systeem vereisten.
+De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor update-evaluaties en patches. Voor patching is een systeem Hybrid Runbook Worker vereist, dat automatisch wordt geïnstalleerd wanneer u de virtuele machine of server inschakelt voor beheer door Updatebeheer. Zie een [Windows-Hybrid Runbook worker implementeren](../automation-windows-hrw-install.md) en een [Linux-Hybrid Runbook worker implementeren](../automation-linux-hrw-install.md)voor meer informatie over Hybrid Runbook worker systeem vereisten.
 
 > [!NOTE]
 > Update-evaluatie van Linux-machines wordt alleen ondersteund in bepaalde regio's, zoals vermeld in het Automation-account en de tabel Log Analytics werkruimte [toewijzingen](../how-to/region-mappings.md#supported-mappings).
 
-|Besturingssysteem  |Opmerkingen  |
+|Besturingssysteem  |Notities  |
 |---------|---------|
-|Windows Server 2019 (Data Center/Data Center core/Standard)<br><br>Windows Server 2016 (Data Center/Data Center core/Standard)<br><br>Windows Server 2012 R2 (Data Center/Standard)<br><br>Windows Server 2012 ||
+|Windows Server 2019 (Data Center/Data Center core/Standard)<br>Windows Server 2016 (Data Center/Data Center core/Standard)<br>Windows Server 2012 R2 (Data Center/Standard)<br>Windows Server 2012 |
 |Windows Server 2008 R2 (RTM en SP1 Standard)| Updatebeheer ondersteunt evaluaties en patches voor dit besturings systeem. De [Hybrid Runbook worker](../automation-windows-hrw-install.md) wordt ondersteund voor Windows Server 2008 R2. |
 |CentOS 6 en 7 (x64)      | Linux-agents moeten toegang hebben tot een update opslagplaats. Voor op classificaties gebaseerde patches moeten `yum` beveiligings gegevens worden geretourneerd die CentOS niet hebben in de RTM-releases. Zie [Update classificaties in Linux](view-update-assessments.md#linux)voor meer informatie over op CentOS gebaseerde patches op basis van classificatie.          |
 |Red Hat Enter prise 6 en 7 (x64)     | Linux-agents moeten toegang hebben tot een update opslagplaats.        |
@@ -84,25 +84,30 @@ De volgende tabel geeft een lijst van de ondersteunde besturings systemen voor u
 > [!NOTE]
 > Virtuele-machine schaal sets van Azure kunnen worden beheerd via Updatebeheer. Updatebeheer werkt op de instanties zelf en niet op basis van de installatie kopie. U moet de updates op een incrementele manier plannen, zodat niet alle VM-exemplaren tegelijk worden bijgewerkt. U kunt knoop punten voor virtuele-machine schaal sets toevoegen door de stappen onder [een niet-Azure-computer toevoegen aan wijzigingen bijhouden en inventarisatie te](../automation-tutorial-installed-software.md#add-a-non-azure-machine-to-change-tracking-and-inventory)volgen.
 
-### <a name="unsupported-client-types"></a>Niet-ondersteunde client typen
+### <a name="unsupported-operating-systems"></a>Niet-ondersteunde besturingssystemen
 
-De volgende tabel bevat een lijst met niet-ondersteunde besturings systemen:
+De volgende tabel geeft een lijst van besturings systemen die niet worden ondersteund door Updatebeheer:
 
-|Besturingssysteem  |Opmerkingen  |
+|Besturingssysteem  |Notities  |
 |---------|---------|
 |Windows-client     | Client besturingssystemen (zoals Windows 7 en Windows 10) worden niet ondersteund.<br> Voor Azure Windows virtueel bureau blad (WVD), de aanbevolen methode<br> voor het beheren van updates is [micro soft Endpoint Configuration Manager](../../virtual-desktop/configure-automatic-updates.md) voor patch beheer voor Windows 10-client computers. |
 |Windows Server 2016 Nano Server     | Niet ondersteund.       |
 |Azure Kubernetes-service knooppunten | Niet ondersteund. Gebruik het patch proces dat wordt beschreven in [beveiligings-en kernel-updates Toep assen op Linux-knoop punten in azure Kubernetes service (AKS)](../../aks/node-updates-kured.md)|
 
-### <a name="client-requirements"></a>Clientvereisten
+### <a name="system-requirements"></a>Systeemvereisten
 
-De volgende informatie beschrijft specifieke client vereisten voor het besturings systeem. Zie [netwerk planning](#ports)voor meer informatie. Zie [TLS 1,2 Enforcement voor Azure Automation](../automation-managing-data.md#tls-12-enforcement-for-azure-automation)voor meer informatie over de client vereisten voor TLS 1,2.
+De volgende informatie beschrijft specifieke vereisten voor het besturings systeem. Zie [netwerk planning](#ports)voor meer informatie. Zie [tls 1,2 Enforcement voor Azure Automation](../automation-managing-data.md#tls-12-enforcement-for-azure-automation)voor meer informatie over de vereisten voor TLS 1,2.
 
 #### <a name="windows"></a>Windows
 
+Softwarevereisten:
+
+- .NET Framework 4,6 of hoger is vereist. ([Down load de .NET Framework](/dotnet/framework/install/guide-for-developers).
+- Windows Power shell 5,1 is vereist ([down load Windows Management Framework 5,1](https://www.microsoft.com/download/details.aspx?id=54616).)
+
 Windows-agents moeten worden geconfigureerd om te communiceren met een WSUS-server of moeten toegang hebben tot Microsoft Update. Voor hybride computers raden wij u aan om de Log Analytics-agent voor Windows te installeren door eerst uw computer te verbinden met [servers met Azure-Arc](../../azure-arc/servers/overview.md)en vervolgens Azure Policy te gebruiken om de implementatie van [log Analytics agent toe te wijzen aan](../../governance/policy/samples/built-in-policies.md#monitoring) het ingebouwde beleid van Windows Azure Arc-machines. Als u van plan bent om de machines met Azure Monitor voor VM's te bewaken, moet u in plaats daarvan het Azure Monitor voor VM's-initiatief [inschakelen](../../governance/policy/samples/built-in-initiatives.md#monitoring) .
 
-U kunt Updatebeheer gebruiken met micro soft endpoint Configuration Manager. Zie [updatebeheer integreren met Windows-eind punt Configuration Manager](mecmintegration.md)voor meer informatie over integratie scenario's. De [log Analytics-agent voor Windows](../../azure-monitor/platform/agent-windows.md) is vereist voor Windows-servers die worden beheerd door sites in uw Configuration Manager omgeving. 
+U kunt Updatebeheer gebruiken met micro soft endpoint Configuration Manager. Zie [updatebeheer integreren met Windows-eind punt Configuration Manager](mecmintegration.md)voor meer informatie over integratie scenario's. De [log Analytics-agent voor Windows](../../azure-monitor/platform/agent-windows.md) is vereist voor Windows-servers die worden beheerd door sites in uw Configuration Manager omgeving.
 
 Standaard worden Windows-Vm's die zijn geïmplementeerd vanuit Azure Marketplace ingesteld voor het ontvangen van automatische updates van Windows Update service. Dit gedrag verandert niet wanneer u Windows-Vm's toevoegt aan uw werk ruimte. Als u updates niet actief beheert door gebruik te maken van Updatebeheer, is het standaard gedrag van toepassing (om updates automatisch toe te passen).
 
@@ -111,7 +116,11 @@ Standaard worden Windows-Vm's die zijn geïmplementeerd vanuit Azure Marketplace
 
 #### <a name="linux"></a>Linux
 
-Voor Linux moet de computer toegang hebben tot een update opslagplaats, ofwel persoonlijk of openbaar. TLS 1,1 of TLS 1,2 is vereist voor de interactie met Updatebeheer. Updatebeheer biedt geen ondersteuning voor een Log Analytics agent voor Linux die is geconfigureerd om te rapporteren aan meer dan één Log Analytics-werk ruimte. Op de computer moet ook python 2. x zijn geïnstalleerd.
+Softwarevereisten:
+
+- De computer vereist toegang tot een update opslagplaats, ofwel persoonlijk of openbaar.
+- TLS 1,1 of TLS 1,2 is vereist voor de interactie met Updatebeheer.
+- Python 2. x is geïnstalleerd.
 
 > [!NOTE]
 > Update-evaluatie van Linux-machines wordt alleen ondersteund in bepaalde regio's. Zie het Automation-account en de tabel met Log Analytics werkruimte [toewijzingen](../how-to/region-mappings.md#supported-mappings).
@@ -130,11 +139,11 @@ Updatebeheer maakt gebruik van de resources die in deze sectie worden beschreven
 
 ### <a name="hybrid-runbook-worker-groups"></a>Hybrid Runbook Worker groepen
 
-Nadat u Updatebeheer hebt ingeschakeld, wordt elke Windows-computer die rechtstreeks is verbonden met uw Log Analytics-werk ruimte automatisch geconfigureerd als een Hybrid Runbook Worker ter ondersteuning van de runbooks die Updatebeheer ondersteunen.
+Nadat u Updatebeheer hebt ingeschakeld, wordt elke Windows-computer die rechtstreeks is verbonden met uw Log Analytics-werk ruimte automatisch geconfigureerd als een systeem Hybrid Runbook Worker ter ondersteuning van de runbooks die Updatebeheer ondersteunen.
 
 Elke Windows-computer die wordt beheerd door Updatebeheer wordt weer gegeven in het deel venster Hybrid worker Groups als een Hybrid worker-groep voor het Automation-account. De groepen gebruiken de `Hostname FQDN_GUID` naamgevings Conventie. U kunt deze groepen niet richten op runbooks in uw account. Als u probeert, mislukt de poging. Deze groepen zijn bedoeld om alleen Updatebeheer te ondersteunen. Zie [Hybrid Runbook Workers weer geven](../automation-hybrid-runbook-worker.md#view-system-hybrid-runbook-workers)voor meer informatie over het weer geven van de lijst met Windows-machines die als Hybrid Runbook worker zijn geconfigureerd.
 
-U kunt de Windows-computer toevoegen aan een Hybrid Runbook Worker groep in uw Automation-account ter ondersteuning van Automation-runbooks als u hetzelfde account gebruikt voor Updatebeheer en het lidmaatschap van de Hybrid Runbook Worker-groep. Deze functionaliteit is toegevoegd aan versie 7.2.12024.0 van de Hybrid Runbook Worker.
+U kunt de Windows-computer toevoegen aan een gebruiker Hybrid Runbook Worker groep in uw Automation-account ter ondersteuning van Automation-runbooks als u hetzelfde account gebruikt voor Updatebeheer en het lidmaatschap van de Hybrid Runbook Worker-groep. Deze functionaliteit is toegevoegd aan versie 7.2.12024.0 van de Hybrid Runbook Worker.
 
 ### <a name="management-packs"></a>Management packs
 
@@ -152,17 +161,17 @@ Zie [Connect Operations Manager to Azure monitor logs](../../azure-monitor/platf
 > [!NOTE]
 > Updatebeheer om computers met de Log Analytics agent volledig te beheren, moet u bijwerken naar de Log Analytics agent voor Windows of de Log Analytics-agent voor Linux. Zie [een Operations Manager-agent bijwerken](/system-center/scom/deploy-upgrade-agents)voor meer informatie over het bijwerken van de agent. In omgevingen waarin Operations Manager wordt gebruikt, moet u System Center Operations Manager 2012 R2 UR 14 of hoger uitvoeren.
 
-## <a name="data-collection"></a>Gegevens verzamelen
+## <a name="data-collection"></a>Gegevensverzameling
 
 ### <a name="supported-sources"></a>Ondersteunde bronnen
 
 De volgende tabel beschrijft de verbonden bronnen die Updatebeheer ondersteunt:
 
-| Verbonden bron | Ondersteund | Description |
+| Verbonden bron | Ondersteund | Beschrijving |
 | --- | --- | --- |
-| Windows-agents |Yes |Updatebeheer verzamelt informatie over systeem updates van Windows-agents en start de installatie van de vereiste updates. |
-| Linux-agents |Yes |Updatebeheer verzamelt informatie over systeem updates van Linux-agents en start de installatie van vereiste updates op ondersteunde distributies. |
-| Beheergroep Operations Manager |Yes |Updatebeheer verzamelt informatie over systeem updates van agents in een verbonden beheer groep.<br/><br/>Een directe verbinding van de Operations Manager agent naar Azure Monitor-Logboeken is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
+| Windows-agents |Ja |Updatebeheer verzamelt informatie over systeem updates van Windows-agents en start de installatie van de vereiste updates. |
+| Linux-agents |Ja |Updatebeheer verzamelt informatie over systeem updates van Linux-agents en start de installatie van vereiste updates op ondersteunde distributies. |
+| Beheergroep Operations Manager |Ja |Updatebeheer verzamelt informatie over systeem updates van agents in een verbonden beheer groep.<br/><br/>Een directe verbinding van de Operations Manager agent naar Azure Monitor-Logboeken is niet vereist. Gegevens worden doorgestuurd van de beheer groep naar de Log Analytics-werk ruimte. |
 
 ### <a name="collection-frequency"></a>Verzamelingsfrequentie
 

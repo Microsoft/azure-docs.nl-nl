@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 03/25/2020
 ms.author: duau
-ms.openlocfilehash: 5c44e6c6a7a9af4edc2c711b17ec50aa2bf62c98
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: e1ec175653316029932e0c03214f6f1e1d81e0f1
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92202444"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185645"
 ---
 # <a name="about-expressroute-fastpath"></a>Over ExpressRoute FastPath
 
@@ -33,7 +33,7 @@ Voor het configureren van FastPath moet de gateway van het virtuele netwerk een 
 * Ultra prestaties
 * ErGw3AZ
 
-## <a name="supported-features"></a>Ondersteunde functies
+## <a name="limitations"></a>Beperkingen
 
 Hoewel FastPath de meeste configuraties ondersteunt, biedt het geen ondersteuning voor de volgende functies:
 

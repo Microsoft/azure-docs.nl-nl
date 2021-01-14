@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: f625b7dd68d4b5a5e1af68aeb53dac453ff8cbfd
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 5e45c51735e0b7ab4b263d3f3047b5848c82439d
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400825"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185764"
 ---
 # <a name="create-powershell-scripts-for-msix-app-attach-preview"></a>Power shell-scripts voor MSIX app attach maken (preview)
 
@@ -39,6 +39,17 @@ Als uw app gebruikmaakt van een certificaat dat niet openbaar of zelfondertekend
 6. Selecteer **alle certificaten in het onderstaande archief opslaan** en selecteer vervolgens **Bladeren**.
 7. Wanneer het venster certificaat archief selecteren wordt weer gegeven, selecteert u **vertrouwde personen** en selecteert u **OK**.
 8. Selecteer **volgende** en **volt ooien**.
+
+## <a name="enable-microsoft-hyper-v"></a>Microsoft Hyper-V inschakelen
+
+Microsoft Hyper-V moet zijn ingeschakeld omdat de `Mount-VHD` opdracht voor het stadium is vereist en moet worden `Dismount-VHD` gestage.
+
+```powershell
+Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
+```
+
+>[!NOTE]
+>Bij deze wijziging moet u de virtuele machine opnieuw opstarten.
 
 ## <a name="prepare-powershell-scripts-for-msix-app-attach"></a>Power shell-scripts voorbereiden voor MSIX-app attach
 

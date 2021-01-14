@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/22/2017
 ms.author: duau
-ms.openlocfilehash: 83300a5c518a3acf853968164031a80e1c882187
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9d4b4ba6830fd573a545eb6308fe15a4781873c4
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89401234"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184319"
 ---
 # <a name="countryregion-hierarchy-used-by-azure-traffic-manager-for-geographic-traffic-routing-method"></a>De land/regio-hiërarchie die door Azure Traffic Manager wordt gebruikt voor geografische verkeers routerings methode
 
-In dit artikel vindt u een lijst met de landen en regio's die worden gebruikt door de methode voor **geografische**  verkeers routering in azure Traffic Manager. U kunt deze informatie ook via een programma verkrijgen door de [rest API van Azure Traffic Manager](https://docs.microsoft.com/rest/api/trafficmanager/)aan te roepen. 
+In dit artikel vindt u een lijst met de landen en regio's die worden gebruikt door de methode voor **geografische**  verkeers routering in azure Traffic Manager. U kunt deze informatie ook via een programma verkrijgen door de [rest API van Azure Traffic Manager](/rest/api/trafficmanager/)aan te roepen. 
 
 - WERELD (wereld)
 

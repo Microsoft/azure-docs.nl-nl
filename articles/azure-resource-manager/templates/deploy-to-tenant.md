@@ -3,12 +3,12 @@ title: Resources implementeren voor Tenant
 description: Hierin wordt beschreven hoe u resources implementeert in het Tenant bereik in een Azure Resource Manager sjabloon.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: a397678488921744f076d93235304c8d217d961f
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 0b3ddc63e49b272c93349ada91e9a1599ea4be4f
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178956"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186206"
 ---
 # <a name="tenant-deployments-with-arm-templates"></a>Tenant implementaties met ARM-sjablonen
 
@@ -185,6 +185,8 @@ Als u een resource groep in de Tenant wilt richten, gebruikt u een geneste imple
 Met de volgende sjabloon maakt u een beheer groep.
 
 :::code language="json" source="~/quickstart-templates/tenant-deployments/new-mg/azuredeploy.json":::
+
+Als uw account niet gemachtigd is om te implementeren naar de Tenant, kunt u nog steeds beheer groepen maken door te implementeren in een ander bereik. Zie [beheer groep](deploy-to-management-group.md#management-group)voor meer informatie.
 
 ## <a name="assign-role"></a>Rol toewijzen
 

@@ -13,17 +13,17 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 12/01/2020
 tags: azure-synapse
-ms.openlocfilehash: ece76f0017a72484f5c4e66b2ab8c7e71d32f1a7
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 41ad711de81f075727e4c177c318054677cb0ece
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132017"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185351"
 ---
 # <a name="data-discovery--classification"></a>Gegevensdetectie en -classificatie
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
 
-Gegevens detectie & classificatie is ingebouwd in Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics. De functie biedt geavanceerde mogelijkheden voor het detecteren, classificeren, labelen en rapporteren van gevoelige gegevens in uw database.
+Gegevens detectie & classificatie is ingebouwd in Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics. Het biedt eenvoudige mogelijkheden voor het detecteren, classificeren, labelen en rapporteren van gevoelige gegevens in uw data bases.
 
 Uw meest gevoelige gegevens kunnen bedrijfs-, financiële, gezondheids zorg of persoonlijke informatie bevatten. Het detecteren en classificeren van deze gegevens kan een draai functie spelen in de aanpak van de gegevens beveiliging van uw organisatie. Dit kan dienen als infrastructuur om:
 
@@ -36,11 +36,11 @@ Uw meest gevoelige gegevens kunnen bedrijfs-, financiële, gezondheids zorg of p
 
 ## <a name="what-is-data-discovery--classification"></a><a id="what-is-dc"></a>Wat is de classificatie van gegevens detectie &?
 
-Gegevens detectie & classificatie introduceert een aantal geavanceerde services en nieuwe mogelijkheden in Azure. Er wordt een nieuw model voor gegevens beveiliging voor SQL Database, een beheerd exemplaar van SQL en Azure Synapse, gericht op het beschermen van de gegevens en niet alleen de data base. Het paradigma bevat:
+Gegevens detectie & classificatie introduceert een aantal basis Services en nieuwe mogelijkheden in Azure. Er wordt een nieuw model voor gegevens beveiliging voor SQL Database, een beheerd exemplaar van SQL en Azure Synapse, gericht op het beschermen van de gegevens en niet alleen de data base. Het paradigma bevat:
 
 - **Detectie en aanbevelingen:** De classificatie-engine scant uw data base en identificeert kolommen die mogelijk gevoelige gegevens bevatten. Vervolgens krijgt u een eenvoudige manier om de aanbevolen classificatie via de Azure Portal te controleren en toe te passen.
 
-- **Labelen:** U kunt met behulp van nieuwe meta gegevens kenmerken die zijn toegevoegd aan de SQL Server data base-engine, de labels van de gevoeligheids classificatie persistent Toep assen op kolommen. Deze meta gegevens kunnen vervolgens worden gebruikt voor geavanceerde, op gevoeligheid gebaseerde controle-en beveiligings scenario's.
+- **Labelen:** U kunt met behulp van nieuwe meta gegevens kenmerken die zijn toegevoegd aan de SQL Server data base-engine, de labels van de gevoeligheids classificatie persistent Toep assen op kolommen. Deze meta gegevens kunnen vervolgens worden gebruikt voor op gevoeligheid gebaseerde controle-en beveiligings scenario's.
 
 - **Query resultaten-ingestelde gevoeligheid:** De gevoeligheid van een resultatenset van een query wordt in realtime berekend voor controle doeleinden.
 

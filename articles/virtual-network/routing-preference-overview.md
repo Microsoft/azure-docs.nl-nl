@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/02/2020
 ms.author: mnayak
-ms.openlocfilehash: 656f8a0e0530a20807fc8fddd4cd96d1d955c8ac
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: fa83c51469636eb269aa5dc3192ff7e65b53ce89
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97912696"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186138"
 ---
 # <a name="what-is-routing-preference-preview"></a>Wat is routerings voorkeur (preview)?
 
@@ -65,7 +65,7 @@ Openbaar IP-adres met voorkeurs instelling voor route ring ' micro soft Global N
 Voor opslag gebruiken primaire eind punten altijd het **wereld wijde netwerk van micro soft**. U kunt secundaire eind punten met **Internet** inschakelen als uw keuze voor verkeers routering. Ondersteunde opslag Services zijn:
 
 * Blobs
-* Bestanden
+* Files
 * Web
 * Azure DataLake
 
@@ -74,7 +74,7 @@ Het prijs verschil tussen beide opties wordt weer gegeven in de prijzen voor geg
 
 ## <a name="limitations"></a>Beperkingen
 
-* Routerings voorkeur is alleen compatibel met de standaard-SKU van het open bare IP-adres. De basis-SKU van het open bare IP-adres wordt niet ondersteund.
+* Routerings voorkeur is alleen compatibel met een zone-redundante standaard-SKU van een openbaar IP-adres. De basis-SKU van het open bare IP-adres wordt niet ondersteund.
 * Routerings voorkeur ondersteunt momenteel alleen open bare IPv4-IP-adressen. Open bare IPv6-adressen worden niet ondersteund.
 * Virtuele machines met meerdere Nic's kunnen slechts één type routerings voorkeur hebben.
 

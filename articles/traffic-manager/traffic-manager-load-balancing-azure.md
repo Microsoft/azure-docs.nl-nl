@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/27/2016
 ms.author: duau
-ms.openlocfilehash: 431eaff9da95063648d3e80acb54be9cc5c25bc5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: eaf50f3bdacaf5680bc5ecb1379faff20133b5ce
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021687"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184370"
 ---
 # <a name="using-load-balancing-services-in-azure"></a>Taakverdelingsservices gebruiken in Azure
 
-## <a name="introduction"></a>Introductie
+## <a name="introduction"></a>Inleiding
 
 Microsoft Azure biedt meerdere services voor het beheren van hoe netwerk verkeer wordt gedistribueerd en taak verdeling. U kunt deze services afzonderlijk gebruiken of hun methoden combi neren, afhankelijk van uw behoeften, om de optimale oplossing te bouwen.
 
@@ -92,11 +92,11 @@ In het volgende diagram ziet u de architectuur van dit scenario:
 4. Definieer het virtuele netwerk, subnet, front-end IP en listener-configuraties voor de toepassings gateway. In dit scenario is het IP-adres van de front-end **openbaar**, zodat het kan worden toegevoegd als een eind punt aan het profiel van de Traffic Manager op een later tijdstip.
 5. Configureer de listener met een van de volgende opties:
     * Als u HTTP gebruikt, hoeft u niets te configureren. Klik op **OK**.
-    * Als u HTTPS gebruikt, is verdere configuratie vereist. Raadpleeg voor [het maken van een toepassings gateway](../application-gateway/application-gateway-create-gateway-portal.md), beginnend bij stap 9. Wanneer u de configuratie hebt voltooid, klikt u op **OK**.
+    * Als u HTTPS gebruikt, is verdere configuratie vereist. Raadpleeg voor [het maken van een toepassings gateway](../application-gateway/quick-create-portal.md), beginnend bij stap 9. Wanneer u de configuratie hebt voltooid, klikt u op **OK**.
 
 #### <a name="configure-url-routing-for-application-gateways"></a>URL-route ring configureren voor toepassings gateways
 
-Wanneer u een back-end-pool kiest, neemt een toepassings gateway die is geconfigureerd met een regel op basis van een pad patroon van de aanvraag-URL naast round robin-distributie. In dit scenario voegen we een regel op basis van een pad toe om elke URL met '/images/ \* ' om te leiden naar de Server groep voor installatie kopieën. Voor meer informatie over het configureren van op URL-pad gebaseerde route ring voor een toepassings gateway, raadpleegt u [een op pad gebaseerde regel voor een toepassings gateway maken](../application-gateway/application-gateway-create-url-route-portal.md).
+Wanneer u een back-end-pool kiest, neemt een toepassings gateway die is geconfigureerd met een regel op basis van een pad patroon van de aanvraag-URL naast round robin-distributie. In dit scenario voegen we een regel op basis van een pad toe om elke URL met '/images/ \* ' om te leiden naar de Server groep voor installatie kopieën. Voor meer informatie over het configureren van op URL-pad gebaseerde route ring voor een toepassings gateway, raadpleegt u [een op pad gebaseerde regel voor een toepassings gateway maken](../application-gateway/create-url-route-portal.md).
 
 ![Diagram van de weblaag Application Gateway](./media/traffic-manager-load-balancing-azure/web-tier-diagram.png)
 
@@ -156,7 +156,7 @@ In dit scenario distribueert Load Balancer verbindingen van de weblaag naar de d
 
 Als uw database cluster met hoge Beschik baarheid gebruikmaakt van SQL Server AlwaysOn, raadpleegt u [een of meer listeners voor Always on-beschikbaarheids groep configureren](../azure-sql/virtual-machines/windows/availability-group-listener-powershell-configure.md) voor stapsgewijze instructies.
 
-Zie [een interne Load Balancer in de Azure portal maken](../load-balancer/load-balancer-get-started-ilb-arm-portal.md)voor meer informatie over het configureren van een interne Load Balancer.
+Zie [een interne Load Balancer in de Azure portal maken](../load-balancer/quickstart-load-balancer-standard-internal-portal.md)voor meer informatie over het configureren van een interne Load Balancer.
 
 1. Klik in het linkerdeel venster van de Azure Portal op **een resource**  >  **netwerk**  >  **taak verdeler** maken.
 2. Kies een naam voor de load balancer.
@@ -210,5 +210,5 @@ Nu configureren we het IP-adres en de front-end-poort van de Load Balancer in de
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Overzicht van Traffic Manager](traffic-manager-overview.md)
-* [Overzicht van Application Gateway](../application-gateway/application-gateway-introduction.md)
+* [Overzicht van Application Gateway](../application-gateway/overview.md)
 * [Overzicht van Azure Load Balancer](../load-balancer/load-balancer-overview.md)

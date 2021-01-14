@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/23/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: ae279c117172f116641c7c908b9fc53f26ceaa90
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 502a89c5a2c0384e34ee35346332a4dd6adc38aa
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802300"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185424"
 ---
 # <a name="linux-support"></a>Linux Support
 
@@ -23,6 +23,7 @@ De volgende partners hebben goedgekeurde Windows virtual desktop-clients voor Li
 
 |Partner|Documentatie voor partners|Partner ondersteuning|
 |:------|:--------------------|:--------------|
+|![Logo van Dell](./media/partners/dell.png)|[Documentatie voor Dell-clients](https://www.delltechnologies.com/en-us/collaterals/unauth/data-sheets/products/thin-clients/dell-thinos-9-for-microsoft-wvd.pdf)|[Ondersteuning voor Dell](https://www.dell.com/support)|
 |![IGEL-logo](./media/partners/igel.png)|[Documentatie voor IGEL-client](https://www.igel.com/igel-solution-family/windows-virtual-desktop/)|[IGEL-ondersteuning](https://www.igel.com/support/)|
 |![NComputing-logo](./media/partners/ncomputing.png)|[Documentatie voor NComputing-client](https://www.ncomputing.com/microsoft)|[NComputing-ondersteuning](https://www.ncomputing.com/support/support-options)|
 |![Stratodesk-logo](./media/partners/stratodesk.png)|[Documentatie voor Stratodesk-client](https://www.stratodesk.com/kb/Microsoft_Windows_Virtual_Desktop_(WVD))|[Stratodesk-ondersteuning](https://www.stratodesk.com/support/)|

@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 09/11/2020
+ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: dd1b6d216f6225a13d86aa2435b5b1c807547ec3
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: dda3ece27fd2c687647e0aa289bd1596a87b274f
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014574"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186019"
 ---
 # <a name="telemetry-and-troubleshooting"></a>Telemetrie en probleem oplossing
 
@@ -68,7 +68,7 @@ az iot hub list
 az ad sp create-for-rbac --role="Monitoring Metrics Publisher" --name "<principal name>" --scopes="<resource ID of IoT Hub>"
 ```
 
-Zoek in het implementatie manifest voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179) of andere [desktop computer](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)naar de *telegrafie* module en vervang de volgende waarden door de gegevens van de service-principal uit de vorige stap en implementeer opnieuw.
+Zoek in het implementatie manifest voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189)naar de *telegrafie* module en vervang de volgende waarden door de Service-Principal-informatie uit de vorige stap en implementeer opnieuw.
 
 ```json
 
@@ -103,7 +103,7 @@ Zodra de telegrafie module is geïmplementeerd, zijn de gerapporteerde metrische
 
 ### <a name="system-health-events"></a>Systeem status gebeurtenissen
 
-| Gebeurtenisnaam | Description|
+| Naam van de gebeurtenis | Beschrijving|
 |------|---------|
 |archon_exit    |Verzonden wanneer een gebruiker de status van de ruimtelijke analyse module wijzigt van *actief* in *gestopt*.  |
 |archon_error   |Wordt verzonden wanneer een van de processen in de container vastloopt. Dit is een kritieke fout.  |
@@ -129,7 +129,7 @@ U kunt `iotedge` het opdracht regel programma gebruiken om de status en logboeke
 
 ## <a name="collect-log-files-with-the-diagnostics-container"></a>Logboek bestanden met de diagnostische container verzamelen
 
-Met ruimtelijke analyse worden logboeken voor fout opsporing in docker gegenereerd die u kunt gebruiken om runtime problemen vast te stellen of in ondersteunings tickets op te vragen. De module voor de diagnostische gegevens over ruimtelijke analyse is beschikbaar in de micro soft-Container Registry die u kunt downloaden. Zoek in het manifest bestand voor het implementeren van uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179) of andere [desktop computer](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)de module *Diagnostische gegevens* op.
+Met ruimtelijke analyse worden logboeken voor fout opsporing in docker gegenereerd die u kunt gebruiken om runtime problemen vast te stellen of in ondersteunings tickets op te vragen. De module voor de diagnostische gegevens over ruimtelijke analyse is beschikbaar in de micro soft-Container Registry die u kunt downloaden. In het manifest bestand voor het implementeren van uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) zoekt u de *Diagnostische* module.
 
 Voeg in de sectie ' env ' de volgende configuratie toe:
 
@@ -188,13 +188,13 @@ Het kan ook worden ingesteld via het dubbele document van de IoT Edge module, vo
 > De `diagnostics` module heeft geen invloed op de inhoud van het logboek. het is alleen handig bij het verzamelen, filteren en uploaden van bestaande logboeken.
 > U moet docker API versie 1,40 of hoger hebben om deze module te kunnen gebruiken.
 
-Het manifest bestand van de voorbeeld implementatie voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179) of andere [desktop computer](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)  bevat een module met de naam `diagnostics` die logboeken verzamelt en uploadt. Deze module is standaard uitgeschakeld en moet worden ingeschakeld via de configuratie van de IoT Edge-module als u logboeken wilt openen. 
+Het manifest bestand van de voorbeeld implementatie voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) bevat een module met de naam `diagnostics` die logboeken verzamelt en uploadt. Deze module is standaard uitgeschakeld en moet worden ingeschakeld via de configuratie van de IoT Edge-module als u logboeken wilt openen. 
 
 De `diagnostics` verzameling is op aanvraag en wordt beheerd via een IOT Edge directe methode en kan Logboeken verzenden naar een Azure-Blob Storage.
 
 ### <a name="configure-diagnostics-upload-targets"></a>Upload doelen voor diagnostische gegevens configureren
 
-Selecteer uw apparaat in de IoT Edge Portal en vervolgens de module **diagnostiek** . Zoek in het manifest bestand voor voorbeeld implementaties voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179) of andere [desktop computers](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json)de sectie **omgevings variabelen** voor diagnostische gegevens `env` en de naam en voeg de volgende gegevens toe:
+Selecteer uw apparaat in de IoT Edge Portal en vervolgens de module **diagnostiek** . In het manifest bestand voor beeld implementatie voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop computers](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) zoekt u naar de sectie **omgevings variabelen** voor diagnostische gegevens, met de naam `env` en voegt u de volgende informatie toe:
 
 **Upload naar Azure Blob Storage configureren**
 
@@ -243,7 +243,7 @@ De onderstaande tabel geeft een lijst van de para meters die u kunt gebruiken bi
 
 De volgende tabel bevat de kenmerken in de query-antwoord.
 
-| Zoek | Description|
+| Zoek | Beschrijving|
 |--|--|
 |DoPost| *Waar* of *Onwaar*. Hiermee wordt aangegeven of Logboeken zijn geüpload of niet. Wanneer u ervoor kiest geen logboeken te uploaden, retourneert de API informatie ***synchroon** _. Wanneer u ervoor kiest om logboeken te uploaden, retourneert de API 200, als de aanvraag geldig is, waarna logboeken _*_asynchroon_*_ worden geüpload.|
 |TimeFilter| Tijd filter toegepast op de logboeken.|

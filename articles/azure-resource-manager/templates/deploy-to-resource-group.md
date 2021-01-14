@@ -3,12 +3,12 @@ title: Resources implementeren in resource groepen
 description: Hierin wordt beschreven hoe u resources in een Azure Resource Manager sjabloon implementeert. U ziet hoe u meer dan één resource groep kunt bereiken.
 ms.topic: conceptual
 ms.date: 01/13/2021
-ms.openlocfilehash: 8fe503cc95d71772c07427438b17e2ff0d4620a7
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 9eb70e5ce69a2c7bc7ac9b8c9a7a558d09ecbef0
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178888"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186223"
 ---
 # <a name="resource-group-deployments-with-arm-templates"></a>Implementaties van resource groepen met ARM-sjablonen
 
@@ -137,6 +137,8 @@ U kunt een geneste implementatie gebruiken met `scope` en `location` instellen.
 Of u kunt het bereik instellen op `/` voor sommige resource typen, zoals beheer groepen.
 
 :::code language="json" source="~/resourcemanager-templates/azure-resource-manager/scope/resource-group-create-mg.json" highlight="12,15":::
+
+Zie [beheer groep](deploy-to-management-group.md#management-group)voor meer informatie.
 
 ## <a name="deploy-to-target-resource-group"></a>Implementeren naar doel resource groep
 

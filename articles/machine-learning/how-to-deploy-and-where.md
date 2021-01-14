@@ -1,26 +1,26 @@
 ---
-title: Hoe en waar modellen moeten worden geïmplementeerd
+title: machine learning modellen implementeren
 titleSuffix: Azure Machine Learning
-description: Meer informatie over hoe en waar u uw Azure Machine Learning-modellen kunt implementeren, waaronder Azure Container Instances, Azure Kubernetes service, Azure IoT Edge en FPGA.
+description: Meer informatie over hoe en waar machine learning modellen moeten worden geïmplementeerd. Implementeren in Azure Container Instances, Azure Kubernetes service, Azure IoT Edge en FPGA.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.author: gopalv
 author: gvashishtha
 ms.reviewer: larryfr
-ms.date: 12/11/2020
+ms.date: 01/13/2021
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, deploy, devx-track-azurecli
-ms.openlocfilehash: 195f1c527185fbd55450b6151f26525074db75f7
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: e9c691485eb0ec1a0b3c0564f9a8f9a5d2aa255d
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070419"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185798"
 ---
-# <a name="deploy-models-with-azure-machine-learning"></a>Modellen implementeren met Azure Machine Learning
+# <a name="deploy-machine-learning-models-to-azure"></a>machine learning modellen implementeren in azure
 
-Meer informatie over het implementeren van uw machine learning model als een webservice in de Azure-Cloud of het Azure IoT Edge van apparaten.
+Meer informatie over het implementeren van uw machine learning of een diep leer model als een webservice in de Azure-Cloud. U kunt ook implementeren op Azure IoT Edge apparaten.
 
 De werkstroom is vrijwel altijd hetzelfde, ongeacht waar u het model implementeert:
 
@@ -31,7 +31,7 @@ De werkstroom is vrijwel altijd hetzelfde, ongeacht waar u het model implementee
 1. Implementeer het model op het rekendoel.
 1. Test de resulterende webservice.
 
-Zie [modellen beheren, implementeren en bewaken met Azure machine learning](concept-model-management-and-deployment.md)voor meer informatie over de concepten die zijn betrokken bij de implementatie werk stroom.
+Zie [modellen beheren, implementeren en bewaken met Azure machine learning](concept-model-management-and-deployment.md)voor meer informatie over de concepten die zijn betrokken bij de machine learning implementatie werk stroom.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -197,7 +197,7 @@ Er kan een minimale configuratie van de inmodus worden geschreven als:
 }
 ```
 
-Hiermee geeft u op dat de implementatie het bestand `score.py` in de `./working_dir` Directory zal gebruiken voor het verwerken van binnenkomende aanvragen.
+Hiermee geeft u op dat de machine learning-implementatie het bestand `score.py` in de `./working_dir` Directory gebruikt voor het verwerken van binnenkomende aanvragen.
 
 [Raadpleeg dit artikel](./reference-azure-machine-learning-cli.md#inference-configuration-schema) voor een uitgebreidere bespreking van de configuraties voor het afzien van de configuratie. 
 
@@ -269,7 +269,7 @@ from azureml.core.webservice import AciWebservice, AksWebservice, LocalWebservic
 
 ---
 
-## <a name="deploy-your-model"></a>Uw model implementeren
+## <a name="deploy-your-machine-learning-model"></a>Uw machine learning model implementeren
 
 U bent nu klaar om uw model te implementeren. 
 

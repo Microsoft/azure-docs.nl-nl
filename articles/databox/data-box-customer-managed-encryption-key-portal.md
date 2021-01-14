@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/19/2020
 ms.author: alkohli
 ms.subservice: pod
-ms.openlocfilehash: f75907dc1fa079cebb3b80874090c658fd7b8174
-ms.sourcegitcommit: ab94795f9b8443eef47abae5bc6848bb9d8d8d01
+ms.openlocfilehash: 80a6824edb92d8337481f592cbbf5eb23255b383
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/27/2020
-ms.locfileid: "96302830"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185526"
 ---
 # <a name="use-customer-managed-keys-in-azure-key-vault-for-azure-data-box"></a>Door de klant beheerde sleutels gebruiken in Azure Key Vault voor Azure Data Box
 
@@ -57,7 +57,7 @@ Voer de volgende stappen uit als u een door de klant beheerde sleutel wilt insch
 
       ![Azure Key Vault controleren en maken](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-4.png)
 
-      Controleer de informatie voor uw sleutel kluis en selecteer **maken**. Wacht enkele minuten tot het maken van de sleutel kluis is voltooid.
+      Controleer de informatie voor uw sleutelkluis en selecteer **Maken**. Wacht enkele minuten tot het maken van de sleutelkluis is voltooid.
 
        ![Azure Key Vault met uw instellingen maken](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-5.png)
 
@@ -65,11 +65,11 @@ Voer de volgende stappen uit als u een door de klant beheerde sleutel wilt insch
 
     ![Selecteer een sleutel in Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6.png)
 
-   Als u een nieuwe sleutel wilt maken, selecteert u **nieuwe maken**. U moet een RSA-sleutel gebruiken. De grootte kan 2048 of hoger zijn.
+   Als u een nieuwe sleutel wilt maken, selecteert u **Nieuwe maken**. U moet een RSA-sleutel gebruiken. De grootte kan 2048 of meer zijn.
 
     ![Nieuwe sleutel maken in Azure Key Vault](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-6-a.png)
 
-    Voer een naam in voor de nieuwe sleutel, accepteer de andere standaard waarden en selecteer **maken**. U wordt gewaarschuwd dat er een sleutel is gemaakt in uw sleutel kluis.
+    Voer een naam in voor de nieuwe sleutel, accepteer de andere standaardwaarden en selecteer **Maken**. U wordt gewaarschuwd dat er een sleutel is gemaakt in uw sleutel kluis.
 
     ![Naam nieuwe sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-7.png)
 
@@ -79,9 +79,9 @@ Voer de volgende stappen uit als u een door de klant beheerde sleutel wilt insch
 
     Als u een nieuwe sleutel versie wilt genereren, selecteert u **nieuwe maken**.
 
-    ![Een dialoog venster openen voor het maken van een nieuwe sleutel versie](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-a.png)
+    ![Open een dialoogvenster voor het maken van een nieuwe sleutelversie](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-a.png)
 
-    Kies instellingen voor de nieuwe sleutel versie en selecteer **maken**.
+    Kies instellingen voor de nieuwe sleutelversie en selecteer **Maken**.
 
     ![Een nieuwe sleutel versie maken](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-8-b.png)
 
@@ -91,11 +91,11 @@ Voer de volgende stappen uit als u een door de klant beheerde sleutel wilt insch
 
     In de instellingen voor het **versleutelings type** worden de sleutel kluis en de sleutel weer gegeven die u hebt gekozen.
 
-    ![Sleutel en sleutel kluis voor een door de klant beheerde sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-9.png)
+    ![Sleutel en sleutelkluis voor een door de klant beheerde sleutel](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-9.png)
 
 7. Selecteer het type identiteit dat moet worden gebruikt voor het beheren van de door de klant beheerde sleutel voor deze resource. U kunt de door het **systeem toegewezen** identiteit gebruiken die tijdens het maken van de order is gegenereerd of een door de gebruiker toegewezen identiteit kiezen.
 
-    Een door de gebruiker toegewezen identiteit is een onafhankelijke resource die u kunt gebruiken om de toegang tot resources te beheren. Zie [beheerde identiteits typen](/azure/active-directory/managed-identities-azure-resources/overview)voor meer informatie.
+    Een door de gebruiker toegewezen identiteit is een onafhankelijke resource die u kunt gebruiken om de toegang tot resources te beheren. Zie [Beheerde identiteitstypen](/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.
 
     ![Het identiteits type selecteren](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-13.png)
 
@@ -107,7 +107,7 @@ Voer de volgende stappen uit als u een door de klant beheerde sleutel wilt insch
 
     De geselecteerde gebruikers-id wordt weer gegeven in de instellingen voor het **versleutelings type** .
 
-    ![Een geselecteerde gebruikers-id die wordt weer gegeven in de instellingen voor versleutelings type](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-15.png)
+    ![Een geselecteerde gebruikersidentiteit die wordt weergegeven in de instellingen van Versleutelingstype](./media/data-box-customer-managed-encryption-key-portal/customer-managed-key-15.png)
 
  9. Selecteer **Opslaan** om de bijgewerkte instellingen voor het **versleutelings type** op te slaan.
 

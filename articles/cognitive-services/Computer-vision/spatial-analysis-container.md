@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 11/06/2020
+ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: f41e513ee0f2755c446a9cb95465c1f636fe5a7a
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: bb40586a93a40c2aaa3f0f884a0e747f168c324b
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606263"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186055"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -24,7 +24,7 @@ De container voor ruimtelijke analyse biedt u de mogelijkheid om in realtime str
 ## <a name="prerequisites"></a>Vereisten
 
 * Azure-abonnement: [Krijg een gratis abonnement](https://azure.microsoft.com/free/cognitive-services)
-* Zodra u een Azure-abonnement hebt, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title="Een Computer Vision-resource maken"  target="_blank">maakt u een Computer Vision-resource <span class="docon docon-navigate-external x-hidden-focus"></span></a> in Azure Portal om uw sleutel en eindpunt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
+* Wanneer u uw Azure-abonnement hebt, <a href="https://portal.azure.com/#create/Microsoft.CognitiveServicesComputerVision"  title=" maakt u een computer vision resource "  target="_blank"> een computer vision resource maken <span class="docon docon-navigate-external x-hidden-focus"></span> </a> voor de Standard S1-laag in de Azure Portal om uw sleutel en eind punt op te halen. Nadat de app is geïmplementeerd, klikt u op **Ga naar resource**.
     * U hebt de sleutel en het eind punt nodig van de resource die u maakt om de container voor ruimtelijke analyse uit te voeren. U gaat later uw sleutel en eind punt gebruiken.
 
 
@@ -61,6 +61,9 @@ In dit artikel downloadt en installeert u de volgende software pakketten. De hos
 * [Docker CE](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-engine---community-1) en [NVIDIA-Docker2](https://github.com/NVIDIA/nvidia-docker) 
 * [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) runtime.
 
+#### <a name="azure-vm-with-gpu"></a>[Azure VM met GPU](#tab/virtual-machine)
+In ons voor beeld gebruiken we een VM- [serie](https://docs.microsoft.com/azure/virtual-machines/nc-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) met één K80-GPU.
+
 ---
 
 | Vereiste | Beschrijving |
@@ -85,7 +88,7 @@ U kunt de container niet uitvoeren als uw Azure-abonnement niet is goedgekeurd.
 
 ## <a name="set-up-the-host-computer"></a>De hostcomputer instellen
 
-Het is raadzaam om een Azure Stack edge-apparaat te gebruiken voor uw hostcomputer. Klik op **Bureau computer** als u een ander apparaat wilt configureren.
+Het is raadzaam om een Azure Stack edge-apparaat te gebruiken voor uw hostcomputer. Klik op **Bureau computer** als u een ander apparaat (of **virtuele machine** ) wilt configureren als u een VM gebruikt.
 
 #### <a name="azure-stack-edge-device"></a>[Azure Stack edge-apparaat](#tab/azure-stack-edge)
 
@@ -111,7 +114,7 @@ Navigeer in het [Azure Portal](https://portal.azure.com/)naar uw Azure stack Edg
 
 Kies op de pagina **rand berekening configureren**   een bestaand IOT hub of kies ervoor om een nieuw item te maken. Standaard wordt een standaard prijs categorie (S1) gebruikt voor het maken van een IoT Hub bron. Als u een gratis laag IoT Hub resource wilt gebruiken, maakt u er een en selecteert u deze. De IoT Hub resource gebruikt hetzelfde abonnement en dezelfde resource groep die wordt gebruikt door de resource Azure Stack Edge 
 
-Klik op **Maken**. Het maken van IoT Hub bronnen kan een paar minuten duren. Nadat de IoT Hub resource is gemaakt, wordt de tegel **Edge Compute** bijgewerkt om de nieuwe configuratie weer te geven. Als u wilt bevestigen dat de rol Edge Compute is geconfigureerd, selecteert u **configuratie weer geven** op de tegel **Compute configureren**   .
+Klik op **Create**. Het maken van IoT Hub bronnen kan een paar minuten duren. Nadat de IoT Hub resource is gemaakt, wordt de tegel **Edge Compute** bijgewerkt om de nieuwe configuratie weer te geven. Als u wilt bevestigen dat de rol Edge Compute is geconfigureerd, selecteert u **configuratie weer geven** op de tegel **Compute configureren**   .
 
 Wanneer de Edge-rekenprocesrol wordt geconfigureerd op het Edge-apparaat, worden er twee apparaten aangemaakt: een IoT-apparaat en een IoT Edge-apparaat. Beide apparaten kunnen worden weergegeven in de IoT Hub-resource. De Azure IoT Edge runtime wordt al uitgevoerd op het IoT Edge apparaat.
 
@@ -252,13 +255,13 @@ Gebruik de Azure CLI om een exemplaar van Azure IoT Hub te maken. Vervang de par
 
 ```bash
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
-az login
-az account set --subscription <name or ID of Azure Subscription>
-az group create --name "test-resource-group" --location "WestUS"
+sudo az login
+sudo az account set --subscription <name or ID of Azure Subscription>
+sudo az group create --name "test-resource-group" --location "WestUS"
 
-az iot hub create --name "test-iot-hub-123" --sku S1 --resource-group "test-resource-group"
+sudo az iot hub create --name "test-iot-hub-123" --sku S1 --resource-group "test-resource-group"
 
-az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id "my-edge-device" --edge-enabled
+sudo az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id "my-edge-device" --edge-enabled
 ```
 
 Als de hostcomputer geen Azure Stack edge-apparaat is, moet u [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) versie 1.0.9 installeren. Volg deze stappen om de juiste versie te downloaden:
@@ -297,7 +300,7 @@ Registreer vervolgens de hostcomputer als IoT Edge apparaat in uw IoT Hub-exempl
 U moet het IoT Edge apparaat verbinden met uw Azure-IoT Hub. U moet de connection string kopiëren van het IoT Edge apparaat dat u eerder hebt gemaakt. U kunt ook de onderstaande opdracht uitvoeren in de Azure CLI.
 
 ```bash
-az iot hub device-identity show-connection-string --device-id my-edge-device --hub-name test-iot-hub-123
+sudo az iot hub device-identity show-connection-string --device-id my-edge-device --hub-name test-iot-hub-123
 ```
 
 Open op de hostcomputer  `/etc/iotedge/config.yaml` om te bewerken. Vervang door `ADD DEVICE CONNECTION STRING HERE` de Connection String. Sla het bestand op en sluit het. Voer deze opdracht uit om de IoT Edge-service op de hostcomputer opnieuw op te starten.
@@ -306,15 +309,100 @@ Open op de hostcomputer  `/etc/iotedge/config.yaml` om te bewerken. Vervang door
 sudo systemctl restart iotedge
 ```
 
-Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer, hetzij van de [Azure Portal](../../iot-edge/how-to-deploy-modules-portal.md) of [Azure cli](../../iot-edge/how-to-deploy-modules-cli.md). Als u de portal gebruikt, stelt u de afbeeldings-URI in op de locatie van uw Azure Container Registry. 
+Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer, hetzij van de [Azure Portal](../../iot-edge/how-to-deploy-modules-portal.md) of [Azure cli](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows). Als u de portal gebruikt, stelt u de afbeeldings-URI in op de locatie van uw Azure Container Registry. 
 
 Gebruik de onderstaande stappen om de container te implementeren met behulp van de Azure CLI.
+
+#### <a name="azure-vm-with-gpu"></a>[Azure VM met GPU](#tab/virtual-machine)
+
+Een virtuele machine van Azure met een GPU kan ook worden gebruikt om ruimtelijke analyse uit te voeren. In het volgende voor beeld wordt een VM van de [NC-serie](https://docs.microsoft.com/azure/virtual-machines/nc-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) gebruikt die één K80-GPU heeft.
+
+#### <a name="create-the-vm"></a>De VM maken
+
+Open de wizard [een virtuele machine maken](https://ms.portal.azure.com/#create/Microsoft.VirtualMachine) in de Azure Portal.
+
+Geef uw virtuele machine een naam en selecteer de regio die moet worden (VS) West 2. Zorg ervoor dat u instelt `Availability Options` op geen infra structuur-redundantie vereist. Raadpleeg de onderstaande afbeelding voor de volledige configuratie en de volgende stap om de juiste VM-grootte te vinden. 
+
+:::image type="content" source="media/spatial-analysis/virtual-machine-instance-details.png" alt-text="Details van de virtuele-machine configuratie." lightbox="media/spatial-analysis/virtual-machine-instance-details.png":::
+
+Als u de VM-grootte wilt vinden, selecteert u ' alle grootten weer geven ' en bekijkt u de lijst voor ' niet-Premium-opslag-VM-grootten ', zoals hieronder wordt weer gegeven.
+
+:::image type="content" source="media/spatial-analysis/virtual-machine-sizes.png" alt-text="Grootte van virtuele machines." lightbox="media/spatial-analysis/virtual-machine-sizes.png":::
+
+Selecteer vervolgens **nc6** of **NC6_Promo**.
+
+:::image type="content" source="media/spatial-analysis/promotional-selection.png" alt-text="promotie selectie" lightbox="media/spatial-analysis/promotional-selection.png":::
+
+Maak vervolgens de virtuele machine. Nadat u hebt gemaakt, gaat u naar de VM-resource in de Azure Portal en selecteert u in `Extensions` het linkerdeel venster. Het venster extensies wordt weer gegeven met alle beschik bare uitbrei dingen. Selecteer `NVIDIA GPU Driver Extension` , klik op maken en voltooi de wizard.
+
+Zodra de uitbrei ding met succes is toegepast, gaat u naar de hoofd pagina van de VM in de Azure Portal en klikt u op `Connect` . U kunt toegang krijgen tot de virtuele machine via SSH of RDP. RDP is handig als het weer geven van het venster voor het visualiseren van Vensters wordt ingeschakeld (later uitgelegd). Configureer de RDP-toegang door de volgende [stappen uit te voeren](https://docs.microsoft.com/azure/virtual-machines/linux/use-remote-desktop) en een verbinding met een extern bureau blad te openen met de virtuele machine.
+
+### <a name="verify-graphics-drivers-are-installed"></a>Controleren of grafische Stuur Programma's zijn geïnstalleerd
+
+Voer de volgende opdracht uit om te controleren of de grafische Stuur Programma's zijn geïnstalleerd. 
+
+```bash
+nvidia-smi
+```
+
+De volgende uitvoer wordt weergegeven.
+
+![Uitvoer van NVIDIA-stuur programma](media/spatial-analysis/nvidia-driver-output.png)
+
+### <a name="install-docker-ce-and-nvidia-docker2-on-the-vm"></a>Docker CE en NVIDIA-docker2 installeren op de virtuele machine
+
+Voer de volgende opdrachten een voor een uit om docker CE en NVIDIA-docker2 te installeren op de VM.
+
+Installeer docker CE op de hostcomputer.
+
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get install -y apt-transport-https ca-certificates curl gnupg-agent software-properties-common
+```
+```bash
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
+```
+```bash
+sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
+```
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get install -y docker-ce docker-ce-cli containerd.io
+```
+
+
+Installeer het *NVIDIA-docker-2-* software pakket.
+
+```bash
+distribution=$(. /etc/os-release;echo $ID$VERSION_ID)
+```
+```bash
+curl -s -L https://nvidia.github.io/nvidia-docker/gpgkey | sudo apt-key add -
+```
+```bash
+curl -s -L https://nvidia.github.io/nvidia-docker/$distribution/nvidia-docker.list | sudo tee /etc/apt/sources.list.d/nvidia-docker.list
+```
+```bash
+sudo apt-get update
+```
+```bash
+sudo apt-get install -y docker-ce nvidia-docker2
+```
+```bash
+sudo systemctl restart docker
+```
+
+Nu u de virtuele machine hebt ingesteld en geconfigureerd, volgt u de onderstaande stappen om de container voor ruimtelijke analyse te implementeren. 
 
 ---
 
 ### <a name="iot-deployment-manifest"></a>IoT-implementatie manifest
 
-Als u de implementatie van containers op meerdere hostcomputers wilt stroom lijnen, kunt u een manifest bestand voor implementatie maken om de opties voor het maken van de container en omgevings variabelen op te geven. U vindt een voor beeld van een implementatie manifest [voor Azure stack Edge](https://go.microsoft.com/fwlink/?linkid=2142179) en  [andere desktop computers](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) op github.
+Als u de implementatie van containers op meerdere hostcomputers wilt stroom lijnen, kunt u een manifest bestand voor implementatie maken om de opties voor het maken van de container en omgevings variabelen op te geven. U vindt een voor beeld van een implementatie manifest [voor Azure stack Edge](https://go.microsoft.com/fwlink/?linkid=2142179), [andere desktop computers](https://go.microsoft.com/fwlink/?linkid=2152270)en [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) op github.
 
 In de volgende tabel ziet u de verschillende omgevings variabelen die worden gebruikt door de module IoT Edge. U kunt deze ook instellen in het eerder gekoppelde implementatie manifest, met behulp van het- `env` kenmerk in `spatialanalysis` :
 
@@ -326,21 +414,24 @@ In de volgende tabel ziet u de verschillende omgevings variabelen die worden geb
 | ARCHON_NODES_LOG_LEVEL | Valuta Uitgebreide | Logboek registratie niveau, selecteer een van de twee waarden|
 | OMP_WAIT_POLICY | Pass | Niet wijzigen|
 | QT_X11_NO_MITSHM | 1 | Niet wijzigen|
-| API_KEY | uw API-sleutel| Verzamel deze waarde van Azure Portal van uw Computer Vision-resource. U kunt deze vinden in de sectie **Key en endpoint** van uw resource. |
-| BILLING_ENDPOINT | de URI van uw eind punt| Verzamel deze waarde van Azure Portal van uw Computer Vision-resource. U kunt deze vinden in de sectie **Key en endpoint** van uw resource.|
+| APIKEY | uw API-sleutel| Verzamel deze waarde van Azure Portal van uw Computer Vision-resource. U kunt deze vinden in de sectie **Key en endpoint** van uw resource. |
+| FACTURERING | de URI van uw eind punt| Verzamel deze waarde van Azure Portal van uw Computer Vision-resource. U kunt deze vinden in de sectie **Key en endpoint** van uw resource.|
 | HOUDT | zodat | Deze waarde moet worden ingesteld om te *accepteren* dat de container moet worden uitgevoerd |
 | DISPLAY | : 1 | Deze waarde moet gelijk zijn aan de uitvoer van `echo $DISPLAY` op de hostcomputer. Azure Stack edge-apparaten hebben geen weer gave. Deze instelling is niet van toepassing|
-
+| ARCHON_GRAPH_READY_TIMEOUT | 600 | Deze omgevings variabele toevoegen als uw GPU **niet** T4 of NVIDIA 2080 Ti is|
+| ORT_TENSORRT_ENGINE_CACHE_ENABLE | 0 | Deze omgevings variabele toevoegen als uw GPU **niet** T4 of NVIDIA 2080 Ti is|
+| KEY_ENV | ASE-versleutelings sleutel | Deze omgevings variabele toevoegen als Video_URL een verborgen teken reeks is |
+| IV_ENV | Initialisatie vector | Deze omgevings variabele toevoegen als Video_URL een verborgen teken reeks is|
 
 > [!IMPORTANT]
 > De `Eula` `Billing` Opties, en `ApiKey` moeten worden opgegeven om de container uit te voeren. anders wordt de container niet gestart.  Zie [facturering](#billing)voor meer informatie.
 
-Wanneer u het implementatie manifest voor [Azure stack edge-apparaten](https://go.microsoft.com/fwlink/?linkid=2142179) of [een desktop machine](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) met uw eigen instellingen en een selectie van bewerkingen hebt bijgewerkt, kunt u de onderstaande [Azure cli](../../iot-edge/how-to-deploy-modules-cli.md) -opdracht gebruiken om de container op de hostcomputer te implementeren, als een IOT Edge-module.
+Zodra u het implementatie manifest voor [Azure stack edge-apparaten](https://go.microsoft.com/fwlink/?linkid=2142179), [een desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270) of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) met uw eigen instellingen en een selectie van bewerkingen hebt bijgewerkt, kunt u de onderstaande [Azure cli](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows) -opdracht gebruiken om de container op de hostcomputer te implementeren, als een IOT Edge-module.
 
 ```azurecli
-az login
-az extension add --name azure-iot
-az iot edge set-modules --hub-name "<IoT Hub name>" --device-id "<IoT Edge device name>" --content DeploymentManifest.json --subscription "<subscriptionId>"
+sudo az login
+sudo az extension add --name azure-iot
+sudo az iot edge set-modules --hub-name "<IoT Hub name>" --device-id "<IoT Edge device name>" --content DeploymentManifest.json --subscription "<subscriptionId>"
 ```
 
 |Parameter  |Beschrijving  |
@@ -366,7 +457,7 @@ U moet [ruimtelijke analyse bewerkingen](spatial-analysis-operations.md) gebruik
 
 ## <a name="redeploy-or-delete-the-deployment"></a>Implementatie opnieuw implementeren of verwijderen
 
-Als u de implementatie wilt bijwerken, moet u ervoor zorgen dat uw vorige implementaties zijn geïmplementeerd, of moet u IoT Edge-apparaten verwijderen die niet zijn voltooid. Anders wordt deze implementaties voortgezet, waardoor het systeem een slechte status heeft. U kunt de Azure Portal of de [Azure cli](/cli/azure/ext/azure-cli-iot-ext/iot/edge/deployment)gebruiken.
+Als u de implementatie wilt bijwerken, moet u ervoor zorgen dat uw vorige implementaties zijn geïmplementeerd, of moet u IoT Edge-apparaten verwijderen die niet zijn voltooid. Anders wordt deze implementaties voortgezet, waardoor het systeem een slechte status heeft. U kunt de Azure Portal of de [Azure cli](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows)gebruiken.
 
 ## <a name="use-the-output-generated-by-the-container"></a>De uitvoer gebruiken die door de container is gegenereerd
 
@@ -385,25 +476,25 @@ Navigeer naar het gedeelte **container** en maak een nieuwe container of gebruik
 
 Klik op **SAS-token en URL genereren** en kopieer de URL van de BLOB-SAS. Vervang het begin `https` door `http` en test de URL in een browser die het afspelen van video ondersteunt.
 
-Vervang `VIDEO_URL` in het implementatie manifest voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179) of op een andere [computer](https://github.com/Azure-Samples/cognitive-services-sample-data-files/blob/master/ComputerVision/spatial-analysis/DeploymentManifest_for_non_ASE_devices.json) de URL die u hebt gemaakt, voor alle grafieken. Stel `VIDEO_IS_LIVE` in op `false` en implementeer de container voor ruimtelijke analyse opnieuw met het bijgewerkte manifest. Zie het voorbeeld hieronder.
+Vervang `VIDEO_URL` in het implementatie manifest voor uw [Azure stack edge-apparaat](https://go.microsoft.com/fwlink/?linkid=2142179), [desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270)of [Azure-VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) met de URL die u hebt gemaakt, voor alle grafieken. Stel `VIDEO_IS_LIVE` in op `false` en implementeer de container voor ruimtelijke analyse opnieuw met het bijgewerkte manifest. Zie het voorbeeld hieronder.
 
 De module ruimtelijke analyse begint met het gebruiken van het video bestand en wordt ook automatisch opnieuw afgespeeld.
 
 
 ```json
 "zonecrossing": {
-  "operationId" : "cognitiveservices.vision.spatialanalysis-personcrossingpolygon",
-  "version": 1,
-  "enabled": true,
-  "parameters": {
-      "VIDEO_URL": "Replace http url here",
-      "VIDEO_SOURCE_ID": "personcountgraph",
-      "VIDEO_IS_LIVE": false,
-        "VIDEO_DECODE_GPU_INDEX": 0,
-      "DETECTOR_NODE_CONFIG": "{ \"gpu_index\": 0 }",
-      "SPACEANALYTICS_CONFIG": "{\"zones\":[{\"name\":\"queue\",\"polygon\":[[0.3,0.3],[0.3,0.9],[0.6,0.9],[0.6,0.3],[0.3,0.3]], \"threshold\":35.0}]}"
+    "operationId" : "cognitiveservices.vision.spatialanalysis-personcrossingpolygon",
+    "version": 1,
+    "enabled": true,
+    "parameters": {
+        "VIDEO_URL": "Replace http url here",
+        "VIDEO_SOURCE_ID": "personcountgraph",
+        "VIDEO_IS_LIVE": false,
+      "VIDEO_DECODE_GPU_INDEX": 0,
+        "DETECTOR_NODE_CONFIG": "{ \"gpu_index\": 0, \"do_calibration\": true }",
+        "SPACEANALYTICS_CONFIG": "{\"zones\":[{\"name\":\"queue\",\"polygon\":[[0.3,0.3],[0.3,0.9],[0.6,0.9],[0.6,0.3],[0.3,0.3]], \"events\": [{\"type\": \"zonecrossing\", \"config\": {\"threshold\": 16.0, \"focus\": \"footprint\"}}]}]}"
     }
-  },
+   },
 
 ```
 

@@ -10,12 +10,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/11/2018
 ms.author: duau
-ms.openlocfilehash: 997e2e97161e6db7cdca04c1b79f5149a2e4c409
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: bd3588c207fe8828744a665539830d81805bd7b3
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003528"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184268"
 ---
 # <a name="traffic-manager-metrics-and-alerts"></a>Metrische gegevens en waarschuwingen Traffic Manager
 
@@ -58,10 +58,10 @@ Deze metriek kan worden weer gegeven als een statistische waarde die de status v
 
 *Afbeelding 4: de gesplitste weer gave van metrische gegevens van de eindpunt status*
 
-U kunt deze metrische gegevens gebruiken via de portal van [Azure monitor Services](../azure-monitor/platform/metrics-supported.md), [rest API](https://docs.microsoft.com/rest/api/monitor/), [Azure cli](https://docs.microsoft.com/cli/azure/monitor)en [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.applicationinsights), of via de sectie metrische gegevens van de portal-ervaring van Traffic Manager.
+U kunt deze metrische gegevens gebruiken via de portal van [Azure monitor Services](../azure-monitor/platform/metrics-supported.md), [rest API](/rest/api/monitor/), [Azure cli](/cli/azure/monitor)en [Azure PowerShell](/powershell/module/az.applicationinsights), of via de sectie metrische gegevens van de portal-ervaring van Traffic Manager.
 
 ## <a name="alerts-on-traffic-manager-metrics"></a>Waarschuwingen over Traffic Manager metrische gegevens
-Naast het verwerken en weer geven van metrische gegevens van Traffic Manager, kunt u met Azure Monitor klanten waarschuwingen configureren en ontvangen die zijn gekoppeld aan deze metrische gegevens. U kunt kiezen aan welke voor waarden in deze metrische gegevens moet worden voldaan om een waarschuwing te vinden, hoe vaak deze voor waarden moeten worden bewaakt en hoe de waarschuwingen naar u moeten worden gezonden. Zie [Azure monitor Alerts documentation](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md)(Engelstalig) voor meer informatie.
+Naast het verwerken en weer geven van metrische gegevens van Traffic Manager, kunt u met Azure Monitor klanten waarschuwingen configureren en ontvangen die zijn gekoppeld aan deze metrische gegevens. U kunt kiezen aan welke voor waarden in deze metrische gegevens moet worden voldaan om een waarschuwing te vinden, hoe vaak deze voor waarden moeten worden bewaakt en hoe de waarschuwingen naar u moeten worden gezonden. Zie [Azure monitor Alerts documentation](../azure-monitor/platform/alerts-metric.md)(Engelstalig) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [Azure Monitor-service](../azure-monitor/platform/metrics-supported.md)

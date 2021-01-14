@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/05/2019
 ms.author: duau
-ms.openlocfilehash: 471895f1a615770521584a627e6bca850b87d0ac
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1e1bd107e8b3b9209f99d1abfc4d7e391c3c4a6
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89462629"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184336"
 ---
 # <a name="how-traffic-manager-works"></a>Hoe Traffic Manager werkt
 
@@ -30,7 +30,7 @@ Traffic Manager biedt twee belang rijke voor delen:
 
 Wanneer een client probeert verbinding maken met een service, moet deze eerst de DNS-naam van de service omzetten naar een IP-adres. De client maakt vervolgens verbinding met dat IP-adres om toegang te krijgen tot de service.
 
-**Het belangrijkste punt om te begrijpen is dat Traffic Manager op het DNS-niveau werkt.**  Traffic Manager DNS gebruikt om clients te leiden naar specifieke service-eind punten op basis van de regels van de methode voor het routeren van verkeer. Clients maken **rechtstreeks**verbinding met het geselecteerde eind punt. Traffic Manager is geen proxy of gateway. Het verkeer dat door de client en de service wordt door Traffic Manager wordt niet weer gegeven.
+**Het belangrijkste punt om te begrijpen is dat Traffic Manager op het DNS-niveau werkt.**  Traffic Manager DNS gebruikt om clients te leiden naar specifieke service-eind punten op basis van de regels van de methode voor het routeren van verkeer. Clients maken **rechtstreeks** verbinding met het geselecteerde eind punt. Traffic Manager is geen proxy of gateway. Het verkeer dat door de client en de service wordt door Traffic Manager wordt niet weer gegeven.
 
 ## <a name="traffic-manager-example"></a>Traffic Manager-voor beeld
 
@@ -71,27 +71,27 @@ De recursieve DNS-service slaat de DNS-antwoorden op die het ontvangt. De DNS-re
 
 ## <a name="faqs"></a>Veelgestelde vragen
 
-* [Welk IP-adres Traffic Manager gebruiken?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-ip-address-does-traffic-manager-use)
+* [Welk IP-adres Traffic Manager gebruiken?](./traffic-manager-faqs.md#what-ip-address-does-traffic-manager-use)
 
-* [Welk type verkeer kan worden gerouteerd met Traffic Manager?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-types-of-traffic-can-be-routed-using-traffic-manager)
+* [Welk type verkeer kan worden gerouteerd met Traffic Manager?](./traffic-manager-faqs.md#what-types-of-traffic-can-be-routed-using-traffic-manager)
 
-* [Ondersteunt Traffic Manager ' Sticky ' sessies?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-support-sticky-sessions)
+* [Ondersteunt Traffic Manager ' Sticky ' sessies?](./traffic-manager-faqs.md#does-traffic-manager-support-sticky-sessions)
 
-* [Waarom zie ik een HTTP-fout bij het gebruik van Traffic Manager?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#why-am-i-seeing-an-http-error-when-using-traffic-manager)
+* [Waarom zie ik een HTTP-fout bij het gebruik van Traffic Manager?](./traffic-manager-faqs.md#why-am-i-seeing-an-http-error-when-using-traffic-manager)
 
-* [Wat is de invloed van de prestaties van het gebruik van Traffic Manager?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-is-the-performance-impact-of-using-traffic-manager)
+* [Wat is de invloed van de prestaties van het gebruik van Traffic Manager?](./traffic-manager-faqs.md#what-is-the-performance-impact-of-using-traffic-manager)
 
-* [Welke toepassings protocollen kan ik gebruiken met Traffic Manager?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-application-protocols-can-i-use-with-traffic-manager)
+* [Welke toepassings protocollen kan ik gebruiken met Traffic Manager?](./traffic-manager-faqs.md#what-application-protocols-can-i-use-with-traffic-manager)
 
-* [Kan ik Traffic Manager gebruiken met de domein naam ' Blot '?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#can-i-use-traffic-manager-with-a-naked-domain-name)
+* [Kan ik Traffic Manager gebruiken met de domein naam ' Blot '?](./traffic-manager-faqs.md#can-i-use-traffic-manager-with-a-naked-domain-name)
 
-* [Houdt Traffic Manager rekening met het subnet van de client wanneer DNS-query's worden verwerkt?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#does-traffic-manager-consider-the-client-subnet-address-when-handling-dns-queries)
+* [Houdt Traffic Manager rekening met het subnet van de client wanneer DNS-query's worden verwerkt?](./traffic-manager-faqs.md#does-traffic-manager-consider-the-client-subnet-address-when-handling-dns-queries)
 
-* [Wat is een DNS TTL en wat is van invloed op mijn gebruikers?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#what-is-dns-ttl-and-how-does-it-impact-my-users)
+* [Wat is een DNS TTL en wat is van invloed op mijn gebruikers?](./traffic-manager-faqs.md#what-is-dns-ttl-and-how-does-it-impact-my-users)
 
-* [Hoe hoog of laag kan ik de TTL instellen voor Traffic Manager reacties?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-high-or-low-can-i-set-the-ttl-for-traffic-manager-responses)
+* [Hoe hoog of laag kan ik de TTL instellen voor Traffic Manager reacties?](./traffic-manager-faqs.md#how-high-or-low-can-i-set-the-ttl-for-traffic-manager-responses)
 
-* [Hoe kan ik inzicht krijgen in het volume van query's die worden verzonden naar mijn profiel?](https://docs.microsoft.com/azure/traffic-manager/traffic-manager-faqs#how-can-i-understand-the-volume-of-queries-coming-to-my-profile)
+* [Hoe kan ik inzicht krijgen in het volume van query's die worden verzonden naar mijn profiel?](./traffic-manager-faqs.md#how-can-i-understand-the-volume-of-queries-coming-to-my-profile)
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -102,4 +102,3 @@ Meer informatie over methoden voor het [routeren](traffic-manager-routing-method
 <!--Image references-->
 [1]: ./media/traffic-manager-how-traffic-manager-works/dns-configuration.png
 [2]: ./media/traffic-manager-how-traffic-manager-works/flow.png
-

@@ -5,12 +5,12 @@ author: macolso
 ms.author: macolso
 ms.topic: article
 ms.date: 06/02/2020
-ms.openlocfilehash: e4760463a4d71e4c097b082aa6b93d8b339f94ca
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 5de1188ee018e796f918d7559c0e2c24c77834f4
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92516967"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186189"
 ---
 # <a name="frequently-asked-questions-about-azure-container-instances"></a>Veelgestelde vragen over Azure Container Instances
 
@@ -54,6 +54,10 @@ Bekijk meer [gedetailleerde richt lijnen](container-instances-troubleshooting.md
 ### <a name="what-net-or-net-core-image-layer-should-i-use-in-my-container"></a>Welke .NET-of .NET Core-installatie kopie laag moet ik gebruiken in mijn container? 
 
 Gebruik de kleinste afbeelding die voldoet aan uw vereisten. Voor Linux kunt u een installatie kopie voor *runtime-Alpine* .net core gebruiken, die wordt ondersteund sinds de release van .net Core 2,1. Als u voor Windows gebruikmaakt van de volledige .NET Framework, moet u een installatie kopie van Windows Server Core gebruiken (alleen runtime-installatie kopie, zoals  *4.7.2-windowsservercore-ltsc2016*). Installatie kopieën met alleen runtime zijn kleiner, maar ondersteunen geen workloads waarvoor de .NET SDK is vereist.
+
+### <a name="what-types-of-container-registries-are-compatible-with-aci"></a>Welke typen container registers zijn compatibel met ACI?
+
+ACI ondersteunt installatie kopieën van ACR en andere container registers van derden, zoals DockerHub. ACI biedt ook ondersteuning voor installatie kopieën uit on-premises registers zolang deze OCR-compatibel is en een eind punt hebben dat openbaar wordt blootgesteld aan Internet.
 
 ## <a name="availability-and-quotas"></a>Beschik baarheid en quota's
 

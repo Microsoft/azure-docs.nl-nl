@@ -2,17 +2,17 @@
 title: Voor beeld van Azure Edge zone
 description: 'Meer informatie over Edge computing-aanbiedingen van micro soft: Azure Edge-zone.'
 services: vnf-manager
-author: ganesr
+author: cherylmc
 ms.service: vnf-manager
 ms.topic: article
-ms.date: 07/07/2020
-ms.author: ganesr
-ms.openlocfilehash: 68aa3342ab09be73a82f4f896ffdff99d15a5350
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/13/2021
+ms.author: cherylmc
+ms.openlocfilehash: 04555303d5128db6c183d27a0c5fcb69063fdc28
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91329566"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185407"
 ---
 # <a name="about-azure-edge-zone-preview"></a>Voor beeld van Azure Edge zone
 
@@ -38,7 +38,7 @@ Er zijn drie typen Azure Edge-zones:
 
 ![Azure Edge Zones](./media/edge-zones-overview/edge-zones.png "Azure Edge Zones")
 
-Azure Edge-zones zijn kleinschalige uitbrei dingen van Azure in populatie Centers die ver weg zijn in azure-regio's. Azure Edge-zones ondersteunen Vm's, containers en een geselecteerde set Azure-Services die u in staat stellen om latentie gevoelige en door Voer intensieve toepassingen dicht bij eind gebruikers te laten lopen. Azure Edge-zones maken deel uit van het wereld wijde netwerk van micro soft. Ze bieden een veilige, betrouw bare verbinding met hoge band breedte tussen toepassingen die worden uitgevoerd in de zone met de rand, dicht bij de gebruiker. En ze bieden de volledige set Azure-Services die worden uitgevoerd in azure-regio's. Azure Edge-zones zijn eigendom van en worden beheerd door micro soft. U kunt dezelfde set Azure-hulpprogram ma's en dezelfde portal gebruiken voor het beheren en implementeren van services in Edge-zones.
+Azure Edge-zones zijn kleinschalige uitbrei dingen van Azure in populatie Centers die ver weg zijn in azure-regio's. Azure Edge-zones ondersteunen Vm's, containers en een geselecteerde set Azure-Services die u in staat stellen om latentie gevoelige en door Voer intensieve toepassingen dicht bij eind gebruikers te laten lopen. Azure Edge-zones maken deel uit van het wereld wijde netwerk van micro soft. Ze bieden een veilige, betrouw bare verbinding met hoge band breedte tussen toepassingen die worden uitgevoerd in de zone met de rand, dicht bij de gebruiker. Azure Edge-zones zijn eigendom van en worden beheerd door micro soft. U kunt dezelfde set Azure-hulpprogram ma's en dezelfde portal gebruiken voor het beheren en implementeren van services in Edge-zones.
 
 Typische gebruiks voorbeelden zijn onder andere:
 
@@ -61,7 +61,7 @@ Azure Edge-zones zullen beschikbaar zijn op de volgende metro gebieden:
 
 Azure Edge-zones met een transporteur zijn kleinschalige uitbrei dingen van Azure die in de data centers van mobiele Opera tors in de populaties centra worden geplaatst. De Azure Edge-zone met een draaggolf infrastructuur wordt één hop van het 5G-netwerk van de mobiele provider geplaatst. Deze plaatsing biedt een latentie van minder dan 10 milliseconden voor toepassingen van mobiele apparaten.
 
-Azure Edge-zones met een transporteur worden geïmplementeerd in de data centers van mobiele Opera tors en verbonden met het wereld wijde netwerk van micro soft. Ze bieden een veilige, betrouw bare verbinding met hoge band breedte tussen toepassingen die dicht bij de gebruiker worden uitgevoerd. En ze bieden de volledige set Azure-Services die worden uitgevoerd in azure-regio's. Ontwikkel aars kunnen gebruikmaken van dezelfde set bekende hulpprogram ma's voor het bouwen en implementeren van services in de Edge-zones.
+Azure Edge-zones met een transporteur worden geïmplementeerd in de data centers van mobiele Opera tors en verbonden met het wereld wijde netwerk van micro soft. Ze bieden een veilige, betrouw bare verbinding met hoge band breedte tussen toepassingen die dicht bij de gebruiker worden uitgevoerd. Ontwikkel aars kunnen gebruikmaken van dezelfde set bekende hulpprogram ma's voor het bouwen en implementeren van services in de Edge-zones.
 
 Typische gebruiks voorbeelden zijn onder andere:
 

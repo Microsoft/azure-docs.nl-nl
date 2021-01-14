@@ -9,12 +9,12 @@ ms.author: mlearned
 description: Een Azure Arc-Kubernetes-cluster verbinden met Azure Arc
 keywords: Kubernetes, Arc, azure, K8s, containers
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 8155ed709045626dee44fb499304ff5244a61b54
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 131ec014c9ac016a682bc4928f74910a3405a5da
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060245"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98186002"
 ---
 # <a name="connect-an-azure-arc-enabled-kubernetes-cluster-preview"></a>Een verbinding instellen voor een Kubernetes-cluster met Azure Arc (preview)
 
@@ -35,19 +35,19 @@ Controleer of u de volgende vereisten hebt voor bereid:
   
   Installeer de `connectedk8s` extensie, waarmee u Kubernetes-clusters kunt verbinden met Azure:
   
-  ```console
+  ```azurecli
   az extension add --name connectedk8s
   ```
   
   Installeer de `k8sconfiguration` extensie:
   
-  ```console
+  ```azurecli
   az extension add --name k8sconfiguration
   ```
   
   Als u deze uitbrei dingen later wilt bijwerken, voert u de volgende opdrachten uit:
   
-  ```console
+  ```azurecli
   az extension update --name connectedk8s
   az extension update --name k8sconfiguration
   ```

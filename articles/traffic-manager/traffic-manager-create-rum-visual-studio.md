@@ -12,12 +12,12 @@ ms.workload: infrastructure
 ms.date: 03/16/2018
 ms.author: duau
 ms.custom: devx-track-js
-ms.openlocfilehash: c49672ad38ac8cf80214d03870b5876d741e76ec
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: f9e8cdd3eb5c9f441444683fb5efaccc880b2757
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994873"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184608"
 ---
 # <a name="how-to-send-real-user-measurements-to-traffic-manager-with-visual-studio-mobile-center"></a>Real-user-metingen verzenden naar Traffic Manager met Visual Studio Mobile Center
 
@@ -52,7 +52,7 @@ Gebruik de volgende procedure om de sleutel RUM te verkrijgen met Azure Portal:
 
 ## <a name="step-2-instrument-your-app-with-the-rum-package-of-mobile-center-sdk"></a>Stap 2: uw app instrumenteren met het RUM-pakket van de Mobile Center SDK
 
-Als u niet bekend bent met Visual Studio Mobile Center, gaat u naar de bijbehorende [website](https://mobile.azure.com). Zie [aan de slag met de Android-SDK](https://docs.microsoft.com/mobile-center/sdk/getting-started/Android)voor meer informatie over de integratie van de SDK.
+Als u niet bekend bent met Visual Studio Mobile Center, gaat u naar de bijbehorende [website](https://mobile.azure.com). Zie [aan de slag met de Android-SDK](/mobile-center/sdk/getting-started/Android)voor meer informatie over de integratie van de SDK.
 
 Als u Real-user-metingen wilt gebruiken, voert u de volgende procedure uit:
 
@@ -98,8 +98,7 @@ Als u Real-user-metingen wilt gebruiken, voert u de volgende procedure uit:
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [real-User-metingen](traffic-manager-rum-overview.md)
 - Meer informatie [over de werking van Traffic Manager](traffic-manager-overview.md)
-- Meer informatie over [mobiel centrum](https://docs.microsoft.com/mobile-center/)
+- Meer informatie over [mobiel centrum](/mobile-center/)
 - [Registreren](https://mobile.azure.com) voor mobiel centrum
 - Meer informatie over de [routerings methoden voor verkeer](traffic-manager-routing-methods.md) die door Traffic Manager worden ondersteund
-- Meer informatie over het [maken van een Traffic Manager profiel](traffic-manager-create-profile.md)
-
+- Meer informatie over het [maken van een Traffic Manager profiel](./quickstart-create-traffic-manager-profile.md)

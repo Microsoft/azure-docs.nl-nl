@@ -2,32 +2,37 @@
 title: Dubbele bericht detectie Azure Service Bus | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe u dubbele items kunt detecteren in Azure Service Bus berichten. Het duplicaat bericht kan worden genegeerd en verwijderd.
 ms.topic: article
-ms.date: 06/23/2020
-ms.openlocfilehash: dbca1b4b4f894d35835e7d37e0b4e742a2d3b917
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/13/2021
+ms.openlocfilehash: 29972f756c66f524cc2e4684fcb7afd1ca628820
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87083885"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184676"
 ---
 # <a name="duplicate-detection"></a>Detectie van duplicaten
 
 Als een toepassing mislukt als gevolg van een onherstelbare fout onmiddellijk nadat een bericht is verzonden en het opnieuw opstarten van de toepassing ten onrechte verstrijkt dat de voorafgaande bericht bezorging niet is uitgevoerd, zorgt een volgende verzen ding ertoe dat hetzelfde bericht twee keer wordt weer gegeven in het systeem.
 
-Het is ook mogelijk dat er een ogen blik geduld op client-of netwerk niveau, en dat een verzonden bericht moet worden doorgevoerd in de wachtrij, waarbij de bevestiging niet naar de client wordt geretourneerd. Dit scenario laat de client onzeker weten wat het resultaat van de verzend bewerking is.
+Het is ook mogelijk dat er een ogen blik geduld op client-of netwerk niveau en dat een verzonden bericht in de wachtrij moet worden doorgevoerd, waarbij de bevestiging niet naar de client wordt geretourneerd. Dit scenario laat de client onzeker weten wat het resultaat van de verzend bewerking is.
 
 Duplicaten detectie neemt de twijfel uit deze situaties door het inschakelen van de afzender om hetzelfde bericht opnieuw te verzenden. de wachtrij of het onderwerp verwijdert dubbele kopieën.
 
+## <a name="how-it-works"></a>Hoe werkt het? 
 Het inschakelen van duplicaten detectie helpt bij het bijhouden van de door de toepassing beheerde *MessageId* van alle berichten die worden verzonden naar een wachtrij of onderwerp tijdens een opgegeven periode. Als er een nieuw bericht wordt verzonden met een *MessageId* die tijdens het tijd venster is geregistreerd, wordt het bericht gerapporteerd als geaccepteerd (de verzend bewerking slaagt), maar wordt het zojuist verzonden bericht direct genegeerd en verwijderd. Er wordt geen rekening gehouden met andere onderdelen van het bericht dan de *MessageId* .
 
 Toepassings beheer van de id is essentieel, omdat alleen de toepassing de *MessageId* kan koppelen aan een bedrijfsproces context van waaruit het zoals verwacht kan worden geconstrueerd wanneer er een fout optreedt.
 
 Voor een bedrijfs proces waarbij tijdens de verwerking van bepaalde toepassings context meerdere berichten worden verzonden, kan de *MessageId* een combi natie zijn van de context-id op toepassings niveau, zoals een aankoop ordernummer, en het onderwerp van het bericht, bijvoorbeeld **12345.2017/Payment**.
 
-De *MessageId* kan altijd een bepaalde GUID zijn, maar het verankeren van de id naar het bedrijfs proces levert voorspel bare Herhaal baarheid, die u nodig hebt om de duplicaten detectie functie effectief te benutten.
+De *MessageId* kan altijd een bepaalde GUID zijn, maar het verankeren van de id naar het bedrijfs proces levert een voorspel bare Herhaal baarheid, die gewenst is voor het effectief gebruiken van de duplicaten detectie functie.
 
-> [!NOTE]
-> Als de duplicaten detectie is ingeschakeld en de sessie-ID of partitie sleutel niet zijn ingesteld, wordt de bericht-ID gebruikt als de partitie sleutel. Als de bericht-ID ook niet is ingesteld, genereert .NET-en AMQP-bibliotheken automatisch een bericht-ID voor het bericht. Zie het [gebruik van partitie sleutels](service-bus-partitioning.md#use-of-partition-keys)voor meer informatie.
+> [!IMPORTANT]
+>- Wanneer **partitioneren** is **ingeschakeld**, `MessageId+PartitionKey` wordt gebruikt om de uniekheid te bepalen. Wanneer sessies zijn ingeschakeld, moeten de partitie sleutel en de sessie-ID hetzelfde zijn. 
+>- Wanneer **partitioneren** is **uitgeschakeld** (standaard), `MessageId` wordt alleen gebruikt om de uniekheid te bepalen.
+>- Zie voor meer informatie over SessionId, PartitionKey en MessageId het [gebruik van partitie sleutels](service-bus-partitioning.md#use-of-partition-keys).
+>- De [premier-laag](service-bus-premium-messaging.md) biedt geen ondersteuning voor partitionering, daarom raden we u aan om unieke bericht-id's in uw toepassingen te gebruiken en niet te vertrouwen op partitie sleutels voor duplicaten detectie. 
+
 
 ## <a name="enable-duplicate-detection"></a>Duplicaten detectie inschakelen
 

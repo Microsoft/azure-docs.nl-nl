@@ -4,15 +4,15 @@ description: 'Go-to-Market-Services: micro soft-bronnen die uitgevers kunnen geb
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: article
-ms.date: 09/24/2020
+ms.date: 01/13/2021
 author: keferna
 ms.author: keferna
-ms.openlocfilehash: ad86ebe1ca397004745e75dd279ea0a7cfe8348e
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 263c038cf5003d950cf500ccc13cf562ac71db0c
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94746564"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184998"
 ---
 # <a name="your-commercial-marketplace-benefits"></a>Uw voor delen voor commerciële Marketplace
 
@@ -104,16 +104,16 @@ Uitgevers van [lijsten en proef](determine-your-listing-type.md) abonnementen ku
 
 Micro soft behoudt zich het recht voor de voor delen van Marketplace-beloningen te intrekken en te beëindigen voor uitgevers die:
 
-* Neem deel aan de illegale activiteiten met behulp van hun Marketplace-vermelding.
-* Ontvang een aankoop waarvan bekend of aangenomen wordt dat deze frauduleus is.
-* Worden uit de commerciële Marketplace genoteerd.
-* Gebruik hun aanbieding om marketing of andere inhoud weer te geven die in strijd is met copyright-of handelsmerk wetgeving.
-* De beleids regels van het [Azure sponsoring-programma](https://azure.microsoft.com/offers/ms-azr-0036p/), inclusief, maar niet beperkt tot, worden geschonden met behulp van de Azure sponsor-financiering voor hun eigen interne bewerkingen of Bitcoine-analyse.
+- Neem deel aan de illegale activiteiten met behulp van hun Marketplace-vermelding.
+- Ontvang een aankoop waarvan bekend of aangenomen wordt dat deze frauduleus is.
+- Worden uit de commerciële Marketplace genoteerd.
+- Gebruik hun aanbieding om marketing of andere inhoud weer te geven die in strijd is met copyright-of handelsmerk wetgeving.
+- De beleids regels van het [Azure sponsoring-programma](https://azure.microsoft.com/offers/ms-azr-0036p/), inclusief, maar niet beperkt tot, worden geschonden met behulp van de Azure sponsor-financiering voor hun eigen interne bewerkingen of Bitcoine-analyse.
 
 Micro soft behoudt zich het recht voor om Marketplace-beloningen te intrekken en te beëindigen wanneer:
 
-* De klant die de aankoop doet, had per ongeluk de aankoop kunnen annuleren.
-* De klant annuleert voordat het product van de partner wordt gebruikt.
+- De klant die de aankoop doet, had per ongeluk de aankoop kunnen annuleren.
+- De klant annuleert voordat het product van de partner wordt gebruikt.
 
 ### <a name="offer-availability"></a>Beschik baarheid van aanbieding
 

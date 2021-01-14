@@ -2,13 +2,13 @@
 title: Azure IoT Hub als Event Grid bron
 description: In dit artikel vindt u de eigenschappen en het schema voor Azure IoT Hub-gebeurtenissen. Hiermee worden de beschik bare gebeurtenis typen, een voorbeeld gebeurtenis en gebeurtenis eigenschappen weer gegeven.
 ms.topic: conceptual
-ms.date: 07/07/2020
-ms.openlocfilehash: 02ecf8d4df55aa6b4319e40892778f85f94e29a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/13/2021
+ms.openlocfilehash: 7e1c480bd2a662a2ee3418b35dc9c3b50d412a60
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86113646"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185832"
 ---
 # <a name="azure-iot-hub-as-an-event-grid-source"></a>Azure IoT Hub als Event Grid bron
 In dit artikel vindt u de eigenschappen en het schema voor Azure IoT Hub-gebeurtenissen. Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een inleiding tot gebeurtenis schema's. 
@@ -26,8 +26,6 @@ Azure IoT Hub verzendt de volgende gebeurtenis typen:
 | Microsoft.Devices.DeviceConnected | Gepubliceerd wanneer een apparaat is verbonden met een IoT-hub. |
 | Microsoft.Devices.DeviceDisconnected | Gepubliceerd wanneer een apparaat wordt losgekoppeld van een IoT-hub. | 
 | Microsoft.Devices.DeviceTelemetry | Gepubliceerd wanneer een telemetrie-bericht wordt verzonden naar een IoT-hub. |
-
-Alle faxgebeurtenissen behalve telemetrie-gebeurtenissen van apparaten zijn algemeen beschikbaar in alle regio's die door Event Grid worden ondersteund. De telemetrie-gebeurtenis van het apparaat bevindt zich in de open bare preview en is beschikbaar in alle regio's behalve VS-Oost, VS-West, Europa-west, [Azure Government](../azure-government/documentation-government-welcome.md), [Azure China 21Vianet](/azure/china/china-welcome)en [Azure Duitsland](https://azure.microsoft.com/global-infrastructure/germany/).
 
 ### <a name="example-event"></a>Voorbeeld gebeurtenis
 

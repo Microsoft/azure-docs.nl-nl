@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/9/2020
 ms.author: yitoh
-ms.openlocfilehash: 5e633b5e4b2ff2ce884bfaf99e3730968150cbed
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: e76086db36642664ca15acee26f4e0aca85ff272
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746368"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184456"
 ---
 # <a name="azure-ddos-protection-standard-overview"></a>Overzicht van Azure DDoS Protection Standard
 
@@ -45,6 +45,10 @@ Azure DDoS Protection slaat geen klant gegevens op.
 - **Kosten garantie:** Ontvang gegevens overdracht en toepassing scale-out service tegoed voor resource kosten die worden gemaakt als gevolg van gedocumenteerde DDoS-aanvallen.
 
 ## <a name="pricing"></a>Prijzen
+
+DDoS-beschermings plannen hebben een vaste maandelijkse kosten van $2.944 per maand, die betrekking hebben op een open bare IP-adres van 100. Voor de beveiliging van extra resources wordt een extra $30 per resource per maand berekend.
+
+Onder een Tenant kan één DDoS-beveiligings plan worden gebruikt voor meerdere abonnementen, zodat er niet meer dan één DDoS-beveiligings plan hoeft te worden gemaakt.
 
 Zie [Azure DDoS Protection Standard-prijzen](https://azure.microsoft.com/pricing/details/ddos-protection/)voor meer informatie over Azure DDoS Protection standaard prijzen.
 

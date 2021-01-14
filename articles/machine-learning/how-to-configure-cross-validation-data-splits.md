@@ -1,7 +1,7 @@
 ---
-title: Kruis validatie en gegevens splitsingen in geautomatiseerde machine learning experimenten configureren
+title: Gegevens splitsingen en kruis validatie in geautomatiseerde machine learning
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het configureren van kruis validatie en gegevensset splitsen voor automatische machine learning experimenten
+description: Meer informatie over het configureren van gegevensset-splitsingen en kruis validatie voor automatische machine learning experimenten
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,20 +11,20 @@ ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 06/16/2020
-ms.openlocfilehash: c29c8ab31507c0ec904a7534e50ef6523e1aab96
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 2e26bfa484d573c0158e518b31087fb10bdcdfb9
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360102"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185679"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Gegevenssplitsingen en kruisvalidatie configureren in geautomatiseerde machine learning
 
-In dit artikel vindt u informatie over de verschillende opties voor het configureren van de splitsingen van trainings-en validatie gegevens en kruis validatie voor uw geautomatiseerde machine learning, AutoML, experimenten.
+In dit artikel vindt u informatie over de verschillende opties voor het configureren van de splitsingen van trainings-en validatie gegevens en kruis validatie voor uw geautomatiseerde machine learning, automatische ML, experimenten.
 
-Als u in Azure Machine Learning gebruikmaakt van AutoML om meerdere ML-modellen te bouwen, moet elke onderliggende uitvoering het gerelateerde model valideren door de gegevens over de kwaliteit van het model te berekenen, zoals nauw keurigheid of AUC gewogen. Deze metrische gegevens worden berekend door de voor spellingen te vergelijken die zijn gemaakt met elk model met echte labels uit eerdere waarnemingen in de validatie gegevens. 
+Wanneer u in Azure Machine Learning gebruikmaakt van automatische ML om meerdere ML-modellen te bouwen, moet elke onderliggende uitvoering het gerelateerde model valideren door de gegevens over de kwaliteit van het model te berekenen, zoals nauw keurigheid of AUC gewogen. Deze metrische gegevens worden berekend door de voor spellingen te vergelijken die zijn gemaakt met elk model met echte labels uit eerdere waarnemingen in de validatie gegevens. 
 
-AutoML experimenten voeren automatisch model validatie uit. In de volgende secties wordt beschreven hoe u validatie-instellingen verder kunt aanpassen met behulp van de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py). 
+Automatische ML experimenten voeren automatisch model validatie uit. In de volgende secties wordt beschreven hoe u validatie-instellingen verder kunt aanpassen met behulp van de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py). 
 
 Zie [uw geautomatiseerde machine learning experimenten in azure machine learning Studio maken](how-to-use-automated-ml-for-ml-models.md)voor een programma met weinig code of zonder code. 
 
@@ -39,13 +39,13 @@ Voor dit artikel hebt u het volgende nodig:
 
 * Vertrouwd met het instellen van een automatische machine learning experiment met de Azure Machine Learning SDK. Volg de [zelf studie](tutorial-auto-train-models.md) of Lees [hoe](how-to-configure-auto-train.md) u de ontwerp patronen voor het basisautomatische machine learning experiment kunt zien.
 
-* Het is een goed idee om gegevens over Kruis validatie en Train/validatie te splitsen als ML. Voor een uitleg op hoog niveau
+* Een goed idee van de splitsing van Train/validatie gegevens en kruis validatie als machine learning concepten. Voor een uitleg op hoog niveau
 
     * [Over Train-, validatie-en test sets in Machine Learning](https://towardsdatascience.com/train-validation-and-test-sets-72cb40cba9e7)
 
-    * [Kruis validatie](https://towardsdatascience.com/understanding-cross-validation-419dbd47e9bd)
+    * [Kruis validatie begrijpen in machine learning](https://towardsdatascience.com/understanding-cross-validation-419dbd47e9bd)
 
-## <a name="default--data-splits-and-cross-validation"></a>Standaard gegevens splitsingen en kruis validatie
+## <a name="default-data-splits-and-cross-validation"></a>Standaard gegevens splitsingen en kruis validatie
 
 Gebruik het object [AutoMLConfig](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?preserve-view=true&view=azure-ml-py) om uw instellingen voor experimenteren en trainingen te definiëren. In het volgende code fragment ziet u dat alleen de vereiste para meters zijn gedefinieerd. Dit zijn de para meters voor `n_cross_validation` of `validation_ data` worden **niet** opgenomen.
 
@@ -67,7 +67,7 @@ Als u een `validation_data` of `n_cross_validation` -para meter niet expliciet o
 |Grootte van de trainings &nbsp; gegevens &nbsp;| Validatie techniek |
 |---|-----|
 |**Meer &nbsp; dan &nbsp; 20.000 &nbsp; rijen**| De splitsing van Train/validatie gegevens wordt toegepast. De standaard instelling is om 10% van de eerste set met trainings gegevens te nemen als de validatieset. Deze validatieset wordt vervolgens gebruikt voor de berekening van metrische gegevens.
-|**Kleiner &nbsp; dan &nbsp; 20.000 &nbsp; rijen**| De methode voor kruis validatie wordt toegepast. Het standaard aantal vouwen is afhankelijk van het aantal rijen. <br> **Als de gegevensset kleiner is dan 1.000 rijen** , worden er 10 vouwen gebruikt. <br> **Als de rijen tussen 1.000 en 20.000** liggen, worden er drie vouwen gebruikt.
+|**Kleiner &nbsp; dan &nbsp; 20.000 &nbsp; rijen**| De methode voor kruis validatie wordt toegepast. Het standaard aantal vouwen is afhankelijk van het aantal rijen. <br> **Als de gegevensset kleiner is dan 1.000 rijen**, worden er 10 vouwen gebruikt. <br> **Als de rijen tussen 1.000 en 20.000** liggen, worden er drie vouwen gebruikt.
 
 ## <a name="provide-validation-data"></a>Validatie gegevens opgeven
 
@@ -117,7 +117,7 @@ Als u kruis validatie wilt uitvoeren, neemt u de `n_cross_validations` para mete
 
 In de volgende code worden vijf vouwen voor kruis validatie gedefinieerd. Daarom gebruiken vijf verschillende trainingen, elke training met 4/5 van de gegevens en elke validatie met behulp van 1/5 van de gegevens met een andere evaluatie vouwen.
 
-Als gevolg hiervan worden metrische gegevens berekend met het gemiddelde van de vijf validatie gegevens.
+Als gevolg hiervan worden metrische gegevens berekend met het gemiddelde van de vijf validatie-metrische gegevens.
 
 ```python
 data = "https://automlsamplenotebookdata.blob.core.windows.net/automl-sample-notebook-data/creditcard.csv"

@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 05/23/2019
 ms.author: thweiss
 ms.custom: devx-track-js
-ms.openlocfilehash: c3cdc0a9fb9fa236fae37a52194f446278a42f72
-ms.sourcegitcommit: 9706bee6962f673f14c2dc9366fde59012549649
+ms.openlocfilehash: d2f35ae7a6110acb2ca89bdaeb487eddabf84923
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94616243"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185815"
 ---
 # <a name="how-to-model-and-partition-data-on-azure-cosmos-db-using-a-real-world-example"></a>Meer informatie over het modelleren en partitioneren van gegevens in Azure Cosmos DB aan de hand van een praktijkvoorbeeld
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -60,7 +60,7 @@ Hier volgt een lijst met aanvragen die ons platform moet openbaren:
 
 In deze fase hebben we nog geen aandacht meer bedacht op de details van wat elke entiteit (gebruiker, post enz.) zal bevatten. Deze stap is doorgaans de eerste die u moet uitvoeren bij het ontwerpen op basis van een relationele Store, omdat u moet nagaan hoe deze entiteiten worden vertaald in termen van tabellen, kolommen, refererende sleutels, enzovoort. Het is veel minder van een probleem met een document database die geen enkel schema afdwingt bij het schrijven.
 
-De belangrijkste reden waarom het belang rijk is om de toegangs patronen te identificeren vanaf het begin, is omdat deze lijst met aanvragen wordt door ons test pakket. Elke keer dat we ons gegevens model herhalen, gaan we elk van de aanvragen door en controleren ze de prestaties en schaal baarheid.
+De belangrijkste reden waarom het belang rijk is om de toegangs patronen te identificeren vanaf het begin, is omdat deze lijst met aanvragen wordt door ons test pakket. Elke keer dat we ons gegevens model herhalen, gaan we elk van de aanvragen door en controleren ze de prestaties en schaal baarheid. We berekenen de verbruikte aanvraag eenheden in elk model en optimaliseren ze. Al deze modellen gebruiken het standaard indexerings beleid en u kunt het overschrijven door specifieke eigenschappen te indexeren, waarmee u het gebruik en de latentie van de RU verder kunt verbeteren.
 
 ## <a name="v1-a-first-version"></a>V1: een eerste versie
 
@@ -295,7 +295,7 @@ We wijzigen ook opmerkingen en soort gelijke items om de gebruikers naam toe te 
 
 Wat we willen doen, is dat elke keer dat we een opmerking of als soort toevoegen, we ook de `commentCount` of de `likeCount` in de bijbehorende post verhogen. Als `posts` de container is gepartitioneerd door `postId` , wordt het nieuwe item (opmerking of leuk) en het bijbehorende bericht in dezelfde logische partitie geplaatst. Als gevolg hiervan kunnen we een [opgeslagen procedure](stored-procedures-triggers-udfs.md) gebruiken om die bewerking uit te voeren.
 
-Wanneer u nu een opmerking maakt ( **[C3]** ) in plaats van een nieuw item toe te voegen aan de `posts` container, noemen we de volgende opgeslagen procedure in die container:
+Wanneer u nu een opmerking maakt (**[C3]**) in plaats van een nieuw item toe te voegen aan de `posts` container, noemen we de volgende opgeslagen procedure in die container:
 
 ```javascript
 function createComment(postId, comment) {

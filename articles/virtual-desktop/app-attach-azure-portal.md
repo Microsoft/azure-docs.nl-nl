@@ -6,14 +6,14 @@ ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d8ed429003a9da7ae93fb93f4218cd66767dcd7b
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 34bcef24d5e7fbda53984f14a2307859c9210262
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562273"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185951"
 ---
-# <a name="set-up-msix-app-attach-with-the-azure-portal"></a>De MSIX-app die is gekoppeld met de Azure Portal instellen
+# <a name="set-up-msix-app-attach-with-the-azure-portal"></a>MSIX-app-koppeling instellen met de Azure-portal
 
 > [!IMPORTANT]
 > MSIX app attach is momenteel beschikbaar als open bare preview.
@@ -54,19 +54,10 @@ reg add HKCU\Software\Microsoft\Windows\CurrentVersion\ContentDeliveryManager /v
 
 reg add HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\ContentDeliveryManager\Debug /v ContentDeliveryAllowedOverride /t REG_DWORD /d 0x2 /f
 
-rem Disable Windows Update:
-
-sc config wuauserv start=disabled
-```
-
-Nadat u automatische updates hebt uitgeschakeld, moet u Hyper-V inschakelen, omdat u de `Mount-VHD` opdracht voor het faseren en en ontkoppelen van de VHD wilt destageren.
-
-```powershell
-Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V -All
 ```
 
 >[!NOTE]
->Bij deze wijziging moet u de virtuele machine opnieuw opstarten.
+>U wordt aangeraden de virtuele machine opnieuw op te starten nadat u Hyper-V hebt ingeschakeld.
 
 ## <a name="configure-the-msix-app-attach-management-interface"></a>De MSIX-app voor het koppelen van apps configureren
 

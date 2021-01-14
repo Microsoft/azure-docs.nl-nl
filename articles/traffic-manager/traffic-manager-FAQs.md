@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/26/2019
 ms.author: duau
-ms.openlocfilehash: 86758c355566fb67ebd8a606068e2044e0b8bd64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17ccfeb709c530a868a75ecd87052618aaea4846
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89400174"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184574"
 ---
 # <a name="traffic-manager-frequently-asked-questions-faq"></a>Veelgestelde vragen over Traffic Manager
 
@@ -96,7 +96,7 @@ Het belangrijkste verschil tussen deze twee populaire routerings methoden is dat
 
 ### <a name="what-are-the-regions-that-are-supported-by-traffic-manager-for-geographic-routing"></a>Wat zijn de regio's die door Traffic Manager worden ondersteund voor geografische route ring?
 
-De land-of regio hiërarchie die door Traffic Manager wordt gebruikt, vindt u [hier](traffic-manager-geographic-regions.md). Hoewel deze pagina up-to-date wordt gehouden met alle wijzigingen, kunt u dezelfde gegevens ook programmatisch ophalen met behulp van de [Azure Traffic Manager rest API](https://docs.microsoft.com/rest/api/trafficmanager/). 
+De land-of regio hiërarchie die door Traffic Manager wordt gebruikt, vindt u [hier](traffic-manager-geographic-regions.md). Hoewel deze pagina up-to-date wordt gehouden met alle wijzigingen, kunt u dezelfde gegevens ook programmatisch ophalen met behulp van de [Azure Traffic Manager rest API](/rest/api/trafficmanager/). 
 
 ### <a name="how-does-traffic-manager-determine-where-a-user-is-querying-from"></a>Hoe bepaalt Traffic Manager of een gebruiker een query uitvoert?
 
@@ -116,11 +116,11 @@ Nee, de locatie van het eind punt legt geen beperkingen op waaraan regio's kunne
 
 ### <a name="can-i-assign-geographic-regions-to-endpoints-in-a-profile-that-is-not-configured-to-do-geographic-routing"></a>Kan ik geografische regio's toewijzen aan eind punten in een profiel dat niet is geconfigureerd voor geografische route ring?
 
-Ja, als de routerings methode van een profiel niet geografisch is, kunt u met de [Azure Traffic Manager rest API](https://docs.microsoft.com/rest/api/trafficmanager/) geografische regio's toewijzen aan eind punten in dat profiel. In het geval van niet-geografische routerings type profielen wordt deze configuratie genegeerd. Als u een dergelijk profiel op een later tijdstip naar een geografisch routerings type wijzigt, kunt Traffic Manager deze toewijzingen gebruiken.
+Ja, als de routerings methode van een profiel niet geografisch is, kunt u met de [Azure Traffic Manager rest API](/rest/api/trafficmanager/) geografische regio's toewijzen aan eind punten in dat profiel. In het geval van niet-geografische routerings type profielen wordt deze configuratie genegeerd. Als u een dergelijk profiel op een later tijdstip naar een geografisch routerings type wijzigt, kunt Traffic Manager deze toewijzingen gebruiken.
 
 ### <a name="why-am-i-getting-an-error-when-i-try-to-change-the-routing-method-of-an-existing-profile-to-geographic"></a>Waarom krijg ik een fout melding wanneer ik de routerings methode van een bestaand profiel probeer te wijzigen in geografisch?
 
-Aan alle eind punten onder een profiel met geografische route ring moet ten minste één regio worden toegewezen. Als u een bestaand profiel wilt omzetten naar een geografisch routerings type, moet u eerst geografische regio's aan alle eind punten koppelen met behulp van de [Azure Traffic Manager rest API](https://docs.microsoft.com/rest/api/trafficmanager/) voordat u het routerings type wijzigt in geografisch. Als u Portal gebruikt, verwijdert u eerst de eind punten, wijzigt u de routerings methode van het profiel in geografisch en voegt u vervolgens de eind punten samen met hun geografische regio toewijzing toe.
+Aan alle eind punten onder een profiel met geografische route ring moet ten minste één regio worden toegewezen. Als u een bestaand profiel wilt omzetten naar een geografisch routerings type, moet u eerst geografische regio's aan alle eind punten koppelen met behulp van de [Azure Traffic Manager rest API](/rest/api/trafficmanager/) voordat u het routerings type wijzigt in geografisch. Als u Portal gebruikt, verwijdert u eerst de eind punten, wijzigt u de routerings methode van het profiel in geografisch en voegt u vervolgens de eind punten samen met hun geografische regio toewijzing toe.
 
 ### <a name="why-is-it-strongly-recommended-that-customers-create-nested-profiles-instead-of-endpoints-under-a-profile-with-geographic-routing-enabled"></a>Waarom wordt het ten zeerste aanbevolen dat klanten geneste profielen maken in plaats van eind punten onder een profiel waarvoor geografische route ring is ingeschakeld?
 
@@ -306,7 +306,7 @@ Verkeersweergave prijzen zijn gebaseerd op het aantal gegevens punten dat wordt 
 
 Het gebruik van eind punten van meerdere abonnementen is niet mogelijk met Azure Web Apps. Voor Azure Web Apps is vereist dat alle aangepaste domein namen die worden gebruikt met Web Apps alleen worden gebruikt binnen één abonnement. Het is niet mogelijk om Web Apps te gebruiken uit meerdere abonnementen met dezelfde domein naam.
 
-Voor andere eindpunt typen is het mogelijk om Traffic Manager te gebruiken met eind punten van meer dan één abonnement. In Resource Manager kunnen eind punten van elk abonnement worden toegevoegd aan Traffic Manager, mits de persoon die het Traffic Manager profiel heeft geconfigureerd Lees toegang heeft tot het eind punt. Deze machtigingen kunnen worden verleend met behulp [van toegangs beheer op basis van rollen (Azure RBAC)](../role-based-access-control/role-assignments-portal.md). Eind punten van andere abonnementen kunnen worden toegevoegd met behulp van [Azure PowerShell](https://docs.microsoft.com/powershell/module/az.trafficmanager/new-aztrafficmanagerendpoint) of de [Azure cli](https://docs.microsoft.com/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-create).
+Voor andere eindpunt typen is het mogelijk om Traffic Manager te gebruiken met eind punten van meer dan één abonnement. In Resource Manager kunnen eind punten van elk abonnement worden toegevoegd aan Traffic Manager, mits de persoon die het Traffic Manager profiel heeft geconfigureerd Lees toegang heeft tot het eind punt. Deze machtigingen kunnen worden verleend met behulp [van toegangs beheer op basis van rollen (Azure RBAC)](../role-based-access-control/role-assignments-portal.md). Eind punten van andere abonnementen kunnen worden toegevoegd met behulp van [Azure PowerShell](/powershell/module/az.trafficmanager/new-aztrafficmanagerendpoint) of de [Azure cli](/cli/azure/network/traffic-manager/endpoint?view=azure-cli-latest#az-network-traffic-manager-endpoint-create).
 
 ### <a name="can-i-use-traffic-manager-with-cloud-service-staging-slots"></a>Kan ik Traffic Manager gebruiken met staging-sleuven van Cloud service?
 
@@ -345,9 +345,9 @@ Azure Resource Manager vereist dat alle resource groepen een locatie opgeven, wa
 
 ### <a name="how-do-i-determine-the-current-health-of-each-endpoint"></a>Hoe kan ik de huidige status van elk eind punt bepalen?
 
-De huidige bewakings status van elk eind punt, naast het algehele profiel, wordt weer gegeven in de Azure Portal. Deze informatie is ook beschikbaar via de verkeers monitor [rest API](https://msdn.microsoft.com/library/azure/mt163667.aspx), [Power shell-cmdlets](https://docs.microsoft.com/powershell/module/az.trafficmanager)en [platformoverschrijdende Azure cli](../cli-install-nodejs.md).
+De huidige bewakings status van elk eind punt, naast het algehele profiel, wordt weer gegeven in de Azure Portal. Deze informatie is ook beschikbaar via de verkeers monitor [rest API](/rest/api/trafficmanager/), [Power shell-cmdlets](/powershell/module/az.trafficmanager)en [platformoverschrijdende Azure cli](/cli/azure/install-classic-cli).
 
-U kunt Azure Monitor ook gebruiken om de status van uw eind punten bij te houden en een visuele weer gave ervan te bekijken. Zie de [documentatie van Azure monitoring](https://docs.microsoft.com/azure/monitoring-and-diagnostics/monitoring-overview-metrics)voor meer informatie over het gebruik van Azure monitor.
+U kunt Azure Monitor ook gebruiken om de status van uw eind punten bij te houden en een visuele weer gave ervan te bekijken. Zie de [documentatie van Azure monitoring](../azure-monitor/platform/data-platform.md)voor meer informatie over het gebruik van Azure monitor.
 
 ### <a name="can-i-monitor-https-endpoints"></a>Kan ik HTTPS-eind punten controleren?
 
@@ -361,7 +361,7 @@ Traffic Manager kan geen certificaat validatie opgeven, met inbegrip van:
 
 ### <a name="do-i-use-an-ip-address-or-a-dns-name-when-adding-an-endpoint"></a>Moet ik een IP-adres of een DNS-naam gebruiken wanneer ik een eind punt toevoeg?
 
-Traffic Manager ondersteunt het toevoegen van eind punten met behulp van drie manieren om ze te verwijzen als een DNS-naam, als een IPv4-adres en als een IPv6-adres. Als het eind punt als een IPv4-of IPv6-adres is toegevoegd, is het antwoord van de query respectievelijk van het record type A of AAAA. Als het eind punt is toegevoegd als een DNS-naam, is de query reactie van het record type CNAME. Het toevoegen van eind punten als IPv4-of IPv6-adres is alleen toegestaan als het eind punt van het type **extern**is.
+Traffic Manager ondersteunt het toevoegen van eind punten met behulp van drie manieren om ze te verwijzen als een DNS-naam, als een IPv4-adres en als een IPv6-adres. Als het eind punt als een IPv4-of IPv6-adres is toegevoegd, is het antwoord van de query respectievelijk van het record type A of AAAA. Als het eind punt is toegevoegd als een DNS-naam, is de query reactie van het record type CNAME. Het toevoegen van eind punten als IPv4-of IPv6-adres is alleen toegestaan als het eind punt van het type **extern** is.
 Alle routerings methoden en bewakings instellingen worden ondersteund door de drie typen eindpunt adressering.
 
 ### <a name="what-types-of-ip-addresses-can-i-use-when-adding-an-endpoint"></a>Welke typen IP-adressen kan ik gebruiken bij het toevoegen van een eind punt?
@@ -458,7 +458,7 @@ Het aantal Traffic Manager status controles dat uw eind punt bereikt, is afhanke
 
 ### <a name="how-can-i-get-notified-if-one-of-my-endpoints-goes-down"></a>Hoe kan ik een melding krijgen als een van mijn eind punten uitvalt?
 
-Een van de metrische gegevens die door Traffic Manager worden verschaft, is de status van eind punten in een profiel. U kunt deze weer geven als een aggregatie van alle eind punten in een profiel (bijvoorbeeld 75% van uw eind punten in orde) of, op een niveau per eind punt. Traffic Manager metrische gegevens worden weer gegeven via Azure Monitor en u kunt de [waarschuwings mogelijkheden](../monitoring-and-diagnostics/monitor-alerts-unified-usage.md) ervan gebruiken om meldingen te ontvangen wanneer er een wijziging is in de status van uw eind punt. Zie [Traffic Manager metrische gegevens en waarschuwingen](traffic-manager-metrics-alerts.md)voor meer informatie.  
+Een van de metrische gegevens die door Traffic Manager worden verschaft, is de status van eind punten in een profiel. U kunt deze weer geven als een aggregatie van alle eind punten in een profiel (bijvoorbeeld 75% van uw eind punten in orde) of, op een niveau per eind punt. Traffic Manager metrische gegevens worden weer gegeven via Azure Monitor en u kunt de [waarschuwings mogelijkheden](../azure-monitor/platform/alerts-metric.md) ervan gebruiken om meldingen te ontvangen wanneer er een wijziging is in de status van uw eind punt. Zie [Traffic Manager metrische gegevens en waarschuwingen](traffic-manager-metrics-alerts.md)voor meer informatie.  
 
 ## <a name="traffic-manager-nested-profiles"></a>Traffic Manager geneste profielen
 

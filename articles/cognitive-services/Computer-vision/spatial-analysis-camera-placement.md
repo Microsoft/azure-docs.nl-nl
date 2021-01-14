@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: conceptual
-ms.date: 09/11/2020
+ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 8e951e6cb18596b19f49bf42179297f656e3fa5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 849afe54125588cb7664ee221e4f229e83be8f96
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91304288"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185475"
 ---
 # <a name="camera-placement-guide"></a>Gids voor camera plaatsing
 
@@ -52,7 +52,7 @@ In de volgende afbeelding ziet u de verhogings weergave voor de richting van de 
 
 ## <a name="camera-height"></a>Camera hoogte
 
-Over het algemeen moeten camera's 12-14 poten van het wegdek worden bevestigd. Wanneer u de camera in dit bereik hebt gekoppeld, kunt u obstakels (bijvoorbeeld rekken, hangende lichten, aflopende aanmeldingen en weer gaven) overwegen die van invloed kunnen zijn op de camera weergave en vervolgens de hoogte aanpassen als dat nodig is.
+Over het algemeen moeten camera's 12-14 poten van het wegdek worden bevestigd. Voor de detectie van gezichts masker raden we aan dat camera's 8-12 poten van het wegdek worden bevestigd. Wanneer u de camera in dit bereik hebt gekoppeld, kunt u obstakels (bijvoorbeeld rekken, hangende lichten, aflopende aanmeldingen en weer gaven) overwegen die van invloed kunnen zijn op de camera weergave en vervolgens de hoogte aanpassen als dat nodig is.
 
 ## <a name="camera-to-focal-point-distance"></a>Camera-naar-scherpere punt afstand
 
@@ -68,7 +68,7 @@ Van boven ziet het er als volgt uit:
 
 ![Hoe een camera-naar-scherp punt afstand wordt gemeten](./media/spatial-analysis/camera-focal-point-above.png)
 
-Gebruik de onderstaande tabel om de afstand van de camera te bepalen van het brand punt op basis van de specifieke koppelings hoogte. Deze afstanden zijn voor optimale plaatsing. De tabel biedt richt lijnen onder de aanbeveling 12 '-14 ', aangezien sommige plafonds de hoogte kunnen beperken.
+Gebruik de onderstaande tabel om de afstand van de camera te bepalen van het brand punt op basis van de specifieke koppelings hoogte. Deze afstanden zijn voor optimale plaatsing. De tabel biedt richt lijnen onder de aanbeveling 12 '-14 ', aangezien sommige plafonds de hoogte kunnen beperken. Voor de detectie van gezichts maskers is de aanbevolen camera-naar-brand punt afstand (min/max) 4 '-10 ' voor de camera hoogte tussen 8 ' en 12 '.
 
 | Camera hoogte | Camera-naar-brandpuntsafstand-punt-afstand (min/max) |  
 | ------------- | ---------------------------------------- |  
@@ -91,7 +91,7 @@ In deze sectie worden geldige bereiken voor het koppelen van camera hoeken besch
 
 ### <a name="line-configuration"></a>Lijn configuratie
 
-De volgende tabel bevat aanbevelingen voor camera's die zijn geconfigureerd voor de bewerking **cognitiveservices. Vision. spatialanalysis-personcrossingline** . 
+De volgende tabel bevat aanbevelingen voor camera's die zijn geconfigureerd voor de bewerking **cognitiveservices. Vision. spatialanalysis-personcrossingline** . Voor detectie van gezichts maskers is +/-30 graden de optimale camera montage hoek voor de camera hoogte tussen 8 en 12.
 
 | Camera hoogte | Camera-naar-scherpere punt afstand | Optimale camera montage hoek (min/max) |  
 | ------------- | ------------------------------ | ------------------------------------------ |  
@@ -127,7 +127,7 @@ De volgende afbeelding bevat simulaties voor de linker-en rechter camera weergav
 
 #### <a name="queues"></a>Wachtrijen
 
-De **cognitiveservices. Vision. spatialanalysis-personcount**, **cognitiveservices. Vision. spatialanalysis-persondistance**en **cognitiveservices. Vision. spatialanalysis-personcrossingpolygon-** vaardig heden kunnen worden gebruikt voor het bewaken van wacht rijen. Voor een optimale kwaliteit van de wachtrij gegevens worden intrek barrières de voor keur gegeven om bedekking van de mensen in de wachtrij te minimaliseren en ervoor te zorgen dat de locatie van de wacht rijen consistent is.
+De **cognitiveservices. Vision. spatialanalysis-personcount**, **cognitiveservices. Vision. spatialanalysis-persondistance** en **cognitiveservices. Vision. spatialanalysis-personcrossingpolygon-** vaardig heden kunnen worden gebruikt voor het bewaken van wacht rijen. Voor een optimale kwaliteit van de wachtrij gegevens worden intrek barrières de voor keur gegeven om bedekking van de mensen in de wachtrij te minimaliseren en ervoor te zorgen dat de locatie van de wacht rijen consistent is.
 
 ![Inklap bare band wachtrij](./media/spatial-analysis/retractable-belt-queue.png)
 

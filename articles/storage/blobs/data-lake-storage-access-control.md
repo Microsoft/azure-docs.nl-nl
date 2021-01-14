@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/16/2020
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 2418a8813e7b9de603b7e7cdc11fc756d73ac2a4
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 2a1455c5956297a19d640146879f93b61d035139
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350752"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185900"
 ---
 # <a name="access-control-lists-acls-in-azure-data-lake-storage-gen2"></a>Toegangs beheer lijsten (Acl's) in Azure Data Lake Storage Gen2
 
@@ -34,7 +34,7 @@ Zie een van de volgende artikelen voor het instellen van machtigingen voor besta
 
 | Omgeving | Artikel |
 |--------|-----------|
-|Azure Opslagverkenner |[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md#managing-access)|
+|Azure Storage Explorer |[Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2](data-lake-storage-explorer.md#managing-access)|
 |.NET |[.NET gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-dotnet.md#manage-access-control-lists-acls)|
 |Java|[Java gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-java.md#manage-access-control-lists-acls)|
 |Python|[Python gebruiken voor het beheren van mappen, bestanden en Acl's in Azure Data Lake Storage Gen2](data-lake-storage-directory-file-acl-python.md#manage-access-control-lists-acls)|
@@ -60,16 +60,16 @@ Zowel toegangs-Acl's als standaard-Acl's hebben dezelfde structuur.
 
 ## <a name="levels-of-permission"></a>Machtigings niveaus
 
-De machtigingen voor een container object zijn **lezen**, **schrijven** en **uitvoeren** en kunnen worden gebruikt voor bestanden en mappen, zoals wordt weer gegeven in de volgende tabel:
+De machtigingen voor mappen en bestanden in een container, zijn **lezen**, **schrijven** en **uitvoeren** en kunnen worden gebruikt voor bestanden en mappen, zoals wordt weer gegeven in de volgende tabel:
 
-|            |    File     |   Directory |
+|            |    Bestand     |   Directory |
 |------------|-------------|----------|
 | **Lezen (L)** | Kan de inhoud van een bestand lezen | Moet worden **gelezen** en **uitgevoerd** om de inhoud van de map weer te geven |
 | **Schrijven (S)** | Kan schrijven of toevoegen aan een bestand | **Schrijven** en **uitvoeren** is vereist om onderliggende items in een map te maken |
 | **Uitvoeren (U)** | Betekent niets in de context van Data Lake Storage Gen2 | Vereist om de onderliggende items van een map door te bladeren |
 
 > [!NOTE]
-> Als u machtigingen verleent met behulp van alleen Acl's (geen Azure RBAC) en vervolgens een beveiligings-principal Lees-of schrijf toegang tot een bestand verleent, moet u de beveiligings-principal **uitvoerings** machtigingen voor de container geven en aan elke map in de hiërarchie van mappen die tot het bestand leiden.
+> Als u machtigingen verleent met behulp van alleen Acl's (geen Azure RBAC) en vervolgens een beveiligings-principal Lees-of schrijf toegang tot een bestand verleent, moet u de beveiligings-principal **uitvoerings** machtigingen geven voor de hoofdmap van de container en elke map in de hiërarchie van mappen die tot het bestand leiden.
 
 ### <a name="short-forms-for-permissions"></a>Korte formulieren voor machtigingen
 
@@ -200,11 +200,11 @@ Zoals geïllustreerd in het algoritme voor toegangs controle, beperkt het masker
 
 Voor een nieuwe Data Lake Storage Gen2-container wordt het masker voor de toegangs-ACL van de hoofdmap (/) standaard ingesteld op **750** voor directory's en **640** voor bestanden. In de volgende tabel ziet u de symbolische notatie van deze machtigings niveaus.
 
-|Entiteit|Mappen|Bestanden|
+|Entiteit|Mappen|Files|
 |--|--|--|
 |Gebruiker die eigenaar is|`rwx`|`r-w`|
 |Groep die eigenaar is|`r-x`|`r--`|
-|Overige|`---`|`---`|
+|Anders|`---`|`---`|
 
 Bestanden ontvangen niet de X-bit omdat deze niet van toepassing is op bestanden in een alleen-opslag systeem. 
 

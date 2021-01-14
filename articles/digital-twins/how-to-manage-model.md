@@ -7,12 +7,13 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: a8b2fdf99b33df3322748b7e073cc4ab18957c84
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 00e6802f37ec60467edbea98038dd23fcba1239a
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045237"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185492"
 ---
 # <a name="manage-azure-digital-twins-models"></a>Azure Digital Apparaatdubbels-modellen beheren
 
@@ -52,9 +53,6 @@ U kunt aan de slag met deze methode om modellen te definiëren voor de weers hui
 ## <a name="upload-models"></a>Modellen uploaden
 
 Zodra de modellen zijn gemaakt, kunt u deze uploaden naar het Azure Digital Apparaatdubbels-exemplaar.
-
-> [!TIP]
-> Het is raadzaam om uw modellen offline te valideren voordat u ze uploadt naar uw Azure Digital Apparaatdubbels-exemplaar. U kunt de [DTDL-client-side parser-bibliotheek](https://nuget.org/packages/Microsoft.Azure.DigitalTwins.Parser/) en [DTDL validator](/samples/azure-samples/dtdl-validator/dtdl-validator) -voor beeld gebruiken dat wordt beschreven in [*procedures: modellen parseren en valideren*](how-to-parse-models.md) om uw modellen te controleren voordat u deze uploadt naar de service.
 
 Wanneer u klaar bent voor het uploaden van een model, kunt u het volgende code fragment gebruiken:
 

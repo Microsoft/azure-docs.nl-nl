@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/08/2017
 ms.author: duau
-ms.openlocfilehash: fc6e8bcda17f9d788a430ed763bd9f8702eaf250
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3d5a888bf132725ff64c2a128b77f0257f435585
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96003545"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184251"
 ---
 # <a name="add-disable-enable-or-delete-endpoints"></a>Eindpunten toevoegen, uitschakelen, inschakelen of verwijderen
 
@@ -45,7 +45,7 @@ U kunt ook afzonderlijke eindpunten uitschakelen die deel uitmaken van een Traff
 7.  Als beide eindpunten zijn toegevoegd, worden ze weergegeven op de blade **Traffic Manager-profiel**, samen met de controlestatus **Online**.
 
 > [!NOTE]
-> Nadat een eindpunt hebt toegevoegd aan of verwijderd uit een profiel met de verkeersrouteringsmethode *Failover*, wordt de failover-prioriteitenlijst mogelijk niet geordend zoals u dat wilt. U kunt de volgorde van de Failover-prioriteitenlijst aanpassen op de pagina Configuratie. Zie voor meer informatie [Configure Failover traffic routing](traffic-manager-configure-failover-routing-method.md) (Failover-verkeersroutering configureren).
+> Nadat een eindpunt hebt toegevoegd aan of verwijderd uit een profiel met de verkeersrouteringsmethode *Failover*, wordt de failover-prioriteitenlijst mogelijk niet geordend zoals u dat wilt. U kunt de volgorde van de Failover-prioriteitenlijst aanpassen op de pagina Configuratie. Zie voor meer informatie [Configure Failover traffic routing](./traffic-manager-configure-priority-routing-method.md) (Failover-verkeersroutering configureren).
 
 ## <a name="to-disable-an-endpoint"></a>Een eindpunt uitschakelen
 
@@ -77,8 +77,7 @@ U kunt ook afzonderlijke eindpunten uitschakelen die deel uitmaken van een Traff
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Traffic Manager-profielen beheren](traffic-manager-manage-profiles.md)
-* [Routeringsmethoden configureren](traffic-manager-configure-routing-method.md)
+* [Routeringsmethoden configureren](./traffic-manager-configure-priority-routing-method.md)
 * [Problemen met Traffic Manager in gedegradeerde status oplossen](traffic-manager-troubleshooting-degraded.md)
 * [Prestatieoverwegingen voor Traffic Manager](traffic-manager-performance-considerations.md)
-* [Bewerkingen op Traffic Manager (REST API-referentiemateriaal)](https://go.microsoft.com/fwlink/p/?LinkID=313584)
-
+* [Bewerkingen op Traffic Manager (REST API-referentiemateriaal)](/previous-versions/azure/reference/hh758255(v=azure.100))

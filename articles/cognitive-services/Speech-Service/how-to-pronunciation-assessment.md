@@ -8,16 +8,16 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 09/29/2020
+ms.date: 01/12/2021
 ms.author: yulili
 ms.custom: references_regions
-zone_pivot_groups: programming-languages-set-nineteen
-ms.openlocfilehash: 1cc313daf0e76ddd14865959410b07d9bdc189d7
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+zone_pivot_groups: programming-languages-speech-services-nomore-variant
+ms.openlocfilehash: 8602d43113f4ce21cdb430e1fa3e83f006c64753
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94984918"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185560"
 ---
 # <a name="pronunciation-assessment"></a>Beoordeling van uitspraak
 
@@ -128,6 +128,26 @@ pronunciation_score = pronunciation_assessment_result.pronunciation_score
 
 ::: zone-end
 
+::: zone pivot="programming-language-javascript"
+
+```Javascript
+var pronunciationAssessmentConfig = new SpeechSDK.PronunciationAssessmentConfig("reference text",
+    PronunciationAssessmentGradingSystem.HundredMark,
+    PronunciationAssessmentGranularity.Word, true);
+var speechRecognizer = SpeechSDK.SpeechRecognizer.FromConfig(speechConfig, audioConfig);
+// apply the pronunciation assessment configuration to the speech recognizer
+pronunciationAssessmentConfig.applyTo(speechRecognizer);
+
+speechRecognizer.recognizeOnceAsync((result: SpeechSDK.SpeechRecognitionResult) => {
+        var pronunciationAssessmentResult = SpeechSDK.PronunciationAssessmentResult.fromResult(result);
+        var pronunciationScore = pronResult.pronunciationScore;
+        var wordLevelResult = pronResult.detailResult.Words;
+},
+{});
+```
+
+::: zone-end
+
 ::: zone pivot="programming-language-objectivec"
 
 ```Objective-C
@@ -176,26 +196,26 @@ Deze tabel bevat de resultaat parameters van de uitspraak beoordeling.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-<!-- TODO: update the sample links after release -->
+<!-- TODO: update JavaScript sample links after release -->
 
-<!-- ::: zone pivot="programming-language-csharp"
-* See the [sample code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/csharp/sharedcontent/console/speech_recognition_samples.cs#L741) on GitHub for automatic language detection
+::: zone pivot="programming-language-csharp"
+* Zie de [voorbeeld code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/csharp/sharedcontent/console/speech_recognition_samples.cs#L949) op github voor het beoordelen van de uitspraak.
 ::: zone-end
 
 ::: zone pivot="programming-language-cpp"
-* See the [sample code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/cpp/windows/console/samples/speech_recognition_samples.cpp#L507) on GitHub for automatic language detection
+* Zie de [voorbeeld code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/cpp/windows/console/samples/speech_recognition_samples.cpp#L633) op github voor het beoordelen van de uitspraak.
 ::: zone-end
 
 ::: zone pivot="programming-language-java"
-* See the [sample code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/java/jre/console/src/com/microsoft/cognitiveservices/speech/samples/console/SpeechRecognitionSamples.java#L521) on GitHub for automatic language detection
+* Zie de [voorbeeld code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/java/jre/console/src/com/microsoft/cognitiveservices/speech/samples/console/SpeechRecognitionSamples.java#L697) op github voor het beoordelen van de uitspraak.
 ::: zone-end
 
 ::: zone pivot="programming-language-python"
-* See the [sample code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/python/console/speech_synthesis_sample.py#L434) on GitHub for automatic language detection
+* Zie de [voorbeeld code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/python/console/speech_sample.py#L576) op github voor het beoordelen van de uitspraak.
 ::: zone-end
 
 ::: zone pivot="programming-language-objectivec"
-* See the [sample code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/objective-c/ios/speech-samples/speech-samples/ViewController.m#L494) on GitHub for automatic language detection
-::: zone-end -->
+* Zie de [voorbeeld code](https://github.com/Azure-Samples/cognitive-services-speech-sdk/blob/master/samples/objective-c/ios/speech-samples/speech-samples/ViewController.m#L642) op github voor het beoordelen van de uitspraak.
+::: zone-end
 
 * [Naslag documentatie voor Speech SDK](speech-sdk.md)

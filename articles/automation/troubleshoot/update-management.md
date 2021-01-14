@@ -5,12 +5,12 @@ services: automation
 ms.date: 12/04/2020
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: c6d0f38eaa25f2fe033a5e2cf48ee6daa51fcbe6
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: f00002c7374e0c35c7bb91c28b2dd87ad71e3350
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929273"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184914"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Problemen met Updatebeheer oplossen
 
@@ -425,7 +425,7 @@ Deze fout kan een van de volgende oorzaken hebben:
 
 Gebruik, indien van toepassing, [dynamische groepen](../update-management/configure-groups.md) voor uw update-implementaties. Daarnaast kunt u de volgende stappen uitvoeren.
 
-1. Controleer of uw computer of server aan de [vereisten](../update-management/overview.md#client-requirements)voldoet.
+1. Controleer of uw computer of server aan de [vereisten](../update-management/overview.md#system-requirements)voldoet.
 2. Controleer de verbinding met de Hybrid Runbook Worker met behulp van de Hybrid Runbook Worker agent-probleem Oplosser. Zie problemen [met Update agent oplossen](update-agent-issues.md)voor meer informatie over de probleem Oplosser.
 
 ## <a name="scenario-updates-are-installed-without-a-deployment"></a><a name="updates-nodeployment"></a>Scenario: updates worden geïnstalleerd zonder een implementatie

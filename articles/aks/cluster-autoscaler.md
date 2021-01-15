@@ -4,12 +4,12 @@ description: Meer informatie over hoe u de cluster-automatische schaal functie k
 services: container-service
 ms.topic: article
 ms.date: 07/18/2019
-ms.openlocfilehash: e644a931152c83a5232c8233d519f7807ab708af
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
+ms.openlocfilehash: 5f0754638be1aa29672b6a59218a6c9d695261a5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92542638"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223139"
 ---
 # <a name="automatically-scale-a-cluster-to-meet-application-demands-on-azure-kubernetes-service-aks"></a>Een cluster automatisch schalen om te voldoen aan de toepassingsvraag op Azure Kubernetes Service (AKS)
 
@@ -97,7 +97,7 @@ Het duurt enkele minuten om het cluster bij te werken en de instellingen voor he
 > [!IMPORTANT]
 > Als u meerdere knooppunt groepen in uw AKS-cluster hebt, gaat u naar de [sectie automatisch schalen met meerdere agent groepen](#use-the-cluster-autoscaler-with-multiple-node-pools-enabled). Voor clusters met meerdere agent Pools moet de `az aks nodepool` opdracht set worden gebruikt om specifieke eigenschappen van de knooppunten groep te wijzigen in plaats van `az aks` .
 
-In de vorige stap om een AKS-cluster te maken of een bestaande knooppunt groep bij te werken, is het minimum aantal knoop punten van het cluster automatisch ingesteld op *1* en is het maximum aantal knoop punten ingesteld op *3* . Als uw toepassing wordt gewijzigd, moet u mogelijk het aantal knoop punten van de cluster automatisch schalen aanpassen.
+In de vorige stap om een AKS-cluster te maken of een bestaande knooppunt groep bij te werken, is het minimum aantal knoop punten van het cluster automatisch ingesteld op *1* en is het maximum aantal knoop punten ingesteld op *3*. Als uw toepassing wordt gewijzigd, moet u mogelijk het aantal knoop punten van de cluster automatisch schalen aanpassen.
 
 Als u het aantal knoop punten wilt wijzigen, gebruikt u de opdracht [AZ AKS update][az-aks-update] .
 
@@ -130,14 +130,15 @@ U kunt ook gedetailleerdere Details van de cluster automatisch schalen configure
 | omlaag schalen-overbodige tijdstippen         | Hoe lang een knoop punt niet nodig moet zijn voordat deze in aanmerking komt voor omlaag omlaag schalen                  | 10 minuten    |
 | omlaag schalen-niet-lees bare tijd          | Hoe lang een ongelezeny-knoop punt niet nodig moet zijn voordat het in aanmerking komt voor omlaag schalen         | 20 minuten    |
 | schaal-down-gebruik-drempel waarde | Het niveau van het knooppunt gebruik, gedefinieerd als de som van aangevraagde resources gedeeld door capaciteit, waaronder een knoop punt kan worden overwogen voor omlaag schalen | 0,5 |
-| Max-correct beëindigen-SEC     | Het maximum aantal seconden dat de automatische schaal functie van het cluster wacht op beëindiging van pod wanneer u een knoop punt omlaag wilt schalen. | 600 seconden   |
-| saldo-vergelijkbaar-node-groups      | Detecteert vergelijk bare knooppunt Pools en balanceert het aantal knoop punten ertussen                 | false         |
-| uitbreiden                         | Type [uitbreidings](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-are-expanders) module voor de knooppunt groep die moet worden gebruikt voor omhoog schalen. Mogelijke waarden: `most-pods` , `random` , `least-waste` | willekeurig | 
+| Max-correct beëindigen-SEC     | Het maximum aantal seconden dat de cluster-automatische schaal bewerking wacht op beëindiging van pod wanneer u een knoop punt omlaag wilt schalen | 600 seconden   |
+| saldo-vergelijkbaar-node-groups      | Detecteert vergelijk bare knooppunt Pools en balanceert het aantal knoop punten ertussen                 | onjuist         |
+| uitbreiden                         | Type [uitbreidings](https://github.com/kubernetes/autoscaler/blob/master/cluster-autoscaler/FAQ.md#what-are-expanders) module voor de knooppunt groep die moet worden gebruikt voor omhoog schalen. Mogelijke waarden: `most-pods` , `random` , `least-waste` , `priority` | willekeurig | 
 | overs Laan: knoop punten-met-Local-Storage    | Als de echte automatische schaal functie van het cluster nooit knoop punten met de lokale opslag, bijvoorbeeld EmptyDir of HostPath, verwijdert. | true |
 | overs Laan: knoop punten-met-systeem-peul      | Als de echte cluster-functie voor automatisch schalen geen knoop punten met een van de uitvoeren-systemen (met uitzonde ring van Daemonset of spie gelen) verwijdert | true | 
-| Max-leeg-bulk-Delete            | Het maximum aantal lege knoop punten dat tegelijkertijd kan worden verwijderd.                      | 10 knoop punten      |
-| New-pod-upscale-up-vertraging           | Voor scenario's zoals burst/batch Scale waarbij CA niet moet reageren voordat de kubernetes scheduler alle leeftijden kan plannen, kunt u aangeven dat de certificerings instantie niet-geplande peulingen moet negeren voordat ze een bepaalde leeftijd hebben.                                                                                                                | 10 seconden    |
-| Max-totaal-onleesbaar percentage     | Maximum percentage van ongelezeny-knoop punten in het cluster. Nadat dit percentage is overschreden, stopt de CA bewerkingen | 45% | 
+| Max-leeg-bulk-Delete            | Maximum aantal lege knoop punten dat tegelijkertijd kan worden verwijderd                       | 10 knoop punten      |
+| New-pod-upscale-up-vertraging           | Voor scenario's zoals burst/batch Scale, waar u niet wilt dat certificerings instantie van de kubernetes de gehele leeftijd kan plannen, kunt u ervoor zorgen dat certificerings instantie niet-geplande peulingen negeert voordat ze een bepaalde ouderdom hebben.                                                                                                                | 0 seconden    |
+| Max-totaal-onleesbaar percentage     | Maximum percentage van ongelezeny-knoop punten in het cluster. Nadat dit percentage is overschreden, stopt de CA bewerkingen | 45% |
+| Max-node-inrichtings tijd          | Maximum tijd dat de automatische schaalr wacht totdat een knoop punt is ingericht                           | 15 minuten    |   
 | OK-totaal-onleesbaar aantal           | Aantal toegestane ongelezen knoop punten, ongeacht het Max-totaal-onleesbaar-percentage            | 3 knoop punten       |
 
 > [!IMPORTANT]
@@ -249,7 +250,7 @@ Lees de veelgestelde vragen over het [github-project van Kubernetes/autoscaler][
 
 De cluster-automatische schaal functie kan worden gebruikt in combi natie met [meerdere knooppunt Pools][aks-multiple-node-pools] ingeschakeld. Volg dat document voor meer informatie over het inschakelen van meerdere knooppunt groepen en toevoegen van extra knooppunt groepen aan een bestaand cluster. Wanneer beide functies samen worden gebruikt, schakelt u de automatische schaal functie van het cluster in op elke afzonderlijke knooppunt groep in het cluster en kunt u hiervoor unieke regels voor automatisch schalen door geven.
 
-In de onderstaande opdracht wordt ervan uitgegaan dat u de [eerste instructies](#create-an-aks-cluster-and-enable-the-cluster-autoscaler) eerder in dit document hebt gevolgd en dat u het maximum aantal van een bestaande groep van een knoop punt wilt bijwerken van *3* naar *5* . Gebruik de opdracht [AZ AKS nodepool update][az-aks-nodepool-update] om de instellingen van een bestaande groep knoop punten bij te werken.
+In de onderstaande opdracht wordt ervan uitgegaan dat u de [eerste instructies](#create-an-aks-cluster-and-enable-the-cluster-autoscaler) eerder in dit document hebt gevolgd en dat u het maximum aantal van een bestaande groep van een knoop punt wilt bijwerken van *3* naar *5*. Gebruik de opdracht [AZ AKS nodepool update][az-aks-nodepool-update] om de instellingen van een bestaande groep knoop punten bij te werken.
 
 ```azurecli-interactive
 az aks nodepool update \

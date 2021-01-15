@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/9/2020
 ms.author: yitoh
-ms.openlocfilehash: e76086db36642664ca15acee26f4e0aca85ff272
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 114c723b127a17ffdd9c7ed91c6e777838d68e8e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184456"
+ms.locfileid: "98223343"
 ---
 # <a name="azure-ddos-protection-standard-overview"></a>Overzicht van Azure DDoS Protection Standard
 
@@ -36,7 +36,7 @@ Azure DDoS Protection slaat geen klant gegevens op.
 - Kant-en- **klare beveiliging:** Vereenvoudigde configuratie beveiligt onmiddellijk alle resources in een virtueel netwerk zodra DDoS Protection standaard is ingeschakeld. Er is geen interventie-of gebruikers definitie vereist. 
 - **Bewaking over altijd verkeer:** Uw toepassings verkeers patronen worden 24 uur per dag, 7 dagen per week gecontroleerd en er wordt gezocht naar indica toren van DDoS-aanvallen. DDoS Protection Standard onmiddellijk en vermindert de aanval automatisch, zodra deze is gedetecteerd.
 - **Adaptieve afstemming:** Intelligent verkeer profile ring leert het verkeer van uw toepassing gedurende een bepaalde periode en selecteert en werkt het profiel dat het meest geschikt is voor uw service. Het profiel wordt aangepast naarmate het verkeer na verloop van tijd verandert.
-- **Beveiliging met meerdere lagen:** Biedt volledige stack DDoS-beveiliging, wanneer deze met een Web Application Firewall wordt gebruikt om de beveiliging op te halen op de netwerklaag (laag 3 en 4, aangeboden door Azure DDoS Protection Standard) en op de toepassingslaag (laag 7, aangeboden door een WAF). WAF-aanbiedingen zijn onder andere Azure [Application Gateway WAF-SKU](../web-application-firewall/ag/ag-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en Web Application firewall aanbiedingen van derden die beschikbaar zijn op de [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=web%20application%20firewall).
+- **Beveiliging met meerdere lagen:** Wanneer de implementatie met een Web Application Firewall (WAF) is geïmplementeerd, beveiligt DDoS Protection Standard beide op de netwerklaag (laag 3 en 4, aangeboden door Azure DDoS Protection Standard) en op de toepassingslaag (laag 7, aangeboden door een WAF). WAF-aanbiedingen zijn onder andere Azure [Application Gateway WAF-SKU](../web-application-firewall/ag/ag-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en Web Application firewall aanbiedingen van derden die beschikbaar zijn op de [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=web%20application%20firewall).
 - **Uitgebreide beperkings schaal:** Meer dan 60 verschillende typen aanvallen kunnen worden gereduceerd, met globale capaciteit om te beschermen tegen de grootste bekende DDoS-aanvallen.
 - **Aanvals analyse:** Ontvang gedetailleerde rapporten in stappen van vijf minuten tijdens een aanval en een volledig overzicht nadat de aanval is beëindigd. Stroom logboeken voor risico beperking naar [Azure Sentinel](../sentinel/connect-azure-ddos-protection.md) of offline Security Information en Event Management (Siem) System voor bijna realtime-bewaking tijdens een aanval.
 - **Maat staven voor aanvallen:** Een overzicht van de metrische gegevens van elke aanval is toegankelijk via Azure Monitor.

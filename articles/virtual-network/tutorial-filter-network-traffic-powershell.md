@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: kumud
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: c0b0d366518b786b33048d2d2f182abd787856ad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f72264e49a155068f866559db7edf79e68585c55
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89075100"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222272"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-powershell"></a>Netwerk verkeer filteren met een netwerk beveiligings groep met behulp van Power shell
 
@@ -35,7 +35,7 @@ U kunt het netwerkverkeer inkomend in en uitgaand naar een subnet van een virtue
 * Virtuele machines (VM) implementeren in een subnet
 * Verkeersfilters testen
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -101,7 +101,7 @@ In dit artikel wordt RDP (poort 3389) blootgesteld aan Internet voor de *myAsgMg
 
 ### <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
-Maak een netwerk beveiligings groep met [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup). In het volgende voorbeeld wordt een netwerkbeveiligingsgroep met de naam *myNsg* gemaakt:
+Maak een netwerkbeveiligingsgroep met [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup). In het volgende voorbeeld wordt een netwerkbeveiligingsgroep met de naam *myNsg* gemaakt:
 
 ```powershell-interactive
 $nsg = New-AzNetworkSecurityGroup `
@@ -302,6 +302,6 @@ Remove-AzResourceGroup -Name myResourceGroup -Force
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u een netwerk beveiligings groep gemaakt en gekoppeld aan een subnet van een virtueel netwerk. Zie [Overzicht van netwerkbeveiligingsgroepen](security-overview.md) en [Een beveiligingsgroep beheren](manage-network-security-group.md) voor meer informatie over netwerkbeveiligingsgroepen.
+In dit artikel hebt u een netwerk beveiligings groep gemaakt en gekoppeld aan een subnet van een virtueel netwerk. Zie [Overzicht van netwerkbeveiligingsgroepen](./network-security-groups-overview.md) en [Een beveiligingsgroep beheren](manage-network-security-group.md) voor meer informatie over netwerkbeveiligingsgroepen.
 
 Azure routeert standaard verkeer tussen subnetten. In plaats daarvan kunt u verkeer routeren tussen subnetten via een virtuele machine, die bijvoorbeeld als een firewall fungeert. Zie [een route tabel maken](tutorial-create-route-table-powershell.md)voor meer informatie.

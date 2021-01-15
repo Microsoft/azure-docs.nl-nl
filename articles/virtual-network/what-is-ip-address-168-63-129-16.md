@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/15/2019
 ms.author: genli
-ms.openlocfilehash: 03c1badf984fb150631c157f3fdc07856b60e965
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 1e304bc30a48c92fdff576723dae6af1e26ef3da
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93088894"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222578"
 ---
 # <a name="what-is-ip-address-1686312916"></a>Wat is het IP-adres 168.63.129.16?
 
@@ -37,7 +37,7 @@ IP-adres 168.63.129.16 is een virtueel openbaar IP-adres dat wordt gebruikt om e
 
 ## <a name="scope-of-ip-address-1686312916"></a>Bereik van IP-adres 168.63.129.16
 
-Het open bare IP-adres 168.63.129.16 wordt gebruikt in alle regio's en alle nationale Clouds. Dit speciale open bare IP-adres is eigendom van micro soft en kan niet worden gewijzigd. U wordt aangeraden dit IP-adres toe te staan in een lokaal (in het VM-) firewall beleid (uitgaande richting). De communicatie tussen dit speciale IP-adres en de bronnen is veilig, omdat alleen het interne Azure-platform een bericht kan bron van dit IP-adres. Als dit adres wordt geblokkeerd, kan onverwacht gedrag optreden in verschillende scenario's. 168.63.129.16 is een [virtueel IP-adres van het host-knoop punt](../virtual-network/security-overview.md#azure-platform-considerations) en is niet onderhevig aan door de gebruiker gedefinieerde routes.
+Het open bare IP-adres 168.63.129.16 wordt gebruikt in alle regio's en alle nationale Clouds. Dit speciale open bare IP-adres is eigendom van micro soft en kan niet worden gewijzigd. U wordt aangeraden dit IP-adres toe te staan in een lokaal (in het VM-) firewall beleid (uitgaande richting). De communicatie tussen dit speciale IP-adres en de bronnen is veilig, omdat alleen het interne Azure-platform een bericht kan bron van dit IP-adres. Als dit adres wordt geblokkeerd, kan onverwacht gedrag optreden in verschillende scenario's. 168.63.129.16 is een [virtueel IP-adres van het host-knoop punt](./network-security-groups-overview.md#azure-platform-considerations) en is niet onderhevig aan door de gebruiker gedefinieerde routes.
 
 - De VM-agent vereist uitgaande communicatie via de poorten 80/TCP en 32526/TCP met WireServer (168.63.129.16). Deze moeten worden geopend in de lokale firewall op de VM. De communicatie over deze poorten met 168.63.129.16 is niet van toepassing op de geconfigureerde netwerk beveiligings groepen.
 
@@ -49,5 +49,5 @@ Het open bare IP-adres 168.63.129.16 wordt gebruikt in alle regio's en alle nati
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Beveiligingsgroepen](security-overview.md)
+- [Beveiligingsgroepen](./network-security-groups-overview.md)
 - [Een netwerkbeveiligingsgroep maken, wijzigen of verwijderen](manage-network-security-group.md)

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/20/2020
 ms.author: allensu
-ms.openlocfilehash: 690543ebc91e346e77509fbf993493f6978374ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 70410e58acb30c7694e6fe4a6dcaff57bee98607
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87836102"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223428"
 ---
 # <a name="troubleshoot-azure-virtual-network-nat-connectivity"></a>Problemen met Azure Virtual Network NAT-verbindingen oplossen
 
@@ -68,10 +68,10 @@ _**Oplossing:**_ Gebruik geschikte patronen en volg aanbevolen procedures
 De SNAT-uitputting kan ook worden versterkt door andere antipatronen in de onderliggende app. Bekijk deze aanvullende patronen en aanbevolen procedures om de schaal en betrouwbaarheid van uw service te verbeteren.
 
 - Ontdek de gevolgen van het verminderen van [TCP-time-out voor inactiviteit](nat-gateway-resource.md#timers) naar lagere waarden, waaronder de standaardtime-out voor inactiviteit van 4 minuten om eerder beschikbare SNAT-poorten vrij te maken.
-- U kunt [asynchrone pollingpatronen](https://docs.microsoft.com/azure/architecture/patterns/async-request-reply) voor langdurige bewerkingen overwegen om verbindingsresources voor andere bewerkingen vrij te maken.
+- U kunt [asynchrone pollingpatronen](/azure/architecture/patterns/async-request-reply) voor langdurige bewerkingen overwegen om verbindingsresources voor andere bewerkingen vrij te maken.
 - Stromen met een lange levensduur (bijvoorbeeld hergebruikte TCP-verbindingen) moeten gebruikmaken van TCP-keepalives of toepassingslaag-keepalives om een time-out voor tussenliggende systemen te voorkomen. De duur van de time-out voor inactiviteit verlengen, is een laatste redmiddel en lost de hoofdoorzaak mogelijk niet op. Een lange time-outduur kan fouten veroorzaken wanneer de time-out is verlopen en vertraging en overbodige storingen veroorzaken.
-- Er moeten goede [patronen voor nieuwe pogingen](https://docs.microsoft.com/azure/architecture/patterns/retry) worden gebruikt om agressieve nieuwe pogingen/bursts te voorkomen tijdens een tijdelijke storing of herstel na storingen.
-Het maken van een nieuwe TCP-verbinding voor elke HTTP-bewerking (ook wel atomische verbindingen genoemd) is een antipatroon.  Atomische verbindingen voorkomen dat uw toepassing goed wordt geschaald en zorgen voor verspilling van resources.  Voeg altijd meerdere bewerkingen samen in een pijplijn in dezelfde verbinding.  Uw app zal er voordeel bij hebben qua transactiesnelheid en resourcekosten.  Als uw app gebruikmaakt van transportlaagversleuteling (bijvoorbeeld TLS), zijn er aanzienlijke kosten verbonden aan de verwerking van nieuwe verbindingen.  Bekijk [Azure-cloudontwerppatronen](https://docs.microsoft.com/azure/architecture/patterns/) voor aanvullende aanbevolen patronen.
+- Er moeten goede [patronen voor nieuwe pogingen](/azure/architecture/patterns/retry) worden gebruikt om agressieve nieuwe pogingen/bursts te voorkomen tijdens een tijdelijke storing of herstel na storingen.
+Het maken van een nieuwe TCP-verbinding voor elke HTTP-bewerking (ook wel atomische verbindingen genoemd) is een antipatroon.  Atomische verbindingen voorkomen dat uw toepassing goed wordt geschaald en zorgen voor verspilling van resources.  Voeg altijd meerdere bewerkingen samen in een pijplijn in dezelfde verbinding.  Uw app zal er voordeel bij hebben qua transactiesnelheid en resourcekosten.  Als uw app gebruikmaakt van transportlaagversleuteling (bijvoorbeeld TLS), zijn er aanzienlijke kosten verbonden aan de verwerking van nieuwe verbindingen.  Bekijk [Azure-cloudontwerppatronen](/azure/architecture/patterns/) voor aanvullende aanbevolen patronen.
 
 #### <a name="additional-possible-mitigations"></a>Andere mogelijke oplossingen
 
@@ -96,7 +96,7 @@ De volgende tabel kan als uitgangspunt dienen, als u een hulpprogramma wilt kiez
 | Besturingssysteem | Algemene TCP-verbindingstest | TCP-toepassingslaagtest | UDP |
 |---|---|---|---|
 | Linux | nc (algemene TCP-verbindingstest) | curl (TCP-toepassingslaagtest) | appspecifiek |
-| Windows | [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping) | PowerShell [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest) | appspecifiek |
+| Windows | [PsPing](/sysinternals/downloads/psping) | PowerShell [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) | appspecifiek |
 
 ### <a name="connectivity-failures"></a>Verbindingsfouten
 
@@ -113,7 +113,7 @@ Gebruik de volgende hulpprogramma's voor het valideren van de verbinding. [ICMP-
 | Besturingssysteem | Algemene TCP-verbindingstest | TCP-toepassingslaagtest | UDP |
 |---|---|---|---|
 | Linux | nc (algemene TCP-verbindingstest) | curl (TCP-toepassingslaagtest) | appspecifiek |
-| Windows | [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping) | PowerShell [Invoke-WebRequest](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/invoke-webrequest) | appspecifiek |
+| Windows | [PsPing](/sysinternals/downloads/psping) | PowerShell [Invoke-WebRequest](/powershell/module/microsoft.powershell.utility/invoke-webrequest) | appspecifiek |
 
 #### <a name="configuration"></a>Configuratie
 
@@ -202,4 +202,3 @@ Als u nog steeds problemen ondervindt, opent u een ondersteuningsaanvraag zodat 
 * Meer informatie over [NAT-gatewayresource](nat-gateway-resource.md)
 * Meer informatie over [metrische gegevens en waarschuwingen voor NAT-gatewayresources](nat-metrics.md).
 * [Vertel ons in UserVoice wat we verder kunnen ontwikkelen voor Virtual Network NAT](https://aka.ms/natuservoice).
-

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/03/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: dd5197f99f7187e21eb466bfa213f68a7638e24d
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 54001cde76bd89305eb77544c6e6858defda6096
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045339"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222544"
 ---
 # <a name="manage-a-graph-of-digital-twins-using-relationships"></a>Een grafiek van digitale apparaatdubbels beheren met behulp van relaties
 
@@ -157,7 +157,7 @@ Hier volgt de console-uitvoer van het bovenstaande programma:
 > [!TIP]
 > Het dubbele diagram is een concept van het maken van relaties tussen apparaatdubbels. Als u de visuele weer gave van de dubbele grafiek wilt bekijken, raadpleegt u de sectie [*visualisatie*](how-to-manage-graph.md#visualization) van dit artikel. 
 
-### <a name="create-a-twin-graph-from-a-csv-file"></a>Een dubbele grafiek maken vanuit een CSV-bestand
+## <a name="create-graph-from-a-csv-file"></a>Een grafiek maken op basis van een CSV-bestand
 
 In praktische use cases worden vaak dubbele hiërarchieën gemaakt op basis van gegevens die zijn opgeslagen in een andere data base, of mogelijk in een spread sheet of CSV-bestand. In deze sectie ziet u hoe u gegevens uit een CSV-bestand kunt lezen en hoe u er een dubbele grafiek van kunt maken.
 
@@ -165,8 +165,8 @@ Bekijk de volgende gegevens tabel, met een beschrijving van een set digitale app
 
 |  Model-id    | Dubbele ID (moet uniek zijn) | Naam van relatie  | Doel-dubbele ID  | Dubbele init-gegevens |
 | --- | --- | --- | --- | --- |
-| dtmi: voor beeld: Floor; 1    | Floor1 | contains | Room1 | |
-| dtmi: voor beeld: Floor; 1    | Floor0 | contains | Room0 | |
+| dtmi: voor beeld: Floor; 1    | Floor1 | bevat | Room1 | |
+| dtmi: voor beeld: Floor; 1    | Floor0 | bevat | Room0 | |
 | dtmi: voor beeld: room; 1    | Room1 | | | {"Tempe ratuur": 80} |
 | dtmi: voor beeld: room; 1    | Room0 | | | {"Tempe ratuur": 70} |
 

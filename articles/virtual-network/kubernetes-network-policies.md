@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 9/25/2018
 ms.author: aanandr
 ms.custom: ''
-ms.openlocfilehash: 36e5bb33b7d555c3b457b63f94d9032ff390e6cb
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: b7c683edd15ab05e9efc239ffe07759078754607
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92342311"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222646"
 ---
 # <a name="azure-kubernetes-network-policies-overview"></a>Overzicht van Azure Kubernetes-netwerk beleid
 
@@ -38,7 +38,7 @@ Gebruik netwerk beveiligings groepen (Nsg's) bij het implementeren van de beveil
 Azure NPM kan worden gebruikt in de volgende manieren om micro segmentering te bieden voor peulen.
 
 ### <a name="azure-kubernetes-service-aks"></a>Azure Kubernetes Service (AKS)
-NPM is standaard beschikbaar in AKS en kan worden ingeschakeld op het moment dat het cluster wordt gemaakt. Meer informatie hierover vindt u in [beveiligd verkeer tussen het gebruik van netwerk beleid in azure Kubernetes service (AKS)](https://docs.microsoft.com/azure/aks/use-network-policies).
+NPM is standaard beschikbaar in AKS en kan worden ingeschakeld op het moment dat het cluster wordt gemaakt. Meer informatie hierover vindt u in [beveiligd verkeer tussen het gebruik van netwerk beleid in azure Kubernetes service (AKS)](../aks/use-network-policies.md).
 
 ### <a name="aks-engine"></a>AKS-engine
 AKS-Engine is een hulp programma waarmee een Azure Resource Manager sjabloon wordt gegenereerd voor de implementatie van een Kubernetes-cluster in Azure. De configuratie van het cluster is opgenomen in een JSON-bestand dat aan het hulpprogramma wordt doorgegeven bij het genereren van de sjabloon. Zie Microsoft Azure Container Service Engine - Cluster Definition (Microsoft Azure Container Service Engine - Clusterdefinitie) voor de volledige lijst met ondersteunde clusterinstellingen en de bijbehorende beschrijvingen.
@@ -130,7 +130,7 @@ Er is ook een metrische waarde voor ' exec_time_count ' en ' exec_time_sum ' voo
 De metrische gegevens kunnen worden geschroot door Azure Monitor voor containers of via Prometheus.
 
 ### <a name="setup-for-azure-monitor"></a>Instellen voor Azure Monitor
-De eerste stap is het inschakelen van Azure Monitor voor containers voor uw Kubernetes-cluster. U kunt de stappen vinden in [Azure monitor voor containers Overview](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-overview). Als u Azure Monitor voor containers hebt ingeschakeld, configureert u de [Azure monitor voor containers ConfigMap](https://aka.ms/container-azm-ms-agentconfig) om NPM-integratie en verzameling van Prometheus NPM-gegevens in te scha kelen. Azure monitor voor containers ConfigMap bevat een ```integrations``` sectie met instellingen voor het verzamelen van NPM-metrische gegevens. Deze instellingen zijn standaard uitgeschakeld in de ConfigMap. Als u de basis instelling inschakelt ```collect_basic_metrics = true``` , worden algemene NPM-metrische gegevens verzameld. Als u de geavanceerde instelling inschakelt ```collect_advanced_metrics = true``` , worden er naast basis gegevens ook geavanceerde metrische gegevens verzameld. 
+De eerste stap is het inschakelen van Azure Monitor voor containers voor uw Kubernetes-cluster. U kunt de stappen vinden in [Azure monitor voor containers Overview](../azure-monitor/insights/container-insights-overview.md). Als u Azure Monitor voor containers hebt ingeschakeld, configureert u de [Azure monitor voor containers ConfigMap](https://aka.ms/container-azm-ms-agentconfig) om NPM-integratie en verzameling van Prometheus NPM-gegevens in te scha kelen. Azure monitor voor containers ConfigMap bevat een ```integrations``` sectie met instellingen voor het verzamelen van NPM-metrische gegevens. Deze instellingen zijn standaard uitgeschakeld in de ConfigMap. Als u de basis instelling inschakelt ```collect_basic_metrics = true``` , worden algemene NPM-metrische gegevens verzameld. Als u de geavanceerde instelling inschakelt ```collect_advanced_metrics = true``` , worden er naast basis gegevens ook geavanceerde metrische gegevens verzameld. 
 
 Nadat u de ConfigMap hebt bewerkt, slaat u deze lokaal op en past u de ConfigMap als volgt toe op uw cluster.
 
@@ -143,7 +143,7 @@ integrations: |-
 ```
 Geavanceerde meet waarden zijn optioneel. Als u deze inschakelt, wordt automatisch de verzameling basis metrieken ingeschakeld. Geavanceerde metrische gegevens bevatten momenteel alleen `npm_ipset_counts`
 
-Meer informatie over [Azure monitor voor containers verzamelings instellingen in configuratie toewijzing](https://aka.ms/azmon-containers-agent-collection-settings-doc)
+Meer informatie over [Azure monitor voor containers verzamelings instellingen in configuratie toewijzing](../azure-monitor/insights/container-insights-agent-config.md)
 
 ### <a name="visualization-options-for-azure-monitor"></a>Visualisatie opties voor Azure Monitor
 Zodra de verzameling met NPM-metrische gegevens is ingeschakeld, kunt u de metrische gegevens weer geven in de Azure Portal met behulp van container Insights of in Grafana.
@@ -154,7 +154,7 @@ Open Azure Portal. Ga in de inzichten van uw cluster naar werkmappen en open de 
 Naast het weer geven van de werkmap (afbeeldingen hieronder) kunt u de metrische gegevens voor Prometheus ook rechtstreeks opvragen in ' logboeken ' in de sectie inzichten. Met deze query worden bijvoorbeeld alle metrische gegevens weer gegeven die worden verzameld.
 | waar TimeGenerated > geleden (5H) | Where-naam bevat "npm_"
 
-U kunt ook rechtstreeks een query uitvoeren op Log Analytics voor de metrische gegevens. Meer informatie hierover vindt u aan de slag [met log Analytics query's](https://docs.microsoft.com/azure/azure-monitor/insights/container-insights-log-search) 
+U kunt ook rechtstreeks een query uitvoeren op Log Analytics voor de metrische gegevens. Meer informatie hierover vindt u aan de slag [met log Analytics query's](../azure-monitor/insights/container-insights-log-search.md) 
 
 #### <a name="viewing-in-grafana-dashboard"></a>Weer geven in Grafana-dash board
 Stel uw Grafana-server in en configureer een Log Analytics gegevens bron zoals [hier](https://grafana.com/grafana/plugins/grafana-azure-monitor-datasource)wordt beschreven. Importeer vervolgens [Grafana-dash board met een log Analytics back-end](https://grafana.com/grafana/dashboards/10956) in uw Grafana Labs.
@@ -266,4 +266,3 @@ Hieronder vindt u een voor beeld van een dash board voor NPM metrische gegevens 
 -  Meer informatie over [container netwerken](container-networking-overview.md).
 - [Implementeer de invoeg toepassing](deploy-container-networking.md) voor Kubernetes-clusters of docker-containers.
 
-    

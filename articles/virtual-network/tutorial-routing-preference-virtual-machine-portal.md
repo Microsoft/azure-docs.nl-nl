@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/02/2020
 ms.author: mnayak
-ms.openlocfilehash: 35e4b90e9bdd52a20bf892f0784b191384f271ac
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: beb670106690645a80aa12b930e3a005efb4282a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533703"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221643"
 ---
 # <a name="configure-routing-preference-for-a-vm-using-the-azure-portal"></a>Routerings voorkeur configureren voor een virtuele machine met behulp van de Azure Portal
 
@@ -79,5 +79,5 @@ U kunt de resourcegroep en alle gerelateerde resources die deze bevat verwijdere
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [open bare IP met routerings voorkeur](routing-preference-overview.md).
-- Meer informatie over [open bare IP-adressen](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) in Azure.
+- Meer informatie over [open bare IP-adressen](./public-ip-addresses.md#public-ip-addresses) in Azure.
 - Meer informatie over alle [open bare IP-adres instellingen](virtual-network-public-ip-address.md#create-a-public-ip-address).

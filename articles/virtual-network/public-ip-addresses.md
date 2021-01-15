@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/28/2020
 ms.author: allensu
-ms.openlocfilehash: 1e46cf78c76e873bcb78af4942f42a5c4be45391
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: deb9f60cd3f75eacdf0adc06f6f7470819949555
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955583"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223224"
 ---
 # <a name="public-ip-addresses"></a>Openbare IP-adressen
 
@@ -44,7 +44,7 @@ Raadpleeg voor meer informatie over de SKU-upgrade de [open bare IP-upgrade](../
 Openbare IP-adressen worden gemaakt met een van de volgende SKU's:
 
 >[!IMPORTANT]
-> Er zijn overeenkomende Sku's vereist voor load balancer en open bare IP-resources. Het is niet mogelijk om een combinatie van resources uit de Basic-SKU en Standard-SKU te gebruiken. Het is evenmin mogelijk om zelfstandige virtuele machines, virtuele machines in een resource van een beschikbaarheidsset of resources uit schaalset met virtuele machines op beide SKU's tegelijk in te stellen.  In nieuwe ontwerpen is het raadzaam om resources uit de Standard-SKU te gebruiken.  Raadpleeg [Overzicht van load balancer uit Standard-SKU](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie.
+> Er zijn overeenkomende Sku's vereist voor load balancer en open bare IP-resources. Het is niet mogelijk om een combinatie van resources uit de Basic-SKU en Standard-SKU te gebruiken. Het is evenmin mogelijk om zelfstandige virtuele machines, virtuele machines in een resource van een beschikbaarheidsset of resources uit schaalset met virtuele machines op beide SKU's tegelijk in te stellen.  In nieuwe ontwerpen is het raadzaam om resources uit de Standard-SKU te gebruiken.  Raadpleeg [Overzicht van load balancer uit Standard-SKU](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie.
 
 ### <a name="standard"></a>Standard
 
@@ -52,13 +52,13 @@ Standaard-SKU open bare IP-adressen:
 
 - Gebruiken altijd de statische toewijzingsmethode.
 - Hebben een aanpasbare time-out voor inactiviteit van de stroom met inkomende gegevens van 4-30 minuten (de standaardwaarde is vier minuten), en een vaste time-out voor inactiviteit van de stroom met uitgaande gegevens van vier minuten.
-- Standaard beveiligd en gesloten voor binnenkomend verkeer. Lijst met binnenkomend verkeer met een [netwerk beveiligings groep](security-overview.md#network-security-groups)toestaan.
-- Toegewezen aan netwerk interfaces, standaard open bare load balancers of toepassings gateways. Zie voor meer informatie over standaard load balancer [Azure Standard Load Balancer](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
-- Kan zone-redundante (op te maken van alle drie zones) of zonegebonden (kan worden gemaakt zonegebonden en worden gegarandeerd in een specifieke beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones. **Redundante Ip's voor zones kunnen alleen worden gemaakt in [regio's waar drie beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-region) Live zijn.** IP-adressen die zijn gemaakt voordat zones Live zijn, zijn niet-redundante zones.
-- Kan worden gebruikt als anycast frontend-Ip's voor [meerdere regio's load balancers](https://docs.microsoft.com/azure/load-balancer/cross-region-overview) (Preview-functionaliteit).
+- Standaard beveiligd en gesloten voor binnenkomend verkeer. Lijst met binnenkomend verkeer met een [netwerk beveiligings groep](./network-security-groups-overview.md#network-security-groups)toestaan.
+- Toegewezen aan netwerk interfaces, standaard open bare load balancers of toepassings gateways. Zie voor meer informatie over standaard load balancer [Azure Standard Load Balancer](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+- Kan zone-redundante (op te maken van alle drie zones) of zonegebonden (kan worden gemaakt zonegebonden en worden gegarandeerd in een specifieke beschikbaarheids zone). Zie [Overzicht van beschikbaarheidszones in Azure](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en [Standard-load balancer en beschikbaarheidszones](../load-balancer/load-balancer-standard-availability-zones.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over beschikbaarheidszones. **Redundante Ip's voor zones kunnen alleen worden gemaakt in [regio's waar drie beschikbaarheids zones](../availability-zones/az-region.md) Live zijn.** IP-adressen die zijn gemaakt voordat zones Live zijn, zijn niet-redundante zones.
+- Kan worden gebruikt als anycast frontend-Ip's voor [meerdere regio's load balancers](../load-balancer/cross-region-overview.md) (Preview-functionaliteit).
  
 > [!NOTE]
-> Inkomende communicatie met een resource uit de Standard-SKU mislukt totdat u een [netwerkbeveiligingsgroep](security-overview.md#network-security-groups) maakt en koppelt en het gewenste binnenkomende verkeer expliciet toestaat.
+> Inkomende communicatie met een resource uit de Standard-SKU mislukt totdat u een [netwerkbeveiligingsgroep](./network-security-groups-overview.md#network-security-groups) maakt en koppelt en het gewenste binnenkomende verkeer expliciet toestaat.
 
 > [!NOTE]
 > Alleen open bare IP-adressen met de basis-SKU zijn beschikbaar wanneer IMDS wordt gebruikt voor het gebruiken van [meta gegevens service](../virtual-machines/windows/instance-metadata-service.md). De standaard-SKU wordt niet ondersteund.
@@ -150,7 +150,7 @@ U kunt een openbaar IP-adres van beide [sku's](#sku) koppelen met een [Azure Loa
 
 U kunt een dynamisch of statisch openbaar IP-adres toewijzen aan de front-end van een load balancer. U kunt meerdere open bare IP-adressen toewijzen aan een load balancer front-end. Deze configuratie maakt [multi-VIP](../load-balancer/load-balancer-multivip-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -scenario's mogelijk, zoals een omgeving met meerdere tenants met op TLS gebaseerde websites. 
 
-Zie [Standaard-SKU's van Azure Load Balancer](../load-balancer/load-balancer-standard-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over SKU's van Azure Load Balancer.
+Zie [Standaard-SKU's van Azure Load Balancer](../load-balancer/load-balancer-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor meer informatie over SKU's van Azure Load Balancer.
 
 ## <a name="vpn-gateways"></a>VPN-gateways
 
@@ -163,7 +163,7 @@ Er wordt een openbaar IP-adres toegewezen aan de VPN Gateway om communicatie met
 
 ## <a name="application-gateways"></a>Toepassingsgateways
 
-U kunt een openbaar IP-adres koppelen aan een Azure-[toepassingsgateway](../application-gateway/application-gateway-introduction.md?toc=%2fazure%2fvirtual-network%2ftoc.json) door het toe te wijzen aan de **front-end**-configuratie van de gateway. 
+U kunt een openbaar IP-adres koppelen aan een Azure-[toepassingsgateway](../application-gateway/overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) door het toe te wijzen aan de **front-end**-configuratie van de gateway. 
 
 * Wijs een **dynamisch** , algemeen openbaar IP-adres toe aan een Application Gateway v1-front-end-configuratie. 
 * Wijs een **statisch** standaard-SKU-adres toe aan een v2-front-end-configuratie.
@@ -200,4 +200,3 @@ Openbare IP-adressen kunnen een kostprijs hebben. Voor meer informatie over prij
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over [privé-IP-adressen in azure](private-ip-addresses.md)
 * [Een virtuele machine met een statisch openbaar IP-adres implementeren via Azure Portal](virtual-network-deploy-static-pip-arm-portal.md)
-

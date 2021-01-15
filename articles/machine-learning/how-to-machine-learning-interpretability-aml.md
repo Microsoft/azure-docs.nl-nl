@@ -10,13 +10,13 @@ author: minthigpen
 ms.reviewer: Luis.Quintanilla
 ms.date: 07/09/2020
 ms.topic: conceptual
-ms.custom: how-to, devx-track-python
-ms.openlocfilehash: 74ddaaf7a2d279439c0cd27ba0840f02f297877b
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.custom: how-to, devx-track-python, responsible-ml
+ms.openlocfilehash: fda1bc2ef0a112a8a32ba7c4caebf29028c8cdd7
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98119557"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222748"
 ---
 # <a name="use-the-interpretability-package-to-explain-ml-models--predictions-in-python-preview"></a>Gebruik het vertolkings pakket om ML-modellen & voor spellingen in python uit te leggen (preview)
 

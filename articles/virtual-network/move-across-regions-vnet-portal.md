@@ -6,18 +6,18 @@ ms.service: virtual-network
 ms.topic: how-to
 ms.date: 08/26/2019
 ms.author: allensu
-ms.openlocfilehash: ed3da649ba65484a79b42ba5bb45431839e123d4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0a80c731e4245b1a295364e5b8c87f90290f7f74
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84711439"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223305"
 ---
 # <a name="move-an-azure-virtual-network-to-another-region-by-using-the-azure-portal"></a>Een virtueel Azure-netwerk verplaatsen naar een andere regio met behulp van de Azure Portal
 
 Er zijn verschillende scenario's voor het verplaatsen van een bestaand virtueel Azure-netwerk van de ene regio naar een andere. Stel dat u een virtueel netwerk met dezelfde configuratie wilt maken voor testen en beschik baarheid als uw bestaande virtuele netwerk. Het is ook mogelijk dat u een virtueel netwerk voor productie naar een andere regio wilt verplaatsen als onderdeel van de planning voor herstel na nood gevallen.
 
-U kunt een Azure Resource Manager sjabloon gebruiken om de verplaatsing van het virtuele netwerk naar een andere regio te volt ooien. Hiervoor exporteert u het virtuele netwerk naar een sjabloon, wijzigt u de para meters zodat deze overeenkomen met de doel regio en implementeert u de sjabloon vervolgens in de nieuwe regio. Voor meer informatie over Resource Manager-sjablonen raadpleegt [u Quick Start: Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal).
+U kunt een Azure Resource Manager sjabloon gebruiken om de verplaatsing van het virtuele netwerk naar een andere regio te volt ooien. Hiervoor exporteert u het virtuele netwerk naar een sjabloon, wijzigt u de para meters zodat deze overeenkomen met de doel regio en implementeert u de sjabloon vervolgens in de nieuwe regio. Voor meer informatie over Resource Manager-sjablonen raadpleegt [u Quick Start: Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -32,7 +32,7 @@ U kunt een Azure Resource Manager sjabloon gebruiken om de verplaatsing van het 
 
 - Controleer of u met uw Azure-abonnement virtuele netwerken in de doel regio kunt maken. Neem contact op met de ondersteuning om het vereiste quotum in te scha kelen.
 
-- Zorg ervoor dat uw abonnement voldoende bronnen heeft ter ondersteuning van het toevoegen van virtuele netwerken voor dit proces. Zie [Azure-abonnement- en servicelimieten, quota en beperkingen](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits) voor meer informatie.
+- Zorg ervoor dat uw abonnement voldoende bronnen heeft ter ondersteuning van het toevoegen van virtuele netwerken voor dit proces. Zie [Azure-abonnement- en servicelimieten, quota en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits) voor meer informatie.
 
 
 ## <a name="prepare-for-the-move"></a>Voorbereiden voor de verhuizing
@@ -42,7 +42,7 @@ Ga als volgt te werk om het virtuele netwerk te exporteren en het virtuele doel 
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com)en selecteer vervolgens **resource groepen**.
 1. Zoek de resource groep die het virtuele bron netwerk bevat en selecteer deze.
-1. **Instellingen**  >  **export sjabloon**selecteren.
+1. **Instellingen**  >  **export sjabloon** selecteren.
 1. Selecteer in het deel venster **sjabloon exporteren** de optie **implementeren**.
 1. Als u de *parameters.jsvoor* het bestand in uw online editor wilt openen, selecteert u **sjabloon**  >  **bewerken para meters**.
 1. Als u de para meter van de naam van het virtuele netwerk wilt bewerken, wijzigt u de eigenschap **Value** onder **para meters**:
@@ -63,7 +63,7 @@ Ga als volgt te werk om het virtuele netwerk te exporteren en het virtuele doel 
 
 1. Selecteer **Opslaan** in de editor.
 
-1. Selecteer **sjabloon**bewerken als u de *template.jsvoor* het bestand in de online editor wilt openen  >  **Edit template**.
+1. Selecteer **sjabloon** bewerken als u de *template.jsvoor* het bestand in de online editor wilt openen  >  .
 
 1. Als u in de online editor de doel regio wilt bewerken waar het virtuele netwerk wordt verplaatst, wijzigt u de eigenschap **Location** onder **resources**:
 
@@ -184,9 +184,9 @@ Ga als volgt te werk om het virtuele netwerk te exporteren en het virtuele doel 
 
     Als u een nieuwe resource groep voor het virtuele doel netwerk wilt maken, selecteert u **nieuwe maken**. Zorg ervoor dat de naam niet hetzelfde is als de naam van de bron resource groep in het bestaande virtuele netwerk.
 
-1. Controleer of de locatie van de **basis beginselen**  >  **Location** is ingesteld op de doel locatie waar u het virtuele netwerk wilt implementeren.
+1. Controleer of de locatie van de **basis beginselen**  >   is ingesteld op de doel locatie waar u het virtuele netwerk wilt implementeren.
 
-1. Controleer onder **instellingen**of de naam overeenkomt met de naam die u eerder hebt ingevoerd in de para meters-editor.
+1. Controleer onder **instellingen** of de naam overeenkomt met de naam die u eerder hebt ingevoerd in de para meters-editor.
 
 1. Schakel het selectie vakje voor **waarden** in.
 
@@ -209,5 +209,5 @@ Als u de wijzigingen wilt door voeren en de virtuele netwerk verplaatsing wilt v
 In deze zelf studie hebt u een virtueel Azure-netwerk verplaatst van de ene regio naar een andere met behulp van de Azure Portal en vervolgens de overbodige bron bronnen verwijderd. Zie voor meer informatie over het verplaatsen van resources tussen regio's en herstel na nood gevallen in Azure:
 
 
-- [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)
-- [Virtuele Azure-machines naar een andere regio verplaatsen](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate)
+- [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](../azure-resource-manager/management/move-resource-group-and-subscription.md)
+- [Virtuele Azure-machines naar een andere regio verplaatsen](../site-recovery/azure-to-azure-tutorial-migrate.md)

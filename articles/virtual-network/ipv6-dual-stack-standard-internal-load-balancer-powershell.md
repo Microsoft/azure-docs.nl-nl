@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/14/2019
 ms.author: kumud
-ms.openlocfilehash: 759bd94aee98aa04dee56acf0e50ca90cd0541b8
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 3df89b84e748f041f13866c1eb3c0b8a3341209c
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "96000603"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220827"
 ---
 # <a name="deploy-an-ipv6-dual-stack-application-using-standard-internal-load-balancer-in-azure---powershell-preview"></a>Een IPv6-toepassing met dubbele stack implementeren met behulp van standaard interne Load Balancer in azure-Power shell (preview)
 
@@ -244,7 +244,7 @@ $rule2 = New-AzNetworkSecurityRuleConfig `
 ```
 #### <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
-Maak een netwerk beveiligings groep met [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup).
+Maak een netwerkbeveiligingsgroep met [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup).
 
 ```azurepowershell
 $nsg = New-AzNetworkSecurityGroup `
@@ -302,7 +302,7 @@ $NIC_2 = New-AzNetworkInterface `
 
 ### <a name="create-virtual-machines"></a>Virtuele machines maken
 
-Stel een beheerdersnaam en -wachtwoord voor de VM’s in met [Get-Credential](https://msdn.microsoft.com/powershell/reference/5.1/microsoft.powershell.security/Get-Credential):
+Stel een beheerdersnaam en -wachtwoord voor de VM’s in met [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential):
 
 ```azurepowershell
 $cred = get-credential -Message "DUAL STACK VNET SAMPLE:  Please enter the Administrator credential to log into the VM's"

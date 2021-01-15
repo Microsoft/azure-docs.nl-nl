@@ -5,14 +5,14 @@ services: iot-hub
 author: jlian
 ms.service: iot-fundamentals
 ms.topic: conceptual
-ms.date: 11/25/2020
+ms.date: 01/14/2020
 ms.author: jlian
-ms.openlocfilehash: f4438aebcb81d665a19a595ac7ade4fea27fc43f
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: e569cbe9030b2ac5a42bd99233b4fefc925a5662
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621005"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220304"
 ---
 # <a name="transport-layer-security-tls-support-in-iot-hub"></a>Ondersteuning van Transport Layer Security (TLS) in IoT Hub
 
@@ -46,9 +46,16 @@ Configureer uw IoT-hubs voor extra beveiliging zodat *alleen* client verbindinge
 * VS - zuid-centraal
 * US - west 2
 * VS (overheid) - Arizona
-* VS (overheid) - Virginia
+* US Gov-Virginia (TLS 1.0/1.1-ondersteuning is niet beschikbaar in deze regio-TLS 1,2 Enforcement moet zijn ingeschakeld of het maken van een IoT hub mislukt)
 
-Hiertoe dient u een nieuw IoT Hub in te richten in een van de ondersteunde regio's en de `minTlsVersion` eigenschap in te stellen op de `1.2` resource specificatie van de IOT hub van uw Azure Resource Manager-sjabloon:
+Volg de stappen in [IOT hub maken in azure Portal](/.iot-hub-create-through-portal.md)om het afdwingen van TLS 1,2 in te scha kelen, behalve
+
+- Kies een **regio** in de bovenstaande lijst.
+- Selecteer **1,2** onder **Management-> Advanced-> Transport Layer Security (tls)-> minimale TLS-versie**. Deze instelling wordt alleen weer gegeven voor IoT hub die in een ondersteunde regio is gemaakt.
+
+    :::image type="content" source="media/iot-hub-tls-12-enforcement.png" alt-text="Scherm afbeelding die laat zien hoe u TLS 1,2-afdwinging inschakelt tijdens het maken van IoT hub":::
+
+Als u ARM-sjabloon wilt gebruiken om te maken, dient u een nieuwe IoT Hub in te richten in een van de ondersteunde regio's en de `minTlsVersion` eigenschap in te stellen op `1.2` in de resource specificatie:
 
 ```json
 {

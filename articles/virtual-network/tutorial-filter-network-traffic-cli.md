@@ -17,12 +17,12 @@ ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 7589b13dc517a23e8d9d65907fb3342e4e2490a9
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d2cabecfb2a70e6d325129335c066bb35aeb02ba
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000586"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221822"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-the-azure-cli"></a>Netwerk verkeer filteren met een netwerk beveiligings groep met behulp van de Azure CLI
 
@@ -37,7 +37,7 @@ U kunt het netwerkverkeer inkomend in en uitgaand naar een subnet van een virtue
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Voor dit artikel is versie 2.0.28 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
@@ -229,7 +229,7 @@ De *VM myvmweb* -VM is uitgaand naar Internet om nginx op te halen omdat al het 
 curl myVmWeb
 ```
 
-Afmelden van de *VM myvmmgmt* -VM. Voer *myVmWeb* `curl <publicIpAddress>` vanaf uw eigen computer in om te controleren of u toegang hebt tot de VM myvmweb-webserver vanaf een andere locatie dan Azure. De verbinding is geslaagd, omdat poort 80 is toegestaan van het internet naar de *myAsgWebServers* -toepassings beveiligings groep waaraan de netwerk interface is gekoppeld met de *VM myvmweb* -VM.
+Afmelden van de *VM myvmmgmt* -VM. Voer  `curl <publicIpAddress>` vanaf uw eigen computer in om te controleren of u toegang hebt tot de VM myvmweb-webserver vanaf een andere locatie dan Azure. De verbinding is geslaagd, omdat poort 80 is toegestaan van het internet naar de *myAsgWebServers* -toepassings beveiligings groep waaraan de netwerk interface is gekoppeld met de *VM myvmweb* -VM.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -241,6 +241,6 @@ az group delete --name myResourceGroup --yes
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u een netwerk beveiligings groep gemaakt en gekoppeld aan een subnet van een virtueel netwerk. Zie [Overzicht van netwerkbeveiligingsgroepen](security-overview.md) en [Een beveiligingsgroep beheren](manage-network-security-group.md) voor meer informatie over netwerkbeveiligingsgroepen.
+In dit artikel hebt u een netwerk beveiligings groep gemaakt en gekoppeld aan een subnet van een virtueel netwerk. Zie [Overzicht van netwerkbeveiligingsgroepen](./network-security-groups-overview.md) en [Een beveiligingsgroep beheren](manage-network-security-group.md) voor meer informatie over netwerkbeveiligingsgroepen.
 
 Azure routeert standaard verkeer tussen subnetten. In plaats daarvan kunt u verkeer routeren tussen subnetten via een virtuele machine, die bijvoorbeeld als een firewall fungeert. Zie [een route tabel maken](tutorial-create-route-table-cli.md)voor meer informatie.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 04/09/2019
 ms.author: kumud
-ms.openlocfilehash: 79062ae45f04b290f6e4120906b98590ce95dbe1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 654c883498e724d10104133f99ef1664f72fe09d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87833263"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223479"
 ---
 # <a name="create-a-virtual-network-peering---resource-manager-different-subscriptions-and-azure-active-directory-tenants"></a>Een peering voor een virtueel netwerk maken-Resource Manager, verschillende abonnementen en Azure Active Directory tenants
 
@@ -31,14 +31,14 @@ De stappen voor het maken van peering op een virtueel netwerk zijn verschillend,
 |[Eén in Resource Manager, één klassiek](create-peering-different-deployment-models.md) |Hetzelfde|
 |[Eén in Resource Manager, één klassiek](create-peering-different-deployment-models-subscriptions.md) |Verschillend|
 
-U kunt geen virtuele netwerk peering maken tussen twee virtuele netwerken die zijn geïmplementeerd via het klassieke implementatie model. Als u virtuele netwerken wilt verbinden die beide zijn gemaakt via het klassieke implementatie model, kunt u een Azure- [VPN gateway](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) gebruiken om verbinding te maken met de virtuele netwerken.
+U kunt geen virtuele netwerk peering maken tussen twee virtuele netwerken die zijn geïmplementeerd via het klassieke implementatie model. Als u virtuele netwerken wilt verbinden die beide zijn gemaakt via het klassieke implementatie model, kunt u een Azure- [VPN gateway](../vpn-gateway/tutorial-site-to-site-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) gebruiken om verbinding te maken met de virtuele netwerken.
 
 Deze zelf studie vergelijkt virtuele netwerken in dezelfde regio. U kunt ook virtuele netwerken in verschillende [ondersteunde regio's](virtual-network-manage-peering.md#cross-region)peeren. Het is raadzaam om vertrouwd te raken met de [vereisten en beperkingen van de peering](virtual-network-manage-peering.md#requirements-and-constraints) voordat u peering van virtuele netwerken uitvoert.
 
 U kunt de [Azure Portal](#portal), de Azure [-opdracht regel interface](#cli) (CLI), Azure [Power shell](#powershell)of een [Azure Resource Manager sjabloon](#template) gebruiken om een peering voor het virtuele netwerk te maken. Selecteer een van de vorige koppelingen van het hulp programma om rechtstreeks naar de stappen voor het maken van een virtuele netwerk-peering te gaan met het hulp programma van uw keuze.
 
 Als de virtuele netwerken zich in verschillende abonnementen bevinden en de abonnementen zijn gekoppeld aan verschillende Azure Active Directory tenants, voert u de volgende stappen uit voordat u doorgaat:
-1. Voeg de gebruiker toe van elke Active Directory Tenant als [gast gebruiker](../active-directory/b2b/add-users-administrator.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-guest-users-to-the-directory) in de tegenovergestelde Azure Active Directory Tenant.
+1. Voeg de gebruiker toe van elke Active Directory Tenant als [gast gebruiker](../active-directory/external-identities/add-users-administrator.md?toc=%2fazure%2fvirtual-network%2ftoc.json#add-guest-users-to-the-directory) in de tegenovergestelde Azure Active Directory Tenant.
 1. Elke gebruiker moet de uitnodiging voor gastgebruiker accepteren van de tegenovergestelde Azure Active Directory-tenant.
 
 ## <a name="create-peering---azure-portal"></a><a name="portal"></a>Peering-Azure Portal maken
@@ -46,7 +46,7 @@ Als de virtuele netwerken zich in verschillende abonnementen bevinden en de abon
 In de volgende stappen worden verschillende accounts voor elk abonnement gebruikt. Als u een account gebruikt dat machtigingen heeft voor beide abonnementen, kunt u hetzelfde account voor alle stappen gebruiken, de stappen voor het aanmelden bij de portal overs Laan en de stappen voor het toewijzen van andere gebruikers machtigingen voor de virtuele netwerken overs Laan.
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als *GebruikerA*. Het account waarmee u zich aanmeldt, moet de benodigde machtigingen hebben voor het maken van een virtuele netwerk peering. Zie [machtigingen voor peering voor virtuele netwerken](virtual-network-manage-peering.md#permissions)voor een lijst met machtigingen.
-2. Selecteer **+ een resource maken**, selecteer **netwerken**en selecteer vervolgens **virtueel netwerk**.
+2. Selecteer **+ een resource maken**, selecteer **netwerken** en selecteer vervolgens **virtueel netwerk**.
 3. Selecteer of typ de volgende voorbeeld waarden voor de volgende instellingen en selecteer vervolgens **maken**:
     - **Naam**: *myVnetA*
     - **Adres ruimte**: *10.0.0.0/16*
@@ -55,13 +55,13 @@ In de volgende stappen worden verschillende accounts voor elk abonnement gebruik
     - **Abonnement**: Selecteer abonnement A.
     - **Resource groep**: Selecteer **nieuwe maken** en voer *myResourceGroupA* in
     - **Locatie**: *VS-Oost*
-4. Typ *myVnetA*in het vak **Zoek resources** bovenaan de portal. Selecteer **myVnetA** wanneer deze wordt weer gegeven in de zoek resultaten. 
+4. Typ *myVnetA* in het vak **Zoek resources** bovenaan de portal. Selecteer **myVnetA** wanneer deze wordt weer gegeven in de zoek resultaten. 
 5. Selecteer **toegangs beheer (IAM)** in de verticale lijst met opties aan de linkerkant.
-6. Selecteer **+ roltoewijzing toevoegen**onder **myVnetA-toegangs beheer (IAM)**.
+6. Selecteer **+ roltoewijzing toevoegen** onder **myVnetA-toegangs beheer (IAM)**.
 7. Selecteer **netwerkinzender** in het vak **rol** .
-8. Selecteer in het vak **selecteren** *UserB*of typ het e-mail adres van UserB om ernaar te zoeken.
+8. Selecteer in het vak **selecteren** *UserB* of typ het e-mail adres van UserB om ernaar te zoeken.
 9. Selecteer **Opslaan**.
-10. Selecteer onder **myVnetA-toegangs beheer (IAM)** **Eigenschappen** in de verticale lijst met opties aan de linkerkant. Kopieer de **resource-id**die wordt gebruikt in een latere stap. De resource-ID is vergelijkbaar met het volgende voor beeld: `/subscriptions/<Subscription Id>/resourceGroups/myResourceGroupA/providers/Microsoft.Network/virtualNetworks/myVnetA` .
+10. Selecteer onder **myVnetA-toegangs beheer (IAM)** **Eigenschappen** in de verticale lijst met opties aan de linkerkant. Kopieer de **resource-id** die wordt gebruikt in een latere stap. De resource-ID is vergelijkbaar met het volgende voor beeld: `/subscriptions/<Subscription Id>/resourceGroups/myResourceGroupA/providers/Microsoft.Network/virtualNetworks/myVnetA` .
 11. Meld u bij de portal aan als GebruikerA en meld u aan als UserB.
 12. Voer de stappen 2-3 uit, voer de volgende waarden in in stap 3:
 
@@ -73,24 +73,24 @@ In de volgende stappen worden verschillende accounts voor elk abonnement gebruik
     - **Resource groep**: Selecteer **nieuwe maken** en voer *myResourceGroupB* in
     - **Locatie**: *VS-Oost*
 
-13. Typ *myVnetB*in het vak **Zoek resources** bovenaan de portal. Selecteer **myVnetB** wanneer deze wordt weer gegeven in de zoek resultaten.
-14. Onder **myVnetB**selecteert u **Eigenschappen** in de verticale lijst met opties aan de linkerkant. Kopieer de **resource-id**die wordt gebruikt in een latere stap. De resource-ID is vergelijkbaar met het volgende voor beeld: `/subscriptions/<Subscription ID>/resourceGroups/myResourceGroupB/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnetB` .
-15. Selecteer **toegangs beheer (IAM)** onder **myVnetB**en voer de stappen 5-10 voor myVnetB uit, en geef **GebruikerA** op in stap 8.
+13. Typ *myVnetB* in het vak **Zoek resources** bovenaan de portal. Selecteer **myVnetB** wanneer deze wordt weer gegeven in de zoek resultaten.
+14. Onder **myVnetB** selecteert u **Eigenschappen** in de verticale lijst met opties aan de linkerkant. Kopieer de **resource-id** die wordt gebruikt in een latere stap. De resource-ID is vergelijkbaar met het volgende voor beeld: `/subscriptions/<Subscription ID>/resourceGroups/myResourceGroupB/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnetB` .
+15. Selecteer **toegangs beheer (IAM)** onder **myVnetB** en voer de stappen 5-10 voor myVnetB uit, en geef **GebruikerA** op in stap 8.
 16. Meld u bij de portal aan als UserB en meld u aan als GebruikerA.
-17. Typ *myVnetA*in het vak **Zoek resources** bovenaan de portal. Selecteer **myVnetA** wanneer deze wordt weer gegeven in de zoek resultaten.
+17. Typ *myVnetA* in het vak **Zoek resources** bovenaan de portal. Selecteer **myVnetA** wanneer deze wordt weer gegeven in de zoek resultaten.
 18. Selecteer **myVnetA**.
-19. Selecteer onder **instellingen**de optie **peerings**.
+19. Selecteer onder **instellingen** de optie **peerings**.
 20. Selecteer onder **myVnetA-peerings** **+ toevoegen**
 21. Voer onder **peering toevoegen**, of selecteren, de volgende opties in en selecteer vervolgens **OK**:
      - **Naam**: *myVnetAToMyVnetB*
      - **Implementatie model van het virtuele netwerk**: Selecteer **Resource Manager**.
-     - **Ik weet wat mijn resource-id**is: Schakel dit selectie vakje in.
+     - **Ik weet wat mijn resource-id** is: Schakel dit selectie vakje in.
      - **Resource-id**: Voer de resource-id in van stap 14.
      - **Toegang tot virtueel netwerk toestaan:** Zorg ervoor dat **ingeschakeld** is geselecteerd.
     In deze zelf studie worden geen andere instellingen gebruikt. Meer informatie over alle instellingen voor peering vindt u in [peering van virtuele netwerken beheren](virtual-network-manage-peering.md#create-a-peering).
 22. De peering die u hebt gemaakt, wordt kort gewacht na het selecteren van **OK** in de vorige stap. **Gestart** , wordt vermeld in de kolom **peering status** voor de **myVnetAToMyVnetB** -peering die u hebt gemaakt. U hebt myVnetA gekoppeld aan myVnetB, maar nu moet u myVnetB peeren naar myVnetA. De peering moet in beide richtingen worden gemaakt zodat resources in de virtuele netwerken met elkaar kunnen communiceren.
 23. Meld u bij de portal aan als GebruikerA en meld u aan als UserB.
-24. Voer de stappen 17-21 opnieuw uit voor myVnetB. In stap 21 benoemen we de peering *myVnetBToMyVnetA*, selecteert u *MyVnetA* voor het **virtuele netwerk**en voert u de id uit stap 10 in het vak **resource-id** in.
+24. Voer de stappen 17-21 opnieuw uit voor myVnetB. In stap 21 benoemen we de peering *myVnetBToMyVnetA*, selecteert u *MyVnetA* voor het **virtuele netwerk** en voert u de id uit stap 10 in het vak **resource-id** in.
 25. Een paar seconden na het selecteren van **OK** om de peering voor myVnetB te maken, wordt de **myVnetBToMyVnetA** -peering die u zojuist hebt gemaakt weer gegeven met **verbinding** in de kolom **status van peering** .
 26. Meld u bij de portal aan als UserB en meld u aan als GebruikerA.
 27. Voer de stappen 17-19 opnieuw uit. De **peering-status** voor de **myVnetAToVNetB** -peering is nu ook **verbonden**. De peering wordt tot stand gebracht nadat u **verbinding hebt** gemaakt in de kolom **peering status** voor beide virtuele netwerken in de peering. Alle Azure-resources die u in een virtueel netwerk maakt, kunnen nu met elkaar communiceren via hun IP-adressen. Als u gebruikmaakt van de standaard naam omzetting van Azure voor de virtuele netwerken, kunnen de bronnen in de virtuele netwerken geen namen omzetten over de virtuele netwerken. Als u namen wilt omzetten in virtuele netwerken in een peering, moet u uw eigen DNS-server maken. Meer informatie over het instellen van [naam omzetting met uw eigen DNS-server](virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server).
@@ -290,9 +290,9 @@ Wanneer u deze zelf studie hebt voltooid, kunt u de resources die u in de zelf s
 ### <a name="azure-portal"></a><a name="delete-portal"></a>Azure Portal
 
 1. Meld u aan bij de Azure Portal als GebruikerA.
-2. Voer in het zoekvak van de portal **myResourceGroupA**in. Selecteer **myResourceGroupA**in de zoek resultaten.
+2. Voer in het zoekvak van de portal **myResourceGroupA** in. Selecteer **myResourceGroupA** in de zoek resultaten.
 3. Selecteer **Verwijderen**.
-4. Om het verwijderen te bevestigen, voert u in het vak **Geef de naam van de resource groep** **myResourceGroupA**in en selecteert u vervolgens **verwijderen**.
+4. Om het verwijderen te bevestigen, voert u in het vak **Geef de naam van de resource groep** **myResourceGroupA** in en selecteert u vervolgens **verwijderen**.
 5. Meld u bij de portal aan als GebruikerA en meld u aan als UserB.
 6. Voer de stappen 2-4 voor myResourceGroupB uit.
 

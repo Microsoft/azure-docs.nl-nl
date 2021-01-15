@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 3/2/2020
 ms.author: rohink
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 340ca07ba605359f71c1dbf23ca38abd75d84416
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: bbaf2fb99f1268a752fab4322078b0566a054d30
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937046"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222850"
 ---
 # <a name="name-resolution-for-resources-in-azure-virtual-networks"></a>Naamomzetting voor resources in virtuele Azure-netwerken
 
@@ -57,7 +57,7 @@ De door Azure geleverde naam omzetting biedt alleen elementaire gezaghebbende DN
 Naast de resolutie van open bare DNS-namen biedt Azure een interne naam omzetting voor Vm's en rolinstanties die zich binnen hetzelfde virtuele netwerk of dezelfde Cloud service bevinden. Vm's en exemplaren in een Cloud service delen hetzelfde DNS-achtervoegsel, zodat de hostnaam alleen voldoende is. Maar in virtuele netwerken die zijn geïmplementeerd met het klassieke implementatie model, hebben verschillende Cloud Services verschillende DNS-achtervoegsels. In dit geval moet u de FQDN-naam voor het omzetten van namen tussen verschillende Cloud Services. In virtuele netwerken die zijn geïmplementeerd met het Azure Resource Manager-implementatie model, is het DNS-achtervoegsel consistent op alle virtuele machines in een virtueel netwerk, zodat de FQDN niet nodig is. DNS-namen kunnen worden toegewezen aan virtuele machines en netwerk interfaces. Hoewel voor de naam omzetting van Azure geen configuratie vereist is, is het niet de juiste keuze voor alle implementatie scenario's, zoals beschreven in de vorige tabel.
 
 > [!NOTE]
-> Wanneer u Cloud Services-Web-en-werk rollen gebruikt, hebt u ook toegang tot de interne IP-adressen van rolinstanties die gebruikmaken van de Azure Service Management-REST API. Zie de naslag informatie voor [Service Management-rest API](https://msdn.microsoft.com/library/azure/ee460799.aspx). Het adres is gebaseerd op de naam van de rol en het exemplaar nummer. 
+> Wanneer u Cloud Services-Web-en-werk rollen gebruikt, hebt u ook toegang tot de interne IP-adressen van rolinstanties die gebruikmaken van de Azure Service Management-REST API. Zie de naslag informatie voor [Service Management-rest API](/previous-versions/azure/ee460799(v=azure.100)). Het adres is gebaseerd op de naam van de rol en het exemplaar nummer. 
 >
 
 ### <a name="features"></a>Functies
@@ -88,7 +88,7 @@ Omgekeerde DNS wordt ondersteund in alle virtuele netwerken op basis van ARM. U 
 * Forward lookup op FQDN-namen van \[ het formulier vmname \] . internal.cloudapp.net wordt omgezet naar het IP-adres dat aan de virtuele machine is toegewezen.
 * Als het virtuele netwerk is gekoppeld aan een [Azure DNS particuliere zones](../dns/private-dns-overview.md) als een virtuele registratie-netwerk, retour neren de reverse DNS-query's twee records. Eén record heeft de indeling \[ vmname \] . [ privatednszonename] en de andere hebben de vorm \[ vmname \] . internal.cloudapp.net
 * Achterwaartse DNS-zoek opdracht is binnen het bereik van een bepaald virtueel netwerk, zelfs als deze is gekoppeld aan andere virtuele netwerken. Omgekeerde DNS-query's (PTR-query's) voor IP-adressen van virtuele machines die zich in gekoppelde virtuele netwerken bevinden, wordt NXDOMAIN geretourneerd.
-* Als u omgekeerde DNS-functie in een virtueel netwerk wilt uitschakelen, kunt u dit doen door een zone voor reverse lookup te maken met behulp van [Azure DNS particuliere zones](../dns/private-dns-overview.md) en deze zone aan uw virtuele netwerk te koppelen. Als de IP-adres ruimte van uw virtuele netwerk bijvoorbeeld 10.20.0.0/16 is, kunt u een lege privé-DNS-zone 20.10.in-addr. arpa maken en deze koppelen aan het virtuele netwerk. Wanneer u de zone koppelt aan uw virtuele netwerk, moet u automatische registratie op de koppeling uitschakelen. Deze zone overschrijft de standaard zones voor reverse lookup voor het virtuele netwerk en omdat deze zone leeg is, ontvangt u NXDOMAIN voor uw omgekeerde DNS-query's. Raadpleeg onze [Snelstartgids](https://docs.microsoft.com/azure/dns/private-dns-getstarted-portal) voor meer informatie over het maken van een privé-DNS-zone en het koppelen van deze aan een virtueel netwerk.
+* Als u omgekeerde DNS-functie in een virtueel netwerk wilt uitschakelen, kunt u dit doen door een zone voor reverse lookup te maken met behulp van [Azure DNS particuliere zones](../dns/private-dns-overview.md) en deze zone aan uw virtuele netwerk te koppelen. Als de IP-adres ruimte van uw virtuele netwerk bijvoorbeeld 10.20.0.0/16 is, kunt u een lege privé-DNS-zone 20.10.in-addr. arpa maken en deze koppelen aan het virtuele netwerk. Wanneer u de zone koppelt aan uw virtuele netwerk, moet u automatische registratie op de koppeling uitschakelen. Deze zone overschrijft de standaard zones voor reverse lookup voor het virtuele netwerk en omdat deze zone leeg is, ontvangt u NXDOMAIN voor uw omgekeerde DNS-query's. Raadpleeg onze [Snelstartgids](../dns/private-dns-getstarted-portal.md) voor meer informatie over het maken van een privé-DNS-zone en het koppelen van deze aan een virtueel netwerk.
 
 > [!NOTE]
 > Als u een achterwaartse DNS-zoek opdracht wilt begrenzen over een virtueel netwerk, kunt u een zone voor reverse lookup (in-addr. arpa) [Azure DNS particuliere zones](../dns/private-dns-overview.md) maken en deze koppelen aan meerdere virtuele netwerken. U hoeft de omgekeerde DNS-records voor de virtuele machines echter niet hand matig te beheren.
@@ -164,7 +164,7 @@ DNS-servers binnen een virtueel netwerk kunnen DNS-query's door sturen naar recu
 Door sturen via DNS zorgt er ook voor dat de DNS-omzetting tussen virtuele netwerken mogelijk is en dat uw on-premises machines door Azure gedefinieerde hostnamen kunnen omzetten. Om de hostnaam van een VM op te lossen, moet de virtuele machine van de DNS-server zich in hetzelfde virtuele netwerk bevinden en worden geconfigureerd voor het door sturen van hostname-query's naar Azure. Omdat het DNS-achtervoegsel in elk virtueel netwerk verschilt, kunt u voorwaardelijke regels voor door sturen gebruiken om DNS-query's naar het juiste virtuele netwerk te verzenden voor oplossing. In de volgende afbeelding ziet u twee virtuele netwerken en een on-premises netwerk met DNS-omzetting tussen virtuele netwerken met behulp van deze methode. Een voor beeld van een DNS-doorstuur server is beschikbaar in de [Azure Quick Start-sjablonen galerie](https://azure.microsoft.com/documentation/templates/301-dns-forwarder/) en [github](https://github.com/Azure/azure-quickstart-templates/tree/master/301-dns-forwarder).
 
 > [!NOTE]
-> Met een rolinstantie kan naam omzetting van Vm's binnen hetzelfde virtuele netwerk worden uitgevoerd. Dit doet u met behulp van de FQDN-naam, die bestaat uit de hostnaam van de virtuele machine en het DNS-achtervoegsel van de **Internal.cloudapp.net** . In dit geval wordt naam omzetting echter alleen geslaagd als voor de rolinstantie de VM-naam is gedefinieerd in het [Role-schema (cscfg-bestand)](https://msdn.microsoft.com/library/azure/jj156212.aspx).
+> Met een rolinstantie kan naam omzetting van Vm's binnen hetzelfde virtuele netwerk worden uitgevoerd. Dit doet u met behulp van de FQDN-naam, die bestaat uit de hostnaam van de virtuele machine en het DNS-achtervoegsel van de **Internal.cloudapp.net** . In dit geval wordt naam omzetting echter alleen geslaagd als voor de rolinstantie de VM-naam is gedefinieerd in het [Role-schema (cscfg-bestand)](/previous-versions/azure/reference/jj156212(v=azure.100)).
 > `<Role name="<role-name>" vmName="<vm-name>">`
 >
 > U moet de volgende methoden gebruiken om de naam omzetting van Vm's in een ander virtueel netwerk (FQDN met het **Internal.cloudapp.net** -achtervoegsel) te kunnen uitvoeren met behulp van de methode die in deze sectie wordt beschreven (aangepaste DNS-servers die worden doorgestuurd tussen de twee virtuele netwerken).
@@ -176,8 +176,8 @@ Wanneer u door Azure geleverde naam omzetting gebruikt, biedt Azure Dynamic Host
 
 Indien nodig kunt u het interne DNS-achtervoegsel bepalen met behulp van Power shell of de API:
 
-* Voor virtuele netwerken in Azure Resource Manager-implementatie modellen is het achtervoegsel beschikbaar via de [netwerk interface rest API](https://docs.microsoft.com/rest/api/virtualnetwork/networkinterfaces), de Power shell [-cmdlet Get-AzNetworkInterface](/powershell/module/az.network/get-aznetworkinterface) en de opdracht [AZ Network NIC Azure cli weer geven](/cli/azure/network/nic#az-network-nic-show) .
-* In klassieke implementatie modellen is het achtervoegsel beschikbaar via de [Get-API](https://msdn.microsoft.com/library/azure/ee460804.aspx) -aanroep voor de implementatie of met de cmdlet [Get-AzureVM-debug](/powershell/module/servicemanagement/azure.service/get-azurevm) .
+* Voor virtuele netwerken in Azure Resource Manager-implementatie modellen is het achtervoegsel beschikbaar via de [netwerk interface rest API](/rest/api/virtualnetwork/networkinterfaces), de Power shell [-cmdlet Get-AzNetworkInterface](/powershell/module/az.network/get-aznetworkinterface) en de opdracht [AZ Network NIC Azure cli weer geven](/cli/azure/network/nic#az-network-nic-show) .
+* In klassieke implementatie modellen is het achtervoegsel beschikbaar via de [Get-API](/previous-versions/azure/reference/ee460804(v=azure.100)) -aanroep voor de implementatie of met de cmdlet [Get-AzureVM-debug](/powershell/module/servicemanagement/azure.service/get-azurevm) .
 
 Als het door sturen van query's naar Azure niet aan uw behoeften voldoet, moet u uw eigen DNS-oplossing opgeven. Uw DNS-oplossing moet:
 
@@ -215,7 +215,7 @@ Wanneer u het Azure Resource Manager-implementatie model gebruikt, kunt u DNS-se
 > [!NOTE]
 > Als u een aangepaste DNS-server voor uw virtuele netwerk kiest, moet u ten minste één IP-adres van de DNS-server opgeven. anders wordt de configuratie door het virtuele netwerk genegeerd en wordt in plaats daarvan Azure-DNS gebruikt.
 
-Wanneer u het klassieke implementatie model gebruikt, kunt u DNS-servers voor het virtuele netwerk opgeven in het Azure Portal of het [netwerk configuratie bestand](https://msdn.microsoft.com/library/azure/jj157100). Voor Cloud Services kunt u DNS-servers opgeven via het [Service configuratie bestand](https://msdn.microsoft.com/library/azure/ee758710) of met behulp van Power shell, met [New-AzureVM](/powershell/module/servicemanagement/azure.service/new-azurevm).
+Wanneer u het klassieke implementatie model gebruikt, kunt u DNS-servers voor het virtuele netwerk opgeven in het Azure Portal of het [netwerk configuratie bestand](/previous-versions/azure/reference/jj157100(v=azure.100)). Voor Cloud Services kunt u DNS-servers opgeven via het [Service configuratie bestand](/previous-versions/azure/reference/ee758710(v=azure.100)) of met behulp van Power shell, met [New-AzureVM](/powershell/module/servicemanagement/azure.service/new-azurevm).
 
 > [!NOTE]
 > Als u de DNS-instellingen voor een virtueel netwerk of een virtuele machine die al is geïmplementeerd, wijzigt, moet u de DHCP-lease vernieuwing uitvoeren op alle betrokken Vm's in het virtuele netwerk om de nieuwe DNS-instellingen van kracht te laten worden. Voor Vm's waarop het Windows-besturings systeem wordt uitgevoerd, kunt u dit doen door `ipconfig /renew` rechtstreeks in de virtuele machine te typen. De stappen variëren afhankelijk van het besturings systeem. Raadpleeg de relevante documentatie voor het type besturings systeem.
@@ -229,6 +229,6 @@ Azure Resource Manager implementatie model:
 
 Klassiek implementatie model:
 
-* [Configuratie schema van Azure-service](https://msdn.microsoft.com/library/azure/ee758710)
-* [Configuratie schema Virtual Network](https://msdn.microsoft.com/library/azure/jj157100)
-* [Een Virtual Network configureren met behulp van een netwerk configuratie bestand](virtual-networks-using-network-configuration-file.md)
+* [Configuratie schema van Azure-service](/previous-versions/azure/reference/ee758710(v=azure.100))
+* [Configuratie schema Virtual Network](/previous-versions/azure/reference/jj157100(v=azure.100))
+* [Een Virtual Network configureren met behulp van een netwerk configuratie bestand](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file)

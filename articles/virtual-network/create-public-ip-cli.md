@@ -11,26 +11,26 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2020
 ms.author: blehr
-ms.openlocfilehash: 76af225b6f93e0a47799234e3e2b430344f68787
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 70fb502e45a6cdcc196f5fb97ee4c8c59ba6c27d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96009990"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223530"
 ---
 # <a name="quickstart-create-a-public-ip-address-using-azure-cli"></a>Snelstartgids: een openbaar IP-adres maken met behulp van Azure CLI
 
-In dit artikel wordt beschreven hoe u een open bare IP-adres bron maakt met behulp van Azure CLI. Zie [open bare IP-adressen](https://docs.microsoft.com/azure/virtual-network/public-ip-addresses)voor meer informatie over de resources waaraan dit kan worden gekoppeld, het verschil tussen de basis-en standaard-SKU en andere gerelateerde informatie.  In dit voor beeld richten we zich alleen op IPv4-adressen. Zie voor meer informatie over IPv6-adressen [IPv6 voor Azure VNet](https://docs.microsoft.com/azure/virtual-network/ipv6-overview).
+In dit artikel wordt beschreven hoe u een open bare IP-adres bron maakt met behulp van Azure CLI. Zie [open bare IP-adressen](./public-ip-addresses.md)voor meer informatie over de resources waaraan dit kan worden gekoppeld, het verschil tussen de basis-en standaard-SKU en andere gerelateerde informatie.  In dit voor beeld richten we zich alleen op IPv4-adressen. Zie voor meer informatie over IPv6-adressen [IPv6 voor Azure VNet](./ipv6-overview.md).
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Voor dit artikel is versie 2.0.28 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
 Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
 
-Maak een resource groep met [AZ Group Create](https://docs.microsoft.com/cli/azure/group?view=azure-cli-latest#az-group-create) named **myResourceGroup** in de **eastus2** -locatie.
+Maak een resource groep met [AZ Group Create](/cli/azure/group?view=azure-cli-latest#az-group-create) named **myResourceGroup** in de **eastus2** -locatie.
 
 ```azurecli-interactive
   az group create \
@@ -44,9 +44,9 @@ Maak een resource groep met [AZ Group Create](https://docs.microsoft.com/cli/azu
 # <a name="standard-sku---using-zones"></a>[**Standaard-SKU-zones gebruiken**](#tab/option-create-public-ip-standard-zones)
 
 >[!NOTE]
->De volgende opdracht werkt voor API-versie 2020-08-01 of hoger.  Raadpleeg [resource providers en-typen](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types)voor meer informatie over de API-versie die momenteel wordt gebruikt.
+>De volgende opdracht werkt voor API-versie 2020-08-01 of hoger.  Raadpleeg [resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md)voor meer informatie over de API-versie die momenteel wordt gebruikt.
 
-Gebruik [AZ Network Public-IP Create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een standaard zone-REDUNDANT openbaar IP-adres te maken met de naam **myStandardZRPublicIP** in **myResourceGroup**.
+Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een standaard zone-REDUNDANT openbaar IP-adres te maken met de naam **myStandardZRPublicIP** in **myResourceGroup**.
 
 ```azurecli-interactive
   az network public-ip create \
@@ -69,14 +69,14 @@ Gebruik de volgende opdracht om een openbaar IP-adres voor de standaard zonegebo
     --zone 2
 ```
 
-Houd er rekening mee dat de bovenstaande opties voor zones alleen geldige selecties in regio's met [Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones)zijn.
+Houd er rekening mee dat de bovenstaande opties voor zones alleen geldige selecties in regio's met [Beschikbaarheidszones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones)zijn.
 
 # <a name="standard-sku---no-zones"></a>[**Standaard-SKU-geen zones**](#tab/option-create-public-ip-standard)
 
 >[!NOTE]
->De volgende opdracht werkt voor API-versie 2020-08-01 of hoger.  Raadpleeg [resource providers en-typen](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types)voor meer informatie over de API-versie die momenteel wordt gebruikt.
+>De volgende opdracht werkt voor API-versie 2020-08-01 of hoger.  Raadpleeg [resource providers en-typen](../azure-resource-manager/management/resource-providers-and-types.md)voor meer informatie over de API-versie die momenteel wordt gebruikt.
 
-Gebruik [AZ Network Public-IP Create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een standaard openbaar IP-adres te maken als een niet-zonegebonden resource met de naam **myStandardPublicIP** in **myResourceGroup**.
+Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een standaard openbaar IP-adres te maken als een niet-zonegebonden resource met de naam **myStandardPublicIP** in **myResourceGroup**.
 
 ```azurecli-interactive
   az network public-ip create \
@@ -84,11 +84,11 @@ Gebruik [AZ Network Public-IP Create](https://docs.microsoft.com/cli/azure/netwo
     --name myStandardPublicIP \
     --sku Standard
 ```
-Deze selectie is geldig in alle regio's en is de standaard selectie voor standaard open bare IP-adressen in regio's zonder [Beschikbaarheidszones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).
+Deze selectie is geldig in alle regio's en is de standaard selectie voor standaard open bare IP-adressen in regio's zonder [Beschikbaarheidszones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).
 
 # <a name="basic-sku"></a>[**Basis-SKU**](#tab/option-create-public-ip-basic)
 
-Gebruik [AZ Network Public-IP Create](https://docs.microsoft.com/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een eenvoudig, statisch openbaar IP-adres te maken met de naam **myBasicPublicIP** in **myResourceGroup**.  Algemene open bare Ip's hebben niet het concept van beschikbaarheids zones.
+Gebruik [AZ Network Public-IP Create](/cli/azure/network/public-ip?view=azure-cli-latest#az-network-public-ip-create) om een eenvoudig, statisch openbaar IP-adres te maken met de naam **myBasicPublicIP** in **myResourceGroup**.  Algemene open bare Ip's hebben niet het concept van beschikbaarheids zones.
 
 ```azurecli-interactive
   az network public-ip create \
@@ -103,9 +103,9 @@ Als het IP-adres acceptabel is om na verloop van tijd te wijzigen, kan de **dyna
 
 ## <a name="additional-information"></a>Aanvullende informatie 
 
-Zie [open bare IP-adressen beheren](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#create-a-public-ip-address)voor meer informatie over de afzonderlijke variabelen die hierboven worden vermeld.
+Zie [open bare IP-adressen beheren](./virtual-network-public-ip-address.md#create-a-public-ip-address)voor meer informatie over de afzonderlijke variabelen die hierboven worden vermeld.
 
 ## <a name="next-steps"></a>Volgende stappen
-- Een [openbaar IP-adres koppelen aan een virtuele machine](https://docs.microsoft.com/azure/virtual-network/associate-public-ip-address-vm#azure-portal).
-- Meer informatie over [open bare IP-adressen](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) in Azure.
+- Een [openbaar IP-adres koppelen aan een virtuele machine](./associate-public-ip-address-vm.md#azure-portal).
+- Meer informatie over [open bare IP-adressen](./public-ip-addresses.md#public-ip-addresses) in Azure.
 - Meer informatie over alle [open bare IP-adres instellingen](virtual-network-public-ip-address.md#create-a-public-ip-address).

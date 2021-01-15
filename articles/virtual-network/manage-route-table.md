@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/19/2020
 ms.author: kumud
-ms.openlocfilehash: 664e3851370be812cd7a0e58cf9beb1fddb5d991
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a8c38f4e84a6a653c3a4d887c82340409fc363af
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87291002"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220589"
 ---
 # <a name="create-change-or-delete-a-route-table"></a>Een route tabel maken, wijzigen of verwijderen
 
@@ -81,7 +81,7 @@ Ga naar de [Azure-portal](https://portal.azure.com) om uw virtuele netwerk te be
 
 1. Kies in de lijst route tabel de route tabel waarvan u de details wilt weer geven.
 
-1. Bekijk op de pagina route tabel onder **instellingen**de **routes** in de route tabel of de **subnetten** waaraan de route tabel is gekoppeld.
+1. Bekijk op de pagina route tabel onder **instellingen** de **routes** in de route tabel of de **subnetten** waaraan de route tabel is gekoppeld.
 
 Voor meer informatie over algemene Azure-instellingen raadpleegt u de volgende informatie:
 
@@ -121,11 +121,11 @@ U kunt eventueel een route tabel koppelen aan een subnet. Een route tabel kan wo
 
 1. Kies in de lijst virtueel netwerk het virtuele netwerk dat het subnet bevat waaraan u een route tabel wilt koppelen.
 
-1. Kies **subnetten**in de menu balk van het virtuele netwerk.
+1. Kies **subnetten** in de menu balk van het virtuele netwerk.
 
 1. Selecteer het subnet waaraan u de route tabel wilt koppelen.
 
-1. Kies in **route tabel**de route tabel die u wilt koppelen aan het subnet.
+1. Kies in **route tabel** de route tabel die u wilt koppelen aan het subnet.
 
 1. Selecteer **Opslaan**.
 
@@ -146,11 +146,11 @@ Wanneer u een route tabel loskoppelt van een subnet, routeert Azure verkeer op b
 
 1. Kies in de lijst virtueel netwerk het virtuele netwerk dat het subnet bevat dat u wilt loskoppelen van een route tabel.
 
-1. Kies **subnetten**in de menu balk van het virtuele netwerk.
+1. Kies **subnetten** in de menu balk van het virtuele netwerk.
 
 1. Selecteer het subnet dat u wilt loskoppelen van de route tabel.
 
-1. Kies in **route tabel**de optie **geen**.
+1. Kies in **route tabel** de optie **geen**.
 
 1. Selecteer **Opslaan**.
 
@@ -169,7 +169,7 @@ U kunt een route tabel die is gekoppeld aan een subnet, niet verwijderen. [Koppe
 
 1. Kies in de lijst route tabel de route tabel die u wilt verwijderen.
 
-1. Selecteer **verwijderen**en selecteer vervolgens **Ja** in het bevestigings venster.
+1. Selecteer **verwijderen** en selecteer vervolgens **Ja** in het bevestigings venster.
 
 ### <a name="delete-a-route-table---commands"></a>Een route tabel verwijderen-opdrachten
 
@@ -186,11 +186,11 @@ Er is een limiet voor het aantal routes per route tabel dat per Azure-locatie en
 
 1. Kies in de lijst route tabel de route tabel waaraan u een route wilt toevoegen.
 
-1. Kies **routes**toevoegen in de menu balk van de route tabel  >  **Add**.
+1. Kies **routes** toevoegen in de menu balk van de route tabel  >  .
 
 1. Voer een unieke **route naam** in voor de route in de route tabel.
 
-1. Geef het **adres voorvoegsel**op in de CIDR-notatie (Classless Inter-Domain route ring) waarnaar u verkeer wilt door sturen. Het voor voegsel kan niet worden gedupliceerd in meer dan één route in de route tabel, maar het voor voegsel kan zich in een ander voor voegsel bevindt. Als u bijvoorbeeld *10.0.0.0/16* als voor voegsel in één route hebt gedefinieerd, kunt u nog steeds een andere route definiëren met het adres voorvoegsel *10.0.0.0/22* . Azure selecteert een route voor verkeer op basis van het voor voegsel van de voor voegsels. Zie [hoe Azure een route selecteert](virtual-networks-udr-overview.md#how-azure-selects-a-route)voor meer informatie.
+1. Geef het **adres voorvoegsel** op in de CIDR-notatie (Classless Inter-Domain route ring) waarnaar u verkeer wilt door sturen. Het voor voegsel kan niet worden gedupliceerd in meer dan één route in de route tabel, maar het voor voegsel kan zich in een ander voor voegsel bevindt. Als u bijvoorbeeld *10.0.0.0/16* als voor voegsel in één route hebt gedefinieerd, kunt u nog steeds een andere route definiëren met het adres voorvoegsel *10.0.0.0/22* . Azure selecteert een route voor verkeer op basis van het voor voegsel van de voor voegsels. Zie [hoe Azure een route selecteert](virtual-networks-udr-overview.md#how-azure-selects-a-route)voor meer informatie.
 
 1. Kies een **type van de volgende hop**. Zie [virtueel netwerk verkeer routeren](virtual-networks-udr-overview.md)voor meer informatie over de volgende typen hops.
 
@@ -268,7 +268,7 @@ Een route tabel bevat nul of meer routes. Zie [virtueel netwerk verkeer routeren
 
 1. Kies de route die u wilt verwijderen.
 
-1. Selecteer **verwijderen**en selecteer vervolgens **Ja** in het bevestigings venster.
+1. Selecteer **verwijderen** en selecteer vervolgens **Ja** in het bevestigings venster.
 
 ### <a name="delete-a-route---commands"></a>Een route-opdrachten verwijderen
 
@@ -333,7 +333,7 @@ Na een korte wacht tijd geeft Azure u het type van de volgende hop en de ID van 
 
 Om taken uit te voeren op route tabellen en routes, moet uw account worden toegewezen aan de [rol netwerk bijdrager](../role-based-access-control/built-in-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-contributor) of aan een [aangepaste rol](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json) waaraan de juiste acties in de volgende tabel worden toegewezen:
 
-| Bewerking                                                          |   Name                                                  |
+| Actie                                                          |   Naam                                                  |
 |--------------------------------------------------------------   |   -------------------------------------------           |
 | Micro soft. Network/routeTables/lezen                              |   Een route tabel lezen                                    |
 | Micro soft. Network/routeTables/schrijven                             |   Een route tabel maken of bijwerken                        |
@@ -348,4 +348,4 @@ Om taken uit te voeren op route tabellen en routes, moet uw account worden toege
 ## <a name="next-steps"></a>Volgende stappen
 
 - Een route tabel maken met behulp van [Power shell](powershell-samples.md) of [Azure cli](cli-samples.md) -voorbeeld scripts of Azure [Resource Manager-sjablonen](template-samples.md)
-- [Azure Policy definities](policy-samples.md) voor virtuele netwerken maken en toewijzen
+- [Azure Policy definities](./policy-reference.md) voor virtuele netwerken maken en toewijzen

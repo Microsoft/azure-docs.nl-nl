@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: jsimmons
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: deb1f74902fe28d53a5180e4f341547f339a83ac
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: d0a082149d85736000b5bb6a91e2fc7132205a88
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741981"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220283"
 ---
 # <a name="plan-and-deploy-on-premises-azure-active-directory-password-protection"></a>On-premises Azure Active Directory wachtwoord beveiliging plannen en implementeren
 
@@ -99,7 +99,7 @@ De volgende kern vereisten zijn van toepassing:
 
 De volgende vereisten zijn van toepassing op de Azure AD-agent voor wachtwoord beveiliging:
 
-* Op alle computers waarop de Azure AD-agent software voor wachtwoord beveiliging wordt geïnstalleerd, moet Windows Server 2012 of hoger worden uitgevoerd.
+* Op alle computers waarop de Azure AD-agent software voor wachtwoord beveiliging wordt geïnstalleerd, moet Windows Server 2012 of hoger worden uitgevoerd, met inbegrip van Windows Server Core-edities.
     * Het Active Directory domein of forest hoeft niet te zijn op het Windows Server 2012-domein functionaliteits niveau (DFL) of forestfunctionaliteitsniveau (FFL). Zoals vermeld in [ontwerp principes](concept-password-ban-bad-on-premises.md#design-principles), is er geen mini maal DFL of FFL vereist voor het uitvoeren van de DC-agent of proxy software.
 * Op alle computers waarop de Azure AD-agent voor wachtwoord beveiliging wordt uitgevoerd, moet .NET 4,5 zijn geïnstalleerd.
 * Een Active Directory domein waarop de Azure AD-service voor wachtwoord beveiliging van de domein controller wordt uitgevoerd, moet Distributed File System replicatie (DFSR) voor SYSVOL-replicatie gebruiken.
@@ -116,7 +116,7 @@ De volgende vereisten zijn van toepassing op de Azure AD-agent voor wachtwoord b
 
 De volgende vereisten zijn van toepassing op de Azure AD-proxy service voor wachtwoord beveiliging:
 
-* Alle computers waarop de Azure AD-proxy service voor wachtwoord beveiliging wordt geïnstalleerd, moeten Windows Server 2012 R2 of hoger uitvoeren.
+* Op alle computers waarop de Azure AD-service voor wachtwoord beveiliging wordt geïnstalleerd, moet Windows Server 2012 R2 of hoger worden uitgevoerd, met inbegrip van Windows Server Core-edities.
 
     > [!NOTE]
     > De implementatie van de Azure AD-service voor wachtwoord beveiliging is een verplichte vereiste voor het implementeren van Azure AD-wachtwoord beveiliging, zelfs als de domein controller mogelijk uitgaande directe Internet connectiviteit heeft.

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/28/2020
 ms.author: allensu
-ms.openlocfilehash: 62c1b323899f03a043904f4b10d5fe3bb551e0f4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d4ef8e6207d53a192b19f8343a60093e82368fa6
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91441768"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223377"
 ---
 # <a name="designing-virtual-networks-with-nat-gateway-resources"></a>Virtuele netwerken ontwerpen met NAT-gatewayresources
 
@@ -60,7 +60,7 @@ In het volgende diagram ziet u de beschrijfbare verwijzingen tussen de verschill
 
 NAT wordt aanbevolen voor de meeste workloads, tenzij u een specifieke afhankelijkheid hebt op [uitgaande connectiviteit van Load Balancer op basis van pools](../load-balancer/load-balancer-outbound-connections.md).  
 
-U kunt migreren vanaf scenario's met loads balancers van het type Standard, waaronder [uitgaande regels](../load-balancer/load-balancer-outbound-rules-overview.md), naar de NAT-gateway. Als u wilt migreren, verplaatst u de openbare IP en de resources voor het openbare IP-voorvoegsel van load balancer-frontends naar de NAT-gateway. Nieuwe IP-adressen voor NAT-gateway zijn niet vereist. Standaardresources voor het openbare IP-adres en resources voor het openbare IP-voorvoegsel kunnen opnieuw worden gebruikt zolang het totaal niet groter is dan zestien IP-adressen. Plan voor migratie met service-onderbreking tijdens de overgang in uw achterhoofd.  U kunt de onderbreking minimaliseren door het proces te automatiseren. Test eerst de migratie in een faseringsomgeving.  Tijdens de overgang worden de inkomende stromen niet beïnvloed.
+U kunt migreren vanaf scenario's met loads balancers van het type Standard, waaronder [uitgaande regels](../load-balancer/load-balancer-outbound-connections.md#outboundrules), naar de NAT-gateway. Als u wilt migreren, verplaatst u de openbare IP en de resources voor het openbare IP-voorvoegsel van load balancer-frontends naar de NAT-gateway. Nieuwe IP-adressen voor NAT-gateway zijn niet vereist. Standaardresources voor het openbare IP-adres en resources voor het openbare IP-voorvoegsel kunnen opnieuw worden gebruikt zolang het totaal niet groter is dan zestien IP-adressen. Plan voor migratie met service-onderbreking tijdens de overgang in uw achterhoofd.  U kunt de onderbreking minimaliseren door het proces te automatiseren. Test eerst de migratie in een faseringsomgeving.  Tijdens de overgang worden de inkomende stromen niet beïnvloed.
 
 
 Het volgende voorbeeld is een fragment uit een Azure Resource Manager-sjabloon.  Met deze sjabloon worden verschillende resources geïmplementeerd, waaronder een NAT-gateway.  In dit voorbeeld bevat de sjabloon de volgende parameters:
@@ -230,7 +230,7 @@ Hoewel het scenario lijkt te werken, zijn het statusmodel en de foutmodus niet g
 
 Elke NAT-gatewayresource kan tot 50 Gbps aan doorvoer bieden. U kunt uw implementaties splitsen in meerdere subnetten en een NAT-gateway toewijzen aan elk subnet of groepen subnetten om uit te schalen.
 
-Elke NAT-gateway kan 64.000 stromen voor TCP en UDP respectievelijk ondersteunen per toegewezen uitgaand IP-adres.  Raadpleeg de volgende sectie over SNAT (Source Network Address Translation) en het [artikel over problemen oplossen](https://docs.microsoft.com/azure/virtual-network/troubleshoot-nat) voor specifieke richtlijnen voor probleemoplossing.
+Elke NAT-gateway kan 64.000 stromen voor TCP en UDP respectievelijk ondersteunen per toegewezen uitgaand IP-adres.  Raadpleeg de volgende sectie over SNAT (Source Network Address Translation) en het [artikel over problemen oplossen](./troubleshoot-nat.md) voor specifieke richtlijnen voor probleemoplossing.
 
 ## <a name="source-network-address-translation"></a>Source Network Address Translation
 
@@ -264,7 +264,7 @@ NAT-gateways gebruiken de bron (SNAT) poorten voor het gebruik van opportunistis
 |:---:|:---:|:---:|
 | 4 | 192.168.0.16:4285 | 65.52.0.2:80 |
 
-Een NAT-gateway zal stroom 4 waarschijnlijk omzetten naar een poort die ook voor andere bestemmingen kan worden gebruikt.  Zie [schalen](https://docs.microsoft.com/azure/virtual-network/nat-gateway-resource#scaling) voor aanvullende discussies over het correct aanpassen van de grootte van uw IP-adres.
+Een NAT-gateway zal stroom 4 waarschijnlijk omzetten naar een poort die ook voor andere bestemmingen kan worden gebruikt.  Zie [schalen](#scaling) voor aanvullende discussies over het correct aanpassen van de grootte van uw IP-adres.
 
 | Stroom | Bron-tuple | Bron-tuple met SNAT | Doel-tuple | 
 |:---:|:---:|:---:|:---:|
@@ -307,7 +307,7 @@ NAT-gateway bronnen gebruiken de bron (SNAT)-poorten voor een opportunistisch ge
 
 De SNAT-poorten naar verschillende bestemmingen worden waarschijnlijk als mogelijk opnieuw gebruikt. En als de methoden voor het afzuigen van de SNAT-poort, kunnen stromen mislukken.  
 
-Zie de [basis principes van SNAT](https://docs.microsoft.com/azure/virtual-network/nat-gateway-resource#source-network-address-translation) voor beeld.
+Zie de [basis principes van SNAT](#source-network-address-translation) voor beeld.
 
 
 ### <a name="protocols"></a>Protocollen
@@ -359,10 +359,10 @@ We willen graag weten hoe we de service kunnen verbeteren. Mist u een mogelijkhe
   - [Portal](./quickstart-create-nat-gateway-portal.md)
   - [Sjabloon](./quickstart-create-nat-gateway-template.md)
 * Meer informatie over de NAT-gatewayresource-API
-  - [REST API](https://docs.microsoft.com/rest/api/virtualnetwork/natgateways)
-  - [Azure-CLI](https://docs.microsoft.com/cli/azure/network/nat/gateway)
-  - [PowerShell](https://docs.microsoft.com/powershell/module/az.network/new-aznatgateway)
+  - [REST API](/rest/api/virtualnetwork/natgateways)
+  - [Azure-CLI](/cli/azure/network/nat/gateway)
+  - [PowerShell](/powershell/module/az.network/new-aznatgateway)
 * Meer informatie over [beschikbaarheidszones](../availability-zones/az-overview.md).
-* Meer informatie over [load balancer van het type Standard](../load-balancer/load-balancer-standard-overview.md).
+* Meer informatie over [load balancer van het type Standard](../load-balancer/load-balancer-overview.md).
 * Meer informatie over [beschikbaarheidszones en load balancers van het type Standard](../load-balancer/load-balancer-standard-availability-zones.md).
 * [Vertel ons in UserVoice wat we verder kunnen ontwikkelen voor Virtual Network NAT](https://aka.ms/natuservoice).

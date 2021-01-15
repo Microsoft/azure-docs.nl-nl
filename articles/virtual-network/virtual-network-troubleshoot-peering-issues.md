@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 08/28/2019
 ms.author: kaushika
-ms.openlocfilehash: 9685c1739a00788a974c200ddabb8cc975696b62
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75b62eb00b1a1a534be01f9f118b4d5066e44a37
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83587728"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222884"
 ---
 # <a name="troubleshoot-virtual-network-peering-issues"></a>Peering-problemen van virtueel netwerk oplossen
 
@@ -36,8 +36,8 @@ Bevinden de virtuele netwerken zich in hetzelfde abonnement of in verschillende 
 
 Gebruik de methoden in de volgende artikelen om de peering van het virtuele netwerk te configureren voor de virtuele netwerken die zich in hetzelfde abonnement bevinden:
 
-* Zie [een peering maken](https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering#create-a-peering)als de virtuele netwerken zich in *dezelfde regio*bevinden.
-* Zie [virtuele netwerk peering](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview)als de virtuele netwerken zich in de *verschillende regio's*bevinden. 
+* Zie [een peering maken](./virtual-network-manage-peering.md#create-a-peering)als de virtuele netwerken zich in *dezelfde regio* bevinden.
+* Zie [virtuele netwerk peering](./virtual-network-peering-overview.md)als de virtuele netwerken zich in de *verschillende regio's* bevinden. 
 
 > [!Note]
 > De connectiviteit werkt niet via globale peering van het virtuele netwerk voor de volgende resources: 
@@ -52,11 +52,11 @@ Gebruik de methoden in de volgende artikelen om de peering van het virtuele netw
 > * Azure API Management (maakt gebruik van Basic ILB SKU)
 > * Azure Active Directory Domain Services (Azure AD DS) (maakt gebruik van Basic ILB SKU)
 
-Zie de [vereisten en beperkingen](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints) van wereld wijde peering voor meer informatie.
+Zie de [vereisten en beperkingen](./virtual-network-peering-overview.md#requirements-and-constraints) van wereld wijde peering voor meer informatie.
 
 ### <a name="the-virtual-networks-are-in-different-subscriptions-or-active-directory-tenants"></a>De virtuele netwerken bevinden zich in verschillende abonnementen of Active Directory tenants
 
-Zie [peering maken in verschillende abonnementen voor Azure cli](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli)voor het configureren van peering voor virtuele netwerken in verschillende abonnementen of Active Directory tenants.
+Zie [peering maken in verschillende abonnementen voor Azure cli](./create-peering-different-subscriptions.md#cli)voor het configureren van peering voor virtuele netwerken in verschillende abonnementen of Active Directory tenants.
 
 > [!Note]
 > Als u Network-peering wilt configureren, moet u in beide abonnementen over de machtiging **netwerk Inzender** beschikken. Zie [machtigingen voor peering](virtual-network-manage-peering.md#permissions)voor meer informatie.
@@ -67,11 +67,11 @@ Zie [peering maken in verschillende abonnementen voor Azure cli](https://docs.mi
 
 ### <a name="for-a-site-to-site-connection-or-an-expressroute-connection"></a>Voor een site-naar-site-verbinding of een ExpressRoute-verbinding
 
-Volg de stappen in: [Configure VPN gateway Transit voor peering van virtuele netwerken](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit?toc=/azure/virtual-network/toc.json).
+Volg de stappen in: [Configure VPN gateway Transit voor peering van virtuele netwerken](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
 ### <a name="for-point-to-site-connections"></a>Voor punt-naar-site-verbindingen
 
-1. Volg de stappen in: [Configure VPN gateway Transit voor peering van virtuele netwerken](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-peering-gateway-transit?toc=/azure/virtual-network/toc.json).
+1. Volg de stappen in: [Configure VPN gateway Transit voor peering van virtuele netwerken](../vpn-gateway/vpn-gateway-peering-gateway-transit.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 2. Nadat de peering van het virtuele netwerk is vastgesteld of gewijzigd, downloadt en installeert u het punt-naar-site-pakket zodat de punt-naar-site-clients de bijgewerkte routes naar het spoke-virtuele netwerk ophalen.
 
 ## <a name="configure-virtual-network-peering-with-hub-spoke-topology-virtual-network"></a>Peering voor het virtuele netwerk configureren met het virtuele netwerk hub-spoke-topologie
@@ -84,12 +84,12 @@ Volg de stappen in: [Configure VPN gateway Transit voor peering van virtuele net
 1. Configureer een virtueel netwerk apparaat (NVA) in het virtuele netwerk van de hub.
 1. In de spoke-virtuele netwerken hebben door de gebruiker gedefinieerde routes met het volgende type hop ' netwerk virtueel apparaat ' toegepast.
 
-Zie [service Chaining](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#service-chaining)voor meer informatie.
+Zie [service Chaining](./virtual-network-peering-overview.md#service-chaining)voor meer informatie.
 
 > [!Note]
 > Als u hulp nodig hebt bij het instellen van een NVA, [neemt u contact op met de leverancier van NVA](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines).
 
-Zie [problemen met virtuele netwerk apparaten in azure](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-nva)voor hulp bij het oplossen van problemen met de installatie en route ring van het NVA-apparaat.
+Zie [problemen met virtuele netwerk apparaten in azure](./virtual-network-troubleshoot-nva.md)voor hulp bij het oplossen van problemen met de installatie en route ring van het NVA-apparaat.
 
 ### <a name="the-virtual-networks-are-in-different-regions"></a>De virtuele netwerken bevinden zich in verschillende regio's
 
@@ -105,11 +105,11 @@ Transit via globale Virtual Network-peering wordt nu ondersteund. De connectivit
 * API Management (maakt gebruik van Basic ILB SKU)
 * Azure AD DS (maakt gebruik van Basic ILB SKU)
 
-Zie [Virtual Network-peering](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints)voor meer informatie over algemene vereisten en beperkingen voor peering.
+Zie [Virtual Network-peering](./virtual-network-peering-overview.md#requirements-and-constraints)voor meer informatie over algemene vereisten en beperkingen voor peering.
 
 ## <a name="troubleshoot-a-connectivity-issue-between-two-peered-virtual-networks"></a>Problemen met een connectiviteits probleem tussen twee gekoppelde virtuele netwerken oplossen
 
-Meld u aan bij de [Azure Portal](https://portal.azure.com/) met een account met de benodigde [rollen en machtigingen](virtual-network-manage-peering.md#permissions). Selecteer het virtuele netwerk, selecteer **peering**en controleer vervolgens het veld **status** . Wat is de status?
+Meld u aan bij de [Azure Portal](https://portal.azure.com/) met een account met de benodigde [rollen en machtigingen](virtual-network-manage-peering.md#permissions). Selecteer het virtuele netwerk, selecteer **peering** en controleer vervolgens het veld **status** . Wat is de status?
 
 ### <a name="the-peering-status-is-connected"></a>De peering-status is verbonden
 
@@ -117,14 +117,14 @@ U kunt dit probleem als volgt oplossen:
 
 1. Controleer het netwerk verkeer:
 
-   Gebruik [verbindings problemen oplossen](https://docs.microsoft.com/azure/network-watcher/network-watcher-connectivity-overview) en [IP-stroom controleren](https://docs.microsoft.com/azure/network-watcher/network-watcher-ip-flow-verify-overview) van de bron-VM naar de doel-VM om te bepalen of er sprake is van een NSG of UDR dat storingen veroorzaakt in verkeers stromen.
+   Gebruik [verbindings problemen oplossen](../network-watcher/network-watcher-connectivity-overview.md) en [IP-stroom controleren](../network-watcher/network-watcher-ip-flow-verify-overview.md) van de bron-VM naar de doel-VM om te bepalen of er sprake is van een NSG of UDR dat storingen veroorzaakt in verkeers stromen.
 
    Als u een firewall of NVA gebruikt: 
    1. Documenteer de UDR-para meters, zodat u ze kunt herstellen nadat deze stap is voltooid.
-   2. Verwijder de UDR uit het subnet van de bron-VM of de NIC die verwijst naar de NVA als de volgende hop. Controleer de connectiviteit van de bron-VM rechtstreeks naar de bestemming die de NVA omzeilt. Als deze stap niet werkt, raadpleegt u de [probleem oplosser voor NVA](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-nva).
+   2. Verwijder de UDR uit het subnet van de bron-VM of de NIC die verwijst naar de NVA als de volgende hop. Controleer de connectiviteit van de bron-VM rechtstreeks naar de bestemming die de NVA omzeilt. Als deze stap niet werkt, raadpleegt u de [probleem oplosser voor NVA](./virtual-network-troubleshoot-nva.md).
 
 2. Een netwerk tracering uitvoeren: 
-   1. Start een netwerk tracering op de doel-VM. Voor Windows kunt u **netsh**gebruiken. Gebruik **TCPDump**voor Linux.
+   1. Start een netwerk tracering op de doel-VM. Voor Windows kunt u **netsh** gebruiken. Gebruik **TCPDump** voor Linux.
    2. Voer **TcpPing** of **PsPing** uit van de bron naar het doel-IP.
 
       Dit is een voor beeld van een **TcpPing** -opdracht: `tcping64.exe -t <destination VM address> 3389`
@@ -145,7 +145,7 @@ U kunt dit probleem als volgt oplossen:
    > * API Management (maakt gebruik van Basic ILB SKU)
    > * Azure AD DS (maakt gebruik van Basic ILB SKU)
 
-Zie de [vereisten en beperkingen](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints) van wereld wijde peering voor meer informatie.
+Zie de [vereisten en beperkingen](./virtual-network-peering-overview.md#requirements-and-constraints) van wereld wijde peering voor meer informatie.
 
 ### <a name="the-peering-status-is-disconnected"></a>De peering-status is niet verbonden
 
@@ -159,8 +159,8 @@ Maakt uw netwerk gebruik van een NVA of VPN-gateway van derden?
 
 Raadpleeg de volgende artikelen om verbindings problemen op te lossen die van invloed zijn op een NVA of VPN-gateway van derden:
 
-* [NVA-probleem Oplosser](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-nva)
-* [Servicechaining](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#service-chaining)
+* [NVA-probleem Oplosser](./virtual-network-troubleshoot-nva.md)
+* [Servicechaining](./virtual-network-peering-overview.md#service-chaining)
 
 ### <a name="my-network-does-not-use-a-third-party-nva-or-vpn-gateway"></a>Mijn netwerk maakt geen gebruik van een NVA-of VPN-gateway van derden
 
@@ -190,7 +190,7 @@ Voor punt-naar-site-verbindingen:
 
 Een hub-netwerk moet een NVA bevatten. Configureer Udr's in spokes die een NVA hebben ingesteld als de volgende hop en Schakel **doorgestuurd verkeer toestaan** in het virtuele hub-netwerk in.
 
-Zie [service Chaining](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#service-chaining)voor meer informatie en bespreek deze vereisten met de [NVA leverancier](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines) van uw keuze.
+Zie [service Chaining](./virtual-network-peering-overview.md#service-chaining)voor meer informatie en bespreek deze vereisten met de [NVA leverancier](https://support.microsoft.com/help/2984655/support-for-azure-market-place-for-virtual-machines) van uw keuze.
 
 ## <a name="troubleshoot-a-hub-spoke-network-connectivity-issue-between-spoke-virtual-networks-in-different-regions"></a>Problemen met een hub-spoke-netwerk verbinding tussen spoke-virtuele netwerken in verschillende regio's oplossen
 
@@ -206,26 +206,26 @@ Transit via globale Virtual Network-peering wordt nu ondersteund. De connectivit
 * API Management (maakt gebruik van Basic ILB SKU)
 * Azure AD DS (maakt gebruik van Basic ILB SKU)
 
-Zie voor meer informatie de [vereisten en beperkingen](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview#requirements-and-constraints) van globale peering en [verschillende VPN-topologieën](https://blogs.msdn.microsoft.com/igorpag/2016/02/11/hubspoke-daisy-chain-and-full-mesh-vnet-topologies-in-azure-arm-v2/).
+Zie voor meer informatie de [vereisten en beperkingen](./virtual-network-peering-overview.md#requirements-and-constraints) van globale peering en [verschillende VPN-topologieën](/archive/blogs/igorpag/hubspoke-daisy-chain-and-full-mesh-vnet-topologies-in-azure-arm-v2).
 
 ## <a name="troubleshoot-a-hub-spoke-network-connectivity-issue-between-a-web-app-and-the-spoke-virtual-network"></a>Problemen met een hub-spoke-netwerk verbinding tussen een web-app en het virtuele spoke-netwerk oplossen
 
 U kunt dit probleem als volgt oplossen:
 
 1. Meld u aan bij Azure Portal. 
-1. Selecteer in de web-app **netwerken**en selecteer vervolgens **VNet-integratie**.
+1. Selecteer in de web-app **netwerken** en selecteer vervolgens **VNet-integratie**.
 1. Controleer of u het externe virtuele netwerk kunt zien. Voer hand matig de adres ruimte van het externe virtuele netwerk in (**synchronisatie netwerk** en **Voeg routes toe**).
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-* [Een app integreren met een virtueel Azure-netwerk](https://docs.microsoft.com/azure/app-service/web-sites-integrate-with-vnet)
-* [Over point-to-site-VPN-routering](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-point-to-site-routing)
+* [Een app integreren met een virtueel Azure-netwerk](../app-service/web-sites-integrate-with-vnet.md)
+* [Over point-to-site-VPN-routering](../vpn-gateway/vpn-gateway-about-point-to-site-routing.md)
 
 ## <a name="troubleshoot-a-virtual-network-peering-configuration-error-message"></a>Problemen met een configuratie fout bericht voor peering in virtuele netwerken oplossen 
 
 ### <a name="current-tenant-tenant-id-isnt-authorized-to-access-linked-subscription"></a>De huidige Tenant `<TENANT ID>` is niet gemachtigd om toegang te krijgen tot het gekoppelde abonnement
 
-Zie [peering maken-Azure cli](https://docs.microsoft.com/azure/virtual-network/create-peering-different-subscriptions#cli)om dit probleem op te lossen.
+Zie [peering maken-Azure cli](./create-peering-different-subscriptions.md#cli)om dit probleem op te lossen.
 
 ### <a name="not-connected"></a>Niet verbonden
 
@@ -233,7 +233,7 @@ U kunt dit probleem oplossen door de peering uit beide virtuele netwerken te ver
 
 ### <a name="failed-to-peer-a-databricks-virtual-network"></a>Kan geen peer van een virtueel Databricks-netwerk uitvoeren
 
-U kunt dit probleem oplossen door de peering van het virtuele netwerk te configureren onder **Azure Databricks**en vervolgens het virtuele doel netwerk op te geven met behulp van de **resource-id**. Zie [een virtueel Databricks-netwerk koppelen aan een extern virtueel netwerk](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-peering.html#id2)voor meer informatie.
+U kunt dit probleem oplossen door de peering van het virtuele netwerk te configureren onder **Azure Databricks** en vervolgens het virtuele doel netwerk op te geven met behulp van de **resource-id**. Zie [een virtueel Databricks-netwerk koppelen aan een extern virtueel netwerk](https://docs.azuredatabricks.net/administration-guide/cloud-configurations/azure/vnet-peering.html#id2)voor meer informatie.
 
 ### <a name="the-remote-virtual-network-lacks-a-gateway"></a>Het externe virtuele netwerk heeft geen gateway
 
@@ -246,4 +246,4 @@ Er zijn twee manieren om het probleem op te lossen:
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Problemen met de connectiviteit tussen virtuele Azure-machines oplossen](https://docs.microsoft.com/azure/virtual-network/virtual-network-troubleshoot-connectivity-problem-between-vms)
+* [Problemen met de connectiviteit tussen virtuele Azure-machines oplossen](./virtual-network-troubleshoot-connectivity-problem-between-vms.md)

@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.author: luquinta
 author: luisquintanilla
 ms.date: 12/21/2020
-ms.openlocfilehash: 83bca8a2a81823cd0a8bda1633599292460ddd30
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.custom: responsible-ml
+ms.openlocfilehash: 7124fdd6e7d137e21234ff40426e13dc65b4f9e0
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724324"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223105"
 ---
 # <a name="what-is-responsible-machine-learning-preview"></a>Wat is er verantwoordelijk machine learning? (preview)
 
@@ -91,7 +92,7 @@ Sommige model gegevens die u mogelijk wilt documenteren als onderdeel van een ge
 
 Raadpleeg het volgende voor beeld om te leren hoe u de Azure Machine Learning SDK kunt gebruiken om [gegevens bladen voor modellen](https://github.com/microsoft/MLOps/blob/master/pytorch_with_datasheet/model_with_datasheet.ipynb)te implementeren.
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+## <a name="additional-resources"></a>Aanvullende resources
 
 - Raadpleeg voor meer informatie de [verantwoordelijke vernieuwings Toolkit](/azure/architecture/guide/responsible-innovation/) voor informatie over best practices.
 - Meer informatie over de set met richt lijnen [over milliliters](https://www.partnershiponai.org/about-ml/) voor machine learning systeem documentatie.

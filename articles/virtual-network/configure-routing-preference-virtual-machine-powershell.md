@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/01/2020
 ms.author: mnayak
-ms.openlocfilehash: 65f5b27ecc7b526c4b3e4f5ed62ac90149df1ce1
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: cdd86984e5594d330f0080ee5f4cf0e9a8374652
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96510604"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223540"
 ---
 # <a name="configure-routing-preference-for-a-vm-using-azure-powershell"></a>Routerings voorkeur configureren voor een virtuele machine met behulp van Azure PowerShell
 
@@ -62,7 +62,7 @@ Voordat u een virtuele machine implementeert, moet u ondersteunende netwerk bron
 
 ### <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
-Maak een netwerk beveiligings groep met [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup). In het volgende voor beeld wordt een NSG met de naam *mijnnbg* gemaakt
+Maak een netwerkbeveiligingsgroep met [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup). In het volgende voor beeld wordt een NSG met de naam *mijnnbg* gemaakt
 
 ```azurepowershell
 $nsg = New-AzNetworkSecurityGroup `
@@ -150,5 +150,5 @@ U kunt de opdracht [Remove-AzResourceGroup](/powershell/module/az.resources/remo
 ## <a name="next-steps"></a>Volgende stappen
 
 * Meer informatie over [routerings voorkeur in open bare IP-adressen](routing-preference-overview.md).
-* Meer informatie over [open bare IP-adressen](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) in Azure.
+* Meer informatie over [open bare IP-adressen](./public-ip-addresses.md#public-ip-addresses) in Azure.
 * Meer informatie over [instellingen voor open bare IP-adressen](virtual-network-public-ip-address.md#create-a-public-ip-address).

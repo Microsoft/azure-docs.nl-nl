@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 52d6bc97245423a4add392ab05634d21bcf83a0d
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 1b8d88167dac6b2d0b1ba2afc90c443fd80b9e46
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358007"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223156"
 ---
 # <a name="prepare-virtual-machines-for-an-fci-sql-server-on-azure-vms"></a>Virtuele machines voorbereiden voor een FCI (SQL Server op Azure-Vm's)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -68,7 +68,7 @@ Voor een Azure VM-gast-failovercluster wordt een enkele NIC per server (cluster 
 Plaats beide virtuele machines:
 
 - Als u in dezelfde Azure-resource groep als uw beschikbaarheidsset gebruikmaakt van beschikbaarheids sets.
-- Op hetzelfde virtuele netwerk als uw domein controller.
+- Op hetzelfde virtuele netwerk als uw domein controller of op een virtueel netwerk dat een geschikte verbinding met uw domein controller heeft.
 - Op een subnet met voldoende IP-adres ruimte voor zowel virtuele machines als alle Failoverclusterinstanties die u uiteindelijk kunt gebruiken op het cluster.
 - In de Azure Availability set of beschikbaarheids zone.
 

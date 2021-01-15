@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/31/2020
 ms.author: kumud
-ms.openlocfilehash: de8d63fb5181e324738e082cbb36a40ee59e36b0
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 04f50396ea9ced4b4377f264b4952efa7a75d170
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "96005245"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223496"
 ---
 # <a name="add-ipv6-to-an-ipv4-application-in-azure-virtual-network---azure-cli"></a>IPv6 toevoegen aan een IPv4-toepassing in het virtuele Azure-netwerk-Azure CLI
 
@@ -30,7 +30,7 @@ Dit artikel laat u zien hoe u IPv6-adressen kunt toevoegen aan een toepassing di
 
 [!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
-- Voor dit artikel is versie 2.0.28 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-ipv6-addresses"></a>IPv6-adressen maken
 
@@ -48,7 +48,7 @@ az network public-ip create \
 
 ## <a name="configure-ipv6-load-balancer-frontend"></a>IPv6 load balancer-front-end configureren
 
-Configureer de load balancer met het nieuwe IPv6 IP-adres met [AZ Network lb frontend-IP Create](https://docs.microsoft.com/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create) als volgt:
+Configureer de load balancer met het nieuwe IPv6 IP-adres met [AZ Network lb frontend-IP Create](/cli/azure/network/lb/frontend-ip?view=azure-cli-latest#az-network-lb-frontend-ip-create) als volgt:
 
 ```azurecli-interactive
 az network lb frontend-ip create \
@@ -60,7 +60,7 @@ az network lb frontend-ip create \
 
 ## <a name="configure-ipv6-load-balancer-backend-pool"></a>IPv6-load balancer back-end-pool configureren
 
-Maak de back-end-groep voor Nic's met IPv6-adressen met behulp van [AZ Network lb address-pool Create](https://docs.microsoft.com/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create) als volgt:
+Maak de back-end-groep voor Nic's met IPv6-adressen met behulp van [AZ Network lb address-pool Create](/cli/azure/network/lb/address-pool?view=azure-cli-latest#az-network-lb-address-pool-create) als volgt:
 
 ```azurecli-interactive
 az network lb address-pool create \
@@ -71,7 +71,7 @@ az network lb address-pool create \
 
 ## <a name="configure-ipv6-load-balancer-rules"></a>IPv6-load balancer regels configureren
 
-Maak IPv6-load balancer regels met [AZ Network lb Rule Create](https://docs.microsoft.com/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create).
+Maak IPv6-load balancer regels met [AZ Network lb Rule Create](/cli/azure/network/lb/rule?view=azure-cli-latest#az-network-lb-rule-create).
 
 ```azurecli-interactive
 az network lb rule create \
@@ -104,7 +104,7 @@ az network vnet subnet update \
 
 ## <a name="add-ipv6-configuration-to-nics"></a>IPv6-configuratie toevoegen aan Nic's
 
-Configureer de VM Nic's met een IPv6-adres met [AZ Network NIC IP-config Create](https://docs.microsoft.com/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create) als volgt:
+Configureer de VM Nic's met een IPv6-adres met [AZ Network NIC IP-config Create](/cli/azure/network/nic/ip-config?view=azure-cli-latest#az-network-nic-ip-config-create) als volgt:
 
 ```azurecli-interactive
 az network nic ip-config create \

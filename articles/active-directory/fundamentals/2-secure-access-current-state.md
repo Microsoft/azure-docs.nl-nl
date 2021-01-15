@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ff656887081681a804285e9a96352feef15fc675
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 7557985b23991f1a53d45f6f2d2283500c0d73f3
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97744037"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222408"
 ---
 # <a name="discover-the-current-state-of-external-collaboration-in-your-organization"></a>De huidige status van externe samen werking in uw organisatie detecteren 
 
@@ -46,9 +46,9 @@ Externe organisaties kunnen worden bepaald door de domein namen van e-mail adres
 
 ### <a name="use-allow-or-deny-lists"></a>Lijsten voor toestaan of weigeren gebruiken
 
-Een andere manier om te ontdekken met wie u momenteel samenwerkt of met wie u de samen werking hebt geblokkeerd, is om te zien of u organisaties hebt toegevoegd aan uw [lijst met toegestane of geweigerde](../external-identities/allow-deny-list.md)personen.
+Bekijk of uw organisatie alleen samen werking met specifieke organisaties wil toestaan. U kunt ook overwegen of uw organisatie de samen werking met specifieke organisaties wil blok keren.  Op Tenant niveau is er sprake van een [lijst voor toestaan of weigeren](../external-identities/allow-deny-list.md)die kan worden gebruikt voor het beheren van algemene B2B-uitnodigingen en-inzendingen, ongeacht de bron (bijvoorbeeld teams, share point en Azure Portal).
+Als u gebruikmaakt van rechten beheer, kunt u ook toegangs pakketten bereiken met een subset van uw partners met behulp van de specifieke instellingen voor verbonden organisaties, zoals hieronder wordt weer gegeven.
 
-Bedenk of uw organisatie samen werking met alleen bepaalde organisaties wil toestaan. Bedenk ook of uw organisatie de samen werking met specifieke organisaties wil blok keren. Deze instellingen kunnen van toepassing zijn voor de gehele B2B-aflossing of alleen voor een specifiek toegangs pakket.
 
 ![Scherm opname van de lijst Deny toestaan in het maken van een nieuw toegangs pakket.](media/secure-external-access/2-new-access-package.png)
 

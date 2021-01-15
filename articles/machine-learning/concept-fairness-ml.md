@@ -9,12 +9,13 @@ ms.topic: conceptual
 ms.author: luquinta
 author: luisquintanilla
 ms.date: 08/05/2020
-ms.openlocfilehash: 459cb1f7ea6c756b8cf6eba70af5ebabe76cc8b0
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.custom: responsible-ml
+ms.openlocfilehash: 29e29e73aa1094a2941592655af78a24d95c53b5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335755"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223088"
 ---
 # <a name="mitigate-fairness-in-machine-learning-models-preview"></a>Verdeling in machine learning modellen beperken (preview-versie)
 
@@ -51,7 +52,7 @@ Met deze onderdelen kunnen gegevens wetenschappers en bedrijfs leiders alle tran
 
 ## <a name="assess-fairness-in-machine-learning-models"></a>Verdeling evalueren in machine learning modellen
 
-In het open-source pakket Fairlearn wordt verdeling geconceptueeleerd, maar ook wel **groeps verdeling** , waarin wordt gevraagd: welke groepen personen risico lopen voor het optreden van het probleem? De relevante groepen, ook wel subpopulaties genoemd, worden gedefinieerd door middel van **gevoelige functies** of gevoelige kenmerken. Gevoelige functies worden door gegeven aan een estimator in het open-source pakket Fairlearn als een vector of matrix met de naam  `sensitive_features` . De term impliceert dat de systeem ontwerper gevoelig moet zijn voor deze functies bij het bepalen van de groeps verdeling. 
+In het open-source pakket Fairlearn wordt verdeling geconceptueeleerd, maar ook wel **groeps verdeling**, waarin wordt gevraagd: welke groepen personen risico lopen voor het optreden van het probleem? De relevante groepen, ook wel subpopulaties genoemd, worden gedefinieerd door middel van **gevoelige functies** of gevoelige kenmerken. Gevoelige functies worden door gegeven aan een estimator in het open-source pakket Fairlearn als een vector of matrix met de naam  `sensitive_features` . De term impliceert dat de systeem ontwerper gevoelig moet zijn voor deze functies bij het bepalen van de groeps verdeling. 
 
 Als mindful is, is het van belang of deze functies privacy-implicaties hebben vanwege persoonlijke gegevens. Maar het woord ' gevoelig ' impliceert niet dat deze functies mogen worden gebruikt voor het maken van voor spellingen.
 

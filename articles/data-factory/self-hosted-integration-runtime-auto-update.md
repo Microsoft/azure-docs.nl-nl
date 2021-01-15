@@ -1,8 +1,6 @@
 ---
-title: Automatisch bijwerken van de zelf-hostende Integration runtime-melding en verloop tijd
+title: Melding voor automatisch bijwerken en verlopen van zelf-hostende IR
 description: Meer informatie over de zelf-hostende functie voor automatisch bijwerken en verlopen van Integration runtime
-services: data-factory
-documentationcenter: ''
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
@@ -11,14 +9,14 @@ ms.author: lle
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 12/25/2020
-ms.openlocfilehash: 6a6c897d92d469fd6247dd51f2bacb91032ac123
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 8c51839e760dcca32bfc0d150c5e4d10767d95a4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98122433"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222680"
 ---
-# <a name="self-hosted-integration-runtime-auto-update-and-expire-notification"></a>Automatisch bijwerken van de zelf-hostende Integration runtime-melding en verloop tijd
+# <a name="self-hosted-integration-runtime-auto-update-and-expire-notification"></a>Melding voor automatisch bijwerken en verlopen van zelf-hostende IR
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
@@ -33,7 +31,7 @@ De meest geschikte manier is om automatisch bijwerken in te scha kelen wanneer u
 
 U kunt de datum/tijd van de laatste update controleren in uw zelf-hostende Integration runtime-client.
 
-![Automatisch bijwerken inschakelen](media/create-self-hosted-integration-runtime/shir-auto-update-2.png)
+![Scherm afbeelding van het controleren van de tijd van de update](media/create-self-hosted-integration-runtime/shir-auto-update-2.png)
 
 > [!NOTE]
 > Om de stabiliteit van zelf-hostende Integration runtime te garanderen, hoewel we twee versies hebben uitgebracht, worden deze alleen elke maand automatisch bijgewerkt. Soms zult u merken dat de automatisch bijgewerkte versie de vorige versie van de meest recente versie is. Als u de meest recente versie wilt downloaden, gaat u naar het [Download centrum](https://www.microsoft.com/download/details.aspx?id=39717).

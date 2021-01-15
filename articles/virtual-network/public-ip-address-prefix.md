@@ -15,18 +15,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 07/29/2020
 ms.author: allensu
-ms.openlocfilehash: 53dd6d2dda762b3cbf53f4aaec6cd3692a9656e9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3d98107075c215c0a00bc2035325a6ad8bf5bfc5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87432583"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222425"
 ---
 # <a name="public-ip-address-prefix"></a>Voorvoegsel van openbaar IP-adres
 
 Een voor voegsel van een openbaar IP-adres is een gereserveerd bereik van IP-adressen in Azure. Azure biedt een aaneengesloten reeks adressen voor uw abonnement op basis van het aantal dat u opgeeft. 
 
-Zie [open bare IP-adressen](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) als u niet bekend bent met open bare adressen.
+Zie [open bare IP-adressen](./public-ip-addresses.md#public-ip-addresses) als u niet bekend bent met open bare adressen.
 
 Open bare IP-adressen worden toegewezen uit een groep adressen in elke Azure-regio. U kunt de lijst met bereiken [downloaden](https://www.microsoft.com/download/details.aspx?id=56519) die Azure gebruikt voor elke regio. 40.121.0.0/16 is bijvoorbeeld een van meer dan 100 bereiken die Azure gebruikt in de regio VS-Oost. Het bereik bevat de bruikbare adressen van 40.121.0.1-40.121.255.254.
 
@@ -68,9 +68,9 @@ U kunt de volgende resources koppelen aan een statisch openbaar IP-adres van een
 ## <a name="constraints"></a>Beperkingen
 
 - U kunt de IP-adressen voor het voor voegsel niet opgeven. Azure geeft de IP-adressen voor het voor voegsel, op basis van de grootte die u opgeeft.
-- U kunt standaard een voor voegsel van Maxi maal 16 IP-adressen of een/28 maken. Bekijk de [netwerk limieten verhogen aanvragen](https://docs.microsoft.com/azure/azure-portal/supportability/networking-quota-requests) en [Azure-limieten](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) voor meer informatie.
+- U kunt standaard een voor voegsel van Maxi maal 16 IP-adressen of een/28 maken. Bekijk de [netwerk limieten verhogen aanvragen](../azure-portal/supportability/networking-quota-requests.md) en [Azure-limieten](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fvirtual-network%2ftoc.json#azure-resource-manager-virtual-networking-limits) voor meer informatie.
 - U kunt het bereik niet meer wijzigen als u het voor voegsel hebt gemaakt.
-- Alleen statische open bare IP-adressen die zijn gemaakt met de standaard-SKU kunnen worden toegewezen vanuit het bereik van het voor voegsel. Zie [openbaar IP-adres](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses)voor meer informatie over open bare IP-adres-sku's.
+- Alleen statische open bare IP-adressen die zijn gemaakt met de standaard-SKU kunnen worden toegewezen vanuit het bereik van het voor voegsel. Zie [openbaar IP-adres](./public-ip-addresses.md#public-ip-addresses)voor meer informatie over open bare IP-adres-sku's.
 - Adressen van het bereik kunnen alleen worden toegewezen aan Azure Resource Manager resources. Adressen kunnen niet worden toegewezen aan resources in het klassieke implementatie model.
 - Alle open bare IP-adressen die zijn gemaakt op basis van het voor voegsel, moeten zich in dezelfde Azure-regio en hetzelfde abonnement bevinden als het voor voegsel. Adressen moeten worden toegewezen aan resources in dezelfde regio en hetzelfde abonnement.
 - U kunt een voor voegsel niet verwijderen als er adressen in de service zijn toegewezen aan open bare IP-adres resources die zijn gekoppeld aan een resource. Koppel alle open bare IP-adres bronnen die IP-adressen aan het voor voegsel zijn toegewezen eerst.

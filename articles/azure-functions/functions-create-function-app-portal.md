@@ -1,48 +1,81 @@
 ---
-title: Een functie-app maken vanuit Azure Portal
-description: Maak vanuit de portal een nieuwe functie-app in Azure.
+title: Uw eerste functie maken in Azure Portal
+description: Leer hoe u uw eerste serverloze Azure-functie kunt maken met behulp van Azure Portal.
 ms.topic: how-to
-ms.date: 08/29/2019
-ms.custom: mvc
-ms.openlocfilehash: 8d19a269903de309bf219c2546fa70c3abe7be10
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.date: 03/26/2020
+ms.custom: devx-track-csharp, mvc, devcenter, cc996988-fb4f-47
+ms.openlocfilehash: bebef4e8964576b968af8f8aebd06030ca0d0227
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093585"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222714"
 ---
-# <a name="create-a-function-app-from-the-azure-portal"></a>Een functie-app maken vanuit Azure Portal
+# <a name="create-your-first-function-in-the-azure-portal"></a>Uw eerste functie maken in Azure Portal
 
-In dit onderwerp wordt beschreven hoe u Azure Functions kunt gebruiken om een functie-app te maken in de Azure Portal. Een functie-app is de container die als host fungeert voor het uitvoeren van afzonderlijke functies. 
+Met Azure Functions kunt u uw code in een serverloze omgeving uitvoeren zonder dat u eerst een virtuele machine (VM) hoeft te maken of een webtoepassing moet publiceren. In dit artikel leert u hoe u Azure Functions kunt gebruiken om een ' Hallo wereld ' HTTP-trigger functie te maken in de Azure Portal.
+
+We raden u aan [uw functies lokaal te ontwikkelen](functions-develop-local.md) en te publiceren naar een functie-app in Azure.  
+Gebruik een van de volgende koppelingen om aan de slag te gaan met de gekozen lokale ontwikkel omgeving en-taal:
+
+| Visual Studio Code | Terminal/opdrachtprompt | Visual Studio |
+| --- | --- | --- |
+|  &bull;&nbsp;[Aan de slag met C #](./create-first-function-vs-code-csharp.md)<br/>&bull;&nbsp;[Aan de slag met Java](./create-first-function-vs-code-java.md)<br/>&bull;&nbsp;[Aan de slag met Java script](./create-first-function-vs-code-node.md)<br/>&bull;&nbsp;[Aan de slag met Power shell](./create-first-function-vs-code-powershell.md)<br/>&bull;&nbsp;[Aan de slag met python](./create-first-function-vs-code-python.md) |&bull;&nbsp;[Aan de slag met C #](./create-first-function-cli-csharp.md)<br/>&bull;&nbsp;[Aan de slag met Java](./create-first-function-cli-java.md)<br/>&bull;&nbsp;[Aan de slag met Java script](./create-first-function-cli-node.md)<br/>&bull;&nbsp;[Aan de slag met Power shell](./create-first-function-cli-powershell.md)<br/>&bull;&nbsp;[Aan de slag met python](./create-first-function-cli-python.md) | [Aan de slag met C #](functions-create-your-first-function-visual-studio.md) |
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
+## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
+
+Meld u met uw Azure-account aan bij [Azure Portal](https://portal.azure.com).
 
 ## <a name="create-a-function-app"></a>Een functie-app maken
 
-[!INCLUDE [functions-create-function-app-portal](../../includes/functions-create-function-app-portal.md)]
+U moet een functie-app hebben die als host fungeert voor de uitvoering van uw functies. Met een functie-app kunt u functies groeperen in een logische eenheid, zodat u resources eenvoudiger kunt beheren, implementeren, schalen en delen.
 
-Nadat de functie-app is gemaakt, kunt u afzonderlijke functies in een of meer verschillende talen maken. U kunt functies maken [met behulp van de portal](functions-create-first-azure-function.md#create-function), via [continue implementatie](functions-continuous-deployment.md) of door te [uploaden via FTP](https://github.com/projectkudu/kudu/wiki/Accessing-files-via-ftp).
+[!INCLUDE [Create function app Azure portal](../../includes/functions-create-function-app-portal.md)]
 
-## <a name="service-plans"></a>Service-abonnementen
+Maak vervolgens een functie in de nieuwe functie-app.
 
-Azure Functions heeft drie verschillende service plannen: verbruiks plan, Premium plan en toegewijd (App Service) plan. U moet uw service plan kiezen wanneer uw functie-app wordt gemaakt en deze vervolgens niet meer kan worden gewijzigd. Zie [Een Azure Functions-hostingabonnement kiezen](functions-scale.md) voor meer informatie.
+## <a name="create-an-http-trigger-function"></a><a name="create-function"></a>Een HTTP-triggerfunctie maken
 
-Als u van plan bent java script-functies uit te voeren op een speciaal (App Service)-abonnement, kiest u een abonnement met minder kernen. Zie de [JavaScript-naslaginformatie voor Functions](functions-reference-node.md#choose-single-vcpu-app-service-plans) voor meer informatie.
+1. Selecteer in het menu links van het venster **Functies** de optie **Functies** en selecteer vervolgens **Toevoegen** in het bovenste menu. 
+ 
+1. Selecteer **http-trigger** in het venster **nieuwe functie** .
 
-<a name="storage-account-requirements"></a>
+    ![HTTP-triggerfunctie kiezen](./media/functions-create-first-azure-function/function-app-select-http-trigger.png)
 
-## <a name="storage-account-requirements"></a>Vereisten voor een opslagaccount
+1. Accepteer in het venster **nieuwe functie** de standaard naam voor de **nieuwe functie** of voer een nieuwe naam in. 
 
-Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag. Intern maakt Functions gebruik van Storage voor bewerkingen zoals het beheren van triggers en het vastleggen van functie-uitvoeringen in logboeken. Sommige opslagaccounts bieden geen ondersteuning voor wachtrijen en tabellen, zoals accounts alleen voor blobs, Azure Premium Storage en opslagaccounts voor algemeen gebruik met ZRS-replicatie (zone-redundante opslag). 
+1. Kies **anoniem** in de vervolg keuzelijst **autorisatie niveau** en selecteer vervolgens **functie maken**.
 
-Accounts van een niet-ondersteund type worden uitgefilterd wanneer u een functie-app maakt in de Azure Portal. In de portal kunt u ook een bestaand opslag account gebruiken wanneer dat account zich in dezelfde regio bevindt als de functie-app die u aan het maken bent. Als u om een of andere reden de prestaties best practice van het opslag account dat door uw functie-app wordt gebruikt in dezelfde regio wilt schenden, moet u de functie-app buiten de portal maken. 
+    Azure maakt de HTTP-activerings functie. U kunt de nieuwe functie nu uitvoeren door een HTTP-aanvraag te verzenden.
 
->[!NOTE]
->Als u gebruikmaakt van het hostingabonnement Consumption worden uw functiecode en uw bindingsconfiguratiebestanden opgeslagen in het belangrijkste opslagaccount in Azure File Storage. Wanneer u het belangrijkste opslagaccount verwijdert, wordt de inhoud verwijderd en kan deze niet worden hersteld. 
+## <a name="test-the-function"></a>De functie testen
 
-Zie [Introductie van de Azure Storage-services](../storage/common/storage-introduction.md#core-storage-services) voor meer informatie over opslagaccounttypen. 
+1. Selecteer in de nieuwe functie HTTP-trigger **code + test** in het menu links en selecteer **functie-URL ophalen** in het bovenste menu.
+
+    ![Functie-URL ophalen selecteren](./media/functions-create-first-azure-function/function-app-select-get-function-url.png)
+
+1. Selecteer in het dialoog venster **functie-URL ophalen** de optie **standaard** in de vervolg keuzelijst en selecteer vervolgens het pictogram **kopiëren naar klem bord** . 
+
+    ![De functie-URL vanuit Azure Portal kopiëren](./media/functions-create-first-azure-function/function-app-develop-tab-testing.png)
+
+1. Plak de URL van de functie in de adresbalk van uw browser. Voeg de query reeks waarde `?name=<your_name>` toe aan het einde van deze URL en druk op ENTER om de aanvraag uit te voeren. 
+
+    Het volgende voorbeeld toont het antwoord in de browser:
+
+    ![Het antwoord van de functie in de browser.](./media/functions-create-first-azure-function/function-app-browser-testing.png)
+
+    Als de aanvraag-URL een [toegangs sleutel](functions-bindings-http-webhook-trigger.md#authorization-keys) ( `?code=...` ) bevat, betekent dit dat u in plaats van het **anonieme** toegangs niveau de **functie** hebt gekozen bij het maken van de functie. In dit geval moet u in plaats daarvan toevoegen `&name=<your_name>` .
+
+1. Wanneer uw functie wordt uitgevoerd, wordt traceringsinformatie naar de logboeken geschreven. Als u de uitvoer van de tracering wilt zien, gaat u terug naar de pagina **code en test** in de portal en vouwt u de pijl **Logboeken** onder aan de pagina uit.
+
+   ![De viewer voor functielogboeken in Azure Portal.](./media/functions-create-first-azure-function/function-view-logs.png)
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+[!INCLUDE [Clean-up resources](../../includes/functions-quickstart-cleanup.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 
-De Azure Portal maakt het eenvoudig om functies te maken en uit te proberen, maar we raden u aan de [lokale ontwikkeling te ontwikkelen](functions-develop-local.md). Nadat u een functie-app in de portal hebt gemaakt, moet u nog steeds een functie toevoegen. 
-
-> [!div class="nextstepaction"]
-> [Een door HTTP geactiveerde functie toevoegen](functions-create-first-azure-function.md#create-function)
+[!INCLUDE [Next steps note](../../includes/functions-quickstart-next-steps.md)]

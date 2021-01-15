@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 12/08/2020
 ms.author: blehr
 ms.custom: references_regions
-ms.openlocfilehash: 3e2905019244279129528c177a76291cb7d75e11
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: d6e8c4f4b6646254aeea12cf587f47047e661e3f
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825778"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222867"
 ---
 # <a name="upgrade-public-ip-addresses"></a>Openbaar IP-adres upgraden
 
@@ -33,15 +33,15 @@ De volgende scenario's worden in dit artikel gecontroleerd:
 
 ## <a name="upgrade-public-ip-address-from-basic-to-standard-sku"></a>Het open bare IP-adres van de Basic-naar de standaard-SKU bijwerken
 
-Als u een upgrade van een openbaar IP-adres wilt uitvoeren, moet dit niet aan een resource zijn gekoppeld (Zie [Deze pagina](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) voor meer informatie over het ontkoppelen van open bare ip's).
+Als u een upgrade van een openbaar IP-adres wilt uitvoeren, moet dit niet aan een resource zijn gekoppeld (Zie [Deze pagina](./virtual-network-public-ip-address.md#view-modify-settings-for-or-delete-a-public-ip-address) voor meer informatie over het ontkoppelen van open bare ip's).
 
 >[!IMPORTANT]
->Open bare Ip's die zijn bijgewerkt van Basic naar Standard SKU, blijven geen [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones).  Dit betekent dat ze niet kunnen worden gekoppeld aan een Azure-resource die zone-redundant is of is gekoppeld aan een vooraf opgegeven zone in regio's waar deze wordt aangeboden.
+>Open bare Ip's die zijn bijgewerkt van Basic naar Standard SKU, blijven geen [beschikbaarheids zones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones).  Dit betekent dat ze niet kunnen worden gekoppeld aan een Azure-resource die zone-redundant is of is gekoppeld aan een vooraf opgegeven zone in regio's waar deze wordt aangeboden.
 
 ---
 # <a name="basic-to-standard---powershell"></a>[**Basic naar Standard-Power shell**](#tab/option-upgrade-powershell)
 
-In het volgende voor beeld wordt ervan uitgegaan dat u een basis-SKU open bare IP-adres hebt gemaakt, met behulp van het voor beeld op [Deze pagina](https://docs.microsoft.com/azure/virtual-network/create-public-ip-powershell?tabs=option-create-public-ip-basic) met een open bare basis-IP- **myBasicPublicIP** in **myResourceGroup**.
+In het volgende voor beeld wordt ervan uitgegaan dat u een basis-SKU open bare IP-adres hebt gemaakt, met behulp van het voor beeld op [Deze pagina](./create-public-ip-powershell.md?tabs=option-create-public-ip-basic) met een open bare basis-IP- **myBasicPublicIP** in **myResourceGroup**.
 
 Als u het IP-adres wilt bijwerken, voert u de onderstaande opdrachten uit met behulp van Power shell.  Opmerking Als het IP-adres al statisch is toegewezen, kan dat gedeelte worden overgeslagen.
 
@@ -63,7 +63,7 @@ Set-AzPublicIpAddress -PublicIpAddress $pubIP
 
 # <a name="basic-to-standard---cli"></a>[**Basic naar Standard-CLI**](#tab/option-upgrade-cli)
 
-In het volgende voor beeld wordt ervan uitgegaan dat u een basis-SKU open bare IP-adres hebt gemaakt, met behulp van het voor beeld op [Deze pagina](https://docs.microsoft.com/azure/virtual-network/create-public-ip-cli?tabs=option-create-public-ip-basic) met een open bare basis-IP- **myBasicPublicIP** in **myResourceGroup**.
+In het volgende voor beeld wordt ervan uitgegaan dat u een basis-SKU open bare IP-adres hebt gemaakt, met behulp van het voor beeld op [Deze pagina](./create-public-ip-cli.md?tabs=option-create-public-ip-basic) met een open bare basis-IP- **myBasicPublicIP** in **myResourceGroup**.
 
 Als u het IP-adres wilt bijwerken, voert u de onderstaande opdrachten uit met behulp van de Azure CLI.  Opmerking Als het IP-adres al statisch is toegewezen, kan dat gedeelte worden overgeslagen.
 
@@ -95,7 +95,7 @@ Als u wilt profiteren van de nieuwe mogelijkheden van Azure Resource Manager, ku
 
 # <a name="reserved-to-basic---powershell"></a>[**Gereserveerd voor Basic-Power shell**](#tab/option-migrate-powershell)
 
-In het volgende voor beeld wordt ervan uitgegaan dat er eerder een klassieke Azure Gereserveerd IP **myReservedIP** in **myResourceGroup** is gemaakt. Een andere vereiste voor migratie is om ervoor te zorgen dat het Azure Resource Manager-abonnement is geregistreerd voor migratie. Dit wordt uitvoerig besproken op stap 3 en 4 van [Deze pagina](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-ps).
+In het volgende voor beeld wordt ervan uitgegaan dat er eerder een klassieke Azure Gereserveerd IP **myReservedIP** in **myResourceGroup** is gemaakt. Een andere vereiste voor migratie is om ervoor te zorgen dat het Azure Resource Manager-abonnement is geregistreerd voor migratie. Dit wordt uitvoerig besproken op stap 3 en 4 van [Deze pagina](../virtual-machines/migration-classic-resource-manager-ps.md).
 
 Als u de Gereserveerd IP wilt migreren, voert u de onderstaande opdrachten uit met behulp van Power shell.  Opmerking Als het IP-adres niet is gekoppeld aan een service (onder er bevindt zich een service met de naam **myService**), kan deze stap worden overgeslagen.
 
@@ -119,7 +119,7 @@ Er wordt een nieuwe resource groep in Azure Resource Manager gemaakt met behulp 
 
 # <a name="reserved-to-basic---cli"></a>[**Gereserveerd voor Basic-CLI**](#tab/option-migrate-cli)
 
-In het volgende voor beeld wordt ervan uitgegaan dat er eerder een klassieke Azure Gereserveerd IP **myReservedIP** in **myResourceGroup** is gemaakt. Een andere vereiste voor migratie is om ervoor te zorgen dat het Azure Resource Manager-abonnement is geregistreerd voor migratie. Dit wordt uitvoerig besproken op stap 3 en 4 van [Deze pagina](https://docs.microsoft.com/azure/virtual-machines/linux/migration-classic-resource-manager-cli).
+In het volgende voor beeld wordt ervan uitgegaan dat er eerder een klassieke Azure Gereserveerd IP **myReservedIP** in **myResourceGroup** is gemaakt. Een andere vereiste voor migratie is om ervoor te zorgen dat het Azure Resource Manager-abonnement is geregistreerd voor migratie. Dit wordt uitvoerig besproken op stap 3 en 4 van [Deze pagina](../virtual-machines/migration-classic-resource-manager-cli.md).
 
 Als u de Gereserveerd IP wilt migreren, voert u de onderstaande opdrachten uit met behulp van de Azure CLI.  Opmerking Als het IP-adres niet is gekoppeld aan een service (onder een service met de naam **myService** en Deployment **myDeployment**), kan deze stap worden overgeslagen.
 
@@ -145,12 +145,12 @@ Er wordt een nieuwe resource groep in Azure Resource Manager gemaakt met behulp 
 
 ## <a name="limitations"></a>Beperkingen
 
-* Als u een standaard open bare IP-adres wilt bijwerken, kan deze niet worden gekoppeld aan een Azure-resource.  Raadpleeg [Deze pagina](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address#view-modify-settings-for-or-delete-a-public-ip-address) voor meer informatie over het ontkoppelen van open bare ip's.  En als u een Gereserveerd IP wilt migreren, kan het niet worden gekoppeld aan een Cloud service.  Raadpleeg [Deze pagina](https://docs.microsoft.com/azure/virtual-network/remove-public-ip-address-vm) voor meer informatie over het ontkoppelen van gereserveerde ip's.  
-* Open bare Ip's die zijn bijgewerkt van Basic naar Standard SKU blijven geen [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview?toc=/azure/virtual-network/toc.json#availability-zones) en kunnen daarom niet worden gekoppeld aan een Azure-resource die een zone-redundante of zonegebonden is.  Opmerking: dit is alleen van toepassing op regio's die beschikbaarheids zones bieden.
+* Als u een standaard open bare IP-adres wilt bijwerken, kan deze niet worden gekoppeld aan een Azure-resource.  Raadpleeg [Deze pagina](./virtual-network-public-ip-address.md#view-modify-settings-for-or-delete-a-public-ip-address) voor meer informatie over het ontkoppelen van open bare ip's.  En als u een Gereserveerd IP wilt migreren, kan het niet worden gekoppeld aan een Cloud service.  Raadpleeg [Deze pagina](./remove-public-ip-address-vm.md) voor meer informatie over het ontkoppelen van gereserveerde ip's.  
+* Open bare Ip's die zijn bijgewerkt van Basic naar Standard SKU blijven geen [beschikbaarheids zones](../availability-zones/az-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json#availability-zones) en kunnen daarom niet worden gekoppeld aan een Azure-resource die een zone-redundante of zonegebonden is.  Opmerking: dit is alleen van toepassing op regio's die beschikbaarheids zones bieden.
 * U kunt niet overdowngradeen van Standard naar Basic.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [open bare IP-adressen](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) in azure, met inbegrip van het verschil tussen de typen sku's en [open bare IP-adres instellingen](virtual-network-public-ip-address.md#create-a-public-ip-address).
-- Meer informatie over het [upgraden van open bare Azure-load balancers van Basic naar Standard](https://docs.microsoft.com/azure/load-balancer/upgrade-basic-standard).
-- Meer informatie over [klassieke gereserveerde ip's in azure](https://docs.microsoft.com/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip) en de [migratie van klassieke resources naar Azure Resource Manager](https://docs.microsoft.com/azure/virtual-machines/windows/migration-classic-resource-manager-overview).
+- Meer informatie over [open bare IP-adressen](./public-ip-addresses.md#public-ip-addresses) in azure, met inbegrip van het verschil tussen de typen sku's en [open bare IP-adres instellingen](virtual-network-public-ip-address.md#create-a-public-ip-address).
+- Meer informatie over het [upgraden van open bare Azure-load balancers van Basic naar Standard](../load-balancer/upgrade-basic-standard.md).
+- Meer informatie over [klassieke gereserveerde ip's in azure](/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip) en de [migratie van klassieke resources naar Azure Resource Manager](../virtual-machines/migration-classic-resource-manager-overview.md).

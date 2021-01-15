@@ -10,13 +10,13 @@ ms.topic: troubleshooting
 author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
-ms.date: 06/12/2020
-ms.openlocfilehash: c42db1445c939069f334d04ea26d54cdb843c336
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 1/14/2021
+ms.openlocfilehash: 3b57172daeffd1766da456e56cb5e445427a4858
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488824"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220385"
 ---
 # <a name="troubleshoot-azure-sql-database-and-azure-sql-managed-instance-performance-issues-with-intelligent-insights"></a>Problemen met prestatie problemen met Azure SQL Database en Azure SQL Managed instance oplossen met Intelligent Insights
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -36,7 +36,7 @@ Intelligent Insights prestatie problemen worden automatisch gedetecteerd op basi
 | :------------------- | ------------------- | ------------------- |
 | [Bron limieten bereiken](intelligent-insights-troubleshoot-performance.md#reaching-resource-limits) | Verbruik van beschik bare resources (Dtu's), data base worker-threads of data base-aanmeldings sessies die beschikbaar zijn in het bewaakte abonnement, hebben de resource limiet bereikt. Dit is van invloed op de prestaties. | Het verbruik van CPU-Resources bereikt de resource limieten. Dit is van invloed op de prestaties van de data base. |
 | [Toename van de workload](intelligent-insights-troubleshoot-performance.md#workload-increase) | Er is een verhoging of continue accumulatie van de werk belasting voor de data base gedetecteerd. Dit is van invloed op de prestaties. | Er is een toename van de werk belasting gedetecteerd. Dit is van invloed op de prestaties van de data base. |
-| [Geheugen druk](intelligent-insights-troubleshoot-performance.md#memory-pressure) | Werk nemers die aangevraagde geheugen subsidies, moeten wachten op geheugen toewijzingen gedurende een statistisch significante hoeveelheid tijd, of een grotere accumulatie van werk nemers die aangevraagde geheugen subsidies bestaan. Dit is van invloed op de prestaties. | Werk nemers die geheugen subsidies hebben aangevraagd, wachten op een statistisch significante hoeveelheid tijd op geheugen toewijzingen. Dit is van invloed op de prestaties van de data base. |
+| [Geheugendruk](intelligent-insights-troubleshoot-performance.md#memory-pressure) | Werk nemers die aangevraagde geheugen subsidies, moeten wachten op geheugen toewijzingen gedurende een statistisch significante hoeveelheid tijd, of een grotere accumulatie van werk nemers die aangevraagde geheugen subsidies bestaan. Dit is van invloed op de prestaties. | Werk nemers die geheugen subsidies hebben aangevraagd, wachten op een statistisch significante hoeveelheid tijd op geheugen toewijzingen. Dit is van invloed op de prestaties van de data base. |
 | [Vergrendelen](intelligent-insights-troubleshoot-performance.md#locking) | Er is een buitensporige database vergrendeling gedetecteerd die invloed heeft op de prestaties. | Er is een buitensporige database vergrendeling gedetecteerd die invloed heeft op de prestaties van de data base. |
 | [Verhoogde MAXDOP](intelligent-insights-troubleshoot-performance.md#increased-maxdop) | De maximale mate van parallellisme (MAXDOP) is gewijzigd, wat van invloed is op de efficiëntie van de query-uitvoering. Dit is van invloed op de prestaties. | De maximale mate van parallellisme (MAXDOP) is gewijzigd, wat van invloed is op de efficiëntie van de query-uitvoering. Dit is van invloed op de prestaties. |
 | [Pagelatch-conflicten](intelligent-insights-troubleshoot-performance.md#pagelatch-contention) | Meerdere threads proberen gelijktijdig toegang te krijgen tot dezelfde gegevens buffer pagina's in het geheugen, wat resulteert in verhoogde wacht tijden en pagelatch-conflicten veroorzaakt. Dit is van invloed op de prestaties. | Meerdere threads proberen gelijktijdig toegang te krijgen tot dezelfde gegevens buffer pagina's in het geheugen, wat resulteert in verhoogde wacht tijden en pagelatch-conflicten veroorzaakt. Dit is van invloed op de Data Base op de prestaties. |
@@ -128,7 +128,9 @@ De diagnostische logboeken worden gebruikt voor het vergren delen van details di
 
 De eenvoudigste en veiligste manier om het probleem te verhelpen is om trans acties kort te houden en de vergren deling van de duurste query's te verminderen. U kunt een grote batch van bewerkingen in kleinere bewerkingen opsplitsen. Een goede gewoonte is het verminderen van de query vergrendeling door de query zo efficiënt mogelijk te maken. Verklein grote scans omdat ze de kans op deadlocks verg Roten en de algehele prestaties van de data base nadelig beïnvloeden. Voor geïdentificeerde query's die vergrendeling veroorzaken, kunt u nieuwe indexen maken of kolommen toevoegen aan de bestaande index om de tabel scans te voor komen.
 
-Zie voor meer suggesties [blokkerende problemen oplossen die worden veroorzaakt door het vergren delen van escalatie in SQL Server](https://support.microsoft.com/help/323630/how-to-resolve-blocking-problems-that-are-caused-by-lock-escalation-in).
+Zie voor meer suggesties:
+- [Problemen met Azure SQL blocking begrijpen en oplossen](understand-resolve-blocking.md)
+- [Blokkerende problemen oplossen die worden veroorzaakt door escalatie van vergren deling in SQL Server](https://support.microsoft.com/help/323630/how-to-resolve-blocking-problems-that-are-caused-by-lock-escalation-in)
 
 ## <a name="increased-maxdop"></a>Verhoogde MAXDOP
 

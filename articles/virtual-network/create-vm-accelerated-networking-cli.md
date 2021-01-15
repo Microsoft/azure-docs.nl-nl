@@ -16,20 +16,20 @@ ms.workload: infrastructure-services
 ms.date: 01/10/2019
 ms.author: gsilva
 ms.custom: ''
-ms.openlocfilehash: bccbfed96dd6cd87bdfe986baf4b52817a160ac0
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 5b91d6e58f4ae93bbf020f202991f878e7773114
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95533358"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222952"
 ---
-# <a name="create-a-linux-virtual-machine-with-accelerated-networking-using-azure-cli"></a>Een virtuele Linux-machine maken met versneld netwerken met behulp van Azure CLI
+# <a name="create-a-linux-virtual-machine-with-accelerated-networking-using-azure-cli"></a>Een virtuele machine met versneld netwerken maken
 
 In deze zelf studie leert u hoe u een virtuele Linux-machine (VM) kunt maken met versneld netwerken. Zie [een Windows-VM maken met versneld](create-vm-accelerated-networking-powershell.md)netwerken voor het maken van een virtuele Windows-machine met versneld netwerken. Versneld netwerken maken gebruik van I/O-virtualisatie met één hoofdmap (SR-IOV) naar een virtuele machine, waardoor de netwerk prestaties aanzienlijk worden verbeterd. Dit pad met hoge prestaties omzeilt de host van de DataPath, vermindert latentie, jitter en CPU-gebruik, voor gebruik met de meest veeleisende netwerk workloads op ondersteunde VM-typen. In de volgende afbeelding ziet u communicatie tussen twee Vm's met en zonder versneld netwerken:
 
 ![Vergelijking](./media/create-vm-accelerated-networking/accelerated-networking.png)
 
-Zonder versneld netwerk moeten al het netwerk verkeer van en naar de virtuele machine de host en de Virtual Switch door lopen. De virtuele switch biedt alle beleids afdwinging, zoals netwerk beveiligings groepen, Toegangs beheer lijsten, isolatie en andere gevirtualiseerde netwerk services voor netwerk verkeer. Lees het artikel [Hyper-V-Netwerkvirtualisatie en virtuele-switch](https://technet.microsoft.com/library/jj945275.aspx) voor meer informatie over virtuele switches.
+Zonder versneld netwerk moeten al het netwerk verkeer van en naar de virtuele machine de host en de Virtual Switch door lopen. De virtuele switch biedt alle beleids afdwinging, zoals netwerk beveiligings groepen, Toegangs beheer lijsten, isolatie en andere gevirtualiseerde netwerk services voor netwerk verkeer. Lees het artikel [Hyper-V-Netwerkvirtualisatie en virtuele-switch](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj134230(v=ws.11)) voor meer informatie over virtuele switches.
 
 Met versneld netwerken arriveert het netwerk verkeer op de netwerk interface van de virtuele machine (NIC) en wordt vervolgens doorgestuurd naar de VM. Alle netwerk beleidsregels waarmee de virtuele switch wordt toegepast, worden nu geoffload en toegepast in hardware. Door beleid toe te passen op hardware kan de NIC netwerk verkeer rechtstreeks naar de virtuele machine door sturen, waardoor de host en de virtuele switch worden omzeild, terwijl alle beleids regels die op de host worden toegepast, behouden blijven.
 
@@ -60,7 +60,7 @@ Versnelde netwerken worden ondersteund in de meeste algemene doel stellingen en 
 
 Op instanties die HyperThreading ondersteunen, wordt versneld netwerken ondersteund op VM-exemplaren met vier of meer Vcpu's. Ondersteunde reeksen zijn: D/Dsv3, D/Dsv4, DD/Ddv4, da/Dasv4, E/Esv3, E/Esv4, Ed/Edsv4, EA/Easv4, Fsv2, Lsv2, MS/MMS en MS/Mmsv2.
 
-Zie [Linux VM-grootten](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over VM-exemplaren.
+Zie [Linux VM-grootten](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over VM-exemplaren.
 
 ### <a name="custom-images"></a>Aangepaste installatiekopieën
 Als u een aangepaste installatie kopie gebruikt en uw installatie kopie versneld netwerken ondersteunt, moet u ervoor zorgen dat de vereiste Stuur Programma's worden gebruikt om te werken met de Mellanox Connectx-3-en Connectx-4 LX-Nic's in Azure.
@@ -173,7 +173,7 @@ az vm create \
     --nics myNic
 ```
 
-Zie [Linux VM-grootten](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor een lijst met alle VM-grootten en-kenmerken.
+Zie [Linux VM-grootten](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor een lijst met alle VM-grootten en-kenmerken.
 
 Zodra de VM is gemaakt, wordt de uitvoer vergelijkbaar met de volgende voorbeeld uitvoer geretourneerd. Let op het **openbare IP-adres**. Dit adres wordt gebruikt voor toegang tot de virtuele machine in volgende stappen.
 
@@ -310,5 +310,4 @@ Het formaat van een virtuele machine met versneld netwerken kan niet worden gewi
 
 * Stop/Hef de toewijzing van de virtuele machine op of hef de toewijzing van de virtuele machines in de set-VMSS op en sluit deze toe.
 * Versnelde netwerken moeten worden uitgeschakeld op de NIC van de virtuele machine of in een beschikbaarheidsset/VMSS alle virtuele machines in de set/VMSS.
-* Zodra versneld netwerken zijn uitgeschakeld, kunnen de set/VMSS van de virtuele machine en de beschik baarheid worden verplaatst naar een nieuwe grootte die geen versneld netwerken ondersteunt en opnieuw wordt gestart.  
-
+* Zodra versneld netwerken zijn uitgeschakeld, kunnen de set/VMSS van de virtuele machine en de beschik baarheid worden verplaatst naar een nieuwe grootte die geen versneld netwerken ondersteunt en opnieuw wordt gestart.

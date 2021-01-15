@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 06/25/2020
 ms.author: kumud
 ms.reviewer: anavin
-ms.openlocfilehash: 88e576231e0231a105cd9ec303f63307b5eaff89
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 29a64931ac92eacf8948ae067118b6b25198c85d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87051621"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223462"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-and-subscriptions"></a>Een peering voor een virtueel netwerk maken-verschillende implementatie modellen en abonnementen
 
@@ -43,7 +43,7 @@ U kunt de [Azure Portal](#portal), de Azure [-opdracht regel interface](#cli) (C
 In deze zelf studie worden verschillende accounts voor elk abonnement gebruikt. Als u een account gebruikt dat machtigingen heeft voor beide abonnementen, kunt u hetzelfde account voor alle stappen gebruiken, de stappen voor het aanmelden bij de portal overs Laan en de stappen voor het toewijzen van andere gebruikers machtigingen voor de virtuele netwerken overs Laan.
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) als GebruikerA. Het account waarmee u zich aanmeldt, moet de benodigde machtigingen hebben voor het maken van een virtuele netwerk peering. Zie [machtigingen voor peering voor virtuele netwerken](virtual-network-manage-peering.md#permissions)voor een lijst met machtigingen.
-2. Klik op **+ Nieuw**, klik op **netwerken**en klik vervolgens op **virtueel netwerk**.
+2. Klik op **+ Nieuw**, klik op **netwerken** en klik vervolgens op **virtueel netwerk**.
 3. Voer op de Blade **virtueel netwerk maken** een waarde in of selecteer waarden voor de volgende instellingen en klik vervolgens op **maken**:
     - **Naam**: *myVnetA*
     - **Adres ruimte**: *10.0.0.0/16*
@@ -52,7 +52,7 @@ In deze zelf studie worden verschillende accounts voor elk abonnement gebruikt. 
     - **Abonnement**: Selecteer abonnement A.
     - **Resource groep**: Selecteer **nieuwe maken** en voer *myResourceGroupA* in
     - **Locatie**: *VS-Oost*
-4. Typ *myVnetA*in het vak **Zoek resources** bovenaan de portal. Klik op **myVnetA** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor het virtuele **myVnetA** -netwerk weer gegeven.
+4. Typ *myVnetA* in het vak **Zoek resources** bovenaan de portal. Klik op **myVnetA** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor het virtuele **myVnetA** -netwerk weer gegeven.
 5. Klik op de Blade **myVnetA** die wordt weer gegeven op **toegangs beheer (IAM)** in de verticale lijst met opties aan de linkerkant van de Blade.
 6. Klik op de Blade **myVnetA-toegangs beheer (IAM)** die wordt weer gegeven op **+ roltoewijzing toevoegen**.
 7. In de Blade **roltoewijzing toevoegen** die wordt weer gegeven, selecteert u **Network Inzender** in het vak **rol** .
@@ -71,18 +71,18 @@ In deze zelf studie worden verschillende accounts voor elk abonnement gebruikt. 
     - **Resource groep**: Selecteer **nieuwe maken** en voer *myResourceGroupB* in
     - **Locatie**: *VS-Oost*
 
-14. Typ *myVnetB*in het vak **Zoek resources** bovenaan de portal. Klik op **myVnetB** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor het virtuele **myVnetB** -netwerk weer gegeven.
-15. Klik op de Blade **myVnetB** die wordt weer gegeven op **Eigenschappen** in de verticale lijst met opties aan de linkerkant van de Blade. Kopieer de **resource-id**die wordt gebruikt in een latere stap. De resource-ID is vergelijkbaar met het volgende voor beeld: `/subscriptions/<Subscription ID>/resourceGroups/myResourceGroupB/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnetB`
+14. Typ *myVnetB* in het vak **Zoek resources** bovenaan de portal. Klik op **myVnetB** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor het virtuele **myVnetB** -netwerk weer gegeven.
+15. Klik op de Blade **myVnetB** die wordt weer gegeven op **Eigenschappen** in de verticale lijst met opties aan de linkerkant van de Blade. Kopieer de **resource-id** die wordt gebruikt in een latere stap. De resource-ID is vergelijkbaar met het volgende voor beeld: `/subscriptions/<Subscription ID>/resourceGroups/myResourceGroupB/providers/Microsoft.ClassicNetwork/virtualNetworks/myVnetB`
 16. Voer de stappen 5-9 voor myVnetB uit en voer **GebruikerA** in stap 8 in.
 17. Meld u bij de portal aan als UserB en meld u aan als GebruikerA.
-18. Typ *myVnetA*in het vak **Zoek resources** bovenaan de portal. Klik op **myVnetA** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor het virtuele **myVnet** -netwerk weer gegeven.
+18. Typ *myVnetA* in het vak **Zoek resources** bovenaan de portal. Klik op **myVnetA** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor het virtuele **myVnet** -netwerk weer gegeven.
 19. Klik op **myVnetA**.
 20. Klik op de Blade **myVnetA** die wordt weer gegeven op **peerings** in de verticale lijst met opties aan de linkerkant van de Blade.
 21. Klik op de Blade **myVnetA-peerings** die verschijnt op **+ toevoegen**
 22. Voer op de Blade **peering toevoegen** die wordt weer gegeven, de volgende opties in of Selecteer deze en klik vervolgens op **OK**:
      - **Naam**: *myVnetAToMyVnetB*
      - **Implementatie model van het virtuele netwerk**: Selecteer **klassiek**.
-     - **Ik weet wat mijn resource-id**is: Schakel dit selectie vakje in.
+     - **Ik weet wat mijn resource-id** is: Schakel dit selectie vakje in.
      - **Resource-id**: Voer de resource-id van myVnetB in van stap 15.
      - **Toegang tot virtueel netwerk toestaan:** Zorg ervoor dat **ingeschakeld** is geselecteerd.
     In deze zelf studie worden geen andere instellingen gebruikt. Meer informatie over alle instellingen voor peering vindt u in [peering van virtuele netwerken beheren](virtual-network-manage-peering.md#create-a-peering).
@@ -186,7 +186,7 @@ In deze zelf studie worden verschillende accounts voor elk abonnement gebruikt. 
 1. Installeer de meest recente versie van de Power shell [Azure](https://www.powershellgallery.com/packages/Azure) -en [AZ](https://www.powershellgallery.com/packages/Az) -modules. Zie [Overzicht van Azure PowerShell](/powershell/azure/?toc=%2fazure%2fvirtual-network%2ftoc.json) als u nog geen ervaring hebt met Azure PowerShell.
 2. Start een Power shell-sessie.
 3. Meld u in Power shell aan bij UserB-abonnement als UserB door de opdracht in te voeren `Add-AzureAccount` . Het account waarmee u zich aanmeldt, moet de benodigde machtigingen hebben voor het maken van een virtuele netwerk peering. Zie [machtigingen voor peering voor virtuele netwerken](virtual-network-manage-peering.md#permissions)voor een lijst met machtigingen.
-4. Als u een virtueel netwerk (klassiek) met Power shell wilt maken, moet u een nieuw netwerk configuratie bestand maken of wijzigen. Meer informatie over het [exporteren, bijwerken en importeren van netwerk configuratie bestanden](virtual-networks-using-network-configuration-file.md). Het bestand moet het volgende **VirtualNetworkSite** -element bevatten voor het virtuele netwerk dat in deze zelf studie wordt gebruikt:
+4. Als u een virtueel netwerk (klassiek) met Power shell wilt maken, moet u een nieuw netwerk configuratie bestand maken of wijzigen. Meer informatie over het [exporteren, bijwerken en importeren van netwerk configuratie bestanden](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Het bestand moet het volgende **VirtualNetworkSite** -element bevatten voor het virtuele netwerk dat in deze zelf studie wordt gebruikt:
 
     ```xml
     <VirtualNetworkSite name="myVnetB" Location="East US">
@@ -274,10 +274,10 @@ Wanneer u deze zelf studie hebt voltooid, kunt u de resources die u in de zelf s
 
 ### <a name="azure-portal"></a><a name="delete-portal"></a>Azure Portal
 
-1. Voer in het zoekvak van de portal **myResourceGroupA**in. Klik in de zoek resultaten op **myResourceGroupA**.
+1. Voer in het zoekvak van de portal **myResourceGroupA** in. Klik in de zoek resultaten op **myResourceGroupA**.
 2. Klik op de Blade **myResourceGroupA** op het pictogram **verwijderen** .
-3. Als u het verwijderen wilt bevestigen, voert u in het vak **Geef de naam van de resource groep** **myResourceGroupA**in en klikt u op **verwijderen**.
-4. Typ *myVnetB*in het vak **Zoek resources** bovenaan de portal. Klik op **myVnetB** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor het virtuele **myVnetB** -netwerk weer gegeven.
+3. Als u het verwijderen wilt bevestigen, voert u in het vak **Geef de naam van de resource groep** **myResourceGroupA** in en klikt u op **verwijderen**.
+4. Typ *myVnetB* in het vak **Zoek resources** bovenaan de portal. Klik op **myVnetB** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor het virtuele **myVnetB** -netwerk weer gegeven.
 5. Klik op de Blade **myVnetB** op **verwijderen**.
 6. Klik op **Ja** in het vak **virtueel netwerk verwijderen** om de verwijdering te bevestigen.
 
@@ -305,7 +305,7 @@ Wanneer u deze zelf studie hebt voltooid, kunt u de resources die u in de zelf s
    Remove-AzResourceGroup -Name myResourceGroupA -Force
    ```
 
-2. Als u het virtuele netwerk (klassiek) met Power shell wilt verwijderen, moet u een bestaand netwerk configuratie bestand wijzigen. Meer informatie over het [exporteren, bijwerken en importeren van netwerk configuratie bestanden](virtual-networks-using-network-configuration-file.md). Verwijder het volgende VirtualNetworkSite-element voor het virtuele netwerk dat wordt gebruikt in deze zelf studie:
+2. Als u het virtuele netwerk (klassiek) met Power shell wilt verwijderen, moet u een bestaand netwerk configuratie bestand wijzigen. Meer informatie over het [exporteren, bijwerken en importeren van netwerk configuratie bestanden](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Verwijder het volgende VirtualNetworkSite-element voor het virtuele netwerk dat wordt gebruikt in deze zelf studie:
 
    ```xml
    <VirtualNetworkSite name="myVnetB" Location="East US">

@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 10/14/2020
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 4156308fa58ea1f02e6e3f2c5174839dc1cd381c
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 2731a7f263db223c258ddfc434bc84f59632d1f5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96841445"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223360"
 ---
 # <a name="shared-image-galleries-overview"></a>Galerieën met gedeelde installatiekopieën (overzicht)
 
@@ -316,6 +316,11 @@ Voor implementaties van virtuele machines en virtuele-machineschaalsets die gebr
 ### <a name="can-i-update-my-virtual-machine-scale-set-created-using-managed-image-to-use-shared-image-gallery-images"></a>Kan ik mijn virtuele-machineschaalset bijwerken die met een beheerde installatiekopie is gemaakt, voor het gebruik van installatiekopieën uit Shared Image Gallery?
 
 Ja, u kunt de verwijzing naar de installatiekopie van de schaalset bijwerken van een beheerde installatiekopie naar een installatiekopie van een galerie met gedeelde installatiekopieën, op voorwaarde dat het type besturingssysteem, de Hyper-V-generatie en de indeling van de gegevensschijf van de installatiekopieën overeenkomen.
+
+## <a name="troubleshoot-shared-image-gallery-issues"></a>Problemen met de galerie met gedeelde afbeeldingen oplossen
+Raadpleeg de lijst met veelvoorkomende fouten in de [hand leiding voor probleem oplossing](troubleshooting-shared-images.md)als u problemen ondervindt met het uitvoeren van bewerkingen voor de resource van de gedeelde installatie kopie galerie.
+
+Daarnaast kunt u uw vraag met `azure-virtual-machines-images` op [Q&A](/answers/topics/azure-virtual-machines-images.html)plaatsen en er labels op toevoegen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

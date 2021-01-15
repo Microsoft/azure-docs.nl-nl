@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/18/2020
 ms.author: allensu
-ms.openlocfilehash: de4e32d79cf4dfb3a5f54544c65544297a2c0232
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 516f858c8f95ec3f7cfd8ffc1592358716986519
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95993564"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223292"
 ---
 # <a name="tutorial-create-a-nat-gateway-using-azure-powershell"></a>Zelfstudie: Een NAT-gateway maken met Azure PowerShell
 
@@ -35,7 +35,7 @@ U kunt deze zelfstudie met behulp van Azure Cloud Shell voltooien of de opdracht
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Maak een resourcegroep met behulp van de opdracht [New-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/new-azresourcegroup?view=latest). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
+Maak een resourcegroep met behulp van de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup?view=latest). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
 
 In het volgende voorbeeld wordt een resourcegroep met de naam **myResourceGroupNAT** gemaakt op de locatie **eastus2**:
 
@@ -59,7 +59,7 @@ Om dit te illustreren, voegt u een openbaar IP-adres en een voorvoegsel voor ope
 
 ### <a name="create-a-public-ip-address"></a>Een openbaar IP-adres maken
 
-Voor toegang tot het internet hebt u een of meer openbare IP-adressen nodig voor de NAT-gateway. Gebruik [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress?view=latest) om in **myResourceGroupNAT** een openbare IP-adresresource te maken met de naam **myPublicIP**. Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$publicIP**.
+Voor toegang tot het internet hebt u een of meer openbare IP-adressen nodig voor de NAT-gateway. Gebruik [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=latest) om in **myResourceGroupNAT** een openbare IP-adresresource te maken met de naam **myPublicIP**. Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$publicIP**.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -73,7 +73,7 @@ New-AzPublicIpAddress -Name $pbnm -ResourceGroupName $rsg -AllocationMethod Stat
 
 ### <a name="create-a-public-ip-prefix"></a>Een openbaar IP-voorvoegsel maken
 
-Gebruik [New-AzPublicIpPrefix](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipprefix?view=latest) om in **myResourceGroupNAT** een resource voor het openbare IP-voorvoegsel te maken met de naam **myResourceGroupNAT**.  Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$publicIPPrefix**.
+Gebruik [New-AzPublicIpPrefix](/powershell/module/az.network/new-azpublicipprefix?view=latest) om in **myResourceGroupNAT** een resource voor het openbare IP-voorvoegsel te maken met de naam **myResourceGroupNAT**.  Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$publicIPPrefix**.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -90,7 +90,7 @@ In deze sectie wordt beschreven hoe u de volgende onderdelen van de NAT-service 
   - Een openbare IP-adresgroep en een openbaar IP-voorvoegsel die moeten worden gebruikt voor uitgaande stromen die worden omgezet door de NAT-gatewayresource.
   - Wijzig de time-out voor inactiviteit van de standaardwaarde van 4 minuten naar 10 minuten.
 
-Maak een globale Azure NAT-gateway met [New-AzNatGateway](https://docs.microsoft.com/powershell/module/az.network/new-aznatgateway). Met deze opdracht maakt u een gatewayresource met de naam **myNATgateway** die het openbare IP-adres **myPublicIP** gebruikt en het openbare IP-voorvoegsel **myPublicIPprefix**. De time-out voor inactiviteit is ingesteld op 10 minuten.  Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$natGateway**.
+Maak een globale Azure NAT-gateway met [New-AzNatGateway](/powershell/module/az.network/new-aznatgateway). Met deze opdracht maakt u een gatewayresource met de naam **myNATgateway** die het openbare IP-adres **myPublicIP** gebruikt en het openbare IP-voorvoegsel **myPublicIPprefix**. De time-out voor inactiviteit is ingesteld op 10 minuten.  Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$natGateway**.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -108,7 +108,7 @@ Nu is de NAT-gateway functioneel. Het enige wat u nog hoeft te doen is te config
 
 Maak het virtuele netwerk en koppel het subnet aan de gateway.
 
-Maak een virtueel netwerk met de naam **myVnet** met een subnet met de naam **mySubnet** met behulp van [New-AzVirtualNetworkSubnetConfig](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=latest) in de **myResourceGroup** met behulp van [New-AzVirtualNetwork](https://docs.microsoft.com/powershell/module/az.network/new-azvirtualnetwork?view=latest). De IP-adresruimte voor het virtuele netwerk is **192.168.0.0/16**. Het subnet binnen het virtuele netwerk is **192.168.0.0/24**.  Het resultaat van de opdrachten wordt voor later gebruik opgeslagen in variabelen met de namen **$subnet** en **$vnet**.
+Maak een virtueel netwerk met de naam **myVnet** met een subnet met de naam **mySubnet** met behulp van [New-AzVirtualNetworkSubnetConfig](/powershell/module/az.network/new-azvirtualnetworksubnetconfig?view=latest) in de **myResourceGroup** met behulp van [New-AzVirtualNetwork](/powershell/module/az.network/new-azvirtualnetwork?view=latest). De IP-adresruimte voor het virtuele netwerk is **192.168.0.0/16**. Het subnet binnen het virtuele netwerk is **192.168.0.0/24**.  Het resultaat van de opdrachten wordt voor later gebruik opgeslagen in variabelen met de namen **$subnet** en **$vnet**.
 
 ```azurepowershell-interactive
 $sbnm = 'mySubnet'
@@ -133,7 +133,7 @@ Nu gaat u een VM maken voor het gebruik van de NAT-service.  Deze VM heeft een o
 
 ### <a name="create-public-ip-for-source-vm"></a>Een openbare IP voor de bron-VM maken
 
-U maakt een openbare IP die gaat worden gebruikt voor toegang tot de VM.  Gebruik [New-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/new-azpublicipaddress?view=latest) om in **myResourceGroupNAT** een openbare IP-adresresource te maken met de naam **myPublicIPVM**.  Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$publicIpVM**.
+U maakt een openbare IP die gaat worden gebruikt voor toegang tot de VM.  Gebruik [New-AzPublicIpAddress](/powershell/module/az.network/new-azpublicipaddress?view=latest) om in **myResourceGroupNAT** een openbare IP-adresresource te maken met de naam **myPublicIPVM**.  Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$publicIpVM**.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -147,7 +147,7 @@ New-AzPublicIpAddress -Name $ipnm -ResourceGroupName $rsg -AllocationMethod Stat
 
 ### <a name="create-an-nsg-and-expose-ssh-endpoint-for-vm"></a>Een NSG maken en het SSH-eindpunt voor de virtuele machine weergeven
 
-Standaard openbare IP-adressen zijn 'standaard beveiligd' en dus moet u een NSG maken om inkomende toegang voor SSH-toegang toe te staan. Gebruik [New-AzNetworkSecurityGroup](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecuritygroup?view=latest) om een NSG-resource met de naam **myNSG** te maken. Gebruik [New-AzNetworkSecurityRuleConfig](https://docs.microsoft.com/powershell/module/az.network/new-aznetworksecurityruleconfig?view=latest) om een NSG-regel voor SSH-toegang te maken met de naam **ssh** in **myResourceGroupNAT**.  Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$nsg**.
+Standaard openbare IP-adressen zijn 'standaard beveiligd' en dus moet u een NSG maken om inkomende toegang voor SSH-toegang toe te staan. Gebruik [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup?view=latest) om een NSG-resource met de naam **myNSG** te maken. Gebruik [New-AzNetworkSecurityRuleConfig](/powershell/module/az.network/new-aznetworksecurityruleconfig?view=latest) om een NSG-regel voor SSH-toegang te maken met de naam **ssh** in **myResourceGroupNAT**.  Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$nsg**.
 
 ```azurepowershell-interactive
 $rnm = 'ssh'
@@ -170,7 +170,7 @@ New-AzNetworkSecurityGroup -ResourceGroupName $rsg -Name $rnm -Location $loc -Se
 
 ### <a name="create-nic-for-vm"></a>NIC maken voor VM
 
-Maak met [New-AzureRmNetworkInterface](https://docs.microsoft.com/powershell/module/az.network/new-aznetworkinterface?view=azps-2.8.0) een netwerkinterface met de naam **myNic**. Met deze opdracht worden het openbare IP-adres en de netwerkbeveiligingsgroep gekoppeld. Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$nic**.
+Maak met [New-AzureRmNetworkInterface](/powershell/module/az.network/new-aznetworkinterface?view=azps-2.8.0) een netwerkinterface met de naam **myNic**. Met deze opdracht worden het openbare IP-adres en de netwerkbeveiligingsgroep gekoppeld. Het resultaat van deze opdracht wordt voor later gebruik opgeslagen in een variabele met de naam **$nic**.
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -192,9 +192,9 @@ Gebruik ssh-keygen om een SSH-sleutelpaar te maken.
 ```azurepowershell-interactive
 ssh-keygen -t rsa -b 2048
 ```
-Zie [SSH-sleutels gebruiken met Windows](https://docs.microsoft.com/azure/virtual-machines/linux/ssh-from-windows) voor gedetailleerde informatie over het maken van SSH-sleutelparen, waaronder het gebruik van PuTTy.
+Zie [SSH-sleutels gebruiken met Windows](../virtual-machines/linux/ssh-from-windows.md) voor gedetailleerde informatie over het maken van SSH-sleutelparen, waaronder het gebruik van PuTTy.
 
-Als u het SSH-sleutelpaar maakt met behulp van de Cloud Shell, wordt het sleutelpaar opgeslagen in een containerinstallatiekopie. Dit [opslagaccount wordt automatisch gemaakt](https://docs.microsoft.com/azure/cloud-shell/persisting-shell-storage). Verwijder het opslagaccount, net als de bestandsshare in het account, pas nadat u de sleutels hebt opgehaald.
+Als u het SSH-sleutelpaar maakt met behulp van de Cloud Shell, wordt het sleutelpaar opgeslagen in een containerinstallatiekopie. Dit [opslagaccount wordt automatisch gemaakt](../cloud-shell/persisting-shell-storage.md). Verwijder het opslagaccount, net als de bestandsshare in het account, pas nadat u de sleutels hebt opgehaald.
 
 #### <a name="create-vm-configuration"></a>VM-configuratie maken
 
@@ -249,7 +249,7 @@ Wacht tot de virtuele machine is voorbereid voor implementatie en ga vervolgens 
 
 ## <a name="discover-the-ip-address-of-the-vm"></a>Het IP-adres van de VM ontdekken
 
-Eerst moet het IP-adres van de VM die u hebt gemaakt, worden gedetecteerd. Gebruik [Get-AzPublicIpAddress](https://docs.microsoft.com/powershell/module/az.network/get-azpublicipaddress?view=latest) om het openbare IP-adres van de virtuele machine op te halen. 
+Eerst moet het IP-adres van de VM die u hebt gemaakt, worden gedetecteerd. Gebruik [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress?view=latest) om het openbare IP-adres van de virtuele machine op te halen. 
 
 ```azurepowershell-interactive
 $rsg = 'myResourceGroupNAT'
@@ -273,7 +273,7 @@ U bent nu klaar om de NAT-service te gebruiken.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-U kunt de opdracht [Remove-AzResourceGroup](https://docs.microsoft.com/powershell/module/az.resources/remove-azresourcegroup?view=latest) gebruiken om de resourcegroep en alle gerelateerde resources daarin te verwijderen wanneer u ze niet meer nodig hebt.
+U kunt de opdracht [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup?view=latest) gebruiken om de resourcegroep en alle gerelateerde resources daarin te verwijderen wanneer u ze niet meer nodig hebt.
 
 ```azurepowershell-interactive 
 Remove-AzResourceGroup -Name myResourceGroupNAT
@@ -292,5 +292,3 @@ Controleer de metrische gegevens in Azure Monitor om uw NAT-service weer te geve
 - Quickstart voor het implementeren van [NAT-gatewayresource met behulp van Azure PowerShell](./quickstart-create-nat-gateway-powershell.md)
 - Quickstart voor het implementeren van [NAT-gatewayresource met de Azure-portal](./quickstart-create-nat-gateway-portal.md)
 > [!div class="nextstepaction"]
-
-

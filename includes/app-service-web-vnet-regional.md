@@ -4,12 +4,12 @@ ms.service: app-service-web
 ms.topic: include
 ms.date: 10/21/2020
 ms.author: ccompy
-ms.openlocfilehash: 57b2955f8cec059cd20d353eba31dc39ad992d50
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 3f9dd35959980eef4e1bec550bf7e9f583cf30d2
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97506256"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98225211"
 ---
 Door gebruik te maken van regionale VNet-integratie kan uw app toegang tot:
 
@@ -48,7 +48,6 @@ Er zijn enkele beperkingen bij het gebruik van VNet-integratie met VNets in deze
 * De functie vereist een ongebruikt subnet dat een/28 of groter is in een Azure Resource Manager VNet.
 * De app en het VNet moeten zich in dezelfde regio bevinden.
 * U kunt een VNet met een geïntegreerde app niet verwijderen. Verwijder de integratie voordat u het VNet verwijdert.
-* U kunt alleen integreren met VNets in hetzelfde abonnement als de app.
 * U kunt slechts één regionale VNet-integratie per App Service plan hebben. Meerdere apps in hetzelfde App Service-abonnement kunnen hetzelfde VNet gebruiken.
 * U kunt het abonnement van een app of een abonnement niet wijzigen terwijl er een app is die gebruikmaakt van regionale VNet-integratie.
 * Uw app kan geen adressen omzetten in Azure DNS Private Zones zonder configuratie wijzigingen

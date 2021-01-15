@@ -4,12 +4,12 @@ description: Hiermee wordt een overzicht gegeven van de ondersteuning voor herst
 ms.topic: article
 ms.date: 11/29/2020
 ms.author: raynew
-ms.openlocfilehash: 9670178a9c9d772d8966413371f998aa1f0cf5f3
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: e2cbea433d56d4c1290a5d1cdc54b56e81b4cd73
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968289"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234321"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Ondersteuningsmatrix voor herstel na noodgeval van Azure-VM's tussen Azure-regio's
 
@@ -196,7 +196,7 @@ Azure Gallery-installatie kopieën-derde partij gepubliceerd | Ondersteund | Wor
 Aangepaste installatie kopieën-externe partij gepubliceerd | Ondersteund | Wordt ondersteund als de virtuele machine wordt uitgevoerd op een ondersteund besturings systeem.
 Vm's die zijn gemigreerd met behulp van Site Recovery | Ondersteund | Als een VMware-VM of fysieke machine met Site Recovery is gemigreerd naar Azure, moet u de oudere versie van Mobility service op de computer verwijderen en de computer opnieuw opstarten voordat u deze naar een andere Azure-regio repliceert.
 Azure RBAC-beleid | Niet ondersteund | Beleid voor toegangs beheer op basis van rollen (Azure RBAC) op Vm's wordt niet gerepliceerd naar de failover-VM in de doel regio.
-Extensies | Niet ondersteund | Uitbrei dingen worden niet gerepliceerd naar de failover-VM in de doel regio. Deze moet hand matig worden geïnstalleerd na een failover.
+Uitbreidingen | Niet ondersteund | Uitbrei dingen worden niet gerepliceerd naar de failover-VM in de doel regio. Deze moet hand matig worden geïnstalleerd na een failover.
 Proximity-plaatsings groepen | Ondersteund | Virtuele machines die zich in een proximity-plaatsings groep bevinden, kunnen worden beveiligd met Site Recovery.
 Tags  | Ondersteund | Door de gebruiker gegenereerde tags die worden toegepast op virtuele bron machines, worden overgebracht naar doel-virtual machines na testfailover of failover.
 
@@ -233,6 +233,7 @@ Standard SSD | Ondersteund |
 Redundantie | LRS en GRS worden ondersteund.<br/><br/> ZRS wordt niet ondersteund.
 Coole en warme opslag | Niet ondersteund | VM-schijven worden niet ondersteund in coole en warme opslag
 Opslagruimten | Ondersteund |
+NVMe-opslag interface | Niet ondersteund
 Versleuteling op rest (SSE) | Ondersteund | SSE is de standaard instelling voor opslag accounts.
 Versleuteling in rust (CMK) | Ondersteund | Zowel software-als HSM-sleutels worden ondersteund voor beheerde schijven
 Dubbele versleuteling bij rest | Ondersteund | Meer informatie over ondersteunde regio's voor [Windows](../virtual-machines/disk-encryption.md) en [Linux](../virtual-machines/disk-encryption.md)

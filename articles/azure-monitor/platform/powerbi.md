@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/01/2019
-ms.openlocfilehash: 53277f64c3d1b03572732157756da1fececbcd43
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 69f00416f180f83c761be5ed444e80903e9fcbb6
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96184566"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234440"
 ---
 # <a name="import-azure-monitor-log-data-into-power-bi"></a>Azure Monitor logboek gegevens importeren in Power BI
 
@@ -28,8 +28,11 @@ Als u gegevens wilt importeren uit een [log Analytics werk ruimte](manage-access
 ## <a name="export-query"></a>Query exporteren
 Maak eerst een [logboek query](../log-query/log-query-overview.md) die de gegevens retourneert die u wilt vullen met de Power bi gegevensset.  Vervolgens exporteert u die query naar de [Power query-taal (M)](/powerquery-m/power-query-m-language-specification) die kan worden gebruikt door Power bi Desktop.
 
+> [!WARNING]
+> Zorg ervoor dat u [uw query optimaliseert](../log-query/query-optimization.md) zodat deze niet veel tijd in beslag neemt of kan time-out oplopen. Let op de **time span** -waarde in de geëxporteerde query die de tijds duur definieert van de gegevens die door de query worden opgehaald. Gebruik de kleinste tijds duur die u nodig hebt om de hoeveelheid gegevens te beperken die door de query wordt geretourneerd.
+
 1. [Maak de logboek query in log Analytics](../log-query/log-analytics-tutorial.md) om de gegevens voor uw gegevensset uit te pakken.
-2. Selecteer **Export**  >  **Power bi query (M)** exporteren.  Hiermee exporteert u de query naar een tekst bestand met de naam **PowerBIQuery.txt**. 
+2. Selecteer   >  **Power bi query (M)** exporteren.  Hiermee exporteert u de query naar een tekst bestand met de naam **PowerBIQuery.txt**. 
 
     ![Zoek opdracht in Logboeken exporteren](media/powerbi/export-analytics.png)
 

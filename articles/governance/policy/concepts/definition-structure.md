@@ -3,12 +3,12 @@ title: Details van de structuur van de beleids definitie
 description: Hierin wordt beschreven hoe beleids definities worden gebruikt om conventies voor Azure-resources in uw organisatie in te richten.
 ms.date: 10/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 52adaf9522e4690c4c44a72ed47592f5b1d6471e
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 6e04551a2ef2f890844693fec71d2d3232a456f2
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883245"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220810"
 ---
 # <a name="azure-policy-definition-structure"></a>Structuur van Azure-beleidsdefinities
 
@@ -261,7 +261,7 @@ U kunt logische Opera tors nesten. In het volgende voor beeld ziet u een **niet*
 
 ### <a name="conditions"></a>Voorwaarden
 
-In een voor waarde wordt geëvalueerd of een **veld** of de **waarde** -accessor voldoet aan bepaalde criteria. De ondersteunde voor waarden zijn:
+Met een voor waarde wordt geëvalueerd of een waarde aan bepaalde criteria voldoet. De ondersteunde voor waarden zijn:
 
 - `"equals": "stringValue"`
 - `"notEquals": "stringValue"`
@@ -291,12 +291,9 @@ De waarde mag niet meer dan één Joker teken bevatten `*` .
 
 Wanneer u de voor waarden **match** en **notMatch** gebruikt, moet `#` u een cijfer, voor een letter, overeenkomen met een `?` `.` wille keurig teken en elk ander teken dat overeenkomt met het werkelijke teken. **Identieke** en **notMatch** zijn hoofdletter gevoelig. alle andere voor waarden die een _stringValue_ evalueren, zijn niet hoofdletter gevoelig. Hoofdletter gevoelige alternatieven zijn beschikbaar in **matchInsensitively** en **notMatchInsensitively**.
 
-In een **\[ \* \] alias** matrix veld waarde wordt elk element in de matrix afzonderlijk geëvalueerd met logische **en** tussen elementen. Zie [verwijzing naar de bron eigenschappen](../how-to/author-policies-for-arrays.md#referencing-array-resource-properties)van een matrix voor meer informatie.
-
 ### <a name="fields"></a>Velden
 
-Voor waarden worden gevormd door velden te gebruiken. Een veld komt overeen met de eigenschappen in de nettolading van de resource aanvraag en beschrijft de status van de resource.
-
+Voor waarden die evalueren of de waarden van eigenschappen in de resource-aanvraag lading voldoen aan bepaalde criteria kunnen worden gevormd met behulp van een **veld** expressie.
 De volgende velden worden ondersteund:
 
 - `name`
@@ -305,6 +302,7 @@ De volgende velden worden ondersteund:
 - `kind`
 - `type`
 - `location`
+  - Locatie velden worden genormaliseerd ter ondersteuning van verschillende indelingen. `East US 2`Wordt bijvoorbeeld beschouwd als gelijk aan `eastus2` .
   - Gebruik **Global** voor resources die de locatie neutraal.
 - `id`
   - Retourneert de resource-ID van de resource die wordt geëvalueerd.
@@ -324,6 +322,10 @@ De volgende velden worden ondersteund:
 
 > [!NOTE]
 > `tags.<tagName>`, `tags[tagName]` en `tags[tag.with.dots]` zijn nog steeds acceptabele manieren om een label veld te declareren. De voorkeurs expressies zijn echter die in de bovenstaande lijst.
+
+> [!NOTE]
+> In **veld** expressies die verwijzen naar een **\[ \* \] alias**, wordt elk element in de matrix afzonderlijk geëvalueerd met logische **en** tussen elementen.
+> Zie [verwijzing naar de bron eigenschappen](../how-to/author-policies-for-arrays.md#referencing-array-resource-properties)van een matrix voor meer informatie.
 
 #### <a name="use-tags-with-parameters"></a>Tags gebruiken met para meters
 
@@ -355,7 +357,7 @@ In het volgende voor beeld `concat` wordt gebruikt om een label veld te maken vo
 
 ### <a name="value"></a>Waarde
 
-Voor waarden kunnen ook worden gevormd met behulp van een **waarde**. **waarde** controleert de voor waarden op basis van [para meters](#parameters), [ondersteunde sjabloon functies](#policy-functions)of letterlijke tekens. **waarde** wordt gekoppeld aan elke ondersteunde [voor waarde](#conditions).
+Voor waarden die evalueren of een waarde aan bepaalde criteria voldoet, kunnen worden gevormd met behulp van een **waarde** -expressie. Waarden kunnen literals, de waarden van [para meters](#parameters)of de geretourneerde waarden van [ondersteunde sjabloon functies](#policy-functions)zijn.
 
 > [!WARNING]
 > Als het resultaat van een _sjabloonfunctie_ een fout is, mislukt de beleidsevaluatie. Een mislukte evaluatie is een impliciete **weigering**. Zie [sjabloonfouten vermijden](#avoiding-template-failures) voor meer informatie. Gebruik [enforcementMode](./assignment-structure.md#enforcement-mode) van **DoNotEnforce** om de impact van een mislukte evaluatie op nieuwe of bijgewerkte resources te voor komen tijdens het testen en valideren van een nieuwe beleids definitie.
@@ -440,9 +442,11 @@ Met de gereviseerde beleids regel `if()` controleert u de lengte van de **naam**
 
 ### <a name="count"></a>Count
 
-Voor waarden die tellen hoeveel leden van een matrix in de resource-nettolading voldoen aan een voor waarde-expressie, kunnen worden gevormd met de expressie **Count** . Bij algemene scenario's wordt gecontroleerd of ten minste één van ', ' precies één van ', ' alle of ' geen van ' de matrix leden voldoen aan de voor waarde. met **Count** wordt elk lid van een [ \[ \* \] alias](#understanding-the--alias) matrix geëvalueerd voor een voorwaarde expressie en worden de _werkelijke_ resultaten opgeteld, die vervolgens worden vergeleken met de operator voor expressies. Expressies met **aantallen** kunnen Maxi maal drie keer worden toegevoegd aan een enkele **policyRule** -definitie.
+Voor waarden die tellen hoeveel leden van een matrix voldoen aan bepaalde criteria, kunnen worden gevormd met behulp van een **Count** -expressie. Bij algemene scenario's wordt gecontroleerd of ten minste één van ', ' precies één van ', ' alle of ' geen van ' de matrix leden voldoen aan een voor waarde. Met **Count** wordt elk matrixlid geëvalueerd voor een voorwaarde expressie en worden de _werkelijke_ resultaten opgeteld, die vervolgens worden vergeleken met de expressie operator.
 
-De structuur van de **Count** -expressie is:
+#### <a name="field-count"></a>Aantal velden
+
+Tel hoeveel leden van een matrix in de aanvraag lading voldoen aan een voor waarde-expressie. De structuur van expressies voor **veld tellingen** is:
 
 ```json
 {
@@ -456,16 +460,62 @@ De structuur van de **Count** -expressie is:
 }
 ```
 
-De volgende eigenschappen worden gebruikt met **aantal**:
+De volgende eigenschappen worden gebruikt met het **aantal velden**:
 
-- **Count. Field** (vereist): bevat het pad naar de matrix en moet een matrix alias zijn. Als de matrix ontbreekt, wordt de expressie geëvalueerd naar _False_ zonder rekening te houden met de voor waarde-expressie.
-- **Count. where** (optioneel): de voor waarde-expressie voor het afzonderlijk evalueren van elke [ \[ \* \] alias](#understanding-the--alias) matrix lid van het **veld Count.**. Als deze eigenschap niet is ingevuld, worden alle matrix leden met het pad van ' Field ' geëvalueerd als _waar_. Elke [voor waarde](../concepts/definition-structure.md#conditions) kan worden gebruikt in deze eigenschap.
+- **Count. Field** (vereist): bevat het pad naar de matrix en moet een matrix alias zijn.
+- **Count. where** (optioneel): de voor waarde-expressie die afzonderlijk moet worden geëvalueerd voor elk lid van de [ \[ \* \] alias](#understanding-the--alias) matrix `count.field` . Als deze eigenschap niet is ingevuld, worden alle matrix leden met het pad van ' Field ' geëvalueerd als _waar_. Elke [voor waarde](../concepts/definition-structure.md#conditions) kan worden gebruikt in deze eigenschap.
   [Logische Opera tors](#logical-operators) kunnen worden gebruikt in deze eigenschap om complexe evaluatie vereisten te maken.
 - **\<condition\>** (vereist): de waarde wordt vergeleken met het aantal items dat aan het aantal is voldaan **. where** -voor waarde-expressie. Er moet een numerieke [voor waarde](../concepts/definition-structure.md#conditions) worden gebruikt.
 
-Zie [verwijzen naar eigenschappen van matrix bronnen](../how-to/author-policies-for-arrays.md#referencing-array-resource-properties)voor meer informatie over het werken met matrix eigenschappen in azure Policy, waaronder gedetailleerde uitleg over de evaluatie van de expressie Count.
+Expressies voor **veld tellingen** kunnen dezelfde veld matrix Maxi maal drie keer in één **policyRule** definitie opsommen.
 
-#### <a name="count-examples"></a>Aantal voor beelden
+Zie [verwijzen naar eigenschappen van matrix bronnen](../how-to/author-policies-for-arrays.md#referencing-array-resource-properties)voor meer informatie over het werken met matrix eigenschappen in azure Policy, waaronder gedetailleerde uitleg over het evalueren van de expressie **aantal veld tellingen** .
+
+#### <a name="value-count"></a>Aantal waarden
+Tel hoeveel leden van een matrix aan een voor waarde voldoen. De matrix kan een letterlijke matrix of een [verwijzing naar een matrix parameter](#using-a-parameter-value)zijn. De structuur van expressies voor **aantal waarden** is:
+
+```json
+{
+    "count": {
+        "value": "<literal array | array parameter reference>",
+        "name": "<index name>",
+        "where": {
+            /* condition expression */
+        }
+    },
+    "<condition>": "<compare the count of true condition expression array members to this value>"
+}
+```
+
+De volgende eigenschappen worden gebruikt met het **aantal waarden**:
+
+- **aantal. Value** (vereist): de matrix die moet worden geëvalueerd.
+- **Count.name** (vereist): de index naam, bestaande uit Engelse letters en cijfers. Hiermee wordt een naam gedefinieerd voor de waarde van het matrixlid geëvalueerd in de huidige iteratie. De naam wordt gebruikt voor het verwijzen naar de huidige waarde binnen de `count.where` voor waarde. Optioneel wanneer de **Count** -expressie zich niet in een onderliggend element van een andere **Count** -expressie bevindt. Indien niet opgegeven, wordt de index naam impliciet ingesteld op `"default"` .
+- **Count. where** (optioneel): de voor waarde-expressie die afzonderlijk moet worden geëvalueerd voor elk lid van de matrix van `count.value` . Als deze eigenschap niet is ingesteld, worden alle matrix leden geëvalueerd als _waar_. Elke [voor waarde](../concepts/definition-structure.md#conditions) kan worden gebruikt in deze eigenschap. [Logische Opera tors](#logical-operators) kunnen worden gebruikt in deze eigenschap om complexe evaluatie vereisten te maken. De waarde van het momenteel genummerde matrixlid is toegankelijk door de [huidige](#the-current-function) functie aan te roepen.
+- **\<condition\>** (vereist): de waarde wordt vergeleken met het aantal items dat voldoet aan de `count.where` voor waarde-expressie. Er moet een numerieke [voor waarde](../concepts/definition-structure.md#conditions) worden gebruikt.
+
+De volgende limieten worden afgedwongen:
+- Maxi maal tien **waarden** van expressies kunnen worden gebruikt in één **policyRule** definitie.
+- Elke expressie voor **aantal waarden** kan maxi maal 100 iteraties uitvoeren. Dit nummer bevat het aantal iteraties dat wordt uitgevoerd door de expressies voor het **aantal bovenliggende waarden** .
+
+#### <a name="the-current-function"></a>De huidige functie
+
+De `current()` functie is alleen beschikbaar in de `count.where` voor waarde. Het retourneert de waarde van het matrixlid dat momenteel wordt opgesomd door de evaluatie van de **telling** -expressie.
+
+**Gebruik van aantal waarden**
+
+- `current(<index name defined in count.name>)`. Bijvoorbeeld: `current('arrayMember')`.
+- `current()`. Alleen toegestaan als de expressie voor **aantal waarden** geen onderliggend item is van een andere **Count** -expressie. Retourneert dezelfde waarde als hierboven.
+
+Als de waarde die door de aanroep wordt geretourneerd een object is, worden eigenschaps-toegangs rechten ondersteund. Bijvoorbeeld: `current('objectArrayMember').property`.
+
+**Gebruik van veld aantal**
+
+- `current(<the array alias defined in count.field>)`. Bijvoorbeeld `current('Microsoft.Test/resource/enumeratedArray[*]')`.
+- `current()`. Alleen toegestaan als de expressie **aantal velden** is niet een onderliggend element van een andere **Count** -expressie. Retourneert dezelfde waarde als hierboven.
+- `current(<alias of a property of the array member>)`. Bijvoorbeeld `current('Microsoft.Test/resource/enumeratedArray[*].property')`.
+
+#### <a name="field-count-examples"></a>Voor beelden van veld tellingen
 
 Voor beeld 1: controleren of een matrix leeg is
 
@@ -550,18 +600,162 @@ Voor beeld 5: Controleer of ten minste één matrixlid overeenkomt met meerdere 
 }
 ```
 
-Voor beeld 6: gebruik de `field()` functie binnen de `where` voor waarden om toegang te krijgen tot de letterlijke waarde van het lid van de huidige geëvalueerde matrix. Met deze voor waarde wordt gecontroleerd of er geen beveiligings regels met een _prioriteits_ waarde met een even getal zijn.
+Voor beeld 6: gebruik de `current()` functie binnen de `where` voor waarden om toegang te krijgen tot de waarde van het momenteel genummerde matrixlid in een sjabloon functie. Met deze voor waarde wordt gecontroleerd of een virtueel netwerk een adres voorvoegsel bevat dat zich niet in het CIDR-bereik 10.0.0.0/24 bevindt.
 
 ```json
 {
     "count": {
-        "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]",
+        "field": "Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]",
         "where": {
-          "value": "[mod(first(field('Microsoft.Network/networkSecurityGroups/securityRules[*].priority')), 2)]",
-          "equals": 0
+          "value": "[ipRangeContains('10.0.0.0/24', current('Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]'))]",
+          "equals": false
         }
     },
     "greater": 0
+}
+```
+
+Voor beeld 7: gebruik de `field()` functie binnen de `where` voor waarden om toegang te krijgen tot de waarde van het momenteel genummerde matrixlid. Met deze voor waarde wordt gecontroleerd of een virtueel netwerk een adres voorvoegsel bevat dat zich niet in het CIDR-bereik 10.0.0.0/24 bevindt.
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]",
+        "where": {
+          "value": "[ipRangeContains('10.0.0.0/24', first(field(('Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]')))]",
+          "equals": false
+        }
+    },
+    "greater": 0
+}
+```
+
+#### <a name="value-count-examples"></a>Voor beelden van aantal waarden
+
+Voor beeld 1: controleren of de resource naam overeenkomt met een van de opgegeven naam patronen.
+
+```json
+{
+    "count": {
+        "value": [ "prefix1_*", "prefix2_*" ],
+        "name": "pattern",
+        "where": {
+            "field": "name",
+            "like": "[current('pattern')]"
+        }
+    },
+    "greater": 0
+}
+```
+
+Voor beeld 2: controleren of de resource naam overeenkomt met een van de opgegeven naam patronen. De `current()` functie geeft geen index naam op. De uitkomst is hetzelfde als in het vorige voor beeld.
+
+```json
+{
+    "count": {
+        "value": [ "prefix1_*", "prefix2_*" ],
+        "where": {
+            "field": "name",
+            "like": "[current()]"
+        }
+    },
+    "greater": 0
+}
+```
+
+Voor beeld 3: controleren of de resource naam overeenkomt met een van de opgegeven naam patronen die door een matrix parameter worden geleverd.
+
+```json
+{
+    "count": {
+        "value": "[parameters('namePatterns')]",
+        "name": "pattern",
+        "where": {
+            "field": "name",
+            "like": "[current('pattern')]"
+        }
+    },
+    "greater": 0
+}
+```
+
+Voor beeld 4: Controleer of een van de adres voorvoegsels van het virtuele netwerk niet is opgenomen in de lijst met goedgekeurde voor voegsels.
+
+```json
+{
+    "count": {
+        "field": "Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]",
+        "where": {
+            "count": {
+                "value": "[parameters('approvedPrefixes')]",
+                "name": "approvedPrefix",
+                "where": {
+                    "value": "[ipRangeContains(current('approvedPrefix'), current('Microsoft.Network/virtualNetworks/addressSpace.addressPrefixes[*]'))]",
+                    "equals": true
+                },
+            },
+            "equals": 0
+        }
+    },
+    "greater": 0
+}
+```
+
+Voor beeld 5: Controleer of alle gereserveerde NSG-regels zijn gedefinieerd in een NSG. De eigenschappen van de gereserveerde NSG-regels worden gedefinieerd in een matrix parameter met objecten.
+
+Parameter waarde:
+
+```json
+[
+    {
+        "priority": 101,
+        "access": "deny",
+        "direction": "inbound",
+        "destinationPortRange": 22
+    },
+    {
+        "priority": 102,
+        "access": "deny",
+        "direction": "inbound",
+        "destinationPortRange": 3389
+    }
+]
+```
+
+Verslaggev
+```json
+{
+    "count": {
+        "value": "[parameters('reservedNsgRules')]",
+        "name": "reservedNsgRule",
+        "where": {
+            "count": {
+                "field": "Microsoft.Network/networkSecurityGroups/securityRules[*]",
+                "where": {
+                    "allOf": [
+                        {
+                            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].priority",
+                            "equals": "[current('reservedNsgRule').priority]"
+                        },
+                        {
+                            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].access",
+                            "equals": "[current('reservedNsgRule').access]"
+                        },
+                        {
+                            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].direction",
+                            "equals": "[current('reservedNsgRule').direction]"
+                        },
+                        {
+                            "field": "Microsoft.Network/networkSecurityGroups/securityRules[*].destinationPortRange",
+                            "equals": "[current('reservedNsgRule').destinationPortRange]"
+                        }
+                    ]
+                }
+            },
+            "equals": 1
+        }
+    },
+    "equals": "[length(parameters('reservedNsgRules'))]"
 }
 ```
 
@@ -627,7 +821,6 @@ De volgende functies zijn alleen beschikbaar in beleids regels:
   }
   ```
 
-
 - `ipRangeContains(range, targetRange)`
     - **Range**: [required] string-teken reeks die een bereik van IP-adressen aangeeft.
     - **targetRange**: [vereist] teken reeks-teken reeks die een bereik van IP-adressen aangeeft.
@@ -639,6 +832,8 @@ De volgende functies zijn alleen beschikbaar in beleids regels:
     - CIDR-bereik (voor beelden: `10.0.0.0/24` , `2001:0DB8::/110` )
     - Het bereik dat is gedefinieerd door de begin-en eind-IP-adressen (voor beelden: `192.168.0.1-192.168.0.9` , `2001:0DB8::-2001:0DB8::3:FFFF` )
 
+- `current(indexName)`
+    - Een speciale functie die alleen in [expressies in aantal](#count)kan worden gebruikt.
 
 #### <a name="policy-function-example"></a>Voor beeld van beleids functie
 

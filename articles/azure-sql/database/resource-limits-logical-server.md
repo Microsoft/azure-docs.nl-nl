@@ -10,13 +10,13 @@ ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan,moslake,josack
-ms.date: 09/15/2020
-ms.openlocfilehash: 9dfe70cf6c91a0c12604f91e583a9a4eb9b4e088
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 1/14/2021
+ms.openlocfilehash: e21a5a5be03ffa4ada362247c488ee7d12bd50f7
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308826"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222221"
 ---
 # <a name="resource-limits-for-azure-sql-database-and-azure-synapse-analytics-servers"></a>Resource limieten voor Azure SQL Database en Azure Synapse Analytics-servers
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -80,7 +80,7 @@ Wanneer u het gebruik van hoge sessies of werk nemers ondervindt, kunt u de volg
 - De servicelaag of de reken grootte van de data base of elastische pool wordt verhoogd. Zie bronnen van [één data base schalen](single-database-scale.md) en [elastische pool resources schalen](elastic-pool-scale.md).
 - Het optimaliseren van query's om het resource gebruik van elke query te verminderen als de oorzaak van het verhoogde werk nemer is vanwege de conflicten voor reken bronnen. Zie [Afstemmen van query's en query-hints](performance-guidance.md#query-tuning-and-hinting) voor meer informatie.
 - De instelling van de [MAXDOP](/sql/database-engine/configure-windows/configure-the-max-degree-of-parallelism-server-configuration-option#Guidelines) (maximale mate van parallellisme) verlagen.
-- Optimaliseer de query werk belasting zodat het aantal keren en de duur van query's wordt beperkt.
+- Optimaliseer de query werk belasting zodat het aantal keren en de duur van query's wordt beperkt. Zie [problemen met Azure SQL-blok kades begrijpen en oplossen](understand-resolve-blocking.md)voor meer informatie.
 
 ### <a name="memory"></a>Geheugen
 
@@ -158,7 +158,7 @@ De werkelijke generatie tarieven voor logboek registratie die tijdens de uitvoer
 
 De verkeers vormgeving van de logboek frequentie wordt geoppereerd via de volgende wacht typen (beschikbaar in de [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) en [sys.dm_os_wait_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql) weer gaven):
 
-| Wacht type | Opmerkingen |
+| Wacht type | Notities |
 | :--- | :--- |
 | LOG_RATE_GOVERNOR | Data base beperken |
 | POOL_LOG_RATE_GOVERNOR | Beperking van groepen |

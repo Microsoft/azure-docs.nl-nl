@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2019
 ms.author: allensu
-ms.openlocfilehash: 9b5fc9e4118d98905138b7f205f61d85a96b60b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 76f92b5da2331748fbbbfc68f1e456fd50dd71ee
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88035464"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223020"
 ---
 # <a name="associate-a-public-ip-address-to-a-virtual-machine"></a>Een openbaar IP-adres koppelen aan een virtuele machine
 
@@ -30,7 +30,7 @@ U kunt de [Azure Portal](#azure-portal), de Azure- [opdracht regel interface](#a
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Blader naar of zoek naar de virtuele machine waaraan u het open bare IP-adres wilt toevoegen en selecteer deze.
-3. Onder **instellingen**selecteert u **netwerken**en selecteert u vervolgens de netwerk interface waaraan u het open bare IP-adres wilt toevoegen, zoals wordt weer gegeven in de volgende afbeelding:
+3. Onder **instellingen** selecteert u **netwerken** en selecteert u vervolgens de netwerk interface waaraan u het open bare IP-adres wilt toevoegen, zoals wordt weer gegeven in de volgende afbeelding:
 
    ![Netwerk interface selecteren](./media/associate-public-ip-address-vm/select-nic.png)
 
@@ -44,7 +44,7 @@ U kunt de [Azure Portal](#azure-portal), de Azure- [opdracht regel interface](#a
    > [!NOTE]
    > Open bare IP-adressen zijn gekoppeld aan IP-configuraties voor een netwerk interface. In de vorige afbeelding heeft de netwerk interface één IP-configuratie. Als de netwerk interface meerdere IP-configuraties heeft, worden deze allemaal weer gegeven in de lijst en selecteert u de IP-configuratie waaraan u het open bare IP-adres wilt koppelen.
 
-5. Selecteer **ingeschakeld**en selecteer vervolgens **IP-adres (*vereiste instellingen configureren*)**. Kies een bestaand openbaar IP-adres, waarmee automatisch het vak **openbaar IP-adres kiezen** wordt gesloten. Als er geen beschik bare open bare IP-adressen worden weer gegeven, moet u er een maken. Zie [een openbaar IP-adres maken](virtual-network-public-ip-address.md#create-a-public-ip-address)voor meer informatie. Selecteer **Opslaan**, zoals wordt weer gegeven in de volgende afbeelding en sluit het vak voor de IP-configuratie.
+5. Selecteer **ingeschakeld** en selecteer vervolgens **IP-adres (*vereiste instellingen configureren*)**. Kies een bestaand openbaar IP-adres, waarmee automatisch het vak **openbaar IP-adres kiezen** wordt gesloten. Als er geen beschik bare open bare IP-adressen worden weer gegeven, moet u er een maken. Zie [een openbaar IP-adres maken](virtual-network-public-ip-address.md#create-a-public-ip-address)voor meer informatie. Selecteer **Opslaan**, zoals wordt weer gegeven in de volgende afbeelding en sluit het vak voor de IP-configuratie.
 
    ![Openbaar IP-adres inschakelen](./media/associate-public-ip-address-vm/enable-public-ip-address.png)
 
@@ -122,7 +122,7 @@ Installeer [Power shell](/powershell/azure/install-az-ps)of gebruik de Azure Clo
 1. Als u Power shell lokaal gebruikt, meldt u zich aan bij Azure met `Connect-AzAccount` .
 2. Een openbaar IP-adres is gekoppeld aan een IP-configuratie van een netwerk interface die is gekoppeld aan een virtuele machine. Gebruik de opdrachten [Get-AzVirtualNetwork](/powershell/module/Az.Network/Get-AzVirtualNetwork) en [Get-AzVirtualNetworkSubnetConfig](/powershell/module/Az.Network/Get-AzVirtualNetworkSubnetConfig) voor het virtuele netwerk en het subnet waarin de netwerk interface zich bevindt. Gebruik vervolgens de opdracht [Get-AzNetworkInterface](/powershell/module/Az.Network/Get-AzNetworkInterface) voor het ophalen van een netwerk interface en de opdracht [Get-AzPublicIpAddress](/powershell/module/az.network/get-azpublicipaddress) om een bestaand openbaar IP-adres op te halen. Gebruik vervolgens de opdracht [set-AzNetworkInterfaceIpConfig](/powershell/module/Az.Network/Set-AzNetworkInterfaceIpConfig) om het open bare IP-adres te koppelen aan de IP-configuratie en de [set-AzNetworkInterface](/powershell/module/Az.Network/Set-AzNetworkInterface) -opdracht om de nieuwe IP-configuratie te schrijven naar de netwerk interface.
 
-   In het volgende voor beeld wordt een bestaand openbaar IP-adres met de naam *myVMPublicIP* gekoppeld aan de IP-configuratie met de naam *ipconfigmyVM* van een bestaande netwerk interface met de naam *myVMVMNic* die zich in een subnet met de naam *myVMSubnet* in een virtueel netwerk met de naam *myVMVNet*bevindt. Alle resources bevinden zich in een resource groep met de naam *myResourceGroup*.
+   In het volgende voor beeld wordt een bestaand openbaar IP-adres met de naam *myVMPublicIP* gekoppeld aan de IP-configuratie met de naam *ipconfigmyVM* van een bestaande netwerk interface met de naam *myVMVMNic* die zich in een subnet met de naam *myVMSubnet* in een virtueel netwerk met de naam *myVMVNet* bevindt. Alle resources bevinden zich in een resource groep met de naam *myResourceGroup*.
   
    ```azurepowershell-interactive
    $vnet = Get-AzVirtualNetwork -Name myVMVNet -ResourceGroupName myResourceGroup
@@ -214,4 +214,4 @@ Voordat u verbinding kunt maken met het open bare IP-adres van Internet, moet u 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Sta binnenkomend Internet verkeer naar uw virtuele machine toe met een netwerk beveiligings groep. Zie [werken met netwerk beveiligings groepen](manage-network-security-group.md#work-with-network-security-groups)voor meer informatie over het maken van een netwerk beveiligings groep. Zie [beveiligings groepen](security-overview.md)voor meer informatie over netwerk beveiligings groepen.
+Sta binnenkomend Internet verkeer naar uw virtuele machine toe met een netwerk beveiligings groep. Zie [werken met netwerk beveiligings groepen](manage-network-security-group.md#work-with-network-security-groups)voor meer informatie over het maken van een netwerk beveiligings groep. Zie [beveiligings groepen](./network-security-groups-overview.md)voor meer informatie over netwerk beveiligings groepen.

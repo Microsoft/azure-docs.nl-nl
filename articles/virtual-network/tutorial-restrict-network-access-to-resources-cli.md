@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 03/14/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 1a1eab081a7c1e83a57ef4735c6eb5248d92defc
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: b4f9dcf6fd43749cdf71098b3cd0da8a42020f6d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94734103"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221762"
 ---
 # <a name="restrict-network-access-to-paas-resources-with-virtual-network-service-endpoints-using-the-azure-cli"></a>Netwerk toegang tot PaaS-resources beperken met virtuele netwerk service-eind punten met behulp van de Azure CLI
 
@@ -39,7 +39,7 @@ Met service-eindpunten voor virtuele netwerken kunt u de netwerktoegang tot somm
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
 
-- Voor dit artikel is versie 2.0.28 of hoger van de Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+- Voor dit artikel is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
 ## <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
@@ -120,7 +120,7 @@ az network nsg rule create \
   --destination-port-range "*"
 ```
 
-Elke netwerk beveiligings groep bevat verschillende [standaard beveiligings regels](security-overview.md#default-security-rules). De volgende regel overschrijft een standaard beveiligings regel die uitgaande toegang tot alle open bare IP-adressen toestaat. De `destination-address-prefix "Internet"` optie weigert uitgaande toegang tot alle open bare IP-adressen. De vorige regel overschrijft deze regel vanwege de hogere prioriteit, waardoor toegang tot de open bare IP-adressen van Azure Storage mogelijk is.
+Elke netwerk beveiligings groep bevat verschillende [standaard beveiligings regels](./network-security-groups-overview.md#default-security-rules). De volgende regel overschrijft een standaard beveiligings regel die uitgaande toegang tot alle open bare IP-adressen toestaat. De `destination-address-prefix "Internet"` optie weigert uitgaande toegang tot alle open bare IP-adressen. De vorige regel overschrijft deze regel vanwege de hogere prioriteit, waardoor toegang tot de open bare IP-adressen van Azure Storage mogelijk is.
 
 ```azurecli-interactive
 az network nsg rule create \
@@ -158,7 +158,7 @@ az network nsg rule create \
 
 De stappen die nodig zijn om netwerktoegang te beperken tot resources die zijn gemaakt met Azure-services waarvoor service-eindpunten zijn ingeschakeld, verschillen per service. Zie de documentatie voor afzonderlijke services voor specifieke stappen voor elke service. De rest van dit artikel bevat stappen voor het beperken van de netwerk toegang voor een Azure Storage-account, zoals een voor beeld.
 
-### <a name="create-a-storage-account"></a>Create a storage account
+### <a name="create-a-storage-account"></a>Een opslagaccount maken
 
 Maak een Azure-opslag account met [AZ Storage account create](/cli/azure/storage/account). Vervang door `<replace-with-your-unique-storage-account-name>` een naam die uniek is voor alle Azure-locaties, tussen 3-24 tekens lang, met alleen cijfers en kleine letters.
 

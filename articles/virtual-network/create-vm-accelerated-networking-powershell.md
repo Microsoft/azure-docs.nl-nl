@@ -14,14 +14,14 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 04/15/2020
 ms.author: gsilva
-ms.openlocfilehash: fd50af98fe0d7f20273c45e2b86c18215a3626f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3728a2b67529bab0900d42b3e39140d9329bc83
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87289630"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223632"
 ---
-# <a name="create-a-windows-vm-with-accelerated-networking-using-azure-powershell"></a>Een Windows-VM maken met versneld netwerken met behulp van Azure PowerShell
+# <a name="create-a-windows-vm-with-accelerated-networking-using-azure-powershell"></a>Een Windows-VM met versneld netwerken maken met behulp van Azure PowerShell
 
 In deze zelf studie leert u hoe u een virtuele Windows-machine (VM) kunt maken met versneld netwerken.
 
@@ -65,7 +65,7 @@ Versnelde netwerken worden ondersteund in de meeste algemene doel stellingen en 
 
 Op instanties die HyperThreading ondersteunen, wordt versneld netwerken ondersteund op VM-exemplaren met vier of meer Vcpu's. Ondersteunde reeksen zijn: D/Dsv3, D/Dsv4, da/Dasv4, E/Esv3, EA/Easv4, Fsv2, Lsv2, MS/MMS en MS/Mmsv2.
 
-Zie [grootten voor virtuele Windows-machines in azure](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over VM-exemplaren.
+Zie [grootten voor virtuele Windows-machines in azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over VM-exemplaren.
 
 ### <a name="custom-images"></a>Aangepaste installatiekopieën
 
@@ -85,7 +85,7 @@ Virtuele machines (klassiek) kunnen niet worden geïmplementeerd met versneld ne
 
 ## <a name="vm-creation-using-the-portal"></a>VM maken met behulp van de portal
 
-Hoewel dit artikel stappen bevat voor het maken van een virtuele machine met versneld netwerken met behulp van Azure PowerShell, kunt u ook [de Azure Portal gebruiken om een VM te maken](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) die versneld netwerken mogelijk maakt. Wanneer u een virtuele machine in de portal maakt, kiest u op de pagina **een VM maken** het tabblad **netwerk** . Dit tabblad bevat een optie voor **versneld netwerken**. Als u een [ondersteund besturings systeem](#supported-operating-systems) en VM- [grootte](#supported-vm-instances)hebt gekozen, wordt deze optie automatisch ingesteld op **aan**. Anders is de optie ingesteld op **uit**en in azure wordt de reden weer gegeven waarom deze niet kan worden ingeschakeld.
+Hoewel dit artikel stappen bevat voor het maken van een virtuele machine met versneld netwerken met behulp van Azure PowerShell, kunt u ook [de Azure Portal gebruiken om een VM te maken](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) die versneld netwerken mogelijk maakt. Wanneer u een virtuele machine in de portal maakt, kiest u op de pagina **een VM maken** het tabblad **netwerk** . Dit tabblad bevat een optie voor **versneld netwerken**. Als u een [ondersteund besturings systeem](#supported-operating-systems) en VM- [grootte](#supported-vm-instances)hebt gekozen, wordt deze optie automatisch ingesteld op **aan**. Anders is de optie ingesteld op **uit** en in azure wordt de reden weer gegeven waarom deze niet kan worden ingeschakeld.
 
 > [!NOTE]
 > Alleen ondersteunde besturings systemen kunnen worden ingeschakeld via de portal. Als u een aangepaste installatie kopie gebruikt en uw installatie kopie versneld netwerken ondersteunt, maakt u uw virtuele machine met CLI of Power shell. 
@@ -104,7 +104,7 @@ In de gegevens van de netwerk interface, naast het label **versneld netwerk** , 
 
 Installeer [Azure PowerShell](/powershell/azure/install-az-ps) versie 1.0.0 of hoger voordat u doorgaat. Voer uit om de momenteel geïnstalleerde versie te vinden `Get-Module -ListAvailable Az` . Als u wilt installeren of upgraden, installeert u de nieuwste versie van de AZ-module vanaf de [PowerShell Gallery](https://www.powershellgallery.com/packages/Az). Meld u in een Power shell-sessie aan bij een Azure [-account met Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount).
 
-Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *myNic*en *myVM*.
+Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waarden. Voor beelden van parameter namen zijn *myResourceGroup*, *myNic* en *myVM*.
 
 ### <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
@@ -134,7 +134,7 @@ Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waar
 
 ### <a name="create-a-network-security-group"></a>Een netwerkbeveiligingsgroep maken
 
-1. Maak een regel voor de netwerk beveiligings groep met [New-AzNetworkSecurityRuleConfig](/powershell/module/az.Network/New-azNetworkSecurityRuleConfig).
+1. Maak een netwerkbeveiligingsgroepsregel met [New-AzNetworkSecurityRuleConfig](/powershell/module/az.Network/New-azNetworkSecurityRuleConfig).
 
     ```azurepowershell
     $rdp = New-AzNetworkSecurityRuleConfig `
@@ -208,7 +208,7 @@ Vervang in de volgende voor beelden voorbeeld parameter namen door uw eigen waar
     $vmConfig = New-AzVMConfig -VMName "myVm" -VMSize "Standard_DS4_v2"
     ```
 
-    Zie [Windows VM-grootten](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor een lijst met alle VM-grootten en-kenmerken.
+    Zie [Windows VM-grootten](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor een lijst met alle VM-grootten en-kenmerken.
 
 3. Maak de rest van uw VM-configuratie met [set-AzVMOperatingSystem](/powershell/module/az.compute/set-azvmoperatingsystem) en [set-AzVMSourceImage](/powershell/module/az.compute/set-azvmsourceimage). Met de volgende opdracht maakt u een virtuele machine met Windows Server 2016:
 
@@ -246,9 +246,9 @@ Nadat u de virtuele machine in azure hebt gemaakt, maakt u verbinding met de vir
 
 2. Kies uw nieuwe VM in de lijst met virtuele machines.
 
-3. Als de **status** van de virtuele machine wordt **gemaakt**in de VM-overzichts pagina, wacht u totdat de virtuele machine is gemaakt door Azure. De **status** wordt gewijzigd in **actief** nadat het maken van de VM is voltooid.
+3. Als de **status** van de virtuele machine wordt **gemaakt** in de VM-overzichts pagina, wacht u totdat de virtuele machine is gemaakt door Azure. De **status** wordt gewijzigd in **actief** nadat het maken van de VM is voltooid.
 
-4. Selecteer op de werk balk van de VM-overzicht de optie RDP-bestand voor het **verbinding maken**  >  **RDP**  >  **Download RDP File**.
+4. Selecteer op de werk balk van de VM-overzicht de optie RDP-bestand voor het **verbinding maken**  >    >  .
 
 5. Open het RDP-bestand en meld u vervolgens aan bij de virtuele machine met de referenties die u hebt opgegeven in de sectie [een virtuele machine maken en de netwerk interface koppelen](#create-a-vm-and-attach-the-network-interface) . Als u nooit hebt verbonden met een Windows-VM in azure, raadpleegt u [verbinding maken met de virtuele machine](../virtual-machines/windows/quick-create-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json#connect-to-virtual-machine).
 

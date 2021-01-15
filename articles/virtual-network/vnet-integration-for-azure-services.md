@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 12/01/2020
 ms.author: kumud
-ms.openlocfilehash: a25d6d0d1990682287b5962a7bd93a0c525db133
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: a29454f09268406511730c63dcc3bc3063b909c6
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882361"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218651"
 ---
 # <a name="integrate-azure-services-with-virtual-networks-for-network-isolation"></a>Azure-Services integreren met virtuele netwerken voor netwerk isolatie
 
@@ -66,7 +66,7 @@ Zie [service-eind punten voor virtueel netwerk](virtual-network-service-endpoint
 
 ## <a name="service-tags"></a>Servicetags
 
-Een servicetag vertegenwoordigt een groep IP-adres voorvoegsels van een bepaalde Azure-service. Met Service tags kunt u netwerk toegangs beheer definiëren voor [netwerk beveiligings groepen](https://docs.microsoft.com/azure/virtual-network/security-overview#security-rules) of [Azure firewall](https://docs.microsoft.com/azure/firewall/service-tags). Door de naam van de service label (bijvoorbeeld AzureEventGrid) op te geven in het juiste bron-of doel veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren.
+Een servicetag vertegenwoordigt een groep IP-adres voorvoegsels van een bepaalde Azure-service. Met Service tags kunt u netwerk toegangs beheer definiëren voor [netwerk beveiligings groepen](./network-security-groups-overview.md#security-rules) of [Azure firewall](../firewall/service-tags.md). Door de naam van de service label (bijvoorbeeld AzureEventGrid) op te geven in het juiste bron-of doel veld van een regel, kunt u het verkeer voor de bijbehorende service toestaan of weigeren.
 
 ![Verkeer toestaan of weigeren met Service Tags](./media/network-isolation/service-tags.png)
 
@@ -78,4 +78,4 @@ Zie [service Tags Overview](service-tags-overview.md) (Engelstalig) voor meer in
 
 - Meer informatie over het [integreren van uw app met een Azure-netwerk](../app-service/web-sites-integrate-with-vnet.md).
 - Meer informatie over het [beperken van toegang tot resources met behulp van service Tags](tutorial-restrict-network-access-to-resources.md).
-- Meer informatie over hoe u [privé verbinding maakt met een Azure Cosmos-account met behulp van een persoonlijke Azure-koppeling](../private-link/create-private-endpoint-cosmosdb-portal.md).
+- Meer informatie over hoe u [privé verbinding maakt met een Azure Cosmos-account met behulp van een persoonlijke Azure-koppeling](../private-link/tutorial-private-endpoint-cosmosdb-portal.md).

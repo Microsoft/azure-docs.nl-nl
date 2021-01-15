@@ -9,14 +9,14 @@ ms.topic: reference
 ms.date: 08/12/2020
 ms.author: anfeldma
 ms.custom: devx-track-python
-ms.openlocfilehash: b69b3a3888b2d6e19b8eaa92ba9b2fedf0e15545
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: 27bcb220c67392661cc1b2875823abdca4593bd4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93091115"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220946"
 ---
-# <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB python SDK voor SQL API: release opmerkingen en bronnen
+# <a name="azure-cosmos-db-python-sdk-for-sql-api-release-notes-and-resources"></a>Azure Cosmos DB Python SDK voor SQL API: Opmerkingen bij de release en resources
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
 
 > [!div class="op_single_selector"]
@@ -320,34 +320,34 @@ Versie 4.0.0 B1 is de eerste preview van onze inspanningen voor het maken van ee
 Micro soft biedt een kennisgeving van ten minste **twaalf maanden** voor het buiten gebruik stellen van een SDK om de overgang naar een nieuwere/ondersteunde versie te versoepelen. Nieuwe functies en functionaliteiten en optimaliseringen worden alleen toegevoegd aan de huidige SDK. Het wordt daarom aangeraden altijd zo snel mogelijk een upgrade naar de nieuwste SDK-versie uit te voeren.
 
 > [!WARNING]
-> Na 31 augustus 2022 worden er bij Azure Cosmos DB geen problemen meer opgelost, worden nieuwe functies toegevoegd en wordt ondersteuning geboden voor versie 1. x of 2. x van de Azure Cosmos DB python SDK voor SQL API. Als u liever geen upgrade uitvoert, worden aanvragen die zijn verzonden vanaf versie 1. x en 2. x van de SDK nog steeds door de Azure Cosmos DB-service geleverd.
+> Na 31 augustus 2022 doen Azure Cosmos DB geen problemen meer oplossen of bieden we ondersteuning voor versie 1. x en 2. x van de Azure Cosmos DB python SDK voor SQL API. Als u liever geen upgrade uitvoert, worden aanvragen die zijn verzonden vanaf versie 1. x en 2. x van de SDK nog steeds door de Azure Cosmos DB-service geleverd.
 
 | Versie | Releasedatum | Buitengebruikstellingsdatum |
 | --- | --- | --- |
 | [4.0.0](#400) |20 mei 2020 |--- |
 | [3.0.2](#302) |15 november 2018 |--- |
 | [3.0.1](#301) |Okt 04, 2018 |--- |
-| [2.3.3](#233) |Sept 08, 2018 |30 augustus 2020 |
-| [2.3.2](#232) |08 mei 2018 |30 augustus 2020 |
-| [2.3.1](#231) |21 december 2017 |30 augustus 2020 |
-| [2.3.0](#230) |10 november 2017 |30 augustus 2020 |
-| [2.2.1](#221) |29 sep, 2017 |30 augustus 2020 |
-| [2.2.0](#220) |10 mei 2017 |30 augustus 2020 |
-| [2.1.0](#210) |01 mei 2017 |30 augustus 2020 |
-| [2.0.1](#201) |30 oktober 2016 |30 augustus 2020 |
-| [2.0.0](#200) |29 september 2016 |30 augustus 2020 |
-| [1.9.0](#190) |Juli 07, 2016 |30 augustus 2020 |
-| [1.8.0](#180) |14 juni 2016 |30 augustus 2020 |
-| [1.7.0](#170) |26 april 2016 |30 augustus 2020 |
-| [1.6.1](#161) |08 april 2016 |30 augustus 2020 |
-| [1.6.0](#160) |29 maart 2016 |30 augustus 2020 |
-| [1.5.0](#150) |03 januari 2016 |30 augustus 2020 |
-| [1.4.2](#142) |06 oktober 2015 |30 augustus 2020 |
-| 1.4.1 |06 oktober 2015 |30 augustus 2020 |
-| [1.2.0](#120) |06 van 6 augustus 2015 |30 augustus 2020 |
-| [1.1.0](#110) |9 juli 2015 |30 augustus 2020 |
-| [1.0.1](#101) |25 mei 2015 |30 augustus 2020 |
-| 1.0.0 |7 april 2015 |30 augustus 2020 |
+| [2.3.3](#233) |Sept 08, 2018 |31 augustus 2022 |
+| [2.3.2](#232) |08 mei 2018 |31 augustus 2022 |
+| [2.3.1](#231) |21 december 2017 |31 augustus 2022 |
+| [2.3.0](#230) |10 november 2017 |31 augustus 2022 |
+| [2.2.1](#221) |29 sep, 2017 |31 augustus 2022 |
+| [2.2.0](#220) |10 mei 2017 |31 augustus 2022 |
+| [2.1.0](#210) |01 mei 2017 |31 augustus 2022 |
+| [2.0.1](#201) |30 oktober 2016 |31 augustus 2022 |
+| [2.0.0](#200) |29 september 2016 |31 augustus 2022 |
+| [1.9.0](#190) |Juli 07, 2016 |31 augustus 2022 |
+| [1.8.0](#180) |14 juni 2016 |31 augustus 2022 |
+| [1.7.0](#170) |26 april 2016 |31 augustus 2022 |
+| [1.6.1](#161) |08 april 2016 |31 augustus 2022 |
+| [1.6.0](#160) |29 maart 2016 |31 augustus 2022 |
+| [1.5.0](#150) |03 januari 2016 |31 augustus 2022 |
+| [1.4.2](#142) |06 oktober 2015 |31 augustus 2022 |
+| 1.4.1 |06 oktober 2015 |31 augustus 2022 |
+| [1.2.0](#120) |06 van 6 augustus 2015 |31 augustus 2022 |
+| [1.1.0](#110) |9 juli 2015 |31 augustus 2022 |
+| [1.0.1](#101) |25 mei 2015 |31 augustus 2022 |
+| 1.0.0 |7 april 2015 |31 augustus 2022 |
 | 0.9.4-prelease |14 januari 2015 |29 februari 2016 |
 | 0.9.3-prelease |09 december 2014 |29 februari 2016 |
 | 0.9.2-prelease |25 november 2014 |29 februari 2016 |

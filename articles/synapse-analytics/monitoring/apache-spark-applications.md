@@ -9,12 +9,12 @@ ms.subservice: monitoring
 ms.date: 04/15/2020
 ms.author: mahi
 ms.reviewer: mahi
-ms.openlocfilehash: 16b37258d922db59f520d4e30c45773f6d1108cf
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 2f9fa6e7ef9a7ee8ea7dd2a09622f26f6fd9739e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93341037"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223122"
 ---
 # <a name="use-synapse-studio-to-monitor-your-apache-spark-applications"></a>Synapse Studio gebruiken om uw Apache Spark-toepassingen te bewaken
 
@@ -33,12 +33,12 @@ Deze zelfstudie bestaat uit de volgende taken:
 
 Zorg ervoor dat u aan de volgende vereisten voldoet voordat u met deze zelfstudie begint:
 
-- Een Synapse studio-werk ruimte. Zie [een Synapse studio-werk ruimte maken](https://docs.microsoft.com/azure/machine-learning/how-to-manage-workspace#create-a-workspace)voor instructies.
+- Een Synapse studio-werk ruimte. Zie [een Synapse studio-werk ruimte maken](../../machine-learning/how-to-manage-workspace.md#create-a-workspace)voor instructies.
 
 - Een Apache Spark-pool.
 
 ## <a name="view-apache-spark-applications"></a>Apache Spark-toepassingen weer geven 
-U kunt alle Apache Spark toepassingen weer geven **Monitor** om  ->  **Apache Spark toepassingen** te bewaken.
+U kunt alle Apache Spark toepassingen weer geven om  ->  **Apache Spark toepassingen** te bewaken.
    ![Apache Spark-toepassingen](./media/how-to-monitor-spark-applications/apache-spark-applications.png)
 
 ## <a name="view-completed-apache-spark-application"></a>Voltooide Apache Spark-toepassing weer geven
@@ -47,7 +47,7 @@ Open **monitor** en selecteer vervolgens **Apache Spark toepassingen**. Als u de
 
   ![voltooide taak selecteren](./media/how-to-monitor-spark-applications/select-completed-job.png)
 
-1. Controleer de **voltooide taken** , **status** en **totale duur**.
+1. Controleer de **voltooide taken**, **status** en **totale duur**.
 
 2. Logboek query vernieuwen.
 
@@ -59,7 +59,7 @@ Open **monitor** en selecteer vervolgens **Apache Spark toepassingen**. Als u de
 
 6. U ziet een overzicht van uw taak in het gegenereerde taak diagram. In de grafiek worden standaard alle taken weer gegeven. U kunt deze weer gave filteren op **taak-id**.
 
-7. Standaard wordt de **voortgangs** weergave geselecteerd. U kunt de gegevens stroom controleren door **Progress** / **Read** / **Written** / in de vervolg keuzelijst **weer gave** voortgang gelezen **duur** te selecteren.
+7. Standaard wordt de **voortgangs** weergave geselecteerd. U kunt de gegevens stroom controleren door  /  /  / in de vervolg keuzelijst **weer gave** voortgang gelezen **duur** te selecteren.
 
 8. Als u de taak wilt afspelen, klikt u op de knop **afspelen** . U kunt op elk gewenst moment op de knop **stoppen** klikken om te stoppen.
 
@@ -96,7 +96,7 @@ Open **monitor** en selecteer vervolgens **Apache Spark toepassingen**. Als u de
 
    ![actieve taak selecteren](./media/how-to-monitor-spark-applications/select-running-job.png)
 
-1. Controleer de **voltooide taken** , **status** en **totale duur**.
+1. Controleer de **voltooide taken**, **status** en **totale duur**.
 
 2. De Apache Spark-toepassing **Annuleren** .
 
@@ -120,7 +120,7 @@ Open **monitor** en selecteer vervolgens **Apache Spark toepassingen**. Als u de
 
  ![geannuleerde taak selecteren](./media/how-to-monitor-spark-applications/select-cancelled-job.png) 
 
-1. Controleer de **voltooide taken** , **status** en **totale duur**.
+1. Controleer de **voltooide taken**, **status** en **totale duur**.
 
 2. Vernieuw de logboek query.
 
@@ -142,7 +142,7 @@ Open **monitor** en selecteer vervolgens **Apache Spark toepassingen**. Als u de
 
 ![mislukte taak selecteren](./media/how-to-monitor-spark-applications/select-failed-job.png)
 
-1. Controleer de **voltooide taken** , **status** en **totale duur**.
+1. Controleer de **voltooide taken**, **status** en **totale duur**.
 
 2. Logboek query vernieuwen.
 
@@ -158,4 +158,4 @@ Open **monitor** en selecteer vervolgens **Apache Spark toepassingen**. Als u de
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor meer informatie over het bewaken van pijplijn uitvoeringen raadpleegt [u de pipeline-bewaken in het artikel Synapse Studio](how-to-monitor-pipeline-runs.md) .  
+Voor meer informatie over het bewaken van pijplijn uitvoeringen raadpleegt [u de pipeline-bewaken in het artikel Synapse Studio](how-to-monitor-pipeline-runs.md) .

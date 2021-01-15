@@ -8,14 +8,14 @@ ms.subservice: core
 ms.topic: conceptual
 ms.author: lazzeri
 author: FrancescaLazzeri
-ms.date: 12/15/2020
+ms.date: 01/14/2020
 ms.custom: contperf-fy21q1,contperfq1
-ms.openlocfilehash: 17c5cc265b4199d745325bf2c9d9fbca24cc6506
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 61305e4f9ba45cb7c13a96bee9d1aab81108bb4d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617116"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220691"
 ---
 # <a name="deep-learning-vs-machine-learning-in-azure-machine-learning"></a>Diep gaande informatie versus machine learning in Azure Machine Learning
 
@@ -57,7 +57,7 @@ De volgende tabel vergelijkt de twee technieken in meer detail:
 |  **Uitvoeringstijd** | Neemt relatief weinig tijd in beslag om te trainen, variërend van een paar seconden tot enkele uren. | Het duurt doorgaans lang om te trainen omdat een diepe leer algoritme veel lagen omvat. |
 |  **Uitvoer** | De uitvoer is doorgaans een numerieke waarde, zoals een score of classificatie. | De uitvoer kan meerdere indelingen hebben, zoals een tekst, een score of een geluid. |
 
-## <a name="transfer-learning"></a>Learning overdragen
+## <a name="what-is-transfer-learning"></a>Wat is overboeking Learning
 
 Voor het trainen van diepe leer modellen zijn vaak grote hoeveel heden trainings gegevens, high-end Compute-resources (GPU, TPU) en een langere training tijd vereist. Wanneer u geen van deze voor u beschikbaar hebt, kunt u een snelkoppeling maken naar het trainings proces met behulp van een techniek die bekend staat als *overboeking learning.*
 
@@ -65,7 +65,7 @@ Overboeking learning is een techniek waarbij kennis wordt toegepast op basis van
 
 Vanwege de structuur van Neural-netwerken bevatten de eerste set lagen meestal functies van een lager niveau, terwijl de laatste set lagen de functie op een hoger niveau bevat die dichter bij het betrokken domein ligt. Door de laatste lagen te nemen voor gebruik in een nieuw domein of probleem, kunt u de hoeveelheid tijd, gegevens en reken resources die nodig zijn om het nieuwe model te trainen aanzienlijk reduceren. Als u bijvoorbeeld al een model hebt dat auto's herkent, kunt u dit model met behulp van overboeking Learning ook herkennen aan vracht wagens, motor rijwielen en andere soorten voer tuigen.
 
-Meer informatie over het Toep assen van overboeking learning voor installatie kopie classificatie met behulp van een open source-framework in Azure Machine Learning: [Classificeer afbeeldingen met behulp van een Pytorch-model](./how-to-train-pytorch.md?WT.mc_id=docs-article-lazzeri).
+Meer informatie over het Toep assen van overboeking learning voor installatie kopie classificatie met behulp van een open source-framework in Azure Machine Learning: [Train een diep Learning PyTorch-model met behulp van overboeking Learning](./how-to-train-pytorch.md?WT.mc_id=docs-article-lazzeri).
 
 ## <a name="deep-learning-use-cases"></a>Uitgebreide leer cases
 

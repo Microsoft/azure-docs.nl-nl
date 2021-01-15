@@ -10,13 +10,13 @@ ms.topic: how-to
 author: danimir
 ms.author: danil
 ms.reviewer: wiassaf, sstein
-ms.date: 03/10/2020
-ms.openlocfilehash: a016781e5b05c8f43c043bf1f3368a58064e43ad
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 1/14/2021
+ms.openlocfilehash: db24f280f66e567572821297cfc9bb9b1e19743b
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96501257"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222340"
 ---
 # <a name="query-performance-insight-for-azure-sql-database"></a>Query Performance Insight voor Azure SQL Database
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -155,7 +155,7 @@ Query details weer geven:
 
 Met twee metrische gegevens in Query Performance Insight kunt u mogelijke knel punten vinden: duur en aantal uitvoeringen.
 
-Langlopende query's hebben de grootste mogelijkheid om bronnen langer te vergren delen, andere gebruikers te blok keren en de schaal baarheid te beperken. Ze zijn ook de beste kandidaten voor Optima Lise ring.
+Langlopende query's hebben de grootste mogelijkheid om bronnen langer te vergren delen, andere gebruikers te blok keren en de schaal baarheid te beperken. Ze zijn ook de beste kandidaten voor Optima Lise ring. Zie [problemen met Azure SQL-blok kades begrijpen en oplossen](understand-resolve-blocking.md)voor meer informatie.
 
 Langlopende query's identificeren:
 

@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 07/15/2020
 ms.author: damaerte
-ms.openlocfilehash: a820fb4ec5d6c2053b1104b68dbda0ae70f624c0
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 58f6c7a3b5d68d2825cead545ba1b683d1faf1af
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179194"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222799"
 ---
 # <a name="deploy-cloud-shell-into-an-azure-virtual-network"></a>Cloud Shell implementeren in een virtueel Azure-netwerk
 
@@ -87,9 +87,6 @@ Als **RegistrationState** is `Registered` , hoeft u geen actie te ondernemen. Al
 Als u al een gewenst VNET hebt waarmee u verbinding wilt maken, kunt u deze sectie overs Laan.
 
 In de Azure Portal, of met behulp van Azure CLI, Azure PowerShell, enzovoort. Maak een resource groep en een virtueel netwerk in de nieuwe resource groep, **de resource groep en het virtuele netwerk moeten zich in dezelfde regio bevinden**.
-
-> [!NOTE]
-> In de open bare Preview moet de resource groep en het virtuele netwerk zich in WestCentralUS of Westus bevinden.
 
 ### <a name="arm-templates"></a>ARM-sjablonen
 Gebruik de [Azure Quick](https://aka.ms/cloudshell/docs/vnet/template) start-sjabloon voor het maken van Cloud shell-resources in een virtueel netwerk en de [Azure Quick](https://aka.ms/cloudshell/docs/vnet/template/storage) start-sjabloon voor het maken van de benodigde opslag. Noteer de namen van uw resources, voornamelijk de naam van de bestands share.

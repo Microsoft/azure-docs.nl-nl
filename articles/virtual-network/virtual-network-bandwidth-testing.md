@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/06/2020
 ms.author: steveesp
-ms.openlocfilehash: 0b009b7c44084e76194c1447fefdb2ff59f8086a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7a2f6750a4d0a48c6971f60241976fb55410b65c
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91812281"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221439"
 ---
 # <a name="bandwidththroughput-testing-ntttcp"></a>Bandbreedte/doorvoer testen (NTTTCP)
 
@@ -26,7 +26,7 @@ Bij het testen van de prestaties van netwerk doorvoer in azure, kunt u het beste
 Kopieer het hulp programma naar twee virtuele Azure-machines met dezelfde grootte. Eén VM fungeert als afzender en de andere als ontvanger.
 
 #### <a name="deploying-vms-for-testing"></a>Vm's implementeren voor testen
-Voor de doel einden van deze test moeten de twee virtuele machines zich in dezelfde [nabijste plaatsings groep](../virtual-machines/windows/co-location.md) bevinden of op dezelfde beschikbaarheidsset zodat we hun interne ip's kunnen gebruiken en de load balancers van de test uitsluiten. Het is mogelijk om met het VIP te testen, maar dit type tests valt buiten het bereik van dit document.
+Voor de doel einden van deze test moeten de twee virtuele machines zich in dezelfde [nabijste plaatsings groep](../virtual-machines/co-location.md) bevinden of op dezelfde beschikbaarheidsset zodat we hun interne ip's kunnen gebruiken en de load balancers van de test uitsluiten. Het is mogelijk om met het VIP te testen, maar dit type tests valt buiten het bereik van dit document.
 
 Noteer het IP-adres van de ontvanger. We bellen het IP-adres "a. b. c. r"
 
@@ -65,7 +65,7 @@ Ntttcp toestaan via de Windows Firewall als volgt:
 
 Netsh advfirewall firewall add rule Program = \<PATH\> \\ntttcp.exe name = "ntttcp-protocol = any dir = in Action = Enable = Yes profiel = any
 
-Als u bijvoorbeeld ntttcp.exe hebt gekopieerd naar de map c: \\ tools, is dit de opdracht: 
+Als u bijvoorbeeld ntttcp.exe hebt gekopieerd naar de map c: \\ tools, is dit de opdracht: 
 
 Netsh advfirewall firewall add rule Program = c: \\ tools \\ntttcp.exe name = "ntttcp-protocol = any dir = in Action = Enable = Yes profiel = any
 
@@ -82,7 +82,7 @@ ntttcp-r – m 8, \* , 10.0.0.4-t 300
 
 NTTTCP starten op de afzender (**uitvoeren vanuit cmd**, niet vanuit Power shell):
 
-ntttcp-s – m 8, \* , 10.0.0.4-t 300 
+ntttcp-s – m 8, \* , 10.0.0.4-t 300 
 
 Wacht op de resultaten.
 
@@ -95,19 +95,19 @@ Voer op de virtuele Linux-machines (zowel de afzender als de ontvanger) deze opd
 
 CentOS-git installeren:
 ``` bash
-  yum install gcc -y  
-  yum install git -y
+  yum install gcc -y  
+  yum install git -y
 ```
 Ubuntu-git installeren:
 ``` bash
- apt-get -y install build-essential  
- apt-get -y install git
+ apt-get -y install build-essential  
+ apt-get -y install git
 ```
 Maken en installeren op beide:
 ``` bash
- git clone https://github.com/Microsoft/ntttcp-for-linux
- cd ntttcp-for-linux/src
- make && make install
+ git clone https://github.com/Microsoft/ntttcp-for-linux
+ cd ntttcp-for-linux/src
+ make && make install
 ```
 
 Net als in het Windows-voor beeld gaan we ervan uit dat het IP-adres van de Linux-ontvanger 10.0.0.4 is
@@ -123,7 +123,7 @@ En voer de volgende handelingen uit op de afzender:
 ``` bash
 ntttcp -s10.0.0.4 -t 300
 ```
- 
+ 
 De test lengte wordt standaard ingesteld op 60 seconden als er geen tijd parameter is opgegeven
 
 ## <a name="testing-between-vms-running-windows-and-linux"></a>Testen tussen virtuele machines met Windows en LINUX:

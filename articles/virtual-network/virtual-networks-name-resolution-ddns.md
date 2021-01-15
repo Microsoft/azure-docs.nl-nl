@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/23/2017
 ms.author: subsarma
-ms.openlocfilehash: 9f5b535a341956e5675ba96ba9570bd3f2ff3443
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad91eb94aedcdd0e4e715162e3ae064a1d2fb1ea
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84710946"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220419"
 ---
 # <a name="use-dynamic-dns-to-register-hostnames-in-your-own-dns-server"></a>Dynamische DNS gebruiken om hostnamen te registreren op uw eigen DNS-server
 
@@ -28,7 +28,7 @@ ms.locfileid: "84710946"
 Wanneer uw aangepaste DNS-servers worden gehost als virtuele Azure-machines, kunt u hostname-query's voor hetzelfde virtuele netwerk naar Azure sturen om hostnamen op te lossen. Als u deze optie niet wilt gebruiken, kunt u uw VM-hostnamen registreren in uw DNS-server met behulp van dynamische DNS (DDNS). Azure beschikt niet over de referenties om rechtstreeks records te maken op uw DNS-servers, waardoor alternatieve voorzieningen vaak nodig zijn. Enkele veelvoorkomende scenario's, met alternatieven:
 
 ## <a name="windows-clients"></a>Windows-clients
-Windows-clients die niet lid zijn van een domein, proberen onbeveiligde DDNS-updates uit te voeren wanneer ze worden opgestart of wanneer hun IP-adres wordt gewijzigd. De DNS-naam is de hostnaam plus het achtervoegsel van de primaire DNS. Azure laat het achtervoegsel voor de primaire DNS leeg, maar u kunt het achtervoegsel instellen in de virtuele machine via de [gebruikers interface](https://technet.microsoft.com/library/cc794784.aspx) of [Power shell](/powershell/module/dnsclient/set-dnsclient).
+Windows-clients die niet lid zijn van een domein, proberen onbeveiligde DDNS-updates uit te voeren wanneer ze worden opgestart of wanneer hun IP-adres wordt gewijzigd. De DNS-naam is de hostnaam plus het achtervoegsel van de primaire DNS. Azure laat het achtervoegsel voor de primaire DNS leeg, maar u kunt het achtervoegsel instellen in de virtuele machine via de [gebruikers interface](/previous-versions/windows/it-pro/windows-server-2008-R2-and-2008/cc794784(v=ws.10)) of [Power shell](/powershell/module/dnsclient/set-dnsclient).
 
 Windows-clients die lid zijn van een domein registreren hun IP-adressen bij de domein controller met behulp van beveiligde DDNS. Het proces voor het samen voegen van een domein stelt het achtervoegsel van de primaire DNS-server in op de client en maakt en onderhoudt de vertrouwens relatie.
 

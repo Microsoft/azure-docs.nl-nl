@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 04/21/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 14c71d5888aefc11485c03935c5d8c7ff7d17045
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7462c78ecad718c30980a98ff7659a2a4d2ea020
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995876"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222153"
 ---
 # <a name="quickstart-connect-to-azure-synapse-link-for-azure-cosmos-db"></a>Quickstart: Verbinding maken met Azure Synapse Link voor Azure Cosmos DB
 
@@ -24,8 +24,8 @@ In dit artikel wordt beschreven hoe u toegang krijgt tot een Azure Cosmos DB-dat
 
 Voordat u een Azure Cosmos DB-account verbindt met uw werkruimte, hebt u enkele dingen nodig.
 
-* Een bestaand Azure Cosmos DB-account, of u kunt een nieuw account maken door deze [quickstart](https://docs.microsoft.com/azure/cosmos-db/how-to-manage-database-account) te volgen
-* Een bestaande Synapse-werkruimte , of u kunt een nieuwe werkruimte maken door deze [quickstart](https://docs.microsoft.com/azure/synapse-analytics/quickstart-create-workspace) te volgen 
+* Een bestaand Azure Cosmos DB-account, of u kunt een nieuw account maken door deze [quickstart](../cosmos-db/how-to-manage-database-account.md) te volgen
+* Een bestaande Synapse-werkruimte , of u kunt een nieuwe werkruimte maken door deze [quickstart](./quickstart-create-workspace.md) te volgen 
 
 ## <a name="enable-azure-cosmos-db-analytical-store"></a>Analytische opslag van Azure Cosmos DB inschakelen
 

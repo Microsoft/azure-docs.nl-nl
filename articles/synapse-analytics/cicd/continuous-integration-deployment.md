@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: d38c57a8c8504e1e03406f7cd8a0b61725cb0511
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 7a665bf05167a6bdf20c7325c66a5d0e439aa7f1
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008079"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223683"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Continue integratie en levering voor Azure Synapse-werk ruimte
 
@@ -21,7 +21,7 @@ ms.locfileid: "97008079"
 
 Continue integratie (CI) is het proces van het automatiseren van het bouwen en testen van code telkens wanneer een teamlid wijzigingen in versie beheer doorvoert. Continue implementatie (CD) is het proces voor het bouwen, testen, configureren en implementeren van meerdere test-of faserings omgevingen naar een productie omgeving.
 
-Voor de Azure Synapse-werk ruimte, doorlopende integratie en levering (CI/CD) worden alle entiteiten van de ene omgeving (ontwikkeling, test, productie) naar de andere verplaatst. Als u uw werk ruimte wilt promo veren naar een andere werk ruimte, zijn er twee onderdelen: gebruik [Azure Resource Manager sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview) om werkruimte resources (Pools en werk ruimte) te maken of bij te werken. Migreer artefacten (SQL-scripts, notebook, Spark-taak definitie, pijp lijnen, gegevens sets, data stromen, enzovoort) met Synapse CI/CD-hulpprogram ma's in azure DevOps. 
+Voor de Azure Synapse-werk ruimte, doorlopende integratie en levering (CI/CD) worden alle entiteiten van de ene omgeving (ontwikkeling, test, productie) naar de andere verplaatst. Als u uw werk ruimte wilt promo veren naar een andere werk ruimte, zijn er twee onderdelen: gebruik [Azure Resource Manager sjablonen](../../azure-resource-manager/templates/overview.md) om werkruimte resources (Pools en werk ruimte) te maken of bij te werken. Migreer artefacten (SQL-scripts, notebook, Spark-taak definitie, pijp lijnen, gegevens sets, data stromen, enzovoort) met Synapse CI/CD-hulpprogram ma's in azure DevOps. 
 
 In dit artikel wordt uitgelegd hoe u Azure release-pijp lijn gebruikt om de implementatie van een Synapse-werk ruimte naar meerdere omgevingen te automatiseren.
 
@@ -46,7 +46,7 @@ In dit artikel wordt uitgelegd hoe u Azure release-pijp lijn gebruikt om de impl
 
 1.  Voer in het vak **naam fase** de naam van uw omgeving in.
 
-1.  Selecteer **artefact toevoegen** en selecteer vervolgens de Git-opslag plaats die is geconfigureerd met uw Development Synapse Studio. Selecteer de Git-opslag plaats die u hebt gebruikt voor het beheren van ARM-sjabloon van Pools en werk ruimte. Als u GitHub als bron gebruikt, moet u een service verbinding maken voor uw GitHub-account en opslag plaatsen. Voor meer informatie over [service verbinding](https://docs.microsoft.com/azure/devops/pipelines/library/service-endpoints) 
+1.  Selecteer **artefact toevoegen** en selecteer vervolgens de Git-opslag plaats die is geconfigureerd met uw Development Synapse Studio. Selecteer de Git-opslag plaats die u hebt gebruikt voor het beheren van ARM-sjabloon van Pools en werk ruimte. Als u GitHub als bron gebruikt, moet u een service verbinding maken voor uw GitHub-account en opslag plaatsen. Voor meer informatie over [service verbinding](/azure/devops/pipelines/library/service-endpoints) 
 
     ![Publish branch toevoegen](media/release-creation-github.png)
 
@@ -87,7 +87,7 @@ Een Azure Resource Manager implementatie taak toevoegen om resources, waaronder 
     ![machtiging verlenen](media/release-creation-grant-permission.png)
 
  > [!WARNING]
-> In de volledige implementatie modus worden resources die in de resource groep aanwezig zijn, maar niet opgegeven in de nieuwe resource manager-sjabloon, **verwijderd**. Raadpleeg [Azure Resource Manager-implementatie modi](https://docs.microsoft.com/azure/azure-resource-manager/templates/deployment-modes) voor meer informatie
+> In de volledige implementatie modus worden resources die in de resource groep aanwezig zijn, maar niet opgegeven in de nieuwe resource manager-sjabloon, **verwijderd**. Raadpleeg [Azure Resource Manager-implementatie modi](../../azure-resource-manager/templates/deployment-modes.md) voor meer informatie
 
 ## <a name="set-up-a-stage-task-for-artifacts-deployment"></a>Een fase taak voor de implementatie van artefacten instellen 
 
@@ -122,7 +122,7 @@ Gebruik de [implementatie uitbreiding Synapse werk ruimte](https://marketplace.v
 
 ## <a name="create-release-for-deployment"></a>Release maken voor implementatie 
 
-Nadat u alle wijzigingen hebt opgeslagen, kunt u **release maken** selecteren om hand matig een release te maken. Zie [Azure DevOps release triggers](https://docs.microsoft.com/azure/devops/pipelines/release/triggers) voor het automatiseren van het maken van releases
+Nadat u alle wijzigingen hebt opgeslagen, kunt u **release maken** selecteren om hand matig een release te maken. Zie [Azure DevOps release triggers](/azure/devops/pipelines/release/triggers) voor het automatiseren van het maken van releases
 
    ![Selecteer release maken](media/release-creation-manually.png)
 
@@ -133,6 +133,4 @@ Als u gebruik wilt maken van Git-integratie met uw Synapse-werk ruimte en een CI
 -   **Git-integratie**. Configureer alleen uw ontwikkel Synapse-werk ruimte met git-integratie. Wijzigingen in werk ruimten voor testen en productie worden geïmplementeerd via CI/CD en beschikken niet over git-integratie.
 -   **Groep voorbereiden voordat artefacten worden gemigreerd**. Als er een SQL-script of notitie blok is gekoppeld aan Pools in de werk ruimte ontwikkeling, worden dezelfde naam van Pools in verschillende omgevingen verwacht. 
 -   **Infra structuur als code (IaC)**. Beheer van de infra structuur (netwerken, virtuele machines, load balancers en verbindings topologie) in een beschrijvende model, gebruik dezelfde versie als DevOps-team voor de bron code. 
--   **Andere**. Zie [Aanbevolen procedures voor ADF-artefacten](/azure/data-factory/continuous-integration-deployment#best-practices-for-cicd)
-
-
+-   **Andere**. Zie [Aanbevolen procedures voor ADF-artefacten](../../data-factory/continuous-integration-deployment.md#best-practices-for-cicd)

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 12/04/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: a0458264b6ea0c741244531fc104a7637108b06e
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 4681039f60154b95eeb7e40196ca33055a192c74
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121342"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222102"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Azure Cosmos DB gegevens opvragen met een serverloze SQL-groep in azure Synapse link preview
 
@@ -205,6 +205,8 @@ Het resultaat van deze query kan eruitzien als in de volgende tabel:
 Zie de [regels voor SQL-type toewijzingen](#azure-cosmos-db-to-sql-type-mappings) aan het einde van het artikel voor meer informatie over de SQL-typen die moeten worden gebruikt voor Azure Cosmos DB waarden.
 
 ## <a name="create-view"></a>Weer gave maken
+
+Het maken van weer gaven in de hoofd-of standaard databases wordt niet aanbevolen of ondersteund. U moet dus een gebruikers database maken voor uw weer gaven.
 
 Wanneer u het schema hebt geïdentificeerd, kunt u een weer gave op uw Azure Cosmos DB gegevens voorbereiden. U moet uw Azure Cosmos DB-account sleutel in een afzonderlijke referentie plaatsen en deze referentie naar de `OPENROWSET` functie referentie. Bewaar uw account sleutel niet in de weergave definitie.
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/26/2020
 ms.author: kumud
-ms.openlocfilehash: 5ce5f5cea5d689720455dd8d60f6fff4692a9d3d
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 2cf28565818f6de4d52b57040a80c21d0e03a76c
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179296"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218515"
 ---
 # <a name="azure-virtual-network-frequently-asked-questions-faq"></a>Veelgestelde vragen over virtuele Azure-netwerken (FAQ)
 
@@ -36,7 +36,7 @@ Gebruik VNets voor het volgende:
 * Schakel hybride Cloud scenario's in. VNets biedt u de flexibiliteit om een reeks hybride Cloud scenario's te ondersteunen. U kunt op een veilige manier Cloud toepassingen verbinden met elk type on-premises systeem, zoals mainframes en UNIX-systemen.
 
 ### <a name="how-do-i-get-started"></a>Hoe ga ik aan de slag?
-Ga naar de documentatie van het [virtuele netwerk](https://docs.microsoft.com/azure/virtual-network/) om aan de slag te gaan. Deze inhoud bevat overzichts-en implementatie-informatie voor alle VNet-functies.
+Ga naar de documentatie van het [virtuele netwerk](./index.yml) om aan de slag te gaan. Deze inhoud bevat overzichts-en implementatie-informatie voor alle VNet-functies.
 
 ### <a name="can-i-use-vnets-without-cross-premises-connectivity"></a>Kan ik VNets gebruiken zonder cross-premises-connectiviteit?
 Ja. U kunt een VNet gebruiken zonder het aan uw locatie te koppelen. U kunt bijvoorbeeld micro soft Windows Server Active Directory domein controllers en share point-Farms alleen uitvoeren in een Azure-VNet.
@@ -52,7 +52,7 @@ U kunt de volgende hulpprogram ma's gebruiken om een VNet te maken of configurer
 * Azure Portal
 * PowerShell
 * Azure CLI
-* Een netwerk configuratie bestand (netcfg-alleen voor klassieke VNets). Zie het artikel [een VNet configureren met behulp van een netwerk configuratie bestand](virtual-networks-using-network-configuration-file.md) .
+* Een netwerk configuratie bestand (netcfg-alleen voor klassieke VNets). Zie het artikel [een VNet configureren met behulp van een netwerk configuratie bestand](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file) .
 
 ### <a name="what-address-ranges-can-i-use-in-my-vnets"></a>Welke adresbereiken kan ik gebruiken in mijn VNets?
 We raden u aan de adresbereiken te gebruiken die zijn geïnventariseerd in [RFC 1918](https://tools.ietf.org/html/rfc1918), die zijn gereserveerd door de IETF voor persoonlijke, niet-Routeer bare adres ruimten:
@@ -162,7 +162,7 @@ Ja. Alle netwerk interfaces (NIC) die zijn gekoppeld aan een virtuele machine di
   - **Resource Manager**: een privé-IP-adres dat is toegewezen aan de dynamische of statische methode blijft toegewezen aan een virtuele machine (Resource Manager) totdat de resource wordt verwijderd. Het verschil is dat u het adres selecteert dat u wilt toewijzen wanneer u statische gebruikt en Azure kiest wanneer u dynamische gebruikt. 
   - **Klassiek**: een privé-IP-adres dat is toegewezen aan de dynamische methode kan worden gewijzigd wanneer een virtuele machine (klassieke) VM opnieuw wordt opgestart nadat de status gestopt (toewijzing ongedaan gemaakt) is bereikt. Als u er zeker van wilt zijn dat het privé-IP-adres voor een bron die via het klassieke implementatie model wordt geïmplementeerd, nooit wordt gewijzigd, wijst u een privé-IP-adres toe met de statische methode.
 
-* **Openbaar:** Optioneel toegewezen aan Nic's die zijn gekoppeld aan virtuele machines die zijn geïmplementeerd via het Azure Resource Manager-implementatie model. Het adres kan worden toegewezen met de statische of dynamische toewijzings methode. Alle Vm's en Cloud Services rolinstanties die via het klassieke implementatie model zijn geïmplementeerd, bestaan in een Cloud service, waaraan een *dynamisch*, openbaar virtueel IP-adres (VIP) is toegewezen. Een openbaar *statisch* IP-adres, een [gereserveerd IP adres](virtual-networks-reserved-public-ip.md)genoemd, kan optioneel als VIP worden toegewezen. U kunt open bare IP-adressen toewijzen aan afzonderlijke Vm's of Cloud Services rolinstanties die worden geïmplementeerd via het klassieke implementatie model. Deze adressen worden een [openbaar IP-adres op exemplaar niveau](virtual-networks-instance-level-public-ip.md) genoemd en kunnen dynamisch worden toegewezen.
+* **Openbaar:** Optioneel toegewezen aan Nic's die zijn gekoppeld aan virtuele machines die zijn geïmplementeerd via het Azure Resource Manager-implementatie model. Het adres kan worden toegewezen met de statische of dynamische toewijzings methode. Alle Vm's en Cloud Services rolinstanties die via het klassieke implementatie model zijn geïmplementeerd, bestaan in een Cloud service, waaraan een *dynamisch*, openbaar virtueel IP-adres (VIP) is toegewezen. Een openbaar *statisch* IP-adres, een [gereserveerd IP adres](/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip)genoemd, kan optioneel als VIP worden toegewezen. U kunt open bare IP-adressen toewijzen aan afzonderlijke Vm's of Cloud Services rolinstanties die worden geïmplementeerd via het klassieke implementatie model. Deze adressen worden een [openbaar IP-adres op exemplaar niveau](/previous-versions/azure/virtual-network/virtual-networks-instance-level-public-ip) genoemd en kunnen dynamisch worden toegewezen.
 
 ### <a name="can-i-reserve-a-private-ip-address-for-a-vm-that-i-will-create-at-a-later-time"></a>Kan ik een persoonlijk IP-adres reserveren voor een virtuele machine die ik op een later tijdstip moet maken?
 Nee. U kunt geen privé-IP-adres reserveren. Als er een privé-IP-adres beschikbaar is, wordt het toegewezen aan een virtuele machine of rolinstantie door de DHCP-server. De virtuele machine kan al dan niet de VM zijn waaraan u het privé-IP-adres wilt toewijzen. U kunt echter het privé-IP-adres van een al gemaakte virtuele machine wijzigen in elk beschikbaar privé-IP-adres.
@@ -177,7 +177,7 @@ Ja, maar dit wordt niet aanbevolen, tenzij nodig, zoals bij het toewijzen van me
 Niets. De IP-adressen (openbaar VIP, openbaar en privé) blijven toegewezen aan de implementatie site van de Cloud service of virtuele machine.
 
 ### <a name="can-i-move-vms-from-one-subnet-to-another-subnet-in-a-vnet-without-redeploying"></a>Kan ik Vm's van het ene subnet verplaatsen naar een ander subnet in een VNet zonder opnieuw te implementeren?
-Ja. Meer informatie kunt u vinden in het artikel [een VM of rolinstantie verplaatsen naar een ander subnet](virtual-networks-move-vm-role-to-subnet.md) .
+Ja. Meer informatie kunt u vinden in het artikel [een VM of rolinstantie verplaatsen naar een ander subnet](/previous-versions/azure/virtual-network/virtual-networks-move-vm-role-to-subnet) .
 
 ### <a name="can-i-configure-a-static-mac-address-for-my-vm"></a>Kan ik een statisch MAC-adres voor mijn virtuele machine configureren?
 Nee. Een MAC-adres kan niet statisch worden geconfigureerd.
@@ -220,7 +220,7 @@ Nee. U kunt Services in en uit VNets niet verplaatsen. Als u een resource wilt v
 VNets zijn geïsoleerd van elkaar en andere services die in de Azure-infra structuur worden gehost. Een VNet is een grens van een vertrouwens relatie.
 
 ### <a name="can-i-restrict-inbound-or-outbound-traffic-flow-to-vnet-connected-resources"></a>Kan ik de binnenkomende of uitgaande verkeers stroom beperken tot resources die zijn verbonden met het VNet?
-Ja. U kunt [netwerk beveiligings groepen](security-overview.md) Toep assen op afzonderlijke subnetten binnen een Vnet, nic's die zijn gekoppeld aan een vnet of beide.
+Ja. U kunt [netwerk beveiligings groepen](./network-security-groups-overview.md) Toep assen op afzonderlijke subnetten binnen een Vnet, nic's die zijn gekoppeld aan een vnet of beide.
 
 ### <a name="can-i-implement-a-firewall-between-vnet-connected-resources"></a>Kan ik een firewall implementeren tussen bronnen die zijn verbonden met VNet?
 Ja. U kunt via Azure Marketplace een [virtueel netwerk](https://azure.microsoft.com/marketplace/?term=firewall) van een firewall van verschillende leveranciers implementeren.
@@ -234,13 +234,13 @@ Nee. Virtuele netwerken slaan geen klant gegevens op.
 ## <a name="apis-schemas-and-tools"></a>Api's, schema's en hulpprogram ma's
 
 ### <a name="can-i-manage-vnets-from-code"></a>Kan ik VNets beheren vanuit code?
-Ja. U kunt REST-Api's gebruiken voor VNets in de [Azure Resource Manager](/rest/api/virtual-network) en [klassieke](https://go.microsoft.com/fwlink/?LinkId=296833) implementatie modellen.
+Ja. U kunt REST-Api's gebruiken voor VNets in de [Azure Resource Manager](/rest/api/virtual-network) en [klassieke](/previous-versions/azure/ee460799(v=azure.100)) implementatie modellen.
 
 ### <a name="is-there-tooling-support-for-vnets"></a>Is er hulp programma beschikbaar voor VNets?
 Ja. Meer informatie over het gebruik van:
-- Het Azure Portal om VNets te implementeren via de [Azure Resource Manager](manage-virtual-network.md#create-a-virtual-network) en [klassieke](virtual-networks-create-vnet-classic-pportal.md) implementatie modellen.
+- Het Azure Portal om VNets te implementeren via de [Azure Resource Manager](manage-virtual-network.md#create-a-virtual-network) en [klassieke](/previous-versions/azure/virtual-network/virtual-networks-create-vnet-classic-pportal) implementatie modellen.
 - Power shell voor het beheren van VNets die zijn geïmplementeerd via de [Resource Manager](/powershell/module/az.network) en de [klassieke](/powershell/module/servicemanagement/azure.service/?view=azuresmps-3.7.0) implementatie modellen.
-- De Azure-opdracht regel interface (CLI) voor het implementeren en beheren van VNets die zijn geïmplementeerd via de [Resource Manager](/cli/azure/network/vnet) en de [klassieke](../virtual-machines/azure-cli-arm-commands.md?toc=%2fazure%2fvirtual-network%2ftoc.json#network-resources) implementatie modellen.  
+- De Azure-opdracht regel interface (CLI) voor het implementeren en beheren van VNets die zijn geïmplementeerd via de [Resource Manager](/cli/azure/network/vnet) en de [klassieke](/previous-versions/azure/virtual-machines/azure-cli-arm-commands?toc=%2fazure%2fvirtual-network%2ftoc.json#network-resources) implementatie modellen.  
 
 ## <a name="vnet-peering"></a>VNet-peering
 
@@ -289,7 +289,7 @@ Nee. U kunt de optie externe gateway gebruiken alleen inschakelen voor één pee
 Er worden geen kosten in rekening gebracht voor het maken van een VNet-peering-verbinding. Gegevens overdracht tussen peering-verbindingen wordt in rekening gebracht. [Hier weer geven](https://azure.microsoft.com/pricing/details/virtual-network/).
 
 ### <a name="is-vnet-peering-traffic-encrypted"></a>Is het VNet-peering verkeer versleuteld?
-Als Azure-verkeer wordt verplaatst tussen Data Centers (buiten fysieke grenzen die niet worden beheerd door micro soft of namens micro soft), wordt [MACsec Data Link Layer encryption](https://docs.microsoft.com/azure/security/fundamentals/encryption-overview#encryption-of-data-in-transit) gebruikt op de onderliggende netwerkhardware.  Dit is van toepassing op VNet-peering verkeer.
+Als Azure-verkeer wordt verplaatst tussen Data Centers (buiten fysieke grenzen die niet worden beheerd door micro soft of namens micro soft), wordt [MACsec Data Link Layer encryption](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit) gebruikt op de onderliggende netwerkhardware.  Dit is van toepassing op VNet-peering verkeer.
 
 ### <a name="why-is-my-peering-connection-in-a-disconnected-state"></a>Waarom is mijn peering-verbinding met een *verbroken* status?
 VNet-peering-verbindingen gaan in de status *verbroken* wanneer één VNet-peering koppeling wordt verwijderd. U moet beide koppelingen verwijderen om een succes volle peering-verbinding tot stand te brengen.
@@ -319,7 +319,7 @@ Ja. U kunt hetzelfde virtuele netwerk op Resource gebruiken om gespiegeld verkee
 
 ### <a name="are-there-any-performance-considerations-on-production-traffic-if-i-enable-a-virtual-network-tap-configuration-on-a-network-interface"></a>Zijn er prestatie overwegingen voor het productie verkeer als ik een virtueel netwerk Tik op een netwerk interface inschakel?
 
-Virtual Network TIKT is in preview. Tijdens de preview-periode is er geen service level agreement. De mogelijkheid mag niet worden gebruikt voor werk belastingen voor de productie. Wanneer de netwerk interface van een virtuele machine is ingeschakeld met een tik-configuratie, worden dezelfde resources op de Azure-host die is toegewezen aan de virtuele machine voor het verzenden van het productie verkeer, gebruikt om de mirroring-functie uit te voeren en de gespiegelde pakketten te verzenden. Selecteer de juiste grootte voor de virtuele [Linux](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Windows](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine om ervoor te zorgen dat er voldoende bronnen beschikbaar zijn voor de virtuele machine om het productie verkeer en het gespiegelde verkeer te verzenden.
+Virtual Network TIKT is in preview. Tijdens de preview-periode is er geen service level agreement. De mogelijkheid mag niet worden gebruikt voor werk belastingen voor de productie. Wanneer de netwerk interface van een virtuele machine is ingeschakeld met een tik-configuratie, worden dezelfde resources op de Azure-host die is toegewezen aan de virtuele machine voor het verzenden van het productie verkeer, gebruikt om de mirroring-functie uit te voeren en de gespiegelde pakketten te verzenden. Selecteer de juiste grootte voor de virtuele [Linux](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -of [Windows](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) -machine om ervoor te zorgen dat er voldoende bronnen beschikbaar zijn voor de virtuele machine om het productie verkeer en het gespiegelde verkeer te verzenden.
 
 ### <a name="is-accelerated-networking-for-linux-or-windows-supported-with-virtual-network-tap"></a>Wordt versneld netwerken ondersteund voor [Linux](create-vm-accelerated-networking-cli.md) -of [Windows](create-vm-accelerated-networking-powershell.md) -ondersteuning met een virtueel netwerk tikken?
 
@@ -370,7 +370,7 @@ Standaard zijn Azure-serviceresources die zijn beveiligd naar virtuele netwerken
 Als u Azure-Services wilt beveiligen voor meerdere subnetten binnen een virtueel netwerk of meerdere virtuele netwerken, schakelt u service-eind punten in op het netwerk onafhankelijk van elkaar en vervolgens de Azure-service resources naar alle subnetten door de juiste VNet-Acl's in te stellen op de Azure-service kant.
  
 ### <a name="how-can-i-filter-outbound-traffic-from-a-virtual-network-to-azure-services-and-still-use-service-endpoints"></a>Hoe kan ik uitgaand verkeer van een virtueel netwerk filteren naar Azure-Services en nog steeds service-eind punten gebruiken?
-Als u het verkeer dat is bestemd voor een Azure-service vanaf het virtuele netwerk, wilt controleren of filteren, kunt u een virtueel netwerkapparaat implementeren binnen het virtuele netwerk. U kunt vervolgens service-eind punten Toep assen op het subnet waar het virtuele netwerk apparaat wordt geïmplementeerd en Azure-service resources alleen naar dit subnet worden gedistribueerd via VNet-Acl's. Dit scenario kan ook nuttig zijn als u de toegang tot Azure-Services vanuit uw virtuele netwerk wilt beperken tot specifieke Azure-resources met behulp van het filteren van virtuele netwerk apparaten. Zie [Egress with network virtual appliances](https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/nva-ha) (Uitgaand verkeer met virtueel-netwerkapparaten) voor meer informatie.
+Als u het verkeer dat is bestemd voor een Azure-service vanaf het virtuele netwerk, wilt controleren of filteren, kunt u een virtueel netwerkapparaat implementeren binnen het virtuele netwerk. U kunt vervolgens service-eind punten Toep assen op het subnet waar het virtuele netwerk apparaat wordt geïmplementeerd en Azure-service resources alleen naar dit subnet worden gedistribueerd via VNet-Acl's. Dit scenario kan ook nuttig zijn als u de toegang tot Azure-Services vanuit uw virtuele netwerk wilt beperken tot specifieke Azure-resources met behulp van het filteren van virtuele netwerk apparaten. Zie [Egress with network virtual appliances](/azure/architecture/reference-architectures/dmz/nva-ha) (Uitgaand verkeer met virtueel-netwerkapparaten) voor meer informatie.
 
 ### <a name="what-happens-when-you-access-an-azure-service-account-that-has-a-virtual-network-access-control-list-acl-enabled-from-outside-the-vnet"></a>Wat gebeurt er wanneer u toegang hebt tot een Azure-service account met een toegangs beheer lijst (ACL) voor virtuele netwerken die buiten het VNet is ingeschakeld?
 De HTTP-fout 403 of HTTP 404 wordt geretourneerd.
@@ -400,7 +400,7 @@ Nee, ICMP-verkeer dat is gebrond vanuit een subnet met Service-eind punten inges
 Voor het bereiken van de Azure-service moet Nsg's de uitgaande connectiviteit toestaan. Als uw Nsg's zijn geopend voor al het uitgaande verkeer van Internet, zou het service-eindpunt verkeer moeten werken. U kunt het uitgaande verkeer ook beperken tot service-Ip's alleen met behulp van de service tags.  
  
 ### <a name="what-permissions-do-i-need-to-set-up-service-endpoints"></a>Welke machtigingen heb ik nodig om service-eind punten in te stellen?
-Service-eind punten kunnen worden geconfigureerd op een virtueel netwerk onafhankelijk van een gebruiker met schrijf toegang tot het virtuele netwerk. Als u Azure-service resources wilt beveiligen met een VNet, moet de gebruiker beschikken over de machtiging **micro soft. Network/virtualNetworks/subnets/joinViaServiceEndpoint/Action** voor de subnetten die worden toegevoegd. Deze machtiging is standaard opgenomen in de ingebouwde rol service beheerder en kan worden gewijzigd door aangepaste rollen te maken. Meer informatie over ingebouwde rollen en het toewijzen van specifieke machtigingen voor [aangepaste rollen](https://docs.microsoft.com/azure/role-based-access-control/custom-roles?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Service-eind punten kunnen worden geconfigureerd op een virtueel netwerk onafhankelijk van een gebruiker met schrijf toegang tot het virtuele netwerk. Als u Azure-service resources wilt beveiligen met een VNet, moet de gebruiker beschikken over de machtiging **micro soft. Network/virtualNetworks/subnets/joinViaServiceEndpoint/Action** voor de subnetten die worden toegevoegd. Deze machtiging is standaard opgenomen in de ingebouwde rol service beheerder en kan worden gewijzigd door aangepaste rollen te maken. Meer informatie over ingebouwde rollen en het toewijzen van specifieke machtigingen voor [aangepaste rollen](../role-based-access-control/custom-roles.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
  
 
 ### <a name="can-i-filter-virtual-network-traffic-to-azure-services-allowing-only-specific-azure-service-resources-over-vnet-service-endpoints"></a>Kan ik virtueel netwerk verkeer filteren op Azure-Services, zodat er alleen specifieke Azure-service resources meer zijn dan VNet-service-eind punten? 
@@ -409,7 +409,7 @@ Met de beleids regels voor het beheer van virtuele netwerken (VNet) kunt u virtu
 
 ### <a name="does-azure-active-directory-azure-ad-support-vnet-service-endpoints"></a>Ondersteunt Azure Active Directory (Azure AD) VNet-service-eind punten?
 
-Azure Active Directory (Azure AD) biedt geen ondersteuning voor service-eind punten systeem eigen. Volledige lijst met Azure-Services die de VNet-service-eind punten ondersteunen, is [hier](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoints-overview)te zien. Houd er rekening mee dat de tag ' micro soft. AzureActiveDirectory ' onder Services die service-eind punten ondersteunen wordt gebruikt voor het ondersteunen van service-eind punten voor ADLS gen 1. Voor ADLS gen 1 maakt de integratie van virtuele netwerken voor Azure Data Lake Storage Gen1 gebruik van de eindpunt beveiliging van het virtuele netwerk tussen uw virtuele netwerk en Azure Active Directory (Azure AD) voor het genereren van extra beveiligings claims in het toegangs token. Deze claims worden vervolgens gebruikt om het virtuele netwerk te verifiëren bij het Data Lake Storage Gen1-account en toegang toe te staan. Meer informatie over de [integratie van Azure data Lake Store gen 1-VNet](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
+Azure Active Directory (Azure AD) biedt geen ondersteuning voor service-eind punten systeem eigen. Volledige lijst met Azure-Services die de VNet-service-eind punten ondersteunen, is [hier](./virtual-network-service-endpoints-overview.md)te zien. Houd er rekening mee dat de tag ' micro soft. AzureActiveDirectory ' onder Services die service-eind punten ondersteunen wordt gebruikt voor het ondersteunen van service-eind punten voor ADLS gen 1. Voor ADLS gen 1 maakt de integratie van virtuele netwerken voor Azure Data Lake Storage Gen1 gebruik van de eindpunt beveiliging van het virtuele netwerk tussen uw virtuele netwerk en Azure Active Directory (Azure AD) voor het genereren van extra beveiligings claims in het toegangs token. Deze claims worden vervolgens gebruikt om het virtuele netwerk te verifiëren bij het Data Lake Storage Gen1-account en toegang toe te staan. Meer informatie over de [integratie van Azure data Lake Store gen 1-VNet](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 
 ### <a name="are-there-any-limits-on-how-many-vnet-service-endpoints-i-can-set-up-from-my-vnet"></a>Gelden er limieten voor het aantal VNet-service-eind punten dat ik kan instellen vanuit mijn VNet?
 Er is geen limiet voor het totale aantal VNet-service-eind punten in een virtueel netwerk. Voor een Azure-service resource (zoals een Azure Storage account) kunnen services beperkingen afdwingen voor het aantal subnetten dat wordt gebruikt voor het beveiligen van de bron. In de volgende tabel ziet u enkele voor beelden van limieten: 
@@ -428,10 +428,6 @@ Er is geen limiet voor het totale aantal VNet-service-eind punten in een virtuee
 >[!NOTE]
 > De limieten worden onderhevig aan wijzigingen in de keuze van de Azure-service. Raadpleeg de relevante service documentatie voor meer informatie over services. 
 
-
-
-
-  
 
 
 

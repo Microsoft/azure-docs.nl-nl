@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/12/2020
 ms.author: allensu
-ms.openlocfilehash: 1ae0b869b24c4e05c88b936eceb1b9b1db3a9405
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: d416af3d3a8eb8ab8057f13cc0d9a133adcb849a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94506308"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221153"
 ---
 # <a name="create-a-virtual-machine-with-a-static-public-ip-address-using-the-azure-portal"></a>Maak een virtuele machine met een statisch openbaar IP-adres met behulp van de Azure Portal
 
@@ -34,7 +34,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
 
 1. Selecteer in de linkerbovenhoek van het portaal de optie **Een resource maken** > **Compute** > **Virtuele machine** of zoek naar **Virtuele machine** via het zoekvak.
    
-2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie** :
+2. In **Een virtuele machine maken** typt of selecteert u de waarden op het tabblad **Basisinformatie**:
 
     | Instelling | Waarde                                          |
     |-----------------------|----------------------------------|
@@ -62,13 +62,13 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com).
     | **Netwerkinterface** |  |
     | Virtueel netwerk | Accepteer de standaard naam van het netwerk. |
     | Subnet | Accepteer de standaard-subnet-configuratie. |
-    | Openbare IP | Selecteer **Nieuw maken**. </br> In **openbaar IP-adres maken** typt u in de naam **myPublicIP**. </br> Selecteer voor **SKU** de optie **standaard**. </br> **Toewijzing** , selecteer **statisch**. </br> Selecteer **OK**.  |
+    | Openbare IP | Selecteer **Nieuw maken**. </br> In **openbaar IP-adres maken** typt u in de naam **myPublicIP**. </br> Selecteer voor **SKU** de optie **standaard**. </br> **Toewijzing**, selecteer **statisch**. </br> Selecteer **OK**.  |
     | NIC-netwerkbeveiligingsgroep | Selecteer **Basic**|
     | Openbare poorten voor inkomend verkeer | Selecteer **Geselecteerde poorten toestaan**. |
     | Binnenkomende poorten selecteren | Selecteer **RDP (3389)** |
 
     > [!WARNING]
-    > Portal 3389 is geselecteerd om externe toegang tot de virtuele Windows Server-machine via internet in te scha kelen. Het openen van poort 3389 voor Internet wordt niet aanbevolen voor het beheren van productie werkbelastingen. </br> Zie **[Wat is Azure Bastion?](/azure/bastion/bastion-overview) voor beveiligde toegang tot Azure virtual machines.**
+    > Portal 3389 is geselecteerd om externe toegang tot de virtuele Windows Server-machine via internet in te scha kelen. Het openen van poort 3389 voor Internet wordt niet aanbevolen voor het beheren van productie werkbelastingen. </br> Zie **[Wat is Azure Bastion?](../bastion/bastion-overview.md) voor beveiligde toegang tot Azure virtual machines.**
    
 5. Selecteer **Controleren + maken**. 
   
@@ -95,7 +95,7 @@ De SKU van het open bare IP-adres van de virtuele machine moet overeenkomen met 
 
 U kunt de lijst met bereiken (voorvoegsels) downloaden voor de Azure-clouds [Openbaar](https://www.microsoft.com/download/details.aspx?id=56519), [US government](https://www.microsoft.com/download/details.aspx?id=57063), [China](https://www.microsoft.com/download/details.aspx?id=57062) en [Duitsland](https://www.microsoft.com/download/details.aspx?id=57064).
 
-- Meer informatie over [statische open bare IP-adressen](virtual-network-ip-addresses-overview-arm.md#allocation-method).
-- Meer informatie over [open bare IP-adressen](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) in Azure.
+- Meer informatie over [statische open bare IP-adressen](./public-ip-addresses.md#allocation-method).
+- Meer informatie over [open bare IP-adressen](./public-ip-addresses.md#public-ip-addresses) in Azure.
 - Meer informatie over alle [open bare IP-adres instellingen](virtual-network-public-ip-address.md#create-a-public-ip-address).
-- Meer informatie over [privé-IP-adressen](virtual-network-ip-addresses-overview-arm.md#private-ip-addresses) en het toewijzen van een [statisch privé-IP-adres](virtual-network-network-interface-addresses.md#add-ip-addresses) aan een virtuele Azure-machine.
+- Meer informatie over [privé-IP-adressen](./private-ip-addresses.md) en het toewijzen van een [statisch privé-IP-adres](virtual-network-network-interface-addresses.md#add-ip-addresses) aan een virtuele Azure-machine.

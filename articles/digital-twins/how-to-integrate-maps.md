@@ -8,12 +8,12 @@ ms.date: 6/3/2020
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: e582415d9a83dc506b77d506f3e0803002129a07
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 24487d3028b90d28f302a6f259096ba68c964541
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98180044"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222119"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Azure Digital Apparaatdubbels gebruiken voor het bijwerken van een Azure Maps binnenste kaart
 
@@ -31,7 +31,7 @@ Deze procedure geldt voor:
     * U gaat dit twee verlengen met een extra eind punt en route. U kunt ook een andere functie toevoegen aan uw functie-app vanuit deze zelf studie. 
 * Volg de Azure Maps [*zelf studie: gebruik Azure Maps Maker voor het maken van plattegronden*](../azure-maps/tutorial-creator-indoor-maps.md) om een Azure Maps binnenste kaart te maken met een *functie statusset*.
     * [Functie-statesets](../azure-maps/creator-indoor-maps.md#feature-statesets) zijn verzamelingen van dynamische eigenschappen (statussen) die zijn toegewezen aan functies van gegevensset, zoals kamers of apparatuur. In de bovenstaande zelf studie van Azure Maps is de statusset voor de functie statusset opgeslagen die u op een kaart wilt weer geven.
-    * U hebt uw functie *statusset-id* en Azure Maps *abonnements-id* nodig.
+    * U hebt uw functie *statusset-id* en Azure Maps- *abonnements sleutel* nodig.
 
 ### <a name="topology"></a>Topologie
 
@@ -72,7 +72,7 @@ Dit patroon leest van de ruimte tussen direct, in plaats van het IoT-apparaat, d
 
 ## <a name="create-a-function-to-update-maps"></a>Een functie maken om kaarten bij te werken
 
-U gaat vanuit de end-to-end-zelf studie een door Event Grid geactiveerde functie maken in uw functie-app ([*zelf studie: een end-to-end oplossing verbinden*](./tutorial-end-to-end.md)). Met deze functie worden deze meldingen uitgepakt en worden updates naar een Azure Maps-functie statusset verzonden om de Tempe ratuur van één kamer bij te werken. 
+U gaat vanuit de end-to-end-zelf studie een door *Event grid geactiveerde functie* maken in uw functie-app ([*zelf studie: een end-to-end oplossing verbinden*](./tutorial-end-to-end.md)). Met deze functie worden deze meldingen uitgepakt en worden updates naar een Azure Maps-functie statusset verzonden om de Tempe ratuur van één kamer bij te werken. 
 
 Raadpleeg het volgende document voor referentie-informatie: [*Azure Event grid trigger voor Azure functions*](../azure-functions/functions-bindings-event-grid-trigger.md).
 
@@ -83,8 +83,8 @@ Vervang de functie code door de volgende code. Er worden alleen updates voor de 
 U moet twee omgevings variabelen instellen in uw functie-app. De ene is uw [Azure Maps primaire abonnements sleutel](../azure-maps/quick-demo-map-app.md#get-the-primary-key-for-your-account)en een van uw [Azure Maps stateset-id](../azure-maps/tutorial-creator-indoor-maps.md#create-a-feature-stateset).
 
 ```azurecli-interactive
-az functionapp config appsettings set --settings "subscription-key=<your-Azure-Maps-primary-subscription-key> -g <your-resource-group> -n <your-App-Service-(function-app)-name>"
-az functionapp config appsettings set --settings "statesetID=<your-Azure-Maps-stateset-ID> -g <your-resource-group> -n <your-App-Service-(function-app)-name>
+az functionapp config appsettings set --name <your-App-Service-(function-app)-name> --resource-group <your-resource-group> --settings "subscription-key=<your-Azure-Maps-primary-subscription-key>"
+az functionapp config appsettings set --name <your-App-Service-(function-app)-name>  --resource-group <your-resource-group> --settings "statesetID=<your-Azure-Maps-stateset-ID>"
 ```
 
 ### <a name="view-live-updates-on-your-map"></a>Live-updates op uw kaart weer geven
@@ -94,7 +94,7 @@ Volg de onderstaande stappen om de Tempe ratuur voor Live bijwerken te bekijken:
 1. Begin met het verzenden van gesimuleerde IoT-gegevens door het **DeviceSimulator** -project uit te voeren vanuit de Azure Digital Apparaatdubbels- [*zelf studie: verbinding maken met een end-to-end oplossing*](tutorial-end-to-end.md). De instructies hiervoor vindt u in de sectie [*simulatie configureren en uitvoeren*](././tutorial-end-to-end.md#configure-and-run-the-simulation) .
 2. Gebruik [de module Azure Maps in het **binnenste**](../azure-maps/how-to-use-indoor-module.md) om uw binnenste kaarten weer te geven die zijn gemaakt in azure Maps Maker.
     1. Kopieer de HTML uit het [*voor beeld: gebruik de module binnenste kaarten*](../azure-maps/how-to-use-indoor-module.md#example-use-the-indoor-maps-module) van de zelf studie over de binnenste kaarten [*: gebruik de module Azure Maps binnenste*](../azure-maps/how-to-use-indoor-module.md) kaarten naar een lokaal bestand.
-    1. Vervang *tilesetId* en *statesetID* in het lokale HTML-bestand door uw waarden.
+    1. Vervang de *abonnements sleutel*, *tilesetId* en *statesetID*  in het lokale HTML-bestand door uw waarden.
     1. Open dat bestand in uw browser.
 
 Beide steek proeven verzenden temperatuur in een compatibel bereik, zodat u de kleur van de room 121-update op de kaart ongeveer elke 30 seconden zou moeten zien.

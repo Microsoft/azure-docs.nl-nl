@@ -7,12 +7,12 @@ ms.service: load-balancer
 ms.topic: article
 ms.date: 04/22/2020
 ms.author: errobin
-ms.openlocfilehash: 2e559d574413b8eb0be2303798e0b16bfffad2cb
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: e9f46b11d9c0b5251ee4d52f64d657926f6f9c5e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94695398"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222986"
 ---
 # <a name="load-balancer-frequently-asked-questions"></a>Veelgestelde vragen over Load Balancer
 
@@ -36,7 +36,7 @@ NAT-regels worden gebruikt om een back-end-bron op te geven voor het routeren va
 ## <a name="what-is-ip-1686312916"></a>Wat is IP-168.63.129.16?
 Het virtuele IP-adres voor de host die als Azure-infra structuur is gelabeld Load Balancer waar de Azure Health-tests afkomstig zijn. Bij het configureren van back-end-exemplaren, moeten ze verkeer van dit IP-adres toestaan om te reageren op status controles. Deze regel communiceert niet met toegang tot uw Load Balancer frontend. Als u geen gebruik maakt van de Azure Load Balancer, kunt u deze regel onderdrukken. Meer informatie over service Tags vindt u [hier](../virtual-network/service-tags-overview.md#available-service-tags).
 
-## <a name="can-i-use-global-vnet-peering-with-basic-load-balancer"></a>Kan ik globale VNET-peering gebruiken met basis Load Balancer?
+## <a name="can-i-use-global-vnet-peering-with-basic-load-balancer"></a>Kan ik globale VNet-peering gebruiken met basis Load Balancer?
 Nee. Basis Load Balancer biedt geen ondersteuning voor globale VNET-peering. U kunt in plaats daarvan een Standard Load Balancer gebruiken. Zie de [upgrade van Basic naar Standard](upgrade-basic-standard.md) -artikel voor naadloze upgrade.
 
 ## <a name="how-can-i-discover-the-public-ip-that-an-azure-vm-uses"></a>Hoe kan ik het open bare IP-adres ontdekken dat een Azure-VM gebruikt?
@@ -45,6 +45,9 @@ Er zijn veel manieren om het IP-adres van de open bare bron van een uitgaande ve
 Met de opdracht nslookup kunt u een DNS-query voor de naam myip.opendns.com verzenden naar de OpenDNS-resolver. De service retourneert het bron-IP-adres dat is gebruikt om de query te verzenden. Wanneer u de volgende query uitvoert vanaf uw virtuele machine, is het antwoord het open bare IP-adres dat voor die virtuele machine wordt gebruikt:
 
  ```nslookup myip.opendns.com resolver1.opendns.com```
+ 
+## <a name="can-i-add-a-vm-from-the-same-availability-set-to-different-backend-pools-of-a-load-balancer"></a>Kan ik een virtuele machine van dezelfde beschikbaarheidsset toevoegen aan verschillende back-endservers van een Load Balancer?
+Nee, dit is niet mogelijk.
 
 ## <a name="how-do-connections-to-azure-storage-in-the-same-region-work"></a>Hoe werken de verbindingen met Azure Storage in dezelfde regio?
 Het is niet nodig om verbinding te maken met opslag in dezelfde regio als de virtuele machine als u uitgaande verbindingen hebt via de bovenstaande scenario's. Als u dit niet wilt, gebruikt u netwerk beveiligings groepen (Nsg's) zoals hierboven is uitgelegd. Voor connectiviteit met opslag in andere regio's is uitgaande connectiviteit vereist. Houd er rekening mee dat wanneer u verbinding maakt met de opslag van een virtuele machine in dezelfde regio, het bron-IP-adres in de logboeken voor diagnostische gegevens van de opslag locatie van de interne provider is en niet het open bare IP-adres van uw virtuele machine. Als u de toegang tot uw opslag account wilt beperken tot Vm's in een of meer Virtual Network subnetten in dezelfde regio, gebruikt u [Virtual Network Service-eind punten](../virtual-network/virtual-network-service-endpoints-overview.md) en niet uw open bare IP-adres bij het configureren van de firewall van uw opslag account. Zodra service-eind punten zijn geconfigureerd, ziet u uw Virtual Network privé-IP-adres in uw logboeken voor opslag diagnose en niet het adres van de interne provider.

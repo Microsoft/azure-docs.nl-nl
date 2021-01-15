@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 04/21/2020
 ms.author: kumud
 ms.custom: include file
-ms.openlocfilehash: 49a9917d925ebc7a36d14ff6679ad4b1737f9627
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: defcce3a00a38c88e1bff944075f0987fbdedd4b
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86515854"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98225479"
 ---
  De volgende limieten gelden voor Azure Private Link:
 
@@ -26,4 +26,6 @@ ms.locfileid: "86515854"
 |Aantal privé-eindpunten op dezelfde Private Link-service   |  1000       |
 |Aantal privé-eindpunten per sleutelkluis | 64 |
 |Aantal sleutelkluizen met privé-eindpunten per abonnement | 400 |
+|Aantal privé-DNS-zonegroepen die kunnen worden gekoppeld aan een privé-eindpunt | 1 |
+|Aantal DNS-zones in elke groep | 5 |
 

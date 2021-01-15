@@ -179,6 +179,8 @@
               href: database/performance-guidance.md
             - name: DMV's gebruiken voor het bewaken van prestaties
               href: database/monitoring-with-dmvs.md
+            - name: Inzicht in blokkeren en blokkeren oplossen
+              href: database/understand-resolve-blocking.md
             - name: Diagnostische logboektelemetrie
               href: database/metrics-diagnostic-telemetry-logging-streaming-export-configure.md
             - name: OLTP in het geheugen

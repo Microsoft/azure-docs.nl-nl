@@ -10,13 +10,13 @@ ms.topic: troubleshooting
 author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: wiassaf, sstein
-ms.date: 03/10/2020
-ms.openlocfilehash: 6ea17f04538e3444b1baddaa8862add2cfbbaa9c
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 1/14/2021
+ms.openlocfilehash: 4d0f5404a64eae99ced0dd797954ba042b50060f
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96493420"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217223"
 ---
 # <a name="detectable-types-of-query-performance-bottlenecks-in-azure-sql-database"></a>Detecteerbare typen queryprestatieknelpunten in Azure SQL Database
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -90,7 +90,7 @@ Hier volgt een voor beeld van een gedeeltelijk Geparametriseerde query:
 ```sql
 SELECT *
 FROM t1 JOIN t2 ON t1.c1 = t2.c1
-WHERE t1.c1 = @p1 AND t2.c2 = '961C3970-0E54-4E8E-82B6-5545BE897F8F'
+WHERE t1.c1 = @p1 AND t2.c2 = '961C3970-0E54-4E8E-82B6-5545BE897F8F';
 ```
 
 In dit voor beeld `t1.c1` neemt `@p1` , maar `t2.c2` blijft GUID als letterlijke waarde. Als u in dit geval de waarde voor wijzigt `c2` , wordt de query behandeld als een andere query en wordt er een nieuwe compilatie uitgevoerd. Als u de compilaties in dit voor beeld wilt reduceren, zou u ook de GUID para meters.
@@ -115,7 +115,7 @@ WHERE
   rsi.start_time >= DATEADD(hour, -2, GETUTCDATE())
   AND query_parameterization_type_desc IN ('User', 'None')
 GROUP BY q.query_hash
-ORDER BY count (distinct p.query_id) DESC
+ORDER BY count (distinct p.query_id) DESC;
 ```
 
 ### <a name="factors-that-affect-query-plan-changes"></a>Factoren die van invloed zijn op de wijzigingen in het query plan
@@ -187,7 +187,7 @@ Wanneer u een suboptimaal plan hebt geëlimineerd en te *wachten* op problemen d
 
 - **Blok keren**:
 
-  Een query kan de vergren deling van objecten in de data base blok keren, terwijl andere gebruikers toegang proberen te krijgen tot dezelfde objecten. U kunt blokkerende query's identificeren met behulp van [dmv's](database/monitoring-with-dmvs.md#monitoring-blocked-queries) of [intelligent Insights](database/intelligent-insights-troubleshoot-performance.md#locking).
+  Een query kan de vergren deling van objecten in de data base blok keren, terwijl andere gebruikers toegang proberen te krijgen tot dezelfde objecten. U kunt blokkerende query's identificeren met behulp van [dmv's](database/monitoring-with-dmvs.md#monitoring-blocked-queries) of [intelligent Insights](database/intelligent-insights-troubleshoot-performance.md#locking). Zie [problemen met Azure SQL-blok kades begrijpen en oplossen](database/understand-resolve-blocking.md)voor meer informatie.
 - **IO-problemen**
 
   Query's kunnen wachten tot de pagina's naar de gegevens of logboek bestanden zijn geschreven. In dit geval controleert u de `INSTANCE_LOG_RATE_GOVERNOR` , `WRITE_LOG` of wacht op de `PAGEIOLATCH_*` statistieken in de DMV. Zie Dmv's gebruiken om [io-prestatie problemen te identificeren](database/monitoring-with-dmvs.md#identify-io-performance-issues).

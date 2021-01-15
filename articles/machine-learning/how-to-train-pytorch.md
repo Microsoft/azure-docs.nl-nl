@@ -8,21 +8,21 @@ ms.subservice: core
 ms.author: minxia
 author: mx-iao
 ms.reviewer: peterlu
-ms.date: 12/10/2020
+ms.date: 01/14/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: e3bf77406df302c4ba83cb7a8f1a30fba9f6339e
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 962054943a68aa61ac681de97eeebc10fe3f2b0a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97795934"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216628"
 ---
 # <a name="train-pytorch-models-at-scale-with-azure-machine-learning"></a>PyTorch-modellen op schaal trainen met Azure Machine Learning
 
 In dit artikel leert u hoe u uw [PyTorch](https://pytorch.org/) -trainings scripts kunt uitvoeren op ENTER prise Scale met behulp van Azure machine learning.
 
-De voorbeeld scripts in dit artikel worden gebruikt voor het classificeren van kippen en Turkije-installatie kopieën voor het bouwen van een diep gaande Neural-netwerk (DNN) op basis van de [zelf studie](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)over de overdrachts training van PyTorch. Overboeking learning is een techniek waarbij kennis wordt toegepast op basis van het oplossen van een probleem naar een ander, maar verwant probleem. Hiermee wordt het trainings proces versneld door minder gegevens-, tijd-en reken bronnen te vereisen dan bij de nieuwe training.
+De voorbeeld scripts in dit artikel worden gebruikt voor het classificeren van kippen en Turkije-installatie kopieën voor het bouwen van een diep gaande Neural-netwerk (DNN) op basis van de [zelf studie](https://pytorch.org/tutorials/beginner/transfer_learning_tutorial.html)over de overdrachts training van PyTorch. Overboeking learning is een techniek waarbij kennis wordt toegepast op basis van het oplossen van een probleem naar een ander, maar verwant probleem. Hiermee wordt het trainings proces versneld door minder gegevens-, tijd-en reken bronnen te vereisen dan bij de nieuwe training. Raadpleeg het artikel over [uitgebreide kennis en machine learning](./concept-deep-learning-vs-machine-learning.md#what-is-transfer-learning) voor meer informatie over overboeking learning.
 
 Of u nu een diep Learning PyTorch-model traint of een bestaand model in de Cloud brengt, u kunt Azure Machine Learning gebruiken om open-source trainings taken te schalen met behulp van elastische Cloud Compute-resources. U kunt modellen voor productie kwaliteit bouwen, implementeren, versie en bewaken met Azure Machine Learning. 
 

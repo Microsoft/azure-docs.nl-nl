@@ -6,18 +6,18 @@ ms.service: virtual-network
 ms.topic: how-to
 ms.date: 08/31/2019
 ms.author: allensu
-ms.openlocfilehash: a22dc6dc0c4fc199d3f262b18aeeae5090a06dce
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 11b0260eb6c1f5edfb246dcf97a43bdd874bf337
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84689313"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217274"
 ---
 # <a name="move-azure-network-security-group-nsg-to-another-region-using-the-azure-portal"></a>Verplaats de Azure-netwerk beveiligings groep (NSG) naar een andere regio met behulp van de Azure Portal
 
 Er zijn verschillende scenario's waarin u uw bestaande Nsg's van de ene naar de andere regio wilt verplaatsen. U kunt bijvoorbeeld een NSG maken met dezelfde configuratie-en beveiligings regels om te testen. Het is ook mogelijk dat u een NSG naar een andere regio wilt verplaatsen als onderdeel van de planning voor nood herstel.
 
-Azure-beveiligings groepen kunnen niet worden verplaatst van de ene regio naar een andere. U kunt echter een Azure Resource Manager sjabloon gebruiken om de bestaande configuratie-en beveiligings regels van een NSG te exporteren.  U kunt de resource vervolgens in een andere regio zetten door de NSG naar een sjabloon te exporteren, de para meters te wijzigen zodat deze overeenkomen met de doel regio en vervolgens de sjabloon te implementeren in de nieuwe regio.  Voor meer informatie over Resource Manager en sjablonen raadpleegt [u Quick Start: Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal).
+Azure-beveiligingsgroepen kunnen niet worden verplaatst van de ene regio naar een andere. U kunt echter een Azure Resource Manager sjabloon gebruiken om de bestaande configuratie-en beveiligings regels van een NSG te exporteren.  U kunt de resource vervolgens in een andere regio zetten door de NSG naar een sjabloon te exporteren, de para meters te wijzigen zodat deze overeenkomen met de doel regio en vervolgens de sjabloon te implementeren in de nieuwe regio.  Voor meer informatie over Resource Manager en sjablonen raadpleegt [u Quick Start: Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -32,7 +32,7 @@ Azure-beveiligings groepen kunnen niet worden verplaatst van de ene regio naar e
 
 - Controleer of u met uw Azure-abonnement Nsg's kunt maken in de doel regio die wordt gebruikt. Neem contact op met ondersteuning voor het inschakelen van het vereiste quotum.
 
-- Zorg ervoor dat uw abonnement voldoende bronnen heeft ter ondersteuning van het toevoegen van Nsg's voor dit proces.  Raadpleeg [Azure-abonnement en -servicelimieten, quotums en beperkingen](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits).
+- Zorg ervoor dat uw abonnement voldoende bronnen heeft ter ondersteuning van het toevoegen van Nsg's voor dit proces.  Raadpleeg [Azure-abonnement en -servicelimieten, quotums en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 
 
 ## <a name="prepare-and-move"></a>Voorbereiden en verplaatsen
@@ -157,11 +157,11 @@ De volgende stappen laten zien hoe u de netwerk beveiligings groep voorbereidt v
 
 15. Klik op **basis**  >  **bronnen groep** om de resource groep te kiezen waarin de doel-NSG wordt geïmplementeerd.  U kunt op **Nieuw maken** klikken om een nieuwe resource groep te maken voor de doel-NSG.  Zorg ervoor dat de naam niet hetzelfde is als de bron resource groep van de bestaande NSG.
 
-16. De **BASICS**  >  **locatie** van de basis beginselen controleren is ingesteld op de doel locatie waar u de NSG wilt implementeren.
+16. De   >  **locatie** van de basis beginselen controleren is ingesteld op de doel locatie waar u de NSG wilt implementeren.
 
 17. Controleer onder **instellingen** of de naam overeenkomt met de naam die u hebt ingevoerd in de bovenstaande para meters-editor.
 
-18. Schakel het selectie vakje onder **voor waarden**in.
+18. Schakel het selectie vakje onder **voor waarden** in.
 
 19. Klik op de knop **aanschaffen** om de netwerk beveiligings groep te implementeren.
 
@@ -178,5 +178,5 @@ Als u de wijzigingen wilt door voeren en de NSG wilt verplaatsen, verwijdert u d
 In deze zelf studie hebt u een Azure-netwerk beveiligings groep verplaatst van de ene regio naar een andere en de bron resources opgeschoond.  Raadpleeg voor meer informatie over het verplaatsen van resources tussen regio's en herstel na nood gevallen in Azure:
 
 
-- [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)
-- [Virtuele Azure-machines verplaatsen naar een andere regio](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate)
+- [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](../azure-resource-manager/management/move-resource-group-and-subscription.md)
+- [Virtuele Azure-machines verplaatsen naar een andere regio](../site-recovery/azure-to-azure-tutorial-migrate.md)

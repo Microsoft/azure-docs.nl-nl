@@ -9,12 +9,12 @@ ms.service: iot-central
 services: iot-central
 ms.custom: mvc, devx-track-csharp
 manager: philmea
-ms.openlocfilehash: f6c8272f736e2f83b4d33f3d61ce83356aa40e5d
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: c79367ca8cf9e4a4884c829c675d794b2e734737
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92126753"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220262"
 ---
 # <a name="extend-azure-iot-central-with-custom-rules-using-stream-analytics-azure-functions-and-sendgrid"></a>Azure IoT Central uitbreiden met aangepaste regels met behulp van Stream Analytics, Azure Functions en SendGrid
 
@@ -32,7 +32,7 @@ In deze hand leiding leert u het volgende:
 
 Als u de stappen in deze hand leiding wilt uitvoeren, hebt u een actief Azure-abonnement nodig.
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
+Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
 
 ### <a name="iot-central-application"></a>IoT Central-toepassing
 
@@ -95,7 +95,7 @@ Gebruik de [Azure Portal om een functie-app te maken](https://portal.azure.com/#
 | Hostingabonnement | Verbruiksabonnement |
 | Locatie | VS - oost |
 | Runtimestack | .NET |
-| Opslag | Nieuwe maken |
+| Storage | Nieuwe maken |
 
 ### <a name="sendgrid-account"></a>SendGrid-account
 
@@ -119,7 +119,7 @@ Wanneer u alle vereiste resources hebt gemaakt, ziet uw **DetectStoppedDevices**
 U kunt een IoT Central-toepassing configureren om voortdurend telemetrie te exporteren naar een Event Hub. In deze sectie maakt u een Event Hub voor het ontvangen van telemetrie van uw IoT Central-toepassing. De Event Hub levert de telemetrie naar uw Stream Analytics-taak voor verwerking.
 
 1. Ga in het Azure Portal naar uw Event Hubs-naam ruimte en selecteer **+ Event hub**.
-1. Geef uw Event Hub **centralexport**een naam en selecteer **maken**.
+1. Geef uw Event Hub **centralexport** een naam en selecteer **maken**.
 
 De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding:
 
@@ -130,7 +130,7 @@ De naam ruimte van uw Event Hubs ziet eruit als in de volgende scherm afbeelding
 De functie-app heeft een SendGrid API-sleutel nodig om e-mail berichten te verzenden. Een SendGrid-API-sleutel maken:
 
 1. Ga in het Azure Portal naar uw SendGrid-account. Kies vervolgens **beheren** om toegang te krijgen tot uw SendGrid-account.
-1. Kies in uw SendGrid-account **instellingen**en vervolgens de **API-sleutels**. Kies **API-sleutel maken**:
+1. Kies in uw SendGrid-account **instellingen** en vervolgens de **API-sleutels**. Kies **API-sleutel maken**:
 
     ![SendGrid API-sleutel maken](media/howto-create-custom-rules/sendgrid-api-keys.png)
 
@@ -155,7 +155,7 @@ De portal maakt een standaard functie met de naam **HttpTrigger1**:
 Als u e-mail berichten met SendGrid wilt verzenden, moet u de bindingen voor uw functie als volgt configureren:
 
 1. Selecteer **integreren**, kies de uitvoer **http ($Return)** en selecteer vervolgens **verwijderen**.
-1. Kies **+ nieuwe uitvoer**, kies **SendGrid**en kies vervolgens **selecteren**. Kies **installeren** om de SendGrid-extensie te installeren.
+1. Kies **+ nieuwe uitvoer**, kies **SendGrid** en kies vervolgens **selecteren**. Kies **installeren** om de SendGrid-extensie te installeren.
 1. Wanneer de installatie is voltooid, selecteert **u functie retour waarde gebruiken**. Voeg een geldig **adres toe** aan om e-mail meldingen te ontvangen.  Voeg een geldig **afzender adres** toe voor gebruik als de afzender van het e-mail bericht.
 1. Selecteer **Nieuw** naast **SendGrid API Key app setting**. Voer **SendGridAPIKey** in als de sleutel en de SENDGRID-API-sleutel die u eerder hebt genoteerd als waarde. Selecteer vervolgens **Maken**.
 1. Kies **Opslaan** om de SendGrid-bindingen voor uw functie op te slaan.
@@ -214,7 +214,7 @@ Als u de functie wilt implementeren, voegt u de C#-code toe om de binnenkomende 
 
 ### <a name="test-the-function-works"></a>De functie testen
 
-Als u de functie in de portal wilt testen, kiest u eerst **Logboeken** aan de onderkant van de code-editor. Kies vervolgens **testen** rechts van de code-editor. Gebruik de volgende JSON als de **hoofd tekst**van de aanvraag:
+Als u de functie in de portal wilt testen, kiest u eerst **Logboeken** aan de onderkant van de code-editor. Kies vervolgens **testen** rechts van de code-editor. Gebruik de volgende JSON als de **hoofd tekst** van de aanvraag:
 
 ```json
 [{"deviceid":"test-device-1","time":"2019-05-02T14:23:39.527Z"},{"deviceid":"test-device-2","time":"2019-05-02T14:23:50.717Z"},{"deviceid":"test-device-3","time":"2019-05-02T14:24:28.919Z"}]
@@ -239,7 +239,7 @@ test-device-3    2019-05-02T14:24:28.919Z
 
 Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wanneer een apparaat meer dan 120 seconden stopt met het verzenden van telemetrie. De query gebruikt de telemetrie van de Event Hub als invoer. De taak verzendt de query resultaten naar de functie-app. In deze sectie configureert u de Stream Analytics taak:
 
-1. Navigeer in het Azure Portal naar uw Stream Analytics-taak, onder **taak topologie** Selecteer **invoer**, kies **+ stroom invoer toevoegen**en kies vervolgens **Event hub**.
+1. Navigeer in het Azure Portal naar uw Stream Analytics-taak, onder **taak topologie** Selecteer **invoer**, kies **+ stroom invoer toevoegen** en kies vervolgens **Event hub**.
 1. Gebruik de informatie in de volgende tabel om de invoer te configureren met behulp van de Event Hub die u eerder hebt gemaakt en kies vervolgens **Opslaan**:
 
     | Instelling | Waarde |
@@ -247,9 +247,9 @@ Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wan
     | Invoeralias | centraltelemetry |
     | Abonnement | Uw abonnement |
     | Event hub-naamruimte | De Event hub-naam ruimte |
-    | Event Hub-naam | Bestaande- **centralexport** gebruiken |
+    | Naam van de Event Hub | Bestaande- **centralexport** gebruiken |
 
-1. Selecteer onder **taak topologie** **uitvoer**, kies **+ toevoegen**en kies **Azure function**.
+1. Selecteer onder **taak topologie** **uitvoer**, kies **+ toevoegen** en kies **Azure function**.
 1. Gebruik de informatie in de volgende tabel om de uitvoer te configureren en kies vervolgens **Opslaan**:
 
     | Instelling | Waarde |
@@ -259,7 +259,7 @@ Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wan
     | Functie-app | Uw functie-app |
     | Functie  | HttpTrigger1 |
 
-1. Selecteer bij **taak topologie**de optie **query** en vervang de bestaande query door de volgende SQL:
+1. Selecteer bij **taak topologie** de optie **query** en vervang de bestaande query door de volgende SQL:
 
     ```sql
     with
@@ -301,7 +301,7 @@ Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wan
     ```
 
 1. Selecteer **Opslaan**.
-1. Als u de Stream Analytics taak wilt starten, kiest u **overzicht**, **Start**, vervolgens **nu**en **Start**u het volgende:
+1. Als u de Stream Analytics taak wilt starten, kiest u **overzicht**, **Start**, vervolgens **nu** en **Start** u het volgende:
 
     ![Stream Analytics](media/howto-create-custom-rules/stream-analytics.png)
 
@@ -309,7 +309,7 @@ Deze oplossing maakt gebruik van een Stream Analytics query om te detecteren wan
 
 Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotcentral) naar de IOT Central toepassing die u hebt gemaakt op basis van de contoso-sjabloon. In deze sectie configureert u de toepassing voor het streamen van de telemetrie van de gesimuleerde apparaten naar uw Event Hub. Het exporteren configureren:
 
-1. Ga naar de pagina voor het **exporteren van gegevens** , selecteer **+ Nieuw**en klik vervolgens op **Azure Event hubs**.
+1. Ga naar de pagina voor het **exporteren van gegevens** , selecteer **+ Nieuw** en klik vervolgens op **Azure Event hubs**.
 1. Gebruik de volgende instellingen om het exporteren te configureren en selecteer vervolgens **Opslaan**:
 
     | Instelling | Waarde |
@@ -326,7 +326,7 @@ Ga op de website van [Azure IOT Central Application Manager](https://aka.ms/iotc
 
 Wacht tot de export status **actief** is voordat u doorgaat.
 
-## <a name="test"></a>Test
+## <a name="test"></a>Testen
 
 Als u de oplossing wilt testen, kunt u de continue gegevens export uitschakelen van IoT Central naar gesimuleerde gestopte apparaten:
 

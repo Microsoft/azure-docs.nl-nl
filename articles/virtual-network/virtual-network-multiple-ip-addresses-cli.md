@@ -14,18 +14,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/17/2016
 ms.author: allensu
-ms.openlocfilehash: 8f3cdad8638f8a1f99942d03f3878d0626c3bdbf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1d94166c6c56a3652dc0ad532bd481c6e792c52
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87281239"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217087"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-cli"></a>Meerdere IP-adressen toewijzen aan virtuele machines met behulp van de Azure CLI
 
 [!INCLUDE [virtual-network-multiple-ip-addresses-intro.md](../../includes/virtual-network-multiple-ip-addresses-intro.md)]
 
-In dit artikel wordt uitgelegd hoe u een virtuele machine (VM) maakt via het Azure Resource Manager-implementatie model met behulp van de Azure CLI. Er kunnen geen meerdere IP-adressen worden toegewezen aan resources die zijn gemaakt via het klassieke implementatie model. Lees het artikel over [implementatie modellen begrijpen](../resource-manager-deployment-model.md) voor meer informatie over Azure-implementatie modellen.
+In dit artikel wordt uitgelegd hoe u een virtuele machine (VM) maakt via het Azure Resource Manager-implementatie model met behulp van de Azure CLI. Er kunnen geen meerdere IP-adressen worden toegewezen aan resources die zijn gemaakt via het klassieke implementatie model. Lees het artikel over [implementatie modellen begrijpen](../azure-resource-manager/management/deployment-models.md) voor meer informatie over Azure-implementatie modellen.
 
 [!INCLUDE [virtual-network-multiple-ip-addresses-scenario.md](../../includes/virtual-network-multiple-ip-addresses-scenario.md)]
 
@@ -246,7 +246,7 @@ U kunt extra persoonlijke en open bare IP-adressen toevoegen aan een bestaande A
         --allocation-method Static
         ```
     
-        Voer de volgende opdracht in om de open bare IP-adres resource aan de bestaande IP-configuratie met de naam *ipconfig-3*te koppelen:
+        Voer de volgende opdracht in om de open bare IP-adres resource aan de bestaande IP-configuratie met de naam *ipconfig-3* te koppelen:
     
         ```azurecli
         az network nic ip-config update \

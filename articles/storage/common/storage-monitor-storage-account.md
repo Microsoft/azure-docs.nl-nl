@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring
-ms.openlocfilehash: bfecae4775655f732df8fd6cffea613cd39fb828
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: e5495b466bf9b16319b788ec32c7b3a03100f505
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782005"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218139"
 ---
 # <a name="monitor-a-storage-account-in-the-azure-portal"></a>Een Storage-account bewaken in de Azure-portal
 
@@ -32,6 +32,8 @@ U wordt aangeraden [Azure monitor voor opslag](../../azure-monitor/insights/stor
 > Zie [Microsoft Azure Storage controleren, diagnosticeren en problemen oplossen](storage-monitoring-diagnosing-troubleshooting.md)voor meer informatie over het gebruik van Opslaganalyse en andere hulpprogram ma's voor het identificeren, vaststellen en oplossen van problemen met Azure Storage.
 >
 
+<a id="modify-retention-policy"></a>
+
 ## <a name="configure-monitoring-for-a-storage-account"></a>Bewaking configureren voor een opslag account
 
 1. Selecteer in de [Azure Portal](https://portal.azure.com) **opslag accounts** en vervolgens de naam van het opslag account om het account dashboard te openen.
@@ -39,7 +41,7 @@ U wordt aangeraden [Azure monitor voor opslag](../../azure-monitor/insights/stor
 
     ![Scherm opname van de optie Diagnostische instellingen (klassiek) in de sectie bewaking (klassiek).](./media/storage-monitor-storage-account/storage-enable-metrics-00.png)
 
-1. Selecteer het **type** metrische gegevens voor elke **service** die u wilt bewaken en het **Bewaar beleid** voor de gegevens. U kunt de bewaking ook uitschakelen door de **status** in te stellen op **uit** .
+1. Selecteer het **type** metrische gegevens voor elke **service** die u wilt bewaken en het **Bewaar beleid** voor de gegevens. U kunt de bewaking ook uitschakelen door de **status** in te stellen op **uit**.
 
     ![MonitoringOptions](./media/storage-monitor-storage-account/storage-enable-metrics-01.png)
 
@@ -49,11 +51,11 @@ U wordt aangeraden [Azure monitor voor opslag](../../azure-monitor/insights/stor
    > Er worden kosten in rekening gebracht wanneer u de metrische gegevens hand matig verwijdert. Verlopen analyse gegevens (gegevens die ouder zijn dan uw Bewaar beleid) worden kosteloos verwijderd door het systeem. We raden u aan een Bewaar beleid in te stellen op basis van hoe lang u de opslag analyse gegevens voor uw account wilt behouden. Zie [facturering op metrische](storage-analytics-metrics.md#billing-on-storage-metrics) gegevens van de opslag voor meer informatie.
    >
 
-1. Wanneer u de bewakings configuratie hebt voltooid, selecteert u **Opslaan** .
+1. Wanneer u de bewakings configuratie hebt voltooid, selecteert u **Opslaan**.
 
 Een standaardset metrische gegevens wordt weer gegeven in grafieken op de Blade van het opslag account, evenals de afzonderlijke service-Blades (BLOB, wachtrij, tabel en bestand). Zodra u de metrische gegevens voor een service hebt ingeschakeld, kan het tot een uur duren voordat het bestand in de grafieken wordt weer gegeven. U kunt **bewerken** selecteren in een metrische grafiek om te configureren welke metrische gegevens worden weer gegeven in de grafiek.
 
-U kunt metrische gegevens verzamelen en logboek registratie uitschakelen door de **status** in te stellen op **uit** .
+U kunt metrische gegevens verzamelen en logboek registratie uitschakelen door de **status** in te stellen op **uit**.
 
 > [!NOTE]
 > Azure Storage gebruikt [tabel opslag](storage-introduction.md#table-storage) om de metrische gegevens voor uw opslag account op te slaan, en slaat de metrische gegevens op in tabellen in uw account. Zie voor meer informatie [Hoe metrische gegevens worden opgeslagen](storage-analytics-metrics.md#how-metrics-are-stored).
@@ -65,7 +67,7 @@ Gebruik de volgende procedure om te kiezen welke metrische opslag gegevens in ee
 
 1. Begin met het weer geven van een metrische opslag grafiek in het Azure Portal. U kunt grafieken vinden op de **Blade opslag account** en op de Blade **metrische gegevens** voor een afzonderlijke service (BLOB, wachtrij, tabel, bestand).
 
-   In dit voor beeld wordt het volgende diagram gebruikt dat wordt weer gegeven op de **Blade opslag account** :
+   In dit voor beeld wordt het volgende diagram gebruikt dat wordt weer gegeven op de **Blade opslag account**:
 
    ![Grafiek selectie in Azure Portal](./media/storage-monitor-storage-account/stg-customize-chart-00.png)
 
@@ -75,7 +77,7 @@ Gebruik de volgende procedure om te kiezen welke metrische opslag gegevens in ee
 
    ![Tijds bereik en service selectie in de Blade grafiek bewerken](./media/storage-monitor-storage-account/storage-edit-metric-time-range.png)
 
-1. Selecteer de afzonderlijke **metrische gegevens** die u wilt weer geven in de grafiek en klik vervolgens op **OK** .
+1. Selecteer de afzonderlijke **metrische gegevens** die u wilt weer geven in de grafiek en klik vervolgens op **OK**.
 
    ![Afzonderlijke metrieke selectie in Blade grafiek bewerken](./media/storage-monitor-storage-account/storage-edit-metric-selections.png)
 
@@ -98,11 +100,11 @@ De metrische gegevens die u in **Diagnostische gegevens** hebt geselecteerd, bep
 
 U kunt waarschuwingen maken om u te waarschuwen wanneer de drempel waarden voor de metrische gegevens van de opslag resource zijn bereikt.
 
-1. Als u de **Blade waarschuwings regels** wilt openen, schuift u omlaag naar de sectie **bewaking** van de **menu-Blade** en selecteert u **waarschuwingen (klassiek)** .
+1. Als u de **Blade waarschuwings regels** wilt openen, schuift u omlaag naar de sectie **bewaking** van de **menu-Blade** en selecteert u **waarschuwingen (klassiek)**.
 2. Selecteer **waarschuwing voor metrische gegevens toevoegen (klassiek)** om de Blade **een waarschuwings regel toevoegen** te openen
 3. Voer een **naam** en **Beschrijving** in voor de nieuwe waarschuwings regel.
-4. Selecteer de **metriek** waarvoor u een waarschuwing, een waarschuwings **voorwaarde** en een **drempel waarde** wilt toevoegen. Het type drempel-eenheid verandert afhankelijk van de metriek die u hebt gekozen. Bijvoorbeeld: ' count ' is het eenheids type voor *ContainerCount* , terwijl de eenheid voor de metrische waarde van *PercentNetworkError* een percentage is.
-5. Selecteer de **periode** . Metrische gegevens die de drempel binnen de periode bereiken of overschrijden, activeren een waarschuwing.
+4. Selecteer de **metriek** waarvoor u een waarschuwing, een waarschuwings **voorwaarde** en een **drempel waarde** wilt toevoegen. Het type drempel-eenheid verandert afhankelijk van de metriek die u hebt gekozen. Bijvoorbeeld: ' count ' is het eenheids type voor *ContainerCount*, terwijl de eenheid voor de metrische waarde van *PercentNetworkError* een percentage is.
+5. Selecteer de **periode**. Metrische gegevens die de drempel binnen de periode bereiken of overschrijden, activeren een waarschuwing.
 6. Beschrijving E-mail en **webhook** **-** meldingen configureren. Zie [een webhook configureren voor een Azure metric-waarschuwing](../../azure-monitor/platform/alerts-webhooks.md)voor meer informatie over webhooks. Als u geen e-mail of webhook-meldingen configureert, worden waarschuwingen alleen weer gegeven in de Azure Portal.
 
 ![De Blade een waarschuwings regel toevoegen in de Azure Portal](./media/storage-monitor-storage-account/add-alert-rule.png)
@@ -112,10 +114,10 @@ U kunt waarschuwingen maken om u te waarschuwen wanneer de drempel waarden voor 
 U kunt Azure Storage metrische grafieken voor uw opslag accounts toevoegen aan uw portal-dash board.
 
 1. Selecteer in het [Azure Portal](https://portal.azure.com)op **dash board bewerken** terwijl u uw dash board weergeeft.
-1. Selecteer in de **Galerie tegels** de optie **tegels zoeken op**  >  **type** .
-1. Selecteer **Type**  >  **opslag accounts** opgeven.
+1. Selecteer in de **Galerie tegels** de optie **tegels zoeken op**  >  **type**.
+1. Selecteer   >  **opslag accounts** opgeven.
 1. Selecteer in **resources** het opslag account waarvan u de metrische gegevens aan het dash board wilt toevoegen.
-1. Selecteer **categorie**  >  **bewaking** .
+1. Selecteer **categorie**  >  **bewaking**.
 1. Slepen en neerzetten van de grafiek tegel naar het dash board voor de metrische gegevens die u wilt weer geven. Herhaal deze stap voor alle metrische gegevens die u op het dash board wilt weer geven. In de volgende afbeelding is de grafiek ' blobs-totaal aantal aanvragen ' gemarkeerd als voor beeld, maar alle grafieken zijn beschikbaar voor plaatsing op uw dash board.
 
    ![Tegel galerie in Azure Portal](./media/storage-monitor-storage-account/storage-customize-dashboard.png)
@@ -139,7 +141,7 @@ U kunt Azure Storage voor het opslaan van Diagnostische logboeken voor lees-, sc
 1. Controleer of de **status** is ingesteld **op aan** en selecteer de **Services** waarvoor u logboek registratie wilt inschakelen.
 
     ![Configureer logboek registratie in de Azure Portal.](./media/storage-monitor-storage-account/enable-diagnostics.png)
-1. Klik op **Opslaan** .
+1. Klik op **Opslaan**.
 
 De diagnostische logboeken worden opgeslagen in een BLOB-container met de naam *$logs* in uw opslag account. U kunt de logboek gegevens weer geven met behulp van een opslag Verkenner, zoals de [Microsoft Azure Storage Explorer](https://storageexplorer.com), of programmatisch met behulp van de Storage-client bibliotheek of Power shell.
 

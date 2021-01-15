@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/06/2020
 ms.author: steveesp
-ms.openlocfilehash: a9db2bcc0b44dfb6146517de8a139f34cd8584af
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: bb9235f4d1190bf7f71ddc007f09c9666c353234
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654452"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216798"
 ---
 # <a name="optimize-network-throughput-for-azure-virtual-machines"></a>Netwerk doorvoer optimaliseren voor virtuele Azure-machines
 
@@ -152,7 +152,7 @@ sudo ./install.sh #or upgrade.sh if prior LIS was previously installed
 Meer informatie over Linux Integration Services versie 4,2 voor Hyper-V door de [Download pagina](https://www.microsoft.com/download/details.aspx?id=55106)weer te geven.
 
 ## <a name="next-steps"></a>Volgende stappen
-* Vm's op elkaar implementeren voor lage latentie met proximity- [plaatsings groep](../virtual-machines/windows/co-location.md)
+* Vm's op elkaar implementeren voor lage latentie met proximity- [plaatsings groep](../virtual-machines/co-location.md)
 * Bekijk het geoptimaliseerde resultaat met [band breedte/door Voer Azure VM](virtual-network-bandwidth-testing.md) voor uw scenario.
 * Meer informatie over hoe [band breedte wordt toegewezen aan virtuele machines](virtual-machine-network-throughput.md)
 * Meer informatie met behulp van veelgestelde [vragen over Azure Virtual Network](virtual-networks-faq.md)

@@ -8,12 +8,12 @@ ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
 ms.date: 11/03/2020
-ms.openlocfilehash: 207679ad5b508b687c9cad372d144839fcaa501d
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: cb0fd5464f7025d71dd384c56233aefa6a6cd364
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94743844"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218719"
 ---
 # <a name="quickstart-transform-data-using-mapping-data-flows"></a>Snelstartgids: gegevens transformeren met behulp van gegevens stromen toewijzen
 
@@ -39,7 +39,7 @@ In deze Quick Start voert u de volgende stappen uit:
 
 Wanneer uw Azure Synapse-werkruimte is gemaakt, kunt u Synapse Studio op twee manieren openen:
 
-* Open de Synapse-werkruimte in de [Azure-portal](https://ms.portal.azure.com/#home). Selecteer **openen** op de kaart open Synapse studio onder aan de slag.
+* Open de Synapse-werkruimte in de [Azure-portal](https://ms.portal.azure.com/#home). Selecteer **Openen** op de kaart 'Open Synapse Studio' onder 'Aan de slag'.
 * Open [Azure Synapse Analytics](https://web.azuresynapse.net/) en meld u aan bij uw werkruimte.
 
 In deze quickstart wordt de werkruimte met de naam 'adftest2020' als voorbeeld gebruikt. Er wordt automatisch naar de startpagina van Synapse Studio genavigeerd.
@@ -68,7 +68,7 @@ Een pijplijn bevat de logische stroom voor het uitvoeren van een reeks activitei
 
 Wanneer u de gegevens stroom hebt gemaakt, wordt u automatisch naar het canvas voor gegevens stromen verzonden. In deze stap bouwt u een gegevens stroom die de MoviesDB.csv in ADLS-opslag neemt en de gemiddelde beoordeling van comedies van 1910 tot 2000 samenvoegt. Vervolgens schrijft u dit bestand terug naar de ADLS-opslag.
 
-1. Schuif boven het canva voor gegevens stroom de schuif regelaar voor **fout opsporing van gegevens stromen** in. In de modus voor fout opsporing kunt u de transformatie logica interactief testen op een live Spark-cluster. Gegevens stroom clusters nemen 5-7 minuten in beslag en gebruikers worden aanbevolen om debug eerst in te scha kelen als de ontwikkeling van gegevens stromen wordt gepland. Zie [debug mode (foutopsporingsmodus](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-debug-mode?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)) voor meer informatie.
+1. Schuif boven het canva voor gegevens stroom de schuif regelaar voor **fout opsporing van gegevens stromen** in. In de modus voor fout opsporing kunt u de transformatie logica interactief testen op een live Spark-cluster. Gegevens stroom clusters nemen 5-7 minuten in beslag en gebruikers worden aanbevolen om debug eerst in te scha kelen als de ontwikkeling van gegevens stromen wordt gepland. Zie [debug mode (foutopsporingsmodus](../data-factory/concepts-data-flow-debug-mode.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)) voor meer informatie.
 
     ![De fout opsporing op de dia](media/quickstart-data-flow/debug-on.png)
 
@@ -78,11 +78,11 @@ Wanneer u de gegevens stroom hebt gemaakt, wordt u automatisch naar het canvas v
 
     ![Een nieuwe bron-gegevensset maken](media/quickstart-data-flow/new-source-dataset.png)
 
-1. Kies **Azure data Lake Storage Gen2**. Klik op Doorgaan.
+1. Kies **Azure data Lake Storage Gen2**. Klik op door gaan.
 
     ![Azure Data Lake Storage Gen2 kiezen](media/quickstart-data-flow/select-source-dataset.png)
 
-1. Kies **DelimitedText**. Klik op Doorgaan.
+1. Kies **DelimitedText**. Klik op door gaan.
 
 1. Geef uw gegevensset een naam **MoviesDB**. Kies in de vervolg keuzelijst gekoppelde service de optie **Nieuw**.
 
@@ -104,7 +104,7 @@ Wanneer u de gegevens stroom hebt gemaakt, wordt u automatisch naar het canvas v
 
 1. Geef een naam op voor de filter transformatie **FilterYears**. Klik op het expressievak naast **filteren op** om de opbouw functie voor expressies te openen. Hier geeft u uw filter voorwaarde op.
 
-1. Met de opbouw functie voor de data flow-expressie kunt u interactief expressies bouwen voor gebruik in verschillende trans formaties. Expressies kunnen ingebouwde functies, kolommen uit het invoer schema en door de gebruiker gedefinieerde para meters bevatten. Zie de [opbouw functie voor data flow](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-expression-builder?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)-expressies voor meer informatie over het maken van expressies.
+1. Met de opbouw functie voor de data flow-expressie kunt u interactief expressies bouwen voor gebruik in verschillende trans formaties. Expressies kunnen ingebouwde functies, kolommen uit het invoer schema en door de gebruiker gedefinieerde para meters bevatten. Zie de [opbouw functie voor data flow](../data-factory/concepts-data-flow-expression-builder.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)-expressies voor meer informatie over het maken van expressies.
 
     In deze Snelstartgids wilt u de films van genre Comedy filteren die zijn uitgekomen tussen de jaren 1910 en 2000. Als jaar momenteel een teken reeks is, moet u deze converteren naar een geheel getal met behulp van de ```toInteger()``` functie. Gebruik de Opera tors groter dan of gelijk aan (>=) en kleiner dan of gelijk aan (<=) om te vergelijken met de letterlijke jaar waarden 1910 en 200-. Voeg deze expressies samen met de operator and (&&). De expressie wordt als volgt opgehaald:
 
@@ -152,9 +152,9 @@ Wanneer u de gegevens stroom hebt gemaakt, wordt u automatisch naar het canvas v
 
 1. Geef **uw Sink een naam.** Klik op **Nieuw** om uw Sink-gegevensset te maken.
 
-1. Kies **Azure data Lake Storage Gen2**. Klik op Doorgaan.
+1. Kies **Azure data Lake Storage Gen2**. Klik op door gaan.
 
-1. Kies **DelimitedText**. Klik op Doorgaan.
+1. Kies **DelimitedText**. Klik op door gaan.
 
 1. Geef uw Sink-gegevensset een naam **MoviesSink**. Kies voor gekoppelde service de ADLS Gen2 gekoppelde service die u in stap 7 hebt gemaakt. Voer een uitvoermap in om uw gegevens naar te schrijven. In deze Snelstartgids schrijven we naar de map ' output ' in container ' voor beeld-gegevens '. De map hoeft niet vooraf te bestaan en kan dynamisch worden gemaakt. Stel de **eerste rij als koptekst** in op True en selecteer **geen** voor het **import schema**. Klik op **OK** wanneer u klaar bent.
 
@@ -190,6 +190,6 @@ Als u deze Quick Start op de juiste wijze hebt uitgevoerd, moet u 83 rijen en tw
 Ga naar de volgende artikelen voor meer informatie over ondersteuning voor Azure Synapse Analytics:
 
 > [!div class="nextstepaction"]
-> [Pijp lijn en activiteiten](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) 
->  Overzicht van toewijzings [gegevens stroom](https://docs.microsoft.com/azure/data-factory/concepts-data-flow-overview?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) 
->  [Data flow-expressie taal](https://docs.microsoft.com/azure/data-factory/data-flow-expression-functions?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
+> [Pijp lijn en activiteiten](../data-factory/concepts-pipelines-activities.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) 
+>  Overzicht van toewijzings [gegevens stroom](../data-factory/concepts-data-flow-overview.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) 
+>  [Data flow-expressie taal](../data-factory/data-flow-expression-functions.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)

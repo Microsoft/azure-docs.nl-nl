@@ -3,17 +3,17 @@ title: Netwerk beveiliging voor Azure Relay
 description: In dit artikel wordt beschreven hoe u IP-firewall regels en privé-eind punten gebruikt met Azure Relay.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 608224f42fac8cd2d8ff06ab84989b1f675d418c
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 735a0b7dc303ad63cb301151e3e14e4488c856b1
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134463"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217240"
 ---
 # <a name="network-security-for-azure-relay"></a>Netwerk beveiliging voor Azure Relay 
 In dit artikel wordt beschreven hoe u de volgende beveiligings functies gebruikt met Azure Relay: 
 
-- IP-firewall regels (preview-versie)
+- IP-firewallregels
 - Privé-eindpunten 
 
 > [!NOTE]
@@ -28,9 +28,6 @@ Deze functie is handig in scenario's waarin Azure Relay alleen toegankelijk moet
 De IP-firewall regels worden toegepast op het niveau van de relay-naam ruimte. Daarom gelden de regels voor alle verbindingen van clients die gebruikmaken van elk ondersteund protocol. Een verbindings poging van een IP-adres dat niet overeenkomt met een toegestane IP-regel op de relay-naam ruimte, wordt geweigerd als niet-geautoriseerd. De IP-regel wordt niet vermeld in het antwoord. IP-filter regels worden in volg orde toegepast en de eerste regel die overeenkomt met het IP-adres, bepaalt de accepteren of afwijzen.
 
 Zie [IP-Firewall configureren voor een relay-naam ruimte](ip-firewall-virtual-networks.md) voor meer informatie
-
-> [!NOTE]
-> Deze functie is momenteel beschikbaar als **Preview-versie**. 
 
 ## <a name="private-endpoints"></a>Privé-eindpunten
 

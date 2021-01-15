@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: f7253be2844f40ca52df2f9b3bc9cbba552fea2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b45bd2e2b9ad971891cbcb944286f40b4f66883
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85480130"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216949"
 ---
 # <a name="add-network-interfaces-to-or-remove-network-interfaces-from-virtual-machines"></a>Netwerkinterfaces toevoegen aan of verwijderen van netwerkinterfaces van virtuele machines
 
@@ -61,11 +61,11 @@ Een netwerk interface toevoegen aan de virtuele machine:
 
 1. Ga naar de [Azure Portal](https://portal.azure.com) om een bestaande virtuele machine te vinden. Zoek en selecteer **virtuele machines**.
 
-2. Selecteer de naam van uw VM. De virtuele machine moet ondersteuning bieden voor het aantal netwerk interfaces dat u wilt toevoegen. Als u wilt weten hoeveel netwerk interfaces elke VM-grootte ondersteunt, raadpleegt u de grootten in azure voor [Linux vm's](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Windows-vm's](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+2. Selecteer de naam van uw VM. De virtuele machine moet ondersteuning bieden voor het aantal netwerk interfaces dat u wilt toevoegen. Als u wilt weten hoeveel netwerk interfaces elke VM-grootte ondersteunt, raadpleegt u de grootten in azure voor [Linux vm's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Windows-vm's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
 
-3. Selecteer in de opdracht balk van de virtuele machine **stoppen**en klik vervolgens op **OK** in het bevestigings venster. Wacht tot de **status** van de VM is gewijzigd in **gestopt (toewijzing opgeheven)**.
+3. Selecteer in de opdracht balk van de virtuele machine **stoppen** en klik vervolgens op **OK** in het bevestigings venster. Wacht tot de **status** van de VM is gewijzigd in **gestopt (toewijzing opgeheven)**.
 
-4. Kies in de menu balk van de **VM netwerk**  >  **Interface netwerk verbinding**. Kies vervolgens in **bestaande netwerk interface koppelen**de netwerk interface die u wilt toevoegen en selecteer **OK**.
+4. Kies in de menu balk van de **VM netwerk**  >  **Interface netwerk verbinding**. Kies vervolgens in **bestaande netwerk interface koppelen** de netwerk interface die u wilt toevoegen en selecteer **OK**.
 
     >[!NOTE]
     >Voor de netwerk interface die u selecteert, kan geen versneld netwerk zijn ingeschakeld, er kan geen IPv6-adres aan worden toegewezen en het moet zich in hetzelfde virtuele netwerk bevinden als de netwerk interface die momenteel aan de virtuele machine is gekoppeld.
@@ -111,7 +111,7 @@ Zie [netwerk interfaces beheren](virtual-network-network-interface.md)voor meer 
 
 2. Selecteer de naam van de virtuele machine waarvoor u gekoppelde netwerk interfaces wilt weer geven.
 
-3. Kies **stoppen**in de werk balk van de VM.
+3. Kies **stoppen** in de werk balk van de VM.
 
 4. Wacht totdat de **status** van de VM is gewijzigd in **gestopt (toewijzing opgeheven)**.
 
@@ -133,7 +133,7 @@ Zie [netwerk interfaces beheren](virtual-network-network-interface.md)voor meer 
 
 - Aan een virtuele machine moet ten minste één netwerk interface zijn gekoppeld.
 
-- Een VM kan slechts net zoveel netwerk interfaces als de VM-grootte worden gekoppeld. Zie de grootten in azure voor [Linux vm's](../virtual-machines/linux/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Windows-vm's](../virtual-machines/windows/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over het aantal netwerk interfaces dat elke VM-grootte ondersteunt. Alle grootten ondersteunen ten minste twee netwerk interfaces.
+- Een VM kan slechts net zoveel netwerk interfaces als de VM-grootte worden gekoppeld. Zie de grootten in azure voor [Linux vm's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Windows-vm's](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over het aantal netwerk interfaces dat elke VM-grootte ondersteunt. Alle grootten ondersteunen ten minste twee netwerk interfaces.
 
 - De netwerk interfaces die u aan een virtuele machine toevoegt, kunnen momenteel niet aan een andere virtuele machine worden gekoppeld. Zie [een netwerk interface maken](virtual-network-network-interface.md#create-a-network-interface)voor meer informatie over het maken van netwerk interfaces.
 
@@ -143,7 +143,7 @@ Zie [netwerk interfaces beheren](virtual-network-network-interface.md)voor meer 
 
 - U kunt bepalen met welke netwerk interface u uitgaand verkeer verzendt. Een virtuele machine verzendt standaard echter al het uitgaande verkeer naar het IP-adres dat is toegewezen aan de primaire IP-configuratie van de primaire netwerk interface.
 
-- In het verleden moesten alle virtuele machines in dezelfde beschikbaarheidsset een enkele of meerdere netwerk interfaces hebben. Vm's met een wille keurig aantal netwerk interfaces kunnen nu in dezelfde beschikbaarheidsset bestaan, tot het aantal dat wordt ondersteund door de VM-grootte. U kunt alleen een virtuele machine toevoegen aan een beschikbaarheidsset wanneer deze wordt gemaakt. Zie [de beschik baarheid van vm's in azure beheren](../virtual-machines/windows/manage-availability.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)voor meer informatie over beschikbaarheids sets.
+- In het verleden moesten alle virtuele machines in dezelfde beschikbaarheidsset een enkele of meerdere netwerk interfaces hebben. Vm's met een wille keurig aantal netwerk interfaces kunnen nu in dezelfde beschikbaarheidsset bestaan, tot het aantal dat wordt ondersteund door de VM-grootte. U kunt alleen een virtuele machine toevoegen aan een beschikbaarheidsset wanneer deze wordt gemaakt. Zie [de beschik baarheid van vm's in azure beheren](../virtual-machines/manage-availability.md?toc=%2fazure%2fvirtual-network%2ftoc.json#configure-multiple-virtual-machines-in-an-availability-set-for-redundancy)voor meer informatie over beschikbaarheids sets.
 
 - U kunt netwerk interfaces in dezelfde virtuele machine verbinden met verschillende subnetten binnen een virtueel netwerk. De netwerk interfaces moeten echter allemaal zijn verbonden met hetzelfde virtuele netwerk.
 

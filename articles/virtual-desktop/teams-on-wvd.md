@@ -6,17 +6,17 @@ ms.topic: how-to
 ms.date: 11/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 101b3a05591a7815ba28756bb5b07e855b64e769
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
+ms.openlocfilehash: 85026092e513ecc9ec3c23e292a416297774a2e4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505543"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217835"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Micro soft teams gebruiken op het virtuele bureau blad van Windows
 
 >[!IMPORTANT]
->Media optimalisatie voor teams wordt ondersteund voor GCC-omgevingen (Microsoft 365 Government). Media optimalisatie voor teams wordt niet ondersteund voor GCC-High of DoD.
+>Media optimalisatie voor teams wordt ondersteund voor Microsoft 365 Government (GCC) en GCC-High omgevingen. Media optimalisatie voor teams wordt niet ondersteund voor GCC-High of DoD.
 
 >[!NOTE]
 >Media optimalisatie voor micro soft teams is alleen beschikbaar voor de Windows desktop-client op Windows 10-computers. Voor media optimalisaties is Windows desktop client versie 1.2.1026.0 of hoger vereist.
@@ -120,11 +120,11 @@ Na de installatie van de WebSocket-service en de bureau blad-app teams, voert u 
 
 3. Selecteer **versie**.
 
-      Als media optimalisaties zijn geladen, wordt in de banner weer gegeven dat u de **WVD-media hebt geoptimaliseerd**. Als in het vaandel wordt weer gegeven dat u **WVD media niet hebt verbonden** , sluit u de app teams en probeert u het opnieuw.
+      Als media optimalisaties zijn geladen, wordt in de banner weer gegeven dat u de **WVD-media hebt geoptimaliseerd**. Als in het vaandel wordt weer gegeven dat u **WVD media niet hebt verbonden**, sluit u de app teams en probeert u het opnieuw.
 
 4. Selecteer de installatie kopie van uw gebruikers profiel en selecteer vervolgens **instellingen**.
 
-      Als media optimalisaties zijn geladen, worden de audio apparaten en camera's die lokaal beschikbaar zijn, geïnventariseerd in het menu apparaat. Als in het menu **externe audio** wordt weer gegeven, sluit u de app teams en probeert u het opnieuw. Als de apparaten nog steeds niet worden weer gegeven in het menu, controleert u de privacy-instellingen op uw lokale PC. Zorg ervoor dat de machtigingen onder **instellingen**  >  **Privacy** -  >  **app** de instelling **toestaan dat apps toegang hebben tot uw microfoon** **in** -of uitgeschakeld. Verbreek de verbinding met de externe sessie en maak opnieuw verbinding en controleer de audio-en video apparaten opnieuw. Als u aanroepen en vergaderingen wilt samen voegen met video, moet u ook toestemming geven voor apps om toegang te krijgen tot uw camera.
+      Als media optimalisaties zijn geladen, worden de audio apparaten en camera's die lokaal beschikbaar zijn, geïnventariseerd in het menu apparaat. Als in het menu **externe audio** wordt weer gegeven, sluit u de app teams en probeert u het opnieuw. Als de apparaten nog steeds niet worden weer gegeven in het menu, controleert u de privacy-instellingen op uw lokale PC. Zorg ervoor dat de machtigingen onder **instellingen**  >  **Privacy**-  >  **app** de instelling **toestaan dat apps toegang hebben tot uw microfoon** **in**-of uitgeschakeld. Verbreek de verbinding met de externe sessie en maak opnieuw verbinding en controleer de audio-en video apparaten opnieuw. Als u aanroepen en vergaderingen wilt samen voegen met video, moet u ook toestemming geven voor apps om toegang te krijgen tot uw camera.
 
       Als optimalisaties niet worden geladen, verwijdert u de teams opnieuw en voert u de controle opnieuw uit.
 
@@ -140,7 +140,7 @@ Het gebruik van teams in een gevirtualiseerde omgeving verschilt van het gebruik
 
 ### <a name="calls-and-meetings"></a>Aanroepen en vergaderingen
 
-- De teams bureau blad-client in Windows virtual desktop-omgevingen bieden geen ondersteuning voor Live-gebeurtenissen. Voor Taan raden we u aan Live-gebeurtenissen te koppelen vanuit de [web-client voor teams](https://teams.microsoft.com) in uw externe sessie.
+- De teams bureau blad-client in Windows virtual desktop-omgevingen bieden geen ondersteuning voor het maken van Live-gebeurtenissen, maar u kunt wel Live gebeurtenissen toevoegen. Voor Taan raden we u aan om live-gebeurtenissen te maken op basis van de [web-client van teams](https://teams.microsoft.com) in uw externe sessie.
 - Oproepen of vergaderingen bieden momenteel geen ondersteuning voor het delen van toepassingen. Bureaublad sessies bieden ondersteuning voor het delen van bureau blad.
 - Besturings element geven en beheer overnemen wordt momenteel niet ondersteund.
 - Teams op Windows virtueel bureau blad bieden alleen ondersteuning voor één binnenkomende video-invoer per keer. Dit betekent dat wanneer iemand het scherm probeert te delen, het scherm wordt weer gegeven in plaats van het scherm van de Voorzitter van de vergadering.

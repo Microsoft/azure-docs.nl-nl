@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 03/24/2017
 ms.author: allensu
-ms.openlocfilehash: 5cd050c88fbc954a211c3a75cdabcb557ae998c4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d86d4248b449ad3961a7798fd36a320eb6a74009
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87073925"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217070"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-powershell"></a>Meerdere IP-adressen toewijzen aan virtuele machines met behulp van Power shell
 
@@ -26,7 +26,7 @@ ms.locfileid: "87073925"
 
 [!INCLUDE [virtual-network-multiple-ip-addresses-intro.md](../../includes/virtual-network-multiple-ip-addresses-intro.md)]
 
-In dit artikel wordt uitgelegd hoe u een virtuele machine (VM) maakt via het Azure Resource Manager-implementatie model met behulp van Power shell. Er kunnen geen meerdere IP-adressen worden toegewezen aan resources die zijn gemaakt via het klassieke implementatie model. Lees het artikel over [implementatie modellen begrijpen](../resource-manager-deployment-model.md) voor meer informatie over Azure-implementatie modellen.
+In dit artikel wordt uitgelegd hoe u een virtuele machine (VM) maakt via het Azure Resource Manager-implementatie model met behulp van Power shell. Er kunnen geen meerdere IP-adressen worden toegewezen aan resources die zijn gemaakt via het klassieke implementatie model. Lees het artikel over [implementatie modellen begrijpen](../azure-resource-manager/management/deployment-models.md) voor meer informatie over Azure-implementatie modellen.
 
 [!INCLUDE [virtual-network-multiple-ip-addresses-scenario.md](../../includes/virtual-network-multiple-ip-addresses-scenario.md)]
 
@@ -36,7 +36,7 @@ In de volgende stappen wordt uitgelegd hoe u een voor beeld van een virtuele mac
 
 1. Open een Power shell-opdracht prompt en voltooi de resterende stappen in deze sectie binnen één Power shell-sessie. Als u Power shell nog niet hebt geïnstalleerd en geconfigureerd, voltooit u de stappen in het artikel [Azure PowerShell installeren en configureren](/powershell/azure/) .
 2. Meld u aan bij uw account met de `Connect-AzAccount` opdracht.
-3. Vervang *myResourceGroup* en *westus* door de naam en locatie van uw keuze. Maak een resourcegroep. Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
+3. Vervang *myResourceGroup* en *westus* door de naam en locatie van uw keuze. Een resourcegroep maken. Een resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
 
    ```powershell
    $RgName   = "MyResourceGroup"
@@ -242,7 +242,7 @@ U kunt persoonlijke en open bare IP-adressen toevoegen aan de Azure-netwerk inte
 
    **Een privé-IP-adres toevoegen**
 
-   Als u een privé-IP-adres aan een NIC wilt toevoegen, moet u een IP-configuratie maken. Met de volgende opdracht maakt u een configuratie met een statisch IP-adres van 10.0.0.7. Wanneer u een statisch IP-adres opgeeft, moet dit een ongebruikt adres voor het subnet zijn. Het is raadzaam om het adres eerst te testen om er zeker van te zijn dat het beschikbaar is door de opdracht in te voeren `Test-AzPrivateIPAddressAvailability -IPAddress 10.0.0.7 -VirtualNetwork $myVnet` . Als het IP-adres beschikbaar is, retourneert de uitvoer *waar*. Als deze niet beschikbaar is, retourneert de uitvoer *False*en een lijst met beschik bare adressen.
+   Als u een privé-IP-adres aan een NIC wilt toevoegen, moet u een IP-configuratie maken. Met de volgende opdracht maakt u een configuratie met een statisch IP-adres van 10.0.0.7. Wanneer u een statisch IP-adres opgeeft, moet dit een ongebruikt adres voor het subnet zijn. Het is raadzaam om het adres eerst te testen om er zeker van te zijn dat het beschikbaar is door de opdracht in te voeren `Test-AzPrivateIPAddressAvailability -IPAddress 10.0.0.7 -VirtualNetwork $myVnet` . Als het IP-adres beschikbaar is, retourneert de uitvoer *waar*. Als deze niet beschikbaar is, retourneert de uitvoer *False* en een lijst met beschik bare adressen.
 
    ```powershell
    Add-AzNetworkInterfaceIpConfig -Name IPConfig-4 -NetworkInterface `
@@ -311,7 +311,7 @@ U kunt persoonlijke en open bare IP-adressen toevoegen aan de Azure-netwerk inte
    -Location $Location -AllocationMethod Static
    ```
 
-   Voer de volgende opdracht in om de open bare IP-adres resource aan de bestaande IP-configuratie met de naam *IpConfig-3*te koppelen:
+   Voer de volgende opdracht in om de open bare IP-adres resource aan de bestaande IP-configuratie met de naam *IpConfig-3* te koppelen:
 
    ```powershell
    Set-AzNetworkInterfaceIpConfig `

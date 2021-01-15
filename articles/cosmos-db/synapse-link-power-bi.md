@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: acomet
-ms.openlocfilehash: be2657d9606f260fcea06d2535be87fc6976577c
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 8a3142199502b912f20ebe05c625aa40be9fab11
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915671"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218668"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-preview-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Power BI en serverloze Synapse SQL-pool (preview) gebruiken om Azure Cosmos DB gegevens te analyseren met Synapse-koppeling 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -41,7 +41,7 @@ Zorg ervoor dat u de volgende resources maakt voordat u begint:
 
 ## <a name="create-a-database-and-views"></a>Een Data Base en weer gaven maken
 
-Ga in de Synapse-werk ruimte naar het tabblad **ontwikkelen** , selecteer het **+** pictogram en selecteer **SQL-script**.
+Het maken van weer gaven in de hoofd-of standaard databases wordt niet aanbevolen of ondersteund. Daarom moet u deze stap starten door een Data Base te maken. Ga in de Synapse-werk ruimte naar het tabblad **ontwikkelen** , selecteer het **+** pictogram en selecteer **SQL-script**.
 
 :::image type="content" source="./media/synapse-link-power-bi/add-sql-script.png" alt-text="Een SQL-script toevoegen aan de Synapse Analytics-werk ruimte":::
 

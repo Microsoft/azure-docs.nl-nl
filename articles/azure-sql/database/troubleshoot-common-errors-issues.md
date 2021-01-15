@@ -9,13 +9,13 @@ ms.custom: seo-lt-2019, OKR 11/2019, sqldbrb=1
 author: ramakoni1
 ms.author: ramakoni
 ms.reviewer: sstein,vanto
-ms.date: 01/14/2020
-ms.openlocfilehash: bcf11ef9b64a02383aad5175c19c5db58c3c39cf
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 01/14/2021
+ms.openlocfilehash: 7c797c7e002f40a28e4be674c125c6ea5d60a13f
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92791338"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219059"
 ---
 # <a name="troubleshooting-connectivity-issues-and-other-errors-with-azure-sql-database-and-azure-sql-managed-instance"></a>Verbindings problemen en andere fouten oplossen met Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -119,19 +119,19 @@ De service beheerder kan doorgaans de volgende stappen gebruiken om de aanmeldin
 4. Als de gebruikers naam voor SQL-aanmelding niet bestaat, maakt u deze door de volgende stappen uit te voeren:
 
    1. In SSMS dubbelklikt u op **beveiliging** om het uit te vouwen.
-   2. Klik met de rechter muisknop op **aanmeldingen** en selecteer vervolgens **nieuwe aanmelding** .
+   2. Klik met de rechter muisknop op **aanmeldingen** en selecteer vervolgens **nieuwe aanmelding**.
    3. Bewerk en voer de volgende SQL-query uit in het gegenereerde script met tijdelijke aanduidingen:
 
    ```sql
    CREATE LOGIN <SQL_login_name, sysname, login_name>
-   WITH PASSWORD = ‘<password, sysname, Change_Password>’
+   WITH PASSWORD = '<password, sysname, Change_Password>'
    GO
    ```
 
-5. Dubbel klik op **Data Base** .
+5. Dubbel klik op **Data Base**.
 6. Selecteer de data base waaraan u de gebruiker toestemming wilt verlenen.
-7. Dubbel klik op **beveiliging** .
-8. Klik met de rechter muisknop op **gebruikers** en selecteer vervolgens **nieuwe gebruiker** .
+7. Dubbel klik op **beveiliging**.
+8. Klik met de rechter muisknop op **gebruikers** en selecteer vervolgens **nieuwe gebruiker**.
 9. Bewerk en voer de volgende SQL-query uit in het gegenereerde script met tijdelijke aanduidingen:
 
    ```sql
@@ -141,7 +141,7 @@ De service beheerder kan doorgaans de volgende stappen gebruiken om de aanmeldin
    GO
    -- Add user to the database owner role
 
-   EXEC sp_addrolemember N’db_owner’, N’<user_name, sysname, user_name>’
+   EXEC sp_addrolemember N'db_owner', N'<user_name, sysname, user_name>'
    GO
    ```
 
@@ -183,22 +183,20 @@ Ga op een van de volgende manieren te werk om dit probleem op te lossen:
 - Controleer of er langlopende query's zijn.
 
   > [!NOTE]
-  > Dit is een minimale aanpak waarmee het probleem mogelijk niet kan worden opgelost.
+  > Dit is een minimale aanpak waarmee het probleem mogelijk niet kan worden opgelost. Voor gedetailleerde informatie over het blok keren van het oplossen van query's raadpleegt u [problemen met Azure SQL-blok keringen begrijpen en oplossen](understand-resolve-blocking.md).
 
 1. Voer de volgende SQL-query uit om de weer gave [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) te controleren om blokkerings aanvragen weer te geven:
 
    ```sql
-   SELECT * FROM dm_exec_requests
+   SELECT * FROM sys.dm_exec_requests;
    ```
 
 2. Bepaal de **invoer buffer** voor de hoofd blok kering.
 3. Stem de hoofd blok-query af.
 
-   Voor een uitgebreide probleemoplossings procedure, Zie [is mijn query wordt in de Cloud verfijnd?](/archive/blogs/sqlblog/is-my-query-running-fine-in-the-cloud).
+   Voor een uitgebreide probleemoplossings procedure, Zie [is mijn query wordt in de Cloud verfijnd?](/archive/blogs/sqlblog/is-my-query-running-fine-in-the-cloud). 
 
 Als de data base consequent de limiet heeft bereikt ondanks het blok keren van blokkerende en langlopende query's, kunt u overwegen om een upgrade uit te voeren naar een editie met meer bronnen- [edities](https://azure.microsoft.com/pricing/details/sql-database/).
-
-Zie [dynamische systeem beheer weergaven](/sql/relational-databases/system-dynamic-management-views/system-dynamic-management-views)voor meer informatie over dynamische beheer weergaven.
 
 Zie  [SQL database resource limieten voor servers](./resource-limits-logical-server.md)voor meer informatie over database limieten.
 
@@ -234,7 +232,7 @@ U kunt de volgende stappen gebruiken om het probleem op te lossen of om extra op
    FROM sys.objects o
    JOIN sys.dm_db_partition_stats p on p.object_id = o.object_id
    GROUP BY o.name
-   ORDER BY [Table Size (MB)] DESC
+   ORDER BY [Table Size (MB)] DESC;
    ```
 
 2. Als de huidige grootte niet groter is dan de maximale grootte die voor uw editie wordt ondersteund, kunt u ALTER Data Base gebruiken om de waarde voor MAXSIZE te verhogen.
@@ -253,7 +251,7 @@ Als u deze fout herhaaldelijk ondervindt, kunt u proberen om het probleem op te 
 1. Controleer in de weer gave sys.dm_exec_requests of er geopende sessies met een hoge waarde voor de total_elapsed_time kolom worden weer gegeven. Voer deze controle uit door het volgende SQL-script uit te voeren:
 
    ```sql
-   SELECT * FROM dm_exec_requests
+   SELECT * FROM sys.dm_exec_requests;
    ```
 
 2. Bepaal de invoer buffer voor de langlopende query.
@@ -340,8 +338,8 @@ Dit probleem treedt op omdat het account geen machtiging heeft voor toegang tot 
 
 Volg deze stappen om dit probleem op te lossen:
 
-1. Selecteer **Opties** in het aanmeldings scherm van SSMS en selecteer vervolgens **verbindings eigenschappen** .
-2. Voer in het veld **verbinding maken met data base** de naam van de standaard database van de gebruiker in als de standaard aanmeldings database en selecteer vervolgens **verbinding maken** .
+1. Selecteer **Opties** in het aanmeldings scherm van SSMS en selecteer vervolgens **verbindings eigenschappen**.
+2. Voer in het veld **verbinding maken met data base** de naam van de standaard database van de gebruiker in als de standaard aanmeldings database en selecteer vervolgens **verbinding maken**.
 
    ![Verbindingseigenschappen](./media/troubleshoot-common-errors-issues/cannot-open-database-master.png)
 
@@ -390,5 +388,5 @@ Zie [logboek registratie van diagnostische gegevens inschakelen voor apps in azu
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure SQL Database connectiviteits architectuur](./connectivity-architecture.md)
+- [Azure SQL Database-connectiviteitsarchitectuur](./connectivity-architecture.md)
 - [Azure SQL Database-en Azure Synapse Analytics-netwerk toegangs beheer](./network-access-controls-overview.md)

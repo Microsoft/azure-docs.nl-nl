@@ -10,12 +10,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 06/04/2018
 ms.author: kumud
-ms.openlocfilehash: 221f7577b3181b1535ab9f544073dac4d031fe66
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d06c251ce16aff56a3645f5032cce4e27d5fc9e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89319437"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216883"
 ---
 # <a name="resource-logging-for-a-network-security-group"></a>Bron logboek registratie voor een netwerk beveiligings groep
 
@@ -26,7 +26,7 @@ Wanneer u logboek registratie voor een NSG inschakelt, kunt u de volgende typen 
 * **Gebeurtenis:** Vermeldingen worden vastgelegd waarvoor NSG-regels worden toegepast op Vm's, op basis van een MAC-adres.
 * **Regel teller:** Bevat vermeldingen voor het aantal keren dat elke NSG regel wordt toegepast om verkeer te weigeren of toe te staan. De status voor deze regels wordt elke 300 seconden verzameld.
 
-Resource logboeken zijn alleen beschikbaar voor Nsg's die zijn geïmplementeerd via het Azure Resource Manager-implementatie model. Het is niet mogelijk om bron logboek registratie in te scha kelen voor Nsg's die zijn geïmplementeerd via het klassieke implementatie model. Zie [Wat is Azure-implementatie modellen](../resource-manager-deployment-model.md?toc=%2fazure%2fvirtual-network%2ftoc.json)? voor een beter inzicht in de twee modellen.
+Resource logboeken zijn alleen beschikbaar voor Nsg's die zijn geïmplementeerd via het Azure Resource Manager-implementatie model. Het is niet mogelijk om bron logboek registratie in te scha kelen voor Nsg's die zijn geïmplementeerd via het klassieke implementatie model. Zie [Wat is Azure-implementatie modellen](../azure-resource-manager/management/deployment-models.md?toc=%2fazure%2fvirtual-network%2ftoc.json)? voor een beter inzicht in de twee modellen.
 
 Bron logboek registratie wordt afzonderlijk ingeschakeld voor *elk* NSG waarvoor u Diagnostische gegevens wilt verzamelen. Zie Azure [activity logging](../azure-monitor/platform/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)(Engelstalig) als u in plaats daarvan wilt werken met activiteiten Logboeken.
 
@@ -37,18 +37,18 @@ U kunt de [Azure-Portal](#azure-portal), [Power shell](#powershell)of de [Azure 
 ### <a name="azure-portal"></a>Azure Portal
 
 1. Meld u aan bij de [portal](https://portal.azure.com).
-2. Selecteer **alle services**en typ vervolgens *netwerk beveiligings groepen*. Wanneer **netwerk beveiligings groepen** worden weer gegeven in de zoek resultaten, selecteert u deze.
+2. Selecteer **alle services** en typ vervolgens *netwerk beveiligings groepen*. Wanneer **netwerk beveiligings groepen** worden weer gegeven in de zoek resultaten, selecteert u deze.
 3. Selecteer de NSG waarvoor u logboek registratie wilt inschakelen.
-4. Selecteer onder **bewaking** **Diagnostische logboeken**en selecteer vervolgens **Diagnostische gegevens inschakelen**, zoals wordt weer gegeven in de volgende afbeelding:
+4. Selecteer onder **bewaking** **Diagnostische logboeken** en selecteer vervolgens **Diagnostische gegevens inschakelen**, zoals wordt weer gegeven in de volgende afbeelding:
 
    ![Diagnostische gegevens inschakelen](./media/virtual-network-nsg-manage-log/turn-on-diagnostics.png)
 
-5. Voer onder **Diagnostische instellingen**de volgende informatie in of Selecteer deze, en selecteer vervolgens **Opslaan**:
+5. Voer onder **Diagnostische instellingen** de volgende informatie in of Selecteer deze, en selecteer vervolgens **Opslaan**:
 
     | Instelling                                                                                     | Waarde                                                          |
     | ---------                                                                                   |---------                                                       |
     | Naam                                                                                        | Een naam van uw keuze.  Bijvoorbeeld: *myNsgDiagnostics*      |
-    | **Archiveren naar een opslag account**, **streamen naar een event hub**en **verzenden naar log Analytics** | U kunt zoveel bestemmingen selecteren als u kiest. Zie [logboek doelen](#log-destinations)voor meer informatie over elk van deze.                                                                                                                                           |
+    | **Archiveren naar een opslag account**, **streamen naar een event hub** en **verzenden naar log Analytics** | U kunt zoveel bestemmingen selecteren als u kiest. Zie [logboek doelen](#log-destinations)voor meer informatie over elk van deze.                                                                                                                                           |
     | LOG                                                                                         | Selecteer een van beide of beide logboek categorieën. Zie [logboek categorieën](#log-categories)voor meer informatie over de gegevens die voor elke categorie worden vastgelegd.                                                                                                                                             |
 6. Logboeken weer geven en analyseren. Zie [Logboeken weer geven en analyseren](#view-and-analyze-logs)voor meer informatie.
 
@@ -68,7 +68,7 @@ $Nsg=Get-AzNetworkSecurityGroup `
   -ResourceGroupName myResourceGroup
 ```
 
-U kunt resource logboeken naar drie doel typen schrijven. Zie [logboek doelen](#log-destinations)voor meer informatie. In dit artikel worden logboeken als voor beeld naar de *log Analytics* bestemming verzonden. Haal een bestaande Log Analytics-werk ruimte op met [Get-AzOperationalInsightsWorkspace](/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspace). Als u bijvoorbeeld een bestaande werk ruimte met de naam *myWorkspace* in een resource groep met de naam *myWorkspaces*wilt ophalen, voert u de volgende opdracht in:
+U kunt resource logboeken naar drie doel typen schrijven. Zie [logboek doelen](#log-destinations)voor meer informatie. In dit artikel worden logboeken als voor beeld naar de *log Analytics* bestemming verzonden. Haal een bestaande Log Analytics-werk ruimte op met [Get-AzOperationalInsightsWorkspace](/powershell/module/az.operationalinsights/get-azoperationalinsightsworkspace). Als u bijvoorbeeld een bestaande werk ruimte met de naam *myWorkspace* in een resource groep met de naam *myWorkspaces* wilt ophalen, voert u de volgende opdracht in:
 
 ```azurepowershell-interactive
 $Oms=Get-AzOperationalInsightsWorkspace `
@@ -87,7 +87,7 @@ Set-AzDiagnosticSetting `
   -Enabled $true
 ```
 
-Als u alleen gegevens wilt vastleggen voor de ene categorie of de andere, in plaats van beide, voegt u de `-Categories` optie toe aan de vorige opdracht, gevolgd door *NetworkSecurityGroupEvent* of *NetworkSecurityGroupRuleCounter*. Als u zich wilt aanmelden op een andere [bestemming](#log-destinations) dan een log Analytics-werk ruimte, gebruikt u de juiste para meters voor een Azure- [opslag account](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Event hub](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Als u alleen gegevens wilt vastleggen voor de ene categorie of de andere, in plaats van beide, voegt u de `-Categories` optie toe aan de vorige opdracht, gevolgd door *NetworkSecurityGroupEvent* of *NetworkSecurityGroupRuleCounter*. Als u zich wilt aanmelden op een andere [bestemming](#log-destinations) dan een log Analytics-werk ruimte, gebruikt u de juiste para meters voor een Azure- [opslag account](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) of [Event hub](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs).
 
 Logboeken weer geven en analyseren. Zie [Logboeken weer geven en analyseren](#view-and-analyze-logs)voor meer informatie.
 
@@ -109,7 +109,7 @@ nsgId=$(az network nsg show \
 
 U kunt resource logboeken naar drie doel typen schrijven. Zie [logboek doelen](#log-destinations)voor meer informatie. In dit artikel worden logboeken als voor beeld naar de *log Analytics* bestemming verzonden. Zie [logboek categorieën](#log-categories)voor meer informatie.
 
-Schakel bron logboek registratie in voor de NSG met [AZ monitor Diagnostic-settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create). In het volgende voor beeld worden zowel gebeurtenis-als item categorie gegevens vastgelegd in een bestaande werk ruimte met de naam *myWorkspace*, die voor komt in een resource groep met de naam *MYWORKSPACES*en de id van de NSG die u eerder hebt opgehaald:
+Schakel bron logboek registratie in voor de NSG met [AZ monitor Diagnostic-settings Create](/cli/azure/monitor/diagnostic-settings#az-monitor-diagnostic-settings-create). In het volgende voor beeld worden zowel gebeurtenis-als item categorie gegevens vastgelegd in een bestaande werk ruimte met de naam *myWorkspace*, die voor komt in een resource groep met de naam *MYWORKSPACES* en de id van de NSG die u eerder hebt opgehaald:
 
 ```azurecli-interactive
 az monitor diagnostic-settings create \
@@ -122,16 +122,16 @@ az monitor diagnostic-settings create \
 
 Als u geen bestaande werk ruimte hebt, kunt u er een maken met behulp van de [Azure Portal](../azure-monitor/learn/quick-create-workspace.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Power shell](/powershell/module/az.operationalinsights/new-azoperationalinsightsworkspace). Er zijn twee soorten logboek registratie waarvoor u Logboeken kunt inschakelen.
 
-Als u alleen gegevens wilt vastleggen voor de ene categorie of de andere, verwijdert u de categorie waarvoor u geen gegevens wilt registreren in de vorige opdracht. Als u zich wilt aanmelden op een andere [bestemming](#log-destinations) dan een log Analytics-werk ruimte, gebruikt u de juiste para meters voor een Azure- [opslag account](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json) of [Event hub](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+Als u alleen gegevens wilt vastleggen voor de ene categorie of de andere, verwijdert u de categorie waarvoor u geen gegevens wilt registreren in de vorige opdracht. Als u zich wilt aanmelden op een andere [bestemming](#log-destinations) dan een log Analytics-werk ruimte, gebruikt u de juiste para meters voor een Azure- [opslag account](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage) of [Event hub](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs).
 
 Logboeken weer geven en analyseren. Zie [Logboeken weer geven en analyseren](#view-and-analyze-logs)voor meer informatie.
 
 ## <a name="log-destinations"></a>Logboek bestemmingen
 
 Diagnostische gegevens kunnen zijn:
-- [Naar een Azure Storage-account geschreven](../azure-monitor/platform/archive-diagnostic-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor controle of hand matige inspectie. U kunt de Bewaar tijd (in dagen) opgeven met behulp van de diagnostische instellingen van de resource.
-- [Gestreamd naar een event hub](../azure-monitor/platform/resource-logs-stream-event-hubs.md?toc=%2fazure%2fvirtual-network%2ftoc.json) voor opname door een service van derden of een aangepaste analyse oplossing, zoals PowerBI.
-- [Naar Azure monitor-logboeken geschreven](../azure-monitor/platform/resource-logs-collect-storage.md?toc=%2fazure%2fvirtual-network%2ftoc.json).
+- [Naar een Azure Storage-account geschreven](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage)voor controle of hand matige inspectie. U kunt de Bewaar tijd (in dagen) opgeven met behulp van de diagnostische instellingen van de resource.
+- [Gestreamd naar een event hub](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-event-hubs) voor opname door een service van derden of een aangepaste analyse oplossing, zoals PowerBI.
+- [Naar Azure monitor-logboeken geschreven](../azure-monitor/platform/resource-logs.md?toc=%2fazure%2fvirtual-network%2ftoc.json#send-to-azure-storage).
 
 ## <a name="log-categories"></a>Logboek Categorieën
 
@@ -209,6 +209,6 @@ Zie [overzicht van Azure-platform logboeken](../azure-monitor/platform/platform-
 - Meer informatie over [activiteiten registreren](../azure-monitor/platform/platform-logs-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Activiteiten logboek registratie is standaard ingeschakeld voor Nsg's die zijn gemaakt via een Azure-implementatie model. Als u wilt bepalen welke bewerkingen zijn voltooid op Nsg's in het activiteiten logboek, zoekt u naar vermeldingen die de volgende resource typen bevatten:
   - Micro soft. ClassicNetwork/networkSecurityGroups
   - Micro soft. ClassicNetwork/networkSecurityGroups/securityRules
-  - Microsoft.Network/networkSecurityGroups
+  - Micro soft. Network/networkSecurityGroups
   - Micro soft. Network/networkSecurityGroups/securityRules
 - Zie [NSG flow logging](../network-watcher/network-watcher-nsg-flow-logging-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)(Engelstalig) voor meer informatie over het vastleggen van diagnostische gegevens, zodat u het bron-IP-adres voor elke stroom kunt gebruiken.

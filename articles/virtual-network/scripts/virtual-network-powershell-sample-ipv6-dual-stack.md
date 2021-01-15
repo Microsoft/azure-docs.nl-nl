@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 07/15/2019
 ms.author: kumud
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 829741430f8a94442a0bd4cba300c1bb67b9cee1
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 772eb8d436a3ff870caa8fd4bc4e4e2b56672690
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95992967"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217512"
 ---
 # <a name="configure-ipv6-endpoints-in-virtual-network-with-azure-powershell-script-sample-preview"></a>IPv6-eind punten in een virtueel netwerk configureren met Azure PowerShell script voorbeeld (preview-versie)
 
@@ -270,6 +270,6 @@ Dit script gebruikt de volgende opdrachten voor het maken van een resourcegroep,
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Documentatie over Azure PowerShell](https://docs.microsoft.com/powershell/azure/) voor meer informatie over Azure PowerShell.
+Zie [Documentatie over Azure PowerShell](/powershell/azure/) voor meer informatie over Azure PowerShell.
 
 Aanvullende PowerShell-voorbeeldscripts voor netwerken vindt u in de [Documentatie met een overzicht van Azure-netwerken](../powershell-samples.md?toc=%2fazure%2fnetworking%2ftoc.json).

@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 536a9641b68ccd2510a7891b46483a322fb6ecb7
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 6c065b7a7269c8da42493ede50466f44f7dd2658
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900923"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219943"
 ---
 # <a name="conditional-access-grant"></a>Voorwaardelijke toegang: verlenen
 
@@ -139,7 +139,7 @@ Deze instelling is van toepassing op de volgende client-apps:
 - 9 e-mail adres & agenda
 
 > [!NOTE]
-> Micro soft Kaizala, micro soft Skype voor bedrijven en micro soft Visio bieden geen ondersteuning voor de toekenning van het **beveiligings beleid voor apps vereisen** . Als u wilt dat deze apps werken, moet u alleen de toekenning **goedgekeurde apps vereisen** . Het gebruik van de or-component tussen de twee subsidies werkt niet voor deze drie toepassingen.
+> Micro soft teams, micro soft Kaizala, micro soft Skype voor bedrijven en micro soft Visio bieden geen ondersteuning voor de toekenning van het **beveiligings beleid voor apps vereisen** . Als u wilt dat deze apps werken, moet u alleen de toekenning **goedgekeurde apps vereisen** . Het gebruik van de or-component tussen de twee subsidies werkt niet voor deze drie toepassingen.
 
 **Opmerkingen**
 

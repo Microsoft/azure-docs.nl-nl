@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 02/21/2020
 ms.author: rdhillon
-ms.openlocfilehash: 13535a82f8aca741a1e25755e5a2d971ce45514e
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 9766379807e6d2708fd6935dd2ffbd7660f9988f
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739294"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216645"
 ---
 # <a name="virtual-network-service-endpoint-policies-for-azure-storage"></a>Service-eindpuntbeleid voor virtueel netwerk voor Azure Storage
 
@@ -32,7 +32,7 @@ Het beleid voor service-eindpunten voor virtuele netwerken biedt de volgende voo
 
 - __Verbeterde beveiliging voor uw Virtual Network verkeer naar Azure Storage__
 
-  Met [Azure-service tags voor netwerk beveiligings groepen](https://aka.ms/servicetags) kunt u uitgaand verkeer van virtuele netwerken beperken tot specifieke Azure Storage regio's. Hiermee wordt echter verkeer naar een account in de geselecteerde Azure Storage regio toegestaan.
+  Met [Azure-service tags voor netwerk beveiligings groepen](./network-security-groups-overview.md) kunt u uitgaand verkeer van virtuele netwerken beperken tot specifieke Azure Storage regio's. Hiermee wordt echter verkeer naar een account in de geselecteerde Azure Storage regio toegestaan.
   
   Met endpoint-beleids regels kunt u de Azure Storage accounts opgeven die toegang hebben tot uitgaande virtuele netwerk toegang en toegangs beperkingen voor alle andere opslag accounts. Dit biedt een veel gedetailleerdere beveiligings controle voor het beveiligen van gegevens exfiltration van uw virtuele netwerk.
 

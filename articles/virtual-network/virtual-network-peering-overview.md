@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/15/2019
 ms.author: kumud
-ms.openlocfilehash: 61617777efa8241c93b2b5ffe42fc1d914b6ebcf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: feea2d54edd8a93e6e0effbef03389ef895d5ffb
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004973"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216747"
 ---
 # <a name="virtual-network-peering"></a>Peering op virtueel netwerk
 
@@ -48,7 +48,7 @@ De netwerklatentie tussen virtuele machines in gekoppelde virtuele netwerken in 
 Het verkeer tussen virtuele machines in gekoppelde virtuele netwerken wordt rechtstreeks doorgestuurd via de Microsoft-backbone-infrastructuur, niet via een gateway of via het openbare internet.
 
 U kunt netwerk beveiligings groepen in beide virtuele netwerken Toep assen om de toegang tot andere virtuele netwerken of subnetten te blok keren.
-Wanneer u peering voor het virtuele netwerk configureert, opent of sluit u de regels voor de netwerk beveiligings groep tussen de virtuele netwerken. Als u de volledige connectiviteit tussen gekoppelde virtuele netwerken opent, kunt u netwerk beveiligings groepen Toep assen voor het blok keren of weigeren van specifieke toegang. Volledige connectiviteit is de standaard optie. Zie [beveiligings groepen](security-overview.md)voor meer informatie over netwerk beveiligings groepen.
+Wanneer u peering voor het virtuele netwerk configureert, opent of sluit u de regels voor de netwerk beveiligings groep tussen de virtuele netwerken. Als u de volledige connectiviteit tussen gekoppelde virtuele netwerken opent, kunt u netwerk beveiligings groepen Toep assen voor het blok keren of weigeren van specifieke toegang. Volledige connectiviteit is de standaard optie. Zie [beveiligings groepen](./network-security-groups-overview.md)voor meer informatie over netwerk beveiligings groepen.
 
 ## <a name="service-chaining"></a>Servicechaining
 

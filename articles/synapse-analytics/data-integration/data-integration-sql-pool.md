@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 11/03/2020
 ms.author: daperlov
 ms.reviewer: jrasnick
-ms.openlocfilehash: afebb6a67b4c8a33e812c0e51ff225f16cd35356
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 6156bd72e3f4965a74798a3f91496eb8a321444e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461467"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219519"
 ---
 # <a name="ingest-data-into-a-dedicated-sql-pool"></a>Gegevens opnemen in een toegewezen SQL-groep
 
@@ -23,7 +23,7 @@ In dit artikel leert u hoe u gegevens opneemt van een Azure Data Lake gen 2-opsl
 ## <a name="prerequisites"></a>Vereisten
 
 * **Azure-abonnement**: als u nog geen Azure-abonnement hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
-* **Azure-opslag account**: u Azure data Lake Storage gen 2 gebruiken als een *brongegevens* opslag. Als u geen opslag account hebt, raadpleegt u [een Azure Storage-account maken](../../storage/blobs/data-lake-storage-quickstart-create-account.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) om er een te maken.
+* **Azure-opslag account**: u Azure data Lake Storage gen 2 gebruiken als een *brongegevens* opslag. Als u geen opslag account hebt, raadpleegt u [een Azure Storage-account maken](../../storage/common/storage-account-create.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) om er een te maken.
 * **Azure Synapse Analytics**: u gebruikt een toegewezen SQL-groep als *sink* -gegevens archief. Als u geen exemplaar van Azure Synapse Analytics hebt, raadpleegt u het artikel [Een toegewezen SQL-pool maken](../../azure-sql/database/single-database-create-quickstart.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) om er een te maken.
 
 ## <a name="create-linked-services"></a>Gekoppelde services maken

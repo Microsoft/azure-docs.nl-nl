@@ -9,12 +9,12 @@ ms.subservice: spark
 ms.date: 06/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 43e4027c9d88b209ed0606e045dd5b4d47d3ff6e
-ms.sourcegitcommit: 30505c01d43ef71dac08138a960903c2b53f2499
+ms.openlocfilehash: a35cdebe5ff4db562b19dc4ceed069a831af4305
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92088513"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219994"
 ---
 # <a name="analyze-complex-data-types-in-azure-synapse-analytics"></a>Complexe gegevens typen analyseren in azure Synapse Analytics
 
@@ -28,7 +28,7 @@ Data engineers moeten begrijpen hoe complexe gegevens typen efficiënt kunnen wo
 
 ## <a name="what-are-arrays-and-nested-structures"></a>Wat zijn matrices en geneste structuren?
 
-Het volgende object is afkomstig uit [Application Insights](https://docs.microsoft.com/azure/azure-monitor/app/app-insights-overview). In dit object zijn geneste structuren en matrices die geneste structuren bevatten.
+Het volgende object is afkomstig uit [Application Insights](../azure-monitor/app/app-insights-overview.md). In dit object zijn geneste structuren en matrices die geneste structuren bevatten.
 
 ```json
 {
@@ -221,4 +221,4 @@ Er zijn twee verschillende soorten bewerkingen:
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Meer informatie over het opvragen van de Synapse-koppeling voor Azure Cosmos DB met Spark](./synapse-link/how-to-query-analytical-store-spark.md)
-* [Query uitvoeren op met Parquet geneste typen](./sql/query-parquet-nested-types.md) 
+* [Query uitvoeren op met Parquet geneste typen](./sql/query-parquet-nested-types.md)

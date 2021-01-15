@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 07/30/2020
 ms.author: kenwith
 ms.reviewer: arvinh,luleon
-ms.openlocfilehash: 8fc26b00214106aa08e0e6e4c41f9f05aca9344d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b5d7cd303c8478f848ee89095d040030b702cde5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94648035"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219807"
 ---
 # <a name="understand-linked-sign-on"></a>Informatie over gekoppelde aanmelding
 
@@ -40,7 +40,7 @@ De optie **gekoppeld** biedt geen aanmeldings functionaliteit via Azure AD. Met 
 > [!IMPORTANT] 
 > Er zijn enkele scenario's waarbij de optie voor **eenmalige aanmelding** niet voor komt in de navigatie voor een toepassing in **bedrijfs toepassingen**. 
 >
-> Als de toepassing is geregistreerd met behulp van **app-registraties** , is de functionaliteit voor eenmalige aanmelding standaard ingesteld op het gebruik van OIDC OAuth. In dit geval wordt de optie **voor eenmalige aanmelding** niet weer gegeven in de navigatie onder **bedrijfs toepassingen**. Wanneer u **app-registraties** gebruikt om uw aangepaste app toe te voegen, configureert u de opties in het manifest bestand. Zie [Azure Active Directory app-manifest](../develop/reference-app-manifest.md)voor meer informatie over het manifest bestand. Zie [verificatie en autorisatie met behulp van micro soft Identity platform](../develop/authentication-vs-authorization.md#authentication-and-authorization-using-microsoft-identity-platform)voor meer informatie over SSO-standaarden. 
+> Als de toepassing is geregistreerd met behulp van **app-registraties** , is de functionaliteit voor eenmalige aanmelding standaard ingesteld op het gebruik van OIDC OAuth. In dit geval wordt de optie **voor eenmalige aanmelding** niet weer gegeven in de navigatie onder **bedrijfs toepassingen**. Wanneer u **app-registraties** gebruikt om uw aangepaste app toe te voegen, configureert u de opties in het manifest bestand. Zie [Azure Active Directory app-manifest](../develop/reference-app-manifest.md)voor meer informatie over het manifest bestand. Zie [verificatie en autorisatie met behulp van micro soft Identity platform](../develop/authentication-vs-authorization.md#authentication-and-authorization-using-the-microsoft-identity-platform)voor meer informatie over SSO-standaarden. 
 >
 > Andere scenario's waarin **eenmalige aanmelding** ontbreekt in de navigatie, zijn, wanneer een toepassing wordt gehost in een andere Tenant of als uw account niet over de vereiste machtigingen (globale beheerder, Cloud toepassings beheerder, toepassings beheerder of eigenaar van de service-principal) beschikt. Machtigingen kunnen ook leiden tot een scenario waarin u **eenmalige aanmelding** kunt openen, maar niet kunt opslaan. Zie (voor meer informatie over Azure AD-beheerders rollen https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) .
 
@@ -53,4 +53,4 @@ Nadat u een app hebt geconfigureerd, kunt u er gebruikers en groepen aan toewijz
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Gebruikers of groepen toewijzen aan de toepassing](./assign-user-or-group-access-portal.md)
-- [Automatisch inrichten van gebruikers accounts configureren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+- [Automatische inrichting van gebruikersaccounts configureren](../app-provisioning/configure-automatic-user-provisioning-portal.md)

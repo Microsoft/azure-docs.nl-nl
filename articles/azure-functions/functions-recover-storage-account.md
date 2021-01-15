@@ -3,12 +3,12 @@ title: 'Fout oplossen: de Azure Functions-runtime is onbereikbaar'
 description: Meer informatie over het oplossen van problemen met een ongeldig opslag account.
 ms.topic: article
 ms.date: 09/05/2018
-ms.openlocfilehash: 0b6778a08bf04367f2a0ef10f7cd4fe29a52dd61
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 9f6592b6d5ef88127a9dfca1e868564be0aa4ed5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579008"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217291"
 ---
 # <a name="troubleshoot-error-azure-functions-runtime-is-unreachable"></a>Fout oplossen: ' Azure Functions-runtime is onbereikbaar '
 
@@ -16,15 +16,15 @@ Dit artikel helpt u bij het oplossen van de volgende fout teken reeks die wordt 
 
 > "Fout: Azure Functions-runtime is onbereikbaar. Klik hier voor meer informatie over de opslag configuratie.
 
-Dit probleem treedt op wanneer de Azure Functions-runtime niet kan worden gestart. De meest voorkomende reden voor het probleem is dat de functie-app de toegang tot het opslag account heeft verloren. Zie [vereisten voor opslag accounts](./functions-create-function-app-portal.md#storage-account-requirements)voor meer informatie.
+Dit probleem treedt op wanneer de functions-runtime niet kan worden gestart. De meest voorkomende reden hiervoor is dat de functie-app de toegang tot het opslag account heeft verloren. Zie [vereisten voor opslag accounts](storage-considerations.md#storage-account-requirements)voor meer informatie.
 
-De rest van dit artikel helpt u bij het oplossen van de volgende oorzaken van deze fout, inclusief het identificeren en oplossen van elke case.
+De rest van dit artikel helpt u bij het oplossen van specifieke oorzaken van deze fout, inclusief het identificeren en oplossen van elke case.
 
 ## <a name="storage-account-was-deleted"></a>Het opslag account is verwijderd
 
-Voor elke functie-app moet een opslag account worden gebruikt. Als dat account wordt verwijderd, werkt de functie niet.
+Voor elke functie-app moet een opslag account worden gebruikt. Als dat account wordt verwijderd, werken uw functies niet.
 
-Zoek eerst de naam van uw opslag account op in de instellingen van uw toepassing. Ofwel `AzureWebJobsStorage` of `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` bevat de naam van uw opslag account in een Connection String. Zie voor meer informatie [app-instellingen naslag informatie voor Azure functions](./functions-app-settings.md#azurewebjobsstorage).
+Zoek eerst de naam van uw opslag account op in de instellingen van uw toepassing. Ofwel `AzureWebJobsStorage` of `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` bevat de naam van uw opslag account als onderdeel van een Connection String. Zie voor meer informatie [app-instellingen naslag informatie voor Azure functions](./functions-app-settings.md#azurewebjobsstorage).
 
 Zoek uw opslag account in de Azure Portal om te zien of het nog bestaat. Als deze is verwijderd, maakt u het opslag account opnieuw en vervangt u de verbindings reeksen voor de opslag. De functie code gaat verloren en u moet deze opnieuw implementeren.
 
@@ -44,7 +44,7 @@ Zie voor meer informatie [app-instellingen naslag informatie voor Azure function
 
 ### <a name="guidance"></a>Hulp
 
-* Schakel de optie ' sleuf instelling ' niet in voor een van deze instellingen. Als u implementatie sleuven verwisselt, wordt de functie-app onderbroken.
+* Controleer geen **sleuf instelling** voor een van deze instellingen. Als u implementatie sleuven verwisselt, wordt de functie-app onderbroken.
 * Wijzig deze instellingen niet als onderdeel van automatische implementaties.
 * Deze instellingen moeten worden ingevoerd en geldig zijn tijdens het maken. Een geautomatiseerde implementatie die deze instellingen niet bevat, resulteert in een functie-app die niet wordt uitgevoerd, zelfs niet als de instellingen later worden toegevoegd.
 
@@ -56,7 +56,7 @@ De eerder beschreven verbindings reeksen voor opslag accounts moeten worden bijg
 
 De functie-app moet toegang hebben tot het opslag account. Veelvoorkomende problemen met het blok keren van toegang tot een opslag account met een functie-app:
 
-* De functie-app wordt op uw App Service Environment geïmplementeerd zonder de juiste netwerk regels om verkeer toe te staan van en naar het opslag account.
+* De functie-app wordt geïmplementeerd op uw App Service Environment (ASE) zonder de juiste netwerk regels om verkeer toe te staan van en naar het opslag account.
 
 * De firewall voor het opslag account is ingeschakeld en is niet geconfigureerd om verkeer van en naar functies toe te staan. Raadpleeg [Firewalls en virtuele netwerken voor Azure Storage configureren](../storage/common/storage-network-security.md?toc=%2fazure%2fstorage%2ffiles%2ftoc.json) voor meer informatie.
 
@@ -72,7 +72,7 @@ U kunt dit probleem oplossen door het dagelijkse quotum te verwijderen of te ver
 
 ## <a name="app-is-behind-a-firewall"></a>App bevindt zich achter een firewall
 
-De functie-runtime kan om een van de volgende redenen onbereikbaar zijn:
+De functie-app kan om een van de volgende redenen onbereikbaar zijn:
 
 * Uw functie-app wordt gehost in een [app service Environment met interne taak verdeling](../app-service/environment/create-ilb-ase.md) en is geconfigureerd om inkomend Internet verkeer te blok keren.
 
@@ -80,8 +80,8 @@ De functie-runtime kan om een van de volgende redenen onbereikbaar zijn:
 
 De Azure Portal maakt rechtstreeks aan de actieve app aanroepen om de lijst met functies op te halen en maakt HTTP-aanroepen naar het kudu-eind punt. Instellingen op platform niveau onder het tabblad **platform functies** zijn nog steeds beschikbaar.
 
-Controleren of uw App Service Environment configuratie:
-1. Ga naar de netwerk beveiligings groep (NSG) van het subnet waar de App Service Environment zich bevindt.
+Uw ASE-configuratie controleren:
+1. Ga naar de netwerk beveiligings groep (NSG) van het subnet waar de ASE zich bevindt.
 1. Valideer de regels voor binnenkomende verbindingen om verkeer toe te staan dat afkomstig is van het open bare IP-adres van de computer waarop u toegang tot de toepassing hebt. 
    
 U kunt de portal ook gebruiken vanaf een computer die is verbonden met het virtuele netwerk waarop uw app wordt uitgevoerd of op een virtuele machine die wordt uitgevoerd in uw virtuele netwerk. 

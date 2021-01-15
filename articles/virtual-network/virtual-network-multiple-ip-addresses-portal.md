@@ -13,18 +13,18 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/30/2016
 ms.author: allensu
-ms.openlocfilehash: 135504ad4956836614bfc0f2cb107e610de17c0c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a0dab64aac8bc5fa68a53fad6cd8e6f6bb4bac03
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87543483"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217138"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-portal"></a>Meerdere IP-adressen toewijzen aan virtuele machines met behulp van de Azure Portal
 
 > [!INCLUDE [virtual-network-multiple-ip-addresses-intro.md](../../includes/virtual-network-multiple-ip-addresses-intro.md)]
 > 
-> In dit artikel wordt uitgelegd hoe u een virtuele machine (VM) maakt via het Azure Resource Manager-implementatie model met behulp van de Azure Portal. Er kunnen geen meerdere IP-adressen worden toegewezen aan resources die zijn gemaakt via het klassieke implementatie model. Lees het artikel over [implementatie modellen begrijpen](../resource-manager-deployment-model.md) voor meer informatie over Azure-implementatie modellen.
+> In dit artikel wordt uitgelegd hoe u een virtuele machine (VM) maakt via het Azure Resource Manager-implementatie model met behulp van de Azure Portal. Er kunnen geen meerdere IP-adressen worden toegewezen aan resources die zijn gemaakt via het klassieke implementatie model. Lees het artikel over [implementatie modellen begrijpen](../azure-resource-manager/management/deployment-models.md) voor meer informatie over Azure-implementatie modellen.
 
 [!INCLUDE [virtual-network-multiple-ip-addresses-scenario.md](../../includes/virtual-network-multiple-ip-addresses-scenario.md)]
 
@@ -53,7 +53,7 @@ U kunt persoonlijke en open bare IP-adressen toevoegen aan een Azure-netwerk int
 Voer de volgende stappen uit om een nieuw privé-IP-adres toe te voegen:
 
 1. Voer de stappen in de sectie [kern stappen](#coreadd) van dit artikel uit en controleer of u zich in de sectie **IP-configuraties** van de VM-netwerk interface bevindt.  Controleer het subnet dat standaard wordt weer gegeven (bijvoorbeeld 10.0.0.0/24).
-2. Klik op **Add**. Maak in het deel venster **IP-configuratie toevoegen** dat wordt weer gegeven een IP-configuratie met de naam *ipconfig-4* met een nieuw *statisch* privé-adres door een nieuw nummer voor het laatste octet te kiezen en klik vervolgens op **OK**.  (Voor het subnet 10.0.0.0/24 zou een voor beeld van een IP-adres *10.0.0.7*zijn.)
+2. Klik op **Add**. Maak in het deel venster **IP-configuratie toevoegen** dat wordt weer gegeven een IP-configuratie met de naam *ipconfig-4* met een nieuw *statisch* privé-adres door een nieuw nummer voor het laatste octet te kiezen en klik vervolgens op **OK**.  (Voor het subnet 10.0.0.0/24 zou een voor beeld van een IP-adres *10.0.0.7* zijn.)
 
     > [!NOTE]
     > Bij het toevoegen van een statisch IP-adres moet u een niet-gebruikt, geldig adres opgeven in het subnet waarmee de NIC is verbonden. Als het door u geselecteerde adres niet beschikbaar is, wordt in de portal een X weer gegeven voor het IP-adres en moet u een andere naam selecteren.
@@ -75,8 +75,8 @@ Een openbaar IP-adres wordt toegevoegd door een open bare IP-adres resource te k
 Een openbaar IP-adres is één instelling voor een open bare IP-adres resource. Als u een open bare IP-adres resource hebt die momenteel niet is gekoppeld aan een IP-configuratie die u wilt koppelen aan een IP-configuratie, slaat u de volgende stappen over en voert u de stappen in een van de onderstaande secties uit, zoals u dat nodig hebt. Als u geen beschik bare open bare IP-adres hebt, voert u de volgende stappen uit om een resource te maken:
 
 1. Ga naar het Azure Portal https://portal.azure.com en meld u indien nodig aan.
-3. Klik in de portal op **een resource**  >  **netwerk**  >  **openbaar IP-adres**maken.
-4. In het deel venster **openbaar IP-adres maken** dat wordt weer gegeven, voert u een **naam**in, selecteert u een **IP-adres toewijzings** type, een **abonnement**, een **resource groep**en een **locatie**. vervolgens klikt u op **maken**, zoals wordt weer gegeven in de volgende afbeelding:
+3. Klik in de portal op **een resource**  >  **netwerk**  >  **openbaar IP-adres** maken.
+4. In het deel venster **openbaar IP-adres maken** dat wordt weer gegeven, voert u een **naam** in, selecteert u een **IP-adres toewijzings** type, een **abonnement**, een **resource groep** en een **locatie**. vervolgens klikt u op **maken**, zoals wordt weer gegeven in de volgende afbeelding:
 
     ![Een resource met een openbaar IP-adres maken](./media/virtual-network-multiple-ip-addresses-portal/figure5.png)
 

@@ -8,20 +8,20 @@ ms.subservice: security
 ms.date: 04/15/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 699a7321646167b0a9fb20a77a40999ec33b14f0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9782cce4165487b612c0295dc893d120ed043225
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461338"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218260"
 ---
 # <a name="connect-to-your-azure-synapse-workspace-using-private-links"></a>Verbinding maken met uw Azure Synapse-werkruimte met Private Links
 
-In dit artikel leert u hoe u een persoonlijk eind punt maakt in de Azure Synapse-werk ruimte. Zie [persoonlijke koppelingen en persoonlijke eind punten](https://docs.microsoft.com/azure/private-link/) voor meer informatie.
+In dit artikel leert u hoe u een persoonlijk eind punt maakt in de Azure Synapse-werk ruimte. Zie [persoonlijke koppelingen en persoonlijke eind punten](../../private-link/index.yml) voor meer informatie.
 
 ## <a name="step-1-register-network-resource-provider"></a>Stap 1: netwerk resource provider registreren
 
-Als u dit nog niet hebt gedaan, registreert u de netwerk resource provider. Als u een resourceprovider registreert, wordt uw abonnement zo geconfigureerd dat dit kan worden gebruikt met de resourceprovider. Kies *Microsoft.Network* in de lijst met resourceproviders tijdens het [registreren](https://docs.microsoft.com/azure/azure-resource-manager/management/resource-providers-and-types). Als de netwerk resource provider al is geregistreerd, gaat u verder met stap 2.
+Als u dit nog niet hebt gedaan, registreert u de netwerk resource provider. Als u een resourceprovider registreert, wordt uw abonnement zo geconfigureerd dat dit kan worden gebruikt met de resourceprovider. Kies *Microsoft.Network* in de lijst met resourceproviders tijdens het [registreren](../../azure-resource-manager/management/resource-providers-and-types.md). Als de netwerk resource provider al is geregistreerd, gaat u verder met stap 2.
 
 ## <a name="step-2-open-your-azure-synapse-workspace-in-azure-portal"></a>Stap 2: Open de Azure Synapse-werk ruimte in Azure Portal
 

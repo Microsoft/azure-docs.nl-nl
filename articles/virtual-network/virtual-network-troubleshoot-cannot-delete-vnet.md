@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/31/2018
 ms.author: genli
-ms.openlocfilehash: 27372207df66b4198bd9c785ecc099fa88cbe548
-ms.sourcegitcommit: 2a8a53e5438596f99537f7279619258e9ecb357a
+ms.openlocfilehash: b974af343907c98ebd7a318bc60a0e553a07a233
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/06/2020
-ms.locfileid: "94335673"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219348"
 ---
 # <a name="troubleshooting-failed-to-delete-a-virtual-network-in-azure"></a>Problemen oplossen: verwijderen van een virtueel netwerk in Azure is mislukt
 
@@ -64,7 +64,7 @@ Als er een toepassings gateway is, moet u deze verwijderen voordat u het virtuel
 ### <a name="check-whether-azure-container-instances-still-exist-in-the-virtual-network"></a>Controleren of er nog Azure container instances aanwezig zijn in het virtuele netwerk
 
 1. Ga in het Azure Portal naar de **overzichts** pagina van de resource groep.
-1. Selecteer in de kop voor de lijst met resources van de resource groep de optie **verborgen typen weer geven**. Het type netwerk profiel wordt standaard verborgen in de Azure Portal.
+1. Selecteer in de koptekst van de lijst met resources voor de resourcegroep de optie **Verborgen typen weergeven**. Het type netwerk profiel wordt standaard verborgen in de Azure Portal.
 1. Selecteer het netwerk profiel dat is gerelateerd aan de container groepen.
 1. Selecteer **Verwijderen**.
 
@@ -72,7 +72,7 @@ Als er een toepassings gateway is, moet u deze verwijderen voordat u het virtuel
 
 1. Verwijder het subnet of het virtuele netwerk opnieuw.
 
-Als met deze stappen het probleem niet wordt opgelost, gebruikt u deze [Azure cli-opdrachten](https://docs.microsoft.com/azure/container-instances/container-instances-vnet#clean-up-resources) om resources op te schonen. 
+Als met deze stappen het probleem niet wordt opgelost, gebruikt u deze [Azure cli-opdrachten](../container-instances/container-instances-vnet.md#clean-up-resources) om resources op te schonen. 
 
 ### <a name="check-whether-azure-active-directory-domain-service-is-enabled-in-the-virtual-network"></a>Controleer of Azure Active Directory domein service is ingeschakeld in het virtuele netwerk
 

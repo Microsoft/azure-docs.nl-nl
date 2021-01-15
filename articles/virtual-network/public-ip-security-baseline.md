@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/11/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 8dd49125dc54403328fe53ae1aa0112ab2005501
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: d625cb8e0d0fa0f2fff55fbd41818057b7e9cb89
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201124"
+ms.locfileid: "98217648"
 ---
 # <a name="azure-security-baseline-for-azure-public-ip"></a>Azure-beveiligings basislijn voor open bare Azure-IP
 
@@ -30,7 +30,7 @@ Als u wilt zien hoe de open bare IP van Azure volledig is toegewezen aan de Secu
 
 Azure PowerShell of Azure CLI kan worden gebruikt om op basis van hun labels acties op te zoeken of uit te voeren op resources. 
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags) 
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md) 
 
 - [Een Azure-Virtual Network maken](quick-create-portal.md) 
 
@@ -64,7 +64,7 @@ In plaats daarvan kunt u gegevens in-en inschakelen voor Azure Sentinel of een S
 
 **Hulp**: Azure-activiteiten logboek gebruiken om configuraties te controleren en wijzigingen voor uw open bare IP-instanties te detecteren. Met uitzonde ring van het besturings vlak (bijvoorbeeld Azure Portal), genereert het open bare IP-adres zelf geen audit Logboeken. Open bare IP bevat hulpprogram ma's voor het bewaken, vaststellen en weer geven van metrische gegevens en het in-of uitschakelen van Logboeken voor bronnen in een virtueel Azure-netwerk.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -88,7 +88,7 @@ Gebruik Azure-activiteiten logboek om configuraties te controleren en wijziginge
 
 Openbaar IP-adres zelf maakt geen logboeken met betrekking tot netwerk verkeer dan op het besturings vlak (bijvoorbeeld Azure Portal).
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view)
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -114,9 +114,9 @@ Openbaar IP-adres zelf maakt geen logboeken met betrekking tot netwerk verkeer d
 
 Vooraf gedefinieerde ingebouwde Azure-rollen voor het uitvoeren van een query bestaan voor bepaalde bronnen via hulpprogram ma's als Azure CLI, Azure PowerShell of de Azure Portal.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -128,7 +128,7 @@ Vooraf gedefinieerde ingebouwde Azure-rollen voor het uitvoeren van een query be
 
 Just-in-time-toegang ingeschakeld met behulp van Azure Active Directory (Azure AD) Privileged Identity Management (PIM) en Azure Resource Manager. 
 
-- [Meer informatie over Privileged Identity Management](/azure/active-directory/privileged-identity-management)
+- [Meer informatie over Privileged Identity Management](../active-directory/privileged-identity-management/index.yml)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -164,9 +164,9 @@ Just-in-time-toegang ingeschakeld met behulp van Azure Active Directory (Azure A
 
 Bekijk en neem problemen met Azure AD-risico detecties op voor waarschuwingen en rapporten over Risk ante gebruikers gedrag.
 
-- [Privileged Identity Management implementeren (PIM)](/azure/active-directory/privileged-identity-management/pim-deployment-plan)
+- [Privileged Identity Management implementeren (PIM)](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-- [Meer informatie over Azure AD-risico detectie](/azure/active-directory/reports-monitoring/concept-risk-events)
+- [Meer informatie over Azure AD-risico detectie](../active-directory/identity-protection/overview-identity-protection.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -198,7 +198,7 @@ Bekijk en neem problemen met Azure AD-risico detecties op voor waarschuwingen en
 
 Gebruik beoordelingen van Azure Identity Access om groepslid maatschappen, toegang tot bedrijfs toepassingen en roltoewijzingen op efficiënte wijze te beheren. Gebruikers toegang kan regel matig worden gecontroleerd om ervoor te zorgen dat gebruikers goedgekeurde en blijvende toegang hebben.
 
-- [Meer informatie over Azure AD-rapportage](/azure/active-directory/reports-monitoring/)
+- [Meer informatie over Azure AD-rapportage](../active-directory/reports-monitoring/index.yml)
 
 - [Beoordelingen over Azure Identity Access gebruiken](../active-directory/governance/access-reviews-overview.md)
 
@@ -211,7 +211,7 @@ Gebruik beoordelingen van Azure Identity Access om groepslid maatschappen, toega
 **Richt lijnen**: implementeer integratie met elk Siem-en bewakings programma op basis van uw toegang tot Azure Active Directory (Azure AD) aanmeldings activiteit, controle en risico logboek bronnen.
 Stroom lijn dit proces door Diagnostische instellingen voor Azure AD-gebruikers accounts te maken en de audit logboeken en aanmeldings logboeken te verzenden naar een Log Analytics-werk ruimte. Gewenste waarschuwingen configureren in de Log Analytics-werk ruimte. 
 
-- [Azure-activiteiten logboeken integreren met Azure Monitor](/azure/active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics)
+- [Azure-activiteiten logboeken integreren met Azure Monitor](../active-directory/reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -220,7 +220,7 @@ Stroom lijn dit proces door Diagnostische instellingen voor Azure AD-gebruikers 
 ### <a name="312-alert-on-account-login-behavior-deviation"></a>3,12: waarschuwing voor de afwijking van het aanmeldings gedrag van accounts
 
 **Hulp**: gebruik Azure Active Directory-functies (Azure AD) voor identiteits beveiliging om automatische antwoorden te configureren op gedetecteerde verdachte acties die betrekking hebben op gebruikers identiteiten. Gegevens opnemen in azure Sentinel voor verder onderzoek naar wens en op basis van bedrijfs vereisten.
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins) 
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md) 
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md) 
 
@@ -242,7 +242,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 - [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -254,7 +254,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 **Richt lijnen**: Tags Toep assen op Azure-resources die meta gegevens geven om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -269,11 +269,11 @@ Gebruik Azure Policy bovendien om beperkingen te leggen voor het type resources 
 - Niet toegestane resourcetypen
 - Toegestane brontypen
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheer groepen maken](/azure/governance/management-groups/create)
+- [Beheer groepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -302,7 +302,7 @@ Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen e
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
-- [Een specifiek resource type weigeren met Azure Policy](/azure/governance/policy/samples/not-allowed-resource-types)
+- [Een specifiek resource type weigeren met Azure Policy](../governance/policy/samples/index.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -350,9 +350,9 @@ Gebruik Azure Resource Graph om resources binnen hun abonnementen op te vragen e
 
 **Richt lijnen**: als u aangepaste Azure Policy definities gebruikt, kunt u Azure DevOps of Azure opslag plaatsen gebruiken om uw code veilig op te slaan en te beheren.
 
-- [Code opslaan in azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
 
-- [Documentatie voor Azure opslag plaatsen](https://docs.microsoft.com/azure/devops/repos/index?view=azure-devops)
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/index?view=azure-devops)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -408,7 +408,7 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 - [Beveiligingswaarschuwingen in Azure Security Center](../security-center/security-center-alerts-overview.md) 
 
-- [Tags gebruiken om Azure-resources te organiseren](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags gebruiken om Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -474,5 +474,5 @@ Daarnaast kunt u ook duidelijk abonnementen markeren (voor bijvoorbeeld producti
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [Azure Security-Bench Mark](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie de [Azure Security-Bench Mark](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

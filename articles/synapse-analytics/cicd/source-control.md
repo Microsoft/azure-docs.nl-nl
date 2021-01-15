@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 2f1fe7c25327e8ecab9b450cab167391d8949b0a
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: 1f1a74f3a26a079039e68eb8e59fac4c18ff0c32
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008155"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219739"
 ---
 # <a name="source-control-in-azure-synapse-studio"></a>Broncode beheer in azure Synapse Studio
 
@@ -77,7 +77,7 @@ U kunt ook een opslagplaats koppeling gebruiken om snel te verwijzen naar de Git
 
 ### <a name="use-a-different-azure-active-directory-tenant"></a>Een andere Azure Active Directory Tenant gebruiken
 
-De Azure opslag plaatsen Git opslag plaats kan zich in een andere Azure Active Directory Tenant bevindt. Als u een andere Azure AD-tenant wilt opgeven, moet u beheerdersmachtigingen hebben voor het Azure-abonnement dat u gebruikt. Zie de [abonnements beheerder wijzigen](https://docs.microsoft.com/azure/cost-management-billing/manage/add-change-subscription-administrator#assign-a-subscription-administrator) voor meer informatie
+De Azure opslag plaatsen Git opslag plaats kan zich in een andere Azure Active Directory Tenant bevindt. Als u een andere Azure AD-tenant wilt opgeven, moet u beheerdersmachtigingen hebben voor het Azure-abonnement dat u gebruikt. Zie de [abonnements beheerder wijzigen](../../cost-management-billing/manage/add-change-subscription-administrator.md#assign-a-subscription-administrator) voor meer informatie
 
 > [!IMPORTANT]
 > Als u verbinding wilt maken met een andere Azure Active Directory, moet de aangemelde gebruiker deel uitmaken van die Active Directory. 
@@ -86,7 +86,7 @@ De Azure opslag plaatsen Git opslag plaats kan zich in een andere Azure Active D
 
 Als u een persoonlijk Microsoft-account wilt gebruiken voor git-integratie, kunt u uw persoonlijke Azure-opslag plaats koppelen aan de Active Directory van uw organisatie.
 
-1. Voeg uw persoonlijke Microsoft-account toe aan de Active Directory van uw organisatie als gast. Zie [Azure Active Directory B2B-samenwerkings gebruikers toevoegen in de Azure Portal](https://docs.microsoft.com/azure/active-directory/external-identities/add-users-administrator)voor meer informatie.
+1. Voeg uw persoonlijke Microsoft-account toe aan de Active Directory van uw organisatie als gast. Zie [Azure Active Directory B2B-samenwerkings gebruikers toevoegen in de Azure Portal](../../active-directory/external-identities/add-users-administrator.md)voor meer informatie.
 
 2. Meld u aan bij de Azure Portal met uw persoonlijke Microsoft-account. Schakel vervolgens over naar de Active Directory van uw organisatie.
 

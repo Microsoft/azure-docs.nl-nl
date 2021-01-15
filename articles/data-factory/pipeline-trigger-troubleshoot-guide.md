@@ -7,46 +7,40 @@ ms.date: 12/15/2020
 ms.topic: troubleshooting
 ms.author: susabat
 ms.reviewer: susabat
-ms.openlocfilehash: 0e67a316b012eda61607c84edfd8e10d6aa3318d
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 0ceee3c65e8c4df5d843bb441fb6426a0f4eb696
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589148"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220249"
 ---
 # <a name="troubleshoot-pipeline-orchestration-and-triggers-in-azure-data-factory"></a>Problemen met het indelen van pijp lijnen en triggers in Azure Data Factory oplossen
 
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
 
-Een pijplijnuitvoering in Azure Data Factory definieert een exemplaar van een pijplijnuitvoering. Stel dat u een pijp lijn hebt die wordt uitgevoerd om 8:00 uur, 9:00 uur en 10:00 uur. In dit geval zijn er drie afzonderlijke uitvoeringen van de pijp lijn of pijplijn uitvoeringen. Elke pijplijnuitvoering heeft een unieke id. Een run-ID is een GUID (Globally Unique Identifier) die de specifieke pijplijn uitvoering definieert.
+Een pijplijnuitvoering in Azure Data Factory definieert een exemplaar van een pijplijnuitvoering. Stel bijvoorbeeld dat u een pijp lijn hebt die wordt uitgevoerd om 8:00 uur, 9:00 uur en 10:00 uur. In dit geval zijn er drie afzonderlijke pijplijn uitvoeringen. Elke pijplijnuitvoering heeft een unieke id. Een run-ID is een Globally Unique Identifier (GUID) die de specifieke pijplijn uitvoering definieert.
 
-Pijplijnuitvoeringen worden doorgaans geïnstantieerd doordat argumenten worden doorgegeven aan parameters die u in de pijplijn definieert. U kunt een pijplijn handmatig uitvoeren of door middel van een trigger. Raadpleeg de [uitvoering van pijp lijnen en triggers in azure Data Factory](concepts-pipeline-execution-triggers.md) voor meer informatie.
+Pijplijnuitvoeringen worden doorgaans geïnstantieerd doordat argumenten worden doorgegeven aan parameters die u in de pijplijn definieert. U kunt een pijp lijn ofwel hand matig of via een trigger uitvoeren. Zie [pijp lijnen uitvoeren en triggers in azure Data Factory](concepts-pipeline-execution-triggers.md) voor meer informatie.
 
 ## <a name="common-issues-causes-and-solutions"></a>Veelvoorkomende problemen, oorzaken en oplossingen
 
-### <a name="pipeline-with-azure-function-throws-error-with-private-end-point-connectivity"></a>Pijp lijn met Azure function genereert een fout met persoonlijke eind punt connectiviteit
+### <a name="an-azure-functions-app-pipeline-throws-an-error-with-private-endpoint-connectivity"></a>Een Azure Functions app-pijp lijn genereert een fout met de connectiviteit van een persoonlijk eind punt
  
-#### <a name="issue"></a>Probleem
-Voor sommige context hebt u Data Factory en Azure functie-app uitgevoerd op een privé-eind punt. U probeert een pijp lijn op te halen die samenwerkt met de Azure-functie-app om te werken. U hebt drie verschillende methoden geprobeerd, maar er is een fout geretourneerd `Bad Request` , de andere twee methoden retour neren `103 Error Forbidden` .
+U hebt Data Factory en een Azure-functie-app die wordt uitgevoerd op een persoonlijk eind punt. U probeert een pijp lijn uit te voeren die samenwerkt met de functie-app. U hebt drie verschillende methoden geprobeerd, maar er is een fout ' ongeldige aanvraag ' geretourneerd en de andere twee methoden retour neren ' 103-fout verboden '.
 
-#### <a name="cause"></a>Oorzaak 
-Data Factory biedt momenteel geen ondersteuning voor een privé-eindpunt connector voor Azure functie-app. Dit moet de reden zijn waarom Azure functie-app de aanroepen weigert, omdat deze zo is geconfigureerd dat alleen verbindingen van een persoonlijke koppeling worden toegestaan.
+**Oorzaak**: Data Factory momenteel geen ondersteuning voor een privé-eindpunt connector voor functie-apps. Azure Functions weigert aanroepen omdat het is geconfigureerd om alleen verbindingen van een persoonlijke koppeling toe te staan.
 
-#### <a name="resolution"></a>Oplossing
-U kunt een persoonlijk eind punt van het type **PrivateLinkService** maken en de DNS van uw functie-app opgeven en de verbinding moet werken.
+**Oplossing**: Maak een **PrivateLinkService** -eind punt en geef de DNS van uw functie-app op.
 
-### <a name="pipeline-run-is-killed-but-the-monitor-still-shows-progress-status"></a>De pijplijn uitvoering is beëindigd, maar de monitor bevat nog steeds een voortgangs status
+### <a name="a-pipeline-run-is-canceled-but-the-monitor-still-shows-progress-status"></a>Een pijplijn uitvoering wordt geannuleerd, maar de monitor wordt nog steeds de voortgangs status weer gegeven
 
-#### <a name="issue"></a>Probleem
-Wanneer u een pijplijn uitvoering beëindigt, wordt de voortgangs status in de pipeline-bewaking nog steeds weer gegeven. Dit gebeurt vanwege het probleem in de cache in de browser en u beschikt niet over de juiste filters voor bewaking.
+Wanneer u de uitvoering van een pijp lijn annuleert, wordt in de pipeline-bewaking vaak nog steeds de voortgangs status weer gegeven. Dit gebeurt vanwege een probleem met de browser cache. Mogelijk hebt u ook niet de juiste controle filters.
 
-#### <a name="resolution"></a>Oplossing
-Vernieuw de browser en pas de juiste filters voor bewaking toe.
+**Oplossing**: Vernieuw de browser en pas de juiste bewakings filters toe.
  
-### <a name="copy-pipeline-failure--found-more-columns-than-expected-column-count-delimitedtextmorecolumnsthandefined"></a>Fout bij kopiëren van pijp lijn-er zijn meer kolommen gevonden dan het verwachte aantal (DelimitedTextMoreColumnsThanDefined)
-
-#### <a name="issue"></a>Probleem  
-Als de bestanden onder een bepaalde map die u kopieert bestanden met verschillende schema's bevatten, zoals het variabele aantal kolommen, verschillende scheidings tekens, instellingen voor de aanhalings teken of een gegeven gegevens probleem, wordt de Data Factory pijp lijn beëindigd met de volgende fout:
+### <a name="you-see-a-delimitedtextmorecolumnsthandefined-error-when-copying-a-pipeline"></a>U ziet de fout ' DelimitedTextMoreColumnsThanDefined ' bij het kopiëren van een pijp lijn
+ 
+Als een map die u kopieert bestanden bevat met verschillende schema's, zoals een variabel aantal kolommen, een andere scheidings teken, instellingen voor de aanhalings tekens of een gegeven gegevens probleem, kan de Data Factory pijp lijn deze fout veroorzaken:
 
 `
 Operation on target Copy_sks  failed: Failure happened on 'Sink' side.
@@ -56,51 +50,41 @@ Message=Error found when processing 'Csv/Tsv Format Text' source '0_2020_11_09_1
 Source=Microsoft.DataTransfer.Common,'
 `
 
-#### <a name="resolution"></a>Oplossing
-Selecteer de optie "binaire kopie" tijdens het maken van de Gegevens kopiëren activiteit. Op deze manier wordt voor het bulksgewijs kopiëren of migreren van uw gegevens van een Data Lake naar een andere, met een **binaire** optie, Data Factory de bestanden niet geopend om het schema te lezen, maar worden elk bestand als binair beschouwd en naar de andere locatie gekopieerd.
+**Oplossing**: Selecteer de optie voor **binaire kopieën** tijdens het maken van de Kopieer activiteit. Op deze manier kan Data Factory de bestanden niet openen om het schema te lezen, om uw gegevens te kopiëren of te migreren van de ene data Lake naar een andere. In plaats daarvan behandelt Data Factory elk bestand als binair en kopieert u het naar de andere locatie.
 
-### <a name="pipeline-run-fails-when-capacity-limit-of-integration-runtime-is-reached"></a>De pijplijn uitvoering mislukt wanneer de capaciteits limiet van Integration runtime is bereikt
+### <a name="a-pipeline-run-fails-when-you-reach-the-capacity-limit-of-the-integration-runtime"></a>Een pijplijn uitvoering mislukt wanneer u de capaciteits limiet van de Integration runtime bereikt
 
-#### <a name="issue"></a>Probleem
 Foutbericht:
 
 `
 Type=Microsoft.DataTransfer.Execution.Core.ExecutionException,Message=There are substantial concurrent MappingDataflow executions which is causing failures due to throttling under Integration Runtime 'AutoResolveIntegrationRuntime'.
 `
 
-De fout duidt op de beperking van per Integration runtime, die momenteel 50 is. Raadpleeg de [limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#version-2) voor meer informatie.
+**Oorzaak**: u hebt de capaciteits limiet van de Integration runtime bereikt. U kunt een grote hoeveelheid gegevens stroom uitvoeren met behulp van dezelfde Integration runtime op hetzelfde moment. Zie [Azure-abonnement en service limieten, quota's en beperkingen](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#version-2) voor meer informatie.
 
-Als u een grote hoeveelheid gegevens stroom met dezelfde Integration runtime tegelijk uitvoert, kan dit type fout optreden.
+**Oplossing**:
+ 
+- Voer uw pijp lijnen uit op verschillende tijdstippen van de trigger.
+- Maak een nieuwe Integration runtime en Splits uw pijp lijnen op meerdere integratie-Runtimes.
 
-#### <a name="resolution"></a>Oplossing 
-- Scheid deze pijp lijnen voor een andere trigger tijd om uit te voeren.
-- Maak een nieuwe Integration runtime en splits deze pijp lijnen op meerdere integratie-Runtimes.
+### <a name="you-have-activity-level-errors-and-failures-in-pipelines"></a>U hebt fouten en storingen op activiteit niveau in pijp lijnen
 
-### <a name="how-to-monitor-pipeline-failures-on-regular-interval"></a>Pijp lijn fouten controleren op een regel matig interval
+Met Azure Data Factory indeling wordt voorwaardelijke logica toegestaan en kunnen gebruikers verschillende paden maken op basis van het resultaat van een vorige activiteit. Er kunnen vier voorwaardelijke paden worden ingesteld: wanneer dit is **gelukt** (standaard geslaagd), na het **mislukken** van de **voltooiing** en **bij overs Laan**. 
 
-#### <a name="issue"></a>Probleem
-Het is vaak nodig om Data Factory pijp lijnen in intervallen te bewaken, bijvoorbeeld 5 minuten. U kunt de pijplijn uitvoeringen opvragen en filteren vanuit een data factory met behulp van het eind punt. 
+Azure Data Factory evalueert het resultaat van alle activiteiten op Leaf-niveau. De resultaten van de pijp lijn slagen alleen als alle bladeren slagen. Als een Leaf-activiteit is overgeslagen, evalueren we de bovenliggende activiteit in plaats daarvan. 
 
-#### <a name="recommendation"></a>Aanbeveling
-1. Stel een Azure Logic-app in om elke vijf minuten een query uit te zoeken op alle mislukte pijp lijnen.
-2. Vervolgens kunt u incidenten melden aan ons ticket systeem op basis van de [QueryByFactory](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/querybyfactory).
+**Oplossing**
 
-#### <a name="reference"></a>Referentie
-- [Extern: meldingen verzenden van Data Factory](https://www.mssqltips.com/sqlservertip/5962/send-notifications-from-an-azure-data-factory-pipeline--part-2/)
+1. Implementeer controles op activiteit niveau door [te volgen hoe er pijp lijn fouten en-fouten worden afgehandeld](https://techcommunity.microsoft.com/t5/azure-data-factory/understanding-pipeline-failures-and-error-handling/ba-p/1630459).
+1. Gebruik Azure Logic Apps voor het bewaken van pijp lijnen met regel matige intervallen na het [uitvoeren van een query op Factory](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/querybyfactory).
 
-### <a name="how-to-handle-activity-level-errors-and-failures-in-pipelines"></a>Fouten en storingen op activiteiten niveau in pijp lijnen afhandelen
+## <a name="monitor-pipeline-failures-in-regular-intervals"></a>Pijp lijn fouten met regel matige intervallen bewaken
 
-#### <a name="issue"></a>Probleem
-Met Azure Data Factory indeling wordt voorwaardelijke logica toegestaan en kunnen gebruikers verschillende paden maken op basis van de resultaten van een vorige activiteit. Hiermee kunnen vier voorwaardelijke paden worden ingesteld: "na geslaagd (standaard geslaagd)", "bij fout", "na voltooiing" en "bij overs Laan". Het gebruik van verschillende paden is toegestaan.
+Mogelijk moet u de mislukte Data Factory pijp lijnen in intervallen controleren, bijvoorbeeld 5 minuten. U kunt de pijp lijn uitvoeringen opvragen en filteren vanuit een data factory met behulp van het eind punt. 
 
-Azure Data Factory definieert een geslaagde en mislukte uitvoering van de pijp lijn als volgt:
+Stel een Azure Logic-app in om elke vijf minuten een query uit te zoeken op alle defecte pijp lijnen, zoals beschreven in [query door Factory](https://docs.microsoft.com/rest/api/datafactory/pipelineruns/querybyfactory). Vervolgens kunt u incidenten melden aan ons ticket systeem.
 
-- Evalueer het resultaat voor alle activiteiten op knooppunt niveau. Als een Leaf-activiteit is overgeslagen, evalueren we de bovenliggende activiteit in plaats daarvan.
-- Het resultaat van de pijp lijn is geslaagd als en alleen als alle bladeren slagen.
-
-#### <a name="recommendation"></a>Aanbeveling
-- Implementeer controles op activiteiten niveau na [het afhandelen van pijp lijn fouten en fouten](https://techcommunity.microsoft.com/t5/azure-data-factory/understanding-pipeline-failures-and-error-handling/ba-p/1630459).
-- Gebruik Azure Logic app voor het bewaken van pijp lijnen met regel matige intervallen na [query door DataFactory]( https://docs.microsoft.com/rest/api/datafactory/pipelineruns/querybyfactory).
+Ga voor meer informatie naar [meldingen verzenden van Data Factory, deel 2](https://www.mssqltips.com/sqlservertip/5962/send-notifications-from-an-azure-data-factory-pipeline--part-2/).
 
 ## <a name="next-steps"></a>Volgende stappen
 

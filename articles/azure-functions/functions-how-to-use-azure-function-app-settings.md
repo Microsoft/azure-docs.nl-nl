@@ -5,12 +5,12 @@ ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47, devx-track-azurecli
-ms.openlocfilehash: 2526fd60d6e07ecf43864945f2b05858b41ca567
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 70aecc2613fbe21d34e36f9487d7ba383e140bc8
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98035203"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217359"
 ---
 # <a name="manage-your-function-app"></a>Uw functie-app beheren 
 
@@ -19,11 +19,6 @@ In Azure Functions biedt een functie-app de uitvoerings context voor uw afzonder
 Afzonderlijke functies in een functie-app worden samen geïmplementeerd en worden tegelijk geschaald. Alle functies in dezelfde functie-app delen resources per exemplaar, zoals de functie-app wordt geschaald. 
 
 Verbindings reeksen, omgevings variabelen en andere toepassings instellingen worden afzonderlijk voor elke functie-app gedefinieerd. Gegevens die moeten worden gedeeld tussen functie-apps, moeten extern worden opgeslagen in een persistente opslag.
-
-In dit artikel wordt beschreven hoe u uw functie-apps configureert en beheert. 
-
-> [!TIP]  
-> Veel configuratie opties kunnen ook worden beheerd met behulp van de [Azure cli]. 
 
 ## <a name="get-started-in-the-azure-portal"></a>Aan de slag in de Azure-portal
 
@@ -37,15 +32,17 @@ U kunt navigeren naar alles wat u nodig hebt om uw functie-app te beheren op de 
 
 ## <a name="work-with-application-settings"></a><a name="settings"></a>Werken met toepassings instellingen
 
-Op het tabblad **Toepassings instellingen** worden instellingen onderhouden die worden gebruikt door de functie-app. Deze instellingen worden versleuteld opgeslagen en u moet **waarden weer geven** selecteren om de waarden in de portal weer te geven. U kunt ook toegang krijgen tot toepassings instellingen met behulp van de Azure CLI.
+Toepassings instellingen kunnen worden beheerd vanuit de [Azure Portal](functions-how-to-use-azure-function-app-settings.md?tabs=portal#settings) en met behulp van de [Azure cli](functions-how-to-use-azure-function-app-settings.md?tabs=azurecli#settings) en [Azure PowerShell](functions-how-to-use-azure-function-app-settings.md?tabs=powershell#settings). U kunt ook toepassings instellingen beheren vanuit [Visual Studio code](functions-develop-vs-code.md#application-settings-in-azure) en [Visual Studio](functions-develop-vs.md#function-app-settings). 
 
-### <a name="portal"></a>Portal
+Deze instellingen worden versleuteld opgeslagen. Zie [beveiliging van toepassings instellingen](security-concepts.md#application-settings)voor meer informatie.
 
-Als u een instelling wilt toevoegen in de portal, selecteert u **nieuwe toepassings instelling** en voegt u het nieuwe sleutel-waardepaar toe.
+# <a name="portal"></a>[Portal](#tab/portal)
+
+Op het tabblad **Toepassings instellingen** worden instellingen onderhouden die worden gebruikt door de functie-app. U moet **waarden weer geven** selecteren om de waarden in de portal weer te geven. Als u een instelling wilt toevoegen in de portal, selecteert u **nieuwe toepassings instelling** en voegt u het nieuwe sleutel-waardepaar toe.
 
 ![Functie-app-instellingen in de Azure Portal.](./media/functions-how-to-use-azure-function-app-settings/azure-function-app-settings-tab.png)
 
-### <a name="azure-cli"></a>Azure CLI
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azurecli)
 
 De [`az functionapp config appsettings list`](/cli/azure/functionapp/config/appsettings#az-functionapp-config-appsettings-list) opdracht retourneert de bestaande toepassings instellingen, zoals in het volgende voor beeld:
 
@@ -62,6 +59,22 @@ az functionapp config appsettings set --name <FUNCTION_APP_NAME> \
 --resource-group <RESOURCE_GROUP_NAME> \
 --settings CUSTOM_FUNCTION_APP_SETTING=12345
 ```
+
+# <a name="azure-powershell"></a>[Azure PowerShell](#tab/powershell)
+
+De [`Get-AzFunctionAppSetting`](/powershell/module/az.functions/get-azfunctionappsetting) cmdlet retourneert de bestaande toepassings instellingen, zoals in het volgende voor beeld: 
+
+```azurepowershell-interactive
+Get-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOURCE_GROUP_NAME>
+```
+
+Met de [`Update-AzFunctionAppSetting`](/powershell/module/az.functions/update-azfunctionappsetting) opdracht wordt een toepassings instelling toegevoegd of bijgewerkt. In het volgende voor beeld wordt een instelling gemaakt met een sleutel met de naam `CUSTOM_FUNCTION_APP_SETTING` en een waarde van `12345` :
+
+```azurepowershell-interactive
+Update-AzFunctionAppSetting -Name <FUNCTION_APP_NAME> -ResourceGroupName <RESOURCE_GROUP_NAME> -AppSetting @{"CUSTOM_FUNCTION_APP_SETTING" = "12345"}
+```
+
+---
 
 ### <a name="use-application-settings"></a>Toepassings instellingen gebruiken
 

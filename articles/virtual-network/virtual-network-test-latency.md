@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/29/2019
 ms.author: steveesp
-ms.openlocfilehash: 77ea14097538f722569acb5a0371674776aac8e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f8f167a7947c42ce837ec83b336ae636f593f2e4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84687800"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219255"
 ---
 # <a name="test-vm-network-latency"></a>Netwerklatentie van VM testen
 
@@ -55,7 +55,7 @@ Met deze hulpprogram ma's kunt u ervoor zorgen dat alleen TCP-of UDP-Payload-lev
 Houd bij het maken van de VM-configuratie de volgende aanbevelingen in acht:
 - Gebruik de nieuwste versie van Windows of Linux.
 - Versneld netwerken inschakelen voor de beste resultaten.
-- Implementeer Vm's met een [Azure proximity-plaatsings groep](https://docs.microsoft.com/azure/virtual-machines/linux/co-location).
+- Implementeer Vm's met een [Azure proximity-plaatsings groep](../virtual-machines/co-location.md).
 - Grotere Vm's doen over het algemeen beter dan kleinere Vm's.
 
 ### <a name="tips-for-analysis"></a>Tips voor analyse
@@ -77,7 +77,7 @@ Overweeg latte.exe in een afzonderlijke map te plaatsen, zoals *c:\Tools*.
 
 ### <a name="allow-latteexe-through-windows-defender-firewall"></a>latte.exe via Windows Defender Firewall toestaan
 
-Maak op de *ontvanger*een regel voor toestaan op Windows Defender firewall om toe te staan dat het latte.exe verkeer binnenkomt. Het is eenvoudig om het hele latte.exe-programma toe te staan op naam in plaats van specifieke TCP-poorten toestaan.
+Maak op de *ontvanger* een regel voor toestaan op Windows Defender firewall om toe te staan dat het latte.exe verkeer binnenkomt. Het is eenvoudig om het hele latte.exe-programma toe te staan op naam in plaats van specifieke TCP-poorten toestaan.
 
 latte.exe via Windows Defender Firewall toestaan door de volgende opdracht uit te voeren:
 
@@ -111,7 +111,7 @@ Als u bijvoorbeeld latte.exe hebt gekopieerd naar de map *c:\Tools* , is dit de 
     latte -c -a <Receiver IP address>:<port> -i <iterations>
     ```
 
-    De resulterende opdracht is hetzelfde als op de ontvanger, behalve met de toevoeging van &nbsp; *-c* om aan te geven dat dit de *client*of *afzender*is:
+    De resulterende opdracht is hetzelfde als op de ontvanger, behalve met de toevoeging van &nbsp; *-c* om aan te geven dat dit de *client* of *afzender* is:
 
     `latte -c -a 10.0.0.4:5005 -i 65100`
 
@@ -200,7 +200,7 @@ In dit SockPerf-voor beeld wordt een 350-byte bericht grootte gebruikt. Dit is n
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Verbeter de latentie met een [plaatsings groep voor Azure nabijheid](https://docs.microsoft.com/azure/virtual-machines/linux/co-location).
+* Verbeter de latentie met een [plaatsings groep voor Azure nabijheid](../virtual-machines/co-location.md).
 * Meer informatie over het [optimaliseren van netwerken voor vm's](../virtual-network/virtual-network-optimize-network-bandwidth.md) voor uw scenario.
 * Meer informatie over [hoe band breedte wordt toegewezen aan virtuele machines](../virtual-network/virtual-machine-network-throughput.md).
 * Zie [Veelgestelde vragen over Azure Virtual Network](../virtual-network/virtual-networks-faq.md)voor meer informatie.

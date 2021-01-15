@@ -8,12 +8,12 @@ ms.service: cognitive-services
 ms.subservice: personalizer
 ms.topic: conceptual
 ms.date: 10/14/2019
-ms.openlocfilehash: edd1549ddabef0ae1ba37150ad75a371ac6e6d85
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 55d1b7171201c962278d7c526528b36848c19449
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94365513"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217886"
 ---
 # <a name="features-are-information-about-actions-and-context"></a>Functies zijn informatie over acties en context
 
@@ -37,12 +37,12 @@ Personaler schrijft, beperkt of corrigeert de functies die u kunt verzenden voor
 
 ## <a name="supported-feature-types"></a>Ondersteunde functie typen
 
-Personaler ondersteunt functies van het type teken reeks, numeriek en Booleaanse waarde.
+Personaler ondersteunt functies van het type teken reeks, numeriek en Booleaanse waarde. Het is zeer waarschijnlijk dat uw toepassing gebruik maakt van teken reeks functies, met enkele uitzonde ringen.
 
 ### <a name="how-choice-of-feature-type-affects-machine-learning-in-personalizer"></a>Hoe de keuze van het functie type is van invloed op Machine Learning in Personaler
 
-* **Teken reeksen** : voor teken reeks typen maakt elke combi natie van sleutel en waarde nieuwe gewichten in het model personaler machine learning. 
-* **Numeriek** : u moet numerieke waarden gebruiken wanneer het getal proportioneel van invloed moet zijn op het personalisatie resultaat. Dit is een zeer afhankelijk scenario. In een vereenvoudigd voor beeld bijvoorbeeld: bij het personaliseren van een retail-ervaring kan NumberOfPetsOwned een functie zijn die numeriek is als u wilt dat mensen met 2 of 3 huis dieren twee keer zo veel mogelijk van invloed op het persoonlijke resultaat hebben of drie keer per. Functies die zijn gebaseerd op numerieke eenheden, maar waarbij de betekenis niet lineair is, zoals leeftijd, Tempe ratuur of persoons hoogte, worden het beste gecodeerd als teken reeksen en de functie kwaliteit kan meestal worden verbeterd door gebruik te maken van bereiken. Leeftijd kan bijvoorbeeld worden gecodeerd als ' leeftijd ': ' 0-5 ', ' leeftijd ': ' 6-10 ', enzovoort.
+* **Teken reeksen**: voor teken reeks typen wordt elke combi natie van sleutel en waarde behandeld als een One-Hot functie (bijvoorbeeld genre: "ScienceFiction" en genre: "documentaire" maakt twee nieuwe invoer functies voor het machine learning model.
+* **Numeriek**: u moet numerieke waarden gebruiken wanneer het getal een grootte is die proportioneel van invloed moet zijn op het personalisatie resultaat. Dit is een zeer afhankelijk scenario. In een vereenvoudigd voor beeld bijvoorbeeld: bij het personaliseren van een retail-ervaring kan NumberOfPetsOwned een functie zijn die numeriek is als u wilt dat mensen met 2 of 3 huis dieren twee keer zo veel mogelijk van invloed op het persoonlijke resultaat hebben of drie keer per. Functies die zijn gebaseerd op numerieke eenheden, maar waarbij de betekenis niet lineair is, zoals leeftijd, Tempe ratuur of persoons hoogte, worden het beste gecodeerd als teken reeksen. Bijvoorbeeld DayOfMonth zou een teken reeks zijn met ' 1 ', ' 2 '... ' 31 '. Als u veel categorieën hebt, kan de functie kwaliteit doorgaans worden verbeterd door gebruik te maken van bereiken. Leeftijd kan bijvoorbeeld worden gecodeerd als ' leeftijd ': ' 0-5 ', ' leeftijd ': ' 6-10 ', enzovoort.
 * **Booleaanse** waarden die zijn verzonden met de waarde ' false ' fungeren alsof ze niet had zijn verzonden.
 
 Functies die niet aanwezig zijn, moeten worden wegge laten uit de aanvraag. Vermijd het verzenden van functies met een null-waarde, omdat deze wordt verwerkt als bestaande en met de waarde ' null ' bij het trainen van het model.
@@ -80,12 +80,14 @@ JSON-objecten kunnen geneste JSON-objecten en eenvoudige eigenschappen/waarden b
         { 
             "user": {
                 "profileType":"AnonymousUser",
-                "latlong": [47.6, -122.1]
+                "latlong": ["47.6", "-122.1"]
             }
         },
         {
-            "state": {
-                "timeOfDay": "noon",
+            "environment": {
+                "dayOfMonth": "28",
+                "monthOfYear": "8",
+                "timeOfDay": "13:00",
                 "weather": "sunny"
             }
         },
@@ -93,6 +95,13 @@ JSON-objecten kunnen geneste JSON-objecten en eenvoudige eigenschappen/waarden b
             "device": {
                 "mobile":true,
                 "Windows":true
+            }
+        },
+        {
+            "userActivity" : {
+                "itemsInCart": 3,
+                "cartValue": 250,
+                "appliedCoupon": true
             }
         }
     ]
@@ -112,6 +121,8 @@ De teken reeks die u gebruikt voor het benoemen van de naam ruimte moet voldoen 
 Een goede functieset helpt persoonlijker te leren hoe u de actie kunt voors pellen waarmee de hoogste beloning wordt gestimuleerd. 
 
 Overweeg het verzenden van functies naar de Personaler Rank-API die deze aanbevelingen volgen:
+
+* Gebruik categorische en string types voor functies die geen grootte hebben. 
 
 * Er zijn voldoende functies om persoonlijke instellingen te verzorgen. Hoe preciezer de inhoud moet zijn, hoe meer functies nodig zijn.
 
@@ -177,7 +188,7 @@ Geen meer dan 50 acties verzenden bij het classificeren van acties. Dit kunnen d
 
 De acties die u naar de positie-API verzendt, zijn afhankelijk van wat u probeert te personaliseren.
 
-Enkele voorbeelden:
+Hier volgen enkele voorbeelden:
 
 |Doel|Actie|
 |--|--|

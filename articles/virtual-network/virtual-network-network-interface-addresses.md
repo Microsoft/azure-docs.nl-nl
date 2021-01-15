@@ -16,12 +16,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 01/22/2020
 ms.author: allensu
-ms.openlocfilehash: 265ed0f4cb58a321bde78714f36123bf197d42f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3fd0cfe644ad78059e25d5386cd1a01f56ad9fba
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84710997"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216985"
 ---
 # <a name="add-change-or-remove-ip-addresses-for-an-azure-network-interface"></a>IP-adressen voor Azure-netwerkinterfaces toevoegen, wijzigen en verwijderen
 
@@ -48,16 +48,16 @@ U kunt zo nodig zoveel [persoonlijke](#private) en [open bare](#public) [IPv4](#
 
 1. In het vak met de tekst *zoeken resources* boven aan de Azure Portal, typt u *netwerk interfaces*. Wanneer de **netwerk interfaces** in de zoek resultaten worden weer gegeven, selecteert u deze.
 2. Selecteer de netwerk interface waarvoor u een IPv4-adres wilt toevoegen in de lijst.
-3. Selecteer onder **instellingen**de optie **IP-configuraties**.
-4. Selecteer **+ toevoegen**onder **IP-configuraties**.
+3. Selecteer onder **instellingen** de optie **IP-configuraties**.
+4. Selecteer **+ toevoegen** onder **IP-configuraties**.
 5. Geef het volgende op en selecteer **OK**:
 
    |Instelling|Vereist?|Details|
    |---|---|---|
-   |Name|Ja|Moet uniek zijn voor de netwerk interface|
-   |Type|Ja|Omdat u een IP-configuratie toevoegt aan een bestaande netwerk interface en elke netwerk interface moet een [primaire](#primary) IP-configuratie hebben, is de enige optie **secundair**.|
-   |Toewijzings methode voor privé-IP-adres|Ja|[**Dynamisch**](#dynamic): Azure wijst het volgende beschik bare adres toe voor het adres bereik van het subnet waarin de netwerk interface is geïmplementeerd. [**Statisch**](#static): u wijst een ongebruikt adres toe voor het adres bereik van het subnet waarin de netwerk interface is geïmplementeerd.|
-   |Openbaar IP-adres|Nee|**Uitgeschakeld:** Er is momenteel geen open bare IP-adres resource gekoppeld aan de IP-configuratie. **Ingeschakeld:** Selecteer een bestaand openbaar IP-adres voor IPv4 of maak een nieuwe. Lees het artikel [open bare IP-adressen](virtual-network-public-ip-address.md#create-a-public-ip-address) voor meer informatie over het maken van een openbaar IP-adres.|
+   |Naam|Yes|Moet uniek zijn voor de netwerk interface|
+   |Type|Yes|Omdat u een IP-configuratie toevoegt aan een bestaande netwerk interface en elke netwerk interface moet een [primaire](#primary) IP-configuratie hebben, is de enige optie **secundair**.|
+   |Toewijzings methode voor privé-IP-adres|Yes|[**Dynamisch**](#dynamic): Azure wijst het volgende beschik bare adres toe voor het adres bereik van het subnet waarin de netwerk interface is geïmplementeerd. [**Statisch**](#static): u wijst een ongebruikt adres toe voor het adres bereik van het subnet waarin de netwerk interface is geïmplementeerd.|
+   |Openbaar IP-adres|No|**Uitgeschakeld:** Er is momenteel geen open bare IP-adres resource gekoppeld aan de IP-configuratie. **Ingeschakeld:** Selecteer een bestaand openbaar IP-adres voor IPv4 of maak een nieuwe. Lees het artikel [open bare IP-adressen](virtual-network-public-ip-address.md#create-a-public-ip-address) voor meer informatie over het maken van een openbaar IP-adres.|
 6. Voeg hand matig secundaire privé-IP-adressen toe aan het besturings systeem van de virtuele machine door de instructies in het artikel [meerdere IP-adressen toewijzen aan virtuele machines te](virtual-network-multiple-ip-addresses-portal.md#os-config) volt ooien. Zie [privé](#private) -IP-adressen voor speciale overwegingen voordat u IP-adressen hand matig toevoegt aan een besturings systeem van een virtuele machine. Voeg geen open bare IP-adressen toe aan het besturings systeem van de virtuele machine.
 
 **Opdrachten**
@@ -73,7 +73,7 @@ Mogelijk moet u de toewijzings methode van een IPv4-adres wijzigen, het statisch
 
 1. In het vak met de tekst *zoeken resources* boven aan de Azure Portal, typt u *netwerk interfaces*. Wanneer de **netwerk interfaces** in de zoek resultaten worden weer gegeven, selecteert u deze.
 2. Selecteer de netwerk interface waarvan u de IP-adres instellingen wilt weer geven of wijzigen in de lijst.
-3. Selecteer onder **instellingen**de optie **IP-configuraties**.
+3. Selecteer onder **instellingen** de optie **IP-configuraties**.
 4. Selecteer de IP-configuratie die u wilt wijzigen in de lijst.
 5. Wijzig de instellingen, naar wens, met behulp van de informatie over de instellingen in stap 5 van [een IP-configuratie toevoegen](#add-ip-addresses).
 6. Selecteer **Opslaan**.
@@ -94,8 +94,8 @@ U kunt [persoonlijke](#private) en [open bare](#public) IP-adressen verwijderen 
 
 1. In het vak met de tekst *zoeken resources* boven aan de Azure Portal, typt u *netwerk interfaces*. Wanneer de **netwerk interfaces** in de zoek resultaten worden weer gegeven, selecteert u deze.
 2. Selecteer de netwerk interface waarvan u de IP-adressen uit de lijst wilt verwijderen.
-3. Selecteer onder **instellingen**de optie **IP-configuraties**.
-4. Klik met de rechter muisknop op een [secundaire](#secondary) IP-configuratie (u kunt de [primaire](#primary) configuratie niet verwijderen) die u wilt verwijderen, selecteer **verwijderen**en selecteer vervolgens **Ja**om de verwijdering te bevestigen. Als aan de configuratie een resource met een openbaar IP-adres is gekoppeld, wordt de bron losgekoppeld van de IP-configuratie, maar de bron wordt niet verwijderd.
+3. Selecteer onder **instellingen** de optie **IP-configuraties**.
+4. Klik met de rechter muisknop op een [secundaire](#secondary) IP-configuratie (u kunt de [primaire](#primary) configuratie niet verwijderen) die u wilt verwijderen, selecteer **verwijderen** en selecteer vervolgens **Ja** om de verwijdering te bevestigen. Als aan de configuratie een resource met een openbaar IP-adres is gekoppeld, wordt de bron losgekoppeld van de IP-configuratie, maar de bron wordt niet verwijderd.
 
 **Opdrachten**
 
@@ -200,7 +200,7 @@ U kunt een openbaar IPv6-adres niet toewijzen aan een primaire of secundaire IP-
 Een openbaar IP-adres wordt gemaakt met de Basic-of Standard-SKU. Zie [Public IP addresses beheren](virtual-network-public-ip-address.md)voor meer informatie over de verschillen tussen de verschillende sku's.
 
 > [!NOTE]
-> Als u een openbaar IP-adres van een standaard-SKU toewijst aan een netwerkinterface van een virtuele machine, moet u het bedoelde verkeer expliciet toestaan met een [netwerkbeveiligingsgroep](security-overview.md#network-security-groups). Communicatie met de resource mislukt totdat u een netwerkbeveiligingsgroep maakt en koppelt en het gewenste verkeer expliciet toestaat.
+> Als u een openbaar IP-adres van een standaard-SKU toewijst aan een netwerkinterface van een virtuele machine, moet u het bedoelde verkeer expliciet toestaan met een [netwerkbeveiligingsgroep](./network-security-groups-overview.md#network-security-groups). Communicatie met de resource mislukt totdat u een netwerkbeveiligingsgroep maakt en koppelt en het gewenste verkeer expliciet toestaat.
 
 ## <a name="next-steps"></a>Volgende stappen
 Als u een virtuele machine met verschillende IP-configuraties wilt maken, leest u de volgende artikelen:

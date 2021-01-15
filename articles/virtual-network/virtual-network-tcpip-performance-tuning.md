@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 04/02/2019
 ms.author: rimayber
 ms.reviewer: dgoddard, stegag, steveesp, minale, btalb, prachank
-ms.openlocfilehash: 67b635f09cb9407279e89b5f7b8526dab3c08946
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1f6abbf68d4f648aeee6c025800f24140c9459e9
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017607"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219314"
 ---
 # <a name="tcpip-performance-tuning-for-azure-vms"></a>TCP/IP-prestaties afstemmen voor Azure-Vm's
 
@@ -89,7 +89,7 @@ We moedigen klanten niet aan om VM-Mtu's te verhogen. Deze bespreking bevat een 
 
 #### <a name="large-send-offload"></a>Grote verzendings-offload
 
-Grote verzendings-offload (LSO) kan de netwerk prestaties verbeteren door de segmentatie van pakketten te offloaden naar de Ethernet-adapter. Als LSO is ingeschakeld, maakt de TCP/IP-stack een groot TCP-pakket en verzendt dit naar de Ethernet-adapter voor segmentatie voordat het wordt doorgestuurd. Het voor deel van LSO is dat de CPU van het segmenteren van pakketten kan worden vrijgemaakt naar grootten die voldoen aan de MTU en de offload die verwerkt in de Ethernet-interface waar deze wordt uitgevoerd in hardware. Zie voor meer informatie over de voor delen van LSO [grote verzendings-offload ondersteunen](https://docs.microsoft.com/windows-hardware/drivers/network/performance-in-network-adapters#supporting-large-send-offload-lso).
+Grote verzendings-offload (LSO) kan de netwerk prestaties verbeteren door de segmentatie van pakketten te offloaden naar de Ethernet-adapter. Als LSO is ingeschakeld, maakt de TCP/IP-stack een groot TCP-pakket en verzendt dit naar de Ethernet-adapter voor segmentatie voordat het wordt doorgestuurd. Het voor deel van LSO is dat de CPU van het segmenteren van pakketten kan worden vrijgemaakt naar grootten die voldoen aan de MTU en de offload die verwerkt in de Ethernet-interface waar deze wordt uitgevoerd in hardware. Zie voor meer informatie over de voor delen van LSO [grote verzendings-offload ondersteunen](/windows-hardware/drivers/network/performance-in-network-adapters#supporting-large-send-offload-lso).
 
 Als LSO is ingeschakeld, kunnen Azure-klanten grote frame grootten zien wanneer ze pakket opnames uitvoeren. Deze grote frame grootten kunnen ertoe leiden dat sommige klanten denken dat fragmentatie wordt uitgevoerd of dat een grote MTU wordt gebruikt wanneer dat niet het geval is. Met LSO kan de Ethernet-adapter een grotere maximum segment grootte (MSS) aankondigen aan de TCP/IP-stack om een groter TCP-pakket te maken. Dit volledige niet-gesegmenteerde frame wordt vervolgens doorgestuurd naar de Ethernet-adapter en wordt weer gegeven in een pakket opname die op de virtuele machine wordt uitgevoerd. Het pakket wordt echter onderverdeeld in veel kleinere frames door de Ethernet-adapter, volgens de MTU van de Ethernet-adapter.
 
@@ -117,7 +117,7 @@ Het PMTUD-proces is inefficiënt en heeft invloed op de netwerk prestaties. Als 
 
 Als u virtuele machines gebruikt die inkapseling uitvoeren (zoals IPsec-Vpn's), zijn er enkele aanvullende overwegingen met betrekking tot pakket grootte en MTU. Vpn's voegen meer headers toe aan pakketten, waardoor de pakket grootte wordt verhoogd en een kleinere MSS vereist is.
 
-Voor Azure wordt u aangeraden TCP MSS in te stellen op 1.350 bytes en de tunnel interface MTU tot 1.400. Zie de [pagina VPN-apparaten en IPSec/IKE-para meters](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpn-devices)voor meer informatie.
+Voor Azure wordt u aangeraden TCP MSS in te stellen op 1.350 bytes en de tunnel interface MTU tot 1.400. Zie de [pagina VPN-apparaten en IPSec/IKE-para meters](../vpn-gateway/vpn-gateway-about-vpn-devices.md)voor meer informatie.
 
 ### <a name="latency-round-trip-time-and-tcp-window-scaling"></a>Latentie, round-trip tijd en TCP-venster schalen
 
@@ -210,7 +210,7 @@ U kunt de `Get-NetTCPSetting` Power shell-opdracht gebruiken om de waarden van e
 Get-NetTCPSetting
 ```
 
-U kunt de eerste TCP-venster grootte en TCP-schaal factor in Windows instellen met behulp van de `Set-NetTCPSetting` Power shell-opdracht. Zie  [set-NetTCPSetting](https://docs.microsoft.com/powershell/module/nettcpip/set-nettcpsetting?view=win10-ps)voor meer informatie.
+U kunt de eerste TCP-venster grootte en TCP-schaal factor in Windows instellen met behulp van de `Set-NetTCPSetting` Power shell-opdracht. Zie  [set-NetTCPSetting](/powershell/module/nettcpip/set-nettcpsetting?view=win10-ps)voor meer informatie.
 
 ```powershell
 Set-NetTCPSetting
@@ -253,13 +253,13 @@ Versneld netwerken verbeteren de prestaties doordat de gast-VM de host kan omzei
 
 - **Verminderd CPU-gebruik**: het overs laan van de virtuele switch in de host leidt tot minder CPU-gebruik voor het verwerken van netwerk verkeer.
 
-Als u versneld netwerken wilt gebruiken, moet u het expliciet inschakelen op elke van toepassing zijnde VM. Zie [een virtuele Linux-machine met versneld netwerken maken](https://docs.microsoft.com/azure/virtual-network/create-vm-accelerated-networking-cli) voor instructies.
+Als u versneld netwerken wilt gebruiken, moet u het expliciet inschakelen op elke van toepassing zijnde VM. Zie [een virtuele Linux-machine met versneld netwerken maken](./create-vm-accelerated-networking-cli.md) voor instructies.
 
 #### <a name="receive-side-scaling"></a>Schalen aan de ontvangst zijde
 
-Schalen aan de ontvangst zijde (RSS) is een technologie voor netwerk Stuur Programma's die de ontvangst van netwerk verkeer efficiënter distribueert door ontvangst verwerking over meerdere Cpu's in een multiprocessor systeem te distribueren. In eenvoudige termen kan een systeem meer ontvangen verkeer verwerken omdat alle beschik bare Cpu's worden gebruikt in plaats van slechts één. Zie [Introduction to Receive Side Scaling](https://docs.microsoft.com/windows-hardware/drivers/network/introduction-to-receive-side-scaling)(Engelstalig) voor een meer technische bespreking van RSS.
+Schalen aan de ontvangst zijde (RSS) is een technologie voor netwerk Stuur Programma's die de ontvangst van netwerk verkeer efficiënter distribueert door ontvangst verwerking over meerdere Cpu's in een multiprocessor systeem te distribueren. In eenvoudige termen kan een systeem meer ontvangen verkeer verwerken omdat alle beschik bare Cpu's worden gebruikt in plaats van slechts één. Zie [Introduction to Receive Side Scaling](/windows-hardware/drivers/network/introduction-to-receive-side-scaling)(Engelstalig) voor een meer technische bespreking van RSS.
 
-Als u de beste prestaties wilt krijgen wanneer versnelde netwerken zijn ingeschakeld op een VM, moet u RSS inschakelen. RSS kan ook voor delen bieden op Vm's die geen versneld netwerken gebruiken. Zie [netwerk doorvoer optimaliseren voor virtuele Azure-machines](https://aka.ms/FastVM)voor een overzicht van hoe u kunt bepalen of RSS is ingeschakeld en hoe u deze functie inschakelt.
+Als u de beste prestaties wilt krijgen wanneer versnelde netwerken zijn ingeschakeld op een VM, moet u RSS inschakelen. RSS kan ook voor delen bieden op Vm's die geen versneld netwerken gebruiken. Zie [netwerk doorvoer optimaliseren voor virtuele Azure-machines](./virtual-network-optimize-network-bandwidth.md)voor een overzicht van hoe u kunt bepalen of RSS is ingeschakeld en hoe u deze functie inschakelt.
 
 ### <a name="tcp-time_wait-and-time_wait-assassination"></a>TCP-TIME_WAIT en TIME_WAIT Assassination
 
@@ -271,7 +271,7 @@ De waarde voor het poort bereik voor uitgaande sockets kan doorgaans worden geco
 
 U kunt TIME_WAIT Assassination gebruiken om deze schaal beperking te verhelpen. Met TIME_WAIT Assassination kan een socket opnieuw worden gebruikt in bepaalde situaties, zoals wanneer het Volg nummer in het IP-pakket van de nieuwe verbinding het Volg nummer van het laatste pakket van de vorige verbinding overschrijdt. In dit geval staat het besturings systeem toe dat de nieuwe verbinding tot stand wordt gebracht (de nieuwe SYN/ACK wordt geaccepteerd) en sluit de vorige verbinding af die de status TIME_WAIT heeft. Deze mogelijkheid wordt ondersteund op Windows-Vm's in Azure. Neem contact op met de leverancier van het besturings systeem voor meer informatie over ondersteuning in andere Vm's.
 
-Zie [instellingen die kunnen worden gewijzigd om de netwerk prestaties te verbeteren](https://docs.microsoft.com/biztalk/technical-guides/settings-that-can-be-modified-to-improve-network-performance)voor meer informatie over het configureren van TCP-TIME_WAIT instellingen en het bron poort bereik.
+Zie [instellingen die kunnen worden gewijzigd om de netwerk prestaties te verbeteren](/biztalk/technical-guides/settings-that-can-be-modified-to-improve-network-performance)voor meer informatie over het configureren van TCP-TIME_WAIT instellingen en het bron poort bereik.
 
 ## <a name="virtual-network-factors-that-can-affect-performance"></a>Virtuele netwerk factoren die de prestaties kunnen beïnvloeden
 
@@ -287,7 +287,7 @@ Versneld netwerken zijn ontworpen om de netwerk prestaties te verbeteren, inclus
 
 Er is ten minste één netwerk interface aan Azure virtual machines gekoppeld. Ze kunnen meerdere hebben. De band breedte die is toegewezen aan een virtuele machine is de som van alle uitgaand verkeer op alle netwerk interfaces die zijn gekoppeld aan de computer. Met andere woorden, de band breedte wordt toegewezen op basis van een virtuele machine, ongeacht het aantal netwerk interfaces dat aan de computer is gekoppeld.
 
-Verwachte uitgaande door Voer en het aantal netwerk interfaces dat wordt ondersteund door elke VM-grootte, worden gedetailleerd beschreven in [grootten voor virtuele Windows-machines in azure](https://docs.microsoft.com/azure/virtual-machines/windows/sizes?toc=%2fazure%2fvirtual-network%2ftoc.json). Als u de maximale door voer wilt bekijken, selecteert u een type, zoals **Algemeen doel**, en zoekt u de sectie over de grootte reeks op de resulterende pagina (bijvoorbeeld ' dv2-serie '). Voor elke reeks is er een tabel met netwerk specificaties in de laatste kolom, met de titel Max Nic's/verwachte netwerk bandbreedte (Mbps).
+Verwachte uitgaande door Voer en het aantal netwerk interfaces dat wordt ondersteund door elke VM-grootte, worden gedetailleerd beschreven in [grootten voor virtuele Windows-machines in azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json). Als u de maximale door voer wilt bekijken, selecteert u een type, zoals **Algemeen doel**, en zoekt u de sectie over de grootte reeks op de resulterende pagina (bijvoorbeeld ' dv2-serie '). Voor elke reeks is er een tabel met netwerk specificaties in de laatste kolom, met de titel Max Nic's/verwachte netwerk bandbreedte (Mbps).
 
 De doorvoer limiet is van toepassing op de virtuele machine. De door Voer wordt niet beïnvloed door de volgende factoren:
 
@@ -299,7 +299,7 @@ De doorvoer limiet is van toepassing op de virtuele machine. De door Voer wordt 
 
 - **Protocol**: al het uitgaande verkeer via alle protocollen telt de limiet.
 
-Zie [netwerk bandbreedte van virtuele machines](https://aka.ms/AzureBandwidth)voor meer informatie.
+Zie [netwerk bandbreedte van virtuele machines](./virtual-machine-network-throughput.md)voor meer informatie.
 
 ### <a name="internet-performance-considerations"></a>Aandachtspunten voor Internet prestaties
 
@@ -333,7 +333,7 @@ Een implementatie in azure kan communiceren met eind punten buiten Azure op het 
 
 Voor elke uitgaande verbinding moet de Azure Load Balancer voor een bepaalde periode deze toewijzing onderhouden. Met de multi tenant-aard van Azure kan het onderhoud van deze toewijzing voor elke uitgaande stroom voor elke VM veel resources zijn. Daarom gelden er limieten die zijn ingesteld en gebaseerd op de configuratie van de Azure-Virtual Network. U kunt er ook voor zorgen dat een virtuele machine van Azure een bepaald aantal uitgaande verbindingen op een bepaald moment kan maken. Wanneer deze limieten zijn bereikt, kan de virtuele machine geen meer uitgaande verbindingen maken.
 
-Dit gedrag kan echter wel worden geconfigureerd. Zie [dit artikel](https://docs.microsoft.com/azure/load-balancer/load-balancer-outbound-connections)voor meer informatie over de uitputting van de SNAT-en SNAT-poort.
+Dit gedrag kan echter wel worden geconfigureerd. Zie [dit artikel](../load-balancer/load-balancer-outbound-connections.md)voor meer informatie over de uitputting van de SNAT-en SNAT-poort.
 
 ## <a name="measure-network-performance-on-azure"></a>Netwerk prestaties meten op Azure
 
@@ -341,13 +341,13 @@ Een aantal van de prestatie limieten in dit artikel is gerelateerd aan de netwer
 
 ### <a name="measure-round-trip-time-and-packet-loss"></a>Round-trip tijd en pakket verlies meten
 
-TCP-prestaties zijn sterk afhankelijk van RTT en pakket verlies. Het hulp programma PING dat beschikbaar is in Windows en Linux biedt de eenvoudigste manier om RTT en pakket verlies te meten. Bij de uitvoer van PING wordt de minimale/maximale/gemiddelde latentie tussen een bron en bestemming weer gegeven. Ook wordt het pakket verlies weer gegeven. PING maakt standaard gebruik van het ICMP-protocol. U kunt PsPing gebruiken om TCP RTT te testen. Zie [PsPing](https://docs.microsoft.com/sysinternals/downloads/psping)voor meer informatie.
+TCP-prestaties zijn sterk afhankelijk van RTT en pakket verlies. Het hulp programma PING dat beschikbaar is in Windows en Linux biedt de eenvoudigste manier om RTT en pakket verlies te meten. Bij de uitvoer van PING wordt de minimale/maximale/gemiddelde latentie tussen een bron en bestemming weer gegeven. Ook wordt het pakket verlies weer gegeven. PING maakt standaard gebruik van het ICMP-protocol. U kunt PsPing gebruiken om TCP RTT te testen. Zie [PsPing](/sysinternals/downloads/psping)voor meer informatie.
 
 ### <a name="measure-actual-throughput-of-a-tcp-connection"></a>Werkelijke door Voer van een TCP-verbinding meten
 
 NTttcp is een hulp programma voor het testen van de TCP-prestaties van een Linux-of Windows-VM. U kunt verschillende TCP-instellingen wijzigen en vervolgens de voor delen testen met behulp van NTttcp. Zie de volgende bronnen voor meer informatie:
 
-- [Bandbreedte/doorvoer testen (NTttcp)](https://aka.ms/TestNetworkThroughput)
+- [Bandbreedte/doorvoer testen (NTttcp)](./virtual-network-bandwidth-testing.md)
 
 - [Hulp programma NTttcp](https://gallery.technet.microsoft.com/NTttcp-Version-528-Now-f8b12769)
 
@@ -357,9 +357,9 @@ U kunt de prestaties van verschillende VM-typen, versnelde netwerken, enzovoort,
 
 Raadpleeg deze artikelen voor meer informatie:
 
-- [Problemen met Expressroute-netwerk prestaties oplossen](https://docs.microsoft.com/azure/expressroute/expressroute-troubleshooting-network-performance)
+- [Problemen met Expressroute-netwerk prestaties oplossen](../expressroute/expressroute-troubleshooting-network-performance.md)
 
-- [VPN-doorvoer naar een virtueel netwerk valideren](https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-validate-throughput-to-vnet)
+- [VPN-doorvoer naar een virtueel netwerk valideren](../vpn-gateway/vpn-gateway-validate-throughput-to-vnet.md)
 
 ### <a name="detect-inefficient-tcp-behaviors"></a>Inefficiënt TCP-gedrag detecteren
 
@@ -371,4 +371,4 @@ Deze pakket typen zijn echter aanwijzingen dat TCP-door Voer niet de maximale pr
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u hebt geleerd over het afstemmen van TCP/IP-prestaties voor Azure-Vm's, wilt u mogelijk meer informatie over andere overwegingen voor het [plannen van virtuele netwerken](https://docs.microsoft.com/azure/virtual-network/virtual-network-vnet-plan-design-arm) of [meer informatie over het verbinden en configureren van virtuele netwerken](https://docs.microsoft.com/azure/virtual-network/).
+Nu u hebt geleerd over het afstemmen van TCP/IP-prestaties voor Azure-Vm's, wilt u mogelijk meer informatie over andere overwegingen voor het [plannen van virtuele netwerken](./virtual-network-vnet-plan-design-arm.md) of [meer informatie over het verbinden en configureren van virtuele netwerken](./index.yml).

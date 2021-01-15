@@ -5,12 +5,12 @@ description: Meer informatie over het installeren en configureren van een NGINX 
 services: container-service
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: 3cf7b069d6f010a4461b22c5326589ad3ec31204
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 0b0e26262f75ba8030188a2bffbce8282b38bca8
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186257"
+ms.locfileid: "98219637"
 ---
 # <a name="create-an-https-ingress-controller-on-azure-kubernetes-service-aks"></a>Een HTTPS ingress-controller maken in azure Kubernetes service (AKS)
 
@@ -262,7 +262,7 @@ kubectl apply -f aks-helloworld-two.yaml --namespace ingress-basic
 
 Beide toepassingen worden nu uitgevoerd op uw Kubernetes-cluster. Ze zijn echter wel geconfigureerd met een service van `ClusterIP` het type en zijn niet toegankelijk via internet. Als u ze openbaar beschikbaar wilt maken, maakt u een Kubernetes-ingangs bron. De ingangs resource configureert de regels die verkeer routeren naar een van de twee toepassingen.
 
-In het volgende voor beeld wordt verkeer naar het adres *Hello-World-ingress. MY_CUSTOM_DOMAIN* wordt doorgestuurd naar de *AKS-HelloWorld-* service. Verkeer naar het adres *Hello-World-ingress. MY_CUSTOM_DOMAIN/Hello-World-Two* wordt doorgestuurd naar de *AKS-HelloWorld-twee-* service. Verkeer naar *Hallo wereld. MY_CUSTOM_DOMAIN/static* wordt doorgestuurd naar de service met de naam *AKS-HelloWorld* voor statische activa.
+In het volgende voor beeld wordt verkeer naar het adres *Hello-World-ingress. MY_CUSTOM_DOMAIN* wordt doorgestuurd naar de *AKS-HelloWorld-een-* service. Verkeer naar het adres *Hello-World-ingress. MY_CUSTOM_DOMAIN/Hello-World-Two* wordt doorgestuurd naar de *AKS-HelloWorld-twee-* service. Verkeer naar *Hallo wereld. MY_CUSTOM_DOMAIN/static* wordt doorgestuurd naar de service met de naam *AKS-HelloWorld-één* voor statische activa.
 
 > [!NOTE]
 > Als u een FQDN voor het IP-adres van de ingangs controller hebt geconfigureerd in plaats van een aangepast domein, gebruikt u de FQDN in plaats van *Hallo wereld. MY_CUSTOM_DOMAIN*. Als uw FQDN bijvoorbeeld *demo-AKS-ingress.eastus.cloudapp.Azure.com* is, vervangt u *Hello-World-ingress. MY_CUSTOM_DOMAIN* met *demo-AKS-ingress.eastus.cloudapp.Azure.com* in `hello-world-ingress.yaml` .

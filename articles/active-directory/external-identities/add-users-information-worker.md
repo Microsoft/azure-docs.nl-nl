@@ -12,12 +12,12 @@ manager: celestedg
 ms.reviewer: mal
 ms.custom: it-pro, seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 352d5218f91fa55134a7515b6aeee49857847468
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 345cbe2efb644fe2b84d4a6021ff962337e29285
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173206"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219909"
 ---
 # <a name="how-users-in-your-organization-can-invite-guest-users-to-an-app"></a>Hoe gebruikers in uw organisatie gast gebruikers kunnen uitnodigen voor een app
 
@@ -28,8 +28,8 @@ Nadat een gast gebruiker is toegevoegd aan de Directory in azure AD, kan de eige
  - De app configureren voor Self-service en de groep toewijzen aan de app
 
 > [!NOTE]
-> In dit artikel wordt beschreven hoe u Self-Service beheer instelt voor galerie-en op SAML gebaseerde apps die u hebt toegevoegd aan uw Azure AD-Tenant. U kunt ook [selfservice Microsoft 365 groepen instellen](../enterprise-users/groups-self-service-management.md) , zodat uw gebruikers de toegang tot hun eigen Microsoft 365 groepen kunnen beheren. Zie [gast toegang in Microsoft 365 groepen](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6) en [share Point-bestanden of-mappen delen](https://support.office.com/article/share-sharepoint-files-or-folders-1fe37332-0f9a-4719-970e-d2578da4941c)voor meer manieren waarop gebruikers Office-bestanden en-apps kunnen delen met gast gebruikers.
-
+> * In dit artikel wordt beschreven hoe u Self-Service beheer instelt voor galerie-en op SAML gebaseerde apps die u hebt toegevoegd aan uw Azure AD-Tenant. U kunt ook [selfservice Microsoft 365 groepen instellen](../enterprise-users/groups-self-service-management.md) , zodat uw gebruikers de toegang tot hun eigen Microsoft 365 groepen kunnen beheren. Zie [gast toegang in Microsoft 365 groepen](https://support.office.com/article/guest-access-in-office-365-groups-bfc7a840-868f-4fd6-a390-f347bf51aff6) en [share Point-bestanden of-mappen delen](https://support.office.com/article/share-sharepoint-files-or-folders-1fe37332-0f9a-4719-970e-d2578da4941c)voor meer manieren waarop gebruikers Office-bestanden en-apps kunnen delen met gast gebruikers.
+> * Gebruikers kunnen gasten alleen uitnodigen als ze de rol **gast uitnodiging** hebben.
 ## <a name="invite-a-guest-user-to-an-app-from-the-access-panel"></a>Een gast gebruiker uitnodigen voor een app vanuit het toegangs venster
 
 Nadat een app is geconfigureerd voor Self-service, kunnen toepassings eigenaren hun eigen toegangs venster gebruiken om een gast gebruiker uit te nodigen voor de app die ze willen delen. De gast gebruiker hoeft niet noodzakelijkerwijs aan Azure AD vooraf te worden toegevoegd. 

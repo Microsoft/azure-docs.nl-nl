@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van met AAD pod beheerde beheerde 
 services: container-service
 ms.topic: article
 ms.date: 12/01/2020
-ms.openlocfilehash: 150e2e71a4db8ab07caad479ae098d5b9eb746da
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d992c5c5384c04fe39511481550ab7b0ea47069e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96466826"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217869"
 ---
 # <a name="use-azure-active-directory-pod-managed-identities-in-azure-kubernetes-service-preview"></a>Azure Active Directory door Pod beheerde identiteiten gebruiken in azure Kubernetes service (preview)
 
@@ -56,7 +56,7 @@ Maak een AKS-cluster met een beheerde identiteit en pod-beheerde identiteit inge
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
-az aks create -g myResourceGroup -n myAKSCluster --enable-managed-identity --enable-pod-identity
+az aks create -g myResourceGroup -n myAKSCluster --enable-managed-identity --enable-pod-identity --network-plugin azure
 ```
 
 Gebruik [AZ AKS Get-referenties][az-aks-get-credentials] om u aan te melden bij uw AKS-cluster. Met deze opdracht wordt ook het `kubectl` client certificaat op uw ontwikkel computer gedownload en geconfigureerd.

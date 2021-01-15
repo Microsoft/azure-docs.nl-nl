@@ -12,16 +12,16 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/02/2020
 ms.author: mnayak
-ms.openlocfilehash: ef1e33a2e43f26dcaf794b2ed81f27d39639b52d
-ms.sourcegitcommit: 5b93010b69895f146b5afd637a42f17d780c165b
+ms.openlocfilehash: 2c6295db96f951abd1fd069535b98639e723d93a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96533975"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217563"
 ---
 # <a name="configure-routing-preference-for-a-public-ip-address-using-the-azure-portal"></a>Routerings voorkeur configureren voor een openbaar IP-adres met behulp van de Azure Portal
 
-In dit artikel wordt beschreven hoe u [routerings voorkeur](https://docs.microsoft.com/azure/virtual-network/routing-preference-overview) CONFIGUREERT via ISP Network (**Internet** optie) voor een openbaar IP-adres. Nadat u het open bare IP-adres hebt gemaakt, kunt u dit koppelen aan de volgende Azure-resources voor binnenkomend en uitgaand verkeer naar Internet:
+In dit artikel wordt beschreven hoe u [routerings voorkeur](./routing-preference-overview.md) CONFIGUREERT via ISP Network (**Internet** optie) voor een openbaar IP-adres. Nadat u het open bare IP-adres hebt gemaakt, kunt u dit koppelen aan de volgende Azure-resources voor binnenkomend en uitgaand verkeer naar Internet:
 
 * Virtuele machine
 * Schaalset voor virtuele machines
@@ -56,5 +56,5 @@ U kunt het hierboven gemaakte open bare IP-adres koppelen aan een virtuele [Wind
 - Meer informatie over [open bare IP met routerings voorkeur](routing-preference-overview.md).
 - [Routerings voorkeur configureren voor een virtuele machine](tutorial-routing-preference-virtual-machine-portal.md).
 - [Configureer routerings voorkeur voor een openbaar IP-adres met behulp van de Power shell](routing-preference-powershell.md).
-- Meer informatie over [open bare IP-adressen](virtual-network-ip-addresses-overview-arm.md#public-ip-addresses) in Azure.
+- Meer informatie over [open bare IP-adressen](./public-ip-addresses.md#public-ip-addresses) in Azure.
 - Meer informatie over alle [open bare IP-adres instellingen](virtual-network-public-ip-address.md#create-a-public-ip-address).

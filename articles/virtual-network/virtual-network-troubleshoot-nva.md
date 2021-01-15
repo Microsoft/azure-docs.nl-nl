@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/26/2018
 ms.author: genli
-ms.openlocfilehash: 3a8982b5626e3c19dbd49a3d2e20542d44b1a1da
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 18f2128b6869b4047cc6f35e1638aca81233a014
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92368584"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219229"
 ---
 # <a name="network-virtual-appliance-issues-in-azure"></a>Problemen met het virtuele netwerk apparaat in azure
 
@@ -87,13 +87,13 @@ PowerShell gebruiken
 
 **Controleer of het verkeer kan worden doorgestuurd naar de NVA**
 
-1. Open **Network Watcher**op [Azure Portal](https://portal.azure.com), selecteer **volgende hop**.
+1. Open **Network Watcher** op [Azure Portal](https://portal.azure.com), selecteer **volgende hop**.
 2. Geef een virtuele machine op die is geconfigureerd om het verkeer om te leiden naar de NVA en een doel-IP-adres waarop de volgende hop wordt weer gegeven. 
-3. Als de NVA niet als de **volgende hop**wordt weer gegeven, controleert u de Azure-route tabellen en werkt u deze bij.
+3. Als de NVA niet als de **volgende hop** wordt weer gegeven, controleert u de Azure-route tabellen en werkt u deze bij.
 
 **Controleer of het verkeer de NVA kan bereiken**
 
-1. Open in [Azure Portal](https://portal.azure.com) **Network Watcher**en selecteer vervolgens **IP-stroom controleren**. 
+1. Open in [Azure Portal](https://portal.azure.com) **Network Watcher** en selecteer vervolgens **IP-stroom controleren**. 
 2. Geef de virtuele machine en het IP-adres van de NVA op en controleer of het verkeer wordt geblokkeerd door netwerk beveiligings groepen (NSG).
 3. Als er een NSG-regel is die het verkeer blokkeert, zoekt u de NSG in de **juiste beveiligings** regels en werkt u deze bij zodat verkeer kan worden door gegeven. Voer vervolgens de **IP-stroom** opnieuw uit en gebruik **verbindings problemen oplossen** om TCP-communicatie van de virtuele machine naar uw interne of externe IP-adres te testen.
 
@@ -127,7 +127,7 @@ Als het VM-netwerk pieken gebruikt of peri Oden met een hoog gebruik laat zien, 
 ## <a name="advanced-network-administrator-troubleshooting"></a>Problemen oplossen met geavanceerde netwerk beheerders
 
 ### <a name="capture-network-trace"></a>Netwerk tracering vastleggen
-Leg een gelijktijdige netwerk tracering op de bron-VM, de NVA en de doel-VM vast terwijl u **[PsPing](https://docs.microsoft.com/sysinternals/downloads/psping)** of **nmap**uitvoert, en Stop vervolgens de tracering.
+Leg een gelijktijdige netwerk tracering op de bron-VM, de NVA en de doel-VM vast terwijl u **[PsPing](/sysinternals/downloads/psping)** of **nmap** uitvoert, en Stop vervolgens de tracering.
 
 1. Als u een gelijktijdige netwerk tracering wilt vastleggen, voert u de volgende opdracht uit:
 

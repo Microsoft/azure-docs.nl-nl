@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 11/08/2019
 ms.author: sumi
 ms.custom: ''
-ms.openlocfilehash: 7d937542201792c0d1c0be69df9bd1c2b34edea3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 93feaef01b234eeb7ac363c18d8e9d8f52b009de
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96004939"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216526"
 ---
 # <a name="virtual-network-service-endpoints"></a>Service-eindpunten voor virtueel netwerk
 
@@ -33,14 +33,14 @@ Deze functie is beschikbaar voor de volgende Azure-Services en-regio's. *Micro s
 - **[Azure Synapse Analytics](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. SQL*): algemeen beschikbaar in alle Azure-regio's.
 - **[Azure database for postgresql server](../postgresql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. SQL*): algemeen beschikbaar in azure-regio's waar de database service beschikbaar is.
 - **[Azure database for mysql server](../mysql/howto-manage-vnet-using-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. SQL*): algemeen beschikbaar in azure-regio's waar de database service beschikbaar is.
-- **[Azure database for MariaDB](https://docs.microsoft.com/azure/mariadb/concepts-data-access-security-vnet)** (*micro soft. SQL*): algemeen beschikbaar in azure-regio's waar de database service beschikbaar is.
-- **[Azure Cosmos DB](../cosmos-db/vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. AzureCosmosDB*): algemeen beschikbaar in alle Azure-regio's.
+- **[Azure database for MariaDB](../mariadb/concepts-data-access-security-vnet.md)** (*micro soft. SQL*): algemeen beschikbaar in azure-regio's waar de database service beschikbaar is.
+- **[Azure Cosmos DB](../cosmos-db/how-to-configure-vnet-service-endpoint.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. AzureCosmosDB*): algemeen beschikbaar in alle Azure-regio's.
 - **[Azure Key Vault](../key-vault/general/overview-vnet-service-endpoints.md)** (*micro soft.*-sleutel kluis): algemeen beschikbaar in alle Azure-regio's.
 - **[Azure service bus](../service-bus-messaging/service-bus-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. ServiceBus*): algemeen beschikbaar in alle Azure-regio's.
 - **[Azure Event hubs](../event-hubs/event-hubs-service-endpoints.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. EventHub*): algemeen beschikbaar in alle Azure-regio's.
 - **[Azure data Lake Store gen 1](../data-lake-store/data-lake-store-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)** (*micro soft. AzureActiveDirectory*): algemeen beschikbaar in alle Azure-regio's waar ADLS gen1 beschikbaar is.
-- **[Azure app service](https://docs.microsoft.com/azure/app-service/app-service-ip-restrictions)** (*micro soft. Web*): algemeen beschikbaar in alle Azure-regio's waar app service beschikbaar is.
-- **[Azure Cognitive Services](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-virtual-networks?tabs=portal)** (*micro soft. CognitiveServices*): algemeen beschikbaar in alle Azure-regio's waar cognitieve services beschikbaar zijn.
+- **[Azure app service](../app-service/app-service-ip-restrictions.md)** (*micro soft. Web*): algemeen beschikbaar in alle Azure-regio's waar app service beschikbaar is.
+- **[Azure Cognitive Services](../cognitive-services/cognitive-services-virtual-networks.md?tabs=portal)** (*micro soft. CognitiveServices*): algemeen beschikbaar in alle Azure-regio's waar cognitieve services beschikbaar zijn.
 
 **Open bare preview**
 
@@ -98,7 +98,7 @@ Service-eindpunten bieden de volgende voordelen:
 
 - Netwerkbeveiligingsgroepen (NSG's) met de service-eindpunten:
   - Nsg's toestaan standaard uitgaand Internet verkeer en verkeer van uw VNet naar Azure-Services toe. Dit verkeer blijft werken met Service-eind punten. 
-  - Als u al het uitgaande Internet verkeer wilt weigeren en alleen verkeer naar specifieke Azure-Services wilt toestaan, kunt u dit doen met behulp van [service Tags](security-overview.md#service-tags) in uw nsg's. U kunt ondersteunde Azure-Services als doel opgeven in uw NSG-regels en Azure biedt ook het onderhoud van de IP-adressen die onder elke tag liggen. Zie [Azure-servicelabels voor NSG's](security-overview.md#service-tags) voor meer informatie. 
+  - Als u al het uitgaande Internet verkeer wilt weigeren en alleen verkeer naar specifieke Azure-Services wilt toestaan, kunt u dit doen met behulp van [service Tags](./network-security-groups-overview.md#service-tags) in uw nsg's. U kunt ondersteunde Azure-Services als doel opgeven in uw NSG-regels en Azure biedt ook het onderhoud van de IP-adressen die onder elke tag liggen. Zie [Azure-servicelabels voor NSG's](./network-security-groups-overview.md#service-tags) voor meer informatie. 
 
 ### <a name="scenarios"></a>Scenario's
 
@@ -138,18 +138,18 @@ Bepaalde Azure-Services, zoals Azure Storage accounts, kunnen Limieten afdwingen
 
 ## <a name="vnet-service-endpoint-policies"></a>Beleid voor VNet-service-eind punten 
 
-Met het beleid voor de VNet-service-eind punten kunt u virtueel netwerk verkeer filteren op Azure-Services. Met dit filter worden alleen specifieke Azure-service resources via service-eind punten toegestaan. Beleid voor service-eindpunten zorgt voor nauwkeurig toegangsbeheer voor verkeer van Virtual Network naar Azure-services. Zie [Virtual Networking service Endpoint policies](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)(Engelstalig) voor meer informatie.
+Met het beleid voor de VNet-service-eind punten kunt u virtueel netwerk verkeer filteren op Azure-Services. Met dit filter worden alleen specifieke Azure-service resources via service-eind punten toegestaan. Beleid voor service-eindpunten zorgt voor nauwkeurig toegangsbeheer voor verkeer van Virtual Network naar Azure-services. Zie [Virtual Networking service Endpoint policies](./virtual-network-service-endpoint-policies-overview.md)(Engelstalig) voor meer informatie.
 
 ## <a name="faqs"></a>Veelgestelde vragen
 
-Zie [Veelgestelde vragen over Virtual Network Service-eind punten](https://docs.microsoft.com/azure/virtual-network/virtual-networks-faq#virtual-network-service-endpoints)voor veelgestelde vragen.
+Zie [Veelgestelde vragen over Virtual Network Service-eind punten](./virtual-networks-faq.md#virtual-network-service-endpoints)voor veelgestelde vragen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Service-eindpunten voor virtuele netwerken configureren](tutorial-restrict-network-access-to-resources.md)
+- [Service-eind punten voor virtuele netwerken configureren](tutorial-restrict-network-access-to-resources.md)
 - [Een Azure Storage-account beveiligen met een virtueel netwerk](../storage/common/storage-network-security.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Een Azure SQL Database beveiligen met een virtueel netwerk](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
 - [Een Azure Synapse-analyse beveiligen met een virtueel netwerk](../azure-sql/database/vnet-service-endpoint-rule-overview.md?toc=%2fazure%2fsql-data-warehouse%2ftoc.json)
 - [Integratie van Azure-Services in virtuele netwerken](virtual-network-for-azure-services.md)
-- [Virtual Network service-eindpunt beleid](https://docs.microsoft.com/azure/virtual-network/virtual-network-service-endpoint-policies-overview)
+- [Virtual Network service-eindpunt beleid](./virtual-network-service-endpoint-policies-overview.md)
 - [Azure Resource Manager-sjabloon](https://azure.microsoft.com/resources/templates/201-vnet-2subnets-service-endpoints-storage-integration)

@@ -5,12 +5,12 @@ description: Meer informatie over het installeren en configureren van een NGINX 
 services: container-service
 ms.topic: article
 ms.date: 08/17/2020
-ms.openlocfilehash: eb58bbe127349aaebed3b1eb00281cf2938c1933
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: 14835f7d332b1fcc6e1afabec9a6ee6e55d699e7
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681581"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219858"
 ---
 # <a name="create-an-ingress-controller-with-a-static-public-ip-address-in-azure-kubernetes-service-aks"></a>Een ingangs controller maken met een statisch openbaar IP-adres in azure Kubernetes service (AKS)
 
@@ -169,8 +169,12 @@ spec:
 Gebruik de opdracht om de certificaat verlener te maken `kubectl apply` .
 
 ```
-$ kubectl apply -f cluster-issuer.yaml --namespace ingress-basic
+kubectl apply -f cluster-issuer.yaml --namespace ingress-basic
+```
 
+De uitvoer moet er ongeveer als volgt uitzien:
+
+```
 clusterissuer.cert-manager.io/letsencrypt-staging created
 ```
 
@@ -307,8 +311,12 @@ spec:
 Maak de ingangs resource met behulp van de `kubectl apply` opdracht.
 
 ```
-$ kubectl apply -f hello-world-ingress.yaml --namespace ingress-basic
+kubectl apply -f hello-world-ingress.yaml --namespace ingress-basic
+```
 
+De uitvoer moet er ongeveer als volgt uitzien:
+
+```
 ingress.extensions/hello-world-ingress created
 ```
 

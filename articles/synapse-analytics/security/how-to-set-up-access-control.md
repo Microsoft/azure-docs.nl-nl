@@ -9,12 +9,12 @@ ms.subservice: security
 ms.date: 12/03/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: 62c30356017b5ea5d93351e6f22b8b7b0c22718c
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 7dbbe3afb2a5eb19b5c4893bd73eddbf11e788d4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109263"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218073"
 ---
 # <a name="how-to-set-up-access-control-for-your-synapse-workspace"></a>Toegangs beheer instellen voor uw Synapse-werk ruimte 
 
@@ -43,7 +43,7 @@ Als u een Synapse-werk ruimte wilt beveiligen, volgt u een patroon voor het conf
 
 In dit document worden standaard namen gebruikt om de instructies te vereenvoudigen. Vervang ze door de namen van uw keuze.
 
-|Instelling | Standaard naam | Description |
+|Instelling | Standaard naam | Beschrijving |
 | :------ | :-------------- | :---------- |
 | **Synapse-werkruimte** | `workspace1` |  De naam die de Synapse-werk ruimte heeft. |
 | **ADLSGEN2-account** | `storage1` | Het ADLS-account dat moet worden gebruikt met uw werk ruimte. |
@@ -73,8 +73,8 @@ De `workspace1_SQLAdmins` groep wordt gebruikt wanneer u SQL-machtigingen in SQL
 Deze vijf groepen zijn voldoende voor een eenvoudige installatie. Later kunt u beveiligings groepen toevoegen voor het afhandelen van gebruikers die meer gespecialiseerde toegang nodig hebben of om gebruikers alleen toegang te geven tot specifieke bronnen.
 
 > [!NOTE]
->- Meer informatie over het maken van een beveiligingsgroep vindt u in [dit artikel](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal).
->- Meer informatie over het toevoegen van een beveiligings groep vanuit een andere beveiligings groep vindt u in [dit artikel](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-membership-azure-portal).
+>- Meer informatie over het maken van een beveiligingsgroep vindt u in [dit artikel](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
+>- Meer informatie over het toevoegen van een beveiligings groep vanuit een andere beveiligings groep vindt u in [dit artikel](../../active-directory/fundamentals/active-directory-groups-membership-azure-portal.md).
 
 >[!Tip]
 >Individuele Synapse gebruikers kunnen Azure Active Directory in de Azure Portal gebruiken om hun groepslid maatschappen te bekijken om te bepalen welke functies ze hebben verleend.

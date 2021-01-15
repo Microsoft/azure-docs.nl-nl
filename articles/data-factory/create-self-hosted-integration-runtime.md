@@ -11,12 +11,12 @@ ms.author: lle
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 12/25/2020
-ms.openlocfilehash: 76d53458154a7e66589c16f955373975bb04b25b
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: fd56ef74a7641a01eae2354f149f45e84ff56833
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121592"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217444"
 ---
 # <a name="create-and-configure-a-self-hosted-integration-runtime"></a>Zelf-hostende Integration Runtime maken en configureren
 
@@ -157,21 +157,21 @@ Hier volgen de details van de acties en argumenten van de toepassing:
 
 |OPTREDEN|argumenten|Beschrijving|
 |------|----|-----------|
-|RN<br/>-RegisterNewNode|"`<AuthenticationKey>`" ["`<NodeName>`"]|Registreer een zelf-hostend Integration runtime-knoop punt met de opgegeven verificatie sleutel en knooppunt naam.|
-|Europese<br/>-EnableRemoteAccess|"`<port>`" ["`<thumbprint>`"]|Schakel externe toegang op het huidige knoop punt in om een cluster met hoge Beschik baarheid in te stellen. Of schakel referenties rechtstreeks in voor de zelf-hostende IR zonder Azure Data Factory te passeren. U doet dit met behulp van de cmdlet **New-AzDataFactoryV2LinkedServiceEncryptedCredential** van een externe computer in hetzelfde netwerk.|
-|-erac,<br/>-EnableRemoteAccessInContainer|"`<port>`" ["`<thumbprint>`"]|Externe toegang tot het huidige knoop punt inschakelen wanneer het knoop punt in een container wordt uitgevoerd.|
-|gedane<br/>-DisableRemoteAccess||Externe toegang tot het huidige knoop punt uitschakelen. Externe toegang is vereist voor het instellen van een configuratie met meer knoop punten. De Power shell **-cmdlet New-AzDataFactoryV2LinkedServiceEncryptedCredential** werkt nog steeds, zelfs wanneer externe toegang is uitgeschakeld. Dit gedrag is waar, zolang de cmdlet wordt uitgevoerd op dezelfde computer als het zelf-hostende IR-knoop punt.|
-|middel<br/>-Sleutel|"`<AuthenticationKey>`"|De vorige verificatie sleutel overschrijven of bijwerken. Wees voorzichtig met deze actie. Het vorige zelf-hostende IR-knoop punt kan offline gaan als de sleutel een nieuwe Integration runtime is.|
-|-gbf,<br/>-GenerateBackupFile|"`<filePath>`" "`<password>`"|Genereer een back-upbestand voor het huidige knoop punt. Het back-upbestand bevat de referenties van de knooppunt sleutel en de gegevens opslag.|
-|-ibf,<br/>-ImportBackupFile|"`<filePath>`" "`<password>`"|Herstel het knoop punt uit een back-upbestand.|
-|n<br/>-Restart||Start de zelf-hostende Integration runtime host-service opnieuw.|
-|z<br/>-Start||Start de zelf-hostende integratie runtime host service.|
-|t<br/>-Stoppen||Stop de zelf-hostende integratie runtime host service.|
-|WSUS<br/>-StartUpgradeService||Start de zelf-hostende Integration runtime upgrade-service.|
-|-tus,<br/>-StopUpgradeService||Stop de zelf-hostende Integration runtime upgrade-service.|
-|-tonau,<br/>-TurnOnAutoUpdate||Schakel automatisch bijwerken van de zelf-hostende Integration runtime in.|
-|-toffau,<br/>-TurnOffAutoUpdate||Schakel automatisch bijwerken van de zelf-hostende Integration runtime uit.|
-|SSA<br/>-SwitchServiceAccount|"`<domain\user>`" ["`<password>`"]|Stel DIAHostService in om te worden uitgevoerd als een nieuw account. Gebruik het lege wacht woord voor systeem accounts en virtuele accounts.|
+|`-rn`,<br/>`-RegisterNewNode`|"`<AuthenticationKey>`" ["`<NodeName>`"]|Registreer een zelf-hostend Integration runtime-knoop punt met de opgegeven verificatie sleutel en knooppunt naam.|
+|`-era`,<br/>`-EnableRemoteAccess`|"`<port>`" ["`<thumbprint>`"]|Schakel externe toegang op het huidige knoop punt in om een cluster met hoge Beschik baarheid in te stellen. Of schakel referenties rechtstreeks in voor de zelf-hostende IR zonder Azure Data Factory te passeren. U doet dit met behulp van de cmdlet **New-AzDataFactoryV2LinkedServiceEncryptedCredential** van een externe computer in hetzelfde netwerk.|
+|`-erac`,<br/>`-EnableRemoteAccessInContainer`|"`<port>`" ["`<thumbprint>`"]|Externe toegang tot het huidige knoop punt inschakelen wanneer het knoop punt in een container wordt uitgevoerd.|
+|`-dra`,<br/>`-DisableRemoteAccess`||Externe toegang tot het huidige knoop punt uitschakelen. Externe toegang is vereist voor het instellen van een configuratie met meer knoop punten. De Power shell **-cmdlet New-AzDataFactoryV2LinkedServiceEncryptedCredential** werkt nog steeds, zelfs wanneer externe toegang is uitgeschakeld. Dit gedrag is waar, zolang de cmdlet wordt uitgevoerd op dezelfde computer als het zelf-hostende IR-knoop punt.|
+|`-k`,<br/>`-Key`|"`<AuthenticationKey>`"|De vorige verificatie sleutel overschrijven of bijwerken. Wees voorzichtig met deze actie. Het vorige zelf-hostende IR-knoop punt kan offline gaan als de sleutel een nieuwe Integration runtime is.|
+|`-gbf`,<br/>`-GenerateBackupFile`|"`<filePath>`" "`<password>`"|Genereer een back-upbestand voor het huidige knoop punt. Het back-upbestand bevat de referenties van de knooppunt sleutel en de gegevens opslag.|
+|`-ibf`,<br/>`-ImportBackupFile`|"`<filePath>`" "`<password>`"|Herstel het knoop punt uit een back-upbestand.|
+|`-r`,<br/>`-Restart`||Start de zelf-hostende Integration runtime host-service opnieuw.|
+|`-s`,<br/>`-Start`||Start de zelf-hostende integratie runtime host service.|
+|`-t`,<br/>`-Stop`||Stop de zelf-hostende integratie runtime host service.|
+|`-sus`,<br/>`-StartUpgradeService`||Start de zelf-hostende Integration runtime upgrade-service.|
+|`-tus`,<br/>`-StopUpgradeService`||Stop de zelf-hostende Integration runtime upgrade-service.|
+|`-tonau`,<br/>`-TurnOnAutoUpdate`||Schakel automatisch bijwerken van de zelf-hostende Integration runtime in.|
+|`-toffau`,<br/>`-TurnOffAutoUpdate`||Schakel automatisch bijwerken van de zelf-hostende Integration runtime uit.|
+|`-ssa`,<br/>`-SwitchServiceAccount`|"`<domain\user>`" ["`<password>`"]|Stel DIAHostService in om te worden uitgevoerd als een nieuw account. Gebruik het lege wacht woord voor systeem accounts en virtuele accounts.|
 
 
 ## <a name="install-and-register-a-self-hosted-ir-from-microsoft-download-center"></a>Een zelf-hostende IR installeren en registreren vanuit het micro soft Download centrum
@@ -205,9 +205,9 @@ Het standaard service account voor aanmelden bij de zelf-hostende Integration ru
 
 Zorg ervoor dat het account de machtiging heeft om zich aan te melden als een service. Anders kan de zelf-hostende Integration runtime niet worden gestart. U kunt de machtiging controleren in **lokaal beveiligings beleid-> beveiligings instellingen-> lokaal beleid: > toewijzing van gebruikers rechten-> aanmelden als service**
 
-![Machtiging voor service account](media/create-self-hosted-integration-runtime/shir-service-account-permission.png)
+![Scherm opname van lokaal beveiligings beleid-toewijzing van gebruikers rechten](media/create-self-hosted-integration-runtime/shir-service-account-permission.png)
 
-![Machtiging voor service account](media/create-self-hosted-integration-runtime/shir-service-account-permission-2.png)
+![Scherm opname van de toewijzing van gebruikers rechten aan een service](media/create-self-hosted-integration-runtime/shir-service-account-permission-2.png)
 
 
 ## <a name="notification-area-icons-and-notifications"></a>Pictogrammen van het systeemvak en meldingen

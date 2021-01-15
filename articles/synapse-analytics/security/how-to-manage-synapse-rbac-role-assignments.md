@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 12/1/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: f26b54a18ff137575cac208d70e4693c0b9914a8
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: c88371eb450d5b0e2e8b821cdec0e87190e291f8
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96572283"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218192"
 ---
 # <a name="how-to-manage-synapse-rbac-role-assignments-in-synapse-studio"></a>Synapse RBAC-roltoewijzingen beheren in Synapse Studio
 
@@ -65,7 +65,7 @@ Als u een rol wilt toewijzen aan een nauw keurig bereik, selecteert u **werkruim
 
 ![Toewijzing van rol van werk ruimte-item toevoegen-item type selecteren](./media/how-to-manage-synapse-rbac-role-assignments/access-control-add-workspace-item-assignment-select-item-type.png) 
 
-Selecteer het specifieke **item** dat moet worden gebruikt als bereik en selecteer vervolgens de **rol** die u wilt toewijzen in de vervolg keuzelijst.  In de vervolg keuzelijst worden alleen de rollen weer gegeven die geldig zijn voor het geselecteerde item type. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2148306).  
+Selecteer het specifieke **item** dat moet worden gebruikt als bereik en selecteer vervolgens de **rol** die u wilt toewijzen in de vervolg keuzelijst.  In de vervolg keuzelijst worden alleen de rollen weer gegeven die geldig zijn voor het geselecteerde item type. [Meer informatie](./synapse-workspace-synapse-rbac.md).  
 
 ![Rol toewijzing werk ruimte-item toevoegen-rol selecteren](./media/how-to-manage-synapse-rbac-role-assignments/access-control-add-workspace-item-assignment-select-role.png) 
  
@@ -81,4 +81,4 @@ Houd er rekening mee dat wijzigingen in roltoewijzingen 2-5 minuten in beslag ne
 
 ## <a name="next-steps"></a>Volgende stappen
 
-[Inzicht in de Synapse RBAC-rollen die nodig zijn om algemene taken uit te voeren](./synapse-workspace-understand-what-role-you-need.md) 
+[Inzicht in de Synapse RBAC-rollen die nodig zijn om algemene taken uit te voeren](./synapse-workspace-understand-what-role-you-need.md)

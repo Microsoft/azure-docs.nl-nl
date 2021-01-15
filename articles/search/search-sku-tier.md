@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 062bd41b0803cbb08f74fbcbcebb89bbddeb0d45
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 4c58968cb6a38a10433915ec8fa00336ccad301e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559800"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216407"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Een prijs categorie kiezen voor Azure Cognitive Search
 
@@ -78,7 +78,7 @@ Een oplossing op basis van Azure Cognitive Search kan op de volgende manieren ko
   + door de klant beheerde sleutels en dubbele versleuteling (hiervoor is [Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/)vereist)
   + privé-eind punten voor een model zonder Internet toegang ( [Azure private link](https://azure.microsoft.com/pricing/details/private-link/)vereist)
 
-### <a name="service-costs"></a>Service kosten
+### <a name="service-costs"></a>Servicekosten
 
 In tegens telling tot virtuele machines of andere bronnen die kunnen worden onderbroken om te voor komen dat er kosten worden bespaard, is een Azure Cognitive Search-service altijd beschikbaar op hardware die is toegewezen voor exclusief gebruik. Als zodanig is het maken van een service een factureer bare gebeurtenis die begint wanneer u de service maakt en eindigt wanneer u de service verwijdert. 
 
@@ -88,15 +88,13 @@ Wanneer u de kosten van een zoek oplossing wilt schatten, houd er dan rekening m
 
 ### <a name="bandwidth-charges"></a>Bandbreedte kosten
 
-Het gebruik van [Indexeer functies](search-indexer-overview.md) kan van invloed zijn op facturering als de Azure-gegevens bron zich in een andere regio bevindt dan Azure Cognitive Search. In dit scenario is dit de kosten voor het verplaatsen van uitgaande gegevens van de Azure-gegevens bron naar Azure Cognitive Search. 
+Het gebruik van [Indexeer functies](search-indexer-overview.md) kan van invloed zijn op facturering als de Azure-gegevens bron zich in een andere regio bevindt dan Azure Cognitive Search. In dit scenario zijn er mogelijk kosten voor het verplaatsen van uitgaande gegevens van de Azure-gegevens bron naar Azure Cognitive Search. Raadpleeg de pagina met prijzen van het desbetreffende Azure-gegevens platform voor meer informatie.
 
 U kunt de kosten voor het uitvallen van gegevens volledig elimineren als u de Azure Cognitive Search-service in dezelfde regio maakt als uw gegevens. Hier vindt u informatie op de [pagina met bandbreedte prijzen](https://azure.microsoft.com/pricing/details/bandwidth/):
 
-+ Micro soft brengt geen kosten in rekening voor alle inkomende gegevens van een service op Azure.
-+ Er zijn geen uitgaande gegevens kosten van Azure Cognitive Search. Als uw zoek service zich bijvoorbeeld in VS West bevindt en een Azure-web-app in VS-Oost is, brengt micro soft geen kosten in rekening voor de nettoladingen van het query antwoord die afkomstig zijn van West-US.
-+ In oplossingen met meerdere services worden er geen kosten in rekening gebracht voor gegevens die de bedrading overschrijden wanneer alle services zich in dezelfde regio bevinden.
++ Inkomende gegevens: micro soft brengt geen kosten in rekening voor inkomende gegevens aan een service in Azure. 
 
-Kosten zijn van toepassing op uitgaande gegevens als de services zich in verschillende regio's bevinden. Deze kosten maken geen deel uit van uw Azure Cognitive Search-factuur. Deze worden hier vermeld, want als u gebruikmaakt van gegevens of AI-verrijkte Indexeer functies om gegevens uit verschillende regio's te halen, worden de kosten weer gegeven in uw algemene factuur.
++ Uitgaande gegevens: uitgaande gegevens verwijzen naar query resultaten. Cognitive Search brengt geen kosten in rekening voor uitgaande gegevens, maar uitgaande kosten van Azure zijn mogelijk als de services zich in verschillende regio's bevinden. Deze kosten maken geen deel uit van uw Azure Cognitive Search-factuur. Deze worden hier vermeld, want als u resultaten naar andere regio's of niet-Azure-apps verzendt, kunt u zien welke kosten worden weer gegeven in uw algemene factuur.
 
 ### <a name="ai-enrichment-with-cognitive-services"></a>AI-verrijking met Cognitive Services
 

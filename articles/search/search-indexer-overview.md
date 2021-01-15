@@ -9,18 +9,18 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/11/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 0405db2b68abefbfdc424def9e35e363e45043cd
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 5861e79054bed0d9d75258dfa9cb39b198f0f93d
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98180129"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98216441"
 ---
 # <a name="indexers-in-azure-cognitive-search"></a>Indexeerfuncties in Azure Cognitive Search
 
 Een *Indexeer functie* in azure Cognitive Search is een crawler waarmee Doorzoek bare gegevens en meta gegevens worden geëxtraheerd uit een externe Azure-gegevens bron en waarmee een zoek index wordt gevuld met veld-naar-veld Toewijzingen tussen bron gegevens en uw index. Deze methode wordt ook wel ' pull model ' genoemd, omdat de service gegevens ophaalt zonder dat u code hoeft te schrijven waarmee gegevens worden toegevoegd aan een index.
 
-Indexeer functies zijn alleen Azure, met afzonderlijke Indexeer functies voor Azure SQL, Azure Cosmos DB, Azure Table Storage en Blob Storage. Wanneer u een Indexeer functie configureert, geeft u een gegevens bron op (oorsprong), evenals een index (doel). Verschillende gegevens bronnen, zoals Blob Storage-Indexeer functies, hebben extra eigenschappen die specifiek zijn voor dat inhouds type.
+Indexeer functies zijn alleen Azure, met afzonderlijke Indexeer functies voor [Azure SQL](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md), [Azure Cosmos DB](search-howto-index-cosmosdb.md), [Azure Table Storage](search-howto-indexing-azure-tables.md) en [Blob Storage](search-howto-indexing-azure-blob-storage.md). Wanneer u een Indexeer functie configureert, geeft u een gegevens bron op (oorsprong), evenals een index (doel). Verschillende bronnen, zoals Blob Storage, hebben aanvullende configuratie-eigenschappen die specifiek zijn voor dat inhouds type.
 
 U kunt op aanvraag Indexeer functies of een periodiek schema voor gegevens vernieuwing uitvoeren dat wordt uitgevoerd op elke vijf minuten. Voor frequentere updates is een push model vereist waarmee gelijktijdig gegevens worden bijgewerkt in zowel Azure Cognitive Search als uw externe gegevens bron.
 
@@ -31,8 +31,8 @@ U kunt een Indexeer functie gebruiken als enige manier voor het opnemen van gege
 | Scenario |Strategie |
 |----------|---------|
 | Eén bron | Dit patroon is de eenvoudigste: één gegevens bron is de enige inhouds provider voor een zoek index. Vanuit de bron identificeert u een veld dat unieke waarden bevat om als document sleutel in de zoek index te dienen. De unieke waarde wordt gebruikt als een id. Alle andere bron velden worden impliciet of expliciet toegewezen aan overeenkomende velden in een index. </br></br>Een belang rijke maakt is dat de waarde van een document sleutel afkomstig is uit bron gegevens. Met een zoek service worden geen sleutel waarden gegenereerd. Bij volgende uitvoeringen worden inkomende documenten met nieuwe sleutels toegevoegd, terwijl inkomende documenten met bestaande sleutels worden samengevoegd of overschreven, afhankelijk van het feit of de index velden null of leeg zijn. |
-| Meerdere bronnen| Een index kan inhoud van meerdere bronnen accepteren, waarbij elke uitvoering nieuwe inhoud van een andere bron brengt. </br></br>Een resultaat kan een index zijn die documenten verkrijgt nadat elke Indexeer functie is uitgevoerd, waarbij volledige documenten volledig van elke bron worden gemaakt. De uitdaging voor dit scenario is het ontwerpen van een index schema dat geschikt is voor alle inkomende gegevens en een document sleutel die uniform in de zoek index staat. Als de waarden die een document uniek identificeren bijvoorbeeld zijn metadata_storage_path in een BLOB-container en een primaire sleutel in een SQL-tabel, kunt u er Voorst Ellen dat een of beide bronnen moeten worden gewijzigd om sleutel waarden in een gemeen schappelijke indeling te bieden, ongeacht de oorsprong van de inhoud. Voor dit scenario moet u een bepaald niveau van vooraf-verwerking uitvoeren om de gegevens te vermengen zodat deze kunnen worden opgenomen in één index.</br></br>Een alternatieve uitkomst kan zoeken in documenten die gedeeltelijk zijn ingevuld bij de eerste uitvoering en vervolgens verder worden ingevuld door volgende uitvoeringen om waarden uit andere bronnen te halen. De uitdaging van dit patroon is ervoor te zorgen dat de uitvoering van elke index hetzelfde document heeft. Voor het samen voegen van velden in een bestaand document is een overeenkomst vereist voor de document sleutel. Zie [zelf studie: index uit meerdere gegevens bronnen](tutorial-multiple-data-sources.md)voor een demonstratie van dit scenario. |
-| Inhouds transformatie | Cognitive Search ondersteunt optionele [AI-verrijkings](cognitive-search-concept-intro.md) gedragingen waarmee afbeeldings analyse en natuurlijke taal verwerking worden toegevoegd om nieuwe Doorzoek bare inhoud en structuur te maken. AI-verrijking wordt gedefinieerd door een [vaardig heden](cognitive-search-working-with-skillsets.md)die aan een Indexeer functie is gekoppeld. Voor het uitvoeren van AI-verrijking heeft de Indexeer functie nog steeds een index en gegevens bron nodig, maar in dit scenario voegt de vaardigheidset-verwerking toe aan de uitvoering van de Indexeer functie. |
+| Meerdere bronnen| Een index kan inhoud van meerdere bronnen accepteren, waarbij elke uitvoering nieuwe inhoud van een andere bron brengt. </br></br>Een resultaat kan een index zijn die documenten verkrijgt nadat elke Indexeer functie is uitgevoerd, waarbij volledige documenten volledig van elke bron worden gemaakt. Documenten 1-100 zijn bijvoorbeeld afkomstig uit Blob Storage, documenten 101-200 van Azure SQL, enzovoort. De uitdaging voor dit scenario is het ontwerpen van een index schema dat geschikt is voor alle inkomende gegevens en een document sleutel structuur die uniform is in de zoek index. Systeem eigen, de waarden die een document uniek identificeren, worden metadata_storage_path in een BLOB-container en een primaire sleutel in een SQL-tabel. U kunt zich Voorst Ellen dat een of beide bronnen moeten worden gewijzigd om sleutel waarden in een gemeen schappelijke indeling te bieden, ongeacht de oorsprong van de inhoud. Voor dit scenario moet u een bepaald niveau van vooraf-verwerking uitvoeren om de gegevens te vermengen zodat deze kunnen worden opgenomen in één index.</br></br>Een alternatieve uitkomst kan zoeken in documenten die gedeeltelijk zijn ingevuld bij de eerste uitvoering en vervolgens verder worden ingevuld door volgende uitvoeringen om waarden uit andere bronnen te halen. Bijvoorbeeld: Fields 1-10 zijn van Blob Storage, 11-20 van Azure SQL, enzovoort. De uitdaging van dit patroon is ervoor te zorgen dat de uitvoering van elke index hetzelfde document heeft. Voor het samen voegen van velden in een bestaand document is een overeenkomst vereist voor de document sleutel. Zie [zelf studie: index uit meerdere gegevens bronnen](tutorial-multiple-data-sources.md)voor een demonstratie van dit scenario. |
+| Inhouds transformatie | Cognitive Search ondersteunt optionele [AI-verrijkings](cognitive-search-concept-intro.md) gedragingen waarmee afbeeldings analyse en natuurlijke taal verwerking worden toegevoegd om nieuwe Doorzoek bare inhoud en structuur te maken. AI-verrijking is gebaseerd op Indexeer functie via een gekoppelde [vaardig heden](cognitive-search-working-with-skillsets.md). Voor het uitvoeren van AI-verrijking heeft de Indexeer functie nog steeds een index en gegevens bron nodig, maar in dit scenario voegt de vaardigheidset-verwerking toe aan de uitvoering van de Indexeer functie. |
 
 ## <a name="approaches-for-creating-and-managing-indexers"></a>Strategieën voor het maken en beheren van indexeerfuncties
 
@@ -58,7 +58,7 @@ Indexeer functies verkennen gegevens archieven in Azure.
 
 + [Azure Blob Storage](search-howto-indexing-azure-blob-storage.md)
 + [Azure data Lake Storage Gen2](search-howto-index-azure-data-lake-storage.md) (in preview-versie)
-+ [Azure-tabelopslag](search-howto-indexing-azure-tables.md)
++ [Azure Table Storage](search-howto-indexing-azure-tables.md)
 + [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 + [Azure SQL Database](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 + [SQL Managed Instance](search-howto-connecting-azure-sql-mi-to-azure-search-using-indexers.md)
@@ -92,9 +92,9 @@ Het uitvoeren van vaardig heden is een optionele stap voor het aanroepen van ing
 
 ### <a name="stage-4-output-field-mappings"></a>Fase 4: uitvoer veld toewijzingen
 
-De uitvoer van een vaardig heden is in feite een structuur van gegevens die het verrijkte document worden genoemd. Met de toewijzingen van het uitvoer veld kunt u selecteren welke delen van deze boom structuur in de velden in uw index moeten worden toegewezen. Meer informatie over het [definiëren van uitvoer veld Toewijzingen](cognitive-search-output-field-mapping.md).
+Als u een vaardig heden opneemt, moet u waarschijnlijk uitvoer veld Toewijzingen bevatten. De uitvoer van een vaardig heden is in feite een structuur van gegevens die het verrijkte document worden genoemd. Met de toewijzingen van het uitvoer veld kunt u selecteren welke delen van deze boom structuur in de velden in uw index moeten worden toegewezen. Meer informatie over het [definiëren van uitvoer veld Toewijzingen](cognitive-search-output-field-mapping.md).
 
-Net als veld toewijzingen waarmee Verbatim waarden van bron-naar doel velden worden gekoppeld, geven uitvoer veld Toewijzingen de Indexeer functie aan hoe de getransformeerde waarden in het verrijkte document moeten worden gekoppeld aan doel velden in de index. In tegens telling tot veld toewijzingen, die als optioneel worden beschouwd, moet u altijd een toewijzing van een uitvoer veld definiëren voor getransformeerde inhoud die in een index moet worden opgeslagen.
+Terwijl veld Toewijzingen Verbatim waarden van de gegevens bron koppelen aan doel velden, geven uitvoer veld Toewijzingen de Indexeer functie aan hoe de getransformeerde waarden in het verrijkte document moeten worden gekoppeld aan doel velden in de index. In tegens telling tot veld toewijzingen, die als optioneel worden beschouwd, moet u altijd een toewijzing van een uitvoer veld definiëren voor getransformeerde inhoud die in een index moet worden opgeslagen.
 
 De volgende afbeelding toont een voor beeld van een debug-sessie voor het [opsporen van fouten](cognitive-search-debug-session.md) in de Indexeer fase: document kraken, veld toewijzingen, vaardigheidset-uitvoering en uitvoer veld toewijzingen.
 
@@ -187,6 +187,6 @@ Nu u het uitgangspunt hebt begrepen, is de volgende stap de vereisten en taken t
 + [Azure SQL Database, SQL Managed instance of SQL Server op een virtuele machine van Azure](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md)
 + [Azure Cosmos DB](search-howto-index-cosmosdb.md)
 + [Azure Blob Storage](search-howto-indexing-azure-blob-storage.md)
-+ [Azure-tabelopslag](search-howto-indexing-azure-tables.md)
++ [Azure Table Storage](search-howto-indexing-azure-tables.md)
 + [CSV-blobs indexeren met de Azure Cognitive Search BLOB-Indexer](search-howto-index-csv-blobs.md)
 + [JSON-blobs indexeren met Azure Cognitive Search BLOB-Indexer](search-howto-index-json-blobs.md)

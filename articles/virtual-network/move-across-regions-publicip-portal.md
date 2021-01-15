@@ -7,18 +7,18 @@ ms.subservice: ip-services
 ms.topic: how-to
 ms.date: 08/29/2019
 ms.author: allensu
-ms.openlocfilehash: 23fe515ddfdecb9ef168dd662e3fa2d91ece688f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b00fca8cf39bc44e0e53a112a332e6f6c5f0194e
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84711473"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218600"
 ---
 # <a name="move-azure-public-ip-configuration-to-another-region-using-the-azure-portal"></a>De open bare IP-configuratie van Azure naar een andere regio verplaatsen met behulp van de Azure Portal
 
 Er zijn verschillende scenario's waarin u uw bestaande open bare IP-configuraties van Azure naar een andere regio wilt verplaatsen. U kunt bijvoorbeeld een openbaar IP-adres maken met dezelfde configuratie en SKU voor testen. Het is ook mogelijk dat u een open bare IP-configuratie wilt verplaatsen naar een andere regio als onderdeel van de planning voor nood herstel.
 
-**Open bare Azure-Ip's zijn regio specifiek en kunnen niet worden verplaatst van de ene regio naar de andere.** U kunt echter een Azure Resource Manager sjabloon gebruiken om de bestaande configuratie van een openbaar IP-adres te exporteren.  U kunt de resource vervolgens in een andere regio zetten door het open bare IP-adres naar een sjabloon te exporteren, de para meters te wijzigen zodat deze overeenkomen met de doel regio en vervolgens de sjabloon te implementeren in de nieuwe regio.  Voor meer informatie over Resource Manager en sjablonen raadpleegt [u Quick Start: Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-quickstart-create-templates-use-the-portal).
+**Open bare Azure-Ip's zijn regio specifiek en kunnen niet worden verplaatst van de ene regio naar de andere.** U kunt echter een Azure Resource Manager sjabloon gebruiken om de bestaande configuratie van een openbaar IP-adres te exporteren.  U kunt de resource vervolgens in een andere regio zetten door het open bare IP-adres naar een sjabloon te exporteren, de para meters te wijzigen zodat deze overeenkomen met de doel regio en vervolgens de sjabloon te implementeren in de nieuwe regio.  Voor meer informatie over Resource Manager en sjablonen raadpleegt [u Quick Start: Azure Resource Manager sjablonen maken en implementeren met behulp van de Azure Portal](../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -33,7 +33,7 @@ Er zijn verschillende scenario's waarin u uw bestaande open bare IP-configuratie
 
 - Controleer of u met uw Azure-abonnement open bare Ip's kunt maken in de doel regio die wordt gebruikt. Neem contact op met ondersteuning voor het inschakelen van het vereiste quotum.
 
-- Zorg ervoor dat uw abonnement voldoende bronnen heeft ter ondersteuning van het toevoegen van open bare IP-adressen voor dit proces.  Raadpleeg [Azure-abonnement en -servicelimieten, quotums en beperkingen](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#networking-limits).
+- Zorg ervoor dat uw abonnement voldoende bronnen heeft ter ondersteuning van het toevoegen van open bare IP-adressen voor dit proces.  Raadpleeg [Azure-abonnement en -servicelimieten, quotums en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md#networking-limits).
 
 
 ## <a name="prepare-and-move"></a>Voorbereiden en verplaatsen
@@ -109,9 +109,9 @@ De volgende stappen laten zien hoe u het open bare IP-adres voor de configuratie
             },
         ```
 
-        Zie [een openbaar IP-adres maken, wijzigen of verwijderen](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address)voor meer informatie over de verschillen tussen open bare ip's van de Basic-en Standard-SKU:
+        Zie [een openbaar IP-adres maken, wijzigen of verwijderen](./virtual-network-public-ip-address.md)voor meer informatie over de verschillen tussen open bare ip's van de Basic-en Standard-SKU:
 
-    * **Toewijzings methode voor openbaar IP-adres** en **time-out voor inactiviteit** : u kunt beide opties in de sjabloon wijzigen door de eigenschap **publicIPAllocationMethod** van **dynamisch** naar **statisch** of **statisch** naar **dynamisch**te veranderen. U kunt de time-out voor inactiviteit wijzigen door de eigenschap **idleTimeoutInMinutes** te wijzigen in de gewenste hoeveelheid.  De standaard waarde is **4**:
+    * **Toewijzings methode voor openbaar IP-adres** en **time-out voor inactiviteit** : u kunt beide opties in de sjabloon wijzigen door de eigenschap **publicIPAllocationMethod** van **dynamisch** naar **statisch** of **statisch** naar **dynamisch** te veranderen. U kunt de time-out voor inactiviteit wijzigen door de eigenschap **idleTimeoutInMinutes** te wijzigen in de gewenste hoeveelheid.  De standaard waarde is **4**:
 
         ```json
           "resources": [
@@ -135,7 +135,7 @@ De volgende stappen laten zien hoe u het open bare IP-adres voor de configuratie
 
         ```
 
-        Zie [een openbaar IP-adres maken, wijzigen of verwijderen](https://docs.microsoft.com/azure/virtual-network/virtual-network-public-ip-address)voor meer informatie over de toewijzings methoden en de time-outwaarden voor inactiviteit.
+        Zie [een openbaar IP-adres maken, wijzigen of verwijderen](./virtual-network-public-ip-address.md)voor meer informatie over de toewijzings methoden en de time-outwaarden voor inactiviteit.
 
 
 13. Klik op **Opslaan** in de online editor.
@@ -144,11 +144,11 @@ De volgende stappen laten zien hoe u het open bare IP-adres voor de configuratie
 
 15. Klik op **basis**  >  **bronnen groep** om de resource groep te kiezen waarin het open bare doel-IP-adres wordt geïmplementeerd.  U kunt op **Nieuw maken** klikken om een nieuwe resource groep te maken voor het open bare doel-IP-adres.  Zorg ervoor dat de naam niet hetzelfde is als de bron resource groep van de bestaande open bare bron-IP.
 
-16. De **BASICS**  >  **locatie** van de basis beginselen controleren is ingesteld op de doel locatie waar u het open bare IP-adres wilt implementeren.
+16. De   >  **locatie** van de basis beginselen controleren is ingesteld op de doel locatie waar u het open bare IP-adres wilt implementeren.
 
 17. Controleer onder **instellingen** of de naam overeenkomt met de naam die u hebt ingevoerd in de bovenstaande para meters-editor.
 
-18. Schakel het selectie vakje onder **voor waarden**in.
+18. Schakel het selectie vakje onder **voor waarden** in.
 
 19. Klik op de knop **aanschaffen** om het doel-open bare IP-adres te implementeren.
 
@@ -165,5 +165,5 @@ Als u de wijzigingen wilt door voeren en de open bare IP wilt verplaatsen, verwi
 In deze zelf studie hebt u een open bare Azure-IP van de ene regio naar de andere verplaatst en worden de bron bronnen opgeruimd.  Raadpleeg voor meer informatie over het verplaatsen van resources tussen regio's en herstel na nood gevallen in Azure:
 
 
-- [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-move-resources)
-- [Virtuele Azure-machines verplaatsen naar een andere regio](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-tutorial-migrate)
+- [Resources verplaatsen naar een nieuwe resourcegroep of een nieuw abonnement](../azure-resource-manager/management/move-resource-group-and-subscription.md)
+- [Virtuele Azure-machines verplaatsen naar een andere regio](../site-recovery/azure-to-azure-tutorial-migrate.md)

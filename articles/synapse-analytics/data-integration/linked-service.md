@@ -9,12 +9,12 @@ ms.subservice: ''
 ms.date: 04/15/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: fb3c7dd7b3d7e8e42e230eedcd0d1b43af104327
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: af6afa2b0285fe741241183ed99712a132953a30
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452524"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220113"
 ---
 # <a name="secure-a-linked-service-with-private-links"></a>Een gekoppelde service beveiligen met persoonlijke koppelingen
 
@@ -23,7 +23,7 @@ In dit artikel leert u hoe u een gekoppelde service in Synapse kunt beveiligen m
 ## <a name="prerequisites"></a>Vereisten
 
 * **Azure-abonnement**: als u nog geen Azure-abonnement hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
-* **Azure Storage account**: u Azure data Lake gen 2 gebruiken als een *brongegevens* opslag. Als u geen opslag account hebt, raadpleegt u [een Azure Storage-account maken](../../storage/blobs/data-lake-storage-quickstart-create-account.md) om er een te maken. Zorg ervoor dat het opslag account de Synapse Studio-IP-filtering heeft voor toegang tot de service en dat u alleen **geselecteerde netwerken** toegang wilt geven tot het opslag account. De instelling onder de Blade **firewalls en virtuele netwerken** moet er ongeveer uitzien als in de onderstaande afbeelding.
+* **Azure Storage account**: u Azure data Lake gen 2 gebruiken als een *brongegevens* opslag. Als u geen opslag account hebt, raadpleegt u [een Azure Storage-account maken](../../storage/common/storage-account-create.md) om er een te maken. Zorg ervoor dat het opslag account de Synapse Studio-IP-filtering heeft voor toegang tot de service en dat u alleen **geselecteerde netwerken** toegang wilt geven tot het opslag account. De instelling onder de Blade **firewalls en virtuele netwerken** moet er ongeveer uitzien als in de onderstaande afbeelding.
 
 ![Account voor beveiligde opslag](./media/secure-storage-account.png)
 

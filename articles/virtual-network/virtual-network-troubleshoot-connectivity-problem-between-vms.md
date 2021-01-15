@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: eb94b67b026ed108f31f6cd802010577665ec0d8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ece3e639e0ef3516696e2a0bad7deeb833433a6
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87286084"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219195"
 ---
 # <a name="troubleshooting-connectivity-problems-between-azure-vms"></a>Problemen met de connectiviteit tussen virtuele Azure-machines oplossen
 
@@ -49,7 +49,7 @@ Volg deze stappen om het probleem op te lossen. Nadat u elke stap hebt voltooid,
 
 ### <a name="step-1-check-whether-nic-is-misconfigured"></a>Stap 1: controleren of de NIC onjuist is geconfigureerd
 
-Volg de stappen in de [netwerk interface opnieuw instellen voor Azure Windows VM](../virtual-machines/windows/reset-network-interface.md). 
+Volg de stappen in de [netwerk interface opnieuw instellen voor Azure Windows VM](../virtual-machines/troubleshooting/reset-network-interface.md). 
 
 Als het probleem optreedt nadat u de netwerk interface (NIC) hebt gewijzigd, voert u de volgende stappen uit:
 
@@ -62,8 +62,8 @@ Zie [netwerk interfaces toevoegen aan of verwijderen uit virtuele machines](virt
 
 **Virtuele machine met één NIC** 
 
-- [Windows-VM opnieuw implementeren](../virtual-machines/windows/redeploy-to-new-node.md)
-- [Linux-VM opnieuw implementeren](../virtual-machines/linux/redeploy-to-new-node.md)
+- [Windows-VM opnieuw implementeren](../virtual-machines/troubleshooting/redeploy-to-new-node-windows.md)
+- [Linux-VM opnieuw implementeren](../virtual-machines/troubleshooting/redeploy-to-new-node-linux.md)
 
 ### <a name="step-2-check-whether-network-traffic-is-blocked-by-nsg-or-udr"></a>Stap 2: controleren of het netwerk verkeer wordt geblokkeerd door NSG of UDR
 
@@ -103,7 +103,7 @@ Een toegangs beheer lijst (ACL) biedt de mogelijkheid om selectief verkeer toe t
 
 ### <a name="step-7-check-whether-the-endpoint-is-created-for-the-classic-vm"></a>Stap 7: controleren of het eind punt is gemaakt voor de klassieke VM
 
-Alle Vm's die u in azure maakt met behulp van het klassieke implementatie model kunnen automatisch communiceren via een particulier netwerk kanaal met andere virtuele machines in dezelfde Cloud service of een virtueel netwerk. Computers in andere virtuele netwerken vereisen echter eind punten om het inkomende netwerk verkeer naar een virtuele machine te sturen. Zie [eind punten instellen](../virtual-machines/windows/classic/setup-endpoints.md)voor meer informatie.
+Alle Vm's die u in azure maakt met behulp van het klassieke implementatie model kunnen automatisch communiceren via een particulier netwerk kanaal met andere virtuele machines in dezelfde Cloud service of een virtueel netwerk. Computers in andere virtuele netwerken vereisen echter eind punten om het inkomende netwerk verkeer naar een virtuele machine te sturen. Zie [eind punten instellen](/previous-versions/azure/virtual-machines/windows/classic/setup-endpoints)voor meer informatie.
 
 ### <a name="step-8-try-to-connect-to-a-vm-network-share"></a>Stap 8: verbinding maken met een VM-netwerk share
 

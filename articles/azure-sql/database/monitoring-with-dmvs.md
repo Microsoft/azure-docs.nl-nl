@@ -11,18 +11,18 @@ ms.topic: how-to
 author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: sstein
-ms.date: 04/19/2020
-ms.openlocfilehash: 480e9f9031481621ac9d568a7bd97b942f47b947
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 1/14/2021
+ms.openlocfilehash: b87d0a2446eb2b65c20ae0bef408320686cb5165
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96493637"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219127"
 ---
 # <a name="monitoring-microsoft-azure-sql-database-and-azure-sql-managed-instance-performance-using-dynamic-management-views"></a>Prestaties van Microsoft Azure SQL Database en Azure SQL Managed Instance bewaken met dynamische beheerweergaven
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
-Microsoft Azure SQL Database en Azure SQL Managed instance bieden een subset van dynamische beheer weergaven om prestatie problemen op te sporen. Dit kan worden veroorzaakt door geblokkeerde of langlopende query's, knel punten in resources, slechte query plannen, enzovoort. In dit onderwerp vindt u informatie over het detecteren van veelvoorkomende prestatie problemen met dynamische beheer weergaven.
+Microsoft Azure SQL Database en Azure SQL Managed instance bieden een subset van dynamische beheer weergaven om prestatie problemen op te sporen. Dit kan worden veroorzaakt door geblokkeerde of langlopende query's, knel punten in resources, slechte query plannen, enzovoort. Dit artikel bevat informatie over het detecteren van veelvoorkomende prestatie problemen met dynamische beheer weergaven.
 
 Microsoft Azure SQL Database en Azure SQL Managed instance ondersteunen gedeeltelijk drie categorieën dynamische beheer weergaven:
 
@@ -259,7 +259,7 @@ Voor TempDB-conflicten is een gemeen schappelijke methode het verminderen of her
 - Tijdelijke tabellen
 - Tabelvariabelen
 - Tabelwaardeparameters
-- Gebruik van versieopslag (specifiek gekoppeld aan langlopende transacties)
+- Gebruik van versie opslag (gekoppeld aan langlopende trans acties)
 - Query's met queryplannen die gebruikmaken van sorteringen, hash joins en spools
 
 ### <a name="top-queries-that-use-table-variables-and-temporary-tables"></a>Meest voorkomende query's die tabel variabelen en tijdelijke tabellen gebruiken
@@ -563,7 +563,7 @@ SELECT resource_name, AVG(avg_cpu_percent) AS Average_Compute_Utilization
 FROM sys.server_resource_stats
 WHERE start_time BETWEEN @s AND @e  
 GROUP BY resource_name  
-HAVING AVG(avg_cpu_percent) >= 80
+HAVING AVG(avg_cpu_percent) >= 80;
 ```
 
 ### <a name="sysresource_stats"></a>sys.resource_stats
@@ -589,7 +589,7 @@ In dit voor beeld ziet u hoe de gegevens in deze weer gave worden blootgesteld:
 SELECT TOP 10 *
 FROM sys.resource_stats
 WHERE database_name = 'resource1'
-ORDER BY start_time DESC
+ORDER BY start_time DESC;
 ```
 
 ![De catalogus weergave sys.resource_stats](./media/monitoring-with-dmvs/sys_resource_stats.png)
@@ -699,7 +699,7 @@ Als u het aantal actieve sessies wilt zien, voert u deze Transact-SQL-query uit 
 
 ```sql
 SELECT COUNT(*) AS [Sessions]
-FROM sys.dm_exec_connections
+FROM sys.dm_exec_connections;
 ```
 
 Als u een SQL Server workload analyseert, wijzigt u de query zodanig dat deze zich op een specifieke Data Base bevindt. Deze query helpt u bij het bepalen van de mogelijke sessie vereisten voor de Data Base als u overweegt om deze naar Azure te verplaatsen.
@@ -709,7 +709,7 @@ SELECT COUNT(*) AS [Sessions]
 FROM sys.dm_exec_connections C
 INNER JOIN sys.dm_exec_sessions S ON (S.session_id = C.session_id)
 INNER JOIN sys.databases D ON (D.database_id = S.database_id)
-WHERE D.name = 'MyDatabase'
+WHERE D.name = 'MyDatabase';
 ```
 
 Deze query's retour neren een bepaald aantal tijdstippen. Als u meerdere voor beelden in de loop van de tijd verzamelt, hebt u een goed beeld van het gebruik van uw sessie.
@@ -743,7 +743,7 @@ ORDER BY 2 DESC;
 
 ### <a name="monitoring-blocked-queries"></a>Geblokkeerde query's bewaken
 
-Trage of langlopende query's kunnen bijdragen aan overmatig bronnen gebruik en zijn het gevolg van geblokkeerde query's. De oorzaak van de blok kering kan zijn dat het toepassings ontwerp, ongeldige query plannen, het gebrek aan handige indexen, enzovoort. U kunt de weer gave sys.dm_tran_locks gebruiken om informatie over de huidige vergrendelings activiteit in de Data Base op te halen. Zie [sys.dm_tran_locks (Transact-SQL)](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql)voor voorbeeld code.
+Trage of langlopende query's kunnen bijdragen aan overmatig bronnen gebruik en zijn het gevolg van geblokkeerde query's. De oorzaak van de blok kering kan zijn dat het toepassings ontwerp, ongeldige query plannen, het gebrek aan handige indexen, enzovoort. U kunt de weer gave sys.dm_tran_locks gebruiken om informatie over de huidige vergrendelings activiteit in de Data Base op te halen. Zie [sys.dm_tran_locks (Transact-SQL)](/sql/relational-databases/system-dynamic-management-views/sys-dm-tran-locks-transact-sql)voor voorbeeld code. Zie voor meer informatie over het oplossen van problemen met het blok keren van problemen met [Azure SQL blocking en oplossen](understand-resolve-blocking.md).
 
 ### <a name="monitoring-query-plans"></a>Query plannen bewaken
 

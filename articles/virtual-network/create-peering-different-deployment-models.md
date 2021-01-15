@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 11/15/2018
 ms.author: kumud
 ms.reviewer: anavin
-ms.openlocfilehash: 148d57da549e8364620c8417cbd61d975cea1498
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1ff9fcbb693f7e606c07985f9bce9acd60c5591a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87046101"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222969"
 ---
 # <a name="create-a-virtual-network-peering---different-deployment-models-same-subscription"></a>Een peering voor een virtueel netwerk maken-verschillende implementatie modellen, hetzelfde abonnement
 
@@ -35,7 +35,7 @@ De stappen voor het maken van peering op een virtueel netwerk zijn verschillend,
 |[Beide in Resource Manager](create-peering-different-subscriptions.md) |Verschillend|
 |[Eén in Resource Manager, één klassiek](create-peering-different-deployment-models-subscriptions.md) |Verschillend|
 
-Kan geen peering voor het virtuele netwerk maken tussen twee virtuele netwerken die zijn geïmplementeerd via het klassieke implementatie model. Als u virtuele netwerken wilt verbinden die beide zijn gemaakt via het klassieke implementatie model, kunt u een Azure- [VPN gateway](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) gebruiken om verbinding te maken met de virtuele netwerken.
+Kan geen peering voor het virtuele netwerk maken tussen twee virtuele netwerken die zijn geïmplementeerd via het klassieke implementatie model. Als u virtuele netwerken wilt verbinden die beide zijn gemaakt via het klassieke implementatie model, kunt u een Azure- [VPN gateway](../vpn-gateway/tutorial-site-to-site-portal.md?toc=%2fazure%2fvirtual-network%2ftoc.json) gebruiken om verbinding te maken met de virtuele netwerken.
 
 Deze zelf studie vergelijkt virtuele netwerken in dezelfde regio. U kunt ook virtuele netwerken in verschillende [ondersteunde regio's](virtual-network-manage-peering.md#cross-region)peeren. Het is raadzaam om vertrouwd te raken met de [vereisten en beperkingen van de peering](virtual-network-manage-peering.md#requirements-and-constraints) voordat u peering van virtuele netwerken uitvoert.
 
@@ -43,8 +43,8 @@ U kunt de Azure Portal, de Azure [-opdracht regel interface](#cli) (CLI), Azure 
 
 ## <a name="create-peering---azure-portal"></a>Peering-Azure Portal maken
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). Het account waarmee u zich aanmeldt, moet de benodigde machtigingen hebben voor het maken van een virtuele netwerk peering. Zie [machtigingen voor peering voor virtuele netwerken](virtual-network-manage-peering.md#requirements-and-constraints)voor een lijst met machtigingen.
-2. Klik op **+ Nieuw**, klik op **netwerken**en klik vervolgens op **virtueel netwerk**.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Het account waarmee u zich aanmeldt, moet de benodigde machtigingen hebben voor het maken van een virtuele netwerk peering. Zie [machtigingen voor peering voor virtuele netwerken](virtual-network-manage-peering.md#requirements-and-constraints)voor een lijst met machtigingen.
+2. Klik op **+ Nieuw**, klik op **netwerken** en klik vervolgens op **virtueel netwerk**.
 3. Voer op de Blade **virtueel netwerk maken** een waarde in of selecteer waarden voor de volgende instellingen en klik vervolgens op **maken**:
     - **Naam**: *myVnet1*
     - **Adres ruimte**: *10.0.0.0/16*
@@ -53,7 +53,7 @@ U kunt de Azure Portal, de Azure [-opdracht regel interface](#cli) (CLI), Azure 
     - **Abonnement**: Selecteer uw abonnement
     - **Resource groep**: Selecteer **nieuwe maken** en voer *myResourceGroup* in
     - **Locatie**: *VS-Oost*
-4. Klik op **+ Nieuw**. Typ in het vak **Marketplace doorzoeken de** tekst *virtueel netwerk*. Klik op **virtueel netwerk** wanneer dit wordt weer gegeven in de zoek resultaten.
+4. Klik op **+ New**. Typ in het vak **Marketplace doorzoeken de** tekst *virtueel netwerk*. Klik op **virtueel netwerk** wanneer dit wordt weer gegeven in de zoek resultaten.
 5. Selecteer in de Blade **virtueel netwerk** de optie **klassiek** in het vak **een implementatie model selecteren** en klik vervolgens op **maken**.
 6. Voer op de Blade **virtueel netwerk maken** een waarde in of selecteer waarden voor de volgende instellingen en klik vervolgens op **maken**:
     - **Naam**: *myVnet2*
@@ -63,7 +63,7 @@ U kunt de Azure Portal, de Azure [-opdracht regel interface](#cli) (CLI), Azure 
     - **Abonnement**: Selecteer uw abonnement
     - **Resource groep**: Selecteer **bestaande gebruiken** en selecteer *myResourceGroup*
     - **Locatie**: *VS-Oost*
-7. Typ *myResourceGroup*in het vak **Zoek resources** bovenaan de portal. Klik op **myResourceGroup** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor de **myresourcegroup** -resource groep weer gegeven. De resource groep bevat de twee virtuele netwerken die zijn gemaakt in de vorige stappen.
+7. Typ *myResourceGroup* in het vak **Zoek resources** bovenaan de portal. Klik op **myResourceGroup** wanneer deze wordt weer gegeven in de zoek resultaten. Er wordt een Blade voor de **myresourcegroup** -resource groep weer gegeven. De resource groep bevat de twee virtuele netwerken die zijn gemaakt in de vorige stappen.
 8. Klik op **myVNet1**.
 9. Klik op de Blade **myVnet1** die wordt weer gegeven op **peerings** in de verticale lijst met opties aan de linkerkant van de Blade.
 10. Klik op de Blade **myVnet1-peerings** die verschijnt op **+ toevoegen**
@@ -71,7 +71,7 @@ U kunt de Azure Portal, de Azure [-opdracht regel interface](#cli) (CLI), Azure 
      - **Naam**: *myVnet1ToMyVnet2*
      - **Implementatie model van het virtuele netwerk**: Selecteer **klassiek**.
      - **Abonnement**: Selecteer uw abonnement
-     - **Virtueel netwerk**: Klik op **een virtueel netwerk kiezen**en klik vervolgens op **myVnet2**.
+     - **Virtueel netwerk**: Klik op **een virtueel netwerk kiezen** en klik vervolgens op **myVnet2**.
      - **Toegang tot virtueel netwerk toestaan:** Zorg ervoor dat **ingeschakeld** is geselecteerd.
     In deze zelf studie worden geen andere instellingen gebruikt. Meer informatie over alle instellingen voor peering vindt u in [peering van virtuele netwerken beheren](virtual-network-manage-peering.md#create-a-peering).
 12. Nadat u in de vorige stap op **OK** hebt geklikt, wordt de Blade **peering toevoegen** gesloten en wordt de Blade **myVnet1-peerings** opnieuw weer geven. Na enkele seconden wordt de peering die u hebt gemaakt, weer gegeven op de Blade. **Verbonden** wordt weer gegeven in de kolom **peering status** voor de **myVnet1ToMyVnet2** -peering die u hebt gemaakt.
@@ -148,7 +148,7 @@ Voer de volgende stappen uit met behulp van de klassieke Azure-CLI en de Azure C
 1. Installeer de meest recente versie van de Power shell [Azure](https://www.powershellgallery.com/packages/Azure) -en [AZ](https://www.powershellgallery.com/packages/Az/) -modules. Zie [Overzicht van Azure PowerShell](/powershell/azure/?toc=%2fazure%2fvirtual-network%2ftoc.json) als u nog geen ervaring hebt met Azure PowerShell.
 2. Start een Power shell-sessie.
 3. Meld u in Power shell aan bij Azure door de opdracht in te voeren `Add-AzureAccount` . Het account waarmee u zich aanmeldt, moet de benodigde machtigingen hebben voor het maken van een virtuele netwerk peering. Zie [machtigingen voor peering voor virtuele netwerken](virtual-network-manage-peering.md#requirements-and-constraints)voor een lijst met machtigingen.
-4. Als u een virtueel netwerk (klassiek) met Power shell wilt maken, moet u een nieuw netwerk configuratie bestand maken of wijzigen. Meer informatie over het [exporteren, bijwerken en importeren van netwerk configuratie bestanden](virtual-networks-using-network-configuration-file.md). Het bestand moet het volgende **VirtualNetworkSite** -element bevatten voor het virtuele netwerk dat in deze zelf studie wordt gebruikt:
+4. Als u een virtueel netwerk (klassiek) met Power shell wilt maken, moet u een nieuw netwerk configuratie bestand maken of wijzigen. Meer informatie over het [exporteren, bijwerken en importeren van netwerk configuratie bestanden](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Het bestand moet het volgende **VirtualNetworkSite** -element bevatten voor het virtuele netwerk dat in deze zelf studie wordt gebruikt:
 
     ```xml
     <VirtualNetworkSite name="myVnet2" Location="East US">
@@ -212,9 +212,9 @@ Wanneer u deze zelf studie hebt voltooid, kunt u de resources die u in de zelf s
 
 ### <a name="azure-portal"></a><a name="delete-portal"></a>Azure Portal
 
-1. Voer in het zoekvak van de portal **myResourceGroup**in. Klik in de zoek resultaten op **myResourceGroup**.
+1. Voer in het zoekvak van de portal **myResourceGroup** in. Klik in de zoek resultaten op **myResourceGroup**.
 2. Klik op de Blade **myResourceGroup** op het pictogram **verwijderen** .
-3. Als u het verwijderen wilt bevestigen, voert u in het vak **Geef de naam van de resource groep** **myResourceGroup**in en klikt u op **verwijderen**.
+3. Als u het verwijderen wilt bevestigen, voert u in het vak **Geef de naam van de resource groep** **myResourceGroup** in en klikt u op **verwijderen**.
 
 ### <a name="azure-cli"></a><a name="delete-cli"></a>Azure CLI
 
@@ -240,7 +240,7 @@ Wanneer u deze zelf studie hebt voltooid, kunt u de resources die u in de zelf s
     Remove-AzResourceGroup -Name myResourceGroup -Force
     ```
 
-2. Als u het virtuele netwerk (klassiek) met Power shell wilt verwijderen, moet u een bestaand netwerk configuratie bestand wijzigen. Meer informatie over het [exporteren, bijwerken en importeren van netwerk configuratie bestanden](virtual-networks-using-network-configuration-file.md). Verwijder het volgende VirtualNetworkSite-element voor het virtuele netwerk dat wordt gebruikt in deze zelf studie:
+2. Als u het virtuele netwerk (klassiek) met Power shell wilt verwijderen, moet u een bestaand netwerk configuratie bestand wijzigen. Meer informatie over het [exporteren, bijwerken en importeren van netwerk configuratie bestanden](/previous-versions/azure/virtual-network/virtual-networks-using-network-configuration-file). Verwijder het volgende VirtualNetworkSite-element voor het virtuele netwerk dat wordt gebruikt in deze zelf studie:
 
     ```xml
     <VirtualNetworkSite name="myVnet2" Location="East US">

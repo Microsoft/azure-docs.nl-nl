@@ -3,12 +3,12 @@ title: Beleid voor het schrijven van matrix eigenschappen voor bronnen
 description: Meer informatie over het werken met matrix parameters en matrix-taal expressies, de alias [*] evalueren en elementen toevoegen met Azure Policy definitie regels.
 ms.date: 10/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 60044d4a599c14088ea923a6a14cb46543646995
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 650b2ec6bc1bbd12cd10abb1917ef5ea2d6029e9
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920454"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220742"
 ---
 # <a name="author-policies-for-array-properties-on-azure-resources"></a>Beleid voor het schrijven van matrix eigenschappen op Azure-resources
 
@@ -16,10 +16,8 @@ Azure Resource Manager eigenschappen worden meestal gedefinieerd als teken reeks
 
 - Het type [definitie parameter](../concepts/definition-structure.md#parameters), om meerdere opties te bieden
 - Onderdeel van een [beleids regel](../concepts/definition-structure.md#policy-rule) met de voor waarden **in** of **notIn**
-- Onderdeel van een beleids regel waarmee de [ \[ \* \] alias](../concepts/definition-structure.md#understanding-the--alias) wordt geëvalueerd om te evalueren:
-  - Scenario's zoals **geen**, **alle** of **alle**
-  - Complexe scenario's met **aantal**
-- In het [effect toevoegen](../concepts/effects.md#append) om te vervangen of toe te voegen aan een bestaande matrix
+- Onderdeel van een beleids regel die telt hoeveel matrix leden voldoen aan een voor waarde
+- In de effecten [toevoegen](../concepts/effects.md#append) en [wijzigen](../concepts/effects.md#modify) om een bestaande matrix bij te werken
 
 In dit artikel wordt elk gebruik door Azure Policy beschreven en worden verschillende voorbeeld definities geboden.
 
@@ -99,48 +97,121 @@ Gebruik de volgende opdrachten om deze teken reeks te gebruiken voor elke SDK:
 - Azure PowerShell: cmdlet [New-AzPolicyAssignment](/powershell/module/az.resources/New-Azpolicyassignment) met para meter **PolicyParameter**
 - REST API: in de _put_ -bewerking [maken](/rest/api/resources/policyassignments/create) als onderdeel van de aanvraag tekst als de waarde van de **Eigenschappen. para meters** -eigenschap
 
-## <a name="array-conditions"></a>Matrix voorwaarden
+## <a name="using-arrays-in-conditions"></a>Matrices in voor waarden gebruiken
 
-De beleids regel [voorwaarden](../concepts/definition-structure.md#conditions) waarvoor het _matrix_ 
- **type** van de para meter mag worden gebruikt, zijn beperkt tot `in` en `notIn` . Neem de volgende beleids definitie met voor waarde `equals` als voor beeld:
+### <a name="in-and-notin"></a>`In` en `notIn`
+
+De `in` en `notIn` voor waarden werken alleen met matrix waarden. Ze controleren het bestaan van een waarde in een matrix. De matrix kan een letterlijke JSON-matrix of een verwijzing naar een matrix parameter zijn. Bijvoorbeeld:
 
 ```json
 {
-  "policyRule": {
-    "if": {
-      "not": {
-        "field": "location",
-        "equals": "[parameters('allowedLocations')]"
-      }
-    },
-    "then": {
-      "effect": "audit"
-    }
-  },
-  "parameters": {
-    "allowedLocations": {
-      "type": "Array",
-      "metadata": {
-        "description": "The list of allowed locations for resources.",
-        "displayName": "Allowed locations",
-        "strongType": "location"
-      }
-    }
-  }
+      "field": "tags.environment",
+      "in": [ "dev", "test" ]
 }
 ```
 
-Het maken van deze beleids definitie via de Azure Portal leidt tot een fout, zoals dit fout bericht:
+```json
+{
+      "field": "location",
+      "notIn": "[parameters('allowedLocations')]"
+}
+```
 
-- "Het beleid {GUID} kan niet worden geparametriseerde vanwege validatie fouten. Controleer of de beleids parameters juist zijn gedefinieerd. Het evaluatie resultaat van de interne uitzonde ring van de taal expressie [para meters (' allowedLocations ')] ' is van het type ' matrix ', het verwachte type is ' String '. '
+### <a name="value-count"></a>Aantal waarden
 
-Het verwachte **type** voor waarde `equals` is _teken reeks_. Omdat **allowedLocations** is gedefinieerd als **type** _matrix_, evalueert de beleids engine de expressie van de taal en genereert de fout. Met de `in` `notIn` voor-voor waarde verwacht de beleids engine de **type** _matrix_ in de taal expressie. Als u dit fout bericht wilt oplossen, wijzigt `equals` u in `in` of `notIn` .
+De expressie aantal [waarden](../concepts/definition-structure.md#value-count) telt het aantal matrix leden dat voldoet aan een voor waarde. Het biedt een manier om dezelfde voor waarde meermaals te evalueren, waarbij verschillende waarden worden gebruikt voor elke iteratie. Met de volgende voor waarde wordt bijvoorbeeld gecontroleerd of de resource naam overeenkomt met een patroon uit een matrix met patronen:
+
+```json
+{
+    "count": {
+        "value": [ "test*", "dev*", "prod*" ],
+        "name": "pattern",
+        "where": {
+            "field": "name",
+            "like": "[current('pattern')]"
+        }
+    },
+    "greater": 0
+}
+```
+
+Om de expressie te evalueren, evalueert Azure Policy de `where` voor waarde drie keer en eenmaal voor elk lid van `[ "test*", "dev*", "prod*" ]` , geteld hoe vaak deze is geëvalueerd `true` . Bij elke iteratie wordt de waarde van het huidige matrixlid gekoppeld aan de `pattern` index naam die is gedefinieerd door `count.name` . In de voor waarde kan naar deze waarde worden verwezen `where` door een speciale sjabloon functie aan te roepen: `current('pattern')` .
+
+| Iteratie | `current('pattern')` geretourneerde waarde |
+|:---|:---|
+| 1 | `"test*"` |
+| 2 | `"dev*"` |
+| 3 | `"prod*"` |
+
+De voor waarde is alleen waar als het aantal results groter is dan 0.
+
+Als u de voor waarde boven meer algemeen wilt instellen, gebruikt u parameter verwijzing in plaats van een letterlijke matrix:
+
+ ```json
+{
+    "count": {
+        "value": "[parameters('patterns')]",
+        "name": "pattern",
+        "where": {
+            "field": "name",
+            "like": "[current('pattern')]"
+        }
+    },
+    "greater": 0
+}
+```
+
+Wanneer de expressie voor **aantal waarden** zich niet onder een andere expressie **Count** bevindt, `count.name` is optioneel en `current()` kan de functie zonder argumenten worden gebruikt:
+
+```json
+{
+    "count": {
+        "value": "[parameters('patterns')]",
+        "where": {
+            "field": "name",
+            "like": "[current()]"
+        }
+    },
+    "greater": 0
+}
+```
+
+**Aantal waarden** biedt ook ondersteuning voor matrices van complexe objecten, waardoor complexere voor waarden worden toegestaan. Met de volgende voor waarde wordt bijvoorbeeld een gewenste label waarde voor elk naam patroon gedefinieerd en wordt gecontroleerd of de resource naam overeenkomt met het patroon, maar heeft de vereiste label waarde niet:
+
+```json
+{
+    "count": {
+        "value": [
+            { "pattern": "test*", "envTag": "dev" },
+            { "pattern": "dev*", "envTag": "dev" },
+            { "pattern": "prod*", "envTag": "prod" },
+        ],
+        "name": "namePatternRequiredTag",
+        "where": {
+            "allOf": [
+                {
+                    "field": "name",
+                    "like": "[current('namePatternRequiredTag').pattern]"
+                },
+                {
+                    "field": "tags.env",
+                    "notEquals": "[current('namePatternRequiredTag').envTag]"
+                }
+            ]
+        }
+    },
+    "greater": 0
+}
+```
+
+Zie voor [beelden van aantal waarden](../concepts/definition-structure.md#value-count-examples)voor nuttige voor beelden.
 
 ## <a name="referencing-array-resource-properties"></a>Verwijzen naar eigenschappen van matrix resources
 
 In veel gevallen moet u werken met matrix eigenschappen in de geëvalueerde resource. In sommige scenario's moet worden verwezen naar een volledige matrix (bijvoorbeeld de lengte controleren). Anderen moeten een voor waarde Toep assen op elk afzonderlijk lid van de matrix (Controleer bijvoorbeeld of alle firewall regel toegang vanaf internet blok keren). Informatie over de verschillende manieren waarop Azure Policy kan verwijzen naar resource-eigenschappen, en hoe deze verwijzingen zich gedragen wanneer ze verwijzen naar matrix eigenschappen is de sleutel voor het schrijven van voor waarden die betrekking hebben op deze scenario's.
 
 ### <a name="referencing-resource-properties"></a>Verwijzen naar bron eigenschappen
+
 Er kan naar resource-eigenschappen worden verwezen door Azure Policy met behulp van [aliassen](../concepts/definition-structure.md#aliases) er zijn twee manieren om te verwijzen naar de waarden van een bron eigenschap in azure Policy:
 
 - Gebruik [veld](../concepts/definition-structure.md#fields) voorwaarde om te controleren of **alle** geselecteerde bron eigenschappen voldoen aan een voor waarde. Voorbeeld:
@@ -219,9 +290,9 @@ Als de matrix objecten bevat, `[*]` kan een alias worden gebruikt om de waarde v
 }
 ```
 
-Deze voor waarde is waar als de waarden van alle `property` Eigenschappen in `objectArray` zijn gelijk aan `"value"` .
+Deze voor waarde is waar als de waarden van alle `property` Eigenschappen in `objectArray` zijn gelijk aan `"value"` . Zie voor meer voor beelden [extra \[ \* \] alias voorbeelden](#appendix--additional--alias-examples).
 
-Wanneer u de `field()` functie gebruikt om te verwijzen naar een matrix alias, is de geretourneerde waarde een matrix van alle geselecteerde waarden. Dit gedrag houdt in dat het algemene gebruik van de `field()` functie, de mogelijkheid om sjabloon functies toe te passen op eigenschaps waarden van resources, zeer beperkt is. De enige sjabloon functies die in dit geval kunnen worden gebruikt, zijn de opties die matrix argumenten accepteren. Het is bijvoorbeeld mogelijk om de lengte van de matrix met te verkrijgen `[length(field('Microsoft.Test/resourceType/objectArray[*].property'))]` . Complexere scenario's, zoals het Toep assen van sjabloon functie op elke matrix leden en het vergelijken ervan met een gewenste waarde, zijn alleen mogelijk wanneer u de `count` expressie gebruikt. Zie [aantal-expressies](#count-expressions)voor meer informatie.
+Wanneer u de `field()` functie gebruikt om te verwijzen naar een matrix alias, is de geretourneerde waarde een matrix van alle geselecteerde waarden. Dit gedrag houdt in dat het algemene gebruik van de `field()` functie, de mogelijkheid om sjabloon functies toe te passen op eigenschaps waarden van resources, zeer beperkt is. De enige sjabloon functies die in dit geval kunnen worden gebruikt, zijn de opties die matrix argumenten accepteren. Het is bijvoorbeeld mogelijk om de lengte van de matrix met te verkrijgen `[length(field('Microsoft.Test/resourceType/objectArray[*].property'))]` . Complexere scenario's, zoals het Toep assen van sjabloon functie op elke matrix leden en het vergelijken ervan met een gewenste waarde, zijn alleen mogelijk wanneer u de `count` expressie gebruikt. Zie [veld aantal-expressies](#field-count-expressions)voor meer informatie.
 
 Als u wilt samenvatten, raadpleegt u de volgende voorbeeld bron inhoud en de geselecteerde waarden die door verschillende aliassen worden geretourneerd:
 
@@ -275,9 +346,9 @@ Wanneer u de `field()` functie gebruikt op de voorbeeld bron inhoud, zijn de res
 | `[field('Microsoft.Test/resourceType/objectArray[*].nestedArray')]` | `[[ 1, 2 ], [ 3, 4 ]]` |
 | `[field('Microsoft.Test/resourceType/objectArray[*].nestedArray[*]')]` | `[1, 2, 3, 4]` |
 
-## <a name="count-expressions"></a>Expressies tellen
+### <a name="field-count-expressions"></a>Expressies voor veld tellingen
 
-[Aantal](../concepts/definition-structure.md#count) expressies tellen hoeveel matrix leden aan een voor waarde voldoen en vergelijken het aantal met een doel waarde. `Count` is intuïtief en veelzijdig voor het evalueren van matrices vergeleken met `field` voor waarden. De syntaxis is:
+Expressies voor [veld tellingen](../concepts/definition-structure.md#field-count) tellen hoeveel matrix leden aan een voor waarde voldoen en vergelijken het aantal met een doel waarde. `Count` is intuïtief en veelzijdig voor het evalueren van matrices vergeleken met `field` voor waarden. De syntaxis is:
 
 ```json
 {
@@ -289,7 +360,7 @@ Wanneer u de `field()` functie gebruikt op de voorbeeld bron inhoud, zijn de res
 }
 ```
 
-Als u zonder een WHERE-voor waarde gebruikt, `count` retourneert eenvoudigweg de lengte van een matrix. Met de voorbeeld resource-inhoud uit de vorige sectie wordt de volgende `count` expressie geëvalueerd op `true` sinds `stringArray` drie leden:
+Als u geen `where` voor waarde gebruikt, `count` wordt alleen de lengte van een matrix geretourneerd. Met de voorbeeld resource-inhoud uit de vorige sectie wordt de volgende `count` expressie geëvalueerd op `true` sinds `stringArray` drie leden:
 
 ```json
 {
@@ -314,6 +385,7 @@ Dit gedrag werkt ook met geneste matrices. Bijvoorbeeld, de volgende `count` exp
 De kracht van `count` is in de `where` voor waarde. Wanneer deze is opgegeven, Azure Policy de matrix leden inventariseren en elke voor waarde evalueren, waarbij wordt geteld hoeveel matrix leden er zijn geëvalueerd `true` . In elk herhaling van de evaluatie van de `where` voor waarde, Azure Policy een lid van één matrix selecteren ***i** _ en de resource-inhoud evalueren `where` aan de voor waarde _*, alsof **_i_*_ het enige lid van de array_ * is. Als er slechts één matrixlid in elke iteratie beschikbaar is, kunt u complexe voor waarden Toep assen op elk afzonderlijk lid van de matrix.
 
 Voorbeeld:
+
 ```json
 {
   "count": {
@@ -326,7 +398,7 @@ Voorbeeld:
   "equals": 1
 }
 ```
-Om de expressie te evalueren `count` , evalueert Azure Policy de `where` voor waarde drie keer en eenmaal voor elk lid van `stringArray` , geteld hoe vaak deze is geëvalueerd `true` . Wanneer de `where` voor waarde de `Microsoft.Test/resourceType/stringArray[*]` matrix leden bevat, worden er in plaats van alle leden te selecteren `stringArray` , een enkel lid van een matrix elke keer geselecteerd:
+Om de expressie te evalueren `count` , evalueert Azure Policy de `where` voor waarde drie keer en eenmaal voor elk lid van `stringArray` , geteld hoe vaak deze is geëvalueerd `true` . Wanneer de `where` voor waarde naar de `Microsoft.Test/resourceType/stringArray[*]` matrix leden verwijst, in plaats van alle leden te selecteren `stringArray` , wordt er slechts één lid van een matrix tegelijk geselecteerd:
 
 | Iteratie | Geselecteerde `Microsoft.Test/resourceType/stringArray[*]` waarden | `where` Resultaat van evaluatie |
 |:---|:---|:---|
@@ -337,6 +409,7 @@ Om de expressie te evalueren `count` , evalueert Azure Policy de `where` voor wa
 En daarom `count` wordt geretourneerd `1` .
 
 Hier volgt een complexere expressie:
+
 ```json
 {
   "count": {
@@ -366,6 +439,7 @@ Hier volgt een complexere expressie:
 En dus de `count` retour neren `1` .
 
 Het feit dat de `where` expressie wordt geëvalueerd op basis van de **volledige** inhoud van de aanvraag (waarbij alleen wijzigingen worden aangebracht aan het matrixlid dat momenteel wordt geïnventariseerd) betekent dat de `where` voor waarde ook naar velden buiten de matrix kan verwijzen:
+
 ```json
 {
   "count": {
@@ -384,6 +458,7 @@ Het feit dat de `where` expressie wordt geëvalueerd op basis van de **volledige
 | 2 | `tags.env` => `"prod"` | `true` |
 
 Expressies voor genest aantal zijn ook toegestaan:
+
 ```json
 {
   "count": {
@@ -417,9 +492,33 @@ Expressies voor genest aantal zijn ook toegestaan:
 | 2 | `Microsoft.Test/resourceType/objectArray[*].property` => `"value2`</br> `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `3`, `4` | 1 | `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `3` |
 | 2 | `Microsoft.Test/resourceType/objectArray[*].property` => `"value2`</br> `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `3`, `4` | 2 | `Microsoft.Test/resourceType/objectArray[*].nestedArray[*]` => `4` |
 
-### <a name="the-field-function-inside-where-conditions"></a>De `field()` functie in `where` voor waarden
+#### <a name="accessing-current-array-member-with-template-functions"></a>Huidig matrixlid openen met sjabloon functies
 
-De manier waarop `field()` functies zich gedragen wanneer binnen een `where` voor waarde is gebaseerd op de volgende concepten:
+Bij het gebruik van sjabloon functies gebruikt `current()` u de functie om toegang te krijgen tot de waarde van het huidige matrixlid of de waarden van een van de eigenschappen ervan. Als u toegang wilt krijgen tot de waarde van het huidige matrixlid, geeft u de alias op die is gedefinieerd in `count.field` of een van de onderliggende aliassen als een argument voor de `current()` functie. Bijvoorbeeld:
+
+```json
+{
+  "count": {
+    "field": "Microsoft.Test/resourceType/objectArray[*]",
+    "where": {
+        "value": "[current('Microsoft.Test/resourceType/objectArray[*].property')]",
+        "like": "value*"
+    }
+  },
+  "equals": 2
+}
+
+```
+
+| Iteratie | `current()` geretourneerde waarde | `where` Resultaat van evaluatie |
+|:---|:---|:---|
+| 1 | De waarde van `property` in het eerste lid van `objectArray[*]` : `value1` | `true` |
+| 2 | De waarde van `property` in het eerste lid van `objectArray[*]` : `value2` | `true` |
+
+#### <a name="the-field-function-inside-where-conditions"></a>De functie Field binnen where-voor waarden
+
+De `field()` functie kan ook worden gebruikt om toegang te krijgen tot de waarde van het huidige matrixlid, zolang de expressie **Count** zich niet in een **voorbereidings voorwaarde** bevindt ( `field()` functie altijd verwijzen naar de resource geëvalueerd in de **if** -voor waarde).
+Het gedrag `field()` bij het verwijzen naar de geëvalueerde matrix is gebaseerd op de volgende concepten:
 1. Matrix aliassen worden omgezet in een verzameling waarden die zijn geselecteerd in alle matrix leden.
 1. `field()` functies die verwijzen naar matrix aliassen retour neren een matrix met de geselecteerde waarden.
 1. Als u verwijst naar de alias van de getelde matrix binnen de `where` voor waarde, wordt een verzameling geretourneerd met een enkele waarde die is geselecteerd in het matrixlid dat in de huidige iteratie wordt geëvalueerd.
@@ -465,7 +564,7 @@ Daarom moet u, wanneer u de waarde van de alias van de getelde matrix met een `f
 | 2 | `Microsoft.Test/resourceType/stringArray[*]` => `"b"` </br>  `[first(field('Microsoft.Test/resourceType/stringArray[*]'))]` => `"b"` | `true` |
 | 3 | `Microsoft.Test/resourceType/stringArray[*]` => `"c"` </br>  `[first(field('Microsoft.Test/resourceType/stringArray[*]'))]` => `"c"` | `true` |
 
-Zie [aantal voor beelden](../concepts/definition-structure.md#count-examples)voor nuttige voor beelden.
+Zie voor beelden van [veld tellingen](../concepts/definition-structure.md#field-count-examples)voor nuttige voor beelden.
 
 ## <a name="modifying-arrays"></a>Matrices wijzigen
 
@@ -487,6 +586,59 @@ De [toevoeg](../concepts/effects.md#append) -en [wijzigings](../concepts/effects
 | `Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].action` | `modify` met `addOrReplace` bewerking | Azure Policy voegt de bestaande `action` eigenschap van elk matrixlid of vervangt deze. |
 
 Zie voor meer informatie de [Append-voor beelden](../concepts/effects.md#append-examples).
+
+## <a name="appendix--additional--alias-examples"></a>Bijlage-aanvullende [*] alias voorbeelden
+
+Het is raadzaam om de [expressies voor veld tellingen](#field-count-expressions) te gebruiken om te controleren of ' alle ' of ' alle ' leden van een matrix in de aanvraag inhoud voldoen aan een voor waarde. Voor sommige eenvoudige omstandigheden is het echter mogelijk om hetzelfde resultaat te krijgen met behulp van een veld accessor met een matrix alias (zoals beschreven in [de verwijzing naar de verzameling matrix leden](#referencing-the-array-members-collection)). Dit kan handig zijn in beleids regels die de limiet van expressies voor toegestane **tellingen** overschrijden. Hier volgen enkele voor beelden van algemene gebruiks voorbeelden:
+
+De voorbeeld beleidsregel voor de scenario tabel hieronder:
+
+```json
+"policyRule": {
+    "if": {
+        "allOf": [
+            {
+                "field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules",
+                "exists": "true"
+            },
+            <-- Condition (see table below) -->
+        ]
+    },
+    "then": {
+        "effect": "[parameters('effectType')]"
+    }
+}
+```
+
+De **ipRules** -matrix is als volgt voor de scenario tabel hieronder:
+
+```json
+"ipRules": [
+    {
+        "value": "127.0.0.1",
+        "action": "Allow"
+    },
+    {
+        "value": "192.168.1.1",
+        "action": "Allow"
+    }
+]
+```
+
+Voor elk voor beeld hieronder, vervangt u door `<field>` `"field": "Microsoft.Storage/storageAccounts/networkAcls.ipRules[*].value"` .
+
+De volgende resultaten zijn het resultaat van de combi natie van de voor waarde en de beleids regel voor het voor beeld en de matrix van bestaande waarden hierboven:
+
+|Voorwaarde |Resultaat | Scenario |Uitleg |
+|-|-|-|-|
+|`{<field>,"notEquals":"127.0.0.1"}` |Niets |Geen overeenkomst |Eén matrix element evalueert als onwaar (127.0.0.1! = 127.0.0.1) en een als waar (127.0.0.1! = 192.168.1.1), zodat de **notEquals** -voor waarde _False_ is en het effect niet wordt geactiveerd. |
+|`{<field>,"notEquals":"10.0.4.1"}` |Beleids effect |Geen overeenkomst |Beide matrix elementen evalueren als True (10.0.4.1! = 127.0.0.1 en 10.0.4.1! = 192.168.1.1), dus de **notEquals** -voor waarde is _True_ en het effect wordt geactiveerd. |
+|`"not":{<field>,"notEquals":"127.0.0.1" }` |Beleids effect |Een of meer overeenkomsten |Eén matrix element evalueert als onwaar (127.0.0.1! = 127.0.0.1) en een als waar (127.0.0.1! = 192.168.1.1), zodat de **notEquals** -voor waarde _False_ is. De logische operator evalueert als True (**niet** _waar_), zodat het effect wordt geactiveerd. |
+|`"not":{<field>,"notEquals":"10.0.4.1"}` |Niets |Een of meer overeenkomsten |Beide matrix elementen evalueren als True (10.0.4.1! = 127.0.0.1 en 10.0.4.1! = 192.168.1.1), dus de **notEquals** -voor waarde is _True_. De logische operator evalueert als onwaar (**niet** _waar_), dus het effect wordt niet geactiveerd. |
+|`"not":{<field>,"Equals":"127.0.0.1"}` |Beleids effect |Niet alle overeenkomsten |Eén matrix element evalueert als True (127.0.0.1 = = 127.0.0.1) en een als onwaar (127.0.0.1 = = 192.168.1.1), dus is de waarde **equals** _False_. De logische operator evalueert als True (**niet** _waar_), zodat het effect wordt geactiveerd. |
+|`"not":{<field>,"Equals":"10.0.4.1"}` |Beleids effect |Niet alle overeenkomsten |Beide matrix elementen evalueren als onwaar (10.0.4.1 = = 127.0.0.1 en 10.0.4.1 =/192.168.1.1), zodat de waarde **equals is ingesteld** op _False_. De logische operator evalueert als True (**niet** _waar_), zodat het effect wordt geactiveerd. |
+|`{<field>,"Equals":"127.0.0.1"}` |Niets |Alle overeenkomsten |Eén matrix element evalueert als True (127.0.0.1 = = 127.0.0.1) en een als onwaar (127.0.0.1 = = 192.168.1.1), dus is de waarde **equals** _False_ en wordt het effect niet geactiveerd. |
+|`{<field>,"Equals":"10.0.4.1"}` |Niets |Alle overeenkomsten |Beide matrix elementen evalueren als False (10.0.4.1 = = 127.0.0.1 en 10.0.4.1 = 192.168.1.1), dus de voor waarde **equals** is _False_ en het effect wordt niet geactiveerd. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

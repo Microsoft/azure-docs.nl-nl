@@ -11,6 +11,10 @@
       href: quickstart-template.md
     - name: PowerShell
       href: quickstart-powershell.md
+    - name: Portal
+      href: quickstart-portal.md
+    - name: CLI
+      href: quickstart-azure-cli.md
 - name: Zelfstudies
   items:
     - name: Een attestatiebeleid ontwerpen
@@ -39,7 +43,7 @@
       href: workflow.md
     - name: Auditlogboeken weergeven
       href: audit-logs.md
-- name: Verwijzingen
+- name: Referenties
   items:
     - name: Regionale beschikbaarheid
       href: 'https://azure.microsoft.com/global-infrastructure/services/?products=azure-attestation'

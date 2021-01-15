@@ -11,12 +11,12 @@ metadata:
   author: KumudD
   ms.author: kumud
   ms.date: 08/28/2019
-  ms.openlocfilehash: a6c0bee32fbeb50c1eef0a9625706bcee9e1ae17
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+  ms.openlocfilehash: 7bf639fb7bc89ec218b280bcf7d02c76c7bde277
+  ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
   ms.translationtype: HT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "82086467"
+  ms.lasthandoff: 01/14/2021
+  ms.locfileid: "98223598"
 landingContent:
 - title: Over Virtual Network
   linkLists:
@@ -45,9 +45,9 @@ landingContent:
   - linkListType: concept
     links:
     - text: Netwerkbeveiligingsgroepen
-      url: security-overview.md
+      url: ./network-security-groups-overview.md
     - text: Toepassingsbeveiligingsgroepen
-      url: security-overview.md#application-security-groups
+      url: ./network-security-groups-overview.md#application-security-groups
     - text: Service-eindpunten voor virtueel netwerk
       url: virtual-network-service-endpoints-overview.md
     - text: Veelgestelde vragen over de beveiliging van virtuele netwerken
@@ -63,7 +63,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Toegang tot Azure-resources beveiligen en isoleren
-      url: https://docs.microsoft.com/learn/modules/secure-and-isolate-with-nsg-and-service-endpoints
+      url: /learn/modules/secure-and-isolate-with-nsg-and-service-endpoints
   - linkListType: video
     links:
     - text: Uw Azure PaaS-resources veilig openen met Azure Private Link
@@ -93,7 +93,7 @@ landingContent:
   - linkListType: learn
     links:
     - text: Communiceren met peering op een virtueel netwerk
-      url: https://docs.microsoft.com/learn/modules/integrate-vnets-with-vnet-peering
+      url: /learn/modules/integrate-vnets-with-vnet-peering
 - title: Netwerkverkeer routeren
   linkLists:
   - linkListType: concept
@@ -109,7 +109,7 @@ landingContent:
   - linkListType: concept
     links:
     - text: IP-adrestypen en toewijzingsmethoden
-      url: virtual-network-ip-addresses-overview-arm.md
+      url: ./public-ip-addresses.md
   - linkListType: how-to-guide
     links:
     - text: Een openbaar IP-adres maken, wijzigen of verwijderen
@@ -151,7 +151,7 @@ landingContent:
   - linkListType: concept
     links:
     - text: IP-adrestypen en toewijzingsmethoden
-      url: virtual-network-ip-addresses-overview-arm.md
+      url: ./public-ip-addresses.md
     - text: Wat is IPv6 voor Azure Virtual Network?
       url: ipv6-overview.md
     - text: Voorvoegsel van openbaar IP-adres

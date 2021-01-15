@@ -65,7 +65,7 @@
               href: relay-hybrid-connections-node-ws-api-overview.md
     - name: Beveiligen
       items:
-        - name: IP-firewall configureren (preview)
+        - name: IP-firewall configureren
           href: ip-firewall-virtual-networks.md
         - name: Privé-eindpunten configureren
           href: private-link-service.md

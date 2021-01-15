@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 02/02/2016
 ms.author: genli
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 669b8427f13efcc55a69bc7c970b6658a6719cd8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2e798f81102017b4d34c4b1b219a9f23035b0359
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86134718"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222833"
 ---
 # <a name="configure-private-ip-addresses-for-a-virtual-machine-classic-using-powershell"></a>Privé-IP-adressen configureren voor een virtuele machine (klassiek) met behulp van Power shell
 
@@ -35,7 +35,7 @@ Dit artikel is van toepassing op het klassieke implementatiemodel. U kunt ook [e
 
 [!INCLUDE [virtual-networks-static-ip-scenario-include](../../includes/virtual-networks-static-ip-scenario-include.md)]
 
-In de onderstaande voor beelden van Power shell-opdrachten wordt verwacht dat er al een eenvoudige omgeving is gemaakt. Als u de opdrachten wilt uitvoeren zoals ze worden weer gegeven in dit document, bouwt u eerst de test omgeving op die wordt beschreven in [een VNet maken](virtual-networks-create-vnet-classic-netcfg-ps.md).
+In de onderstaande voor beelden van Power shell-opdrachten wordt verwacht dat er al een eenvoudige omgeving is gemaakt. Als u de opdrachten wilt uitvoeren zoals ze worden weer gegeven in dit document, bouwt u eerst de test omgeving op die wordt beschreven in [een VNet maken](/previous-versions/azure/virtual-network/virtual-networks-create-vnet-classic-netcfg-ps).
 
 ## <a name="how-to-verify-if-a-specific-ip-address-is-available"></a>Controleren of een specifiek IP-adres beschikbaar is
 Als u wilt controleren of het IP-adres *192.168.1.101* beschikbaar is in een VNet met de naam *TestVNet*, voert u de volgende Power shell-opdracht uit en controleert u de waarde voor *IsAvailable*:
@@ -55,7 +55,7 @@ OperationStatus      : Succeeded
 ```
 
 ## <a name="how-to-specify-a-static-private-ip-address-when-creating-a-vm"></a>Een statisch privé-IP-adres opgeven bij het maken van een VM
-Het Power shell-script hieronder maakt een nieuwe Cloud service met de naam *TestService*, haalt een installatie kopie op uit Azure, maakt een virtuele machine met de naam *DNS01* in de nieuwe Cloud service met behulp van de opgehaalde installatie kopie, stelt de virtuele machine in een subnet met de naam front- *End*en stelt *192.168.1.7* in als een statisch privé-IP-adres voor de virtuele machine:
+Het Power shell-script hieronder maakt een nieuwe Cloud service met de naam *TestService*, haalt een installatie kopie op uit Azure, maakt een virtuele machine met de naam *DNS01* in de nieuwe Cloud service met behulp van de opgehaalde installatie kopie, stelt de virtuele machine in een subnet met de naam front- *End* en stelt *192.168.1.7* in als een statisch privé-IP-adres voor de virtuele machine:
 
 ```azurepowershell
 New-AzureService -ServiceName TestService -Location "Central US"
@@ -154,7 +154,6 @@ Update-AzureVM       77d8cae2-87e6-0ead-9738-7c7dae9810cb Succeeded
 Het is raadzaam dat u het privé-IP-adres dat is toegewezen aan de virtuele machine van Azure niet statisch toewijst in het besturings systeem van een VM, tenzij dat nodig is. Als u het privé-IP-adres hand matig instelt in het besturings systeem, moet u ervoor zorgen dat het hetzelfde adres is als het privé-IP-adres dat is toegewezen aan de Azure VM, of u kunt de verbinding met de virtuele machine verliezen. U moet het openbare IP-adres dat is toegewezen aan een virtuele machine van Azure in het besturingssysteem van de virtuele machine nooit handmatig toewijzen.
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over [gereserveerde open bare IP-](virtual-networks-reserved-public-ip.md) adressen.
-* Meer informatie over [open bare IP-adressen op exemplaar niveau (ILPIP)](virtual-networks-instance-level-public-ip.md) .
-* Raadpleeg de [gereserveerd IP rest-api's](https://msdn.microsoft.com/library/azure/dn722420.aspx).
-
+* Meer informatie over [gereserveerde open bare IP-](/previous-versions/azure/virtual-network/virtual-networks-reserved-public-ip) adressen.
+* Meer informatie over [open bare IP-adressen op exemplaar niveau (ILPIP)](/previous-versions/azure/virtual-network/virtual-networks-instance-level-public-ip) .
+* Raadpleeg de [gereserveerd IP rest-api's](/previous-versions/azure/reference/dn722420(v=azure.100)).

@@ -72,8 +72,6 @@
       items:
         - name: Beheer van grote Azure HANA-exemplaren via de Azure-portal
           href: hana-li-portal.md
-        - name: BareMetal-instanties beheren via de Azure Portal
-          href: baremetal-infrastructure-portal.md
         - name: Hoge beschikbaarheid met STONITH instellen
           href: ha-setup-with-stonith.md
         - name: Back-up van het besturingssysteem voor SKU's type II
@@ -87,7 +85,7 @@
         - name: Migratie van HLI naar Azure-VM
           href: hana-large-instance-virtual-machine-migration.md
         - name: Een reservering voor SAP HANA Large Instances kopen
-          href: ../../../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+          href: ../../../cost-management-billing/reservations/prepay-hana-large-instances-reserved-capacity.md
 - name: SAP HANA in virtuele machines op Azure
   items:
     - name: Installatie van SAP HANA op Azure-VM’s
@@ -256,37 +254,37 @@
 - name: Azure AD integreren met SAP-toepassingen
   items:
     - name: Gebruikers inrichten van SAP SuccessFactors naar Active Directory
-      href: ../../../active-directory/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-successfactors-inbound-provisioning-tutorial.md
     - name: Gebruikers inrichten van SAP SuccessFactors naar Azure AD
-      href: ../../../active-directory/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-successfactors-inbound-provisioning-cloud-only-tutorial.md
     - name: Gebruikers terugschrijven van Azure AD naar SAP SuccessFactors
-      href: ../../../active-directory/saas-apps/sap-successfactors-writeback-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-successfactors-writeback-tutorial.md
     - name: Gebruikers inrichten naar SAP Cloud Platform Identity Authentication Service
-      href: ../../../active-directory/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-cloud-platform-identity-authentication-provisioning-tutorial.md
     - name: SSO configureren met SAP Cloud Platform Identity Authentication Service
-      href: ../../../active-directory/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-hana-cloud-platform-identity-authentication-tutorial.md
     - name: SSO configureren met SAP SuccessFactors
-      href: ../../../active-directory/saas-apps/successfactors-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/successfactors-tutorial.md
     - name: SSO configureren met SAP Analytics Cloud
-      href: ../../../active-directory/saas-apps/sapboc-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sapboc-tutorial.md
     - name: SSO configureren met SAP Fiori
-      href: ../../../active-directory/saas-apps/sap-fiori-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-fiori-tutorial.md
     - name: SSO configureren met SAP Qualtrics
-      href: ../../../active-directory/saas-apps/qualtrics-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/qualtrics-tutorial.md
     - name: SSO configureren met SAP Ariba
-      href: ../../../active-directory/saas-apps/ariba-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/ariba-tutorial.md
     - name: SSO configureren met SAP Concur Travel and Expense
-      href: ../../../active-directory/saas-apps/concur-travel-and-expense-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/concur-travel-and-expense-tutorial.md
     - name: SSO configureren met SAP Cloud Platform
-      href: ../../../active-directory/saas-apps/sap-hana-cloud-platform-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-hana-cloud-platform-tutorial.md
     - name: SSO configureren met SAP NetWeaver
-      href: ../../../active-directory/saas-apps/sap-netweaver-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-netweaver-tutorial.md
     - name: SSO configureren met SAP Business ByDesign
-      href: ../../../active-directory/saas-apps/sapbusinessbydesign-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sapbusinessbydesign-tutorial.md
     - name: SSO configureren met SAP HANA
-      href: ../../../active-directory/saas-apps/saphana-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/saphana-tutorial.md
     - name: SSO configureren met SAP Cloud for Customer
-      href: ../../../active-directory/saas-apps/sap-customer-cloud-tutorial.md?toc=%2fazure%2fvirtual-machines%2fworkloads%2fsap%2ftoc.json
+      href: ../../../active-directory/saas-apps/sap-customer-cloud-tutorial.md
     - name: SSO configureren met SAP Fiori Launchpad
       href: 'https://blogs.sap.com/2017/02/20/your-s4hana-environment-part-7-fiori-launchpad-saml-single-sing-on-with-azure-ad'
 - name: Azure Services-integratie met SAP

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: d5f5e1098b688fc307bae5ea3538c818cb529b0a
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: e15dce586dc4dd43cf56fd1cbb08b84ebcda1787
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97962394"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232298"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen
 
@@ -105,7 +105,7 @@ if not result:
     result = app.acquire_token_by_xxx(scopes=config["scope"])
 ```
 
-# <a name="macos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[macOS](#tab/macOS)
 
 ### <a name="in-msal-for-ios-and-macos"></a>In MSAL voor iOS en macOS
 
@@ -242,7 +242,7 @@ MSAL biedt web-UI-implementaties voor de meeste platformen, maar er zijn gevalle
 - U wilt uw toepassing testen door de gebruikers interface en een geautomatiseerde browser gebruiken die kan worden gebruikt met selenium.
 - De browser en de app die MSAL uitvoeren, bevinden zich in afzonderlijke processen.
 
-##### <a name="at-a-glance"></a>In één oogopslag
+##### <a name="at-a-glance"></a>In een oogopslag
 
 Hiervoor geeft u MSAL op `start Url` die moeten worden weer gegeven in een browser van de keuze, zodat de eind gebruiker items zoals hun gebruikers naam kan invoeren.
 Nadat de verificatie is voltooid, moet uw app teruggaan naar MSAL `end Url` . Deze bevat een code van Azure AD.
@@ -374,7 +374,7 @@ if not result:
 
 ```
 
-# <a name="macos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[macOS](#tab/macOS)
 
 ### <a name="in-msal-for-ios-and-macos"></a>In MSAL voor iOS en macOS
 
@@ -420,8 +420,8 @@ Als u zich wilt aanmelden voor een domein gebruiker op een domein of Azure AD-co
 - Geïntegreerde Windows-verificatie is alleen bruikbaar voor *federatieve en* gebruikers, dat wil zeggen, gebruikers die zijn gemaakt in Active Directory en worden ondersteund door Azure AD. Gebruikers die rechtstreeks in azure AD zijn gemaakt zonder Active Directory back-ups, ook wel *Managed* users genoemd, kunnen deze verificatie stroom niet gebruiken. Deze beperking heeft geen invloed op de gebruikers naam en het wacht woord.
 - IWA is bedoeld voor apps die zijn geschreven voor .NET Framework-, .NET core-en Universeel Windows-platform-platforms (UWP).
 - Met IWA wordt [multi-factor Authentication (MFA)](../authentication/concept-mfa-howitworks.md)niet omzeild. Als MFA is geconfigureerd, kan IWA mislukken als een MFA-Challenge vereist is, omdat MFA gebruikers interactie vereist.
-  > [!NOTE]
-  > Dit is een lastigheid. IWA is niet-interactief, maar MFA vereist een interactiviteit van de gebruiker. U kunt niet bepalen wanneer de identiteits provider MFA moet aanvragen om te worden uitgevoerd, de Tenant beheerder. Vanuit onze waarnemingen is MFA vereist wanneer u zich aanmeldt vanuit een ander land of een andere regio, wanneer u zich niet via VPN hebt verbonden met een bedrijfs netwerk, en soms zelfs wanneer er verbinding is via VPN. Er wordt geen deterministische set regels verwacht. Azure AD maakt gebruik van AI om voortdurend te leren of MFA vereist is. Terugvallen op een gebruikers prompt, zoals interactieve verificatie of IWA, als er een storing optreedt in de service.
+  
+    IWA is niet-interactief, maar MFA vereist een interactiviteit van de gebruiker. U kunt niet bepalen wanneer de identiteits provider MFA moet aanvragen om te worden uitgevoerd, de Tenant beheerder. Vanuit onze waarnemingen is MFA vereist wanneer u zich aanmeldt vanuit een ander land of een andere regio, wanneer u zich niet via VPN hebt verbonden met een bedrijfs netwerk, en soms zelfs wanneer er verbinding is via VPN. Er wordt geen deterministische set regels verwacht. Azure AD maakt gebruik van AI om voortdurend te leren of MFA vereist is. Terugvallen op een gebruikers prompt, zoals interactieve verificatie of IWA, als er een storing optreedt in de service.
 
 - De door gegeven instantie `PublicClientApplicationBuilder` moet zijn:
   - De Tenant van het formulier `https://login.microsoftonline.com/{tenant}/` , waarbij de `tenant` GUID is die de Tenant-id vertegenwoordigt of een domein dat is gekoppeld aan de Tenant.
@@ -590,7 +590,7 @@ private static IAuthenticationResult acquireTokenIwa() throws Exception {
 
 Deze stroom wordt nog niet ondersteund in MSAL python.
 
-# <a name="macos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[macOS](#tab/macOS)
 
 Deze stroom is niet van toepassing op macOS.
 
@@ -602,14 +602,13 @@ U kunt ook een token verkrijgen door de gebruikers naam en het wacht woord op te
 
 ### <a name="this-flow-isnt-recommended"></a>Deze stroom wordt niet aanbevolen
 
-Deze stroom wordt *niet aanbevolen* omdat uw toepassing een gebruiker vraagt voor het wacht woord niet veilig is. Zie [Wat is de oplossing voor het groeiende probleem van wacht woorden?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/)voor meer informatie. De voorkeurs stroom voor het op de achtergrond verkrijgen van een token op computers die lid zijn van een Windows-domein is [geïntegreerde Windows-verificatie](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Integrated-Windows-Authentication). U kunt ook de [code stroom](https://aka.ms/msal-net-device-code-flow)van het apparaat gebruiken.
+De gebruikers naam en het wacht woord worden *niet aanbevolen* omdat uw toepassing een gebruiker vraagt voor het wacht woord niet veilig is. Zie [Wat is de oplossing voor het groeiende probleem van wacht woorden?](https://news.microsoft.com/features/whats-solution-growing-problem-passwords-says-microsoft/) voor meer informatie. De voorkeurs stroom voor het op de achtergrond verkrijgen van een token op computers die lid zijn van een Windows-domein is [geïntegreerde Windows-verificatie](https://github.com/AzureAD/microsoft-authentication-library-for-dotnet/wiki/Integrated-Windows-Authentication). U kunt ook de [code stroom](https://aka.ms/msal-net-device-code-flow)van het apparaat gebruiken.
 
-> [!NOTE]
-> Het gebruik van een gebruikers naam en wacht woord is handig in sommige gevallen, zoals DevOps-scenario's. Maar als u een gebruikers naam en wacht woord wilt gebruiken in interactieve scenario's waarin u uw eigen gebruikers interface opgeeft, moet u nadenken hoe u deze kunt verlaten. Door een gebruikers naam en wacht woord op te geven, krijgt u een aantal dingen:
->
-> - Kern principes van moderne identiteit. Een wacht woord kan worden gephishd en opnieuw afgespeeld omdat een gedeeld geheim kan worden onderschept. Het is niet compatibel met een wacht woord.
-> - Gebruikers die MFA nodig hebben, kunnen zich niet aanmelden omdat er geen interactie is.
-> - Gebruikers kunnen eenmalige aanmelding (SSO) niet uitvoeren.
+Het gebruik van een gebruikers naam en wacht woord is handig in sommige gevallen, zoals DevOps-scenario's. Maar als u een gebruikers naam en wacht woord wilt gebruiken in interactieve scenario's waarin u uw eigen gebruikers interface opgeeft, moet u nadenken hoe u deze kunt verlaten. Door een gebruikers naam en wacht woord op te geven, krijgt u een aantal dingen:
+
+- Kern principes van moderne identiteit. Een wacht woord kan worden gephishd en opnieuw afgespeeld omdat een gedeeld geheim kan worden onderschept. Het is niet compatibel met een wacht woord.
+- Gebruikers die MFA nodig hebben, kunnen zich niet aanmelden omdat er geen interactie is.
+- Gebruikers kunnen eenmalige aanmelding (SSO) niet uitvoeren.
 
 ### <a name="constraints"></a>Beperkingen
 
@@ -913,7 +912,7 @@ if not result:
         config["username"], config["password"], scopes=config["scope"])
 ```
 
-# <a name="macos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[macOS](#tab/macOS)
 
 Deze stroom wordt niet ondersteund op MSAL voor macOS.
 
@@ -1146,7 +1145,7 @@ if not result:
         # and then keep calling acquire_token_by_device_flow(flow) in your own customized loop
 ```
 
-# <a name="macos"></a>[MacOS](#tab/macOS)
+# <a name="macos"></a>[macOS](#tab/macOS)
 
 Deze stroom is niet van toepassing op macOS.
 

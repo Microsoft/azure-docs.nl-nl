@@ -10,12 +10,12 @@ author: ramakoni1
 ms.author: ramakoni
 ms.reviewer: sstein,vanto
 ms.date: 01/14/2021
-ms.openlocfilehash: 7c797c7e002f40a28e4be674c125c6ea5d60a13f
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: ec61f2c67576d6e144d8d4bb7e8ecaaa157db0a9
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219059"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233369"
 ---
 # <a name="troubleshooting-connectivity-issues-and-other-errors-with-azure-sql-database-and-azure-sql-managed-instance"></a>Verbindings problemen en andere fouten oplossen met Azure SQL Database en Azure SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -42,13 +42,13 @@ De Azure-infrastructuur biedt de mogelijkheid om servers dynamisch opnieuw te co
 ### <a name="steps-to-resolve-transient-connectivity-issues"></a>Stappen voor het oplossen van problemen met de tijdelijke verbinding
 
 1. Controleer het [Microsoft Azure-service dashboard](https://azure.microsoft.com/status) voor eventuele bekende storingen die zijn opgetreden tijdens de periode waarin de fouten zijn gerapporteerd door de toepassing.
-2. Toepassingen die verbinding maken met een Cloud service, zoals Azure SQL Database, moeten periodieke herconfiguratie gebeurtenissen verwachten en proberen logica te implementeren om deze fouten af te handelen in plaats van deze te halen als toepassings fouten aan gebruikers.
+2. Toepassingen die verbinding maken met een Cloud service, zoals Azure SQL Database, moeten periodieke configuratie gebeurtenissen verwachten en nieuwe pogings logica implementeren voor het afhandelen van deze fouten in plaats van halen toepassings fouten aan gebruikers.
 3. Wanneer een Data Base de resource limieten nadert, kan dit een probleem met de tijdelijke verbinding zijn. Zie [resource limieten](resource-limits-logical-server.md#what-happens-when-database-resource-limits-are-reached).
 4. Als er verbindings problemen blijven bestaan of als de duur waarvoor uw toepassing de fout ondervindt, groter is dan 60 seconden of als er meerdere exemplaren van de fout in een bepaalde dag worden weer gegeven, kunt u een Azure-ondersteunings aanvraag indienen door **ondersteuning** te selecteren op de [ondersteunings](https://azure.microsoft.com/support/options) site van Azure.
 
 #### <a name="implementing-retry-logic"></a>Logica voor opnieuw proberen implementeren
 
-Het wordt ten zeerste aangeraden dat uw client programma logica voor nieuwe pogingen heeft, zodat er een verbinding tot stand kan worden gebracht nadat de tijdelijke fout tijd is gecorrigeerd.  U wordt aangeraden vijf seconden vóór uw eerste nieuwe poging uit te stellen. Opnieuw proberen na een vertraging die korter is dan 5 seconden Risico's voor de Cloud service. Voor elke volgende poging moet de vertraging exponentieel toenemen, tot een maximum van 60 seconden.
+Het wordt ten zeerste aangeraden dat uw client programma logica voor nieuwe pogingen heeft, zodat er een verbinding tot stand kan worden gebracht nadat de tijdelijke fout tijd is gecorrigeerd.  U wordt aangeraden vijf seconden vóór uw eerste nieuwe poging uit te stellen. Opnieuw proberen na een vertraging die korter is dan 5 seconden, is de Cloud service minder Risico's. Voor elke volgende poging moet de vertraging exponentieel toenemen, tot een maximum van 60 seconden.
 
 Zie voor code voorbeelden van de logica voor opnieuw proberen:
 
@@ -104,49 +104,46 @@ Neem contact op met de service beheerder om dit probleem op te lossen en geef ee
 De service beheerder kan doorgaans de volgende stappen gebruiken om de aanmeldings referenties toe te voegen:
 
 1. Meld u aan bij de server met behulp van SQL Server Management Studio (SSMS).
-2. Voer de volgende SQL-query uit om te controleren of de aanmeldings naam is uitgeschakeld:
+2. Voer de volgende SQL-query uit in de hoofd database om te controleren of de aanmeldings naam is uitgeschakeld:
 
    ```sql
-   SELECT name, is_disabled FROM sys.sql_logins
+   SELECT name, is_disabled FROM sys.sql_logins;
    ```
 
 3. Als de bijbehorende naam is uitgeschakeld, schakelt u deze in met behulp van de volgende instructie:
 
    ```sql
-   Alter login <User name> enable
+   ALTER LOGIN <User name> ENABLE;
    ```
 
-4. Als de gebruikers naam voor SQL-aanmelding niet bestaat, maakt u deze door de volgende stappen uit te voeren:
-
-   1. In SSMS dubbelklikt u op **beveiliging** om het uit te vouwen.
-   2. Klik met de rechter muisknop op **aanmeldingen** en selecteer vervolgens **nieuwe aanmelding**.
-   3. Bewerk en voer de volgende SQL-query uit in het gegenereerde script met tijdelijke aanduidingen:
+4. Als de gebruikers naam voor SQL-aanmelding niet bestaat, bewerkt u de volgende SQL-query en voert u deze uit om een nieuwe SQL-aanmelding te maken:
 
    ```sql
    CREATE LOGIN <SQL_login_name, sysname, login_name>
-   WITH PASSWORD = '<password, sysname, Change_Password>'
+   WITH PASSWORD = '<password, sysname, Change_Password>';
    GO
    ```
 
-5. Dubbel klik op **Data Base**.
+5. Vouw in SSMS Objectverkenner **data bases** uit.
 6. Selecteer de data base waaraan u de gebruiker toestemming wilt verlenen.
-7. Dubbel klik op **beveiliging**.
-8. Klik met de rechter muisknop op **gebruikers** en selecteer vervolgens **nieuwe gebruiker**.
-9. Bewerk en voer de volgende SQL-query uit in het gegenereerde script met tijdelijke aanduidingen:
+7. Klik met de rechter muisknop op **beveiliging** en selecteer vervolgens **Nieuw**, **gebruiker**.
+8. Bewerk en voer de volgende SQL-query uit in het gegenereerde script met tijdelijke aanduidingen:
 
    ```sql
    CREATE USER <user_name, sysname, user_name>
    FOR LOGIN <login_name, sysname, login_name>
-   WITH DEFAULT_SCHEMA = <default_schema, sysname, dbo>
+   WITH DEFAULT_SCHEMA = <default_schema, sysname, dbo>;
    GO
-   -- Add user to the database owner role
 
-   EXEC sp_addrolemember N'db_owner', N'<user_name, sysname, user_name>'
+   -- Add user to the database owner role
+   EXEC sp_addrolemember N'db_owner', N'<user_name, sysname, user_name>';
    GO
    ```
 
+   U kunt ook gebruiken `sp_addrolemember` om specifieke gebruikers toe te wijzen aan specifieke database rollen.
+
    > [!NOTE]
-   > U kunt ook gebruiken `sp_addrolemember` om specifieke gebruikers toe te wijzen aan specifieke database rollen.
+   > In Azure SQL Database moet u rekening houden met de nieuwere syntaxis van [ALTER Role](/sql/t-sql/statements/alter-role-transact-sql) voor het beheren van het lidmaatschap van de databaserol.  
 
 Zie [data bases en aanmeldingen beheren in Azure SQL database](./logins-create-manage.md)voor meer informatie.
 
@@ -183,7 +180,7 @@ Ga op een van de volgende manieren te werk om dit probleem op te lossen:
 - Controleer of er langlopende query's zijn.
 
   > [!NOTE]
-  > Dit is een minimale aanpak waarmee het probleem mogelijk niet kan worden opgelost. Voor gedetailleerde informatie over het blok keren van het oplossen van query's raadpleegt u [problemen met Azure SQL-blok keringen begrijpen en oplossen](understand-resolve-blocking.md).
+  > Dit is een minimale aanpak waarmee het probleem mogelijk niet kan worden opgelost. Zie voor meer gedetailleerde informatie over het oplossen van langdurige query's en het [oplossen van problemen](understand-resolve-blocking.md)met het blok keren van Azure SQL database.
 
 1. Voer de volgende SQL-query uit om de weer gave [sys.dm_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-requests-transact-sql) te controleren om blokkerings aanvragen weer te geven:
 
@@ -191,12 +188,15 @@ Ga op een van de volgende manieren te werk om dit probleem op te lossen:
    SELECT * FROM sys.dm_exec_requests;
    ```
 
-2. Bepaal de **invoer buffer** voor de hoofd blok kering.
-3. Stem de hoofd blok-query af.
+1. Bepaal de **invoer buffer** voor de hoofd blok kering met behulp van de [sys.dm_exec_input_buffer](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-input-buffer-transact-sql) Dynamic Management function en de session_id van de conflicterende query, bijvoorbeeld:
 
-   Voor een uitgebreide probleemoplossings procedure, Zie [is mijn query wordt in de Cloud verfijnd?](/archive/blogs/sqlblog/is-my-query-running-fine-in-the-cloud). 
+   ```sql 
+   SELECT * FROM sys.dm_exec_input_buffer (100,0);
+   ```
 
-Als de data base consequent de limiet heeft bereikt ondanks het blok keren van blokkerende en langlopende query's, kunt u overwegen om een upgrade uit te voeren naar een editie met meer bronnen- [edities](https://azure.microsoft.com/pricing/details/sql-database/).
+1. Stem de hoofd blok-query af.
+
+Als de data base consequent de limiet heeft bereikt ondanks het blok keren van het adresseren en langlopende query's, kunt u overwegen om een upgrade uit te voeren naar een editie met meer bronnen- [edities](https://azure.microsoft.com/pricing/details/sql-database/).
 
 Zie  [SQL database resource limieten voor servers](./resource-limits-logical-server.md)voor meer informatie over database limieten.
 
@@ -254,12 +254,18 @@ Als u deze fout herhaaldelijk ondervindt, kunt u proberen om het probleem op te 
    SELECT * FROM sys.dm_exec_requests;
    ```
 
-2. Bepaal de invoer buffer voor de langlopende query.
+2. Bepaal de **invoer buffer** voor de hoofd blok kering met behulp van de [sys.dm_exec_input_buffer](/sql/relational-databases/system-dynamic-management-views/sys-dm-exec-input-buffer-transact-sql) Dynamic Management function en de session_id van de conflicterende query, bijvoorbeeld:
+
+   ```sql 
+   SELECT * FROM sys.dm_exec_input_buffer (100,0);
+   ```
+
 3. De query afstemmen.
 
-U kunt ook uw query's batcheren. Zie voor meer informatie over batch verwerking [batch verwerking gebruiken om de prestaties van SQL database-toepassingen te verbeteren](../performance-improve-use-batching.md).
+    > [!Note]
+    > Voor meer informatie over het oplossen van problemen met blok keringen in Azure SQL Database raadpleegt u [Azure SQL database problemen met het blok keren begrijpen en oplossen](understand-resolve-blocking.md).
 
-Voor een uitgebreide probleemoplossings procedure, Zie [is mijn query wordt in de Cloud verfijnd?](/archive/blogs/sqlblog/is-my-query-running-fine-in-the-cloud).
+U kunt ook uw query's batcheren. Zie voor meer informatie over batch verwerking [batch verwerking gebruiken om de prestaties van SQL database-toepassingen te verbeteren](../performance-improve-use-batching.md).
 
 ### <a name="error-40551-the-session-has-been-terminated-because-of-excessive-tempdb-usage"></a>Fout 40551: de sessie is beëindigd vanwege het overmatige gebruik van TEMPDB
 
@@ -297,7 +303,7 @@ Voor een uitgebreide probleemoplossings procedure, Zie [is mijn query wordt in d
 | Foutcode | Ernst | Beschrijving |
 | ---:| ---:|:--- |
 | 10928 |20 |Resource-ID:% d. De% s-limiet voor de data base is% d en is bereikt. Zie [SQL database resource limieten voor één en gepoolde data bases](resource-limits-logical-server.md)voor meer informatie.<br/><br/>De resource-ID geeft de resource aan die de limiet heeft bereikt. Voor worker-threads, de resource-ID = 1. Voor sessies, de resource-ID = 2.<br/><br/>Zie voor meer informatie over deze fout en hoe u deze kunt oplossen: <br/>&bull;&nbsp; [Logische SQL Server-Resource limieten](resource-limits-logical-server.md)<br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor afzonderlijke data bases](service-tiers-dtu.md)<br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor elastische Pools](resource-limits-dtu-elastic-pools.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor afzonderlijke data bases](resource-limits-vcore-single-databases.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor elastische Pools](resource-limits-vcore-elastic-pools.md)<br/>&bull;&nbsp; [Resource limieten voor Azure SQL Managed instance](../managed-instance/resource-limits.md). |
-| 10929 |20 |Resource-ID:% d. De minimale garantie van% s is% d, de maximum limiet is% d en het huidige gebruik van de data base is% d. De server is momenteel echter bezet om aanvragen te ondersteunen die groter zijn dan% d voor deze data base. De resource-ID geeft de resource aan die de limiet heeft bereikt. Voor worker-threads, de resource-ID = 1. Voor sessies, de resource-ID = 2. Zie voor meer informatie: <br/>&bull;&nbsp; [Logische SQL Server-Resource limieten](resource-limits-logical-server.md)<br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor afzonderlijke data bases](service-tiers-dtu.md)<br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor elastische Pools](resource-limits-dtu-elastic-pools.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor afzonderlijke data bases](resource-limits-vcore-single-databases.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor elastische Pools](resource-limits-vcore-elastic-pools.md)<br/>&bull;&nbsp; [Resource limieten voor Azure SQL Managed instance](../managed-instance/resource-limits.md). <br/>Probeer het later opnieuw. |
+| 10929 |20 |Resource-ID:% d. De minimale garantie van% s is% d, de maximum limiet is% d en het huidige gebruik van de data base is% d. De server is momenteel echter bezet om aanvragen te ondersteunen die groter zijn dan% d voor deze data base. De resource-ID geeft de resource aan die de limiet heeft bereikt. Voor worker-threads, de resource-ID = 1. Voor sessies, de resource-ID = 2. Zie voor meer informatie: <br/>&bull;&nbsp; [Logische SQL Server-Resource limieten](resource-limits-logical-server.md)<br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor afzonderlijke data bases](service-tiers-dtu.md)<br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor elastische Pools](resource-limits-dtu-elastic-pools.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor afzonderlijke data bases](resource-limits-vcore-single-databases.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor elastische Pools](resource-limits-vcore-elastic-pools.md)<br/>&bull;&nbsp; [Resource limieten voor Azure SQL Managed instance](../managed-instance/resource-limits.md). <br/>Als dat niet het geval is, probeert u het later opnieuw. |
 | 40544 |20 |De data base heeft het quotum voor de grootte bereikt. Partitioneer of verwijder gegevens, verwijder indexen of Raadpleeg de documentatie voor mogelijke oplossingen. Zie voor het schalen van de Data Base [afzonderlijke database resources schalen](single-database-scale.md) en [bronnen voor elastische Pools schalen](elastic-pool-scale.md).|
 | 40549 |16 |De sessie is beëindigd omdat u een langlopende trans actie hebt. Probeer uw trans actie te verkorten. Zie voor meer informatie over batch verwerking [batch verwerking gebruiken om de prestaties van SQL database-toepassingen te verbeteren](../performance-improve-use-batching.md).|
 | 40550 |16 |De sessie is beëindigd omdat er te veel vergren delingen zijn verkregen. Probeer minder rijen in één trans actie te lezen of te wijzigen. Zie voor meer informatie over batch verwerking [batch verwerking gebruiken om de prestaties van SQL database-toepassingen te verbeteren](../performance-improve-use-batching.md).|
@@ -311,8 +317,8 @@ De volgende fouten zijn gerelateerd aan het maken en gebruiken van elastische Po
 
 | Foutcode | Ernst | Beschrijving | Corrigerende actie |
 |:--- |:--- |:--- |:--- |
-| 1132 | 17 |De elastische pool heeft de opslag limiet bereikt. Het opslag gebruik voor de elastische pool mag niet groter zijn dan (% d) MB. Poging tot het schrijven van gegevens naar een Data Base als de opslag limiet van de elastische pool is bereikt. Zie voor informatie over resource limieten: <br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor elastische Pools](resource-limits-dtu-elastic-pools.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor elastische Pools](resource-limits-vcore-elastic-pools.md). <br/> |U kunt overwegen de Dtu's van en/of opslag ruimte toe te voegen aan de elastische pool, indien mogelijk om de opslag limiet te verhogen, de opslag die wordt gebruikt door afzonderlijke data bases in de elastische pool te verminderen of data bases uit de elastische pool te verwijderen. Zie [elastische pool resources schalen](elastic-pool-scale.md)voor elastische Pools schalen.|
-| 10929 | 16 |De minimale garantie van% s is% d, de maximum limiet is% d en het huidige gebruik van de data base is% d. De server is momenteel echter bezet om aanvragen te ondersteunen die groter zijn dan% d voor deze data base. Zie voor informatie over resource limieten: <br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor elastische Pools](resource-limits-dtu-elastic-pools.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor elastische Pools](resource-limits-vcore-elastic-pools.md). <br/> Probeer het later opnieuw. DTU/vCore min per data base; DTU/vCore Max per data base. Het totale aantal gelijktijdige werk rollen (aanvragen) voor alle data bases in de elastische pool heeft geprobeerd de limiet van de groep te overschrijden. |U kunt eventueel de Dtu's of vCores van de elastische pool verg Roten, zodat de werknemers limiet kan worden verhoogd of data bases uit de elastische pool kunnen worden verwijderd. |
+| 1132 | 17 |De elastische pool heeft de opslag limiet bereikt. Het opslag gebruik voor de elastische pool mag niet groter zijn dan (% d) MB. Poging tot het schrijven van gegevens naar een Data Base als de opslag limiet van de elastische pool is bereikt. Zie voor informatie over resource limieten: <br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor elastische Pools](resource-limits-dtu-elastic-pools.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor elastische Pools](resource-limits-vcore-elastic-pools.md). <br/> |U kunt overwegen de Dtu's van en/of opslag ruimte toe te voegen aan de elastische pool, indien mogelijk om de opslag limiet te verhogen, de opslag die wordt gebruikt door afzonderlijke data bases in de elastische pool te verminderen of data bases uit de elastische pool te verwijderen. Zie [elastische pool resources schalen](elastic-pool-scale.md)voor elastische Pools schalen. Zie [Bestands ruimte voor data bases beheren in Azure SQL database](file-space-manage.md)voor meer informatie over het verwijderen van ongebruikte ruimte uit data bases.|
+| 10929 | 16 |De minimale garantie van% s is% d, de maximum limiet is% d en het huidige gebruik van de data base is% d. De server is momenteel echter bezet om aanvragen te ondersteunen die groter zijn dan% d voor deze data base. Zie voor informatie over resource limieten: <br/>&bull;&nbsp; [Op DTU gebaseerde limieten voor elastische Pools](resource-limits-dtu-elastic-pools.md)<br/>&bull;&nbsp; [limieten op basis van vCore voor elastische Pools](resource-limits-vcore-elastic-pools.md). <br/> Als dat niet het geval is, probeert u het later opnieuw. DTU/vCore min per data base; DTU/vCore Max per data base. Het totale aantal gelijktijdige werk rollen (aanvragen) voor alle data bases in de elastische pool heeft geprobeerd de limiet van de groep te overschrijden. |U kunt eventueel de Dtu's of vCores van de elastische pool verg Roten, zodat de werknemers limiet kan worden verhoogd of data bases uit de elastische pool kunnen worden verwijderd. |
 | 40844 | 16 |De data base% ls op server% LS is een% ls Edition-data base in een elastische pool en kan geen doorlopende Kopieer relatie hebben.  |N.v.t. |
 | 40857 | 16 |Kan de elastische groep niet vinden voor de server:% ls, naam van elastische groep:% ls. Opgegeven elastische groep bestaat niet in de opgegeven server. | Geef een geldige naam op voor een elastische pool. |
 | 40858 | 16 |Elastische pool% ls bestaat al op de server:% ls. Opgegeven elastische groep bestaat al in de opgegeven server. | Geef een nieuwe naam voor de elastische groep op. |

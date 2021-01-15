@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: bc1ae4bc2cf64c3e2f996709c086eb23cb8b8385
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 61bd23c74fd7960317dff17175b355b473cd6dc7
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602594"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233828"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -35,7 +35,7 @@ U kunt dit probleem oplossen door de installatie kopie op te halen uit Azure Mar
 - [Windows-installatiekopieën](azure-vm-create-using-approved-base.md)
 
 > [!Note]
-> Als u een Linux-basis installatie kopie gebruikt die niet afkomstig is van Azure Marketplace, kunt u de eerste partitie met 2048 KB verrekenen. Hierdoor kan de niet-opgemaakte ruimte worden gebruikt voor het toevoegen van nieuwe facturerings gegevens en kan Azure door gaan met het publiceren van uw VM naar Azure Marketplace.  
+> Als u een Linux-basis installatie kopie gebruikt die niet afkomstig is van Azure Marketplace, moet u ervoor zorgen dat de eerste 2048 sectoren (elke sector van 512 bytes) op de VHD leeg zijn, zodat Azure doorgaat met het publiceren van uw VM naar Azure Marketplace.  
 
 ## <a name="vm-extension-failure"></a>VM-extensie fout
 
@@ -328,14 +328,14 @@ Raadpleeg de volgende tabel voor problemen die zich voordoen wanneer u de VM-ins
 |6|Voorwaardelijke HTTP-header|De SAS-URL is ongeldig.|Haal de juiste SAS-URL op.|
 |7|Ongeldige naam voor VHD|Controleer of er speciale tekens, zoals een procent teken `%` of aanhalings tekens `"` , aanwezig zijn in de naam van de virtuele harde schijf.|Wijzig de naam van het VHD-bestand door de speciale tekens te verwijderen.|
 
-## <a name="first-mb-2048-kb-partition-linux-only"></a>Eerste MB (2048 KB)-partitie (alleen Linux)
+## <a name="first-1mb-2048-sectors-each-sector-of-512-bytes-partition-linux-only"></a>Eerste 1MB (2048 sectoren, elke sector van 512 bytes) partitie (alleen Linux)
 
-Wanneer u de VHD verzendt, moet u ervoor zorgen dat de eerste 2048 KB van de VHD leeg is. Als dat niet het geval is, mislukt de aanvraag.
+Wanneer u de VHD verzendt, moet u ervoor zorgen dat de eerste 2048 sectoren (1MB) van de VHD leeg zijn. Als dat niet het geval is, mislukt de aanvraag. Houd er rekening mee dat dit van toepassing is op de opstart-en besturingssysteem schijf en niet op extra gegevens schijven.
 
 >[!NOTE]
->Voor bepaalde speciale installatie kopieën, zoals die zijn gebouwd op basis van Azure Windows Base-installatie kopieën die zijn gemaakt met Azure Marketplace, wordt gecontroleerd op een facturerings code en wordt de MB-partitie genegeerd als de facturerings code aanwezig is en overeenkomt met onze interne beschik bare waarden.
+>Voor bepaalde speciale installatie kopieën, zoals die zijn gebouwd op basis van Azure Windows Base-installatie kopieën die zijn gemaakt via Azure Marketplace of zorg ervoor dat de eerste 1MB (2048 sectoren) van de VHD leeg is. 
 
-### <a name="create-a-first-mb-2048-kb-partition-on-an-empty-vhd"></a>Een eerste MB-partitie (2048 KB) maken op een lege VHD
+### <a name="create-a-first-1mb-2048-sectors-each-sector-of-512-bytes-partition-on-an-empty-vhd"></a>Een eerste 1MB (2048-sectoren, elke sector van 512 bytes) maken op een lege VHD
 
 Deze stappen zijn alleen van toepassing op Linux.
 
@@ -386,7 +386,7 @@ Deze stappen zijn alleen van toepassing op Linux.
    1. Voer 2048 in als _eerste sector_ waarde. U kunt de _laatste sector_ als de standaard waarde laten staan.
 
       >[!IMPORTANT]
-      >Alle bestaande gegevens worden gewist tot een waarde van 2048 KB. Maak een back-up van de VHD voordat u een nieuwe partitie maakt.
+      >Alle bestaande gegevens worden gewist tot een hoeveelheid van 2048 sectoren (elke sector van 512 bytes). Maak een back-up van de VHD voordat u een nieuwe partitie maakt.
 
       ![Scherm opname van de opdracht regel van de putty-client met de opdrachten en uitvoer voor gegevens die zijn gewist.](./media/create-vm/vm-certification-issues-solutions-22.png)
 
@@ -400,7 +400,7 @@ Deze stappen zijn alleen van toepassing op Linux.
 
 1. Ontkoppel de VHD van de VM en verwijder de virtuele machine.
 
-### <a name="create-a-first-mb-2048-kb-partition-by-moving-existing-data-on-vhd"></a>Een eerste MB-partitie (2048 KB) maken door bestaande gegevens op de VHD te verplaatsen
+### <a name="create-a-first-mb-2048-sectors-each-sector-of-512-bytes-partition-by-moving-existing-data-on-vhd"></a>Maak een eerste MB (2048 sectoren, elke sector van 512 bytes) door bestaande gegevens op de VHD te verplaatsen
 
 Deze stappen zijn alleen van toepassing op Linux.
 

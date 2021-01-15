@@ -1,14 +1,14 @@
 ---
 title: Een klant onboarden in Azure Lighthouse
 description: Meer informatie over hoe u een klant kunt opsturen naar Azure Lighthouse, zodat de resources toegankelijk zijn en kunnen worden beheerd via uw eigen Tenant met behulp van Azure delegated resource management.
-ms.date: 12/15/2020
+ms.date: 01/14/2021
 ms.topic: how-to
-ms.openlocfilehash: 023b44a77cb38a14df8aa6a885ff137c02942061
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 1a7c8fc85819b2c34b5c64dc83cb908b7bee3c41
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516127"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232672"
 ---
 # <a name="onboard-a-customer-to-azure-lighthouse"></a>Een klant onboarden in Azure Lighthouse
 
@@ -62,14 +62,17 @@ az account show
 
 ## <a name="define-roles-and-permissions"></a>Rollen en machtigingen definiëren
 
-Als service provider wilt u mogelijk meerdere taken uitvoeren voor één klant, waarbij verschillende toegangs rechten voor verschillende bereiken zijn vereist. U kunt zoveel autorisaties definiëren als u nodig hebt om de juiste [ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md) toe te wijzen aan gebruikers in uw Tenant.
+Als service provider wilt u mogelijk meerdere taken uitvoeren voor één klant, waarbij verschillende toegangs rechten voor verschillende bereiken zijn vereist. U kunt zoveel autorisaties definiëren als u nodig hebt om de juiste [ingebouwde rollen van Azure](../../role-based-access-control/built-in-roles.md)toe te wijzen. Elke autorisatie bevat een **principalId** die verwijst naar een Azure AD-gebruiker,-groep of Service-Principal in de beherende Tenant.
 
-Om het beheer te vereenvoudigen, kunt u het beste Azure AD-gebruikers groepen gebruiken voor elke rol. Dit biedt u de flexibiliteit om afzonderlijke gebruikers toe te voegen aan of te verwijderen uit de groep die toegang heeft, zodat u het onboarding-proces niet hoeft te herhalen om gebruikers wijzigingen door te voeren. U kunt rollen toewijzen aan een service-principal die nuttig kan zijn voor automatiserings scenario's.
+> [!NOTE]
+> Tenzij expliciet opgegeven, verwijzingen naar een ' gebruiker ' in de Azure Lighthouse-documentatie kunnen van toepassing zijn op een Azure AD-gebruiker,-groep of-Service-Principal in een autorisatie.
+
+Om het beheer gemakkelijker te maken, kunt u het beste Azure AD-gebruikers groepen voor elke rol gebruiken, in plaats van afzonderlijke gebruikers. Dit biedt u de flexibiliteit om afzonderlijke gebruikers toe te voegen aan of te verwijderen uit de groep die toegang heeft, zodat u het onboarding-proces niet hoeft te herhalen om gebruikers wijzigingen door te voeren. U kunt ook rollen toewijzen aan een service-principal die nuttig kan zijn voor automatiserings scenario's.
 
 > [!IMPORTANT]
 > Als u machtigingen wilt toevoegen voor een Azure AD-groep, moet u het **groeps type** instellen op **beveiliging**. Deze optie wordt geselecteerd wanneer de groep wordt gemaakt. Zie [Een basisgroep maken en leden toevoegen met behulp van Azure Active Directory](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md) voor meer informatie.
 
-Bij het definiëren van uw autorisatie moet u het principe van de minimale bevoegdheid volgen, zodat gebruikers alleen over de benodigde machtigingen beschikken om hun taak te volt ooien. Zie voor richt lijnen en informatie over ondersteunde rollen [tenants, gebruikers en rollen in azure Lighthouse-scenario's](../concepts/tenants-users-roles.md).
+Bij het definiëren van uw autorisatie moet u het principe van de minimale bevoegdheid volgen, zodat gebruikers alleen over de benodigde machtigingen beschikken om hun taak te volt ooien. Zie [tenants, gebruikers en rollen in azure Lighthouse-scenario's](../concepts/tenants-users-roles.md)voor meer informatie over ondersteunde rollen en aanbevolen procedures.
 
 Als u autorisaties wilt definiëren, moet u de ID-waarden weten voor elke gebruiker, gebruikers groep of Service-Principal in de Tenant van de service provider waaraan u toegang wilt verlenen. U hebt ook de roldefinitie-ID nodig voor elke ingebouwde rol die u wilt toewijzen. Als u deze niet al hebt, kunt u deze ophalen door de onderstaande opdrachten uit te voeren in de Tenant van de service provider.
 
@@ -195,7 +198,7 @@ In het volgende voor beeld ziet u een gewijzigde **delegatedResourceManagement.p
 }
 ```
 
-De laatste autorisatie in bovenstaand voor beeld voegt een **principalId** toe aan de rol voor gebruikers toegang (18d7d88d-d35e-4fb5-a5c3-7773c20a72d9). Wanneer u deze rol toewijst, moet u de eigenschap **delegatedRoleDefinitionIds** en een of meer ingebouwde rollen toevoegen. De gebruiker die in deze autorisatie is gemaakt, kan deze ingebouwde rollen toewijzen aan [beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md) in de Tenant van de klant, wat vereist is om [beleid te implementeren dat kan worden hersteld](deploy-policy-remediation.md).  De gebruiker kan ook ondersteunings incidenten maken.  Geen enkele andere machtigingen die normaal gesp roken zijn gekoppeld aan de rol beheerder van gebruikers toegang, zijn van toepassing op deze gebruiker.
+De laatste autorisatie in bovenstaand voor beeld voegt een **principalId** toe aan de rol voor gebruikers toegang (18d7d88d-d35e-4fb5-a5c3-7773c20a72d9). Wanneer u deze rol toewijst, moet u de eigenschap **delegatedRoleDefinitionIds** en een of meer ondersteunde ingebouwde Azure-functies toevoegen. De gebruiker die in deze autorisatie is gemaakt, kan deze rollen toewijzen aan [beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md) in de Tenant van de klant, wat vereist is om [beleid te implementeren dat kan worden hersteld](deploy-policy-remediation.md).  De gebruiker kan ook ondersteunings incidenten maken. Geen enkele andere machtigingen die normaal gesp roken zijn gekoppeld aan de rol beheerder van gebruikers toegang, zijn van toepassing op deze **principalId**.
 
 ## <a name="deploy-the-azure-resource-manager-templates"></a>De Azure Resource Manager-sjablonen implementeren
 
@@ -278,7 +281,7 @@ In de Tenant van de klant:
 3. Bevestig dat u de abonnement/abonnementen kunt zien met de naam van de aanbieding die u in de Resource Manager-sjabloon hebt opgenomen.
 
 > [!NOTE]
-> Het kan enkele minuten duren voordat de implementatie is voltooid voordat de updates in de Azure Portal worden weer gegeven.
+> Het kan tot vijf tien minuten duren nadat de implementatie is voltooid voordat de updates in de Azure Portal worden weer gegeven. U kunt de updates binnenkort weer geven als u uw Azure Resource Manager-token bijwerkt door de browser te vernieuwen, in-en uitloggen of een nieuw token aan te vragen.
 
 ### <a name="powershell"></a>PowerShell
 
@@ -312,6 +315,7 @@ Als uw klant niet kan worden uitgevoerd of als uw gebruikers problemen hebben me
 - De resource provider **micro soft. ManagedServices** moet zijn geregistreerd voor het gedelegeerde abonnement. Dit gebeurt automatisch tijdens de implementatie, maar als dat niet het geval is, kunt u [het hand matig registreren](../../azure-resource-manager/management/resource-providers-and-types.md#register-resource-provider).
 - Autorisaties mogen geen gebruikers met de ingebouwde rol van [eigenaar](../../role-based-access-control/built-in-roles.md#owner) of ingebouwde rollen met [DataActions](../../role-based-access-control/role-definitions.md#dataactions)bevatten.
 - Groepen moeten worden gemaakt met [**groeps type**](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md#group-types) ingesteld op **beveiliging** en niet **Microsoft 365**.
+- Er kan een extra vertraging optreden voordat de toegang is ingeschakeld voor [geneste groepen](../..//active-directory/fundamentals/active-directory-groups-membership-azure-portal.md).
 - Gebruikers die resources moeten weer geven in de Azure Portal, moeten beschikken over de rol van [lezer](../../role-based-access-control/built-in-roles.md#reader) (of een andere ingebouwde rol, waaronder lezers toegang).
 
 ## <a name="next-steps"></a>Volgende stappen

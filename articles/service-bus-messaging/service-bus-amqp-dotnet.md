@@ -3,16 +3,19 @@ title: Azure Service Bus met .NET en AMQP 1,0 | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u Azure Service Bus kunt gebruiken vanuit een .NET-toepassing met behulp van AMQP (Advanced Messa ging Queuing protocol).
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 7a67ab74efc700e16f5b1689e9cc1f459ecf14bd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0d6d7d01a56d2e7068f9c4ccb8ec505914a31ecf
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88067100"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233930"
 ---
 # <a name="use-service-bus-from-net-with-amqp-10"></a>Gebruik Service Bus van .NET met AMQP 1,0
 
 AMQP 1,0-ondersteuning is beschikbaar in de Service Bus pakket versie 2,1 of hoger. U kunt ervoor zorgen dat u de nieuwste versie hebt door de Service Bus bits te downloaden van [NuGet][NuGet].
+
+> [!NOTE]
+> U kunt Advanced Message Queueing Protocol (AMQP) of Service Bus Messa ging Protocol (SBMP) gebruiken met de .NET-bibliotheek voor Service Bus. AMQP is het standaard protocol dat door de .NET-bibliotheek wordt gebruikt. U wordt aangeraden het AMQP-Protocol (dit is de standaard instelling) te gebruiken en dit niet te overschrijven. 
 
 ## <a name="configure-net-applications-to-use-amqp-10"></a>.NET-toepassingen configureren voor het gebruik van AMQP 1,0
 
@@ -41,6 +44,14 @@ De waarde van de `Microsoft.ServiceBus.ConnectionString` instelling is de Servic
 Waar `namespace` en `SAS key` worden opgehaald van de [Azure Portal][Azure portal] wanneer u een service bus naam ruimte maakt. Zie [een service bus naam ruimte maken met behulp van de Azure Portal][Create a Service Bus namespace using the Azure portal]voor meer informatie.
 
 Wanneer u AMQP gebruikt, voegt u de connection string toe met `;TransportType=Amqp` . Deze notatie geeft de client bibliotheek de opdracht om verbinding te maken met Service Bus met behulp van AMQP 1,0.
+
+### <a name="amqp-over-websockets"></a>AMQP via WebSockets
+Als u AMQP over websockets wilt gebruiken, stelt `TransportType` u in het Connection String in op `AmqpWebSockets` . Bijvoorbeeld: `Endpoint=sb://[namespace].servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=[SAS key];TransportType=AmqpWebSockets`. 
+
+Als u .NET Micro soft. Azure. ServiceBus-bibliotheek gebruikt, stelt u de [ServiceBusConnection. transport type](/dotnet/api/microsoft.azure.servicebus.servicebusconnection.transporttype) in op AmqpWebSockets van [transport type Enum](/dotnet/api/microsoft.azure.servicebus.transporttype).
+
+Als u .NET Azure. Messa ging. ServiceBus-bibliotheek gebruikt, stelt u de [ServiceBusClient. transport type](/dotnet/api/azure.messaging.servicebus.servicebusclient.transporttype) in op AmqpWebSockets van [ServiceBusTransportType Enum](/dotnet/api/azure.messaging.servicebus.servicebustransporttype).
+
 
 ## <a name="message-serialization"></a>Bericht-serialisatie
 
@@ -75,7 +86,7 @@ Gebruik voor het vereenvoudigen van de interoperabiliteit met non-.NET-clients a
 | URI |Beschrijving van de teken reeks (Zie de volgende tabel) |Waarde AMQP |
 | Date time offset |Lange beschrijving (Zie de volgende tabel) |Waarde AMQP |
 | TimeSpan |Lange beschrijving (Zie het volgende) |Waarde AMQP |
-| Streamen |binair |AMQP-gegevens (mogelijk meerdere). De gegevens secties bevatten de onbewerkte bytes die zijn gelezen van het Stream-object. |
+| Stroom |binair |AMQP-gegevens (mogelijk meerdere). De gegevens secties bevatten de onbewerkte bytes die zijn gelezen van het Stream-object. |
 | Ander object |binair |AMQP-gegevens (mogelijk meerdere). Bevat het geserialiseerde binaire bestand van het object dat gebruikmaakt van de DataContractSerializer of een serialisatiefunctie die door de toepassing wordt geleverd. |
 
 | .NET-type | Type beschrijving van toegewezen AMQP | Notities |

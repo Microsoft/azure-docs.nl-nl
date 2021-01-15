@@ -12,12 +12,12 @@ ms.date: 1/06/2021
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: 1debeab6e420d9021ebba1cecb2d551cf21c9fe2
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
+ms.openlocfilehash: 6b5c328503a28c6eb92c2c20ca54d4d3d80c9a15
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98028468"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232468"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Procedure: optionele claims voor uw app opgeven
 
@@ -45,11 +45,11 @@ Hoewel optionele claims worden ondersteund in de indelings tokens v 1.0 en v 2.0
 Hieronder vindt u de set optionele claims die standaard beschikbaar zijn voor het gebruik van toepassingen. Zie [Directory-extensies](#configuring-directory-extension-optional-claims)hieronder om aangepaste optionele claims voor uw toepassing toe te voegen. Wanneer claims aan het **toegangs token** worden toegevoegd, zijn de claims van toepassing op toegangs tokens die zijn aangevraagd *voor* de toepassing (een web-API) en niet claims die worden aangevraagd *door* de toepassing. Ongeacht hoe de client toegang heeft tot uw API, worden de juiste gegevens weer gegeven in het toegangs token dat wordt gebruikt voor verificatie op basis van uw API.
 
 > [!NOTE]
-> De meeste van deze claims kunnen worden opgenomen in JWTs voor de tokens v 1.0 en v 2.0, maar niet voor SAML-tokens, tenzij anders vermeld in de kolom token type. Consumenten accounts ondersteunen een subset van deze claims, die zijn gemarkeerd in de kolom ' gebruiker type '.  Veel van de vermelde claims zijn niet van toepassing op gebruikers van consumenten (ze hebben geen Tenant, hebben geen `tenant_ctry` waarde).
+>De meeste van deze claims kunnen worden opgenomen in JWTs voor de tokens v 1.0 en v 2.0, maar niet voor SAML-tokens, tenzij anders vermeld in de kolom token type. Consumenten accounts ondersteunen een subset van deze claims, die zijn gemarkeerd in de kolom ' gebruiker type '.  Veel van de vermelde claims zijn niet van toepassing op gebruikers van consumenten (ze hebben geen Tenant, hebben geen `tenant_ctry` waarde).
 
 **Tabel 2: v 1.0 en v 2.0 optionele claim sets**
 
-| Naam                       |  Beschrijving   | Token type | Gebruikers type | Opmerkingen  |
+| Naam                       |  Beschrijving   | Token type | Gebruikers type | Notities  |
 |----------------------------|----------------|------------|-----------|--------|
 | `auth_time`                | Tijdstip waarop de laatste verificatie van de gebruiker is gestart. Zie OpenID Connect Connect spec.| JWT        |           |  |
 | `tenant_region_scope`      | De regio van de resource-Tenant | JWT        |           | |
@@ -148,13 +148,13 @@ U kunt optionele claims voor uw toepassing configureren via de gebruikers interf
 [![Optionele claims configureren in de gebruikers interface](./media/active-directory-optional-claims/token-configuration.png)](./media/active-directory-optional-claims/token-configuration.png)
 
 1. Selecteer onder **beheren** de optie **token configuratie**.
+   - De Blade **configuratie** van de gebruikers interface-optie token is niet beschikbaar voor apps die zijn geregistreerd in een Azure AD B2C-Tenant die kan worden geconfigureerd door het toepassings manifest te wijzigen. Zie [claims toevoegen en gebruikers invoer aanpassen met behulp van aangepast beleid in azure Active Directory B2C](../../active-directory-b2c/configure-user-input.md) voor meer informatie.  
+
 1. Selecteer **optionele claim toevoegen**.
 1. Selecteer het token type dat u wilt configureren.
 1. Selecteer de optionele claims die u wilt toevoegen.
 1. Selecteer **Toevoegen**.
 
-> [!NOTE]
-> De Blade **configuratie** van de gebruikers interface-optie token is niet beschikbaar voor apps die momenteel zijn geregistreerd in een Azure AD B2C-Tenant. Voor toepassingen die zijn geregistreerd in een B2C-Tenant, kunnen de optionele claims worden geconfigureerd door het toepassings manifest te wijzigen. Zie [claims toevoegen en gebruikers invoer aanpassen met behulp van aangepast beleid in azure Active Directory B2C](../../active-directory-b2c/configure-user-input.md) voor meer informatie. 
 
 **Optionele claims configureren via het toepassings manifest:**
 
@@ -227,8 +227,7 @@ Naast de optionele standaard claim sets, kunt u ook tokens configureren voor het
 
 De extensies schema en open worden niet ondersteund door optionele claims, alleen de AAD-Graph stijl Directory-extensies. Deze functie is handig voor het koppelen van aanvullende gebruikers informatie die uw app kan gebruiken, bijvoorbeeld een extra id of een belang rijke configuratie optie die de gebruiker heeft ingesteld. Zie de onderkant van deze pagina voor een voor beeld.
 
-> [!NOTE]
-> Directory schema-uitbrei dingen zijn een Azure AD-functie. Als uw toepassings manifest een aangepaste extensie aanvraagt en een MSA-gebruiker zich aanmeldt bij uw app, worden deze uitbrei dingen niet geretourneerd.
+Directory schema-uitbrei dingen zijn een Azure AD-functie. Als uw toepassings manifest een aangepaste extensie aanvraagt en een MSA-gebruiker zich aanmeldt bij uw app, worden deze uitbrei dingen niet geretourneerd.
 
 ### <a name="directory-extension-formatting"></a>Opmaak van Directory-extensies
 
@@ -290,8 +289,7 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
    - accessToken voor het OAuth-toegangs token
    - Saml2Token voor SAML-tokens.
 
-   > [!NOTE]
-   > Het type Saml2Token is van toepassing op zowel SAML 1.1-als SAML 2.0-indelings tokens.
+   Het type Saml2Token is van toepassing op zowel SAML 1.1-als SAML 2.0-indelings tokens.
 
    Wijzig voor elk relevant token type de OptionalClaims-sectie in het manifest. Het OptionalClaims-schema is als volgt:
 
@@ -315,8 +313,7 @@ In deze sectie worden de configuratie opties beschreven onder optionele claims v
 
    Voor sommige toepassingen is groeps informatie over de gebruiker in de rol claim vereist.  Als u het claim type van een groepclaim wilt wijzigen in een claim, voegt u ' emit_as_roles ' toe aan extra eigenschappen.  De groeps waarden worden verzonden in de rol claim.
 
-   > [!NOTE]
-   > Als emit_as_roles wordt gebruikt, worden de toepassings rollen die zijn geconfigureerd dat de gebruiker is toegewezen, niet weer gegeven in de claim.
+   Als emit_as_roles wordt gebruikt, worden de toepassings rollen die zijn geconfigureerd dat de gebruiker is toegewezen, niet weer gegeven in de claim.
 
 **Voorbeelden:**
 

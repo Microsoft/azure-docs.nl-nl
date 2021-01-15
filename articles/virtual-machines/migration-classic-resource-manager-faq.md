@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: conceptual
 ms.date: 02/06/2020
 ms.author: tagore
-ms.openlocfilehash: 24e52f517f46de06fef8aa52e889185826c20d44
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: abf4e4621a7e42829032923a67d21c5322f432ec
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498392"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232723"
 ---
 # <a name="frequently-asked-questions-about-classic-to-azure-resource-manager-migration"></a>Veelgestelde vragen over de migratie van klassiek naar Azure Resource Manager
 
@@ -82,11 +82,11 @@ Tijdens de migratie worden de klassieke resources Resource Manager-resources. Da
 
 Wanneer u een virtuele machine van de klassieke naar de Resource Manager-modus verplaatst, worden back-ups die zijn gemaakt vóór de migratie, niet gemigreerd naar de zojuist gemigreerde Resource Manager-VM. Als u echter uw back-ups van klassieke Vm's wilt houden, volgt u deze stappen vóór de migratie. 
 
-1. Ga in de Recovery Services kluis naar het tabblad **beveiligde items** en selecteer de virtuele machine. 
-2. Klik op Beveiliging stoppen. Laat de optie *Gekoppelde back-upgegevens verwijderen***uitgeschakeld**.
+1. Ga in de Recovery Services kluis naar de Blade **Back-upitems** en selecteer de virtuele machine. 
+2. Klik op back-up stoppen. Selecteer ' back-upgegevens behouden ' in de vervolg keuzelijst.
 
 > [!NOTE]
-> De kosten voor back-upexemplaar worden in rekening gebracht tot u de gegevens behoudt. Back-upkopieën worden verwijderd volgens een Bewaar termijn. De laatste back-up wordt echter altijd bewaard totdat u de back-upgegevens expliciet verwijdert. U wordt aangeraden uw Bewaar termijn van de virtuele machine te controleren en ' back-upgegevens verwijderen ' te activeren voor het beveiligde item in de kluis wanneer de Bewaar termijn is overschreden. 
+> Met deze optie worden alle toekomstige back-uptaken gestopt om uw VM te beveiligen. Azure Backup-Service behoudt echter de herstel punten waarvan een back-up is gemaakt.  U moet betalen om de herstel punten in de kluis te blijven (Zie [Azure backup prijzen](https://azure.microsoft.com/pricing/details/backup/) voor meer informatie). U kunt de VM zo nodig herstellen. Als u besluit de beveiliging van de virtuele machine te hervatten, kunt u de *back-* upoptie voor hervatten gebruiken.
 >
 >
 

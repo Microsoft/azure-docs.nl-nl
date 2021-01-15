@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 4/26/2019
 ms.author: steveesp
 ms.reviewer: kumud, mareat
-ms.openlocfilehash: b11bdf9b82352c15b7f7236168494f32fe4a4f9f
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 280b3cbef8307691b0d50c4a26f6dca18b7fb65b
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98221507"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233862"
 ---
 # <a name="virtual-machine-network-bandwidth"></a>Bandbreedte van virtuele machines
 
@@ -52,15 +52,13 @@ Voor gegevens overdracht tussen eind punten is het maken van verschillende strom
 
 ![Aantal flows voor TCP-conversatie via een doorstuur apparaat](media/virtual-machine-network-throughput/flow-count-through-network-virtual-appliance.png)
 
-## <a name="flow-limits-and-recommendations"></a>Stroom limieten en aanbevelingen
+## <a name="flow-limits-and-active-connections-recommendations"></a>Aanbevelingen voor stroom limieten en actieve verbindingen
 
-Vandaag ondersteunt de Azure-netwerk stack 250.000 totale netwerk stromen met goede prestaties voor Vm's met meer dan 8 CPU-kernen en het totale aantal stromen in 100.000 met goede prestaties voor Vm's met minder dan 8 CPU-kernen. In de meeste gevallen worden de netwerk prestaties op de juiste wijze gedegradeerd voor extra stromen tot een vaste limiet van 500.000 totale stromen, 250.000 inkomend en 250.000 uitgaand, waarna de extra stromen worden verwijderd.
+De Azure-netwerk stack ondersteunt vandaag 1 miljoen stromen (500.000 binnenkomend en 500.000 uitgaand) voor een virtuele machine. Het totale aantal actieve verbindingen dat door een virtuele machine in verschillende scenario's kan worden verwerkt, is als volgt.
+- Vm's die deel uitmaken van VNET, kunnen 500.000 **_actieve verbindingen_* _ verwerken voor alle VM-grootten met 500.000 _*_actieve stromen in elke richting_*_.  
+- Vm's met virtuele netwerk apparaten (Nva's) zoals gateway, proxy, firewall kunnen 250.000 _*_actieve verbindingen_*_ met 500.000 _ *_actieve stromen in elke richting_* afhandelen. als gevolg hiervan wordt het door sturen en extra nieuwe stroom maken voor nieuwe verbinding ingesteld op de volgende hop, zoals weer gegeven in het bovenstaande diagram. 
 
-| Prestatieniveau | Vm's met <8 CPU-kernen | Vm's met 8 en CPU-kernen |
-| ----------------- | --------------------- | --------------------- |
-|<b>Goede prestaties</b>|100.000 stromen |250.000 stromen|
-|<b>Verminderde prestaties</b>|Boven 100.000 stromen|Boven 250.000 stromen|
-|<b>Stroom limiet</b>|500.000 stromen|500.000 stromen|
+Zodra deze limiet is bereikt, worden extra verbindingen verwijderd. Het instellen en het beëindigen van de verbinding kan ook invloed hebben op de netwerk prestaties als de verbinding tot stand brengen en het beëindigen van de CPU met pakket verwerkings routines. We raden u aan werk belastingen te laten voldoen aan de verwachte verkeers patronen en de werk belasting adequaat uit te breiden zodat deze overeenkomen met uw prestatie behoeften.
 
 Er zijn metrische gegevens beschikbaar in [Azure monitor](../azure-monitor/platform/metrics-supported.md#microsoftcomputevirtualmachines) om het aantal netwerk stromen en de frequentie van het maken van de stroom op uw virtuele machine-of VMSS-instanties bij te houden.
 

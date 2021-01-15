@@ -7,12 +7,12 @@ ms.service: virtual-network
 ms.topic: article
 ms.date: 03/26/2020
 ms.author: rambala
-ms.openlocfilehash: e0e5806ec59cd2d75111db213d8511488d043eec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 835be5b867826d75732c9482743ad6a4ca2900e7
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80982851"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98231839"
 ---
 # <a name="working-remotely-using-azure-networking-services"></a>Op afstand werken met Azure-netwerk services
 
@@ -86,15 +86,15 @@ In de volgende artikelen wordt beschreven hoe u verschillende Azure-netwerk func
 | [Is het lastig om aan de slag te kunnen? Hier vindt u meer informatie over Azure Virtual WAN](../virtual-wan/work-remotely-support.md) | Gebruik Azure Virtual WAN om de externe connectiviteits behoeften van uw organisatie te verhelpen.|
 | [Ondersteuning voor intensief verkeer in Application Gateway](../application-gateway/high-traffic-support.md) | Gebruik Application Gateway met Web Application firewall (WAF) voor een schaal bare en veilige manier om verkeer naar uw webtoepassingen te beheren. |
 | [Aandachtspunten voor het virtuele netwerk apparaat (NVA) voor extern werk](../vpn-gateway/nva-work-remotely-support.md)|Lees de richt lijnen over het gebruik van Nva's in azure om oplossingen voor externe toegang te bieden. |
-| [Overgang naar het OpenVPN-protocol of IKEv2 van SSTP](https://go.microsoft.com/fwlink/?linkid=2124112) | De limiet van de 128 gelijktijdige verbinding van SSTP oplossen door over te stappen op het OpenVPN-protocol of IKEv2.|
+| [Overgang naar het OpenVPN-protocol of IKEv2 van SSTP](../vpn-gateway/ikev2-openvpn-from-sstp.md) | De limiet van de 128 gelijktijdige verbinding van SSTP oplossen door over te stappen op het OpenVPN-protocol of IKEv2.|
 | [Extern werken met Azure Bastion](../bastion/work-remotely-support.md) | Een veilige en naadloze RDP/SSH-verbinding bieden met virtuele machines in het virtuele Azure-netwerk, direct in het Azure Portal, zonder gebruik te maken van een openbaar IP-adres. |
 | [Azure ExpressRoute gebruiken om hybride connectiviteit te maken ter ondersteuning van externe gebruikers](../expressroute/work-remotely-support.md) | Gebruik ExpressRoute voor hybride connectiviteit zodat gebruikers in uw organisatie op afstand kunnen werken.|
 | [Azure Firewall ondersteuning voor externe werk](../firewall/remote-work-support.md)|Beveilig uw Azure Virtual Network-Resources met behulp van Azure Firewall. |
 
 <!--Link References-->
-[VNet-peer]: https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview
-[S2S]: https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal
-[ExR]: https://docs.microsoft.com/azure/expressroute/expressroute-introduction
-[ExR-eco]: https://docs.microsoft.com/azure/expressroute/expressroute-locations
-[ExR-D]: https://docs.microsoft.com/azure/expressroute/expressroute-erdirect-about
-[Az-OCI]: https://docs.microsoft.com/azure/virtual-machines/workloads/oracle/configure-azure-oci-networking
+[VNet-peer]: ../virtual-network/virtual-network-peering-overview.md
+[S2S]: ../vpn-gateway/tutorial-site-to-site-portal.md
+[ExR]: ../expressroute/expressroute-introduction.md
+[ExR-eco]: ../expressroute/expressroute-locations.md
+[ExR-D]: ../expressroute/expressroute-erdirect-about.md
+[Az-OCI]: ../virtual-machines/workloads/oracle/configure-azure-oci-networking.md

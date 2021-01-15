@@ -12,27 +12,27 @@ ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/05/2018
-ms.openlocfilehash: cffa5677c5531f3887639c049998523d7d07586a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5c53eb65f31e32d3edebcbf31d48d166f5464a92
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79455559"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233352"
 ---
 # <a name="check-resource-usage-against-limits"></a>Resourcegebruik controleren op basis van limieten
 
 In dit artikel leert u hoe u het nummer kunt zien van elk netwerk bron type dat u in uw abonnement hebt geïmplementeerd en wat uw [abonnements limieten](../azure-resource-manager/management/azure-subscription-service-limits.md?toc=%2fazure%2fnetworking%2ftoc.json#networking-limits) zijn. De mogelijkheid om het gebruik van resources op basis van limieten te bekijken is handig voor het bijhouden van het huidige gebruik en het plannen van toekomstig gebruik. U kunt de [Azure-Portal](#azure-portal), [Power shell](#powershell)of de [Azure cli](#azure-cli) gebruiken om het gebruik bij te houden.
 
-## <a name="azure-portal"></a>Azure-portal
+## <a name="azure-portal"></a>Azure Portal
 
 1. Meld u aan bij Azure [Portal](https://portal.azure.com).
 2. Selecteer boven aan de linkerbovenhoek van de Azure Portal **alle services**.
 3. Voer *abonnementen* in het vak **filter** in. Wanneer **Abonnementen** in de zoekresultaten wordt weergegeven, selecteert u deze optie.
 4. Selecteer de naam van het abonnement waarvoor u gebruiks gegevens wilt bekijken.
-5. Selecteer onder **instellingen**de optie **gebruik en quotum**.
+5. Selecteer onder **instellingen** de optie **gebruik en quotum**.
 6. U kunt de volgende opties selecteren:
    - **Resource typen**: u kunt alle resource typen selecteren of de specifieke typen resources selecteren die u wilt weer geven.
-   - **Providers**: u kunt alle resource providers selecteren of **Compute**, **netwerk**of **Storage**selecteren.
+   - **Providers**: u kunt alle resource providers selecteren of **Compute**, **netwerk** of **Storage** selecteren.
    - **Locaties**: u kunt alle Azure-locaties selecteren of specifieke locaties selecteren.
    - U kunt selecteren om alle resources weer te geven, of alleen de resources waarvoor ten minste één is geïmplementeerd.
 
@@ -48,7 +48,7 @@ In dit artikel leert u hoe u het nummer kunt zien van elk netwerk bron type dat 
 
 U kunt de opdrachten uitvoeren die volgen in de [Azure Cloud shell](https://shell.azure.com/powershell), of door Power shell uit te voeren vanaf uw computer. De Azure Cloud Shell is een gratis interactieve shell. In deze shell zijn algemene Azure-hulpprogramma's vooraf geïnstalleerd en geconfigureerd voor gebruik met uw account. Als u Power shell vanaf uw computer uitvoert, hebt u de Azure PowerShell module versie 1.0.0 of hoger nodig. Voer uit `Get-Module -ListAvailable Az` op uw computer om de geïnstalleerde versie te vinden. Als u PowerShell wilt upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps). Als u Power shell lokaal uitvoert, moet u ook uitvoeren `Login-AzAccount` om u aan te melden bij Azure.
 
-Bekijk uw gebruik op basis van limieten met [Get-AzNetworkUsage](https://docs.microsoft.com/powershell/module/az.network/get-aznetworkusage). In het volgende voor beeld wordt het gebruik opgehaald voor resources waarbij ten minste één resource wordt geïmplementeerd op de locatie VS-Oost:
+Bekijk uw gebruik op basis van limieten met [Get-AzNetworkUsage](/powershell/module/az.network/get-aznetworkusage). In het volgende voor beeld wordt het gebruik opgehaald voor resources waarbij ten minste één resource wordt geïmplementeerd op de locatie VS-Oost:
 
 ```azurepowershell-interactive
 Get-AzNetworkUsage `

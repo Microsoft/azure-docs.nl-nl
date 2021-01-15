@@ -13,12 +13,12 @@ ms.date: 01/04/2021
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40, content-perf, FY21Q1, contperf-fy21q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 0b3c2f74edff661326e97da7b06860914468c43b
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: ec925ce165c1de98fe920381e1b51e3388c1e4ad
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98059344"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232400"
 ---
 # <a name="configurable-token-lifetimes-in-microsoft-identity-platform-preview"></a>Configureer bare levens duur van tokens in micro soft Identity platform (preview-versie)
 
@@ -101,8 +101,7 @@ Vertrouwelijke clients zijn toepassingen die een client wachtwoord (geheim) veil
 
 Open bare clients kunnen een client wachtwoord (geheim) niet veilig opslaan. Een iOS/Android-app kan bijvoorbeeld geen geheim van de resource-eigenaar maken, dus wordt het beschouwd als een open bare client. U kunt beleids regels instellen op resources om te voor komen dat de vernieuwings tokens van open bare clients ouder dan een opgegeven periode een nieuw token paar voor toegang/vernieuwing verkrijgen. U doet dit door de eigenschap voor het [vernieuwings token (max. inactieve tijd](#refresh-token-max-inactive-time) ) te gebruiken `MaxInactiveTime` . U kunt ook beleid gebruiken om een periode in te stellen waarboven de vernieuwings tokens niet langer worden geaccepteerd. Als u dit wilt doen, gebruikt u de eigenschap maximum leeftijd van het token voor het vernieuwen van de [enkelvoudige factor](#single-factor-session-token-max-age) of het [token met meerdere factoren](#multi-factor-refresh-token-max-age) . U kunt de levens duur van een vernieuwings token aanpassen om te bepalen wanneer en hoe vaak de gebruiker de referenties opnieuw moet invoeren, in plaats van dat deze wordt geauthenticeerd wanneer een open bare client toepassing wordt gebruikt.
 
-> [!NOTE]
-> De maximale leeftijds eigenschap is de tijds duur dat één token kan worden gebruikt. 
+De maximale leeftijds eigenschap is de tijds duur dat één token kan worden gebruikt. 
 
 ### <a name="single-sign-on-session-tokens"></a>Sessie tokens voor eenmalige aanmelding
 Wanneer een gebruiker zich verifieert met het micro soft Identity-platform, wordt één aanmeldings sessie (SSO) tot stand gebracht met de browser van de gebruiker en het micro soft Identity-platform. De SSO-token, in de vorm van een cookie, vertegenwoordigt deze sessie. Het SSO-sessie token is niet gebonden aan een specifieke bron/client toepassing. SSO-sessie tokens kunnen worden ingetrokken en de geldigheid ervan wordt gecontroleerd elke keer dat ze worden gebruikt.

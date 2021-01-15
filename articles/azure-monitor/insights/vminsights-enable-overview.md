@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 12/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: ce90ab160696e2c38d917a391eecb0d51a31282f
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 655a146ccde9c75629d0a991a6a3aafa91f40764
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740586"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233964"
 ---
 # <a name="enable-azure-monitor-for-vms-overview"></a>Overzicht Azure Monitor voor VM's inschakelen
 
@@ -44,13 +44,16 @@ Azure Monitor voor VM's is beschikbaar voor servers met Azure Arc ingeschakeld i
 
 | Verbonden bron | Ondersteund | Beschrijving |
 |:--|:--|:--|
-| Windows-agents | Ja | Naast de [log Analytics-agent voor Windows](../platform/log-analytics-agent.md), hebben Windows-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](../platform/agents-overview.md#supported-operating-systems)voor meer informatie. |
-| Linux-agents | Ja | Naast de [log Analytics-agent voor Linux](../platform/log-analytics-agent.md)hebben Linux-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](#supported-operating-systems)voor meer informatie. |
-| Beheergroep System Center Operations Manager | Nee | |
+| Windows-agents | Yes | Naast de [log Analytics-agent voor Windows](../platform/log-analytics-agent.md), hebben Windows-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](../platform/agents-overview.md#supported-operating-systems)voor meer informatie. |
+| Linux-agents | Yes | Naast de [log Analytics-agent voor Linux](../platform/log-analytics-agent.md)hebben Linux-agents de afhankelijkheids agent nodig. Zie [ondersteunde besturings systemen](#supported-operating-systems)voor meer informatie. |
+| Beheergroep System Center Operations Manager | No | |
 
 ## <a name="supported-operating-systems"></a>Ondersteunde besturingssystemen
 
 Azure Monitor voor VM's ondersteunt elk besturings systeem dat ondersteuning biedt voor de Log Analytics agent en de afhankelijkheids agent. Zie [overzicht van Azure monitor agents ](../platform/agents-overview.md#supported-operating-systems) voor een volledige lijst.
+
+> [!IMPORTANT]
+> De functie gast status Azure Monitor voor VM's heeft meer beperkte ondersteuning voor het besturings systeem in de open bare preview-versie. Zie [Azure monitor voor VM's gast status inschakelen (preview)](vminsights-health-enable.md) voor een gedetailleerde lijst.
 
 Raadpleeg de volgende lijst met overwegingen voor Linux-ondersteuning van de afhankelijkheids agent die Azure Monitor voor VM's ondersteunt:
 
@@ -63,7 +66,7 @@ Raadpleeg de volgende lijst met overwegingen voor Linux-ondersteuning van de afh
 ## <a name="log-analytics-workspace"></a>Log Analytics-werkruimte
 Voor Azure Monitor voor VM's is een Log Analytics-werk ruimte vereist. Zie [log Analytics werk ruimte configureren voor Azure monitor voor VM's](vminsights-configure-workspace.md) voor details en vereisten van deze werk ruimte.
 ## <a name="agents"></a>Agents
-Azure Monitor voor VM's moeten de volgende twee agents zijn geïnstalleerd op elke virtuele machine of schaalset voor virtuele machines die moet worden bewaakt. Het installeren van deze agents en het verbinden ervan met de werk ruimte is de enige vereiste voor het onboarden van de resource.
+Azure Monitor voor VM's moeten de volgende twee agents zijn geïnstalleerd op elke virtuele machine of schaalset voor virtuele machines die moet worden bewaakt. Als u de resource wilt vrijgeven, installeert u deze agents en verbindt u deze met de werk ruimte.  Zie [netwerk vereisten](../platform/log-analytics-agent.md#network-requirements) voor de netwerk vereisten voor deze agents.
 
 - [Log Analytics-agent](../platform/log-analytics-agent.md). Verzamelt gebeurtenissen en prestatie gegevens van de virtuele machine of virtuele-machine schaal sets en levert deze aan de Log Analytics-werk ruimte. Voor de implementatie methoden voor de Log Analytics agent op Azure-resources wordt de VM-extensie voor [Windows](../../virtual-machines/extensions/oms-windows.md) en [Linux](../../virtual-machines/extensions/oms-linux.md)gebruikt.
 - Afhankelijkheids agent. Verzamelt gedetecteerde gegevens over processen die worden uitgevoerd op de virtuele machine en de afhankelijkheden van het externe proces, die worden gebruikt door de [kaart functie in azure monitor voor VM's](vminsights-maps.md). De afhankelijkheids agent is afhankelijk van de Log Analytics-agent om de bijbehorende gegevens te leveren aan Azure Monitor. Voor de implementatie methoden voor de afhankelijkheids agent op Azure-resources wordt de VM-extensie voor [Windows](../../virtual-machines/extensions/agent-dependency-windows.md) en [Linux](../../virtual-machines/extensions/agent-dependency-linux.md)gebruikt.

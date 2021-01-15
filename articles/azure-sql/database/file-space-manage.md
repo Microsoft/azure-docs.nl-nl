@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: oslake
 ms.author: moslake
 ms.reviewer: jrasnick, sstein
-ms.date: 03/12/2019
-ms.openlocfilehash: 3a46e47d6e12d52113bf63342c84a58ca98743d0
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 12/22/2020
+ms.openlocfilehash: 08cab806d6ad8b75821a92994dde0fa07db8b960
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92789604"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233590"
 ---
 # <a name="manage-file-space-for-databases-in-azure-sql-database"></a>Bestands ruimte voor data bases in Azure SQL Database beheren
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -84,7 +84,7 @@ Wijzig de volgende query om de hoeveelheid gebruikte database gegevens ruimte te
 SELECT TOP 1 storage_in_megabytes AS DatabaseDataSpaceUsedInMB
 FROM sys.resource_stats
 WHERE database_name = 'db1'
-ORDER BY end_time DESC
+ORDER BY end_time DESC;
 ```
 
 ### <a name="database-data-space-allocated-and-unused-allocated-space"></a>Toegewezen en ongebruikte toegewezen ruimte voor database gegevens
@@ -98,7 +98,7 @@ SELECT SUM(size/128.0) AS DatabaseDataSpaceAllocatedInMB,
 SUM(size/128.0 - CAST(FILEPROPERTY(name, 'SpaceUsed') AS int)/128.0) AS DatabaseDataSpaceAllocatedUnusedInMB
 FROM sys.database_files
 GROUP BY type_desc
-HAVING type_desc = 'ROWS'
+HAVING type_desc = 'ROWS';
 ```
 
 ### <a name="database-data-max-size"></a>Maximale grootte van database gegevens
@@ -108,7 +108,7 @@ Wijzig de volgende query om de maximale grootte van de database gegevens te reto
 ```sql
 -- Connect to database
 -- Database data max size in bytes
-SELECT DATABASEPROPERTYEX('db1', 'MaxSizeInBytes') AS DatabaseDataMaxSizeInBytes
+SELECT DATABASEPROPERTYEX('db1', 'MaxSizeInBytes') AS DatabaseDataMaxSizeInBytes;
 ```
 
 ## <a name="understanding-types-of-storage-space-for-an-elastic-pool"></a>Wat is de typen opslag ruimte voor een elastische pool?
@@ -121,6 +121,9 @@ Meer informatie over de volgende hoeveel heden voor opslag ruimte zijn belang ri
 |**Toegewezen gegevens ruimte**|De som van de gegevens ruimte die wordt toegewezen door alle data bases in de elastische pool.||
 |**Toegewezen gegevens ruimte, maar niet gebruikt**|Het verschil tussen de hoeveelheid toegewezen gegevens ruimte en de gegevens ruimte die wordt gebruikt door alle data bases in de elastische pool.|Deze hoeveelheid vertegenwoordigt de maximale hoeveelheid ruimte die is toegewezen voor de elastische pool en die kan worden vrijgemaakt door database gegevens bestanden te verkleinen.|
 |**Maximale grootte van gegevens**|De maximale hoeveelheid gegevens ruimte die door de elastische pool kan worden gebruikt voor alle data bases.|De toegewezen ruimte voor de elastische pool mag niet groter zijn dan de maximale grootte van de elastische pool.  Als dit probleem zich voordoet, kan de toegewezen ruimte die niet wordt gebruikt, worden vrijgemaakt door de gegevens bestanden van de data base te verkleinen.|
+
+> [!NOTE]
+> Het fout bericht ' de elastische pool heeft de opslag limiet bereikt ' geeft aan dat aan de database objecten voldoende ruimte is toegewezen om te voldoen aan de opslag limiet van de elastische groep, maar er mogelijk ongebruikte ruimte is in de toewijzing van de gegevens ruimte. U kunt de opslag limiet van de elastische pool verg Roten of als oplossing voor de korte termijn, waarbij u gegevens ruimte vrijmaakt met behulp van de sectie [**ongebruikte toegewezen ruimte opnieuw claimen**](#reclaim-unused-allocated-space) hieronder. U moet ook rekening houden met de potentiële negatieve invloed op de prestaties van het verkleinen van database bestanden, zie de sectie [**indexen opnieuw samen stellen**](#rebuild-indexes) hieronder.
 
 ## <a name="query-an-elastic-pool-for-storage-space-information"></a>Een elastische pool doorzoeken op informatie over de opslag ruimte
 
@@ -136,7 +139,7 @@ Wijzig de volgende query om de hoeveelheid gebruikt gegevens ruimte van elastisc
 SELECT TOP 1 avg_storage_percent / 100.0 * elastic_pool_storage_limit_mb AS ElasticPoolDataSpaceUsedInMB
 FROM sys.elastic_pool_resource_stats
 WHERE elastic_pool_name = 'ep1'
-ORDER BY end_time DESC
+ORDER BY end_time DESC;
 ```
 
 ### <a name="elastic-pool-data-space-allocated-and-unused-allocated-space"></a>Gegevens ruimte voor elastische Pools toegewezen en ongebruikte toegewezen ruimte
@@ -187,7 +190,7 @@ De volgende scherm afbeelding is een voor beeld van de uitvoer van het script:
 
 ### <a name="elastic-pool-data-max-size"></a>Maximale grootte van elastische groeps gegevens
 
-Wijzig de volgende T-SQL-query om de maximale grootte van de elastische pool gegevens te retour neren.  De eenheden van het query resultaat zijn in MB.
+Wijzig de volgende T-SQL-query om de laatste vastgelegde maximale grootte van elastische Pools-gegevens te retour neren.  De eenheden van het query resultaat zijn in MB.
 
 ```sql
 -- Connect to master
@@ -195,13 +198,13 @@ Wijzig de volgende T-SQL-query om de maximale grootte van de elastische pool geg
 SELECT TOP 1 elastic_pool_storage_limit_mb AS ElasticPoolMaxSizeInMB
 FROM sys.elastic_pool_resource_stats
 WHERE elastic_pool_name = 'ep1'
-ORDER BY end_time DESC
+ORDER BY end_time DESC;
 ```
 
 ## <a name="reclaim-unused-allocated-space"></a>Ongebruikte toegewezen ruimte opnieuw claimen
 
 > [!NOTE]
-> Deze opdracht kan de prestaties van de data base beïnvloeden terwijl deze wordt uitgevoerd, en indien mogelijk moet worden uitgevoerd tijdens peri Oden van weinig gebruik.
+> Het verkleinen van opdrachten de prestaties van de data base tijdens het uitvoeren en indien mogelijk moet worden uitgevoerd tijdens peri Oden van weinig gebruik.
 
 ### <a name="dbcc-shrink"></a>DBCC Shrink
 
@@ -209,24 +212,28 @@ Zodra de data bases zijn geïdentificeerd voor het vrijmaken van ongebruikte toe
 
 ```sql
 -- Shrink database data space allocated.
-DBCC SHRINKDATABASE (N'db1')
+DBCC SHRINKDATABASE (N'db1');
 ```
 
-Deze opdracht kan de prestaties van de data base beïnvloeden terwijl deze wordt uitgevoerd, en indien mogelijk moet worden uitgevoerd tijdens peri Oden van weinig gebruik.  
+Het verkleinen van opdrachten de prestaties van de data base tijdens het uitvoeren en indien mogelijk moet worden uitgevoerd tijdens peri Oden van weinig gebruik.  
 
-Zie [SHRINKDATABASE](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql)voor meer informatie over deze opdracht.
+U moet ook rekening houden met de potentiële negatieve invloed op de prestaties van het verkleinen van database bestanden, zie de sectie [**indexen opnieuw samen stellen**](#rebuild-indexes) hieronder.
+
+Zie [SHRINKDATABASE](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql.md)voor meer informatie over deze opdracht.
 
 ### <a name="auto-shrink"></a>Automatisch verkleinen
 
 U kunt automatisch verkleinen ook inschakelen voor een Data Base.  Automatisch verkleinen vermindert de complexiteit van bestands beheer en is minder belang rijk voor de prestaties van de data base dan `SHRINKDATABASE` of `SHRINKFILE` .  Automatisch verkleinen kan bijzonder nuttig zijn voor het beheren van elastische Pools met veel data bases.  Automatisch verkleinen kan echter minder effectief zijn bij het vrijmaken van bestands ruimte dan `SHRINKDATABASE` en `SHRINKFILE` .
+Automatisch verkleinen is standaard uitgeschakeld, zoals aanbevolen voor de meeste data bases. Zie [overwegingen voor AUTO_SHRINK](/troubleshoot/sql/admin/considerations-autogrow-autoshrink#considerations-for-auto_shrink)voor meer informatie.
+
 Als u automatisch verkleinen wilt inschakelen, wijzigt u de naam van de data base in de volgende opdracht.
 
 ```sql
 -- Enable auto-shrink for the database.
-ALTER DATABASE [db1] SET AUTO_SHRINK ON
+ALTER DATABASE [db1] SET AUTO_SHRINK ON;
 ```
 
-Zie [Data Base set](/sql/t-sql/statements/alter-database-transact-sql-set-options?view=azuresqldb-current) Options (Engelstalig) voor meer informatie over deze opdracht.
+Zie [Data Base set](/sql/t-sql/statements/alter-database-transact-sql-set-options) Options (Engelstalig) voor meer informatie over deze opdracht.
 
 ### <a name="rebuild-indexes"></a>Indexen opnieuw samen stellen
 
@@ -239,5 +246,5 @@ Nadat database gegevensbestanden zijn verkleind, kunnen de indexen gefragmenteer
   - [Resourcelimieten voor individuele databases met behulp van het DTU-aankoopmodel](resource-limits-dtu-single-databases.md)
   - [Azure SQL Database op vCore gebaseerde inkoop model limieten voor elastische Pools](resource-limits-vcore-elastic-pools.md)
   - [Bronnen limieten voor elastische Pools met behulp van het DTU-gebaseerd inkoop model](resource-limits-dtu-elastic-pools.md)
-- Zie SHRINKDATABASE voor meer informatie over de `SHRINKDATABASE` opdracht [SHRINKDATABASE](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql).
+- Zie SHRINKDATABASE voor meer informatie over de `SHRINKDATABASE` opdracht [](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql).
 - Zie [indexen opnieuw indelen en opnieuw samen stellen](/sql/relational-databases/indexes/reorganize-and-rebuild-indexes)voor meer informatie over fragmentatie en het opnieuw opbouwen van indexen.

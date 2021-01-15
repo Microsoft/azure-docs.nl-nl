@@ -1,14 +1,14 @@
 ---
 title: Tenants, gebruikers en rollen in azure Lighthouse-scenario's
 description: Inzicht in de concepten van Azure Active Directory-tenants, gebruikers en rollen, en hoe ze kunnen worden gebruikt in azure Lighthouse-scenario's.
-ms.date: 10/29/2020
+ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: 411b9bae19166e1875011360aa011c05d590b237
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d78828cc739030f8e456c64885d77ddf59dd13fb
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023939"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233913"
 ---
 # <a name="tenants-users-and-roles-in-azure-lighthouse-scenarios"></a>Tenants, gebruikers en rollen in azure Lighthouse-scenario's
 
@@ -18,7 +18,10 @@ Een *Tenant* is een speciaal en vertrouwd exemplaar van Azure AD. Normaal gesp r
 
 Als u deze logische *projectie wilt uitvoeren* , moet een abonnement (of een of meer resource groepen binnen een abonnement) in de Tenant van de klant worden voorstaan met Azure Lighthouse. Dit voorbereidings proces kan worden uitgevoerd [via Azure Resource Manager sjablonen](../how-to/onboard-customer.md) of door [een open bare of persoonlijke aanbieding naar Azure Marketplace te publiceren](../how-to/publish-managed-services-offers.md).
 
-Welke methode u ook kiest, u moet *autorisaties* definiëren. Elke autorisatie geeft een gebruikers account op in de beheer-Tenant die toegang heeft tot de gedelegeerde resources en een ingebouwde rol die de machtigingen instelt die elk van deze gebruikers voor deze resources heeft.
+Welke methode u ook kiest, u moet *autorisaties* definiëren. Elke autorisatie geeft een **principalId** die toegang heeft tot de gedelegeerde resources en een ingebouwde rol die de machtigingen instelt die elk van deze gebruikers heeft voor deze resources. Deze **principalId** definieert een Azure AD-gebruiker,-groep of-Service-Principal in de beherende Tenant.
+
+> [!NOTE]
+> Tenzij expliciet opgegeven, verwijzingen naar een ' gebruiker ' in de Azure Lighthouse-documentatie kunnen van toepassing zijn op een Azure AD-gebruiker,-groep of-Service-Principal in een autorisatie.
 
 ## <a name="best-practices-for-defining-users-and-roles"></a>Aanbevolen procedures voor het definiëren van gebruikers en rollen
 

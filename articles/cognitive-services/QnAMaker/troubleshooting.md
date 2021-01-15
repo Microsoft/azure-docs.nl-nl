@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: troubleshooting
 ms.date: 11/09/2020
-ms.openlocfilehash: e8b1d985fcb2852df52382e005ec0f0266e23d9d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: aea205bee41aed232b8453417dca521d2dfc83ab
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96345641"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233777"
 ---
 # <a name="troubleshooting-for-qna-maker"></a>Problemen oplossen voor QnA Maker
 
@@ -323,6 +323,29 @@ Als u inhoud uit meerdere talen hebt, moet u ervoor zorgen dat u voor elke taal 
 
 1. Start de app service.
 1. Open uw kennis database om te controleren of deze nu werkt.
+
+</details>
+<details>
+<summary><b>Waarom werkt mijn Application Insights niet?</b></summary>
+
+**Antwoord**: u kunt de onderstaande stappen door nemen en bij te werken om het probleem op te lossen:
+
+1. In App Service-> instellingen groep-> configuratie sectie-> toepassings instellingen-> naam para meters ' UserAppInsightsKey ' is correct geconfigureerd en ingesteld op het bijbehorende tabblad Overzicht van Application Insights ("instrumentatie sleutel") GUID. 
+
+1. In App Service-> instellingen groep-> Application Insights sectie-> moet u ervoor zorgen dat app Insights is ingeschakeld en is verbonden met de betreffende Application Insights-resource.
+
+</details>
+
+<details>
+<summary><b>Mijn Application Insights is ingeschakeld, maar waarom werkt het niet goed?</b></summary>
+
+**Antwoord**: Voer de onderstaande stappen uit: 
+
+1.  Kopieer de waarde ' "APPINSIGHTS_INSTRUMENTATIONKEY" name ' naar de naam van de UserAppInsightsKey door te overschrijven als er al een waarde aanwezig is. 
+
+1.  Als de sleutel ' UserAppInsightsKey ' niet voor komt in de app-instellingen, voegt u een nieuwe sleutel toe met die naam en kopieert u de waarde.
+
+1.  Sla het op en Hiermee wordt de app service automatisch opnieuw gestart. Hiermee wordt het probleem opgelost. 
 
 </details>
 

@@ -10,12 +10,12 @@ ms.topic: article
 ms.workload: infrastructure-services
 ms.date: 10/18/2018
 ms.author: rambala
-ms.openlocfilehash: 7be326e0f01ed6a00244c0f5b9ed6a960b2b6e0b
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: 50fd5641c61d08939eca1f2cbafb1d077254e37d
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "86171853"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233267"
 ---
 # <a name="interoperability-in-azure-back-end-connectivity-features-test-configuration-details"></a>Interoperabiliteit in azure back-end-connectiviteits functies: Configuratie Details testen
 
@@ -25,7 +25,7 @@ In dit artikel worden de configuratie details van de [test installatie][Setup]be
 
 In de volgende afbeelding ziet u de details van Azure Virtual Network peering van een spoke Virtual Network (VNet). Zie [VNet-peering beheren][VNet-Config]voor meer informatie over het instellen van peering tussen twee VNets. Als u wilt dat de spoke VNet gebruikmaakt van de gateways die zijn verbonden met de hub VNet, selecteert u **externe gateways gebruiken**.
 
-[![i]][1]
+[![1]][1]
 
 In de volgende afbeelding ziet u de VNet-peering Details van de hub VNet. Als u wilt dat de hub vnet toestaat dat de spoke VNet de gateways van de hub gebruikt, selecteert u **Gateway doorvoer toestaan**.
 
@@ -36,7 +36,7 @@ In de volgende afbeelding ziet u de VNet-peering Details van de hub VNet. Als u 
 Stel de site-naar-site-VPN-verbinding tussen de hub en de vertakkings VNets in met behulp van VPN-gateways in azure VPN Gateway. Standaard gebruiken VPN-gateways en Azure ExpressRoute-gateways een privé-waarde voor autonoom systeem nummer (ASN) van **65515**. U kunt de ASN-waarde wijzigen in VPN Gateway. In de test installatie wordt de ASN-waarde van de branch VNet VPN-gateway gewijzigd in **65516** om eBGP-route ring tussen de hub en vertakking VNets te ondersteunen.
 
 
-[![3]][3]
+[![3D]][3]
 
 
 ## <a name="on-premises-location-1-connectivity-by-using-expressroute-and-a-site-to-site-vpn"></a>On-premises locatie 1 connectiviteit met behulp van ExpressRoute en een site-naar-site-VPN
@@ -49,7 +49,7 @@ In de volgende afbeelding ziet u de configuratie van het ExpressRoute-circuit va
 
 In de volgende afbeelding ziet u de verbindings configuratie tussen het circuit ExpressRoute 1 en de hub-VNet:
 
-[![5,0]][5]
+[![5]][5]
 
 De volgende lijst bevat de configuratie van de primaire CE-router voor ExpressRoute particuliere peering-connectiviteit. (Cisco ASR1000-routers worden als CE-routers gebruikt in de test installatie.) Wanneer site-naar-site VPN-en ExpressRoute-circuits parallel worden geconfigureerd om een on-premises netwerk te verbinden met Azure, wordt in azure standaard prioriteit gegeven aan het ExpressRoute-circuit. Om asymmetrische route ring te voor komen, moet het on-premises netwerk ook prioriteit geven aan ExpressRoute-connectiviteit via VPN-verbinding tussen sites. Met de volgende configuratie wordt prioriteit bepaald met behulp van het kenmerk **lokale voorkeurs** BGP:
 
@@ -207,8 +207,8 @@ Raadpleeg de [Veelgestelde vragen over ExpressRoute][ExR-FAQ] voor het volgende:
 
 
 <!--Image References-->
-[1]: ./media/backend-interoperability/SpokeVNet_peering.png "vnet-peering" voor 1 spoke-vnet
-[2]: ./media/backend-interoperability/HubVNet-peering.png "vnet-peering voor twee hub vnet"
+[]: ./media/backend-interoperability/SpokeVNet_peering.png "vnet-peering" voor 1 spoke-vnet
+[]: ./media/backend-interoperability/HubVNet-peering.png "vnet-peering voor twee hub vnet"
 [3]: ./media/backend-interoperability/BranchVNet-VPNGW.png "VPN gateway configuratie van een vertakking VNet"
 [4]: ./media/backend-interoperability/ExR1.png "ExpressRoute 1 configuratie"
 [5]: ./media/backend-interoperability/ExR1-Hub-Connection.png "verbindings configuratie van ExpressRoute 1 naar een hub VNet ExR-gateway"
@@ -217,18 +217,15 @@ Raadpleeg de [Veelgestelde vragen over ExpressRoute][ExR-FAQ] voor het volgende:
 [8]: ./media/backend-interoperability/ExR2-Remote-Connection.png "configuratie van de verbinding van ExpressRoute 2 met een externe VNet-ExR gateway"
 
 <!--Link References-->
-[Setup]: https://docs.microsoft.com/azure/networking/connectivty-interoperability-preface
-[ExpressRoute]: https://docs.microsoft.com/azure/expressroute/expressroute-introduction
-[VPN]: https://docs.microsoft.com/azure/vpn-gateway/vpn-gateway-about-vpngateways
-[VNet]: https://docs.microsoft.com/azure/virtual-network/tutorial-connect-virtual-networks-portal
-[Configuration]: https://docs.microsoft.com/azure/networking/connectivty-interoperability-configuration
-[Control-Analysis]:https://docs.microsoft.com/azure/networking/connectivty-interoperability-control-plane
-[Data-Analysis]: https://docs.microsoft.com/azure/networking/connectivty-interoperability-data-plane
-[ExR-FAQ]: https://docs.microsoft.com/azure/expressroute/expressroute-faqs
-[S2S-Over-ExR]: https://docs.microsoft.com/azure/expressroute/site-to-site-vpn-over-microsoft-peering
-[ExR-S2S-CoEx]: https://docs.microsoft.com/azure/expressroute/expressroute-howto-coexist-resource-manager
-[Hub-n-Spoke]: https://docs.microsoft.com/azure/architecture/reference-architectures/hybrid-networking/hub-spoke
-[Deploy-NVA]: https://docs.microsoft.com/azure/architecture/reference-architectures/dmz/nva-ha
-[VNet-Config]: https://docs.microsoft.com/azure/virtual-network/virtual-network-manage-peering
-
-
+[Setup]: ./connectivty-interoperability-preface.md
+[ExpressRoute]: ../expressroute/expressroute-introduction.md
+[VPN]: ../vpn-gateway/vpn-gateway-about-vpngateways.md
+[VNet]: ../virtual-network/tutorial-connect-virtual-networks-portal.md
+[Control-Analysis]: ./connectivty-interoperability-control-plane.md
+[Data-Analysis]: ./connectivty-interoperability-data-plane.md
+[ExR-FAQ]: ../expressroute/expressroute-faqs.md
+[S2S-Over-ExR]: ../expressroute/site-to-site-vpn-over-microsoft-peering.md
+[ExR-S2S-CoEx]: ../expressroute/expressroute-howto-coexist-resource-manager.md
+[Hub-n-Spoke]: /azure/architecture/reference-architectures/hybrid-networking/hub-spoke
+[Deploy-NVA]: /azure/architecture/reference-architectures/dmz/nva-ha
+[VNet-Config]: ../virtual-network/virtual-network-manage-peering.md

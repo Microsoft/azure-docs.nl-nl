@@ -10,16 +10,16 @@ ms.topic: how-to
 ms.custom: mvc
 ms.date: 08/11/2020
 ms.author: sebansal
-ms.openlocfilehash: 0925b51ed960b8007d2df86115ea7e5cf627fe7e
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: b3c917c9652954783fcddd92b9a7370c358ab3cc
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826129"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233641"
 ---
 # <a name="export-certificates-from-azure-key-vault"></a>Certificaten exporteren uit Azure Key Vault
 
-Meer informatie over het exporteren van certificaten uit Azure Key Vault. U kunt certificaten exporteren met behulp van de Azure-CLI, Azure PowerShell of de Azure Portal. U kunt ook de Azure Portal gebruiken om Azure App Service-certificaten te exporteren.
+Meer informatie over het exporteren van certificaten uit Azure Key Vault. U kunt certificaten exporteren met behulp van de Azure-CLI, Azure PowerShell of de Azure Portal. 
 
 ## <a name="about-azure-key-vault-certificates"></a>Informatie over Azure Key Vault-certificaten
 
@@ -114,7 +114,7 @@ Als u het certificaat wilt downloaden, selecteert u **Downloaden in CER-indeling
 
 **Azure App Service-certificaten exporteren**
 
-Azure App Service-certificaten zijn een handige manier om SSL-certificaten aan te schaffen. U kunt deze toewijzen aan Azure-apps vanuit de portal. U kunt deze certificaten ook exporteren vanuit de portal als PFX-bestanden zodat ze elders gebruikt kunnen worden. Na het importeren bevinden de App Service-certificaten zich onder **geheimen**.
+Azure App Service-certificaten zijn een handige manier om SSL-certificaten aan te schaffen. U kunt deze toewijzen aan Azure-apps vanuit de portal. Na het importeren bevinden de App Service-certificaten zich onder **geheimen**.
 
 Zie de stappen voor het [exporteren van Azure App Service-certificaten](https://social.technet.microsoft.com/wiki/contents/articles/37431.exporting-azure-app-service-certificates.aspx) voor meer informatie.
 

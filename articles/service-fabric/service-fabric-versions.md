@@ -3,12 +3,12 @@ title: Ondersteunde cluster versies in azure Service Fabric
 description: Meer informatie over cluster versies in azure Service Fabric, met inbegrip van een koppeling naar de nieuwste releases van de Service Fabric-team blog.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: abf9900e9749a1b21d927e0315076b38848bea10
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: c2ea2b53649cf148a19df46835c8936345aa20e5
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132644"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234338"
 ---
 # <a name="supported-service-fabric-versions"></a>Ondersteunde Service Fabric versies
 
@@ -37,18 +37,18 @@ We verzoeken u om een upgrade uit te voeren naar de meest recente ondersteunde v
 Voer een upgrade uit naar de ondersteunde Service Fabric versies die hieronder worden weer gegeven om downtime of verlies van functionaliteit die betrekking heeft op deze wijziging te voor komen. Zorg ervoor dat uw clusters ten minste deze versies uitvoeren om problemen in uw omgeving te voor komen.
 
   ###### <a name="supported-service-fabric-runtime-versions"></a>Ondersteunde runtime versies van Service Fabric
-   Als u zich niet bevindt in de onderstaande lijst met ondersteunde versies van Service Fabric, moet u een upgrade uitvoeren naar een van deze versies die al de benodigde wijzigingen bevatten om uitval tijd naar het cluster te voor komen.  
+   Als u zich niet bevindt in de onderstaande lijst met ondersteunde versies van Service Fabric, moet u een upgrade uitvoeren naar een van deze versies die al de benodigde wijzigingen bevatten om uitval tijd naar het cluster te voor komen. **Opmerking:** Alle release versies van 7,2 bevatten de benodigde wijzigingen.
   
-  | OS | Huidige Service Fabric runtime in het cluster | Release van CU/patch  | 
+  | Besturingssysteem | Huidige Service Fabric runtime in het cluster | Release van CU/patch  | 
   | --- | --- |--- | 
   | Windows | 7,0. * | 7.0.478.9590 |
   | Windows | 7,1. * | 7.1.503.9590 |
-  | Windows | 7,2. * | 7.2.445.9590 |
+  | Windows | 7,2. * | 7,2. * |
   | Ubuntu 16 | 7,0. * | 7.0.472.1  |
   | Linux Ubuntu 16,04 | 7,1. * | 7.1.455.1  |
   | Linux Ubuntu 18,04 | 7,1. * | 7.1.455.1804 |
-  | Linux Ubuntu 16,04 | 7,2. * | 7.2.447.1 |
-  | Linux Ubuntu 18,04 | 7,2. * | 7.2.447.1804 |
+  | Linux Ubuntu 16,04 | 7,2. * | 7,2. * |
+  | Linux Ubuntu 18,04 | 7,2. * | 7,2. * |
  
 ### <a name="upgrade-alert-for-versions-greater-than-63"></a>Upgrade waarschuwing voor versies van meer dan 6,3 
 Om de beveiliging en beschik baarheid te verbeteren, zal Azure-infra structuur een wijziging aanbrengen die van invloed kan zijn op Service Fabric klanten. **Alle service Fabric clusters die gebruikmaken van de [open-netwerk functie voor containers](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode), worden uitgevoerd op niet-ondersteunde versies die groter zijn dan 6,3 en onder 7,0 en incompatibele ondersteunde versies van 7,0 dan worden beïnvloed**. Voor het adresseren van de wijziging is een update vereist voor de Service Fabric runtime, die al beschikbaar is voor alle ondersteunde versies van Service Fabric in alle regio's.
@@ -58,24 +58,24 @@ Om de beveiliging en beschik baarheid te verbeteren, zal Azure-infra structuur e
  
   - **Voor clusters met een versie van service Fabric hoger dan 6,3 die geen gebruik maakt van de functie** voor het openen van netwerken, blijft het cluster actief, maar de functie voor het openen van netwerken voor containers clusters, werkt niet meer, waardoor er service onderbrekingen kunnen ontstaan voor uw workloads.
 
- - **Voor clusters met een versie van service Fabric hoger dan 6,3 en het gebruik [van de open-netwerk functie voor containers](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode)** , blijft het cluster actief, maar werkt het niet meer, waardoor de service onderbrekingen voor uw workloads kan veroorzaken.
+ - **Voor clusters met een versie van service Fabric hoger dan 6,3 en met de [open-netwerk functie voor containers](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode)** , kan het cluster niet meer beschikbaar zijn en werkt het niet meer, waardoor er service onderbrekingen kunnen ontstaan voor uw workloads.
   
 #### <a name="required-action"></a>Vereiste actie
 Voer een upgrade uit naar de ondersteunde Service Fabric versies die hieronder worden weer gegeven om downtime of verlies van functionaliteit die betrekking heeft op deze wijziging te voor komen. Zorg ervoor dat uw clusters ten minste deze versies uitvoeren om problemen in uw omgeving te voor komen. 
  
  ###### <a name="supported-service-fabric-runtime-versions"></a>Ondersteunde runtime versies van Service Fabric
- Als u zich niet bevindt in de onderstaande lijst met ondersteunde versies van Service Fabric, moet u een upgrade uitvoeren naar een van deze versies die al de benodigde wijzigingen bevatten om verlies van functionaliteit te voor komen.  
+ Als u zich niet bevindt in de onderstaande lijst met ondersteunde versies van Service Fabric, moet u een upgrade uitvoeren naar een van deze versies die al de benodigde wijzigingen bevatten om verlies van functionaliteit te voor komen.  **Opmerking:** Alle release versies van 7,2 bevatten de benodigde wijzigingen.
  
-  | OS | Huidige Service Fabric runtime in het cluster | Release van CU/patch  | 
+  | Besturingssysteem | Huidige Service Fabric runtime in het cluster | Release van CU/patch  | 
   | --- | --- |--- | 
   | Windows | 7,0. * | 7.0.478.9590 |
   | Windows | 7,1. * | 7.1.503.9590 |
-  | Windows | 7,2. * | 7.2.445.9590 |
+  | Windows | 7,2. * | 7,2. * |
   | Linux Ubuntu 16,04 | 7,0. * | 7.0.472.1  |
   | Linux Ubuntu 16,04 | 7,1. * | 7.1.455.1  |
   | Linux Ubuntu 18,04 | 7,1. * | 7.1.455.1804 |
-  | Linux Ubuntu 16,04 | 7,2. * | 7.2.447.1 |
-  | Linux Ubuntu 18,04 | 7,2. * | 7.2.447.1804 |
+  | Linux Ubuntu 16,04 | 7,2. * | 7,2. * |
+  | Linux Ubuntu 18,04 | 7,2. * | 7,2. * |
 
 ## <a name="supported-versions"></a>Ondersteunde versies
 De volgende tabel bevat de versies van Service Fabric en de bijbehorende eind datums voor ondersteuning.

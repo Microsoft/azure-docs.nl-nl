@@ -8,12 +8,12 @@ ms.assetid: 2fa5ee6b-51a6-4237-805f-518e6c57d11b
 ms.topic: article
 ms.date: 10/30/2018
 ms.author: genli
-ms.openlocfilehash: fb193637525722bf227241a614cd977fbf70c9ac
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: df4bd0ae0884feae8bd21e33f4d27b6ceb207337
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93074179"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233998"
 ---
 # <a name="configuration-and-management-faqs-for-web-apps-in-azure"></a>Veelgestelde vragen over configuratie en beheer voor Web Apps in azure
 
@@ -63,7 +63,7 @@ De tijd zone van de server instellen voor uw web-app:
 2. Voeg onder **app-instellingen** deze instelling toe:
     * Sleutel = WEBSITE_TIME_ZONE
     * Waarde = *de tijd zone die u wilt*
-3. Selecteer **Opslaan** .
+3. Selecteer **Opslaan**.
 
 Zie de uitvoer van de Windows-opdracht voor de app-services die worden uitgevoerd in Windows `tzutil /L` . Gebruik de waarde van de tweede regel van elke vermelding. Bijvoorbeeld: "Tonga (standaard tijd)". Sommige van deze waarden worden ook weer gegeven in de kolom **tijd zone** in de [standaard tijd zones](/windows-hardware/manufacture/desktop/default-time-zones).
 
@@ -78,7 +78,7 @@ Web-apps worden standaard uit het geheugen verwijderd als ze gedurende een bepaa
 U kunt als volgt de lijst met uitgaande IP-adressen voor uw web-app ophalen:
 
 1. Ga in de Azure Portal op de Blade van de web-app naar het menu **Eigenschappen** .
-2. Zoek naar **uitgaande IP-adressen** .
+2. Zoek naar **uitgaande IP-adressen**.
 
 De lijst met uitgaande IP-adressen wordt weer gegeven.
 
@@ -185,8 +185,8 @@ U hebt twee opties voor het vastleggen van een F12-tracering:
 ### <a name="f12-console-output"></a>F12-console-uitvoer
 
 1. Selecteer het tabblad **console** .
-2. Voor elk tabblad met meer dan nul items, selecteert u het tabblad ( **fout** , **waarschuwing** of **informatie** ). Als het tabblad niet is geselecteerd, is het pictogram van het tabblad grijs of zwart wanneer u de cursor uit het verplaatst.
-3. Klik met de rechter muisknop in het bericht gebied van het deel venster en selecteer vervolgens **Alles kopiëren** .
+2. Voor elk tabblad met meer dan nul items, selecteert u het tabblad (**fout**, **waarschuwing** of **informatie**). Als het tabblad niet is geselecteerd, is het pictogram van het tabblad grijs of zwart wanneer u de cursor uit het verplaatst.
+3. Klik met de rechter muisknop in het bericht gebied van het deel venster en selecteer vervolgens **Alles kopiëren**.
 4. Plak de gekopieerde tekst in een bestand en sla het bestand op.
 
 U kunt de [har-Viewer](http://www.softwareishard.com/har/viewer/)gebruiken om een har-bestand weer te geven.
@@ -284,7 +284,7 @@ Zie voor gedetailleerde documentatie voor verificatie en autorisatie in App Serv
 
 ## <a name="how-do-i-redirect-the-default-azurewebsitesnet-domain-to-my-azure-web-apps-custom-domain"></a>Hoe kan ik het standaard domein *. azurewebsites.net omleiden naar het aangepaste domein van mijn Azure-web-app?
 
-Wanneer u een nieuwe website maakt met behulp van Web Apps in azure, wordt een standaard *site naam* . azurewebsites.net domein aan uw site toegewezen. Als u een aangepaste hostnaam aan uw site toevoegt en niet wilt dat gebruikers toegang hebben tot uw standaard-azurewebsites.net-domein, kunt u de standaard-URL omleiden. Zie [het standaard domein omleiden naar uw aangepaste domein in azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/)voor meer informatie over het omleiden van alle verkeer van het standaard domein van uw website naar uw aangepaste domein.
+Wanneer u een nieuwe website maakt met behulp van Web Apps in azure, wordt een standaard *site naam*. azurewebsites.net domein aan uw site toegewezen. Als u een aangepaste hostnaam aan uw site toevoegt en niet wilt dat gebruikers toegang hebben tot uw standaard-azurewebsites.net-domein, kunt u de standaard-URL omleiden. Zie [het standaard domein omleiden naar uw aangepaste domein in azure web apps](https://zainrizvi.io/blog/block-default-azure-websites-domain/)voor meer informatie over het omleiden van alle verkeer van het standaard domein van uw website naar uw aangepaste domein.
 
 ## <a name="how-do-i-determine-which-version-of-net-version-is-installed-in-app-service"></a>Hoe kan ik bepalen welke versie van .NET version in App Service is geïnstalleerd?
 
@@ -317,3 +317,8 @@ U kunt ook de specifieke dynamische en statische MIME-typen opgeven die u wilt c
 ## <a name="how-do-i-migrate-from-an-on-premises-environment-to-app-service"></a>Hoe kan ik migreren van een on-premises omgeving naar App Service?
 
 Als u sites van Windows-en Linux-webservers wilt migreren naar App Service, kunt u Azure App Service Migration Assistant gebruiken. Het hulp programma voor migratie maakt indien nodig web-apps en data bases en publiceert vervolgens de inhoud. Zie [Azure App Service Migration Assistant](https://appmigration.microsoft.com/)voor meer informatie.
+
+## <a name="why-is-my-certificate-issued-for-11-months-and-not-for-a-full-year"></a>Waarom is mijn certificaat uitgegeven voor 11 maanden en niet voor een volledig jaar?
+
+Voor alle certificaten die na 1/9/2020 zijn uitgegeven, is de maximale duur nu 397 dagen. Certificaten die zijn uitgegeven vóór 1/9/2020, hebben een maximale geldigheidsduur van 825 dagen tot ze worden verlengd, opnieuw versleuteld enz. Alle certificaten die na 1/9/2020 worden verlengd, worden beïnvloed door deze wijziging en gebruikers kunnen een korte geldigheidsduur van de verlengde certificaten opmerken.
+GoDaddy heeft een abonnementsservice geïmplementeerd die voldoet aan de nieuwe vereisten terwijl bestaande klantcertificaten worden gehonoreerd. Dertig dagen voordat het zojuist uitgegeven certificaat verloopt, geeft de service automatisch een tweede certificaat uit dat de duur uitbreidt naar de oorspronkelijke vervaldatum. App Service werkt samen met GoDaddy om deze wijziging aan te pakken en ervoor te zorgen dat onze klanten de volledige duur van hun certificaten ontvangen.

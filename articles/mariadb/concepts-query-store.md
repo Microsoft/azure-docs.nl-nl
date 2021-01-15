@@ -5,13 +5,13 @@ author: savjani
 ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 3/18/2020
-ms.openlocfilehash: bca995f8b2cea33266e032b543abb18ee7140f3f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.date: 01/15/2021
+ms.openlocfilehash: 164285b1fea3dce18161066e643aa165e47cc496
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541178"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233983"
 ---
 # <a name="monitor-azure-database-for-mariadb-performance-with-query-store"></a>Azure Database for MariaDB prestaties bewaken met query Store
 
@@ -21,7 +21,7 @@ De functie query Store in azure data base for Mariadb biedt een manier om query 
 
 ## <a name="common-scenarios-for-using-query-store"></a>Algemene scenario's voor het gebruik van query Store
 
-Query Store kan worden gebruikt in een aantal scenario's, waaronder de volgende:
+Query Store kan in veel scenario's worden gebruikt, waaronder de volgende:
 
 - Teruggedraaide-query's detecteren
 - Bepalen hoe vaak een query in een bepaald tijd venster is uitgevoerd
@@ -34,14 +34,14 @@ Query Store is een opt-in-functie, waardoor deze niet standaard actief is op een
 ### <a name="enable-query-store-using-the-azure-portal"></a>Query Store inschakelen met behulp van de Azure Portal
 
 1. Meld u aan bij de Azure Portal en selecteer uw Azure Database for MariaDB-server.
-1. Selecteer **server parameters** in de sectie **instellingen** van het menu.
-1. Zoek de para meter query_store_capture_mode.
-1. Stel de waarde in op alles en **Sla** deze op.
+2. Selecteer **server parameters** in de sectie **instellingen** van het menu.
+3. Zoek de para meter query_store_capture_mode.
+4. Stel de waarde in op alles en **Sla** deze op.
 
 Wachtende statistieken in het query archief inschakelen:
 
 1. Zoek de para meter query_store_wait_sampling_capture_mode.
-1. Stel de waarde in op alles en **Sla** deze op.
+2. Stel de waarde in op alles en **Sla** deze op.
 
 Maxi maal 20 minuten toestaan dat de eerste batch met gegevens persistent is in de MySQL-data base.
 
@@ -87,7 +87,7 @@ Wanneer query Store is ingeschakeld, worden gegevens opgeslagen in een periode v
 
 De volgende opties zijn beschikbaar voor het configureren van query Store-para meters.
 
-| **Parameter** | **Beschrijving** | **Standaard** | **Bereik** |
+| **Parameter** | **Beschrijving** | **Prijs** | **Bereik** |
 |---|---|---|---|
 | query_store_capture_mode | De functie query Store in-of uitschakelen op basis van de waarde. Opmerking: als performance_schema is uitgeschakeld, wordt performance_schema en een subset van de performance schema-instrumenten die voor deze functie zijn vereist query_store_capture_mode, ingeschakeld. | ALL | GEEN, ALLE |
 | query_store_capture_interval | De interval voor het vastleggen van de query opslag in minuten. Hiermee kunt u het interval opgeven waarin de metrische gegevens van de query worden geaggregeerd | 15 | 5 - 60 |
@@ -96,7 +96,7 @@ De volgende opties zijn beschikbaar voor het configureren van query Store-para m
 
 De volgende opties zijn specifiek van toepassing op wacht statistieken.
 
-| **Parameter** | **Beschrijving** | **Standaard** | **Bereik** |
+| **Parameter** | **Beschrijving** | **Prijs** | **Bereik** |
 |---|---|---|---|
 | query_store_wait_sampling_capture_mode | Hiermee kunt u de wacht statistieken in-of uitschakelen. | GEEN | GEEN, ALLE |
 | query_store_wait_sampling_frequency | Wijzigt de frequentie van wacht-sampling in seconden. 5 tot 300 seconden. | 30 | 5-300 |
@@ -108,7 +108,7 @@ Gebruik de [Azure Portal](howto-server-parameters.md) om een andere waarde voor 
 
 ## <a name="views-and-functions"></a>Weer gaven en functies
 
-Bekijk en beheer query Store met behulp van de volgende weer gaven en functies. Iedereen in de [publieke rol Select-bevoegdheid](howto-create-users.md#create-additional-admin-users) kan deze weer gaven gebruiken om de gegevens in query Store te bekijken. Deze weer gaven zijn alleen beschikbaar in de **MySQL** -data base.
+Bekijk en beheer query Store met behulp van de volgende weer gaven en functies. Iedereen in de [publieke rol Select-bevoegdheid](howto-create-users.md#create-more-admin-users) kan deze weer gaven gebruiken om de gegevens in query Store te bekijken. Deze weer gaven zijn alleen beschikbaar in de **MySQL** -data base.
 
 Query's worden genormaliseerd door de structuur te bekijken na het verwijderen van letterlijke waarden en constanten. Als twee query's identiek zijn, met uitzonde ring van letterlijke waarden, hebben ze dezelfde hash.
 
@@ -161,7 +161,7 @@ Met deze weer gave worden wachtende gebeurtenis gegevens in query Store geretour
 | `count_star` | bigint (20) | NO| Aantal wacht gebeurtenissen dat wordt voor bereid tijdens het interval voor de query |
 | `sum_timer_wait_ms` | double | NO| Totale wacht tijd (in milliseconden) van deze query tijdens het interval |
 
-### <a name="functions"></a>Functions
+### <a name="functions"></a>Functies
 
 | **Naam**| **Beschrijving** |
 |---|---|

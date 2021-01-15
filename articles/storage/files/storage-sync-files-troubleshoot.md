@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 ms.date: 1/13/2021
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: e2f0d62ae6882229cee3ee32e3b362f2b6593da7
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: a262c2b4351c96217001ba42e8c745f7d71c7d45
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98199232"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233896"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Problemen met Azure Files Sync oplossen
 Gebruik Azure File Sync om de bestands shares van uw organisatie in Azure Files te centraliseren, terwijl u de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server bijhoudt. Door Azure File Sync wordt Windows Server getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server, inclusief SMB, NFS en FTPS, gebruiken voor lokale toegang tot uw gegevens. U kunt zoveel caches hebben als u nodig hebt in de hele wereld.
@@ -205,7 +205,7 @@ Op de server die wordt weer gegeven als ' offline weer geven ' in de portal, kij
     - Als de server zich achter een firewall bevindt, controleert u of uitgaand verkeer via poort 443 is toegestaan. Als de firewall het verkeer naar specifieke domeinen beperkt, moet u controleren of de domeinen die worden vermeld in de firewall [documentatie](./storage-sync-files-firewall-and-proxy.md#firewall) toegankelijk zijn.
     - Als de-server zich achter een proxy bevindt, configureert u de computer-of app-specifieke proxy-instellingen door de stappen in de proxy- [documentatie](./storage-sync-files-firewall-and-proxy.md#proxy)te volgen.
     - Gebruik de cmdlet Test-StorageSyncNetworkConnectivity om de netwerk verbinding met de service-eind punten te controleren. Zie [netwerk connectiviteit testen op service-eind punten](./storage-sync-files-firewall-and-proxy.md#test-network-connectivity-to-service-endpoints)voor meer informatie.
-    - Gebruik groeps beleid of TLS-cmdlets om coderings suites op de server toe te voegen:
+    - Als de volg orde van de TLS-coderings Suite op de server is geconfigureerd, kunt u groeps beleid of TLS-cmdlets gebruiken om coderings suites toe te voegen:
         - Zie de [volg orde van TLS-coderings pakketten configureren met behulp van Groepsbeleid](https://docs.microsoft.com/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-group-policy)om groeps beleid te gebruiken.
         - Zie [Configure TLS cipher Suite order by using TLS Power shell cmdlets](https://docs.microsoft.com/windows-server/security/tls/manage-tls#configuring-tls-cipher-suite-order-by-using-tls-powershell-cmdlets)(Engelstalig) voor het gebruik van TLS-cmdlets.
     

@@ -4,12 +4,12 @@ description: Voeg een paar regels code toe aan de apparaat-of bureau blad-app, d
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: ae64888669fb9a3c053802ee4f7ad7db6316265d
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: d553c192d62baedb93c7f8270c56526fbf8edb62
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780498"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233743"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>Application Insights-API voor aangepaste gebeurtenissen en metrische gegevens
 
@@ -146,7 +146,9 @@ telemetry.trackEvent({name: "WinGame"});
 
 ### <a name="custom-events-in-analytics"></a>Aangepaste gebeurtenissen in Analytics
 
-De telemetrie is beschikbaar in de `customEvents` tabel in [Application Insights Analytics](../log-query/log-query-overview.md). Elke rij vertegenwoordigt een aanroep naar `trackEvent(..)` in uw app.
+De telemetrie is beschikbaar in de `customEvents` tabel in [Application Insights tabblad logboeken](../log-query/log-query-overview.md) of de [gebruiks ervaring](usage-overview.md). Gebeurtenissen kunnen afkomstig zijn van `trackEvent(..)` of [klikken op de invoeg toepassing voor automatische verzamelingen van analyses](javascript-click-analytics-plugin.md).
+
+ 
 
 Als er [steek proeven](./sampling.md) worden uitgevoerd, wordt in de eigenschap itemCount een waarde weer gegeven die groter is dan 1. Bijvoorbeeld itemCount = = 10 betekent dat er bij 10 aanroepen naar track Event (), het steekproef proces slechts een van deze toegezonden. Als u een correct aantal aangepaste gebeurtenissen wilt ontvangen, moet u dus code gebruiken, zoals `customEvents | summarize sum(itemCount)` .
 
@@ -1122,4 +1124,3 @@ Zie [gegevens retentie en privacy](./data-retention-privacy.md)om te bepalen hoe
 
 * [Zoeken naar gebeurtenissen en Logboeken](./diagnostic-search.md)
 * [Problemen oplossen](../faq.md)
-

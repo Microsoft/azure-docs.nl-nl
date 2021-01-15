@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 7779730b98630d08af046e7cb402caca1d0c2fe6
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: a0f209e0ac17c62378d279a32f4a27f48a9f74bd
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653653"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232689"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-twitter-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Twitter-account met behulp van Azure Active Directory B2C
 
@@ -35,16 +35,21 @@ ms.locfileid: "97653653"
 
 ## <a name="create-an-application"></a>Een app maken
 
-Als u Twitter als een id-provider in Azure AD B2C wilt gebruiken, moet u een Twitter-toepassing maken. Als u nog geen Twitter-account hebt, kunt u zich aanmelden bij [https://twitter.com/signup](https://twitter.com/signup) .
+Als u aanmelden voor gebruikers met een Twitter-account in Azure Active Directory B2C (Azure AD B2C) wilt inschakelen, moet u een Twitter-toepassing maken. Als u nog geen Twitter-account hebt, kunt u zich aanmelden bij [https://twitter.com/signup](https://twitter.com/signup) . U moet ook [een ontwikkelaars account Toep assen](https://developer.twitter.com/en/apply/user.html). Zie [Toep assen voor toegang](https://developer.twitter.com/en/apply-for-access)voor meer informatie.
 
-1. Meld u aan bij de website van de [Twitter-ontwikkel aars](https://developer.twitter.com/en/apps) met de referenties van uw Twitter-account.
-1. Selecteer  **een app maken**.
-1. Voer een **app-naam** en een **toepassings beschrijving** in.
-1. Voer in **website-URL** in `https://your-tenant.b2clogin.com` . Vervang `your-tenant` door de naam van uw tenant. Bijvoorbeeld `https://contosob2c.b2clogin.com`.
-1. Voer in voor de **call back-URL** `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/your-user-flow-Id/oauth1/authresp` . Vervang door `your-tenant` de naam van uw Tenant naam en `your-user-flow-Id` met de id van uw gebruikers stroom. Bijvoorbeeld `b2c_1A_signup_signin_twitter`. U moet alle kleine letters gebruiken wanneer u uw Tenant naam en gebruikers stroom-ID invoert, zelfs als ze zijn gedefinieerd met hoofd letters in Azure AD B2C.
-1. Lees en accepteer de voor waarden aan de onderkant van de pagina en selecteer vervolgens **maken**.
-1. Op de **pagina app-Details** selecteert u **bewerken > Details bewerken**, schakelt u het selectie vakje **Aanmelden met Twitter inschakelen in** en selecteert u vervolgens **Opslaan**.
-1. Selecteer **sleutels en tokens** en noteer de **CONSUMer-API-sleutel** en de geheime sleutel waarden voor de **Consumer-API** die u later wilt gebruiken.
+1. Meld u aan bij de [Twitter-ontwikkelaars Portal](https://developer.twitter.com/portal/projects-and-apps) met de referenties van uw Twitter-account.
+1. Onder **zelfstandige apps** selecteert u **+ app maken**.
+1. Voer de **naam** van een app in en selecteer **volt ooien**.
+1. Kopieer de waarde van de **app-sleutel** en de **API-sleutel geheim**.  U kunt beide gebruiken om Twitter te configureren als een id-provider in uw Tenant. 
+1. Selecteer onder **uw app instellen de** optie **app-instellingen**.
+1. Onder **verificatie-instellingen** selecteert u **bewerken**
+    1. Schakel **het selectie vakje 3-legged OAuth inschakelen in** .
+    1. Selecteer het selectie vakje **e-mail adres aanvragen bij gebruikers** .
+    1. Voer in voor de **call back-url's** `https://your-tenant.b2clogin.com/your-tenant.onmicrosoft.com/your-user-flow-Id/oauth1/authresp` . Vervang door `your-tenant` de naam van uw Tenant naam en `your-user-flow-Id` met de id van uw gebruikers stroom. Bijvoorbeeld `b2c_1A_signup_signin_twitter`. U moet alle kleine letters gebruiken wanneer u uw Tenant naam en gebruikers stroom-ID invoert, zelfs als ze zijn gedefinieerd met hoofd letters in Azure AD B2C.
+    1. Voer in voor de URL van de **website** `https://your-tenant.b2clogin.com` . Vervang `your-tenant` door de naam van uw tenant. Bijvoorbeeld `https://contosob2c.b2clogin.com`.
+    1. Voer bijvoorbeeld een URL in voor de **Service voorwaarden** `http://www.contoso.com/tos` . De beleids-URL is een pagina die u onderhoudt om voor waarden voor uw toepassing te bieden.
+    1. Voer een URL in voor het **Privacybeleid**, bijvoorbeeld `http://www.contoso.com/privacy` . De beleids-URL is een pagina die u kunt onderhouden voor het verstrekken van privacy-informatie voor uw toepassing.
+    1. Selecteer **Opslaan**.
 
 ::: zone pivot="b2c-user-flow"
 
@@ -55,9 +60,19 @@ Als u Twitter als een id-provider in Azure AD B2C wilt gebruiken, moet u een Twi
 1. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 1. Selecteer **id-providers** en selecteer vervolgens **Twitter**.
 1. Voer een **naam** in. Bijvoorbeeld *Twitter*.
-1. Voer voor de **client-id** de Consumer-API-sleutel in van de Twitter-toepassing die u eerder hebt gemaakt.
-1. Voer voor het **client geheim** de geheime sleutel van de consument-API in die u hebt geregistreerd.
+1. Voer voor de **client-id** de *API-sleutel* in van de Twitter-toepassing die u eerder hebt gemaakt.
+1. Voer voor het **client geheim** het *API-sleutel geheim* in dat u hebt vastgelegd.
 1. Selecteer **Opslaan**.
+
+## <a name="add-twitter-identity-provider-to-a-user-flow"></a>Twitter-ID-provider toevoegen aan een gebruikers stroom 
+
+1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
+1. Selecteer de gebruikers stroom waaraan u de Twitter-ID-provider wilt toevoegen.
+1. Selecteer **Twitter** in het kader van de **sociale id-providers**.
+1. Selecteer **Opslaan**.
+1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
+1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
+1. Klik op **gebruikers stroom uitvoeren**
 
 ::: zone-end
 
@@ -76,7 +91,7 @@ U moet de geheime sleutel opslaan die u eerder in uw Azure AD B2C-Tenant hebt va
 7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `TwitterSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 8. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 9. Selecteer voor **sleutel gebruik** `Encryption` .
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -103,7 +118,7 @@ U kunt een Twitter-account definiëren als een claim provider door deze toe te v
             <Item Key="request_token_endpoint">https://api.twitter.com/oauth/request_token</Item>
             <Item Key="ClaimsEndpoint">https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true</Item>
             <Item Key="ClaimsResponseFormat">json</Item>
-            <Item Key="client_id">Your Twitter application consumer key</Item>
+            <Item Key="client_id">Your Twitter application API key</Item>
           </Metadata>
           <CryptographicKeys>
             <Key Id="client_secret" StorageReferenceId="B2C_1A_TwitterSecret" />
@@ -127,7 +142,7 @@ U kunt een Twitter-account definiëren als een claim provider door deze toe te v
     </ClaimsProvider>
     ```
 
-4. Vervang de waarde van **client_id** door de consumenten sleutel die u eerder hebt vastgelegd.
+4. Vervang de waarde van **client_id** door het *geheim* van de API-sleutel dat u eerder hebt vastgelegd.
 5. Sla het bestand op.
 
 ### <a name="upload-the-extension-file-for-verification"></a>Upload het extensie bestand voor verificatie
@@ -173,24 +188,6 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
     Werk de waarde van **TechnicalProfileReferenceId** bij naar de id van het technische profiel dat u eerder hebt gemaakt. Bijvoorbeeld `Twitter-OAUTH1`.
 
 3. Sla het *TrustFrameworkExtensions.xml* bestand op en upload het opnieuw voor verificatie.
-
-::: zone-end
-
-::: zone pivot="b2c-user-flow"
-
-## <a name="add-twitter-identity-provider-to-a-user-flow"></a>Twitter-ID-provider toevoegen aan een gebruikers stroom 
-
-1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de Twitter-ID-provider.
-1. Selecteer **Twitter** in het kader van de **sociale id-providers**.
-1. Selecteer **Opslaan**.
-1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.
-1. Selecteer voor **toepassing** de webtoepassing met de naam *testapp1* die u eerder hebt geregistreerd. De **antwoord-URL** moet `https://jwt.ms` weergeven.
-1. Klik op **gebruikers stroom uitvoeren**
-
-::: zone-end
-
-::: zone pivot="b2c-custom-policy"
 
 ## <a name="update-and-test-the-relying-party-file"></a>Het Relying Party bestand bijwerken en testen
 

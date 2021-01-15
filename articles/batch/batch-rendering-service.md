@@ -3,14 +3,14 @@ title: Overzicht van rendering
 description: Inleiding tot het gebruik van Azure voor rendering en een overzicht van de mogelijkheden van Azure Batch-Rendering
 author: mscurrell
 ms.author: markscu
-ms.date: 08/02/2018
+ms.date: 01/14/2021
 ms.topic: how-to
-ms.openlocfilehash: 9fac5d3efabc5d9f796c91d688f35e01aeefdca3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1cd07f9322837c03e15aaeabec993820deb3170a
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87092759"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232111"
 ---
 # <a name="rendering-using-azure"></a>Weergeven met Azure
 
@@ -18,11 +18,11 @@ Rendering is het proces van het maken van 3D-modellen en het converteren ervan n
 
 De werk belasting voor rendering wordt intensief gebruikt voor speciale effecten (VFX) in de media en entertainment industrie. Rendering wordt ook gebruikt in veel andere branches, zoals reclame, detailhandel, olie- en gasindustrie, en productie.
 
-Het proces voor rendering is reken intensief; Er kunnen veel frames/afbeeldingen worden gemaakt en elke afbeelding kan veel uur duren om weer te geven.  Rendering is daarom een perfecte werk belasting voor batch verwerking die gebruikmaakt van Azure en Azure Batch om een groot aantal weer Parallelen te kunnen uitvoeren.
+Het proces voor rendering is reken intensief; Er kunnen veel frames/afbeeldingen worden gemaakt en elke afbeelding kan veel uur duren om weer te geven.  Rendering is daarom een perfecte batch verwerkings werkbelasting die Azure kan gebruiken voor het uitvoeren van veel Renders parallel en het gebruik van een breed scala aan hardware, inclusief Gpu's.
 
 ## <a name="why-use-azure-for-rendering"></a>Waarom Azure voor Rendering gebruiken?
 
-Rendering is om verschillende redenen een werk belasting die perfect geschikt is voor Azure en Azure Batch:
+Rendering is om verschillende redenen een werk belasting die perfect geschikt is voor Azure:
 
 * Rendering-taken kunnen worden gesplitst in veel onderdelen die parallel kunnen worden uitgevoerd met meerdere Vm's:
   * Animaties bestaan uit een groot aantal frames en elk frame kan parallel worden weer gegeven.  Hoe meer Vm's er beschikbaar zijn voor het verwerken van elk frame, hoe sneller alle frames en de animatie kunnen worden geproduceerd.
@@ -36,68 +36,31 @@ Rendering is om verschillende redenen een werk belasting die perfect geschikt is
 * Kies uit een breed scala aan hardware op basis van de toepassing, workload en tijds bestek:
   * Er is een brede selectie van hardware beschikbaar in azure die kan worden toegewezen en beheerd met batch.
   * Afhankelijk van het project is de vereiste mogelijk voor de beste prijs-prestatie verhouding of de beste algehele prestaties.  Verschillende scènes en/of rendering-toepassingen hebben andere geheugen vereisten.  Sommige rendering-toepassingen kunnen gebruikmaken van Gpu's voor de beste prestaties of bepaalde functies. 
-* Vm's met een lage prioriteit verlagen de kosten:
-  * Vm's met lage prioriteit zijn beschikbaar voor een grote korting vergeleken met de normale Vm's op aanvraag en zijn geschikt voor sommige taak typen.
-  * Virtuele machines met lage prioriteit kunnen worden toegewezen door Azure Batch, waarbij batch flexibiliteit biedt voor de manier waarop ze worden gebruikt voor een groot aantal vereisten.  Batch-Pools kunnen bestaan uit een of meer Vm's met een lage prioriteit, omdat het mogelijk is om de combi natie van VM-typen op elk gewenst moment te wijzigen.
+* De kosten voor de [virtuele machines](https://azure.microsoft.com/pricing/spot/) met lage prioriteit of op een plek verlagen:
+  * Virtuele machines met lage prioriteit en spots zijn beschikbaar voor een grote korting vergeleken met standaard-Vm's en zijn geschikt voor sommige taak typen.
+  
+## <a name="existing-on-premises-rendering-environment"></a>Bestaande on-premises rendering-omgeving
 
-## <a name="options-for-rendering-on-azure"></a>Opties voor rendering op Azure
+Het meest voorkomende geval is dat er een bestaande on-premises render-farm wordt beheerd door een beeldrenderings toepassing, zoals PipelineFX Qube, Royal rendering, Thinkbox deadline of een aangepaste toepassing.  De vereiste is om de on-premises weer gave-Farm capaciteit uit te breiden met behulp van virtuele Azure-machines.
 
-Er zijn tal van Azure-functies die kunnen worden gebruikt voor het renderen van werk belastingen.  Welke mogelijkheden u moet gebruiken, is afhankelijk van eventuele bestaande omgevingen en vereisten.
+Azure-infra structuur en-services worden gebruikt voor het maken van een hybride omgeving waarin Azure wordt gebruikt om de on-premises capaciteit aan te vullen. Bijvoorbeeld:
 
-### <a name="existing-on-premises-rendering-environment-using-a-render-management-application"></a>Bestaande on-premises rendering-omgeving met behulp van een toepassing voor render beheer
+* Gebruik een [Virtual Network](../virtual-network/virtual-networks-overview.md) om de Azure-resources te plaatsen op hetzelfde netwerk als de on-premises render-farm.
+* Gebruik [avere vFXT voor Azure](../avere-vfxt/avere-vfxt-overview.md) of [Azure HPC cache](../hpc-cache/hpc-cache-overview.md) om bron bestanden in azure op te slaan in de cache om het gebruik en de latentie van de band breedte te beperken en de prestaties te optimaliseren.
+* Zorg ervoor dat de bestaande licentie server zich in het virtuele netwerk bevindt en schaf de extra licenties aan die vereist zijn voor de extra op Azure gebaseerde capaciteit.
 
-Het meest voorkomende geval is dat er een bestaande on-premises weergave farm wordt beheerd door een beeldrenderings toepassing, zoals PipelineFX Qube, Royal rendering of Thinkbox deadline.  De vereiste is om de on-premises weer gave-Farm capaciteit uit te breiden met behulp van virtuele Azure-machines.
+## <a name="no-existing-render-farm"></a>Geen bestaande render-farm
 
-De software voor het renderen van apparaten heeft ingebouwde ondersteuning voor Azure of we maken beschik bare invoeg toepassingen die ondersteuning voor Azure toevoegen. Zie het artikel over het [gebruik van render-beheerders](./batch-rendering-render-managers.md)voor meer informatie over de ondersteunde weergave beheerders en de ingeschakelde functionaliteit.
+Client werkstations kunnen rendering uitvoeren, maar de weer gave-belasting neemt toe en het duurt te lang om alleen de capaciteit van werk stations te gebruiken.
 
-### <a name="custom-rendering-workflow"></a>Aangepaste werk stroom voor Rendering
+Er zijn twee belang rijke opties beschikbaar:
 
-De vereiste is voor virtuele machines om een bestaande render-farm uit te breiden.  Azure Batch groepen kunnen grote aantallen virtuele machines toewijzen, virtuele machines met lage prioriteit kunnen worden gebruikt en dynamisch automatisch worden geschaald op basis van volle geprijsde Vm's, en licenties voor betalen voor gebruik bieden voor populaire rendering-toepassingen.
+* Implementeer een on-premises render Manager, zoals Royal rendering, en configureer een hybride omgeving voor het gebruik van Azure wanneer verdere capaciteit of prestaties vereist zijn. Een beeldrenderings Manager is speciaal afgestemd op werk belastingen en bevat invoeg toepassingen voor de populaire client toepassingen, waardoor het mogelijk is om weergave taken eenvoudig in te dienen.
 
-### <a name="no-existing-render-farm"></a>Geen bestaande render-farm
-
-Client werkstations kunnen rendering uitvoeren, maar de rendering van de werk belasting neemt toe en het duurt te lang om alleen de capaciteit van werk stations te gebruiken.  Azure Batch kan worden gebruikt voor het toewijzen van een werk belasting op aanvraag voor het genereren van een farm en het plannen van de weergave taken voor de Azure-weergave farm.
-
-## <a name="azure-batch-rendering-capabilities"></a>Mogelijkheden voor Azure Batch Rendering
-
-Azure Batch kunnen parallelle workloads worden uitgevoerd in Azure.  Hiermee maakt u het maken en beheren van een groot aantal virtuele machines waarop toepassingen worden geïnstalleerd en worden uitgevoerd.  Het biedt ook uitgebreide functies voor taak planning voor het uitvoeren van exemplaren van deze toepassingen, waarbij de toewijzing van taken aan Vm's, Queuing, toepassings bewaking, enzovoort.
-
-Azure Batch wordt gebruikt voor veel werk belastingen, maar de volgende mogelijkheden zijn beschikbaar om het samen stellen van werk belastingen gemakkelijker en sneller uit te voeren.
-
-* VM-installatie kopieën met vooraf geïnstalleerde afbeeldingen en rendering-toepassingen:
-  * Er zijn Azure Marketplace-VM-installatie kopieën beschikbaar die populaire grafische toepassingen bevatten, zodat u niet zelf de toepassingen hoeft te installeren of uw eigen aangepaste installatie kopieën wilt maken met de toepassingen die zijn geïnstalleerd. 
-* Betalen per gebruik-licentie voor het weer geven van toepassingen:
-  * U kunt ervoor kiezen om per minuut te betalen voor de toepassingen, maar niet alleen voor de berekenings-Vm's, waardoor het niet mogelijk is om licenties te kopen en een licentie server voor de toepassingen te configureren.  Als u betaalt voor gebruik, betekent dit ook dat het mogelijk is om de belasting te variëren en onverwacht te laden omdat er geen vast aantal licenties is.
-  * Het is ook mogelijk om de vooraf geïnstalleerde toepassingen met uw eigen licenties te gebruiken en de licentie voor betalen per gebruik niet te gebruiken. Hiervoor installeert u doorgaans een on-premises of op Azure gebaseerde licentie server en gebruikt u een virtueel Azure-netwerk om de opbouw groep te verbinden met de licentie server.
-* Invoeg toepassingen voor client ontwerp-en modellerings toepassingen:
-  * Met invoeg toepassingen kunnen eind gebruikers Azure Batch rechtstreeks vanuit een client toepassing gebruiken, zoals Autodesk Maya, zodat ze groepen kunnen maken, projecten kunnen verzenden en gebruik kunnen maken van meer reken capaciteit om sneller weer te geven.
-* Integratie van render Manager:
-  * Azure Batch is geïntegreerd in toepassingen voor weergave beheer of invoeg toepassingen die de Azure Batch-integratie kunnen bieden.
-
-Er zijn verschillende manieren om Azure Batch te gebruiken, die allemaal ook van toepassing zijn op Azure Batch rendering.
-
-* API's:
-  * Code schrijven met behulp van de [rest](/rest/api/batchservice)-, [.net](/dotnet/api/overview/azure/batch)-, [python](/python/api/overview/azure/batch)-, [Java](/java/api/overview/azure/batch)-of andere ondersteunde api's.  Ontwikkel aars kunnen Azure Batch-mogelijkheden integreren in hun bestaande toepassingen of werk stroom, of deze in de Cloud of op basis van on-premises.  De [Autodesk Maya-invoeg toepassing](https://github.com/Azure/azure-batch-maya) maakt bijvoorbeeld gebruik van de batch PYTHON-API voor het aanroepen van batch, het maken en beheren van groepen, het verzenden van taken en taken en het controleren van de status.
-* Opdracht regel Programma's:
-  * De [Azure-opdracht regel](/cli/azure/) of- [Azure PowerShell](/powershell/azure/) kan worden gebruikt voor het uitvoeren van scripts voor batch gebruik.
-  * Met name de batch-CLI-sjabloon ondersteuning maakt het veel eenvoudiger om Pools te maken en taken te verzenden.
-* UIs:
-  * [Batch Explorer](https://github.com/Azure/BatchExplorer) is een platform voor meerdere platforms waarmee batch-accounts ook kunnen worden beheerd en bewaakt, maar biedt een aantal rijkere mogelijkheden in vergelijking met de Azure Portal-gebruikers interface.  Er zijn een set groeps-en taak sjablonen beschikbaar die zijn afgestemd op elke ondersteunde toepassing en kunnen worden gebruikt om eenvoudig Pools te maken en taken te verzenden.
-  * De Azure Portal kan worden gebruikt om Azure Batch te beheren en te controleren.
-* Invoeg toepassing voor client toepassing:
-  * Invoeg toepassingen zijn beschikbaar waarmee batch rendering rechtstreeks kan worden gebruikt in de client ontwerp-en modelleer toepassingen. De invoeg toepassingen roepen voornamelijk de Batch Explorer-toepassing met contextuele informatie over het huidige 3D-model.
-  * De volgende invoeg toepassingen zijn beschikbaar:
-    * [Azure Batch voor Maya](https://github.com/Azure/azure-batch-maya)
-    * [3ds Max](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/3ds-max)
-    * [Blender](https://github.com/Azure/azure-batch-rendering/tree/master/plugins/blender)
-
-## <a name="getting-started-with-azure-batch-rendering"></a>Aan de slag met het weer geven van Azure Batch
-
-Raadpleeg de volgende inleidende zelf studies om Azure Batch rendering te proberen:
-
-* [Batch Explorer gebruiken om een overvloei scène weer te geven](./tutorial-rendering-batchexplorer-blender.md)
-* [De batch-CLI gebruiken voor het weer geven van een auto Desk 3ds Max scène](./tutorial-rendering-cli.md)
+* Een aangepaste oplossing met behulp van Azure Batch voor het toewijzen en beheren van de reken capaciteit en het leveren van de taak planning voor het uitvoeren van de weergave taken.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Bepaal de lijst met rendering-toepassingen en versies die zijn opgenomen in de VM-installatie kopieën van Azure Marketplace in [dit artikel](./batch-rendering-applications.md).
+ Meer informatie over het [gebruik van Azure-infra structuur en-services voor het uitbreiden van een bestaande on-premises render-farm](https://azure.microsoft.com/solutions/high-performance-computing/rendering/).
+
+Meer informatie over [Azure batch-weergave mogelijkheden](batch-rendering-functionality.md).

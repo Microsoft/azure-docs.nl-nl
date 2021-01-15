@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 375f0a26006f1176174b335073709e45911d9921
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 953a9cfeed558291fba1cb517039f26860444904
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165804"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233658"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -39,14 +39,14 @@ Hieronder vindt u meer informatie en aanvullende configuratie-opties.
 
 ## <a name="configuration-file-path"></a>Pad naar configuratie bestand
 
-Application Insights Java 3,0 verwacht dat het configuratie bestand wordt benoemd `applicationinsights.json` en zich in dezelfde map als bevindt `applicationinsights-agent-3.0.0.jar` .
+Application Insights Java 3,0 verwacht dat het configuratie bestand wordt benoemd `applicationinsights.json` en zich in dezelfde map als bevindt `applicationinsights-agent-3.0.1.jar` .
 
 U kunt uw eigen pad naar een configuratie bestand opgeven met
 
 * `APPLICATIONINSIGHTS_CONFIGURATION_FILE` omgevings variabele of
 * `applicationinsights.configuration.file` Java-systeem eigenschap
 
-Als u een relatief pad opgeeft, wordt dit omgezet ten opzichte van de map waar `applicationinsights-agent-3.0.0.jar` zich bevindt.
+Als u een relatief pad opgeeft, wordt dit omgezet ten opzichte van de map waar `applicationinsights-agent-3.0.1.jar` zich bevindt.
 
 ## <a name="connection-string"></a>Verbindingsreeks
 
@@ -170,7 +170,7 @@ Als u aangepaste dimensies wilt toevoegen aan al uw telemetrie:
 `${...}` kan worden gebruikt om de waarde van de opgegeven omgevings variabele bij het opstarten te lezen.
 
 > [!NOTE]
-> Vanaf versie 3.0.1-BETA, als u een aangepaste dimensie met de naam toevoegt `service.version` , wordt de waarde opgeslagen in de `application_Version` kolom in de tabel Application Insights Logboeken in plaats van als aangepaste dimensie.
+> Als u vanaf versie 3.0.1 een aangepaste dimensie met de naam toevoegt `service.version` , wordt de waarde opgeslagen in de `application_Version` kolom in de tabel Application Insights Logboeken in plaats van als aangepaste dimensie.
 
 ## <a name="telemetry-processors-preview"></a>Telemetrie-processors (preview-versie)
 
@@ -241,7 +241,7 @@ Automatische verzameling van micrometer-metrische gegevens uitschakelen (inclusi
 
 ## <a name="suppressing-specific-auto-collected-telemetry"></a>Specifieke telemetrie voor automatisch verzamelen onderdrukken
 
-Vanaf versie 3.0.1-BETA. 2 kunnen specifieke telemetrie voor automatisch verzamelen worden onderdrukt met behulp van deze configuratie opties:
+Vanaf versie 3.0.1 kan specifiek automatisch verzamelde telemetrie worden onderdrukt met behulp van deze configuratie opties:
 
 ```json
 {
@@ -338,7 +338,7 @@ Application Insights Java 3,0-logboeken worden standaard op niveau `INFO` naar h
 
 `level` Dit kan een van,,,, `OFF` `ERROR` of zijn `WARN` `INFO` `DEBUG` `TRACE` .
 
-`path` Dit kan een absoluut of relatief pad zijn. Relatieve paden worden omgezet in de map waarin zich zich `applicationinsights-agent-3.0.0.jar` bevindt.
+`path` Dit kan een absoluut of relatief pad zijn. Relatieve paden worden omgezet in de map waarin zich zich `applicationinsights-agent-3.0.1.jar` bevindt.
 
 `maxSizeMb` is de maximale grootte van het logboek bestand voordat deze wordt doorgevoerd.
 

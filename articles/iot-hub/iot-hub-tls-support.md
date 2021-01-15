@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 ms.topic: conceptual
 ms.date: 01/14/2020
 ms.author: jlian
-ms.openlocfilehash: e569cbe9030b2ac5a42bd99233b4fefc925a5662
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: d36a7917693aef9063ade473759f2f451d3a677f
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220304"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234015"
 ---
 # <a name="transport-layer-security-tls-support-in-iot-hub"></a>Ondersteuning van Transport Layer Security (TLS) in IoT Hub
 
@@ -48,7 +48,7 @@ Configureer uw IoT-hubs voor extra beveiliging zodat *alleen* client verbindinge
 * VS (overheid) - Arizona
 * US Gov-Virginia (TLS 1.0/1.1-ondersteuning is niet beschikbaar in deze regio-TLS 1,2 Enforcement moet zijn ingeschakeld of het maken van een IoT hub mislukt)
 
-Volg de stappen in [IOT hub maken in azure Portal](/.iot-hub-create-through-portal.md)om het afdwingen van TLS 1,2 in te scha kelen, behalve
+Volg de stappen in [IOT hub maken in azure Portal](iot-hub-create-through-portal.md)om het afdwingen van TLS 1,2 in te scha kelen, behalve
 
 - Kies een **regio** in de bovenstaande lijst.
 - Selecteer **1,2** onder **Management-> Advanced-> Transport Layer Security (tls)-> minimale TLS-versie**. Deze instelling wordt alleen weer gegeven voor IoT hub die in een ondersteunde regio is gemaakt.

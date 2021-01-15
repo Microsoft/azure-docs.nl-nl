@@ -3,12 +3,12 @@ title: Gebruiks analyse met Azure-toepassing Insights | Micro soft docs
 description: Inzicht in uw gebruikers en wat ze met uw app doen.
 ms.topic: conceptual
 ms.date: 03/25/2019
-ms.openlocfilehash: 4f4954451bfa195b07c580ffa451b8cb333eb32c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 633d35ec16f5eb9de664421c38cd4c824dc240cf
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90532100"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233845"
 ---
 # <a name="usage-analysis-with-application-insights"></a>Gebruiksanalyse met Application Insights
 
@@ -65,7 +65,7 @@ Inzichten aan de rechter kant van interessante patronen in de set met gegevens.
 
 ## <a name="retention---how-many-users-come-back"></a>Bewaren-hoeveel gebruikers worden weer gegeven?
 
-Retentie helpt u te begrijpen hoe vaak uw gebruikers terugkeren naar het gebruik van hun app, op basis van cohorts van gebruikers die een bepaalde zakelijke actie hebben uitgevoerd tijdens een bepaalde periode. 
+Retentie helpt u te begrijpen hoe vaak uw gebruikers terugkeren naar het gebruik van hun app, op basis van cohorts van gebruikers die een bepaalde zakelijke actie hebben uitgevoerd tijdens een bepaalde periode. 
 
 - Meer informatie over de specifieke functies waarmee gebruikers meer dan andere kunnen terugkomen 
 - Formulier hypo Thesen op basis van echte gebruikers gegevens 
@@ -79,7 +79,9 @@ Met de besturings elementen voor retentie bovenaan kunt u specifieke gebeurtenis
 
 ## <a name="custom-business-events"></a>Aangepaste zakelijke gebeurtenissen
 
-Om duidelijk inzicht te krijgen in wat gebruikers met uw app doen, is het handig om regels code in te voegen voor het vastleggen van aangepaste gebeurtenissen. Deze gebeurtenissen kunnen alles volgen van gedetailleerde gebruikers acties, zoals het klikken op specifieke knoppen, tot belang rijke zakelijke gebeurtenissen, zoals het maken van een aankoop of het winnen van een spel. 
+Om duidelijk inzicht te krijgen in wat gebruikers met uw app doen, is het handig om regels code in te voegen voor het vastleggen van aangepaste gebeurtenissen. Deze gebeurtenissen kunnen alles volgen van gedetailleerde gebruikers acties, zoals het klikken op specifieke knoppen, tot belang rijke zakelijke gebeurtenissen, zoals het maken van een aankoop of het winnen van een spel.
+
+U kunt ook de [invoeg toepassing voor automatisch verzamelen van analyses](javascript-click-analytics-plugin.md) gebruiken om aangepaste gebeurtenissen te verzamelen.
 
 In sommige gevallen kunnen pagina weergaven nuttige gebeurtenissen vertegenwoordigen. Dit is in het algemeen niet waar. Een gebruiker kan een product pagina openen zonder het product aan te schaffen. 
 

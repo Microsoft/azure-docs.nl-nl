@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 03/12/2020
-ms.openlocfilehash: 118bdcb6929abfc162ff05e91f1621f087b6c50c
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: ae0bc6ea35d5c6e3ebe0cd7f232e5c8b1e637d9d
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186725"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234049"
 ---
 # <a name="how-to-query-logs-from-azure-monitor-for-vms"></a>Logboeken van Azure Monitor voor VM's opvragen
 
@@ -92,7 +92,7 @@ Hier volgen enkele belang rijke punten om rekening mee te houden:
 
 #### <a name="naming-and-classification"></a>Naamgeving en classificatie
 
-Voor het gemak wordt het IP-adres van de externe kant van een verbinding opgenomen in de eigenschap RemoteIp. Voor binnenkomende verbindingen is RemoteIp hetzelfde als SourceIp, terwijl voor uitgaande verbindingen hetzelfde is als DestinationIp. De eigenschap RemoteDnsCanonicalNames vertegenwoordigt de canonieke DNS-namen die door de computer worden gerapporteerd voor RemoteIp. De eigenschappen RemoteDnsQuestions en RemoteClassification zijn gereserveerd voor toekomstig gebruik. 
+Voor het gemak wordt het IP-adres van de externe kant van een verbinding opgenomen in de eigenschap RemoteIp. Voor binnenkomende verbindingen is RemoteIp hetzelfde als SourceIp, terwijl voor uitgaande verbindingen hetzelfde is als DestinationIp. De eigenschap RemoteDnsCanonicalNames vertegenwoordigt de canonieke DNS-namen die door de computer worden gerapporteerd voor RemoteIp. De eigenschap RemoteDnsQuestions vertegenwoordigt de DNS-vragen die door de computer zijn gerapporteerd voor RemoteIp. De eigenschap RemoveClassification is gereserveerd voor toekomstig gebruik. 
 
 #### <a name="geolocation"></a>Geolocatie
 
@@ -112,10 +112,10 @@ Elke eigenschap RemoteIp in de tabel *VMConnection* wordt gecontroleerd op basis
 |:--|:--|
 |MaliciousIp |Het RemoteIp-adres |
 |IndicatorThreadType |Gedetecteerde bedreigings indicator is een van de volgende waarden: *botnet*, *C2*, *CryptoMining*, *Darknet*, *DDoS*, *MaliciousUrl*, *malware*, *phishing*, *proxy*, *pua's geblokkeerd*, *Watch list*.   |
-|Description |Beschrijving van de waargenomen bedreiging. |
+|Beschrijving |Beschrijving van de waargenomen bedreiging. |
 |TLPLevel |TLP-niveau (Traffic Light Protocol) is een van de gedefinieerde waarden, *wit*, *groen*, *geel*, *rood*. |
 |Betrouwbaarheid |De waarden zijn *0 – 100*. |
-|Ernst |De waarden zijn *0 – 5*, waarbij *5* het ernstigste en *0* is. De standaard waarde is *3*.  |
+|Severity |De waarden zijn *0 – 5*, waarbij *5* het ernstigste en *0* is. De standaard waarde is *3*.  |
 |FirstReportedDateTime |De eerste keer dat de provider de indicator heeft gerapporteerd. |
 |LastReportedDateTime |De laatste keer dat de indicator door de stroom is gezien. |
 |IsActive |Hiermee wordt aangegeven dat indica toren worden gedeactiveerd met de waarde *True* of *False* . |
@@ -233,7 +233,7 @@ Records met een type *VMProcess* hebben inventaris gegevens voor met TCP verbond
 |Groep | Naam van de proces groep. Processen in dezelfde groep zijn logisch gerelateerd, bijvoorbeeld een deel van hetzelfde product of systeem onderdeel. |
 |StartTime | De begin tijd van de proces groep |
 |FirstPid | De eerste pincode in de proces groep |
-|Description | De proces beschrijving |
+|Beschrijving | De proces beschrijving |
 |CompanyName | De naam van het bedrijf |
 |Internenaam | De interne naam |
 |ProductName | De naam van het product |
@@ -442,7 +442,7 @@ Records met een type *InsightsMetrics* hebben prestatie gegevens van het gast be
 |Computer | De FQDN van de computer | 
 |Oorsprong | *vm.azm.ms* |
 |Naamruimte | Categorie van het prestatie meter item | 
-|Name | Naam van het prestatie meter item |
+|Naam | Naam van het prestatie meter item |
 |Val | Verzamelde waarde | 
 |Tags | Gerelateerde Details over de record. Zie de onderstaande tabel voor labels die worden gebruikt met verschillende record typen.  |
 |AgentId | Unieke id voor de agent van elke computer |

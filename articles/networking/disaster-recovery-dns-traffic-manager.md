@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/08/2018
 ms.author: kumud
-ms.openlocfilehash: 6eab1803bf5adab42be87b5f8567682c6d75947e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8cb1a490ac8edf2630253b45d99c3394bbe721b8
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74483534"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234151"
 ---
 # <a name="disaster-recovery-using-azure-dns-and-traffic-manager"></a>Herstel na noodgevallen met Azure DNS en Traffic Manager
 
@@ -45,7 +45,7 @@ De meeste zakelijke klanten kiezen een architectuur met meerdere regio's voor to
     
     *Afbeelding: actief/passief met warme stand-by nood herstel configuratie*
     
-Zie [herstel na nood gevallen voor Azure-toepassingen](https://docs.microsoft.com/azure/architecture/resiliency/disaster-recovery-azure-applications)voor meer informatie over failover en hoge Beschik baarheid.
+Zie [herstel na nood gevallen voor Azure-toepassingen](/azure/architecture/resiliency/disaster-recovery-azure-applications)voor meer informatie over failover en hoge Beschik baarheid.
 
 
 ## <a name="planning-your-disaster-recovery-architecture"></a>De architectuur voor herstel na nood gevallen plannen
@@ -54,7 +54,7 @@ Er zijn twee technische aspecten voor het instellen van uw nood herstel architec
 -  Een implementatie mechanisme gebruiken om instanties, gegevens en configuraties tussen primaire en stand-by-omgevingen te repliceren. Dit type herstel na nood geval kan met behulp van Azure Site-Recovery worden uitgevoerd via Microsoft Azure partner-apparaten/-services zoals Veritas of NetApp. 
 - Het ontwikkelen van een oplossing voor het omleiden van netwerk-/webverkeer van de primaire site naar de stand-by-site. Dit type herstel na nood geval kan worden bereikt via Azure DNS, Azure Traffic Manager (DNS) of globale load balancers van derden.
 
-Dit artikel is beperkt tot benaderingen via netwerk-en webverkeer omleiden. Zie [Azure site Recovery-documentatie](https://docs.microsoft.com/azure/site-recovery/)voor instructies voor het instellen van Azure site Recovery.
+Dit artikel is beperkt tot benaderingen via netwerk-en webverkeer omleiden. Zie [Azure site Recovery-documentatie](../site-recovery/index.yml)voor instructies voor het instellen van Azure site Recovery.
 DNS is een van de meest efficiënte mechanismen voor het omleiden van netwerk verkeer omdat DNS vaak globaal en extern is voor het Data Center en wordt geïsoleerd van eventuele storingen op het niveau van regionale of beschikbaarheids zones (AZ). Eén kan gebruikmaken van een op DNS gebaseerd failover-mechanisme en in azure, twee DNS-services kunnen worden uitgevoerd op een manier Azure DNS (gezaghebbende DNS) en Azure Traffic Manager (route ring op basis van op DNS gebaseerd verkeer). 
 
 Het is belang rijk om inzicht te krijgen in enkele concepten in DNS die uitvoerig worden gebruikt voor het bespreken van de oplossingen die in dit artikel worden beschreven:
@@ -146,7 +146,7 @@ Maak een nieuw Azure Traffic Manager-profiel met de naam contoso123 en selecteer
 
 ### <a name="step-2-create-endpoints-within-the-traffic-manager-profile"></a>Stap 2: eind punten maken binnen het Traffic Manager profiel
 
-In deze stap maakt u eind punten die verwijzen naar de sites voor productie en nood herstel. Kies hier het **type** als een extern eind punt, maar als de resource wordt gehost in azure, kunt u ook **Azure-eind punt** kiezen. Als u **Azure-eind punt**kiest, selecteert u een **doel bron** die een **app service** of een **openbaar IP-adres** is dat wordt toegewezen door Azure. De prioriteit is ingesteld op **1** , omdat deze de primaire service voor regio 1 is.
+In deze stap maakt u eind punten die verwijzen naar de sites voor productie en nood herstel. Kies hier het **type** als een extern eind punt, maar als de resource wordt gehost in azure, kunt u ook **Azure-eind punt** kiezen. Als u **Azure-eind punt** kiest, selecteert u een **doel bron** die een **app service** of een **openbaar IP-adres** is dat wordt toegewezen door Azure. De prioriteit is ingesteld op **1** , omdat deze de primaire service voor regio 1 is.
 U kunt ook het eind punt voor herstel na nood gevallen maken binnen Traffic Manager.
 
 ![Nood herstel eindpunten maken](./media/disaster-recovery-dns-traffic-manager/create-disaster-recovery-endpoint.png)
@@ -170,12 +170,3 @@ Tijdens een nood geval wordt het primaire eind punt onderzocht en wordt de statu
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over [Azure Traffic Manager](../traffic-manager/traffic-manager-overview.md).
 - Meer informatie over [Azure DNS](../dns/dns-overview.md).
-
-
-
-
-
-
-
-
-

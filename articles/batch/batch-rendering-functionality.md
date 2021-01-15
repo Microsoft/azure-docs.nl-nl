@@ -3,14 +3,14 @@ title: Weergave mogelijkheden
 description: Standaard Azure Batch mogelijkheden worden gebruikt voor het uitvoeren van werk belastingen en apps voor rendering. Batch bevat specifieke functies voor het ondersteunen van rendering-workloads.
 author: mscurrell
 ms.author: markscu
-ms.date: 08/02/2018
+ms.date: 01/14/2021
 ms.topic: how-to
-ms.openlocfilehash: 77a6ec54495b394c597f6d6b4ddb5f5fe3285550
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: d9d196897800467fd02397bb774af0bbb9ebabf0
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92107467"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234270"
 ---
 # <a name="azure-batch-rendering-capabilities"></a>Mogelijkheden voor Azure Batch Rendering
 
@@ -18,7 +18,15 @@ Standaard Azure Batch mogelijkheden worden gebruikt voor het uitvoeren van werk 
 
 Zie [dit artikel](./batch-service-workflow-features.md)voor een overzicht van batch concepten, inclusief Pools, taken en taken.
 
-## <a name="batch-pools"></a>Batch-Pools
+## <a name="batch-pools-using-custom-vm-images-and-standard-application-licensing"></a>Batch-Pools met behulp van aangepaste VM-installatie kopieën en standaard toepassings licenties
+
+Net als bij andere werk belastingen en typen toepassingen, kan een aangepaste VM-installatie kopie worden gemaakt met de vereiste rendering-toepassingen en-modules. De aangepaste VM-installatie kopie wordt in de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md) geplaatst en [kan worden gebruikt voor het maken van batch-Pools](batch-sig-images.md).
+
+De opdracht regel teken reeksen van de taak moeten verwijzen naar de toepassingen en paden die worden gebruikt bij het maken van de aangepaste VM-installatie kopie.
+
+De meeste rendering-toepassingen vereisen licenties die zijn verkregen van een licentie server. Als er een bestaande on-premises licentie server is, moeten zowel de groep als de licentie server zich in hetzelfde [virtuele netwerk](../virtual-network/virtual-networks-overview.md)bevinden. Het is ook mogelijk om een licentie server op een virtuele Azure-machine uit te voeren, waarbij de batch-pool en de VM van de licentie server zich in hetzelfde virtueel netwerk bevindt.
+
+## <a name="batch-pools-using-rendering-vm-images"></a>Batch-Pools met rendering van VM-installatie kopieën
 
 ### <a name="rendering-application-installation"></a>De installatie van een toepassing weer geven
 
@@ -71,13 +79,13 @@ Arnold 2017-opdracht regel|kick.exe|ARNOLD_2017_EXEC|
 |Arnold 2018-opdracht regel|kick.exe|ARNOLD_2018_EXEC|
 |Blender|blender.exe|BLENDER_2018_EXEC|
 
-### <a name="azure-vm-families"></a>Azure VM-families
+## <a name="azure-vm-families"></a>Azure VM-families
 
 Net als bij andere werk belastingen kunnen de systeem vereisten voor het renderen van toepassingen verschillen en de prestatie vereisten verschillen voor taken en projecten.  Een groot aantal verschillende VM-families is beschikbaar in azure, afhankelijk van uw vereisten: de laagste kosten, de beste prijs/prestaties, de beste prestaties, enzovoort.
 Sommige rendering-toepassingen, zoals Arnold, zijn gebaseerd op een CPU. andere, zoals V-Ray en overvloei cycli, kunnen Cpu's en/of Gpu's gebruiken.
 [Zie VM-typen en-grootten](../virtual-machines/sizes.md)voor een beschrijving van de beschik bare VM-families en VM-grootten.
 
-### <a name="low-priority-vms"></a>Virtuele machines met lage prioriteit
+## <a name="low-priority-vms"></a>Virtuele machines met lage prioriteit
 
 Net als bij andere workloads kunnen virtuele machines met lage prioriteit worden gebruikt in batch-Pools voor rendering.  Virtuele machines met lage prioriteit hebben hetzelfde als normale, specifieke Vm's, maar gebruiken de Azure-capaciteit van overschot en zijn beschikbaar voor een grote korting.  Het saldo voor het gebruik van virtuele machines met lage prioriteit is dat deze Vm's mogelijk niet kunnen worden toegewezen of op elk gewenst moment kunnen worden gebruikt, afhankelijk van de beschik bare capaciteit. Daarom zullen Vm's met lage prioriteit niet geschikt zijn voor alle rendering-taken. Als afbeeldingen bijvoorbeeld veel uur duren om weer te geven, is het waarschijnlijk dat de rendering van die installatie kopieën wordt onderbroken en opnieuw wordt gestart, omdat de Vm's die worden afgebroken niet acceptabel zijn.
 

@@ -1,14 +1,14 @@
 ---
 title: Beleid implementeren dat kan worden hersteld
 description: Als u beleid wilt implementeren dat gebruikmaakt van een herstel taak via Azure Lighthouse, moet u een beheerde identiteit maken in de Tenant van de klant.
-ms.date: 12/17/2020
+ms.date: 01/14/2021
 ms.topic: how-to
-ms.openlocfilehash: eb473fe2f589cf719e3944c887d46e75e9e7fdbf
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 01070133241117596bdf2b8e1e7c3fa101fc656c
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97670488"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233879"
 ---
 # <a name="deploy-a-policy-that-can-be-remediated-within-a-delegated-subscription"></a>Een beleid implementeren dat kan worden hersteld binnen een gedelegeerd abonnement
 
@@ -19,9 +19,9 @@ Met [Azure Lighthouse](../overview.md) kunnen service providers beleids definiti
 
 ## <a name="create-a-user-who-can-assign-roles-to-a-managed-identity-in-the-customer-tenant"></a>Een gebruiker maken die rollen kan toewijzen aan een beheerde identiteit in de Tenant van de klant
 
-Wanneer u een klant onboardt naar Azure Lighthouse, gebruikt u een [Azure Resource Manager-sjabloon](onboard-customer.md#create-an-azure-resource-manager-template) samen met een parameter bestand dat de gebruikers, gebruikers groepen en service-principals in de beheer-Tenant definieert die toegang hebben tot de gedelegeerde resources in de Tenant van de klant. Aan elk van deze gebruikers (**principalId**) in het parameter bestand is een [ingebouwde rol](../../role-based-access-control/built-in-roles.md) (**roledefinitionid hebben**) toegewezen waarmee het toegangs niveau wordt gedefinieerd.
+Wanneer u een klant onboardt naar Azure Lighthouse, gebruikt u een [Azure Resource Manager sjabloon](onboard-customer.md#create-an-azure-resource-manager-template) samen met een parameter bestand om autorisaties te definiëren die toegang verlenen tot gedelegeerde resources in de Tenant van de klant. Elke autorisatie geeft een **principalId** op die overeenkomt met een Azure AD-gebruiker,-groep of Service-Principal in de beheer Tenant en een **roledefinitionid hebben** die overeenkomt met de [ingebouwde Azure-rol](../../role-based-access-control/built-in-roles.md) die wordt toegekend.
 
-Als u een **principalId** wilt toestaan een beheerde identiteit in de Tenant van de klant te maken, moet u de **roledefinitionid hebben** ervan instellen op de beheerder van de **gebruikers toegang**. Hoewel deze rol niet algemeen wordt ondersteund, kan deze worden gebruikt in dit specifieke scenario, waardoor de gebruikers met deze machtiging een of meer specifieke ingebouwde rollen aan beheerde identiteiten kunnen toewijzen. Deze rollen worden gedefinieerd in de eigenschap **delegatedRoleDefinitionIds** . U kunt hier elke ingebouwde rol toevoegen, behalve voor gebruikers toegang beheerder of eigenaar.
+Als u een **principalId** wilt toestaan een beheerde identiteit in de Tenant van de klant te maken, moet u de **roledefinitionid hebben** ervan instellen op de beheerder van de **gebruikers toegang**. Hoewel deze rol niet algemeen wordt ondersteund, kan deze worden gebruikt in dit specifieke scenario, zodat gebruikers accounts met deze machtiging een of meer specifieke ingebouwde rollen aan beheerde identiteiten kunnen toewijzen. Deze rollen worden gedefinieerd in de eigenschap **delegatedRoleDefinitionIds** en kunnen alle [Ondersteunde ingebouwde rollen van Azure](../concepts/tenants-users-roles.md#role-support-for-azure-lighthouse) bevatten, met uitzonde ring van de beheerder of eigenaar van de gebruikers toegang.
 
 Nadat de klant onboarding is uitgevoerd, kan de **principalId** die in deze autorisatie is gemaakt, deze ingebouwde rollen toewijzen aan beheerde identiteiten in de Tenant van de klant. Ze hebben echter geen andere machtigingen die normaal gesp roken zijn gekoppeld aan de rol beheerder van gebruikers toegang.
 

@@ -4,12 +4,12 @@ description: Verwijzing van Azure Monitor inzicht krijgen in de ondersteunde ser
 ms.subservice: logs
 ms.topic: reference
 ms.date: 12/09/2020
-ms.openlocfilehash: c7b2d48b40843930bba78f54d2294769d952daf6
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: aeac069b4e9382867664a82af62e29e72da7585e
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96931225"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232244"
 ---
 # <a name="supported-categories-for-azure-resource-logs"></a>Ondersteunde categorieën voor Azure-resource logboeken
 
@@ -18,7 +18,7 @@ ms.locfileid: "96931225"
 
 [Azure monitor bron logboeken](./platform-logs-overview.md) worden logboeken gegenereerd door Azure-Services waarmee de werking van deze services of bronnen wordt beschreven. Alle bron logboeken die beschikbaar zijn via Azure Monitor, delen een gemeen schappelijk schema op het hoogste niveau, met flexibiliteit voor elke service om unieke eigenschappen voor hun eigen gebeurtenissen te verzenden.
 
-Een combi natie van het resource type (beschikbaar in de `resourceId` eigenschap) en de `category` unieke identificatie van een schema. Er is een gemeen schappelijk schema voor alle resource logboeken met servicespecifieke velden en vervolgens toegevoegd voor verschillende logboek categorieën. Zie [common en service-specifiek schema voor Azure-resource logboeken]() voor meer informatie.
+Een combi natie van het resource type (beschikbaar in de `resourceId` eigenschap) en de `category` unieke identificatie van een schema. Er is een gemeen schappelijk schema voor alle bron logboeken met servicespecifieke velden en vervolgens toegevoegd voor verschillende logboek categorieën. Zie voor meer informatie [common en service-specifiek schema voor Azure-resource logboeken]()
 
 
 ## <a name="costs"></a>Kosten
@@ -34,7 +34,7 @@ Sommige categorieën worden mogelijk alleen ondersteund voor specifieke typen re
 Als er nog steeds iets ontbreekt, kunt u onder aan dit artikel een GitHub-opmerking openen.
 ## <a name="microsoftanalysisservicesservers"></a>Micro soft. AnalysisServices/servers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -44,7 +44,7 @@ Kosten: gratis
 
 ## <a name="microsoftapimanagementservice"></a>Microsoft.ApiManagement/service
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -53,7 +53,7 @@ Kosten: gratis
 
 ## <a name="microsoftappplatformspring"></a>Micro soft. AppPlatform/lente
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -63,7 +63,7 @@ Kosten: gratis
 
 ## <a name="microsoftautomationautomationaccounts"></a>Micro soft. Automation/automationAccounts
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -74,7 +74,7 @@ Kosten: gratis
 
 ## <a name="microsoftbatchbatchaccounts"></a>Microsoft.Bat-CH/batchAccounts
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -83,7 +83,7 @@ Kosten: gratis
 
 ## <a name="microsoftbatchaiworkspaces"></a>Microsoft.BatchAI/werk ruimten
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -94,7 +94,7 @@ Kosten: gratis
 
 ## <a name="microsoftblockchainblockchainmembers"></a>Microsoft.Blockchain/blockchainMembers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -106,7 +106,7 @@ Kosten: gratis
 
 ## <a name="microsoftblockchaincordamembers"></a>Micro soft. Block Chain/cordaMembers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -115,16 +115,16 @@ Kosten: gratis
 
 ## <a name="microsoftcdncdnwebapplicationfirewallpolicies"></a>Micro soft. CDN/cdnwebapplicationfirewallpolicies
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
-|WebApplicationFirewallLogs|Web-webtoepassingsbestanden firewall-logboeken|
+|WebApplicationFirewallLogs|Web Application firewall-logboeken|
 
 
 ## <a name="microsoftcdnprofiles"></a>Microsoft.Cdn/profiles
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -133,7 +133,7 @@ Kosten: gratis
 
 ## <a name="microsoftcdnprofilesendpoints"></a>Micro soft. CDN/profielen/eind punten
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -142,7 +142,7 @@ Kosten: gratis
 
 ## <a name="microsoftclassicnetworknetworksecuritygroups"></a>Micro soft. ClassicNetwork/networksecuritygroups
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -151,7 +151,7 @@ Kosten: gratis
 
 ## <a name="microsoftcognitiveservicesaccounts"></a>Micro soft. CognitiveServices/accounts
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -162,7 +162,7 @@ Kosten: gratis
 
 ## <a name="microsoftcontainerregistryregistries"></a>Micro soft. ContainerRegistry/registers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -172,7 +172,7 @@ Kosten: gratis
 
 ## <a name="microsoftcontainerservicemanagedclusters"></a>Micro soft. container service/managedClusters
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -185,7 +185,7 @@ Kosten: gratis
 
 ## <a name="microsoftcustomprovidersresourceproviders"></a>Micro soft. CustomProviders/resourceproviders
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -194,7 +194,7 @@ Kosten: gratis
 
 ## <a name="microsoftdatabricksworkspaces"></a>Micro soft. Databricks/werk ruimten
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -212,7 +212,7 @@ Kosten: gratis
 
 ## <a name="microsoftdatafactoryfactories"></a>Micro soft. DataFactory/fabrieken
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -223,7 +223,7 @@ Kosten: gratis
 
 ## <a name="microsoftdatalakestoreaccounts"></a>Micro soft. data Lake Store/accounts
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -233,7 +233,7 @@ Kosten: gratis
 
 ## <a name="microsoftdatashareaccounts"></a>Microsoft.DataShare/accounts
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -245,7 +245,7 @@ Kosten: gratis
 
 ## <a name="microsoftdbformariadbservers"></a>Microsoft.DBforMariaDB/servers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -255,7 +255,7 @@ Kosten: gratis
 
 ## <a name="microsoftdbformysqlflexibleservers"></a>Microsoft.DBforMySQL/flexibleServers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -265,7 +265,7 @@ Kosten: gratis
 
 ## <a name="microsoftdbformysqlservers"></a>Microsoft.DBforMySQL/servers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -275,7 +275,7 @@ Kosten: gratis
 
 ## <a name="microsoftdbforpostgresqlflexibleservers"></a>Microsoft.DBforPostgreSQL/flexibleServers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -284,7 +284,7 @@ Kosten: gratis
 
 ## <a name="microsoftdbforpostgresqlservers"></a>Microsoft.DBforPostgreSQL/servers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -295,7 +295,7 @@ Kosten: gratis
 
 ## <a name="microsoftdbforpostgresqlserversv2"></a>Micro soft. DBforPostgreSQL/serversv2
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -304,7 +304,7 @@ Kosten: gratis
 
 ## <a name="microsoftdesktopvirtualizationapplicationgroups"></a>Micro soft. DesktopVirtualization/applicationgroups
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -315,7 +315,7 @@ Kosten: gratis
 
 ## <a name="microsoftdesktopvirtualizationhostpools"></a>Micro soft. DesktopVirtualization/hostpools
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -328,7 +328,7 @@ Kosten: gratis
 
 ## <a name="microsoftdesktopvirtualizationworkspaces"></a>Micro soft. DesktopVirtualization/werk ruimten
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -340,7 +340,7 @@ Kosten: gratis
 
 ## <a name="microsoftdevicesiothubs"></a>Microsoft.Devices/IotHubs
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -362,7 +362,7 @@ Kosten: gratis
 
 ## <a name="microsoftdevicesprovisioningservices"></a>Micro soft. devices/provisioningServices
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -372,7 +372,7 @@ Kosten: gratis
 
 ## <a name="microsoftdocumentdbdatabaseaccounts"></a>Microsoft.DocumentDB/databaseAccounts
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -388,7 +388,7 @@ Kosten: gratis
 
 ## <a name="microsofteventgriddomains"></a>Micro soft. EventGrid/domeinen
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -398,7 +398,7 @@ Kosten: gratis
 
 ## <a name="microsofteventgridsystemtopics"></a>Micro soft. EventGrid/systemTopics
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -407,7 +407,7 @@ Kosten: gratis
 
 ## <a name="microsofteventgridtopics"></a>Micro soft. EventGrid/topics
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -417,7 +417,7 @@ Kosten: gratis
 
 ## <a name="microsofteventhubnamespaces"></a>Microsoft.EventHub/namespaces
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -432,7 +432,7 @@ Kosten: gratis
 
 ## <a name="microsofthealthcareapisservices"></a>Microsoft.HealthcareApis/services
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -441,7 +441,7 @@ Kosten: gratis
 
 ## <a name="microsoftinsightsautoscalesettings"></a>Micro soft. Insights/AutoscaleSettings
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -451,7 +451,7 @@ Kosten: gratis
 
 ## <a name="microsoftinsightscomponents"></a>Micro soft. Insights/onderdelen
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -470,16 +470,16 @@ Kosten: gratis
 
 ## <a name="microsoftkeyvaultvaults"></a>Microsoft.KeyVault/vaults
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
-|Audit event|Auditlogboeken|
+|AuditEvent|Auditlogboeken|
 
 
 ## <a name="microsoftkustoclusters"></a>Micro soft. Kusto/clusters
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -494,7 +494,7 @@ Kosten: gratis
 
 ## <a name="microsoftlogicintegrationaccounts"></a>Micro soft. Logic/integrationAccounts
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -503,7 +503,7 @@ Kosten: gratis
 
 ## <a name="microsoftlogicworkflows"></a>Microsoft.Logic/workflows
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -512,7 +512,7 @@ Kosten: gratis
 
 ## <a name="microsoftmachinelearningservicesworkspaces"></a>Micro soft. MachineLearningServices/werk ruimten
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -525,7 +525,7 @@ Kosten: gratis
 
 ## <a name="microsoftmediamediaservices"></a>Micro soft. Media/Media Services
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -534,7 +534,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworkapplicationgateways"></a>Micro soft. Network/applicationGateways
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -545,7 +545,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworkazurefirewalls"></a>Micro soft. Network/azurefirewalls
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -553,9 +553,9 @@ Kosten: gratis
 |AzureFirewallNetworkRule|Azure Firewall netwerk regel|
 
 
-## <a name="microsoftnetworkbastionhosts"></a>Micro soft. Network/bastionHosts
+## <a name="microsoftnetworkbastionhosts"></a>Microsoft.Network/bastionHosts
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -564,7 +564,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworkexpressroutecircuits"></a>Microsoft.Network/expressRouteCircuits
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -573,7 +573,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworkfrontdoors"></a>Micro soft. Network/frontdoors
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -583,7 +583,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworkloadbalancers"></a>Microsoft.Network/loadBalancers
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -593,7 +593,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworknetworksecuritygroups"></a>Micro soft. Network/networksecuritygroups
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -604,7 +604,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworkpublicipaddresses"></a>Micro soft. Network/publicIPAddresses
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -615,7 +615,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworktrafficmanagerprofiles"></a>Microsoft.Network/trafficManagerProfiles
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -624,7 +624,7 @@ Kosten: gratis
 
 ## <a name="microsoftnetworkvirtualnetworkgateways"></a>Microsoft.Network/virtualNetworkGateways
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -635,9 +635,9 @@ Kosten: gratis
 |TunnelDiagnosticLog|Diagnostische logboeken voor tunnel|
 
 
-## <a name="microsoftnetworkvirtualnetworks"></a>Microsoft.Network/virtualNetworks
+## <a name="microsoftnetworkvirtualnetworks"></a>Micro soft. Network/virtualNetworks
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -646,7 +646,7 @@ Kosten: gratis
 
 ## <a name="microsoftpowerbidedicatedcapacities"></a>Micro soft. PowerBIDedicated/capaciteiten
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -655,7 +655,7 @@ Kosten: gratis
 
 ## <a name="microsoftrecoveryservicesvaults"></a>Micro soft. Recovery Services/kluizen
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -677,7 +677,7 @@ Kosten: gratis
 
 ## <a name="microsoftrelaynamespaces"></a>Micro soft. relay/naam ruimten
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -686,7 +686,7 @@ Kosten: gratis
 
 ## <a name="microsoftsearchsearchservices"></a>Micro soft. Search/searchServices
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -695,7 +695,7 @@ Kosten: gratis
 
 ## <a name="microsoftservicebusnamespaces"></a>Microsoft.ServiceBus/namespaces
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -704,7 +704,7 @@ Kosten: gratis
 
 ## <a name="microsoftsignalrservicesignalr"></a>Microsoft.SignalRService/SignalR
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -713,7 +713,7 @@ Kosten: gratis
 
 ## <a name="microsoftsqlmanagedinstances"></a>Micro soft. SQL/managedInstances
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -724,7 +724,7 @@ Kosten: gratis
 
 ## <a name="microsoftsqlmanagedinstancesdatabases"></a>Micro soft. SQL/managedInstances/data bases
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -736,7 +736,7 @@ Kosten: gratis
 
 ## <a name="microsoftsqlserversdatabases"></a>Microsoft.Sql/servers/databases
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -760,7 +760,7 @@ Kosten: gratis
 
 ## <a name="microsoftstoragestorageaccountsblobservices"></a>Micro soft. Storage/Storage accounts/blobServices
 
-Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
+Kosten voor export: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -771,7 +771,7 @@ Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-p
 
 ## <a name="microsoftstoragestorageaccountsfileservices"></a>Micro soft. Storage/Storage accounts/fileServices
 
-Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
+Kosten voor export: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -782,7 +782,7 @@ Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-p
 
 ## <a name="microsoftstoragestorageaccountsqueueservices"></a>Micro soft. Storage/Storage accounts/queueServices
 
-Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
+Kosten voor export: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
  
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -793,7 +793,7 @@ Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-p
 
 ## <a name="microsoftstoragestorageaccountstableservices"></a>Micro soft. Storage/Storage accounts/tableServices
 
-Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
+Kosten voor export: betaald zoals beschreven in de sectie platform logs van [Azure monitor-pagina met prijzen.](https://azure.microsoft.com/pricing/details/monitor/) 
  
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -804,7 +804,7 @@ Kosten: betaald zoals beschreven in de sectie platform logs van [Azure monitor-p
 
 ## <a name="microsoftstreamanalyticsstreamingjobs"></a>Micro soft. StreamAnalytics/streamingjobs
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -814,7 +814,7 @@ Kosten: gratis
 
 ## <a name="microsoftsynapseworkspaces"></a>Micro soft. Synapse/werk ruimten
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -826,7 +826,7 @@ Kosten: gratis
 
 ## <a name="microsoftsynapseworkspacesbigdatapools"></a>Micro soft. Synapse/werk ruimten/bigDataPools
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -835,7 +835,7 @@ Kosten: gratis
 
 ## <a name="microsoftsynapseworkspacessqlpools"></a>Micro soft. Synapse/werk ruimten/sqlPools
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -849,7 +849,7 @@ Kosten: gratis
 
 ## <a name="microsoftwebhostingenvironments"></a>micro soft. Web/hostingenvironments
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 |Categorie |Weergave naam categorie|
 |---|---|
@@ -858,7 +858,7 @@ Kosten: gratis
 
 ## <a name="microsoftwebsites"></a>micro soft. web/sites
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 
 |Categorie |Weergave naam categorie|
@@ -873,7 +873,7 @@ Kosten: gratis
 
 ## <a name="microsoftwebsitesslots"></a>micro soft. web/sites/sleuven
 
-Kosten: gratis 
+Kosten voor export: gratis 
 
 
 |Categorie |Weergave naam categorie|

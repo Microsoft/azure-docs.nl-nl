@@ -3,12 +3,12 @@ title: Configuratie van batch-pool migreren van Cloud Services naar Virtual Mach
 description: Meer informatie over hoe u uw pool configuratie kunt bijwerken naar de nieuwste en aanbevolen configuratie
 ms.topic: how-to
 ms.date: 1/6/2021
-ms.openlocfilehash: b6f4184f7c4f133f74cb3157638b1621dad25fda
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: d987a185efb6593fd541dd14fa74b6c4d3ca41be
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97969024"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234304"
 ---
 # <a name="migrate-batch-pool-configuration-from-cloud-services-to-virtual-machines"></a>Configuratie van batch-pool migreren van Cloud Services naar Virtual Machines
 
@@ -22,7 +22,7 @@ In dit artikel wordt beschreven hoe u migreert naar ' virtualMachineConfiguratio
 
 Bestaande actieve Pools kunnen niet worden bijgewerkt vanuit cloudServiceConfiguration naar virtualMachineConfiguration. nieuwe Pools moeten worden gemaakt. Het maken van Pools met ' virtualMachineConfiguration ' wordt ondersteund door alle batch-Api's, opdracht regel Programma's, Azure Portal en de Batch Explorer-gebruikers interface.
 
-De [.net](tutorial-parallel-dotnet.md) -en [python](tutorial-parallel-python.md) -zelf studies bieden voor beelden van het maken van een pool met behulp van ' virtualMachineConfiguration '.
+**De [.net](tutorial-parallel-dotnet.md) -en [python](tutorial-parallel-python.md) -zelf studies bieden voor beelden van het maken van een pool met behulp van ' virtualMachineConfiguration '.**
 
 ## <a name="pool-configuration-differences"></a>Verschillen in groeps configuratie
 

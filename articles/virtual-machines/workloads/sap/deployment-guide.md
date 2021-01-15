@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 07/16/2020
 ms.author: sedusch
-ms.openlocfilehash: 2eb3564153734ff70b7df69da568966e29747863
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: c70de186468eb3efacc82c1d5c8802612475fd4d
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202433"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232791"
 ---
 # <a name="azure-virtual-machines-deployment-for-sap-netweaver"></a>Azure Virtual Machines-implementatie voor SAP NetWeaver
 
@@ -912,8 +912,8 @@ Zie door de gebruiker [gedefinieerde routes en door sturen via IP][virtual-netwo
 ### <a name="configure-the-azure-extension-for-sap"></a><a name="d98edcd3-f2a1-49f7-b26a-07448ceb60ca"></a>De Azure-extensie voor SAP configureren
 
 > [!NOTE]
-> Algemene ondersteunings verklaring: open altijd een incident met SAP op onderdeel BC-op-NT-AZR voor Windows of BC-LNX-AZR als u ondersteuning nodig hebt voor de Azure-extensie voor SAP.
-> Er zijn specifieke micro soft-ondersteunings technici actief in het SAP-ondersteunings systeem om onze gezamenlijke klanten te helpen.
+> Algemene ondersteunings verklaring:  
+> Ondersteuning voor de Azure-extensie voor SAP wordt geboden via SAP-ondersteunings kanalen. Als u hulp nodig hebt met de Azure-extensie voor SAP, opent u een ondersteunings aanvraag met [SAP-ondersteuning](https://support.sap.com/). 
 
 Wanneer u de virtuele machine hebt voor bereid zoals beschreven in [implementatie scenario's van vm's voor SAP on Azure][deployment-guide-3], wordt de Azure VM-agent geïnstalleerd op de virtuele machine. De volgende stap is het implementeren van de Azure-extensie voor SAP, die beschikbaar is in de Azure extension-opslag plaats in de wereld wijde Azure-data centers. Zie [Azure virtual machines planning en implementatie voor SAP net-Weaver][planning-guide-9.1]voor meer informatie.
 

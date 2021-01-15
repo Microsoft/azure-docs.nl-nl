@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/27/2020
 ms.author: errobin
-ms.openlocfilehash: 63b91194c9ffb10fd8f4c5f1341eaf74bc81f5e1
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 88c287c4aa87b4df41bfe6bbc1992262b21d07aa
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94694878"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232757"
 ---
 # <a name="using-insights-to-monitor-and-configure-your-azure-load-balancer"></a>Inzichten gebruiken om uw Azure Load Balancer te controleren en te configureren
 
@@ -68,7 +68,7 @@ Op het tabblad gegevens doorvoer kunt u de inkomende en uitgaande door Voer cont
 ### <a name="flow-distribution"></a>Stroomdistributie
 Het tabblad stroom distributie helpt u bij het visualiseren en beheren van het aantal stromen dat uw back-end-exemplaren ontvangen en produceren. Hier ziet u de frequentie van het maken van de stroom en het aantal stromen voor binnenkomend en uitgaand verkeer, evenals het netwerk verkeer dat elke VM en het exemplaar van de virtuele-machine schaalset wordt ontvangen. 
 
-Met deze weer gaven kunt u feedback geven over of uw Load Balancer configuratie-of verkeers patronen leiden tot een onevenwichtigd verkeer. Als u bijvoorbeeld sessie affiniteit hebt geconfigureerd en één client maakt een onevenredig aantal aanvragen. U kunt er ook voor zorgen dat u de [limiet per VM-stroom](../virtual-network/virtual-machine-network-throughput.md#flow-limits-and-recommendations) voor uw computer grootte nadert.
+Met deze weer gaven kunt u feedback geven over of uw Load Balancer configuratie-of verkeers patronen leiden tot een onevenwichtigd verkeer. Als u bijvoorbeeld sessie affiniteit hebt geconfigureerd en één client maakt een onevenredig aantal aanvragen. U kunt er ook voor zorgen dat u de [limiet per VM-stroom](../virtual-network/virtual-machine-network-throughput.md#flow-limits-and-active-connections-recommendations) voor uw computer grootte nadert.
 
 ### <a name="connection-monitors"></a>Verbindingscontroles
 Op het tabblad verbindings monitors wordt de vertraging van de retour meter weer gegeven op een globale kaart voor alle [verbindings monitors](../network-watcher/connection-monitor.md)  die u hebt geconfigureerd. Deze visuals bieden nuttige informatie voor services met strikte latentie vereisten. Om aan uw vereisten te voldoen, moet u mogelijk aanvullende regionale implementaties toevoegen of overschakelen naar een [ander regionaal taakverdelings](./cross-region-overview.md) model

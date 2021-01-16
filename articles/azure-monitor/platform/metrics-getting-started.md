@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 710de93a24037031784ca8d37a8ae0be76bff9e6
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 2bf56379a32bf8035ea2d0d3fe797776ec6ba40d
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614583"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250397"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Aan de slag met Azure Metrics Explorer
 
@@ -38,7 +38,7 @@ Als u een metrische grafiek wilt maken, vanuit uw resource, resource groep, abon
 
     > ![Een metrische waarde selecteren](./media/metrics-getting-started/metrics-dropdown.png)
 
-4. U kunt desgewenst [de metrische aggregatie wijzigen](metrics-charts.md#changing-aggregation). U kunt bijvoorbeeld aangeven dat de grafiek minimum-, maximum-of gemiddelde waarden van de metriek moet weer geven.
+4. U kunt desgewenst [de metrische aggregatie wijzigen](metrics-charts.md#aggregation). U kunt bijvoorbeeld aangeven dat de grafiek minimum-, maximum-of gemiddelde waarden van de metriek moet weer geven.
 
 > [!TIP]
 > Gebruik de knop **Metrische waarde toevoegen** en herhaal deze stappen als u meerdere metrische waarden wilt zien die in dezelfde grafiek zijn getekend. Voor meerdere grafieken in één weer gave selecteert u de knop **grafiek toevoegen** bovenaan.
@@ -57,7 +57,7 @@ In de grafiek worden standaard de meest recente 24 uur aan metrische gegevens we
 
 ## <a name="apply-dimension-filters-and-splitting"></a>Dimensies filteren en splitsen
 
-[Filteren](metrics-charts.md#apply-filters-to-charts) en [splitsen](metrics-charts.md#apply-splitting-to-a-chart) zijn krachtige diagnostische hulpprogram ma's voor metrische gegevens die dimensies hebben. Deze functies laten zien hoe diverse metrische gegevens segmenten ("dimensie waarden") van invloed zijn op de algemene waarde van de metrische gegevens en waarmee u mogelijke uitbijtingen kunt identificeren.
+[Filteren](metrics-charts.md#filters) en [splitsen](metrics-charts.md#apply-splitting) zijn krachtige diagnostische hulpprogram ma's voor metrische gegevens die dimensies hebben. Deze functies laten zien hoe diverse metrische gegevens segmenten ("dimensie waarden") van invloed zijn op de algemene waarde van de metrische gegevens en waarmee u mogelijke uitbijtingen kunt identificeren.
 
 - Met **Filteren** kunt u kiezen welke dimensiewaarden in de grafiek worden opgenomen. U kunt bijvoorbeeld geslaagde aanvragen weer geven bij het grafieken van de waarde voor de *reactie tijd* van de server. U moet het filter Toep assen op het *succes van de aanvraag* dimensie. 
 

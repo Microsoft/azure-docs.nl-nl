@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 01/14/2021
-ms.openlocfilehash: ccae7b3f201e55af0e9e6b4ca9e7fd4ffb9c4897
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: fa7cc9b9a09bfd2bc503640272b5e7ac3a0a7b58
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200971"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251298"
 ---
 # <a name="read-replicas-in-azure-database-for-mysql---flexible-server"></a>Replica's in Azure Database for MySQL-flexibele server lezen
 
@@ -29,9 +29,7 @@ Replica's zijn nieuwe servers die u op dezelfde manier beheert als uw bron Azure
 Zie de [MySQL-replicatie documentatie](https://dev.mysql.com/doc/refman/5.7/en/replication-features.html)voor meer informatie over MySQL-replicatie functies en-problemen.
 
 > [!NOTE]
-> Oordeelloze communicatie
->
-> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar de woorden _Master_ en _Slave_. In de micro soft- [stijl gids voor bias-free Communication](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) worden deze herkend als uitgesloten woorden. De woorden worden in dit artikel gebruikt voor consistentie omdat ze momenteel de woorden zijn die in de software worden weer gegeven. Wanneer de software is bijgewerkt om de woorden te verwijderen, wordt dit artikel zodanig bijgewerkt dat het in uitlijning is.
+> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 >
 
 ## <a name="common-use-cases-for-read-replica"></a>Veelvoorkomende use-cases voor het lezen van replica's

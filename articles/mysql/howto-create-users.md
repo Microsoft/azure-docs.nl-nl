@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: how-to
 ms.date: 01/13/2021
-ms.openlocfilehash: de4e7959a5778c7275427450ead876338f052882
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 9a6346a2b62c81dd74cf0ebe9a85df12d3488679
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196772"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251247"
 ---
 # <a name="create-databases-and-users-in-azure-database-for-mysql"></a>Data bases en gebruikers maken in Azure Database for MySQL
 
@@ -20,9 +20,7 @@ ms.locfileid: "98196772"
 In dit artikel wordt beschreven hoe u gebruikers maakt in Azure Database for MySQL.
 
 > [!NOTE]
-> Oordeelloze communicatie
->
-> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar de woorden _Master_ en _Slave_. In de micro soft- [stijl gids voor bias-free Communication](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) worden deze herkend als uitgesloten woorden. De woorden worden in dit artikel gebruikt voor consistentie omdat ze momenteel de woorden zijn die in de software worden weer gegeven. Wanneer de software is bijgewerkt om de woorden te verwijderen, wordt dit artikel zodanig bijgewerkt dat het in uitlijning is.
+> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 >
 
 Wanneer u uw Azure Database for MySQL server voor het eerst hebt gemaakt, hebt u de gebruikers naam en het wacht woord voor de server beheerder opgegeven. Zie voor meer informatie deze [Snelstartgids](quickstart-create-mysql-server-database-using-azure-portal.md). U kunt de gebruikers naam van de server beheerder bepalen in de Azure Portal.

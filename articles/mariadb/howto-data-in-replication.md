@@ -6,12 +6,12 @@ ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
 ms.date: 01/15/2021
-ms.openlocfilehash: fb7d9f78ac5498affa10521e17cff4348eecb5eb
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 5ebae41e68633eb10959c56011dd71952f9564bd
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98231941"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250414"
 ---
 # <a name="configure-data-in-replication-in-azure-database-for-mariadb"></a>Replicatie van inkomende gegevens configureren in Azure Database for MariaDB
 
@@ -23,12 +23,6 @@ Bekijk de [beperkingen en vereisten](concepts-data-in-replication.md#limitations
 
 > [!NOTE]
 > Als uw bron Server versie 10,2 of nieuwer is, raden we u aan om Replicatie van inkomende gegevens in te stellen met behulp van de [algemene trans actie-id](https://mariadb.com/kb/en/library/gtid/).
-
-> [!NOTE]
-> Oordeelloze communicatie
->
-> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar de woorden _Master_ en _Slave_. In de micro soft- [stijl gids voor bias-free Communication](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) worden deze herkend als uitgesloten woorden. De woorden worden in dit artikel gebruikt voor consistentie omdat ze momenteel de woorden zijn die in de software worden weer gegeven. Wanneer de software is bijgewerkt om de woorden te verwijderen, wordt dit artikel zodanig bijgewerkt dat het in uitlijning is.
->
 
 ## <a name="create-a-mariadb-server-to-use-as-a-replica"></a>Een MariaDB-server maken om te gebruiken als replica
 
@@ -46,6 +40,10 @@ Bekijk de [beperkingen en vereisten](concepts-data-in-replication.md#limitations
 3. Voeg het IP-adres van de bron server toe aan de firewall regels van de replica. 
 
    Firewallregels bijwerken met de [Azure-portal](howto-manage-firewall-portal.md) of [Azure CLI](howto-manage-firewall-cli.md).
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
+>
 
 ## <a name="configure-the-source-server"></a>De bron server configureren
 

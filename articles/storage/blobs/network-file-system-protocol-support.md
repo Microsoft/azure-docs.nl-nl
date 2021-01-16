@@ -9,12 +9,12 @@ ms.date: 08/04/2020
 ms.author: normesta
 ms.reviewer: yzheng
 ms.custom: references_regions
-ms.openlocfilehash: c48a7f4b5b1512ec5bcd289e4fb8bd7884ca7394
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 52f7b328b013fd520787fca420a45ffdc5e9d9b1
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922546"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250805"
 ---
 # <a name="network-file-system-nfs-30-protocol-support-in-azure-blob-storage-preview"></a>Ondersteuning voor het protocol Network File System (NFS) 3,0 in Azure Blob-opslag (preview-versie)
 
@@ -102,6 +102,8 @@ De volgende NFS 3,0-functies worden nog niet ondersteund met Azure Data Lake Sto
 - Koppelingen weer geven (bijvoorbeeld: met behulp van de opdracht `showmount -a` )
 
 - Export vermeldingen (bijvoorbeeld door gebruik te maken van de opdracht `showmount -e` )
+
+- Harde koppeling
 
 - Een container exporteren als alleen-lezen
 

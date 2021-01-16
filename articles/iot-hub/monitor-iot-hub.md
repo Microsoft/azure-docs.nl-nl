@@ -6,12 +6,12 @@ ms.author: robinsh
 ms.topic: conceptual
 ms.service: iot-hub
 ms.date: 11/06/2020
-ms.openlocfilehash: 2fabf75f74ccf57f57e7b47720ceda8885420842
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 35134f3ee4946d294ba6c6f71bd3953823d6d138
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460903"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250025"
 ---
 # <a name="monitoring-azure-iot-hub"></a>Azure IoT Hub controleren
 
@@ -87,7 +87,7 @@ Zie [metrische gegevens in de naslag informatie over azure IOT hub](monitor-iot-
 
 Voor IoT Hub platform-metrische gegevens die worden verzameld in eenheden van aantal, zijn sommige aggregaties mogelijk niet beschikbaar of bruikbaar. Zie [ondersteunde aggregaties in de informatie over Azure IOT hub-gegevens bewaken](monitor-iot-hub-reference.md#supported-aggregations)voor meer informatie.
 
-Enkele IoT Hub metrische gegevens, zoals [routerings metrieken](monitor-iot-hub-reference.md#routing-metrics), zijn multidimensionaal. U kunt voor deze metrische gegevens [filters](../azure-monitor/platform/metrics-charts.md#apply-filters-to-charts) Toep assen en [splitsen](../azure-monitor/platform/metrics-charts.md#apply-splitting-to-a-chart) op uw diagrammen op basis van een dimensie.
+Enkele IoT Hub metrische gegevens, zoals [routerings metrieken](monitor-iot-hub-reference.md#routing-metrics), zijn multidimensionaal. U kunt voor deze metrische gegevens [filters](../azure-monitor/platform/metrics-charts.md#filters) Toep assen en [splitsen](../azure-monitor/platform/metrics-charts.md#apply-splitting) op uw diagrammen op basis van een dimensie.
 
 ## <a name="analyzing-logs"></a>Logboeken analyseren
 

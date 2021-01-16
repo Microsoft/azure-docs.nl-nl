@@ -3,12 +3,12 @@ title: Azure Relay Veelgestelde vragen | Microsoft Docs
 description: In dit artikel vindt u antwoorden op enkele veelgestelde vragen over de Azure Relay-service.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 77d3122942289654c0f651f9f648307123b23546
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 83cbc4b02bb8b63878abd046ed2314728546e87a
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131845"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250045"
 ---
 # <a name="azure-relay-faqs"></a>Veelgestelde vragen over Azure Relay
 
@@ -70,7 +70,7 @@ Relays die worden geopend met behulp van de WCF-binding van **netTCPRelay** beha
 ## <a name="quotas"></a>Quota
 | Quotumnaam | Bereik |  Notities | Waarde |
 | --- | --- | --- | --- |
-| Gelijktijdige listeners op een relay |Entiteit |Volgende aanvragen voor extra verbindingen worden geweigerd en er wordt een uitzonde ring ontvangen door de aanroepende code. |25 |
+| Gelijktijdige listeners op een relay |Entiteit (hybride verbinding of WCF-relay) |Volgende aanvragen voor extra verbindingen worden geweigerd en er wordt een uitzonde ring ontvangen door de aanroepende code. |25 |
 | Gelijktijdige relay-verbindingen per alle relay-eind punten in een service naam ruimte |Naamruimte |- |5\.000 |
 | Relay-eind punten per service naam ruimte |Naamruimte |- |10.000 |
 | Bericht grootte voor [NetOnewayRelayBinding](/dotnet/api/microsoft.servicebus.netonewayrelaybinding) -en [NetEventRelayBinding](/dotnet/api/microsoft.servicebus.neteventrelaybinding) -relays |Naamruimte |Inkomende berichten die groter zijn dan deze quota worden geweigerd en er wordt een uitzonde ring ontvangen door de aanroepende code. |64 kB |

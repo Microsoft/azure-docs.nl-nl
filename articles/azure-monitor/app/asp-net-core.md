@@ -4,12 +4,12 @@ description: Bewaak ASP.NET Core webtoepassingen voor Beschik baarheid, prestati
 ms.topic: conceptual
 ms.custom: devx-track-csharp
 ms.date: 04/30/2020
-ms.openlocfilehash: 2921c6379b34e002013b5f0087cefd502ab0ab84
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 2f17f4fbed196932ad7a5680338c459740e4d3bd
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904530"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249105"
 ---
 # <a name="application-insights-for-aspnet-core-applications"></a>Application Insights voor ASP.NET Core toepassingen
 
@@ -59,7 +59,7 @@ Gebruik de [hand matige richt lijnen](#enable-application-insights-server-side-t
 
      ![Scherm opname van het selecteren van het Application Insights pakket dat moet worden bijgewerkt](./media/asp-net-core/update-nuget-package.png)
 
-6. Als u de optionele tip hebt gevolgd en uw project aan broncode beheer hebt toegevoegd, **View** gaat u naar  >  **team Explorer**-  >  **wijzigingen** weer geven. Selecteer vervolgens elk bestand om een diff-weer gave te zien van de wijzigingen die zijn aangebracht door Application Insights telemetrie.
+6. Als u de optionele tip hebt gevolgd en uw project aan broncode beheer hebt toegevoegd, gaat u naar  >  **team Explorer**-  >  **wijzigingen** weer geven. Selecteer vervolgens elk bestand om een diff-weer gave te zien van de wijzigingen die zijn aangebracht door Application Insights telemetrie.
 
 ## <a name="enable-application-insights-server-side-telemetry-no-visual-studio"></a>Telemetrie van Application Insights server inschakelen (geen Visual Studio)
 
@@ -69,7 +69,7 @@ Gebruik de [hand matige richt lijnen](#enable-application-insights-server-side-t
 
     ```xml
         <ItemGroup>
-          <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.13.1" />
+          <PackageReference Include="Microsoft.ApplicationInsights.AspNetCore" Version="2.16.0" />
         </ItemGroup>
     ```
 
@@ -232,7 +232,7 @@ Zie de [Configureer bare instellingen in `ApplicationInsightsServiceOptions` ](h
 
 ### <a name="configuration-recommendation-for-microsoftapplicationinsightsaspnetcore-sdk-2150--above"></a>Aanbevolen configuratie voor micro soft. ApplicationInsights. AspNetCore SDK 2.15.0 & hierboven
 
-Vanaf micro soft. ApplicationInsights. AspNetCore SDK-versie [2.15.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.15.0) de aanbeveling is om elke instelling te configureren die beschikbaar is in `ApplicationInsightsServiceOptions` , inclusief instrumentationkey met behulp van toepassings `IConfiguration` exemplaren. De instellingen moeten worden weer gegeven onder de sectie ' ApplicationInsights ', zoals in het onderstaande voor beeld. De volgende sectie van appsettings.jsop de configuratie sleutel configures en schakelt ook verzameling van aanpas bare steek proeven en prestatie meter items uit.
+Vanaf micro soft. ApplicationInsights. AspNetCore SDK-versie [2.15.0](https://www.nuget.org/packages/Microsoft.ApplicationInsights.AspNetCore/2.15.0)is de aanbeveling om elke instelling te configureren die beschikbaar is in `ApplicationInsightsServiceOptions` , inclusief instrumentationkey met behulp van toepassings `IConfiguration` exemplaren. De instellingen moeten worden weer gegeven onder de sectie ' ApplicationInsights ', zoals u kunt zien in het volgende voor beeld. De volgende sectie van appsettings.jsop de configuratie sleutel configures en schakelt ook verzameling van aanpas bare steek proeven en prestatie meter items uit.
 
 ```json
 {

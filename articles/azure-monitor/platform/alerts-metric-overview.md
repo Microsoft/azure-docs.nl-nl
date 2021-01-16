@@ -4,12 +4,12 @@ description: Bekijk een overzicht van wat u met metrische waarschuwingen kunt do
 ms.date: 01/13/2021
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: d8e0621f88455a68ad0ee1b236f6b423c9d54b52
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: ab80496784b5d86d270830546cec73aadbcc50a6
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98179891"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251230"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Begrijpen hoe metrische waarschuwingen werken in Azure Monitor
 
@@ -26,7 +26,7 @@ Stel dat u als volgt een eenvoudige waarschuwings regel voor een statische dremp
 - Doel resource (de Azure-resource die u wilt bewaken): myVM
 - Metriek: percentage CPU
 - Voorwaarde type: statisch
-- Tijd aggregatie (statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde tijd aggregaties](metrics-charts.md#changing-aggregation) zijn min, Max, Gem, totaal, aantal): gemiddeld
+- Tijd aggregatie (statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde tijd aggregaties](metrics-charts.md#aggregation) zijn min, Max, Gem, totaal, aantal): gemiddeld
 - Periode (het venster terugkijken waarover metrische waarden worden gecontroleerd): in de afgelopen 5 minuten
 - Frequentie (de frequentie waarmee met de metrische waarschuwing wordt gecontroleerd of aan de voor waarden wordt voldaan): 1 min.
 - Operator: groter dan
@@ -43,7 +43,7 @@ Stel dat u een regel voor metrische waarschuwing voor eenvoudige dynamische drem
 - Doel resource (de Azure-resource die u wilt bewaken): myVM
 - Metriek: percentage CPU
 - Voorwaarde type: dynamisch
-- Tijd aggregatie (statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde tijd aggregaties](metrics-charts.md#changing-aggregation) zijn min, Max, Gem, totaal, aantal): gemiddeld
+- Tijd aggregatie (statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde tijd aggregaties](metrics-charts.md#aggregation) zijn min, Max, Gem, totaal, aantal): gemiddeld
 - Periode (het venster terugkijken waarover metrische waarden worden gecontroleerd): in de afgelopen 5 minuten
 - Frequentie (de frequentie waarmee met de metrische waarschuwing wordt gecontroleerd of aan de voor waarden wordt voldaan): 1 min.
 - Operator: groter dan
@@ -180,7 +180,7 @@ In dit [artikel](./alerts-metric-near-real-time.md#metrics-and-dimensions-suppor
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Meer informatie over het maken, weer geven en beheren van metrische waarschuwingen in azure](alerts-metric.md)
-- [Meer informatie over het maken van waarschuwingen in azure Montior Metrics Explorer](./metrics-charts.md#create-alert-rules)
+- [Meer informatie over het maken van waarschuwingen in azure Montior Metrics Explorer](./metrics-charts.md#alert-rules)
 - [Meer informatie over het implementeren van metrische waarschuwingen met behulp van Azure Resource Manager sjablonen](./alerts-metric-create-templates.md)
 - [Meer informatie over actie groepen](action-groups.md)
 - [Meer informatie over het type voor waarde van dynamische drempel waarden](alerts-dynamic-thresholds.md)

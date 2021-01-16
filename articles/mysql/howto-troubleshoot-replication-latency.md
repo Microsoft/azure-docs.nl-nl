@@ -7,12 +7,12 @@ ms.author: pariks
 ms.service: mysql
 ms.topic: troubleshooting
 ms.date: 01/13/2021
-ms.openlocfilehash: 34210d08ad5328f200f5b92c13bfcf85cfead3ec
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 92513a8c24b5106e3a59c8cfa4d743e900b957bf
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98199475"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249768"
 ---
 # <a name="troubleshoot-replication-latency-in-azure-database-for-mysql"></a>Troubleshoot replication latency in Azure Database for MySQL (Problemen vanwege replicavertraging oplossen in Azure Database for MySQL)
 
@@ -32,9 +32,7 @@ De replicatie vertraging op de secundaire Lees replica's is afhankelijk van vers
 In dit artikel leert u hoe u de replicatie latentie in Azure Database for MySQL kunt oplossen. U begrijpt ook enkele veelvoorkomende oorzaken van verhoogde replicatie latentie op replica servers.
 
 > [!NOTE]
-> Oordeelloze communicatie
->
-> Microsoft biedt ondersteuning voor een gevarieerde en insluitende omgeving. Dit artikel bevat verwijzingen naar de woorden _Master_ en _Slave_. In de micro soft- [stijl gids voor bias-free Communication](https://github.com/MicrosoftDocs/microsoft-style-guide/blob/master/styleguide/bias-free-communication.md) worden deze herkend als uitgesloten woorden. De woorden worden in dit artikel gebruikt voor consistentie omdat ze momenteel de woorden zijn die in de software worden weer gegeven. Wanneer de software is bijgewerkt om de woorden te verwijderen, wordt dit artikel zodanig bijgewerkt dat het in uitlijning is.
+> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 >
 
 ## <a name="replication-concepts"></a>Concepten voor replicatie

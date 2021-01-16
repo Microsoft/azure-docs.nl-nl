@@ -1,90 +1,93 @@
 ---
-title: Meerdere resources in Metrics Explorer weer geven
-description: Meer informatie over het visualiseren van meerdere resources op Azure Monitor Metrics Explorer
+title: Meerdere resources weer geven in de Azure Metrics Explorer
+description: Meer informatie over het visualiseren van meerdere resources met behulp van de Azure Metrics Explorer.
 author: ritaroloff
 services: azure-monitor
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: riroloff
 ms.subservice: metrics
-ms.openlocfilehash: 9d1460a8bebe75a3ee471eb304fcf642d566b5dd
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 4c895b287f72929e2a0571ccc2cae8cc4f673388
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614639"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250482"
 ---
-# <a name="viewing-multiple-resources-in-metrics-explorer"></a>Meerdere resources in Metrics Explorer weer geven
+# <a name="view-multiple-resources-in-the-azure-metrics-explorer"></a>Meerdere resources weer geven in de Azure Metrics Explorer
 
-Met de kiezer voor het bereik van resources kunt u metrische gegevens weer geven over meerdere resources die zich binnen hetzelfde abonnement en dezelfde regio bevinden. Hieronder vindt u instructies voor het weer geven van meerdere resources in Azure Monitor Metrics Explorer. 
+Met de kiezer voor het bereik van resources kunt u metrische gegevens weer geven over meerdere resources die zich binnen hetzelfde abonnement en dezelfde regio bevinden. In dit artikel wordt uitgelegd hoe u meerdere resources kunt weer geven met behulp van de Azure Metrics Explorer-functie van Azure Monitor. 
 
-## <a name="selecting-a-resource"></a>Een resource selecteren 
+## <a name="select-a-resource"></a>Een resource selecteren 
 
-Selecteer **Metrische gegevens** in het menu van **Azure Monitor** of in de sectie **Controle** van het menu van een resource. Klik op de knop een bereik selecteren om de resource bereik kiezer te openen. Hiermee kunt u de resources selecteren waarvoor u de metrische gegevens wilt bekijken. Dit moet al zijn ingevuld als u metrische gegevens Verkenner hebt geopend vanuit het menu van een resource. 
+Selecteer **Metrische gegevens** in het menu van **Azure Monitor** of in de sectie **Controle** van het menu van een resource. Kies vervolgens **een bereik selecteren** om de bereik kiezer te openen. 
 
-![Scherm afbeelding van de kiezer van het resource bereik gemarkeerd in rood](./media/metrics-charts/019.png)
+Gebruik de bereik kiezer om de resources te selecteren waarvan u de metrische gegevens wilt zien. Het bereik moet worden ingevuld als u de metrische gegevens Verkenner hebt geopend vanuit het menu van een resource. 
 
-## <a name="selecting-multiple-resources"></a>Meerdere resources selecteren 
+![Scherm afbeelding die laat zien hoe u de kiezer van het resource bereik kunt openen.](./media/metrics-charts/019.png)
 
-Sommige resource typen hebben de mogelijkheid om gegevens op te vragen voor meerdere resources, zolang ze zich in hetzelfde abonnement en dezelfde locatie bevinden. Deze resource typen vindt u boven aan de vervolg keuzelijst ' resource typen '. 
+## <a name="select-multiple-resources"></a>Selecteer Meerdere resources maken. 
 
-![Scherm afbeelding met een vervolg keuzelijst met resources die compatibel zijn met meerdere bronnen ](./media/metrics-charts/020.png)
+Sommige resource typen kunnen een query uitvoeren op metrische gegevens over meerdere resources. De metrische gegevens moeten binnen hetzelfde abonnement en dezelfde locatie vallen. Deze resource typen vindt u boven aan het menu **resource typen** .
+
+![Scherm afbeelding met een menu met bronnen die compatibel zijn met meerdere resources.](./media/metrics-charts/020.png)
 
 > [!WARNING] 
-> U moet een machtiging voor controle lezers hebben op het abonnements niveau om metrische gegevens over meerdere resources, resource groepen of een abonnement te visualiseren. Volg de instructies in [dit document](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)om dit te doen.
+> U moet een machtiging voor controle lezers hebben op het abonnements niveau om metrische gegevens over meerdere resources, resource groepen of een abonnement te visualiseren. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)voor meer informatie.
 
-Als u metrische gegevens over meerdere resources wilt visualiseren, moet u beginnen met het selecteren van meerdere resources binnen de kiezer voor het bereik van de resource. 
+Als u metrische gegevens over meerdere resources wilt visualiseren, begint u met het selecteren van meerdere resources binnen de kiezer voor het bereik van de resource. 
 
-![Scherm afbeelding die laat zien hoe u meerdere resources selecteert](./media/metrics-charts/021.png)
+![Scherm afbeelding die laat zien hoe u meerdere resources selecteert.](./media/metrics-charts/021.png)
 
 > [!NOTE]
-> U kunt alleen meerdere resources selecteren binnen hetzelfde resource type, dezelfde locatie en hetzelfde abonnement. Resources buiten deze criteria kunnen niet worden geselecteerd. 
+> De resources die u selecteert, moeten binnen hetzelfde resource type, dezelfde locatie en hetzelfde abonnement vallen. Resources die niet aan deze criteria voldoen, worden niet geselecteerd. 
 
-Wanneer u klaar bent met selecteren, klikt u op de knop Toep assen om uw selectie op te slaan. 
+Wanneer u klaar bent, kiest u **Toep assen** om uw selecties op te slaan. 
 
-## <a name="selecting-a-resource-group-or-subscription"></a>Een resource groep of-abonnement selecteren 
+## <a name="select-a-resource-group-or-subscription"></a>Een resource groep of abonnement selecteren 
 
 > [!WARNING]
 > U moet een machtiging voor controle lezers hebben op het abonnements niveau om metrische gegevens over meerdere resources, resource groepen of een abonnement te visualiseren. 
 
-Voor compatibele multi-resource typen kunt u ook een query uitvoeren voor metrische gegevens over een abonnement of meerdere resource groepen. Begin met het selecteren van een abonnement of een of meer resource groepen: 
+Voor typen die compatibel zijn met meerdere resources kunt u een query uitvoeren voor metrische gegevens over een abonnement of meerdere resource groepen. Begin met het selecteren van een abonnement of een of meer resource groepen: 
 
-![Scherm afbeelding die laat zien hoe u kunt zoeken in meerdere resource groepen ](./media/metrics-charts/022.png)
+![Scherm afbeelding die laat zien hoe u kunt zoeken in meerdere resource groepen.](./media/metrics-charts/022.png)
 
-U moet vervolgens een resource type en-locatie selecteren voordat u de nieuwe scope kunt blijven Toep assen. 
+Selecteer een resource type en locatie. 
 
-![Scherm opname van de geselecteerde resource groepen ](./media/metrics-charts/023.png)
+![Scherm opname van de geselecteerde resource groepen.](./media/metrics-charts/023.png)
 
-U kunt ook de geselecteerde bereiken uitvouwen om te controleren op welke resources dit van toepassing is.
+U kunt de geselecteerde bereiken uitvouwen om de resources te controleren waarop uw selecties van toepassing zijn.
 
-![Scherm opname van de geselecteerde resources in de groepen ](./media/metrics-charts/024.png)
+![Scherm opname van de geselecteerde resources in de groepen.](./media/metrics-charts/024.png)
 
-Wanneer u klaar bent met het selecteren van uw bereiken, klikt u op Toep assen om uw selecties op te slaan. 
+Wanneer u klaar bent met het selecteren van scopes, selecteert u **Toep assen**. 
 
-## <a name="splitting-and-filtering-by-resource-group-or-resources"></a>Splitsen en filteren op resource groep of resources
+## <a name="split-and-filter-by-resource-group-or-resources"></a>Splitsen en filteren op resource groep of resources
 
-Nadat u uw resources hebt getekend, kunt u het hulp programma voor splitsen en filteren gebruiken om meer inzicht te krijgen in uw gegevens. 
+Nadat u uw resources hebt getekend, kunt u splitsen en filteren gebruiken om meer inzicht te krijgen in uw gegevens. 
 
-Met splitsen kunt u visualiseren hoe verschillende segmenten van de metrische gegevens met elkaar worden vergeleken. Als u bijvoorbeeld een metriek uitzet voor meerdere resources, kunt u het hulp programma ' splitsing Toep assen ' gebruiken om te splitsen op resource-id of resource groep. Op deze manier kunt u eenvoudig één metriek vergelijken tussen meerdere resources of resource groepen.  
+Met splitsen kunt u visualiseren hoe verschillende segmenten van de metrische gegevens met elkaar worden vergeleken. Als u bijvoorbeeld een metriek voor meerdere resources uitzet, kunt u **splitsen Toep assen** op splitsing op resource-id of resource groep kiezen. Met de splitsing kunt u één metriek vergelijken tussen meerdere resources of resource groepen.  
 
-Hieronder ziet u bijvoorbeeld een grafiek van het percentage CPU over 9VMs. Door te splitsen op resource-id, kunt u eenvoudig zien hoe percentage CPU per VM verschilt. 
+In het volgende diagram ziet u bijvoorbeeld het percentage CPU over negen Vm's. Wanneer u op Resource-ID splitst, ziet u hoe percentage CPU per VM verschilt. 
 
-![Scherm afbeelding die laat zien hoe u splitsen kunt gebruiken om het percentage CPU per VM te bekijken](./media/metrics-charts/026.png)
+![Scherm afbeelding die laat zien hoe u splitsen kunt gebruiken om het percentage CPU over Vm's te bekijken.](./media/metrics-charts/026.png)
 
-Naast het splitsen kunt u de filter functie gebruiken om alleen de resource groepen weer te geven die u wilt zien.  Als u bijvoorbeeld het percentage CPU voor virtuele machines voor een bepaalde resource groep wilt weer geven, kunt u het hulp programma ' filter toevoegen ' gebruiken om te filteren op resource groep. In dit voor beeld filteren we op TailspinToysDemo, waarmee metrische gegevens worden verwijderd die zijn gekoppeld aan resources in TailspinToys. 
+Samen met het splitsen kunt u filteren gebruiken om alleen de resource groepen weer te geven die u wilt zien.  Als u bijvoorbeeld het percentage CPU voor virtuele machines voor een bepaalde resource groep wilt weer geven, kunt u **filter toevoegen** selecteren om te filteren op resource groep. 
 
-![Scherm afbeelding die laat zien hoe u kunt filteren op resource groep](./media/metrics-charts/027.png)
+In dit voor beeld filteren we op TailspinToysDemo. Hier verwijdert het filter metrische gegevens die zijn gekoppeld aan resources in TailspinToys. 
 
-## <a name="pinning-your-multi-resource-charts"></a>Uw grafieken met meerdere bronnen vastmaken 
+![Scherm afbeelding die laat zien hoe u kunt filteren op resource groep.](./media/metrics-charts/027.png)
 
-> [!WARNING] 
-> U moet een machtiging voor controle lezers hebben op het abonnements niveau om metrische gegevens over meerdere resources, resource groepen of een abonnement te visualiseren. Volg de instructies in [dit document](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)om dit te doen. 
+## <a name="pin-multiple-resource-charts"></a>Grafieken met meerdere bronnen vastmaken 
 
-Volg [de instructies om](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts#pin-charts-to-dashboards)uw grafiek met meerdere resources vast te maken. 
+Voor grafieken met meerdere resources die metrische gegevens over resource groepen en-abonnementen visualiseren, moet de gebruiker de machtiging *controle lezer* hebben op het abonnements niveau. Zorg ervoor dat alle gebruikers van de Dash boards waarnaar u meerdere resource grafieken vastmaakt, voldoende machtigingen hebben. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)voor meer informatie.
+
+Zie vastmaken [aan dash boards](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts#pinning-to-dashboards)om uw diagram met meerdere resources aan een dash board te koppelen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Problemen met Metrics Explorer oplossen](metrics-troubleshoot.md)
+* [Problemen met metrische gegevens Verkenner oplossen](metrics-troubleshoot.md)
 * [Een lijst met beschikbare metrische gegevens voor Azure-services zien](metrics-supported.md)
 * [Voorbeelden van geconfigureerde grafieken zien](metric-chart-samples.md)
 

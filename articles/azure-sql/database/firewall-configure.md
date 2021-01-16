@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 06/17/2020
-ms.openlocfilehash: ce528e268e0ed1e34f53e32196bceef5ad8a2fcb
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 9fe0c79a2f65b27b35aa5029d0a53de62ef08078
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452502"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251655"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Azure SQL Database-en Azure Synapse IP-firewall regels
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -270,7 +270,7 @@ Houd rekening met de volgende punten wanneer de toegang tot Azure SQL Database n
 ## <a name="next-steps"></a>Volgende stappen
 
 - Controleer of de bedrijfs netwerk omgeving binnenkomende communicatie toestaat van de compute IP-adresbereiken (inclusief SQL-bereiken) die worden gebruikt door de Azure-data centers. Mogelijk moet u deze IP-adressen toevoegen aan de acceptatie lijst. Zie [Microsoft Azure Data Center IP-bereiken](https://www.microsoft.com/download/details.aspx?id=41653).  
-- Zie [een enkele data base maken in Azure SQL database](single-database-create-quickstart.md)voor een Snelstartgids over het maken van een IP-firewall regel op server niveau.
+- Bekijk onze Snelstartgids over het [maken van één data base in Azure SQL database](single-database-create-quickstart.md).
 - Voor hulp bij het maken van verbinding met een data base in Azure SQL Database van open-source of toepassingen van derden raadpleegt [u Quick Start code samples to Azure SQL database](connect-query-content-reference-guide.md#libraries).
 - Voor informatie over aanvullende poorten die u mogelijk moet openen, raadpleegt u de sectie ' SQL Database: buiten de binnenkant ' van poorten van meer [dan 1433 voor ADO.NET 4,5 en SQL database](adonet-v12-develop-direct-route-ports.md)
 - Zie [uw data base beveiligen](security-overview.md)voor een overzicht van Azure SQL database beveiliging.

@@ -10,13 +10,13 @@ ms.topic: reference
 author: oslake
 ms.author: moslake
 ms.reviewer: sstein
-ms.date: 10/15/2020
-ms.openlocfilehash: e706f64a7caab6873a3eec86505eaee11374ae2c
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.date: 01/15/2021
+ms.openlocfilehash: 2daa07315be85e1fcd543480cd30a57c118d8547
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882298"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251485"
 ---
 # <a name="resource-limits-for-elastic-pools-using-the-vcore-purchasing-model"></a>Resource limieten voor elastische Pools met behulp van het vCore-aankoop model
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -142,7 +142,7 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |:--- | --: |--: |--: |--: |---: | --: |--: |
 |Compute genereren|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|
 |vCores|16|18|20|24|32|40|80|
-|Geheugen (GB)|83|93,4|103,8|124,6|166,1|207,6|415,2|
+|Geheugen (GB)|83|93.4|103.8|124,6|166,1|207,6|415,2|
 |Maximum aantal Db's per pool <sup>1</sup>|500|500|500|500|500|500|500|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
@@ -176,7 +176,7 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |:---| ---:|---:|---:|---:|---:|
 |Compute genereren|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|
 |vCores|8|10|12|14|16|
-|Geheugen (GB)|15,1|18,9|22,7|26,5|30,2|
+|Geheugen (GB)|15,1|18.9|22,7|26.5|30,2|
 |Maximum aantal Db's per pool <sup>1</sup>|500|500|500|500|500|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
@@ -209,7 +209,7 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |:---| ---:|---:|---:|---:|---:|---:|
 |Compute genereren|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|
 |vCores|18|20|24|32|36|72|
-|Geheugen (GB)|34,0|37,8|45,4|60,5|68,0|136,0|
+|Geheugen (GB)|34.0|37,8|45,4|60,5|68.0|136,0|
 |Maximum aantal Db's per pool <sup>1</sup>|500|500|500|500|500|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
@@ -228,6 +228,39 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |Meerdere AZ|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Uitschalen voor leesbewerking|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
+
+<sup>1</sup> Zie [resource beheer in compacte elastische Pools](elastic-pool-resource-management.md) voor aanvullende overwegingen.
+
+<sup>2</sup> de maximale waarde voor i/o-grootten tussen 8 KB en 64 kB. Werkelijke IOPS zijn werk belasting afhankelijk. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)voor meer informatie.
+
+<sup>3</sup> Zie [enkele database resource limieten](resource-limits-vcore-single-databases.md)voor het maximum aantal gelijktijdige werk rollen (aanvragen) voor elke afzonderlijke data base. Als de elastische pool bijvoorbeeld gebruikmaakt van GEN5 en het maximum aantal vCore per data base is ingesteld op 2, is de waarde voor maximum aantal gelijktijdige werk nemers 200.  Als het maximum aantal vCore per data base is ingesteld op 0,5, is de waarde voor het maximum aantal gelijktijdige werkers 50 sinds op GEN5 een maximum van 100 gelijktijdige werk nemers per vCore. Voor andere maximale vCore-instellingen per data base die minder dan 1 vCore of minder zijn, is het aantal gelijktijdige werk nemers op dezelfde manier opnieuw geschaald.
+
+
+## <a name="general-purpose---provisioned-compute---dc-series"></a>Algemeen beoogde, ingerichte Compute-DC-serie
+
+|Berekenings grootte (Service doelstelling)|GP_DC_2|GP_DC_4|GP_DC_6|GP_DC_8|
+|:--- | --: |--: |--: |--: |
+|Compute genereren|DC|DC|DC|DC|
+|vCores|2|4|6|8|
+|Geheugen (GB)|9|18|27|36|
+|Maximum aantal Db's per pool <sup>1</sup>|100|400|400|400|
+|Column Store-ondersteuning|Ja|Ja|Ja|Ja|
+|OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Maximale gegevens grootte (GB)|756|1536|2048|2048|
+|Maximale logboek grootte (GB)|227|461|614|614|
+|Maximale gegevens grootte TempDB (GB)|64|128|192|256|
+|Opslagtype|Premium-opslag (extern)|Premium-opslag (extern)|Premium-opslag (extern)|Premium-opslag (extern)|
+|I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
+|Max. aantal gegevens IOPS per pool <sup>2</sup>|800|1600|2400|3200|
+|Maximale logboek frequentie per pool (MBps)|9,4|18,8|28.1|32.8|
+|Maxi maal aantal gelijktijdige werk nemers per pool (aanvragen) <sup>3</sup>|168|336|504|672|
+|Maxi maal aantal gelijktijdige aanmeldingen per groep (aanvragen) <sup>3</sup>|168|336|504|672|
+|Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|
+|Min/max vCore keuzen voor elastische pool per data base|2|2... 4|2... 6|2... 8|
+|Aantal replica's|1|1|1|1|
+|Meerdere AZ|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Uitschalen voor leesbewerking|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
 
 <sup>1</sup> Zie [resource beheer in compacte elastische Pools](elastic-pool-resource-management.md) voor aanvullende overwegingen.
 
@@ -344,7 +377,7 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |:--- | --: |--: |--: |--: |---: | --: |--: |
 |Compute genereren|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|
 |vCores|16|18|20|24|32|40|80|
-|Geheugen (GB)|83|93,4|103,8|124,6|166,1|207,6|415,2|
+|Geheugen (GB)|83|93.4|103.8|124,6|166,1|207,6|415,2|
 |Maximum aantal Db's per pool <sup>1</sup>|100|100|100|100|100|100|100|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|15,77|18,14|20,51|25,25|37,94|52,23|131,68|
@@ -406,8 +439,6 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 
 Als alle vCores van een elastische pool bezet zijn, ontvangt elke data base in de pool een gelijke hoeveelheid reken bronnen om query's te verwerken. Azure SQL Database biedt verdeling voor het delen van resources tussen data bases door gelijke segmenten van reken tijd te garanderen. De verdeling voor het delen van elastische pool bronnen is een aanvulling op alle bronnen, anders wordt elke Data Base gegarandeerd wanneer de vCore min per data base is ingesteld op een andere waarde dan nul.
 
-
-
 ### <a name="m-series-compute-generation-part-2"></a>Generatie van d-Series Compute (deel 2)
 
 |Berekenings grootte (Service doelstelling)|BC_M_20|BC_M_24|BC_M_32|BC_M_64|BC_M_128|
@@ -441,6 +472,37 @@ Als alle vCores van een elastische pool bezet zijn, ontvangt elke data base in d
 
 Als alle vCores van een elastische pool bezet zijn, ontvangt elke data base in de pool een gelijke hoeveelheid reken bronnen om query's te verwerken. Azure SQL Database biedt verdeling voor het delen van resources tussen data bases door gelijke segmenten van reken tijd te garanderen. De verdeling voor het delen van elastische pool bronnen is een aanvulling op alle bronnen, anders wordt elke Data Base gegarandeerd wanneer de vCore min per data base is ingesteld op een andere waarde dan nul.
 
+## <a name="business-critical---provisioned-compute---dc-series"></a>Bedrijfs kritieke-ingerichte Compute-DC-serie
+
+|Berekenings grootte (Service doelstelling)|BC_DC_2|BC_DC_4|BC_DC_6|BC_DC_8|
+|:--- | --: |--: |--: |--: |
+|Compute genereren|DC|DC|DC|DC|
+|vCores|2|4|6|8|
+|Geheugen (GB)|9|18|27|36|
+|Maximum aantal Db's per pool <sup>1</sup>|50|100|100|100|
+|Column Store-ondersteuning|Ja|Ja|Ja|Ja|
+|OLTP-opslag in het geheugen (GB)|1,7|3.7|5.9|8,2|
+|Maximale gegevens grootte (GB)|768|768|768|768|
+|Maximale logboek grootte (GB)|230|230|230|230|
+|Maximale gegevens grootte TempDB (GB)|64|128|192|256|
+|Opslagtype|Lokale SSD|Lokale SSD|Lokale SSD|Lokale SSD|
+|I/o-latentie (bij benadering)|1-2 ms (schrijven)<br>1-2 ms (lezen)|1-2 ms (schrijven)<br>1-2 ms (lezen)|1-2 ms (schrijven)<br>1-2 ms (lezen)|1-2 ms (schrijven)<br>1-2 ms (lezen)|
+|Max. aantal gegevens IOPS per pool <sup>2</sup>|15750|31500|47250|56000|
+|Maximale logboek frequentie per pool (MBps)|20|60|90|120|
+|Maxi maal aantal gelijktijdige werk nemers per pool (aanvragen) <sup>3</sup>|168|336|504|672|
+|Maxi maal aantal gelijktijdige aanmeldingen per groep (aanvragen) <sup>3</sup>|168|336|504|672|
+|Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|
+|Min/max vCore keuzen voor elastische pool per data base|2|2... 4|2... 6|2... 8|
+|Aantal replica's|4|4|4|4|
+|Meerdere AZ|Nee|Nee|Nee|Nee|
+|Uitschalen voor leesbewerking|Ja|Ja|Ja|Ja|
+|Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
+
+<sup>1</sup> Zie [resource beheer in compacte elastische Pools](elastic-pool-resource-management.md) voor aanvullende overwegingen.
+
+<sup>2</sup> de maximale waarde voor i/o-grootten tussen 8 KB en 64 kB. Werkelijke IOPS zijn werk belasting afhankelijk. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)voor meer informatie.
+
+<sup>3</sup> Zie [enkele database resource limieten](resource-limits-vcore-single-databases.md)voor het maximum aantal gelijktijdige werk rollen (aanvragen) voor elke afzonderlijke data base. Als de elastische pool bijvoorbeeld gebruikmaakt van GEN5 en het maximum aantal vCore per data base is ingesteld op 2, is de waarde voor maximum aantal gelijktijdige werk nemers 200.  Als het maximum aantal vCore per data base is ingesteld op 0,5, is de waarde voor het maximum aantal gelijktijdige werkers 50 sinds op GEN5 een maximum van 100 gelijktijdige werk nemers per vCore. Voor andere maximale vCore-instellingen per data base die minder dan 1 vCore of minder zijn, is het aantal gelijktijdige werk nemers op dezelfde manier opnieuw geschaald.
 
 ## <a name="database-properties-for-pooled-databases"></a>Data base-eigenschappen voor gegroepeerde Data bases
 

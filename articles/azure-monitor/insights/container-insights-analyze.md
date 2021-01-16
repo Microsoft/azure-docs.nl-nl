@@ -3,12 +3,12 @@ title: Kubernetes bewaking met Azure Monitor voor containers | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u de prestaties van een Kubernetes-cluster kunt weer geven en analyseren met Azure Monitor voor containers.
 ms.topic: conceptual
 ms.date: 03/26/2020
-ms.openlocfilehash: a1f661089b3a6357abb3eed584401e6a8ae2e2fb
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 68d0ac03ae0f6029e0f984e296a89048536f4eb7
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905703"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251281"
 ---
 # <a name="monitor-your-kubernetes-cluster-performance-with-azure-monitor-for-containers"></a>Uw Kubernetes-cluster prestaties bewaken met Azure Monitor voor containers
 
@@ -130,7 +130,7 @@ In Metrics Explorer kunt u geaggregeerde gegevens over knoop punt-en pod-gebruik
 | inzichten. container/peul | |
 | | PodCount | Een pod aantal van Kubernetes.|
 
-U kunt een metriek [splitsen](../platform/metrics-charts.md#apply-splitting-to-a-chart) om deze per dimensie weer te geven en te visualiseren hoe verschillende segmenten van de IT met elkaar worden vergeleken. Voor een knoop punt kunt u de grafiek door de dimensie *host* segmenteren. Vanuit een pod kunt u deze segmenteren op basis van de volgende dimensies:
+U kunt een metriek [splitsen](../platform/metrics-charts.md#apply-splitting) om deze per dimensie weer te geven en te visualiseren hoe verschillende segmenten van de IT met elkaar worden vergeleken. Voor een knoop punt kunt u de grafiek door de dimensie *host* segmenteren. Vanuit een pod kunt u deze segmenteren op basis van de volgende dimensies:
 
 * Controller
 * Kubernetes-naam ruimte
@@ -191,7 +191,7 @@ De informatie die wordt weer gegeven wanneer u het tabblad **knoop punten** beki
 
 | Kolom | Beschrijving |
 |--------|-------------|
-| Name | De naam van de host. |
+| Naam | De naam van de host. |
 | Status | De weer gave Kubernetes van de knooppunt status. |
 | Min &nbsp; .%, Gem. &nbsp; %, 50e &nbsp; %, negen tigste &nbsp; %, 95e &nbsp; %, Max&nbsp;%  | Gemiddeld knooppunt percentage op basis van percentiel tijdens de geselecteerde duur. |
 | Min, Gem, 50e, negen tigste, 95e, Max | De gemiddelde werkelijke waarde van knoop punten op basis van percentiel tijdens de geselecteerde tijds duur. De gemiddelde waarde wordt gemeten vanaf de CPU/geheugen limiet die is ingesteld voor een knoop punt. Voor peulen en containers is het de gemiddelde waarde die wordt gerapporteerd door de host. |
@@ -234,7 +234,7 @@ De informatie die wordt weer gegeven wanneer u controllers bekijkt, wordt beschr
 
 | Kolom | Beschrijving |
 |--------|-------------|
-| Name | De naam van de controller.|
+| Naam | De naam van de controller.|
 | Status | De rollup-status van de containers nadat deze is uitgevoerd met de status *OK*, *beëindigd*, *mislukt*, *gestopt* of *onderbroken*. Als de container actief is, maar de status niet correct wordt weer gegeven of niet is opgehaald door de agent en al meer dan 30 minuten niet heeft gereageerd, is de status *onbekend*. Meer informatie over het status pictogram vindt u in de volgende tabel.|
 | Min &nbsp; .%, Gem. &nbsp; %, 50e &nbsp; %, negen tigste &nbsp; %, 95e &nbsp; %, Max&nbsp;%| Rollup gemiddelde van het gemiddelde percentage van elke entiteit voor de geselecteerde metriek en percentiel. |
 | Min, Gem, 50e, negen tigste, 95e, Max  | Rollup van de gemiddelde CPU-millicore of geheugen prestaties van de container voor het geselecteerde percentiel. De gemiddelde waarde wordt gemeten vanaf de CPU/geheugen limiet die is ingesteld voor een pod. |
@@ -271,7 +271,7 @@ De informatie die wordt weer gegeven wanneer u containers bekijkt, wordt beschre
 
 | Kolom | Beschrijving |
 |--------|-------------|
-| Name | De naam van de controller.|
+| Naam | De naam van de controller.|
 | Status | De status van de containers, indien van toepassing. Meer informatie over het status pictogram vindt u in de volgende tabel.|
 | Min &nbsp; .%, Gem. &nbsp; %, 50e &nbsp; %, negen tigste &nbsp; %, 95e &nbsp; %, Max&nbsp;% | De rollup van het gemiddelde percentage van elke entiteit voor de geselecteerde metriek en percentiel. |
 | Min, Gem, 50e, negen tigste, 95e, Max | De rollup van de gemiddelde CPU-millicore of-geheugen prestaties van de container voor het geselecteerde percentiel. De gemiddelde waarde wordt gemeten vanaf de CPU/geheugen limiet die is ingesteld voor een pod. |

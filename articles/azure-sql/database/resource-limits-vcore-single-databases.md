@@ -10,13 +10,13 @@ ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 10/15/2020
-ms.openlocfilehash: 4ffe663c1a1651891af5f6e65ee231cbe3e8d650
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.date: 01/15/2021
+ms.openlocfilehash: db3b168826223e4eb958f7700e65623a115e5779
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882297"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251468"
 ---
 # <a name="resource-limits-for-single-databases-using-the-vcore-purchasing-model"></a>Resourcelimieten voor individuele databases met gebruikmaking van het vCore-aankoopmodel
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -204,7 +204,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |:--- | --: |--: |--: |--: |---: |--: |--: |
 |Compute genereren|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|
 |vCores|16|18|20|24|32|40|80|
-|Geheugen (GB)|83|93,4|103,8|124,6|166,1|207,6|415,2|
+|Geheugen (GB)|83|93.4|103.8|124,6|166,1|207,6|415,2|
 |[RBPEX](service-tier-hyperscale.md#compute) Size|3X-geheugen|3X-geheugen|3X-geheugen|3X-geheugen|3X-geheugen|3X-geheugen|3X-geheugen|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
@@ -225,7 +225,38 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 
 \* Behalve lokale SSD IO gebruiken werk belastingen externe pagina- [Server](service-tier-hyperscale.md#page-server) -io. Effectief IOPS is afhankelijk van de werk belasting. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)en [Data io in statistieken voor bron gebruik](hyperscale-performance-diagnostics.md#data-io-in-resource-utilization-statistics)voor meer informatie.
 
-#### <a name="notes"></a>Opmerkingen
+#### <a name="notes"></a>Notities
+
+**Opmerking 1**: grootschalige is een architectuur met meerdere lagen met afzonderlijke Compute-en opslag onderdelen: [grootschalige service tier-architectuur](service-tier-hyperscale.md#distributed-functions-architecture)
+
+**Opmerking 2**: de latentie is 1-2 MS voor gegevens op de lokale SSD van de compute-replica, waarmee de meeste gebruikte gegevens pagina's in de cache worden opgeslagen. Hogere latentie voor gegevens die zijn opgehaald van pagina servers.
+
+## <a name="hyperscale---provisioned-compute---dc-series"></a>Grootschalige-ingerichte Compute-DC-serie
+
+|Berekenings grootte (Service doelstelling)|HS_DC_2|HS_DC_4|HS_DC_6|HS_DC_8|
+|:--- | --: |--: |--: |--: |---: | 
+|Compute genereren|DC-serie|DC-serie|DC-serie|DC-serie|
+|vCores|2|4|6|8|
+|Geheugen (GB)|9|18|27|36|
+|[RBPEX](service-tier-hyperscale.md#compute) Size|3X-geheugen|3X-geheugen|3X-geheugen|3X-geheugen|
+|Column Store-ondersteuning|Ja|Ja|Ja|Ja|
+|OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Maximale gegevens grootte (TB)|100 |100 |100 |100 |
+|Maximale logboek grootte (TB)|Onbeperkt |Onbeperkt |Onbeperkt |Onbeperkt |
+|Maximale gegevens grootte TempDB (GB)|64|128|192|256|
+|Opslagtype| [Opmerking 1](#notes) |[Opmerking 1](#notes)|[Opmerking 1](#notes) |[Opmerking 1](#notes) |
+|Max. aantal lokale SSD-IOPS *|8000 |16000 |24000 |32000 |
+|Maximale logboek frequentie (MBps)|100 |100 |100 |100 |
+|I/o-latentie (bij benadering)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|[Opmerking 2](#notes)|
+|Maxi maal aantal gelijktijdige werk nemers (aanvragen)|160|320|480|640|
+|Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|
+|Secundaire replica's|0-4|0-4|0-4|0-4|
+|Meerdere AZ|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Uitschalen voor leesbewerking|Ja|Ja|Ja|Ja|
+|Back-upopslag bewaren|7 dagen|7 dagen|7 dagen|7 dagen|
+|||
+
+### <a name="notes"></a>Notities
 
 **Opmerking 1**: grootschalige is een architectuur met meerdere lagen met afzonderlijke Compute-en opslag onderdelen: [grootschalige service tier-architectuur](service-tier-hyperscale.md#distributed-functions-architecture)
 
@@ -251,7 +282,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Opslagtype|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|
 |I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
 |Max. gegevensiops *|320|640|960|1280|1600|1920|
-|Maximale logboek frequentie (MBps)|4.5|9|13,5|18|22,5|27|
+|Maximale logboek frequentie (MBps)|4.5|9|13.5|18|22.5|27|
 |Maxi maal aantal gelijktijdige werk nemers (aanvragen)|200|400|600|800|1000|1200|
 |Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|30.000|30.000|
 |Aantal replica's|1|1|1|1|1|1|
@@ -276,7 +307,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Opslagtype|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|
 |I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)
 |Max. gegevensiops *|2240|2560|2880|3200|5120|7680|
-|Maximale logboek frequentie (MBps)|31,5|36|36|36|36|36|
+|Maximale logboek frequentie (MBps)|31.5|36|36|36|36|36|
 |Maxi maal aantal gelijktijdige werk nemers (aanvragen)|1400|1600|1800|2000|3200|4800|
 |Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|30.000|30.000|
 |Aantal replica's|1|1|1|1|1|1|
@@ -319,7 +350,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |:--- | --: |--: |--: |--: |---: | --: |--: |
 |Compute genereren|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|
 |vCores|16|18|20|24|32|40|80|
-|Geheugen (GB)|83|93,4|103,8|124,6|166,1|207,6|415,2|
+|Geheugen (GB)|83|93.4|103.8|124,6|166,1|207,6|415,2|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Maximale gegevens grootte (GB)|3072|3072|3072|4096|4096|4096|4096|
@@ -346,7 +377,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |:---| ---:|---:|---:|---:|---:|
 |Compute genereren|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|
 |vCores|8|10|12|14|16|
-|Geheugen (GB)|15,1|18,9|22,7|26,5|30,2|
+|Geheugen (GB)|15,1|18.9|22,7|26.5|30,2|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Maximale gegevens grootte (GB)|1024|1024|1024|1024|1536|
@@ -372,7 +403,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |:---| ---:|---:|---:|---:|---:|---:|
 |Compute genereren|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|Fsv2-serie|
 |vCores|18|20|24|32|36|72|
-|Geheugen (GB)|34,0|37,8|45,4|60,5|68,0|136,0|
+|Geheugen (GB)|34.0|37,8|45,4|60,5|68.0|136,0|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Maximale gegevens grootte (GB)|1536|1536|1536|3072|3072|4096|
@@ -389,6 +420,32 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Meerdere AZ|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Uitschalen voor leesbewerking|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
 |Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
+
+\* De maximum waarde voor i/o-grootten tussen 8 KB en 64 KB. Werkelijke IOPS zijn werk belasting afhankelijk. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)voor meer informatie.
+
+## <a name="general-purpose---provisioned-compute---dc-series"></a>Algemeen beoogde, ingerichte Compute-DC-serie
+
+|Berekenings grootte (Service doelstelling)|GP_DC_2|GP_DC_4|GP_DC_6|GP_DC_8| 
+|:---| ---:|---:|---:|---:|
+|Compute genereren|DC-serie|DC-serie|DC-serie|DC-serie|
+|vCores|2|4|6|8|
+|Geheugen (GB)|9|18|27|36|
+|Column Store-ondersteuning|Ja|Ja|Ja|Ja|
+|OLTP-opslag in het geheugen (GB)|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Maximale gegevens grootte (GB)|1024|1536|3072|3072|
+|Maximale logboek grootte (GB)|307|461|922|922|
+|Maximale gegevens grootte TempDB (GB)|64|128|192|256|
+|Opslagtype|Externe SSD|Externe SSD|Externe SSD|Externe SSD|
+|I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
+|Max. gegevensiops *|640|1280|1920|2560|
+|Maximale logboek frequentie (MBps)|9|18|27|36|
+|Maxi maal aantal gelijktijdige werk nemers (aanvragen)|160|320|480|640|
+|Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|
+|Aantal replica's|1|1|1|1|
+|Meerdere AZ|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Uitschalen voor leesbewerking|N.v.t.|N.v.t.|N.v.t.|N.v.t.|
+|Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
+
 
 \* De maximum waarde voor i/o-grootten tussen 8 KB en 64 KB. Werkelijke IOPS zijn werk belasting afhankelijk. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)voor meer informatie.
 
@@ -483,7 +540,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |:--- | --: |--: |--: |--: |---: | --: |--: |
 |Compute genereren|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|GEN5|
 |vCores|16|18|20|24|32|40|80|
-|Geheugen (GB)|83|93,4|103,8|124,6|166,1|207,6|415,2|
+|Geheugen (GB)|83|93.4|103.8|124,6|166,1|207,6|415,2|
 |Column Store-ondersteuning|Ja|Ja|Ja|Ja|Ja|Ja|Ja|
 |OLTP-opslag in het geheugen (GB)|15,77|18,14|20,51|25,25|37,94|52,23|131,64|
 |Maximale gegevens grootte (GB)|3072|3072|3072|4096|4096|4096|4096|
@@ -563,6 +620,31 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 > [!IMPORTANT]
 > In sommige gevallen moet u mogelijk een Data Base verkleinen om ongebruikte ruimte te claimen. Zie [Bestands ruimte beheren in Azure SQL database](file-space-manage.md)voor meer informatie.
 
+## <a name="business-critical---provisioned-compute---dc-series"></a>Bedrijfs kritieke-ingerichte Compute-DC-serie
+
+|Berekenings grootte (Service doelstelling)|BC_DC_2|BC_DC_4|BC_DC_6|BC_DC_8|
+|:--- | --: |--: |--: |--: |
+|Compute genereren|DC-serie|DC-serie|DC-serie|DC-serie|
+|vCores|2|4|6|8|
+|Geheugen (GB)|9|18|27|36|
+|Column Store-ondersteuning|Ja|Ja|Ja|Ja|
+|OLTP-opslag in het geheugen (GB)|1,7|3.7|5.9|8,2|
+|Maximale gegevens grootte (GB)|768|768|768|768|
+|Maximale logboek grootte (GB)|230|230|230|230|
+|Maximale gegevens grootte TempDB (GB)|64|128|192|256|
+|Opslagtype|Lokale SSD|Lokale SSD|Lokale SSD|Lokale SSD|
+|I/o-latentie (bij benadering)|1-2 ms (schrijven)<br>1-2 ms (lezen)|1-2 ms (schrijven)<br>1-2 ms (lezen)|1-2 ms (schrijven)<br>1-2 ms (lezen)|1-2 ms (schrijven)<br>1-2 ms (lezen)|
+|Max. gegevensiops *|14000|28000|42000|56000|
+|Maximale logboek frequentie (MBps)|24|48|72|96|
+|Maxi maal aantal gelijktijdige werk nemers (aanvragen)|200|400|600|800|
+|Maximaal aantal gelijktijdige aanmeldingen|200|400|600|800|
+|Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|
+|Aantal replica's|4|4|4|4|
+|Meerdere AZ|Nee|Nee|Nee|Nee|
+|Uitschalen voor leesbewerking|Nee|Nee|Nee|Nee|
+|Opgenomen back-upopslag|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|1X-DB-grootte|
+
+\* De maximum waarde voor i/o-grootten tussen 8 KB en 64 KB. Werkelijke IOPS zijn werk belasting afhankelijk. Zie [Data io governance](resource-limits-logical-server.md#resource-governance)voor meer informatie.
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: troubleshooting
-ms.date: 11/06/2020
+ms.date: 01/14/2021
 ms.author: b-juche
-ms.openlocfilehash: a07898692c8af70fab0d2634ed1513f0f3666a4d
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 759759b67582b241d0bab1e043dd15e54a804faf
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505457"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251536"
 ---
 # <a name="troubleshoot-capacity-pool-issues"></a>Problemen met capaciteitspools oplossen
 
@@ -34,9 +34,6 @@ In dit artikel worden oplossingen beschreven voor problemen die u mogelijk hebt 
 | Het maken of wijzigen van een volume mislukt met `Requested throughput not available` fout | Beschik bare door Voer voor een volume wordt bepaald door de grootte van de capaciteits groep en het service niveau. Als u onvoldoende door Voer hebt, moet u de pool grootte verg Roten of de bestaande volume doorvoer aanpassen. | 
 
 ## <a name="issues-when-changing-the-capacity-pool-of-a-volume"></a>Problemen bij het wijzigen van de capaciteits pool van een volume 
-
-> [!IMPORTANT] 
-> Het [dynamisch wijzigen van het service niveau van een](dynamic-change-volume-service-level.md) open bare Preview-Registratie voor een volume is in de wacht stand gezet tot verdere kennisgeving.
 
 |     Foutvoorwaarde    |     Oplossing    |
 |-|-|

@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: 61bd23c74fd7960317dff17175b355b473cd6dc7
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 921c05b76640935a1bd9e65d556933c23093e5b2
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233828"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251434"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -23,19 +23,6 @@ In dit artikel worden veelvoorkomende fout berichten voor het publiceren van VM-
 > [!NOTE]
 > Als u vragen hebt over dit artikel of suggesties voor verbetering, kunt u contact opnemen met de [ondersteuning van partner Center](https://aka.ms/marketplacepublishersupport).
 
-## <a name="approved-base-image"></a>Goedgekeurde basis installatie kopie
-
-Wanneer u een aanvraag indient om uw installatie kopie opnieuw te publiceren met updates, kan de test voor de verificatie van het onderdeel nummer mislukken. Als dit mislukt, wordt uw installatie kopie niet goedgekeurd.
-
-Deze fout treedt op wanneer u een basis installatie kopie gebruikt die deel uitmaakt van een andere uitgever en u de installatie kopie hebt bijgewerkt. In deze situatie is het niet toegestaan om uw installatie kopie te publiceren.
-
-U kunt dit probleem oplossen door de installatie kopie op te halen uit Azure Marketplace en er wijzigingen in aan te brengen. Raadpleeg voor meer informatie de volgende artikelen:
-
-- [Linux-installatie kopieën](../virtual-machines/linux/endorsed-distros.md?toc=/azure/virtual-machines/linux/toc.json)
-- [Windows-installatiekopieën](azure-vm-create-using-approved-base.md)
-
-> [!Note]
-> Als u een Linux-basis installatie kopie gebruikt die niet afkomstig is van Azure Marketplace, moet u ervoor zorgen dat de eerste 2048 sectoren (elke sector van 512 bytes) op de VHD leeg zijn, zodat Azure doorgaat met het publiceren van uw VM naar Azure Marketplace.  
 
 ## <a name="vm-extension-failure"></a>VM-extensie fout
 
@@ -170,7 +157,7 @@ Raadpleeg de volgende tabel voor veelvoorkomende fouten bij het uitvoeren van te
 De volgende tabel geeft een lijst van de Windows-test cases die de Toolkit moet uitvoeren, samen met een beschrijving van de test validatie:
 
 |Scenario |Testcases|Beschrijving|
-|---|---|---|---|
+|---|---|---|
 |1|Architectuur van besturingssysteem|Azure ondersteunt alleen 64-bits besturings systemen.|
 |2|Afhankelijkheid van gebruikers account|Uitvoering van toepassing mag niet afhankelijk zijn van het Administrator-account.|
 |3|Failovercluster|De Windows Server failover clustering-functie wordt nog niet ondersteund. De toepassing mag niet afhankelijk zijn van deze functie.|
@@ -250,7 +237,7 @@ Als uw installatie kopie niet is geïnstalleerd met een van de volgende kernel-v
 |BESTURINGSSYSTEEM familie|Versie|Kernel|
 |---|---|---|
 |Ubuntu|14,04 LTS|4.4.0-151| 
-||14,04 LTS|4.15.0-1049-*-Azure|
+||14,04 LTS|4.15.0-1049- \* -Azure|
 ||16,04 LTS|4.15.0-1049|
 ||18,04 LTS|4.18.0-1023|
 ||18,04 LTS|5.0.0-1025|
@@ -283,9 +270,9 @@ Als uw installatie kopie niet is geïnstalleerd met een van de volgende kernel-v
 |Oracle|6.10|UEK2 2.6.39-400.312.2<br>UEK3 3.8.13-118.35.2<br>RHCK 2.6.32-754.15.3 
 ||7.0-7.5|UEK3 3.8.13-118.35.2<br>UEK4 4.1.12-124.28.3<br>RHCK volgt RHEL hierboven|
 ||7.6|RHCK 3.10.0-957.21.3<br>UEK5 4.14.35-1902.2.0|
-|CoreOS stabiele 2079.6.0|4.19.43*|
-||Bèta 2135.3.1|4.19.50*|
-||Alpha-2163.2.1|4.19.50*|
+|CoreOS stabiele 2079.6.0|4.19.43\*|
+||Bèta 2135.3.1|4.19.50\*|
+||Alpha-2163.2.1|4.19.50\*|
 |Debian|Jessie (beveiliging)|3.16.68-2|
 ||Jessie backports|4.9.168-1 + deb9u3|
 ||uitrekken (beveiliging)|4.9.168-1 + deb9u3|
@@ -328,14 +315,11 @@ Raadpleeg de volgende tabel voor problemen die zich voordoen wanneer u de VM-ins
 |6|Voorwaardelijke HTTP-header|De SAS-URL is ongeldig.|Haal de juiste SAS-URL op.|
 |7|Ongeldige naam voor VHD|Controleer of er speciale tekens, zoals een procent teken `%` of aanhalings tekens `"` , aanwezig zijn in de naam van de virtuele harde schijf.|Wijzig de naam van het VHD-bestand door de speciale tekens te verwijderen.|
 
-## <a name="first-1mb-2048-sectors-each-sector-of-512-bytes-partition-linux-only"></a>Eerste 1MB (2048 sectoren, elke sector van 512 bytes) partitie (alleen Linux)
+## <a name="first-1-mb-partition-2048-sectors-each-sector-of-512-bytes"></a>Eerste partitie van 1 MB (2.048 sectoren, elke sector van 512 bytes)
 
-Wanneer u de VHD verzendt, moet u ervoor zorgen dat de eerste 2048 sectoren (1MB) van de VHD leeg zijn. Als dat niet het geval is, mislukt de aanvraag. Houd er rekening mee dat dit van toepassing is op de opstart-en besturingssysteem schijf en niet op extra gegevens schijven.
+Als u [uw eigen installatie kopie bouwt](azure-vm-create-using-own-image.md), moet u ervoor zorgen dat de eerste 2.048 sectoren (1 MB) van de besturingssysteem schijf leeg zijn. Als dat niet het geval is, mislukt de publicatie. Deze vereiste is alleen van toepassing op de besturingssysteem schijf (niet op gegevens schijven). Als u een installatie kopie [van een goedgekeurde basis](azure-vm-create-using-approved-base.md)bouwt, kunt u deze vereiste overs Laan. 
 
->[!NOTE]
->Voor bepaalde speciale installatie kopieën, zoals die zijn gebouwd op basis van Azure Windows Base-installatie kopieën die zijn gemaakt via Azure Marketplace of zorg ervoor dat de eerste 1MB (2048 sectoren) van de VHD leeg is. 
-
-### <a name="create-a-first-1mb-2048-sectors-each-sector-of-512-bytes-partition-on-an-empty-vhd"></a>Een eerste 1MB (2048-sectoren, elke sector van 512 bytes) maken op een lege VHD
+### <a name="create-a-1-mb-partition-2048-sectors-each-sector-of-512-bytes-on-an-empty-vhd-linux-only-steps"></a>Een partitie van 1 MB (2.048 sectoren, elke sector van 512 bytes) maken op een lege VHD (alleen Linux-stappen)
 
 Deze stappen zijn alleen van toepassing op Linux.
 
@@ -400,7 +384,7 @@ Deze stappen zijn alleen van toepassing op Linux.
 
 1. Ontkoppel de VHD van de VM en verwijder de virtuele machine.
 
-### <a name="create-a-first-mb-2048-sectors-each-sector-of-512-bytes-partition-by-moving-existing-data-on-vhd"></a>Maak een eerste MB (2048 sectoren, elke sector van 512 bytes) door bestaande gegevens op de VHD te verplaatsen
+### <a name="create-a-first-1-mb-partition-2048-sectors-each-sector-of-512-bytes-by-moving-existing-data-on-vhd"></a>Maak een eerste partitie van 1 MB (2.048 sectoren, elke sector van 512 bytes) door bestaande gegevens op de VHD te verplaatsen
 
 Deze stappen zijn alleen van toepassing op Linux.
 

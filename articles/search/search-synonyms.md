@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 12/18/2020
-ms.openlocfilehash: b62621a77f383b5c6413e7c187e7ba3d60beabad
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: 5e608d38ff70d51b569088629a6d80cb08e74ed4
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97732084"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251621"
 ---
 # <a name="synonyms-in-azure-cognitive-search"></a>Synoniemen in azure Cognitive Search
 
@@ -21,9 +21,9 @@ Met synoniemen kaarten kunt u gelijkwaardige voor waarden koppelen door het bere
 
 ## <a name="create-synonyms"></a>Synoniemen maken
 
-Een synoniem toewijzing is een Asset die eenmaal kan worden gemaakt en door veel indexen kan worden gebruikt. De [servicelaag bepaalt hoeveel](search-limits-quotas-capacity.md#synonym-limits) synoniemen er u kunt maken, variërend van 3 synoniemen voor de lagen gratis en Basic, Maxi maal 20 voor de standaard lagen. 
+Een synoniem toewijzing is een Asset die eenmaal kan worden gemaakt en door veel indexen kan worden gebruikt. De [servicelaag bepaalt hoeveel](search-limits-quotas-capacity.md#synonym-limits) synoniemen er u kunt maken, variërend van drie synoniemen voor de lagen gratis en Basic, Maxi maal 20 voor de standaard lagen. 
 
-U kunt meerdere synoniemen kaarten maken voor verschillende talen, zoals Engels en Franse versies, of lexicons als uw inhoud technisch of onduidelijke terminologie bevat. Hoewel u meerdere synoniemen kaarten kunt maken, kunt u op dit moment slechts een van de toewijzingen gebruiken.
+U kunt meerdere synoniemen kaarten maken voor verschillende talen, zoals Engels en Franse versies, of lexicons als uw inhoud technisch of onduidelijke terminologie bevat. Hoewel u meerdere synoniemen kaarten in uw zoek service kunt maken, kan een veld alleen een van de toewijzingen gebruiken.
 
 Een synoniemen kaart bestaat uit een naam, indeling en regels die als synoniemen worden gebruikt voor het toewijzen van vermeldingen. De enige indeling die wordt ondersteund `solr` , is en de `solr` indeling bepaalt de constructie van de regel.
 
@@ -50,7 +50,7 @@ Toewijzings regels voldoen aan de open-source synoniem filter specificatie van A
 
 Elke regel moet worden gescheiden door het nieuwe regel teken ( `\n` ). U kunt Maxi maal 5.000 regels per synoniem toewijzen in een gratis service en 20.000 regels per kaart in andere lagen. Elke regel kan Maxi maal 20 uitbrei dingen (of items in een regel) bevatten. Zie [synoniemen limieten](search-limits-quotas-capacity.md#synonym-limits)voor meer informatie.
 
-Query-parsers verlaagt alle hoofd letters en andere voor waarden, maar als u speciale tekens in de teken reeks wilt behouden, zoals een komma of streepje, voegt u de juiste escape tekens toe wanneer u de synoniemen kaart maakt. 
+Query-parsers verlaagt alle hoofd letters en andere voor waarden, maar als u speciale tekens in de teken reeks wilt behouden, zoals een komma of streepje, voegt u de juiste escape tekens toe wanneer u de synoniemen kaart maakt.
 
 ### <a name="equivalency-rules"></a>Gelijkwaardige regels
 
@@ -85,7 +85,7 @@ In het expliciete geval wordt een query `Washington` voor `Wash.` of `WA` wordt 
 
 ### <a name="escaping-special-characters"></a>Speciale tekens in een escape teken
 
-Als u synoniemen wilt definiëren die komma's of andere speciale tekens bevatten, kunt u ze met een back slash, zoals in dit voor beeld:
+Synoniemen worden geanalyseerd tijdens de verwerking van query's. Als u synoniemen wilt definiëren die komma's of andere speciale tekens bevatten, kunt u ze met een back slash, zoals in dit voor beeld:
 
 ```json
 {
@@ -143,11 +143,15 @@ POST /indexes?api-version=2020-06-30
 
 Het toevoegen van synoniemen biedt geen nieuwe vereisten voor het bouwen van query's. U kunt termen en woordgroepen query's verzenden net zoals u eerder hebt gedaan voordat u synoniemen hebt toegevoegd. Het enige verschil is dat als een query term bestaat in de synoniemen kaart, de query-engine de term of woord groep uitvouwt of herschrijft, afhankelijk van de regel.
 
-## <a name="how-synonyms-interact-with-other-features"></a>Hoe synoniemen werken met andere functies
+## <a name="how-synonyms-are-used-during-query-execution"></a>Hoe synoniemen worden gebruikt tijdens de uitvoering van query's
 
-De synoniemen functie schrijft de oorspronkelijke query opnieuw met synoniemen met de operator OR. Daarom behandelen treffers markeren en Score profielen de oorspronkelijke term en synoniemen als gelijkwaardig.
+Synoniemen zijn een uitbreidings techniek voor query's waarmee de inhoud van een index wordt aangevuld met gelijkwaardige voor waarden, maar alleen voor velden met een synoniemen toewijzing. Als een query met veld bereik een veld met een synoniemen *uitsluiting uitsluit* , worden er geen overeenkomsten van de synoniemen kaart weer geven.
 
-Synoniemen zijn alleen van toepassing op zoek query's en worden niet ondersteund voor filters, facetten, automatisch aanvullen of suggesties. Automatisch aanvullen en suggesties zijn alleen gebaseerd op de oorspronkelijke periode. overeenkomsten met synoniemen worden niet weer gegeven in het antwoord.
+Voor synoniemen velden zijn synoniemen onderhevig aan dezelfde tekst analyse als het bijbehorende veld. Als een veld bijvoorbeeld wordt geanalyseerd met behulp van de standaard-lucene Analyzer, worden de voor waarden van synoniemen ook op het moment van de query aan de standaard-lucene Analyzer onderworpen. Als u de Lees tekens, zoals Peri Oden of streepjes, in de synoniemen term wilt behouden, moet u op het veld een content-behoudde analyse Toep assen.
+
+Intern schrijft de synoniemen functie de oorspronkelijke query opnieuw met synoniemen met de operator OR. Daarom behandelen treffers markeren en Score profielen de oorspronkelijke term en synoniemen als gelijkwaardig.
+
+Synoniemen zijn alleen van toepassing op vrije-tekst query's en worden niet ondersteund voor filters, facetten, automatisch aanvullen of suggesties. Automatisch aanvullen en suggesties zijn alleen gebaseerd op de oorspronkelijke periode. overeenkomsten met synoniemen worden niet weer gegeven in het antwoord.
 
 Synoniemen uitbreidingen zijn niet van toepassing op zoek termen met Joker tekens. voor waarden voor voor voegsels, fuzzy en regex worden niet uitgevouwen.
 

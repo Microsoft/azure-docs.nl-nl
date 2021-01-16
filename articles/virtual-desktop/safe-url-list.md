@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 12/04/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 70b7042e4006cc59419d0ea6798fe7626a82c086
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 872a67d8d9f41c0c809df54304352b2a5f58e011
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621073"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251757"
 ---
 # <a name="required-url-list"></a>Vereiste URL-lijst
 
@@ -32,6 +32,7 @@ De virtuele machines van Azure die u voor virtuele Windows-Bureau bladen maakt, 
 |* xt.blob.core.windows.net|443|Agent-verkeer|AzureCloud|
 |* eh.servicebus.windows.net|443|Agent-verkeer|AzureCloud|
 |* xt.table.core.windows.net|443|Agent-verkeer|AzureCloud|
+|* xt.queue.core.windows.net|443|Agent-verkeer|AzureCloud|
 |catalogartifact.azureedge.net|443|Azure Marketplace|AzureCloud|
 |kms.core.windows.net|1688|Windows-activering|Internet|
 |mrsglobalsteus2prod.blob.core.windows.net|443|Updates van Agent- en SXS-stack|AzureCloud|

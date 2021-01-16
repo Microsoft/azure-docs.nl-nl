@@ -9,17 +9,17 @@ author: sachinpMSFT
 ms.author: sachinp
 ms.reviewer: sstein
 ms.date: 06/04/2020
-ms.openlocfilehash: 44a37a912c5c7a882d21631b8ce2da2c7ba9c05e
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 27719663acfbdbcd7293defc4b746153359adb61
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97967698"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251846"
 ---
 # <a name="request-quota-increases-for-azure-sql-database-and-sql-managed-instance"></a>Toename van quotum aanvragen voor Azure SQL Database en SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
 
-In dit artikel wordt uitgelegd hoe u een quotum verhoging kunt aanvragen voor Azure SQL Database en Azure SQL Managed instance. Ook wordt uitgelegd hoe u de toegang tot een regio kunt inschakelen voor abonnementen.
+In dit artikel wordt uitgelegd hoe u een quotum verhoging kunt aanvragen voor Azure SQL Database en Azure SQL Managed instance. Ook wordt uitgelegd hoe u de toegang tot een regio en het inschakelen van specifieke hardware in een regio kunt aanvragen.
 
 ## <a name="create-a-new-support-request"></a><a id="newquota"></a> Een nieuwe ondersteunings aanvraag maken
 
@@ -62,8 +62,7 @@ In de volgende secties worden de quota verhogings opties voor de quotum typen **
 
 - Data base Trans Action units (Dtu's) per server
 - Servers per abonnement
-- Toegang tot regio's uit de M-serie
-- Regiotoegang
+- Regio toegang voor abonnementen of specifieke hardware
 
 ### <a name="database-transaction-units-dtus-per-server"></a>Data base Trans Action units (Dtu's) per server
 
@@ -109,30 +108,15 @@ Als uw abonnement toegang moet hebben in een bepaalde regio, selecteert u de opt
 
    ![Toegang tot de aanvraag regio](./media/quota-increase-request/quota-request.png)
 
-<!--
-### <a id="mseries"></a> Enable M-series access to a region
+### <a name="request-enabling-specific-hardware-in-a-region"></a>Aanvraag voor het inschakelen van specifieke hardware in een regio
 
-To enable M-series hardware for a subscription and region, a support request must be opened.
+Als een [Hardware-generatie](service-tiers-vcore.md#hardware-generations) die u wilt gebruiken niet beschikbaar is in uw regio (Zie [Hardware-Beschik baarheid](service-tiers-vcore.md#hardware-availability)), kunt u deze aanvragen met de volgende stappen.
 
-1. Select the **M-series region access** quota type.
+1. Selecteer het quotum type **andere quotum aanvragen** .
 
-1. In the **Select a location** list, select the Azure region to use. The quota is per subscription in each region.
+1. Geef in het veld **Beschrijving** de status van uw aanvraag op, met inbegrip van de naam van de hardware-generatie en de naam van de regio waar u deze nodig hebt.
 
-
-   ![Request M-series region access](./media/quota-increase-request/quota-m-series.png)
--->
-
-## <a name="sql-managed-instance-quota-type"></a><a id="sqlmiquota"></a> Quota type voor SQL-beheerd exemplaar
-
-Voer de volgende stappen uit voor het quota type **SQL Managed instance** :
-
-1. Selecteer in de lijst **regio** de Azure-regio die u wilt instellen.
-
-1. Voer de nieuwe limieten in die u aanvraagt voor het **subnet** en de **vCore**.
-
-   ![Details van het SQL Managed instance-quotum](./media/quota-increase-request/quota-details-managed-instance.png)
-
-Zie [overzicht van Azure SQL Managed instance resource limieten](../managed-instance/resource-limits.md)voor meer informatie.
+   ![Hardware in een nieuwe regio aanvragen](./media/quota-increase-request/hardware-in-new-region.png)
 
 ## <a name="submit-your-request"></a>De aanvraag verzenden
 

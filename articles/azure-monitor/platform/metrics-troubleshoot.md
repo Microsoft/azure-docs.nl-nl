@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 04/23/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 7c3af0865282475ded0172d18aecad1dfb61721b
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 5219553fe300d607212af1ef6cedf72ce6506762
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814258"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250329"
 ---
 # <a name="troubleshooting-metrics-charts"></a>Problemen met grafieken met metrische gegevens oplossen
 
@@ -48,7 +48,7 @@ Sommige resources verzenden niet voortdurend hun metrische gegevens. Azure verza
 
 ### <a name="all-metric-values-were-outside-of-the-locked-y-axis-range"></a>Alle metrische waarden bevinden zich buiten het bereik van de vergrendelde y-as
 
-Door [de grenzen van de y-as van de grafiek te vergrendelen](metrics-charts.md#lock-boundaries-of-chart-y-axis), kunt u per ongeluk instellen dat de grafieklijn niet zichtbaar is in het grafiekgebied. Als de y-as bijvoorbeeld is vergrendeld op een bereik tussen 0% en 50% en de metrische gegevens een constante waarde van 100% hebben, wordt de lijn altijd buiten het zichtbare gebied weergegeven, waardoor het lijkt alsof de grafiek leeg is.
+Door [de grenzen van de y-as van de grafiek te vergrendelen](metrics-charts.md#locking-the-range-of-the-y-axis), kunt u per ongeluk instellen dat de grafieklijn niet zichtbaar is in het grafiekgebied. Als de y-as bijvoorbeeld is vergrendeld op een bereik tussen 0% en 50% en de metrische gegevens een constante waarde van 100% hebben, wordt de lijn altijd buiten het zichtbare gebied weergegeven, waardoor het lijkt alsof de grafiek leeg is.
 
 **Oplossing:** Controleer of de grenzen van de y-as van de grafiek niet zijn vergrendeld buiten het bereik van de meet waarden. Als de grenzen van de y-as zijn vergrendeld, kunt u deze tijdelijk opnieuw instellen om ervoor te zorgen dat de metrische waarden niet buiten het bereik van de grafiek vallen. Vergrendeling van het bereik van de y-as wordt niet aanbevolen met automatische granulariteit voor de grafieken met aggregatie via **som**, **min** en **max** omdat de waarden samen met de granulatie worden gewijzigd door het vergroten of verkleinen van het browservenster of het wijzigen van de schermresolutie. Wijziging van de granulariteit kan tot gevolg hebben dat het weergavegebied van uw grafiek leeg blijft.
 

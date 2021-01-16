@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 10/02/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: a47126a48ea63efd4e49097428679b85b7a95a61
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ec900f0537030d3ed0d1c875e8125806159bd51
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91667160"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251451"
 ---
 # <a name="create-a-windows-virtual-desktop-host-pool-with-powershell"></a>Een Windows-hostgroep voor virtueel bureau blad maken met Power shell
 
@@ -93,7 +93,7 @@ Ga als volgt te werk op elke virtuele machine voor een geslaagde domein koppelin
 
 1. [Maak verbinding met de virtuele machine](../virtual-machines/windows/quick-create-portal.md#connect-to-virtual-machine) met de referenties die u hebt ingevoerd tijdens het maken van de virtuele machine.
 2. Start **configuratie scherm** op de virtuele machine en selecteer **systeem**.
-3. Selecteer **computer naam**, selecteer **instellingen wijzigen**en selecteer vervolgens **wijzigen...**
+3. Selecteer **computer naam**, selecteer **instellingen wijzigen** en selecteer vervolgens **wijzigen...**
 4. Selecteer **domein** en voer vervolgens het Active Directory domein in op het virtuele netwerk.
 5. Verifieer met een domein account dat bevoegdheden heeft voor computers die lid zijn van een domein.
 
@@ -124,13 +124,13 @@ Ga als volgt te werk op elke virtuele machine om de virtuele bureau blad-agents 
 
 U moet de agent bijwerken als u een van de volgende situaties hebt:
 
-- U wilt een eerder geregistreerde sessie migreren naar een nieuwe hostgroep
+- U wilt een eerder geregistreerde sessiehost migreren naar een nieuwe hostgroep
 - De sessiehost wordt niet weer gegeven in uw hostgroep na een update
 
 De agent bijwerken:
 
 1. Meld u als beheerder aan bij de VM.
-2. Ga naar **Services**en stop de **Rdagent** -en **extern bureaublad agent loader** -processen.
+2. Ga naar **Services** en stop de **Rdagent** -en **extern bureaublad agent loader** -processen.
 3. Zoek vervolgens de agent en de bootloader MSIs. Ze bevinden zich in de map **C:\DeployAgent** of op welke locatie je deze hebt opgeslagen toen je deze installeerde.
 4. Zoek de volgende bestanden en verwijder ze:
      

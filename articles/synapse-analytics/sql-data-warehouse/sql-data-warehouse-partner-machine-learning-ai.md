@@ -11,12 +11,12 @@ ms.date: 06/22/2020
 ms.author: procha
 ms.reviewer: charlesf
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 4d45343c071a6a01981f8de87ee0efea409241b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 80b01eb78d6dfb0d1629eb73bf86c76e3dc4e32f
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85368155"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249143"
 ---
 # <a name="azure-synapse-analytics-machine-learning-and-ai-partners"></a>machine learning-en AI-partners voor Azure Synapse Analytics
 
@@ -26,6 +26,7 @@ In dit artikel worden micro soft-partners beschreven met machine learning en kun
 | Partner | Beschrijving | Website/product koppeling |
 | ------- | ----------- | -------------------- |
 | ![Dataiku](./media/sql-data-warehouse-partner-machine-learning-and-ai/dataiku-logo.png) |**Dataiku**<br>Dataiku is het gecentraliseerde gegevens platform waarmee bedrijven worden verplaatst naar hun gegevens vanuit Analytics op schaal naar Enter prise AI, self-service analyses en de uitoefening van machine learning modellen in productie. |[Product pagina](https://www.dataiku.com/partners/microsoft/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/dataiku.dataiku-data-science-studio)<br> |
+| ![MATLAB](./media/sql-data-warehouse-partner-machine-learning-and-ai/mathworks-logo.png) |**MATLAB**<br>MATLAB® is een programmeer platform dat is ontworpen voor technici en wetenschappers. De oplossing combineert een bureaublad omgeving die is afgestemd op iteratieve analyse en ontwerp processen met een programmeer taal waarin de wiskunde van de matrix en de array direct worden uitgedrukt. Miljoenen wereld wijd gebruik MATLAB voor diverse toepassingen, waaronder machine learning, diep leren, het verwerken van signalen, besturings systemen en reken Financiën. |[Product pagina](https://www.mathworks.com/products/database.html)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/en-us/marketplace/apps/mathworks-inc.matlab-byol?tab=Overview)<br> |
 | ![Qubole](./media/sql-data-warehouse-partner-data-integration/qubole_logo.png) |**Qubole**<br>Qubole biedt een Cloud-systeem eigen platform waarmee gebruikers ETL, analyses en AI/ML-workloads kunnen uitvoeren. Het ondersteunt verschillende soorten open source-engines: Apache Spark, tensor flow, Presto, lucht flow, Hadoop, Hive en meer. Het biedt gebruiks vriendelijke hulpprogram ma's voor eind gebruikers voor gegevens verwerking van SQL-query hulpprogramma's, voor notebooks en dash boards die gebruikmaken van krachtige open-source engines.|[Product pagina](https://www.qubole.com/company/partners/partners-microsoft-azure/)<br> [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/qubole-inc.qubole-data-service?tab=Overview) 
 
 ## <a name="next-steps"></a>Volgende stappen

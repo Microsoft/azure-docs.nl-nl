@@ -7,13 +7,13 @@ ms.reviewer: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 05/19/2019
-ms.openlocfilehash: 9a4b57f3813adfeee53891f733dd4d303dbbef8d
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.date: 01/15/2021
+ms.openlocfilehash: a5c93244862d72f9c8ea2928c41e699302b1752b
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497126"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249432"
 ---
 # <a name="transform-data-securely-by-using-mapping-data-flow"></a>Gegevens veilig transformeren met behulp van gegevens stroom toewijzen
 
@@ -34,6 +34,7 @@ In deze zelfstudie voert u de volgende stappen uit:
 > * Een gegevens stroom activiteit bewaken.
 
 ## <a name="prerequisites"></a>Vereisten
+
 * **Azure-abonnement**. Als u nog geen abonnement op Azure hebt, maak dan een [gratis Azure-account](https://azure.microsoft.com/free/) aan voordat u begint.
 * **Azure-opslagaccount**. U gebruikt Data Lake Storage als *bron* -en *sink* -gegevens opslag. Als u geen opslagaccount hebt, raadpleegt u het artikel [Een opslagaccount maken](../storage/common/storage-account-create.md?tabs=azure-portal) om een account te maken. *Zorg ervoor dat het opslagaccount alleen toegang toestaat vanuit geselecteerde netwerken.* 
 
@@ -64,12 +65,14 @@ In deze stap maakt u een data factory en opent u de Data Factory-gebruikers inte
 1. Selecteer de tegel **Maken en controleren** om de Data Factory-gebruikersinterface te openen op een afzonderlijk tabblad.
 
 ## <a name="create-an-azure-ir-in-data-factory-managed-virtual-network"></a>Een Azure IR maken in Data Factory beheerde Virtual Network
+
 In deze stap maakt u een Azure IR en schakelt u Data Factory beheerde Virtual Network in.
 
 1. Ga in de Data Factory Portal naar **beheren** en selecteer **Nieuw** om een nieuwe Azure IR te maken.
 
    ![Scherm opname van het maken van een nieuwe Azure IR.](./media/tutorial-copy-data-portal-private/create-new-azure-ir.png)
-1. Selecteer de optie **Azure** IR.
+1. Kies op de pagina **Integration runtime Setup** welke Integration runtime u wilt maken op basis van de vereiste mogelijkheden. In deze zelf studie selecteert u **Azure, zelf-hostend** en klikt u vervolgens op **door gaan**. 
+1. Selecteer **Azure** en klik vervolgens op **door gaan** om een Azure Integration runtime te maken.
 
    ![Scherm opname waarin een nieuwe Azure IR wordt weer gegeven.](./media/tutorial-copy-data-portal-private/azure-ir.png)
 

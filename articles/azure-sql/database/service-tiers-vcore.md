@@ -9,13 +9,13 @@ ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
-ms.date: 09/30/2020
-ms.openlocfilehash: b4473ea304176615c35205494f342922869b71ea
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 01/15/2021
+ms.openlocfilehash: 6589f451d4db8f2ed77ce70a2bdfa9d76927c1e2
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92793140"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251213"
 ---
 # <a name="vcore-model-overview---azure-sql-database-and-azure-sql-managed-instance"></a>overzicht van vCore-model-Azure SQL Database en Azure SQL Managed instance 
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -34,8 +34,8 @@ Opties voor de servicelaag in het vCore-model bevatten Algemeen, Bedrijfskritiek
 |-|**Algemeen doel**|**Bedrijfskritiek**|**Hyperscale**|
 |---|---|---|---|
 |Ideaal voor|De meeste zakelijke workloads. Biedt budgetgerichte, gebalanceerde en schaalbare reken- en opslagopties. |Biedt zakelijke toepassingen de hoogste flexibiliteit voor storingen met behulp van verschillende geïsoleerde replica's en biedt de hoogste I/O-prestaties per database replica.|De meeste zakelijke workloads met zeer schaal bare opslag-en lees vereisten.  Biedt meer flexibiliteit voor storingen door de configuratie van meer dan één geïsoleerde database replica toe te staan. |
-|Opslag|Maakt gebruik van externe opslag.<br/>**SQL database voorziene Compute** :<br/>5 GB – 4 TB<br/>**Serverloze Compute** :<br/>5 GB-3 TB<br/>**SQL Managed instance** : 32 GB-8 TB |Maakt gebruik van lokale SSD-opslag.<br/>**SQL database voorziene Compute** :<br/>5 GB – 4 TB<br/>**SQL-beheerd exemplaar** :<br/>32 GB-4 TB |Flexibele Automatische toename van opslag als dat nodig is. Ondersteunt Maxi maal 100 TB aan opslag ruimte. Maakt gebruik van lokale SSD-opslag voor lokale buffer-pool cache en lokale gegevens opslag. Maakt gebruik van Azure externe opslag als definitieve gegevens opslag op lange termijn. |
-|IOPS en door Voer (ongeveer)|**SQL database** : Zie resource limieten voor [afzonderlijke data bases](resource-limits-vcore-single-databases.md) en [elastische Pools](resource-limits-vcore-elastic-pools.md).<br/>**SQL-beheerd exemplaar** : zie overzicht van de [resource limieten voor Azure SQL Managed instance](../managed-instance/resource-limits.md#service-tier-characteristics).|Zie resource limieten voor [afzonderlijke data bases](resource-limits-vcore-single-databases.md) en [elastische Pools](resource-limits-vcore-elastic-pools.md).|Grootschalige is een architectuur met meerdere lagen met caching op meerdere niveaus. Effectief IOPS en door Voer is afhankelijk van de werk belasting.|
+|Storage|Maakt gebruik van externe opslag.<br/>**SQL database voorziene Compute**:<br/>5 GB – 4 TB<br/>**Serverloze Compute**:<br/>5 GB-3 TB<br/>**SQL Managed instance**: 32 GB-8 TB |Maakt gebruik van lokale SSD-opslag.<br/>**SQL database voorziene Compute**:<br/>5 GB – 4 TB<br/>**SQL-beheerd exemplaar**:<br/>32 GB-4 TB |Flexibele Automatische toename van opslag als dat nodig is. Ondersteunt Maxi maal 100 TB aan opslag ruimte. Maakt gebruik van lokale SSD-opslag voor lokale buffer-pool cache en lokale gegevens opslag. Maakt gebruik van Azure externe opslag als definitieve gegevens opslag op lange termijn. |
+|IOPS en door Voer (ongeveer)|**SQL database**: Zie resource limieten voor [afzonderlijke data bases](resource-limits-vcore-single-databases.md) en [elastische Pools](resource-limits-vcore-elastic-pools.md).<br/>**SQL-beheerd exemplaar**: zie overzicht van de [resource limieten voor Azure SQL Managed instance](../managed-instance/resource-limits.md#service-tier-characteristics).|Zie resource limieten voor [afzonderlijke data bases](resource-limits-vcore-single-databases.md) en [elastische Pools](resource-limits-vcore-elastic-pools.md).|Grootschalige is een architectuur met meerdere lagen met caching op meerdere niveaus. Effectief IOPS en door Voer is afhankelijk van de werk belasting.|
 |Beschikbaarheid|1 replica, geen replica's met lees schaal|3 replica's, 1 [replica met lees grootte](read-scale-out.md),<br/>zone-redundante hoge Beschik baarheid (HA)|1 replica met lees-en schrijf bewerkingen, plus 0-4 [replica's met lees grootte](read-scale-out.md)|
 |Back-ups|[Geografisch redundante opslag met lees toegang (RA-GRS)](../../storage/common/geo-redundant-design.md), 7-35 dagen (standaard 7 dagen)|[Ra-GRS](../..//storage/common/geo-redundant-design.md), 7-35 dagen (standaard 7 dagen)|Back-ups op basis van moment opnamen in azure externe opslag. Herstelt het gebruik van deze moment opnamen voor snel herstel. Back-ups zijn onmiddellijk en zijn niet van invloed op de I/O-prestaties van compute. Herstel bewerkingen zijn snel en zijn geen omvang van de gegevens bewerking (minuten in plaats van uren of dagen).|
 |In het geheugen|Niet ondersteund|Ondersteund|Niet ondersteund|
@@ -69,7 +69,7 @@ Met de [serverloze Compute-laag](serverless-tier-overview.md) worden reken resou
 
 ## <a name="hardware-generations"></a>Hardware gegenereerd
 
-Opties voor het genereren van hardware in het vCore-model omvatten gen 4/5, M-series en Fsv2-Series. Het genereren van de hardware definieert doorgaans de reken-en geheugen limieten en andere kenmerken die van invloed zijn op de prestaties van de werk belasting.
+Opties voor het genereren van hardware in het vCore-model omvatten gen 4/5, M-series, Fsv2-Series en DC-Series. Het genereren van de hardware definieert doorgaans de reken-en geheugen limieten en andere kenmerken die van invloed zijn op de prestaties van de werk belasting.
 
 ### <a name="gen4gen5"></a>Gen4/Gen5
 
@@ -84,7 +84,6 @@ Zie [Gen4/Gen5 Beschik baarheid](#gen4gen5-1)voor regio's waar Gen4/Gen5 beschik
 - Fsv2 biedt minder geheugen en tempdb per vCore dan andere hardware, zodat werk belastingen die gevoelig zijn voor deze limieten wellicht in plaats daarvan Gen5 of M-serie willen overwegen.  
 
 De Fsv2-serie wordt alleen ondersteund in de laag Algemeen. Zie de [Beschik baarheid van Fsv2-Series](#fsv2-series-1)voor regio's waar Fsv2-serie beschikbaar is.
-
 
 ### <a name="m-series"></a>M-serie
 
@@ -101,6 +100,22 @@ Voor toegang tot de M-serie moet het abonnement een betaald aanbod type zijn, in
 To enable M-series hardware for a subscription and region, a support request must be opened. The subscription must be a paid offer type including Pay-As-You-Go or Enterprise Agreement (EA).  If the support request is approved, then the selection and provisioning experience of M-series follows the same pattern as for other hardware generations. For regions where M-series is available, see [M-series availability](#m-series).
 -->
 
+### <a name="dc-series"></a>DC-serie
+
+> [!NOTE]
+> DC-serie is momenteel beschikbaar als **open bare preview**.
+
+- Hardwarematige DC-serie gebruikt Intel-processors met software Guard Extensions (Intel SGX)-technologie.
+- DC-serie is vereist voor [Always encrypted met beveiligde enclaves](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves). dit wordt niet ondersteund met andere hardwareconfiguraties.
+- DC-serie is ontworpen voor werk belastingen die gevoelige gegevens en vraag verwerking van vertrouwelijke query's verwerken, die worden geboden door Always Encrypted met beveiligde enclaves.
+- De hardware van de DC-serie biedt evenwichtige reken-en geheugen bronnen.
+
+DC-serie wordt alleen ondersteund voor de ingerichte Compute (Serverloze wordt niet ondersteund) en biedt geen ondersteuning voor zone redundantie. Zie [Beschik baarheid DC-Series](#dc-series-1)voor REGIO'S waar gelijkstroom reeksen beschikbaar zijn.
+
+#### <a name="azure-offer-types-supported-by-dc-series"></a>Azure-aanbiedings typen die worden ondersteund door DC-serie
+
+Voor toegang tot de DC-serie moet het abonnement een betaald aanbod type zijn, inclusief betalen naar gebruik of Enterprise Agreement (EA).  Zie [huidige aanbiedingen zonder bestedings limieten](https://azure.microsoft.com/support/legal/offer-details)voor een volledige lijst met Azure-aanbiedings typen die door DC-serie worden ondersteund.
+
 ### <a name="compute-and-memory-specifications"></a>Specificaties van Compute en geheugen
 
 
@@ -110,6 +125,7 @@ To enable M-series hardware for a subscription and region, a support request mus
 |GEN5     |**Ingerichte compute**<br>-Intel® E5-2673 v4 (Broadwell) 2,3-GHz, Intel® SP-8160 (Skylake) \* en intel® 8272CL (trapsgewijze Lake) 2,5 GHz \* processors<br>-Maxi maal 80 vCores (1 vCore = 1 Hyper Thread) inrichten<br><br>**Serverloze compute**<br>-Intel® E5-2673 v4 (Broadwell) 2,3-GHz en Intel® SP-8160 (Skylake) * processors<br>-Schaal automatisch naar 40 vCores (1 vCore = 1 Hyper Thread)|**Ingerichte compute**<br>-5,1 GB per vCore<br>-Maxi maal 408 GB inrichten<br><br>**Serverloze compute**<br>-Automatisch schalen naar 24 GB per vCore<br>-Maxi maal 120 GB automatisch schalen|
 |Fsv2-serie     |-Intel® 8168-processors (Skylake)<br>-Met een zeer hoge Turbo klok snelheid van 3,4 GHz en een maximale klok snelheid van Maxi maal één kern van 3,7 GHz.<br>-Maxi maal 72 vCores (1 vCore = 1 Hyper Thread) inrichten|-1,9 GB per vCore<br>-Maxi maal 136 GB inrichten|
 |M-serie     |-Intel® E7-8890 v3 2,5 GHz en Intel® 8280M 2,7 GHz (Cascade Lake)-processors<br>-Maxi maal 128 vCores (1 vCore = 1 Hyper Thread) inrichten|-29 GB per vCore<br>-Maxi maal 3,7 TB inrichten|
+|DC-serie     | -Intel XEON E-2288G-processors<br>-Uitgerust met Intel software Guard extension (Intel SGX))<br>-Maxi maal 8 vCores (1 vCore = 1 fysieke kern) inrichten | 4,5 GB per vCore |
 
 \* In de [sys.dm_user_db_resource_governance](/sql/relational-databases/system-dynamic-management-views/sys-dm-user-db-resource-governor-azure-sql-database) dynamische beheer weergave worden de hardware-generatie voor data bases met Intel® SP-8160 (Skylake)-processors weer gegeven als Gen6, terwijl het genereren van hardware voor data bases met behulp van Intel® 8272CL (Cascade Lake) als Gen7 wordt weer gegeven. Resource limieten voor alle GEN5-data bases zijn hetzelfde, ongeacht het processor type (Broadwell, Skylake of Cascade Lake).
 
@@ -138,7 +154,7 @@ Voor een Data Base selecteert u op de pagina overzicht de **prijs categorie** ko
 
   ![hardware wijzigen](./media/service-tiers-vcore/change-hardware.png)
 
-Voor een groep selecteert u op de pagina overzicht de optie **configureren** .
+Voor een groep selecteert u op de pagina overzicht de optie **configureren**.
 
 Volg de stappen voor het wijzigen van de configuratie en selecteer de hardware-generatie zoals beschreven in de vorige stappen.
 
@@ -225,6 +241,15 @@ On the **Details** page, provide the following:
 
 Approved support requests are typically fulfilled within 5 business days.
 -->
+
+#### <a name="dc-series"></a>DC-serie
+
+> [!NOTE]
+> DC-serie is momenteel beschikbaar als **open bare preview**.
+
+DC-serie is beschikbaar in de volgende regio's: Canada-centraal, Canada-oost, VS-Oost, Europa-noord, UK-zuid, Europa-west, VS-West.
+
+Als u DC-serie nodig hebt in een regio die momenteel niet wordt ondersteund, moet u [een ondersteunings ticket indienen](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest) volgens de instructies in [quotum voor het aantal aanvragen voor Azure SQL database en SQL Managed instance](quota-increase-request.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

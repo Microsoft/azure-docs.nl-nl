@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 04/25/2019
 ms.author: pepogors
-ms.openlocfilehash: f729c00d3b78631a32013ec9453302584cecbd16
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 82161a8f66dd717a9dc448a743b818a9ab9938db
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97962428"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250975"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-across-availability-zones"></a>Een Azure Service Fabric-cluster implementeren via Beschikbaarheidszones
 Beschikbaarheidszones in Azure is een aanbieding met hoge Beschik baarheid die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Een beschikbaarheids zone is een unieke fysieke locatie die is voorzien van onafhankelijke voeding, koeling en netwerken binnen een Azure-regio.
@@ -345,7 +345,7 @@ Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de 
 
 * De eerste waarde is de eigenschap **zones** , waarmee de Beschikbaarheidszones aanwezig in de schaalset van de virtuele machine worden opgegeven.
 * De tweede waarde is de eigenschap ' singlePlacementGroup ', die moet worden ingesteld op True. **De schaalset voor 3 AZ kan worden geschaald tot Maxi maal 300 Vm's, zelfs met ' singlePlacementGroup = True '.**
-* De derde waarde is "zoneBalance" en is optioneel, waardoor strikte zone verdeling wordt gegarandeerd, indien ingesteld op waar. Meer informatie over [zoneBalancing](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
+* De derde waarde is "zoneBalance", waarmee de strikte zone verdeling wordt gegarandeerd, indien ingesteld op waar. We raden u aan dit in te stellen op waar, om te voor komen dat de virtuele machines niet in evenwicht worden verdeeld over zones. Meer informatie over [zoneBalancing](https://docs.microsoft.com/azure/virtual-machine-scale-sets/virtual-machine-scale-sets-use-availability-zones#zone-balancing).
 * De FaultDomain-en upgrade Domain-onderdrukkingen hoeven niet te worden geconfigureerd.
 
 ```json
@@ -357,7 +357,7 @@ Als u zones op een schaalset voor virtuele machines wilt inschakelen, moet u de 
     "zones": ["1", "2", "3"],
     "properties": {
         "singlePlacementGroup": "true",
-        "zoneBalance": false
+        "zoneBalance": true
     }
 }
 ```

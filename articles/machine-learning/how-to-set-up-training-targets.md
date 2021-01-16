@@ -11,12 +11,12 @@ ms.subservice: core
 ms.date: 09/28/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, contperf-fy21q1
-ms.openlocfilehash: ec4917aa378f746eb2caac6a7b4ce99d1c44db90
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 55e618a7e4e0d21f6d4afab270e257c26fa15634
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127648"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251111"
 ---
 # <a name="configure-and-submit-training-runs"></a>Trainingsuitvoering configureren en verzenden
 
@@ -75,6 +75,9 @@ experiment = Experiment(workspace=ws, name=experiment_name)
 Selecteer het berekenings doel waar uw trainings script wordt uitgevoerd. Als er geen reken doel is opgegeven in de ScriptRunConfig of als `compute_target='local'` , wordt het script lokaal door Azure ml uitgevoerd. 
 
 In de voorbeeld code in dit artikel wordt ervan uitgegaan dat u al een reken doel hebt gemaakt `my_compute_target` in de sectie vereisten.
+
+>[!Note]
+>Azure Databricks wordt niet ondersteund als een reken doel voor model training. U kunt Azure Databricks voor gegevens voorbereiding en implementatie taken gebruiken. 
 
 ## <a name="create-an-environment"></a>Een omgeving maken
 Azure Machine Learning [omgevingen](concept-environments.md) zijn een inkapseling van de omgeving waarin uw machine learning-training zich voordoet. Hiermee worden de Python-pakketten, docker-installatie kopie, omgevings variabelen en software-instellingen voor uw trainings-en Score scripts opgegeven. Ze geven ook runtime (python, Spark, of docker) op.

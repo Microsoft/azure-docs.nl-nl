@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.workload: identity
 ms.subservice: user-help
 ms.topic: end-user-help
-ms.date: 12/09/2020
+ms.date: 01/15/2020
 ms.author: curtand
 ms.reviewer: olhaun
-ms.openlocfilehash: a1307aa19c66e3f6fcb71f677e6c67551d2a01f9
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: f799ed5c18537b862a4971075ae9107b7a722fdd
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928321"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251502"
 ---
 # <a name="frequently-asked-questions-faq-about-the-microsoft-authenticator-app"></a>Veelgestelde vragen over de Microsoft Authenticator-app
 
@@ -33,13 +33,17 @@ De Microsoft Authenticator-app heeft de Azure Authenticator-app vervangen en de 
 
 **A**: het registreren van een apparaat geeft uw apparaat toegang tot de services van uw organisatie en biedt uw organisatie geen toegang tot uw apparaat.
 
-## <a name="too-many-app-permissions"></a>Te veel app-machtigingen
+### <a name="too-many-app-permissions"></a>Te veel app-machtigingen
 
 **V**: waarom verzoekt de app zoveel machtigingen?
 
-**A**: Hier vindt u de volledige lijst met machtigingen die kunnen worden gevraagd en hoe deze worden gebruikt door de app. De specifieke machtigingen die u ziet, zijn afhankelijk van het type telefoon dat u hebt.
+**A**: Hier vindt u de volledige lijst met machtigingen die kunnen worden gevraagd en hoe deze worden gebruikt door de app. De specifieke machtigingen die u ziet, zijn afhankelijk van het type telefoon dat u hebt. Soms wil uw organisatie uw **locatie** weten voordat u toegang krijgt tot bepaalde bronnen. Deze machtiging wordt door de app alleen aangevraagd als uw organisatie een beleid heeft waarvoor de locatie is vereist.
 
-- **Locatie**. Soms wil uw organisatie uw locatie weten voordat u toegang krijgt tot bepaalde bronnen. Deze machtiging wordt door de app alleen aangevraagd als uw organisatie een beleid heeft waarvoor de locatie is vereist. 
+### <a name="error-adding-account"></a>Fout bij het toevoegen van het account
+
+**V**: als ik mijn account probeer toe te voegen, krijg ik een fout bericht met de melding dat het account dat u probeert toe te voegen op dit moment niet geldig is. Neem contact op met de beheerder om dit probleem op te lossen (validatie van uniekheid). " Wat moet ik doen?
+
+**A**: Neem contact op met uw beheerder en laat ze weten dat u uw account niet aan de verificator kunt toevoegen vanwege een validatie probleem van uniekheid. U moet uw aanmeldings naam opgeven zodat uw beheerder u in uw organisatie kan zien.
 
 ### <a name="legacy-apns-support-deprecated"></a>Verouderde APNs-ondersteuning afgeschaft
 

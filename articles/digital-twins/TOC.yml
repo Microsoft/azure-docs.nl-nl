@@ -227,7 +227,7 @@
           href: /samples/azure-samples/digital-twins-iothub-integration/adt-iothub-provision-sample/
         - name: Voorbeeld van SignalR-integratie
           href: /samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/
-        - name: Aangepaste Azure Digital Twins-swaggers voor Logic Apps-connector
+        - name: Aangepaste swaggers voor Logic Apps-connector
           href: /samples/azure-samples/digital-twins-custom-swaggers/azure-digital-twins-custom-swaggers/
     - name: Azure-hulpprogramma's
       items:

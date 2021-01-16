@@ -1,68 +1,68 @@
 - name: Documentatie voor Azure Data Box Gateway
   href: /azure/databox-gateway/
-  expanded: true
-- name: Data Box Gateway
+- name: Overzicht
+  Expanded: true
   items:
-    - name: Overzicht
+    - name: Wat is Data Box Gateway?
+      href: data-box-gateway-overview.md
+- name: Zelfstudies
+  items:
+    - name: 1 - Voorbereiden
+      href: data-box-gateway-deploy-prep.md
+    - name: 2A - Inrichten in Hyper-V
+      href: data-box-gateway-deploy-provision-hyperv.md
+    - name: 2B - Inrichten in VMware
+      href: data-box-gateway-deploy-provision-vmware.md
+    - name: '3 - Verbinding maken, instellen, activeren'
+      href: data-box-gateway-deploy-connect-setup-activate.md
+    - name: '4 - Share toevoegen, verbinding maken met share'
+      href: data-box-gateway-deploy-add-shares.md
+- name: Concepten
+  items:
+    - name: Vereisten beoordelen
+      href: data-box-gateway-system-requirements.md
+    - name: Limieten begrijpen
+      href: data-box-gateway-limits.md
+    - name: Beveiligingsoverzicht
+      href: data-box-gateway-security.md
+    - name: Gebruiksvoorbeelden bekijken
+      href: data-box-gateway-use-cases.md
+- name: Procedures
+  items:
+    - name: Bijwerken
+      href: data-box-gateway-apply-updates.md
+    - name: Beheren
       items:
-        - name: Wat is Data Box Gateway?
-          href: data-box-gateway-overview.md
-    - name: Zelfstudies
+        - name: Shares
+          href: data-box-gateway-manage-shares.md
+        - name: Gebruikers
+          href: data-box-gateway-manage-users.md
+        - name: Bandbreedteschema's
+          href: data-box-gateway-manage-bandwidth-schedules.md
+        - name: 'Toegang, voeding, connectiviteit'
+          href: data-box-gateway-manage-access-power-connectivity-mode.md
+        - name: Via PowerShell
+          href: data-box-gateway-connect-powershell-interface.md
+    - name: Controleren
+      href: data-box-gateway-monitor.md
+    - name: Problemen oplossen
       items:
-        - name: 1 - Voorbereiden
-          href: data-box-gateway-deploy-prep.md
-        - name: 2A - Inrichten in Hyper-V
-          href: data-box-gateway-deploy-provision-hyperv.md
-        - name: 2B - Inrichten in VMware
-          href: data-box-gateway-deploy-provision-vmware.md
-        - name: '3 - Verbinding maken, instellen, activeren'
-          href: data-box-gateway-deploy-connect-setup-activate.md
-        - name: '4 - Share toevoegen, verbinding maken met share'
-          href: data-box-gateway-deploy-add-shares.md
-    - name: Concepten
-      items:
-        - name: Vereisten beoordelen
-          href: data-box-gateway-system-requirements.md
-        - name: Limieten begrijpen
-          href: data-box-gateway-limits.md
-        - name: Beveiligingsoverzicht
-          href: data-box-gateway-security.md
-        - name: Gebruiksvoorbeelden bekijken
-          href: data-box-gateway-use-cases.md
-    - name: Procedures
-      items:
-        - name: Bijwerken
-          href: data-box-gateway-apply-updates.md
-        - name: Beheren
-          items:
-            - name: Shares
-              href: data-box-gateway-manage-shares.md
-            - name: Gebruikers
-              href: data-box-gateway-manage-users.md
-            - name: Bandbreedteschema's
-              href: data-box-gateway-manage-bandwidth-schedules.md
-            - name: 'Toegang, voeding, connectiviteit'
-              href: data-box-gateway-manage-access-power-connectivity-mode.md
-            - name: Via PowerShell
-              href: data-box-gateway-connect-powershell-interface.md
-        - name: Controleren
-          href: data-box-gateway-monitor.md
         - name: Problemen oplossen
           href: data-box-gateway-troubleshoot.md
         - name: Neem contact op met Microsoft Ondersteuning
-          href: ../databox-online/azure-stack-edge-contact-microsoft-support.md
-    - name: Releaseopmerkingen
-      items:
-        - name: 2007 - Huidig
-          href: data-box-gateway-2007-release-notes.md
-        - name: 1911
-          href: data-box-gateway-1911-release-notes.md
-        - name: 1906
-          href: data-box-gateway-1906-release-notes.md
-        - name: 1905
-          href: data-box-gateway-1905-release-notes.md
-        - name: Algemene beschikbaarheid (GA)
-          href: data-box-gateway-release-notes.md
+          href: ../databox-online/azure-stack-edge-contact-microsoft-support.md?toc=/azure/databox-online/toc.json&bc=/azure/databox-gateway/breadcrumb/toc.json
+- name: Releaseopmerkingen
+  items:
+    - name: 2007 - Huidig
+      href: data-box-gateway-2007-release-notes.md
+    - name: 1911
+      href: data-box-gateway-1911-release-notes.md
+    - name: 1906
+      href: data-box-gateway-1906-release-notes.md
+    - name: 1905
+      href: data-box-gateway-1905-release-notes.md
+    - name: Algemene beschikbaarheid (GA)
+      href: data-box-gateway-release-notes.md
 - name: Resources
   items:
     - name: Prijzen

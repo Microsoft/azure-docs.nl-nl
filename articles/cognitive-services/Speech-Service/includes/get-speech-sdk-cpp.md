@@ -4,12 +4,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: 5a06a0663601c221dd456b9cf4437cb9f32a18f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 99bc49dfe7b3f7b6a9d49c2947d8d8c01ad98dac
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81399940"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256450"
 ---
 :::row:::
     :::column span="3":::
@@ -30,20 +30,6 @@ De C++ Speech SDK kan worden geïnstalleerd via **Package Manager** met de volge
 ```powershell
 Install-Package Microsoft.CognitiveServices.Speech
 ```
-
-#### <a name="c-binaries-and-header-files"></a>Binaire bestanden voor C++ en header
-
-U kunt ook de C++ Speech SDK installeren vanuit binaire bestanden. Down load de SDK als een <a href="https://aka.ms/csspeech/linuxbinary" target="_blank">. tar <span class="docon docon-navigate-external x-hidden-focus"></span> -pakket</a> en pak de bestanden uit in een door u gewenste map. De inhoud van dit pakket (met inbegrip van header bestanden voor x86-en x64-doel architecturen) is als volgt gestructureerd:
-
-  | Pad                   | Beschrijving                                          |
-  |------------------------|------------------------------------------------------|
-  | `license.md`           | Licentie                                              |
-  | `ThirdPartyNotices.md` | Mededelingen van derden                                  |
-  | `include`              | Header bestanden voor C++                                 |
-  | `lib/x64`              | Systeem eigen x64-bibliotheek voor koppeling met uw toepassing |
-  | `lib/x86`              | Systeem eigen x86-bibliotheek voor koppeling met uw toepassing |
-
-  Als u een toepassing wilt maken, kopieert of verplaatst u de vereiste binaire bestanden (en bibliotheken) naar uw ontwikkel omgeving. Neem deze op als vereist in uw bouw proces.
 
 #### <a name="additional-resources"></a>Aanvullende bronnen
 

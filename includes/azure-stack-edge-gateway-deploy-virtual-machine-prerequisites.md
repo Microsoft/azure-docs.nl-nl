@@ -2,14 +2,14 @@
 author: alkohli
 ms.service: databox
 ms.topic: include
-ms.date: 12/21/2020
+ms.date: 01/15/2021
 ms.author: alkohli
-ms.openlocfilehash: f2443765ecc9116193cefbc729ced25fa5657e59
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 56fc24966fa60c3a5e91f92b57332ae2f6a525ff
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763422"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256364"
 ---
 Voordat u Vm's op uw Azure Stack edge-apparaat kunt implementeren, moet u uw client configureren om verbinding te maken met het apparaat via Azure Resource Manager over Azure PowerShell. Ga voor gedetailleerde stappen naar [verbinding maken met Azure Resource Manager op uw Azure stack edge-apparaat](../articles/databox-online/azure-stack-edge-j-series-connect-resource-manager.md).
 
@@ -38,11 +38,3 @@ Zorg ervoor dat de volgende stappen kunnen worden gebruikt om toegang te krijgen
     > Als u GPU-Vm's maakt, selecteert u een netwerk interface die is verbonden met internet. Hiermee kunt u de GPU-extensie op uw apparaat installeren.
 
 
-1. Schakel de VM-rol in van de Azure Portal. Met deze stap maakt u een uniek abonnement voor uw apparaat dat wordt gebruikt voor het maken van Vm's via de lokale Api's van het apparaat. 
-
-    1. Als u de VM-functie wilt inschakelen, gaat u in het Azure Portal naar de Azure Stack Edge-resource voor uw Azure Stack edge-apparaat. Ga naar **Edge compute > virtual machines**.
-
-        ![VM-installatie kopie 1 toevoegen](../articles/databox-online/media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-image-1.png)
-
-    1. Selecteer **virtual machines** om naar de pagina **overzicht** te gaan. Cloud beheer van virtuele machines **inschakelen** .
-        ![VM-installatie kopie 2 toevoegen](../articles/databox-online/media/azure-stack-edge-gpu-deploy-virtual-machine-portal/add-virtual-machine-image-2.png)

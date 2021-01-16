@@ -12,20 +12,19 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 11/12/2020
+ms.date: 01/14/2021
 ms.author: b-juche
-ms.openlocfilehash: e5219e1c87221ade8da68c21209f41b4d6139be2
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: 78cc68d2be600cec78c433ae3eae1de09d31ac94
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579076"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251808"
 ---
 # <a name="dynamically-change-the-service-level-of-a-volume"></a>Het serviceniveau van een volume dynamisch wijzigen
 
 > [!IMPORTANT] 
-> * De registratie van de open bare Preview voor deze functie is in de wacht stand gezet tot verdere kennisgeving. 
-> * Dynamisch wijzigen van het service niveau van een replicatie doel volume wordt momenteel niet ondersteund.
+> Dynamisch wijzigen van het service niveau van een replicatie doel volume wordt momenteel niet ondersteund.
 
 U kunt het service niveau van een bestaand volume wijzigen door het volume te verplaatsen naar een andere capaciteits groep die gebruikmaakt van het gewenste [service niveau](azure-netapp-files-service-levels.md) voor het volume. Voor deze in-place wijziging van het serviceniveau voor het volume is niet vereist dat u gegevens migreert. Het heeft ook geen invloed op de toegang tot het volume.  
 
@@ -37,28 +36,28 @@ De capaciteits groep waarnaar u het volume wilt verplaatsen, moet al bestaan. De
 
 * Nadat het volume is verplaatst naar een andere capaciteits groep, hebt u geen toegang meer tot de vorige volume activiteiten logboeken en de metrische gegevens van het volume. Het volume wordt gestart met nieuwe activiteiten logboeken en metrische gegevens onder de nieuwe capaciteits groep.
 
-* Als u een volume verplaatst naar een capaciteits groep van een hoger service niveau (bijvoorbeeld van *Standard* naar *Premium* of *Ultra* service niveau), moet u Mini maal zeven dagen wachten voordat u dat volume *opnieuw* kunt verplaatsen naar een capaciteits groep van een lager service niveau (bijvoorbeeld verplaatsen van *Ultra* naar *Premium* of *Standard* ).  
-<!-- 
-## Register the feature
+* Als u een volume verplaatst naar een capaciteits groep van een hoger service niveau (bijvoorbeeld van *Standard* naar *Premium* of *Ultra* service niveau), moet u Mini maal zeven dagen wachten voordat u dat volume *opnieuw* kunt verplaatsen naar een capaciteits groep van een lager service niveau (bijvoorbeeld verplaatsen van *Ultra* naar *Premium* of *Standard*).  
 
-The feature to move a volume to another capacity pool is currently in preview. If you are using this feature for the first time, you need to register the feature first.
+## <a name="register-the-feature"></a>De functie registreren
 
-1. Register the feature: 
+De functie voor het verplaatsen van een volume naar een andere capaciteits groep is momenteel beschikbaar als preview-versie. Als dit de eerste keer is dat u deze functie gebruikt, moet u de functie eerst registreren.
+
+1. De functie registreren: 
 
     ```azurepowershell-interactive
     Register-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFTierChange
     ```
 
-2. Check the status of the feature registration: 
+2. Controleer de status van de functie registratie: 
 
     > [!NOTE]
-    > The **RegistrationState** may be in the `Registering` state for up to 60 minutes before changing to`Registered`. Wait until the status is **Registered** before continuing.
+    > Het **RegistrationState** kan `Registering` tot 60 minuten duren voordat de status wordt gewijzigd in `Registered` . Wacht totdat de status is **geregistreerd** voordat u doorgaat.
 
     ```azurepowershell-interactive
     Get-AzProviderFeature -ProviderNamespace Microsoft.NetApp -FeatureName ANFTierChange
     ```
-You can also use [Azure CLI commands](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) `az feature register` and `az feature show` to register the feature and display the registration status. 
---> 
+U kunt ook [Azure cli-opdrachten](/cli/azure/feature?preserve-view=true&view=azure-cli-latest) gebruiken `az feature register` `az feature show` om de functie te registreren en de registratie status weer te geven. 
+ 
 ## <a name="move-a-volume-to-another-capacity-pool"></a>Een volume verplaatsen naar een andere capaciteits groep
 
 1.  Klik op de pagina volumes met de rechter muisknop op het volume waarvan u het service niveau wilt wijzigen. Selecteer **groep wijzigen**.
@@ -76,3 +75,4 @@ You can also use [Azure CLI commands](/cli/azure/feature?preserve-view=true&view
 
 * [Serviceniveau's voor Azure NetApp Files](azure-netapp-files-service-levels.md)
 * [Een capaciteitspool instellen](azure-netapp-files-set-up-capacity-pool.md)
+* [Problemen oplossen voor het wijzigen van de capaciteits pool van een volume](troubleshoot-capacity-pools.md#issues-when-changing-the-capacity-pool-of-a-volume)

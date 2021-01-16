@@ -7,12 +7,12 @@ services: azure-monitor
 ms.topic: conceptual
 ms.date: 01/12/2020
 ms.subservice: metrics
-ms.openlocfilehash: 79728e53c1d53a8a4463fc0bd1ddee5db89fc013
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 1d83ef07714e0ce69f01aa240cc3058195c7b1af
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234727"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251978"
 ---
 # <a name="azure-monitor-metrics-metrics-aggregation-and-display-explained"></a>Azure Monitor metrische gegevens aggregatie en weer gave wordt uitgelegd
 
@@ -125,7 +125,7 @@ Door filteren te gebruiken kunnen we de grafiek opschonen om te zien wat er echt
 
 :::image type="content" source="media/metrics-aggregation-explained/split-filter-total-disk write-bytes-all-VMs.png" alt-text="Scherm opname van schijf schrijf bewerkingen voor alle virtuele machines in contoso Hotels resource groep splitsen en gefilterd op de naam van de virtuele machine" border="true" lightbox="media/metrics-aggregation-explained/split-filter-total-disk write-bytes-all-VMs.png":::
 
-Voor meer informatie over het weer geven van gesplitste dimensie gegevens in een metrische Explorer-grafiek raadpleegt u [geavanceerde functies van Metrics Explorer-filters en splitsing](metrics-charts.md#apply-filters-to-charts).
+Voor meer informatie over het weer geven van gesplitste dimensie gegevens in een metrische Explorer-grafiek raadpleegt u [geavanceerde functies van Metrics Explorer-filters en splitsing](metrics-charts.md#filters).
 
 ### <a name="null-and-zero-values"></a>NULL-waarden en nulwaarden
 

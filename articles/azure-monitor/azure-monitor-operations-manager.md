@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/11/2021
-ms.openlocfilehash: 85172e2430a3e65edb0c5ec119c920e2c7d20217
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 877251ba7e0c1f3c33cab37e20d609479b69520c
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234858"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251825"
 ---
 # <a name="azure-monitor-for-existing-operations-manager-customers"></a>Azure Monitor voor bestaande Operations Manager klanten
 Dit artikel bevat richt lijnen voor klanten die momenteel [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome) gebruiken en een overgang plannen naar [Azure monitor](overview.md) wanneer ze bedrijfs toepassingen en andere resources migreren naar Azure. Hierbij wordt ervan uitgegaan dat uw ultieme doel stelling een volledige overgang naar de Cloud is, waarbij u zoveel mogelijk Operations Manager functionaliteit kunt vervangen door Azure Monitor, zonder in te leveren op de operationele vereisten van uw bedrijf en IT. 
@@ -63,7 +63,7 @@ U schakelt Application Insights in voor elk van uw zakelijke toepassingen. Het i
 Als u vertrouwd bent met Azure Monitor, kunt u waarschuwings regels maken die management pack functionaliteit kunnen vervangen en de bedrijfs processen zo ontwikkelen dat ze het nieuwe bewakings platform gebruiken. Zo kunt u beginnen met het verwijderen van machines en Management Packs uit de Operations Manager beheer groep. U kunt Management Packs blijven gebruiken voor essentiële server software en on-premises infra structuur, maar u kunt ook door gaan met de nieuwe functies in Azure Monitor waarmee u extra functionaliteit kunt intrekken.
 
 ## <a name="monitor-azure-services"></a>Azure-Services bewaken
-Azure-Services vereisen Azure Monitor voor het verzamelen van telemetrie en zijn ingeschakeld wanneer u een Azure-abonnement maakt. Het [activiteiten logboek](platform/activity-log.md) wordt automatisch verzameld voor het abonnement en de [metrische gegevens](platform/data-platform-metrics.md) van het platform worden automatisch verzameld van de Azure-resources die u maakt. U kunt meteen aan de slag met [metrische gegevens Verkenner](platform/metrics-getting-started.md), die vergelijkbaar is met prestatie weergaven in de operations-console, maar biedt interactieve analyses en [Geavanceerde aggregaties](platform/metrics-charts.md) van data. [Een waarschuwing voor metrische gegevens maken](platform/alerts-metric.md) om te worden gewaarschuwd wanneer een waarde een drempel overschrijdt of [een grafiek aan een Azure-dash board toevoegt](platform/metrics-charts.md#pin-charts-to-dashboards) voor zicht baarheid.
+Azure-Services vereisen Azure Monitor voor het verzamelen van telemetrie en zijn ingeschakeld wanneer u een Azure-abonnement maakt. Het [activiteiten logboek](platform/activity-log.md) wordt automatisch verzameld voor het abonnement en de [metrische gegevens](platform/data-platform-metrics.md) van het platform worden automatisch verzameld van de Azure-resources die u maakt. U kunt meteen aan de slag met [metrische gegevens Verkenner](platform/metrics-getting-started.md), die vergelijkbaar is met prestatie weergaven in de operations-console, maar biedt interactieve analyses en [Geavanceerde aggregaties](platform/metrics-charts.md) van data. [Een waarschuwing voor metrische gegevens maken](platform/alerts-metric.md) om te worden gewaarschuwd wanneer een waarde een drempel overschrijdt of [een grafiek aan een Azure-dash board toevoegt](platform/metrics-charts.md#pinning-to-dashboards) voor zicht baarheid.
 
 [![Metrics-explorer](media/azure-monitor-operations-manager/metrics-explorer.png)](media/azure-monitor-operations-manager/metrics-explorer.png#lightbox)
 

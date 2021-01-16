@@ -2,15 +2,15 @@
 title: Problemen met Azure Automation Updatebeheer oplossen
 description: In dit artikel leest u hoe u problemen oplost en oplost met Azure Automation Updatebeheer.
 services: automation
-ms.date: 12/04/2020
+ms.date: 01/13/2021
 ms.topic: conceptual
 ms.service: automation
-ms.openlocfilehash: f00002c7374e0c35c7bb91c28b2dd87ad71e3350
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 55e58c92004f4f4cf4ba6a96620b4f037c80cdb4
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184914"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246261"
 ---
 # <a name="troubleshoot-update-management-issues"></a>Problemen met Updatebeheer oplossen
 
@@ -144,13 +144,11 @@ Dit probleem kan worden veroorzaakt door lokale configuratie problemen of door e
    | summarize by Computer, Solutions
    ```
 
-4. Als uw computer niet in de query resultaten wordt weer geven, is deze niet recent ingecheckt. Er is waarschijnlijk een probleem met de lokale configuratie en u moet [de agent opnieuw installeren](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
+    Als uw computer niet in de query resultaten wordt weer geven, is deze niet recent ingecheckt. Er is waarschijnlijk een probleem met de lokale configuratie en u moet [de agent opnieuw installeren](../../azure-monitor/learn/quick-collect-windows-computer.md#install-the-agent-for-windows).
 
-5. Als uw computer in de query resultaten wordt weer gegeven, controleert u of er problemen zijn met de scope configuratie. De [Scope configuratie](../update-management/scope-configuration.md) bepaalt welke machines zijn geconfigureerd voor updatebeheer.
+    Als uw computer wordt weer gegeven in de query resultaten, controleert u onder de eigenschappen van de **oplossing** welke **updates** worden weer gegeven. Hiermee wordt gecontroleerd of het is geregistreerd bij Updatebeheer. Als dat niet het geval is, controleert u of er problemen zijn met de scope configuratie. De [Scope configuratie](../update-management/scope-configuration.md) bepaalt welke machines zijn geconfigureerd voor updatebeheer. Zie [machines inschakelen in de werk ruimte](../update-management/enable-from-automation-account.md#enable-machines-in-the-workspace)om de scope configuratie voor het doel van de computer te configureren.
 
-6. Als uw computer wordt weer gegeven in uw werk ruimte, maar niet in Updatebeheer, moet u de scope configuratie configureren voor de doel computer. Zie [machines inschakelen in de werk ruimte](../update-management/enable-from-automation-account.md#enable-machines-in-the-workspace)voor meer informatie over hoe u dit doet.
-
-7. Voer deze query uit in uw werk ruimte.
+4. Voer deze query uit in uw werk ruimte.
 
    ```kusto
    Operation
@@ -158,9 +156,9 @@ Dit probleem kan worden veroorzaakt door lokale configuratie problemen of door e
    | sort by TimeGenerated desc
    ```
 
-8. Als er een `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota` resultaat wordt weer gegeven, is de in uw werk ruimte gedefinieerde quota bereikt, waardoor er geen gegevens meer kunnen worden opgeslagen. Ga in uw werk ruimte naar **gegevens volume beheer** onder **gebruik en geschatte kosten**, en wijzig of verwijder het quotum.
+   Als er een `Data collection stopped due to daily limit of free data reached. Ingestion status = OverQuota` resultaat wordt weer gegeven, is de in uw werk ruimte gedefinieerde quota bereikt, waardoor er geen gegevens meer kunnen worden opgeslagen. Ga in uw werk ruimte naar **gegevens volume beheer** onder **gebruik en geschatte kosten**, en wijzig of verwijder het quotum.
 
-9. Als uw probleem nog steeds niet is opgelost, volgt u de stappen in [een Windows-Hybrid Runbook worker implementeren](../automation-windows-hrw-install.md) om de Hybrid worker voor Windows opnieuw te installeren. Volg voor Linux de stappen in [een Linux-Hybrid Runbook worker implementeren](../automation-linux-hrw-install.md).
+5. Als uw probleem nog steeds niet is opgelost, volgt u de stappen in [een Windows-Hybrid Runbook worker implementeren](../automation-windows-hrw-install.md) om de Hybrid worker voor Windows opnieuw te installeren. Volg voor Linux de stappen in [een Linux-Hybrid Runbook worker implementeren](../automation-linux-hrw-install.md).
 
 ## <a name="scenario-unable-to-register-automation-resource-provider-for-subscriptions"></a><a name="rp-register"></a>Scenario: kan Automation-resource provider niet registreren voor abonnementen
 

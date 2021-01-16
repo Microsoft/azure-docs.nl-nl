@@ -5,12 +5,12 @@ author: christophermanthei
 ms.author: chmant
 ms.date: 03/07/2020
 ms.topic: article
-ms.openlocfilehash: fc82d046caa3663cffcda585258642813ab3a7d8
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 76bb9d289e984dd8c229bdaaab09e679e11283fe
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92207254"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246278"
 ---
 # <a name="camera"></a>Camera
 
@@ -32,7 +32,7 @@ De volgende eigenschappen kunnen worden gewijzigd in de camera-instellingen:
 
 **Bijna en Far vlak:**
 
-Om ervoor te zorgen dat er geen ongeldige bereiken kunnen worden ingesteld, zijn de eigenschappen **NearPlane** en **FarPlane** alleen-lezen en is er een afzonderlijke functie **SetNearAndFarPlane** aanwezig om het bereik te wijzigen. Deze gegevens worden aan het einde van het frame naar de server verzonden.
+Om ervoor te zorgen dat er geen ongeldige bereiken kunnen worden ingesteld, zijn de eigenschappen **NearPlane** en **FarPlane** alleen-lezen en is er een afzonderlijke functie **SetNearAndFarPlane** aanwezig om het bereik te wijzigen. Deze gegevens worden aan het einde van het frame naar de server verzonden. Bij het instellen van deze waarden moet **NearPlane** kleiner zijn dan **FarPlane**. Anders treedt er een fout op.
 
 > [!IMPORTANT]
 > In unit-eenheid wordt dit automatisch verwerkt bij het wijzigen van de hoofd camera in de buurt.
@@ -44,6 +44,21 @@ Soms is het handig om de uitgebreide buffer schrijf bewerking van de externe ins
 > [!TIP]
 > In unit eenheid wordt een debug-onderdeel met de naam **EnableDepthComponent** weer gegeven dat kan worden gebruikt om deze functie te scha kelen in de gebruikers interface van de editor.
 
+**InverseDepth**:
+
+> [!NOTE]
+> Deze instelling is alleen van belang als deze `EnableDepth` is ingesteld op `true` . Anders is deze instelling niet van invloed.
+
+Diepte buffers registreren doorgaans z-waarden in een drijvende-komma bereik van [0; 1], waarbij 0 de bijna-vlak diepte aangeeft en 1 die de diepte van het dichtste vlak aangeeft. Het is ook mogelijk om dit bereik en record diepte waarden in het bereik [1; 0] te omkeren, dat wil zeggen dat de bijna-vlak diepte 1 is en dat de diepte van het ondervlak 0 is. Over het algemeen verbetert de laatste de verdeling van drijvende-komma precisie over het niet-lineaire z-bereik.
+
+> [!WARNING]
+> Een veelvoorkomende benadering is het omkeren van de bijna-vlak-en Far-waarden op de camera-objecten. Als u dit probeert te doen, mislukt de externe rendering van Azure met een fout `CameraSettings` .
+
+De Azure remote rendering API moet weten over de diepte buffer Conventie van uw lokale renderer om op de juiste wijze externe diepte in de lokale diepte buffer samen te stellen. Als uw diepte buffer bereik [0; 1] is, verlaat u deze vlag als `false` . Als u een omgekeerde diepte buffer met een bereik van [1; 0] gebruikt, stelt u de `InverseDepth` vlag in op `true` .
+
+> [!NOTE]
+> Voor unit-eenheid wordt de juiste instelling al toegepast, `RemoteManager` waardoor er geen hand matige interventie nodig is.
+
 Het wijzigen van de camera-instellingen kan als volgt worden uitgevoerd:
 
 ```cs
@@ -53,6 +68,7 @@ void ChangeCameraSetting(AzureSession session)
 
     settings.SetNearAndFarPlane(0.1f, 20.0f);
     settings.EnableDepth = false;
+    settings.InverseDepth = false;
 }
 ```
 
@@ -63,6 +79,7 @@ void ChangeStageSpace(ApiHandle<AzureSession> session)
 
     settings->SetNearAndFarPlane(0.1f, 20.0f);
     settings->SetEnableDepth(false);
+    settings->SetInverseDepth(false);
 }
 ```
 

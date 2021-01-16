@@ -6,12 +6,12 @@ ms.service: cosmos-db
 ms.topic: how-to
 ms.date: 11/30/2020
 ms.author: acomet
-ms.openlocfilehash: 8a3142199502b912f20ebe05c625aa40be9fab11
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: f0111228b9b0030cbbceb9fc70d829a7a22fda01
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218668"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247009"
 ---
 # <a name="use-power-bi-and-serverless-synapse-sql-pool-preview-to-analyze-azure-cosmos-db-data-with-synapse-link"></a>Power BI en serverloze Synapse SQL-pool (preview) gebruiken om Azure Cosmos DB gegevens te analyseren met Synapse-koppeling 
 [!INCLUDE[appliesto-sql-mongodb-api](includes/appliesto-sql-mongodb-api.md)]
@@ -41,7 +41,7 @@ Zorg ervoor dat u de volgende resources maakt voordat u begint:
 
 ## <a name="create-a-database-and-views"></a>Een Data Base en weer gaven maken
 
-Het maken van weer gaven in de hoofd-of standaard databases wordt niet aanbevolen of ondersteund. Daarom moet u deze stap starten door een Data Base te maken. Ga in de Synapse-werk ruimte naar het tabblad **ontwikkelen** , selecteer het **+** pictogram en selecteer **SQL-script**.
+Ga in de Synapse-werk ruimte naar het tabblad **ontwikkelen** , selecteer het **+** pictogram en selecteer **SQL-script**.
 
 :::image type="content" source="./media/synapse-link-power-bi/add-sql-script.png" alt-text="Een SQL-script toevoegen aan de Synapse Analytics-werk ruimte":::
 
@@ -49,7 +49,7 @@ Elke werk ruimte wordt geleverd met een serverloos SQL-eind punt. Nadat u een SQ
 
 :::image type="content" source="./media/synapse-link-power-bi/enable-sql-on-demand-endpoint.png" alt-text="Het SQL-script inschakelen voor het gebruik van het serverloze SQL-eind punt in de werk ruimte":::
 
-Maak een nieuwe Data Base met de naam **RetailCosmosDB** en een SQL-weer gave over de containers die zijn ingeschakeld voor de Synapse-koppeling. De volgende opdracht laat zien hoe u een Data Base maakt:
+Het maken van weer gaven in de **hoofd** -of **standaard** databases wordt niet aanbevolen of ondersteund. Maak een nieuwe Data Base met de naam **RetailCosmosDB** en een SQL-weer gave over de containers die zijn ingeschakeld voor de Synapse-koppeling. De volgende opdracht laat zien hoe u een Data Base maakt:
 
 ```sql
 -- Create database

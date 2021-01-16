@@ -7,12 +7,12 @@ ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.reviewer: sngun
-ms.openlocfilehash: b51be165d3d05ae753c7e0e5536a157fbbacf1ab
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: b0d27cb2f941db374a144cbd5c026444730e24e8
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938627"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247485"
 ---
 # <a name="understand-your-azure-cosmos-db-bill"></a>Meer informatie over uw Azure Cosmos DB-factuur
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -215,8 +215,12 @@ De totale maandelijkse factuur (ervan uitgaande tot 30 dagen/720 uur per maand) 
 | | |Doorvoer factuur voor twee extra regio's: VS-Oost, Europa-noord (alle regio's zijn schrijfbaar)  |`(1 + 1) * (70 K RU/sec /100 * $0.016) * 20 hours = $448`  |$224  |
 || |**Totale maandelijkse kosten**  | |**$38.688**   |
 
-## <a name="billing-examples-with-free-tier-accounts"></a>Facturerings voorbeelden met gratis laag accounts
+## <a name="billing-examples-with-azure-cosmos-db-free-tier-accounts"></a><a id="azure-free-tier"></a>Facturerings voorbeelden met Azure Cosmos DB-accounts voor een gratis laag
+
 Met Azure Cosmos DB gratis laag krijgt u de eerste 400 RU/s en 5 GB aan opslag ruimte in uw account gratis, toegepast op het niveau van de account. Voor elke RU/s en opslag van meer dan 400 RU/s en 5 GB worden de reguliere prijs tarieven per de pagina met prijzen in rekening gebracht. Op de factuur worden geen kosten of een regel item weer geven voor de gratis 400 ru/s en 5 GB, alleen de RU/s en opslag buiten wat wordt gedekt door de gratis laag. De 400 RU/s is van toepassing op alle typen RU/s-ingerichte door Voer, automatisch schalen en meerdere regio's.  
+
+> [!NOTE]
+> Azure Cosmos DB gratis laag wijkt af van het gratis Azure-account. Het gratis Azure-account biedt Azure-tegoeden en-bronnen gratis gedurende een beperkte periode. Wanneer u Azure Cosmos DB gebruikt als onderdeel van dit gratis account, krijgt u 25 GB opslag ruimte en 400 RU/s aan ingerichte door Voer gedurende 12 maanden.
 
 ### <a name="billing-example---container-or-database-with-provisioned-throughput"></a>Voor beeld van facturering: container of Data Base met ingerichte door Voer
 - Stel dat we een Data Base of container maken in een gratis laag account met 400 RU/s en 5 GB aan opslag ruimte.

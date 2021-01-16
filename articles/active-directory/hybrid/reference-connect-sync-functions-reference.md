@@ -16,12 +16,12 @@ ms.date: 07/12/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c6c8be064ade8182355c320e948b3b60b846033d
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 7454733233f1fd487d774d52a6f46187354ae05c
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348055"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246703"
 ---
 # <a name="azure-ad-connect-sync-functions-reference"></a>Azure AD Connect Sync: Naslag informatie over functies
 In Azure AD Connect worden functies gebruikt voor het bewerken van een kenmerk waarde tijdens de synchronisatie.  
@@ -98,7 +98,7 @@ De functies met de typen **mvbin**, **mvstr** en **mvref** kunnen alleen worden 
   * [DNComponent](#dncomponent)
   * [DNComponentRev](#dncomponentrev)
   * [EscapeDNComponent](#escapedncomponent)
-* **Raming**
+* **Evaluatie**
   * [IsBitSet](#isbitset)
   * [IsDate](#isdate)
   * [IsEmpty](#isempty)
@@ -113,7 +113,7 @@ De functies met de typen **mvbin**, **mvstr** en **mvref** kunnen alleen worden 
   * [BitOr](#bitor)
   * [RandomNum](#randomnum)
 * **Meerdere waarden**
-  * [Contains](#contains)
+  * [Daarin](#contains)
   * [Aantal](#count)
   * [Item](#item)
   * [ItemOrNull](#itemornull)
@@ -509,7 +509,7 @@ De uitvoer indeling van deze functie wordt gebruikt door Azure Active Directory 
 Retourneert 48656C6C6F20776F726C6421
 
 ---
-### <a name="count"></a>Aantal
+### <a name="count"></a>Count
 **Beschrijving:**  
 De functie Count retourneert het aantal elementen in een kenmerk met meerdere waarden
 
@@ -664,7 +664,7 @@ De mogelijke waarden voor de indeling vindt u hier: [aangepaste datum-en tijd no
 
 **Voorbeeld:**  
 
-`FormatDateTime(CDate("12/25/2007"),"yyyy-mm-dd")`  
+`FormatDateTime(CDate("12/25/2007"),"yyyy-MM-dd")`  
 Resulteert in "2007-12-25".
 
 `FormatDateTime(DateFromNum([pwdLastSet]),"yyyyMMddHHmmss.0Z")`  

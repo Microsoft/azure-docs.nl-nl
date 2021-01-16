@@ -16,12 +16,12 @@ ms.date: 03/13/2017
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 77271679306b0fbde10c748afc7535f3ad3d0945
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c6ec162ceb51c3bf19be42219b054d8371ff221
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91317562"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247349"
 ---
 # <a name="troubleshoot-password-hash-synchronization-with-azure-ad-connect-sync"></a>Problemen met wachtwoord-hashsynchronisatie oplossen met Azure AD Connect-synchronisatie
 
@@ -64,7 +64,7 @@ Problemen oplossen waarbij er geen wacht woorden worden gesynchroniseerd:
 
 3. Start de wizard Azure AD Connect.
 
-4. Ga naar de pagina **extra taken** , selecteer **problemen oplossen**en klik op **volgende**.
+4. Ga naar de pagina **extra taken** , selecteer **problemen oplossen** en klik op **volgende**.
 
 5. Klik op de pagina probleem oplossing op **starten** om het menu probleem oplossing in Power shell te starten.
 
@@ -147,7 +147,7 @@ Problemen voor een specifiek gebruikers object oplossen:
 
 3. Start de wizard Azure AD Connect.
 
-4. Ga naar de pagina **extra taken** , selecteer **problemen oplossen**en klik op **volgende**.
+4. Ga naar de pagina **extra taken** , selecteer **problemen oplossen** en klik op **volgende**.
 
 5. Klik op de pagina probleem oplossing op **starten** om het menu probleem oplossing in Power shell te starten.
 
@@ -253,7 +253,7 @@ Volg deze stappen om te bepalen waarom er geen wacht woorden worden gesynchronis
 
     ![Power shell-script uitvoer van instellingen voor wachtwoord synchronisatie](./media/tshoot-connect-password-hash-synchronization/psverifyconfig.png)  
 
-3. Als de functie niet is ingeschakeld in azure AD of als de synchronisatie kanaal status niet is ingeschakeld, voert u de wizard verbinding installeren uit. Selecteer **synchronisatie opties aanpassen**en selecteer wachtwoord synchronisatie opheffen. Met deze wijziging wordt de functie tijdelijk uitgeschakeld. Voer vervolgens de wizard opnieuw uit en schakel wachtwoord synchronisatie opnieuw in. Voer het script opnieuw uit om te controleren of de configuratie juist is.
+3. Als de functie niet is ingeschakeld in azure AD of als de synchronisatie kanaal status niet is ingeschakeld, voert u de wizard verbinding installeren uit. Selecteer **synchronisatie opties aanpassen** en selecteer wachtwoord synchronisatie opheffen. Met deze wijziging wordt de functie tijdelijk uitgeschakeld. Voer vervolgens de wizard opnieuw uit en schakel wachtwoord synchronisatie opnieuw in. Voer het script opnieuw uit om te controleren of de configuratie juist is.
 
 4. Zoek naar fouten in het gebeurtenis logboek. Zoek naar de volgende gebeurtenissen, die duiden op een probleem:
     * Bron: "adreslijst synchronisatie" ID: 0, 611, 652, 655 als u deze gebeurtenissen ziet, hebt u een verbindings probleem. Het gebeurtenis logboek bericht bevat informatie over de forest waar u een probleem ondervindt. Zie [connectiviteits probleem](#connectivity problem)voor meer informatie.
@@ -272,7 +272,7 @@ Als u aangepaste installatie hebt gebruikt, stelt u de machtigingen hand matig i
     
 1. Als u wilt zoeken naar het account dat wordt gebruikt door de Active Directory connector, start u **Synchronization Service Manager**. 
  
-2. Ga naar **connectors**en zoek vervolgens naar het on-premises Active Directory forest dat u wilt oplossen. 
+2. Ga naar **connectors** en zoek vervolgens naar het on-premises Active Directory forest dat u wilt oplossen. 
  
 3. Selecteer de connector en klik vervolgens op **Eigenschappen**. 
  
@@ -281,7 +281,7 @@ Als u aangepaste installatie hebt gebruikt, stelt u de machtigingen hand matig i
     ![Account dat wordt gebruikt door Active Directory connector](./media/tshoot-connect-password-hash-synchronization/connectoraccount.png)  
     Noteer de gebruikers naam en het domein waarin het account zich bevindt.
     
-5. Start **Active Directory gebruikers en computers**en controleer of het account dat u eerder hebt gevonden, de volgende machtigingen heeft die zijn ingesteld in de hoofdmap van alle domeinen in uw forest:
+5. Start **Active Directory gebruikers en computers** en controleer of het account dat u eerder hebt gevonden, de volgende machtigingen heeft die zijn ingesteld in de hoofdmap van alle domeinen in uw forest:
     * Directory wijzigingen repliceren
     * Wijzigingen in Directory repliceren
 
@@ -304,7 +304,7 @@ Als u aangepaste installatie hebt gebruikt, stelt u de machtigingen hand matig i
 
 U kunt eenvoudig problemen met wachtwoord-hash-synchronisatie oplossen door de status van een object te bekijken.
 
-1. Zoek in **Active Directory gebruikers en computers**naar de gebruiker en controleer vervolgens of het selectie vakje **gebruiker moet wacht woord bij volgende aanmelding wijzigen** is uitgeschakeld.  
+1. Zoek in **Active Directory gebruikers en computers** naar de gebruiker en controleer vervolgens of het selectie vakje **gebruiker moet wacht woord bij volgende aanmelding wijzigen** is uitgeschakeld.  
 
     ![Active Directory productief wacht woorden](./media/tshoot-connect-password-hash-synchronization/adprodpassword.png)  
 
@@ -320,17 +320,17 @@ U kunt eenvoudig problemen met wachtwoord-hash-synchronisatie oplossen door de s
 
     d. Selecteer **ruimte Zoek connector**.
 
-    e. Selecteer in het vak **bereik** de optie **DN of anker**en voer vervolgens de volledige DN in van de gebruiker die u wilt oplossen.
+    e. Selecteer in het vak **bereik** de optie **DN of anker** en voer vervolgens de volledige DN in van de gebruiker die u wilt oplossen.
 
     ![Zoeken naar gebruiker in connector ruimte met DN](./media/tshoot-connect-password-hash-synchronization/searchcs.png)  
 
     f. Zoek naar de gebruiker die u zoekt en klik vervolgens op **Eigenschappen** om alle kenmerken weer te geven. Als de gebruiker zich niet in het Zoek resultaat bevindt, controleert u uw [filter regels](how-to-connect-sync-configure-filtering.md) en zorgt u ervoor dat u [Toep assen en wijzigingen controleren](how-to-connect-sync-configure-filtering.md#apply-and-verify-changes) zodat de gebruiker wordt weer gegeven in verbinding maken.
 
-    g. Klik op **logbestand**om de details van het wachtwoord synchronisatie van het object voor de afgelopen week weer te geven.  
+    g. Klik op **logbestand** om de details van het wachtwoord synchronisatie van het object voor de afgelopen week weer te geven.  
 
     ![Details van object logboek](./media/tshoot-connect-password-hash-synchronization/csobjectlog.png)  
 
-    Als het object logboek leeg is, kan Azure AD Connect de wacht woord-hash niet lezen van Active Directory. Ga door met het oplossen van problemen met verbindings fouten. Als u een andere waarde dan **geslaagd**ziet, raadpleegt u de tabel in het [logboek voor wachtwoord synchronisatie](#password-sync-log).
+    Als het object logboek leeg is, kan Azure AD Connect de wacht woord-hash niet lezen van Active Directory. Ga door met het oplossen van problemen met verbindings fouten. Als u een andere waarde dan **geslaagd** ziet, raadpleegt u de tabel in het [logboek voor wachtwoord synchronisatie](#password-sync-log).
 
     h. Selecteer het tabblad **afkomst** en controleer of ten minste één synchronisatie regel in de kolom **PasswordSync** is ingesteld op **True**. In de standaard configuratie bevindt de naam van de synchronisatie regel zich **in AD-User AccountEnabled**.  
 
@@ -346,7 +346,7 @@ U kunt eenvoudig problemen met wachtwoord-hash-synchronisatie oplossen door de s
 
     ![Omgekeerde gegevens](./media/tshoot-connect-password-hash-synchronization/mvconnectors.png)  
 
-    k. Selecteer de rij die Azure AD vertegenwoordigt, klik op **Eigenschappen**en klik vervolgens op het tabblad **afkomst** . Het object voor de connector ruimte moet een uitgaande regel in de kolom **PasswordSync** hebben ingesteld op **True**. In de standaard configuratie is de naam van de synchronisatie regel **voor Aad-gebruiker toevoegen**.  
+    k. Selecteer de rij die Azure AD vertegenwoordigt, klik op **Eigenschappen** en klik vervolgens op het tabblad **afkomst** . Het object voor de connector ruimte moet een uitgaande regel in de kolom **PasswordSync** hebben ingesteld op **True**. In de standaard configuratie is de naam van de synchronisatie regel **voor Aad-gebruiker toevoegen**.  
 
     ![Het dialoog venster Eigenschappen van connector ruimte-object](./media/tshoot-connect-password-hash-synchronization/cspasswordsync2.png)  
 
@@ -380,7 +380,7 @@ if ($aadConnectors -ne $null -and $adConnectors -ne $null)
 {
     if ($aadConnectors.Count -eq 1)
     {
-        $features = Get-ADSyncAADCompanyFeature -ConnectorName $aadConnectors[0].Name
+        $features = Get-ADSyncAADCompanyFeature
         Write-Host
         Write-Host "Password sync feature enabled in your Azure AD directory: "  $features.PasswordHashSync
         foreach ($adConnector in $adConnectors)

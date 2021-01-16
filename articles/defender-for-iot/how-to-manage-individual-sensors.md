@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/10/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: b61bef89d53da280961b818425d11a6f81bbf5ea
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 25f47be98b11f05ee6ac27018152ece05c0de4e4
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210236"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246686"
 ---
 # <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren
 
@@ -84,7 +84,7 @@ Er wordt een fout bericht weer gegeven als het activerings bestand niet kan word
 
 - **Voor lokaal verbonden Sens oren**: het activerings bestand is niet geldig. Als het bestand niet geldig is, gaat u naar de portal Defender voor IoT. Selecteer op de pagina **sensor beheer** de sensor met het ongeldige bestand en down load een nieuw activerings bestand.
 
-- **Voor in de Cloud verbonden Sens oren**: de sensor kan geen verbinding maken met internet. Controleer de netwerk configuratie van de sensor. Als uw sensor verbinding moet maken via een webproxy voor toegang tot internet, controleert u of de proxy server correct is geconfigureerd op het scherm **sensor netwerk configuratie** . Controleer of \* . Azure-devices.net:443 is toegestaan in de firewall en/of de proxy. Als joker tekens niet worden ondersteund of als u meer controle wilt, moet de FQDN voor uw specifieke Defender voor IoT hub worden geopend in uw firewall en/of proxy. Zie [referentie-IOT hub-eind punten](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-endpoints)voor meer informatie.  
+- **Voor in de Cloud verbonden Sens oren**: de sensor kan geen verbinding maken met internet. Controleer de netwerk configuratie van de sensor. Als uw sensor verbinding moet maken via een webproxy voor toegang tot internet, controleert u of de proxy server correct is geconfigureerd op het scherm **sensor netwerk configuratie** . Controleer of \* . Azure-devices.net:443 is toegestaan in de firewall en/of de proxy. Als joker tekens niet worden ondersteund of als u meer controle wilt, moet de FQDN voor uw specifieke Defender voor IoT hub worden geopend in uw firewall en/of proxy. Zie [referentie-IOT hub-eind punten](../iot-hub/iot-hub-devguide-endpoints.md)voor meer informatie.  
 
 - **Voor met Clouds verbonden Sens oren**: het activerings bestand is geldig, maar Defender voor IOT heeft dit geweigerd. Als dit probleem niet kan worden opgelost, kunt u nog een activering downloaden van de pagina **sensor Management** van de Defender voor IOT-Portal. Als dit niet werkt, neemt u contact op met Microsoft Ondersteuning.
 

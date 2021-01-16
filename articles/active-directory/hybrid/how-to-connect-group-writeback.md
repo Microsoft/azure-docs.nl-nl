@@ -11,12 +11,12 @@ ms.date: 06/11/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e2e24246c749978cd2bbb5b3d0821eea6d7dfb4b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c506c87ad5901754175f18e6b50bc6ed46a3c19
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89660877"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246907"
 ---
 # <a name="azure-ad-connect-group-writeback"></a>Terugschrijven van groep Azure AD Connect
 
@@ -37,7 +37,7 @@ Voer de volgende stappen uit om groeps terugschrijven in te scha kelen:
 3. Voer uw referenties in op de pagina **verbinding maken met Azure AD** . Klik op **Volgende**.
 4. Controleer op de pagina **optionele functies** of de opties die u eerder hebt geconfigureerd, nog steeds zijn geselecteerd.
 5. Selecteer **groep terugschrijven** en klik vervolgens op **volgende**.
-6. Selecteer op de **pagina terugschrijven**een Active Directory organisatie-eenheid (OE) om objecten op te slaan die zijn gesynchroniseerd van Microsoft 365 naar uw on-premises organisatie en klik vervolgens op **volgende**.
+6. Selecteer op de **pagina terugschrijven** een Active Directory organisatie-eenheid (OE) om objecten op te slaan die zijn gesynchroniseerd van Microsoft 365 naar uw on-premises organisatie en klik vervolgens op **volgende**.
 7. Klik op de pagina **gereed** voor configuratie op **configureren**.
 8. Wanneer de wizard is voltooid, klikt u op **Afsluiten** op de pagina configuratie voltooid.
 9. Open de Windows Power shell als beheerder op de Azure Active Directory Connect-server en voer de volgende opdrachten uit.
@@ -45,7 +45,13 @@ Voer de volgende stappen uit om groeps terugschrijven in te scha kelen:
 ```Powershell
 $AzureADConnectSWritebackAccountDN =  <MSOL_ account DN>
 Import-Module "C:\Program Files\Microsoft Azure Active Directory Connect\AdSyncConfig\AdSyncConfig.psm1"
+
+# To grant the <MSOL_account> permission to all domains in the forest:
 Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnectSWritebackAccountDN
+
+# To grant the <MSOL_account> permission to specific OU (eg. the OU chosen to writeback Office 365 Groups to):
+$GroupWritebackOU = <DN of OU where groups are to be written back to>
+Set-ADSyncUnifiedGroupWritebackPermissions -ADConnectorAccountDN $AzureADConnectSWritebackAccountDN -ADObjectDN $GroupWritebackOU
 ```
 
 Zie [Microsoft 365 groepen met on-premises Exchange hybride configureren](/exchange/hybrid-deployment/set-up-microsoft-365-groups#enable-group-writeback-in-azure-ad-connect)voor meer informatie over het configureren van de Microsoft 365 groepen.

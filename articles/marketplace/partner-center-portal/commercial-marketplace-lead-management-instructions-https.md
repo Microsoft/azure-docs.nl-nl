@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
 ms.date: 03/30/2020
-ms.openlocfilehash: b4dabee6a725fd02b7be6dd12c8a032e3d816835
-ms.sourcegitcommit: b4880683d23f5c91e9901eac22ea31f50a0f116f
+ms.openlocfilehash: 5bea2cf256e30bd896957bbee0e0ad824057a569
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94489366"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247179"
 ---
 # <a name="use-an-https-endpoint-to-manage-commercial-marketplace-leads"></a>Een HTTPS-eind punt gebruiken om leads voor commerciële Marketplace te beheren
 
@@ -35,7 +35,7 @@ In dit artikel wordt uitgelegd hoe u een nieuwe stroom maakt in automatische ene
 
     ![Mijn stromen + geautomatiseerd--leeg](./media/commercial-marketplace-lead-management-instructions-https/https-myflows-create-fromblank.png)
 
-1. Geef uw stroom een naam en selecteer vervolgens onder **kiezen hoe deze stroom moet worden geactiveerd** , **Wanneer een HTTP-aanvraag wordt ontvangen**.
+1. Geef uw stroom een naam en selecteer vervolgens onder **kiezen hoe deze stroom moet worden geactiveerd**, **Wanneer een HTTP-aanvraag wordt ontvangen**.
 
     ![Een automatische stroom venster knop overs Laan maken](./media/commercial-marketplace-lead-management-instructions-https/https-myflows-pick-request-trigger.png)
 
@@ -66,6 +66,10 @@ In dit artikel wordt uitgelegd hoe u een nieuwe stroom maakt in automatische ene
         },
         "LeadSource": {
           "id": "/properties/LeadSource",
+          "type": "string"
+        },
+        "Description": {
+          "id": "/properties/Description",
           "type": "string"
         },
         "UserDetails": {
@@ -162,15 +166,15 @@ In dit artikel wordt uitgelegd hoe u een nieuwe stroom maakt in automatische ene
 
 1. Configureer in het venster **een E-mail verzenden** de volgende vereiste velden:
 
-   - **Aan** : Voer ten minste één geldig e-mail adres in waarnaar de leads worden verzonden.
-   - **Onderwerp** : energie automatisering biedt u de mogelijkheid om dynamische inhoud toe te voegen, zoals **LeadSource** weer gegeven in het volgende scherm. Begin door een veld naam in te voeren. Selecteer vervolgens de lijst met dynamische inhoud in het pop-upvenster. 
+   - **Aan**: Voer ten minste één geldig e-mail adres in waarnaar de leads worden verzonden.
+   - **Onderwerp**: energie automatisering biedt u de mogelijkheid om dynamische inhoud toe te voegen, zoals **LeadSource** weer gegeven in het volgende scherm. Begin door een veld naam in te voeren. Selecteer vervolgens de lijst met dynamische inhoud in het pop-upvenster. 
 
         >[!NOTE] 
         > Wanneer u veld namen toevoegt, kunt u elke naam volgen met een dubbele punt (:) en selecteer vervolgens **Enter** om een nieuwe rij te maken. Nadat u de veld namen hebt toegevoegd, kunt u elke gekoppelde para meter toevoegen uit de dynamische keuze lijst.
 
         ![Een e-mail actie toevoegen met behulp van dynamische inhoud](./media/commercial-marketplace-lead-management-instructions-https/add-email-using-dynamic-content.png)
 
-   - **Hoofd tekst** : Voeg de gewenste informatie toe aan de hoofd tekst van het e-mail bericht in de lijst met dynamische inhoud. Gebruik bijvoorbeeld LastName, FirstName, email en Company. Wanneer u klaar bent met het instellen van de e-mail melding, ziet u in het voor beeld in het volgende scherm.
+   - **Hoofd tekst**: Voeg de gewenste informatie toe aan de hoofd tekst van het e-mail bericht in de lijst met dynamische inhoud. Gebruik bijvoorbeeld LastName, FirstName, email en Company. Wanneer u klaar bent met het instellen van de e-mail melding, ziet u in het voor beeld in het volgende scherm.
 
 
        ![Voorbeeld van e-mailmelding](./media/commercial-marketplace-lead-management-instructions-https/send-an-email.png)

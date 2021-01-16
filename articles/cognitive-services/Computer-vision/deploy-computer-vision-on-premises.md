@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 11/23/2020
 ms.author: aahi
-ms.openlocfilehash: d79c52c05d09eedab2dd964acb544c9cdb405380
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: b3e1bb3f418f21c75e29b5a1cad337c6f3c10145
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562596"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246635"
 ---
 # <a name="use-computer-vision-container-with-kubernetes-and-helm"></a>Computer Vision-container gebruiken met Kubernetes en helm
 
@@ -168,7 +168,7 @@ spec:
 Kopieer en plak de volgende Help-functies in de map zelfde *sjablonen* in `helpers.tpl` . `helpers.tpl` Hiermee definieert u nuttige functies voor het genereren van helm-sjablonen.
 
 > [!NOTE]
-> Dit artikel bevat verwijzingen naar de term slave, een term die door micro soft niet meer wordt gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
+> Dit artikel bevat verwijzingen naar de term slave, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ```yaml
 {{- define "rabbitmq.hostname" -}}
@@ -258,6 +258,8 @@ Elke V3-container heeft standaard een verzender en een erkennings medewerker. De
 
 De container die de aanvraag ontvangt, kan de taak in subtaken van één pagina splitsen en toevoegen aan de universele wachtrij. Elke herkennings medewerker van een minder drukke container kan gebruikmaken van enkele pagina subtaken uit de wachtrij, het uitvoeren van de herkenning en het uploaden van het resultaat naar de opslag. De door Voer kan worden verbeterd `n` , afhankelijk van het aantal geïmplementeerde containers.
 
+De V3-container geeft de API voor de duur van de online-test weer onder het `/ContainerLiveness` pad. Gebruik het volgende voor beeld van de implementatie om een live-test te configureren voor Kubernetes. 
+
 Kopieer en plak de volgende YAML in een bestand met de naam `deployment.yaml` . Vervang de `# {ENDPOINT_URI}` opmerkingen en door `# {API_KEY}` uw eigen waarden. Vervang de `# {AZURE_STORAGE_CONNECTION_STRING}` Opmerking door uw Azure Storage verbindings reeks. Configureer `replicas` de gewenste waarde `3` in het volgende voor beeld.
 
 ```yaml
@@ -293,6 +295,13 @@ spec:
           value: # {AZURE_STORAGE_CONNECTION_STRING}
         - name: Queue__Azure__ConnectionString
           value: # {AZURE_STORAGE_CONNECTION_STRING}
+        livenessProbe:
+          httpGet:
+            path: /ContainerLiveness
+            port: 5000
+          initialDelaySeconds: 60
+          periodSeconds: 60
+          timeoutSeconds: 20
 --- 
 apiVersion: v1
 kind: Service

@@ -7,18 +7,18 @@ ms.author: shhazam
 ms.date: 12/2/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 2bd994f14863715274e137bce2dd6873eeec1135
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 49a0129ff26d4a12392066aa6304317d71fdb0f1
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208757"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247587"
 ---
 # <a name="defender-for-iot-installation"></a>Defender voor IoT-installatie
 
 In dit artikel wordt beschreven hoe u de volgende elementen van Azure Defender voor IoT installeert:
 
-- **Sensor**: Defender voor IOT Sens oren verzamelt ICS-netwerk verkeer met behulp van passieve bewaking (zonder agent). Passieve en niet-storende Sens oren hebben geen invloed op de netwerken en apparaten van het OT en IoT. De sensor maakt verbinding met een SPANNe-poort of netwerk Tik en begint direct met het controleren van uw netwerk. Detecties worden weer gegeven in de sensor console. Daar kunt u ze weer geven, onderzoeken en analyseren in een netwerk kaart, inventaris van apparaten en een uitgebreid scala aan rapporten. Voor beelden zijn rapporten over risico analyse, query's voor gegevens analyse en aanvals vectoren. Meer informatie over sensor mogelijkheden vindt u in de [Defender voor IOT-sensor gebruikers handleiding (direct downloaden)](https://aka.ms/AzureDefenderforIoTUserGuide).
+- **Sensor**: Defender voor IOT Sens oren verzamelt ICS-netwerk verkeer met behulp van passieve bewaking (zonder agent). Passieve en niet-storende Sens oren hebben geen invloed op de netwerken en apparaten van het OT en IoT. De sensor maakt verbinding met een SPANNe-poort of netwerk Tik en begint direct met het controleren van uw netwerk. Detecties worden weer gegeven in de sensor console. Daar kunt u ze weer geven, onderzoeken en analyseren in een netwerk kaart, inventaris van apparaten en een uitgebreid scala aan rapporten. Voor beelden zijn rapporten over risico analyse, query's voor gegevens analyse en aanvals vectoren. Meer informatie over sensor mogelijkheden vindt u in de [Defender voor IOT-sensor gebruikers handleiding (direct downloaden)](./getting-started.md).
 
 - **On-premises beheer console**: met behulp van de on-premises beheer console kunt u Apparaatbeheer, risico beheer en het beheer van beveiligings problemen uitvoeren. U kunt dit ook gebruiken om de bewaking van bedreigingen en reactie op incidenten in uw onderneming uit te voeren. Het biedt een uniforme weer gave van alle netwerk apparaten, de belangrijkste IoT en de risico indicatoren en waarschuwingen die zijn gedetecteerd in faciliteiten waar Sens oren worden geïmplementeerd. Gebruik de on-premises beheer console om Sens oren in gapped netwerken weer te geven en te beheren.
 

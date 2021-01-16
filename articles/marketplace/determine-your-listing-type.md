@@ -6,21 +6,15 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: trkeya
 ms.author: trkeya
-ms.date: 12/18/2020
-ms.openlocfilehash: 091af70383eb3cab32a0453d7f7542d8a4395d0b
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.date: 01/14/2021
+ms.openlocfilehash: 89cd9f46474e8e311f003f317b90bdb21eae55fe
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98107392"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247541"
 ---
 # <a name="introduction-to-listing-options"></a>Inleiding tot aanbiedings opties
-
-U kunt de beschik bare _aanbiedings opties_ in de commerciële Marketplace gebruiken om op verschillende manieren te communiceren met potentiële klanten. Nadat uw aanbieding is gepubliceerd, worden de opties voor de aanbieding (en) die u voor uw aanbieding hebt gekozen, weer gegeven als een knop in de linkerbovenhoek van de aanbiedings pagina van uw aanbieding in de online winkel (s). In de volgende scherm afbeelding ziet u bijvoorbeeld een pagina met een aanbiedings vermelding in de online winkel van Microsoft AppSource met de knoppen **contact opnemen** en **station testen** .
-
-:::image type="content" source="./media/listing-options.png" alt-text="Illustreert de aanbiedings pagina voor een aanbieding. De knoppen contact persoon en test station worden weer gegeven.":::
-
-## <a name="available-listing-options-by-offer-type"></a>Beschik bare aanbiedings opties per aanbiedings type
 
 Wanneer u een aanbiedings type maakt, kiest u een of meer aanbiedings opties. Deze opties bepalen welke knoppen klanten zien op de aanbiedings pagina in de online winkels. De aanbiedings opties bevatten een _gratis proef versie_, een _test station_, een _contact persoon_ en _nu downloaden_.
 
@@ -42,7 +36,7 @@ In deze tabel ziet u welke vermeldings opties beschikbaar zijn voor elk type aan
 | Software als een dienst | &#10004; | &#10004; | &#10004; | &#10004; |
 ||||||
 
-`*` Met de optie nu downloaden kunt u nu downloaden (gratis), uw eigen licentie (BYOL), abonnement en prijs op basis van gebruik gebruiken. Zie [nu ophalen](#get-it-now)voor meer informatie.
+&#42; de optie nu downloaden bevat, kunt u nu downloaden (gratis) gebruiken, uw eigen licentie (BYOL), abonnementen en op gebruik gebaseerde prijzen meenemen. Zie [nu ophalen](#get-it-now)voor meer informatie.
 
 ### <a name="free-trial"></a>Gratis proefversie
 
@@ -102,9 +96,15 @@ In deze tabel ziet u welke soorten aanbiedingen ondersteuning bieden voor de ext
 
 Gebruik deze aanbiedings optie om uw toepassing gratis aan te bieden. Klanten gebruiken de button _nu downloaden_ om je gratis aanbieding te ontvangen.
 
-#### <a name="byol"></a>BYOL (Bring Your Own License)
+> [!NOTE]
+> Aanbiedingen die nu beschikbaar zijn (gratis) komen niet in aanmerking voor de voor delen van Marketplace-beloningen voor aanbiedingen die kunnen worden aangeboden. Omdat er geen trans actie via de winkel is, worden deze gecategoriseerd als ' proef versie '. Bekijk onderstaande [Marketplace-beloningen](#marketplace-rewards) .
 
-Gebruik de commerciële Marketplace om de detectie te verbeteren, het inrichten van uw oplossing te automatiseren en de financiële trans actie los van de Marketplace te volt ooien. De optie uw eigen licentie (BYOL) meenemen is ideaal voor on-premises naar Cloud migraties. Klanten gebruiken de knop _nu downloaden_ om uw aanbieding te kopen met een licentie die ze vooraf van u hebben gekocht.
+#### <a name="bring-your-own-license-byol"></a>Bring Your Own License (BYOL)
+
+Gebruik deze aanbiedings optie om klanten uw aanbieding te laten implementeren met behulp van een licentie die buiten de commerciële Marketplace is gekocht. Deze optie is ideaal voor migraties van on-premises naar de Cloud. Klanten gebruiken de knop _nu downloaden_ om uw aanbieding te kopen met een licentie die ze vooraf van u hebben gekocht.
+
+> [!NOTE]
+> BYOL-aanbiedingen komen niet in aanmerking voor voor delen van Marketplace voor aanbiedingen die kunnen worden aangeboden. Omdat deze vereist dat een klant de licentie van de partner moet verkrijgen en er geen trans actie via de commerciële Marketplace-winkel is, worden deze gecategoriseerd als ' lijst '. Bekijk onderstaande [Marketplace-beloningen](#marketplace-rewards) .
 
 #### <a name="subscription"></a>Abonnement
 
@@ -117,11 +117,17 @@ U kunt een vast bedrag in rekening brengen voor de volgende aanbiedings typen:
 
 De volgende aanbiedings typen ondersteunen prijzen op basis van gebruik:
 
-- Azure-toepassing-aanbieding (beheerde app) biedt ondersteuning voor facturering met data limiet. Zie voor meer informatie [beheerde factuur met gecontroleerde toepassingen](./partner-center-portal/azure-app-metered-billing.md).
-- SaaS-aanbiedingen bieden ondersteuning voor facturering via data limiet en prijzen per gebruiker (per seat). Zie voor meer informatie over het gebruik van gefactureerde facturering [voor SaaS met de commerciële Marketplace meter service](./partner-center-portal/saas-metered-billing.md).
+- Azure-toepassing-aanbieding (beheerde app) biedt ondersteuning voor facturering met data limiet. Zie voor meer informatie [beheerde factuur met gecontroleerde toepassingen](partner-center-portal/azure-app-metered-billing.md).
+- SaaS-aanbiedingen bieden ondersteuning voor facturering via data limiet en prijzen per gebruiker (per seat). Zie voor meer informatie over het gebruik van gefactureerde facturering [voor SaaS met de commerciële Marketplace meter service](partner-center-portal/saas-metered-billing.md).
 - Azure virtual machine biedt ondersteuning per kern, per kern grootte, en prijs per markt en kern geheugens. Deze prijs opties zijn prijs per uur en maandelijks gefactureerd.
 
 Wanneer u een transactable-aanbieding maakt, is het belang rijk dat u de overwegingen voor prijs informatie, facturerings-, facturerings-en uitbetaling begrijpt voordat u een aanbiedings type selecteert en uw aanbieding maakt. Zie [online winkels voor commerciële Marketplace](overview.md#commercial-marketplace-online-stores)voor meer informatie.
+
+## <a name="sample-offer"></a>Voor beeld aanbieding
+
+Nadat uw aanbieding is gepubliceerd, worden de opties voor de aanbieding (en) die u hebt gekozen weer gegeven als een knop in de linkerbovenhoek van de pagina met vermeldingen in de online winkel (s). In het volgende scherm ziet u bijvoorbeeld een aanbiedings pagina in de online winkel van Microsoft AppSource met de knoppen **nu downloaden** en **station testen** :
+
+:::image type="content" source="media/listing-options.png" alt-text="Illustreert de aanbiedings pagina voor een aanbieding met de knoppen contact opnemen en station testen.":::
 
 ## <a name="listing-and-pricing-options-by-online-store"></a>Opties voor aanbieding en prijzen per online winkel
 
@@ -149,10 +155,14 @@ In de volgende tabel ziet u de opties die beschikbaar zijn voor verschillende aa
 
 &#42;&#42; Microsoft 365-invoeg toepassingen zijn gratis te installeren en kunnen worden te gelde met behulp van een SaaS-aanbieding. Zie [geld verdienen Your Office 365-invoeg toepassing via micro soft Commercial Marketplace](/office/dev/store/monetize-addins-through-microsoft-commercial-marketplace)(Engelstalig) voor meer informatie.
 
-## <a name="marketplace-rewards"></a>Marketplace-beloningen
+## <a name="marketplace-rewards"></a>Marketplace Rewards
 
 Uw Marketplace-beloningen worden gedifferentieerd op basis van de optie die u kiest. Zie [uw commerciële Marketplace voor delen](gtm-your-marketplace-benefits.md)voor meer informatie.
 
+Als uw aanbieding kan worden afgeschreven, kunt u profiteren van de voor delen wanneer u de gefactureerde omzet verg root.
+
+Niet-transtransactable biedt voor delen op basis van het feit of een gratis proef versie is gekoppeld.
+
 ## <a name="next-steps"></a>Volgende stappen
 
-- Voor het kiezen van een aanbiedings type dat u wilt maken, Zie [publicatie handleiding per aanbiedings type](./publisher-guide-by-offer-type.md).
+- Voor het kiezen van een aanbiedings type dat u wilt maken, Zie [publicatie handleiding per aanbiedings type](publisher-guide-by-offer-type.md).

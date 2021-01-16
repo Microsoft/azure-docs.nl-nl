@@ -6,12 +6,12 @@ ms.author: dech
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 12/11/2020
-ms.openlocfilehash: a740ad62dacc9a29cab1cc144f1789e125ec2e89
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 31b96f03a8519b068eaa816443be0a0f374a4a8c
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368576"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247026"
 ---
 # <a name="frequently-asked-questions-about-autoscale-provisioned-throughput-in-azure-cosmos-db"></a>Veelgestelde vragen over het automatisch schalen van ingerichte door Voer in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -48,7 +48,7 @@ Ja. Wanneer u gereserveerde capaciteit aanschaft voor accounts met enkelvoudige 
 Gereserveerde capaciteit van regio voor meerdere schrijf bewerkingen werkt hetzelfde voor de ingerichte door Voer van automatisch schalen en standaard (hand matig). Zie [Azure Cosmos DB gereserveerde capaciteit](cosmos-db-reserved-capacity.md)
 
 ### <a name="does-autoscale-work-with-free-tier"></a>Werkt automatisch schalen met de gratis laag?
-Ja. In de laag gratis kunt u de door Voer van automatisch schalen gebruiken voor een container. Ondersteuning voor het automatisch schalen van gedeelde doorvoer databases met aangepaste Max. RU/s is nog niet beschikbaar. Bekijk hoe [Facturering met gratis lagen werkt met automatisch schalen](understand-your-bill.md#billing-examples-with-free-tier-accounts).
+Ja. In de laag gratis kunt u de door Voer van automatisch schalen gebruiken voor een container. Ondersteuning voor het automatisch schalen van gedeelde doorvoer databases met aangepaste Max. RU/s is nog niet beschikbaar. Bekijk hoe [Facturering met gratis lagen werkt met automatisch schalen](understand-your-bill.md#azure-free-tier).
 
 ### <a name="is-autoscale-supported-for-all-apis"></a>Wordt automatisch schalen ondersteund voor alle Api's?
 Ja, automatisch schalen wordt ondersteund voor alle Api's: core (SQL), Gremlin, Table, Cassandra en API voor MongoDB.

@@ -3,12 +3,12 @@ title: Azure Event Grid levering en probeer het opnieuw
 description: Hierin wordt beschreven hoe Azure Event Grid gebeurtenissen levert en hoe er niet-bezorgde berichten worden verwerkt.
 ms.topic: conceptual
 ms.date: 10/29/2020
-ms.openlocfilehash: 51473cf457a1c713e6694edd23c344be8c4d439e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3c4ed6ec2c9eae4dbcf70a831e3e7f70a28a57a0
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463235"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247366"
 ---
 # <a name="event-grid-message-delivery-and-retry"></a>Bericht bezorging Event Grid en probeer het opnieuw
 
@@ -67,7 +67,7 @@ Hier volgen de typen eind punten waarvoor het nieuwe pogingen niet gebeurt:
 | Webhook | 400 ongeldige aanvraag, 413 aanvraag entiteit te groot, 403 verboden, 404 niet gevonden, 401 niet toegestaan |
  
 > [!NOTE]
-> Als Dead-Letter niet is geconfigureerd voor het eind punt, worden gebeurtenissen verwijderd wanneer er meer dan fouten optreden. Overweeg daarom onbestelbare berichten te configureren, als u niet wilt dat dit soort gebeurtenissen wordt verwijderd.
+> Als Dead-Letter niet is geconfigureerd voor het eind punt, worden gebeurtenissen verwijderd wanneer de bovenstaande fouten optreden. Overweeg het configureren van onbestelbare berichten als u niet wilt dat dit soort gebeurtenissen wordt verwijderd.
 
 Als de fout die is geretourneerd door het geabonneerde eind punt niet voor komt in de bovenstaande lijst, voert EventGrid de volgende stappen uit die hieronder worden beschreven:
 
@@ -80,7 +80,10 @@ Event Grid 30 seconden wachten op een reactie na het afleveren van een bericht. 
 - 10 minuten
 - 30 minuten
 - 1 uur
-- Maxi maal 24 uur per uur
+- 3 uur
+- 6 uur
+- Elke 12 uur tot 24 uur
+
 
 Als het eind punt binnen drie minuten reageert, probeert Event Grid de gebeurtenis te verwijderen uit de wachtrij voor nieuwe pogingen, maar zijn er dubbele items mogelijk wel ontvangen.
 
@@ -104,7 +107,7 @@ Wanneer Event Grid een gebeurtenis binnen een bepaalde periode niet kunt aflever
 
 Als aan een van de voor waarden wordt voldaan, wordt de gebeurtenis verwijderd of onbestelbaar.  Standaard wordt door Event Grid geen onbestelbare berichten ingeschakeld. Als u deze functie wilt inschakelen, moet u een opslag account opgeven om niet-bezorgde gebeurtenissen te bewaren tijdens het maken van het gebeurtenis abonnement. U haalt gebeurtenissen uit dit opslag account op om leveringen op te lossen.
 
-Event Grid verzendt een gebeurtenis naar de locatie van de onbestelbare berichten wanneer deze alle nieuwe pogingen heeft geprobeerd uit te voeren. Als Event Grid een respons code van 400 (ongeldige aanvraag) of 413 (te grote aanvraag entiteit) ontvangt, wordt de gebeurtenis onmiddellijk naar het eind punt voor onbestelbare berichten verzonden. Met deze antwoord codes wordt aangegeven dat de levering van de gebeurtenis nooit slaagt.
+Event Grid verzendt een gebeurtenis naar de locatie van de onbestelbare berichten wanneer deze alle nieuwe pogingen heeft geprobeerd uit te voeren. Als Event Grid een respons code van 400 (ongeldige aanvraag) of 413 (te grote aanvraag entiteit) ontvangt, wordt de gebeurtenis direct gepland voor onbestelbare berichten. Met deze antwoord codes wordt aangegeven dat de levering van de gebeurtenis nooit slaagt.
 
 De time-to-Live-verval datum wordt alleen gecontroleerd bij de volgende geplande leverings poging. Dus als time-to-Live verloopt vóór de volgende geplande lever poging, wordt gebeurtenis verloop alleen gecontroleerd op het tijdstip van de volgende levering en vervolgens onbestelbare berichten. 
 

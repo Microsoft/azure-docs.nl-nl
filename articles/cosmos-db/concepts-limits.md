@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 11/19/2020
-ms.openlocfilehash: 9d351bc945c08c82e96791059b00dc94eb94b918
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 793ff9eedb747da0edcbbf2df50b62f06f407892
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368734"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247421"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
 
@@ -256,7 +256,8 @@ De volgende tabel bevat de limieten voor de gratis proef versie [Azure Cosmos DB
 
 Probeer Cosmos DB wereld wijde distributie alleen te ondersteunen in de regio's VS-centraal, Europa-noord en Zuidoost-Azië. Er kunnen geen ondersteunings tickets voor Azure worden gemaakt voor het proberen van Azure Cosmos DB accounts. Er wordt echter ondersteuning geboden voor abonnees met bestaande ondersteunings abonnementen.
 
-## <a name="free-tier-account-limits"></a>Limieten voor Gratis laag-accounts
+## <a name="azure-cosmos-db-free-tier-account-limits"></a>Azure Cosmos DB limieten voor gratis-laag accounts
+
 De volgende tabel bevat de limieten voor [Azure Cosmos DB gratis laag accounts.](optimize-dev-test.md#azure-cosmos-db-free-tier)
 
 | Resource | Standaardlimiet |
@@ -268,7 +269,10 @@ De volgende tabel bevat de limieten voor [Azure Cosmos DB gratis laag accounts.]
 | Maximum aantal gedeelde doorvoer databases | 5 |
 | Maximum aantal containers in een gedeelde doorvoer database | 25 <br>In accounts met een gratis laag is de minimale RU/s voor een gedeelde doorvoer database met Maxi maal 25 containers 400 RU/s. |
 
-  Naast het bovenstaande zijn de [limieten per account](#per-account-limits) ook van toepassing op gratis laag accounts.
+Naast het bovenstaande zijn de [limieten per account](#per-account-limits) ook van toepassing op gratis laag accounts.
+
+> [!NOTE]
+> Azure Cosmos DB gratis laag wijkt af van het gratis Azure-account. Het gratis Azure-account biedt Azure-tegoeden en-bronnen gratis gedurende een beperkte periode. Wanneer u Azure Cosmos DB gebruikt als onderdeel van dit gratis account, krijgt u 25 GB opslag ruimte en 400 RU/s aan ingerichte door Voer gedurende 12 maanden.
 
 ## <a name="next-steps"></a>Volgende stappen
 

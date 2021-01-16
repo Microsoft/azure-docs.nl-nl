@@ -10,12 +10,12 @@ ms.date: 06/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: fd1c7f5dec57127f92da52be908bd6faa2c90e85
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d348b8c2325c7bc2cdaa28356151647a9430684f
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500220"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247043"
 ---
 # <a name="migrate-to-cloud-authentication-using-staged-rollout-preview"></a>Migreren naar Cloud authenticatie met behulp van gefaseerde implementatie (preview-versie)
 
@@ -67,7 +67,7 @@ De volgende scenario's worden ondersteund voor gefaseerde implementatie. De func
 
 De volgende scenario's worden niet ondersteund voor gefaseerde implementatie:
 
-- Toepassingen of Cloud Services gebruiken verouderde verificatie zoals POP3 en SMTP.
+- Verouderde verificatie, zoals POP3 en SMTP, wordt niet ondersteund.
 
 - Bepaalde toepassingen verzenden de query parameter ' domain_hint ' naar Azure AD tijdens de verificatie. Deze stromen worden voortgezet en gebruikers die zijn ingeschakeld voor gefaseerde implementatie, blijven Federatie voor verificatie gebruiken.
 
@@ -182,7 +182,7 @@ Ga als volgt te werk:
    >Wanneer u een nieuwe groep toevoegt, worden gebruikers in de groep (Maxi maal 200 gebruikers voor een nieuwe groep) bijgewerkt met behulp van beheerde verificatie immidiatly. Het bewerken van een groep (het toevoegen of verwijderen van gebruikers) kan tot 24 uur duren voordat de wijzigingen van kracht worden.
    >Naadloze SSO is alleen van toepassing als gebruikers zich in de naadloze SSO-groep bevinden en ook in een PTA-of PHS-groep.
 
-## <a name="auditing"></a>Controles
+## <a name="auditing"></a>Controleren
 
 We hebben controle gebeurtenissen ingeschakeld voor de verschillende acties die we voor gefaseerde implementatie uitvoeren:
 

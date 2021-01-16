@@ -8,12 +8,12 @@ ms.topic: how-to
 author: mingshen-ms
 ms.author: mingshen
 ms.date: 10/27/2020
-ms.openlocfilehash: b038834df3889a8b4b7f4a749568635e99f8408e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 8b63dfb015c7337e36dac3812e92ddc53914206d
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188748"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247162"
 ---
 # <a name="how-to-review-and-publish-an-offer-to-the-commercial-marketplace"></a>Een aanbieding bekijken en publiceren naar de commerciële Marketplace
 
@@ -150,7 +150,7 @@ De volgende scherm afbeelding toont de pagina **overzicht van aanbieding** voor 
 ### <a name="previewing-and-approving-your-offer"></a>Uw aanbieding bekijken en goed keuren
 
 > [!IMPORTANT]
-> Als u de end-to-end aankoop-en configuratie stroom wilt valideren, koopt u uw aanbieding terwijl deze in preview is. Informeer micro soft eerst met een [ondersteunings ticket](https://aka.ms/marketplacesupport) om ervoor te zorgen dat er geen kosten worden verwerkt.
+> Als u de end-to-end aankoop-en configuratie stroom wilt valideren, koopt u uw aanbieding terwijl deze in preview is. Informeer micro soft eerst met een [ondersteunings ticket](https://aka.ms/marketplacesupport) om ervoor te zorgen dat er geen kosten worden verwerkt. Als uw aanbieding een contact persoon voor u is, test u of een lead is gemaakt zoals verwacht door de contact gegevens voor deze persoon op te geven tijdens de preview-versie.
 
 Op de **overzichts** pagina van de aanbieding ziet u een voor beeld van koppelingen onder de knop **Go Live** . Er is een koppeling naar de preview-versie van AppSource, de preview van Azure Marketplace, of beide, afhankelijk van de opties die u hebt gekozen bij het maken van uw aanbieding. Als u ervoor kiest om uw aanbieding via micro soft te verkopen, kan iedereen die is toegevoegd aan de preview-doel groep de aanschaf en implementatie van uw aanbieding testen om ervoor te zorgen dat deze aan uw vereisten voldoet tijdens deze fase.
 
@@ -195,7 +195,7 @@ De geschiedenis van uw aanbieding bekijken:
 3.    Selecteer uw aanbieding.
 4.    Selecteer het tabblad **geschiedenis** in het navigatie menu aan de linkerkant. Op de pagina vindt u informatie over de volgende gebeurtenissen, zoals van toepassing op uw aanbieding:
 
-|Gebeurtenis    |Description    |
+|Gebeurtenis    |Beschrijving    |
 |---------|---------------|
 |Aanbieding gemaakt    |De aanbieding is gemaakt in het partner centrum. Een gebruiker heeft het aanbiedings type, aanbiedings-id en aanbiedings alias geselecteerd in **commercieel Marketplace**-  >  **overzicht**.    |
 |Gemaakt plan: *naam van abonnement*    |Een gebruiker heeft een nieuw plan gemaakt door de plan-ID en plan naam op te geven op het tabblad Overzicht van het **plan** .</br>*Deze gebeurtenis geldt alleen voor aanbiedings typen die ondersteuning bieden voor abonnementen*.    |
@@ -225,8 +225,8 @@ U kunt filters gebruiken om de volledige geschiedenis van uw aanbieding te verfi
 Er zijn vier filters:
 * Gebeurtenissen
 * Gebruikers
-* Datum
-* Pages
+* Date
+* Pagina's
 
 Wanneer u het filter **Pages** kiest, kunt u een van de partner centrum-pagina's selecteren die van toepassing zijn op uw aanbiedings type. Wanneer u **dit toepast,** worden in het filter alle **ingediende aanbiedingen** weer gegeven met wijzigingen aan de pagina die u hebt geselecteerd.
 

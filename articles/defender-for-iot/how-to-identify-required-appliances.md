@@ -4,15 +4,15 @@ description: Meer informatie over hardware en virtuele apparaten voor Certified 
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/21/2020
+ms.date: 01/13/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: b22f880eee1b691b6b50b8151a64a2d501b891b3
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 25685d7e933c9d171e1547be2f5899c08443321a
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840339"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246567"
 ---
 # <a name="identify-required-appliances"></a>Vereiste apparaten identificeren
 
@@ -50,7 +50,7 @@ Zie [specificaties](#appliance-specifications) van het apparaat voor details van
 
 Over vooraf geconfigureerde Sens oren: micro soft heeft een partnerschap met pijl om vooraf geconfigureerde Sens oren te bieden. Als u een vooraf geconfigureerde sensor wilt kopen, moet u contact opnemen met de pijl op het volgende adres: <hardware.sales@arrow.com>
 
-Over uw eigen apparaat halen: Bekijk ondersteunde modellen die hier worden beschreven. Nadat u uw apparaat hebt aangeschaft, gaat u naar de ISO-installatie **van Defender voor IOT**-  >  **netwerk Sens oren**  >   om de software te downloaden.
+Over uw eigen apparaat halen: Bekijk de ondersteunde modellen die hier worden beschreven. Nadat u uw apparaat hebt aangeschaft, gaat u naar de ISO-installatie **van Defender voor IOT**-  >  **netwerk Sens oren**  >   om de software te downloaden.
 
 :::image type="content" source="media/how-to-prepare-your-network/azure-defender-for-iot-sensor-download-software-screen.png" alt-text="Netwerk sensors ISO.":::
 
@@ -95,12 +95,12 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 | Onderdeel | Technische specificaties |
 |--|--|
 | Chassis | 1U-rack server |
-| Afmetingen | 42,9 x 43,46 x 70,7 (cm)/1.69 "x 17,11" x 27,83 "(in) |
+| Dimensies | 42,9 x 43,46 x 70,7 (cm)/1.69 "x 17,11" x 27,83 "(in) |
 | Gewicht | Maxi maal 16,27 kg (35,86 lb) |
 | Processor | Intel Xeon Silver 4215 R 3,2 GHz, 11 min. cache, 8c/16T, 130 W |
 | Chipset | Intel C621 |
 | Geheugen | 32 GB = 2 x 16 GB 2666MT/s DDR4 ECC UDIMM |
-| Opslag | 6 x 1,2-TB SAS 12G Enter prise 10K (2,5) in Hot-Plug harde schijf-RAID 5 |
+| Storage | 6 x 1,2-TB SAS 12G Enter prise 10K (2,5) in Hot-Plug harde schijf-RAID 5 |
 | Netwerk controller | On-Board: 2 x 1 GB Broadcom BCM5720<br>On-board LOM: iDRAC-poort kaart 1-GB Broadcom BCM5720<br><br>Extern: 1 x Intel Ethernet I350 QP 1-GB server adapter, laag profiel |
 | Beheer | HPE iLO Advanced |
 | Apparaattoegang | Twee achteraan USB 3,0<br>Eén front USB-2,0<br>Eén interne USB 3,0 |
@@ -136,7 +136,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 | Processor | Intel Xeon E-2234, 3,6 GHz, 4C/8T, 71 W |
 | Chipset | Intel C242 |
 | Geheugen | 2 x 16 GB, Dual Rank X8-DDR4-2666 |
-| Opslag | 3 x 1 TB SATA 6G middenlijn 7,2 K SFF (2,5) – RAID 5 met Smart Matrix P408i-een SR-controller |
+| Storage | 3 x 1 TB SATA 6G middenlijn 7,2 K SFF (2,5) – RAID 5 met Smart Matrix P408i-een SR-controller |
 | Netwerk controller | On-Board: 2 x 1 GB <br>On-Board: iLO-poort kaart 1 GB <br>Extern: 1 x HPE Ethernet 1-GB 4-Port 366FLR-adapter |
 | Beheer | HPE iLO Advanced |
 | Apparaattoegang | Voor zijde: 1 x USB 3,0, 1 x USB iLO-service poort <br>Achterzijde: 2 x USB 3,0 <br>Intern: 1 x USB 3,0 |
@@ -171,7 +171,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 | Processor | Intel Xeon E-2224, 3,4 GHz, 4C, 71 W |
 | Chipset | Intel C242 |
 | Geheugen | 1 x 8-GB Dual Rank X8-DDR4-2666 |
-| Opslag | 2 x 1 TB SATA 6G middenlijn 7,2 K SFF (2,5) – RAID 1 met Smart Matrix P208i-a |
+| Storage | 2 x 1 TB SATA 6G middenlijn 7,2 K SFF (2,5) – RAID 1 met Smart Matrix P208i-a |
 | Netwerk controller | On-Board: 2 x 1 GB <br>On-Board: iLO-poort kaart 1 GB <br>Extern: 1 x HPE Ethernet 1-GB 4-Port 366FLR-adapter |
 | Beheer | HPE iLO Advanced |
 | Apparaattoegang | Voor zijde: 1 x USB 3,0, 1 x USB iLO-service poort <br>Achterzijde: 2 x USB 3,0 <br>Intern: 1 x USB 3,0 |
@@ -203,7 +203,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 |--|--|--|--|
 | vCPU | 32 | 8 | 4 |
 | Geheugen | 32 GB | 32 GB | 8 GB |
-| Opslag | 5,6 TB | 1,8 TB | 500 GB |
+| Storage | 5,6 TB | 1,8 TB | 500 GB |
 
 ### <a name="on-premises-management-console-appliance"></a>On-premises beheer console-apparaat
 
@@ -212,7 +212,7 @@ In deze sectie worden de hardwarespecificaties voor de volgende apparaten beschr
 | Beschrijving | Virtuele apparaten voor Enter prise-implementatie typen |
 | vCPU | 8 |
 | Geheugen | 32 GB |
-| Opslag | 1,8 TB |
+| Storage | 1,8 TB |
 
 Ondersteunde Hyper visors: VMware ESXi versie 5,0 en hoger, Hyper-V
 
@@ -239,12 +239,12 @@ Nadat u het apparaat hebt aangeschaft, gaat u naar de ISO-installatie **van Defe
 | Onderdeel | Technische specificaties |
 |--|--|
 | Chassis | 1U-rack server |
-| Afmetingen | 42,8 x 434,0 x 596 (mm)/1,67 "x 17,09" x 23,5 "(in) |
+| Dimensies | 42,8 x 434,0 x 596 (mm)/1,67 "x 17,09" x 23,5 "(in) |
 | Gewicht | Maxi maal 29,98 lb/13,6 kg |
 | Processor | Intel Xeon E-2144G 3,6 GHz, 8 min. cache, 4C/8T, Turbo (71 W) |
 | Chipset | Intel C246 |
 | Geheugen | 32 GB = 2 x 16 GB 2666MT/s DDR4 ECC UDIMM |
-| Opslag | 3 x 2 TB 7,2 K RPM SATA 6-Gbps 512n 3,5-in Hot-Plug harde schijf-RAID 5 |
+| Storage | 3 x 2 TB 7,2 K RPM SATA 6-Gbps 512n 3,5-in Hot-Plug harde schijf-RAID 5 |
 | Netwerk controller | On-Board: 2 x 1 GB Broadcom BCM5720<br>On-board LOM: iDRAC-poort kaart 1-GB Broadcom BCM5720 <br><br>Extern: 1 x Intel Ethernet I350 QP 1-GB server adapter, laag profiel |
 | Beheer | iDRAC negen onderneming |
 | Apparaattoegang | Twee achteraan USB 3,0 <br> Eén front USB-3,0 |
@@ -255,30 +255,8 @@ Nadat u het apparaat hebt aangeschaft, gaat u naar de ISO-installatie **van Defe
 
 :::image type="content" source="media/how-to-prepare-your-network/enterprise-deployment-for-azure-defender-for-iot-dell-r340-bom.png" alt-text="Dell R340-stuk lijst.":::
 
-## <a name="smb-deployment-neousys-nuvo-5006lp"></a>SMB-implementatie: Neousys NUVO-5006LP
-
-| Onderdeel | Technische specificaties |
-|--|--|
-| Bouw | Aluminium, fanless en stof ontwerp |
-| Afmetingen | 240 mm (b) x 225 mm (D) x 77 mm (H) |
-| Gewicht | 3,1 kg (inclusief CPU, geheugen en HDD) |
-| CPU | Intel Core i5-6500TE (6 min. cache, Maxi maal 3,30 GHz) S1151 |
-| Chipset | Intel Q170 platform controller-hub |
-| Geheugen | 8-GB DDR4 2133 MHz Wide Tempe ratuur SODIMM |
-| Opslag | 128-GB 3ME3-mSATA SSD (Wide Tempe ratuur) |
-| Netwerk controller | 6x Gigabit Ethernet-poorten door Intel I219 |
-| Apparaattoegang | 4 USBs: twee voor-, twee achteraan, één intern |
-| Stroom adapter | 120/240VAC-20VDC/6A |
-| Muur | Montagekit, DIN-rail |
-| Bedrijfs temperatuur | \-25 °C ~ 70 °C |
-| Opslag temperatuur | \-40 °C ~ 85 °C |
-| Vochtigheid | 10% ~ 90%, niet-condenserend |
-| Trill | Actief, 5 Grms, 5-500 Hz, 3 assen <br>(w/SSD, volgens IEC60068-2-64) |
-| Puls | Actief, 50 Grms, halve sinus 11 MS duur (w/SSD, volgens IEC60068-2-27) |
-| | | CE/FCC Class A, volgens EN 55022, en 55024, en en 55032 |
-
 ## <a name="next-steps"></a>Volgende stappen
 
 [Over de installatie van Azure Defender voor IoT](how-to-install-software.md)
 
-[Over Azure Defender voor IoT-netwerk installatie](how-to-set-up-your-network.md)
+[Over de installatie van het Azure Defender for IoT-netwerk](how-to-set-up-your-network.md)

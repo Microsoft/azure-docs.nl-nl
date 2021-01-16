@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/04/2020
 ms.author: mlottner
-ms.openlocfilehash: c4f65da4f9a4f7ade94d76e99d57439e62b3c808
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 495f9d568760421c7f42df3acf74217c15b01a05
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092054"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246336"
 ---
 # <a name="access-your-security-data"></a>Toegang tot uw beveiligings gegevens
 
@@ -37,7 +37,7 @@ Voor toegang tot uw waarschuwingen en aanbevelingen in uw Log Analytics-werk rui
 1. Kies een waarschuwing of aanbeveling in Defender voor IoT.
 1. Klik op **nader onderzoek** en klik vervolgens op **de kolom DeviceID om te zien op welke apparaten deze waarschuwing wordt weer gegeven**.
 
-Zie [aan de slag met query's in log Analytics](/azure/azure-monitor/log-query/get-started-queries)voor meer informatie over het opvragen van gegevens uit log Analytics.
+Zie [aan de slag met query's in log Analytics](../azure-monitor/log-query/get-started-queries.md)voor meer informatie over het opvragen van gegevens uit log Analytics.
 
 ## <a name="security-alerts"></a>Beveiligingswaarschuwingen
 

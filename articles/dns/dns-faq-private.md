@@ -5,14 +5,14 @@ services: dns
 author: rohinkoul
 ms.service: dns
 ms.topic: article
-ms.date: 10/05/2019
+ms.date: 01/15/2021
 ms.author: rohink
-ms.openlocfilehash: 24f2ca238288854b99160a25c3d4dcedf8ce3368
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 3272f4fea4169fd5e91b1ba2b97ad72dfbb49080
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94952383"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247383"
 ---
 # <a name="azure-private-dns-faq"></a>Veelgestelde vragen over privé-DNS in Azure
 
@@ -88,6 +88,10 @@ Als uw bestaande privé-DNS-zone is gemaakt met behulp van preview-API, moet u d
 ## <a name="how-do-i-migrate-my-existing-private-dns-zones-to-the-new-model"></a>Hoe kan ik mijn bestaande privé-DNS-zones naar het nieuwe model migreren?
 
 We raden u ten zeerste aan om zo snel mogelijk naar het nieuwe resource model te migreren. Verouderd resource model wordt ondersteund, maar er worden echter geen verdere functies op dit model ontwikkeld. In de toekomst nemen we de bedoeling af om het nieuwe resource model voor te nemen. Zie[migratie handleiding voor Azure DNS particuliere zones](private-dns-migration-guide.md)voor meer informatie over het migreren van uw bestaande privé-DNS-zones naar een nieuw resource model.
+
+### <a name="does-azure-dns-private-zones-store-any-customer-content"></a>Slaat Azure DNS privé zones eventuele klant inhoud op?
+
+Nee, Azure DNS persoonlijke zones slaan geen klant inhoud op.
 
 ## <a name="next-steps"></a>Volgende stappen
 

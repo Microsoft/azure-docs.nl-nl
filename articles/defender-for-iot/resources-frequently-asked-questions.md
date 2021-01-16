@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/07/2020
 ms.author: rkarlin
-ms.openlocfilehash: 0c303adb4ee7c7551c6b389ec169d92a661a63bc
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 678b50ffb2df2cd16312548109b93f6f1a7f08ff
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97835020"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247462"
 ---
 # <a name="azure-defender-for-iot-frequently-asked-questions"></a>Veelgestelde vragen over Azure Defender voor IoT
 
@@ -38,7 +38,7 @@ Azure Defender voor IoT biedt uitgebreide ondersteuning voor het protocol. Naast
 Deze unieke oplossing voor het ontwikkelen van protocollen als invoeg toepassingen vereist geen gespecialiseerde teams of versie releases van ontwikkel aars om een nieuw protocol te kunnen ondersteunen. Ontwikkel aars, partners en klanten kunnen veilig protocollen ontwikkelen en inzichten en kennis delen met behulp van Horizon. 
 
 ## <a name="do-i-have-to-purchase-hardware-appliances-from-microsoft-partners"></a>Moet ik hardware-apparaten aanschaffen bij micro soft-partners?
-Azure Defender voor IoT-sensor wordt uitgevoerd op specifieke hardwarespecificaties zoals beschreven in de [hand leiding voor hardwarespecificaties](https://aka.ms/AzureDefenderforIoTBareMetalAppliance), klanten kunnen gecertificeerde hardware aanschaffen bij micro soft-partners of gebruikmaken van de meegeleverde stuk lijst en deze zelf aanschaffen. 
+Azure Defender voor IoT-sensor wordt uitgevoerd op specifieke hardwarespecificaties zoals beschreven in de [hand leiding voor hardwarespecificaties](./how-to-identify-required-appliances.md), klanten kunnen gecertificeerde hardware aanschaffen bij micro soft-partners of gebruikmaken van de meegeleverde stuk lijst en deze zelf aanschaffen. 
 
 Gecertificeerde hardware is getest in onze Labs voor stabiliteit van Stuur Programma's, pakket drupt en netwerk formaat.
 

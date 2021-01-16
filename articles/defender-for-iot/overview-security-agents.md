@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/27/2019
 ms.author: shhazam
-ms.openlocfilehash: d3b50d909fb167ee123b548603628bae7d844c5b
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 2b1cd131e578b1d16fabee99b8de536e4a48ece0
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97841250"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247298"
 ---
 # <a name="get-started-with-azure-defender-for-iot-device-security-agents"></a>Aan de slag met Azure Defender voor IoT-beveiligings agenten voor apparaten
 
@@ -31,7 +31,7 @@ De Defender voor IoT-beveiligings agenten verwerken de onbewerkte gebeurtenis ve
 Gebruik de volgende werk stroom voor het implementeren en testen van uw Defender voor IoT-beveiligings agenten:
 
 1. [Schakel Defender voor IoT-service in op uw IoT Hub](quickstart-onboard-iot-hub.md)
-1. Als uw IoT Hub geen geregistreerde apparaten heeft, [registreert u een nieuw apparaat](../iot-accelerators/quickstart-device-simulation-deploy.md).
+1. Als uw IoT Hub geen geregistreerde apparaten heeft, [registreert u een nieuw apparaat](../iot-accelerators/iot-accelerators-device-simulation-overview.md).
 1. [Maak een azureiotsecurity-beveiligings module](quickstart-create-security-twin.md) voor uw apparaten.
 1. Als u de agent wilt installeren op een gesimuleerd Azure-apparaat in plaats van op een echt apparaat te installeren, kunt u [een nieuwe virtuele Azure-machine (VM)](../virtual-machines/linux/quick-create-portal.md) in een beschik bare zone zetten.
 1. [Implementeer een Defender voor IOT-beveiligings agent](how-to-deploy-linux-cs.md) op uw IOT-apparaat of op een nieuwe virtuele machine.

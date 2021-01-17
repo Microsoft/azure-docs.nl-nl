@@ -8,12 +8,12 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2021
-ms.openlocfilehash: a708fb76b5a3d0fd0683cdb8915d1a5e1824a57c
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 4ad362b983f81e2cdc10cdbccafd8dda951482d7
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251665"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539547"
 ---
 # <a name="how-to-estimate-and-manage-costs-of-an-azure-cognitive-search-service"></a>De kosten van een Azure Cognitive Search-service ramen en beheren
 
@@ -23,9 +23,14 @@ In dit artikel vindt u meer informatie over het prijs model, factureer bare gebe
 
 De schaal baarheids architectuur in azure Cognitive Search is gebaseerd op flexibele combi Naties van replica's en partities, zodat u de capaciteit kunt variëren, afhankelijk van of u meer query-of indexerings functies nodig hebt, en betaalt u alleen voor wat u nodig hebt.
 
-De hoeveelheid resources die worden gebruikt door uw zoek service, vermenigvuldigd met het facturerings tarief dat is vastgesteld door de servicelaag, bepaalt de kosten van het uitvoeren van de service. De kosten en capaciteit zijn nauw verbonden. Bij het schatten van de kosten kunt u inzicht krijgen in de capaciteit die is vereist om uw indexerings-en query werk belastingen uit te voeren. Dit is het beste idee wat de geschatte kosten zijn.
+De hoeveelheid resources die wordt gebruikt door uw zoek service, vermenigvuldigd met het facturerings tarief dat is vastgesteld door de servicelaag, bepaalt de kosten van het uitvoeren van de service. De kosten en capaciteit zijn nauw verbonden. Bij het schatten van de kosten kunt u inzicht krijgen in de capaciteit die is vereist om uw indexerings-en query werk belastingen uit te voeren. Dit is het beste idee wat de geschatte kosten zijn.
 
-Voor facturerings doeleinden heeft Cognitive Search het concept van een *Zoek eenheid* (su). Een SU is het product van de *replica's* en *partities* die worden gebruikt door een service: **(R x P = su)**. Het aantal SUs vermenigvuldigd met het facturerings tarief **(su * tarief = maandelijkse uitgaven)** is de belangrijkste determinant van de zoek kosten. 
+Voor facturerings doeleinden zijn er twee eenvoudige formules waarmee u rekening moet houden:
+
+| Formule | Beschrijving |
+|---------|-------------|
+| **R x P = SU** | Het aantal gebruikte replica's, vermenigvuldigd met het aantal gebruikte partities, is gelijk aan het aantal *Zoek eenheden* (su) dat door een service wordt gebruikt. Een SU is een resource-eenheid en kan een partitie of een replica zijn. |
+| **SU * facturerings tarief = maandelijkse uitgaven** | Het aantal SUs vermenigvuldigd met het facturerings tarief van de laag waarop u de service hebt ingericht, is de primaire determinant van uw algemene maandelijkse factuur. Sommige functies of workloads hebben afhankelijkheden van andere Azure-Services, waardoor de kosten van uw oplossing op abonnements niveau kunnen worden verhoogd. In het gedeelte factureer bare gebeurtenissen hieronder worden de functies geïdentificeerd die aan uw factuur kunnen worden toegevoegd. |
 
 Elke service begint met één SU (één replica vermenigvuldigd met één partitie) als mini maal. Het maximum voor elke service is 36 SUs. Dit maximum kan op verschillende manieren worden bereikt: 6 partities x 6 replica's of drie partities x 12 replica's, bijvoorbeeld. Het is gebruikelijk om minder dan de totale capaciteit te gebruiken (bijvoorbeeld een service met drie replica's, 3 partities die is gefactureerd als negen SUs). Zie de grafiek [partitie-en replica combinaties](search-capacity-planning.md#chart) voor geldige combi Naties.
 

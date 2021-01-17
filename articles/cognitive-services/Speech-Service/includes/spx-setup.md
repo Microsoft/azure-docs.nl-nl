@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 05/15/2020
 ms.author: v-demjoh
-ms.openlocfilehash: 327dce053c38fdb7b03e7ceb0d7a62ec8b8e7248
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 87af99d5136a8bed93854e9396895cddeb22549a
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96993064"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98540464"
 ---
 ## <a name="download-and-install"></a>Downloaden en installeren
 
@@ -59,11 +59,11 @@ Volg deze stappen om de Speech CLI te installeren in een Docker-container:
 
 1. <a href="https://www.docker.com/get-started" target="_blank">Installeer Docker Desktop<span class="docon docon-navigate-external x-hidden-focus"></span></a> voor uw platform als dat nog niet is geïnstalleerd.
 2. Typ in een nieuwe opdrachtprompt of terminal de volgende opdracht: 
-   ```shell   
+   ```console   
    docker pull msftspeech/spx
    ```
 3. Typ deze opdracht. Raadpleeg de Help-informatie voor Speech CLI: 
-   ```shell 
+   ```console 
    docker run -it --rm msftspeech/spx help
    ```
 
@@ -93,27 +93,27 @@ Wanneer u de opdracht `spx` aanroept in een Docker-container, moet u een map in 
 
 In Windows beginnen de opdrachten als volgt:
 
-```shell
+```console
 docker run -it -v c:\spx-data:/data --rm msftspeech/spx
 ```
 
 In Linux of macOS zien uw opdrachten eruit als in het onderstaande voorbeeld. Vervang `ABSOLUTE_PATH` door het absoluut pad van uw gekoppelde map. Dit pad is geretourneerd door de opdracht `pwd` in het vorige gedeelte. 
 
 Als u deze opdracht uitvoert voordat u uw sleutel en regio instelt, krijgt u een fout waarin staat dat u uw sleutel en regio moet instellen:
-```shell   
+```console   
 sudo docker run -it -v ABSOLUTE_PATH:/data --rm msftspeech/spx
 ```
 
 Als u de opdracht `spx` wilt gebruiken in een container, moet u altijd de volledige opdracht invoeren, zoals hierboven wordt weergegeven, gevolgd door de parameters van uw aanvraag.
 In Windows wordt bijvoorbeeld met deze opdracht de sleutel ingesteld:
 
-```shell
+```console
 docker run -it -v c:\spx-data:/data --rm msftspeech/spx config @key --set SUBSCRIPTION-KEY
 ```
 
 Voor uitgebreidere interactie met het opdrachtregelprogramma kunt u een container starten met een interactieve bash shell door een beginpuntparameter toe te voegen.
 Voer in Windows deze opdracht in om een container te starten met een interactieve opdrachtregelinterface waarin u meerdere `spx`-opdrachten kunt invoeren:
-```shell
+```console
 docker run -it --entrypoint=/bin/bash -v c:\spx-data:/data --rm msftspeech/spx
 ```
 
@@ -160,7 +160,7 @@ Follow these instructions to create a shortcut:
 Als u de Speech CLI wilt gaan gebruiken, moet u de sleutel voor het spraakabonnement en de regio-id invoeren. U kunt deze referenties ophalen door de stappen te volgen in [De Speech-service gratis uitproberen](../overview.md#try-the-speech-service-for-free).
 Zodra u uw abonnementssleutel en regio-id hebt (bijvoorbeeld `eastus`, `westus`), voert u de volgende opdrachten uit.
 
-```shell
+```console
 spx config @key --set SUBSCRIPTION-KEY
 spx config @region --set REGION
 ```

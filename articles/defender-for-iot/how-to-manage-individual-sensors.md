@@ -4,15 +4,15 @@ description: Meer informatie over het beheren van afzonderlijke Sens oren, waaro
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 01/10/2021
+ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 25f47be98b11f05ee6ac27018152ece05c0de4e4
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 68fa3ea15199ec1d9cc99f92f497847fb029acd6
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98246686"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539576"
 ---
 # <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren
 
@@ -90,7 +90,7 @@ Er wordt een fout bericht weer gegeven als het activerings bestand niet kan word
 
 ## <a name="manage-certificates"></a>Certificaten beheren
 
-Na installatie van de sensor wordt een lokaal zelfondertekend certificaat gegenereerd dat wordt gebruikt voor toegang tot de sensor-webtoepassing. Wanneer u zich voor de eerste keer aanmeldt bij de sensor, wordt gebruikers van de beheerder gevraagd een SSL/TLS-certificaat op te geven.  Zie voor meer informatie over het instellen van de eerste keer [Aanmelden en een sensor activeren](how-to-activate-and-set-up-your-sensor.md).
+Na installatie van de sensor wordt een lokaal zelfondertekend certificaat gegenereerd dat wordt gebruikt voor toegang tot de sensor-webtoepassing. Wanneer u zich voor de eerste keer aanmeldt bij de sensor, wordt gebruikers van de beheerder gevraagd een SSL/TLS-certificaat op te geven.  Zie voor meer informatie over [het configureren van de eerste keer aanmelden en een sensor activeren](how-to-activate-and-set-up-your-sensor.md).
 
 Dit artikel bevat informatie over het bijwerken van certificaten, het werken met certificaat-CLI-opdrachten en ondersteunde certificaten en certificaat parameters.
 
@@ -98,11 +98,34 @@ Dit artikel bevat informatie over het bijwerken van certificaten, het werken met
 
 Azure Defender voor IoT gebruikt SSL/TLS-certificaten voor het volgende:
 
-1. Voldoen aan specifieke vereisten voor certificaat en versleuteling die door uw organisatie zijn aangevraagd door het door de certificerings instantie ondertekende certificaat te uploaden.
+- Voldoen aan specifieke vereisten voor certificaat en versleuteling die door uw organisatie zijn aangevraagd door het door de certificerings instantie ondertekende certificaat te uploaden.
 
-1. Sta validatie toe tussen de beheer console en verbonden Sens oren en tussen een beheer console en een beheer console met hoge Beschik baarheid. Validaties worden geëvalueerd op basis van een certificaatintrekkingslijst en de verval datum van het certificaat. **Als de validatie mislukt, wordt de communicatie tussen de beheer console en de sensor gestopt en wordt er een validatie fout weer gegeven in de console. Deze optie is standaard ingeschakeld na de installatie.**
+- Sta validatie toe tussen de beheer console en verbonden Sens oren en tussen een beheer console en een beheer console met hoge Beschik baarheid. Validaties worden geëvalueerd op basis van een certificaatintrekkingslijst en de verval datum van het certificaat. *Als de validatie mislukt, wordt de communicatie tussen de beheer console en de sensor gestopt en wordt er een validatie fout weer gegeven in de console*. Deze optie is standaard ingeschakeld na de installatie.
 
  Regels voor het door sturen van derden, bijvoorbeeld waarschuwings informatie, verzonden naar SYSLOG, Splunk of ServiceNow; of communicatie met Active Directory worden niet gevalideerd.
+
+#### <a name="ssl-certificates"></a>SSL-certificaten
+
+De Defender voor IoT-sensor en de on-premises beheer console gebruiken SSL-en TLS-certificaten voor de volgende functies: 
+
+ - Beveiligde communicatie tussen gebruikers en de webconsole van het apparaat. 
+ 
+ - Veilige communicatie met de REST API op de sensor en on-premises beheer console.
+ 
+ - Beveiligde communicatie tussen Sens oren en een on-premises beheer console. 
+
+Zodra het apparaat is geïnstalleerd, wordt een lokaal zelfondertekend certificaat gegenereerd om voorlopige toegang tot de webconsole toe te staan. Enter prise SSL-en TLS-certificaten kunnen worden geïnstalleerd met behulp van het [`cyberx-xsense-certificate-import`](#cli-commands) opdracht regel programma. 
+
+ > [!NOTE]
+ > Voor integraties en doorstuur regels waarbij het apparaat de client en initiator van de sessie is, worden specifieke certificaten gebruikt en zijn deze niet gerelateerd aan de systeem certificaten.  
+ >
+ >In dergelijke gevallen worden de certificaten doorgaans van de server ontvangen of worden asymmetrische versleuteling gebruikt, waarbij een specifiek certificaat wordt opgegeven om de integratie in te stellen.
+
+Apparaten kunnen unieke certificaat bestanden gebruiken. Als u een certificaat moet vervangen, hebt u het geüpload;
+
+- In versie 10,0 kunt u het certificaat vervangen in het menu systeem instellingen.
+
+- Voor eerdere versies van 10,0, kan het SSL-certificaat worden vervangen met behulp van het opdracht regel programma.
 
 ### <a name="update-certificates"></a>Certificaten bijwerken
 
@@ -111,15 +134,19 @@ Gebruikers van de sensor beheerder kunnen certificaten bijwerken.
 Een certificaat bijwerken:  
 
 1. Selecteer **systeem instellingen**.
+
 1. Selecteer **SSL/TLS-certificaten.**
 1. Verwijder of bewerk het certificaat en voeg een nieuwe toe.
+
     - Voeg een certificaat naam toe.
+    
     - Upload een CRT-bestand en een sleutel bestand en voer een wachtwoordzin in.
-    - Upload indien nodig een PEM-bestand.
+    - Upload zo nodig een PEM-bestand.
 
 De validatie-instelling wijzigen:
 
 1. Schakel de schakel optie **certificaat validatie inschakelen** in of uit.
+
 1. Selecteer **Opslaan**.
 
 Als de optie is ingeschakeld en de validatie mislukt, wordt de communicatie tussen de beheer console en de sensor gestopt en wordt er een validatie fout weer gegeven in de console.
@@ -128,87 +155,167 @@ Als de optie is ingeschakeld en de validatie mislukt, wordt de communicatie tuss
 
 De volgende certificaten worden ondersteund:
 
-- Persoonlijke/bedrijfs sleutel-infra structuur (persoonlijke PKI) 
-- Open bare-sleutel infrastructuur (open bare PKI) 
-- Lokaal gegenereerd op het apparaat (lokaal zelf ondertekend). **Het gebruik van zelfondertekende certificaten wordt niet aanbevolen.** Deze verbinding is *onveilig* en moet alleen worden gebruikt voor test omgevingen. De eigenaar van het certificaat kan niet worden gevalideerd en de beveiliging van uw systeem kan niet worden gehandhaafd. Zelfondertekende certificaten mogen nooit worden gebruikt voor productie netwerken.  
+- Persoonlijke en bedrijfs sleutel infrastructuur (persoonlijke PKI)
 
-De volgende para meters worden ondersteund. CRT voor certificaten
+- Open bare-sleutel infrastructuur (open bare PKI) 
+
+- Lokaal gegenereerd op het apparaat (lokaal zelf ondertekend). 
+
+> [!IMPORTANT]
+> Het is niet raadzaam om zelfondertekende certificaten te gebruiken. Dit type verbinding is niet beveiligd en moet alleen worden gebruikt voor test omgevingen. Omdat de eigenaar van het certificaat niet kan worden gevalideerd en de beveiliging van uw systeem niet kan worden gehandhaafd, moeten zelfondertekende certificaten nooit worden gebruikt voor productie netwerken.
+
+### <a name="supported-ssl-certificates"></a>Ondersteunde SSL-certificaten 
+
+De volgende para meters worden ondersteund. 
+
+**CRT voor certificaten**
 
 - Het primaire certificaat bestand voor uw domein naam
+
 - Handtekening algoritme = SHA256RSA
 - Hash-algoritme hand tekening = SHA256
 - Geldig van = geldige datum in het verleden
 - Geldig tot = geldige datum in de toekomst
-- Open bare sleutel = RSA 2048bits (mini maal) of 4096bits
+- Open bare sleutel = RSA 2048 bits (mini maal) of 4096 bits
 - CRL-distributie punt = URL naar. CRL-bestand
-- Onderwerp CN = URL, kan een certificaat voor joker tekens zijn, bijvoorbeeld example.contoso.com of  *. contoso.com**
-- Onderwerp (C) ountry = gedefinieerd, bijvoorbeeld US
-- Organisatie-eenheid (OE) = gedefinieerd, bijvoorbeeld contoso Labs
+- Onderwerp CN = URL, kan een certificaat met Joker tekens zijn. bijvoorbeeld: sensor. contoso. <span> com of *. contoso. <span> com
+- Onderwerp (C) ountry = gedefinieerd, bijvoorbeeld VS
+- Organisatie-eenheid voor het onderwerp (OE) = gedefinieerd, bijvoorbeeld contoso Labs
 - Onderwerp (O) rganisatie = gedefinieerd, bijvoorbeeld contoso Inc.
 
-Sleutel bestand
+**Sleutel bestand**
 
-- Het sleutel bestand dat is gegenereerd bij het maken van de CSR
-- RSA 2048bits (mini maal) of 4096bits
+- Het sleutel bestand dat is gegenereerd bij het maken van de CSR.
 
-Certificaatketen
+- RSA 2048 bits (minimum) of 4096 bits.
+
+ > [!Note]
+ > Met een sleutel lengte van 4096bits:
+ > - De SSL-Handshake aan het begin van elke verbinding is langzamer.  
+ > - Er is een toename van het CPU-gebruik tijdens de handshake. 
+
+**Certificaatketen**
 
 - Het tussenliggende certificaat bestand (indien aanwezig) dat is geleverd door uw CA
+
 - Het CA-certificaat dat het certificaat van de server heeft uitgegeven, moet eerst in het bestand staan, gevolgd door andere tot de hoofdmap. 
 - Kan Bag-kenmerken bevatten.
 
-Wachtzin
+**Wachtzin**
 
-- 1 ondersteunde sleutel
-- Setup bij het importeren van het certificaat
+- Eén sleutel wordt ondersteund.
 
-Certificaten met andere para meters werken mogelijk wel, maar kunnen niet worden ondersteund door micro soft.
+- Instellen bij het importeren van het certificaat.
+
+Certificaten met andere para meters werken mogelijk wel, maar micro soft ondersteunt deze niet.
 
 #### <a name="encryption-key-artifacts"></a>Versleutelings sleutel artefacten
 
 **. PEM – certificaat container bestand**
 
-De naam is van Privacy Enhanced Mail (PEM), een historische methode voor beveiligde e-mail berichten, maar de container waarin deze is gebruikt, en is een base64-vertaling van de x509 ASN. 1-sleutels.  
+Privacy Enhanced Mail-bestanden (PEM) zijn het algemene bestands type dat wordt gebruikt voor het beveiligen van e-mail berichten. Tegenwoordig, PEM-bestanden worden gebruikt met certificaten en gebruiken x509-ASN1-sleutels.  
 
-Gedefinieerd in RFC 1421 tot 1424: een container indeling die alleen het open bare certificaat kan bevatten (zoals bij Apache-installaties, en CA-certificaat bestanden/etc/ssl/certs), of een volledige certificaat keten met inbegrip van open bare sleutel, persoonlijke sleutel en basis certificaten kan bevatten.  
+Het container bestand is gedefinieerd in RFC 1421 tot 1424, een container indeling die alleen het open bare certificaat kan bevatten. Bijvoorbeeld Apache-installaties, een CA-certificaat, bestanden, enzovoort, SSL of certificaten. Dit kan een volledige certificaat keten zijn met inbegrip van de open bare sleutel, persoonlijke sleutel en basis certificaten.  
 
-Het kan ook een CSR coderen als de PKCS10-indeling kan worden vertaald in PEM.
+Er kan ook een CSR worden gecodeerd als de PKCS10-indeling, die kan worden vertaald in PEM.
 
 **. cert. cer. CRT: certificaat container bestand**
 
-Een. pem (of zelden) opgemaakt bestand met een andere extensie. Het wordt door Windows Verkenner herkend als een certificaat. Het. pem-bestand wordt niet herkend door Windows Verkenner.
+Een `.pem` -of `.der` opgemaakt bestand met een andere extensie. Het bestand wordt door Windows Verkenner herkend als een certificaat. Het `.pem`   bestand wordt niet herkend door Windows Verkenner.
 
 **sleutel – bestand met persoonlijke sleutel**
 
 Een sleutel bestand heeft dezelfde indeling als een PEM-bestand, maar heeft een andere extensie.
-##### <a name="use-cli-commands-to-deploy-certificates"></a>CLI-opdrachten gebruiken voor het implementeren van certificaten
 
-Gebruik de opdracht *cyberx-xsense-Certificate-import* CLI om certificaten te importeren. Als u dit hulp programma wilt gebruiken, moeten de certificaat bestanden worden geüpload naar het apparaat (met behulp van hulpprogram ma's zoals WinSCP of wget).
+#### <a name="additional-commonly-available-key-artifacts"></a>Meer algemeen beschik bare sleutel artefacten
+
+**. CSR-aanvraag voor certificaat ondertekening**.  
+
+Dit bestand wordt gebruikt voor het indienen van certificerings instanties. De werkelijke indeling is PKCS10, die is gedefinieerd in RFC 2986, en kan enkele of alle sleutel Details van het aangevraagde certificaat bevatten. Bijvoorbeeld onderwerp, organisatie en status. Het is de open bare sleutel van het certificaat dat door de CA wordt ondertekend en ontvangt een certificaat als resultaat.  
+
+Het geretourneerde certificaat is het open bare certificaat, inclusief de open bare sleutel, maar niet de persoonlijke sleutel. 
+
+**. pkcs12/pfx-profiel. pfx. p12 – wachtwoord container**. 
+
+Oorspronkelijk door RSA gedefinieerd in de Public-Key Cryptography Standards (PKCS), is de 12-variant oorspronkelijk verbeterd door micro soft en later ingediend als RFC 7292.  
+
+Voor deze container indeling is een wacht woord vereist dat zowel open bare als persoonlijke certificaat paren bevat. In tegens telling tot `.pem`   bestanden is deze container volledig versleuteld.  
+
+U kunt OpenSSL gebruiken om dit in te scha kelen in een `.pem`   bestand met zowel open bare als persoonlijke sleutels: `openssl pkcs12 -in file-to-convert.p12 -out converted-file.pem -nodes`  
+
+**. der-binary encoded PEM**.
+
+De manier om ASN. 1-syntaxis in binaire code te coderen, bevindt zich via een `.pem`   bestand, dat slechts een base64-gecodeerd `.der` bestand is. 
+
+OpenSSL kan deze bestanden converteren naar een `.pem` :  `openssl x509 -inform der -in to-convert.der -out converted.pem` .  
+
+Windows herkent deze bestanden als certificaat bestanden. Standaard exporteert Windows certificaten als `.der` geformatteerde bestanden met een andere extensie.  
+
+**. CRL: certificaat intrekkings lijst**.  
+Certificerings instanties genereren deze bestanden als een manier om certificaten te autoriseren vóór de verval datum.
+ 
+##### <a name="cli-commands"></a>CLI-opdrachten
+
+Gebruik de `cyberx-xsense-certificate-import` cli-opdracht om certificaten te importeren. Als u dit hulp programma wilt gebruiken, moet u certificaat bestanden uploaden naar het apparaat met behulp van hulpprogram ma's zoals WinSCP of wget.
 
 De opdracht ondersteunt de volgende invoer vlaggen:
 
--h de Help-syntaxis van de opdracht regel weer geven
+- `-h`: Hiermee wordt de Help-syntaxis van de opdracht regel weer gegeven.
 
---CRT-pad naar certificaat bestand (CRT-extensie)
+- `--crt`: Pad naar een certificaat bestand (. CRT-extensie).
 
---sleutel *. sleutel bestand, sleutel lengte moet mini maal 2048 bits zijn
+- `--key`:  \* . sleutel bestand. De sleutel lengte moet mini maal 2.048 bits zijn.
 
---Pad naar het certificaat keten bestand (optioneel)
+- `--chain`: Pad naar een certificaat keten bestand (optioneel).
 
---Wachtwoordzin die wordt gebruikt voor het versleutelen van het certificaat (optioneel)
+- `--pass`: Wachtwoordzin die wordt gebruikt voor het versleutelen van het certificaat (optioneel).
 
---wachtwoordzin: Stel de standaard waarde in op ONWAAR, ongebruikt. Stel deze waarde in op TRUE als u de vorige wachtwoordzin wilt gebruiken die is opgegeven met het vorige certificaat (optioneel)
+- `--passphrase-set`: Standaard = `False` , ongebruikt. Stel in `True` om de vorige wachtwoordzin te gebruiken die is opgegeven met het vorige certificaat (optioneel).
 
 Wanneer u de CLI-opdracht gebruikt:
 
 - Controleer of de certificaat bestanden kunnen worden gelezen op het apparaat.
 
-- Controleer of de domein naam en het IP-adres in het certificaat overeenkomen met de configuratie die is gepland door de IT-afdeling.
+- Controleer of de domein naam en het IP-adres in het certificaat overeenkomen met de configuratie die de IT-afdeling heeft gepland.
 
+### <a name="use-openssl-to-manage-certificates"></a>OpenSSL gebruiken voor het beheren van certificaten
+
+Beheer uw certificaten met de volgende opdrachten:
+
+| Beschrijving | CLI-opdracht |
+|--|--|
+| Een nieuwe aanvraag voor een persoonlijke sleutel en certificaat ondertekening genereren | `openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key` |
+| Een zelfondertekend certificaat maken | `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt` |
+| Een aanvraag voor certificaat ondertekening (CSR) genereren voor een bestaande persoonlijke sleutel | `openssl req -out CSR.csr -key privateKey.key -new` |
+| Een aanvraag voor certificaat ondertekening genereren op basis van een bestaand certificaat | `openssl x509 -x509toreq -in certificate.crt -out CSR.csr -signkey privateKey.key` |
+| Een wachtwoordzin uit een persoonlijke sleutel verwijderen | `openssl rsa -in privateKey.pem -out newPrivateKey.pem` |
+
+Als u de gegevens in een certificaat, CSR of persoonlijke sleutel wilt controleren, gebruikt u deze opdrachten.
+
+| Beschrijving | CLI-opdracht |
+|--|--|
+| Een aanvraag voor certificaat ondertekening controleren (CSR) | `openssl req -text -noout -verify -in CSR.csr` |
+| Een persoonlijke sleutel controleren | `openssl rsa -in privateKey.key -check` |
+| Een certificaat controleren | `openssl x509 -in certificate.crt -text -noout`  |
+
+Als er een fout bericht wordt weer gegeven dat de persoonlijke sleutel niet overeenkomt met het certificaat, of dat een certificaat dat u hebt geïnstalleerd op een site niet wordt vertrouwd, gebruikt u deze opdrachten om de fout op te lossen.
+
+| Beschrijving | CLI-opdracht |
+|--|--|
+| Een MD5-hash van de open bare sleutel controleren om ervoor te zorgen dat deze overeenkomt met wat er in een CSR of persoonlijke sleutel staat | i. `openssl x509 -noout -modulus -in certificate.crt | openssl md5` <br /> twee. `openssl rsa -noout -modulus -in privateKey.key | openssl md5` <br /> 3. `openssl req -noout -modulus -in CSR.csr | openssl md5 ` |
+
+Als u certificaten en sleutels naar verschillende indelingen wilt converteren om ze compatibel te maken met specifieke typen servers of software, gebruikt u deze opdrachten.
+
+| Beschrijving | CLI-opdracht |
+|--|--|
+| Een DER-bestand (. CRT. cer. der) converteren naar PEM  | `openssl x509 -inform der -in certificate.cer -out certificate.pem`  |
+| Een PEM-bestand converteren naar DER | `openssl x509 -outform der -in certificate.pem -out certificate.der`  |
+| Een PKCS # 12-bestand (. pfx. p12) met een persoonlijke sleutel en certificaten naar PEM converteren | `openssl pkcs12 -in keyStore.pfx -out keyStore.pem -nodes` <br />U kunt `-nocerts` alleen toevoegen om de persoonlijke sleutel uit te voeren, of `-nokeys` alleen toevoegen om de certificaten uit te voeren. |
+| Een PEM-certificaat bestand en een persoonlijke sleutel converteren naar PKCS # 12 (. pfx. p12) | `openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt` |
 
 ## <a name="connect-a-sensor-to-the-management-console"></a>Een sensor verbinden met de beheer console
 
-In deze sectie wordt beschreven hoe u verbinding tussen de sensor en de on-premises beheer console waarborgt. U moet dit doen als u in een Air-gapped-netwerk werkt en u Asset-en waarschuwings gegevens wilt verzenden naar de beheer console van de sensor. Met deze verbinding kan ook de beheer console systeem instellingen naar de sensor pushen en andere beheer taken op de sensor uitvoeren.
+In deze sectie wordt beschreven hoe u verbinding tussen de sensor en de on-premises beheer console waarborgt. Doe dit als u werkt met een Air-gapped-netwerk en u Asset-en waarschuwings gegevens wilt verzenden naar de beheer console van de sensor. Met deze verbinding kan ook de beheer console systeem instellingen naar de sensor pushen en andere beheer taken op de sensor uitvoeren.
 
 Verbinding maken:
 

@@ -1,37 +1,34 @@
 ---
-title: Azure CDN inhoud beperken per land/regio | Microsoft Docs
+title: Azure CDN inhoud beperken per land/regio
 description: Meer informatie over het beperken van toegang tot uw Azure CDN inhoud met behulp van de functie voor geo-filtering.
 services: cdn
 documentationcenter: ''
 author: asudbring
-manager: danielgi
-editor: ''
-ms.assetid: 12c17cc5-28ee-4b0b-ba22-2266be2e786a
 ms.service: azure-cdn
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: how-to
-ms.date: 06/19/2018
+ms.date: 01/16/2021
 ms.author: allensu
-ms.openlocfilehash: ed82adcc1432bde27042d5775c454bfabcdb96ca
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8901dffb752409acd7fb08a2025bed9a4cc70132
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91358131"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539476"
 ---
 # <a name="restrict-azure-cdn-content-by-countryregion"></a>Azure CDN inhoud beperken per land/regio
 
 ## <a name="overview"></a>Overzicht
-Wanneer een gebruiker uw inhoud opvraagt, wordt de inhoud standaard geleverd, ongeacht de locatie van de gebruiker die de aanvraag heeft gedaan. In sommige gevallen wilt u mogelijk de toegang tot uw inhoud beperken per land/regio. Met de functie voor *geo-filtering* kunt u regels maken voor specifieke paden op uw CDN-eind punt om inhoud in geselecteerde landen/regio's toe te staan of te blok keren.
+Wanneer een gebruiker uw inhoud aanvraagt, wordt de inhoud door gegeven aan gebruikers op alle locaties. Mogelijk wilt u de toegang tot uw inhoud beperken per land/regio. 
+
+Met de functie voor *geo-filtering* kunt u regels maken voor specifieke paden op uw CDN-eind punt. U kunt de regels voor het toestaan of blok keren van inhoud in geselecteerde landen/regio's instellen.
 
 > [!IMPORTANT]
 > **Azure CDN standaard van micro soft** -profielen biedt geen ondersteuning voor geografische filtering op basis van een pad.
 > 
 
 ## <a name="standard-profiles"></a>Standaard profielen
-De procedures in deze sectie zijn alleen voor **Azure CDN standaard van Akamai** en **Azure CDN standaard van Verizon** -profielen. 
+
+Deze instructies zijn voor **Azure CDN Standard van Akamai** en **Azure CDN Standard van Verizon** -profielen.
 
 Voor **Azure CDN Premium van Verizon** -profielen moet u de portal **beheren** gebruiken om geo-filtering te activeren. Zie [Azure CDN Premium van Verizon-profielen](#azure-cdn-premium-from-verizon-profiles)voor meer informatie.
 
@@ -63,6 +60,7 @@ Een geo-filter regel voor het blok keren van het pad */Photos/Strasbourg/* filte
  *http: \/ / \<endpoint> . azureedge.net/Photos/Strasbourg/Cathedral/1000.jpg*
 
 ### <a name="define-the-countriesregions"></a>De landen/regio's definiëren
+
 Selecteer in de lijst **land codes** de landen/regio's die u wilt blok keren of toestaan van het pad. 
 
 Wanneer u klaar bent met het selecteren van de landen/regio's, selecteert u **Opslaan** om de nieuwe geo-filter regel te activeren. 
@@ -70,31 +68,33 @@ Wanneer u klaar bent met het selecteren van de landen/regio's, selecteert u **Op
 ![Scherm opname toont de land CODES die moeten worden gebruikt om landen of regio's te blok keren of toe te staan.](./media/cdn-filtering/cdn-geo-filtering-rules.png)
 
 ### <a name="clean-up-resources"></a>Resources opschonen
+
 Als u een regel wilt verwijderen, selecteert u deze in de lijst op de pagina voor **geografische filtering** en kiest u **verwijderen**.
 
 ## <a name="azure-cdn-premium-from-verizon-profiles"></a>Azure CDN Premium van Verizon-profielen
+
 Voor **Azure CDN Premium van Verizon** -profielen is de gebruikers interface voor het maken van een geo-filter regel anders:
 
-1. Selecteer **beheren**in het bovenste menu van uw Azure CDN profiel.
+1. Selecteer **beheren** in het bovenste menu van uw Azure CDN profiel.
 
-2. Selecteer in de Verizon-Portal de optie **http large**en selecteer vervolgens **land filtering**.
+2. Selecteer in de Verizon-Portal de optie **http large** en selecteer vervolgens **land filtering**.
 
-    ![In de scherm afbeelding ziet u hoe u land filters selecteert in azure C D N.](./media/cdn-filtering/cdn-geo-filtering-premium.png)
-
+    :::image type="content" source="./media/cdn-filtering/cdn-geo-filtering-premium.png" alt-text="Scherm afbeelding laat zien hoe u land filters selecteert in Azure CDN" border="true":::
+  
 3. Selecteer **land filter toevoegen**.
 
-    De **stap een:** pagina wordt weer gegeven.
+4. Voer in **stap 1:** het mappad in. Selecteer **blok keren** of **toevoegen** en selecteer vervolgens **volgende**.
 
-4. Voer het mappad in, selecteer **blok keren** of **toevoegen**en selecteer **volgende**.
-
-    De **stap twee:** pagina wordt weer gegeven. 
-
-5. Selecteer een of meer landen/regio's in de lijst en selecteer vervolgens **volt ooien** om de regel te activeren. 
+    > [!IMPORTANT]
+    > De naam van het eind punt moet zich in het pad bevinden.  Voor beeld: **/myendpoint8675/MyFolder**.  Vervang **myendpoint8675** door de naam van uw eind punt.
+    > 
+    
+5. Selecteer in **stap twee** een of meer landen/regio's in de lijst. Selecteer **volt ooien** om de regel te activeren. 
     
     De nieuwe regel wordt weer gegeven in de tabel op de pagina **land filtering** .
-
-    ![Scherm afbeelding laat zien waar de regel wordt weer gegeven in het filteren van landen.](./media/cdn-filtering/cdn-geo-filtering-premium-rules.png)
-
+    
+    :::image type="content" source="./media/cdn-filtering/cdn-geo-filtering-premium-rules.png" alt-text="Scherm afbeelding laat zien waar de regel wordt weer gegeven in het filteren van landen." border="true":::
+ 
 ### <a name="clean-up-resources"></a>Resources opschonen
 Selecteer in de tabel filteren op land/regio het Verwijder pictogram naast een regel om deze te verwijderen of bewerk het pictogram bewerken om het te wijzigen.
 

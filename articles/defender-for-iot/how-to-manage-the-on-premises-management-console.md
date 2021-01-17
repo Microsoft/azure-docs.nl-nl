@@ -1,20 +1,20 @@
 ---
-title: De on-premises beheer console beheren
+title: De on-premises beheerconsole beheren
 description: Meer informatie over opties voor on-premises beheer console, zoals back-up en herstel, het definiëren van de hostnaam en het instellen van een proxy voor Sens oren.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/12/2020
+ms.date: 1/12/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 34efef4a01b58cc26fd1567336184837a703ade2
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 80dbad919e9446100bdeebb7cde71c147abfc8bc
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839891"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539341"
 ---
-# <a name="manage-the-on-premises-management-console"></a>De on-premises beheer console beheren
+# <a name="manage-the-on-premises-management-console"></a>De on-premises beheerconsole beheren
 
 In dit artikel worden de opties voor on-premises beheer console behandeld, zoals back-up en herstel, het activerings bestand voor het laden van een apparaat, het bijwerken van certificaten en het instellen van een proxy voor Sens oren.
 
@@ -49,9 +49,26 @@ Azure Defender voor IoT gebruikt SSL-en TLS-certificaten voor het volgende:
 
 - Voldoen aan specifieke vereisten voor certificaat en versleuteling die door uw organisatie zijn aangevraagd door het door de certificerings instantie ondertekende certificaat te uploaden.
 
-- Sta validatie toe tussen de beheer console en verbonden Sens oren en tussen een beheer console en een beheer console met hoge Beschik baarheid. Validatie wordt geëvalueerd op basis van een certificaatintrekkingslijst en de verval datum van het certificaat. *Als de validatie mislukt, wordt de communicatie tussen de beheer console en de sensor gestopt en wordt er een validatie fout weer gegeven in de console.* Deze optie is standaard ingeschakeld na de installatie.
+- Sta validatie toe tussen de beheer console en verbonden Sens oren en tussen een beheer console en een beheer console met hoge Beschik baarheid. Validatie wordt geëvalueerd op basis van een certificaatintrekkingslijst en de verval datum van het certificaat. *Als de validatie mislukt, wordt de communicatie tussen de beheer console en de sensor gestopt en wordt er een validatie fout weer gegeven in de console*. Deze optie is standaard ingeschakeld na de installatie.
 
 Regels voor door sturen van derden worden niet gevalideerd. Voor beelden zijn waarschuwings gegevens die worden verzonden naar SYSLOG, Splunk of ServiceNow; en communicatie met Active Directory.
+
+#### <a name="ssl-certificates"></a>SSL-certificaten
+
+De Defender voor IoT-sensor en de on-premises beheer console gebruiken SSL-en TLS-certificaten voor de volgende functies: 
+
+ - Beveiligde communicatie tussen gebruikers en de webconsole van het apparaat. 
+ 
+ - Veilige communicatie met de REST API op de sensor en on-premises beheer console.
+ 
+ - Beveiligde communicatie tussen Sens oren en een on-premises beheer console. 
+
+Zodra het apparaat is geïnstalleerd, wordt een lokaal zelfondertekend certificaat gegenereerd om voorlopige toegang tot de webconsole toe te staan. Enter prise SSL-en TLS-certificaten kunnen worden geïnstalleerd met behulp van het [`cyberx-xsense-certificate-import`](#cli-commands) opdracht regel programma. 
+
+ > [!NOTE]
+ > Voor integraties en doorstuur regels waarbij het apparaat de client en initiator van de sessie is, worden specifieke certificaten gebruikt en zijn deze niet gerelateerd aan de systeem certificaten.  
+ >
+ >In dergelijke gevallen worden de certificaten doorgaans van de server ontvangen of worden asymmetrische versleuteling gebruikt, waarbij een specifiek certificaat wordt opgegeven om de integratie in te stellen. 
 
 ### <a name="update-certificates"></a>Certificaten bijwerken
 
@@ -60,16 +77,19 @@ Gebruikers met beheerders rechten van de on-premises beheer console kunnen certi
 Een certificaat bijwerken:  
 
 1. Selecteer **systeem instellingen**.
+
 1. Selecteer **SSL/TLS-certificaten**.
 1. Verwijder of bewerk het certificaat en voeg een nieuwe toe.
    
    - Voeg een certificaat naam toe.
+   
    - Upload een CRT-bestand en een sleutel bestand en voer een wachtwoordzin in.
    - Upload zo nodig een PEM-bestand.
 
 De validatie-instelling wijzigen:
 
 1. Schakel de schakel optie **certificaat validatie inschakelen** in of uit.
+
 1. Selecteer **Opslaan**.
 
 Als de optie is ingeschakeld en de validatie mislukt, wordt de communicatie tussen de beheer console en de sensor gestopt en wordt er een validatie fout weer gegeven in de console.
@@ -78,25 +98,30 @@ Als de optie is ingeschakeld en de validatie mislukt, wordt de communicatie tuss
 
 De volgende certificaten worden ondersteund:
 
-- Persoonlijke en bedrijfs sleutel infrastructuur (persoonlijke PKI) 
+- Persoonlijke en bedrijfs sleutel infrastructuur (persoonlijke PKI)
+ 
 - Open bare-sleutel infrastructuur (open bare PKI) 
+
 - Lokaal gegenereerd op het apparaat (lokaal zelf ondertekend) 
 
   > [!IMPORTANT]
-  > Het is niet raadzaam om zelfondertekende certificaten te gebruiken. Deze verbinding is niet beveiligd en moet alleen worden gebruikt voor test omgevingen. De eigenaar van het certificaat kan niet worden gevalideerd en de beveiliging van uw systeem kan niet worden gehandhaafd. Zelfondertekende certificaten mogen nooit worden gebruikt voor productie netwerken.  
+  > Het is niet raadzaam om zelfondertekende certificaten te gebruiken. Dit type verbinding is niet beveiligd en moet alleen worden gebruikt voor test omgevingen. Omdat de eigenaar van het certificaat niet kan worden gevalideerd en de beveiliging van uw systeem niet kan worden gehandhaafd, moeten zelfondertekende certificaten nooit worden gebruikt voor productie netwerken.
+
+### <a name="supported-ssl-certificates"></a>Ondersteunde SSL-certificaten 
 
 De volgende para meters worden ondersteund: 
 
 **CRT voor certificaten**
 
 - Het primaire certificaat bestand voor uw domein naam
+
 - Handtekening algoritme = SHA256RSA
 - Hash-algoritme hand tekening = SHA256
 - Geldig van = geldige datum in het verleden
 - Geldig tot = geldige datum in de toekomst
 - Open bare sleutel = RSA 2048 bits (mini maal) of 4096 bits
 - CRL-distributie punt = URL naar. CRL-bestand
-- Onderwerp CN = URL, kan een certificaat met Joker tekens zijn. bijvoorbeeld www.contoso.com of \* . contoso.com
+- Onderwerp CN = URL, kan een certificaat met Joker tekens zijn. bijvoorbeeld: sensor. contoso. <span> com of *. contoso. <span> com
 - Onderwerp (C) ountry = gedefinieerd, bijvoorbeeld VS
 - Organisatie-eenheid (OE) van het onderwerp = gedefinieerd; bijvoorbeeld: contoso Labs
 - Onderwerp (O) rganisatie = gedefinieerd; bijvoorbeeld contoso Inc
@@ -104,17 +129,25 @@ De volgende para meters worden ondersteund:
 **Sleutel bestand**
 
 - Het sleutel bestand dat is gegenereerd bij het maken van de CSR
+
 - RSA 2048 bits (mini maal) of 4096 bits
+
+ > [!Note]
+ > Met een sleutel lengte van 4096bits:
+ > - De SSL-Handshake aan het begin van elke verbinding is langzamer.  
+ > - Er is een toename van het CPU-gebruik tijdens de handshake. 
 
 **Certificaat keten**
 
 - Het tussenliggende certificaat bestand (indien aanwezig) dat is geleverd door uw CA.
+
 - Het CA-certificaat dat het certificaat van de server heeft uitgegeven, moet eerst in het bestand staan, gevolgd door andere tot de hoofdmap. 
 - De keten kan Bag-kenmerken bevatten.
 
 **Wachtzin**
 
 - Er wordt één sleutel ondersteund.
+
 - Instellen bij het importeren van het certificaat.
 
 Certificaten met andere para meters werken mogelijk wel, maar micro soft ondersteunt deze niet.
@@ -123,23 +156,51 @@ Certificaten met andere para meters werken mogelijk wel, maar micro soft onderst
 
 **. pem: certificaat container bestand**
 
-De naam is van Privacy Enhanced Mail (PEM), een historische methode voor beveiligde e-mail berichten. De container indeling is een base64-vertaling van de x509 ASN. 1-sleutels.  
+Privacy Enhanced Mail-bestanden (PEM) zijn het algemene bestands type dat wordt gebruikt voor het beveiligen van e-mail berichten. Tegenwoordig, PEM-bestanden worden gebruikt met certificaten en gebruiken x509-ASN1-sleutels.  
 
-Dit bestand is gedefinieerd in RFC 1421 tot 1424: een container indeling die alleen kan bestaan uit het open bare certificaat (zoals bij Apache-installaties, CA-certificaat bestanden en ETC SSL-certificaten). Het kan ook zijn dat een volledige certificaat keten, met inbegrip van een open bare sleutel, een persoonlijke sleutel en basis certificaten.  
+Het container bestand is gedefinieerd in RFC 1421 tot 1424, een container indeling die alleen het open bare certificaat kan bevatten. Bijvoorbeeld Apache-installaties, een CA-certificaat, bestanden, enzovoort, SSL of certificaten. Dit kan een volledige certificaat keten zijn met inbegrip van de open bare sleutel, persoonlijke sleutel en basis certificaten.  
 
-Er kan ook een CSR worden gecodeerd, omdat de PKCS10-indeling kan worden omgezet in PEM.
+Er kan ook een CSR worden gecodeerd als de PKCS10-indeling, die kan worden vertaald in PEM.
 
 **. cert. cer. CRT: certificaat container bestand**
 
-Dit is een. pem-bestand (of zelden,. der) met een andere extensie. Windows Verkenner herkent deze als een certificaat. Bestanden Verkenner herkent het. pem-bestand niet.
+Een `.pem` -of `.der` opgemaakt bestand met een andere extensie. Het bestand wordt door Windows Verkenner herkend als een certificaat. Het `.pem`   bestand wordt niet herkend door Windows Verkenner.
 
 **. key: persoonlijk sleutel bestand**
 
 Een sleutel bestand heeft dezelfde indeling als een PEM-bestand, maar heeft een andere extensie. 
 
+#### <a name="additional-commonly-available-key-artifacts"></a>Meer algemeen beschik bare sleutel artefacten
+
+**. CSR-aanvraag voor certificaat ondertekening**.  
+
+Dit bestand wordt gebruikt voor het indienen van certificerings instanties. De werkelijke indeling is PKCS10, die is gedefinieerd in RFC 2986, en kan enkele of alle sleutel Details van het aangevraagde certificaat bevatten. Bijvoorbeeld onderwerp, organisatie en status. Het is de open bare sleutel van het certificaat dat door de CA wordt ondertekend en ontvangt een certificaat als resultaat.  
+
+Het geretourneerde certificaat is het open bare certificaat, inclusief de open bare sleutel, maar niet de persoonlijke sleutel. 
+
+**. pkcs12/pfx-profiel. pfx. p12 – wachtwoord container**. 
+
+Oorspronkelijk door RSA gedefinieerd in de Public-Key Cryptography Standards (PKCS), is de 12-variant oorspronkelijk verbeterd door micro soft en later ingediend als RFC 7292.  
+
+Voor deze container indeling is een wacht woord vereist dat zowel open bare als persoonlijke certificaat paren bevat. In tegens telling tot `.pem`   bestanden is deze container volledig versleuteld.  
+
+U kunt OpenSSL gebruiken om het bestand in een `.pem`   bestand met open bare en persoonlijke sleutels in te scha kelen: `openssl pkcs12 -in file-to-convert.p12 -out converted-file.pem -nodes`  
+
+**. der-binary encoded PEM**.
+
+De manier om ASN. 1-syntaxis in binaire code te coderen, bevindt zich via een `.pem`   bestand, dat slechts een base64-gecodeerd `.der` bestand is. 
+
+OpenSSL kan deze bestanden converteren naar een `.pem` :  `openssl x509 -inform der -in to-convert.der -out converted.pem` .  
+
+Windows herkent deze bestanden als certificaat bestanden. Standaard exporteert Windows certificaten als `.der` geformatteerde bestanden met een andere extensie.
+
+**. CRL: certificaat intrekkings lijst**.  
+
+Certificerings instanties produceren deze als een manier om certificaten te autoriseren vóór de verval datum. 
+
 #### <a name="cli-commands"></a>CLI-opdrachten
 
-Gebruik de `cyberx-xsense-certificate-import` cli-opdracht om certificaten te importeren. Als u dit hulp programma wilt gebruiken, moet u certificaat bestanden uploaden naar het apparaat (met behulp van hulpprogram ma's zoals WinSCP of wget).
+Gebruik de `cyberx-xsense-certificate-import` cli-opdracht om certificaten te importeren. Als u dit hulp programma wilt gebruiken, moet u certificaat bestanden uploaden naar het apparaat met behulp van hulpprogram ma's zoals WinSCP of wget.
 
 De opdracht ondersteunt de volgende invoer vlaggen:
 
@@ -160,6 +221,41 @@ Wanneer u de CLI-opdracht gebruikt:
 - Controleer of de certificaat bestanden kunnen worden gelezen op het apparaat.
 
 - Controleer of de domein naam en het IP-adres in het certificaat overeenkomen met de configuratie die de IT-afdeling heeft gepland.
+
+### <a name="use-openssl-to-manage-certificates"></a>OpenSSL gebruiken voor het beheren van certificaten
+
+Beheer uw certificaten met de volgende opdrachten:
+
+| Beschrijving | CLI-opdracht |
+|--|--|
+| Een nieuwe aanvraag voor een persoonlijke sleutel en certificaat ondertekening genereren | `openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key` |
+| Een zelfondertekend certificaat maken | `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt` |
+| Een aanvraag voor certificaat ondertekening (CSR) genereren voor een bestaande persoonlijke sleutel | `openssl req -out CSR.csr -key privateKey.key -new` |
+| Een aanvraag voor certificaat ondertekening genereren op basis van een bestaand certificaat | `openssl x509 -x509toreq -in certificate.crt -out CSR.csr -signkey privateKey.key` |
+| Een wachtwoordzin uit een persoonlijke sleutel verwijderen | `openssl rsa -in privateKey.pem -out newPrivateKey.pem` |
+
+Als u de gegevens in een certificaat, CSR of persoonlijke sleutel wilt controleren, gebruikt u deze opdrachten.
+
+| Beschrijving | CLI-opdracht |
+|--|--|
+| Een aanvraag voor certificaat ondertekening controleren (CSR) | `openssl req -text -noout -verify -in CSR.csr` |
+| Een persoonlijke sleutel controleren | `openssl rsa -in privateKey.key -check` |
+| Een certificaat controleren | `openssl x509 -in certificate.crt -text -noout`  |
+
+Als er een fout bericht wordt weer gegeven dat de persoonlijke sleutel niet overeenkomt met het certificaat, of dat een certificaat dat u hebt geïnstalleerd op een site niet wordt vertrouwd, gebruikt u deze opdrachten om de fout op te lossen.
+
+| Beschrijving | CLI-opdracht |
+|--|--|
+| Een MD5-hash van de open bare sleutel controleren om ervoor te zorgen dat deze overeenkomt met wat er in een CSR of persoonlijke sleutel staat | i. `openssl x509 -noout -modulus -in certificate.crt | openssl md5` <br /> twee. `openssl rsa -noout -modulus -in privateKey.key | openssl md5` <br /> 3. `openssl req -noout -modulus -in CSR.csr | openssl md5 ` |
+
+Als u certificaten en sleutels naar verschillende indelingen wilt converteren om ze compatibel te maken met specifieke typen servers of software, gebruikt u deze opdrachten.
+
+| Beschrijving | CLI-opdracht |
+|--|--|
+| Een DER-bestand (. CRT. cer. der) converteren naar PEM  | `openssl x509 -inform der -in certificate.cer -out certificate.pem`  |
+| Een PEM-bestand converteren naar DER | `openssl x509 -outform der -in certificate.pem -out certificate.der`  |
+| Een PKCS # 12-bestand (. pfx. p12) met een persoonlijke sleutel en certificaten naar PEM converteren | `openssl pkcs12 -in keyStore.pfx -out keyStore.pem -nodes` <br />U kunt `-nocerts` alleen toevoegen om de persoonlijke sleutel uit te voeren, of `-nokeys` alleen toevoegen om de certificaten uit te voeren. |
+| Een PEM-certificaat bestand en een persoonlijke sleutel converteren naar PKCS # 12 (. pfx. p12) | `openssl pkcs12 -export -out certificate.pfx -inkey privateKey.key -in certificate.crt -certfile CACert.crt` |
 
 ## <a name="define-backup-and-restore-settings"></a>Instellingen voor back-up en herstel definiëren
 
@@ -299,8 +395,28 @@ Uw wachtwoord opnieuw instellen:
 > [!NOTE]
 > De sensor is gekoppeld aan het abonnement waarmee deze oorspronkelijk was verbonden. U kunt het wacht woord alleen herstellen door gebruik te maken van hetzelfde abonnement dat is gekoppeld aan.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="update-the-software-version"></a>De software versie bijwerken
+
+In de volgende procedure wordt beschreven hoe u de software versie van de on-premises beheer console bijwerkt. Het update proces duurt ongeveer 30 minuten.
+
+1. Ga naar [Azure Portal](https://portal.azure.com/).
+
+1. Ga naar Defender voor IoT.
+
+1. Ga naar de pagina **updates** .
+
+1. Selecteer een versie in de sectie on-premises beheer console.
+
+1. Selecteer **Downloaden** en sla het bestand op.
+
+1. Meld u aan bij de on-premises beheer console en selecteer **systeem instellingen** in het menu aan de zijkant.
+
+1. Selecteer in het deel venster **versie bijwerken** de optie **bijwerken**.
+
+1. Selecteer het bestand dat u hebt gedownload van de pagina Defender voor IoT- **updates** .
+
+## <a name="see-also"></a>Zie ook
 
 [Sens oren beheren vanuit de beheer console](how-to-manage-sensors-from-the-on-premises-management-console.md)
 
-[Afzonderlijke Sens oren beheren](how-to-manage-individual-sensors.md)
+[Afzonderlijke sensoren beheren](how-to-manage-individual-sensors.md)

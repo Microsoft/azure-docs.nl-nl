@@ -9,12 +9,12 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2021
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 38ddfc2d3940bb9267edd6c5c683918c1fb5dc58
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 1a1fc0ce634282ffd4fcf374138fe97a04f32062
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251694"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539591"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Een prijs categorie kiezen voor Azure Cognitive Search
 
@@ -71,7 +71,7 @@ De prijs van de laag bevat details over opslag per partitie die variëren van 2 
 
 ## <a name="billing-rates"></a>Facturerings tarieven
 
-Lagen hebben verschillende facturerings tarieven, met hogere tarieven voor lagen die worden uitgevoerd op meer dure hardware of die meer dure functies bieden. Het facturerings tarief is wat u ziet in de [Azure-prijzen pagina's](https://azure.microsoft.com/pricing/details/search/) voor elke Servicelaag van Azure Cognitive Search.
+Lagen hebben verschillende facturerings tarieven, met hogere tarieven voor lagen die worden uitgevoerd op meer dure hardware of die meer dure functies bieden. Het facturerings tarief per laag kan worden gevonden op de [Azure-prijzen pagina's](https://azure.microsoft.com/pricing/details/search/) voor Azure Cognitive Search.
 
 Zodra u een service hebt gemaakt, wordt het facturerings tarief ingesteld op de *vaste kosten* van het uitvoeren van de service rondom de klok en een *incrementele kosten* als u ervoor kiest om meer capaciteit toe te voegen.
 

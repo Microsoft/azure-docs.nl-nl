@@ -2,14 +2,14 @@
 title: Aanbevolen procedures voor het verbeteren van de prestaties met behulp van Azure Service Bus
 description: Hierin wordt beschreven hoe u Service Bus kunt gebruiken om de prestaties te optimaliseren bij het uitwisselen van brokered berichten.
 ms.topic: article
-ms.date: 11/11/2020
+ms.date: 01/15/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 6a0457537712ccb85191f320fd348446eed9b229
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 7bfff1a31365724ed1d1cb6ff1956a4e2ef4f4c0
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655625"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539432"
 ---
 # <a name="best-practices-for-performance-improvements-using-service-bus-messaging"></a>Best Practices voor prestatieverbeteringen met Service Bus Messaging
 
@@ -24,22 +24,27 @@ Met Service Bus kunnen clients berichten verzenden en ontvangen via een van de d
 2. Service Bus Messa ging Protocol (SBMP)
 3. Hypertext Transfer Protocol (HTTP)
 
-AMQP is de meest efficiënte, omdat de verbinding met Service Bus wordt onderhouden. Het implementeert ook batch verwerking en vooraf ophalen. Tenzij expliciet vermeld, gaat alle inhoud in dit artikel uit van het gebruik van AMQP of SBMP.
+AMQP is de meest efficiënte, omdat de verbinding met Service Bus wordt onderhouden. Het implementeert ook [batch verwerking](#batching-store-access) en [vooraf ophalen](#prefetching). Tenzij expliciet vermeld, gaat alle inhoud in dit artikel uit van het gebruik van AMQP of SBMP.
 
 > [!IMPORTANT]
 > De SBMP is alleen beschikbaar voor .NET Framework. AMQP is de standaard waarde voor .NET Standard.
 
 ## <a name="choosing-the-appropriate-service-bus-net-sdk"></a>De juiste Service Bus .NET SDK kiezen
-Er worden twee Azure Service Bus .NET-Sdk's ondersteund. De Api's zijn vergelijkbaar en kunnen verwarrend zijn. Raadpleeg de volgende tabel om u te helpen bij het bepalen van uw beslissing. We raden u aan de SDK van micro soft. Azure. ServiceBus te gebruiken als het nu meer moderne, uitvoerende en platformoverschrijdende compatibel is. Daarnaast ondersteunt het AMQP over websockets en maakt het deel uit van de Azure .NET SDK-verzameling van open-source projecten.
+Er zijn drie ondersteunde Azure Service Bus .NET-Sdk's. De Api's zijn vergelijkbaar en kunnen verwarrend zijn. Raadpleeg de volgende tabel om u te helpen bij het bepalen van uw beslissing. Azure. Messa ging. ServiceBus SDK is het meest recent en wij raden u aan deze over andere Sdk's te gebruiken. Zowel Azure. Messa ging. ServiceBus als micro soft. Azure. ServiceBus Sdk's zijn moderne, uitvoerende en platformoverschrijdende compatibele platformen. Daarnaast ondersteunen ze AMQP via websockets en maken ze deel uit van de Azure .NET SDK-verzameling van open-source projecten.
 
 | NuGet-pakket | Primaire naam ruimte (n) | Minimum platform (en) | Protocol(len) |
 |---------------|----------------------|---------------------|-------------|
-| <a href="https://www.nuget.org/packages/Microsoft.Azure.ServiceBus" target="_blank">Micro soft. Azure. ServiceBus <span class="docon docon-navigate-external x-hidden-focus"></span></a> | `Microsoft.Azure.ServiceBus`<br>`Microsoft.Azure.ServiceBus.Management` | .NET Core 2.0<br>.NET Framework 4.6.1<br>Mono 5,4<br>Xamarin. iOS 10,14<br>Xamarin. Mac 3,8<br>Xamarin. Android 8,0<br>Universeel Windows-platform 10.0.16299 | AMQP<br>HTTP |
-| <a href="https://www.nuget.org/packages/WindowsAzure.ServiceBus" target="_blank">WindowsAzure. ServiceBus <span class="docon docon-navigate-external x-hidden-focus"></span></a> | `Microsoft.ServiceBus`<br>`Microsoft.ServiceBus.Messaging` | .NET Framework 4.6.1 | AMQP<br>SBMP<br>HTTP |
+| [Azure. Messa ging. ServiceBus](https://www.nuget.org/packages/Azure.Messaging.ServiceBus) | `Azure.Messaging.ServiceBus`<br>`Azure.Messaging.ServiceBus.Administration` | .NET Core 2.0<br>.NET Framework 4.6.1<br>Mono 5,4<br>Xamarin. iOS 10,14<br>Xamarin. Mac 3,8<br>Xamarin. Android 8,0<br>Universeel Windows-platform 10.0.16299 | AMQP<br>HTTP |
+| [Micro soft. Azure. ServiceBus](https://www.nuget.org/packages/Azure.Messaging.ServiceBus/) | `Microsoft.Azure.ServiceBus`<br>`Microsoft.Azure.ServiceBus.Management` | .NET Core 2.0<br>.NET Framework 4.6.1<br>Mono 5,4<br>Xamarin. iOS 10,14<br>Xamarin. Mac 3,8<br>Xamarin. Android 8,0<br>Universeel Windows-platform 10.0.16299 | AMQP<br>HTTP |
+| [WindowsAzure. ServiceBus](https://www.nuget.org/packages/WindowsAzure.ServiceBus) | `Microsoft.ServiceBus`<br>`Microsoft.ServiceBus.Messaging` | .NET Framework 4.6.1 | AMQP<br>SBMP<br>HTTP |
 
 Zie [.net-implementatie ondersteuning](/dotnet/standard/net-standard#net-implementation-support)voor meer informatie over minimale .NET Standard-platform ondersteuning.
 
 ## <a name="reusing-factories-and-clients"></a>Fabrieken en clients opnieuw gebruiken
+# <a name="azuremessagingservicebus-sdk"></a>[Azure. Messa ging. ServiceBus SDK](#tab/net-standard-sdk-2)
+De Service Bus-objecten die communiceren met de service, zoals [ServiceBusClient](/dotnet/api/azure.messaging.servicebus.servicebusclient), [ServiceBusSender](/dotnet/api/azure.messaging.servicebus.servicebussender), [ServiceBusReceiver](/dotnet/api/azure.messaging.servicebus.servicebusreceiver)en [ServiceBusProcessor](/dotnet/api/azure.messaging.servicebus.servicebusprocessor), moeten worden geregistreerd voor het invoegen van afhankelijkheden als Singleton (of eenmaal en gedeeld). ServiceBusClient kan worden geregistreerd voor het injecteren van afhankelijkheden met de [ServiceBusClientBuilderExtensions](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/servicebus/Azure.Messaging.ServiceBus/src/Compatibility/ServiceBusClientBuilderExtensions.cs). 
+
+U wordt aangeraden deze objecten niet te sluiten of te verwijderen na het verzenden of ontvangen van elk bericht. Het sluiten of afstoten van de entiteit-specifieke objecten (ServiceBusSender/receiver/processor) resulteert in het ontkoppelen van de koppeling naar de Service Bus service. Als u de ServiceBusClient-resultaten onthoudt, wordt de verbinding met de Service Bus-service verwijderd. Het tot stand brengen van een verbinding is een dure bewerking die u kunt vermijden door dezelfde ServiceBusClient opnieuw te gebruiken en de vereiste entiteit-specifieke objecten van hetzelfde ServiceBusClient-exemplaar te maken. U kunt deze client objecten veilig gebruiken voor gelijktijdige asynchrone bewerkingen en uit meerdere threads.
 
 # <a name="microsoftazureservicebus-sdk"></a>[Micro soft. Azure. ServiceBus SDK](#tab/net-standard-sdk)
 
@@ -55,6 +60,27 @@ Service Bus-client objecten, zoals `QueueClient` of `MessageSender` , worden gem
 Bewerkingen zoals verzenden, ontvangen, verwijderen, enzovoort, nemen enige tijd in beslag. Deze tijd omvat de tijd die de Service Bus-service nodig heeft om de bewerking en de latentie van de aanvraag en de reactie te verwerken. Om het aantal bewerkingen per tijd te verhogen, moeten bewerkingen gelijktijdig worden uitgevoerd.
 
 De client plant gelijktijdige bewerkingen door **asynchrone** bewerkingen uit te voeren. De volgende aanvraag wordt gestart voordat de vorige aanvraag is voltooid. Het volgende code fragment is een voor beeld van een asynchrone verzend bewerking:
+
+# <a name="azuremessagingservicebus-sdk"></a>[Azure. Messa ging. ServiceBus SDK](#tab/net-standard-sdk-2)
+```csharp
+var messageOne = new ServiceBusMessage(body);
+var messageTwo = new ServiceBusMessage(body);
+
+var sendFirstMessageTask =
+    sender.SendMessageAsync(messageOne).ContinueWith(_ =>
+    {
+        Console.WriteLine("Sent message #1");
+    });
+var sendSecondMessageTask =
+    sender.SendMessageAsync(messageTwo).ContinueWith(_ =>
+    {
+        Console.WriteLine("Sent message #2");
+    });
+
+await Task.WhenAll(sendFirstMessageTask, sendSecondMessageTask);
+Console.WriteLine("All messages sent");
+
+```
 
 # <a name="microsoftazureservicebus-sdk"></a>[Micro soft. Azure. ServiceBus SDK](#tab/net-standard-sdk)
 
@@ -101,6 +127,35 @@ Console.WriteLine("All messages sent");
 ---
 
 De volgende code is een voor beeld van een asynchrone ontvangst bewerking.
+
+# <a name="azuremessagingservicebus-sdk"></a>[Azure. Messa ging. ServiceBus SDK](#tab/net-standard-sdk-2)
+
+```csharp
+var client = new ServiceBusClient(connectionString);
+var options = new ServiceBusProcessorOptions 
+{
+
+      AutoCompleteMessages = false,
+      MaxConcurrentCalls = 20
+};
+await using ServiceBusProcessor processor = client.CreateProcessor(queueName,options);
+processor.ProcessMessageAsync += MessageHandler;
+processor.ProcessErrorAsync += ErrorHandler;
+
+static Task ErrorHandler(ProcessErrorEventArgs args)
+{
+    Console.WriteLine(args.Exception);
+    return Task.CompletedTask;
+};
+
+static async Task MessageHandler(ProcessMessageEventArgs args)
+{
+Console.WriteLine("Handle message");
+      await args.CompleteMessageAsync(args.Message);
+}
+
+await processor.StartProcessingAsync();
+```
 
 # <a name="microsoftazureservicebus-sdk"></a>[Micro soft. Azure. ServiceBus SDK](#tab/net-standard-sdk)
 
@@ -168,9 +223,12 @@ Service Bus biedt geen ondersteuning voor trans acties voor het ontvangen en ver
 
 Met batch verwerking aan de client zijde kan een wachtrij of een onderwerp-client het verzenden van een bericht gedurende een bepaalde periode vertragen. Als de client aanvullende berichten verstuurt tijdens deze periode, worden de berichten in één batch verstuurd. Batch verwerking aan client zijde zorgt er ook voor dat een wachtrij of abonnements client meerdere **voltooide** aanvragen batcheert in één aanvraag. Batch verwerking is alleen beschikbaar voor asynchrone bewerkingen voor **verzenden** en **volt ooien** . Synchrone bewerkingen worden direct naar de Service Bus-service verzonden. Batch verwerking vindt niet plaats voor Peek-en ontvangst bewerkingen en er worden geen batches op clients uitgevoerd.
 
+# <a name="azuremessagingservicebus-sdk"></a>[Azure. Messa ging. ServiceBus SDK](#tab/net-standard-sdk-2)
+De functie voor batch verwerking voor de .NET Standard SDK biedt nog geen eigenschappen beschikbaar die kunnen worden bewerkt.
+
 # <a name="microsoftazureservicebus-sdk"></a>[Micro soft. Azure. ServiceBus SDK](#tab/net-standard-sdk)
 
-Met batch-functionaliteit voor de .NET Standard-SDK wordt er nog geen eigenschap weer gegeven die u kunt bewerken.
+De functie voor batch verwerking voor de .NET Standard SDK biedt nog geen eigenschappen beschikbaar die kunnen worden bewerkt.
 
 # <a name="windowsazureservicebus-sdk"></a>[WindowsAzure. ServiceBus SDK](#tab/net-framework-sdk)
 
@@ -217,6 +275,19 @@ Voor het verg Roten van de door Voer van een wachtrij, onderwerp of abonnement S
 Aanvullende archief bewerkingen die worden uitgevoerd tijdens dit interval, worden toegevoegd aan de batch. De toegang tot een batch-archief is alleen van invloed op **Verzend** -en **volledige** bewerkingen. ontvangst bewerkingen worden niet beïnvloed. De toegang tot een batch-archief is een eigenschap van een entiteit. Batch verwerking vindt plaats in alle entiteiten die de toegang tot een batch-archief inschakelen.
 
 Bij het maken van een nieuwe wachtrij, een onderwerp of een abonnement, wordt de toegang tot een batch-archief standaard ingeschakeld.
+
+
+# <a name="azuremessagingservicebus-sdk"></a>[Azure. Messa ging. ServiceBus SDK](#tab/net-standard-sdk-2)
+Als u de toegang tot de batch-Store wilt uitschakelen, hebt u een exemplaar van een nodig `ServiceBusAdministrationClient` . Maak een `CreateQueueOptions` van een wachtrij beschrijving die de `EnableBatchedOperations` eigenschap instelt op `false` .
+
+```csharp
+var options = new CreateQueueOptions(path)
+{
+    EnableBatchedOperations = false
+};
+var queue = await administrationClient.CreateQueueAsync(options);
+```
+
 
 # <a name="microsoftazureservicebus-sdk"></a>[Micro soft. Azure. ServiceBus SDK](#tab/net-standard-sdk)
 
@@ -270,6 +341,12 @@ De TTL-eigenschap (time-to-Live) van een bericht wordt gecontroleerd door de ser
 
 Het vooraf ophalen heeft geen invloed op het aantal factureer bare berichten bewerkingen en is alleen beschikbaar voor het Service Bus-client protocol. Het HTTP-protocol biedt geen ondersteuning voor het vooraf ophalen van. Het vooraf ophalen is beschikbaar voor synchrone en asynchrone ontvangst bewerkingen.
 
+# <a name="azuremessagingservicebus-sdk"></a>[Azure. Messa ging. ServiceBus SDK](#tab/net-standard-sdk-2)
+Zie de volgende eigenschappen voor meer informatie `PrefetchCount` :
+
+- [ServiceBusReceiver.PrefetchCount](/dotnet/api/azure.messaging.servicebus.servicebusreceiver.prefetchcount)
+- [ServiceBusProcessor.PrefetchCount](/dotnet/api/azure.messaging.servicebus.servicebusprocessor.prefetchcount)
+
 # <a name="microsoftazureservicebus-sdk"></a>[Micro soft. Azure. ServiceBus SDK](#tab/net-standard-sdk)
 
 Zie de volgende eigenschappen voor meer informatie `PrefetchCount` :
@@ -287,10 +364,6 @@ Zie de volgende eigenschappen voor meer informatie `PrefetchCount` :
 ---
 
 ## <a name="prefetching-and-receivebatch"></a>Vooraf ophalen en ReceiveBatch
-
-> [!NOTE]
-> Deze sectie is alleen van toepassing op de SDK WindowsAzure. ServiceBus, omdat de SDK van micro soft. Azure. ServiceBus geen batch-functies beschikbaar maakt.
-
 Hoewel de concepten van het vooraf ophalen van meerdere berichten samen een vergelijk bare semantiek hebben voor het verwerken van berichten in een batch ( `ReceiveBatch` ), zijn er enkele kleine verschillen die u moet houden wanneer u deze benaderingen samen gebruikt.
 
 Prefetch is een configuratie (of modus) op de client ( `QueueClient` en `SubscriptionClient` ) en `ReceiveBatch` is een bewerking (die een reactie op aanvraag-antwoord heeft).
@@ -309,7 +382,7 @@ Als één wachtrij of onderwerp de verwachte niet kan afhandelen, gebruikt u mee
 ## <a name="development-and-testing-features"></a>Functies voor ontwikkelen en testen
 
 > [!NOTE]
-> Deze sectie is alleen van toepassing op de SDK WindowsAzure. ServiceBus, omdat de SDK van micro soft. Azure. ServiceBus deze functionaliteit niet beschikbaar maakt.
+> Deze sectie is alleen van toepassing op de SDK WindowsAzure. ServiceBus, zoals micro soft. Azure. ServiceBus en Azure. Messa ging. ServiceBus deze functionaliteit niet beschikbaar maken.
 
 Service Bus heeft één functie, die specifiek wordt gebruikt voor ontwikkeling, die **nooit moet worden gebruikt in productie configuraties**: [`TopicDescription.EnableFilteringMessagesBeforePublishing`][TopicDescription.EnableFiltering] .
 
@@ -372,9 +445,9 @@ Volg deze richt lijnen om de door voer te maximaliseren:
 * De toegang tot de batch Store ingeschakeld laten. Deze toegang vermindert de algehele belasting van de entiteit. Het vermindert ook de algehele snelheid waarmee berichten kunnen worden geschreven naar de wachtrij of het onderwerp.
 * Stel het aantal prefetch in op een kleine waarde (bijvoorbeeld PrefetchCount = 10). Dit aantal voor komt dat ontvangers inactief zijn terwijl andere ontvangers een groot aantal berichten in de cache hebben opgeslagen.
 
-### <a name="topic-with-a-small-number-of-subscriptions"></a>Onderwerp met een klein aantal abonnementen
+### <a name="topic-with-a-few-subscriptions"></a>Onderwerp met een paar abonnementen
 
-Doel: Maximaliseer de door Voer van een onderwerp met een klein aantal abonnementen. Een bericht wordt ontvangen door veel abonnementen, wat betekent dat de gecombineerde ontvangst frequentie voor alle abonnementen groter is dan de verzend frequentie. Het aantal afzenders is klein. Het aantal ontvangers per abonnement is klein.
+Doel: Maximaliseer de door Voer van een onderwerp met een paar abonnementen. Een bericht wordt ontvangen door veel abonnementen, wat betekent dat de gecombineerde ontvangst frequentie voor alle abonnementen groter is dan de verzend frequentie. Het aantal afzenders is klein. Het aantal ontvangers per abonnement is klein.
 
 Volg deze richt lijnen om de door voer te maximaliseren:
 

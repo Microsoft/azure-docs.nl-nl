@@ -11,12 +11,12 @@ author: nibaccam
 ms.author: nibaccam
 ms.date: 08/31/2020
 ms.custom: devx-track-python, data4ml
-ms.openlocfilehash: 6d8c04e48a3d0009a152830a4ee332cd706c4b2c
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 8b73676adbb9aa12e6f3b42dd26bed94b22780a8
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93360170"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539891"
 ---
 # <a name="secure-data-access-in-azure-machine-learning"></a>Beveiligde toegang tot gegevens in Azure Machine Learning
 
@@ -42,7 +42,7 @@ Wanneer u klaar bent voor het gebruik van de gegevens in uw opslag oplossing op 
 
     1. Gebruik dit rechtstreeks in Azure Machine Learning oplossingen zoals automatische machine learning (geautomatiseerd ML) experiment, machine learning pijp lijnen of de [Azure machine learning Designer](concept-designer.md).
 
-4. Maak [gegevensset-monitors](#data-drift) voor uw model-uitvoer gegevensset om te detecteren voor gegevens drift. 
+4. Maak [gegevensset-monitors](#drift) voor uw model-uitvoer gegevensset om te detecteren voor gegevens drift. 
 
 5. Als er gegevens drift wordt gedetecteerd, werkt u uw invoer gegevensset bij en traint u uw model dienovereenkomstig opnieuw.
 
@@ -50,7 +50,8 @@ Het volgende diagram biedt een visuele demonstratie van deze aanbevolen werk str
 
 ![Diagram toont de Azure Storage-service die naar een gegevens opslag doorloopt, die in een gegevensset loopt. De gegevensset stromen naar model training, die stromen naar gegevens drift, die terugstromen naar DataSet.](./media/concept-data/data-concept-diagram.svg)
 
-## <a name="datastores"></a>Gegevensarchieven
+<a name="datastores"></a>
+## <a name="connect-to-storage-with-datastores"></a>Verbinding maken met opslag met data stores
 
 Azure Machine Learning gegevens opslag Bewaar de verbindings gegevens veilig naar uw Azure-opslag, zodat u deze niet in uw scripts hoeft te coderen. [Registreer en maak een gegevens opslag](how-to-access-data.md) om eenvoudig verbinding te maken met uw opslag account en om toegang te krijgen tot de gegevens in uw onderliggende Azure Storage-service. 
 
@@ -65,7 +66,8 @@ Ondersteunde cloud-gebaseerde opslag Services in azure die als gegevens opslag k
 + Databricks-bestandssysteem
 + Azure Database for MySQL
 
-## <a name="datasets"></a>Gegevenssets
+<a name="datasets"></a>
+## <a name="reference-data-in-storage-with-datasets"></a>Referentie gegevens in de opslag met gegevens sets
 
 Azure Machine Learning gegevens sets geen kopieën zijn van uw data. Door een gegevensset te maken, maakt u een verwijzing naar de gegevens in de opslag service, samen met een kopie van de meta gegevens ervan. 
 
@@ -105,7 +107,7 @@ Met gegevens sets kunt u een aantal machine learning taken uitvoeren via een naa
 
 <a name="label"></a>
 
-## <a name="data-labeling"></a>Gegevens labelen
+## <a name="label-data-with-data-labeling-projects"></a>Label gegevens met gegevens label projecten
 
 Het labelen van grote hoeveel heden gegevens is vaak een hoofd in machine learning projecten. Voor degenen met een computer vision-onderdeel, zoals een afbeeldings classificatie of object detectie, zijn in het algemeen duizenden afbeeldingen en de bijbehorende labels vereist.
 
@@ -115,7 +117,7 @@ Maak een [gegevens label project](how-to-create-labeling-projects.md)en uitvoer 
 
 <a name="drift"></a>
 
-## <a name="data-drift"></a>Gegevens drift
+## <a name="monitor-model-performance-with-data-drift"></a>Model prestaties bewaken met gegevens drift
 
 In de context van machine learning is gegevens drift de wijziging in model invoer gegevens die leidt tot het model leren van prestaties. Het is een van de belangrijkste redenen om de nauw keurigheid van het model te verslechteren, waardoor gegevens drift helpt bij het detecteren van prestatie problemen van modellen.
 

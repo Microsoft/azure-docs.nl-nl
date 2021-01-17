@@ -8,25 +8,13 @@ ms.topic: include
 ms.date: 04/02/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: de0cf260207747f4acb02a377819a13de8b8ba22
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e207866b61d21334bc9923d0d784b900906b0045
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96002512"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539730"
 ---
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-description](virtual-machines-disks-incremental-snapshots-description.md)]
-
-## <a name="regional-availability"></a>Regionale beschikbaarheid
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-regions](virtual-machines-disks-incremental-snapshots-regions.md)]
-
-### <a name="restrictions"></a>Beperkingen
-
-[!INCLUDE [virtual-machines-disks-incremental-snapshots-restrictions](virtual-machines-disks-incremental-snapshots-restrictions.md)]
-
-## <a name="portal"></a>Portal
-
-
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com/) en navigeer naar de schijf waarnaar u een moment opname wilt maken.
 1. Selecteer **een moment opname maken** op de schijf
 
@@ -40,7 +28,3 @@ ms.locfileid: "96002512"
 1. Selecteer **Maken**
 
     :::image type="content" source="media/virtual-machines-disks-incremental-snapshots-portal/create-incremental-snapshot-validation.png" alt-text="Afdruk. Validatie pagina voor uw moment opname, bevestig uw selecties en maak de moment opname.":::
-
-## <a name="next-steps"></a>Volgende stappen
-
-Zie [Azure-Managed disks back-ups kopiëren naar een andere regio met differentiële mogelijkheden van incrementele moment opnamen](https://github.com/Azure-Samples/managed-disks-dotnet-backup-with-incremental-snapshots)als u voorbeeld code wilt zien met behulp van de differentiële mogelijkheden van incrementele moment opnamen.

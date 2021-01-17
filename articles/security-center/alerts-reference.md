@@ -7,17 +7,17 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.devlang: na
-ms.topic: overview
+ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/11/2021
 ms.author: memildin
-ms.openlocfilehash: 75d315136a1fda78e4129203fdcd79c5446a33a3
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 1d1eef5f6fc79351921c409231ba472450571ba8
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118928"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539751"
 ---
 # <a name="security-alerts---a-reference-guide"></a>Referentiegids met beveiligingswaarschuwingen
 

@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 123b36ba854bec8b363d59bbed5e70f18da1e578
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: d9cba08e5b6650edc0decd3ff9df4060e9ad815c
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653704"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538009"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-microsoft-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Microsoft-account met behulp van Azure Active Directory B2C
 
@@ -36,14 +36,14 @@ ms.locfileid: "97653704"
 
 ## <a name="create-a-microsoft-account-application"></a>Een Microsoft-account-toepassing maken
 
-Als u een Microsoft-account als een [ID-provider](openid-connect.md) in Azure Active Directory B2C (Azure AD B2C) wilt gebruiken, moet u een toepassing maken in de Azure AD-Tenant. De Azure AD-tenant is niet dezelfde als uw Azure AD B2C-tenant. Als u nog geen Microsoft-account hebt, kunt u er een op ontvangen [https://www.live.com/](https://www.live.com/) .
+Als u aanmelden wilt inschakelen voor gebruikers met een Microsoft-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in [Azure Portal](https://portal.azure.com). Zie [Een toepassing registreren bij het Microsoft-identiteitsplatform](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) voor meer informatie. Als u nog geen Microsoft-account hebt, kunt u er een op ontvangen [https://www.live.com/](https://www.live.com/) .
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map gebruikt die uw Azure AD-tenant bevat door in het bovenste menu op het filter **Map en abonnement** te klikken en de map te kiezen waarin de Azure AD-tenant zich bevindt.
 1. Kies linksboven in de Azure Portal **Alle services**, zoek **App-registraties** en selecteer deze.
 1. Selecteer **Nieuwe registratie**.
 1. Voer een **Naam** in voor de toepassing. Bijvoorbeeld *MSAapp1*.
-1. Onder **ondersteunde account typen** selecteert u **accounts in elke organisatie Directory (een Azure AD-adres lijst en persoonlijke micro soft-accounts (bijvoorbeeld Skype, Xbox)**.
+1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatiemap (alle Azure AD-mappen - meerdere tenants) en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox).**
 
    Zie [Quick Start: een toepassing registreren bij het micro soft-identiteits platform](../active-directory/develop/quickstart-register-app.md)voor meer informatie over de verschillende selecties van het account type.
 1. Onder **omleidings-URI (optioneel)** selecteert u **Web** en voert u `https://<tenant-name>.b2clogin.com/<tenant-name>.onmicrosoft.com/oauth2/authresp` in het tekstvak in. Vervang door `<tenant-name>` de naam van uw Azure AD B2C-Tenant.
@@ -97,7 +97,7 @@ Nu u de toepassing hebt gemaakt in uw Azure AD-Tenant, moet u het client geheim 
 1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `MSASecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 1. Voer in het **geheim** het client geheim in dat u in de vorige sectie hebt vastgelegd.
 1. Selecteer voor **sleutel gebruik** `Signature` .
-1. Klik op **Maken**.
+1. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -210,7 +210,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-microsoft-identity-provider-to-a-user-flow"></a>Een micro soft-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de micro soft-ID-provider.
+1. Klik op de gebruikers stroom die u wilt toevoegen aan de micro soft-ID-provider.
 1. Selecteer **micro soft-account** onder de **id-providers voor sociale netwerken**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

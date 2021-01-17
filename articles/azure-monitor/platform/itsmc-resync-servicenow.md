@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 04/12/2020
-ms.openlocfilehash: 9a6e46c0b52c22df0682034deaebd58bbfeb34a7
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 2f0889732ac756e16465659ee2e5b52335d1148f
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210049"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539256"
 ---
 # <a name="troubleshooting-problems-in-itsm-connector"></a>Problemen oplossen in ITSM-connector
 
@@ -31,47 +31,7 @@ U kunt het incident visualiseren en gegevens wijzigen met behulp van het ITSMC-d
 
 Het dash board bevat ook informatie over de status van de connector, die u als uitgangs punt kunt gebruiken om problemen met de verbindingen te analyseren.
 
-### <a name="error-investigation-using-the-dashboard"></a>Fout onderzoek met behulp van het dash board
-
-Volg de volgende stappen om de fouten in het dash board weer te geven:
-
-1. Zoek in **alle resources** naar **Service Desk (*de naam van uw werk ruimte*)**:
-
-   ![Scherm opname van recente resources in het Azure Portal.](media/itsmc-definition/create-new-connection-from-resource.png)
-
-2. Selecteer onder **gegevens bronnen voor werk ruimte** in het linkerdeel venster **ITSM-verbindingen**:
-
-   ![Scherm opname van het menu-item ITSM-verbindingen.](media/itsmc-overview/add-new-itsm-connection.png)
-
-3. Onder **samen vatting** in het linkervak **IT Service Management-connector** selecteert u **samen vatting weer geven**:
-
-    ![Scherm opname van de weer gave-samen vatting.](media/itsmc-resync-servicenow/dashboard-view-summary.png)
-
-4. Klik onder **samen vatting** in het linkervak **IT Service Management-connector** op de grafiek:
-
-    ![Scherm opname van de weer gave van de grafiek.](media/itsmc-resync-servicenow/dashboard-graph-click.png)
-
-5. Met dit dash board kunt u de status en de fouten in uw connector controleren.
-    ![Scherm opname van de status van de connector.](media/itsmc-resync-servicenow/connector-dashboard.png)
-
-### <a name="dashboard-elements"></a>Dashboard items
-
-Het dash board bevat informatie over de waarschuwingen die zijn verzonden naar het ITSM-hulp programma met behulp van deze connector.
-Het dash board is opgesplitst in 4 onderdelen:
-
-1. Werk item gemaakt: in de grafiek en de onderstaande tabel wordt het aantal werk items per type opgenomen. Als u op de grafiek of in de tabel klikt, kunt u meer informatie over de werk items bekijken.
-    ![Scherm opname van het werk item dat wordt gemaakt.](media/itsmc-resync-servicenow/itsm-dashboard-workitems.png)
-2. Betrokken computers: de tabellen bevatten details over de configuratie-items die configuratie-items hebben gemaakt.
-    Als u op rijen in de tabellen klikt, kunt u meer informatie krijgen over de configuratie-items.
-    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
-    ![Scherm opname van de betrokken computers.](media/itsmc-resync-servicenow/itsm-dashboard-impacted-comp.png)
-3. Connector status: in de grafiek en de onderstaande tabel staan berichten over de status van de connector. Door te klikken op de grafiek op rijen in de tabel, kunt u meer informatie krijgen over de berichten van de connector status.
-    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
-    ![Scherm opname van de status van de connector.](media/itsmc-resync-servicenow/itsm-dashboard-connector-status.png)
-4. Waarschuwings regels: de tabellen bevatten de informatie over het aantal waarschuwings regels dat is gedetecteerd.
-    Als u op rijen in de tabellen klikt, kunt u meer informatie krijgen over de regels die zijn gedetecteerd.
-    De tabel bevat een beperkt aantal rijen als u wilt dat alle lijsten worden weer geven, klikt u op alles weer geven.
-    ![Scherm opname van waarschuwings regels.](media/itsmc-resync-servicenow/itsm-dashboard-alert-rules.png)
+Zie [fout onderzoek met behulp van het dash board](./itsmc-dashboard.md)voor meer informatie over het dashboard onderzoek.
 
 ### <a name="service-map"></a>Service overzicht
 

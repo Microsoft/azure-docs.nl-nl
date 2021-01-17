@@ -9,16 +9,16 @@ ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
 ms.custom: project-no-code
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 48887df0ce6228fa436cb91bfb0a3ee7aa0f6c08
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 79fcbb6d2bf10da566139b0d103a4f31930f3200
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654503"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537991"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-amazon-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Amazon-account met Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "97654503"
 
 ## <a name="create-an-app-in-the-amazon-developer-console"></a>Een app maken in de Amazon-ontwikkelaars console
 
-Als u een Amazon-account als een federatieve id-provider in Azure Active Directory B2C (Azure AD B2C) wilt gebruiken, moet u een toepassing maken in uw [Amazon-ontwikkelaars Services en-technologieën](https://developer.amazon.com). Als u nog geen Amazon-account hebt, kunt u zich aanmelden bij [https://www.amazon.com/](https://www.amazon.com/) .
+Als u aanmelden voor gebruikers met een Amazon-account in Azure Active Directory B2C (Azure AD B2C) wilt inschakelen, moet u een toepassing maken in de [Amazon-ontwikkelaars Services en-technologieën](https://developer.amazon.com). Zie [registreren voor aanmelding bij Amazon](https://developer.amazon.com/docs/login-with-amazon/register-web.html)voor meer informatie. Als u nog geen Amazon-account hebt, kunt u zich aanmelden bij [https://www.amazon.com/](https://www.amazon.com/) .
 
 > [!NOTE]  
 > Gebruik de volgende Url's in **stap 8** hieronder, waarbij u vervangt `your-tenant-name` door de naam van uw Tenant. Gebruik bij het invoeren van de naam van uw Tenant alle kleine letters, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
@@ -75,7 +75,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `AmazonSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 8. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 9. Selecteer voor **sleutel gebruik** `Signature` .
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -181,7 +181,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-amazon-identity-provider-to-a-user-flow"></a>Amazon-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de Amazon ID-provider.
+1. Klik op de gebruikers stroom waaraan u de Amazon-ID-provider wilt toevoegen.
 1. Selecteer in het geval van **sociale id-providers** **Amazon**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

@@ -5,24 +5,30 @@ ms.devlang: dotnet
 ms.topic: article
 ms.date: 01/13/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 97d89db17af9cde3afadee430b3d0c2a434e12c9
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 57192ab2ee1624cb18de832ac91c95290da727df
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210134"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539876"
 ---
 # <a name="dynamically-provision-service-bus-namespaces-and-entities"></a>Service Bus naam ruimten en entiteiten dynamisch inrichten 
 De Azure Service Bus-beheer bibliotheken kunnen Service Bus naam ruimten en entiteiten dynamisch inrichten. Zo kunt u complexe implementaties en bericht scenario's maken en kunt u programmatisch bepalen welke entiteiten moeten worden ingericht. Deze bibliotheken zijn momenteel beschikbaar voor .NET.
 
-## <a name="supported-functionality"></a>Ondersteunde functionaliteit
+## <a name="overview"></a>Overzicht
+Er zijn drie beheer bibliotheken beschikbaar waarmee u Service Bus entiteiten kunt maken en beheren. Dit zijn:
 
-* Naam ruimte maken, bijwerken, verwijderen
-* Wachtrij maken, bijwerken, verwijderen
-* Onderwerp maken, bijwerken, verwijderen
-* Abonnementen maken, bijwerken, verwijderen
+- [Azure. Messa ging. ServiceBus. Administration](#azuremessagingservicebusadministration)
+- [Micro soft. Azure. ServiceBus. Management](#microsoftazureservicebusmanagement)
+- [Microsoft.Azure.Management.ServiceBus](#microsoftazuremanagementservicebus)
 
-## <a name="azuremessagingservicebusadministration-recommended"></a>Azure. Messa ging. ServiceBus. Administration (aanbevolen)
+Al deze pakketten ondersteunen het maken, ophalen, weer geven, verwijderen, bijwerken, verwijderen en bijwerken van werk **wachtrijen, onderwerpen en abonnementen**. Maar alleen [micro soft. Azure. Management. ServiceBus](#microsoftazuremanagementservicebus) ondersteunt het maken, bijwerken, weer geven, ophalen en verwijderen van **naam ruimten**, het weer geven en opnieuw genereren van SAS-sleutels, en meer. 
+
+De bibliotheek micro soft. Azure. Management. ServiceBus werkt alleen met Azure Active Directory-verificatie (Azure AD) en biedt geen ondersteuning voor het gebruik van een connection string. Terwijl de andere twee bibliotheken (Azure. Messa ging. ServiceBus en micro soft. Azure. ServiceBus) ondersteuning bieden met behulp van een connection string voor verificatie bij de service en eenvoudiger te gebruiken. Tussen deze bibliotheken is Azure. Messa ging. ServiceBus het meest recent en we raden u aan om te gebruiken.
+
+In de volgende secties vindt u meer informatie over deze bibliotheken. 
+
+## <a name="azuremessagingservicebusadministration"></a>Azure. Messa ging. ServiceBus. Administration
 U kunt de klasse [ServiceBusAdministrationClient](/dotnet/api/azure.messaging.servicebus.administration.servicebusadministrationclient) in de naam ruimte [Azure. Messa ging. ServiceBus. Administration](/dotnet/api/azure.messaging.servicebus.administration) gebruiken voor het beheren van naam ruimten, wacht rijen, onderwerpen en abonnementen. Hier volgt de voorbeeld code. Zie voor een volledig voor beeld [ruwe voorbeeld](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/servicebus/Azure.Messaging.ServiceBus/tests/Samples/Sample07_CrudOperations.cs).
 
 ```csharp
@@ -89,7 +95,7 @@ namespace adminClientTrack2
 U kunt de klasse [ManagementClient](/dotnet/api/microsoft.azure.servicebus.management.managementclient) in de naam ruimte [micro soft. Azure. ServiceBus. Management](/dotnet/api/microsoft.azure.servicebus.management) gebruiken voor het beheren van naam ruimten, wacht rijen, onderwerpen en abonnementen. Hier volgt een voor beeld van de code: 
 
 > [!NOTE]
-> U wordt aangeraden de `ServiceBusAdministrationClient` klasse uit de `Azure.Messaging.ServiceBus.Administration` bibliotheek te gebruiken. Dit is de meest recente SDK. Zie de [eerste sectie](#azuremessagingservicebusadministration-recommended)voor meer informatie. 
+> U wordt aangeraden de `ServiceBusAdministrationClient` klasse uit de `Azure.Messaging.ServiceBus.Administration` bibliotheek te gebruiken. Dit is de meest recente SDK. Zie de [eerste sectie](#azuremessagingservicebusadministration)voor meer informatie. 
 
 ```csharp
 using System;
@@ -156,7 +162,7 @@ Om aan de slag te gaan met deze bibliotheek moet u zich verifiëren bij de servi
 
 * [Gebruik de Azure Portal om Active Directory-toepassing en Service-Principal te maken die toegang hebben tot resources](../active-directory/develop/howto-create-service-principal-portal.md)
 * [Azure PowerShell gebruiken om een service-principal te maken voor toegang tot resources](../active-directory/develop/howto-authenticate-service-principal-powershell.md)
-* [Azure CLI gebruiken om een service-principal te maken voor toegang tot resources](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)
+* [Azure CLI gebruiken om een service-principal te maken voor toegang tot resources](/cli/azure/create-an-azure-service-principal-azure-cli)
 
 Deze zelf studies bieden u een `AppId` (client-id), `TenantId` , en `ClientSecret` (verificatie sleutel), die allemaal worden gebruikt voor verificatie door de beheer bibliotheken. U moet ten minste [**Azure Service Bus gegevens eigenaar**](../role-based-access-control/built-in-roles.md#azure-service-bus-data-owner) of [**Inzender**](../role-based-access-control/built-in-roles.md#contributor) machtigingen hebben voor de resource groep waarop u wilt uitvoeren.
 

@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/17/2020
+ms.date: 01/15/2021
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 6877a82d81b46ac2ffda8d0f0bf3fb0d7b337ff3
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: c7d43a55878a07e424ce1b6f55782502c244239c
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97663593"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537941"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-idme-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een ID.me-account met behulp van Azure Active Directory B2C
 
@@ -39,7 +39,7 @@ ms.locfileid: "97663593"
 
 ## <a name="create-an-idme-application"></a>Een ID.me-toepassing maken
 
-Als u een ID.me-account als een id-provider in Azure Active Directory B2C (Azure AD B2C) wilt gebruiken, moet u een toepassing maken in [id.me Developer-Resources voor API & SDK](https://developers.id.me/). Als u nog geen ID.me-ontwikkelaars account hebt, kunt u zich aanmelden bij [https://developers.id.me/registration/new](https://developers.id.me/registration/new) .
+Als u aanmelden wilt inschakelen voor gebruikers met een ID.me-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in [id.me Developer-Resources voor API & SDK](https://developers.id.me/). Zie voor meer informatie [OAuth-integratie handleiding](https://developers.id.me/documentation/oauth/overview/kyc). Als u nog geen ID.me-ontwikkelaars account hebt, kunt u zich aanmelden bij [https://developers.id.me/registration/new](https://developers.id.me/registration/new) .
 
 1. Meld u aan bij de [id.me Developer-Resources voor API & SDK](https://developers.id.me/) met uw id.me-account referenties.
 1. Selecteer **mijn toepassingen weer geven** en selecteer **door gaan**.
@@ -62,7 +62,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `IdMeSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 8. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 9. Selecteer voor **sleutel gebruik** `Signature` .
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 

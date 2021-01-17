@@ -7,17 +7,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: b497176deff896e785387f4b64a8e66ff4d6d58e
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 5b7c6a229cfee5b543d1169b30be336cc97ba7ed
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654316"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538094"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-qq-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een QQ-account met behulp van Azure Active Directory B2C
 
@@ -31,7 +31,7 @@ ms.locfileid: "97654316"
 
 ## <a name="create-a-qq-application"></a>Een QQ-toepassing maken
 
-Als u een QQ-account wilt gebruiken als een id-provider in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Tenant waarmee deze wordt vertegenwoordigd. Als u nog geen QQ-account hebt, kunt u zich aanmelden bij [https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033) .
+Als u aanmelden wilt inschakelen voor gebruikers met een QQ-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in [QQ ontwikkelaars Portal](http://open.qq.com). Als u nog geen QQ-account hebt, kunt u zich aanmelden bij [https://ssl.zc.qq.com](https://ssl.zc.qq.com/en/index.html?type=1&ptlang=1033) .
 
 ### <a name="register-for-the-qq-developer-program"></a>Registreren voor het QQ-ontwikkelaars programma
 
@@ -83,7 +83,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `QQSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 8. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 9. Selecteer voor **sleutel gebruik** `Signature` .
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -189,7 +189,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-qq-identity-provider-to-a-user-flow"></a>QQ-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de QQ-ID-provider.
+1. Klik op de gebruikers stroom waaraan u de QQ-ID-provider wilt toevoegen.
 1. Selecteer **QQ** onder de **sociale id-providers**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

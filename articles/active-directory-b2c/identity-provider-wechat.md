@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: af840a7becb0fb2c23e01153828458ee1cfa51a1
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 1dd9af3abd723b3a7adad82f3bbb4a09fc4464f7
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654231"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538021"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-wechat-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een WeChat-account met behulp van Azure Active Directory B2C
 
@@ -33,7 +33,7 @@ ms.locfileid: "97654231"
 
 ## <a name="create-a-wechat-application"></a>Een WeChat-toepassing maken
 
-Als u een WeChat-account wilt gebruiken als een id-provider in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Tenant waarmee deze wordt vertegenwoordigd. Als u nog geen WeChat-account hebt, kunt u informatie opvragen op [https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html](https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html) .
+Als u aanmelden wilt inschakelen voor gebruikers met een WeChat-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in [WeChat Management Center](https://open.weixin.qq.com/). Als u nog geen WeChat-account hebt, kunt u informatie opvragen op [https://kf.qq.com](https://kf.qq.com/faq/161220Brem2Q161220uUjERB.html) .
 
 ### <a name="register-a-wechat-application"></a>Een WeChat-toepassing registreren
 
@@ -73,7 +73,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `WeChatSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 8. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 9. Selecteer voor **sleutel gebruik** `Signature` .
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -183,7 +183,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-wechat-identity-provider-to-a-user-flow"></a>WeChat-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de WeChat-ID-provider.
+1. Klik op de gebruikers stroom waaraan u de WeChat-ID-provider wilt toevoegen.
 1. Selecteer **WeChat** onder de **sociale id-providers**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

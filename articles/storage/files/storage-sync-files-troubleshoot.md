@@ -4,15 +4,15 @@ description: Los veelvoorkomende problemen in een implementatie op Azure File Sy
 author: jeffpatt24
 ms.service: storage
 ms.topic: troubleshooting
-ms.date: 1/13/2021
+ms.date: 1/15/2021
 ms.author: jeffpatt
 ms.subservice: files
-ms.openlocfilehash: a262c2b4351c96217001ba42e8c745f7d71c7d45
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 71de1d17731e086d012da5365fa6671bcb9e6e3b
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233896"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539241"
 ---
 # <a name="troubleshoot-azure-file-sync"></a>Problemen met Azure Files Sync oplossen
 Gebruik Azure File Sync om de bestands shares van uw organisatie in Azure Files te centraliseren, terwijl u de flexibiliteit, prestaties en compatibiliteit van een on-premises Bestands server bijhoudt. Door Azure File Sync wordt Windows Server getransformeerd in een snelle cache van uw Azure-bestandsshare. U kunt elk protocol dat beschikbaar is in Windows Server, inclusief SMB, NFS en FTPS, gebruiken voor lokale toegang tot uw gegevens. U kunt zoveel caches hebben als u nodig hebt in de hele wereld.
@@ -916,6 +916,22 @@ Deze fout treedt op omdat Azure File Sync HTTP-omleiding (status code 3xx) niet 
 | **Herstel vereist** | No |
 
 Deze fout treedt op wanneer een bewerking voor gegevens opname de time-out overschrijdt. Deze fout kan worden genegeerd als voortgang van de synchronisatie plaatsvindt (AppliedItemCount is groter dan 0). Zie [Hoe kan ik de voortgang van een huidige synchronisatie sessie controleren?](#how-do-i-monitor-the-progress-of-a-current-sync-session).
+
+<a id="-2134375814"></a>**De synchronisatie is mislukt omdat het pad naar het server eindpunt niet kan worden gevonden op de server.**  
+
+| | |
+|-|-|
+| **HRESULT** | 0x80c8027a |
+| **HRESULT (decimaal)** | -2134375814 |
+| **Fouttekenreeks** | ECS_E_SYNC_ROOT_DIRECTORY_NOT_FOUND |
+| **Herstel vereist** | Yes |
+
+Deze fout treedt op als de naam van de map die wordt gebruikt voor het pad van het server eindpunt, is gewijzigd of als deze is verwijderd. Als de naam van de map is gewijzigd, wijzigt u de naam van de map terug naar de oorspronkelijke server en start u de Storage Sync Agent-service (FileSyncSvc) opnieuw.
+
+Als de map is verwijderd, voert u de volgende stappen uit om het bestaande server eindpunt te verwijderen en een nieuw server eindpunt te maken met een nieuw pad:
+
+1. Verwijder het server eindpunt in de synchronisatie groep door de stappen te volgen die worden beschreven in [een server eindpunt verwijderen](./storage-sync-files-server-endpoint.md#remove-a-server-endpoint).
+2. Maak een nieuw server eindpunt in de synchronisatie groep door de stappen te volgen die worden beschreven in [een server eindpunt toevoegen](https://docs.microsoft.com/azure/storage/files/storage-sync-files-server-endpoint#add-a-server-endpoint).
 
 ### <a name="common-troubleshooting-steps"></a>Veelvoorkomende stappen voor probleem oplossing
 <a id="troubleshoot-storage-account"></a>**Controleer of het opslag account bestaat.**  

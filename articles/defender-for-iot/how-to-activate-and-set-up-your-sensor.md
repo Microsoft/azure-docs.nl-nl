@@ -4,15 +4,15 @@ description: In dit artikel wordt beschreven hoe u zich aanmeldt en een sensor c
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/26/2020
+ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 9305609b624a96e4d785657dfb63af6639e132c4
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 4ad1562bdd9853b6ff3c537790a54dbeab96b5b8
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840323"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538559"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Uw sensor activeren en instellen
 
@@ -65,10 +65,13 @@ Er zijn twee beveiligings niveaus beschikbaar:
 De-console ondersteunt de volgende certificaat typen:
 
 - Persoonlijke en bedrijfs sleutel infrastructuur (persoonlijke PKI)
+
 - Open bare-sleutel infrastructuur (open bare PKI)
+
 - Lokaal gegenereerd op het apparaat (lokaal zelf ondertekend) 
 
-  > BELANG rijk U wordt aangeraden niet het standaard zelfondertekende certificaat te gebruiken. Het certificaat is niet beveiligd en moet alleen worden gebruikt voor test omgevingen. De eigenaar van het certificaat kan niet worden gevalideerd en de beveiliging van uw systeem kan niet worden gehandhaafd. Gebruik deze optie nooit voor productie netwerken.
+  > [!IMPORTANT]
+  > U wordt aangeraden niet het standaard zelfondertekende certificaat te gebruiken. Het certificaat is niet beveiligd en moet alleen worden gebruikt voor test omgevingen. De eigenaar van het certificaat kan niet worden gevalideerd en de beveiliging van uw systeem kan niet worden gehandhaafd. Gebruik deze optie nooit voor productie netwerken.
 
 ### <a name="sign-in-and-activate-the-sensor"></a>Meld u aan en activeer de sensor
 
@@ -211,7 +214,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 |----|---|---|
 | Ondersteuning | :::image type="icon" source="media/concept-sensor-console-overview/support-icon-azure.png" border="false"::: | Neem contact op met [Microsoft ondersteuning](https://support.microsoft.com/) voor hulp. |
 
-### <a name="see-also"></a>Zie tevens
+### <a name="see-also"></a>Zie ook
 
 [Een sensor onboarden](getting-started.md#4-onboard-a-sensor)
 

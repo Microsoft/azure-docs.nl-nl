@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 68ffde11059de4809e519c1ac4f79503f25b0004
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 38eee59ecffa0c09403f47678e588b678e038413
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653738"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537969"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-github-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een GitHub-account met behulp van Azure Active Directory B2C
 
@@ -38,9 +38,9 @@ ms.locfileid: "97653738"
 
 ## <a name="create-a-github-oauth-application"></a>Een GitHub OAuth-toepassing maken
 
-Als u een GitHub-account wilt gebruiken als een [ID-provider](authorization-code-flow.md) in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Tenant waarmee deze wordt vertegenwoordigd. Als u nog geen GitHub-account hebt, kunt u zich aanmelden bij [https://www.github.com/](https://www.github.com/) .
+Als u aanmelden met een GitHub-account in Azure Active Directory B2C (Azure AD B2C) wilt inschakelen, moet u een toepassing maken in [github ontwikkelaars](https://github.com/settings/developers) Portal. Zie [een OAuth-app maken](https://docs.github.com/en/free-pro-team@latest/developers/apps/creating-an-oauth-app)voor meer informatie. Als u nog geen GitHub-account hebt, kunt u zich aanmelden bij [https://www.github.com/](https://www.github.com/) .
 
-1. Meld u aan bij de [github-ontwikkelaars](https://github.com/settings/developers) website met uw github-referenties.
+1. Meld u aan bij de [github-ontwikkelaar](https://github.com/settings/developers) met uw github-referenties.
 1. Selecteer **OAuth-apps** en selecteer vervolgens **nieuwe OAuth-app**.
 1. Voer een **toepassings naam** en de **URL van uw start pagina** in.
 1. Voer `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` de **URL voor de autorisatie-call back** in. Vervang `your-tenant-name` door de naam van uw Azure AD B2C-tenant. Gebruik alleen kleine letters wanneer u uw Tenant naam invoert, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C.
@@ -77,7 +77,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 1. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `GitHubSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 1. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 1. Selecteer voor **sleutel gebruik** `Signature` .
-1. Klik op **Maken**.
+1. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -218,7 +218,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-github-identity-provider-to-a-user-flow"></a>GitHub-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de GitHub-ID-provider.
+1. Klik op de gebruikers stroom waaraan u de GitHub-ID-provider wilt toevoegen.
 1. Selecteer **github** onder de **sociale id-providers**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

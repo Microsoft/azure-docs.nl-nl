@@ -1,5 +1,5 @@
 ---
-title: Azure Machine Learning data sets maken voor toegang tot gegevens
+title: Azure Machine Learning-gegevenssets maken
 titleSuffix: Azure Machine Learning
 description: Meer informatie over het maken van Azure Machine Learning gegevens sets voor het openen van de machine learning-experimenten.
 services: machine-learning
@@ -12,16 +12,14 @@ author: MayMSFT
 manager: cgronlun
 ms.reviewer: nibaccam
 ms.date: 07/31/2020
-ms.openlocfilehash: fa6cdeaa47c7fdf9e90cdab96397473d8498afa0
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 8dac15f359d8ab6c7a84bbc30dba392322e84bb5
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108701"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538185"
 ---
 # <a name="create-azure-machine-learning-datasets"></a>Azure Machine Learning-gegevenssets maken
-
-
 
 In dit artikel leert u hoe u Azure Machine Learning gegevens sets maakt om toegang te krijgen tot gegevens voor uw lokale of externe experimenten met de Azure Machine Learning python SDK. Zie het artikel over [beveiligde toegang](concept-data.md#data-workflow) als u wilt weten waar gegevens sets passen in de algehele werk stroom van Azure machine learning Data Access.
 
@@ -127,6 +125,7 @@ Als u gegevens sets in het experiment opnieuw wilt gebruiken en delen in uw werk
 > Upload bestanden uit een lokale map en maak een FileDataset in één methode met de open bare preview-methode, [upload_directory ()](/python/api/azureml-core/azureml.data.dataset_factory.filedatasetfactory?preserve-view=true&view=azure-ml-py#upload-directory-src-dir--target--pattern-none--overwrite-false--show-progress-true-). Deze methode is een [experimentele](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py#stable-vs-experimental) preview-functie en kan op elk gewenst moment worden gewijzigd. 
 > 
 >  Met deze methode worden gegevens naar uw onderliggende opslag geüpload, waardoor opslag kosten in rekening worden gebracht. 
+
 ### <a name="create-a-tabulardataset"></a>Een TabularDataset maken
 
 Gebruik de [`from_delimited_files()`](/python/api/azureml-core/azureml.data.dataset_factory.tabulardatasetfactory) methode in de `TabularDatasetFactory` klasse om bestanden te lezen in de CSV-of. TSV-indeling en om een niet-geregistreerde TabularDataset te maken. Als u een lees bewerking uitvoert van meerdere bestanden, worden de resultaten samengevoegd in één tabel weergave. 
@@ -176,7 +175,6 @@ titanic_ds.take(3).to_pandas_dataframe()
 2|3|Waar|3|Heikkinen, missen. Laina|vrouwelijk|26.0|0|0|STON/O2. 3101282|7,9250||S
 
 Als u gegevens sets wilt hergebruiken en delen in experimenten in uw werk ruimte, moet [u uw gegevensset registreren](#register-datasets).
-
 
 ## <a name="explore-data"></a>Gegevens verkennen
 

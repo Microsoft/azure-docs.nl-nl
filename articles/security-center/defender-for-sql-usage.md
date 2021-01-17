@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/23/2020
 ms.author: memildin
-ms.openlocfilehash: 3899b00038f3c12add4dbf49a7f05e07141d8606
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: c9d11f1ddc3e1dd2239bdfce9c41f58fe9e20497
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97755851"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539965"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Azure Defender voor SQL-servers op computers 
 
@@ -79,7 +79,7 @@ Beide worden hieronder beschreven.
 
 
 1. U kunt ook e-mail meldingen configureren voor beveiligings waarschuwingen. 
-    U kunt een lijst met ontvangers instellen om een e-mail melding te ontvangen wanneer Security Center waarschuwingen worden gegenereerd. Het e-mail bericht bevat een directe SK naar de waarschuwing in Azure Security Center met alle relevante informatie. Zie [e-mail meldingen instellen voor beveiligings waarschuwingen](security-center-provide-security-contact-details.md)voor meer informatie.
+    U kunt een lijst met ontvangers instellen om een e-mail melding te ontvangen wanneer Security Center waarschuwingen worden gegenereerd. Het e-mail bericht bevat een directe koppeling naar de waarschuwing in Azure Security Center met alle relevante informatie. Zie [e-mail meldingen instellen voor beveiligings waarschuwingen](security-center-provide-security-contact-details.md)voor meer informatie.
 
 
 

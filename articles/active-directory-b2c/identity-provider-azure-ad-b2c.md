@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/14/2021
+ms.date: 01/15/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit, project-no-code
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: b8be516051f8eed0649064ae0f7c29a4dde85675
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 8a0d69ea57eb5b8b2a074c37d4798a99c576ce95
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98224463"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538174"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-an-azure-ad-b2c-account-from-another-azure-ad-b2c-tenant"></a>Registratie instellen en aanmelden met een Azure AD B2C account van een andere Azure AD B2C Tenant
 
@@ -43,7 +43,7 @@ In dit artikel wordt beschreven hoe u een Federatie met een andere Azure AD B2C 
 
 ## <a name="create-an-azure-ad-b2c-application"></a>Een Azure AD B2C-toepassing maken
 
-Als u een Azure AD B2C account wilt gebruiken als een [ID-provider](openid-connect.md) in uw Azure AD B2C Tenant (bijvoorbeeld Contoso), in de andere Azure AD B2C (bijvoorbeeld fabrikam):
+Als u aanmelden wilt inschakelen voor gebruikers met een account van een andere Azure AD B2C Tenant (bijvoorbeeld fabrikam), in uw Azure AD B2C (bijvoorbeeld Contoso):
 
 1. Maak een [gebruikers stroom](tutorial-create-user-flows.md)of een [aangepast beleid](custom-policy-get-started.md).
 1. Maak vervolgens een toepassing in de Azure AD B2C, zoals beschreven in deze sectie. 

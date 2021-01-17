@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 4/22/2018
 ms.author: xujing
-ms.openlocfilehash: 43784fe2bb94d5abd012f22ed530e4631a304614
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c13203c076378e1ff8f213971466eb5f63dfc4f4
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91335983"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539171"
 ---
 # <a name="azure-hybrid-benefit-for-windows-server"></a>Azure Hybrid Benefit voor Windows Server
 Voor klanten met Software Assurance biedt Azure Hybrid Benefit voor Windows Server u de mogelijkheid om uw on-premises Windows Server-licenties te gebruiken en virtuele Windows-machines op Azure uit te voeren tegen lagere kosten. U kunt Azure Hybrid Benefit voor Windows Server gebruiken om nieuwe virtuele machines te implementeren met Windows-besturings systemen. Dit artikel gaat over de stappen voor het implementeren van nieuwe Vm's met Azure Hybrid Benefit voor Windows Server en hoe u bestaande actieve Vm's kunt bijwerken. Zie de [pagina Azure Hybrid Benefit voor Windows Server-licentie verlening](https://azure.microsoft.com/pricing/hybrid-use-benefit/)voor meer informatie over Azure Hybrid Benefit voor Windows Server-licenties en kosten besparingen.
@@ -42,10 +42,9 @@ Er zijn enkele manieren om virtuele Windows-machines te gebruiken met de Azure H
 Alle op Windows Server-besturings systemen gebaseerde installatie kopieën worden ondersteund voor Azure Hybrid Benefit voor Windows Server. U kunt installatie kopieën van het Azure-platform ondersteunen of uw eigen aangepaste installatie kopieën van Windows Server uploaden. 
 
 ### <a name="portal"></a>Portal
-Als u een virtuele machine met Azure Hybrid Benefit voor Windows Server wilt maken, gebruikt u de schakel optie in het gedeelte ' geld besparen '.
+Als u een virtuele machine met Azure Hybrid Benefit voor Windows Server wilt maken, bladert u naar de onderkant van het tabblad **basis beginselen** tijdens het maken en schakelt u het selectie vakje voor het gebruik van een bestaande Windows Server- **licentie in.** 
 
 ### <a name="powershell"></a>PowerShell
-
 
 ```powershell
 New-AzVm `
@@ -65,7 +64,7 @@ az vm create \
     --license-type Windows_Server
 ```
 
-### <a name="template"></a>Template
+### <a name="template"></a>Sjabloon
 In uw Resource Manager-sjablonen moet u een extra para meter `licenseType` opgeven. U kunt meer lezen over het [ontwerpen van Azure Resource Manager sjablonen](../../azure-resource-manager/templates/template-syntax.md)
 ```json
 "properties": {

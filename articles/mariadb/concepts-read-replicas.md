@@ -5,14 +5,14 @@ author: savjani
 ms.author: pariks
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 01/15/2021
+ms.date: 01/18/2021
 ms.custom: references_regions
-ms.openlocfilehash: c91aab2bf59f93cf897f9a1b9109172523ae4e57
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 39547e3156a684293a0624f974a8b0930f656485
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251400"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98540012"
 ---
 # <a name="read-replicas-in-azure-database-for-mariadb"></a>Leesreplica's in Azure Database for MariaDB
 
@@ -27,13 +27,13 @@ Zie de [documentatie voor MariaDB-replicatie](https://mariadb.com/kb/en/library/
 
 ## <a name="when-to-use-a-read-replica"></a>Wanneer moet u een lees replica gebruiken?
 
-De functie voor het lezen van replica's helpt bij het verbeteren van de prestaties en schaal baarheid van Lees bare werk belastingen. Leeswerkbelastingen kunnen worden geïsoleerd naar de replica's, terwijl schrijfwerkbelastingen kunnen worden omgeleid naar de hoofdserver.
+De functie voor het lezen van replica's helpt bij het verbeteren van de prestaties en schaal baarheid van Lees bare werk belastingen. Lees werkbelastingen kunnen worden geïsoleerd voor de replica's, terwijl schrijf werkbelastingen kunnen worden omgeleid naar de primaire.
 
 Een veelvoorkomend scenario is om BI-en analytische werk belastingen de Lees replica te laten gebruiken als gegevens bron voor rapportage.
 
-Omdat replica's alleen-lezen zijn, worden ze niet rechtstreeks op de Master gereduceerd. Deze functie is niet gericht op schrijfintensieve werkbelastingen.
+Omdat replica's alleen-lezen zijn, beperken ze niet rechtstreeks de overhead van de schrijf capaciteit op de primaire. Deze functie is niet gericht op schrijfintensieve werkbelastingen.
 
-De functie replica lezen maakt gebruik van asynchrone replicatie. De functie is niet bedoeld voor synchrone replicatie scenario's. Er is een meet bare vertraging tussen de bron en de replica. De gegevens op de replica worden uiteindelijk consistent met de gegevens op de Master. Gebruik deze functie voor werk belastingen die deze vertraging kunnen bevatten.
+De functie replica lezen maakt gebruik van asynchrone replicatie. De functie is niet bedoeld voor synchrone replicatie scenario's. Er is een meet bare vertraging tussen de bron en de replica. De gegevens op de replica worden uiteindelijk consistent met de gegevens op de primaire. Gebruik deze functie voor werk belastingen die deze vertraging kunnen bevatten.
 
 ## <a name="cross-region-replication"></a>Replicatie in meerdere regio's
 
@@ -44,11 +44,13 @@ U kunt een bron server in een [Azure database for MariaDB regio](https://azure.m
 [![Replica regio's lezen](media/concepts-read-replica/read-replica-regions.png)](media/concepts-read-replica/read-replica-regions.png#lightbox)
 
 ### <a name="universal-replica-regions"></a>Universele replica regio's
+
 U kunt in een van de volgende regio's een lees replica maken, ongeacht waar de bron server zich bevindt. De ondersteunde regio's voor universele replica's zijn:
 
 Australië-oost, Australië-zuidoost, Brazilië-zuid, Canada-centraal, Canada-oost, VS, Azië-oost, VS-Oost, VS-Oost 2, Japan-Oost, Japan-West, Korea-centraal, Korea-zuid, Noord-Centraal VS, Europa-noord, Zuid-Centraal VS, Zuidoost-Azië, UK-zuid, UK-west, Europa-west, VS-West, VS-West-Centraal vs.
 
 ### <a name="paired-regions"></a>Gekoppelde regio's
+
 Naast de universele replica regio's, kunt u een lees replica maken in het gekoppelde Azure-gebied van de bron server. Als u het paar van uw regio niet weet, kunt u meer informatie vinden in het [artikel gekoppelde regio's in azure](../best-practices-availability-paired-regions.md).
 
 Als u verschillende regio's replica's gebruikt voor het plannen van herstel na nood gevallen, raden we u aan om de replica in het gekoppelde gebied te maken in plaats van een van de andere regio's. Gekoppelde regio's vermijden gelijktijdige updates en geven geen prioriteiten voor fysieke isolatie en gegevens locatie.  
@@ -56,7 +58,7 @@ Als u verschillende regio's replica's gebruikt voor het plannen van herstel na n
 Er zijn echter beperkingen om rekening mee te houden: 
 
 * Regionale Beschik baarheid: Azure Database for MariaDB is beschikbaar in Frankrijk-centraal, UAE-noord en Duitsland-centraal. De gekoppelde regio's zijn echter niet beschikbaar.
-    
+
 * Uni-directionele paren: sommige Azure-regio's zijn in slechts één richting gekoppeld. Deze regio's omvatten West-India, Brazilië-zuid en US Gov-Virginia. 
    Dit betekent dat een bron server in West-India een replica kan maken in India-zuid. Een bron server in India-zuid kan echter geen replica maken in West-India. Dit komt doordat de secundaire regio van West-India India-zuid is, India-zuid maar de secundaire regio van het westen is niet West-India.
 
@@ -110,7 +112,7 @@ Meer informatie over het [stoppen van replicatie naar een replica](howto-read-re
 
 ## <a name="failover"></a>Failover
 
-Er is geen automatische failover tussen bron-en replica servers. 
+Er is geen automatische failover tussen bron-en replica servers.
 
 Omdat replicatie asynchroon is, is er sprake van een vertraging tussen de bron en de replica. De hoeveelheid vertraging kan worden beïnvloed door een aantal factoren, zoals hoe zwaar de werk belasting die wordt uitgevoerd op de bron server en de latentie tussen data centers. In de meeste gevallen varieert replicavertraging tussen enkele seconden en een paar minuten. U kunt uw werkelijke replicatie vertraging bijhouden met behulp van de metrische *replica vertraging*, die beschikbaar is voor elke replica. Met deze metriek wordt de tijd weer gegeven sinds de laatste geplayte trans actie. U wordt aangeraden om te bepalen wat uw gemiddelde vertraging is door uw replica vertraging te bestuderen gedurende een bepaalde periode. U kunt een waarschuwing instellen voor replica vertraging, zodat u actie kunt ondernemen als deze buiten het verwachte bereik komt.
 
@@ -119,13 +121,13 @@ Omdat replicatie asynchroon is, is er sprake van een vertraging tussen de bron e
 
 Nadat u hebt vastgesteld dat u een failover naar een replica wilt,
 
-1. Replicatie naar de replica stoppen<br/>
+1. Stop de replicatie naar de replica.
 
-   Deze stap is nodig om de replica-server in staat te stellen schrijf bewerkingen te accepteren. Als onderdeel van dit proces wordt de replica server ontkoppeld van de Master. Nadat u de replicatie stoppen hebt gestart, duurt het back-end doorgaans ongeveer twee minuten. Zie de sectie [Replicatie stoppen](#stop-replication) in dit artikel voor meer informatie over de implicaties van deze actie.
+   Deze stap is nodig om de replica-server in staat te stellen schrijf bewerkingen te accepteren. Als onderdeel van dit proces wordt de replica server ontkoppeld van de primaire. Nadat u de replicatie stoppen hebt gestart, duurt het back-end doorgaans ongeveer twee minuten. Zie de sectie [Replicatie stoppen](#stop-replication) in dit artikel voor meer informatie over de implicaties van deze actie.
 
-2. Uw toepassing naar de (voormalige) replica laten wijzen
+2. Ga naar de (voormalige) replica van uw toepassing.
 
-   Elke server heeft een unieke connection string. Werk uw toepassing bij zodat deze verwijst naar de (voormalige) replica in plaats van het hoofd bestand.
+   Elke server heeft een unieke connection string. Werk uw toepassing bij zodat deze verwijst naar de (voormalige) replica in plaats van de primaire.
 
 Nadat uw toepassing Lees-en schrijf bewerkingen heeft verwerkt, hebt u de failover voltooid. De uitval tijd van uw toepassings ervaring is afhankelijk van wanneer u een probleem detecteert en de stappen 1 en 2 hierboven uitvoert.
 
@@ -148,10 +150,10 @@ Er wordt een lees replica gemaakt als een nieuwe Azure Database for MariaDB-serv
 
 ### <a name="replica-configuration"></a>Replica configuratie
 
-Een replica wordt gemaakt met behulp van dezelfde server configuratie als de Master. Nadat een replica is gemaakt, kunnen verschillende instellingen onafhankelijk van de bron server worden gewijzigd: generatie van compute, vCores, opslag, back-up van Bewaar periode en Engine versie van MariaDB. De prijs categorie kan ook onafhankelijk worden gewijzigd, met uitzonde ring van of van de Basic-laag.
+Een replica wordt gemaakt met behulp van dezelfde server configuratie als de primaire. Nadat een replica is gemaakt, kunnen verschillende instellingen onafhankelijk van de bron server worden gewijzigd: generatie van compute, vCores, opslag, back-up van Bewaar periode en Engine versie van MariaDB. De prijs categorie kan ook onafhankelijk worden gewijzigd, met uitzonde ring van of van de Basic-laag.
 
 > [!IMPORTANT]
-> Voordat een configuratie van een bronserver wordt bijgewerkt naar nieuwe waarden, moet u de configuratie van de replica bijwerken naar gelijke of hogere waarden. Met deze actie wordt ervoor gezorgd dat in de replica alle wijzigingen worden doorgevoerd die in de hoofdserver zijn aangebracht.
+> Voordat een configuratie van een bronserver wordt bijgewerkt naar nieuwe waarden, moet u de configuratie van de replica bijwerken naar gelijke of hogere waarden. Met deze actie zorgt u ervoor dat de replica alle wijzigingen kan aanbrengen die zijn aangebracht in de primaire.
 
 Firewall regels en parameter instellingen worden overgenomen van de bron server naar de replica wanneer de replica wordt gemaakt. Daarna zijn de regels van de replica onafhankelijk.
 
@@ -172,20 +174,21 @@ Gebruikers op de bron server worden gerepliceerd naar de Lees replica's. U kunt 
 Om problemen met de synchronisatie van gegevens en mogelijk verlies of beschadiging van gegevens te voorkomen, worden bepaalde serverparameters vergrendeld zodat ze niet kunnen worden bijgewerkt bij gebruik van replica's voor lezen.
 
 De volgende server parameters zijn vergrendeld op de bron-en replica servers:
-- [`innodb_file_per_table`](https://mariadb.com/kb/en/library/innodb-system-variables/#innodb_file_per_table) 
-- [`log_bin_trust_function_creators`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#log_bin_trust_function_creators)
+
+* [`innodb_file_per_table`](https://mariadb.com/kb/en/library/innodb-system-variables/#innodb_file_per_table) 
+* [`log_bin_trust_function_creators`](https://mariadb.com/kb/en/library/replication-and-binary-log-system-variables/#log_bin_trust_function_creators)
 
 De [`event_scheduler`](https://mariadb.com/kb/en/library/server-system-variables/#event_scheduler) para meter is vergrendeld op de replica servers.
 
-Als u een van de bovenstaande para meters op de bron server wilt bijwerken, verwijdert u de replica servers, werkt u de parameter waarde op de Master bij en maakt u de replica's opnieuw.
+Als u een van de bovenstaande para meters op de bron server wilt bijwerken, verwijdert u de replica servers, werkt u de parameter waarde op de primaire en maakt u de replica's opnieuw.
 
 ### <a name="other"></a>Anders
 
-- Het maken van een replica van een replica wordt niet ondersteund.
-- In-Memory tabellen kunnen ertoe leiden dat replica's niet meer synchroon zijn. Dit is een beperking van de MariaDB-replicatie technologie.
-- Zorg ervoor dat de bron Server tabellen primaire sleutels hebben. Het ontbreken van primaire sleutels kan leiden tot replicatie latentie tussen de bron en de replica's.
+* Het maken van een replica van een replica wordt niet ondersteund.
+* In-Memory tabellen kunnen ertoe leiden dat replica's niet meer synchroon zijn. Dit is een beperking van de MariaDB-replicatie technologie.
+* Zorg ervoor dat de bron Server tabellen primaire sleutels hebben. Het ontbreken van primaire sleutels kan leiden tot replicatie latentie tussen de bron en de replica's.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Meer informatie over [het maken en beheren van Lees replica's met behulp van de Azure Portal](howto-read-replicas-portal.md)
-- Meer informatie over [het maken en beheren van Lees replica's met behulp van Azure CLI en rest API](howto-read-replicas-cli.md)
+* Meer informatie over [het maken en beheren van Lees replica's met behulp van de Azure Portal](howto-read-replicas-portal.md)
+* Meer informatie over [het maken en beheren van Lees replica's met behulp van Azure CLI en rest API](howto-read-replicas-cli.md)

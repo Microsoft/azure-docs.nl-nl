@@ -8,12 +8,12 @@ ms.date: 10/12/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 063ef6b76e031277d93297512e16d30a86aae45c
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
+ms.openlocfilehash: b1bd437da50ae5989e46ac5c5f881b28b0e99703
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97808518"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539904"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Ondersteunde systemen Azure IoT Edge
 
@@ -81,7 +81,7 @@ De systemen die in de volgende tabel worden vermeld, worden beschouwd als compat
 | [CentOS 7.5](https://wiki.centos.org/Manuals/ReleaseNotes/CentOS7.1804) | ![CentOS + AMD64](./media/tutorial-c-module/green-check.png) | ![CentOS + ARM32v7](./media/tutorial-c-module/green-check.png) | ![CentOS + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Debian 8](https://www.debian.org/releases/jessie/) | ![Debian 8 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 8 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 8 + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Debian 9](https://www.debian.org/releases/stretch/) | ![Debian 9 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 9 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 9 + ARM64](./media/tutorial-c-module/green-check.png) |
-| [Debian 10](https://www.debian.org/releases/buster/) <sup>1</sup> | ![Debian 10 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Debian 10](https://www.debian.org/releases/buster/) | ![Debian 10 + AMD64](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Debian 10 + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Inge sloten Linux Flex-besturings systeem voor docenten](https://www.mentor.com/embedded-software/linux/mel-flex-os/) | ![Mentor embedded Linux Flex OS + AMD64](./media/tutorial-c-module/green-check.png) | ![Met begeleiding embedded Linux Flex OS + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Met begeleiding embedded Linux Flex OS + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Het universeel-besturings systeem van mentor embedded Linux](https://www.mentor.com/embedded-software/linux/mel-omni-os/) | ![Mentor embedded Linux universeel OS + AMD64](./media/tutorial-c-module/green-check.png) |  | ![Mentor embedded Linux universeel OS + ARM64](./media/tutorial-c-module/green-check.png) |
 | [RHEL 7.5](https://access.redhat.com/documentation/en-us/red_hat_enterprise_linux/7/html/7.5_release_notes/index) | ![RHEL 7,5 + AMD64](./media/tutorial-c-module/green-check.png) | ![RHEL 7,5 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![RHEL 7,5 + ARM64](./media/tutorial-c-module/green-check.png) |
@@ -89,16 +89,10 @@ De systemen die in de volgende tabel worden vermeld, worden beschouwd als compat
 | [Ubuntu 18.04](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes) | ![Ubuntu 18,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 18,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 18,04 + ARM64](./media/tutorial-c-module/green-check.png) |
 | [Wind River 8](https://docs.windriver.com/category/os-wind_river_linux) | ![Wind stroom 8 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
 | [Yocto](https://www.yoctoproject.org/) | ![Yocto + AMD64](./media/tutorial-c-module/green-check.png) | ![Yocto + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Yocto + ARM64](./media/tutorial-c-module/green-check.png) |
-| Raspberry Pi OS Buster <sup>1</sup> |  | ![Raspberry Pi OS Buster + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Raspberry Pi OS Buster + ARM64](./media/tutorial-c-module/green-check.png) |
-| [Ubuntu 20,04 <sup>2</sup>](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes) | ![Ubuntu 20,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 20,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 20,04 + ARM64](./media/tutorial-c-module/green-check.png) |
+| Raspberry Pi OS Buster |  | ![Raspberry Pi OS Buster + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Raspberry Pi OS Buster + ARM64](./media/tutorial-c-module/green-check.png) |
+| [Ubuntu 20,04 <sup>1</sup>](https://wiki.ubuntu.com/FocalFossa/ReleaseNotes) | ![Ubuntu 20,04 + AMD64](./media/tutorial-c-module/green-check.png) | ![Ubuntu 20,04 + ARM32v7](./media/tutorial-c-module/green-check.png) | ![Ubuntu 20,04 + ARM64](./media/tutorial-c-module/green-check.png) |
 
-<sup>1</sup> Debian 10-systemen, waaronder RASPBERRY Pi OS Buster, gebruiken een versie van OpenSSL die IOT Edge niet ondersteunt. Gebruik de volgende opdracht om een eerdere versie te installeren voordat u IoT Edge installeert:
-
-```bash
-sudo apt-get install libssl1.1
-```
-
-<sup>2</sup> de Debian 9-pakketten van de [Azure IOT Edge releases opslag plaats](https://github.com/Azure/azure-iotedge/releases) moeten van het vak werken met Ubuntu 20,04.
+<sup>1</sup> de Debian 9-pakketten van de [Azure IOT Edge releases opslag plaats](https://github.com/Azure/azure-iotedge/releases) moeten van het vak werken met Ubuntu 20,04.
 
 ## <a name="releases"></a>Releases
 

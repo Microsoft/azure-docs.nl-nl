@@ -1,28 +1,28 @@
 ---
 title: De Azure speech CLI
 titleSuffix: Azure Cognitive Services
-description: De speech CLI is een opdracht regel programma voor het gebruik van de spraak service zonder code te schrijven. De spraak-CLI vereist een minimale installatie, en het is eenvoudig om meteen te experimenteren met de belangrijkste functies van de speech-service om te zien of aan uw gebruiks aanvragen kan worden voldaan.
+description: De speech CLI is een opdracht regel programma voor het gebruik van de spraak service zonder code te schrijven. Voor de spraak-CLI zijn minimale instellingen vereist. het is gemakkelijk om meteen te experimenteren met de belangrijkste functies van de speech-service om te zien of aan uw gebruiks aanvragen kan worden voldaan.
 services: cognitive-services
 author: trevorbye
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: speech-service
 ms.topic: conceptual
-ms.date: 04/14/2020
+ms.date: 01/13/2021
 ms.author: trbye
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6b852186834fba858e8a049a8230b38f3d69164d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8f1e5f38e97a1b51a2d919deebbdc452e9daf993
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88067423"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539776"
 ---
 # <a name="what-is-the-speech-cli"></a>Wat is de Speech-CLI?
 
 De speech CLI is een opdracht regel programma voor het gebruik van de spraak service zonder code te schrijven. Voor de spraak-CLI zijn minimale instellingen vereist. het is gemakkelijk om meteen te experimenteren met de belangrijkste functies van de speech-service om te zien of aan uw gebruiks aanvragen kan worden voldaan. Binnen enkele minuten kunt u eenvoudige test werk stromen uitvoeren zoals batch Speech-Recognition van een map met bestanden, of tekst-naar-spraak op een verzameling teken reeksen uit een bestand. Naast eenvoudige werk stromen is de speech CLI gereed voor productie en kan deze worden uitgebreid om grotere processen uit te voeren met geautomatiseerde `.bat` of shell-scripts.
 
-Het meren deel van de primaire functies in de Speech SDK is beschikbaar in de speech CLI en sommige geavanceerde functies en aanpassingen zijn vereenvoudigd in de speech-CLI. Houd rekening met de volgende richt lijnen om te bepalen wanneer u de speech CLI of de Speech SDK wilt gebruiken.
+De meeste functies in de Speech-SDK zijn beschikbaar in de speech CLI en sommige geavanceerde functies en aanpassingen zijn vereenvoudigd in de spraak-CLI. Houd rekening met de volgende richt lijnen om te bepalen wanneer u de speech CLI of de Speech SDK wilt gebruiken.
 
 Gebruik de speech CLI wanneer:
 * U wilt experimenteren met functies van de spraak service met minimale setup en zonder code
@@ -44,9 +44,10 @@ Gebruik de Speech SDK wanneer:
 
 ## <a name="get-started"></a>Aan de slag
 
-Zie het [artikel basis beginselen](spx-basics.md)om aan de slag te gaan met de spraak-cli. In dit artikel leest u hoe u enkele basis opdrachten uitvoert, en ziet u ook iets meer geavanceerde opdrachten voor het uitvoeren van batch bewerkingen voor spraak naar tekst en tekst naar spraak. Na het lezen van het artikel over de basis beginselen moet u voldoende kennis hebben van de syntaxis om te beginnen met het schrijven van enkele aangepaste opdrachten, of het automatiseren van eenvoudige spraak service bewerkingen.
+Raadpleeg de [Snelstartgids](spx-basics.md)om aan de slag te gaan met de spraak-cli. In dit artikel leest u hoe u enkele basis opdrachten uitvoert, en ziet u ook iets meer geavanceerde opdrachten voor het uitvoeren van batch bewerkingen voor spraak naar tekst en tekst naar spraak. Na het lezen van het artikel over de basis beginselen moet u voldoende kennis hebben van de syntaxis om te beginnen met het schrijven van enkele aangepaste opdrachten, of het automatiseren van eenvoudige spraak service bewerkingen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Basis beginselen van spraak-CLI](spx-basics.md)
-- Als uw gebruiks voorbeeld complexer is, kunt u [de spraak-SDK downloaden](speech-sdk.md)
+- Aan de slag met de [Snelstartgids voor spraak-cli](spx-basics.md)
+- [Uw gegevens archief configureren](./spx-data-store-configuration.md)
+- Meer informatie over het [uitvoeren van batch bewerkingen met de spraak-cli](./spx-batch-operations.md)

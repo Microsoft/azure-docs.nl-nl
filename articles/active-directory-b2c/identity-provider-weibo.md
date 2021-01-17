@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 24e267b66d11cb3c5ca2b70ed09b7acb3653da99
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 36b7618fbacc18ec506f12eabc642246d3148ce0
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653602"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537913"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-weibo-account-using-azure-active-directory-b2c"></a>Stel registratie in en meld u aan met een Weibo-account met behulp van Azure Active Directory B2C
 
@@ -32,7 +32,7 @@ ms.locfileid: "97653602"
 
 ## <a name="create-a-weibo-application"></a>Een Weibo-toepassing maken
 
-Als u een Weibo-account wilt gebruiken als een id-provider in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Tenant waarmee deze wordt vertegenwoordigd. Als u nog geen Weibo-account hebt, kunt u zich aanmelden bij [https://weibo.com/signup/signup.php?lang=en-us](https://weibo.com/signup/signup.php?lang=en-us) .
+Als u aanmelden wilt inschakelen voor gebruikers met een Weibo-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in [Weibo ontwikkelaars Portal](https://open.weibo.com/). Als u nog geen Weibo-account hebt, kunt u zich aanmelden bij [https://weibo.com](https://weibo.com/signup/signup.php?lang=en-us) .
 
 1. Meld u aan bij de [Weibo-ontwikkelaars Portal](https://open.weibo.com/) met uw Weibo-account referenties.
 1. Nadat u zich hebt aangemeld, selecteert u uw weergave naam in de rechter bovenhoek.
@@ -85,7 +85,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `WeiboSecret`. Het voor voegsel `B2C_1A_` wordt automatisch toegevoegd aan de naam van uw sleutel.
 8. Voer in het **geheim** uw client geheim in dat u eerder hebt vastgelegd.
 9. Selecteer voor **sleutel gebruik** `Signature` .
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -263,7 +263,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-weibo-identity-provider-to-a-user-flow"></a>Weibo-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de Weibo-ID-provider.
+1. Klik op de gebruikers stroom waaraan u de Weibo-ID-provider wilt toevoegen.
 1. Selecteer **Weibo** onder de **sociale id-providers**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

@@ -5,13 +5,13 @@ author: mksuni
 ms.author: sumuth
 ms.service: mariadb
 ms.topic: conceptual
-ms.date: 01/15/2021
-ms.openlocfilehash: b0f0ee9477a84dc198ea3fb48b2ed81be10ea9c5
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/18/2021
+ms.openlocfilehash: ac7019abab1aefaee95c155e34fbc0cb551b4d94
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251876"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538428"
 ---
 # <a name="understanding-the-changes-in-the-root-ca-change-for-azure-database-for-mariadb"></a>Informatie over de wijzigingen in de basis-CA-wijziging voor Azure Database for MariaDB
 
@@ -19,6 +19,9 @@ Azure Database for MariaDB het basis certificaat voor de client toepassing/het s
 
 >[!NOTE]
 > Op basis van de feedback van klanten hebben we de afschaffing van het basis certificaat uitgebreid voor onze bestaande Baltimore-basis certificerings instantie van oktober 26, 2020 tot en met 15 februari 2021. We hopen dat deze uitbrei ding voldoende lever tijd biedt voor onze gebruikers om de client wijzigingen te implementeren als ze worden beïnvloed.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ## <a name="what-update-is-going-to-happen"></a>Wat gebeurt er met de update?
 
@@ -69,7 +72,7 @@ Volg de onderstaande stappen om te voor komen dat de beschik baarheid van uw toe
 
   - Voor .NET-gebruikers (MariaDB Connector/NET, MariaDBConnector) moet u ervoor zorgen dat **BaltimoreCyberTrustRoot** en **DigiCertGlobalRootG2** beide bestaan in Windows-certificaat archief, vertrouwde basis certificerings instanties. Als er geen certificaten bestaan, importeert u het ontbrekende certificaat.
 
-    ![Azure Database for MariaDB .net-certificaat](media/overview/netconnecter-cert.png)
+    [![Azure Database for MariaDB .net-certificaat](media/overview/netconnecter-cert.png)](media/overview/netconnecter-cert.png#lightbox)
 
   - Voor .NET-gebruikers op Linux met behulp van SSL_CERT_DIR, moet u ervoor zorgen dat **BaltimoreCyberTrustRoot** en **DigiCertGlobalRootG2** beide bestaan in de map die wordt aangegeven door SSL_CERT_DIR. Als er geen certificaten bestaan, maakt u het ontbrekende certificaat bestand.
 
@@ -80,10 +83,10 @@ Volg de onderstaande stappen om te voor komen dat de beschik baarheid van uw toe
    (Root CA1: BaltimoreCyberTrustRoot.crt.pem)
    -----END CERTIFICATE-----
    -----BEGIN CERTIFICATE-----
-    (Root CA2: DigiCertGlobalRootG2.crt.pem)
+   (Root CA2: DigiCertGlobalRootG2.crt.pem)
    -----END CERTIFICATE-----
    ```
-   
+
 - Vervang het oorspronkelijke PEM-bestand van de basis-CA door het gecombineerde basis-CA-bestand en start de toepassing/client opnieuw.
 - Nadat het nieuwe certificaat op de server is geïmplementeerd, kunt u in de toekomst het PEM-bestand van de CA wijzigen in DigiCertGlobalRootG2. CRT. pem.
 
@@ -150,11 +153,7 @@ Omdat deze update een wijziging aan de client zijde is, moet u ook de wijziginge
 
 ### <a name="12-if-im-using-data-in-replication-do-i-need-to-perform-any-action"></a>12. als ik gegevens replicatie gebruik, moet ik dan elke actie uitvoeren?
 
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
->
-
-*   Als de gegevens replicatie van een virtuele machine (on-premises of Azure virtual machine) naar Azure Database for MySQL is, moet u controleren of SSL wordt gebruikt om de replica te maken. Voer de **status van slave weer geven** uit en controleer de volgende instelling.
+- Als de gegevens replicatie van een virtuele machine (on-premises of Azure virtual machine) naar Azure Database for MySQL is, moet u controleren of SSL wordt gebruikt om de replica te maken. Voer de **status van slave weer geven** uit en controleer de volgende instelling.
 
     ```azurecli-interactive
     Master_SSL_Allowed            : Yes
@@ -177,6 +176,7 @@ Als u [gegevens replicatie](concepts-data-in-replication.md) gebruikt om verbind
   Master_SSL_Cipher             :
   Master_SSL_Key                : ~\azure_mysqlclient_key.pem
   ```
+
   Als het certificaat wordt weer gegeven voor de CA_file, SSL_Cert en SSL_Key, moet u het bestand bijwerken door het [nieuwe certificaat](https://cacerts.digicert.com/DigiCertGlobalRootG2.crt.pem)toe te voegen.
 
 - Als de gegevens replicatie tussen twee Azure Database for MySQL ligt, moet u de replica opnieuw instellen door het **aanroepen van MySQL.az_replication_change_master** uit te voeren en het nieuwe dubbele basis certificaat als laatste para meter op te geven [master_ssl_ca](howto-data-in-replication.md#link-the-source-and-replica-servers-to-start-data-in-replication).

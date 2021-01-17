@@ -1,7 +1,7 @@
 ---
 title: Versie beheer van gegevensset
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het beste versie nummer van uw gegevens sets en hoe versie beheer werkt met machine learning pijp lijnen.
+description: Lees hoe u versie machine learning gegevens sets en hoe versie beheer werkt met machine learning pijp lijnen.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -11,14 +11,14 @@ ms.reviewer: nibaccam
 ms.date: 03/09/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 7eb8010853ba370f4502b6bc155c6a098e64965b
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 3290574b26abe544c8c749165e22bef41a83ecf3
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133443"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538161"
 ---
-# <a name="version-and-track-datasets-in-experiments"></a>Versie gegevens sets in experimenten bijhouden
+# <a name="version-and-track-azure-machine-learning-datasets"></a>Versie en bijhouden van Azure Machine Learning gegevens sets
 
 In dit artikel leert u hoe u Azure Machine Learning gegevens sets voor reproduceer baarheid kunt versie en bijhouden. Het versie beheer van de gegevensset is een manier om de status van uw gegevens te blad maken, zodat u een specifieke versie van de gegevensset kunt Toep assen voor toekomstige experimenten.
 

@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-mongo
 ms.topic: troubleshooting
 ms.date: 07/15/2020
 ms.author: chrande
-ms.openlocfilehash: 06a06d275ba6f5ded475ffd693ee61e7a72b9516
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 26097408d0b83b043f4a25183146c892fc4b48ad
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127699"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538556"
 ---
 # <a name="troubleshoot-common-issues-in-azure-cosmos-dbs-api-for-mongodb"></a>Veelvoorkomende problemen met de API van Azure Cosmos DB voor MongoDB oplossen
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -36,7 +36,7 @@ In het volgende artikel worden veelvoorkomende fouten en oplossingen voor implem
 | 67 | CannotCreateIndex | Kan de aanvraag voor het maken van een index niet volt ooien. | Maxi maal 500 enkelvoudige veld indexen kunnen in een container worden gemaakt. Er kunnen Maxi maal acht velden worden opgenomen in een samengestelde index (samengestelde indexen worden ondersteund in versie 3.6 +). |
 | 115 | CommandNotSupported | De gevraagde aanvraag wordt niet ondersteund. | Meer informatie vindt u in de fout. Als deze functionaliteit belang rijk is voor uw implementaties, laat u ons weten door een ondersteunings ticket te maken in het [Azure Portal](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). |
 | 11000 | DuplicateKey | De Shard-sleutel (Azure Cosmos DB partitie sleutel) van het document dat u invoegt, bevindt zich al in de verzameling of een unieke index veld beperking is geschonden. | Gebruik de functie update () om een bestaand document bij te werken. Als de beperking voor het unieke index veld is geschonden, moet u het document invoegen of bijwerken met een veld waarde die nog niet in de Shard/partitie bestaat. |
-| 16500 | TooManyRequests  | Het totale aantal verbruikte aanvraageenheden is groter dan de ingerichte aanvraageenheidsnelheid voor de verzameling en is beperkt. | Overweeg de aan een container of een set containers toegewezen doorvoer te schalen vanuit de Azure-portal, of probeer de bewerking opnieuw uit te voeren. Als u SSR (nieuwe poging voor server zijde) inschakelt, probeert Azure Cosmos DB automatisch opnieuw de aanvragen uit te voeren die vanwege deze fout zijn mislukt. |
+| 16500 | TooManyRequests  | Het totale aantal verbruikte aanvraageenheden is groter dan de ingerichte aanvraageenheidsnelheid voor de verzameling en is beperkt. | Overweeg de aan een container of een set containers toegewezen doorvoer te schalen vanuit de Azure-portal, of probeer de bewerking opnieuw uit te voeren. Als u SSR (nieuwe poging voor server zijde) [inschakelt](prevent-rate-limiting-errors.md) , probeert Azure Cosmos DB automatisch opnieuw de aanvragen uit te voeren die vanwege deze fout zijn mislukt. |
 | 16501 | ExceededMemoryLimit | Als multi tenant service heeft de bewerking de geheugen toewijzing van de client overschreden. | Verklein het bereik van de bewerking via meer beperkende query criteria of neem contact op met de ondersteuning van de [Azure Portal](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade). Voorbeeld: `db.getCollection('users').aggregate([{$match: {name: "Andy"}}, {$sort: {age: -1}}]))` |
 | 40324 | De naam van de pijplijn fase wordt niet herkend. | De naam van het stadium in uw aggregatie pijplijn aanvraag is niet herkend. | Zorg ervoor dat alle namen van de aggregatie pijplijnen geldig zijn in uw aanvraag. |
 | - | Problemen met wire-versies van MongoDB | De oudere versies van MongoDB-Stuur Programma's kunnen de naam van het Azure Cosmos-account in de verbindings reeksen niet detecteren. | Voeg *AppName = @**AccountName** @* toe aan het einde van de API van uw Cosmos DB voor MongoDb Connection String, waarbij ***AccountName*** de naam van uw Cosmos DB-account is. |

@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 01/05/2021
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 129809a83bcebdcf80b05a7300dd9acf862e5886
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 92c5850c3e8c6db63bb5f6287078d2b0345a051c
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900396"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538031"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-salesforce-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Sales Force-account met behulp van Azure Active Directory B2C
 
@@ -37,7 +37,7 @@ ms.locfileid: "97900396"
 
 ## <a name="create-a-salesforce-application"></a>Een Sales Force-toepassing maken
 
-Als u een Sales Force-account wilt gebruiken in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Sales Force- **App-Manager**. Zie voor meer informatie [basis instellingen voor verbonden apps configureren](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm)en [OAuth-instellingen voor API-integratie inschakelen](https://help.salesforce.com/articleView?id=connected_app_create_api_integration.htm)
+Als u aanmelden wilt inschakelen voor gebruikers met een Sales Force-account in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Sales Force- [App-Manager](https://login.salesforce.com/). Zie voor meer informatie [basis instellingen voor verbonden apps configureren](https://help.salesforce.com/articleView?id=connected_app_create_basics.htm)en [OAuth-instellingen voor API-integratie inschakelen](https://help.salesforce.com/articleView?id=connected_app_create_api_integration.htm)
 
 1. [Meld u aan bij Sales Force](https://login.salesforce.com/).
 1. Selecteer in het menu de optie **Setup**.
@@ -93,7 +93,7 @@ Als u een Sales Force-account wilt gebruiken in Azure Active Directory B2C (Azur
 
 U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vastgelegd.
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Zorg ervoor dat u de map gebruikt die uw Azure AD B2C-Tenant bevat. Selecteer het filter **Directory + abonnement** in het bovenste menu en kies de map die uw Tenant bevat.
 3. Kies **Alle services** linksboven in de Azure Portal, zoek **Azure AD B2C** en selecteer deze.
 4. Selecteer op de pagina overzicht **identiteits ervaring-Framework**.
@@ -210,7 +210,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-salesforce-identity-provider-to-a-user-flow"></a>Een Sales Force-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de Sales Force-ID-provider.
+1. Klik op de gebruikers stroom die u wilt toevoegen van de Sales Force-ID-provider.
 1. Selecteer **Sales Force** onder de **providers voor sociale identificatie**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

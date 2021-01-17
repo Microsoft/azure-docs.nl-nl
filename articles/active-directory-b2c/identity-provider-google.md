@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: c8b942e66a76bcc3a095f9bd3d40b44bf4217e50
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 286f4f5ca8a18a67da2ac24beb4c6935de35778d
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97584881"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538100"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-google-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Google-account met behulp van Azure Active Directory B2C
 
@@ -37,7 +37,7 @@ ms.locfileid: "97584881"
 
 ## <a name="create-a-google-application"></a>Een Google-toepassing maken
 
-Als u een Google-account als een [ID-provider](authorization-code-flow.md) in Azure Active Directory B2C (Azure AD B2C) wilt gebruiken, moet u een toepassing maken in uw Google developers-console. Als u nog geen Google-account hebt, kunt u zich aanmelden bij [https://accounts.google.com/SignUp](https://accounts.google.com/SignUp) .
+Als u aanmelden voor gebruikers met een Google-account in Azure Active Directory B2C (Azure AD B2C) wilt inschakelen, moet u een toepassing maken in [Google developers-console](https://console.developers.google.com/). Zie [OAuth 2,0 instellen](https://support.google.com/googleapi/answer/6158849)voor meer informatie. Als u nog geen Google-account hebt, kunt u zich aanmelden bij [https://accounts.google.com/SignUp](https://accounts.google.com/SignUp) .
 
 1. Meld u aan bij de [Google developers-console](https://console.developers.google.com/) met uw Google-account referenties.
 1. Selecteer in de linkerbovenhoek van de pagina de project lijst en selecteer vervolgens **Nieuw project**.
@@ -189,7 +189,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-google-identity-provider-to-a-user-flow"></a>Google ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de Google ID-provider.
+1. Klik op de gebruikers stroom die u wilt toevoegen aan de Google ID-provider.
 1. Selecteer **Google** in het kader van de **sociale id-providers**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

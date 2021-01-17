@@ -14,12 +14,12 @@ ms.topic: how-to
 ms.date: 06/12/2018
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 43718f8ebc851f27035f2999bfb4ff3ec12ca5b4
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 7bbd54ed68863a4704319a25af96b6463ad2377b
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021959"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539701"
 ---
 # <a name="create-an-azure-cdn-endpoint"></a>Een Azure CDN-eind punt maken
 In dit artikel worden alle instellingen beschreven voor het maken van een [Azure Content Delivery Network (CDN)-](cdn-overview.md) eind punt in een bestaand CDN-profiel. Nadat u een profiel en een eind punt hebt gemaakt, kunt u beginnen met het leveren van inhoud aan uw klanten. Voor een Snelstartgids voor het maken van een profiel en een eind punt, Zie [Quick Start: een Azure CDN profiel en een eind punt maken](cdn-create-new-endpoint.md).
@@ -97,7 +97,7 @@ Meld u met uw Azure-account aan bij het [Azure Portal](https://portal.azure.com)
     Het eindpunt is niet onmiddellijk beschikbaar voor gebruik, aangezien het enige tijd vergt om de registratie door te geven: 
     - Voor profielen van **Azure CDN Standard van Microsoft** is het doorgeven gewoonlijk binnen 10 minuten voltooid. 
     - Profielen van **Azure CDN Standard van Akamai** worden doorgaans binnen één minuut doorgegeven. 
-    - Profielen van **Azure CDN Standard van Verizon** en **Azure CDN Premium van Verizon** worden doorgaans binnen 90 minuten doorgegeven, maar in sommige gevallen kan dit langer duren. 
+    - Voor **Azure CDN standaard van Verizon** en **Azure CDN Premium van Verizon** -profielen, wordt de doorgifte doorgaans binnen 30 minuten voltooid. 
    
     Als u de CDN-domein naam probeert te gebruiken voordat de eindpunt configuratie is door gegeven aan de POP-servers (Point-of-Presence), ontvangt u mogelijk een HTTP 404-reactie status. Als het enige uur is nadat u uw eind punt hebt gemaakt en u nog steeds een 404-reactie status ontvangt, raadpleegt u [troubleshooting Azure CDN-eind punten die een 404-status code retour neren](cdn-troubleshoot-endpoint.md).
 

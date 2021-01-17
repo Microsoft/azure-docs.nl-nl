@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 37fc33ae8084a2b4e99e7b5dc417eac70060eef5
-ms.sourcegitcommit: 66479d7e55449b78ee587df14babb6321f7d1757
+ms.openlocfilehash: 02c3890a9aca03d9d79b55098297174401cab37d
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97516200"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537955"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-facebook-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een Facebook-account met Azure Active Directory B2C
 
@@ -36,7 +36,7 @@ ms.locfileid: "97516200"
 
 ## <a name="create-a-facebook-application"></a>Een Facebook-toepassing maken
 
-Als u een Facebook-account wilt gebruiken als een [ID-provider](authorization-code-flow.md) in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Tenant waarmee deze wordt vertegenwoordigd. Als u nog geen Facebook-account hebt, kunt u zich aanmelden bij [https://www.facebook.com/](https://www.facebook.com/) .
+Als u het aanmelden voor gebruikers met een Facebook-account in Azure Active Directory B2C (Azure AD B2C) wilt inschakelen, moet u een toepassing maken in het [dash board app dashboard](https://developers.facebook.com/). Zie [app-ontwikkeling](https://developers.facebook.com/docs/development)voor meer informatie. Als u nog geen Facebook-account hebt, kunt u zich aanmelden bij [https://www.facebook.com/](https://www.facebook.com/) .
 
 1. Meld u aan bij [Facebook for developers](https://developers.facebook.com/) (Facebook voor ontwikkelaars) met de referenties van uw Facebook-account.
 1. Als u dit nog niet hebt gedaan, moet u zich registreren als Facebook-ontwikkelaar. Als u dit wilt doen, selecteert u **Get Started** in de rechter bovenhoek van de pagina, accepteert u het beleid van Facebook en voert u de registratiestappen uit.
@@ -93,7 +93,7 @@ Als u een Facebook-account wilt gebruiken als een [ID-provider](authorization-co
 ## <a name="add-facebook-identity-provider-to-a-user-flow"></a>Facebook-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de Facebook-ID-provider.
+1. Klik op de gebruikers stroom die u wilt toevoegen aan de Facebook-ID-provider.
 1. Selecteer in de **providers voor sociale identificatie** de optie **Facebook**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

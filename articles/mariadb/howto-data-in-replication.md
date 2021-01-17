@@ -5,13 +5,13 @@ author: savjani
 ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
-ms.date: 01/15/2021
-ms.openlocfilehash: 5ebae41e68633eb10959c56011dd71952f9564bd
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/18/2021
+ms.openlocfilehash: 67e4da13d6954342b9979eb57a35c812cb63bb3e
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250414"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539998"
 ---
 # <a name="configure-data-in-replication-in-azure-database-for-mariadb"></a>Replicatie van inkomende gegevens configureren in Azure Database for MariaDB
 
@@ -23,6 +23,9 @@ Bekijk de [beperkingen en vereisten](concepts-data-in-replication.md#limitations
 
 > [!NOTE]
 > Als uw bron Server versie 10,2 of nieuwer is, raden we u aan om Replicatie van inkomende gegevens in te stellen met behulp van de [algemene trans actie-id](https://mariadb.com/kb/en/library/gtid/).
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ## <a name="create-a-mariadb-server-to-use-as-a-replica"></a>Een MariaDB-server maken om te gebruiken als replica
 
@@ -40,10 +43,6 @@ Bekijk de [beperkingen en vereisten](concepts-data-in-replication.md#limitations
 3. Voeg het IP-adres van de bron server toe aan de firewall regels van de replica. 
 
    Firewallregels bijwerken met de [Azure-portal](howto-manage-firewall-portal.md) of [Azure CLI](howto-manage-firewall-cli.md).
-
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
->
 
 ## <a name="configure-the-source-server"></a>De bron server configureren
 
@@ -95,7 +94,7 @@ In de volgende stappen wordt de MariaDB-server die on-premises, in een VM of in 
 
 3. Schakel binaire logboek registratie in.
 
-    Voer de volgende opdracht in om te controleren of binaire logboek registratie is ingeschakeld op de Master:
+    Als u wilt zien of binaire logboek registratie is ingeschakeld op de primaire, voert u de volgende opdracht in:
 
    ```sql
    SHOW VARIABLES LIKE 'log_bin';

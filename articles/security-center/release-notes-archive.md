@@ -7,17 +7,17 @@ author: memildin
 manager: rkarlin
 ms.service: security-center
 ms.devlang: na
-ms.topic: conceptual
+ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/07/2020
 ms.author: memildin
-ms.openlocfilehash: 835950cc68ca22ea3958d614d669d7a105fefe62
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 751ee19225e7e550f368fff2415cd07f25b02d25
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132916"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539933"
 ---
 # <a name="archive-for-whats-new-in-azure-security-center"></a>Wilt u archiveren wat er nieuw is in Azure Security Center?
 
@@ -692,7 +692,7 @@ De aanbeveling van Azure Security Center voor het oplossen van beveiligings prob
 Als u uw ingeschakelde beveiligings beleid wilt bekijken, opent u de pagina beveiligings beleid vanuit Security Center.
 
 
-## <a name="august-2019"></a>augustus 2019
+## <a name="august-2019"></a>Augustus 2019
 
 De updates in augustus zijn onder meer:
 

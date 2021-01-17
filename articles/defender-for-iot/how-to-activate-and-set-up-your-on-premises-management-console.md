@@ -1,20 +1,20 @@
 ---
-title: Uw on-premises beheer console activeren en instellen
+title: Uw on-premises beheerconsole activeren en instellen
 description: Activering en installatie van de beheer console zorgen ervoor dat Sens oren zijn geregistreerd bij Azure en informatie verzenden naar de on-premises beheer console, en dat de on-premises beheer console Beheer taken uitvoert op verbonden Sens oren.
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/24/2020
+ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 56092d61e1eed4e4ebe4f8cb7f97d01e91e8543e
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: d344b3d9ea54243d61cc6a1f3f0982eb5ab1d238
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97841331"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538580"
 ---
-# <a name="activate-and-set-up-your-on-premises-management-console"></a>Uw on-premises beheer console activeren en instellen 
+# <a name="activate-and-set-up-your-on-premises-management-console"></a>Uw on-premises beheerconsole activeren en instellen 
 
 Activering en installatie van de on-premises beheer console zorgt ervoor dat:
 
@@ -51,7 +51,7 @@ Na de eerste activering overschrijdt het aantal bewaakte apparaten het aantal to
 
 ## <a name="set-up-a-certificate"></a>Een certificaat instellen
 
-Na de installatie van de-beheer console wordt een lokaal zelfondertekend certificaat gegenereerd dat wordt gebruikt om toegang te krijgen tot de console. Wanneer een beheerder zich voor de eerste keer aanmeldt bij de beheer console, wordt de gebruiker gevraagd een SSL/TLS-certificaat in te voegen. We raden u aan om te werken met een vertrouwd CA-ondertekend certificaat en het lokaal gegenereerde zelfondertekende certificaat niet te gebruiken.
+Na de installatie van de-beheer console wordt een lokaal zelfondertekend certificaat gegenereerd dat wordt gebruikt om toegang te krijgen tot de console. Wanneer een beheerder zich voor de eerste keer aanmeldt bij de beheer console, wordt de gebruiker gevraagd een SSL/TLS-certificaat in te voegen. 
 
 Er zijn twee beveiligings niveaus beschikbaar:
 
@@ -61,7 +61,9 @@ Er zijn twee beveiligings niveaus beschikbaar:
 De-console ondersteunt de volgende typen certificaten:
 
 - Persoonlijke en bedrijfs sleutel infrastructuur (persoonlijke PKI)
+
 - Open bare-sleutel infrastructuur (open bare PKI)
+
 - Lokaal gegenereerd op het apparaat (lokaal zelf ondertekend) 
 
   > [!IMPORTANT]
@@ -314,6 +316,6 @@ De toewijzing van een sensor opheffen en verwijderen:
 
 3. Als u de niet-toegewezen sensor van de site wilt verwijderen, selecteert u de sensor in de lijst met niet-toegewezen Sens oren en selecteert u :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/delete-icon.png" border="false"::: .
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
-[Problemen met de sensor en on-premises beheer console oplossen](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md)
+[Problemen met de sensor en on-premises beheerconsole oplossen](how-to-troubleshoot-the-sensor-and-on-premises-management-console.md)

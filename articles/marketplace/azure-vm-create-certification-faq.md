@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: troubleshooting
 author: iqshahmicrosoft
 ms.author: iqshah
-ms.date: 10/19/2020
-ms.openlocfilehash: 921c05b76640935a1bd9e65d556933c23093e5b2
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/15/2021
+ms.openlocfilehash: 8c2739503f00848b1515f2061c2a9aa250c091a3
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251434"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539859"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -22,7 +22,6 @@ In dit artikel worden veelvoorkomende fout berichten voor het publiceren van VM-
 
 > [!NOTE]
 > Als u vragen hebt over dit artikel of suggesties voor verbetering, kunt u contact opnemen met de [ondersteuning van partner Center](https://aka.ms/marketplacepublishersupport).
-
 
 ## <a name="vm-extension-failure"></a>VM-extensie fout
 
@@ -60,12 +59,12 @@ Het inrichtings probleem kan de volgende fout scenario's omvatten:
 |1|Ongeldige virtuele harde schijf (VHD)|Als de opgegeven cookie waarde in de voet tekst van de VHD onjuist is, wordt de VHD als ongeldig beschouwd.|Maak de installatie kopie opnieuw en verzend de aanvraag.|
 |2|Ongeldig BLOB-type|Het inrichten van de VM is mislukt omdat het gebruikte blok een BLOB-type in plaats van een pagina Type is.|Maak de installatie kopie opnieuw en verzend de aanvraag.|
 |3|Time-out voor inrichten of niet juist gegeneraliseerd|Er is een probleem met VM-generalisatie.|Maak de installatie kopie opnieuw met generalisatie en verzend de aanvraag.|
+|
 
 > [!NOTE]
 > Zie voor meer informatie over VM-generalisatie:
 > - [Linux-documentatie](azure-vm-create-using-approved-base.md#generalize-the-image)
 > - [Windows-documentatie](../virtual-machines/windows/capture-image-resource.md#generalize-the-windows-vm-using-sysprep)
-
 
 ## <a name="vhd-specifications"></a>VHD-specificaties
 
@@ -93,7 +92,7 @@ Controlesom|4
 Unieke id|16
 Opgeslagen status|1
 Gereserveerd|427
-
+|
 
 ### <a name="vhd-specifications"></a>VHD-specificaties
 
@@ -139,6 +138,7 @@ De volgende tabel geeft een lijst van de Linux-test cases die door de Toolkit wo
 |8|Interval van client Alive|Stel ' ClientAliveInterval in op 180. Op basis van de toepassing kan deze worden ingesteld op 30 tot 235. Als u de SSH inschakelt voor uw eind gebruikers, moet deze waarde worden ingesteld zoals wordt uitgelegd.|
 |9|Architectuur van besturingssysteem|Alleen 64-bits besturingssystemen worden ondersteund.|
 |10|Automatisch bijwerken|Hiermee wordt aangegeven of automatisch bijwerken van de Linux-agent is ingeschakeld.|
+|
 
 ### <a name="common-test-case-errors"></a>Veelvoorkomende test case fouten
 
@@ -150,7 +150,7 @@ Raadpleeg de volgende tabel voor veelvoorkomende fouten bij het uitvoeren van te
 | 2 | Test case voor bash geschiedenis | Er treedt een fout op als de grootte van de bash-geschiedenis in uw verzonden afbeelding meer dan 1 kilo byte (KB) is. De grootte is beperkt tot 1 KB om ervoor te zorgen dat uw bash-geschiedenis bestand geen mogelijk gevoelige informatie bevat. | Los het probleem op door de VHD te koppelen aan een andere werkende VM en wijzigingen aan te brengen om de grootte te verkleinen tot 1 KB of minder. Verwijder bijvoorbeeld de `.bash` geschiedenis bestanden. |
 | 3 | Vereiste test case voor de kernel-para meter | U ontvangt deze fout melding als de waarde voor `console` niet is ingesteld op `ttyS0` . Controleer door de volgende opdracht uit te voeren: <br /> `cat /proc/cmdline` | Stel de waarde voor `console` in op `ttyS0` en verzend de aanvraag opnieuw. |
 | 4 | Test case ClientAlive-interval | Als de Toolkit een mislukt resultaat voor deze test case krijgt, is er een onjuiste waarde voor `ClientAliveInterval` . | Stel de waarde `ClientAliveInterval` in op kleiner dan of gelijk aan 235 en verzend de aanvraag vervolgens opnieuw. |
-
+|
 
 ### <a name="windows-test-cases"></a>Test cases van Windows
 
@@ -175,8 +175,9 @@ De volgende tabel geeft een lijst van de Windows-test cases die de Toolkit moet 
 |15|SNMP-services|De functie Services van Simple Network Management Protocol (SNMP) wordt nog niet ondersteund. De toepassing mag niet afhankelijk zijn van deze functie.|
 |16|Windows Internet Name Service|Windows Internet Name Service. Deze server functie wordt nog niet ondersteund. De toepassing mag niet afhankelijk zijn van deze functie.|
 |17|WLAN-service (Wireless LAN)|Draadloze LAN-service. Deze server functie wordt nog niet ondersteund. De toepassing mag niet afhankelijk zijn van deze functie.|
+|
 
-Als u problemen ondervindt met de voor gaande test cases, raadpleegt u de kolom **Beschrijving** in de tabel voor de oplossing. Neem contact op met het ondersteunings team voor meer informatie. 
+Als u problemen ondervindt met de voor gaande test cases, raadpleegt u de kolom **Beschrijving** in de tabel voor de oplossing. Neem contact op met het ondersteunings team voor meer informatie.
 
 ## <a name="data-disk-size-verification"></a>Verificatie van de grootte van de gegevens schijf
 
@@ -192,6 +193,7 @@ Raadpleeg de volgende regels voor beperkingen op de schijf grootte van het bestu
 |---|---|
 |Linux|1 GB tot 1023 GB|
 |Windows|30 GB tot 250 GB|
+|
 
 Omdat Vm's toegang bieden tot het onderliggende besturings systeem, moet u ervoor zorgen dat de VHD groot genoeg is voor de VHD. Schijven zijn niet uitbreidbaar zonder uitval tijd. Gebruik een schijf grootte van 30 GB tot 50 GB.
 
@@ -199,6 +201,7 @@ Omdat Vm's toegang bieden tot het onderliggende besturings systeem, moet u ervoo
 |---|---|---|
 |>500 tebibytes (TiB)|n.v.t.|Neem contact op met het ondersteunings team voor een uitzonderings goedkeuring.|
 |250-500 TiB|>200 gibibytes (GiB) verschilt van de grootte van de BLOB|Neem contact op met het ondersteunings team voor een uitzonderings goedkeuring.|
+|
 
 > [!NOTE]
 > Grotere schijf grootten leiden tot hogere kosten en veroorzaken een vertraging tijdens de installatie en het replicatie proces. Als gevolg van deze vertraging en kosten kan het ondersteunings team een reden voor de goed keuring van uitzonde ringen zoeken.
@@ -209,7 +212,7 @@ Als u een mogelijke aanval met betrekking tot het WannaCry-virus wilt voor komen
 
 U kunt de versie van het installatie kopie bestand controleren vanuit `C:\windows\system32\drivers\srv.sys` of `srv2.sys` .
 
-De volgende tabel bevat de minimale versie van Windows Server met patches: 
+De volgende tabel bevat de minimale versie van Windows Server met patches:
 
 |Besturingssysteem|Versie|
 |---|---|
@@ -218,6 +221,7 @@ De volgende tabel bevat de minimale versie van Windows Server met patches:
 |Windows Server 2012 R2|6.3.9600.18604|
 |Windows Server 2016|10.0.14393.953|
 |Windows Server 2019|NA|
+|
 
 > [!NOTE]
 > Windows Server 2019 heeft geen verplichte versie vereisten.
@@ -230,8 +234,8 @@ Werk de kernel bij met een goedgekeurde versie en verzend de aanvraag opnieuw. U
 
 Als uw installatie kopie niet is geïnstalleerd met een van de volgende kernel-versies, werkt u deze bij met de juiste patches. De benodigde goed keuring van het ondersteunings team aanvragen nadat de installatie kopie is bijgewerkt met de volgende vereiste patches:
 
-- CVE-2019-11477 
-- CVE-2019-11478 
+- CVE-2019-11477
+- CVE-2019-11478
 - CVE-2019-11479
 
 |BESTURINGSSYSTEEM familie|Versie|Kernel|
@@ -278,6 +282,7 @@ Als uw installatie kopie niet is geïnstalleerd met een van de volgende kernel-v
 ||uitrekken (beveiliging)|4.9.168-1 + deb9u3|
 ||Debian GNU/Linux 10 (Buster)|Debian 6.3.0-18 + deb9u1|
 ||Buster, sid (stretch backports)|4.19.37-5|
+|
 
 ## <a name="image-size-should-be-in-multiples-of-megabytes"></a>De grootte van de installatie kopie moet in meerdere mega bytes staan
 
@@ -303,7 +308,7 @@ Uw aanvraag met een door SSH uitgeschakelde afbeelding verzenden voor het certif
 3. Verzend uw certificerings aanvraag opnieuw.
 
 ## <a name="download-failure"></a>Fout bij het downloaden
-    
+
 Raadpleeg de volgende tabel voor problemen die zich voordoen wanneer u de VM-installatie kopie downloadt met een SAS-URL (Shared Access Signature).
 
 |Scenario|Fout|Reden|Oplossing|
@@ -314,12 +319,13 @@ Raadpleeg de volgende tabel voor problemen die zich voordoen wanneer u de VM-ins
 |4|Ongeldige hand tekening|De bijbehorende SAS-URL voor de VHD is onjuist.|Haal de juiste SAS-URL op.|
 |6|Voorwaardelijke HTTP-header|De SAS-URL is ongeldig.|Haal de juiste SAS-URL op.|
 |7|Ongeldige naam voor VHD|Controleer of er speciale tekens, zoals een procent teken `%` of aanhalings tekens `"` , aanwezig zijn in de naam van de virtuele harde schijf.|Wijzig de naam van het VHD-bestand door de speciale tekens te verwijderen.|
+|
 
-## <a name="first-1-mb-partition-2048-sectors-each-sector-of-512-bytes"></a>Eerste partitie van 1 MB (2.048 sectoren, elke sector van 512 bytes)
+## <a name="first-1-mb-2048-sectors-each-sector-of-512-bytes-partition"></a>Eerste 1 MB (2048 sectoren, elke sector van 512 bytes)
 
-Als u [uw eigen installatie kopie bouwt](azure-vm-create-using-own-image.md), moet u ervoor zorgen dat de eerste 2.048 sectoren (1 MB) van de besturingssysteem schijf leeg zijn. Als dat niet het geval is, mislukt de publicatie. Deze vereiste is alleen van toepassing op de besturingssysteem schijf (niet op gegevens schijven). Als u een installatie kopie [van een goedgekeurde basis](azure-vm-create-using-approved-base.md)bouwt, kunt u deze vereiste overs Laan. 
+Als u [uw eigen installatie kopie bouwt](azure-vm-create-using-own-image.md), moet u ervoor zorgen dat de eerste 2048 sectoren (1 MB) van de besturingssysteem schijf leeg zijn. Als dat niet het geval is, mislukt de publicatie. Deze vereiste is alleen van toepassing op de besturingssysteem schijf (geen gegevens schijven). Als u een installatie kopie [van een goedgekeurde basis](azure-vm-create-using-approved-base.md)bouwt, kunt u deze vereiste overs Laan.
 
-### <a name="create-a-1-mb-partition-2048-sectors-each-sector-of-512-bytes-on-an-empty-vhd-linux-only-steps"></a>Een partitie van 1 MB (2.048 sectoren, elke sector van 512 bytes) maken op een lege VHD (alleen Linux-stappen)
+### <a name="create-a-1-mb-2048-sectors-each-sector-of-512-bytes-partition-on-an-empty-vhd"></a>Een partitie van 1 MB (2048, elke sector van 512 bytes) maken op een lege VHD
 
 Deze stappen zijn alleen van toepassing op Linux.
 
@@ -374,17 +380,17 @@ Deze stappen zijn alleen van toepassing op Linux.
 
       ![Scherm opname van de opdracht regel van de putty-client met de opdrachten en uitvoer voor gegevens die zijn gewist.](./media/create-vm/vm-certification-issues-solutions-22.png)
 
-   1. Typ `w` om te bevestigen dat de partitie wordt gemaakt. 
+   1. Typ `w` om te bevestigen dat de partitie wordt gemaakt.
 
       ![Scherm opname van de opdracht regel van de putty-client met de opdrachten voor het maken van een partitie.](./media/create-vm/vm-certification-issues-solutions-23.png)
 
-   1. U kunt de partitie tabel controleren door de opdracht uit te voeren `n fdisk /dev/sdb` en te typen `p` . U ziet dat de partitie wordt gemaakt met een offset waarde van 2048. 
+   1. U kunt de partitie tabel controleren door de opdracht uit te voeren `n fdisk /dev/sdb` en te typen `p` . U ziet dat de partitie wordt gemaakt met een offset waarde van 2048.
 
       ![Scherm opname van de opdracht regel van de putty-client met de opdrachten voor het maken van de 2048-offset.](./media/create-vm/vm-certification-issues-solutions-24.png)
 
 1. Ontkoppel de VHD van de VM en verwijder de virtuele machine.
 
-### <a name="create-a-first-1-mb-partition-2048-sectors-each-sector-of-512-bytes-by-moving-existing-data-on-vhd"></a>Maak een eerste partitie van 1 MB (2.048 sectoren, elke sector van 512 bytes) door bestaande gegevens op de VHD te verplaatsen
+### <a name="create-a-1-mb-2048-sectors-each-sector-of-512-bytes-partition-by-moving-existing-data-on-vhd"></a>Maak een partitie van 1 MB (2048, elke sector van 512 bytes) door bestaande gegevens op de VHD te verplaatsen
 
 Deze stappen zijn alleen van toepassing op Linux.
 
@@ -452,11 +458,11 @@ Wanneer een installatie kopie wordt gemaakt, kan deze worden toegewezen aan of w
 
 Als alle installatie kopieën die vanuit Azure Marketplace worden gemaakt, opnieuw moeten worden gebruikt, moet de virtuele harde schijf van het besturings systeem worden gegeneraliseerd.
 
-* Voor **Linux** wordt met het volgende proces een virtuele Linux-machine gegeneraliseerd en opnieuw geïmplementeerd als een afzonderlijke VM.
+- Voor **Linux** wordt met het volgende proces een virtuele Linux-machine gegeneraliseerd en opnieuw geïmplementeerd als een afzonderlijke VM.
 
   Voer in het SSH-venster de volgende opdracht in: `sudo waagent -deprovision+user` .
 
-* Voor **Windows** kunt u Windows-installatie kopieën generaliseren met behulp van `sysreptool` .
+- Voor **Windows** kunt u Windows-installatie kopieën generaliseren met behulp van `sysreptool` .
 
   `sysreptool`Zie [overzicht van systeem voorbereiding (Sysprep)](/windows-hardware/manufacture/desktop/sysprep--system-preparation--overview)voor meer informatie over het hulp programma.
 

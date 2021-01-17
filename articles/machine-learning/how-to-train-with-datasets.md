@@ -1,7 +1,7 @@
 ---
-title: Trainen met azureml-gegevens sets
+title: Trainen met machine learning gegevens sets
 titleSuffix: Azure Machine Learning
-description: Meer informatie over hoe u uw gegevens beschikbaar maakt voor uw lokale of externe Compute voor ML-model training met Azure Machine Learning gegevens sets.
+description: Meer informatie over hoe u uw gegevens beschikbaar maakt voor uw lokale of externe Compute voor model training met Azure Machine Learning gegevens sets.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -12,15 +12,14 @@ ms.reviewer: nibaccam
 ms.date: 07/31/2020
 ms.topic: conceptual
 ms.custom: how-to, devx-track-python, data4ml
-ms.openlocfilehash: 52b52c4c19b22fb1afd76d1e8dfa4163326c0244
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 2d6282c527293abdb8b21e0591548cb51e1339a9
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108587"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539675"
 ---
-# <a name="train-with-datasets-in-azure-machine-learning"></a>Train met gegevens sets in Azure Machine Learning
-
+# <a name="train-models-with-azure-machine-learning-datasets"></a>Modellen trainen met Azure Machine Learning gegevens sets 
 
 In dit artikel leert u hoe u [Azure machine learning gegevens sets](/python/api/azureml-core/azureml.core.dataset%28class%29?preserve-view=true&view=azure-ml-py) kunt gebruiken om machine learning modellen te trainen.  U kunt gegevens sets gebruiken in uw lokale of externe Compute-doel zonder dat u zich zorgen hoeft te maken over verbindings reeksen of gegevens paden. 
 
@@ -41,7 +40,7 @@ Als u gegevens sets wilt maken en trainen, hebt u het volgende nodig:
 > [!Note]
 > Voor sommige verzamelings klassen zijn afhankelijkheden van het pakket voor [azureml-dataprep](/python/api/azureml-dataprep/?preserve-view=true&view=azure-ml-py) . Voor Linux-gebruikers worden deze klassen alleen ondersteund in de volgende distributies: Red Hat Enterprise Linux, Ubuntu, Fedora en CentOS.
 
-## <a name="use-datasets-directly-in-training-scripts"></a>Gegevens sets rechtstreeks in trainings scripts gebruiken
+## <a name="consume-datasets-in-machine-learning-training-scripts"></a>Gegevens sets gebruiken in machine learning trainings scripts
 
 Als u gestructureerde gegevens nog niet hebt geregistreerd als een gegevensset, maakt u een TabularDataset en gebruikt u deze rechtstreeks in uw trainings script voor uw lokale of externe experiment.
 
@@ -90,6 +89,7 @@ df = dataset.to_pandas_dataframe()
 ```
 
 ### <a name="configure-the-training-run"></a>De trainings uitvoering configureren
+
 Een [ScriptRunConfig](/python/api/azureml-core/azureml.core.scriptrun?preserve-view=true&view=azure-ml-py) -object wordt gebruikt om de uitvoering van de training te configureren en in te dienen.
 
 Deze code maakt een ScriptRunConfig-object, `src` dat aangeeft
@@ -141,6 +141,7 @@ mnist_ds = Dataset.File.from_files(path = web_paths)
 ```
 
 ### <a name="configure-the-training-run"></a>De trainings uitvoering configureren
+
 Het is raadzaam om de gegevensset als argument aan te geven wanneer u een koppeling maakt via de `arguments` para meter van de `ScriptRunConfig` constructor. Als u dit doet, wordt het gegevenspad (koppelings punt) in uw trainings script via argumenten weer gegeven. Op deze manier kunt u hetzelfde trainings script gebruiken voor lokale fout opsporing en externe trainingen op elk cloud platform.
 
 In het volgende voor beeld wordt een ScriptRunConfig gemaakt die wordt door gegeven in de FileDataset via `arguments` . Nadat u de uitvoering hebt verzonden, worden de gegevens bestanden waarnaar de gegevensset verwijst, `mnist_ds` aan het reken doel gekoppeld.
@@ -160,7 +161,7 @@ run = experiment.submit(src)
 run.wait_for_completion(show_output=True)
 ```
 
-### <a name="retrieve-the-data-in-your-training-script"></a>De gegevens in uw trainings script ophalen
+### <a name="retrieve-data-in-your-training-script"></a>Gegevens ophalen in uw trainings script
 
 De volgende code laat zien hoe u de gegevens in uw script kunt ophalen.
 
@@ -222,10 +223,9 @@ print(os.listdir(mounted_path))
 print (mounted_path)
 ```
 
+## <a name="get-datasets-in-machine-learning-scripts"></a>Gegevens sets ophalen in machine learning scripts
 
-## <a name="directly-access-datasets-in-your-script"></a>Rechtstreeks toegang tot gegevens sets in uw script
-
-Geregistreerde gegevens sets zijn zowel lokaal als extern toegankelijk op reken clusters, zoals de Azure Machine Learning compute. Gebruik de volgende code om toegang te krijgen tot uw geregistreerde gegevensset voor experimenten en de geregistreerde gegevensset op naam te openen. De [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) methode voor de `Dataset` klasse retourneert standaard de meest recente versie van de gegevensset die is geregistreerd bij de werk ruimte.
+Geregistreerde gegevens sets zijn zowel lokaal als extern toegankelijk op reken clusters, zoals de Azure Machine Learning compute. Gebruik de volgende code om toegang te krijgen tot uw geregistreerde gegevensset voor experimenten en haal de gegevensset op die is gebruikt in de eerder ingediende uitvoering. De [`get_by_name()`](/python/api/azureml-core/azureml.core.dataset.dataset?preserve-view=true&view=azure-ml-py#&preserve-view=trueget-by-name-workspace--name--version--latest--) methode voor de `Dataset` klasse retourneert standaard de meest recente versie van de gegevensset die is geregistreerd bij de werk ruimte.
 
 ```Python
 %%writefile $script_folder/train.py
@@ -244,7 +244,7 @@ titanic_ds = Dataset.get_by_name(workspace=workspace, name=dataset_name)
 df = titanic_ds.to_pandas_dataframe()
 ```
 
-## <a name="accessing-source-code-during-training"></a>Toegang tot de bron code tijdens de training
+## <a name="access-source-code-during-training"></a>Toegang tot de bron code tijdens de training
 
 Azure Blob-opslag heeft hogere doorvoer snelheden dan een Azure-bestands share en schaalt naar een groot aantal taken die parallel worden gestart. Daarom is het raadzaam om uw uitvoeringen te configureren voor het gebruik van Blob-opslag voor het overdragen van broncode bestanden.
 

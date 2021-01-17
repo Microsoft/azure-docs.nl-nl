@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 12/04/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: d051594572f742b290867d12e0fb148f2abbf370
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 4d4bdc4fa15f634b36f12a650b70b9ffd89b40e0
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96621311"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539111"
 ---
 # <a name="troubleshooting-overview-feedback-and-support-for-windows-virtual-desktop"></a>Probleemoplossings overzicht, feedback en ondersteuning voor virtueel bureau blad van Windows
 
@@ -32,7 +32,7 @@ Voordat u iets anders doet, controleert u de [Azure-status pagina](https://statu
 
 Gebruik de volgende tabel voor het identificeren en oplossen van problemen die zich kunnen voordoen bij het instellen van een omgeving met Extern bureaublad-client. Als de omgeving is ingesteld, kunt u onze nieuwe [diagnose service](diagnostics-role-service.md) gebruiken om problemen voor algemene scenario's te identificeren.
 
-| **Probleem**                                                            | **Voorgestelde oplossing**  |
+| **Name**                                                            | **Voorgestelde oplossing**  |
 |----------------------------------------------------------------------|-------------------------------------------------|
 | Instellingen voor de Azure Virtual Network (VNET) en Express-route van de Session Host-pool               | [Open een ondersteunings aanvraag voor Azure](https://azure.microsoft.com/support/create-ticket/)en selecteer vervolgens de betreffende service (onder de categorie netwerken). |
 | De hostgroep van de virtuele machine (VM) maken wanneer Azure Resource Manager sjablonen die worden meegeleverd met Windows virtueel bureau blad niet worden gebruikt | [Open een ondersteunings aanvraag voor Azure](https://azure.microsoft.com/support/create-ticket/)en selecteer vervolgens **Windows virtueel bureau blad** voor de service. <br> <br> Voor problemen met de Azure Resource Manager sjablonen die worden meegeleverd met Windows virtueel bureau blad, raadpleegt u Azure Resource Manager sjabloon fouten sectie van het maken van een [hostgroep](troubleshoot-set-up-issues.md). |
@@ -53,6 +53,7 @@ Gebruik de volgende tabel voor het identificeren en oplossen van problemen die z
 
 - Zie het maken van een [hostgroep](troubleshoot-set-up-issues.md)voor het oplossen van problemen bij het maken van een hostgroep in een virtueel-bureaublad omgeving van Windows.
 - Zie voor het oplossen van problemen bij het configureren van een virtuele machine (VM) in Windows virtueel bureau blad de [virtuele machine configuratie](troubleshoot-vm-configuration.md)van de host.
+- Zie problemen [met veelvoorkomende problemen met Windows Virtual Desktop agent oplossen](troubleshoot-agent.md)voor informatie over het oplossen van problemen met de Windows Virtual Desktop agent of sessie verbinding.
 - Zie [Windows Virtual Desktop Service Connections](troubleshoot-service-connection.md)(Engelstalig) voor het oplossen van problemen met Windows Virtual Desktop-Client verbindingen.
 - Zie [problemen met de Extern bureaublad-client oplossen](troubleshoot-client.md) om problemen met extern bureaublad-clients op te lossen
 - Zie [Windows Virtual Desktop Power shell](troubleshoot-powershell.md)(Engelstalig) voor informatie over het oplossen van problemen met het gebruik van Power shell met Windows virtueel bureau blad.

@@ -9,12 +9,12 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: yelevin
-ms.openlocfilehash: b5d98a834ed4f87fb95a13e666967a7b2d80975d
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: c54b5b785f6da1bb651d8b1f508da42ab0fb802d
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656051"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538385"
 ---
 # <a name="connect-data-from-azure-ddos-protection"></a>Verbinding maken met gegevens van Azure DDoS Protection
 
@@ -38,7 +38,7 @@ Met DDoS-aanvallen (Distributed Denial of service) wordt geprobeerd om de resour
 
 1. Selecteer **Azure DDoS Protection** in de galerie met gegevens connectors en selecteer vervolgens **pagina connector openen** in het voorbeeld venster.
 
-1. Schakel **Diagnostische logboeken** in op alle firewalls waarvan u de logboeken wilt maken:
+1. Schakel **Diagnostische logboeken** in op alle open bare IP-adressen waarvan u de logboeken wilt maken:
 
     1. Selecteer de koppeling **Diagnostische instellingen openen >** en kies een **open bare IP-adres** resource in de lijst.
 

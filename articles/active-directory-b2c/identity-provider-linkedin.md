@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/17/2020
+ms.date: 01/15/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: bde7c1adefea88ed5b5d86e2c0e17f475be1bc71
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: e2c576c97d170726f5ec1b06e5a6d0d859a85e64
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654367"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538108"
 ---
 # <a name="set-up-sign-up-and-sign-in-with-a-linkedin-account-using-azure-active-directory-b2c"></a>Registratie instellen en aanmelden met een LinkedIn-account met behulp van Azure Active Directory B2C
 
@@ -36,14 +36,14 @@ ms.locfileid: "97654367"
 
 ## <a name="create-a-linkedin-application"></a>Een LinkedIn-toepassing maken
 
-Als u een LinkedIn-account wilt gebruiken als een [ID-provider](authorization-code-flow.md) in Azure Active Directory B2C (Azure AD B2C), moet u een toepassing maken in uw Tenant waarmee deze wordt vertegenwoordigd. Als u nog geen LinkedIn-account hebt, kunt u zich aanmelden bij [https://www.linkedin.com/](https://www.linkedin.com/) .
+Als u aanmelden voor gebruikers met een LinkedIn-account in Azure Active Directory B2C (Azure AD B2C) wilt inschakelen, moet u een toepassing maken op de [website van LinkedIn-ontwikkel aars](https://www.developer.linkedin.com/). Zie [autorisatie code flow](https://docs.microsoft.com/linkedin/shared/authentication/authorization-code-flow)voor meer informatie. Als u nog geen LinkedIn-account hebt, kunt u zich aanmelden bij [https://www.linkedin.com/](https://www.linkedin.com/) .
 
 1. Meld u aan bij de [LinkedIn-ontwikkelaars website](https://www.developer.linkedin.com/) met uw LinkedIn-account referenties.
 1. Selecteer **mijn apps** en klik vervolgens op **app maken**.
 1. Voer de **app-naam**, de LinkedIn- **pagina**, de URL van het **Privacybeleid** en het **app-logo** in.
 1. Ga akkoord met de **gebruiks voorwaarden van** de LinkedIn API en klik op **app maken**.
 1. Selecteer het tabblad **auth** . Kopieer onder **verificatie sleutels** de waarden voor **client-id** en **client geheim**. U hebt beide nodig om LinkedIn te configureren als een id-provider in uw Tenant. **Client geheim** is een belang rijke beveiligings referentie.
-1. Selecteer het potlood bewerken naast **geautoriseerde omleidings-url's voor uw app** en selecteer vervolgens **omleidings-URL toevoegen**. Voer `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` in en vervang door `your-tenant-name` de naam van uw Tenant. U moet alle kleine letters gebruiken bij het invoeren van de naam van uw Tenant, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C. Selecteer **Bijwerken**.
+1. Selecteer het potlood bewerken naast **geautoriseerde omleidings-url's voor uw app** en selecteer vervolgens **omleidings-URL toevoegen**. Voer `https://your-tenant-name.b2clogin.com/your-tenant-name.onmicrosoft.com/oauth2/authresp` in en vervang door `your-tenant-name` de naam van uw Tenant. U moet alle kleine letters gebruiken bij het invoeren van de naam van uw Tenant, zelfs als de Tenant is gedefinieerd met hoofd letters in Azure AD B2C. Selecteer **Update**.
 2. Uw LinkedIn-app is standaard niet goedgekeurd voor scopes die betrekking hebben op aanmelden. Als u een beoordeling wilt aanvragen, selecteert u het tabblad **producten** en selecteert u **Aanmelden met LinkedIn**. Wanneer de controle is voltooid, worden de vereiste bereiken toegevoegd aan uw toepassing.
    > [!NOTE]
    > U kunt de bereiken weer geven die momenteel zijn toegestaan voor uw app op het tabblad **auth** in het gedeelte **OAuth 2,0 scopes** .
@@ -78,7 +78,7 @@ U moet het client geheim opslaan dat u eerder in uw Azure AD B2C-Tenant hebt vas
 7. Voer een **naam** in voor de beleids sleutel. Bijvoorbeeld `LinkedInSecret`. De prefix *B2C_1A_* wordt automatisch toegevoegd aan de naam van uw sleutel.
 8. Voer in het **geheim** het client geheim in dat u eerder hebt vastgelegd.
 9. Selecteer voor **sleutel gebruik** `Signature` .
-10. Klik op **Maken**.
+10. Klik op **Create**.
 
 ## <a name="add-a-claims-provider"></a>Een claim provider toevoegen
 
@@ -232,7 +232,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-linkedin-identity-provider-to-a-user-flow"></a>LinkedIn-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de LinkedIn-ID-provider.
+1. Klik op de gebruikers stroom waaraan u de LinkedIn-ID-provider wilt toevoegen.
 1. Selecteer in het geval van **sociale id-providers** **LinkedIn**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

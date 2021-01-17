@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/15/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit, project-no-code
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 05c4d36f266fb526a1d0232cc32f0408e4322c80
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 2b640730bac410136ef8fdd4ea8e0261f68a3284
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654384"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98538139"
 ---
 # <a name="set-up-sign-in-for-a-specific-azure-active-directory-organization-in-azure-active-directory-b2c"></a>Aanmelden instellen voor een specifieke Azure Active Directory organisatie in Azure Active Directory B2C
 
@@ -38,7 +38,7 @@ In dit artikel leest u hoe u aanmelden kunt inschakelen voor gebruikers van een 
 
 ## <a name="register-an-azure-ad-app"></a>Een Azure AD-app registreren
 
-Als u het aanmelden voor gebruikers van een specifieke Azure AD-organisatie wilt inschakelen, moet u een toepassing registreren in de Azure AD-Tenant van de organisatie.
+Als u aanmelden wilt inschakelen voor gebruikers met een Azure AD-account van een specifieke Azure AD-organisatie, moet u in Azure Active Directory B2C (Azure AD B2C) een toepassing maken in [Azure Portal](https://portal.azure.com). Zie [Een toepassing registreren bij het Microsoft-identiteitsplatform](https://docs.microsoft.com/azure/active-directory/develop/quickstart-register-app) voor meer informatie.
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Zorg ervoor dat u de map gebruikt die de Azure AD-Tenant van uw organisatie bevat (bijvoorbeeld contoso.com). Selecteer het **filter Directory + abonnement** in het bovenste menu en kies vervolgens de map die uw Azure AD-Tenant bevat.
@@ -238,7 +238,7 @@ Nu er een knop aanwezig is, moet u deze koppelen aan een actie. De actie in dit 
 ## <a name="add-azure-ad-identity-provider-to-a-user-flow"></a>Een Azure AD-ID-provider toevoegen aan een gebruikers stroom 
 
 1. Selecteer in uw Azure AD B2C-Tenant **gebruikers stromen**.
-1. Klik op de gebruikers stroom die u wilt van de Azure AD-ID-provider.
+1. Klik op de gebruikers stroom die u wilt toevoegen aan de Azure AD-ID-provider.
 1. Selecteer **Contoso Azure AD** bij de **sociale id-providers**.
 1. Selecteer **Opslaan**.
 1. Als u het beleid wilt testen, selecteert u **gebruikers stroom uitvoeren**.

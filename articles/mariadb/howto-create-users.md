@@ -5,23 +5,22 @@ author: savjani
 ms.author: pariks
 ms.service: mariadb
 ms.topic: how-to
-ms.date: 01/15/2021
-ms.openlocfilehash: 77975ae16ba6b66c55db5ef5927bfc49f9cecdc5
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/18/2021
+ms.openlocfilehash: 28ec060e95d09cb150fc699919dde6cc0e1eaf23
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251519"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539970"
 ---
 # <a name="create-users-in-azure-database-for-mariadb"></a>Create users in Azure Database for MariaDB (Gebruikers maken in Azure Database for MariaDB)
 
 In dit artikel wordt beschreven hoe u gebruikers kunt maken in Azure Database for MariaDB.
 
+Wanneer u uw Azure Database for MariaDB voor het eerst hebt gemaakt, hebt u de gebruikers naam en het wacht woord van de server beheerder aangemeld. Voor meer informatie kunt u de [Snelstartgids](quickstart-create-mariadb-server-database-using-azure-portal.md)volgen. U kunt de gebruikers naam van de server beheerder aanmelden via de Azure Portal.
+
 > [!NOTE]
 > Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
-
-
-Wanneer u uw Azure Database for MariaDB voor het eerst hebt gemaakt, hebt u de gebruikers naam en het wacht woord van de server beheerder aangemeld. Voor meer informatie kunt u de [Snelstartgids](quickstart-create-mariadb-server-database-using-azure-portal.md)volgen. U kunt de gebruikers naam van de server beheerder aanmelden via de Azure Portal.
 
 De gebruiker van de server beheerder heeft bepaalde bevoegdheden voor uw server als vermeld: selecteren, invoegen, bijwerken, verwijderen, maken, verwijderen, opnieuw laden, verwerken, verwijzingen, INDEX, wijzigen, data BASEs, tijdelijke tabellen maken, tabellen vergren delen, uitvoeren, replicatie slave, replicatie CLIENT, weer gave, gebruiker weer geven, gebeurtenis, TRIGGER
 
@@ -62,7 +61,7 @@ Nadat de Azure Database for MariaDB-server is gemaakt, kunt u het eerste gebruik
 1. De verbindings gegevens en de gebruikers naam van de beheerder ophalen.
    Voor verbinding met uw databaseserver moet u beschikken over de volledige servernaam en aanmeldingsreferenties van de beheerder. U kunt eenvoudig de server naam en aanmeldings gegevens vinden op de pagina **overzicht** van de server of op de pagina **eigenschappen** in de Azure Portal. 
 
-2. Gebruik het beheerders account en-wacht woord om verbinding te maken met uw database server. Gebruik het client hulpprogramma van uw voor keur, zoals MySQL Workbench, mysql.exe, HeidiSQL of anderen. 
+2. Gebruik het beheerders account en-wacht woord om verbinding te maken met uw database server. Gebruik het client hulpprogramma van uw voor keur, zoals MySQL Workbench, mysql.exe, HeidiSQL of anderen.
    Als u niet zeker weet hoe u verbinding kunt maken, raadpleegt u [MySQL Workbench gebruiken om verbinding te maken en gegevens op te vragen](./connect-workbench.md)
 
 3. Bewerk de volgende SQL-code en voer deze uit. Vervang de waarde van de tijdelijke aanduiding door `db_user` de gewenste nieuwe gebruikers naam en de tijdelijke aanduiding voor de `testdb` naam van uw eigen data base.

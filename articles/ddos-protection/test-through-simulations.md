@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 09/08/2020
 ms.author: yitoh
-ms.openlocfilehash: e3a665e3615c9ff3a68cf13eeaef5e8f41632f6a
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 55042c8d1e612598cc5728668c9e87b054fb3afa
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900357"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98537827"
 ---
 # <a name="test-through-simulations"></a>Testen via simulaties
 
@@ -42,9 +42,9 @@ We hebben een partnerschap gemaakt met [BreakingPoint Cloud](https://www.ixiacom
     |---------      |---------                                          |
     |Doel-IP-adres           | Voer een van uw open bare IP-adressen in die u wilt testen.                     |
     |Poortnummer   | Voer _443_ in.                       |
-    |DDoS-profiel | Mogelijke waarden zijn **DNS-Flooding**, **NTPv2 Flooding**, **SSDP-Flooding**, **TCP SYN Flooding**, **UDP 64B flood**, **UDP 128B flood**, **UDP 256B flood**, **UDP 512B flood**, **UDP 1024B flood**, **UDP 1514B flood**, **UDP-fragmentatie** **UDP memcached**.|
-    |Test grootte       | Mogelijke waarden zijn **100.000 PPS, 50 Mbps en 4 bron-ip's**, **van persoonlijkheden PPS, 100 Mbps en 8 bron-ip's**, **400K PPS, 200 Mbps en 16 bron** Ip's, **800K PPS, 400 Mbps en 32 bron ip's**.                                  |
-    |Test duur | Mogelijke waarden zijn **10 minuten**, **15 minuten**, **20 minuten**, **25 minuten**, **30 minuten**.|
+    |DDoS-profiel | Mogelijke waarden zijn `DNS Flood` , `NTPv2 Flood` , `SSDP Flood` , `TCP SYN Flood` , `UDP 64B Flood` , `UDP 128B Flood` , `UDP 256B Flood` , `UDP 512B Flood` , `UDP 1024B Flood` , `UDP 1514B Flood` , `UDP Fragmentation` , `UDP Memcached` .|
+    |Test grootte       | Mogelijke waarden zijn `100K pps, 50 Mbps and 4 source IPs` :,, `200K pps, 100 Mbps and 8 source IPs` `400K pps, 200Mbps and 16 source IPs` , `800K pps, 400 Mbps and 32 source IPs` .                                  |
+    |Test duur | Mogelijke waarden zijn `10 Minutes` , `15 Minutes` , `20 Minutes` , `25 Minutes` , `30 Minutes` .|
 
 Dit moet er nu als volgt uitzien:
 

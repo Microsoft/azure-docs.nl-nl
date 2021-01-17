@@ -6,12 +6,12 @@ ms.topic: troubleshooting
 ms.date: 08/11/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: c6083dbcc270c0e9dde1da45ed01369d03146237
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 097c97d16cf62793d03ac42662267e0553383bc1
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92108963"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539616"
 ---
 # <a name="troubleshoot-the-remote-desktop-client"></a>Problemen met de Extern bureaublad-client oplossen
 
@@ -93,15 +93,16 @@ Volg de volgende instructies als de Windows client-feed geen Windows virtueel bu
 
 Als u de App-ID 9cdead84-a844-4324-93f2-b2e6bb768d07 niet kunt vinden in de lijst, moet u de resource provider voor het virtuele bureau blad van Windows registreren. De resource provider registreren:
 
-1. Meld u aan bij Azure Portal.
-2. Ga naar het **abonnement**en selecteer vervolgens uw abonnement.
-3. Selecteer **resource provider**in het menu aan de linkerkant van de pagina.
-4. Zoek en selecteer **micro soft. DesktopVirtualization**en selecteer **opnieuw registreren**.
+1. Meld u aan bij de Azure-portal.
+2. Ga naar het **abonnement** en selecteer vervolgens uw abonnement.
+3. Selecteer **resource provider** in het menu aan de linkerkant van de pagina.
+4. Zoek en selecteer **micro soft. DesktopVirtualization** en selecteer **opnieuw registreren**.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie [probleemoplossings overzicht, feedback en ondersteuning](troubleshoot-set-up-overview.md)voor een overzicht van het oplossen van problemen met het virtuele bureau blad van Windows en de escalatie trajecten.
 - Zie [omgeving en hostgroep maken](troubleshoot-set-up-issues.md)om problemen op te lossen tijdens het maken van een virtuele Windows-desktop omgeving en-hostgroep in een Windows-omgeving voor virtueel bureau blad.
 - Zie voor het oplossen van problemen bij het configureren van een virtuele machine (VM) in Windows virtueel bureau blad de [virtuele machine configuratie](troubleshoot-vm-configuration.md)van de host.
+- Zie problemen [met veelvoorkomende problemen met Windows Virtual Desktop agent oplossen](troubleshoot-agent.md)voor informatie over het oplossen van problemen met de Windows Virtual Desktop agent of sessie verbinding.
 - Zie [Windows Virtual Desktop Power shell](troubleshoot-powershell.md)(Engelstalig) voor informatie over het oplossen van problemen met het gebruik van Power shell met Windows virtueel bureau blad.
 - Zie [zelf studie: problemen met implementaties van Resource Manager-sjablonen oplossen](../azure-resource-manager/templates/template-tutorial-troubleshoot.md)om de zelf studie voor problemen oplossen op te lossen.

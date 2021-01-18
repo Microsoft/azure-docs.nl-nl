@@ -8,12 +8,12 @@ ms.service: site-recovery
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: sideeksh
-ms.openlocfilehash: 599ad76f38833e06cc458fd0687921e6975e190b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f63021275574e294fa372357d6e62724f5efe0f7
+ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89426364"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98541187"
 ---
 # <a name="customize-networking-configurations-of-the-target-azure-vm"></a>Netwerkconfiguraties van de beoogde Azure-VM aanpassen
 
@@ -44,7 +44,7 @@ U kunt de volgende belang rijke bron configuraties voor de failover-VM opgeven t
 
      ![De failover-netwerk configuraties aanpassen](media/azure-to-azure-customize-networking/edit-networking-properties.png)
 
-4. Selecteer een virtueel netwerk voor testfailover. U kunt ervoor kiezen om het leeg te laten en één te selecteren op het moment van de testfailover.
+4. Selecteer een virtueel netwerk voor testfailover.
 5. Failover-netwerk Selecteer **bewerken** in de buurt van de NIC die u wilt configureren. Selecteer op de volgende Blade die wordt geopend de bijbehorende vooraf gemaakte resources in de testfailover en de failover-locatie.
 
     ![De NIC-configuratie bewerken](media/azure-to-azure-customize-networking/nic-drilldown.png) 

@@ -4,12 +4,12 @@ description: Hiermee wordt een overzicht gegeven van de ondersteuning voor herst
 ms.topic: article
 ms.date: 11/29/2020
 ms.author: raynew
-ms.openlocfilehash: e2cbea433d56d4c1290a5d1cdc54b56e81b4cd73
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: f0c7e23e45a84fa73c7e63b5aaa6280177cf8b27
+ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234321"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98541305"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Ondersteuningsmatrix voor herstel na noodgeval van Azure-VM's tussen Azure-regio's
 
@@ -44,13 +44,13 @@ U kunt virtuele machines repliceren en herstellen tussen twee regio's binnen het
 **Geografisch cluster** | **Azure-regio's**
 -- | --
 Lopende | Canada-oost, Canada-centraal, Zuid-Centraal VS, West-Centraal VS, VS-Oost, VS-Oost 2, VS-West, VS-West 2, VS-midden, Noord-Centraal VS
-Europa | UK-west, UK-zuid, Europa-noord, Europa-west, Zuid-Afrika-west, Zuid-Afrika-noord, Noor wegen Oost, Noor wegen West, Frankrijk-centraal, Zwitserland-noord
+Europa | UK-west, UK-zuid, Europa-noord, Europa-west, Zuid-Afrika-west, Zuid-Afrika-noord, Noor wegen Oost, Frankrijk-centraal, Zwitserland-noord
 Azië | India-zuid, Centraal-India, West-India, Zuidoost-Azië, Azië-oost, Japan-Oost, Japan-West, Korea-centraal, Korea-zuid
 Australië    | Australië-oost, Australië-zuidoost, Australië-centraal, Australië-centraal 2
 Azure Government    | Amerikaanse GOVe Virginia, VS GOV Iowa, US GOV Arizona, VS GOV Texas, US DOD Oost, US DOD-centraal
 Duitsland    | Duitsland-centraal, Duitsland-noordoost
 China | China-oost, China-noord, China North2, China Oost2
-Beperkte regio's die zijn gereserveerd voor in-the-Country nood herstel |Duitsland-noord gereserveerd voor Duitsland-west-centraal, Zwitserland-west gereserveerd voor Zwitserland-noord, Frankrijk-zuid gereserveerd voor Frankrijk-centraal, UAE-centraal beperkt voor uae-Noord klanten
+Beperkte regio's die zijn gereserveerd voor in-the-Country nood herstel |Duitsland-noord gereserveerd voor Duitsland-west-centraal, Zwitserland-west gereserveerd voor Zwitserland-noord, Frankrijk-zuid gereserveerd voor Frankrijk-centraal, UAE-centraal beperkt voor uae-Noord klanten, Noor wegen West voor Noor wegen Oost-klanten
 
 >[!NOTE]
 >

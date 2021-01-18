@@ -1094,25 +1094,26 @@
     - name: Zelfstudies
       items:
         - name: Gegevens visualiseren met Apache Spark
+          displayname: machine learning
           href: ./spark/apache-spark-data-visualization-tutorial.md
-          displayname: machine learning
         - name: Wizard voor scoren gebruiken voor toegewezen SQL-pools
-          href: machine-learning/tutorial-sql-pool-model-scoring-wizard.md
           displayname: machine learning
+          href: machine-learning/tutorial-sql-pool-model-scoring-wizard.md
         - name: Een codevrij model trainen met geautomatiseerde ML
+          displayname: machine learning
           href: ./machine-learning/tutorial-automl.md
         - name: Een model trainen in Python met geautomatiseerde ML
+          displayname: machine learning
           href: ./spark/apache-spark-azure-machine-learning-tutorial.md
-          displayname: machine learning
         - name: Een model maken met Apache Spark MLlib
-          href: ./spark/apache-spark-machine-learning-mllib-notebook.md
           displayname: machine learning
+          href: ./spark/apache-spark-machine-learning-mllib-notebook.md
+        - name: Cognitive Services voor Azure Synapse configureren
+          href: ./machine-learning/tutorial-configure-cognitive-services-synapse.md
         - name: Sentimentanalyse met Cognitive Services
           href: ./machine-learning/tutorial-cognitive-services-sentiment.md
         - name: Anomaliedetectie met Cognitive Services
           href: ./machine-learning/tutorial-cognitive-services-anomaly.md
-        - name: Cognitive Services voor Azure Synapse configureren
-          href: ./machine-learning/tutorial-configure-cognitive-services-synapse.md
 - name: Data Catalog en governance
   items:
     - name: Snelstartgidsen

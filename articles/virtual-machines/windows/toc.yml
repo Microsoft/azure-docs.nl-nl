@@ -228,7 +228,7 @@
         - name: Disk Storage-reservering
           href: ../../cost-management-billing/reservations/understand-disk-reservations.md
         - name: Prestaties van virtuele machine en schijf
-          href: disk-performance-windows.md
+          href: ../disks-performance.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Ontwerpen voor hoge prestaties
           href: ../premium-storage-performance.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Disk Bursting
@@ -814,10 +814,8 @@
           href: snapshot-copy-managed-disk.md
         - name: Disk Storage reserveren
           href: ../disks-reserved-capacity.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
-        - name: Een incrementele momentopname maken - PowerShell
-          href: disks-incremental-snapshots.md
-        - name: Een incrementele momentopname maken - Portal
-          href: disks-incremental-snapshots-portal.md
+        - name: Een incrementele momentopname maken
+          href: ../disks-incremental-snapshots.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Back-up maken van niet-beheerde schijven
           href: incremental-snapshots.md
         - name: Versleuteling
@@ -851,7 +849,7 @@
             - name: Ultraschijven gebruiken
               href: ../disks-enable-ultra-ssd.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
             - name: Een benchmark-test uitvoeren op een schijf
-              href: disks-benchmarks.md
+              href: ../disks-benchmarks.md?toc=/azure/virtual-machines/windows/toc.json&bc=/azure/virtual-machines/windows/breadcrumb/toc.json
         - name: Niet-gekoppelde schijven zoeken - PowerShell
           href: find-unattached-disks.md
         - name: Niet-gekoppelde schijven zoeken - Portal

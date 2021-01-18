@@ -12,12 +12,12 @@ ms.date: 01/12/2021
 ms.author: kenwith
 ms.reviewer: arvinh
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 2cdd02ef6ff67f14dbf99e40a254f2c214e23afb
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: 646c47920d87fe1d11bc991838ba767b8569a6c9
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165413"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246754"
 ---
 # <a name="tutorial---build-a-scim-endpoint-and-configure-user-provisioning-with-azure-ad"></a>Zelfstudie: een SCIM-eind punt bouwen en gebruikers inrichten met Azure AD
 
@@ -790,6 +790,7 @@ De SCIM-service moet een HTTP-adres en serververificatiecertificaat hebben waarv
 * Go Daddy
 * VeriSign
 * WoSign
+* DST Root CA X3
 
 Het .NET Core SDK bevat een HTTPS-ontwikkelingscertificaat dat kan worden gebruikt tijdens de ontwikkeling. Het certificaat wordt geïnstalleerd als onderdeel van de eerste sessie. Afhankelijk van hoe u de ASP.NET Core-webtoepassing uitvoert, luistert deze mogelijk naar een andere poort:
 

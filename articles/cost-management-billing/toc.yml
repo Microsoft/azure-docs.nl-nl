@@ -188,16 +188,6 @@
               href: manage/pay-by-invoice.md
             - name: Extra abonnementen maken
               href: manage/create-subscription.md
-            - name: Programmatisch EA-abonnementen maken
-              href: manage/programmatically-create-subscription-enterprise-agreement.md
-            - name: Programmatisch MCA-abonnementen maken
-              href: manage/programmatically-create-subscription-microsoft-customer-agreement.md
-            - name: Programmatisch MPA-abonnementen maken
-              href: manage/programmatically-create-subscription-microsoft-partner-agreement.md
-            - name: Abonnementen maken met ARM-sjablonen
-              href: manage/create-subscription-template.md
-            - name: Programmatisch abonnementen maken - preview
-              href: manage/programmatically-create-subscription-preview.md
             - name: Toegang verlenen om EA-abonnementen te maken
               href: manage/grant-access-to-create-subscription.md
             - name: Abonnementsgegevens exporteren
@@ -214,6 +204,20 @@
               href: manage/transfer-subscriptions-subscribers-csp.md
             - name: Abonnement annuleren
               href: manage/cancel-azure-subscription.md
+        - name: Programmatisch abonnementen maken
+          items:
+            - name: Programmatisch abonnementen maken
+              href: manage/programmatically-create-subscription.md
+            - name: Programmatisch EA-abonnementen maken
+              href: manage/programmatically-create-subscription-enterprise-agreement.md
+            - name: Programmatisch MCA-abonnementen maken
+              href: manage/programmatically-create-subscription-microsoft-customer-agreement.md
+            - name: Programmatisch MPA-abonnementen maken
+              href: manage/programmatically-create-subscription-microsoft-partner-agreement.md
+            - name: Abonnementen maken met ARM-sjablonen
+              href: manage/create-subscription-template.md
+            - name: Programmatisch abonnementen maken - preview-API's
+              href: manage/programmatically-create-subscription-preview.md
         - name: Enterprise Agreement-abonnement beheren
           items:
             - name: EA-rollen in Azure

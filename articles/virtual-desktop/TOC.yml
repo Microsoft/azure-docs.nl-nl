@@ -128,6 +128,8 @@
       href: authentication.md
     - name: Windows Virtual Desktop-omgeving
       href: environment-setup.md
+    - name: Windows Virtual Desktop Agent
+      href: agent-overview.md
     - name: Netwerkverbinding
       items:
         - name: Inzicht in netwerkconnectiviteit
@@ -180,6 +182,8 @@
       href: troubleshoot-vm-configuration.md
     - name: Verbindingen voor Extern bureaublad-service
       href: troubleshoot-service-connection.md
+    - name: Windows Virtual Desktop Agent
+      href: troubleshoot-agent.md
     - name: Problemen met Extern bureaublad-client
       href: troubleshoot-client.md
     - name: Windows Virtual Desktop PowerShell

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-nov-2020
 ms.topic: tutorial
 ms.date: 09/25/2019
-ms.openlocfilehash: 6a13d0a0ac0b37b5faf59e19cd13e5c3c2ee94dc
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: fed568d67c688a8c2adab979eb68eaf384a72172
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965558"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539284"
 ---
 # <a name="tutorial-migrate-mongodb-to-azure-cosmos-dbs-api-for-mongodb-online-using-dms"></a>Zelfstudie: MongoDB online migreren naar de Azure Cosmos DB-API voor MongoDB met behulp van DMS
 
@@ -53,7 +53,7 @@ In dit artikel wordt een onlinemigratie beschreven van MongoDB naar Azure Cosmos
 Voor het voltooien van deze zelfstudie hebt u het volgende nodig:
 
 * [Voltooi de stappen voorafgaand aan de migratie](../cosmos-db/mongodb-pre-migration.md), zoals het schatten van de doorvoer of het kiezen van een partitiesleutel en het indexeringsbeleid.
-* [Maak een account voor Azure Cosmos DB's API voor MongoDB](https://ms.portal.azure.com/#create/Microsoft.DocumentDB).
+* [Maak een Azure Cosmos DB-API voor een MongoDB-account](https://ms.portal.azure.com/#create/Microsoft.DocumentDB) en zorg ervoor dat [SSR (nieuwe poging voor serverzijde)](../cosmos-db/prevent-rate-limiting-errors.md) is ingeschakeld.
 * Maak een Microsoft Azure Virtual Network voor Azure Database Migration Service met behulp van het Azure Resource Manager-implementatiemodel. Dit biedt site-naar-site-connectiviteit met uw on-premises bronservers met behulp van [ExpressRoute](../expressroute/expressroute-introduction.md) of [VPN](../vpn-gateway/vpn-gateway-about-vpngateways.md).
 
     > [!NOTE]

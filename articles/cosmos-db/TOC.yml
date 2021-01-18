@@ -1122,6 +1122,10 @@
           href: find-request-unit-charge-mongodb.md
         - name: Prestatieproblemen van query's oplossen
           href: mongodb-troubleshoot-query.md
+        - name: Algemene problemen
+          href: mongodb-troubleshoot.md
+        - name: Fouten die snelheid beperken voorkomen
+          href: prevent-rate-limiting-errors.md
         - name: Spring-gegevens opslaan en beheren
           href: /azure/developer/java/spring-framework/configure-spring-data-mongodb-with-cosmos-db?context=%2fazure%2fcosmos-db%2fcontext%2fcontext
         - name: Extensieopdrachten voor MongoDB
@@ -1134,8 +1138,6 @@
           href: powershell-samples-mongodb.md
         - name: Beheren met behulp van Azure CLI
           href: cli-samples-mongodb.md
-        - name: Algemene problemen
-          href: mongodb-troubleshoot.md
     - name: Naslaginformatie
       items:
         - name: REST-resourceprovider

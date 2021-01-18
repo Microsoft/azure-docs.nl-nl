@@ -15,12 +15,12 @@ ms.devlang: na
 ms.topic: tutorial
 ms.date: 09/11/2020
 ms.author: Zhchia
-ms.openlocfilehash: 56b75d34bed65dae53c88eab6a16d848083ccc73
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 084592a8db47a94a0fcd683105f749f514c05ea3
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96179058"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247570"
 ---
 # <a name="tutorial-configure-cofense-recipient-sync-for-automatic-user-provisioning"></a>Zelfstudie: Cofense Recipient Sync configureren voor automatische inrichting van gebruikers
 
@@ -165,9 +165,13 @@ Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruik
 ## <a name="step-6-monitor-your-deployment"></a>Stap 6. Uw implementatie bewaken
 Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:
 
-1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
-2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
-3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.  
+* Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
+* Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
+* Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen. 
+
+## <a name="change-log"></a>Wijzigingenlogboek
+
+* 01/15/2020 - Wijziging van "Alleen tijdens object maken" naar "Altijd" is geïmplementeerd voor toewijzing van objectId -> externalId.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

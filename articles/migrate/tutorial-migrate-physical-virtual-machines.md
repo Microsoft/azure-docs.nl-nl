@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 01/02/2021
 ms.custom: MVC
-ms.openlocfilehash: bd560a6ef4a3b4ab5eb4632e7741c764f6e314e1
-ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
+ms.openlocfilehash: aac949de0b0ae1f085187c1b5e1f3b64d8edad03
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/03/2021
-ms.locfileid: "97854924"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98233811"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Machines als fysieke servers migreren naar Azure
 
@@ -230,38 +230,41 @@ Selecteer nu machines voor de migratie.
     -  Beschikbaarheidszone, om de gemigreerde computer vast te maken aan een specifieke beschikbaarheidszone in de regio. Gebruik deze optie om servers te distribueren die een toepassingslaag met meerdere knooppunten in de beschikbaarheidszones vormen. Als u deze optie selecteert, moet u op het tabblad Compute de beschikbaarheidszone opgeven die moet worden gebruikt voor elk van de geselecteerde computers. Deze optie is alleen beschikbaar als de doelregio die voor de migratie is geselecteerd, ondersteuning biedt voor beschikbaarheidszones
     -  Beschikbaarheidsset, om de gemigreerde machine in een beschikbaarheidsset te plaatsen. De doelresourcegroep die is geselecteerd, moet een of meer beschikbaarheidssets bevatten om deze optie te kunnen gebruiken.
     - Er is geen optie voor infrastructuurredundantie vereist als u geen van deze beschikbaarheidsconfiguraties nodig hebt voor de gemigreerde computers.
-12. In **Azure Hybrid Benefit**:
+    
+12. Selecteer in **Type schijfversleuteling**:
+    - Versleuteling at-rest van gegevens met door platform beheerde sleutel
+    - Versleuteling at-rest van gegevens met door klant beheerde sleutel
+    - Dubbele versleuteling met door platform en door klant beheerde sleutels
+
+   > [!NOTE]
+   > Als u VM's met CMK wilt repliceren, moet u [een schijfversleutelingsset maken](https://go.microsoft.com/fwlink/?linkid=2151800) in de doelresourcegroep. Met een schijfversleutelingssetobject worden beheerde schijven toegewezen aan een sleutelkluis die de CMK bevat die moet worden gebruikt voor SSE.
+  
+13. In **Azure Hybrid Benefit**:
 
     - Selecteer **Nee** als u Azure Hybrid Benefit niet wilt toepassen. Klik op **Volgende**.
     - Selecteer **Ja** als u Windows Server-computers hebt die worden gedekt met actieve softwareverzekering of Windows Server-abonnementen en u het voordeel wilt toepassen op de machines die u migreert. Klik op **Volgende**.
 
-    ![Doelinstellingen](./media/tutorial-migrate-physical-virtual-machines/target-settings.png)
+    ![Doelinstellingen](./media/tutorial-migrate-vmware/target-settings.png)
 
-13. Controleer bij **Compute** naam, grootte, type besturingssysteemschijf en beschikbaarheidsconfiguratie van de VM (indien geselecteerd in de vorige stap). VM's moeten voldoen aan de [Azure-vereisten](migrate-support-matrix-physical-migration.md#azure-vm-requirements).
+14. Controleer bij **Compute** naam, grootte, type besturingssysteemschijf en beschikbaarheidsconfiguratie van de VM (indien geselecteerd in de vorige stap). VM's moeten voldoen aan de [Azure-vereisten](migrate-support-matrix-physical-migration.md#azure-vm-requirements).
 
     - **VM-grootte**: Als u evaluatie-aanbevelingen gebruikt, bevat het vervolgkeuzemenu voor de VM-grootte de aanbevolen grootte. Anders kiest Azure Migrate een grootte op basis van de dichtstbijzijnde overeenkomst in het Azure-abonnement. U kunt ook handmatig een grootte kiezen in **Azure VM-grootte**.
     - **Besturingssysteemschijf**: Geef de besturingssysteemschijf (opstarten) voor de VM op. De besturingssysteemschijf is de schijf die de bootloader en het installatieprogramma van het besturingssysteem bevat.
     - **Beschikbaarheidszone**: Geef de beschikbaarheidszone op die moet worden gebruikt.
     - **Beschikbaarheidsset**: Geef de beschikbaarheidsset op die moet worden gebruikt.
 
-> [!NOTE]
-> Als u een andere beschikbaarheidsoptie wilt selecteren voor een set virtuele machines, gaat u naar stap 1 en herhaalt u de stappen door andere beschikbaarheidsopties te selecteren na het starten van de replicatie voor één set virtuele machines.
+![Rekeninstellingen](./media/tutorial-migrate-physical-virtual-machines/compute-settings.png)
 
-   ![Rekeninstellingen](./media/tutorial-migrate-physical-virtual-machines/compute-settings.png)
-
-13. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende**.
+15. Geef in **Schijven** op of de VM-schijven moeten worden gerepliceerd in Azure en selecteer het schijftype (standaard SSD/HDD of premium beheerde schijven) in Azure. Klik op **Volgende**.
     - U kunt schijven uitsluiten van replicatie.
     - Als u schijven uitsluit, zijn deze na migratie niet beschikbaar in de Azure-VM. 
 
     ![Schijfinstellingen](./media/tutorial-migrate-physical-virtual-machines/disks.png)
 
-
-14. Controleer in **Replicatie controleren en beginnen** de instellingen en klik op **Repliceren** om de eerste replicatie van de servers te beginnen.
+16. Controleer in **Replicatie controleren en beginnen** de instellingen en klik op **Repliceren** om de eerste replicatie van de servers te beginnen.
 
 > [!NOTE]
 > U kunt de replicatie-instellingen op elk gewenst moment bijwerken voordat de replicatie begint, **Beheren** > **Machines repliceren**. De instellingen kunnen niet meer worden gewijzigd nadat de replicatie is begonnen.
-
-
 
 ## <a name="track-and-monitor"></a>Bijhouden en controleren
 

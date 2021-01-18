@@ -308,10 +308,10 @@
       items:
         - name: Een laag kiezen
           href: search-sku-tier.md
-        - name: Capaciteit en kosten inschatten
-          href: search-sku-manage-costs.md
-        - name: Capaciteit aanpassen
+        - name: Capaciteit schatten en beheren
           href: search-capacity-planning.md
+        - name: Kosten schatten
+          href: search-sku-manage-costs.md
         - name: Servicelimieten
           href: search-limits-quotas-capacity.md
         - name: Schalen voor prestaties

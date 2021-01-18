@@ -55,6 +55,8 @@
               href: ./database/security-controls-policy.md
             - name: Beveiligingsbasislijn
               href: database/security-baseline.md
+            - name: Altijd versleuteld
+              href: database/always-encrypted-landing.yml
             - name: Azure Defender voor SQL
               href: database/azure-defender-for-sql.md
             - name: Advanced Threat Protection
@@ -255,6 +257,8 @@
               href: database/service-tier-hyperscale.md
             - name: Veelgestelde vragen over Hyperscale
               href: database/service-tier-hyperscale-frequently-asked-questions-faq.md
+        - name: Kosten voorspellen en beheren
+          href: database/cost-management.md
     - name: Snelstartgidsen
       href: database/quickstart-content-reference-guide.md
       items:
@@ -293,14 +297,16 @@
               href: database/active-geo-replication-configure-portal.md
         - name: Beveiliging
           items:
+            - name: Always Encrypted met beveiligde enclaves
+              href: database/always-encrypted-enclaves-getting-started.md
             - name: Beveiliging configureren
               href: database/secure-database-tutorial.md
+            - name: Gebruikers maken met service-principals
+              href: database/authentication-aad-service-principal-tutorial.md
             - name: TDE BYOK-sleutels roteren
               href: database/transparent-data-encryption-byok-key-rotation.md
             - name: TDE-beveiliging verwijderen
               href: database/transparent-data-encryption-byok-remove-tde-protector.md
-            - name: Gebruikers maken met service-principals
-              href: database/authentication-aad-service-principal-tutorial.md
         - name: Gegevens verplaatsen
           items:
             - name: Migreren met behulp van DMS
@@ -371,6 +377,19 @@
               href: database/sql-data-sync-troubleshoot.md
         - name: Beveiliging
           items:
+            - name: Altijd versleuteld
+              href: database/always-encrypted-landing.yml
+            - name: Always Encrypted met beveiligde enclaves
+              href: database/always-encrypted-with-secure-enclaves-landing.yml
+              items:
+                - name: Always Encrypted configureren en gebruiken met beveiligde enclaves >
+                  href: /sql/relational-databases/security/encryption/configure-always-encrypted-enclaves
+                - name: Plannen voor Intel SGX-enclaves en -attestation
+                  href: database/always-encrypted-enclaves-plan.md
+                - name: Intel SGX inschakelen
+                  href: database/always-encrypted-enclaves-enable-sgx.md
+                - name: Azure Attestation configureren
+                  href: database/always-encrypted-enclaves-configure-attestation.md
             - name: Azure SQL-controle
               href: database/auditing-overview.md
             - name: Indeling van auditlogboek
@@ -922,10 +941,12 @@
               href: /sql/relational-databases/database-mail/database-mail?toc=%2fazure%2fazure-sql%2ftoc.json
         - name: Beveiliging
           items:
-            - name: Openbare eindpunten beveiligen
-              href: managed-instance/public-endpoint-overview.md
+            - name: Altijd versleuteld
+              href: database/always-encrypted-landing.yml
             - name: Controleren
               href: managed-instance/auditing-configure.md
+            - name: Openbare eindpunten beveiligen
+              href: managed-instance/public-endpoint-overview.md
             - name: Serververtrouwensgropen
               href: managed-instance/server-trust-group-overview.md
     - name: Procedures

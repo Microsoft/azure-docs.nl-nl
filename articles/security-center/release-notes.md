@@ -1,6 +1,6 @@
 ---
 title: Releaseopmerkingen voor Azure Security Center
-description: Een beschrijving van wat er nieuw is en gewijzigd is in Azure Security Center.
+description: Een beschrijving van wat er nieuw is en gewijzigd is in Azure Security Center
 services: security-center
 documentationcenter: na
 author: memildin
@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/07/2021
+ms.date: 01/17/2021
 ms.author: memildin
-ms.openlocfilehash: 86da6c0a3393dd3f47143355597cd9ccdec9928d
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 48e7093c30ffb135231f5843cb0767848f242d89
+ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539941"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98541377"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -32,6 +32,24 @@ Zie [Belangrijke aanstaande wijzigingen aan Azure Security Center](upcoming-chan
 
 
 ## <a name="january-2021"></a>Januari 2021
+
+Updates in december omvatten:
+
+- [CSV-export van een gefilterde lijst met aanbevelingen](#csv-export-of-filtered-list-of-recommendations)
+- [Evaluatie van beveiligingsproblemen voor on-premises en multi-cloudmachines is algemeen beschikbaar](#vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-generally-available)
+
+
+### <a name="csv-export-of-filtered-list-of-recommendations"></a>CSV-export van een gefilterde lijst met aanbevelingen 
+
+In november 2020 hebben we filters toegevoegd aan de aanbevelingspagina ([Lijst met aanbevelingen bevat nu filters](#recommendations-list-now-includes-filters)). In december hebben we die filters uitgebreid ([De aanbevelingspagina bevat nieuwe filters voor omgeving, ernst en beschikbare reacties](#recommendations-page-has-new-filters-for-environment-severity-and-available-responses)). 
+
+Met deze aankondiging veranderen we het gedrag van de knop **Downloaden naar CSV**, zodat de CSV-export alleen de aanbevelingen omvat die momenteel worden weergegeven in de gefilterde lijst. 
+
+In de onderstaande afbeeldingen ziet u bijvoorbeeld dat de lijst is gefilterd in twee aanbevelingen. Het gegenereerde CSV-bestand omvat de statusgegevens voor elke resource die door deze twee aanbevelingen wordt beïnvloed.   
+
+:::image type="content" source="media/security-center-managing-and-responding-alerts/export-to-csv-with-filters.png" alt-text="Gefilterde aanbevelingen exporteren naar een CSV-bestand":::
+
+Meer informatie in [Beveiligingsaanbevelingen in Azure Security Center](security-center-recommendations.md).
 
 ### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-generally-available"></a>Evaluatie van beveiligingsproblemen voor on-premises en multi-cloudmachines is algemeen beschikbaar
 

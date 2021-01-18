@@ -4,12 +4,12 @@ ms.custom: devx-track-java
 ms.author: pafarley
 ms.service: cognitive-services
 ms.date: 10/13/2020
-ms.openlocfilehash: 8cb49cf69d360f690da059423a4e03bb91764f51
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: ad4ec34dcf790ddadedb12e0039f3df2c5fcf9c4
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97582680"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98256505"
 ---
 Ga aan de slag met de Custom Vision-clientbibliotheek voor Java om een objectdetectiemodel te bouwen. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. Gebruik dit voorbeeld als een sjabloon om uw eigen beeldherkennings-app te maken.
 
@@ -151,6 +151,9 @@ Met deze methode worden de tags gedefinieerd waarmee u het model gaat trainen.
 ## <a name="upload-and-tag-images"></a>Afbeeldingen uploaden en labelen
 
 Download eerst de voorbeeldafbeeldingen voor dit project. Sla de inhoud van de [map Voorbeeldafbeeldingen](https://github.com/Azure-Samples/cognitive-services-sample-data-files/tree/master/CustomVision/ObjectDetection/Images) op uw lokale apparaat op.
+
+> [!NOTE]
+> Met Trove, een Microsoft Garage-project, kunt u sets afbeeldingen verzamelen en aanschaffen voor trainingsdoeleinden. Wanneer u uw afbeeldingen hebt verzameld kunt u ze downloaden en importeren naar uw Custom Vision-project. Ga naar de pagina [Trove](https://www.microsoft.com/en-us/ai/trove?activetab=pivot1:primaryr3) voor meer informatie.
 
 Als u afbeeldingen labelt in objectdetectieprojecten, dient u de regio van elk gelabeld object op te geven met behulp van genormaliseerde coördinaten. Met de volgende code wordt elk voorbeeld van een afbeelding aan de bijbehorende gelabelde regio gekoppeld.
 

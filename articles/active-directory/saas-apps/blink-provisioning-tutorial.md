@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/19/2019
 ms.author: Zhchia
-ms.openlocfilehash: 5f49d2c918164fa529b12313e000aff5f8893a65
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: d691807f673dcd6c8147c9ff18a95c6ce0c88ae6
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201843"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247426"
 ---
 # <a name="tutorial-configure-blink-for-automatic-user-provisioning"></a>Zelfstudie: Blink configureren voor automatische gebruikersinrichting
 
@@ -50,7 +50,7 @@ Voordat u automatische inrichting van gebruikers configureert en inschakelt, moe
 
 ## <a name="setup-blink-for-provisioning"></a>Blink instellen voor inrichting
 
-1. Dien een [Support Case](https://support.joinblink.com) in of e-mail **support van Blink** op support@joinblink.com om een SCIM-token aan te vragen. .
+1. Dien een [Support Case](https://support.joinblink.com) in of e-mail **support van Blink** op support@joinblink.com om een SCIM-token aan te vragen.
 
 2.  Kopieer het **SCIM Authentication Token**. Deze waarde moet later worden ingevoerd in het veld Token voor geheim op het tabblad Inrichten van de Blink-toepassing in de Azure-portal.
 
@@ -117,7 +117,23 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met Blink worden gesynchroniseerd. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen, worden gebruikt om de gebruikersaccounts in Blink te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Kenmerken van Blink-gebruikers](media/blink-provisioning-tutorial/new-user-attributes.png)
+   |Kenmerk|Type|Ondersteund voor filteren|
+   |---|---|---|
+   |userName|Tekenreeks|&check;|
+   |actief|Booleaans|
+   |title|Tekenreeks|
+   |emails[type eq "work"].value|Tekenreeks|
+   |name.givenName|Tekenreeks|
+   |name.familyName|Tekenreeks|
+   |phoneNumbers[type eq "work"].value|Tekenreeks|
+   |phoneNumbers[type eq "mobile"].value|Tekenreeks|
+   |externalId|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:employeeNumber|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie|
+   |urn:ietf:params:scim:schemas:extension:blink:2.0:User:company|Tekenreeks|
+   urn:ietf:params:scim:schemas:extension:blink:2.0:User:description|Tekenreeks|
+   urn:ietf:params:scim:schemas:extension:blink:2.0:User:location|Tekenreeks|
 
 10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
@@ -137,15 +153,23 @@ Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers di
 
 Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-provisioning/check-status-user-account-provisioning.md) voor informatie over het lezen van de Azure AD-inrichtingslogboeken.
 
+## <a name="step-6-monitor-your-deployment"></a>Stap 6. Uw implementatie bewaken
+Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om uw implementatie te bewaken:
+
+* Gebruik de [inrichtingslogboeken](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
+* Controleer de [voortgangsbalk](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
+* Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status) voor meer informatie over quarantainestatussen.  
+
+
 ## <a name="change-log"></a>Wijzigingenlogboek
 
 * 01/14/2021 - Aangepaste extensiekenmerken **bedrijf**, **beschrijving** en **locatie** zijn toegevoegd.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [Gebruikersaccountinrichting voor zakelijke apps beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
+* [Gebruikersaccountinrichting voor zakelijke apps beheren](../manage-apps/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)
+* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../manage-apps/check-status-user-account-provisioning.md)

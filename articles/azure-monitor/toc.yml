@@ -8,6 +8,8 @@
       href: faq.md
     - name: Wat is nieuw?
       href: whats-new.md
+    - name: Migreren van Operations Manager
+      href: azure-monitor-operations-manager.md
 - name: Snelstartgidsen
   items:
     - name: Azure-resource bewaken
@@ -196,6 +198,8 @@
               href: platform/metric-chart-samples.md
             - name: Problemen met grafieken met metrische gegevens oplossen
               href: platform/metrics-troubleshoot.md
+            - name: Informatie over metrische gegevensaggregatie
+              href: platform/metrics-aggregation-explained.md
     - name: Azure Monitor-logboeken
       items:
         - name: Overzicht
@@ -664,6 +668,8 @@
                       href: app/javascript-react-native-plugin.md
                     - name: Angular-invoegtoepassing
                       href: app/javascript-angular-plugin.md
+                    - name: Klik op de invoegtoepassing Analytics Auto-collection
+                      href: app/javascript-click-analytics-plugin.md
                 - name: Problemen oplossen
                   items:
                     - name: SDK-laadfout

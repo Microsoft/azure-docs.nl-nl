@@ -223,14 +223,12 @@
           items:
             - name: Weergeven met Azure
               href: batch-rendering-service.md
-            - name: VM-installatiekopieën weergeven
+            - name: Weergave in batches voor VM-installatiekopieën
               href: batch-rendering-applications.md
             - name: Mogelijkheden voor weergave in batches
               href: batch-rendering-functionality.md
             - name: Batch Rendering gebruiken
               href: batch-rendering-using.md
-            - name: Render Managers gebruiken
-              href: batch-rendering-render-managers.md
             - name: Naslaginformatie voor weergavetoepassing
               href: batch-rendering-application-reference.md
             - name: Opslag en gegevensverplaatsing

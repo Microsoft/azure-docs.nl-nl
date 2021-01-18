@@ -571,7 +571,11 @@
             - name: Gesynchroniseerde gegevens van uw ITSM-product
               href: platform/itsmc-synced-data.md
             - name: Problemen oplossen in ITSM-connector
-              href: platform/itsmc-resync-servicenow.md
+              items:
+                - name: Overzicht
+                  href: platform/itsmc-resync-servicenow.md
+                - name: Dashboard verkennen
+                  href: platform/itsmc-dashboard.md
             - name: Integreren met beveiligde export
               items:
                 - name: Overzicht

@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 11/18/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7f0ca83c194aae6f4a8d04d70c2d4f3746ad2ca5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 828f37030ae567cacbaad25849b7ba24c561c20c
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96446719"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132763"
 ---
 # <a name="azure-synapse-analytics-terminology"></a>Azure Synapse Analytics-terminologie
 
@@ -38,7 +38,7 @@ In Synapse Studio kunt u met SQL-pools werken door **SQL-scripts** te maken en u
 
 ## <a name="apache-spark-for-synapse"></a>Apache Spark for Synapse
 
-Maak en gebruik **serverloze Apache Spark-pools** in uw Synapse-werkruimte als u Spark-analyses wilt gebruiken. Wanneer u een Spark-pool begint te gebruiken, maakt de werkruimte een **Spark-sessie** voor de resources van die sessie. 
+Maak en gebruik **serverloze Apache Spark-pools** in uw Synapse-werkruimte als u Spark-analyses wilt gebruiken. Wanneer u een Spark-pool gaat gebruiken, maakt de werkruimte een **Spark-sessie** om de resources te verwerken die aan die sessie zijn gekoppeld. 
 
 Binnen Synapse zijn er twee manieren om Spark te gebruiken:
 * **Spark-notebooks** voor het uitvoeren van data science en data engineering met behulp van Scala, PySpark, C# en SparkSQL

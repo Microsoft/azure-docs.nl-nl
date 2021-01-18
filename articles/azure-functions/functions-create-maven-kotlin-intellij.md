@@ -1,27 +1,27 @@
 ---
-title: Een Azure-functie maken met Kotlin en IntelliJ
-description: Meer informatie over het maken en publiceren van een eenvoudige, door HTTP geactiveerde, serverloze app op Azure met Kotlin en IntelliJ.
+title: Een Kotlin-functie in Azure Functions maken met behulp van IntelliJ
+description: Ontdek het gebruik van IntelliJ om een eenvoudige, door HTTP geactiveerde Kotlin-functie te maken, die u vervolgens publiceert om te worden uitgevoerd in een serverloze omgeving in Azure.
 author: dglover
 ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 03/25/2020
 ms.author: dglover
-ms.openlocfilehash: 09dd868dc9e05241943899654d7c8bb427a8f268
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 0207e4af9f845343866714ec207ca306cb327b36
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104832"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035169"
 ---
-# <a name="quickstart-create-your-first-http-triggered-function-with-kotlin-and-intellij"></a>Quickstart: Uw eerste door HTTP geactiveerde functie maken met Kotlin en IntelliJ
+# <a name="create-your-first-kotlin-function-in-azure-using-intellij"></a>Uw eerste Kotlin-functie maken in Azure met behulp van IntelliJ
 
-In dit artikel wordt beschreven hoe u een [serverloos](https://azure.microsoft.com/overview/serverless-computing/) functieproject maakt met IntelliJ IDEA en Apache Maven. Ook wordt uitgelegd hoe u lokaal fouten opspoort in de functiecode in de Integrated Development Environment (IDE) en vervolgens het functieproject implementeert in Azure.
+In dit artikel leest u hoe u een door HTTP geactiveerde Java-functie maakt in een IntelliJ IDEA-project, hoe u het project uitvoert en debugt in de IDE (Integrated Development Environment) en vervolgens het functieproject implementeert in een functie-app in Azure.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="set-up-your-development-environment"></a>De ontwikkelomgeving instellen
 
-Als u een functie wilt ontwikkelen met Kotlin en IntelliJ, installeert u de volgende software:
+Installeer de volgende software om Kotlin-functies in Azure te maken en publiceren met behulp van IntelliJ:
 
 - [Java Developer Kit](/azure/developer/java/fundamentals/java-jdk-long-term-support) (JDK), versie 8
 - [Apache Maven](https://maven.apache.org) versie 3.0 of hoger
@@ -32,7 +32,7 @@ Als u een functie wilt ontwikkelen met Kotlin en IntelliJ, installeert u de volg
 > [!IMPORTANT]
 > De omgevingsvariabele JAVA_HOME moet zijn ingesteld op de installatielocatie van de JDK om de stappen in dit artikel te voltooien.
 
-## <a name="create-a-functions-project"></a>Een Functions-project maken
+## <a name="create-a-function-project"></a>Een functieproject maken
 
 1. Selecteer **Nieuw project maken** in IntelliJ IDEA.  
 1. Selecteer in het venster **Nieuw project** **Maven** in het linkerdeelvenster.
@@ -47,10 +47,10 @@ Als u een functie wilt ontwikkelen met Kotlin en IntelliJ, installeert u de volg
 
 Maven maakt de projectbestanden in een nieuwe map met dezelfde naam als de waarde _ArtifactId_. De gegenereerde code van het project is een eenvoudige, [door HTTP getriggerde](./functions-bindings-http-webhook.md) functie die de hoofdtekst van de activerende HTTP-aanvraag weergeeft.
 
-## <a name="run-functions-locally-in-the-ide"></a>Functies lokaal uitvoeren in de IDE
+## <a name="run-project-locally-in-the-ide"></a>Project lokaal uitvoeren in de IDE
 
 > [!NOTE]
-> Als u de functies lokaal wilt uitvoeren en fouten wilt opsporen, controleert u of u [Azure Functions Core Tools, versie 2](functions-run-local.md#v2) hebt geïnstalleerd.
+> Als u het project lokaal wilt uitvoeren en debuggen, controleert u of [Azure Functions Core Tools, versie 2](functions-run-local.md#v2) is geïnstalleerd.
 
 1. Wijzigingen handmatig importeren of [automatisch importeren](https://www.jetbrains.com/help/idea/creating-and-optimizing-imports.html).
 1. Op de werkbalk **Maven-projecten**.
@@ -60,7 +60,7 @@ Maven maakt de projectbestanden in een nieuwe map met dezelfde naam als de waard
 
 1. Sluit het dialoogvenster uitvoeren wanneer u klaar bent met het testen van de functie. Er kan slechts één functiehost actief zijn en lokaal worden uitgevoerd.
 
-## <a name="debug-the-function-in-intellij"></a>Lokaal fouten opsporen in de functie in IntelliJ
+## <a name="debug-the-project-in-intellij"></a>Het project debuggen in IntelliJ
 
 1. Als u de functiehost in de foutopsporingsmodus wilt starten, voegt u **-DenableDebug** als argument toe wanneer u de functie uitvoert. U kunt de configuratie in [maven-doelen](https://www.jetbrains.com/help/idea/maven-support.html#run_goal) wijzigen of de volgende opdracht uitvoeren in een terminalvenster:  
 
@@ -75,25 +75,25 @@ Maven maakt de projectbestanden in een nieuwe map met dezelfde naam als de waard
 1. Voltooi de velden _Naam_ en _Instellingen_ en selecteer vervolgens **OK** om de configuratie op te slaan.
 1. Na de installatie selecteert u **Fouten opsporen < Naam van de externe configuratie >** of drukt u op SHIFT + F9 op het toetsenbord om de foutopsporing te starten.
 
-   ![Functies voor foutopsporing in IntelliJ](media/functions-create-first-kotlin-intellij/debug-configuration-intellij.PNG)
+   ![Project debuggen in IntelliJ](media/functions-create-first-kotlin-intellij/debug-configuration-intellij.PNG)
 
 1. Wanneer u klaar bent, stopt u de foutopsporing en het actieve proces. Er kan slechts één functiehost actief zijn en lokaal worden uitgevoerd.
 
-## <a name="deploy-the-function-to-azure"></a>De functie implementeren in Azure
+## <a name="deploy-the-project-to-azure"></a>Het project implementeren in Azure
 
-1. Voordat u uw functie kunt implementeren in Azure, moet u zich [aanmelden met behulp van de Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
+1. Voordat u uw project kunt implementeren in een functie-app in Azure, moet u zich [aanmelden met behulp van de Azure CLI](/cli/azure/authenticate-azure-cli?view=azure-cli-latest).
 
    ``` azurecli
    az login
    ```
 
-1. Implementeer de code in een nieuwe functie-app met de Maven-target `azure-functions:deploy`. U kunt ook de optie **Azure-functions:deploy** in het venster Maven-projecten selecteren.
+1. Implementeer de code in een nieuwe functie-app met behulp van de Maven-target `azure-functions:deploy`. U kunt ook de optie **Azure-functions:deploy** in het venster Maven-projecten selecteren.
 
    ```
    mvn azure-functions:deploy
    ```
 
-1. Zoek de URL voor uw functie in de Azure CLI-uitvoer nadat de functie succesvol is geïmplementeerd.
+1. Zoek de URL voor de HTTP-triggerfunctie in de Azure CLI-uitvoer nadat de functie-app is geïmplementeerd.
 
    ``` output
    [INFO] Successfully deployed Function App with package.
@@ -105,5 +105,5 @@ Maven maakt de projectbestanden in een nieuwe map met dezelfde naam als de waard
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Nu u uw eerste Kotlin-functie naar Azure hebt geïmplementeerd, neemt u [Azure Functions Java-handleiding voor ontwikkelaars](functions-reference-java.md) door voor meer informatie over het ontwikkelen van Java- en Kotlin-functies. Deze handleiding is vooralsnog door een vertaalmachine vertaald.
-- U kunt extra functies met verschillende triggers toevoegen aan uw project met de Maven-target `azure-functions:add`.
+Nu u uw eerste Kotlin-functie-app naar Azure hebt geïmplementeerd, neemt u de [Azure Functions Java-handleiding voor ontwikkelaars](functions-reference-java.md) door voor meer informatie over het ontwikkelen van Java- en Kotlin-functies.
+- Voeg extra functies verschillende triggers toe aan uw project met de Maven-target `azure-functions:add`.

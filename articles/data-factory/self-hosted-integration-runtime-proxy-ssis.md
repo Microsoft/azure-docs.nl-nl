@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 11/19/2020
-ms.openlocfilehash: 82cc58d46061ec7b623d062ab0b0e5a1fdae7ddd
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: bde8bc11a959bea4bd2c05c5ae75db81192aad6a
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352215"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555862"
 ---
 # <a name="configure-a-self-hosted-ir-as-a-proxy-for-an-azure-ssis-ir-in-azure-data-factory"></a>Een zelf-hostende IR configureren als proxy voor een Azure-SSIS IR in Azure Data Factory
 
@@ -54,7 +54,7 @@ Ten slotte downloadt en installeert u de nieuwste versie van de zelf-hostende IR
 
 ### <a name="enable-windows-authentication-for-on-premises-staging-tasks"></a>Windows-verificatie inschakelen voor on-premises faserings taken
 
-Als voor on-premises staging-taken op uw zelf-hostende IR Windows-verificatie is vereist, [configureert u uw SSIS-pakketten voor gebruik van dezelfde Windows-verificatie](/sql/integration-services/lift-shift/ssis-azure-connect-with-windows-auth?view=sql-server-ver15). 
+Als voor on-premises staging-taken op uw zelf-hostende IR Windows-verificatie is vereist, [configureert u uw SSIS-pakketten voor gebruik van dezelfde Windows-verificatie](/sql/integration-services/lift-shift/ssis-azure-connect-with-windows-auth). 
 
 Uw on-premises faserings taken worden aangeroepen met het zelf-hostende IR-service account (standaard *NT SERVICE\DIAHostService*) en uw gegevens archieven worden geopend met het Windows-verificatie account. Voor beide accounts moet een bepaald beveiligings beleid worden toegewezen. Op de zelf-hostende IR-computer gaat u naar **lokaal**  >  **beleid lokale beleids regels**  >  **toewijzing van gebruikers rechten** en gaat u als volgt te werk:
 
@@ -70,7 +70,7 @@ Als u dit nog niet hebt gedaan, maakt u een gekoppelde Azure Blob Storage-servic
 - Selecteer voor **verificatie methode** **account sleutel**, **SAS-URI**, **Service-Principal** of **beheerde identiteit**.  
 
 >[!TIP]
->Als u de **Service-Principal** -methode selecteert, geeft u de Service-Principal ten minste een rol voor *Storage BLOB data Inzender* . Zie [Azure Blob Storage-connector](connector-azure-blob-storage.md#linked-service-properties)voor meer informatie. Als u de methode **beheerde identiteit** selecteert, verleen uw ADF beheerde identiteit de juiste rollen om toegang te krijgen tot Azure Blob Storage. Zie [toegang tot Azure Blob Storage met behulp van Azure Active Directory-verificatie met beheerde identiteit voor ADF](/sql/integration-services/connection-manager/azure-storage-connection-manager?view=sql-server-ver15#managed-identities-for-azure-resources-authentication)voor meer informatie.
+>Als u de **Service-Principal** -methode selecteert, geeft u de Service-Principal ten minste een rol voor *Storage BLOB data Inzender* . Zie [Azure Blob Storage-connector](connector-azure-blob-storage.md#linked-service-properties)voor meer informatie. Als u de methode **beheerde identiteit** selecteert, verleen uw ADF beheerde identiteit de juiste rollen om toegang te krijgen tot Azure Blob Storage. Zie [toegang tot Azure Blob Storage met behulp van Azure Active Directory-verificatie met beheerde identiteit voor ADF](/sql/integration-services/connection-manager/azure-storage-connection-manager#managed-identities-for-azure-resources-authentication)voor meer informatie.
 
 ![De aan Azure Blob Storage gekoppelde service voorbereiden voor fase ring](media/self-hosted-integration-runtime-proxy-ssis/shir-azure-blob-storage-linked-service.png)
 
@@ -132,7 +132,7 @@ Start-AzDataFactoryV2IntegrationRuntime -ResourceGroupName $ResourceGroupName `
 
 Door de meest recente SSDT te gebruiken als de extensie voor de SSIS-projecten voor Visual Studio of een zelfstandig installatie programma, kunt u een nieuwe `ConnectByProxy` eigenschap vinden die is toegevoegd aan de verbindings beheer Programma's voor ondersteunde gegevens stroom onderdelen.
 * [De SSIS projects-extensie voor Visual Studio downloaden](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects)
-* [Het zelfstandige installatie programma downloaden](/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)   
+* [Het zelfstandige installatie programma downloaden](/sql/ssdt/download-sql-server-data-tools-ssdt#ssdt-for-vs-2017-standalone-installer)   
 
 Wanneer u nieuwe pakketten met gegevens stroom taken ontwerpt met onderdelen die toegang hebben tot gegevens on-premises, kunt u deze eigenschap inschakelen door deze in te stellen op *True* in het deel venster **Eigenschappen** van de relevante verbindings beheer Programma's.
 

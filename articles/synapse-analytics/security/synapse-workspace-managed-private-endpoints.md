@@ -5,15 +5,15 @@ author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: security
-ms.date: 10/16/2020
+ms.date: 01/12/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5258b1eab48f71d8d17f52849b5e57b467e7a2da
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 2d2b65261e09d056ec76b25d6fcb6627bc54770b
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460381"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165719"
 ---
 # <a name="synapse-managed-private-endpoints"></a>Beheerde privé-eindpunten in Synapse
 
@@ -21,27 +21,20 @@ In dit artikel wordt uitleg gegeven over beheerde privé-eindpunten in Azure Syn
 
 ## <a name="managed-private-endpoints"></a>Beheerde privé-eindpunten
 
-Beheerde privé-eindpunten zijn privé-eindpunten die zijn gemaakt in het Microsoft Azure Virtual Network van de beheerde werkruimte om een privé-koppeling met Azure-resources tot stand te brengen. Deze privé-eindpunten worden namens u door Azure Synapse beheerd.
+Beheerde privé-eindpunten zijn privé-eindpunten die zijn gemaakt in een beheerd virtueel netwerk dat is gekoppeld aan uw Azure Synapse-werkruimte. Met beheerde privé-eindpunten wordt een privékoppeling naar Azure-resources tot stand gebracht. Deze privé-eindpunten worden namens u door Azure Synapse beheerd. Vanuit uw Azure Synapse-werkruimte kunt u beheerde privé-eindpunten maken om toegang te krijgen tot Azure-services (zoals Azure Storage en Azure Cosmos DB) en in Azure gehoste klanten-/partnerservices.
 
-Azure Synapse ondersteunt privé-koppelingen. Met Private Link kunt u Azure-services (zoals Azure Storage en Azure Cosmos DB) en in Azure gehoste klanten-/partnerservices veilig benaderen vanuit uw Azure Virtual Network.
+Wanneer u beheerde privé-eindpunten gebruikt, verloopt verkeer tussen uw Azure Synapse-werkruimte en andere Azure-resources volledig over het Microsoft-backbone-netwerk. Beheerde privé-eindpunten bieden bescherming tegen exfiltratie van gegevens. Een beheerd privé-eindpunt maakt gebruik van een privé IP-adres van uw beheerde virtuele netwerk om de Azure-service waarmee uw Azure Synapse-werkruimte communiceert, op efficiënte wijze in uw virtuele netwerk onder te brengen. Beheerde privé-eindpunten worden toegewezen aan een specifieke resource in Azure, en niet de volledige service. Klanten kunnen de connectiviteit beperken tot een specifieke resource die is goedgekeurd door hun organisatie. 
 
-Wanneer u een privé-koppeling gebruikt, loopt het verkeer tussen uw Virtual Network en werkruimte volledig over het backbone-netwerk van Microsoft. Private Link beschermt tegen exfiltratie van gegevens. U kunt een privé-koppeling naar een resource tot stand brengen door een privé-eindpunt te maken.
-
-Het privé-eindpunt maakt gebruik van een privé-IP-adres van uw Virtual Network, waardoor de service feitelijk in uw Virtual Network wordt geplaatst. Privé-eindpunten worden toegewezen aan een specifieke resource in Azure, en niet de volledige service. Klanten kunnen de connectiviteit beperken tot een specifieke resource die is goedgekeurd door hun organisatie. 
-
-Meer informatie over [privé-koppelingen en privé-eindpunten](https://docs.microsoft.com/azure/private-link/).
+Meer informatie over [privé-koppelingen en privé-eindpunten](../../private-link/index.yml).
 
 >[!IMPORTANT]
 >Beheerde privé-eindpunten worden alleen ondersteund in Azure Synapse-werkruimten met een Virtual Network in een beheerde werkruimte.
 
 >[!NOTE]
->Al het uitgaande verkeer van het Virtual Network in de beheerde werkruimte, met uitzondering van verkeer van beheerde privé-eindpunten, wordt in de toekomst geblokkeerd. Het wordt aanbevolen dat u beheerde privé-eindpunten maakt om verbinding te maken met al uw Azure-gegevensbronnen die zich buiten de werkruimte bevinden. 
+>Als u een Azure Synapse-werkruimte maakt, kunt u er eventueel een beheerd virtueel netwerk aan koppelen. Als u een beheerd virtueel netwerk aan uw werkruimte wilt koppelen, kunt u ook het uitgaand verkeer vanaf uw werkruimte beperken tot alleen goedgekeurde doelen. U moet beheerde privé-eindpunten naar deze doelen maken. 
 
-Er wordt een privé-eindpuntverbinding gemaakt met de status 'In behandeling' wanneer u een beheerd privé-eindpunt maakt in Azure Synapse. Er wordt een goedkeuringswerkstroom gestart. De eigenaar van de privékoppelingsresource is verantwoordelijk voor het goedkeuren of afwijzen van de verbinding.
 
-Als de eigenaar de verbinding goedkeurt, wordt de privé-koppeling tot stand gebracht. Als de eigenaar de verbinding niet goedkeurt, kan de privé koppeling niet tot stand worden gebracht. In beide gevallen wordt het beheerde privé-eindpunt bijgewerkt met de status van de verbinding.
-
-Alleen een beheerd privé-eindpunt met een goedgekeurde status kan verkeer verzenden naar een gegeven privé-koppelingsresource.
+Er wordt een privé-eindpuntverbinding gemaakt met de status 'In behandeling' wanneer u een beheerd privé-eindpunt maakt in Azure Synapse. Er wordt een goedkeuringswerkstroom gestart. De eigenaar van de privékoppelingsresource is verantwoordelijk voor het goedkeuren of afwijzen van de verbinding. Als de eigenaar de verbinding goedkeurt, wordt de privé-koppeling tot stand gebracht. Als de eigenaar de verbinding niet goedkeurt, kan de privé koppeling niet tot stand worden gebracht. In beide gevallen wordt het beheerde privé-eindpunt bijgewerkt met de status van de verbinding. Er kan alleen een beheerd privé-eindpunt in een goedgekeurde status worden gebruikt om verkeer te verzenden naar de resource met de privékoppeling die aan het beheerde privé-eindpunt is gekoppeld.
 
 ## <a name="managed-private-endpoints-for-dedicated-sql-pool-and-serverless-sql-pool"></a>Beheerde privé-eindpunten voor toegewezen SQL-pools en serverloze SQL-pools
 

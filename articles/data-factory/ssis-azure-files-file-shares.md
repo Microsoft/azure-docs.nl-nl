@@ -8,12 +8,12 @@ ms.technology: integration-services
 author: swinarko
 ms.author: sawinark
 ms.reviewer: maghan
-ms.openlocfilehash: a2b95e0de642dc17865643ec569e7220fe5581b2
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 97ed9b6f3f21b6d9e220c1f4e17d4ba6b0d8b485
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637493"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555505"
 ---
 # <a name="open-and-save-files-on-premises-and-in-azure-with-ssis-packages-deployed-in-azure"></a>Bestanden openen en opslaan op locatie en in azure met SSIS-pakketten die zijn geïmplementeerd in azure
 
@@ -53,4 +53,4 @@ Ga als volgt te werk om **Azure files** te gebruiken wanneer u pakketten die geb
 
 - Implementeer uw pakketten. Zie [een SSIS-project implementeren in azure met SSMS](/sql/integration-services/ssis-quickstart-deploy-ssms)voor meer informatie.
 - Voer uw pakketten uit. Zie [SSIS-pakketten uitvoeren in azure met SSMS](/sql/integration-services/ssis-quickstart-run-ssms)voor meer informatie.
-- Plan uw pakketten. Zie [SSIS-pakketten plannen in azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms?view=sql-server-ver15)voor meer informatie.
+- Plan uw pakketten. Zie [SSIS-pakketten plannen in azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)voor meer informatie.

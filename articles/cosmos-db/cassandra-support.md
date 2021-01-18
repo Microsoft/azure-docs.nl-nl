@@ -8,12 +8,12 @@ ms.service: cosmos-db
 ms.subservice: cosmosdb-cassandra
 ms.topic: overview
 ms.date: 09/14/2020
-ms.openlocfilehash: 8c51450fb6ce5c381784e6aaf9b1a66c3c4ff153
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 771cf97a5c938fb987c66555c92c23f42b302a10
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96188544"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134225"
 ---
 # <a name="apache-cassandra-features-supported-by-azure-cosmos-db-cassandra-api"></a>Door Azure Cosmos DB Cassandra API ondersteunde Apache Cassandra-functies 
 [!INCLUDE[appliesto-cassandra-api](includes/appliesto-cassandra-api.md)]
@@ -84,10 +84,11 @@ Azure Cosmos DB Cassandra-API ondersteunt de volgende CQL-functies:
 | Token * | Ja |
 | ttl | Ja |
 | writetime | Ja |
-| cast | Nee |
+| cast ** | Yes |
 
-> [!NOTE]
-> \* Cassandra-API biedt ondersteuning voor token als een projectie/selector, en staat token(pk) alleen toe aan de linkerkant van een WHERE-component. `WHERE token(pk) > 1024` wordt bijvoorbeeld ondersteund, maar `WHERE token(pk) > token(100)` wordt **niet** ondersteund.
+> [!NOTE] 
+> \* Cassandra-API biedt ondersteuning voor token als een projectie/selector, en staat token(pk) alleen toe aan de linkerkant van een WHERE-component. `WHERE token(pk) > 1024` wordt bijvoorbeeld ondersteund, maar `WHERE token(pk) > token(100)` wordt **niet** ondersteund.  
+> \*\* De functie `cast()` kan niet worden genest in de Cassandra-API. `SELECT cast(count as double) FROM myTable` wordt bijvoorbeeld ondersteund, maar `SELECT avg(cast(count as double)) FROM myTable` wordt **niet** ondersteund.
 
 
 
@@ -183,6 +184,30 @@ Azure Cosmos DB ondersteunt de volgende databaseopdrachten op Cassandra-API-acco
 | UPDATE (lichtgewicht transacties met IF CONDITION)| Nee |
 | TRUNCATE | Nee |
 | USE | Ja |
+
+## <a name="cql-shell-commands"></a>CQL Shell-opdrachten
+
+Azure Cosmos DB ondersteunt de volgende databaseopdrachten op Cassandra-API-accounts.
+
+|Opdracht  |Ondersteund |
+|---------|---------|
+| CAPTURE | Yes |
+| CLEAR | Yes |
+| CONSISTENCY * | N.v.t. |
+| COPY | No |
+| DESCRIBE | Yes |
+| cqlshExpand | No |
+| EXIT | Yes |
+| LOGIN | N.v.t. (DE CQL-functie `USER` wordt niet ondersteund, dus `LOGIN` is redundant) |
+| PAGING | Yes |
+| SERIAL CONSISTENCY * | N.v.t. |
+| SHOW | Yes |
+| BRON | Yes |
+| TRACING | N.v.t. (DE Cassandra-API wordt ondersteund door Azure Cosmos DB: gebruik [diagnostische logboekregistratie](cosmosdb-monitor-resource-logs.md) voor probleemoplossing) |
+
+> [!NOTE] 
+> \* Consistentie werkt anders in Azure Cosmos DB. Kijk [hier](cassandra-consistency.md) voor meer informatie.  
+
 
 ## <a name="json-support"></a>JSON-ondersteuning
 |Opdracht  |Ondersteund |

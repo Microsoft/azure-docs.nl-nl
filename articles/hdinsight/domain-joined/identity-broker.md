@@ -7,12 +7,12 @@ ms.author: hrasheed
 ms.reviewer: jasonh
 ms.topic: how-to
 ms.date: 11/03/2020
-ms.openlocfilehash: c6bc5ca748a35b17c61d314e96f7284d30e7fc3b
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: b8dfe9a23e5c6697323142212156006cb65d2f9b
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96338126"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556525"
 ---
 # <a name="azure-hdinsight-id-broker-hib"></a>Azure HDInsight ID Broker (HIB)
 
@@ -52,7 +52,7 @@ In het volgende diagram ziet u de basis verificatie stroom voor federatieve gebr
 
 Een Enterprise Security Package cluster maken waarbij HDInsight ID Broker is ingeschakeld:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Volg de basis stappen voor het maken van een Enterprise Security Package cluster. Zie [een HDInsight-cluster maken met Enterprise Security Package](apache-domain-joined-configure-using-azure-adds.md#create-an-hdinsight-cluster-with-esp)voor meer informatie.
 1. Selecteer **HDINSIGHT id Broker inschakelen**.
 
@@ -126,9 +126,9 @@ Zie [deze hand leiding](./domain-joined-authentication-issues.md)voor informatie
 
 In het installatie programma voor de HDInsight-ID-Broker kunnen aangepaste apps en clients die verbinding maken met de gateway, worden bijgewerkt om eerst het vereiste OAuth-token te verkrijgen. Volg de stappen in [dit document](../../storage/common/storage-auth-aad-app.md) om het token te verkrijgen met de volgende informatie:
 
-*   OAuth-resource-URI: `https://hib.azurehdinsight.net` 
+*    OAuth-resource-URI: `https://hib.azurehdinsight.net` 
 *   AppId: 7865c1d2-f040-46cc-875f-831a1ef6a28a
-*   Machtiging: (naam: cluster. ReadWrite, id: 8f89faa0-ffef-4007-974d-4989b39ad77d)
+*    Machtiging: (naam: cluster. ReadWrite, id: 8f89faa0-ffef-4007-974d-4989b39ad77d)
 
 Nadat u het OAuth-token hebt verkregen, gebruikt u het in de autorisatie-header van de HTTP-aanvraag voor de cluster gateway (bijvoorbeeld https:// <clustername> -int.azurehdinsight.net). Een voor beeld van een krul opdracht naar Apache livy API kan er als volgt uitzien:
     
@@ -146,7 +146,7 @@ Voor elk cluster wordt een toepassing van derden geregistreerd in AAD met de URI
 In AAD is toestemming vereist voor alle toepassingen van derden voordat deze gebruikers kan verifiëren of toegang kan krijgen tot gegevens.
 
 ### <a name="can-the-consent-be-approved-programatically"></a>Kan de toestemming worden goedgekeurd via een programma?
-Met Microsoft Graph-API kunt u de toestemming automatiseren, raadpleegt u de [API-documentatie](/graph/api/resources/oauth2permissiongrant?view=graph-rest-1.0) voor het automatiseren van de toestemming:
+Met Microsoft Graph-API kunt u de toestemming automatiseren, raadpleegt u de [API-documentatie](/graph/api/resources/oauth2permissiongrant) voor het automatiseren van de toestemming:
 
 * Registreer een app en Ken Application. ReadWrite. alle machtigingen voor de app toe om toegang te krijgen tot Microsoft Graph
 * Nadat een cluster is gemaakt, kunt u een query uitvoeren voor de cluster-app op basis van de id-URI

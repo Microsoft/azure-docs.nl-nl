@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 4e82b4adbfde7623de9497c94e56a9ae303131ad
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: ff777f079116942eba32e49f359c7f7e0b99f65d
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202773"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555777"
 ---
 # <a name="azure-security-baseline-for-azure-data-factory"></a>Azure-beveiligings basislijn voor Azure Data Factory
 
@@ -335,9 +335,9 @@ Azure AD is de aanbevolen methode voor het beheren van gebruikers toegang. Houd 
 
 * [Informatie over privileged Identity Manager](../active-directory/privileged-identity-management/pim-deployment-plan.md)
 
-* [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0)
+* [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole)
 
-* [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0)
+* [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember)
 
 * [Informatie voor lokale accounts](../active-directory/devices/assign-local-admin.md#manage-the-device-administrator-role)
 
@@ -744,7 +744,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via resource grafiek
 
 * [Query's maken met Azure resource Graph](../governance/resource-graph/first-query-portal.md)
 
-* [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?view=azps-3.0.0)
+* [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription)
 
 * [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -880,7 +880,7 @@ Houd er rekening mee dat dit alleen geldt als uw Integration Runtime wordt uitge
 
 **Richt lijnen**: als u de runtime-integratie uitvoert op een virtuele machine van Azure, kunt u, afhankelijk van het type scripts, gebruikmaken van specifieke configuraties van het besturings systeem of bronnen van derden om de mogelijkheid van gebruikers om scripts in azure Compute-resources uit te voeren, te beperken. U kunt ook gebruikmaken van Azure Security Center adaptieve toepassings controles om ervoor te zorgen dat alleen geautoriseerde software wordt uitgevoerd en alle niet-geautoriseerde software wordt geblokkeerd voor uitvoering op Azure Virtual Machines.
 
-* [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](/powershell/module/microsoft.powershell.security/set-executionpolicy?view=powershell-6)
+* [De uitvoering van Power shell-scripts beheren in Windows-omgevingen](/powershell/module/microsoft.powershell.security/set-executionpolicy)
 
 * [Azure Security Center adaptieve toepassings besturings elementen gebruiken](../security-center/security-center-adaptive-application.md)
 
@@ -918,7 +918,7 @@ Houd er rekening mee dat dit alleen geldt als uw Integration Runtime wordt uitge
 
 **Richt lijnen**: standaard beveiligings configuraties voor Azure Data Factory definiëren en implementeren met Azure Policy. Gebruik Azure Policy aliassen in de naam ruimte ' micro soft. DataFactory ' om aangepaste beleids regels te maken om de configuratie van uw Azure Data Factory instanties te controleren of af te dwingen.
 
-* [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?view=azps-3.3.0)
+* [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias)
 
 * [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -964,7 +964,7 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 * [Informatie over het maken van Azure Resource Manager sjablonen](../virtual-machines/windows/ps-template.md)
 
-* [Een aangepaste VM-VHD uploaden naar Azure](/azure-stack/operator/azure-stack-add-vm-image?view=azs-1910)
+* [Een aangepaste VM-VHD uploaden naar Azure](/azure-stack/operator/azure-stack-add-vm-image)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -974,9 +974,9 @@ In de meeste gevallen kunnen de micro soft-sjablonen voor virtuele machines in c
 
 **Richt lijnen**: als u aangepaste Azure Policy definities gebruikt, kunt u Azure DevOps of Azure opslag plaatsen gebruiken om uw code veilig op te slaan en te beheren.
 
-* [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?view=azure-devops)
+* [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow)
 
-* [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/index?view=azure-devops)
+* [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/index)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -1150,7 +1150,7 @@ Voor uw gegevens archieven raadpleegt u de beveiligings basislijn van die servic
 
 * [Een overzicht van Azure VM backup](../backup/backup-azure-vms-introduction.md)
 
-* [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/azurerm.keyvault/backup-azurekeyvaultkey)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -1164,7 +1164,7 @@ Raadpleeg de beveiligings basislijn van de service voor informatie over het vali
 
 * [Bestanden herstellen vanuit back-up van Azure virtual machine](../backup/backup-azure-restore-files-from-vm.md)
 
-* [Sleutel kluis sleutels herstellen in azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey?view=azurermps-6.13.0)
+* [Sleutel kluis sleutels herstellen in azure](/powershell/module/azurerm.keyvault/restore-azurekeyvaultkey)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 

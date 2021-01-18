@@ -9,13 +9,13 @@ manager: diviso
 ms.topic: quickstart
 ms.workload: big-data
 ms.custom: mvc seodec18
-ms.date: 10/02/2020
-ms.openlocfilehash: 3956f8d91793367f7200d2f349a8713aff3d2f59
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 01/11/2021
+ms.openlocfilehash: cb5bac06ab6eeaa00e72ba6068328a972b8ac37b
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016221"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98119326"
 ---
 # <a name="quickstart-explore-the-azure-time-series-insights-gen2-demo-environment"></a>Quickstart: De demo-omgeving van Azure Time Series Insights Gen2 verkennen
 
@@ -38,12 +38,27 @@ De Explorer van Azure Time Series Insights Gen2 geeft historische gegevens en ho
 
 ## <a name="work-with-historical-data"></a>Werken met historische gegevens
 
-1. Bekijk in **Contoso Plant 1** windturbine **W7**.  
+1. Selecteer **Contoso WindFarm-hiërarchie**.
+
+   [![Contoso WindFarm-hiërarchie](media/quickstart-explore/quick-start-contoso-1.png)](media/quickstart-explore/quick-start-contoso-1.png#lightbox)
+
+1. Bekijk in **Contoso Plant 1** windturbine **W7**.
+
+   [![W7 in Contoso Plant 1](media/quickstart-explore/quick-start-contoso-2.png)](media/quickstart-explore/quick-start-contoso-2.png#lightbox)
 
    1. Wijzig het weergavebereik naar **1-1-2017 20:00:00.00 tot 10-3-2017 20:00:00.00 (UTC)** .
+
+      [![Bereikweergave](media/quickstart-explore/range-setting-1.png)](media/quickstart-explore/range-setting-1.png#lightbox)
+
+      [![Instelling bereikweergave](media/quickstart-explore/range-setting-2.png)](media/quickstart-explore/range-setting-2.png#lightbox)
+
+   1. U kunt de bereikweergave aanpassen met behulp van de inzoomfunctie **(+)** en de uitzoomfunctie **(-)** en door de schuifregelaar te bewegen.
+
+      [![Bereikweergave aanpassen](media/quickstart-explore/view-range-setting.png)](media/quickstart-explore/view-range-setting.png#lightbox)
+
    1. Als u een sensor wilt selecteren, selecteert u **Contoso Plant 1** > **W7** > **GeneratorSystem** > **GeneratorSpeed**. Controleer vervolgens de waarden die worden weergegeven.
 
-      [![W7 in Contoso Plant 1](media/v2-update-quickstart/quick-start-generator-speed.png)](media/v2-update-quickstart/quick-start-generator-speed.png#lightbox)
+      [![Snelheid van generator](media/quickstart-explore/quick-start-generator-speed-1.png)](media/quickstart-explore/quick-start-generator-speed-1.png#lightbox)
 
 1. Onlangs heeft Contoso brand geconstateerd in windturbine **W7**. Men is verdeeld over de oorzaak van de brand. In Azure Time Series Insights Gen2 wordt weergegeven welke brandmeldingssensor tijdens de brand is geactiveerd.
 

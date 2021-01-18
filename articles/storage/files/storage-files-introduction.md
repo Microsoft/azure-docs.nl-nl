@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 09/15/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 9ce2044f3ee0bff3335f46d8cf712e64394af2d3
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: f0dcd763240205bd396fc8cd0301c2046098473b
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628863"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98070130"
 ---
 # <a name="what-is-azure-files"></a>Wat is Azure Files?
 Met Azure Files beschikt u over volledig beheerde bestandsshares in de cloud die toegankelijk zijn via het toonaangevende protocol [Server Message Block (SMB)](/windows/win32/fileio/microsoft-smb-protocol-and-cifs-protocol-overview) of [Network File System (NFS)](https://en.wikipedia.org/wiki/Network_File_System). Azure-bestandsshares kunnen gelijktijdig worden gekoppeld door on-premises of cloudimplementaties. SMB-bestandsshares van Azure Files zijn toegankelijk via Windows-, Linux- en macOS-clients. NFS-bestandsshares van Azure Files zijn toegankelijk via Linux- of macOS-clients. Bovendien kunnen Azure-bestandsshares in de cache worden opgeslagen op Windows-servers met Azure File Sync voor snelle toegang tot locaties waar de gegevens worden gebruikt.
@@ -51,7 +51,7 @@ Azure-bestandsshares kunnen worden gebruikt voor het volgende:
 ## <a name="key-benefits"></a>Belangrijkste voordelen
 * **Gedeelde toegang**. Azure-bestandsshares bieden ondersteuning voor de toonaangevende SMB- en NFS-protocollen, wat betekent dat u uw lokale bestandsshares naadloos kunt vervangen door de Azure-bestandsshares zonder dat u zich zorgen hoeft te maken over de compatibiliteit van toepassingen. Het delen van een bestandssysteem op meerdere machines, toepassingen/exemplaren is een belangrijk voordeel van Azure Files voor toepassingen die gegevens moeten kunnen delen. 
 * **Volledig beheerd**. Azure-bestandsshares kunnen worden gemaakt zonder de noodzaak om hardware of een besturingssysteem te beheren. Dit betekent dat u geen essentiële beveiligingsupgrades hoeft te installeren op het serverbesturingssysteem of defecte harde schijven moet vervangen.
-* **Scripts en hulpprogramma’s**. PowerShell-cmdlets en Azure CLI kunnen worden gebruikt voor het maken, koppelen en beheren van Azure-bestandsshares als onderdeel van het beheer van Azure-toepassingen. U kunt Azure-bestandsshares maken en beheren met Azure Portal en Azure Storage Explorer. 
+* **Scripts en hulpprogramma’s**. PowerShell-cmdlets en de Azure-CLI zijn beschikbaar voor het maken, koppelen en beheren van Azure-bestandsshares als onderdeel van het beheer van Azure-toepassingen. U kunt Azure-bestandsshares maken en beheren met behulp van Azure Portal en Azure Storage Explorer. 
 * **Flexibiliteit**. Azure Files is vanaf de grond opgebouwd om altijd beschikbaar te zijn. Het vervangen van on-premises bestandsshares door Azure Files betekent dat u niet langer problemen ondervindt door lokale stroomstoringen of netwerkstoringen. 
 * **Vertrouwde programmeerbaarheid**. Toepassingen die worden uitgevoerd in Azure hebben toegang tot de gegevens in de share via [System I/O-API's](/dotnet/api/system.io.file). Dat betekent dat ontwikkelaars bestaande code en vaardigheden kunnen inzetten voor het migreren van bestaande toepassingen. Naast System IO-API's kunt u [Azure Storage-clientbibliotheken](/previous-versions/azure/dn261237(v=azure.100)) of de [REST-API van Azure Storage](/rest/api/storageservices/file-service-rest-api) gebruiken.
 

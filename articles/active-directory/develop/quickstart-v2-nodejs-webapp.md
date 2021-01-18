@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/28/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, devx-track-js
-ms.openlocfilehash: 643305057490cc550a5a8e39a892297b000cbc8e
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c9aa73767fcb9d57ada11f5830fec00b10eee812
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169406"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98017337"
 ---
 # <a name="quickstart-add-sign-in-using-openid-connect-to-a-nodejs-web-app"></a>Quickstart: Aanmelden met OpenID Connect bij een Node.js-webtoepassing toevoegen
 
@@ -29,38 +29,29 @@ In deze quickstart downloadt u een codevoorbeeld en voert u dit uit. Het codevoo
 - [Node.js](https://nodejs.org/en/download/).
 
 ## <a name="register-your-application"></a>Uw toepassing registreren
-1. Meld u bij de [Azure-portal](https://portal.azure.com/) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Als uw account in meerdere Azure AD-tenants aanwezig is:
-    - Selecteer uw profiel in het menu in de rechterbovenhoek van de pagina en klik op **Schakelen tussen directory's**.
-    - Wijzig uw sessie in de Azure AD-tenant waar u de toepassing wilt maken.
 
-1. Ga naar [Azure Active Directory > App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) om uw app te registreren.
-
-1. Selecteer **Nieuwe registratie.**
-
-1. Wanneer de pagina **Een toepassing registreren** wordt geopend, voert u de registratiegegevens van uw toepassing in:
-    - Voer in de sectie **Naam** een beschrijvende naam in. Deze wordt aan gebruikers van de app getoond. Bijvoorbeeld: MyWebApp
-    - Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in alle organisatiemappen en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)** .
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+1. Zoek en selecteer de optie **Azure Active Directory**.
+1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
+1. Selecteer in de sectie **Ondersteunde accounttypen** de optie **Accounts in alle organisatiemappen en persoonlijke Microsoft-accounts (bijvoorbeeld Skype, Xbox, Outlook.com)** .
 
     Als er meerdere omleidings-URI's zijn, moet u deze later, nadat de app is gemaakt, toevoegen via het tabblad **Verificatie**.
 
 1. Selecteer **Registreren** om de app te maken.
-
 1. Zoek de waarde **Toepassings-ID (client)** op de app-pagina **Overzicht** voor later. U hebt deze waarde nodig om de toepassing later in dit project te configureren.
+1. Selecteer **Verificatie** onder **Beheren**.
+1. Selecteer **Een platform toevoegen** > **Web** 
+1. Voer in de sectie **Omleidings-URI's** `http://localhost:3000/auth/openid/return` in.
+1. Voer een **afmeldings-URL** `https://localhost:3000` in.
+1. In de sectie Impliciete toekenning schakelt u **ID-tokens** in, aangezien voor dit voorbeeld vereist is dat [Impliciete toekenningsstroom](./v2-oauth2-implicit-grant-flow.md) is ingeschakeld om aanmelding van de gebruiker mogelijk te maken.
+1. Selecteer **Configureren**.
+1. Selecteer onder **Beheren** achtereenvolgens **Certificaten en geheimen** > **Nieuw clientgeheim**.
+1. Voer een beschrijving in (bijvoorbeeld app-geheim).
+1. Selecteer een sleutelduur van **1 jaar, 2 jaar** of **Verloopt nooit**.
+1. Selecteer **Toevoegen**. De sleutelwaarde wordt weergegeven. Kopieer de sleutelwaarde en sla deze op een veilige plek op.
 
-1. Selecteer in de lijst met pagina’s voor de app de optie **Verificatie**.
-    - Selecteer in de sectie **Omleidings-URI's** de optie **Web** in de keuzelijst en voer de volgende omleidings-URI in: `http://localhost:3000/auth/openid/return`
-    - Bij **Geavanceerde instellingen** stelt u de **afmeldings-URL** in op `https://localhost:3000`.
-    - Schakel in de sectie **Geavanceerde instellingen > Impliciete toekenning** de optie **ID-tokens** in, aangezien voor dit voorbeeld vereist is dat de [Impliciete toekenningsstroom](./v2-oauth2-implicit-grant-flow.md) is ingeschakeld om aanmelding van de gebruiker mogelijk te maken.
-
-1. Selecteer **Opslaan**.
-
-1. Selecteer op de pagina **Certificaten en geheimen** in de sectie **Clientgeheimen** de optie **Nieuw clientgeheim**.
-    - Voer een beschrijving in (bijvoorbeeld app-geheim).
-    - Selecteer een sleutelduur van **1 jaar, 2 jaar** of **Verloopt nooit**.
-    - Wanneer u op de knop **Toevoegen** klikt, wordt de sleutelwaarde weergegeven. Kopieer de sleutelwaarde en sla hem op een veilige plek op.
-
-    U hebt deze sleutel later nodig om de toepassing te configureren. Deze sleutelwaarde wordt niet opnieuw weergegeven en kan niet op een andere manier worden opgehaald. Noteer de waarde daarom zodra deze wordt weergegeven in Azure Portal.
 
 ## <a name="download-the-sample-application-and-modules"></a>Download de voorbeeldtoepassing en -modules
 

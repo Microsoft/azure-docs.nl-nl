@@ -3,18 +3,18 @@ title: Inzicht in het werken met Azure Cost Management-gegevens
 description: Dit artikel helpt u om een beter beeld te krijgen van gegevens die worden opgenomen in Azure Cost Management en hoe vaak deze worden verwerkt, verzameld, weergegeven en afgesloten.
 author: bandersmsft
 ms.author: banders
-ms.date: 10/26/2020
+ms.date: 01/06/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: micflan
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 97ae2ba26818bbc306da71af814d9b4f95858b6a
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: e6096c259ec1870a711a515bf02d5d00b4f75345
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032572"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97964147"
 ---
 # <a name="understand-cost-management-data"></a>Inzicht in gegevens van Cost Management
 
@@ -101,7 +101,7 @@ In de volgende tabellen ziet u welke gegevens wel en niet worden opgenomen in Co
 
 _<sup>**5**</sup> Gebruik van Azure-service is gebaseerd op reservering en overeengekomen prijzen._
 
-_<sup>**6**</sup> Marketplace-aankopen zijn op dit moment niet beschikbaar voor aanbiedingen van MSDN en Visual Studio._
+_<sup>**6**</sup> Marketplace-aankopen zijn momenteel niet beschikbaar voor aanbiedingen van MSDN en Visual Studio._
 
 _<sup>**7**</sup> Reserveringsaankopen zijn op dit moment alleen beschikbaar voor EA-accounts (Enterprise Agreement) en Microsoft-klantovereenkomstaccounts._
 
@@ -114,11 +114,11 @@ Azure Cost Management ontvangt tags als onderdeel van elke gebruiksrecord die do
 - Sommige geïmplementeerde resources bieden mogelijk geen ondersteuning voor tags of bevatten geen tags in gebruiksgegevens.
 - Resourcetags worden alleen opgenomen in gebruiksgegevens terwijl de tag wordt toegepast: tags worden niet toegepast op historische gegevens.
 - Resourcetags zijn alleen beschikbaar in Cost Management nadat de gegevens zijn vernieuwd.
-- Resourcetags zijn alleen beschikbaar in Cost Management wanneer de resource actief is of wordt uitgevoerd en gebruiksrecords produceert (dus niet wanneer de toewijzing van een virtuele machine ongedaan wordt gemaakt).
+- Resourcetags zijn alleen beschikbaar in Cost Management wanneer de resource actief is of wordt uitgevoerd en gebruiksrecords produceert. Bijvoorbeeld wanneer de toewijzing van een VM ongedaan wordt gemaakt.
 - Voor het beheren van tags moet de inzender toegang tot elke resource hebben.
 - Voor het beheren van tagbeleid moet de eigenaar of beleidsinzender toegang hebben tot een beheergroep, abonnement of resourcegroep.
     
-Als een specifieke tag niet wordt weergegeven in Cost Management, ga dan het volgende na:
+Als er geen specifieke tag wordt weergegeven in Cost Management, ga dan het volgende na:
 
 - Is de tag rechtstreeks toegepast op de resource?
 - Is de tag meer dan 24 uur geleden toegepast?
@@ -139,8 +139,7 @@ Hier volgen enkele tips voor het werken met tags:
 
 - Plan vooruit en definieer een coderingsstrategie waarmee u de kosten per organisatie, toepassing, omgeving, enzovoort, kunt opsplitsen.
 - Gebruik Azure Policy om de tags van een resourcegroep te kopiëren naar afzonderlijke resources en uw coderingsstrategie af te dwingen.
-- Gebruik de Tags-API in combinatie met Query of UsageDetails om alle kosten op basis van de huidige tags op te halen.
-
+- Gebruik de Tags-API met Query of UsageDetails om alle kosten op basis van de huidige tags op te halen.
 
 ## <a name="cost-and-usage-data-updates-and-retention"></a>Updates en retentie voor kosten- en gebruiksgegevens
 
@@ -151,17 +150,18 @@ Kosten en gebruiksgegevens zijn gewoonlijk binnen 8 tot 24 uur beschikbaar in Co
 - Geschatte kosten voor de huidige factureringsperiode kunnen veranderen wanneer u meer gebruikt.
 - Elke update is cumulatief en bevat alle regelitems en gegevens van de vorige update.
 - De huidige factureringsperiode wordt voltooid of _afgesloten_ door Azure als er maximaal 72 uur (drie kalenderdagen) zijn verstreken nadat de factureringsperiode is beëindigd.
+- Tijdens een open maand (niet-gefactureerd) dienen de gegevens van kostenbeheer als een schatting te worden beschouwd. Na gebruik kan het voorkomen dat kosten pas later in rekening worden gebracht.
 
 In de volgende voorbeelden ziet u hoe factureringsperioden kunnen worden beëindigd:
 
 * EA-abonnementen (Enterprise Agreement): als de factureringsmaand eindigt op 31 maart, worden de geschatte kosten maximaal 72 uur later bijgewerkt. In dit voorbeeld zou dat middernacht (UTC) zijn op 4 april.
 * Abonnementen van betalen per gebruik: als de factureringsmaand eindigt op 15 mei, worden de geschatte kosten maximaal 72 uur later bijgewerkt. In dit voorbeeld zou dat middernacht (UTC) zijn op 19 mei.
 
-Zodra de kosten- en gebruiksgegevens beschikbaar zijn in Cost Management en Facturering, wordt deze ten minste 7 jaar bewaard.
+Wanneer de kosten- en gebruiksgegevens beschikbaar komen in Cost Management en Facturering, worden deze ten minste zeven jaar bewaard.
 
 ### <a name="rerated-data"></a>Opnieuw berekende tarieven
 
-Ongeacht of u gegevens ophaalt met behulp van de API's van Cost Management, Power BI of de Azure-portal, moet u er rekening mee houden dat het tarief voor de kosten van de huidige factureringsperiode opnieuw wordt berekend totdat de factuur is gesloten en dat de kosten dus kunnen veranderen.
+Ongeacht of u gegevens ophaalt met behulp van de API's van Cost Management, Power BI of in Azure Portal, u dient er rekening mee te houden dat het tarief voor de kosten van de huidige factureringsperiode opnieuw wordt berekend totdat de factuur is gesloten en dat de kosten dus kunnen veranderen.
 
 ## <a name="cost-rounding"></a>Kostenafronding
 
@@ -184,6 +184,6 @@ Historische gegevens voor aanbiedingen die zijn gebaseerd op tegoeden en vooraf 
 - MSDN (MS-AZR-0062P)
 - Visual Studio (MS-AZR-0029P, MS-AZR-0059P, MS-AZR-0060P, MS-AZR-0063P, MS-AZR-0064P)
 
-## <a name="see-also"></a>Zie ook
+## <a name="next-steps"></a>Volgende stappen
 
 - Als u de eerste quickstart voor Cost Management nog niet hebt voltooid, leest u die op [Kosten analyseren](./quick-acm-cost-analysis.md).

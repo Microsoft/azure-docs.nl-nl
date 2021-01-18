@@ -11,12 +11,12 @@ author: dcstwh
 ms.author: weetok
 manager: anandsub
 ms.custom: devx-track-python
-ms.openlocfilehash: e7b435080fda48e1df0bb31d16dafed30ac3d3db
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: b5d1f0c0d6aa848e590e68e1f18abf7861674483
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497857"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556559"
 ---
 # <a name="programmatically-monitor-an-azure-data-factory"></a>Een Azure-data factory programmatisch bewaken
 
@@ -68,7 +68,7 @@ Zie [een Data Factory en pijp lijn maken met behulp van .net](quickstart-create-
     Console.ReadKey();
     ```
 
-Zie [Data Factory Naslag informatie over .NET SDK](/dotnet/api/microsoft.azure.management.datafactory?view=azure-dotnet)voor volledige documentatie over .NET SDK.
+Zie [Data Factory Naslag informatie over .NET SDK](/dotnet/api/microsoft.azure.management.datafactory)voor volledige documentatie over .NET SDK.
 
 ## <a name="python"></a>Python
 Zie [een Data Factory en pijp lijn maken met behulp](quickstart-create-data-factory-python.md)van python voor een volledig overzicht van het maken en bewaken van een pijp lijn met behulp van python SDK.
@@ -86,7 +86,7 @@ activity_runs_paged = list(adf_client.activity_runs.list_by_pipeline_run(
 print_activity_run_details(activity_runs_paged[0])
 ```
 
-Zie [Naslag informatie over Data Factory PYTHON SDK](/python/api/overview/azure/datafactory?view=azure-python)voor volledige documentatie over python SDK.
+Zie [Naslag informatie over Data Factory PYTHON SDK](/python/api/overview/azure/datafactory)voor volledige documentatie over python SDK.
 
 ## <a name="rest-api"></a>REST-API
 Zie [een Data Factory en pijp lijn maken met behulp van rest API](quickstart-create-data-factory-rest-api.md)voor een volledig overzicht van het maken en bewaken van een pijp lijn met behulp van rest API.

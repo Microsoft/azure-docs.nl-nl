@@ -9,12 +9,12 @@ ms.subservice: security
 ms.date: 12/03/2020
 ms.author: billgib
 ms.reviewer: jrasnick
-ms.openlocfilehash: 256fec97819cde0f6f62d59b34416c92e1edfd20
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 30cc917e2db3a7c4c6d5d6ebd5a8a47afff5d505
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109603"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98133137"
 ---
 # <a name="synapse-access-control"></a>Toegangsbeheer voor Synapse 
 
@@ -30,7 +30,7 @@ Synapse biedt een uitgebreid en nauwkeurig toegangscontrolesysteem dat de volgen
 
 Synapse-rollen bieden machtigingensets die kunnen worden toegepast op verschillende bereiken. Deze granulariteit maakt het eenvoudig om de juiste toegang te verlenen aan beheerders, ontwikkelaars, beveiligingspersoneel en operators tot rekenresources en gegevens.
 
-Toegangsbeheer kan worden vereenvoudigd door gebruik te maken van beveiligingsgroepen die zijn afgestemd op de functies van personen.  Om toegang te beheren hoeft u alleen maar gebruikers toe te voegen aan de juiste beveiligingsgroepen of ze eruit te verwijderen.
+Toegangsbeheer kan worden vereenvoudigd door gebruik te maken van beveiligingsgroepen die zijn afgestemd op de functies van personen. Om toegang te beheren hoeft u alleen maar gebruikers toe te voegen aan de juiste beveiligingsgroepen of ze eruit te verwijderen.
 
 ## <a name="access-control-elements"></a>Elementen van toegangsbeheer
 
@@ -41,16 +41,16 @@ Azure-rollen worden gebruikt voor het beheren van:
 - Apache Spark-pools en 
 - integratieruntimes. 
 
-Als u deze resources wilt *maken*, moet u een Azure-eigenaar of -inzender zijn voor de resourcegroep.  Als u ze wilt *beheren* nadat ze zijn gemaakt, moet u een Azure-eigenaar of -inzender zijn voor de resourcegroep of voor de afzonderlijke resources. 
+Als u deze resources wilt *maken*, moet u een Azure-eigenaar of -inzender zijn voor de resourcegroep. Als u ze wilt *beheren* nadat ze zijn gemaakt, moet u een Azure-eigenaar of -inzender zijn voor de resourcegroep of voor de afzonderlijke resources. 
 
 ### <a name="developing-and-executing-code-in-synapse"></a>Code ontwikkelen en uitvoeren in Synapse 
 
 Synapse ondersteunt twee ontwikkelmodellen.
 
-- **Synapse-liveontwikkeling**.  In Synapse Studio ontwikkelt u code en lost u fouten in code op, waarna u de code **publiceert** om deze op te slaan en uit te voeren.  De Synapse-service is de bron van waarheid als het gaat om het bewerken en uitvoeren van code.  Ongepubliceerd werk gaat verloren wanneer u Synapse Studio sluit.  
-- **Ontwikkelen met Git-functionaliteit**. U kunt code ontwikkelen en fouten opsporen in Synapse Studio en wijzigingen **doorvoeren** in een werkende vertakking van een Git-opslagplaats. Werk van een of meer vertakkingen wordt geïntegreerd in een samenwerkingsvertakking, van waaruit u deze naar de service kunt **publiceren**.  De Git-opslagplaats is de bron van waarheid voor het bewerken van code, terwijl de service de bron van waarheid is voor de uitvoering ervan. Wijzigingen moeten worden doorgevoerd in de Git-opslagplaats of naar de service worden gepubliceerd voordat Synapse Studio wordt gesloten. [Meer informatie](https://go.microsoft.com/fwlink/?linkid=2150100) over het gebruik van Synapse Analytics met Git.
+- **Synapse-liveontwikkeling**. In Synapse Studio ontwikkelt u code en lost u fouten in code op, waarna u de code **publiceert** om deze op te slaan en uit te voeren.  De Synapse-service is de bron van waarheid als het gaat om het bewerken en uitvoeren van code.  Ongepubliceerd werk gaat verloren wanneer u Synapse Studio sluit.  
+- **Ontwikkelen met Git-functionaliteit**. U kunt code ontwikkelen en fouten opsporen in Synapse Studio en wijzigingen **doorvoeren** in een werkende vertakking van een Git-opslagplaats. Werk van een of meer vertakkingen wordt geïntegreerd in een samenwerkingsvertakking, van waaruit u deze naar de service kunt **publiceren**. De Git-opslagplaats is de bron van waarheid voor het bewerken van code, terwijl de service de bron van waarheid is voor de uitvoering ervan. Wijzigingen moeten worden doorgevoerd in de Git-opslagplaats of naar de service worden gepubliceerd voordat Synapse Studio wordt gesloten. [Meer informatie](../cicd/continuous-integration-deployment.md) over het gebruik van Synapse Analytics met Git.
 
-In beide ontwikkelmodellen kan elke gebruiker met toegang tot Synapse Studio codeartefacten maken.  U hebt echter aanvullende machtigingen nodig om artefacten te publiceren naar de service, gepubliceerde artefacten te lezen, wijzigingen door te voeren in Git, code uit te voeren en om toegang te krijgen tot gekoppelde gegevens die worden beveiligd met referenties.
+In beide ontwikkelmodellen kan elke gebruiker met toegang tot Synapse Studio codeartefacten maken. U hebt echter aanvullende machtigingen nodig om artefacten te publiceren naar de service, gepubliceerde artefacten te lezen, wijzigingen door te voeren in Git, code uit te voeren en om toegang te krijgen tot gekoppelde gegevens die worden beveiligd met referenties.
 
 ### <a name="synapse-roles"></a>Synapse-rollen
 
@@ -72,7 +72,7 @@ Wanneer u met Git-functionaliteit ontwikkelt in de Git-modus, zijn het uw Git-ma
 
 Wanneer u met toegewezen en serverloze SQL-pools werkt, wordt de toegang tot het gegevensvlak beheerd met behulp van SQL-machtigingen. 
 
-De maker van een werkruimte wordt als Active Directory-beheerder aan de werkruimte toegewezen.  Nadat deze rol is gemaakt, kan deze in Azure Portal worden toegewezen aan een andere gebruiker of aan een beveiligingsgroep.
+De maker van een werkruimte wordt als Active Directory-beheerder aan de werkruimte toegewezen. Nadat deze rol is gemaakt, kan deze in Azure Portal worden toegewezen aan een andere gebruiker of aan een beveiligingsgroep.
 
 **Serverloze SQL-pools**: Aan Synapse-beheerders worden `db_owner` (`DBO`) machtigingen verleend voor de serverloze SQL-pool 'Ingebouwd'. Synapse-beheerders moeten SQL-scripts uitvoeren op elke serverloze pool om andere gebruikers toegang te verlenen tot serverloze SQL-pools.  
 
@@ -82,7 +82,7 @@ In [Toegangsbeheer voor Synapse instellen](./how-to-set-up-access-control.md) vi
 
  ### <a name="accessing-system-managed-data-in-storage"></a>Toegang tot door het systeem beheerde gegevens in de opslag
 
-De gegevens in serverloze SQL-pools en Apache Spark-tabellen worden opgeslagen in een ADLS Gen2-container die is gekoppeld aan de werkruimte. Door de gebruiker geïnstalleerde Apache Spark-bibliotheken worden ook beheerd in hetzelfde opslagaccount.  Om deze gebruikstoepassingen mogelijk te maken moet aan gebruikers en aan de MSI van de werkruimte toegang als **Gegevensbijdrager voor opslagblob** zijn verleend voor deze ADLS Gen2-opslagcontainer.  
+Serverloze SQL-pools en Apache Spark-tabellen slaan hun gegevens op in een ADLS Gen2-container die aan de werkruimte is gekoppeld. Door de gebruiker geïnstalleerde Apache Spark-bibliotheken worden ook in hetzelfde opslagaccount beheerd. Om deze gebruikstoepassingen mogelijk te maken moet aan gebruikers en aan de MSI van de werkruimte toegang als **Gegevensbijdrager voor opslagblob** zijn verleend voor deze ADLS Gen2-opslagcontainer.  
 
 ## <a name="using-security-groups-as-a-best-practice"></a>Beveiligingsgroepen gebruiken als best practice
 
@@ -97,9 +97,9 @@ Synapse Studio werkt anders afhankelijk van uw machtigingen en de huidige modus:
 - **De modus Synapse live:** Synapse Studio voorkomt dat u gepubliceerde inhoud kunt bekijken, inhoud kunt publiceren of andere acties kunt ondernemen als u niet over de vereiste machtigingen beschikt.  In sommige gevallen wordt voorkomen dat u codeartefacten maakt die u niet kunt gebruiken of opslaan. 
 - **De Git-modus:** Als u Git-machtigingen hebt waarmee u wijzigingen in de huidige vertakking kunt doorvoeren, is de doorvoeractie toegestaan, zelfs als u niet gemachtigd bent om wijzigingen naar de llveservice te publiceren.  
 
-In sommige gevallen is het mogelijk om codeartefacten te maken, zelfs als u niet beschikt over de toestemming om te publiceren of door te voeren.  Zo kunt u code uitvoeren (mits u over de vereiste uitvoeringsmachtigingen beschikt). [Meer informatie](./synapse-workspace-understand-what-role-you-need.md) over de rollen die nodig zijn voor het uitvoeren van veelvoorkomende taken. 
+In sommige gevallen is het mogelijk om codeartefacten te maken, zelfs als u niet beschikt over de toestemming om te publiceren of door te voeren. Op die manier kunt u code uitvoeren (met de vereiste uitvoeringsmachtigingen). [Meer informatie](./synapse-workspace-understand-what-role-you-need.md) over de rollen die voor algemene taken zijn vereist. 
 
-Als een functie is uitgeschakeld in Synapse Studio, wordt in de knop Info de vereiste machtiging weergegeven.  Gebruik de [Handleiding Synapse RBAC-rollen](./synapse-workspace-synapse-rbac-roles.md#synapse-rbac-actions-and-the-roles-that-permit-them) als u wilt opzoeken welke rol de ontbrekende machtiging heeft.
+Als een functie is uitgeschakeld in Synapse Studio, wordt in de knop Info de vereiste machtiging weergegeven. Gebruik de [Handleiding Synapse RBAC-rollen](./synapse-workspace-synapse-rbac-roles.md#synapse-rbac-actions-and-the-roles-that-permit-them) als u wilt opzoeken welke rol de ontbrekende machtiging heeft.
 
 
 ## <a name="next-steps"></a>Volgende stappen

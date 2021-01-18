@@ -3,12 +3,12 @@ title: Wat is Azure Event Hubs? - een service voor de opname van Big Data | Micr
 description: Meer informatie over Azure Event Hubs, een big data-streamingservice die miljoenen gebeurtenissen per seconde opneemt.
 ms.topic: overview
 ms.date: 06/23/2020
-ms.openlocfilehash: 6669760bceee558a058878fbb89342aedda80117
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: b0124f023eab6638c986beb2305b1c4c375b47ee
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88927898"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97954342"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Azure Event Hubs — Een streamingplatform en service voor het opnemen van big data
 Azure Event Hubs is een streamingplatform en service voor het opnemen van big data. Het kan miljoenen gebeurtenissen per seconde ontvangen en verwerken. Gegevens die naar een Event Hub worden verzonden, kunnen worden omgezet en opgeslagen door gebruik te maken van een provider voor realtime analytische gegevens of batchverwerking/opslagadapters.
@@ -52,10 +52,9 @@ Met Event Hubs kunt u beginnen met gegevensstromen van megabytes en uitgroeien t
 
 ## <a name="rich-ecosystem"></a>Rijk ecosysteem
 
-Met [Event Hubs voor Apache Kafka-ecosystemen](event-hubs-for-kafka-ecosystem-overview.md) kunnen [Apache Kafka](https://kafka.apache.org/)-clients (1.0 en later) en -toepassingen communiceren met Event Hubs. U hoeft niet uw eigen Apache Kafka-clusters in te stellen, te configureren of te beheren.
+Met een breed ecosysteem, gebaseerd op het standaard AMQP 1.0-protocol voor de branche, dat beschikbaar is in verschillende talen, zoals [.NET](https://github.com/Azure/azure-sdk-for-net/), [Java](https://github.com/Azure/azure-sdk-for-java/), [Python](https://github.com/Azure/azure-sdk-for-python/) en [JavaScript](https://github.com/Azure/azure-sdk-for-js/) kunt u eenvoudig beginnen met het verwerken van uw streams van Event Hubs. Alle ondersteunde clienttalen bieden integratie op laag niveau. Het ecosysteem biedt u ook naadloze integratie met Azure-services zoals Azure Stream Analytics en Azure Functions, zodat u dus serverloze architecturen kunt bouwen.
 
-Met een breed ecosysteem dat beschikbaar is in verschillende talen, zoals [.NET](https://github.com/Azure/azure-sdk-for-net/), [Java](https://github.com/Azure/azure-sdk-for-java/), [Python](https://github.com/Azure/azure-sdk-for-python/) en [JavaScript](https://github.com/Azure/azure-sdk-for-js/) kunt u eenvoudig uw streams van Event Hubs. Alle ondersteunde clienttalen bieden integratie op laag niveau. Het ecosysteem biedt u ook naadloze integratie met Azure-services zoals Azure Stream Analytics en Azure Functions, zodat u dus serverloze architecturen kunt bouwen.
-
+Met [Event Hubs voor Apache Kafka-ecosystemen](event-hubs-for-kafka-ecosystem-overview.md) kunnen bovendien clients en toepassingen van [Apache Kafka (1.0 en nieuwer)](https://kafka.apache.org/) met Event Hubs communiceren. U hoeft uw eigen Kafka- en Zookeeper-clusters niet in te stellen, te configureren en te beheren, of een Kafka-as-a-Service-aanbieding te gebruiken die niet systeemeigen is voor Azure.
 ## <a name="key-architecture-components"></a>Belangrijkste onderdelen van de architectuur
 Event Hubs bevat de volgende [belangrijke onderdelen](event-hubs-features.md):
 

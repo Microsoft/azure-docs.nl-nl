@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: 5fa8377b3cdddb2818c04c5a75e347ff73dc07d8
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 40d2f957ce115b43a1dcc138b86e05ec9cc47384
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96509208"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060615"
 ---
 Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 
@@ -30,8 +30,11 @@ Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescr
 1. Als het script is voltooid, selecteert u de accolades om de mapstructuur zichtbaar te maken. Er bevinden zich enkele bestanden in de map *~/clouddrive/lva-sample*. Van belang voor deze quickstart zijn:
 
      * * **~/clouddrive/lva-sample/edge-deployment/.env** _: dit bestand bevat eigenschappen die Visual Studio Code gebruikt om modules te implementeren op een edge-apparaat.
-     _ ***~/clouddrive/lva-sample/appsetting.json***: dit bestand wordt gebruikt door Visual Studio Code voor het uitvoeren van de voorbeeldcode.
+     _ * **~/clouddrive/lva-sample/appsetting.json** _ - in Visual Studio Code wordt dit bestand gebruikt om de voorbeeldcode uit te voeren.
      
     U hebt deze bestanden nodig wanneer u uw ontwikkelomgeving in Visual Studio Code instelt in de volgende sectie. U kunt deze voorlopig in een lokaal bestand kopiëren.
     
     ![App-instellingen](../../../media/quickstarts/clouddrive.png)
+
+> [!TIP]
+> Als u problemen ondervindt met Azure-resources die worden gemaakt, raadpleegt u onze _ *[probleemoplossingsgids](../../../troubleshoot-how-to.md#common-error-resolutions)* * waarmee u enkele veelvoorkomende problemen kunt oplossen.

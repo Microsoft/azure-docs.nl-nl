@@ -9,18 +9,18 @@ ms.subservice: overview
 ms.date: 10/28/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: c315dae7e5f02f112dfdfbec02e1ebaaa5e48a9f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e5b12632a60ad5580325fbcda294e1a600bb2b6b
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445786"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121699"
 ---
 # <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
 Zakelijke analyses moeten op grote schaal worden uitgevoerd op elk soort gegevens, ongeacht of het gaat om onbewerkte, precieze of zeer samengestelde gegevens. Hiervoor moeten ondernemingen meestal technologieën voor big data en datawarehousing samenvoegen in complexe gegevenspijplijnen, die werken met de gegevens in relationele opslag en data lakes. Dit soort oplossingen is moeilijk te compileren, te onderhouden en te beveiligen. De complexiteit ervan zorgt voor vertraging in de levering van het inzicht dat ondernemingen nodig hebben.
 
-**Azure Synapse** is een geïntegreerde analyse-service die sneller inzicht biedt in alle datawarehouses en systemen voor big data. Azure Synapse combineert het beste van de **SQL**-technologieën die worden gebruikt in zakelijke datawarehousing, **Spark**-technologieën die worden gebruikt voor big data, en **Pipelines** voor gegevensintegratie en ETL/ELT. **Synapse Studio** biedt een uniforme ervaring voor beheer, bewaking, codering en beveiliging. Synapse bevat een diepgaande integratie met andere Azure-services, zoals **Power BI**, **CosmosDB** en **AzureML**.
+**Azure Synapse** is een geïntegreerde analyse-service die sneller inzicht biedt in alle datawarehouses en systemen voor big data. Azure Synapse combineert het beste van de **SQL**-technologieën die in zakelijke datawarehousing worden gebruikt, **Spark**-technologieën die voor big data worden gebruikt en **Pijplijnen** voor gegevensintegratie en ETL/ELT, en diepe integratie met andere Azure-services, zoals **Power BI**, **CosmosDB** en **AzureML**.
 
 ## <a name="key-features--benefits"></a>Belangrijkste functies en voordelen
 

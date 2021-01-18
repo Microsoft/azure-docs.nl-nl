@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 09/30/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 11c20f3f79a4fceafaca9b1a948f1b4a425dad87
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 00aa24f0ff8c918c645239ca36888c6a214062c8
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96572708"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028757"
 ---
 # <a name="voice-and-video-concepts"></a>Voice- en videoconcepten
 
@@ -49,8 +49,8 @@ We ondersteunen H.264 (MPEG-4)
 We ondersteunen tot Full HD 1080p op de native SDK's (iOS, Android). Voor Web (JS) SDK ondersteunen we standaard HD 720p. De kwaliteit is afhankelijk van de beschikbare bandbreedte.  
 
 ### <a name="rooms-concept"></a>Ruimtes
-Ruimtes zijn een reeks API's en SDK's waarmee u eenvoudig audio-, video-, schermdeling-, PSTN- en sms-interacties kunt toevoegen aan uw website of eigen toepassing.
-Tijdens de preview kunt u de groeps-ID gebruiken om deel te nemen aan hetzelfde gesprek. U kunt zoveel groeps-ID's aanmaken als u nodig heeft en de gebruikers scheiden op basis van de "ruimtes". Als u verdergaat, worden er meer besturingselementen voor "ruimtes" geïntroduceerd 
+Ruimtes is een reeks API's en SDK's waarmee u eenvoudig audio-, video-, schermdeling-, PSTN- en sms-interacties kunt toevoegen aan uw website of eigen toepassing.
+Tijdens de preview kunt u de groeps-ID gebruiken om deel te nemen aan hetzelfde gesprek. U kunt zoveel groeps-id's aanmaken als u nodig hebt en de gebruikers scheiden op basis van de 'ruimtes'. Als u verdergaat, worden er meer besturingselementen voor "ruimtes" geïntroduceerd 
 
 ## <a name="next-steps"></a>Volgende stappen
 

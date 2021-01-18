@@ -3,12 +3,12 @@ title: Aan de slag met Live Video Analytics in IoT Edge - Azure
 description: Deze quickstart laat zien hoe u aan de slag kunt met Live Video Analytics in IoT Edge. Leer hoe u beweging kunt detecteren in een live-videostream.
 ms.topic: quickstart
 ms.date: 04/27/2020
-ms.openlocfilehash: db48183e918fcb1096734f912f02c091ddac1d74
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 276c2ceaa9e0bef254c70f91541a3a3db7c02d47
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511872"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060398"
 ---
 # <a name="quickstart-get-started---live-video-analytics-on-iot-edge"></a>Quickstart: Over Live Video Analytics in IoT Edge
 
@@ -21,7 +21,7 @@ Nadat u de installatiestappen hebt voltooid, kunt u een gesimuleerde live-videos
 
 U kunt de volgende video met gedetailleerde stappen bekijken om aan de slag te gaan met Live Video Analytics in IoT Edge:
 
-<iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RE4Hcax" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4Hcax]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -43,8 +43,8 @@ Voor deze zelfstudie hebt u de volgende Azure-resources nodig:
 
 Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescript voor Live Video Analytics-resources](https://github.com/Azure/live-video-analytics/tree/master/edge/setup) om de vereiste Azure-resources in uw Azure-abonnement te implementeren. Voer hiervoor de volgende stappen uit:
 
-1. Ga naar [Azure Cloud Shell](https://shell.azure.com).
-1. Als u Cloud Shell voor het eerst gebruikt, wordt u gevraagd een abonnement te selecteren voor het maken van een opslagaccount en een Microsoft Azure Files-share. Selecteer **Opslag maken** om een opslagaccount te maken voor de gegevens van uw Cloud Shell-sessie. Dit opslagaccount is gescheiden van het account dat door het script wordt gemaakt voor gebruik bij uw Azure Media Services-account.
+1. Ga naar [Azure Portal](https://portal.azure.com) en selecteer het cloudshell-pictogram.
+1. Als u Cloud Shell voor het eerst gebruikt, wordt u gevraagd een abonnement te selecteren voor het maken van een opslagaccount en een Microsoft Azure-bestandsshare. Selecteer **Opslag maken** om een opslagaccount te maken voor de gegevens van uw Cloud Shell-sessie. Dit opslagaccount is gescheiden van het account dat door het script wordt gemaakt voor gebruik bij uw Azure Media Services-account.
 1. Selecteer in de vervolgkeuzelijst aan de linkerkant van het Cloud Shell-venster **Bash** als uw omgeving.
 
     > [!div class="mx-imgBorder"]
@@ -55,9 +55,13 @@ Voor deze quickstart wordt u aangeraden gebruik te maken van het [installatiescr
     bash -c "$(curl -sL https://aka.ms/lva-edge/setup-resources-for-samples)"
     ```
     
-Als het script is voltooid, ziet u alle vereiste resources in uw abonnement. In de scriptuitvoer bevat een tabel met resources de naam van de IoT-hub. Zoek naar het resourcetype `Microsoft.Devices/IotHubs` en noteer de naam. U hebt deze naam nodig in de volgende stap. 
+Als het script is voltooid, ziet u alle vereiste resources in uw abonnement. In de scriptuitvoer bevat een tabel met resources de naam van de IoT-hub. Zoek het resourcetype **`Microsoft.Devices/IotHubs`** en noteer de naam. U hebt deze naam nodig in de volgende stap.  
 
-Het script genereert ook enkele configuratiebestanden in de map *~/clouddrive/LVA-sample/* . U hebt deze bestanden verderop in de quickstart nodig.
+> [!NOTE]
+> Het script genereert ook enkele configuratiebestanden in de map **_~/clouddrive/lva-sample/_* _. U hebt deze bestanden verderop in de quickstart nodig.
+
+> [!TIP]
+> Als u problemen ondervindt met Azure-resources die worden gemaakt, raadpleegt u onze _ *[probleemoplossingsgids](troubleshoot-how-to.md#common-error-resolutions)* * waarmee u enkele veelvoorkomende problemen kunt oplossen.
 
 ## <a name="deploy-modules-on-your-edge-device"></a>Modules op uw edge-apparaat implementeren
 
@@ -417,8 +421,8 @@ Roep de directe methode `GraphInstanceSet` aan met de volgende nettolading.
 Merk op dat deze nettolading:
 
 * De naam van de topologie (`MotionDetection`) opgeeft waarvoor het exemplaar moet worden gemaakt.
-* Een parameterwaarde voor `rtspUrl` bevat, die geen standaardwaarde had in de nettolading van de topologie.
-
+* Een parameterwaarde voor `rtspUrl` bevat, die geen standaardwaarde had in de nettolading van de topologie. Deze waarde is een koppeling naar de onderstaande voorbeeldvideo:
+    > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LTY4]
 Binnen een paar seconden ziet u in het venster **UITVOER** het volgende antwoord verschijnen:
 
 ```

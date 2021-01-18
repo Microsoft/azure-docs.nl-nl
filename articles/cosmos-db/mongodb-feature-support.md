@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 10/16/2019
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: 60e806be85a36c2e8a64d731c8794d806a4fcae4
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: d9e01ee8b1f6c1cd04e665ad9f7bc57155abfaab
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93096522"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028978"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-32-version-supported-features-and-syntax"></a>De API van Azure Cosmos DB voor MongoDB (versie 3.2): ondersteunde functies en syntaxis
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -37,6 +37,9 @@ De API van Azure Cosmos DB voor MongoDB biedt uitgebreide ondersteuning voor Mon
 ## <a name="database-commands"></a>Databaseopdrachten
 
 De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende databaseopdrachten:
+
+> [!NOTE]
+> Dit artikel bevat alleen de ondersteunde serveropdrachten en sluit wrapper-functies aan de clientzijde uit. Wrapper-functies aan de clientzijde, zoals `deleteMany()` en `updateMany()`, maken intern gebruik van de serveropdrachten `delete()` en `update()`. Functies die gebruikmaken van ondersteunde serveropdrachten zijn compatibel met de API van Azure Cosmos DB voor MongoDB.
 
 ### <a name="query-and-write-operation-commands"></a>Opdrachten voor query- en schrijfbewerkingen
 
@@ -309,7 +312,7 @@ $polygon | ```{ "Location.coordinates": { $near: { $geometry: { type: "Polygon",
 
 Tijdens het gebruik van bewerking `findOneAndUpdate`, worden sorteerbewerkingen op één veld ondersteund, maar sorteerbewerkingen op meerdere velden worden niet ondersteund.
 
-## <a name="additional-operators"></a>Andere operators
+## <a name="other-operators"></a>Overige operatoren
 
 Operator | Voorbeeld | Opmerkingen
 --- | --- | --- |
@@ -353,7 +356,7 @@ Cosmos DB biedt ondersteuning voor automatische, systeemeigen replicatie op de l
 
 ## <a name="write-concern"></a>Schrijfprobleem
 
-Bepaalde toepassingen vertrouwen op een [schrijfprobleem](https://docs.mongodb.com/manual/reference/write-concern/) dat het aantal vereiste reacties tijdens een schrijfbewerking opgeeft. Vanwege de manier waarop replicatie op de achtergrond in Cosmos DB wordt afgehandeld, zijn alle schrijfbewerkingen automatisch Quorum-bewerkingen. Alle schrijfproblemen die in clientcode zijn opgegeven, worden genegeerd. Zie [Consistentieniveaus gebruiken om de beschikbaarheid en prestaties te maximaliseren](consistency-levels.md) voor meer informatie.
+Bepaalde toepassingen vertrouwen op een [Write Concern](https://docs.mongodb.com/manual/reference/write-concern/) ('schrijfveiligheid') dat het aantal vereiste reacties tijdens een schrijfbewerking opgeeft. Vanwege de manier waarop replicatie op de achtergrond in Cosmos DB wordt afgehandeld, zijn alle schrijfbewerkingen automatisch Quorum-bewerkingen. Alle schrijfproblemen die in clientcode zijn opgegeven, worden genegeerd. Zie [Consistentieniveaus gebruiken om de beschikbaarheid en prestaties te maximaliseren](consistency-levels.md) voor meer informatie.
 
 ## <a name="sharding"></a>Sharding
 

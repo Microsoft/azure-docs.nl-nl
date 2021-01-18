@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 09/18/2020
-ms.openlocfilehash: 9003366ec0d64057ca7426d5b6b99986bc21fc9d
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 0d282ee805ac61ba17ceb3ecc6a3d8179ea7b319
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920293"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555896"
 ---
 # <a name="register-and-scan-an-on-premises-sql-server"></a>Een on-premises SQL server registreren en scannen
 
@@ -34,7 +34,7 @@ SQL Server on-premises gegevens bron ondersteunt:
 
 ### <a name="known-limitations"></a>Bekende beperkingen
 
-Azure controle sfeer liggen biedt geen ondersteuning voor het scannen van [weer gaven](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15) in SQL Server. 
+Azure controle sfeer liggen biedt geen ondersteuning voor het scannen van [weer gaven](/sql/relational-databases/views/views) in SQL Server.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -42,7 +42,7 @@ Azure controle sfeer liggen biedt geen ondersteuning voor het scannen van [weer 
 
 - Stel een [zelf-hostende Integration runtime](manage-integration-runtimes.md) in om de gegevens bron te scannen.
 
-## <a name="setting-up-authentication-for-a-scan"></a>Verificatie instellen voor een scan
+## <a name="setting-up-authentication-for-a-scan"></a>Verificatie voor een scan instellen
 
 Er is slechts één manier om verificatie voor SQL Server on-premises in te stellen:
 
@@ -88,20 +88,20 @@ Als u een nieuwe aanmelding en gebruiker wilt maken om uw SQL-Server te kunnen s
 
 #### <a name="storing-your-sql-login-password-in-a-key-vault-and-creating-a-credential-in-purview"></a>Uw SQL-aanmeldings wachtwoord opslaan in een sleutel kluis en een referentie maken in controle sfeer liggen
 
-1. Navigeer naar uw sleutel kluis in de Azure Portal
-1. **Instellingen > geheimen** selecteren
+1. Ga in Azure Portal naar uw sleutelkluis
+1. Selecteer **Instellingen > Geheimen**
 1. Selecteer **+ genereren/importeren** en voer de **naam** en **waarde** in als het *wacht woord* van uw SQL Server-aanmelding
-1. Selecteer **maken** om te volt ooien
-1. Als uw sleutel kluis nog niet is verbonden met controle sfeer liggen, moet u [een nieuwe sleutel kluis verbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
-1. Maak ten slotte [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met de **gebruikers naam** en het **wacht woord** om uw scan in te stellen
+1. Selecteer **Maken** om te voltooien
+1. Als uw sleutelkluis nog niet is verbonden met Purview, moet u [een nieuwe sleutelkluisverbinding maken](manage-credentials.md#create-azure-key-vaults-connections-in-your-azure-purview-account)
+1. Maak tot slot [een nieuwe referentie](manage-credentials.md#create-a-new-credential) met behulp van de **gebruikersnaam** en het **wachtwoord** om uw scan in te stellen
 
 ## <a name="register-a-sql-server-data-source"></a>Een SQL Server-gegevens bron registreren
 
-1. Navigeer naar uw controle sfeer liggen-account
+1. Ga naar uw Purview-account
 
-1. Selecteer bij bronnen en scannen in het navigatie venster links de optie **Integration Runtimes**. Zorg ervoor dat een zelf-hostende Integration runtime is ingesteld. Als deze niet is ingesteld, volgt u de stappen die [hier](manage-integration-runtimes.md) worden beschreven om een zelf-hostende Integration runtime te maken voor het scannen op een on-premises of Azure VM die toegang heeft tot uw on-premises netwerk.
+1. Selecteer bij bronnen en scannen in het navigatie venster links de optie **Integration Runtimes**. Zorg ervoor dat een zelf-hostende Integration Runtime is ingesteld. Als deze niet is ingesteld, volgt u de stappen die [hier](manage-integration-runtimes.md) worden beschreven om een zelf-hostende Integration runtime te maken voor het scannen op een on-premises of Azure VM die toegang heeft tot uw on-premises netwerk.
 
-1. **Bronnen** selecteren in de linkernavigatiebalk
+1. Selecteer **Bronnen** in het linkernavigatievenster
 
 1. Selecteer **Registreren**
 
@@ -115,5 +115,5 @@ Als u een nieuwe aanmelding en gebruiker wilt maken om uw SQL-Server te kunnen s
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Bladeren door de Azure controle sfeer liggen Data Catalog](how-to-browse-catalog.md)
-- [Zoek in de Azure controle sfeer liggen-Data Catalog](how-to-search-catalog.md)
+- [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
+- [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)

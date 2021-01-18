@@ -1,15 +1,15 @@
 ---
 title: Overzicht Azure Blockchain Service
 description: Overzicht van Azure Blockchain Service
-ms.date: 05/22/2020
+ms.date: 01/04/2021
 ms.topic: overview
 ms.reviewer: ravastra
-ms.openlocfilehash: dc716b475fe85170d595463e0785743591e398c1
-ms.sourcegitcommit: 642988f1ac17cfd7a72ad38ce38ed7a5c2926b6c
+ms.openlocfilehash: 15d1126a98a4d3194a256ed07de3918cb066a4e2
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94874556"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963875"
 ---
 # <a name="what-is-azure-blockchain-service"></a>Wat is Azure Blockchain Service?
 
@@ -83,6 +83,8 @@ In contact komen met Microsoft-technici en experts uit de Azure Blockchain-commu
 
 Om aan de slag te gaan, kunt u een quickstart proberen of meer informatie krijgen van deze resources.
 * [Maak een blockchain-lid met behulp van de Azure-portal](create-member.md) of [maak een blockchain-lid met behulp van Azure CLI](create-member-cli.md)
-* Bekijk de [pagina met prijzen](https://azure.microsoft.com/pricing/details/blockchain-service) voor kostenvergelijkingen en calculators.
+* Volg het Microsoft Learn-pad [Aan de slag met blockchain-ontwikkeling](/learn/paths/ethereum-blockchain-development)
+* Bekijk de [Beginner's series to blockchain](https://channel9.msdn.com/Series/Beginners-Series-to-Blockchain) (serie over blockchain voor beginners)
+* Bekijk de [pagina met prijzen](https://azure.microsoft.com/pricing/details/blockchain-service) voor kostenvergelijkingen en calculators
 * Uw eerste app bouwen met behulp van de [Azure Block Chain Development Kit](https://github.com/Azure-Samples/blockchain-devkit)
 * [Gebruikershandleiding](https://github.com/Microsoft/vscode-azure-blockchain-ethereum/wiki) voor Azure Block Chain VSCode-extensie

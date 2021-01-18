@@ -5,14 +5,14 @@ author: SnehaGunda
 ms.service: cosmos-db
 ms.subservice: cosmosdb-table
 ms.topic: overview
-ms.date: 11/25/2020
+ms.date: 01/08/2021
 ms.author: sngun
-ms.openlocfilehash: 98b1db18b72aad0c68f2faee031cc040a2a1f369
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1cf3bf30b37a09b5dfe94bf1e754a7f8e9dcd82c
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181234"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98045662"
 ---
 # <a name="introduction-to-azure-cosmos-db-table-api"></a>Inleiding tot Azure Cosmos DB: Tabel-API
 [!INCLUDE[appliesto-table-api](includes/appliesto-table-api.md)]
@@ -20,7 +20,7 @@ ms.locfileid: "96181234"
 [Azure Cosmos DB](introduction.md) biedt de Table-API voor toepassingen die zijn geschreven voor Azure Table-opslag en die premium-mogelijkheden nodig hebben, zoals:
 
 * [Kant-en-klare wereldwijde distributie](distribute-data-globally.md).
-* [Speciale doorvoer](partitioning-overview.md) overal ter wereld.
+* [Toegewezen doorvoer](partitioning-overview.md) voor de hele wereld (bij gebruik van ingerichte doorvoer).
 * Latentie van slechts enkele milliseconden op het 99e percentiel.
 * Gegarandeerde hoge beschikbaarheid.
 * Automatische secundaire indexering.
@@ -44,7 +44,7 @@ Als u momenteel gebruikmaakt van Azure Table-opslag, levert overstappen naar de 
 | Indexeren | Alleen primaire index op PartitionKey en RowKey. Geen secundaire indexen. | Standaard automatische en volledige indexering op alle eigendommen, geen indexbeheer. |
 | Query’s uitvoeren | Voor de queryuitvoering wordt een index gebruikt als primaire sleutel. In andere gevallen wordt er gescand. | Query's kunnen profiteren van de automatische indexering van eigenschappen voor een snelle uitvoertijden van query's. |
 | Consistentie | Sterke in primaire regio. Mogelijk in secundaire regio. | [Vijf goed gedefinieerde consistentieniveaus](consistency-levels.md) voor een wisselwerking tussen beschikbaarheid, latentie, doorvoer en consistentie op basis van uw toepassingsvereisten. |
-| Prijzen | Geoptimaliseerd voor opslag. | Geoptimaliseerd voor doorvoer. |
+| Prijzen | Op basis van verbruik. | Beschikbaar in de modi [Op basis van verbruik](serverless.md) en [Ingerichte capaciteit](set-throughput.md). |
 | SLA's | 99,9% tot 99,99% beschikbaarheid, afhankelijk van de replicatiestrategie. | 99,999% leesbeschikbaarheid, 99,99% schrijfbeschikbaarheid van een account met één regio en 99,999% schrijfbeschikbaarheid voor accounts met meerdere regio's. [Uitgebreide SLA's](https://azure.microsoft.com/support/legal/sla/cosmos-db/) voor beschikbaarheid, latentie, doorvoer en consistentie. |
 
 ## <a name="get-started"></a>Aan de slag

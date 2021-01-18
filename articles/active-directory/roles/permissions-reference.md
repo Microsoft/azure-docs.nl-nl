@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 568584b849b2c5977d4bbb6216697dce3c498cfd
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 62fb239fd9cb8c1817dea5ab5c22684a65955ed5
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98107919"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555726"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -56,7 +56,7 @@ De volgende beheerders rollen zijn beschikbaar:
 
 Gebruikers met deze rol kunnen alle aspecten van bedrijfs toepassingen, toepassings registraties en toepassings proxy-instellingen maken en beheren. Gebruikers die aan deze rol zijn toegewezen, worden niet toegevoegd als eigen aren bij het maken van nieuwe toepassings registraties of zakelijke toepassingen.
 
-Deze rol verleent ook de mogelijkheid om _toestemming_ te geven aan gedelegeerde machtigingen en toepassings machtigingen, met uitzonde ring van machtigingen voor de Microsoft Graph-API.
+Deze rol verleent ook de mogelijkheid om _toestemming_ te geven aan gedelegeerde machtigingen en toepassings machtigingen, met uitzonde ring van toepassings machtigingen voor de Microsoft Graph-API.
 
 > [!IMPORTANT]
 > Deze uitzonde ring betekent dat u nog steeds toestemming kunt geven voor _andere_ apps (bijvoorbeeld niet-micro soft-apps of apps die u hebt geregistreerd), maar niet op machtigingen voor Azure AD zelf. U kunt deze machtigingen nog steeds _aanvragen_ als onderdeel van de app-registratie, maar u moet een Azure AD-beheerder hebben om deze machtigingen te _verlenen_ . Dit betekent dat een kwaadwillende gebruiker de machtigingen niet eenvoudig kan verhogen, bijvoorbeeld door te maken en te verzenden naar een app die naar de hele map kan schrijven en de machtigingen van de app kunnen worden uitgebreid naar een globale beheerder.

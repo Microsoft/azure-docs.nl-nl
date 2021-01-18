@@ -6,12 +6,12 @@ ms.date: 09/22/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python, devx-track-azurecli
 zone_pivot_groups: python-frameworks-01
 robots: noindex
-ms.openlocfilehash: 9f9805c25955384e7ca5b3f1d560581a7ca4a638
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: ed2bd3f3bab81f6be56508a203600ec479cc20b6
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97614656"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134480"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken in Azure App Service op Linux
 
@@ -105,13 +105,13 @@ Het voorbeeld bevat framework-specifieke code die door Azure App Service wordt h
 Implementeer de code in uw lokale map (*python-docs-hello-world*) met behulp van de `az webapp up`-opdracht:
 
 ```azurecli
-az webapp up --sku F1 --name <app-name>
+az webapp up --sku B1 --name <app-name>
 ```
 
 - Als de `az`-opdracht niet wordt herkend, controleert u of de Azure CLI is geïnstalleerd volgens de beschrijving in [Uw initiële omgeving instellen](#set-up-your-initial-environment).
 - Als de `webapp`-opdracht niet wordt herkend, komt dat omdat uw Azure CLI-versie 2.0.80 of hoger is. Als dat niet zo is, [installeert u de nieuwste versie](/cli/azure/install-azure-cli).
 - Vervang `<app_name>` door een naam die in de volledige Azure-omgeving uniek is (*geldige tekens zijn `a-z`, `0-9` en `-`* ). Het is handig om een combinatie van uw bedrijfsnaam en een app-id te gebruiken.
-- Met het argument `--sku F1` maakt u de web-app in de prijscategorie Gratis. Laat dit argument weg om een snellere Premium-laag te gebruiken, waarmee u kosten per uur in rekening worden gebracht.
+- Met het argument `--sku B1` maakt u de web-app voor de prijscategorie Basic, waarvoor een kleine vergoeding per uur wordt gevraagd. Laat dit argument weg om een snellere Premium-laag te gebruiken.
 - U kunt eventueel het argument `--location <location-name>` toevoegen, waarbij `<location_name>` een beschikbare Azure-regio is. U kunt een lijst met toegestane regio's voor uw Azure-account ophalen door de [`az account list-locations`](/cli/azure/appservice#az-appservice-list-locations)-opdracht uit te voeren.
 - Als de fout 'Kan de runtimestack van uw app niet automatisch detecteren' wordt weergegeven, moet u controleren of u de opdracht uitvoert in de map *python-docs-hello-world* (Flask) of de map *python-docs-hello-django* (Django), die het bestand *requirements.txt* bevat. (Zie [Problemen met automatische detectie oplossen met az webapp up](https://github.com/Azure/app-service-linux-docs/blob/master/AzWebAppUP/runtime_detection.md) (GitHub) voor meer informatie.)
 
@@ -281,7 +281,7 @@ Het App Service-menu biedt verschillende pagina's voor het configureren van uw a
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-In de voorgaande stappen hebt u Azure-resources in een resourcegroep gemaakt. De naam van de resourcegroep lijkt op 'appsvc_rg_Linux_CentralUS', afhankelijk van uw locatie. Als u een andere App Service-SKU gebruikt dan de gratis F1-laag, worden voor deze resources doorlopende kosten in rekening gebracht (zie [App Service-prijzen](https://azure.microsoft.com/pricing/details/app-service/linux/)).
+In de voorgaande stappen hebt u Azure-resources in een resourcegroep gemaakt. De naam van de resourcegroep lijkt op 'appsvc_rg_Linux_CentralUS', afhankelijk van uw locatie. Als u de web-app blijvend uitvoert, worden er enige kosten in rekening gebracht (zie [Prijzen voor App Service](https://azure.microsoft.com/pricing/details/app-service/linux/)).
 
 Als u denkt dat u deze resources niet meer gaat gebruiken, verwijdert u de resourcegroep door de volgende opdracht uit te voeren:
 

@@ -10,12 +10,12 @@ author: meiyl
 ms.reviewer: sawinark
 manager: yidetu
 ms.date: 06/07/2020
-ms.openlocfilehash: ede36b20353f00ed9a4f80bec2d7bc5a3512a9ea
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 698a9c062596a3439d95ac0d586854fc6616fdd6
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637952"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556542"
 ---
 # <a name="use-the-diagnose-connectivity-feature-in-the-ssis-integration-runtime"></a>De functie connectiviteits problemen oplossen gebruiken in de SSIS Integration runtime
 
@@ -38,13 +38,13 @@ Gebruik de volgende secties voor meer informatie over de meest voorkomende foute
 
 ## <a name="error-code-invalidinput"></a>Fout code: InvalidInput
 
-- **Fout bericht** : "Controleer of de invoer juist is."
-- **Mogelijke oorzaak** : de invoer is onjuist.
-- **Aanbeveling** : Controleer uw invoer.
+- **Fout bericht**: "Controleer of de invoer juist is."
+- **Mogelijke oorzaak**: de invoer is onjuist.
+- **Aanbeveling**: Controleer uw invoer.
 
 ## <a name="error-code-firewallornetworkissue"></a>Fout code: FirewallOrNetworkIssue
 
-- **Fout bericht** : Controleer of deze poort is geopend op de firewall/server-NSG en of het netwerk stabiel is.
+- **Fout bericht**: Controleer of deze poort is geopend op de firewall/server-NSG en of het netwerk stabiel is.
 - **Mogelijke oorzaken:**
   - Uw server heeft de poort niet geopend.
   - Uw netwerk beveiligings groep wordt uitgaand verkeer op de poort geweigerd.
@@ -56,17 +56,17 @@ Gebruik de volgende secties voor meer informatie over de meest voorkomende foute
 
 ## <a name="error-code-misconfigureddnssettings"></a>Fout code: MisconfiguredDnsSettings
 
-- **Fout bericht** : als u uw eigen DNS-server gebruikt in het VNet dat is gekoppeld aan uw Azure-SSIS IR, controleert u of de naam van uw host kan worden omgezet. "
+- **Fout bericht**: als u uw eigen DNS-server gebruikt in het VNet dat is gekoppeld aan uw Azure-SSIS IR, controleert u of de naam van uw host kan worden omgezet. "
 - **Mogelijke oorzaken:**
   -  Er is een probleem met uw aangepaste DNS.
   -  U gebruikt geen Fully Qualified Domain Name (FQDN) voor de naam van uw particuliere host.
 - **Vereisten**
   -  Los uw aangepaste DNS-probleem op om er zeker van te zijn dat de hostnaam kan worden omgezet.
-  -  Gebruik de FQDN. Azure-SSIS IR wordt niet automatisch uw eigen DNS-achtervoegsel toegevoegd. Gebruik bijvoorbeeld **<your_private_server>. contoso.com** in plaats van **<your_private_server** >.
+  -  Gebruik de FQDN. Azure-SSIS IR wordt niet automatisch uw eigen DNS-achtervoegsel toegevoegd. Gebruik bijvoorbeeld **<your_private_server>. contoso.com** in plaats van **<your_private_server**>.
 
 ## <a name="error-code-servernotallowremoteconnection"></a>Fout code: ServerNotAllowRemoteConnection
 
-- **Fout bericht** : "Controleer of de server externe TCP-verbindingen via deze poort toestaat."
+- **Fout bericht**: "Controleer of de server externe TCP-verbindingen via deze poort toestaat."
 - **Mogelijke oorzaken:**
   -  De firewall van uw server staat geen externe TCP-verbindingen toe.
   -  Uw server is niet online.
@@ -76,7 +76,7 @@ Gebruik de volgende secties voor meer informatie over de meest voorkomende foute
    
 ## <a name="error-code-misconfigurednsgsettings"></a>Fout code: MisconfiguredNsgSettings
 
-- **Fout bericht** : ' Controleer of het NSG van uw VNet uitgaand verkeer via deze poort toestaat. Als u Azure ExpressRoute en of een UDR gebruikt, moet u controleren of deze poort is geopend op uw firewall/server.
+- **Fout bericht**: ' Controleer of het NSG van uw VNet uitgaand verkeer via deze poort toestaat. Als u Azure ExpressRoute en of een UDR gebruikt, moet u controleren of deze poort is geopend op uw firewall/server.
 - **Mogelijke oorzaken:**
   -  Uw netwerk beveiligings groep wordt uitgaand verkeer op de poort geweigerd.
   -  Met uw NVA/Azure Firewall/on-premises firewall wordt de poort niet geopend.
@@ -86,24 +86,24 @@ Gebruik de volgende secties voor meer informatie over de meest voorkomende foute
 
 ## <a name="error-code-genericissues"></a>Fout code: GenericIssues
 
-- **Fout bericht** : de test verbinding is mislukt vanwege algemene problemen.
-- **Mogelijke oorzaak** : de test verbinding heeft een algemeen tijdelijk probleem aangetroffen.
-- **Aanbeveling** : Voer de test verbinding later opnieuw uit. Neem contact op met het ondersteunings team van Azure Data Factory als u het niet meer wilt proberen.
+- **Fout bericht**: de test verbinding is mislukt vanwege algemene problemen.
+- **Mogelijke oorzaak**: de test verbinding heeft een algemeen tijdelijk probleem aangetroffen.
+- **Aanbeveling**: Voer de test verbinding later opnieuw uit. Neem contact op met het ondersteunings team van Azure Data Factory als u het niet meer wilt proberen.
 
 ## <a name="error-code-pspingexecutiontimeout"></a>Fout code: PSPingExecutionTimeout
 
-- **Fout bericht** : de time-out voor de verbinding testen, probeer het later opnieuw.
-- **Mogelijke oorzaak** : er is een time-out opgetreden voor de verbinding testen.
-- **Aanbeveling** : Voer de test verbinding later opnieuw uit. Neem contact op met het ondersteunings team van Azure Data Factory als u het niet meer wilt proberen.
+- **Fout bericht**: de time-out voor de verbinding testen, probeer het later opnieuw.
+- **Mogelijke oorzaak**: er is een time-out opgetreden voor de verbinding testen.
+- **Aanbeveling**: Voer de test verbinding later opnieuw uit. Neem contact op met het ondersteunings team van Azure Data Factory als u het niet meer wilt proberen.
 
 ## <a name="error-code-networkinstable"></a>Fout code: NetworkInstable
 
-- **Fout bericht** : de verbindings test is onregelmatig geslaagd vanwege een instabiliteit van het netwerk.
-- **Mogelijke oorzaak** : tijdelijk netwerk probleem.
-- **Aanbeveling** : Controleer of de server of het firewall netwerk stabiel is.
+- **Fout bericht**: de verbindings test is onregelmatig geslaagd vanwege een instabiliteit van het netwerk.
+- **Mogelijke oorzaak**: tijdelijk netwerk probleem.
+- **Aanbeveling**: Controleer of de server of het firewall netwerk stabiel is.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Een SSIS-project implementeren in azure met SSMS](/sql/integration-services/ssis-quickstart-deploy-ssms)
 - [SSIS-pakketten uitvoeren in azure met SSMS](/sql/integration-services/ssis-quickstart-run-ssms)
-- [SSIS-pakketten plannen in azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms?view=sql-server-ver15)
+- [SSIS-pakketten plannen in azure](/sql/integration-services/lift-shift/ssis-azure-schedule-packages-ssms)

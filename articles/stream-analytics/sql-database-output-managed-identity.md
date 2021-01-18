@@ -6,12 +6,12 @@ ms.author: ebnkruma
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 11/30/2020
-ms.openlocfilehash: 244f8a446e33102e018881b3ec8f32ba9d8cbcc6
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 7d624f2dd2c0c9b4c7e99d5628a1d47e4303da7f
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014142"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555590"
 ---
 # <a name="use-managed-identities-to-access-azure-sql-database-or-azure-synapse-analytics-from-an-azure-stream-analytics-job-preview"></a>Beheerde identiteiten gebruiken om toegang te krijgen tot Azure SQL Database of Azure Synapse Analytics vanuit een Azure Stream Analytics-taak (preview)
 
@@ -123,7 +123,7 @@ Zodra u een Inge sloten database gebruiker hebt gemaakt en toegang hebt gekregen
 
 Zodra u een Inge sloten database gebruiker hebt gemaakt en toegang hebt gekregen tot Azure-Services in de portal, zoals beschreven in de vorige sectie, is uw Stream Analytics-taak gemachtigd van beheerde identiteit om **verbinding te maken** met uw Azure Synapse-database Resource via een beheerde identiteit. We raden u aan om de machtigingen voor het maken, invoegen en beheren van data BASEs te verfijnen aan de Stream Analytics-taak, omdat deze later nodig zijn in de Stream Analytics werk stroom. Met de machtiging **selecteren** kunt u de verbinding van de taak naar de tabel in de Azure Synapse-data base testen. Met de machtigingen voor het **Invoegen** en beheren van de **Data Base** kunt u end-to-end-stream Analytics query's testen zodra u een invoer en de Azure Synapse-data base-uitvoer hebt geconfigureerd.
 
-Als u de machtiging voor het beheren van meerdere data BASEs wilt verlenen, moet u alle machtigingen verlenen die als **besturings element** worden aangeduid, onder [impliciet door de machtiging voor de data base](/sql/t-sql/statements/grant-database-permissions-transact-sql?view=azure-sqldw-latest#remarks) voor de stream Analytics taak. U hebt deze machtiging nodig omdat de Stream Analytics-taak de instructie COPY uitvoert, waarvoor het beheren van de [Data base in bulk bewerkingen en invoegen](/sql/t-sql/statements/copy-into-transact-sql)vereist is.
+Als u de machtiging voor het beheren van meerdere data BASEs wilt verlenen, moet u alle machtigingen verlenen die als **besturings element** worden aangeduid, onder [impliciet door de machtiging voor de data base](/sql/t-sql/statements/grant-database-permissions-transact-sql?view=azure-sqldw-latest&preserve-view=true#remarks) voor de stream Analytics taak. U hebt deze machtiging nodig omdat de Stream Analytics-taak de instructie COPY uitvoert, waarvoor het beheren van de [Data base in bulk bewerkingen en invoegen](/sql/t-sql/statements/copy-into-transact-sql)vereist is.
 
 ---
 

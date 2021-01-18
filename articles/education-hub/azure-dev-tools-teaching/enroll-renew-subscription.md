@@ -6,24 +6,24 @@ ms.author: rymend
 ms.topic: quickstart
 ms.service: azure-education
 ms.subservice: education-hub
-ms.date: 06/30/2020
-ms.openlocfilehash: edb0de9f235565d09c81ce4466de59698a321f56
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.date: 01/07/2021
+ms.openlocfilehash: 0ceb9095f15009c150690b67271f4a654cd6110f
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "87100770"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127750"
 ---
 # <a name="enroll-or-renew-an-azure-dev-tools-for-teaching-subscription"></a>Abonnement van Azure Dev Tools for Teaching registreren of inschrijven
 
 In dit artikel wordt het proces beschreven voor het inschrijven in Azure Dev Tools for Teaching en het maken van een abonnement.
 
-## <a name="purchase-a-new-subscription"></a>Een nieuw abonnement kopen
+## <a name="enroll-a-new-subscription"></a>Een nieuw abonnement registreren
 
 1. Ga naar de [webpagina van Azure Dev Tools for Teaching](https://azure.microsoft.com/education/institutions/).
 1. Selecteer de knop **Registreren**. 
 1. Selecteer **Inschrijven of Vernieuwen** in de banner van Azure Dev Tools for Teaching.
-1. Selecteer het type abonnement dat u wilt kopen:
+1. Selecteer het type abonnement dat u wilt registreren:
     - Een aanvraag voor een nieuw abonnement indienen
     - Verdergaan met een eerdere aanvraag
  
@@ -33,19 +33,15 @@ In dit artikel wordt het proces beschreven voor het inschrijven in Azure Dev Too
 
 1. Geef de **gegevens van uw instelling** op als u zich de eerste keer registreert. Als u gaat verlengen, worden deze gegevens automatisch ingevuld.
 
-    :::image type="content" source="media/enroll-renew-subscription/application-institution-information.png" alt-text="Foutbericht bij aanmelden." border="false":::
-    
-1. Voer de **factureringsgegevens** in. Als uw instelling een volumelicentieovereenkomst heeft, kunt u het nummer van de volumelicentieovereenkomst invoeren. Als u zich aanmeldt voor een nieuw abonnement en op een andere manier betaalt dan met creditcard, kan er vertraging optreden bij het verkrijgen van toegang tot uw abonnement tijdens de betalingsprocessen. U krijgt e-mails waarin de voortgang van de betaling wordt aangegeven.
+    :::image type="content" source="media/enroll-renew-subscription/application-institution-information.png" alt-text="Voer gegevens van de instelling in." border="false":::
 
-    :::image type="content" source="media/enroll-renew-subscription/application-billing-information.png" alt-text="Foutbericht bij aanmelden." border="false":::
-    
 1. Selecteer het **abonnement** en bevestig de **abonnementsbeheerder** voor het abonnement. Via hn het e-maildomein van de abonnementsbeheerder kunnen studenten in hetzelfde domein eenvoudig toegang krijgen om de verschillende softwarevoordelen te downloaden.
 
-    :::image type="content" source="media/enroll-renew-subscription/application-select-subscription-plan.png" alt-text="Foutbericht bij aanmelden." border="false":::
+    :::image type="content" source="media/enroll-renew-subscription/application-select-subscription-plan.png" alt-text="Selecteer een abonnement." border="false":::
     
-1. Controleer alle aankoopgegevens en klik op **Bestelling plaatsen**. Er worden bevestigingsmails naar uw Postvak IN verzonden, met updates over de betalingsstatus en eventuele mogelijke vervolgstappen.
+1. Controleer alle registratiegegevens en klik op **Bestelling plaatsen**. Er worden bevestigingsmails naar uw Postvak IN verzonden, met updates over de registratiestatus en eventuele mogelijke vervolgstappen.
 
-    :::image type="content" source="media/enroll-renew-subscription/application-confirm-place-order.png" alt-text="Foutbericht bij aanmelden." border="false":::
+    :::image type="content" source="media/enroll-renew-subscription/application-confirm-place-order.png" alt-text="Bevestig uw bestelling." border="false":::
 
 ## <a name="renew-an-existing-subscription"></a>Een bestaand abonnement verlengen
 
@@ -65,7 +61,7 @@ U kunt uw bestaande abonnement vanaf 90 dagen vóór de vervaldatum verlengen:
 
 1. Selecteer het **abonnement** en bevestig de **abonnementsbeheerder** voor het abonnement.
 
-1. Controleer alle aankoopgegevens en klik op **Bestelling plaatsen**. Er worden bevestigingsmails naar uw Postvak IN verzonden, met updates over de betalingsstatus en eventuele mogelijke vervolgstappen.
+1. Controleer alle registratiegegevens en klik op **Bestelling plaatsen**. Er worden bevestigingsmails naar uw Postvak IN verzonden, met updates over de registratiestatus en eventuele mogelijke vervolgstappen.
 
 
 ## <a name="next-steps"></a>Volgende stappen   

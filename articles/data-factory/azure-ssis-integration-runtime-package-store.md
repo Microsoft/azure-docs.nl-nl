@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 09/29/2020
-ms.openlocfilehash: 29d072c513d9a75055d4bb486f44b17b00b7f0a9
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: c7fc1a6c6aa29bfbc074bfa797f31ca8ee4e8fec
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92638343"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556400"
 ---
 # <a name="manage-packages-with-azure-ssis-integration-runtime-package-store"></a>Pakketten beheren met Azure-SSIS Integration Runtime-pakket archief
 
@@ -28,7 +28,7 @@ Als u & uw SSIS-workloads (on-premises SQL Server Integration Services) naar de 
 - Pakketten die zijn geïmplementeerd in SSIS Catalog (SSISDB) die worden gehost door een server of beheerd exemplaar van Azure SQL Database (projectimplementatiemodel)
 - Pakketten die zijn geïmplementeerd in het bestandssysteem, Azure Files of SQL Server-database (MSDB) die worden gehost door Azure SQL Managed Instance (pakketimplementatiemodel)
 
-Wanneer u pakket implementatie model gebruikt, kunt u kiezen of u uw Azure-SSIS IR wilt inrichten met pakket archieven. Ze bieden een pakket beheer-laag boven op bestands systeem, Azure Files of MSDB die wordt gehost door Azure SQL Managed instance. Met Azure-SSIS IR-pakket archief kunt u pakketten importeren/exporteren/verwijderen en uitvoeren en de uitvoering van pakketten via SQL Server Management Studio (SSMS) controleren en stoppen, vergelijkbaar met de [verouderde SSIS-pakket opslag](/sql/integration-services/service/package-management-ssis-service?view=sql-server-2017). 
+Wanneer u pakket implementatie model gebruikt, kunt u kiezen of u uw Azure-SSIS IR wilt inrichten met pakket archieven. Ze bieden een pakket beheer-laag boven op bestands systeem, Azure Files of MSDB die wordt gehost door Azure SQL Managed instance. Met Azure-SSIS IR-pakket archief kunt u pakketten importeren/exporteren/verwijderen en uitvoeren en de uitvoering van pakketten via SQL Server Management Studio (SSMS) controleren en stoppen, vergelijkbaar met de [verouderde SSIS-pakket opslag](/sql/integration-services/service/package-management-ssis-service). 
 
 ## <a name="connect-to-azure-ssis-ir"></a>Verbinding maken met Azure-SSIS IR
 
@@ -42,39 +42,39 @@ Selecteer in het venster **objectverkenner** van SSMS **Azure-SSIS Integration r
 
 ## <a name="manage-folders-and-packages"></a>Mappen en pakketten beheren
 
-Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u met de rechter muisknop op een pakket opslaan, mappen of pakketten klikken om een menu te popupen en een **nieuwe map** te selecteren, pakket **importeren** , **pakket exporteren** , **verwijderen** of **vernieuwen** .
+Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u met de rechter muisknop op een pakket opslaan, mappen of pakketten klikken om een menu te popupen en een **nieuwe map** te selecteren, pakket **importeren**, **pakket exporteren**, **verwijderen** of **vernieuwen**.
 
    ![Mappen en pakketten beheren](media/azure-ssis-integration-runtime-package-store/ssms-package-store-manage.png)
 
    *  Selecteer **nieuwe map** om een nieuwe map voor geïmporteerde pakketten te maken.
 
-   *  Selecteer **pakket importeren** om pakketten te importeren uit **bestands systeem** , **SQL Server** (msdb) of het verouderde **SSIS-pakket** in uw pakket opslag.
+   *  Selecteer **pakket importeren** om pakketten te importeren uit **bestands systeem**, **SQL Server** (msdb) of het verouderde **SSIS-pakket** in uw pakket opslag.
 
       ![Pakket importeren](media/azure-ssis-integration-runtime-package-store/ssms-package-store-import.png)
 
-      Afhankelijk van de locatie van het **pakket** waaruit u wilt importeren, selecteert u het relevante type **Server** / **verificatie** , voert u de toegangs referenties in als dat nodig is, selecteert u het **pad naar het pakket** en voert u de nieuwe **pakket naam** in. Bij het importeren van pakketten kan het beveiligings niveau ervan niet worden gewijzigd. Gebruik SQL Server Data Tools (SSDT) of het opdracht regel programma om het te wijzigen `dtutil` .
+      Afhankelijk van de locatie van het **pakket** waaruit u wilt importeren, selecteert u het relevante type **Server** / **verificatie**, voert u de toegangs referenties in als dat nodig is, selecteert u het **pad naar het pakket** en voert u de nieuwe **pakket naam** in. Bij het importeren van pakketten kan het beveiligings niveau ervan niet worden gewijzigd. Gebruik SQL Server Data Tools (SSDT) of het opdracht regel programma om het te wijzigen `dtutil` .
 
       > [!NOTE]
       > Het importeren van SSIS-pakketten in Azure-SSIS IR pakket archieven kan slechts één voor één doen en kopieert deze eenvoudigweg naar het onderliggende MSDB/File System/Azure Files met behoud van hun SQL Server/SSIS-versie. 
       >
-      > Omdat Azure-SSIS IR op dit moment is gebaseerd op **SQL Server 2017** , zal het uitvoeren van pakketten met lagere versies worden bijgewerkt in SSIS 2017-pakketten tijdens runtime. Het uitvoeren van pakketten met hogere versies wordt niet ondersteund.
+      > Omdat Azure-SSIS IR op dit moment is gebaseerd op **SQL Server 2017**, zal het uitvoeren van pakketten met lagere versies worden bijgewerkt in SSIS 2017-pakketten tijdens runtime. Het uitvoeren van pakketten met hogere versies wordt niet ondersteund.
       >
       > Omdat oudere SSIS-pakket archieven zijn gebonden aan een specifieke SQL Server-versie en alleen toegankelijk zijn voor SSMS voor die versie, moeten lagere versies van pakketten in verouderde SSIS-pakket archieven eerst worden geëxporteerd naar het bestands systeem met behulp van de opgegeven SSMS-versie voordat ze kunnen worden geïmporteerd in Azure-SSIS IR pakket archieven met SSMS 2019 of hoger.
       >
-      > U kunt ook een [dtutil](/sql/integration-services/dtutil-utility?view=sql-server-2017) -opdracht regel programma gebruiken om meerdere SSIS-pakketten te importeren in azure-SSIS IR-pakket archieven terwijl u het beveiligings niveau inschakelt, Zie [meerdere pakketten implementeren met dtutil](#deploying-multiple-packages-with-dtutil).
+      > U kunt ook een [dtutil](/sql/integration-services/dtutil-utility) -opdracht regel programma gebruiken om meerdere SSIS-pakketten te importeren in azure-SSIS IR-pakket archieven terwijl u het beveiligings niveau inschakelt, Zie [meerdere pakketten implementeren met dtutil](#deploying-multiple-packages-with-dtutil).
 
-   *  Selecteer **pakket exporteren** om pakketten uit uw pakket archief te exporteren naar **bestands systeem** , **SQL Server** (msdb) of de verouderde **SSIS-pakket opslag** .
+   *  Selecteer **pakket exporteren** om pakketten uit uw pakket archief te exporteren naar **bestands systeem**, **SQL Server** (msdb) of de verouderde **SSIS-pakket opslag**.
 
       ![Pakket exporteren](media/azure-ssis-integration-runtime-package-store/ssms-package-store-export.png)
 
-      Afhankelijk van de **pakket locatie** waarnaar u wilt exporteren, selecteert u het relevante type **Server** / **verificatie** , voert u indien nodig de toegangs referenties in en selecteert u het **pad naar het pakket** . Wanneer u pakketten exporteert, voert u de wacht woorden in om ze eerst te ontsleutelen en vervolgens kunt u het beveiligings niveau wijzigen, bijvoorbeeld om te voor komen dat gevoelige gegevens worden opgeslagen of om deze te versleutelen of alle gegevens met de gebruikers sleutel of het wacht woord.
+      Afhankelijk van de **pakket locatie** waarnaar u wilt exporteren, selecteert u het relevante type **Server** / **verificatie**, voert u indien nodig de toegangs referenties in en selecteert u het **pad naar het pakket**. Wanneer u pakketten exporteert, voert u de wacht woorden in om ze eerst te ontsleutelen en vervolgens kunt u het beveiligings niveau wijzigen, bijvoorbeeld om te voor komen dat gevoelige gegevens worden opgeslagen of om deze te versleutelen of alle gegevens met de gebruikers sleutel of het wacht woord.
 
       > [!NOTE]
       > Het exporteren van SSIS-pakketten uit Azure-SSIS IR-pakket archieven kan slechts één voor één worden uitgevoerd. Als u dit niet doet, worden ze gewoon gekopieerd zonder dat ze de SQL Server/SSIS-versie behouden, anders worden ze bijgewerkt naar SSIS 2019 of hoger-versie pakketten.
       >
-      > Omdat Azure-SSIS IR op dit moment is gebaseerd op **SQL Server 2017** , zal het uitvoeren van pakketten met lagere versies worden bijgewerkt in SSIS 2017-pakketten tijdens runtime. Het uitvoeren van pakketten met hogere versies wordt niet ondersteund.
+      > Omdat Azure-SSIS IR op dit moment is gebaseerd op **SQL Server 2017**, zal het uitvoeren van pakketten met lagere versies worden bijgewerkt in SSIS 2017-pakketten tijdens runtime. Het uitvoeren van pakketten met hogere versies wordt niet ondersteund.
       >
-      > Als u meerdere SSIS-pakketten uit Azure-SSIS IR pakket archieven wilt exporteren terwijl u het beveiligings niveau inschakelt, kunt u het [dtutil](/sql/integration-services/dtutil-utility?view=sql-server-2017) -opdracht regel programma gebruiken om [meerdere pakketten te implementeren met dtutil](#deploying-multiple-packages-with-dtutil).
+      > Als u meerdere SSIS-pakketten uit Azure-SSIS IR pakket archieven wilt exporteren terwijl u het beveiligings niveau inschakelt, kunt u het [dtutil](/sql/integration-services/dtutil-utility) -opdracht regel programma gebruiken om [meerdere pakketten te implementeren met dtutil](#deploying-multiple-packages-with-dtutil).
 
    *  Selecteer **verwijderen** om bestaande mappen/pakketten uit uw pakket archief te verwijderen.
 
@@ -88,7 +88,7 @@ Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u met de rech
 
 ![Execute Package Utility pagina's 3 & 4](media/azure-ssis-integration-runtime-package-store/ssms-package-store-execute2.png)
 
-De pagina's **Algemeen** , **configuraties** , **uitvoerings opties** en **logboek registratie** van **Execute package Utility** komen overeen met het tabblad  **instellingen** van de activiteit SSIS-pakket uitvoeren. Op deze pagina's kunt u het versleutelings wachtwoord voor uw pakket invoeren en toegang krijgen tot gegevens voor uw pakket configuratie bestand. U kunt ook de referenties en eigenschappen van uw pakket uitvoer opgeven, evenals de toegangs gegevens voor uw Logboekmap.  De pagina **waarden instellen** van **Execute package Utility** dialoog venster komt overeen met het tabblad **Eigenschappen onderdrukkingen** van de activiteit uitvoeren SSIS-pakket, waar u de bestaande pakket eigenschappen kunt opgeven die u wilt overschrijven. Zie [SSIS-pakketten uitvoeren als uitvoering van SSIS-pakket activiteiten in ADF-pijp lijnen](./how-to-invoke-ssis-package-ssis-activity.md)voor meer informatie.
+De pagina's **Algemeen**, **configuraties**, **uitvoerings opties** en **logboek registratie** van **Execute package Utility** komen overeen met het tabblad  **instellingen** van de activiteit SSIS-pakket uitvoeren. Op deze pagina's kunt u het versleutelings wachtwoord voor uw pakket invoeren en toegang krijgen tot gegevens voor uw pakket configuratie bestand. U kunt ook de referenties en eigenschappen van uw pakket uitvoer opgeven, evenals de toegangs gegevens voor uw Logboekmap.  De pagina **waarden instellen** van **Execute package Utility** dialoog venster komt overeen met het tabblad **Eigenschappen onderdrukkingen** van de activiteit uitvoeren SSIS-pakket, waar u de bestaande pakket eigenschappen kunt opgeven die u wilt overschrijven. Zie [SSIS-pakketten uitvoeren als uitvoering van SSIS-pakket activiteiten in ADF-pijp lijnen](./how-to-invoke-ssis-package-ssis-activity.md)voor meer informatie.
 
 Wanneer u de knop **uitvoeren** selecteert, wordt er automatisch een nieuwe ADF-pijp lijn met activiteit voor het uitvoeren van SSIS-pakketten gegenereerd en geactiveerd. Als er al een ADF-pijp lijn met dezelfde instellingen bestaat, wordt deze opnieuw uitgevoerd en wordt er geen nieuwe pijp lijn gegenereerd. De activiteiten ADF pijp lijn en execute SSIS-pakket krijgen `Pipeline_SSMS_YourPackageName_HashString` respectievelijk de naam en `Activity_SSMS_YourPackageName` .
 
@@ -98,7 +98,7 @@ Wanneer u de knop **uitvoeren** selecteert, wordt er automatisch een nieuwe ADF-
 
 ## <a name="monitor-and-stop-running-packages"></a>Het uitvoeren van pakketten controleren en stoppen
 
-Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u het knoop punt **actieve pakketten** uitvouwen om uw pakketten die momenteel worden uitgevoerd, weer te geven.  Klik met de rechter muisknop op een van de opdrachten om een menu te popupen en selecteer **stoppen** of **vernieuwen** .
+Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u het knoop punt **actieve pakketten** uitvouwen om uw pakketten die momenteel worden uitgevoerd, weer te geven.  Klik met de rechter muisknop op een van de opdrachten om een menu te popupen en selecteer **stoppen** of **vernieuwen**.
 
    ![Het uitvoeren van pakketten controleren en stoppen](media/azure-ssis-integration-runtime-package-store/ssms-package-store-monitor.png)
 
@@ -108,7 +108,7 @@ Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u het knoop p
 
 ## <a name="monitor-azure-ssis-ir-and-edit-package-stores"></a>Azure-SSIS IR bewaken en pakket archieven bewerken
 
-Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u er met de rechter muisknop op klikken om een menu weer te pop-up en **Ga naar Azure Data Factory Portal** of **vernieuwen** .
+Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u er met de rechter muisknop op klikken om een menu weer te pop-up en **Ga naar Azure Data Factory Portal** of **vernieuwen**.
 
    ![Naar de ADF-Portal](media/azure-ssis-integration-runtime-package-store/ssms-package-store-monitor2.png)
 
@@ -122,9 +122,9 @@ Nadat u verbinding hebt gemaakt met uw Azure-SSIS IR op SSMS, kunt u er met de r
 
 & als u de on-premises SSIS-werk belastingen wilt opheffen op SSIS in ADF en het verouderde pakket implementatie model wilt behouden, moet u uw pakketten implementeren vanuit bestands systeem, MSDB die worden gehost door SQL Server of verouderde SSIS-pakket archieven in Azure Files, MSDB gehost door Azure SQL Managed instance of Azure-SSIS IR package Stores. Op hetzelfde moment moet u ook het beveiligings niveau van versleuteling per gebruikers sleutel overschakelen naar niet-versleuteld of versleutelen op basis van het wacht woord als u dit nog niet hebt gedaan.
 
-U kunt [dtutil](/sql/integration-services/dtutil-utility?view=sql-server-2017) -opdracht regel programma gebruiken dat wordt meegeleverd met SQL Server/SSIS-installatie om meerdere pakketten in batches te implementeren. Het is gebonden aan een specifieke SSIS-versie, dus als u deze gebruikt om pakketten van lagere versies te implementeren zonder het beveiligings niveau te scha kelen, worden deze eenvoudigweg gekopieerd tijdens het behoud van de SSIS-versie. Als u het gebruikt om ze te implementeren en tegelijkertijd het beveiligings niveau te wijzigen, worden ze bijgewerkt naar de SSIS-versie.
+U kunt [dtutil](/sql/integration-services/dtutil-utility) -opdracht regel programma gebruiken dat wordt meegeleverd met SQL Server/SSIS-installatie om meerdere pakketten in batches te implementeren. Het is gebonden aan een specifieke SSIS-versie, dus als u deze gebruikt om pakketten van lagere versies te implementeren zonder het beveiligings niveau te scha kelen, worden deze eenvoudigweg gekopieerd tijdens het behoud van de SSIS-versie. Als u het gebruikt om ze te implementeren en tegelijkertijd het beveiligings niveau te wijzigen, worden ze bijgewerkt naar de SSIS-versie.
 
- Omdat Azure-SSIS IR op dit moment is gebaseerd op **SQL Server 2017** , zal het uitvoeren van pakketten met lagere versies worden bijgewerkt in SSIS 2017-pakketten tijdens runtime. Het uitvoeren van pakketten met hogere versies wordt niet ondersteund.
+ Omdat Azure-SSIS IR op dit moment is gebaseerd op **SQL Server 2017**, zal het uitvoeren van pakketten met lagere versies worden bijgewerkt in SSIS 2017-pakketten tijdens runtime. Het uitvoeren van pakketten met hogere versies wordt niet ondersteund.
 
 Als gevolg hiervan moet het implementeren van pakketten die moeten worden uitgevoerd op Azure-SSIS IR in het pakket implementatie model, gebruikmaken van dtutil 2017 die wordt geleverd met de installatie van SQL Server/SSIS 2017. U kunt de gratis [SQL Server/SSIS 2017 Developer Edition](https://go.microsoft.com/fwlink/?linkid=853016) voor dit doel downloaden en installeren. Nadat de installatie is uitgevoerd, kunt u dtutil 2017 vinden op deze map: `YourLocalDrive:\Program Files\Microsoft SQL Server\140\DTS\Binn` .
 
@@ -148,7 +148,7 @@ for %f in (*.dtsx) do dtutil.exe /FILE %f /ENCRYPT FILE;Z:\%f;2;YourEncryptionPa
 
 Als u de bovenstaande opdrachten in een batch-bestand wilt uitvoeren, vervangt u door `%f` `%%f` .
 
-Als u meerdere pakketten van verouderde SSIS-pakket archieven op het bestands systeem in Azure Files wilt implementeren en tegelijkertijd het beveiligings niveau wilt wijzigen, kunt u dezelfde opdrachten gebruiken, maar vervangen door `YourLocalDrive:\...\YourPackageFolder` een lokale map die wordt gebruikt door verouderde SSIS-pakket winkels: `YourLocalDrive:\Program Files\Microsoft SQL Server\YourSQLServerDefaultCompatibilityLevel\DTS\Packages\YourPackageFolder` . Als uw verouderde SSIS-pakket archief bijvoorbeeld is gebonden aan SQL Server 2016, gaat u naar `YourLocalDrive:\Program Files\Microsoft SQL Server\130\DTS\Packages\YourPackageFolder` .  U kunt de waarde voor `YourSQLServerDefaultCompatibilityLevel` uit een [lijst met SQL Server standaard compatibiliteits niveaus](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level?view=sql-server-ver15#arguments)vinden.
+Als u meerdere pakketten van verouderde SSIS-pakket archieven op het bestands systeem in Azure Files wilt implementeren en tegelijkertijd het beveiligings niveau wilt wijzigen, kunt u dezelfde opdrachten gebruiken, maar vervangen door `YourLocalDrive:\...\YourPackageFolder` een lokale map die wordt gebruikt door verouderde SSIS-pakket winkels: `YourLocalDrive:\Program Files\Microsoft SQL Server\YourSQLServerDefaultCompatibilityLevel\DTS\Packages\YourPackageFolder` . Als uw verouderde SSIS-pakket archief bijvoorbeeld is gebonden aan SQL Server 2016, gaat u naar `YourLocalDrive:\Program Files\Microsoft SQL Server\130\DTS\Packages\YourPackageFolder` .  U kunt de waarde voor `YourSQLServerDefaultCompatibilityLevel` uit een [lijst met SQL Server standaard compatibiliteits niveaus](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level#arguments)vinden.
 
 Als u Azure-SSIS IR-pakket winkels boven op Azure Files hebt geconfigureerd, worden uw geïmplementeerde pakketten weer gegeven wanneer u verbinding maakt met uw Azure-SSIS IR op SSMS 2019 of hoger.
 

@@ -8,12 +8,12 @@ ms.author: dademath
 ms.date: 07/28/2020
 ms.topic: include
 ms.service: azure-communication-services
-ms.openlocfilehash: daf2d675bbbee324769b6e1e8d8d34587d37c72f
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
+ms.openlocfilehash: 9755cebf66a8c468b29737262bc3c32ae9f5422f
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886618"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98024260"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -112,14 +112,8 @@ module.exports = async function (context, req) {
 
     const userToken = await tokenClient.issueToken(user, ["voip"]);
 
-    const response = {
-        "User" : userToken.user,
-        "Token": userToken.token,
-        "ExpiresOn": userToken.expiresOn
-    }
-
     context.res = {
-        body: response
+        body: userToken
     };
 }
 ```
@@ -130,7 +124,7 @@ Voor bestaande `CommunicationUser` van Communication Services kunt u de stap voo
 
 Test de Azure-functie lokaal met behulp van `F5`. Hiermee initialiseert u de Azure-functie lokaal en maakt u deze toegankelijk via: `http://localhost:7071/api/FUNCTION_NAME`. Bekijk aanvullende documentatie over [lokaal uitvoeren](../../../azure-functions/create-first-function-vs-code-csharp.md?pivots=programming-language-javascript#run-the-function-locally)
 
-Open de URL in uw browser en controleer of er een antwoordtekst wordt weergeven met de gebruikers-id, het token en de vervaltijd van het token voor Communication.
+Open de URL in uw browser en controleer of er een antwoordtekst wordt weergeven met de gebruikers-id voor Communication, het token en de vervaltijd van het token.
 
 :::image type="content" source="../media/trusted-service-sample-response.png" alt-text="Schermopname met een voorbeeldantwoord voor de gemaakte Azure-functie.":::
 

@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 04/15/2019
-ms.openlocfilehash: b4902e1fb7a2a181d3d5b2ce2ac6d1d458500fce
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 9609c382161514611ddc41af040e8fb438431fdf
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844179"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555998"
 ---
 # <a name="troubleshoot-package-execution-in-the-ssis-integration-runtime"></a>Problemen met de uitvoering van pakketten oplossen in SSIS Integration runtime
 
@@ -28,7 +28,7 @@ In dit artikel vindt u de meest voorkomende fouten die u kunt tegen komen wannee
 
 Gebruik de Azure Data Factory Portal om de uitvoer van de SSIS-uitvoering van de pakketten te controleren. De uitvoer bevat het resultaat van de uitvoering, fout berichten en de bewerkings-ID. Zie [de pijp lijn controleren](how-to-invoke-ssis-package-ssis-activity.md#monitor-the-pipeline)voor meer informatie.
 
-Gebruik de SSIS-catalogus (SSISDB) om de detail logboeken voor de uitvoering te controleren. Zie [monitoring Running packages and other Operations](/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017)(Engelstalig) voor meer informatie.
+Gebruik de SSIS-catalogus (SSISDB) om de detail logboeken voor de uitvoering te controleren. Zie [monitoring Running packages and other Operations](/sql/integration-services/performance/monitor-running-packages-and-other-operations)(Engelstalig) voor meer informatie.
 
 ## <a name="common-errors-causes-and-solutions"></a>Veelvoorkomende fouten, oorzaken en oplossingen
 
@@ -91,7 +91,7 @@ Deze fout geeft aan dat de lokale schijf wordt gebruikt in het SSIS Integration 
 Deze fout treedt op wanneer de pakket uitvoering geen bestand kan vinden op de lokale schijf in de SSIS Integration runtime. Voer de volgende acties uit:
 * Gebruik niet het absolute pad in het pakket dat wordt uitgevoerd in de SSIS Integration runtime. De huidige uitvoerings werkmap (.) of de map Temp (% TEMP%) gebruiken maar.
 * Als u een aantal bestanden op SSIS Integration runtime-knoop punten wilt behouden, moet u de bestanden voorbereiden zoals beschreven in [Customize Setup](how-to-configure-azure-ssis-ir-custom-setup.md). Alle bestanden in de werkmap worden opgeruimd nadat de uitvoering is voltooid.
-* Gebruik Azure Files in plaats van het bestand op te slaan in het knoop punt SSIS Integration runtime. Zie [Azure-bestands shares gebruiken](/sql/integration-services/lift-shift/ssis-azure-files-file-shares?view=sql-server-2017#use-azure-file-shares)voor meer informatie.
+* Gebruik Azure Files in plaats van het bestand op te slaan in het knoop punt SSIS Integration runtime. Zie [Azure-bestands shares gebruiken](/sql/integration-services/lift-shift/ssis-azure-files-file-shares#use-azure-file-shares)voor meer informatie.
 
 ### <a name="error-message-the-database-ssisdb-has-reached-its-size-quota"></a>Fout bericht: de grootte van de data base SSISDB is bereikt
 
@@ -154,7 +154,7 @@ Een mogelijke oorzaak is dat uw Self-Hosted Integration runtime niet op de juist
 
 * Mogelijke oorzaak en aanbevolen actie:
   * Als er ook een waarschuwings bericht ' het onderdeel biedt geen ondersteuning voor het gebruik van verbindings beheer met de waarde ' ConnectByProxy ' ingesteld op ' True ' in het uitvoerings logboek, betekent dit dat er een verbindings beheer wordt gebruikt voor een onderdeel dat nog geen ConnectByProxy heeft ondersteund. De ondersteunde onderdelen kunt u vinden op [Self-Hosted IR configureren als proxy voor Azure-SSIS IR in ADF](self-hosted-integration-runtime-proxy-ssis.md#enable-ssis-packages-to-connect-by-proxy)
-  * Het uitvoerings logboek vindt u in het [rapport SSMS](/sql/integration-services/performance/monitor-running-packages-and-other-operations?view=sql-server-2017#reports) of in de logboekmap die u hebt opgegeven in de activiteit SSIS-pakket uitvoering.
+  * Het uitvoerings logboek vindt u in het [rapport SSMS](/sql/integration-services/performance/monitor-running-packages-and-other-operations#reports) of in de logboekmap die u hebt opgegeven in de activiteit SSIS-pakket uitvoering.
   * vNet kan ook worden gebruikt om toegang te krijgen tot on-premises gegevens als alternatief. Meer informatie vindt u in een [Azure-SSIS Integration runtime toevoegen aan een virtueel netwerk](join-azure-ssis-integration-runtime-virtual-network.md)
 
 ### <a name="error-message-staging-task-status-failed-staging-task-error-errorcode-2906-errormessage-package-execution-failed-output-operationerrormessages-ssis-executor-exit-code--1n-loglocation-ssistelemetryexecutionlog-effectiveintegrationruntime--executionduration--durationinqueue--integrationruntimequeue--"></a>Fout bericht: ' status Faserings taak: mislukt. Fout in de staging-taak: error code: 2906, ErrorMessage: de uitvoering van het pakket is mislukt. uitvoer: {"OperationErrorMessages": "de afsluit code van de SSIS-uitvoerder:-1. \ n", "LogLocation": "... \\ SSISTelemetry \\ ExecutionLog \\ ... "," effectiveIntegrationRuntime ":"... "," executionDuration ":...," durationInQueue ": {" integrationRuntimeQueue ":...}}"

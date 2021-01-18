@@ -5,17 +5,75 @@ ms.subservice: ''
 ms.topic: overview
 author: bwren
 ms.author: bwren
-ms.date: 12/04/2020
-ms.openlocfilehash: 91aa76fd3d9dbb54316f32fdb319e92ca2283b1d
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.date: 01/11/2021
+ms.openlocfilehash: 6347bd3710a4727b9d3f820072ffff21cb57752d
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96745771"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071864"
 ---
 # <a name="whats-new-in-azure-monitor-documentation"></a>Wat is er nieuw de documentatie van Azure Monitor?
 
 In dit artikel vindt u een lijst met Azure Monitor-artikelen die nieuw of aanzienlijk bijgewerkt zijn. Elke eerste week van de maand wordt de lijst bijgewerkt met artikelupdates van de vorige maand.
+
+## <a name="december-2020"></a>December 2020
+
+### <a name="general"></a>Algemeen
+- [Door klant beheerde sleutels in Azure Monitor](platform/customer-managed-keys.md): foutberichten toegevoegd.
+- [Partners die integreren met Azure Monitor door](platform/partners.md): sectie over Event Hub-integratie toegevoegd.
+
+### <a name="agents"></a>Agents
+- [Query's uitvoeren op meerdere bronnen in Azure Data Explorer met behulp van Azure Monitor](platform/azure-monitor-data-explorer-proxy.md): nieuw artikel.
+- [Overzicht van de Azure-bewakingsagents](platform/agents-overview.md): ondersteuning toegevoegd voor Oracle 8.
+
+### <a name="alerts"></a>Waarschuwingen
+- [Problemen met metrische Azure-waarschuwingen oplossen](platform/alerts-troubleshoot-metric.md): probleemoplossing voor dynamische drempelwaarden toegevoegd.
+- [IT Service Management-connector in Log Analytics](platform/itsmc-definition.md): nieuw artikel.
+- [Overzicht van IT Service Management-connector](platform/itsmc-overview.md): geherstructureerde informatie over probleemoplossing.
+- [Cherwell verbinden met IT Service Management-connector](platform/itsmc-connections-cherwell.md): nieuw artikel.
+- [Provenance verbinden met IT Service Management-connector](platform/itsmc-connections-provance.md): nieuw artikel.
+- [SCSM verbinden met IT Service Management-connector](platform/itsmc-connections-scsm.md): nieuw artikel.
+- [ServiceNow verbinden met IT Service Management-connector](platform/itsmc-connections-servicenow.md): nieuw artikel.
+- [Synchronisatieproblemen met ServiceNow handmatig oplossen](platform/itsmc-resync-servicenow.md): geherstructureerde informatie over probleemoplossing.
+
+
+
+
+### <a name="application-insights"></a>Application Insights
+- [Azure Application Insights voor JavaScript-web-apps](app/javascript.md): installatie van verbindingsreeks toegevoegd.
+- [Metrische standaardgegevens van Azure Application Insights](app/standard-metrics.md): nieuw artikel.
+- [Azure Monitor Application Insights Java](app/java-in-process-agent.md): aanvullende informatie over het verzenden van aangepaste telemetrie vanuit uw toepassing.
+- [Continue export van telemetrie vanuit Application Insights](app/export-telemetry.md): op diagnostische instellingen gebaseerde export toegevoegd.
+- [Snapshot Debugger inschakelen voor .NET- en .NET Core-apps in Azure Functions](app/snapshot-debugger-function-app.md): nieuw artikel.
+- [Door Application Insights en Log Analytics gebruikte IP-adressen](app/ip-addresses.md): IP-adressen toegevoegd voor Azure Government.
+- [Problemen met Azure Application Insights Profiler oplossen](app/profiler-troubleshooting.md): informatie over de statuspagina van de site-uitbreiding van Diagnostic Services toegevoegd.
+- [Problemen met de beschikbaarheidstests van Azure Application Insights oplossen](app/troubleshoot-availability.md): wordt bijgewerkt naar probleemoplossing voor pingtests.
+- [Problemen met Azure Monitor Application Insights voor Java oplossen](app/java-standalone-troubleshoot.md): nieuw artikel.
+
+### <a name="containers"></a>Containers
+- [Rapporten in Azure Monitor voor containers](insights/container-insights-reports.md): nieuw artikel.
+
+### <a name="logs"></a>Logboeken
+- [Toegewezen Azure Monitor Logs-clusters](log-query/logs-dedicated-clusters.md): geautomatiseerde opdrachten, methoden voor ontkoppelen en verwijderen en probleemoplossing toegevoegd.
+- [Query's uitvoeren voor meerdere services tussen Azure Monitor en Azure Data Explorer](platform/azure-data-explorer-monitor-cross-service-query.md): nieuw artikel.
+- [Gegevens uit Log Analytics-werkruimte exporteren naar Azure Monitor (preview)](platform/logs-data-export.md): ARM-sjablonen toegevoegd.
+
+### <a name="metrics"></a>Metrische gegevens
+- [Geavanceerde functies van Azure Metrics Explorer](platform/metrics-charts.md): informatie over resourcebereikkiezer toegevoegd.
+- [Meerdere resources weergeven in Metrics Explorer](platform/metrics-dynamic-scope.md): nieuw artikel.
+
+### <a name="networks"></a>Netwerken
+- [Azure Networking Analytics-oplossing in Azure Monitor](insights/azure-networking-analytics.md): informatie over Network Insights-workbook toegevoegd.
+
+### <a name="virtual-machines"></a>Virtual Machines
+- [Azure Monitor inschakelen voor een hybride omgeving](insights/vminsights-enable-hybrid.md): nieuwe versie van afhankelijkheidsagent.
+
+
+### <a name="visualizations"></a>Visualisaties
+- [Kaartvisualisaties in Azure Monitor-workbook](platform/workbooks-map-visualizations.md): nieuw artikel.
+- [Bring Your Own Storage van Azure Monitor Workbooks](platform/workbooks-bring-your-own-storage.md): nieuw artikel.
+
 
 ## <a name="november-2020"></a>November 2020
 

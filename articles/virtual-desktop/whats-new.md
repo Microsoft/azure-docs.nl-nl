@@ -3,17 +3,17 @@ title: Nieuwe functies in Windows Virtual Desktop - Azure
 description: Nieuwe functies en productupdates voor Windows Virtual Desktop.
 author: Heidilohr
 ms.topic: overview
-ms.date: 12/02/2020
+ms.date: 01/06/2021
 ms.author: helohr
 ms.reviewer: thhickli; darank
 manager: lizross
 ms.custom: references_regions
-ms.openlocfilehash: e42e49f69a159bf3bfdc732d41dc66a9a707f42f
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: df3dd8b5b18ec2997ee20ad4955ffd7bc1dc573d
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97617354"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955005"
 ---
 # <a name="whats-new-in-windows-virtual-desktop"></a>Nieuwe functies in Windows Virtual Desktop
 
@@ -25,6 +25,44 @@ Windows Virtual Desktop wordt regelmatig bijgewerkt. In dit artikel vindt u meer
 - Opgeloste fouten
 
 Dit artikel wordt maandelijks bijgewerkt. Controleer hier regelmatig of er nieuwe updates beschikbaar zijn.
+
+## <a name="december-2020"></a>December 2020
+
+Dit is er gewijzigd in december 2020: 
+
+### <a name="azure-monitor-for-windows-virtual-desktop"></a>Azure Monitor voor Windows Virtual Desktop
+
+De openbare preview voor Azure Monitor voor Windows Virtual Desktop is nu beschikbaar. Deze nieuwe functie omvat een robuust dashboard boven op Azure Monitor Workbooks, zodat IT-professionals meer inzicht hebben in hun Windows Virtual Desktop-omgeving. Bekijk [de aankondiging op onze blog](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/azure-monitor-for-windows-virtual-desktop-public-preview/m-p/1946587) (Engelstalig) voor meer informatie. 
+
+### <a name="azure-resource-manager-template-change"></a>Wijziging in de Azure Resource Manager-sjabloon 
+
+In de meest recente update zijn alle parameters voor openbare IP-adressen uit de Azure Resource Manager-sjabloon verwijderd om hostgroepen te maken en in te richten. Als u uw implementatie veilig wilt houden, wordt u sterk aangeraden geen gebruik te maken van openbare IP-adressen voor Windows Virtual Desktop. Als uw implementatie afhankelijk is van openbare IP-adressen, moet u de implementatie opnieuw configureren voor het gebruik van privé-IP-adressen, anders werkt de implementatie niet goed.
+
+### <a name="msix-app-attach-public-preview"></a>Openbare preview van MSIX app attach 
+
+MSIX app attach is een andere service waarvan de openbare preview die deze maand is ingegaan. MSIX app attach is een service waarmee MSIX-toepassingen dynamisch worden gepresenteerd aan de sessiehost-VM's van Windows Virtual Desktop. Bekijk [de aankondiging op onze blog](https://techcommunity.microsoft.com/t5/windows-virtual-desktop/msix-app-attach-azure-portal-integration-public-preview/m-p/1986231) (Engelstalig) voor meer informatie. 
+
+### <a name="screen-capture-protection"></a>Beveiliging van schermopnamen 
+
+Deze maand was ook de openbare preview voor beveiliging van schermopnamen voor het eerst te zien. U kunt deze functie gebruiken om te voorkomen dat gevoelige informatie wordt vastgelegd op de clienteindpunten. Ga naar [deze pagina](https://aka.ms/WVDScreenCaptureProtection) om de beveiliging van schermopnamen uit te proberen.  
+
+### <a name="built-in-roles"></a>Ingebouwde rollen
+
+Er zijn nieuwe ingebouwde rollen voor Windows Virtual Desktop voor beheerdersmachtigingen toegevoegd. Zie [Ingebouwde rollen voor Windows Virtual Desktop](rbac.md) voor meer informatie. 
+
+### <a name="application-group-limit-increase"></a>Verhoging van de limiet voor toepassingsgroepen
+
+De standaardlimiet voor toepassingsgroepen per Azure Active Directory-tenant is verhoogd naar 200 groepen.
+
+### <a name="client-updates-for-december-2020"></a>Clientupdates van december 2020
+
+Er zijn nieuwe versies van de volgende clients uitgebracht: 
+
+- Android
+- macOS
+- Windows
+
+Zie [Clientupdates](whats-new.md#client-updates) voor meer informatie over clientupdates.
 
 ## <a name="november-2020"></a>November 2020
 

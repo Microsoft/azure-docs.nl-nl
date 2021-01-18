@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/22/2020
 ms.author: memildin
-ms.openlocfilehash: 7265195f9614928a2150a56a780ea7b36bc2e266
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: ea66bb5bcdd6132809804632919a120f5c93353f
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96030863"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132713"
 ---
 # <a name="container-security-in-security-center"></a>Containerbeveiliging in Security Center
 
@@ -48,7 +48,7 @@ In de volgende schermopname ziet u de pagina voor de inventarisatie van activa e
 
 Als u de installatiekopieën in uw op Azure Resource Manager gebaseerde Azure-containerregisters wilt bewaken, schakelt u [Azure Defender voor containerregisters](defender-for-container-registries-introduction.md) in. Security Center scant alle installatiekopieën die in de afgelopen 30 dagen zijn opgehaald, naar uw register zijn gepusht of zijn geïmporteerd. De geïntegreerde scanner wordt verschaft door de toonaangevende leverancier voor het scannen op beveiligingsproblemen, Qualys.
 
-Als er problemen worden gevonden door Qualys of Security Center, ontvangt u een melding in het [Azure Defender-dashboard](azure-defender-dashboard.md). Security Center biedt bij elk beveiligingsprobleem praktische aanbevelingen, maar ook een classificatie van de ernst en richtlijnen voor het oplossen van het probleem. Zie voor meer informatie over de aanbevelingen van Security Center voor containers de [Verwijzingenlijst met aanbevelingen](recommendations-reference.md#recs-containers).
+Als er problemen worden gevonden door Qualys of Security Center, ontvangt u een melding in het [Azure Defender-dashboard](azure-defender-dashboard.md). Security Center biedt bij elk beveiligingsprobleem praktische aanbevelingen, maar ook een classificatie van de ernst en richtlijnen voor het oplossen van het probleem. Zie voor meer informatie over de aanbevelingen van Security Center voor containers de [Verwijzingenlijst met aanbevelingen](recommendations-reference.md#recs-compute).
 
 Security Center filtert en classificeert de resultaten van de scanner. Wanneer een installatiekopie in orde is, wordt deze als zodanig gemarkeerd door Security Center. Security Center genereert alleen aanbevelingen voor de beveiliging ten aanzien van installatiekopieën waarvoor problemen moeten worden opgelost. Als er bij problemen alleen een melding wordt weergegeven, vermindert Security Center het potentieel voor ongewenste informatieve waarschuwingen.
 
@@ -60,7 +60,7 @@ Azure Security Center identificeert niet-beheerde containers die worden gehost o
 
 Security Center bevat de volledige regelset van de CIS Docker-benchmark en waarschuwt u als uw containers niet voldoen aan een van de controles. Als er onjuiste configuraties worden gevonden, worden in Security Center aanbevelingen voor de beveiliging gegenereerd. U kunt de aanbevelingen bekijken en problemen herstellen met behulp van de **pagina met aanbevelingen van Security Center**. De CIS-benchmarkcontroles worden niet uitgevoerd op door AKS beheerde instanties of door Databricks beheerde VM's.
 
-Zie de sectie [Container](recommendations-reference.md#recs-containers) van de naslagtabel met aanbevelingen voor meer informatie over de relevante Security Center aanbevelingen die voor deze functie kunnen worden weergegeven.
+Zie de sectie [Rekenkracht](recommendations-reference.md#recs-compute) van de naslagtabel met aanbevelingen voor meer informatie over de relevante aanbevelingen van Security Center die voor deze functie kunnen worden weergegeven.
 
 Security Center biedt extra informatie over de containers op een virtuele machine wanneer u de beveiligingsproblemen van een machine wilt verkennen. Deze informatie omvat de Docker-versie en het aantal installatiekopieën dat op de host wordt uitgevoerd. 
 
@@ -74,7 +74,7 @@ AKS biedt beveiligingsmaatregelen voor en inzicht in het beveiligingspostuur van
 * De configuratie van uw AKS-clusters continu bewaken
 * Aanbevelingen voor de beveiliging genereren conform de industrienormen
 
-Zie de sectie [Container](recommendations-reference.md#recs-containers) van de naslagtabel met aanbevelingen voor meer informatie over de relevante Security Center aanbevelingen die voor deze functie kunnen worden weergegeven.
+Zie de sectie [Rekenkracht](recommendations-reference.md#recs-compute) van de naslagtabel met aanbevelingen voor meer informatie over de relevante aanbevelingen van Security Center die voor deze functie kunnen worden weergegeven.
 
 ###  <a name="workload-protection-best-practices-using-kubernetes-admission-control"></a>Aanbevolen procedures voor workloadbeveiliging met behulp van Kubernetes Admission Control
 

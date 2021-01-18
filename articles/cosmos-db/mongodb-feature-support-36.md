@@ -7,12 +7,12 @@ ms.topic: overview
 ms.date: 08/07/2020
 author: sivethe
 ms.author: sivethe
-ms.openlocfilehash: bb9efa3fde0ed840589b66db7b28392de67ee8dd
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: 0ca1f1222881a2b4ca640fa31192bd1c151ebd9f
+ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635582"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98028842"
 ---
 # <a name="azure-cosmos-dbs-api-for-mongodb-36-version-supported-features-and-syntax"></a>De API van Azure Cosmos DB voor MongoDB (versie 3.6): ondersteunde functies en syntaxis
 [!INCLUDE[appliesto-mongodb-api](includes/appliesto-mongodb-api.md)]
@@ -23,11 +23,14 @@ Door gebruik te maken van de API van Azure Cosmos DB voor MongoDB hebt u de besc
 
 ## <a name="protocol-support"></a>Ondersteuning voor protocol
 
-De API van Azure Cosmos DB voor MongoDB is standaard compatibel met MongoDB-serverversie **3.6** voor nieuwe accounts. De ondersteunde operators en eventuele beperkingen of uitzonderingen worden hieronder vermeld. Elk clientstuurprogramma dat deze protocollen kent, kan verbinding maken met de API van Azure Cosmos DB voor MongoDB. Houd er rekening mee dat wanneer u de API van Azure Cosmos DB gebruikt voor MongoDB-accounts, de 3.6-versie van accounts het eindpunt in de indeling `*.mongo.cosmos.azure.com` en de 3.2-versie van accounts het eindpunt in de indeling `*.documents.azure.com` heeft.
+De API van Azure Cosmos DB voor MongoDB is standaard compatibel met MongoDB-serverversie **3.6** voor nieuwe accounts. De ondersteunde operators en eventuele beperkingen of uitzonderingen worden hieronder vermeld. Elk clientstuurprogramma dat deze protocollen kent, kan verbinding maken met de API van Azure Cosmos DB voor MongoDB. Wanneer u de API van Azure Cosmos DB voor MongoDB-accounts gebruikt, heeft de 3.6-versie van het account het eindpunt in de indeling `*.mongo.cosmos.azure.com`, terwijl de 3.2-versie van het account de indeling `*.documents.azure.com` heeft.
 
 ## <a name="query-language-support"></a>Ondersteuning voor querytaal
 
-De API van Azure Cosmos DB voor MongoDB biedt uitgebreide ondersteuning voor MongoDB-querytaalconstructs. Hieronder ziet u de gedetailleerde lijst met momenteel ondersteunde bewerkingen, operators, fasen, opdrachten en opties.
+De API van Azure Cosmos DB voor MongoDB biedt uitgebreide ondersteuning voor MongoDB-querytaalconstructs. In de volgende secties ziet u de gedetailleerde lijst met serverbewerkingen, operators, fasen, opdrachten en opties die momenteel door Azure Cosmos DB worden ondersteund.
+
+> [!NOTE]
+> Dit artikel bevat alleen de ondersteunde serveropdrachten en sluit wrapper-functies aan de clientzijde uit. Wrapper-functies aan de clientzijde, zoals `deleteMany()` en `updateMany()`, maken intern gebruik van de serveropdrachten `delete()` en `update()`. Functies die gebruikmaken van ondersteunde serveropdrachten zijn compatibel met de API van Azure Cosmos DB voor MongoDB.
 
 ## <a name="database-commands"></a>Databaseopdrachten
 
@@ -138,7 +141,7 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 |$lookup    |    Ja|
 |$out        |Ja|
 |$indexStats|        Nee|
-|$facet    |Ja|
+|$facet    |Yes|
 |$bucket|    Nee|
 |$bucketAuto|    Nee|
 |$sortByCount|    Ja|
@@ -148,7 +151,7 @@ De API van Azure Cosmos DB voor MongoDB biedt ondersteuning voor de volgende dat
 |$currentOp|    Nee|
 |$listLocalSessions    |Nee|
 |$listSessions    |Nee|
-|$graphLookup    |Ja|
+|$graphLookup    |Yes|
 
 ### <a name="boolean-expressions"></a>Booleaanse expressies
 
@@ -496,10 +499,10 @@ $nearSphere |  Ja |
 $geometry |  Ja |
 $minDistance | Ja |
 $maxDistance | Ja |
-$center | Nee |
-$centerSphere | Nee |
-$box | Nee |
-$polygon |  Nee |
+$center | No |
+$centerSphere | No |
+$box | No |
+$polygon |  No |
 
 ## <a name="cursor-methods"></a>Cursormethoden
 
@@ -592,7 +595,7 @@ Azure Cosmos DB biedt ondersteuning voor automatische sharding aan serverzijde. 
 
 ## <a name="sessions"></a>Sessies
 
-Azure Cosmos DB biedt nog geen ondersteuning voor serveropdrachten.
+Azure Cosmos DB biedt nog geen ondersteuning voor sessieopdrachten aan de serverzijde.
 
 ## <a name="next-steps"></a>Volgende stappen
 

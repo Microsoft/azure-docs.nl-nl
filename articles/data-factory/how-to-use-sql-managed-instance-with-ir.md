@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 4/15/2020
-ms.openlocfilehash: 86bff161e29384b10030ed3d524301f6dea6037e
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: fb622bdb1d7aa485c421122cdfbd2493a32cf5db
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92634161"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555658"
 ---
 # <a name="use-azure-sql-managed-instance-with-sql-server-integration-services-ssis-in-azure-data-factory"></a>Azure SQL Managed instance met SQL Server Integration Services (SSIS) gebruiken in Azure Data Factory
 
@@ -41,7 +41,7 @@ U kunt nu uw SQL Server Integration Services (SSIS)-projecten, pakketten en work
     - Over privé-eind punt (voor keur)
 
         1. Kies het virtuele netwerk waarmee Azure-SSIS IR moet worden toegevoegd:
-            - Binnen hetzelfde virtuele netwerk als het beheerde exemplaar, met een **ander subnet** .
+            - Binnen hetzelfde virtuele netwerk als het beheerde exemplaar, met een **ander subnet**.
             - Binnen een ander virtueel netwerk dan het beheerde exemplaar, via virtuele netwerk peering (die beperkt is tot dezelfde regio als gevolg van globale VNet-peering-beperkingen) of een verbinding van een virtueel netwerk met een virtueel netwerk.
 
             Zie [uw toepassing verbinden met Azure SQL Managed instance](https://review.docs.microsoft.com/azure/sql-database/sql-database-managed-instance-connect-app)(Engelstalig) voor meer informatie over de connectiviteit van SQL Managed instance.
@@ -64,7 +64,7 @@ U kunt nu uw SQL Server Integration Services (SSIS)-projecten, pakketten en work
 
         - Wanneer Azure-SSIS IR binnen een virtueel netwerk
 
-            Er is een speciaal scenario wanneer een SQL Managed instance deel uitmaakt van een regio die Azure-SSIS IR niet wordt ondersteund. Azure-SSIS IR bevindt zich in een virtueel netwerk zonder VNet-peering vanwege een beperking van globale VNet-peering. In dit scenario verbindt **Azure-SSIS IR in een virtueel netwerk** SQL Managed instance **via een openbaar eind punt** . Gebruik de onderstaande regels voor netwerk beveiligings groepen (NSG) om verkeer tussen SQL Managed instance en Azure-SSIS IR toe te staan:
+            Er is een speciaal scenario wanneer een SQL Managed instance deel uitmaakt van een regio die Azure-SSIS IR niet wordt ondersteund. Azure-SSIS IR bevindt zich in een virtueel netwerk zonder VNet-peering vanwege een beperking van globale VNet-peering. In dit scenario verbindt **Azure-SSIS IR in een virtueel netwerk** SQL Managed instance **via een openbaar eind punt**. Gebruik de onderstaande regels voor netwerk beveiligings groepen (NSG) om verkeer tussen SQL Managed instance en Azure-SSIS IR toe te staan:
 
             1. **Inkomende vereiste van SQL Managed instance** om binnenkomend verkeer van Azure-SSIS IR toe te staan.
 
@@ -80,12 +80,12 @@ U kunt nu uw SQL Server Integration Services (SSIS)-projecten, pakketten en work
 
 ### <a name="configure-virtual-network"></a>Virtueel netwerk configureren
 
-1. **Gebruikers machtiging** . De gebruiker die de Azure-SSIS IR maakt, moet beschikken over de [roltoewijzing](../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-for-a-user-at-a-scope) ten minste op Azure Data Factory resource met een van de volgende opties:
+1. **Gebruikers machtiging**. De gebruiker die de Azure-SSIS IR maakt, moet beschikken over de [roltoewijzing](../role-based-access-control/role-assignments-list-portal.md#list-role-assignments-for-a-user-at-a-scope) ten minste op Azure Data Factory resource met een van de volgende opties:
 
     - Gebruik de ingebouwde rol netwerk bijdrager. Deze rol wordt geleverd met het _micro soft. \* Network/-_ machtiging, met een veel groter bereik dan nodig is.
     - Maak een aangepaste rol die alleen de benodigde machtigingen voor _micro soft. Network/virtualNetworks/ \* /join/Action_ bevat. Als u ook uw eigen open bare IP-adressen voor Azure-SSIS IR wilt gebruiken terwijl u deze toevoegt aan een Azure Resource Manager virtueel netwerk, moet u ook de machtiging _micro soft. Network/publicIPAddresses/*/join/Action_ in de rol opnemen.
 
-1. **Virtueel netwerk** .
+1. **Virtueel netwerk**.
 
     1. Zorg ervoor dat de resource groep van het virtuele netwerk bepaalde Azure-netwerk resources kan maken en verwijderen.
 
@@ -107,16 +107,16 @@ U kunt nu uw SQL Server Integration Services (SSIS)-projecten, pakketten en work
 
             | Transport Protocol | Bron | Poortbereik van bron | Doel | Poortbereik van doel | Opmerkingen |
             |---|---|---|---|---|---|
-            |TCP|VirtualNetwork|*|VirtualNetwork|1433, 11000-11999|Als uw SQL Database Server-verbindings beleid is ingesteld op **proxy** in plaats van de **omleiding** , is alleen poort 1433 vereist.|
+            |TCP|VirtualNetwork|*|VirtualNetwork|1433, 11000-11999|Als uw SQL Database Server-verbindings beleid is ingesteld op **proxy** in plaats van de **omleiding**, is alleen poort 1433 vereist.|
 
         1. **Uitgaande vereiste van Azure-SSIS IR** om uitgaand verkeer naar SQL Managed instance en ander verkeer dat door Azure-SSIS IR is vereist, toe te staan.
 
         | Transport Protocol | Bron | Poortbereik van bron | Doel | Poortbereik van doel | Opmerkingen |
         |---|---|---|---|---|---|
-        | TCP | VirtualNetwork | * | VirtualNetwork | 1433, 11000-11999 |Uitgaand verkeer naar SQL beheerd exemplaar toestaan. Als het verbindings beleid is ingesteld op **proxy** in plaats van de **omleiding** , is alleen poort 1433 vereist. |
+        | TCP | VirtualNetwork | * | VirtualNetwork | 1433, 11000-11999 |Uitgaand verkeer naar SQL beheerd exemplaar toestaan. Als het verbindings beleid is ingesteld op **proxy** in plaats van de **omleiding**, is alleen poort 1433 vereist. |
         | TCP | VirtualNetwork | * | AzureCloud | 443 | De knoop punten van uw Azure-SSIS IR in het virtuele netwerk gebruiken deze poort voor toegang tot Azure-Services, zoals Azure Storage en Azure Event Hubs. |
         | TCP | VirtualNetwork | * | Internet | 80 | Beschrijving De knoop punten van uw Azure-SSIS IR in het virtuele netwerk gebruiken deze poort om een certificaatintrekkingslijst van Internet te downloaden. Als u dit verkeer blokkeert, kan dit leiden tot prestatie downgrade bij het starten van IR en verliest u de mogelijkheid om de intrekkings lijst voor certificaten te controleren op het gebruik van certificaten. Zie [Azure ExpressRoute of door de gebruiker gedefinieerde route (UDR) gebruiken](./join-azure-ssis-integration-runtime-virtual-network.md#route)als u de bestemming verder wilt beperken tot bepaalde FQDN-verwijzingen.|
-        | TCP | VirtualNetwork | * | Opslag | 445 | Beschrijving Deze regel is alleen vereist als u SSIS-pakket wilt uitvoeren dat is opgeslagen in Azure Files. |
+        | TCP | VirtualNetwork | * | Storage | 445 | Beschrijving Deze regel is alleen vereist als u SSIS-pakket wilt uitvoeren dat is opgeslagen in Azure Files. |
         |||||||
 
         1. **Binnenkomende vereiste van Azure-SSIS IR** om verkeer toe te staan dat door Azure-SSIS IR wordt vereist.
@@ -163,7 +163,7 @@ Zie [een Azure SSIS Integration runtime in azure Data Factory maken](create-azur
 
 ## <a name="clean-up-ssisdb-logs"></a>SSISDB-logboeken opschonen
 
-Het Bewaar beleid voor SSISDB-Logboeken wordt door onderstaande eigenschappen in [Catalog.catalog_properties](/sql/integration-services/system-views/catalog-catalog-properties-ssisdb-database?view=sql-server-ver15)gedefinieerd:
+Het Bewaar beleid voor SSISDB-Logboeken wordt door onderstaande eigenschappen in [Catalog.catalog_properties](/sql/integration-services/system-views/catalog-catalog-properties-ssisdb-database)gedefinieerd:
 
 - OPERATION_CLEANUP_ENABLED
 

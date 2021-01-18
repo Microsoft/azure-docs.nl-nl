@@ -7,14 +7,14 @@ tags: azure-resource-manager
 ms.service: key-vault
 ms.subservice: general
 ms.topic: reference
-ms.date: 10/01/2020
+ms.date: 01/12/2020
 ms.author: mbaldwin
-ms.openlocfilehash: dbbde397ab235068ea90280da721e3e3dc38866a
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: ef2c42ae76dc5e1511494635904228a8b574d483
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792358"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98132185"
 ---
 # <a name="whats-new-for-azure-key-vault"></a>Nieuwe functies voor Azure Key Vault
 
@@ -37,7 +37,7 @@ Voor de ondersteuning van [voorlopig verwijderen nu standaard ingeschakeld](#sof
 
 ### <a name="soft-delete-on-by-default"></a>Voorlopig verwijderen standaard ingeschakeld
 
-Vanaf eind 2020 is de functie **Voorlopig verwijderen standaard ingeschakeld voor alle sleutelkluizen** , zowel nieuwe als bestaande. Raadpleeg het artikel [Voorlopig verwijderen wordt ingeschakeld in alle sleutelkluizen](soft-delete-change.md) voor de volledige details over deze wijziging die fouten kan veroorzaken, en voor de stappen voor het vinden en vooraf bijwerken van betrokken sleutelkluizen.
+**Voor alle sleutelkluizen moet Voorlopig verwijderen worden ingeschakeld**, zowel voor nieuwe als bestaande. De optie om geen gebruik te maken van Voorlopig verwijderen, wordt de komende maanden afgeschaft. Raadpleeg het artikel [Voorlopig verwijderen wordt ingeschakeld in alle sleutelkluizen](soft-delete-change.md) voor de volledige details over deze wijziging die fouten kan veroorzaken, en voor de stappen voor het vinden en vooraf bijwerken van betrokken sleutelkluizen.
 
 ### <a name="azure-tls-certificate-changes"></a>Wijzigingen in Azure TLS-certificaat
 

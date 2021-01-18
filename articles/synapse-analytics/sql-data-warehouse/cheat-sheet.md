@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: a236cf99d3131e83619cfab06e8ec028938a87ba
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: cc54ae66cda6bf8ecde07d1830448ec39a15cc29
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96454610"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98120220"
 ---
 # <a name="cheat-sheet-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytic"></a>Cheatsheet voor toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics
 
@@ -37,7 +37,7 @@ Als u de typen bewerkingen van tevoren kent, kunt u het ontwerp van uw tabellen 
 
 ## <a name="data-migration"></a>Gegevensmigratie
 
-Laad uw gegevens eerst in [Azure Data Lake Store](../../data-factory/connector-azure-data-lake-store.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) of Azure Blob-opslag. Gebruik vervolgens de [instructie COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (preview) om uw gegevens in faseringstabellen te laden. Gebruik de volgende configuratie:
+Laad uw gegevens eerst in [Azure Data Lake Store](../../data-factory/connector-azure-data-lake-store.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) of Azure Blob-opslag. Gebruik vervolgens de [instructie COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om uw gegevens in faseringstabellen te laden. Gebruik de volgende configuratie:
 
 | Ontwerp | Aanbeveling |
 |:--- |:--- |
@@ -46,7 +46,7 @@ Laad uw gegevens eerst in [Azure Data Lake Store](../../data-factory/connector-a
 | Partitionering | Geen |
 | Resourceklasse | largerc of xlargerc |
 
-Meer informatie over [gegevensmigratie](https://blogs.msdn.microsoft.com/sqlcat/20../../migrating-data-to-azure-sql-data-warehouse-in-practice/), [gegevens laden](design-elt-data-loading.md), en het [ELT-proces (extraheren, laden en transformeren)](design-elt-data-loading.md).
+Meer informatie over [gegevensmigratie](/archive/blogs/sqlcat/migrating-data-to-azure-sql-data-warehouse-in-practice), [gegevens laden](design-elt-data-loading.md), en het [ELT-proces (extraheren, laden en transformeren)](design-elt-data-loading.md).
 
 ## <a name="distributed-or-replicated-tables"></a>Gedistribueerde of gerepliceerde tabellen
 
@@ -137,7 +137,7 @@ U kunt nu op elk moment automatisch de schaal aanpassen met Azure Functions:
 
 We raden u aan SQL Database en Azure Analysis Services in een hub-en-spoke-architectuur te gebruiken. Deze oplossing kan workloadisolatie bieden tussen verschillende gebruikersgroepen en tegelijkertijd geavanceerde beveiligingsfuncties van SQL Database en Azure Analysis Services gebruiken. Dit is ook een manier om grenzeloze gelijktijdigheid te bieden aan uw gebruikers.
 
-Meer informatie over [veelvoorkomende architecturen die profiteren van toegewezen SQL-pools (voorheen SQL DW) in Azure Synapse Analytics](https://blogs.msdn.microsoft.com/sqlcat/20../../common-isv-application-patterns-using-azure-sql-data-warehouse/).
+Meer informatie over [veelvoorkomende architecturen die profiteren van toegewezen SQL-pools (voorheen SQL DW) in Azure Synapse Analytics](/archive/blogs/sqlcat/common-isv-application-patterns-using-azure-sql-data-warehouse).
 
 Met één muisklik uw spokes van de toegewezen SQL-pool (voorheen SQL DW) in SQL-databases implementeren:
 

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 01/22/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: dd1c7c20441d12600e2101f738904caf6260509e
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 0305094d3883fa6fc3254a682f9aa6f3202c9e48
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496003"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555522"
 ---
 # <a name="create-monitor-and-manage-azure-data-factories-using-azure-data-factory-net-sdk"></a>Azure-gegevens fabrieken maken, bewaken en beheren met behulp van Azure Data Factory .NET SDK
 > [!NOTE]
@@ -27,7 +27,7 @@ ms.locfileid: "96496003"
 U kunt Azure-gegevens fabrieken programmatisch maken, bewaken en beheren met behulp van Data Factory .NET SDK. Dit artikel bevat een overzicht dat u kunt volgen om een voor beeld van een .NET-console toepassing te maken waarmee een data factory wordt gemaakt en gecontroleerd. 
 
 > [!NOTE]
-> Dit artikel behandelt niet de volledige Data Factory .NET API. Zie [Data Factory .net API Reference](/dotnet/api/index?view=azuremgmtdatafactories-4.12.1) voor uitgebreide documentatie over .net api voor Data Factory. 
+> Dit artikel behandelt niet de volledige Data Factory .NET API. Zie [Data Factory .net API Reference](/dotnet/api/overview/azure/data-factory) voor uitgebreide documentatie over .net api voor Data Factory. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -93,7 +93,7 @@ Maak een Azure Active Directory-toepassing, maak een service-principal voor de t
 9. Haal de toepassings-id op.
 
     ```powershell
-    $azureAdApplication 
+    $azureAdApplication    
     ```
     Noteer de toepassings-id (applicationID in de uitvoer).
 

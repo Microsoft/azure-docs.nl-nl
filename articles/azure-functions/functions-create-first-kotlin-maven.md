@@ -1,18 +1,18 @@
 ---
-title: Uw eerste functie maken in Azure met behulp van Kotlin en Maven
-description: Lees hier hoe u een door HTTP getriggerde functie maakt en publiceert naar Azure met Kotlin en Maven.
+title: Een Kotlin-functie in Azure Functions maken met behulp van Maven
+description: Maak een door HTTP getriggerde functie-app en publiceer deze naar Azure Functions met Kotlin en Maven.
 author: dglover
 ms.service: azure-functions
 ms.topic: quickstart
 ms.date: 03/25/2020
 ms.author: dglover
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 167e7c447fe43851255677a44043c508cbdc4239
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 6f7b79b6e3e72b34a27e5b4f0e1fb5426c539699
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934829"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035237"
 ---
 # <a name="quickstart-create-your-first-function-with-kotlin-and-maven"></a>Quickstart: Uw eerste functie maken met behulp van Kotlin en Maven
 
@@ -32,9 +32,9 @@ Als u functies wilt ontwikkelen met behulp van Kotlin, moet het volgende zijn ge
 > [!IMPORTANT]
 > De omgevingsvariabele JAVA_HOME moet zijn ingesteld op de installatielocatie van de JDK om deze quickstart te kunnen voltooien.
 
-## <a name="generate-a-new-functions-project"></a>Een nieuw Functions-project genereren
+## <a name="generate-a-new-azure-functions-project"></a>Een nieuw Azure Functions-project genereren
 
-Voer in een lege map de volgende opdracht uit om het Functions-project te genereren op basis van een [Maven-archetype](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html).
+Voer in een lege map de volgende opdracht uit om het Azure Functions-project te genereren op basis van een [Maven-archtype](https://maven.apache.org/guides/introduction/introduction-to-archetypes.html).
 
 # <a name="bash"></a>[bash](#tab/bash)
 ```bash
@@ -167,13 +167,13 @@ az login
 Implementeer de code in een nieuwe functie-app met behulp van de Maven-target `azure-functions:deploy`.
 
 > [!NOTE]
-> Wanneer u Visual Studio Code gebruikt om uw functie-app te implementeren, moet u een niet-gratis abonnement kiezen om te voorkomen dat er een foutmelding wordt weergegeven. U kunt uw abonnement aan de linkerkant van de IDE bekijken.
+> Wanneer u Visual Studio Code gebruikt om uw functie-app te implementeren, moet u een betaald abonnement kiezen om te voorkomen dat er een foutmelding wordt weergegeven. U kunt uw abonnement aan de linkerkant van de IDE bekijken.
 
 ```
 mvn azure-functions:deploy
 ```
 
-Als het implementeren is voltooid, ziet u de URL die u kunt gebruiken voor toegang tot de Azure-functie-app:
+Als het implementeren is voltooid, ziet u de URL die u kunt gebruiken voor toegang tot de functie-app:
 
 <pre>
 [INFO] Successfully deployed Function App with package.
@@ -198,7 +198,7 @@ Hello AzureFunctions!
 
 ## <a name="make-changes-and-redeploy"></a>Wijzigingen maken en opnieuw implementeren
 
-Bewerk het bronbestand `src/main.../Function.java` in het gegenereerde project om de tekst te wijzigen die is geretourneerd met de functie-app. Wijzig deze regel:
+Bewerk het bronbestand `src/main.../Function.java` in het gegenereerde project om de tekst te wijzigen die door de functie-app is geretourneerd. Wijzig deze regel:
 
 ```kotlin
 return request
@@ -231,7 +231,7 @@ Hi, AzureFunctionsTest
 
 ## <a name="reference-bindings"></a>Verwijzingsbindingen
 
-Als u wilt werken met andere [functietriggers en -bindingen](functions-triggers-bindings.md) dan HTTP-trigger en Timer-trigger, moet u bindingsuitbreidingen installeren. Hoewel dit niet vereist is voor dit artikel, moet u weten hoe u uitbreidingen kunt inschakelen wanneer u met andere bindingstypen gaat werken.
+Als u wilt werken met andere [Azure Functions-triggers en -bindingen](functions-triggers-bindings.md) dan HTTP-trigger en Timer-trigger, moet u bindingsuitbreidingen installeren. Hoewel dit niet vereist is voor dit artikel, moet u weten hoe u uitbreidingen kunt inschakelen wanneer u met andere bindingstypen gaat werken.
 
 [!INCLUDE [functions-extension-bundles](../../includes/functions-extension-bundles.md)]
 
@@ -239,7 +239,7 @@ Als u wilt werken met andere [functietriggers en -bindingen](functions-triggers-
 
 U hebt een Kotlin-functie-app gemaakt met een eenvoudige HTTP-trigger en deze geïmplementeerd naar Azure Functions.
 
-- Neem de [Azure Functions Java-handleiding voor ontwikkelaars](functions-reference-java.md) door voor meer informatie over het ontwikkelen van Java- en Kotlin-functies. Deze handleiding is vooralsnog door een vertaalmachine vertaald.
+- Neem de [Azure Functions Java-handleiding voor ontwikkelaars](functions-reference-java.md) door voor meer informatie over het ontwikkelen van Java- en Kotlin-functies.
 - U kunt extra functies met verschillende triggers toevoegen aan uw project met behulp van de Maven-target `azure-functions:add`.
 - Gebruik [Visual Studio Code](https://code.visualstudio.com/docs/java/java-azurefunctions), [IntelliJ](functions-create-maven-intellij.md) en [Eclipse](functions-create-maven-eclipse.md) om functies lokaal te schrijven en fouten op te sporen. 
 - Gebruik Visual Studio Code om fouten op te sporen in functies die zijn geïmplementeerd in Azure. Raadpleeg de Visual Studio Code-documentatie over [serverloze Java-toepassingen](https://code.visualstudio.com/docs/java/java-serverless#_remote-debug-functions-running-in-the-cloud) voor instructies.

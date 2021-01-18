@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 3/27/2020
 ms.author: yexu
-ms.openlocfilehash: 3591bfe046fa1c3e1e55aa49a0ae3ad698bc57b3
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: 274250fecdf69b6a488c33ff25df3728a1c90af0
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94593668"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556372"
 ---
 #  <a name="data-consistency-verification-in-copy-activity"></a>Verificatie van de gegevens consistentie in de Kopieer activiteit
 
@@ -81,7 +81,7 @@ linkedServiceName | De gekoppelde service van [Azure Blob Storage](connector-azu
 leertraject | Het pad van de logboek bestanden. | Geef het pad op waarin u de logboek bestanden wilt opslaan. Als u geen pad opgeeft, maakt de service een container voor u. | No
 
 >[!NOTE]
->- Bij het kopiëren van binaire bestanden vanuit of naar Azure Blob of Azure Data Lake Storage Gen2, heeft ADF de MD5-controlesom verificatie op blok niveau met behulp van de [Azure Blob API](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions?view=azure-dotnet-legacy) en de [Azure data Lake Storage Gen2-API](/rest/api/storageservices/datalakestoragegen2/path/update#request-headers). Als ContentMD5 op bestanden bestaan in Azure Blob of als gegevens bronnen worden Azure Data Lake Storage Gen2, heeft ADF de MD5-controlesom controle op bestands niveau na het lezen van de bestanden. Na het kopiëren van bestanden naar Azure Blob of Azure Data Lake Storage Gen2 als gegevens doel, schrijft ADF ContentMD5 naar Azure Blob of Azure Data Lake Storage Gen2 die verder kan worden gebruikt door downstream-toepassingen voor de verificatie van gegevens consistentie.
+>- Bij het kopiëren van binaire bestanden vanuit of naar Azure Blob of Azure Data Lake Storage Gen2, heeft ADF de MD5-controlesom verificatie op blok niveau met behulp van de [Azure Blob API](/dotnet/api/microsoft.azure.storage.blob.blobrequestoptions?view=azure-dotnet-legacy&preserve-view=true) en de [Azure data Lake Storage Gen2-API](/rest/api/storageservices/datalakestoragegen2/path/update#request-headers). Als ContentMD5 op bestanden bestaan in Azure Blob of als gegevens bronnen worden Azure Data Lake Storage Gen2, heeft ADF de MD5-controlesom controle op bestands niveau na het lezen van de bestanden. Na het kopiëren van bestanden naar Azure Blob of Azure Data Lake Storage Gen2 als gegevens doel, schrijft ADF ContentMD5 naar Azure Blob of Azure Data Lake Storage Gen2 die verder kan worden gebruikt door downstream-toepassingen voor de verificatie van gegevens consistentie.
 >- ADF heeft bestands grootte verificatie bij het kopiëren van binaire bestanden tussen opslag archieven.
 
 ## <a name="monitoring"></a>Bewaking
@@ -108,15 +108,15 @@ Nadat de Kopieer activiteit volledig is uitgevoerd, kunt u het resultaat van de 
 ```
 U kunt de details van de verificatie van gegevens consistentie van de eigenschap dataConsistencyVerification bekijken.
 
-Waarde van **VerificationResult** : 
--   **Gecontroleerd** : de gekopieerde gegevens zijn geverifieerd om consistent te zijn tussen het bron-en doel archief. 
--   **NotVerified** : de gekopieerde gegevens zijn niet geverifieerd om consistent te zijn omdat u de validateDataConsistency niet hebt ingeschakeld in de Kopieer activiteit. 
--   Niet **ondersteund** : de gekopieerde gegevens zijn niet gecontroleerd om consistent te zijn omdat de gegevens consistentie verificatie niet wordt ondersteund voor dit specifieke Kopieer paar. 
+Waarde van **VerificationResult**: 
+-   **Gecontroleerd**: de gekopieerde gegevens zijn geverifieerd om consistent te zijn tussen het bron-en doel archief. 
+-   **NotVerified**: de gekopieerde gegevens zijn niet geverifieerd om consistent te zijn omdat u de validateDataConsistency niet hebt ingeschakeld in de Kopieer activiteit. 
+-   Niet **ondersteund**: de gekopieerde gegevens zijn niet gecontroleerd om consistent te zijn omdat de gegevens consistentie verificatie niet wordt ondersteund voor dit specifieke Kopieer paar. 
 
-Waarde van **InconsistentData** : 
--   **Found** : de activiteit ADF Copy heeft inconsistente gegevens gevonden. 
--   **Overgeslagen** : de activiteit voor het kopiëren van ADF heeft inconsistente gegevens gevonden en overgeslagen. 
--   **Geen** : er zijn geen inconsistente gegevens gevonden met de ADF Copy-activiteit. Dit kan zijn omdat uw gegevens zijn geverifieerd om consistent te zijn tussen de bron-en doel opslag of omdat u validateDataConsistency hebt uitgeschakeld in de Kopieer activiteit. 
+Waarde van **InconsistentData**: 
+-   **Found**: de activiteit ADF Copy heeft inconsistente gegevens gevonden. 
+-   **Overgeslagen**: de activiteit voor het kopiëren van ADF heeft inconsistente gegevens gevonden en overgeslagen. 
+-   **Geen**: er zijn geen inconsistente gegevens gevonden met de ADF Copy-activiteit. Dit kan zijn omdat uw gegevens zijn geverifieerd om consistent te zijn tussen de bron-en doel opslag of omdat u validateDataConsistency hebt uitgeschakeld in de Kopieer activiteit. 
 
 ### <a name="session-log-from-copy-activity"></a>Sessie logboek van Kopieer activiteit
 

@@ -11,12 +11,12 @@ ms.topic: quickstart
 ms.date: 03/30/2020
 ms.author: mbaldwin
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3906de9cd94b4db3e675c2b822df2f061040c586
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 8da5e86362f41322102c3b5316df5743e0c2458f
+ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935288"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97976981"
 ---
 # <a name="quickstart-set-and-retrieve-a-key-from-azure-key-vault-using-azure-cli"></a>Quickstart: Een sleutel instellen in Azure Key Vault en daaruit ophalen met behulp van Azure CLI
 
@@ -59,7 +59,7 @@ Vanaf dit punt is uw Azure-account nu als enige gemachtigd om bewerkingen op dez
 
 Als u een sleutel wilt toevoegen aan de kluis, hoeft u maar een paar extra stappen uit te voeren. Deze sleutel zou kunnen worden gebruikt door een toepassing. 
 
-Typ de onderstaande opdrachten om een aangeroepen **ExampleKey** te maken:
+Typ de onderstaande opdrachten om de sleutel **ExampleKey** te maken:
 
 ```azurecli
 az keyvault key create --vault-name "Contoso-Vault2" -n ExampleKey --protection software

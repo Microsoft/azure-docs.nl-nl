@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: identity-protection
 ms.topic: overview
-ms.date: 08/24/2020
+ms.date: 01/05/2021
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: sahandle
 ms.custom: contperf-fy21q1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 242e0e4614994c30d0a14b8fe3d7a5c2b217bb5a
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 6e274d35fde6a3d55c05bcb5a9f22e75a37aa3c6
+ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033337"
+ms.lasthandoff: 01/06/2021
+ms.locfileid: "97955396"
 ---
 # <a name="what-is-identity-protection"></a>Wat is Identity Protection?
 
@@ -49,13 +49,16 @@ Identity Protection identificeert risico's in de volgende classificaties:
 
 | Risicodetectietype | Beschrijving |
 | --- | --- |
-| Ongewoon traject | Aanmelding vanaf een ongewone locatie op basis van recente aanmeldingen van de gebruiker. |
 | Anoniem IP-adres | Aanmelding vanaf een anoniem IP-adres (bijvoorbeeld een Tor-browser, anonymizer-VPN's). |
-| Onbekende aanmeldingseigenschappen | Aanmelding met eigenschappen die niet recent zijn waargenomen voor de gebruiker. |
+| Ongewoon traject | Aanmelding vanaf een ongewone locatie op basis van recente aanmeldingen van de gebruiker. |
 | Aan malware gekoppeld IP-adres | Aanmelding via een aan malware gekoppeld IP-adres. |
+| Onbekende aanmeldingseigenschappen | Aanmelding met eigenschappen die niet recent zijn waargenomen voor de gebruiker. |
 | Gelekte aanmeldingsgegevens | Geeft aan dat de geldige referenties van de gebruiker zijn gelekt. |
 | Wachtwoordspray | Geeft aan dat meerdere gebruikersnamen worden aangevallen met behulp van veelvoorkomende wachtwoorden op een manier die lijkt op een brute-forceaanval. |
 | Azure AD-bedreigingsinformatie | De interne en externe bedreigingsinformatiebronnen van Microsoft hebben een bekend aanvalspatroon geïdentificeerd. |
+| Nieuw land | Deze detectie wordt gedetecteerd door [Microsoft Cloud App Security (MCAS)](/cloud-app-security/anomaly-detection-policy#activity-from-infrequent-country). |
+| Activiteit vanaf anoniem IP-adres | Deze detectie wordt gedetecteerd door [Microsoft Cloud App Security (MCAS)](/cloud-app-security/anomaly-detection-policy#activity-from-anonymous-ip-addresses). |
+| Verdachte doorstuuractiviteit voor Postvak IN | Deze detectie wordt gedetecteerd door [Microsoft Cloud App Security (MCAS)](/cloud-app-security/anomaly-detection-policy#suspicious-inbox-forwarding). |
 
 Meer informatie over deze risico's en hoe/wanneer deze worden vastgesteld, vindt u in het artikel [What is risk](concept-identity-protection-risks.md) (Wat is een risico?).
 

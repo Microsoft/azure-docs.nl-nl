@@ -12,12 +12,12 @@ ms.reviewer: douglasl
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 09/06/2020
-ms.openlocfilehash: 6b3c94023daf51559623f69e34b8e2b1f42fde92
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: a455d547fa3db2fd6e963458a29c77f516112e18
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637238"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556508"
 ---
 # <a name="execute-ssis-packages-in-azure-from-ssdt"></a>SSIS-pakketten uitvoeren in azure vanuit SSDT
 
@@ -29,7 +29,7 @@ Met deze functie kunt u een nieuw/bestaand Azure-SSIS IR koppelen aan SSIS-proje
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u deze functie wilt gebruiken, moet u de meest recente SSDT met SSIS projects-extensie voor Visual Studio (VS) downloaden en [installeren.](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) U kunt ook de meest recente [versie van SSDT](/sql/ssdt/download-sql-server-data-tools-ssdt?view=sql-server-2017#ssdt-for-vs-2017-standalone-installer)downloaden en installeren als zelfstandig installatie programma.
+Als u deze functie wilt gebruiken, moet u de meest recente SSDT met SSIS projects-extensie voor Visual Studio (VS) downloaden en [installeren.](https://marketplace.visualstudio.com/items?itemName=SSIS.SqlServerIntegrationServicesProjects) U kunt ook de meest recente [versie van SSDT](/sql/ssdt/download-sql-server-data-tools-ssdt#ssdt-for-vs-2017-standalone-installer)downloaden en installeren als zelfstandig installatie programma.
 
 ## <a name="azure-enable-ssis-projects"></a>Azure-SSIS-projecten inschakelen
 
@@ -53,11 +53,11 @@ Voor bestaande SSIS-projecten kunt u Azure inschakelen door de volgende stappen 
 
    ![Azure-bestaand SSIS-project inschakelen](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-for-existing-project.png)
 
-2. Selecteer op de pagina **configuratie van Visual Studio selecteren** uw bestaande versus configuratie om instellingen voor het uitvoeren van pakketten toe te passen in Azure. U kunt ook een nieuw abonnement maken als u dit nog niet hebt gedaan, raadpleegt u [een nieuwe versus configuratie maken](/visualstudio/ide/how-to-create-and-edit-configurations?view=vs-2019). We raden u aan ten minste twee verschillende versus configuraties te gebruiken voor het uitvoeren van pakketten in de lokale omgevingen en in de cloud omgeving, zodat u uw project kunt inschakelen op basis van de Cloud configuratie. Op deze manier kunt u, als u uw project of pakketten hebt geparametriseerde, verschillende waarden toewijzen aan uw project-of pakket parameters tijdens runtime op basis van de verschillende uitvoerings omgevingen (op uw lokale machine of in Azure). Zie bijvoorbeeld [pakket uitvoerings omgevingen omschakelen](#switchenvironment).
+2. Selecteer op de pagina **configuratie van Visual Studio selecteren** uw bestaande versus configuratie om instellingen voor het uitvoeren van pakketten toe te passen in Azure. U kunt ook een nieuw abonnement maken als u dit nog niet hebt gedaan, raadpleegt u [een nieuwe versus configuratie maken](/visualstudio/ide/how-to-create-and-edit-configurations). We raden u aan ten minste twee verschillende versus configuraties te gebruiken voor het uitvoeren van pakketten in de lokale omgevingen en in de cloud omgeving, zodat u uw project kunt inschakelen op basis van de Cloud configuratie. Op deze manier kunt u, als u uw project of pakketten hebt geparametriseerde, verschillende waarden toewijzen aan uw project-of pakket parameters tijdens runtime op basis van de verschillende uitvoerings omgevingen (op uw lokale machine of in Azure). Zie bijvoorbeeld [pakket uitvoerings omgevingen omschakelen](#switchenvironment).
 
    ![Visual Studio-configuratie selecteren](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-select-visual-studio-configurations.png)
 
-3. Voor Azure: door uw bestaande SSIS-projecten in te scha kelen, moet u de versie van de doel server instellen op de nieuwste, die door Azure-SSIS IR wordt ondersteund. Azure-SSIS IR is momenteel gebaseerd op **SQL Server 2017** . Zorg ervoor dat uw pakketten geen extra onderdelen bevatten die niet worden ondersteund op SQL Server 2017. Zorg er ook voor dat alle compatibele aanvullende onderdelen ook zijn geïnstalleerd op uw Azure-SSIS IR via aangepaste installatie. Zie [uw Azure-SSIS IR aanpassen](./how-to-configure-azure-ssis-ir-custom-setup.md)voor meer informatie. Selecteer de knop **volgende** om door te gaan.
+3. Voor Azure: door uw bestaande SSIS-projecten in te scha kelen, moet u de versie van de doel server instellen op de nieuwste, die door Azure-SSIS IR wordt ondersteund. Azure-SSIS IR is momenteel gebaseerd op **SQL Server 2017**. Zorg ervoor dat uw pakketten geen extra onderdelen bevatten die niet worden ondersteund op SQL Server 2017. Zorg er ook voor dat alle compatibele aanvullende onderdelen ook zijn geïnstalleerd op uw Azure-SSIS IR via aangepaste installatie. Zie [uw Azure-SSIS IR aanpassen](./how-to-configure-azure-ssis-ir-custom-setup.md)voor meer informatie. Selecteer de knop **volgende** om door te gaan.
 
    ![Doel server versie wijzigen](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-switch-target-server-version-step.png)
 
@@ -74,7 +74,7 @@ Door uw Azure-projecten te koppelen aan SSIS in ADF, kunt u uw pakketten uploade
 2. Selecteer op de pagina **SSIS IR selecteren op ADF** de bestaande ADF en Azure-SSIS IR om pakketten uit te voeren. U kunt ook nieuwe maken als u er nog geen hebt.
    - Als u uw bestaande Azure-SSIS IR wilt selecteren, selecteert u eerst het relevante Azure-abonnement en de ADF.
    - Als u uw bestaande ADF selecteert die geen Azure-SSIS IR heeft, selecteert u de knop **SSIS-IR maken** om een nieuwe te maken op de ADF-Portal. Zodra u deze hebt gemaakt, kunt u terugkeren naar deze pagina om uw nieuwe Azure-SSIS IR te selecteren.
-   - Als u uw bestaande Azure-abonnement selecteert dat geen ADF heeft, selecteert u de knop **SSIS-IR maken** om de **wizard Integration runtime maken** te starten. In de wizard kunt u de aangewezen locatie en het voor voegsel voor ons opgeven om automatisch een nieuwe Azure-resource groep, Data Factory en SSIS IR te maken namens u, met de naam in het volgende patroon: **YourPrefix-RG/DF/IR-YourCreationTime** . Zodra u deze hebt gemaakt, kunt u terugkeren naar deze pagina om uw nieuwe ADF en Azure-SSIS IR te selecteren.
+   - Als u uw bestaande Azure-abonnement selecteert dat geen ADF heeft, selecteert u de knop **SSIS-IR maken** om de **wizard Integration runtime maken** te starten. In de wizard kunt u de aangewezen locatie en het voor voegsel voor ons opgeven om automatisch een nieuwe Azure-resource groep, Data Factory en SSIS IR te maken namens u, met de naam in het volgende patroon: **YourPrefix-RG/DF/IR-YourCreationTime**. Zodra u deze hebt gemaakt, kunt u terugkeren naar deze pagina om uw nieuwe ADF en Azure-SSIS IR te selecteren.
 
    ![SSIS IR selecteren in ADF](media/how-to-invoke-ssis-package-ssdt/ssis-in-adf-connection-wizard2.png)
 
@@ -109,7 +109,7 @@ Wanneer u zeker weet dat er een aantal potentiële problemen met de Cloud compat
 
    ![Instellingen voor onderdrukking van evaluatie regels](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-assessment-rule-suppression-settings.png)
 
--  U kunt ook met de rechter muisknop op uw project knooppunt klikken in het venster Solution Explorer van SSDT om een menu te openen. Selecteer het item **Azure-instellingen** in **SSIS in azure Data Factory** vervolg menu om een venster met de eigenschappen pagina's van uw project te openen. Selecteer de **onderdrukte id** -eigenschap voor de evaluatie regel in het gedeelte met **instellingen voor Azure** . Selecteer tot slot de knop met weglatings tekens ( **...** ) om het venster instellingen voor het **onderdrukken van evaluatie regels** te openen. hier kunt u de evaluatie regels selecteren die u wilt onderdrukken.
+-  U kunt ook met de rechter muisknop op uw project knooppunt klikken in het venster Solution Explorer van SSDT om een menu te openen. Selecteer het item **Azure-instellingen** in **SSIS in azure Data Factory** vervolg menu om een venster met de eigenschappen pagina's van uw project te openen. Selecteer de **onderdrukte id** -eigenschap voor de evaluatie regel in het gedeelte met **instellingen voor Azure** . Selecteer tot slot de knop met weglatings tekens (**...**) om het venster instellingen voor het **onderdrukken van evaluatie regels** te openen. hier kunt u de evaluatie regels selecteren die u wilt onderdrukken.
 
    ![Instellingen waarvoor Azure is ingeschakeld](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-azure-enabled-setting.png)
 
@@ -125,11 +125,11 @@ Voordat u uw pakketten in azure uitvoert, kunt u de instellingen voor Azure inge
 
    ![Instellingen waarvoor Azure is ingeschakeld](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-azure-enabled-setting.png)
 
-2. Selecteer de sectie **Windows-verificatie inschakelen** in het gedeelte met **instellingen voor Azure** en selecteer **waar** in de vervolg keuzelijst. Selecteer vervolgens de eigenschap **Windows-verificatie referenties** en selecteer vervolgens de knop met het weglatings teken ( **...** ) om het venster **Windows-verificatie referenties** te openen.
+2. Selecteer de sectie **Windows-verificatie inschakelen** in het gedeelte met **instellingen voor Azure** en selecteer **waar** in de vervolg keuzelijst. Selecteer vervolgens de eigenschap **Windows-verificatie referenties** en selecteer vervolgens de knop met het weglatings teken (**...**) om het venster **Windows-verificatie referenties** te openen.
 
    ![Windows-verificatie inschakelen](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-windows-authentication-open.png)
 
-3. Voer uw Windows-verificatie referenties in. Als u bijvoorbeeld toegang wilt krijgen tot Azure Files, kunt `Azure` u `YourStorageAccountName` respectievelijk, en `YourStorageAccountKey` voor het **domein** , de **gebruikers naam** en het **wacht woord** invoeren.
+3. Voer uw Windows-verificatie referenties in. Als u bijvoorbeeld toegang wilt krijgen tot Azure Files, kunt `Azure` u `YourStorageAccountName` respectievelijk, en `YourStorageAccountKey` voor het **domein**, de **gebruikers naam** en het **wacht woord** invoeren.
 
    ![Windows-verificatie referenties](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-windows-authentication-credential.png)
 
@@ -180,7 +180,7 @@ Als u uw project/pakketten para meters in het implementatie model van het projec
 
    ![Para meters-bron verbinding](media/how-to-invoke-ssis-package-ssdt/ssdt-azure-enabled-example-update-task-with-parameters.png)
 
-3. Standaard hebt u een bestaande versus configuratie voor het uitvoeren van pakketten in de lokale omgeving **ontwikkeling** . Een nieuwe versus configuratie maken voor pakket uitvoeringen in de cloud omgeving **Azure** , Zie [een nieuwe versus configuratie maken](/visualstudio/ide/how-to-create-and-edit-configurations?view=vs-2019), als u dit nog niet hebt gedaan.
+3. Standaard hebt u een bestaande versus configuratie voor het uitvoeren van pakketten in de lokale omgeving **ontwikkeling**. Een nieuwe versus configuratie maken voor pakket uitvoeringen in de cloud omgeving **Azure**, Zie [een nieuwe versus configuratie maken](/visualstudio/ide/how-to-create-and-edit-configurations), als u dit nog niet hebt gedaan.
 
 4. Wanneer u de para meters van uw pakket bekijkt, selecteert u de knop **para meters aan configuraties toevoegen** om het venster **parameter waarden beheren** voor uw pakket te openen. Wijs vervolgens verschillende waarden van het pad naar het doel bestand toe aan de para meter **filepath** onder de **ontwikkel** -en **Azure** -configuraties.
 

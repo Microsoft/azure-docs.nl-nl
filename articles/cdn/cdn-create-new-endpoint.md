@@ -15,12 +15,12 @@ ms.topic: quickstart
 ms.date: 04/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: af90166b688dee104e7bda18a88a2fe7c98f657b
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
+ms.openlocfilehash: 7a3c4bc2a0445a2821e212986b495993695652a6
+ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "82996282"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98165923"
 ---
 # <a name="quickstart-create-an-azure-cdn-profile-and-endpoint"></a>Snelstart: Een Azure CDN-profiel en een eindpunt maken
 
@@ -68,7 +68,7 @@ Nadat u een CDN-profiel hebt gemaakt, kunt u het gebruiken om een eindpunt te ma
     
    ![CDN-eindpunt](./media/cdn-create-new-endpoint/cdn-endpoint-success.png)
     
-   Hoe lang het duurt voordat het eindpunt wordt doorgegeven, is afhankelijk van de prijscategorie die is geselecteerd bij het maken van het profiel. **Standaard Akamai** wordt meestal binnen één minuut uitgevoerd, **standaard Microsoft** in 10 minuten en **Standaard Verizon** en **Premium Verizon** in maximaal 90 minuten.
+   Hoe lang het duurt voordat het eindpunt wordt doorgegeven, is afhankelijk van de prijscategorie die is geselecteerd bij het maken van het profiel. **Standard Akamai** is gewoonlijk binnen een minuut voltooid, **Standard Microsoft** in tien minuten en **Standard Verizon** en **Premium Verizon** binnen dertig minuten.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

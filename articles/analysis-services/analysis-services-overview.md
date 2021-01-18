@@ -4,16 +4,16 @@ description: Meer informatie over Azure Analysis Services, een volledig beheerd 
 author: minewiskan
 ms.service: azure-analysis-services
 ms.topic: overview
-ms.date: 12/01/2020
+ms.date: 01/07/2021
 ms.author: owend
 ms.reviewer: minewiskan
 ms.custom: references_regions
-ms.openlocfilehash: e70d02c02ba9a3f14d1659851919fbccf71776d1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: c4a14ab1e5b52eb36a532c6d69713d588864d288
+ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96487351"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98019071"
 ---
 # <a name="what-is-azure-analysis-services"></a>Wat is Azure Analysis Services?
 
@@ -91,6 +91,7 @@ Azure Analysis Services wordt ondersteund in regio's in de hele wereld. Onderste
 |VS - centraal     |    B1, B2, S0, S1, S2, S4, D1     |    1     |
 |VS - centraal     |    S8v2, S9v2     |    1     |
 |VS - zuid-centraal     |    B1, B2, S0, S1, S2, S4, D1     |    1     |
+|VS - zuid-centraal     |    S8v2, S9v2     |    1     |
 |VS - west-centraal   |     B1, B2, S0, S1, S2, S4, D1    |    3     |
 |VS - west     |    B1, B2, S0, S1, S2, S4, D1    |    7   |
 |VS - west     |    S8v2, S9v2   |    2  |
@@ -115,6 +116,7 @@ Azure Analysis Services wordt ondersteund in regio's in de hele wereld. Onderste
 |Australië - oost     |    S8v2, S9v2    |    1     |
 |Australië - zuidoost     | B1, B2, S0, S1, S2, S4, D1       |    1     |
 |Japan - oost     |   B1, B2, S0, S1, S2, S4, D1       |    1     |
+|Japan - oost     |    S8v2, S9v2    |    1     |
 |Azië - zuidoost     |     B1, B2, S0, S1, S2, S4, D1     |   1      |
 |Azië - zuidoost     |     S8v2, S9v2     |   1      |
 |India - west     |    B1, B2, S0, S1, S2, S4, D1     |    1     |
@@ -160,7 +162,7 @@ Compatibiliteitsniveau verwijst naar een release-specifiek gedrag in de Analysis
 
 ## <a name="your-data-is-secure"></a>Gegevens zijn beveiligd
 
-Azure Analysis Services beveiligt uw gevoelige gegevens op meerdere niveaus. Als Azure-service is bij Analysis Services een **basisniveau** aan DDoS-aanvallen automatisch ingeschakeld als onderdeel van het Azure-platform. Zie voor meer informatie het [overzicht van de DDoS Protection-standaard](../ddos-protection/ddos-protection-overview.md). 
+Azure Analysis Services beveiligt uw gevoelige gegevens op meerdere niveaus. Als Azure-service biedt Analysis Services bescherming op **basisniveau** tegen DDoS-aanvallen (Distributed denial of service). Deze functie is automatisch ingeschakeld als onderdeel van het Azure-platform. Zie voor meer informatie het [overzicht van de DDoS Protection-standaard](../ddos-protection/ddos-protection-overview.md). 
 
 Op serverniveau biedt Analysis Services firewall, Azure-verificatie, serverbeheerdersrollen en serverversleuteling. Op gegevensmodelniveau zorgen gebruikersrollen en beveiliging op rijniveau en objectniveau ervoor dat uw gegevens veilig zijn en alleen worden gezien door de gebruikers voor wie ze bestemd zijn.
 

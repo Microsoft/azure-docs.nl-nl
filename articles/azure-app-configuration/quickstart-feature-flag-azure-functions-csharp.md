@@ -8,16 +8,16 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 8/26/2020
 ms.author: alkemper
-ms.openlocfilehash: d1dc843ff676429f202c0b9077057d067294f738
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 6996fdd9dce4314e9365177815d7d310ac80c7cb
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076161"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98046070"
 ---
 # <a name="quickstart-add-feature-flags-to-an-azure-functions-app"></a>Quickstart: Functiemarkeringen toevoegen aan een Azure Functions-app
 
-In deze quickstart maakt u een implementatie van functiebeheer in een Azure Functions-app met behulp van Azure App Configuration. U gebruikt de App Configuration-service om al uw functievlaggen centraal op te slaan en hun status te bepalen. 
+In deze quickstart maakt u een Azure Functions-app en gebruikt u hierin functievlaggen. U gebruikt functiebeheer van Azure App Configuration om al uw functievlaggen centraal op te slaan en hun status te bepalen.
 
 De .NET Feature Management-bibliotheken breiden het framework uit met ondersteuning voor functiemarkeringen. Deze bibliotheken worden boven op het .NET-configuratiesysteem gebouwd. Ze integreren naadloos met App Configuration via de configuratieprovider voor .NET.
 
@@ -46,66 +46,113 @@ De .NET Feature Management-bibliotheken breiden het framework uit met ondersteun
 
 ## <a name="connect-to-an-app-configuration-store"></a>Verbinding maken met een App Configuration-archief
 
-1. Klik met de rechtermuisknop op het project en selecteer **NuGet-pakketten beheren**. Zoek op het tabblad **Bladeren** de volgende NuGet-pakketten op en voeg deze toe aan uw project. Controleer voor `Microsoft.Extensions.DependencyInjection` dat u de meest recente stabiele versie hebt. 
+In dit project wordt gebruikgemaakt van [afhankelijkheidsinjectie in .NET Azure Functions](/azure/azure-functions/functions-dotnet-dependency-injection). Hierbij wordt Azure App Configuration wordt toegevoegd als een extra configuratiebron waar uw functievlaggen worden opgeslagen.
 
-    ```
-    Microsoft.Extensions.DependencyInjection
-    Microsoft.Extensions.Configuration
-    Microsoft.FeatureManagement
-    ```
+1. Klik met de rechtermuisknop op het project en selecteer **NuGet-pakketten beheren**. Zoek op het tabblad **Bladeren** de volgende NuGet-pakketten en voeg deze toe aan uw project.
+   - [Microsoft.Extensions.Configuration.AzureAppConfiguration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureAppConfiguration/) versie 4.1.0 of nieuwer
+   - [Microsoft.FeatureManagement](https://www.nuget.org/packages/Microsoft.FeatureManagement/) versie 2.2.0 of nieuwer
+   - [Microsoft.Azure.Functions.Extensions](https://www.nuget.org/packages/Microsoft.Azure.Functions.Extensions/) versie 1.1.0 of nieuwer 
 
-
-1. Open *Function1.cs* en voeg de naamruimten van deze pakketten toe.
+2. Voeg het nieuwe bestand *Startup.cs* toe met de volgende code. Hiermee wordt een klasse gedefinieerd met de naam `Startup`, waarmee de abstracte klasse `FunctionsStartup` wordt geïmplementeerd. Er wordt een assembly-kenmerk gebruikt om de typenaam op te geven die wordt gebruikt tijdens het opstarten van Azure Functions.
 
     ```csharp
+    using System;
+    using Microsoft.Azure.Functions.Extensions.DependencyInjection;
     using Microsoft.Extensions.Configuration;
     using Microsoft.FeatureManagement;
-    using Microsoft.Extensions.DependencyInjection;
-    ```
 
-1. Voeg hieronder de `Function1` statische constructor toe om de Azure App Configuration-provider te bootstrappen. Voeg vervolgens twee `static`-leden toe, een veld met de naam `ServiceProvider` om een exemplaar van een individuele database van `ServiceProvider` te maken, en een eigenschap onder `Function1` genaamd `FeatureManager` om een exemplaar van een individuele database van `IFeatureManager`te maken. Maak vervolgens verbinding met App Configuration in `Function1` door `AddAzureAppConfiguration()` aan te roepen. Dit proces laadt de configuratie wanneer de toepassing wordt gestart. Hetzelfde configuratie-exemplaar wordt later gebruikt voor alle Functions-aanroepen. 
+    [assembly: FunctionsStartup(typeof(FunctionApp.Startup))]
 
-    ```csharp
-        // Implements IDisposable, cached for life time of function
-        private static ServiceProvider ServiceProvider; 
-
-        static Function1()
+    namespace FunctionApp
+    {
+        class Startup : FunctionsStartup
         {
-            IConfigurationRoot configuration = new ConfigurationBuilder()
-                .AddAzureAppConfiguration(options =>
-                {
-                    options.Connect(Environment.GetEnvironmentVariable("ConnectionString"))
-                           .UseFeatureFlags();
-                }).Build();
+            public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
+            {
+            }
 
-            var services = new ServiceCollection();                                                                             
-            services.AddSingleton<IConfiguration>(configuration).AddFeatureManagement();
-
-            ServiceProvider = services.BuildServiceProvider(); 
+            public override void Configure(IFunctionsHostBuilder builder)
+            {
+            }
         }
-
-        private static IFeatureManager FeatureManager => ServiceProvider.GetRequiredService<IFeatureManager>();
+    }
     ```
 
-1. Werk de `Run`-methode bij om de waarde van het weergegeven bericht te wijzigen, afhankelijk van de status van de functiemarkering.
+
+3. Werk de `ConfigureAppConfiguration`-methode bij en voeg de Azure App Configuration-provider toe als een extra configuratiebron door `AddAzureAppConfiguration()` aan te roepen. 
+
+   De `UseFeatureFlags()`-methode geeft de provider opdracht de functievlaggen te laden. Alle functievlaggen hebben een standaardvervalperiode voor de cache van dertig seconden voordat opnieuw op wijzigingen wordt gecontroleerd. De verlooptijd kan worden bijgewerkt door de eigenschap `FeatureFlagsOptions.CacheExpirationInterval` in te stellen die wordt doorgegeven aan de methode `UseFeatureFlags`. 
 
     ```csharp
-        [FunctionName("Function1")]
-        public static async Task<IActionResult> Run(
-                [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
-                ILogger log)
-            {
-                string message = await FeatureManager.IsEnabledAsync("Beta")
-                     ? "The Feature Flag 'Beta' is turned ON"
-                     : "The Feature Flag 'Beta' is turned OFF";
-                
-                return (ActionResult)new OkObjectResult(message); 
-            }
+    public override void ConfigureAppConfiguration(IFunctionsConfigurationBuilder builder)
+    {
+        builder.ConfigurationBuilder.AddAzureAppConfiguration(options =>
+        {
+            options.Connect(Environment.GetEnvironmentVariable("ConnectionString"))
+                   .Select("_")
+                   .UseFeatureFlags();
+        });
+    }
+    ```
+   > [!TIP]
+   > Als u niet wilt dat een andere configuratie dan functievlaggen naar uw toepassing wordt geladen, kunt u `Select("_")` aanroepen om alleen een niet-bestaande dummysleutel (_) te laden. Standaard worden alle configuratiesleutelwaarden in uw App Configuration-archief geladen indien geen methode `Select` wordt aangeroepen.
+
+4. Werk de methode `Configure` bij om Azure App Configuration-services en functiebeheer beschikbaar te maken via afhankelijkheidsinjectie.
+
+    ```csharp
+    public override void Configure(IFunctionsHostBuilder builder)
+    {
+        builder.Services.AddAzureAppConfiguration();
+        builder.Services.AddFeatureManagement();
+    }
+    ```
+
+5. Open *Function1.cs* en voeg de volgende naamruimten toe.
+
+    ```csharp
+    using System.Linq;
+    using Microsoft.FeatureManagement;
+    using Microsoft.Extensions.Configuration.AzureAppConfiguration;
+    ```
+
+   Voeg een constructor toe om een exemplaar van `_featureManagerSnapshot` en `IConfigurationRefresherProvider` te verkrijgen via afhankelijkheidsinjectie. Vanuit de `IConfigurationRefresherProvider` kunt u het exemplaar van `IConfigurationRefresher` verkrijgen.
+
+    ```csharp
+    private readonly IFeatureManagerSnapshot _featureManagerSnapshot;
+    private readonly IConfigurationRefresher _configurationRefresher;
+
+    public Function1(IFeatureManagerSnapshot featureManagerSnapshot, IConfigurationRefresherProvider refresherProvider)
+    {
+        _featureManagerSnapshot = featureManagerSnapshot;
+        _configurationRefresher = refresherProvider.Refreshers.First();
+    }
+    ```
+
+6. Werk de methode `Run` bij om de waarde van het weergegeven bericht te wijzigen, afhankelijk van de status van de functievlag.
+
+   De methode `TryRefreshAsync` wordt aangeroepen aan het begin van de functieaanroep om functievlaggen te vernieuwen. Er gebeurt niets (no-op) als de vervaltijd van de cache niet wordt bereikt. Verwijder de operator `await` als u de functievlaggen liever wilt vernieuwen zonder dat de huidige aanroep van Functions wordt geblokkeerd. In dat geval krijgen latere aanroepen van Functions een bijgewerkte waarde.
+
+    ```csharp
+    [FunctionName("Function1")]
+    public async Task<IActionResult> Run(
+        [HttpTrigger(AuthorizationLevel.Anonymous, "get", "post", Route = null)] HttpRequest req,
+        ILogger log)
+    {
+        log.LogInformation("C# HTTP trigger function processed a request.");
+
+        await _configurationRefresher.TryRefreshAsync();
+
+        string message = await _featureManagerSnapshot.IsEnabledAsync("Beta")
+                ? "The Feature Flag 'Beta' is turned ON"
+                : "The Feature Flag 'Beta' is turned OFF";
+
+        return (ActionResult)new OkObjectResult(message);
+    }
     ```
 
 ## <a name="test-the-function-locally"></a>De functie lokaal testen
 
-1. Stel een omgevingsvariabele met de naam **Verbindingsreeks** in, waarbij de waarde de toegangssleutel is die u eerder in uw App Configuration-archief hebt opgehaald onder **Toegangssleutels**. Als u de Windows-opdrachtprompt gebruikt, voert u de volgende opdracht uit en start u de opdrachtprompt opnieuw om de wijziging door te voeren:
+1. Stel een omgevingsvariabele in met de naam **ConnectionString**, waarbij de waarde de verbindingsreeks is die u eerder in uw App Configuration-archief hebt opgehaald onder **Toegangssleutels**. Als u de Windows-opdrachtprompt gebruikt, voert u de volgende opdracht uit en start u de opdrachtprompt opnieuw om de wijziging door te voeren:
 
     ```cmd
         setx ConnectionString "connection-string-of-your-app-configuration-store"
@@ -133,15 +180,16 @@ De .NET Feature Management-bibliotheken breiden het framework uit met ondersteun
 
     ![De functiemarkering Snelstartfunctie is uitgeschakeld](./media/quickstarts/functions-launch-ff-disabled.png)
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Alle resources** en selecteer de instantie van het App Configuration-archief dat u hebt gemaakt.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Selecteer **Alle resources** en selecteer het App Configuration-archief dat u hebt gemaakt.
 
 1. Selecteer **Functiebeheer** en wijzig de status van de sleutel **Beta** in **Aan**:
 
-1. Ga terug naar de opdrachtprompt en annuleer het actieve proces door op `Ctrl-C` te drukken.  Herstart de app door op F5 te drukken. 
-
-1. Kopieer de URL van uw functie uit de uitvoer van de Azure Functions-runtime op dezelfde manier als in stap 3. Plak de URL van de HTTP-aanvraag in de adresbalk van uw browser. Het antwoord van de browser moet zijn gewijzigd om aan te geven dat de functiemarkering `Beta` is ingeschakeld, zoals wordt weergegeven in de onderstaande afbeelding.
+1. Vernieuw de browser een paar keer. Wanneer de in de cache geplaatste functievlag na dertig seconden vervalt, moet de pagina zijn gewijzigd om aan te geven dat functievlag `Beta` is ingeschakeld, zoals wordt weergegeven in de onderstaande afbeelding.
  
     ![De functiemarkering Snelstartfunctie is ingeschakeld](./media/quickstarts/functions-launch-ff-enabled.png)
+
+> [!NOTE]
+> De voorbeeldcode in deze zelfstudie kan worden gedownload van de [Azure App Configuration GitHub repo](https://github.com/Azure/AppConfiguration/tree/master/examples/DotNetCore/AzureFunction) (GitHub-opslagplaats in Azure App Configuration).
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -149,8 +197,10 @@ De .NET Feature Management-bibliotheken breiden het framework uit met ondersteun
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze quickstart hebt u een nieuwe functiemarkering gemaakt en gebruikt met een Azure Functions-app via de [App Configuration-provider](/dotnet/api/Microsoft.Extensions.Configuration.AzureAppConfiguration).
+In deze quickstart hebt u een nieuwe functievlag gemaakt en gebruikt met een Azure Functions-app via de bibliotheek [Microsoft.FeatureManagement](/dotnet/api/microsoft.featuremanagement).
 
-- Meer informatie over [functiebeheer](./concept-feature-management.md).
-- [Functievlaggen beheren](./manage-feature-flags.md).
+- Meer informatie over [functiebeheer](./concept-feature-management.md)
+- [Functievlaggen beheren](./manage-feature-flags.md)
+- [Voorwaardelijke functievlaggen gebruiken](./howto-feature-filters-aspnet-core.md)
+- [Gefaseerde implementatie van functies voor doelgroepen inschakelen](./howto-targetingfilter-aspnet-core.md)
 - [Dynamische configuratie gebruiken in een Azure Functions-app](./enable-dynamic-configuration-azure-functions-csharp.md)

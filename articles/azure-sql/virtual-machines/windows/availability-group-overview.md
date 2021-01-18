@@ -15,12 +15,12 @@ ms.workload: iaas-sql-server
 ms.date: 10/07/2020
 ms.author: mathoma
 ms.custom: seo-lt-2019
-ms.openlocfilehash: f39380e253d3fa9e86bfea3a8c436862738ff8e3
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 213b973bfc93cb2237473b6bc4c7f1e138457409
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359928"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98131896"
 ---
 # <a name="always-on-availability-group-on-sql-server-on-azure-vms"></a>AlwaysOn-beschikbaarheidsgroep op SQL Server op Azure-VM's
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -62,7 +62,7 @@ Raadpleeg [een load balancer configureren](availability-group-vnn-azure-load-bal
 
 ### <a name="dnn-listener"></a>DNN-listener
 
-SQL Server 2019 CU8 introduceert ondersteuning voor de DNN-listener (gedistribueerde netwerknaam). De DNN-listener vervangt de traditionele listener van de beschikbaarheidsgroep, waarbij er geen Azure Loud Balancer meer nodig is om verkeer te routeren in het Azure-netwerk. 
+SQL Server 2019 CU8 introduceert ondersteuning voor de DNN-listener (gedistribueerde netwerknaam). De DNN-listener vervangt de traditionele listener van de beschikbaarheidsgroep, waarbij er geen Azure Load Balancer meer nodig is om verkeer te routeren in het Azure-netwerk. 
 
 De DNN-listener is de aanbevolen HADR-connectiviteitsoplossing in Azure, omdat deze de implementatie vereenvoudigt, het onderhoud en de kosten vermindert en de failovertijd in het geval van een storing verkort. 
 

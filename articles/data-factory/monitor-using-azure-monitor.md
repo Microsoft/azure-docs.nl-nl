@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.date: 07/13/2020
-ms.openlocfilehash: 35d2073dca21b4a0d48a43bed9933bb7549cf8f3
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d1325ac1afbca8b30cc640f1f22cb598506a5c91
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96497891"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555709"
 ---
 # <a name="monitor-and-alert-data-factory-by-using-azure-monitor"></a>Data Factory bewaken en waarschuwen door gebruik te maken van Azure Monitor
 
@@ -135,7 +135,7 @@ Met monitor kunt u inzicht krijgen in de prestaties en status van uw Azure-workl
 
 Hier volgen enkele van de metrische gegevens die worden verzonden door Azure Data Factory versie 2:
 
-| **Meting**                           | **Weergave naam voor metrische gegevens**                  | **Eenheid** | **Aggregatietype** | **Beschrijving**                |
+| **Meting**                           | **Weergave naam voor metrische gegevens**                  | **Eenheid** | **Type aggregatie** | **Beschrijving**                |
 |--------------------------------------|------------------------------------------|----------|----------------------|--------------------------------|
 | ActivityCancelledRuns                 | Metrische gegevens voor geannuleerde activiteit uitgevoerd           | Aantal    | Totaal                | Het totale aantal uitgevoerde activiteiten dat in een minuut venster is geannuleerd. |
 | ActivityFailedRuns                   | Metrische gegevens mislukte uitvoering van activiteit             | Aantal    | Totaal                | Het totale aantal uitgevoerde activiteiten in een minuut venster. |
@@ -278,7 +278,7 @@ https://management.azure.com/{resource-id}/providers/microsoft.insights/diagnost
 | **hout**| Complex type| De naam van een diagnostische logboek categorie voor een resource type. Als u de lijst met diagnostische logboek categorieën voor een resource wilt ophalen, voert u de bewerking Diagnostische instellingen ophalen uit. |
 | **category**| Tekenreeks| Een matrix met logboek categorieën en het Bewaar beleid. |
 | **timeGrain** | Tekenreeks | De granulatie van metrische gegevens, die worden vastgelegd in de ISO 8601-duur notatie. De waarde van de eigenschap moet `PT1M` een minuut zijn. |
-| **ingeschakeld**| Boolean | Hiermee wordt aangegeven of de verzameling van de categorie metrisch of logboek is ingeschakeld voor deze resource. |
+| **ingeschakeld**| Booleaans | Hiermee wordt aangegeven of de verzameling van de categorie metrisch of logboek is ingeschakeld voor deze resource. |
 | **retentionPolicy**| Complex type| Hierin wordt het Bewaar beleid voor een metrische of logboek categorie beschreven. Deze eigenschap wordt alleen gebruikt voor opslag accounts. |
 |**resterende**| Int| Het aantal dagen dat de metrische gegevens of logboeken moeten worden bewaard. Als de waarde van de eigenschap 0 is, worden de logboeken permanent bewaard. Deze eigenschap wordt alleen gebruikt voor opslag accounts. |
 
@@ -444,14 +444,14 @@ Zie [Diagnostische instellingen](/rest/api/monitor/diagnosticsettings)voor meer 
 
 | Eigenschap | Type | Beschrijving | Voorbeeld |
 | --- | --- | --- | --- |
-| **Niveau** |Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op 4 voor de logboeken voor de uitvoering van de activiteit. | `4` |
+| **Afvlakking** |Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op 4 voor de logboeken voor de uitvoering van de activiteit. | `4` |
 | **correlationId** |Tekenreeks | De unieke ID voor het bijhouden van een bepaalde aanvraag. | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
 | **time** | Tekenreeks | De tijd van de gebeurtenis in de UTC-notatie time span `YYYY-MM-DDTHH:MM:SS.00000Z` . | `2017-06-28T21:00:27.3534352Z` |
 |**activityRunId**| Tekenreeks| De ID van de uitvoering van de activiteit. | `3a171e1f-b36e-4b80-8a54-5625394f4354` |
 |**pipelineRunId**| Tekenreeks| De ID van de pijplijn uitvoering. | `9f6069d6-e522-4608-9f99-21807bfc3c70` |
 |**resourceId**| Tekenreeks | De ID die is gekoppeld aan de Data Factory-resource. | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
 |**category**| Tekenreeks | De categorie van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `ActivityRuns` . | `ActivityRuns` |
-|**afvlakking**| Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `Informational` . | `Informational` |
+|**niveau**| Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `Informational` . | `Informational` |
 |**operationName**| Tekenreeks | De naam van de activiteit met de status. Als de activiteit de heartbeat start is, is de waarde van de eigenschap `MyActivity -` . Als de activiteit de end heartbeat is, is de waarde van de eigenschap `MyActivity - Succeeded` . | `MyActivity - Succeeded` |
 |**pipelineName**| Tekenreeks | De naam van de pijp lijn. | `MyPipeline` |
 |**activityName**| Tekenreeks | De naam van de activiteit. | `MyActivity` |
@@ -490,13 +490,13 @@ Zie [Diagnostische instellingen](/rest/api/monitor/diagnosticsettings)voor meer 
 
 | Eigenschap | Type | Beschrijving | Voorbeeld |
 | --- | --- | --- | --- |
-| **Niveau** |Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op 4 voor de logboeken voor de uitvoering van de activiteit. | `4` |
+| **Afvlakking** |Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op 4 voor de logboeken voor de uitvoering van de activiteit. | `4` |
 | **correlationId** |Tekenreeks | De unieke ID voor het bijhouden van een bepaalde aanvraag. | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
 | **time** | Tekenreeks | De tijd van de gebeurtenis in de UTC-notatie time span `YYYY-MM-DDTHH:MM:SS.00000Z` . | `2017-06-28T21:00:27.3534352Z` |
 |**runId**| Tekenreeks| De ID van de pijplijn uitvoering. | `9f6069d6-e522-4608-9f99-21807bfc3c70` |
 |**resourceId**| Tekenreeks | De ID die is gekoppeld aan de Data Factory-resource. | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
 |**category**| Tekenreeks | De categorie van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `PipelineRuns` . | `PipelineRuns` |
-|**afvlakking**| Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `Informational` . | `Informational` |
+|**niveau**| Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `Informational` . | `Informational` |
 |**operationName**| Tekenreeks | De naam van de pijp lijn samen met de status. Nadat de pijplijn uitvoering is voltooid, is de waarde van de eigenschap `Pipeline - Succeeded` . | `MyPipeline - Succeeded`. |
 |**pipelineName**| Tekenreeks | De naam van de pijp lijn. | `MyPipeline` |
 |**starten**| Tekenreeks | De begin tijd van de activiteit wordt uitgevoerd met de UTC-notatie time span. | `2017-06-26T20:55:29.5007959Z`. |
@@ -533,13 +533,13 @@ Zie [Diagnostische instellingen](/rest/api/monitor/diagnosticsettings)voor meer 
 
 | Eigenschap | Type | Beschrijving | Voorbeeld |
 | --- | --- | --- | --- |
-| **Niveau** |Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op 4 voor de logboeken voor de uitvoering van de activiteit. | `4` |
+| **Afvlakking** |Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op 4 voor de logboeken voor de uitvoering van de activiteit. | `4` |
 | **correlationId** |Tekenreeks | De unieke ID voor het bijhouden van een bepaalde aanvraag. | `319dc6b4-f348-405e-b8d7-aafc77b73e77` |
 | **time** | Tekenreeks | De tijd van de gebeurtenis in de UTC-notatie time span `YYYY-MM-DDTHH:MM:SS.00000Z` . | `2017-06-28T21:00:27.3534352Z` |
 |**triggerId**| Tekenreeks| De ID van de trigger uitvoering. | `08587023010602533858661257311` |
 |**resourceId**| Tekenreeks | De ID die is gekoppeld aan de Data Factory-resource. | `/SUBSCRIPTIONS/<subID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
 |**category**| Tekenreeks | De categorie van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `PipelineRuns` . | `PipelineRuns` |
-|**afvlakking**| Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `Informational` . | `Informational` |
+|**niveau**| Tekenreeks | Het niveau van de diagnostische Logboeken. Stel de waarde van de eigenschap in op `Informational` . | `Informational` |
 |**operationName**| Tekenreeks | De naam van de trigger met de eind status, die aangeeft of de trigger is geactiveerd. Als de heartbeat is geslaagd, is de waarde van de eigenschap `MyTrigger - Succeeded` . | `MyTrigger - Succeeded` |
 |**triggerName**| Tekenreeks | De naam van de trigger. | `MyTrigger` |
 |**Trigger type**| Tekenreeks | Het type van de trigger. Mogelijke eigenschaps waarden zijn `Manual Trigger` en `Schedule Trigger` . | `ScheduleTrigger` |
@@ -576,14 +576,14 @@ Hier vindt u de logboek kenmerken van SSIS IR start/stop/onderhouds bewerkingen.
 | **correlationId**          | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde bewerking             | `f13b159b-515f-4885-9dfa-a664e949f785Deprovision0059035558` |
 | **dataFactoryName**        | Tekenreeks | De naam van de ADF                                          | `MyADFv2` |
 | **integrationRuntimeName** | Tekenreeks | De naam van uw SSIS IR                                      | `MySSISIR` |
-| **afvlakking**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                  | `Informational` |
+| **niveau**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                  | `Informational` |
 | **resultType**             | Tekenreeks | Het resultaat van uw SSIS IR-bewerking                          | `Started/InProgress/Succeeded/Failed` |
 | **Bericht**                | Tekenreeks | Het uitvoer bericht van uw SSIS IR-bewerking                  | `The stopping of your SSIS integration runtime has succeeded.` |
 | **resourceId**             | Tekenreeks | De unieke ID van de ADF-resource                            | `/SUBSCRIPTIONS/<subscriptionID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
 
 #### <a name="ssis-event-message-context-log-attributes"></a>Kenmerken van context logboek van SSIS-gebeurtenis berichten
 
-Hier vindt u de logboek kenmerken van voor waarden met betrekking tot gebeurtenis berichten die door SSIS-pakket uitvoeringen op uw SSIS-IR worden gegenereerd. Ze geven soort gelijke informatie als de [context tabel of weer gave van de gebeurtenis bericht van de SSIS-catalogus (SSISDB)](/sql/integration-services/system-views/catalog-event-message-context?view=sql-server-ver15) waarin runtime waarden van veel SSIS-pakket eigenschappen worden weer gegeven. Ze worden gegenereerd wanneer u `Basic/Verbose` logboek registratie niveau selecteert en nuttig is voor het controleren op fouten.
+Hier vindt u de logboek kenmerken van voor waarden met betrekking tot gebeurtenis berichten die door SSIS-pakket uitvoeringen op uw SSIS-IR worden gegenereerd. Ze geven soort gelijke informatie als de [context tabel of weer gave van de gebeurtenis bericht van de SSIS-catalogus (SSISDB)](/sql/integration-services/system-views/catalog-event-message-context) waarin runtime waarden van veel SSIS-pakket eigenschappen worden weer gegeven. Ze worden gegenereerd wanneer u `Basic/Verbose` logboek registratie niveau selecteert en nuttig is voor het controleren op fouten.
 
 ```json
 {
@@ -616,11 +616,11 @@ Hier vindt u de logboek kenmerken van voor waarden met betrekking tot gebeurteni
 | **correlationId**          | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde bewerking                    | `e55700df-4caf-4e7c-bfb8-78ac7d2f28a0` |
 | **dataFactoryName**        | Tekenreeks | De naam van de ADF                                                 | `MyADFv2` |
 | **integrationRuntimeName** | Tekenreeks | De naam van uw SSIS IR                                             | `MySSISIR` |
-| **afvlakking**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                         | `Informational` |
+| **niveau**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                         | `Informational` |
 | **operationId**            | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde bewerking in SSISDB          | `1` (1 betekent bewerkingen met betrekking tot pakketten die **niet** zijn opgeslagen in SSISDB/aangeroepen via T-SQL) |
 | **contextDepth**           | Tekenreeks | De diepte van de context van uw gebeurtenis bericht                              | `0` (0 geeft de context aan voordat de uitvoering van het pakket wordt gestart, 1 geeft de context aan als er een fout optreedt, en neemt toe naarmate de context verder van de fout is) |
 | **packagePath**            | Tekenreeks | Het pad van het pakket object als de context bron van uw gebeurtenis bericht      | `\Package` |
-| **contextType**            | Tekenreeks | Het type pakket object als de context bron van het gebeurtenis bericht      | `60`(Zie [meer context typen](/sql/integration-services/system-views/catalog-event-message-context?view=sql-server-ver15#remarks)) |
+| **contextType**            | Tekenreeks | Het type pakket object als de context bron van het gebeurtenis bericht      | `60`(Zie [meer context typen](/sql/integration-services/system-views/catalog-event-message-context#remarks)) |
 | **contextSourceName**      | Tekenreeks | De naam van het pakket object als de context bron van het gebeurtenis bericht      | `MyPackage` |
 | **contextSourceId**        | Tekenreeks | De unieke ID van het pakket object als de context bron van uw gebeurtenis bericht | `{E2CF27FB-EA48-41E9-AF6F-3FE938B4ADE1}` |
 | **propertyName**           | Tekenreeks | De naam van de pakket eigenschap voor de context bron van uw gebeurtenis bericht   | `DelayValidation` |
@@ -629,7 +629,7 @@ Hier vindt u de logboek kenmerken van voor waarden met betrekking tot gebeurteni
 
 #### <a name="ssis-event-messages-log-attributes"></a>Logboek kenmerken van SSIS-gebeurtenis berichten
 
-Hier vindt u de logboek kenmerken van gebeurtenis berichten die door SSIS-pakket uitvoeringen op uw SSIS-IR worden gegenereerd. Ze geven soort gelijke informatie als [SSISDB gebeurtenis berichten tabel of weer gave](/sql/integration-services/system-views/catalog-event-messages?view=sql-server-ver15) waarin de gedetailleerde tekst/meta gegevens van gebeurtenis berichten worden weer gegeven. Ze worden gegenereerd op basis van elk registratie niveau, behalve `None` .
+Hier vindt u de logboek kenmerken van gebeurtenis berichten die door SSIS-pakket uitvoeringen op uw SSIS-IR worden gegenereerd. Ze geven soort gelijke informatie als [SSISDB gebeurtenis berichten tabel of weer gave](/sql/integration-services/system-views/catalog-event-messages) waarin de gedetailleerde tekst/meta gegevens van gebeurtenis berichten worden weer gegeven. Ze worden gegenereerd op basis van elk registratie niveau, behalve `None` .
 
 ```json
 {
@@ -666,11 +666,11 @@ Hier vindt u de logboek kenmerken van gebeurtenis berichten die door SSIS-pakket
 | **correlationId**          | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde bewerking                  | `e55700df-4caf-4e7c-bfb8-78ac7d2f28a0` |
 | **dataFactoryName**        | Tekenreeks | De naam van de ADF                                               | `MyADFv2` |
 | **integrationRuntimeName** | Tekenreeks | De naam van uw SSIS IR                                           | `MySSISIR` |
-| **afvlakking**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                       | `Informational` |
+| **niveau**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                       | `Informational` |
 | **operationId**            | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde bewerking in SSISDB        | `1` (1 betekent bewerkingen met betrekking tot pakketten die **niet** zijn opgeslagen in SSISDB/aangeroepen via T-SQL) |
 | **messageTime**            | Tekenreeks | Het tijdstip waarop uw gebeurtenis bericht is gemaakt in UTC-indeling          | `2017-06-28T21:00:27.3534352Z` |
-| **Message type**            | Tekenreeks | Het type gebeurtenis bericht                                     | `70`( [meer bericht typen](/sql/integration-services/system-views/catalog-operation-messages-ssisdb-database?view=sql-server-ver15#remarks)weer geven) |
-| **messageSourceType**      | Tekenreeks | Het type van de bron van het gebeurtenis bericht                              | `20`(Zie [meer bron typen van berichten](/sql/integration-services/system-views/catalog-operation-messages-ssisdb-database?view=sql-server-ver15#remarks)) |
+| **Message type**            | Tekenreeks | Het type gebeurtenis bericht                                     | `70`( [meer bericht typen](/sql/integration-services/system-views/catalog-operation-messages-ssisdb-database#remarks)weer geven) |
+| **messageSourceType**      | Tekenreeks | Het type van de bron van het gebeurtenis bericht                              | `20`(Zie [meer bron typen van berichten](/sql/integration-services/system-views/catalog-operation-messages-ssisdb-database#remarks)) |
 | **Bericht**                | Tekenreeks | De tekst van uw gebeurtenis bericht                                     | `MyPackage:Validation has started.` |
 | **packageName**            | Tekenreeks | De naam van het uitgevoerde pakket bestand                             | `MyPackage.dtsx` |
 | **eventName**              | Tekenreeks | De naam van de gerelateerde runtime gebeurtenis                                 | `OnPreValidate` |
@@ -683,7 +683,7 @@ Hier vindt u de logboek kenmerken van gebeurtenis berichten die door SSIS-pakket
 
 #### <a name="ssis-executable-statistics-log-attributes"></a>Logboek kenmerken van de SSIS-uitvoer bare statistieken
 
-Dit zijn de logboek kenmerken van uitvoer bare gegevens die worden gegenereerd door SSIS-pakket uitvoeringen op uw SSIS-IR, waarbij uitvoer bare containers of taken in de controle stroom van pakketten zijn. Ze geven soort gelijke informatie als [SSISDB uitvoer bare statistieken tabel of weer gave](/sql/integration-services/system-views/catalog-executable-statistics?view=sql-server-ver15) waarin een rij wordt weer gegeven voor elk uitgevoerd uitvoer bare bestand, met inbegrip van de herhalingen. Ze worden gegenereerd met elk logboek registratie niveau, behalve `None` en nuttig voor het identificeren van knel punten op taak niveau of fouten.
+Dit zijn de logboek kenmerken van uitvoer bare gegevens die worden gegenereerd door SSIS-pakket uitvoeringen op uw SSIS-IR, waarbij uitvoer bare containers of taken in de controle stroom van pakketten zijn. Ze geven soort gelijke informatie als [SSISDB uitvoer bare statistieken tabel of weer gave](/sql/integration-services/system-views/catalog-executable-statistics) waarin een rij wordt weer gegeven voor elk uitgevoerd uitvoer bare bestand, met inbegrip van de herhalingen. Ze worden gegenereerd met elk logboek registratie niveau, behalve `None` en nuttig voor het identificeren van knel punten op taak niveau of fouten.
 
 ```json
 {
@@ -715,11 +715,11 @@ Dit zijn de logboek kenmerken van uitvoer bare gegevens die worden gegenereerd d
 | **correlationId**          | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde bewerking                | `e55700df-4caf-4e7c-bfb8-78ac7d2f28a0` |
 | **dataFactoryName**        | Tekenreeks | De naam van de ADF                                             | `MyADFv2` |
 | **integrationRuntimeName** | Tekenreeks | De naam van uw SSIS IR                                         | `MySSISIR` |
-| **afvlakking**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                     | `Informational` |
+| **niveau**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                     | `Informational` |
 | **Executionid is vereist**            | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde uitvoering in SSISDB      | `1` (1 betekent uitvoeringen gerelateerd aan pakketten die **niet** zijn opgeslagen in SSISDB/aangeroepen via T-SQL) |
 | **executionPath**          | Tekenreeks | Het volledige pad van het bovenliggende pakket naar het uitgevoerde onderdeel          | `\Transformation\Data Flow Task` (In dit pad worden ook onderdeel herhalingen vastgelegd) |
 | **startTime**              | Tekenreeks | Het tijdstip waarop het uitvoer bare fase vooraf wordt uitgevoerd in de UTC-indeling  | `2017-06-28T21:00:27.3534352Z` |
-| **endTime**                | Tekenreeks | Het tijdstip waarop het uitvoer bare post-Execute-fase in UTC-indeling wordt ingevoerd | `2017-06-28T21:00:27.3534352Z` |
+| **Tijd**                | Tekenreeks | Het tijdstip waarop het uitvoer bare post-Execute-fase in UTC-indeling wordt ingevoerd | `2017-06-28T21:00:27.3534352Z` |
 | **executionDuration**      | Tekenreeks | De uitvoerings tijd van het uitvoer bare bestand in milliseconden                   | `1,125` |
 | **executionResult**        | Tekenreeks | Het resultaat van het uitvoeren van een uitvoerbaar bestand                                 | `0` (0 betekent geslaagd, 1 geeft aan dat er een fout is opgetreden, 2 geeft aan dat de waarde is voltooid en 3 betekent dat de annulering wordt geannuleerd) |
 | **executionValue**         | Tekenreeks | De door de gebruiker gedefinieerde waarde die door het uitvoeren van het uitvoer bare bestand is geretourneerd            | `1` |
@@ -727,7 +727,7 @@ Dit zijn de logboek kenmerken van uitvoer bare gegevens die worden gegenereerd d
 
 #### <a name="ssis-execution-component-phases-log-attributes"></a>Logboek kenmerken van fasen van SSIS-uitvoerings onderdelen
 
-Hier vindt u de logboek kenmerken van runtime-statistieken voor gegevens stroom onderdelen die worden gegenereerd door SSIS-pakket uitvoeringen op uw SSIS-IR. Ze geven soort gelijke informatie als de [tabel of weer gave met SSISDB-uitvoerings onderdelen](/sql/integration-services/system-views/catalog-execution-component-phases?view=sql-server-ver15) waarin de tijd wordt weer gegeven die door de onderdelen van de gegevens stroom in al hun uitvoerings fasen wordt besteed. Ze worden gegenereerd wanneer u `Performance/Verbose` logboek registratie niveau selecteert en nuttig is voor het vastleggen van uitvoerings statistieken voor de gegevens stroom.
+Hier vindt u de logboek kenmerken van runtime-statistieken voor gegevens stroom onderdelen die worden gegenereerd door SSIS-pakket uitvoeringen op uw SSIS-IR. Ze geven soort gelijke informatie als de [tabel of weer gave met SSISDB-uitvoerings onderdelen](/sql/integration-services/system-views/catalog-execution-component-phases) waarin de tijd wordt weer gegeven die door de onderdelen van de gegevens stroom in al hun uitvoerings fasen wordt besteed. Ze worden gegenereerd wanneer u `Performance/Verbose` logboek registratie niveau selecteert en nuttig is voor het vastleggen van uitvoerings statistieken voor de gegevens stroom.
 
 ```json
 {
@@ -760,20 +760,20 @@ Hier vindt u de logboek kenmerken van runtime-statistieken voor gegevens stroom 
 | **correlationId**          | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde bewerking                   | `e55700df-4caf-4e7c-bfb8-78ac7d2f28a0` |
 | **dataFactoryName**        | Tekenreeks | De naam van de ADF                                                | `MyADFv2` |
 | **integrationRuntimeName** | Tekenreeks | De naam van uw SSIS IR                                            | `MySSISIR` |
-| **afvlakking**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                        | `Informational` |
+| **niveau**                  | Tekenreeks | Het niveau van Diagnostische logboeken                                        | `Informational` |
 | **Executionid is vereist**            | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde uitvoering in SSISDB         | `1` (1 betekent uitvoeringen gerelateerd aan pakketten die **niet** zijn opgeslagen in SSISDB/aangeroepen via T-SQL) |
 | **packageName**            | Tekenreeks | De naam van het uitgevoerde pakket bestand                              | `MyPackage.dtsx` |
 | **taskName**               | Tekenreeks | De naam van de uitgevoerde gegevens stroom taak                                 | `Data Flow Task` |
 | **subonderdeelnaam**       | Tekenreeks | De naam van het gegevens stroom onderdeel                                     | `Derived Column` |
 | **Partition**                  | Tekenreeks | De naam van de uitvoerings fase                                         | `AcquireConnections` |
 | **startTime**              | Tekenreeks | Het tijdstip waarop uitvoerings fase wordt gestart in UTC-indeling                  | `2017-06-28T21:00:27.3534352Z` |
-| **endTime**                | Tekenreeks | Het tijdstip waarop de uitvoerings fase eindigt op de UTC-indeling                    | `2017-06-28T21:00:27.3534352Z` |
+| **Tijd**                | Tekenreeks | Het tijdstip waarop de uitvoerings fase eindigt op de UTC-indeling                    | `2017-06-28T21:00:27.3534352Z` |
 | **executionPath**          | Tekenreeks | Het pad van de uitvoering van de gegevens stroom taak                            | `\Transformation\Data Flow Task` |
 | **resourceId**             | Tekenreeks | De unieke ID van de ADF-resource                                  | `/SUBSCRIPTIONS/<subscriptionID>/RESOURCEGROUPS/<resourceGroupName>/PROVIDERS/MICROSOFT.DATAFACTORY/FACTORIES/<dataFactoryName>` |
 
 #### <a name="ssis-execution-data-statistics-log-attributes"></a>Logboek kenmerken statistieken uitvoerings gegevens SSIS
 
-Dit zijn de logboek kenmerken van gegevens verplaatsing via elke leg van gegevens stroom pijplijnen, van upstream naar downstream-onderdelen, die worden gegenereerd door SSIS-pakket uitvoeringen op uw SSIS-IR. Ze geven soort gelijke informatie als de [Statistieken tabel van de SSISDB-uitvoerings gegevens of weer gave](/sql/integration-services/system-views/catalog-execution-data-statistics?view=sql-server-ver15) waarin het aantal rijen van de gegevens die worden verplaatst via gegevens stroom taken worden weer gegeven. Ze worden gegenereerd wanneer u `Verbose` logboek registratie niveau selecteert en nuttig is voor het berekenen van de door Voer van gegevens stromen.
+Dit zijn de logboek kenmerken van gegevens verplaatsing via elke leg van gegevens stroom pijplijnen, van upstream naar downstream-onderdelen, die worden gegenereerd door SSIS-pakket uitvoeringen op uw SSIS-IR. Ze geven soort gelijke informatie als de [Statistieken tabel van de SSISDB-uitvoerings gegevens of weer gave](/sql/integration-services/system-views/catalog-execution-data-statistics) waarin het aantal rijen van de gegevens die worden verplaatst via gegevens stroom taken worden weer gegeven. Ze worden gegenereerd wanneer u `Verbose` logboek registratie niveau selecteert en nuttig is voor het berekenen van de door Voer van gegevens stromen.
 
 ```json
 {
@@ -808,7 +808,7 @@ Dit zijn de logboek kenmerken van gegevens verplaatsing via elke leg van gegeven
 | **correlationId**            | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde bewerking                  | `e55700df-4caf-4e7c-bfb8-78ac7d2f28a0` |
 | **dataFactoryName**          | Tekenreeks | De naam van de ADF                                               | `MyADFv2` |
 | **integrationRuntimeName**   | Tekenreeks | De naam van uw SSIS IR                                           | `MySSISIR` |
-| **afvlakking**                    | Tekenreeks | Het niveau van Diagnostische logboeken                                       | `Informational` |
+| **niveau**                    | Tekenreeks | Het niveau van Diagnostische logboeken                                       | `Informational` |
 | **Executionid is vereist**              | Tekenreeks | De unieke ID voor het bijhouden van een bepaalde uitvoering in SSISDB        | `1` (1 betekent uitvoeringen gerelateerd aan pakketten die **niet** zijn opgeslagen in SSISDB/aangeroepen via T-SQL) |
 | **packageName**              | Tekenreeks | De naam van het uitgevoerde pakket bestand                             | `MyPackage.dtsx` |
 | **taskName**                 | Tekenreeks | De naam van de uitgevoerde gegevens stroom taak                                | `Data Flow Task` |

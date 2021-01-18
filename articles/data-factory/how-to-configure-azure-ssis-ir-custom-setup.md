@@ -12,12 +12,12 @@ manager: mflasko
 ms.reviewer: douglasl
 ms.custom: seo-lt-2019
 ms.date: 11/06/2020
-ms.openlocfilehash: bc5d2cad7b4fbf1871d2c02dc91db30daf55e855
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: b9dc88c5773d1329ad4fb4d1c45a0cbc88737423
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96600724"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556576"
 ---
 # <a name="customize-the-setup-for-an-azure-ssis-integration-runtime"></a>De instellingen voor een Azure-SSIS Integration Runtime aanpassen
 
@@ -345,7 +345,7 @@ Voer de volgende stappen uit om enkele voor beelden van aangepaste standaard ins
 
       * Een *TLS 1,2* -map, die een aangepast installatie script (*Main. cmd*) bevat voor het gebruik van sterke crypto grafie en veiliger netwerk protocol (TLS 1,2) op elk knoop punt van uw Azure-SSIS IR. Met het script worden ook oudere SSL/TLS-versies uitgeschakeld.
 
-      * Een *ZULU OPENJDK* -map met een aangepast installatie script (*Main. cmd*) en Power shell-bestand (*install_openjdk.ps1*) voor het installeren van de ZULU OPENJDK op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u Azure Data Lake Store en flexibele bestands connectors gebruiken voor het verwerken van ORC-en Parquet-bestanden. Zie [Azure Feature Pack voor integratie Services](/sql/integration-services/azure-feature-pack-for-integration-services-ssis?view=sql-server-ver15#dependency-on-java)voor meer informatie. 
+      * Een *ZULU OPENJDK* -map met een aangepast installatie script (*Main. cmd*) en Power shell-bestand (*install_openjdk.ps1*) voor het installeren van de ZULU OPENJDK op elk knoop punt van uw Azure-SSIS IR. Met deze installatie kunt u Azure Data Lake Store en flexibele bestands connectors gebruiken voor het verwerken van ORC-en Parquet-bestanden. Zie [Azure Feature Pack voor integratie Services](/sql/integration-services/azure-feature-pack-for-integration-services-ssis#dependency-on-java)voor meer informatie. 
       
         [Down load eerst de nieuwste Zulu-openjdk](https://www.azul.com/downloads/zulu/zulu-windows/) (bijvoorbeeld *zulu8.33.0.1-jdk8.0.192-win_x64.zip*) en upload deze vervolgens samen met *Main. cmd* en *install_openjdk.ps1* naar uw container.
 

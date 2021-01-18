@@ -3,17 +3,17 @@ title: Azure-kosten beheren met automatisering
 description: In dit artikel wordt uitgelegd hoe u Azure-kosten kunt beheren met automatisering.
 author: bandersmsft
 ms.author: banders
-ms.date: 11/19/2020
+ms.date: 01/06/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
-ms.openlocfilehash: 47d9c2838c5c806214e3be2f9ba7ce335bc0af67
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 02215bace693ac5ac36f9fc29758215d45b23eb1
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94956089"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98051782"
 ---
 # <a name="manage-costs-with-automation"></a>Kosten beheren met automatisering
 
@@ -56,6 +56,22 @@ U wordt aangeraden _niet meer dan één aanvraag_ te maken met de API voor gedet
 **Bereiken op het hoogste niveau bepalen zonder te filteren**
 
 Gebruik de API om alle gegevens op te halen die u nodig hebt voor het bereik op het hoogste niveau. Wacht totdat alle benodigde gegevens zijn opgenomen voordat u een filter, groepering of samengevoegde analyse uitvoert. De API is specifiek geoptimaliseerd om grote hoeveelheden niet-samengevoegde ruwe kostengegevens te leveren. Zie [Bereiken begrijpen en gebruiken](./understand-work-scopes.md) in Cost Management voor meer informatie over het werken met bereiken. Wanneer u de benodigde gegevens voor een bereik hebt gedownload, gebruikt u Excel om de gegevens verder te analyseren met filters en draaitabellen.
+
+### <a name="notes-about-pricing"></a>Opmerkingen over prijzen
+
+Als u het gebruik en de kosten wilt afstemmen met het prijsoverzicht of de factuur, moet u rekening houden met de volgende informatie.
+
+Prijswijzigingen op de prijslijst: de prijzen die worden weergegeven op de prijslijst, zijn de prijzen die u van Azure ontvangt. Ze worden geschaald naar een specifieke maateenheid. Helaas komt de maateenheid niet altijd overeen de maateenheid waarin het werkelijke resourcegebruik en de kosten worden uitgegeven.
+
+Prijswijzigingen met betrekking tot gebruiksgegevens: in de gebruiksbestanden wordt geschaalde informatie weergegeven die mogelijk niet exact overeenkomt met het prijsoverzicht. Met name:
+
+- Eenheidsprijs: de prijs wordt geschaald, zodat deze overeenkomt met de maateenheid waarmee waarin de kosten daadwerkelijk door Azure-resources worden uitgegeven. Als er wordt geschaald, komt de prijs niet overeen met de prijs die in het prijsoverzicht wordt weergegeven.
+- Maateenheid: vertegenwoordigt de maateenheid waarmee de kosten daadwerkelijk door Azure-resources worden uitgegeven.
+- Effectieve prijs/resourcetarief: de prijs staat voor het werkelijke tarief dat u per eenheid betaalt, nadat rekening is gehouden met kortingen. Dit is de prijs die moet worden gebruikt voor Hoeveelheid om berekeningen (Prijs * Hoeveelheid) te kunnen uitvoeren om de kosten af te stemmen. In de prijs wordt rekening gehouden met de volgende scenario's en de geschaalde eenheidsprijs, die ook in de bestanden voor komt. Als gevolg hiervan kan deze afwijken van de geschaalde eenheidsprijs.
+  - Gestaffelde prijzen: bijvoorbeeld € 10 voor de eerste honderd eenheden, € 8 voor de volgende honderd eenheden.
+  - Inbegrepen hoeveelheid, bijvoorbeeld: de eerste honderd eenheden zijn gratis en vervolgens € 10 per eenheid.
+  - Reservations
+  - Afronding die tijdens de berekening plaatsvindt: bij het afronden wordt rekening gehouden met het verbruikte aantal, gestaffelde/opgenomen prijzen per hoeveelheid en de geschaalde eenheidsprijs.
 
 ## <a name="example-usage-details-api-requests"></a>Voorbeeld van API voor gedetailleerde gebruiksgegevens
 
@@ -325,7 +341,7 @@ U kunt budgetten configureren om geautomatiseerde acties te starten met behulp v
 
 ## <a name="data-latency-and-rate-limits"></a>Gegevenslatentie en frequentielimieten
 
-Het is raadzaam de API's niet vaker dan één keer per dag aan te roepen. Cost Management-gegevens worden elke vier uur vernieuwd, wanneer nieuwe gebruiksgegevens van Azure-resourceproviders worden ontvangen. Als u vaker aanroept, worden er geen aanvullende gegevens verstrekt. In plaats daarvan wordt de lading groter. Zie [Inzicht in gegevens van Cost Management](understand-cost-mgt-data.md) voor meer informatie over hoe vaak gegevens worden gewijzigd en hoe gegevenslatentie wordt verwerkt.
+Het is raadzaam de API's niet vaker dan één keer per dag aan te roepen. Cost Management-gegevens worden elke vier uur vernieuwd, wanneer nieuwe gebruiksgegevens van Azure-resourceproviders worden ontvangen. Er komen niet meer gegevens vrij als de API vaker wordt aangeroepen. In plaats daarvan wordt de belasting groter. Zie [Inzicht in gegevens van Cost Management](understand-cost-mgt-data.md) voor meer informatie over hoe vaak gegevens worden gewijzigd en hoe gegevenslatentie wordt verwerkt.
 
 ### <a name="error-code-429---call-count-has-exceeded-rate-limits"></a>Foutcode 429: het aantal aanroepen heeft de frequentielimieten overschreden
 

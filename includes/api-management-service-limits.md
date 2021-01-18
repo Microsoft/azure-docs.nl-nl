@@ -6,15 +6,15 @@ author: vladvino
 ms.assetid: 1b813833-39c8-46be-8666-fd0960cfbf04
 ms.service: api-management
 ms.topic: include
-ms.date: 04/14/2020
+ms.date: 01/11/2021
 ms.author: vlvinogr
 ms.custom: include file
-ms.openlocfilehash: cf051d96651161658796689639b5d268230d4b5a
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 78890c0596642b629482a6d24d17d83fb8ebc9a0
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95553604"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98147700"
 ---
 | Resource | Limiet |
 | ---------------------------------------------------------------------- | -------------------------- |
@@ -33,7 +33,8 @@ ms.locfileid: "95553604"
 | Maximale totale aanvraagduur<sup>8</sup> | 30 seconden |
 | Maximumgrootte van de gebufferde nettolading<sup>8</sup> | 2 MiB |
 | Maximumgrootte aanvraag-URL<sup>9</sup> | 4096 bytes |
-| Maximum aantal zelf-hostende gateways<sup>10</sup> | 25 |
+| Maximumlengte van URL-padsegment<sup>10</sup> | 260 tekens |
+| Maximum aantal zelf-hostende gateways<sup>11</sup> | 25 |
 
 <sup>1</sup>schaallimieten zijn afhankelijk van de prijscategorie. Zie [Prijzen voor API Management](https://azure.microsoft.com/pricing/details/api-management/)voor meer informatie over de prijscategorieën en hun schaallimieten.<br/>
 <sup>2</sup>Cachegrootte per eenheid is afhankelijk van de prijscategorie. Zie [Prijzen voor API Management](https://azure.microsoft.com/pricing/details/api-management/)voor de prijscategorieën en hun schaallimieten.<br/>
@@ -44,4 +45,5 @@ ms.locfileid: "95553604"
 <sup>7</sup>CA-certificaten worden niet ondersteund in de Consumption-laag.<br/>
 <sup>8</sup>Deze limiet is alleen van toepassing op de Consumption-laag. Voor andere lagen zijn er geen limieten in deze categorieën.<br/>
 <sup>9</sup>Alleen van toepassing op de Consumption-laag. Inclusief een zoekstring van maximaal 2048 lang.<br/>
-<sup>10</sup>Zelf-hostende gateways worden alleen ondersteund in de Developer- en Premium-laag. De limiet geldt voor het aantal [zelf-hostende gatewayresources](/rest/api/apimanagement/2019-12-01/gateway). Neem contact op met de [ondersteuning](https://azure.microsoft.com/support/options/)als u deze limiet wilt verhogen. Merk op dat het aantal knooppunten (of replica's) dat is gekoppeld aan een zelf-hostende gatewayresource onbeperkt is in de Premium-laag, en is beperkt is tot één knooppunt in de Developer-laag.
+<sup>10</sup> Neem contact op met de [ondersteuning](https://azure.microsoft.com/support/options/) als u deze limiet wilt verhogen.<br/>
+<sup>11</sup>Zelf-hostende gateways worden alleen ondersteund in de Developer- en Premium-laag. De limiet geldt voor het aantal [zelf-hostende gatewayresources](/rest/api/apimanagement/2019-12-01/gateway). Neem contact op met de [ondersteuning](https://azure.microsoft.com/support/options/)als u deze limiet wilt verhogen. Merk op dat het aantal knooppunten (of replica's) dat is gekoppeld aan een zelf-hostende gatewayresource onbeperkt is in de Premium-laag, en is beperkt is tot één knooppunt in de Developer-laag.

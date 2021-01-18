@@ -9,12 +9,12 @@ adobe-target: true
 adobe-target-activity: DocsExp–377467–A/B– Quickstarts/Python App–12.11
 adobe-target-experience: Experience B
 adobe-target-content: ./quickstart-python-1
-ms.openlocfilehash: 058d64d8b34a47101517273ebd17a09d9ca51197
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: f60534f7d319bfe0b9e8e7bd4447770bcd6d45e3
+ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936189"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98134429"
 ---
 # <a name="quickstart-create-a-python-app-using-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken met behulp van Azure App Service in Linux
 
@@ -158,13 +158,13 @@ Ondervindt u problemen? [Laat het ons weten](https://aka.ms/FlaskCLIQuickstartHe
 Implementeer de code in uw lokale map (*python-docs-hello-world*) met behulp van de `az webapp up`-opdracht:
 
 ```azurecli
-az webapp up --sku F1 --name <app-name>
+az webapp up --sku B1 --name <app-name>
 ```
 
 - Als de `az`-opdracht niet wordt herkend, controleert u of de Azure CLI is geïnstalleerd volgens de beschrijving in [Uw initiële omgeving instellen](#set-up-your-initial-environment).
 - Als de `webapp`-opdracht niet wordt herkend, komt dat omdat uw Azure CLI-versie 2.0.80 of hoger is. Als dat niet zo is, [installeert u de nieuwste versie](/cli/azure/install-azure-cli).
 - Vervang `<app_name>` door een naam die in de volledige Azure-omgeving uniek is (*geldige tekens zijn `a-z`, `0-9` en `-`* ). Het is handig om een combinatie van uw bedrijfsnaam en een app-id te gebruiken.
-- Met het argument `--sku F1` maakt u de web-app in de prijscategorie Gratis. Laat dit argument weg om een snellere Premium-laag te gebruiken, waarmee u kosten per uur in rekening worden gebracht.
+- Met het argument `--sku B1` maakt u de web-app voor de prijscategorie Basic, waarvoor een kleine vergoeding per uur wordt gevraagd. Laat dit argument weg om een snellere Premium-laag te gebruiken.
 - U kunt eventueel het argument `--location <location-name>` toevoegen, waarbij `<location_name>` een beschikbare Azure-regio is. U kunt een lijst met toegestane regio's voor uw Azure-account ophalen door de [`az account list-locations`](/cli/azure/appservice#az-appservice-list-locations)-opdracht uit te voeren.
 - Als de fout 'Kan de runtimestack van uw app niet automatisch detecteren' wordt weergegeven, moet u controleren of u de opdracht uitvoert in de map *python-docs-hello-world* (Flask) of de map *python-docs-hello-django* (Django), die het bestand *requirements.txt* bevat. (Zie [Problemen met automatische detectie oplossen met az webapp up](https://github.com/Azure/app-service-linux-docs/blob/master/AzWebAppUP/runtime_detection.md) (GitHub) voor meer informatie.)
 
@@ -268,7 +268,7 @@ Ondervindt u problemen? Raadpleeg eerst de [Handleiding voor het oplossen van pr
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-In de voorgaande stappen hebt u Azure-resources in een resourcegroep gemaakt. De naam van de resourcegroep lijkt op 'appsvc_rg_Linux_CentralUS', afhankelijk van uw locatie. Als u een andere App Service-SKU gebruikt dan de gratis F1-laag, worden voor deze resources doorlopende kosten in rekening gebracht (zie [App Service-prijzen](https://azure.microsoft.com/pricing/details/app-service/linux/)).
+In de voorgaande stappen hebt u Azure-resources in een resourcegroep gemaakt. De naam van de resourcegroep lijkt op 'appsvc_rg_Linux_CentralUS', afhankelijk van uw locatie. Als u de web-app blijvend uitvoert, worden er enige kosten in rekening gebracht (zie [Prijzen voor App Service](https://azure.microsoft.com/pricing/details/app-service/linux/)).
 
 Als u denkt dat u deze resources niet meer gaat gebruiken, verwijdert u de resourcegroep door de volgende opdracht uit te voeren:
 

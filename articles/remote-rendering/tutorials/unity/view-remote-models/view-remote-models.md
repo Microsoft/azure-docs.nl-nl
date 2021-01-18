@@ -119,7 +119,7 @@ Volg de volgende stappen om ervoor te zorgen dat uw project de nieuwste versie v
     ![instellingen voor projectkwaliteit wijzigen](./media/settings-quality.png)
 
 1. Selecteer **Afbeeldingen** in het lijstmenu links
-1. Wijzig de instelling **Scriptbare rendering-pijplijn** in *HybridRenderingPipeline*.
+1. Wijzig de instelling **Scriptbare rendering-pijplijn** in *HybridRenderingPipeline*.\
     ![Schermopname met pijl die wijst naar plek waar u de instelling Scriptable Rendering Pipeline wijzigt in HybridRenderingPipeline.](./media/settings-graphics-render-pipeline.png)\
     Soms vult de gebruikersinterface de lijst met beschikbare pijplijntypen van de pakketten niet in. Als dit het geval is, moet de *HybridRenderingPipeline*-asset handmatig naar het veld worden gesleept:\
     ![instellingen voor projectafbeeldingen wijzigen](./media/hybrid-rendering-pipeline.png)

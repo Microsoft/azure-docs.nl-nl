@@ -3,12 +3,12 @@ title: Versleuteling van back-upgegevens met door de klant beheerde sleutels
 description: Meer informatie over hoe u met Azure Backup uw back-upgegevens kunt versleutelen met behulp van door de klant beheerde sleutels (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: cc6ad2f67b84bcd62bcc18566a4ac5d159ea32c4
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 30bcf907e1a2759c8a9977e50cb4880c2e254ca2
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197741"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562757"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Versleuteling van back-upgegevens met door de klant beheerde sleutels
 
@@ -37,7 +37,10 @@ In dit artikel komen de volgende onderwerpen aan bod:
 
 - Het verplaatsen van CMK versleutelde Recovery Services kluis over resource groepen en abonnementen wordt momenteel niet ondersteund.
 
-- Deze functie is momenteel alleen te configureren vanaf het Azure Portal.
+- Deze functie kan worden geconfigureerd via de Azure Portal en Power shell.
+
+    >[!NOTE]
+    >Gebruik AZ module 5.3.0 of hoger voor het gebruik van door de klant beheerde sleutels voor back-ups in de Recovery Services kluis.
 
 Als u uw Recovery Services kluis nog niet hebt gemaakt en geconfigureerd, kunt u [hier lezen hoe](backup-create-rs-vault.md)u dit doet.
 
@@ -62,6 +65,8 @@ Azure Backup maakt gebruik van door het systeem toegewezen beheerde identiteit o
 >[!NOTE]
 >Wanneer de beheerde identiteit is ingeschakeld, mag deze **niet** worden uitgeschakeld (zelfs tijdelijk). Het uitschakelen van de beheerde identiteit kan leiden tot inconsistent gedrag.
 
+**In de portal:**
+
 1. Ga naar uw Recovery Services kluis-> **identiteit**
 
     ![Identiteits instellingen](./media/encryption-at-rest-with-cmk/managed-identity.png)
@@ -70,9 +75,33 @@ Azure Backup maakt gebruik van door het systeem toegewezen beheerde identiteit o
 
 1. Er wordt een object-ID gegenereerd. Dit is de door het systeem toegewezen beheerde identiteit van de kluis.
 
+**Met Power shell:**
+
+Gebruik de opdracht [Update-AzRecoveryServicesVault](https://docs.microsoft.com/powershell/module/az.recoveryservices/update-azrecoveryservicesvault) om door het systeem toegewezen beheerde identiteit voor de Recovery Services-kluis in te scha kelen.
+
+Voorbeeld:
+
+```AzurePowerShell
+$vault=Get-AzRecoveryServicesVault -ResourceGroupName "testrg" -Name "testvault"
+
+Update-AzRecoveryServicesVault -IdentityType SystemAssigned -VaultId $vault.ID
+
+$vault.Identity | fl
+```
+
+Uitvoer:
+
+```output
+PrincipalId : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+TenantId    : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
+Type        : SystemAssigned
+```
+
 ### <a name="assign-permissions-to-the-recovery-services-vault-to-access-the-encryption-key-in-the-azure-key-vault"></a>Wijs machtigingen toe aan de Recovery Services kluis om toegang te krijgen tot de versleutelings sleutel in de Azure Key Vault
 
 U moet nu toestaan dat de Recovery Services kluis toegang heeft tot de Azure Key Vault die de versleutelings sleutel bevat. Dit wordt gedaan door de beheerde identiteit van de Recovery Services kluis toegang te geven tot de Key Vault.
+
+**In de portal**:
 
 1. Ga naar uw Azure Key Vault-> **toegangs beleid**. Ga door naar **+ toegangs beleid toevoegen**.
 
@@ -89,6 +118,32 @@ U moet nu toestaan dat de Recovery Services kluis toegang heeft tot de Azure Key
 1. Wanneer u klaar bent, selecteert u **toevoegen** om het nieuwe toegangs beleid toe te voegen.
 
 1. Selecteer **Opslaan** om de wijzigingen op te slaan in het toegangs beleid van de Azure Key Vault.
+
+**Met Power shell**:
+
+Gebruik de opdracht [set-AzRecoveryServicesVaultProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultproperty) om versleuteling in te scha kelen met door de klant beheerde sleutels en om de versleutelings sleutel die moet worden gebruikt, toe te wijzen of bij te werken.
+
+Voorbeeld:
+
+```azurepowershell
+$keyVault = Get-AzKeyVault -VaultName "testkeyvault" -ResourceGroupName "testrg" 
+$key = Get-AzKeyVaultKey -VaultName $keyVault -Name "testkey" 
+Set-AzRecoveryServicesVaultProperty -EncryptionKeyId $key.ID -KeyVaultSubscriptionId "xxxx-yyyy-zzzz"  -VaultId $vault.ID
+
+
+$enc=Get-AzRecoveryServicesVaultProperty -VaultId $vault.ID
+$enc.encryptionProperties | fl
+```
+
+Uitvoer:
+
+```output
+EncryptionAtRestType          : CustomerManaged
+KeyUri                        : testkey
+SubscriptionId                : xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx 
+LastUpdateStatus              : Succeeded
+InfrastructureEncryptionState : Disabled
+```
 
 ### <a name="enable-soft-delete-and-purge-protection-on-the-azure-key-vault"></a>Zacht verwijderen inschakelen en beveiliging opschonen op de Azure Key Vault
 
@@ -220,6 +275,8 @@ U kunt de herstelde schijf/VM versleutelen nadat de herstel bewerking is voltooi
 
 #### <a name="select-a-disk-encryption-set-while-restoring-from-vault-recovery-point"></a>Een schijf versleutelings selecteren tijdens het herstellen van het herstel punt van de kluis
 
+**In de portal**:
+
 De schijf versleutelings set is opgegeven onder versleutelings instellingen in het deel venster herstellen, zoals hieronder wordt weer gegeven:
 
 1. Selecteer in de **schijf of schijven versleutelen met behulp van de sleutel** **Ja**.
@@ -230,6 +287,21 @@ De schijf versleutelings set is opgegeven onder versleutelings instellingen in h
 >De mogelijkheid om een DES te kiezen tijdens het herstellen is niet beschikbaar als u een virtuele machine herstelt die gebruikmaakt van Azure Disk Encryption.
 
 ![Schijf versleutelen met behulp van uw sleutel](./media/encryption-at-rest-with-cmk/encrypt-disk-using-your-key.png)
+
+**Met Power shell**:
+
+Gebruik de opdracht [Get-AzRecoveryServicesBackupItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem) met de para meter [ `-DiskEncryptionSetId <string>` ] om [de des](https://docs.microsoft.com/powershell/module/az.compute/get-azdiskencryptionset) op te geven die moet worden gebruikt voor het versleutelen van de herstelde schijf. Zie [dit artikel](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#restore-an-azure-vm)voor meer informatie over het herstellen van schijven uit een back-up van de virtuele machine.
+
+Voorbeeld:
+
+```azurepowershell
+$namedContainer = Get-AzRecoveryServicesBackupContainer  -ContainerType "AzureVM" -Status "Registered" -FriendlyName "V2VM" -VaultId $vault.ID
+$backupitem = Get-AzRecoveryServicesBackupItem -Container $namedContainer  -WorkloadType "AzureVM" -VaultId $vault.ID
+$startDate = (Get-Date).AddDays(-7)
+$endDate = Get-Date
+$rp = Get-AzRecoveryServicesBackupRecoveryPoint -Item $backupitem -StartDate $startdate.ToUniversalTime() -EndDate $enddate.ToUniversalTime() -VaultId $vault.ID
+$restorejob = Restore-AzRecoveryServicesBackupItem -RecoveryPoint $rp[0] -StorageAccountName "DestAccount" -StorageAccountResourceGroupName "DestRG" -TargetResourceGroupName "DestRGforManagedDisks" -DiskEncryptionSetId “testdes1” -VaultId $vault.ID
+```
 
 #### <a name="restoring-files"></a>Bestanden herstellen
 

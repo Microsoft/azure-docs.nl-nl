@@ -6,16 +6,16 @@ ms.author: rahugup
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/14/2020
-ms.openlocfilehash: a1203133d8749b43a92d89e7251539a1e002bfd8
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: a3e8b19810a58031b4d11cc6e361215afbc85de2
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968565"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562637"
 ---
 # <a name="support-matrix-for-physical-server-migration"></a>Ondersteunings matrix voor de migratie van fysieke servers
 
-In dit artikel vindt u een overzicht van de ondersteunings instellingen en beperkingen voor het migreren van fysieke servers met [Azure migrate: Server migratie](migrate-services-overview.md#azure-migrate-server-migration-tool) . Als u informatie zoekt over het beoordelen van fysieke servers voor migratie naar Azure, raadpleegt u de [ondersteunings matrix voor evaluatie](migrate-support-matrix-physical.md).
+In dit artikel vindt u een overzicht van de ondersteunings instellingen en beperkingen voor het migreren van fysieke servers naar Azure met [Azure migrate: Server migratie](migrate-services-overview.md#azure-migrate-server-migration-tool) . Als u informatie zoekt over het beoordelen van fysieke servers voor migratie naar Azure, raadpleegt u de [ondersteunings matrix voor evaluatie](migrate-support-matrix-physical.md).
 
 ## <a name="migrating-machines-as-physical"></a>Computers als fysiek migreren
 
@@ -25,7 +25,7 @@ U kunt on-premises machines als fysieke servers migreren met behulp van replicat
 - Vm's gevirtualiseerd door platforms zoals xen, KVM.
 - Virtuele Hyper-V-machines of virtuele VMware-machines als u de standaard [hyper-v-](tutorial-migrate-hyper-v.md) of [VMware](server-migrate-overview.md) -stromen niet wilt gebruiken.
 - Vm's die in persoonlijke Clouds worden uitgevoerd.
-- Vm's die worden uitgevoerd in open bare Clouds, zoals Amazon Web Services (AWS) of Google Cloud Platform (GCP).
+- Vm's die worden uitgevoerd in open bare Clouds, waaronder Amazon Web Services (AWS) of Google Cloud Platform (GCP).
 
 
 ## <a name="migration-limitations"></a>Migratiebeperkingen
@@ -51,15 +51,14 @@ De tabel bevat een overzicht van de ondersteuning voor fysieke servers die u wil
 **Schijf grootte** | 2 TB besturingssysteem schijf; 32 TB voor gegevens schijven.
 **Schijf limieten** |  Maxi maal 63 schijven per computer.
 **Versleutelde schijven/volumes** |  Machines met versleutelde schijven/volumes worden niet ondersteund voor migratie.
-**Gedeeld schijf cluster** | Niet ondersteund.
+**Gedeeld schijf cluster** | Wordt niet ondersteund.
 **Onafhankelijke schijven** | Ondersteund.
 **Passthrough-schijven** | Ondersteund.
 **NFS** | NFS-volumes die zijn gekoppeld als volumes op de computers, worden niet gerepliceerd.
 **iSCSI-doelen** | Computers met iSCSI-doelen worden niet ondersteund voor migratie zonder agent.
-**Multipath IO** | Niet ondersteund.
-**Storage vMotion** | Ondersteund
-**Team kaarten** | Niet ondersteund.
-**IPv6** | Niet ondersteund.
+**Multipath IO** | Wordt niet ondersteund.
+**Team kaarten** | Wordt niet ondersteund.
+**IPv6** | Wordt niet ondersteund.
 
 
 
@@ -84,9 +83,9 @@ Aantal besturingssysteemschijven | 1 | De controle is mislukt als dit niet wordt
 Aantal gegevensschijven | 64 of minder. | De controle is mislukt als dit niet wordt ondersteund.
 Grootte van de gegevens schijf | Maxi maal 4.095 GB | De controle is mislukt als dit niet wordt ondersteund.
 Netwerkadapters | Meerdere adapters worden ondersteund. |
-Gedeelde VHD | Niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
-FC-schijf | Niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
-BitLocker | Niet ondersteund. | BitLocker moet worden uitgeschakeld voordat u replicatie voor een machine inschakelt.
+Gedeelde VHD | Wordt niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
+FC-schijf | Wordt niet ondersteund. | De controle is mislukt als dit niet wordt ondersteund.
+BitLocker | Wordt niet ondersteund. | BitLocker moet worden uitgeschakeld voordat u replicatie voor een machine inschakelt.
 VM-naam | Van 1 tot 63 tekens.<br/> Alleen letters, cijfers en afbreekstreepjes.<br/><br/> De naam van de computer moet beginnen en eindigen met een letter of cijfer. |  Werk de waarde in de computer eigenschappen in Site Recovery bij.
 Verbinding maken na migratie-Windows | Verbinding maken met virtuele Azure-machines na de migratie:<br/> -Voordat de migratie RDP op de on-premises VM maakt. Zorg dat TCP- en UDP-regels zijn toegevoegd voor het profiel **Openbaar** en dat RDP is toegestaan in **Windows Firewall** > **Toegestane apps** voor alle profielen.<br/> Schakel voor site-naar-site-VPN-toegang RDP in en sta RDP toe in **Windows Firewall**  ->  **toegestane apps en functies** voor **domein-en particuliere** netwerken. Controleer bovendien of het SAN-beleid van het besturings systeem is ingesteld op **OnlineAll**. [Meer informatie](prepare-for-migration.md). |
 Verbinding maken na migratie-Linux | Verbinding maken met virtuele Azure-machines na de migratie met SSH:<br/> Controleer voordat u de migratie op de on-premises computer controleert of de Secure shell-service is ingesteld op Start en of de firewall regels een SSH-verbinding toestaan.<br/> Nadat de failover is uitgevoerd op de Azure-VM, moet u binnenkomende verbindingen met de SSH-poort toestaan voor de regels voor de netwerk beveiligings groep op de virtuele machine die is mislukt en voor het Azure-subnet waarmee deze is verbonden. Voeg bovendien een openbaar IP-adres voor de virtuele machine toe. |  

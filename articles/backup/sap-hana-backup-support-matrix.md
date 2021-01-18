@@ -4,12 +4,12 @@ description: In dit artikel vindt u meer informatie over de ondersteunde scenari
 ms.topic: conceptual
 ms.date: 11/7/2019
 ms.custom: references_regions
-ms.openlocfilehash: 7f287206c40e4556db2ee4b38bb46ef8e5352102
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 5065f4cf3d9ab75c6e3b682b6a24387ce7449b0f
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072187"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562655"
 ---
 # <a name="support-matrix-for-backup-of-sap-hana-databases-on-azure-vms"></a>Ondersteuningsmatrix voor back-up van SAP HANA-databases in virtuele Azure-machines
 
@@ -25,7 +25,7 @@ Azure Backup ondersteunt de back-up van SAP HANA-data bases naar Azure. In dit a
 | **Topologie**               | Alleen SAP HANA die worden uitgevoerd in virtuele machines van Azure Linux                    | HANA grote instanties (HLI)                                   |
 | **Regio's**                   | **Ga**<br> **Amerikaans-Amerika** : VS-midden, VS-Oost 2, VS-Oost, Noord-Centraal VS, Zuid-Centraal VS, VS-West 2, West-Centraal VS, VS-west, Canada-centraal, Canada-oost, Brazilië-Zuid <br> **Azië en Stille Oceaan** – Australië-centraal, Australië-centraal 2, Australië-oost, Australië-Zuidoost, Japan-Oost, Japan-West, Korea-centraal, Korea-zuid, Azië-Oost, Zuidoost-Azië, centraal-india, India-Zuid, West-india, China-oost, China-Noord, China oost2, China-Noord 2 <br> **Europa** – Europa-west, Europa-noord, Frankrijk-centraal, UK-zuid, UK-west, Duitsland-noord, Duitsland-west-centraal, Zwitserland-noord, Zwitserland-West, Centraal Zwitserland-Noord, Noor wegen Oost, Noor wegen West <br> **Afrika/me** -Zuid-Afrika-noord, Zuid-Afrika-west, UAE-noord, UAE-centraal  <BR>  **Azure Government-regio's** | Frankrijk-zuid, Duitsland-centraal, Duitsland-noordoost, US Gov IOWA |
 | **Versies van besturings systemen**            | SLES 12 met SP2, SP3, SP4 en SP5; SLES 15 met SP0, SP1, SP2 <br><br>  Per 1 augustus 2020 is SAP HANA backup for RHEL (7.4, 7.6, 7.7 en 8.1) algemeen beschikbaar.                |                                             |
-| **HANA-versies**          | Dit SDC op HANA 1. x, MDC op HANA 2. x <= SPS04 Rev 48, SPS05 (nog moeten worden gevalideerd voor scenario's waarbij versleuteling is ingeschakeld)      |                                                            |
+| **HANA-versies**          | Dit SDC op HANA 1. x, MDC op HANA 2. x <= SPS04 Rev 53, SPS05 (nog moeten worden gevalideerd voor scenario's waarbij versleuteling is ingeschakeld)      |                                                            |
 | **HANA-implementaties**       | SAP HANA op één Azure VM: alleen omhoog schalen. <br><br> Voor implementaties met een hoge Beschik baarheid worden de knoop punten op de twee verschillende machines beschouwd als afzonderlijke knoop punten met afzonderlijke gegevens ketens.               | Uitschalen <br><br> Bij implementaties met een hoge Beschik baarheid wordt er niet automatisch een failover naar het secundaire knoop punt gemaakt. Het configureren van de back-up moet afzonderlijk worden uitgevoerd voor elk knoop punt.                                           |
 | **HANA-instanties**         | Eén SAP HANA-exemplaar op één Azure VM: alleen omhoog schalen | Meerdere SAP HANA exemplaren op één virtuele machine. U kunt slechts één van deze meerdere exemplaren tegelijk beveiligen.                  |
 | **HANA-database typen**    | Individuele database container (dit SDC) op 1. x, meerdere database container (MDC) op 2. x | MDC in HANA 1. x                                              |

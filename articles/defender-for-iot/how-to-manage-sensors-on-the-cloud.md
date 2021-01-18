@@ -7,16 +7,16 @@ ms.author: shhazam
 ms.date: 12/27/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: a763d8b65049cd9f301379c2c038a1d799114653
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 427ea3884a3db6ba33405014435cf1f962670064
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839803"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562706"
 ---
 # <a name="onboard-and-manage-sensors-in-the-defender-for-iot-portal"></a>Sens oren onboarding en beheren in de Defender voor IoT-Portal
 
-In dit artikel wordt beschreven hoe u Sens oren in de Defender voor IoT-Portal kunt uitschakelen, weer geven en beheren.
+In dit artikel wordt beschreven hoe u Sens oren in de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)kunt uitschakelen, weer geven en beheren.
 
 ## <a name="onboard-sensors"></a>Sensors onboarden
 
@@ -26,9 +26,9 @@ U kunt een sensor voorbereiden door deze te registreren bij Azure Defender voor 
 
 Aanmelden:
 
-1. Ga naar de **welkomst** pagina van de Defender voor IOT-Portal.
+1. Ga naar de **welkomst** pagina van de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started).
 1. Selecteer **sensor voor onboarding**.
-1. Maak een sensor naam. Het is raadzaam om het IP-adres van de sensor die u hebt geïnstalleerd als onderdeel van de naam op te nemen, of een gemakkelijk herken bare naam te gebruiken. Dit zorgt ervoor dat eenvoudiger en consistentie tussen de registratie naam in de Azure Defender voor IoT-Portal en het IP-adres van de geïmplementeerde sensor wordt weer gegeven in de sensor console.
+1. Maak een sensor naam. Het is raadzaam om het IP-adres van de sensor die u hebt geïnstalleerd als onderdeel van de naam op te nemen, of een gemakkelijk herken bare naam te gebruiken. Dit zorgt ervoor dat eenvoudiger en consistentie tussen de registratie naam in de Azure [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started) en het IP-adres van de geïmplementeerde sensor wordt weer gegeven in de sensor console.
 1. Koppel de sensor aan een Azure-abonnement.
 1. Kies een sensor beheer modus met behulp van de in de **Cloud aangesloten** wissel knop. Als de wissel knop is ingeschakeld, is de sensor verbonden met de Cloud. Als de wissel knop is uitgeschakeld, wordt de sensor lokaal beheerd.
 
@@ -52,7 +52,7 @@ Een activerings bestand downloaden:
 
 ## <a name="view-onboarded-sensors"></a>Onboarded Sens oren weer geven
 
-In de Defender voor IoT-Portal kunt u basis informatie over voorbereide Sens oren bekijken. 
+In de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started)kunt u basis informatie over voorbereide Sens oren bekijken. 
 
 1. Selecteer **sites en Sens oren**.
 1. Op de pagina **sites en Sens oren** gebruikt u filter-en zoek hulpprogramma's om sensor gegevens te vinden die u nodig hebt.
@@ -66,7 +66,7 @@ De beschik bare informatie omvat:
 
 ## <a name="manage-onboarded-sensors"></a>Onboarded Sens oren beheren
 
-U gebruikt de Defender voor IoT-portal voor beheer taken die betrekking hebben op Sens oren.
+U gebruikt de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started) voor beheer taken die betrekking hebben op Sens oren.
 
 ### <a name="export"></a>Exporteren
 
@@ -89,7 +89,7 @@ Een sensor verwijderen:
 
 Mogelijk wilt u de modus bijwerken waarin uw sensor wordt beheerd. Bijvoorbeeld:
 
-- **Werken in de modus met Cloud verbinding in plaats van de lokaal beheerde modus**: hiervoor moet u het activerings bestand voor uw lokaal verbonden sensor bijwerken met een activerings bestand voor een in de Cloud aangesloten sensor. Na opnieuw activeren worden sensor detecties weer gegeven in zowel de sensor als de Defender voor IoT-Portal. Nadat het bestand voor opnieuw activeren is geüpload, wordt er informatie over nieuwe waarschuwingen verzonden naar Azure.
+- **Werken in de modus met Cloud verbinding in plaats van de lokaal beheerde modus**: hiervoor moet u het activerings bestand voor uw lokaal verbonden sensor bijwerken met een activerings bestand voor een in de Cloud aangesloten sensor. Na opnieuw activeren worden sensor detecties weer gegeven in zowel de sensor als de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started). Nadat het bestand voor opnieuw activeren is geüpload, wordt er informatie over nieuwe waarschuwingen verzonden naar Azure.
 
 - **Werk in de lokaal verbonden modus in plaats van de modus** in de Cloud: als u dit wilt doen, moet u het activerings bestand voor een in de Cloud aangesloten sensor bijwerken met een activerings bestand voor een lokaal beheerde sensor. Na opnieuw activeren worden sensor detectie gegevens alleen weer gegeven in de sensor.
 
@@ -97,7 +97,7 @@ Mogelijk wilt u de modus bijwerken waarin uw sensor wordt beheerd. Bijvoorbeeld:
 
 Een sensor opnieuw activeren:
 
-1. Ga naar de pagina **sites en Sens oren** op de Defender voor IOT-Portal.
+1. Ga naar de pagina **sites en Sens oren** op de [Defender voor IOT-Portal](https://portal.azure.com/#blade/Microsoft_Azure_IoT_Defender/IoTDefenderDashboard/Getting_Started).
 
 2. Selecteer de sensor waarvoor u een nieuw activerings bestand wilt uploaden.
 

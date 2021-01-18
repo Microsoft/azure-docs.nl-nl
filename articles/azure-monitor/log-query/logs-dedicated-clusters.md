@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: 34524626cc213233c3db2ca438261b238eb18a2a
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 93b05a5535b80d0e0d1a07c88aa9b19052f1b703
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831768"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562672"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor logboeken toegewezen clusters
 
@@ -58,7 +58,7 @@ Als uw werk ruimte verouderde prijs categorie per knoop punt gebruikt, wordt dez
 
 ## <a name="asynchronous-operations-and-status-check"></a>Asynchrone bewerkingen en status controle
 
-Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. De status in antwoord bevat kan een van de volgende waarden zijn: InProgress, bijwerken, verwijderen, geslaagd of mislukt, inclusief de fout code. Wanneer REST wordt gebruikt, retourneert de reactie in eerste instantie een HTTP-status code 200 (OK) en de header met de eigenschap Azure-AsyncOperation als deze wordt geaccepteerd:
+Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. De status in antwoord bevat kan een van de volgende waarden zijn: InProgress, bijwerken, verwijderen, geslaagd of mislukt, inclusief de fout code. Wanneer REST wordt gebruikt, retourneert de reactie in eerste instantie een HTTP-status code van 202 (geaccepteerd) en de header met de eigenschap Azure-AsyncOperation:
 
 ```JSON
 "Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-08-01"
@@ -125,7 +125,7 @@ Content-type: application/json
 
 *Response*
 
-Moet 200 OK en een kop zijn.
+Moet 202 (geaccepteerd) en een header zijn.
 
 ### <a name="check-cluster-provisioning-status"></a>De inrichtings status van het cluster controleren
 
@@ -229,7 +229,7 @@ Content-type: application/json
 
 *Response*
 
-200 OK en koptekst.
+202 (geaccepteerd) en koptekst.
 
 ### <a name="check-workspace-link-status"></a>Status van werkruimte koppeling controleren
   

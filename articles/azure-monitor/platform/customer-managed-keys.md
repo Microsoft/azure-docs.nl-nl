@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: 6c1f323828eb48b61b38370bc2fe56d4c93bf036
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 889ee48c43119086047d6f52737266f4c611fc8d
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127206"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562740"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -81,7 +81,7 @@ Configuratie van door de klant beheerde sleutel wordt niet ondersteund in Azure 
 
 Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. De `status` in-reactie kan een van de volgende zijn: ' InProgress ', ' Updating ', ' deleted ', ' geslaagd ' of ' failed ' met de fout code.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
@@ -95,7 +95,7 @@ N.v.t.
 
 # <a name="rest"></a>[REST](#tab/rest)
 
-Bij gebruik van REST retourneert de reactie in eerste instantie een HTTP-status code 200 (OK) en koptekst met de eigenschap *Azure-AsyncOperation* wanneer deze wordt geaccepteerd:
+Wanneer REST wordt gebruikt, retourneert de reactie in eerste instantie een HTTP-status code 202 (geaccepteerd) en de header met de eigenschap *Azure-AsyncOperation* :
 ```json
 "Azure-AsyncOperation": "https://management.azure.com/subscriptions/subscription-id/providers/Microsoft.OperationalInsights/locations/region-name/operationStatuses/operation-id?api-version=2020-08-01"
 ```
@@ -158,7 +158,7 @@ KeyVaultProperties in cluster bijwerken met sleutel-id-Details.
 
 De bewerking is asynchroon en kan enige tijd duren.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
@@ -200,7 +200,7 @@ Het duurt enkele minuten voordat de sleutel is door gegeven. U kunt de status va
 1. Kopieer de Azure-AsyncOperation URL-waarde uit het antwoord en volg de controle op de [asynchrone bewerkings status](#asynchronous-operations-and-status-check).
 2. Verzend een GET-aanvraag op het cluster en Bekijk de *KeyVaultProperties* -eigenschappen. De laatst bijgewerkte sleutel moet in het antwoord worden geretourneerd.
 
-Een antwoord op de GET-aanvraag moet er als volgt uitzien wanneer de sleutel update is voltooid: 200 OK en koptekst
+Een antwoord op de GET-aanvraag moet er als volgt uitzien wanneer de sleutel update is voltooid: 202 (geaccepteerd) en header
 ```json
 {
   "identity": {
@@ -281,7 +281,7 @@ Wanneer u uw eigen opslag (BYOS) meebrengt en deze aan uw werk ruimte koppelt, w
 
 Een opslag account voor een *query* aan uw werk ruimte koppelen: *opgeslagen Zoek opdrachten* query's worden opgeslagen in uw opslag account. 
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 
@@ -325,7 +325,7 @@ Na de configuratie wordt een nieuwe *opgeslagen zoek opdracht* opgeslagen in uw 
 
 Een opslag account voor *waarschuwingen* aan uw werk ruimte koppelen: query's voor *logboek waarschuwingen* worden opgeslagen in uw opslag account. 
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 N.v.t.
 

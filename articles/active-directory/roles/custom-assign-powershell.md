@@ -1,6 +1,6 @@
 ---
-title: Aangepaste rollen toewijzen met Azure PowerShell-Azure AD | Microsoft Docs
-description: Leden van een aangepaste rol van Azure AD-beheerder beheren met Azure PowerShell.
+title: Aangepaste rollen toewijzen met behulp van Azure AD Power shell-Azure AD | Microsoft Docs
+description: Leden van een aangepaste rol van Azure AD-beheerder beheren met Azure AD Power shell.
 services: active-directory
 author: curtand
 manager: daveba
@@ -13,12 +13,12 @@ ms.author: curtand
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d4695d0844ef8b707edce53a05de611c91223a46
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 8b155ccd7f8f0d7f6d63d906d7d0baaa3243512b
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861949"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562774"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Aangepaste rollen met resource bereik toewijzen met behulp van Power shell in Azure Active Directory
 
@@ -32,26 +32,26 @@ Maak verbinding met uw Azure AD-organisatie met behulp van een algemeen beheerde
 
 ## <a name="prepare-powershell"></a>PowerShell voorbereiden
 
-Installeer de Azure AD Power shell-module vanuit het [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17). Importeer vervolgens de Azure AD PowerShell preview-module met de volgende opdracht:
+Installeer de Azure AD Power shell-module vanuit het [PowerShell Gallery](https://www.powershellgallery.com/packages/AzureADPreview). Importeer vervolgens de Azure AD PowerShell preview-module met de volgende opdracht:
 
 ``` PowerShell
-import-module azureadpreview
+Import-Module AzureADPreview
 ```
 
 Als u wilt controleren of de module gereed is voor gebruik, gaat u naar de versie die wordt geretourneerd door de volgende opdracht:
 
 ``` PowerShell
-get-module azureadpreview
+Get-Module AzureADPreview
   ModuleType Version      Name                         ExportedCommands
   ---------- ---------    ----                         ----------------
   Binary     2.0.0.115    azureadpreview               {Add-AzureADMSAdministrati...}
 ```
 
-U kunt nu beginnen met het gebruik van de cmdlets in de module. Zie voor een volledige beschrijving van de cmdlets in de Azure AD-module de online referentie documentatie voor [Azure ad preview-module](https://www.powershellgallery.com/packages/AzureADPreview/2.0.0.17).
+U kunt nu beginnen met het gebruik van de cmdlets in de module. Zie voor een volledige beschrijving van de cmdlets in de Azure AD-module de online referentie documentatie voor [Azure ad preview-module](https://www.powershellgallery.com/packages/AzureADPreview).
 
-## <a name="assign-a-role-to-a-user-or-service-principal-with-resource-scope"></a>Een rol toewijzen aan een gebruiker of Service-Principal met resource bereik
+## <a name="assign-a-directory-role-to-a-user-or-service-principal-with-resource-scope"></a>Een directory-rol toewijzen aan een gebruiker of Service-Principal met resource bereik
 
-1. Open de Azure AD preview Power shell-module.
+1. Laad de module Azure AD Power shell (preview).
 1. Meld u aan door de opdracht uit te voeren `Connect-AzureAD` .
 1. Maak een nieuwe rol met behulp van het volgende Power shell-script.
 
@@ -69,13 +69,13 @@ $resourceScope = '/' + $appRegistration.objectId
 $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
 ```
 
-Gebruik de [cmdlet Get-AzureADMSServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal)om de rol toe te wijzen aan een Service-Principal in plaats van een gebruiker.
+Gebruik de cmdlet [Get-AzureADMSServicePrincipal](/powershell/module/azuread/get-azureadserviceprincipal) om de rol toe te wijzen aan een Service-Principal in plaats van een gebruiker.
 
-## <a name="operations-on-roledefinition"></a>Bewerkingen op RoleDefinition
+## <a name="role-definitions"></a>Roldefinities
 
-Role definition-objecten bevatten de definitie van de ingebouwde of aangepaste rol, samen met de machtigingen die worden verleend door die roltoewijzing. In deze resource worden zowel aangepaste roldefinities als ingebouwde directoryRoles (die worden weer gegeven in roleDefinition-equivalent formulier) weer gegeven. Momenteel kan een Azure AD-organisatie Maxi maal 30 unieke aangepaste RoleDefinitions gedefinieerd.
+Role definition-objecten bevatten de definitie van de ingebouwde of aangepaste rol, samen met de machtigingen die worden verleend door die roltoewijzing. Deze resource bevat zowel aangepaste roldefinities als ingebouwde Directory rollen (die worden weer gegeven in een roleDefinition-equivalent formulier). Momenteel kunnen er voor een Azure AD-organisatie Maxi maal 30 unieke aangepaste roldefinities worden gedefinieerd.
 
-### <a name="create-operations-on-roledefinition"></a>Bewerkingen maken op RoleDefinition
+### <a name="create-a-role-definition"></a>Een roldefinitie maken
 
 ``` PowerShell
 # Basic information
@@ -83,32 +83,32 @@ $description = "Can manage credentials of application registrations"
 $displayName = "Application Registration Credential Administrator"
 $templateId = (New-Guid).Guid
 
-# Set of actions to grant
-$allowedResourceAction =
-@(
-    "microsoft.directory/applications/standard/read",
-    "microsoft.directory/applications/credentials/update"
-)
-$rolePermissions = @{'allowedResourceActions'= $allowedResourceAction}
+# Set of actions to include
+$rolePermissions = @{
+    "allowedResourceActions" = @(
+        "microsoft.directory/applications/standard/read",
+        "microsoft.directory/applications/credentials/update"
+    )
+}
 
-# Create new custom admin role
+# Create new custom directory role
 $customAdmin = New-AzureADMSRoleDefinition -RolePermissions $rolePermissions -DisplayName $displayName -Description $description -TemplateId $templateId -IsEnabled $true
 ```
 
-### <a name="read-operations-on-roledefinition"></a>Lees bewerkingen op RoleDefinition
+### <a name="read-and-list-role-definitions"></a>Definities van rollen lezen en weer geven
 
 ``` PowerShell
 # Get all role definitions
 Get-AzureADMSRoleDefinitions
 
-# Get single role definition by objectId
+# Get single role definition by ID
 Get-AzureADMSRoleDefinition -Id 86593cfc-114b-4a15-9954-97c3494ef49b
 
 # Get single role definition by templateId
 Get-AzureADMSRoleDefinition -Filter "templateId eq 'c4e39bd9-1100-46d3-8c65-fb160da0071f'"
 ```
 
-### <a name="update-operations-on-roledefinition"></a>Bewerkingen voor het bijwerken van RoleDefinition
+### <a name="update-a-role-definition"></a>Een roldefinitie bijwerken
 
 ``` PowerShell
 # Update role definition
@@ -117,18 +117,18 @@ Get-AzureADMSRoleDefinition -Filter "templateId eq 'c4e39bd9-1100-46d3-8c65-fb16
 Set-AzureADMSRoleDefinition -Id c4e39bd9-1100-46d3-8c65-fb160da0071f -DisplayName "Updated DisplayName"
 ```
 
-### <a name="delete-operations-on-roledefinition"></a>Verwijder bewerkingen op RoleDefinition
+### <a name="delete-a-role-definition"></a>Een roldefinitie verwijderen
 
 ``` PowerShell
 # Delete role definition
 Remove-AzureADMSRoleDefinitions -Id c4e39bd9-1100-46d3-8c65-fb160da0071f
 ```
 
-## <a name="operations-on-roleassignment"></a>Bewerkingen op RoleAssignment
+## <a name="role-assignments"></a>Roltoewijzingen
 
-Roltoewijzingen bevatten informatie die een bepaalde beveiligingsprincipal (een gebruiker of een toepassings service-principal) koppelt aan een roldefinitie. Indien nodig kunt u een bereik van één Azure AD-resource voor de toegewezen machtigingen toevoegen.  Het beperken van het bereik van machtigingen wordt ondersteund voor ingebouwde en aangepaste rollen.
+Roltoewijzingen bevatten informatie die een bepaalde beveiligingsprincipal (een gebruiker of een toepassings service-principal) koppelt aan een roldefinitie. Indien nodig kunt u een bereik van één Azure AD-resource voor de toegewezen machtigingen toevoegen.  Het beperken van het bereik van een roltoewijzing wordt ondersteund voor ingebouwde en aangepaste rollen.
 
-### <a name="create-operations-on-roleassignment"></a>Bewerkingen maken op RoleAssignment
+### <a name="create-a-role-assignment"></a>Een roltoewijzing maken
 
 ``` PowerShell
 # Get the user and role definition you want to link
@@ -143,7 +143,7 @@ $resourceScope = '/' + $appRegistration.objectId
 $roleAssignment = New-AzureADMSRoleAssignment -ResourceScope $resourceScope -RoleDefinitionId $roleDefinition.Id -PrincipalId $user.objectId
 ```
 
-### <a name="read-operations-on-roleassignment"></a>Lees bewerkingen op RoleAssignment
+### <a name="read-and-list-role-assignments"></a>Lees-en lijst roltoewijzingen
 
 ``` PowerShell
 # Get role assignments for a given principal
@@ -153,7 +153,7 @@ Get-AzureADMSRoleAssignment -Filter "principalId eq '27c8ca78-ab1c-40ae-bd1b-eae
 Get-AzureADMSRoleAssignment -Filter "roleDefinitionId eq '355aed8a-864b-4e2b-b225-ea95482e7570'"
 ```
 
-### <a name="delete-operations-on-roleassignment"></a>Verwijder bewerkingen op RoleAssignment
+### <a name="delete-a-role-assignment"></a>Een roltoewijzing verwijderen
 
 ``` PowerShell
 # Delete role assignment

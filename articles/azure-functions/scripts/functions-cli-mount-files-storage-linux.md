@@ -4,12 +4,12 @@ description: Lees hoe u een serverloze Python-functie-app maakt en een bestaande
 ms.topic: sample
 ms.date: 03/01/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 89cf1422c70a49497a1bc43e42248612e0c8dd83
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 00bf0ecc9db3cf369fd75b427dcfba686aed0ed5
+ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97930902"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98035118"
 ---
 # <a name="mount-a-file-share-to-a-python-function-app-using-azure-cli"></a>Een bestandsshare koppelen aan een Python-functie-app met behulp van Azure CLI
 
@@ -26,9 +26,9 @@ Met dit voorbeeldscript voor Azure Functions maakt u een functie-app en een shar
 
 ## <a name="sample-script"></a>Voorbeeldscript
 
-Met dit script wordt een Azure Function-app gemaakt met behulp van het [Verbruiksabonnement](../consumption-plan.md).
+Met dit script wordt een functie-app in Azure Functions gemaakt met behulp van het [Verbruiksabonnement](../consumption-plan.md).
 
-[!code-azurecli-interactive[main](../../../cli_scripts/azure-functions/functions-cli-mount-files-storage-linux/functions-cli-mount-files-storage-linux.sh "Create an Azure Function on a Consumption plan")]
+[!code-azurecli-interactive[main](../../../cli_scripts/azure-functions/functions-cli-mount-files-storage-linux/functions-cli-mount-files-storage-linux.sh "Create a function app on a Consumption plan")]
 
 [!INCLUDE [cli-script-clean-up](../../../includes/cli-script-clean-up.md)]
 

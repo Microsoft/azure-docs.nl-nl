@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 11/11/2020
+ms.date: 01/06/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: 3943caba5249432b3a0a4b7c2e63b2b818e2b7a1
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: aabc141666fe5c9fb52a3eac5ee1866f390e4551
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575700"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97968488"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro  
 
@@ -150,11 +150,11 @@ Nadat de bestelling is geplaatst, controleert Microsoft de bestelling en neemt c
 
 Nadat de Azure Stack Edge-resource is geactiveerd, hebt u de activeringssleutel nodig. Deze sleutel wordt gebruikt om uw Azure Stack Edge Pro-apparaat te activeren en te verbinden met de resource. U kunt deze sleutel nu ophalen, terwijl u Azure Portal geopend hebt.
 
-1. Selecteer de resource die u hebt gemaakt. Selecteer **Overzicht** en selecteer vervolgens **Apparaatinstallatie**.
+1. Ga naar de resource die u hebt gemaakt, en selecteer vervolgens **Overzicht**. U ziet een melding over dat uw bestelling wordt verwerkt.
 
-    ![Apparaatinstallatie selecteren](media/azure-stack-edge-deploy-prep/data-box-edge-select-devicesetup.png)
+    ![Selecteer Overzicht](media/azure-stack-edge-deploy-prep/data-box-edge-select-devicesetup.png)
 
-2. Selecteer **Sleutel genereren** op de tegel **Activeren** om een activeringssleutel te maken. Selecteer het kopieerpictogram om de sleutel te kopiëren en op te slaan voor later gebruik.
+2. Nadat de bestelling is verwerkt en het apparaat onderweg is, wordt het **Overzicht** bijgewerkt. Accepteer de standaardwaarde voor **Azure Key Vault-naam** of voer een nieuwe naam in. Selecteer **Activeringssleutel genereren**. Selecteer het kopieerpictogram om de sleutel te kopiëren en op te slaan voor later gebruik.
 
     ![Activeringssleutel ophalen](media/azure-stack-edge-deploy-prep/get-activation-key.png)
 
@@ -165,7 +165,7 @@ Nadat de Azure Stack Edge-resource is geactiveerd, hebt u de activeringssleutel 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie bent u meer te weten gekomen over verschillende onderwerpen met betrekking tot Azure Stack Edge Pro, zoals:
+In deze zelfstudie bent u meer te weten gekomen over onderwerpen met betrekking tot Azure Stack Edge Pro, zoals:
 
 > [!div class="checklist"]
 >

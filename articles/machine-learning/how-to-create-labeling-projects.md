@@ -1,7 +1,7 @@
 ---
 title: Een gegevenslabelproject maken
 titleSuffix: Azure Machine Learning
-description: Leer hoe u labelprojecten maakt en uitvoert om gegevens te taggen voor machine learning.  Gebruik met ML ondersteund labelen, of handmatig HTIL-labelen (Human-in-the-loop) om te helpen met de taak.
+description: Leer hoe u labelprojecten maakt en uitvoert om gegevens te taggen voor machine learning. Gebruik met ML ondersteund labelen, of handmatig HTIL-labelen (Human-in-the-loop) om te helpen met de taak.
 author: sdgilley
 ms.author: sgilley
 ms.service: machine-learning
@@ -9,36 +9,28 @@ ms.subservice: core
 ms.topic: tutorial
 ms.date: 07/27/2020
 ms.custom: data4ml
-ms.openlocfilehash: cd35cea28e23e88ba97bb7a27dc252d6bebd65e4
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 854504347409efb4f0eafff0d776db23ca9fda07
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739651"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059837"
 ---
 # <a name="create-a-data-labeling-project-and-export-labels"></a>Een gegevenslabelproject maken en labels exporteren 
 
+Leer hoe u gegevenslabelprojecten maakt en uitvoert om gegevens te taggen in Azure Machine Learning.  Gebruik met ML ondersteund labelen van gegevens, of handmatig HTIL-labelen (Human-in-the-loop) om te helpen met de taak.
 
 
-Het labelen van grote hoeveelheden gegevens in machine learning-projecten is vaak een hele klus. Voor projecten met een Computer Vision-onderdeel, zoals afbeeldingsclassificatie of objectdetectie, zijn over het algemeen labels vereist voor duizenden afbeeldingen.
- 
-Met de functie voor gegevens labelen van [Azure Machine Learning](https://ml.azure.com/) kunt u gebruikmaken van een centrale locatie voor het maken, beheren en bewaken van labelprojecten. Gebruik deze functie om gegevens, labels en teamleden te coördineren om labeltaken op efficiënte wijze te beheren. Machine Learning biedt ondersteuning voor de classificatie van afbeeldingen (meerdere labels of meerdere klassen) en object-id's met begrensde vakken.
-
-Met de functie voor gegevens labelen wordt de voortgang bijgehouden en de wachtrij met onvoltooide labeltaken onderhouden.
-
-U kunt het project starten en stoppen, en de voortgang van het labelproces beheren. U kunt gelabelde gegevens controleren en de gegevens exporteren in COCO-indeling of als een Azure Machine Learning-gegevensset.
+## <a name="data-labeling-capabilities"></a>Mogelijkheden voor het labelen van gegevens
 
 > [!Important]
 > Er worden momenteel alleen labelprojecten voor afbeeldingsclassificatie en objectidentificatie ondersteund. Daarnaast moeten de gegevensafbeeldingen beschikbaar zijn in een Azure Blob-gegevensopslag. (Als u geen bestaande gegevensopslag hebt, kunt u afbeeldingen uploaden tijdens het maken van het project.)
 
-In dit artikel leert u het volgende:
-
-> [!div class="checklist"]
-> * Een project maken
-> * De gegevens en structuur van het project opgeven
-> * Het project uitvoeren en bewaken
-> * De labels exporteren
-
+Met de functie voor gegevens labelen van Azure Machine Learning kunt u gebruikmaken van een centrale locatie voor het maken, beheren en bewaken van labelprojecten:
+ - Coördineer gegevens, labels en teamleden om labeltaken op efficiënte wijze te beheren. 
+ - Houd de voortgang bij en onderhoud de wachtrij met onvoltooide labeltaken.
+ - Start en stop het project en beheer de voortgang van het labelproces.
+ - Controleer de gelabelde gegevens en exporteer gegevens in COCO-indeling of als een Azure Machine Learning-gegevensset.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -48,13 +40,13 @@ In dit artikel leert u het volgende:
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://aka.ms/AMLFree) aan voordat u begint.
 * Een Machine Learning-werkruimte. Raadpleeg [Een Azure Machine Learning-werkruimte maken](how-to-manage-workspace.md).
 
-## <a name="create-a-labeling-project"></a>Een labelproject maken
+## <a name="create-a-data-labeling-project"></a>Een gegevenslabelproject maken
 
 Labelprojecten worden beheerd vanuit Azure Machine Learning. U gebruikt de pagina **Labelprojecten** om uw projecten te beheren.
 
 Als uw gegevens zich al in Azure Blob-opslag bevinden, moet u deze beschikbaar maken als gegevensopslag voordat u het labelproject maakt. Raadpleeg voor een voorbeeld van het gebruik van gegevensopslag [Zelfstudie: Uw eerst labelproject maken voor afbeeldingsclassificatie](tutorial-labeling.md).
 
-Als u een project wilt maken, selecteert u **Project toevoegen**. Geef het project een geschikte naam en selecteer **Type labeltaak**.
+Als u een project wilt maken, selecteert u **Project toevoegen**. Geef het project een geschikte naam en selecteer **Type labeltaak**. Projectnaam kan niet opnieuw worden gebruikt, zelfs niet als het project in de toekomst wordt verwijderd.
 
 :::image type="content" source="media/how-to-create-labeling-projects/labeling-creation-wizard.png" alt-text="Wizard Labelproject maken":::
 
@@ -119,11 +111,11 @@ U vindt de tijdstempel voor de laatste vernieuwing in de sectie **Incrementeel v
 
 ## <a name="specify-label-classes"></a>Labelklassen opgeven
 
-Geef op de pagina **Labelklassen** de set klassen op om uw gegevens te categoriseren. Doe dit zorgvuldig. De nauwkeurigheid en snelheid van labelaars hangt samen met de mogelijkheid om te kiezen uit de klassen. Gebruik bijvoorbeeld, in plaats van het hele geslacht en soort van planten, alleen een veldcode op of gebruik een afkorting voor het plantengeslacht.
+Geef op de pagina **Labelklassen** de set klassen op om uw gegevens te categoriseren. De nauwkeurigheid en snelheid van labelaars hangt samen met de mogelijkheid om te kiezen uit de klassen. Gebruik bijvoorbeeld, in plaats van het hele geslacht en soort van planten, alleen een veldcode op of gebruik een afkorting voor het plantengeslacht.
 
 Voer één label per rij in. Gebruik de knop **+** om een nieuwe rij toe te voegen. Als u meer dan 3 of 4 labels hebt, maar minder dan 10, is het een goed idee om de namen vooraf te laten gaan door een cijfer (‘1:’, ‘2:’) zodat labelaars de cijfertoetsen kunnen gebruiken om sneller te werken.
 
-## <a name="describe-the-labeling-task"></a>De labeltaak beschrijven
+## <a name="describe-the-data-labeling-task"></a>De labeltaak beschrijven
 
 Het is belangrijk om de labeltaak duidelijk uit te leggen. Op de pagina **Instructies voor labelen** kunt u een koppeling naar een externe site toevoegen voor labelinstructies, of u kunt instructies bieden in het bewerkingsvak op de pagina. Houd de instructies taakgericht en geschikt voor de doelgroep. Houd rekening met deze vragen:
 
@@ -145,9 +137,9 @@ Voor begrenzingsvakken zijn dit een aantal belangrijke vragen:
 >[!NOTE]
 > Zorg ervoor dat labelaars de eerste 9 labels kunnen selecteren met de cijfertoetsen 1 tot en met 9.
 
-## <a name="use-ml-assisted-labeling"></a>Met ML ondersteund labelen gebruiken
+## <a name="use-ml-assisted-data-labeling"></a>Met ML ondersteund labelen van gegevens gebruiken
 
-Op de pagina **Met ML ondersteund labelen** kunt u automatische machine Learning-modellen activeren om de labeltaak te versnellen. Aan het begin van het labelproject worden de afbeeldingen in een willekeurige volgorde gerangschikt om mogelijke vooroordelen te verminderen. Eventuele vooroordelen die al aanwezig zijn in de gegevensset, worden echter wel weerspiegeld in het getrainde model. Als bijvoorbeeld 80% van uw afbeeldingen van één klasse zijn, dan is ongeveer 80% van de gegevens die zijn gebruikt om het model te trainen, ook van deze klasse. Deze training omvat geen actief onderwijs.
+Op de pagina **Met ML ondersteund labelen** kunt u automatische machine learning-modellen activeren om de labeltaak te versnellen. Aan het begin van het labelproject worden de afbeeldingen in een willekeurige volgorde gerangschikt om mogelijke vooroordelen te verminderen. Eventuele vooroordelen die al aanwezig zijn in de gegevensset, worden echter wel weerspiegeld in het getrainde model. Als bijvoorbeeld 80% van uw afbeeldingen van één klasse zijn, dan is ongeveer 80% van de gegevens die zijn gebruikt om het model te trainen, ook van deze klasse. Deze training omvat geen actief onderwijs.
 
 Selecteer *Met ML ondersteund labelen inschakelen* en geef een GPU op om ondersteund labelen in te schakelen, wat bestaat uit twee fasen:
 * Clustering
@@ -174,7 +166,7 @@ Wanneer voldoende afbeeldingslabels zijn verzonden, wordt een classificatiemodel
 
 Zodra een machine learning-model is getraind met uw handmatig gelabelde gegevens, wordt het model geëvalueerd in een testset met handmatig gelabelde afbeeldingen om de nauwkeurigheid ervan te bepalen bij verschillende drempelwaarden voor betrouwbaarheid. Dit evaluatieproces wordt gebruikt om een drempelwaarde voor betrouwbaarheid te bepalen waarboven het model nauwkeurig genoeg is om pre-labels weer te geven. Het model wordt vervolgens geëvalueerd op basis van niet-gelabelde gegevens. Afbeeldingen met voorspellingen met een hogere betrouwbaarheid dan deze drempelwaarde, worden gebruikt om vooraf te labelen.
 
-## <a name="initialize-the-labeling-project"></a>Het labelproject initialiseren
+## <a name="initialize-the-data-labeling-project"></a>Het labelproject initialiseren
 
 Nadat het labelproject is geïnitialiseerd, kunnen sommige aspecten van het project niet meer worden gewijzigd. U kunt het taaktype of de gegevensset niet wijzigen. U kunt labels en de URL voor de taakbeschrijving *wel* wijzigen. Controleer zorgvuldig de instellingen voordat u het project maakt. Nadat u het project hebt verzonden, keert u terug naar de startpagina **Gegevens labelen**, waar het project wordt weergegeven als **Initialiseren**.
 
@@ -229,7 +221,7 @@ Hier kunt u de details van uw project weergeven.  Op dit tabblad kunt u het volg
 
 ### <a name="access-for-labelers"></a>Toegang voor labelaars
 
-Iedereen met toegang tot uw werkruimte kan de gegevens in uw project labelen.  U kunt ook de machtigingen voor labelaars aanpassen zodat deze gebruikers toegang hebben tot het gedeelte voor labelen maar niet tot andere onderdelen van de werkruimte voor uw labelproject.  Zie [Toegang tot een Azure Machine Learning-werkruimte beheren](how-to-assign-roles.md) voor meer informatie en ontdek hoe u de [aangepaste rol voor labelaars](how-to-assign-roles.md#labeler) kunt maken.
+Iedereen met toegang tot uw werkruimte kan de gegevens in uw project labelen.  U kunt ook de machtigingen voor labelaars aanpassen zodat deze gebruikers toegang hebben tot de sectie voor labelen maar niet tot andere onderdelen van de werkruimte voor uw labelproject.  Zie [Toegang tot een Azure Machine Learning-werkruimte beheren](how-to-assign-roles.md) voor meer informatie en ontdek hoe u de [aangepaste rol voor labelaars](how-to-assign-roles.md#labeler) kunt maken.
 
 ## <a name="add-new-label-class-to-a-project"></a>Nieuwe labelklasse toevoegen aan een project
 
@@ -267,6 +259,7 @@ Gebruik deze tips als een van deze problemen optreedt.
 |Na het maken van een project heeft het lange tijd de status Initialiseren.     | Vernieuw de pagina handmatig. De initialisatievoortgang moet ongeveer 20 gegevenspunten per seconde zijn. Het ontbreken van automatisch vernieuwen is een bekend probleem.         |
 |Bij het weergeven van afbeeldingen zijn onlangs gelabelde afbeeldingen niet zichtbaar.     |   Als u alle gelabelde afbeeldingen wilt laden, kiest u de knop **Eerste**. De knop **Eerste** brengt u naar het begin van de lijst, maar alle gelabelde gegevens worden geladen.      |
 |Als u op de knop Esc drukt tijdens het labelen voor objectdetectie, wordt in de linkerbovenhoek een label met grootte nul gemaakt. In dit geval mislukt het verzenden van labels.     |   Verwijder het label door op het kruis ernaast te klikken.  |
+|Kan geen takenset toewijzen aan een specifieke labelaar.     |   Dit is een bekende beperking in de huidige release.  |
 
 ## <a name="next-steps"></a>Volgende stappen
 

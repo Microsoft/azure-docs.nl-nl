@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 05/26/2020
+ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: 5cbfdd57ebd25da013bfb82b761839b1e74ee012
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 8e83841031593d0d1af4499f3ef9a15400ce7794
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609017"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569531"
 ---
 # <a name="tutorial-configure-workday-for-automatic-user-provisioning"></a>Zelfstudie: Workday configureren voor automatisch inrichten van gebruikers
 
@@ -41,11 +41,11 @@ De [service voor het inrichten van gebruikers in Azure Active Directory](../app-
 ### <a name="whats-new"></a>Nieuwe functies
 In dit gedeelte vindt u informatie over recente verbeteringen van de integratie van Workday. Ga voor een lijst met uitgebreide updates, geplande wijzigingen en archieven naar de pagina [Wat is er nieuw in Azure Active Directory?](../fundamentals/whats-new.md) 
 
+* **Oktober 2020 - Inrichting on demand ingeschakeld voor Workday:** Met [inrichting on demand](../app-provisioning/provision-on-demand.md) kunt u nu end-to-end-inrichting voor een specifiek gebruikersprofiel in Workday testen om uw kenmerktoewijzing en expressielogica te controleren.   
+
 * **Mei 2020 - Mogelijkheid van write-back van telefoonnummers naar Workday:** Naast e-mailadressen en gebruikersnamen is nu ook write-back van zakelijke telefoonnummers en mobiele nummers mogelijk van Azure AD naar Workday. Raadpleeg voor meer informatie de [zelfstudie over de Writeback-app](workday-writeback-tutorial.md).
 
 * **April 2020 - Ondersteuning voor de nieuwste versie van de API WWS (Workday Web Services):** Tweemaal per jaar, in maart en september, worden er geavanceerde updates uitgebracht voor Workday die u helpen de doelstellingen van uw bedrijf te realiseren en tegemoet te komen aan de veranderende wensen van uw personeel. Om altijd gebruik te maken van de nieuwe functies van Workday, kunt u nu rechtstreeks in de verbindings-URL de API-versie van WWS opgeven die u wilt gebruiken. Meer informatie over het opgeven van de versie van de Workday-API vindt u in het gedeelte over het [configureren van Workday-connectiviteit](#part-3-in-the-provisioning-app-configure-connectivity-to-workday-and-active-directory). 
-
-* **Januari 2020 - Mogelijkheid om AD-kenmerk accountExpires in te stellen:** Met behulp van de functie [NumFromDate](../app-provisioning/functions-for-customizing-application-data.md#numfromdate) kunt u nu datumvelden van Workday, zoals *EndContractDate* of *StatusTerminationDate*, toewijzen. 
 
 ### <a name="who-is-this-user-provisioning-solution-best-suited-for"></a>Voor wie is deze oplossing voor het inrichten van gebruikers het meest geschikt?
 
@@ -151,51 +151,37 @@ In deze stap verleent u aan de beveiligingsgroep machtigingen voor domeinbeveili
 
 **Machtigingen voor domeinbeveiligingsbeleid configureren:**
 
-1. Typ **domain security configuration** in het zoekvak in en klik vervolgens op de link **Domain Security Configuration - Report**.  
+1. Voer **Beveiligingsgroeplidmaatschap en -toegang** in het zoekvak in en klik op de koppeling naar het rapport.
    >[!div class="mx-imgBorder"]
-   >![Schermopname met 'domain security configuration' ingevoerd in het zoekvak en 'Domain Security Configuration - Report' in de resultaten.](./media/workday-inbound-tutorial/wd_isu_06.png "Beveiligingsbeleid voor domeinen")  
-2. Zoek in het tekstvak **Domain** de volgende domeinen en voeg ze één voor één toe aan het filter.  
+   >![Beveiligingsgroeplidmaatschap zoeken](./media/workday-inbound-tutorial/security-group-membership-access.png)
+
+1. Zoek en selecteer de beveiligingsgroep die in de vorige stap is gemaakt. 
+   >[!div class="mx-imgBorder"]
+   >![Beveiligingsgroep selecteren](./media/workday-inbound-tutorial/select-security-group-msft-wdad.png)
+
+1. Klik op het weglatingsteken (...) naast de groepsnaam en selecteer in het menu **Beveiligingsgroep > Domeinmachtigingen voor beveiligingsgroep onderhouden**
+   >[!div class="mx-imgBorder"]
+   >![Selecteer Domeinmachtigingen onderhouden](./media/workday-inbound-tutorial/select-maintain-domain-permissions.png)
+
+1. Voeg onder **Integratiemachtigingen** de volgende domeinen toe aan de lijst **Beveiligingsbeleid voor domeinen voor Put-toegang**
    * *External Account Provisioning*
+   * *Worker Data: Public Worker Reports* 
+   * *Person Data: Contactgegevens werk* (vereist als u van plan bent om de gegevens van contactpersonen van Azure AD naar Workday te herschrijven)
+   * *Workday-accounts* (vereist als u van plan bent om de gebruikersnaam/UPN van Azure AD naar workday te herschrijven)
+
+1. Voeg onder **Integratiemachtigingen** de volgende domeinen toe aan de lijst **Beveiligingsbeleid voor domeinen voor Get-toegang**
    * *Worker Data: Workers*
-   * *Worker Data: Public Worker Reports*
-   * *Person Data: Work Contact Information*
    * *Worker Data: All Positions*
    * *Worker Data: Current Staffing Information*
    * *Worker Data: Business Title on Worker Profile*
-   * *Workday Accounts*
+   * *Worker Data: Gekwalificeerde werknemers* (optioneel: voeg dit toe om kwalificatiegegevens van werknemers op te halen voor het inrichten)
+   * *Worker Data: Vaardigheden en ervaring* (optioneel: voeg dit toe om vaardigheidsgegevens van werknemers op te halen voor inrichting)
 
-     >[!div class="mx-imgBorder"]
-     >![Schermopname met het rapport Domain Security Configuration en 'External Account' ingevoerd in het tekstvak Domain.](./media/workday-inbound-tutorial/wd_isu_07.png "Beveiligingsbeleid voor domeinen")  
-
-     >[!div class="mx-imgBorder"]
-     >![Schermopname met het rapport Domain Security Configuration met een lijst van geselecteerde domeinen.](./media/workday-inbound-tutorial/wd_isu_08.png "Beveiligingsbeleid voor domeinen") 
-
-     Klik op **OK**.
-
-3. In het rapport dat wordt weergegeven, selecteert u het beletselteken (...) naast **External Account Provisioning** en klikt u op de menuoptie **Domain -> Edit Security Policy Permissions**.
+1. Nadat de bovenstaande stappen zijn voltooid, wordt het scherm machtigingen weergegeven zoals hieronder:
    >[!div class="mx-imgBorder"]
-   >![Beveiligingsbeleid voor domeinen](./media/workday-inbound-tutorial/wd_isu_09.png "Beveiligingsbeleid voor domeinen")  
+   >![Alle beveiligingsmachtigingen voor domeinen](./media/workday-inbound-tutorial/all-domain-security-permissions.png)
 
-4. Scrol op de pagina **Edit Domain Security Policy Permissions** omlaag naar de sectie **Integration Permissions**. Klik op het plusteken (+) om de integratiesysteemgroep toe te voegen aan de lijst met beveiligingsgroepen met de integratiemachtigingen **Get** en **Put**.
-   >[!div class="mx-imgBorder"]
-   >![Schermopname met de sectie Integration Permissons gemarkeerd.](./media/workday-inbound-tutorial/wd_isu_10.png "Machtiging voor bewerken")  
-
-5. Klik op het plusteken (+) om de integratiesysteemgroep toe te voegen aan de lijst met beveiligingsgroepen met de integratiemachtigingen **Get** en **Put**.
-
-   >[!div class="mx-imgBorder"]
-   >![Machtiging bewerken](./media/workday-inbound-tutorial/wd_isu_11.png "Machtiging voor bewerken")  
-
-6. Herhaal stappen 3-5 hierboven voor elk van deze resterende beveiligingsbeleidsregels:
-
-   | Bewerking | Beveiligingsbeleid voor domeinen |
-   | ---------- | ---------- |
-   | Get en Put | Worker Data: Public Worker Reports |
-   | Get en Put | Person Data: Work Contact Information |
-   | Ophalen | Worker Data: Workers |
-   | Ophalen | Worker Data: All Positions |
-   | Ophalen | Worker Data: Current Staffing Information |
-   | Ophalen | Worker Data: Business Title on Worker Profile |
-   | Get en Put | Workday Accounts |
+1. Klik op **OK** en **Gereed** op het volgende scherm om de configuratie te voltooien. 
 
 ### <a name="configuring-business-process-security-policy-permissions"></a>Machtigingen voor beveiligingsbeleid voor bedrijfsprocessen configureren
 
@@ -240,35 +226,9 @@ In deze stap verleent u aan de beveiligingsgroep machtigingen voor beveiligingsb
    >[!div class="mx-imgBorder"]
    >![Openstaande beveiliging activeren](./media/workday-inbound-tutorial/wd_isu_18.png "Openstaande beveiliging activeren")  
 
-## <a name="configure-active-directory-service-account"></a>Active Directory-serviceaccount configureren
+## <a name="provisioning-agent-installation-prerequisites"></a>Installatievereisten voor inrichtingsagent
 
-In dit gedeelte worden de machtigingen voor AD-serviceaccounts beschreven die nodig zijn voor het installeren en configureren van de inrichtingsagent van Azure AD Connect.
-
-### <a name="permissions-required-to-run-the-provisioning-agent-installer"></a>Benodigde machtigingen voor het uitvoeren van het installatieprogramma van de inrichtingsagent
-Wanneer u hebt vastgesteld wat de Windows-server is die als host fungeert voor de inrichtingsagent, meldt u zich bij de serverhost aan met de referenties van de lokale beheerder of de domeinbeheerder. Tijdens de installatie van de agent worden er referentiebestanden gemaakt in de opslag voor beveiligde sleutels. Daarnaast wordt de configuratie van het serviceprofiel op de hostserver bijgewerkt. Hiervoor is beheerderstoegang nodig op de server die als host fungeert voor de agent. 
-
-### <a name="permissions-required-to-configure-the-provisioning-agent-service"></a>Benodigde machtigingen voor het configureren van de service voor de inrichtingsagent
-Gebruik de volgende stappen om een serviceaccount in te stellen dat kan worden gebruikt voor bewerkingen van de inrichtingsagent. 
-1. Open op de AD-domeincontroller de module *Active Directory: gebruikers en computers*. 
-2. Maak een nieuwe domeingebruiker (bijvoorbeeld: *provAgentAdmin*).  
-3. Klik met de rechtermuisknop op de naam van de organisatie-eenheid of het domein en selecteer *Beheer delegeren* om de wizard *Delegering van beheer* te openen. 
-
-> [!NOTE] 
-> Als u de inrichtingsagent vanwege testdoeleinden alleen wilt gebruiken voor het maken en inlezen van gebruikers uit een bepaalde organisatie-eenheid, adviseren we om het beheer tijdens de testruns op het juiste OE-niveau te delegeren.
-
-4. Klik op **Volgende** op het welkomstscherm. 
-5. Voeg op het scherm **Gebruikers of groepen selecteren** de domeingebruiker toe die u in stap 2 hebt gemaakt. Klik op **Volgende**.
-   >[!div class="mx-imgBorder"]
-   >![Scherm om gebruiker toe te voegen](./media/workday-inbound-tutorial/delegation-wizard-01.png "Scherm om gebruiker toe te voegen")
-
-6. Selecteer de volgende taken op het scherm **Te delegeren taken**: 
-   * Gebruikersaccounts maken, verwijderen en beheren
-   * Alle gebruikersgegevens lezen
-
-   >[!div class="mx-imgBorder"]
-   >![Scherm met taken](./media/workday-inbound-tutorial/delegation-wizard-02.png "Scherm met taken")
-
-7. Klik op **Volgende** en **Opslaan** om de configuratie op te slaan.
+Raadpleeg de [installatievereisten voor de inrichtingsagent](../cloud-provisioning/how-to-prerequisites.md) voordat u naar het volgende gedeelte gaat. 
 
 ## <a name="configuring-user-provisioning-from-workday-to-active-directory"></a>Inrichting van gebruikers van Workday bij Active Directory configureren
 
@@ -305,72 +265,9 @@ In deze sectie vindt u de stappen voor het inrichten van gebruikersaccounts van 
 
 ### <a name="part-2-install-and-configure-on-premises-provisioning-agents"></a>Deel 2: On-premises inrichtingsagent(en) installeren en configureren
 
-Als u gebruikers wilt inrichten bij on-premises Active Directory, moet de inrichtingsagent zijn geïnstalleerd op een server met .NET 4.7.1+ Framework en netwerktoegang tot de gewenste Active Directory-domeinen.
+Als u gebruikers wilt inrichten bij on-premises Active Directory, moet de inrichtingsagent zijn geïnstalleerd op een server met netwerktoegang tot de gewenste Active Directory-domeinen.
 
-> [!TIP]
-> U kunt de versie van .NET Framework op uw server controleren aan de hand van [deze instructies](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
-> Als op de server niet .NET 4.7.1 of hoger is geïnstalleerd, kunt u [hier](https://support.microsoft.com/help/4033342/the-net-framework-4-7-1-offline-installer-for-windows) de juiste versie downloaden.  
-
-Plaats het installatieprogramma van de gedownloade agent op de serverhost en volg de onderstaande stappen om de configuratie van de agent te voltooien.
-
-1. Meld u aan bij de Windows-server waarop u de nieuwe agent wilt installeren.
-
-1. Start het installatieprogramma voor de inrichtingsagent, ga akkoord met de voorwaarden en klik op de knop **Installeren**.
-
-   >[!div class="mx-imgBorder"]
-   >![Installatiescherm](./media/workday-inbound-tutorial/pa_install_screen_1.png "Installatiescherm")
-
-1. Als de installatie is voltooid, wordt de wizard gestart en ziet u het scherm **Verbinding maken met Azure AD**. Klik op de knop **Verifiëren** om verbinding te maken met uw Azure AD-exemplaar.
-
-   >[!div class="mx-imgBorder"]
-   >![Verbinding maken met Azure AD](./media/workday-inbound-tutorial/pa_install_screen_2.png "Verbinding maken met Azure AD")
-
-1. Gebruik de referenties van de beheerder voor hybride identiteit om u te verifiëren bij uw Azure AD-exemplaar.
-
-   >[!div class="mx-imgBorder"]
-   >![Verifiëren met beheerdersreferenties](./media/workday-inbound-tutorial/pa_install_screen_3.png "Beheerdersreferenties")
-
-   > [!NOTE]
-   > De referenties van de Azure AD-beheerder worden alleen gebruikt om verbinding te maken met uw Azure AD-tenant. De referenties worden niet lokaal opgeslagen op de server door de agent.
-
-1. Als de verificatie bij Azure AD is gelukt, ziet u het scherm **Verbinding maken met Active Directory**. In deze stap voert u de naam van uw AD-domein in en klikt u op de knop **Directory toevoegen**.
-
-   >[!div class="mx-imgBorder"]
-   >![Directory toevoegen](./media/workday-inbound-tutorial/pa_install_screen_4.png "Directory toevoegen")
-
-1. U wordt nu gevraagd om de referenties in te voeren die vereist zijn om verbinding te maken met het AD-domein. Op hetzelfde scherm kunt u de optie **Prioriteit domeincontroller selecteren** inschakelen om domein controllers op te geven die de agent moet gebruiken voor het verzenden van inrichtingsaanvragen.
-
-   >[!div class="mx-imgBorder"]
-   >![Referenties voor domein](./media/workday-inbound-tutorial/pa_install_screen_5.png)
-
-1. Als het domein is geconfigureerd, ziet u in het installatieprogramma een lijst met geconfigureerde domeinen. Op dit scherm kunt u stappen 5 en 6 herhalen om meer domeinen toe te voegen. Klik op **Volgende** om de agent te registreren.
-
-   >[!div class="mx-imgBorder"]
-   >![Geconfigureerde domeinen](./media/workday-inbound-tutorial/pa_install_screen_6.png "Geconfigureerde domeinen")
-
-   > [!NOTE]
-   > Als u meerdere AD-domeinen hebt (bijvoorbeeld na.contoso.com en emea.contoso.com), moet u elk domein afzonderlijk toevoegen aan de lijst.
-   > Het is niet voldoende om alleen het bovenliggende domein (bijvoorbeeld contoso.com) toe te voegen. U moet elk onderliggend domein bij de agent registreren.
-
-1. Controleer de configuratiegegevens en klik op **Bevestigen** om de agent te registreren.
-
-   >[!div class="mx-imgBorder"]
-   >![Controlescherm](./media/workday-inbound-tutorial/pa_install_screen_7.png "Controlescherm")
-
-1. In de configuratiewizard wordt de voortgang van de registratie van de agent weergegeven.
-
-   >[!div class="mx-imgBorder"]
-   >![Registratie van agent](./media/workday-inbound-tutorial/pa_install_screen_8.png "Registratie van agent")
-
-1. Als de registratie van de agent is voltooid, klikt u op **Afsluiten** om de wizard af te sluiten.
-
-   >[!div class="mx-imgBorder"]
-   >![Laatste scherm van wizard](./media/workday-inbound-tutorial/pa_install_screen_9.png "Laatste scherm van wizard")
-
-1. Controleer de installatie van de agent en zorg ervoor dat deze wordt uitgevoerd door de module Services te openen en te zoeken naar de service met de naam 'Microsoft Azure AD Connect Provisioning Agent'.
-
-   >[!div class="mx-imgBorder"]
-   >![Schermopname van Microsoft Azure AD Connect Provisioning Agent die in Services wordt uitgevoerd.](./media/workday-inbound-tutorial/services.png)
+Plaats het installatieprogramma van de gedownloade agent op de serverhost en volg de stappen die zijn vermeld [in het gedeelte **Agent installeren**](../cloud-provisioning/how-to-install.md) om de configuratie van de agent te voltooien.
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-workday-and-active-directory"></a>Deel 3: Connectiviteit met Workday en Active Directory configureren
 In deze stap zetten we een verbinding op met Workday en Active Directory in Azure Portal. 
@@ -514,24 +411,22 @@ In deze sectie configureert u hoe gebruikersgegevens stromen van Workday naar Ac
 | **LocalReference** |  preferredLanguage  |     |  Maken en bijwerken |                                               
 | **Switch(\[Municipality\], "OU=Default Users,DC=contoso,DC=com", "Dallas", "OU=Dallas,OU=Users,DC=contoso,DC=com", "Austin", "OU=Austin,OU=Users,DC=contoso,DC=com", "Seattle", "OU=Seattle,OU=Users,DC=contoso,DC=com", "Londen", "OU=Londen,OU=Users,DC=contoso,DC=com")**  | parentDistinguishedName     |     |  Maken en bijwerken |
 
-Als de configuratie van kenmerktoewijzingen is voltooid, kunt u [de service voor het inrichten van gebruikers inschakelen en starten](#enable-and-launch-user-provisioning).
+Nadat de configuratie van de kenmerktoewijzing is voltooid, kunt u de inrichting testen voor een enkele gebruiker met [inrichting on demand](../app-provisioning/provision-on-demand.md) en vervolgens kunt u [de gebruikersinrichtingsservice inschakelen en starten](#enable-and-launch-user-provisioning).
 
 ## <a name="enable-and-launch-user-provisioning"></a>Gebruikersinrichting inschakelen en starten
 
-Zodra de configuratie van de Workday-inrichtings-app is voltooid, kunt u de inrichtingsservice inschakelen in Azure Portal.
+Nadat de configuratie van de Workday-inrichtings-app zijn voltooid en u inrichting voor een enkele gebruiker met [inrichting on demand](../app-provisioning/provision-on-demand.md) hebt geverifieerd, kunt u de inrichtingsservice in de Azure Portal inschakelen.
 
 > [!TIP]
-> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of er problemen zijn met Workday-gegevens, kan de inrichtingstaak mislukken en in de quarantaine-status gaan. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
+> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of er problemen zijn met Workday-gegevens, kan de inrichtingstaak mislukken en in de quarantaine-status gaan. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers met [inrichtin on demand](../app-provisioning/provision-on-demand.md) voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
 
-1. Stel op het tabblad **Inrichten** de optie **Inrichtingsstatus** in op **Aan**.
+1. Ga naar de Blade **Inrichten** en klik op **Inrichting starten**.
 
-2. Klik op **Opslaan**.
+1. De eerste synchronisatie wordt nu gestart. Deze kan een wisselend aantal uren duren, afhankelijk van het aantal gebruikers in de Workday-tenant. U kunt de voortgang van de synchronisatiecyclus bijhouden door middel van de voortgangsbalk. 
 
-3. De eerste synchronisatie wordt nu gestart. Deze kan een wisselend aantal uren duren, afhankelijk van het aantal gebruikers in de Workday-tenant. 
+1. Ga naar het tabblad **Auditlogboeken** in Azure Portal om te zien welke acties de inrichtingsservice heeft uitgevoerd. In de auditlogboeken worden alle afzonderlijke synchronisatiegebeurtenissen weergegeven die door de inrichtingsservice zijn uitgevoerd, bijvoorbeeld welke gebruikers zijn ingelezen vanuit SuccessFactors en vervolgens zijn toegevoegd aan of bijgewerkt in Active Directory. Raadpleeg de sectie Tips voor probleemoplossing voor informatie over het controleren van de auditlogboeken en het oplossen van inrichtingsfouten.
 
-4. Ga naar het tabblad **Auditlogboeken** in Azure Portal om te zien welke acties de inrichtingsservice heeft uitgevoerd. In de auditlogboeken worden alle afzonderlijke synchronisatiegebeurtenissen weergegeven die door de inrichtingsservice zijn uitgevoerd, bijvoorbeeld welke gebruikers zijn ingelezen vanuit SuccessFactors en vervolgens zijn toegevoegd aan of bijgewerkt in Active Directory. Raadpleeg de sectie Tips voor probleemoplossing voor informatie over het controleren van de auditlogboeken en het oplossen van inrichtingsfouten.
-
-5. Zodra de eerste synchronisatie is voltooid, wordt er een rapport met een overzicht van de controle weergegeven op het tabblad **Inrichten**, zoals u hieronder kunt zien.
+1. Zodra de eerste synchronisatie is voltooid, wordt er een rapport met een overzicht van de controle weergegeven op het tabblad **Inrichten**, zoals u hieronder kunt zien.
    > [!div class="mx-imgBorder"]
    > ![Voortgangsbalk van het inrichten](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)
 
@@ -540,12 +435,10 @@ Zodra de configuratie van de Workday-inrichtings-app is voltooid, kunt u de inri
 * **Vragen over mogelijkheden van oplossing**
   * [Hoe stelt de oplossing het wachtwoord in voor een nieuw gebruikersaccount in Active Directory als een nieuwe werknemer wordt verwerkt vanuit Workday?](#when-processing-a-new-hire-from-workday-how-does-the-solution-set-the-password-for-the-new-user-account-in-active-directory)
   * [Biedt de oplossing ondersteuning voor het verzenden van e-mailmeldingen als de inrichtingsbewerkingen zijn voltooid?](#does-the-solution-support-sending-email-notifications-after-provisioning-operations-complete)
-  * [Hoe kan ik het afleveren van wachtwoorden voor nieuwe medewerkers beheren en een veilig mechanisme aanbieden om hun wachtwoord opnieuw in te stellen?](#how-do-i-manage-delivery-of-passwords-for-new-hires-and-securely-provide-a-mechanism-to-reset-their-password)
   * [Worden gebruikersprofielen van Workday opgeslagen in de Azure AD-cloud of op het niveau van de inrichtingsagent?](#does-the-solution-cache-workday-user-profiles-in-the-azure-ad-cloud-or-at-the-provisioning-agent-layer)
   * [Ondersteunt de oplossing de toewijzing van on-premises AD-groepen aan de gebruiker?](#does-the-solution-support-assigning-on-premises-ad-groups-to-the-user)
   * [Welke Workday-API's gebruikt de oplossing voor het opvragen en bijwerken van werknemersprofielen in Workday?](#which-workday-apis-does-the-solution-use-to-query-and-update-workday-worker-profiles)
   * [Kan ik mijn Workday HCM-tenant configureren met twee Azure AD-tenants?](#can-i-configure-my-workday-hcm-tenant-with-two-azure-ad-tenants)
-  * [Waarom wordt het gebruik van de app voor het inrichten van Workday-gebruikers in Azure AD niet ondersteund wanneer Azure AD Connect is geïmplementeerd?](#why-workday-to-azure-ad-user-provisioning-app-is-not-supported-if-we-have-deployed-azure-ad-connect)
   * [Hoe kan ik verbeteringen voorstellen of nieuwe functies aanvragen met betrekking tot de integratie van Workday en Azure AD?](#how-do-i-suggest-improvements-or-request-new-features-related-to-workday-and-azure-ad-integration)
 
 * **Vragen over inrichtingsagent**
@@ -577,19 +470,13 @@ Wanneer de on-premises inrichtingsagent een aanvraag krijgt voor het maken van e
 
 Nee, het verzenden van e-mailmeldingen na het voltooien van inrichtingsbewerkingen wordt niet ondersteund in de huidige release.
 
-#### <a name="how-do-i-manage-delivery-of-passwords-for-new-hires-and-securely-provide-a-mechanism-to-reset-their-password"></a>Hoe kan ik het afleveren van wachtwoorden voor nieuwe medewerkers beheren en een veilig mechanisme aanbieden om hun wachtwoord opnieuw in te stellen?
-
-Een van de laatste stappen bij het inrichten van nieuwe AD-accounts is het aanleveren van het tijdelijke wachtwoord dat is toegewezen aan het AD-account van de gebruiker. Veel ondernemingen gebruiken nog steeds de traditionele benadering van het sturen van het tijdelijke wachtwoord aan de manager van de gebruiker, die het wachtwoord vervolgens doorgeeft aan de nieuwe of tijdelijke werknemer. Dit proces is inherent kwetsbaar en er is dan ook een optie beschikbaar om een betere benadering te implementeren met behulp van Azure AD.
-
-Als onderdeel van het wervingsproces voeren HR-teams doorgaans een controle uit van nieuwe werknemers en wordt ook het mobiele nummer van nieuwe werknemers geverifieerd. De integratie Workday to AD User Provisioning maakt het mogelijk om de gebruiker vanaf de dag van indiensttreding toegang te bieden tot een voorziening om zelf het toegewezen wachtwoord te wijzigen. Dit is mogelijk door het kenmerk 'Mobiele nummer' van de nieuwe werknemer vanuit Workday door te zetten naar AD en van daaruit naar Azure AD met behulp van Azure AD Connect. Zodra het mobiele nummer aanwezig is in Azure AD, kunt u [SSPR (Self-Service Password Reset)](../authentication/howto-sspr-authenticationdata.md) inschakelen voor het account van de gebruiker, zodat deze vanaf dag 1 het geregistreerde en geverifieerde mobiele nummer kan gebruiken voor verificatie.
-
 #### <a name="does-the-solution-cache-workday-user-profiles-in-the-azure-ad-cloud-or-at-the-provisioning-agent-layer"></a>Worden gebruikersprofielen van Workday opgeslagen in de Azure AD-cloud of op het niveau van de inrichtingsagent?
 
 Nee, in de oplossing wordt geen cache met gebruikersprofielen bijgehouden. De inrichtingsservice van Azure AD fungeert als een gegevensverwerker. De service leest gegevens in uit Workday en schrijft deze weg naar de doel-Active Directory of Azure AD. Zie de sectie [Persoonlijke gegevens beheren](#managing-personal-data) voor informatie over de privacy van gebruikers en het bewaren van gegevens.
 
 #### <a name="does-the-solution-support-assigning-on-premises-ad-groups-to-the-user"></a>Ondersteunt de oplossing de toewijzing van on-premises AD-groepen aan de gebruiker?
 
-Deze functionaliteit wordt momenteel niet ondersteund. De aanbevolen tijdelijke oplossing is om een PowerShell-script te implementeren waarmee het API-eindpunt van Microsoft Graph wordt bevraagd voor [gegevens uit het auditlogboek](/graph/api/resources/azure-ad-auditlog-overview?view=graph-rest-beta) en om die te gebruiken om scenario's zoals groepstoewijzing te activeren. Dit PowerShell-script kan worden gekoppeld aan een taakplanner en worden geïmplementeerd op dezelfde computer als die waarop de inrichtingsagent wordt uitgevoerd.  
+Deze functionaliteit wordt momenteel niet ondersteund. De aanbevolen tijdelijke oplossing is om een PowerShell-script te implementeren waarmee het API-eindpunt van Microsoft Graph wordt bevraagd voor [gegevens uit het auditlogboek](/graph/api/resources/azure-ad-auditlog-overview) en om die te gebruiken om scenario's zoals groepstoewijzing te activeren. Dit PowerShell-script kan worden gekoppeld aan een taakplanner en worden geïmplementeerd op dezelfde computer als die waarop de inrichtingsagent wordt uitgevoerd.  
 
 #### <a name="which-workday-apis-does-the-solution-use-to-query-and-update-workday-worker-profiles"></a>Welke Workday-API's gebruikt de oplossing voor het opvragen en bijwerken van werknemersprofielen in Workday?
 
@@ -611,10 +498,6 @@ Ja, deze configuratie wordt ondersteund. Dit zijn de algemene stappen voor het c
 * Implementeer inrichtingsagent 2 en registreer deze bij Azure AD-tenant 2.
 * Op basis van de onderliggende domeinen die elke inrichtingsagent gaat beheren, configureert u elke agent met een of meer domeinen. Eén agent kan meerdere domeinen beheren.
 * Stel in Azure Portal de app Workday to AD User Provisioning in voor elke tenant en configureer deze met de respectieve domeinen.
-
-#### <a name="why-workday-to-azure-ad-user-provisioning-app-is-not-supported-if-we-have-deployed-azure-ad-connect"></a>Waarom wordt het gebruik van de app voor het inrichten van Workday-gebruikers in Azure AD niet ondersteund wanneer Azure AD Connect is geïmplementeerd?
-
-Als Azure AD wordt gebruikt in de hybride modus (en dus een combinatie van cloudgebruikers en on-premises gebruikers bevat), is het belangrijk dat de 'autoriteitsbron' duidelijk is omschreven. Bij hybride scenario's is meestal noodzakelijk om Azure AD Connect te implementeren. Wanneer Azure AD Connect is geïmplementeerd, is on-premises AD de autoriteitsbron. Als de connector voor Workday naar Azure AD wordt toegevoegd aan de mix, kan dit een situatie tot gevolg hebben waarin de waarden die zijn ingesteld door Azure AD Connect mogelijk worden overschreven door waarden van Workday-kenmerken. Het gebruik van de app voor het inrichten van Workday-gebruikers in Azure AD wordt om die reden niet ondersteund wanneer Azure AD Connect is geïmplementeerd. In dergelijke situaties adviseren we om de app voor het inrichten van Workday-gebruikers in AD te gebruiken voor het binnenhalen van gebruikers in on-premises AD en deze vervolgens te synchroniseren met Azure AD met behulp van Azure AD Connect.
 
 #### <a name="how-do-i-suggest-improvements-or-request-new-features-related-to-workday-and-azure-ad-integration"></a>Hoe kan ik verbeteringen voorstellen of nieuwe functies aanvragen met betrekking tot de integratie van Workday en Azure AD?
 
@@ -845,35 +728,69 @@ In deze sectie vindt u specifieke richtlijnen voor het oplossen van problemen me
 
 In deze sectie worden de volgende aspecten van het oplossen van problemen behandeld:
 
+* [Inrichtingsagent configureren voor het verzenden van Logboeken](#configure-provisioning-agent-to-emit-event-viewer-logs)
 * [Windows Logboeken instellen voor het oplossen van problemen met agenten](#setting-up-windows-event-viewer-for-agent-troubleshooting)
 * [Auditlogboeken in Azure Portal instellen voor het oplossen van problemen met services](#setting-up-azure-portal-audit-logs-for-service-troubleshooting)
 * [Informatie over logboeken over het maken van AD-gebruikersaccounts](#understanding-logs-for-ad-user-account-create-operations)
 * [Informatie over logboeken over het bijwerken van managers](#understanding-logs-for-manager-update-operations)
 * [Veelvoorkomende fouten oplossen](#resolving-commonly-encountered-errors)
 
+### <a name="configure-provisioning-agent-to-emit-event-viewer-logs"></a>Inrichtingsagent configureren voor het verzenden van Logboeken
+1. Aanmelden bij de Windows-server waarop de inrichtingsagent is geïmplementeerd
+1. Stop de **Microsoft Azure AD Connect-inrichtingsagent**.
+1. Maak een kopie van het oorspronkelijke configuratiebestand: *C:\Program Files\Microsoft Azure AD Connect Provisioning Agent\AADConnectProvisioningAgent.exe.config*.
+1. Vervang het bestaande gedeelte `<system.diagnostics>` door het volgende. 
+   * De listener-config **etw** verzendt berichten naar de Logboeken
+   * De listener-config **textWriterListener** verzendt traceringsberichten naar het bestand *ProvAgentTrace.log*. Verwijder de opmerking bij de regels met betrekking tot textWriterListener alleen voor geavanceerde probleemoplossing. 
+
+   ```xml
+     <system.diagnostics>
+         <sources>
+         <source name="AAD Connect Provisioning Agent">
+             <listeners>
+             <add name="console"/>
+             <add name="etw"/>
+             <!-- <add name="textWriterListener"/> -->
+             </listeners>
+         </source>
+         </sources>
+         <sharedListeners>
+         <add name="console" type="System.Diagnostics.ConsoleTraceListener" initializeData="false"/>
+         <add name="etw" type="System.Diagnostics.EventLogTraceListener" initializeData="Azure AD Connect Provisioning Agent">
+             <filter type="System.Diagnostics.EventTypeFilter" initializeData="All"/>
+         </add>
+         <!-- <add name="textWriterListener" type="System.Diagnostics.TextWriterTraceListener" initializeData="C:/ProgramData/Microsoft/Azure AD Connect Provisioning Agent/Trace/ProvAgentTrace.log"/> -->
+         </sharedListeners>
+     </system.diagnostics>
+
+   ```
+1. Start de **Microsoft Azure AD Connect-inrichtingsagent**.
+
 ### <a name="setting-up-windows-event-viewer-for-agent-troubleshooting"></a>Windows Logboeken instellen voor het oplossen van problemen met agenten
 
-* Meld u aan bij de Windows-server waarop de inrichtingsagent is geïmplementeerd.
-* Open de bureaublad-app **Windows Server Logboeken**.
-* Selecteer **Windows-logboeken > Toepassing**.
-* Gebruik de optie **Huidig logboek filteren...** om alle gebeurtenissen weer te geven die zijn vastgelegd onder de bron **AAD.Connect.ProvisioningAgent** en sluit gebeurtenissen met gebeurtenis-id 5 uit door het filter '5' op te geven zoals hieronder wordt weergegeven.
+1. Meld u aan bij de Windows-server waarop de inrichtingsagent is geïmplementeerd.
+1. Open de bureaublad-app **Windows Server Logboeken**.
+1. Selecteer **Windows-logboeken > Toepassing**.
+1. Gebruik de optie **Huidig logboek filteren...** om alle gebeurtenissen weer te geven die zijn vastgelegd onder de bron **Azure AD Connect-inrichtingsagent** en sluit gebeurtenissen met gebeurtenis-id 5 uit door het filter '5' op te geven zoals hieronder wordt weergegeven.
+   > [!NOTE]
+   > Met gebeurtenis-id 5 worden bootstrap-berichten van de agent naar de Azure AD-cloudservice vastgelegd en daarom filteren we die tijdens de analyse van de logboekbestanden. 
 
-  ![Windows Logboeken](media/workday-inbound-tutorial/wd_event_viewer_01.png))
+   ![Windows Logboeken](media/workday-inbound-tutorial/wd_event_viewer_01.png)
 
-* Klik op **OK** en sorteer de resultaten op de kolom **Datum en tijd**.
+1. Klik op **OK** en sorteer de resultaten op de kolom **Datum en tijd**.
 
 ### <a name="setting-up-azure-portal-audit-logs-for-service-troubleshooting"></a>Auditlogboeken in Azure Portal instellen voor het oplossen van problemen met services
 
-* Start [Azure Portal](https://portal.azure.com)en ga naar het gedeelte **Auditlogboeken** van de toepassing voor het inrichten van Workday-gebruikers.
-* Gebruik de knop **Kolommen** op de pagina Auditlogboeken om alleen de volgende kolommen op te nemen in de weergave (Datum, Activiteit, Status en Reden van de status). Deze configuratie zorgt ervoor dat u zich alleen kunt concentreren op gegevens die relevant zijn voor het oplossen van problemen.
+1. Start [Azure Portal](https://portal.azure.com)en ga naar het gedeelte **Auditlogboeken** van de toepassing voor het inrichten van Workday-gebruikers.
+1. Gebruik de knop **Kolommen** op de pagina Auditlogboeken om alleen de volgende kolommen op te nemen in de weergave (Datum, Activiteit, Status en Reden van de status). Deze configuratie zorgt ervoor dat u zich alleen kunt concentreren op gegevens die relevant zijn voor het oplossen van problemen.
 
-  ![Kolommen van auditlogboek](media/workday-inbound-tutorial/wd_audit_logs_00.png)
+   ![Kolommen van auditlogboek](media/workday-inbound-tutorial/wd_audit_logs_00.png)
 
-* Gebruik de queryparameters **Doel** en **Datumbereik** om de weergave te filteren. 
-  * Stel de queryparameter **Doel** in op de werknemer-id ('Worker ID' of 'Employee ID') van het werknemersobject uit Workday.
-  * Stel **Datumbereik** in op de periode die u wilt onderzoeken op fouten of problemen met de inrichting.
+1. Gebruik de queryparameters **Doel** en **Datumbereik** om de weergave te filteren. 
+   * Stel de queryparameter **Doel** in op de werknemer-id ('Worker ID' of 'Employee ID') van het werknemersobject uit Workday.
+   * Stel **Datumbereik** in op de periode die u wilt onderzoeken op fouten of problemen met de inrichting.
 
-  ![Filters voor auditlogboek](media/workday-inbound-tutorial/wd_audit_logs_01.png)
+   ![Filters voor auditlogboek](media/workday-inbound-tutorial/wd_audit_logs_01.png)
 
 ### <a name="understanding-logs-for-ad-user-account-create-operations"></a>Informatie over logboeken over het maken van AD-gebruikersaccounts
 

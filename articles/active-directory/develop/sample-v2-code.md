@@ -12,12 +12,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 169a8dba979571a5f4b8c8056737fce72db1d058
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 3baeb87bf3fe1cdcd5e9f27aed2587eed060c5a8
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629864"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064518"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt)
 
@@ -69,7 +69,7 @@ De volgende voorbeelden illustreren webtoepassingen waarmee gebruikers worden aa
 
 ## <a name="desktop-and-mobile-public-client-apps"></a>Openbare client-apps voor bureaublad en mobiel
 
-De volgende voorbeelden tonen openbare clienttoepassingen (bureaublad- of mobiele toepassingen) die de Microsoft Graph-API aanroepen, of uw eigen web-API namens een gebruiker. Met uitzondering van het voorbeeld *Bureaublad (console) met WAM*, maken al deze clienttoepassingen gebruik van Microsoft Authentication Library (MSAL).
+De volgende voorbeelden tonen openbare clienttoepassingen (bureaublad- of mobiele toepassingen) die de Microsoft Graph-API aanroepen, of uw eigen web-API namens een gebruiker. Met uitzondering van het voorbeeld *Bureaublad (console) met WAM*, maken al deze clienttoepassingen gebruik van MSAL (Microsoft Authentication Library).
 
 | Clienttoepassing | Platform | Stroom/toekenning | Roept Microsoft Graph aan | Roept een ASP.NET Core-web-API aan |
 | ------------------ | -------- |  ----------| ---------- | ------------------------- |
@@ -100,7 +100,7 @@ In de volgende voorbeelden ziet u een toepassing die de Microsoft Graph-API aanr
 
 ## <a name="headless-applications"></a>Headless-toepassingen
 
-In het volgende voorbeeld ziet u een openbare clienttoepassing die wordt uitgevoerd op een apparaat zonder webbrowser. De app kan een opdrachtregelprogramma, een app die wordt uitgevoerd op Linux of Mac, of een IoT-toepassing zijn. Het voorbeeld bevat een app die de Microsoft Graph-API aanroept, namens een gebruiker die zich interactief aanmeldt op een ander apparaat (zoals een mobiele telefoon). Deze clienttoepassing maakt gebruik van Microsoft Authentication Library (MSAL).
+In het volgende voorbeeld ziet u een openbare clienttoepassing die wordt uitgevoerd op een apparaat zonder webbrowser. De app kan een opdrachtregelprogramma, een app die wordt uitgevoerd op Linux of Mac, of een IoT-toepassing zijn. Het voorbeeld bevat een app die de Microsoft Graph-API aanroept, namens een gebruiker die zich interactief aanmeldt op een ander apparaat (zoals een mobiele telefoon). Deze clienttoepassing maakt gebruik van MSAL (Microsoft Authentication Library).
 
 | Clienttoepassing | Platform | Stroom/Toekenning | Roept Microsoft Graph aan |
 | ------------------ | -------- |  ----------| ---------- |
@@ -140,7 +140,7 @@ De volgende voorbeelden laten zien hoe u een Azure Function met HttpTrigger kunt
 | ![In deze afbeelding ziet u het ASP.NET Core-logo](media/sample-v2-code/logo_NETcore.png)</p>ASP.NET Core | ASP.NET Core-web-API (service) Azure Function van [dotnet-native-aspnetcore-v2](https://github.com/Azure-Samples/ms-identity-dotnet-webapi-azurefunctions)  |
 | ![In deze afbeelding ziet u het Python-logo](media/sample-v2-code/logo_python.png)</p>Python | Web-API (service) van [Python](https://github.com/Azure-Samples/ms-identity-python-webapi-azurefunctions) |
 | ![In deze afbeelding ziet u het Node.js-logo](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Web-API (service) van [Node.js en passport-azure-ad](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-azurefunctions) |
-| ![In deze afbeelding ziet u het Node.js-logo](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Web API (service) van [NodeJS en passport-azure-ad met namens](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) |
+| ![In deze afbeelding ziet u het Node.js-logo](media/sample-v2-code/logo_nodejs.png)</p>Node.js | Web-API (service) van [Node.js en passport-azure-ad gebruiken namens ](https://github.com/Azure-Samples/ms-identity-nodejs-webapi-onbehalfof-azurefunctions) |
 
 ## <a name="other-microsoft-graph-samples"></a>Overige Microsoft Graph-voorbeelden
 

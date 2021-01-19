@@ -11,16 +11,14 @@ ms.author: laobri
 ms.reviewer: laobri
 ms.date: 10/13/2020
 ms.custom: contperf-fy20q4, devx-track-python
-ms.openlocfilehash: b0b415cce37e464abcba9fab5ad4c1196b1b2e1b
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 8222f88f5118c4ac8f489bb05ee5ca2724dbf067
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033473"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98184081"
 ---
 # <a name="tutorial-build-an-azure-machine-learning-pipeline-for-batch-scoring"></a>Zelfstudie: Een Azure Machine Learning-pijplijn bouwen voor batchgewijs scoren
-
-
 
 In deze geavanceerde zelfstudie leert u hoe u een [Azure Machine Learning-pijplijn](concept-ml-pipelines.md) kunt bouwen om een taak voor batchgewijs scoren uit te voeren. Machine Learning-pijplijnen optimaliseren uw werkstroom met snelheid, draagbaarheid en hergebruik, zodat u zich kunt concentreren op machine learning in plaats van op infrastructuur en automatisering. Nadat u een pijplijn hebt gemaakt en gepubliceerd, configureert u een REST-eindpunt dat u kunt gebruiken om de pijplijn te activeren vanuit elke HTTP-bibliotheek en op elk platform. 
 
@@ -79,26 +77,24 @@ def_data_store = ws.get_default_datastore()
 
 ## <a name="create-dataset-objects"></a>Gegevenssetobjecten maken
 
-Wanneer u pijplijnen bouwt, worden `Dataset`-objecten gebruikt voor het lezen van gegevens uit gegevensarchieven van werkruimtes en worden `PipelineData`-objecten gebruikt voor het overzetten van tussenliggende gegevens tussen pijplijnstappen.
+Wanneer u pijplijnen bouwt, worden `Dataset`-objecten gebruikt voor het lezen van gegevens uit gegevensarchieven van werkruimtes en worden `OutputFileDatasetConfig`-objecten gebruikt voor het overzetten van tussenliggende gegevens tussen pijplijnstappen.
 
 > [!Important]
 > In het voorbeeld voor batchgewijs scoren in deze zelfstudie wordt slechts één pijplijnstap gebruikt. In gebruiksvoorbeelden met meerdere stappen bevat de typische stroom de volgende stappen:
 >
-> 1. Gebruik `Dataset`-objecten als *invoer* om onbewerkte gegevens op te halen, een transformatie uit te voeren en een `PipelineData`-object *uit te voeren*.
+> 1. Gebruik `Dataset`-objecten als *invoer* om onbewerkte gegevens op te halen, een transformatie uit te voeren, en vervolgens *uitvoeren* met een `OutputFileDatasetConfig`-object.
 >
-> 2. Gebruik het *uitvoerobject* `PipelineData` in de vorige stap als een *invoerobject*. Herhaal dit voor de volgende stappen.
+> 2. Gebruik het *uitvoerobject* `OutputFileDatasetConfig` in de vorige stap als een *invoerobject*. Herhaal dit voor de volgende stappen.
 
-In dit scenario maakt u `Dataset`-objecten die overeenkomen met de gegevensopslagmappen voor zowel de invoerafbeeldingen als de classificatielabels (y-test waarden). U maakt ook een `PipelineData`-object voor de uitvoergegevens voor batchgewijs scoren.
+In dit scenario maakt u `Dataset`-objecten die overeenkomen met de gegevensopslagmappen voor zowel de invoerafbeeldingen als de classificatielabels (y-test waarden). U maakt ook een `OutputFileDatasetConfig`-object voor de uitvoergegevens voor batchgewijs scoren.
 
 ```python
 from azureml.core.dataset import Dataset
-from azureml.pipeline.core import PipelineData
+from azureml.data import OutputFileDatasetConfig
 
 input_images = Dataset.File.from_files((batchscore_blob, "batchscoring/images/"))
 label_ds = Dataset.File.from_files((batchscore_blob, "batchscoring/labels/"))
-output_dir = PipelineData(name="scores", 
-                          datastore=def_data_store, 
-                          output_path_on_compute="batchscoring/results")
+output_dir = OutputFileDatasetConfig(name="scores")
 ```
 
 Registreer de gegevenssets in de werkruimte als u deze later opnieuw wilt gebruiken. Deze stap is optioneel.
@@ -345,7 +341,7 @@ from azureml.core import Experiment
 from azureml.pipeline.core import Pipeline
 
 pipeline = Pipeline(workspace=ws, steps=[batch_score_step])
-pipeline_run = Experiment(ws, 'batch_scoring').submit(pipeline)
+pipeline_run = Experiment(ws, 'Tutorial-Batch-Scoring').submit(pipeline)
 pipeline_run.wait_for_completion(show_output=True)
 ```
 
@@ -409,7 +405,7 @@ import requests
 rest_endpoint = published_pipeline.endpoint
 response = requests.post(rest_endpoint, 
                          headers=auth_header, 
-                         json={"ExperimentName": "batch_scoring",
+                         json={"ExperimentName": "Tutorial-Batch-Scoring",
                                "ParameterAssignments": {"process_count_per_node": 6}})
 run_id = response.json()["Id"]
 ```
@@ -422,7 +418,7 @@ De nieuwe uitvoering ziet er ongeveer hetzelfde uit als de pijplijn die u eerder
 from azureml.pipeline.core.run import PipelineRun
 from azureml.widgets import RunDetails
 
-published_pipeline_run = PipelineRun(ws.experiments["batch_scoring"], run_id)
+published_pipeline_run = PipelineRun(ws.experiments["Tutorial-Batch-Scoring"], run_id)
 RunDetails(published_pipeline_run).show()
 ```
 

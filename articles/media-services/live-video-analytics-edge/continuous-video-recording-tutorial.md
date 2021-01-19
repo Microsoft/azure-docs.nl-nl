@@ -3,12 +3,12 @@ title: Zelfstudie voor continue video-opname in de cloud en afspelen vanuit de c
 description: In deze zelfstudie leert u hoe u Azure Live Video Analytics kunt gebruiken op Azure IoT Edge om continu video in de cloud op te nemen en een deel van die video te streamen met behulp van Azure Media Services.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: c38ab1f32d1ef4e54cd8568ff17d325fabdefc31
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 8fa2b65416499e58235fa312ffdcd2d71c3cfb39
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498367"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060143"
 ---
 # <a name="tutorial-continuous-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Zelfstudie: Continue video-opname in de cloud en afspelen vanuit de cloud
 
@@ -51,6 +51,9 @@ Aan het einde van deze stappen hebt u relevante Azure-resources geïmplementeerd
 * Azure Media Services-account
 * Linux-VM in Azure, met [IoT Edge-runtime](../../iot-edge/how-to-install-iot-edge.md) geïnstalleerd
 
+> [!TIP]
+> Als u problemen ondervindt met Azure-resources die worden gemaakt, raadpleegt u onze **[probleemoplossingsgids](troubleshoot-how-to.md#common-error-resolutions)** , waarmee u enkele veelvoorkomende problemen kunt oplossen.
+
 ## <a name="concepts"></a>Concepten
 
 Zoals uitgelegd in het artikel [mediagrafiek-concept](media-graph-concept.md), kunt u met een mediagrafiek het volgende definiëren:
@@ -64,7 +67,9 @@ Zoals uitgelegd in het artikel [mediagrafiek-concept](media-graph-concept.md), k
 > [!div class="mx-imgBorder"]
 > :::image type="content" source="./media/continuous-video-recording-tutorial/continuous-video-recording-overview.svg" alt-text="Mediagrafiek":::
 
-In deze zelfstudie gebruikt u één Edge-module die is gebouwd met de [Live555 Media Server](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555) om een RTSP-camera te simuleren. In de mediagrafiek gebruikt u een [RTSP-bron](media-graph-concept.md#rtsp-source)-knooppunt om de live-feed op te halen en verzendt u deze video naar het knooppunt [Asset Sink](media-graph-concept.md#asset-sink), waarmee de video wordt opgenomen in een asset.
+In deze zelfstudie gebruikt u één Edge-module die is gebouwd met de [Live555 Media Server](https://github.com/Azure/live-video-analytics/tree/master/utilities/rtspsim-live555) om een RTSP-camera te simuleren. In de mediagrafiek gebruikt u een [RTSP-bron](media-graph-concept.md#rtsp-source)-knooppunt om de live-feed op te halen en verzendt u deze video naar het knooppunt [Asset Sink](media-graph-concept.md#asset-sink), waarmee de video wordt opgenomen in een asset. De video die wordt gebruikt in deze zelfstudie, is [een voorbeeldvideo van een knooppunt van snelwegen](https://lvamedia.blob.core.windows.net/public/camera-300s.mkv).
+<iframe src="https://www.microsoft.com/en-us/videoplayer/embed/RE4LTY4" width="640" height="320" allowFullScreen="true" frameBorder="0"></iframe>
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4LTY4]
 
 ## <a name="set-up-your-development-environment"></a>De ontwikkelomgeving instellen
 
@@ -169,14 +174,14 @@ Wanneer u de Live Video Analytics in IoT Edge-module gebruikt om de live videost
 
     > [!div class="mx-imgBorder"]
     > :::image type="content" source="./media/run-program/show-verbose-message.png" alt-text="Uitgebreid bericht tonen":::
-1. <!--In Visual Studio Code, go-->Navigeer naar src/cloud-to-device-console-app/operations.json.
+1. Navigeer naar src/cloud-to-device-console-app/operations.json.
 1. Bewerk het volgende onder het knooppunt **GraphTopologySet**:
 
     `"topologyUrl" : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json" `
 1. Controleer vervolgens of op de knooppunten **GraphInstanceSet** en **GraphTopologyDelete** de waarde van **topologyName** overeenkomt met de waarde van de eigenschap **name** in de bovenstaande graaftopologie:
 
     `"topologyName" : "CVRToAMSAsset"`  
-1. Open de [topologie](https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/topology.json) in een browser en kijk naar assetNamePattern. Om ervoor te zorgen dat uw asset een unieke naam heeft, kunt u de naam van het graafexemplaar wijzigen in het bestand operations.json (van de standaardwaarde van 'Sample-Graph-1').
+1. Open de [topologie](https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/cvr-asset/2.0/topology.json) in een browser en kijk naar assetNamePattern. Om ervoor te zorgen dat uw asset een unieke naam heeft, kunt u de naam van het graafexemplaar wijzigen in het bestand operations.json (van de standaardwaarde van 'Sample-Graph-1').
 
     `"assetNamePattern": "sampleAsset-${System.GraphTopologyName}-${System.GraphInstanceName}"`    
 1. Start een foutopsporingssessie door F5 te selecteren. In het **TERMINAL**-venster ziet u enkele berichten verschijnen.
@@ -187,7 +192,7 @@ Wanneer u de Live Video Analytics in IoT Edge-module gebruikt om de live videost
     Executing operation GraphTopologyList
     -----------------------  Request: GraphTopologyList  --------------------------------------------------
     {
-      "@apiVersion": "1.0"
+      "@apiVersion": "2.0"
     }
     ---------------  Response: GraphTopologyList - Status: 200  ---------------
     {
@@ -204,7 +209,7 @@ Wanneer u de Live Video Analytics in IoT Edge-module gebruikt om de live videost
      
      ```
      {
-       "@apiVersion": "1.0",
+       "@apiVersion": "2.0",
        "name": "Sample-Graph-1",
        "properties": {
          "topologyName": "CVRToAMSAsset",
@@ -277,7 +282,7 @@ Wanneer het graafexemplaar wordt geactiveerd, probeert het RTSP-bronknooppunt ve
 
 ### <a name="recordingstarted-event"></a>RecordingStarted-gebeurtenis
 
-Wanneer het knooppunt Assetsink begint met het opnemen van video, wordt de gebeurtenis Microsoft.Media.Graph.Operational.RecordingStarted verzonden.
+Wanneer het knooppunt AssetSink begint met het opnemen van video, wordt deze gebeurtenis van het type **Microsoft.Media.Graph.Operational.RecordingStarted** verzonden:
 
 ```
 [IoTHubMonitor] [9:42:38 AM] Message received from [lva-sample-device/lvaEdge]:
@@ -296,13 +301,13 @@ Wanneer het knooppunt Assetsink begint met het opnemen van video, wordt de gebeu
 }
 ```
 
-De sectie subject in applicationProperties verwijst naar het knooppunt van de Assetsink in de graaf, waardoor dit bericht is gegenereerd.
+De onderwerpsectie in applicationProperties verwijst naar het AssetSink-knooppunt in de grafiek, waarop dit bericht is gegenereerd.
 
 De hoofdtekstsectie bevat informatie over de uitvoerlocatie. In dit geval is het de naam van de Azure Media Services-asset waarin de video wordt vastgelegd. Noteer deze waarde.
 
 ### <a name="recordingavailable-event"></a>RecordingAvailable-gebeurtenis
 
-Zoals de naam al doet vermoeden, wordt de gebeurtenis RecordingStarted verzonden wanneer de opname is gestart, maar de videogegevens mogelijk nog niet zijn geüpload naar de asset. Wanneer het knooppunt Asset sink videogegevens naar de asset heeft geüpload, wordt de gebeurtenis Microsoft.Media.Graph.Operational.RecordingAvailable verzonden:
+Zoals de naam al doet vermoeden, wordt de gebeurtenis RecordingStarted verzonden wanneer de opname is gestart, maar de videogegevens mogelijk nog niet zijn geüpload naar de asset. Wanneer via het knooppunt AssetSink videogegevens zijn geüpload naar de asset, wordt deze gebeurtenis van het type **Microsoft.Media.Graph.Operational.RecordingAvailable** verzonden:
 
 ```
 [IoTHubMonitor] [[9:43:38 AM] Message received from [lva-sample-device/lvaEdge]:
@@ -321,7 +326,7 @@ Zoals de naam al doet vermoeden, wordt de gebeurtenis RecordingStarted verzonden
 }
 ```
 
-Deze gebeurtenis geeft aan dat er voldoende gegevens zijn weggeschreven naar de asset opdat afspeelapparaten of clients de video kunnen gaan afspelen.
+Deze gebeurtenis geeft aan dat er voldoende gegevens zijn weggeschreven naar de asset, en dat spelers of clients de video dus kunnen afspelen.
 
 De sectie subject in applicationProperties verwijst naar het knooppunt van de Assetsink in de graaf, waardoor dit bericht is gegenereerd.
 
@@ -329,7 +334,7 @@ De hoofdtekstsectie bevat informatie over de uitvoerlocatie. In dit geval is het
 
 ### <a name="recordingstopped-event"></a>RecordingStopped-gebeurtenis
 
-Wanneer u het exemplaar van de instantie uitschakelt, stopt het knooppunt Assetsink de opname van de video naar de asset. Een gebeurtenis wordt verzonden van het type Microsoft.Media.Graph.Operational.RecordingStopped:
+Wanneer u het exemplaar van de instantie uitschakelt, stopt het knooppunt Assetsink de opname van de video naar de asset. Deze gebeurtenis van het type **Microsoft.Media.Graph.Operational.RecordingStopped** wordt verzonden:
 
 ```
 [IoTHubMonitor] [11:33:31 PM] Message received from [lva-sample-device/lvaEdge]:

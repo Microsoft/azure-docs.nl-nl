@@ -2,20 +2,21 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 11/20/2020
+ms.date: 01/08/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: dc4ec31a307d559fad84392522e6847aab1e3873
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 3b537ad0100e285fe02f557b92d67e09ae615def
+ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94986914"
+ms.lasthandoff: 01/08/2021
+ms.locfileid: "98046406"
 ---
 |Naam |Beschrijving |Beleidsregels |Versie |
 |---|---|---|---|
 |[Australian Government ISM PROTECTED](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/IRAP_Audit.json) |Dit initiatief omvat de beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de ISM-controles (Information Security Manual) van de Australische overheid. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/AustralianGovernmentISM-blueprint](https://aka.ms/AustralianGovernmentISM-blueprint). |62 |3.0.0-preview |
-|[Azure Security-benchmark](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/asb_audit.json) |Dit initiatief omvat beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de aanbeveling voor Azure Security Benchmark. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/azsecbm](https://aka.ms/azsecbm). |136 |6.1.0-preview |
+|[Azure Security Benchmark v1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/asb_audit.json) |Dit initiatief omvat beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de aanbeveling voor Azure Security Benchmark v1. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/azsecbm](https://aka.ms/azsecbm). |136 |6.1.1-preview |
+|[Azure Security Benchmark v2](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/asb_v2.json) |Dit initiatief omvat beleidsregels die betrekking hebben op een subset Azure Security Benchmark v2-aanbevelingen. In geplande releases worden mogelijk extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/azsecbm](https://aka.ms/azsecbm). |181 |1.0.0-preview |
 |[Canada Federal PBMM](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/CanadaFederalPBMM_audit.json) |Dit initiatief omvat beleidsregels voor controles en implementatie van extensies van virtuele machines. De beleidsregels hebben betrekking op een subset van de federale PBMM-controles van Canada. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/canadafederalpbmm-blueprint](https://aka.ms/canadafederalpbmm-blueprint). |60 |3.0.0 |
 |[CIS Microsoft Azure Foundations Benchmark 1.1.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/CISv1_1_0_audit.json) |Dit initiatief omvat de beleidsregels voor controle. De beleidsregels hebben betrekking op een subset van de aanbevelingen voor CIS Microsoft Azure Foundations Benchmark. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/cisazure-blueprint](https://aka.ms/cisazure-blueprint). |87 |7.1.0 |
 |[FedRAMP High](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policySetDefinitions/Regulatory%20Compliance/FedRAMP_H_audit.json) |Dit initiatief omvat de beleidsregels voor controles en implementatie van extensie van virtuele machines. De beleidsregels hebben betrekking op een subset van de FedRAMP H-controles. In aanstaande releases worden extra beleidsregels toegevoegd. U vindt meer informatie op [https://aka.ms/fedramph-blueprint](https://aka.ms/fedramph-blueprint). |72 |3.0.1 |

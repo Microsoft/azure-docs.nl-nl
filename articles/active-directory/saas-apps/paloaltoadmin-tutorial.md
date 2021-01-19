@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: jeedes
-ms.openlocfilehash: 612576698d9eb40807b90e9d70f401aa6e9b864e
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 57b1d47fa40c0af4bced1e4169fe60cd759ee2f3
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92512902"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963635"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks---admin-ui"></a>Zelfstudie: Azure Active Directory-integratie met Palo Alto Networks - Admin UI
 
@@ -39,22 +39,22 @@ U hebt het volgende nodig om Azure AD-integratie met Palo Alto Networks - Admin 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
 * Palo Alto Networks - Admin UI ondersteunt door **SP** geïnitieerde eenmalige aanmelding
-* Palo Alto Networks - Admin UI ondersteunt **just-in-time** -gebruikersinrichting
+* Palo Alto Networks - Admin UI ondersteunt **just-in-time**-gebruikersinrichting
 
 ## <a name="adding-palo-alto-networks---admin-ui-from-the-gallery"></a>Palo Alto Networks - Admin UI toevoegen vanuit de galerie
 
 Als u de integratie van Palo Alto Networks - Admin UI met Azure AD wilt configureren, moet u Palo Alto Networks - Admin UI vanuit de galerie toevoegen aan de lijst met beheerde SaaS-apps.
 
 1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
-1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory** .
-1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
-1. Typ **Palo Alto Networks - Admin UI** in het zoekvak in de sectie **Toevoegen uit de galerie** .
+1. Typ **Palo Alto Networks - Admin UI** in het zoekvak in de sectie **Toevoegen uit de galerie**.
 1. Selecteer **Palo Alto Networks - Admin UI** uit het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
 ## <a name="configure-and-test-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren en testen
 
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Palo Alto Networks - Admin UI op basis van een testgebruiker met de naam **B.Simon** .
+In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Palo Alto Networks - Admin UI op basis van een testgebruiker met de naam **B.Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Palo Alto Networks - Admin UI tot stand is gebracht.
 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Palo Alto Networks – Admin UI te configureren:
@@ -70,9 +70,9 @@ Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Palo Alto 
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in Azure Portal naar de toepassingsintegratiepagina van **Palo Alto Networks – Admin UI** , zoek de sectie **Beheren** en selecteer **Eenmalige aanmelding** .
-1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding** .
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Ga in Azure Portal naar de toepassingsintegratiepagina van **Palo Alto Networks – Admin UI**, zoek de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -87,16 +87,16 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id, de antwoord-URL en de aanmeldings-URL. Neem contact op met het [ondersteuningsteam van Palo Alto Networks - Admin UI](https://support.paloaltonetworks.com/support) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
     >
-    > Poort 443 is vereist voor de **Id** en de **Antwoord-URL** , aangezien deze waarden vastliggen in de Palo Alto Firewall. Wanneer het poortnummer wordt verwijderd, treedt er een fout op tijdens het aanmelden.
+    > Poort 443 is vereist voor de **Id** en de **Antwoord-URL**, aangezien deze waarden vastliggen in de Palo Alto Firewall. Wanneer het poortnummer wordt verwijderd, treedt er een fout op tijdens het aanmelden.
 
-    > Poort 443 is vereist voor de **Id** en de **Antwoord-URL** , aangezien deze waarden vastliggen in de Palo Alto Firewall. Wanneer het poortnummer wordt verwijderd, treedt er een fout op tijdens het aanmelden.
+    > Poort 443 is vereist voor de **Id** en de **Antwoord-URL**, aangezien deze waarden vastliggen in de Palo Alto Firewall. Wanneer het poortnummer wordt verwijderd, treedt er een fout op tijdens het aanmelden.
 
 1. De toepassing Palo Alto Networks - Admin UI verwacht de SAML-asserties in een specifieke indeling. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding wordt de lijst met standaardkenmerken weergegeven.
 
     ![image](common/default-attributes.png)
 
    > [!NOTE]
-   > Omdat de kenmerkwaarden slechts voorbeelden zijn, moet u de juiste waarden opgeven voor *username* en *adminrole* . Er is een ander optioneel kenmerk, *accessdomain* , dat wordt gebruikt om beheerderstoegang tot specifieke virtuele systemen in de firewall te beperken.
+   > Omdat de kenmerkwaarden slechts voorbeelden zijn, moet u de juiste waarden opgeven voor *username* en *adminrole*. Er is een ander optioneel kenmerk, *accessdomain*, dat wordt gebruikt om beheerderstoegang tot specifieke virtuele systemen in de firewall te beperken.
 
 1. Bovendien verwacht de toepassing Palo Alto Networks - Admin UI dat er nog een paar kenmerken als SAML-antwoord worden doorgestuurd. Deze worden hieronder weergegeven. Deze kenmerken worden ook vooraf ingevuld, maar u kunt ze herzien volgens uw vereisten.
 
@@ -107,7 +107,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | | |
 
     > [!NOTE]
-    > De waarde _adminrole_ moet gelijk zijn aan de rolnaam die is geconfigureerd in **Palo Alto Networks** , zoals vermeld in stap 9. 
+    > De waarde _adminrole_ moet gelijk zijn aan de rolnaam die is geconfigureerd in **Palo Alto Networks**, zoals vermeld in stap 9. 
 
     > [!NOTE]
     > Zie de volgende artikelen voor meer informatie over de kenmerken:
@@ -127,31 +127,31 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers** .
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
 1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker** :
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
    1. Voer in het veld **Naam**`B.Simon` in.  
    1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
-   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord** .
-   1. Klik op **Create** .
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
 In dit gedeelte gaat u B.Simon toestemming geven voor gebruik van eenmalige aanmelding met Azure door haar toegang te geven tot Palo Alto Networks - Admin UI.
 
-1. Selecteer in de Azure-portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+1. Selecteer in de Azure-portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Palo Alto Networks - Admin UI** in de lijst met toepassingen.
-1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen** .
-1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol** . Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
-1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen** .
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-palo-alto-networks---admin-ui-sso"></a>Eenmalige aanmelding voor Palo Alto Networks - Admin UI configureren
 
 1. Open de gebruikersinterface voor firewallbeheer van Palo Alto Networks als beheerder in een nieuw browservenster.
 
-2. Selecteer het tabblad **Device** .
+2. Selecteer het tabblad **Device**.
 
     ![Het tabblad Device](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_admin1.png)
 
@@ -159,76 +159,76 @@ In dit gedeelte gaat u B.Simon toestemming geven voor gebruik van eenmalige aanm
 
     ![De knop voor het importeren van het bestand met metagegevens](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_admin2.png)
 
-4. Ga als volgt te werk in het venster **SAML Identify Provider Server Profile Import** :
+4. Ga als volgt te werk in het venster **SAML Identify Provider Server Profile Import**:
 
     ![Het venster SAML Identify Provider Server Profile Import](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_idp.png)
 
-    a. Typ een naam in het vak **Profile Name** (bijvoorbeeld **AzureAD Admin UI** ).
+    a. Typ een naam in het vak **Profile Name** (bijvoorbeeld **AzureAD Admin UI**).
 
     b. Selecteer **Browse** naast **Identity Provider Metadata** en selecteer het bestand metadata.xml file dat u eerder uit de Azure-portal hebt gedownload.
 
     c. Schakel het selectievakje **Validate Identity Provider Certificate** uit.
 
-    d. Selecteer **OK** .
+    d. Selecteer **OK**.
 
     e. Selecteer **Commit** om de configuraties door te voeren op de firewall.
 
-5. Selecteer in het linkerdeelvenster **SAML Identity Provider** en selecteer vervolgens het profiel van de SAML-identiteitsprovider (bijvoorbeeld **AzureAD Admin UI** ) dat u in de vorige stap hebt gemaakt.
+5. Selecteer in het linkerdeelvenster **SAML Identity Provider** en selecteer vervolgens het profiel van de SAML-identiteitsprovider (bijvoorbeeld **AzureAD Admin UI**) dat u in de vorige stap hebt gemaakt.
 
     ![Het profiel van de SAML-identiteitsprovider](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_idp_select.png)
 
-6. Ga als volgt te werk in het venster **SAML Identify Provider Server** :
+6. Ga als volgt te werk in het venster **SAML Identify Provider Server**:
 
     ![Het venster SAML Identify Provider Server](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_slo.png)
   
     a. Vervang in het vak **Identity Provider SLO URL** de eerder geïmporteerde SLO-URL door de volgende URL: `https://login.microsoftonline.com/common/wsfederation?wa=wsignout1.0`
   
-    b. Selecteer **OK** .
+    b. Selecteer **OK**.
 
-7. Selecteer in de gebruikersinterface voor firewallbeheer van Palo Alto Networks **Device** en selecteer vervolgens **Admin Roles** .
+7. Selecteer in de gebruikersinterface voor firewallbeheer van Palo Alto Networks **Device** en selecteer vervolgens **Admin Roles**.
 
-8. Selecteer de knop **Add** .
+8. Selecteer de knop **Add**.
 
-9. Geef in het venster **Admin Role Profile** , in het vak **Name** , een naam op voor de beheerdersrol (bijvoorbeeld **fwadmin** ). De naam van de beheerdersrol moet overeenkomen met de naam van het kenmerk SAML Admin Role dat is verzonden door de id-provider. De naam en waarde van de beheerdersrol zijn gemaakt in de sectie **Gebruikerskenmerken** in de Azure-portal.
+9. Geef in het venster **Admin Role Profile**, in het vak **Name**, een naam op voor de beheerdersrol (bijvoorbeeld **fwadmin**). De naam van de beheerdersrol moet overeenkomen met de naam van het kenmerk SAML Admin Role dat is verzonden door de id-provider. De naam en waarde van de beheerdersrol zijn gemaakt in de sectie **Gebruikerskenmerken** in de Azure-portal.
 
     ![Beheerdersrol van Palo Alto Networks configureren](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_adminrole.png)
   
-10. Selecteer in de gebruikersinterface voor firewallbeheer **Device** en vervolgens **Authentication Profile** .
+10. Selecteer in de gebruikersinterface voor firewallbeheer **Device** en vervolgens **Authentication Profile**.
 
-11. Selecteer de knop **Add** .
+11. Selecteer de knop **Add**.
 
-12. Ga als volgt te werk in het venster **Authentication Profile** : 
+12. Ga als volgt te werk in het venster **Authentication Profile**: 
 
     ![Het venster Authentication Profile](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_authentication_profile.png)
 
-    a. Typ een naam in het vak **Name** (bijvoorbeeld **AzureSAML_Admin_AuthProfile** ).
+    a. Typ een naam in het vak **Name** (bijvoorbeeld **AzureSAML_Admin_AuthProfile**).
 
-    b. Selecteer **SAML** in de vervolgkeuzelijst **Type** . 
+    b. Selecteer **SAML** in de vervolgkeuzelijst **Type**. 
 
-    c. Selecteer in de vervolgkeuzelijst **IdP Server Profile** het juiste serverprofiel van de SAML-identiteitsprovider (bijvoorbeeld **AzureAD Admin UI** ).
+    c. Selecteer in de vervolgkeuzelijst **IdP Server Profile** het juiste serverprofiel van de SAML-identiteitsprovider (bijvoorbeeld **AzureAD Admin UI**).
 
     c. Schakel het selectievakje **Enable Single Logout** in.
 
-    d. Voer in het vak **Admin Role Attribute** de naam van het kenmerk in (bijvoorbeeld **adminrole** ).
+    d. Voer in het vak **Admin Role Attribute** de naam van het kenmerk in (bijvoorbeeld **adminrole**).
 
-    e. Selecteer het tabblad **Advanced** en selecteer vervolgens **Add** onder **Allow List** .
+    e. Selecteer het tabblad **Advanced** en selecteer vervolgens **Add** onder **Allow List**.
 
     ![De knop Add op het tabblad Advanced](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_allowlist.png)
 
     f. Schakel het selectievakje **All** in of selecteer de gebruikers en groepen die kunnen worden geverifieerd met dit profiel.  
     Wanneer een gebruiker zich wil verifiëren, vergelijkt de firewall de gekoppelde gebruikersnaam of groep met de vermeldingen in deze lijst. Als u geen vermeldingen toevoegt, kunnen er geen gebruikers worden geverifieerd.
 
-    g. Selecteer **OK** .
+    g. Selecteer **OK**.
 
-13. Om beheerders in staat te stellen eenmalige aanmelding van SAML te gebruiken via Azure, selecteert u **Device** > **Setup** . Selecteer in het deelvenster **Setup** het tabblad **Management** en selecteer vervolgens onder **Authentication Settings** de knop **Settings** (tandwielpictogram).
+13. Om beheerders in staat te stellen eenmalige aanmelding van SAML te gebruiken via Azure, selecteert u **Device** > **Setup**. Selecteer in het deelvenster **Setup** het tabblad **Management** en selecteer vervolgens onder **Authentication Settings** de knop **Settings** (tandwielpictogram).
 
     ![De knop Settings](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_authsetup.png)
 
-14. Selecteer het profiel voor SAML-verificatie dat u in het venster Authentication Profile hebt gemaakt (bijvoorbeeld **AzureSAML_Admin_AuthProfile** ).
+14. Selecteer het profiel voor SAML-verificatie dat u in het venster Authentication Profile hebt gemaakt (bijvoorbeeld **AzureSAML_Admin_AuthProfile**).
 
     ![Het veld Authentication Profile](./media/paloaltoadmin-tutorial/tutorial_paloaltoadmin_authsettings.png)
 
-15. Selecteer **OK** .
+15. Selecteer **OK**.
 
 16. Selecteer **Commit** om de configuratie vast te leggen.
 
@@ -240,11 +240,11 @@ Palo Alto Networks - Admin UI ondersteunt just-in-time-gebruikersinrichting. Als
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-1. Klik in Azure Portal op **Deze toepassing testen** . U wordt omgeleid naar de aanmeldings-URL van Palo Alto Networks – Admin UI, waar u de aanmeldingsstroom kunt initiëren. 
+* Klik in Azure Portal op **Deze toepassing testen**. U wordt omgeleid naar de aanmeldings-URL van Palo Alto Networks – Admin UI, waar u de aanmeldingsstroom kunt initiëren. 
 
-2. Ga rechtstreeks naar de aanmeldings-URL van Palo Alto Networks – Admin UI en initieer daar de aanmeldingsstroom.
+* Ga rechtstreeks naar de aanmeldings-URL van Palo Alto Networks – Admin UI en initieer daar de aanmeldingsstroom.
 
-3. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel van Palo Alto Networks – Admin UI klikt in het toegangsvenster, moet u automatisch worden aangemeld bij de instantie van Palo Alto Networks – Admin UI waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Palo Alto Networks - Admin UI klikt in Mijn apps, wordt u automatisch aangemeld bij het exemplaar van Palo Alto Networks - Admin UI waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

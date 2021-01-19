@@ -5,12 +5,12 @@ ms.devlang: dotnet
 ms.topic: tutorial
 ms.date: 04/27/2020
 ms.custom: devx-track-csharp, mvc, cli-validate, devx-track-azurecli
-ms.openlocfilehash: 1f6757a9f78e3c400d92fd65a0795ceae7570c99
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: f043f7ed63353dcb9cf9fd26690da97b902f32a6
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347571"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108616"
 ---
 # <a name="tutorial-secure-azure-sql-database-connection-from-app-service-using-a-managed-identity"></a>Zelfstudie: Azure SQL Database-verbinding vanuit App Service beveiligen met een beheerde identiteit
 
@@ -229,6 +229,9 @@ Typ `EXIT` om terug te keren naar de Cloud Shell-prompt.
 > [!NOTE]
 > De back-end-services van beheerde identiteiten [onderhoudt ook een tokencache](overview-managed-identity.md#obtain-tokens-for-azure-resources) die het token voor een doelresource alleen bijwerkt wanneer het verloopt. Als u een fout maakt bij het configureren van uw SQL Database-machtigingen en de machtigingen probeert te wijzigen *nadat* u heeft geprobeerd om een token op te halen met uw app, krijgt u geen nieuw token met de bijgewerkte machtigingen totdat het token in de cache verloopt.
 
+> [!NOTE]
+> AAD wordt niet ondersteund voor on-premises SQL Server, waaronder MSI's. 
+
 ### <a name="modify-connection-string"></a>De verbindingsreeks wijzigen
 
 Houd er rekening mee dat dezelfde wijzigingen die u hebt aangebracht in *web.config* of *appsettings.json* werken met de beheerde identiteit, dus het enige wat u moet doen, is het verwijderen van de bestaande verbindingsreeks in App Service, die Visual Studio de eerste keer heeft gemaakt bij het implementeren van uw app. Gebruik de volgende opdracht, maar vervang *\<app-name>* door de naam van uw app.
@@ -251,7 +254,7 @@ Klik op de publicatiepagina op **Publiceren**.
 
 ```bash
 git commit -am "configure managed identity"
-git push azure master
+git push azure main
 ```
 
 Wanneer de nieuwe webpagina uw takenlijst weergeeft, maakt uw app verbinding met de database met behulp van de beheerde identiteit.

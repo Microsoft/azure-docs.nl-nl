@@ -1,35 +1,35 @@
 ---
 title: Azure Key Vault integreren met Kubernetes
 description: In deze zelfstudie gaat u geheimen openen en ophalen uit Azure Key Vault met behulp van het CSI-stuurprogramma (Secrets Store Container Storage Interface), om deze vervolgens te koppelen aan Kubernetes-pods.
-author: ShaneBala-keyvault
-ms.author: sudbalas
+author: msmbaldwin
+ms.author: mbaldwin
 ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: 2645842130b83fe7b4cfb33b9389b19a1306506d
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
+ms.openlocfilehash: f0699ed065da4c63bc88945d75a866abcfbb9053
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97756021"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121359"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Zelfstudie: De Azure Key Vault-provider voor het stuurprogramma voor het Secrets Store CSI-stuurprogramma configureren en uitvoeren op Kubernetes
 
 > [!IMPORTANT]
-> CSI-stuurprogramma is een open-sourceproject dat niet wordt ondersteund door de technische ondersteuning van Azure. Meld alle feedback en problemen met betrekking tot Key Vault-integratie met het CSI-stuurprogramma via de GitHub-koppeling onderaan de pagina. Dit hulpprogramma is bedoeld voor gebruikers om zelf te installeren in clusters en om feedback te verzamelen van onze community.
+> CSI-stuurprogramma is een open-sourceproject dat niet wordt ondersteund door de technische ondersteuning van Azure. Meld alle feedback en problemen met betrekking tot Key Vault-integratie met het CSI-stuurprogramma via [deze GitHub-koppeling](https://github.com/Azure/secrets-store-csi-driver-provider-azure/issues). Dit hulpprogramma is bedoeld voor gebruikers om zelf te installeren in clusters en om feedback te verzamelen van onze community.
+
 
 In deze zelfstudie gaat u geheimen openen en ophalen uit Azure Key Vault met behulp van het stuurprogramma Secrets Store CSI, en deze vervolgens koppelen aan Kubernetes-pods.
 
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
-> * Een service-principal maken of beheerde identiteiten gebruiken.
+> * Beheerde identiteiten gebruiken.
 > * Een Azure Kubernetes Service-cluster (AKS) implementeren met behulp van de Azure CLI.
 > * Helm en het stuurprogramma Secrets Store CSI installeren.
 > * Een Azure-sleutelkluis maken en geheimen instellen.
 > * Uw eigen SecretProviderClass-object maken.
-> * Uw service-principal toewijzen of beheerde identiteiten gebruiken.
 > * Uw pod met gekoppelde geheimen uit uw sleutelkluis implementeren.
 
 ## <a name="prerequisites"></a>Vereisten
@@ -38,22 +38,7 @@ In deze zelfstudie leert u het volgende:
 
 * Voordat u met deze zelfstudie begint, moet u [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest) installeren.
 
-## <a name="create-a-service-principal-or-use-managed-identities"></a>Een service-principal maken of beheerde identiteiten gebruiken
-
-Als u beheerde identiteiten wilt gebruiken, kunt u doorgaan naar de volgende sectie.
-
-Maak een service-principal om te bepalen welke resources vanuit uw Azure-sleutelkluis toegankelijk zijn. De toegang van deze service-principal wordt beperkt door de rollen die eraan toegewezen zijn. Met deze functie bepaalt u hoe de service-principal uw geheimen kan beheren. In het volgende voorbeeld is de naam van de service-principal *contosoServicePrincipal*.
-
-```azurecli
-az ad sp create-for-rbac --name contosoServicePrincipal --skip-assignment
-```
-Met deze bewerking wordt een reeks sleutel-waardeparen geretourneerd:
-
-![Schermopname van de app-id en het wachtwoord voor contosoServicePrincipal](../media/kubernetes-key-vault-1.png)
-
-Kopieer de **app-id** en het **wachtwoord** voor later gebruik.
-
-## <a name="flow-for-using-managed-identity"></a>Stroom voor het gebruik van Beheerde identiteit
+## <a name="use-managed-identities"></a>Beheerde identiteiten gebruiken
 
 Dit diagram illustreert de AKS/Key Vault-integratiestroom voor Beheerde identiteit:
 
@@ -66,7 +51,7 @@ U hoeft Azure Cloud Shell niet te gebruiken. De opdrachtprompt (terminal) waarop
 Voltooi de secties 'Een resource groep maken', 'AKS-cluster maken' en 'Verbinding maken met het cluster' in [Deploy an Azure Kubernetes Service cluster by using the Azure CLI](../../aks/kubernetes-walkthrough.md) (Een Azure Kubernetes Service-cluster implementeren met de Azure CLI). 
 
 > [!NOTE] 
-> Als u van plan bent een pod-identiteit te gebruiken in plaats van een service-principal, moet u deze inschakelen wanneer u het Kubernetes-cluster maakt, zoals wordt weergegeven in de volgende opdracht:
+> Als u van plan bent een pod-identiteit te gebruiken, moet u deze inschakelen wanneer u het Kubernetes-cluster maakt, zoals wordt weergegeven in de volgende opdracht:
 >
 > ```azurecli
 > az aks create -n contosoAKSCluster -g contosoResourceGroup --kubernetes-version 1.16.9 --node-count 1 --enable-managed-identity
@@ -121,7 +106,7 @@ Als u uw eigen sleutel kluis wilt maken en uw geheimen wilt instellen, volgt u d
 
 Vul in het SecretProviderClass YAML-voorbeeldbestand de ontbrekende parameters in. De volgende parameters zijn vereist:
 
-* **userAssignedIdentityID**: # [VEREIST] Als u gebruikmaakt van een service-principal, gebruikt u de client-id om op te geven welke door de gebruiker toegewezen beheerde identiteit moet worden gebruikt. Als u een door de gebruiker toegewezen identiteit gebruikt als de beheerde identiteit van de VM, geeft u de client-id van de identiteit op. Als de waarde leeg is, wordt standaard de door het systeem toegewezen identiteit op de VM gebruikt 
+* **userAssignedIdentityID**: # [VEREIST] Als de waarde leeg is, wordt standaard de door het systeem toegewezen identiteit op de VM gebruikt 
 * **keyvaultName**: De naam van de sleutelkluis
 * **objects**: De container voor alle geheime inhoud die u wilt koppelen
     * **objectName**: De naam van de geheime inhoud
@@ -147,9 +132,8 @@ spec:
   parameters:
     usePodIdentity: "false"                   # [REQUIRED] Set to "true" if using managed identities
     useVMManagedIdentity: "false"             # [OPTIONAL] if not provided, will default to "false"
-    userAssignedIdentityID: "servicePrincipalClientID"       # [REQUIRED] If you're using a service principal, use the client id to specify which user-assigned managed identity to use. If you're using a user-assigned identity as the VM's managed identity, specify the identity's client id. If the value is empty, it defaults to use the system-assigned identity on the VM
-                                                             #     az ad sp show --id http://contosoServicePrincipal --query appId -o tsv
-                                                             #     the preceding command will return the client ID of your service principal
+    userAssignedIdentityID: "servicePrincipalClientID"       # [REQUIRED]  If you're using a user-assigned identity as the VM's managed identity, specify the identity's client id. If the value is empty, it defaults to use the system-assigned identity on the VM
+                                                         
     keyvaultName: "contosoKeyVault5"          # [REQUIRED] the name of the key vault
                                               #     az keyvault show --name contosoKeyVault5
                                               #     the preceding command will display the key vault metadata, which includes the subscription ID, resource group name, key vault 
@@ -174,58 +158,18 @@ In de volgende afbeelding ziet u de uitvoer van de console voor **az keyvault sh
 
 ![Schermopname van de console-uitvoer voor 'az keyvault show --name contosoKeyVault5'](../media/kubernetes-key-vault-4.png)
 
-## <a name="assign-your-service-principal-or-use-managed-identities"></a>Uw service-principal toewijzen of beheerde identiteiten gebruiken
+## <a name="assign-managed-identity"></a>Beheerde identiteit toewijzen
 
-### <a name="assign-a-service-principal"></a>Een service-principal toewijzen
-
-Als u een service-principal gebruikt, verleent u deze machtigingen om uw sleutelkluis te openen en geheimen op te halen. Wijs de rol *Lezer* toe en geef de service-principal toestemming om geheimen *op te halen* uit uw sleutelkluis met behulp van de volgende opdracht:
-
-1. Wijs uw service-principal toe aan uw bestaande sleutelkluis. De parameter **$AZURE_CLIENT_ID** is de **appId** die u hebt gekopieerd na het maken van uw service-principal.
-    ```azurecli
-    az role assignment create --role Reader --assignee $AZURE_CLIENT_ID --scope /subscriptions/$SUBID/resourcegroups/$KEYVAULT_RESOURCE_GROUP/providers/Microsoft.KeyVault/vaults/$KEYVAULT_NAME
-    ```
-
-    De uitvoer van de opdracht wordt in de volgende afbeelding weergegeven: 
-
-    ![Schermopname van de principalId-waarde](../media/kubernetes-key-vault-5.png)
-
-1. De service-principal machtigen geven voor het ophalen van geheimen:
-    ```azurecli
-    az keyvault set-policy -n $KEYVAULT_NAME --secret-permissions get --spn $AZURE_CLIENT_ID
-    az keyvault set-policy -n $KEYVAULT_NAME --key-permissions get --spn $AZURE_CLIENT_ID
-    ```
-
-1. U hebt nu de service-principal geconfigureerd met machtigingen voor het lezen van geheimen uit uw sleutelkluis. **$AZURE_CLIENT_SECRET** is het wachtwoord van uw service-principal. Uw service-principal-referenties toevoegen als een Kubernetes-geheim dat toegankelijk is voor het stuurprogramma Secrets Store CSI:
-    ```azurecli
-    kubectl create secret generic secrets-store-creds --from-literal clientid=$AZURE_CLIENT_ID --from-literal clientsecret=$AZURE_CLIENT_SECRET
-    ```
-
-> [!NOTE] 
-> Als u de Kubernetes-pod implementeert en er een fout voor een ongeldige clientgeheim-id wordt weergegeven, hebt u mogelijk een oudere clientgeheim-id die is verlopen of opnieuw is ingesteld. U kunt dit probleem oplossen door uw geheim *secrets-store-creds* te verwijderen en een nieuw geheim te maken met de huidige clientgeheim-id. Als u uw *secrets-store-creds* wilt verwijderen, voert u de volgende opdracht uit:
->
-> ```azurecli
-> kubectl delete secrets secrets-store-creds
-> ```
-
-Als u de clientgeheim-id van uw service-principal vergeten bent, kunt u deze opnieuw instellen met de volgende opdracht:
-
-```azurecli
-az ad sp credential reset --name contosoServicePrincipal --credential-description "APClientSecret" --query password -o tsv
-```
-
-### <a name="use-managed-identities"></a>Beheerde identiteiten gebruiken
-
-Als u beheerde identiteiten gebruikt, wijst u specifieke rollen toe aan het AKS-cluster dat u hebt gemaakt. 
+Wijs specifieke rollen toe aan het AKS-cluster dat u hebt gemaakt. 
 
 1. Als u een door de gebruiker toegewezen beheerde identiteit wilt maken, vermelden of lezen, moet aan uw AKS-cluster de rol [Operator beheerde identiteit](../../role-based-access-control/built-in-roles.md#managed-identity-operator) worden toegewezen. Zorg ervoor dat de **$clientId** de client-id van het Kubernetes-cluster is. Het bereik valt onder uw Azure-abonnementsservice, met name de knooppuntresourcegroep die is gemaakt toen het AKS-cluster werd gemaakt. Met dit bereik worden alleen resources in deze groep beïnvloed door de rollen die hieronder worden toegewezen. 
 
     ```azurecli
     RESOURCE_GROUP=contosoResourceGroup
-    az role assignment create --role "Managed Identity Operator" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$RESOURCE_GROUP
     
-    az role assignment create --role "Managed Identity Operator" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$NODE_RESOURCE_GROUP
+    az role assignment create --role "Managed Identity Operator" --assignee $clientId --scope /subscriptions/<SUBID>/resourcegroups/$RESOURCE_GROUP
     
-    az role assignment create --role "Virtual Machine Contributor" --assignee $clientId --scope /subscriptions/$SUBID/resourcegroups/$NODE_RESOURCE_GROUP
+    az role assignment create --role "Virtual Machine Contributor" --assignee $clientId --scope /subscriptions/<SUBID>/resourcegroups/$RESOURCE_GROUP
     ```
 
 1. Installeer de Azure Active Directory-identiteit (Azure AD) in AKS.
@@ -242,7 +186,7 @@ Als u beheerde identiteiten gebruikt, wijst u specifieke rollen toe aan het AKS-
 
 1. Wijs de rol *Lezer* toe aan de Azure AD-identiteit die u in de voorgaande stap voor uw sleutelkluis hebt gemaakt, en verleen de identiteit machtigingen om geheimen van uw sleutelkluis op te halen. Gebruik de **clientId** en **principalId** van de Azure AD-identiteit.
     ```azurecli
-    az role assignment create --role "Reader" --assignee $principalId --scope /subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/contosoResourceGroup/providers/Microsoft.KeyVault/vaults/contosoKeyVault5
+    az role assignment create --role "Reader" --assignee $principalId --scope /subscriptions/<SUBID>/resourceGroups/contosoResourceGroup/providers/Microsoft.KeyVault/vaults/contosoKeyVault5
 
     az keyvault set-policy -n contosoKeyVault5 --secret-permissions get --spn $clientId
     az keyvault set-policy -n contosoKeyVault5 --key-permissions get --spn $clientId
@@ -253,16 +197,6 @@ Als u beheerde identiteiten gebruikt, wijst u specifieke rollen toe aan het AKS-
 Als u uw SecretProviderClass-object wilt configureren, voert u de volgende opdracht uit:
 ```azurecli
 kubectl apply -f secretProviderClass.yaml
-```
-
-### <a name="use-a-service-principal"></a>Een service-principal gebruiken
-
-Als u een service-principal gebruikt, gebruikt u de volgende opdracht om uw Kubernetes-pods te implementeren met de SecretProviderClass en de secrets-store-creds die u eerder hebt geconfigureerd. Dit zijn de implementatiesjablonen:
-* Voor [Linux](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/examples/nginx-pod-inline-volume-service-principal.yaml)
-* Voor [Windows](https://github.com/Azure/secrets-store-csi-driver-provider-azure/blob/master/examples/windows-pod-secrets-store-inline-volume-secret-providerclass.yaml)
-
-```azurecli
-kubectl apply -f updateDeployment.yaml
 ```
 
 ### <a name="use-managed-identities"></a>Beheerde identiteiten gebruiken
@@ -318,8 +252,6 @@ spec:
         readOnly: true
         volumeAttributes:
           secretProviderClass: azure-kvname
-        nodePublishSecretRef:           # Only required when using service principal mode
-          name: secrets-store-creds     # Only required when using service principal mode
 ```
 
 Voer de volgende opdracht uit om de pod te implementeren:

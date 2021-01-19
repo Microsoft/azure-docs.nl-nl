@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.custom: mvc
 ms.date: 10/12/2020
 ms.author: inhenkel
-ms.openlocfilehash: 023c4d685804b2c6c201f44ab672139d56338cdb
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: c1798ca74493ba22d29cd9ce819d469c29cd5ec3
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979101"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059565"
 ---
 # <a name="tutorial-encode-a-remote-file-based-on-url-and-stream-the-video---rest"></a>Zelfstudie: Extern bestand coderen op basis van URL en video streamen - REST
 
@@ -170,10 +170,17 @@ In de [uitvoerasset](/rest/api/media/assets) wordt het resultaat van de codering
         {
         "properties": {
             "description": "My Asset",
-            "alternateId" : "some GUID"
+            "alternateId" : "some GUID",
+            "storageAccountName": "<replace from environment file>",
+            "container": "<supply any valid container name of your choosing>"
          }
         }
         ```
+
+> [!NOTE]
+> Zorg ervoor dat u de namen van het opslagaccount en de container vervangt door de namen uit het omgevingsbestand, of geef zelf namen op.
+>
+> Wanneer u de stappen uit de rest van het artikel hebt uitgevoerd, zorgt u ervoor dat u geldige parameters opgeeft in de hoofdtekst van de aanvragen.
 
 ### <a name="create-a-transform"></a>Een transformatie maken
 
@@ -262,7 +269,7 @@ Zie [Foutcodes](/rest/api/media/jobs/get#joberrorcode).
 
 ### <a name="create-a-streaming-locator"></a>Een streaming-locator te maken
 
-Wanneer de coderingstaak is voltooid, gaat u in de volgende stap de video in de uitvoer**asset** beschikbaar maken voor weergave door clients. U kunt dit doen in twee stappen: maak eerst een [StreamingLocator](/rest/api/media/streaminglocators) en bouw vervolgens de streaming-URL's die clients kunnen gebruiken. 
+Wanneer de coderingstaak is voltooid, gaat u in de volgende stap de video in de uitvoer **asset** beschikbaar maken voor weergave door clients. U kunt dit doen in twee stappen: maak eerst een [StreamingLocator](/rest/api/media/streaminglocators) en bouw vervolgens de streaming-URL's die clients kunnen gebruiken. 
 
 Het maken van een streaming-locator wordt publiceren genoemd. De streaming-locator is standaard onmiddellijk geldig nadat u de API-aanroepen hebt uitgevoerd en totdat deze wordt verwijderd, tenzij u de optionele start- en eindtijden configureert. 
 
@@ -355,8 +362,9 @@ In deze sectie gaat u een URL voor HLS-streaming maken. URL's bestaan uit de vol
     U kunt de volgende GET-bewerking gebruiken om de hostnaam op te halen:
     
     ```
-    https://management.azure.com/subscriptions/00000000-0000-0000-0000-0000000000000/resourceGroups/amsResourceGroup/providers/Microsoft.Media/mediaservices/amsaccount/streamingEndpoints/default?api-version={{api-version}}
+    https://management.azure.com/subscriptions/00000000-0000-0000-0000-0000000000000/resourceGroups/:resourceGroupName/providers/Microsoft.Media/mediaservices/:accountName/streamingEndpoints/default?api-version={{api-version}}
     ```
+    en zorg ervoor dat u de parameters `resourceGroupName` en `accountName` zo instelt dat ze overeenkomen met het omgevingsbestand. 
     
 3. Een pad dat u in de vorige sectie (Paden weergeven) hebt verkregen.  
 

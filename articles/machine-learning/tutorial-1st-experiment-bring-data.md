@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: tracking-python
-ms.openlocfilehash: de89f9d87b010dc3710e7d82f4d846de12303905
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: ab497dee35afdd60247d156d0f30bbf003ea1210
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739430"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98072153"
 ---
 # <a name="tutorial-use-your-own-data-part-4-of-4"></a>Zelfstudie: Uw eigen gegevens gebruiken (Deel 4 van 4)
 
@@ -40,9 +40,6 @@ In deze zelfstudie hebt u:
 ## <a name="prerequisites"></a>Vereisten
 
 * Voltooiing van [Deel 3](tutorial-1st-experiment-sdk-train.md) van de serie.
-* Introductiekennis van de Python-taal en machine learning-werkstromen.
-* Lokale ontwikkelomgeving, zoals Visual Studio Code, Jupyter of PyCharm.
-* Python (versie 3.5 tot 3.7).
 
 ## <a name="adjust-the-training-script"></a>Het trainingsscript aanpassen
 
@@ -130,7 +127,7 @@ De waarde `target_path` geeft het pad op naar het gegevensarchief waarnaar de CI
 >[!TIP] 
 > Terwijl u Azure Machine Learning gebruikt om de gegevens te uploaden, kunt u [Azure Storage Explorer](https://azure.microsoft.com/features/storage-explorer/) gebruiken om ad-hocbestanden te uploaden. Als u een ETL-hulpprogramma nodig hebt, kunt u [Azure Data Factory](../data-factory/introduction.md) gebruiken om uw gegevens in Azure op te nemen.
 
-Voer het Python-bestand uit om de gegevens te uploaden. (De upload zou minder dan 60 seconden moeten duren.)
+Voer, in het venster met de geactiveerde Conda-omgeving van *tutorial1*, het Python-bestand uit om de gegevens te uploaden. (De upload zou minder dan 60 seconden moeten duren.)
 
 ```bash
 python 05-upload-data.py

@@ -7,12 +7,12 @@ ms.devlang: java
 ms.topic: tutorial
 ms.date: 12/10/2018
 ms.custom: mvc, seodec18, seo-java-july2019, seo-java-august2019, seo-java-september2019, devx-track-java
-ms.openlocfilehash: 7e63f770763d1960148dfdfa184d0b4e2b76754c
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 2c4fbefc1bb801ab4a9387054ac91e5fca14ec18
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92427084"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185594"
 ---
 # <a name="tutorial-build-a-java-spring-boot-web-app-with-azure-app-service-on-linux-and-azure-cosmos-db"></a>Zelfstudie: Een Java Spring Boot-web-app bouwen met Azure App Service in Linux en Azure Cosmos DB
 
@@ -57,21 +57,21 @@ Volg deze stappen voor het maken van een Azure Cosmos DB-database in uw abonneme
 
 1. Meld uw Azure-CLI aan en stel eventueel uw abonnement in als er meer dan één abonnement verbonden is met uw aanmeldingsreferenties.
 
-    ```bash
+    ```azurecli
     az login
     az account set -s <your-subscription-id>
     ```   
 
 2. Maak een Azure-resourcegroep, waarbij de naam van de resourcegroep noteert.
 
-    ```bash
+    ```azurecli
     az group create -n <your-azure-group-name> \
         -l <your-resource-group-region>
     ```
 
 3. Maken Azure Cosmos DB met het `GlobalDocumentDB` type. Voor de Cosmos DB-naam mag u alleen kleine letters gebruiken. Noteer het veld `documentEndpoint` in de reactie van de opdracht.
 
-    ```bash
+    ```azurecli
     az cosmosdb create --kind GlobalDocumentDB \
         -g <your-azure-group-name> \
         -n <your-azure-COSMOS-DB-name-in-lower-case-letters>
@@ -79,7 +79,7 @@ Volg deze stappen voor het maken van een Azure Cosmos DB-database in uw abonneme
 
 4. Haal uw Azure Cosmos DB-sleutel op om verbinding te maken met de app. Houd de `primaryMasterKey`, `documentEndpoint` bij de hand, want u hebt ze in de volgende stap nodig.
 
-    ```bash
+    ```azurecli
     az cosmosdb list-keys -g <your-azure-group-name> -n <your-azure-COSMOSDB-name>
     ```
 
@@ -146,7 +146,7 @@ mvn package spring-boot:run
 
 De uitvoer moet er als volgt uitzien.
 
-```bash
+```output
 bash-3.2$ mvn package spring-boot:run
 [INFO] Scanning for projects...
 [INFO] 
@@ -291,7 +291,7 @@ U moet de app zien wanneer die wordt uitgevoerd met de externe URL in de adresba
 
 Breid de toepassing uit door een andere werknemer toe te voegen:
 
-```bash
+```azurecli
 az appservice plan update --number-of-workers 2 \
    --name ${WEBAPP_PLAN_NAME} \
    --resource-group <your-azure-group-name>
@@ -301,7 +301,7 @@ az appservice plan update --number-of-workers 2 \
 
 Als u deze resources niet voor een andere zelfstudie nodig hebt (zie [Volgende stappen](#next)), kunt u ze verwijderen door de volgende opdracht in de Cloud Shell uit te voeren: 
   
-```bash
+```azurecli
 az group delete --name <your-azure-group-name>
 ```
 

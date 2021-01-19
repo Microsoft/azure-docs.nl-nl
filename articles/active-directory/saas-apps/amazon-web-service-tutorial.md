@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/08/2020
 ms.author: jeedes
-ms.openlocfilehash: 237ed71f058ae099f19924481eb4dbeb2e2aba05
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 3db6fd2e6df96590d7d405157cbb33900c7d8531
+ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97589437"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98127801"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-amazon-web-services-aws"></a>Zelfstudie: Integratie van eenmalige aanmelding in Azure Active Directory met Amazon Web Services (AWS)
 
@@ -388,7 +388,11 @@ U kunt ook het Microsoft-toegangsvenster gebruiken om de toepassing in een wille
 * Rollen moeten voldoen aan de volgende vereisten om in aanmerking te komen voor importeren vanuit AWS in Azure Active Directory:
 
   * Rollen moeten precies één SAML-provider hebben gedefinieerd in AWS
-  * De gecombineerde lengte van de ARN (Amazon-resourcenaam) voor de rol en de ARN voor de bijbehorende SAML-provider moet korter zijn dan 120 tekens
+  * De gecombineerde lengte van de ARN (Amazon-resourcenaam) voor de rol en de ARN voor de bijbehorende SAML-provider moet korter zijn dan 240 tekens.
+
+## <a name="change-log"></a>Wijzigingenlogboek
+
+* 01-12-2020 - Limiet voor rollengte is verhoogd van 119 tekens naar 239 tekens. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

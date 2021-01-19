@@ -8,30 +8,29 @@ ms.date: 3/24/2020
 ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: 757e34fd45b7d3d9703aa09daa7f040c5f605637
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 2cc96db88d9a2aec02de5e2fc4ed18b445972e7b
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932384"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121129"
 ---
 # <a name="tutorial-train-and-deploy-an-azure-machine-learning-model"></a>Zelfstudie: Een Azure Machine Learning-model trainen en implementeren
 
 In dit artikel voeren we de volgende taken uit:
 
-* Azure Notebooks gebruiken om een machine learning-model te trainen.
+* Gebruik Azure Machine Learning Studio om een machine learning-model te trainen.
 * Het getrainde model verpakken als een containerinstallatiekopie.
 * De containerinstallatiekopie implementeren als een Azure IoT Edge-module.
 
-De Azure Notebooks profiteren van een Azure Machine Learning-werkruimte, een basisblok dat u gebruikt voor het experimenteren, trainen en implementeren van machine learning-modellen.
+De Azure Machine Learning Studio is een basisblok dat u gebruikt voor het experimenteren, trainen en implementeren van machine learning-modellen.
 
 De stappen in dit artikel worden doorgaans uitgevoerd door gegevenswetenschappers.
 
 In dit deel van de zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
->
-> * Een Azure Notebooks-project maken om een machine learning-model te trainen.
+> * Maak Jupyter-notebooks in Azure Machine Learning-werkruimte om een machine learning-model te trainen.
 > * Het getrainde model in een container plaatsen.
 > * Maak een Azure IoT Edge-module vanuit het machine learning-model in de container.
 
@@ -39,49 +38,49 @@ In dit deel van de zelfstudie leert u het volgende:
 
 Dit artikel maakt deel uit van een reeks voor een zelfstudie over het gebruik van Azure Machine Learning in IoT Edge. Elk artikel in de reeks is gebaseerd op het werk in het vorige artikel. Als u rechtstreeks bij dit artikel terecht bent gekomen, gaat u naar de [eerste artikel](tutorial-machine-learning-edge-01-intro.md) in de reeks.
 
-## <a name="set-up-azure-notebooks"></a>Azure Notebooks instellen
+## <a name="set-up-azure-machine-learning"></a>Azure Machine Learning instellen 
 
-We gebruiken Azure Notebooks om de twee Jupyter Notebooks en ondersteunende bestanden te hosten. Hier maken en configureren we een Azure Notebooks-project. Als u Jupyter en/of Azure Notebooks niet eerder hebt gebruikt, volgen hier enkele inleidende documenten:
+We gebruiken Azure Machine Learning Studio om de twee Jupyter Notebooks en ondersteunende bestanden te hosten. Hier maken en configureren we een Azure Machine Learning-project. Als u Jupyter en/of Azure Machine Learning Studio niet eerder hebt gebruikt, volgen hier enkele inleidende documenten:
 
-* **Snelstart:** [Een notebook maken en delen](../notebooks/quickstart-create-share-jupyter-notebook.md)
-* **Zelfstudie:** [Een Jupyter-notebook maken en uitvoeren met Python](../notebooks/tutorial-create-run-jupyter-notebook.md)
+* **Jupyter-notebooks:** [Werken met Jupyter Notebooks in Visual Studio Code](https://code.visualstudio.com/docs/python/jupyter-support)
+* **Azure Machine Learning:** [Aan de slag met de Azure Machine Learning in Jupyter Notebooks](../machine-learning/tutorial-1st-experiment-sdk-setup.md)
 
-Het gebruik van Azure Notebooks zorgt voor een consistente omgeving voor de oefening.
 
 > [!NOTE]
-> Zodra de Azure Notebooks-service is ingesteld, kan deze vanaf elke computer worden geopend. Tijdens het instellen moet u de ontwikkelings-VM gebruiken. Deze bevat alle bestanden die u nodig hebt.
+> Zodra de Azure Machine Learning service is ingesteld, kan deze vanaf elke computer worden geopend. Tijdens het instellen moet u de ontwikkelings-VM gebruiken. Deze bevat alle bestanden die u nodig hebt.
 
-### <a name="create-an-azure-notebooks-account"></a>Een Azure Notebooks-account maken
+### <a name="install-azure-machine-learning-visual-studio-code-extension"></a>De Azure Machine Learning Visual Studio Code-extensie installeren
+VS-code op de ontwikkelings-VM moet deze extensie hebben geïnstalleerd. Als u werkt met een ander exemplaar, moet u de extensie opnieuw installeren zoals [hier](../machine-learning/tutorial-setup-vscode-extension.md) wordt beschreven.
 
-Als u Azure Notebooks wilt gebruiken, moet u een account maken. Azure notebook-accounts zijn onafhankelijk van Azure-abonnementen.
+### <a name="create-an-azure-machine-learning-account"></a>Een Azure Machine Learning-account maken  
+Als u resources wilt inrichten en workloads op Azure wilt uitvoeren, moet u zich aanmelden met de referenties van uw Azure-account.
 
-1. Ga naar [Azure Notebooks](https://notebooks.azure.com).
+1. Open in Visual Studio Code het opdrachtpalet door **Beeld** > **Opdrachtpalet** uit de menubalk te selecteren. 
 
-1. Klik in de rechterbovenhoek van de pagina op **Aanmelden**.
+1. Voer de opdracht `Azure: Sign In` in in het opdrachtpalet om het aanmeldingsproces te starten. Volg de instructies om het aanmelden te voltooien. 
 
-1. Meld u aan met uw werk- of schoolaccount (Azure Active Directory) of uw persoonlijke account (Microsoft-account).
+1. Maak een Azure ML rekenproces om uw werkbelasting uit te voeren. Opdrachtpalet gebruiken om de opdracht `Azure ML: Create Compute` in te voeren. 
+1. Selecteer uw Azure-abonnement
+1. Selecteer **+ Nieuwe Azure ML-werkruimte maken** en voer de naam `turbofandemo` in.
+1. Selecteer de resourcegroep die u voor deze demo hebt gebruikt.
+1. U moet de voortgang kunnen zien van het maken van de werkruimte in de rechterbenedenhoek van het VS Code-venster: **Werkruimte 'turobofandemo' wordt gemaakt** (dit kan een of twee minuten duren). 
+1. Wacht tot de werkruimte succesvol is gemaakt. Er zou moeten staan: **Azure ML-werkruimte 'turbofandemo' is gemaakt**.
 
-1. Als u Azure Notebooks nog niet eerder hebt gebruikt, wordt u gevraagd toegang te verlenen voor de Azure Notebooks-app.
-
-1. Een gebruikers-id voor Azure Notebooks maken.
 
 ### <a name="upload-jupyter-notebook-files"></a>Jupyter-notebookbestanden uploaden
 
-Er worden voorbeeldnotebookbestanden geüpload naar een nieuw Azure Notebooks-project.
+Er worden voorbeeldnotebookbestanden geüpload naar een nieuwe Azure ML-werkruimte.
 
-1. Selecteer op de gebruikerspagina van uw nieuwe account **Mijn projecten** in de bovenste menubalk.
+1. Navigeer naar ml.azure.com en meld u aan.
+1. Selecteer uw Microsoft-map, Azure-abonnement en de zojuist gemaakte Azure ML-werkruimte.
 
-1. Voeg een nieuw project toe door de knop **+** te selecteren.
+    :::image type="content" source="media/tutorial-machine-learning-edge-04-train-model/select-studio-workspace.png" alt-text="Selecteer uw Azure ML-werkruimte." :::
 
-1. Geef een **Projectnaam** op in het dialoogvenster **Nieuw project maken**. 
+1. Wanneer u bent aangemeld bij uw Azure ML-werkruimte, gaat u naar de sectie **Notebooks** in het menu aan de linkerkant.
+1. Selecteer het tabblad **Mijn bestanden**.
 
-1. Laat **Openbaar** en **LEESMIJ** uitgeschakeld omdat het project niet openbaar hoeft te zijn of een leesmij hoeft te hebben.
+1. **Uploaden** selecteren (het pictogram pijl-omhoog) 
 
-1. Selecteer **Maken**.
-
-1. Selecteer **Uploaden** (het pictogram pijl omhoog) en kies **Van computer**.
-
-1. Selecteer **Bestanden kiezen**.
 
 1. Ga naar **C:\source\IoTEdgeAndMlSample\AzureNotebooks**. Selecteer alle bestanden in de lijst en klik op **Openen**.
 
@@ -89,9 +88,9 @@ Er worden voorbeeldnotebookbestanden geüpload naar een nieuw Azure Notebooks-pr
 
 1. Selecteer **Uploaden** om te beginnen met uploaden en selecteer vervolgens **Gereed** zodra het proces is voltooid.
 
-### <a name="azure-notebook-files"></a>Azure Notebook-bestanden
+### <a name="jupyter-notebook-files"></a>Jupyter-notebookbestanden
 
-Laten we eens kijken welke bestanden u hebt geüpload naar uw Azure Notebooks-project. De activiteiten in dit deel van de zelfstudie beslaan twee notebook-bestanden, die enkele ondersteunende bestanden gebruiken.
+Laten we kijken welke bestanden u hebt geüpload naar uw Azure ML-werkruimte. De activiteiten in dit deel van de zelfstudie beslaan twee notebook-bestanden, die enkele ondersteunende bestanden gebruiken.
 
 * **01-turbofan\_regression.ipynb:** Dit notebook gebruikt de Machine Learning Service-werkruimte om een machine learning-experiment te maken en uit te voeren. De notebook voert grofweg de volgende stappen uit:
 
@@ -115,13 +114,13 @@ Laten we eens kijken welke bestanden u hebt geüpload naar uw Azure Notebooks-pr
 
 * **README.md:** Leesmij-bestand met een beschrijving van het gebruik van de notebooks.  
 
-## <a name="run-azure-notebooks"></a>Azure Notebooks uitvoeren
+## <a name="run-jupyter-notebooks"></a>Jupyter Notebooks uitvoeren
 
-Nu het project is gemaakt, kunt u de notebooks uitvoeren. 
+Nu de werkruimte is gemaakt, kunt u de notebooks uitvoeren. 
 
-1. Selecteer vanaf uw projectpagina **01-turbofan\_regression.ipynb**.
+1. Selecteer, op uw pagina **Mijn bestanden**, **01-turbofan\_ regression.ipynb**.
 
-    ![Selecteer het eerste notebook dat moet worden uitgevoerd](media/tutorial-machine-learning-edge-04-train-model/select-turbofan-regression-notebook.png)
+    :::image type="content" source="media/tutorial-machine-learning-edge-04-train-model/select-turbofan-notebook.png" alt-text="Selecteer het eerste notebook dat moet worden uitgevoerd. ":::
 
 1. Als het notebook wordt weergegeven als **Niet vertrouwd**, klikt u op de widget **Niet vertrouwd** in de rechter bovenhoek van het notebook. Wanneer het dialoogvenster wordt geopend, selecteert u **Vertrouwen**.
 
@@ -162,7 +161,7 @@ Nu het project is gemaakt, kunt u de notebooks uitvoeren.
 
 Controleer of er enkele items zijn gemaakt om te controleren of de notebooks zijn voltooid.
 
-1. Selecteer op de projectpagina van Azure Notebooks **Verborgen items weergeven** zodat itemnamen die met een punt beginnen, worden weergegeven.
+1. Ga naar uw Azure ML-notebooks. In het tabblad **Mijn bestanden** selecteert u vervolgens **Vernieuwen**.
 
 1. Controleer of de volgende bestanden zijn gemaakt:
 
@@ -194,7 +193,7 @@ Deze zelfstudie maakt deel uit van een reeks, waarvan elk artikel is gebaseerd o
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebben we twee Jupyter-notebooks gebruikt die worden uitgevoerd in Azure Notebooks om de gegevens van de turbofan-apparaten te gebruiken om een resterende levensduur (RUL)-classificatie te trainen, om de classificatie als een model op te slaan, om een containerinstallatiekopie te maken en de installatiekopie te testen als een webservice.
+In dit artikel hebben we twee Jupyter-notebooks gebruikt die worden uitgevoerd in Azure ML Studio. De gegevens van de turbofan-apparaten zijn gebruikt om een resterende levensduur (RUL)-classificatie te trainen, om de classificatie als een model op te slaan, om een containerinstallatiekopie te maken en de installatiekopie te testen als een webservice.
 
 Ga verder naar het volgende artikel om een IoT Edge-apparaat te maken.
 

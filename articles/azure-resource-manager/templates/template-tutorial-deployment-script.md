@@ -11,12 +11,12 @@ ms.devlang: na
 ms.date: 12/16/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 7eda805a5fdf24a7a55b9296a0f0a1c9a5bfc576
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 36fb54b4b6521d87c7461936c84a644bf22f7e31
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683492"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963960"
 ---
 # <a name="tutorial-use-deployment-scripts-to-create-a-self-signed-certificate"></a>Zelfstudie: Implementatiescripts gebruiken om een zelfondertekend certificaat te maken
 
@@ -329,13 +329,13 @@ Het implementatiescript voegt een certificaat toe aan de sleutelkluis. Configure
 
     ![Resources van het implementatiescript van Resource Manager-sjabloon](./media/template-tutorial-deployment-script/resource-manager-template-deployment-script-resources.png)
 
-    Beide bestanden hebben het achtervoegsel **azscripts**. Een is een opslagaccount en het andere is een containerinstantie.
+    Beide bestanden hebben het achtervoegsel _azscripts_. Een is een opslagaccount en het andere is een containerinstantie.
 
     Selecteer **Verborgen typen weergeven** om de `deploymentScripts`-resource weer te geven.
 
-1. Selecteer het opslagaccount met het achtervoegsel **azscripts**.
-1. Selecteer de tegel **Bestandsshares**. De map **azscripts** wordt weergegeven. De map bevat de uitvoeringsbestanden van het implementatiescript.
-1. Selecteer **azscripts**. U ziet twee mappen: **azscriptinput** en **azscriptoutput**. De input-map bevat een scriptbestand voor het PowerShell-systeem en de scriptbestanden voor de gebruikersimplementatie. De output-map bevat een _executionresult.json_ en het uitvoerbestand van het script. U kunt het foutbericht bekijken in _executionresult.json_. Er is geen uitvoerbestand omdat de uitvoering is mislukt.
+1. Selecteer het opslagaccount met het achtervoegsel _azscripts_.
+1. Selecteer de tegel **Bestandsshares**. U ziet een map _azscripts_ die de uitvoerbestanden voor de implementatiescripts bevat.
+1. Selecteer _azscripts_. U ziet twee mappen: _azscriptinput_ en _azscriptoutput_. De input-map bevat een scriptbestand voor het PowerShell-systeem en de scriptbestanden voor de gebruikersimplementatie. De output-map bevat een _executionresult.json_ en het uitvoerbestand van het script. U kunt het foutbericht bekijken in _executionresult.json_. Er is geen uitvoerbestand omdat de uitvoering is mislukt.
 
 Verwijder de `Write-Output1`-regel en implementeer de sjabloon opnieuw.
 

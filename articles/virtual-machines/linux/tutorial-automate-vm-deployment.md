@@ -5,21 +5,18 @@ services: virtual-machines-linux
 documentationcenter: virtual-machines
 author: cynthn
 manager: gwallace
-tags: azure-resource-manager
-ms.assetid: ''
 ms.service: virtual-machines-linux
 ms.topic: tutorial
-ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
 ms.date: 09/12/2019
 ms.author: cynthn
 ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 456c42dc0b25e168744ce283cddbd63b877813ab
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: ebff49db895468549a7abd420e7b74292b742eab
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747162"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108633"
 ---
 # <a name="tutorial---how-to-use-cloud-init-to-customize-a-linux-virtual-machine-in-azure-on-first-boot"></a>Zelfstudie - Cloud-init gebruiken voor het aanpassen van een virtuele Linux-machine in Azure bij de eerste keer dat die wordt opgestart
 
@@ -39,17 +36,7 @@ Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure
 
 Cloud-init werkt ook in distributies. U gebruikt bijvoorbeeld niet **apt-get install** of **yum install** om een pakket te installeren. In plaats daarvan kunt u een lijst definiëren met te installeren pakketten. Cloud-init maakt automatisch gebruik van het hulpprogramma voor systeemeigen pakketbeheer voor de distro die u selecteert.
 
-Samen met onze partners willen we cloud-init opnemen en werkend krijgen in de installatiekopieën die zij aan Azure leveren. De volgende tabel geeft een overzicht van de huidige beschikbaarheid van cloud-init op Azure-platforminstallatiekopieën:
-
-| Uitgever | Aanbieding | SKU | Versie | Gereed voor cloud-init |
-|:--- |:--- |:--- |:--- |:--- |
-|Canonical |UbuntuServer |18.04-LTS |meest recente |ja | 
-|Canonical |UbuntuServer |16.04-LTS |meest recente |ja | 
-|Canonical |UbuntuServer |14.04.5-LTS |meest recente |ja |
-|CoreOS |CoreOS |Stabiel |meest recente |ja |
-|OpenLogic 7.6 |CentOS |7-CI |meest recente |preview |
-|RedHat 7.6 |RHEL |7-RAW-CI |7.6.2019072418 |ja |
-|RedHat 7.7 |RHEL |7-RAW-CI |7.7.2019081601 |preview |
+Samen met onze partners willen we cloud-init opnemen en werkend krijgen in de installatiekopieën die zij aan Azure leveren. Raadpleeg [Cloud-init-ondersteuning voor virtuele machines in Azure](using-cloud-init.md) voor gedetailleerde informatie over Cloud-init-ondersteuning voor elke distributie.
 
 
 ## <a name="create-cloud-init-config-file"></a>Een cloud-init-configuratiebestand maken
@@ -102,7 +89,7 @@ runcmd:
 Zie [Voorbeelden van cloud-init-configuraties](https://cloudinit.readthedocs.io/en/latest/topics/examples.html) voor meer informatie over configuratieopties voor cloud-init.
 
 ## <a name="create-virtual-machine"></a>Virtuele machine maken
-Voordat u een virtuele machine kunt maken, moet u eerst een resourcegroep maken met [az-groep maken](/cli/azure/group#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroupAutomate* gemaakt op de locatie *VS Oost* :
+Voordat u een virtuele machine kunt maken, moet u eerst een resourcegroep maken met [az-groep maken](/cli/azure/group#az-group-create). In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroupAutomate* gemaakt op de locatie *VS Oost*:
 
 ```azurecli-interactive
 az group create --name myResourceGroupAutomate --location eastus
@@ -147,7 +134,7 @@ De volgende stappen laten zien hoe u het volgende kunt doen:
 - Een virtuele machine maken en het certificaat invoeren
 
 ### <a name="create-an-azure-key-vault"></a>Een Azure Key Vault maken
-Maak eerst een Key Vault met [az keyvault create](/cli/azure/keyvault#az-keyvault-create) en schakel deze in voor gebruik wanneer u een virtuele machine implementeert. Elke Key Vault moet een unieke naam hebben van alleen kleine letters. Vervang *mykeyvault* in het volgende voorbeeld door de naam van uw eigen unieke Key Vault:
+Maak eerst een Key Vault met [az keyvault create](/cli/azure/keyvault#az-keyvault-create) en schakel deze in voor gebruik wanneer u een virtuele machine implementeert. Elke Key Vault moet een unieke naam hebben van alleen kleine letters. Vervang `mykeyvault` in het volgende voorbeeld door de naam van uw eigen unieke Key Vault:
 
 ```azurecli-interactive
 keyvault_name=mykeyvault

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/11/2020
 ms.author: jeedes
-ms.openlocfilehash: a282e1be019c697ad15d86df56ad191043ab4ae9
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: b6b8dab3472473082562f1e4c0216886191e4a59
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935836"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97962802"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-sap-netweaver"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) van Azure Active Directory met SAP NetWeaver
 
@@ -138,7 +138,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Zoek in Azure Portal op de integratiepagina van de toepassing **SAP NetWeaver** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
@@ -206,7 +206,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-sap-netweaver-using-saml"></a>SAP NetWeaver configureren met SAML
@@ -339,7 +339,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
     ![OAuth configureren](./media/sapnetweaver-tutorial/oauth03.png)
 
     > [!NOTE]
-    > Bericht `soft state status is not supported`: kan worden genegeerd, omdat er geen problemen zijn. Kijk [hier](https://help.sap.com/doc/saphelp_nw74/7.4.16/1e/c60c33be784846aad62716b4a1df39/content.htm?no_cache=true) voor meer informatie
+    > Bericht `soft state status is not supported`: kan worden genegeerd, omdat er geen problemen zijn. Kijk [hier](https://help.sap.com/doc/saphelp_nw74/7.4.16/1e/c60c33be784846aad62716b4a1df39/content.htm?no_cache=true) voor meer informatie.
 
 ### <a name="create-a-service-user-for-the-oauth-20-client"></a>Een servicegebruiker maken voor de OAuth 2.0 Client
 
@@ -348,7 +348,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 2. Wanneer u een OAuth-client registreert, gebruiken we de `SAML Bearer Grant type`.
 
     >[!NOTE]
-    >Raadpleeg voor meer informatie OAuth 2.0 Clientregistratie voor het toekenningstype SAML Bearer [hier](https://wiki.scn.sap.com/wiki/display/Security/OAuth+2.0+Client+Registration+for+the+SAML+Bearer+Grant+Type)
+    >Raadpleeg voor meer informatie OAuth 2.0 Clientregistratie voor het toekenningstype SAML Bearer [hier](https://wiki.scn.sap.com/wiki/display/Security/OAuth+2.0+Client+Registration+for+the+SAML+Bearer+Grant+Type).
 
 3. tcod: SU01 / maak gebruiker CLIENT1 als `System type` en wijs het wachtwoord toe, sla het op aangezien de aanmeldingsgegevens moeten worden opgegeven aan de API-programmeur, die dit moet branden samen met de gebruikersnaam voor de aanroepcode. Er mag geen profiel of rol worden toegewezen.
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: dce2cd0d77ff0a98d4d68e1c99edb472e61ce8a5
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 63d56d8afc584a760f4b31c6021d4c764afd52b3
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97509458"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98064416"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Zelfstudie: De Microsoft Graph-API aanroepen vanuit de Universeel Windows-platformtoepasing (UWP)
 
@@ -50,7 +50,7 @@ Deze handleiding maakt gebruik van het volgende NuGet-pakket:
 
 |Bibliotheek|Beschrijving|
 |---|---|
-|[Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)|Microsoft Authentication Library|
+|[Microsoft.Identity.Client](https://www.nuget.org/packages/Microsoft.Identity.Client)| Microsoft Authentication Library|
 |[Microsoft.Graph](https://www.nuget.org/packages/Microsoft.Graph)|Microsoft Graph-clientbibliotheek|
 
 ## <a name="set-up-your-project"></a>Uw project instellen
@@ -71,7 +71,7 @@ In deze handleiding wordt een toepassing gemaakt waarin een knop voor het uitvoe
 
    ![Minimum- en doelversies](./media/tutorial-v2-windows-uwp/select-uwp-target-minimum.png)
 
-### <a name="add-microsoft-authentication-library-to-your-project"></a>Microsoft Authentication Library toevoegen aan uw project
+### <a name="add-the-microsoft-authentication-library-to-your-project"></a>Microsoft Authentication Library toevoegen aan uw project
 
 1. Selecteer in Visual Studio **Tools** > **NuGet Package Manager** > **Package Manager Console**.
 1. Kopieer en plak de volgende opdrachten in het venster **Pakketbeheerconsole**:
@@ -82,7 +82,7 @@ In deze handleiding wordt een toepassing gemaakt waarin een knop voor het uitvoe
     ```
 
    > [!NOTE]
-   > Met de eerste opdracht wordt [Microsoft Authentication Library (MSAL.NET)](https://aka.ms/msal-net) geïnstalleerd. MSAL.NET verkrijgt, bewaart en vernieuwt gebruikerstokens die toegang hebben tot API's die zijn beveiligd met het Microsoft identity platform. Met de tweede opdracht wordt de [Microsoft Graph .NET-clientbibliotheek](https://github.com/microsoftgraph/msgraph-sdk-dotnet) geïnstalleerd om aanvragen voor Microsoft Graph te verifiëren en aanroepen naar de service te verzenden.
+   > Met de eerste opdracht wordt [MSAL.NET (Microsoft Authentication Library)](https://aka.ms/msal-net) geïnstalleerd. MSAL.NET verkrijgt, bewaart en vernieuwt gebruikerstokens die toegang hebben tot API's die zijn beveiligd met het Microsoft identity platform. Met de tweede opdracht wordt de [Microsoft Graph .NET-clientbibliotheek](https://github.com/microsoftgraph/msgraph-sdk-dotnet) geïnstalleerd om aanvragen voor Microsoft Graph te verifiëren en aanroepen naar de service te verzenden.
 
 ### <a name="create-your-applications-ui"></a>De gebruikersinterface voor uw toepassing maken
 
@@ -103,7 +103,7 @@ Visual Studio maakt *MainPage.xaml* als onderdeel van de projectsjabloon. Open d
 </Grid>
 ```
 
-### <a name="use-microsoft-authentication-library-to-get-a-token-for-the-microsoft-graph-api"></a>Microsoft Authentication Library gebruiken voor het ophalen van een token voor de Microsoft Graph API
+### <a name="use-the-microsoft-authentication-library-to-get-a-token-for-the-microsoft-graph-api"></a>Microsoft Authentication Library gebruiken voor het ophalen van een token voor de Microsoft Graph API
 
 In deze sectie wordt uitgelegd hoe u met Microsoft Authentication Library een token voor de Microsoft Graph API kunt ophalen. Breng wijzigingen aan in het bestand *MainPage.xaml.cs*.
 
@@ -346,7 +346,7 @@ private async Task DisplayMessageAsync(string message)
 
 U moet uw toepassing nu registreren:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
@@ -357,7 +357,7 @@ U moet uw toepassing nu registreren:
 
 Verificatie configureren voor uw toepassing:
 
-1. Selecteer als u weer in de [Azure-portal](https://portal.azure.com) bent, onder **Beheren**, achtereenvolgens **Verificatie** > **Een platform toevoegen**, en selecteer vervolgens **Mobiele toepassingen en desktoptoepassingen**.
+1. Selecteer als u weer in <a href="https://portal.azure.com/" target="_blank">Azure Portal <span class="docon docon-navigate-external x-hidden-focus"></span></a> bent, onder **Beheren**, achtereenvolgens **Verificatie** > **Een platform toevoegen**. Selecteer vervolgens **Mobiele toepassingen en desktoptoepassingen**.
 1. Selecteer **https://login.microsoftonline.com/common/oauth2/nativeclient** in de sectie **Omleidings-URI's**.
 1. Selecteer **Configureren**.
 
@@ -509,4 +509,4 @@ U schakelt [geïntegreerde verificatie voor federatieve domeinen](#enable-integr
 Meer informatie over het gebruik van de Microsoft Authentication Library (MSAL) voor autorisatie en verificatie in .NET-toepassingen:
 
 > [!div class="nextstepaction"]
-> [Overzicht van de Microsoft Authentication Library (MSAL)](msal-overview.md)
+> [Overzicht van MSAL (Microsoft Authentication Library)](msal-overview.md)

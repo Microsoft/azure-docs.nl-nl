@@ -3,12 +3,12 @@ title: Zelfstudie voor video-opname op basis van gebeurtenissen in de cloud en a
 description: In deze zelfstudie leert u hoe u Azure Live Video Analytics in Azure IoT Edge kunt gebruiken om een video-opname op basis van gebeurtenissen te maken in de cloud, en deze af te spelen vanuit de cloud.
 ms.topic: tutorial
 ms.date: 05/27/2020
-ms.openlocfilehash: 8f3ecdf7e4260d700f31663852abbb39474cd474
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: cfb4648d991565470133d603194c07b797f89311
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97401663"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060432"
 ---
 # <a name="tutorial-event-based-video-recording-to-the-cloud-and-playback-from-the-cloud"></a>Zelfstudie: Video-opname op basis van gebeurtenissen in de cloud en afspelen vanuit de cloud
 
@@ -53,6 +53,9 @@ Aan het einde van deze stappen hebt u relevante Azure-resources geïmplementeerd
 * Azure Storage-account
 * Azure Media Services-account
 * Linux-VM in Azure, met [IoT Edge-runtime](../../iot-edge/how-to-install-iot-edge.md) geïnstalleerd
+
+> [!TIP]
+> Als u problemen ondervindt met Azure-resources die worden gemaakt, raadpleegt u onze **[probleemoplossingsgids](troubleshoot-how-to.md#common-error-resolutions)** , waarmee u enkele veelvoorkomende problemen kunt oplossen.
 
 ## <a name="concepts"></a>Concepten
 
@@ -230,7 +233,7 @@ Volg deze stappen om de gebeurtenissen van de objectCounter-module en van de Liv
      
         ```
         {
-          "@apiVersion": "1.0",
+          "@apiVersion": "2.0",
           "name": "Sample-Graph-1",
           "properties": {
             "topologyName": "EVRtoAssetsOnObjDetect",
@@ -277,7 +280,7 @@ In de volgende berichten worden de eigenschappen van de toepassing en de inhoud 
 
 ### <a name="mediasessionestablished-event"></a>MediaSessionEstablished-gebeurtenis 
 
-Wanneer een mediagrafiek wordt geïnstantieerd, probeert het RTSP-bronknooppunt verbinding te maken met de RTSP-server die wordt uitgevoerd op de RTSP Simulator-container. Als dit lukt, wordt deze gebeurtenis geregistreerd. Het gebeurtenistype is Microsoft.Media.MediaGraph.Diagnostics.MediaSessionEstablished.
+Wanneer een mediagrafiek wordt geïnstantieerd, probeert het RTSP-bronknooppunt verbinding te maken met de RTSP-server die wordt uitgevoerd op de RTSP Simulator-container. Als dit lukt, wordt deze gebeurtenis geregistreerd. Het gebeurtenistype is **Microsoft.Media.MediaGraph.Diagnostics.MediaSessionEstablished**.
 
 ```
 [IoTHubMonitor] [5:53:17 PM] Message received from [lva-sample-device/lvaEdge]:
@@ -325,7 +328,7 @@ Mogelijk ziet u meer van deze gebeurtenissen verschijnen naarmate andere vrachtw
 
 ### <a name="recordingstarted-event"></a>RecordingStarted-gebeurtenis
 
-Bijna onmiddellijk nadat de Object Counter de gebeurtenis heeft verzonden, ziet u een gebeurtenis van het type Microsoft.Media.Graph.Operational.RecordingStarted:
+Bijna onmiddellijk nadat de Object Counter de gebeurtenis heeft verzonden, ziet u een gebeurtenis van het type **Microsoft.Media.Graph.Operational.RecordingStarted** verzonden:
 
 ```
 [IoTHubMonitor] [5:53:46 PM] Message received from [lva-sample-device/lvaEdge]:
@@ -348,7 +351,7 @@ De onderwerpsectie in applicationProperties verwijst naar het AssetSink-knooppun
 
 ### <a name="recordingavailable-event"></a>RecordingAvailable-gebeurtenis
 
-Wanneer het Asset Sink-knooppunt de video naar de asset heeft geüpload, wordt de gebeurtenis Microsoft.Media.Graph.Operational.RecordingAvailable verzonden:
+Wanneer via het knooppunt AssetSink een video is geüpload naar de asset, wordt deze gebeurtenis van het type **Microsoft.Media.Graph.Operational.RecordingAvailable** verzonden:
 
 ```
 [IoTHubMonitor] [5:54:15 PM] Message received from [lva-sample-device/lvaEdge]:
@@ -371,7 +374,7 @@ Deze gebeurtenis geeft aan dat er voldoende gegevens zijn weggeschreven naar de 
 
 ### <a name="recordingstopped-event"></a>RecordingStopped-gebeurtenis
 
-Als u de activeringsinstellingen (maximumActivationTime) voor het signaalpoortproces-knooppunt in de [topologie](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-hubMessage-assets/topology.json)bekijkt, ziet u dat de poort is ingesteld om te worden gesloten na het verzenden van 30 seconden video. Ongeveer 30 seconden na de RecordingStarted-gebeurtenis ziet u een gebeurtenis van het type Microsoft.Media.Graph.Operational.RecordingStopped. Deze gebeurtenis geeft aan dat het Asset Sink-knooppunt is gestopt met het opnemen van video op de asset.
+Als u de activeringsinstellingen (maximumActivationTime) voor het signaalpoortproces-knooppunt in de [topologie](https://github.com/Azure/live-video-analytics/tree/master/MediaGraph/topologies/evr-hubMessage-assets/topology.json)bekijkt, ziet u dat de poort is ingesteld om te worden gesloten na het verzenden van 30 seconden video. Ongeveer 30 seconden na de RecordingStarted-gebeurtenis ziet u een gebeurtenis van het type **Microsoft.Media.Graph.Operational.RecordingStopped**. Deze gebeurtenis geeft aan dat het Asset Sink-knooppunt is gestopt met het opnemen van video op de asset.
 
 ```
 [IoTHubMonitor] [5:54:15 PM] Message received from [lva-sample-device/lvaEdge]:

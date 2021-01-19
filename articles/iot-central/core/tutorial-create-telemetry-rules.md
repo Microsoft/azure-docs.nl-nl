@@ -3,16 +3,16 @@ title: 'Zelfstudie: regels maken en beheren in uw Azure IoT Central-toepassing'
 description: Deze zelfstudie laat zien hoe u met Azure IoT Central-regels uw apparaten bijna in realtime kunt bewaken en automatisch acties kunt aanroepen, zoals het verzenden van een e-mailbericht wanneer de regel wordt geactiveerd.
 author: dominicbetts
 ms.author: dobett
-ms.date: 11/16/2020
+ms.date: 01/08/2021
 ms.topic: tutorial
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 6d49e3585460c95ca931f497a63cbc281aed1db1
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: 6be49ec3777b4bcaa033a60546e95711090662a4
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990969"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98065283"
 ---
 # <a name="tutorial-create-a-rule-and-set-up-notifications-in-your-azure-iot-central-application"></a>Zelfstudie: Een regel maken en meldingen instellen in uw Azure IoT Central-toepassing
 
@@ -38,6 +38,9 @@ Voordat u begint, voltooi de quickstarts [Een Azure IoT Central-toepassing maken
 ## <a name="create-a-rule"></a>Een regel maken
 
 Voor het maken van een telemetrieregel moet de apparaatsjabloon ten minste één telemetriewaarde bevatten. Deze zelfstudie maakt gebruik van een gesimuleerd **Sensor Controller**-apparaat dat de telemetrie van de temperatuur en de vochtigheid verzendt. U hebt deze apparaatsjabloon toegevoegd en een gesimuleerd apparaat gemaakt in de quickstart [Een gesimuleerd apparaat toevoegen aan uw IoT Central-toepassing](./quick-create-simulated-device.md). De regel controleert de door het apparaat gemelde temperatuur en verzendt een e-mailbericht wanneer deze hoger wordt dan 70 graden.
+
+> [!NOTE]
+> Er geldt een limiet van 50 regels per toepassing.
 
 1. Selecteer in het linkerdeelvenster de optie **Regels**.
 
@@ -115,4 +118,4 @@ In deze zelfstudie heeft u het volgende geleerd:
 Nu u een regel op basis van drempelwaarden hebt gedefinieerd, is dit de voorgestelde volgende stap:
 
 > [!div class="nextstepaction"]
-> [Continue gegevensexport configureren](./howto-export-data.md).
+> [Webhooks voor regels maken](./howto-create-webhooks.md).

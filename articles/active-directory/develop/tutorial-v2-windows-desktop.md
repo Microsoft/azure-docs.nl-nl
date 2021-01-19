@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 5fb7c0df653048adcffceda4d8a384be823b5c3a
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 0d759b3af097067ba0c9215b65b212d50474d571
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507690"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178344"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Zelfstudie: De Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
@@ -43,7 +43,7 @@ In deze zelfstudie:
 
 ![Er wordt getoond hoe de voorbeeld-app werkt die wordt gegenereerd in deze zelfstudie](./media/active-directory-develop-guidedsetup-windesktop-intro/windesktophowitworks.svg)
 
-Met de voorbeeldtoepassing die u in deze handleiding maakt, kan een Windows-bureaubladtoepassing een query uitvoeren bij de Microsoft Graph API of een web-API die tokens accepteert van een Microsoft-identiteitsplatformeindpunt. Voor dit scenario voegt u een token toe aan HTTP-aanvragen via de autorisatie-header. Het verkrijgen en vernieuwen van tokens wordt afgehandeld door Microsoft Authentication Library (MSAL).
+Met de voorbeeldtoepassing die u in deze handleiding maakt, kan een Windows-bureaubladtoepassing een query uitvoeren bij de Microsoft Graph API of een web-API die tokens accepteert van een Microsoft-identiteitsplatformeindpunt. Voor dit scenario voegt u een token toe aan HTTP-aanvragen via de autorisatie-header. Het verkrijgen en vernieuwen van tokens wordt afgehandeld via MSAL (Microsoft Authentication Library).
 
 ## <a name="handling-token-acquisition-for-accessing-protected-web-apis"></a>Het afhandelen van tokens voor toegang tot beveiligde web-API's
 
@@ -97,14 +97,14 @@ U kunt uw toepassing op twee manieren registreren.
 ### <a name="option-1-express-mode"></a>Optie 1: Snelle modus
 
 U kunt uw toepassing snel registreren door het volgende te doen:
-1. Ga naar [Azure Portal - toepassingsregistratie](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/WinDesktopQuickstartPage/sourceType/docs).
+1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/WinDesktopQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 
 ### <a name="option-2-advanced-mode"></a>Optie 2: Geavanceerde modus
 
 Ga als volgt te werk om de toepassing te registreren en de registratiegegevens van de toepassing toe te voegen aan uw oplossing:
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.

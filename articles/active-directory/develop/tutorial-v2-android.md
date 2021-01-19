@@ -13,12 +13,12 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 7ba15e66cca7baefdf8cca5cabd5e5d5b1e2c7f7
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.openlocfilehash: 1282c27378e6a088a600a3ab3105f3f548984d03
+ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97507809"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98063141"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-application"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Android-app
 
@@ -71,11 +71,11 @@ Als u nog geen Android-toepassing hebt, volgt u de volgende stappen om een nieuw
 6. Stel het **minimale API-niveau** in op **API 19** of hoger en klik op **Voltooien**.
 7. Kies in de projectweergave **Project** in de vervolgkeuzelijst om bron- en niet-bronprojectbestanden weer te geven, open **app/build.gradle** en stel `targetSdkVersion` in op `28`.
 
-## <a name="integrate-with-microsoft-authentication-library"></a>Integreren met Microsoft Authentication Library
+## <a name="integrate-with-the-microsoft-authentication-library"></a>Integreren met de Microsoft Authentication Library
 
 ### <a name="register-your-application"></a>Uw toepassing registreren
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.

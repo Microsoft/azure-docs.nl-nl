@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.topic: tutorial
 ms.workload: identity
-ms.date: 08/05/2020
+ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: 53707261070e8efbd014614ee700df63a0925ef8
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: ce48d87c6e04e6c349b681e953647feb5e7ddda5
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95999702"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98570113"
 ---
 # <a name="tutorial-configure-sap-successfactors-to-active-directory-user-provisioning"></a>Zelfstudie: SuccessFactors to Active Directory User Provisioning configureren 
 Het doel van deze zelfstudie is het laten zien van de stappen die nodig zijn om gebruikers vanuit SuccessFactors Employee Central in te richten in Active Directory (AD) en Azure AD, met optionele write-back van e-mailadressen naar SuccessFactors. 
@@ -90,59 +90,65 @@ Een vereiste die alle inrichtingsconnectors voor SuccessFactors gemeen hebben, i
 * [Machtigingsrol verlenen aan de machtigingsgroep](#grant-permission-role-to-the-permission-group)
 
 ### <a name="createidentify-api-user-account-in-successfactors"></a>API-gebruikersaccount maken/identificeren in SuccessFactors
-Werk samen met uw SuccessFactors-beheerteam of implementatiepartner om een gebruikersaccount in SuccessFactors te maken of te identificeren dat wordt gebruikt om de OData-API's aan te roepen. De referenties van de gebruikersnaam en het wachtwoord van dit account zijn vereist bij het configureren van de inrichtings-apps in Azure AD. 
+Werk samen met uw beheerders van SuccessFactors of uw implementatiepartner om een gebruikersaccount in SuccessFactors te maken of te identificeren dat wordt gebruikt om de OData-API's aan te roepen. De gebruikersnaam en het wachtwoord van dit account zijn vereist bij het configureren van de inrichtings-apps in Azure AD. 
 
 ### <a name="create-an-api-permissions-role"></a>Een API-machtigingenrol maken
 
-* Meld u aan bij SAP SuccessFactors met een gebruikersaccount dat toegang heeft tot het Admin Center.
-* Zoek naar *Manage Permission Roles* en selecteer **Manage Permission Roles** in de zoekresultaten.
+1. Meld u aan bij SAP SuccessFactors met een gebruikersaccount dat toegang heeft tot het Admin Center.
+1. Zoek naar *Manage Permission Roles* en selecteer **Manage Permission Roles** in de zoekresultaten.
   ![Machtigingsrollen beheren](./media/sap-successfactors-inbound-provisioning/manage-permission-roles.png)
-* Klik in de lijst met machtigingsrollen op **Create New**.
-  > [!div class="mx-imgBorder"]
-  > ![Nieuwe machtigingsrol maken](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
-* Geef waarden op voor **Role Name** en **Description** voor de nieuwe machtigingsrol. De naam en beschrijving moeten aangeven dat de rol bestemd is voor API-gebruiksmachtigingen.
-  > [!div class="mx-imgBorder"]
-  > ![Details van machtigingsrol](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
-* Klik onder machtigingsinstellingen op **Permission...** , schuif vervolgens omlaag in de lijst met machtigingen en klik op **Manage Integration Tools**. Schakel het vakje in voor **Allow Admin to Access to OData API through Basic Authentication**.
-  > [!div class="mx-imgBorder"]
-  > ![Integratie-hulpprogramma’s beheren](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
-* Schuif omlaag in hetzelfde vak en selecteer **Employee Central-API**. Voeg machtigingen toe, zoals hieronder wordt weergegeven, voor meer informatie over het gebruik van ODATA-API en bewerken met de ODATA-API. Selecteer de optie Edit als u hetzelfde account wilt gebruiken voor het scenario voor write-back naar SuccessFactors. 
-  > [!div class="mx-imgBorder"]
-  > ![Machtigingen voor lezen en schrijven](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
+1. Klik in de lijst met machtigingsrollen op **Create New**.
+    > [!div class="mx-imgBorder"]
+    > ![Nieuwe machtigingsrol maken](./media/sap-successfactors-inbound-provisioning/create-new-permission-role-1.png)
+1. Geef waarden op voor **Role Name** en **Description** voor de nieuwe machtigingsrol. De naam en beschrijving moeten aangeven dat de rol bestemd is voor API-gebruiksmachtigingen.
+    > [!div class="mx-imgBorder"]
+    > ![Details van machtigingsrol](./media/sap-successfactors-inbound-provisioning/permission-role-detail.png)
+1. Klik onder Permission settings op **Permission...** , schuif vervolgens omlaag in de lijst met machtigingen en klik op **Manage Integration Tools**. Schakel het selectievakje van **Allow Admin to Access to OData API through Basic Authentication** in.
+    > [!div class="mx-imgBorder"]
+    > ![Integratie-hulpprogramma’s beheren](./media/sap-successfactors-inbound-provisioning/manage-integration-tools.png)
+1. Schuif omlaag in dezelfde lijst en selecteer **Employee Central-API**. Voeg machtigingen toe, zoals hieronder wordt weergegeven, voor meer informatie over het gebruik van ODATA-API en bewerken met de ODATA-API. Selecteer de optie Edit als u hetzelfde account wilt gebruiken voor het scenario voor write-back naar SuccessFactors. 
+    > [!div class="mx-imgBorder"]
+    > ![Machtigingen voor lezen en schrijven](./media/sap-successfactors-inbound-provisioning/odata-read-write-perm.png)
 
-  >[!NOTE]
-  >De volledige lijst met kenmerken die worden opgehaald door deze inrichtings-app vindt u in het artikel over [kenmerken van SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
+1. Ga in hetzelfde machtigingenvak naar **Gebruikersmachtigingen-> Werknemergegevens** en controleer de kenmerken die het serviceaccount kan lezen van de SuccessFactors-tenant. Als u bijvoorbeeld het kenmerk *Gebruikersnaam* van SuccessFactors wilt ophalen, moet u ervoor zorgen dat de machtiging 'weergeven' is toegekend voor dit kenmerk. Controleer ook elk kenmerk voor weergavemachtiging. 
 
-* Klik op **Done**. Klik op **Wijzigingen opslaan**.
+    > [!div class="mx-imgBorder"]
+    > ![Gegevensmachtigingen voor werknemers](./media/sap-successfactors-inbound-provisioning/review-employee-data-permissions.png)
+   
+
+    >[!NOTE]
+    >De volledige lijst met kenmerken die worden opgehaald door deze inrichtings-app vindt u in het artikel over [kenmerken van SuccessFactors](../app-provisioning/sap-successfactors-attribute-reference.md).
+
+1. Klik op **Done**. Klik op **Wijzigingen opslaan**.
 
 ### <a name="create-a-permission-group-for-the-api-user"></a>Een machtigingsgroep maken voor de API-gebruiker
 
-* Zoek in het Admin Center van SuccessFactors naar *Manage Permission Groups* en selecteer vervolgens **Manage Permission Groups** in de zoekresultaten.
-  > [!div class="mx-imgBorder"]
-  > ![Machtigingsgroepen beheren](./media/sap-successfactors-inbound-provisioning/manage-permission-groups.png)
-* Klik in het venster Manage Permission Groups op **Create New**.
-  > [!div class="mx-imgBorder"]
-  > ![Nieuwe groep toevoegen](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
-* Geef een naam op voor de nieuwe groep. De groepsnaam moet aangeven dat de groep voor API-gebruikers is.
-  > [!div class="mx-imgBorder"]
-  > ![Naam van machtigingsgroep](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
-* Voeg leden toe aan de groep. U kunt bijvoorbeeld **Username** selecteren in de vervolgkeuzelijst People Pool en vervolgens de gebruikersnaam invoeren van het API-account dat wordt gebruikt voor de integratie. 
-  > [!div class="mx-imgBorder"]
-  > ![Groepsleden toevoegen](./media/sap-successfactors-inbound-provisioning/add-group-members.png)
-* Klik op **Done** om de machtigingsgroep te maken.
+1. Zoek in het SuccessFactors Admin Center naar *Manage Permission Groups* en selecteer vervolgens **Manage Permission Groups** in de zoekresultaten.
+    > [!div class="mx-imgBorder"]
+    > ![Machtigingsgroepen beheren](./media/sap-successfactors-inbound-provisioning/manage-permission-groups.png)
+1. Klik in het venster Manage Permission Groups op **Create New**.
+    > [!div class="mx-imgBorder"]
+    > ![Nieuwe groep toevoegen](./media/sap-successfactors-inbound-provisioning/create-new-group.png)
+1. Geef een naam op voor de nieuwe groep. De groepsnaam moet aangeven dat de groep voor API-gebruikers is.
+    > [!div class="mx-imgBorder"]
+    > ![Naam van machtigingsgroep](./media/sap-successfactors-inbound-provisioning/permission-group-name.png)
+1. Voeg leden toe aan de groep. U kunt bijvoorbeeld **Username** selecteren in de vervolgkeuzelijst People Pool en vervolgens de gebruikersnaam invoeren van het API-account dat wordt gebruikt voor de integratie. 
+    > [!div class="mx-imgBorder"]
+    > ![Groepsleden toevoegen](./media/sap-successfactors-inbound-provisioning/add-group-members.png)
+1. Klik op **Done** om de machtigingsgroep te maken.
 
 ### <a name="grant-permission-role-to-the-permission-group"></a>Machtigingsrol verlenen aan de machtigingsgroep
 
-* Zoek in het Admin Center van SuccessFactors naar *Manage Permission Roles* en selecteer vervolgens **Manage Permission Roles** in de zoekresultaten.
-* Selecteer in de **Permission Role List** de rol die u hebt gemaakt voor machtigingen voor API-gebruik.
-* Klik onder **Grant this role to...** op de knop **Add...**
-* Selecteer **Permission Group...** in de vervolgkeuzelijst en klik vervolgens op **Select...** om het venster Groups te openen en de hierboven gemaakte groep te selecteren. 
-  > [!div class="mx-imgBorder"]
-  > ![Machtigingsgroep toevoegen](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
-* Controleer de instellingen voor het verlenen van de machtigingsrol aan de machtigingsgroep. 
-  > [!div class="mx-imgBorder"]
-  > ![Machtigingsrol en groepsdetails](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
-* Klik op **Wijzigingen opslaan**.
+1. Zoek in het SuccessFactors Admin Center naar *Manage Permission Roles* en selecteer vervolgens **Manage Permission Roles** in de zoekresultaten.
+1. Selecteer bij **Permission Role List** de rol die u hebt gemaakt voor de machtigingen voor API-gebruik.
+1. Klik onder **Grant this role to...** op de knop **Add...**
+1. Selecteer **Permission Group...** in de vervolgkeuzelijst en klik vervolgens op **Select...** om het venster Groups te openen en de hierboven gemaakte groep te selecteren. 
+    > [!div class="mx-imgBorder"]
+    > ![Machtigingsgroep toevoegen](./media/sap-successfactors-inbound-provisioning/add-permission-group.png)
+1. Controleer de gegevens voor het verlenen van de machtigingsrol aan de machtigingsgroep. 
+    > [!div class="mx-imgBorder"]
+    > ![Machtingingsrol en groepsdetails](./media/sap-successfactors-inbound-provisioning/permission-role-group.png)
+1. Klik op **Wijzigingen opslaan**.
 
 ## <a name="configuring-user-provisioning-from-successfactors-to-active-directory"></a>Inrichting van gebruikers van SuccessFactors bij Active Directory configureren
 
@@ -173,68 +179,14 @@ In deze sectie vindt u de stappen voor het inrichten van gebruikersaccounts van 
 7. Stel **Inrichtings** **modus** in op **Automatisch**.
 
 8. Klik op de informatiebanner die wordt weergegeven om de inrichtingsagent te downloaden. 
-   > [!div class="mx-imgBorder"]
-   > ![Agent downloaden](./media/sap-successfactors-inbound-provisioning/download-pa-agent.png "Scherm voor downloaden van agent")
-
+   >[!div class="mx-imgBorder"]
+   >![Agent downloaden](./media/workday-inbound-tutorial/pa-download-agent.png "Scherm voor downloaden van agent")
 
 ### <a name="part-2-install-and-configure-on-premises-provisioning-agents"></a>Deel 2: On-premises inrichtingsagent(en) installeren en configureren
 
-Als u gebruikers wilt inrichten bij on-premises Active Directory, moet de inrichtingsagent zijn geïnstalleerd op een server met .NET 4.7.1+ Framework en netwerktoegang tot de gewenste Active Directory-domeinen.
+Als u gebruikers wilt inrichten bij on-premises Active Directory, moet de inrichtingsagent zijn geïnstalleerd op een server met netwerktoegang tot de gewenste Active Directory-domeinen.
 
-> [!TIP]
-> U kunt de versie van .NET Framework op uw server controleren aan de hand van [deze instructies](/dotnet/framework/migration-guide/how-to-determine-which-versions-are-installed).
-> Als op de server niet .NET 4.7.1 of hoger is geïnstalleerd, kunt u [hier](https://support.microsoft.com/help/4033342/the-net-framework-4-7-1-offline-installer-for-windows) de juiste versie downloaden.  
-
-Plaats het installatieprogramma van de gedownloade agent op de serverhost en volg de onderstaande stappen om de configuratie van de agent te voltooien.
-
-1. Meld u aan bij de Windows-server waarop u de nieuwe agent wilt installeren.
-
-1. Start het installatieprogramma voor de inrichtingsagent, ga akkoord met de voorwaarden en klik op de knop **Installeren**.
-
-   ![Installatiescherm](./media/workday-inbound-tutorial/pa_install_screen_1.png "Installatiescherm")
-   
-1. Als de installatie is voltooid, wordt de wizard gestart en ziet u het scherm **Verbinding maken met Azure AD**. Klik op de knop **Verifiëren** om verbinding te maken met uw Azure AD-exemplaar.
-
-   ![Verbinding maken met Azure AD](./media/workday-inbound-tutorial/pa_install_screen_2.png "Verbinding maken met Azure AD")
-   
-1. Verifieer uw Azure AD-exemplaar met behulp van referenties van een globale beheerder.
-
-   ![Verifiëren met beheerdersreferenties](./media/workday-inbound-tutorial/pa_install_screen_3.png "Beheerdersreferenties")
-
-   > [!NOTE]
-   > De referenties van de Azure AD-beheerder worden alleen gebruikt om verbinding te maken met uw Azure AD-tenant. De referenties worden niet lokaal opgeslagen op de server door de agent.
-
-1. Als de verificatie bij Azure AD is gelukt, ziet u het scherm **Verbinding maken met Active Directory**. In deze stap voert u de naam van uw AD-domein in en klikt u op de knop **Directory toevoegen**.
-
-   ![Directory toevoegen](./media/workday-inbound-tutorial/pa_install_screen_4.png "Directory toevoegen")
-  
-1. U wordt nu gevraagd om de referenties in te voeren die vereist zijn om verbinding te maken met het AD-domein. Op hetzelfde scherm kunt u de optie **Prioriteit domeincontroller selecteren** inschakelen om domein controllers op te geven die de agent moet gebruiken voor het verzenden van inrichtingsaanvragen.
-
-   ![Referenties voor domein](./media/workday-inbound-tutorial/pa_install_screen_5.png)
-   
-1. Als het domein is geconfigureerd, ziet u in het installatieprogramma een lijst met geconfigureerde domeinen. Op dit scherm kunt u stappen 5 en 6 herhalen om meer domeinen toe te voegen. Klik op **Volgende** om de agent te registreren.
-
-   ![Geconfigureerde domeinen](./media/workday-inbound-tutorial/pa_install_screen_6.png "Geconfigureerde domeinen")
-
-   > [!NOTE]
-   > Als u meerdere AD-domeinen hebt (bijvoorbeeld na.contoso.com en emea.contoso.com), moet u elk domein afzonderlijk toevoegen aan de lijst.
-   > Het is niet voldoende om alleen het bovenliggende domein (bijvoorbeeld contoso.com) toe te voegen. U moet elk onderliggend domein bij de agent registreren.
-   
-1. Controleer de configuratiegegevens en klik op **Bevestigen** om de agent te registreren.
-  
-   ![Controlescherm](./media/workday-inbound-tutorial/pa_install_screen_7.png "Controlescherm")
-   
-1. In de configuratiewizard wordt de voortgang van de registratie van de agent weergegeven.
-  
-   ![Registratie van agent](./media/workday-inbound-tutorial/pa_install_screen_8.png "Registratie van agent")
-   
-1. Als de registratie van de agent is voltooid, klikt u op **Afsluiten** om de wizard af te sluiten.
-  
-   ![Laatste scherm van wizard](./media/workday-inbound-tutorial/pa_install_screen_9.png "Laatste scherm van wizard")
-   
-1. Controleer de installatie van de agent en zorg ervoor dat deze wordt uitgevoerd door de module Services te openen en te zoeken naar de service met de naam 'Microsoft Azure AD Connect Provisioning Agent'.
-  
-   ![Schermopname van Microsoft Azure AD Connect Provisioning Agent die in Services wordt uitgevoerd.](./media/workday-inbound-tutorial/services.png)
+Plaats het installatieprogramma van de gedownloade agent op de serverhost en volg de stappen die zijn vermeld [in het gedeelte Agent installeren](../cloud-provisioning/how-to-install.md) om de configuratie van de agent te voltooien.
 
 ### <a name="part-3-in-the-provisioning-app-configure-connectivity-to-successfactors-and-active-directory"></a>Deel 3: Connectiviteit met SuccessFactors en Active Directory configureren
 In deze stap zetten we een verbinding op met SuccessFactors en Active Directory in Azure Portal. 
@@ -243,11 +195,11 @@ In deze stap zetten we een verbinding op met SuccessFactors en Active Directory 
 
 1. Ga als volgt te werk in de sectie **Referenties voor beheerder**:
 
-   * **Gebruikersnaam van beheerder**: Voer de gebruikersnaam van het API-gebruikersaccount van SuccessFactors in, met de bedrijfs-id eraan toegevoegd. De naam heeft de volgende indeling: **gebruikersnaam\@bedrijfsid**
+   * **Gebruikersnaam van beheerder** - Voer de gebruikersnaam van de gebruikersaccount van de SuccessFactors-API in, waarbij de bedrijfs-ID is toegevoegd. Deze heeft de volgende indeling: **gebruikersnaam\@bedrijfsid**
 
-   * **Beheerderswachtwoord**: voer het wachtwoord in van het API-gebruikersaccount van SuccessFactors. 
+   * **Beheerderswachtwoord -** Voer het wachtwoord in van het gebruikersaccount van de SuccessFactors-API. 
 
-   * **Tenant-URL**: Voer de naam in van het eindpunt van de OData API-services van SuccessFactors. Voer alleen de hostnaam van de server in, dus zonder http of https. Deze waarde moet er als volgt uitzien: **<api-server-naam>.successfactors.com**.
+   * **Tenant-URL -** Voer de naam in van het SuccessFactors OData-API-service-eindpunt. Voer alleen de hostnaam van de server in, dus zonder http of https. Deze waarde moet er als volgt uitzien: **<api-server-naam>.successfactors.com**.
 
    * **Active Directory-forest**: De 'naam' van uw Active Directory domein, zoals dit is geregistreerd bij de agent. Gebruik de vervolgkeuzelijst om het doeldomein te selecteren waarbij u gebruikers wilt inrichten. Deze waarde bestaat meestal uit een tekenreeks zoals *contoso.com*
 
@@ -258,7 +210,7 @@ In deze stap zetten we een verbinding op met SuccessFactors en Active Directory 
 
    * **E-mailmelding**: Voer uw e-mailadres in en schakel het selectievakje ‘e-mail verzenden als er een fout is opgetreden’ in.
     > [!NOTE]
-    > De Azure AD-inrichtingsservice verzendt een e-mailmelding als de inrichtingstaak de status [quarantaine](../app-provisioning/application-provisioning-quarantine-status.md) krijgt.
+    > De Azure AD-inrichtingsservice verzendt een e-mailmelding als de inrichtingstaak in [quarantaine](../app-provisioning/application-provisioning-quarantine-status.md) is geplaatst.
 
    * Klik op de knop **Verbinding testen**. Als de verbindingstest is gelukt, klikt u bovenaan op de knop **Opslaan**. Als de test mislukt, controleert u of de SuccessFactors-referenties en de AD-referenties die zijn geconfigureerd voor de installatie van de agent geldig zijn.
     >[!div class="mx-imgBorder"]
@@ -331,24 +283,22 @@ In deze sectie configureert u hoe gebruikersgegevens stromen van SuccessFactors 
 
 1. Als u uw toewijzingen wilt opslaan, klikt u op **Opslaan** bovenaan de sectie Kenmerktoewijzing.
 
-Als de configuratie van kenmerktoewijzingen is voltooid, kunt u [de service voor het inrichten van gebruikers inschakelen en starten](#enable-and-launch-user-provisioning).
+Nadat de configuratie van de kenmerktoewijzing is voltooid, kunt u de inrichting testen voor een enkele gebruiker met [inrichting on demand](../app-provisioning/provision-on-demand.md) en vervolgens kunt u [de gebruikersinrichtingsservice inschakelen en starten](#enable-and-launch-user-provisioning).
 
 ## <a name="enable-and-launch-user-provisioning"></a>Gebruikersinrichting inschakelen en starten
 
-Zodra de configuratie van de SuccessFactors-inrichtings-app is voltooid, kunt u de inrichtingsservice inschakelen in Azure Portal.
+Nadat de configuratie van de SuccessFactors-inrichtings-app zijn voltooid en u inrichting voor een enkele gebruiker met [inrichting on demand](../app-provisioning/provision-on-demand.md) hebt geverifieerd, kunt u de inrichtingsservice in de Azure Portal inschakelen.
 
 > [!TIP]
-> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of er problemen zijn met gegevens van SuccessFactors, kan de inrichtingstaak mislukken en wordt deze in quarantaine geplaatst. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
+> Wanneer u de inrichtingsservice inschakelt, worden er standaard inrichtingsbewerkingen gestart voor alle gebruikers binnen het bereik. Als er fouten zijn opgetreden in de toewijzing of er problemen zijn met gegevens van SuccessFactors, kan de inrichtingstaak mislukken en wordt deze in quarantaine geplaatst. Om dit te voorkomen, raden we u als best practice aan om het filter **Bereik van bronobject** te configureren en uw kenmerktoewijzingen te testen met enkele testgebruikers met [inrichtin on demand](../app-provisioning/provision-on-demand.md) voordat u de volledige synchronisatie voor alle gebruikers start. Wanneer u hebt gecontroleerd of de toewijzingen werken en de gewenste resultaten opleveren, kunt u het filter verwijderen of het geleidelijk uitbreiden met meer gebruikers.
 
-1. Stel op het tabblad **Inrichten** de optie **Inrichtingsstatus** in op **Aan**.
+1. Ga naar de Blade **Inrichten** en klik op **Inrichting starten**.
 
-2. Klik op **Opslaan**.
+1. De eerste synchronisatie wordt nu gestart. Deze kan een wisselend aantal uren duren, afhankelijk van het aantal gebruikers in de SuccessFactors-tenant. U kunt de voortgangsbalk controleren om de voortgang van de synchronisatiecyclus bij te houden. 
 
-3. De eerste synchronisatie wordt nu gestart. Deze kan een wisselend aantal uren duren, afhankelijk van het aantal gebruikers in de SuccessFactors-tenant. U kunt de voortgangsbalk controleren om de voortgang van de synchronisatiecyclus bij te houden. 
+1. Ga naar het tabblad **Auditlogboeken** in Azure Portal om te zien welke acties de inrichtingsservice heeft uitgevoerd. In de auditlogboeken worden alle afzonderlijke synchronisatiegebeurtenissen weergegeven die door de inrichtingsservice zijn uitgevoerd, bijvoorbeeld welke gebruikers zijn ingelezen uit SuccessFactors en vervolgens zijn toegevoegd aan of bijgewerkt in Active Directory. 
 
-4. Ga naar het tabblad **Auditlogboeken** in Azure Portal om te zien welke acties de inrichtingsservice heeft uitgevoerd. In de auditlogboeken worden alle afzonderlijke synchronisatiegebeurtenissen weergegeven die door de inrichtingsservice zijn uitgevoerd, bijvoorbeeld welke gebruikers zijn ingelezen uit SuccessFactors en vervolgens zijn toegevoegd aan of bijgewerkt in Active Directory. 
-
-5. Zodra de eerste synchronisatie is voltooid, wordt er een rapport met een overzicht van de controle weergegeven op het tabblad **Inrichten**, zoals u hieronder kunt zien.
+1. Zodra de eerste synchronisatie is voltooid, wordt er een rapport met een overzicht van de controle weergegeven op het tabblad **Inrichten**, zoals u hieronder kunt zien.
 
    > [!div class="mx-imgBorder"]
    > ![Voortgangsbalk van het inrichten](./media/sap-successfactors-inbound-provisioning/prov-progress-bar-stats.png)

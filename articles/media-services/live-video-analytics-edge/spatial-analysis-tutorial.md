@@ -3,12 +3,12 @@ title: Livevideo analyseren met Computer Vision voor ruimtelijke analyse, Azure
 description: In deze zelfstudie leert u hoe u Live Video Analytics samen met de AI-functie Computer Vision ruimtelijke analyse gebruikt van Azure Cognitive Services om een livevideofeed van een (gesimuleerde) IP-camera te analyseren.
 ms.topic: tutorial
 ms.date: 09/08/2020
-ms.openlocfilehash: 5cebedec11b91f5b0b94df25a860da3d517bb997
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 5b979bfeb6961b285cfeb2287888d8f157608d96
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400506"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98060177"
 ---
 # <a name="analyze-live-video-with-computer-vision-for-spatial-analysis-preview"></a>Livevideo analyseren met Computer Vision voor ruimtelijke analyse (preview)
 
@@ -166,7 +166,7 @@ Het implementatiemanifest geeft aan welke modules op een edge-apparaat worden ge
 Volg deze stappen om het manifest te genereren op basis van het sjabloonbestand en het vervolgens te implementeren op het edge-apparaat.
 
 1. Open Visual Studio Code.
-1. Selecteer naast het deelvenster AZURE IOT HUB het pictogram Meer acties om de IoT Hub-verbindingsreeks in te stellen. U kunt de tekenreeks kopiëren vanuit het bestand src/cloud-to-device-console-app/appsettings.json.
+1. Selecteer naast het deelvenster AZURE IOT HUB het pictogram Meer acties om de IoT Hub-verbindingsreeks in te stellen. U kunt de tekenreeks kopiëren uit het bestand `src/cloud-to-device-console-app/appsettings.json`.
 
     > [!div class="mx-imgBorder"]
     > :::image type="content" source="./media/spatial-analysis-tutorial/connection-string.png" alt-text="Ruimtelijke analyse: verbindingsreeks":::
@@ -222,13 +222,13 @@ Er is een program.cs dat de directe methodes in src/cloud-to-device-console-app/
 
 In operations.json:
 
-* Stel de topologie als volgt in (topologyFile voor lokale topologie, topologyUrl voor onlinetopologie):
+* Stel de topologie als volgt in:
 
 ```json
 {
     "opName": "GraphTopologySet",
     "opParams": {
-        "topologyFile": "../edge/spatialAnalysisTopology.json"
+        "topologyUrl": "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/lva-spatial-analysis/2.0/topology.json"
     }
 },
 ```
@@ -261,17 +261,6 @@ In operations.json:
     }
 },
 ```
-* Wijzig de link naar de graaftopologie:
-
-`topologyUrl` : "https://raw.githubusercontent.com/Azure/live-video-analytics/master/MediaGraph/topologies/lva-spatial-analysis/topology.json"
-
-Bewerk onder **GraphInstanceSet** de naam van de grafiektopologie zodat deze overeenkomt met de waarde in de voorgaande koppeling:
-
-`topologyName` : InferencingWithCVExtension
-
-Bewerk de naam onder **GraphTopologyDelete**:
-
-`name`: InferencingWithCVExtension
 
 >[!Note]
 Controleer het gebruik van MediaGraphRealTimeComputerVisionExtension om verbinding te maken met de module ruimtelijke analyse. Stel de ${grpcUrl} in op **tcp://spatialAnalysis:<POORTNUMMER>** , bijv. tcp://spatialAnalysis:50051
@@ -281,40 +270,51 @@ Controleer het gebruik van MediaGraphRealTimeComputerVisionExtension om verbindi
     "@type": "#Microsoft.Media.MediaGraphCognitiveServicesVisionExtension",
     "name": "computerVisionExtension",
     "endpoint": {
-    "@type": "#Microsoft.Media.MediaGraphUnsecuredEndpoint",
-    "url": "${grpcUrl}",
-    "credentials": {
-        "@type": "#Microsoft.Media.MediaGraphUsernamePasswordCredentials",
-        "username": "${spatialanalysisusername}",
-        "password": "${spatialanalysispassword}"
-    }
+        "@type": "#Microsoft.Media.MediaGraphUnsecuredEndpoint",
+        "url": "${grpcUrl}",
+        "credentials": {
+            "@type": "#Microsoft.Media.MediaGraphUsernamePasswordCredentials",
+            "username": "${spatialanalysisusername}",
+            "password": "${spatialanalysispassword}"
+        }
     },
     "image": {
-    "scale": {
-        "mode": "pad",
-        "width": "1408",
-        "height": "786"
+        "scale": {
+            "mode": "pad",
+            "width": "1408",
+            "height": "786"
+        },
+        "format": {
+            "@type": "#Microsoft.Media.MediaGraphImageFormatRaw",
+            "pixelFormat": "bgr24"
+        }
     },
-    "format": {
-        "@type": "#Microsoft.Media.MediaGraphImageFormatRaw",
-        "pixelFormat": "bgr24"
-    }
+    "samplingOptions": {
+        "skipSamplesWithoutAnnotation": "false",
+        "maximumSamplesPerSecond": "20"
     },
     "inputs": [
-    {
-        "nodeName": "frameRateFilter"
-    }
+        {
+            "nodeName": "rtspSource",
+            "outputSelectors": [
+                {
+                    "property": "mediaType",
+                    "operator": "is",
+                    "value": "video"
+                }
+            ]
+        }
     ]
 }
 ```
 
-Voer een foutopsporingssessie uit en volg de TERMINAL-instructies. Hiermee worden de topologie en het grafiekexemplaar ingesteld, het grafiekexemplaar geactiveerd en ten slotte de resources verwijderd.
+Voer een foutopsporingssessie uit en volg de **TERMINAL**-instructies. Hiermee worden de topologie en het grafiekexemplaar ingesteld, het grafiekexemplaar geactiveerd en ten slotte de resources verwijderd.
 
 ## <a name="interpret-results"></a>Resultaten interpreteren
 
 Wanneer een mediagrafiek wordt gemaakt, zou u een 'MediaSessionEstablished'-gebeurtenis moeten zijn. Hier een [voorbeeld van een MediaSessionEstablished-gebeurtenis](detect-motion-emit-events-quickstart.md#mediasessionestablished-event).
 
-De module ruimtelijke analyse verzendt ook AI Insight-gebeurtenissen naar Live Video Analytics en vervolgens naar IoTHub en wordt ook weergegeven in OUTPUT. De ENTITEIT is detecteren van objecten en GEBEURTENIS is ruimteanalysegebeurtenissen. Deze uitvoer wordt doorgegeven naar Live Video Analytics.
+De module ruimtelijke analyse verzendt ook AI Insight-gebeurtenissen naar Live Video Analytics en vervolgens naar IoTHub, en wordt ook weergegeven in **OUTPUT**. De ENTITEIT is detecteren van objecten en GEBEURTENIS is ruimteanalysegebeurtenissen. Deze uitvoer wordt doorgegeven naar Live Video Analytics.
 
 Voorbeelduitvoer voor personZoneEvent (van cognitiveservices.vision.spatialanalysis-personcrossingpolygon.livevideoanalytics-bewerking):
 

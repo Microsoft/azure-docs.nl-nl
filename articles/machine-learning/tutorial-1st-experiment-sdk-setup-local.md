@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 5df8b478c550522d4602398afd208c1e001c96a2
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 2f33fe4fafbe194238fcfbd4942807ed2fc4d6ff
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883296"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183537"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Zelfstudie: Aan de slag met Azure Machine Learning in uw ontwikkelomgeving (deel 1 van 4)
 
@@ -32,30 +32,49 @@ In deel 1 van deze zelfstudiereeks doet u het volgende:
 > * Een rekencluster instellen.
 
 > [!NOTE]
-> Deze zelfstudiereeks is gericht op de Azure Machine Learning-concepten die zijn afgestemd op *op taken gebaseerde* machine learning-taken van Python die rekenintensief zijn en/of reproduceerbaarheid vereisen. Als u meer geïnteresseerd bent in een verkennende werkstroom, kunt u in plaats daarvan [Jupyter of RStudio gebruiken op een Azure Machine Learning-rekenproces](tutorial-1st-experiment-sdk-setup.md).
+> Deze zelfstudie is gericht op de Azure Machine Learning-concepten die vereist zijn voor het indienen van **batch taken**: dit is de locatie waar de code wordt verzonden naar de cloud om te worden uitgevoerd op de achtergrond zonder tussenkomst van de gebruiker. Dit is handig voor voltooide scripts of code die u herhaaldelijk wilt uitvoeren, of voor rekenintensieve machine learning-taken. Als u meer geïnteresseerd bent in een verkennende werkstroom, kunt u in plaats daarvan [Jupyter of RStudio gebruiken op een Azure Machine Learning-rekenproces](tutorial-1st-experiment-sdk-setup.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer [Azure Machine Learning](https://aka.ms/AMLFree) uit.
-- Vertrouwd met Python en [Machine Learning-concepten](concept-azure-machine-learning-architecture.md). Bijvoorbeeld omgevingen, training, scoren, enzovoort.
-- Lokale ontwikkelomgeving, zoals Visual Studio Code, Jupyter of PyCharm.
-- Python (versie 3.5 tot 3.7).
-
+- [Anaconda](https://www.anaconda.com/download/) of [Miniconda](https://www.anaconda.com/download/) voor het beheren van virtuele Python-omgevingen en het installeren van pakketten.
 
 ## <a name="install-the-azure-machine-learning-sdk"></a>De Azure Machine Learning-SDK installeren
 
-In deze zelfstudie maken we gebruik van de Azure Machine Learning-SDK voor Python.
+In deze zelfstudie maakt u gebruik van de Azure Machine Learning-SDK voor Python. Als u problemen met Python-afhankelijkheden wilt voorkomen, maakt u een geïsoleerde omgeving. Deze reeks zelfstudies maakt gebruik van Conda om die omgeving te maken. Als u liever andere oplossingen gebruikt, zoals `venv`, `virtualenv` of docker, moet u een Python-versie gebruiken vanaf versie 3.5 tot 3.9.
 
-U kunt de hulpprogramma's die u het beste kent gebruiken (bijvoorbeeld Conda en pip) om een Python-omgeving in te stellen om in deze zelfstudie te gebruiken. Installeer de Azure Machine Learning-SDK voor Python in uw Python-omgeving via pip:
+Controleer of Conda op uw systeem is geïnstalleerd:
+    
+```bash
+conda --version
+```
+    
+Als met deze opdracht een `conda not found`-fout wordt geretourneerd, moet u [Miniconda downloaden en installeren](https://docs.conda.io/en/latest/miniconda.html). 
+
+Nadat u Conda hebt geïnstalleerd, gebruikt u een Terminal- of Anaconda-promptvenster om een nieuwe omgeving te maken:
 
 ```bash
-pip install azureml-sdk
+conda create -n tutorial python=3.8
 ```
+
+Installeer vervolgens de Azure Machine Learning SDK in de Conda-omgeving die u hebt gemaakt:
+
+```bash
+conda activate tutorial
+pip install azureml-core
+```
+    
+> [!NOTE]
+> Het duurt ongeveer twee minuten voordat de Azure Machine Learning SDK-installatie is voltooid.
+>
+> Als er een fout met betrekking tot een time-out optreedt, probeert u in plaats daarvan `pip install --default-timeout=100 azureml-core`.
+
 
 > [!div class="nextstepaction"]
 > [Ik heb de SDK geïnstalleerd](?success=install-sdk#dir) [Er is een probleem opgetreden](https://www.research.net/r/7C8Z3DN?issue=install-sdk)
 
 ## <a name="create-a-directory-structure-for-code"></a><a name="dir"></a>Mapstructuur voor code maken
+
 We raden aan dat u de volgende eenvoudige mapstructuur instelt voor deze zelfstudie:
 
 ```markdown
@@ -68,8 +87,9 @@ tutorial
 
 > [!TIP]
 > U kunt de verborgen submap .azureml in een terminalvenster maken.  Of u volgt de onderstaande stappen:
+>
 > * Gebruik **Command + Shift + .** in een Mac Finder-venster om de mogelijkheid in/uit te schakelen om mappen te zien en te maken die beginnen met een punt (.).  
-> * Voor Windows 10 raadpleegt u [Hoe kan ik verborgen bestanden en mappen weergeven?](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5). 
+> * In een Windows 10-bestandenverkenner raadpleegt u [Hoe kan ik verborgen bestanden en mappen weergeven?](https://support.microsoft.com/en-us/windows/view-hidden-files-and-folders-in-windows-10-97fbc472-c603-9d90-91d0-1166d1d9f4b5). 
 > * Gebruik in de grafische interface van Linux **CTRL + h** of het menu **Weergave** en schakel het selectievakje **Verborgen bestanden weergeven** in.
 
 > [!div class="nextstepaction"]
@@ -104,7 +124,7 @@ ws = Workspace.create(name='<my_workspace_name>', # provide a name for your work
 ws.write_config(path='.azureml')
 ```
 
-Voer deze code uit vanuit de map `tutorial`:
+Voer, in het venster met de geactiveerde Conda-omgeving van *tutorial1*, deze code uit vanuit de map `tutorial`.
 
 ```bash
 cd <path/to/tutorial>
@@ -163,7 +183,7 @@ except ComputeTargetException:
 cpu_cluster.wait_for_completion(show_output=True)
 ```
 
-Het Python-bestand uitvoeren:
+Voer, in het venster met de geactiveerde Conda-omgeving van *tutorial1*, het Python-bestand uit:
 
 ```bash
 python ./02-create-compute.py
@@ -185,6 +205,19 @@ tutorial
 
 > [!div class="nextstepaction"]
 > [Ik heb een rekencluster gemaakt](?success=create-compute-cluster#next-steps) [Er is een probleem opgetreden](https://www.research.net/r/7C8Z3DN?issue=create-compute-cluster)
+
+## <a name="view-in-the-studio"></a>Weergeven in de studio
+
+Meld u aan bij [Azure Machine Learning Studio](https://ml.azure.com) om de werkruimte en het rekenproces dat u hebt gemaakt weer te geven.
+
+1. Selecteer het **Abonnement** waarmee u de werkruimte hebt gemaakt.
+1. Selecteer de **Machine Learning-werkruimte** u hebt gemaakt, *tutorial-ws*.
+1. Nadat de werkruimte is geladen, selecteert u aan de linkerkant **Berekenen**.
+1. Selecteer, bovenaan, het tabblad **Rekenclusters**.
+
+:::image type="content" source="media/tutorial-1st-experiment-sdk-local/compute-instance-in-studio.png" alt-text="Schermopname: Bekijk het rekenproces in uw werkruimte.":::
+
+In deze weergave wordt het ingerichte rekencluster weergegeven, samen met het aantal niet-actieve knooppunten, bezette knooppunten en niet-ingerichte knooppunten.  Omdat u het cluster nog niet hebt gebruikt, zijn alle knooppunten momenteel niet ingericht.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 971bac8a0b0951d4e07e139aea6c465a9159b8db
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 43a483f49a9e9004a4f487e82195198f2600a919
+ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96570957"
+ms.lasthandoff: 01/11/2021
+ms.locfileid: "98071150"
 ---
 # <a name="tutorial-run-a-hello-world-python-script-part-2-of-4"></a>Zelfstudie: Een Python-script voor 'Hallo wereld' uitvoeren (deel 2 van 4)
 
@@ -36,9 +36,6 @@ In deze zelfstudie leert u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 - Voltooien van [Deel 1](tutorial-1st-experiment-sdk-setup-local.md) als u nog geen Azure Machine Learning-werkruimte hebt.
-- Introductiekennis van de Python-taal en machine learning-werkstromen.
-- Lokale ontwikkelomgeving, zoals Visual Studio Code, Jupyter of PyCharm.
-- Python (versie 3.5 tot 3.7).
 
 ## <a name="create-and-run-a-python-script-locally"></a>Een Python-script lokaal maken en uitvoeren
 
@@ -64,7 +61,7 @@ tutorial
 
 ### <a name="test-your-script-locally"></a><a name="test"></a>Uw script lokaal testen
 
-U kunt uw code lokaal uitvoeren met behulp van uw favoriete IDE of een terminal. Code lokaal uitvoeren biedt het voordeel van interactieve foutopsporing.
+U kunt uw code lokaal uitvoeren met behulp van uw favoriete IDE of een terminal. Code lokaal uitvoeren biedt het voordeel van interactieve foutopsporing.  Voer in het venster met de geactiveerde Conda-omgeving van *zelfstudie1* het Python-bestand uit:
 
 ```bash
 cd <path/to/tutorial>
@@ -93,8 +90,6 @@ run = experiment.submit(config)
 aml_url = run.get_portal_url()
 print(aml_url)
 ```
-
-
 
 ### <a name="understand-the-code"></a>De code begrijpen
 
@@ -148,13 +143,6 @@ Hier volgt een beschrijving van hoe het besturingsscript werkt:
 
 Voer uw besturingsscript uit, dat op zijn beurt `hello.py` uitvoert op het rekencluster dat u hebt gemaakt in de [installatiezelfstudie](tutorial-1st-experiment-sdk-setup-local.md).
 
-De allereerste uitvoering duurt 5-10 minuten. Dit komt doordat het volgende gebeurt:
-
-* Er wordt een Docker-installatiekopie gemaakt in de cloud
-* De grootte van het berekeningscluster wordt gewijzigd van 0 naar 1 knooppunt
-* De Docker-installatiekopie wordt gedownload naar de berekening. 
-
-De volgende uitvoeringen zijn veel sneller (ongeveer 15 seconden), omdat de Docker-installatiekopie wordt opgeslagen in de cache op de computer. U kunt dit testen door de code hieronder opnieuw te verzenden nadat de eerste uitvoering is voltooid.
 
 ```bash
 python 03-run-hello.py
@@ -168,9 +156,17 @@ python 03-run-hello.py
 
 ## <a name="monitor-your-code-in-the-cloud-by-using-the-studio"></a><a name="monitor"></a>Uw code in de cloud bewaken met de studio
 
-De uitvoer bevat een link naar de studio die er ongeveer als volgt uitziet: `https://ml.azure.com/experiments/hello-world/runs/<run-id>?wsid=/subscriptions/<subscription-id>/resourcegroups/<resource-group>/workspaces/<workspace-name>`.
+De uitvoer uit het script bevat een koppeling naar de studio die er ongeveer als volgt uitziet: `https://ml.azure.com/experiments/hello-world/runs/<run-id>?wsid=/subscriptions/<subscription-id>/resourcegroups/<resource-group>/workspaces/<workspace-name>`.
 
-Volg de link en navigeer naar het tabblad **Uitvoer en logboeken**. Hier ziet u een bestand `70_driver_log.txt`, dat er als volgt uitziet:
+Volg de koppeling.  Eerst ziet u de status **Voorbereiden**.  De allereerste uitvoering duurt 5-10 minuten. Dit komt doordat het volgende gebeurt:
+
+* Er wordt een Docker-installatiekopie gemaakt in de cloud
+* De grootte van het berekeningscluster wordt gewijzigd van 0 naar 1 knooppunt
+* De Docker-installatiekopie wordt gedownload naar de berekening. 
+
+Volgende uitvoeringen verlopen veel sneller (~15 seconden), omdat de Docker-installatiekopie wordt opgeslagen in de cache van het rekenknooppunt. U kunt dit testen door de onderstaande code opnieuw te verzenden nadat de eerste uitvoering is voltooid.
+
+Als de taak is voltooid, gaat u naar het tabblad **Uitvoer en logboeken**. Hier ziet u een bestand `70_driver_log.txt`, dat er als volgt uitziet:
 
 ```txt
  1: [2020-08-04T22:15:44.407305] Entering context manager injector.

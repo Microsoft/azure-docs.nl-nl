@@ -1,7 +1,7 @@
 ---
 title: 'Zelfstudie: Het voorspellende model maken met een notebook (deel 1 van 2)'
 titleSuffix: Azure Machine Learning
-description: Ontdek hoe u een machine learning-model bouwt en implementeert met behulp van code in een Jupyter Notebook. U kunt het model gebruiken om resultaten te voorspellen in Microsoft Power BI.
+description: Ontdek hoe u een machine learning-model bouwt en implementeert met behulp van code in een Jupyter Notebook. Maak ook een scorescript waarmee invoer en uitvoer wordt gedefinieerd, voor eenvoudige integratie in Microsoft Power BI.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,16 +10,16 @@ ms.author: samkemp
 author: samuel100
 ms.reviewer: sdgilley
 ms.date: 12/11/2020
-ms.openlocfilehash: 1dfee56f90011d3c532767e136b383e4eb95c234
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 29b340448f3ce3e18a649065bdcd0b335bab8b73
+ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814768"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98108242"
 ---
-# <a name="tutorial-power-bi-integration---create-the-predictive-model-by-using-a-jupyter-notebook-part-1-of-2"></a>Zelfstudie: Power BI-integratie: het voorspellende model maken met een Jupyter Notebook (deel 1 van 2)
+# <a name="tutorial-power-bi-integration---create-the-predictive-model-with-a-jupyter-notebook-part-1-of-2"></a>Zelfstudie: Power BI-integratie: het voorspellende model maken met een Jupyter-notebook (deel 1 van 2)
 
-In deel 1 van deze zelfstudie traint en implementeert u een voorspellend machine learning-model, met behulp van code in een Jupyter Notebook. In deel 2 gebruikt u het model om resultaten te voorspellen in Microsoft Power BI.
+In deel 1 van deze zelfstudie traint en implementeert u een voorspellend machine learning-model, met behulp van code in een Jupyter Notebook. U maakt ook een scorescript om het invoer- en uitvoerschema van het model te definiëren voor integratie in Power BI.  In deel 2 gebruikt u het model om resultaten te voorspellen in Microsoft Power BI.
 
 In deze zelfstudie hebt u:
 
@@ -27,6 +27,7 @@ In deze zelfstudie hebt u:
 > * Een Jupyter-notebook maken.
 > * Maak een Azure Machine Learning-rekenproces.
 > * Train een regressiemodel met behulp van scikit-learn.
+> * Schrijf een scorescript waarmee de invoer en uitvoer wordt gedefinieerd, voor eenvoudige integratie in Microsoft Power BI.
 > * Implementeer het model in een eindpunt voor scoren in realtime.
 
 Er zijn drie verschillende manieren om het model, dat u gaat gebruiken in Power BI, te maken en te implementeren.  Dit artikel is van toepassing op 'Optie A: Train en implementeer modellen met behulp van notebooks."  Deze optie is een op code gerichte creatie-ervaring. Het gebruikt Jupyter Notebooks die worden gehost in Azure Machine Learning Studio. 
@@ -157,7 +158,7 @@ U kunt ook het model in Azure Machine Learning Studio weergeven. Selecteer **Mod
 
 :::image type="content" source="media/tutorial-power-bi/model.png" alt-text="Schermopname toont hoe een model kan worden bekeken.":::
 
-### <a name="define-the-scoring-script"></a>Het scorescript definiëren
+## <a name="define-the-scoring-script"></a>Het scorescript definiëren
 
 Wanneer u een model implementeert dat wordt geïntegreerd in Power BI, moet u een Python-*scorescript* en een aangepaste omgeving definiëren. Het scorescript bevat twee functies:
 
@@ -165,7 +166,7 @@ Wanneer u een model implementeert dat wordt geïntegreerd in Power BI, moet u ee
 - De functie `run(data)` wordt uitgevoerd wanneer een aanroep van de service invoergegevens bevat die moeten worden gescoord. 
 
 >[!NOTE]
-> In dit artikel worden Python-decoratoren gebruikt om het schema van de invoer- en uitvoergegevens te definiëren. Deze installatie is belangrijk voor de integratie van Power BI.
+> De Python-decorators in de code hieronder definiëren het schema van de invoer- en uitvoergegevens. Dit is belangrijk voor integratie in Power BI.
 
 Kopieer en plak de volgende code in een nieuwe *codecel* in uw notebook. Het volgende codefragment heeft cel-magic waarmee de code naar een bestand met de naam *score.py* wordt geschreven.
 

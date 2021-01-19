@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 10/04/2020
+ms.date: 01/13/2021
 ms.author: jeedes
-ms.openlocfilehash: bd62855aef59439ed476a13770f79ce6d3cf68f8
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: d4f8e71a0afbb1b00313d5e100ba8b3fd2b4e2ce
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96180792"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185747"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-marketo"></a>Zelfstudie: Azure Active Directory-integratie met Marketo
 
@@ -40,6 +40,9 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Marketo ondersteunt door **IDP** geïnitieerde eenmalige aanmelding
 
+> [!NOTE]
+> De id van deze toepassing is een vaste tekenreekswaarde zodat maar één exemplaar in één tenant kan worden geconfigureerd.
+
 ## <a name="adding-marketo-from-the-gallery"></a>Marketo toevoegen vanuit de galerie
 
 Om de integratie van Marketo in Azure AD te configureren, moet u Marketo vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
@@ -51,7 +54,7 @@ Om de integratie van Marketo in Azure AD te configureren, moet u Marketo vanuit 
 1. Typ in de sectie **Toevoegen uit de galerie** in het zoekvak: **Marketo**.
 1. Selecteer **Marketo** in het resultatenvenster en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren en testen
+## <a name="configure-and-test-azure-ad-sso-for-marketo"></a>Eenmalige aanmelding van Azure AD voor Marketo configureren en testen
 
 In deze sectie gaat u Azure AD-eenmalige aanmelding bij Marketo configureren en testen op basis van een testgebruiker met de naam **Britta Simon**.
 Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Marketo tot stand is gebracht.
@@ -59,10 +62,10 @@ Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure 
 Voer de volgende stappen uit om eenmalige aanmelding van Azure AD met Marketo te configureren en te testen:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
-    * **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met Britta Simon.
-    * **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** : zodat Britta Simon eenmalige aanmelding van Azure AD kan gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met Britta Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** : zodat Britta Simon eenmalige aanmelding van Azure AD kan gebruiken.
 2. **[Eenmalige aanmelding voor Marketo configureren](#configure-marketo-sso)** : als u de instellingen voor eenmalige aanmelding aan de toepassingszijde wilt configureren.
-    * **[Testgebruiker maken voor Marketo](#create-marketo-test-user)**: als u een tegenhanger van Britta Simon in Marketo wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
+    1. **[Testgebruiker maken voor Marketo](#create-marketo-test-user)**: als u een tegenhanger van Britta Simon in Marketo wilt hebben die is gekoppeld aan de Azure AD-weergave van de gebruiker.
 3. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
 ### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
@@ -71,20 +74,20 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. Ga in de Azure-portal op de integratiepagina van de toepassing **Marketo** naar de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Id** typt u een URL met het volgende patroon: `https://saml.marketo.com/sp`
+    a. In het tekstvak **Id** typt u deze URL: `https://saml.marketo.com/sp`
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://login.marketo.com/saml/assertion/\<munchkinid\>`
 
     c. In het tekstvak **Relaystatus** typt u een URL met de volgende notatie: `https://<munchkinid>.marketo.com/`
 
     > [!NOTE]
-    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id, antwoord-URL en relaystatus. Neem contact op met het [ondersteuningsteam van Marketo](https://investors.marketo.com/contactus.cfm) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
+    > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke antwoord-URL en relaystatus. Neem contact op met het [ondersteuningsteam van Marketo](https://investors.marketo.com/contactus.cfm) om deze waarden te verkrijgen. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
 5. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -120,7 +123,17 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 ## <a name="configure-marketo-sso"></a>Eenmalige aanmelding voor Marketo configureren
 
-1. Om de Munchkin-id van uw toepassing te verkrijgen, meldt u zich met beheerdersreferenties bij Marketo aan en voert u de volgende acties uit:
+1. Als u de configuratie in Marketo wilt automatiseren, moet u **Mijn apps-browserextensie voor veilig aanmelden** installeren door op **De extensie installeren** te klikken.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Als u op **Marketo instellen** klikt nadat u de extensie hebt toegevoegd aan de browser, wordt u doorgestuurd naar de Marketo-toepassing. Geef hier de beheerdersreferenties op om u aan te melden bij Marketo. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3 t/m 6 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u Marketo handmatig wilt instellen, meldt u zich in een ander webbrowservenster als beheerder aan bij uw Marketo-bedrijfssite.
+
+1. Voer de volgende acties uit om de Munchkin-id voor uw toepassing op te halen:
    
     a. Meld u bij Marketo aan met beheerdersreferenties.
    
@@ -233,13 +246,13 @@ In deze sectie gaat u in Marketo een gebruiker maken met de naam Britta Simon. V
 
 8. De gebruiker ontvangt de e-mailmelding en moet op de koppeling klikken en het wachtwoord wijzigen om het account te activeren. 
 
-### <a name="test-sso"></a>Eenmalige aanmelding testen 
+### <a name="test-sso"></a>Eenmalige aanmelding testen
 
 In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-1. Klik op 'Deze toepassing testen' in de Azure-portal. U wordt automatisch aangemeld bij het exemplaar van Marketo waarvoor u eenmalige aanmelding hebt ingesteld.
+* Klik op 'Deze toepassing testen' in de Azure-portal. U wordt automatisch aangemeld bij het exemplaar van Marketo waarvoor u eenmalige aanmelding hebt ingesteld.
 
-1. U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u in het toegangsvenster op de tegel Marketo klikt, wordt u automatisch aangemeld bij het exemplaar van Marketo waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Marketo klikt in Mijn apps, wordt u automatisch aangemeld bij het exemplaar van Marketo waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 

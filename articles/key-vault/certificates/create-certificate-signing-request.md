@@ -1,6 +1,6 @@
 ---
-title: CSR in Azure Key Vault maken en samenvoegen
-description: CSR in Azure Key Vault maken en samenvoegen
+title: Een CSR in Azure Key Vault maken en samenvoegen
+description: Meer informatie over het maken en samenvoegen van een CSR in Azure Key Vault.
 services: key-vault
 author: msmbaldwin
 manager: rkarlin
@@ -10,131 +10,143 @@ ms.subservice: certificates
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.author: sebansal
-ms.openlocfilehash: 42f649f9dd206b34f0fac8513ba742febed2dbcb
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: bbc232ed0bc9e9715f481fef8b7b3a1f8eeebe78
+ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724626"
+ms.lasthandoff: 01/10/2021
+ms.locfileid: "98059650"
 ---
-# <a name="creating-and-merging-csr-in-key-vault"></a>CSR in Key Vault maken en samenvoegen
+# <a name="create-and-merge-a-csr-in-key-vault"></a>Een CSR in Key Vault maken en samenvoegen
 
-Azure Key Vault ondersteunt het opslaan van digitaal certificaat dat is uitgegeven door een certificeringsinstantie van uw keuze in uw sleutelkluis. Het biedt ondersteuning voor het maken van de aanvraag voor certificaatondertekening met een persoonlijk-openbaar sleutelpaar en kan worden ondertekend door elke gekozen certificeringsinstantie. Dit kan een interne ondernemings-CA of een externe openbare CA zijn. Een aanvraag voor certificaatondertekening (ook CSR of certificerings aanvraag) is een bericht dat door de gebruiker naar een certificeringsinstantie (CA) wordt verzonden om de uitgifte van een digitaal certificaat aan te vragen.
+Azure Key Vault ondersteunt het opslaan van digitale certificaten die zijn uitgegeven door een certificeringsinstantie. Het biedt ondersteuning voor het maken van een aanvraag voor certificaat ondertekening (CSR) met een privé/openbaar sleutelpaar. De CSR kan worden ondertekend door elke CA (een interne ondernemings-CA of een externe openbare CA). Een CSR is een bericht dat u naar een certificeringsinstantie verzendt om een digitaal certificaat aan te vragen.
 
 Zie [Azure Key Vault-certificaten](./about-certificates.md) voor meer algemene informatie over certificaten.
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-## <a name="adding-certificate-in-key-vault-issued-by-partnered-ca"></a>Een certificaat toevoegen aan Key Vault dat is uitgegeven door een partnercertificeringsinstantie
-Key Vault is een partnerschap aangegaan met de volgende twee certificeringsinstanties om het maken van certificaten te vereenvoudigen. 
+## <a name="add-certificates-in-key-vault-issued-by-partnered-cas"></a>Certificaten toevoegen aan Key Vault die zijn uitgegeven door partnercertificeringsinstanties
+
+Key Vault is een partnerschap aangegaan met de volgende certificeringsinstanties om het maken van certificaten te vereenvoudigen.
 
 |Provider|Certificaattype|Configuratie-installatie  
 |--------------|----------------------|------------------|  
 |DigiCert|Key Vault biedt OV- of EV SSL-certificaten met DigiCert| [Integratiehandleiding](./how-to-integrate-certificate-authority.md)
 |GlobalSign|Key Vault biedt OV- of EV SSL-certificaten met GlobalSign| [Integratiehandleiding](https://support.globalsign.com/digital-certificates/digital-certificate-installation/generating-and-importing-certificate-microsoft-azure-key-vault)
 
-## <a name="adding-certificate-in-key-vault-issued-by-non-partnered-ca"></a>Een certificaat toevoegen aan Key Vault dat is uitgegeven door een niet-partnercertificeringsinstantie
+## <a name="add-certificates-in-key-vault-issued-by-non-partnered-cas"></a>Certificaten toevoegen aan Key Vault die zijn uitgegeven door niet-partnercertificeringsinstanties
 
-De volgende stappen helpen u bij het maken van een certificaat van certificeringsinstanties die niet zijn gekoppeld aan Key Vault (GoDaddy is bijvoorbeeld is geen vertrouwde sleutelkluis-CA) 
-
-
+Volg deze stappen om een certificaat toe te voegen van CA's die geen partner zijn van Key Vault. (GoDaddy is bijvoorbeeld geen vertrouwde Key Vault CA.)
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 
-1.  Als u CSR wilt genereren voor de CA van uw keuze, gaat u naar de sleutelkluis die u wilt toevoegen van het certificaat.
-2.  Selecteer op de eigenschappenpagina's van de sleutelkluis **Certificaten**.
-3.  Selecteer tabblad **Genereren/importeren**.
-4.  Kies op het scherm **Een certificaat maken** de volgende waarden:
-    - **Methode voor het maken van certificaten:** Genereren.
-    - **Naam van het certificaat:** ContosoManualCSRCertificate.
-    - **Type certificeringsinstantie (CA):** Certificaat dat is uitgegeven door een niet-geïntegreerde certificeringsinstantie
-    - **Onderwerp:** `"CN=www.contosoHRApp.com"`
-    - Selecteer de andere waarden naar wens. Klik op **Create**.
+1. Ga naar de sleutelkluis waaraan u het certificaat wilt toevoegen.
+1. Selecteer op de eigenschappenpagina **Certificaten**.
+1. Selecteer het tabblad **Genereren/importeren**.
+1. Kies op het scherm **Een certificaat maken** de volgende waarden:
+    - **Methode voor het maken van certificaten**: Genereren.
+    - **Naam van het certificaat**: ContosoManualCSRCertificate.
+    - **Type certificeringsinstantie (CA)** : Certificaat dat is uitgegeven door een niet-geïntegreerde CA.
+    - **Onderwerp**: `"CN=www.contosoHRApp.com"`.
+     > [!NOTE]
+     > Als u een Relatieve DN-naam (RDN) gebruikt met een komma (,) in de waarde, plaats dan de waarde met het speciale teken tussen dubbele aanhalingstekens. 
+     >
+     > Voorbeeldvermelding van **Onderwerp**: `DC=Contoso,OU="Docs,Contoso",CN=www.contosoHRApp.com`
+     >
+     > In dit voorbeeld bevat de RDN `OU` een waarde met een komma in de naam. De resulterende uitvoer voor `OU` is **Docs, Contoso**.
+1. Selecteer de andere waarden naar wens. Selecteer vervolgens **Maken** om het certificaat toe te voegen aan de lijst **Certificaten**.
 
-    ![Certificaateigenschappen](../media/certificates/create-csr-merge-csr/create-certificate.png)  
+    ![Schermopname van de certificaateigenschappen](../media/certificates/create-csr-merge-csr/create-certificate.png)  
 
-
-6.  U ziet dat het certificaat nu is toegevoegd in de lijst Certificaten. Selecteer dit nieuwe certificaat dat u zojuist hebt gemaakt. De huidige status van het certificaat is uitgeschakeld omdat het nog niet is uitgegeven door de CA.
-7. Klik op tabblad **Certificaatbewerking** en selecteer **CSR downloaden**.
+1. Selecteer, in de lijst **Certificaten**, het nieuwe certificaat. De huidige status van het certificaat is **uitgeschakeld** omdat het certificaat nog niet is uitgegeven door de CA.
+1. Ga naar tabblad **Certificaatbewerking** en selecteer vervolgens **CSR downloaden**.
 
    ![Schermafbeelding met de knop CSR downloaden gemarkeerd.](../media/certificates/create-csr-merge-csr/download-csr.png)
- 
-8.  Breng het CSR-bestand naar de certificeringsinstantie om de aanvraag te kunnen ondertekenen.
-9.  Zodra de aanvraag is ondertekend door de CA, gaat u terug naar het certificaatbestand om en kiest u **De ondertekende aanvraag samenvoegen** in hetzelfde Certificaatbewerkingsscherm.
+
+1. Laat de CA de CSR (.csr) ondertekenen.
+1. Nadat de aanvraag is ondertekend, selecteert u **Ondertekende aanvraag samenvoegen** op het tabblad **Certificaatbewerking** om het ondertekende certificaat aan Key Vault toe te voegen.
 
 De certificaataanvraag is nu samengevoegd.
 
-
 # <a name="powershell"></a>[PowerShell](#tab/azure-powershell)
 
+1. Maak een certificaatbeleid. Omdat de CA in dit scenario gekozen geen partner is, is **IssuerName** ingesteld op **Onbekend** en wordt het certificaat niet door Key Vault ingeschreven of verlengd.
 
-
-1. Begin met **Maak het certificaatbeleid**. Key Vault zal het certificaat van de uitgever niet inschrijven of vernieuwen namens de gebruiker, omdat de CA die in dit scenario is gekozen, niet wordt ondersteund, en daarom is de IssuerName ingesteld op onbekend.
-
-   ```azurepowershell
+   ```azure-powershell
    $policy = New-AzKeyVaultCertificatePolicy -SubjectName "CN=www.contosoHRApp.com" -ValidityInMonths 1  -IssuerName Unknown
    ```
-    
-   > [!NOTE]
-   > Als u een relatieve DN-naam (RDN) gebruikt met een komma (,) in de waarde, gebruik dan enkele aanhalingstekens en plaats de waarde met het speciale teken tussen dubbele aanhalingstekens. Bijvoorbeeld: `$policy = New-AzKeyVaultCertificatePolicy -SubjectName 'OU="Docs,Contoso",DC=Contoso,CN=www.contosoHRApp.com' -ValidityInMonths 1  -IssuerName Unknown`. In dit voorbeeld ziet de waarde voor `OU` er als volgt uit **Docs, Contoso**. Deze indeling werkt voor alle waarden die een komma bevatten.
+     > [!NOTE]
+     > Als u een Relatieve DN-naam (RDN) gebruikt met een komma (,) in de waarde, gebruik dan enkele aanhalingstekens voor de volledige waarde of waardeset en plaats de waarde met het speciale teken tussen dubbele aanhalingstekens. 
+     >
+     >Voorbeeldvermelding van **Onderwerpnaam**: `$policy = New-AzKeyVaultCertificatePolicy -SubjectName 'OU="Docs,Contoso",DC=Contoso,CN=www.contosoHRApp.com' -ValidityInMonths 1  -IssuerName Unknown`. In dit voorbeeld ziet de waarde voor `OU` er als volgt uit **Docs, Contoso**. Deze indeling werkt voor alle waarden die een komma bevatten.
+     > 
+     > In dit voorbeeld bevat de RDN `OU` een waarde met een komma in de naam. De resulterende uitvoer voor `OU` is **Docs, Contoso**.
 
-2. Een **aanvraag voor certificaatondertekening** maken
+1. Maak de CSR.
 
-   ```azurepowershell
+   ```azure-powershell
    $csr = Add-AzKeyVaultCertificate -VaultName ContosoKV -Name ContosoManualCSRCertificate -CertificatePolicy $policy
    $csr.CertificateSigningRequest
    ```
 
-3. Het ophalen van de CSR-**aanvraag die is ondertekend door de CA**. De `$csr.CertificateSigningRequest` is de aanvraag voor het ondertekenen van versleuteld Base4-certificaat voor het certificaat. U kunt deze blob maken en dumpen in de certificaataanvraagwebsite van de verlener. Deze stap is afhankelijk van de certificeringsinstantie. De beste manier is om de richt lijnen van uw CA op te zoeken voor het uitvoeren van deze stap. U kunt ook hulpprogramma's zoals certreq of openssl gebruiken om de certificaataanvraag te ondertekenen en het proces voor het genereren van een certificaat te voltooien.
+1. Laat de CA de CSR ondertekenen. De `$csr.CertificateSigningRequest` is de CSR die de basis gecodeerd heeft voor het certificaat. U kunt deze blob maken en dumpen in de website van de certificaatverlener van de aanvraag. Deze stap verschilt per certificeringsinstantie. Zoek naar de richtlijnen van uw CA voor het uitvoeren van deze stap. U kunt ook hulpprogramma's zoals certreq of openssl gebruiken om de CSR te ondertekenen en het proces voor het genereren van een certificaat te voltooien.
 
+1. Voeg de ondertekende aanvraag samen in Key Vault. Wanneer de certificaat aanvraag is ondertekend, kunt u deze samenvoegen met het eerste persoonlijke/openbare sleutelpaar dat is gemaakt in Azure Key Vault.
 
-4. **Het samenvoegen van de ondertekende aanvraag** in Key Vault. Nadat de certificaataanvraag is ondertekend door de uitgever, kunt u het ondertekende certificaat terughalen en samenvoegen met het eerste persoonlijke openbare sleutelpaar dat is gemaakt in Azure Key Vault
-
-    ```azurepowershell-interactive
+    ```azure-powershell-interactive
     Import-AzKeyVaultCertificate -VaultName ContosoKV -Name ContosoManualCSRCertificate -FilePath C:\test\OutputCertificateFile.cer
     ```
 
-    De certificaataanvraag is nu succesvol samengevoegd.
+De certificaataanvraag is nu samengevoegd.
+
 ---
 
-> [!NOTE]
-> Als uw waarden voor de RD-naam komma's bevatten, kunt u ze ook toevoegen aan het veld **Onderwerp** door de waarde tussen dubbele aanhalingstekens te plaatsen, zoals weergegeven in stap 4.
-> Voorbeeld van vermelding in 'Onderwerp': `DC=Contoso,OU="Docs,Contoso",CN=www.contosoHRApp.com`In dit voorbeeld bevat de relatieve DN-naam`OU` een waarde met een komma in de naam. De resulterende uitvoer voor `OU` is **Docs, Contoso**.
+## <a name="add-more-information-to-the-csr"></a>Meer informatie toevoegen aan CSR
 
-## <a name="adding-more-information-to-csr"></a>Meer informatie toevoegen aan CSR
-
-Als u meer informatie wilt toevoegen bij het maken van een CSR, bijvoorbeeld: 
-    - Land/regio:
-    - Plaats/locatie:
-    - Provincie:
-    - Organisatie:
-    - Organisatie-eenheid: Kunt u al deze informatie toevoegen wanneer u een CSR maakt, door deze te definiëren in de onderwerpnaam.
+Als u meer informatie wilt toevoegen tijdens het maken van de CSR, definieert u dit in **SubjectName**. Mogelijk wilt u informatie toevoegen zoals:
+- Land/regio
+- Plaats
+- Provincie
+- Organisatie
+- Organisatie-eenheid
 
 Voorbeeld
-    ```SubjectName="CN = docs.microsoft.com, OU = Microsoft Corporation, O = Microsoft Corporation, L = Redmond, S = WA, C = US"
-    ```
+
+   ```azure-powershell
+   SubjectName="CN = docs.microsoft.com, OU = Microsoft Corporation, O = Microsoft Corporation, L = Redmond, S = WA, C = US"
+   ```
 
 > [!NOTE]
-> Als u een DV-certificaat aanvraagt met al deze details in de CSR, kan de aanvraag worden geweigerd door de CA, omdat deze mogelijk niet alle informatie in de aanvraag kan valideren. Als u een OV-certificaat aanvraagt, is het beter om alle informatie toe te voegen aan de CSR.
+> Als u een certificaat voor domeinvalidatie (DV) aanvraagt met aanvullende informatie, kan de CA de aanvraag afwijzen als het niet mogelijk is om alle gegevens in de aanvraag te valideren. De aanvullende informatie is mogelijk beter geschikt als u een certificaat voor organisatievalidatie (OV) aanvraagt.
 
+## <a name="faqs"></a>Veelgestelde vragen
 
-## <a name="troubleshoot"></a>Problemen oplossen
+- Hoe kan ik mijn CSR controleren of beheren?
 
-- Als u antwoorden op certificaataanvragen wilt bewaken of beheren, kunt u [hier](https://docs.microsoft.com/azure/key-vault/certificates/create-certificate-scenarios) meer lezen
+     Zie [Het maken van certificaten controleren en beheren](https://docs.microsoft.com/azure/key-vault/certificates/create-certificate-scenarios).
 
-- **Fouttype 'De openbare sleutel van het certificaat van de eindentiteit in de opgegeven X.509-certificaatinhoud komt niet overeen met het openbare gedeelte van de opgegeven persoonlijke sleutel. Controleer of het certificaat geldig is.** 'Deze fout kan optreden als u de CSR niet samenvoegt met dezelfde CSR-aanvraag die is geïnitieerd. Telkens als een CSR wordt gemaakt, wordt er een persoonlijke sleutel gemaakt die moet worden vergeleken bij het samenvoegen van de ondertekende aanvraag.
-    
-- Wanneer CSR wordt samengevoegd, wordt dan de gehele keten samengevoegd?
-    Ja, de hele keten wordt samengevoegd, op voorwaarde dat de gebruiker het samen te voegen p7b-bestand heeft teruggezet.
+- Wat als ik deze melding krijg: **Fouttype 'De openbare sleutel van het certificaat van de eindentiteit in de opgegeven X.509-certificaatinhoud komt niet overeen met het openbare gedeelte van de opgegeven persoonlijke sleutel. Controleer of het certificaat geldig is'** ?
 
-- Als het certificaat is uitgegeven in de status 'uitgeschakeld' in de Azure-portal, gaat u door met het weergeven van de **Certificaatbewerking** om het foutbericht voor dat certificaat te bekijken.
+     Deze fout treedt op als u de CSR niet samenvoegt met dezelfde CSR-aanvraag die u heeft geïnitieerd. Elke nieuwe CSR die u maakt, heeft een persoonlijke sleutel die moet overeenkomen wanneer u de ondertekende aanvraag samenvoegt.
 
-Raadpleeg de [Certificaatbewerkingen in de Key Vault REST API-referentie](/rest/api/keyvault) voor meer informatie. Raadpleeg [Kluizen: maken of bijwerken](/rest/api/keyvault/vaults/createorupdate) en [Kluizen: toegangsbeleid bijwerken](/rest/api/keyvault/vaults/updateaccesspolicy) voor meer informatie over het instellen van machtigingen.
+- Wanneer een CSR wordt samengevoegd, wordt dan de gehele keten samengevoegd?
 
-- **Fouttype: 'De opgegeven onderwerpnaam is geen geldige X500 naam'** . Deze fout kan optreden als u 'speciale tekens' in de waarden van SubjectName hebt opgenomen. Bekijk de opmerkingen in respectievelijk de instructies in Azure Portal en PowerShell. 
+     Ja, de hele keten wordt samengevoegd, op voorwaarde dat de gebruiker het samen te voegen p7b-bestand heeft teruggezet.
+
+- Wat gebeurt er als het uitgegeven certificaat de status 'uitgeschakeld' heeft in de Azure Portal?
+
+     Ga naar het tabblad **Certificaatbewerking** om het foutbericht voor dat certificaat weer te geven.
+
+- Wat gebeurt er als **Fouttype 'De opgegeven objectnaam is geen geldige x500-naam'** ?
+
+     Deze fout kan optreden als **SubjectName** speciale tekens bevat. Bekijk de opmerkingen in de instructies van de Azure Portal en PowerShell.
 
 ---
+
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Verificatie, aanvragen en antwoorden](../general/authentication-requests-and-responses.md)
 - [Gids voor Key Vault-ontwikkelaars](../general/developers-guide.md)
+- [Verwijzing van de REST-API van Azure Key Vault](/rest/api/keyvault)
+- [Kluizen: maken of bijwerken](/rest/api/keyvault/vaults/createorupdate)
+- [Kluizen: toegangsbeleid bijwerken](/rest/api/keyvault/vaults/updateaccesspolicy)

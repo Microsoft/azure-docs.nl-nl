@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: df511e79b73256833ec54c5906bb6acbc852bc46
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: b1fa4d3e6c017232922e500352558e34726b90cc
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739617"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183078"
 ---
 # <a name="tutorial-train-your-first-machine-learning-model-part-3-of-4"></a>Zelfstudie: Uw eerste machine learning-model trainen (deel 3 van 4)
 
@@ -40,10 +40,8 @@ In deze zelfstudie gaat u:
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Voltooiing van [Deel 2](tutorial-1st-experiment-hello-world.md) van de serie.
-* Introductiekennis van de Python-taal en machine learning-werkstromen.
-* Lokale ontwikkelomgeving, zoals Visual Studio Code, Jupyter of PyCharm.
-* Python (versie 3.5 tot 3.7).
+- [Anaconda](https://www.anaconda.com/download/) of [Miniconda](https://www.anaconda.com/download/) voor het beheren van virtuele Python-omgevingen en het installeren van pakketten.
+- Voltooiing van [deel 1](tutorial-1st-experiment-sdk-setup-local.md) en [deel 2](tutorial-1st-experiment-hello-world.md) van de serie.
 
 ## <a name="create-training-scripts"></a>Trainingsscripts maken
 
@@ -77,9 +75,7 @@ tutorial
 > [!div class="nextstepaction"]
 > [Ik heb het trainingsscript gemaakt](?success=create-scripts#environment) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQN?issue=create-scripts)
 
-## <a name="create-a-python-environment"></a><a name="environment"></a> Een Python-omgeving maken
-
-Voor deze demonstratie gebruiken we een Conda-omgeving. (De stappen voor een virtuele PIP-omgeving zijn bijna identiek.)
+## <a name="create-a-new-python-environment"></a><a name="environment"></a> Een nieuwe Python-omgeving maken
 
 Maak een bestand met de naam `pytorch-env.yml` in de verborgen map van `.azureml`:
 
@@ -92,18 +88,19 @@ Deze omgeving heeft alle afhankelijkheden die zijn vereist voor uw model- en tra
 
 ## <a name="test-locally"></a><a name="test-local"></a> Lokaal testen
 
-Gebruik de volgende code om te testen of uw script lokaal wordt uitgevoerd in deze omgeving:
+Gebruik in een terminalvenster of een Anaconda-promptvenster de volgende code om uw script lokaal te testen in de nieuwe omgeving.  
 
 ```bash
-conda env create -f .azureml/pytorch-env.yml    # create conda environment
-conda activate pytorch-env                      # activate conda environment
+conda deactivate                                # If you are still using the tutorial environment, exit it
+conda env create -f .azureml/pytorch-env.yml    # create the new Conda environment
+conda activate pytorch-env                      # activate new Conda environment
 python src/train.py                             # train model
 ```
 
 Nadat u dit script hebt uitgevoerd, ziet u dat de gegevens zijn gedownload naar een map met de naam `tutorial/data`.
 
 > [!div class="nextstepaction"]
-> [Ik heb het omgevingsbestand gemaakt](?success=test-local#create-local) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQN?issue=test-local)
+> [Ik heb de code lokaal uitgevoerd](?success=test-local#create-local) [Er is een probleem opgetreden](https://www.research.net/r/7CTJQQN?issue=test-local)
 
 ## <a name="create-the-control-script"></a><a name="create-local"></a> Het besturingsscript maken
 
@@ -163,11 +160,11 @@ if __name__ == "__main__":
 
 ## <a name="submit-the-run-to-azure-machine-learning"></a><a name="submit"></a> De uitvoering versturen naar Microsoft Azure Machine Learning
 
-Als u naar lokale omgevingen bent overgeschakeld, gaat u terug naar een omgeving waarin de Azure Machine Learning-SDK voor Python is geïnstalleerd.
-
-Voer vervolgens
+Schakel terug naar de *zelfstudie*-omgeving waarin de Azure Machine Learning-SDK voor Python is geïnstalleerd. Omdat de trainingscode niet wordt uitgevoerd op de computer, hoeft PyTorch niet te zijn geïnstalleerd.  Maar u hebt wel de `azureml-sdk` nodig. Deze bevindt zich in de *zelfstudie*-omgeving.
 
 ```bash
+conda deactivate
+conda activate tutorial
 python 04-run-pytorch.py
 ```
 

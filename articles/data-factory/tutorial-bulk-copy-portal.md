@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019; seo-dt-2019
-ms.date: 12/09/2020
-ms.openlocfilehash: 16b924f486215d972477e93c4e199e7076a0a531
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
+ms.date: 01/12/2021
+ms.openlocfilehash: 2fcb8f6d22e93f3a95be26b7bc61f3b5226ba090
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97508880"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98117109"
 ---
 # <a name="copy-multiple-tables-in-bulk-by-using-azure-data-factory-in-the-azure-portal"></a>Meerdere tabellen bulksgewijs kopiëren met behulp van Azure Data Factory in de Azure-portal
 
@@ -51,20 +51,8 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
 
 ## <a name="prerequisites"></a>Vereisten
 * **Een Azure Storage-account**. Het Azure Storage-account wordt gebruikt als faseringsblobopslag in de bulksgewijze kopieerbewerking. 
-* **Azure SQL-database**. Deze database bevat de brongegevens. 
-* **Azure Synapse Analytics**. Dit datawarehouse bevat de uit de SQL Database gekopieerde gegevens. 
-
-### <a name="prepare-sql-database-and-azure-synapse-analytics"></a>SQL Database en Azure Synapse Analytics voorbereiden 
-
-**De Azure SQL Database-bron voorbereiden**:
-
-Maak een database in SQL Database met Adventure Works LT-testgegevens door het artikel [Create a database in Azure SQL Database](../azure-sql/database/single-database-create-quickstart.md) (Een database in Azure SQL Database maken) te volgen. In deze zelfstudie worden alle tabellen van deze voorbeelddatabase naar Azure Synapse Analytics gekopieerd.
-
-**Bereid de sink Azure Synapse Analytics voor**:
-
-1. Als u geen Azure Synapse Analytics-werkruimte hebt, raadpleegt u het artikel [Aan de slag met Azure Synapse Analytics](..\synapse-analytics\get-started.md) voor de stappen om er een te maken.
-
-1. Maak corresponderende tabelschema's in Azure Synapse Analytics. U gebruikt Azure Data Factory om gegevens in een latere stap te migreren/kopiëren.
+* **Azure SQL-database**. Deze database bevat de brongegevens. Maak een database in SQL Database met Adventure Works LT-testgegevens door het artikel [Create a database in Azure SQL Database](../azure-sql/database/single-database-create-quickstart.md) (Een database in Azure SQL Database maken) te volgen. In deze zelfstudie worden alle tabellen van deze voorbeelddatabase naar Azure Synapse Analytics gekopieerd.
+* **Azure Synapse Analytics**. Dit datawarehouse bevat de uit de SQL Database gekopieerde gegevens. Als u geen Azure Synapse Analytics-werkruimte hebt, raadpleegt u het artikel [Aan de slag met Azure Synapse Analytics](..\synapse-analytics\get-started.md) voor de stappen om er een te maken.
 
 ## <a name="azure-services-to-access-sql-server"></a>Azure-services voor toegang tot SQL-server
 
@@ -241,6 +229,7 @@ De pijplijn **IterateAndCopySQLTables** gebruikt een lijst met tabellen als para
     ![Opbouwfunctie voor Foreach-parameters](./media/tutorial-bulk-copy-portal/for-each-parameter-builder.png)
     
     d. Ga naar het tabblad **Activiteiten** en klik op **het potloodpictogram** om een onderliggende activiteit toe te voegen aan de activiteit **ForEach**.
+    
     ![Handleiding voor ForEach-activiteit](./media/tutorial-bulk-copy-portal/for-each-activity-builder.png)
 
 1. Vouw in de **Activiteiten**-werkset de optie **Verplaatsen en overzetten** uit. Gebruik vervolgens slepen-en-neerzetten om de activiteit **Gegevens kopiëren** te verplaatsen naar het ontwerpoppervlak voor pijplijnen. Let op het breadcrumb-menu bovenaan. **IterateAndCopySQLTable** is de naam van de pijplijn en **IterateSQLTables** is de naam van de ForEach-activiteit. Voor de ontwerpfunctie is het activiteitbereik actief. Als u vanuit de ForEach-editor wilt overschakelen naar de pijplijn-editor, klikt u op de koppeling in het koppelingenmenu. 
@@ -257,7 +246,6 @@ De pijplijn **IterateAndCopySQLTables** gebruikt een lijst met tabellen als para
         SELECT * FROM [@{item().TABLE_SCHEMA}].[@{item().TABLE_NAME}]
         ``` 
 
-
 1. Open het tabblad **Sink** en voer de volgende stappen uit: 
 
     1. Selecteer **AzureSqlDWDataset** bij **Sink Dataset**.
@@ -265,6 +253,7 @@ De pijplijn **IterateAndCopySQLTables** gebruikt een lijst met tabellen als para
     1. Klik op het invoervak voor VALUE van de parameter DWSchema -> Selecteer **Dynamische inhoud toevoegen** hieronder, voer de expressie `@item().TABLE_SCHEMA` als script in -> selecteer **Voltooien**.
     1. Selecteer als kopieermethode **PolyBase**. 
     1. Schakel de optie **Standaardtype gebruiken** uit. 
+    1. Voor de optie Tabel is de standaardinstelling Geen. Als er geen vooraf gemaakte tabellen zijn in de sink Azure Synapse Analytics, schakelt u de optie **Automatisch een tabel maken** in. Met de kopieeractiviteit worden vervolgens automatisch tabellen voor u gemaakt op basis van de brongegevens. Raadpleeg [Automatisch sinktabellen maken](copy-activity-overview.md#auto-create-sink-tables) voor de details. 
     1. Klik op het invoervak **Prekopieerscript** -> Selecteer de koppeling **Dynamische inhoud toevoegen** hieronder -> voer de volgende expressie als script in -> selecteer **Voltooien**. 
 
         ```sql
@@ -272,6 +261,8 @@ De pijplijn **IterateAndCopySQLTables** gebruikt een lijst met tabellen als para
         ```
 
         ![Sink-instellingen kopiëren](./media/tutorial-bulk-copy-portal/copy-sink-settings.png)
+
+
 1. Ga naar het tabblad **Instellingen** en voer de volgende stappen uit: 
 
     1. Selecteer het selectievakje voor **Fasering inschakelen**.

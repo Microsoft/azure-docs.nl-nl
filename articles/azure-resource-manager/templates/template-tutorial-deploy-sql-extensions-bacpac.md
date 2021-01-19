@@ -5,12 +5,12 @@ author: mumian
 ms.date: 12/09/2019
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 2d50903f464c03157ee393787af6ddfdad975aed
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 1bd9f7408baf40791c31626ea9e87a73c65b999c
+ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588026"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "97963994"
 ---
 # <a name="tutorial-import-sql-bacpac-files-with-arm-templates"></a>Zelfstudie: SQL BACPAC-bestanden met ARM-sjablonen importeren
 
@@ -55,7 +55,7 @@ Het BACPAC-bestand moet worden opgeslagen in een Azure Storage-account voordat h
 * Het BACPAC-bestand uploaden naar de container.
 * De sleutel van het opslagaccount en de URL van de blob weergeven.
 
-1. Selecteer **Uitproberen** om de shell te openen. Plak het volgende PowerShell-script in het shell-venster.
+1. Selecteer **Uitproberen** om de Azure Cloud Shell te openen. Plak het volgende PowerShell-script in het shell-venster.
 
     ```azurepowershell-interactive
     $projectName = Read-Host -Prompt "Enter a project name that is used to generate Azure resource names"

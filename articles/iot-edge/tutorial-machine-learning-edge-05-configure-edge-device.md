@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 ms.custom: amqp, devx-track-azurecli
-ms.openlocfilehash: bc62590b9517b2c6d16fdf2637990b845248d2ec
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 74d77d8c81455116cec861bf6704c6cb96526561
+ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932350"
+ms.lasthandoff: 01/12/2021
+ms.locfileid: "98121087"
 ---
 # <a name="tutorial-configure-an-iot-edge-device"></a>Zelfstudie: een IoT Edge-apparaat configureren
 
@@ -81,7 +81,7 @@ In dit gedeelte maken we de zelfondertekende certificaten met behulp van een Doc
 
 ## <a name="upload-certificates-to-azure-key-vault"></a>Certificaten uploaden naar Azure Key Vault
 
-Om onze certificaten veilig op te slaan en ze toegankelijk te maken vanaf meerdere apparaten, gaan we de certificaten uploaden naar Azure Key Vault. Zoals u kunt zien in de bovenstaande lijst, hebben we twee typen certificaatbestanden: PFX en PEM. De PFX-bestanden behandelen we als Key Vault-certificaten die worden geüpload naar Key Vault. De PEM-bestanden zijn tekst zonder opmaak en deze behandelen we als Key Vault-geheimen. We gebruiken de sleutelkluis die is gekoppeld aan de Azure Machine Learning-werkruimte die we hebben gemaakt door de [Azure Notebooks](tutorial-machine-learning-edge-04-train-model.md#run-azure-notebooks) uit te voeren.
+Om onze certificaten veilig op te slaan en ze toegankelijk te maken vanaf meerdere apparaten, gaan we de certificaten uploaden naar Azure Key Vault. Zoals u kunt zien in de bovenstaande lijst, hebben we twee typen certificaatbestanden: PFX en PEM. De PFX-bestanden behandelen we als Key Vault-certificaten die worden geüpload naar Key Vault. De PEM-bestanden zijn tekst zonder opmaak en deze behandelen we als Key Vault-geheimen. We gebruiken de sleutelkluis die is gekoppeld aan de Azure Machine Learning-werkruimte die we hebben gemaakt door de [Jupyter Notebooks](tutorial-machine-learning-edge-04-train-model.md#run-jupyter-notebooks) uit te voeren.
 
 1. Ga in [Azure Portal](https://portal.azure.com) naar uw Azure Machine Learning-werkruimte.
 

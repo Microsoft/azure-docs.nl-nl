@@ -3,12 +3,12 @@ title: Wat is er nieuw in Azure Backup
 description: Meer informatie over nieuwe functies in Azure Backup.
 ms.topic: conceptual
 ms.date: 11/11/2020
-ms.openlocfilehash: ba29ddea5d5f096640f2bfc012c44ab06bb3e131
-ms.sourcegitcommit: ac7029597b54419ca13238f36f48c053a4492cb6
+ms.openlocfilehash: 62a6146990863c339917777b2624fee76ebe60d8
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/29/2020
-ms.locfileid: "96309661"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569416"
 ---
 # <a name="whats-new-in-azure-backup"></a>Wat is er nieuw in Azure Backup
 
@@ -18,6 +18,9 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
 
 ## <a name="updates-summary"></a>Samen vatting van updates
 
+- Januari 2021
+  - [Back-ups van Azure-schijf (in preview-versie)](disk-backup-overview.md)
+  - [Versleuteling in rust met door de klant beheerde sleutels die nu algemeen beschikbaar zijn](encryption-at-rest-with-cmk.md)
 - November 2020
   - [Azure Resource Manager sjabloon voor het maken van een back-up van Azure file share (AFS)](#azure-resource-manager-template-for-afs-backup)
   - [Incrementele back-ups voor SAP HANA data bases op virtuele Azure-machines](#incremental-backups-for-sap-hana-databases)
@@ -32,9 +35,21 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
   - [Zone redundante opslag (ZRS) voor back-upgegevens](#zone-redundant-storage-zrs-for-backup-data)
   - [Zacht verwijderen voor SQL Server en SAP HANA workloads in azure-Vm's](#soft-delete-for-sql-server-and-sap-hana-workloads)
 
+## <a name="azure-disk-backup-in-preview"></a>Back-ups van Azure-schijf (in preview-versie)
+
+Azure Disk Backup biedt een kant-en-klare oplossing voor het beheer van de moment opname van [azure Managed disks](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview) door het periodiek maken van moment opnamen te automatiseren en deze te bewaren voor een geconfigureerde duur met behulp van het back-upbeleid. U kunt de moment opnamen van de schijf met nul kosten van de infra structuur beheren, zonder dat u hiervoor aangepaste scripts of beheer overhead nodig hebt. Dit is een crash consistente back-upoplossing die tijdgebonden back-ups maakt van een beheerde schijf met behulp van [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots) met ondersteuning voor meerdere back-ups per dag. Het is ook een oplossing zonder agent en heeft geen invloed op de prestaties van productie toepassingen. Het ondersteunt back-ups en herstel van zowel besturings systeem-als gegevens schijven (inclusief gedeelde schijven), ongeacht of ze momenteel zijn gekoppeld aan een actieve virtuele machine van Azure.
+
+Zie [Azure Disk Backup (in Preview)](disk-backup-overview.md)voor meer informatie.
+
+## <a name="encryption-at-rest-using-customer-managed-keys"></a>Versleuteling in rust met door de klant beheerde sleutels
+
+Ondersteuning voor versleuteling in rust met door de klant beheerde sleutels is nu algemeen beschikbaar. Dit biedt u de mogelijkheid om de back-upgegevens in uw Recovery Services kluizen te versleutelen met uw eigen sleutels die zijn opgeslagen in azure-sleutel kluizen. De versleutelings sleutel die wordt gebruikt voor het versleutelen van back-ups in de Recovery Services kluis kan afwijken van de sleutels die worden gebruikt voor het versleutelen van de bron. De gegevens worden beveiligd met behulp van een AES 256-gegevens versleutelings sleutel (DEK), die op zijn beurt wordt beveiligd met uw sleutels die zijn opgeslagen in de Key Vault. Vergeleken met versleuteling met door het platform beheerde sleutels (die standaard beschikbaar is), biedt dit u meer controle over uw sleutels en kunt u beter voldoen aan uw nalevings behoeften.
+
+Zie voor meer informatie [encryptie van back-upgegevens met door de klant beheerde sleutels](encryption-at-rest-with-cmk.md).
+
 ## <a name="azure-resource-manager-template-for-afs-backup"></a>Azure Resource Manager sjabloon voor AFS-back-up
 
-Azure Backup ondersteunt nu het configureren van back-ups voor bestaande Azure-bestands shares met behulp van een Azure Resource Manager ARM-sjabloon. Met de sjabloon wordt de beveiliging voor een bestaande Azure-bestands share geconfigureerd door de juiste details op te geven voor de Recovery Services kluis en het back-upbeleid. Er wordt optioneel een nieuwe Recovery Services kluis en een nieuw back-upbeleid gemaakt en het opslag account dat de bestands share bevat, wordt geregistreerd bij de Recovery Services kluis.
+Azure Backup ondersteunt nu het configureren van back-ups voor bestaande Azure-bestands shares met behulp van een Azure Resource Manager ARM-sjabloon. Met de sjabloon wordt de beveiliging voor een bestaande Azure-bestands share geconfigureerd door de juiste details op te geven voor de Recovery Services kluis en het back-upbeleid. Er wordt optioneel een nieuwe Recovery Services-kluis en een nieuw back-upbeleid gemaakt, en het opslagaccount met de bestandsshare wordt geregistreerd bij de Recovery Services-kluis.
 
 Zie [Azure Resource Manager sjablonen voor Azure backup](backup-rm-template-samples.md)voor meer informatie.
 

@@ -4,12 +4,12 @@ description: Meer informatie over Azure Database for PostgreSQL back-up met lang
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.custom: references_regions
-ms.openlocfilehash: 32837e5bb871f7db5024569efc27940047aeacd7
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 628f43788c11558185a7b8a735373f0a663fdad1
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734637"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569484"
 ---
 # <a name="azure-database-for-postgresql-backup-with-long-term-retention-preview"></a>Azure Database for PostgreSQL back-up met lange termijn retentie (preview-versie)
 
@@ -135,7 +135,7 @@ De volgende instructies zijn een stapsgewijze hand leiding voor het configureren
 
 1. Instellingen voor **retentie** definiëren. U kunt een of meer Bewaar regels toevoegen. Bij elke Bewaar regel wordt uitgegaan van invoer voor specifieke back-ups, en voor de gegevens opslag en de Bewaar periode voor deze back-ups.
 
-1. U kunt ervoor kiezen om uw back-ups op te slaan in een van de twee gegevens archieven (of-lagen): **back-upgegevens opslag** (warme tier) of **Archief gegevens archief** (in preview-versie). U kunt kiezen uit **twee laag opties** om te definiëren wanneer de back-ups trapsgewijs worden verdeeld over de twee gegevens sets:
+1. U kunt ervoor kiezen om uw back-ups op te slaan in een van de twee gegevens archieven (of-lagen): **back-upgegevens archief** (Standard-laag) of **Archief gegevens archief** (in preview-versie). U kunt kiezen uit **twee laag opties** om te definiëren wanneer de back-ups trapsgewijs worden verdeeld over de twee gegevens sets:
 
     - Kies **onmiddellijk** kopiëren als u liever een back-up in zowel back-ups maken en Archief gegevens archieven hebt.
     - Klik **op verlopen** als u de back-up wilt verplaatsen om de gegevens opslag te archiveren tijdens het verlopen van het back-upgegevens archief.

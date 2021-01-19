@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 06/19/2017
 ms.author: damendo
-ms.openlocfilehash: 5342c4505bd300d1287acba246ca59610f2697bd
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 0d0597c2df8731171505a090de6959d8a112c004
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858634"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569977"
 ---
 # <a name="introduction-to-resource-troubleshooting-in-azure-network-watcher"></a>Inleiding tot het oplossen van resources in azure Network Watcher
 
@@ -209,7 +209,9 @@ Elapsed Time            330 sec
 ```
 
 ## <a name="considerations"></a>Overwegingen 
+* Per abonnement kan slechts één probleemoplossings bewerking tegelijk worden uitgevoerd. Als u een andere probleemoplossings bewerking wilt uitvoeren, moet u wachten tot de vorige is voltooid. Als er meer bewerkingen worden geactiveerd terwijl een eerdere versie nog niet is voltooid, mislukken de volgende bewerkingen. 
 * CLI-fout: als u Azure CLI gebruikt om de opdracht uit te voeren, moeten de VPN Gateway en het opslag account zich in dezelfde resource groep bevinden. Klanten met de resources in verschillende resource groepen kunnen in plaats daarvan Power shell of de Azure Portal gebruiken.  
+
 
 ## <a name="next-steps"></a>Volgende stappen
 

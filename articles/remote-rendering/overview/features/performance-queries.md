@@ -6,12 +6,12 @@ ms.author: flborn
 ms.date: 02/10/2020
 ms.topic: article
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 95993b35174b80dae8c878c22554ee60afeb8a14
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 57a9f6f11283e020efc25f55f1df473a6cb2d321
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92206217"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569994"
 ---
 # <a name="server-side-performance-queries"></a>Prestatiequery's aan serverzijde
 
@@ -65,9 +65,9 @@ Het opgehaalde `FrameStatistics` object bevat de volgende leden:
 | Lid | Uitleg |
 |:-|:-|
 | latencyPoseToReceive | Latentie van camera is een schatting op het client apparaat totdat een server frame voor deze pose volledig beschikbaar is voor de client toepassing. Deze waarde omvat netwerk retour, Server weergave tijd, video decoderen en jitter-compensatie. Zie **interval 1 in de bovenstaande afbeelding.**|
-| latencyReceiveToPresent | Latentie van de beschik baarheid van een ontvangen extern frame totdat de client-app PresentFrame op de CPU aanroept. |
-| latencyPresentToDisplay  | Latentie van het presen teren van een frame op de CPU totdat de lampjes omhoog worden weer gegeven. Deze waarde omvat de GPU-tijd van de client, alle frame buffers die worden uitgevoerd door het besturings systeem, de hardwareconfiguratie en de weer gave van het apparaat afhankelijk van het scannen. Zie **interval 2 in de bovenstaande afbeelding.**|
-| timeSinceLastPresent | De tijd tussen de volgende aanroepen naar PresentFrame op de CPU. Waarden die groter zijn dan de weergave duur (bijvoorbeeld 16,6 MS op een 60-Hz-client apparaat) geven aan dat er problemen zijn veroorzaakt doordat de client toepassing niet de CPU-werk belasting in de tijd heeft voltooid. Zie **interval 3 in de bovenstaande afbeelding.**|
+| latencyReceiveToPresent | Latentie van de beschik baarheid van een ontvangen extern frame totdat de client-app PresentFrame op de CPU aanroept. Zie **interval 2 in de bovenstaande afbeelding.**|
+| latencyPresentToDisplay  | Latentie van het presen teren van een frame op de CPU totdat de lampjes omhoog worden weer gegeven. Deze waarde omvat de GPU-tijd van de client, alle frame buffers die worden uitgevoerd door het besturings systeem, de hardwareconfiguratie en de weer gave van het apparaat afhankelijk van het scannen. Zie **interval 3 in de bovenstaande afbeelding.**|
+| timeSinceLastPresent | De tijd tussen de volgende aanroepen naar PresentFrame op de CPU. Waarden die groter zijn dan de weergave duur (bijvoorbeeld 16,6 MS op een 60-Hz-client apparaat) geven aan dat er problemen zijn veroorzaakt doordat de client toepassing niet de CPU-werk belasting in de tijd heeft voltooid.|
 | videoFramesReceived | Het aantal frames dat in de laatste seconde van de server is ontvangen. |
 | videoFrameReusedCount | Aantal ontvangen frames in de laatste seconde dat meermaals is gebruikt op het apparaat. Waarden die niet gelijk zijn aan nul geven aan dat frames opnieuw moeten worden gebruikt en moeten worden geprojecteerd als gevolg van netwerk-jitter of overmatige rendering van de server. |
 | videoFramesSkipped | Het aantal ontvangen frames in de laatste seconde dat is gedecodeerd, maar niet weer gegeven in de weer gave omdat een nieuw frame is aangekomen. Waarden die niet gelijk zijn aan nul geven aan dat netwerk-jittering meerdere frames heeft veroorzaakt en vervolgens in een burst op het client apparaat arriveert. |
@@ -132,7 +132,7 @@ Het object bevat in tegens telling tot het `FrameStatistics` object gegevens aan
 | networkLatency | De gemiddelde latentie bij benadering van het retour netwerk in milliseconden. In de bovenstaande afbeelding komt dit overeen met de som van de rode pijlen. De waarde wordt berekend door het aftrekken van de werkelijke server rendering-tijd van de `latencyPoseToReceive` waarde van `FrameStatistics` . Hoewel deze benadering niet nauw keurig is, geeft deze een indicatie van de netwerk latentie, geïsoleerd van de latentie waarden die op de client zijn berekend. |
 | polygonsRendered | Het aantal drie hoeken dat in één frame wordt weer gegeven. Dit aantal bevat ook de drie hoeken die later tijdens de rendering worden geruimen. Dit betekent dat dit aantal niet veel verschilt tussen verschillende camera posities, maar de prestaties kunnen aanzienlijk variëren, afhankelijk van het berekenings niveau van de drie hoek.|
 
-Om u te helpen bij het beoordelen van de waarden, wordt elk deel geleverd met een kwaliteits classificatie zoals **geweldig**, **goed**, **mediocre**of **slecht**.
+Om u te helpen bij het beoordelen van de waarden, wordt elk deel geleverd met een kwaliteits classificatie zoals **geweldig**, **goed**, **mediocre** of **slecht**.
 Deze beoordelings metriek biedt een ruwe indicatie van de status van de server, maar mag niet worden gezien als absoluut. Stel dat u een ' mediocre-score voor de GPU-tijd ziet. Het wordt aangemerkt als mediocre omdat de limiet voor het totale frame tijd budget bijna wordt bereikt. In uw geval kan dit echter een goede waarde zijn, omdat u een complex model rendert.
 
 ## <a name="statistics-debug-output"></a>Statistieken debug-uitvoer

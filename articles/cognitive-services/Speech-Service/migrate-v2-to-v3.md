@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 02/12/2020
 ms.author: rbeckers
 ms.custom: devx-track-csharp
-ms.openlocfilehash: e9e5db87f983c5db59715eb8b6a9561acf5fad14
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 9c8016b566db8be1b7f5c5ddb8d92123d6673db5
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630612"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569841"
 ---
 # <a name="migrate-code-from-v20-to-v30-of-the-rest-api"></a>Code migreren van v 2.0 naar v 3.0 van de REST API
 
@@ -24,11 +24,51 @@ Vergeleken met v2 is de V3-versie van de speech Services-REST API voor spraak na
 
 ## <a name="forward-compatibility"></a>Compatibiliteit door sturen
 
-Alle entiteiten van v2 kunnen ook worden gevonden in de V3 API onder dezelfde identiteit. Als het schema van een resultaat is gewijzigd, (bijvoorbeeld transcripties), wordt het resultaat van een GET in de V3-versie van de API gebruikt voor het v3-schema. Het resultaat van een GET in de v2-versie van de API maakt gebruik van hetzelfde v2-schema. Nieuw gemaakte entiteiten op v3 zijn **niet** beschikbaar in de resultaten van v2-api's.
+Alle entiteiten van v2 kunnen ook worden gevonden in de V3 API onder dezelfde identiteit. Als het schema van een resultaat is gewijzigd, (bijvoorbeeld transcripties), wordt het resultaat van een GET in de V3-versie van de API gebruikt voor het v3-schema. Het resultaat van een GET in de v2-versie van de API maakt gebruik van hetzelfde v2-schema. Nieuw gemaakte entiteiten op v3 zijn **niet**   beschikbaar in reacties van v2-api's. 
+
+## <a name="migration-steps"></a>Migratiestappen
+
+Dit is een overzicht van items waarvan u op de hoogte moet zijn wanneer u de migratie voorbereidt. Meer informatie vindt u in de afzonderlijke koppelingen. Afhankelijk van het huidige gebruik van de API, kunnen niet alle hier vermelde stappen van toepassing zijn. Bij slechts enkele wijzigingen zijn niet-essentiële wijzigingen in de aanroepende code vereist. De meeste wijzigingen vereisen alleen een wijziging in item namen. 
+
+Algemene wijzigingen: 
+
+1. [De hostnaam wijzigen](#host-name-changes)
+
+1. [Wijzig de naam van de eigenschaps-id in Self in uw client code](#identity-of-an-entity) 
+
+1. [Code wijzigen om verzamelingen van entiteiten te herhalen](#working-with-collections-of-entities)
+
+1. [Wijzig de naam van de eigenschap in displayName in de client code](#name-of-an-entity)
+
+1. [Het ophalen van de meta gegevens van entiteiten waarnaar wordt verwezen, aanpassen](#accessing-referenced-entities)
+
+1. Als u batch-transcriptie gebruikt: 
+
+    * [Code voor het maken van batch-transcripties aanpassen](#creating-transcriptions) 
+
+    * [Code aan het nieuwe transcriptie-resultaten schema aanpassen](#format-of-v3-transcription-results)
+
+    * [Code voor het ophalen van resultaten aanpassen](#getting-the-content-of-entities-and-the-results)
+
+1. Als u aangepaste model training/test-Api's gebruikt: 
+
+    * [Wijzigingen Toep assen op aangepaste model training](#customizing-models)
+
+    * [Wijzigen hoe basis-en aangepaste modellen worden opgehaald](#retrieving-base-and-custom-models)
+
+    * [De naam van het pad segment accuracytests wijzigen in evaluaties in uw client code](#accuracy-tests)
+
+1. Als u endpoints-Api's gebruikt:
+
+    * [Wijzigen hoe eindpunt logboeken worden opgehaald](#retrieving-endpoint-logs)
+
+1. Andere kleine wijzigingen: 
+
+    * [Alle aangepaste eigenschappen door geven als customProperties in plaats van eigenschappen in uw POST-aanvragen](#using-custom-properties)
+
+    * [De locatie van de locatie van de antwoord tekst lezen in plaats van de locatie van de bewerking](#response-headers)
 
 ## <a name="breaking-changes"></a>Wijzigingen die fouten veroorzaken
-
-De lijst met belang rijke wijzigingen is gesorteerd op basis van de grootte van wijzigingen die nodig zijn om aan te passen. Bij slechts enkele wijzigingen zijn niet-essentiële wijzigingen in de aanroepende code vereist. De meeste wijzigingen vereisen alleen een wijziging in item namen.
 
 ### <a name="host-name-changes"></a>Gewijzigde namen van hosts
 

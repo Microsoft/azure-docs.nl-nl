@@ -13,15 +13,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/20/2020
+ms.date: 01/18/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 3e99b3a8960eb49856e9a016eb054eed41eccde9
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: b4cf2e79acf4cd58ff94a2e90f07202341672a1d
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965252"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569433"
 ---
 # <a name="azure-virtual-machines-oracle-dbms-deployment-for-sap-workload"></a>Azure Virtual Machines Oracle DBMS-implementatie voor SAP-workload
 
@@ -423,7 +423,7 @@ Zie [herstel na nood gevallen voor een Oracle database 12c-data base in een Azur
 
 ### <a name="accelerated-networking"></a>Versneld netwerken
 Voor Oracle-implementaties in Windows wordt het beste versneld netwerken aanbevolen, zoals beschreven in [Azure versneld netwerken](https://azure.microsoft.com/blog/maximize-your-vm-s-performance-with-accelerated-networking-now-generally-available-for-both-windows-and-linux/). Houd ook rekening met de aanbevelingen die worden gedaan in [overwegingen voor Azure virtual machines DBMS-implementatie voor SAP-workloads](dbms_guide_general.md). 
-### <a name="other"></a>Overige
+### <a name="other"></a>Anders
 [Overwegingen voor azure virtual machines DBMS-implementatie voor SAP-workload](dbms_guide_general.md) beschrijft andere belang rijke concepten met betrekking tot implementaties van vm's met Oracle database, inclusief Azure-beschikbaarheids sets en SAP-bewaking.
 
 ## <a name="specifics-for-oracle-database-on-oracle-linux"></a>Details voor Oracle Database op Oracle Linux
@@ -445,15 +445,19 @@ In dit geval kunt u het beste de installatie/locatie van Oracle Home, stage,,, `
 
 ### <a name="storage-configuration"></a>Opslagconfiguratie
 
-De bestands systemen van ext4, xfs of Oracle ASM worden ondersteund voor Oracle Database-bestanden in Azure. Alle database bestanden moeten worden opgeslagen op deze bestands systemen op basis van Vhd's of Managed Disks. Deze schijven zijn gekoppeld aan de virtuele machine van Azure en zijn gebaseerd op [Azure page Blob Storage](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs) of [Azure Managed disks](../../managed-disks-overview.md).
+De bestands systemen van ext4, xfs, NFSv 4.1 (alleen op Azure NetApp Files (ANF)) of Oracle ASM (Zie SAP Note [#2039619](https://launchpad.support.sap.com/#/notes/2039619) voor release/version-vereisten) worden ondersteund voor Oracle database-bestanden in Azure. Alle database bestanden moeten worden opgeslagen op deze bestands systemen op basis van Vhd's, Managed Disks of ANF. Deze schijven zijn gekoppeld aan de virtuele machine van Azure en zijn gebaseerd op [Azure page Blob Storage](/rest/api/storageservices/Understanding-Block-Blobs--Append-Blobs--and-Page-Blobs), [azure Managed disks](../../managed-disks-overview.md)of [Azure NetApp files](https://azure.microsoft.com/services/netapp/).
 
-Voor Oracle Linux UEK-kernels is mini maal UEK versie 4 vereist voor de ondersteuning van [Azure Premium ssd's](../../premium-storage-performance.md#disk-caching).
+Lijst met minimum vereisten, zoals: 
+
+- Voor Oracle Linux UEK-kernels is mini maal UEK versie 4 vereist voor de ondersteuning van [Azure Premium ssd's](../../premium-storage-performance.md#disk-caching).
+- Voor Oracle met ANF wordt de mini maal ondersteunde Oracle Linux 8,2.
+- Voor Oracle met ANF wordt de mini maal ondersteunde Oracle-versie 19c (19.8.0.0)
 
 Het artikel [Azure Storage typen voor SAP-werk belasting](./planning-guide-storage.md) uitchecken voor meer informatie over de specifieke Azure Block-opslag typen die geschikt zijn voor DBMS-workloads.
 
-Het wordt sterk aanbevolen om [Azure Managed disks](../../managed-disks-overview.md)te gebruiken. Het wordt ook nadrukkelijk aanbevolen [Azure Premium ssd's](../../disks-types.md) te gebruiken voor uw Oracle database-implementaties.
+Met Azure Block Storage wordt het ten zeerste aanbevolen [Azure Managed disks](../../managed-disks-overview.md) en [Azure Premium ssd's](../../disks-types.md) te gebruiken voor uw Oracle database-implementaties.
 
-Netwerk stations of externe shares zoals Azure File Services worden niet ondersteund voor Oracle Database-bestanden. Raadpleeg de volgende artikelen voor meer informatie: 
+Behalve Azure NetApp Files worden andere gedeelde schijven, netwerk stations of externe shares, zoals Azure File Services (AFS), niet ondersteund voor Oracle Database-bestanden. Raadpleeg de volgende artikelen voor meer informatie: 
 
 - [Introducing Microsoft Azure File Service (Introductie van Microsoft Azure File-service)](/archive/blogs/windowsazurestorage/introducing-microsoft-azure-file-service)
 
@@ -469,10 +473,10 @@ Minimale configuratie:
 
 | Onderdeel | Schijf | Caching | Moeten ontdaan |
 | --- | ---| --- | --- |
-| /Oracle/ \<SID> /origlogaA & mirrlogB | Premium of Ultra Disk | Geen | Niet nodig |
-| /Oracle/ \<SID> /origlogaB & mirrlogA | Premium of Ultra Disk | Geen | Niet nodig |
-| /Oracle/ \<SID> /sapdata1... nvt | Premium of Ultra Disk | Alleen-lezen | Kan worden gebruikt voor Premium |
-| /Oracle/ \<SID> /oraarch | Standard | Geen | Niet nodig |
+| /Oracle/ \<SID> /origlogaA & mirrlogB | Premium, Ultra disk of ANF | Geen | Niet nodig |
+| /Oracle/ \<SID> /origlogaB & mirrlogA | Premium, Ultra disk of ANF | Geen | Niet nodig |
+| /Oracle/ \<SID> /sapdata1... nvt | Premium, Ultra disk of ANF | Alleen-lezen | Kan worden gebruikt voor Premium |
+| /Oracle/ \<SID> /oraarch | Standard-of ANF | Geen | Niet nodig |
 | Oracle Home, `saptrace` ,... | BESTURINGSSYSTEEM schijf (Premium) | | Niet nodig |
 
 * Verwijderen: LVM Stripe of MDADM met RAID0
@@ -483,13 +487,13 @@ Configuratie van prestaties:
 
 | Onderdeel | Schijf | Caching | Moeten ontdaan |
 | --- | ---| --- | --- |
-| /Oracle/ \<SID> /origlogaA | Premium of Ultra Disk | Geen | Kan worden gebruikt voor Premium  |
-| /Oracle/ \<SID> /origlogaB | Premium of Ultra Disk | Geen | Kan worden gebruikt voor Premium |
-| /Oracle/ \<SID> /mirrlogAB | Premium of Ultra Disk | Geen | Kan worden gebruikt voor Premium |
-| /Oracle/ \<SID> /mirrlogBA | Premium of Ultra Disk | Geen | Kan worden gebruikt voor Premium |
-| /Oracle/ \<SID> /sapdata1... nvt | Premium of Ultra Disk | Alleen-lezen | Aanbevolen voor Premium  |
-| /Oracle/ \<SID> /sapdata (n + 1) * | Premium of Ultra Disk | Geen | Kan worden gebruikt voor Premium |
-| /Oracle/ \<SID> /oraarch * | Premium of Ultra Disk | Geen | Niet nodig |
+| /Oracle/ \<SID> /origlogaA | Premium, Ultra disk of ANF | Geen | Kan worden gebruikt voor Premium  |
+| /Oracle/ \<SID> /origlogaB | Premium, Ultra disk of ANF | Geen | Kan worden gebruikt voor Premium |
+| /Oracle/ \<SID> /mirrlogAB | Premium, Ultra disk of ANF | Geen | Kan worden gebruikt voor Premium |
+| /Oracle/ \<SID> /mirrlogBA | Premium, Ultra disk of ANF | Geen | Kan worden gebruikt voor Premium |
+| /Oracle/ \<SID> /sapdata1... nvt | Premium, Ultra disk of ANF | Alleen-lezen | Aanbevolen voor Premium  |
+| /Oracle/ \<SID> /sapdata (n + 1) * | Premium, Ultra disk of ANF | Geen | Kan worden gebruikt voor Premium |
+| /Oracle/ \<SID> /oraarch * | Premium, Ultra disk of ANF | Geen | Niet nodig |
 | Oracle Home, `saptrace` ,... | BESTURINGSSYSTEEM schijf (Premium) | Niet nodig |
 
 * Verwijderen: LVM Stripe of MDADM met RAID0
@@ -500,6 +504,10 @@ Configuratie van prestaties:
 
 
 Als er meer IOPS vereist zijn bij het gebruik van Azure Premium Storage, raden we u aan LVM (Logical Volume Manager) of MDADM te gebruiken om één grote logische volume te maken op meerdere gekoppelde schijven. Zie [overwegingen voor Azure virtual machines DBMS-implementatie voor SAP-workload](dbms_guide_general.md) met betrekking tot richt lijnen en aanwijzers voor het gebruik van LVM of MDADM voor meer informatie. Deze aanpak vereenvoudigt de beheer overhead van het beheren van de schijf ruimte en helpt u om te voor komen dat bestanden hand matig worden gedistribueerd over meerdere gekoppelde schijven.
+
+Als u Azure NetApp Files wilt gebruiken, moet u ervoor zorgen dat de dNFS-client correct is geconfigureerd. Het gebruik van dNFS is verplicht voor een ondersteunde omgeving. De configuratie van dNFS wordt beschreven in het artikel [een Oracle database maken op direct NFS](https://docs.oracle.com/en/database/oracle/oracle-database/19/ntdbi/creating-an-oracle-database-on-direct-nfs.html#GUID-2A0CCBAB-9335-45A8-B8E3-7E8C4B889DEA).
+
+Een voor beeld van het gebruik van Azure NetApp Files NFS voor Oracle-data bases wordt weer gegeven in de blog [DEPLOY SAP AnyDB (Oracle 19c) met Azure NetApp files](https://techcommunity.microsoft.com/t5/running-sap-applications-on-the/deploy-sap-anydb-oracle-19c-with-azure-netapp-files/ba-p/2064043).
 
 
 #### <a name="write-accelerator"></a>Write Accelerator

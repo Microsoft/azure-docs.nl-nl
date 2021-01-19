@@ -13,15 +13,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 09/28/2020
+ms.date: 01/18/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 511801962d07e5fb99000b2fc19adce2489b46d3
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 2c7ea804e9e85578076969f0ec6bdf90b571bb75
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94967479"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98570079"
 ---
 # <a name="nfs-v41-volumes-on-azure-netapp-files-for-sap-hana"></a>NFS v4.1-volumes in Azure NetApp Files voor SAP HANA
 
@@ -69,10 +69,10 @@ De maximale door Voer voor een LIF en één Linux-sessie ligt tussen 1,2 en 1,4 
 | 1 TB | 16 MB/sec. | 64 MB/sec. | 128 MB/sec. |
 | 2 TB | 32 MB/sec. | 128 MB/sec. | 256 MB/sec. |
 | 4 TB | 64 MB/sec. | 256 MB/sec. | 512 MB/sec. |
-| 10 TB | 160 MB/sec. | 640 MB/sec. | 1,280 MB/sec. |
-| 15 TB | 240 MB/sec. | 960 MB/sec. | 1,400 MB/sec. |
-| 20 TB | 320 MB/sec. | 1,280 MB/sec. | 1,400 MB/sec. |
-| 40 TB | 640 MB/sec. | 1,400 MB/sec. | 1,400 MB/sec. |
+| 10 TB | 160 MB/sec. | 640 MB/sec. | 1.280 MB/sec. |
+| 15 TB | 240 MB/sec. | 960 MB/sec. | 1.400 MB/sec. |
+| 20 TB | 320 MB/sec. | 1.280 MB/sec. | 1.400 MB/sec. |
+| 40 TB | 640 MB/sec. | 1.400 MB/sec. | 1.400 MB/sec. |
 
 Het is belang rijk om te begrijpen dat de gegevens worden geschreven naar dezelfde Ssd's in de back-end van de opslag. Het prestatie quotum van de capaciteits groep is gemaakt om de omgeving te kunnen beheren.
 De opslag-Kpi's zijn gelijk voor alle HANA-database grootten. In bijna alle gevallen weerspiegelt deze veronderstelling niet de realiteit en de verwachte klant. De omvang van HANA-systemen betekent niet noodzakelijkerwijs dat een klein systeem een lage opslag doorvoer vereist: en een groot systeem een hoge opslag doorvoer vereist. Maar over het algemeen kunnen we hogere doorvoer vereisten verwachten voor grotere HANA-data base-exemplaren. Als gevolg van de aanpassings regels van SAP voor de onderliggende hardware bieden dergelijke grotere HANA-instanties ook meer CPU-resources en een hogere parallelle factor in taken als het laden van gegevens nadat een instantie opnieuw is opgestart. Als gevolg hiervan moeten de volume grootten worden toegepast op de verwachtingen en vereisten van de klant. En niet alleen op basis van de vereisten voor zuivere capaciteit.

@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.topic: reference
 ms.workload: identity
-ms.date: 07/20/2020
+ms.date: 01/19/2021
 ms.author: chmutali
-ms.openlocfilehash: 805cdc0713afd43502bb224cce60167adbc418ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e97be7fef09287e6c4f8696e217702b97853fa6a
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90969524"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569450"
 ---
 # <a name="how-azure-active-directory-provisioning-integrates-with-sap-successfactors"></a>Hoe Azure Active Directory inrichting kan worden geïntegreerd met SAP-SuccessFactors 
 
@@ -55,21 +55,22 @@ Voor elke gebruiker in SuccessFactors haalt Azure AD Provisioning Service de vol
 | 6  | Gebruiker                                   | employmentNav/userNav        | Altijd           |
 | 7  | EmpJob                                 | employmentNav/jobInfoNav     | Altijd           |
 | 8  | EmpEmploymentTermination               | activeEmploymentsCount       | Altijd           |
-| 9  | FOCompany                              | employmentNav/jobInfoNav/companyNav | Alleen als `company` or- `companyId` kenmerk is toegewezen |
-| 10 | FODepartment                           | employmentNav/jobInfoNav/departmentNav | Alleen als `department` or- `departmentId` kenmerk is toegewezen |
-| 11 | FOBusinessUnit                         | employmentNav/jobInfoNav/businessUnitNav | Alleen als `businessUnit` or- `businessUnitId` kenmerk is toegewezen |
-| 12 | FOCostCenter                           | employmentNav/jobInfoNav/costCenterNav | Alleen als `costCenter` or- `costCenterId` kenmerk is toegewezen |
-| 13 | FODivision                             | employmentNav/jobInfoNav/divisionNav  | Alleen als `division` or- `divisionId` kenmerk is toegewezen |
-| 14 | FOJobCode                              | employmentNav/jobInfoNav/jobCodeNav  | Alleen als `jobCode` or- `jobCodeId` kenmerk is toegewezen |
-| 15 | FOPayGrade                             | employmentNav/jobInfoNav/payGradeNav  | Alleen als het `payGrade` kenmerk is toegewezen |
-| 16 | FOLocation                             | employmentNav/jobInfoNav/locationNav  | Alleen als het `location` kenmerk is toegewezen |
-| 17 | FOCorporateAddressDEFLT                | employmentNav/jobInfoNav/addressNavDEFLT  | Als de toewijzing een van de volgende kenmerken bevat: `officeLocationAddress,  officeLocationCity, officeLocationZipCode` |
-| 18 | FOEventReason                          | employmentNav/jobInfoNav/eventReasonNav  | Alleen als het `eventReason` kenmerk is toegewezen |
-| 19 | EmpGlobalAssignment                    | employmentNav/empGlobalAssignmentNav | Alleen als `assignmentType` is toegewezen |
-| 20 | Selectie lijst EmploymentType                | employmentNav/jobInfoNav/employmentTypeNav | Alleen als `employmentType` is toegewezen |
-| 21 | Selectie lijst EmployeeClass                 | employmentNav/jobInfoNav/employeeClassNav | Alleen als `employeeClass` is toegewezen |
-| 22 | Selectie lijst EmplStatus                    | employmentNav/jobInfoNav/emplStatusNav | Alleen als `emplStatus` is toegewezen |
-| 23 | Selectie lijst AssignmentType                | employmentNav/empGlobalAssignmentNav/assignmentTypeNav | Alleen als `assignmentType` is toegewezen |
+| 9  | Manager van gebruiker                         | employmentNav/userNav/Manager/empInfo | Altijd  |
+| 10 | FOCompany                              | employmentNav/jobInfoNav/companyNav | Alleen als `company` or- `companyId` kenmerk is toegewezen |
+| 11 | FODepartment                           | employmentNav/jobInfoNav/departmentNav | Alleen als `department` or- `departmentId` kenmerk is toegewezen |
+| 12 | FOBusinessUnit                         | employmentNav/jobInfoNav/businessUnitNav | Alleen als `businessUnit` or- `businessUnitId` kenmerk is toegewezen |
+| 13 | FOCostCenter                           | employmentNav/jobInfoNav/costCenterNav | Alleen als `costCenter` or- `costCenterId` kenmerk is toegewezen |
+| 14 | FODivision                             | employmentNav/jobInfoNav/divisionNav  | Alleen als `division` or- `divisionId` kenmerk is toegewezen |
+| 15 | FOJobCode                              | employmentNav/jobInfoNav/jobCodeNav  | Alleen als `jobCode` or- `jobCodeId` kenmerk is toegewezen |
+| 16 | FOPayGrade                             | employmentNav/jobInfoNav/payGradeNav  | Alleen als het `payGrade` kenmerk is toegewezen |
+| 17 | FOLocation                             | employmentNav/jobInfoNav/locationNav  | Alleen als het `location` kenmerk is toegewezen |
+| 18 | FOCorporateAddressDEFLT                | employmentNav/jobInfoNav/addressNavDEFLT  | Als de toewijzing een van de volgende kenmerken bevat: `officeLocationAddress,  officeLocationCity, officeLocationZipCode` |
+| 19 | FOEventReason                          | employmentNav/jobInfoNav/eventReasonNav  | Alleen als het `eventReason` kenmerk is toegewezen |
+| 20 | EmpGlobalAssignment                    | employmentNav/empGlobalAssignmentNav | Alleen als `assignmentType` is toegewezen |
+| 21 | Selectie lijst EmploymentType                | employmentNav/jobInfoNav/employmentTypeNav | Alleen als `employmentType` is toegewezen |
+| 22 | Selectie lijst EmployeeClass                 | employmentNav/jobInfoNav/employeeClassNav | Alleen als `employeeClass` is toegewezen |
+| 23 | Selectie lijst EmplStatus                    | employmentNav/jobInfoNav/emplStatusNav | Alleen als `emplStatus` is toegewezen |
+| 24 | Selectie lijst AssignmentType                | employmentNav/empGlobalAssignmentNav/assignmentTypeNav | Alleen als `assignmentType` is toegewezen |
 
 ## <a name="how-full-sync-works"></a>Hoe volledige synchronisatie werkt
 Op basis van de kenmerk toewijzing wordt tijdens de volledige synchronisatie Azure AD Provisioning Service de volgende ' GET '-OData-API-query verzonden om effectief gegevens van alle actieve gebruikers op te halen. 
@@ -113,12 +114,12 @@ Wanneer Azure AD Provisioning Service query's uitvoert op SuccessFactors, wordt 
 
 Volg de onderstaande stappen voor het ophalen van aanvullende kenmerken:
     
-1. Blader naar de pagina **Enter prise Applications**  ->  **SuccessFactors app**  ->  **Provisioning**bewerking voor het inrichten van  ->  **inrichtings**  ->  **kenmerken-toewijzing**.
+1. Blader naar de pagina **Enter prise Applications**  ->  **SuccessFactors app**  ->  **Provisioning** bewerking voor het inrichten van  ->  **inrichtings**  ->  **kenmerken-toewijzing**.
 1. Schuif omlaag en klik op **Geavanceerde opties weer geven**.
-1. Klik op **kenmerk lijst bewerken voor SuccessFactors**. 
+1. Klik op **Kenmerkenlijst bewerken voor SuccessFactors**. 
 
    > [!NOTE] 
-   > Als de optie **kenmerk lijst bewerken voor SuccessFactors** niet wordt weer gegeven in de Azure Portal, gebruikt u de URL *https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true* voor toegang tot de pagina. 
+   > Als de optie **Kenmerkenlijst bewerken voor SuccessFactors** niet wordt weergegeven in de Azure-portal, gebruikt u de URL *https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true* om toegang te krijgen tot de pagina. 
 
 1. In de **expressie kolom API** in deze weer gave worden de JSONPath-expressies weer gegeven die door de connector worden gebruikt.
 
@@ -167,7 +168,7 @@ Het standaard Azure AD SuccessFactors-inrichtings app-schema wordt geleverd met 
    * Als het kenmerk deel uitmaakt van de *EmpJob* -entiteit, zoekt u naar het kenmerk onder het knoop punt *employmentNav/jobInfoNav* . 
 1. Maak het JSON-pad dat is gekoppeld aan het kenmerk en voeg dit nieuwe kenmerk toe aan de lijst met SuccessFactors-kenmerken. 
    * Voor beeld 1: Stel dat u het kenmerk *okToRehire*, dat deel uitmaakt van de *employmentNav* -entiteit, wilt toevoegen en gebruik vervolgens de JSONPath  `$.employmentNav.results[0].okToRehire`
-   * Voor beeld 2: Stel dat u de *Tijdzone*kenmerken wilt toevoegen, die deel uitmaakt van de *userNav* -entiteit en gebruik vervolgens de JSONPath `$.employmentNav.results[0].userNav.timeZone`
+   * Voor beeld 2: Stel dat u de *Tijdzone* kenmerken wilt toevoegen, die deel uitmaakt van de *userNav* -entiteit en gebruik vervolgens de JSONPath `$.employmentNav.results[0].userNav.timeZone`
    * Voor beeld 3: Stel dat u het kenmerk *flsaStatus*, dat deel uitmaakt van de *jobInfoNav* -entiteit, wilt toevoegen en gebruik vervolgens de JSONPath `$.employmentNav.results[0].jobInfoNav.results[0].flsaStatus`
 1. Sla het schema op. 
 1. Inrichting opnieuw starten.
@@ -181,7 +182,7 @@ Standaard zijn de volgende aangepaste kenmerken vooraf gedefinieerd in de Azure 
 
 Stel dat in het centrale exemplaar van uw werk nemers het kenmerk *customString35* in *EmpJobInfo* de locatie beschrijving opslaat. U wilt deze waarde debiet naar Active Directory kenmerk *physicalDeliveryOfficeName* . Gebruik de volgende stappen om kenmerk toewijzing te configureren voor dit scenario: 
 
-1. Bewerk de kenmerk lijst SuccessFactors om een nieuw kenmerk met de naam *empJobNavCustomString35*toe te voegen.
+1. Bewerk de kenmerk lijst SuccessFactors om een nieuw kenmerk met de naam *empJobNavCustomString35* toe te voegen.
 1. Stel de JSONPath API-expressie voor dit kenmerk in op: `$.employmentNav.results[0].jobInfoNav.results[0].customString35`
 1. Sla de wijziging van de toewijzing op en laad deze opnieuw in de Azure Portal.  
 1. Wijs in de Blade kenmerk toewijzing *empJobNavCustomString35* toe aan *physicalDeliveryOfficeName*.
@@ -263,7 +264,7 @@ Als u kenmerken wilt ophalen die horen bij het standaard gebruikers profiel voor
    * Nieuwe JSONPath: `$.employmentNav.results[?(@.assignmentClass == 'ST')].jobInfoNav.results[0].departmentNav.name_localized`
 1. Laad de Blade met kenmerk toewijzingen van de app opnieuw. 
 1. Schuif omlaag en klik op **Geavanceerde opties weer geven**.
-1. Klik op **kenmerk lijst bewerken voor SuccessFactors**.
+1. Klik op **Kenmerkenlijst bewerken voor SuccessFactors**.
 1. Nieuwe kenmerken toevoegen om globale toewijzings gegevens op te halen. Bijvoorbeeld: als u de afdelings naam wilt ophalen die is gekoppeld aan een globaal toewijzings profiel, kunt u het kenmerk *globalAssignmentDepartment* toevoegen waarbij de JSONPath-expressie is ingesteld op `$.employmentNav.results[?(@.assignmentClass == 'GA')].jobInfoNav.results[0].departmentNav.name_localized` . 
 1. U kunt nu beide afdelings waarden door lopen naar Active Directory kenmerken of een waarde selectief door lopen met expressie toewijzing. Voor beeld: met de onderstaande expressie wordt de waarde van het kenmerk AD *Department* ingesteld op *globalAssignmentDepartment* indien aanwezig, anders wordt de waarde ingesteld op *afdeling* die aan standaard toewijzing is gekoppeld. 
    * `IIF(IsPresent([globalAssignmentDepartment]),[globalAssignmentDepartment],[department])`
@@ -277,7 +278,7 @@ Wanneer een gebruiker in werk nemers centraal gelijktijdige/meerdere taken heeft
 
 1. Open de Blade kenmerk toewijzing van uw SuccessFactors-inrichtings toepassing. 
 1. Schuif omlaag en klik op **Geavanceerde opties weer geven**.
-1. Klik op **kenmerk lijst bewerken voor SuccessFactors**.
+1. Klik op **Kenmerkenlijst bewerken voor SuccessFactors**.
 1. Stel dat u de afdeling wilt ophalen die is gekoppeld aan taak 1 en taak 2. De vooraf gedefinieerde kenmerk *afdeling* haalt al de waarde van afdeling voor de eerste taak op. U kunt een nieuw kenmerk met de naam *secondJobDepartment* definiëren en de JSONPath-expressie instellen op `$.employmentNav.results[1].jobInfoNav.results[0].departmentNav.name_localized`
 1. U kunt nu beide afdelings waarden door lopen naar Active Directory kenmerken of een waarde selectief door lopen met expressie toewijzing. 
 1. Sla de toewijzing op. 

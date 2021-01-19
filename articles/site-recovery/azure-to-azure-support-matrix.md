@@ -4,12 +4,12 @@ description: Hiermee wordt een overzicht gegeven van de ondersteuning voor herst
 ms.topic: article
 ms.date: 11/29/2020
 ms.author: raynew
-ms.openlocfilehash: f0c7e23e45a84fa73c7e63b5aaa6280177cf8b27
-ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
+ms.openlocfilehash: fdd5b8f9cea549f64c4857d1c45b95b0d9b9ec53
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98541305"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569960"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Ondersteuningsmatrix voor herstel na noodgeval van Azure-VM's tussen Azure-regio's
 
@@ -31,10 +31,10 @@ In dit artikel vindt u een overzicht van de ondersteuning en vereisten voor hers
 **Resource actie** | **Details**
 --- | ---
 **Kluizen verplaatsen tussen resource groepen** | Niet ondersteund
-**Berekenings-en opslag/netwerk bronnen verplaatsen over resource groepen** | Niet ondersteund.<br/><br/> Als u een virtuele machine of gekoppelde onderdelen, zoals opslag/netwerk, verplaatst nadat de VM is gerepliceerd, moet u de replicatie voor de virtuele machine uitschakelen en opnieuw inschakelen.
+**Berekenings-en opslag/netwerk bronnen verplaatsen over resource groepen** | Wordt niet ondersteund.<br/><br/> Als u een virtuele machine of gekoppelde onderdelen, zoals opslag/netwerk, verplaatst nadat de VM is gerepliceerd, moet u de replicatie voor de virtuele machine uitschakelen en opnieuw inschakelen.
 **Virtuele Azure-machines van het ene naar het andere abonnement repliceren voor herstel na nood gevallen** | Ondersteund binnen dezelfde Azure Active Directory Tenant.
 **Vm's migreren tussen regio's binnen ondersteunde geografische clusters (binnen en tussen abonnementen)** | Ondersteund binnen dezelfde Azure Active Directory Tenant.
-**Vm's binnen dezelfde regio migreren** | Niet ondersteund.
+**Vm's binnen dezelfde regio migreren** | Wordt niet ondersteund.
 
 ## <a name="region-support"></a>Ondersteuning voor regio
 
@@ -44,13 +44,13 @@ U kunt virtuele machines repliceren en herstellen tussen twee regio's binnen het
 **Geografisch cluster** | **Azure-regio's**
 -- | --
 Lopende | Canada-oost, Canada-centraal, Zuid-Centraal VS, West-Centraal VS, VS-Oost, VS-Oost 2, VS-West, VS-West 2, VS-midden, Noord-Centraal VS
-Europa | UK-west, UK-zuid, Europa-noord, Europa-west, Zuid-Afrika-west, Zuid-Afrika-noord, Noor wegen Oost, Frankrijk-centraal, Zwitserland-noord
+Europa | UK-west, UK-zuid, Europa-noord, Europa-west, Zuid-Afrika-west, Zuid-Afrika-noord, Noor wegen Oost, Frankrijk-centraal, Zwitserland-noord, Duitsland-west-centraal
 Azië | India-zuid, Centraal-India, West-India, Zuidoost-Azië, Azië-oost, Japan-Oost, Japan-West, Korea-centraal, Korea-zuid
 Australië    | Australië-oost, Australië-zuidoost, Australië-centraal, Australië-centraal 2
 Azure Government    | Amerikaanse GOVe Virginia, VS GOV Iowa, US GOV Arizona, VS GOV Texas, US DOD Oost, US DOD-centraal
 Duitsland    | Duitsland-centraal, Duitsland-noordoost
 China | China-oost, China-noord, China North2, China Oost2
-Beperkte regio's die zijn gereserveerd voor in-the-Country nood herstel |Duitsland-noord gereserveerd voor Duitsland-west-centraal, Zwitserland-west gereserveerd voor Zwitserland-noord, Frankrijk-zuid gereserveerd voor Frankrijk-centraal, UAE-centraal beperkt voor uae-Noord klanten, Noor wegen West voor Noor wegen Oost-klanten
+Beperkte regio's die zijn gereserveerd voor in-the-Country nood herstel |Zwitserland-west gereserveerd voor Zwitserland-noord, Frankrijk-zuid gereserveerd voor Frankrijk-centraal, UAE-centraal beperkt voor UAE-noord klanten, Noor wegen West voor Noor wegen Oost-klanten
 
 >[!NOTE]
 >

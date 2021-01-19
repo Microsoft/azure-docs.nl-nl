@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: c8af1c32607e5fc7bf548b40069e18923c666303
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 28abb9f09e3bca2522b959c6a9b890de5320b17a
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87089648"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567444"
 ---
 # <a name="connect-your-infoblox-nios-to-azure-sentinel"></a>Uw Infoblox NIOS verbinden met Azure Sentinel
 
@@ -34,7 +34,7 @@ In dit artikel wordt uitgelegd hoe u uw [Nios-apparaat (Infoblox Network Identit
 
 ## <a name="forward-infoblox-logs-to-the-syslog-agent"></a>Infoblox-logboeken door sturen naar de syslog-agent  
 
-Infoblox configureren voor het door sturen van syslog-berichten naar uw Azure-werk ruimte via de syslog-agent.
+Configureer Infoblox voor het door sturen van syslog-berichten naar uw Azure Sentinel-werk ruimte via de syslog-agent.
 
 1. Klik in de Azure-Sentinel-Portal op **Data connectors** en selecteer **Infoblox Nios** -connector.
 
@@ -48,7 +48,7 @@ Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in Lo
 
 ## <a name="validate-connectivity"></a>Connectiviteit valideren
 
-Het kan 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven. 
+Het kan Maxi maal 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

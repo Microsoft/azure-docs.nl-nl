@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het herstellen van bestanden
 ms.topic: conceptual
 ms.date: 03/12/2020
 ms.custom: references_regions
-ms.openlocfilehash: b4bd64fb00c2f341e474ecb96738fab47d717474
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 9bd66c1e3c89c8974adc3970f8595e5100878088
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831666"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567133"
 ---
 # <a name="recover-files-from-azure-virtual-machine-backup"></a>Bestanden herstellen vanuit de back-up van Azure-virtuele machine
 
@@ -188,7 +188,7 @@ In Linux worden de volumes van het herstel punt gekoppeld aan de map waarin het 
 Als het bestands herstel proces vastloopt nadat u het script voor bestands herstel hebt uitgevoerd (bijvoorbeeld als de schijven nooit zijn gekoppeld, of als ze zijn gekoppeld, maar de volumes niet worden weer gegeven), voert u de volgende stappen uit:
 
 1. Wijzig de instelling in het bestand/etc/iscsi/iscsid.conf in:
-    - `node.conn[0].timeo.noop_out_timeout = 5`  Aan `node.conn[0].timeo.noop_out_timeout = 30`
+    - `node.conn[0].timeo.noop_out_timeout = 5`  Aan `node.conn[0].timeo.noop_out_timeout = 120`
 2. Nadat de bovenstaande wijzigingen zijn aangebracht, voert u het script opnieuw uit. Als er tijdelijke fouten zijn, moet u ervoor zorgen dat er een onderbreking van 20 tot 30 minuten tussen de uitvoeringen ligt om opeenvolgende bursts van aanvragen die de doel voorbereiding beïnvloeden, te voor komen. Met dit interval tussen nieuwe uitvoeringen wordt ervoor gezorgd dat het doel gereed is voor verbinding vanuit het script.
 3. Nadat het bestand is hersteld, gaat u terug naar de portal en selecteert u **schijven loskoppelen** voor herstel punten waar u geen volumes meer kunt koppelen. In wezen worden bestaande processen/sessies opgeschoond en wordt de kans op herstel verbeterd.
 

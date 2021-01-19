@@ -12,12 +12,12 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 07acd71eb1a77592c82b80aa574d79b98c48f60e
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 0067ed618f95e7f83fc041fe214bbc4d715a504f
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608296"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567635"
 ---
 # <a name="azure-ad-connect-sync-v2-endpoint-api"></a>Eindpunt-API voor Azure AD Connect-synchronisatie v2 
 Micro soft heeft een nieuw eind punt (API) geïmplementeerd voor Azure AD Connect die de prestaties verbetert van de synchronisatie service-bewerkingen naar Azure Active Directory. Door gebruik te maken van het nieuwe v2-eind punt, kunt u zien dat er prestatie verhogingen optreden bij het exporteren en importeren naar Azure AD. Dit nieuwe eind punt ondersteunt het volgende:
@@ -28,7 +28,7 @@ Micro soft heeft een nieuw eind punt (API) geïmplementeerd voor Azure AD Connec
 > [!NOTE]
 > Op dit moment heeft het nieuwe eind punt geen geconfigureerde limiet voor de groeps grootte voor Microsoft 365 groepen die terug worden geschreven. Dit kan een invloed hebben op uw Active Directory en latentie van de synchronisatie cyclus. Het is raadzaam om de groeps grootten stapsgewijs te verg Roten.  
 
-## <a name="pre-requisites"></a>Vereisten  
+## <a name="prerequisites"></a>Vereisten  
 Als u het nieuwe v2-eind punt wilt gebruiken, moet u [Azure AD Connect versie 1.5.30.0](https://www.microsoft.com/download/details.aspx?id=47594) of hoger gebruiken en de volgende implementatie stappen volgen om het v2-eind punt voor uw Azure AD Connect-server in te scha kelen.   
 
 ## <a name="deployment-guidance"></a>Implementatie richtlijnen 
@@ -106,7 +106,7 @@ De volgende stappen kunnen worden gebruikt om de limiet voor lidmaatschappen te 
 1. Editor voor synchronisatie regels van Azure AD openen 
 2. Kies **uitgaande** voor richting in de editor 
 3. Klik op de regel **voor het samen voegen van de groep aan Aad** 
-4. Klik op **Edit** de ![ scherm opname van de knop bewerken die de selectie vakjes voor het weer geven en beheren van uw synchronisatie regels ' met ' uit voor Aad-groeps koppeling ' is geselecteerd.](media/how-to-connect-sync-endpoint-api-v2/endpoint2.png)
+4. Klik op  de ![ scherm opname van de knop bewerken die de selectie vakjes voor het weer geven en beheren van uw synchronisatie regels ' met ' uit voor Aad-groeps koppeling ' is geselecteerd.](media/how-to-connect-sync-endpoint-api-v2/endpoint2.png)
 
 6. Klik op de knop **Ja** om de standaard regel uit te scha kelen en een Bewerk bare kopie te maken.
  ![Scherm opname van het venster ' bevestiging van de gereserveerde regel bewerken ' met de knop Ja geselecteerd.](media/how-to-connect-sync-endpoint-api-v2/endpoint3.png)
@@ -176,7 +176,7 @@ Als u het v2-eind punt hebt ingeschakeld en wilt terugdraaien, voert u de volgen
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen  
  
 **Wanneer wordt het nieuwe eind punt de standaard waarde voor upgrades en nieuwe installaties?**  
-</br>Er wordt een nieuwe release van AADConnect gepland die in januari 2021 moet worden gepubliceerd om te worden gedownload. Deze versie maakt standaard gebruik van het v2-eind punt en schakelt synchronisatie groepen in die groter zijn dan 50.000 withuot aanvullende configuratie. Deze release wordt vervolgens gepubliceerd voor automatische upgrade naar servers die in aanmerking komen.
+</br>Er wordt een nieuwe release van AADConnect gepland die in januari 2021 moet worden gepubliceerd om te worden gedownload. Deze versie maakt standaard gebruik van het v2-eind punt en schakelt synchronisatie groepen in die groter zijn dan 50.000 zonder extra configuratie. Deze release wordt vervolgens gepubliceerd voor automatische upgrade naar servers die in aanmerking komen.
  
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -6,12 +6,12 @@ ms.author: nlarin
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 09/23/2020
-ms.openlocfilehash: cf7c5fa8563544add55a7fad5075848eb5116fe1
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: c30c01a18a17981b4e034c9df2cf822e6580430e
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96901929"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567730"
 ---
 # <a name="networking-overview---azure-database-for-postgresql---flexible-server"></a>Overzicht van netwerken-Azure Database for PostgreSQL-flexibele server
 
@@ -74,7 +74,7 @@ Hier volgen enkele concepten die u moet kennen bij het gebruik van virtuele netw
 Meer informatie over het maken van een flexibele server met persoonlijke toegang (VNet-integratie) in [de Azure Portal](how-to-manage-virtual-network-portal.md) of [de Azure cli](how-to-manage-virtual-network-cli.md).
 
 > [!NOTE]
-> Als u de aangepaste DNS-server gebruikt, moet u een DNS-Forwarder gebruiken om de FQDN van Azure Database for MySQL-flexibele server op te lossen. Raadpleeg [de naam omzetting die gebruikmaakt van uw eigen DNS-server](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) voor meer informatie.
+> Als u de aangepaste DNS-server gebruikt, moet u een DNS-Forwarder gebruiken om de FQDN van Azure Database for PostgreSQL-flexibele server op te lossen. Raadpleeg [de naam omzetting die gebruikmaakt van uw eigen DNS-server](../../virtual-network/virtual-networks-name-resolution-for-vms-and-role-instances.md#name-resolution-that-uses-your-own-dns-server) voor meer informatie.
 
 ## <a name="public-access-allowed-ip-addresses"></a>Openbare toegang (toegestane IP-adressen)
 De kenmerken van de open bare toegangs methode zijn onder andere:
@@ -83,7 +83,7 @@ De kenmerken van de open bare toegangs methode zijn onder andere:
 * Uw flexibele server bevindt zich niet in een van uw virtuele Azure-netwerken
 * Netwerk verkeer van en naar de server gaat niet via een particulier netwerk. Het verkeer maakt gebruik van de algemene Internet routes.
 
-### <a name="firewall-rules"></a>Firewall-regels
+### <a name="firewall-rules"></a>Firewallregels
 Het verlenen van machtigingen aan een IP-adres wordt een firewall regel genoemd. Als een verbindings poging afkomstig is van een IP-adres dat u niet hebt toegestaan, wordt er een fout melding weer geven op de oorspronkelijke client.
 
 Meer informatie over het maken van een flexibele server met open bare toegang (toegestane IP-adressen) in [de Azure Portal](how-to-manage-firewall-portal.md) of [de Azure cli](how-to-manage-firewall-cli.md).

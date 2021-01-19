@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/25/2020
-ms.openlocfilehash: 67d4137a21753b221e17a1effde35bc1b89600d3
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: f52c0296023098c755feb1bf0baba980f2988bd7
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753804"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567705"
 ---
 # <a name="server-assessment-overview-migrate-to-azure-vmware-solution"></a>Overzicht van server evaluatie (migreren naar Azure VMware-oplossing)
 
@@ -207,6 +207,8 @@ Nadat de waarde voor effectief gebruik is vastgesteld, worden de opslag, het net
 
 Als u gebruikmaakt *van on-premises grootte*, wordt de prestatie geschiedenis van de vm's en schijven niet door de server bepaling beschouwd. In plaats daarvan wijst het de AVS-knoop punten toe op basis van de grootte die lokaal is toegewezen. Het standaard type opslag is vSAN in AVS.
 
+Meer [informatie](https://docs.microsoft.com/azure/migrate/tutorial-assess-vmware-azure-vmware-solution#review-an-assessment) over het controleren van de evaluatie van een Azure VMware-oplossing.
+
 ## <a name="confidence-ratings"></a>Betrouwbaarheids classificaties
 
 Elke evaluatie op basis van prestaties in Azure Migrate is gekoppeld aan een betrouwbaarheids classificatie die van één (laagste) tot vijf sterren (hoogst) ligt.
@@ -235,9 +237,15 @@ Afhankelijk van het percentage beschik bare gegevens punten, gaat de betrouwbaar
 
 Hier volgen enkele redenen waarom een evaluatie een lage betrouwbaarheids classificatie kan krijgen:
 
-- U hebt uw omgeving niet in het profiel voor de duur waarvoor u de evaluatie maakt. Als u bijvoorbeeld de beoordeling met de prestatie duur hebt ingesteld op één dag, moet u wachten tot minstens een dag nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen.
-- Er zijn enkele VM's uitgeschakeld in de periode waarover de evaluatie werd berekend. Als een virtuele machine gedurende enige tijd is uitgeschakeld, kan de server bepaling de prestatie gegevens voor die periode niet verzamelen.
-- Sommige Vm's zijn gemaakt tijdens de periode waarvoor de evaluatie is berekend. Als u bijvoorbeeld een evaluatie hebt gemaakt voor de prestatie geschiedenis van de afgelopen maand, maar sommige virtuele machines in de omgeving slechts een week geleden zijn gemaakt, bestaat de prestatie geschiedenis van de nieuwe Vm's niet voor de volledige duur.
+- U hebt uw omgeving niet in het profiel voor de duur waarvoor u de evaluatie maakt. Als u bijvoorbeeld de beoordeling met de prestatie duur hebt ingesteld op één dag, moet u ten minste één dag wachten nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen.
+- De evaluatie kan de prestatie gegevens voor sommige of alle virtuele machines in de evaluatie periode niet verzamelen. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen: 
+    - Vm's worden ingeschakeld voor de duur van de evaluatie
+    - Uitgaande verbindingen op poort 443 zijn toegestaan
+    - Voor virtuele Hyper-V-machines is dynamisch geheugen ingeschakeld 
+    
+    Bereken de evaluatie opnieuw om de meest recente wijzigingen in de betrouwbaarheidsclassificatie weer te geven.
+
+- Sommige Vm's zijn gemaakt tijdens de periode waarin de evaluatie is berekend. Stel dat u een evaluatie hebt gemaakt voor de prestatie geschiedenis van de afgelopen maand, maar dat sommige Vm's slechts een week geleden zijn gemaakt. In dit geval zijn er voor de hele periode geen prestatiegegevens van de nieuwe VM’s beschikbaar, waardoor de betrouwbaarheidsclassificatie laag is.
 
 > [!NOTE]
 > Als de betrouwbaarheids classificatie van een evaluatie van minder dan vijf sterren is, raden we u aan om ten minste een dag te wachten op het apparaat om de omgeving in te stellen en de evaluatie vervolgens opnieuw te berekenen. Als dat niet het geval is, is de grootte van de prestaties mogelijk niet betrouwbaar. In dat geval raden wij u aan de evaluatie over te scha kelen naar de on-premises grootte.

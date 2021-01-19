@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: e6582443ddc56b315c1c666c81a596fa71b1d54f
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 02757477ca4a07f4526df0339291122eda57c9b5
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753974"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567432"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Ondersteunings matrix voor VMware-evaluatie 
 
@@ -23,7 +23,7 @@ Als u virtuele VMware-machines wilt migreren naar Azure, raadpleegt u de [onders
 
 ## <a name="limitations"></a>Beperkingen
 
-**Ondersteuning** | **Details**
+**Vereiste** | **Details**
 --- | ---
 **Project limieten** | U kunt meerdere projecten maken in een Azure-abonnement.<br/><br/> U kunt Maxi maal 35.000 VMware-Vm's in één [project](migrate-support-matrix.md#azure-migrate-projects)detecteren en beoordelen. Een project kan ook fysieke servers en virtuele Hyper-V-machines bevatten, tot aan de evaluatie limieten voor elke.
 **Discovery** (Detectie) | Het Azure Migrate-apparaat kan Maxi maal 10.000 VMware-Vm's detecteren op een vCenter Server.
@@ -81,9 +81,9 @@ Naast het detecteren van computers kunnen server analyses apps, rollen en functi
 
 ## <a name="dependency-analysis-requirements-agentless"></a>Vereisten voor afhankelijkheids analyse (zonder agent)
 
-[Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren van afhankelijkheden tussen on-premises machines die u wilt beoordelen en migreren naar Azure. De tabel bevat een overzicht van de vereisten voor het instellen van een afhankelijkheids analyse zonder agent.
+[Afhankelijkheids analyse](concepts-dependency-visualization.md) helpt u bij het identificeren van afhankelijkheden tussen on-premises machines die u wilt beoordelen en migreren naar Azure. De tabel bevat een overzicht van de vereisten voor het instellen van een afhankelijkheids analyse zonder agent. 
 
-**Vereiste** | **Details**
+**Ondersteuning** | **Details**
 --- | --- 
 **Ondersteunde computers** | Momenteel alleen ondersteund voor virtuele VMware-machines.
 **Virtuele Windows-machines** | Windows Server 2016<br/> Windows Server 2012 R2<br/> Windows Server 2012<br/> Windows Server 2008 R2 (64-bits).<br/>Micro soft Windows Server 2008 (32-bits). 

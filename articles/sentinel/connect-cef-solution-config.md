@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: 36c832e198d7b6e9a6c3f6ddc19ad87c87917f38
-ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
+ms.openlocfilehash: 80e5cc18888b0e014fc1f617ca27dee05146472e
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98541271"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567672"
 ---
 # <a name="step-2-configure-your-security-solution-to-send-cef-messages"></a>STAP 2: uw beveiligings oplossing configureren voor het verzenden van CEF-berichten
 
@@ -41,6 +41,7 @@ Als uw beveiligings oplossing al een bestaande connector heeft, gebruikt u de vo
 - [Illusive Networks AMS](connect-illusive-attack-management-system.md)
 - [One Identity Safeguard](connect-one-identity.md)
 - [Palo Alto Networks](connect-paloalto.md)
+- [Thycotic-geheim server](connect-thycotic-secret-server.md)
 - [Deep Security van Trend Micro](connect-trend-micro.md)
 - [Trend Micro TippingPoint](connect-trend-micro-tippingpoint.md)
 - [Wirex Network forensische-platform](connect-wirex-systems.md)
@@ -64,7 +65,7 @@ Als er geen connector bestaat voor uw specifieke beveiligings oplossing, gebruik
 > [!NOTE]
 > **De bron van het veld TimeGenerated wijzigen**
 >
-> - Standaard vult de Log Analytics agent het veld *TimeGenerated* in het schema in met de tijd dat de agent de gebeurtenis van de syslog-daemon heeft ontvangen. Als gevolg hiervan wordt het tijdstip waarop de gebeurtenis op het bron systeem werd gegenereerd, niet vastgelegd in azure Sentinel.
+> - Standaard vult de Log Analytics agent het veld *TimeGenerated* in het schema in met de tijd dat de agent de gebeurtenis van de syslog-daemon heeft ontvangen. Als gevolg hiervan wordt de tijd waarop de gebeurtenis is gegenereerd in het bronsysteem, niet opgeslagen in Azure Sentinel.
 >
 > - U kunt echter de volgende opdracht uitvoeren, zodat het script wordt gedownload en uitgevoerd `TimeGenerated.py` . Met dit script wordt de Log Analytics-agent zo geconfigureerd dat het veld *TimeGenerated* wordt ingevuld met de oorspronkelijke tijd van de gebeurtenis op het bron systeem, in plaats van de tijd die door de agent is ontvangen.
 >

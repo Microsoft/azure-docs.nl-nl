@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/12/2021
 ms.author: yelevin
-ms.openlocfilehash: 549b4e1e5e1aef3f6957fa52d69d252c55934286
-ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
+ms.openlocfilehash: 989520e079988e1821d8bb9a936f857e1f62c11a
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98541550"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567765"
 ---
 # <a name="connect-your-trend-micro-tippingpoint-solution-to-azure-sentinel"></a>Uw Trend Micro TippingPoint-oplossing verbinden met Azure Sentinel
 
@@ -48,15 +48,15 @@ Als u de logboeken van Azure Sentinel wilt ontvangen, moet u uw TippingPoint TPS
 
 1. Volg de instructies op het tabblad **instructies** onder **configuratie**:
 
-    1. **1. configuratie van Linux syslog-agent** : Voer deze stap uit als u nog geen logboek doorstuur server hebt of als u er een hebt. Zie [stap 1: de doorstuur server voor logboeken implementeren](connect-cef-agent.md) in de Azure-Sentinel-documentatie voor meer gedetailleerde instructies en uitleg.
+    1. Onder **1. Configuratie van Linux syslog-agent** : Voer deze stap uit als u nog geen logboek doorstuur server hebt of als u er een hebt. Zie [stap 1: de doorstuur server voor logboeken implementeren](connect-cef-agent.md) in de Azure-Sentinel-documentatie voor meer gedetailleerde instructies en uitleg.
 
-    1. **2. forward Trend Micro TIPPINGPOINT SMS-logboeken naar syslog-agent** : deze configuratie moet de volgende elementen bevatten:
+    1. Onder **2. Forwarde Trend Micro TippingPoint SMS-logboeken naar syslog-agent** : deze configuratie moet de volgende elementen bevatten:
         - Logboek bestemming: de hostnaam en/of het IP-adres van de server voor het door sturen van Logboeken
         - Protocol en poort – **TCP 514** (als u dit niet doet, moet u ervoor zorgen dat u de parallelle wijziging aanbrengt in de syslog-daemon op de server voor het door sturen van Logboeken)
         - Logboek indeling – **ARCSIGHT CEF Format v 4.2**
         - Logboek typen: alle beschikbaar
 
-    1. **3. Valideer de verbinding** -Controleer de gegevens opname door de opdracht op de pagina connector te kopiëren en op de logboek-doorstuur server uit te voeren. Zie [stap 3: connectiviteit valideren](connect-cef-verify.md) in de informatie over de Azure-Sentinel voor meer gedetailleerde instructies en uitleg.
+    1. Minder dan **3. Verbinding valideren** : Controleer de gegevens opname door de opdracht op de pagina connector te kopiëren en op de logboek-doorstuur server uit te voeren. Zie [stap 3: connectiviteit valideren](connect-cef-verify.md) in de informatie over de Azure-Sentinel voor meer gedetailleerde instructies en uitleg.
 
         Het kan Maxi maal 20 minuten duren voordat uw logboeken in Log Analytics worden weer gegeven.
 

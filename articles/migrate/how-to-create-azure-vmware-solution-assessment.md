@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 06/26/2020
-ms.openlocfilehash: 93d17ec2a4fb5c191ce02c73a7a3532e9c854b00
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: fb1ec55bc68ccc323f8dee90982a9169e3085219
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752070"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567643"
 ---
 # <a name="create-an-azure-vmware-solution-avs-assessment"></a>Een evaluatie van een Azure VMware-oplossing (AVS) maken
 
@@ -58,27 +58,29 @@ Voer de evaluatie van de Azure VMware-oplossing (AVS) als volgt uit:
 
     ![Scherm afbeelding toont Azure Migrate servers met beoordeling geselecteerd onder evaluatie hulpprogramma's.](./media/how-to-create-assessment/assess.png)
 
-3. In **servers beoordelen** selecteert u het beoordelings type als ' Azure VMware-oplossing (AVS) ', selecteert u de detectie bron en geeft u de naam van de evaluatie op.
+3. In **servers beoordelen** selecteert u het beoordelings type als ' Azure VMware-oplossing (AVS) ', selecteert u de detectie bron.
 
-    ![Basisprincipes evaluatie](./media/how-to-create-avs-assessment/assess-servers-avs.png)
+    :::image type="content" source="./media/how-to-create-avs-assessment/assess-servers-avs.png" alt-text="Basis beginselen van de beoordeling toevoegen":::
 
-4. Klik op **Alles weergeven** om de evaluatie-eigenschappen te controleren.
+4. Klik op **bewerken** om de eigenschappen van de evaluatie te bekijken.
 
-    ![Eigenschappen van AVS-evaluatie](./media/how-to-create-avs-assessment/avs-view-all.png)
+    :::image type="content" source="./media/tutorial-assess-vmware-azure-vmware-solution/assess-servers.png" alt-text="Locatie van de knop bewerken om de eigenschappen van de beoordeling te bekijken":::
 
-5. Klik op **volgende** om **machines te selecteren om te evalueren**. In **Een groep selecteren of maken** selecteert u **Nieuwe maken** en geeft u een groepsnaam op. Een groep verzamelt een of meer VM's voor evaluatie.
+1. In **machines selecteren om**  >  de **beoordelings naam** te beoordelen > een naam opgeven voor de evaluatie. 
+ 
+1. In **selecteren of een groep maken** > selecteert u **nieuwe maken** en geeft u een groeps naam op. Een groep verzamelt een of meer VM's voor evaluatie.
+    
+    :::image type="content" source="./media/tutorial-assess-vmware-azure-vmware-solution/assess-group.png" alt-text="Virtuele machines toevoegen aan een groep":::
 
-6. Selecteer in **Machines toevoegen aan de groep** de VM's die aan de groep moeten worden toegevoegd.
+1. Selecteer in **Machines toevoegen aan de groep** de VM's die aan de groep moeten worden toegevoegd.
 
-7. Klik op **volgende** en **Controleren en evaluatie maken** om de details van de evaluatie te controleren.
+1. Klik op **volgende** en **Controleren en evaluatie maken** om de details van de evaluatie te controleren.
 
-8. Klik op **Evaluatie maken** om de groep te maken en de evaluatie uit te voeren.
+1. Klik op **Evaluatie maken** om de groep te maken en de evaluatie uit te voeren.
 
-    ![Een AVS-evaluatie maken](./media/how-to-create-avs-assessment/avs-assessment-create.png)
+1. Nadat de evaluatie is gemaakt, kunt u deze bekijken in **Servers** > **Azure Migrate: Serverevaluatie** > **Evaluaties**.
 
-9. Nadat de evaluatie is gemaakt, kunt u deze bekijken in **Servers** > **Azure Migrate: Serverevaluatie** > **Evaluaties**.
-
-10. Klik op **Evaluatie exporteren** om deze te downloaden als een Excel-bestand.
+1. Klik op **Evaluatie exporteren** om deze te downloaden als een Excel-bestand.
 
 
 ## <a name="review-an-azure-vmware-solution-avs-assessment"></a>Een evaluatie van een Azure VMware-oplossing (AVS) controleren
@@ -88,6 +90,8 @@ Een evaluatie van de Azure VMware-oplossing (AVS) beschrijft:
 - **Gereedheid voor Azure VMware-oplossing (AVS)**: of de on-premises vm's geschikt zijn voor migratie naar de Azure VMware-oplossing (AVS).
 - **Aantal AVS-knoop punten**: het geschatte aantal AVS-knoop punten dat is vereist voor het uitvoeren van de vm's.
 - **Gebruik over AVS-knoop punten**: geprojecteerde CPU, geheugen en opslag gebruik op alle knoop punten.
+    - Gebruik is inclusief de voor-factorisatie in de volgende overhead van Cluster beheer, zoals de vCenter Server, NSX Manager (groot), NSX Edge, als HCX is geïmplementeerd, ook de HCX Manager en IX toestellen die gebruikmaken van ~ 44vCPU (11 CPU), 75GB RAM en 722GB van opslag vóór compressie en ontdubbeling.
+    - Geheugen, ontdubbeling en compressie zijn momenteel ingesteld op 100% gebruik voor geheugen en 1,5 ontdubbeling en compressie, een door de gebruiker gedefinieerde invoer in komende releases, waardoor de gebruiker de vereiste grootte kan aanpassen.
 - **Schatting van maandelijkse kosten**: de geschatte maandelijkse kosten voor alle knoop punten van de Azure VMware-oplossing (AVS) die de on-premises vm's uitvoeren.
 
 
@@ -97,7 +101,7 @@ Een evaluatie van de Azure VMware-oplossing (AVS) beschrijft:
 
 2. Klik in **Evaluaties** op een evaluatie om deze te openen.
 
-    ![Overzicht van AVS-evaluatie](./media/how-to-create-avs-assessment/avs-assessment-summary.png)
+    :::image type="content" source="./media/how-to-create-avs-assessment/avs-assessment-summary.png" alt-text="Overzicht van AVS-evaluatie":::
 
 ### <a name="review-azure-vmware-solution-avs-readiness"></a>Gereedheid voor de Azure VMware-oplossing (AVS) controleren
 

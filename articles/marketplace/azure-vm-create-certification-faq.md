@@ -6,13 +6,13 @@ ms.subservice: partnercenter-marketplace-publisher
 ms.topic: troubleshooting
 author: iqshahmicrosoft
 ms.author: iqshah
-ms.date: 01/15/2021
-ms.openlocfilehash: 8c2739503f00848b1515f2061c2a9aa250c091a3
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.date: 01/18/2021
+ms.openlocfilehash: f802292d9723179b36d5291993bd4e07487fe6a8
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539859"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567387"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -70,7 +70,7 @@ Het inrichtings probleem kan de volgende fout scenario's omvatten:
 
 ### <a name="conectix-cookie-and-other-vhd-specifications"></a>Conectix cookie en andere VHD-specificaties
 
-De teken reeks ' conectix ' maakt deel uit van de VHD-specificatie. Het is gedefinieerd als de 8-bytes cookie in de VHD-voet tekst waarmee de maker van het bestand wordt geïdentificeerd. Alle VHD-bestanden die door micro soft zijn gemaakt, hebben deze cookie. 
+De teken reeks ' conectix ' maakt deel uit van de VHD-specificatie. Het is gedefinieerd als de 8-bytes cookie in de VHD-voet tekst waarmee de maker van het bestand wordt geïdentificeerd. Alle VHD-bestanden die door micro soft zijn gemaakt, hebben deze cookie.
 
 Een blob met VHD-indeling moet een 512-byte-voet tekst met de volgende indeling hebben:
 
@@ -311,14 +311,14 @@ Uw aanvraag met een door SSH uitgeschakelde afbeelding verzenden voor het certif
 
 Raadpleeg de volgende tabel voor problemen die zich voordoen wanneer u de VM-installatie kopie downloadt met een SAS-URL (Shared Access Signature).
 
-|Scenario|Fout|Reden|Oplossing|
-|---|---|---|---|
-|1|De blob is niet gevonden|De VHD kan worden verwijderd of verplaatst van de opgegeven locatie.|| 
-|2|BLOB in gebruik|De VHD wordt gebruikt door een ander intern proces.|De VHD moet een gebruikte status hebben wanneer u deze downloadt met een SAS-URL.|
-|3|Ongeldige SAS-URL|De bijbehorende SAS-URL voor de VHD is onjuist.|Haal de juiste SAS-URL op.|
-|4|Ongeldige hand tekening|De bijbehorende SAS-URL voor de VHD is onjuist.|Haal de juiste SAS-URL op.|
-|6|Voorwaardelijke HTTP-header|De SAS-URL is ongeldig.|Haal de juiste SAS-URL op.|
-|7|Ongeldige naam voor VHD|Controleer of er speciale tekens, zoals een procent teken `%` of aanhalings tekens `"` , aanwezig zijn in de naam van de virtuele harde schijf.|Wijzig de naam van het VHD-bestand door de speciale tekens te verwijderen.|
+|Fout|Reden|Oplossing|
+|---|---|---|
+|De blob is niet gevonden|De VHD kan worden verwijderd of verplaatst van de opgegeven locatie.|| 
+|BLOB in gebruik|De VHD wordt gebruikt door een ander intern proces.|De VHD moet een gebruikte status hebben wanneer u deze downloadt met een SAS-URL.|
+|Ongeldige SAS-URL|De bijbehorende SAS-URL voor de VHD is onjuist.|Haal de juiste SAS-URL op.|
+|Ongeldige hand tekening|De bijbehorende SAS-URL voor de VHD is onjuist.|Haal de juiste SAS-URL op.|
+|Voorwaardelijke HTTP-header|De SAS-URL is ongeldig.|Haal de juiste SAS-URL op.|
+|Ongeldige naam voor VHD|Controleer of er speciale tekens, zoals een procent teken `%` of aanhalings tekens `"` , aanwezig zijn in de naam van de virtuele harde schijf.|Wijzig de naam van het VHD-bestand door de speciale tekens te verwijderen.|
 |
 
 ## <a name="first-1-mb-2048-sectors-each-sector-of-512-bytes-partition"></a>Eerste 1 MB (2048 sectoren, elke sector van 512 bytes)
@@ -558,7 +558,7 @@ Om een installatie kopie van een virtuele machine te vervangen die een beveiligi
 
 #### <a name="provide-a-new-vm-image-to-address-the-security-vulnerability-or-exploit"></a>Een nieuwe VM-installatie kopie opgeven om het beveiligings probleem op te lossen of misbruik te maken
 
-Als u deze stappen wilt uitvoeren, moet u de technische assets voorbereiden voor de VM-installatie kopie die u wilt toevoegen. Zie [een virtuele machine maken met behulp van een goedgekeurde basis](azure-vm-create-using-approved-base.md)of [een virtuele machine maken met uw eigen installatie kopie](azure-vm-create-using-own-image.md) en [een SAS-URI voor uw VM-installatie kopie genereren](azure-vm-get-sas-uri.md)voor meer informatie.
+Als u deze stappen wilt uitvoeren, moet u de technische assets voorbereiden voor de VM-installatie kopie die u wilt toevoegen. Zie [een virtuele machine maken met behulp van een goedgekeurde basis](azure-vm-create-using-approved-base.md) of [een virtuele machine maken met uw eigen installatie kopie](azure-vm-create-using-own-image.md) en [een SAS-URI voor uw VM-installatie kopie genereren](azure-vm-get-sas-uri.md)voor meer informatie.
 
 1. Meld u aan bij [Partner Center](https://partner.microsoft.com/dashboard/home).
 1. Selecteer in het linkerdeel venster het gedeelte **Commercial Marketplace**-  >  **overzicht**.

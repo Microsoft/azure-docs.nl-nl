@@ -1,21 +1,21 @@
 ---
 title: Azure Migrate-projecten maken en beheren
 description: U kunt projecten vinden, maken, beheren en verwijderen in Azure Migrate.
-author: ms-psharma
-ms.author: panshar
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: 445e08b255e5b4dd67dd1c6a47c8df6ce59df5bd
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: de0c48bb775b96052fe16d60aa58049bfd58ca4d
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753821"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567773"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Azure Migrate-projecten maken en beheren
 
-In dit artikel wordt beschreven hoe u [Azure migrate](migrate-services-overview.md) projecten maakt, beheert en verwijdert.
+In dit artikel wordt beschreven hoe u [Azure migrate](migrate-services-overview.md) projecten maakt, beheert en verwijdert. Als u werkt met klassieke Azure Migrate projecten, verwijdert u deze projecten en volgt u de stappen om een nieuw Azure Migrate project te maken. U kunt geen klassieke Azure Migrate projecten of onderdelen naar de Azure Migrate bijwerken.
 
 Een Azure Migrate project wordt gebruikt voor het opslaan van de metagegevens voor detectie, evaluatie en migratie die zijn verzameld uit de omgeving die u wilt beoordelen of migreren. In een project kunt u gedetecteerde assets volgen, beoordelingen maken en migraties naar Azure organiseren.  
 
@@ -78,7 +78,7 @@ Als u al een Azure Migrate project hebt en u een aanvullend project wilt maken, 
 Zoek een project op de volgende manier:
 
 1. Zoek in het [Azure Portal](https://portal.azure.com)naar *Azure migrate*.
-2. Selecteer in het Azure Migrate Dash **Servers** Board > servers **wijzigen** in de rechter bovenhoek.
+2. Selecteer in het Azure Migrate Dash Board > servers **wijzigen** in de rechter bovenhoek.
 
     ![Overschakelen naar een bestaand Azure Migrate project](./media/create-manage-projects/switch-project.png)
 

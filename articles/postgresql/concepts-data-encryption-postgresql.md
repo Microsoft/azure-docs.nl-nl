@@ -6,16 +6,16 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 01/13/2020
-ms.openlocfilehash: c2a6a88e9f730e17c929cf7949352448903435f6
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 730d12558e413d96909914d06187d0d5f89ec661
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118452"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567525"
 ---
 # <a name="azure-database-for-postgresql-single-server-data-encryption-with-a-customer-managed-key"></a>Azure Database for PostgreSQL gegevens versleuteling met één server met een door de klant beheerde sleutel
 
-Azure PostgreSQL maakt gebruik van [Azure Storage versleuteling](../storage/common/storage-service-encryption.md) om gegevens op rest te versleutelen met behulp van door micro soft beheerde sleutels. Voor Azure PostgreSQL-gebruikers is het een zeer vergelijkbaar met transparent data Encruption (TDE) in andere data bases, zoals SQL Server. Veel organisaties vereisen volledig beheer over toegang tot de gegevens met behulp van een door de klant beheerde sleutel. Gegevens versleuteling met door de klant beheerde sleutels voor Azure Database for PostgreSQL één server biedt u de mogelijkheid om uw eigen sleutel (BYOK) te nemen voor gegevens bescherming. Daarnaast kunnen organisaties hiermee een scheiding van taken implementeren bij het beheer van sleutels en gegevens. Met door de klant beheerde versleuteling bent u verantwoordelijk voor, en hebt u het volledige beheer over, de levenscyclus van een sleutel, de machtigingen voor sleutelgebruik, en het controleren van de bewerkingen van sleutels.
+Azure PostgreSQL maakt gebruik van [Azure Storage versleuteling](../storage/common/storage-service-encryption.md) om gegevens op rest te versleutelen met behulp van door micro soft beheerde sleutels. Voor Azure PostgreSQL-gebruikers is het een zeer vergelijkbaar met Transparent Data Encryption (TDE) in andere data bases, zoals SQL Server. Veel organisaties vereisen volledig beheer over toegang tot de gegevens met behulp van een door de klant beheerde sleutel. Gegevens versleuteling met door de klant beheerde sleutels voor Azure Database for PostgreSQL één server biedt u de mogelijkheid om uw eigen sleutel (BYOK) te nemen voor gegevens bescherming. Daarnaast kunnen organisaties hiermee een scheiding van taken implementeren bij het beheer van sleutels en gegevens. Met door de klant beheerde versleuteling bent u verantwoordelijk voor, en hebt u het volledige beheer over, de levenscyclus van een sleutel, de machtigingen voor sleutelgebruik, en het controleren van de bewerkingen van sleutels.
 
 Gegevens versleuteling met door de klant beheerde sleutels voor Azure Database for PostgreSQL één server, wordt ingesteld op server niveau. Voor een bepaalde server wordt een door de klant beheerde sleutel, de sleutel versleutelings sleutel (KEK), gebruikt om de gegevens versleutelings sleutel (DEK) te versleutelen die door de service wordt gebruikt. De KEK is een asymmetrische sleutel die is opgeslagen in een [Azure Key Vault](../key-vault/general/secure-your-key-vault.md) exemplaar van een klant en door de klant wordt beheerd. De sleutel versleutelings sleutel (KEK) en de gegevens versleutelings sleutel (DEK) wordt verderop in dit artikel uitvoeriger beschreven.
 

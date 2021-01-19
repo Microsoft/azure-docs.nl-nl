@@ -6,12 +6,12 @@ ms.author: rajosh
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 05/27/2020
-ms.openlocfilehash: f8a4f29114f7e0a2ed7868f01e05e25c8a0d0ce1
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 9bdf907ede2c09f7e314df619cd81059956f17dc
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752223"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567752"
 ---
 # <a name="server-assessment-overview-migrate-to-azure-vms"></a>Overzicht van server evaluatie (migreren naar Azure Vm's)
 
@@ -268,8 +268,14 @@ Deze tabel bevat de beoordelings betrouwbaarheids classificaties die afhankelijk
 Hier volgen enkele redenen waarom een evaluatie een lage betrouwbaarheids classificatie kan krijgen:
 
 - U hebt uw omgeving niet in het profiel voor de duur waarvoor u de evaluatie maakt. Als u bijvoorbeeld de beoordeling met de prestatie duur hebt ingesteld op één dag, moet u ten minste één dag wachten nadat u de detectie hebt gestart voor alle gegevens punten die u wilt verzamelen.
-- Sommige Vm's zijn afgesloten tijdens het tijdstip waarop de evaluatie is berekend. Als een virtuele machine gedurende enige tijd is uitgeschakeld, kan de server bepaling de prestatie gegevens voor die periode niet verzamelen.
-- Sommige Vm's zijn gemaakt tijdens de periode waarin de evaluatie is berekend. Stel dat u een evaluatie hebt gemaakt voor de prestatie geschiedenis van de afgelopen maand, maar dat sommige Vm's slechts een week geleden zijn gemaakt. De prestatie geschiedenis van de nieuwe Vm's bestaat niet voor de volledige duur.
+- De evaluatie kan de prestatie gegevens voor sommige of alle virtuele machines in de evaluatie periode niet verzamelen. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen: 
+    - Vm's worden ingeschakeld voor de duur van de evaluatie
+    - Uitgaande verbindingen op poort 443 zijn toegestaan
+    - Voor virtuele Hyper-V-machines is dynamisch geheugen ingeschakeld 
+    
+    Bereken de evaluatie opnieuw om de meest recente wijzigingen in de betrouwbaarheidsclassificatie weer te geven.
+
+- Sommige Vm's zijn gemaakt tijdens de periode waarin de evaluatie is berekend. Stel dat u een evaluatie hebt gemaakt voor de prestatie geschiedenis van de afgelopen maand, maar dat sommige Vm's slechts een week geleden zijn gemaakt. In dit geval zijn er voor de hele periode geen prestatiegegevens van de nieuwe VM’s beschikbaar, waardoor de betrouwbaarheidsclassificatie laag is.
 
 > [!NOTE]
 > Als de betrouwbaarheids classificatie van een evaluatie van minder dan vijf sterren is, raden we u aan om ten minste een dag te wachten op het apparaat om de omgeving te profileren en vervolgens de evaluatie opnieuw te berekenen. Anders is de op prestaties gebaseerde grootte mogelijk onbetrouwbaar. In dat geval raden wij u aan de evaluatie over te scha kelen naar de on-premises grootte.

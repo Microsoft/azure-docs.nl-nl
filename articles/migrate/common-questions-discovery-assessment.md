@@ -6,12 +6,12 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 06/09/2020
-ms.openlocfilehash: 4531d68c2fbd0698c33d70a75bb82ac9c7f52f49
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 944d867ef888e70faa659adcc0e2d4c02f003c97
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96752240"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567400"
 ---
 # <a name="discovery-assessment-and-dependency-analysis---common-questions"></a>Detectie, beoordeling en afhankelijkheids analyse-Veelgestelde vragen
 
@@ -46,7 +46,8 @@ U kunt Maxi maal 10.000 VMware-Vm's, Maxi maal 5.000 virtuele Hyper-V-machines e
 Voor evaluaties Op basis van prestaties staat in de export van het evaluatierapport PercentageOfCoresUtilizedMissing of PercentageOfMemoryUtilizedMissing, wanneer er geen prestatiegegevens voor de on-premises VM's kunnen worden verzameld op het Azure Migrate-apparaat. Controleer het volgende:
 
 - Of de VM's zijn ingeschakeld gedurende de periode waarvoor u de evaluatie maakt
-- Als er alleen geheugenitems ontbreken en u virtuele Hyper-V-machines probeert te evalueren, controleert u of er dynamisch geheugen is ingeschakeld op deze virtuele machines. Er is momenteel een bekend probleem als gevolg waarvan het Azure Migrate-apparaat geen geheugengebruik kan verzamelen voor dergelijke VM's.
+- Als er alleen geheugen items ontbreken en u probeert virtuele Hyper-V-machines te evalueren. In dit scenario schakelt u dynamisch geheugen op de virtuele machines in en berekent u de evaluatie opnieuw om de meest recente wijzigingen weer te geven. Het apparaat kan alleen geheugen gebruiks waarden voor virtuele Hyper-V-machines verzamelen wanneer het dynamische geheugen van de virtuele machine is ingeschakeld.
+
 - Als alle prestatie meter items ontbreken, moet u ervoor zorgen dat uitgaande verbindingen op poort 443 (HTTPS) zijn toegestaan.
 
 Opmerking: als een van de prestatiemeteritems ontbreekt, gebeurt het volgende in Azure Migrate: Server-evaluatie valt terug op de toegewezen on-premises kernen/geheugen en raadt een relevante VM-grootte aan.
@@ -57,7 +58,12 @@ De betrouwbaarheidsclassificatie wordt berekend voor evaluaties Op basis van pre
 
 - U hebt uw omgeving niet geprofileerd gedurende de periode waarvoor u de evaluatie maakt. Als u bijvoorbeeld een evaluatie maakt waarbij de duur van de prestaties is ingesteld op één week, moet u na het starten van de detectie minstens een week wachten voordat alle gegevenspunten zijn verzameld. Als u niet kunt wachten op de duur, wijzigt u de duur van de prestaties in een kortere periode en berekent u de evaluatie opnieuw.
  
-- Met server evaluatie kunnen de prestatie gegevens voor sommige of alle virtuele machines in de evaluatie periode niet worden verzameld. Controleer of de virtuele machines zijn ingeschakeld voor de duur van de evaluatie en of uitgaande verbindingen op poort 443 zijn toegestaan. Als dynamisch geheugen is ingeschakeld voor virtuele Hyper-VM's, ontbreken er geheugenitems, wat tot een lage betrouwbaarheidsclassificatie leidt. Bereken de evaluatie opnieuw om de meest recente wijzigingen in de betrouwbaarheidsclassificatie weer te geven. 
+- Met server evaluatie kunnen de prestatie gegevens voor sommige of alle virtuele machines in de evaluatie periode niet worden verzameld. Voor een hoge betrouwbaarheids classificatie moet u het volgende doen: 
+    - Vm's worden ingeschakeld voor de duur van de evaluatie
+    - Uitgaande verbindingen op poort 443 zijn toegestaan
+    - Voor virtuele Hyper-V-machines is dynamisch geheugen ingeschakeld 
+
+    Bereken de evaluatie opnieuw om de meest recente wijzigingen in de betrouwbaarheidsclassificatie weer te geven.
 
 - Er zijn enkele VM’s gemaakt nadat detectie in Server-evaluatie al was gestart. Als u bijvoorbeeld een evaluatie maakt voor de prestatiegeschiedenis van de laatste maand, maar er een week geleden enkele VM's in de omgeving zijn gemaakt. In dit geval zijn er voor de hele periode geen prestatiegegevens van de nieuwe VM’s beschikbaar, waardoor de betrouwbaarheidsclassificatie laag is.
 

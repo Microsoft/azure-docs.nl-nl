@@ -7,12 +7,12 @@ ms.manager: bsiva
 ms.topic: tutorial
 ms.date: 01/02/2021
 ms.custom: MVC
-ms.openlocfilehash: aac949de0b0ae1f085187c1b5e1f3b64d8edad03
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: c0f4f1d7f0213ad24d25d8d34235475bbdb0316a
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233811"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567107"
 ---
 # <a name="migrate-machines-as-physical-servers-to-azure"></a>Machines als fysieke servers migreren naar Azure
 
@@ -163,6 +163,8 @@ U moet de agent Mobility-service installeren op de machines die u wilt migreren.
     - U kunt de wachtwoordzin op het replicatieapparaat verkrijgen. Voer vanaf de opdrachtregel **C:\ProgramData\ASR\home\svsystems\bin\genpassphrase.exe-v** uit om de huidige wachtwoordzin weer te geven.
     - Genereer de wachtwoordzin niet opnieuw. Hierdoor wordt de verbinding verbroken en moet u het replicatieapparaat opnieuw registreren.
 
+> [!NOTE]
+> In de parameter */Platform* geeft u *VMware* op als u VMware-VM's of fysieke machines migreert.
 
 ### <a name="install-on-windows"></a>Installeren in Windows
 

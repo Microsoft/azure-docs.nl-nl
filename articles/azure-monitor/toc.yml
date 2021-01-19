@@ -573,9 +573,13 @@
             - name: Problemen oplossen in ITSM-connector
               items:
                 - name: Overzicht
+                  href: platform/itsmc-troubleshoot-overview.md
+                - name: ITSM-connector synchroniseren
                   href: platform/itsmc-resync-servicenow.md
                 - name: Dashboard verkennen
                   href: platform/itsmc-dashboard.md
+                - name: Algemene fouten
+                  href: platform/itsmc-dashboard-errors.md
             - name: Integreren met beveiligde export
               items:
                 - name: Overzicht

@@ -159,6 +159,20 @@
           href: how-to-troubleshoot-the-sensor-and-on-premises-management-console.md
         - name: SNMP MIB-bewaking instellen
           href: how-to-set-up-snmp-mib-monitoring.md
+        - name: Integreren met partners
+          items:
+            - name: Cisco ISE pxGrid-integratie
+              href: integration-cisco-ise-pxgrid.md
+            - name: Forescout-integratie
+              href: integration-forescout.md
+            - name: Fortinet-integratie
+              href: integration-fortinet.md
+            - name: Palo Alto-integratie
+              href: integration-palo-alto.md
+            - name: ServiceNow-integratie
+              href: integration-servicenow.md
+            - name: Splunk-integratie
+              href: integration-splunk.md
     - name: Oplossing met agent voor apparaatbouwers
       items:
         - name: Werken met beveiligingsmodule voor Azure RTOS
@@ -223,7 +237,7 @@
           href: 'https://azure.microsoft.com/roadmap/?category=security-identity'
 - name: Resources
   items:
-    - name: Oplossing met agent voor apparaatbouwers
+    - name: Oplossing met agent voor apparaatbouwer
       items:
         - name: Uw beveiligingsvaardigheden ontwikkelen met Microsoft Learn
           href: /learn/browse/?term=securityS&terms=securityS

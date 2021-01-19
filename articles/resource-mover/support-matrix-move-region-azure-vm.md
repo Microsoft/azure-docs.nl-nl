@@ -7,12 +7,12 @@ ms.service: resource-move
 ms.topic: how-to
 ms.date: 10/11/2020
 ms.author: raynew
-ms.openlocfilehash: 4da707ab698599c8ea5dd8e1ea8647f543eb2a68
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 00b220e07dc3fa7580100d6d36108c14fe598d40
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95524246"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98572184"
 ---
 # <a name="support-for-moving-azure-vms-between-azure-regions"></a>Ondersteuning voor het verplaatsen van virtuele Azure-machines tussen Azure-regio's
 
@@ -108,12 +108,12 @@ Installatie kopieën van Azure Gallery (gepubliceerd door derden)  | Ondersteund
 Aangepaste installatie kopieën (gepubliceerd door derden)| Ondersteund | Wordt ondersteund als de virtuele machine wordt uitgevoerd op een ondersteund besturings systeem.
 Vm's met Site Recovery | Niet ondersteund | Resources verplaatsen tussen regio's voor virtuele machines, met behulp van Site Recovery op de back-end. Als u Site Recovery al gebruikt, schakelt u replicatie uit en start u vervolgens het voorbereidings proces.
 Azure RBAC-beleid | Niet ondersteund | Beleids regels op basis van op rollen gebaseerd toegangs beheer (Azure RBAC) op Vm's worden niet naar de virtuele machine in de doel regio gekopieerd.
-Extensies | Niet ondersteund | Extensies worden niet naar de virtuele machine in de doel regio gekopieerd. Installeer ze hand matig nadat de verplaatsing is voltooid.
+Uitbreidingen | Niet ondersteund | Extensies worden niet naar de virtuele machine in de doel regio gekopieerd. Installeer ze hand matig nadat de verplaatsing is voltooid.
 
 
 ## <a name="supported-vm-storage-settings"></a>Ondersteunde VM-opslag instellingen
 
-Deze tabel bevat een overzicht van de ondersteuning voor de Azure VM-besturingssysteem schijf, de gegevens schijf en de tijdelijke schijf. Het is belang rijk om te kijken naar de limieten en doelen van de VM-schijf voor [Linux](../virtual-machines/linux/disk-scalability-targets.md) -en [Windows](../virtual-machines/windows/disk-scalability-targets.md) -vm's om prestatie problemen te voor komen.
+Deze tabel bevat een overzicht van de ondersteuning voor de Azure VM-besturingssysteem schijf, de gegevens schijf en de tijdelijke schijf. Het is belang rijk om te kijken naar de schijfruimte limieten en doelen van de virtuele machine voor [beheerde schijven](../virtual-machines/disks-scalability-targets.md) om prestatie problemen te voor komen.
 
 > [!NOTE]
 > De grootte van de doel-VM moet gelijk zijn aan of groter zijn dan de bron-VM. De para meters die worden gebruikt voor validatie zijn: aantal gegevens schijven, Nic's aantal, beschik bare Cpu's, geheugen in GB. Als dit niet het geval is, wordt er een fout bericht weer gegeven.
@@ -127,11 +127,11 @@ Maximale grootte van gegevens schijf | 8192 GB voor beheerde schijven
 Minimale grootte van gegevens schijf |  2 GB voor beheerde schijven |
 Maximum aantal gegevens schijven | Maxi maal 64, in overeenstemming met de ondersteuning voor een specifieke Azure VM-grootte | Meer [informatie](../virtual-machines/sizes.md) over VM-grootten.
 Wijzigings frequentie van gegevens schijven | Maxi maal 10 MBps per schijf voor Premium-opslag. Maxi maal 2 MBps per schijf voor standaard opslag. | Als de gemiddelde waarde voor het wijzigen van de gegevens op de schijf continu hoger is dan het maximum, wordt de voor bereiding niet opvangen.<br/><br/>  Als het maximum echter sporadisch wordt overschreden, kan de voor bereiding worden opgevangen, maar ziet u mogelijk enigszins vertraagde herstel punten.
-Gegevens schijf (standaard opslag account) | Niet ondersteund. | Wijzig het opslag type in beheerde schijf en probeer vervolgens de virtuele machine te verplaatsen.
+Gegevens schijf (standaard opslag account) | Wordt niet ondersteund. | Wijzig het opslag type in beheerde schijf en probeer vervolgens de virtuele machine te verplaatsen.
 Gegevens schijf (Premium Storage-account) | Niet ondersteund | Wijzig het opslag type in beheerde schijf en probeer vervolgens de virtuele machine te verplaatsen.
 Beheerde schijf (standaard) | Ondersteund  |
 Beheerde schijf (Premium) | Ondersteund |
-Standard - SSD | Ondersteund |
+Standard SSD | Ondersteund |
 Generatie 2 (UEFI-opstart) | Ondersteund
 Opslag account voor diagnostische gegevens over opstarten | Niet ondersteund | Schakel deze opnieuw in nadat u de virtuele machine naar de doel regio hebt verplaatst.
 

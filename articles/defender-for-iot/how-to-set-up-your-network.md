@@ -4,17 +4,17 @@ description: Meer informatie over de architectuur van de oplossing, netwerk voor
 author: shhazam-ms
 manager: rkarlin
 ms.author: shhazam
-ms.date: 12/06/2020
+ms.date: 01/03/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 3e9380f067b091c4473b8c29bda3d31bb93cbc6d
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 2053632f24504f896d1045f99d581b9aa6050b55
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840843"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573136"
 ---
-# <a name="about-azure-defender-for-iot-network-setup"></a>Over Azure Defender voor IoT-netwerk installatie
+# <a name="about-azure-defender-for-iot-network-setup"></a>Over de installatie van het Azure Defender for IoT-netwerk
 
 Azure Defender voor IoT biedt voortdurende bewaking van Internet bedreigingen en detectie van apparaten. Het platform bevat de volgende onderdelen:
 
@@ -54,7 +54,7 @@ Site-informatie vastleggen, zoals:
 
 - Configuratie werkstation.
 
-- SSL-certificaten (optioneel).
+- SSL-certificaten (optioneel, maar aanbevolen).
 
 - SMTP-verificatie (optioneel). Als u de SMTP-server met verificatie wilt gebruiken, moet u de referenties voorbereiden die vereist zijn voor uw server.
 
@@ -101,7 +101,7 @@ Controleer of het beveiligings beleid van uw organisatie toegang biedt tot het v
 | **Verbinding tussen het Defender voor IoT-platform en de on-premises beheer console** | SSL | TCP | In of uit | 443 | Sensor-en on-premises beheer console|
 | **On-premises beheer console die als NTP wordt gebruikt voor de sensor** | NTP | UDP| In in CM | 123 | Tijdsynchronisatie | 
 | **Sensor verbonden met externe NTP-server (indien van toepassing)** | NTP | UDP | In of uit| 123 | Tijdsynchronisatie |
-| **Verbinding tussen het platform en het beheer platform van de Defender voor IoT en de e-mail server (indien van toepassing)** | SMTP | TCP | Out-of-sensor beheer | 25 | E-mail |
+| **Verbinding tussen het platform en het beheer platform van de Defender voor IoT en de e-mail server (indien van toepassing)** | SMTP | TCP | Out-of-sensor beheer | 25 | Email |
 | **Logboeken die vanaf de on-premises beheer console naar de syslog-server worden verzonden (indien van toepassing)** | Syslog | UDP | Out-of-sensor beheer| 514 | LEEF |
 | **DNS-server poort (indien van toepassing)** | DNS | N.v.t. | In of uit| 53 | DNS |
 | **Verbinding tussen de Defender voor IoT-platform en de on-premises beheer console voor Active Directory (indien van toepassing)** | LDAPS | TCP | In of uit | 636 <br />389 | Active Directory |
@@ -223,7 +223,7 @@ In een Star netwerk is elke host verbonden met een centrale hub. In de meest een
 
 Hier volgen enkele aanbevelingen voor het implementeren van meerdere Sens oren:
 
-| * * Getal * *| **Meet** | **Afhankelijkheid** | **Aantal Sens oren** |
+| **Number** | **Meet** | **Afhankelijkheid** | **Aantal Sens oren** |
 |--|--|--|--|
 | De maximale afstand tussen switches | 80 meters | Voor bereide Ethernet-kabel | Meer dan 1 |
 | Aantal netwerken | Meer dan 1 | Geen fysieke verbinding | Meer dan 1 |
@@ -569,7 +569,7 @@ Een overzicht van het diagram van een industrieel netwerk stelt u in staat om de
     > [!NOTE]
     > Het apparaat Defender voor IoT moet zijn verbonden met een switch op een lager niveau dat het verkeer tussen de poorten op de switch ziet.  
 
-2. Geef het geschatte aantal apparaten in de netwerken op (optioneel).
+2. Geef het geschatte aantal netwerk apparaten op dat wordt bewaakt. U hebt deze informatie nodig wanneer u uw abonnement op de Azure Defender voor IoT-Portal wilt voorbereiden. Tijdens het voorbereidings proces wordt u gevraagd om het aantal apparaten in stappen van 1000 in te voeren.
 
 3. Geef een lijst met subnetten voor de productie netwerken en een beschrijving (optioneel). 
 
@@ -591,7 +591,7 @@ Een overzicht van het diagram van een industrieel netwerk stelt u in staat om de
 
 5. Als u wilt controleren of de switches mogelijkheden voor poort spiegeling hebben, geeft u de switch model nummers op waarmee de Defender voor IoT-platform verbinding moet maken:
 
-    | **#** | **Switch** | **Model** | **Ondersteuning voor mirroring van verkeer (SPAN, RSPAN of none)** |
+    | **#** | **/Tijdnotatie** | **Model** | **Ondersteuning voor mirroring van verkeer (SPAN, RSPAN of none)** |
     |--|--|--|--|
     | 1 |  |  |
     | 2 |  |  |
@@ -694,6 +694,6 @@ Neem contact op met een Active Directory beheerder om een Active Directory site-
 | Camera | |
 | Röntgen computer | |
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Over de installatie van Defender voor IoT](how-to-install-software.md)

@@ -3,12 +3,12 @@ title: Antwoorden op veelgestelde vragen
 description: 'Antwoorden op veelgestelde vragen over de functies van Azure Backup, waaronder de Recovery Services-kluis, waarvan een back-up kan worden gemaakt, hoe het werkt, versleuteling en limieten. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: d85866e490b2c56abb7de1e94cd0ffaa8f714615
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: bd84ff553b486d200ec4501b89b42335335b223f
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327148"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98572524"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Azure Backup - veelgestelde vragen
 
@@ -61,6 +61,10 @@ Als u de back-up al hebt geconfigureerd en wilt overstappen van GRS naar LRS, ra
 ### <a name="how-can-i-move-data-from-the-recovery-services-vault-to-on-premises"></a>Hoe kan ik gegevens van de Recovery Services kluis verplaatsen naar on-premises?
 
 Het is niet mogelijk om gegevens rechtstreeks vanuit de Recovery Services kluis naar on-premises te exporteren met behulp van Data Box. Gegevens moeten worden hersteld naar een opslag account en vervolgens kunnen worden verplaatst naar on-premises via [Data Box](../databox/data-box-overview.md) of [importeren/exporteren](../storage/common/storage-import-export-service.md).
+
+### <a name="what-is-the-difference-between-a-geo-redundant-storage-grs-vault-with-and-without-the-cross-region-restore-crr-capability-enabled"></a>Wat is het verschil tussen een GRS-kluis (geo-redundante opslag) met en zonder dat de functie voor CRR (cross-Region Restore) is ingeschakeld?
+
+In het geval van een [GRS](azure-backup-glossary.md#grs) -kluis zonder [CRR](azure-backup-glossary.md#cross-region-restore-crr) -functionaliteit is ingeschakeld, zijn de gegevens in de secundaire regio pas toegankelijk als Azure een nood geval in de primaire regio declareert. In een dergelijk scenario gebeurt het herstel van de secundaire regio. Als CRR is ingeschakeld, zelfs als de primaire regio actief is, kunt u een herstel bewerking activeren in de secundaire regio.
 
 ## <a name="azure-backup-agent"></a>Azure Backup-agent
 

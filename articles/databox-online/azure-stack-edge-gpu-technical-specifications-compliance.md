@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: conceptual
-ms.date: 10/07/2020
+ms.date: 01/19/2021
 ms.author: alkohli
-ms.openlocfilehash: 225cb9a31b73f330d8b4ed5790caacc4fa729477
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d40d26e8fab0832a37a43c353e11189f8f193f14
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91839942"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573323"
 ---
 # <a name="technical-specifications-and-compliance-for-azure-stack-edge-pro-with-gpu"></a>Technische specificaties en naleving voor Azure Stack Edge Pro met GPU 
 
@@ -26,7 +26,7 @@ Het Azure Stack Edge Pro-apparaat heeft de volgende specificaties voor Compute e
 | Specificatie           | Waarde                  |
 |-------------------------|----------------------------|
 | CPU                     | 2 X Intel Xeon Silver 4214 (trapsgewijs Lake) CPU            |
-| Geheugen                  | 128 (8x16 GB) GB RAM                     |
+| Geheugen                  | 128 (8x16 GB) GB RAM <br> Dell compatible 16 GB PC4-23400 DDR4-2933Mhz 2Rx8 1.2 v ECC geregistreerd RDIMM       |
 
 
 ## <a name="compute-acceleration-specifications"></a>Specificaties van Compute Acceleration
@@ -45,7 +45,7 @@ Het Azure Stack Edge Pro-apparaat heeft twee 100-240 V-energievoedings eenheden 
 | Specificatie           | 750 W PSU                  |
 |-------------------------|----------------------------|
 | Maximale uitvoer kracht    | 750 W                     |
-| Frequency               | 50/60 Hz                   |
+| Frequentie               | 50/60 Hz                   |
 | Selectie van voltage bereik | Automatisch variërend: 100-240 V AC |
 | Hot pluggable           | Ja                        |
 
@@ -56,7 +56,7 @@ Uw Azure Stack Edge Pro-apparaat heeft zes netwerk interfaces, PORT1-PORT6.
 
 | Specificatie           | Beschrijving                 |
 |-------------------------|----------------------------|
-|  Netwerkinterfaces    | **2 X 1 GbE-interfaces** – 1 beheer interface poort 1 wordt gebruikt voor initiële installatie en is standaard statisch. Nadat de eerste installatie is voltooid, kunt u de interface gebruiken voor gegevens met elk IP-adres. Bij het opnieuw instellen wordt de interface echter teruggezet naar het statische IP-adres. <br>De andere interface poort 2 kan door de gebruiker worden geconfigureerd, kan worden gebruikt voor gegevens overdracht en is standaard DHCP. <br>**4 X 25 GbE-interfaces** : deze gegevens interfaces, poort 3 tot en met poort 6, kunnen worden geconfigureerd door de gebruiker als DHCP (standaard) of statisch. Deze kunnen ook worden gebruikt als 10 GbE-interfaces.  | 
+|  Netwerkinterfaces    | **2 X 1 GbE-interfaces** – 1 beheer interface poort 1 wordt gebruikt voor initiële installatie en is standaard statisch. Nadat de eerste installatie is voltooid, kunt u de interface gebruiken voor gegevens met elk IP-adres. Bij het opnieuw instellen wordt de interface echter teruggezet naar het statische IP-adres. <br>De andere interface poort 2 kan door de gebruiker worden geconfigureerd, kan worden gebruikt voor gegevens overdracht en is standaard DHCP. <br>**4 X 25 GbE-interfaces** : deze gegevens interfaces, poort 3 tot en met poort 6, kunnen worden geconfigureerd door de gebruiker als DHCP (standaard) of statisch. Ze kunnen ook worden gebruikt als 10 GbE-interfaces.  | 
 
 Uw Azure Stack Edge Pro-apparaat heeft de volgende netwerkhardware:
 
@@ -67,8 +67,8 @@ Hier vindt u de Details voor de Mellanox-kaart:
 
 | Parameter           | Beschrijving                 |
 |-------------------------|----------------------------|
-| Modelleren    | Connectx®-4 LX EN netwerk interface kaart                      |
-| Model beschrijving               | 25GbE Dual Port SFP28; PCIe 3.0 X8; BVGS R6                    |
+| Model    | Connectx®-4 LX EN netwerk interface kaart                      |
+| Model beschrijving               | 25 GbE Dual Port SFP28; PCIe 3.0 X8; BVGS R6                    |
 | Onderdeel nummer van apparaat (R640) | MCX4121A-ACAT  |
 | PSID (R640)           | MT_2420110034                         |
 
@@ -88,11 +88,9 @@ De Azure Stack Edge Pro-apparaten hebben vijf 2,5 ' NVMe DC P4610 Ssd's, elk met
 |    Boot SATA-schijven (Solid-State Drive)      |    1                  |
 |    Capaciteit van opstart SSD                       |    240 GB             |
 |    Totale capaciteit                          |    8,0 TB             |
-|    Totale bruikbare capaciteit *                  |    ~ 4,19 TB          |
+|    Totale bruikbare capaciteit                   |    ~ 4,19 TB          |
+|    RAID-configuratie                      |    Opslagruimten Direct met een combi natie van mirroring en pariteit  |
 |    SAS-controller                          |    HBA330 12 Gbps     |
-
-
-**Na pariteits tolerantie en het reserveren van ruimte voor intern gebruik.*
 
 <!--Remove based on feedback from Ravi
 ## Other hardware specifications
@@ -150,6 +148,7 @@ In deze sectie vindt u de specificaties met betrekking tot de behuizing-omgeving
 |     Sluit                           |     Operationele specificaties                                                                                                                                                                                         |
 |-----------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 |    Lucht stroom                              |    De stroom van het systeem is aan de achterzijde. Het systeem moet worden bediend met een installatie met een lage druk, een achterlopende uitlaat. <!--Back pressure created by rack doors and obstacles should not exceed 5 pascals (0.5 mm water gauge).-->    |
+| Ingangs beveiliging (IP)                 |    Dit type voor het gebruik van een rek gemonteerde apparatuur is doorgaans niet getest op inkomend verkeer (bescherming tegen vaste stoffen en vloei stoffen voor een elektrische behuizing). De veiligheids beoordeling van de fabrikant toont IPXO (geen ingangs beveiliging).  |
 |    Maximum hoogte, operationeel        |    3048 meters (10.000 meter) met een maximale gebruiks temperatuur van de nominale waarde bepaald door [de specificaties van de gebruiks temperatuur van de beoordeling](#operating-temperature-de-rating-specifications).                                                                                |
 |    Maximale hoogte, niet-operationeel    |    12.000 meters (39.370 meter)                                                                                                                                                                                         |
 |    Schokken, operationeel                   |    6 G voor 11 milliseconden in 6 standen                                                                                                                                                                         |

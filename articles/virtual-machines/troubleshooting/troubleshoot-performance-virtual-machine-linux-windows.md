@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/18/2019
 ms.author: v-miegge
-ms.openlocfilehash: 53fd2332224d903c5a4b33563470cf3569f82b13
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec605fd30252b9a0cfb80d0bc3ff145ed3b5a1d4
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86526653"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573306"
 ---
 # <a name="troubleshoot-azure-virtual-machine-performance-on-linux-or-windows"></a>Problemen met prestaties van virtuele Azure-machines in Linux of Windows oplossen
 
@@ -44,7 +44,7 @@ Diagnostische gegevens over virtuele machines inschakelen:
 
    ![Klik op instellingen en vervolgens op diagnostische gegevens](media/troubleshoot-performance-virtual-machine-linux-windows/2-virtual-machines-diagnostics.png)
 
-U kunt het opslag account dat wordt gebruikt voor Diagnostische instellingen op het tabblad **agent** onder **Diagnostische instellingen**controleren.
+U kunt het opslag account dat wordt gebruikt voor Diagnostische instellingen op het tabblad **agent** onder **Diagnostische instellingen** controleren.
 
 ![Opslag account controleren](media/troubleshoot-performance-virtual-machine-linux-windows/3-check-storage-account.png)
 
@@ -52,7 +52,7 @@ U kunt het opslag account dat wordt gebruikt voor Diagnostische instellingen op 
 
 Opslag is een belang rijke laag wanneer we de IO-prestaties voor een virtuele machine in azure willen analyseren. Voor metrische gegevens over opslag moeten we diagnostische gegevens inschakelen als een extra stap. Dit kan ook worden ingeschakeld als we alleen de opslag items willen analyseren.
 
-1. Bepaal welk opslag account (of welke accounts) uw virtuele machine gebruikt door de virtuele machine te selecteren. Klik op **instellingen**en klik vervolgens op **schijven**:
+1. Bepaal welk opslag account (of welke accounts) uw virtuele machine gebruikt door de virtuele machine te selecteren. Klik op **instellingen** en klik vervolgens op **schijven**:
 
    ![Klik op instellingen en vervolgens op schijven](media/troubleshoot-performance-virtual-machine-linux-windows/4-storage-disks-disks-selection.png)
 
@@ -198,7 +198,7 @@ AverageE2ELatency vertegenwoordigt client latentie. Controleer hoe de IOPS wordt
 
 #### <a name="check-for-azure-storage-throttling---add-the-storage-account-metrics-throttlingerror"></a>Controleren op Azure Storage Throttle-de metrische gegevens van het opslag account toevoegen: ThrottlingError
 
-Met de waarden voor beperking wordt aangegeven dat u wordt beperkt op het niveau van het opslag account, wat inhoudt dat de limiet voor IOPS van het account wordt bereikt. U kunt bepalen of u de limiet voor IOPs hebt bereikt door de metrische **TotalRequests**te controleren.
+Met de waarden voor beperking wordt aangegeven dat u wordt beperkt op het niveau van het opslag account, wat inhoudt dat de limiet voor IOPS van het account wordt bereikt. U kunt bepalen of u de limiet voor IOPs hebt bereikt door de metrische **TotalRequests** te controleren.
 
 Houd er rekening mee dat elke VHD een limiet heeft van 500 IOPS of 60 MBit, maar is gebonden aan de cumulatieve limiet van 20000 IOPS per opslag account.
 
@@ -208,9 +208,9 @@ Als u wilt weten of u de limiet voor IOPS hebt bereikt, gaat u naar de diagnosti
 
 Met nieuwe schijf aanbiedingen onder standaard opslag kunnen de limieten voor IOPS en door Voer verschillen, maar de cumulatieve limiet van het standaard opslag account is 20000 IOPS (Premium Storage heeft verschillende limieten op het niveau van de account of schijf). Meer informatie over de verschillende standaard aanbiedingen voor opslag schijven en per schijf limiet:
 
-* [Schaalbaarheids-en prestatie doelen voor VM-schijven in Windows](../windows/disk-scalability-targets.md).
+* [Schaalbaarheids-en prestatie doelen voor VM-schijven in Windows](../disks-scalability-targets.md).
 
-#### <a name="references"></a>Referenties
+#### <a name="references"></a>Verwijzingen
 
 * [Schaalbaarheids-en prestatie doelen voor Premium-pagina-Blob Storage-accounts](../../storage/blobs/scalability-targets-premium-page-blobs.md)
 
@@ -224,7 +224,7 @@ Controleer de doorvoer limieten van de Vhd's die zijn gekoppeld aan de virtuele 
 
 Nieuwe schijf aanbiedingen onder standaard opslag hebben verschillende IOPS-en doorvoer limieten (IOPS worden niet per VHD weer gegeven). Bekijk de gegevens om te zien of u de limieten hebt bereikt van gecombineerde door Voer van de VHD (s) op VM-niveau met behulp van de lees-en schrijf bewerking van de virtuele machine. vervolgens optimaliseert u de configuratie van de VM-opslag om eerdere VHD-limieten te schalen. Meer informatie over de verschillende standaard aanbiedingen voor opslag schijven en per schijf limiet:
 
-* [Schaalbaarheids-en prestatie doelen voor VM-schijven in Windows](../windows/disk-scalability-targets.md).
+* [Schaalbaarheids-en prestatie doelen voor VM-schijven in Windows](../disks-scalability-targets.md).
 
 ### <a name="high-disk-utilizationlatency-remediation"></a>Hoog schijf gebruik/herstel van de latentie
 

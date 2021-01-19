@@ -10,18 +10,26 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/04/2019
 ms.author: erhopf
-ms.openlocfilehash: 5427e9f996fb77d455aa8064fc7cb1c65e1fcf7e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 563a3e224ffedc98bcc3102ea865f06315294365
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "74805974"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573102"
 ---
 # <a name="prepare-data-to-create-a-custom-voice"></a>Gegevens voorbereiden voor het maken van een aangepaste spraak
 
 Wanneer u klaar bent voor het maken van een aangepaste tekst-naar-spraak-stem voor uw toepassing, is de eerste stap het verzamelen van audio-opnames en bijbehorende scripts om te beginnen met het trainen van het spraak model. De speech-service gebruikt deze gegevens om een unieke stem te maken die is afgestemd op de stem in de opnamen. Nadat u de stem hebt getraind, kunt u de spraak functie voor uw toepassingen starten.
 
-U kunt beginnen met een kleine hoeveelheid gegevens om een proef concept te maken. Hoe meer gegevens u ook opgeeft, hoe natuurlijk uw aangepaste stem klinkt. Voordat u uw eigen stem model voor tekst naar spraak kunt trainen, hebt u audio-opnames en de bijbehorende tekst transcripties nodig. Op deze pagina controleren we gegevens typen, hoe ze worden gebruikt en hoe u deze kunt beheren.
+Voordat u uw eigen stem model voor tekst naar spraak kunt trainen, hebt u audio-opnames en de bijbehorende tekst transcripties nodig. Op deze pagina controleren we gegevens typen, hoe ze worden gebruikt en hoe u deze kunt beheren.
+
+> [!NOTE]
+> Als u een Neural-stem wilt trainen, moet u een profiel voor spraak-talen opgeven met het bestand met de bestands toestemming van de stem talen bevestiging dat zijn/haar spraak gegevens worden gebruikt voor het trainen van een aangepast spraak model. Zorg ervoor dat u de onderstaande zin opneemt wanneer u het opname script voorbereidt. 
+
+> "I [Geef uw voor-en achternaam op] Houd er rekening mee dat de opnamen van mijn stem worden gebruikt door [de naam van het bedrijf te vermelden] om een synthetische versie van mijn stem te maken en te gebruiken."
+Deze zin wordt gebruikt om te controleren of de trainings gegevens worden uitgevoerd door dezelfde persoon die de toestemming doet. Lees hier meer over de [Voice-talen verificatie](https://aka.ms/CNV-data-privacy) .
+
+> Aangepaste Neural Voice is beschikbaar met beperkte toegang. Zorg ervoor dat u bekend bent met de [vereiste AI-vereisten](https://aka.ms/gating-overview) en [Pas de toegang hier toe](https://aka.ms/customneural). 
 
 ## <a name="data-types"></a>Gegevenstypen
 
@@ -31,22 +39,22 @@ In sommige gevallen hebt u de juiste gegevensset mogelijk niet gereed en wilt u 
 
 Deze tabel geeft een lijst van gegevens typen en hoe deze worden gebruikt voor het maken van een aangepast spraak model voor tekst naar spraak.
 
-| Gegevenstype | Beschrijving | Wanneer gebruikt u dit? | Aanvullende service vereist | Aantal voor het trainen van een model | Land instelling (en) |
-| --------- | ----------- | ----------- | --------------------------- | ----------------------------- | --------- |
-| **Afzonderlijke uitingen + overeenkomende transcript** | Een verzameling (. zip) van audio bestanden (. wav) als afzonderlijke uitingen. Elk audio bestand moet 15 seconden of korter zijn, gekoppeld aan een opgemaakt transcript (. txt). | Professionele opnamen met overeenkomende transcripten | Klaar voor training. | Geen harde vereiste voor en-US en zh-CN. Meer dan 2000 + afzonderlijke uitingen voor andere landen. | [Alle aangepaste spraak instellingen](language-support.md#customization) |
-| **Lange audio en Transcripten (bèta)** | Een verzameling (. zip) van lange, niet-gesegmenteerde audio bestanden (langer dan 20 seconden), gekoppeld aan een transcript (. txt) dat alle gesp roken woorden bevat. | U hebt audio bestanden en overeenkomende transcripten, maar deze worden niet gesegmenteerd in uitingen. | Segmentatie (met behulp van batch transcriptie).<br>Trans formatie van audio-indeling waar nodig. | Geen harde vereiste  | [Alle aangepaste spraak instellingen](language-support.md#customization) |
-| **Alleen audio (bèta)** | Een verzameling (. zip) van audio bestanden zonder transcripten. | Er zijn alleen audio bestanden beschikbaar, zonder transcripten. | Segmentatie en Transcripten genereren (met behulp van batch transcriptie).<br>Trans formatie van audio-indeling waar nodig.| Geen harde vereiste | [Alle aangepaste spraak instellingen](language-support.md#customization) |
+| Gegevenstype | Beschrijving | Wanneer gebruikt u dit? | Aanvullende verwerking vereist | 
+| --------- | ----------- | ----------- | --------------------------- |
+| **Afzonderlijke uitingen + overeenkomende transcript** | Een verzameling (. zip) van audio bestanden (. wav) als afzonderlijke uitingen. Elk audio bestand moet 15 seconden of korter zijn, gekoppeld aan een opgemaakt transcript (. txt). | Professionele opnamen met overeenkomende transcripten | Klaar voor training. |
+| **Lange audio en Transcripten (bèta)** | Een verzameling (. zip) van lange, niet-gesegmenteerde audio bestanden (langer dan 20 seconden), gekoppeld aan een transcript (. txt) dat alle gesp roken woorden bevat. | U hebt audio bestanden en overeenkomende transcripten, maar deze worden niet gesegmenteerd in uitingen. | Segmentatie (met behulp van batch transcriptie).<br>Trans formatie van audio-indeling waar nodig. | 
+| **Alleen audio (bèta)** | Een verzameling (. zip) van audio bestanden zonder transcripten. | Er zijn alleen audio bestanden beschikbaar, zonder transcripten. | Segmentatie en Transcripten genereren (met behulp van batch transcriptie).<br>Trans formatie van audio-indeling waar nodig.| 
 
 Bestanden moeten worden gegroepeerd door te typen in een gegevensset en worden geüpload als een zip-bestand. Elke gegevensset kan slechts één gegevens type bevatten.
 
 > [!NOTE]
-> Het maximum aantal gegevens sets dat per abonnement mag worden geïmporteerd is 10. zip-bestanden voor gratis abonnement (F0) gebruikers en 500 voor Standard Subscription (S0)-gebruikers.
+> Het maximum aantal gegevens sets dat per abonnement mag worden geïmporteerd is 10 zip-bestanden voor gebruikers met een gratis abonnement (F0) en 500 voor Standard-abonnement (S0).
 
 ## <a name="individual-utterances--matching-transcript"></a>Afzonderlijke uitingen + overeenkomende transcript
 
 U kunt de opnamen van afzonderlijke uitingen en de overeenkomende transcripten op twee manieren voorbereiden. Schrijf een script en laat het door een stem-talen Schrift lezen of gebruik openbaar beschik bare audio en transcribeer het naar tekst. Als u dit wel doet, bewerkt u disfluencies van de audio bestanden, zoals "um" en andere opvul geluiden, stutters, mumbled woorden of mispronunciations.
 
-Als u een goed gesp roken letter type wilt maken, maakt u de opnamen in een stille ruimte met een microfoon van hoge kwaliteit. Het consistente volume, de spreek snelheid, de spreek hoogte en de expres mannerisms van spraak zijn essentieel.
+Voor het produceren van een goed stem model maakt u de opnamen in een stille ruimte met een microfoon van hoge kwaliteit. Het consistente volume, de spreek snelheid, de spreek hoogte en de expres mannerisms van spraak zijn essentieel.
 
 > [!TIP]
 > Als u een spraak voor productie gebruik wilt maken, raden we u aan om een professionele opname studio en Voice-talen te gebruiken. Zie voor meer informatie [spraak voorbeelden vastleggen voor een aangepaste stem](record-custom-voice-samples.md).
@@ -89,9 +97,6 @@ Hieronder ziet u een voor beeld van hoe de transcripten worden georganiseerd utt
 0000000003[tab] It was Janet Maslin.
 ```
 Het is belang rijk dat de transcripten 100% nauw keurige transcripties van de bijbehorende audio zijn. Fouten in de transcripten leiden tot kwaliteits verlies tijdens de training.
-
-> [!TIP]
-> Bij het bouwen van stemmen voor tekst-naar-spraak, selecteert u uitingen (of scripts schrijven) die rekening houden met zowel een fonetische dekking als efficiëntie. Hebt u problemen met het verkrijgen van de gewenste resultaten? [Neem contact op met het aangepaste spraak](mailto:speechsupport@microsoft.com) team om meer te weten te komen over hoe u ons kunt raadplegen.
 
 ## <a name="long-audio--transcript-beta"></a>Lange audio en Transcripten (bèta)
 

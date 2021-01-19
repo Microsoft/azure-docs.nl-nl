@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.custom: devx-track-dotnet
 ms.date: 11/13/2019
 ms.author: zhshang
-ms.openlocfilehash: 3fc6971c66d06ae9f25584f5be28b051075bfa49
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: afb63b76666f47217f9c19376d81aa4ed73991bf
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88921967"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98572558"
 ---
 # <a name="azure-signalr-service-internals"></a>Interne werking van Azure SignalR Service
 
@@ -42,7 +42,7 @@ Zodra de toepassingsserver is gestart, gebeurt het volgende:
 - Voor ASP.NET Core SignalR opent Azure SignalR Service SDK per hub vijf WebSocket-verbindingen met SignalR Service. 
 - Voor ASP.NET SignalR opent Azure SignalR Service SDK per hub vijf WebSocket-verbindingen met SignalR Service en één exemplaar per WebSocket-toepassingsverbinding.
 
-Vijf WebSocket-verbindingen is de standaardwaarde. Deze kan worden gewijzigd in [Configuratie](https://github.com/Azure/azure-signalr/blob/dev/docs/use-signalr-service.md#connectioncount).
+Vijf WebSocket-verbindingen is de standaardwaarde. Deze kan worden gewijzigd in [Configuratie](https://github.com/Azure/azure-signalr/blob/dev/docs/run-asp-net-core.md#connectioncount).
 
 Berichten naar en van clients worden gemultiplext in deze verbindingen.
 

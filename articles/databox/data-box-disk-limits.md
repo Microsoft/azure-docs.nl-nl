@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: article
 ms.date: 11/05/2019
 ms.author: alkohli
-ms.openlocfilehash: fb0e56c5eeebb4f3a869feacb996d690ea7dde86
-ms.sourcegitcommit: 7dacbf3b9ae0652931762bd5c8192a1a3989e701
+ms.openlocfilehash: e003d0121721838bd5ae038a3a8b4d1b8cd9d1eb
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92124166"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573187"
 ---
 # <a name="azure-data-box-disk-limits"></a>Azure Data Box Disk limieten
 
@@ -76,7 +76,7 @@ Dit zijn de groottes van de Azure-objecten die kunnen worden geschreven. Zorg er
 | Blok-BLOB        | ~ 4,75 TiB                                                 |
 | Pagina-BLOB         | 8 TiB <br> (Elk bestand dat is geüpload in de pagina-BLOB-indeling moet 512 bytes zijn uitgelijnd, anders mislukt het uploaden. <br> Zowel de VHD als de VHDX zijn 512 bytes uitgelijnd.) |
 |Azure Files        | 1 TiB <br> Met maximaal grootte van share is 5 TiB     |
-| Managed Disks     |4 TiB <br> Zie voor meer informatie over grootte en limieten: <li>[Schaalbaarheids doelen voor beheerde schijven](../virtual-machines/windows/disk-scalability-targets.md#managed-virtual-machine-disks)</li>|
+| Managed Disks     |4 TiB <br> Zie voor meer informatie over grootte en limieten: <li>[Schaalbaarheids doelen voor beheerde schijven](../virtual-machines/disks-scalability-targets.md#managed-virtual-machine-disks)</li>|
 
 
 ## <a name="azure-block-blob-page-blob-and-file-naming-conventions"></a>Azure Block blob-, page Blob-en file naamgevings conventies

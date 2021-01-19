@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.author: erhopf
-ms.openlocfilehash: dae7b8e0485c1a2456b85e0910f60b2164d4e41c
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 966b11e2c9a0f7ffc5e6ec9238080b9076d37af6
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95026315"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98572422"
 ---
 # <a name="record-voice-samples-to-create-a-custom-voice"></a>Stemvoorbeelden vastleggen om een aangepaste stem te maken
 
@@ -24,6 +24,14 @@ Het maken van een volledig nieuwe, aangepaste stem op de productie is geen infor
 Voordat u deze opnamen kunt maken, hebt u echter een script nodig: de woorden die door uw stem talen worden afgesp roken om de audio voorbeelden te maken. Voor de beste resultaten moet uw script een goede fonetische dekking en voldoende variëteit hebben om het aangepaste spraak model te trainen.
 
 Veel kleine, maar belang rijke informatie gaat over het maken van een professionele spraak opname. Deze hand leiding is een route kaart voor een proces waarmee u goede, consistente resultaten krijgt.
+
+> [!NOTE]
+> Als u een Neural-stem wilt trainen, moet u een profiel voor spraak-talen opgeven met het bestand met de bestands toestemming van de stem talen bevestiging dat zijn/haar spraak gegevens worden gebruikt voor het trainen van een aangepast spraak model. Zorg ervoor dat u de onderstaande zin opneemt wanneer u het opname script voorbereidt. 
+
+> "I [Geef uw voor-en achternaam op] Houd er rekening mee dat de opnamen van mijn stem worden gebruikt door [de naam van het bedrijf te vermelden] om een synthetische versie van mijn stem te maken en te gebruiken."
+Deze zin wordt gebruikt om te controleren of de trainings gegevens worden uitgevoerd door dezelfde persoon die de toestemming doet. Lees hier meer over de [Voice-talen verificatie](https://aka.ms/CNV-data-privacy) .
+
+> Aangepaste Neural Voice is beschikbaar met beperkte toegang. Zorg ervoor dat u bekend bent met de [vereiste AI-vereisten](https://aka.ms/gating-overview) en [Pas de toegang hier toe](https://aka.ms/customneural). 
 
 > [!TIP]
 > Voor de hoogst mogelijke kwaliteits resultaten kunt u micro soft helpen bij het ontwikkelen van uw eigen stem. Micro soft heeft uitgebreide ervaring met het produceren van stemmen van hoge kwaliteit voor hun eigen producten, waaronder Cortana en kantoor.
@@ -56,7 +64,7 @@ Uw stem talen zijn de andere helft van de vergelijking. Ze moeten kunnen praten 
 
 Het vastleggen van aangepaste spraak voorbeelden kan meer dan andere soorten gesp roken werk zijn. De meeste stem talen kunnen twee of drie uur per dag registreren. Beperk sessies tot drie of vier weken, waarbij een dag in voorkomend geval is.
 
-Opnames die zijn gemaakt voor een spraak model moeten mentale neutraal zijn. Dat wil zeggen dat een verdrietige utterance niet op een verdrietige manier mag worden gelezen. Sfeer kan later worden toegevoegd aan de gesynthesizerde spraak via prosody-besturings elementen. Werk samen met uw Voice-talen voor het ontwikkelen van een ' persoona ' die de algehele geluids-en emotioneel Toon van de aangepaste stem definieert. In het proces kunt u zien wat ' neutraal ' klinkt voor die persoona.
+Werk samen met uw Voice-talen voor het ontwikkelen van een ' persoona ' die de algehele geluids-en emotioneel Toon van de aangepaste stem definieert. In het proces kunt u zien wat ' neutraal ' klinkt voor die persoona. Met de aangepaste Neural Voice-mogelijkheid kunt u een model trainen dat spreekt met emoties. Definieer de "spreek stijlen" en vraag uw stem talen aan om het script te lezen op een manier die de gewenste stijlen weer klank vindt.  
 
 Een persoona kan bijvoorbeeld een natuurlijke bijstel persoonlijkheid hebben. Het is dus mogelijk dat de stem van Optimism ook als er sprake is van een onpartijdige aanspreken. Dergelijke persoonlijkheids kenmerken moeten echter subtiel en consistent zijn. Luister naar leesingen door bestaande stemmen om een idee te krijgen van wat u wilt.
 
@@ -104,7 +112,7 @@ Onder copyright recht kan een actor het lezen van auteurs rechtelijk beschermde 
 
 Gelukkig is het mogelijk om deze problemen volledig te voor komen. Er zijn veel tekst bronnen die u kunt gebruiken zonder toestemming of licentie.
 
-|Tekst bron|Description|
+|Tekst bron|Beschrijving|
 |-|-|
 |[CMU Arctic verzameling](http://festvox.org/cmu_arctic/)|Ongeveer 1100 zinnen die u hebt geselecteerd in auteurs rechtelijk beschermde werken speciaal voor gebruik in spraak-synthese projecten. Een uitstekend uitgangs punt.|
 |Werkt niet meer<br>onder copyright|Werkt normaal gesp roken vóór 1923. Voor het Engels biedt [Project Gutenberg](https://www.gutenberg.org/) tien duizenden van deze werken. Mogelijk wilt u zich richten op nieuwere werken, omdat de taal dichter bij het moderne Engels ligt.|
@@ -211,7 +219,7 @@ Luister zorgvuldig naar elk bestand. In deze fase kunt u kleine ongewenste gelui
 
 Converteer elk bestand naar 16 bits en een sample frequentie van 16 kHz voordat u opslaat. Als u de Studio chatter hebt vastgelegd, verwijdert u het tweede kanaal. Sla elk bestand op in de WAV-indeling en noem de bestanden met het utterance nummer uit het script.
 
-Maak tot slot de *transcript* die elk WAV-bestand koppelt aan een tekst versie van de bijbehorende utterance. Het [maken van aangepaste spraak lettertypen](./how-to-custom-voice-create-voice.md) bevat details over de vereiste indeling. U kunt de tekst rechtstreeks vanuit uw script kopiëren. Maak vervolgens een zip-bestand van de WAV-bestanden en de tekst transcript.
+Maak tot slot de *transcript* die elk WAV-bestand koppelt aan een tekst versie van de bijbehorende utterance. Het [maken van aangepaste stemmen](./how-to-custom-voice-create-voice.md) bevat details over de vereiste indeling. U kunt de tekst rechtstreeks vanuit uw script kopiëren. Maak vervolgens een zip-bestand van de WAV-bestanden en de tekst transcript.
 
 Archiveer de oorspronkelijke opnamen op een veilige plaats voor het geval u ze later nodig hebt. Bewaar ook het script en de notities.
 

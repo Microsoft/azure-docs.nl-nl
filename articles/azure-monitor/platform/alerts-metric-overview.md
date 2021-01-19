@@ -1,15 +1,15 @@
 ---
 title: 'Begrijpen hoe waarschuwingen voor metrische gegevens werken in Azure Monitor:'
 description: Bekijk een overzicht van wat u met metrische waarschuwingen kunt doen en hoe ze werken in Azure Monitor.
-ms.date: 01/13/2021
+ms.date: 01/19/2021
 ms.topic: conceptual
 ms.subservice: alerts
-ms.openlocfilehash: ab80496784b5d86d270830546cec73aadbcc50a6
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 031768b8a72fbe9498abd3c17e0f79fd157d4f52
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251230"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98572728"
 ---
 # <a name="understand-how-metric-alerts-work-in-azure-monitor"></a>Begrijpen hoe metrische waarschuwingen werken in Azure Monitor
 
@@ -26,7 +26,7 @@ Stel dat u als volgt een eenvoudige waarschuwings regel voor een statische dremp
 - Doel resource (de Azure-resource die u wilt bewaken): myVM
 - Metriek: percentage CPU
 - Voorwaarde type: statisch
-- Tijd aggregatie (statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde tijd aggregaties](metrics-charts.md#aggregation) zijn min, Max, Gem, totaal, aantal): gemiddeld
+- Aggregatie type (een statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde aggregatie typen](./metrics-aggregation-explained.md#aggregation-types) zijn minimum, maximum, gemiddelde, totaal, aantal): gemiddeld
 - Periode (het venster terugkijken waarover metrische waarden worden gecontroleerd): in de afgelopen 5 minuten
 - Frequentie (de frequentie waarmee met de metrische waarschuwing wordt gecontroleerd of aan de voor waarden wordt voldaan): 1 min.
 - Operator: groter dan
@@ -43,7 +43,7 @@ Stel dat u een regel voor metrische waarschuwing voor eenvoudige dynamische drem
 - Doel resource (de Azure-resource die u wilt bewaken): myVM
 - Metriek: percentage CPU
 - Voorwaarde type: dynamisch
-- Tijd aggregatie (statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde tijd aggregaties](metrics-charts.md#aggregation) zijn min, Max, Gem, totaal, aantal): gemiddeld
+- Aggregatie type (een statistiek dat wordt uitgevoerd boven onbewerkte meet waarden. [Ondersteunde aggregatie typen](./metrics-aggregation-explained.md#aggregation-types) zijn minimum, maximum, gemiddelde, totaal, aantal): gemiddeld
 - Periode (het venster terugkijken waarover metrische waarden worden gecontroleerd): in de afgelopen 5 minuten
 - Frequentie (de frequentie waarmee met de metrische waarschuwing wordt gecontroleerd of aan de voor waarden wordt voldaan): 1 min.
 - Operator: groter dan
@@ -80,7 +80,7 @@ Stel dat u een App Service abonnement hebt voor uw website. U het CPU-gebruik wi
 - Voorwaarde type: statisch
 - Dimensies
   - Instantie = InstanceName1, InstanceName2
-- Tijd aggregatie: gemiddeld
+- Aggregatie type: gemiddeld
 - Period: in de afgelopen 5 minuten
 - Frequentie: 1 min.
 - Operator: GreaterThan
@@ -95,7 +95,7 @@ Stel dat u een web-app hebt die een enorme vraag ziet, en u moet meer exemplaren
 - Voorwaarde type: statisch
 - Dimensies
   - Instantie = *
-- Tijd aggregatie: gemiddeld
+- Aggregatie type: gemiddeld
 - Period: in de afgelopen 5 minuten
 - Frequentie: 1 min.
 - Operator: GreaterThan
@@ -112,7 +112,7 @@ Stel dat u een web-app hebt met veel instanties en u niet weet wat de meest gesc
 - Voorwaarde type: dynamisch
 - Dimensies
   - Instantie = *
-- Tijd aggregatie: gemiddeld
+- Aggregatie type: gemiddeld
 - Period: in de afgelopen 5 minuten
 - Frequentie: 1 min.
 - Operator: GreaterThan

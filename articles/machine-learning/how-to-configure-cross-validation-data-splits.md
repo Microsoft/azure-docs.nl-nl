@@ -11,18 +11,18 @@ ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 06/16/2020
-ms.openlocfilehash: 2e26bfa484d573c0158e518b31087fb10bdcdfb9
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 8e749e5f6ea6bcf76a1b4f143bce03ceb41cbb07
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185679"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573289"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Gegevenssplitsingen en kruisvalidatie configureren in geautomatiseerde machine learning
 
 In dit artikel vindt u informatie over de verschillende opties voor het configureren van de splitsingen van trainings-en validatie gegevens en kruis validatie voor uw geautomatiseerde machine learning, automatische ML, experimenten.
 
-Wanneer u in Azure Machine Learning gebruikmaakt van automatische ML om meerdere ML-modellen te bouwen, moet elke onderliggende uitvoering het gerelateerde model valideren door de gegevens over de kwaliteit van het model te berekenen, zoals nauw keurigheid of AUC gewogen. Deze metrische gegevens worden berekend door de voor spellingen te vergelijken die zijn gemaakt met elk model met echte labels uit eerdere waarnemingen in de validatie gegevens. 
+Wanneer u in Azure Machine Learning gebruikmaakt van automatische ML om meerdere ML-modellen te bouwen, moet elke onderliggende uitvoering het gerelateerde model valideren door de gegevens over de kwaliteit van het model te berekenen, zoals nauw keurigheid of AUC gewogen. Deze metrische gegevens worden berekend door de voor spellingen te vergelijken die zijn gemaakt met elk model met echte labels uit eerdere waarnemingen in de validatie gegevens. Meer [informatie over hoe metrische gegevens worden berekend op basis van het validatie type](#metric-calculation-for-cross-validation-in-machine-learning). 
 
 Automatische ML experimenten voeren automatisch model validatie uit. In de volgende secties wordt beschreven hoe u validatie-instellingen verder kunt aanpassen met behulp van de [Azure machine learning PYTHON SDK](/python/api/overview/azure/ml/?preserve-view=true&view=azure-ml-py). 
 
@@ -43,9 +43,9 @@ Voor dit artikel hebt u het volgende nodig:
 
     * [Over Train-, validatie-en test sets in Machine Learning](https://towardsdatascience.com/train-validation-and-test-sets-72cb40cba9e7)
 
-    * [Kruis validatie begrijpen in machine learning](https://towardsdatascience.com/understanding-cross-validation-419dbd47e9bd)
+    * [Kruis validatie begrijpen in machine learning](https://towardsdatascience.com/understanding-cross-validation-419dbd47e9bd) 
 
-## <a name="default-data-splits-and-cross-validation"></a>Standaard gegevens splitsingen en kruis validatie
+## <a name="default-data-splits-and-cross-validation-in-machine-learning"></a>Standaard gegevens splitsingen en kruis validatie in machine learning
 
 Gebruik het object [AutoMLConfig](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig?preserve-view=true&view=azure-ml-py) om uw instellingen voor experimenteren en trainingen te definiëren. In het volgende code fragment ziet u dat alleen de vereiste para meters zijn gedefinieerd. Dit zijn de para meters voor `n_cross_validation` of `validation_ data` worden **niet** opgenomen.
 
@@ -155,6 +155,13 @@ automl_config = AutoMLConfig(compute_target = aml_remote_compute,
 
 > [!NOTE]
 > Als u `cv_split_column_names` met en wilt gebruiken, moet u `training_data` `label_column_name` een upgrade uitvoeren van uw Azure machine learning python SDK-versie 1.6.0 of hoger. Raadpleeg voor eerdere SDK-versies `cv_splits_indices` , maar houd er rekening mee dat deze alleen wordt gebruikt in combi natie met `X` en alleen de invoer van de `y` gegevensset. 
+
+
+## <a name="metric-calculation-for-cross-validation-in-machine-learning"></a>Berekening van metrische gegevens voor kruis validatie in machine learning
+
+Wanneer een kruis validatie met k-vouwen of Monte Carlo wordt gebruikt, worden metrische gegevens berekend op elke validatie vouw en vervolgens geaggregeerd. De aggregatie bewerking is een gemiddelde voor scalaire metrische gegevens en een som voor grafieken. Metrische gegevens die tijdens een kruis validatie worden berekend, zijn gebaseerd op alle vouwen en dus alle voor beelden uit de Trainingsset. Meer [informatie over metrische gegevens vindt u in automatische machine learning](how-to-understand-automated-ml.md).
+
+Wanneer een aangepaste validatieset of een automatisch geselecteerde validatieset wordt gebruikt, worden de metrische gegevens van de model evaluatie alleen berekend op basis van die validatieset, niet van de trainings data.
 
 ## <a name="next-steps"></a>Volgende stappen
 

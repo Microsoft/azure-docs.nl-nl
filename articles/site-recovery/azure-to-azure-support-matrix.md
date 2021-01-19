@@ -4,12 +4,12 @@ description: Hiermee wordt een overzicht gegeven van de ondersteuning voor herst
 ms.topic: article
 ms.date: 11/29/2020
 ms.author: raynew
-ms.openlocfilehash: fdd5b8f9cea549f64c4857d1c45b95b0d9b9ec53
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: 2dbd7cd756e386b44c6933697ff50180021ac035
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/19/2021
-ms.locfileid: "98569960"
+ms.locfileid: "98572303"
 ---
 # <a name="support-matrix-for-azure-vm-disaster-recovery-between-azure-regions"></a>Ondersteuningsmatrix voor herstel na noodgeval van Azure-VM's tussen Azure-regio's
 
@@ -213,7 +213,7 @@ Offline wijzigingen in beveiligde schijven | Als u schijven wilt ontkoppelen en 
 
 Deze tabel bevat een overzicht van de ondersteuning voor de Azure VM-besturingssysteem schijf, de gegevens schijf en de tijdelijke schijf.
 
-- Het is belang rijk om te kijken naar de limieten en doelen van de VM-schijf voor [Linux](../virtual-machines/linux/disk-scalability-targets.md) -en [Windows](../virtual-machines/windows/disk-scalability-targets.md) -vm's om prestatie problemen te voor komen.
+- Het is belang rijk om te kijken naar de schijfruimte limieten en doelen van de virtuele machine voor [beheerde schijven](../virtual-machines/disks-scalability-targets.md) om prestatie problemen te voor komen.
 - Als u implementeert met de standaard instellingen, maakt Site Recovery automatisch schijven en opslag accounts op basis van de bron instellingen.
 - Als u aanpassingen aanpast, moet u de richt lijnen volgen.
 
@@ -261,7 +261,7 @@ Schijven met ingeschakelde Accelerators schrijven | Niet ondersteund
 Tags  | Door de gebruiker gegenereerde tags worden elke 24 uur gerepliceerd.
 
 >[!IMPORTANT]
-> Om prestatie problemen te voor komen, moet u ervoor zorgen dat u de schaal baarheid en prestatie doelen van de VM-schijf voor [Linux](../virtual-machines/linux/disk-scalability-targets.md) -of [Windows](../virtual-machines/windows/disk-scalability-targets.md) -vm's volgt. Als u de standaard instellingen gebruikt, Site Recovery de vereiste schijven en opslag accounts maken op basis van de configuratie van de bron. Als u uw eigen instellingen aanpast en selecteert, volgt u de schaal baarheid en prestaties van de schijf voor uw bron-Vm's.
+> Om prestatie problemen te voor komen, moet u de schaal baarheid en prestaties van de VM-schijf voor [beheerde schijven](../virtual-machines/disks-scalability-targets.md)volgen. Als u de standaard instellingen gebruikt, Site Recovery de vereiste schijven en opslag accounts maken op basis van de configuratie van de bron. Als u uw eigen instellingen aanpast en selecteert, volgt u de schaal baarheid en prestaties van de schijf voor uw bron-Vm's.
 
 ## <a name="limits-and-data-change-rates"></a>Limieten en snelheid van gegevens wijzigingen
 

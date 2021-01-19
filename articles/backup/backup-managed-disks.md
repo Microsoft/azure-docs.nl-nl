@@ -3,12 +3,12 @@ title: Back-up maken van Azure Managed Disks
 description: Meer informatie over het maken van een back-up van Azure Managed Disks vanuit de Azure Portal.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: c4e2d4e649d59389ac3f8bd115e43acabc792eb2
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 2169e2f44e3ffb2c05c674d633efabed2c531878
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98557825"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573119"
 ---
 # <a name="back-up-azure-managed-disks-in-preview"></a>Back-up van Azure Managed Disks (in preview-versie)
 
@@ -129,6 +129,8 @@ De volgende vereisten zijn vereist voor het configureren van een back-up van beh
    >Typ de naam van de back-upkluis om de beheerde identiteit van de kluis te selecteren.
 
    ![Rol Inzender voor schijf momentopname toevoegen](./media/backup-managed-disks/disk-snapshot-contributor-role.png)
+
+1. Als de schijf waarvan een back-up moet worden gemaakt, is versleuteld met door de [klant beheerde sleutels (CMK)](https://docs.microsoft.com/azure/virtual-machines/disks-enable-customer-managed-keys-portal) of [Als u dubbele versleuteling gebruikt met door het platform beheerde sleutels en door de klant beheerde sleutels](https://docs.microsoft.com/azure/virtual-machines/disks-enable-double-encryption-at-rest-portal), wijst u de machtiging **lezer** toe aan de beheerde identiteit van de back-upkluis op de **schijf Encryption set** resource.
 
 1. Controleer of de beheerde identiteit van de back-upkluis de juiste set roltoewijzingen heeft op de bron schijf en de resource groep die fungeert als moment opname van de gegevens opslag.
 

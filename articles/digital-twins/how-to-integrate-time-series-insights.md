@@ -4,21 +4,21 @@ titleSuffix: Azure Digital Twins
 description: Zie gebeurtenis routes van Azure Digital Apparaatdubbels instellen op Azure Time Series Insights.
 author: alexkarcher-msft
 ms.author: alkarche
-ms.date: 7/14/2020
+ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: f776482c684004c8d661f69d8158ba9597c923b2
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 24b4f56e5798acc4d9bd0962be7059a359958645
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127030"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573238"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Azure Digital Apparaatdubbels integreren met Azure Time Series Insights
 
 In dit artikel leert u hoe u Azure Digital Apparaatdubbels integreert met behulp van [Azure time series Insights (TSI)](../time-series-insights/overview-what-is-tsi.md).
 
-Met de oplossing die in dit artikel wordt beschreven, kunt u historische gegevens over uw IoT-oplossing verzamelen en analyseren. Azure Digital Apparaatdubbels is een uitstekende oplossing voor het inbrengen van gegevens in Time Series Insights, omdat u hiermee meerdere gegevensstreams kunt correleren en uw gegevens gestandaardiseerd kunt maken voordat u deze naar Time Series Insights verzendt. 
+Met de oplossing die in dit artikel wordt beschreven, kunt u historische gegevens over uw IoT-oplossing verzamelen en analyseren. Azure Digital Twins is zeer geschikt voor het verzenden van gegevens naar Time Series Insights, omdat u hiermee meerdere gegevensstreams kunt samenbrengen en uw gegevens uniform kunt maken voordat u deze naar Time Series Insights verzendt. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -38,31 +38,28 @@ U gaat Time Series Insights toevoegen aan Azure Digital Apparaatdubbels via het 
     :::column-end:::
 :::row-end:::
 
-## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Een route maken en filteren op dubbele update meldingen
+## <a name="create-a-route-and-filter-to-twin-update-notifications"></a>Een route en filter maken voor updatemeldingen van de dubbel
 
 Azure Digital Apparaatdubbels-instanties kunnen [dubbele update gebeurtenissen](how-to-interpret-event-data.md) verzenden wanneer de status van een twee is bijgewerkt. In deze sectie gaat u een Azure Digital Apparaatdubbels- [**gebeurtenis route**](concepts-route-events.md) maken die deze update gebeurtenissen naar Azure [Event hubs](../event-hubs/event-hubs-about.md) stuurt voor verdere verwerking.
 
 De zelf studie over Azure Digital Apparaatdubbels [*: verbinding maken met een end-to-end-oplossing*](./tutorial-end-to-end.md) door een scenario waarin een thermo meter wordt gebruikt om een temperatuur kenmerk bij te werken op een digitale dubbele locatie die een ruimte vertegenwoordigt. Dit patroon is afhankelijk van de dubbele updates, in plaats van het door sturen van telemetrie van een IoT-apparaat, die u de flexibiliteit geeft om de onderliggende gegevens bron te wijzigen zonder dat u uw Time Series Insights logica hoeft bij te werken.
 
-1. Maak eerst een Event Hub-naam ruimte, die gebeurtenissen ontvangt van uw Azure Digital Apparaatdubbels-exemplaar. U kunt de onderstaande Azure CLI-instructies gebruiken of de Azure Portal: Quick Start [*: een event hub maken met behulp van Azure Portal*](../event-hubs/event-hubs-create.md).
+1. Maak eerst een Event Hub naam ruimte waarmee gebeurtenissen worden ontvangen van uw Azure Digital Apparaatdubbels-exemplaar. U kunt de onderstaande Azure CLI-instructies gebruiken of de Azure Portal: Quick Start [*: een event hub maken met behulp van Azure Portal*](../event-hubs/event-hubs-create.md). Ga naar [*Azure-producten beschikbaar per regio*](https://azure.microsoft.com/global-infrastructure/services/?products=event-hubs)om te zien welke regio's Event hubs ondersteunen.
 
     ```azurecli-interactive
-    # Create an Event Hubs namespace. Specify a name for the Event Hubs namespace.
-    az eventhubs namespace create --name <name for your Event Hubs namespace> --resource-group <resource group name> -l <region, for example: East US>
+    az eventhubs namespace create --name <name for your Event Hubs namespace> --resource-group <resource group name> -l <region>
     ```
 
-2. Maak een Event Hub binnen de naam ruimte.
+2. Maak een Event Hub binnen de naam ruimte om twee wijzigings gebeurtenissen te ontvangen. Geef een naam op voor de Event Hub.
 
     ```azurecli-interactive
-    # Create an event hub to receive twin change events. Specify a name for the event hub. 
     az eventhubs eventhub create --name <name for your Twins event hub> --resource-group <resource group name> --namespace-name <Event Hubs namespace from above>
     ```
 
-3. Maak een [autorisatie regel](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) met machtigingen voor verzenden en ontvangen.
+3. Maak een [autorisatie regel](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) met machtigingen voor verzenden en ontvangen. Geef een naam op voor de regel.
 
     ```azurecli-interactive
-    # Create an authorization rule. Specify a name for the rule.
-    az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from above> --eventhub-name <Twins event hub name from above> --name <name for your Twins auth rule>
+        az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from above> --eventhub-name <Twins event hub name from above> --name <name for your Twins auth rule>
     ```
 
 4. Maak een Azure Digital Apparaatdubbels- [eind punt](concepts-route-events.md#create-an-endpoint) dat uw event hub koppelt aan uw Azure Digital apparaatdubbels-exemplaar.
@@ -71,7 +68,7 @@ De zelf studie over Azure Digital Apparaatdubbels [*: verbinding maken met een e
     az dt endpoint create eventhub --endpoint-name <name for your Event Hubs endpoint> --eventhub-resource-group <resource group name> --eventhub-namespace <Event Hubs namespace from above> --eventhub <Twins event hub name from above> --eventhub-policy <Twins auth rule from above> -n <your Azure Digital Twins instance name>
     ```
 
-5. Maak een [route](concepts-route-events.md#create-an-event-route) in azure Digital apparaatdubbels om dubbele update gebeurtenissen naar uw eind punt te verzenden. Met het filter in deze route worden alleen dubbele update berichten door gegeven aan uw eind punt.
+5. Maak een [route](concepts-route-events.md#create-an-event-route) in Azure Digital Twins om updategebeurtenissen van de dubbel naar uw eindpunt te verzenden. Met het filter in deze route worden alleen dubbele update berichten door gegeven aan uw eind punt.
 
     >[!NOTE]
     >Er is momenteel een **bekend probleem** in Cloud Shell dat deze opdrachtgroepen beïnvloedt: `az dt route`, `az dt model`, `az dt twin`.
@@ -86,7 +83,7 @@ Voordat u doorgaat, noteert u uw *Event hubs naam ruimte* en *resource groep*, o
 
 ## <a name="create-a-function-in-azure"></a>Een maken functie in Azure
 
-Vervolgens gebruikt u Azure Functions om een door Event Hubs geactiveerde functie in een functie-app te maken. U kunt de functie-app die u in de end-to-end zelf studie hebt gemaakt, gebruiken ([*zelf studie: een end-to-end-oplossing verbinden*](./tutorial-end-to-end.md)) of uw eigen. 
+Vervolgens gebruikt u Azure Functions om een door **Event hubs geactiveerde functie** in een functie-app te maken. U kunt de functie-app die u in de end-to-end zelf studie hebt gemaakt, gebruiken ([*zelf studie: een end-to-end-oplossing verbinden*](./tutorial-end-to-end.md)) of uw eigen. 
 
 Met deze functie worden deze dubbele update gebeurtenissen van hun oorspronkelijke formulier geconverteerd als JSON-patch-documenten naar JSON-objecten, die alleen bijgewerkte en toegevoegde waarden van uw apparaatdubbels bevatten.
 
@@ -100,9 +97,9 @@ Hier verzendt de functie vervolgens de JSON-objecten die worden gemaakt naar een
 
 Later gaat u ook enkele omgevings variabelen instellen die met deze functie worden gebruikt om verbinding te maken met uw eigen event hubs.
 
-## <a name="send-telemetry-to-an-event-hub"></a>Telemetrie verzenden naar een Event Hub
+## <a name="send-telemetry-to-an-event-hub"></a>Telemetriegegevens naar een gebeurtenishub verzenden
 
-U gaat nu een tweede Event Hub maken en uw functie zo configureren dat de uitvoer naar die Event Hub wordt gestreamd. Deze Event Hub wordt vervolgens verbonden met Time Series Insights.
+U gaat nu een tweede Event Hub maken en uw functie zo configureren dat de uitvoer naar die Event Hub wordt gestreamd. Deze gebeurtenishub wordt vervolgens verbonden met Time Series Insights.
 
 ### <a name="create-an-event-hub"></a>Een Event Hub maken
 
@@ -110,22 +107,22 @@ Als u de tweede Event Hub wilt maken, kunt u de onderstaande Azure CLI-instructi
 
 1. Bereid uw *Event hubs* -naam ruimte en de naam van de *resource groep* voor vanaf eerder in dit artikel
 
-2. Een nieuwe Event Hub maken
+2. Maak een nieuwe Event Hub. Geef een naam op voor de Event Hub.
+
     ```azurecli-interactive
-    # Create an event hub. Specify a name for the event hub. 
     az eventhubs eventhub create --name <name for your TSI event hub> --resource-group <resource group name from earlier> --namespace-name <Event Hubs namespace from earlier>
     ```
-3. Een [autorisatie regel](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) maken met machtigingen voor verzenden en ontvangen
+3. Maak een [autorisatie regel](/cli/azure/eventhubs/eventhub/authorization-rule?view=azure-cli-latest&preserve-view=true#az-eventhubs-eventhub-authorization-rule-create) met machtigingen voor verzenden en ontvangen. Geef een naam op voor de regel.
+
     ```azurecli-interactive
-    # Create an authorization rule. Specify a name for the rule.
-    az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from earlier> --eventhub-name <TSI event hub name from above> --name <name for your TSI auth rule>
+        az eventhubs eventhub authorization-rule create --rights Listen Send --resource-group <resource group name> --namespace-name <Event Hubs namespace from earlier> --eventhub-name <TSI event hub name from above> --name <name for your TSI auth rule>
     ```
 
 ## <a name="configure-your-function"></a>Uw functie configureren
 
 Vervolgens moet u de omgevings variabelen in uw functie-app van eerder instellen, met de verbindings reeksen voor de Event hubs die u hebt gemaakt.
 
-### <a name="set-the-twins-event-hub-connection-string"></a>Stel de Apparaatdubbels-Event Hub in connection string
+### <a name="set-the-twins-event-hub-connection-string"></a>De verbindingstekenreeks voor de Azure Digital Twins-gebeurtenishub instellen
 
 1. Haal de Apparaatdubbels- [Event Hub Connection String](../event-hubs/event-hubs-get-connection-string.md)op met behulp van de autorisatie regels die u hierboven hebt gemaakt voor de apparaatdubbels hub.
 
@@ -133,13 +130,13 @@ Vervolgens moet u de omgevings variabelen in uw functie-app van eerder instellen
     az eventhubs eventhub authorization-rule keys list --resource-group <resource group name> --namespace-name <Event Hubs namespace> --eventhub-name <Twins event hub name from earlier> --name <Twins auth rule from earlier>
     ```
 
-2. Gebruik de connection string die u krijgt als gevolg van het maken van een app-instelling in uw functie-app die uw connection string bevat:
+2. Gebruik de verbindingstekenreeks die u als resultaat krijgt om een app-instelling in uw functie-app te maken die uw verbindingstekenreeks bevat:
 
     ```azurecli-interactive
     az functionapp config appsettings set --settings "EventHubAppSetting-Twins=<Twins event hub connection string>" -g <resource group> -n <your App Service (function app) name>
     ```
 
-### <a name="set-the-time-series-insights-event-hub-connection-string"></a>Stel de Time Series Insights Event Hub in connection string
+### <a name="set-the-time-series-insights-event-hub-connection-string"></a>De verbindingstekenreeks voor de Time Series Insights-gebeurtenishub instellen
 
 1. De TSI [Event Hub Connection String](../event-hubs/event-hubs-get-connection-string.md)ophalen met behulp van de autorisatie regels die u hierboven hebt gemaakt voor de time series Insights hub:
 
@@ -147,13 +144,13 @@ Vervolgens moet u de omgevings variabelen in uw functie-app van eerder instellen
     az eventhubs eventhub authorization-rule keys list --resource-group <resource group name> --namespace-name <Event Hubs namespace> --eventhub-name <TSI event hub name> --name <TSI auth rule>
     ```
 
-2. Maak in uw functie-app een app-instelling die uw connection string bevat:
+2. Maak in uw functie-app een app-instelling die uw verbindingstekenreeks bevat:
 
     ```azurecli-interactive
     az functionapp config appsettings set --settings "EventHubAppSetting-TSI=<TSI event hub connection string>" -g <resource group> -n <your App Service (function app) name>
     ```
 
-## <a name="create-and-connect-a-time-series-insights-instance"></a>Een Time Series Insights-exemplaar maken en verbinden
+## <a name="create-and-connect-a-time-series-insights-instance"></a>Een Time Series Insights-instantie maken en verbinden
 
 Vervolgens stelt u een Time Series Insights-exemplaar in om de gegevens van uw tweede Event Hub te ontvangen. Volg de onderstaande stappen en Zie [*zelf studie: een Azure time series Insights GEN2 payg-omgeving instellen*](../time-series-insights/tutorials-set-up-tsi-environment.md)voor meer informatie over dit proces.
 
@@ -173,7 +170,7 @@ Als u wilt beginnen met het verzenden van gegevens naar Time Series Insights, mo
 
 Als u de end-to-end zelf studie gebruikt ([*zelf studie: een end-to-end oplossing verbinden*](tutorial-end-to-end.md)) om u te helpen bij het instellen van de omgeving, kunt u gesimuleerde IOT-gegevens gaan verzenden door het *DeviceSimulator* -project uit te voeren vanuit het voor beeld. De instructies zijn te vinden in de sectie [*simulatie configureren en uitvoeren*](tutorial-end-to-end.md#configure-and-run-the-simulation) van de zelf studie.
 
-## <a name="visualize-your-data-in-time-series-insights"></a>Uw gegevens visualiseren in Time Series Insights
+## <a name="visualize-your-data-in-time-series-insights"></a>Uw gegevens in Time Series Insights weergeven
 
 Gegevens moeten nu worden gestroomd naar uw Time Series Insights-exemplaar, die klaar zijn om te worden geanalyseerd. Volg de onderstaande stappen om de gegevens in te verkennen.
 

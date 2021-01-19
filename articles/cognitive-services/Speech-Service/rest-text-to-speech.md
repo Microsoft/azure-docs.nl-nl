@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: 9bee5fa6b76aad9305947ebe460f37c399340038
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: d858474eca34243a007d0d0ac1e023a4a0fab8ec
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033442"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98572337"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API voor tekst-naar-spraak
 
@@ -50,19 +50,21 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 | Australië - oost | `https://australiaeast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Brazilië - zuid | `https://brazilsouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Canada - midden | `https://canadacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| Central US | `https://centralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| VS - centraal | `https://centralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Azië - oost | `https://eastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - oost | `https://eastus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - oost 2 | `https://eastus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Frankrijk - centraal | `https://francecentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | India - centraal | `https://centralindia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| Japan East | `https://japaneast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| Japan - oost | `https://japaneast.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Korea - centraal | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - noord-centraal | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Europa - noord | `https://northeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| South Central US | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| Zuid-Afrika - noord | `https://southafricanorth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
+| VS - west-centraal | `https://westcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - west | `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - west 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |

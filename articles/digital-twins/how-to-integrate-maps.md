@@ -4,16 +4,16 @@ titleSuffix: Azure Digital Twins
 description: Zie Azure Functions gebruiken om een functie te maken die de dubbele grafiek en Azure Digital Apparaatdubbels-meldingen kan gebruiken voor het bijwerken van een Azure Maps binnenste kaart.
 author: alexkarcher-msft
 ms.author: alkarche
-ms.date: 6/3/2020
+ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
 ms.reviewer: baanders
-ms.openlocfilehash: 24487d3028b90d28f302a6f259096ba68c964541
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 6a654f74ff6a32ad37646021d504359c84942c12
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222119"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573034"
 ---
 # <a name="use-azure-digital-twins-to-update-an-azure-maps-indoor-map"></a>Azure Digital Apparaatdubbels gebruiken voor het bijwerken van een Azure Maps binnenste kaart
 
@@ -72,7 +72,7 @@ Dit patroon leest van de ruimte tussen direct, in plaats van het IoT-apparaat, d
 
 ## <a name="create-a-function-to-update-maps"></a>Een functie maken om kaarten bij te werken
 
-U gaat vanuit de end-to-end-zelf studie een door *Event grid geactiveerde functie* maken in uw functie-app ([*zelf studie: een end-to-end oplossing verbinden*](./tutorial-end-to-end.md)). Met deze functie worden deze meldingen uitgepakt en worden updates naar een Azure Maps-functie statusset verzonden om de Tempe ratuur van één kamer bij te werken. 
+U gaat vanuit de end-to-end-zelf studie een door **Event grid geactiveerde functie** maken in uw functie-app ([*zelf studie: een end-to-end oplossing verbinden*](./tutorial-end-to-end.md)). Met deze functie worden deze meldingen uitgepakt en worden updates naar een Azure Maps-functie statusset verzonden om de Tempe ratuur van één kamer bij te werken.
 
 Raadpleeg het volgende document voor referentie-informatie: [*Azure Event grid trigger voor Azure functions*](../azure-functions/functions-bindings-event-grid-trigger.md).
 

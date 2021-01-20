@@ -3,12 +3,12 @@ title: Back-upfouten in azure Disk Backup oplossen
 description: Meer informatie over het oplossen van back-upfouten in azure Disk Backup
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 0a2ef1ea20ee8d6b7a3f32e244d3e00f3add80a2
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 3e7c81d70fc898528532a841a484bf6fff8b83a7
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98558201"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611233"
 ---
 # <a name="troubleshooting-backup-failures-in-azure-disk-backup-in-preview"></a>Back-upfouten in azure Disk Backup oplossen (in preview-versie)
 
@@ -153,12 +153,30 @@ Fout bericht: de meta gegevens van de schijf momentopname voor dit herstel punt 
 
 Aanbevolen actie: overweeg het gebruik van een ander herstel punt dat u wilt herstellen. Zie de [documentatie over herstel](restore-managed-disks.md)voor meer informatie.
 
+### <a name="error-code-backupagentpluginhostvalidateprotectionerror"></a>Fout code: BackupAgentPluginHostValidateProtectionError
+
+Fout bericht: schijf back-up is nog niet beschikbaar in de regio van de back-upkluis, waaronder het configureren van de beveiliging wordt uitgevoerd.
+
+Aanbevolen actie: de back-upkluis moet zich in een voor beeld van een ondersteunde regio bevinden. Zie de [ondersteunings matrix](disk-backup-support-matrix.md)voor de beschik baarheid van regio's.
+
+### <a name="error-code-usererrordppdatasourcealreadyhasbackupinstance"></a>Fout code: UserErrorDppDatasourceAlreadyHasBackupInstance
+
+Fout bericht: de schijf die u wilt configureren van de back-up wordt al beveiligd. De schijf is al gekoppeld aan een back-upexemplaar in een back-upkluis.
+
+Aanbevolen actie: deze schijf is al gekoppeld aan een back-upexemplaar in een back-upkluis. Als u deze schijf opnieuw wilt beveiligen, verwijdert u het back-upexemplaar van de back-upkluis waar het momenteel wordt beveiligd en moet u de schijf opnieuw beveiligen in een andere kluis.
+
+### <a name="error-code-usererrordppdatasourcealreadyprotected"></a>Fout code: UserErrorDppDatasourceAlreadyProtected
+
+Fout bericht: de schijf die u wilt configureren van de back-up wordt al beveiligd. De schijf is al gekoppeld aan een back-upexemplaar in een back-upkluis.
+
+Aanbevolen actie: deze schijf is al gekoppeld aan een back-upexemplaar in een back-upkluis. Als u deze schijf opnieuw wilt beveiligen, verwijdert u het back-upexemplaar van de back-upkluis waar het momenteel wordt beveiligd en moet u de schijf opnieuw beveiligen in een andere kluis.
+
 ### <a name="error-code-usererrormaxconcurrentoperationlimitreached"></a>Fout code: UserErrorMaxConcurrentOperationLimitReached
 
-Fout bericht: kan de bewerking niet starten omdat het maximum aantal toegestane gelijktijdige bewerkingen voor dit bewerkings type is bereikt.
+Fout bericht: kan de bewerking niet starten omdat het maximale aantal gelijktijdige back-ups is bereikt.
 
-Aanbevolen actie: wacht tot de vorige bewerkingen zijn voltooid.
+Aanbevolen actie: wacht tot de vorige uitvoering van de back-up is voltooid.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Ondersteunings matrix voor Azure Disk Backup](disk-backup-support-matrix.md)
+- [Azure Disck Backup-ondersteuningsmatrix](disk-backup-support-matrix.md)

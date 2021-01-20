@@ -11,26 +11,28 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to,automl,contperf-fy21q2
 ms.date: 12/18/2020
-ms.openlocfilehash: 5fcb57d1ef909d7c15e21b34c3f584c6615a6a44
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: c90ef9fe49a87c18c7f4f55175bafaebfd31d722
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134412"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610298"
 ---
 # <a name="data-featurization-in-automated-machine-learning"></a>Gegevens parametrisatie in geautomatiseerde machine learning
 
-
-
-Meer informatie over de instellingen voor gegevens parametrisatie in Azure Machine Learning en hoe u deze functies kunt aanpassen voor [automatische ml experimenten](concept-automated-ml.md).
+Meer informatie over de instellingen voor gegevens parametrisatie in Azure Machine Learning en hoe u deze functies kunt aanpassen voor [automatische machine learning experimenten](concept-automated-ml.md).
 
 ## <a name="feature-engineering-and-featurization"></a>Feature engineering en parametrisatie
 
-*Functie techniek* is het proces van het gebruik van domein kennis van de gegevens voor het maken van functies die machine learning (ml) algoritmen voor meer informatie. In Azure Machine Learning worden technieken voor het schalen van gegevens en normalisatie toegepast om functie techniek gemakkelijker te maken. Deze technieken en deze functie techniek worden gezamenlijk *parametrisatie* genoemd in geautomatiseerde machine learning, of *autoML*, experimenten.
+Trainings gegevens bestaan uit rijen en kolommen. Elke rij is een waarneming of record en de kolommen van elke rij zijn de functies die elke record beschrijven. Normaal gesp roken worden de functies die de patronen in de gegevens het beste kenmerken, geselecteerd om voorspellende modellen te maken.
+
+Hoewel veel van de onbewerkte gegevens velden rechtstreeks kunnen worden gebruikt voor het trainen van een model, is het vaak nodig om extra (ontworpen) functies te maken die informatie bieden waarmee patronen in de gegevens beter worden onderscheiden. Dit proces heet **functie techniek**, waarbij het gebruik van de domein kennis van de gegevens wordt gebruikt om functies te maken die op hun beurt machine learning algoritmen helpen beter te leren. 
+
+In Azure Machine Learning worden technieken voor het schalen van gegevens en normalisatie toegepast om functie techniek gemakkelijker te maken. Deze technieken en deze functie techniek worden gezamenlijk **parametrisatie** genoemd in geautomatiseerde ml experimenten.
 
 ## <a name="prerequisites"></a>Vereisten
 
-In dit artikel wordt ervan uitgegaan dat u al weet hoe u een AutoML-experiment kunt configureren. Raadpleeg de volgende artikelen voor meer informatie over configuratie:
+In dit artikel wordt ervan uitgegaan dat u al weet hoe u een geautomatiseerd ML experiment kunt configureren. Raadpleeg de volgende artikelen voor meer informatie over configuratie:
 
 - Voor een code-eerste ervaring: [Configureer geautomatiseerde ml experimenten met behulp van de Azure machine learning SDK voor python](how-to-configure-auto-train.md).
 - Voor een code ring met weinig code of zonder codes: [u kunt geautomatiseerde machine learning modellen maken, controleren en implementeren met behulp van de Azure machine learning Studio](how-to-use-automated-ml-for-ml-models.md).
@@ -46,7 +48,7 @@ Voor experimenten die u configureert met de python-SDK, kunt u de instelling par
 
 De volgende tabel bevat de geaccepteerde instellingen voor `featurization` in de [AutoMLConfig-klasse](/python/api/azureml-train-automl-client/azureml.train.automl.automlconfig.automlconfig):
 
-|Parametrisatie-configuratie | Beschrijving|
+|Parametrisatie-configuratie | Description|
 ------------- | ------------- |
 |`"featurization": 'auto'`| Hiermee geeft u op dat, als onderdeel van preverwerking, de [stappen](#featurization) voor [gegevens Guardrails](#data-guardrails) en parametrisatie automatisch moeten worden uitgevoerd. Dit is de standaardinstelling.|
 |`"featurization": 'off'`| Hiermee geeft u op dat parametrisatie stappen niet automatisch moeten worden uitgevoerd.|
@@ -59,9 +61,9 @@ De volgende tabel bevat de geaccepteerde instellingen voor `featurization` in de
 De volgende tabel bevat een overzicht van de technieken die automatisch worden toegepast op uw gegevens. Deze technieken worden toegepast op experimenten die zijn geconfigureerd met behulp van de SDK of Studio. Als u dit gedrag wilt uitschakelen, stelt u `"featurization": 'off'` in uw `AutoMLConfig` object in.
 
 > [!NOTE]
-> Als u van plan bent om uw door AutoML gemaakte modellen te exporteren naar een [ONNX-model](concept-onnx.md), worden alleen de parametrisatie-opties aangegeven met een asterisk (*) ondersteund in de ONNX-indeling. Meer informatie over [het converteren van modellen naar ONNX](concept-automated-ml.md#use-with-onnx).
+> Als u van plan bent om uw door AutoML gemaakte modellen te exporteren naar een [ONNX-model](concept-onnx.md), worden alleen de parametrisatie-opties aangegeven met een asterisk (*) ondersteund in de ONNX-indeling. Meer informatie over [het converteren van modellen naar ONNX](how-to-use-automl-onnx-model-dotnet.md).
 
-|Parametrisatie- &nbsp; stappen| Beschrijving |
+|Parametrisatie- &nbsp; stappen| Description |
 | ------------- | ------------- |
 |**Hoge kardinaliteit of geen variantie-functies verwijderen** _ |Verwijder deze functies uit de trainings-en validatie sets. Is van toepassing op functies waarbij alle waarden ontbreken, met dezelfde waarde in alle rijen of met een hoge kardinaliteit (bijvoorbeeld hashes, Id's of GUID'S).|
 |_*Ontbrekende waarden toegerekend**_ |Voor numerieke functies toegerekend met het gemiddelde van de waarden in de kolom.<br/><br/>Voor categorische-functies toegerekend met de meest frequente waarde.|

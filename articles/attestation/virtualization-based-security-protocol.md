@@ -7,16 +7,18 @@ ms.service: attestation
 ms.topic: reference
 ms.date: 07/20/2020
 ms.author: mbaldwin
-ms.openlocfilehash: e5cc3b5fb7ca38df196119de12d346f5d0346b58
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 53052b35a50899d6f9e761301f31b9ffd20a4b91
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91343785"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610009"
 ---
-# <a name="virtualization-based-security-vbs-attestation-protocol"></a>VBS-Attestation (virtualisatie-based Security) 
+# <a name="trusted-platform-module-tpm-and-virtualization-based-securityvbs-enclave-attestation-protocol"></a>Trusted Platform Module (TPM) en enclave Attestation-Protocol (virtualisatie Security) 
 
-Voor Microsoft Azure Attestation om sterke beveiligings garanties te bieden, is het vereist om een vertrouwens keten van de firmware te bouwen aan de start van de Hyper Visor en beveiligde kernel. Ter verkrijging van deze Azure-Attestation moet de opstart status van de machine worden verzorgd voordat er een vertrouwens relatie kan worden ingesteld in de beveiligde enclave. De binaire bestanden van het besturings systeem, Hyper Visor en beveiligde kernel moeten worden ondertekend door de juiste officiële micro soft-instanties en op een veilige manier worden geconfigureerd. Als er een vertrouwens relatie is tussen de Trusted Platform Module (TPM) en de status van de Hyper Visor, kunnen we de VBS-IDKS vertrouwen die is opgenomen in het gemeten opstart logboek. Daarom kunnen we valideren dat een sleutel paar is gegenereerd door de enclave en licht een Attestation-rapport dat een vertrouwens relatie in die sleutel verbindt en andere claims bevat, zoals het beveiligings niveau en de eigenschappen van de opstart Attestation.
+Microsoft Azure Attestation om een sterke beveiligings garantie te bieden, is afhankelijk van het controleren van een vertrouwens keten van een basis van vertrouwen (TPM) tot het starten van de Hyper Visor en beveiligde kernel. Ter verkrijging van deze Azure-Attestation moet de opstart status van de machine worden verzorgd voordat er een vertrouwens relatie kan worden ingesteld in de beveiligde enclave. De binaire bestanden van het besturings systeem, Hyper Visor en beveiligde kernel moeten worden ondertekend door de juiste officiële micro soft-instanties en op een veilige manier worden geconfigureerd. Zodra er een vertrouwens relatie is tussen de Trusted Platform Module (TPM) en de status van de Hyper Visor, we kunnen de enclave IDKs van virtualisatie op basis van het gemeten opstart logboek vertrouwen, waardoor we kunnen valideren dat een sleutel paar is gegenereerd door de enclave en licht een Attestation-rapport dat een vertrouwens relatie in die sleutel verbindt en andere claims bevat, zoals het beveiligings niveau en de eigenschappen van de opstart Attestation. 
+
+VBS enclaves vereist een TPM om de meting te bieden om de Security Foundation te valideren. VBS enclaves worden door het TPM-eind punt verklaard met een toevoeging aan het object Request in het protocol. 
 
 ## <a name="protocol-messages"></a>Protocolberichten
 
@@ -29,9 +31,9 @@ Client-> Azure-Attestation
 #### <a name="payload"></a>Nettolading
 
 ```
-{
-  "type": "aikcert"
-}
+{ 
+  "type": "aikcert" 
+} 
 ```
 
 "type" (ASCII-teken reeks): vertegenwoordigt het aangevraagde type Attestation. Op dit moment wordt alleen ' aikcert ' ondersteund.
@@ -45,18 +47,15 @@ Azure-Attestation->-client
 #### <a name="payload"></a>Nettolading
 
 ```
-{
-
-  "challenge": "<BASE64URL(CHALLENGE)>",
-  
-  "service_context": "<BASE64URL(SERVICECONTEXT)>"
-  
-}
+{ 
+  "challenge": "<BASE64URL(CHALLENGE)>", 
+  "service_context": "<BASE64URL(SERVICECONTEXT)>" 
+} 
 ```
 
 **Challenge** (BASE64URL (octetten)): wille keurige waarde die door de service is uitgegeven.
 
-**service_context** (BASE64URL (octetten)): ondoorzichtige, versleutelde context gemaakt door de service, waaronder onder andere de uitdaging en een verloop tijd voor die uitdaging.
+**service_context** (BASE64URL (octetten)): ondoorzichtige, versleutelde context gemaakt door de service, waaronder, onder andere, de uitdaging en een verloop tijd voor die uitdaging. 
 
 
 ### <a name="request-message"></a>Aanvraag bericht
@@ -69,9 +68,7 @@ Client-> Azure-Attestation
 
 ```
 {
-
   "request": "<JWS>"
-  
 }
 ```
 
@@ -95,103 +92,112 @@ BASE64URL (JWS-hand tekening)
 
 ##### <a name="jws-payload"></a>JWS-nettolading
 
-De JWS-payload kan van het type Basic of VBS zijn. Basic wordt gebruikt wanneer Attestation-bewijzen geen VBS-gegevens bevatten.
+De JWS-payload kan van het type Basic of VBS zijn. Basic wordt gebruikt wanneer Attestation-bewijzen geen VBS-gegevens bevatten. 
 
-Basis voorbeeld
+Voor beeld van alleen TPM: 
 
 ``` 
-{
-  "att_type": "basic",
-  "att_data": {
-    "rp_id": "<URL>",
-    "rp_data": "<BASE64URL(RPCUSTOMDATA)>",
-    "challenge": "<BASE64URL(CHALLENGE)>",
-    "tpm_att_data": {
-      "srtm_boot_log": "<BASE64URL(SRTMBOOTLOG)>",
-      "srtm_resume_log": "<BASE64URL(SRTMRESUMELOG)>",
-      "drtm_boot_log": "<BASE64URL(DRTMBOOTLOG)>",
-      "drtm_resume_log": "<BASE64URL(DRTMRESUMELOG)>",
-      "aik_cert": "<BASE64URL(AIKCERTIFICATE)>",
-      // aik_pub is represented as a JSON Web Key (JWK) object (RFC 7517).
-      "aik_pub": {
-        "kty": "RSA",
-        "n": "<Base64urlUInt(MODULUS)>",
-        "e": "<Base64urlUInt(EXPONENT)>"
-      },
-      "current_claim": "<BASE64URL(CURRENTCLAIM)>",
-      "boot_claim": "<BASE64URL(BOOTCLAIM)>"
-    },
-    // attest_key is represented as a JSON Web Key (JWK) object (RFC 7517).
-    "attest_key": {
-      "kty": "RSA",
-      "n": "<Base64urlUInt(MODULUS)>",
-      "e": "<Base64urlUInt(EXPONENT)>"
-    },
-    "custom_claims": [
-      {
-        "name": "<name>",
-        "value": "<value>",
-        "value_type": "<value_type>"
-      },
-      {
-        "name": "<name>",
-        "value": "<value>",
-        "value_type": "<value_type>"
-      }
-    ],
-    "service_context": "<BASE64URL(SERVICECONTEXT)>"
-  }
-}
+{ 
+  "att_type": "basic", 
+  "att_data": { 
+    "rp_id": "<URL>", 
+    "rp_data": "<BASE64URL(RPCUSTOMDATA)>", 
+    "challenge": "<BASE64URL(CHALLENGE)>", 
+
+    "tpm_att_data": { 
+      "srtm_boot_log": "<BASE64URL(SRTMBOOTLOG)>", 
+      "srtm_resume_log": "<BASE64URL(SRTMRESUMELOG)>", 
+      "drtm_boot_log": "<BASE64URL(DRTMBOOTLOG)>", 
+      "drtm_resume_log": "<BASE64URL(DRTMRESUMELOG)>", 
+      "aik_cert": "<BASE64URL(AIKCERTIFICATE)>", 
+
+      // aik_pub is represented as a JSON Web Key (JWK) object (RFC 7517). 
+
+      "aik_pub": { 
+        "kty": "RSA", 
+        "n": "<Base64urlUInt(MODULUS)>", 
+        "e": "<Base64urlUInt(EXPONENT)>" 
+      }, 
+      "current_claim": "<BASE64URL(CURRENTCLAIM)>", 
+      "boot_claim": "<BASE64URL(BOOTCLAIM)>" 
+    }, 
+
+    // attest_key is represented as a JSON Web Key (JWK) object (RFC 7517). 
+
+    "attest_key": { 
+      "kty": "RSA", 
+      "n": "<Base64urlUInt(MODULUS)>", 
+      "e": "<Base64urlUInt(EXPONENT)>" 
+    }, 
+    "custom_claims": [ 
+      { 
+        "name": "<name>", 
+        "value": "<value>", 
+        "value_type": "<value_type>" 
+      }, 
+      { 
+        "name": "<name>", 
+        "value": "<value>", 
+        "value_type": "<value_type>" 
+      } 
+    ], 
+    "service_context": "<BASE64URL(SERVICECONTEXT)>" 
+  } 
+} 
 ```
 
-VBS-voor beeld
+TPM + VBS enclave-voor beeld: 
 
 ``` 
-{
-  "att_type": "vbs",
-  "att_data": {
-    "report_signed": {
-      "rp_id": "<URL>",
-      "rp_data": "<BASE64URL(RPCUSTOMDATA)>",
-      "challenge": "<BASE64URL(CHALLENGE)>",
-      "tpm_att_data": {
-        "srtm_boot_log": "<BASE64URL(SRTMBOOTLOG)>",
-        "srtm_resume_log": "<BASE64URL(SRTMRESUMELOG)>",
-        "drtm_boot_log": "<BASE64URL(DRTMBOOTLOG)>",
-        "drtm_resume_log": "<BASE64URL(DRTMRESUMELOG)>",
-        "aik_cert": "<BASE64URL(AIKCERTIFICATE)>",
-        // aik_pub is represented as a JSON Web Key (JWK) object (RFC 7517).
-        "aik_pub": {
-          "kty": "RSA",
-          "n": "<Base64urlUInt(MODULUS)>",
-          "e": "<Base64urlUInt(EXPONENT)>"
-        },
-        "current_claim": "<BASE64URL(CURRENTCLAIM)>",
-        "boot_claim": "<BASE64URL(BOOTCLAIM)>"
-      },
-      // attest_key is represented as a JSON Web Key (JWK) object (RFC 7517).
-      "attest_key": {
-        "kty": "RSA",
-        "n": "<Base64urlUInt(MODULUS)>",
-        "e": "<Base64urlUInt(EXPONENT)>"
-      },
-      "custom_claims": [
-        {
-          "name": "<name>",
-          "value": "<value>",
-          "value_type": "<value_type>"
-        },
-        {
-          "name": "<name>",
-          "value": "<value>",
-          "value_type": "<value_type>"
-        }
-      ],
-      "service_context": "<BASE64URL(SERVICECONTEXT)>"
-    },
-    "vbs_report": "<BASE64URL(REPORT)>"
-  }
-}
+{ 
+  "att_type": "vbs", 
+  "att_data": { 
+    "report_signed": { 
+      "rp_id": "<URL>", 
+      "rp_data": "<BASE64URL(RPCUSTOMDATA)>", 
+      "challenge": "<BASE64URL(CHALLENGE)>", 
+      "tpm_att_data": { 
+        "srtm_boot_log": "<BASE64URL(SRTMBOOTLOG)>", 
+        "srtm_resume_log": "<BASE64URL(SRTMRESUMELOG)>", 
+        "drtm_boot_log": "<BASE64URL(DRTMBOOTLOG)>", 
+        "drtm_resume_log": "<BASE64URL(DRTMRESUMELOG)>", 
+        "aik_cert": "<BASE64URL(AIKCERTIFICATE)>", 
+
+        // aik_pub is represented as a JSON Web Key (JWK) object (RFC 7517). 
+
+        "aik_pub": { 
+          "kty": "RSA", 
+          "n": "<Base64urlUInt(MODULUS)>", 
+          "e": "<Base64urlUInt(EXPONENT)>" 
+        }, 
+        "current_claim": "<BASE64URL(CURRENTCLAIM)>", 
+        "boot_claim": "<BASE64URL(BOOTCLAIM)>" 
+      }, 
+
+      // attest_key is represented as a JSON Web Key (JWK) object (RFC 7517). 
+
+      "attest_key": { 
+        "kty": "RSA", 
+        "n": "<Base64urlUInt(MODULUS)>", 
+        "e": "<Base64urlUInt(EXPONENT)>" 
+      }, 
+      "custom_claims": [ 
+        { 
+          "name": "<name>", 
+          "value": "<value>", 
+          "value_type": "<value_type>" 
+        }, 
+        { 
+          "name": "<name>", 
+          "value": "<value>", 
+          "value_type": "<value_type>" 
+        } 
+      ], 
+      "service_context": "<BASE64URL(SERVICECONTEXT)>" 
+    }, 
+    "vsm_report": "<BASE64URL(REPORT)>" 
+  } 
+} 
 ``` 
 
 **rp_id** (StringOrURI): Relying Party-id. Gebruikt door de service in de berekening van de claim van de machine-ID
@@ -202,13 +208,13 @@ VBS-voor beeld
 
 **tpm_att_data**: aan TPM gerelateerde Attestation-gegevens
 
-- **srtm_boot_log (BASE64URL (octetten))**: SRTM-opstart logboek zoals opgehaald door functie Tbsi_Get_TCG_Log_Ex met logboek type = TBS_TCGLOG_SRTM_BOOT
+- **srtm_boot_log (BASE64URL (octetten))**: SRTM-opstart logboeken zoals opgehaald door functie Tbsi_Get_TCG_Log_Ex met logboek type = TBS_TCGLOG_SRTM_BOOT
 
-- **srtm_resume_log (BASE64URL (octetten))**: SRTM-logboek hervatten zoals opgehaald door functie Tbsi_Get_TCG_Log_Ex met logboek type = TBS_TCGLOG_SRTM_RESUME
+- **srtm_resume_log (BASE64URL (octetten))**: SRTM hervat het logboek als opgehaald door de functie Tbsi_Get_TCG_Log_Ex met logboek type = TBS_TCGLOG_SRTM_RESUME
 
-- **drtm_boot_log (BASE64URL (octetten))**: drtm-opstart logboek zoals opgehaald door functie Tbsi_Get_TCG_Log_Ex met logboek type = TBS_TCGLOG_DRTM_BOOT
+- **drtm_boot_log (BASE64URL (octetten))**: drtm-opstart logboeken zoals opgehaald door functie Tbsi_Get_TCG_Log_Ex met logboek type = TBS_TCGLOG_DRTM_BOOT
 
-- **drtm_resume_log (BASE64URL (octetten))**: drtm-logboek hervatten zoals opgehaald door functie Tbsi_Get_TCG_Log_Ex met logboek type = TBS_TCGLOG_DRTM_RESUME
+- **drtm_resume_log (BASE64URL (octetten))**: drtm hervat het logboek als opgehaald door de functie Tbsi_Get_TCG_Log_Ex met logboek type = TBS_TCGLOG_DRTM_RESUME
 
 - **aik_cert (BASE64URL (octetten))**: het X. 509-certificaat voor de AIK dat wordt geretourneerd door de functie NCryptGetProperty met eigenschap = NCRYPT_CERTIFICATE_PROPERTY
 
@@ -218,7 +224,7 @@ VBS-voor beeld
 
 - **boot_claim (BASE64URL (octetten))**: de Attestation-claim voor de PCR-status bij het opstarten zoals geretourneerd door de functie NCryptCreateClaim met dwClaimType = NCRYPT_CLAIM_PLATFORM en para meter NCRYPTBUFFER_TPM_PLATFORM_CLAIM_PCR_MASK ingesteld op include all PCRs
 
-**vbs Report** (BASE64URL (octetten)): het vbs enclave Attestation-rapport dat wordt geretourneerd door de functie EnclaveGetAttestationReport. De para meter EnclaveData moet de SHA-512-hash zijn van de waarde van report_signed (inclusief de accolades openen en sluiten). De invoer van de hash-functie is UTF8 (report_signed)
+**vsm_report**   (BASE64URL (OCTETten)): het VBS enclave-Attestation-rapport dat wordt geretourneerd door de functie EnclaveGetAttestationReport. De para meter EnclaveData moet de SHA-512-hash zijn van de waarde van report_signed (inclusief de accolades openen en sluiten). De invoer van de hash-functie is UTF8 (report_signed)
 
 **attest_key**: het open bare deel van de enclave-sleutel wordt weer gegeven als een JSON Web Key (JWK)-object (RFC 7517)
 
@@ -247,3 +253,7 @@ Azure-Attestation->-client
 ```
 
 **rapport** (JWT): het Attestation-rapport in JSON Web token (JWT)-indeling (RFC 7519).
+
+## <a name="next-steps"></a>Volgende stappen
+
+- [Azure Attestation-werk stroom](workflow.md)

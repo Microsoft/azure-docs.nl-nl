@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.date: 10/20/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: c32f90221a73d04fd6c54c8332826232d0e6a6f3
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 30c13adfebb911e443fb042821e09628da3b9405
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968531"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610978"
 ---
 # <a name="use-spark--hive-tools-for-visual-studio-code"></a>Gebruik de Spark-& Hive-Hulpprogram Ma's voor Visual Studio code
 
@@ -211,31 +211,30 @@ Voer de volgende stappen uit om de query's te verzenden met de interactieve opdr
 
    ![pyspark correct geïnstalleerd](./media/hdinsight-for-vscode/pyspark-kernel-installed-successfully.png)
 
-7. Gebruik de opdracht prompt om **PIP install numpy = = 1.19.3** uit te voeren en vervolgens opnieuw het VSCode-venster opnieuw te laden.
 
-8. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Python: selecteer Interpreter om Jupyter-server te starten** in.
+7. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Python: selecteer Interpreter om Jupyter-server te starten** in.
 
    ![selecteer interpreter om Jupyter-server te starten](./media/hdinsight-for-vscode/select-interpreter-to-start-jupyter-server.png)
 
-9. Selecteer hieronder de Python-optie.
+8. Selecteer hieronder de Python-optie.
 
    ![kies de onderstaande optie](./media/hdinsight-for-vscode/choose-the-below-option.png)
     
-10. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Developer: Venster opnieuw laden** in.
+9. Ga op de menubalk naar **Beeld** > **Opdrachtpalet...** of gebruik de sneltoets **Shift + Ctrl + P** en voer **Developer: Venster opnieuw laden** in.
 
     ![venster opnieuw laden](./media/hdinsight-for-vscode/reload-window.png)
 
-11. [Maak verbinding](#connect-to-an-azure-account) met uw Azure-account of koppel een cluster als u dit nog niet hebt gedaan.
+10. [Maak verbinding](#connect-to-an-azure-account) met uw Azure-account of koppel een cluster als u dit nog niet hebt gedaan.
 
-12. Selecteer alle code, klik met de rechter muisknop op de script editor en selecteer **Spark: PySpark Interactive/Synapse: PySpark Interactive** om de query te verzenden. 
+11. Selecteer alle code, klik met de rechter muisknop op de script editor en selecteer **Spark: PySpark Interactive/Synapse: PySpark Interactive** om de query te verzenden. 
 
     ![contextmenu van pyspark interactive](./media/hdinsight-for-vscode/pyspark-interactive-right-click.png)
 
-13. Selecteer het cluster als u geen standaard cluster hebt opgegeven. Na enkele ogen blikken worden de **python-interactieve** resultaten weer gegeven op een nieuw tabblad. Klik op PySpark om de kernel over te scha kelen naar **PySpark/Synapse PySpark** en de code wordt uitgevoerd. Als u wilt overschakelen naar Synapse Pyspark kernel, wordt het uitschakelen van automatische instellingen in Azure Portal aangemoedigd. Anders kan het lang duren voordat het cluster wordt geactiveerd en de Synapse-kernel wordt ingesteld voor het eerste gebruik. Als u met de hulpprogram ma's ook een blok code in plaats van het hele script bestand kunt verzenden met behulp van het snelmenu:
+12. Selecteer het cluster als u geen standaard cluster hebt opgegeven. Na enkele ogen blikken worden de **python-interactieve** resultaten weer gegeven op een nieuw tabblad. Klik op PySpark om de kernel over te scha kelen naar **PySpark/Synapse PySpark** en de code wordt uitgevoerd. Als u wilt overschakelen naar Synapse Pyspark kernel, wordt het uitschakelen van automatische instellingen in Azure Portal aangemoedigd. Anders kan het lang duren voordat het cluster wordt geactiveerd en de Synapse-kernel wordt ingesteld voor het eerste gebruik. Als u met de hulpprogram ma's ook een blok code in plaats van het hele script bestand kunt verzenden met behulp van het snelmenu:
 
     ![interactief pyspark Interactive python-venster](./media/hdinsight-for-vscode/pyspark-interactive-python-interactive-window.png)
 
-14. Voer **%% info** in en druk op SHIFT + ENTER om de taak gegevens weer te geven (optioneel):
+13. Voer **%% info** in en druk op SHIFT + ENTER om de taak gegevens weer te geven (optioneel):
 
     ![pyspark interactieve weergave taak gegevens](./media/hdinsight-for-vscode/pyspark-interactive-view-job-information.png)
 

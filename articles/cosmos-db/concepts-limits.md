@@ -6,12 +6,12 @@ ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
 ms.date: 01/19/2021
-ms.openlocfilehash: 9ace9a319f4cc6bcc1545d6d1becce61b1892765
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 007bf845bab6f493fae91debefde27a4929d9f95
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598666"
+ms.locfileid: "98611029"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
 
@@ -236,7 +236,8 @@ De volgende tabel bevat de limieten die specifiek zijn voor de ondersteuning van
 | Resource | Standaardlimiet |
 | --- | --- |
 | Maximale grootte van MongoDB-query geheugen (deze beperking geldt alleen voor 3,2 Server versie) | 40 MB |
-| Maximale uitvoerings tijd voor MongoDB-bewerkingen| 30s |
+|Maximale uitvoerings tijd voor MongoDB-bewerkingen (voor de 3,2-Server versie)| 15 seconden|
+|Maximale uitvoerings tijd voor MongoDB-bewerkingen (voor de 3,6-server versie)| 60 seconden|
 | Time-out voor niet-actieve verbinding voor sluiting verbinding aan server zijde * | 30 minuten |
 
 \* Het is raadzaam dat client toepassingen de time-out voor niet-actieve verbindingen in de stuur programma-instellingen instellen op 2-3 minuten omdat de [standaardtime-out voor Azure LoadBalancer 4 minuten is](../load-balancer/load-balancer-tcp-idle-timeout.md).  Met deze time-out wordt voor komen dat niet-actieve verbindingen worden gesloten door een tussenliggende load balancer tussen de client computer en Azure Cosmos DB.

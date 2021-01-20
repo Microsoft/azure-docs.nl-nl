@@ -4,12 +4,12 @@ description: Prestaties bewaken en problemen detecteren in Node.js-services met 
 ms.topic: conceptual
 ms.date: 06/01/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 7aea6c03b0ce35fa0e74c39ff5f94f714447ad6f
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 0d414ce44a8d6ab308bd31f7372bb1c146fac9f5
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96920582"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611012"
 ---
 # <a name="monitor-your-nodejs-services-and-apps-with-application-insights"></a>Node.js-services en -apps bewaken met Application Insights
 
@@ -34,7 +34,7 @@ Voordat u begint, moet u ervoor zorgen dat u een Azure-abonnement hebt of moet u
 
 ### <a name="set-up-an-application-insights-resource"></a><a name="resource"></a> Een Application Insights resource instellen
 
-1. Meld u aan bij [Azure Portal][portal].
+1. Meld u aan bij de [Azure-portal][portal].
 2. [Create an Application Insights resource](create-new-resource.md) (Een Application Insights-resource maken)
 
 ### <a name="set-up-the-nodejs-sdk"></a><a name="sdk"></a> De Node.ja SDK instellen
@@ -142,7 +142,7 @@ Om gebeurtenissen in een service volledig te correleren, moet u `.setAutoDepende
 Bekijk hun beschrijvingen in het ingebouwde type van de IDE of [applicationinsights. TS](https://github.com/microsoft/ApplicationInsights-node.js/blob/develop/applicationinsights.ts) voor gedetailleerde informatie over dit besturings element en optionele secundaire argumenten.
 
 > [!NOTE]
->  Standaard `setAutoCollectConsole` is geconfigureerd om aanroepen naar *exclude* `console.log` (en andere console methoden) uit te sluiten. Alleen aanroepen naar ondersteunde logboeken van derden (bijvoorbeeld Winston en Bunyan) worden verzameld. U kunt dit gedrag wijzigen om oproepen naar methoden op te vragen met `console` behulp van `setAutoCollectConsole(true, true)` .
+>  Standaard `setAutoCollectConsole` is geconfigureerd om aanroepen naar  `console.log` (en andere console methoden) uit te sluiten. Alleen aanroepen naar ondersteunde logboeken van derden (bijvoorbeeld Winston en Bunyan) worden verzameld. U kunt dit gedrag wijzigen om oproepen naar methoden op te vragen met `console` behulp van `setAutoCollectConsole(true, true)` .
 
 ### <a name="sampling"></a>Steekproeven
 
@@ -334,6 +334,12 @@ server.on("listening", () => {
   appInsights.defaultClient.trackMetric({name: "server startup time", value: duration});
 });
 ```
+
+### <a name="flush"></a>Woordenlijsten
+
+Standaard wordt de telemetrie gedurende 15 seconden gebufferd voordat deze naar de opname server wordt verzonden. Als uw toepassing een korte levens duur heeft (bijvoorbeeld een CLI-hulp programma), kan het nodig zijn om uw gebufferde telemetrie hand matig te legen wanneer de toepassing wordt beëindigd `appInsights.defaultClient.flush()` .
+
+Als de SDK detecteert dat uw toepassing vastloopt, wordt de functie voor u leeg gemaakt `appInsights.defaultClient.flush({ isAppCrashing: true })` . Met de optie leegmaken `isAppCrashing` wordt aangenomen dat uw toepassing een abnormale status heeft en niet geschikt is voor het verzenden van telemetrie. In plaats daarvan slaat de SDK alle gebufferde telemetrie op in [permanente opslag](./data-retention-privacy.md#nodejs) en laat uw toepassing worden beëindigd. Wanneer de toepassing opnieuw wordt gestart, wordt geprobeerd om een telemetrie te verzenden die is opgeslagen in permanente opslag.
 
 ### <a name="preprocess-data-with-telemetry-processors"></a>Gegevens voorverwerken met telemetrie-processors
 

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: troubleshooting
-ms.date: 04/15/2020
+ms.date: 01/19/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5ba1e280e3c14a24e33246799ca0d7ef8221294f
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: db87887fc2b51c7cb8cb300eb8e711d3ae9b6ac8
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741691"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610778"
 ---
 # <a name="troubleshooting-combined-security-information-registration"></a>Problemen met het registreren van gecombineerde beveiligings gegevens oplossen
 
@@ -24,22 +24,22 @@ De informatie in dit artikel is bedoeld om beheerders te helpen bij het oplossen
 
 ## <a name="audit-logs"></a>Auditlogboeken
 
-De gebeurtenissen die zijn vastgelegd voor gecombineerde registratie vindt u in de categorie verificatie methoden in de Azure AD-controle Logboeken.
+De gebeurtenissen die zijn vastgelegd voor gecombineerde registratie vindt u in de service verificatie methoden in de Azure AD-controle Logboeken.
 
 ![Azure AD audit logboeken interface met registratie gebeurtenissen](media/howto-registration-mfa-sspr-combined-troubleshoot/combined-security-info-audit-log.png)
 
 De volgende tabel geeft een lijst van alle controle gebeurtenissen die worden gegenereerd door gecombineerde registratie:
 
-| Activiteit | Status | Reden | Beschrijving |
+| Activiteit | Status | Reden | Description |
 | --- | --- | --- | --- |
-| Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd | Success | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd. | Deze gebeurtenis treedt op wanneer de registratie van een gebruiker is voltooid.|
+| Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd | Geslaagd | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd. | Deze gebeurtenis treedt op wanneer de registratie van een gebruiker is voltooid.|
 | Gebruiker heeft alle vereiste beveiligings gegevens geregistreerd | Fout | De gebruiker heeft de registratie van beveiligings gegevens geannuleerd. | Deze gebeurtenis treedt op wanneer een gebruiker de registratie van de interrupt-modus annuleert.|
-| Geregistreerde beveiligings gegevens van gebruiker | Success | Geregistreerde *methode* van gebruiker. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode registreert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.| 
-| Door de gebruiker gecontroleerde beveiligings gegevens | Success | De gebruiker heeft beveiligings gegevens gecontroleerd. | Deze gebeurtenis treedt op wanneer een gebruiker **ziet** dat deze goed wordt geselecteerd op de pagina beveiligings gegevens controleren.|
+| Geregistreerde beveiligings gegevens van gebruiker | Geslaagd | Geregistreerde *methode* van gebruiker. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode registreert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.| 
+| Door de gebruiker gecontroleerde beveiligings gegevens | Geslaagd | De gebruiker heeft beveiligings gegevens gecontroleerd. | Deze gebeurtenis treedt op wanneer een gebruiker **ziet** dat deze goed wordt geselecteerd op de pagina beveiligings gegevens controleren.|
 | Door de gebruiker gecontroleerde beveiligings gegevens | Fout | De gebruiker heeft geen beveiligings gegevens kunnen controleren. | Deze gebeurtenis treedt op wanneer een gebruiker **ziet** dat deze goed wordt geselecteerd op de pagina beveiligings gegevens controleren, maar er is een fout opgetreden op de back-end.|
-| Door gebruiker verwijderde beveiligings gegevens | Success | De door de gebruiker verwijderde *methode*. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode verwijdert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
+| Door gebruiker verwijderde beveiligings gegevens | Geslaagd | De door de gebruiker verwijderde *methode*. | Deze gebeurtenis treedt op wanneer een gebruiker een afzonderlijke methode verwijdert. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
 | Door gebruiker verwijderde beveiligings gegevens | Fout | De gebruiker kan de *methode* niet verwijderen. | Deze gebeurtenis treedt op wanneer een gebruiker een methode probeert te verwijderen, maar de poging om een of andere reden mislukt. De *methode* kan de verificatie-app, het telefoon nummer, het e-mail adres, de beveiligings vragen, het app-wacht woord, de alternatieve telefoon, enzovoort zijn.|
-| Door de gebruiker gewijzigde standaard beveiligings gegevens | Success | De gebruiker heeft de standaard beveiligings gegevens voor de *methode* gewijzigd. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode wijzigt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
+| Door de gebruiker gewijzigde standaard beveiligings gegevens | Geslaagd | De gebruiker heeft de standaard beveiligings gegevens voor de *methode* gewijzigd. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode wijzigt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
 | Door de gebruiker gewijzigde standaard beveiligings gegevens | Fout | Gebruiker kan de standaard beveiligings gegevens voor de *methode* niet wijzigen. | Deze gebeurtenis treedt op wanneer een gebruiker de standaard methode probeert te wijzigen, maar de poging om een of andere reden mislukt. De *methode* kan een verificatie van de verificator-app zijn, een code van mijn verificator-app of-token, roep + x xxxxxxxxxx, tekst een code naar + X xxxxxxxxx, enzovoort.|
 
 ## <a name="troubleshooting-interrupt-mode"></a>Problemen met de interrupt-modus oplossen

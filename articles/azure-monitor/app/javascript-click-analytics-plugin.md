@@ -8,20 +8,20 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: lagayhar
-ms.openlocfilehash: e69d5cc76f8f4b14ab87e13546c98859bb801418
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 7af26be91ff129e4c968bcb131cc98290cd8d7b9
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234848"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610077"
 ---
 # <a name="click-analytics-auto-collection-plugin-for-application-insights-javascript-sdk"></a>Klik op Analytics-invoeg toepassing voor automatische verzamelingen voor Application Insights java script SDK
 
-Klik op Analytics-invoeg toepassing voor automatische verzamelingen voor Application Insights java script SDK. Hiermee kunt u de klikken gebeurtenissen op webpagina's op basis van `data-*` META tags automatisch bijhouden. Deze invoeg toepassing maakt gebruik van de `data-*` globale kenmerken voor het vastleggen van de Click-gebeurtenissen en het vullen van telemetriegegevens.
+Met deze invoeg toepassing worden automatisch getraceerde gebeurtenissen op webpagina's en worden data-* attributen voor HTML-elementen gebruikt voor het invullen van de telemetrie van gebeurtenissen.
 
 ## <a name="getting-started"></a>Aan de slag
 
-Gebruikers kunnen de-invoeg toepassing voor het automatisch verzamelen van analyses via NPM instellen.
+Gebruikers kunnen de invoeg toepassing voor het automatisch verzamelen van analyses via NPM instellen.
 
 ### <a name="npm-setup"></a>NPM-installatie
 
@@ -101,19 +101,19 @@ appInsights.loadAppInsights();
 
 ### <a name="icustomdatatags"></a>ICustomDataTags
 
-| Naam                      | Type    | Standaard   | Beschrijving                                                                                       |
-|---------------------------|---------|-----------|---------------------------------------------------------------------------------------------------|
-| useDefaultContentNameOrId | booleaans | onjuist     | Als een bepaald element niet is gelabeld met de standaard-customDataPrefix of customDataPrefix niet wordt verstrekt door de gebruiker, wordt deze vlag gebruikt voor het verzamelen van het standaard HTML-kenmerk voor de inhouds aanduiding. |
-| customDataPrefix          | tekenreeks  | `data-`   | Automatische vastleg-inhouds naam en-waarde van elementen die zijn gelabeld met het voor voegsel.       |
-| aiBlobAttributeTag        | tekenreeks  | `ai-blob` | De invoeg toepassing ondersteunt een JSON BLOB content meta data tagging in plaats van afzonderlijke `data-*` kenmerken. |
-| metaDataPrefix            | tekenreeks  | null      | Automatische opname van de META-element naam en-inhoud van de HTML-kop met het voor voegsel. |
-| captureAllMetaDataContent | tekenreeks  | null      | Automatisch de namen en inhoud van het META-element van de HTML-kop vastleggen. De standaardinstelling is onwaar. Als u dit inschakelt, wordt het gegeven metaDataPrefix overschreven. |
-| parentDataTag             | tekenreeks  | null      | Stopt met het door lopen van de DOM om de inhouds naam en waarde van elementen vast te leggen wanneer deze tag wordt aangetroffen.|
-| dntDataTag                | tekenreeks  | `ai-dnt`  | HTML-elementen met dit kenmerk worden door de invoeg toepassing genegeerd voor het vastleggen van telemetriegegevens.|
+| Naam                      | Type    | Standaard   | Standaard label voor gebruik in HTML |   Description                                                                                |
+|---------------------------|---------|-----------|-------------|----------------------------------------------------------------------------------------------|
+| useDefaultContentNameOrId | booleaans | onjuist     | N.v.t.         |Hiermee wordt het standaard-HTML-kenmerk voor de inhoudsnaam verzameld wanneer een bepaald element niet is gelabeld met de standaard customDataPrefix of wanneer customDataPrefix niet is opgegeven door de gebruiker. |
+| customDataPrefix          | tekenreeks  | `data-`   | `data-*`| Automatische vastleg-inhouds naam en-waarde van elementen die zijn gelabeld met het voor voegsel. `data-*-id` `data-<yourcustomattribute>` Kan bijvoorbeeld worden gebruikt in de HTML-tags.   |
+| aiBlobAttributeTag        | tekenreeks  | `ai-blob` |  `data-ai-blob`| De invoeg toepassing ondersteunt een JSON BLOB-kenmerk in plaats van afzonderlijke `data-*` kenmerken. |
+| metaDataPrefix            | tekenreeks  | null      | N.v.t.  | Automatische opname van de META-element naam en-inhoud van de HTML-kop met het voorziene voor voegsel tijdens het vastleggen. `custom-`Kan bijvoorbeeld worden gebruikt in de HTML-META code. |
+| captureAllMetaDataContent | booleaans | onjuist     | N.v.t.   | Automatisch de namen en inhoud van het META-element van de HTML-kop vastleggen. De standaardinstelling is onwaar. Als u dit inschakelt, wordt het gegeven metaDataPrefix overschreven. |
+| parentDataTag             | tekenreeks  | null      |  N.v.t.  | Stopt met het door lopen van de DOM om de inhouds naam en waarde van elementen vast te leggen wanneer deze tag wordt aangetroffen. `data-<yourparentDataTag>`Kan bijvoorbeeld worden gebruikt in de HTML-tags.|
+| dntDataTag                | tekenreeks  | `ai-dnt`  |  `data-ai-dnt`| HTML-elementen met dit kenmerk worden door de invoeg toepassing genegeerd voor het vastleggen van telemetriegegevens.|
 
 ### <a name="behaviorvalidator"></a>behaviorValidator
 
-U kunt de functie behaviorValidator gebruiken als u de consistentie van gegevens wilt waarborgen, maar automatisch controleert of gelabelde gedragingen in code voldoen aan een vooraf gedefinieerde lijst met bekende en geaccepteerde taxonomie binnen uw onderneming. Het is niet vereist of verwacht dat de meeste Azure Monitor klanten dit zullen gebruiken, maar het is wel beschikbaar voor geavanceerde scenario's. Er zijn drie verschillende behaviorValidator call back-functies beschikbaar als onderdeel van deze uitbrei ding. Gebruikers kunnen echter hun eigen call back-functies gebruiken als de blootgestelde functies uw vereiste niet oplossen. Het doel is om uw eigen gedrags gegevens structuur te nemen, de invoeg toepassing gebruikt deze functie voor validatie tijdens het extra heren van het gedrag uit de gegevenslabels.
+Met de behaviorValidator-functies wordt automatisch gecontroleerd of gelabelde gedragingen in code voldoen aan een vooraf gedefinieerde lijst. Dit zorgt ervoor dat gelabeld gedrag consistent is met de bestaande taxonomie van uw onderneming. Het is niet vereist of verwacht dat de meeste Azure Monitor klanten dit zullen gebruiken, maar het is wel beschikbaar voor geavanceerde scenario's. Er zijn drie verschillende behaviorValidator call back-functies beschikbaar als onderdeel van deze uitbrei ding. Gebruikers kunnen echter hun eigen call back-functies gebruiken als de blootgestelde functies uw vereiste niet oplossen. Het doel is om uw eigen gedrags gegevens structuur te nemen, de invoeg toepassing gebruikt deze functie voor validatie tijdens het extra heren van het gedrag uit de gegevenslabels.
 
 | Naam                   | Beschrijving                                                                        |
 | ---------------------- | -----------------------------------------------------------------------------------|
@@ -312,6 +312,7 @@ appInsights.loadAppInsights();
 
 ## <a name="next-steps"></a>Volgende stappen
 
+- Bekijk de [github-opslag plaats](https://github.com/microsoft/ApplicationInsights-JS/tree/master/extensions/applicationinsights-clickanalytics-js) en het [NPM-pakket](https://www.npmjs.com/package/@microsoft/applicationinsights-clickanalytics-js) voor de invoeg toepassing voor automatische verzamelingen van de analyse.
 - Gebruik [gebeurtenissen analyse in de gebruiks ervaring](usage-segmentation.md) om de meeste klikken en segment te analyseren op beschik bare dimensies.
 - Zoek op gegevens onder inhouds veld in het kenmerk customDimensions in de tabel CustomEvents in [log Analytics](../log-query/log-analytics-tutorial.md#write-a-query).
 - Een [werkmap](../platform/workbooks-overview.md) bouwen om aangepaste visualisaties van klik gegevens te maken.

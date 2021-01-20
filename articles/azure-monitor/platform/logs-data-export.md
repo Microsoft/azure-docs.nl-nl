@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: 8e310ea487818f6d82869fe1973c8e9ed0b04195
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: d9ae9cae1a0a8014f007cd7c4a3d1f97f27128bb
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97797108"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610961"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -35,13 +35,16 @@ Log Analytics werk ruimte gegevens exporteren doorlopend exporteert gegevens uit
 
 ## <a name="current-limitations"></a>Huidige beperkingen
 
-- Configuratie kan momenteel alleen worden uitgevoerd met CLI-of REST-aanvragen. U kunt de Azure Portal of Power shell niet gebruiken.
+- Configuratie kan op dit moment worden uitgevoerd met CLI-of REST-aanvragen. Azure Portal of Power shell worden nog niet ondersteund.
 - De ```--export-all-tables``` optie in CLI en rest wordt niet ondersteund en wordt verwijderd. U moet de lijst met tabellen in regels voor exporteren expliciet opgeven.
-- Ondersteunde tabellen zijn momenteel beperkt in de sectie [ondersteunde tabellen](#supported-tables) hieronder. Als de regel voor het exporteren van gegevens een niet-ondersteunde tabel bevat, wordt de bewerking uitgevoerd, maar worden er geen gegevens geëxporteerd voor die tabel. Als de regel voor het exporteren van gegevens een tabel bevat die niet bestaat, mislukt de fout ```Table <tableName> does not exist in the workspace.```
+- Ondersteunde tabellen zijn momenteel beperkt in de sectie [ondersteunde tabellen](#supported-tables) hieronder. 
+- Als de regel voor het exporteren van gegevens een niet-ondersteunde tabel bevat, wordt de bewerking uitgevoerd, maar worden er geen gegevens voor die tabel geëxporteerd totdat de tabel wordt ondersteund. 
+- Als de regel voor het exporteren van gegevens een tabel bevat die niet bestaat, mislukt de fout ```Table <tableName> does not exist in the workspace``` .
 - Uw Log Analytics-werk ruimte kan zich in elke regio bevinden, met uitzonde ring van het volgende:
   - Zwitserland - noord
   - Zwitserland - west
   - Azure Government-regio's
+- U kunt twee regels voor exporteren in een werk ruimte maken: in kan één regel Event Hub en één regel voor het opslag account zijn.
 - Het doel-opslag account of het Event Hub moet zich in dezelfde regio bevinden als de Log Analytics-werk ruimte.
 - De namen van de tabellen die moeten worden geëxporteerd mogen niet langer zijn dan 60 tekens voor een opslag account en Maxi maal 47 tekens voor een Event Hub. Tabellen met meer namen worden niet geëxporteerd.
 
@@ -115,7 +118,7 @@ Als u uw opslag account hebt geconfigureerd om toegang vanaf geselecteerde netwe
 
 
 ### <a name="create-or-update-data-export-rule"></a>Regel voor het exporteren van gegevens maken of bijwerken
-Een regel voor gegevens export definieert gegevens die moeten worden geëxporteerd voor een set tabellen naar één bestemming. U kunt voor elke bestemming een regel maken.
+Een regel voor gegevens export definieert gegevens die moeten worden geëxporteerd voor een set tabellen naar één bestemming. U kunt één regel voor elke bestemming maken.
 
 
 # <a name="azure-portal"></a>[Azure Portal](#tab/portal)
@@ -126,7 +129,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende CLI-opdracht om tabellen in uw werk ruimte weer te geven. Het kan helpen de gewenste tabellen te kopiëren en op te geven in de regel voor het exporteren van gegevens.
 
@@ -408,7 +411,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om de configuratie van een regel voor het exporteren van gegevens weer te geven met behulp van CLI.
 
@@ -440,7 +443,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 U kunt regels voor exporteren uitschakelen om het exporteren te stoppen wanneer u geen gegevens voor een bepaalde periode hoeft te bewaren, bijvoorbeeld wanneer het testen wordt uitgevoerd. Gebruik de volgende opdracht om een regel voor het exporteren van gegevens uit te scha kelen met behulp van CLI.
 
@@ -487,7 +490,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om een regel voor het exporteren van gegevens te verwijderen met behulp van CLI.
 
@@ -519,7 +522,7 @@ N.v.t.
 
 N.v.t.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Gebruik de volgende opdracht om alle regels voor gegevens export in een werk ruimte weer te geven met behulp van CLI.
 

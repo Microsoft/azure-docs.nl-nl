@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: ecea9dcd28aede92ef255bf002b9195ded43c68b
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 53093edb1d3c142336f06ec8544aaa7b55e37477
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296111"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611250"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Ondersteunde Kubernetes-versies in AKS (Azure Kubernetes Service)
 
@@ -138,13 +138,14 @@ Zie [Kubernetes](https://en.wikipedia.org/wiki/Kubernetes#History)voor de eerder
 
 |  K8s-versie | Upstream-release  | AKS preview  | AKS GA  | Einde van de levens duur |
 |--------------|-------------------|--------------|---------|-------------|
-| 1.16  | Sep-19-19  | Jan 2019   | Mrt 2020  | Jan 2021 * | 
+| 1.16  | Sep-19-19  | Jan 2019   | Mrt 2020  | Jan 2021| 
 | 1,17  | Dec-09-19  | Jan 2019   | Jul 2020  | 1,20 GA | 
 | 1,18  | Mrt-23-20  | Mei 2020   | Aug 2020  | 1,21 GA | 
 | 1,19  | Aug-04-20  | Sep 2020   | Nov 2020  | 1,22 GA | 
 | 1,20  | Dec-08-20  | Jan 2021   | Mrt 2021  | 1,23 GA |
+| 1,21  | Apr-08-21 * | Mei 2021   | Jul 2021  | 1,24 GA |
 
-\* Als gevolg van de feest dagen, AKS de levens duur van 1,16 van november 2020 tot januari 2021. [Meer informatie](https://github.com/Azure/AKS/releases/tag/2020-10-12).
+\* De Kubernetes 1,21-upstream-release kan worden gewijzigd als de upstream-kalender als die nog moet worden voltooid.
 
 
 ## <a name="faq"></a>Veelgestelde vragen

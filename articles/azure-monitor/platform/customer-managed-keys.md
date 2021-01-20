@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: 889ee48c43119086047d6f52737266f4c611fc8d
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: 6061980ec556fccde3de882a291bc390b88c5a24
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562740"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611080"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -386,15 +386,11 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
 ## <a name="limitations-and-constraints"></a>Beperkingen en beperkingen
 
-- Door de klant beheerde sleutel wordt ondersteund op toegewezen Log Analytics cluster en is geschikt voor klanten die 1 TB per dag of langer verzenden.
-
 - Het maximale aantal clusters per regio en abonnement is 2
 
-- Het maximum aantal gekoppelde werk ruimten voor het cluster is 1000
+- Het maximum aantal werk ruimten dat kan worden gekoppeld aan een cluster is 1000
 
 - U kunt een werk ruimte aan uw cluster koppelen en de koppeling vervolgens ontkoppelen. Het aantal bewerkingen voor werkruimte koppelingen op een bepaalde werk ruimte is beperkt tot 2 in een periode van 30 dagen.
-
-- Werkruimte koppeling naar het cluster moet alleen worden uitgevoerd nadat u hebt gecontroleerd of de inrichting van het Log Analytics cluster is voltooid. Gegevens die vóór de voltooiing naar uw werk ruimte worden verzonden, worden verwijderd en kunnen niet worden hersteld.
 
 - Door de klant beheerde sleutel versleuteling is van toepassing op nieuwe opgenomen gegevens na de configuratie tijd. Gegevens die vóór de configuratie zijn opgenomen, blijven versleuteld met de micro soft-sleutel. U kunt een query uitvoeren op gegevens die zijn opgenomen voor en na de configuratie van de door de klant beheerde sleutel naadloos.
 
@@ -404,14 +400,12 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
 - Het cluster verplaatsen naar een andere resource groep of een ander abonnement wordt momenteel niet ondersteund.
 
-- Uw Azure Key Vault, cluster en gekoppelde werk ruimten moeten zich in dezelfde regio en in dezelfde Azure Active Directory (Azure AD) Tenant bevinden, maar ze kunnen zich in verschillende abonnementen bevinden.
-
-- Werkruimte koppeling naar cluster zal mislukken als deze is gekoppeld aan een ander cluster.
+- Uw Azure Key Vault, cluster en werk ruimten moeten zich in dezelfde regio bevinden en in dezelfde Azure Active Directory (Azure AD)-Tenant, maar ze kunnen zich in verschillende abonnementen bevinden.
 
 - Lockbox is momenteel niet beschikbaar in China. 
 
-- [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) wordt automatisch geconfigureerd voor clusters die zijn gemaakt van oktober 2020 in ondersteunde regio's. U kunt controleren of uw cluster is geconfigureerd voor dubbele versleuteling door een GET-aanvraag op het cluster en de waarde van de eigenschap te bestuderen `"isDoubleEncryptionEnabled"` . Dit geldt `true` voor clusters waarvoor dubbele versleuteling is ingeschakeld. 
-  - Als u een cluster maakt en er een fout melding krijgt met de naam ' <regio-name> ondersteunt geen dubbele versleuteling voor clusters. ' kunt u het cluster nog steeds maken zonder dubbele versleuteling. Voeg `"properties": {"isDoubleEncryptionEnabled": false}` de eigenschap toe aan de hoofd tekst van de rest-aanvraag.
+- [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) wordt automatisch geconfigureerd voor clusters die zijn gemaakt van oktober 2020 in ondersteunde regio's. U kunt controleren of uw cluster is geconfigureerd voor dubbele versleuteling door een GET-aanvraag te verzenden naar het cluster en te zien dat de `isDoubleEncryptionEnabled` waarde `true` voor clusters is waarvoor dubbele versleuteling is ingeschakeld. 
+  - Als u een cluster maakt en er een fout melding krijgt met de naam ' <regio-name> ondersteunt geen dubbele versleuteling voor clusters. ' kunt u het cluster nog steeds maken zonder dubbele code ring door toe te voegen `"properties": {"isDoubleEncryptionEnabled": false}` in de hoofd tekst van de rest-aanvraag.
   - De instelling voor dubbele versleuteling kan niet worden gewijzigd nadat het cluster is gemaakt.
 
   - Als uw cluster is ingesteld met een door de gebruiker toegewezen beheerde identiteit, wordt `UserAssignedIdentities` `None` het cluster onderbroken en wordt de toegang tot uw gegevens voor komen, maar u kunt de intrekking niet herstellen en het cluster activeren zonder dat er een ondersteunings aanvraag wordt geopend. Deze beperking hebben ' toegepast op door het systeem toegewezen beheerde identiteit.
@@ -429,13 +423,15 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
   - Toegangs snelheid van Key Vault: de frequentie waarmee Azure Monitor toegang tot Key Vault voor verpakte en onverpakte bewerkingen tussen 6 en 60 seconden ligt.
 
-- Als u een cluster maakt en de KeyVaultProperties onmiddellijk opgeeft, kan de bewerking mislukken omdat het toegangs beleid niet kan worden gedefinieerd totdat de systeem identiteit is toegewezen aan het cluster.
-
-- Als u een bestaand cluster bijwerkt met KeyVaultProperties en het sleutel toegangs beleid Get ontbreekt in Key Vault, mislukt de bewerking.
+- Als u het cluster bijwerkt terwijl de status van het cluster wordt ingericht of bijgewerkt, mislukt de update.
 
 - Als er een conflict fout optreedt tijdens het maken van een cluster, is het mogelijk dat u uw cluster in de afgelopen 14 dagen hebt verwijderd en dat het een tijdelijke, verwijderings periode is. De cluster naam blijft gereserveerd tijdens de tijdelijke periode en u kunt geen nieuw cluster met die naam maken. De naam wordt vrijgegeven na de periode voor voorlopig verwijderen wanneer het cluster permanent wordt verwijderd.
 
-- Als u het cluster bijwerkt terwijl er een bewerking wordt uitgevoerd, mislukt de bewerking.
+- Werkruimte koppeling naar cluster zal mislukken als deze is gekoppeld aan een ander cluster.
+
+- Als u een cluster maakt en de KeyVaultProperties onmiddellijk opgeeft, kan de bewerking mislukken omdat het toegangs beleid niet kan worden gedefinieerd totdat de systeem identiteit is toegewezen aan het cluster.
+
+- Als u een bestaand cluster bijwerkt met KeyVaultProperties en het sleutel toegangs beleid Get ontbreekt in Key Vault, mislukt de bewerking.
 
 - Als u het cluster niet implementeert, controleert u of uw Azure Key Vault-, cluster-en gekoppelde Log Analytics-werk ruimten zich in dezelfde regio bevinden. De kan zich in verschillende abonnementen bevindt.
 

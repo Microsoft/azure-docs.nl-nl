@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: yitoh
-ms.openlocfilehash: b53501bf5aa4bafb0229158edfe0cb244116b909
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 89685d1b8c3a57fa142bbbfd1114f9aa0ff0c400
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600850"
+ms.locfileid: "98611114"
 ---
 # <a name="azure-ddos-protection-standard-frequent-asked-questions"></a>Veelgestelde vragen over Azure DDoS Protection
 
@@ -79,4 +79,7 @@ Zie [testen met behulp van simulaties](test-through-simulations.md).
 
 ## <a name="how-long-does-it-take-for-the-metrics-to-load-on-portal"></a>Hoe lang duurt het om de metrische gegevens te laden op de portal?
 De metrische gegevens moeten binnen vijf minuten zichtbaar zijn op de portal. Als uw resource wordt aangevallen, worden er binnen 5-7 minuten andere metrische gegevens weer gegeven op de portal. 
+
+## <a name="does-the-service-store-customer-data"></a>Slaat de service klant gegevens op?
+Nee, Azure DDoS Protection slaat geen klant gegevens op.
     

@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: conceptual
 ms.date: 10/20/2020
-ms.openlocfilehash: e87c9efc910d08307d40d42e58f8272a01902a41
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: b351be1e7212dc9923f701599dd951a73254afe0
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96552844"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610366"
 ---
 # <a name="role-based-access-control-in-azure-purviews-data-plane"></a>Op rollen gebaseerd toegangs beheer in het gegevens vlak van Azure controle sfeer liggen
 
@@ -31,9 +31,9 @@ Azure controle sfeer liggen definieert een reeks vooraf gedefinieerde gegevensla
 
 ## <a name="understanding-how-to-use-azure-purviews-data-plane-roles"></a>Meer informatie over het gebruik van de gegevenslaag rollen van Azure controle sfeer liggen
 
-Wanneer een Azure controle sfeer liggen-account wordt gemaakt, wordt de Maker behandeld alsof ze zich in de controle sfeer liggen data curator-en controle sfeer liggen-gegevens bron beheerder rollen bevinden. Maar de maker van het account is niet toegewezen aan deze rollen in het Role-archief. Azure controle sfeer liggen herkent dat de principal de maker van het account is en breidt deze mogelijkheden uit op basis van hun identiteit.
+Wanneer een Azure controle sfeer liggen-account wordt gemaakt, wordt de Maker behandeld alsof ze zich in de controle sfeer liggen data curator-en controle sfeer liggen-gegevens bron beheerder rollen bevinden. Maar in het rollenarchief zijn deze rollen niet toegewezen aan de maker van het account. Azure Purview erkent dat de principal de maker van het account is, en breidt deze mogelijkheden uit naar deze principals op basis van hun identiteit.
 
-Alle andere gebruikers kunnen alleen het Azure controle sfeer liggen-account gebruiken als ze in ten minste een van deze rollen worden geplaatst. Dit betekent dat wanneer een Azure controle sfeer liggen-account wordt gemaakt, niemand, maar de maker toegang heeft tot het account of de Api's kan gebruiken tot ze in een of meer van de eerder gedefinieerde rollen zijn geplaatst.
+Alle andere gebruikers kunnen het Azure Purview-account alleen gebruiken als minstens één van deze rollen aan hen is toegewezen. Dit betekent dat wanneer een Azure controle sfeer liggen-account wordt gemaakt, niemand, maar de maker toegang heeft tot het account of de Api's kan gebruiken tot ze in een of meer van de eerder gedefinieerde rollen zijn geplaatst.
 
 Houd er rekening mee dat de rol controle sfeer liggen-gegevens bron beheerder twee ondersteunde scenario's heeft. Het eerste scenario is voor gebruikers die al controle sfeer liggen data readers of controle sfeer liggen data Curators zijn die ook scans moeten kunnen maken. Deze gebruikers moeten zich in twee rollen bevinden, ten minste één van de gegevens lezer van controle sfeer liggen of controle sfeer liggen data curator, maar ook worden opgenomen in de beheerdersrol controle sfeer liggen-gegevens bron.
 
@@ -77,8 +77,8 @@ Voor gebruikers die toegang hebben tot de [Azure Portal](https://portal.azure.co
 |Ik moet een service-principal of andere programma-id inschakelen voor het instellen en controleren van scans in azure controle sfeer liggen zonder dat de programmatische identiteit toegang heeft tot de gegevens van de catalogus |Beheerdersrol van controle sfeer liggen-gegevens bron|
 |Ik wil gebruikers in azure controle sfeer liggen in hun rol zetten | Beheerder van eigenaar of gebruiker toegang |
 
-Ga naar het volgende artikel voor meer informatie over het toevoegen van een beveiligingsprincipal aan een rol.
+Raadpleeg [Quick Start: een Azure controle sfeer liggen-account maken](create-catalog-portal.md) voor meer informatie over het toevoegen van een beveiligingsprincipal aan een rol.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Snelstartgids: een Azure controle sfeer liggen-account maken](create-catalog-portal.md)
+* [Gegevensinzichten](concept-insights.md)

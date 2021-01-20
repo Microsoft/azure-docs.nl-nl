@@ -10,16 +10,16 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 11/28/2020
 ms.author: juliako
-ms.openlocfilehash: 3a3ac3f2db4e23f03f83a98bee0aceaddef9f889
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: b25341fb58c1e758d807e3c7b4345fd0ab1baa53
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96433467"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610417"
 ---
 # <a name="add-video-clips-to-your-projects"></a>Video clips toevoegen aan uw projecten
 
-Met Video Indexer website kunt u uw Video's uitgebreide inzichten gebruiken: Zoek de juiste media-inhoud, zoek de onderdelen die u wilt gebruiken en gebruik de resultaten om een volledig nieuw project te maken. 
+Met de [video indexer](https://www.videoindexer.ai/) -website kunt u de geavanceerde inzichten van uw Video's gebruiken om de juiste media-inhoud te zoeken, de onderdelen te zoeken waarin u geïnteresseerd bent en de resultaten te gebruiken om een volledig nieuw project te maken. 
 
 Nadat het project is gemaakt, kan het worden gerenderd en gedownload van Video Indexer en worden gebruikt in uw eigen bewerkings toepassingen of downstream-werk stromen.
 

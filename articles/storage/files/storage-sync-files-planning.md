@@ -8,12 +8,12 @@ ms.date: 01/15/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions
-ms.openlocfilehash: 32aa94c986c90b7bd46b9f5561021c34c0f142af
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 29f7f241f119ca7fab50409881b517961b00cf20
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492089"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610468"
 ---
 # <a name="planning-for-an-azure-file-sync-deployment"></a>Planning voor de implementatie van Azure Files Sync
 
@@ -50,6 +50,9 @@ Synchronisatie groepen worden geïmplementeerd in **opslag synchronisatie Servic
 Voordat u een synchronisatie groep in een opslag synchronisatie service kunt maken, moet u eerst een Windows-Server bij de opslag synchronisatie service registreren. Hiermee maakt u een **geregistreerd server** object dat een vertrouwens relatie tussen uw server of cluster en de opslag synchronisatie service vertegenwoordigt. Als u een opslag synchronisatie service wilt registreren, moet u eerst de Azure File Sync-agent op de server installeren. Een afzonderlijke server of cluster kan slechts met één opslag synchronisatie service tegelijk worden geregistreerd.
 
 Een synchronisatie groep bevat één Cloud eindpunt, een Azure-bestands share en ten minste één server eindpunt. Het eindpunt object van de server bevat de instellingen die de functionaliteit voor **Cloud lagen** configureren, waarmee de cache functie van Azure File Sync wordt geboden. Om te synchroniseren met een Azure-bestands share moet het opslag account met de Azure-bestands share zich in dezelfde Azure-regio bevinden als de opslag synchronisatie service.
+
+> [!Important]  
+> U kunt wijzigingen aanbrengen in een eind punt van een Cloud of server-eind punt in de synchronisatie groep en uw bestanden synchroniseren met de andere eind punten in de synchronisatie groep. Als u een wijziging aanbrengt in het Cloud eindpunt (Azure-bestands share), moeten de wijzigingen eerst worden gedetecteerd door een Azure File Sync wijzigings detectie taak. Een wijzigings detectie taak wordt slechts eenmaal per 24 uur geïnitieerd voor een Cloud eindpunt. Zie [Azure files Veelgestelde vragen](storage-files-faq.md#afs-change-detection)voor meer informatie.
 
 ### <a name="management-guidance"></a>Beheer richtlijnen
 Wanneer u Azure File Sync implementeert, kunt u het volgende doen:
@@ -99,8 +102,8 @@ In de volgende tabel hebben we zowel de grootte van de naam ruimte als de conver
 | 3        | 1.4     | 2        | 8 (initiële synchronisatie)/2 (standaard verloop)      |
 | 5        | 2.3     | 2        | 16 (initiële synchronisatie)/4 (standaard verloop)    |
 | 10       | 4.7     | 4        | 32 (initiële synchronisatie)/8 (standaard verloop)   |
-| 30       | 14,0    | 8        | 48 (initiële synchronisatie)/16 (typische verloop)   |
-| 50       | 23,3    | 16       | 64 (initiële synchronisatie)/32 (standaard verloop)  |
+| 30       | 14.0    | 8        | 48 (initiële synchronisatie)/16 (typische verloop)   |
+| 50       | 23.3    | 16       | 64 (initiële synchronisatie)/32 (standaard verloop)  |
 | 100 *     | 46,6    | 32       | 128 (initiële synchronisatie)/32 (standaard verloop)  |
 
 \*Het synchroniseren van meer dan 100.000.000 bestanden & mappen wordt op dit moment niet aanbevolen. Dit is een zachte limiet op basis van onze geteste drempel waarden. Zie [Azure files schaal baarheid en prestatie doelen](storage-files-scale-targets.md#azure-file-sync-scale-targets)voor meer informatie.
@@ -307,7 +310,7 @@ Azure File Sync is beschikbaar in de volgende regio's:
 | Openbaar | Azië | Azië - zuidoost | `southeastasia` |
 | Openbaar | Australië | Australië - oost | `australiaeast` |
 | Openbaar | Australië | Australië - zuidoost | `australiasoutheast` |
-| Openbaar | Brazilië | Brazil South | `brazilsouth` |
+| Openbaar | Brazilië | Brazilië - zuid | `brazilsouth` |
 | Openbaar | Canada | Canada - midden | `canadacentral` |
 | Openbaar | Canada | Canada - oost | `canadaeast` |
 | Openbaar | Europa | Europa - noord | `northeurope` |
@@ -326,11 +329,11 @@ Azure File Sync is beschikbaar in de volgende regio's:
 | Openbaar | VAE | VAE - noord | `uaenorth` |
 | Openbaar | VK | Verenigd Koninkrijk Zuid | `uksouth` |
 | Openbaar | VK | Verenigd Koninkrijk West | `ukwest` |
-| Openbaar | VS | Central US | `centralus` |
+| Openbaar | VS | VS - centraal | `centralus` |
 | Openbaar | VS | VS - oost | `eastus` |
 | Openbaar | VS | VS - oost 2 | `eastus2` |
 | Openbaar | VS | VS - noord-centraal | `northcentralus` |
-| Openbaar | VS | South Central US | `southcentralus` |
+| Openbaar | VS | VS - zuid-centraal | `southcentralus` |
 | Openbaar | VS | VS - west-centraal | `westcentralus` |
 | Openbaar | VS | VS - west | `westus` |
 | Openbaar | VS | West US 2 | `westus2` |

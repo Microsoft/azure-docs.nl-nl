@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 5d160c46b235c6890426cab9de52ec7b827efe4a
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
+ms.openlocfilehash: 37753265afa7e76e87dbcdc5893595bea66798f4
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750710"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610247"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Een toepassing voorbereiden voor implementatie in azure lente-Cloud
 
@@ -146,40 +146,14 @@ De Azure lente-Cloud ondersteunt alleen veer boot-apps van veer boot versie 2,1 
 
 Spring boot-versie | Lente-Cloud versie
 ---|---
-2.1 | Greenwich. RELEASE
 2.2 | Hoxton.SR8
 2.3 | Hoxton.SR8
+2.4.1 + | 2020.0.0
 
 > [!NOTE]
-> We hebben vastgesteld dat er een probleem is met lente boot 2,4 op TLS-verificatie tussen uw apps en Eureka en momenteel met de lente-Community werkt om deze op te lossen. Raadpleeg onze [Veelgestelde vragen](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) voor de tijdelijke oplossing.
+> We hebben een probleem geïdentificeerd met een Spring boot-2.4.0 voor TLS-verificatie tussen uw apps en Eureka. gebruik 2.4.1 of hoger. Raadpleeg de [Veelgestelde vragen](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) over de tijdelijke oplossing als u 2.4.0T.
 
-### <a name="dependencies-for-spring-boot-version-21"></a>Afhankelijkheden voor Spring boot versie 2,1
-
-Voor Spring boot versie 2,1 voegt u de volgende afhankelijkheden toe aan het POM-bestand van de toepassing.
-
-```xml
-    <!-- Spring Boot dependencies -->
-    <parent>
-        <groupId>org.springframework.boot</groupId>
-        <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.1.12.RELEASE</version>
-    </parent>
-
-    <!-- Spring Cloud dependencies -->
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Greenwich.RELEASE</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-```
-
-### <a name="dependencies-for-spring-boot-version-22"></a>Afhankelijkheden voor Spring boot versie 2,2
+### <a name="dependencies-for-spring-boot-version-2223"></a>Afhankelijkheden voor Spring boot-versie 2.2/2.3
 
 Voor Spring boot versie 2,2 voegt u de volgende afhankelijkheden toe aan het POM-bestand van de toepassing.
 
@@ -204,16 +178,17 @@ Voor Spring boot versie 2,2 voegt u de volgende afhankelijkheden toe aan het POM
         </dependencies>
     </dependencyManagement>
 ```
-### <a name="dependencies-for-spring-boot-version-23"></a>Afhankelijkheden voor Spring boot versie 2,3
 
-Voor Spring boot versie 2,3 voegt u de volgende afhankelijkheden toe aan het POM-bestand van de toepassing.
+### <a name="dependencies-for-spring-boot-version-24"></a>Afhankelijkheden voor Spring boot versie 2,4
+
+Voor Spring boot versie 2,2 voegt u de volgende afhankelijkheden toe aan het POM-bestand van de toepassing.
 
 ```xml
     <!-- Spring Boot dependencies -->
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>2.3.0.RELEASE</version>
+        <version>2.4.1.RELEASE</version>
     </parent>
 
     <!-- Spring Cloud dependencies -->
@@ -222,34 +197,14 @@ Voor Spring boot versie 2,3 voegt u de volgende afhankelijkheden toe aan het POM
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
-                <version>Hoxton.SR8</version>
+                <version>2020.0.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
         </dependencies>
     </dependencyManagement>
 ```
-## <a name="azure-spring-cloud-client-dependency"></a>Azure veer cloud client-afhankelijkheid
 
-Azure lente-Cloud hosts en beheert lente-Cloud onderdelen. De onderdelen omvatten veer-Cloud service register en lente-Cloud configuratie server. U wordt aangeraden Spring boot 2,2 of 2,3 te gebruiken. Voor Spring boot 2,1 moet u de Azure veer cloud-client bibliotheek in uw afhankelijkheden toevoegen om communicatie met uw Azure lente-Cloud service-exemplaar toe te staan.
-
-De volgende tabel geeft een lijst van de juiste Azure lente-Cloud versies voor uw app die een lente-boot-en lente-Cloud gebruiken.
-
-Spring boot-versie | Lente-Cloud versie | Azure lente cloud client starter-versie
----|---|---
-2.1. x | Greenwich. RELEASE | 2.1.2
-2.2. x | Hoxton.SR8 | Niet nodig
-2.3. x | Hoxton.SR8 | Niet nodig
-
-Neem de volgende dependenciy op in uw pom.xml-bestand als u een Spring boot 2,1 gebruikt.
-
-```xml
-<dependency>
-        <groupId>com.microsoft.azure</groupId>
-        <artifactId>spring-cloud-starter-azure-spring-cloud-client</artifactId>
-        <version>2.1.2</version>
-</dependency>
-```
 > [!WARNING]
 > Geef niets `server.port` op in uw configuratie. Deze instelling wordt door Azure lente Cloud OVERiDE naar een vast poort nummer. U moet deze instelling ook respecteren en de server poort niet opgeven in uw code.
 
@@ -329,6 +284,9 @@ Neem de `spring-boot-starter-actuator` afhankelijkheid op in de sectie afhankeli
 
 ### <a name="distributed-tracing"></a>Gedistribueerde tracering
 
+U moet ook een Azure-toepassing Insights-exemplaar inschakelen om te werken met uw Azure lente-Cloud service-exemplaar. Zie de [documentatie over gedistribueerde tracering](spring-cloud-tutorial-distributed-tracing.md)voor meer informatie over het gebruik van Application Insights met Azure lente Cloud.
+
+#### <a name="spring-boot-2223"></a>Spring boot 2.2/2.3
 Neem de volgende `spring-cloud-starter-sleuth` en `spring-cloud-starter-zipkin` afhankelijkheden op in het gedeelte met afhankelijkheden van uw pom.xml-bestand:
 
 ```xml
@@ -342,7 +300,15 @@ Neem de volgende `spring-cloud-starter-sleuth` en `spring-cloud-starter-zipkin` 
 </dependency>
 ```
 
- U moet ook een Azure-toepassing Insights-exemplaar inschakelen om te werken met uw Azure lente-Cloud service-exemplaar. Zie de [documentatie over gedistribueerde tracering](spring-cloud-tutorial-distributed-tracing.md)voor meer informatie over het gebruik van Application Insights met Azure lente Cloud.
+#### <a name="spring-boot-24"></a>Spring boot 2,4
+Neem de volgende `spring-cloud-sleuth-zipkin` afhankelijkheden op in het gedeelte met afhankelijkheden van uw pom.xml-bestand:
+
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-sleuth-zipkin</artifactId>
+</dependency>
+```
 
 ## <a name="see-also"></a>Zie ook
 * [Toepassings logboeken en metrische gegevens analyseren](./diagnostic-services.md)

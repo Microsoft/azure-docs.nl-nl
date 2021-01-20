@@ -5,13 +5,13 @@ ms.subservice: logs
 ms.topic: conceptual
 author: bwren
 ms.author: bwren
-ms.date: 08/19/2020
-ms.openlocfilehash: 048068a74151bb986392b5cb27787385fc0f5363
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.date: 01/19/2021
+ms.openlocfilehash: 7013a4ab1becd6108d30d8369f1f72bcb3e55c37
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95315529"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611063"
 ---
 # <a name="data-collection-rules-in-azure-monitor-preview"></a>Regels voor het verzamelen van gegevens in Azure Monitor (preview-versie)
 Met regels voor gegevens verzameling (DCR) worden gegevens in Azure Monitor gedefinieerd en wordt aangegeven waar de gegevens moeten worden verzonden of opgeslagen. Dit artikel bevat een overzicht van regels voor het verzamelen van gegevens, inclusief de inhoud en structuur en hoe u deze kunt maken en gebruiken.
@@ -53,10 +53,20 @@ Zie [Azure Monitor service limieten](../service-limits.md#data-collection-rules)
 
 
 ## <a name="create-a-dcr"></a>Een DCR maken
-Er zijn momenteel twee beschik bare methoden voor het maken van een DCR:
+U kunt momenteel een van de volgende methoden gebruiken om een DCR te maken:
 
 - [Gebruik de Azure Portal](data-collection-rule-azure-monitor-agent.md) om een regel voor het verzamelen van gegevens te maken en deze te koppelen aan een of meer virtuele machines.
 - Bewerk de regel voor het verzamelen van gegevens rechtstreeks in JSON en [Verzend deze met behulp van de rest API](/rest/api/monitor/datacollectionrules).
+- Maak DCR en koppelingen met [Azure cli](https://github.com/Azure/azure-cli-extensions/blob/master/src/monitor-control-service/README.md).
+- Maak DCR en koppelingen met Azure PowerShell.
+  - [Get-AzDataCollectionRule](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzDataCollectionRule.md)
+  - [New-AzDataCollectionRule](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRule.md)
+  - [Set-AzDataCollectionRule](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Set-AzDataCollectionRule.md)
+  - [Update-AzDataCollectionRule](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Update-AzDataCollectionRule.md)
+  - [Remove-AzDataCollectionRule](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzDataCollectionRule.md)
+  - [Get-AzDataCollectionRuleAssociation](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Get-AzDataCollectionRuleAssociation.md)
+  - [New-AzDataCollectionRuleAssociation](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/New-AzDataCollectionRuleAssociation.md)
+  - [Remove-AzDataCollectionRuleAssociation](https://github.com/Azure/azure-powershell/blob/master/src/Monitor/Monitor/help/Remove-AzDataCollectionRuleAssociation.md)
 
 ## <a name="sample-data-collection-rule"></a>Regel voor het verzamelen van voorbeeld gegevens
 De onderstaande regel voor het verzamelen van gegevens is voor virtuele machines met Azure Management Agent en bevat de volgende details:

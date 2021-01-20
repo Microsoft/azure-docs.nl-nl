@@ -12,12 +12,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 03/26/2018
 ms.author: twooley
-ms.openlocfilehash: 434917c1cee26a4a8eeb7f27808e3fcb487f3f55
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: aac0139e09866ce44d25989119b2eafb31e76961
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350038"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610451"
 ---
 # <a name="accessing-diagnostic-logs-for-azure-data-lake-storage-gen1"></a>Diagnostische logboeken openen voor Azure Data Lake Storage Gen1
 Meer informatie over het inschakelen van diagnostische logboek registratie voor uw Azure Data Lake Storage Gen1-account en het weer geven van de logboeken die voor uw account zijn verzameld.
@@ -115,7 +115,7 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 ```
 
 #### <a name="request-log-schema"></a>Schema voor aanvraag logboek
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | tijd |Tekenreeks |De tijds tempel (in UTC) van het logboek |
 | resourceId |Tekenreeks |De ID van de resource waarop de bewerking plaatsvond |
@@ -128,7 +128,7 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 | properties |JSON |Zie hieronder voor meer informatie |
 
 #### <a name="request-log-properties-schema"></a>Schema eigenschappen van het aanvraag logboek
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | HttpMethod |Tekenreeks |De HTTP-methode die wordt gebruikt voor de bewerking. Bijvoorbeeld ophalen. |
 | Pad |Tekenreeks |Het pad waarin de bewerking is uitgevoerd |
@@ -136,6 +136,8 @@ Hier volgt een voor beeld van een vermelding in het aanvraag logboek in JSON-ind
 | ClientRequestId |Tekenreeks |De unieke ID voor deze aanvraag |
 | StartTime |Tekenreeks |Het tijdstip waarop de server de aanvraag heeft ontvangen |
 | EndTime |Tekenreeks |Het tijdstip waarop de server een antwoord heeft verzonden |
+| StoreIngressSize |Omvang |Grootte in bytes die zijn ontvangen naar Data Lake Store |
+| StoreEgressSize |Omvang |Grootte in bytes egressed van Data Lake Store |
 
 ### <a name="audit-logs"></a>Auditlogboeken
 Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeling. Elke BLOB heeft één hoofd object met de naam **records** dat een matrix met logboek objecten bevat
@@ -164,7 +166,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 ```
 
 #### <a name="audit-log-schema"></a>Schema van auditlogboek
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | tijd |Tekenreeks |De tijds tempel (in UTC) van het logboek |
 | resourceId |Tekenreeks |De ID van de resource waarop de bewerking plaatsvond |
@@ -177,7 +179,7 @@ Hier volgt een voor beeld van een vermelding in het audit logboek in JSON-indeli
 | properties |JSON |Zie hieronder voor meer informatie |
 
 #### <a name="audit-log-properties-schema"></a>Schema eigenschappen van controle logboek
-| Naam | Type | Beschrijving |
+| Naam | Type | Description |
 | --- | --- | --- |
 | StreamName |Tekenreeks |Het pad waarin de bewerking is uitgevoerd |
 

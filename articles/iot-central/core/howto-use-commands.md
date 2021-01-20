@@ -7,12 +7,12 @@ ms.date: 01/07/2021
 ms.topic: how-to
 ms.service: iot-central
 services: iot-central
-ms.openlocfilehash: 52872175eb799785674c331ad4d687ff8ef427a4
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: e53bf377a7ef8f2293debd288ba25ef8f04ff4fc
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134276"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610995"
 ---
 # <a name="how-to-use-commands-in-an-azure-iot-central-solution"></a>Opdrachten gebruiken in een Azure IoT Central-oplossing
 
@@ -37,13 +37,13 @@ Opdrachten worden gedefinieerd als onderdeel van een apparaatprofiel. De volgend
 
 De volgende tabel bevat de configuratie-instellingen voor een opdracht mogelijkheid:
 
-| Veld             |Beschrijving|
+| Veld             |Description|
 |-------------------|-----------|
 |Weergavenaam       |De opdracht waarde die wordt gebruikt voor dash boards en formulieren.|
-| Naam            | De naam van de opdracht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. De apparaatcode gebruikt deze **naam** waarde.|
+| Name            | De naam van de opdracht. IoT Central genereert een waarde voor dit veld van de weergave naam, maar u kunt indien nodig uw eigen waarde kiezen. Dit veld moet alfanumeriek zijn. De apparaatcode gebruikt deze **naam** waarde.|
 | Type mogelijkheid | Cmd.|
 | Wachtrij indien offline | Hiermee wordt aangegeven of deze opdracht een *offline* opdracht moet zijn. |
-| Beschrijving     | Een beschrijving van de opdracht mogelijkheid.|
+| Description     | Een beschrijving van de opdracht mogelijkheid.|
 | Opmerking     | Eventuele opmerkingen over de opdracht mogelijkheid.|
 | Aanvraag     | De payload voor de opdracht apparaat.|
 | Antwoord     | De nettolading van het antwoord op de opdracht van het apparaat.|
@@ -248,6 +248,9 @@ De uitvoer van het vorige code fragment toont de payload met de waarden **StartT
 Body: {"StartTime":"2021-01-06T06:00:00.000Z","Bank":2}
 Properties: {"propertyList":[{"key":"iothub-ack","value":"none"},{"key":"method-name","value":"GenerateDiagnostics"}]}
 ```
+
+> [!NOTE]
+> De standaard time-to-Live voor offline opdrachten is 24 uur, waarna het bericht verloopt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

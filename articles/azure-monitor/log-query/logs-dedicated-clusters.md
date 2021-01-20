@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: 93b05a5535b80d0e0d1a07c88aa9b19052f1b703
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: a5cbbed3881433121f5ab811082969bc3c6c4f7f
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562672"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98609941"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor logboeken toegewezen clusters
 
@@ -512,27 +512,25 @@ Gebruik de volgende REST-aanroep om een cluster te verwijderen:
 
 - U kunt een werk ruimte aan uw cluster koppelen en de koppeling vervolgens ontkoppelen. Het aantal bewerkingen voor werkruimte koppelingen op een bepaalde werk ruimte is beperkt tot 2 in een periode van 30 dagen.
 
-- Werkruimte koppeling naar het cluster moet alleen worden uitgevoerd nadat u hebt gecontroleerd of de inrichting van het Log Analytics cluster is voltooid. Gegevens die vóór de voltooiing naar uw werk ruimte worden verzonden, worden verwijderd en kunnen niet worden hersteld.
-
 - Het cluster verplaatsen naar een andere resource groep of een ander abonnement wordt momenteel niet ondersteund.
-
-- Werkruimte koppeling naar cluster zal mislukken als deze is gekoppeld aan een ander cluster.
 
 - Lockbox is momenteel niet beschikbaar in China. 
 
-- [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) wordt automatisch geconfigureerd voor clusters die zijn gemaakt van oktober 2020 in ondersteunde regio's. U kunt controleren of uw cluster is geconfigureerd voor dubbele versleuteling door een GET-aanvraag op het cluster en de waarde van de eigenschap te bestuderen `"isDoubleEncryptionEnabled"` . Dit geldt `true` voor clusters waarvoor dubbele versleuteling is ingeschakeld. 
-  - Als u een cluster maakt en er een fout melding krijgt met de naam ' <regio-name> ondersteunt geen dubbele versleuteling voor clusters. ' kunt u het cluster nog steeds maken zonder dubbele versleuteling. Voeg `"properties": {"isDoubleEncryptionEnabled": false}` de eigenschap toe aan de hoofd tekst van de rest-aanvraag.
+- [Dubbele versleuteling](../../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption) wordt automatisch geconfigureerd voor clusters die zijn gemaakt van oktober 2020 in ondersteunde regio's. U kunt controleren of uw cluster is geconfigureerd voor dubbele versleuteling door een GET-aanvraag te verzenden naar het cluster en te zien dat de `isDoubleEncryptionEnabled` waarde `true` voor clusters is waarvoor dubbele versleuteling is ingeschakeld. 
+  - Als u een cluster maakt en er een fout melding krijgt met de naam ' <regio-name> ondersteunt geen dubbele versleuteling voor clusters. ' kunt u het cluster nog steeds maken zonder dubbele code ring door toe te voegen `"properties": {"isDoubleEncryptionEnabled": false}` in de hoofd tekst van de rest-aanvraag.
   - De instelling voor dubbele versleuteling kan niet worden gewijzigd nadat het cluster is gemaakt.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 
 - Als er een conflict fout optreedt tijdens het maken van een cluster, is het mogelijk dat u uw cluster in de afgelopen 14 dagen hebt verwijderd en dat het de status zacht verwijderen heeft. De cluster naam blijft gereserveerd tijdens de tijdelijke periode en u kunt geen nieuw cluster met die naam maken. De naam wordt vrijgegeven na de periode voor voorlopig verwijderen wanneer het cluster permanent wordt verwijderd.
 
-- Als u het cluster bijwerkt terwijl er een bewerking wordt uitgevoerd, mislukt de bewerking.
+- Als u het cluster bijwerkt terwijl de status van het cluster wordt ingericht of bijgewerkt, mislukt de update.
 
 - Sommige bewerkingen zijn lang en kunnen even duren: Dit zijn clusters maken, cluster sleutel updates en cluster verwijdering. U kunt de bewerkings status op twee manieren controleren:
   - Wanneer u REST gebruikt, kopieert u de waarde van de Azure-AsyncOperation-URL uit het antwoord en volgt u de controle van de [asynchrone bewerkings status](#asynchronous-operations-and-status-check).
   - Verzend aanvraag verzenden naar cluster of werk ruimte en Bekijk het antwoord. Niet-gekoppelde werk ruimte heeft bijvoorbeeld niet de *clusterResourceId* onder *functies*.
+
+- Werkruimte koppeling naar cluster zal mislukken als deze is gekoppeld aan een ander cluster.
 
 - Foutberichten
   

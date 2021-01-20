@@ -9,12 +9,12 @@ ms.custom:
 - references_regions
 - fasttrack-edit
 - devx-track-azurecli
-ms.openlocfilehash: d944512e5f6126920ab4fba99fb70513b93177ba
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 26dd3f7df5a71c687bfb4935f290e7a54b4e01fe
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936818"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610264"
 ---
 # <a name="azure-functions-premium-plan"></a>Azure Functions Premium-abonnement
 
@@ -154,21 +154,23 @@ Het uitvoeren op een computer met meer geheugen betekent niet altijd dat uw func
 
 Een Java script-functie-app is bijvoorbeeld beperkt door de standaard limiet voor geheugen in Node.js. Als u deze limiet voor vaste geheugen wilt verhogen, voegt u de app-instelling `languageWorkers:node:arguments` met de waarde `--max-old-space-size=<max memory in MB>` .
 
+En voor abonnementen met meer dan 4 GB geheugen, moet u ervoor zorgen dat de platform instelling Bitness is ingesteld op `64 Bit` onder [algemene instellingen](/azure/app-service/configure-common#configure-general-settings).
+
 ## <a name="region-max-scale-out"></a>Schaal van regio Maxi maal
 
 Hieronder vindt u de momenteel ondersteunde maximum waarden voor scale-out voor één abonnement in elke regio en de configuratie van het besturings systeem. Als u een toename wilt aanvragen, kunt u een ondersteunings ticket openen.
 
 Bekijk de volledige regionale Beschik baarheid van functies op de [Azure-website](https://azure.microsoft.com/global-infrastructure/services/?products=functions).
 
-|Region| Windows | Linux |
+|Regio| Windows | Linux |
 |--| -- | -- |
 |Australië - centraal| 100 | Niet beschikbaar |
 |Australië - centraal 2| 100 | Niet beschikbaar |
 |Australië - oost| 100 | 20 |
-|Australia Southeast | 100 | 20 |
-|Brazil South| 100 | 20 |
+|Australië - zuidoost | 100 | 20 |
+|Brazilië - zuid| 100 | 20 |
 |Canada - midden| 100 | 20 |
-|Central US| 100 | 20 |
+|VS - centraal| 100 | 20 |
 |China - oost 2| 100 | 20 |
 |China - noord 2| 100 | 20 |
 |Azië - oost| 100 | 20 |
@@ -176,14 +178,14 @@ Bekijk de volledige regionale Beschik baarheid van functies op de [Azure-website
 |VS - oost 2| 100 | 20 |
 |Frankrijk - centraal| 100 | 20 |
 |Duitsland - west-centraal| 100 | Niet beschikbaar |
-|Japan East| 100 | 20 |
+|Japan - oost| 100 | 20 |
 |Japan - west| 100 | 20 |
 |Korea - centraal| 100 | 20 |
 |Korea - zuid| Niet beschikbaar | 20 |
 |VS - noord-centraal| 100 | 20 |
 |Europa - noord| 100 | 20 |
 |Noorwegen - oost| 100 | 20 |
-|South Central US| 100 | 20 |
+|VS - zuid-centraal| 100 | 20 |
 |India - zuid | 100 | Niet beschikbaar |
 |Azië - zuidoost| 100 | 20 |
 |Zwitserland - noord| 100 | Niet beschikbaar |

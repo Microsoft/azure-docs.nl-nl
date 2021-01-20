@@ -2,17 +2,17 @@
 title: Fout door taak grootte overschreden
 description: Hierin wordt beschreven hoe u fouten oplost wanneer de taak grootte of sjabloon te groot is.
 ms.topic: troubleshooting
-ms.date: 10/07/2020
-ms.openlocfilehash: 638bdef246fc908ab997bfb99e7526febdb3792e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/19/2021
+ms.openlocfilehash: 1fde4918aff6e3bf494876f83c5b4313b3c5f3d2
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91822153"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610400"
 ---
 # <a name="resolve-errors-for-job-size-exceeded"></a>Fouten oplossen voor de taak grootte is overschreden
 
-In dit artikel wordt beschreven hoe u de **JobSizeExceededException** -en **DeploymentSizeExceededException** -fouten kunt oplossen.
+In dit artikel wordt beschreven hoe u de **JobSizeExceededException** -en **DeploymentJobSizeExceededException** -fouten kunt oplossen.
 
 ## <a name="symptom"></a>Symptoom
 
@@ -20,9 +20,12 @@ Wanneer u een sjabloon implementeert, wordt er een fout melding weer gegeven dat
 
 ## <a name="cause"></a>Oorzaak
 
-U kunt deze fout ophalen wanneer de grootte van uw sjabloon groter is dan 4 MB. De limiet van 4 MB is van toepassing op de uiteindelijke status van de sjabloon nadat deze is uitgebreid voor resource definities die gebruikmaken van [kopiëren](copy-resources.md) om veel instanties te maken. De uiteindelijke status bevat ook de opgeloste waarden voor variabelen en para meters.
+U krijgt deze fout melding wanneer de implementatie een van de toegestane limieten overschrijdt. Normaal gesp roken ziet u deze fout wanneer uw sjabloon of de taak waarmee de implementatie wordt uitgevoerd te groot is.
 
-De implementatie taak bevat ook meta gegevens over de aanvraag. Voor grote sjablonen kan de meta gegevens die in combi natie met de sjabloon worden gecombineerd de toegestane grootte voor een taak overschrijden.
+De implementatie taak mag niet groter zijn dan 1 MB. De taak bevat meta gegevens over de aanvraag. Voor grote sjablonen kan de meta gegevens die in combi natie met de sjabloon worden gecombineerd de toegestane grootte voor een taak overschrijden.
+
+
+De sjabloon mag niet groter zijn dan 4 MB. De limiet van 4 MB is van toepassing op de uiteindelijke status van de sjabloon nadat deze is uitgebreid voor resource definities die gebruikmaken van [kopiëren](copy-resources.md) om veel instanties te maken. De uiteindelijke status bevat ook de opgeloste waarden voor variabelen en para meters.
 
 Andere limieten voor de sjabloon zijn:
 
@@ -44,4 +47,4 @@ Probeer de lengte van de namen die u gebruikt voor [para meters](template-parame
 
 ## <a name="solution-3---use-serial-copy"></a>Oplossing 3: een seriële kopie gebruiken
 
-De tweede optie is om uw kopie-lus te wijzigen van [parallel naar seriële verwerking](copy-resources.md#serial-or-parallel). Gebruik deze optie alleen als u vermoedt dat de fout afkomstig is van het implementeren van een groot aantal resources via een kopie. Met deze wijziging kan uw implementatie tijd aanzienlijk toenemen omdat de resources niet parallel worden geïmplementeerd.
+Overweeg om uw kopie-lus [te wijzigen van parallel naar seriële verwerking](copy-resources.md#serial-or-parallel). Gebruik deze optie alleen als u vermoedt dat de fout afkomstig is van het implementeren van een groot aantal resources via een kopie. Met deze wijziging kan uw implementatie tijd aanzienlijk toenemen omdat de resources niet parallel worden geïmplementeerd.

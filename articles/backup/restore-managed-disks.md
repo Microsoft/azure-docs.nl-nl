@@ -3,12 +3,12 @@ title: Azure Managed Disks herstellen
 description: Meer informatie over het herstellen van Azure Managed Disks vanuit de Azure Portal.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 043a10a7359c95529ff1c4dcc181ea4aba75cb5f
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 848a7476b1c5095d4e4d3156d4c7ce33da777090
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98557833"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98611131"
 ---
 # <a name="restore-azure-managed-disks-in-preview"></a>Azure Managed Disks herstellen (in preview-versie)
 
@@ -65,6 +65,8 @@ De volgende vereisten zijn vereist voor het uitvoeren van een herstel bewerking:
     >Terwijl de roltoewijzingen op de juiste manier worden weer gegeven in de portal, kan het ongeveer 15 minuten duren voordat de machtiging wordt toegepast op de beheerde identiteit van de back-upkluis.
     >
     >Tijdens geplande back-ups of een back-upbewerking op aanvraag, Azure Backup slaat de incrementele moment opnamen van de schijf op in de momentopname resource groep die is gegeven tijdens het configureren van de back-up van de schijf. Azure Backup maakt gebruik van deze incrementele moment opnamen tijdens de herstel bewerking. Als de moment opnamen worden verwijderd of verplaatst van de resource groep voor moment opnamen of als de functie toewijzingen van de back-upkluis zijn ingetrokken voor de resource groep voor moment opnamen, mislukt de herstel bewerking.
+
+1. Als de schijf die moet worden hersteld, is versleuteld met door de [klant beheerde sleutels (CMK)](https://docs.microsoft.com/azure/virtual-machines/disks-enable-customer-managed-keys-portal) of met [dubbele versleuteling met door het platform beheerde sleutels en door de klant beheerde sleutels](https://docs.microsoft.com/azure/virtual-machines/disks-enable-double-encryption-at-rest-portal), wijst u de machtiging **Lees** functie toe aan de beheerde identiteit van de back-upkluis op de **schijf Encryption set** resource.
 
 Als aan de vereisten wordt voldaan, voert u de volgende stappen uit om de herstel bewerking uit te voeren.
 

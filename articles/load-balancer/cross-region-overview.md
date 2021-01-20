@@ -13,12 +13,12 @@ ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: allensu
 ms.custom: references_regions
-ms.openlocfilehash: 8a2ad6cea4ab97742261b1cfd84975b243a46e87
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 4a9663e1356f616ed5f428c993f3367ce67cdbb5
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96938712"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610909"
 ---
 # <a name="cross-region-load-balancer-preview"></a>Load balancer voor meerdere regio's (preview-versie)
 
@@ -35,7 +35,7 @@ Azure Standard Load Balancer ondersteunt taak verdeling tussen regio's, waarbij 
 * [Bouwen op bestaande Load Balancer](#build-cross-region-solution-on-existing-azure-load-balancer) oplossing zonder leer curve
 
 > [!IMPORTANT]
-> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie en is verborgen in de preview-portal. Meld u aan om **https://preview.portal.azure.com** de functie weer te geven en te implementeren.. </br> </br>
+> De load balancer voor meerdere regio's is momenteel beschikbaar als preview-versie en kan worden geïmplementeerd in de portal. Meld u aan om **https://portal.azure.com** de functie weer te geven en te implementeren.. </br> </br>
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 De taak verdeling tussen regio's biedt dezelfde voor delen van hoge prestaties en lage latentie als regionale standaard load balancer. 
@@ -101,7 +101,7 @@ In de **regio thuis** wordt de Load Balancer van de Kruis regio geïmplementeerd
 * VS - west
 * Europa -west
 * Azië - zuidoost
-* Central US
+* VS - centraal
 * Europa - noord
 * Azië - oost
 
@@ -126,10 +126,10 @@ De load balancer over meerdere regio's stuurt het verkeer naar de juiste regiona
 * Verenigd Koninkrijk Zuid 
 * Azië - zuidoost 
 * VS - noord-centraal 
-* Japan East 
+* Japan - oost 
 * Azië - oost 
 * VS - west-centraal 
-* Australia Southeast 
+* Australië - zuidoost 
 * Australië - oost 
 * India - centraal 
 

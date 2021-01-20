@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 11/04/2019
 ms.author: karler
 ms.custom: devx-track-java, devx-track-azurecli
-ms.openlocfilehash: 20792d58ab259f93d7725fbafda1507f9eddc740
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: 6be6ee87f760eec01dc9883f0e4ca39f73aaf050
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96862153"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602504"
 ---
 # <a name="tutorial-create-a-function-in-java-with-an-event-hub-trigger-and-an-azure-cosmos-db-output-binding"></a>Zelfstudie: Een functie maken in Java met een Event Hub-trigger en een Azure Cosmos DB-uitvoerbinding
 
@@ -369,6 +369,7 @@ mvn archetype:generate --batch-mode \
     -DarchetypeArtifactId=azure-functions-archetype \
     -DappName=$FUNCTION_APP \
     -DresourceGroup=$RESOURCE_GROUP \
+    -DappRegion=$LOCATION \
     -DgroupId=com.example \
     -DartifactId=telemetry-functions
 ```
@@ -381,6 +382,7 @@ mvn archetype:generate --batch-mode ^
     -DarchetypeArtifactId=azure-functions-archetype ^
     -DappName=%FUNCTION_APP% ^
     -DresourceGroup=%RESOURCE_GROUP% ^
+    -DappRegion=%LOCATION% ^ 
     -DgroupId=com.example ^
     -DartifactId=telemetry-functions
 ```

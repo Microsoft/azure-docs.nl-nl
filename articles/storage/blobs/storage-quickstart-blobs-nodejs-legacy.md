@@ -3,17 +3,17 @@ title: 'Quickstart: Azure Blob Storage-clientbibliotheek v10 voor JavaScript'
 description: Containers maken, uploaden en verwijderen in Node.js met behulp van de Azure Storage-clientbibliotheek v10 voor JavaScript
 author: mhopkins-msft
 ms.author: mhopkins
-ms.date: 07/24/2020
+ms.date: 01/19/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 1f47c35997fe060fd3c318602bcad17de83b530c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 2371c789b9e4a9fc70f4207fd8a634e419c97912
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91249617"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599453"
 ---
 # <a name="quickstart-manage-blobs-with-javascript-v10-sdk-in-nodejs"></a>Quickstart: Blobs beheren met JavaScript v10 SDK in Node.js
 
@@ -139,7 +139,7 @@ const ONE_MEGABYTE = 1024 * 1024;
 const FOUR_MEGABYTES = 4 * ONE_MEGABYTE;
 ```
 
-Aanvragen van de API kunnen zo worden ingesteld dat deze na een bepaalde periode een time-out bereiken. De [Aborter](/javascript/api/%40azure/storage-blob/aborter?view=azure-node-legacy)-klasse is verantwoordelijk voor het beheren van hoe time-outs van aanvragen worden behandeld en de volgende constante wordt gebruikt voor het definiëren van de time-outs die in dit voorbeeld worden gebruikt.
+Aanvragen van de API kunnen zo worden ingesteld dat deze na een bepaalde periode een time-out bereiken. De [Aborter](/javascript/api/%40azure/storage-blob/aborter?view=azure-node-legacy&preserve-view=true)-klasse is verantwoordelijk voor het beheren van hoe time-outs van aanvragen worden behandeld en de volgende constante wordt gebruikt voor het definiëren van de time-outs die in dit voorbeeld worden gebruikt.
 
 ```javascript
 const ONE_MINUTE = 60 * 1000;
@@ -178,13 +178,13 @@ const serviceURL = new ServiceURL(`https://${STORAGE_ACCOUNT_NAME}.blob.core.win
 
 De volgende klassen worden gebruikt in dit codeblok:
 
-- De klasse [SharedKeyCredential](/javascript/api/%40azure/storage-blob/sharedkeycredential?view=azure-node-legacy) is verantwoordelijk voor het verpakken van opslagaccountreferenties om deze door te geven aan een aanvraagpijplijn.
+- De klasse [SharedKeyCredential](/javascript/api/%40azure/storage-blob/sharedkeycredential?view=azure-node-legacy&preserve-view=true) is verantwoordelijk voor het verpakken van opslagaccountreferenties om deze door te geven aan een aanvraagpijplijn.
 
-- De klasse [StorageURL](/javascript/api/%40azure/storage-blob/storageurl?view=azure-node-legacy) is verantwoordelijk voor het maken van een nieuwe pijplijn.
+- De klasse [StorageURL](/javascript/api/%40azure/storage-blob/storageurl?view=azure-node-legacy&preserve-view=true) is verantwoordelijk voor het maken van een nieuwe pijplijn.
 
-- De [ServiceURL](/javascript/api/%40azure/storage-blob/serviceurl?view=azure-node-legacy) modelleert een URL die wordt gebruikt in de REST-API. Met instanties van deze klasse kunt u acties uitvoeren zoals het weergeven van een lijst met containers en het leveren van contextinformatie om container-URL's te genereren.
+- De [ServiceURL](/javascript/api/%40azure/storage-blob/serviceurl?view=azure-node-legacy&preserve-view=true) modelleert een URL die wordt gebruikt in de REST-API. Met instanties van deze klasse kunt u acties uitvoeren zoals het weergeven van een lijst met containers en het leveren van contextinformatie om container-URL's te genereren.
 
-Het exemplaar *ServiceURL* wordt gebruikt met de exemplaren [ContainerURL](/javascript/api/%40azure/storage-blob/containerurl?view=azure-node-legacy) en [BlockBlobURL](/javascript/api/%40azure/storage-blob/blockbloburl?view=azure-node-legacy) om containers en blobs in uw opslagaccount te beheren.
+Het exemplaar *ServiceURL* wordt gebruikt met de exemplaren [ContainerURL](/javascript/api/%40azure/storage-blob/containerurl?view=azure-node-legacy&preserve-view=true) en [BlockBlobURL](/javascript/api/%40azure/storage-blob/blockbloburl?view=azure-node-legacy&preserve-view=true) om containers en blobs in uw opslagaccount te beheren.
 
 ```javascript
 const containerURL = ContainerURL.fromServiceURL(serviceURL, containerName);

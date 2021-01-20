@@ -35,6 +35,8 @@
       href: Face-API-How-to-Topics/specify-recognition-model.md
     - name: Een model voor gezichtsdetectie opgeven
       href: Face-API-How-to-Topics/specify-detection-model.md
+    - name: Latentie beperken bij het gebruik van de Face-service
+      href: Face-API-How-to-Topics/how-to-mitigate-latency.md
     - name: De functie Grootschalig gebruiken
       href: Face-API-How-to-Topics/how-to-use-large-scale.md
     - name: Video's in realtime analyseren

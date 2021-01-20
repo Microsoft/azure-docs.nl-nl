@@ -1,0 +1,257 @@
+---
+title: Inkomende synchronisatie voor Cloud synchronisatie met behulp van MS Graph API
+description: In dit onderwerp wordt beschreven hoe u binnenkomende synchronisatie inschakelt met alleen de Graph API
+services: active-directory
+author: billmath
+manager: daveba
+ms.service: active-directory
+ms.workload: identity
+ms.topic: conceptual
+ms.date: 12/04/2020
+ms.subservice: hybrid
+ms.author: billmath
+ms.collection: M365-identity-device-management
+ms.openlocfilehash: e65569cadd8f778a94f93aa22dd3924c52ff12f8
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98613384"
+---
+# <a name="inbound-synchronization-for-cloud-sync-using-ms-graph-api"></a>Inkomende synchronisatie voor Cloud synchronisatie met behulp van MS Graph API
+
+In het volgende document wordt beschreven hoe u een volledig nieuw synchronisatie profiel repliceert met alleen MSGraph-Api's.  
+De structuur van dit proces bestaat uit de volgende stappen.  Dit zijn:
+
+- [Basisconfiguratie](#basic-setup)
+- [Service-principals maken](#create-service-principals)
+- [Synchronisatie taak maken](#create-sync-job)
+- [Beoogd domein bijwerken](#update-targeted-domain)
+- [Synchronisatie van wacht woord-hashes inschakelen](#enable-sync-password-hashes-on-configuration-blade)
+- [Synchronisatie taak starten](#start-sync-job)
+- [Beoordelings status](#review-status)
+
+Gebruik deze [Microsoft Azure Active Directory-module voor Windows PowerShell](https://docs.microsoft.com/powershell/module/msonline/) opdrachten om synchronisatie in te scha kelen voor een productie Tenant, een vereiste om de beheer webservice aan te roepen voor die Tenant.
+
+## <a name="basic-setup"></a>Basisconfiguratie
+
+### <a name="enable-tenant-flags"></a>Tenant vlaggen inschakelen
+
+ ```PowerShell
+ Connect-MsolService ('-AzureEnvironment <AzureEnvironmnet>')
+ Set-MsolDirSyncEnabled -EnableDirSync $true
+ ```
+De eerste van deze twee opdrachten vereisen Azure Active Directory referenties. Deze Commandlets identificeren impliciet de Tenant en scha kelen deze in voor synchronisatie.
+
+## <a name="create-service-principals"></a>Service-principals maken
+Vervolgens moet u de [AD2AAD-toepassing/Service-Principal](/graph/api/applicationtemplate-instantiate?view=graph-rest-beta&tabs=http) maken
+
+U moet deze toepassings-ID 1a4721b3-e57f-4451-ae87-ef078703ec94 gebruiken. DisplayName is de URL van het AD-domein als deze wordt gebruikt in de portal (bijvoorbeeld contoso.com), maar het kan een andere naam hebben.
+
+ ```
+ POST https://graph.microsoft.com/beta/applicationTemplates/1a4721b3-e57f-4451-ae87-ef078703ec94/instantiate
+ Content-type: application/json
+ {
+    displayName: [your app name here]
+ }
+ ```
+
+
+## <a name="create-sync-job"></a>Synchronisatie taak maken
+De uitvoer van de bovenstaande opdracht retourneert het objectId van de service-principal die is gemaakt. Voor dit voor beeld is de objectId 614ac0e9-a59b-481f-bd8f-79a73d167e1c.  Gebruik Microsoft Graph om een synchronizationJob toe te voegen aan die service-principal.  
+
+Documentatie over het maken van een synchronisatie taak vindt u [hier](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-beta&tabs=http).
+
+Als u de bovenstaande ID niet hebt geregistreerd, kunt u de Service-Principal vinden door de volgende MS Graph-aanroep uit te voeren. U hebt Directory. Read. alle machtigingen nodig om de volgende aanroep uit te voeren:
+ 
+ `GET https://graph.microsoft.com/beta/servicePrincipals `
+
+Zoek vervolgens naar de naam van uw app in de uitvoer.
+
+Voer de volgende twee opdrachten uit om twee taken te maken: één voor het inrichten van de gebruiker/groep en een voor het synchroniseren van wacht woord-hashes. De aanvraag is twee maal hetzelfde, maar met andere sjabloon-Id's.
+
+
+Roep de volgende twee aanvragen aan:
+
+ ```
+ POST https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/jobs
+ Content-type: application/json
+ {
+ "templateId":"AD2AADProvisioning"
+ } 
+ ```
+
+ ```
+ POST https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/jobs
+ Content-type: application/json
+ {
+ "templateId":"AD2AADPasswordHash"
+ }
+ ```
+
+U hebt twee aanroepen nodig als u beide wilt maken.
+
+Voor beeld van retour waarde (voor inrichting):
+
+ ```
+HTTP 201/Created
+{
+    "@odata.context": "https://graph.microsoft.com/beta/$metadata#servicePrincipals('614ac0e9-a59b-481f-bd8f-79a73d167e1c')/synchronization/jobs/$entity",
+    "id": "AD2AADProvisioning.fc96887f36da47508c935c28a0c0b6da",
+    "templateId": "ADDCInPassthrough",
+    "schedule": {
+        "expiration": null,
+        "interval": "PT40M",
+        "state": "Disabled"
+    },
+    "status": {
+        "countSuccessiveCompleteFailures": 0,
+        "escrowsPruned": false,
+        "code": "Paused",
+        "lastExecution": null,
+        "lastSuccessfulExecution": null,
+        "lastSuccessfulExecutionWithExports": null,
+        "quarantine": null,
+        "steadyStateFirstAchievedTime": "0001-01-01T00:00:00Z",
+        "steadyStateLastAchievedTime": "0001-01-01T00:00:00Z",
+        "troubleshootingUrl": null,
+        "progress": [],
+        "synchronizedEntryCountByType": []
+    }
+}
+```
+
+## <a name="update-targeted-domain"></a>Beoogd domein bijwerken
+Voor deze Tenant zijn de object-id en toepassings-id van de Service-Principal als volgt:
+
+ObjectId: 8895955e-2e6c-4d79-8943-4d72ca36878f AppId: 00000014-0000-0000-C000-000000000000 te gebruiken DisplayName: testApp
+
+We moeten het domein bijwerken waarop deze configuratie is gericht, zodat de geheimen voor dit domein worden bijgewerkt.
+
+Zorg ervoor dat de domein naam die u gebruikt dezelfde URL is die u hebt ingesteld voor uw on-premises domein controller
+
+ ```
+ PUT – https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/secrets
+ ```
+ Voeg het volgende sleutel/waarde-paar toe in de onderstaande matrix waarde, op basis van wat u probeert te doen:
+ - Tenant vlaggen voor zowel PHS als synchronisatie inschakelen {Key: "AppKey", waarde: "{" appKeyScenario ":" AD2AADPasswordHash "}"}
+ 
+ - Alleen Tenant vlag voor synchronisatie inschakelen (PHS niet inschakelen) {Key: "AppKey", waarde: "{" appKeyScenario ":" AD2AADProvisioning "}"}
+ ```
+ Request body –
+ {
+    "value": [
+               {
+                 "key": "Domain",
+                 "value": "{\"domain\":\"ad2aadTest.com\"}"
+               }
+             ]
+  }
+```
+
+De verwachte reactie is... HTTP 204/geen inhoud
+
+Hier is de gemarkeerde ' domein ' waarde de naam van het on-premises Active Directory domein waarvan de vermeldingen moeten worden ingericht voor Azure Active Directory.
+
+## <a name="enable-sync-password-hashes-on-configuration-blade"></a>Synchronisatie van wacht woord-hashes op de Blade van de configuratie inschakelen
+
+ Deze sectie heeft betrekking op het inschakelen van synchronisatie van wacht woord-hashes voor een bepaalde configuratie. Dit wijkt af van het AppKey-geheim waarmee de functie vlag op Tenant niveau wordt ingeschakeld. Dit geldt alleen voor één domein/configuratie. U moet de toepassings sleutel op de PHS instellen om deze te laten eindigen op het einde.
+
+1. Het schema opruimen (waarschuwing dit is tamelijk groot) 
+ ```
+ GET –https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/jobs/ [AD2AADProvisioningJobId]/schema
+ ```
+2. Deze CredentialData-kenmerk toewijzing volgen:
+ ``` 
+ {
+ "defaultValue": null,
+ "exportMissingReferences": false,
+ "flowBehavior": "FlowWhenChanged",
+ "flowType": "Always",
+ "matchingPriority": 0,
+ "targetAttributeName": "CredentialData",
+ "source": {
+ "expression": "[PasswordHash]",
+ "name": "PasswordHash",
+ "type": "Attribute",
+ "parameters": []
+ }
+ ```
+3. Zoek de volgende object toewijzingen met de volgende namen in het schema
+ - Active Directory gebruikers inrichten
+ - Active Directory inetOrgPersons inrichten
+
+ Object toewijzingen bevinden zich in het schema. synchronizationRules [0]. objectMappings (voor nu kunt u aannemen dat er slechts één synchronisatie regel is)
+
+4. Voer de CredentialData-toewijzing uit stap (2) uit en voeg deze in de object toewijzingen in stap (3)
+
+ De object toewijzing ziet er ongeveer als volgt uit:
+ ```
+ {
+ "enabled": true,
+ "flowTypes": "Add,Update,Delete",
+ "name": "Provision Active Directory users",
+ "sourceObjectName": "user",
+ "targetObjectName": "User",
+ "attributeMappings": [
+ ...
+ } 
+ ```
+ Kopieer/Plak de toewijzing van de bovenstaande stap voor het **maken van AD2AADProvisioning-en AD2AADPasswordHash-taken** in de attributeMappings-matrix. 
+
+ De volg orde van de elementen in deze matrix is niet van belang (de back-end wordt voor u gesorteerd). Wees voorzichtig met het toevoegen van deze kenmerk toewijzing als de naam al bestaat in de matrix (bijvoorbeeld als er al een item in attributeMappings is met de targetAttributeName CredentialData). er kunnen zich dan conflicterende fouten voordoen, of de bestaande en nieuwe toewijzingen kunnen samen worden gecombineerd (doorgaans geen gewenst resultaat). Back-end ontdubbelt niet voor u. 
+
+ Vergeet niet voor zowel gebruikers als inetOrgpersons
+
+5. Sla het schema op dat u hebt gemaakt 
+ ```
+ PUT –
+ https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/jobs/ [AD2AADProvisioningJobId]/schema
+```
+
+ Voeg het schema toe aan de hoofd tekst van de aanvraag. 
+
+## <a name="start-sync-job"></a>Synchronisatie taak starten
+De taak kan opnieuw worden opgehaald via de volgende opdracht:
+
+ `GET https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/jobs/ ` 
+
+Documentatie voor het ophalen van taken vindt u [hier](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-beta&tabs=http). 
+ 
+Als u de taak wilt starten, geeft u deze aanvraag uit met het objectId van de service-principal die u in de eerste stap hebt gemaakt en de taak-id die is geretourneerd door de aanvraag die de taak heeft gemaakt.
+
+Documentatie over het starten van een taak vindt u [hier](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta&tabs=http). 
+
+ ```
+ POST  https://graph.microsoft.com/beta/servicePrincipals/8895955e-2e6c-4d79-8943-4d72ca36878f/synchronization/jobs/AD2AADProvisioning.fc96887f36da47508c935c28a0c0b6da/start
+ ```
+
+De verwachte reactie is... HTTP 204/geen-inhoud.
+
+Andere opdrachten voor het beheren van de taak worden [hier](https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-beta)beschreven.
+ 
+Als u een taak opnieuw wilt starten, gebruikt u...
+
+ ```
+ POST  https://graph.microsoft.com/beta/servicePrincipals/8895955e-2e6c-4d79-8943-4d72ca36878f/synchronization/jobs/AD2AADProvisioning.fc96887f36da47508c935c28a0c0b6da/restart
+ {
+   "criteria": {
+       "resetScope": "Full"
+   }
+ }
+ ```
+
+## <a name="review-status"></a>Beoordelings status
+De status van uw taak ophalen via...
+
+ ```
+ GET https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/jobs/ 
+ ```
+
+Zoek in de sectie ' status ' van het object Return naar relevante Details
+
+## <a name="next-steps"></a>Volgende stappen 
+
+- [Wat is Azure AD Connect Cloud synchronisatie?](what-is-cloud-sync.md)
+- [Transformaties](how-to-transformation.md)
+- [Azure AD-synchronisatie-API](https://docs.microsoft.com/graph/api/resources/synchronization-overview?view=graph-rest-beta)

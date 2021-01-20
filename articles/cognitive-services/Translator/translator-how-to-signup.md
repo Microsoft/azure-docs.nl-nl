@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 05/26/2020
 ms.author: swmachan
-ms.openlocfilehash: a9050b85c974a3c04ca717e8fe3d5188c1bf7a40
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6773c6b29ecfd8354c54a6214cfe0b4050edcd38
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88244309"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602646"
 ---
 # <a name="how-to-sign-up-for-translator"></a>Aanmelden voor Translator
 
@@ -41,7 +41,7 @@ Nadat u zich hebt aangemeld bij de portal, kunt u als volgt een abonnement op Tr
 Wanneer u zich aanmeldt voor Translator, krijgt u een persoonlijke toegangs sleutel die uniek is voor uw abonnement. Deze sleutel is vereist voor elke aanroep van het conversie programma.
 
 1. Haal eerst het juiste abonnement op om uw verificatie sleutel op te halen.
-1. Selecteer **sleutels** in het gedeelte **resource beheer** van de details van uw abonnement.
+1. Selecteer **sleutels en eind punt** in het gedeelte **resource beheer** van de details van uw abonnement.
 1. Kopieer een van de sleutels die worden vermeld voor uw abonnement.
 
 ## <a name="learn-test-and-get-support"></a>Meer informatie over ondersteuning, testen en verkrijgen
@@ -55,7 +55,7 @@ Micro soft Translator zorgt er in het algemeen voor dat uw eerste paar aanvragen
 
 - [Translator](https://azure.microsoft.com/pricing/details/cognitive-services/translator-text-api/)
 
-## <a name="customization"></a>Aanpassen
+## <a name="customization"></a>Aanpassing
 
 Gebruik aangepaste vertaler om uw vertalingen aan te passen en een Vertaal systeem te maken dat is afgestemd op uw eigen terminologie en stijl, vanaf algemene micro soft Translator Neural machine translation-systemen. [Meer informatie](customization.md)
 

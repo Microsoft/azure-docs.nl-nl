@@ -9,12 +9,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 06/11/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 6bbf87689b577eda7de491744156e63eaa3b440c
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: e537c964d6063b76df63b3d80c5ef72b1ea56c92
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96546876"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600247"
 ---
 # <a name="migrate-your-application-to-use-the-azure-cosmos-db-java-sdk-v4"></a>Uw toepassing migreren om de Azure Cosmos DB Java SDK v4 te gebruiken
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -90,7 +90,8 @@ In de Azure Cosmos DB Java SDK 3. x. x wordt het `CosmosItemProperties` object b
 ### <a name="imports"></a>Rusland
 
 * De Azure Cosmos DB Java SDK 4,0-pakketten beginnen met `com.azure.cosmos`
-  * Azure Cosmos DB Java SDK 3. x. x-pakketten beginnen met `com.azure.data.cosmos`
+* Azure Cosmos DB Java SDK 3. x. x-pakketten beginnen met `com.azure.data.cosmos`
+* Azure Cosmos DB Java SDK 2. x. x Sync API-pakketten beginnen met `com.microsoft.azure.documentdb`
 
 * Azure Cosmos DB Java SDK 4,0 worden verschillende klassen in een genest pakket geplaatst `com.azure.cosmos.models` . Enkele van deze pakketten zijn:
 
@@ -114,7 +115,7 @@ Dit wijkt af van Azure Cosmos DB Java SDK 3. x. x, waarmee een fluent interface 
 
 ### <a name="create-resources"></a>Resources maken
 
-Het volgende code fragment toont de verschillen in de manier waarop resources worden gemaakt tussen de 4,0-en 3. x. x async-Api's:
+Het volgende code fragment toont de verschillen in de manier waarop resources worden gemaakt tussen de 4,0, 3. x. x async Api's en 2. x. x Sync Api's:
 
 # <a name="java-sdk-40-async-api"></a>[Asynchrone API voor Java SDK 4,0](#tab/java-v4-async)
 
@@ -150,11 +151,38 @@ client.createDatabaseIfNotExists("YourDatabaseName")
         return Mono.empty();
 }).subscribe();
 ```
+
+# <a name="java-sdk-2xx-sync-api"></a>[Java SDK 2. x. x Sync API](#tab/java-v2-sync)
+
+```java
+ConnectionPolicy defaultPolicy = ConnectionPolicy.GetDefault();
+//  Setting the preferred location to Cosmos DB Account region
+defaultPolicy.setPreferredLocations(Lists.newArrayList("Your Account Location"));
+
+//  Create document client
+//  <CreateDocumentClient>
+client = new DocumentClient("your.hostname", "your.masterkey", defaultPolicy, ConsistencyLevel.Eventual)
+
+// Create database with specified name
+Database databaseDefinition = new Database();
+databaseDefinition.setId("YourDatabaseName");
+ResourceResponse<Database> databaseResourceResponse = client.createDatabase(databaseDefinition, new RequestOptions());
+
+// Read database with specified name
+String databaseLink = "dbs/YourDatabaseName";
+databaseResourceResponse = client.readDatabase(databaseLink, new RequestOptions());
+Database database = databaseResourceResponse.getResource();
+
+// Create container with specified name
+DocumentCollection documentCollection = new DocumentCollection();
+documentCollection.setId("YourContainerName");
+documentCollection = client.createCollection(database.getSelfLink(), documentCollection, new RequestOptions()).getResource();
+```
 ---
 
 ### <a name="item-operations"></a>Item bewerkingen
 
-Het volgende code fragment toont de verschillen in hoe item bewerkingen worden uitgevoerd tussen de 4,0-en 3. x. x async-Api's:
+Het volgende code fragment toont de verschillen in de manier waarop item bewerkingen worden uitgevoerd tussen de 4,0, 3. x. x async Api's en 2. x. x Sync Api's:
 
 # <a name="java-sdk-40-async-api"></a>[Asynchrone API voor Java SDK 4,0](#tab/java-v4-async)
 
@@ -172,11 +200,22 @@ Flux.fromIterable(docs)
     .flatMap(doc -> container.createItem(doc))
     .subscribe(); // ...Subscribing triggers stream execution.
 ```
+
+# <a name="java-sdk-2xx-sync-api"></a>[Java SDK 2. x. x Sync API](#tab/java-v2-sync)
+
+```java
+//  Container is created. Generate documents to insert.
+Document document = new Document();
+document.setId("YourDocumentId");
+ResourceResponse<Document> documentResourceResponse = client.createDocument(documentCollection.getSelfLink(), document,
+    new RequestOptions(), true);
+Document responseDocument = documentResourceResponse.getResource();
+```
 ---
 
 ### <a name="indexing"></a>Indexeren
 
-Het volgende code fragment toont de verschillen in de manier waarop indexering wordt gemaakt tussen de 4,0-en 3. x. x async-Api's:
+Het volgende code fragment toont de verschillen in de manier waarop indexering wordt gemaakt tussen de 4,0, 3. x. x async Api's en 2. x. x Sync Api's:
 
 # <a name="java-sdk-40-async-api"></a>[Asynchrone API voor Java SDK 4,0](#tab/java-v4-async)
 
@@ -196,7 +235,7 @@ List<IncludedPath> includedPaths = new ArrayList<>();
 IncludedPath includedPath = new IncludedPath();
 includedPath.path("/*");
 includedPaths.add(includedPath);
-indexingPolicy.setIncludedPaths(includedPaths);
+indexingPolicy.includedPaths(includedPaths);
 
 // Excluded paths
 List<ExcludedPath> excludedPaths = new ArrayList<>();
@@ -211,11 +250,39 @@ CosmosContainer containerIfNotExists = database.createContainerIfNotExists(conta
                                                .block()
                                                .container();
 ```
+
+# <a name="java-sdk-2xx-sync-api"></a>[Java SDK 2. x. x Sync API](#tab/java-v2-sync)
+
+```java
+// Custom indexing policy
+IndexingPolicy indexingPolicy = new IndexingPolicy();
+indexingPolicy.setIndexingMode(IndexingMode.Consistent); //To turn indexing off set IndexingMode.NONE
+
+// Included paths
+List<IncludedPath> includedPaths = new ArrayList<>();
+IncludedPath includedPath = new IncludedPath();
+includedPath.setPath("/*");
+includedPaths.add(includedPath);
+indexingPolicy.setIncludedPaths(includedPaths);
+
+// Excluded paths
+List<ExcludedPath> excludedPaths = new ArrayList<>();
+ExcludedPath excludedPath = new ExcludedPath();
+excludedPath.setPath("/name/*");
+excludedPaths.add(excludedPath);
+indexingPolicy.setExcludedPaths(excludedPaths);
+
+// Create container with specified name and indexing policy
+DocumentCollection documentCollection = new DocumentCollection();
+documentCollection.setId("YourContainerName");
+documentCollection.setIndexingPolicy(indexingPolicy);
+documentCollection = client.createCollection(database.getSelfLink(), documentCollection, new RequestOptions()).getResource();
+```
 ---
 
 ### <a name="stored-procedures"></a>Opgeslagen procedures
 
-Het volgende code fragment toont de verschillen in de manier waarop opgeslagen procedures worden gemaakt tussen de 4,0-en 3. x. x async-Api's:
+Het volgende code fragment toont de verschillen in de manier waarop opgeslagen procedures worden gemaakt tussen de 4,0, 3. x. x async Api's en 2. x. x Sync Api's:
 
 # <a name="java-sdk-40-async-api"></a>[Asynchrone API voor Java SDK 4,0](#tab/java-v4-async)
 
@@ -262,6 +329,45 @@ container.getScripts()
             return Mono.empty();
         }).block();
 ```
+
+# <a name="java-sdk-2xx-sync-api"></a>[Java SDK 2. x. x Sync API](#tab/java-v2-sync)
+
+```java
+logger.info("Creating stored procedure...\n");
+
+String sprocId = "createMyDocument";
+String sprocBody = "function createMyDocument() {\n" +
+    "var documentToCreate = {\"id\":\"test_doc\"}\n" +
+    "var context = getContext();\n" +
+    "var collection = context.getCollection();\n" +
+    "var accepted = collection.createDocument(collection.getSelfLink(), documentToCreate,\n" +
+    "    function (err, documentCreated) {\n" +
+    "if (err) throw new Error('Error' + err.message);\n" +
+    "context.getResponse().setBody(documentCreated.id)\n" +
+    "});\n" +
+    "if (!accepted) return;\n" +
+    "}";
+StoredProcedure storedProcedureDef = new StoredProcedure();
+storedProcedureDef.setId(sprocId);
+storedProcedureDef.setBody(sprocBody);
+StoredProcedure storedProcedure = client.createStoredProcedure(documentCollection.getSelfLink(), storedProcedureDef, new RequestOptions())
+                                        .getResource();
+
+// ...
+
+logger.info(String.format("Executing stored procedure %s...\n\n", sprocId));
+
+RequestOptions options = new RequestOptions();
+options.setPartitionKey(new PartitionKey("test_doc"));
+
+StoredProcedureResponse storedProcedureResponse =
+    client.executeStoredProcedure(storedProcedure.getSelfLink(), options, null);
+logger.info(String.format("Stored procedure %s returned %s (HTTP %d), at cost %.3f RU.\n",
+    sprocId,
+    storedProcedureResponse.getResponseAsString(),
+    storedProcedureResponse.getStatusCode(),
+    storedProcedureResponse.getRequestCharge()));
+```
 ---
 
 ### <a name="change-feed"></a>Feed wijzigen
@@ -306,11 +412,15 @@ ChangeFeedProcessor.Builder()
                             .subscribeOn(Schedulers.elastic())
                             .subscribe();
 ```
+
+# <a name="java-sdk-2xx-sync-api"></a>[Java SDK 2. x. x Sync API](#tab/java-v2-sync)
+
+* Deze functie wordt niet ondersteund voor de synchronisatie van Java SDK v2. 
 ---
 
 ### <a name="container-level-time-to-livettl"></a>Time-to-Live (TTL) op container niveau
 
-Het volgende code fragment toont de verschillen in het maken van time-to-Live voor gegevens in de container met behulp van de 4,0-en 3. x. x async-Api's:
+Het volgende code fragment toont de verschillen in het maken van time-to-Live voor gegevens in de container met behulp van de 4,0-, 3. x. x async-Api's en 2. x. x-synchronisatie-Api's:
 
 # <a name="java-sdk-40-async-api"></a>[Asynchrone API voor Java SDK 4,0](#tab/java-v4-async)
 
@@ -326,11 +436,21 @@ CosmosContainerProperties containerProperties = new CosmosContainerProperties("m
 containerProperties.defaultTimeToLive(90 * 60 * 60 * 24);
 container = database.createContainerIfNotExists(containerProperties, 400).block().container();
 ```
+
+# <a name="java-sdk-2xx-sync-api"></a>[Java SDK 2. x. x Sync API](#tab/java-v2-sync)
+
+```java
+DocumentCollection documentCollection;
+
+// Create a new container with TTL enabled with default expiration value
+documentCollection.setDefaultTimeToLive(90 * 60 * 60 * 24);
+documentCollection = client.createCollection(database.getSelfLink(), documentCollection, new RequestOptions()).getResource();
+```
 ---
 
 ### <a name="item-level-time-to-livettl"></a>Item niveau time-to-Live (TTL)
 
-Het volgende code fragment toont de verschillen in het maken van time-to-Live voor een item met behulp van de 4,0-en 3. x. x async-Api's:
+Het volgende code fragment toont de verschillen in het maken van time-to-Live voor een item met de 4,0-, 3. x. x async Api's en 2. x. x Sync-Api's:
 
 # <a name="java-sdk-40-async-api"></a>[Asynchrone API voor Java SDK 4,0](#tab/java-v4-async)
 
@@ -370,6 +490,17 @@ SalesOrder salesOrder = new SalesOrder(
     "CO18009186470",
     60 * 60 * 24 * 30  // Expire sales orders in 30 days
 );
+```
+
+# <a name="java-sdk-2xx-sync-api"></a>[Java SDK 2. x. x Sync API](#tab/java-v2-sync)
+
+```java
+Document document = new Document();
+document.setId("YourDocumentId");
+document.setTimeToLive(60 * 60 * 24 * 30 ); // Expire document in 30 days
+ResourceResponse<Document> documentResourceResponse = client.createDocument(documentCollection.getSelfLink(), document,
+    new RequestOptions(), true);
+Document responseDocument = documentResourceResponse.getResource();
 ```
 ---
 

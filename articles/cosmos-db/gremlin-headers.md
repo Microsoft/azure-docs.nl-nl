@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 09/03/2019
 author: christopheranderson
 ms.author: chrande
-ms.openlocfilehash: 3f5996b281c1985747f754e3796e9fb84f90fdd3
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 0442d21aebe1cf577c50d14a5aeff40bd1f6cd9c
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93356957"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600524"
 ---
 # <a name="azure-cosmos-db-gremlin-server-response-headers"></a>Gremlin server-antwoord headers Azure Cosmos DB
 [!INCLUDE[appliesto-gremlin-api](includes/appliesto-gremlin-api.md)]
@@ -23,7 +23,7 @@ Houd er rekening mee dat het afhankelijk maken van deze headers u de draag baarh
 
 ## <a name="headers"></a>Kopteksten
 
-| Koptekst | Type | Voorbeeld waarde | Indien opgenomen | Uitleg |
+| Header | Type | Voorbeeld waarde | Indien opgenomen | Uitleg |
 | --- | --- | --- | --- | --- |
 | **x-ms-request-charge** | double | 11,3243 | Geslaagde en mislukte bewerkingen | Hoeveelheid verzamelde of Data Base-door Voer in [aanvraag eenheden (ru/s of RUs)](request-units.md) voor een gedeeltelijk antwoord bericht. Deze header is bij elke voortzetting aanwezig voor aanvragen met meerdere segmenten. Het weerspiegelt de kosten van een bepaald segment van de reactie. Alleen voor aanvragen die bestaan uit een segment met één antwoord deze header komt overeen met de totale kosten van Trans Port. Voor het meren deel van complexe passages is deze waarde echter een gedeeltelijke kosten. |
 | **x-ms-total-request-charge** | double | 423,987 | Geslaagde en mislukte bewerkingen | Hoeveelheid gebruikte verzameling of data base in [aanvraag eenheden (ru/s of RUs)](request-units.md) voor volledige aanvraag. Deze header is bij elke voortzetting aanwezig voor aanvragen met meerdere segmenten. Dit duidt op cumulatieve kosten sinds het begin van de aanvraag. De waarde van deze koptekst in de laatste chunk geeft aan dat de kosten voor de aanvraag volledig zijn. |
@@ -36,13 +36,12 @@ Houd er rekening mee dat het afhankelijk maken van deze headers u de draag baarh
 
 ## <a name="status-codes"></a>Statuscodes
 
-De meest voorkomende status codes die door de server worden geretourneerd, worden hieronder weer gegeven.
+De meest voorkomende codes die `x-ms-status-code` door de server worden geretourneerd voor het status kenmerk, worden hieronder weer gegeven.
 
 | Status | Uitleg |
 | --- | --- |
 | **401** | Er wordt een fout bericht weer `"Unauthorized: Invalid credentials provided"` gegeven wanneer het verificatie wachtwoord niet overeenkomt met Cosmos DB account sleutel. Navigeer naar uw Cosmos DB Gremlin-account in de Azure Portal en controleer of de sleutel juist is.|
 | **404** | Gelijktijdige bewerkingen die tegelijkertijd proberen dezelfde rand of hoek punt te verwijderen en bij te werken. Foutbericht `"Owner resource does not exist"` geeft aan dat de opgegeven database of verzameling in de verbindingsparameters in de `/dbs/<database name>/colls/<collection or graph name>`-indeling onjuist is.|
-| **408** | `"Server timeout"` geeft aan dat het door lopen van meer dan **30 seconden** duurde en door de server is geannuleerd. Optimaliseer uw trans acties om snel uit te voeren door hoek punten of randen te filteren op elke hop van traversal om het zoek bereik te beperken.|
 | **409** | `"Conflicting request to resource has been attempted. Retry to avoid conflicts."` Dit gebeurt meestal wanneer een hoekpunt of rand met een id al in de graaf bestaat.| 
 | **412** | De status code wordt aangevuld met het fout bericht `"PreconditionFailedException": One of the specified pre-condition is not met` . Deze fout wordt weer gegeven bij een optimistische gelijktijdigheids schending van het lezen van een rand of hoek punt en het terugschrijven naar het archief na wijziging. De meest voorkomende situaties waarin deze fout optreedt, zijn bijvoorbeeld eigenschaps wijzigingen `g.V('identifier').property('name','value')` . De Gremlin-engine zou het hoek punt lezen, wijzigen en terugschrijven. Als er een andere Pass-bewerking gelijktijdig wordt uitgevoerd om hetzelfde hoek punt of een rand te schrijven, wordt deze fout weer gegeven. De toepassing moet opnieuw naar de server worden verzonden.| 
 | **429** | De aanvraag is beperkt en moet opnieuw worden uitgevoerd na een waarde in **x-MS-retry-na-MS**| 
@@ -53,6 +52,7 @@ De meest voorkomende status codes die door de server worden geretourneerd, worde
 | **1004** | Deze status code geeft de onjuiste grafiek aanvraag aan. De aanvraag kan een onjuiste indeling hebben wanneer het deserialiseren mislukt, het type zonder waarde wordt gedeserialiseerd als waardetype of niet-ondersteunde Gremlin bewerking aangevraagd. De toepassing mag de aanvraag niet opnieuw uitvoeren omdat deze niet is geslaagd. | 
 | **1007** | Normaal gesp roken wordt deze status code geretourneerd met het fout bericht `"Could not process request. Underlying connection has been closed."` . Deze situatie kan zich voordoen als het client stuur programma een verbinding probeert te gebruiken die door de server wordt gesloten. De toepassing moet het door lopen van een andere verbinding opnieuw proberen.
 | **1008** | Cosmos DB Gremlin-server kan de verbindingen beëindigen voor het opnieuw verdelen van verkeer in het cluster. Client Stuur Programma's moeten deze situatie afhandelen en alleen live-verbindingen gebruiken om aanvragen naar de server te verzenden. Af en toe kunnen client Stuur Programma's niet detecteren dat de verbinding is verbroken. Wanneer er een fout optreedt in een toepassing, `"Connection is too busy. Please retry after sometime or open more connections."` moet deze opnieuw worden gepasseerd op een andere verbinding.
+| **1009** | De bewerking is niet voltooid binnen de toegewezen tijd en is geannuleerd door de server. Optimaliseer uw door voeren om snel uit te voeren door hoek punten of randen te filteren op elke hop van het door lopen naar een beperkt zoek bereik. De standaard time-outwaarde is **60 seconden**. |
 
 ## <a name="samples"></a>Voorbeelden
 

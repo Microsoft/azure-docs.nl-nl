@@ -10,12 +10,12 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/08/2020
-ms.openlocfilehash: 81d9a6bcbd910a60e1f659e430bbe527eb3077c6
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 5be02ff698dac02d702e47f8929c6f8ddf2adbb7
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251740"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602552"
 ---
 # <a name="plan-and-manage-costs-for-azure-machine-learning"></a>Kosten plannen en beheren voor Azure Machine Learning
 
@@ -81,9 +81,9 @@ ws.delete(delete_dependent_resources=True)
 
 Als u de Azure Kubernetes-service (AKS) in uw werk ruimte maakt, of als u reken resources aan uw werk ruimte koppelt, moet u deze afzonderlijk in [Azure Portal](https://portal.azure.com)verwijderen.
 
-### <a name="using-monetary-credit-with-azure-machine-learning"></a>Monetair tegoed gebruiken met Azure Machine Learning
+### <a name="using-azure-prepayment-credit-with-azure-machine-learning"></a>Azure-vooruitbetalings tegoed gebruiken met Azure Machine Learning
 
-U kunt betalen voor Azure Machine Learning kosten met uw EA monetaire toezeg ging-tegoed. U kunt het tegoed van EA monetaire toezeg ging echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
+U kunt betalen voor Azure Machine Learning kosten met uw Azure-voor uitbetaling (voorheen monetaire toezeg ging genoemd)-tegoed. U kunt Azure-voor uitbetaling echter niet gebruiken om te betalen voor de kosten van producten en services van derden, inclusief die van de Azure Marketplace.
 
 
 ## <a name="create-budgets"></a>Budgetten maken

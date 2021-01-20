@@ -11,16 +11,16 @@ ms.author: cesardl
 author: CESARDELATORRE
 ms.reviewer: nibaccam
 ms.date: 06/16/2020
-ms.openlocfilehash: 8e749e5f6ea6bcf76a1b4f143bce03ceb41cbb07
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: a781900534156e455c125dffe3b1334820fdf4d5
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573289"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599063"
 ---
 # <a name="configure-data-splits-and-cross-validation-in-automated-machine-learning"></a>Gegevenssplitsingen en kruisvalidatie configureren in geautomatiseerde machine learning
 
-In dit artikel vindt u informatie over de verschillende opties voor het configureren van de splitsingen van trainings-en validatie gegevens en kruis validatie voor uw geautomatiseerde machine learning, automatische ML, experimenten.
+In dit artikel vindt u informatie over de verschillende opties voor het configureren van trainings gegevens en validatie gegevens gesplitst samen met instellingen voor kruis validatie voor uw geautomatiseerde machine learning, automatische ML, experimenten.
 
 Wanneer u in Azure Machine Learning gebruikmaakt van automatische ML om meerdere ML-modellen te bouwen, moet elke onderliggende uitvoering het gerelateerde model valideren door de gegevens over de kwaliteit van het model te berekenen, zoals nauw keurigheid of AUC gewogen. Deze metrische gegevens worden berekend door de voor spellingen te vergelijken die zijn gemaakt met elk model met echte labels uit eerdere waarnemingen in de validatie gegevens. Meer [informatie over hoe metrische gegevens worden berekend op basis van het validatie type](#metric-calculation-for-cross-validation-in-machine-learning). 
 
@@ -29,7 +29,7 @@ Automatische ML experimenten voeren automatisch model validatie uit. In de volge
 Zie [uw geautomatiseerde machine learning experimenten in azure machine learning Studio maken](how-to-use-automated-ml-for-ml-models.md)voor een programma met weinig code of zonder code. 
 
 > [!NOTE]
-> De Studio ondersteunt momenteel de splitsingen van trainings-en validatie gegevens en opties voor kruis validatie, maar biedt geen ondersteuning voor het opgeven van afzonderlijke gegevens bestanden voor uw validatieset. 
+> De Studio ondersteunt momenteel trainings-en validatie gegevens en opties voor kruis validatie, maar biedt geen ondersteuning voor het opgeven van afzonderlijke gegevens bestanden voor uw validatieset. 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -41,7 +41,7 @@ Voor dit artikel hebt u het volgende nodig:
 
 * Een goed idee van de splitsing van Train/validatie gegevens en kruis validatie als machine learning concepten. Voor een uitleg op hoog niveau
 
-    * [Over Train-, validatie-en test sets in Machine Learning](https://towardsdatascience.com/train-validation-and-test-sets-72cb40cba9e7)
+    * [Informatie over training, validatie en test gegevens in machine learning](https://towardsdatascience.com/train-validation-and-test-sets-72cb40cba9e7)
 
     * [Kruis validatie begrijpen in machine learning](https://towardsdatascience.com/understanding-cross-validation-419dbd47e9bd) 
 
@@ -62,7 +62,7 @@ automl_config = AutoMLConfig(compute_target = aml_remote_compute,
                             )
 ```
 
-Als u een `validation_data` of `n_cross_validation` -para meter niet expliciet opgeeft, past AutoML standaard technieken toe, afhankelijk van het aantal rijen in de opgegeven gegevensset `training_data` :
+Als u een `validation_data` of `n_cross_validation` -para meter niet expliciet opgeeft, worden in geautomatiseerde ml standaard technieken toegepast, afhankelijk van het aantal rijen dat is opgegeven in de enkele gegevensset `training_data` :
 
 |Grootte van de trainings &nbsp; gegevens &nbsp;| Validatie techniek |
 |---|-----|
@@ -71,7 +71,7 @@ Als u een `validation_data` of `n_cross_validation` -para meter niet expliciet o
 
 ## <a name="provide-validation-data"></a>Validatie gegevens opgeven
 
-In dit geval kunt u beginnen met één gegevens bestand en deze splitsen in trainings-en validatie sets, of u kunt een afzonderlijk gegevens bestand voor de validatieset opgeven. In beide gevallen `validation_data` wijst de para meter in uw `AutoMLConfig` object welke gegevens moeten worden gebruikt als uw validatieset. Deze para meter accepteert alleen gegevens sets in de vorm van een [Azure machine learning dataset](how-to-create-register-datasets.md) of een Panda data frame.   
+In dit geval kunt u beginnen met één gegevens bestand en deze splitsen in trainings gegevens en validatie gegevens sets, of u kunt een afzonderlijk gegevens bestand voor de validatieset opgeven. In beide gevallen `validation_data` wijst de para meter in uw `AutoMLConfig` object welke gegevens moeten worden gebruikt als uw validatieset. Deze para meter accepteert alleen gegevens sets in de vorm van een [Azure machine learning dataset](how-to-create-register-datasets.md) of een Panda data frame.   
 
 In het volgende code voorbeeld wordt expliciet aangegeven welk gedeelte van de gegeven gegevens in `dataset` moet worden gebruikt voor training en validatie.
 

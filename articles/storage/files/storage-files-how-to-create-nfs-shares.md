@@ -1,5 +1,5 @@
 ---
-title: Een NFS-share maken-Azure Files
+title: Een NFS-share maken-Azure Files (preview-versie)
 description: Meer informatie over het maken van een Azure-bestands share die kan worden gekoppeld met het Network File System-protocol.
 author: roygara
 ms.service: storage
@@ -8,12 +8,12 @@ ms.date: 12/04/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 3cf22ee22c35b850aff33290a59a7043bb57c984
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 323eed77d6f7a6ccfcdd0a7c7aecff3a125300dc
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96620938"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602662"
 ---
 # <a name="how-to-create-an-nfs-share"></a>Een NFS-share maken
 
@@ -98,7 +98,7 @@ $accountKind.Kind
 
 De uitvoer moet **FileStorage**, als dat niet het geval is, dan is uw opslag account het verkeerde type. Zie [een Azure Premium-bestands share maken voor meer informatie over](storage-how-to-create-premium-fileshare.md)het maken van een **FileStorage** -account.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 Als u wilt controleren of u een FileStorage-account hebt, kunt u de volgende opdracht gebruiken:
 
 ```azurecli
@@ -171,7 +171,7 @@ Nu u een FileStorage-account hebt gemaakt en het netwerk hebt geconfigureerd, ku
    -Context $storageAcct.Context
   ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een Premium-bestands share wilt maken met de Azure CLI, gebruikt u de opdracht [AZ Storage share Create](/cli/azure/storage/share-rm) .
 

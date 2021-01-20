@@ -5,13 +5,13 @@ author: markjbrown
 ms.author: mjbrown
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/10/2020
-ms.openlocfilehash: 4fea027663b55e87822eae1fd0cdb2d67dbc630b
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 01/19/2021
+ms.openlocfilehash: a03ad1eb893c97671d7ab60cc38708115a73d260
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96170817"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602391"
 ---
 # <a name="introduction-to-provisioned-throughput-in-azure-cosmos-db"></a>Inleiding tot ingerichte door Voer in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -109,7 +109,7 @@ Het antwoord van deze methoden bevat ook de [minimale ingerichte door Voer](conc
 De werkelijke minimale RU/s kan variëren, afhankelijk van de configuratie van uw account. Maar in het algemeen is het het maximum van:
 
 * 400 RU/s 
-* Huidige opslag in GB * 10 RU/s (tenzij uw container of data base meer dan 1 TB aan gegevens bevat, raadpleegt u ons [programma voor hoge opslag/laag door Voer](#high-storage-low-throughput-program))
+* Huidige opslag in GB * 10 RU/s (deze beperking kan in sommige gevallen ongeforceerd worden weer geven in het [programma voor hoge opslag/laag door Voer](#high-storage-low-throughput-program))
 * De hoogste RU/s die zijn ingericht voor de data base of container/100
 
 ### <a name="changing-the-provisioned-throughput"></a>De ingerichte door Voer wijzigen
@@ -139,7 +139,7 @@ Zoals beschreven in de sectie [huidige ingerichte door Voer](#current-provisione
 
 Dit kan een probleem zijn in situaties waarin u grote hoeveel heden gegevens moet opslaan, maar een lage doorvoer vereisten in vergelijking hebt. Voor een beter begrip van deze scenario's heeft Azure Cosmos DB een **' hoge opslag/lage door Voer '** geïntroduceerd waarmee de beperking van ru/s per GB voor in aanmerking komende accounts wordt verlaagd.
 
-U hebt momenteel ten minste één container of een Data Base voor gedeelde door Voer met meer dan 1 TB aan gegevens in uw account nodig om in aanmerking te komen. Als u wilt meedoen aan dit programma en uw volledige geschiktheid wilt beoordelen, moet u dit doen door [deze enquête](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRzBPrdEMjvxPuDm8fCLUtXpUREdDU0pCR0lVVFY5T1lRVEhWNUZITUJGMC4u)in te vullen. Het Azure Cosmos DB-team wordt vervolgens opvolgd en gaat door met uw onboarding.
+Als u wilt meedoen aan dit programma en uw volledige geschiktheid wilt beoordelen, moet u dit doen door [deze enquête](https://customervoice.microsoft.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRzBPrdEMjvxPuDm8fCLUtXpUREdDU0pCR0lVVFY5T1lRVEhWNUZITUJGMC4u)in te vullen. Het Azure Cosmos DB-team wordt vervolgens opvolgd en gaat door met uw onboarding.
 
 ## <a name="comparison-of-models"></a>Vergelijking van modellen
 In deze tabel ziet u een vergelijking tussen het inrichten van de standaard doorvoer (hand matig) voor een Data Base versus een container. 

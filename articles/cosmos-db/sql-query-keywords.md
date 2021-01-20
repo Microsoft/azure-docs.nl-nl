@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 07/29/2020
+ms.date: 01/20/2021
 ms.author: tisande
-ms.openlocfilehash: 35232f95bc18432db05775807d95f23ceab66aea
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 09148e65e446d723fbfe7a54602db59ee0739f83
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93333763"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599356"
 ---
 # <a name="keywords-in-azure-cosmos-db"></a>Tref woorden in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -107,6 +107,73 @@ Query's met een statistische systeem functie en een subquery met `DISTINCT` word
 ```sql
 SELECT COUNT(1) FROM (SELECT DISTINCT f.lastName FROM f)
 ```
+
+## <a name="like"></a>ZO
+
+Retourneert een Booleaanse waarde, afhankelijk van het feit of een specifieke teken reeks overeenkomt met een opgegeven patroon. Een patroon kan bestaan uit gewone tekens en Joker tekens. U kunt logische equivalente query's schrijven met behulp van het `LIKE` sleutel woord of de systeem functie [RegexMatch](sql-query-regexmatch.md) . U ziet hetzelfde index gebruik, ongeacht wat u kiest. Daarom moet u gebruiken `LIKE` Als u de syntaxis meer dan reguliere expressies gebruikt.
+
+> [!NOTE]
+> Omdat `LIKE` kan gebruikmaken van een index, moet u [een bereik index maken](indexing-policy.md) voor eigenschappen die u vergelijkt met `LIKE` .
+
+U kunt de volgende joker tekens gebruiken, bijvoorbeeld:
+
+| Joker teken | Beschrijving                                                  | Voorbeeld                                     |
+| -------------------- | ------------------------------------------------------------ | ------------------------------------------- |
+| %                    | Een wille keurige teken reeks van nul of meer tekens                      | WHERE c. beschrijving als '% SO% PS% '      |
+| _ (onderstrepings teken)     | Eén wille keurig teken                                       | WHERE c. beschrijving als% SO_PS%      |
+| [ ]                  | Eén wille keurig teken binnen het opgegeven bereik ([a-f]) of set ([abcdef]). | WHERE c. beschrijving als '% SO [t-z] PS% '  |
+| [^]                  | Eén wille keurig teken niet binnen het opgegeven bereik ([^ a-f]) of set ([^ abcdef]). | WHERE c. beschrijving zoals '% SO [^ ABC] PS% ' |
+
+
+### <a name="using-like-with-the--wildcard-character"></a>Gebruiken als met het Joker teken%
+
+Het `%` teken komt overeen met een wille keurige teken reeks van nul of meer tekens. Als u bijvoorbeeld een `%` aan het begin en het einde van het patroon plaatst, retourneert de volgende query alle items met een beschrijving die bevat `fruit` :
+
+```sql
+SELECT *
+FROM c
+WHERE c.description LIKE "%fruit%"
+```
+
+Als u alleen een `%` teken aan het begin van het patroon gebruikt, retourneert u alleen items met een beschrijving die is gestart met `fruit` :
+
+```sql
+SELECT *
+FROM c
+WHERE c.description LIKE "fruit%"
+```
+
+
+### <a name="using-not-like"></a>Gebruiken niet als
+
+In het onderstaande voor beeld worden alle items geretourneerd met een beschrijving die niet de `fruit` volgende bevat:
+
+```sql
+SELECT *
+FROM c
+WHERE c.description NOT LIKE "%fruit%"
+```
+
+### <a name="using-the-escape-clause"></a>De Escape-component gebruiken
+
+U kunt zoeken naar patronen die een of meer joker tekens bevatten met de ESCAPE-component. Als u bijvoorbeeld wilt zoeken naar beschrijvingen waarin de teken reeks `20-30%` is opgenomen, wilt u het niet `%` als Joker teken interpreteren.
+
+```sql
+SELECT *
+FROM c
+WHERE c.description LIKE '%20-30!%%' ESCAPE '!'
+```
+
+### <a name="using-wildcard-characters-as-literals"></a>Joker tekens gebruiken als letterlijke waarden
+
+U kunt joker tekens tussen vier Kante haken plaatsen om ze als letterlijke tekens te behandelen. Wanneer u een Joker teken tussen vier Kante haken plaatst, verwijdert u alle speciale kenmerken. Hier volgen enkele voorbeelden:
+
+| Patroon           | Betekenis |
+| ----------------- | ------- |
+| ZOALS ' 20-30 [%] ' | 20-30%  |
+| LIKE "[_] n"     | _n      |
+| LIKE "[[]"    | [       |
+| ZOALS '] '        | ]       |
 
 ## <a name="in"></a>IN
 

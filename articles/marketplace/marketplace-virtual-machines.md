@@ -8,12 +8,12 @@ ms.topic: conceptual
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 10/19/2020
-ms.openlocfilehash: 433875e52e77a8992197b47fe0424cd0b7e9f50c
-ms.sourcegitcommit: 9826fb9575dcc1d49f16dd8c7794c7b471bd3109
+ms.openlocfilehash: d9e26b6388223ae252a5e85e6e9fb9783a3b8429
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/14/2020
-ms.locfileid: "94628285"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600409"
 ---
 # <a name="how-to-plan-a-virtual-machine-offer"></a>Een aanbieding voor een virtuele machine plannen
 
@@ -73,7 +73,7 @@ Voor VM-aanbiedingen is ten minste één abonnement vereist. Een plan definieert
 Vm's zijn volledig geschikt voor Commerce, met behulp van betalen per gebruik of uw eigen licentie modellen (BYOL). Micro soft host de commerce trans actie en factureert uw klant namens u. U krijgt het voor deel van het gebruik van de voorkeurs betalings relatie tussen uw klant en micro soft, inclusief alle Enter prise-overeenkomsten. Zie voor meer informatie [commerciële Marketplace Transact-mogelijkheden](./marketplace-commercial-transaction-capabilities-and-considerations.md).
 
 > [!NOTE]
-> De monetaire toezeg gingen die zijn gekoppeld aan een Enterprise Agreement kunnen worden gebruikt voor het Azure-gebruik van uw virtuele machine, maar niet op basis van uw software licentie kosten.
+> De Azure-voor uitbetaling (voorheen monetaire toezeg ging) die is gekoppeld aan een Enterprise Agreement, kan worden gebruikt voor het Azure-gebruik van uw VM, maar niet op basis van uw software licentie kosten.
 
 ### <a name="licensing-options"></a>Licentie opties
 

@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.workload: identity
 ms.date: 01/29/2020
 ms.author: martinco
-ms.openlocfilehash: 4703a76ff0a0b55a438f9f0d164cd7f2d3242a02
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: ffc5bafca305086b0c524c76eb91b8aec2e2655d
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842019"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602454"
 ---
 # <a name="five-steps-to-securing-your-identity-infrastructure"></a>Vijf stappen voor het beveiligen van uw identiteits infrastructuur
 
@@ -81,7 +81,7 @@ U kunt [Power shell gebruiken om te voor komen dat wacht woorden verlopen](../..
 
 Als uw organisatie gebruikmaakt van een hybride identiteits oplossing met Pass-Through-verificatie of Federatie, moet u de wachtwoord hash-synchronisatie inschakelen om de volgende twee redenen:
 
-* Het rapport [gebruikers met gelekte referenties](../../active-directory/identity-protection/overview-identity-protection.md) in het Azure AD-beheer waarschuwt u voor gebruikers naam-en wachtwoord paren, die zijn weer gegeven op het ' donkere Web '. Een ongelooflijke hoeveelheid wacht woorden wordt gelekt via phishing, malware en het opnieuw gebruiken van wacht woorden op sites van derden die later zijn geschonden. Micro soft vindt veel van deze gelekte referenties en vertelt u, in dit rapport, als ze overeenkomen met referenties in uw organisatie, maar alleen als u de [synchronisatie van wacht woord-hashes inschakelt](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md).
+* Het rapport [gebruikers met gelekte referenties](../../active-directory/identity-protection/overview-identity-protection.md) in het Azure AD-beheer waarschuwt u voor gebruikers naam-en wachtwoord paren, die zijn weer gegeven op het ' donkere Web '. Een ongelooflijke hoeveelheid wacht woorden wordt gelekt via phishing, malware en het opnieuw gebruiken van wacht woorden op sites van derden die later zijn geschonden. Micro soft vindt veel van deze gelekte referenties en laat u in dit rapport weten dat ze overeenkomen met referenties in uw organisatie, maar alleen als u [wachtwoord hash-synchronisatie inschakelt](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md) of alleen Cloud identiteiten hebt.
 * In het geval van een on-premises storing (bijvoorbeeld bij een Ransomware-aanval) kunt u overschakelen naar het gebruik van [Cloud verificatie met behulp van wachtwoord-hash-synchronisatie](../../active-directory/hybrid/choose-ad-authn.md). Met deze methode voor back-upauthenticatie kunt u de toegang tot apps die zijn geconfigureerd voor authenticatie met Azure Active Directory, inclusief Microsoft 365 blijven gebruiken. In dit geval hoeft de IT-afdeling geen persoonlijke e-mail accounts te maken om gegevens te delen totdat de on-premises storing is opgelost.
 
 Meer informatie over hoe [wachtwoord-hash-synchronisatie](../../active-directory/hybrid/how-to-connect-password-hash-synchronization.md) werkt.

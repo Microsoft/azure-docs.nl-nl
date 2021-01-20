@@ -5,12 +5,12 @@ ms.custom: subject-cost-optimization
 ms.service: app-service
 ms.topic: how-to
 ms.date: 01/01/2021
-ms.openlocfilehash: f92b766fc1122456fda70d2deff81fa80a02d159
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 85035ff894127df4e9eb8334702fd9546d7a63c3
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250108"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598713"
 ---
 # <a name="plan-and-manage-costs-for-azure-app-service"></a>Kosten plannen en beheren voor Azure App Service
 
@@ -61,7 +61,7 @@ Nadat u Azure App Service resources hebt verwijderd, kunnen resources van gerela
 
 ### <a name="using-monetary-credit-with-azure-app-service"></a>Monetair tegoed gebruiken met Azure App Service
 
-U kunt betalen voor Azure App Service kosten met uw EA monetaire toezeg ging-tegoed. U kunt het tegoed van EA monetaire toezeg ging echter niet gebruiken om te betalen voor kosten voor producten en services van derden, waaronder die van de Azure Marketplace.
+U kunt betalen voor Azure App Service kosten met uw Azure-voor uitbetaling (voorheen monetaire toezeg ging genoemd)-tegoed. U kunt Azure-vooruitbetalings tegoed echter niet gebruiken om te betalen voor kosten voor producten en services van derden, waaronder die van de Azure Marketplace.
 
 ## <a name="estimate-costs"></a>Kosten schatten
 

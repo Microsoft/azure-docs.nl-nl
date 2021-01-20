@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: calebb, rogoya
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 61f655d459592022a2e34b87adc50e3d49b03dc9
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 0e99f7466bd3b7ed5517157ca3fa45e7c3241217
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935764"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599761"
 ---
 # <a name="conditional-access-securing-security-info-registration"></a>Voorwaardelijke toegang: Veilige registratie van beveiligingsinformatie
 
@@ -34,6 +34,8 @@ Het volgende beleid is van toepassing op alle geselecteerde gebruikers die zich 
    > [!WARNING]
    > Gebruikers moeten zijn ingeschakeld voor de [gecombineerde registratie](../authentication/howto-registration-mfa-sspr-combined.md).
 
+   1. Onder **uitsluiten** selecteert u **gebruikers en groepen** en kiest u de accounts voor nood toegang of het afbreek glas van uw organisatie. 
+   1. Selecteer **Gereed**.
 1. Onder **Cloud-apps of-acties** selecteert u **gebruikers acties**, check **Security Information registreren**.
 1. Onder **voor waarden**  >  **locaties**.
    1. Configureer **Ja**.

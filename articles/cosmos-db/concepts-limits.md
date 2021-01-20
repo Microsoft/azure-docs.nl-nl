@@ -5,13 +5,13 @@ author: abhijitpai
 ms.author: abpai
 ms.service: cosmos-db
 ms.topic: conceptual
-ms.date: 11/19/2020
-ms.openlocfilehash: 793ff9eedb747da0edcbbf2df50b62f06f407892
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.date: 01/19/2021
+ms.openlocfilehash: 9ace9a319f4cc6bcc1545d6d1becce61b1892765
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98247421"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598666"
 ---
 # <a name="azure-cosmos-db-service-quotas"></a>Service quota's Azure Cosmos DB
 
@@ -37,7 +37,7 @@ U kunt de door Voer inrichten op container niveau of op database niveau in terme
 | Maximale opslag per container | Onbeperkt |
 | Maximale opslag per data base | Onbeperkt |
 | Maximale grootte van bijlagen per account (bijlage functie wordt afgeschaft) | 2 GB |
-| Mini maal aantal RU/s vereist per 1 GB | 10 RU/s<br>**Opmerking:** als uw container of data base meer dan 1 TB aan gegevens bevat, komt uw account mogelijk in aanmerking voor het [programma hoge opslag/lage door Voer](set-throughput.md#high-storage-low-throughput-program) |
+| Mini maal aantal RU/s vereist per 1 GB | 10 RU/s<br>**Opmerking:** dit minimum kan worden verlaagd als uw account in aanmerking komt voor ons [' hoge doorvoer snelheid '](set-throughput.md#high-storage-low-throughput-program) |
 
 > [!NOTE]
 > Zie [een synthetische partitie sleutel maken](synthetic-partition-keys.md)voor meer informatie over aanbevolen procedures voor het beheren van werk belastingen met partitie sleutels waarvoor hogere limieten vereist zijn voor opslag of door voer.
@@ -60,7 +60,7 @@ Als u een schatting wilt maken van de minimale door Voer die vereist is voor een
 
 Voor beeld: Stel dat u een container hebt ingericht met 400 RU/s en 0 GB-opslag. U kunt de door Voer verhogen naar 50.000 RU/s en 20 GB aan gegevens importeren. De mini maal RU/s is nu `MAX(400, 20 * 10 RU/s per GB, 50,000 RU/s / 100)` = 500 ru/s. Na verloop van tijd neemt de opslag toe tot 200 GB. De mini maal RU/s is nu `MAX(400, 200 * 10 RU/s per GB, 50,000 / 100)` = 2000 ru/s. 
 
-**Opmerking:** als uw container of data base meer dan 1 TB aan gegevens bevat, komt uw account mogelijk in aanmerking voor het [programma hoge opslag/lage door Voer](set-throughput.md#high-storage-low-throughput-program).
+**Opmerking:** de minimale door Voer van 10 ru/s per GB aan opslag kan worden verkleind als uw account in aanmerking komt voor ons [' hoge door Voer '](set-throughput.md#high-storage-low-throughput-program)van het programma.
 
 #### <a name="minimum-throughput-on-shared-throughput-database"></a>Minimale door Voer voor de gedeelde doorvoer database 
 Als u een schatting wilt maken van de minimale door Voer die vereist is voor een gedeelde doorvoer database met hand matige door Voer, zoekt u het maximum van:
@@ -72,7 +72,7 @@ Als u een schatting wilt maken van de minimale door Voer die vereist is voor een
 
 Voor beeld: Stel dat u een Data Base hebt ingericht met 400 RU/s, 15 GB aan opslag ruimte en 10 containers. De minimale RU/s is `MAX(400, 15 * 10 RU/s per GB, 400 / 100, 400 + 0 )` = 400 ru/s. Als er 30 containers in de data base staan, zouden de mini maal RU/s `400 + MAX(30 - 25, 0) * 100 RU/s` = 900 ru/s zijn. 
 
-**Opmerking:** als uw container of data base meer dan 1 TB aan gegevens bevat, komt uw account mogelijk in aanmerking voor het [programma hoge opslag/lage door Voer](set-throughput.md#high-storage-low-throughput-program).
+**Opmerking:** de minimale door Voer van 10 ru/s per GB aan opslag kan worden verkleind als uw account in aanmerking komt voor ons [' hoge door Voer '](set-throughput.md#high-storage-low-throughput-program)van het programma.
 
 In samen vatting vindt u de minimale ingerichte RU-limieten. 
 

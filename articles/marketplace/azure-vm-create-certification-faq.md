@@ -7,12 +7,12 @@ ms.topic: troubleshooting
 author: iqshahmicrosoft
 ms.author: iqshah
 ms.date: 01/18/2021
-ms.openlocfilehash: f802292d9723179b36d5291993bd4e07487fe6a8
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 80dc19a58d212bb6ab8d608e222cd3a0bd3990d1
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567387"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600988"
 ---
 # <a name="troubleshoot-virtual-machine-certification"></a>Problemen met certificering van virtuele machines oplossen
 
@@ -321,7 +321,7 @@ Raadpleeg de volgende tabel voor problemen die zich voordoen wanneer u de VM-ins
 |Ongeldige naam voor VHD|Controleer of er speciale tekens, zoals een procent teken `%` of aanhalings tekens `"` , aanwezig zijn in de naam van de virtuele harde schijf.|Wijzig de naam van het VHD-bestand door de speciale tekens te verwijderen.|
 |
 
-## <a name="first-1-mb-2048-sectors-each-sector-of-512-bytes-partition"></a>Eerste 1 MB (2048 sectoren, elke sector van 512 bytes)
+## <a name="first-partition-starts-at-1-mb-2048-sectors"></a>Eerste partitie begint om 1 MB (2048 sectoren)
 
 Als u [uw eigen installatie kopie bouwt](azure-vm-create-using-own-image.md), moet u ervoor zorgen dat de eerste 2048 sectoren (1 MB) van de besturingssysteem schijf leeg zijn. Als dat niet het geval is, mislukt de publicatie. Deze vereiste is alleen van toepassing op de besturingssysteem schijf (geen gegevens schijven). Als u een installatie kopie [van een goedgekeurde basis](azure-vm-create-using-approved-base.md)bouwt, kunt u deze vereiste overs Laan.
 

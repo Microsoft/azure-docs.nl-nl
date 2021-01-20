@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van beheerde identiteiten in azure
 services: container-service
 ms.topic: article
 ms.date: 12/16/2020
-ms.openlocfilehash: 948a189e1c6e03efca046b6d43dddcaf3d141957
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: fe11170b1cdf18aacf832f4c8171bfc082339395
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607283"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599614"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Beheerde identiteiten gebruiken in azure Kubernetes service
 
@@ -131,7 +131,7 @@ De door de gebruiker toegewezen identiteit bijwerken:
 az aks update -g <RGName> -n <AKSName> --enable-managed-identity --assign-identity <UserAssignedIdentityResourceID> 
 ```
 > [!NOTE]
-> Zodra de door het systeem toegewezen of door de gebruiker toegewezen identiteiten zijn bijgewerkt naar een beheerde identiteit, voert u een `az nodepool upgrade --node-image-only` op uw knoop punten uit om de update te volt ooien voor de beheerde identiteit.
+> Zodra de door het systeem toegewezen of door de gebruiker toegewezen identiteiten zijn bijgewerkt naar een beheerde identiteit, voert u een `az aks nodepool upgrade --node-image-only` op uw knoop punten uit om de update te volt ooien voor de beheerde identiteit.
 
 ## <a name="bring-your-own-control-plane-mi"></a>Stel uw eigen besturings vlak op MI
 De identiteit van een aangepast besturings element biedt toegang tot de bestaande identiteit voordat het cluster wordt gemaakt. Deze functie maakt scenario's mogelijk, zoals het gebruik van een aangepast VNET of outboundType van UDR met een vooraf gemaakte beheerde identiteit.

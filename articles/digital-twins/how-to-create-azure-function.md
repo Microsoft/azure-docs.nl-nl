@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6c4f23406c97d647002fbb3ab4a3544866303cf4
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 6f74f973abc33d809624bd8abd5a514a52ccfe70
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051340"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602705"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Functie-apps in azure verbinden voor het verwerken van gegevens
 
@@ -27,7 +27,7 @@ Hier volgt een overzicht van de stappen die het bevat:
 1. Een Azure Functions-project in Visual Studio maken
 2. Een functie schrijven met een [Event grid](../event-grid/overview.md) trigger
 3. Voeg verificatie code toe aan de functie (om toegang te krijgen tot Azure Digital Apparaatdubbels)
-4. De functie-app publiceren in azure
+4. De functie-app publiceren naar Azure
 5. [Beveiligings](concepts-security.md) toegang instellen voor de functie-app
 
 ## <a name="prerequisite-set-up-azure-digital-twins-instance"></a>Voor waarde: Stel het Azure Digital Apparaatdubbels-exemplaar in
@@ -63,24 +63,20 @@ Als u de SDK wilt gebruiken, moet u de volgende pakketten in uw project toevoege
 U kunt dit doen door met de rechter muisknop op het project te klikken en _NuGet-pakketten beheren_ te selecteren in de lijst. In het venster dat wordt geopend, selecteert u op het tabblad _Bladeren_ en zoekt u naar de volgende pakketten. Selecteer _installeren_ en _Accepteer_ de gebruiksrecht overeenkomst om de pakketten te installeren.
 
 * `Azure.DigitalTwins.Core`
-* `Azure.Identity` 
-
-Voor de configuratie van de Azure SDK-pijp lijn die op de juiste wijze moet worden ingesteld voor Azure Functions, hebt u ook de volgende pakketten nodig. Herhaal hetzelfde proces als hierboven om alle pakketten te installeren.
-
+* `Azure.Identity`
 * `System.Net.Http`
-* `Azure.Core.Pipeline`
+* `Azure.Core`
 
 **Optie 2. Pakketten toevoegen met behulp van `dotnet` het opdracht regel programma:**
 
 U kunt ook de volgende `dotnet add` opdrachten gebruiken in een opdracht regel programma:
-```cmd/sh
-dotnet add package System.Net.Http
-dotnet add package Azure.Core.Pipeline
-```
 
-Voeg vervolgens twee extra afhankelijkheden toe aan uw project dat nodig is voor gebruik met Azure Digital Apparaatdubbels. U kunt de onderstaande links gebruiken om naar de pakketten op NuGet te navigeren, waar u de consoleopdrachten (inclusief voor .NET CLI) kunt vinden om de meest recente versie van elk aan uw project toe te voegen.
- * [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Dit is het pakket voor de [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true).
- * [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Deze bibliotheek biedt hulpprogramma's voor de verificatie bij Azure.
+```cmd/sh
+dotnet add package Azure.DigitalTwins.Core
+dotnet add package Azure.Identity
+dotnet add package System.Net.Http
+dotnet add package Azure.Core
+```
 
 Open vervolgens in uw Visual Studio-Solution Explorer het _Function.cs_ -bestand met voorbeeld code en voeg _de volgende instructies_ toe aan uw functie. 
 
@@ -110,7 +106,7 @@ Na deze wijzigingen wordt de functie code op de volgende manier weer gegeven:
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/adtIngestFunctionSample.cs":::
 
-## <a name="publish-the-function-app-to-azure"></a>De functie-app publiceren in azure
+## <a name="publish-the-function-app-to-azure"></a>De functie-app publiceren naar Azure
 
 Als u het project wilt publiceren naar een functie-app in azure, klikt u met de rechter muisknop op het functie project (niet de oplossing) in Solution Explorer en kiest u **publiceren**.
 
@@ -154,7 +150,7 @@ Gebruik de volgende opdracht om de door het systeem beheerde identiteit te maken
 ```azurecli-interactive 
 az functionapp identity assign -g <your-resource-group> -n <your-App-Service-(function-app)-name>   
 ```
-Gebruik de waarde _principalId_ in de volgende opdracht om de identiteit van de functie-app toe te wijzen aan de rol _Azure Digital apparaatdubbels data owner_ voor uw Azure Digital apparaatdubbels-exemplaar.
+Gebruik de waarde _principalId_ in de volgende opdracht om de identiteit van de functie-app toe te wijzen aan de rol _Gegevenseigenaar van Azure Digital Twins_ voor uw Azure Digital Twins-exemplaar.
 
 ```azurecli-interactive 
 az dt role-assignment create --dt-name <your-Azure-Digital-Twins-instance> --assignee "<principal-ID>" --role "Azure Digital Twins Data Owner"

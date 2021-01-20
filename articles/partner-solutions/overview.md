@@ -4,18 +4,18 @@ description: Meer informatie over oplossingen die worden aangeboden door partner
 author: tfitzmac
 ms.topic: conceptual
 ms.service: partner-services
-ms.date: 01/15/2021
+ms.date: 01/19/2021
 ms.author: tomfitz
-ms.openlocfilehash: a1cbb4bc662a25b66d4702dc72373f693763fc3f
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 6779596efdebf8220af99f4e86c1fe6cc0ec90d6
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253384"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598778"
 ---
 # <a name="extend-azure-with-solutions-from-partners"></a>Azure uitbreiden met oplossingen van partners
 
-Partner organisaties bieden oplossingen die u in azure kunt gebruiken om uw Cloud infrastructuur te verbeteren. Deze oplossingen zijn volledig geïntegreerd in Azure. U werkt met deze oplossingen op ongeveer dezelfde manier als u met oplossingen van micro soft werkt. U gebruikt een resource provider, resource typen en een API om de oplossing te beheren.
+Partner organisaties bieden oplossingen die u in azure kunt gebruiken om uw Cloud infrastructuur te verbeteren. Deze oplossingen zijn volledig geïntegreerd in Azure. U werkt met deze oplossingen op ongeveer dezelfde manier als u met oplossingen van micro soft werkt. U gebruikt een resource provider, resource typen en Sdk's voor het beheren van de oplossing.
 
 Partner oplossingen zijn beschikbaar via Marketplace.
 

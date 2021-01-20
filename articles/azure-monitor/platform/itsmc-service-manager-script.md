@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: v-jysur
 ms.date: 01/23/2018
-ms.openlocfilehash: d620df0b55b024cd5d7c25ea17d9b09c5c5da8ff
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 3d9360b167a246e257d8c0b2ec4cb88f1ae39dcd
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722875"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600156"
 ---
 # <a name="create-service-manager-web-app-using-the-automated-script"></a>Service Manager web-app maken met behulp van het geautomatiseerde script
 
@@ -317,6 +317,11 @@ if(!$err)
 }
 ```
 
+## <a name="troubleshoot-service-manager-web-app-deployment"></a>Problemen met de implementatie van Service Manager web-app oplossen
+
+-   Als u problemen ondervindt met het implementeren van web-apps, moet u ervoor zorgen dat u gemachtigd bent om resources in het abonnement te maken of te implementeren.
+-   Als u een **object verwijzing krijgt die niet is ingesteld op een object** fout wanneer u het [script](itsmc-service-manager-script.md)uitvoert, moet u ervoor zorgen dat u geldige waarden hebt opgegeven in de sectie **gebruikers configuratie** .
+-   Als u de service bus relay-naam ruimte niet hebt gemaakt, moet u ervoor zorgen dat de vereiste resource provider is geregistreerd in het abonnement. Als het niet is geregistreerd, maakt u de service bus relay-naam ruimte hand matig via de Azure Portal. U kunt deze ook maken wanneer u [de hybride verbinding maakt](./itsmc-connections-scsm.md#configure-the-hybrid-connection) in de Azure Portal.
+
 ## <a name="next-steps"></a>Volgende stappen
 [Configureer de hybride verbinding](./itsmc-connections-scsm.md#configure-the-hybrid-connection).
-

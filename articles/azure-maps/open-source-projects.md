@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: ''
-ms.openlocfilehash: 0f0d94dbc7b2c720faa1da41a88e3c3313dac377
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: df82e76fa2e5a9ea70c447411beafb8a2df9b036
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97680763"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601603"
 ---
 # <a name="azure-maps-community---open-source-projects"></a>Azure Maps community-open-source projecten
 
@@ -65,6 +65,12 @@ Hier volgt een lijst van open-source projecten die de mogelijkheden van de Azure
 | [Azure Maps .NET UWP IoT-beheer op afstand](https://github.com/Azure-Samples/azure-maps-dotnet-webgl-uwp-iot-remote-control) | Dit is een voorbeeld toepassing die laat zien hoe u een extern beheerde toewijzing maakt met behulp van Azure Maps-en IoT hub-Services. |
 | [Ruimtelijke IoT-analyse implementeren met behulp van Azure Maps](https://github.com/Azure-Samples/iothub-to-azure-maps-geofencing) | Het bijhouden en vastleggen van relevante gebeurtenissen die plaatsvinden in ruimte en tijd is een veelvoorkomend IoT-scenario. |
 
+**Invoeg toepassingen van het kaart besturings element van derden**
+
+| Projectnaam | Beschrijving |
+|-|-|
+| [Azure Maps-bijsluiter](https://github.com/azure-samples/azure-maps-leaflet) | Een [Folder](https://leafletjs.com/) -invoeg toepassing voor Java script waarmee u eenvoudig tegel lagen kunt bedekken vanuit de [Azure Maps-tegel Services](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview). |
+ 
 **Hulpprogramma's en informatiebronnen**
 
 | Projectnaam | Beschrijving |

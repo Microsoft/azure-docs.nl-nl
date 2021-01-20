@@ -3,19 +3,22 @@ title: Een VHD-model installatie kopie voorbereiden en aanpassen-Azure
 description: Een installatie kopie van een virtueel bureau blad van Windows voorbereiden, aanpassen en uploaden naar Azure.
 author: Heidilohr
 ms.topic: how-to
-ms.date: 10/14/2019
+ms.date: 01/19/2021
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 9e4cb4fe8a701600290d24c055e2be5187a711c5
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 33af83934e8ecc5745f2edad3a7832a870406452
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95023391"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602382"
 ---
 # <a name="prepare-and-customize-a-master-vhd-image"></a>Een VHD-hoofdinstallatiekopie voorbereiden en aanpassen
 
 In dit artikel leest u hoe u een installatie kopie van een virtuele harde schijf (VHD) voor het uploaden naar Azure voorbereidt, inclusief het maken van virtuele machines (Vm's) en het installeren van software. Deze instructies gelden voor een Windows-specifieke configuratie voor virtueel bureau blad die kan worden gebruikt met de bestaande processen van uw organisatie.
+
+>[!IMPORTANT]
+>U wordt aangeraden een installatie kopie te gebruiken uit de galerie met installatie kopieën van Azure. Als u echter een aangepaste installatie kopie nodig hebt, moet u ervoor zorgen dat de virtuele WIndows-bureau blad-agent nog niet op uw apparaat is geïnstalleerd. Het gebruik van een aangepaste installatie kopie met de virtueel-bureaublad agent van Windows kan problemen veroorzaken met de installatie kopie.  
 
 ## <a name="create-a-vm"></a>Een virtuele machine maken
 

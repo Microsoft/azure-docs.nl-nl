@@ -4,17 +4,17 @@ description: Meer informatie over het gebruik van Azure Queue Storage van python
 author: mhopkins-msft
 ms.author: mhopkins
 ms.reviewer: dineshm
-ms.date: 08/25/2020
+ms.date: 01/19/2021
 ms.topic: how-to
 ms.service: storage
 ms.subservice: queues
 ms.custom: seo-javascript-october2019, devx-track-python
-ms.openlocfilehash: e473bf5c2761010a6aeea94e6430d34ca34989fb
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 82d18fd79b10a8500cfd9191f143438d69fda401
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588273"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600802"
 ---
 # <a name="how-to-use-azure-queue-storage-from-python"></a>Azure Queue Storage gebruiken vanuit python
 
@@ -69,7 +69,7 @@ Zie voor alternatieve installatie methoden [Azure SDK voor python](https://githu
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-[`QueueService`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2)Met het object kunt u met wacht rijen werken. Met de volgende code wordt een- `QueueService` object gemaakt. Voeg de volgende code toe aan de bovenkant van een python-bestand waarin u programmatisch toegang wilt krijgen Azure Storage:
+[`QueueService`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true)Met het object kunt u met wacht rijen werken. Met de volgende code wordt een- `QueueService` object gemaakt. Voeg de volgende code toe aan de bovenkant van een python-bestand waarin u programmatisch toegang wilt krijgen Azure Storage:
 
 ```python
 from azure.storage.queue import (
@@ -127,7 +127,7 @@ Gebruik de-methode om een bericht in een wachtrij in te voegen [`send_message`](
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-Als u een bericht in een wachtrij wilt invoegen, gebruikt u de [`put_message`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2#put-message-queue-name--content--visibility-timeout-none--time-to-live-none--timeout-none-) methode om een nieuw bericht te maken en toe te voegen aan de wachtrij.
+Als u een bericht in een wachtrij wilt invoegen, gebruikt u de [`put_message`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true#put-message-queue-name--content--visibility-timeout-none--time-to-live-none--timeout-none-) methode om een nieuw bericht te maken en toe te voegen aan de wachtrij.
 
 ```python
 message = u"Hello, World"
@@ -167,7 +167,7 @@ U kunt berichten bekijken zonder ze uit de wachtrij te verwijderen door de metho
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-U kunt berichten bekijken zonder ze uit de wachtrij te verwijderen door de methode aan te roepen [`peek_messages`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2#peek-messages-queue-name--num-messages-none--timeout-none-) . Deze methode bekijkt standaard één bericht.
+U kunt berichten bekijken zonder ze uit de wachtrij te verwijderen door de methode aan te roepen [`peek_messages`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true#peek-messages-queue-name--num-messages-none--timeout-none-) . Deze methode bekijkt standaard één bericht.
 
 ```python
 messages = queue_service.peek_messages(queue_name)
@@ -190,7 +190,7 @@ De volgende code gebruikt de [`update_message`](/azure/developer/python/sdk/stor
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-De volgende code gebruikt de [`update_message`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2#update-message-queue-name--message-id--pop-receipt--visibility-timeout--content-none--timeout-none-) methode om een bericht bij te werken. De time-out voor de zicht baarheid is ingesteld op 0, wat betekent dat het bericht onmiddellijk wordt weer gegeven en dat de inhoud wordt bijgewerkt.
+De volgende code gebruikt de [`update_message`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true#update-message-queue-name--message-id--pop-receipt--visibility-timeout--content-none--timeout-none-) methode om een bericht bij te werken. De time-out voor de zicht baarheid is ingesteld op 0, wat betekent dat het bericht onmiddellijk wordt weer gegeven en dat de inhoud wordt bijgewerkt.
 
 ```python
 messages = queue_service.get_messages(queue_name)
@@ -214,7 +214,7 @@ De [get_queue_properties](/azure/developer/python/sdk/storage/azure-storage-queu
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-De [`get_queue_metadata`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2#get-queue-metadata-queue-name--timeout-none-) methode retourneert wachtrij-eigenschappen, inclusief `approximate_message_count` .
+De [`get_queue_metadata`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true#get-queue-metadata-queue-name--timeout-none-) methode retourneert wachtrij-eigenschappen, inclusief `approximate_message_count` .
 
 ```python
 metadata = queue_service.get_queue_metadata(queue_name)
@@ -238,7 +238,7 @@ Wanneer u [receive_messages](/azure/developer/python/sdk/storage/azure-storage-q
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-Wanneer u [get_messages](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2#get-messages-queue-name--num-messages-none--visibility-timeout-none--timeout-none-)aanroept, wordt standaard het volgende bericht in de wachtrij weer gegeven. Een bericht dat wordt geretourneerd van is niet `get_messages` zichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Als u het verwijderen van het bericht uit de wachtrij wilt volt ooien, moet u ook [delete_message](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2#delete-message-queue-name--message-id--pop-receipt--timeout-none-)aanroepen.
+Wanneer u [get_messages](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true#get-messages-queue-name--num-messages-none--visibility-timeout-none--timeout-none-)aanroept, wordt standaard het volgende bericht in de wachtrij weer gegeven. Een bericht dat wordt geretourneerd van is niet `get_messages` zichtbaar voor andere code die berichten uit deze wachtrij leest. Standaard blijft het bericht onzichtbaar gedurende 30 seconden. Als u het verwijderen van het bericht uit de wachtrij wilt volt ooien, moet u ook [delete_message](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true#delete-message-queue-name--message-id--pop-receipt--timeout-none-)aanroepen.
 
 ```python
 messages = queue_service.get_messages(queue_name)
@@ -260,7 +260,7 @@ In het volgende code voorbeeld wordt de [`receive_messages`](/azure/developer/py
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-In het volgende code voorbeeld wordt de [`get_messages`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2#get-messages-queue-name--num-messages-none--visibility-timeout-none--timeout-none-) methode gebruikt om 16 berichten in één aanroep op te halen. Vervolgens wordt elk bericht met een `for` lus verwerkt. De time-out voor onzichtbaarheid wordt ingesteld op vijf minuten voor elk bericht.
+In het volgende code voorbeeld wordt de [`get_messages`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true#get-messages-queue-name--num-messages-none--visibility-timeout-none--timeout-none-) methode gebruikt om 16 berichten in één aanroep op te halen. Vervolgens wordt elk bericht met een `for` lus verwerkt. De time-out voor onzichtbaarheid wordt ingesteld op vijf minuten voor elk bericht.
 
 ```python
 messages = queue_service.get_messages(queue_name, num_messages=16, visibility_timeout=5*60)
@@ -282,7 +282,7 @@ Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de- [`delete
 
 # <a name="python-v2"></a>[Python v2](#tab/python2)
 
-Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de- [`delete_queue`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2#delete-queue-queue-name--fail-not-exist-false--timeout-none-) methode aan.
+Als u een wachtrij en alle berichten erin wilt verwijderen, roept u de- [`delete_queue`](/azure/developer/python/sdk/storage/azure-storage-queue/azure.storage.queue.queueservice.queueservice?view=storage-py-v2&preserve-view=true#delete-queue-queue-name--fail-not-exist-false--timeout-none-) methode aan.
 
 ```python
 print("Deleting queue: " + queue_name)

@@ -13,12 +13,12 @@ ms.date: 09/18/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: fd836afd6b8574be71ad22d26d67f49971834a88
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 6616b0573019703f287d3be521569f5953aeb032
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064722"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600280"
 ---
 # <a name="initialize-client-applications-using-msalnet"></a>Client toepassingen initialiseren met MSAL.NET
 In dit artikel wordt beschreven hoe u open bare client-en vertrouwelijke client toepassingen initialiseert met behulp van de micro soft Authentication Library voor .NET (MSAL.NET).  Lees het [overzicht](msal-client-applications.md)voor meer informatie over de client toepassings typen en configuratie opties voor toepassingen.
@@ -166,3 +166,12 @@ app = PublicClientApplicationBuilder.Create(clientId)
         .WithB2CAuthority("https://fabrikamb2c.b2clogin.com/tfp/{tenant}/{PolicySignInSignUp}")
         .Build();
 ```
+
+## <a name="next-steps"></a>Volgende stappen
+
+Nadat u de client toepassing hebt geïnitialiseerd, is uw volgende taak het toevoegen van ondersteuning voor gebruikers aanmelding, geautoriseerde API-toegang of beide.
+
+Onze documentatie voor toepassings scenario's bevat richt lijnen voor het aanmelden van een gebruiker en het verkrijgen van een toegangs token voor toegang tot een API namens die gebruiker:
+
+- [Web-app die gebruikers aanmeldt: aanmelden en afmelden](scenario-web-app-sign-user-sign-in.md)
+- [Web-app die web-Api's aanroept: een Token ophalen](scenario-web-app-call-api-acquire-token.md)

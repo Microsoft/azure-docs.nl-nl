@@ -11,16 +11,16 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
-ms.date: 05/08/2020
+ms.date: 01/18/2021
 ms.author: rolyon
 ms.reviewer: bagovind
 ms.custom: ''
-ms.openlocfilehash: bc3640fecbe1138e46fd0d36975691740bc669dd
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: f6ae9ff27e773c36626812387b1284d660cbf39d
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97369256"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602456"
 ---
 # <a name="understand-azure-role-definitions"></a>Informatie over Azure Role-definities
 
@@ -80,7 +80,7 @@ Bewerkingen worden opgegeven met teken reeksen die de volgende indeling hebben:
 
 Het `{action}` gedeelte van een bewerkings reeks geeft u het type bewerkingen op dat u kunt uitvoeren op een resource type. U ziet bijvoorbeeld de volgende subtekenreeksen in `{action}` :
 
-| Subtekenreeks van actie    | Description         |
+| Subtekenreeks van actie    | Beschrijving         |
 | ------------------- | ------------------- |
 | `*` | Het Joker teken verleent toegang tot alle bewerkingen die overeenkomen met de teken reeks. |
 | `read` | Hiermee schakelt u lees bewerkingen in (GET). |
@@ -265,7 +265,7 @@ Als u gegevens bewerkingen wilt bekijken en gebruiken, moet u beschikken over de
 | Hulpprogramma  | Versie  |
 |---------|---------|
 | [Azure PowerShell](/powershell/azure/install-az-ps) | 1.1.0 of hoger |
-| [Azure CLI](/cli/azure/install-azure-cli) | 2.0.30 of hoger |
+| [Azure-CLI](/cli/azure/install-azure-cli) | 2.0.30 of hoger |
 | [Azure voor .NET](/dotnet/azure/) | 2.8.0-Preview of hoger |
 | [Azure SDK voor Go](/azure/go/azure-sdk-go-install) | 15.0.0 of hoger |
 | [Azure voor Java](/java/azure/) | 1.9.0 of hoger |
@@ -281,7 +281,7 @@ Als u de gegevens bewerkingen in het REST API wilt bekijken en gebruiken, moet u
 `Actions`Met de machtiging worden de beheer bewerkingen opgegeven die door de functie kunnen worden uitgevoerd. Het is een verzameling bewerkings reeksen waarmee Beveilig bare bewerkingen van Azure-resource providers worden geïdentificeerd. Hier volgen enkele voor beelden van beheer bewerkingen die kunnen worden gebruikt in `Actions` .
 
 > [!div class="mx-tableFixed"]
-> | Bewerkings reeks    | Description         |
+> | Bewerkings reeks    | Beschrijving         |
 > | ------------------- | ------------------- |
 > | `*/read` | Verleent toegang tot Lees bewerkingen voor alle resource typen van alle Azure-resource providers.|
 > | `Microsoft.Compute/*` | Verleent toegang tot alle bewerkingen voor alle resource typen in de micro soft. Compute-resource provider.|
@@ -291,18 +291,34 @@ Als u de gegevens bewerkingen in het REST API wilt bekijken en gebruiken, moet u
 
 ## <a name="notactions"></a>NotActions
 
-`NotActions`Met de machtiging worden de beheer bewerkingen opgegeven die worden uitgesloten van de toegestaan `Actions` . Gebruik de `NotActions` machtiging als de set bewerkingen die u wilt toestaan eenvoudiger is gedefinieerd door beperkte bewerkingen uit te sluiten. De toegang die wordt verleend door een rol (efficiënte machtigingen) wordt berekend door de `NotActions` bewerkingen van de bewerkingen af te trekken `Actions` .
+Met deze `NotActions` machtiging worden de beheer bewerkingen opgegeven die worden afgetrokken van of uitgesloten van het toegestane aantal `Actions` dat een Joker teken ( `*` ) heeft. Gebruik de `NotActions` machtiging als de set bewerkingen die u wilt toestaan eenvoudiger is gedefinieerd door te aftrekken van `Actions` een Joker teken ( `*` ). De toegang die wordt verleend door een rol (efficiënte machtigingen) wordt berekend door de `NotActions` bewerkingen van de bewerkingen af te trekken `Actions` .
+
+`Actions - NotActions = Effective management permissions`
+
+In de volgende tabel ziet u twee voor beelden van de meest efficiënte machtigingen voor een [micro soft. CostManagement](resource-provider-operations.md#microsoftcostmanagement) -Joker bewerking:
+
+> [!div class="mx-tableFixed"]
+> | Actions | NotActions | Efficiënte beheer machtigingen |
+> | --- | --- | --- |
+> | `Microsoft.CostManagement/exports/*` | *geen* | `Microsoft.CostManagement/exports/action`</br>`Microsoft.CostManagement/exports/read`</br>`Microsoft.CostManagement/exports/write`</br>`Microsoft.CostManagement/exports/delete`</br>`Microsoft.CostManagement/exports/run/action` |
+> | `Microsoft.CostManagement/exports/*` | `Microsoft.CostManagement/exports/delete` | `Microsoft.CostManagement/exports/action`</br>`Microsoft.CostManagement/exports/read`</br>`Microsoft.CostManagement/exports/write`</br>`Microsoft.CostManagement/exports/run/action` |
 
 > [!NOTE]
 > Als aan een gebruiker een rol is toegewezen die een bewerking uitsluit in `NotActions` , en aan een tweede rol wordt toegewezen die toegang verleent aan dezelfde bewerking, mag de gebruiker die bewerking uitvoeren. `NotActions` is geen regel voor weigeren: het is een handige manier om een reeks toegestane bewerkingen te maken wanneer specifieke bewerkingen moeten worden uitgesloten.
 >
+
+### <a name="differences-between-notactions-and-deny-assignments"></a>Verschillen tussen de intacte en geweigerde toewijzingen
+
+`NotActions` en geweigerde toewijzingen zijn niet hetzelfde en dienen verschillende doel einden. `NotActions` zijn een handige manier om specifieke acties af te trekken van een Joker teken ( `*` )-bewerking.
+
+Toewijzingen weigeren blok keren dat gebruikers specifieke acties kunnen uitvoeren, zelfs als een roltoewijzing deze toegang verleent. Zie [Inzicht in weigeringstoewijzingen in Azure](deny-assignments.md) voor meer informatie.
 
 ## <a name="dataactions"></a>DataActions
 
 `DataActions`Met de machtiging worden de gegevens bewerkingen opgegeven die door de functie kunnen worden uitgevoerd op uw gegevens in dat object. Als een gebruiker bijvoorbeeld BLOB-gegevens toegang tot een opslag account heeft gelezen, kunnen ze de blobs binnen dat opslag account lezen. Hier volgen enkele voor beelden van gegevens bewerkingen die kunnen worden gebruikt in `DataActions` .
 
 > [!div class="mx-tableFixed"]
-> | Bewerkings reeks    | Description         |
+> | Bewerkings reeks    | Beschrijving         |
 > | ------------------- | ------------------- |
 > | `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/read` | Retourneert een BLOB of een lijst met blobs. |
 > | `Microsoft.Storage/storageAccounts/blobServices/containers/blobs/write` | Retourneert het resultaat van het schrijven van een blob. |
@@ -311,7 +327,17 @@ Als u de gegevens bewerkingen in het REST API wilt bekijken en gebruiken, moet u
 
 ## <a name="notdataactions"></a>NotDataActions
 
-`NotDataActions`Met de machtiging worden de gegevens bewerkingen opgegeven die worden uitgesloten van de toegestaan `DataActions` . De toegang die wordt verleend door een rol (efficiënte machtigingen) wordt berekend door de `NotDataActions` bewerkingen van de bewerkingen af te trekken `DataActions` . Elke resource provider biedt de respectieve set Api's om te voldoen aan gegevens bewerkingen.
+Met deze `NotDataActions` machtiging worden de gegevens bewerkingen opgegeven die worden afgetrokken van of uitgesloten van het toegestane aantal `DataActions` dat een Joker teken ( `*` ) heeft. Gebruik de `NotDataActions` machtiging als de set bewerkingen die u wilt toestaan eenvoudiger is gedefinieerd door te aftrekken van `DataActions` een Joker teken ( `*` ). De toegang die wordt verleend door een rol (efficiënte machtigingen) wordt berekend door de `NotDataActions` bewerkingen van de bewerkingen af te trekken `DataActions` . Elke resource provider biedt de respectieve set Api's om te voldoen aan gegevens bewerkingen.
+
+`DataActions - NotDataActions = Effective data permissions`
+
+In de volgende tabel ziet u twee voor beelden van de effectief machtigingen voor een [micro soft. Storage](resource-provider-operations.md#microsoftstorage) -Joker bewerking:
+
+> [!div class="mx-tableFixed"]
+> | DataActions | NotDataActions | Efficiënte gegevens machtigingen |
+> | --- | --- | --- |
+> | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/*` | *geen* | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/read`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/write`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action` |
+> | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/*` | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/delete`</br> | `Microsoft.Storage/storageAccounts/queueServices/queues/messages/read`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/write`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/add/action`</br>`Microsoft.Storage/storageAccounts/queueServices/queues/messages/process/action` |
 
 > [!NOTE]
 > Als aan een gebruiker een rol is toegewezen die een gegevens bewerking uitsluit in en `NotDataActions` waaraan een tweede rol wordt toegewezen die toegang verleent aan dezelfde gegevens bewerking, mag de gebruiker die gegevens bewerking uitvoeren. `NotDataActions` is geen regel voor weigeren: het is een handige manier om een set toegestane gegevens bewerkingen te maken wanneer specifieke gegevens bewerkingen moeten worden uitgesloten.

@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: synapse-analytics
 ms.topic: how-to
 ms.date: 12/09/2020
-ms.openlocfilehash: ab772043c681684836e3c488419584d94dd0b45a
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: c7a0be6f1d402cc994532ab4bc5a5d0ea39bc8b7
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98220640"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599042"
 ---
 # <a name="plan-and-manage-costs-for-azure-synapse-analytics"></a>Kosten voor Azure Synapse Analytics plannen en beheren
 
@@ -48,9 +48,9 @@ Nadat u Azure Synapse-resources hebt verwijderd, kunnen de volgende resources bl
 
 - Data Lake Storage Gen2
 
-### <a name="using-monetary-credit-with-azure-synapse"></a>Monetair tegoed gebruiken met Azure Synapse 
+### <a name="using-azure-prepayment-credit-with-azure-synapse"></a>Azure-vooruitbetalings tegoed gebruiken met Azure Synapse 
 
-U kunt betalen voor Azure Synapse-kosten met uw EA monetaire toezeg ging-tegoed. U kunt het tegoed van EA monetaire toezeg ging echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
+U kunt betalen voor Azure Synapse-kosten met uw Azure-voor uitbetaling (voorheen monetaire toezeg ging)-tegoed. U kunt het tegoed van Azure-betaling echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
 
 ## <a name="review-estimated-costs-in-the-azure-portal"></a>Geschatte kosten controleren in Azure Portal
 
@@ -76,7 +76,7 @@ Wanneer u kosten analyse gebruikt, bekijkt u de kosten voor Azure Synapse Analyt
 
 Kosten voor Azure Synapse weer geven in kosten analyse:
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 2. Open de scope, het abonnement of de resource groep in de Azure Portal en selecteer **kosten analyse** in het menu. Ga bijvoorbeeld naar **abonnementen**, selecteer een abonnement in de lijst en selecteer vervolgens  **kosten analyse** in het menu. Selecteer **bereik** om over te scha kelen naar een ander bereik in cost analysis.
 3. Kosten voor services worden standaard weer gegeven in de eerste cirkel diagram. Selecteer het gebied in het diagram met het label Azure Synapse.
 

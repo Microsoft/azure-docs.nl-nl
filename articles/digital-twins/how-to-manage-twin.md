@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 10/21/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 6d9df48839505714deead567b3d342febdb41c90
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 4e8ba291f32456bf2b8432620d1f9ea313629c9d
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051765"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600505"
 ---
 # <a name="manage-digital-twins"></a>Digitale tweelingen beheren
 
@@ -227,9 +227,12 @@ Het fragment maakt gebruik van de [Room.jsop](https://github.com/Azure-Samples/d
 Ga als volgt te werk voordat u het voor beeld uitvoert:
 1. Down load het model bestand, plaats het in uw project en vervang de `<path-to>` tijdelijke aanduiding in de onderstaande code om uw programma te laten weten waar het zich bevindt.
 2. Vervang de tijdelijke aanduiding door de `<your-instance-hostname>` hostnaam van uw Azure Digital apparaatdubbels-exemplaar.
-3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. U kunt de onderstaande links gebruiken om naar de pakketten op NuGet te navigeren, waar u de consoleopdrachten (inclusief voor .NET CLI) kunt vinden om de meest recente versie van elk aan uw project toe te voegen.
-    * [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Dit is het pakket voor de [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true).
-    * [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Deze bibliotheek biedt hulpprogramma's voor de verificatie bij Azure.
+3. Voeg twee afhankelijkheden toe aan uw project die nodig zijn om met Azure Digital Apparaatdubbels te werken. De eerste is het pakket voor de [Azure Digital APPARAATDUBBELS SDK voor .net](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), de tweede bevat hulpprogram ma's om te helpen bij de verificatie van Azure.
+
+      ```cmd/sh
+      dotnet add package Azure.DigitalTwins.Core
+      dotnet add package Azure.Identity
+      ```
 
 U moet ook lokale referenties instellen als u het voor beeld rechtstreeks wilt uitvoeren. In de volgende sectie wordt dit uitgelegd.
 [!INCLUDE [Azure Digital Twins: local credentials prereq (outer)](../../includes/digital-twins-local-credentials-outer.md)]

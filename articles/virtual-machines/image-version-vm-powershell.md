@@ -1,5 +1,5 @@
 ---
-title: Een installatie kopie van een virtuele machine maken (preview)
+title: Een installatiekopie van een VM maken
 description: Meer informatie over het gebruik van Azure PowerShell voor het maken van een installatie kopie in een galerie met gedeelde installatie kopieën van een bestaande virtuele machine in Azure.
 author: cynthn
 ms.topic: how-to
@@ -9,14 +9,14 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 3a7ca8236307bbf8a419d2988e1a6dc1e4c40597
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 1a0bfb79b03b778696faef29597cabbcff47e6df
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94964861"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601662"
 ---
-# <a name="preview-create-an-image-from-a-vm"></a>Voor beeld: een installatie kopie maken op basis van een virtuele machine
+# <a name="create-an-image-from-a-vm"></a>Een installatiekopie van een VM maken
 
 Als u een bestaande VM hebt die u wilt gebruiken om meerdere, identieke Vm's te maken, kunt u die VM gebruiken om een installatie kopie in een galerie met gedeelde afbeeldingen te maken met behulp van Azure PowerShell. U kunt ook een installatie kopie van een virtuele machine maken met behulp van de [Azure cli](image-version-vm-cli.md).
 

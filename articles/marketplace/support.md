@@ -1,18 +1,18 @@
 ---
-title: Ontvang ondersteuning voor de portal voor commerciële Marketplace in het partner centrum
-description: Meer informatie over uw ondersteunings opties in Partner Center, inclusief het indienen van een ondersteunings aanvraag.
+title: Ondersteuning voor het programma voor commerciële Marketplace in het partner centrum
+description: Meer informatie over de ondersteunings opties voor het programma voor commerciële Marketplace in Partner Center, inclusief het indienen van een ondersteunings aanvraag.
 ms.service: marketplace
 ms.subservice: partnercenter-marketplace-publisher
 ms.topic: conceptual
 author: navits09
 ms.author: navits
-ms.date: 01/14/2020
-ms.openlocfilehash: 8979a94ee63ef50c0a3abacd5ab3515226200131
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.date: 01/19/2020
+ms.openlocfilehash: 6075027124352746a3adbb8f6937d3787eb22b9d
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183435"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602558"
 ---
 # <a name="support-for-the-commercial-marketplace-program-in-partner-center"></a>Ondersteuning voor het Commercial Marketplace-programma in Partner Center
 
@@ -22,60 +22,43 @@ Micro soft biedt ondersteuning voor een groot aantal producten en services. Het 
 - Als u een uitgever bent en een beveiligings probleem hebt gedetecteerd met een toepassing die wordt uitgevoerd op Azure, raadpleegt u [een ondersteunings ticket voor beveiligings gebeurtenissen registreren](/azure/security/fundamentals/event-support-ticket). Uitgevers moeten verdachte beveiligings gebeurtenissen rapporteren, met inbegrip van beveiligings incidenten en beveiligings problemen van hun Azure Marketplace-software en service aanbiedingen, op de eerste mogelijkheid.
 - Als u een uitgever bent en een vraag hebt met betrekking tot uw app of service, raadpleegt u de volgende ondersteunings opties.
 
-## <a name="support-options-for-publishers"></a>Ondersteunings opties voor uitgevers
+## <a name="get-help-or-open-a-support-ticket"></a>Hulp krijgen of een ondersteunings ticket openen
 
-1. Meld u aan bij het [commerciële Marketplace-programma op Partner Center](https://partner.microsoft.com/dashboard/commercial-marketplace/overview) met uw werk account (als u dit nog niet hebt gedaan, moet u [een partner centrum-account maken](partner-center-portal/create-account.md).
+1. Meld u aan met uw werk account. Als u dit nog niet hebt gedaan, moet u [een partner centrum-account maken](partner-center-portal/create-account.md).
 
-2. Selecteer in het bovenste menu aan de rechter kant van de pagina het **ondersteunings** pictogram.
+1. Selecteer in het menu in de rechter bovenhoek van de pagina het **ondersteunings** pictogram. Het deel venster **Help en ondersteuning** wordt weer gegeven aan de rechter kant van de pagina.
 
-3. Het deel venster **Help en ondersteuning** wordt weer gegeven aan de rechter kant van de pagina.
+1. Voor hulp bij de commerciële Marketplace selecteert u **commerciële Marketplace**.
 
    ![Vervolg keuzemenu ondersteuning](./media/support/commercial-marketplace-support-pane.png)
 
-    Ga naar het deel venster **Start pagina** en selecteer **Help en ondersteuning**.
+1. Voer in het vak **samen vatting van probleem** een korte beschrijving van het probleem in.
 
-   ![Help en ondersteuning van start pagina](./media/support/homepage-help-support.png)
+1. Voer in het vak **probleem type** een van de volgende handelingen uit:
 
-4. Selecteer **[documentatie](../index.yml)** om uitgebreide antwoorden op vragen en resources te bekijken.
+    - **Optie 1**: Voer tref woorden in zoals: Marketplace, Azure-app, Saas-aanbieding, account beheer, Lead beheer, implementatie probleem, uitbetaling of co-sell-aanbod migratie. Selecteer vervolgens een probleem type in de aanbevolen lijst die wordt weer gegeven.
 
-5. Selecteer **[Community-Forum voor Marketplace-partners](https://www.microsoftpartnercommunity.com/t5/Azure-Marketplace-and-AppSource/bd-p/2222)** om uw vragen te beantwoorden door gebruik te maken van de kennis van andere micro soft-Publishers.
+    - **Optie 2**: Selecteer **Bladeren in onderwerpen** in de **categorie** lijst en selecteer vervolgens **commerciële Marketplace**. Selecteer vervolgens het juiste **onderwerp** en **subonderwerp**.
 
-6. Selecteer **[extra Help](https://aka.ms/marketplacepublishersupport)** om een nieuw ticket voor een **ondersteunings aanvraag** te openen.  
+1. Nadat u het gewenste onderwerp hebt gevonden, selecteert u **oplossingen controleren**.
 
-## <a name="how-to-open-a-support-ticket"></a>Een ondersteunings ticket openen
+    ![Volgende stap](./media/support/next-step.png)
 
-U kunt nu een ondersteunings ticket openen op het scherm **Help en ondersteuning** .
+De volgende opties worden weer gegeven:
 
-![Help en ondersteuning](./media/support/help-and-support.png)
+- Als u een ander onderwerp wilt selecteren, klikt u op **een ander probleem selecteren**.
+- Bekijk de aanbevolen stappen en documenten, indien beschikbaar, om het probleem op te lossen.
 
->[!Note]
->Als u bent aangemeld bij Partner Center, krijgt u betere ervaring met ondersteuning.
+    ![Aanbevolen oplossingen](./media/support/recommended-solutions.png)
 
-**Optie 1:** Voer tref woorden in zoals: Marketplace, Azure-app, SaaS-aanbieding, account beheer, Lead beheer, implementatie probleem, uitbetaling, enzovoort.
-
-**Optie 2:** Bladeren door onderwerpen-> **categorie** selecteren = commerciële marketplace: > Selecteer het juiste **onderwerp** en vervolgens **subonderwerp**.
-
-Wanneer u het gewenste onderwerp hebt gevonden, selecteert u **oplossingen controleren**.
-
-![Volgende stap](./media/support/next-step.png)
-
-De volgende opties worden beschikbaar:
-
-- Als u een ander onderwerp wilt selecteren, selecteert u een andere koppeling onder **geselecteerd probleem**.
-- Lees de beschrijving van dit probleem, indien beschikbaar.  Dit is de tekst die boven de **Aanbevolen stappen** wordt weer gegeven.
-- Bekijk de **Aanbevolen stappen**, indien beschikbaar.
-- Bekijk **Aanbevolen documenten**, indien beschikbaar.
-
-![Aanbevolen oplossingen](./media/support/recommended-solutions.png)
-
-Als u uw antwoord niet in de **Aanbevolen oplossingen** kunt vinden, selecteert u **Details van probleem opgeven**. Vul alle vereiste velden in om het oplossings proces te versnellen en selecteer vervolgens **verzenden**.
+Als u uw antwoord niet kunt vinden in de zelf-Help, selecteert u **Details van probleem opgeven**. Vul alle vereiste velden in om het oplossings proces te versnellen en selecteer vervolgens **verzenden**.
 
 >[!Note]
->Als u het partner centrum niet hebt aangemeld en het onderwerp verificatie vereist, wordt u gevraagd om u aan te melden voordat u kunt door gaan.  Voor open bare onderwerpen is verificatie niet vereist.
+>Als u zich niet hebt aangemeld bij het partner centrum, moet u zich mogelijk aanmelden voordat u een ticket kunt maken.
 
 ## <a name="track-your-existing-support-requests"></a>Uw bestaande ondersteunings aanvragen bijhouden
 
-Als u al uw open en gesloten tickets wilt bekijken, gaat u naar **commerciële Marketplace** op de linkernavigatiebalk en selecteert u vervolgens **ondersteuning**.
+Als u uw open en gesloten tickets wilt bekijken, selecteert u in het navigatie menu de optie **commerciële Marketplace**-  >  **ondersteuning**.
 
 ## <a name="record-issue-details-with-a-har-file"></a>Details van het probleem vastleggen met een HAR-bestand
 

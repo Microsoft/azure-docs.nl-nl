@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 06/17/2020
-ms.openlocfilehash: 9fe0c79a2f65b27b35aa5029d0a53de62ef08078
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: e85c97df29bbbcc5d446d788cc190f3c90f24024
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251655"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602218"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Azure SQL Database-en Azure Synapse IP-firewall regels
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -43,6 +43,9 @@ U kunt IP-firewall regels op server niveau configureren met behulp van de instru
 
 - Als u de portal of Power shell wilt gebruiken, moet u de eigenaar van het abonnement of een mede werker van het abonnement zijn.
 - Als u Transact-SQL wilt gebruiken, moet u verbinding maken met de *hoofd* database als de principal-aanmelding op server niveau of als de beheerder van Azure Active Directory. (Een IP-firewall regel op server niveau moet eerst worden gemaakt door een gebruiker met machtigingen op Azure-niveau.)
+
+> [!NOTE]
+> Tijdens het maken van een nieuwe logische SQL-Server vanuit het Azure Portal, is de instelling **Azure-Services en-resources voor toegang tot deze server** standaard ingesteld op **Nee**.
 
 ### <a name="database-level-ip-firewall-rules"></a>IP-firewall regels op database niveau
 

@@ -2,20 +2,20 @@
 title: Toegangs beheer Azure Service Bus met hand tekeningen voor gedeelde toegang
 description: Overzicht van Service Bus toegangs beheer met behulp van hand tekeningen voor gedeelde toegang, Details over SAS-autorisatie met Azure Service Bus.
 ms.topic: article
-ms.date: 11/03/2020
+ms.date: 01/19/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: f71320613682f7d4b9f3b706845e68f581b3dc10
-ms.sourcegitcommit: fa90cd55e341c8201e3789df4cd8bd6fe7c809a3
+ms.openlocfilehash: 6bdc167c437a79d609db25a2e3c48b71e0a748b2
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93339407"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598821"
 ---
 # <a name="service-bus-access-control-with-shared-access-signatures"></a>Toegangs beheer Service Bus met hand tekeningen voor gedeelde toegang
 
-*Shared Access signatures* (SAS) zijn het primaire beveiligings mechanisme voor Service Bus berichten. In dit artikel worden SA'S beschreven, hoe ze werken en hoe u ze op een platform neutraal manier kunt gebruiken.
+In dit artikel worden *Shared Access signatures* (SAS) beschreven, hoe ze werken en hoe u ze op een platform neutraal manier gebruikt.
 
-SAS-beveiligingen hebben toegang tot Service Bus op basis van autorisatie regels. Deze worden geconfigureerd op een naam ruimte of een bericht entiteit (relay, wachtrij of onderwerp). Een autorisatie regel heeft een naam, is gekoppeld aan specifieke rechten en bevat een paar cryptografische sleutels. U gebruikt de naam en sleutel van de regel via de Service Bus SDK of uw eigen code om een SAS-token te genereren. Een client kan vervolgens het token door geven aan Service Bus om autorisatie voor de aangevraagde bewerking te bewijzen.
+SAS-beveiligingen hebben toegang tot Service Bus op basis van autorisatie regels. Deze worden geconfigureerd op een naam ruimte of een bericht entiteit (wachtrij of onderwerp). Een autorisatie regel heeft een naam, is gekoppeld aan specifieke rechten en bevat een paar cryptografische sleutels. U gebruikt de naam en sleutel van de regel via de Service Bus SDK of uw eigen code om een SAS-token te genereren. Een client kan vervolgens het token door geven aan Service Bus om autorisatie voor de aangevraagde bewerking te bewijzen.
 
 > [!NOTE]
 > Azure Service Bus ondersteunt het toestaan van toegang tot een Service Bus naam ruimte en de bijbehorende entiteiten met behulp van Azure Active Directory (Azure AD). Het autoriseren van gebruikers of toepassingen die gebruikmaken van het OAuth 2,0-token dat wordt geretourneerd door Azure AD, biedt een superieure beveiliging en gebruiks vriendelijk gebruik van Shared Access signatures (SAS). Met Azure AD hoeft u geen tokens op te slaan in uw code en mogelijke beveiligings problemen met Risico's.
@@ -36,12 +36,12 @@ Het [Shared Access Signature](/dotnet/api/microsoft.servicebus.sharedaccesssigna
 
 Elke Service Bus naam ruimte en elke Service Bus entiteit heeft een beleid voor gedeelde toegang dat bestaat uit regels. Het beleid op het niveau van de naam ruimte is van toepassing op alle entiteiten in de naam ruimte, ongeacht hun afzonderlijke beleids configuratie.
 
-Voor elke autorisatie beleids regel besluit u over drie stukjes informatie: **naam** , **bereik** en **rechten**. De **naam** is gewoon. een unieke naam binnen dat bereik. Het bereik is eenvoudig genoeg: het is de URI van de bron in kwestie. Voor een Service Bus naam ruimte is de scope de Fully Qualified Domain Name (FQDN), zoals `https://<yournamespace>.servicebus.windows.net/` .
+Voor elke autorisatie beleids regel besluit u over drie stukjes informatie: **naam**, **bereik** en **rechten**. De **naam** is gewoon. een unieke naam binnen dat bereik. Het bereik is eenvoudig genoeg: het is de URI van de bron in kwestie. Voor een Service Bus naam ruimte is de scope de Fully Qualified Domain Name (FQDN), zoals `https://<yournamespace>.servicebus.windows.net/` .
 
 De rechten die worden verleend door de beleids regel, kunnen een combi natie zijn van:
 
 * ' Verzenden ': het recht om berichten te verzenden naar de entiteit
-* ' Luis teren ': verleent het recht om te Luis teren (door sturen) of ontvangen (wachtrij, abonnementen) en alle gerelateerde bericht afhandeling
+* Luis teren: verleent het recht om te ontvangen (wachtrij, abonnementen) en alle gerelateerde bericht afhandeling
 * ' Beheren ': verleent het recht om de topologie van de naam ruimte te beheren, met inbegrip van het maken en verwijderen van entiteiten
 
 Het recht ' beheren ' bevat de rechten Send en receive.
@@ -55,16 +55,16 @@ Wanneer u een Service Bus naam ruimte maakt, wordt automatisch een beleids regel
 ## <a name="best-practices-when-using-sas"></a>Best practices bij gebruik van SAS
 Wanneer u gebruikmaakt van hand tekeningen voor gedeelde toegang in uw toepassingen, moet u rekening houden met twee mogelijke Risico's:
 
-- Als een SAS wordt gelekt, kan deze worden gebruikt door iedereen die deze verkrijgt, waardoor uw Event Hubs-resources mogelijk kunnen worden aangetast.
+- Als een SAS wordt gelekt, kan deze worden gebruikt door iedereen die deze verkrijgt, waardoor uw Service Bus-resources mogelijk kunnen worden aangetast.
 - Als een SAS die aan een client toepassing is gegeven, verloopt en de toepassing geen nieuwe SA'S kan ophalen van uw service, wordt de functionaliteit van de toepassing mogelijk belemmerd.
 
 De volgende aanbevelingen voor het gebruik van hand tekeningen voor gedeelde toegang kunnen helpen bij het oplossen van deze Risico's:
 
-- **Clients automatisch de SAS vernieuwen, indien nodig** : clients moeten de sa's goed vernieuwen voordat ze verlopen, zodat er tijd is om nieuwe pogingen te doen als de service die de SAS aanbiedt, niet beschikbaar is. Als uw SAS is bedoeld om te worden gebruikt voor een klein aantal directe, korte, langdurige bewerkingen die naar verwachting binnen de verloop periode zullen worden voltooid, is het mogelijk onnodig dat de SA'S niet naar verwachting worden verlengd. Als u echter een client hebt die regel matig aanvragen maakt via SAS, is het mogelijk dat de verval datum wordt afgespeeld. De belangrijkste overweging is om de nood zaak van de SA'S te verkorten (zoals eerder vermeld), met de nood zaak om ervoor te zorgen dat de client vernieuwingen vroeg genoeg aanvraagt (om onderbrekingen te voor komen als gevolg van het verlopen van SAS vóór een geslaagde vernieuwing).
-- **Wees voorzichtig met de SAS-start tijd** : als u de begin tijd voor SAS **nu** instelt, wordt de klok scheefheid (verschillen in de huidige tijd op basis van verschillende computers) mogelijk voor de eerste paar minuten afgenomen. In het algemeen stelt u de start tijd in op ten minste 15 minuten in het verleden. U kunt de service ook niet instellen, waardoor deze onmiddellijk in alle gevallen geldig is. Hetzelfde geldt ook voor de verloop tijd. Houd er rekening mee dat u gedurende een wille keurige aanvraag Maxi maal 15 minuten aan de klok kunt laten hellen. 
+- **Clients automatisch de SAS vernieuwen, indien nodig**: clients moeten de sa's goed vernieuwen voordat ze verlopen, zodat er tijd is om nieuwe pogingen te doen als de service die de SAS aanbiedt, niet beschikbaar is. Als uw SAS is bedoeld om te worden gebruikt voor een klein aantal directe, korte, langdurige bewerkingen die naar verwachting binnen de verloop periode zullen worden voltooid, is het mogelijk onnodig dat de SA'S niet naar verwachting worden verlengd. Als u echter een client hebt die regel matig aanvragen maakt via SAS, is het mogelijk dat de verval datum wordt afgespeeld. De belangrijkste overweging is om de nood zaak van de SA'S te verkorten (zoals eerder vermeld), met de nood zaak om ervoor te zorgen dat de client vernieuwingen vroeg genoeg aanvraagt (om onderbrekingen te voor komen als gevolg van het verlopen van SAS vóór een geslaagde vernieuwing).
+- **Wees voorzichtig met de SAS-start tijd**: als u de begin tijd voor SAS **nu** instelt, wordt de klok scheefheid (verschillen in de huidige tijd op basis van verschillende computers) mogelijk voor de eerste paar minuten afgenomen. In het algemeen stelt u de start tijd in op ten minste 15 minuten in het verleden. U kunt de service ook niet instellen, waardoor deze onmiddellijk in alle gevallen geldig is. Hetzelfde geldt ook voor de verloop tijd. Houd er rekening mee dat u gedurende een wille keurige aanvraag Maxi maal 15 minuten aan de klok kunt laten hellen. 
 - **Zorg ervoor dat de resource toegankelijk** is: een beveiligings best practice is om een gebruiker te voorzien van de mini maal vereiste bevoegdheden. Als een gebruiker alleen lees toegang nodig heeft tot één entiteit, dan verlenen zij Lees-en schrijf toegang tot de ene entiteit en niet lezen/schrijven/verwijderen voor alle entiteiten. Het helpt ook de schade te beperken als een SAS is aangetast omdat de SAS minder kracht in de handen van een aanvaller heeft.
-- **Gebruik niet altijd SAS** : soms zijn de Risico's die zijn gekoppeld aan een bepaalde bewerking ten opzichte van uw event hubs, tegen de voor delen van SAS. Voor dergelijke bewerkingen maakt u een middelste laag service die naar uw Event Hubs schrijft na de validatie van de bedrijfs regel, verificatie en controle.
-- **Altijd https gebruiken** : altijd https gebruiken om een SAS te maken of te distribueren. Als een SAS wordt door gegeven via HTTP en onderschept, kan een aanvaller die een man-in-the-Middle-koppeling uitvoert, de SA'S lezen en deze vervolgens gebruiken, net zoals de beoogde gebruiker kan hebben, mogelijk gevoelige gegevens in gevaar brengen of beschadiging van gegevens door de kwaadwillende gebruiker kan veroorzaken.
+- **Gebruik niet altijd SAS**: soms zijn de Risico's die zijn gekoppeld aan een bepaalde bewerking ten opzichte van uw event hubs, tegen de voor delen van SAS. Voor dergelijke bewerkingen maakt u een middelste laag service die naar uw Event Hubs schrijft na de validatie van de bedrijfs regel, verificatie en controle.
+- **Altijd https gebruiken**: altijd https gebruiken om een SAS te maken of te distribueren. Als een SAS wordt door gegeven via HTTP en onderschept, kan een aanvaller die een man-in-the-Middle-koppeling uitvoert, de SA'S lezen en deze vervolgens gebruiken, net zoals de beoogde gebruiker kan hebben, mogelijk gevoelige gegevens in gevaar brengen of beschadiging van gegevens door de kwaadwillende gebruiker kan veroorzaken.
 
 ## <a name="configuration-for-shared-access-signature-authentication"></a>Configuratie voor Shared Access Signature-verificatie
 
@@ -72,7 +72,7 @@ U kunt de [SharedAccessAuthorizationRule](/dotnet/api/microsoft.servicebus.messa
 
 ![SAS](./media/service-bus-sas/service-bus-namespace.png)
 
-In deze afbeelding zijn de *manageRuleNS* -, *SendRuleNS* -en *listenRuleNS* -autorisatie regels van toepassing op zowel wachtrij W1 als onderwerp T1, terwijl *listenRuleQ* en *SendRuleQ* alleen van toepassing zijn op wachtrij W1 en *sendRuleT* alleen van toepassing op het onderwerp T1.
+In deze afbeelding zijn de *manageRuleNS*-, *SendRuleNS*-en *listenRuleNS* -autorisatie regels van toepassing op zowel wachtrij W1 als onderwerp T1, terwijl *listenRuleQ* en *SendRuleQ* alleen van toepassing zijn op wachtrij W1 en *sendRuleT* alleen van toepassing op het onderwerp T1.
 
 ## <a name="generate-a-shared-access-signature-token"></a>Een Shared Access Signature-token genereren
 
@@ -82,18 +82,34 @@ Elke client die toegang heeft tot de naam van een verificatie regel naam en een 
 SharedAccessSignature sig=<signature-string>&se=<expiry>&skn=<keyName>&sr=<URL-encoded-resourceURI>
 ```
 
-* **`se`** -Token verloop datum direct. Geheel getal dat seconden weergeeft sinds de epoche `00:00:00 UTC` op 1 januari 1970 (UNIX-epoche) wanneer het token verloopt.
-* **`skn`** -De naam van de autorisatie regel.
-* **`sr`** -De URI van de bron waartoe toegang wordt verkregen.
-* **`sig`** Ondertekening.
+- `se` -Token verloop datum direct. Geheel getal dat seconden weergeeft sinds de epoche `00:00:00 UTC` op 1 januari 1970 (UNIX-epoche) wanneer het token verloopt.
+- `skn` -De naam van de autorisatie regel.
+- `sr` -URL-gecodeerde URI van de bron waartoe toegang wordt verkregen.
+- `sig` -URL-gecodeerde HMACSHA256-hand tekening. De hash-berekening ziet er ongeveer uit als de volgende pseudo code en retourneert base64 van onbewerkte binaire uitvoer.
 
-De `signature-string` is de SHA-256-Hash berekend op basis van de resource-URI ( **bereik** zoals beschreven in de vorige sectie) en de teken reeks representatie van het token verloop, gescheiden door LF.
+    ```
+    urlencode(base64(hmacsha256(urlencode('https://<yournamespace>.servicebus.windows.net/') + "\n" + '<expiry instant>', '<signing key>')))
+    ```
 
-De hash-berekening ziet er ongeveer uit als de volgende pseudo code en retourneert een 256-bits/32-byte hash-waarde.
+Hier volgt een voor beeld van een C#-code voor het genereren van een SAS-token:
 
+```csharp
+private static string createToken(string resourceUri, string keyName, string key)
+{
+    TimeSpan sinceEpoch = DateTime.UtcNow - new DateTime(1970, 1, 1);
+    var week = 60 * 60 * 24 * 7;
+    var expiry = Convert.ToString((int)sinceEpoch.TotalSeconds + week);
+    string stringToSign = HttpUtility.UrlEncode(resourceUri) + "\n" + expiry;
+    HMACSHA256 hmac = new HMACSHA256(Encoding.UTF8.GetBytes(key));
+    var signature = Convert.ToBase64String(hmac.ComputeHash(Encoding.UTF8.GetBytes(stringToSign)));
+    var sasToken = String.Format(CultureInfo.InvariantCulture, "SharedAccessSignature sr={0}&sig={1}&se={2}&skn={3}", HttpUtility.UrlEncode(resourceUri), HttpUtility.UrlEncode(signature), expiry, keyName);
+    return sasToken;
+}
 ```
-SHA-256('https://<yournamespace>.servicebus.windows.net/'+'\n'+ 1438205742)
-```
+
+> [!IMPORTANT]
+> Zie [SAS-token genereren](/rest/api/eventhub/generate-sas-token)voor voor beelden van het genereren van een SAS-token met behulp van verschillende programmeer talen. 
+
 
 Het token bevat de niet-gehashte waarden, zodat de ontvanger de hash opnieuw kan berekenen met dezelfde para meters, zodat u kunt controleren of de uitgever in het bezit is van een geldige ondertekeningssleutel.
 
@@ -105,8 +121,6 @@ De gedeelde toegangs autorisatie regel die wordt gebruikt voor ondertekening moe
 
 Een SAS-token is geldig voor alle resources die worden voorafgegaan door de `<resourceURI>` gebruikt in de `signature-string` .
 
-> [!NOTE]
-> Zie [SAS-token genereren](/rest/api/eventhub/generate-sas-token)voor voor beelden van het genereren van een SAS-token met behulp van verschillende programmeer talen. 
 
 ## <a name="regenerating-keys"></a>Sleutels opnieuw genereren
 
@@ -174,7 +188,7 @@ sendClient.Send(helloMessage);
 
 U kunt de token provider ook rechtstreeks voor het uitgeven van tokens gebruiken om aan andere clients door te geven.
 
-Verbindings reeksen kunnen bestaan uit een regel naam ( *SharedAccessKeyName* ) en regel sleutel ( *SharedAccessKey* ) of een eerder uitgegeven token ( *SharedAccessSignature* ). Als deze aanwezig zijn in de connection string die is door gegeven aan een wille keurige constructor of fabrieks methode die een connection string accepteert, wordt de SAS-token provider automatisch gemaakt en gevuld.
+Verbindings reeksen kunnen bestaan uit een regel naam (*SharedAccessKeyName*) en regel sleutel (*SharedAccessKey*) of een eerder uitgegeven token (*SharedAccessSignature*). Als deze aanwezig zijn in de connection string die is door gegeven aan een wille keurige constructor of fabrieks methode die een connection string accepteert, wordt de SAS-token provider automatisch gemaakt en gevuld.
 
 Als u SAS-autorisatie wilt gebruiken met Service Bus relays, kunt u SAS-sleutels gebruiken die zijn geconfigureerd voor de Service Bus naam ruimte. Als u expliciet een relay maakt in de naam ruimte ([NamespaceManager](/dotnet/api/microsoft.servicebus.namespacemanager) met een [RelayDescription](/dotnet/api/microsoft.servicebus.messaging.relaydescription))-object, kunt u de SAS-regels voor die relay instellen. Als u SAS-autorisatie wilt gebruiken met Service Bus-abonnementen, kunt u SAS-sleutels gebruiken die zijn geconfigureerd op een Service Bus naam ruimte of op een onderwerp.
 
@@ -277,7 +291,7 @@ De volgende tabel bevat de toegangs rechten die zijn vereist voor verschillende 
 | Privé beleid opsommen |Beheren |Elk naam ruimte adres |
 | Beginnen met Luis teren op een naam ruimte |Luisteren |Elk naam ruimte adres |
 | Berichten naar een listener verzenden in een naam ruimte |Verzenden |Elk naam ruimte adres |
-| **Queue** | | |
+| **Wachtrij** | | |
 | Een wachtrij maken |Beheren |Elk naam ruimte adres |
 | Een wachtrij verwijderen |Beheren |Een geldig wachtrij adres |
 | Wacht rijen opsommen |Beheren |/$Resources/queues |

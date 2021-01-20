@@ -9,12 +9,12 @@ ms.date: 11/13/2020
 ms.author: normesta
 ms.subservice: common
 ms.custom: subject-cost-optimization
-ms.openlocfilehash: 14e53efb7be9eef3ca388e6524e5ffd678671cd0
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 0bad4637f13bbcf02047416499e4f82fdc53eb4f
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251638"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601304"
 ---
 # <a name="plan-and-manage-costs-for-azure-blob-storage"></a>Kosten voor Azure Blob Storage plannen en beheren
 
@@ -41,7 +41,7 @@ Gebruik de [prijs calculator van Azure](https://azure.microsoft.com/pricing/calc
 4. Wijzig de overige opties om de invloed op uw schatting te zien.
 
    > [!NOTE]
-   > U kunt betalen voor Azure Blob Storage-kosten met uw Azure Enterprise Agreement monetaire toezeggings tegoed. U kunt het tegoed van de monetaire toezeg ging echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
+   > U kunt betalen voor Azure Blob Storage-kosten met uw Azure-voor uitbetaling (voorheen monetaire toezeg ging)-tegoed. U kunt het tegoed van Azure-betaling echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
 
 ## <a name="optimize-costs"></a>Kosten optimaliseren
 

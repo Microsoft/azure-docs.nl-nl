@@ -7,12 +7,12 @@ ms.custom: subject-cost-optimization
 ms.service: cognitive-services
 ms.topic: how-to
 ms.date: 12/15/2020
-ms.openlocfilehash: 4fe06edbb3e02f23ef56a3e7fff848682e36e3af
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 925a092eb67fa459213a37df0fc6b3f7a1b8a0fb
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251315"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602354"
 ---
 # <a name="plan-and-manage-costs-for-azure-cognitive-services"></a>Kosten plannen en beheren voor Azure Cognitive Services
 
@@ -60,9 +60,9 @@ Nadat u QnA Maker resources hebt verwijderd, kunnen de volgende resources blijve
 - [Azure App Service (voor de runtime)](https://azure.microsoft.com/pricing/details/app-service/)
 - [Azure-Cognitive Search (voor de gegevens)](https://azure.microsoft.com/pricing/details/search/)
 
-### <a name="using-monetary-credit-with-cognitive-services"></a>Monetair tegoed gebruiken met Cognitive Services
+### <a name="using-azure-prepayment-credit-with-cognitive-services"></a>Azure-vooruitbetalings tegoed gebruiken met Cognitive Services
 
-U kunt betalen voor Cognitive Services kosten met uw EA monetaire toezeg ging-tegoed. U kunt het tegoed van EA monetaire toezeg ging echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
+U kunt betalen voor Cognitive Services kosten met uw Azure-voor uitbetaling (voorheen monetaire toezeg ging genoemd)-tegoed. U kunt het tegoed van Azure-betaling echter niet gebruiken om te betalen voor de kosten van producten en services van derden, waaronder die van de Azure Marketplace.
 
 ## <a name="create-budgets"></a>Budgetten maken
 

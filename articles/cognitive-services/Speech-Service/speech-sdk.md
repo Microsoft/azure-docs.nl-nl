@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 04/03/2020
 ms.author: trbye
-ms.openlocfilehash: 9356cbb6eb210d6745d90e8ad001917e73592cd3
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 597a7c3954912a3a86b5db9f92ba75e8aaee63f6
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96021980"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601810"
 ---
 # <a name="about-the-speech-sdk"></a>Info over de Speech-SDK
 
@@ -58,7 +58,7 @@ De **spraak herkenning (SR), woordgroepen lijst, intentie, vertaling en on-premi
 
 ### <a name="voice-assistants"></a>Spraakassistenten
 
-[Met de spraak-](voice-assistants.md) SDK kunnen ontwikkel aars natuurlijke, menselijke-achtige gespreks interfaces maken voor hun toepassingen en ervaringen. De Voice Assistant-service biedt snelle, betrouw bare interactie tussen een apparaat en een assistent. De implementatie maakt gebruik van het direct lijn speech Channel van het bot-Framework of de geïntegreerde service voor het volt ooien van taken (preview). Daarnaast kunnen spraak assistenten aangepaste stemmen gebruiken die zijn gemaakt in de [aangepaste Voice Portal](https://aka.ms/customvoice) om een unieke spraak-uitvoer ervaring toe te voegen.
+[Met de spraak-](voice-assistants.md) SDK kunnen ontwikkel aars natuurlijke, menselijke-achtige gespreks interfaces maken voor hun toepassingen en ervaringen. De Voice Assistant-service biedt snelle, betrouw bare interactie tussen een apparaat en een assistent. De implementatie maakt gebruik van het direct lijn speech Channel van het bot-Framework of de geïntegreerde service voor het volt ooien van de taak. Daarnaast kunnen spraak assistenten aangepaste stemmen gebruiken die zijn gemaakt in de [aangepaste Voice Portal](https://aka.ms/customvoice) om een unieke spraak-uitvoer ervaring toe te voegen.
 
 Op de volgende platforms is **spraak assistenten** beschikbaar:
 
@@ -92,7 +92,7 @@ De Speech SDK is perfect voor het overzetten van Vergader scenario's, hetzij van
   - C# (Framework & .NET core)/Windows & UWP & Linux
   - Java/Windows & Linux & Android (Speech-apparaten SDK)
 
-#### <a name="multi-device-conversation"></a>Gesprek via meerdere apparaten
+#### <a name="multi-device-conversation"></a>Conversatie met meerdere apparaten
 
 Met een [gesprek met meerdere](multi-device-conversation.md)apparaten kunt u meerdere apparaten of clients in een gesprek verbinden om berichten op basis van spraak of tekst te verzenden, met eenvoudige ondersteuning voor transcriptie en vertaling.
 
@@ -133,7 +133,7 @@ Hoewel de spraak-SDK een groot aantal functies van de spraak service omvat, kunt
 
 De speech-service biedt uitstekende functionaliteit met de standaard modellen voor spraak naar tekst, tekst naar spraak en spraak omzetting. Soms wilt u mogelijk de basislijn prestaties verhogen zodat deze nog beter werken met uw unieke gebruiks case. De speech-service beschikt over een aantal hulpprogram ma's waarmee u geen code kunt aanpassen en waarmee u een competitief voor deel kunt maken met aangepaste modellen op basis van uw eigen gegevens. Deze modellen zijn alleen beschikbaar voor u en uw organisatie.
 
-### <a name="custom-speech-to-text"></a>Custom Speech-naar-tekst
+### <a name="custom-speech-to-text"></a>Aangepaste spraak-naar-tekst
 
 Wanneer u spraak-naar-tekst gebruikt voor herkenning en transcriptie in een unieke omgeving, kunt u aangepaste akoestische, taal en uitspraak modellen maken en trainen om omgevings lawaai of branchespecifieke woorden lijsten te verhelpen. Het maken en beheren van Custom Speech modellen zonder code is beschikbaar via de [Custom speech Portal](https://aka.ms/customspeech). Zodra het Custom Speech model is gepubliceerd, kan het worden gebruikt door de spraak-SDK.
 

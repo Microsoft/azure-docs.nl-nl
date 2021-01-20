@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: xiaojul
-ms.openlocfilehash: e50d7aba5cc5b3d5d620d844cc9ad169ad8b3bf6
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 6f2dfdbb5833b34441b4abba7359ad70c4717d1d
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95025888"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602161"
 ---
 # <a name="set-up-web-endpoints"></a>Webeindpunten instellen
 
@@ -23,7 +23,7 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
 
 - Webeindpunten instellen in de toepassing aangepaste opdrachten
 - Webeindpunten aanroepen in de toepassing aangepaste opdrachten
-- Het antwoord van de webeindpunten ontvangen 
+- Het antwoord van de webeindpunten ontvangen
 - Het antwoord van de webeindpunten integreren in een aangepaste JSON-payload, verzenden, en visualiseren vanuit een UWP-clienttoepassing van de Spraak-SDK in C#
 
 ## <a name="prerequisites"></a>Vereisten
@@ -35,7 +35,7 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
 
 ## <a name="setup-web-endpoints"></a>Webeindpunten instellen
 
-1. Open de aangepaste opdrachten-toepassing die u eerder hebt gemaakt. 
+1. Open de aangepaste opdrachten-toepassing die u eerder hebt gemaakt.
 1. Ga naar Webeindpunten en klik op Nieuw webeindpunt.
 
    > [!div class="mx-imgBorder"]
@@ -61,7 +61,7 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
 1. Ga naar de opdracht **TurnOnOff** (In/-uitschakelen), selecteer **ConfirmationResponse** onder de voltooiingsregel en selecteer vervolgens **Add an action** (Actie toevoegen).
 1. Selecteer **Call web endpoint** (Webeindpunt aanroepen) onder **New Action-Type** (Nieuw actietype)
 1. Selecteer in **Edit Action - Endpoints** (Actie bewerken - Eindpunten) het webeindpunt dat we hebben gemaakt. Dat is **UpdateDeviceState** (Apparaatstatus bijwerken).  
-1. Geef in **Configuration** de volgende waarden op: 
+1. Geef in **Configuration** de volgende waarden op:
    > [!div class="mx-imgBorder"]
    > ![Actieparameters voor het aanroepen van webeindpunten](media/custom-commands/setup-web-endpoint-edit-action-parameters.png)
 
@@ -75,16 +75,16 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
     > - De voorgestelde queryparameters zijn alleen nodig voor het voorbeeldeindpunt
 
 1. Selecteer **Gesproken antwoord verzenden** in **Bij voltooid - Actie die moet worden uitgevoerd**.
-    
+
     Voer `{SubjectDevice} is {OnOff}` in **Simple editor** (Eenvoudige editor) in.
-   
+
    > [!div class="mx-imgBorder"]
    > ![Scherm opname van het scherm voor het uitvoeren van de actie bij geslaagd.](media/custom-commands/setup-web-endpoint-edit-action-on-success-send-response.png)
 
    | Instelling | Voorgestelde waarde | Beschrijving |
    | ------- | --------------- | ----------- |
    | Actie die moet worden uitgevoerd | Gesproken antwoord verzenden | Actie die moet worden uitgevoerd als de aanvraag op het webeindpunt is geslaagd |
-   
+
    > [!NOTE]
    > - U kunt de velden in het HTTP-antwoord ook rechtstreeks openen met behulp van `{YourWebEndpointName.FieldName}`. Bijvoorbeeld: `{UpdateDeviceState.TV}`
 
@@ -101,7 +101,7 @@ In dit artikel leert u hoe u webeindpunten instelt in de toepassing aangepaste o
 
    > [!NOTE]
    > - `{WebEndpointErrorMessage}` is optioneel. U kunt dit verwijderen als u geen foutbericht wilt weergeven.
-   > - In ons voorbeeldeindpunt retourneren we een HTTP-antwoord met gedetailleerde foutberichten voor veelvoorkomende fouten, zoals ontbrekende headerparameters. 
+   > - In ons voorbeeldeindpunt retourneren we een HTTP-antwoord met gedetailleerde foutberichten voor veelvoorkomende fouten, zoals ontbrekende headerparameters.
 
 ### <a name="try-it-out-in-test-portal"></a>Probeer het uit in de testportal
 - Antwoord bij geslaagde poging\
@@ -119,7 +119,7 @@ In [Instructies: Activiteit verzenden naar clienttoepassing (preview)](./how-to-
 In de meeste gevallen wilt u echter alleen een activiteit naar de clienttoepassing verzenden wanneer de aanroep van het webeindpunt geslaagd is. In dit voorbeeld is dat wanneer de status van het apparaat is bijgewerkt.
 
 1. Verwijder de actie **Activiteit verzenden naar client** die u eerder hebt toegevoegd.
-1. Aanroepen van webeindpunt bewerken: 
+1. Aanroepen van webeindpunt bewerken:
     1. Zorg ervoor dat in **Configuration** (Configuratie) **Query Parameters** (Queryparameters) is ingesteld op `item={SubjectDevice}&&value={OnOff}`
     1. Wijzig **Bij voltooid** **Actie die moet worden uitgevoerd** in **Activiteit verzenden naar client**
     1. Kopieer de JSON hieronder naar **Activity Content** (Inhoud van de activiteit)
@@ -133,7 +133,6 @@ In de meeste gevallen wilt u echter alleen een activiteit naar de clienttoepassi
       }
     }
    ```
-   
 Nu wordt er alleen activiteit naar de client verzonden wanneer de aanvraag op het eindpunt is geslaagd.
 
 ### <a name="create-visuals-for-syncing-device-state"></a>Visuals maken voor het synchroniseren van de apparaatstatus
@@ -147,7 +146,7 @@ Voeg de volgende XML toe aan `MainPage.xaml` boven het blok `"EnableMicrophoneBu
         .........../>
 ```
 
-### <a name="sync-device-state"></a>Apparaatstatus synchroniseren 
+### <a name="sync-device-state"></a>Apparaatstatus synchroniseren
 
 Voeg aan `MainPage.xaml.cs` de referentie `using Windows.Web.Http;` toe. Voeg de volgende code toe aan de klasse `MainPage`. Met deze methode wordt een GET-aanvraag naar het voorbeeldeindpunt verzonden en wordt de huidige apparaatstatus opgehaald voor uw app. Zorg ervoor dat u `<your_app_name>` wijzigt in wat u hebt gebruikt in de **header** in het webeindpunt voor aangepaste opdrachten
 
@@ -157,7 +156,7 @@ private async void SyncDeviceState_ButtonClicked(object sender, RoutedEventArgs 
     //Create an HTTP client object
     var httpClient = new HttpClient();
 
-    //Add a user-agent header to the GET request. 
+    //Add a user-agent header to the GET request.
     var your_app_name = "<your-app-name>";
 
     Uri endpoint = new Uri("https://webendpointexample.azurewebsites.net/api/DeviceState");

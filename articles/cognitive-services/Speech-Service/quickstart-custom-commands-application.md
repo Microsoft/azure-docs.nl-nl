@@ -11,16 +11,16 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
 ms.custom: references_regions
-ms.openlocfilehash: c5f8be87e7ee95e1deff12cce09204b5fe8a0bb7
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 2cc37cc66c06dc9e6997c6a031a9c60ad050c01a
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97694194"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601759"
 ---
 # <a name="create-a-voice-assistant-using-custom-commands"></a>Een spraakassistent maken met aangepaste opdrachten
 
-In deze Quick Start maakt en test u een basis toepassing voor aangepaste opdrachten met behulp van speech Studio. U kunt deze toepassing ook openen vanuit een Windows-client-app. Met **aangepaste opdrachten** kunt u eenvoudig geavanceerde spraak opdrachten maken die zijn geoptimaliseerd voor spraak-eerste interactie. Het biedt een uniforme ontwerp-ervaring, een automatisch hosting model en relatief lagere complexiteit, waarmee u zich kunt richten op het bouwen van de beste oplossing voor uw spraak-opdracht scenario's.
+In deze Quick Start maakt en test u een basis toepassing voor aangepaste opdrachten met behulp van speech Studio. U kunt deze toepassing ook openen vanuit een Windows-client-app.
 
 ## <a name="region-availability"></a>Beschik baarheid van regio
 Op dit moment ondersteunt aangepaste opdrachten spraak abonnementen die in deze regio's worden gemaakt:

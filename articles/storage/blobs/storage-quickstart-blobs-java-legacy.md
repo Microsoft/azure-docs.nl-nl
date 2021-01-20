@@ -4,16 +4,16 @@ description: Maak een opslagaccount en een container in object(Blob)-opslag. Ver
 author: mhopkins-msft
 ms.custom: devx-track-java
 ms.author: mhopkins
-ms.date: 07/24/2020
+ms.date: 01/19/2021
 ms.service: storage
 ms.subservice: blobs
 ms.topic: quickstart
-ms.openlocfilehash: 39b5a812c5f9b8e148b5180569af110c72e2c75b
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: b3bb8736eb7a8e24f47812fc4feecbf96628dfb6
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: HT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544595"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599809"
 ---
 # <a name="quickstart-manage-blobs-with-java-v8-sdk"></a>Quickstart: Blobs beheren met Java v8 SDK
 
@@ -201,5 +201,5 @@ sourceFile.deleteOnExit();
 In dit artikel hebt u geleerd hoe u bestanden overbrengt tussen een lokale schijf en Azure Blob-opslag met behulp van Java. Voor meer informatie over het werken met Java gaat u verder naar onze opslagplaats van GitHub-broncode.
 
 > [!div class="nextstepaction"]
-> [Java API-referentie](/java/api/overview/azure/storage?view=azure-java-legacy)
+> [Java API-referentie](/java/api/overview/azure/storage?view=azure-java-legacy&preserve-view=true)
 > [Codevoorbeelden voor Java](../common/storage-samples-java.md)

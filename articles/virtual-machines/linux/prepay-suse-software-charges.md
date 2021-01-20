@@ -8,12 +8,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 04/06/2020
 ms.author: banders
-ms.openlocfilehash: a527b75d376f05ab6190187b7a03d6da775055ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5a4f7de0cacb17087e346123f53dad45ae1de357
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "81759280"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602616"
 ---
 # <a name="prepay-for-azure-software-plans"></a>Vooruitbetalen voor Azure-softwareabonnementen
 
@@ -32,7 +32,7 @@ U kunt de software plannen van SUSE en RedHat kopen in de Azure Portal. Een abon
 Vul de vereiste velden in. Elke SUSE Linux VM-of RedHat-VM die overeenkomt met de kenmerken van wat u koopt, krijgt de korting. Het werkelijke aantal implementaties dat de korting krijgt, is afhankelijk van het bereik en de geselecteerde hoeveelheid.
 3. Selecteer een abonnement. Het wordt gebruikt voor het betalen van het abonnement.
 Voor de betalings wijze van het abonnement worden de kosten vooraf in rekening gebracht voor de reserve ring. Het abonnements type moet een Enterprise Agreement zijn (nummer aanbieding: MS-AZR-0017P of MS-AZR-0148P) of afzonderlijke overeenkomst met betalen per gebruik-prijs (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P).
-    - Voor een Enterprise-abonnement worden de kosten in mindering gebracht op het toezeggingsbedrag of ze worden in rekening gebracht als overschrijding.
+    - Voor een Enter prise-abonnement worden de kosten afgetrokken van de Azure-voor uitbetaling van de inschrijving (voorheen monetaire toezeg ging genoemd)-saldo of in rekening gebracht als overschrijding.
     - Voor een individueel abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht voor de credit card van het abonnement of de betalings wijze van de factuur.
 4. Selecteer een bereik. Het bereik kan één abonnement of meerdere abonnementen beslaan (gedeeld bereik).
     - Eén abonnement: de plan korting wordt toegepast op het overeenkomende gebruik in het abonnement.
@@ -60,7 +60,7 @@ RedHat-abonnement kortingen gelden alleen voor de grootte van de virtuele machin
 
 U kunt een SUSE-of RedHat-abonnement dat u hebt gekocht, niet annuleren of uitwisselen. Controleer uw gebruik om er zeker van te zijn dat u het juiste abonnement koopt. Zie [begrijpen hoe de korting van het software plan wordt toegepast](../../cost-management-billing/reservations/understand-suse-reservation-charges.md)voor hulp bij het bepalen van wat u wilt kopen.
 
-## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
+## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
 
 Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

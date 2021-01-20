@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: dcc6cc40c936876c856326e330b67ef465f90cde
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 8343c06992c896986ba26a90171e25f9c8c4f2f8
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93240440"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600108"
 ---
 # <a name="prepay-for-azure-database-for-postgresql---single-server-compute-resources-with-reserved-capacity"></a>Vooruitbetalen voor Azure Database for PostgreSQL-reken resources met één server met gereserveerde capaciteit
 
@@ -41,7 +41,7 @@ Stel bijvoorbeeld dat u een GEN5-Data Base voor algemeen gebruik uitvoert: 32 vC
 ## <a name="buy-azure-database-for-postgresql-reserved-capacity"></a>Azure Database for PostgreSQL gereserveerde capaciteit kopen
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
-2. Selecteer **Alle services** > **Reserveringen** .
+2. Selecteer **Alle services** > **Reserveringen**.
 3. Selecteer **toevoegen** en selecteer vervolgens in het deel venster reserve ringen **Azure database for PostgreSQL** om een nieuwe reserve ring voor uw postgresql-data bases aan te schaffen.
 4. Vul de vereiste velden in. Bestaande of nieuwe data bases die overeenkomen met de kenmerken die u selecteert, komen in aanmerking voor de korting op gereserveerde capaciteit. Het werkelijke aantal Azure Database for PostgreSQL servers dat de korting krijgt, is afhankelijk van het bereik en de geselecteerde hoeveelheid.
 
@@ -53,8 +53,8 @@ In de volgende tabel worden de vereiste velden beschreven.
 
 | Veld | Beschrijving |
 | :------------ | :------- |
-| Abonnement   | Het abonnement dat wordt gebruikt om te betalen voor de reserve ring van de Azure Database for PostgreSQL gereserveerde capaciteit. Voor de betalings methode voor het abonnement worden de kosten vooraf in rekening gebracht voor de reserve ring van de Azure Database for PostgreSQL gereserveerde capaciteit. Het abonnements type moet een Enter prise Agreement zijn (nummer van de aanbieding: MS-AZR-0017P of MS-AZR-0148P) of een afzonderlijke overeenkomst met betalen per gebruik-prijs (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P). Voor een Enterprise-abonnement worden de kosten in mindering gebracht op het toezeggingsbedrag of ze worden in rekening gebracht als overschrijding. Voor een individueel abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht op basis van de credit card of factuur betalings methode voor het abonnement.
-| Bereik | Het bereik van de vCore-reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u het volgende selecteert: </br></br> **Gedeeld** , de vCore-reserverings korting wordt toegepast op Azure database for PostgreSQL servers die worden uitgevoerd in een abonnement binnen uw facturerings context. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bestaat het gedeelde bereik uit alle abonnementen op gebruiksbasis gemaakt door de accountbeheerder.</br></br> **Eén abonnement** , de vCore-reserverings korting wordt toegepast op Azure database for PostgreSQL servers in dit abonnement. </br></br> **Eén resource groep** , de reserverings korting wordt toegepast op Azure database for PostgreSQL servers in het geselecteerde abonnement en de geselecteerde resource groep in dat abonnement.
+| Abonnement   | Het abonnement dat wordt gebruikt om te betalen voor de reserve ring van de Azure Database for PostgreSQL gereserveerde capaciteit. Voor de betalings methode voor het abonnement worden de kosten vooraf in rekening gebracht voor de reserve ring van de Azure Database for PostgreSQL gereserveerde capaciteit. Het abonnements type moet een Enter prise Agreement zijn (nummer van de aanbieding: MS-AZR-0017P of MS-AZR-0148P) of een afzonderlijke overeenkomst met betalen per gebruik-prijs (aanbiedings nummers: MS-AZR-0003P of MS-AZR-0023P). Voor een Enter prise-abonnement worden de kosten afgetrokken van de Azure-voor uitbetaling van de inschrijving (voorheen monetaire toezeg ging genoemd)-saldo of in rekening gebracht als overschrijding. Voor een individueel abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht op basis van de credit card of factuur betalings methode voor het abonnement.
+| Bereik | Het bereik van de vCore-reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u het volgende selecteert: </br></br> **Gedeeld**, de vCore-reserverings korting wordt toegepast op Azure database for PostgreSQL servers die worden uitgevoerd in een abonnement binnen uw facturerings context. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bestaat het gedeelde bereik uit alle abonnementen op gebruiksbasis gemaakt door de accountbeheerder.</br></br> **Eén abonnement**, de vCore-reserverings korting wordt toegepast op Azure database for PostgreSQL servers in dit abonnement. </br></br> **Eén resource groep**, de reserverings korting wordt toegepast op Azure database for PostgreSQL servers in het geselecteerde abonnement en de geselecteerde resource groep in dat abonnement.
 | Regio | De Azure-regio die wordt gedekt door de Azure Database for PostgreSQL gereserveerde capaciteits reservering.
 | Implementatie type | Het resource type Azure Database for PostgreSQL waarvoor u de reserve ring wilt kopen.
 | Prestatie niveau | De servicelaag voor de Azure Database for PostgreSQL-servers.

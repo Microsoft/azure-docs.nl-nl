@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/18/2020
 ms.author: mingshen
 author: mingshen-ms
-ms.openlocfilehash: d602687ea623b90ea5dcae4ece09a1ccc438ea57
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: 5a2a7abf0227812826428557b86c4468f7693c82
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822383"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600389"
 ---
 # <a name="commercial-marketplace-transact-capabilities"></a>De Transact-mogelijkheden voor commerciële Marketplace
 
@@ -115,7 +115,7 @@ In dit scenario $1,14 factureert micro soft per uur voor het gebruik van uw gepu
 |Micro soft bewaart 100% van de kosten voor Azure-gebruik | $0,14 per uur |
 ||
 
-**Bring Your Own License (BYOL)**
+**Neem uw eigen licentie mee (BYOL)**
 
 BYOL heeft de volgende kosten structuur:
 
@@ -160,7 +160,7 @@ In dit scenario betaalt micro soft de $100,00 voor uw software licentie en wordt
 
 **Credit cards en maandelijkse factuur** : klanten kunnen ook betalen met een credit card en een maandelijkse factuur. In dit geval worden de kosten voor software licenties gefactureerd op dezelfde manier als het Enterprise Agreement scenario, als een gespecificeerde kosten, gescheiden van eventuele Azure-specifieke gebruiks kosten.
 
-**Gratis tegoed en monetaire toezeg ging** : sommige klanten kiezen Azure voor de monetaire toezeg ging in de Enterprise Agreement of zijn gratis tegoed voor gebruik met Azure. Hoewel deze tegoeden kunnen worden gebruikt om te betalen voor gebruik van Azure, kunnen ze niet worden gebruikt voor het betalen van licentie kosten voor software licenties.
+**Gratis tegoeden en Azure-voor uitbetaling** : sommige klanten kiezen voor het probetalen van Azure met Azure-voor uitbetaling (voorheen monetaire toezeg ging genoemd) in het Enterprise Agreement of hebben gratis tegoed voor gebruik met Azure. Hoewel deze tegoeden kunnen worden gebruikt om te betalen voor gebruik van Azure, kunnen ze niet worden gebruikt voor het betalen van licentie kosten voor software licenties.
 
 **Facturering en verzamelingen** : de facturering van uitgever software licenties wordt weer gegeven op basis van de klant-geselecteerde facturerings methode en volgt de facturerings tijdlijn. Klanten zonder een Enterprise Agreement op locatie worden maandelijks gefactureerd voor software licenties voor Marketplace. Klanten met een Enterprise Agreement worden maandelijks gefactureerd via een factuur die elk kwar taal wordt gepresenteerd.
 

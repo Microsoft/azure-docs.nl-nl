@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 43bf70d66c42bc0ecd5e26e4cc724456bd4bf84e
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: f51b46efcaf9be4f51e96b038b93562d0e3eae0b
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896919"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601148"
 ---
 # <a name="web-sdk-supported-browsers"></a>Browsers die Web-SDK ondersteunen
 
@@ -36,7 +36,7 @@ De Azure Maps Web-SDK ondersteunt de volgende desktop browsers:
 - Micro soft Edge (huidige en vorige versie)
 - Google Chrome (huidige en vorige versie)
 - Mozilla Firefox (huidige en vorige versie)
-- Apple Safari (Mac OS X) (huidige en vorige versie)
+- Apple Safari (macOS X) (huidige en vorige versie)
 
 Zie ook [verouderde browsers bedoelen](#Target-Legacy-Browsers) verderop in dit artikel.
 
@@ -63,7 +63,7 @@ De volgende Web SDK-modules worden ook ondersteund in Node.js:
 
 ## <a name="target-legacy-browsers"></a><a name="Target-Legacy-Browsers"></a>Doel verouderde browsers
 
-Het is raadzaam om oudere browsers te richten die geen ondersteuning bieden voor WebGL of die alleen beperkte ondersteuning voor het systeem hebben. In dergelijke gevallen kunt u het beste Azure Maps-Services gebruiken in combi natie met een open-source kaart besturings element als een [Folder](https://leafletjs.com/). Hier volgt een voorbeeld:
+Het is raadzaam om oudere browsers te richten die geen ondersteuning bieden voor WebGL of die alleen beperkte ondersteuning voor het systeem hebben. In dergelijke gevallen kunt u het beste Azure Maps-Services gebruiken in combi natie met een open-source kaart besturings element als een [Folder](https://leafletjs.com/). Hier volgt een voor beeld van het gebruik van de open source [Azure Maps-invoeg toepassing](https://github.com/azure-samples/azure-maps-leaflet).
 
 <br/>
 
@@ -71,6 +71,7 @@ Het is raadzaam om oudere browsers te richten die geen ondersteuning bieden voor
 Zie de pen <a href='https://codepen.io/azuremaps/pen/GeLgyx/'>Azure Maps + bijsluiter</a> per Azure Maps ( <a href='https://codepen.io/azuremaps'>@azuremaps</a> ) op <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+Meer code voorbeelden die gebruikmaken van Azure Maps in de bijsluiter, vindt u [hier](https://azuremapscodesamples.azurewebsites.net/?search=leaflet).
 
 ## <a name="next-steps"></a>Volgende stappen
 

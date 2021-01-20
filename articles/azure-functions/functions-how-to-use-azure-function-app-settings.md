@@ -5,12 +5,12 @@ ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47, devx-track-azurecli
-ms.openlocfilehash: 70aecc2613fbe21d34e36f9487d7ba383e140bc8
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 4db6abeb3e6f4a07780268a6455177e0ca237205
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217359"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598478"
 ---
 # <a name="manage-your-function-app"></a>Uw functie-app beheren 
 
@@ -84,7 +84,7 @@ Wanneer u een functie-app lokaal ontwikkelt, moet u lokale kopieën van deze waa
 
 ## <a name="hosting-plan-type"></a>Type hosting plan
 
-Wanneer u een functie-app maakt, maakt u ook een App Service hosting plan waarin de app wordt uitgevoerd. Een plan kan een of meer functie-apps hebben. De functionaliteit, schaal baarheid en prijs van uw functies zijn afhankelijk van het type abonnement. Zie de pagina met prijzen voor [Azure functions](https://azure.microsoft.com/pricing/details/functions/)voor meer informatie.
+Wanneer u een functie-app maakt, maakt u ook een hosting plan waarin de app wordt uitgevoerd. Een plan kan een of meer functie-apps hebben. De functionaliteit, schaal baarheid en prijs van uw functies zijn afhankelijk van het type abonnement. Zie [Azure functions hosting opties](functions-scale.md)voor meer informatie.
 
 U kunt bepalen welk type plan wordt gebruikt door uw functie-app vanuit de Azure Portal, of door gebruik te maken van de Azure CLI-of Azure PowerShell-Api's. 
 
@@ -131,6 +131,75 @@ Vervang in het vorige voor beeld `<RESOURCE_GROUP>` en `<FUNCTION_APP_NAME>` met
 
 ---
 
+## <a name="plan-migration"></a>Migratie plannen
+
+U kunt Azure CLI-opdrachten gebruiken voor het migreren van een functie-app tussen een verbruiks abonnement en een Premium-abonnement op Windows. De specifieke opdrachten zijn afhankelijk van de richting van de migratie. Direct migreren naar een speciaal (App Service)-abonnement wordt momenteel niet ondersteund.
+
+Deze migratie wordt niet ondersteund in Linux.
+
+### <a name="consumption-to-premium"></a>Verbruik voor Premium
+
+Gebruik de volgende procedure om vanuit een verbruiks plan te migreren naar een Premium-abonnement op Windows:
+
+1. Voer de volgende opdracht uit om een nieuw App Service plan (elastisch Premium) te maken in dezelfde regio en resource groep als uw bestaande functie-app.  
+
+    ```azurecli-interactive
+    az functionapp plan create --name <NEW_PREMIUM_PLAN_NAME> --resource-group <MY_RESOURCE_GROUP> --location <REGION> --sku EP1
+    ```
+
+1. Voer de volgende opdracht uit om de bestaande functie-app te migreren naar het nieuwe Premium-plan
+
+    ```azurecli-interactive
+    az functionapp update --name <MY_APP_NAME> --resource-group <MY_RESOURCE_GROUP> --plan <NEW_PREMIUM_PLAN>
+    ```
+
+1. Als u uw vorige app-abonnement voor verbruiks functies niet meer nodig hebt, verwijdert u het abonnement voor de oorspronkelijke functie-app nadat u hebt gecontroleerd of u de migratie naar de nieuwe hebt gemigreerd. Voer de volgende opdracht uit om een lijst met alle verbruiks plannen in uw resource groep op te halen.
+
+    ```azurecli-interactive
+    az functionapp plan list --resource-group <MY_RESOURCE_GROUP> --query "[?sku.family=='Y'].{PlanName:name,Sites:numberOfSites}" -o table
+    ```
+
+    U kunt het plan met nul sites veilig verwijderen. Dit is het abonnement dat u hebt gemigreerd.
+
+1. Voer de volgende opdracht uit om het verbruiks plan dat u hebt gemigreerd, te verwijderen.
+
+    ```azurecli-interactive
+    az functionapp plan delete --name <CONSUMPTION_PLAN_NAME> --resource-group <MY_RESOURCE_GROUP>
+    ```
+
+### <a name="premium-to-consumption"></a>Premium-naar-verbruik
+
+Gebruik de volgende procedure om te migreren van een Premium-abonnement naar een verbruiks abonnement op Windows:
+
+1. Voer de volgende opdracht uit om een nieuwe functie-app (verbruik) in dezelfde regio en resource groep te maken als uw bestaande functie-app. Met deze opdracht wordt ook een nieuw verbruiks plan gemaakt waarin de functie-app wordt uitgevoerd.
+
+    ```azurecli-interactive
+    az functionapp create --resource-group <MY_RESOURCE_GROUP> --name <NEW_CONSUMPTION_APP_NAME> --consumption-plan-location <REGION> --runtime dotnet --functions-version 3 --storage-account <STORAGE_NAME>
+    ```
+
+1. Voer de volgende opdracht uit om de bestaande functie-app te migreren naar het nieuwe verbruiks plan.
+
+    ```azurecli-interactive
+    az functionapp update --name <MY_APP_NAME> --resource-group <MY_RESOURCE_GROUP> --plan <NEW_CONSUMPTION_PLAN>
+    ```
+
+1. Verwijder de functie-app die u in stap 1 hebt gemaakt, omdat u alleen het plan nodig hebt dat is gemaakt om de bestaande functie-app uit te voeren.
+
+    ```azurecli-interactive
+    az functionapp delete --name <NEW_CONSUMPTION_APP_NAME> --resource-group <MY_RESOURCE_GROUP>
+    ```
+
+1. Als u het abonnement van uw vorige Premium-functie-app niet meer nodig hebt, verwijdert u het abonnement voor de oorspronkelijke functie-app nadat u hebt gecontroleerd of u de migratie naar de nieuwe hebt gemigreerd. Als het plan niet wordt verwijderd, worden er nog steeds kosten in rekening gebracht voor het Premium-abonnement. Voer de volgende opdracht uit om een lijst met alle Premium-abonnementen in de resource groep op te halen.
+
+    ```azurecli-interactive
+    az functionapp plan list --resource-group <MY_RESOURCE_GROUP> --query "[?sku.family=='EP'].{PlanName:name,Sites:numberOfSites}" -o table
+    ```
+
+1. Voer de volgende opdracht uit om het Premium-abonnement dat u hebt gemigreerd, te verwijderen.
+
+    ```azurecli-interactive
+    az functionapp plan delete --name <PREMIUM_PLAN> --resource-group <MY_RESOURCE_GROUP>
+    ```
 
 ## <a name="platform-features"></a>Platform functies
 

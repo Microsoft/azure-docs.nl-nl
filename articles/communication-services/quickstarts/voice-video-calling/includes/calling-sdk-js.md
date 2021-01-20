@@ -4,12 +4,12 @@ ms.service: azure-communication-services
 ms.topic: include
 ms.date: 9/1/2020
 ms.author: mikben
-ms.openlocfilehash: d50ce842a1b2bca26ef14dfbc81aab90d4ac2d8c
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: c51316b445471c58ae88237b370f5a25fdedf373
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97691975"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98605217"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
@@ -78,7 +78,7 @@ Als u een aanroepen van 1: n wilt plaatsen voor een gebruiker en een PSTN-nummer
 Uw communicatie service-resource moet worden geconfigureerd om PSTN-aanroepen mogelijk te maken.
 ```js
 
-const userCallee = { communicationUserId: <ACS_USER_ID> }
+const userCallee = { communicationUserId: <ACS_USER_ID> };
 const pstnCallee = { phoneNumber: <PHONE_NUMBER>};
 const groupCall = callAgent.call([userCallee, pstnCallee], placeCallOptions);
 
@@ -348,7 +348,7 @@ Hiermee wordt het exemplaar van de externe deel nemer synchroon geretourneerd.
 
 ```js
 const userIdentifier = { communicationUserId: <ACS_USER_ID> };
-const pstnIdentifier = { phoneNumber: <PHONE_NUMBER>}
+const pstnIdentifier = { phoneNumber: <PHONE_NUMBER>};
 const remoteParticipant = call.addParticipant(userIdentifier);
 const remoteParticipant = call.addParticipant(pstnIdentifier);
 ```
@@ -361,7 +361,7 @@ De deel nemer wordt ook verwijderd uit de `remoteParticipants` verzameling.
 
 ```js
 const userIdentifier = { communicationUserId: <ACS_USER_ID> };
-const pstnIdentifier = { phoneNumber: <PHONE_NUMBER>}
+const pstnIdentifier = { phoneNumber: <PHONE_NUMBER>};
 await call.removeParticipant(userIdentifier);
 await call.removeParticipant(pstnIdentifier);
 ```

@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 04/12/2020
-ms.openlocfilehash: 14f1056bf761eb7b591d04db34610468058bc255
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: 2ffe7c8994d32917a08896c7d25f20d4adf09066
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562851"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601905"
 ---
 # <a name="troubleshooting-problems-in-itsm-connector"></a>Problemen oplossen in ITSM-connector
 
@@ -53,11 +53,36 @@ Als u Servicetoewijzing gebruikt, kunt u de Service Desk-items weer geven die zi
      - Zorg ervoor dat de web-app is geïmplementeerd en dat de hybride verbinding is gemaakt. Als u wilt controleren of de verbinding tot stand is gebracht met de on-premises Service Manager computer, gaat u naar de URL van de web-app zoals beschreven in de documentatie voor het maken van de [hybride verbinding](./itsmc-connections-scsm.md#configure-the-hybrid-connection).  
 
 - Als Log Analytics waarschuwingen geactiveerd, maar er worden geen werk items gemaakt in het ITSM-product, als configuratie-items niet zijn gemaakt/gekoppeld aan werk items, of als u andere informatie wilt, raadpleegt u deze bronnen:
-   -  ITSMC: de oplossing toont een samen vatting van verbindingen, werk items, computers en meer. Selecteer de tegel met het label **status** van de connector. Hiermee gaat u zoeken naar **Logboeken** met de relevante query. Bekijk logboek records met een `LogType_S` van `ERROR` voor meer informatie.
+   -  ITSMC: de oplossing toont een [samen vatting van verbindingen](itsmc-dashboard.md), werk items, computers en meer. Selecteer de tegel met het label **status** van de connector. Hiermee gaat u zoeken naar **Logboeken** met de relevante query. Bekijk logboek records met een `LogType_S` van `ERROR` voor meer informatie.
+   [Hier](itsmc-dashboard-errors.md)vindt u details over de berichten in de tabel.
    - **Zoek pagina voor logboeken** : de fouten en gerelateerde informatie rechtstreeks weer geven met behulp van de query `*ServiceDeskLog_CL*` .
 
-### <a name="troubleshoot-service-manager-web-app-deployment"></a>Problemen met de implementatie van Service Manager web-app oplossen
+## <a name="common-symptoms---how-it-should-be-resolved"></a>Algemene symptomen: hoe moet het worden opgelost?
 
--   Als u problemen ondervindt met het implementeren van web-apps, moet u ervoor zorgen dat u gemachtigd bent om resources in het abonnement te maken of te implementeren.
--   Als u een **object verwijzing krijgt die niet is ingesteld op een object** fout wanneer u het [script](itsmc-service-manager-script.md)uitvoert, moet u ervoor zorgen dat u geldige waarden hebt opgegeven in de sectie **gebruikers configuratie** .
--   Als u de service bus relay-naam ruimte niet hebt gemaakt, moet u ervoor zorgen dat de vereiste resource provider is geregistreerd in het abonnement. Als het niet is geregistreerd, maakt u de service bus relay-naam ruimte hand matig via de Azure Portal. U kunt deze ook maken wanneer u [de hybride verbinding maakt](./itsmc-connections-scsm.md#configure-the-hybrid-connection) in de Azure Portal.
+De onderstaande lijst bevat algemene symptomen en hoe moet deze worden opgelost:
+
+* **Symptoom**: er zijn dubbele werk items gemaakt
+
+    **Oorzaak**: de oorzaak kan een van de volgende twee opties zijn:
+    * Er zijn meer dan één ITSM-actie gedefinieerd voor de waarschuwing.
+    * De waarschuwing is opgelost.
+
+    **Oplossing**: er kunnen twee oplossingen zijn:
+    * Zorg ervoor dat u per waarschuwing één ITSM-actie groep hebt.
+    * ITSM-connector ondersteunt geen overeenkomende status update van werk items wanneer een waarschuwing wordt opgelost. Er wordt een nieuw, opgelost werk item gemaakt.
+* **Symptoom**: er zijn geen werk items gemaakt
+
+    **Oorzaak**: er kunnen een aantal redenen zijn voor dit symptoom:
+    * Code wijzigen in de ServiceNow-zijde
+    * Onjuiste configuratie van machtigingen
+    * De ServiceNow-frequentie limieten zijn te hoog/laag
+    * Het vernieuwings token is verlopen
+    * ITSM-connector is verwijderd
+
+    **Oplossing**: u kunt het [dash board](itsmc-dashboard.md) controleren en de fouten bekijken in de sectie connector status. Bekijk de [algemene fouten](itsmc-dashboard-errors.md) en ontdek hoe u de fout kunt oplossen.
+
+* **Symptoom**: kan geen ITSM-actie maken voor de actie groep
+
+    **Oorzaak**: nieuw gemaakte ITSM-connector heeft nog de eerste synchronisatie voltooid.
+
+    **Oplossing**: u kunt de [algemene UI-fouten](itsmc-dashboard-errors.md#ui-common-errors) bekijken en ontdekken hoe u de fout oplost.

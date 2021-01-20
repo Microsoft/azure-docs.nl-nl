@@ -4,7 +4,7 @@
   items:
     - name: Wat zijn schaalsets voor virtuele machines?
       href: overview.md
-- name: Quickstarts
+- name: Snelstartgidsen
   items:
     - name: Maken in Azure Portal
       href: quick-create-portal.md
@@ -182,7 +182,7 @@
         - name: Kortstondige besturingssysteemschijven
           href: ../virtual-machines/ephemeral-os-disks.md
         - name: Schaalbaarheidsdoelen voor schijven
-          href: ../virtual-machines/windows/disk-scalability-targets.md
+          href: ../virtual-machines/disks-scalability-targets.md
           maintainContext: true
         - name: Back-up en herstel na noodgeval voor schijven
           href: ../virtual-machines/backup-and-disaster-recovery-for-azure-iaas-disks.md

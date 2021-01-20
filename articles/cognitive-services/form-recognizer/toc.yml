@@ -20,6 +20,8 @@
       href: ../../search/cognitive-search-custom-skill-form.md
     - name: Form Recognizer gebruiken met AI Builder
       href: tutorial-ai-builder.md
+    - name: Formuliergegevens bulksgewijs ophalen
+      href: tutorial-bulk-processing.md
 - name: Concepten
   items:
     - name: Lay-outextractie

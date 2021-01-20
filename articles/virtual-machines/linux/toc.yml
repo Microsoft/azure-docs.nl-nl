@@ -240,7 +240,7 @@
         - name: Disk Bursting
           href: ../disk-bursting.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Schaalbaarheidsdoelen voor schijven
-          href: disk-scalability-targets.md
+          href: ../disks-scalability-targets.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Back-up en herstel na noodgeval voor schijven
           href: ../backup-and-disaster-recovery-for-azure-iaas-disks.md?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json
         - name: Gedeelde schijven

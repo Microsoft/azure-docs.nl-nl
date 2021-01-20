@@ -80,6 +80,8 @@
           href: sap-successfactors-integration-reference.md
         - name: Verwijzing naar SuccessFactors-kenmerken
           href: sap-successfactors-attribute-reference.md
+        - name: Workday-integratie
+          href: workday-integration-reference.md
         - name: Verwijzing naar Workday-kenmerk
           href: workday-attribute-reference.md
         - name: Versiegeschiedenis van de inrichtingsagent

@@ -381,18 +381,28 @@
           href: virtual-machine-network-throughput.md
     - name: Verplaatsen tussen regio's
       items:
-        - name: Netwerkbeveiligingsgroepen - Portal
-          href: move-across-regions-nsg-portal.md
-        - name: Netwerkbeveiligingsgroepen - PowerShell
-          href: move-across-regions-nsg-powershell.md
-        - name: Virtuele netwerken - portal
-          href: move-across-regions-vnet-portal.md
-        - name: Virtuele netwerken - PowerShell
-          href: move-across-regions-vnet-powershell.md
-        - name: Openbare IP-adressen - Portal
-          href: move-across-regions-publicip-portal.md
-        - name: Openbare IP-adressen - PowerShell
-          href: move-across-regions-publicip-powershell.md
+        - name: Netwerkbeveiligingsgroepen (NSG's)
+          href: ../resource-mover/tutorial-move-region-virtual-machines.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Virtuele netwerken
+          href: ../resource-mover/tutorial-move-region-virtual-machines.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Netwerkinterfaces (NIC's)
+          href: ../resource-mover/tutorial-move-region-virtual-machines.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Openbare IP-adressen
+          href: ../resource-mover/tutorial-move-region-virtual-machines.md?toc=%2fazure%2fvirtual-network%2ftoc.json
+        - name: Handmatig verplaatsen
+          items:
+            - name: Netwerkbeveiligingsgroepen - Portal
+              href: move-across-regions-nsg-portal.md
+            - name: Netwerkbeveiligingsgroepen - PowerShell
+              href: move-across-regions-nsg-powershell.md
+            - name: Virtuele netwerken - portal
+              href: move-across-regions-vnet-portal.md
+            - name: Virtuele netwerken - PowerShell
+              href: move-across-regions-vnet-powershell.md
+            - name: Openbare IP-adressen - Portal
+              href: move-across-regions-publicip-portal.md
+            - name: Openbare IP-adressen - PowerShell
+              href: move-across-regions-publicip-powershell.md
     - name: NAT
       items:
         - name: NAT-gateway maken - PowerShell

@@ -6,7 +6,7 @@
       href: overview-reports.md
     - name: Wat is Azure AD Monitoring?
       href: overview-monitoring.md
-    - name: Wat zijn diagnostische gegevens over aanmelding?
+    - name: Wat is de diagnostische aanmeldingsfunctie?
       href: overview-sign-in-diagnostics.md
 - name: Snelstartgidsen
   expanded: true

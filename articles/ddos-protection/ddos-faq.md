@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 10/28/2020
 ms.author: yitoh
-ms.openlocfilehash: e87fd8724ab9a967bf3b75579eb0e375a324a7b1
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: b53501bf5aa4bafb0229158edfe0cb244116b909
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183095"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600850"
 ---
 # <a name="azure-ddos-protection-standard-frequent-asked-questions"></a>Veelgestelde vragen over Azure DDoS Protection
 
@@ -34,6 +34,12 @@ DDoS-beschermings plannen hebben een vaste maandelijkse kosten van $2.944 per ma
 Onder een Tenant kan één DDoS-beveiligings plan worden gebruikt voor meerdere abonnementen, zodat er niet meer dan één DDoS-beveiligings plan hoeft te worden gemaakt.
 
 Zie [Azure DDoS Protection Standard prijzen](https://azure.microsoft.com/pricing/details/ddos-protection/) voor meer informatie.
+
+## <a name="is-the-service-zone-resilient"></a>Is de service zone flexibel?
+Ja. Azure DDoS Protection is standaard zone-flexibel.
+
+## <a name="how-do-i-configure-the-service-to-be-zone-resilient"></a>Hoe kan ik de service zo configureren dat deze zone flexibel kan worden?
+Er is geen klantconfiguratie nodig om zonetolerantie in te schakelen. Zone-tolerantie voor Azure DDoS Protection resources is standaard beschikbaar en wordt beheerd door de service zelf.
 
 ## <a name="what-about-protection-at-the-service-layer-layer-7"></a>Hoe zit het met de beveiliging van de service laag (laag 7)?
 Klanten kunnen Azure DDoS Protection Service in combi natie met een Web Application firewall (WAF) gebruiken voor de beveiliging op de netwerklaag (laag 3 en 4, aangeboden door Azure DDoS Protection Standard) en op de toepassingslaag (laag 7, aangeboden door een WAF). WAF-aanbiedingen zijn onder andere Azure [Application Gateway WAF-SKU](../web-application-firewall/ag/ag-overview.md?toc=%2fazure%2fvirtual-network%2ftoc.json) en Web Application firewall aanbiedingen van derden die beschikbaar zijn op de [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps?page=1&search=web%20application%20firewall).

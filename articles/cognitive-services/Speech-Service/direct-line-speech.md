@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/11/2020
 ms.author: trbye
-ms.openlocfilehash: e8c7e21b0784aacc85bd02e3c1702e1a710e76ab
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 501a0e954efbdbc9a0396fd94c915efaf0fde9fc
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021878"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601112"
 ---
 # <a name="what-is-direct-line-speech"></a>Wat is Direct Line-spraak?
 
@@ -23,7 +23,7 @@ ms.locfileid: "95021878"
 
 [Spraak assistenten](voice-assistants.md) worden naar gebruikers geluisterd en nemen een actie in antwoord, vaak gesp roken terug. Ze gebruiken [spraak-naar-tekst](speech-to-text.md) om de spraak van de gebruiker te transcriberen en vervolgens actie te ondernemen op het memorandum van natuurlijke taal van de tekst. Deze actie omvat vaak gesp roken uitvoer van de assistent die is gegenereerd met [tekst-naar-spraak](text-to-speech.md).
 
-Direct line speech biedt de hoogste mate van aanpassing en verfijning voor spraak assistenten. Het is ontworpen voor gespreks scenario's die zijn geopend, natuurlijke of hybriden van de twee met taak voltooiing of opdracht-en controle gebruik. Deze hoge mate van flexibiliteit wordt geleverd met een grotere complexiteit en scenario's die zijn afgestemd op goed gedefinieerde taken met behulp van invoer in natuurlijke taal, is het mogelijk om te denken aan [aangepaste opdrachten (preview)](custom-commands.md) voor een gestroomlijnde oplossing.
+Direct line speech biedt de hoogste mate van aanpassing en verfijning voor spraak assistenten. Het is ontworpen voor gespreks scenario's die zijn geopend, natuurlijke of hybriden van de twee met taak voltooiing of opdracht-en controle gebruik. Deze hoge mate van flexibiliteit wordt geleverd met een grotere complexiteit en scenario's die zijn afgestemd op goed gedefinieerde taken met behulp van invoer in natuurlijke taal, is het mogelijk om te denken aan [aangepaste opdrachten](custom-commands.md) voor een gestroomlijnde oplossing.
 
 ## <a name="getting-started-with-direct-line-speech"></a>Aan de slag met direct line speech
 
@@ -35,7 +35,7 @@ Voor een volledige stapsgewijze hand leiding voor het maken van een eenvoudige s
 
 We bieden ook Quick starts die zijn ontworpen om u te laten werken met code en snel de Api's te leren. Deze tabel bevat een lijst met Quick starts voor de Voice Assistant, geordend op taal en platform.
 
-| Snelstart | Platform | API-verwijzing |
+| Snelstartgids | Platform | API-verwijzing |
 |------------|----------|---------------|
 | C#, UWP | Windows | [Bladeren](/dotnet/api/microsoft.cognitiveservices.speech) |
 | Java | Windows, macOS, Linux | [Bladeren](/java/api/com.microsoft.cognitiveservices.speech) |
@@ -45,7 +45,7 @@ We bieden ook Quick starts die zijn ontworpen om u te laten werken met code en s
 
 Voorbeeld code voor het maken van een spraak-assistent is beschikbaar op GitHub. Deze voor beelden beslaan de client toepassing voor het maken van verbinding met uw helper in verschillende populaire programmeer talen.
 
-* [Voorbeelden van spraakassistenten (SDK)](https://aka.ms/csspeech/samples)
+* [Voorbeelden van spraakassistenten (SDK)](https://aka.ms/csspeech/samples/#voice-assistants-quickstarts)
 * [Zelf studie: spraak inschakelen voor uw assistent met de spraak-SDK, C #](tutorial-voice-enable-your-bot-speech-sdk.md)
 
 ## <a name="customization"></a>Aanpassing

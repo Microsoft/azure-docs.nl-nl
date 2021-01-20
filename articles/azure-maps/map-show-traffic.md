@@ -9,22 +9,26 @@ ms.service: azure-maps
 services: azure-maps
 manager: ''
 ms.custom: codepen, devx-track-js
-ms.openlocfilehash: ec7459a356221fb7b599cbbc02f1cb825920b5b3
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: b6fcf39e05c4649503f0b7a80aadaaa16df24674
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92890663"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599548"
 ---
 # <a name="show-traffic-on-the-map"></a>Verkeer weergeven op de kaart
 
 Er zijn twee soorten verkeers gegevens beschikbaar in Azure Maps:
 
 - Incident gegevens: bestaat uit gegevens op basis van een punt en lijn voor dingen, zoals bouw, wegsluitingen en ongel ukken.
-- Stroom gegevens: voorziet in metrische informatie over de stroom van verkeer op de wegen. De verkeers stroom gegevens worden vaak gebruikt om de wegen te kleuren. De kleuren zijn gebaseerd op de hoeveelheid verkeer die de stroom vertraagt, ten opzichte van de snelheids limiet of een andere metriek. De gegevens van de verkeers stroom in Azure Maps hebben drie verschillende meet waarden:
-    - `relative` -is relatief ten opzichte van de vrije stroom snelheid van de weg.
-    - `absolute` -is de absolute snelheid van alle Voer tuigen op de weg.
-    - `relative-delay` -gebieden weer geven die langzamer zijn dan de gemiddelde verwachte vertraging.
+- Stroom gegevens: voorziet in metrische informatie over de stroom van verkeer op de wegen. De verkeers stroom gegevens worden vaak gebruikt om de wegen te kleuren. De kleuren zijn gebaseerd op de hoeveelheid verkeer die de stroom vertraagt, ten opzichte van de snelheids limiet of een andere metriek. Er zijn vier waarden die kunnen worden door gegeven aan de verkeers `flow` optie van de kaart.
+
+    |Stroom waarde | Beschrijving|
+    | :-- | :-- |
+    | `none` | Verkeers gegevens worden niet weer gegeven op de kaart |
+    | `relative` | Geeft verkeers gegevens weer die relatief zijn ten opzichte van de vrije stroom snelheid van de weg |
+    | `relative-delay` | Hiermee worden gebieden weer gegeven die langzamer zijn dan de gemiddelde verwachte vertraging |
+    | `absolute` | Toont de absolute snelheid van alle Voer tuigen op de weg |
 
 De volgende code laat zien hoe verkeers gegevens op de kaart worden weer gegeven.
 

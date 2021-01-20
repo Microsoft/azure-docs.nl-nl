@@ -12,12 +12,12 @@ ms.date: 10/27/2016
 ms.author: sumuth
 ROBOTS: NOINDEX,NOFOLLOW
 ms.custom: references_regions
-ms.openlocfilehash: 25cc4dfaabee58a47cc33fe4be8dc7375bc804d2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: d9d4ae746c192e8b4afd1781c1e072fc0dc70422
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96491639"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599793"
 ---
 # <a name="faq-for-cleardb-mysql-databases-with-azure-app-service"></a>Veelgestelde vragen over ClearDB MySql-data bases met Azure App Service
 Deze veelgestelde vragen antwoorden op veelgestelde vragen over het gebruik en het kopen van ClearDB MySQL-data bases voor Azure Web Apps.
@@ -42,7 +42,7 @@ Dit is afhankelijk van het type abonnement dat u gebruikt. Hier volgen enkele ve
 * [Betalen](https://azure.microsoft.com/offers/ms-azr-0003p/)naar gebruik: er is een credit card vereist en wanneer u een betaalde MySQL-data base koopt, wordt uw credit card in rekening gebracht.
 * [Gratis proef versie](https://azure.microsoft.com/pricing/free-trial/): bevat tegoed voor gebruik met Microsoft Azure Services, maar biedt geen ondersteuning voor resources van derden. Als u services van derden of een betaalde MySQL-data base wilt kopen, moet u een abonnement voor een Credit Card gebruiken. U kunt voor Web Apps een gratis ClearDB MySQL-data base maken.
 * [MSDN-abonnement](https://azure.microsoft.com/pricing/member-offers/msdn-benefits/) en **MSDN dev test betalen** naar gebruik: voor een MSDN-abonnement hebt u een credit card nodig om een betaalde mysql-oplossing van ClearDB te kunnen kopen, vergelijkbaar met een gratis proef versie.
-* [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/): EA-klanten worden per kwar taal gefactureerd op basis van hun EA voor al hun Azure Marketplace-aankopen (van derden) op een afzonderlijke, geconsolideerde factuur. U wordt gefactureerd buiten de monetaire toezeg ging voor Marketplace-aankopen. De Azure Store is op dit moment niet beschikbaar voor klanten die zijn Inge schreven in Azerbeidzjan, Kroatië, Noor wegen en Porto Rico. 
+* [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/): EA-klanten worden per kwar taal gefactureerd op basis van hun EA voor al hun Azure Marketplace-aankopen (van derden) op een afzonderlijke, geconsolideerde factuur. U wordt buiten de Azure-voor uitbetaling (voorheen monetaire toezeg ging) gefactureerd voor Marketplace-aankopen. De Azure Store is op dit moment niet beschikbaar voor klanten die zijn Inge schreven in Azerbeidzjan, Kroatië, Noor wegen en Porto Rico. 
 
 ## <a name="why-was-i-charged-350-for-a-web-app--mysql-from-the-azure-marketplace"></a>Waarom werd $3,50 van de Azure Marketplace in rekening gebracht voor een web-app + MySQL?
 De standaard optie voor de data base is Titan, een $3,50. De kosten worden niet weer gegeven tijdens het maken van de data base en u kunt per ongeluk een Data Base kopen die u niet wilt. We proberen de ervaring te verbeteren, maar tot nu toe moet u alle geselecteerde prijs categorieën voor web-app en data base controleren voordat u op **maken** klikt en de implementatie van de resources start.
@@ -94,10 +94,10 @@ Bestaande ClearDB-data bases gebruiken de credit card die is gekoppeld aan de be
 * Werk uw toepassing bij voor het gebruik van de nieuwe data base.
 * Verwijder de oude ClearDB-data base.
 
-Wanneer u een nieuwe web-app met MySQL (ClearDB) maakt of een MySQL-data base (ClearDB) maakt, bepaalt het abonnement dat u kiest hoe u betaalt voor de service. Met een EA-abonnement wordt de aanschaf van de services van derden, zoals ClearDB in de Azure Portal, niet geblokkeerd. EA-abonnementen worden buiten de monetaire toezeg ging gefactureerd en worden per kwar taal en achterstallig gefactureerd. De EA-klant zou een betaal wijze moeten instellen, zoals een credit card, om te betalen voor Marketplace-services van derden.
+Wanneer u een nieuwe web-app met MySQL (ClearDB) maakt of een MySQL-data base (ClearDB) maakt, bepaalt het abonnement dat u kiest hoe u betaalt voor de service. Met een EA-abonnement wordt de aanschaf van de services van derden, zoals ClearDB in de Azure Portal, niet geblokkeerd. EA-abonnementen worden buiten Azure-betaling gefactureerd en worden per kwar taal en achterstallig gefactureerd. De EA-klant zou een betaal wijze moeten instellen, zoals een credit card, om te betalen voor Marketplace-services van derden.
 
 ## <a name="where-can-i-see-the-charges-for-cleardb-resources-in-an-ea-subscription"></a>Waar kan ik de kosten voor ClearDB-resources in een EA-abonnement zien?
-Voor direct EA-klanten zijn de kosten voor Azure Marketplace zichtbaar op het Enterprise Portal. Houd er rekening mee dat alle Marketplace-aankopen en-verbruik buiten de monetaire toezeg ging worden gefactureerd en worden per kwar taal en achterstallig worden gefactureerd. EA-klanten moeten rechtstreeks betalen aan de service providers van derden en kunnen dit doen door een betaal wijze zoals een credit card met hun EA-account in te scha kelen.
+Voor direct EA-klanten zijn de kosten voor Azure Marketplace zichtbaar op het Enterprise Portal. Houd er rekening mee dat alle Marketplace-aankopen en-verbruik buiten Azure-betaling worden gefactureerd en worden per kwar taal en achterstallig worden gefactureerd. EA-klanten moeten rechtstreeks betalen aan de service providers van derden en kunnen dit doen door een betaal wijze zoals een credit card met hun EA-account in te scha kelen.
 
 Indirecte EA-klanten kunnen hun Azure Marketplace-abonnementen vinden op de pagina **Abonnementen beheren** van de Enterprise Portal, maar de prijs is verborgen. Klanten kunnen contact opnemen met hun LSP voor informatie over de kosten voor Marketplace.
 

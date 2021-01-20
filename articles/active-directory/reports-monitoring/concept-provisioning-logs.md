@@ -13,16 +13,16 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 12/28/2020
+ms.date: 1/19/2021
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 56818862b6bc4eb38b819185aceb121e6e78488e
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 05a514debcf8036a296bbe66b2dd75c7dacacdc2
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803524"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600741"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Rapporten inrichten in de Azure Active Directory Portal (preview)
 
@@ -98,7 +98,7 @@ In de standaard weergave kunt u de volgende filters selecteren:
 - Identiteit
 - Date
 - Status
-- Actie
+- Bewerking
 
 
 ![Filters toevoegen](./media/concept-provisioning-logs/default-filter.png "Filteren")
@@ -121,7 +121,7 @@ Wanneer u een aangepast tijds bestek selecteert, kunt u een begin-en eind datum 
 Met het **status** filter kunt u het volgende selecteren:
 
 - Alles
-- Success
+- Geslaagd
 - Fout
 - Overgeslagen
 
@@ -133,7 +133,7 @@ Met het **actie** filter kunt u het volgende filteren:
 - Bijwerken
 - Verwijderen
 - Uitschakelen
-- Overige
+- Anders
 
 Daarnaast kunt u aan de filters van de standaard weergave ook de volgende filters instellen:
 
@@ -215,8 +215,6 @@ Op het tabblad **samen vatting** vindt u een overzicht van wat er is gebeurd en 
 - In de Azure Portal worden de gemelde inrichtings gegevens 30 dagen opgeslagen als u een Premium-editie en 7 dagen hebt als u een gratis editie hebt. De inrichtings logboeken kunnen worden gepubliceerd naar [log Analytics](../app-provisioning/application-provisioning-log-analytics.md) voor retentie na 30 dagen. 
 
 - U kunt het kenmerk ID wijzigen als unieke id gebruiken. Dit is bijvoorbeeld handig bij interactie met product ondersteuning.
-
-- Er is momenteel geen optie om inrichtings gegevens te downloaden als een CSV-bestand, maar u kunt de gegevens exporteren met behulp van [Microsoft Graph](/graph/api/provisioningobjectsummary-list?tabs=http&view=graph-rest-beta).
 
 - Er worden mogelijk overgeslagen gebeurtenissen weer geven voor gebruikers die zich niet in het bereik bevinden. Dit wordt verwacht, vooral wanneer het synchronisatie bereik is ingesteld op alle gebruikers en groepen. Onze service evalueert alle objecten in de Tenant, zelfs degene die buiten het bereik vallen. 
 

@@ -4,16 +4,16 @@ description: Voor komen dat gebruikers Azure-resources bijwerken of verwijderen 
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: f1073d8c4a6902ea00a9b4098ef87bc411b3e6c0
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: 7efeb8a073a04f78f77046c07c107abf0c7526f4
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555665"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602208"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Resources vergrendelen om onverwachte wijzigingen te voorkomen
 
-Als beheerder moet u een ​​abonnement, resourcegroep of resource mogelijk vergrendelen om te voorkomen dat andere gebruikers in uw organisatie per ongeluk kritieke resources verwijderen of wijzigen. U kunt de vergrendeling instellen op **CanNotDelete** of **ReadOnly**. In de portal worden de vergren delingen respectievelijk **verwijderen** en **alleen-lezen** genoemd.
+Als beheerder kan het nodig zijn om een ​​abonnement, resourcegroep of resource te vergrendelen om te voorkomen dat andere gebruikers in uw organisatie per ongeluk essentiële resources verwijderen of wijzigen. U kunt de vergrendeling instellen op **CanNotDelete** of **ReadOnly**. In de portal worden de vergren delingen respectievelijk **verwijderen** en **alleen-lezen** genoemd.
 
 * **CanNotDelete** betekent dat geautoriseerde gebruikers nog steeds een resource kunnen lezen en wijzigen, maar de resource niet kan verwijderen.
 * **Alleen-lezen** houdt in dat gemachtigde gebruikers een resource kunnen lezen, maar de resource niet kunnen verwijderen of bijwerken. Het Toep assen van deze vergren deling is vergelijkbaar met het beperken van alle gemachtigde gebruikers tot de machtigingen die door de rol van **lezer** worden verleend.
@@ -28,7 +28,7 @@ Vergrendelingen van Resource Manager gelden alleen voor bewerkingen die zich op 
 
 ## <a name="considerations-before-applying-locks"></a>Overwegingen voor het Toep assen van vergren delingen
 
-Het Toep assen van vergren delingen kan leiden tot onverwachte resultaten omdat sommige bewerkingen die niet van invloed zijn op het wijzigen van de resource, acties nodig hebben die door de vergren deling worden geblokkeerd. Enkele algemene voor beelden van de bewerkingen die worden geblokkeerd door de vergren delingen zijn:
+Het Toep assen van vergren delingen kan leiden tot onverwachte resultaten omdat sommige bewerkingen die niet van invloed zijn op het wijzigen van de resource, acties nodig hebben die door de vergren deling worden geblokkeerd. Met vergren delingen wordt voor komen dat bewerkingen waarvoor een POST-aanvraag naar de Azure Resource Manager-API is vereist. Enkele algemene voor beelden van de bewerkingen die worden geblokkeerd door de vergren delingen zijn:
 
 * Met een alleen-lezen vergrendeling op een **opslag account** kunnen alle gebruikers de sleutels niet weer geven. De bewerking voor het weergeven van de lijst met sleutels wordt verwerkt via een POST-aanvraag, omdat de geretourneerde sleutels beschikbaar zijn voor schrijfbewerkingen.
 

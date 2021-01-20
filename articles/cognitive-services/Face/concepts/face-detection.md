@@ -10,12 +10,12 @@ ms.subservice: face-api
 ms.topic: conceptual
 ms.date: 04/26/2019
 ms.author: pafarley
-ms.openlocfilehash: 92b19941f34b9bf5656c9beb188a68d2cf01f674
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 68d1e9744d937cf80327c3f41cc69f4af97d3400
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92504126"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98600185"
 ---
 # <a name="face-detection-and-attributes"></a>Gezichts detectie en kenmerken
 
@@ -64,7 +64,9 @@ Gebruik de volgende tips om ervoor te zorgen dat uw invoer installatie kopieën 
 
 * De ondersteunde indelingen voor de invoer afbeeldingen zijn JPEG, PNG, GIF voor het eerste frame en BMP.
 * De grootte van het afbeeldings bestand mag niet groter zijn dan 6 MB.
-* Het waarneem bare gezichts grootte bereik is 36 x 36 tot 4096 x 4096 pixels. Gezichten buiten dit bereik worden niet gedetecteerd.
+* De minimale detectie grootte is 36 x 36 pixels in een afbeelding die niet groter is dan 1920 x 1080 pixels. Afbeeldingen met meer dan 1920 x 1080 pixels hebben een proportioneel grotere minimale face-grootte. Het verminderen van de face-grootte kan ertoe leiden dat sommige gezichten niet worden gedetecteerd, zelfs als ze groter zijn dan de mini maal waarneem bare face-grootte.
+* De Maxi maal detectie bare face-grootte is 4096 x 4096 pixels.
+* Gezichten buiten het grootte bereik van 36 x 36 tot 4096 x 4096 pixels worden niet gedetecteerd.
 * Sommige gezichten worden mogelijk niet gedetecteerd vanwege technische problemen. Extreme gezichts hoeken (Head pose) of gezichts bedekking (objecten zoals zonnebril of handen die deel van het gezicht blok keren) kunnen de detectie beïnvloeden. Front-en bijna-frontale gezichten bieden de beste resultaten.
 
 Als u gezichten van een video feed detecteert, kunt u de prestaties mogelijk verbeteren door bepaalde instellingen op uw video camera aan te passen:

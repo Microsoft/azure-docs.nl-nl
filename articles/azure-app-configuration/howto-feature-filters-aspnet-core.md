@@ -8,12 +8,12 @@ author: AlexandraKemperMS
 ms.author: alkemper
 ms.topic: conceptual
 ms.date: 3/9/2020
-ms.openlocfilehash: 13857580d434736fbf0b12f52d39537ca864a497
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 39455c4bc193cce036bd169c702b5c020d53d2f6
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98203121"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602240"
 ---
 # <a name="use-feature-filters-to-enable-conditional-feature-flags"></a>Functie filters gebruiken om voorwaardelijke functie vlaggen in te scha kelen
 
@@ -31,7 +31,7 @@ U kunt ook uw eigen functie filter maken waarmee de [Interface micro soft. Featu
 
 ## <a name="registering-a-feature-filter"></a>Een functie filter registreren
 
-U registreert een functie filter door de `AddFeatureFilter` methode aan te roepen en de naam van het functie filter op te geven. De volgende code wordt bijvoorbeeld geregistreerd `PercentageFilter` :
+U registreert een functie filter door de `AddFeatureFilter` methode aan te roepen en de type naam van het gewenste functie filter op te geven. De volgende code wordt bijvoorbeeld geregistreerd `PercentageFilter` :
 
 ```csharp
 public void ConfigureServices(IServiceCollection services)
@@ -56,14 +56,14 @@ U kunt deze instellingen configureren voor functie vlaggen die zijn gedefinieerd
     > [!div class="mx-imgBorder"]
     > ![Bèta-functie vlag bewerken](./media/edit-beta-feature-flag.png)
 
-1. Selecteer in het **bewerkings** scherm de knop **functie vlag inschakelen** als dit nog niet is geselecteerd. Klik vervolgens op de knop **functie filter gebruiken** en selecteer **aangepast**. 
+1. Schakel in het scherm **bewerken** het selectie vakje **functie vlag inschakelen** in als dit nog niet is ingeschakeld. Schakel vervolgens het selectie vakje **functie filter gebruiken** in en selecteer **aangepast**. 
 
-1. Voer *micro soft. percentage* in het veld **sleutel** in.
+1. Selecteer in het veld **naam** *micro soft. percentage*.
 
     > [!div class="mx-imgBorder"]
     > ![Functie filter toevoegen](./media/feature-flag-add-filter.png)
 
-1. Klik op het context menu naast de functie filter sleutel. Klik op **filter parameters bewerken**.
+1. Klik op het context menu naast de naam van het functie filter. Klik op **filter parameters bewerken**.
 
     > [!div class="mx-imgBorder"]
     > ![Para meters voor functie filter bewerken](./media/feature-flags-edit-filter-parameters.png)
@@ -75,10 +75,10 @@ U kunt deze instellingen configureren voor functie vlaggen die zijn gedefinieerd
 
 1. Klik op **Toep assen** om terug te gaan naar het scherm **functie vlag bewerken** . Klik vervolgens nogmaals op **Toep assen** om de instellingen voor de functie vlag op te slaan.
 
-1. De **status** van de functie vlag wordt nu weer gegeven als *voorwaardelijk*. Deze status geeft aan dat de functie vlag per aanvraag wordt in-of uitgeschakeld, op basis van de criteria die worden afgedwongen door het functie filter.
+1. Op de pagina **functie beheer** heeft de functie vlag nu een **functie filter** waarde *aangepast*. 
 
     > [!div class="mx-imgBorder"]
-    > ![Vlag voor voorwaardelijke functie](./media/feature-flag-filter-enabled.png)
+    > ![Functie vlag wordt weer gegeven met de waarde ' aangepast ' in functie filter](./media/feature-flag-filter-custom.png)
 
 ## <a name="feature-filters-in-action"></a>Functie filters in actie
 
@@ -90,4 +90,4 @@ Als u de effecten van deze functie vlag wilt zien, start u de toepassing en klik
 ## <a name="next-steps"></a>Volgende stappen
 
 > [!div class="nextstepaction"]
-> [Gefaseerde implementatie van functies voor doel groepen inschakelen](./howto-targetingfilter-aspnet-core.md)
+> [Gefaseerde implementatie van functies voor doelgroepen inschakelen](./howto-targetingfilter-aspnet-core.md)

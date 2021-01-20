@@ -1,7 +1,7 @@
 ---
-title: Hoe u Jupyter-notebooks uitvoert in uw werkruimte
+title: Jupyter-notebooks uitvoeren in uw werk ruimte
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het uitvoeren van een Jupyter Notebook zonder uw werk ruimte te verlaten in Azure Machine Learning Studio.
+description: Meer informatie over het uitvoeren van een Jupyter-notebook zonder uw werk ruimte te verlaten in Azure Machine Learning Studio.
 services: machine-learning
 author: abeomor
 ms.author: osomorog
@@ -10,25 +10,17 @@ ms.service: machine-learning
 ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
-ms.date: 06/27/2020
-ms.openlocfilehash: d253699199617489947dd95a44d9bcd1eff17334
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.date: 01/19/2021
+ms.openlocfilehash: 7bb1ce8141f609feb4f354aa85f202915e197f37
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93325412"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599236"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Hoe u Jupyter-notebooks uitvoert in uw werkruimte
 
-
 Meer informatie over het rechtstreeks uitvoeren van uw Jupyter-notebook in uw werk ruimte in Azure Machine Learning Studio. Hoewel u [Jupyter](https://jupyter.org/) of [jjupyterlab](https://jupyterlab.readthedocs.io)kunt starten, kunt u uw notitie blokken ook bewerken en uitvoeren zonder de werk ruimte te verlaten.
-
-Bekijk hoe u het volgende kunt doen:
-
-* Jupyter-notitie blokken maken in uw werk ruimte
-* Een experiment uitvoeren vanuit een notebook
-* De notitieblok omgeving wijzigen
-* Details vinden van de reken instanties die worden gebruikt voor het uitvoeren van uw notitie blokken
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -48,7 +40,7 @@ Een nieuw notitie blok maken:
     :::image type="content" source="media/how-to-run-jupyter-notebooks/create-new-file.png" alt-text="Nieuw bestand maken":::
 
 1. Geef het bestand een naam. 
-1. Voor Jupyter Notebook-bestanden selecteert u **notebook** als het bestands type.
+1. Voor Jupyter notebook-bestanden selecteert u **notebook** als het bestands type.
 1. Selecteer een bestands directory.
 1. Selecteer **Maken**.
 
@@ -153,18 +145,6 @@ Elk notitie blok wordt elke 30 seconden autobespaard. Met automatisch opslaan wo
  
 Selecteer **controle punten** in het menu van het notitie blok om een benoemd controle punt te maken en de notitie blok terug te zetten naar een opgeslagen controle punt.
 
-
-### <a name="useful-keyboard-shortcuts"></a>Nuttige sneltoetsen
-
-|Toetsenbord  |Bewerking  |
-|---------|---------|
-|SHIFT + ENTER     |  Een cel uitvoeren       |
-|Ctrl + spatie | IntelliSense activeren |
-|CTRL + M (Windows)     |  Tabblad overvulling in notebook in-of uitschakelen.       |
-|CTRL + SHIFT + M (Mac & Linux)     |    Tabblad overvulling in notebook in-of uitschakelen.     |
-|Tabblad (wanneer tab-trap is ingeschakeld) | Een ' \t '-teken toevoegen (inspringing)
-|Tabblad (als tab-trap is uitgeschakeld) | De focus wijzigen naar het volgende focusable item (de knop cel verwijderen, de knop uitvoeren, enzovoort)
-
 ## <a name="delete-a-notebook"></a>Een notebook verwijderen 
 
 U *kunt* de voor **beelden** van notitie blokken niet verwijderen.  Deze notitie blokken maken deel uit van de studio en worden bijgewerkt telkens wanneer een nieuwe SDK wordt gepubliceerd.  
@@ -175,20 +155,38 @@ U *kunt* notitie blokken met **gebruikers bestanden** op een van de volgende man
 * Selecteer op elke werk balk van een notitie blok de optie [**Terminal openen**](#terminal)  om toegang te krijgen tot het Terminal venster voor het reken exemplaar.
 * In Jupyter of Jjupyterlab met hun hulp middelen.
 
-## <a name="run-an-experiment"></a>Een experiment uitvoeren
+## <a name="run-a-notebook-or-python-script"></a>Een notitie blok of python-script uitvoeren
 
-Als u een experiment wilt uitvoeren vanuit een notebook, maakt u eerst verbinding met een actief [reken exemplaar](concept-compute-instance.md). Als u geen reken instantie hebt, gebruikt u deze stappen om er een te maken: 
+Als u een notitie blok of een python-script wilt uitvoeren, maakt u eerst verbinding met een actief [reken exemplaar](concept-compute-instance.md). Als u geen reken instantie hebt, gebruikt u deze stappen om er een te maken: 
 
-1. Selecteer **+** in de werk balk van het notitie blok. 
+1. Selecteer **+** in de werk balk van het notitie blok of script. 
 2. Geef de berekening een naam en kies een grootte voor de **virtuele machine**. 
 3. Selecteer **Maken**.
-4. Het reken exemplaar is automatisch verbonden met het notitie blok en u kunt nu uw cellen uitvoeren.
+4. Het reken proces is automatisch verbonden met het bestand.  U kunt nu de notebook-cellen of het python-script uitvoeren met het hulp programma aan de linkerkant van het reken exemplaar
 
 Alleen u kunt de compute-instanties zien en gebruiken die u maakt.  Uw **gebruikers bestanden** worden afzonderlijk van de virtuele machine opgeslagen en worden gedeeld door alle reken instanties in de werk ruimte.
 
 ### <a name="view-logs-and-output"></a>Logboeken en uitvoer weer geven
 
 Gebruik [notebook widgets](/python/api/azureml-widgets/azureml.widgets?preserve-view=true&view=azure-ml-py) om de voortgang van de uitvoering en logboeken weer te geven. Een widget is asynchroon en levert updates totdat de training is voltooid. Azure Machine Learning widgets worden ook ondersteund in Jupyter en JupterLab.
+
+:::image type="content" source="media/how-to-run-jupyter-notebooks/jupyter-widget.png" alt-text="Scherm opname: Jupyter notebook-widget ":::
+
+## <a name="explore-variables-in-the-notebook"></a>Variabelen in het notitie blok verkennen
+
+Gebruik op de werk balk van het notitie blok het hulp programma voor **variabelen Verkenner** om de naam, het type, de lengte en de voorbeeld waarden weer te geven voor alle variabelen die in uw notitie blok zijn gemaakt.
+
+:::image type="content" source="media/how-to-run-jupyter-notebooks/variable-explorer.png" alt-text="Scherm afbeelding: hulp programma voor variabele Verkenner":::
+
+Selecteer het hulp programma om het venster van de variabele Verkenner weer te geven.
+
+:::image type="content" source="media/how-to-run-jupyter-notebooks/variable-explorer-window.png" alt-text="Scherm afbeelding: venster variabele Verkenner":::
+
+## <a name="navigate-with-a-toc"></a>Navigeren met een inhouds opgave
+
+Gebruik het hulp programma voor de  **inhouds opgave** op de werk balk van het notitie blok om de inhouds opgave weer te geven of te verbergen.  Een rij met een afkorting beginnen met een kop om deze toe te voegen aan de inhouds opgave. Klik op een item in de tabel om naar die cel in het notitie blok te scrollen.  
+
+:::image type="content" source="media/how-to-run-jupyter-notebooks/table-of-contents.png" alt-text="Scherm afbeelding: inhouds opgave in het notitie blok":::
 
 ## <a name="change-the-notebook-environment"></a>De notitieblok omgeving wijzigen
 
@@ -234,7 +232,7 @@ Het notitie blok vindt automatisch alle Jupyter-kernels die zijn geïnstalleerd 
     ```
 
 > [!NOTE]
-> Voor pakket beheer binnen een notebook gebruikt u **% PIP** of **% Conda** Magic functions om pakketten automatisch te installeren in de **kernel die momenteel wordt uitgevoerd** , in plaats van **! PIP** of **! Conda** die verwijst naar alle pakketten (inclusief pakketten buiten de actieve kernel)
+> Voor pakket beheer binnen een notebook gebruikt u **% PIP** of **% Conda** Magic functions om pakketten automatisch te installeren in de **kernel die momenteel wordt uitgevoerd**, in plaats van **! PIP** of **! Conda** die verwijst naar alle pakketten (inclusief pakketten buiten de actieve kernel)
 
 Een van de [beschik bare Jupyter-kernels](https://github.com/jupyter/jupyter/wiki/Jupyter-kernels) kan worden geïnstalleerd.
 
@@ -245,7 +243,7 @@ Een indicator naast de vervolg keuzelijst voor **berekeningen** toont de status.
 |Kleur |Compute-status |
 |---------|---------| 
 | Green | Compute running |
-| Rood |Kan niet berekenen | 
+| Red |Kan niet berekenen | 
 | Zwart | Berekenen gestopt |
 |  Licht blauw |Berekenen maken, starten, opnieuw starten, instellen |
 |  Grijs |Berekening verwijderen, stoppen |
@@ -257,7 +255,90 @@ Een indicator naast de vervolg keuzelijst **kernel** toont de status.
 |  Green |Kernel verbonden, niet-actief, bezet|
 |  Grijs |Kernel niet verbonden |
 
-## <a name="find-compute-details"></a>Berekenings details zoeken 
+## <a name="shortcut-keys"></a>Sneltoetsen
+Net als bij Jupyter-notebooks Azure Machine Learning Studio-notebooks een modale gebruikers interface hebben. Het toetsen bord heeft verschillende dingen, afhankelijk van de modus waarin de notebook-cel zich bevindt. Azure Machine Learning Studio-notitie blokken ondersteunen de volgende twee modi voor een bepaalde code-cel: opdracht modus en bewerkings modus.
+
+### <a name="command-mode-shortcuts"></a>Sneltoetsen in de opdracht modus
+
+Een cel bevindt zich in de opdracht modus als er geen tekst cursor wordt gevraagd om te typen. Wanneer een cel zich in de opdracht modus bevindt, kunt u het notitie blok als geheel bewerken, maar niet typen in afzonderlijke cellen. Voer de opdracht modus in door te drukken `ESC` of door met de muis te klikken buiten het editor gebied van een cel.  De linkerrand van de actieve cel is blauw en effen en de knop **uitvoeren** is blauw.
+
+   :::image type="content" source="media/how-to-run-jupyter-notebooks/command-mode.png" alt-text="Notebook-cel in de opdracht modus ":::
+
+| Shortcutdimensie                      | Beschrijving                          |
+| ----------------------------- | ------------------------------------|
+| Enter                         | De modus Bewerken openen             |        
+| Shift+Enter                 | Run-cel, hieronder selecteren         |     
+| Control/Command + Enter       | Cel uitvoeren                            |
+| ALT + ENTER                   | Run-cel, code-cel onder invoegen    |
+| Control/Command + ALT + ENTER | Run-cel, cel prijs verlaging invoegen onder|
+| ALT + R                       | Alles uitvoeren      |                       
+| J                             | Cel converteren naar code    |                         
+| M                             | Cel naar prijs verlaging converteren  |                       
+| Up/K                          | Cel hierboven selecteren    |               
+| Omlaag/J                        | Selecteer de cel onder    |               
+| A                             | Code-cel boven invoegen  |            
+| B                             | Code-cel onder invoegen   |           
+| Control/Command + Shift + A   | Cel voor prijs verlaging invoegen boven    |      
+| Control/Command + Shift + B   | Cel prijs verlaging invoegen onder   |       
+| X                             | Geselecteerde cel knippen    |               
+| C                             | Geselecteerde cel kopiëren   |               
+| SHIFT + V                     | Geselecteerde cel boven plakken           |
+| V                             | Geselecteerde cel onder plakken    |       
+| D D                           | Geselecteerde cel verwijderen|                
+| O                             | Uitvoer in-/uitschakelen         |              
+| SHIFT + O                     | Uitvoer schuiven in-/uitschakelen   |          
+| IK HEB                           | Interrupt-kernel |                   
+| 0 0                           | Kernel opnieuw starten |                     
+| Shift + spatie                 | Omhoog schuiven  |                         
+| Space                         | Omlaag schuiven|
+| Tabblad                           | De focus wijzigen naar het volgende focusable item (als tab-trap is uitgeschakeld)|
+| Control/Command + S           | Notitie blok opslaan |                      
+| 1                             | Wijzigen in H1|                       
+| 2                             | Wijzigen in H2|                        
+| 3                             | Wijzigen in h3|                        
+| 4                             | Wijzigen in H4 |                       
+| 5                             | Wijzigen in H5 |                       
+| 6                             | Wijzigen in H6 |                       
+
+### <a name="edit-mode-shortcuts"></a>Snelkoppelingen in de modus bewerken
+
+De bewerkings modus wordt aangegeven door een tekst cursor waarin u wordt gevraagd in het gebied van de editor te typen. Wanneer een cel zich in de bewerkings modus bevindt, kunt u in de cel typen. Voer de bewerkings modus in door te drukken `Enter` of door met de muis te klikken op het editor gebied van een cel. De linkerrand van de actieve cel is groen en gearceerd en de knop **uitvoeren** is groen. U ziet ook de cursor prompt in de cel in de bewerkings modus.
+
+   :::image type="content" source="media/how-to-run-jupyter-notebooks/edit-mode.png" alt-text="Notebook-cel in de bewerkings modus":::
+
+Met de volgende sneltoetsen kunt u gemakkelijker code in Azure Machine Learning notitie blokken navigeren en uitvoeren in de bewerkings modus.
+
+| Shortcutdimensie                      | Beschrijving|                                     
+| ----------------------------- | ----------------------------------------------- |
+| Escape                        | Voer de opdracht modus in|  
+| Control/Command + Space       | IntelliSense activeren |
+| Shift+Enter                 | Run-cel, hieronder selecteren |                         
+| Control/Command + Enter       | Cel uitvoeren  |                                      
+| ALT + ENTER                   | Run-cel, code-cel onder invoegen  |              
+| Control/Command + ALT + ENTER | Run-cel, cel prijs verlaging invoegen onder  |          
+| ALT + R                       | Alle cellen uitvoeren     |                              
+| Omhoog                            | Cursor omhoog of vorige cel verplaatsen    |             
+| Buiten gebruik                          | Cursor omlaag of volgende cel verplaatsen |                  
+| Control/Command + S           | Notitie blok opslaan   |                                
+| Control/Command + up          | Naar begin van cel   |                             
+| Control/Command + down        | Naar einde van cel |                                 
+| Tabblad                           | Voltooiing of inspringen van code (als tab-trap is ingeschakeld) |
+| Control/Command + M           | Tabblad-trap inschakelen/uitschakelen  |                       
+| Control/Command +]           | Indent |                                         
+| Control/Command + [           | Inspringing verkleinen  |                                        
+| Control/Command + A           | Alles selecteren|                                      
+| Control/Command + Z           | Ongedaan maken |                                           
+| Control/Command + Shift + Z   | Opnieuw uitvoeren |                                           
+| Control/Command + Y           | Opnieuw uitvoeren |                                           
+| Control/Command + Home        | Naar begin van cel|                                
+| Control/Command + end         | Naar einde van cel   |                               
+| Control/Command + links        | Eén woord naar links gaan |                               
+| Control/Command + right       | Eén woord naar rechts gaan |                              
+| Control/Command + Backspace   | Woord vóór verwijderen |                             
+| Control/Command + Delete      | Woord verwijderen na |                              
+| Control/Command +/           | Opmerking op cu in-/uitschakelen
+
+## <a name="find-compute-details"></a>Berekenings details zoeken
 
 Meer informatie over de compute-exemplaren vindt u in [Studio](https://ml.azure.com)op de **Compute** -pagina.
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: 76232a917e8856a06645fabc0ab4716195c5c0e1
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: a303f5e6177d0dc4205eaec8c3b1911e8e004fe3
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094196"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602434"
 ---
 # <a name="request-elevation-data-using-the-azure-maps-elevation-service-preview"></a>Gegevens over benodigde bevoegdheden aanvragen met behulp van de Azure Maps-uitbreidings service (preview)
 
@@ -471,7 +471,7 @@ Zie de <a href='https://codepen.io/azuremaps/pen/619c888c70089c3350a3e95d499f3e4
 
 ### <a name="get-elevation-data-by-polyline-path"></a>Verhogings gegevens ophalen per poly lijn-pad
 
-Op de volgende voorbeeld webpagina ziet u hoe u het kaart besturings element kunt gebruiken om uitbrei ding gegevens weer te geven langs een pad. De gebruiker definieert het pad door te klikken op het `PolyLine` pictogram in de linkerbovenhoek en de poly lijn op de kaart te tekenen. Het kaart besturings element geeft vervolgens de benodigde gegevens weer in de kleuren die zijn opgegeven in de sleutel in de rechter bovenhoek.
+Op de volgende voorbeeld webpagina ziet u hoe u het kaart besturings element kunt gebruiken om uitbrei ding gegevens weer te geven langs een pad. De gebruiker definieert het pad door te klikken op het `Polyline` pictogram in de linkerbovenhoek en de poly lijn op de kaart te tekenen. Het kaart besturings element geeft vervolgens de benodigde gegevens weer in de kleuren die zijn opgegeven in de sleutel in de rechter bovenhoek.
 
 <br/>
 

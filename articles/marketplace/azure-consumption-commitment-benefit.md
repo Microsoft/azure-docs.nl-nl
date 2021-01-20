@@ -8,12 +8,12 @@ author: emuench
 ms.author: mingshen
 ms.date: 10/15/2020
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: d8cb5179583dd23ea2bd4baf5ebe7d84b0ae9cbf
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 748b6c3506127de8fce153a77571664ea531ffa1
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814428"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601365"
 ---
 # <a name="azure-consumption-commitment-benefit"></a>Voordeel van Azure-verbruikstoezegging
 
@@ -24,7 +24,7 @@ Een select set van micro soft Commercial Marketplace-aanbiedingen draagt bij aan
 
 Alle aanbiedingen die deel uitmaken van dit programma, worden gevalideerd om ervoor te zorgen dat u oplossingen van hoge kwaliteit ontvangt.
 
-Als u gebruik wilt maken van dit voor deel, koopt u gewoon een in aanmerking komend aanbod op Azure Marketplace met een abonnement dat is gerelateerd aan uw Azure-overeenkomst. Azure-voor uitbetaling en monetaire toezeg gingen komen niet in aanmerking voor dit voor deel.
+Als u gebruik wilt maken van dit voor deel, koopt u gewoon een in aanmerking komend aanbod op Azure Marketplace met een abonnement dat is gerelateerd aan uw Azure-overeenkomst. Azure-voor uitbetaling (voorheen monetaire toezeg ging genoemd) komt niet in aanmerking voor dit voor deel.
 
 > [!IMPORTANT]
 > Uitsluitingen kunnen van toepassing zijn op CtC-overeenkomsten die zijn ondertekend vóór dit Marketplace-voor deel. Als u vragen hebt over de geschiktheid, neemt u contact op met uw Microsoft-account-executive.

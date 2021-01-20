@@ -1,7 +1,7 @@
 ---
 title: Veelgestelde vragen over spraak assistenten
 titleSuffix: Azure Cognitive Services
-description: Krijg antwoorden op de meest populaire vragen over spraak assistenten met aangepaste opdrachten (preview) of het directe lijn spraak kanaal.
+description: Krijg antwoorden op de meest populaire vragen over spraak assistenten met aangepaste opdrachten of het directe lijn spraak kanaal.
 services: cognitive-services
 author: trrwilson
 manager: nitinme
@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 11/05/2019
 ms.author: travisw
-ms.openlocfilehash: b43d446930d1f8c40c12e5d0aeba6eb202ef47ef
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 4b0bbb982ed48dc052b1a15514ad36b1d69b62b5
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353728"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599422"
 ---
 # <a name="voice-assistants-frequently-asked-questions"></a>Veelgestelde vragen over spraak assistenten
 
@@ -25,11 +25,11 @@ Als u geen antwoorden op uw vragen in dit document kunt vinden, Bekijk dan [Ande
 
 **V: wat is een spraak assistent?**
 
-**A:** Net als Cortana is een spraak assistent een oplossing die luistert naar de gesp roken uitingen van een gebruiker, analyseert de inhoud van deze uitingen voor betekenis, voert een of meer acties uit als reactie op het doel van de utterance, en geeft vervolgens een reactie op de gebruiker die vaak een gesp roken onderdeel bevat. Het is een ' spraak-in-en uitspraak-ervaring voor interactie met een systeem. auteurs van de Voice Assistant maken een toepassing op het apparaat met behulp `DialogServiceConnector` van de in de Speech SDK om te communiceren met een assistent die is gemaakt met [aangepaste opdrachten (preview)](custom-commands.md) of het [directe lijn spraak](direct-line-speech.md) kanaal van het bot-Framework. Deze assistenten kunnen aangepaste tref woorden, aangepaste spraak en aangepaste spraak gebruiken om een ervaring te bieden die is afgestemd op uw merk of product.
+**A:** Net als Cortana is een spraak assistent een oplossing die luistert naar de gesp roken uitingen van een gebruiker, analyseert de inhoud van deze uitingen voor betekenis, voert een of meer acties uit als reactie op het doel van de utterance, en geeft vervolgens een reactie op de gebruiker die vaak een gesp roken onderdeel bevat. Het is een ' spraak-in-en uitspraak-ervaring voor interactie met een systeem. auteurs van de Voice Assistant maken een toepassing op het apparaat met behulp `DialogServiceConnector` van de in de Speech SDK om te communiceren met een assistent die is gemaakt met [aangepaste opdrachten](custom-commands.md) of het [directe lijn spraak](direct-line-speech.md) kanaal van het bot-Framework. Deze assistenten kunnen aangepaste tref woorden, aangepaste spraak en aangepaste spraak gebruiken om een ervaring te bieden die is afgestemd op uw merk of product.
 
-**V: moet ik aangepaste opdrachten (preview) of direct line speech gebruiken? Wat is het verschil?**
+**V: moet ik aangepaste opdrachten of direct line speech gebruiken? Wat is het verschil?**
 
-**A:** [aangepaste opdrachten (preview)](custom-commands.md) is een set hulpprogram ma's waarmee u eenvoudig een assistent kunt maken en hosten die geschikt is voor scenario's voor het volt ooien van taken. [Direct line speech](direct-line-speech.md) biedt geavanceerde, geavanceerdere mogelijkheden waarmee robuuste gespreks scenario's kunnen worden ingeschakeld. Zie de [vergelijking van assistent-oplossingen](voice-assistants.md#choosing-an-assistant-solution) voor meer informatie.
+**A:** [aangepaste opdrachten](custom-commands.md) zijn een set hulpprogram ma's waarmee u eenvoudig een assistent kunt maken en hosten die geschikt is voor scenario's voor het volt ooien van taken. [Direct line speech](direct-line-speech.md) biedt geavanceerde, geavanceerdere mogelijkheden waarmee robuuste gespreks scenario's kunnen worden ingeschakeld. Zie de [vergelijking van assistent-oplossingen](voice-assistants.md#choosing-an-assistant-solution) voor meer informatie.
 
 **V: Hoe kan ik aan de slag?**
 
@@ -61,7 +61,7 @@ Raadpleeg de [sectie zelf studie](tutorial-voice-enable-your-bot-speech-sdk.md#r
 
 **A:** Deze fout wijst op een communicatie probleem tussen uw assistent en de Voice Assistant-service.
 
-- Voor aangepaste opdrachten (preview) moet u ervoor zorgen dat uw aangepaste opdrachten (preview-toepassing) worden gepubliceerd
+- Voor aangepaste opdrachten moet u ervoor zorgen dat uw toepassing voor aangepaste opdrachten wordt gepubliceerd
 - Zorg ervoor dat u [uw bot op het directe lijn spraak kanaal hebt aangesloten](/azure/bot-service/bot-service-channel-connect-directlinespeech), het [Streaming-Protocol ondersteuning](/azure/bot-service/directline-speech-bot) voor uw bot hebt toegevoegd (met de gerelateerde ondersteuning voor websockets) en controleer vervolgens of uw bot reageert op inkomende aanvragen van het kanaal.
 
 **V: deze code werkt nog steeds niet en/of ik krijg een andere fout bij het gebruik van een `DialogServiceConnector` . Wat moet ik doen?**

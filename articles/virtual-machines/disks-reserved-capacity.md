@@ -7,12 +7,12 @@ ms.date: 01/30/2020
 ms.topic: how-to
 ms.service: virtual-machines
 ms.subservice: disks
-ms.openlocfilehash: e3642a621253b79fdfcdd8cb2b648dee534c6758
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: db6575894904e6ced2d4be48fec5961f5b8b8a54
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968682"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602632"
 ---
 # <a name="reduce-costs-with-azure-disks-reservation"></a>Kosten verlagen met Azure-schijfreservering
 
@@ -69,8 +69,8 @@ Volg deze stappen om gereserveerde capaciteit aan te schaffen:
 
    |Element  |Beschrijving  |
    |---------|---------|
-   |**Bereik**   |  Hoeveel abonnementen kunnen gebruikmaken van het facturerings voordeel dat is gekoppeld aan de reserve ring. Met deze waarde wordt ook aangegeven hoe de reserve ring wordt toegepast op specifieke abonnementen. <br/><br/> Als u **gedeeld**selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in elk abonnement binnen uw facturerings context. De facturerings context is gebaseerd op de manier waarop u zich hebt geregistreerd voor Azure. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bevat het gedeelde bereik alle afzonderlijke abonnementen met betalen per gebruik-tarieven die zijn gemaakt door de account beheerder.  <br/><br/>  Als u **één abonnement**selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in het geselecteerde abonnement. <br/><br/> Als u **één resource groep**selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in het geselecteerde abonnement en in de geselecteerde resource groep van dat abonnement. <br/><br/> U kunt het reserverings bereik wijzigen nadat u de reserve ring hebt aangeschaft.  |
-   |**Abonnement**  | Het abonnement dat u gebruikt om te betalen voor de Azure Storage reserve ring. De betalings wijze voor het geselecteerde abonnement wordt gebruikt bij het opladen van de kosten. Het abonnement moet een van de volgende typen zijn:<br/><ul><li> Enterprise Agreement (de nummers MS-AZR-0017P en MS-AZR-0148P). Voor een Enter prise-abonnement worden de kosten afgetrokken van het monetaire toezeggings saldo van de inschrijving of worden deze gefactureerd als overschrijding.</li><br/><li>Individueel abonnement met betalen per gebruik-tarieven (AZR-0003P en MS-AZR-0023P). Voor een afzonderlijk abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht op basis van de credit card of factuur betalings methode voor het abonnement.</li></ul>    |
+   |**Bereik**   |  Hoeveel abonnementen kunnen gebruikmaken van het facturerings voordeel dat is gekoppeld aan de reserve ring. Met deze waarde wordt ook aangegeven hoe de reserve ring wordt toegepast op specifieke abonnementen. <br/><br/> Als u **gedeeld** selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in elk abonnement binnen uw facturerings context. De facturerings context is gebaseerd op de manier waarop u zich hebt geregistreerd voor Azure. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bevat het gedeelde bereik alle afzonderlijke abonnementen met betalen per gebruik-tarieven die zijn gemaakt door de account beheerder.  <br/><br/>  Als u **één abonnement** selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in het geselecteerde abonnement. <br/><br/> Als u **één resource groep** selecteert, wordt de reserverings korting toegepast op Azure storage capaciteit in het geselecteerde abonnement en in de geselecteerde resource groep van dat abonnement. <br/><br/> U kunt het reserverings bereik wijzigen nadat u de reserve ring hebt aangeschaft.  |
+   |**Abonnement**  | Het abonnement dat u gebruikt om te betalen voor de Azure Storage reserve ring. De betalings wijze voor het geselecteerde abonnement wordt gebruikt bij het opladen van de kosten. Het abonnement moet een van de volgende typen zijn:<br/><ul><li> Enterprise Agreement (de nummers MS-AZR-0017P en MS-AZR-0148P). Voor een Enter prise-abonnement worden de kosten afgetrokken van de Azure-voor uitbetaling van de inschrijving (voorheen monetaire toezeg ging genoemd)-saldo of in rekening gebracht als overschrijding.</li><br/><li>Individueel abonnement met betalen per gebruik-tarieven (AZR-0003P en MS-AZR-0023P). Voor een afzonderlijk abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht op basis van de credit card of factuur betalings methode voor het abonnement.</li></ul>    |
    | **Disks** | De SKU die u wilt maken. |
    | **Regio** | De regio waar de reserve ring van kracht is. |
    | **Facturerings frequentie** | Hoe vaak het account wordt gefactureerd voor de reserve ring. Opties zijn **maandelijks** en **vooraf**. |
@@ -79,7 +79,7 @@ Volg deze stappen om gereserveerde capaciteit aan te schaffen:
 
 1. Nadat u de waarden voor de reserve ring hebt opgegeven, worden de kosten door de Azure Portal weer gegeven. In de portal wordt ook het kortings percentage weer gegeven over betalen per gebruik-facturering. Selecteer **volgende** om door te gaan naar het deel venster **reserve ringen voor inkoop** .
 
-1. In het deel venster **Inkoop reserveringen** kunt u uw reserve ring een naam geven en het totale aantal reserve ringen selecteren dat u wilt maken. Het aantal reserve ringen wordt toegewezen aan het aantal schijven. Als u bijvoorbeeld honderd schijven wilt reserveren, voert u de **hoeveelheid** waarde **100**in.
+1. In het deel venster **Inkoop reserveringen** kunt u uw reserve ring een naam geven en het totale aantal reserve ringen selecteren dat u wilt maken. Het aantal reserve ringen wordt toegewezen aan het aantal schijven. Als u bijvoorbeeld honderd schijven wilt reserveren, voert u de **hoeveelheid** waarde **100** in.
 
 1. Bekijk de totale kosten van de reserve ring.
 

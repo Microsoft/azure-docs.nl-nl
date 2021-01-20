@@ -12,12 +12,12 @@ author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein
 ms.date: 10/13/2020
-ms.openlocfilehash: b4a8b809fc135a4af26fae10912890f2017153f4
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: cacd43502a01352c24f8fcfd85b12aac781dccbd
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92780917"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602508"
 ---
 # <a name="save-costs-for-resources-with-reserved-capacity---azure-sql-database--sql-managed-instance"></a>Bespaar kosten voor resources met gereserveerde capaciteit-Azure SQL Database & SQL Managed instance
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)] 
@@ -47,7 +47,7 @@ Stel bijvoorbeeld dat u één algemeen doel, GEN5-16 vCore elastische pool en tw
 ## <a name="buy-reserved-capacity"></a>Gereserveerde capaciteit kopen
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-2. Selecteer **Alle services** > **Reserveringen** .
+2. Selecteer **Alle services** > **Reserveringen**.
 3. Selecteer **toevoegen** en selecteer vervolgens in het deel venster **reserve ringen** **SQL database** om een nieuwe reserve ring voor SQL database aan te schaffen.
 4. Vul de vereiste velden in. Bestaande data bases in SQL Database en SQL Managed instance die overeenkomen met de kenmerken die u selecteert, komen in aanmerking voor de gereserveerde capaciteits korting. Het werkelijke aantal data bases of beheerde instanties dat de korting krijgt, is afhankelijk van het bereik en de geselecteerde hoeveelheid.
 
@@ -57,16 +57,16 @@ Stel bijvoorbeeld dat u één algemeen doel, GEN5-16 vCore elastische pool en tw
     
     | Veld      | Beschrijving|
     |------------|--------------|
-    |Abonnement|Het abonnement dat wordt gebruikt voor het betalen van de capaciteits reservering. Voor de betalings wijze voor het abonnement worden de kosten vooraf in rekening gebracht voor de reserve ring. Het abonnements type moet een Enter prise Agreement (aanbiedings nummer MS-AZR-0017P of MS-AZR-0148P) of een afzonderlijke overeenkomst met betalen per gebruik-prijs (aanbiedings nummer MS-AZR-0003P of MS-AZR-0023P) zijn. Voor een Enterprise-abonnement worden de kosten in mindering gebracht op het toezeggingsbedrag of ze worden in rekening gebracht als overschrijding. Voor een individueel abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht op basis van de credit card of factuur betalings methode voor het abonnement.|
-    |Bereik       |Het bereik van de vCore-reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u <br/><br/>**Gedeeld** , de vCore-reserverings korting wordt toegepast op de data base of het beheerde exemplaar dat wordt uitgevoerd in abonnementen binnen uw facturerings context. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bestaat het gedeelde bereik uit alle abonnementen op gebruiksbasis gemaakt door de accountbeheerder.<br/><br/>**Eén abonnement** , de vCore-reserverings korting wordt toegepast op de data bases of beheerde exemplaren in dit abonnement. <br/><br/>**Eén resource groep** , de reserverings korting wordt toegepast op de exemplaren van data bases of beheerde exemplaren in het geselecteerde abonnement en de geselecteerde resource groep in dat abonnement.|
-    |Region      |De Azure-regio die wordt gedekt door de capaciteits reservering.|
+    |Abonnement|Het abonnement dat wordt gebruikt voor het betalen van de capaciteits reservering. Voor de betalings wijze voor het abonnement worden de kosten vooraf in rekening gebracht voor de reserve ring. Het abonnements type moet een Enter prise Agreement (aanbiedings nummer MS-AZR-0017P of MS-AZR-0148P) of een afzonderlijke overeenkomst met betalen per gebruik-prijs (aanbiedings nummer MS-AZR-0003P of MS-AZR-0023P) zijn. Voor een Enter prise-abonnement worden de kosten afgetrokken van de Azure-voor uitbetaling van de inschrijving (voorheen monetaire toezeg ging genoemd)-saldo of in rekening gebracht als overschrijding. Voor een individueel abonnement met betalen per gebruik-tarieven worden de kosten in rekening gebracht op basis van de credit card of factuur betalings methode voor het abonnement.|
+    |Bereik       |Het bereik van de vCore-reserve ring kan betrekking hebben op één abonnement of meerdere abonnementen (gedeeld bereik). Als u <br/><br/>**Gedeeld**, de vCore-reserverings korting wordt toegepast op de data base of het beheerde exemplaar dat wordt uitgevoerd in abonnementen binnen uw facturerings context. Voor zakelijke klanten is het gedeelde bereik de inschrijving en omvat alle abonnementen binnen de inschrijving. Voor betalen per gebruik-klanten bestaat het gedeelde bereik uit alle abonnementen op gebruiksbasis gemaakt door de accountbeheerder.<br/><br/>**Eén abonnement**, de vCore-reserverings korting wordt toegepast op de data bases of beheerde exemplaren in dit abonnement. <br/><br/>**Eén resource groep**, de reserverings korting wordt toegepast op de exemplaren van data bases of beheerde exemplaren in het geselecteerde abonnement en de geselecteerde resource groep in dat abonnement.|
+    |Regio      |De Azure-regio die wordt gedekt door de capaciteits reservering.|
     |Implementatie type|Het SQL-resource type waarvoor u de reserve ring wilt aanschaffen.|
     |Prestatie niveau|De servicelaag voor de data bases of beheerde exemplaren. |
-    |Termijn        |Eén jaar of drie jaar.|
+    |Term        |Eén jaar of drie jaar.|
     |Aantal    |De hoeveelheid reken resources die worden gekocht binnen de capaciteits reservering. De hoeveelheid is een aantal vCores in de geselecteerde Azure-regio en-prestatie-laag die worden gereserveerd en de facturerings korting krijgt. Als u bijvoorbeeld meerdere data bases uitvoert of plant met de totale reken capaciteit van GEN5 16 vCores in de regio VS-Oost, geeft u de hoeveelheid op als 16 om het voor deel voor alle data bases te maximaliseren. |
 
 1. Controleer de kosten van de capaciteits reservering in het gedeelte **kosten** .
-1. Selecteer **Aankoop** .
+1. Selecteer **Aankoop**.
 1. Selecteer **deze reserve ring weer geven** om de status van uw aankoop te bekijken.
 
 ## <a name="cancel-exchange-or-refund-reservations"></a>Reserveringen annuleren, ruilen of terugbetalen

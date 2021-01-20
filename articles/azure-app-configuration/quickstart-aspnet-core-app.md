@@ -9,12 +9,12 @@ ms.custom: devx-track-csharp, contperf-fy21q1
 ms.topic: quickstart
 ms.date: 09/25/2020
 ms.author: alkemper
-ms.openlocfilehash: d1582cda4b083623daf7bb756d0bc8aa3e74eae8
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: d0e564b98ab6331677451afd32a0848e7f5594dd
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033643"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598748"
 ---
 # <a name="quickstart-create-an-aspnet-core-app-with-azure-app-configuration"></a>Quickstart: Een ASP.NET Core-app maken met Azure-app-configuratie
 
@@ -70,7 +70,7 @@ dotnet new mvc --no-https --output TestAppConfig
     ```
 
     > [!IMPORTANT]
-    > Bij sommige shells wordt de verbindingsreeks afgekapt, tenzij deze tussen aanhalingstekens staat. Zorg ervoor dat de uitvoer van de `dotnet user-secrets`-opdracht de volledige verbindingsreeks toont. Als dat niet het geval is, voert u de opdracht opnieuw uit en plaatst u de verbindingsreeks tussen aanhalingstekens.
+    > Bij sommige shells wordt de verbindingsreeks afgekapt, tenzij deze tussen aanhalingstekens staat. Zorg ervoor dat de uitvoer van de `dotnet user-secrets list`-opdracht de volledige verbindingsreeks toont. Als dat niet het geval is, voert u de opdracht opnieuw uit en plaatst u de verbindingsreeks tussen aanhalingstekens.
 
     Secret Manager wordt alleen gebruikt om de web-app lokaal te testen. Wanneer de app is geïmplementeerd naar [Azure App Service](https://azure.microsoft.com/services/app-service/web), gebruikt u een toepassingsinstelling **Verbindingsreeksen** in App Service in plaats van Secret Manager om de verbindingsreeks op te slaan.
 

@@ -3,14 +3,14 @@ title: 'Zelfstudie voor Kubernetes op Azure: Toepassing schalen'
 description: In deze zelfstudie over Azure Kubernetes Service (AKS) leert u hoe u knooppunten en pods schaalt in Kubernetes. Er wordt ook aandacht besteed aan het automatisch horizontaal schalen van pods.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/12/2021
 ms.custom: mvc
-ms.openlocfilehash: 7f16ba3ffe6b6f96f17df540eb67e9cec0bfea8c
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
-ms.translationtype: HT
+ms.openlocfilehash: dfebb6561e83c51063515ec655153aaaa7a09c0c
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97825682"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251366"
 ---
 # <a name="tutorial-scale-applications-in-azure-kubernetes-service-aks"></a>Zelfstudie: toepassingen schalen in AKS (Azure Kubernetes Service)
 
@@ -21,7 +21,7 @@ Als u de zelfstudies hebt gevolgd, hebt u een werkend Kubernetes-cluster in AKS 
 > * Handmatig Kubernetes-pods schalen waarop uw toepassing wordt uitgevoerd
 > * Automatisch schalen configureren van pods die de front-end-app uitvoeren
 
-In aanvullende zelfstudies wordt de Azure Vote-toepassing bijgewerkt naar een nieuwe versie.
+In latere zelf studies wordt de Azure stem-toepassing bijgewerkt naar een nieuwe versie.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -39,7 +39,7 @@ kubectl get pods
 
 In het volgende voorbeeld van uitvoer ziet u één pod voor de front-end en één voor de back-end:
 
-```
+```output
 NAME                               READY     STATUS    RESTARTS   AGE
 azure-vote-back-2549686872-4d2r5   1/1       Running   0          31m
 azure-vote-front-848767080-tf34m   1/1       Running   0          31m
@@ -51,7 +51,7 @@ Als u het aantal pods in de implementatie van *azure-vote-front* handmatig wilt 
 kubectl scale --replicas=5 deployment/azure-vote-front
 ```
 
-Voer [kubectl get pods][kubectl-get] opnieuw uit om te controleren of AKS de extra pods heeft gemaakt. Na ongeveer een minuut zijn de extra pods beschikbaar in uw cluster:
+Voer [kubectl][kubectl-get] opnieuw uit om te controleren of het nieuwe Peul is gemaakt met AKS. Na een minuut zijn de peulen beschikbaar in uw cluster:
 
 ```console
 kubectl get pods
@@ -131,7 +131,7 @@ spec:
 
 Gebruik `kubectl apply` om de automatisch schalen toe te passen die is gedefinieerd in het manifestbestand `azure-vote-hpa.yaml`.
 
-```
+```console
 kubectl apply -f azure-vote-hpa.yaml
 ```
 
@@ -158,7 +158,7 @@ az aks scale --resource-group myResourceGroup --name myAKSCluster --node-count 3
 
 Wanneer het cluster is geschaald, is de uitvoer vergelijkbaar met het volgende voorbeeld:
 
-```
+```output
 "agentPoolProfiles": [
   {
     "count": 3,

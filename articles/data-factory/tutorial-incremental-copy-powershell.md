@@ -1,6 +1,6 @@
 ---
 title: Een tabel incrementeel kopiëren met behulp van PowerShell
-description: In deze zelfstudie maakt u een Azure data factory-pijplijn waarmee gegevens uit een Azure SQL-database incrementeel worden gekopieerd naar Azure Blob Storage.
+description: In deze zelf studie maakt u een Azure Data Factory-pijp lijn waarmee gegevens uit een Azure-SQL database incrementeel worden gekopieerd naar Azure Blob-opslag.
 services: data-factory
 author: dearandyxu
 ms.author: yexu
@@ -11,18 +11,18 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-dt-2019
 ms.date: 01/22/2018
-ms.openlocfilehash: 65a2d06acc3461d881ad6f100f3720b217ef7634
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
-ms.translationtype: HT
+ms.openlocfilehash: 50608870fa397ad5586c626f1d1fe5c9d893b4ca
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510206"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222816"
 ---
 # <a name="incrementally-load-data-from-azure-sql-database-to-azure-blob-storage-using-powershell"></a>Incrementeel gegevens uit Azure SQL Database laden in Azure-blobopslag met PowerShell
 
 [!INCLUDE[appliesto-adf-xxx-md](includes/appliesto-adf-xxx-md.md)]
 
-In deze zelfstudie maakt u een data factory in Azure met een pijplijn waarmee deltagegevens uit een tabel in een Azure SQL Database worden geladen naar Azure-blobopslag.
+In deze zelf studie gebruikt u Azure Data Factory om een pijp lijn te maken waarmee de Delta gegevens uit een tabel in Azure SQL Database worden geladen in Azure Blob-opslag.
 
 In deze zelfstudie voert u de volgende stappen uit:
 

@@ -3,16 +3,16 @@ title: Waarschuwingen verzenden vanuit Azure Application Insights | Microsoft Do
 description: Zelfstudie over het verzenden van waarschuwingen als reactie op fouten in uw toepassing met behulp van Azure Application Insights.
 ms.subservice: application-insights
 ms.topic: tutorial
-author: mrbullwinkle
-ms.author: mbullwin
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 04/10/2019
 ms.custom: mvc
-ms.openlocfilehash: c1aa3ae5be3e9f3fb50909cb5311d167bbeee647
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-ms.translationtype: HT
+ms.openlocfilehash: dbf2cbe08fa1ba1ab79446e9068b4fb1fce381b0
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96904224"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210253"
 ---
 # <a name="monitor-and-alert-on-application-health-with-azure-application-insights"></a>Toepassingsstatus bewaken en waarschuwingen erover verzenden met Azure Application Insights
 

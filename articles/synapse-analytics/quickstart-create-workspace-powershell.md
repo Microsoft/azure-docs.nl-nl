@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: alehall
 ms.reviewer: jrasnick
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 005e3a3b717d4b1b8e5eb02b77a1d228908f8707
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
-ms.translationtype: HT
+ms.openlocfilehash: 0537d2353d6b372ed19127101c488b872bbc5224
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92210566"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218855"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-with-azure-powershell"></a>Quickstart: Een Azure Synapse-werkruimte maken met Azure PowerShell
 
@@ -30,9 +30,9 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 - [Azure Data Lake Storage Gen2-opslagaccount](../storage/common/storage-account-create.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 
     > [!IMPORTANT]
-    > De Azure Synapse-werkruimte moet kunnen lezen uit en schrijven naar het geselecteerde ADLS Gen2-account. Voor elk opslagaccount dat u als primair opslagaccount koppelt moet u **hiërarchische naamruimte** inschakelen bij het maken van het opslagaccount, zoals beschreven in [Een opslagaccount maken](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-powershell#create-a-storage-account).
+    > De Azure Synapse-werkruimte moet kunnen lezen uit en schrijven naar het geselecteerde ADLS Gen2-account. Voor elk opslagaccount dat u als primair opslagaccount koppelt moet u **hiërarchische naamruimte** inschakelen bij het maken van het opslagaccount, zoals beschreven in [Een opslagaccount maken](../storage/common/storage-account-create.md?tabs=azure-powershell#create-a-storage-account).
 
-Als u Cloud Shell gebruikt, raadpleegt u [Overzicht van Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview) voor meer informatie.
+Als u Cloud Shell gebruikt, raadpleegt u [Overzicht van Azure Cloud Shell](../cloud-shell/overview.md) voor meer informatie.
 
 ### <a name="install-the-azure-powershell-module-locally"></a>Installeer de Azure PowerShell-module lokaal
 

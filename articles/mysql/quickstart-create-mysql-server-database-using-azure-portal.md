@@ -7,12 +7,12 @@ ms.service: mysql
 ms.custom: mvc
 ms.topic: quickstart
 ms.date: 11/04/2020
-ms.openlocfilehash: f71bcc1fd3b92a32a3e6d9fa056bae7131a663bd
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: b8f3a8e06bb27051417205c4dc3141948960bb00
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96492604"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98567792"
 ---
 # <a name="quickstart-create-an-azure-database-for-mysql-server-by-using-the-azure-portal"></a>Quickstart: Een Azure-database voor MySQL-server maken met behulp van Azure Portal
 
@@ -45,7 +45,7 @@ Een Azure-abonnement is vereist. Als u nog geen abonnement op Azure hebt, maak d
    Servernaam | **mydemoserver** | Voer een unieke naam in. De servernaam mag alleen kleine letters, cijfers en het koppelteken (-) bevatten. De naam moet 3 tot 63 tekens bevatten.
    Gegevensbron |**Geen** | Selecteer **Geen** om een nieuwe server te maken. Selecteer **Back-up** alleen als u herstelt vanuit een back-up voor geografische gebieden van een bestaande server.
    Locatie |Uw gewenste locatie | Selecteer een locatie in de lijst.
-   Versie | De meest recente primaire versie| Gebruik de meest recente primaire versie. Zie [alle ondersteunde versies](../postgresql/concepts-supported-versions.md).
+   Versie | De meest recente primaire versie| Gebruik de meest recente primaire versie. Zie [alle ondersteunde versies](concepts-supported-versions.md).
    Compute en opslag | De standaardwaarden gebruiken| De standaardprijscategorie is **Algemeen gebruik** met **4 vCores** en **100 GB** opslag. Back-upretentie is ingesteld op **7 dagen**, met de back-upoptie **Geografisch redundant**.<br/>Bekijk de pagina met [prijzen](https://azure.microsoft.com/pricing/details/mysql/) en werk indien nodig de standaardwaarden bij.
    Gebruikersnaam van beheerder | **mydemoadmin** | Voer de gebruikersnaam van de serverbeheerder in. Het is niet toegestaan om **azure_superuser**, **admin**, **administrator**, **root**, **guest** of **public** voor de gebruikersnaam van de beheerder te gebruiken.
    Wachtwoord | Een wachtwoord | Een nieuw wachtwoord voor de gebruikersnaam van de serverbeheerder. Het wachtwoord moet 8 tot 128 tekens lang zijn en moet bestaan uit een combinatie van hoofdletters, kleine letters, cijfers en niet-alfanumerieke tekens (!, $, #, %, enzovoort).

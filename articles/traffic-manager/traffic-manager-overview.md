@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/23/2019
 ms.author: duau
-ms.openlocfilehash: 830700fb4a5ac57405877364e9cc4828e5d1a5a4
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: e2a4db1404709dadb2500df29f3f7acf8787c2b2
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89392541"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185728"
 ---
 # <a name="what-is-traffic-manager"></a>Wat is Traffic Manager?
 Azure Traffic Manager is een op DNS gebaseerde load balancer waarmee u verkeer optimaal over services kunt verdelen in Azure-regio's wereldwijd, terwijl u over hoge beschikbaarheid en een hoge reactiesnelheid beschikt.
@@ -25,9 +25,9 @@ Azure Traffic Manager is een op DNS gebaseerde load balancer waarmee u verkeer o
 Traffic Manager maakt gebruik van DNS om aanvragen van clients door te sturen naar de meest geschikte eindpunten op basis van een methode om verkeer te routeren en van de status van de eindpunten. Een eindpunt is een internetgerichte service die binnen of buiten Azure wordt gehost. Traffic Manager biedt een scala aan [routeringsmethoden voor verkeer](traffic-manager-routing-methods.md) en [opties voor eindpuntcontrole](traffic-manager-monitoring.md) om verschillende toepassingsbehoeften en modellen voor automatische failover mogelijk te kunnen maken. Traffic Manager is bestand tegen storingen, waaronder het uitvallen van een hele Azure-regio.
 
 >[!NOTE]
-> Azure biedt een pakket volledig beheerde oplossingen voor taakverdeling voor uw scenario's. Als u op zoek bent naar beëindiging van het TLS-protocol (Transport Layer Security), ('SSL-offload') of aanvragen per HTTP/HTTPS-aanvraag, verwerking via de toepassingslaag, raadpleegt u [Application Gateway](../application-gateway/application-gateway-introduction.md). Als u op zoek bent naar regionale taakverdeling, raadpleegt u [Load Balancer](../load-balancer/load-balancer-overview.md). Uw end-to-end scenario 's kunnen eventueel profiteren van een combinatie van deze oplossingen.
+> Azure biedt een pakket volledig beheerde oplossingen voor taakverdeling voor uw scenario's. Als u op zoek bent naar beëindiging van het TLS-protocol (Transport Layer Security), ('SSL-offload') of aanvragen per HTTP/HTTPS-aanvraag, verwerking via de toepassingslaag, raadpleegt u [Application Gateway](../application-gateway/overview.md). Als u op zoek bent naar regionale taakverdeling, raadpleegt u [Load Balancer](../load-balancer/load-balancer-overview.md). Uw end-to-end scenario 's kunnen eventueel profiteren van een combinatie van deze oplossingen.
 >
-> Zie [Opties voor taakverdeling in Azure](https://docs.microsoft.com/azure/architecture/guide/technology-choices/load-balancing-overview) voor een vergelijking van de opties voor taakverdeling van Azure.
+> Zie [Opties voor taakverdeling in Azure](/azure/architecture/guide/technology-choices/load-balancing-overview) voor een vergelijking van de opties voor taakverdeling van Azure.
 
 Traffic Manager biedt de volgende functies:
 
@@ -58,10 +58,6 @@ Zie [Prijzen voor Traffic Manager](https://azure.microsoft.com/pricing/details/t
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Een Traffic Manager-profiel maken](traffic-manager-create-profile.md).
+- [Een Traffic Manager-profiel maken](./quickstart-create-traffic-manager-profile.md).
 - [Hoe Traffic Manager werkt](traffic-manager-how-it-works.md).
 - Bekijk [frequently asked questions](traffic-manager-FAQs.md) (veelgestelde vragen) over Traffic Manager.
-
-
-
-

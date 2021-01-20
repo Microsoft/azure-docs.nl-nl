@@ -3,14 +3,14 @@ title: 'Zelfstudie: Kubernetes in Azure: een containerregister maken'
 description: In deze zelfstudie over AKS (Azure Kubernetes Service) gaat u een exemplaar van Azure Container Registry maken en een containerinstallatiekopie van een voorbeeldtoepassing uploaden.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/12/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: b0f78c3969f3d02c19824fdb6d1e3b786dceb43c
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: d1dce1c59c4bf40eaead89e4a8a088e9a8ea4f76
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92747068"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250618"
 ---
 # <a name="tutorial-deploy-and-use-azure-container-registry"></a>Zelfstudie: Azure Container Registry implementeren en gebruiken
 
@@ -22,7 +22,7 @@ Azure Container Registry (ACR) is een privéregister voor installatiekopieën va
 > * De installatiekopie uploaden naar ACR
 > * Installatiekopieën weergeven in het register
 
-In aanvullende zelfstudies wordt dit ACR-exemplaar geïntegreerd met een Kubernetes-cluster in AKS en wordt er met behulp van de installatiekopie een toepassing geïmplementeerd.
+In latere zelf studies wordt dit ACR-exemplaar geïntegreerd met een Kubernetes-cluster in AKS. er wordt een toepassing geïmplementeerd vanuit de installatie kopie.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -34,7 +34,7 @@ Voor deze zelfstudie moet u Azure CLI versie 2.0.53 of hoger uitvoeren. Voer `az
 
 Om een Azure-containerregister te maken, hebt u eerst een resourcegroep nodig. Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
 
-Een resourcegroep maken met de opdracht [az group create][az-group-create]. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt in de regio *eastus* :
+Een resourcegroep maken met de opdracht [az group create][az-group-create]. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt in de regio *eastus*:
 
 ```azurecli
 az group create --name myResourceGroup --location eastus
@@ -60,12 +60,12 @@ De opdracht retourneert het bericht *Aanmelden geslaagd* wanneer deze is uitgevo
 
 Als u een lijst met de huidige installatiekopieën wilt weergeven, gebruikt u de opdracht [docker images][docker-images]:
 
-```azurecli
+```console
 $ docker images
 ```
-Met de bovenstaande opdrachtuitvoer wordt een lijst van uw huidige lokale afbeeldingen weergegeven:
+De bovenstaande opdracht bevat een lijst met de huidige lokale installatie kopieën:
 
-```
+```output
 REPOSITORY                                     TAG                 IMAGE ID            CREATED             SIZE
 mcr.microsoft.com/azuredocs/azure-vote-front   v1                  84b41c268ad9        7 minutes ago       944MB
 mcr.microsoft.com/oss/bitnami/redis            6.0.8               3a54a920bb6c        2 days ago          103MB
@@ -74,7 +74,7 @@ tiangolo/uwsgi-nginx-flask                     python3.6           a16ce562e863 
 
 Als u de containerinstallatiekopie *azure-vote-front* wilt gebruiken met ACR, moet de installatiekopie worden getagd met het adres van de aanmeldingsserver van uw register. Deze tag wordt gebruikt voor routering bij het pushen van containerinstallatiekopieën naar een installatiekopieregister.
 
-U kunt het adres van de aanmeldingsserver opvragen door met de opdracht [az acr list][az-acr-list] als volgt een query uit te voeren op de *loginServer* :
+U kunt het adres van de aanmeldingsserver opvragen door met de opdracht [az acr list][az-acr-list] als volgt een query uit te voeren op de *loginServer*:
 
 ```azurecli
 az acr list --resource-group myResourceGroup --query "[].{acrLoginServer:loginServer}" --output table
@@ -104,7 +104,7 @@ tiangolo/uwsgi-nginx-flask                      python3.6           a16ce562e863
 
 ## <a name="push-images-to-registry"></a>Installatiekopieën naar het register pushen
 
-U kunt de gemaakte en getagde installatiekopie *azure-vote-front* nu pushen naar het ACR-exemplaar. Gebruik [docker push][docker-push] en geef als volgt uw eigen *acrLoginServer* -adres op voor de naam van de installatiekopie:
+U kunt de gemaakte en getagde installatiekopie *azure-vote-front* nu pushen naar het ACR-exemplaar. Gebruik [docker push][docker-push] en geef als volgt uw eigen *acrLoginServer*-adres op voor de naam van de installatiekopie:
 
 ```console
 docker push <acrLoginServer>/azure-vote-front:v1
@@ -122,7 +122,7 @@ az acr repository list --name <acrName> --output table
 
 In het volgende voorbeeld van uitvoer ziet u dat de installatiekopie *azure-vote-front* beschikbaar is in het register:
 
-```
+```output
 Result
 ----------------
 azure-vote-front
@@ -136,7 +136,7 @@ az acr repository show-tags --name <acrName> --repository azure-vote-front --out
 
 In het volgende voorbeeld van uitvoer ziet u de tag *v1* zoals toegevoegd aan de installatiekopie in een eerdere stap:
 
-```
+```output
 Result
 --------
 v1

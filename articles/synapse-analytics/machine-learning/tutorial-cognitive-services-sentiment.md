@@ -9,16 +9,16 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 1b407cbee5218149f794ab125ac058e32b422558
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 6a4833cf0d73939e01fd3e3e7263c6cba3c0a28a
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96464366"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222187"
 ---
 # <a name="tutorial-sentiment-analysis-with-cognitive-services-preview"></a>Zelfstudie: Sentimentanalyse met Cognitive Services (preview-versie)
 
-In deze zelfstudie leert u hoe u uw gegevens in Azure Synapse eenvoudig kunt verrijken met [Cognitive Services](https://go.microsoft.com/fwlink/?linkid=2147492). We maken gebruik van de mogelijkheden van [Text Analytics](https://docs.microsoft.com/azure/cognitive-services/text-analytics/) om een sentimentanalyse uit te voeren. Een gebruiker in Azure Synapse kan eenvoudigweg een tabel selecteren die een tekstkolom bevat die moet worden verrijkt met sentimenten. Deze sentimenten kunnen positief, negatief, gemengd of neutraal en een waarschijnlijkheid zijn.
+In deze zelfstudie leert u hoe u uw gegevens in Azure Synapse eenvoudig kunt verrijken met [Cognitive Services](../../cognitive-services/index.yml). We maken gebruik van de mogelijkheden van [Text Analytics](../../cognitive-services/text-analytics/index.yml) om een sentimentanalyse uit te voeren. Een gebruiker in Azure Synapse kan eenvoudigweg een tabel selecteren die een tekstkolom bevat die moet worden verrijkt met sentimenten. Deze sentimenten kunnen positief, negatief, gemengd of neutraal en een waarschijnlijkheid zijn.
 
 In deze zelfstudie komt het volgende aan bod:
 
@@ -98,7 +98,7 @@ De notebook die u zojuist hebt geopend, maakt gebruik van de [mmlspark-bibliothe
 
 Met de Azure Key Vault-gegevens die u hebt ingevoerd, kunt u vanaf hier veilig naar uw geheimen verwijzen zonder dat u deze hoeft weer te geven.
 
-U kunt nu **alle** cellen uitvoeren om uw gegevens te verrijken met sentimenten. De sentimenten worden geretourneerd als positief/negatief/neutraal/gemengd, en u krijgt ook waarschijnlijkheid per sentiment. Meer informatie over [Cognitive Services - Sentimentanalyse](https://go.microsoft.com/fwlink/?linkid=2147792).
+U kunt nu **alle** cellen uitvoeren om uw gegevens te verrijken met sentimenten. De sentimenten worden geretourneerd als positief/negatief/neutraal/gemengd, en u krijgt ook waarschijnlijkheid per sentiment. Meer informatie over [Cognitive Services - Sentimentanalyse](../../cognitive-services/text-analytics/how-tos/text-analytics-how-to-sentiment-analysis.md).
 
 ![Sentimentanalyse uitvoeren](media/tutorial-cognitive-services/tutorial-cognitive-services-sentiment-00h.png)
 

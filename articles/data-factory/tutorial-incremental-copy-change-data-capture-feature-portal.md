@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: tutorial
 ms.custom: ''
 ms.date: 05/04/2020
-ms.openlocfilehash: fd9e78b6bc3513f79b05c9522e891d346e3d31a0
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
-ms.translationtype: HT
+ms.openlocfilehash: 754f58fe7ee9bc8d10ba1fa973615781ce4d6dce
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637510"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555913"
 ---
 # <a name="incrementally-load-data-from-azure-sql-managed-instance-to-azure-storage-using-change-data-capture-cdc"></a>Incrementeel laden van gegevens vanuit Azure SQL Managed Instance naar Azure Storage met behulp van change data capture (CDC)
 
@@ -52,13 +52,13 @@ In deze zelfstudie maakt u een pijplijn waarmee de volgende bewerkingen worden u
 Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 ## <a name="prerequisites"></a>Vereisten
-* **Azure SQL Managed Instance-database** . U gebruikt de database als de **brongegevensopslag** . Als u geen Azure SQL Managed Instance-database hebt, raadpleegt u het artikel [Create an Azure SQL Database Managed Instance](../azure-sql/managed-instance/instance-create-quickstart.md) (Een Azure SQL Managed Instance-database maken) om een database te maken.
-* **Een Azure Storage-account** . U gebruikt de Blob-opslag als de **sinkgegevensopslag** . Als u geen Azure-opslagaccount hebt, raadpleegt u het artikel [Een opslagaccount maken](../storage/common/storage-account-create.md) om een account te maken. Maak een container met de naam **raw** . 
+* **Azure SQL Managed Instance-database**. U gebruikt de database als de **brongegevensopslag**. Als u geen Azure SQL Managed Instance-database hebt, raadpleegt u het artikel [Create an Azure SQL Database Managed Instance](../azure-sql/managed-instance/instance-create-quickstart.md) (Een Azure SQL Managed Instance-database maken) om een database te maken.
+* **Een Azure Storage-account**. U gebruikt de Blob-opslag als de **sinkgegevensopslag**. Als u geen Azure-opslagaccount hebt, raadpleegt u het artikel [Een opslagaccount maken](../storage/common/storage-account-create.md) om een account te maken. Maak een container met de naam **raw**. 
 
 ### <a name="create-a-data-source-table-in-azure-sql-database"></a>Een gegevensbrontabel maken in Azure SQL Database
 
 1. Start **SQL Server Management Studio** en maak verbinding met uw Azure SQL Managed Instance-server.
-2. Klik in **Server Explorer** met de rechtermuisknop op de **database** en kies de **Nieuwe query** .
+2. Klik in **Server Explorer** met de rechtermuisknop op de **database** en kies de **Nieuwe query**.
 3. Voer de volgende SQL-opdracht uit voor de Azure SQL Managed Instance-database om een tabel met de naam `customers` te maken als gegevensbronopslag.  
 
     ```sql
@@ -75,7 +75,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
     > [!NOTE]
     > - Vervang &lt;de naam van het bronschema&gt; door het schema van Azure SQL MI met de tabel 'customers'.
-    > - Change data capture doet niets als onderdeel van de transacties die de getraceerde tabel wijzigen. In plaats daarvan worden de invoeg-, update- en verwijderbewerkingen naar het transactielogboek geschreven. Gegevens die in wijzigingstabellen worden neergezet, worden onbeheerbaar als u de gegevens niet regelmatig verwijdert. Zie voor meer informatie [Enable Change Data Capture for a database](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server?enable-change-data-capture-for-a-database=&view=sql-server-ver15) (Change data capture voor een database inschakelen)
+    > - Change data capture doet niets als onderdeel van de transacties die de getraceerde tabel wijzigen. In plaats daarvan worden de invoeg-, update- en verwijderbewerkingen naar het transactielogboek geschreven. Gegevens die in wijzigingstabellen worden neergezet, worden onbeheerbaar als u de gegevens niet regelmatig verwijdert. Zie voor meer informatie [Enable Change Data Capture for a database](/sql/relational-databases/track-changes/enable-and-disable-change-data-capture-sql-server#enable-change-data-capture-for-a-database) (Change data capture voor een database inschakelen)
 
     ```sql
     EXEC sys.sp_cdc_enable_db 
@@ -102,21 +102,21 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 ## <a name="create-a-data-factory"></a>Een gegevensfactory maken
 
-1. Start de webbrowser **Microsoft Edge** of **Google Chrome** . Op dit moment wordt de Data Factory-gebruikersinterface alleen ondersteund in de webbrowsers Microsoft Edge en Google Chrome.
-1. Selecteer in het linkermenu **Een resource maken** > **Gegevens en analyses** > **Data factory** :
+1. Start de webbrowser **Microsoft Edge** of **Google Chrome**. Op dit moment wordt de Data Factory-gebruikersinterface alleen ondersteund in de webbrowsers Microsoft Edge en Google Chrome.
+1. Selecteer in het linkermenu **Een resource maken** > **Gegevens en analyses** > **Data factory**:
 
    ![Selectie van Data Factory in het deelvenster Nieuw](./media/tutorial-incremental-copy-change-data-capture-feature-portal/new-azure-data-factory-menu.png)
 
-2. Voer op de pagina **Nieuwe data factory** **ADFTutorialDataFactory** in als **naam** .
+2. Voer op de pagina **Nieuwe data factory** **ADFTutorialDataFactory** in als **naam**.
 
      ![De pagina Nieuwe data factory](./media/tutorial-incremental-copy-change-data-capture-feature-portal/new-azure-data-factory.png)
 
    De naam van de Azure-gegevensfactory moet **wereldwijd uniek** zijn. Als u het volgende foutbericht krijgt, wijzigt u de naam van de gegevensfactory (bijvoorbeeld uwnaamADFTutorialDataFactory) en probeert u het opnieuw. Zie het artikel [Data factory - Naamgevingsregels](naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
 
     *Data factory-naam 'ADFTutorialDataFactory' is niet beschikbaar.*
-3. Selecteer **V2** als de **versie** .
-4. Selecteer het Azure- **abonnement** waarin u de gegevensfactory wilt maken.
-5. Voer een van de volgende stappen uit voor de **Resourcegroep** :
+3. Selecteer **V2** als de **versie**.
+4. Selecteer het Azure-**abonnement** waarin u de gegevensfactory wilt maken.
+5. Voer een van de volgende stappen uit voor de **Resourcegroep**:
 
    1. Selecteer **Bestaande gebruiken** en selecteer een bestaande resourcegroep in de vervolgkeuzelijst.
    2. Selecteer **Nieuwe maken** en voer de naam van een resourcegroep in.   
@@ -124,7 +124,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
     Zie [Resourcegroepen gebruiken om Azure-resources te beheren](../azure-resource-manager/management/overview.md) voor meer informatie.  
 5. Selecteer de **locatie** voor de gegevensfactory. In de vervolgkeuzelijst worden alleen ondersteunde locaties weergegeven. De gegevensopslagexemplaren (Azure Storage, Azure SQL Database, enzovoort) en berekeningen (HDInsight, enzovoort) die worden gebruikt in Data Factory, kunnen zich in andere regio's bevinden.
 6. Maak de selectie van **GIT inschakelen** ongedaan.     
-7. Klik op **Create** .
+7. Klik op **Create**.
 8. Zodra de implementatie is voltooid, klikt u op **Ga naar resource**
 
    ![Schermopname toont een bericht dat uw implementatie is voltooid en een optie om naar de resource te gaan.](./media/tutorial-incremental-copy-change-data-capture-feature-portal/data-factory-deploy-complete.png)
@@ -142,17 +142,17 @@ U maakt gekoppelde services in een gegevensfactory om uw gegevensarchieven en co
 ### <a name="create-azure-storage-linked-service"></a>Een gekoppelde Azure Storage-service maakt.
 Tijdens deze stap koppelt u uw Azure Storage-account aan de data factory.
 
-1. Klik op **Connections** en klik op **+ New** .
+1. Klik op **Connections** en klik op **+ New**.
 
    ![Knop Nieuwe verbinding](./media/tutorial-incremental-copy-change-data-capture-feature-portal/new-connection-button-storage.png)
-2. In het venster **New Linked Service** selecteert u **Azure Blob Storage** en klikt u op **Continue** .
+2. In het venster **New Linked Service** selecteert u **Azure Blob Storage** en klikt u op **Continue**.
 
    ![Azure Blob Storage selecteren](./media/tutorial-incremental-copy-change-data-capture-feature-portal/select-azure-storage.png)
 3. Voer in het venster **Nieuwe gekoppelde service** de volgende stappen uit:
 
-   1. Voer **AzureStorageLinkedService** in als **Naam** .
-   2. Selecteer uw Azure Storage-account bij **Storage account name** .
-   3. Klik op **Opslaan** .
+   1. Voer **AzureStorageLinkedService** in als **Naam**.
+   2. Selecteer uw Azure Storage-account bij **Storage account name**.
+   3. Klik op **Opslaan**.
 
    ![Instellingen Azure Storage-account](./media/tutorial-incremental-copy-change-data-capture-feature-portal/azure-storage-linked-service-settings.png)
 
@@ -163,16 +163,16 @@ In deze stap koppelt u uw Azure SQL MI-database aan de data factory.
 > [!NOTE]
 > [Hier](./connector-azure-sql-managed-instance.md#prerequisites) vindt u informatie over toegang via openbare en privé-eindpunten voor SQL MI-gebruikers. Als u een privé-eindpunt gebruikt, moet u deze pijplijn uitvoeren met een zelf-hostende Information Runtime. Hetzelfde geldt voor degenen die SQL Server on-premises gebruiken, in een VM- of VNet-scenario.
 
-1. Klik op **Connections** en klik op **+ New** .
-2. In het venster **Nieuwe gekoppelde service** selecteert u **Azure SQL Database Managed Instance** en klikt u op **Doorgaan** .
+1. Klik op **Connections** en klik op **+ New**.
+2. In het venster **Nieuwe gekoppelde service** selecteert u **Azure SQL Database Managed Instance** en klikt u op **Doorgaan**.
 3. Voer in het venster **Nieuwe gekoppelde service** de volgende stappen uit:
 
    1. Voer **AzureSqlMI1** in het veld **Naam** in.
-   2. Selecteer uw SQL-server in het veld **Servernaam** .
-   4. Selecteer uw SQL-database in het veld **Databasenaam** .
-   5. Voer de gebruikersnaam in bij **Gebruikersnaam** .
-   6. Voer het wachtwoord voor de gebruiker in bij **Wachtwoord** .
-   7. Als u de verbinding wilt testen, klikt u op **Verbinding testen** .
+   2. Selecteer uw SQL-server in het veld **Servernaam**.
+   4. Selecteer uw SQL-database in het veld **Databasenaam**.
+   5. Voer de gebruikersnaam in bij **Gebruikersnaam**.
+   6. Voer het wachtwoord voor de gebruiker in bij **Wachtwoord**.
+   7. Als u de verbinding wilt testen, klikt u op **Verbinding testen**.
    8. Klik op **Opslaan** om de gekoppelde service op te slaan.
 
    ![Instellingen voor gekoppelde Azure SQL MI-databaseservice](./media/tutorial-incremental-copy-change-data-capture-feature-portal/azure-sql-managed-instance-database-linked-service-settings.png)
@@ -183,55 +183,55 @@ In deze stap maakt u gegevenssets die voor de gegevensbron en -bestemming staan.
 ### <a name="create-a-dataset-to-represent-source-data"></a>Een gegevensset maken om brongegevens weer te geven
 In deze stap maakt u een gegevensset die de brongegevens vertegenwoordigt.
 
-1. Klik in de structuurweergave op **+ (plus)** en klik op **Dataset** .
+1. Klik in de structuurweergave op **+ (plus)** en klik op **Dataset**.
 
    ![Menu Nieuwe gegevensset](./media/tutorial-incremental-copy-change-data-capture-feature-portal/new-dataset-menu.png)
-2. Selecteer **Azure SQL Database Managed Instance** en klik op **Doorgaan** .
+2. Selecteer **Azure SQL Database Managed Instance** en klik op **Doorgaan**.
 
    ![Type brongegevensset - Azure SQL Database](./media/tutorial-incremental-copy-change-data-capture-feature-portal/select-azure-sql-database.png)
    
 3. Stel op het tabblad **Eigenschappen instellen** de naam van de gegevensset en de verbindingsgegevens in:
  
-   1. Selecteer **AzureSqlMI1** bij **Gekoppelde service** .
-   2. Selecteer **[dbo].[dbo_customers_CT]** bij **Tabelnaam** .  Opmerking: deze tabel is automatisch gemaakt toen CDC werd ingeschakeld voor de tabel 'customers'. Gewijzigde gegevens worden nooit rechtstreeks vanuit deze tabel opgevraagd, maar worden in plaats daarvan geëxtraheerd via de [CDC-functies](/sql/relational-databases/system-functions/change-data-capture-functions-transact-sql?view=sql-server-ver15).
+   1. Selecteer **AzureSqlMI1** bij **Gekoppelde service**.
+   2. Selecteer **[dbo].[dbo_customers_CT]** bij **Tabelnaam**.  Opmerking: deze tabel is automatisch gemaakt toen CDC werd ingeschakeld voor de tabel 'customers'. Gewijzigde gegevens worden nooit rechtstreeks vanuit deze tabel opgevraagd, maar worden in plaats daarvan geëxtraheerd via de [CDC-functies](/sql/relational-databases/system-functions/change-data-capture-functions-transact-sql).
 
    ![Bronverbinding](./media/tutorial-incremental-copy-change-data-capture-feature-portal/source-dataset-configuration.png)
 
 ### <a name="create-a-dataset-to-represent-data-copied-to-sink-data-store"></a>Maak een gegevensset om gegevens weer te geven die zijn gekopieerd naar het sink-gegevensarchief.
 In deze stap maakt u een gegevensset die de gegevens voorstelt die worden gekopieerd uit de gegevensopslag van de bron. U hebt de data lake-container gemaakt in uw Azure-blobopslag als onderdeel van de vereisten. Maak de container als deze bestaat niet (of) stel deze in op de naam van een bestaande container. In deze zelfstudie wordt de naam van het uitvoerbestand dynamisch gegenereerd met behulp van de triggertijd, die later wordt geconfigureerd.
 
-1. Klik in de structuurweergave op **+ (plus)** en klik op **Dataset** .
+1. Klik in de structuurweergave op **+ (plus)** en klik op **Dataset**.
 
    ![Menu Nieuwe gegevensset](./media/tutorial-incremental-copy-change-data-capture-feature-portal/new-dataset-menu.png)
-2. Selecteer **Azure Blob Storage** en klik op **Doorgaan** .
+2. Selecteer **Azure Blob Storage** en klik op **Doorgaan**.
 
    ![Gegevenssettype sink - Azure Blob Storage](./media/tutorial-incremental-copy-change-data-capture-feature-portal/sink-dataset-type.png)
-3. Selecteer **DelimitedText** en klik op **Doorgaan** .
+3. Selecteer **DelimitedText** en klik op **Doorgaan**.
 
    ![Indeling sinkgegevensset - DelimitedText](./media/tutorial-incremental-copy-change-data-capture-feature-portal/sink-dataset-format.png)
 4. Stel op het tabblad **Eigenschappen instellen** de naam van de gegevensset en de verbindingsgegevens in:
 
-   1. Selecteer **AzureStorageLinkedService** bij **Linked service** .
-   2. Voer **raw** in voor de tegel **container** van het **filePath** .
+   1. Selecteer **AzureStorageLinkedService** bij **Linked service**.
+   2. Voer **raw** in voor de tegel **container** van het **filePath**.
    3. Schakel **Eerste rij als koptekst** in
-   4. Klik op **OK** .
+   4. Klik op **OK**.
 
    ![Sink-gegevensset - verbinding](./media/tutorial-incremental-copy-change-data-capture-feature-portal/sink-dataset-configuration.png)
 
 ## <a name="create-a-pipeline-to-copy-the-changed-data"></a>Een pijplijn maken om de gewijzigde gegevens te kopiëren
-In deze stap maakt u een pijplijn, waarmee eerst het aantal gewijzigde records in de wijzigingstabel wordt gecontroleerd met behulp van een **opzoekactiviteit** . Een If Condition-activiteit controleert of het aantal gewijzigde records groter is dan nul en voert een **kopieeractiviteit** uit om de ingevoegde/bijgewerkte/verwijderde gegevens te kopiëren van Azure SQL Database naar Azure Blob Storage. Ten slotte wordt er een tumblingvenstertrigger geconfigureerd en worden de begin- en eindtijden doorgegeven aan de activiteiten als de begin- en eindparameters. 
+In deze stap maakt u een pijplijn, waarmee eerst het aantal gewijzigde records in de wijzigingstabel wordt gecontroleerd met behulp van een **opzoekactiviteit**. Een If Condition-activiteit controleert of het aantal gewijzigde records groter is dan nul en voert een **kopieeractiviteit** uit om de ingevoegde/bijgewerkte/verwijderde gegevens te kopiëren van Azure SQL Database naar Azure Blob Storage. Ten slotte wordt er een tumblingvenstertrigger geconfigureerd en worden de begin- en eindtijden doorgegeven aan de activiteiten als de begin- en eindparameters. 
 
-1. Ga in de Data Factory-gebruikersinterface naar het tabblad **Edit** . Klik op **+ (plus)** in het linkervenster en klik op **Pipeline** .
+1. Ga in de Data Factory-gebruikersinterface naar het tabblad **Edit**. Klik op **+ (plus)** in het linkervenster en klik op **Pipeline**.
 
     ![Menu Nieuwe pijplijn](./media/tutorial-incremental-copy-change-data-capture-feature-portal/new-pipeline-menu.png)
-2. Er wordt een nieuw tabblad weergegeven voor het configureren van de pijplijn. U ziet ook de pijplijn in de structuurweergave. In het venster **Properties** wijzigt u de naam van de pijplijn in **IncrementalCopyPipeline** .
+2. Er wordt een nieuw tabblad weergegeven voor het configureren van de pijplijn. U ziet ook de pijplijn in de structuurweergave. In het venster **Properties** wijzigt u de naam van de pijplijn in **IncrementalCopyPipeline**.
 
     ![Naam pijplijn](./media/tutorial-incremental-copy-change-data-capture-feature-portal/incremental-copy-pipeline-name.png)
-3. Vouw in de **Activiteiten** -werkset de optie **Algemeen** uit. Gebruik vervolgens slepen-en-neerzetten om de **opzoekactiviteit** te verplaatsen naar het ontwerpoppervlak voor pijplijnen. Stel de naam van de activiteit in op **GetChangeCount** . Met deze activiteit wordt het aantal records in de wijzigingstabel voor een bepaald tijdvenster opgehaald.
+3. Vouw in de **Activiteiten**-werkset de optie **Algemeen** uit. Gebruik vervolgens slepen-en-neerzetten om de **opzoekactiviteit** te verplaatsen naar het ontwerpoppervlak voor pijplijnen. Stel de naam van de activiteit in op **GetChangeCount**. Met deze activiteit wordt het aantal records in de wijzigingstabel voor een bepaald tijdvenster opgehaald.
 
     ![Activiteit Lookup - naam](./media/tutorial-incremental-copy-change-data-capture-feature-portal/first-lookup-activity-name.png)
-4. Ga naar het tabblad **Instellingen** in het venster **Eigenschappen** :
-   1. Geef de naam op van de SQL MI-gegevensset voor het veld **Brongegevensset** .
+4. Ga naar het tabblad **Instellingen** in het venster **Eigenschappen**:
+   1. Geef de naam op van de SQL MI-gegevensset voor het veld **Brongegevensset**.
    2. Selecteer de optie Query en voer het volgende in het queryvak in:
     ```sql
     DECLARE  @from_lsn binary(10), @to_lsn binary(10);  
@@ -245,10 +245,10 @@ In deze stap maakt u een pijplijn, waarmee eerst het aantal gewijzigde records i
 5. Klik op de knop **Preview-gegevens** om te controleren of er een geldige uitvoer wordt verkregen door de opzoekactiviteit
 
     ![Opzoekactiviteit - preview](./media/tutorial-incremental-copy-change-data-capture-feature-portal/first-lookup-activity-preview.png)
-6. Vouw in de werkset **Activiteiten** de optie **Iteratie en voorwaarden** uit en sleep de **If Condition** -activiteit naar het ontwerpoppervlak voor pijplijnen. Stel de naam van de activiteit in op **HasChangedRows** . 
+6. Vouw in de werkset **Activiteiten** de optie **Iteratie en voorwaarden** uit en sleep de **If Condition**-activiteit naar het ontwerpoppervlak voor pijplijnen. Stel de naam van de activiteit in op **HasChangedRows**. 
 
     ![If Condition-activiteit - naam](./media/tutorial-incremental-copy-change-data-capture-feature-portal/if-condition-activity-name.png)
-7. Ga in het venster **Eigenschappen** naar **Activiteiten** :
+7. Ga in het venster **Eigenschappen** naar **Activiteiten**:
 
    1. Voer de volgende **Expressie** in
    
@@ -260,7 +260,7 @@ In deze stap maakt u een pijplijn, waarmee eerst het aantal gewijzigde records i
 
    ![If Condition-activiteit - instellingen](./media/tutorial-incremental-copy-change-data-capture-feature-portal/if-condition-activity-setting.png)
 
-   3. Vouw **Algemeen** uit in de werkset **Activiteiten** . Sleep vervolgens een activiteit **Wachten** naar het ontwerpoppervlak voor pijplijnen. Dit is een tijdelijke activiteit voor het opsporen van fouten in de If Condition en wordt later in de zelfstudie gewijzigd. 
+   3. Vouw **Algemeen** uit in de werkset **Activiteiten**. Sleep vervolgens een activiteit **Wachten** naar het ontwerpoppervlak voor pijplijnen. Dit is een tijdelijke activiteit voor het opsporen van fouten in de If Condition en wordt later in de zelfstudie gewijzigd. 
 
    ![If Condition True - wachten](./media/tutorial-incremental-copy-change-data-capture-feature-portal/if-condition-activity-wait.png)
 
@@ -269,14 +269,14 @@ In deze stap maakt u een pijplijn, waarmee eerst het aantal gewijzigde records i
 8. Voer de pijplijn uit in de modus **Foutopsporing** om te controleren of de pijplijn wordt uitgevoerd. 
 
    ![Pijplijn - fouten opsporen](./media/tutorial-incremental-copy-change-data-capture-feature-portal/incremental-copy-pipeline-debug.png)
-9. Ga vervolgens terug naar de stap met de True-voorwaarde en verwijder de activiteit **Wachten** . Vouw in de werkset **Activiteiten** de optie **Verplaatsen en transformeren** uit. Sleep vervolgens de **Kopieeractiviteit** naar het ontwerpoppervlak voor pijplijnen. Stel de naam van de activiteit in op **IncrementalCopyActivity** . 
+9. Ga vervolgens terug naar de stap met de True-voorwaarde en verwijder de activiteit **Wachten**. Vouw in de werkset **Activiteiten** de optie **Verplaatsen en transformeren** uit. Sleep vervolgens de **Kopieeractiviteit** naar het ontwerpoppervlak voor pijplijnen. Stel de naam van de activiteit in op **IncrementalCopyActivity**. 
 
    ![Kopieeractiviteit - naam](./media/tutorial-incremental-copy-change-data-capture-feature-portal/copy-source-name.png)
 10. Ga naar het tabblad **Bron** in het venster **Eigenschappen** en voer de volgende stappen uit:
 
-   1. Geef de naam op van de SQL MI-gegevensset voor het veld **Brongegevensset** . 
-   2. Selecteer **Query** bij **Use Query** .
-   3. Voer het volgende in voor **Query** .
+   1. Geef de naam op van de SQL MI-gegevensset voor het veld **Brongegevensset**. 
+   2. Selecteer **Query** bij **Use Query**.
+   3. Voer het volgende in voor **Query**.
 
       ```sql
       DECLARE @from_lsn binary(10), @to_lsn binary(10); 
@@ -290,10 +290,10 @@ In deze stap maakt u een pijplijn, waarmee eerst het aantal gewijzigde records i
 11. Klik op preview om te controleren of de query de gewijzigde rijen correct retourneert.
 
     ![Schermopname toont een preview om de query te controleren.](./media/tutorial-incremental-copy-change-data-capture-feature-portal/copy-source-preview.png)
-12. Ga naar het tabblad **Sink** en geef de Azure Storage-gegevensset op voor het veld **Sinkgegevensset** .
+12. Ga naar het tabblad **Sink** en geef de Azure Storage-gegevensset op voor het veld **Sinkgegevensset**.
 
     ![Schermopname toont het tabblad Sink.](./media/tutorial-incremental-copy-change-data-capture-feature-portal/copy-sink-settings.png)
-13. Klik om terug te gaan naar het canvas van de hoofdpijplijn en verbind één voor één de activiteit **Opzoeken** met de activiteit **If Condition** . Sleep de **groene** knop die is gekoppeld aan de activiteit **Opzoeken** naar de activiteit **If Condition** .
+13. Klik om terug te gaan naar het canvas van de hoofdpijplijn en verbind één voor één de activiteit **Opzoeken** met de activiteit **If Condition**. Sleep de **groene** knop die is gekoppeld aan de activiteit **Opzoeken** naar de activiteit **If Condition**.
 
     ![Lookup- en Copy-activiteiten verbinden](./media/tutorial-incremental-copy-change-data-capture-feature-portal/connect-lookup-if.png)
 14. Klik op **Validate** op de werkbalk. Controleer of er geen validatiefouten zijn. Sluit het venster **Pipeline Validation Report** door op **>>** te klikken.
@@ -302,14 +302,14 @@ In deze stap maakt u een pijplijn, waarmee eerst het aantal gewijzigde records i
 15. Klik op Foutopsporing om de pijplijn te testen en te controleren of er een bestand is gegenereerd op de opslaglocatie.
 
     ![Incrementeel fouten opsporen in pijplijn-2](./media/tutorial-incremental-copy-change-data-capture-feature-portal/incremental-copy-pipeline-debug-2.png)
-16. Publiceer entiteiten (gekoppelde services, gegevenssets en pijplijnen) naar de Data Factory-service door te klikken op de knop **Alles publiceren** . Wacht tot u het bericht **Publishing succeeded** ziet.
+16. Publiceer entiteiten (gekoppelde services, gegevenssets en pijplijnen) naar de Data Factory-service door te klikken op de knop **Alles publiceren**. Wacht tot u het bericht **Publishing succeeded** ziet.
 
     ![De knop Publiceren](./media/tutorial-incremental-copy-change-data-capture-feature-portal/publish-button-2.png)    
 
 ### <a name="configure-the-tumbling-window-trigger-and-cdc-window-parameters"></a>De tumblingvenstertrigger en de parameters van het CDC-venster configureren 
 In deze stap maakt u een tumblingvenstertrigger om de taak volgens een frequent schema uit te voeren. U gebruikt de systeemvariabelen WindowStart en WindowEnd van de tumblingvenstertrigger en geeft ze door als parameters aan de pijplijn die u wilt gebruiken in de CDC-query.
 
-1. Ga naar het tabblad **Parameters** van de pijplijn **IncrementalCopyPipeline** en gebruik de knop **+ Nieuw** om twee parameters ( **triggerStartTime** en **triggerEndTime** ) toe te voegen aan de pijplijn. Dit zijn de begin- en eindtijd van het tumblingvenster. Voor foutopsporing voegt u standaardwaarden toe in de indeling **JJJJ-MM-DD HH24: MI: SS. FFF** . Zorg ervoor dat de triggerStartTime niet eerder is dan wanneer CDC op de tabel is ingeschakeld, anders treedt er een fout op.
+1. Ga naar het tabblad **Parameters** van de pijplijn **IncrementalCopyPipeline** en gebruik de knop **+ Nieuw** om twee parameters (**triggerStartTime** en **triggerEndTime**) toe te voegen aan de pijplijn. Dit zijn de begin- en eindtijd van het tumblingvenster. Voor foutopsporing voegt u standaardwaarden toe in de indeling **JJJJ-MM-DD HH24: MI: SS. FFF**. Zorg ervoor dat de triggerStartTime niet eerder is dan wanneer CDC op de tabel is ingeschakeld, anders treedt er een fout op.
 
     ![Menu Trigger Now](./media/tutorial-incremental-copy-change-data-capture-feature-portal/incremental-copy-pipeline-parameters.png)
 2. Klik op het tabblad Instellingen van de activiteit **Opzoeken** en configureer de query om de begin- en eindparameters te gebruiken. Kopieer het volgende naar de query:
@@ -322,7 +322,7 @@ In deze stap maakt u een tumblingvenstertrigger om de taak volgens een frequent 
     SELECT count(1) changecount FROM cdc.fn_cdc_get_all_changes_dbo_customers(@from_lsn, @to_lsn, ''all'')')
     ```
 
-3. Ga naar de activiteit **Kopiëren** in het geval dat de activiteit **If Condition** True is en klik op het tabblad **Bron** . Kopieer het volgende naar de query:
+3. Ga naar de activiteit **Kopiëren** in het geval dat de activiteit **If Condition** True is en klik op het tabblad **Bron**. Kopieer het volgende naar de query:
     ```sql
     @concat('DECLARE @begin_time datetime, @end_time datetime, @from_lsn binary(10), @to_lsn binary(10); 
     SET @begin_time = ''',pipeline().parameters.triggerStartTime,''';
@@ -335,7 +335,7 @@ In deze stap maakt u een tumblingvenstertrigger om de taak volgens een frequent 
 
     ![Schermopname toont het toevoegen van een nieuwe parameter aan het tabblad Parameters.](./media/tutorial-incremental-copy-change-data-capture-feature-portal/sink-dataset-configuration-2.png)
 5. Configureer vervolgens de eigenschappen van de gegevensset om de gegevens op te slaan in een submap **customers/incremental** met op datums gebaseerde partities.
-   1. Klik op het tabblad **Verbinding** van de eigenschappen van de gegevensset en voeg dynamische inhoud toe voor de secties **Map** en **Bestand** . 
+   1. Klik op het tabblad **Verbinding** van de eigenschappen van de gegevensset en voeg dynamische inhoud toe voor de secties **Map** en **Bestand**. 
    2. Voer de volgende expressie in de sectie **Map** in door te klikken op de link voor dynamische inhoud onder het tekstvak:
     
     ```sql
@@ -348,7 +348,7 @@ In deze stap maakt u een tumblingvenstertrigger om de taak volgens een frequent 
     ```
     ![Sinkgegevensset configureren-3](./media/tutorial-incremental-copy-change-data-capture-feature-portal/sink-dataset-configuration-3.png)
 
-   4. Ga terug naar de instellingen voor **Sink** in de activiteit **Kopiëren** door te klikken op het tabblad **IncrementalCopyPipeline** . 
+   4. Ga terug naar de instellingen voor **Sink** in de activiteit **Kopiëren** door te klikken op het tabblad **IncrementalCopyPipeline**. 
    5. Vouw de eigenschappen van de gegevensset uit en voer dynamische inhoud in de parameterwaarde triggerStart in met de volgende expressie:
      ```sql
      @pipeline().parameters.triggerStartTime
@@ -361,7 +361,7 @@ In deze stap maakt u een tumblingvenstertrigger om de taak volgens een frequent 
 7. Controleer of de parameters in de query worden geïnjecteerd door de invoerparameters van de pijplijnuitvoering te bekijken.
 
     ![Fouten opsporen incrementeel kopiëren-4](./media/tutorial-incremental-copy-change-data-capture-feature-portal/incremental-copy-pipeline-debug-4.png)
-8. Publiceer entiteiten (gekoppelde services, gegevenssets en pijplijnen) naar de Data Factory-service door te klikken op de knop **Alles publiceren** . Wacht tot u het bericht **Publishing succeeded** ziet.
+8. Publiceer entiteiten (gekoppelde services, gegevenssets en pijplijnen) naar de Data Factory-service door te klikken op de knop **Alles publiceren**. Wacht tot u het bericht **Publishing succeeded** ziet.
 9. Configureer tot slot een tumblingvenstertrigger om de pijplijn met een regelmatig interval uit te voeren en de begin- en eindparameters in te stellen. 
    1. Klik op de knop **Trigger toevoegen** en selecteer **Nieuw/bewerken**
 
@@ -390,12 +390,12 @@ In deze stap maakt u een tumblingvenstertrigger om de taak volgens een frequent 
     update customers set first_name='Elon' where customer_id=6;
     delete from customers where customer_id=5;
     ```
-11. Klik op de knop **Alles publiceren** . Wacht tot u het bericht **Publishing succeeded** ziet.  
+11. Klik op de knop **Alles publiceren**. Wacht tot u het bericht **Publishing succeeded** ziet.  
 12. Na een paar minuten wordt de pijplijn geactiveerd en wordt er een nieuw bestand geladen in Azure Storage
 
 
 ### <a name="monitor-the-incremental-copy-pipeline"></a>De pijplijn incrementele kopie bewaken
-1. Klik op het tabblad **Monitor** aan de linkerkant. U ziet de pijplijnuitvoering in de lijst en de status ervan. Als u de lijst wilt vernieuwen, klikt u op **Refresh** . Beweeg de muisaanwijzer over de naam van de pijplijn om het actie- en verbruiksrapport opnieuw uit te voeren.
+1. Klik op het tabblad **Monitor** aan de linkerkant. U ziet de pijplijnuitvoering in de lijst en de status ervan. Als u de lijst wilt vernieuwen, klikt u op **Refresh**. Beweeg de muisaanwijzer over de naam van de pijplijn om het actie- en verbruiksrapport opnieuw uit te voeren.
 
     ![Pijplijnuitvoeringen](./media/tutorial-incremental-copy-change-data-capture-feature-portal/copy-pipeline-runs.png)
 2. Als u de uitvoeringen van activiteiten die zijn gekoppeld aan de pijplijnuitvoering wilt weergeven, klikt u op de naam van de pijplijn. Als er gewijzigde gegevens zijn gedetecteerd, worden er drie activiteiten, waaronder de activiteit Kopiëren, weergegeven, anders worden er maar twee weergegeven. Als u wilt terugkeren naar de weergave met pijplijnuitvoeringen, klikt u op de koppeling **Alle pijplijnen** bovenaan.

@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 09/03/2020
 ms.author: allensu
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: 3c03a207e91ae969836e208f4e6bf4ea32086c7d
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: b3ca4f11b02f32e65cf80adc65ec12d25e6e7905
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121312"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573170"
 ---
 # <a name="what-is-azure-private-link"></a>Wat is Azure Private Link? 
 Met Azure Private Link hebt u via een [privé-eindpunt](private-endpoint-overview.md) in uw virtuele netwerk toegang tot Azure PaaS-services (bijvoorbeeld Azure Storage en SQL Database) en in Azure gehoste services van klanten of partners.
@@ -66,7 +66,7 @@ Azure Private Link biedt de volgende voordelen:
 |Azure Event Grid| Alle openbare regio's<br/> Alle Government-regio's       |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Event Grid.](../event-grid/network-security.md) |
 |Azure Web Apps | Alle openbare regio's      | Ondersteund met een PremiumV2-, PremiumV3- of Function Premium-abonnement  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Web Apps.](./tutorial-private-endpoint-webapp-portal.md)   |
 |Azure Machine Learning | Alle openbare regio's    |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Machine Learning.](../machine-learning/how-to-configure-private-link.md)   |
-| Azure Automation  | Alle openbare regio's |  | Preview </br> [Meer informatie over het maken van een privé-eindpunt voor Azure Automation.](../automation/how-to/private-link-security.md)| |
+| Azure Automation  | Alle openbare regio's<br/> Alle Government-regio's |  | Preview </br> [Meer informatie over het maken van een privé-eindpunt voor Azure Automation.](../automation/how-to/private-link-security.md)| |
 | Azure IoT Hub | Alle openbare regio's    |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure IoT Hub.](../iot-hub/virtual-network-support.md) |
 | Azure SignalR | VS - OOST, VS - ZUID-CENTRAAL,<br/>VS - WEST 2, alle Chinese regio's      |  | Preview   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure SignalR.](../azure-signalr/howto-private-endpoints.md)   |
 | Azure Monitor <br/>(Log Analytics en Application Insights) | Alle openbare regio's      |  | Algemene beschikbaarheid   <br/> [Meer informatie over het maken van een privé-eindpunt voor Azure Monitor.](../azure-monitor/platform/private-link-security.md)   | 

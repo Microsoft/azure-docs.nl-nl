@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: a084fd4c06dec61ee62df4f950cc6317f717d591
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 532fcc7db849af192ceddb1c239e99f31a2a3088
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011812"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178463"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA
 
@@ -37,9 +37,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 >
 > ### <a name="option-1-express-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1 (Express): registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a> met een werk- of schoolaccount, of een persoonlijk Microsoft-account.
-> 1. Als u via uw account toegang hebt tot meerdere tenants, selecteert u het account in de rechterbovenhoek en stelt u de portalsessie in op de Azure Active Directory-tenant die u wilt gebruiken.
-> 1. Ga naar de nieuwe [Azure-portal - App-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs).
+> 1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Voer een naam in voor de toepassing.
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**.

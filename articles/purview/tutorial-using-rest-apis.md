@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/03/2020
-ms.openlocfilehash: 06f738ea88093ea8de45efebea983fd7fa13216e
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
-ms.translationtype: HT
+ms.openlocfilehash: fcc3e487d949a9450f792a6cc230b64e7dbe950a
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387816"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202943"
 ---
 # <a name="tutorial-use-the-rest-apis"></a>Zelfstudie: REST API's gebruiken
 
@@ -142,7 +142,7 @@ Zoek de volgende waarden en sla ze op:
 
 
 
-1. [Install Node.js](https://github.com/Azure/autorest/blob/master/docs/installing-autorest.md) (Node.js installeren).
+1. [Install Node.js](https://github.com/Azure/autorest/blob/v2/docs/installing-autorest.md) (Node.js installeren).
 1. Open PowerShell en voer de volgende opdracht uit:
 
    ```powershell
@@ -173,7 +173,7 @@ Zoek de volgende waarden en sla ze op:
 1. Controleer of de versie ten minste 2.3.21 is en selecteer **Installeren**.
 1. Maak de toepassing en voer deze uit.
 
-De voorbeeldcode retourneert een telling van het aantal typedefs in de catalogus en laat zien hoe roltoewijzingen moeten worden afgehandeld. Zie `DoRoleAssignmentOperations()` in de voorbeeldcode voor meer informatie. Zie [Project Setup](https://github.com/Azure/autorest/blob/master/docs/client/proj-setup.md) (Projectinstallatie) voor meer informatie over het project.
+De voorbeeldcode retourneert een telling van het aantal typedefs in de catalogus en laat zien hoe roltoewijzingen moeten worden afgehandeld. Zie `DoRoleAssignmentOperations()` in de voorbeeldcode voor meer informatie. Zie [Project Setup](https://github.com/Azure/autorest/blob/v2/docs/client/proj-setup.md) (Projectinstallatie) voor meer informatie over het project.
 
 ### <a name="sample-code-for-the-console-application"></a>Voorbeeldcode voor de consoletoepassing
 

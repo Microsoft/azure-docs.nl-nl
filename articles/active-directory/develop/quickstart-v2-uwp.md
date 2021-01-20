@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/07/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:UWP
-ms.openlocfilehash: 0257f4d97e0f6f7cef4907276423d9513568e027
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 4610d4d677d2d340340aab5edcddb658ac32e5e4
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011704"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178195"
 ---
 # <a name="quickstart-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Quickstart: De Microsoft Graph-API aanroepen vanuit de Universeel Windows-platformtoepasing (UWP)
 
@@ -39,7 +39,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1: registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Ga naar het nieuwe deelvenster [Azure-portal, App-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/UwpQuickstartPage/sourceType/docs).
+> 1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/UwpQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 > 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 >

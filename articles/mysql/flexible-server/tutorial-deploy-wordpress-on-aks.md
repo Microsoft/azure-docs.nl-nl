@@ -7,12 +7,12 @@ ms.author: sumuth
 ms.topic: tutorial
 ms.date: 11/25/2020
 ms.custom: mvc
-ms.openlocfilehash: a02cb30b0f00f732fa0c4ac9319a652ef5cb6fc1
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
-ms.translationtype: HT
+ms.openlocfilehash: b82bb9b7684d1119b6b62216b52210845d8f4c67
+ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97657053"
+ms.lasthandoff: 01/07/2021
+ms.locfileid: "98199628"
 ---
 # <a name="tutorial-deploy-wordpress-app-on-aks-with-azure-database-for-mysql---flexible-server"></a>Zelfstudie: WordPress-app implementeren op AKS met Azure Database for MySQL: flexibele server
 
@@ -63,7 +63,7 @@ In de volgende voorbeelduitvoer ziet u dat de resourcegroep is gemaakt:
 Gebruik de opdracht [az aks create](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az-aks-create) om een AKS-cluster te maken. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluster* gemaakt met één knooppunt. Dit zal enkele minuten in beslag nemen.
 
 ```azurecli-interactive
-az aks create --resource-group wordpress-project --name wordpresscluster--node-count 1 --generate-ssh-keys
+az aks create --resource-group wordpress-project --name myAKSCluster --node-count 1 --generate-ssh-keys
 ```
 
 Na enkele minuten is de opdracht voltooid en retourneert deze informatie over het cluster in JSON-indeling.
@@ -82,7 +82,7 @@ az aks install-cli
 Gebruik de opdracht [az aks get-credentials](/cli/azure/aks?view=azure-cli-latest&preserve-view=true#az-aks-get-credentials) om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties.
 
 ```azurecli-interactive
-az aks get-credentials --resource-group wordpress-project --name wordpresscluster
+az aks get-credentials --resource-group wordpress-project --name myAKSCluster
 ```
 
 > [!NOTE]

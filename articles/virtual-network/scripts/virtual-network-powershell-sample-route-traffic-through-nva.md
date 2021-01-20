@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 03/20/2018
 ms.author: kumud
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 19bebb5c1817882dcb641a284332926e51a8dd2f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: f0bc7ddde7964ecdd003b951a8562a840b8b88e4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91313991"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98223207"
 ---
 # <a name="route-traffic-through-a-network-virtual-appliance-script-sample"></a>Voorbeeldscript voor verkeer routeren via een virtueel netwerkapparaat
 
@@ -63,6 +63,6 @@ In dit script worden de volgende opdrachten gebruikt voor het maken van een reso
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [Documentatie over Azure PowerShell](https://docs.microsoft.com/powershell/azure/) voor meer informatie over Azure PowerShell.
+Zie [Documentatie over Azure PowerShell](/powershell/azure/) voor meer informatie over Azure PowerShell.
 
 Meer PowerShell-voorbeeldscripts voor virtuele netwerken vindt u in [PowerShell-voorbeelden voor virtuele netwerken](../powershell-samples.md).

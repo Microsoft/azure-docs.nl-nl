@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 11/09/2020
 ms.author: spelluru
 ms.custom: devx-track-js
-ms.openlocfilehash: 009b060cc479c520dde8c4f595b24be7dcb4c6a6
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
-ms.translationtype: HT
+ms.openlocfilehash: ac24d84176f27170648545bc8044c5dcbc77781a
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347758"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98180010"
 ---
 # <a name="send-messages-to-and-receive-messages-from-azure-service-bus-queues-javascript"></a>Berichten verzenden naar en berichten ontvangen van Azure Service Bus-wachtrijen (JavaScript)
 In deze zelfstudie leert u hoe u het pakket [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus) in een JavaScript-programma kunt gebruiken om berichten van en naar een Service Bus-wachtrij te ontvangen en verzenden.
@@ -74,7 +74,7 @@ De volgende voorbeeldcode laat zien hoe u een bericht naar een wachtrij verzendt
             // create a batch object
             let batch = await sender.createMessageBatch(); 
             for (let i = 0; i < messages.length; i++) {
-                // for each message in the arry         
+                // for each message in the array            
     
                 // try to add the message to the batch
                 if (!batch.tryAddMessage(messages[i])) {            
@@ -83,7 +83,7 @@ De volgende voorbeeldcode laat zien hoe u een bericht naar een wachtrij verzendt
                     await sender.sendMessages(batch);
     
                     // then, create a new batch 
-                    batch = await sender.createBatch();
+                    batch = await sender.createMessageBatch();
      
                     // now, add the message failed to be added to the previous batch to this batch
                     if (!batch.tryAddMessage(messages[i])) {

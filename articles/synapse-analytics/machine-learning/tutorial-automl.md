@@ -9,16 +9,16 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: e219531a88787f19197a2e8c2a80040497c6dc1e
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
-ms.translationtype: HT
+ms.openlocfilehash: f3b0c5f1487951d05bc83973e5b4b9f3634a694b
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901416"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222255"
 ---
 # <a name="tutorial-train-a-machine-learning-model-without-code"></a>Zelfstudie: een machine learning-model trainen zonder code
 
-U kunt uw gegevens in Spark-tabellen uitbreiden met nieuwe machine learning-modellen die u traint met behulp van [geautomatiseerde machine learning](https://docs.microsoft.com/azure/machine-learning/concept-automated-ml). In Azure Synapse Analytics kunt u een Spark-tabel selecteren in de werkruimte en deze gebruiken als trainingsgegevensset om zonder code machine learning-modellen te bouwen.
+U kunt uw gegevens in Spark-tabellen uitbreiden met nieuwe machine learning-modellen die u traint met behulp van [geautomatiseerde machine learning](../../machine-learning/concept-automated-ml.md). In Azure Synapse Analytics kunt u een Spark-tabel selecteren in de werkruimte en deze gebruiken als trainingsgegevensset om zonder code machine learning-modellen te bouwen.
 
 In deze zelfstudie leert u hoe u zonder code machine learning-modellen traint in de Azure Synapse Analytics-studio. U gebruikt geautomatiseerde machine learning in Azure Machine Learning in plaats van handmatig te coderen. Het type model dat u traint, is afhankelijk van het probleem dat u wilt oplossen.
 

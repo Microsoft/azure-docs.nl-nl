@@ -10,12 +10,12 @@ ms.service: synapse-analytics
 ms.topic: quickstart
 ms.custom: seo-lt-2019
 ms.date: 11/02/2020
-ms.openlocfilehash: 542fde3ac951bf60d999361dc114491515fb9528
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
-ms.translationtype: HT
+ms.openlocfilehash: 568c738284a3d1b54ba907a973139fbced11f139
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94735242"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222693"
 ---
 # <a name="quickstart-load-data-into-dedicated-sql-pool-using-the-copy-activity"></a>Quickstart: Gegevens laden in een toegewezen SQL-pool met de kopieeractiviteit
 
@@ -130,6 +130,6 @@ In deze sectie moet u de pijplijn die u in de vorige stap heeft gepubliceerd, ha
 Ga naar het volgende artikel voor meer informatie over ondersteuning voor Azure Synapse Analytics:
 
 > [!div class="nextstepaction"]
-> [Pijplijn en activiteiten](https://docs.microsoft.com/azure/data-factory/concepts-pipelines-activities?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
-> [Connectoroverzicht](https://docs.microsoft.com/azure/data-factory/connector-overview?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
-> [Kopieeractiviteit](https://docs.microsoft.com/azure/data-factory/copy-activity-overview?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
+> [Pijplijn en activiteiten](../data-factory/concepts-pipelines-activities.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)
+> [Connectoroverzicht](../data-factory/connector-overview.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)
+> [Kopieeractiviteit](../data-factory/copy-activity-overview.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json)

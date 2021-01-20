@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 10/02/2020
-ms.openlocfilehash: 15708e35fa27bb4a1f72368df6f49ff747eb799b
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
-ms.translationtype: HT
+ms.openlocfilehash: 36781e7f975ee9d4a03cf899650701bf2d3940ac
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739787"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555947"
 ---
 # <a name="register-and-scan-an-azure-sql-database"></a>Een Azure SQL Database registeren en scannen
 
@@ -28,7 +28,7 @@ De gegevensbron van de Azure SQL Database biedt ondersteuning voor de volgende f
 
 ### <a name="known-limitations"></a>Bekende beperkingen
 
-Azure Purview biedt geen ondersteuning voor het scannen van [weergaven](https://docs.microsoft.com/sql/relational-databases/views/views?view=sql-server-ver15&preserve-view=true) in een Azure SQL Database. 
+Azure Purview biedt geen ondersteuning voor het scannen van [weergaven](/sql/relational-databases/views/views?view=azuresqldb-current&preserve-view=true) in een Azure SQL Database.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -50,7 +50,7 @@ Verificatie om een Azure SQL Database te scannen. Als u nieuwe verificatie wilt 
 > [!Note]
 > Alleen de principal-aanmelding op serverniveau (gemaakt tijdens het inrichtingsproces) of leden met de databaserol `loginmanager` in de hoofddatabase kunnen nieuwe aanmeldingen maken. Het duurt ongeveer **15 minuten** na het verlenen van de machtiging voordat het Purview-account de juiste machtigingen heeft om de resource(s) te scannen.
 
-U kunt de instructies in [AANMELDING MAKEN](https://docs.microsoft.com/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current&preserve-view=true#examples-1) volgen om een aanmelding voor de Azure SQL Database te maken, als u deze niet hebt. U hebt de **gebruikersnaam** en het **wachtwoord** nodig voor de volgende stappen.
+U kunt de instructies in [AANMELDING MAKEN](/sql/t-sql/statements/create-login-transact-sql?view=azuresqldb-current&preserve-view=true#examples-1) volgen om een aanmelding voor de Azure SQL Database te maken, als u deze niet hebt. U hebt de **gebruikersnaam** en het **wachtwoord** nodig voor de volgende stappen.
 
 1. Ga in Azure Portal naar uw sleutelkluis
 1. Selecteer **Instellingen > Geheimen**
@@ -100,7 +100,7 @@ De service-principal of beheerde identiteit moet gemachtigd zijn om metagegevens
     ```
 
     > [!Note]
-    > De `Username` is uw eigen service-principal of beheerde identiteit van Purview. U kunt meer lezen over [functies voor vaste databases en de bijbehorende mogelijkheden](https://docs.microsoft.com/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15&preserve-view=true#fixed-database-roles).
+    > De `Username` is uw eigen service-principal of beheerde identiteit van Purview. U kunt meer lezen over [functies voor vaste databases en de bijbehorende mogelijkheden](/sql/relational-databases/security/authentication-access/database-level-roles?view=sql-server-ver15&preserve-view=true#fixed-database-roles).
     
 ##### <a name="add-service-principal-to-key-vault-and-purviews-credential"></a>De service-principal toevoegen aan de sleutelkluis en de referentie van Purview
 

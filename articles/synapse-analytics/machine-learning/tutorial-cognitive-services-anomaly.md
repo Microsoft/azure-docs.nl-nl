@@ -9,16 +9,16 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 4052d6a0773aa27e0a378ee04975c7946f1ffbfe
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 5e7b914d459d2452704f93987ce1bf91bfba988c
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463918"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222204"
 ---
 # <a name="tutorial-anomaly-detection-with-cognitive-services-preview"></a>Zelfstudie: Anomaliedetectie met Cognitive Services (preview)
 
-In deze zelfstudie leert u hoe u uw gegevens in Azure Synapse eenvoudig kunt verrijken met [Cognitive Services](https://go.microsoft.com/fwlink/?linkid=2147492). We gebruiken de [Anomaly Detector](https://go.microsoft.com/fwlink/?linkid=2147493) voor het uitvoeren van anomaliedetectie. Een gebruiker in Azure Synapse kan eenvoudigweg een tabel selecteren om te verrijken met detectie van afwijkingen.
+In deze zelfstudie leert u hoe u uw gegevens in Azure Synapse eenvoudig kunt verrijken met [Cognitive Services](../../cognitive-services/index.yml). We gebruiken de [Anomaly Detector](../../cognitive-services/anomaly-detector/index.yml) voor het uitvoeren van anomaliedetectie. Een gebruiker in Azure Synapse kan eenvoudigweg een tabel selecteren om te verrijken met detectie van afwijkingen.
 
 In deze zelfstudie komt het volgende aan bod:
 
@@ -94,7 +94,7 @@ De notebook die u zojuist hebt geopend, maakt gebruik van de [mmlspark-bibliothe
 
 Met de Azure Key Vault-gegevens die u hebt ingevoerd, kunt u vanaf hier veilig naar uw geheimen verwijzen zonder dat u deze hoeft weer te geven.
 
-U kunt nu **Alles uitvoeren** selecteren voor de cellen om anomaliedetectie uit te voeren. Meer informatie over [Cognitive Services - Anomaly Detector](https://go.microsoft.com/fwlink/?linkid=2147493).
+U kunt nu **Alles uitvoeren** selecteren voor de cellen om anomaliedetectie uit te voeren. Meer informatie over [Cognitive Services - Anomaly Detector](../../cognitive-services/anomaly-detector/index.yml).
 
 ![Anomaliedetectie uitvoeren](media/tutorial-cognitive-services/tutorial-cognitive-services-anomaly-00f.png)
 

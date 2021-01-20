@@ -9,12 +9,12 @@ ms.author: mikben
 ms.date: 05/19/2020
 ms.topic: overview
 ms.service: azure-communication-services
-ms.openlocfilehash: 460cca051d743102e734971cf45069362e24c147
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.openlocfilehash: e7ed4ba181d3730ebbea7725451567c93433afb8
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106000"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251094"
 ---
 # <a name="metrics-overview"></a>Overzicht van metrische gegevens
 
@@ -30,7 +30,7 @@ Er zijn twee typen aanvragen die worden weergegeven in de metrische gegevens van
 
 De metrische gegevens van zowel chat- als sms-API-aanvragen bevatten drie dimensies die u kunt gebruiken voor het filteren van uw metrische gegevens. Deze dimensies kunnen worden geaggregeerd met behulp van het aggregatietype `Count` en ondersteunen alle standaard Azure-aggregatie-tijdreeksen, inclusief `Sum`, `Average`, `Min`en `Max`.
 
-Meer informatie over ondersteunde aggregatietypen en aggregaties van tijdreeksen vindt u in [Geavanceerde functies van Azure Metrics Explorer](../../azure-monitor/platform/metrics-charts.md#changing-aggregation)
+Meer informatie over ondersteunde aggregatietypen en aggregaties van tijdreeksen vindt u in [Geavanceerde functies van Azure Metrics Explorer](../../azure-monitor/platform/metrics-charts.md#aggregation)
 
 - **Bewerking** - Alle bewerkingen of routes die kunnen worden aangeroepen op de ACS chat-gateway.
 - **Statuscode** - De reactie van de statuscode die na de aanvraag is verzonden.

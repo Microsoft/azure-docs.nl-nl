@@ -9,12 +9,12 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: a5d84b936679cdd5ebd5bec4938d6db7fcb641e7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 800cbf9b7a7fa415452f29b253347188c8917c52
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455498"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219450"
 ---
 # <a name="quickstart-create-a-new-azure-machine-learning-linked-service-in-synapse"></a>Quickstart: Een nieuwe gekoppelde Azure Machine Learning-service maken in Synapse
 
@@ -22,7 +22,7 @@ In deze quickstart koppelt u een Azure Synapse Analytics-werkruimte aan een Azur
 
 Met deze koppeling naar een Azure Machine Learning-werkruimte kunt u bijvoorbeeld het volgende doen:
 
-- Voer uw Azure Machine Learning-pijplijnen uit als een stap in uw Synapse-pijplijnen. Zie [Azure Machine Learning-pijplijnen uitvoeren](/azure/data-factory/transform-data-machine-learning-service) voor meer informatie.
+- Voer uw Azure Machine Learning-pijplijnen uit als een stap in uw Synapse-pijplijnen. Zie [Azure Machine Learning-pijplijnen uitvoeren](../../data-factory/transform-data-machine-learning-service.md) voor meer informatie.
 
 - Breid uw gegevens uit met voorspellingen door een machine learning-model uit het register van het Azure Machine Learning-model te halen en het model in Synapse SQL-pools te scoren. Zie [Zelfstudie: De wizard voor scoren van het Machine Learning-model voor Synapse SQL-pools](tutorial-sql-pool-model-scoring-wizard.md) voor meer informatie.
 
@@ -30,7 +30,7 @@ Met deze koppeling naar een Azure Machine Learning-werkruimte kunt u bijvoorbeel
 
 - Azure-abonnement: [Maak een gratis abonnement aan](https://azure.microsoft.com/free/).
 - [Synapse Analytics-werkruimte](../get-started-create-workspace.md) met een ADLS Gen2-opslagaccount dat is geconfigureerd als de standaardopslag. U moet de **Inzender van de Storage Blob-gegevens** zijn van het ADLS Gen2-bestandssysteem waar u mee werkt.
-- [Azure Machine Learning-werkruimte](/azure/machine-learning/how-to-manage-workspace).
+- [Azure Machine Learning-werkruimte](../../machine-learning/how-to-manage-workspace.md).
 - U hebt machtigingen nodig (of een aanvraag bij iemand die machtigingen heeft) om een service-principal en een geheim te maken waarmee u de gekoppelde service kunt maken. Aan deze service-principal moet de rol Inzender zijn toegewezen in de Azure Machine Learning-werkruimte.
 
 ## <a name="sign-in-to-the-azure-portal"></a>Aanmelden bij Azure Portal

@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 90532a88e145507b09de9d36f704bc5c88899e95
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
-ms.translationtype: HT
+ms.openlocfilehash: eb10001436d3184b89aa064ec82fcd1f56bea931
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861894"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98566928"
 ---
 # <a name="tutorial-discover-hyper-v-vms-with-server-assessment"></a>Zelfstudie: Virtuele Hyper-V-machines detecteren met Azure Migrate-serverevaluatie
 
@@ -42,16 +42,14 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 **Vereiste** | **Details**
 --- | ---
 **Hyper-V-host** | Hyper-V-hosts waarop virtuele machine zich bevinden kunnen zelfstandig zijn of deel uitmaken van een cluster.<br/><br/> Op deze host moet Windows Server 2019 R2, Windows Server 2016 of Windows Server 2012 R2 worden uitgevoerd.<br/><br/> Controleer of binnenkomende verbindingen zijn toegestaan op WinRM-poort 5985 (HTTP), zodat het apparaat verbinding kan maken om metagegevens en prestatiegegevens van de virtuele machine te verzamelen tijdens een Common Information Model-sessie (CIM).
-**Implementatie van het apparaat** | Hyper-V-host heeft resources nodig om een virtuele machine toe te wijzen voor het apparaat:<br/><br/> - Windows Server 2016<br/><br/> \- 16 GB aan RAM-geheugen<br/><br/> - Acht vCPU’s<br/><br/> - Ongeveer 80 GB aan schijfruimte.<br/><br/> - Een externe virtuele switch.<br/><br/> - Internettoegang voor de virtuele machine, rechtstreeks of via een proxy.
+**Implementatie van het apparaat** | Hyper-V-host heeft resources nodig om een virtuele machine toe te wijzen voor het apparaat:<br/><br/> -16 GB aan RAM, 8 Vcpu's en ongeveer 80 GB aan schijf opslag.<br/><br/> -Een externe virtuele switch en Internet toegang op de apparaat-VM, rechtstreeks of via een proxy.
 **VM's** | Op virtuele machines kan elk Windows- of Linux-besturingssysteem worden uitgevoerd. 
-
-Voordat u begint, kunt u [de gegevens controleren](migrate-appliance.md#collected-data---hyper-v) die door het apparaat worden verzameld tijdens de detectie.
 
 ## <a name="prepare-an-azure-user-account"></a>Een Azure-gebruikersaccount voorbereiden
 
 Om een Azure Migrate-project te maken en het Azure Migrate-apparaat te registreren, hebt u een account nodig met:
 - Machtigingen op inzender- of eigenaarniveau voor een Azure-abonnement.
-- Machtigingen verlenen om Azure Active Directory-apps te registreren.
+- Machtigingen voor het registreren van Azure Active Directory-apps (AAD).
 
 Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw abonnement. Als u niet de eigenaar van het abonnement bent, kunt u met de eigenaar samenwerken om de volgende machtigingen toe te wijzen:
 
@@ -71,20 +69,51 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 
     ![Hiermee opent u de pagina Roltoewijzing toevoegen om een rol aan het account toe te wijzen](./media/tutorial-discover-hyper-v/assign-role.png)
 
-7. Zoek in de portal naar gebruikers en selecteer onder **Services** **Gebruikers**.
-8. Controleer onder **Gebruikersinstellingen** of Azure AD-gebruikers toepassingen kunnen registreren (standaard ingesteld op **Ja**).
+1. Als u het apparaat wilt registreren, heeft uw Azure-account **machtigingen nodig voor het registreren van Aad-apps.**
+1. Ga in azure Portal naar **Azure Active Directory**  >  **gebruikers**  >  **gebruikers instellingen**.
+1. Controleer onder **Gebruikersinstellingen** of Azure AD-gebruikers toepassingen kunnen registreren (standaard ingesteld op **Ja**).
 
     ![Verifiëren onder Gebruikersinstellingen of gebruikers Active Directory-apps kunnen registreren](./media/tutorial-discover-hyper-v/register-apps.png)
 
-9. Als alternatief kan een tenant/globale beheerder de rol van **toepassingsontwikkelaar** toewijzen aan het account om de registratie van AAD-apps mogelijk te maken. [Meer informatie](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
+9. Als de App-registraties-instellingen is ingesteld op Nee, vraagt u de Tenant/globale beheerder om de vereiste machtiging toe te wijzen. De Tenant/globale beheerder kan de rol van **toepassings ontwikkelaar** ook toewijzen aan een account om de registratie van de Aad-app toe te staan. [Meer informatie](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
 
 ## <a name="prepare-hyper-v-hosts"></a>Hyper-V-hosts voorbereiden
 
-Stel een account in met beheerderstoegang op de Hyper-V-hosts. Het apparaat gebruikt dit account voor detectie.
+U kunt Hyper-V-hosts hand matig voorbereiden of een script gebruiken. De voorbereidings stappen worden in de tabel samenvatten. Het script bereidt deze automatisch voor.
 
-- Optie 1: Maak een account met beheerderstoegang op de Hyper-V-hostmachine.
-- Optie 2: Bereid een lokaal beheerdersaccount of een domeinbeheerdersaccount voor en voeg het account toe aan deze groepen: Gebruikers van extern beheer, Hyper-V-beheerders, en Prestatiemetergebruikers.
+**Stap** | **Script** | **Handmatig**
+--- | --- | ---
+De vereisten voor de host controleren | Controleert of op de host een ondersteunde versie van Hyper-V en de Hyper-V-rol wordt uitgevoerd.<br/><br/>Hiermee schakelt u de WinRM-service in en opent u poort 5985 (HTTP) en 5986 (HTTPS) op de host (vereist voor de verzameling metagegevens). | Op deze host moet Windows Server 2019 R2, Windows Server 2016 of Windows Server 2012 R2 worden uitgevoerd.<br/><br/> Controleer of binnenkomende verbindingen zijn toegestaan op WinRM-poort 5985 (HTTP), zodat het apparaat verbinding kan maken om metagegevens en prestatiegegevens van de virtuele machine te verzamelen tijdens een Common Information Model-sessie (CIM).
+PowerShell-versie bevestigen | Controleert of u het script uitvoert op een ondersteunde PowerShell-versie. | Controleer of u PowerShell versie 4.0 of hoger uitvoert op de Hyper-V-host.
+Een account maken | Verifieert of u de juiste machtigingen hebt op de Hyper-V-host.<br/><br/> Hiermee kunt u een lokaal gebruikers account met de juiste machtigingen maken. | Optie 1: Maak een account met beheerderstoegang op de Hyper-V-hostmachine.<br/><br/> Optie 2: Bereid een lokaal beheerdersaccount of een domeinbeheerdersaccount voor en voeg het account toe aan deze groepen: Gebruikers van extern beheer, Hyper-V-beheerders, en Prestatiemetergebruikers.
+Externe communicatie met PowerShell inschakelen | Hiermee stelt u externe communicatie van PowerShell in op elke host, zodat het Azure Migrate-apparaat PowerShell-opdrachten op de host kan uitvoeren via een WinRM-verbinding. | Als u op elke host wilt instellen, opent u een Power shell-console als beheerder en voert u de volgende opdracht uit: ``` powershell Enable-PSRemoting -force ```
+Hyper-V-integratie Services instellen | Hiermee wordt gecontroleerd of de Hyper-V-integratieservices zijn ingeschakeld op alle VM's die worden beheerd door de host. | [Schakel Hyper-V-integratieservices in](/windows-server/virtualization/hyper-v/manage/manage-hyper-v-integration-services.md) op elke VM.<br/><br/> Als u werkt met Windows Server 2003, [volgt u deze instructies](prepare-windows-server-2003-migration.md).
+Referenties delegeren als VM-schijven zich op externe NFS-shares bevinden | Gemachtigden referenties | Voer deze opdracht uit om CredSSP in te scha kelen voor het delegeren van referenties op hosts met virtuele Hyper-V-machines met schijven op SMB-shares: ```powershell Enable-WSManCredSSP -Role Server -Force ```<br/><br/> U kunt deze opdracht op afstand uitvoeren op alle Hyper-V-hosts.<br/><br/> Als u nieuwe host knooppunten op een cluster toevoegt, worden deze automatisch toegevoegd voor detectie, maar moet u CredSSP hand matig inschakelen.<br/><br/> Wanneer u het apparaat instelt, voltooit u de instelling van CredSSP door [deze in te schakelen op het apparaat](#delegate-credentials-for-smb-vhds). 
 
+### <a name="run-the-script"></a>Het script uitvoeren
+
+1. Download het script via het [Microsoft Downloadcenter](https://aka.ms/migrate/script/hyperv). Het script is cryptografisch ondertekend door Microsoft.
+2. Valideer de scriptintegriteit met behulp van MD5 of SHA256 hash-bestanden. De hashtagwaarden staan hieronder. Gebruik deze opdracht om de hash voor het script te genereren:
+
+    ```powershell
+    C:\>CertUtil -HashFile <file_location> [Hashing Algorithm]
+    ```
+    Gebruiksvoorbeeld:
+
+    ```powershell
+    C:\>CertUtil -HashFile C:\Users\Administrators\Desktop\ MicrosoftAzureMigrate-Hyper-V.ps1 SHA256
+    ```
+3. Nadat u de scriptintegriteit hebt gevalideerd, voert u het script uit op elke Hyper-V-host met de volgende PowerShell-opdracht:
+
+    ```powershell
+    PS C:\Users\Administrators\Desktop> MicrosoftAzureMigrate-Hyper-V.ps1
+    ```
+Hashwaarden zijn:
+
+**Hash** |  **Waarde**
+--- | ---
+MD5 | 0ef418f31915d01f896ac42a80dc414e
+SHA256 | 0ad60e7299925eff4d1ae9f1c7db485dc9316ef45b0964148a3c07c80761ade2
 
 ## <a name="set-up-a-project"></a>Een project instellen
 
@@ -99,26 +128,28 @@ Stel als volgt een nieuw Azure Migrate-project in.
    ![Vakken voor projectnaam en regio](./media/tutorial-discover-hyper-v/new-project.png)
 
 7. Selecteer **Maken**.
-8. Wacht een paar minuten tot het Azure Migrate-project is geïmplementeerd.
-
-Het hulpprogramma **Azure Migrate: Serverevaluatie** wordt standaard toegevoegd aan het nieuwe project.
+8. Wacht enkele minuten totdat het Azure Migrate project is geïmplementeerd. De **Azure migrate:** het hulp programma voor Server evaluatie wordt standaard toegevoegd aan het nieuwe project.
 
 ![Pagina waarop wordt weergegeven dat het hulpprogramma Serverevaluatie standaard wordt toegevoegd](./media/tutorial-discover-hyper-v/added-tool.png)
 
+> [!NOTE]
+> Als u al een project hebt gemaakt, kunt u hetzelfde project gebruiken om extra apparaten te registreren voor het detecteren en evalueren van meer dan geen Vm's. meer[informatie](create-manage-projects.md#find-a-project)
 
 ## <a name="set-up-the-appliance"></a>Het apparaat instellen
 
+Azure Migrate: Server evaluatie maakt gebruik van een licht gewicht Azure Migrate apparaat. Het apparaat voert VM-detectie uit en verzendt meta gegevens van de VM-configuratie en-prestaties naar Azure Migrate. Het apparaat kan worden ingesteld door een VHD-bestand te implementeren dat kan worden gedownload uit het Azure Migrate-project.
+
+> [!NOTE]
+> Als u het apparaat om de een of andere reden niet kunt instellen met behulp van de sjabloon, stelt u dit in met behulp van een Power shell-script op een bestaande Windows Server 2016-server. [Meer informatie](deploy-appliance-script.md#set-up-the-appliance-for-hyper-v).
+
 In deze zelfstudie wordt het apparaat op een virtuele Hyper-V-machine als volgt ingesteld:
 
-- Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
-- Download een gecomprimeerde Hyper-V VHD vanuit de Azure Portal.
-- Maak het apparaat en controleer of het verbinding kan maken met Azure Migrate-serverevaluatie.
-- Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
-> [!NOTE]
-> Als u het apparaat om de een of andere reden niet kunt instellen met behulp van een sjabloon, kunt u het instellen met behulp van een PowerShell-script. [Meer informatie](deploy-appliance-script.md#set-up-the-appliance-for-hyper-v).
+1. Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
+1. Download een gecomprimeerde Hyper-V VHD vanuit de Azure Portal.
+1. Maak het apparaat en controleer of het verbinding kan maken met Azure Migrate-serverevaluatie.
+1. Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
 
-
-### <a name="generate-the-azure-migrate-project-key"></a>Azure Migrate-projectsleutel genereren
+### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
 
 1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** selecteert u **Detecteren**.
 2. In **Machines ontdekken** > **Zijn de machines gevirtualiseerd?** selecteert u **Ja, met Hyper-V**.
@@ -127,10 +158,9 @@ In deze zelfstudie wordt het apparaat op een virtuele Hyper-V-machine als volgt 
 1. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
-### <a name="download-the-vhd"></a>De VHD downloaden
+### <a name="2-download-the-vhd"></a>2. down load de VHD
 
-In **2: Azure Migrate-apparaat downloaden**, selecteert u het VHD-bestand en klikt u op **Downloaden**. 
-
+In **2: Azure Migrate-apparaat downloaden**, selecteert u het VHD-bestand en klikt u op **Downloaden**.
 
 ### <a name="verify-security"></a>Beveiliging controleren
 
@@ -156,7 +186,7 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
         --- | --- | ---
         Hyper-V (85,8 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140424) |  cfed44bb52c9ab3024a628dc7a5d0df8c624f156ec1ecc3507116bae330b257f
 
-### <a name="create-the-appliance-vm"></a>Het VM-apparaat maken
+### <a name="3-create-the-appliance-vm"></a>3. de toestel-VM maken
 
 Importeer het gedownloade bestand en maak de virtuele machine.
 
@@ -177,7 +207,7 @@ Importeer het gedownloade bestand en maak de virtuele machine.
 
 Zorg ervoor dat de apparaat-VM verbinding kan maken met Azure-URL's voor [openbare](migrate-appliance.md#public-cloud-urls) en [overheids](migrate-appliance.md#government-cloud-urls)clouds.
 
-### <a name="configure-the-appliance"></a>Het apparaat configureren
+### <a name="4-configure-the-appliance"></a>4. het apparaat configureren
 
 Het apparaat voor de eerste keer instellen.
 
@@ -214,8 +244,6 @@ Het apparaat voor de eerste keer instellen.
 1. Als u bent aangemeld, gaat u terug naar het vorige tabblad in Apparaatconfiguratiebeheer.
 4. Als het Azure-gebruikersaccount dat wordt gebruikt voor logboekregistratie de juiste machtigingen  heeft voor de Azure-resources die tijdens het genereren van de sleutel zijn gemaakt, wordt de registratie van het apparaat gestart.
 1. Nadat het apparaat is geregistreerd, kunt u de registratiedetails zien door op **Details weergeven** te klikken.
-
-
 
 ### <a name="delegate-credentials-for-smb-vhds"></a>Referenties voor SMB-VHD's delegeren
 

@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 639b810cbb99496f84b76fc96124145a019fb625
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: 548cee262d874f5bc0f6024a857c2bb8a5466106
+ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705537"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98541339"
 ---
 # <a name="tutorial-discover-physical-servers-with-server-assessment"></a>Zelfstudie: Fysieke servers detecteren met Serverevaluatie
 
@@ -40,7 +40,7 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 **Vereiste** | **Details**
 --- | ---
-**Apparaat** | U hebt een machine nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> -Windows Server 2016 is geïnstalleerd. _(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_<br/><br/> - Ongeveer 16 GB RAM, 8 vCPU's en 80 GB schijfruimte.<br/><br/> -Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
+**Apparaat** | U hebt een machine nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> -Windows Server 2016 is geïnstalleerd.<br/> _(Momenteel wordt de implementatie van apparaten alleen ondersteund voor Windows Server 2016.)_<br/><br/> -16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag<br/><br/> -Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
 **Windows-servers** | Sta binnenkomende verbindingen op WinRM-poort 5985 (HTTP) toe, zodat het apparaat metagegevens over de configuratie en prestaties kan ophalen.
 **Linux-servers** | Sta binnenkomende verbindingen op poort 22 (TCP) toe.
 
@@ -48,7 +48,7 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 Om een Azure Migrate-project te maken en het Azure Migrate-apparaat te registreren, hebt u een account nodig met:
 - Machtigingen op inzender- of eigenaarniveau voor een Azure-abonnement.
-- Machtigingen verlenen om Azure Active Directory-apps te registreren.
+- Machtigingen voor het registreren van Azure Active Directory-apps (AAD).
 
 Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw abonnement. Als u niet de eigenaar van het abonnement bent, kunt u met de eigenaar samenwerken om de volgende machtigingen toe te wijzen:
 
@@ -67,19 +67,20 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 
     ![Hiermee opent u de pagina Roltoewijzing toevoegen om een rol aan het account toe te wijzen](./media/tutorial-discover-physical/assign-role.png)
 
-7. Zoek in de portal naar gebruikers en selecteer onder **Services** **Gebruikers**.
-8. Controleer onder **Gebruikersinstellingen** of Azure AD-gebruikers toepassingen kunnen registreren (standaard ingesteld op **Ja**).
+1. Als u het apparaat wilt registreren, heeft uw Azure-account **machtigingen nodig voor het registreren van Aad-apps.**
+1. Ga in azure Portal naar **Azure Active Directory**  >  **gebruikers**  >  **gebruikers instellingen**.
+1. Controleer onder **Gebruikersinstellingen** of Azure AD-gebruikers toepassingen kunnen registreren (standaard ingesteld op **Ja**).
 
     ![Verifiëren onder Gebruikersinstellingen of gebruikers Active Directory-apps kunnen registreren](./media/tutorial-discover-physical/register-apps.png)
 
-9. Als alternatief kan een tenant/globale beheerder de rol van **toepassingsontwikkelaar** toewijzen aan het account om de registratie van AAD-apps mogelijk te maken. [Meer informatie](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
+9. Als de App-registraties-instellingen is ingesteld op Nee, vraagt u de Tenant/globale beheerder om de vereiste machtiging toe te wijzen. De Tenant/globale beheerder kan de rol van **toepassings ontwikkelaar** ook toewijzen aan een account om de registratie van de Aad-app toe te staan. [Meer informatie](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
 
 ## <a name="prepare-physical-servers"></a>Fysieke servers voorbereiden
 
 Stel een account in dat het apparaat kan gebruiken om toegang te krijgen tot de fysieke servers.
 
-- Gebruik voor Windows-servers een domeinaccount voor computer die lid zijn van een domein, en een lokaal account voor computers die geen lid zijn van een domein. Het gebruikersaccount moet worden toegevoegd aan deze groepen: Gebruikers van extern beheer, prestatiemetergebruikers en gebruikers van prestatielogboeken.
-- Voor Linux-servers hebt u een hoofdaccount nodig op de Linux-servers die u wilt detecteren. U kunt ook een zich niet in de hoofdmap bevindend account met de vereiste mogelijkheden instellen met behulp van de volgende opdrachten:
+- Voor **Windows-servers** gebruikt u een domein account voor computers die lid zijn van een domein en een lokaal account voor computers die geen lid zijn van een domein. Het gebruikersaccount moet worden toegevoegd aan deze groepen: Gebruikers van extern beheer, prestatiemetergebruikers en gebruikers van prestatielogboeken.
+- Voor **Linux-servers** hebt u een hoofd account nodig op de Linux-servers die u wilt detecteren. U kunt ook een zich niet in de hoofdmap bevindend account met de vereiste mogelijkheden instellen met behulp van de volgende opdrachten:
 
 **Opdracht** | **Doel**
 --- | --- |
@@ -102,23 +103,25 @@ Stel als volgt een nieuw Azure Migrate-project in.
    ![Vakken voor projectnaam en regio](./media/tutorial-discover-physical/new-project.png)
 
 7. Selecteer **Maken**.
-8. Wacht een paar minuten tot het Azure Migrate-project is geïmplementeerd.
-
-Het hulpprogramma **Azure Migrate: Serverevaluatie** wordt standaard toegevoegd aan het nieuwe project.
+8. Wacht een paar minuten tot het Azure Migrate-project is geïmplementeerd. Het hulpprogramma **Azure Migrate: Serverevaluatie** wordt standaard toegevoegd aan het nieuwe project.
 
 ![Pagina waarop wordt weergegeven dat het hulpprogramma Serverevaluatie standaard wordt toegevoegd](./media/tutorial-discover-physical/added-tool.png)
 
+> [!NOTE]
+> Als u al een project hebt gemaakt, kunt u hetzelfde project gebruiken om extra apparaten te registreren om meer servers te detecteren en te evalueren. [Meer informatie](create-manage-projects.md#find-a-project)
 
 ## <a name="set-up-the-appliance"></a>Het apparaat instellen
 
-Om het apparaat in te stellen, moet u het volgende doen:
-- Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
-- Download een zip-bestand met Azure Migrate-installatiescript uit de Azure-portal.
-- Pak de inhoud uit het zip-bestand uit. Start PowerShell-console met beheerdersbevoegdheden.
-- Voer het PowerShell-script uit om de webtoepassing voor het apparaat te starten.
-- Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
+Azure Migrate apparaat voert server detectie uit en verzendt de meta gegevens van de server configuratie en prestaties naar Azure Migrate. Het apparaat kan worden ingesteld door een Power shell-script uit te voeren dat vanuit het Azure Migrate-project kan worden gedownload.
 
-### <a name="generate-the-azure-migrate-project-key"></a>Azure Migrate-projectsleutel genereren
+Om het apparaat in te stellen, moet u het volgende doen:
+1. Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
+2. Download een zip-bestand met Azure Migrate-installatiescript uit de Azure-portal.
+3. Pak de inhoud uit het zip-bestand uit. Start PowerShell-console met beheerdersbevoegdheden.
+4. Voer het PowerShell-script uit om de webtoepassing voor het apparaat te starten.
+5. Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
+
+### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
 
 1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** selecteert u **Detecteren**.
 2. In **Computers detecteren** > **Zijn de computers gevirtualiseerd?** selecteert u **Fysiek of anders (AWS, GCP, Xen enzovoorts)** .
@@ -127,10 +130,9 @@ Om het apparaat in te stellen, moet u het volgende doen:
 1. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
-### <a name="download-the-installer-script"></a>Download het installatiescript
+### <a name="2-download-the-installer-script"></a>2. het installatie script downloaden
 
 In **2: Download Azure Migrate-apparaat**, klik op **Downloaden**.
-
 
 ### <a name="verify-security"></a>Beveiliging controleren
 
@@ -155,7 +157,7 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
         Fysiek (85,8 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140338) | ae132ebc574caf231bf41886891040ffa7abbe150c8b50436818b69e58622276
  
 
-### <a name="run-the-azure-migrate-installer-script"></a>Het Azure Migrate-installatiescript uitvoeren
+### <a name="3-run-the-azure-migrate-installer-script"></a>3. Voer het Azure Migrate-installatie script uit
 Het installatiescript doet het volgende:
 
 - Installeert agents en een webtoepassing voor detectie en evaluatie van fysieke servers.
@@ -184,13 +186,11 @@ Voer het script als volgt uit:
 
 Als u problemen ondervindt, kunt u het script Logboeken openen op C:\ProgramData\Microsoft Azure\Logs\ AzureMigrateScenarioInstaller_<em>Timestamp</em>.log voor probleemoplossing.
 
-
-
 ### <a name="verify-appliance-access-to-azure"></a>Apparaattoegang tot Azure controleren
 
 Zorg ervoor dat de apparaat-VM verbinding kan maken met Azure-URL's voor [openbare](migrate-appliance.md#public-cloud-urls) en [overheids](migrate-appliance.md#government-cloud-urls)clouds.
 
-### <a name="configure-the-appliance"></a>Het apparaat configureren
+### <a name="4-configure-the-appliance"></a>4. het apparaat configureren
 
 Het apparaat voor de eerste keer instellen.
 

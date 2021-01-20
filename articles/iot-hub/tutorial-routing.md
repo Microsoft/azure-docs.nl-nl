@@ -13,12 +13,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - 'Role: Data Analytics'
 - devx-track-azurecli
-ms.openlocfilehash: 892dad3963e9da3560acc2c782c3d14db246ea78
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 13130a7ea473b260ddc4f0ebca2ef5b496b34c66
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500586"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202985"
 ---
 # <a name="tutorial-use-the-azure-cli-and-azure-portal-to-configure-iot-hub-message-routing"></a>Zelfstudie: Azure CLI en de Azure-portal gebruiken om IoT Hub-berichtroutering te configureren
 
@@ -140,13 +140,13 @@ Stel nu de routering in voor het opslagaccount. Ga naar het deelvenster Berichtr
 
 2. Selecteer de IoT Hub in de lijst met resources. In deze zelfstudie wordt gebruikgemaakt van **ContosoTestHub**.
 
-3. Selecteer **Berichtroutering**. Selecteer in het deelvenster **Berichtroutering** de optie **+Toevoegen**. Selecteer in het deelvenster **Een route toevoegen** de optie **+Toevoegen** naast het veld Eindpunt om de ondersteunde eindpunten weer te geven, zoals aangegeven in de onderstaande afbeelding:
+3. Selecteer **Berichtroutering**. Selecteer in het deelvenster **Berichtroutering** de optie **+Toevoegen**. Selecteer in het deel venster **een route toevoegen** +**eind punt toevoegen** naast het veld eind punt om de ondersteunde eind punten weer te geven, zoals wordt weer gegeven in de volgende afbeelding:
 
-   ![Beginnen met het toevoegen van een eindpunt voor een route](./media/tutorial-routing/message-routing-add-a-route-w-storage-ep.png)
+   ![Beginnen met het toevoegen van een eindpunt voor een route](./media/tutorial-routing/message-routing-add-a-route-with-storage-endpoint-ver2.png)
 
-4. Selecteer **Blob-opslag**. Het deelvenster **Een opslageindpunt toevoegen** wordt weergegeven.
+4. Selecteer **Opslag**. Het deelvenster **Een opslageindpunt toevoegen** wordt weergegeven.
 
-   ![Een eindpunt toevoegen](./media/tutorial-routing/message-routing-add-storage-ep.png)
+   ![Een eindpunt toevoegen](./media/tutorial-routing/message-routing-add-storage-endpoint-ver2.png)
 
 5. Voer een naam in voor het eindpunt. In deze zelfstudie wordt gebruikgemaakt van **ContosoStorageEndpoint**.
 

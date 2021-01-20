@@ -6,12 +6,12 @@ ms.author: bwren
 ms.subservice: metrics
 ms.topic: tutorial
 ms.date: 03/09/2020
-ms.openlocfilehash: 5dcb86ff4af2a68ecf0bb361e6da4f788ea32b62
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
-ms.translationtype: HT
+ms.openlocfilehash: 121de67ddb251e7431873c76e379eb223ceacd0d
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97881290"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250669"
 ---
 # <a name="tutorial-create-a-metrics-chart-in-azure-monitor"></a>Zelfstudie: Een grafiek met metrische gegevens maken in Azure Monitor
 Metrics Explorer is een functie van Azure Monitor in Azure Portal waarmee u grafieken kunt maken op basis van metrische waarden, trends visueel kunt correleren en pieken en dalen in metrische waarden kunt onderzoeken. Gebruik Metrics Explorer om de status en het gebruik van uw Azure-resources te onderzoeken of grafieken te tekenen op basis van aangepaste metrische gegevens. 
@@ -70,20 +70,20 @@ Gebruik **Time Brush** om een opvallend gebied van de grafiek nader te onderzoek
 ## <a name="apply-dimension-filters-and-splitting"></a>Dimensies filteren en splitsen
 Raadpleeg de volgende naslaginformatie voor geavanceerde functies waarmee u extra analyses kunt uitvoeren op uw metrische gegevens en mogelijke uitbijters in uw gegevens kunt identificeren.
 
-- Met [Filteren](../platform/metrics-charts.md#apply-filters-to-charts) kunt u kiezen welke dimensiewaarden in de grafiek worden opgenomen. Bijvoorbeeld: u wilt alleen geslaagde aanvragen weergeven voor het meten van de *reactietijd van een server*. 
+- Met [Filteren](../platform/metrics-charts.md#filters) kunt u kiezen welke dimensiewaarden in de grafiek worden opgenomen. Bijvoorbeeld: u wilt alleen geslaagde aanvragen weergeven voor het meten van de *reactietijd van een server*. 
 
-- Met [Splitsen ](../platform/metrics-charts.md#apply-splitting-to-a-chart) bepaalt u of in het diagram elke waarde van een dimensie wordt weergegeven op een afzonderlijke regel of dat de waarden worden geaggregeerd op één regel. Bijvoorbeeld: u wilt één regel zien met de gemiddelde reactietijd van alle servers of u wilt afzonderlijke regels voor elke server. 
+- Met [Splitsen ](../platform/metrics-charts.md#apply-splitting) bepaalt u of in het diagram elke waarde van een dimensie wordt weergegeven op een afzonderlijke regel of dat de waarden worden geaggregeerd op één regel. Bijvoorbeeld: u wilt één regel zien met de gemiddelde reactietijd van alle servers of u wilt afzonderlijke regels voor elke server. 
 
 Zie [voorbeelden van grafieken](../platform/metric-chart-samples.md) waarin een filter of splitsing is toegepast.
 
 ## <a name="advanced-chart-settings"></a>Geavanceerde instellingen voor grafieken
 
-U kunt de stijl, titel en geavanceerde instellingen van de grafiek aanpassen. Wanneer u klaar bent met uw aanpassingen, kunt u deze vastmaken aan een dashboard om uw werk op te slaan. U kunt ook waarschuwingen voor metrische gegevens configureren. Zie de [geavanceerde functies van Metrics Explorer](../platform/metrics-charts.md#lock-boundaries-of-chart-y-axis) voor meer informatie over deze en andere geavanceerde functies van Metrics Explorer in Azure Monitor.
+U kunt de stijl, titel en geavanceerde instellingen van de grafiek aanpassen. Wanneer u klaar bent met uw aanpassingen, kunt u deze vastmaken aan een dashboard om uw werk op te slaan. U kunt ook waarschuwingen voor metrische gegevens configureren. Zie de [geavanceerde functies van Metrics Explorer](../platform/metrics-charts.md#locking the-range-of-the-y-axis) voor meer informatie over deze en andere geavanceerde functies van Metrics Explorer in Azure Monitor.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 Nu u hebt geleerd hoe u met metrische gegevens in Azure Monitor kunt werken, kunt u leren hoe u metrische gegevens kunt gebruiken om proactieve waarschuwingen te verzenden.
 
 > [!div class="nextstepaction"]
-> [Metrische waarschuwing maken, bekijken en beheren met Azure Monitor](../platform/metrics-charts.md#create-alert-rules)
+> [Metrische waarschuwing maken, bekijken en beheren met Azure Monitor](../platform/metrics-charts.md#alert-rules)
 

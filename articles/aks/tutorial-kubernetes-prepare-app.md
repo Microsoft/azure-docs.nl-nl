@@ -3,14 +3,14 @@ title: 'Zelfstudie over Kubernetes in Azure: Toepassing voorbereiden'
 description: In deze zelfstudie over Azure Kubernetes Service (AKS) leert u hoe u een app met meerdere containers voorbereidt en bouwt met Docker Compose, waarna u de app kunt implementeren naar AKS.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/12/2021
 ms.custom: mvc
-ms.openlocfilehash: 15bf29c676c4ca41fc2d005f3500a89ed6b9c380
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 349bf90ea0b344d5232c885358814f39fba4c19f
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576333"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251948"
 ---
 # <a name="tutorial-prepare-an-application-for-azure-kubernetes-service-aks"></a>Zelfstudie: Toepassing voorbereiden voor AKS (Azure Kubernetes Service)
 
@@ -23,9 +23,9 @@ In deze zelfstudie, deel een van zeven, wordt een toepassing met meerdere contai
 
 Als u dit allemaal hebt gedaan, kunt u de volgende toepassing uitvoeren in uw lokale ontwikkelomgeving:
 
-![Afbeelding van Kubernetes-cluster in Azure](./media/container-service-tutorial-kubernetes-prepare-app/azure-vote.png)
+:::image type="content" source="./media/container-service-kubernetes-tutorials/azure-vote-local.png" alt-text="Scherm opname van de container afbeelding Azure stem-app die lokaal wordt uitgevoerd in een lokale webbrowser" lightbox="./media/container-service-kubernetes-tutorials/azure-vote-local.png":::
 
-In aanvullende zelfstudies wordt de containerinstallatiekopie geüpload naar een Azure Container Registry en vervolgens geïmplementeerd naar een AKS-cluster.
+In latere zelf studies wordt de container installatie kopie geüpload naar een Azure Container Registry en vervolgens geïmplementeerd in een AKS-cluster.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -33,11 +33,12 @@ In deze zelfstudie wordt ervan uitgegaan dat u een basiskennis hebt van Docker-k
 
 Voor deze zelfstudie hebt u een lokale Docker-ontwikkelomgeving met Linux-containers nodig. Docker biedt pakketten voor de configuratie van Docker op een [Mac][docker-for-mac]-, [Windows][docker-for-windows]- of [Linux][docker-for-linux]-systeem.
 
-Azure Cloud Shell bevat niet de Docker-onderdelen die nodig zijn om elke stap in deze zelfstudies te voltooien. Daarom raden wij u aan een volledige Docker-ontwikkelomgeving te gebruiken.
+> [!NOTE]
+> Azure Cloud Shell bevat niet de Docker-onderdelen die nodig zijn om elke stap in deze zelfstudies te voltooien. Daarom raden wij u aan een volledige Docker-ontwikkelomgeving te gebruiken.
 
 ## <a name="get-application-code"></a>Toepassingscode ophalen
 
-De voorbeeldtoepassing die wordt gebruikt in deze zelfstudie, is een eenvoudige stem-app. De toepassing bestaat uit een front-endwebonderdeel en een back-end-Redis-exemplaar. Het webonderdeel is verpakt in een aangepaste containerinstallatiekopie. Het Redis-exemplaar gebruikt een ongewijzigde installatiekopie van Docker Hub.
+De [voorbeeld toepassing][sample-application] die in deze zelf studie wordt gebruikt, is een eenvoudige stem-app die bestaat uit een front-end-webonderdeel en een back-end redis-exemplaar. Het webonderdeel is verpakt in een aangepaste containerinstallatiekopie. Het Redis-exemplaar gebruikt een ongewijzigde installatiekopie van Docker Hub.
 
 Gebruik [git][] om de voorbeeldtoepassing te klonen naar uw ontwikkelomgeving:
 
@@ -51,7 +52,35 @@ Wijzig in de gekloonde map.
 cd azure-voting-app-redis
 ```
 
-In de map bevinden zich de broncode van de toepassing, een vooraf gemaakt Docker Compose-bestand en een Kubernetes-manifestbestand. Deze bestanden worden gebruikt in de alle delen van de zelfstudie.
+In de map bevinden zich de broncode van de toepassing, een vooraf gemaakt Docker Compose-bestand en een Kubernetes-manifestbestand. Deze bestanden worden gebruikt in de alle delen van de zelfstudie. De inhoud en structuur van de map zijn als volgt:
+
+```output
+azure-voting-app-redis
+│   azure-vote-all-in-one-redis.yaml
+│   docker-compose.yaml
+│   LICENSE
+│   README.md
+│
+├───azure-vote
+│   │   app_init.supervisord.conf
+│   │   Dockerfile
+│   │   Dockerfile-for-app-service
+│   │   sshd_config
+│   │
+│   └───azure-vote
+│       │   config_file.cfg
+│       │   main.py
+│       │
+│       ├───static
+│       │       default.css
+│       │
+│       └───templates
+│               index.html
+│
+└───jenkins-tutorial
+        config-jenkins.sh
+        deploy-jenkins-vm.sh
+```
 
 ## <a name="create-container-images"></a>Containerinstallatiekopieën maken
 
@@ -88,11 +117,11 @@ d10e5244f237        mcr.microsoft.com/azuredocs/azure-vote-front:v1   "/entrypoi
 
 Als u wilt zien hoe de toepassing wordt uitgevoerd, typt u `http://localhost:8080` in een lokale browser. De voorbeeldtoepassing wordt dan geladen, zoals wordt weergegeven in het volgende voorbeeld:
 
-![Afbeelding van Kubernetes-cluster in Azure](./media/container-service-tutorial-kubernetes-prepare-app/azure-vote.png)
+:::image type="content" source="./media/container-service-kubernetes-tutorials/azure-vote-local.png" alt-text="Scherm opname van de container afbeelding Azure stem-app die lokaal wordt uitgevoerd in een lokale webbrowser" lightbox="./media/container-service-kubernetes-tutorials/azure-vote-local.png":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Nu de functionaliteit van de toepassing is gevalideerd, kunnen de actieve containers worden gestopt en verwijderd. De containerinstallatiekopieën moet u niet verwijderen. In de volgende zelfstudie wordt de installatiekopie *azure-vote-front* geüpload naar een Azure Container Registry-exemplaar.
+Nu de functionaliteit van de toepassing is gevalideerd, kunnen de actieve containers worden gestopt en verwijderd. ***Verwijder de container installatie kopieën niet**. in de volgende zelf studie wordt de _azure-stem-*-afbeelding geüpload naar een Azure container Registry-exemplaar.
 
 Stop en verwijder de containerexemplaren en -resources met de opdracht [docker-compose down][docker-compose-down]:
 
@@ -126,6 +155,7 @@ Ga verder met de volgende zelfstudie voor informatie over het opslaan van contai
 [docker-ps]: https://docs.docker.com/engine/reference/commandline/ps/
 [docker-compose-down]: https://docs.docker.com/compose/reference/down
 [git]: https://git-scm.com/downloads
+[sample-application]: https://github.com/Azure-Samples/azure-voting-app-redis
 
 <!-- LINKS - internal -->
 [aks-tutorial-prepare-acr]: ./tutorial-kubernetes-prepare-acr.md

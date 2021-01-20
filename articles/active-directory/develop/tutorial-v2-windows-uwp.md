@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/13/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: 63d56d8afc584a760f4b31c6021d4c764afd52b3
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
-ms.translationtype: HT
+ms.openlocfilehash: bbcebfd69789eb6ec03e565b347d05533043781c
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064416"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98232332"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-universal-windows-platform-uwp-application"></a>Zelfstudie: De Microsoft Graph-API aanroepen vanuit de Universeel Windows-platformtoepasing (UWP)
 
@@ -59,8 +59,8 @@ In deze sectie vindt u stapsgewijze instructies voor het integreren van een Wind
 
 In deze handleiding wordt een toepassing gemaakt waarin een knop voor het uitvoeren van een query op de Microsoft Graph API en een knop voor het afmelden worden weergegeven. Er worden ook tekstvakken weergegeven met de resultaten van de aanroepen.
 
-> [!NOTE]
-> Wilt u het Visual Studio-project uit dit voorbeeld downloaden in plaats van het te maken? [Download een project](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip), en ga door naar de stap [toepassingsregistratie](#register-your-application "stap voor toepassingsregistratie") om het codevoorbeeld te configureren voordat u het uitvoert.
+> [!Tip]
+> Als u een voltooide versie wilt zien van het project dat u in deze zelf studie hebt gemaakt, kunt u [het downloaden van github](https://github.com/Azure-Samples/active-directory-dotnet-native-uwp-v2/archive/msal3x.zip).
 
 ### <a name="create-your-application"></a>Uw toepassing maken
 
@@ -292,8 +292,7 @@ private async void SignOutButton_Click(object sender, RoutedEventArgs e)
     }
 ```
 
-> [!NOTE]
-> MSAL.NET maakt gebruik van asynchrone methoden om tokens te verkrijgen of accounts te bewerken. U moet de gebruikersinterfaceacties ondersteunen in de gebruikersinterfacethread. Dit is de reden voor het aanroepen van `Dispatcher.RunAsync` en de voorzorgsmaatregelen voor het aanroepen van `ConfigureAwait(false)`.
+MSAL.NET maakt gebruik van asynchrone methoden om tokens te verkrijgen of accounts te bewerken. U moet de gebruikersinterfaceacties ondersteunen in de gebruikersinterfacethread. Dit is de reden voor het aanroepen van `Dispatcher.RunAsync` en de voorzorgsmaatregelen voor het aanroepen van `ConfigureAwait(false)`.
 
 #### <a name="more-information-about-signing-out"></a>Meer informatie over afmelden<a name="more-information-on-sign-out"></a>
 
@@ -477,8 +476,7 @@ De Microsoft Graph API vereist het bereik `user.read` om het profiel van een geb
 
 Als u toegang wilt krijgen tot de agenda van de gebruiker in de context van een toepassing, voegt u de gedelegeerde toestemming `Calendars.Read` toe aan de toepassingsregistratiegegevens. Voeg vervolgens het bereik `Calendars.Read` toe aan de aanroep `acquireTokenSilent`.
 
-> [!NOTE]
-> Gebruikers worden mogelijk gevraagd om aanvullende machtigingen te geven naarmate u het aantal bereiken verhoogt.
+Gebruikers worden mogelijk gevraagd om aanvullende machtigingen te geven naarmate u het aantal bereiken verhoogt.
 
 ## <a name="known-issues"></a>Bekende problemen
 

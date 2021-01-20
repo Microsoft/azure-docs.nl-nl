@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: 181f645540a267d65b15a0345a61752a8a5f78fa
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: 079f176a741fa3423081cb96503691f0f2e2e7b2
+ms.sourcegitcommit: 949c0a2b832d55491e03531f4ced15405a7e92e3
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704725"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98541424"
 ---
 # <a name="tutorial-discover-google-cloud-platform-gcp-instances-with-server-assessment"></a>Zelfstudie: Google Cloud Platform-exemplaren (GCP) detecteren met serverevaluatie
 
@@ -40,7 +40,7 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 **Vereiste** | **Details**
 --- | ---
-**Apparaat** | U hebt een GCP-VM-exemplaar nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> - Windows Server 2016 is geïnstalleerd. Het apparaat wordt niet ondersteund op een machine met Windows Server 2019.<br/><br/> - 16 GB RAM, 8 vCPU's, ongeveer 80 GB opslagruimte en een externe virtuele switch.<br/><br/> - Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
+**Apparaat** | U hebt een GCP-VM-exemplaar nodig waarop het Azure Migrate-apparaat kan worden uitgevoerd. De machine moet aan de volgende voorwaarden voldoen:<br/><br/> - Windows Server 2016 is geïnstalleerd.<br/> _Het apparaat wordt niet ondersteund op een computer met Windows Server 2019_.<br/><br/> -16 GB RAM, 8 Vcpu's, ongeveer 80 GB aan schijf opslag en een externe virtuele switch.<br/><br/> - Een statisch of dynamisch IP-adres met internettoegang, hetzij rechtstreeks of via een proxy.
 **Windows VM-exemplaren** | Sta binnenkomende verbindingen op WinRM-poort 5985 (HTTP) toe, zodat het apparaat metagegevens over de configuratie en prestaties kan ophalen.
 **Linux VM-exemplaren** | Sta binnenkomende verbindingen op poort 22 (TCP) toe.
 
@@ -48,7 +48,7 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 Om een Azure Migrate-project te maken en het Azure Migrate-apparaat te registreren, hebt u een account nodig met:
 - Machtigingen op inzender- of eigenaarniveau voor een Azure-abonnement.
-- Machtigingen verlenen om Azure Active Directory-apps te registreren.
+- Machtigingen voor het registreren van Azure Active Directory-apps (AAD).
 
 Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw abonnement. Als u niet de eigenaar van het abonnement bent, kunt u met de eigenaar samenwerken om de volgende machtigingen toe te wijzen:
 
@@ -67,22 +67,24 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 
     ![Hiermee opent u de pagina Roltoewijzing toevoegen om een rol aan het account toe te wijzen](./media/tutorial-discover-gcp/assign-role.png)
 
-7. Zoek in de portal naar gebruikers en selecteer onder **Services** **Gebruikers**.
-8. Controleer onder **Gebruikersinstellingen** of Azure AD-gebruikers toepassingen kunnen registreren (standaard ingesteld op **Ja**).
+1. Als u het apparaat wilt registreren, heeft uw Azure-account **machtigingen nodig voor het registreren van Aad-apps.**
+1. Ga in azure Portal naar **Azure Active Directory**  >  **gebruikers**  >  **gebruikers instellingen**.
+1. Controleer onder **Gebruikersinstellingen** of Azure AD-gebruikers toepassingen kunnen registreren (standaard ingesteld op **Ja**).
 
     ![Verifiëren onder Gebruikersinstellingen of gebruikers Active Directory-apps kunnen registreren](./media/tutorial-discover-gcp/register-apps.png)
 
+1. Als de App-registraties-instellingen is ingesteld op Nee, vraagt u de Tenant/globale beheerder om de vereiste machtiging toe te wijzen. De Tenant/globale beheerder kan de rol van **toepassings ontwikkelaar** ook toewijzen aan een account om de registratie van de Aad-app toe te staan. [Meer informatie](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
 
 ## <a name="prepare-gcp-instances"></a>GCP-exemplaren voorbereiden
 
 Stel een account in dat het apparaat kan gebruiken om toegang te krijgen tot GCP-VM-exemplaren.
 
-- Voor Windows-servers
+- Voor **Windows-servers**:
     - Stel een lokaal gebruikersaccount in op computers die geen lid zijn van het domein en een domeinaccount op computers die geen lid zijn van het domein die u wilt toevoegen in de detectie. Voeg het gebruikersaccount toe aan de volgende groepen: 
         - Gebruikers van extern beheer
         - Prestatiemetergebruikers
         - Gebruikers prestatielogboek.
-- Voor Linux-servers:
+- Voor **Linux-servers**:
     - U hebt een hoofdaccount nodig op de Linux-servers die u wilt detecteren. Als u geen hoofdaccount kunt opgeven, raadpleegt u de instructies in de [ondersteuningsmatrix](migrate-support-matrix-physical.md#physical-server-requirements) voor een alternatief.
     - Azure Migrate gebruikt wachtwoordverificatie wanneer u AWS-instanties detecteert. AWS-instanties ondersteunen niet standaard wachtwoordverificatie. Voordat u een instantie kunt detecteren, moet u wachtwoordverificatie inschakelen.
         1. Aanmelden bij elke Linux-machine.
@@ -108,11 +110,12 @@ Stel als volgt een nieuw Azure Migrate-project in.
    ![Vakken voor projectnaam en regio](./media/tutorial-discover-gcp/new-project.png)
 
 7. Selecteer **Maken**.
-8. Wacht een paar minuten tot het Azure Migrate-project is geïmplementeerd.
-
-Het hulpprogramma **Azure Migrate: Serverevaluatie** wordt standaard toegevoegd aan het nieuwe project.
+8. Wacht enkele minuten totdat het Azure Migrate project is geïmplementeerd. De **Azure migrate:** het hulp programma voor Server evaluatie wordt standaard toegevoegd aan het nieuwe project.
 
 ![Pagina waarop wordt weergegeven dat het hulpprogramma Serverevaluatie standaard wordt toegevoegd](./media/tutorial-discover-gcp/added-tool.png)
+
+> [!NOTE]
+> Als u al een project hebt gemaakt, kunt u hetzelfde project gebruiken om extra apparaten te registreren om meer servers te detecteren en te evalueren. [Meer informatie](create-manage-projects.md#find-a-project)
 
 ## <a name="set-up-the-appliance"></a>Het apparaat instellen
 
@@ -123,17 +126,14 @@ Het Azure Migrate-apparaat is een licht apparaat dat door de Azure Migrate-serve
 
 [Meer informatie](migrate-appliance.md) over het Azure Migrate-apparaat.
 
-
-## <a name="appliance-deployment-steps"></a>Stappen voor implementatie van het apparaat
-
 Om het apparaat in te stellen, moet u het volgende doen:
-- Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
-- Download een zip-bestand met Azure Migrate-installatiescript uit de Azure-portal.
-- Pak de inhoud uit het zip-bestand uit. Start PowerShell-console met beheerdersbevoegdheden.
-- Voer het PowerShell-script uit om de webtoepassing voor het apparaat te starten.
-- Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
+1. Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal.
+1. Download een zip-bestand met Azure Migrate-installatiescript uit de Azure-portal.
+1. Pak de inhoud uit het zip-bestand uit. Start PowerShell-console met beheerdersbevoegdheden.
+1. Voer het PowerShell-script uit om de webtoepassing voor het apparaat te starten.
+1. Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
 
-### <a name="generate-the-azure-migrate-project-key"></a>Azure Migrate-projectsleutel genereren
+### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
 
 1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** selecteert u **Detecteren**.
 2. In **Computers detecteren** > **Zijn de computers gevirtualiseerd?** selecteert u **Fysiek of anders (AWS, GCP, Xen enzovoorts)** .
@@ -142,10 +142,9 @@ Om het apparaat in te stellen, moet u het volgende doen:
 5. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
 6. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
-### <a name="download-the-installer-script"></a>Download het installatiescript
+### <a name="2-download-the-installer-script"></a>2. het installatie script downloaden
 
 In **2: Download Azure Migrate-apparaat**, klik op **Downloaden**.
-
 
 ### <a name="verify-security"></a>Beveiliging controleren
 
@@ -170,7 +169,7 @@ Controleer of het zip-bestand veilig is voordat u het implementeert.
         Fysiek (85 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140338) | ae132ebc574caf231bf41886891040ffa7abbe150c8b50436818b69e58622276
  
 
-### <a name="run-the-azure-migrate-installer-script"></a>Het Azure Migrate-installatiescript uitvoeren
+### <a name="3-run-the-azure-migrate-installer-script"></a>3. Voer het Azure Migrate-installatie script uit
 Het installatiescript doet het volgende:
 
 - Installeert agents en een webtoepassing voor detectie en evaluatie van GCP-servers.
@@ -199,13 +198,11 @@ Voer het script als volgt uit:
 
 Als u problemen ondervindt, kunt u het script Logboeken openen op C:\ProgramData\Microsoft Azure\Logs\ AzureMigrateScenarioInstaller_<em>Timestamp</em>.log voor probleemoplossing.
 
-
-
 ### <a name="verify-appliance-access-to-azure"></a>Apparaattoegang tot Azure controleren
 
 Zorg ervoor dat de apparaat-VM verbinding kan maken met Azure-URL's voor [openbare](migrate-appliance.md#public-cloud-urls) en [overheids](migrate-appliance.md#government-cloud-urls)clouds.
 
-### <a name="configure-the-appliance"></a>Het apparaat configureren
+### <a name="4-configure-the-appliance"></a>4. het apparaat configureren
 
 Het apparaat voor de eerste keer instellen.
 
@@ -237,7 +234,6 @@ Het apparaat voor de eerste keer instellen.
 1. Als u bent aangemeld, gaat u terug naar het vorige tabblad in Apparaatconfiguratiebeheer.
 4. Als het Azure-gebruikersaccount dat wordt gebruikt voor logboekregistratie de juiste [machtigingen ](#prepare-an-azure-user-account) heeft voor de Azure-resources die tijdens het genereren van de sleutel zijn gemaakt, wordt de registratie van het apparaat gestart.
 5. Nadat het apparaat is geregistreerd, kunt u de registratiedetails zien door op **Details weergeven** te klikken.
-
 
 ## <a name="start-continuous-discovery"></a>Continue detectie starten
 

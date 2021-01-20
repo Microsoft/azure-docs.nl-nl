@@ -7,12 +7,12 @@ ms.service: key-vault
 ms.subservice: general
 ms.topic: tutorial
 ms.date: 09/25/2020
-ms.openlocfilehash: f0699ed065da4c63bc88945d75a866abcfbb9053
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: f4981036ca92f6efe2d3e23ea1f507a3a1f3c70a
+ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121359"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98234253"
 ---
 # <a name="tutorial-configure-and-run-the-azure-key-vault-provider-for-the-secrets-store-csi-driver-on-kubernetes"></a>Zelfstudie: De Azure Key Vault-provider voor het stuurprogramma voor het Secrets Store CSI-stuurprogramma configureren en uitvoeren op Kubernetes
 
@@ -37,6 +37,8 @@ In deze zelfstudie leert u het volgende:
 * Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 * Voordat u met deze zelfstudie begint, moet u [Azure CLI](/cli/azure/install-azure-cli-windows?view=azure-cli-latest) installeren.
+
+In deze zelf studie wordt ervan uitgegaan dat u door Azure Kubernetes service op Linux-knoop punten hebt.
 
 ## <a name="use-managed-identities"></a>Beheerde identiteiten gebruiken
 
@@ -77,6 +79,8 @@ Voltooi de secties 'Een resource groep maken', 'AKS-cluster maken' en 'Verbindin
     ![Schermopname van de Azure CLI met de waarden voor principalId en clientId gemarkeerd](../media/kubernetes-key-vault-2.png) ![Schermopname van de Azure CLI met de waarden voor subscriptionId en nodeResourceGroup gemarkeerd](../media/kubernetes-key-vault-3.png)
     
 ## <a name="install-helm-and-the-secrets-store-csi-driver"></a>Helm en het stuurprogramma Secrets Store CSI installeren
+> [!NOTE]
+> Onder installatie werkt alleen op AKS in Linux. Zie [Azure Key Vault provider voor geheimen Store CSI-stuur programma](https://github.com/Azure/secrets-store-csi-driver-provider-azure) voor meer informatie over geheimen van Secrets Store. 
 
 U moet [Helm](https://helm.sh/docs/intro/install/) installeren om het stuurprogramma Secrets Store CSI te kunnen installeren.
 

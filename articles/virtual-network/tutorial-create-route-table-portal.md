@@ -13,12 +13,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/13/2020
 ms.author: kumud
-ms.openlocfilehash: d630a41f9b83a852605ffad2a85ad6dd14bbac73
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: e047f46e110e1f7b1d544545c80bd1097ae65167
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86079646"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221915"
 ---
 # <a name="tutorial-route-network-traffic-with-a-route-table-using-the-azure-portal"></a>Zelfstudie: Netwerkverkeer routeren met een routetabel met behulp van de Azure-portal
 
@@ -67,7 +67,7 @@ Virtuele netwerkapparaten (NVA's) zijn virtuele machines die ondersteuning biede
 
     Selecteer vervolgens **Volgende: Schijven >** .
 
-1. Selecteer onder **Schijven**de instellingen die geschikt zijn voor uw behoeften en selecteer vervolgens **Volgende: Netwerken >** .
+1. Selecteer onder **Schijven** de instellingen die geschikt zijn voor uw behoeften en selecteer vervolgens **Volgende: Netwerken >** .
 
 1. Onder **Netwerk**:
 
@@ -169,7 +169,7 @@ Virtuele netwerkapparaten (NVA's) zijn virtuele machines die ondersteuning biede
 
 1. Kies in de lijst met subnetten van het virtuele netwerk de optie **Openbaar**.
 
-1. Kies in **Routeringstabel**de routeringstabel die u heeft gemaakt (**myRouteTablePublic**), en selecteer vervolgens **Opslaan** om uw routeringstabel aan het *openbare* subnet te koppelen.
+1. Kies in **Routeringstabel** de routeringstabel die u heeft gemaakt (**myRouteTablePublic**), en selecteer vervolgens **Opslaan** om uw routeringstabel aan het *openbare* subnet te koppelen.
 
     ![De routeringstabel, de subnetlijst, het virtuele netwerk, Azure-portal](./media/tutorial-create-route-table-portal/associate-route-table.png)
 
@@ -195,7 +195,7 @@ Schakel vervolgens Doorsturen via IP in voor uw nieuwe virtuele NVA-machine *myV
 
 ## <a name="create-public-and-private-virtual-machines"></a>Virtuele machines maken, openbaar en privé
 
-Maak een openbare VM en een privé-VM in het virtuele netwerk. Later gebruikt u deze om te zien dat het *Openbare* subnetverkeer in Azure via de NVA naar het *Privé*subnet wordt gerouteerd.
+Maak een openbare VM en een privé-VM in het virtuele netwerk. Later gebruikt u deze om te zien dat het *Openbare* subnetverkeer in Azure via de NVA naar het *Privé* subnet wordt gerouteerd.
 
 Als u de openbare VM en de privé-VM wilt maken, volgt u de stappen in [Een NVA maken](#create-an-nva). U hoeft niet te wachten tot de implementatie is voltooid of naar de VM-resource te gaan. U gebruikt voornamelijk dezelfde instellingen, behalve zoals hieronder wordt beschreven.
 
@@ -314,7 +314,7 @@ Eerst gaan we de routering van het netwerkverkeer testen vanaf de VM *myVmPublic
     Trace complete.
     ```
 
-    U ziet dat de eerste hop naar 10.0.2.4 is, het privé IP-adres van het NVA. De tweede hop is naar het privé- IP-adres van de VM *myVmPrivate*: 10.0.1.4. Eerder hebt u de route toegevoegd aan de routetabel *myRouteTablePublic* en deze gekoppeld aan het *Openbare* subnet. Als gevolg hiervan is het verkeer in Azure verzonden via de NVA en niet rechtstreeks via het *Privé*subnet.
+    U ziet dat de eerste hop naar 10.0.2.4 is, het privé IP-adres van het NVA. De tweede hop is naar het privé- IP-adres van de VM *myVmPrivate*: 10.0.1.4. Eerder hebt u de route toegevoegd aan de routetabel *myRouteTablePublic* en deze gekoppeld aan het *Openbare* subnet. Als gevolg hiervan is het verkeer in Azure verzonden via de NVA en niet rechtstreeks via het *Privé* subnet.
 
 1. Sluit de externe bureaubladsessie met de VM *myVmPublic*. U houdt nog verbinding met de VM *myVmPrivate*.
 
@@ -361,4 +361,4 @@ Hoewel u veel Azure-resources binnen een virtueel netwerk kunt implementeren, ku
 > [Netwerktoegang tot PaaS-resources beperken](tutorial-restrict-network-access-to-resources.md)
 
 > [!NOTE] 
-> Azure-services kosten geld. Azure Cost Management helpt u om budgetten op te stellen en waarschuwingen te configureren om uw uitgaven onder controle te houden. Analyseer, beheer en optimaliseer uw Azure-kosten met Cost Management. Raadpleeg voor meer informatie de [snelstartgids over de analyse van uw kosten](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+> Azure-services kosten geld. Azure Cost Management helpt u om budgetten op te stellen en waarschuwingen te configureren om uw uitgaven onder controle te houden. Analyseer, beheer en optimaliseer uw Azure-kosten met Cost Management. Raadpleeg voor meer informatie de [snelstartgids over de analyse van uw kosten](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).

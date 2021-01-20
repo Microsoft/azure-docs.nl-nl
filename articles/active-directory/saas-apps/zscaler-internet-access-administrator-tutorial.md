@@ -9,26 +9,22 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 01/17/2019
+ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: d74057e32b6f16bdb6dae3d96ac46c5cc93571aa
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
-ms.translationtype: HT
+ms.openlocfilehash: c3a2f2b04827fac06a0729e45b46765928aedd34
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97609102"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539790"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-internet-access-administrator"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler Internet Access Administrator
 
-In deze zelfstudie leert u hoe u Zscaler Internet Access Administrator integreert met Azure Active Directory (Azure AD).
-Als u Zscaler Internet Access Administrator integreert met Azure AD hebt u de volgende voordelen:
+In deze zelf studie leert u hoe u Zscaler Internet Access Administrator integreert met Azure Active Directory (Azure AD). Wanneer u Zscaler Internet Access-beheerder integreert met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure AD bepalen wie toegang heeft tot Zscaler Internet Access Administrator.
-* U kunt inschakelen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Zscaler Internet Access Administrator (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Controle in azure AD die toegang heeft tot Zscaler Internet Access-beheerder.
+* Stel in dat uw gebruikers automatisch worden aangemeld voor Zscaler Internet Access Administrator met hun Azure AD-accounts.
+* Uw accounts op een centrale locatie beheren: Azure Portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -50,59 +46,37 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Als u de integratie van Zscaler Internet Access Administrator met Azure AD wilt configureren, dient u Zscaler Internet Access Administrator vanuit de galerie toe te voegen aan uw lijst met beheerde SaaS-apps.
 
-**Als u Zscaler Internet Access Administrator vanuit de galerie wilt toevoegen, voert u de volgende stappen uit:**
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ **Zscaler Internet Access Administrator** in het zoekvak van de sectie **toevoegen vanuit de galerie** .
+1. Selecteer **Zscaler Internet Access Administrator** in het resultaten paneel en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory**-pictogram.
+## <a name="configure-and-test-azure-ad-sso-for-zscaler-internet-access-administrator"></a>Azure AD SSO configureren en testen voor Zscaler Internet Access-beheerder
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+Configureer en test Azure AD SSO met Zscaler Internet Access-beheerder met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Zscaler Internet Access Administrator.
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Zscaler Internet Access-beheerder:
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
+    1. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
+2. **[CONFIGUREER SSO van Zscaler Internet Access Administrator](#configure-zscaler-internet-access-administrator-sso)** -om de instellingen voor één Sign-On te configureren aan de kant van de toepassing.
+    1. **[Testgebruiker van Zscaler Internet Access Administrator maken](#create-zscaler-internet-access-administrator-test-user)** : als u een equivalent van Britta Simon in Zscaler Internet Access Administrator wilt hebben dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
+6. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-4. Typ **Zscaler Internet Access Administrator** in het zoekvak, selecteer **Zscaler Internet Access Administrator** in het deelvenster met resultaten en klik op de knop **Toevoegen** om de toepassing toe te voegen.
+1. Zoek in het Azure Portal op de pagina **Zscaler Internet Access Administrator** Application Integration de sectie **Manage** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-     ![Zscaler Internet Access Administrator in de lijst met resultaten](common/search-new-app.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In deze sectie gaat u eenmalige aanmelding van Azure AD configureren en testen met Zscaler Internet Access Administrator op basis van testgebruiker **Britta Simon**.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Zscaler Internet Access Administrator tot stand is gebracht.
-
-Als u eenmalige aanmelding van Azure AD wilt configureren en testen met Zscaler Internet Access Administrator, dient u de volgende bouwstenen te voltooien:
-
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding van Zscaler Internet Access Administrator configureren](#configure-zscaler-internet-access-administrator-single-sign-on)** : als u de instellingen voor eenmalige aanmelding aan de clientzijde wil configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Testgebruiker van Zscaler Internet Access Administrator maken](#create-zscaler-internet-access-administrator-test-user)** : als u een equivalent van Britta Simon in Zscaler Internet Access Administrator wilt hebben dat is gekoppeld aan de Azure AD-weergave van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Internet Access Administrator wilt configureren, voert u de volgende stappen uit:
-
-1. Ga in de [Azure-portal](https://portal.azure.com/) naar de pagina voor toepassingsintegratie van **Zscaler Internet Access Administrator** en selecteer **Eenmalige aanmelding**.
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
-
-4. Klik op de pagina **Eenmalige aanmelding met SAML instellen** u de knop **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Informatie over eenmalige aanmelding van Zscaler Internet Access Administrator-domein en URL's](common/idp-intiated.png)
+1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
     a. Typ in het tekstvak **Id** een URL overeenkomstig wat u nodig hebt:
 
@@ -138,10 +112,6 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Internet A
 
     a. Klik op **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
 
-    ![Schermopname die Gebruikersclaims toont met de optie om een nieuwe claim toe te voegen.](./common/new-save-attribute.png)
-    
-    ![Schermopname die het dialoogvenster Gebruikersclaims beheren toont, waarin u de beschreven waarden kunt invoeren.](./common/new-attribute-details.png)
-
     b. Selecteer de kenmerkwaarde in de lijst **Bronkenmerk**.
 
     c. Klik op **OK**.
@@ -149,7 +119,7 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Internet A
     d. Klik op **Opslaan**.
 
     > [!NOTE]
-    > Klik [hier](../develop/active-directory-enterprise-app-role-management.md) als u wilt weten hoe u rollen in Azure AD moet configureren
+    > Klik [hier](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) als u wilt weten hoe u rollen in Azure AD moet configureren.
 
 7. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -159,13 +129,32 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Internet A
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    a. Aanmeldings-URL
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-    b. Azure AD-id
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-    c. Afmeldings-URL
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
-### <a name="configure-zscaler-internet-access-administrator-single-sign-on"></a>Eenmalige aanmelding van Zscaler Internet Access Administrator configureren
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie schakelt u B. Simon in voor het gebruik van eenmalige aanmelding van Azure door toegang te verlenen tot Zscaler Internet Access-beheerder.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst toepassingen de optie **Zscaler Internet Access-beheerder**.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u de rollen hebt ingesteld zoals hierboven beschreven, kunt u deze selecteren in de vervolgkeuzelijst **Selecteer een rol**.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+
+## <a name="configure-zscaler-internet-access-administrator-sso"></a>Eenmalige aanmelding voor Zscaler Internet Access-beheerder configureren
 
 1. Meld u in een ander browservenster als beheerder aan bij de beheerinterface van Zscaler Internet Access Administrator.
 
@@ -187,57 +176,6 @@ Als u integratie tussen eenmalige aanmelding van Azure AD met Zscaler Internet A
 
     b. Klik op **Activeren**.
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-  
-    b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
-    Bijvoorbeeld: BrittaSimon@contoso.com
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create**.
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-In deze sectie hebt u Britta Simon in staat gesteld gebruik te maken van eenmalige aanmelding van Azure door haar toegang te geven tot Zscaler Internet Access Administrator.
-
-1. Selecteer in de Azure-portal **Bedrijfstoepassingen**, selecteer **Alle toepassingen** en selecteer vervolgens **Zscaler Internet Access Administrator**.
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Typ **Zscaler Internet Access Administrator** in de lijst met toepassingen en selecteer deze.
-
-    ![Koppeling Zscaler Internet Access Administrator in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
-
 ### <a name="create-zscaler-internet-access-administrator-test-user"></a>Testgebruiker van Zscaler Internet Access Administrator maken
 
 Het doel van deze sectie is om in Zscaler Internet Access Administrator een gebruiker te maken met de naam Britta Simon. TZscaler Internet Access Administrator biedt geen ondersteuning voor Just-In-Time inrichting voor eenmalige aanmelding bij Administrator. U moet handmatig een Administrator-account maken.
@@ -245,16 +183,14 @@ Instructies hiervoor vindt u in deze documentatie van Zscaler:
 
 https://help.zscaler.com/zia/adding-admins
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen
+### <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-Wanneer u in het toegangsvenster op de tegel Zscaler Internet Access Administrator klikt, wordt u automatisch aangemeld bij de instantie van Zscaler Internet Access Administrator waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik op test deze toepassing in Azure Portal en meld u automatisch aan bij de Zscaler Internet Access-beheerder waarvoor u de SSO hebt ingesteld.
 
-## <a name="additional-resources"></a>Aanvullende resources
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Zscaler Internet toegangs beheer in de mijn apps klikt, moet u automatisch worden aangemeld bij de Zscaler Internet Access-beheerder waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+## <a name="next-steps"></a>Volgende stappen
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Zodra u Zscaler Internet Access-beheerder hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

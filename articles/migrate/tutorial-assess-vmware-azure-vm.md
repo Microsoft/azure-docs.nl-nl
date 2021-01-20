@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
-ms.openlocfilehash: aad1e2a1c8d7ce6a1b6219c42893b1f4a59c6f42
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
-ms.translationtype: HT
+ms.openlocfilehash: e7251f8b83110bc24a7ba3d7b078993b39a2c001
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753141"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98566815"
 ---
 # <a name="tutorial-assess-vmware-vms-for-migration-to-azure-vms"></a>Zelfstudie: VMware-VM's evalueren voor migratie naar Azure-VM's
 
@@ -69,14 +69,13 @@ Voer als volgt een evaluatie uit:
     - Als u machines hebt gedetecteerd met behulp van het apparaat, selecteert u **Machines die zijn gedetecteerd via een Azure Migrate-apparaat**.
     - Selecteer **Geïmporteerde machines** als u machines hebt gedetecteerd met behulp van een geïmporteerd CSV-bestand. 
     
-1. Geef een naam op voor de evaluatie. 
-1. Klik op **Alles weergeven** om de evaluatie-eigenschappen te controleren.
+1. Klik op **bewerken** om de eigenschappen van de evaluatie te bekijken.
 
     ![Locatie van de knop Alle weergeven om de eigenschappen van de evaluatie te bekijken](./media/tutorial-assess-vmware-azure-vm/assessment-name.png)
 
 1. In **Evaluatie-eigenschappen** > **Doeleigenschappen**:
     - Geef onder **Doelregio** de Azure-regio op waarnaar u de migratie wilt uitvoeren.
-        - De aanbevelingen voor grootte en kosten zijn gebaseerd op de locatie die u opgeeft.
+        - De aanbevelingen voor grootte en kosten zijn gebaseerd op de locatie die u opgeeft. Zodra u de doel locatie van standaard wijzigt, wordt u gevraagd om **gereserveerde instanties** en **VM-serie** op te geven.
         - In Azure Government kunt u evaluaties richten op [deze regio's](migrate-support-matrix.md#supported-geographies-azure-government)
     - In **Opslagtype**,
         - Als u gegevens op basis van prestaties in de evaluatie wilt gebruiken, selecteert u **Automatisch** zodat Azure Migrate een opslagtype aanbeveelt op basis van de IOPS en doorvoer van de schijf.
@@ -84,17 +83,21 @@ Voer als volgt een evaluatie uit:
     - Geef in **Gereserveerde instanties** op of u reserveringsinstanties voor de virtuele machine wilt gebruiken wanneer u deze migreert.
         - Als u voor het gebruik van een gereserveerde instantie kiest, kunt u niets opgeven voor **Korting (%)** of **VM-uptime**. 
         - [Meer informatie](https://aka.ms/azurereservedinstances).
- 7. In **VM-grootte**:
- 
-    - Selecteer onder **Criterium voor het aanpassen van de grootte** of u de evaluatie wilt baseren op configuratiegegevens/metagegevens van de machine of op gegevens op basis van de prestaties. Als u prestatiegegevens gebruikt:
+ 1. In **VM-grootte**:
+     - Selecteer onder **Criterium voor het aanpassen van de grootte** of u de evaluatie wilt baseren op configuratiegegevens/metagegevens van de machine of op gegevens op basis van de prestaties. Als u prestatiegegevens gebruikt:
         - Geef onder **Prestatiegeschiedenis** de gegevensduur aan waarop u de evaluatie wilt baseren
         - Geef onder **Percentielgebruik** de percentielwaarde op die u wilt gebruiken voor de prestatiesteekproef. 
     - Geef onder **VM-reeks** de reeks virtuele Azure-machines op waarop u zich wilt baseren.
         - Als u een evaluatie op basis van prestaties gebruikt, stelt Azure Migrate een waarde voor u voor.
         - Pas de instellingen zo nodig aan. Als u bijvoorbeeld geen productieomgeving hebt die naar de A-serie van virtuele machines in Azure gaat, kunt u de A-serie uitsluiten van de reeks.
-    - Geef onder **Comfortfactor** de buffer op die u tijdens de evaluatie wilt gebruiken. Deze houdt rekening met factoren zoals seizoensgebonden gebruik, een korte prestatiegeschiedenis en een mogelijke gebruikstoename in de toekomst. Als u bijvoorbeeld een comfortfactor van twee gebruikt: **Onderdeel** | **Effectief gebruik** | **Comfortfactor toevoegen (2,0)** Kerngeheugens | 2 | 4 geheugen | 8 GB | 16 GB     
+    - Geef onder **Comfortfactor** de buffer op die u tijdens de evaluatie wilt gebruiken. Deze houdt rekening met factoren zoals seizoensgebonden gebruik, een korte prestatiegeschiedenis en een mogelijke gebruikstoename in de toekomst. Als u bijvoorbeeld een comfortfactor van twee gebruikt:
+    
+        **Onderdeel** | **Effectief gebruik** | **Comfortfactor toevoegen (2,0)**
+        --- | --- | ---
+        Kernen | 2  | 4
+        Geheugen | 8 GB | 16 GB
    
-8. Onder **Prijzen**:
+1. Onder **Prijzen**:
     - Geef onder **Aanbieding** de [Azure-aanbieding](https://azure.microsoft.com/support/legal/offer-details/) op als u bent ingeschreven. Serverevaluatie schat de kosten voor die aanbieding.
     - Selecteer bij **Valuta** de factureringsvaluta voor uw account.
     - Voeg onder **Korting (%)** een abonnementspecifieke korting toe die u bovenop de Azure-aanbieding ontvangt. De standaardinstelling is 0%.
@@ -102,23 +105,30 @@ Voer als volgt een evaluatie uit:
         - Dit is handig voor virtuele Azure-machines die niet continu worden uitgevoerd.
         - Kostenramingen zijn gebaseerd op de opgegeven duur.
         - De standaardwaarde is 31 dagen per maand en 24 uur per dag.
-
     - Geef onder **EA-abonnement** op of u rekening wilt houden met een EA-abonnementskorting (Enterprise Overeenkomst) voor de schatting van de kosten. 
     - Geef onder **Azure Hybrid Benefit** op of u al een Windows Server-licentie hebt. Als u dit wel doet en de actieve softwaregarantie van Windows Server-abonnementen deze dekt, kunt u [Azure Hybrid Benefit](https://azure.microsoft.com/pricing/hybrid-use-benefit/) aanvragen wanneer u licenties naar Azure brengt.
 
-9. Klik op **Opslaan** als u wijzigingen aanbrengt.
+1. Klik op **Opslaan** als u wijzigingen aanbrengt.
 
     ![Evaluatie-eigenschappen](./media/tutorial-assess-vmware-azure-vm/assessment-properties.png)
 
-10. Klik onder **Servers evalueren** op **Volgende**.
-11. Selecteer onder **Machines selecteren om te evalueren** **Nieuwe maken** en geef een groepsnaam op. 
-12. Selecteer het apparaat en selecteer de virtuele machines die u wilt toevoegen aan de groep. Klik op **Volgende**.
+1. In **servers beoordelen** > klikt u op **volgende**.
 
+1. In **machines selecteren om**  >  de **beoordelings naam** te beoordelen > een naam opgeven voor de evaluatie. 
+
+1. In **selecteren of een groep maken** > selecteert u **nieuwe maken** en geeft u een groeps naam op. 
+    
      ![Virtuele machines toevoegen aan een groep](./media/tutorial-assess-vmware-azure-vm/assess-group.png)
 
-13. Controleer de details van de evaluatie onder **Controleren + evaluatie maken en klik op **Evaluatie maken** om de groep te maken en de evaluatie uit te voeren.
+
+1. Selecteer het apparaat en selecteer de virtuele machines die u wilt toevoegen aan de groep. Klik op **Volgende**.
 
 
+1. Controleer de details van de evaluatie onder **Controleren + evaluatie maken** en klik op **Evaluatie maken** om de groep te maken en de evaluatie uit te voeren.
+
+1. Nadat de evaluatie is gemaakt, kunt u deze bekijken in **Servers** > **Azure Migrate: Serverevaluatie** > **Evaluaties**.
+
+1. Klik op **Evaluatie exporteren** om deze te downloaden als een Excel-bestand.
     > [!NOTE]
     > Voor evaluaties op basis van prestaties raden we u aan om minstens een dag na het starten van de detectie te wachten voordat u een evaluatie maakt. Dit biedt tijd voor het verzamelen van betrouwbaarder prestatiegegevens. In het ideale geval wacht u na het starten van de detectie op de prestatieduur die u opgeeft (dag/week/maand) voor een classificatie met hoge betrouwbaarheid.
 

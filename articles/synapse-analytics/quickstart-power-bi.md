@@ -9,12 +9,12 @@ ms.subservice: business-intelligence
 ms.date: 10/27/2020
 ms.author: jocaplan
 ms.reviewer: jrasnick
-ms.openlocfilehash: 996233e2526b8b69c13abd4340ead4c5e2175916
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 9c63e5e24495f373f288d2789780a6c671a7cc24
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450677"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218396"
 ---
 # <a name="quickstart-linking-a-power-bi-workspace-to-a-synapse-workspace"></a>Quickstart: Een Power BI-werkruimte koppelen aan een Synapse-werkruimte
 
@@ -25,7 +25,7 @@ Als u geen Azure-abonnement hebt, [maakt u een gratis account voordat u begint](
 ## <a name="prerequisites"></a>Vereisten
 
 - [Een Azure Synapse-werkruimte en een gekoppeld opslagaccount maken](quickstart-create-workspace.md)
-- [Een Power BI Professional- of Premium-werkruimte](https://docs.microsoft.com/power-bi/service-create-the-new-workspaces)
+- [Een Power BI Professional- of Premium-werkruimte](/power-bi/service-create-the-new-workspaces)
 
 ## <a name="link-power-bi-workspace-to-your-synapse-workspace"></a>Uw Power BI-werkruimte koppelen aan uw Synapse-werkruimte
 

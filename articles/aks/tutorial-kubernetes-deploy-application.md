@@ -3,14 +3,14 @@ title: 'Zelfstudie voor Kubernetes in Azure: een toepassing implementeren'
 description: In deze zelfstudie over Azure Kubernetes Service (AKS) gaat u een toepassing met meerdere containers in uw cluster implementeren met behulp van een aangepaste installatiekopie die is opgeslagen in Azure Container Registry.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/12/2021
 ms.custom: mvc
-ms.openlocfilehash: 8114aa0b6c2483d543376727a44d14041ed02b37
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: a0de097a545a831e39a671fe4cf5eadcd336ce24
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576486"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250176"
 ---
 # <a name="tutorial-run-applications-in-azure-kubernetes-service-aks"></a>Zelfstudie: Toepassingen uitvoeren in AKS (Azure Kubernetes Service)
 
@@ -21,7 +21,7 @@ Kubernetes biedt een gedistribueerd platform voor toepassingen in containers. U 
 > * Een toepassing in Kubernetes uitvoeren
 > * De toepassing testen
 
-In aanvullende zelfstudies wordt deze toepassing uitgebreid en bijgewerkt.
+In latere zelf studies wordt deze toepassing uitgeschaald en bijgewerkt.
 
 In deze snelstart wordt ervan uitgegaan dat u een basisbegrip hebt van Kubernetes-concepten. Zie [Kubernetes-kernconcepten voor Azure Kubernetes Service (AKS)][kubernetes-concepts] voor meer informatie.
 
@@ -49,7 +49,7 @@ Het voorbeeldmanifestbestand van de Git-opslagplaats dat in de eerste zelfstudie
 vi azure-vote-all-in-one-redis.yaml
 ```
 
-Vervang *microsoft* door de naam van de ACR-aanmeldingsserver. De naam van de installatiekopie vindt u op regel 51 van het manifestbestand. In het volgende voorbeeld ziet u de standaardnaam van de installatiekopie:
+Vervang *microsoft* door de naam van de ACR-aanmeldingsserver. De naam van de installatie kopie vindt u in regel 60 van het manifest bestand. In het volgende voorbeeld ziet u de standaardnaam van de installatiekopie:
 
 ```yaml
 containers:
@@ -77,7 +77,7 @@ kubectl apply -f azure-vote-all-in-one-redis.yaml
 
 In de volgende voorbeelduitvoer ziet u dat de resources zijn gemaakt in het AKS-cluster:
 
-```
+```console
 $ kubectl apply -f azure-vote-all-in-one-redis.yaml
 
 deployment "azure-vote-back" created
@@ -98,19 +98,19 @@ kubectl get service azure-vote-front --watch
 
 Eerst wordt het *Extern IP-adres* voor de service *azure-vote-front* weergegeven als *in behandeling*:
 
-```
+```output
 azure-vote-front   LoadBalancer   10.0.34.242   <pending>     80:30676/TCP   5s
 ```
 
 Zodra het *EXTERNAL-IP*-adres is gewijzigd van *in behandeling* in een echt openbaar IP-adres, gebruikt u `CTRL-C` om het controleproces van `kubectl` te stoppen. In de volgende voorbeelduitvoer ziet u een geldig openbaar IP-adres dat aan de service is toegewezen:
 
-```
+```output
 azure-vote-front   LoadBalancer   10.0.34.242   52.179.23.131   80:30676/TCP   67s
 ```
 
 Open een webbrowser naar het externe IP-adres van uw service als u de toepassing in actie wilt zien:
 
-![Afbeelding van Kubernetes-cluster in Azure](media/container-service-kubernetes-tutorials/azure-vote.png)
+:::image type="content" source="./media/container-service-kubernetes-tutorials/azure-vote.png" alt-text="Scherm opname van de container afbeelding Azure stem-app die wordt uitgevoerd in een AKS-cluster dat wordt geopend in een lokale webbrowser" lightbox="./media/container-service-kubernetes-tutorials/azure-vote.png":::
 
 Als de toepassing niet is geladen, kan dit zijn veroorzaakt door een autorisatieprobleem met het register van de installatiekopie. Als u de status van uw containers wilt bekijken, gebruikt u de opdracht `kubectl get pods`. Zie [Verifiëren bij Azure Container Registry vanuit Azure Kubernetes Service](cluster-container-registry-integration.md) als de containerinstallatiekopieën niet kunnen worden opgehaald.
 

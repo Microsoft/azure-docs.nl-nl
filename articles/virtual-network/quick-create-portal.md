@@ -11,12 +11,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 03/05/2020
 ms.author: kumud
-ms.openlocfilehash: dfeb9c6bc3dbe33881fc51ccb08a776b827dfe9c
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: cc3ba3a0519400368e0cbfec7abe2d9bd1731b34
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "86082434"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217631"
 ---
 # <a name="quickstart-create-a-virtual-network-using-the-azure-portal"></a>Quickstart: Een virtueel netwerk maken met Azure Portal
 
@@ -225,4 +225,4 @@ Zie [Een virtueel netwerk maken, wijzigen of verwijderen](manage-virtual-network
 Azure staat standaard veilige communicatie tussen VM’s toe. Daarentegen zijn alleen inkomende verbindingen met extern bureaublad met Windows-VM's via internet toegestaan. Zie [Netwerkverkeer filteren](tutorial-filter-network-traffic.md) voor meer informatie over typen VM-netwerkcommunicatie.
 
 > [!NOTE] 
-> Azure-services kosten geld. Azure Cost Management helpt u om budgetten op te stellen en waarschuwingen te configureren om uw uitgaven onder controle te houden. Analyseer, beheer en optimaliseer uw Azure-kosten met Cost Management. Raadpleeg voor meer informatie de [snelstartgids over de analyse van uw kosten](https://docs.microsoft.com/azure/cost-management-billing/costs/quick-acm-cost-analysis?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).
+> Azure-services kosten geld. Azure Cost Management helpt u om budgetten op te stellen en waarschuwingen te configureren om uw uitgaven onder controle te houden. Analyseer, beheer en optimaliseer uw Azure-kosten met Cost Management. Raadpleeg voor meer informatie de [snelstartgids over de analyse van uw kosten](../cost-management-billing/costs/quick-acm-cost-analysis.md?WT.mc_id=costmanagementcontent_docsacmhorizontal_-inproduct-learn).

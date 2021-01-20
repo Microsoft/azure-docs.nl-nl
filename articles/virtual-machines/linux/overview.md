@@ -8,12 +8,12 @@ ms.workload: infrastructure
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 54982189a5da584c7daf66855ffb655e403a455a
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: a2145c217c19e80c2ca70880e0f9b01ae2ba140e
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96500509"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98202569"
 ---
 # <a name="linux-virtual-machines-in-azure"></a>Virtuele Linux-machines in Azure
 
@@ -50,7 +50,7 @@ In deze tabel staan enkele manieren om een lijst met beschikbare locaties te ver
 | Azure Portal |Selecteer een locatie in de lijst bij het maken van een VM. |
 | Azure PowerShell |Gebruik de opdracht [Get-AzLocation](/powershell/module/az.resources/get-azlocation). |
 | REST-API |Gebruik de bewerking [Locaties vermelden](/rest/api/resources/subscriptions). |
-| Azure CLI |Gebruik de bewerking [az account list-locations](/cli/azure/account?view=azure-cli-latest). |
+| Azure CLI |Gebruik de bewerking [az account list-locations](/cli/azure/account). |
 
 ### <a name="singapore-data-residency"></a>Gegevenslocatie Singapore
 
@@ -60,7 +60,7 @@ In Azure is de functie die het mogelijk maakt om klantgegevens in één regio op
 Voor Azure is een toonaangevende serviceovereenkomst (SLA) van 99,9% aangekondigd voor één VM-instantie. Hiervoor geldt wel als voorwaarde dat de virtuele machine wordt geïmplementeerd met Premium-opslag voor alle schijven.  Als u wilt dat uw VM-implementatie in aanmerking komt voor de SLA van 99,95%, moet u bovendien een beschikbaarheidsset maken met ten minste twee VM's waarop uw workload wordt uitgevoerd. Dit zorgt ervoor dat uw VM's worden verdeeld over meerdere foutdomeinen in de Azure-datacenters en worden geïmplementeerd op hosts met verschillende onderhoudsvensters. In de volledige [Azure SLA](https://azure.microsoft.com/support/legal/sla/virtual-machines/) wordt de gegarandeerde beschikbaarheid van Azure als geheel uitgelegd.
 
 ## <a name="vm-size"></a>VM-grootte
-De [grootte](../sizes.md?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) van de VM die u gebruikt, wordt bepaald door de workload die u wilt uitvoeren. De grootte die u vervolgens kiest, bepaalt factoren als processorsnelheid, geheugen en opslagcapaciteit. Azure biedt een groot aantal verschillende grootten voor verschillende manieren van gebruik.
+De [grootte](../sizes.md) van de VM die u gebruikt, wordt bepaald door de workload die u wilt uitvoeren. De grootte die u vervolgens kiest, bepaalt factoren als processorsnelheid, geheugen en opslagcapaciteit. Azure biedt een groot aantal verschillende grootten voor verschillende manieren van gebruik.
 
 Azure rekent een [uurprijs](https://azure.microsoft.com/pricing/details/virtual-machines/linux/) op basis van de grootte en het besturingssysteem van de VM. Voor niet-hele uren worden alleen de minuten van gebruik in rekening gebracht. De opslag wordt afzonderlijk berekend en in rekening gebracht.
 

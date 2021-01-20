@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: pipeline
 ms.topic: tutorial
-ms.date: 10/27/2020
-ms.openlocfilehash: af01d5b5e424dd5ea229115f7aa3570d0b7cd511
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.date: 12/31/2020
+ms.openlocfilehash: 2ea7c3c440fcf95e4512464333efe8461788bceb
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92744926"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219399"
 ---
 # <a name="integrate-with-pipelines"></a>Integreren met pijplijnen
 
@@ -26,14 +26,19 @@ In deze zelfstudie leert u hoe u pijplijnen en activiteiten kunt integreren met 
 U kunt een groot aantal verschillende taken in Azure Synapse integreren.
 
 1. Ga in Synapse Studio naar de hub **Integreren**.
-1. Selecteer **+**  > **Pijplijn** om een nieuwe pijplijn te maken.
-1. Ga naar de hub **Ontwikkelen** en selecteer een van de notebooks die u eerder hebt gemaakt.
-1. Sleep de notebook naar de pijplijn ( **Opmerking** : De stap Importmodules toevoegen aan notebook, zoals aangegeven in het [document](https://docs.microsoft.com/azure/synapse-analytics/spark/synapse-spark-sql-pool-import-export#transfer-data-to-or-from-a-sql-pool-attached-with-the-workspace), die vereist zijn tijdens de uitvoering vanaf de pijplijn)
+1. Selecteer **+**  > **Pijplijn** om een nieuwe pijplijn te maken. Klik op het nieuwe pijplijn object om de ontwerp functie voor pijp lijnen te openen.
+1. Vouw onder **activiteiten** de map **Synapse** uit en sleep een **notebook** -object naar de ontwerp functie.
+1. Selecteer het tabblad **instellingen** van de eigenschappen van de notitieblok activiteit. Gebruik de vervolg keuzelijst om een notitie blok in uw huidige Synapse-werk ruimte te selecteren. 
 1. Selecteer in de pijplijn **Trigger toevoegen** > **Nieuw/bewerken**.
 1. In **Trigger kiezen** selecteert u **Nieuw** en stelt u **Terugkeerpatroon** in op Elk uur.
 1. Selecteer **OK**. 
-1. Selecteer **Alles publiceren**.
-1. Als u de pijplijn onmiddellijk wilt uitvoeren zonder te wachten op het volgende uur, selecteert u **Trigger toevoegen** > **Nu activeren**.
+1. Selecteer **Alles publiceren**. 
+
+
+## <a name="monitor-pipeline"></a>De pijplijn bewaken
+
+1. Zodra de pijp lijn is gepubliceerd, kunt u de pijp lijn onmiddellijk laten uitvoeren, zonder te wachten op het volgende uur, selecteert u nu **trigger trigger toevoegen**  >  .
+1. Ga in Synapse Studio naar de **monitor** hub en selecteer **pijplijn** uitvoeringen om de voortgang van de uitvoering van de pijp lijn te bewaken.
 
 
 
@@ -41,4 +46,3 @@ U kunt een groot aantal verschillende taken in Azure Synapse integreren.
 
 > [!div class="nextstepaction"]
 > [Gegevens visualiseren met Power BI](get-started-visualize-power-bi.md)
-                                 

@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
-ms.date: 07/20/2020
-ms.openlocfilehash: 4ca9ababbeb7843f1a014a4bd51a5e24a74acbae
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
-ms.translationtype: HT
+ms.date: 12/31/2020
+ms.openlocfilehash: c9f8760bd1a7b5d3700f3fdf03331fe7013e116f
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322935"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209403"
 ---
 # <a name="analyze-data-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Gegevens analyseren met een serverloze SQL-pool in Azure Synapse Analytics
 
@@ -23,10 +23,11 @@ In deze zelfstudie leert u hoe u gegevens kunt analyseren met serverloze SQL-poo
 
 ## <a name="analyze-nyc-taxi-data-in-blob-storage-using-serverless-sql-pool"></a>NYC Taxi-gegevens analyseren in blob-opslag met een serverloze SQL-pool
 
-1. Klik in de hub **Data** onder **Gekoppeld** met de rechter muisknop op **Azure Blob Storage > Voorbeeldgegevenssets > nyc_tlc_yellow** en selecteer **Top 100-rijen SELECTEREN**
+1. Klik in de **Data** hub onder **gekoppeld** met de rechter muisknop op **Azure Blob Storage > voorbeeld gegevens sets > Nyc_tlc_yellow**, **nieuw SQL-script** en selecteer **Top 100-rijen selecteren**
 1. Hiermee maakt u een nieuw SQL-script met de volgende code:
 
     ```
+    -- This is auto-generated code
     SELECT
         TOP 100 *
     FROM
@@ -42,7 +43,7 @@ In deze zelfstudie leert u hoe u gegevens kunt analyseren met serverloze SQL-poo
 Tabellen in Apache Spark-databases zijn automatisch zichtbaar en er kunnen query's op worden uitgevoerd door een serverloze SQL-pool.
 
 1. Ga in Synapse Studio naar de hub **Ontwikkelen** en maak een nieuw SQL-script.
-1. Stel **Verbinding maken met** in op **serverloze SQL-pool**.
+1. Stel **verbinding in** met de **ingebouwde** serverloze SQL-groep.
 1. Plak de volgende tekst in het script en voer het script uit.
 
     ```sql

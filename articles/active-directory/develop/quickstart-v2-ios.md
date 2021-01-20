@@ -13,12 +13,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: 766035490c96d42de33d0b27d976b8e56ba50993
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 2fbff2abeb454fe02aa4bd50615033b9a0b7f27b
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017490"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178599"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Quickstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een iOS- of macOS-app
 
@@ -46,7 +46,7 @@ De quickstart is van toepassing op iOS- en macOS-apps. Sommige stappen zijn alle
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-the-code-sample"></a>Optie 1: registreer de app en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 > Registreer uw app als volgt.
-> 1. Ga naar de nieuwe [Azure-portal - App-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/IosQuickstartPage/sourceType/docs).
+> 1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/IosQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 > 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 >

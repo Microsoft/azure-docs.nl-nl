@@ -2,13 +2,13 @@
 title: Wat is Azure Event Hubs? - een service voor de opname van Big Data | Microsoft Docs
 description: Meer informatie over Azure Event Hubs, een big data-streamingservice die miljoenen gebeurtenissen per seconde opneemt.
 ms.topic: overview
-ms.date: 06/23/2020
-ms.openlocfilehash: b0124f023eab6638c986beb2305b1c4c375b47ee
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
-ms.translationtype: HT
+ms.date: 01/13/2021
+ms.openlocfilehash: 36eeb38d9ed1696c9524ae9b346065756ce49c46
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97954342"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98195756"
 ---
 # <a name="azure-event-hubs--a-big-data-streaming-platform-and-event-ingestion-service"></a>Azure Event Hubs — Een streamingplatform en service voor het opnemen van big data
 Azure Event Hubs is een streamingplatform en service voor het opnemen van big data. Het kan miljoenen gebeurtenissen per seconde ontvangen en verwerken. Gegevens die naar een Event Hub worden verzonden, kunnen worden omgezet en opgeslagen door gebruik te maken van een provider voor realtime analytische gegevens of batchverwerking/opslagadapters.
@@ -66,7 +66,7 @@ Event Hubs bevat de volgende [belangrijke onderdelen](event-hubs-features.md):
 
 In de volgende afbeelding ziet u de architectuur voor de verwerking van stromen van Event Hubs:
 
-![Event Hubs](./media/event-hubs-about/event_hubs_architecture.png)
+![Event Hubs](./media/event-hubs-about/event_hubs_architecture.svg)
 
 ## <a name="event-hubs-on-azure-stack-hub"></a>Event Hubs in Azure Stack Hub
 Met Event Hubs in Azure Stack Hub kunt u hybride cloudscenario's verwezenlijken. Streamen en op gebeurtenissen gebaseerde oplossingen worden ondersteund, zowel on-premises als voor Azure-cloudverwerking. Of uw scenario nu hybride (verbonden) is of op zichzelf staat, uw oplossing biedt ondersteuning voor de verwerking van gebeurtenissen/streams op grote schaal. Uw scenario is enkel afhankelijk van de grootte van de Event Hubs-cluster, die u kunt inrichten volgens uw behoeften. 

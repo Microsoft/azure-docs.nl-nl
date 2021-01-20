@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 08/25/2020
 ms.author: alehall
 ms.reviewer: jrasnick
-ms.openlocfilehash: 46ab1df1b776bf8dc9d6d917e5394c3efeec0de4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
-ms.translationtype: HT
+ms.openlocfilehash: 2658240e670e617f7296881f733ff369b9bf8f87
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659383"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219008"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-with-azure-cli"></a>Quickstart: Een Azure Synapse-werkruimte maken met Azure CLI
 
@@ -30,7 +30,7 @@ In deze quickstart leert u hoe u een Synapse-werkruimte maakt met behulp van Azu
 - [Azure Data Lake Storage Gen2-opslagaccount](../storage/common/storage-account-create.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)
 
     > [!IMPORTANT]
-    > De Azure Synapse-werkruimte moet kunnen lezen uit en schrijven naar het geselecteerde ADLS Gen2-account. Daarnaast moet u voor elk opslagaccount dat u als primair opslagaccount koppelt **hiërarchische naamruimte** hebben ingeschakeld bij het maken van het opslagaccount, zoals beschreven op de pagina [Een opslagaccount maken](https://docs.microsoft.com/azure/storage/common/storage-account-create?tabs=azure-portal#create-a-storage-account). 
+    > De Azure Synapse-werkruimte moet kunnen lezen uit en schrijven naar het geselecteerde ADLS Gen2-account. Daarnaast moet u voor elk opslagaccount dat u als primair opslagaccount koppelt **hiërarchische naamruimte** hebben ingeschakeld bij het maken van het opslagaccount, zoals beschreven op de pagina [Een opslagaccount maken](../storage/common/storage-account-create.md?tabs=azure-portal#create-a-storage-account). 
 
 [!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 

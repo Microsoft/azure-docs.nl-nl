@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.date: 06/23/2020
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: c9e9ea2e59537a1c0c8e372a766fba3aa9a1b9a0
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: bc0ac1a6e882f4197828bf79c7989c16b2eb16f7
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88122152"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217665"
 ---
 # <a name="quickstart-create-a-virtual-network---resource-manager-template"></a>Quickstart: Een virtueel netwerk maken - Resource Manager-sjabloon
 
@@ -36,8 +36,8 @@ De sjabloon die in deze quickstart wordt gebruikt, komt uit [Azure-quickstartsja
 :::code language="json" source="~/quickstart-templates/101-vnet-two-subnets/azuredeploy.json" range="001-96" highlight="56-92":::
 
 De volgende Azure-resources zijn gedefinieerd in de sjabloon:
-- [**Microsoft.Network/virtualNetworks**](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks): een virtueel Azure-netwerk maken.
--  [**Microsoft.Network/virtualNetworks/subnets**](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks/subnets): een subnet maken.
+- [**Microsoft.Network/virtualNetworks**](/azure/templates/microsoft.network/virtualnetworks): een virtueel Azure-netwerk maken.
+-  [**Microsoft.Network/virtualNetworks/subnets**](/azure/templates/microsoft.network/virtualnetworks/subnets): een subnet maken.
 
 ## <a name="deploy-the-template"></a>De sjabloon implementeren
 
@@ -56,7 +56,7 @@ Resource Manager-sjabloon implementeren in Azure:
 
 Verken de resources die samen met het virtuele netwerk zijn gemaakt.
 
-Raadpleeg [Microsoft.Network/virtualNetworks](https://docs.microsoft.com/azure/templates/microsoft.network/virtualnetworks) voor meer informatie over de syntaxis en eigenschappen van JSON voor een virtueel netwerk in een sjabloon.
+Raadpleeg [Microsoft.Network/virtualNetworks](/azure/templates/microsoft.network/virtualnetworks) voor meer informatie over de syntaxis en eigenschappen van JSON voor een virtueel netwerk in een sjabloon.
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 

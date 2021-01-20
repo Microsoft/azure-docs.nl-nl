@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 11/14/2019
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: 26905b746efb0bfcc877e0fa8fad797672bb6447
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: d0973682a62b17a21557727a8d5eb8fcb7ec7ef1
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483212"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98203368"
 ---
 # <a name="windows-virtual-machines-in-azure"></a>Virtuele Windows-machines in Azure
 
@@ -50,7 +50,7 @@ In deze tabel staan enkele manieren om een lijst met beschikbare locaties te ver
 | Azure Portal |Selecteer een locatie in de lijst bij het maken van een VM. |
 | Azure PowerShell |Gebruik de opdracht [Get-AzLocation](/powershell/module/az.resources/get-azlocation). |
 | REST-API |Gebruik de bewerking [Locaties vermelden](/rest/api/resources/subscriptions). |
-| Azure CLI |Gebruik de bewerking [az account list-locations](/cli/azure/account?view=azure-cli-latest). |
+| Azure CLI |Gebruik de bewerking [az account list-locations](/cli/azure/account). |
 
 ### <a name="singapore-data-residency"></a>Gegevenslocatie Singapore
 
@@ -61,7 +61,7 @@ Voor Azure is een toonaangevende serviceovereenkomst (SLA) van 99,9% aangekondig
 
 
 ## <a name="vm-size"></a>VM-grootte
-De [grootte](../sizes.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) van de VM die u gebruikt, wordt bepaald door de workload die u wilt uitvoeren. De grootte die u vervolgens kiest, bepaalt factoren als processorsnelheid, geheugen en opslagcapaciteit. Azure biedt een groot aantal verschillende grootten voor verschillende manieren van gebruik.
+De [grootte](../sizes.md) van de VM die u gebruikt, wordt bepaald door de workload die u wilt uitvoeren. De grootte die u vervolgens kiest, bepaalt factoren als processorsnelheid, geheugen en opslagcapaciteit. Azure biedt een groot aantal verschillende grootten voor verschillende manieren van gebruik.
 
 Azure rekent een [uurprijs](https://azure.microsoft.com/pricing/details/virtual-machines/windows/) op basis van de grootte en het besturingssysteem van de VM. Voor niet-hele uren worden alleen de minuten van gebruik in rekening gebracht. De opslag wordt afzonderlijk berekend en in rekening gebracht.
 
@@ -69,7 +69,7 @@ Azure rekent een [uurprijs](https://azure.microsoft.com/pricing/details/virtual-
 Uw abonnement heeft een standaard [quotumlimiet](../../azure-resource-manager/management/azure-subscription-service-limits.md) ingebouwd die de implementatie van veel VM’s voor uw project kan beïnvloeden. De huidige limiet per abonnement is 20 VM's per regio. Limieten kunnen worden verhoogd door [een ondersteuningsticket in te dienen met een aanvraag voor een verhoging](../../azure-portal/supportability/resource-manager-core-quotas-request.md)
 
 ### <a name="operating-system-disks-and-images"></a>Schijven en installatiekopieën voor een besturingssysteem
-Virtuele machines maken gebruik van [virtuele harde schijven (VHD's)](../managed-disks-overview.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) voor de opslag van het besturingssysteem (OS) en de gegevens. VHD's worden ook gebruikt voor de installatiekopieën waarmee u een besturingssysteem kunt installeren. 
+Virtuele machines maken gebruik van [virtuele harde schijven (VHD's)](../managed-disks-overview.md) voor de opslag van het besturingssysteem (OS) en de gegevens. VHD's worden ook gebruikt voor de installatiekopieën waarmee u een besturingssysteem kunt installeren. 
 
 Azure biedt veel [marketplace-installatiekopieën](https://azuremarketplace.microsoft.com/marketplace/apps?filters=virtual-machine-images%3Bwindows&page=1) voor gebruik met verschillende versies en typen van de Windows Server-besturingssystemen. Marketplace-installatiekopieën worden aangeduid met uitgever, aanbieding, SKU en versie van de installatiekopie (de versie wordt meestal gespecificeerd als meest recente). Alleen 64-bits besturingssystemen worden ondersteund. Zie [Microsoft-serversoftwareondersteuning voor virtuele Microsoft Azure-machines](https://support.microsoft.com/help/2721672/microsoft-server-software-support-for-microsoft-azure-virtual-machines) voor meer informatie over de ondersteunde gastbesturingssystemen, rollen en onderdelen.
 
@@ -80,7 +80,7 @@ In deze tabel ziet u een aantal manieren waarop u de gegevens voor een installat
 | Azure Portal |De waarden worden automatisch opgegeven wanneer u een installatiekopie selecteert om te gebruiken. |
 | Azure PowerShell |[Get-AzVMImagePublisher](/powershell/module/az.compute/get-azvmimagepublisher) -Location *location*<BR>[Get-AzVMImageOffer](/powershell/module/az.compute/get-azvmimageoffer) -Location *location* -Publisher *publisherName*<BR>[Get-AzVMImageSku](/powershell/module/az.compute/get-azvmimagesku) -Location *location* -Publisher *publisherName* -Offer *offerName* |
 | REST-API’s |[Uitgevers van installatiekopieën weergeven](/rest/api/compute/platformimages/platformimages-list-publishers)<BR>[Aanbiedingen van installatiekopieën weergeven](/rest/api/compute/platformimages/platformimages-list-publisher-offers)<BR>[Installatiekopie-SKU's weergeven](/rest/api/compute/platformimages/platformimages-list-publisher-offer-skus) |
-| Azure CLI |[az vm image list-publishers](/cli/azure/vm/image?view=azure-cli-latest) --locatie *location*<BR>[az vm image list-offers](/cli/azure/vm/image?view=azure-cli-latest) --location *locatie* --publisher *publisherName*<BR>[az vm image list-skus](/cli/azure/vm?view=azure-cli-latest) --location *locatie* --publisher *publisherName* --offer *offerName*|
+| Azure CLI |[az vm image list-publishers](/cli/azure/vm/image) --locatie *location*<BR>[az vm image list-offers](/cli/azure/vm/image) --location *locatie* --publisher *publisherName*<BR>[az vm image list-skus](/cli/azure/vm) --location *locatie* --publisher *publisherName* --offer *offerName*|
 
 U kunt ervoor kiezen om [uw eigen installatiekopie te uploaden en te gebruiken](upload-generalized-managed.md). Wanneer u dit doet, worden de uitgeversnaam, aanbieding en SKU niet gebruikt.
 
@@ -103,7 +103,7 @@ De resources in deze tabel worden gebruikt door de VM en moeten bestaan of worde
 | [Virtueel netwerk](../../virtual-network/virtual-networks-overview.md) |Ja |De VM moet lid zijn van een virtueel netwerk. |
 | [Openbaar IP-adres](../../virtual-network/public-ip-addresses.md) |Nee |Aan de VM kan een openbaar IP-adres worden toegewezen voor externe toegang. |
 | [Netwerkinterface](../../virtual-network/virtual-network-network-interface.md) |Ja |De netwerkinterface van de VM moet in het netwerk communiceren. |
-| [Gegevensschijven](attach-managed-disk-portal.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json) |Nee |De VM kan gegevensschijven bevatten om opslagmogelijkheden uit te breiden. |
+| [Gegevensschijven](attach-managed-disk-portal.md) |Nee |De VM kan gegevensschijven bevatten om opslagmogelijkheden uit te breiden. |
 
 
 ## <a name="data-residency"></a>Gegevenslocatie

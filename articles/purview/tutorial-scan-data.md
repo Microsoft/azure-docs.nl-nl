@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: tutorial
 ms.date: 12/01/2020
-ms.openlocfilehash: feda969a5818402f4a5f2dadc80c70c324ad7492
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: eafa2187308c0324b85596ce25e8310fd8506a97
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97559961"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249599"
 ---
 # <a name="tutorial-scan-data-with-azure-purview-preview"></a>Zelfstudie: Gegevens scannen met Azure Purview (preview)
 
@@ -189,6 +189,8 @@ Er wordt automatisch een beheerde identiteit met dezelfde naam als uw Azure Purv
 1. Herhaal de vorige stappen voor Azure Data Lake Storage Gen2.
 
 ### <a name="scan-your-data-sources"></a>Uw gegevensbronnen scannen
+
+1. Navigeer naar uw Azure controle sfeer liggen-resource in de [Azure Portal](https://portal.azure.com) en selecteer *Open controle sfeer liggen Studio*. U wordt automatisch naar de startpagina van Purview Studio geleid.
 
 1. Selecteer **Bronnen** op de webpagina van uw catalogus en selecteer **Registreren**. Selecteer vervolgens **Azure Blob Storage** en **Doorgaan**.
 

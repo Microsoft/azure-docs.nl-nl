@@ -3,17 +3,17 @@ title: Mobiele apps bewaken met Azure Monitor Application Insights
 description: In dit artikel vindt u instructies om een mobiele app snel in te stellen voor controle door Azure Monitor Application Insights en App Center
 ms.subservice: application-insights
 ms.topic: quickstart
-author: mrbullwinkle
-ms.author: mbullwin
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 06/26/2019
 ms.reviewer: daviste
 ms.custom: mvc
-ms.openlocfilehash: 27b74f99d926bf72bc22f153a8d76deb56646987
-ms.sourcegitcommit: 83610f637914f09d2a87b98ae7a6ae92122a02f1
-ms.translationtype: HT
+ms.openlocfilehash: 34c35baf1bd958058bec6642434464711f5e79f6
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91993888"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210304"
 ---
 # <a name="start-analyzing-your-mobile-app-with-app-center-and-application-insights"></a>Mobiele app analyseren met App Center en Application Insights
 

@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: monitoring
 ms.topic: tutorial
-ms.date: 10/15/2020
-ms.openlocfilehash: c2260cc0d2c6b889b44c738576e33abceebe23f1
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.date: 12/31/2020
+ms.openlocfilehash: 8c0cdcad9a7803e0d8063362ca62887990045c86
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96444394"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209811"
 ---
 # <a name="monitor-your-synapse-workspace"></a>Uw Synapse-werkruimte bewaken
 
@@ -25,8 +25,8 @@ In deze zelfstudie leert u hoe u activiteiten in uw Synapse-werkruimte controlee
 
 Ga in Synapse Studio naar de **monitorhub**. Hier ziet u een geschiedenis van alle activiteiten die worden uitgevoerd in de werkruimte en welke nu actief zijn. 
 
-* Onder **Integratie** kunt u pijplijnen, triggers en integratieruntimes bewaken
-* Onder **Activiteiten** kunt u Spark- en SQL-activiteiten bewaken. 
+* Onder **integratie** kunt u pijp lijnen, triggers en Integration Runtimes bewaken.
+* Onder **activiteiten** kunt u Spark-en SQL-activiteiten bewaken. 
 
 ## <a name="integration"></a>Integratie
 
@@ -36,15 +36,15 @@ Ga in Synapse Studio naar de **monitorhub**. Hier ziet u een geschiedenis van al
 
 ## <a name="apache-spark-activities"></a>Apache Spark-activiteiten
 
-1. Ga naar **Integratie > Activiteiten > Apache Spark-toepassingen**. Nu ziet u alle Spark-toepassingen die worden uitgevoerd of zijn uitgevoerd in uw werkruimte.
+1. Ga naar **activiteiten > Apache Spark toepassingen**. Nu ziet u alle Spark-toepassingen die worden uitgevoerd of zijn uitgevoerd in uw werkruimte.
 1. Zoek een toepassing die niet meer wordt uitgevoerd en klik op de **toepassingsnaam**. Nu ziet u de details van de Spark-toepassing.
 1. Als u bekend bent met Apache Spark, kunt u de standaardgebruikersinterface van Apache Spark History Server vinden door te klikken op **Spark History Server**.
 
 ## <a name="sql-activities"></a>SQL-activiteiten
 
-1. Ga naar **Integratie > Activiteiten > SQL-aanvragen**.
+1. Ga naar **activiteiten > SQL-aanvragen**.
 1. In deze weergave ziet u SQL-aanvragen.
-1. Selecteer de **Pool** die u wilt bewaken. Nu ziet u alle SQL-aanvragen die worden uitgevoerd of zijn uitgevoerd in uw werkruimte in die pool.
+1. Selecteer een **pool** die u wilt bewaken vanuit het **groeps** filter. Nu ziet u alle SQL-aanvragen die worden uitgevoerd of zijn uitgevoerd in uw werkruimte in die pool.
 1. Zoek een specifieke SQL-aanvraag en wijs het desbetreffende item aan met de muis. Zodra u de muisaanwijzer op het item hebt geplaatst, wordt er een SQL-scriptpictogram weergegeven.
 1. Klik op het pictogram SQL-script om de volledige tekst van de SQL-aanvraag te bekijken.
 

@@ -10,14 +10,14 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.custom: seo-lt-2019
-ms.date: 05/15/2020
+ms.date: 01/15/2021
 ms.author: jingwang
-ms.openlocfilehash: 4f5d691ef99ac4647d2031d6588d0b3922edd8cf
-ms.sourcegitcommit: 4bee52a3601b226cfc4e6eac71c1cb3b4b0eafe2
-ms.translationtype: HT
+ms.openlocfilehash: dfd2ed47c3fd963d7e119d235719771b25bdaf34
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94505985"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249497"
 ---
 # <a name="copy-data-securely-from-azure-blob-storage-to-a-sql-database-by-using-private-endpoints"></a>Kopieer de gegevens veilig vanuit Azure Blob-opslag naar een SQL-database met privé-eindpunten
 
@@ -36,8 +36,8 @@ In deze zelfstudie voert u de volgende stappen uit:
 
 ## <a name="prerequisites"></a>Vereisten
 * **Azure-abonnement**. Als u nog geen abonnement op Azure hebt, maak dan een [gratis Azure-account](https://azure.microsoft.com/free/) aan voordat u begint.
-* **Azure-opslagaccount**. U gebruikt de blobopslag als *bron* -gegevensopslag. Als u geen opslagaccount hebt, raadpleegt u het artikel [Een opslagaccount maken](../storage/common/storage-account-create.md?tabs=azure-portal) om een account te maken. *Zorg ervoor dat het opslagaccount alleen toegang toestaat vanuit geselecteerde netwerken.* 
-* **Azure SQL-database**. U gebruikt de database als *sink* -gegevensopslag. Als u geen Azure SQL-database hebt, raadpleegt u het artikel [Een SQL-database maken](../azure-sql/database/single-database-create-quickstart.md) om er een te maken. *Zorg ervoor dat het SQL Database-account alleen toegang toestaat vanuit geselecteerde netwerken.* 
+* **Azure-opslagaccount**. U gebruikt de blobopslag als *bron*-gegevensopslag. Als u geen opslagaccount hebt, raadpleegt u het artikel [Een opslagaccount maken](../storage/common/storage-account-create.md?tabs=azure-portal) om een account te maken. *Zorg ervoor dat het opslagaccount alleen toegang toestaat vanuit geselecteerde netwerken.* 
+* **Azure SQL-database**. U gebruikt de database als *sink*-gegevensopslag. Als u geen Azure SQL-database hebt, raadpleegt u het artikel [Een SQL-database maken](../azure-sql/database/single-database-create-quickstart.md) om er een te maken. *Zorg ervoor dat het SQL Database-account alleen toegang toestaat vanuit geselecteerde netwerken.* 
 
 ### <a name="create-a-blob-and-a-sql-table"></a>Een blob en een SQL-tabel maken
 
@@ -45,7 +45,7 @@ Voer nu de volgende stappen uit om uw blobopslag en SQL-database voor te bereide
 
 #### <a name="create-a-source-blob"></a>Een bron-blob maken
 
-1. Open Kladblok. Kopieer de volgende tekst en sla deze op uw schijf op in het bestand **emp.txt** :
+1. Open Kladblok. Kopieer de volgende tekst en sla deze op uw schijf op in het bestand **emp.txt**:
 
     ```
     FirstName,LastName
@@ -82,9 +82,9 @@ In deze stap maakt u een data factory en start u de Data Factory-gebruikersinter
 
    De naam van de Azure-gegevensfactory moet *wereldwijd uniek* zijn. Als u een foutbericht ontvangt over de naamwaarde, voert u een andere naam in voor de data factory (bijvoorbeeld uwnaamADFTutorialDataFactory). Zie [Data Factory - Naamgevingsregels](./naming-rules.md) voor meer informatie over naamgevingsregels voor Data Factory-artefacten.
 
-1. Selecteer het Azure- **abonnement** waarin u de data factory wilt maken.
+1. Selecteer het Azure-**abonnement** waarin u de data factory wilt maken.
 
-1. Voer een van de volgende stappen uit voor **Resourcegroep** :
+1. Voer een van de volgende stappen uit voor **Resourcegroep**:
 
     - Selecteer **Bestaande gebruiken** en selecteer een bestaande resourcegroep in de vervolgkeuzelijst.
     - Selecteer **Nieuwe maken** en voer de naam van een resourcegroep in. 
@@ -107,7 +107,8 @@ In deze stap maakt u een Azure-integratieruntime en schakelt u het door Data Fac
 1. Ga in de Data Factory-portal naar **Beheren** en selecteer **Nieuwe** om een nieuwe Azure-integratieruntime te maken.
 
    ![Schermopname van het maken van een nieuwe Azure-integratieruntime.](./media/tutorial-copy-data-portal-private/create-new-azure-ir.png)
-1. Kies ervoor om een **Azure** -integratieruntime te maken.
+1. Kies op de pagina **Integration runtime Setup** welke Integration runtime u wilt maken op basis van de vereiste mogelijkheden. In deze zelf studie selecteert u **Azure, zelf-hostend** en klikt u vervolgens op **door gaan**. 
+1. Selecteer **Azure** en klik vervolgens op **door gaan** om een Azure Integration runtime te maken.
 
    ![Schermopname met een nieuwe Azure-integratieruntime.](./media/tutorial-copy-data-portal-private/azure-ir.png)
 1. Selecteer onder **Configuratie van virtueel netwerk (preview)** de optie **Inschakelen**.
@@ -136,7 +137,7 @@ In deze zelfstudie begint u met het maken van een pijplijn. Vervolgens maakt u g
 ### <a name="configure-a-source"></a>Een bron configureren
 
 >[!TIP]
->In deze zelfstudie gebruikt u **Accountsleutel** als verificatietype voor uw brongegevensarchief. U kunt ook andere ondersteunde verificatiemethoden kiezen, zoals **SAS URI** , **service-principal** en **beheerde identiteit** , als dat nodig is. Zie de bijbehorende secties in [Gegevens kopiëren en transformeren in Azure Blob-opslag met behulp van Azure Data Factory](./connector-azure-blob-storage.md#linked-service-properties) voor meer informatie.
+>In deze zelfstudie gebruikt u **Accountsleutel** als verificatietype voor uw brongegevensarchief. U kunt ook andere ondersteunde verificatiemethoden kiezen, zoals **SAS URI**, **service-principal** en **beheerde identiteit**, als dat nodig is. Zie de bijbehorende secties in [Gegevens kopiëren en transformeren in Azure Blob-opslag met behulp van Azure Data Factory](./connector-azure-blob-storage.md#linked-service-properties) voor meer informatie.
 >
 >Het ook raadzaam om Azure Key Vault te gebruiken om geheimen voor gegevensarchieven veilig op te slaan. Zie [Referenties opslaan in Azure Key Vault](./store-credentials-in-key-vault.md) voor meer informatie en illustraties.
 
@@ -168,7 +169,7 @@ In deze zelfstudie begint u met het maken van een pijplijn. Vervolgens maakt u g
 
 1. Nadat de gekoppelde service is gemaakt, gaat u terug naar de pagina **Eigenschappen instellen**. Selecteer naast **Bestandspad** de knop **Bladeren**.
 
-1. Ga naar de map **adftutorial/input** , selecteer het bestand **emp.txt** en klik vervolgens op **Voltooien**.
+1. Ga naar de map **adftutorial/input**, selecteer het bestand **emp.txt** en klik vervolgens op **Voltooien**.
 
 1. Selecteer **OK**. U wordt automatisch naar de pagina met de pijplijn geleid. Controleer op het tabblad **Bron** of **SourceBlobDataset** is geselecteerd. Selecteer **Gegevens vooraf bekijken** om een voorbeeld van de gegevens op deze pagina te bekijken.
 
@@ -215,7 +216,7 @@ Als u de hyperlink niet hebt geselecteerd tijdens het testen van de verbinding, 
 
 ### <a name="configure-a-sink"></a>Een sink configureren
 >[!TIP]
->In deze zelfstudie gebruikt u **SQL-verificatie** als verificatietype voor uw sink-gegevensarchief. U kunt ook andere ondersteunde verificatiemethoden kiezen, zoals **service-principal** en **beheerde identiteit** , als dat nodig is. Zie de bijbehorende secties in [Gegevens kopiëren en transformeren in Azure SQL Database met behulp van Azure Data Factory](./connector-azure-sql-database.md#linked-service-properties) voor meer informatie.
+>In deze zelfstudie gebruikt u **SQL-verificatie** als verificatietype voor uw sink-gegevensarchief. U kunt ook andere ondersteunde verificatiemethoden kiezen, zoals **service-principal** en **beheerde identiteit**, als dat nodig is. Zie de bijbehorende secties in [Gegevens kopiëren en transformeren in Azure SQL Database met behulp van Azure Data Factory](./connector-azure-sql-database.md#linked-service-properties) voor meer informatie.
 >
 >Het ook raadzaam om Azure Key Vault te gebruiken om geheimen voor gegevensarchieven veilig op te slaan. Zie [Referenties opslaan in Azure Key Vault](./store-credentials-in-key-vault.md) voor meer informatie en illustraties.
 

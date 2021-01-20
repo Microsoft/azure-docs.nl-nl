@@ -5,20 +5,20 @@ author: vineetvikram
 ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: tutorial
-ms.date: 09/14/2020
+ms.date: 9/14/2020
 ms.custom: mvc
-ms.openlocfilehash: e11c3277ffa07fe0a8d5fc7495e2c09152ce585f
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: 0e06d82c30743a4084cfc5ff856b4a9c8d548146
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704283"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98566949"
 ---
 # <a name="tutorial-discover-vmware-vms-with-server-assessment"></a>Zelfstudie: Virtuele VMware-machines detecteren met Serverevaluatie
 
-Als onderdeel van de migratie naar Azure, detecteert u uw on-premises inventaris en werkbelastingen. 
+Als onderdeel van de migratie naar Azure, detecteert u uw on-premises inventaris en werkbelastingen.
 
-In deze zelfstudie leert u meer over het detecteren van virtuele VMware-machines met Azure Migrate- Serverevaluatie en een licht Azure Migrate-apparaat. U implementeert het apparaat als een virtuele VMware-machine, zodat er voortdurend sprake is van detectie van virtuele machines en prestatiegegevens, apps die worden uitgevoerd op virtuele machines en VM-afhankelijkheden.
+In deze zelfstudie leert u meer over het detecteren van virtuele VMware-machines met Azure Migrate- Serverevaluatie en een licht Azure Migrate-apparaat. U implementeert het apparaat als een virtuele VMware-machine, zodat er voortdurend Vm's en hun prestatie-meta gegevens worden gedetecteerd, toepassingen die worden uitgevoerd op Vm's en VM-afhankelijkheden.
 
 In deze zelfstudie leert u het volgende:
 
@@ -42,16 +42,17 @@ Controleer of deze vereisten aanwezig zijn voordat u met deze zelfstudie begint.
 
 **Vereiste** | **Details**
 --- | ---
-**vCenter Server/ESXi host** | U hebt een vCenter-server met versie 5.5, 6.0, 6.5 of 6.7 nodig.<br/><br/> Virtuele machines moeten worden gehost op een ESXi-host waarop versie 5.5 of hoger wordt uitgevoerd.<br/><br/> Sta op de vCenter-server binnenkomende verbindingen op TCP-poort 443 toe, zodat het apparaat evaluatiegegevens kan verzamelen.<br/><br/> Het apparaat maakt standaard verbinding met vCenter op poort 443. Als de vCenter-server naar een andere poort luistert, kunt u de poort wijzigen wanneer u vanaf het apparaat verbinding maakt met de server om de detectie te starten.<br/><br/> Zorg ervoor dat op de EXSi-server die als host fungeert voor de virtuele machines, binnenkomende toegang is toegestaan op TCP-poort 443 voor app-detectie.
-**Apparaat** | vCenter Server heeft resources nodig om een virtuele machine toe te wijzen voor het Azure Migrate-apparaat:<br/><br/> - Windows Server 2016<br/><br/> -32 GB RAM, acht vCPU's en ongeveer 80 GB aan schijfruimte.<br/><br/> -Een externe virtuele switch en internettoegang voor de virtuele machine, rechtstreeks of via een proxy.
-**VM's** | Voor het gebruik van deze zelfstudie moet op virtuele Windows-machines Windows Server 2016, 2012 R2, 2012 of 2008 R2 worden uitgevoerd.<br/><br/> Op Virtuele Linux-machines moet Red Hat Enterprise Linux 7/6/5, Ubuntu Linux 14.04/16.04, Debian 7/8, Oracle Linux 6/7 of CentOS 5/6/7 worden uitgevoerd.<br/><br/> Op virtuele machines moeten VMware-hulpprogramma's (een versie die hoger is dan 10.2.0) worden geïnstalleerd en uitgevoerd.<br/><br/> Op virtuele Windows-machines moet Windows Power Shell 2.0 of hoger zijn geïnstalleerd.
+**vCenter Server/ESXi host** | U hebt een vCenter-server met versie 5.5, 6.0, 6.5 of 6.7 nodig.<br/><br/> Virtuele machines moeten worden gehost op een ESXi-host waarop versie 5.5 of hoger wordt uitgevoerd.<br/><br/> Op de vCenter Server, binnenkomende verbindingen op TCP-poort 443 toestaan, zodat het apparaat de meta gegevens van de configuratie en prestaties kan verzamelen.<br/><br/> Het apparaat maakt standaard verbinding met vCenter op poort 443. Als de vCenter Server op een andere poort luistert, kunt u de poort wijzigen wanneer u de vCenter Server Details opgeeft in het configuratie beheer van het apparaat.<br/><br/> Zorg ervoor dat op de ESXi-server die als host fungeert voor de virtuele machines, binnenkomende toegang is toegestaan op TCP-poort 443 om de toepassingen te detecteren die zijn geïnstalleerd op de Vm's en VM-afhankelijkheden.
+**Apparaat** | vCenter Server heeft resources nodig om een virtuele machine toe te wijzen voor het Azure Migrate-apparaat:<br/><br/> -32 GB aan RAM, 8 Vcpu's en ongeveer 80 GB aan schijf opslag.<br/><br/> -Een externe virtuele switch en Internet toegang op de apparaat-VM, rechtstreeks of via een proxy.
+**VM's** | Alle versies van het Windows-en Linux-besturings systeem worden ondersteund voor detectie van meta gegevens van de configuratie en prestaties, evenals de detectie van toepassingen die op Vm's zijn geïnstalleerd. <br/><br/> [Hier](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless) kunt u controleren welke versies van het besturings systeem worden ondersteund voor afhankelijkheids analyse zonder agent.<br/><br/> Om geïnstalleerde toepassingen en VM-afhankelijkheden te detecteren, moeten VMware-Hulpprogram Ma's (later dan 10.2.0) op Vm's zijn geïnstalleerd en worden uitgevoerd en moet Power shell-versie 2,0 of hoger van de Windows-Vm's zijn geïnstalleerd.
 
 
 ## <a name="prepare-an-azure-user-account"></a>Een Azure-gebruikersaccount voorbereiden
 
 Om een Azure Migrate-project te maken en het Azure Migrate-apparaat te registreren, hebt u een account nodig met:
-- Machtigingen op inzender- of eigenaarniveau voor een Azure-abonnement.
-- Machtigingen verlenen om Azure Active Directory-apps te registreren.
+- Inzender of eigenaars machtigingen voor het Azure-abonnement
+- Machtigingen voor het registreren van Azure Active Directory-apps (AAD)
+- Eigenaar of Inzender plus beheerders machtigingen voor gebruikers toegang voor het Azure-abonnement om een Key Vault te maken, die wordt gebruikt tijdens VMware-migratie zonder agents
 
 Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw abonnement. Als u niet de eigenaar van het abonnement bent, kunt u met de eigenaar samenwerken om de volgende machtigingen toe te wijzen:
 
@@ -70,16 +71,19 @@ Als u net pas een gratis Azure-account hebt gemaakt, bent u de eigenaar van uw a
 
     ![Hiermee opent u de pagina Roltoewijzing toevoegen om een rol aan het account toe te wijzen](./media/tutorial-discover-vmware/assign-role.png)
 
-7. Zoek in de portal naar gebruikers en selecteer onder **Services** **Gebruikers**.
-8. Controleer onder **Gebruikersinstellingen** of Azure AD-gebruikers toepassingen kunnen registreren (standaard ingesteld op **Ja**).
+1. Als u het apparaat wilt registreren, heeft uw Azure-account **machtigingen nodig voor het registreren van Aad-apps.**
+1. Ga in azure Portal naar **Azure Active Directory**  >  **gebruikers**  >  **gebruikers instellingen**.
+1. Controleer onder **Gebruikersinstellingen** of Azure AD-gebruikers toepassingen kunnen registreren (standaard ingesteld op **Ja**).
 
     ![Verifiëren onder Gebruikersinstellingen of gebruikers Active Directory-apps kunnen registreren](./media/tutorial-discover-vmware/register-apps.png)
 
-9. Als alternatief kan een tenant/globale beheerder de rol van **toepassingsontwikkelaar** toewijzen aan het account om de registratie van AAD-apps mogelijk te maken. [Meer informatie](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
+9. Als de App-registraties-instellingen is ingesteld op Nee, vraagt u de Tenant/globale beheerder om de vereiste machtiging toe te wijzen. De Tenant/globale beheerder kan de rol van **toepassings ontwikkelaar** ook toewijzen aan een account om de registratie van de Aad-app toe te staan. [Meer informatie](../active-directory/fundamentals/active-directory-users-assign-role-azure-portal.md).
 
 ## <a name="prepare-vmware"></a>VMware voorbereiden
 
-Maak op de vCenter-server een account dat het apparaat kan gebruiken om toegang te krijgen tot de vCenter-server en controleer of de vereiste poorten zijn geopend. U hebt ook een account nodig dat het apparaat kan gebruiken om toegang te krijgen tot de virtuele machines. 
+Controleer op vCenter Server of uw account over de machtigingen beschikt om een virtuele machine te maken met behulp van een OVA-bestand. Dit is nodig wanneer u met behulp van een OVA-bestand het Azure Migrate-apparaat als een VMware-VM implementeert.
+
+Server Assessment heeft een vCenter Server alleen-lezen account nodig voor de detectie en evaluatie van virtuele VMware-machines. Als u ook geïnstalleerde toepassingen en VM-afhankelijkheden wilt detecteren, heeft het account bevoegdheden nodig die zijn ingeschakeld voor **Virtual Machines > gast bewerkingen**.
 
 ### <a name="create-an-account-to-access-vcenter"></a>Een account maken voor toegang tot vCenter
 
@@ -90,20 +94,20 @@ Stel in de vSphere-webclient als volgt een account in:
 3. Voeg onder **Gebruiker** een nieuwe gebruiker toe.
 4. Typ onder **Nieuwe gebruiker** de accountgegevens. Klik vervolgens op **OK**.
 5. Selecteer onder **Globale machtigingen** het gebruikersaccount en wijs de rol **Alleen-lezen** toe aan het account. Klik vervolgens op **OK**.
-6. Selecteer onder **Rollen** de rol **Alleen-lezen** en selecteert onder **Bevoegdheden** **Gastbewerkingen**. Deze bevoegdheden zijn nodig om apps te detecteren die worden uitgevoerd op virtuele machines en om VM-afhankelijkheden te analyseren.
+6. Als u ook geïnstalleerde toepassingen en VM-afhankelijkheden wilt detecteren, gaat u naar **rollen** > selecteert u de rol **alleen-lezen** en selecteert u in **bevoegdheden** **gast bewerkingen**. U kunt de bevoegdheden door geven aan alle objecten onder de vCenter Server door de selectie vakje ' door geven aan onderliggende items ' in te scha kelen.
  
     ![Selectievakje om gastbewerkingen toe te staan voor de rol Alleen-lezen](./media/tutorial-discover-vmware/guest-operations.png)
 
 
 ### <a name="create-an-account-to-access-vms"></a>Een account maken voor toegang tot virtuele machines
 
-Het apparaat opent virtuele machines om apps te detecteren en VM-afhankelijkheden te analyseren. Het apparaat installeert geen agents op virtuele machines.
+U hebt een gebruikers account met de vereiste bevoegdheden op de Vm's nodig om geïnstalleerde toepassingen en VM-afhankelijkheden te detecteren. U kunt het gebruikers account opgeven op de configuratie beheer van het apparaat. Op het apparaat worden geen agents op de virtuele machines geïnstalleerd.
 
-1. Maak een lokaal beheerdersaccount dat het apparaat kan gebruiken om apps en afhankelijkheden op virtuele Windows-machines te detecteren.
-2. Maak voor Linux-machines een gebruikersaccount met hoofdbevoegdheden of een gebruikersaccount met deze machtigingen voor /bin/netstat- en /bin/ls-bestanden: CAP_DAC_READ_SEARCH en CAP_SYS_PTRACE.
+1. Voor Windows-Vm's maakt u een account (lokaal of domein) met beheerders machtigingen op de Vm's.
+2. Voor Linux-Vm's maakt u een account met hoofd bevoegdheden. U kunt ook een account met de volgende machtigingen maken voor/bin/netstat-en/bin/ls-bestanden: CAP_DAC_READ_SEARCH en CAP_SYS_PTRACE.
 
 > [!NOTE]
-> Azure Migrate ondersteunt één referentie voor detectie van apps op alle Windows-servers en één referentie voor detectie van apps op alle Linux-machines.
+> Momenteel Azure Migrate ondersteunt één gebruikers account voor Windows-Vm's en één gebruikers account voor virtuele Linux-machines die op het apparaat kunnen worden gedetecteerd voor detectie van geïnstalleerde toepassingen en VM-afhankelijkheden.
 
 
 ## <a name="set-up-a-project"></a>Een project instellen
@@ -119,34 +123,30 @@ Stel als volgt een nieuw Azure Migrate-project in.
    ![Vakken voor projectnaam en regio](./media/tutorial-discover-vmware/new-project.png)
 
 7. Selecteer **Maken**.
-8. Wacht een paar minuten tot het Azure Migrate-project is geïmplementeerd.
-
-Het hulpprogramma **Azure Migrate: Serverevaluatie** wordt standaard toegevoegd aan het nieuwe project.
+8. Wacht enkele minuten totdat het Azure Migrate project is geïmplementeerd. De **Azure migrate:** het hulp programma voor Server evaluatie wordt standaard toegevoegd aan het nieuwe project.
 
 ![Pagina waarop wordt weergegeven dat het hulpprogramma Serverevaluatie standaard wordt toegevoegd](./media/tutorial-discover-vmware/added-tool.png)
 
+> [!NOTE]
+> Als u al een project hebt gemaakt, kunt u hetzelfde project gebruiken om extra apparaten te registreren voor het detecteren en evalueren van meer dan geen Vm's. meer[informatie](create-manage-projects.md#find-a-project)
 
 ## <a name="set-up-the-appliance"></a>Het apparaat instellen
 
-Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het volgende:
-- Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal
-- Download een OVA-sjabloonbestand en importeer het naar vCenter Server.
-- Maak het apparaat en controleer of het verbinding kan maken met Azure Migrate-serverevaluatie.
-- Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
+Azure Migrate: Server evaluatie maakt gebruik van een licht gewicht Azure Migrate apparaat. Het apparaat voert VM-detectie uit en verzendt meta gegevens van de VM-configuratie en-prestaties naar Azure Migrate. Het apparaat kan worden ingesteld door een eicellen-sjabloon te implementeren die vanuit het Azure Migrate-project kan worden gedownload.
 
 > [!NOTE]
-> Als u het apparaat om de een of andere reden niet kunt instellen met behulp van de sjabloon, kunt u het instellen met behulp van een PowerShell-script. [Meer informatie](deploy-appliance-script.md#set-up-the-appliance-for-vmware).
+> Als u het apparaat om de een of andere reden niet kunt instellen met behulp van de sjabloon, stelt u dit in met behulp van een Power shell-script op een bestaande Windows Server 2016-server. [Meer informatie](deploy-appliance-script.md#set-up-the-appliance-for-vmware).
 
 
 ### <a name="deploy-with-ova"></a>Implementeren met OVA
 
 Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het volgende:
-- Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal
-- Download een OVA-sjabloonbestand en importeer het naar vCenter Server.
-- Maak het apparaat en controleer of het verbinding kan maken met Azure Migrate-serverevaluatie.
-- Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
+1. Geef een naam op voor het apparaat en genereer een Azure Migrate-projectsleutel in de portal
+1. Download een OVA-sjabloonbestand en importeer het naar vCenter Server. Controleer of de eicellen veilig zijn.
+1. Maak het apparaat en controleer of het verbinding kan maken met Azure Migrate-serverevaluatie.
+1. Configureer het apparaat voor het eerst en registreer het bij het Azure Migrate-project met behulp van de Azure Migrate-projectsleutel.
 
-### <a name="generate-the-azure-migrate-project-key"></a>Azure Migrate-projectsleutel genereren
+### <a name="1-generate-the-azure-migrate-project-key"></a>1. de Azure Migrate project sleutel genereren
 
 1. In **Migratiedoelen** > **Servers** > **Azure Migrate: Serverevaluatie** selecteert u **Detecteren**.
 2. In **Machines ontdekken** > **Zijn de machines gevirtualiseerd?** selecteert u **Ja, met VMware vSphere-hypervisor**.
@@ -155,10 +155,9 @@ Als u het apparaat wilt instellen met behulp van een OVA-sjabloon, doet u het vo
 1. Nadat de Azure-resources zijn gemaakt, wordt er een **Azure Migrate-projectsleutel** gegenereerd.
 1. Kopieer de sleutel, omdat u deze nodig hebt om de registratie van het apparaat tijdens de configuratie te voltooien.
 
-### <a name="download-the-ova-template"></a>De OVA-sjabloon downloaden
+### <a name="2-download-the-ova-template"></a>2. de sjabloon van de eicellen downloaden
 
-In **2: Azure Migrate-apparaat downloaden**, selecteert u het OVA-bestand en klikt u op **Downloaden**. 
-
+In **2: Azure Migrate-apparaat downloaden**, selecteert u het OVA-bestand en klikt u op **Downloaden**.
 
 ### <a name="verify-security"></a>Beveiliging controleren
 
@@ -185,10 +184,7 @@ Controleer of het OVA-bestand veilig is voordat u het implementeert:
         --- | --- | ---
         VMware (85,8 MB) | [Nieuwste versie](https://go.microsoft.com/fwlink/?linkid=2140337) | 2daaa2a59302bf911e8ef195f8add7d7c8352de77a9af0b860e2a627979085ca
 
-
-
-
-### <a name="create-the-appliance-vm"></a>Het VM-apparaat maken
+### <a name="3-create-the-appliance-vm"></a>3. de toestel-VM maken
 
 Importeer het gedownloade bestand en maak een virtuele machine.
 
@@ -207,7 +203,7 @@ Importeer het gedownloade bestand en maak een virtuele machine.
 Zorg ervoor dat de apparaat-VM verbinding kan maken met Azure-URL's voor [openbare](migrate-appliance.md#public-cloud-urls) en [overheids](migrate-appliance.md#government-cloud-urls)clouds.
 
 
-### <a name="configure-the-appliance"></a>Het apparaat configureren
+### <a name="4-configure-the-appliance"></a>4. het apparaat configureren
 
 Het apparaat voor de eerste keer instellen.
 
@@ -263,15 +259,16 @@ Het apparaat moet verbinding maken met vCenter Server om de configuratie- en pre
 1. Voordat u de detectie start, kunt u de connectiviteit met vCenter Server altijd **opnieuw valideren**.
 1. In **stap 3: VM-referenties opgeven voor het detecteren van geïnstalleerde toepassingen en voor het uitvoeren van afhankelijkheidstoewijzing zonder agent** klikt u op **Referenties toevoegen** en geeft u het besturingssysteem op waarvoor de referenties zijn opgegeven, evenals een beschrijvende naam voor de referenties en een **gebruikersnaam** en **wachtwoord**. Klik vervolgens op **Opslaan**.
 
-    - U kunt hier eventueel referenties toevoegen als u een account hebt gemaakt dat u wilt gebruiken voor de functie voor [toepassingsdetectie](how-to-discover-applications.md) of de [functie voor analyse van afhankelijkheden zonder agent](how-to-create-group-machine-dependencies-agentless.md).
+    - U kunt hier eventueel referenties toevoegen als u een account hebt gemaakt voor het [detecteren van toepassingen](how-to-discover-applications.md)of een [afhankelijkheids analyse zonder agent](how-to-create-group-machine-dependencies-agentless.md).
     - Als u deze functies niet wilt gebruiken, klikt u op de schuifregelaar om de stap over te slaan. U kunt de intentie op elk gewenst moment ongedaan maken.
-    - Controleer de referenties die nodig zijn voor [toepassingsdetectie](migrate-support-matrix-vmware.md#application-discovery-requirements) of voor [afhankelijkheidsanalyse zonder agent](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless).
+    - Controleer de machtigingen die nodig zijn voor het account voor [toepassings detectie](migrate-support-matrix-vmware.md#application-discovery-requirements)of voor [afhankelijkheids analyse zonder agent](migrate-support-matrix-vmware.md#dependency-analysis-requirements-agentless).
 
 5. Klik op **Detectie starten** om VM-detectie te starten. Nadat de detectie is gestart, kunt u de detectiestatus voor het IP-adres of de FQDN van vCenter Server controleren in de tabel.
 
 Detectie werkt als volgt:
 - Het duurt ongeveer 15 minuten voordat gedetecteerde VM-metagegevens worden weergegeven in de portal.
 - Detectie van geïnstalleerde toepassingen, functies en onderdelen kan enige tijd duren. De duur is afhankelijk van het aantal VM's dat wordt gedetecteerd. Voor 500 VM's duurt het ongeveer een uur voordat de inventaris van toepassingen wordt weergegeven in de Azure Migrate-portal.
+- Nadat de detectie van Vm's is voltooid, kunt u de afhankelijkheids analyse zonder agent inschakelen op de gewenste Vm's vanuit de portal.
 
 
 ## <a name="next-steps"></a>Volgende stappen

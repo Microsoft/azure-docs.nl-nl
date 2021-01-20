@@ -11,12 +11,12 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: tutorial
 ms.date: 01/22/2018
-ms.openlocfilehash: 360fbc3e1bfe7890f1f3b05899eb95ce7a3a72c2
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: 4e19991de20b130b878a230313d87ca09d31a84e
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96496616"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556440"
 ---
 # <a name="tutorial-build-your-first-data-factory-by-using-the-azure-portal"></a>Zelfstudie: uw eerste data factory bouwen met behulp van de Azure-portal
 > [!div class="op_single_selector"]
@@ -31,7 +31,7 @@ ms.locfileid: "96496616"
 > Dit artikel is van toepassing op versie 1 van Azure Data Factory, die algemeen beschikbaar is. Als u de huidige versie van de Data Factory-service gebruikt, raadpleegt u [Quickstart: Een gegevensfactory maken met behulp van Data Factory](../quickstart-create-data-factory-dot-net.md).
 
 > [!WARNING]
-> De JSON-editor in Azure Portal voor het ontwerpen en het implementeren van ADF v1-pijplijnen wordt uitgeschakeld op 31 juli 2019. Na 31 juli 2019 kunt u [ADF v1 Powershell-cmdlets](/powershell/module/az.datafactory/?view=azps-2.4.0&viewFallbackFrom=azps-2.3.2), [ADF v1 .Net SDK](/dotnet/api/microsoft.azure.management.datafactories.models?view=azure-dotnet) en [ADF v1 REST APIs](/rest/api/datafactory/) blijven gebruiken om uw ADF v1-pijplijnen te ontwerpen en implementeren.
+> De JSON-editor in Azure Portal voor het ontwerpen en het implementeren van ADF v1-pijplijnen wordt uitgeschakeld op 31 juli 2019. Na 31 juli 2019 kunt u [ADF v1 Powershell-cmdlets](/powershell/module/az.datafactory/), [ADF v1 .Net SDK](/dotnet/api/microsoft.azure.management.datafactories.models) en [ADF v1 REST APIs](/rest/api/datafactory/) blijven gebruiken om uw ADF v1-pijplijnen te ontwerpen en implementeren.
 
 In dit artikel leert u hoe u [Azure Portal](https://portal.azure.com/) gebruikt om uw eerste data factory te maken. Als u de zelfstudie wilt volgen met andere hulpprogramma's/SDK's, selecteert u een van de opties uit de vervolgkeuzelijst. 
 

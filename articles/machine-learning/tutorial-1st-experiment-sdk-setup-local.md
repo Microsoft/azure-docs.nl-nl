@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 2f33fe4fafbe194238fcfbd4942807ed2fc4d6ff
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: 0d099d31db3619e14da4fe66e26b25a0e36ee39c
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183537"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250686"
 ---
 # <a name="tutorial-get-started-with-azure-machine-learning-in-your-development-environment-part-1-of-4"></a>Zelfstudie: Aan de slag met Azure Machine Learning in uw ontwikkelomgeving (deel 1 van 4)
 
@@ -37,11 +37,12 @@ In deel 1 van deze zelfstudiereeks doet u het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 - Een Azure-abonnement. Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer [Azure Machine Learning](https://aka.ms/AMLFree) uit.
-- [Anaconda](https://www.anaconda.com/download/) of [Miniconda](https://www.anaconda.com/download/) voor het beheren van virtuele Python-omgevingen en het installeren van pakketten.
+- [Anaconda](https://www.anaconda.com/download/) of [Miniconda](https://www.anaconda.com/download/) voor het beheren van virtuele Python-omgevingen en het installeren van pakketten.  
+- Als u niet bekend bent met het gebruik van Conda, raadpleegt u aan de slag [met Conda](https://conda.io/projects/conda/en/latest/user-guide/getting-started.html).
 
 ## <a name="install-the-azure-machine-learning-sdk"></a>De Azure Machine Learning-SDK installeren
 
-In deze zelfstudie maakt u gebruik van de Azure Machine Learning-SDK voor Python. Als u problemen met Python-afhankelijkheden wilt voorkomen, maakt u een geïsoleerde omgeving. Deze reeks zelfstudies maakt gebruik van Conda om die omgeving te maken. Als u liever andere oplossingen gebruikt, zoals `venv`, `virtualenv` of docker, moet u een Python-versie gebruiken vanaf versie 3.5 tot 3.9.
+In deze zelfstudie maakt u gebruik van de Azure Machine Learning-SDK voor Python. Als u problemen met Python-afhankelijkheden wilt voorkomen, maakt u een geïsoleerde omgeving. Deze reeks zelf studies maakt gebruik van Conda om die omgeving te maken. Als u liever andere oplossingen gebruikt, zoals `venv`, `virtualenv` of docker, moet u een Python-versie gebruiken vanaf versie 3.5 tot 3.9.
 
 Controleer of Conda op uw systeem is geïnstalleerd:
     

@@ -9,12 +9,12 @@ ms.reviewer: jrasnick, garye
 ms.date: 11/20/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: cf76a3d09da83693791873feb9e6ab03c432e47f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: eef65db05ab94b5b8de5ff82c2c51dba0730f170
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463882"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222170"
 ---
 # <a name="tutorial-pre-requisites-for-using-cognitive-services-in-azure-synapse"></a>Zelfstudie: Vereisten voor het gebruik van Cognitive Services in Azure Synapse
 
@@ -38,7 +38,7 @@ Meld u aan bij [Azure Portal](https://portal.azure.com/)
 
 ## <a name="create-a-cognitive-services-resource"></a>Een Cognitive Services-resource maken
 
-[Azure Cognitive Services](https://go.microsoft.com/fwlink/?linkid=2147492) bevatten een groot aantal verschillende typen services. Hieronder ziet u enkele voorbeelden die worden gebruikt in de Synapse-zelfstudies.
+[Azure Cognitive Services](../../cognitive-services/index.yml) bevatten een groot aantal verschillende typen services. Hieronder ziet u enkele voorbeelden die worden gebruikt in de Synapse-zelfstudies.
 
 ### <a name="create-an-anomaly-detector-resource"></a>Een Anomaly Detector-resource maken
 Maak een [Anomaly Detector](https://ms.portal.azure.com/#create/Microsoft.CognitiveServicesTextAnalytics) in Azure Portal.
@@ -53,7 +53,7 @@ Maak een [Text Analytics](https://ms.portal.azure.com/#create/Microsoft.Cognitiv
 ## <a name="create-key-vault-and-configure-secrets-and-access"></a>Sleutelkluis maken en geheimen en toegang configureren
 
 1. Maak een [sleutelkluis](https://ms.portal.azure.com/#create/Microsoft.KeyVault) in Azure Portal.
-2. Ga naar **Sleutelkluis > Toegangsbeleid** en verleen de [MSI van de Azure Synapse-werkruimte](https://docs.microsoft.com/azure/synapse-analytics/security/synapse-workspace-managed-identity) machtigingen om geheimen uit Azure Key Vault te lezen.
+2. Ga naar **Sleutelkluis > Toegangsbeleid** en verleen de [MSI van de Azure Synapse-werkruimte](../security/synapse-workspace-managed-identity.md) machtigingen om geheimen uit Azure Key Vault te lezen.
 
 >Zorg ervoor dat de beleidswijzigingen worden opgeslagen. Deze stap is eenvoudig te missen.
 

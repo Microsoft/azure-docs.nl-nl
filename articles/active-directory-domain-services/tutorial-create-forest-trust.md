@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 07/06/2020
 ms.author: justinha
-ms.openlocfilehash: 0231689acef3345fb2b0f25170522d59552171ba
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
-ms.translationtype: HT
+ms.openlocfilehash: faa46178262777454d4d67d23bbd0bb013974ab5
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96618328"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208485"
 ---
 # <a name="tutorial-create-an-outbound-forest-trust-to-an-on-premises-domain-in-azure-active-directory-domain-services"></a>Zelfstudie: Een uitgaande forestvertrouwensrelatie in één richting maken naar een on-premises domein in Azure Active Directory Domain Services
 
@@ -73,8 +73,8 @@ Voordat u een forestvertrouwensrelatie configureert in Azure AD DS, moet u contr
 
 Als u het beheerde domein correct wilt omzetten vanuit de on-premises omgeving, moet u mogelijk doorstuurservers toevoegen aan de bestaande DNS-server. Als u de on-premises omgeving niet hebt geconfigureerd voor communicatie met het beheerde domein, voltooit u de volgende stappen vanuit een beheerwerkstation voor het on-premises AD DS-domein:
 
-1. Selecteer **Start | Systeembeheer | DNS**
-1. Selecteer met de rechtermuisknop de DNS-server, bijvoorbeeld *myAD01*, en selecteer **Eigenschappen**
+1. Selecteer **Start**  >  **systeem beheer tools**  >  **DNS**.
+1. Selecteer de DNS-server met de rechter muisknop, zoals *myAD01*, en selecteer vervolgens **Eigenschappen**.
 1. Kies **Doorstuurservers** en vervolgens **Bewerken** om extra doorstuurservers toe te voegen.
 1. Voeg de IP-adressen van het beheerde domein toe, bijvoorbeeld *10.0.2.4* en *10.0.2.5*.
 
@@ -84,15 +84,15 @@ Het on-premises AD DS-domein heeft een binnenkomende forestvertrouwensrelatie vo
 
 Als u een binnenkomende vertrouwensrelatie in het on-premises AD DS-domein wilt configureren, voltooit u de volgende stappen vanuit een beheerwerkstation voor het on-premises AD DS-domein:
 
-1. Selecteer **Start | Systeembeheer | Active Directory: domeinen en vertrouwensrelaties**
-1. Selecteer met de rechtermuisknop het domein, bijvoorbeeld *onprem.contoso.com*, en selecteer **Eigenschappen**
-1. Kies het tabblad **Vertrouwensrelaties** en vervolgens **Nieuwe vertrouwensrelatie**
-1. Voer een naam in bij Azure AD DS-domeinnaam, bijvoorbeeld *aaddscontoso.com*, en selecteer **Volgende**
+1. Selecteer **Start | Systeem beheer | Active Directory domeinen en vertrouwens relaties**.
+1. Klik met de rechter muisknop op domein, zoals *onprem.contoso.com*, en selecteer vervolgens **Eigenschappen**.
+1. Klik op het tabblad **vertrouwens relaties** en vervolgens op **nieuw vertrouwen**.
+1. Voer de naam voor de Azure AD DS-domein naam in, bijvoorbeeld *aaddscontoso.com*, en selecteer vervolgens **volgende**.
 1. Selecteer de optie om een **Forestvertrouwensrelatie** te maken. Maak vervolgens een vertrouwensrelatie van het type **In één richting: binnenkomend**.
 1. Kies ervoor om de vertrouwensrelatie te maken voor **Alleen dit domein**. In de volgende stap maakt u de vertrouwensrelatie in de Azure-portal voor het beheerde domein.
 1. Kies voor het gebruik van **Forestdekkende verificatie**. Voer vervolgens een wachtwoord voor de vertrouwensrelatie in en bevestig dit. Dit wachtwoord wordt ook ingevoerd in de Azure-portal in de volgende sectie.
 1. Doorloop de volgende paar vensters met standaardopties, en kies vervolgens de optie **Nee, uitgaande vertrouwensrelatie niet bevestigen**.
-1. Selecteer **Voltooien**.
+1. Selecteer **Finish**.
 
 ## <a name="create-outbound-forest-trust-in-azure-ad-ds"></a>Een uitgaande vertrouwensrelatie maken in Azure AD DS
 
@@ -100,16 +100,16 @@ Nu het on-premises AD DS-domein is geconfigureerd om het beheerde domein om te z
 
 Om de uitgaande vertrouwensrelatie voor het beheerde domein in de Azure-portal te maken voert u de volgende stappen uit:
 
-1. Zoek en selecteer **Azure AD Domain Services** in de Azure-portal. Selecteer vervolgens uw beheerde domein, bijvoorbeeld *aaddscontoso.com*
+1. In de Azure Portal zoekt en selecteert u **Azure AD Domain Services** en selecteert u vervolgens uw beheerde domein, zoals *aaddscontoso.com*.
 1. Selecteer in het menu aan de linkerkant van het beheerde domein **Vertrouwensrelaties**, en kies vervolgens **+ Toevoegen** voor een vertrouwensrelatie.
 
    > [!NOTE]
    > Als u de menuoptie **Vertrouwensrelaties** niet ziet, zoekt u onder **Eigenschappen** naar het *Foresttype*. Vertrouwensrelaties kunnen alleen worden gemaakt met *resourceforests*. Als het foresttype *Gebruikers* is, kunt u geen vertrouwensrelaties maken. Het is momenteel niet mogelijk om het foresttype van een beheerd domein te wijzigen. U moet het beheerde domein verwijderen en opnieuw maken als een resourceforest.
 
-1. Voer een weergavenaam in waarmee de vertrouwensrelatie kan worden geïdentificeerd, en voer vervolgens de naam van de on-premises vertrouwde forest-DNS in, zoals *onprem.contoso.com*
+1. Voer een weergave naam in die de vertrouwens relatie identificeert en vervolgens de naam van het on-premises vertrouwde forest-DNS, zoals *onprem.contoso.com*.
 1. Geef hetzelfde wachtwoord voor de vertrouwensrelatie op dat in de vorige sectie is gebruikt bij het configureren van de binnenkomende forestvertrouwensrelatie voor het on-premises AD DS-domein.
-1. Geef minstens twee DNS-servers op voor het on-premises AD DS-domein, bijvoorbeeld *10.1.1.4* en *10.1.1.5*
-1. Als u klaar bent, kunt u de uitgaande forestvertrouwensrelatie **Opslaan**
+1. Geef ten minste twee DNS-servers op voor het on-premises AD DS domein, zoals *10.1.1.4* en *10.1.1.5*.
+1. Wanneer u klaar bent, **slaat** u de uitgaande forestvertrouwensrelatie op.
 
     ![Een uitgaande vertrouwensrelatie maken in de Azure-portal](./media/tutorial-create-forest-trust/portal-create-outbound-trust.png)
 
@@ -181,7 +181,7 @@ Met behulp van de Windows Server-VM die is gekoppeld aan de Azure AD-forest kunt
 1. Selecteer in het dialoogvenster *Machtigingen voor CrossForestShare* de optie **Toevoegen**.
 1. Typ *FileServerAccess* in **Geef de objectnamen op**. Selecteer vervolgens **OK**.
 1. Selecteer *FileServerAccess* in de lijst **Groepen of gebruikersnamen**. Kies in de lijst **Machtigingen voor FileServerAccess** de optie *Toestaan* voor de machtigingen **Wijzigen** en  **Schrijven**. Selecteer vervolgens **OK**.
-1. Selecteer het tabblad **Delen**. Kies vervolgens **Geavanceerd delen...**
+1. Selecteer het tabblad **delen** en kies vervolgens **Geavanceerd delen...**.
 1. Kies **Deze map delen**. Voer vervolgens bij **Naam delen**  een gemakkelijk te onthouden naam in voor de bestandsshare, bijvoorbeeld *CrossForestShare*.
 1. Selecteer **Machtigingen**. Kies in de lijst **Machtigingen voor iedereen** de optie **Toestaan** bij de machtiging voor **Wijzigen**.
 1. Selecteer twee keer **OK** en vervolgens **Sluiten**.

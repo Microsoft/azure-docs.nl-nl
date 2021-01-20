@@ -13,12 +13,12 @@ ms.workload: infrastructure
 ms.date: 03/20/2018
 ms.author: kumud
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 6cd6d61ba1404ca6b6de63a0151ec414b2df54e7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 902d6643420ff6bdafcf52278f3a1c0df28647ae
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87492459"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98217527"
 ---
 # <a name="peer-two-virtual-networks-with-an-azure-cli-script-sample"></a>Peering van twee virtuele netwerken met een Azure CLI-voorbeeldscript
 
@@ -54,6 +54,6 @@ In dit script worden de volgende opdrachten gebruikt voor het maken van een reso
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de [documentatie van Azure CLI](https://docs.microsoft.com/cli/azure) voor meer informatie over de Azure CLI.
+Raadpleeg de [documentatie van Azure CLI](/cli/azure) voor meer informatie over de Azure CLI.
 
 Meer CLI-voorbeeldscripts voor virtuele netwerken kunt u vinden in [CLI-voorbeelden voor virtuele netwerken](../cli-samples.md).

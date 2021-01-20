@@ -14,12 +14,12 @@ ms.tgt_pltfrm: virtual-network
 ms.workload: infrastructure
 ms.date: 12/13/2018
 ms.author: kumud
-ms.openlocfilehash: b5a136ae05b3cd410ca252b6d5a1df443aff6f7a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 97690618de5d58fa4022d01fa36a872f9d220083
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75350140"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98221677"
 ---
 # <a name="tutorial-filter-network-traffic-with-a-network-security-group-using-the-azure-portal"></a>Zelfstudie: Netwerkverkeer filteren met een netwerkbeveiligingsgroep met behulp van Azure Portal
 
@@ -221,7 +221,7 @@ U kunt de resourcegroep en alle gerelateerde resources die deze bevat verwijdere
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u een netwerkbeveiligingsgroep gemaakt en die aan een subnet van een virtueel netwerk gekoppeld. Zie [Overzicht van netwerkbeveiligingsgroepen](security-overview.md) en [Een beveiligingsgroep beheren](manage-network-security-group.md) voor meer informatie over netwerkbeveiligingsgroepen.
+In deze zelfstudie hebt u een netwerkbeveiligingsgroep gemaakt en die aan een subnet van een virtueel netwerk gekoppeld. Zie [Overzicht van netwerkbeveiligingsgroepen](./network-security-groups-overview.md) en [Een beveiligingsgroep beheren](manage-network-security-group.md) voor meer informatie over netwerkbeveiligingsgroepen.
 
 Azure routeert standaard verkeer tussen subnetten. In plaats daarvan kunt u verkeer routeren tussen subnetten via een virtuele machine, die bijvoorbeeld als een firewall fungeert. Ga verder met de volgende zelfstudie om te leren hoe u een routetabel maakt.
 

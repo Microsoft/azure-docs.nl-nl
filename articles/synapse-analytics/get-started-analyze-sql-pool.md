@@ -9,13 +9,13 @@ ms.reviewer: jrasnick
 ms.service: synapse-analytics
 ms.subservice: sql
 ms.topic: tutorial
-ms.date: 11/17/2020
-ms.openlocfilehash: 9014469ca063ca52be0965ecbd4e8b21709d10a0
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.date: 12/31/2020
+ms.openlocfilehash: 683da659dcfa07c0a105382f4cc93d1f4dfb21b5
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455168"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98219529"
 ---
 # <a name="analyze-data-with-dedicated-sql-pools"></a>Gegevens analyseren met toegewezen SQL-pools
 
@@ -23,8 +23,8 @@ Azure Synapse Analytics biedt u de mogelijkheid om gegevens te analyseren met be
 
 ## <a name="load-the-nyc-taxi-data-into-sqlpool1"></a>Laad de NYC Taxi-gegevens in SQLPOOL1
 
-1. Ga in Synapse Studio naar de hub **Ontwikkelen** en maak vervolgens een nieuw SQL-script
-1. Selecteer de pool SQLPOOL1 (de pool die is gemaakt in [STAP 1](https://docs.microsoft.com/azure/synapse-analytics/get-started-create-workspace#create-a-sql-pool) van deze zelfstudie) in de scriptsectie Verbinding maken met.
+1. Ga in Synapse Studio naar de **ontwikkelende** hub, klik op de **+** knop om een nieuwe resource toe te voegen en maak vervolgens een nieuw SQL-script.
+1. Selecteer de pool ' SQLPOOL1 ' (groep die in [stap 1](./get-started-create-workspace.md) van deze zelf studie is gemaakt) in de vervolg keuzelijst verbinding maken met boven het script.
 1. Voer de volgende code in:
     ```
     CREATE TABLE [dbo].[Trip]
@@ -71,12 +71,13 @@ Azure Synapse Analytics biedt u de mogelijkheid om gegevens te analyseren met be
     )
     OPTION (LABEL = 'COPY : Load [dbo].[Trip] - Taxi dataset');
     ```
-1. Het duurt ongeveer 60 seconden om dit script te voltooien. Er worden 2 miljoen rijen aan NYC Taxi-gegevens geladen in een tabel met de naam **dbo.Trip**
+1. Klik op de knop uitvoeren om het script uit te voeren.
+1. Dit script wordt in minder dan 60 seconden voltooid. Het laadt 2.000.000 rijen van NYC taxi-gegevens in een tabel met de naam **dbo. Reis**.
 
 ## <a name="explore-the-nyc-taxi-data-in-the-dedicated-sql-pool"></a>De NYC-taxigegevens in de toegewezen SQL-pool verkennen
 
 1. Ga in Synapse Studio naar de hub **Gegevens**.
-1. Ga naar **SQLPOOL1** > **Tabellen**. Er wordt een aantal tabellen geladen.
+1. Ga naar **SQLPOOL1** > **Tabellen**. 
 1. Klik met de rechtermuisknop op de tabel **dbo.Trip** en selecteer **Nieuw SQL-script** > **Eerste 100 rijen selecteren**.
 1. Wacht tot er een nieuw SQL-script wordt gemaakt en uitgevoerd.
 1. U ziet dat bovenaan het SQL-script **Verbinding maken met** automatisch is ingesteld op de SQL-pool met de naam **SQLPOOL1**.
@@ -89,7 +90,7 @@ Azure Synapse Analytics biedt u de mogelijkheid om gegevens te analyseren met be
     FROM  dbo.Trip
     WHERE TripDistanceMiles > 0 AND PassengerCount > 0
     GROUP BY PassengerCount
-    ORDER BY PassengerCount
+    ORDER BY PassengerCount;
     ```
 
     Deze query laat zien op welke manier de totale reisafstanden en de gemiddelde reisafstand betrekking hebben op het aantal reizigers.
@@ -102,4 +103,3 @@ Azure Synapse Analytics biedt u de mogelijkheid om gegevens te analyseren met be
 
 > [!div class="nextstepaction"]
 > [Analyseren met behulp van Spark](get-started-analyze-spark.md)
-

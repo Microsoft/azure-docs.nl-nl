@@ -5,26 +5,18 @@ ms.author: mikben
 ms.date: 10/10/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: c72083f205fae77de366125e666cee479fd46805
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
-ms.translationtype: HT
+ms.openlocfilehash: dbba87be839d7f172d42827698a8e485c2edddd8
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97692011"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98256219"
 ---
 ## <a name="prerequisites"></a>Vereisten
 
 - Een werkende [App voor bellen met Communication Services](../getting-started-with-calling.md).
 - Een [Teams implementatie](/deployoffice/teams-install).
 
-## <a name="enable-teams-interoperability"></a>Interoperabiliteit met Teams inschakelen
-
-De interoperabiliteitsfunctie van Teams bevindt zich op dit moment in de beperkte preview. Als u deze functie wilt inschakelen voor uw Communication Services-resource, kunt u [acsfeedback@microsoft.com](mailto:acsfeedback@microsoft.com) e-mailen met:
-
-1. De abonnements-id van het Azure-abonnement dat uw Communication Services-resource bevat.
-2. De tenant-id van uw Teams. De eenvoudigste manier om dit te verkrijgen is door [een koppeling naar het Team te verkrijgen en te delen](https://support.microsoft.com/office/create-a-link-or-a-code-for-joining-a-team-11b0de3b-9288-4cb4-bc49-795e7028296f).
-
-U moet lid zijn van de organisatie die eigenaar is van beide entiteiten om deze functie te kunnen gebruiken.
 
 ## <a name="add-the-teams-ui-controls"></a>De besturingselementen voor de gebruikersinterface van Teams toevoegen
 

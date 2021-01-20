@@ -13,12 +13,12 @@ ms.date: 11/26/2019
 ms.author: hahamil
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 1282c27378e6a088a600a3ab3105f3f548984d03
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
-ms.translationtype: HT
+ms.openlocfilehash: 7bdb36566d7c501dc5ca5604f8c6963258aa951c
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063141"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98208536"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-application"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Android-app
 
@@ -57,8 +57,7 @@ In dit voorbeeld wordt de Microsoft Authentication Library for Android (MSAL) ge
 
 In MSAL worden tokens automatisch vernieuwd, eenmalige aanmelding (SSO) geboden tussen andere apps op het apparaat, en de accounts beheerd.
 
-> [!NOTE]
-> In deze zelfstudie worden vereenvoudigde voorbeelden getoond van het werken met MSAL for Android. Ter vereenvoudiging wordt in deze zelfstudie alleen gebruik gemaakt van de modus voor een enkele account. Als u meer complexe scenario's wilt verkennen, raadpleegt u een voltooid [voorbeeld van werkende code](https://github.com/Azure-Samples/ms-identity-android-java/) op GitHub.
+In deze zelfstudie worden vereenvoudigde voorbeelden getoond van het werken met MSAL for Android. Ter vereenvoudiging wordt in deze zelfstudie alleen gebruik gemaakt van de modus voor een enkele account. Als u meer complexe scenario's wilt verkennen, raadpleegt u een voltooid [voorbeeld van werkende code](https://github.com/Azure-Samples/ms-identity-android-java/) op GitHub.
 
 ## <a name="create-a-project"></a>Een project maken
 Als u nog geen Android-toepassing hebt, volgt u de volgende stappen om een nieuw project in te stellen.
@@ -85,8 +84,8 @@ Als u nog geen Android-toepassing hebt, volgt u de volgende stappen om een nieuw
 1. Voer de pakketnaam van het project in. Als u de code hebt gedownload, is deze waarde `com.azuresamples.msalandroidapp`.
 1. Selecteer in de sectie **Handtekening-hash** van de pagina **Uw Android-app configureren** de optie **Een handtekening-hash voor de ontwikkeling genereren.** en kopieer de KeyTool-opdracht die u wilt gebruiken voor uw platform.
 
-   > [!Note]
-   > KeyTool.exe is geïnstalleerd als onderdeel van de JDK (Java Development Kit). U moet ook het OpenSSL-hulpprogramma installeren om de KeyTool-opdracht uit te voeren. Raadpleeg de [Android-documentatie over het genereren van een sleutel](https://developer.android.com/studio/publish/app-signing#generate-key) voor meer informatie.
+
+     KeyTool.exe is geïnstalleerd als onderdeel van de JDK (Java Development Kit). U moet ook het OpenSSL-hulpprogramma installeren om de KeyTool-opdracht uit te voeren. Raadpleeg de [Android-documentatie over het genereren van een sleutel](https://developer.android.com/studio/publish/app-signing#generate-key) voor meer informatie.
 
 1. Voer de **handtekening-hash** in die is gegenereerd door KeyTool.
 1. Selecteer **Configureren** en sla de **MSAL-configuratie** op die wordt weergegeven op de pagina **Android-configuratie**, zodat u deze kunt invoeren wanneer u de app later configureert.  
@@ -122,8 +121,7 @@ Als u nog geen Android-toepassing hebt, volgt u de volgende stappen om een nieuw
     }
    ```
 
-   >[!NOTE]
-   >In deze zelfstudie wordt alleen getoond hoe u een app kunt configureren in de modus voor één account. Raadpleeg de documentatie voor meer informatie over [modus voor één account versus de modus voor meerdere accounts](./single-multi-account.md) en [het configureren van uw app](./msal-configuration.md)
+     In deze zelfstudie wordt alleen getoond hoe u een app kunt configureren in de modus voor één account. Raadpleeg de documentatie voor meer informatie over [modus voor één account versus de modus voor meerdere accounts](./single-multi-account.md) en [het configureren van uw app](./msal-configuration.md)
 
 4. Voeg in **app** > **src** > **main** > **AndroidManifest.xml**, de onderstaande `BrowserTabActivity`-activiteit toe aan de hoofdtekst van de toepassing. Met deze vermelding kan Microsoft uw toepassing weer aanroepen wanneer de verificatie is voltooid:
 
@@ -144,8 +142,11 @@ Als u nog geen Android-toepassing hebt, volgt u de volgende stappen om een nieuw
 
     Vervang de naam van het pakket dat u hebt geregistreerd in Azure Portal door de waarde `android:host=`.
     Vervang de sleutel-hash die u hebt geregistreerd in Azure Portal door de waarde `android:path=`. De handtekening-hash mag **niet** als URL zijn gecodeerd. Zorg ervoor dat er een voorloop-`/` staat aan het begin van uw handtekening-hash.
-    >[!NOTE]
-    >U vervangt de Pakketnaam door de waarde `android:host`. Dit moet er ongeveer als volgt uitzien: com.azuresamples.msalandroidapp. De Handtekening-hash vervangt u door uw waarde `android:path`. Dit moet er ongeveer als volgt uitzien: /1wIqXSqBj7w+h11ZifsnqwgyKrY=. U kunt deze waarden ook vinden in de blade Verificatie van uw app-registratie. Merk op dat uw omleidings-URI er ongeveer als volgt uitziet: msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D. Als de handtekening-hash als URL is gecodeerd aan het einde van deze waarde, mag de handtekening-hash **niet** als URL zijn gecodeerd in uw waarde `android:path`.
+    
+    De "pakket naam" u vervangt de `android:host` waarde met moet er ongeveer als volgt uitzien: "com. azuresamples. msalandroidapp".
+    De "Signature hash" u vervangt uw `android:path` waarde met moet er ongeveer als volgt uitzien: "/1wIqXSqBj7w + h11ZifsnqwgyKrY =".
+    
+    U kunt deze waarden ook vinden in de Blade verificatie van de app-registratie. Merk op dat uw omleidings-URI er ongeveer als volgt uitziet: msauth://com.azuresamples.msalandroidapp/1wIqXSqBj7w%2Bh11ZifsnqwgyKrY%3D. Als de handtekening-hash als URL is gecodeerd aan het einde van deze waarde, mag de handtekening-hash **niet** als URL zijn gecodeerd in uw waarde `android:path`.
 
 ## <a name="use-msal"></a>MSAL gebruiken
 

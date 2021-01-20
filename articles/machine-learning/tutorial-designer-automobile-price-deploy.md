@@ -8,14 +8,14 @@ services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
 ms.topic: tutorial
-ms.date: 11/25/2020
+ms.date: 01/15/2021
 ms.custom: designer
-ms.openlocfilehash: 14be695f2f58b9738af11a3d2ca3f06592a1cc6e
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
-ms.translationtype: HT
+ms.openlocfilehash: 6bba5ad17cbb6f1ed72d06b37c6d6af9ebd26495
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575955"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246465"
 ---
 # <a name="tutorial-deploy-a-machine-learning-model-with-the-designer"></a>Zelfstudie: Een Machine Learning-model implementeren met de ontwerpfunctie
 
@@ -97,11 +97,30 @@ Wanneer de inrichting van uw AKS-service is voltooid, gaat u terug naar de realt
 
 1. Selecteer de AKS-cluster die u hebt gemaakt.
 
-1. Selecteer **Implementeren**.
-    
     :::image type="content" source="./media/tutorial-designer-automobile-price-deploy/setup-endpoint.png"alt-text="Schermopname waarin het instellen van een nieuw realtime-eindpunt wordt weergegeven":::
 
+    U kunt ook **Geavanceerde** instellingen voor uw realtime-eind punt wijzigen.
+    
+    |Geavanceerde instelling|Description|
+    |---|---|
+    |Application Insights diagnose en gegevens verzameling inschakelen| Hiermee wordt aangegeven of Azure-toepassing Ingishts moet worden ingeschakeld voor het verzamelen van gegevens van de geïmplementeerde eind punten. </br> Standaard: onwaar |
+    |Score-time-out| Een time-out in milliseconden voor het afdwingen van een score voor het bepalen van aanroepen naar de webservice.</br>Standaard: 60000|
+    |Automatisch schalen ingeschakeld|   Hiermee wordt aangegeven of automatische schaalaanpassing moet worden ingeschakeld voor de webservice.</br>Standaard: True|
+    |Minimale replica's| Het minimale aantal containers dat moet worden gebruikt wanneer deze webservice automatisch wordt geschaald.</br>Standaard: 1|
+    |Maxi maal aantal replica's| Het maximale aantal containers dat moet worden gebruikt wanneer deze webservice automatisch wordt geschaald.</br> Standaard: 10|
+    |Doel gebruik|Het doelgebruik (in procenten van 100) dat de automatische schaalaanpassing moet proberen aan te houden voor deze webservice.</br> Standaard: 70|
+    |Periode vernieuwen|Hoe vaak (in seconden) de automatische schaalr probeert deze webservice te schalen.</br> Standaard: 1|
+    |CPU-reserve capaciteit|Het aantal CPU-kernen dat moet worden toegewezen voor deze webservice.</br> Standaard: 0,1|
+    |Capaciteit van geheugen reserve ring|De hoeveelheid geheugen in GB dat moet worden toegewezen voor deze webservice.</br> Standaard: 0,5|
+        
+
+1. Selecteer **Implementeren**. 
+
     Nadat de implementatie is voltooid, wordt een melding boven het canvas weergegeven. Dit kan enkele minuten duren.
+
+> [!TIP]
+> U kunt ook implementeren naar **Azure container instance** (ACI) als u **Azure container instance** voor **reken type** selecteert in het vak realtime-eindpunt instelling.
+> Azure container instance wordt gebruikt voor testen of ontwikkeling. Gebruik ACI voor werk belastingen op laag schaal die kleiner zijn dan 48 GB RAM-geheugen.
 
 ## <a name="view-the-real-time-endpoint"></a>Het realtime-eindpunt bekijken
 

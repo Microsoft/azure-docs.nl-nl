@@ -9,12 +9,12 @@ ms.reviewer: jrasnick, garye
 ms.date: 09/25/2020
 author: nelgson
 ms.author: negust
-ms.openlocfilehash: 906d3d28aabf8f6ecd6e04c38b4519937fa95c2b
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
-ms.translationtype: HT
+ms.openlocfilehash: 68b113de63cfefde805c1c46e9303829c4eb33a7
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092156"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98222136"
 ---
 # <a name="machine-learning-capabilities-in-azure-synapse-analytics"></a>Mogelijkheden voor machine learning in Azure Synapse Analytics
 
@@ -40,7 +40,7 @@ De meeste machine learning-projecten omvatten gevestigde stappen, en een van die
 
 #### <a name="data-source-and-pipelines"></a>Gegevensbron en pijplijnen
 
-Dankzij [Azure Data Factory](/azure/data-factory/introduction), een native geïntegreerd onderdeel van Azure Synapse, is er een krachtige set tools beschikbaar voor gegevensopname en pijplijnen voor gegevensindeling. Zo kunt u eenvoudig gegevenspijplijnen maken voor toegang tot en transformatie van de gegevens naar een indeling die kan worden gebruikt voor machine learning. [Meer informatie over gegevenspijplijnen](/azure/data-factory/concepts-pipelines-activities?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) in Synapse. 
+Dankzij [Azure Data Factory](../../data-factory/introduction.md), een native geïntegreerd onderdeel van Azure Synapse, is er een krachtige set tools beschikbaar voor gegevensopname en pijplijnen voor gegevensindeling. Zo kunt u eenvoudig gegevenspijplijnen maken voor toegang tot en transformatie van de gegevens naar een indeling die kan worden gebruikt voor machine learning. [Meer informatie over gegevenspijplijnen](../../data-factory/concepts-pipelines-activities.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) in Synapse. 
 
 #### <a name="data-preparation-and-explorationvisualization"></a>Gegevensvoorbereiding en -ontwikkeling/visualisatie
 
@@ -64,13 +64,13 @@ In aanvulling op MLlib kunnen populaire bibliotheken, zoals [Scikit](https://sci
 
 #### <a name="train-models-with-azure-machine-learning-automated-ml"></a>Modellen trainen met geautomatiseerde ML van Azure Machine Learning
 
-Een andere manier om machine learning-modellen te trainen, waarvoor niet veel voorafgaande kennis van machine learning nodig is, is het gebruik van geautomatiseerde ML. [Geautomatiseerde ML](/azure/machine-learning/concept-automated-ml) is een functie die automatisch een set machine learning-modellen traint, en de gebruiker in staat stelt om het beste model te selecteren op basis van specifieke metrische gegevens. Dankzij een naadloze integratie met Azure Machine Learning van Azure Synapse-notebooks kunnen gebruikers eenvoudig gebruikmaken van geautomatiseerde ML in Synapse met Azure Active Directory-verificatie.  Dit betekent dat u alleen naar uw Azure Machine Learning-werkruimte hoeft te verwijzen en geen referenties moet invoeren. Hier vindt u een [zelfstudie voor geautomatiseerde ML](../spark/apache-spark-azure-machine-learning-tutorial.md) die beschrijft hoe u modellen traint met behulp van Azure Machine Learning geautomatiseerde ML op Synapse Spark-pools.
+Een andere manier om machine learning-modellen te trainen, waarvoor niet veel voorafgaande kennis van machine learning nodig is, is het gebruik van geautomatiseerde ML. [Geautomatiseerde ML](../../machine-learning/concept-automated-ml.md) is een functie die automatisch een set machine learning-modellen traint, en de gebruiker in staat stelt om het beste model te selecteren op basis van specifieke metrische gegevens. Dankzij een naadloze integratie met Azure Machine Learning van Azure Synapse-notebooks kunnen gebruikers eenvoudig gebruikmaken van geautomatiseerde ML in Synapse met Azure Active Directory-verificatie.  Dit betekent dat u alleen naar uw Azure Machine Learning-werkruimte hoeft te verwijzen en geen referenties moet invoeren. Hier vindt u een [zelfstudie voor geautomatiseerde ML](../spark/apache-spark-azure-machine-learning-tutorial.md) die beschrijft hoe u modellen traint met behulp van Azure Machine Learning geautomatiseerde ML op Synapse Spark-pools.
 
 ### <a name="model-deployment-and-scoring"></a>Modelimplementatie en -score
 
 Modellen die binnen of buiten Azure Synapse zijn getraind kunnen eenvoudig worden gebruikt om in batch te scoren. Momenteel zijn er in Synapse twee manieren waarop u in batch kunt scoren.
 
-* U kunt de [TSQL PREDICT-functie](../sql-data-warehouse/sql-data-warehouse-predict.md) gebruiken in Synapse SQL-pools om uw voorspellingen te doen op dezelfde locatie als uw gegevens. Met deze krachtige en schaalbare functie kunt u uw gegevens verrijken zonder dat u gegevens uit uw data warehouse hoeft te verplaatsen. Er is een nieuwe [begeleide machine learning-modelervaring in Synapse Studio](https://aka.ms/synapse-ml-ui) beschikbaar, waarin u een ONNX-model kunt implementeren vanuit het Azure Machine Learning-modelregister in Synapse SQL-pools om in batch te scoren met behulp van PREDICT.
+* U kunt de [TSQL PREDICT-functie](../sql-data-warehouse/sql-data-warehouse-predict.md) gebruiken in Synapse SQL-pools om uw voorspellingen te doen op dezelfde locatie als uw gegevens. Met deze krachtige en schaalbare functie kunt u uw gegevens verrijken zonder dat u gegevens uit uw data warehouse hoeft te verplaatsen. Er is een nieuwe [begeleide machine learning-modelervaring in Synapse Studio](./tutorial-sql-pool-model-scoring-wizard.md) beschikbaar, waarin u een ONNX-model kunt implementeren vanuit het Azure Machine Learning-modelregister in Synapse SQL-pools om in batch te scoren met behulp van PREDICT.
 
 * Een andere optie voor machine Learning-modellen om in batch te scoren in Azure Synapse, is om de Apache Spark-pools voor Azure Synapse te gebruiken. Afhankelijk van de bibliotheken die worden gebruikt voor het trainen van de modellen, kunt u een code-ervaring gebruiken om in batch te scoren.
 

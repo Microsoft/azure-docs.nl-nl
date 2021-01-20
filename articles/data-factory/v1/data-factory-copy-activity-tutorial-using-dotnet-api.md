@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 01/22/2018
 ms.author: jingwang
 robots: noindex
-ms.openlocfilehash: d047a45d678918541eb3c2d2c45e4519a34bdd57
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
-ms.translationtype: HT
+ms.openlocfilehash: 42d1d66c67b554b4b98cd8267b5945049215f843
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608677"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98556015"
 ---
 # <a name="tutorial-create-a-pipeline-with-copy-activity-using-net-api"></a>Zelfstudie: een pijplijn maken met de kopieeractiviteit in .NET API
 > [!div class="op_single_selector"]
@@ -39,7 +39,7 @@ In deze zelfstudie maakt u een pijplijn met één activiteit erin: kopieeractivi
 Een pijplijn kan meer dan één activiteit hebben. Ook kunt u twee activiteiten koppelen (de ene activiteit na de andere laten uitvoeren) door de uitvoergegevensset van één activiteit in te stellen als invoergegevensset voor een andere activiteit. Zie [Meerdere activiteiten in een pijplijn](data-factory-scheduling-and-execution.md#multiple-activities-in-a-pipeline) voor meer informatie. 
 
 > [!NOTE] 
-> Zie [Naslaginformatie over de .NET API voor Data Factory](/dotnet/api/index?view=azuremgmtdatafactories-4.12.1) voor volledige documentatie over .NET API voor Data Factory.
+> Zie [Naslaginformatie over de .NET API voor Data Factory](/dotnet/api/overview/azure/data-factory) voor volledige documentatie over .NET API voor Data Factory.
 > 
 > In de gegevenspijplijn in deze zelfstudie worden gegevens van een brongegevensarchief gekopieerd naar een doelgegevensarchief. Meer informatie over het transformeren van gegevens met behulp van Azure Data Factory vindt u in [Zelfstudie: een pijplijn bouwen om gegevens te transformeren met een Hadoop-cluster](data-factory-build-your-first-pipeline.md).
 
@@ -519,7 +519,7 @@ U moet na deze stappen beschikken over de volgende vier waarden:
 20. Controleer of de twee werknemersrecords zijn gemaakt in de tabel **emp** in de opgegeven database.
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie [Naslaginformatie over de .NET API voor Data Factory](/dotnet/api/index?view=azuremgmtdatafactories-4.12.1) voor volledige documentatie over .NET API voor Data Factory.
+Zie [Naslaginformatie over de .NET API voor Data Factory](/dotnet/api/overview/azure/data-factory) voor volledige documentatie over .NET API voor Data Factory.
 
 In deze zelfstudie hebt u voor een kopieerbewerking Azure-blobopslag gebruikt als brongegevensarchief en Azure SQL Database als doelgegevensarchief. De volgende tabel bevat een lijst met gegevensarchieven die worden ondersteund als bron en doel voor de kopieeractiviteit: 
 

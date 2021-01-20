@@ -14,12 +14,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: afc2f05d61c888e50ec9de5edaa7806e6c6b5d3c
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
-ms.translationtype: HT
+ms.openlocfilehash: e2ace9a8d7d9c0229e7e06847c2ce56bea11c138
+ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92636235"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98555794"
 ---
 # <a name="set-up-an-azure-ssis-ir-in-azure-data-factory-by-using-powershell"></a>Een Azure-SSIS IR instellen in Azure Data Factory met behulp van PowerShell
 
@@ -30,7 +30,7 @@ Deze zelfstudie bevat de stappen voor het gebruik van PowerShell om een Azure SQ
 - Pakketten die zijn geïmplementeerd in SSIS Catalog (SSISDB) die worden gehost door een server of beheerd exemplaar van Azure SQL Database (projectimplementatiemodel)
 - Pakketten die zijn geïmplementeerd in het bestandssysteem, Azure Files of SQL Server-database (MSDB) die worden gehost door Azure SQL Managed Instance (pakketimplementatiemodel)
 
-Nadat een Azure-SSIS IR is ingericht, kunt u vertrouwde hulpprogramma's gebruiken om uw pakketten in Azure te implementeren en uit te voeren. Deze hulpprogramma's zijn al ingeschakeld voor Azure en bevatten SQL Server Data Tools (SSDT), SQL Server Management Studio (SSMS) en opdrachtregelprogramma's zoals [dtutil](/sql/integration-services/dtutil-utility?view=sql-server-2017) en [AzureDTExec](./how-to-invoke-ssis-package-azure-enabled-dtexec.md).
+Nadat een Azure-SSIS IR is ingericht, kunt u vertrouwde hulpprogramma's gebruiken om uw pakketten in Azure te implementeren en uit te voeren. Deze hulpprogramma's zijn al ingeschakeld voor Azure en bevatten SQL Server Data Tools (SSDT), SQL Server Management Studio (SSMS) en opdrachtregelprogramma's zoals [dtutil](/sql/integration-services/dtutil-utility) en [AzureDTExec](./how-to-invoke-ssis-package-azure-enabled-dtexec.md).
 
 Zie [Overzicht van integratieruntime in Azure-SSIS](concepts-integration-runtime.md#azure-ssis-integration-runtime) voor algemene informatie over een Azure-SSIS IR.
 
@@ -49,7 +49,7 @@ In deze zelfstudie leert u het volgende:
 
 [!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
-- **Azure-abonnement** . Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
+- **Azure-abonnement**. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/) aan voordat u begint.
 
 - **Azure SQL Database Server of een beheerd exemplaar (optioneel)** . Als u nog geen databaseserver hebt, maakt u die in Azure Portal voordat u begint. Met Data Factory wordt vervolgens een SSISDB-exemplaar op deze databaseserver gemaakt. 
 
@@ -69,7 +69,7 @@ In deze zelfstudie leert u het volgende:
 
   - Controleer of de databaseserver al een SSISDB-exemplaar heeft. Het inrichten van een Azure-SSIS IR biedt geen ondersteuning voor het gebruik van een bestaand SSIS-exemplaar.
 
-- **Azure PowerShell** . Volg de instructies in [Azure PowerShell installeren en configureren](/powershell/azure/install-Az-ps) om een PowerShell-script uit te voeren om uw Azure-SSIS IR in te stellen.
+- **Azure PowerShell**. Volg de instructies in [Azure PowerShell installeren en configureren](/powershell/azure/install-Az-ps) om een PowerShell-script uit te voeren om uw Azure-SSIS IR in te stellen.
 
 > [!NOTE]
 > Zie [Beschikbaarheid van Azure Data Factory en Azure SSIS IR per regio](https://azure.microsoft.com/global-infrastructure/services/?products=data-factory&regions=all) voor een lijst met Azure-regio's waarin Azure Data Factory en Azure-SSIS IR momenteel beschikbaar zijn. 
@@ -595,9 +595,9 @@ Als u SSISDB gebruikt, kunt u uw pakketten ernaar implementeren en deze uitvoere
 - Voor een beheerd exemplaar met een privé-eindpunt is de indeling van het servereindpunt `<server name>.<dns prefix>.database.windows.net`.
 - Voor een beheerd exemplaar met een openbaar eindpunt is de indeling van het servereindpunt `<server name>.public.<dns prefix>.database.windows.net,3342`. 
 
-Als u geen gebruik maakt van SSISDB, kunt u uw pakketten implementeren in het bestandssysteem, Azure Files of MSDB gehost door uw Azure SQL Managed Instance en deze uitvoeren op uw Azure-SSIS IR met behulp van de opdrachtregelprogramma's [dtutil](/sql/integration-services/dtutil-utility?view=sql-server-2017) en [AzureDTExec](./how-to-invoke-ssis-package-azure-enabled-dtexec.md). 
+Als u geen gebruik maakt van SSISDB, kunt u uw pakketten implementeren in het bestandssysteem, Azure Files of MSDB gehost door uw Azure SQL Managed Instance en deze uitvoeren op uw Azure-SSIS IR met behulp van de opdrachtregelprogramma's [dtutil](/sql/integration-services/dtutil-utility) en [AzureDTExec](./how-to-invoke-ssis-package-azure-enabled-dtexec.md). 
 
-Zie [SSIS-projecten/pakketten implementeren](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages?view=sql-server-ver15) voor meer informatie.
+Zie [SSIS-projecten/pakketten implementeren](/sql/integration-services/packages/deploy-integration-services-ssis-projects-and-packages) voor meer informatie.
 
 In beide gevallen kunt u uw geïmplementeerde pakketten ook uitvoeren op Azure-SSIS IR met behulp van de activiteit voor het uitvoeren van SSIS-pakketten in Data Factory-pijplijnen. Zie [Het uitvoeren van SSIS-pakketten aanroepen als een Data Factory-activiteit van de eerste klasse](./how-to-invoke-ssis-package-ssis-activity.md)voor meer informatie.
 

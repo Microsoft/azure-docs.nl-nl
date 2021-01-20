@@ -7,12 +7,12 @@ ms.topic: quickstart
 ms.date: 11/09/2020
 ms.author: spelluru
 ms.custom: devx-track-js
-ms.openlocfilehash: aac3b6339c318c76e9b0c9abd0bc3778f2563a6f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: a1afe4207ce3833f3bcb55bc7bc2e8e27f393f63
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498690"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179993"
 ---
 # <a name="quickstart-service-bus-topics-and-subscriptions-with-nodejs-and-the-preview-azureservice-bus-package"></a>Quickstart: Service Bus-onderwerpen en-abonnementen gebruiken met Node.js en het previewpakket azure/service-bus
 In deze zelfstudie leert u hoe u het [@azure/service-bus](https://www.npmjs.com/package/@azure/service-bus)-pakket in een JavaScript-programma kunt gebruiken om berichten te versturen naar een Service Bus-onderwerp en berichten te ontvangen van een Service Bus-abonnement naar dat onderwerp.
@@ -80,7 +80,7 @@ De volgende voorbeeldcode laat zien hoe u een batch berichten naar een Service B
                     await sender.sendMessages(batch);
     
                     // then, create a new batch 
-                    batch = await sender.createBatch();
+                    batch = await sender.createMessageBatch();
      
                     // now, add the message failed to be added to the previous batch to this batch
                     if (!batch.tryAddMessage(messages[i])) {

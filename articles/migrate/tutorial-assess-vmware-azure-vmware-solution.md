@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: MVC
-ms.openlocfilehash: f6d3c6f77b062939a88e7277cb7f0ab6ecff9fcb
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
-ms.translationtype: HT
+ms.openlocfilehash: e57084dab00210802edbd46e3380313e034eb036
+ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96753073"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98566749"
 ---
 # <a name="tutorial-assess-vmware-vms-for-migration-to-avs"></a>Zelfstudie: VMware-VM's evalueren voor migratie naar AVS
 
@@ -58,58 +58,63 @@ Voer als volgt een evaluatie uit:
 
    ![Locatie van de knop om servers te evalueren en migreren](./media/tutorial-assess-vmware-azure-vmware-solution/assess.png)
 
-2. In **Azure Migrate: Serverevaluatie** klikt u op **Evalueren**.
+1. In **Azure Migrate: Serverevaluatie** klikt u op **Evalueren**.
 
-3. Selecteer onder **Servers evalueren** > **Type evaluatie**, **Azure VMware Solution (AVS) (preview)** .
-4. In **Detectiebron**:
+1. Selecteer onder **Servers evalueren** > **Type evaluatie**, **Azure VMware Solution (AVS) (preview)** .
+
+1. In **Detectiebron**:
 
     - Als u machines hebt gedetecteerd met behulp van het apparaat, selecteert u **Machines die zijn gedetecteerd via een Azure Migrate-apparaat**.
     - Selecteer **Geïmporteerde machines** als u machines hebt gedetecteerd met behulp van een geïmporteerd CSV-bestand. 
     
-5. Geef een naam op voor de evaluatie. 
-6. Klik op **Alles weergeven** om de evaluatie-eigenschappen te controleren.
+1. Klik op **bewerken** om de eigenschappen van de evaluatie te bekijken.
 
-    ![Pagina voor het selecteren van de evaluatie-instellingen](./media/tutorial-assess-vmware-azure-vmware-solution/assess-servers.png)
+    :::image type="content" source="./media/tutorial-assess-vmware-azure-vmware-solution/assess-servers.png" alt-text="Pagina voor het selecteren van de evaluatie-instellingen":::
+ 
 
-
-7. In **Evaluatie-eigenschappen** > **Doeleigenschappen**:
+1. In **Evaluatie-eigenschappen** > **Doeleigenschappen**:
 
     - Geef onder **Doelregio** de Azure-regio op waarnaar u de migratie wilt uitvoeren.
        - De aanbevelingen voor grootte en kosten zijn gebaseerd op de locatie die u opgeeft.
-       - U kunt momenteel drie regio's evalueren (US - oost, US - west, Europa - west)
-   - Laat in **Opslagtype** **vSAN** ongemoeid. Dit is het standaard opslagtype voor een privécloud.
+       - U kunt op dit moment evalueren voor vier regio's (Australië-oost, VS-Oost, Europa-west, VS-West)
+   - Het **opslag type** wordt standaard ingesteld op **vSAN**. Dit is het standaard opslagtype voor een privécloud.
    - **Gereserveerde instanties** worden momenteel niet ondersteund voor AVS-knooppunten.
-8. In **VM-grootte**:
-    - Selecteer onder **Knooppunttype** een knooppunttype op basis van de werkbelastingen die worden uitgevoerd op de on-premises virtuele machines.
-        - Azure Migrate adviseert het knooppunt van knooppunten die nodig zijn om de virtuele machines naar AVS te migreren.
-        - Het standaard knooppunttype is AV36.
-    - **FTT-instelling, RAID-niveau**, selecteert u de combinatie van fouttolerantie en RAID.  De geselecteerde FTT-optie bepaalt samen met de schijfvereiste voor de on-premises virtuele machine de totale vSAN-opslag die is vereist in AVS.
+1. In **VM-grootte**:
+    - Het **knooppunt type** wordt standaard ingesteld op **AV36**. Azure Migrate adviseert het knooppunt van knooppunten die nodig zijn om de virtuele machines naar AVS te migreren.
+    - In de **instelling FTT, RAID-niveau**, selecteert u de combi natie van niet-toegestaan en RAID.  De geselecteerde FTT-optie bepaalt samen met de schijfvereiste voor de on-premises virtuele machine de totale vSAN-opslag die is vereist in AVS.
     - Geef bij **CPU-overbezetting** de verhouding op van virtuele kerngeheugens die zijn gekoppeld aan één fysiek kerngeheugen in het AVS-knooppunt. Een overschrijding van meer dan 4:1 kan leiden tot verminderde prestaties, maar kan worden gebruikt voor werkbelastingen van het type webserver.
 
-9. In **Knooppuntgrootte**: 
+1. In **Knooppuntgrootte**: 
     - Selecteer onder **Criterium voor het aanpassen van de grootte** of u de evaluatie wilt baseren op statische metagegevens of op gegevens op basis van de prestaties. Als u prestatiegegevens gebruikt:
         - Geef onder **Prestatiegeschiedenis** de gegevensduur aan waarop u de evaluatie wilt baseren
         - Geef onder **Percentielgebruik** de percentielwaarde op die u wilt gebruiken voor de prestatiesteekproef. 
     - Geef onder **Comfortfactor** de buffer op die u tijdens de evaluatie wilt gebruiken. Deze houdt rekening met factoren zoals seizoensgebonden gebruik, een korte prestatiegeschiedenis en een mogelijke gebruikstoename in de toekomst. Als u bijvoorbeeld een comfortfactor van twee gebruikt:
     
         **Onderdeel** | **Effectief gebruik** | **Comfortfactor toevoegen (2,0)**
-        --- | --- | ---  
-        Kernen | 2 | 4
-        Geheugen | 8 GB | 16 GB     
+        --- | --- | ---
+        Kernen | 2  | 4
+        Geheugen | 8 GB | 16 GB  
 
-10. Onder **Prijzen**:
+1. Onder **Prijzen**:
     - In **Aanbieding** wordt de [Azure-aanbieding](https://azure.microsoft.com/support/legal/offer-details/) waarvoor u bent ingeschreven weergegeven; serverevaluatie schat de kosten voor die aanbieding.
     - Selecteer bij **Valuta** de factureringsvaluta voor uw account.
     - Voeg onder **Korting (%)** een abonnementspecifieke korting toe die u bovenop de Azure-aanbieding ontvangt. De standaardinstelling is 0%.
 
-11. Klik op **Opslaan** als u wijzigingen aanbrengt.
+1. Klik op **Opslaan** als u wijzigingen aanbrengt.
 
-    ![Evaluatie-eigenschappen](./media/tutorial-assess-vmware-azure-vmware-solution/view-all.png)
+    :::image type="content" source="./media/tutorial-assess-vmware-azure-vmware-solution/avs-view-all.png" alt-text="Evaluatie-eigenschappen":::
 
-12. Klik onder **Servers evalueren** op **Volgende**.
-13. U kunt onder **Servers evalueren** > **Machines selecteren voor evaluatie** een nieuwe groep met servers voor evaluatie maken door **Nieuwe maken** te selecteren en een groepsnaam op te geven. 
-14. Selecteer het apparaat en selecteer de virtuele machines die u wilt toevoegen aan de groep. Klik op **Volgende**.
-15. Controleer de details van de evaluatie onder **Controleren + evaluatie maken** en klik op **Evaluatie maken** om de groep te maken en de evaluatie uit te voeren.
+1. Klik onder **Servers evalueren** op **Volgende**.
+
+1. In **machines selecteren om**  >  de **beoordelings naam** te beoordelen > een naam opgeven voor de evaluatie. 
+ 
+1. In **selecteren of een groep maken** > selecteert u **nieuwe maken** en geeft u een groeps naam op. 
+    
+    :::image type="content" source="./media/tutorial-assess-vmware-azure-vmware-solution/assess-group.png" alt-text="Virtuele machines toevoegen aan een groep":::
+ 
+1. Selecteer het apparaat en selecteer de virtuele machines die u wilt toevoegen aan de groep. Klik op **Volgende**.
+
+1. Controleer de details van de evaluatie onder **Controleren + evaluatie maken** en klik op **Evaluatie maken** om de groep te maken en de evaluatie uit te voeren.
 
     > [!NOTE]
     > Voor evaluaties op basis van prestaties raden we u aan om minstens een dag na het starten van de detectie te wachten voordat u een evaluatie maakt. Dit biedt tijd voor het verzamelen van betrouwbaarder prestatiegegevens. In het ideale geval wacht u na het starten van de detectie op de prestatieduur die u opgeeft (dag/week/maand) voor een classificatie met hoge betrouwbaarheid.
@@ -121,6 +126,8 @@ Een AVS-evaluatie beschrijft het volgende:
 - Gereedheid voor AVS: Of de on-premises virtuele machines geschikt zijn voor migratie naar de Azure VMware Solution (AVS).
 - Aantal AVS-knooppunten: Geschat aantal AVS-knooppunten dat is vereist om de virtuele machines uit te voeren.
 - Gebruik over AVS-knooppunten: Geprojecteerde CPU-, geheugen- en opslaggebruik op alle knooppunten.
+    - Gebruik is een vooraf prefactorie in de volgende overhead van Cluster beheer, zoals de vCenter Server, NSX Manager (groot), NSX Edge, als HCX is geïmplementeerd, ook de HCX Manager en IX toestellen die ~ 44vCPU (11 CPU), 75GB aan RAM en 722GB aan opslag gebruiken vóór compressie en ontdubbeling. 
+    - Geheugen, ontdubbeling en compressie zijn momenteel ingesteld op 100% gebruik voor geheugen en 1,5 ontdubbeling en compressie, een door de gebruiker gedefinieerde invoer in komende releases, waardoor de gebruiker de vereiste grootte kan aanpassen.
 - Schatting van de maandelijkse kosten: De geschatte maandelijkse kosten voor alle knooppunten van de Azure VMware Solution (AVS) die de on-premises virtuele machines uitvoeren.
 
 ## <a name="view-an-assessment"></a>Een evaluatie weergeven
@@ -128,8 +135,12 @@ Een AVS-evaluatie beschrijft het volgende:
 U geeft een evaluatie als volgt weer:
 
 1. In **Servers** > **Azure Migrate: Serverevaluatie** klikt u op het nummer naast **Evaluaties**.
-2. Selecteer in **Evaluaties** een evaluatie om deze te openen. 
-3. Controleer de samenvatting van de evaluatie. U kunt ook de evaluatie-eigenschappen bewerken of de evaluatie opnieuw berekenen.
+
+1. Selecteer in **Evaluaties** een evaluatie om deze te openen. Ter voorbeeld (schattingen en kosten alleen ter illustratie): 
+
+    :::image type="content" source="./media/tutorial-assess-vmware-azure-vmware-solution/avs-assessment-summary.png" alt-text="Overzicht van AVS-evaluatie":::
+
+1. Controleer de samenvatting van de evaluatie. U kunt ook de evaluatie-eigenschappen bewerken of de evaluatie opnieuw berekenen.
  
 
 ### <a name="review-readiness"></a>Gereedheid controleren

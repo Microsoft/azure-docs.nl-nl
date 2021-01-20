@@ -8,12 +8,12 @@ ms.subservice: security
 ms.topic: quickstart
 ms.date: 05/17/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0156a1d7cea477a1725b60a5e1de229e76d2664c
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
-ms.translationtype: HT
+ms.openlocfilehash: 90c2584ef56922fc2cd57f445201b63550c485c1
+ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517985"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98200665"
 ---
 # <a name="quickstart-create-and-encrypt-a-windows-vm-with-the-azure-cli"></a>Quickstart: Een virtuele Windows-machine maken en versleutelen met behulp van de Azure CLI
 
@@ -27,7 +27,7 @@ De Azure CLI wordt gebruikt voor het maken en beheren van Azure-resources vanaf 
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep maken met de opdracht [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
+Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az-group-create). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
 
 ```azurecli-interactive
 az group create --name myResourceGroup --location eastus
@@ -35,7 +35,7 @@ az group create --name myResourceGroup --location eastus
 
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
-Maak een VM met [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create). In het volgende voorbeeld wordt een VM met de naam *myVM* gemaakt. In dit voorbeeld wordt *azureuser* voor de naam van een gebruiker met beheerdersrechten en *myPassword12* als het wachtwoord gebruikt.
+Maak een VM met [az vm create](/cli/azure/vm#az-vm-create). In het volgende voorbeeld wordt een VM met de naam *myVM* gemaakt. In dit voorbeeld wordt *azureuser* voor de naam van een gebruiker met beheerdersrechten en *myPassword12* als het wachtwoord gebruikt.
 
 ```azurecli-interactive
 az vm create \
@@ -63,7 +63,7 @@ Het maken van de virtuele machine en de ondersteunende resources duurt enkele mi
 
 ## <a name="create-a-key-vault-configured-for-encryption-keys"></a>Een sleutelkluis maken die is geconfigureerd voor versleutelingssleutels
 
-De versleutelingssleutel van Azure Disk Encryption wordt opgeslagen in een Azure-sleutelkluis. Een sleutelkluis maken met [az keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create). Gebruik de parameter --enabled-for-disk-encryption om de sleutelkluis in te schakelen voor het opslaan van versleutelingssleutels.
+De versleutelingssleutel van Azure Disk Encryption wordt opgeslagen in een Azure-sleutelkluis. Een sleutelkluis maken met [az keyvault create](/cli/azure/keyvault#az-keyvault-create). Gebruik de parameter --enabled-for-disk-encryption om de sleutelkluis in te schakelen voor het opslaan van versleutelingssleutels.
 > [!Important]
 > Elke sleutelkluis moet een unieke naam hebben. In het volgende voorbeeld wordt een sleutelkluis gemaakt met de naam *myKV*, maar u moet deze een andere naam geven.
 
@@ -73,7 +73,7 @@ az keyvault create --name "myKV" --resource-group "myResourceGroup" --location e
 
 ## <a name="encrypt-the-virtual-machine"></a>De virtuele machine versleutelen
 
-Versleutel uw virtuele machine met [az vm encryption](/cli/azure/vm/encryption?view=azure-cli-latest), zodat u uw unieke sleutelkluisnaam kunt opgeven voor de parameter --disk-encryption-keyvault.
+Versleutel uw virtuele machine met [az vm encryption](/cli/azure/vm/encryption), zodat u uw unieke sleutelkluisnaam kunt opgeven voor de parameter --disk-encryption-keyvault.
 
 ```azurecli-interactive
 az vm encryption enable -g MyResourceGroup --name MyVM --disk-encryption-keyvault myKV

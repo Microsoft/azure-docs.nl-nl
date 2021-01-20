@@ -2,26 +2,21 @@
 title: 'Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Adobe Identity Management | Microsoft Docs'
 description: Ontdek hoe u eenmalige aanmelding configureert tussen Azure Active Directory en Adobe Identity Management.
 services: active-directory
-documentationCenter: na
 author: jeevansd
-manager: mtillman
-ms.reviewer: barbkess
-ms.assetid: 9db7f01d-7f15-492f-a839-55963790a12e
+manager: CelesteDG
+ms.reviewer: CelesteDG
 ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: tutorial
-ms.date: 09/26/2019
+ms.date: 01/15/2021
 ms.author: jeedes
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 96a49df85f02083571e84ec884b37fb43b0d4001
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
-ms.translationtype: HT
+ms.openlocfilehash: 18c626a11724b585bf699f8be470b439177991ae
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97618375"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250843"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-adobe-identity-management"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Adobe Identity Management
 
@@ -30,8 +25,6 @@ In deze zelfstudie leert u hoe u Adobe Identity Management integreert met Azure 
 * In Azure AD beheren wie toegang heeft tot Adobe Identity Management.
 * Instellen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Adobe Identity Management.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -50,18 +43,18 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Als u de integratie van Adobe Identity Management wilt configureren in Azure AD, moet u Adobe Identity Management vanuit de galerie toevoegen aan de lijst met beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen vanuit de galerie** in het zoekvak: **Adobe Identity Management**.
 1. Selecteer **Adobe Identity Management** in het resultatenpaneel, en voeg de app vervolgens toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-adobe-identity-management"></a>Eenmalige aanmelding van Azure AD configureren en testen voor Adobe Identity Management
+## <a name="configure-and-test-azure-ad-sso-for-adobe-identity-management"></a>Azure AD SSO voor Adobe Identity Management configureren en testen
 
 Configureer en test eenmalige aanmelding van Azure AD met Adobe Identity Management met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Adobe Identity Management.
 
-Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Adobe Identity Management te configureren en te testen:
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Adobe Identity Management:
 
 1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
     1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
@@ -74,15 +67,15 @@ Voltooi de volgende stappen om eenmalige aanmelding van Azure AD met Adobe Ident
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Ga in de [Azure-portal](https://portal.azure.com/) op de integratiepagina van de toepassing **Adobe Identity Management** naar de sectie **Beheren**, en selecteer **Eenmalige aanmelding**.
+1. Zoek in het Azure Portal op de pagina **Adobe Identity Management** Application Integration de sectie **Manage** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
-1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL: `https://adobe.com`
+    a. In het tekstvak **Aanmeldings-URL** typt u de URL: `https://adobe.com`
 
     b. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `https://federatedid-na1.services.adobe.com/federated/saml/metadata/alias/<CUSTOM_ID>`
 
@@ -116,38 +109,63 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Adobe Identity Management** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-adobe-identity-management-sso"></a>Eenmalige aanmelding voor Adobe Identity Management configureren
 
-Als u eenmalige aanmelding aan de zijde van **Adobe Identity Management** wilt configureren, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste uit de Azure-portal gekopieerde URL's verzenden naar het [klantenondersteuningsteam van Adobe Identity Management](mailto:identity@adobe.com). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+1. Als u de configuratie binnen Adobe Identity Management wilt automatiseren, moet u de **uitbrei ding mijn apps Secure Sign-in browser** installeren door te klikken op **de uitbrei ding installeren**.
+
+    ![Uitbreiding van Mijn apps](common/install-myappssecure-extension.png)
+
+2. Nadat u een uitbrei ding aan de browser hebt toegevoegd, klikt u op **Adobe Identity Management instellen** . u wordt doorgestuurd naar de Adobe Identity Management-toepassing. Geef de beheerders referenties op om u aan te melden bij Adobe Identity Management. In de browserextensie wordt de toepassing automatisch voor u geconfigureerd en worden stappen 3 t/m 8 geautomatiseerd.
+
+    ![Instelling configureren](common/setup-sso.png)
+
+3. Als u Adobe Identity Management hand matig wilt instellen, meldt u zich in een ander webbrowser venster aan bij uw Adobe Identity Management-bedrijfs site als beheerder.
+
+4. Ga naar het tabblad **instellingen** en klik op **Directory maken**.
+
+    ![Adobe Identity Management-instellingen](./media/adobe-identity-management-tutorial/settings.png)
+
+5. Geef de mapnaam op in het tekstvak en selecteer **federatieve id** en klik op **volgende**.
+
+    ![Adobe Identity Management-Directory maken](./media/adobe-identity-management-tutorial/create-directory.png)
+
+6. Selecteer de **andere SAML-providers** en klik op **volgende**.
+ 
+    ![Adobe Identity Management SAML-providers](./media/adobe-identity-management-tutorial/saml-providers.png)
+
+7. Klik op **selecteren** om het **XML-bestand met meta gegevens** te uploaden dat u hebt gedownload van de Azure Portal.
+
+    ![Configuratie van Adobe Identity Management SAML](./media/adobe-identity-management-tutorial/saml-configuration.png)
+
+8. Klik op **Done**.
 
 ### <a name="create-adobe-identity-management-test-user"></a>Testgebruiker voor Adobe Identity Management maken
 
-In deze sectie maakt u een gebruiker met de naam B.Simon in Adobe Identity Management. Neem contact op met het [ondersteuningsteam van Adobe Identity Management](mailto:identity@adobe.com) om de gebruikers toe te voegen op het Adobe Identity Management-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
+1. Ga naar het tabblad **gebruikers** en klik op **gebruiker toevoegen**.
 
-## <a name="test-sso"></a>Eenmalige aanmelding testen 
+    ![Adobe Identity Management-gebruiker toevoegen](./media/adobe-identity-management-tutorial/add-user.png)
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+2. Geef in het tekstvak **e-mail adres van gebruiker invoeren** het **e-mail adres** op.
 
-Wanneer u in het toegangsvenster op de tegel Adobe Identity Management klikt, wordt u automatisch aangemeld bij de Adobe Identity Management-instantie waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+    ![Adobe Identity Management gebruiker opslaan](./media/adobe-identity-management-tutorial/save-user.png)
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+3. Klik op **Opslaan**.
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](https://docs.microsoft.com/azure/active-directory/active-directory-saas-tutorial-list) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+## <a name="test-sso"></a>Eenmalige aanmelding testen
 
-- [What is application access and single sign-on with Azure Active Directory? ](https://docs.microsoft.com/azure/active-directory/active-directory-appssoaccess-whatis) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties.
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de aanmeldings-URL van Adobe Identity Management, waar u de aanmeldings stroom kunt initiëren.
 
-- [Adobe Identity Management uitproberen met Azure AD](https://aad.portal.azure.com/)
+* Ga rechtstreeks naar de aanmeldings-URL van Adobe Identity Management en start de aanmeldings stroom.
 
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Adobe Identity Management in de mijn apps klikt, wordt dit omgeleid naar de aanmeldings-URL van Adobe Identity Management. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
+## <a name="next-steps"></a>Volgende stappen
+
+Zodra u Adobe Identity Management hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

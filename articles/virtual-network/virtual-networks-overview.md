@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/03/2020
 ms.author: kumud
-ms.openlocfilehash: 11651b7a76ea0e61f78f3b2f305e39ed621df391
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.openlocfilehash: e1efd02d60ba874178f24da2b441fc122e4a1912
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109314"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218531"
 ---
 # <a name="what-is-azure-virtual-network"></a>Wat is Azure Virtual Network?
 
@@ -31,7 +31,7 @@ Via een virtueel Azure-netwerk kunnen Azure-resources veilig communiceren met el
 Alle resources in een VNet kunnen standaard uitgaand communiceren met internet. U kunt binnenkomend communiceren met een resource door er een openbaar IP-adres of een openbare Load Balancer aan toe te wijzen. U kunt ook een openbaar IP-adres of een openbare Load Balancer gebruiken voor het beheren van uw uitgaande verbindingen.  Zie [Uitgaande verbindingen](../load-balancer/load-balancer-outbound-connections.md), [Openbare IP-adressen](virtual-network-public-ip-address.md) en [Load Balancer](../load-balancer/load-balancer-overview.md) voor meer informatie over uitgaande verbindingen in Azure.
 
 >[!NOTE]
->Wanneer u alleen een interne [Standard Load Balancer](../load-balancer/load-balancer-standard-overview.md) gebruikt, is uitgaande connectiviteit niet beschikbaar totdat u definieert hoe u wilt dat [uitgaande verbindingen](../load-balancer/load-balancer-outbound-connections.md) werken met een op exemplaarniveau openbaar IP-adres of een openbare Load Balancer.
+>Wanneer u alleen een interne [Standard Load Balancer](../load-balancer/load-balancer-overview.md) gebruikt, is uitgaande connectiviteit niet beschikbaar totdat u definieert hoe u wilt dat [uitgaande verbindingen](../load-balancer/load-balancer-outbound-connections.md) werken met een op exemplaarniveau openbaar IP-adres of een openbare Load Balancer.
 
 ### <a name="communicate-between-azure-resources"></a>Communicatie tussen Azure-resources
 
@@ -53,7 +53,7 @@ U kunt uw on-premises computers en netwerken verbinden met een virtueel netwerk 
 
 U kunt netwerkverkeer filteren tussen subnetten met behulp van een of beide van de volgende opties:
 
-- **Netwerkbeveiligingsgroepen:** Netwerkbeveiligingsgroepen en toepassingsbeveiligingsgroepen kunnen meerdere binnenkomende en uitgaande beveiligingsregels bevatten waarmee u verkeer van en naar resources kunt filteren op bron- en doel-IP-adres, poort en protocol. Zie [Netwerkbeveiligingsgroepen](security-overview.md#network-security-groups) of [Toepassingsbeveiligingsgroepen](security-overview.md#application-security-groups) voor meer informatie.
+- **Netwerkbeveiligingsgroepen:** Netwerkbeveiligingsgroepen en toepassingsbeveiligingsgroepen kunnen meerdere binnenkomende en uitgaande beveiligingsregels bevatten waarmee u verkeer van en naar resources kunt filteren op bron- en doel-IP-adres, poort en protocol. Zie [Netwerkbeveiligingsgroepen](./network-security-groups-overview.md#network-security-groups) of [Toepassingsbeveiligingsgroepen](./network-security-groups-overview.md#application-security-groups) voor meer informatie.
 - **Virtuele netwerkapparaten:** Een virtueel netwerkapparaat is een virtuele machine die een netwerkfunctie uitvoert, zoals een firewall, WAN-optimalisatie of een andere netwerkfunctie. Zie [Azure Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/networking?page=1&subcategories=appliances) voor meer informatie over het bekijken van een lijst met beschikbare virtuele netwerkapparaten die u in een virtueel netwerk kunt implementeren.
 
 ### <a name="route-network-traffic"></a>Netwerkverkeer routeren

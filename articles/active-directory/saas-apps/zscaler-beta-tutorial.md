@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/24/2019
+ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: 1fec471e4047707f2b7cbaa55fdc7f2256bebe93
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.openlocfilehash: 6914fb50cdb157cf8ef7b5433ebbde47eff8fc32
+ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92519862"
+ms.lasthandoff: 01/17/2021
+ms.locfileid: "98539804"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-beta"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler Beta
 
@@ -26,9 +26,6 @@ Wanneer u Zscaler Beta integreert met Azure AD, kunt u het volgende:
 * U kunt in Azure AD beheren wie toegang heeft tot Zscaler Beta.
 * Ervoor zorgen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij Zscaler Beta. Dit toegangsbeheerelement wordt eenmalige aanmelding (SSO) genoemd.
 * Uw accounts op een centrale locatie beheren, namelijk met behulp van Azure Portal.
-
-Meer informatie over de integratie van SaaS-apps (Software as a Service) met Azure AD vindt u in [Eenmalige aanmelding van toepassingen in Azure AD](../manage-apps/what-is-single-sign-on.md).
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -41,68 +38,47 @@ Als u integratie tussen Azure AD met Zscaler Beta wilt configureren, hebt u het 
 
 In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD configureren en testen.
 
-* Zscaler Beta biedt ondersteuning voor door SP geïnitieerde eenmalige aanmelding.
-* Zscaler Beta biedt ondersteuning voor het Just-In-Time inrichten van gebruikers.
+* Zscaler beta ondersteunt door **SP** geïnitieerde SSO.
+* Zscaler beta ondersteunt **just-in-time** -gebruikers inrichting.
 
-## <a name="add-zscaler-beta-from-the-azure-marketplace"></a>Zscaler Beta toevoegen vanuit Azure Marketplace
+## <a name="adding-zscaler-beta-from-the-gallery"></a>Zscaler Beta toevoegen vanuit de galerie
 
 Als u de integratie van Zscaler Beta met Azure AD wilt configureren, moet u Zscaler Beta vanuit de galerie toevoegen aan uw lijst met beheerde SaaS-apps.
 
-Volg deze stappen om Zscaler Beta toe te voegen vanuit Azure Marketplace.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. Typ in het gedeelte **toevoegen vanuit de galerie** de tekst **Zscaler Beta** in het zoekvak.
+1. Selecteer **Zscaler Beta** in het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Selecteer **Azure Active Directory** in [Azure Portal](https://portal.azure.com) in het navigatiepaneel aan de linkerkant.
+## <a name="configure-and-test-azure-ad-sso-for-zscaler-beta"></a>Azure AD SSO voor Zscaler Beta configureren en testen
 
-    ![Knop Azure Active Directory](common/select-azuread.png)
+Azure AD SSO met Zscaler Beta configureren en testen met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Zscaler Beta.
 
-2. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen** .
+Als u Azure AD SSO wilt configureren en testen met Zscaler beta, voert u de volgende stappen uit:
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u **Nieuwe toepassing** bovenaan het dialoogvenster.
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[Zscaler Beta SSO configureren](#configure-zscaler-beta-sso)** : als u de instellingen voor één Sign-On wilt configureren aan de kant van de toepassing.
+    1. **[Maak een Zscaler beta test User](#create-zscaler-beta-test-user)** -om een soort tegen te brengen van B. Simon in Zscaler bèta dat is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-    ![Knop Nieuwe toepassing](common/add-new-app.png)
+## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-4. Voer in het zoekvak **Zscaler Beta** in. Selecteer **Zscaler Beta** in het resultatenvenster en selecteer **Toevoegen** .
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-     ![Zscaler Beta in de lijst met resultaten](common/search-new-app.png)
+1. Zoek in de Azure Portal op de pagina **Zscaler bèta** -toepassings integratie de sectie **beheren** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
 
-In deze sectie configureert en test u eenmalige aanmelding van Azure AD met Zscaler Beta op basis van een testgebruiker met de naam Britta Simon.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Zscaler Beta tot stand is gebracht.
+1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-Als u eenmalige aanmelding van Azure AD bij Zscaler Beta wilt configureren en testen, voert u de volgende stappen uit:
-
-- [Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-single-sign-on) zodat uw gebruikers deze functie kunnen gebruiken.
-- [Eenmalige aanmelding van Zscaler Beta configureren](#configure-zscaler-beta-single-sign-on): als u de instellingen voor eenmalige aanmelding aan de clientzijde wilt configureren.
-- [Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user) voor het testen van eenmalige aanmelding bij Azure AD met Britta Simon.
-- [De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user) zodat Britta Simon gebruik kan maken van eenmalige aanmelding bij Azure AD.
-- [Een testgebruiker voor Zscaler Beta maken](#create-a-zscaler-beta-test-user): als u in Zscaler Beta een tegenhanger van Britta Simon wilt hebben die is gekoppeld aan de Azure AD-representatie van de gebruiker.
-- [Eenmalige aanmelding testen](#test-single-sign-on) om te controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Zscaler Beta te configureren.
-
-1. In de [Azure-portal](https://portal.azure.com/) selecteert u **Zscaler Beta** op de integratiepagina van de toepassing **Eenmalige aanmelding** .
-
-    ![Koppeling naar Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. Selecteer in het dialoogvenster **Selecteer een methode voor eenmalige aanmelding** de modus **SAML/WS-Fed** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Selecteer **Bewerken** op de pagina **Eenmalige aanmelding instellen met SAML** om het dialoogvenster **SAML-basisconfiguratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
-
-4. Voer deze stap uit in de sectie **SAML-basisconfiguratie** :
-
-    ![Informatie over eenmalige aanmelding bij Zscaler Beta-domeinen en -URL's](common/sp-intiated.png)
-
-    - Typ in het tekstvak **Aanmeldings-URL** de URL waarmee uw gebruikers zich aanmelden bij uw Zscaler Beta-toepassing.
+    Voer in het vak **AANMELDINGS URL** de URL in die wordt gebruikt door uw gebruikers om zich aan te melden bij uw Zscaler Beta Beta-toepassing.
 
     > [!NOTE]
     > Deze waarde is niet echt. Vervang de waarde door de werkelijke aanmeldings-URL. Neem contact op met het [klantondersteuningsteam van Zscaler Beta](https://www.zscaler.com/company/contact) om de waarde op te vragen.
@@ -119,24 +95,20 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Zscaler Beta te c
 
     a. Selecteer **Nieuwe claim toevoegen** om het dialoogvenster **Gebruikersclaims beheren** te openen.
 
-    ![Het dialoogvenster Gebruikersclaims](common/new-save-attribute.png)
-
-    ![Het dialoogvenster Gebruikersclaims beheren](common/new-attribute-details.png)
-
     b. Typ in het tekstvak **Naam** de naam van het kenmerk die voor die rij wordt weergegeven.
 
     c. Laat het vak **Naamruimte** leeg.
 
-    d. Als **Bron** selecteert u **Kenmerk** .
+    d. Als **Bron** selecteert u **Kenmerk**.
 
     e. Typ in de lijst **Bronkenmerk** de kenmerkwaarde voor die rij.
 
-    f. Selecteer **OK** .
+    f. Selecteer **OK**.
 
-    g. Selecteer **Opslaan** .
+    g. Selecteer **Opslaan**.
 
     > [!NOTE]
-    > Raadpleeg [De rolclaim configureren](../develop/active-directory-enterprise-app-role-management.md) voor informatie over het configureren van rollen in Azure AD.
+    > Klik [hier](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) als u wilt weten hoe u rollen in Azure AD moet configureren.
 
 7. Ga naar de pagina **Eenmalige aanmelding met SAML instellen** en selecteer in de sectie **SAML-handtekeningcertificaat** de optie **Downloaden** om het **certificaat (Base64)** te downloaden. Sla het op uw computer op.
 
@@ -146,11 +118,31 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Zscaler Beta te c
 
     ![Configuratie-URL's kopiëren](common/copy-configuration-urls.png)
 
-    - Aanmeldings-URL
-    - Azure AD-id
-    - Afmeldings-URL
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-### <a name="configure-zscaler-beta-single-sign-on"></a>Eenmalige aanmelding van Zscaler Beta configureren
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
+
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
+
+### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
+
+In deze sectie schakelt u B. Simon in om eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan Zscaler Beta.
+
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Zscaler Beta** in de lijst met toepassingen.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u de rollen hebt ingesteld zoals hierboven beschreven, kunt u deze selecteren in de vervolgkeuzelijst **Selecteer een rol**.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
+
+## <a name="configure-zscaler-beta-sso"></a>Zscaler Beta SSO configureren
 
 1. Als u de configuratie in Zscaler Beta wilt automatiseren, moet u **My Apps-browserextensie voor veilig aanmelden** installeren door **De extensie installeren** te selecteren.
 
@@ -166,11 +158,11 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Zscaler Beta te c
    
     ![Beheer](./media/zscaler-beta-tutorial/ic800206.png "Beheer")
 
-    a. Kies onder **Verificatietype** de optie **SAML** .
+    a. Kies onder **Verificatietype** de optie **SAML**.
 
-    b. Selecteer **SAML configureren** .
+    b. Selecteer **SAML configureren**.
 
-5. Volg deze stappen in het venster **SAML bewerken** : 
+5. Volg deze stappen in het venster **SAML bewerken**: 
             
     ![Gebruikers en verificatie beheren](./media/zscaler-beta-tutorial/ic800208.png "Gebruikers en verificatie beheren")
     
@@ -188,7 +180,7 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Zscaler Beta te c
 
     g. Voer in het vak **Kenmerk van afdelingsnaam** **department** in als u automatische inrichting van SAML wilt inschakelen voor department-kenmerken.
 
-    h. Selecteer **Opslaan** .
+    h. Selecteer **Opslaan**.
 
 6. Voer in het dialoogvenster **Gebruikersverificatie configureren** de volgende stappen uit:
 
@@ -196,30 +188,30 @@ Voer deze stappen uit om eenmalige aanmelding van Azure AD bij Zscaler Beta te c
 
     a. Beweeg de muisaanwijzer boven het menu **Activering** linksonder.
 
-    b. Selecteer **Activate** .
+    b. Selecteer **Activate**.
 
 ## <a name="configure-proxy-settings"></a>Proxyinstellingen configureren
 Volg deze stappen om de proxyinstellingen te configureren in Internet Explorer.
 
-1. Start **Internet Explorer** .
+1. Start **Internet Explorer**.
 
 2. Selecteer **Internetopties** in het menu **Extra** om het dialoogvenster **Internetopties** te openen. 
     
      ![Het dialoogvenster Internetopties](./media/zscaler-beta-tutorial/ic769492.png "Internetopties")
 
-3. Selecteer het tabblad **Verbindingen** . 
+3. Selecteer het tabblad **Verbindingen**. 
   
      ![Tabblad Verbindingen](./media/zscaler-beta-tutorial/ic769493.png "Verbindingen")
 
 4. Selecteer **LAN-instellingen** om het dialoogvenster **LAN-instellingen (Local Area Network)** te openen.
 
-5. Volg deze stappen in de sectie **Proxyserver** : 
+5. Volg deze stappen in de sectie **Proxyserver**: 
    
     ![De sectie Proxyserver](./media/zscaler-beta-tutorial/ic769494.png "Proxyserver")
 
     a. Schakel het selectievakje **Een proxyserver voor uw LAN-netwerk gebruiken** in.
 
-    b. Typ **gateway.Zscaler Beta.net** in het tekstvak **Adres** .
+    b. Typ **gateway.Zscaler Beta.net** in het tekstvak **Adres**.
 
     c. Voer in het vak **Poort** de waarde **80** in.
 
@@ -229,77 +221,24 @@ Volg deze stappen om de proxyinstellingen te configureren in Internet Explorer.
 
 6. Selecteer **OK** om het dialoogvenster **Internetopties** te sluiten.
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
+### <a name="create-zscaler-beta-test-user"></a>Testgebruiker voor Zscaler Beta maken
 
-Maak in Azure Portal een testgebruiker met de naam Britta Simon.
-
-1. Selecteer in de Azure-portal aan de linkerkant **Azure Active Directory** > **Gebruikers** > **Alle gebruikers** .
-
-    ![Koppelingen naar Gebruikers en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![De knop Nieuwe gebruiker](common/new-user.png)
-
-3. Volg deze stappen in het dialoogvenster **Gebruiker** :
-
-    ![Dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het vak **Naam** **Britta Simon** in.
-  
-    b. Voer in het vak **Gebruikersnaam** `brittasimon@yourcompanydomain.extension` in. Een voorbeeld is BrittaSimon@contoso.com.
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in. Noteer de waarde die wordt weer gegeven in het vak **Wachtwoord** .
-
-    d. Selecteer **Maken** .
-
-### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
-
-Geef Britta Simon toestemming voor gebruik van eenmalige aanmelding van Azure door haar toegang te geven tot Zscaler Beta.
-
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** > **Alle toepassingen** > **Zscaler Beta** .
-
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
-
-2. Voer **Zscaler Beta** in en selecteer deze optie in de lijst met toepassingen.
-
-    ![De Zscaler Beta-koppeling in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen** .
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Selecteer **Gebruiker toevoegen** . Selecteer **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![De knop Gebruiker toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst. Kies vervolgens **Selecteren** onderaan het scherm.
-
-    ![Het dialoogvenster Gebruikers en groepen](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_users.png)
-
-6. Selecteer in het dialoogvenster **Rol selecteren** de juiste gebruikersrol in de lijst. Kies vervolgens **Selecteren** onderaan het scherm.
-
-    ![Het dialoogvenster Rol selecteren](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_roles.png)
-
-7. Selecteer **Toewijzen** in het dialoogvenster **Toewijzing toevoegen** .
-
-    ![Het dialoogvenster Toewijzing toevoegen](./media/zscaler-beta-tutorial/tutorial_zscalerbeta_assign.png)
-
-### <a name="create-a-zscaler-beta-test-user"></a>Een Zscaler Beta-testgebruiker maken
-
-In deze sectie wordt de gebruiker Britta Simon gemaakt in Zscaler Beta. Zscaler Beta biedt ondersteuning voor **Just-In-Time-inrichting van gebruikers** . Deze functie is standaard ingeschakeld. In deze sectie hoeft u niets te doen. Als er nog geen gebruiker in Zscaler Beta bestaat, wordt er een nieuwe gemaakt nadat deze is geverifieerd.
+In deze sectie wordt de gebruiker Britta Simon gemaakt in Zscaler Beta. Zscaler Beta biedt ondersteuning voor **Just-In-Time-inrichting van gebruikers**. Deze functie is standaard ingeschakeld. In deze sectie hoeft u niets te doen. Als er nog geen gebruiker in Zscaler Beta bestaat, wordt er een nieuwe gemaakt nadat deze is geverifieerd.
 
 >[!Note]
 >Als u handmatig een gebruiker wilt maken, neemt u contact op met het [ondersteuningsteam van Zscaler Beta](https://www.zscaler.com/company/contact).
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
+## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-Test de configuratie voor eenmalige aanmelding van Azure AD met behulp van het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u de tegel Zscaler Beta in het toegangsvenster selecteert, wordt u automatisch aangemeld bij de instantie van Zscaler Beta waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de URL voor Zscaler Beta-aanmelding, waar u de aanmeldings stroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Ga rechtstreeks naar de URL voor Zscaler Beta en begin met de aanmeldings stroom.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Zscaler beta in de mijn apps klikt, wordt dit omgeleid naar de URL voor Zscaler bèta-aanmelding. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+
+
+## <a name="next-steps"></a>Volgende stappen
+
+Zodra u Zscaler Beta hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

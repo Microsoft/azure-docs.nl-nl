@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 10/25/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: 0d833c32000eb91511782184ef4455bc1973a714
-ms.sourcegitcommit: 02ed9acd4390b86c8432cad29075e2204f6b1bc3
-ms.translationtype: HT
+ms.openlocfilehash: a7ee4e205851a751f7a50ac0ddadfb4e4c7eb81a
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97807906"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98247400"
 ---
 # <a name="azure-synapse-analytics-frequently-asked-questions"></a>Veelgestelde vragen over Azure Synapse Analytics
 
@@ -138,11 +138,6 @@ A: Er is geen "verplaatsing" of "migratie". U kunt ervoor kiezen om nieuwe werkr
 ### <a name="q-what-is-the-default-deployment-of-dedicated-sql-pools-now"></a>V: Wat is nu de standaardimplementatie van toegewezen SQL-pools? 
 
 A: Standaard worden alle nieuwe toegewezen SQL-pools geïmplementeerd in een werkruimte. U kunt echter nog steeds een speciale SQL-pool (voorheen SQL DW) in een zelfstandige vorm maken. 
-
-
-### <a name="q-what-are-the-functional-differences-between-dedicated-sql-pools-and-serverless-sql-pools"></a>V: Wat zijn de functionele verschillen tussen toegewezen SQL-pools en serverloze pools?
-
-A: U vindt een volledige lijst met verschillen in [Verschillen in T-SQL-functies in Synapse SQL](./sql/overview-features.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

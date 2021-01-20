@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.service: iot-edge
 services: iot-edge
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: a9591a394d80e7b4c60f28fda6c0a425ba3d0a4f
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
-ms.translationtype: HT
+ms.openlocfilehash: 05d6607c091361ecee3fcd5527025b6f9fb59051
+ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98180061"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98573204"
 ---
 # <a name="tutorial-create-a-hierarchy-of-iot-edge-devices-preview"></a>Zelfstudie: Een hiërarchie van IoT Edge-apparaten maken (preview)
 
@@ -425,6 +425,7 @@ De resterende stappen om de configuratie van de IoT Edge-runtime te voltooien en
                            "env": {
                                "REGISTRY_PROXY_REMOTEURL": {
                                    "value": "https://mcr.microsoft.com"
+                               } 
                            },
                            "status": "running",
                            "restartPolicy": "always"
@@ -453,7 +454,7 @@ De resterende stappen om de configuratie van de IoT Edge-runtime te voltooien en
                    },
                    "runtime": {
                        "settings": {
-                           "minDockerVersion": "v1.25",
+                           "minDockerVersion": "v1.25"
                        },
                        "type": "docker"
                    },
@@ -575,7 +576,7 @@ U kunt zowel Azure Portal als de Azure CLI gebruiken om workloads van de cloud n
                    },
                    "runtime": {
                        "settings": {
-                           "minDockerVersion": "v1.25",
+                           "minDockerVersion": "v1.25"
                        },
                        "type": "docker"
                    },

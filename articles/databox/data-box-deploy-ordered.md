@@ -2,24 +2,24 @@
 title: Zelfstudie voor Azure Data Box bestellen | Microsoft Docs
 description: In deze zelfstudie leert u over Azure Data Box, een hybride oplossing waarmee u on-premises gegevens kunt importeren in Azure en hoe u Azure Data Box kunt bestellen.
 services: databox
-author: alkohli
+author: v-dalc
 ms.service: databox
 ms.subservice: pod
 ms.topic: tutorial
-ms.date: 11/19/2020
+ms.date: 01/13/2021
 ms.author: alkohli
-ms.openlocfilehash: aad6a3ef754b5ba2c65a9b93fbdfcfdc26348487
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: fd165795be85c26cdfcaee3c4fd01427274a7316
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186155"
+ms.locfileid: "98210338"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Zelfstudie: Azure Data Box bestellen
 
-Azure Data Box is een hybride oplossing waarmee u uw on-premises gegevens snel, gemakkelijk en betrouwbaar in Azure kunt importeren. U zet uw gegevens op een opslagapparaat van 80 TB (bruikbare capaciteit) dat Microsoft naar u heeft verstuurd, en u stuurt het apparaat vervolgens terug. Deze gegevens worden vervolgens geüpload in Azure.
+Azure Data Box is een hybride oplossing waarmee u uw on-premises gegevens snel, gemakkelijk en betrouwbaar in Azure kunt importeren. U brengt uw gegevens over naar een opslag apparaat met door micro soft geleverde 80-TB (bruikbare capaciteit) en verzendt het apparaat vervolgens terug. Deze gegevens worden vervolgens geüpload in Azure.
 
-In deze zelfstudie wordt beschreven hoe u een Azure Data Box bestelt. In deze zelfstudie komen deze onderwerpen aan bod:
+In deze zelfstudie wordt beschreven hoe u een Azure Data Box bestelt. In deze zelfstudie komen deze onderwerpen aan bod:  
 
 > [!div class="checklist"]
 >
@@ -245,7 +245,7 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
     |Resourcegroep    | De resourcegroep die u eerder hebt geselecteerd. |
     |Naam van importorder | Geef een beschrijvende naam op om de bestelling te volgen. <br> De naam kan tussen 3 en 24 tekens bevatten (letters, cijfers en afbreekstreepjes). <br> De naam moet beginnen en eindigen met een letter of cijfer.    |
 
-    ![Wizard voor Data Box-importorder, het scherm Basisgegevens, ingevuld met de juiste gegevens](media/data-box-deploy-ordered/select-data-box-import-06.png)<!--Generic subscription. Cut note. Box command.-->
+    ![Wizard voor Data Box-importorder, het scherm Basisgegevens, ingevuld met de juiste gegevens](media/data-box-deploy-ordered/select-data-box-import-06.png)
 
 7. Selecteer op het scherm **Gegevensdoel** het **Gegevensdoel** - opslagaccounts of beheerde schijven.
 
@@ -253,7 +253,11 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
 
     ![Wizard voor Data Box-importorder, het scherm Gegevensbestemming, met de opslagaccounts geselecteerd](media/data-box-deploy-ordered/select-data-box-import-07.png)
 
-    Selecteer een of meer opslagaccounts in de gefilterde lijst van een bestaand opslagaccount, gebaseerd op de opgegeven Azure-regio. Data Box kan worden gekoppeld aan maximaal 10 opslagaccounts. U kunt ook een nieuw account van het type **Algemeen gebruik v1**, **Algemeen gebruik v2** of **Blob-opslag** maken.
+    Selecteer op basis van de opgegeven Azure-regio een of meer opslag accounts uit de gefilterde lijst met bestaande opslag accounts. Data Box kan worden gekoppeld aan maximaal 10 opslagaccounts. U kunt ook een nieuw account van het type **Algemeen gebruik v1**, **Algemeen gebruik v2** of **Blob-opslag** maken.
+
+   > [!NOTE]
+   > - Als u Azure Premium FileStorage-accounts selecteert, wordt het ingerichte quotum op de opslag account-share verhoogd naar de grootte van de gegevens die naar de bestands shares worden gekopieerd. Nadat het quotum is verhoogd, wordt het niet opnieuw aangepast, bijvoorbeeld als de Data Box uw gegevens niet kan kopiëren.
+   > - Dit quotum wordt gebruikt voor facturering. Nadat uw gegevens naar het Data Center zijn geüpload, moet u het quotum aanpassen aan uw behoeften. Zie voor meer informatie [over facturering](../../articles/storage/files/understanding-billing.md).
 
     Opslagaccounts met virtuele netwerken worden ondersteund. Als u wilt dat de Data Box-service kan werken met beveiligde opslagaccounts, schakelt u in de firewallinstellingen van het opslagaccount de vertrouwde services in. Zie [Azure Data Box toevoegen als een vertrouwde service](../storage/common/storage-network-security.md#exceptions) voor meer informatie.
 
@@ -419,7 +423,7 @@ Voer de volgende stappen uit met behulp van Azure CLI om een apparaat te bestell
    |sku| Het specifieke Data Box-apparaat dat u bestelt. Geldige waarden zijn: "DataBox", "DataBoxDisk" en "DataBoxHeavy"| "DataBox" |
    |email-list| De e-mailadressen die zijn gekoppeld aan de bestelling.| "gusp@contoso.com" |
    |street-address1| Het adres waarnaar de bestelling wordt verzonden. | "15700 NE 39th St" |
-   |street-address2| De secundaire adresgegevens, zoals het appartementnummer of het gebouwnummer. | "Bld 123" |
+   |street-address2| De secundaire adresgegevens, zoals het appartementnummer of het gebouwnummer. | ' Buil ding 123 ' |
    |city| De plaats waarnaar het apparaat wordt verzonden. | "Redmond" |
    |state-or-province| De staat/provincie waarnaar het apparaat wordt verzonden.| "WA" |
    |country| Het land waarnaar het apparaat wordt verzonden. | "United States" |
@@ -538,7 +542,7 @@ Voer de volgende stappen uit met behulp van Azure PowerShell om een apparaat te 
     |DataBoxType [vereist]| Het specifieke Data Box-apparaat dat u bestelt. Geldige waarden zijn: "DataBox", "DataBoxDisk" en "DataBoxHeavy"| "DataBox" |
     |EmailId [vereist]| De e-mailadressen die zijn gekoppeld aan de bestelling.| "gusp@contoso.com" |
     |StreetAddress1 [vereist]| Het adres waarnaar de bestelling wordt verzonden. | "15700 NE 39th St" |
-    |StreetAddress2| De secundaire adresgegevens, zoals het appartementnummer of het gebouwnummer. | "Bld 123" |
+    |StreetAddress2| De secundaire adresgegevens, zoals het appartementnummer of het gebouwnummer. | ' Buil ding 123 ' |
     |StreetAddress3| De derde adresgegevens. | |
     |City [vereist]| De plaats waarnaar het apparaat wordt verzonden. | "Redmond" |
     |StateOrProvinceCode [vereist]| De staat/provincie waarnaar het apparaat wordt verzonden.| "WA" |
@@ -601,7 +605,7 @@ Microsoft bereidt de verzending vervolgens voor en verzendt het apparaat met een
 
 ### <a name="track-a-single-order"></a>Eén bestelling volgen
 
-Als u informatie wilt ophalen over een enkele, bestaande Azure Data Box-bestelling, voert u [az databox job show](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-show&preserve-view=true) uit. De opdracht geeft informatie weer over de bestelling, zoals, maar niet beperkt tot: naam, resourcegroep, traceringsinformatie, abonnements-ID, contactgegevens, type verzending en apparaat-SKU.
+Voor het bijhouden van informatie over één bestaande Azure Data Box order, voert u uit [`az databox job show`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-show&preserve-view=true) . De opdracht geeft informatie weer over de bestelling, zoals, maar niet beperkt tot: naam, resourcegroep, traceringsinformatie, abonnements-ID, contactgegevens, type verzending en apparaat-SKU.
 
    ```azurecli
    az databox job show --resource-group <resource-group> --name <order-name>
@@ -642,7 +646,7 @@ Als u informatie wilt ophalen over een enkele, bestaande Azure Data Box-bestelli
 
 ### <a name="list-all-orders"></a>Alle bestellingen weergeven
 
-Als u meerdere apparaten hebt besteld, kunt u [az databox job list](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-list&preserve-view=true) uitvoeren om al uw Azure Data Box-bestellingen weer te geven. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
+Als u meerdere apparaten hebt besteld, kunt u uitvoeren [`az databox job list`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-list&preserve-view=true) om al uw Azure data Box orders weer te geven. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
 De opdracht geeft ook tijdstempels van elke bestelling weer.
 
 ```azurecli
@@ -718,7 +722,7 @@ Als u informatie wilt ophalen over een enkele, bestaande Azure Data Box-bestelli
 
 ### <a name="list-all-orders"></a>Alle bestellingen weergeven
 
-Als u meerdere apparaten hebt besteld, kunt u [Get-AzDataBoxJob](/powershell/module/az.databox/Get-AzDataBoxJob) uitvoeren om al uw Azure Data Box-bestellingen weer te geven. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
+Als u meerdere apparaten hebt besteld, kunt u uitvoeren [`Get-AzDataBoxJob`](/powershell/module/az.databox/Get-AzDataBoxJob) om al uw Azure data Box orders weer te geven. Met de opdracht wordt een lijst weergegeven met alle bestellingen die deel uitmaken van een specifieke resourcegroep. Het volgende wordt ook weergegeven in de uitvoer: naam van bestelling, status van verzending, Azure-regio, leveringstype, status van bestelling. Geannuleerde orders worden ook opgenomen in de lijst.
 De opdracht geeft ook tijdstempels van elke bestelling weer.
 
 ```azurepowershell
@@ -761,7 +765,7 @@ Als u een geannuleerde bestelling wilt verwijderen, gaat u naar **Overzicht** en
 
 ### <a name="cancel-an-order"></a>Een order annuleren
 
-Als u een Azure Data Box-bestelling wilt annuleren, voert u [az databox job cancel](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-cancel&preserve-view=true) uit. U moet een reden opgeven voor het annuleren van de bestelling.
+Als u een Azure Data Box order wilt annuleren, voert u uit [`az databox job cancel`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-cancel&preserve-view=true) . U moet een reden opgeven voor het annuleren van de bestelling.
 
    ```azurecli
    az databox job cancel --resource-group <resource-group> --name <order-name> --reason <cancel-description>
@@ -798,7 +802,7 @@ Als u een Azure Data Box-bestelling wilt annuleren, voert u [az databox job canc
 
 ### <a name="delete-an-order"></a>Een bestelling verwijderen
 
-Als u een Azure Data Box-bestelling hebt geannuleerd, kunt u [az databox job delete](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-delete&preserve-view=true) uitvoeren om de bestelling te verwijderen.
+Als u een Azure Data Box order hebt geannuleerd, kunt u uitvoeren [`az databox job delete`](/cli/azure/ext/databox/databox/job?view=azure-cli-latest#ext-databox-az-databox-job-delete&preserve-view=true) om de volg orde te verwijderen.
 
    ```azurecli
    az databox job delete --name [-n] <order-name> --resource-group <resource-group> [--yes] [--verbose]
@@ -871,7 +875,7 @@ PS C:\WINDOWS\system32>
 
 ### <a name="delete-an-order"></a>Een bestelling verwijderen
 
-Als u een Azure Data Box-bestelling hebt geannuleerd, kunt u [Remove-AzDataBoxJob](/powershell/module/az.databox/remove-azdataboxjob) uitvoeren om de bestelling te verwijderen.
+Als u een Azure Data Box order hebt geannuleerd, kunt u uitvoeren [`Remove-AzDataBoxJob`](/powershell/module/az.databox/remove-azdataboxjob) om de volg orde te verwijderen.
 
 ```azurepowershell
 Remove-AzDataBoxJob -Name <String> -ResourceGroup <String>

@@ -3,14 +3,14 @@ title: 'Zelfstudie voor Kubernetes in Azure: een toepassing bijwerken'
 description: In deze zelfstudie over Azure Kubernetes Service (AKS) leert u hoe u de implementatie van een bestaande toepassing bijwerkt naar AKS met een nieuwe versie van de toepassingscode.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
-ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: c8401a81a36d86b871df9fc428c393007b97c400
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.date: 01/12/2021
+ms.custom: mvc
+ms.openlocfilehash: b969e3ec1c670c0a12129289c8ff7eb81df51ff9
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94833908"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250652"
 ---
 # <a name="tutorial-update-an-application-in-azure-kubernetes-service-aks"></a>Zelfstudie: Een toepassing bijwerken in AKS (Azure Kubernetes Service)
 
@@ -64,7 +64,7 @@ docker-compose up --build -d
 
 Om te controleren of uw wijzigingen worden weergegeven in de bijgewerkte containerinstallatiekopie, opent u een lokale webbrowser met `http://localhost:8080`.
 
-:::image type="content" source="media/container-service-kubernetes-tutorials/vote-app-updated.png" alt-text="Schermopname met een voorbeeld van de bijgewerkte containerinstallatiekopie die Azure Voting App geopend heeft met een lokale webbrowser en lokale host.":::
+:::image type="content" source="media/container-service-kubernetes-tutorials/vote-app-updated.png" alt-text="Scherm opname van een voor beeld van de bijgewerkte container installatie kopie die lokaal wordt uitgevoerd in een lokale webbrowser":::
 
 De bijgewerkte waarden die zijn opgegeven in het bestand *config_file.cfg* worden weergegeven in de actieve toepassing.
 
@@ -143,9 +143,9 @@ Als u de bijgewerkte toepassing wilt bekijken, moet u eerst het externe IP-adres
 kubectl get service azure-vote-front
 ```
 
-Open nu een lokale webbrowser met het IP-adres van uw service:
+Open nu een webbrowser met het IP-adres van uw service:
 
-:::image type="content" source="media/container-service-kubernetes-tutorials/vote-app-updated-external.png" alt-text="Schermopname met een voorbeeld van de bijgewerkte app die Azure Voting App geopend heeft in een lokale webbrowser.":::
+:::image type="content" source="media/container-service-kubernetes-tutorials/vote-app-updated-external.png" alt-text="Scherm afbeelding van een voor beeld van de bijgewerkte installatie kopie Azure stem-app die wordt uitgevoerd in een AKS-cluster dat wordt geopend in een lokale webbrowser.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

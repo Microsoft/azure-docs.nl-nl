@@ -3,16 +3,16 @@ title: Uw klanten begrijpen in Azure Application Insights | Microsoft Docs
 description: Zelfstudie over het gebruiken van Application Insights om inzicht te krijgen in de wijze waarop klanten van uw app gebruikmaken.
 ms.subservice: application-insights
 ms.topic: tutorial
-author: mrbullwinkle
-ms.author: mbullwin
+author: lgayhardt
+ms.author: lagayhar
 ms.date: 09/20/2017
 ms.custom: mvc
-ms.openlocfilehash: ce9bf6fe6d130cf8511db2b2351c0de01b753d81
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 4f6eeb5265d99a17ed18ace91fa5f2d2f744dbb2
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87318399"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98210168"
 ---
 # <a name="use-azure-application-insights-to-understand-how-customers-are-using-your-application"></a>Gebruik Application Insights om inzicht te krijgen in de wijze waarop klanten van uw app gebruikmaken
 

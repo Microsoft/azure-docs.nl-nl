@@ -7,12 +7,12 @@ ms.author: askaur
 ms.date: 12/08/2020
 ms.topic: quickstart
 ms.service: azure-communication-services
-ms.openlocfilehash: ea66e4295e8228aa382aa29a46fcca8147dcbc98
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 1ad6b7241c7167c6da8952e7db2797fa275b7246
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97578017"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98251915"
 ---
 # <a name="quickstart-join-your-chat-app-to-a-teams-meeting"></a>Quickstart: Voeg u chat-app toe aan een Teams-meeting
 
@@ -29,11 +29,7 @@ Ga aan de slag met Azure Communication Services door uw chatoplossing te verbind
 
 Wanneer Communication Services-gebruikers als gastgebruiker deelnemen aan een Teams-vergadering, hebben ze alleen toegang tot de chat van de vergadering als ze deel uitmaken van de Teams-vergaderoproep. Raadpleeg de documentatie voor [Teams-interop](../voice-video-calling/get-started-teams-interop.md) voor meer informatie over het toevoegen van Communication Services-gebruikers aan een Teams-vergaderoproep.
 
-De interoperabiliteitsfunctie van Teams bevindt zich op dit moment in de beperkte preview. Als u deze functie wilt inschakelen voor uw Communication Services-resource, kunt u acsfeedback@microsoft.com e-mailen. Voeg het volgende bij: 
-1. De abonnements-id van het Azure-abonnement dat uw Communication Services-resource bevat. 
-2. De tenant-id van uw Teams. De eenvoudigste manier om dit te verkrijgen is door een koppeling naar het Team te verkrijgen en te delen. 
-
-U moet lid zijn van de organisatie die eigenaar is van beide entiteiten om deze functie te kunnen gebruiken. 
+U moet lid zijn van de organisatie die eigenaar is van beide entiteiten om deze functie te kunnen gebruiken.
 
 [!INCLUDE [Join Teams meetings](./includes/meeting-interop-javascript.md)]
 

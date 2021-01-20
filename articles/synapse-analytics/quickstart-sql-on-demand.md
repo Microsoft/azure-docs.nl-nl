@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: e75bab664bdd0d6a4ac898905226c9956f62b4ff
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: ffa9e7b5685f9a200f6a403045687626f67f66f4
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96450502"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98218294"
 ---
 # <a name="quickstart-use-serverless-sql-pool"></a>Quickstart: Serverloze SQL-pools gebruiken
 
@@ -26,7 +26,7 @@ In deze quickstart leert u hoe u query's uitvoert op: CSV-, Apache Parquet- en J
 
 Kies een SQL-client waarmee u query's wilt uitvoeren:
 
-- [Azure Synapse Studio](quickstart-synapse-studio.md) is een webhulpprogramma waarmee u kunt zoeken naar bestanden in opslag en SQL-query's kunt maken.
+- [Azure Synapse Studio](./get-started-create-workspace.md) is een webhulpprogramma waarmee u kunt zoeken naar bestanden in opslag en SQL-query's kunt maken.
 - [Azure Data Studio](sql/get-started-azure-data-studio.md) is een clienthulpprogramma waarmee u SQL-query's en notebooks kunt uitvoeren op uw on-demand database.
 - [SQL Server Management Studio](sql/get-started-ssms.md) is een clienthulpprogramma waarmee u SQL-query's kunt uitvoeren op uw on-demand database.
 

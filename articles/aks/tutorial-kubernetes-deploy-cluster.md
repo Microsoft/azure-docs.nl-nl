@@ -3,14 +3,14 @@ title: 'Zelfstudie voor Kubernetes in Azure: Een cluster implementeren'
 description: In deze zelfstudie Azure Kubernetes Service (AKS) gaat u een AKS-cluster maken en kubectl gebruiken om verbinding te maken met het hoofdknooppunt van Kubernetes.
 services: container-service
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/12/2021
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 0e034ebede39a3fd9046ced9716323d0c7d874df
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
-ms.translationtype: HT
+ms.openlocfilehash: a8e0ddcd77c26a00cf784fb8c2372734314dc0bb
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94684067"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98250635"
 ---
 # <a name="tutorial-deploy-an-azure-kubernetes-service-aks-cluster"></a>Zelfstudie: Een AKS-cluster (Azure Kubernetes Service) implementeren
 
@@ -21,7 +21,7 @@ Kubernetes biedt een gedistribueerd platform voor toepassingen in containers. Me
 > * De Kubernetes-CLI (kubectl) installeren
 > * Kubectl configureren om verbinding te maken met uw AKS-cluster
 
-In volgende zelfstudies wordt de Azure Vote-toepassing geïmplementeerd in het cluster en vervolgens geschaald en bijgewerkt.
+In latere zelf studies wordt de Azure stem-toepassing geïmplementeerd in het cluster, geschaald en bijgewerkt.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -33,9 +33,9 @@ Voor deze zelfstudie moet u Azure CLI versie 2.0.53 of hoger uitvoeren. Voer `az
 
 AKS-clusters kunnen gebruikmaken van Kubernetes-RBAC (op rollen gebaseerd toegangsbeheer voor Kubernetes). Met deze vorm van toegangsbeheer kunt u de toegang tot resources definiëren op basis van rollen die zijn toegewezen aan gebruikers. Machtigingen worden gecombineerd als aan een gebruiker meerdere rollen zijn toegewezen, en machtigingen kunnen gelden voor één enkele naamruimte of voor een heel cluster. Standaard wordt Kubernetes-RBAC automatisch ingeschakeld in Azure CLI wanneer u een AKS-cluster maakt.
 
-Maak een AKS-cluster met behulp van [az aks create][]. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluste* gemaakt in de resourcegroep met de naam *myResourceGroup*. Deze resourcegroep is gemaakt in de [vorige zelfstudie][aks-tutorial-prepare-acr] in de regio *eastus*. In het volgende voorbeeld wordt er geen regio opgegeven zodat het AKS-cluster ook wordt gemaakt in de regio *eastus*. Zie [Quota’s, groottebeperkingen voor virtuele machines en beschikbaarheid in regio’s in Azure Kubernetes Service (AKS)][quotas-skus-regions] voor meer informatie over resourcelimieten en beschikbaarheid van regio's voor AKS.
+Maak een AKS-cluster met behulp van [az aks create][]. In het volgende voorbeeld wordt een cluster met de naam *myAKSCluste* gemaakt in de resourcegroep met de naam *myResourceGroup*. Deze resourcegroep is gemaakt in de [vorige zelfstudie][aks-tutorial-prepare-acr] in de regio *eastus*. In het volgende voorbeeld wordt er geen regio opgegeven zodat het AKS-cluster ook wordt gemaakt in de regio *eastus*. Zie [quota's, beperkingen voor de grootte van virtuele machines en beschik baarheid van regio's in azure Kubernetes service (AKS)][quotas-skus-regions] voor meer informatie over resource limieten en beschik baarheid van REGIO'S voor AKS.
 
-Aangezien u geen service-principal van Azure Active Directory hebt opgegeven, wordt er automatisch een gemaakt. Een AKS-cluster heeft een service-principal nodig om met andere Azure-resources te kunnen communiceren. Hier is aan deze service-principal [het recht verleend om installatiekopieën op te halen][container-registry-integration] uit de ACR-instantie (Azure Container Registry) die u in de vorige zelfstudie hebt gemaakt. Als u het beheer wilt vereenvoudigen, kunt ook een [beheerde identiteit](use-managed-identity.md) gebruiken in plaats van een service-principal.
+Aangezien u geen service-principal van Azure Active Directory hebt opgegeven, wordt er automatisch een gemaakt. Een AKS-cluster heeft een service-principal nodig om met andere Azure-resources te kunnen communiceren. Hier is aan deze service-principal [het recht verleend om installatiekopieën op te halen][container-registry-integration] uit de ACR-instantie (Azure Container Registry) die u in de vorige zelfstudie hebt gemaakt. Als u de opdracht wilt uitvoeren, moet u een rol voor **eigenaar** of een **Azure-account beheerder** hebben op het Azure-abonnement.
 
 ```azurecli
 az aks create \
@@ -46,7 +46,7 @@ az aks create \
     --attach-acr <acrName>
 ```
 
-U kunt ook handmatig een service-principal configureren om installatiekopieën uit ACR op te halen. Zie [ACR-verificatie met service-principals](../container-registry/container-registry-auth-service-principal.md) of [Verifiëren vanaf Kubernetes met pullgeheim](../container-registry/container-registry-auth-kubernetes.md) voor meer informatie.
+Als u wilt voor komen dat een **eigenaar** of een rol beheerder voor een **Azure-account** nodig is, kunt u ook hand matig een Service-Principal configureren om installatie kopieën van ACR te halen. Zie [ACR-verificatie met service-principals](../container-registry/container-registry-auth-service-principal.md) of [Verifiëren vanaf Kubernetes met pullgeheim](../container-registry/container-registry-auth-kubernetes.md) voor meer informatie. U kunt ook een [beheerde identiteit](use-managed-identity.md) gebruiken in plaats van een service-principal voor eenvoudiger beheer.
 
 Na enkele minuten is de implementatie voltooid en retourneert JSON opgemaakte informatie over de AKS-implementatie.
 
@@ -76,8 +76,9 @@ Als u de verbinding met uw cluster wilt controleren, voert u de opdracht [kubect
 ```
 $ kubectl get nodes
 
-NAME                       STATUS   ROLES   AGE   VERSION
-aks-nodepool1-12345678-0   Ready    agent   32m   v1.14.8
+NAME                                STATUS   ROLES   AGE     VERSION
+aks-nodepool1-37463671-vmss000000   Ready    agent   2m37s   v1.18.10
+aks-nodepool1-37463671-vmss000001   Ready    agent   2m28s   v1.18.10
 ```
 
 ## <a name="next-steps"></a>Volgende stappen

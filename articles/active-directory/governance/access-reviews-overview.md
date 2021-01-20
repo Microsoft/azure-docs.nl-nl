@@ -17,12 +17,12 @@ ms.author: barclayn
 ms.reviewer: mwahl
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 08399c1b2d930abfdd5832cb102a789844931d61
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 22bfef17f68b2e83e4f7462d8e9af6fb8aacc284
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027693"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246737"
 ---
 # <a name="what-are-azure-ad-access-reviews"></a>Wat zijn toegangsbeoordelingen in Azure AD?
 
@@ -103,7 +103,7 @@ Hier volgen enkele voorbeelden van licentiescenario's om te helpen bepalen hoeve
 | Een beheerder maakt een toegangsbeoordeling van groep B met 500 gebruikers en 3 groepseigenaar en wijst de 3 groepseigenaars toe als de beoordelaars. | 3 licenties voor alle groepseigenaars als beoordelaars | 3 |
 | Een beheerder maakt een toegangsbeoordeling van groep B met 500 gebruikers. Maakt hier een zelfbeoordeling van. | 500 licenties voor alle gebruikers als zelfbeoordelaars | 500 |
 | Een beheerder maakt een toegangsbeoordeling van Groep C met 50 leden en 25 gastgebruikers. Maakt hier een zelfbeoordeling van. | 50 licenties voor alle gebruikers als zelfbeoordelaars.* | 50 |
-| Een beheerder maakt een toegangsbeoordeling van Groep D met 6 leden en 108 gastgebruikers. Maakt hier een zelfbeoordeling van. | 6 licenties voor alle gebruikers als zelfbeoordelaars. Gastgebruikers worden gefactureerd op basis van maandelijks actieve gebruiker (MAU). Er zijn geen extra licenties nodig. *  | - |
+| Een beheerder maakt een toegangsbeoordeling van Groep D met 6 leden en 108 gastgebruikers. Maakt hier een zelfbeoordeling van. | 6 licenties voor alle gebruikers als zelfbeoordelaars. Gastgebruikers worden gefactureerd op basis van maandelijks actieve gebruiker (MAU). Er zijn geen extra licenties nodig. *  | 6 |
 
 \* De prijzen voor externe Azure AD-identiteiten (gastgebruiker) zijn gebaseerd op maandelijks actieve gebruikers (MAU), d.w.z. het aantal unieke gebruikers met verificatie-activiteit in een kalendermaand. Dit model vervangt het factureringsmodel met een verhouding van 1:5, waarbij vijf gastgebruikers voor elke Azure AD Premium-licentie in uw tenant waren toegestaan. Wanneer uw tenant aan een abonnement is gekoppeld en u functies van Externe identiteiten gebruikt om met gastgebruikers samen te werken, wordt u automatisch gefactureerd met behulp van het MAU-gebaseerde factureringsmodel. Zie ‘Factureringsmodel voor externe Azure AD-identiteiten’ voor meer informatie.
 

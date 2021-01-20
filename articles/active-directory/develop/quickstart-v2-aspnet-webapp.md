@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1
-ms.openlocfilehash: 11c479c6cc8f330a2b3b1edd25bad39321d6ed1c
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: dbddf35b0aa1494ef719803fa84cafae04f3ec50
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017541"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98178581"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Quickstart: Aanmelding voor Microsoft Identity Platform toevoegen aan een ASP.NET-web-app
 
@@ -38,7 +38,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1: registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Ga naar het nieuwe deelvenster [Azure-portal, App-registraties](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs).
+> 1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetWebAppQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 > 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 >
@@ -53,7 +53,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
 > 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 > 1. Voeg `https://localhost:44368/` toe bij **Omleidings-URI**, en selecteer **Registreren**.
-> 1. Selecteer in het navigatiedeelvenster links onder de sectie Beheren de optie **Verificatie**
+> 1. Selecteer **Verificatie** onder **Beheren**.
 > 1. Selecteer **ID-tokens** in de subsectie **Impliciete toekenning**.
 > 1. Selecteer **Opslaan**.
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 09/08/2020
 author: palma21
 ms.author: jpalma
-ms.openlocfilehash: 53093edb1d3c142336f06ec8544aaa7b55e37477
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 138e3ee5272d790130cebfd8a1f61da7bed970d8
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611250"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98663965"
 ---
 # <a name="supported-kubernetes-versions-in-azure-kubernetes-service-aks"></a>Ondersteunde Kubernetes-versies in AKS (Azure Kubernetes Service)
 
@@ -143,7 +143,7 @@ Zie [Kubernetes](https://en.wikipedia.org/wiki/Kubernetes#History)voor de eerder
 | 1,18  | Mrt-23-20  | Mei 2020   | Aug 2020  | 1,21 GA | 
 | 1,19  | Aug-04-20  | Sep 2020   | Nov 2020  | 1,22 GA | 
 | 1,20  | Dec-08-20  | Jan 2021   | Mrt 2021  | 1,23 GA |
-| 1,21  | Apr-08-21 * | Mei 2021   | Jul 2021  | 1,24 GA |
+| 1,21  | Apr-08-21 * | Mei 2021   | Jun 2021  | 1,24 GA |
 
 \* De Kubernetes 1,21-upstream-release kan worden gewijzigd als de upstream-kalender als die nog moet worden voltooid.
 

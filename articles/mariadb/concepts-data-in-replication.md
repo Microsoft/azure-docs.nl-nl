@@ -3,15 +3,15 @@ title: Replicatie van gegevens-in-Azure Database for MariaDB
 description: Meer informatie over het gebruik van replicatie van gegevens in een externe server naar de Azure Database for MariaDB-service.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: 331e064bcf11af31a778cb8dd06c463712421b7c
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 4f83af5c72529b652b23db53bf9532e87b824ea4
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533426"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662624"
 ---
 # <a name="replicate-data-into-azure-database-for-mariadb"></a>Gegevens repliceren naar Azure Database for MariaDB
 

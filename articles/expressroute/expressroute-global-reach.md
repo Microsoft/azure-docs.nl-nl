@@ -8,19 +8,19 @@ ms.topic: conceptual
 ms.date: 09/18/2020
 ms.author: duau
 ms.custom: references_regions
-ms.openlocfilehash: e3f9105037c049a53f1b7b99da96dd857070fcc7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 50679e11697a4227af69b8568c5f3cd23fe26cbe
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90987621"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662794"
 ---
 # <a name="expressroute-global-reach"></a>ExpressRoute Global Reach
 ExpressRoute is een privé-en robuuste manier om uw on-premises netwerken te verbinden met de Microsoft Cloud. U hebt toegang tot veel Cloud Services van micro soft, zoals Azure en Microsoft 365 van uw persoonlijke data center of uw bedrijfs netwerk. Zo kunt u bijvoorbeeld een filiaal in San Francisco hebben met een ExpressRoute-circuit in Silicon dal en een ander filiaal in Londen met een ExpressRoute-circuit in dezelfde plaats. Beide filialen hebben snelle connectiviteit met Azure-resources in VS West en UK-zuid. De filialen kunnen echter geen verbinding maken en gegevens rechtstreeks met elkaar verzenden. Met andere woorden, 10.0.1.0/24 kan gegevens verzenden naar 10.0.3.0/24-en 10.0.4.0/24-netwerk, maar niet op 10.0.2.0/24-netwerk.
 
 ![Diagram met de circuits die niet samen zijn gekoppeld met Express route Global Reach.][1]
 
-Met **ExpressRoute Global Reach**kunt u ExpressRoute-circuits samen koppelen om een particulier netwerk tussen uw on-premises netwerken te maken. In het bovenstaande voor beeld, met de toevoeging van ExpressRoute Global Reach, kan uw San Francisco Office (10.0.1.0/24) gegevens rechtstreeks uitwisselen met uw kantoor in Londen (10.0.2.0/24) via de bestaande ExpressRoute-circuits en via het wereld wijde netwerk van micro soft. 
+Met **ExpressRoute Global Reach** kunt u ExpressRoute-circuits samen koppelen om een particulier netwerk tussen uw on-premises netwerken te maken. In het bovenstaande voor beeld, met de toevoeging van ExpressRoute Global Reach, kan uw San Francisco Office (10.0.1.0/24) gegevens rechtstreeks uitwisselen met uw kantoor in Londen (10.0.2.0/24) via de bestaande ExpressRoute-circuits en via het wereld wijde netwerk van micro soft. 
 
 ![Diagram met de circuits die samen met Express route Global Reach worden gekoppeld.][2]
 
@@ -33,7 +33,7 @@ ExpressRoute Global Reach is ontworpen voor een aanvulling op de WAN-implementat
 ExpressRoute Global Reach wordt ondersteund op de volgende locaties. 
 
 > [!NOTE] 
-> Om ExpressRoute Global Reach te scha kelen tussen [verschillende geopolitieke regio's](expressroute-locations-providers.md#locations), moeten uw circuits een **Premium-SKU**zijn.
+> Om ExpressRoute Global Reach te scha kelen tussen [verschillende geopolitieke regio's](expressroute-locations-providers.md#locations), moeten uw circuits een **Premium-SKU** zijn.
 
 * Australië
 * Canada
@@ -47,6 +47,7 @@ ExpressRoute Global Reach wordt ondersteund op de volgende locaties.
 * Nieuw-Zeeland
 * Noorwegen
 * Singapore
+* Zuid-Afrika (alleen Johannes Burg)
 * Zweden
 * Zwitserland
 * Verenigd Koninkrijk

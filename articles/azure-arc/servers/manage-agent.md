@@ -1,14 +1,14 @@
 ---
 title: De agent voor Azure Arc-servers beheren
 description: In dit artikel worden de verschillende beheer taken beschreven die u normaal gesp roken uitvoert tijdens de levens cyclus van de computer agent die verbonden is met Azure Arc ingeschakeld.
-ms.date: 12/21/2020
+ms.date: 01/21/2021
 ms.topic: conceptual
-ms.openlocfilehash: f408048f61f76d6b258ea8e063630b4e2aa841af
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 27712dcd30857ca8c677de4f99dc4ed7e2e7b292
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724371"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662123"
 ---
 # <a name="managing-and-maintaining-the-connected-machine-agent"></a>De verbonden machine agent beheren en onderhouden
 
@@ -34,7 +34,74 @@ Voor servers of machines die u niet meer wilt beheren met Azure Arc-servers, moe
 
     * De [Azure cli](../../azure-resource-manager/management/delete-resource-group.md?tabs=azure-cli#delete-resource) of [Azure PowerShell](../../azure-resource-manager/management/delete-resource-group.md?tabs=azure-powershell#delete-resource)gebruiken. Voor het `ResourceType` gebruik van de para meter `Microsoft.HybridCompute/machines` .
 
-3. Verwijder de agent van de computer of server. Volg de onderstaande stappen.
+3. [Verwijder de agent](#remove-the-agent) van de computer of server door de volgende stappen uit te voeren.
+
+## <a name="renaming-a-machine"></a>De naam van een machine wijzigen
+
+Wanneer u de naam van de Linux-of Windows-computer die is verbonden met servers met Azure-Arc, wijzigt, wordt de nieuwe naam niet automatisch herkend omdat de resource naam in azure onveranderbaar is. Net als bij andere Azure-resources moet u de resource verwijderen en opnieuw maken om de nieuwe naam te kunnen gebruiken.
+
+Voordat u de computer een andere naam geeft, is het nood zakelijk om de VM-extensies te verwijderen voordat u doorgaat.
+
+> [!NOTE]
+> De geïnstalleerde uitbrei dingen blijven actief en uitvoeren nadat deze procedure is voltooid, kunt u ze niet meer beheren. Als u de uitbrei dingen op de computer probeert te implementeren, kan dit onvoorspelbaar gedrag ondervinden.
+
+> [!WARNING]
+> U kunt het beste de naam van de computer wijzigen en deze procedure alleen uitvoeren als dat absoluut nood zakelijk is.
+
+De onderstaande stappen geven een overzicht van de procedure voor het wijzigen van de computer naam.
+
+1. Controleer de VM-extensies die op de computer zijn geïnstalleerd en noteer hun configuratie, met behulp van de [Azure cli](manage-vm-extensions-cli.md#list-extensions-installed) of met behulp van [Azure PowerShell](manage-vm-extensions-powershell.md#list-extensions-installed).
+
+2. Verwijder de VM-extensies met behulp van Power shell, de Azure CLI of de Azure Portal.
+
+    > [!NOTE]
+    > Als u de Azure Monitor voor VM's-agent (Insights) of de Log Analytics-agent hebt geïmplementeerd met behulp van een Azure Policy gast configuratie beleid, worden de agents opnieuw geïmplementeerd na de volgende [evaluatie cyclus](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers) en nadat de computer waarvan de naam is gewijzigd, is geregistreerd bij servers waarop Arc is ingeschakeld.
+
+3. Verbreek de verbinding met de computer met behulp van Power shell, de Azure CLI of de portal.
+
+4. Wijzig de naam van de computer.
+
+5. Verbind de computer met de ingeschakelde Arc-servers met het `Azcmagent` hulp programma om een nieuwe resource te registreren en te maken in Azure.
+
+6. Implementeer VM-extensies die eerder zijn geïnstalleerd op de doel computer.
+
+Gebruik de volgende stappen om deze taak te volt ooien.
+
+1. VM-extensies verwijderen die zijn geïnstalleerd via de [Azure Portal](manage-vm-extensions-portal.md#uninstall-extension), met behulp van de [Azure cli](manage-vm-extensions-cli.md#remove-an-installed-extension)of met behulp van [Azure PowerShell](manage-vm-extensions-powershell.md#remove-an-installed-extension).
+
+2. Gebruik een van de volgende methoden om de computer los te koppelen van Azure Arc. Als de computer wordt losgekoppeld van de Arc-servers, wordt de verbonden machine agent niet verwijderd. u hoeft de agent niet te verwijderen als onderdeel van dit proces. VM-extensies die worden geïmplementeerd op de machine blijven werken tijdens dit proces.
+
+    # <a name="azure-portal"></a>[Azure Portal](#tab/azure-portal)
+
+    1. Ga in uw browser naar de [Azure Portal](https://portal.azure.com).
+    1. Ga in de portal naar **servers-Azure-boog** en selecteer uw hybride machine in de lijst.
+    1. Selecteer **verwijderen** van de geselecteerde server voor geregistreerde Arc-functionaliteit uit de bovenste balk om de resource te verwijderen in Azure.
+
+    # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+    
+    ```azurecli
+    az resource delete \
+      --resource-group ExampleResourceGroup \
+      --name ExampleArcMachine \
+      --resource-type "Microsoft.HybridCompute/machines"
+    ```
+
+    # <a name="azure-powershell"></a>[Azure PowerShell](#tab/azure-powershell)
+
+    ```powershell
+    Remove-AzResource `
+     -ResourceGroupName ExampleResourceGroup `
+     -ResourceName ExampleArcMachine `
+     -ResourceType Microsoft.HybridCompute/machines
+    ```
+
+3. Wijzig de naam van de computer van de machine.
+
+### <a name="after-renaming-operation"></a>Na het wijzigen van de naam
+
+Nadat de naam van een computer is gewijzigd, moet de verbonden machine agent opnieuw worden geregistreerd met servers met Arc-functionaliteit. Voer het `azcmagent` hulp programma uit met de para meter [Connect](#connect) om deze stap te volt ooien.
+
+Implementeer de VM-extensies die oorspronkelijk zijn geïmplementeerd op de machine van servers waarop Arc is ingeschakeld. Als u de Azure Monitor voor VM's-agent (Insights) of de Log Analytics agent hebt geïmplementeerd met behulp van een Azure Policy gast configuratie beleid, worden de agents na de volgende [evaluatie cyclus](../../governance/policy/how-to/get-compliance-data.md#evaluation-triggers)opnieuw geïmplementeerd.
 
 ## <a name="upgrading-agent"></a>Agent bijwerken
 
@@ -229,7 +296,7 @@ Met beide van de volgende methoden wordt de agent verwijderd, maar wordt de map 
 
 Als u de agent hand matig wilt verwijderen via de opdracht prompt of als u een automatische methode wilt gebruiken, zoals een script, kunt u het volgende voor beeld gebruiken. Eerst moet u de product code ophalen. Dit is een GUID die de principal-id van het toepassings pakket is van het besturings systeem. Het verwijderen wordt uitgevoerd met behulp van de Msiexec.exe opdracht regel `msiexec /x {Product Code}` .
 
-1. Open de REGI ster-editor.
+1. Open de register-editor.
 
 2. Zoek onder register sleutel naar `HKEY_LOCAL_MACHINE\Software\Microsoft\Windows\CurrentVersion\Uninstall` de GUID van de product code en kopieer deze.
 

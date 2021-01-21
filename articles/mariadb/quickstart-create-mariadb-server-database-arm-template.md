@@ -3,16 +3,16 @@ title: 'Quickstart: Een Azure DB for MariaDB maken - ARM-sjabloon'
 description: In dit quickstartartikel vindt u informatie over het maken van een Azure Database for MariaDB-server met behulp van een Azure Resource Manager sjabloon.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: quickstart
 ms.custom: subject-armqs
 ms.date: 05/14/2020
-ms.openlocfilehash: de6df8349025c3e87e5b005196008053039fa49f
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
-ms.translationtype: HT
+ms.openlocfilehash: b40aa30121bf98e756e26d70b44bc74a500de79f
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537121"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662070"
 ---
 # <a name="quickstart-use-an-arm-template-to-create-an-azure-database-for-mariadb-server"></a>Quickstart: Een ARM-sjabloon gebruiken om een Azure Database for MariaDB-server te maken
 

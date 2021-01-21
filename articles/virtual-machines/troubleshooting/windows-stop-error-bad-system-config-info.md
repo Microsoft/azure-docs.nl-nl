@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: cbfdb9a73f53e194b43010c0b2d84357aa3e2e5b
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 8d501bcc745ef19d15564951b8c0f29f9e2678ab
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631982"
+ms.locfileid: "98661303"
 ---
 # <a name="windows-stop-error---0x00000074-bad-system-config-info"></a>Windows-Stop fout-0x00000074 onjuiste systeem configuratie gegevens
 
@@ -34,7 +34,7 @@ Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruik
  *Als u een ondersteunings medewerker belt, geeft u deze informatie:* 
  *Stop code: BAD_SYSTEM_CONFIG_INFO*
 
-  ![De Windows-stop code 0x00000074, die ook wordt weer gegeven als ' BAD_SYSTEM_CONFIG_INFO '. Windows informeert de gebruiker dat er een probleem is opgetreden in de computer en moet opnieuw worden opgestart.](./media/windows-stop-error-bad-system-config-info/1.png)
+  ![De Windows-stop code 0x00000074, die ook wordt weer gegeven als ' BAD_SYSTEM_CONFIG_INFO '. Windows informeert de gebruiker dat er een probleem is opgetreden in de computer en moet opnieuw worden opgestart.](./media/windows-stop-error-bad-system-config-info/stop-code-0x00000074.png)
 
 ## <a name="cause"></a>Oorzaak
 
@@ -56,8 +56,8 @@ De **BAD_SYSTEM_CONFIG_INFO** stop code treedt op als het **systeem** register o
 1. Schakel seriële console-en geheugen dump verzameling in.
 1. Bouw de virtuele machine opnieuw op.
 
-> [!NOTE]
-> Als deze fout optreedt, is het gast besturingssysteem (OS) niet operationeel. U kunt problemen oplossen in de offline modus om dit probleem op te lossen.
+   > [!NOTE]
+   > Als deze fout optreedt, is het gast besturingssysteem (OS) niet operationeel. U kunt problemen oplossen in de offline modus om dit probleem op te lossen.
 
 ### <a name="create-and-access-a-repair-vm"></a>Een herstel-VM maken en openen
 
@@ -66,8 +66,8 @@ De **BAD_SYSTEM_CONFIG_INFO** stop code treedt op als het **systeem** register o
 1. Gebruik Verbinding met extern bureaublad om verbinding te maken met de herstel-VM.
 1. Kopieer de `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` map en sla deze op in een goede schijf partitie of op een andere veilige locatie. Maak een back-up van deze map als voorzorgsmaatregel, omdat u essentiële register bestanden gaat bewerken. 
 
-> [!NOTE]
-> Maak een kopie van de `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` map als back-up voor het geval u de wijzigingen die u in het REGI ster aanbrengt, wilt terugdraaien.
+   > [!NOTE]
+   > Maak een kopie van de `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config` map als back-up voor het geval u de wijzigingen die u in het REGI ster aanbrengt, wilt terugdraaien.
 
 ### <a name="check-for-hive-corruption"></a>Controleren op beschadiging van Hive
 
@@ -80,7 +80,7 @@ Met de onderstaande instructies kunt u bepalen of de oorzaak is veroorzaakt door
 
    1. Als de Hive niet kan worden geopend of als deze leeg is, is het onderdeel beschadigd. Als de component is beschadigd, [opent u een ondersteunings ticket](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
-     ![Er treedt een fout op met de melding dat de REGI ster-editor de Hive niet kan laden.](./media/windows-stop-error-bad-system-config-info/2.png)
+      ![Er treedt een fout op met de melding dat de REGI ster-editor de Hive niet kan laden.](./media/windows-stop-error-bad-system-config-info/cannot-load-hive-error.png)
 
    1. Als de component normaal wordt geopend, is de component niet goed afgesloten. Ga verder met stap 5.
 
@@ -95,7 +95,7 @@ Met de onderstaande instructies kunt u bepalen of de oorzaak is veroorzaakt door
 
    **De seriële console inschakelen**:
    
-   ```
+   ```ps
    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /ems {<BOOT LOADER IDENTIFIER>} ON 
    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
    ```
@@ -108,13 +108,13 @@ Met de onderstaande instructies kunt u bepalen of de oorzaak is veroorzaakt door
 
    **Register component laden vanaf de beschadigde besturingssysteem schijf:**
 
-   ```
+   ```ps
    REG LOAD HKLM\BROKENSYSTEM <VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM
    ```
 
    **Inschakelen op ControlSet001:**
 
-   ```
+   ```ps
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f 
    REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f 
@@ -122,7 +122,7 @@ Met de onderstaande instructies kunt u bepalen of de oorzaak is veroorzaakt door
 
    **Inschakelen op ControlSet002:**
 
-   ```
+   ```ps
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f 
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f 
    REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f 
@@ -130,7 +130,7 @@ Met de onderstaande instructies kunt u bepalen of de oorzaak is veroorzaakt door
 
    **Beschadigde besturingssysteem schijf verwijderen:**
 
-   ```
+   ```ps
    REG UNLOAD HKLM\BROKENSYSTEM
    ```
    

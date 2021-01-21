@@ -1,5 +1,5 @@
 ---
-title: Beheerders accounts voor nood toegang beheren-Azure AD | Microsoft Docs
+title: Beheerders accounts voor nood toegang beheren-Azure AD
 description: In dit artikel wordt beschreven hoe u accounts voor toegang tot nood gevallen kunt gebruiken om te voor komen dat uw Azure Active Directory-organisatie (Azure AD) per ongeluk wordt vergrendeld.
 services: active-directory
 author: markwahl-msft
@@ -13,18 +13,18 @@ ms.workload: identity
 ms.custom: it-pro
 ms.reviewer: markwahl-msft
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 10d93b92f3bb0adfe734ad439079afdfcaa6270e
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 6ef8e7ed662d8c0acfc7c43112d6d7edb1cb9a94
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94834435"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660644"
 ---
-# <a name="manage-emergency-access-accounts-in-azure-ad"></a>Accounts voor nood toegang beheren in azure AD
+# <a name="manage-emergency-access-accounts-in-azure-ad"></a>Accounts voor noodtoegang beheren in Azure AD
 
 Het is belang rijk dat u voor komt dat u per ongeluk uw Azure Active Directory-organisatie (Azure AD) hebt vergrendeld, omdat u zich niet kunt aanmelden of een ander gebruikers account wilt activeren als beheerder. U kunt de gevolgen van onopzettelijke beheerders toegang beperken door twee of meer *accounts voor toegang tot een nood geval* in uw organisatie te maken.
 
-Accounts voor toegang in nood gevallen zijn zeer privileged en ze zijn niet toegewezen aan specifieke personen. Accounts voor toegang in nood gevallen zijn beperkt tot scenario's met nood gevallen of ' afbreek glazen ', waarbij normale beheerders accounts niet kunnen worden gebruikt. We raden u aan om het gebruik van het nood-account te beperken tot alleen de tijden waarop dit absoluut nood zakelijk is.
+Accounts voor toegang in nood gevallen zijn zeer privileged en ze zijn niet toegewezen aan specifieke personen. Accounts voor noodtoegang zijn alleen bestemd voor echte noodsituaties waarin normale beheerdersaccounts niet kunnen worden gebruikt. We raden u aan om het gebruik van het nood-account te beperken tot alleen de tijden waarop dit absoluut nood zakelijk is.
 
 Dit artikel bevat richt lijnen voor het beheren van accounts voor toegang tot nood gevallen in azure AD.
 
@@ -60,7 +60,7 @@ Tijdens een nood geval is het niet mogelijk dat een beleid uw toegang blokkeert 
 
 ## <a name="federation-guidance"></a>Federatie richtlijnen
 
-Een extra optie voor organisaties die gebruik maken van AD Domain Services en ADFS of een vergelijk bare ID-provider om te communiceren met Azure AD, is het configureren van een account voor toegang met nood gevallen waarvoor MFA-claim kan worden geleverd door die id-provider.  Zo kan het account voor toegang in nood gevallen worden ondersteund door een certificaat en sleutel paar, zoals het is opgeslagen op een Smart Card.  Wanneer deze gebruiker is geverifieerd voor AD, kan ADFS een claim leveren aan Azure AD die aangeeft dat de gebruiker voldoet aan MFA-vereisten.  Zelfs bij deze benadering moeten organisaties nog steeds toegang hebben tot de toegangs accounts voor de cloud in het geval dat Federatie niet tot stand kan worden gebracht. 
+Sommige organisaties gebruiken AD Domain Services en ADFS of een vergelijk bare ID-provider om te communiceren met Azure AD. [Er mogen zich geen lokale accounts met Administrator bevoegdheden bevinden](../fundamentals/protect-m365-from-on-premises-attacks.md). De verificatie van mastering en of sourcing voor accounts met Administrator bevoegdheden buiten Azure AD voegt onnodig risico toe als er sprake is van een storing of inbreuk op deze systemen.
 
 ## <a name="store-account-credentials-safely"></a>Account referenties veilig opslaan
 

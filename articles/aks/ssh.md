@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een SSH-verbinding met Azure Kub
 services: container-service
 ms.topic: article
 ms.date: 07/31/2019
-ms.openlocfilehash: 50a52584618e505aa2ae7bd9ed7e0a9f6bc330a9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c044b552cd0c28a7073364c48b9572045a290331
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87015609"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662868"
 ---
 # <a name="connect-with-ssh-to-azure-kubernetes-service-aks-cluster-nodes-for-maintenance-or-troubleshooting"></a>Via SSH verbinding maken met AKS-clusterknooppunten (Azure Kubernetes Service) voor onderhoud of probleemoplossing
 
@@ -25,7 +25,7 @@ Standaard worden SSH-sleutels verkregen of gegenereerd en vervolgens toegevoegd 
 
 In dit artikel wordt ook ervan uitgegaan dat u een SSH-sleutel hebt. U kunt een SSH-sleutel maken met [macOS of Linux][ssh-nix] of [Windows][ssh-windows]. Als u PuTTy gen gebruikt om het sleutel paar te maken, slaat u het sleutel paar op in een OpenSSH in plaats van de standaard persoonlijke sleutel indeling PuTTy (. ppk-bestand).
 
-Ook moet de Azure CLI-versie 2.0.64 of hoger zijn geïnstalleerd en geconfigureerd. Voer  `az --version` uit om de versie te bekijken. Als u wilt installeren of upgraden, raadpleegt u [Azure cli installeren][install-azure-cli].
+Ook moet de Azure CLI-versie 2.0.64 of hoger zijn geïnstalleerd en geconfigureerd. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren][install-azure-cli] als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="configure-virtual-machine-scale-set-based-aks-clusters-for-ssh-access"></a>AKS-clusters van virtuele-machine schaal sets configureren voor SSH-toegang
 
@@ -35,7 +35,7 @@ Gebruik de opdracht [AZ AKS show][az-aks-show] om de naam van de resource groep 
 
 ```azurecli-interactive
 CLUSTER_RESOURCE_GROUP=$(az aks show --resource-group myResourceGroup --name myAKSCluster --query nodeResourceGroup -o tsv)
-SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query [0].name -o tsv)
+SCALE_SET_NAME=$(az vmss list --resource-group $CLUSTER_RESOURCE_GROUP --query '[0].name' -o tsv)
 ```
 
 In het bovenstaande voor beeld wordt de naam van de cluster resource groep voor de *myAKSCluster* in *myResourceGroup* toegewezen aan *CLUSTER_RESOURCE_GROUP*. In het voor beeld wordt *CLUSTER_RESOURCE_GROUP* gebruikt om de naam van de schaalset weer te geven en toe te wijzen aan *SCALE_SET_NAME*.

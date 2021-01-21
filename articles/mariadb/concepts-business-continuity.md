@@ -3,15 +3,15 @@ title: Bedrijfs continuïteit-Azure Database for MariaDB
 description: Meer informatie over bedrijfs continuïteit (herstel naar een bepaald tijdstip, de onderbreking van data centers, geo-Restore) bij het gebruik van Azure Database for MariaDB service.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 7/7/2020
-ms.openlocfilehash: e164930736f7b93e56d9bd4187e72a9c8eb76202
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 6439a63b74b6f627b62741c145f763dc3d9552d3
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541722"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98659849"
 ---
 # <a name="understand-business-continuity-in-azure-database-for-mariadb"></a>Inzicht in de bedrijfs continuïteit in Azure Database for MariaDB
 
@@ -23,7 +23,7 @@ Azure Database for MariaDB biedt functies voor bedrijfs continuïteit, waaronder
 
 De volgende tabel vergelijkt de ERT en RPO voor de beschik bare functies:
 
-| **Mogelijkheid** | **Basic** | **Algemeen doel** | **Geoptimaliseerd geheugen** |
+| **Mogelijkheid** | **Basic** | **Algemeen doel** | **Geoptimaliseerd voor geheugen** |
 | :------------: | :-------: | :-----------------: | :------------------: |
 | Herstel naar een bepaald tijdstip vanuit back-up | Elk herstel punt binnen de Bewaar periode | Elk herstel punt binnen de Bewaar periode | Elk herstel punt binnen de Bewaar periode |
 | Geo-herstel van geo-gerepliceerde back-ups | Niet ondersteund | ERT < 12 uur<br/>RPO < 1 uur | ERT < 12 uur<br/>RPO < 1 uur |

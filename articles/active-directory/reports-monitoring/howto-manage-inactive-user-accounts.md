@@ -13,16 +13,16 @@ ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 04/07/2020
+ms.date: 01/21/2021
 ms.author: markvi
-ms.reviewer: dhanyahk
+ms.reviewer: besiler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5b48a84bb69a356815cccd1e33c555eeb667699f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8fb517f8c50ad2c32f23542e60069a0e0a496a2d
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89244718"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660661"
 ---
 # <a name="how-to-manage-inactive-user-accounts-in-azure-ad"></a>Procedure: inactieve gebruikers accounts beheren in azure AD
 
@@ -34,7 +34,7 @@ In dit artikel wordt een methode beschreven voor het afhandelen van verouderde g
 
 Inactieve accounts zijn gebruikers accounts die niet meer door leden van uw organisatie zijn vereist om toegang te krijgen tot uw resources. Een sleutel-id voor inactieve accounts is dat deze niet is *gebruikt om* u aan te melden bij uw omgeving. Omdat inactieve accounts zijn gekoppeld aan de aanmeldings activiteit, kunt u de tijds tempel van de laatste aanmelding gebruiken die is geslaagd om ze te detecteren. 
 
-De uitdaging van deze methode is om te definiëren wat *een while* betekent in het geval van uw omgeving. Gebruikers kunnen zich bijvoorbeeld *enige*tijd niet aanmelden bij een omgeving omdat ze zich op vakantie bevinden. Bij het definiëren van wat uw Delta is voor inactieve gebruikers accounts, moet u rekening houden met alle rechtmatige redenen om zich niet aan te melden bij uw omgeving. In veel organisaties ligt de Delta voor inactieve gebruikers accounts tussen 90 en 180 dagen. 
+De uitdaging van deze methode is om te definiëren wat *een while* betekent in het geval van uw omgeving. Gebruikers kunnen zich bijvoorbeeld *enige* tijd niet aanmelden bij een omgeving omdat ze zich op vakantie bevinden. Bij het definiëren van wat uw Delta is voor inactieve gebruikers accounts, moet u rekening houden met alle rechtmatige redenen om zich niet aan te melden bij uw omgeving. In veel organisaties ligt de Delta voor inactieve gebruikers accounts tussen 90 en 180 dagen. 
 
 De laatste geslaagde aanmelding biedt mogelijke inzichten in de voortdurende behoefte van een gebruiker om toegang te krijgen tot bronnen.  Dit kan helpen om te bepalen of het groepslid maatschap of de toegang tot de app nog steeds nodig is of kan worden verwijderd. Voor extern gebruikers beheer kunt u begrijpen of een externe gebruiker nog steeds actief is binnen de Tenant of moet worden opgeruimd. 
 
@@ -85,7 +85,7 @@ Elke interactieve aanmelding die geslaagd was, resulteert in een update van het 
 
 U moet een geslaagde aanmelding hebben als u een lastSignInDateTime-tijds tempel wilt genereren. Omdat de eigenschap lastSignInDateTime een nieuwe functie is, kan de waarde van de eigenschap lastSignInDateTime leeg zijn als:
 
-- De laatste geslaagde aanmelding van een gebruiker heeft plaatsgevonden voordat deze functie werd uitgebracht (1 december 2019).
+- De laatste geslaagde aanmelding van een gebruiker heeft vóór 2020 april plaatsgevonden.
 - Het betrokken gebruikers account werd nooit gebruikt voor een geslaagde aanmelding.
 
 ## <a name="next-steps"></a>Volgende stappen

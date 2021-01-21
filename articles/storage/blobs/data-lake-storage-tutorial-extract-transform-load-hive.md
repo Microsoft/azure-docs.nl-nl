@@ -8,12 +8,12 @@ ms.topic: tutorial
 ms.date: 11/19/2019
 ms.author: normesta
 ms.reviewer: jamesbak
-ms.openlocfilehash: 7640b7a6053532360da4c908089aecfe163bd3de
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: f8210c3bc0437180ace110f8decd9f83e18650ed
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95912651"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661930"
 ---
 # <a name="tutorial-extract-transform-and-load-data-by-using-azure-hdinsight"></a>Zelfstudie: Gegevens extraheren, transformeren en laden met behulp van Azure HDInsight
 
@@ -40,7 +40,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 * **Azure SQL Database**: U gebruikt Azure SQL Database als een doelgegevensarchief. Als u geen database in SQL Database hebt, raadpleegt u het artikel [Een database in Azure SQL Database maken in Azure Portal](../../azure-sql/database/single-database-create-quickstart.md).
 
-* **Azure CLI**: Als u de Azure CLI nog niet hebt geïnstalleerd, raadpleegt u [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest).
+* **Azure CLI**: Als u de Azure CLI nog niet hebt geïnstalleerd, raadpleegt u [Azure CLI installeren](/cli/azure/install-azure-cli).
 
 * **Een SSH-client (Secure Shell)** : Zie voor meer informatie [Verbinding maken met HDInsight (Hadoop) via SSH](../../hdinsight/hdinsight-hadoop-linux-use-ssh-unix.md).
 

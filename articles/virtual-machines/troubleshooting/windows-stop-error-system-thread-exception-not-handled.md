@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/04/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 1ce594d9e3ffddf781c61717ae4534f0c7bd40f8
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: beb658474e49f9b47900d8481dab0424dae8c5be
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681887"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661388"
 ---
 # <a name="windows-stop-error---0x0000007e-system-thread-exception-not-handled"></a>Windows-Stop fout-uitzonde ring in 0x0000007E-systeem thread niet verwerkt
 
@@ -34,6 +34,10 @@ Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruik
 De oorzaak kan niet worden bepaald totdat een geheugen dump bestand is geanalyseerd. Blijf het geheugen dump bestand verzamelen.
 
 ## <a name="solution"></a>Oplossing
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
+
 
 Als u dit probleem wilt oplossen, moet u eerst het geheugen dump bestand voor de crash verzamelen en vervolgens het bestand naar micro soft ondersteuning verzenden. Volg de instructies in de volgende twee secties om het dump bestand te verzamelen.
 

@@ -10,12 +10,12 @@ ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-azurecli
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: f3af2b7839465f886d1edba01eb9988419761dac
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 71e38059aceb7da63f3545610b9acfe48c5d3150
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630892"
+ms.locfileid: "98663210"
 ---
 # <a name="quickstart-deploy-your-first-iot-edge-module-to-a-windows-device-preview"></a>Quick Start: uw eerste IoT Edge-module implementeren op een Windows-apparaat (preview)
 
@@ -108,58 +108,69 @@ Installeer IoT Edge voor Linux in Windows op uw apparaat en configureer dit met 
 ![Diagram: de IoT Edge runtime starten op het apparaat](./media/quickstart/start-runtime.png)
 
 1. [Down load Windows-beheer centrum](https://aka.ms/WACDownloadEFLOW).
-2. Volg de installatie wizard om Windows-beheer centrum op uw apparaat in te stellen.
-3. Zodra u zich in het Windows-beheer centrum bevindt, selecteert u rechtsboven in het scherm het **tandwiel pictogram instellingen**  
-4. Klik in het menu instellingen onder gateway op **extensies** .
-5. Selecteer in de lijst met **beschik bare uitbrei dingen** **Azure IOT Edge**
-6. De uitbrei ding **installeren**
 
-7. Zodra de uitbrei ding is geïnstalleerd, gaat u naar de hoofd pagina van het dash board door **Windows-beheer centrum** linksboven op het scherm te selecteren.
+1. Volg de installatie wizard om Windows-beheer centrum op uw apparaat in te stellen.
 
-8. U ziet de verbinding van de lokale host waarmee de PC wordt aangegeven waarop u Windows-beheer centrum uitvoert.
+1. Zodra u zich in het Windows-beheer centrum bevindt, selecteert u rechtsboven in het scherm het **tandwiel pictogram instellingen**
+
+1. Klik in het menu instellingen onder gateway op **extensies** .
+
+1. Selecteer het tabblad **feeds** en selecteer **toevoegen**.
+
+1. Voer https://aka.ms/wac-insiders-feed in het tekstvak in en selecteer **toevoegen**.
+
+1. Nadat de feed is toegevoegd, gaat u naar het tabblad **beschik bare uitbrei dingen** . Het kan even duren voordat de lijst met extensies is bijgewerkt.
+
+1. Selecteer in de lijst met **beschik bare uitbrei dingen** **Azure IOT Edge**
+
+1. De uitbrei ding **installeren**
+
+1. Zodra de uitbrei ding is geïnstalleerd, gaat u naar de hoofd pagina van het dash board door **Windows-beheer centrum** linksboven op het scherm te selecteren.
+
+1. U ziet de verbinding van de lokale host waarmee de PC wordt aangegeven waarop u Windows-beheer centrum uitvoert.
 
    :::image type="content" source="media/quickstart/windows-admin-center-start-page.png" alt-text="Scherm opname-start pagina van Windows-beheerder":::
 
-9. Selecteer **Toevoegen**.
+1. Selecteer **Toevoegen**.
 
    :::image type="content" source="media/quickstart/windows-admin-center-start-page-add.png" alt-text="Scherm opname-start pagina toevoegen van de Windows-beheerder":::
 
-10. Zoek de tegel Azure IoT Edge en selecteer **nieuwe maken**. Hiermee wordt de installatie wizard gestart.
+1. Zoek de tegel Azure IoT Edge en selecteer **nieuwe maken**. Hiermee wordt de installatie wizard gestart.
 
     :::image type="content" source="media/quickstart/select-tile-screen.png" alt-text="Scherm opname-Azure IoT Edge voor Linux op Windows-tegel":::
 
-11. Ga door met de installatie wizard om de gebruiksrecht overeenkomst te accepteren en kies **volgende**
+1. Ga door met de installatie wizard om de gebruiksrecht overeenkomst te accepteren en kies **volgende**
 
     :::image type="content" source="media/quickstart/wizard-welcome-screen.png" alt-text="Scherm opname-welkom van de wizard":::
 
-12. Kies de **optionele diagnostische gegevens** om uitgebreide diagnostische gegevens op te geven waarmee micro soft de kwaliteit van de service kan controleren en onderhouden, en klik op **volgende: implementeren**
+1. Kies de **optionele diagnostische gegevens** om uitgebreide diagnostische gegevens op te geven waarmee micro soft de kwaliteit van de service kan controleren en onderhouden, en klik op **volgende: implementeren**
 
     :::image type="content" source="media/quickstart/diagnostic-data-screen.png" alt-text="Scherm opname-diagnostische gegevens":::
 
-13. Selecteer op het scherm **doel apparaat selecteren** het gewenste doel apparaat om te valideren dat het voldoet aan de minimale vereisten. Voor deze Quick Start installeren we IoT Edge op het lokale apparaat. Kies daarom de localhost-verbinding. Nadat dit is bevestigd, klikt u op **volgende** om door te gaan
+1. Selecteer op het scherm **doel apparaat selecteren** het gewenste doel apparaat om te valideren dat het voldoet aan de minimale vereisten. Voor deze Quick Start installeren we IoT Edge op het lokale apparaat. Kies daarom de localhost-verbinding. Nadat dit is bevestigd, klikt u op **volgende** om door te gaan
 
     :::image type="content" source="media/quickstart/wizard-select-target-device-screen.png" alt-text="Scherm opname-doel apparaat selecteren":::
 
-14. Accepteer de standaard instellingen door **volgende** te kiezen.
+1. Accepteer de standaard instellingen door **volgende** te kiezen.
 
-15. Het scherm implementatie toont het proces van het downloaden van het pakket, het installeren van het pakket, het configureren van de host en het laatste instellen van de virtuele Linux-machine.  Een geslaagde implementatie ziet er als volgt uit:
+1. Het scherm implementatie toont het proces van het downloaden van het pakket, het installeren van het pakket, het configureren van de host en het laatste instellen van de virtuele Linux-machine.  Een geslaagde implementatie ziet er als volgt uit:
 
     :::image type="content" source="media/quickstart/wizard-deploy-success-screen.png" alt-text="Scherm opname-de wizard implementatie is voltooid":::
 
-16. Klik op **volgende: verbinding maken** om door te gaan naar de laatste stap om uw Azure IOT edge apparaat in te richten met de apparaat-id van de IOT hub-instantie.
+1. Klik op **volgende: verbinding maken** om door te gaan naar de laatste stap om uw Azure IOT edge apparaat in te richten met de apparaat-id van de IOT hub-instantie.
 
-17. Kopieer de connection string van het apparaat in azure IoT Hub en plak het in het veld apparaat connection string. Kies vervolgens **inrichten met de geselecteerde methode**.
+1. Kopieer de connection string van het apparaat in azure IoT Hub en plak het in het veld apparaat connection string. Kies vervolgens **inrichten met de geselecteerde methode**.
 
     > [!NOTE]
     > Zie stap 3 in de vorige sectie [een IOT edge apparaat registreren](#register-an-iot-edge-device)om uw Connection String op te halen.
 
     :::image type="content" source="media/quickstart/wizard-provision.png" alt-text="Scherm afbeelding-inrichting van wizard":::
 
-18. Zodra de inrichting is voltooid, selecteert u **volt** ooien om te volt ooien en gaat u terug naar het Start scherm van Windows-beheer centrum. U kunt uw apparaat nu weer geven als een IoT Edge apparaat.
+1. Zodra de inrichting is voltooid, selecteert u **volt** ooien om te volt ooien en gaat u terug naar het Start scherm van Windows-beheer centrum. U kunt uw apparaat nu weer geven als een IoT Edge apparaat.
 
     :::image type="content" source="media/quickstart/windows-admin-center-device-screen.png" alt-text="Scherm opname-Windows-beheer centrum Azure IoT Edge apparaat":::
 
-19. Selecteer uw Azure IoT Edge-apparaat om het dash board ervan weer te geven. U ziet dat de werk belastingen van uw apparaat tussen Azure IoT Hub zijn geïmplementeerd. In de **lijst IOT Edge module** moet één module worden weer gegeven, **edgeAgent**, en de **IOT Edge status** moet **actief (actief)** zijn.
+1. Selecteer uw Azure IoT Edge-apparaat om het dash board ervan weer te geven. U ziet dat de werk belastingen van uw apparaat tussen Azure IoT Hub zijn geïmplementeerd. In de **lijst IOT Edge module** moet één module worden weer gegeven, **edgeAgent**, en de **IOT Edge status** moet **actief (actief)** zijn.
 
 Uw IoT Edge-apparaat is nu geconfigureerd. Het is gereed voor de uitvoering van modules die in de cloud zijn geïmplementeerd.
 

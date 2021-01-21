@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.author: normesta
 ms.date: 03/04/2020
 ms.custom: devx-track-js, devx-track-azurecli
-ms.openlocfilehash: 8ca670049b49500e6b6310bca25cb78ded31a294
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: a90251097f2b4cced5b30f5d6eea03b6ca0b1c61
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95537846"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664746"
 ---
 # <a name="host-a-static-website-in-azure-storage"></a>Een statische website hosten in Azure Storage
 
@@ -54,9 +54,9 @@ Het hosten van statische websites is een functie die u moet inschakelen op het o
 
 <a id="cli"></a>
 
-U kunt statisch website hosting inschakelen met behulp van de [Azure Command-Line interface (CLI)](/cli/azure/?view=azure-cli-latest).
+U kunt statisch website hosting inschakelen met behulp van de [Azure Command-Line interface (CLI)](/cli/azure/).
 
-1. Open eerst de [Azure Cloud shell](../../cloud-shell/overview.md?view=azure-cli-latest)of als u de Azure cli lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli?view=azure-cli-latest) , opent u een opdracht console toepassing zoals Windows Power shell.
+1. Open eerst de [Azure Cloud shell](../../cloud-shell/overview.md)of als u de Azure cli lokaal hebt [geïnstalleerd](/cli/azure/install-azure-cli) , opent u een opdracht console toepassing zoals Windows Power shell.
 
 2. Als uw identiteit is gekoppeld aan meer dan één abonnement, stelt u uw actieve abonnement in op het abonnement van het opslag account dat als host voor uw statische website gaat.
 

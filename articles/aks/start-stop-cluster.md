@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 09/24/2020
 author: palma21
-ms.openlocfilehash: bc756994cf0f6e12af1c1ad5a6c8db304b4253e3
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 026da4237fe14726766b265e55930346293c71df
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91968780"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662894"
 ---
 # <a name="stop-and-start-an-azure-kubernetes-service-aks-cluster-preview"></a>Een Azure Kubernetes service (AKS)-cluster stoppen en starten (preview)
 
@@ -28,7 +28,6 @@ In dit artikel wordt ervan uitgegaan dat u beschikt over een bestaand AKS-cluste
 Bij het gebruik van de functie voor het starten/stoppen van het cluster gelden de volgende beperkingen:
 
 - Deze functie wordt alleen ondersteund voor Virtual Machine Scale Sets-back-upclusters.
-- Tijdens de preview-periode wordt deze functie niet ondersteund voor persoonlijke clusters.
 - De cluster status van een gestopt AKS-cluster wordt Maxi maal 12 maanden bewaard. Als uw cluster langer dan 12 maanden wordt gestopt, kan de status van het cluster niet worden hersteld. Zie het [AKS-ondersteunings beleid](support-policies.md)voor meer informatie.
 - Tijdens de preview-periode moet u de cluster-auto Scaler (CA) stoppen voordat u probeert het cluster te stoppen.
 - U kunt een gestopt AKS-cluster alleen starten of verwijderen. Als u een bewerking wilt uitvoeren zoals schalen of upgraden, start u eerst uw cluster.
@@ -69,7 +68,7 @@ az provider register --namespace Microsoft.ContainerService
 
 ## <a name="stop-an-aks-cluster"></a>Een AKS-cluster stoppen
 
-Met de opdracht kunt u de `az aks stop` knoop punten en het besturings vlak van een actief AKS-cluster stoppen. In het volgende voor beeld wordt een cluster met de naam *myAKSCluster*gestopt:
+Met de opdracht kunt u de `az aks stop` knoop punten en het besturings vlak van een actief AKS-cluster stoppen. In het volgende voor beeld wordt een cluster met de naam *myAKSCluster* gestopt:
 
 ```azurecli-interactive
 az aks stop --name myAKSCluster --resource-group myResourceGroup
@@ -100,7 +99,7 @@ Als de `provisioningState` laat zien `Stopping` , betekent dit dat uw cluster no
 ## <a name="start-an-aks-cluster"></a>Een AKS-cluster starten
 
 Met de opdracht kunt u de `az aks start` knoop punten en het besturings vlak van een gestopt AKS-cluster starten. Het cluster wordt opnieuw opgestart met de vorige status van het besturings systeem en het aantal agent knooppunten.  
-In het volgende voor beeld wordt een cluster met de naam *myAKSCluster*gestart:
+In het volgende voor beeld wordt een cluster met de naam *myAKSCluster* gestart:
 
 ```azurecli-interactive
 az aks start --name myAKSCluster --resource-group myResourceGroup

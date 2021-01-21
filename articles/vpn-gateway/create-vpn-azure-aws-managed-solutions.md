@@ -3,17 +3,17 @@ title: Een VPN tussen Azure en AWS maken met behulp van beheerde oplossingen
 description: Een VPN-verbinding tussen Azure en AWS maken met behulp van beheerde oplossingen in plaats van Vm's of apparaten.
 services: vpn-gateway
 titleSuffix: Azure VPN Gateway
-author: cherylmc
+author: ricmmartins
 ms.service: vpn-gateway
 ms.topic: how-to
 ms.date: 01/15/2021
-ms.author: cherylmc
-ms.openlocfilehash: c1bc263ca67a7d05dbb0d40bb07ba1ae43c2db5c
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.author: ricmart
+ms.openlocfilehash: 3b9e60eb037182318e9d1ef7336565908a9c8f32
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98605508"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664780"
 ---
 # <a name="create-a-vpn-connection-between-azure-and-aws-using-managed-solutions"></a>Een VPN-verbinding tussen Azure en AWS maken met behulp van beheerde oplossingen
 

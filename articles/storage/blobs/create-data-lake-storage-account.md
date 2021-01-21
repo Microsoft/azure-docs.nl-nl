@@ -8,12 +8,12 @@ ms.date: 08/31/2020
 ms.service: storage
 ms.reviewer: stewu
 ms.subservice: data-lake-storage-gen2
-ms.openlocfilehash: 6b63933fc625079bb490942cf3a32232a484fe38
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 712f1dc0679ee49791831e782fb68c39a757870a
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89270166"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624334"
 ---
 # <a name="create-a-storage-account-to-use-with-azure-data-lake-storage-gen2"></a>Een opslag account maken voor gebruik met Azure Data Lake Storage Gen2
 
@@ -40,6 +40,9 @@ In de volgende afbeelding ziet u deze instelling op de pagina **opslag account m
 > ![Instelling voor hiërarchische naam ruimte](./media/create-data-lake-storage-account/hierarchical-namespace-feature.png)
 
 Als u een bestaand opslag account hebt dat u wilt gebruiken met Data Lake Storage en de instelling van de hiërarchische naam ruimte is uitgeschakeld, moet u de gegevens migreren naar een nieuw opslag account waarvoor de instelling is ingeschakeld.
+
+> [!NOTE]
+> De **gegevens bescherming** en de **hiërarchische naam ruimte** kunnen niet tegelijkertijd worden ingeschakeld.
 
 ## <a name="next-steps"></a>Volgende stappen
 

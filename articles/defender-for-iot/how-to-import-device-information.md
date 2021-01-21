@@ -1,5 +1,5 @@
 ---
-title: Apparaatgegevens importeren
+title: Apparaatinformatie importeren
 description: Defender voor IoT Sens oren bewaken en analyseren gespiegeld verkeer. In dergelijke gevallen wilt u mogelijk gegevens importeren naar verrijke informatie op apparaten die al zijn gedetecteerd.
 author: shhazam-ms
 manager: rkarlin
@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 0a443ba7b41615fc62882bd8de6bf077c6b5a137
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 7cb805f60ba9feb0ae2d1483b2ab2df4e03639d8
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840299"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625411"
 ---
 # <a name="import-device-information-to-a-sensor"></a>Apparaatgegevens importeren in een sensor
 
@@ -67,7 +67,7 @@ In deze sectie wordt beschreven hoe u het IP-adres, het besturings systeem, het 
 
 Het IP-adres, het besturings systeem en het patch niveau importeren:
 
-1. Down load het bestand [assets_info_2.2.8 en up.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) van het [Help Center](https://cyberx-labs.zendesk.com/hc/en-us) en voer de volgende gegevens in:
+1. Down load het bestand [devices_info_2.2.8 en up.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) van het [Help Center](https://cyberx-labs.zendesk.com/hc/en-us) en voer de volgende gegevens in:
 
    - **IP-adres**: Voer het IP-adres van het apparaat in.
 
@@ -85,7 +85,7 @@ Het IP-adres, het besturings systeem en het patch niveau importeren:
 
 De autorisatie status importeren:
 
-1. Down load het [authorized_assets.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) -bestand en sla het op in het Help Center van Defender voor IOT. Controleer of u het bestand hebt opgeslagen als CSV.
+1. Down load het [authorized_devices.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) -bestand en sla het op in het Help Center van Defender voor IOT. Controleer of u het bestand hebt opgeslagen als CSV.
 
 2. Voer de gegevens in als:
 
@@ -154,7 +154,7 @@ In deze sectie wordt beschreven hoe u het IP-adres, het besturings systeem, het 
 
 Het IP-adres, het besturings systeem en het patch niveau importeren:
 
-1. Down load het bestand [assets_info_2.2.8 en up.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) van het [Help Center](https://cyberx-labs.zendesk.com/hc/en-us) en voer de volgende gegevens in:
+1. Down load het bestand [devices_info_2.2.8 en up.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) van het [Help Center](https://cyberx-labs.zendesk.com/hc/en-us) en voer de volgende gegevens in:
 
    - **IP-adres**: het IP-adres van het apparaat.
 
@@ -172,7 +172,7 @@ Het IP-adres, het besturings systeem en het patch niveau importeren:
 
 De autorisatie status importeren:
 
-1. Down load het [authorized_assets.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) -bestand en sla het op in het Help Center van Defender voor IOT. Controleer of u het bestand hebt opgeslagen als CSV.
+1. Down load het [authorized_devices.csv](https://cyberx-labs.zendesk.com/hc/en-us/articles/360008658272-How-To-Import-Data) -bestand en sla het op in het Help Center van Defender voor IOT. Controleer of u het bestand hebt opgeslagen als CSV.
 
 2. Voer de gegevens in als:
 
@@ -188,8 +188,8 @@ De autorisatie status importeren:
 
 Wanneer de gegevens worden geïmporteerd, ontvangt u waarschuwingen over niet-geautoriseerde apparaten voor alle apparaten die niet in deze lijst worden weer gegeven.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Controleren welk verkeer wordt bewaakt](how-to-control-what-traffic-is-monitored.md)
 
-[Sensor detecties onderzoeken in een inventaris van een apparaat](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+[Alle sensordetecties in een apparaatinventaris onderzoeken](how-to-investigate-sensor-detections-in-a-device-inventory.md)

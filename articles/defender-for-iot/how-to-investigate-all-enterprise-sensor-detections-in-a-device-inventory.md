@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/02/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 47e3833fe9f35467c1d16945a9b336d4014b2efd
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 9da5c8c89ee124e527584164b21b096ac815e5ca
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839771"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625461"
 ---
 # <a name="investigate-all-enterprise-sensor-detections-in-the-device-inventory"></a>Onderzoek alle Enter prise sensor-detecties in de inventaris van de apparaten
 
@@ -67,7 +67,7 @@ U kunt deze informatie gebruiken voor meer informatie. Bijvoorbeeld:
 
 - Gebruikers die zijn aangemeld bij apparaten
 
-:::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-inventory-screen-with-items-highlighted-v2.png" alt-text="Gegevens tabel in het scherm inventarisatie van activa.":::
+:::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-inventory-screen-with-items-highlighted-v2.png" alt-text="Gegevens tabel in het scherm apparaat inventarisatie.":::
 
 U kunt gegevens integreren met behulp van:
 
@@ -131,13 +131,13 @@ Werk met Defender voor IoT API-opdrachten om deze informatie op te halen en te i
 
 U kunt de inventaris van de apparaten filteren om kolommen met interesses weer te geven. U kunt bijvoorbeeld de gegevens van de PLC-apparaten weer geven.
 
-:::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-inventory-view-v2.png" alt-text="Scherm opname van de inventaris van de activa.":::
+:::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-inventory-view-v2.png" alt-text="Scherm opname van de inventaris van het apparaat.":::
 
 Het filter wordt gewist wanneer u het venster verlaat.
 
 Als u hetzelfde filter meerdere keren wilt gebruiken, kunt u een filter of een combi natie van filters die u nodig hebt, opslaan. U kunt een linkerdeel venster openen en de filters bekijken die u hebt opgeslagen:
 
-:::image type="content" source="media/how-to-work-with-asset-inventory-information/view-your-asset-inventories-v2.png" alt-text="Scherm inventarisatie van activa.":::
+:::image type="content" source="media/how-to-work-with-asset-inventory-information/view-your-asset-inventories-v2.png" alt-text="Scherm inventarisatie van apparaten.":::
 
 De inventarisatie van apparaten filteren:
 
@@ -187,7 +187,7 @@ De volgende hulpprogram ma's zijn beschikbaar voor het weer geven van apparaten 
 
 - **Apparaateigenschappen weer geven**: bijvoorbeeld de sensor die het apparaat bewaken en de basis eigenschappen van het apparaat. Klik met de rechter muisknop op het apparaat om de eigenschappen van het apparaat weer te geven.
 
-  :::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-properties-v2.png" alt-text="Scherm opname van de weer gave met eigenschappen van de Asset.":::
+  :::image type="content" source="media/how-to-work-with-asset-inventory-information/asset-properties-v2.png" alt-text="Scherm opname van de weer gave Apparaateigenschappen.":::
 
 - **Waarschuwing die is gekoppeld aan een apparaat:** Klik met de rechter muisknop op het apparaat om gerelateerde waarschuwingen weer te geven.
 
@@ -225,6 +225,6 @@ De volgende aanvullende zone gegevens zijn beschikbaar:
 
 - **Voortgang** van de update: als de verbonden sensor wordt bijgewerkt, worden de upgrade statussen weer gegeven. Tijdens de upgrade ontvangt de on-premises beheer console geen apparaatgegevens van de sensor.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
-[Sensor detecties onderzoeken in een inventaris van een apparaat](how-to-investigate-sensor-detections-in-a-device-inventory.md)
+[Alle sensordetecties in een apparaatinventaris onderzoeken](how-to-investigate-sensor-detections-in-a-device-inventory.md)

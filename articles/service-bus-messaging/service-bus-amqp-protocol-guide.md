@@ -3,12 +3,12 @@ title: AMQP 1,0 in Azure Service Bus en Event Hubs protocol handleiding | Micros
 description: Protocol gids voor expressies en beschrijving van AMQP 1,0 in Azure Service Bus en Event Hubs
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: e001327c2c7da08cb9a3552f97fc9a7d8b7921a2
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 2154221ebfe69b659ff83100ed614133e178ccdb
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95736711"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624486"
 ---
 # <a name="amqp-10-in-azure-service-bus-and-event-hubs-protocol-guide"></a>AMQP 1,0 in Azure Service Bus en Event Hubs protocol gids
 
@@ -73,7 +73,7 @@ Verbindingen, kanalen en sessies zijn kortstondig. Als de onderliggende verbindi
 
 ### <a name="amqp-outbound-port-requirements"></a>AMQP voor de uitgaande poort
 
-Clients die gebruikmaken van AMQP-verbindingen via TCP, moeten poorten 5671 en 5672 in de lokale firewall moeten worden geopend. Naast deze poorten is het mogelijk nodig extra poorten te openen als de [EnableLinkRedirect](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.enablelinkredirect?view=azure-dotnet) -functie is ingeschakeld. `EnableLinkRedirect` is een nieuwe berichten functie waarmee u een hop kunt overs Laan tijdens het ontvangen van berichten, waardoor de door Voer wordt verbeterd. De client begint direct met de back-end-service te communiceren via het poort bereik 104XX, zoals wordt weer gegeven in de volgende afbeelding. 
+Clients die gebruikmaken van AMQP-verbindingen via TCP, moeten poorten 5671 en 5672 in de lokale firewall moeten worden geopend. Naast deze poorten is het mogelijk nodig extra poorten te openen als de [EnableLinkRedirect](/dotnet/api/microsoft.servicebus.messaging.amqp.amqptransportsettings.enablelinkredirect) -functie is ingeschakeld. `EnableLinkRedirect` is een nieuwe berichten functie waarmee u een hop kunt overs Laan tijdens het ontvangen van berichten, waardoor de door Voer wordt verbeterd. De client begint direct met de back-end-service te communiceren via het poort bereik 104XX, zoals wordt weer gegeven in de volgende afbeelding. 
 
 ![Lijst met doel poorten][4]
 
@@ -223,7 +223,7 @@ Alle eigenschappen die door de toepassing moeten worden gedefinieerd, moeten wor
 | bericht-id |Een door de toepassing gedefinieerde, vrije-vorm-id voor dit bericht. Wordt gebruikt voor duplicaten detectie. |[MessageId](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
 | user-id |Door de toepassing gedefinieerde gebruikers-id die niet wordt geïnterpreteerd door Service Bus. |Niet toegankelijk via de Service Bus-API. |
 | tot |De door de toepassing gedefinieerde doel-id, die niet wordt geïnterpreteerd door Service Bus. |[Aan](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
-| Onderwerp |Door de toepassing gedefinieerde doel-id voor bericht, niet geïnterpreteerd door Service Bus. |[Adres](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
+| Onderwerp |Door de toepassing gedefinieerde doel-id voor bericht, niet geïnterpreteerd door Service Bus. |[Label](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
 | beantwoorden |Een door de toepassing gedefinieerde antwoord-Path-Indicator die niet wordt geïnterpreteerd door Service Bus. |[ReplyTo](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
 | correlation-id |Door de toepassing gedefinieerde correlatie-id, die niet wordt geïnterpreteerd door Service Bus. |[Correlatie](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
 | inhouds type |Door de toepassing gedefinieerde inhouds type-indicator voor de hoofd tekst, niet geïnterpreteerd door Service Bus. |[Invoer](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage) |
@@ -240,14 +240,14 @@ Er zijn enkele andere eigenschappen van Service Bus-berichten, die geen deel uit
 
 | Toewijzings sleutel van annotatie | Gebruik | API-naam |
 | --- | --- | --- |
-| x-opt-scheduled-time | Declareert op welk tijdstip het bericht moet worden weer gegeven op de entiteit |[ScheduledEnqueueTime](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.scheduledenqueuetimeutc?view=azure-dotnet) |
-| x-opt-Partition-sleutel | Een door de toepassing gedefinieerde sleutel die bepaalt in welke partitie het bericht moet worden gegrond. | [PartitionKey](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.partitionkey?view=azure-dotnet) |
-| x-opt-via-Partition-sleutel | Een door de toepassing gedefinieerde partitie sleutel waarde wanneer een trans actie moet worden gebruikt voor het verzenden van berichten via een overdrachts wachtrij. | [ViaPartitionKey](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.viapartitionkey?view=azure-dotnet) |
-| x-opt-in-time | De door de service gedefinieerde UTC-tijd voor de werkelijke tijd van het enqueuing van het bericht. Genegeerd bij invoer. | [EnqueuedTimeUtc](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedtimeutc?view=azure-dotnet) |
-| x-opt-Sequence-Number | Een door de service gedefinieerd uniek nummer dat is toegewezen aan een bericht. | [SequenceNumber](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sequencenumber?view=azure-dotnet) |
-| x-opt-offset | Service-gedefinieerd Volg nummer van in wachtrij geplaatste bericht. | [EnqueuedSequenceNumber](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedsequencenumber?view=azure-dotnet) |
-| x-opt-Lock-until | Service gedefinieerd. De datum en tijd tot wanneer het bericht in de wachtrij/het abonnement wordt vergrendeld. | [LockedUntilUtc](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.lockeduntilutc?view=azure-dotnet) |
-| x-opt-deadletter-source | Service gedefinieerd. Als het bericht wordt ontvangen van de wachtrij voor onbestelbare berichten, de bron van het oorspronkelijke bericht. | [DeadLetterSource](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deadlettersource?view=azure-dotnet) |
+| x-opt-scheduled-time | Declareert op welk tijdstip het bericht moet worden weer gegeven op de entiteit |[ScheduledEnqueueTime](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.scheduledenqueuetimeutc) |
+| x-opt-Partition-sleutel | Een door de toepassing gedefinieerde sleutel die bepaalt in welke partitie het bericht moet worden gegrond. | [PartitionKey](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.partitionkey) |
+| x-opt-via-Partition-sleutel | Een door de toepassing gedefinieerde partitie sleutel waarde wanneer een trans actie moet worden gebruikt voor het verzenden van berichten via een overdrachts wachtrij. | [ViaPartitionKey](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.viapartitionkey) |
+| x-opt-in-time | De door de service gedefinieerde UTC-tijd voor de werkelijke tijd van het enqueuing van het bericht. Genegeerd bij invoer. | [EnqueuedTimeUtc](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedtimeutc) |
+| x-opt-Sequence-Number | Een door de service gedefinieerd uniek nummer dat is toegewezen aan een bericht. | [SequenceNumber](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.sequencenumber) |
+| x-opt-offset | Service-gedefinieerd Volg nummer van in wachtrij geplaatste bericht. | [EnqueuedSequenceNumber](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.enqueuedsequencenumber) |
+| x-opt-Lock-until | Service gedefinieerd. De datum en tijd tot wanneer het bericht in de wachtrij/het abonnement wordt vergrendeld. | [LockedUntilUtc](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.lockeduntilutc) |
+| x-opt-deadletter-source | Service gedefinieerd. Als het bericht wordt ontvangen van de wachtrij voor onbestelbare berichten, de bron van het oorspronkelijke bericht. | [DeadLetterSource](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deadlettersource) |
 
 ### <a name="transaction-capability"></a>Transactie mogelijkheid
 

@@ -1,5 +1,5 @@
 ---
-title: Sens oren beheren vanuit de on-premises beheer console
+title: Sensoren beheren van de on-premises beheerconsole
 description: Meer informatie over het beheren van Sens oren vanuit de beheer console, inclusief het bijwerken van sensor versies, het pushen van systeem instellingen naar Sens oren en het inschakelen en uitschakelen van engines op Sens oren.
 author: shhazam-ms
 manager: rkarlin
@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 36db1b23d8fb17cec4fe981c938f8c7003543b4d
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 73eb693ab9f06535fd523eb386969e2cce961eef
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839834"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624588"
 ---
 # <a name="manage-sensors-from-the-management-console"></a>Sens oren beheren vanuit de beheer console
 
@@ -72,7 +72,7 @@ U kunt verschillende Sens oren tegelijk bijwerken vanuit de on-premises beheer c
 
 Meerdere Sens oren bijwerken:
 
-1. Ga naar [Azure Portal](https://portal.azure.com/).
+1. Ga naar de [Azure Portal](https://portal.azure.com/).
 
 2. Ga naar Azure Defender voor IoT.
 
@@ -144,13 +144,13 @@ U kunt waarschuwingen naar derden verzenden met informatie over niet-verbonden S
 
 Sens oren worden beschermd door vijf Defender voor IoT-engines. U kunt de engines voor verbonden Sens oren in-of uitschakelen.
 
-| Engine | Beschrijving | Voorbeeldscenario |
+| Engine | Description | Voorbeeldscenario |
 |--|--|--|
 | Engine voor protocol overtreding | Een schending van het protocol treedt op wanneer de pakket structuur of veld waarden niet voldoen aan de protocol specificatie. | De waarschuwing ongeldige MODBUS-bewerking (functie code is nul). Deze waarschuwing geeft aan dat een primair apparaat een aanvraag met functie code 0 naar een secundair apparaat heeft verzonden. Dit is niet toegestaan volgens de protocol specificatie en het secundaire apparaat kan de invoer mogelijk niet correct afhandelen. |
 | Engine voor beleids overtreding | Een beleids schending treedt op met een afwijking van de basislijn gedrag die is gedefinieerd in het geleerde of geconfigureerde beleid. | Waarschuwing voor niet-geautoriseerde HTTP-gebruikers agent. Deze waarschuwing geeft aan dat een toepassing die niet is geleerd of goedgekeurd door het beleid wordt gebruikt als een HTTP-client op een apparaat. Dit kan een nieuwe webbrowser of toepassing op dat apparaat zijn. |
 | Malware-engine | De malware-engine detecteert schadelijke netwerk activiteit. | Waarschuwing voor het vermoeden van schadelijke activiteiten (Stuxnet). Deze waarschuwing geeft aan dat de sensor verdachte netwerk activiteit heeft gevonden die te maken heeft met de Stuxnet malware. Dit is een geavanceerde permanente bedreiging die is gericht op industrieel beheer en SCADA netwerken. |
 | Afwijkende engine | De malware-engine detecteert een afwijking in het netwerk gedrag. | "Periodiek gedrag in communicatie kanaal". Dit is een onderdeel dat netwerk verbindingen inspecteert en het periodieke of cyclische gedrag van gegevens overdracht vindt, wat gebruikelijk is in industriële netwerken. |
-| Operationele engine | Deze engine detecteert operationele incidenten of werkt niet goed. | De waarschuwing ' het activum wordt verdacht om de verbinding te verbreken (reageert niet). Deze waarschuwing wordt geactiveerd wanneer een apparaat niet reageert op aanvragen voor een vooraf gedefinieerde periode. Dit kan erop duiden dat het apparaat wordt afgesloten, verbroken of niet goed werkt.
+| Operationele engine | Deze engine detecteert operationele incidenten of werkt niet goed. | `Device is Suspected to be Disconnected (Unresponsive)` waarschuwing. Deze waarschuwing wordt geactiveerd wanneer een apparaat niet reageert op aanvragen voor een vooraf gedefinieerde periode. Dit kan erop duiden dat het apparaat wordt afgesloten, verbroken of niet goed werkt.
 |
 
 Engines voor verbonden Sens oren in-of uitschakelen:
@@ -315,6 +315,6 @@ Als u een SMB-server wilt instellen, kunt u een sensor back-up opslaan op een ex
 
 9. Ingesteld `Backup.shared_location` op `<backup_folder_name_on_cyberx_server>` .
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
-[Afzonderlijke Sens oren beheren](how-to-manage-individual-sensors.md)
+[Afzonderlijke sensoren beheren](how-to-manage-individual-sensors.md)

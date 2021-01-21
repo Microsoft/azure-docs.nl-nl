@@ -8,20 +8,18 @@ ms.topic: tutorial
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: eab8a2729209bb0023662b652f862b4fa678470e
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-ms.translationtype: HT
+ms.openlocfilehash: dac5a434d7f7c62d7a20e971294992ea91c79d2b
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905720"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625012"
 ---
 # <a name="tutorial-use-creator-preview-to-create-indoor-maps"></a>Zelfstudie: Creator (preview) gebruiken om indoorplattegronden te maken
 
 > [!IMPORTANT]
 > Azure Maps Creator-services zijn momenteel beschikbaar als openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
-
-
 
 In deze zelfstudie leert u hoe u indoorplattegronden kunt maken. In deze zelfstudie leert u hoe u de API gebruikt voor het volgende:
 
@@ -411,6 +409,10 @@ Een tegelset is een set vectortegels die op de kaart worden weergegeven. Tegelse
 Met de [API voor het ophalen van functiestatussen](/rest/api/maps/featurestate/getstatespreview) kunt u de status van een functie ophalen met behulp van de `ID` van de functie. U kunt de statusset en de bijbehorende resources ook verwijderen. Dit doet u met behulp van de [API voor het verwijderen van functiestatussen](/rest/api/maps/featurestate/deletestatesetpreview).
 
 Zie [Creator Indoor Maps](creator-indoor-maps.md) voor meer informatie over de verschillende Azure Maps Creator-services (preview) die in dit artikel zijn besproken.
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources die moeten worden opgeruimd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

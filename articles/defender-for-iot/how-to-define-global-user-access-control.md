@@ -1,5 +1,5 @@
 ---
-title: Algemeen toegangs beheer voor gebruikers definiëren
+title: Algemeen gebruikerstoegangsbeheer definiëren
 description: In grote organisaties kunnen gebruikers machtigingen complex zijn en kunnen worden bepaald door een algemene organisatie structuur, naast de standaard site-en zone structuur.
 author: shhazam-ms
 manager: rkarlin
@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/08/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: de3ff6ead1f0dd86e07c86b992a720a676a2095c
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 399eee06d472204eaf6dbc333f15cee7c4373739
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97840923"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624639"
 ---
 # <a name="define-global-access-control"></a>Algemeen toegangs beheer definiëren
 
@@ -20,7 +20,7 @@ In grote organisaties kunnen gebruikers machtigingen complex zijn en kunnen word
 
 Ter ondersteuning van de vraag naar gebruikers toegangs machtigingen die globaal en complexer zijn, kunt u een wereld wijde bedrijfs topologie maken op basis van bedrijfs eenheden, regio's en sites. Vervolgens kunt u gebruikers toegangs machtigingen voor deze entiteiten definiëren.
 
-Werken met toegangs hulpprogramma's voor bedrijfs topologie helpt organisaties bij het implementeren van niet-vertrouwde strategieën door beter te bepalen waar gebruikers assets in het Azure Defender voor IoT-platform beheren en analyseren.
+Werken met toegangs hulpprogramma's voor bedrijfs topologie helpt organisaties bij het implementeren van niet-vertrouwde strategieën door beter te bepalen waar gebruikers apparaten in het Azure Defender voor IoT-platform beheren en analyseren.
 
 ## <a name="about-access-groups"></a>Over toegangs groepen
 
@@ -88,6 +88,6 @@ Wanneer u regels maakt, moet u rekening houden met de volgende informatie:
 
 - Als er geen bedrijfs eenheid of regio is geselecteerd, hebben gebruikers toegang tot alle gedefinieerde bedrijfs units en regio's.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Over Defender voor IoT-console gebruikers](how-to-create-and-manage-users.md)

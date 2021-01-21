@@ -3,12 +3,12 @@ title: Configureer uw eigen sleutel voor het versleutelen van Azure Event Hubs g
 description: Dit artikel bevat informatie over het configureren van uw eigen sleutel voor het versleutelen van Azure Event Hubs gegevens rest.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 1b0469a2f25b7f2bec2668b6ab33ff99eb1df809
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 095def84c5ab5e4dac7802027468b67eefb3161f
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348208"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625378"
 ---
 # <a name="configure-customer-managed-keys-for-encrypting-azure-event-hubs-data-at-rest-by-using-the-azure-portal"></a>Door de klant beheerde sleutels voor het versleutelen van Azure Event Hubs-gegevens op rest configureren met behulp van de Azure Portal
 Azure Event Hubs zorgt voor versleuteling van gegevens in rust met Azure Storage-service versleuteling (Azure SSE). Event Hubs is afhankelijk van Azure Storage om de gegevens op te slaan en standaard worden alle gegevens die zijn opgeslagen met Azure Storage versleuteld met door micro soft beheerde sleutels. 
@@ -42,12 +42,12 @@ Voer de volgende stappen uit om door de klant beheerde sleutels in te scha kelen
 Nadat u door de klant beheerde sleutels hebt ingeschakeld, moet u de door de klant beheerde sleutel koppelen aan uw Azure Event Hubs-naam ruimte. Event Hubs ondersteunt alleen Azure Key Vault. Als u de optie **versleuteling met door de klant beheerde sleutel** in de vorige sectie inschakelt, moet u de sleutel in azure Key Vault importeren. De sleutels moeten ook **zacht verwijderen** hebben en **niet leeg** zijn geconfigureerd voor de sleutel. Deze instellingen kunnen worden geconfigureerd met [Power shell](../key-vault/general/key-vault-recovery.md) of [cli](../key-vault/general/key-vault-recovery.md).
 
 1. Als u een nieuwe sleutel kluis wilt maken, volgt u de Azure Key Vault [Snelstartgids](../key-vault/general/overview.md). Zie [over sleutels, geheimen en certificaten](../key-vault/general/about-keys-secrets-certificates.md)voor meer informatie over het importeren van bestaande sleutels.
-1. Gebruik de opdracht AZ-sleutel [kluis maken](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create) om zowel zacht verwijderen als beveiliging opschonen in te scha kelen bij het maken van een kluis.
+1. Gebruik de opdracht AZ-sleutel [kluis maken](/cli/azure/keyvault#az-keyvault-create) om zowel zacht verwijderen als beveiliging opschonen in te scha kelen bij het maken van een kluis.
 
     ```azurecli-interactive
     az keyvault create --name ContosoVault --resource-group ContosoRG --location westus --enable-soft-delete true --enable-purge-protection true
     ```    
-1. Gebruik de opdracht AZ-sleutel [kluis bijwerken](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-update) om een schone beveiliging toe te voegen aan een bestaande kluis (waarvoor al zacht verwijderen is ingeschakeld).
+1. Gebruik de opdracht AZ-sleutel [kluis bijwerken](/cli/azure/keyvault#az-keyvault-update) om een schone beveiliging toe te voegen aan een bestaande kluis (waarvoor al zacht verwijderen is ingeschakeld).
 
     ```azurecli-interactive
     az keyvault update --name ContosoVault --resource-group ContosoRG --enable-purge-protection true
@@ -97,7 +97,7 @@ Alle logboeken worden opgeslagen in de indeling van de JavaScript Object Notatio
 | Naam | Beschrijving |
 | ---- | ----------- | 
 | TaskName | Beschrijving van de taak die is mislukt. |
-| ActivityId | Interne ID die wordt gebruikt voor tracering. |
+| ActivityId: | Interne ID die wordt gebruikt voor tracering. |
 | category | Hiermee wordt de classificatie van de taak gedefinieerd. Als de sleutel van uw sleutel kluis bijvoorbeeld wordt uitgeschakeld, zou dit een informatie categorie zijn, of als een sleutel niet kan worden teruggedraaid, kan dit onder een fout vallen. |
 | resourceId | Resource-ID Azure Resource Manager |
 | keyVault | Volledige naam van de sleutel kluis. |

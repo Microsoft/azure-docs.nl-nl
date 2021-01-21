@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 04/02/2019
 tags: ''
 keywords: ''
-ms.openlocfilehash: c12a812f66345a26701b2a1623487fd262ede4be
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 9958fa07d6e814cdf886c3f559d57ae1e397264a
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94968329"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625078"
 ---
 # <a name="install-ibm-zdt-devtest-environment-on-azure"></a>IBM zD&T dev/test-omgeving installeren op Azure
 
@@ -96,12 +96,13 @@ Het installatie bestand voor de webserver is **ZDT \_ install \_ ee \_ v 12.0.0.
 
     ```
     cd ZDT
-    chmod 755 ZDT\_Install\_EE\_V12.0.0.0.tgz
+    tar zxvf ZDT\_Install\_EE\_V12.0.0.0.tgz
     ```
 
 2. Voer het installatie programma uit:
 
     ```
+    chmod 755 ZDT\_Install\_EE\_V12.0.0.0.x86_64
     ./ZDT_Install_EE_V12.0.0.0.x86_64
     ```
 

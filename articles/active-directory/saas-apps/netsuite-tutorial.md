@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/09/2020
+ms.date: 01/20/2021
 ms.author: jeedes
-ms.openlocfilehash: 9272114dd472717e59680b40c07d8435dea19682
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: d99a19efcef0cae518d8d21d3371adaf37d32ff7
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96181965"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625478"
 ---
 # <a name="tutorial-integrate-azure-ad-single-sign-on-sso-with-netsuite"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met NetSuite
 
@@ -41,7 +41,6 @@ Netsuite biedt ondersteuning voor:
 
 * Door IDP geïnitieerde eenmalige aanmelding.
 * Just-In-Time inrichten van gebruikers.
-* [Geautomatiseerd inrichten van gebruikers](NetSuite-provisioning-tutorial.md).
 
 > [!NOTE]
 > Omdat de id van deze toepassing een vaste tekenreekswaarde is, kan maar één exemplaar in één tenant worden geconfigureerd.

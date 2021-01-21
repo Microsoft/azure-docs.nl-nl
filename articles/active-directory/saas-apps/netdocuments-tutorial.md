@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 09/03/2019
+ms.date: 01/12/2021
 ms.author: jeedes
-ms.openlocfilehash: b9a85c7093d0f42ac97c4a548ba6f0feebae8b89
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 1c5fa1c704e51026d5cd4defdb7f5e85827ccb9b
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350718"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624789"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-netdocuments"></a>Zelfstudie: Eenmalige aanmelding (SSO) van Azure Active Directory integreren met NetDocuments
 
@@ -25,8 +25,6 @@ In deze zelfstudie leert u hoe u NetDocuments integreert met Azure Active Direct
 * U kunt in Azure AD beheren wie toegang heeft tot NetDocuments.
 * U kunt instellen dat gebruikers zich automatisch met hun Azure AD-account kunnen aanmelden bij NetDocuments.
 * Uw accounts op een centrale locatie beheren: Azure Portal.
-
-Zie [Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?](../manage-apps/what-is-single-sign-on.md) voor meer informatie over de integratie van SaaS-apps met Azure AD.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -45,14 +43,14 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 Als u de integratie van NetDocuments met Azure AD wilt configureren, moet u NetDocuments vanuit de galerie toevoegen aan uw lijst van beheerde SaaS-apps.
 
-1. Meld u bij de [Azure-portal](https://portal.azure.com) aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
 1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
 1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
 1. Typ in de sectie **Toevoegen vanuit de galerie** **NetDocuments** in het zoekvak.
 1. Selecteer **NetDocuments** in het resultatenvenster en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-## <a name="configure-and-test-azure-ad-single-sign-on-for-netdocuments"></a>Eenmalige aanmelding van Azure AD configureren en testen voor NetDocuments
+## <a name="configure-and-test-azure-ad-sso-for-netdocuments"></a>Azure AD-SSO configureren en testen voor netdocumenten
 
 Configureer en test eenmalige aanmelding van Azure AD met NetDocuments met behulp van een testgebruiker met de naam **B.Simon**. Eenmalige aanmelding werkt alleen als u een koppelingsrelatie tot stand brengt tussen een Azure AD-gebruiker en de bijbehorende gebruiker in NetDocuments.
 
@@ -69,7 +67,7 @@ Als u eenmalige aanmelding van Azure AD wilt configureren en testen met NetDocum
 
 Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-1. Zoek in [Azure Portal](https://portal.azure.com/) op de integratiepagina van de toepassing **NetDocuments** de sectie **Beheren** en selecteer **Eenmalige aanmelding**.
+1. Zoek in de Azure Portal op de pagina **Netdocumenten** voor toepassings integratie de sectie **beheren** en selecteer **eenmalige aanmelding**.
 1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
 1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het bewerkings-/penpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
@@ -77,22 +75,46 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
 
 1. In de sectie **Standaard-SAML-configuratie** voert u de waarden in voor de volgende velden:
 
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met de volgende notatie: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`
+    a. Typ in het tekstvak **URL voor aanmelden** een van de volgende URL-patronen:
 
-    b. In het tekstvak **Antwoord-URL** typt u een URL met de volgende notatie: `https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`
-    
-    c. In het tekstvak **Id (Entiteits-id)** typt u een URL met de volgende notatie: `http://netdocuments.com/VAULT`
+    |Aanmeldings-URL|
+    |-----------|
+    |`https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`|
+    |`https://eu.netdocuments.com/neWeb2/docCent.aspx?whr=<Repository ID>`|
+    |`https://de.netdocuments.com/neWeb2/docCent.aspx?whr=<Repository ID>`|
+    |`https://au.netdocuments.com/neWeb2/docCent.aspx?whr=<Repository ID>`|
+    |
+
+    b. Typ in het tekstvak **id (Entiteits-ID)** een van de url's:
+
+    |Id|
+    |-----------|
+    |`http://netdocuments.com/VAULT`|
+    |`http://netdocuments.com/EU`|
+    |`http://netdocuments.com/AU`|
+    |`http://netdocuments.com/DE`|
+    |
+
+    c. Typ in het tekstvak **antwoord-URL** een van de volgende URL-patronen:
+
+    |Antwoord-URL|
+    |-----------|
+    |`https://vault.netvoyage.com/neWeb2/docCent.aspx?whr=<Repository ID>`|
+    |`https://eu.netdocuments.com/neWeb2/docCent.aspx?whr=<Repository ID>`|
+    |`https://de.netdocuments.com/neWeb2/docCent.aspx?whr=<Repository ID>`|
+    |`https://au.netdocuments.com/neWeb2/docCent.aspx?whr=<Repository ID>`|
+    |
 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke aanmeldings-URL en antwoord-URL. Opslagplaats-id is een waarde die begint met **CA-** , gevolgd door een code van 8 tekens die aan uw NetDocuments-opslagplaats is gekoppeld. Raadpleeg het [ondersteuningsdocument NetDocuments Federated Identity](https://support.netdocuments.com/hc/en-us/articles/205220410-Federated-Identity-Login) voor meer informatie. Ook kunt u contact opnemen met het [klantondersteuningsteam van NetDocuments](https://support.netdocuments.com/hc/) om deze waarden te verkrijgen als u de configuratie niet kunt uitvoeren met behulp van de bovenstaande gegevens. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. In de NetDocuments-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. De NetDocuments-toepassing verwacht dat **nameidentifier** wordt toegewezen met **employeeid** of een andere claim die als **nameidentifier** van toepassing is op uw organisatie, dus u moet de kenmerktoewijzing bewerken door te klikken op het pictogram **Bewerken** en de kenmerktoewijzing wijzigen.
+1. In de NetDocuments-toepassing worden de SAML-asserties in een specifieke indeling verwacht. Hiervoor moet u aangepaste kenmerktoewijzingen toevoegen aan de configuratie van uw SAML-tokenkenmerken. In de volgende schermafbeelding ziet u de lijst met standaardkenmerken, waarbij **nameidentifier** is toegewezen aan **user.userprincipalname**. Netdocuments-toepassing verwacht dat **nameidentifier** worden toegewezen aan **ObjectID** of een andere claim die van toepassing is op uw organisatie als **nameidentifier**, dus u moet de kenmerk toewijzing bewerken door op het pictogram **bewerken** te klikken en de kenmerk toewijzing te wijzigen.
 
     ![image](common/edit-attribute.png)
 
-1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
+1. Op de pagina **eenmalige aanmelding met SAML instellen** , in de sectie **SAML-handtekening certificaat** vindt u de URL voor de **app federatieve meta gegevens** en kopieert u de URL.
 
-    ![De link om het certificaat te downloaden](common/metadataxml.png)
+    ![De link om het certificaat te downloaden](common/copy-metadataurl.png)
 
 1. In de sectie **NetDocuments instellen** kopieert u de juiste URL('s) op basis van uw vereisten.
 
@@ -117,15 +139,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
 1. Selecteer **NetDocuments** in de lijst met toepassingen.
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
-
-   ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![De koppeling Gebruiker toevoegen](common/add-assign-user.png)
-
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-1. Als u een waarde voor een rol verwacht in de SAML-assertie, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-netdocuments-sso"></a>Eenmalige aanmelding van NetDocuments configureren
@@ -136,7 +152,7 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 3. Selecteer **Beveiligingscentrum**.
    
-    ![Schermopname met Security Center geselecteerd in Juridische documenten.](./media/netdocuments-tutorial/security-center.png "Beveiligingscentrum")
+    ![Opslagplaats](./media/netdocuments-tutorial/security-center.png "Beveiligingscentrum")
 
 4. Selecteer **Geavanceerde verificatie**.
     
@@ -144,9 +160,9 @@ In deze sectie geeft u B.Simon toestemming om eenmalige aanmelding van Azure te 
 
 5.  Voer op het tabblad **Federatieve id** de volgende stappen uit:   
    
-    ![Federatieve identiteit](./media/netdocuments-tutorial/federated-id.png "Federatieve identiteit")
+    [![Federatieve identiteit](./media/netdocuments-tutorial/federated-id.png "Federatieve identiteit")](./media/netdocuments-tutorial/federated-id.png#lightbox)
    
-    a. Selecteer **Active Directory Federation Services** als **Federatief identiteitsservertype**.
+    a. Selecteer als **Windows-Azure Active Directory** voor het **type federatief identiteits server**.
     
     b.  Selecteer **Bestand kiezen** om het gedownloade XML-bestand met metagegevens, dat u hebt gedownload vanuit Azure Portal, te uploaden.
     
@@ -166,7 +182,7 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij NetDocuments, moete
 
 3. Selecteer **Gebruikers en groepen**.
    
-    ![Schermopname met Gebruikers en groepen geselecteerd in Juridische documenten.](./media/netdocuments-tutorial/users-groups.png "Opslagplaats")
+    ![Gebruikers en groepen](./media/netdocuments-tutorial/users-groups.png "Opslagplaats")
 
 4. Typ in het tekstvak **E-mailadres** het e-mailadres van een geldig Azure Active Directory-account dat u wilt inrichten en klik vervolgens op **Gebruiker toevoegen**.
    
@@ -177,16 +193,15 @@ Als u wilt dat Azure AD-gebruikers zich kunnen aanmelden bij NetDocuments, moete
 
 ## <a name="test-sso"></a>Eenmalige aanmelding testen 
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u in het toegangsvenster op de tegel NetDocuments klikt, wordt u automatisch aangemeld bij het exemplaar van NetDocuments waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. Hiermee wordt omgeleid naar de aanmeldings-URL van netdocumenten waar u de aanmeldings stroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende bronnen
+* Ga rechtstreeks naar de aanmeldings-URL van netdocumenten en start de aanmeldings stroom.
 
-- [ List of Tutorials on How to Integrate SaaS Apps with Azure Active Directory ](./tutorial-list.md) (Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel netdocumenten in de mijn apps klikt, moet u automatisch worden aangemeld bij de netdocumenten waarvoor u de SSO hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory? ](../manage-apps/what-is-single-sign-on.md) (Wat is toegang tot toepassingen en eenmalige aanmelding bij Azure Active Directory?)
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+## <a name="next-steps"></a>Volgende stappen
 
-- [NetDocuments gebruiken met Azure AD](https://aad.portal.azure.com/)
+Nadat u netdocumenten hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in real-time worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).

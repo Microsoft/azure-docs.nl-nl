@@ -4,12 +4,12 @@ description: Meer informatie over het oplossen van problemen met de Java-Agent v
 ms.topic: conceptual
 ms.date: 11/30/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 2876abd3749c9e56cef462e41b8268135f82cd12
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 788eea17cabbea46578d0f59919ae95a59f2223f
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232213"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625344"
 ---
 # <a name="troubleshooting-guide-azure-monitor-application-insights-for-java"></a>Gids voor probleem oplossing: Azure Monitor Application Insights voor Java
 
@@ -17,7 +17,7 @@ In dit artikel worden enkele veelvoorkomende problemen besproken die u kunt tege
 
 ## <a name="check-the-self-diagnostic-log-file"></a>Het logboek bestand voor automatische diagnose controleren
 
-De Java 3,0-agent voor Application Insights produceert standaard een logboek bestand met `applicationinsights.log` de naam in dezelfde map waarin het bestand zich bevindt `applicationinsights-agent-3.0.1.jar` .
+De Java 3,0-agent voor Application Insights produceert standaard een logboek bestand met `applicationinsights.log` de naam in dezelfde map waarin het bestand zich bevindt `applicationinsights-agent-3.0.2.jar` .
 
 Dit logboek bestand is de eerste plaats om te controleren of er hints zijn voor eventuele problemen die zich voordoen.
 

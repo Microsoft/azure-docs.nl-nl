@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 0004a250173ce6707462b852016d205782479717
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.openlocfilehash: d8aaf093a7e2a0ad1470d72d815e919f5b4e2d05
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896677"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624980"
 ---
 # <a name="tutorial-how-to-display-route-directions-using-azure-maps-route-service-and-map-control"></a>Zelfstudie: Routebeschrijvingen weergeven met behulp van de Azure Maps-routeservice en een kaartbesturingselement
 
@@ -39,7 +39,7 @@ U kunt de volledige broncode voor het voorbeeld [hier](https://github.com/Azure-
 
 De volgende stappen laten zien hoe u het kaartbesturingselement maakt en weergeeft op een webpagina.
 
-1. Maak een nieuw bestand op uw lokale computer en noem dit **MapRoute.html** .
+1. Maak een nieuw bestand op uw lokale computer en noem dit **MapRoute.html**.
 2. Kopieer de volgende HTML-opmaak en plak deze in het bestand.
 
     ```HTML
@@ -174,7 +174,7 @@ In deze zelfstudie gaat u met behulp van een lijnlaag de route weergeven. De beg
 
 3. Sla **MapRoute.html** op en vernieuw de browser. De kaart is nu gecentreerd op Seattle. De blauwe druppelvormige speld duidt het beginpunt aan. De blauwe ronde speld duidt het eindpunt aan.
 
-    :::image type="content" source="./media/tutorial-route-location/map-pins.png" alt-text="Eenvoudige kaartweergave van kaartbesturingselement":::
+    :::image type="content" source="./media/tutorial-route-location/map-pins.png" alt-text="Begin- en eindpunt van routes op de kaart weergeven":::
 
 <a id="getroute"></a>
 
@@ -183,7 +183,7 @@ In deze zelfstudie gaat u met behulp van een lijnlaag de route weergeven. De beg
 In deze sectie wordt beschreven hoe u de API voor routebeschrijvingen van Azure Maps kunt gebruiken om routebeschrijvingen van het ene punt naar het andere en de geschatte aankomsttijd op te halen.
 
 >[!TIP]
->De routeservices van Azure Maps bieden API's om routes te plannen op basis van verschillende routetypen zoals *snelste* , *kortste* , *zuinigste* of *leukste* , waarbij rekening wordt gehouden met afstand, verkeersomstandigheden en het gebruikte vervoersmiddel. Met de service kunnen gebruikers ook toekomstige routes plannen op basis van historische verkeersomstandigheden. Gebruikers kunnen de voorspelling van de duur van de route voor elke gewenste tijd bekijken. Zie [API Routebeschrijving ophalen](/rest/api/maps/route/getroutedirections) voor meer informatie.
+>De routeservices van Azure Maps bieden API's om routes te plannen op basis van verschillende routetypen zoals *snelste*, *kortste*, *zuinigste* of *leukste*, waarbij rekening wordt gehouden met afstand, verkeersomstandigheden en het gebruikte vervoersmiddel. Met de service kunnen gebruikers ook toekomstige routes plannen op basis van historische verkeersomstandigheden. Gebruikers kunnen de voorspelling van de duur van de route voor elke gewenste tijd bekijken. Zie [API Routebeschrijving ophalen](/rest/api/maps/route/getroutedirections) voor meer informatie.
 
 1. Voeg in de functie `GetMap` in de gebeurtenis-handler `ready` van het besturingselement het volgende toe aan de JavaScript-code.
 
@@ -216,9 +216,13 @@ In deze sectie wordt beschreven hoe u de API voor routebeschrijvingen van Azure 
 
 3. Sla het bestand **MapRoute.html** op en vernieuw de webbrowser. Op de kaart zou nu de route van het begin- tot het eindpunt moeten zijn weergegeven.
 
-     :::image type="content" source="./media/tutorial-route-location/map-route.png" alt-text="Eenvoudige kaartweergave van kaartbesturingselement":::
+     :::image type="content" source="./media/tutorial-route-location/map-route.png" alt-text="Azure-kaartbesturingselement en routeservice":::
 
 U kunt de volledige broncode voor het voorbeeld [hier](https://github.com/Azure-Samples/AzureMapsCodeSamples/blob/master/AzureMapsCodeSamples/Tutorials/route.html) ophalen. Een livevoorbeeld is [hier](https://azuremapscodesamples.azurewebsites.net/?sample=Route%20to%20a%20destination) te vinden.
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources die moeten worden opgeruimd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -9,14 +9,14 @@ ms.topic: conceptual
 ms.reviewer: Blackmist
 ms.author: nigup
 author: nishankgu
-ms.date: 11/09/2020
+ms.date: 01/20/2020
 ms.custom: how-to, seodec18, devx-track-azurecli, contperf-fy21q2
-ms.openlocfilehash: 636f63b3f7e43bd8f27d1df58ab82d24bd19a616
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 8420aecbc160fa6df2640d2ba0ae8a8b77702b67
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033745"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624537"
 ---
 # <a name="manage-access-to-an-azure-machine-learning-workspace"></a>De toegang tot een Azure Machine Learning-werkruimte beheren
 
@@ -161,6 +161,10 @@ U moet machtigingen hebben voor het hele bereik van de nieuwe roldefinitie. Als 
 > [!NOTE]
 > Het kan 15 minuten tot een uur duren voordat de functie-updates zijn toegepast op alle roltoewijzingen in dat bereik.
 
+## <a name="use-azure-resource-manager-templates-for-repeatability"></a>Azure Resource Manager sjablonen gebruiken voor Herhaal baarheid
+
+Als u verwacht dat u complexe roltoewijzingen opnieuw moet maken, kan een Azure Resource Manager sjabloon een grote hulp zijn. In de [sjabloon 201-machine learning-afhankelijkheden-functie-toewijzing](https://github.com/Azure/azure-quickstart-templates/tree/master/201-machine-learning-dependencies-role-assignment) ziet u hoe roltoewijzingen kunnen worden opgegeven in de bron code voor hergebruik. 
+
 ## <a name="common-scenarios"></a>Algemene scenario's
 
 De volgende tabel bevat een overzicht van Azure Machine Learning activiteiten en de machtigingen die nodig zijn om ze uit te voeren op het minste bereik. Als een activiteit bijvoorbeeld kan worden uitgevoerd met een werkruimte bereik (kolom 4), zal alle grotere bereiken met die machtiging ook automatisch worden gebruikt:
@@ -207,7 +211,7 @@ Als u MLflow-bewerkingen wilt uitvoeren met uw Azure Machine Learning-werk ruimt
 
 ## <a name="example-custom-roles"></a>Voor beeld van aangepaste rollen
 
-### <a name="data-scientist"></a>Gegevenswetenschapper
+### <a name="data-scientist"></a>Data scientist
 
 Hiermee kan een gegevens wetenschapper alle bewerkingen binnen een werk ruimte uitvoeren **, met uitzonde ring** van:
 

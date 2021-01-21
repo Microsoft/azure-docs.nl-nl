@@ -1,20 +1,20 @@
 ---
-title: Azure IoT Hub-apparaatstreams met C#, quickstart voor SSH en RDP
+title: Quick Start-Azure IoT Hub Device streams C# Quick start voor SSH en RDP
 description: In deze quickstart voert u twee C#-voorbeeldtoepassingen uit waarmee SSH- en RDP-scenario's via een IoT Hub-apparaatstream mogelijk zijn.
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: csharp
 ms.topic: quickstart
-ms.custom: mvc, devx-track-azurecli
+ms.custom: references_regions
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: adf0f42b34a4bd7e5df2d2994408dbc175c5e01b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 12e26818f86fc4abdc1873d031182fd994c04687
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831919"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624368"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Snelstart: Schakel SSH en RDP in via een IoT Hub-apparaatstream, met behulp van een C#-proxy-toepassing (preview)
 
@@ -25,25 +25,6 @@ Microsoft Azure IoT Hub ondersteunt momenteel apparaatstreams als een [preview-f
 [IoT Hub-apparaatstreams](iot-hub-device-streams-overview.md) zorgen ervoor dat service- en apparaattoepassingen kunnen communiceren op een beveiligde manier die de firewall toestaat. Deze quickstart bevat twee C#-toepassingen waarmee verkeer van een client-servertoepassing (zoals Secure Shell [SSH] en Remote Desktop Protocol [RDP]) kan worden verzonden via een apparaatstream die tot stand is gebracht met een IoT-hub. Zie [Voorbeeld van een lokale proxytoepassing voor SSH of RDP](iot-hub-device-streams-overview.md#local-proxy-sample-for-ssh-or-rdp) voor een overzicht van de installatie.
 
 In dit artikel wordt eerst de installatie van SSH beschreven (met behulp van poort 22), en wordt vervolgens beschreven hoe u de installatiepoort voor RDP wijzigt. Omdat apparaatstreams toepassings- en protocolneutraal zijn, kan hetzelfde voorbeeld zodanig worden bewerkt dat andere typen toepassingsverkeer mogelijk zijn. Voor deze aanpassing hoeft meestal alleen de communicatiepoort te worden gewijzigd in de poort die wordt gebruikt voor de beoogde toepassing.
-
-## <a name="how-it-works"></a>Uitleg
-
-In de volgende afbeelding ziet u hoe in dit voorbeeld de proxytoepassingen op het apparaat en in de service end-to-end-connectiviteit mogelijk maken tussen de processen voor de SSH-client en SSH-daemon. We gaan ervanuit dat de daemon wordt uitgevoerd op hetzelfde apparaat als de proxytoepassing op het apparaat.
-
-![Installatie van lokale proxytoepassing](./media/quickstart-device-streams-proxy-csharp/device-stream-proxy-diagram.png)
-
-1. De proxytoepassing in de service maakt verbinding met de IoT-hubs en initieert een apparaatstream naar het doelapparaat.
-
-1. De proxytoepassing op het apparaat voltooit de stream-handshake en zet een end-to-end-streaming-tunnel op van het streaming-eindpunt van de IoT-hub naar de servicezijde.
-
-1. De proxytoepassing op het apparaat maakt verbinding met de SSH-daemon die luistert bij poort 22 op het apparaat. Deze instelling kan worden geconfigureerd, zoals beschreven in de sectie "de toepassing proxy in het apparaat uitvoeren".
-
-1. De proxytoepassing in de service wacht op nieuwe SSH-verbindingen van een gebruiker door te luisteren bij een opgegeven poort, in dit geval poort 2222. Deze instelling kan worden geconfigureerd, zoals beschreven in de sectie De proxytoepassing in de service uitvoeren. Wanneer de gebruiker verbinding maakt via de SSH-client, zorgt de tunnel ervoor dat SSH-toepassingsverkeer kan worden overgebracht tussen de SSH-client en servertoepassing.
-
-> [!NOTE]
-> SSH-verkeer dat via een apparaatstream wordt verstuurd, gaat via een tunnel van het streaming-eindpunt van de IoT-hub in plaats van dat het rechtstreeks tussen de service en het apparaat wordt verzonden. Zie de [voordelen van het gebruik van IOT Hub-apparaten](iot-hub-device-streams-overview.md#benefits) voor meer informatie.
-
-[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -72,6 +53,25 @@ In de volgende afbeelding ziet u hoe in dit voorbeeld de proxytoepassingen op he
 
 [!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
+## <a name="how-it-works"></a>Uitleg
+
+In de volgende afbeelding ziet u hoe in dit voorbeeld de proxytoepassingen op het apparaat en in de service end-to-end-connectiviteit mogelijk maken tussen de processen voor de SSH-client en SSH-daemon. We gaan ervanuit dat de daemon wordt uitgevoerd op hetzelfde apparaat als de proxytoepassing op het apparaat.
+
+![Installatie van lokale proxytoepassing](./media/quickstart-device-streams-proxy-csharp/device-stream-proxy-diagram.png)
+
+1. De proxytoepassing in de service maakt verbinding met de IoT-hubs en initieert een apparaatstream naar het doelapparaat.
+
+1. De proxytoepassing op het apparaat voltooit de stream-handshake en zet een end-to-end-streaming-tunnel op van het streaming-eindpunt van de IoT-hub naar de servicezijde.
+
+1. De proxytoepassing op het apparaat maakt verbinding met de SSH-daemon die luistert bij poort 22 op het apparaat. Deze instelling kan worden geconfigureerd, zoals beschreven in de sectie "de toepassing proxy in het apparaat uitvoeren".
+
+1. De proxytoepassing in de service wacht op nieuwe SSH-verbindingen van een gebruiker door te luisteren bij een opgegeven poort, in dit geval poort 2222. Deze instelling kan worden geconfigureerd, zoals beschreven in de sectie De proxytoepassing in de service uitvoeren. Wanneer de gebruiker verbinding maakt via de SSH-client, zorgt de tunnel ervoor dat SSH-toepassingsverkeer kan worden overgebracht tussen de SSH-client en servertoepassing.
+
+> [!NOTE]
+> SSH-verkeer dat via een apparaatstream wordt verstuurd, gaat via een tunnel van het streaming-eindpunt van de IoT-hub in plaats van dat het rechtstreeks tussen de service en het apparaat wordt verzonden. Zie de [voordelen van het gebruik van IOT Hub-apparaten](iot-hub-device-streams-overview.md#benefits) voor meer informatie.
+
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
+
 ## <a name="create-an-iot-hub"></a>Een IoT Hub maken
 
 [!INCLUDE [iot-hub-include-create-hub](../../includes/iot-hub-include-create-hub.md)]
@@ -96,7 +96,7 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
    > Vervang de tijdelijke aanduiding *YourIoTHubName* door een door u gekozen naam voor de IoT-hub.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDevice --output table
+    az iot hub device-identity connection-string show --hub-name {YourIoTHubName} --device-id MyDevice --output table
     ```
 
     Bekijk de geretourneerde verbindingsreeks van het apparaat voor later gebruik in deze quickstart. Het lijkt op het volgende voorbeeld:

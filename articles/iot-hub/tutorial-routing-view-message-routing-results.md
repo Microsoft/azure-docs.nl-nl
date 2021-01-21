@@ -1,6 +1,6 @@
 ---
-title: Resultaten van berichtroutering met Azure IoT Hub (.NET) weergeven | Microsoft Docs
-description: Nadat u alle resources hebt ingesteld met behulp van deel 1 van de zelfstudie, voegt u de mogelijkheid toe om berichten te routeren naar Azure Stream Analytics en de resultaten weer te geven in PowerBI.
+title: Zelf studie-Azure IoT Hub-bericht routering resultaten weer geven (.NET) | Microsoft Docs
+description: Zelf studie-nadat u alle resources hebt ingesteld met behulp van deel 1 van de zelf studie, voegt u de mogelijkheid toe om berichten te routeren naar Azure Stream Analytics en de resultaten in Power BI weer te geven.
 author: robinsh
 manager: philmea
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2018
 ms.author: robinsh
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 14f6fc685e99060474a17503cb13ba09a61a5a9a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
-ms.translationtype: HT
+ms.openlocfilehash: 0db05c8caae8483de3b55448bfbe6b2bcfc23187
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92149206"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625279"
 ---
 # <a name="tutorial-part-2---view-the-routed-messages"></a>Zelfstudie: Deel 2: de gerouteerde berichten weergeven
 
@@ -280,7 +280,7 @@ Meld u aan bij uw [Power BI](https://powerbi.microsoft.com/)-account. Ga naar uw
 
 ### <a name="use-the-azure-cli-to-clean-up-resources"></a>Resources opschonen met de Azure-CLI
 
-U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete). `$resourceGroup` is aan het begin van deze zelfstudie ingesteld op **ContosoResources**.
+U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true). `$resourceGroup` is aan het begin van deze zelfstudie ingesteld op **ContosoResources**.
 
 ```azurecli-interactive
 az group delete --name $resourceGroup

@@ -10,12 +10,12 @@ ms.subservice: custom-vision
 ms.topic: conceptual
 ms.date: 03/06/2020
 ms.author: shono
-ms.openlocfilehash: 0dbd6ea13069b72e6bca5c065af92568a5c7cdb8
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: 2259d0114d91af2e688df66ff8dc4e8d293c2b03
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97844937"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624828"
 ---
 # <a name="select-a-domain-for-a-custom-vision-project"></a>Een domein voor een Custom Vision project selecteren
 
@@ -25,10 +25,11 @@ Op het tabblad instellingen van het Custom Vision project kunt u een domein voor
 
 |Domain|Doel|
 |---|---|
-|__Algemeen__| Geoptimaliseerd voor een breed scala aan afbeeldingsclassificatietaken. Als geen van de andere domeinen geschikt is of als u niet zeker weet welk domein u wilt kiezen, selecteert u het domein algemeen. ID `ee85a74c-405e-4adc-bb47-ffa8ca0c9f31`|
+|__Algemeen__| Geoptimaliseerd voor een breed scala aan afbeeldingsclassificatietaken. Als geen van de andere domeinen geschikt is, of als u niet zeker weet welk domein u wilt kiezen, selecteert u het domein algemeen. ID `ee85a74c-405e-4adc-bb47-ffa8ca0c9f31`|
+|__Algemeen [a1]__| Geoptimaliseerd voor een betere nauw keurigheid met een vergelijk bare Afleidings tijd als algemeen domein. Wordt aanbevolen voor grotere gegevens sets of moeilijkerere gebruikers scenario's. Dit domein vereist meer trainings tijd. ID `a8e3c40f-fb4a-466f-832a-5e457ae4a344`|
 |__Voedsel__|Geoptimaliseerd voor foto's van gerechten zoals op de menukaart van een restaurant. Gebruik het domein Voedsel als u foto's van afzonderlijke soorten fruit of groenten wilt classificeren. ID `c151d5b5-dd07-472a-acc8-15d29dea8518`|
 |__Oriëntatiepunten__|Geoptimaliseerd voor herkenbare oriëntatiepunten, zowel natuurlijke als kunstmatige. Dit domein werkt het beste wanneer het oriëntatiepunt duidelijk te zien is in de foto. Dit domein werkt ook als het oriëntatiepunt slechts gedeeltelijk zichtbaar is omdat er mensen voor staan. ID `ca455789-012d-4b50-9fec-5bb63841c793`|
-|__Retail__|Geoptimaliseerd voor afbeeldingen zoals die te vinden zijn in de catalogus of op de website van een winkel. Gebruik dit domein voor een nauwkeurige classificatie van kleding, zoals jurken, broeken en shirts. ID `b30a91ae-e3c1-4f73-a81e-c270bff27c39`|
+|__Retail__|Geoptimaliseerd voor afbeeldingen zoals die te vinden zijn in de catalogus of op de website van een winkel. Gebruik dit domein als u classificaties met hoge precisie wilt gebruiken tussen de pantss en shirts. ID `b30a91ae-e3c1-4f73-a81e-c270bff27c39`|
 |__Compacte domeinen__| Geoptimaliseerd voor de beperkingen van real-time classificatie op edge-apparaten.|
 
 ## <a name="object-detection"></a>Objectdetectie
@@ -36,6 +37,7 @@ Op het tabblad instellingen van het Custom Vision project kunt u een domein voor
 |Domain|Doel|
 |---|---|
 |__Algemeen__| Geoptimaliseerd voor een breed scala aan objectdetectietaken. Als geen van de andere domeinen geschikt is of als u niet zeker weet welk domein u wilt kiezen, selecteert u het domein algemeen. ID `da2e3a8a-40a5-4171-82f4-58522f70fbc1`|
+|__Algemeen [a1]__| Geoptimaliseerd voor een betere nauw keurigheid met een vergelijk bare Afleidings tijd als algemeen domein. Aanbevolen voor een nauw keurigere betrouw bare locatie, grotere gegevens sets of meer moeilijke gebruikers scenario's. Dit domein vereist meer trainings tijd en de resultaten zijn niet deterministisch: verwacht een ' +-1% ' toewijzings verschil met dezelfde trainings gegevens. ID `9c616dff-2e7d-ea11-af59-1866da359ce6`|
 |__Logo__|Geoptimaliseerd voor het vinden van merklogo's in afbeeldingen. ID `1d8ffafe-ec40-4fb2-8f90-72b3b6cecea4`|
 |__Producten op schappen__|Geoptimaliseerd voor het detecteren en classificeren van producten op schappen. ID `3780a898-81c3-4516-81ae-3a139614e1f3`|
 |__Compacte domeinen__| Geoptimaliseerd voor de beperkingen van real-time object detectie op edge-apparaten.|
@@ -48,7 +50,8 @@ Model prestaties verschillen per geselecteerd domein. In de onderstaande tabel r
 
 |Taak|Domain|Id|Modelgrootte|Time-outtijd van CPU|Time-outtijd GPU|
 |---|---|---|---|---|---|
-|Classificatie|Algemeen (compact)|`0732100f-1a38-4e49-a514-c9b44c697ab5`|5 MB|13 MS|5 MS|
+|Classificatie|Algemeen (compact)|`0732100f-1a38-4e49-a514-c9b44c697ab5`|6 MB|10 MS|5 MS|
+|Classificatie|Algemeen (compact) [S1]|`a1db07ca-a19a-4830-bae8-e004a42dc863`|43 MB|50 MS|5 MS|
 |Objectdetectie|Algemeen (compact)|`a27d5ca5-bb19-49d8-a70a-fec086c47f5b`|45 MB|35 MS|5 MS|
 |Objectdetectie|Algemeen (compact) [S1]|`7ec2ac80-887b-48a6-8df9-8b1357765430`|14 MB|27 MS|7 MS|
 

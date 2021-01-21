@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 398e964ad773e4c015129c6dd3d4784f1300e16b
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-ms.translationtype: HT
+ms.openlocfilehash: 801c2fe1710952a12584bf10dd8e5c77de3b839c
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905771"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625095"
 ---
 # <a name="tutorial-create-a-store-locator-by-using-azure-maps"></a>Zelfstudie: Een winkelzoeker maken met behulp van Azure Maps
 
@@ -935,6 +935,10 @@ In deze zelfstudie hebt u geleerd hoe u een eenvoudige winkellocator kunt maken 
  * Sla uw gegevens op in een database en zoek naar nabijgelegen locaties. Zie voor meer informatie [SQL Server spatial data types overview](/sql/relational-databases/spatial/spatial-data-types-overview?preserve-view=true&view=sql-server-2017) (overzicht van ruimtelijke gegevenstypen in SQL Server) en [Query spatial data for the nearest neighbor](/sql/relational-databases/spatial/query-spatial-data-for-nearest-neighbor?preserve-view=true&view=sql-server-2017) (ruimtelijke gegevens opvragen voor de dichtstbijzijnde buren).
 
 U kunt de [volledige broncode weergeven](https://github.com/Azure-Samples/AzureMapsCodeSamples/tree/master/AzureMapsCodeSamples/Tutorials/Simple%20Store%20Locator), een [livevoorbeeld weergeven](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Simple%20Store%20Locator) en meer informatie bekijken over de dekking en mogelijkheden van Azure Maps met behulp van [zoom niveaus en tegel raster](zoom-levels-and-tile-grid.md). U kunt ook [gegevensgestuurde stijlexpressies gebruiken](data-driven-style-expressions-web-sdk.md) die u kunt toepassen op uw bedrijfslogica.
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources die moeten worden opgeruimd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

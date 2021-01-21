@@ -6,16 +6,16 @@ ms.author: krishmam
 ms.service: stream-analytics
 ms.topic: conceptual
 ms.date: 12/06/2018
-ms.openlocfilehash: 8d01f43dd6e404bb8f8ae0898625ae1ea9d09fd6
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: dc590593b9bff8f646ee6155d32a2ce3f9790f6e
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98020431"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625245"
 ---
 # <a name="introduction-to-stream-analytics-geospatial-functions"></a>Inleiding tot Stream Analytics georuimtelijke functies
 
-Georuimtelijke functies in Azure Stream Analytics realtime analyse mogelijk maken van georuimtelijke gegevens in stream. Met slechts een paar regels code kunt u een oplossing voor productie kwaliteit ontwikkelen voor complexe scenario's. 
+Georuimtelijke functies in Azure Stream Analytics realtime analyse mogelijk maken van georuimtelijke gegevens in stream. Met slechts een paar regels code kunt u een oplossing voor productie kwaliteit ontwikkelen voor complexe scenario's. Deze functies ondersteunen alle WKT-typen en geojson Point, veelhoek en Lines Tring.
 
 Voor beelden van scenario's die kunnen profiteren van georuimtelijke functies zijn:
 
@@ -110,7 +110,7 @@ Ga voor meer informatie naar de [CreatePolygon](/stream-analytics-query/createpo
 
 
 ## <a name="st_distance"></a>ST_DISTANCE
-De `ST_DISTANCE` functie retourneert de afstand tussen twee punten in meters. 
+De `ST_DISTANCE` functie retourneert de afstand tussen twee geometrieën in meters. 
 
 De volgende query gebruikt `ST_DISTANCE` voor het genereren van een gebeurtenis wanneer een gas kleiner is dan 10 km van de auto.
 
@@ -123,7 +123,7 @@ JOIN Station s ON ST_DISTANCE(c.Location, s.Location) < 10 * 1000
 Ga voor meer informatie naar de [ST_DISTANCE](/stream-analytics-query/st-distance) -referentie.
 
 ## <a name="st_overlaps"></a>ST_OVERLAPS
-De `ST_OVERLAPS` functie vergelijkt twee veelhoeken. Als de veelhoeken elkaar overlappen, retourneert de functie een 1. De functie retourneert 0 als de veelhoeken elkaar niet overlappen. 
+De `ST_OVERLAPS` functie vergelijkt twee geometrieën. Als de geometrische elementen elkaar overlappen, retourneert de functie een 1. De functie retourneert 0 als de geometrische elementen elkaar niet overlappen. 
 
 De volgende query maakt gebruik `ST_OVERLAPS` van om een gebeurtenis te genereren wanneer een gebouw zich binnen een mogelijke Flooding-zone bevindt.
 
@@ -144,7 +144,7 @@ JOIN Storm s ON ST_OVERLAPS(c.Location, s.Course)
 Ga voor meer informatie naar de [ST_OVERLAPS](/stream-analytics-query/st-overlaps) -referentie.
 
 ## <a name="st_intersects"></a>ST_INTERSECTS
-De `ST_INTERSECTS` functie vergelijkt twee Lines Tring. Als de Lines Tring Intersect, retourneert de functie 1. De functie retourneert 0 als de Lines Tring niet INTERSECT.
+De `ST_INTERSECTS` functie vergelijkt twee geometrieën. Als de geometrie van elkaar kruist, retourneert de functie 1. De functie retourneert 0 als de geometrische elementen elkaar niet overlappen.
 
 De volgende voorbeeld query wordt gebruikt `ST_INTERSECTS` om te bepalen of een paved-weg een wegsnij punt kruist.
 
@@ -170,7 +170,7 @@ FROM input
 Ga voor meer informatie naar de [ST_INTERSECTS](/stream-analytics-query/st-intersects) -referentie.
 
 ## <a name="st_within"></a>ST_WITHIN
-De `ST_WITHIN` functie bepaalt of een punt of veelhoek zich binnen een veelhoek bevindt. Als de veelhoek het punt of de veelhoek bevat, wordt de functie 1 geretourneerd. De functie retourneert 0 als het punt of de veelhoek zich niet in de gedeclareerde veelhoek bevindt.
+De `ST_WITHIN` functie bepaalt of een geometrie zich binnen een andere geometrie bevindt. Als de eerste deel uitmaakt van de laatste, wordt 1 geretourneerd door de functie. De functie retourneert 0 als de eerste geometrie zich niet in de laatste Geometry bevindt.
 
 In de volgende voorbeeld query wordt gebruikt `ST_WITHIN` om te bepalen of het bezorgings doel punt zich binnen de opgegeven Warehouse-veelhoek bevindt.
 

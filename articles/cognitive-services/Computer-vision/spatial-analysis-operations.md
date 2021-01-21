@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: 63184a623c6f0a8c53e09e6af92c05e45c5e0794
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: b530fc320f6c29dd7a86a39c5a7019265bb6b724
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185972"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624419"
 ---
 # <a name="spatial-analysis-operations"></a>Ruimtelijke analyse bewerkingen
 
@@ -23,7 +23,7 @@ Met ruimtelijke analyse kunt u het realtime streamen van video van camera's anal
 
 De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. De zone moet volledig worden gedekt door één camera zodat PersonCount een nauw keurig totaal kan registreren. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -32,7 +32,7 @@ De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
 
 Alle bovenstaande bewerkingen zijn ook beschikbaar in de `.debug` versie, die de mogelijkheid hebben om de video frames te visualiseren wanneer ze worden verwerkt. U moet `xhost +` op de hostcomputer worden uitgevoerd om de visualisatie van video frames en-gebeurtenissen in te scha kelen.
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount. debug | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline. debug | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -43,7 +43,7 @@ Ruimtelijke analyse kan ook worden uitgevoerd met [Live video Analytics](../../m
 
 <!--more details on the setup can be found in the [LVA Setup page](LVA-Setup.md). Below is the list of the operations supported with Live Video Analytics. -->
 
-| Bewerkings-id| Beschrijving|
+| Bewerkings-id| Description|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount. livevideoanalytics | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline. livevideoanalytics | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -57,7 +57,7 @@ Live video Analytics-bewerkingen zijn ook beschikbaar in de `.debug` versie (bij
 
 Dit zijn de para meters die vereist zijn voor elk van deze ruimtelijke analyse bewerkingen.
 
-| Bewerkingsparameters| Beschrijving|
+| Bewerkingsparameters| Description|
 |---------|---------|
 | Bewerkings-ID | De bewerkings-id uit de bovenstaande tabel.|
 | enabled | Booleaans: waar of onwaar|
@@ -69,6 +69,38 @@ Dit zijn de para meters die vereist zijn voor elk van deze ruimtelijke analyse b
 | DETECTOR_NODE_CONFIG | JSON die aangeeft in welke GPU het detector knooppunt moet worden uitgevoerd. Moet de volgende indeling hebben: `"{ \"gpu_index\": 0 }",`|
 | SPACEANALYTICS_CONFIG | De JSON-configuratie voor de zone en de regel, zoals hieronder wordt beschreven.|
 | ENABLE_FACE_MASK_CLASSIFIER | `True` om het detecteren van personen met gezichts maskers in de video stroom in te scha kelen, `False` om dit uit te scha kelen. Deze instelling is standaard uitgeschakeld. Voor de detectie van gezichts maskers is een breedte parameter voor de invoer van 1920 vereist `"INPUT_VIDEO_WIDTH": 1920` . Het kenmerk Face masker wordt niet geretourneerd als gedetecteerde mensen niet op de camera zijn gericht of te ver weg zijn. Raadpleeg de hand leiding voor [camera plaatsing](spatial-analysis-camera-placement.md) voor meer informatie |
+
+Dit is een voor beeld van de DETECTOR_NODE_CONFIG para meters voor alle ruimtelijke analyse bewerkingen.
+
+```json
+{
+"gpu_index": 0,
+"do_calibration": true,
+"enable_recalibration": true,
+"calibration_quality_check_frequency_seconds":86400,
+"calibration_quality_check_sampling_num": 80,
+"calibration_quality_check_sampling_times": 5,
+"calibration_quality_check_sample_collect_frequency_seconds": 300,
+"calibration_quality_check_one_round_sample_collect_num":10,
+"calibration_quality_check_queue_max_size":1000,
+"recalibration_score": 75
+}
+```
+
+| Naam | Type| Description|
+|---------|---------|---------|
+| `gpu_index` | tekenreeks| De GPU-index waarop deze bewerking wordt uitgevoerd.|
+| `do_calibration` | tekenreeks | Hiermee wordt aangegeven dat de kalibratie is ingeschakeld. `do_calibration` moet waar zijn om **cognitiveservices. Vision. spatialanalysis-persondistance** goed te laten functioneren. do_calibration is standaard ingesteld op waar. |
+| `enable_recalibration` | booleaans | Hiermee wordt aangegeven of automatisch opnieuw kalibreren is ingeschakeld. De standaardinstelling is `true`.|
+| `calibration_quality_check_frequency_seconds` | int | Minimum aantal seconden tussen elke kwaliteits controle om te bepalen of opnieuw kalibreren nood zakelijk is. De standaard waarde is `86400` (24 uur). Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
+| `calibration_quality_check_sampling_num` | int | Aantal wille keurig geselecteerde opgeslagen gegevens voor beelden voor het gebruik van de fout meting per kwaliteits controle. De standaardinstelling is `80`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
+| `calibration_quality_check_sampling_times` | int | Aantal keren dat fout metingen worden uitgevoerd op verschillende sets van wille keurig geselecteerde gegevens voorbeelden per kwaliteits controle. De standaardinstelling is `5`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
+| `calibration_quality_check_sample_collect_frequency_seconds` | int | Minimum aantal seconden tussen het verzamelen van nieuwe gegevens voorbeelden voor het opnieuw kalibreren en het controleren van de kwaliteit. De standaard waarde is `300` (5 minuten). Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
+| `calibration_quality_check_one_round_sample_collect_num` | int | Minimum aantal nieuwe gegevens voorbeelden voor het verzamelen per afronding van de voorbeeld verzameling. De standaardinstelling is `10`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
+| `calibration_quality_check_queue_max_size` | int | Het maximum aantal gegevens voorbeelden dat moet worden opgeslagen wanneer het camera model wordt gekalibreerd. De standaardinstelling is `1000`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
+| `recalibration_score` | int | Maximale kwaliteits drempel om te beginnen met opnieuw kalibreren. De standaardinstelling is `75`. Wordt alleen gebruikt wanneer `enable_recalibration=True` . De kalibratie kwaliteit wordt berekend op basis van een inverse relatie met een reprojectie fout bij de afbeeldings doel. Gegeven gedetecteerde doelen in 2D-afbeeldings kaders worden de doelen geprojecteerd in 3D-ruimte en opnieuw geprojecteerd naar het kader voor de 2D-afbeelding met behulp van bestaande camera kalibratie parameters. De reprojectie fout wordt gemeten op basis van de gemiddelde afstand tussen de gedetecteerde doelen en de opnieuw geprojecteerde doelen.|
+| `enable_breakpad`| booleaans | Hiermee wordt aangegeven of u Breakpad wilt inschakelen, die wordt gebruikt voor het genereren van een crash dump voor het gebruik van fout opsporing. Het is `false` standaard. Als u deze instelt op `true` , moet u ook toevoegen `"CapAdd": ["SYS_PTRACE"]` in het `HostConfig` deel van de container `createOptions` . De crash dump wordt standaard geüpload naar de [RealTimePersonTracking](https://appcenter.ms/orgs/Microsoft-Organization/apps/RealTimePersonTracking/crashes/errors?version=&appBuild=&period=last90Days&status=&errorType=all&sortCol=lastError&sortDir=desc) AppCenter-app, als u wilt dat de crash dumps worden geüpload naar uw eigen AppCenter-app, kunt u de omgevings variabele overschrijven `RTPT_APPCENTER_APP_SECRET` met het app-geheim van uw app.
+
 
 ### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-personcount"></a>Zone configuratie voor cognitiveservices. Vision. spatialanalysis-personcount
 
@@ -90,7 +122,7 @@ Dit zijn de para meters die vereist zijn voor elk van deze ruimtelijke analyse b
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -135,17 +167,17 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `lines` | list| Lijst met regels.|
 | `name` | tekenreeks| Beschrijvende naam voor deze regel.|
 | `line` | list| De definitie van de regel. Dit is een omleidings lijn waarmee u de vermelding ' entry ' versus ' exit ' kunt begrijpen.|
 | `start` | waardepaar| x, y-coördinaten voor het begin punt van de lijn. De float-waarden geven de positie van het hoek punt aan ten opzichte van de bovenkant van de linkerbovenhoek. U kunt de absolute x-en y-waarden berekenen door deze waarden te vermenigvuldigen met de grootte van het kader. |
 | `end` | waardepaar| x, y-coördinaten voor het eind punt van de lijn. De float-waarden geven de positie van het hoek punt aan ten opzichte van de bovenkant van de linkerbovenhoek. U kunt de absolute x-en y-waarden berekenen door deze waarden te vermenigvuldigen met de grootte van het kader. |
-| `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. |
+| `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. De standaardwaarde is 16. Dit is de aanbevolen waarde voor maximale nauw keurigheid. |
 | `type` | tekenreeks| Voor **cognitiveservices. Vision. spatialanalysis-personcrossingline** dit moet zijn `linecrossing` .|
 |`trigger`|tekenreeks|Het type trigger voor het verzenden van een gebeurtenis.<br>Ondersteunde waarden: ' event ': wordt gestart wanneer iemand de regel kruist.|
-| `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` .|
+| `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` . De standaard waarde is footprint.|
 
 ### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-personcrossingpolygon"></a>Zone configuratie voor cognitiveservices. Vision. spatialanalysis-personcrossingpolygon
 
@@ -181,15 +213,15 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
 | `polygon` | list| Elk waardepaar vertegenwoordigt de x, y voor hoek punten van de polygoon. De veelhoek vertegenwoordigt de gebieden waarin mensen worden getraceerd of geteld. De float-waarden geven de positie van het hoek punt aan ten opzichte van de bovenkant van de linkerbovenhoek. U kunt de absolute x-en y-waarden berekenen door deze waarden te vermenigvuldigen met de grootte van het kader. 
-| `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. |
+| `threshold` | float| Gebeurtenissen worden egressed wanneer het vertrouwen van de AI-modellen groter is dan of gelijk is aan deze waarde. De standaard waarde is 48 als het type zonecrossing en 16 wanneer de tijd DwellTime is. Dit zijn de aanbevolen waarden voor maximale nauw keurigheid.  |
 | `type` | tekenreeks| Voor **cognitiveservices. Vision. spatialanalysis-personcrossingpolygon** dit moet zijn `zonecrossing` of `zonedwelltime` .|
 | `trigger`|tekenreeks|Het type trigger voor het verzenden van een gebeurtenis<br>Ondersteunde waarden: ' event ': wordt geactiveerd wanneer iemand de zone invoert of verlaat.|
-| `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` .|
+| `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` . De standaard waarde is footprint.|
 
 ### <a name="zone-configuration-for-cognitiveservicesvisionspatialanalysis-persondistance"></a>Zone configuratie voor cognitiveservices. Vision. spatialanalysis-persondistance
 
@@ -215,7 +247,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -228,29 +260,6 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 | `minimum_distance_threshold` | float| Een afstand in meter waarmee een "TooClose"-gebeurtenis wordt geactiveerd wanneer mensen kleiner zijn dan de afstand tussen elkaar.|
 | `maximum_distance_threshold` | float| Een afstand in meter waarmee de gebeurtenis ' TooFar ' wordt geactiveerd wanneer mensen groter zijn dan de afstand tussen elkaar.|
 | `focus` | tekenreeks| De punt locatie binnen het begrenzingsvak van de persoon die wordt gebruikt om gebeurtenissen te berekenen. De waarde van de focus kan `footprint` (het footprint van de persoon), `bottom_center` (het onderste vak van de rechthoek), (het begrenzingsvak van de gebruiker) `center` .|
-
-Dit is een voor beeld van een JSON-invoer voor de para meter DETECTOR_NODE_CONFIG waarmee een **cognitiveservices. Vision. spatialanalysis-persondistance-** zone wordt geconfigureerd.
-
-```json
-{ 
-"gpu_index": 0, 
-"do_calibration": true
-}
-```
-
-| Naam | Type| Description|
-|---------|---------|---------|
-| `gpu_index` | tekenreeks| De GPU-index waarop deze bewerking wordt uitgevoerd.|
-| `do_calibration` | tekenreeks | Hiermee wordt aangegeven dat de kalibratie is ingeschakeld. `do_calibration` moet waar zijn om **cognitiveservices. Vision. spatialanalysis-persondistance** goed te laten functioneren.|
-| `enable_recalibration` | booleaans | Hiermee wordt aangegeven of automatisch opnieuw kalibreren is ingeschakeld. De standaardinstelling is `true`.|
-| `calibration_quality_check_frequency_seconds` | int | Minimum aantal seconden tussen elke kwaliteits controle om te bepalen of opnieuw kalibreren nood zakelijk is. De standaard waarde is `86400` (24 uur). Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `calibration_quality_check_sampling_num` | int | Aantal wille keurig geselecteerde opgeslagen gegevens voor beelden voor het gebruik van de fout meting per kwaliteits controle. De standaardinstelling is `80`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `calibration_quality_check_sampling_times` | int | Aantal keren dat fout metingen worden uitgevoerd op verschillende sets van wille keurig geselecteerde gegevens voorbeelden per kwaliteits controle. De standaardinstelling is `5`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `calibration_quality_check_sample_collect_frequency_seconds` | int | Minimum aantal seconden tussen het verzamelen van nieuwe gegevens voorbeelden voor het opnieuw kalibreren en het controleren van de kwaliteit. De standaard waarde is `300` (5 minuten). Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `calibration_quality_check_one_round_sample_collect_num` | int | Minimum aantal nieuwe gegevens voorbeelden voor het verzamelen per afronding van de voorbeeld verzameling. De standaardinstelling is `10`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `calibration_quality_check_queue_max_size` | int | Het maximum aantal gegevens voorbeelden dat moet worden opgeslagen wanneer het camera model wordt gekalibreerd. De standaardinstelling is `1000`. Wordt alleen gebruikt wanneer `enable_recalibration=True` .|
-| `recalibration_score` | int | Maximale kwaliteits drempel om te beginnen met opnieuw kalibreren. De standaardinstelling is `75`. Wordt alleen gebruikt wanneer `enable_recalibration=True` . De kalibratie kwaliteit wordt berekend op basis van een inverse relatie met een reprojectie fout bij de afbeeldings doel. Gegeven gedetecteerde doelen in 2D-afbeeldings kaders worden de doelen geprojecteerd in 3D-ruimte en opnieuw geprojecteerd naar het kader voor de 2D-afbeelding met behulp van bestaande camera kalibratie parameters. De reprojectie fout wordt gemeten op basis van de gemiddelde afstand tussen de gedetecteerde doelen en de opnieuw geprojecteerde doelen.|
-| `enable_breakpad`| booleaans | Hiermee wordt aangegeven of u Breakpad wilt inschakelen, die wordt gebruikt voor het genereren van een crash dump voor het gebruik van fout opsporing. Het is `false` standaard. Als u deze instelt op `true` , moet u ook toevoegen `"CapAdd": ["SYS_PTRACE"]` in het `HostConfig` deel van de container `createOptions` . De crash dump wordt standaard geüpload naar de [RealTimePersonTracking](https://appcenter.ms/orgs/Microsoft-Organization/apps/RealTimePersonTracking/crashes/errors?version=&appBuild=&period=last90Days&status=&errorType=all&sortCol=lastError&sortDir=desc) AppCenter-app, als u wilt dat de crash dumps worden geüpload naar uw eigen AppCenter-app, kunt u de omgevings variabele overschrijven `RTPT_APPCENTER_APP_SECRET` met het app-geheim van uw app.
 
 Raadpleeg de richt lijnen voor [camera plaatsing](spatial-analysis-camera-placement.md) voor meer informatie over zone-en lijn configuraties.
 
@@ -606,7 +615,7 @@ Voor beeld van JSON voor detecties tijdens deze bewerking met `zonedwelltime` ty
 | `trackinId` | tekenreeks| De unieke id van de gedetecteerde persoon|
 | `status` | tekenreeks| Richting van veelhoek kruisingen, ' Enter ' of ' exit '|
 | `side` | int| Het nummer van de zijde van de veelhoek die de persoon heeft gekruist. Elke zijde is een genummerde rand tussen de twee hoek punten van de veelhoek die de zone vertegenwoordigt. De rand tussen de eerste twee hoek punten van de polygoon vertegenwoordigen de eerste zijde|
-| `durationMs` | int | Het aantal milliseconden dat de tijd vertegenwoordigt die de persoon aan de zone heeft besteed. Dit veld wordt vermeld wanneer het gebeurtenis type _personZoneDwellTimeEvent_ is|
+| `durationMs` | float | Het aantal milliseconden dat de tijd vertegenwoordigt die de persoon aan de zone heeft besteed. Dit veld wordt vermeld wanneer het gebeurtenis type _personZoneDwellTimeEvent_ is|
 | `zone` | tekenreeks | Het veld naam van de veelhoek dat de gekruiste zone vertegenwoordigt|
 
 | Naam van detectie veld | Type| Description|
@@ -955,7 +964,7 @@ U kunt de prestaties en het gebruik van de Gpu's optimaal benutten door gebruik 
       }
   }
   ```
-| Naam | Type| Beschrijving|
+| Naam | Type| Description|
 |---------|---------|---------|
 | `batch_size` | int | Hiermee wordt het aantal camera's aangegeven dat in de bewerking wordt gebruikt. |
 

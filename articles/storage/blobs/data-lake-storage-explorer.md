@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 07/16/2020
 ms.author: normesta
 ms.reviewer: stewu
-ms.openlocfilehash: e46bb87788de27916860720284087643db7153dc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a63c309c8e728e3f76ad904d479557b368388954
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95913399"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624772"
 ---
 # <a name="use-azure-storage-explorer-to-manage-directories-files-and-acls-in-azure-data-lake-storage-gen2"></a>Azure Storage Explorer gebruiken voor het beheren van adreslijsten, bestanden en ACL's in Azure Data Lake Storage Gen2
 
@@ -80,7 +80,7 @@ Als u bestanden wilt downloaden met behulp van **Azure Storage Explorer**, selec
 
 U kunt machtigingen instellen in de hoofdmap van de container. Hiervoor moet u zijn aangemeld bij Azure Storage Explorer met uw eigen account met rechten om dit te doen (in plaats van een connection string). Klik met de rechter muisknop op uw container en selecteer **machtigingen beheren**, het dialoog venster **machtiging beheren** .
 
-![Microsoft Azure Storage Explorer - Toegang tot mappen beheren](media/storage-quickstart-blobs-storage-Explorer/manageperms.png)
+![Microsoft Azure Storage Explorer - Toegang tot mappen beheren](media/storage-quickstart-blobs-storage-explorer/manageperms.png)
 
 Via het dialoogvenster **Machtiging beheren** kunt u machtigingen beheren voor de eigenaar en de groep eigenaren. Ook kunt u nieuwe gebruikers en groepen toevoegen aan de toegangsbeheerlijst voor wie u vervolgens machtigingen kunt beheren.
 
@@ -105,6 +105,10 @@ In beide categorieën zijn er drie machtigingen die u vervolgens kunt toewijzen 
 > Wanneer u hier selecties maakt, worden machtigingen voor een reeds bestaand item in de map niet ingesteld. U moet naar elk afzonderlijk item gaan en de machtigingen handmatig instellen als het bestand al bestaat.
 
 U kunt machtigingen voor afzonderlijke mappen beheren, evenals de afzonderlijke bestanden waarmee voor u een gedetailleerd toegangsbeheer mogelijk wordt. Het proces voor het beheren van machtigingen voor zowel mappen als bestanden is hetzelfde als hierboven beschreven. Klik met de rechtermuisknop op het bestand of map waarvoor u machtigingen wilt beheren en volg hetzelfde proces.
+
+## <a name="private-endpoints-in-azure-data-lake-storage-gen2"></a>Privé-eind punten in Azure Data Lake Storage Gen2
+
+Storage Explorer maakt gebruik van de [eind punten](../common/storage-private-endpoints.md#private-endpoints-for-azure-storage) van de BLOB (blob) & data Lake Storage Gen2 (DFS) bij het werken met Azure data Lake Storage Gen2. Als toegang tot Azure Data Lake Storage Gen2 is geconfigureerd met behulp van privé-eind punten, moet u ervoor zorgen dat er twee persoonlijke eind punten worden gemaakt voor het opslag account: een met de subresource van het doel `blob` en de andere met de doel-subresource `dfs` .
 
 ## <a name="next-steps"></a>Volgende stappen
 

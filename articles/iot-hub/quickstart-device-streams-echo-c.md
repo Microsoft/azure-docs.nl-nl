@@ -1,5 +1,5 @@
 ---
-title: Communiceren met de apparaattoepassing in C met Azure IoT Hub-apparaatstreams
+title: 'Quick Start: communiceren met apparaat-app in C met Azure IoT Hub Device streams'
 description: In deze quickstart voert u een C-toepassing aan de servicezijde uit die via een apparaatstream communiceert met een IoT-apparaat.
 author: robinsh
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: quickstart
 ms.custom: mvc, devx-track-azurecli
 ms.date: 08/20/2019
 ms.author: robinsh
-ms.openlocfilehash: de310846ad0449a0dac7eccd60d82d4c68ef519b
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 403fe82c46c90c5f8efb48ce0a394a2f63488fed
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94832201"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624622"
 ---
 # <a name="quickstart-communicate-to-a-device-application-in-c-via-iot-hub-device-streams-preview"></a>Quickstart: communiceren met een apparaattoepassing in C via IoT Hub-apparaatstreams (preview)
 
@@ -114,7 +114,7 @@ Voor deze quickstart gebruikt u de [Azure IoT device-SDK voor C](iot-hub-device-
 
 ## <a name="register-a-device"></a>Een apparaat registreren
 
-U moet een apparaat moet zijn registreren bij uw IoT-hub voordat het verbinding kan maken. In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest) om een gesimuleerd apparaat te registreren.
+U moet een apparaat moet zijn registreren bij uw IoT-hub voordat het verbinding kan maken. In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest&preserve-view=true) om een gesimuleerd apparaat te registreren.
 
 1. Voer de volgende opdrachten uit in Cloud Shell om de apparaat-id te maken:
 
@@ -132,7 +132,7 @@ U moet een apparaat moet zijn registreren bij uw IoT-hub voordat het verbinding 
    > Vervang de tijdelijke aanduiding *YourIoTHubName* door een door u gekozen naam voor de IoT-hub.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDevice --output table
+    az iot hub device-identity connection-string show --hub-name {YourIoTHubName} --device-id MyDevice --output table
     ```
 
     Bekijk de geretourneerde verbindingsreeks van het apparaat voor later gebruik in deze quickstart. Het lijkt op het volgende voorbeeld:

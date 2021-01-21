@@ -1,20 +1,20 @@
 ---
-title: Azure IoT Hub-apparaatstreams met C#, quickstart voor SSH en RDP
+title: Snelstartgids-Azure IoT Hub Device streams C Quick start voor SSH en RDP
 description: In deze quickstart voert u een voorbeeld van een C#-toepassing uit die als een proxy fungeert om scenario's met SSH en RDP via IoT Hub-apparaatstreams mogelijk te maken.
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
 ms.devlang: c
 ms.topic: quickstart
-ms.custom: mvc, devx-track-azurecli
+ms.custom: references_regions
 ms.date: 03/14/2019
 ms.author: robinsh
-ms.openlocfilehash: 037ff64f4811515e7ce64d66a36e08e71de54058
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 2305a87b91160b5de90f4cbfbc9418adc50bb92a
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94831987"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624402"
 ---
 # <a name="quickstart-enable-ssh-and-rdp-over-an-iot-hub-device-stream-by-using-a-c-proxy-application-preview"></a>Quickstart: Schakel SSH en RDP in via een IoT Hub-apparaatstroom in met behulp van een C-proxy-toepassing (preview)
 
@@ -25,6 +25,22 @@ Azure IoT Hub ondersteunt momenteel apparaatstreams als een [preview-functie](ht
 [IoT Hub-apparaatstreams](./iot-hub-device-streams-overview.md) zorgen ervoor dat service- en apparaattoepassingen kunnen communiceren op een beveiligde manier die de firewall toestaat. Zie [De voorbeeldpagina van de lokale proxy](./iot-hub-device-streams-overview.md#local-proxy-sample-for-ssh-or-rdp) voor een overzicht van de installatie.
 
 In deze quickstart wordt beschreven hoe u tunneling van Secure Shell (SSH)-verkeer instelt (met behulp van poort 22) via apparaatstreams. De configuratie voor Remote Desktop Protocol (RDP)-verkeer is vergelijkbaar en vereist een eenvoudige wijziging in de configuratie. Omdat apparaatstreams toepassings- en protocolneutraal zijn, kan u deze quickstart zodanig bewerken dat er andere soorten toepassingsverkeer mogelijk zijn.
+
+## <a name="prerequisites"></a>Vereisten
+
+* De preview van apparaatstreams wordt momenteel alleen ondersteund voor IoT-hubs die in de volgende regio's zijn gemaakt:
+
+  * VS - centraal
+  * VS - centraal EUAP
+  * Europa - noord
+  * Azië - zuidoost
+
+* [Visual Studio 2019](https://www.visualstudio.com/vs/) installeren met de workload [Desktopontwikkeling met C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) ingeschakeld.
+* Installeer de meest recente versie van [Git](https://git-scm.com/download/).
+
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
+
+[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="how-it-works"></a>Hoe werkt het?
 
@@ -47,22 +63,6 @@ In de volgende afbeelding ziet u hoe het apparaat en de proxyprogramma's in de s
 > SSH-verkeer dat via een apparaatstream wordt verstuurd, gaat via een tunnel van het streaming-eindpunt van de IoT-hub in plaats van dat het rechtstreeks tussen de service en het apparaat wordt verzonden. Zie de [voordelen van het gebruik van IOT Hub-apparaten](iot-hub-device-streams-overview.md#benefits) voor meer informatie. In de afbeelding ziet u bovendien hoe de SSH-daemon die wordt uitgevoerd op hetzelfde apparaat (of machine) als de proxy in het apparaat. In deze quickstart zorgt de verstrekking van het IP-adres van de SSH-daemon ervoor dat de proxy in het apparaat en de daemon ook op verschillende computers worden uitgevoerd.
 
 [!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
-
-## <a name="prerequisites"></a>Vereisten
-
-* De preview van apparaatstreams wordt momenteel alleen ondersteund voor IoT-hubs die in de volgende regio's zijn gemaakt:
-
-  * VS - centraal
-  * VS - centraal EUAP
-  * Europa - noord
-  * Azië - zuidoost
-
-* [Visual Studio 2019](https://www.visualstudio.com/vs/) installeren met de workload [Desktopontwikkeling met C++](https://www.visualstudio.com/vs/support/selecting-workloads-visual-studio-2017/) ingeschakeld.
-* Installeer de meest recente versie van [Git](https://git-scm.com/download/).
-
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
-
-[!INCLUDE [iot-hub-cli-version-info](../../includes/iot-hub-cli-version-info.md)]
 
 ## <a name="prepare-the-development-environment"></a>De ontwikkelomgeving voorbereiden
 
@@ -120,7 +120,7 @@ Voor deze quickstart gebruikt u de [Azure IoT device-SDK voor C](iot-hub-device-
 
 ## <a name="register-a-device"></a>Een apparaat registreren
 
-Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan maken. In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest) om een gesimuleerd apparaat te registreren.
+Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan maken. In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest&preserve-view=true) om een gesimuleerd apparaat te registreren.
 
 1. Voer de volgende opdrachten uit in Cloud Shell om de apparaat-id te maken:
 
@@ -138,7 +138,7 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
    > Vervang de tijdelijke aanduiding *YourIoTHubName* door een door u gekozen naam voor de IoT-hub.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string --hub-name {YourIoTHubName} --device-id MyDevice --output table
+    az iot hub device-identity connection-string show --hub-name {YourIoTHubName} --device-id MyDevice --output table
     ```
 
     Bekijk de geretourneerde verbindingsreeks van het apparaat voor later gebruik in deze quickstart. Het lijkt op het volgende voorbeeld:

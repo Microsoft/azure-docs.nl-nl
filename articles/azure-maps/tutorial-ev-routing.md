@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: f30b99a1d9c8303d5b2ed4b02819d0ca837946d2
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-ms.translationtype: HT
+ms.openlocfilehash: 7a33cf4e66ce31f8fb8534de25d7564a5784ca3a
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905737"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625046"
 ---
 # <a name="tutorial-route-electric-vehicles-by-using-azure-notebooks-python"></a>Zelfstudie: Elektrische voertuigen routeren met behulp van Azure Notebooks (Python)
 
@@ -398,6 +398,10 @@ Als u meer wilt weten over de API's van Azure Maps die in deze zelfstudie worden
 * [Post-routematrix](/rest/api/maps/route/postroutematrix)
 * [Routebeschrijving ophalen](/rest/api/maps/route/getroutedirections)
 * [Azure Maps REST API's](./consumption-model.md)
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Er zijn geen resources die moeten worden opgeruimd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

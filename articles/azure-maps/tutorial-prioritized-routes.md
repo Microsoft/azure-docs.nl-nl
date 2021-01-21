@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: mvc, devx-track-js
-ms.openlocfilehash: 125ca501dbad74263f32632db44eebd097c3b0a1
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
-ms.translationtype: HT
+ms.openlocfilehash: dbf2331dc6bcd3187175554b61d347e8bb2c04a4
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92896698"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624996"
 ---
 # <a name="tutorial-find-and-display-routes-for-different-modes-of-travel-using-azure-maps"></a>Zelfstudie: Routes vinden en weergeven voor verschillende manieren van reizen met Azure Maps
 
@@ -39,7 +39,7 @@ U kunt de volledige broncode voor het voorbeeld [hier](https://github.com/Azure-
 
 De volgende stappen laten zien hoe u het kaartbesturingselement maakt en weergeeft op een webpagina.
 
-1. Maak een nieuw bestand op uw lokale computer en noem dit **MapTruckRoute.html** .
+1. Maak een nieuw bestand op uw lokale computer en noem dit **MapTruckRoute.html**.
 2. Kopieer de volgende HTML-opmaak en plak deze in het bestand.
 
     ```HTML
@@ -121,7 +121,7 @@ De volgende stappen laten zien hoe u het kaartbesturingselement maakt en weergee
 
 2. Sla het bestand **MapTruckRoute.html** op en vernieuw de pagina in uw browser. Als u inzoomt op een stad, zoals Los Angeles, ziet u dat de straten worden weergegeven met de huidige verkeersstroomgegevens.
 
-    :::image type="content" source="./media/tutorial-prioritized-routes/traffic-map.png" alt-text="Eenvoudige kaartweergave van kaartbesturingselement":::
+    :::image type="content" source="./media/tutorial-prioritized-routes/traffic-map.png" alt-text="Verkeer op een kaart weergeven":::
 
 <a id="queryroutes"></a>
 
@@ -197,7 +197,7 @@ In deze zelfstudie worden twee routes berekend en weergegeven op de kaart. De ee
 
 3. Sla **TruckRoute.html** op en vernieuw de browser. De kaart is nu gecentreerd op Seattle. De blauwe druppelvormige speld duidt het beginpunt aan. De blauwe ronde speld duidt het eindpunt aan.
 
-   :::image type="content" source="./media/tutorial-prioritized-routes/pins-map.png" alt-text="Eenvoudige kaartweergave van kaartbesturingselement":::
+   :::image type="content" source="./media/tutorial-prioritized-routes/pins-map.png" alt-text="Kaart met begin- en eindpunt weergeven":::
 
 <a id="multipleroutes"></a>
 
@@ -206,7 +206,7 @@ In deze zelfstudie worden twee routes berekend en weergegeven op de kaart. De ee
 In deze sectie wordt beschreven hoe u de API Azure Maps-routeservice kunt gebruiken om routebeschrijving van het ene naar het andere punt op te halen, op basis van uw vervoersmiddel. We gebruiken twee vervoermiddelen: vrachtwagen en auto.
 
 >[!TIP]
->De Route-service biedt API's om de *snelste* , *kortste* , *zuinigste* of *leukste* route te plannen, waarbij rekening wordt gehouden met afstand, verkeersomstandigheden en vervoersmiddel. Met de service kunnen gebruikers ook toekomstige routes plannen op basis van historische verkeersomstandigheden. Gebruikers kunnen de voorspelling van de duur van de route voor elke gewenste tijd bekijken. Zie [API Routebeschrijving ophalen](/rest/api/maps/route/getroutedirections) voor meer informatie.
+>De Route-service biedt API's om de *snelste*, *kortste*, *zuinigste* of *leukste* route te plannen, waarbij rekening wordt gehouden met afstand, verkeersomstandigheden en vervoersmiddel. Met de service kunnen gebruikers ook toekomstige routes plannen op basis van historische verkeersomstandigheden. Gebruikers kunnen de voorspelling van de duur van de route voor elke gewenste tijd bekijken. Zie [API Routebeschrijving ophalen](/rest/api/maps/route/getroutedirections) voor meer informatie.
 
 1. Voeg in de functie `GetMap` in de gebeurtenis-handler `ready` van het besturingselement het volgende toe aan de JavaScript-code.
 
@@ -277,7 +277,7 @@ In deze sectie wordt beschreven hoe u de API Azure Maps-routeservice kunt gebrui
 
 4. Sla het bestand **TruckRoute.html** op en vernieuw de webbrowser. De kaart zou nu de vrachtwagen- en auto-routes moeten weergeven.
 
-    :::image type="content" source="./media/tutorial-prioritized-routes/prioritized-routes.png" alt-text="Eenvoudige kaartweergave van kaartbesturingselement":::
+    :::image type="content" source="./media/tutorial-prioritized-routes/prioritized-routes.png" alt-text="Routes voor privé- en bedrijfsvoertuigen op een kaart met Azure Route Service":::
 
     De vrachtwagenroute wordt weergegeven met een dikke blauwe lijn. De autoroute wordt weergegeven met een dunne paarse lijn. De autoroute gaat over Lake Washington via I-90 door tunnels onder woongebieden. Omdat de tunnels zich dicht bij de buurt bevinden, is de lading gevaarlijk afval verboden. De route voor vrachtwagens, met een lading met de Amerikaanse gevarenklasse `USHazmatClass2`, loopt via een andere snelweg.
 
@@ -285,7 +285,9 @@ U kunt de volledige broncode voor het voorbeeld [hier](https://github.com/Azure-
 
 U kunt ook [gegevensgestuurde stijlexpressies gebruiken](data-driven-style-expressions-web-sdk.md)
 
+## <a name="clean-up-resources"></a>Resources opschonen
 
+Er zijn geen resources die moeten worden opgeruimd.
 
 ## <a name="next-steps"></a>Volgende stappen
 

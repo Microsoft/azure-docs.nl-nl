@@ -4,12 +4,12 @@ description: Geeft een overzicht van de Azure Backup-service en hoe deze bijdraa
 ms.topic: overview
 ms.date: 04/24/2019
 ms.custom: mvc
-ms.openlocfilehash: 805fa81362b9f90c1d6ba468caaf4b6745e42c62
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.openlocfilehash: 6a30e31dd1462e427faf64966a38c94f9fa56df6
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96746111"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624469"
 ---
 # <a name="what-is-the-azure-backup-service"></a>Wat is de Azure Backup-service?
 
@@ -21,6 +21,7 @@ De Azure Backup-service biedt eenvoudige, beveiligde en kosteneffectieve oplossi
 
 - **On-premises**: Maak back-ups van bestanden, mappen, systeemstatus met behulp van de [Microsoft Azure Recovery Services-agent (MARS)](backup-support-matrix-mars-agent.md). Of gebruik de DPM- of Azure Backup Server-agent (MABS) voor bescherming van on-premises virtuele machines ([Hyper-V](back-up-hyper-v-virtual-machines-mabs.md) en [VMware](backup-azure-backup-server-vmware.md)) en andere [on-premises werkbelastingen](backup-mabs-protection-matrix.md)
 - **Virtuele Azure-machines** - [Maak back-ups van volledige virtuele machines op basis van Windows/Linux](backup-azure-vms-introduction.md) (met back-upextensies) of van bestanden, mappen en systeemstatus met behulp van de [MARS-agent](backup-azure-manage-mars.md).
+- **Azure Managed disks**  -  [Back-up van Azure Managed disks (in preview-versie)](backup-managed-disks.md)
 - **Azure Files-shares** - [Maak back-ups van Azure-bestandsshares in een opslagaccount](backup-afs.md)
 - **SQL Server op virtuele Azure-machines** -  [Maak back-ups van SQL Server-databases die worden uitgevoerd op virtuele Azure-machines](backup-azure-sql-database.md)
 - **SAP HANA-databases op virtuele Azure-machines** - [Maak back-ups van SAP HANA-databases die worden uitgevoerd op virtuele Azure-machines](backup-azure-sap-hana-database.md)

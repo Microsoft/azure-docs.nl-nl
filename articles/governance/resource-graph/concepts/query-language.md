@@ -3,12 +3,12 @@ title: Inzicht krijgen in de querytaal
 description: Hierin worden resource grafiek tabellen en de beschik bare Kusto-gegevens typen,-Opera tors en-functies die bruikbaar zijn met Azure resource Graph beschreven.
 ms.date: 01/14/2021
 ms.topic: conceptual
-ms.openlocfilehash: f94023d47153dc64ca78e0386edd87a9821515be
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 137b5c40097d7de82e156b4a0869d7257d3e9964
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251723"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624755"
 ---
 # <a name="understanding-the-azure-resource-graph-query-language"></a>Informatie over de query taal van Azure resource Graph
 
@@ -26,8 +26,8 @@ In dit artikel worden de taal onderdelen beschreven die worden ondersteund door 
 
 Resource grafiek biedt verschillende tabellen voor de gegevens die worden opgeslagen over Azure Resource Manager resource typen en hun eigenschappen. Sommige tabellen kunnen met of- `join` `union` Opera tors worden gebruikt voor het ophalen van eigenschappen van gerelateerde resource typen. Hier volgt de lijst met tabellen die beschikbaar zijn in resource grafiek:
 
-|Resource grafiek tabel |Kunnen `join` andere tabellen? |Beschrijving |
-|---|---|
+|Resource grafiek tabel |Kunnen `join` andere tabellen? |Description |
+|---|---|---|
 |Resources |Yes |De standaard tabel als niets is gedefinieerd in de query. De resource typen en eigenschappen van Resource Manager zijn hier beschikbaar. |
 |ResourceContainers |Yes |Bevat een abonnement (in Preview-- `Microsoft.Resources/subscriptions` ) en resource groep ( `Microsoft.Resources/subscriptions/resourcegroups` )-resource typen en-gegevens. |
 |AdvisorResources |Ja (preview-versie) |Bevat resources met _betrekking_ tot `Microsoft.Advisor` . |
@@ -41,7 +41,7 @@ Resource grafiek biedt verschillende tabellen voor de gegevens die worden opgesl
 |SecurityResources |Gedeeltelijk, alleen toevoegen _aan_ . (preview) |Bevat resources met _betrekking_ tot `Microsoft.Security` . |
 |ServiceHealthResources |No |Bevat resources met _betrekking_ tot `Microsoft.ResourceHealth` . |
 
-Zie [verwijzing: ondersteunde tabellen en resource typen](../reference/supported-tables-resources.md)voor een volledige lijst met resource typen.
+Zie voor een volledige lijst, inclusief resource typen, [verwijzing: ondersteunde tabellen en resource typen](../reference/supported-tables-resources.md).
 
 > [!NOTE]
 > _Resources_ is de standaard tabel. Tijdens het uitvoeren van een query op de tabel _resources_ is het niet nodig om de tabel naam op te geven, tenzij `join` of wordt `union` gebruikt. De aanbevolen procedure is echter om altijd de eerste tabel in de query op te halen.
@@ -127,21 +127,25 @@ Hier volgt een lijst met KQL-Opera tors die worden ondersteund door resource gra
 |KQL |Voorbeeld query resource grafiek |Notities |
 |---|---|---|
 |[aantal](/azure/kusto/query/countoperator) |[Sleutel kluizen tellen](../samples/starter.md#count-keyvaults) | |
-|[onderscheiden](/azure/kusto/query/distinctoperator) |[Resources weergeven die opslag bevatten](../samples/starter.md#show-storage) | |
+|[distinct](/azure/kusto/query/distinctoperator) |[Resources weergeven die opslag bevatten](../samples/starter.md#show-storage) | |
 |[uitbreidbaar](/azure/kusto/query/extendoperator) |[Virtuele machines tellen op type besturingssysteem](../samples/starter.md#count-os) | |
 |[Jointypen](/azure/kusto/query/joinoperator) |[Sleutel kluis met de naam van het abonnement](../samples/advanced.md#join) |Ondersteunde jointypen: [innerunique](/azure/kusto/query/joinoperator#default-join-flavor), [inner](/azure/kusto/query/joinoperator#inner-join), [leftouter](/azure/kusto/query/joinoperator#left-outer-join). De limiet van 3 `join` in één query, waarvan 1 een kruis tabel kan zijn `join` . Als alle verschillende tabellen `join` worden gebruikt tussen _resource_ en _ResourceContainers_, is 3 kruis tabel `join` toegestaan. Aangepaste deelname strategieën, zoals broadcast toevoegen, zijn niet toegestaan. `join`Zie [resource Graph Tables](#resource-graph-tables)(Engelstalig) voor welke tabellen kunnen worden gebruikt. |
 |[ondergrens](/azure/kusto/query/limitoperator) |[Een lijst van alle openbare IP-adressen weergeven](../samples/starter.md#list-publicip) |Synoniem van `take` . Werkt niet met [overs Laan](./work-with-data.md#skipping-records). |
 |[mvexpand](/azure/kusto/query/mvexpandoperator) | | Verouderde operator `mv-expand` . gebruik in plaats daarvan. _RowLimit_ maximum van 400. De standaard waarde is 128. |
-|[MV-uitvouwen](/azure/kusto/query/mvexpandoperator) |[Een lijst met Cosmos DB met specifieke schrijflocaties weergeven](../samples/advanced.md#mvexpand-cosmosdb) |_RowLimit_ maximum van 400. De standaard waarde is 128. |
+|[MV-uitvouwen](/azure/kusto/query/mvexpandoperator) |[Een lijst met Cosmos DB met specifieke schrijflocaties weergeven](../samples/advanced.md#mvexpand-cosmosdb) |_RowLimit_ maximum van 400. De standaard waarde is 128. De limiet van 3 `mv-expand` in één query.|
 |[order](/azure/kusto/query/orderoperator) |[Een lijst van resources weergeven, gesorteerd op naam](../samples/starter.md#list-resources) |Synoniem van `sort` |
 |[project](/azure/kusto/query/projectoperator) |[Een lijst van resources weergeven, gesorteerd op naam](../samples/starter.md#list-resources) | |
 |[project-weg](/azure/kusto/query/projectawayoperator) |[Kolommen verwijderen uit resultaten](../samples/advanced.md#remove-column) | |
 |[acties](/azure/kusto/query/sortoperator) |[Een lijst van resources weergeven, gesorteerd op naam](../samples/starter.md#list-resources) |Synoniem van `order` |
 |[samenvatten](/azure/kusto/query/summarizeoperator) |[Azure-resources tellen](../samples/starter.md#count-resources) |Alleen de eerste vereenvoudigde pagina |
 |[Houd](/azure/kusto/query/takeoperator) |[Een lijst van alle openbare IP-adressen weergeven](../samples/starter.md#list-publicip) |Synoniem van `limit` . Werkt niet met [overs Laan](./work-with-data.md#skipping-records). |
-|[Boven](/azure/kusto/query/topoperator) |[De eerste vijf virtuele machines weergeven op naam en met hun type besturingssysteem](../samples/starter.md#show-sorted) | |
+|[top](/azure/kusto/query/topoperator) |[De eerste vijf virtuele machines weergeven op naam en met hun type besturingssysteem](../samples/starter.md#show-sorted) | |
 |[Réunion](/azure/kusto/query/unionoperator) |[Resultaten van twee query's combineren tot één resultaat](../samples/advanced.md#unionresults) |Eén tabel _toegestaan:_ `| union` \[ `kind=` `inner` \| `outer` \] \[ `withsource=`  \] _tabel kolom naam_. Maxi maal drie `union` zijden in één query. Het is niet toegestaan om de tabel met fuzzy op te lossen `union` . Kan worden gebruikt binnen één tabel of tussen de tabellen _resources_ en _ResourceContainers_ . |
 |[positie](/azure/kusto/query/whereoperator) |[Resources weergeven die opslag bevatten](../samples/starter.md#show-storage) | |
+
+Er is een standaard limiet van 3 `join` en 3 `mv-expand` Opera tors in één resource Graph SDK-query. U kunt een verhoging van deze limieten voor uw Tenant aanvragen via **Help en ondersteuning**.
+
+Voor het ondersteunen van de portal-ervaring ' query openen ' heeft Azure resource Graph Explorer een hogere wereld wijde limiet dan resource Graph SDK.
 
 ## <a name="query-scope"></a>Querybereik
 

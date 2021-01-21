@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/06/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: f3058953e702f40fa1500441e382898b0314ddbb
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 9c868685ad943c1ab9ab263a164111e46294c042
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839739"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98625428"
 ---
-# <a name="investigate-sensor-detections-in-a-device-inventory"></a>Sensor detecties onderzoeken in een inventaris van een apparaat
+# <a name="investigate-sensor-detections-in-a-device-inventory"></a>Alle sensordetecties in een apparaatinventaris onderzoeken
 
 De apparaat-inventaris toont een uitgebreid scala aan kenmerken van apparaten die een sensor detecteert. Opties zijn beschikbaar voor:
 
@@ -32,7 +32,7 @@ De volgende kenmerken worden weer gegeven in de inventarisatie tabel van het app
 
 | Parameter | Beschrijving |
 |--|--|
-| Naam | De naam van het apparaat als de sensor dat deze heeft gedetecteerd. |
+| Name | De naam van het apparaat als de sensor dat deze heeft gedetecteerd. |
 | Type | Het type apparaat. |
 | Leverancier | De naam van de leverancier van het apparaat, zoals gedefinieerd in het MAC-adres. |
 | Besturingssysteem | Het besturings systeem van het apparaat. |
@@ -223,8 +223,8 @@ Een CSV-bestand exporteren:
 
 - Selecteer in het menu in de rechter bovenhoek van de inventarisatie van apparaten :::image type="icon" source="media/how-to-work-with-asset-inventory-information/csv-excel-export-icon.png" border="false"::: . Het CSV-rapport wordt gegenereerd en gedownload.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
-[Onderzoek alle Enter prise sensor-detecties in een inventaris van een apparaat](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)
+[Alle zakelijke sensordetectie in een apparaatinventaris onderzoeken](how-to-investigate-all-enterprise-sensor-detections-in-a-device-inventory.md)
 
 [Werken met site kaart weergaven](how-to-gain-insight-into-global-regional-and-local-threats.md#work-with-site-map-views)

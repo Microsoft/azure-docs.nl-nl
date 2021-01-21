@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 12/07/2020
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: b2f95ddb13896ed461a20f1948fef34569586d1f
-ms.sourcegitcommit: 8f0803d3336d8c47654e119f1edd747180fe67aa
+ms.openlocfilehash: bfe3e00c4930ba57c930eb1bc2f2dd4ed11886e0
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97977066"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624681"
 ---
 # <a name="control-what-traffic-is-monitored"></a>Controleren welk verkeer wordt bewaakt
 
@@ -186,11 +186,11 @@ Een DHCP-adres bereik instellen:
 
 ## <a name="configure-dns-servers-for-reverse-lookup-resolution"></a>DNS-servers configureren voor reverse lookup-omzetting
 
-Als u de verrijking van activa wilt uitbreiden, kunt u meerdere DNS-servers configureren voor het carryout van reverse lookups. U kunt de hostnamen of FQDN-namen die zijn gekoppeld aan de IP-adressen die zijn gedetecteerd in de subnetten van het netwerk omzetten. Als een sensor bijvoorbeeld een IP-adres detecteert, kan deze een query uitvoeren op meerdere DNS-servers om de hostnaam om te zetten.
+Om de verrijking van het apparaat te verbeteren, kunt u meerdere DNS-servers configureren voor het carryout van reverse lookups. U kunt de hostnamen of FQDN-namen die zijn gekoppeld aan de IP-adressen die zijn gedetecteerd in de subnetten van het netwerk omzetten. Als een sensor bijvoorbeeld een IP-adres detecteert, kan deze een query uitvoeren op meerdere DNS-servers om de hostnaam om te zetten.
 
 Alle CIDR-indelingen worden ondersteund.
 
-De hostnaam wordt weer gegeven in de activa-en activa kaart en in rapporten.
+De hostnaam wordt weer gegeven in de inventaris van apparaten, de apparaattoewijzing en in rapporten.
 
 U kunt planningen voor reverse lookup plannen voor specifieke uurtarieven, zoals elke 12 uur. U kunt ook een specifieke tijd plannen.
 
@@ -212,7 +212,7 @@ DNS-servers definiëren:
 
 5. In het veld **DNS-server poort** voert u de DNS-poort in.
 
-6. Verhelp de IP-adressen van het netwerk naar Asset FQDN. Voeg in het veld **aantal labels** het aantal domein labels toe dat moet worden weer gegeven. Van links naar rechts worden Maxi maal 30 tekens weer gegeven.
+6. De IP-adressen van het netwerk omzetten naar FQDN-apparaten. Voeg in het veld **aantal labels** het aantal domein labels toe dat moet worden weer gegeven. Van links naar rechts worden Maxi maal 30 tekens weer gegeven.
 
 7. Voer in het veld **subnetten** de subnetten in waarvan u wilt dat de DNS-server een query uitvoert.
 
@@ -220,7 +220,7 @@ DNS-servers definiëren:
 
 ### <a name="test-the-dns-configuration"></a>De DNS-configuratie testen 
 
-Als u een test Asset gebruikt, controleert u of de instellingen die u hebt gedefinieerd, goed werken:
+Als u een test apparaat gebruikt, controleert u of de instellingen die u hebt gedefinieerd, goed werken:
 
 1. Schakel de optie **DNS-zoek opdracht** in.
 
@@ -295,7 +295,7 @@ Scan resultaten weer geven:
 
 1. Wanneer de scan is voltooid, selecteert u in het deel venster **acties** de optie **scan resultaten weer geven**. Het CSV-bestand met de scan resultaten wordt gedownload naar uw computer.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Sensor detecties onderzoeken in een inventaris](how-to-investigate-sensor-detections-in-a-device-inventory.md) 
  van een apparaat [Detectie van sensors in de apparaattoewijzing onderzoeken](how-to-work-with-the-sensor-device-map.md)

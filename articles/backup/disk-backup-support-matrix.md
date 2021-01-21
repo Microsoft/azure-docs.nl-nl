@@ -1,15 +1,15 @@
 ---
-title: Ondersteunings matrix voor Azure Disk Backup
+title: Azure Disck Backup-ondersteuningsmatrix
 description: Hierin wordt een overzicht gegeven van de ondersteunings instellingen en beperkingen voor Azure-schijf back-ups.
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: 950651148237c7b9374c378e27ef5cd76697ae9e
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 099e83d8a2fb109da862657265dad8be8143f608
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98557872"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624931"
 ---
 # <a name="azure-disk-backup-support-matrix-in-preview"></a>Ondersteunings matrix voor Azure Disk Backup (in Preview)
 
@@ -55,6 +55,8 @@ Er worden meer regio's aangekondigd wanneer deze beschikbaar komen.
 - Het back-upbeleid kan momenteel niet worden gewijzigd en de resource groep van de moment opname die is toegewezen aan een back-upexemplaar wanneer u de back-up van een schijf configureert, kan niet worden gewijzigd.
 
 - Op dit moment is de Azure Portal-ervaring voor het configureren van de back-up van schijven beperkt tot Maxi maal 20 schijven van hetzelfde abonnement.
+
+- Het gebruik van Power shell en Azure CLI voor het configureren van back-ups en het terugzetten van schijven wordt momenteel niet ondersteund (tijdens de preview-versie).
 
 - Bij het configureren van de back-up moet de schijf die u hebt geselecteerd om een back-up te maken en de resource groep met moment opnamen waarvan de moment opnamen moeten worden opgeslagen, deel uitmaken van hetzelfde abonnement. U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Meer informatie over [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) voor beheerde schijven. Zie  [back-up configureren](backup-managed-disks.md#configure-backup)voor meer informatie over het kiezen van een resource groep voor moment opnamen.
 

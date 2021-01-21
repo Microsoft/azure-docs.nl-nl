@@ -3,12 +3,12 @@ title: Overzicht van Azure Service Bus-berichtenservice | Microsoft Docs
 description: Dit artikel bevat een overzicht op hoog niveau van Azure Service Bus, een volledig beheerde berichtenbroker die binnen ondernemingen kan worden geïntegreerd.
 ms.topic: overview
 ms.date: 11/20/2020
-ms.openlocfilehash: 70e9d966a14f78866d72865eed4cbb2dfd6c18dd
-ms.sourcegitcommit: 90caa05809d85382c5a50a6804b9a4d8b39ee31e
-ms.translationtype: HT
+ms.openlocfilehash: d9103557eb7b32f376ba6590bbca5f557bf32764
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97755732"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632864"
 ---
 # <a name="what-is-azure-service-bus"></a>Wat is Azure Service Bus?
 Microsoft Azure Service Bus is een volledig beheerde zakelijke berichtenbroker met berichtwachtrijen en onderwerpen over publiceren-abonneren. Service Bus wordt gebruikt om toepassingen en services van elkaar los te koppelen, waardoor de volgende voordelen worden geboden:
@@ -138,11 +138,11 @@ Service Bus biedt [beveiligingsfuncties](network-security.md) zoals IP-firewall 
 
 Volledig ondersteunde Service Bus-clientbibliotheken zijn beschikbaar via de Azure SDK.
 
-- [Azure Service Bus voor .NET](/dotnet/api/overview/azure/service-bus?preserve-view=true&view=azure-dotnet)
-- [Azure Service Bus-bibliotheken voor Java](/java/api/overview/azure/servicebus?preserve-view=true&view=azure-java-stable)
+- [Azure Service Bus voor .NET](/dotnet/api/overview/azure/service-bus?preserve-view=true)
+- [Azure Service Bus-bibliotheken voor Java](/java/api/overview/azure/servicebus?preserve-view=true)
 - [Azure Service Bus-provider voor Java JMS 2.0](how-to-use-java-message-service-20.md)
-- [Azure Service Bus-modules voor JavaScript en TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true&view=azure-node-latest)
-- [Azure Service Bus-bibliotheken voor Python](/python/api/overview/azure/servicebus?preserve-view=true&view=azure-python)
+- [Azure Service Bus-modules voor JavaScript en TypeScript](/javascript/api/overview/azure/service-bus?preserve-view=true)
+- [Azure Service Bus-bibliotheken voor Python](/python/api/overview/azure/servicebus?preserve-view=true)
 
 [Het primaire protocol van Azure Service Bus is AMQP 1.0](service-bus-amqp-overview.md) en kan worden gebruikt vanuit elke client die compatibel is met het AMQP 1.0-protocol. Verschillende open source AMQP-clients bevatten voorbeelden die expliciet interoperabiliteit met Service Bus illustreren. Raadpleeg de [Handleiding bij het AMQP 1.0-protocol](service-bus-amqp-protocol-guide.md) voor meer informatie over het rechtstreeks gebruiken van Service Bus-functies met AMQP 1.0-clients.
 

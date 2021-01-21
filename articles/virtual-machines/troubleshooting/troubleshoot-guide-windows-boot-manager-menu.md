@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/26/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 2457952051f575306de46e3e8145cc26678a1ef8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5f83f4871d5cde23194ff51a90a22031b526cf91
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86526535"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632560"
 ---
 # <a name="windows-vm-cannot-boot-due-to-windows-boot-manager"></a>Windows-VM kan niet worden opgestart vanwege Windows-opstart beheer
 
@@ -40,6 +40,9 @@ Afbeelding 1
 De fout wordt veroorzaakt door een BCD-vlag *displaybootmenu* in het Windows-opstart beheer. Wanneer de markering is ingeschakeld, vraagt Windows-opstart beheer de gebruiker tijdens het opstart proces om te selecteren welke loader hij wil uitvoeren, waardoor een opstart vertraging optreedt. In azure kan deze functie worden toegevoegd aan de tijd die nodig is om een virtuele machine op te starten.
 
 ## <a name="solution"></a>Oplossing
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 Overzicht van het proces:
 

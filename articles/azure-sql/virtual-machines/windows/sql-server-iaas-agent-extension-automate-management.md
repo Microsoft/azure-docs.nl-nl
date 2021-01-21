@@ -17,12 +17,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 3fe87f94ce05efa4a784ba7e3f65e53abb00fd05
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 7ddc13306f4adb1730169c4811b9d2227dedca33
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914243"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632763"
 ---
 # <a name="automate-management-with-the-sql-server-iaas-agent-extension"></a>Beheer automatiseren met de uitbrei ding IaaS agent van SQL Server
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -115,7 +115,7 @@ Er zijn drie manieren om u te registreren bij de extensie:
 
 ### <a name="named-instance-support"></a>Ondersteuning voor benoemde instanties
 
-De uitbrei ding van de SQL Server IaaS-agent werkt met een benoemd exemplaar van SQL Server als dit de enige SQL Server instantie is die beschikbaar is op de virtuele machine. De extensie kan niet worden geïnstalleerd op Vm's met meerdere exemplaren van SQL Server. 
+De uitbrei ding van de SQL Server IaaS-agent werkt met een benoemd exemplaar van SQL Server als dit de enige SQL Server instantie is die beschikbaar is op de virtuele machine. De extensie kan niet worden geïnstalleerd op virtuele machines met meerdere benoemde SQL Server exemplaren als er geen standaard exemplaar op de VM is. 
 
 Als u een benoemd exemplaar van SQL Server wilt gebruiken, implementeert u een virtuele machine van Azure, installeert u een enkele benoemde SQL Server instantie en registreert u deze met de [SQL IaaS-extensie](sql-agent-extension-manually-register-single-vm.md).
 
@@ -173,7 +173,7 @@ Nee. Micro soft registreert automatisch Vm's die zijn ingericht op de SQL Server
 
 **Is de SQL IaaS agent-extensie voor alle klanten beschikbaar?** 
 
-Ja. Klanten moeten hun SQL Server Vm's registreren met de uitbrei ding als ze geen SQL Server installatie kopie van Azure Marketplace gebruiken en in plaats daarvan zelf een geïnstalleerd SQL Server of als ze hun aangepaste VHD hebben. Vm's die eigendom zijn van alle typen abonnementen (direct, Enterprise Agreement en Cloud Solution Provider) kunnen worden geregistreerd met de SQL IaaS agent-extensie.
+Ja. Klanten moeten hun SQL Server Vm's registreren met de uitbrei ding als ze geen SQL Server installatie kopie van Azure Marketplace gebruiken en in plaats daarvan zelf een geïnstalleerd SQL Server of als ze hun aangepaste VHD hebben. Vm's die eigendom zijn van alle typen abonnementen (direct, Enterprise Overeenkomst en Cloud Solution Provider) kunnen worden geregistreerd met de SQL IaaS agent-extensie.
 
 **Wat is de standaard beheer modus bij het registreren met de SQL IaaS agent-extensie?**
 
@@ -228,7 +228,7 @@ Nee. Een virtuele machine moet ten minste één SQL Server-exemplaar (data base-
 
 **Kan ik een virtuele machine met de SQL IaaS agent-extensie registreren als er meerdere exemplaren van SQL Server zijn?**
 
-Ja. Met de SQL IaaS agent-extensie wordt slechts één exemplaar van de SQL Server (data base-engine) geregistreerd. De SQL IaaS agent-extensie registreert de standaard SQL Server-instantie in het geval van meerdere exemplaren. Als er geen standaard exemplaar is, wordt alleen de registratie in Lightweight-modus ondersteund. Als u een upgrade wilt uitvoeren van Lightweight naar full managed-modus, moet het standaard SQL Server exemplaar bestaan of moet de virtuele machine slechts één benoemd SQL Server exemplaar hebben.
+Ja, op voor waarde dat er een standaard exemplaar is op de VM. Met de SQL IaaS agent-extensie wordt slechts één exemplaar van de SQL Server (data base-engine) geregistreerd. De SQL IaaS agent-extensie registreert de standaard SQL Server-instantie in het geval van meerdere exemplaren.
 
 **Kan ik een SQL Server-failovercluster registreren met de SQL IaaS agent-extensie?**
 

@@ -6,12 +6,12 @@ ms.date: 10/29/2020
 author: kryalama
 ms.custom: devx-track-java
 ms.author: kryalama
-ms.openlocfilehash: 39897e490e4653fbaad7a64ecc0b33f161d1264b
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: c0745dd4069c64292fbcaef666d843ae2d25f7b3
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165787"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632577"
 ---
 # <a name="telemetry-processors-preview---azure-monitor-application-insights-for-java"></a>Telemetrie-processors (preview)-Azure Monitor Application Insights voor Java
 
@@ -38,7 +38,7 @@ Een reeks is een algemene term voor een van de volgende drie dingen:
 
 Voor de telemetrie-processors zijn de belang rijke onderdelen van een reeks:
 
-* Naam
+* Name
 * Kenmerken
 
 De naam van de reeks is de primaire weer gave die wordt gebruikt voor aanvragen en afhankelijkheden in de Azure Portal.
@@ -241,7 +241,7 @@ Voor de `hash` actie zijn de volgende acties vereist
 ### `extract`
 
 > [!NOTE]
-> Deze functie is alleen in 3.0.1 en hoger
+> Deze functie is alleen in 3.0.2 en hoger
 
 Retourneert waarden met behulp van een reguliere expressie regel van de invoer sleutel naar de doel sleutels die in de regel zijn opgegeven. Als er al een doel sleutel bestaat, wordt deze overschreven. Het gedraagt zich op dezelfde manier als de instelling voor het bereik van de [processor](#extract-attributes-from-span-name) `toAttributes` met het bestaande kenmerk als de bron.
 

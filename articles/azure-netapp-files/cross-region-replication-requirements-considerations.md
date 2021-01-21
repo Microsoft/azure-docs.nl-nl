@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 09/16/2020
+ms.date: 01/20/2021
 ms.author: b-juche
-ms.openlocfilehash: 7b664dcd1cb12808960ffacf91c6d02d58632c4e
-ms.sourcegitcommit: 30906a33111621bc7b9b245a9a2ab2e33310f33f
+ms.openlocfilehash: 4a4fff18d21ccb0c729ecb1f79df17225c8086bc
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/22/2020
-ms.locfileid: "95243134"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632670"
 ---
 # <a name="requirements-and-considerations-for-using-cross-region-replication"></a>Vereisten en overwegingen voor het gebruik van replicatie tussen regio's 
 
@@ -31,6 +31,7 @@ Houd rekening met de volgende vereisten en overwegingen voor [het gebruik van de
 * Azure NetApp Files replicatie is alleen beschikbaar in bepaalde paren met vaste regio's. Zie [ondersteunde regio paren](cross-region-replication-introduction.md#supported-region-pairs). 
 * SMB-volumes worden samen met NFS-volumes ondersteund. Voor de replicatie van SMB-volumes is een Active Directory verbinding vereist in de bron-en doel-NetApp-accounts. De doel-AD-verbinding moet toegang hebben tot de DNS-servers of domein controllers toevoegen die bereikbaar zijn vanuit het overgedragen subnet in de doel regio. Zie [vereisten voor Active Directory verbindingen](azure-netapp-files-create-volumes-smb.md#requirements-for-active-directory-connections)voor meer informatie. 
 * Het doel account moet zich in een andere regio bevinden dan de regio van het bron volume. U kunt ook een bestaand NetApp-account in een andere regio selecteren.  
+* Het replicatie doel volume is alleen-lezen totdat u een [failover naar de doel regio hebt uitgevoerd](cross-region-replication-manage-disaster-recovery.md#fail-over-to-destination-volume) om het doel volume in te scha kelen voor lezen en schrijven. 
 * Azure NetApp Files replicatie biedt momenteel geen ondersteuning voor meerdere abonnementen. alle replicaties moeten worden uitgevoerd onder één abonnement.
 * U kunt Maxi maal vijf volumes voor replicatie instellen binnen één abonnement per regio. U kunt een ondersteunings ticket openen om een verhoging van het standaard quotum van vijf replicatie doel volumes (per abonnement in een regio) aan te vragen. 
 * Er kan een vertraging van Maxi maal vijf minuten zijn voor de interface om een nieuwe toegevoegde moment opname op het bron volume weer te geven.  
@@ -41,11 +42,11 @@ Houd rekening met de volgende vereisten en overwegingen voor [het gebruik van de
 * Het is niet mogelijk om terug te keren naar een moment opname die is gemaakt voordat het replicatie doel volume werd aangemaakt.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Volume replicatie maken](cross-region-replication-create-peering.md)
+* [Volumereplicatie maken](cross-region-replication-create-peering.md)
 * [Status van replicatierelatie weergeven](cross-region-replication-display-health-status.md)
 * [Herstel na noodgevallen beheren](cross-region-replication-manage-disaster-recovery.md)
 * [Metrische gegevens van de volume replicatie](azure-netapp-files-metrics.md#replication)
-* [Volume replicaties of volumes verwijderen](cross-region-replication-delete.md)
+* [Volumereplicaties of volumes verwijderen](cross-region-replication-delete.md)
 * [Problemen met replicatie tussen regio's oplossen](troubleshoot-cross-region-replication.md)
 
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: article
 ms.date: 09/18/2018
 ms.author: delhan
-ms.openlocfilehash: d7e56fe36af3d841cfd888dd6c1bf05502837cdd
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f3e4d51b4d41fa0dc23e9b12ac0251c14215de5c
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87079839"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633007"
 ---
 # <a name="vm-startup-is-stuck-on-getting-windows-ready-dont-turn-off-your-computer-in-azure"></a>Het opstarten van de VM is vastgelopen op het ophalen van Windows Ready. Uw computer niet uitschakelen in azure
 
@@ -39,6 +39,9 @@ Een Windows-VM wordt niet opgestart. Wanneer u **Diagnostische gegevens over ops
 Dit probleem treedt meestal op wanneer de server de laatste keer opnieuw wordt opgestart nadat de configuratie is gewijzigd. De configuratie wijziging kan worden geïnitialiseerd door Windows-updates of door de wijzigingen in de functies/functie van de server. Als de grootte van de updates groot is, heeft het besturings systeem meer tijd nodig om de wijzigingen opnieuw te configureren. Windows Update
 
 ## <a name="collect-an-os-memory-dump"></a>Een dump van het besturings systeem verzamelen
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 Als het probleem niet wordt opgelost nadat u hebt gewacht tot de wijzigingen zijn verwerkt, moet u een geheugen dump bestand verzamelen en contact opnemen met de ondersteuning. Voer de volgende stappen uit om het dump bestand te verzamelen:
 

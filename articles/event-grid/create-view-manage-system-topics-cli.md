@@ -3,12 +3,12 @@ title: Azure Event Grid systeem onderwerpen maken, weer geven en beheren met CLI
 description: In dit artikel wordt beschreven hoe u Azure CLI gebruikt om systeem onderwerpen te maken, weer te geven en te verwijderen.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 354afb89b145e288f525e40ad700e8f8a67c6dad
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c1c847c7f25e3a656b798e186a408e560b9ee9e6
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86115040"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633219"
 ---
 # <a name="create-view-and-manage-event-grid-system-topics-using-azure-cli"></a>Event Grid systeem onderwerpen maken, weer geven en beheren met behulp van Azure CLI
 In dit artikel wordt beschreven hoe u systeem onderwerpen maakt en beheert met behulp van Azure CLI. Zie [systeem onderwerpen](system-topics.md)voor een overzicht van systeem onderwerpen.
@@ -30,7 +30,7 @@ Voor een lokale installatie:
 ## <a name="create-a-system-topic"></a>Een systeem onderwerp maken
 
 - Als u eerst een systeem onderwerp wilt maken in een Azure-bron en vervolgens een gebeurtenis abonnement voor dat onderwerp wilt maken, raadpleegt u de volgende onderwerpen:
-    - [AZ eventgrid System-topic Create](/cli/azure/ext/eventgrid/eventgrid/system-topic?view=azure-cli-latest#ext-eventgrid-az-eventgrid-system-topic-create)
+    - [AZ eventgrid System-topic Create](/cli/azure/ext/eventgrid/eventgrid/system-topic#ext-eventgrid-az-eventgrid-system-topic-create)
 
         ```azurecli-interactive
         # Get the ID of the Azure source (for example: Azure Storage account)
@@ -53,14 +53,14 @@ Voor een lokale installatie:
         ```azurecli-interactive
         az eventgrid topic-type  list --output json | grep -w id
         ```
-    - [AZ eventgrid System-onderwerp Event-Subscription Create](/cli/azure/ext/eventgrid/eventgrid/system-topic/event-subscription?view=azure-cli-latest#ext-eventgrid-az-eventgrid-system-topic-event-subscription-create)
+    - [AZ eventgrid System-onderwerp Event-Subscription Create](/cli/azure/ext/eventgrid/eventgrid/system-topic/event-subscription#ext-eventgrid-az-eventgrid-system-topic-event-subscription-create)
 
         ```azurecli-interactive
         az eventgrid system-topic event-subscription create --name <SPECIFY EVENT SUBSCRIPTION NAME> \
             -g rg1 --system-topic-name <SYSTEM TOPIC NAME> \
             --endpoint <ENDPOINT URL>         
         ```
-- Als u een systeem onderwerp (impliciet) wilt maken bij het maken van een gebeurtenis abonnement voor een Azure-bron, gebruikt u de methode [AZ eventgrid Event-Subscription Create](/cli/azure/ext/eventgrid/eventgrid/event-subscription?view=azure-cli-latest#ext-eventgrid-az-eventgrid-event-subscription-create) . Hier volgt een voorbeeld:
+- Als u een systeem onderwerp (impliciet) wilt maken bij het maken van een gebeurtenis abonnement voor een Azure-bron, gebruikt u de methode [AZ eventgrid Event-Subscription Create](/cli/azure/ext/eventgrid/eventgrid/event-subscription#ext-eventgrid-az-eventgrid-event-subscription-create) . Hier volgt een voorbeeld:
     
     ```azurecli-interactive
     storageid=$(az storage account show --name <AZURE STORAGE ACCOUNT NAME> --resource-group <AZURE RESOURCE GROUP NAME> --query id --output tsv)
@@ -76,12 +76,12 @@ Voor een lokale installatie:
 ## <a name="view-all-system-topics"></a>Alle systeem onderwerpen weer geven
 Als u alle systeem onderwerpen en Details van een geselecteerd systeem onderwerp wilt weer geven, gebruikt u de volgende opdrachten:
 
-- [AZ eventgrid System-topic List](/cli/azure/ext/eventgrid/eventgrid/system-topic?view=azure-cli-latest#ext-eventgrid-az-eventgrid-system-topic-list)
+- [AZ eventgrid System-topic List](/cli/azure/ext/eventgrid/eventgrid/system-topic#ext-eventgrid-az-eventgrid-system-topic-list)
 
     ```azurecli-interactive
     az eventgrid system-topic list   
      ```
-- [AZ eventgrid System-topic show](/cli/azure/ext/eventgrid/eventgrid/system-topic?view=azure-cli-latest#ext-eventgrid-az-eventgrid-system-topic-show)
+- [AZ eventgrid System-topic show](/cli/azure/ext/eventgrid/eventgrid/system-topic#ext-eventgrid-az-eventgrid-system-topic-show)
 
     ```azurecli-interactive
     az eventgrid system-topic show -g <AZURE RESOURCE GROUP NAME> -n <SYSTEM TOPIC NAME>     
@@ -90,7 +90,7 @@ Als u alle systeem onderwerpen en Details van een geselecteerd systeem onderwerp
 ## <a name="delete-a-system-topic"></a>Een systeem onderwerp verwijderen
 Als u een systeem onderwerp wilt verwijderen, gebruikt u de volgende opdracht: 
 
-- [AZ eventgrid System-onderwerp Delete](/cli/azure/ext/eventgrid/eventgrid/system-topic?view=azure-cli-latest#ext-eventgrid-az-eventgrid-system-topic-delete)
+- [AZ eventgrid System-onderwerp Delete](/cli/azure/ext/eventgrid/eventgrid/system-topic#ext-eventgrid-az-eventgrid-system-topic-delete)
 
     ```azurecli-interactive
     az eventgrid system-topic delete -g <AZURE RESOURCE GROUP NAME> --name <SYSTEM TOPIC NAME>   

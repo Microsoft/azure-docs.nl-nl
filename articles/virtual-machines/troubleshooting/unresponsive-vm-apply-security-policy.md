@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 06/15/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 6b50bffd1a44c0cf53f15650f5ff4d938f45df4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 047c8afbfe7b489e5c3ac0ccb677f6fc021443a8
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84908133"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632636"
 ---
 # <a name="azure-vm-is-unresponsive-while-applying-security-policy-to-the-system"></a>De Azure-VM reageert niet tijdens het Toep assen van het beveiligings beleid op het systeem
 
@@ -33,7 +33,7 @@ Wanneer u [Diagnostische gegevens over opstarten](boot-diagnostics.md) gebruikt 
 
 :::image type="content" source="media/unresponsive-vm-apply-security-policy/apply-policy.png" alt-text="Scherm opname van het opstart scherm van Windows Server 2012 R2 is vastgelopen.":::
 
-:::image type="content" source="media/unresponsive-vm-apply-security-policy/apply-policy-2.png" alt-text="Scherm opname van het opstart scherm van Windows Server 2012 R2 is vastgelopen.":::
+:::image type="content" source="media/unresponsive-vm-apply-security-policy/apply-policy-2.png" alt-text="Scherm opname van het opstart scherm van het besturings systeem is vastgelopen.":::
 
 ## <a name="cause"></a>Oorzaak
 
@@ -42,6 +42,9 @@ Er is een verdwaald aan mogelijke oorzaken van dit probleem. U kunt de bron pas 
 ## <a name="resolution"></a>Oplossing
 
 ### <a name="process-overview"></a>Overzicht van het proces
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 1. [Een herstel-VM maken en openen](#create-and-access-a-repair-vm)
 2. [Seriële console-en geheugen dump verzameling inschakelen](#enable-serial-console-and-memory-dump-collection)
@@ -68,7 +71,54 @@ Voer dit script uit om geheugen dump verzameling en seriële console in te scha 
 
         Vervang in de opdracht door \<BOOT PARTITON> de letter van de partitie in de gekoppelde schijf die de opstartmap bevat.
 
-        :::image type="content" source="media/unresponsive-vm-apply-security-policy/store-data.png" alt-text="Scherm opname van het opstart scherm van Windows Server 2012 R2 is vastgelopen." /v NMICrashDump /t REG_DWORD /d 1 /f
+        :::image type="content" source="media/unresponsive-vm-apply-security-policy/store-data.png" alt-text="Diagram toont de uitvoer van het weer geven van het BCD-archief in een virtuele machine van de eerste generatie, die een lijst onder het id-nummer van Windows Boot Loader bevat.":::
+
+     2. Voor een VM van de tweede generatie voert u de volgende opdracht in en noteert u de id die wordt weer gegeven:
+
+        ```console
+        bcdedit /store <LETTER OF THE EFI SYSTEM PARTITION>:EFI\Microsoft\boot\bcd /enum
+        ```
+
+        - Vervang in de opdracht door \<LETTER OF THE EFI SYSTEM PARTITION> de letter van de EFI-systeem partitie.
+        - Het kan handig zijn om de schijf beheer console te starten om de juiste systeem partitie te identificeren als EFI-systeem partitie.
+        - De id mag een unieke GUID zijn of de standaard ' BOOTMGR ' zijn.
+3. Voer de volgende opdrachten uit om seriële console in te scha kelen:
+
+    ```console
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /ems {<BOOT LOADER IDENTIFIER>} ON
+    ```
+
+    ```console
+    bcdedit /store <VOLUME LETTER WHERE THE BCD FOLDER IS>:\boot\bcd /emssettings EMSPORT:1 EMSBAUDRATE:115200
+    ```
+
+    - Vervang in de opdracht door \<VOLUME LETTER WHERE THE BCD FOLDER IS> de letter van de map BCD.
+    - Vervang in de opdracht door \<BOOT LOADER IDENTIFIER> de id die u hebt gevonden in de vorige stap.
+4. Controleer of de beschik bare ruimte op de besturingssysteem schijf groter is dan de geheugen grootte (RAM) op de virtuele machine.
+
+    1. Als er onvoldoende ruimte beschikbaar is op de besturingssysteem schijf, wijzigt u de locatie waar het geheugen dump bestand wordt gemaakt. In plaats van het bestand op de besturingssysteem schijf te maken, kunt u dit naar een andere gegevens schijf die is gekoppeld aan de VM met voldoende beschik bare ruimte. Als u de locatie wilt wijzigen, vervangt u '% System root% ' door de stationsletter (bijvoorbeeld ' F: ') van de gegevens schijf in de onderstaande opdrachten.
+    2. Voer de onderstaande opdrachten in (aanbevolen dump configuratie):
+
+        Beschadigde besturingssysteem schijf laden:
+
+        ```console
+        REG LOAD HKLM\BROKENSYSTEM <VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM
+        ```
+
+        Inschakelen op ControlSet001:
+
+        ```console
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet001\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
+        ```
+
+        Inschakelen op ControlSet002:
+
+        ```console
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v CrashDumpEnabled /t REG_DWORD /d 1 /f
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v DumpFile /t REG_EXPAND_SZ /d "%SystemRoot%\MEMORY.DMP" /f
+        REG ADD "HKLM\BROKENSYSTEM\ControlSet002\Control\CrashControl" /v NMICrashDump /t REG_DWORD /d 1 /f
         ```
 
         Beschadigde besturingssysteem schijf verwijderen:

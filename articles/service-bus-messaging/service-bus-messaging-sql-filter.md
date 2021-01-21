@@ -3,16 +3,16 @@ title: Azure Service Bus regel voor abonnements regels SQL-filter syntaxis | Mic
 description: In dit artikel vindt u meer informatie over de grammatica van SQL-filters. Een SQL-filter ondersteunt een subset van de SQL-92-standaard.
 ms.topic: article
 ms.date: 11/24/2020
-ms.openlocfilehash: 9bff18b2161e419d728c360c9ed950ac2867fea8
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 60f3cb6e85cef7a166c353f78cfb50405b962bdd
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498673"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633168"
 ---
 # <a name="subscription-rule-sql-filter-syntax"></a>Syntaxis van SQL-filter voor abonnements regels
 
-Een *SQL-filter* is een van de beschik bare filter typen voor abonnementen op het service bus-onderwerp. Het is een tekst expressie die wordt geleaneerd op een subset van de SQL-92-standaard. Filter expressies worden gebruikt met het `sqlExpression` element van de eigenschap ' sqlFilter ' van een service bus `Rule` in een [Azure Resource Manager sjabloon](service-bus-resource-manager-namespace-topic-with-rule.md), of het argument van de Azure cli- `az servicebus topic subscription rule create` opdracht [`--filter-sql-expression`](/cli/azure/servicebus/topic/subscription/rule?preserve-view=true&view=azure-cli-latest#az_servicebus_topic_subscription_rule_create) , en verschillende SDK-functies waarmee abonnements regels kunnen worden beheerd.
+Een *SQL-filter* is een van de beschik bare filter typen voor abonnementen op het service bus-onderwerp. Het is een tekst expressie die wordt geleaneerd op een subset van de SQL-92-standaard. Filter expressies worden gebruikt met het `sqlExpression` element van de eigenschap ' sqlFilter ' van een service bus `Rule` in een [Azure Resource Manager sjabloon](service-bus-resource-manager-namespace-topic-with-rule.md), of het argument van de Azure cli- `az servicebus topic subscription rule create` opdracht [`--filter-sql-expression`](/cli/azure/servicebus/topic/subscription/rule#az_servicebus_topic_subscription_rule_create) , en verschillende SDK-functies waarmee abonnements regels kunnen worden beheerd.
 
 Service Bus Premium ondersteunt ook de [syntaxis van de JMS SQL-bericht selectie](https://docs.oracle.com/javaee/7/api/javax/jms/Message.html) via de JMS 2,0-API.
 

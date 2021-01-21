@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/08/2018
 ms.author: genli
-ms.openlocfilehash: 8c3e76f1a7edffefc8773dfa548773ec0932fae6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a937528e3bfd8bea16912d614133988763748bab
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86129859"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632956"
 ---
 # <a name="windows-shows-critical-service-failed-on-blue-screen-when-booting-an-azure-vm"></a>Windows geeft een ' kritieke SERVICE is mislukt ' weer op het blauwe scherm bij het opstarten van een Azure VM
 In dit artikel wordt de fout ' essentiële SERVICE is mislukt ' beschreven die u kunt tegen komen wanneer u een virtuele Windows-machine (VM) opstart in Microsoft Azure. Het bevat probleemoplossings stappen om de problemen op te lossen. 
@@ -38,6 +38,9 @@ Er zijn verschillende oorzaken voor Stop-fouten. De meest voorkomende oorzaken z
 - De toepassing heeft toegang tot een niet-toegestane sector van het geheugen
 
 ## <a name="solution"></a>Oplossing 
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 Als u dit probleem wilt oplossen, [neemt u contact op met de ondersteuning en verzendt u een dump bestand](./troubleshoot-common-blue-screen-error.md#collect-memory-dump-file). Dit helpt ons het probleem sneller op te sporen of de volgende oplossing voor zelf ondersteuning te gebruiken.
 
@@ -96,7 +99,7 @@ Voer het volgende script uit om dump logboeken en seriële console in te scha ke
 
 2. [Ontkoppel de besturingssysteem schijf en koppel de besturingssysteem schijf opnieuw aan de betreffende VM](troubleshoot-recovery-disks-portal-windows.md). De virtuele machine wordt opgestart in de veilige modus. Als de fout zich blijft voordoen, gaat u naar de optionele stap.
 3. Open het vak **uitvoeren** en voer **Verifier** uit om het hulp programma Driver Verifier Manager te starten.
-4. Selecteer **automatisch niet-ondertekende Stuur Programma's selecteren**en klik vervolgens op **volgende**.
+4. Selecteer **automatisch niet-ondertekende Stuur Programma's selecteren** en klik vervolgens op **volgende**.
 5. U krijgt de lijst met de stuurprogrammabestanden die niet zijn ondertekend. Onthoud de bestands namen.
 6. Kopieer dezelfde versies van deze bestanden vanaf een werkende VM en vervang deze niet-ondertekende bestanden. 
 
@@ -116,14 +119,14 @@ Voer de volgende stappen uit om de dump logboeken zelf te analyseren:
 2. Blader op de besturingssysteem schijf die u hebt toegevoegd naar **\Windows\System32\Config**. Kopieer alle bestanden als back-up in geval van een terugdraai actie vereist is.
 3. Start de **REGI ster-editor** (regedit.exe).
 4. Selecteer de **HKEY_LOCAL_MACHINE** sleutel. Selecteer in het menu de optie **bestand**  >  **laden**.
-5. Blader naar de map **\windows\system32\config\SYSTEM** op de besturingssysteem schijf die u hebt toegevoegd. Voer **BROKENSYSTEM**in voor de naam van de component. De nieuwe register component wordt weer gegeven onder de sleutel **HKEY_LOCAL_MACHINE** .
+5. Blader naar de map **\windows\system32\config\SYSTEM** op de besturingssysteem schijf die u hebt toegevoegd. Voer **BROKENSYSTEM** in voor de naam van de component. De nieuwe register component wordt weer gegeven onder de sleutel **HKEY_LOCAL_MACHINE** .
 6. Blader naar **HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Control\CrashControl** en breng de volgende wijzigingen aan:
 
     AutoReboot = 0
 
     CrashDumpEnabled = 2
-7.  Selecteer **BROKENSYSTEM**. Selecteer in het menu het **File**  >  **onderdeel bestand verwijderen**.
-8.  Wijzig de BCD-instellingen om op te starten in de foutopsporingsmodus. Voer de volgende opdrachten uit vanaf een opdracht prompt met verhoogde bevoegdheid:
+7.  Selecteer **BROKENSYSTEM**. Selecteer in het menu het   >  **onderdeel bestand verwijderen**.
+8.  Wijzig de BCD-instellingen om op te starten in de foutopsporingsmodus. Voer vanaf een opdrachtprompt met verhoogde bevoegdheid de volgende opdracht uit:
 
     ```cmd
     REM Setup some debugging flags on the boot manager

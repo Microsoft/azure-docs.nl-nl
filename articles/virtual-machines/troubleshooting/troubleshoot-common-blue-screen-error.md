@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 09/28/2018
 ms.author: genli
-ms.openlocfilehash: b382efc4d283d64ce0f833bde9104fa2e3bc973a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9a95ddf882e5edba9daa8ff91c02d1df1f50bceb
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87088542"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632973"
 ---
 # <a name="windows-shows-blue-screen-error-when-booting-an-azure-vm"></a>Windows toont een blauw scherm bij het opstarten van een Azure VM
 In dit artikel worden blauwe scherm fouten beschreven die kunnen optreden wanneer u een virtuele Windows-machine (VM) opstart in Microsoft Azure. Het bevat stappen om u te helpen bij het verzamelen van gegevens voor een ondersteunings ticket. 
@@ -41,6 +41,9 @@ Er kunnen verschillende redenen zijn waarom u een Stop-fout ontvangt. De meest v
 - Een toepassing heeft toegang tot een niet-toegestane sector van het geheugen
 
 ## <a name="collect-memory-dump-file"></a>Geheugen dump bestand verzamelen
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 Als u dit probleem wilt oplossen, moet u eerst het dump bestand voor de crash verzamelen en contact opnemen met de ondersteuning bij het dump bestand. Voer de volgende stappen uit om het dump bestand te verzamelen:
 

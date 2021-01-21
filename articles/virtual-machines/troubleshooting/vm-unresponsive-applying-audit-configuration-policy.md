@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: ff21975c34c28d7476635467e0c1abb8e6575e35
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: f286542c91ba473d13595d8e8299b1bbd8c93856
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977949"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632602"
 ---
 # <a name="virtual-machine-is-unresponsive-while-applying-audit-policy-configuration-policy"></a>De virtuele machine reageert niet tijdens het Toep assen van het configuratie beleid voor het controle beleid
 
@@ -46,6 +46,9 @@ Hier volgt het problematische beleid: *Computerconfiguratie\beleid\beheersjablon
 
 ### <a name="process-overview"></a>Overzicht van het proces
 
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
+
 1. Een herstel-VM maken en openen.
 1. Schakel het beleid uit.
 1. Schakel seriële console-en geheugen dump verzameling in.
@@ -59,7 +62,7 @@ Hier volgt het problematische beleid: *Computerconfiguratie\beleid\beheersjablon
 
 ### <a name="disable-the-policy"></a>Het beleid uitschakelen
 
-1. Open de **REGI ster-editor**op de virtuele machine herstellen.
+1. Open de **REGI ster-editor** op de virtuele machine herstellen.
 1. Zoek de sleutel **HKEY_LOCAL_MACHINE** en selecteer **bestand > laad component** in het menu.
 
    ![De navigatie in de REGI ster-editor om een Hive te laden.](./media/vm-unresponsive-applying-audit-configuration-policy/3.png)
@@ -69,7 +72,7 @@ Hier volgt het problematische beleid: *Computerconfiguratie\beleid\beheersjablon
 
 1. Open het bestand op de gekoppelde schijf `\windows\system32\config\SOFTWARE` .
 
-   - Wanneer u wordt gevraagd een naam op te geven, voert u **BROKENSOFTWARE**in.
+   - Wanneer u wordt gevraagd een naam op te geven, voert u **BROKENSOFTWARE** in.
    - Als u wilt controleren of **BROKENSOFTWARE** is geladen, vouwt u **HKEY_LOCAL_MACHINE** uit en zoekt u naar de toegevoegde **BROKENSOFTWARE** -sleutel.
 
 1. Ga naar **BROKENSOFTWARE** en controleer of de sleutel **CleanupProfiles** bestaat in de geladen component.
@@ -106,7 +109,7 @@ Hier volgt het problematische beleid: *Computerconfiguratie\beleid\beheersjablon
 
       - Vervang in de opdracht door `<LETTER OF THE EFI SYSTEM PARTITION>` de letter van de EFI-systeem partitie.
       - Het kan handig zijn om de schijf beheer console te starten om de juiste systeem partitie te identificeren die is aangeduid als **EFI-systeem partitie**.
-      - De id mag een unieke GUID zijn of de standaard- **BOOTMGR**zijn.
+      - De id mag een unieke GUID zijn of de standaard- **BOOTMGR** zijn.
 
 1. Voer de volgende opdrachten uit:
 

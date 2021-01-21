@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 05/07/2020
 ms.author: v-mibufo
-ms.openlocfilehash: cbf2fe491e1fe0b553eab04ca7190da0413a3ba6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7160ec9564ede21eab0a205b2d66a7d566639506
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86526007"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632653"
 ---
 # <a name="vm-is-unresponsive-when-applying-group-policy-local-users-and-groups-policy"></a>De VM reageert niet bij het Toep assen van groepsbeleid beleid voor lokale gebruikers en groepen
 
@@ -31,7 +31,7 @@ Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruik
 
 :::image type="content" source="media//unresponsive-vm-apply-group-policy/applying-group-policy-1.png" alt-text="Scherm opname van het Toep assen van groepsbeleid voor het laden van lokale gebruikers en groepen (Windows Server 2012 R2).":::
 
-:::image type="content" source="media/unresponsive-vm-apply-group-policy/applying-group-policy-2.png" alt-text="Scherm opname van het Toep assen van groepsbeleid voor het laden van lokale gebruikers en groepen (Windows Server 2012 R2).":::
+:::image type="content" source="media/unresponsive-vm-apply-group-policy/applying-group-policy-2.png" alt-text="Scherm opname van het Toep assen van groepsbeleid voor het laden van lokale gebruikers en groepen (Windows Server 2012).":::
 
 ## <a name="cause"></a>Oorzaak
 
@@ -47,6 +47,9 @@ Dit is het problematische beleid:
 ## <a name="resolution"></a>Oplossing
 
 ### <a name="process-overview"></a>Overzicht van het proces
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 1. [Een herstel-VM maken en openen](#step-1-create-and-access-a-repair-vm)
 1. [Het beleid uitschakelen](#step-2-disable-the-policy)
@@ -64,9 +67,25 @@ Dit is het problematische beleid:
 ### <a name="step-2-disable-the-policy"></a>Stap 2: het beleid uitschakelen
 
 1. Open de REGI ster-editor op de virtuele machine herstellen.
-1. Zoek de sleutel **HKEY_LOCAL_MACHINE** en selecteer **File**  >  **component bestand laden** in het menu.
+1. Zoek de sleutel **HKEY_LOCAL_MACHINE** en selecteer   >  **component bestand laden** in het menu.
 
-    :::image type="content" source="media/unresponsive-vm-apply-group-policy/registry.png" alt-text="Scherm opname van het Toep assen van groepsbeleid voor het laden van lokale gebruikers en groepen (Windows Server 2012 R2)." /v CleanupProfiles /f
+    :::image type="content" source="media/unresponsive-vm-apply-group-policy/registry.png" alt-text="Scherm opname toont de gemarkeerde HKEY_LOCAL_MACHINE en het menu met de Component Load.":::
+
+    - U kunt component laden gebruiken om register sleutels van een offline systeem te laden. In dit geval is het systeem de defecte schijf die is gekoppeld aan de reparatie-VM.
+    - De instellingen voor het hele systeem worden opgeslagen op `HKEY_LOCAL_MACHINE` en kunnen worden afgekort tot ' HKLM '.
+1. Ga op de gekoppelde schijf naar het `\windows\system32\config\SOFTWARE` bestand en open het.
+
+    1. Wanneer u wordt gevraagd een naam op te geven, voert u BROKENSOFTWARE in.
+    1. Als u wilt controleren of BROKENSOFTWARE is geladen, vouwt u **HKEY_LOCAL_MACHINE** uit en zoekt u naar de toegevoegde BROKENSOFTWARE-sleutel.
+1. Ga naar BROKENSOFTWARE en controleer of de sleutel CleanupProfile bestaat in de geladen component.
+
+    1. Als de sleutel bestaat, wordt het CleanupProfile-beleid ingesteld. De waarde vertegenwoordigt het Bewaar beleid dat wordt gemeten in dagen. Ga door met het verwijderen van de sleutel.
+    1. Als de sleutel niet bestaat, wordt het CleanupProfile-beleid niet ingesteld. [Dien een ondersteunings ticket](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade)in, met inbegrip van het Memory. dmp-bestand dat zich bevindt in de Windows-map van de gekoppelde besturingssysteem schijf.
+
+1. Verwijder de CleanupProfiles-sleutel met behulp van deze opdracht:
+
+    ```
+    reg delete "HKLM\BROKENSOFTWARE\Policies\Microsoft\Windows\System" /v CleanupProfiles /f
     ```
 1.  Verwijder de BROKENSOFTWARE-component met behulp van deze opdracht:
 

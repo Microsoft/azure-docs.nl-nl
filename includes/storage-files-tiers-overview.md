@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/28/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: d3ba7baf79ee972ed7289a1aab93484108da70cf
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
-ms.translationtype: HT
+ms.openlocfilehash: 6d06a46d2eaaad362890f1e3e44dbc746fa10898
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724223"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633506"
 ---
 Azure Files biedt vier verschillende opslaglagen: premium, geoptimaliseerd voor transacties, dynamisch en statisch. Hiermee kunt u uw shares aanpassen aan de prestaties en prijsvereisten van uw scenario:
 
@@ -22,7 +22,7 @@ Azure Files biedt vier verschillende opslaglagen: premium, geoptimaliseerd voor 
 - **Dynamisch**: Dynamische bestandsshares bieden opslag die is geoptimaliseerd voor scenario's met algemeen gebruik, bijvoorbeeld teamshares. Dynamische bestandsshares worden aangeboden via de standaardopslag die worden ondersteund door HDD's.
 - **Statisch**: Statische bestandsshares bieden kostenefficiënte opslag die is geoptimaliseerd voor online archieven. Statische bestandsshares worden aangeboden via de standaardopslag die worden ondersteund door HDD's.
 
-Premium bestandsshares worden geïmplementeerd in het **FileStorage-opslagaccount** en zijn alleen beschikbaar in een ingericht factureringsmodel. Raadpleeg [Inzicht in inrichting voor premium bestandsshares](../articles/storage/files/understanding-billing.md#provisioned-billing) voor meer informatie over ingerichte factureringsmodellen voor premium bestandsshares. Standaard bestandsshares, zoals geoptimaliseerde, dynamische en statische bestandsshares, worden geïmplementeerd in het **opslagaccount voor algemeen gebruik versie 2 (GPv2)** en zijn beschikbaar bij betalen als u gaat factureren. Dynamische en statische bestandsshares zijn beschikbaar in alle openbare Azure-regio's en Azure Government-regio's. Geoptimaliseerde bestandsshares zijn beschikbaar in alle Azure-regio's, met inbegrip van Azure China 21Vianet en Microsoft Azure Duitsland.
+Premium bestandsshares worden geïmplementeerd in het **FileStorage-opslagaccount** en zijn alleen beschikbaar in een ingericht factureringsmodel. Raadpleeg [Inzicht in inrichting voor premium bestandsshares](../articles/storage/files/understanding-billing.md#provisioned-model) voor meer informatie over ingerichte factureringsmodellen voor premium bestandsshares. Standaard bestandsshares, zoals geoptimaliseerde, dynamische en statische bestandsshares, worden geïmplementeerd in het **opslagaccount voor algemeen gebruik versie 2 (GPv2)** en zijn beschikbaar bij betalen als u gaat factureren. Dynamische en statische bestandsshares zijn beschikbaar in alle openbare Azure-regio's en Azure Government-regio's. Geoptimaliseerde bestandsshares zijn beschikbaar in alle Azure-regio's, met inbegrip van Azure China 21Vianet en Microsoft Azure Duitsland.
 
 Wanneer u een opslaglaag selecteer voor uw werkbelasting. kunt u uw prestatie- en gebruiksvereisten overwegen. Als voor uw werkbelasting een hogere latentie van één cijfer nodig is, of als u SSD-opslagmedia on-premises gebruikt, is de premium laag waarschijnlijk de beste keuze. Als lage latentie geen probleem is, bijvoorbeeld met teamshares die on-premises zijn gekoppeld aan Azure, of die zich on-premises in de cache bevinden met Azure File Sync, is standaardopslag mogelijk een betere keuze vanuit een kostenperspectief.
 

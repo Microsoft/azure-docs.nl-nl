@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/25/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 16f6919577955bda5b04db26deb9fe78a467e364
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 14da41815e177ece64c72ac27a7cb126e69fdc62
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86509032"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633185"
 ---
 # <a name="boot-error--this-is-not-a-bootable-disk"></a>Opstart fout: dit is geen opstart bare schijf
 
@@ -40,6 +40,9 @@ Dit fout bericht betekent dat het opstart proces van het besturings systeem kan 
 ## <a name="solution"></a>Oplossing
 
 ### <a name="process-overview"></a>Overzicht van het proces
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 1. Een herstel-VM maken en openen.
 2. Stel de partitie status in op actief.
@@ -75,7 +78,7 @@ Virtuele machines van de eerste generatie moeten eerst verifiëren dat de bestur
 
    ![In afbeelding 3 wordt het venster * Disk part * weer gegeven met de uitvoer van de * List-partitie * opdracht. Partitie 1 en partitie 2 worden in de tabel weer gegeven. Ook wordt de uitvoer van de * sel-partitie 1 *-opdracht weer gegeven wanneer partitie 1 de geselecteerde schijf is.](media/troubleshoot-guide-not-bootable-disk/3.jpg)
 
-7. Voer ' detail Partition ' in om de status van de partitie te controleren. Zie afbeelding 4, waarbij de partitie *actief is: Nee*of afbeelding 5, waarbij de partitie ' actief: Ja ' is.
+7. Voer ' detail Partition ' in om de status van de partitie te controleren. Zie afbeelding 4, waarbij de partitie *actief is: Nee* of afbeelding 5, waarbij de partitie ' actief: Ja ' is.
 
    Afbeelding 4
 
@@ -85,8 +88,8 @@ Virtuele machines van de eerste generatie moeten eerst verifiëren dat de bestur
 
    ![In afbeelding 5 wordt het venster * Disk part * weer gegeven met de uitvoer van de * detail partitie * opdracht, wanneer partitie 1 is ingesteld op * actief: Ja *.](media/troubleshoot-guide-not-bootable-disk/5.jpg)
 
-8. Als de partitie **niet actief**is, voert u *actief* in om de vlag *actief* te wijzigen.
-9. Controleer of de status wijziging correct is uitgevoerd door *Details partitie*te typen.
+8. Als de partitie **niet actief** is, voert u *actief* in om de vlag *actief* te wijzigen.
+9. Controleer of de status wijziging correct is uitgevoerd door *Details partitie* te typen.
 
    Afbeelding 6
 

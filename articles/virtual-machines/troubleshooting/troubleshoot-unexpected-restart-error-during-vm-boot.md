@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/22/2020
 ms.author: v-mibufo
-ms.openlocfilehash: cfeb040893ae2be5842959ed8458bd713bebe6ee
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: d8d2ab2bb3f24e1faa4791ebdc1ce3852f6a790e
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96512134"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632687"
 ---
 # <a name="os-start-up--computer-restarted-unexpectedly-or-encountered-an-unexpected-error"></a>Opstarten met het besturings systeem: de computer is onverwacht opnieuw opgestart of er is een onverwachte fout opgetreden
 
@@ -52,6 +52,9 @@ Dit probleem wordt meestal gemaakt tijdens het gebruik van Sysprep met een on-pr
 ## <a name="solution"></a>Oplossing
 
 ### <a name="do-not-use-unattendxml"></a>Gebruik niet Unattend.xml
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 U kunt dit probleem oplossen door [de Azure-richt lijnen voor het voorbereiden/vastleggen van een installatie kopie](../windows/upload-generalized-managed.md) te volgen en een nieuwe gegeneraliseerde installatie kopie voor te bereiden. Gebruik bij Sysprep **geen `/unattend:<your file’s name>` vlag**. Gebruik in plaats daarvan alleen de onderstaande vlaggen:
 

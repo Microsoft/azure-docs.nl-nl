@@ -12,12 +12,12 @@ author: VanMSFT
 ms.author: vanto
 ms.reviewer: sstein
 ms.date: 06/17/2020
-ms.openlocfilehash: e85c97df29bbbcc5d446d788cc190f3c90f24024
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: bbad7dcaa1d92df4969c88e4ba86a62987509e39
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602218"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632796"
 ---
 # <a name="azure-sql-database-and-azure-synapse-ip-firewall-rules"></a>Azure SQL Database-en Azure Synapse IP-firewall regels
 [!INCLUDE[appliesto-sqldb-asa](../includes/appliesto-sqldb-asa.md)]
@@ -101,7 +101,9 @@ Wanneer een computer via Internet verbinding probeert te maken met uw server, co
 
 ### <a name="connections-from-inside-azure"></a>Verbindingen van binnen Azure
 
-Azure-verbindingen moeten zijn ingeschakeld om toepassingen die in Azure worden gehost, toe te staan om verbinding te maken met uw SQL Server. Wanneer een toepassing van Azure probeert verbinding te maken met uw server, controleert de firewall of Azure-verbindingen zijn toegestaan. Dit kan rechtstreeks worden ingeschakeld vanuit de Azure Portal Blade door de firewall regels in te stellen, maar ook de optie **Azure-Services en-resources toegang geven tot deze server** naar in te scha **kelen in de** **firewalls en virtuele netwerken** . Als de verbinding niet is toegestaan, wordt de server niet bereikt met de aanvraag.
+Azure-verbindingen moeten zijn ingeschakeld om toepassingen die in Azure worden gehost, toe te staan om verbinding te maken met uw SQL Server. Als u Azure-verbindingen wilt inschakelen, moet er een firewall regel zijn met de begin-en eind-IP-adressen die zijn ingesteld op 0.0.0.0.
+
+Wanneer een toepassing van Azure probeert verbinding te maken met de server, controleert de firewall of Azure-verbindingen zijn toegestaan door te controleren of deze firewall regel bestaat. Dit kan rechtstreeks op de Blade Azure Portal worden ingeschakeld door de instellingen voor **Azure-Services en-resources voor toegang tot deze server** **in te scha kelen in de** **firewalls en virtuele netwerken** . Als wordt ingesteld op ON maakt een regel voor binnenkomende Firewall voor IP 0.0.0.0-0.0.0.0 met de naam **AllowAllWindowsIP**. Gebruik Power shell of de Azure CLI om een firewall regel te maken met de begin-en eind-IP-adressen die zijn ingesteld op 0.0.0.0 als u de portal niet wilt gebruiken. 
 
 > [!IMPORTANT]
 > Met deze optie configureert u de firewall om alle verbindingen van Azure toe te staan, met inbegrip van verbindingen van de abonnementen van andere klanten. Als u deze optie selecteert, moet u ervoor zorgen dat uw aanmelding en gebruikers machtigingen alleen toegang tot geautoriseerde gebruikers beperken.

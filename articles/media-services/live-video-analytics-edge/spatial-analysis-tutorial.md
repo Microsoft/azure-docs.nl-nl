@@ -3,12 +3,12 @@ title: Livevideo analyseren met Computer Vision voor ruimtelijke analyse, Azure
 description: In deze zelfstudie leert u hoe u Live Video Analytics samen met de AI-functie Computer Vision ruimtelijke analyse gebruikt van Azure Cognitive Services om een livevideofeed van een (gesimuleerde) IP-camera te analyseren.
 ms.topic: tutorial
 ms.date: 09/08/2020
-ms.openlocfilehash: 5b979bfeb6961b285cfeb2287888d8f157608d96
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
-ms.translationtype: HT
+ms.openlocfilehash: 1c6fe6e10a91034d794437f31d495b85ef086848
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060177"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632940"
 ---
 # <a name="analyze-live-video-with-computer-vision-for-spatial-analysis-preview"></a>Livevideo analyseren met Computer Vision voor ruimtelijke analyse (preview)
 
@@ -23,7 +23,8 @@ In deze zelfstudie gaat u:
 > * Gebeurtenissen bewaken.
  
 [!INCLUDE [quickstarts-free-trial-note](../../../includes/quickstarts-free-trial-note.md)]
-
+  > [!NOTE]
+  > U hebt een Azure-abonnement met machtigingen nodig voor het maken van service-principals (de **rol van eigenaar** biedt dit). Als u niet over de juiste machtigingen beschikt, neemt u contact op met uw account beheerder om u de juiste machtigingen te verlenen. 
 ## <a name="suggested-pre-reading"></a>Aanbevolen om te lezen
 
 Lees deze artikelen voordat u begint:
@@ -136,10 +137,10 @@ Er zijn een paar dingen waar u op moet letten in het bestand van de implementati
 1. `IpcMode` in IvaEdge en de ruimtelijkeanalysemodule createOptions moeten hetzelfde zijn en ingesteld op host.
 1. Zorg ervoor dat u de Volume Bounds hebt ingesteld, zodat de RTSP-simulator kan werken. Zie [Docker Volume Mounts instellen](deploy-azure-stack-edge-how-to.md#optional-setup-docker-volume-mounts) voor meer informatie.
 
-    1. [Maak verbinding met de SMB-share](../../databox-online/azure-stack-edge-deploy-add-shares.md#connect-to-an-smb-share) en kopieer het [voorbeeldbestand van de bulldozervideo](https://lvamedia.blob.core.windows.net/public/bulldozer.mkv) naar de lokale share.
+    1. [Maak verbinding met de SMB-share](../../databox-online/azure-stack-edge-deploy-add-shares.md#connect-to-an-smb-share) en kopieer het [voorbeeldbestand van de bulldozervideo](https://lvamedia.blob.core.windows.net/public/bulldozer.mkv) naar de lokale share.  
+        > [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4Mesi]  
     1. Controleer of de module rtspsim de volgende configuratie bevat:
-        
-        ```json
+        ```
         "createOptions": {
                             "HostConfig": {
                               "Mounts": [
@@ -159,6 +160,8 @@ Er zijn een paar dingen waar u op moet letten in het bestand van de implementati
                             }
                           }
         ```
+        
+
 ## <a name="generate-and-deploy-the-deployment-manifest"></a>Het implementatiemanifest genereren en implementeren
 
 Het implementatiemanifest geeft aan welke modules op een edge-apparaat worden geïmplementeerd. Ook bevat het de configuratie-instellingen voor deze modules.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 10/22/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 8af8d7695c48c6ac682109bb38935e98921fa9e4
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: fc3bd5d2590e969db07e9dffa61b4902ea4604c3
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681904"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632543"
 ---
 # <a name="vm-is-unresponsive-while-waiting-for-the-local-session-manager-service"></a>De VM reageert niet tijdens het wachten op de lokale sessie beheer-service
 
@@ -34,6 +34,9 @@ Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruik
 Er kunnen meerdere redenen zijn om een virtuele machine te wachten op lokale sessie beheer. Als dit probleem zich blijft voordoen, moet u een geheugen dump voor analyse verzamelen.
 
 ## <a name="solution"></a>Oplossing
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 In sommige gevallen kan het probleem worden opgelost door te wachten tot het proces is voltooid. Als uw virtuele machine niet reageert en gedurende een uur op het wacht scherm blijft, moet u een geheugen dump verzamelen en contact opnemen met micro soft ondersteuning.
 

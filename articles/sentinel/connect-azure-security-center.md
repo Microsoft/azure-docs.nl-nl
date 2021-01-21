@@ -9,12 +9,12 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.author: yelevin
-ms.openlocfilehash: b37675d46d501fc43446eafc83d6c0a02f238177
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: bb188aa79015c2123b9d9d8b6baf277dfadf2f9c
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655949"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98633041"
 ---
 # <a name="connect-azure-defender-alert-data-from-azure-security-center"></a>Azure Defender-waarschuwings gegevens van Azure Security Center verbinden
 
@@ -39,6 +39,8 @@ Gebruik de Azure Defender-waarschuwings connector om Azure Defender-waarschuwing
 1. Als u het relevante schema in Log Analytics voor de Azure Defender-waarschuwingen wilt gebruiken, zoekt u naar **SecurityAlert**.
 
 ## <a name="next-steps"></a>Volgende stappen
+
 In dit document hebt u geleerd hoe u Azure Defender kunt verbinden met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:
+
 - Meer informatie over het [verkrijgen van inzicht in uw gegevens en mogelijke bedreigingen](quickstart-get-visibility.md).
 - Ga aan de slag met [het detecteren van bedreigingen met Azure Sentinel](tutorial-detect-threats-built-in.md).

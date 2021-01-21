@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 03/31/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 55dcd65e901a5ce8665ef8d3a2a29d7943581df9
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 145d58013b259bf14c26d0840b8cd4299cfe85f0
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200716"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632619"
 ---
 # <a name="vm-is-unresponsive-with-c01a001d-error-when-applying-windows-update"></a>De VM reageert niet met de fout ' C01A001D ' bij het Toep assen van Windows Update
 
@@ -38,6 +38,9 @@ Een kern bestand kan niet worden gemaakt in het bestands systeem. Het besturings
 ## <a name="resolution"></a>Oplossing
 
 ### <a name="process-overview"></a>Overzicht van het proces
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 1. [Een herstel-VM maken en openen](#create-and-access-a-repair-vm).
 2. [Maak ruimte vrij op de harde schijf](#free-up-space-on-the-hard-disk).

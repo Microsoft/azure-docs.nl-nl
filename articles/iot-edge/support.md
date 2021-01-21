@@ -4,16 +4,16 @@ description: Meer informatie over de besturings systemen die de Azure IoT Edge d
 author: kgremban
 manager: philmea
 ms.author: kgremban
-ms.date: 10/12/2020
+ms.date: 12/09/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: b1bd437da50ae5989e46ac5c5f881b28b0e99703
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: b17f1f32a3e49e9161afe92d62b85a162affcd9f
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539904"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630527"
 ---
 # <a name="azure-iot-edge-supported-systems"></a>Ondersteunde systemen Azure IoT Edge
 
@@ -50,27 +50,46 @@ Azure IoT Edge wordt uitgevoerd op de meeste besturings systemen waarop containe
 
 De familie van het hostbesturingssysteem moet altijd overeenkomen met de familie van het gast besturingssysteem dat in de container van een module wordt gebruikt. Met andere woorden, u kunt alleen Linux-containers gebruiken op Linux-en Windows-containers in Windows. Wanneer u Windows gebruikt, worden alleen geïsoleerde containers verwerken ondersteund, niet geïsoleerde Hyper-V-containers.  
 
-<br>
-<center>
-
-![Host OS komt overeen met gast besturingssysteem](./media/support/edge-on-device.png)
-</center>
+IoT Edge voor Linux op Windows gebruikt IoT Edge op een virtuele Linux-machine die wordt uitgevoerd op een Windows-host. Op deze manier kunt u linux-modules uitvoeren op een Windows-apparaat.
 
 ### <a name="tier-1"></a>Tier 1
 
-De systemen die worden vermeld in de volgende tabel worden ondersteund door micro soft, algemeen beschikbaar of in open bare preview, en worden getest met elke nieuwe release. 
+De systemen die worden vermeld in de volgende tabellen worden ondersteund door micro soft, algemeen beschikbaar of in open bare preview, en worden getest met elke nieuwe release.
+
+Azure IoT Edge ondersteunt modules die zijn gebouwd als Linux-of Windows-containers. Linux-containers kunnen worden geïmplementeerd op Linux-apparaten of worden geïmplementeerd op Windows-apparaten met behulp van IoT Edge voor Linux in Windows. Windows-containers kunnen alleen worden geïmplementeerd op Windows-apparaten.
+
+#### <a name="linux-containers"></a>Linux-containers
+
+Modules die zijn gebouwd als Linux-containers kunnen worden geïmplementeerd op Linux-of Windows-apparaten. Voor Linux-apparaten wordt de IoT Edge runtime rechtstreeks op het hostapparaat geïnstalleerd. Voor Windows-apparaten is een virtuele Linux-machine die is gebouwd met de IoT Edge runtime uitgevoerd op het hostapparaat.
+
+IoT Edge voor Linux in Windows is momenteel beschikbaar als open bare preview, maar is de aanbevolen manier om IoT Edge uit te voeren op Windows-apparaten.
 
 | Besturingssysteem | AMD64 | ARM32v7 | ARM64 |
 | ---------------- | ----- | ------- | ----- |
 | Raspberry Pi OS Stretch |  | ![Raspberry Pi OS stretch + ARM32v7](./media/tutorial-c-module/green-check.png) |  |
-| [Ubuntu Server 16.04](https://wiki.ubuntu.com/XenialXerus/ReleaseNotes) | ![Ubuntu-Server 16,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Open bare preview  |
-| [Ubuntu Server 18.04](https://wiki.ubuntu.com/BionicBeaver/ReleaseNotes) | ![Ubuntu-Server 18,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Open bare preview |
-| [Windows 10 IOT Enter prise](/windows/iot-core/windows-iot-enterprise), build 17763 | ![Windows 10 IoT Enter prise + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows 10 IOT core](/windows/iot-core/windows-iot-core), build 17763 | ![Windows IoT core + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows Server 2019](/windows-server/get-started-19/rel-notes-19), build 17763 | ![Windows Server 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
-| [Windows Server IoT 2019](/windows/iot-core/windows-server), build 17763 | ![Windows Server IoT 2019 + AMD64](./media/tutorial-c-module/green-check.png) |  |  |
+| Ubuntu Server 16.04 | ![Ubuntu-Server 16,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Open bare preview  |
+| Ubuntu Server 18.04 | ![Ubuntu-Server 18,04 + AMD64](./media/tutorial-c-module/green-check.png) |  | Open bare preview |
+| Windows 10 Pro | Open bare preview |  |  |
+| Windows 10 Enterprise | Open bare preview |  |  |
+| Windows 10 IoT Enterprise | Open bare preview |  |  |
+| Windows Server 2019 | Open bare preview |  |  |
 
-De Windows-besturings systemen die hierboven worden vermeld, zijn de vereisten voor apparaten met Windows-containers in Windows. Dit is de enige ondersteunde configuratie voor productie. Met de Azure IoT Edge-installatie pakketten voor Windows is het gebruik van Linux-containers in Windows toegestaan. deze configuratie is echter alleen voor ontwikkelings-en test doeleinden. 
+Alle Windows-besturings systemen moeten versie 1809 (build 17763) of hoger zijn.
+
+#### <a name="windows-containers"></a>Windows-containers
+
+Modules die zijn gebouwd als Windows-containers kunnen alleen worden geïmplementeerd op Windows-apparaten.
+
+| Besturingssysteem | AMD64 | ARM32v7 | ARM64 |
+| ---------------- | ----- | ------- | ----- |
+| Windows 10 IoT Enterprise | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
+| Windows 10 IoT core<sup>1</sup><br> | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
+| Windows Server 2019  | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
+| Windows Server IoT 2019<br> | ![check1](./media/tutorial-c-module/green-check.png) |  |  |
+
+<sup>1</sup> Windows 10 IOT core wordt niet ondersteund na versie 1.0.10
+
+Alle Windows-besturings systemen moeten versie 1809 (build 17763) hebben. De specifieke build van Windows is vereist voor IoT Edge in Windows omdat de versie van de Windows-containers precies moet overeenkomen met de versie van het Windows-host-apparaat. Windows-containers maken momenteel alleen gebruik van build 17763.
 
 ### <a name="tier-2"></a>Tier 2
 
@@ -118,7 +137,7 @@ IoT Edge maakt gebruik van de micro soft. Azure. devices. client-SDK. Zie de [Az
 * **IOT Edge 1.0.6**: Client SDK 1.17.1
 * **IOT Edge 1.0.5**: Client SDK 1.17.1
 
-## <a name="virtual-machines"></a>Virtual Machines
+## <a name="virtual-machines"></a>Virtuele machines
 
 Azure IoT Edge kunnen worden uitgevoerd op virtuele machines. Het gebruik van een virtuele machine als een IoT Edge apparaat is gebruikelijk wanneer klanten bestaande infra structuur willen uitbreiden met Edge Intelligence. De serie van het VM-besturings systeem van de host moet overeenkomen met de familie van het gast besturingssysteem dat in de container van een module wordt gebruikt. Deze vereiste is hetzelfde als wanneer Azure IoT Edge rechtstreeks op een apparaat wordt uitgevoerd. Azure IoT Edge is neutraal van de onderliggende technologie en werkt in Vm's op basis van platforms, zoals Hyper-V en vSphere.
 

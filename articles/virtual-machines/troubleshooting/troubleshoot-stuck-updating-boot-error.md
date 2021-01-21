@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/09/2018
 ms.author: genli
-ms.openlocfilehash: fe2d444bbdc09ed5ab0205d4139591e3288e3358
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
+ms.openlocfilehash: 3090b7b889d914fc0cdb598b8bf29a73c81f50cb
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94734562"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632000"
 ---
 # <a name="azure-vm-startup-is-stuck-at-windows-update"></a>Opstarten van Azure VM is vastgelopen op Windows Update
 
@@ -37,6 +37,8 @@ Dit artikel helpt u bij het oplossen van het probleem wanneer uw virtuele machin
 
 
 ## <a name="solution"></a>Oplossing
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 Het update proces kan enige tijd in beslag nemen, afhankelijk van het aantal updates dat wordt geïnstalleerd of teruggedraaid. De VM in deze status gedurende 8 uur verlaten. Als de VM na die periode nog steeds in deze status is, start u de VM opnieuw op via de Azure Portal en controleert u of deze normaal kan worden gestart. Als deze stap niet werkt, voert u de volgende oplossing uit.
 

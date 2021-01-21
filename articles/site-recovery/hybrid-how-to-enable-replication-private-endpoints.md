@@ -6,12 +6,12 @@ ms.author: harshacs
 ms.service: site-recovery
 ms.topic: article
 ms.date: 07/14/2020
-ms.openlocfilehash: f23efa8d0439422fef685480ed270dce6e78a204
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 7f10654e1c96f1756e5864d20fa2a6817385e994
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92366850"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629790"
 ---
 # <a name="replicate-on-premises-machines-by-using-private-endpoints"></a>On-premises machines repliceren met behulp van privé-eind punten
 
@@ -57,7 +57,7 @@ Met een [beheerde identiteit](../active-directory/managed-identities-azure-resou
 
 1. Ga naar de Recovery Services kluis. Selecteer **identiteit** onder **instellingen**:
 
-   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/enable-managed-identity-in-vault.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/enable-managed-identity-in-vault.png" alt-text="Scherm opname van de pagina identiteits instellingen.":::
 
 1. Wijzig de **status** in **op aan** en selecteer **Opslaan**.
 
@@ -69,25 +69,25 @@ Als u de computers in het on-premises bron netwerk wilt beveiligen, hebt u één
 
 1. Zoek in het zoekvak van Azure Portal op ' persoonlijke koppeling '. Selecteer **persoonlijke koppeling** om naar het persoonlijk koppelings centrum te gaan:
 
-   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/search-private-links.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/search-private-links.png" alt-text="Scherm opname van het zoeken naar het Azure Portal voor privé koppelings centrum.":::
 
-1. Selecteer **privé-eind punten**in het linkerdeel venster. Selecteer op de pagina **privé-eind punten** **toevoegen** om te beginnen met het maken van een persoonlijk eind punt voor uw kluis:
+1. Selecteer **privé-eind punten** in het linkerdeel venster. Selecteer op de pagina **privé-eind punten** **toevoegen** om te beginnen met het maken van een persoonlijk eind punt voor uw kluis:
 
-   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-endpoints.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-endpoints.png" alt-text="Scherm afbeelding die laat zien hoe u een persoonlijk eind punt maakt in het persoonlijke koppelings centrum.":::
 
 1. Geef op de pagina **een persoonlijk eind punt maken** de details op voor het maken van uw particuliere endpoint-verbinding.
 
    1. **Basis beginselen**. Geef de basis gegevens op voor uw privé-eind punten. Gebruik de regio die u hebt gebruikt voor het netwerk overs Laan:
 
-      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-endpoints-basic-tab.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-endpoints-basic-tab.png" alt-text="Scherm opname van het tabblad basis voor het maken van een persoonlijk eind punt.":::
 
-   1. **Resource**. Op dit tabblad moet u de platform-as-a-Service-resource opgeven waarvoor u de verbinding wilt maken. Selecteer **micro soft. Recovery Services/kluizen**onder **resource type** voor het geselecteerde abonnement. Kies de naam van uw Recovery Services kluis onder **resource**. Selecteer **Azure site Recovery** als de **subresource**van het doel.
+   1. **Resource**. Op dit tabblad moet u de platform-as-a-Service-resource opgeven waarvoor u de verbinding wilt maken. Selecteer **micro soft. Recovery Services/kluizen** onder **resource type** voor het geselecteerde abonnement. Kies de naam van uw Recovery Services kluis onder **resource**. Selecteer **Azure site Recovery** als de **subresource** van het doel.
 
-      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-endpoints-resource-tab.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-endpoints-resource-tab.png" alt-text="Scherm opname van het tabblad Resource voor het koppelen aan een persoonlijk eind punt.":::
 
    1. **Configuratie**. Geef op dit tabblad het netwerk overs Laan en het subnet op waar u het persoonlijke eind punt wilt maken. 
 
-      Schakel de optie **Ja**in als u de integratie met een privé-DNS-zone wilt inschakelen.
+      Schakel de optie **Ja** in als u de integratie met een privé-DNS-zone wilt inschakelen.
       Kies een bestaande DNS-zone of maak een nieuwe. Als u **Ja** selecteert, wordt de zone automatisch gekoppeld aan het netwerk overs Laan. Met deze actie worden ook de DNS-records toegevoegd die vereist zijn voor de DNS-omzetting van nieuwe Ip's en volledig gekwalificeerde domein namen die zijn gemaakt voor het persoonlijke eind punt.
 
       Zorg ervoor dat u een nieuwe DNS-zone maakt voor elk nieuw persoonlijk eind punt dat verbinding maakt met dezelfde kluis. Als u een bestaande privé-DNS-zone kiest, worden de vorige CNAME-records overschreven. Zie de [richt lijnen voor privé-eind punten](../private-link/private-endpoint-overview.md#private-endpoint-properties) voordat u doorgaat.
@@ -96,7 +96,7 @@ Als u de computers in het on-premises bron netwerk wilt beveiligen, hebt u één
 
       Volg de stappen in [persoonlijke DNS-zones maken en DNS-records hand matig toevoegen](#create-private-dns-zones-and-add-dns-records-manually)als u de persoonlijke DNS-zone hand matig wilt maken.
 
-      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-endpoints-configuration-tab.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-endpoints-configuration-tab.png" alt-text="Scherm opname van het tabblad Configuratie voor het configureren van een persoonlijk eind punt.":::
 
    1. **Tags**. U kunt eventueel labels voor uw persoonlijke eind punt toevoegen.
 
@@ -114,11 +114,14 @@ Als u het persoonlijke eind punt maakt en u ook de eigenaar van de Recovery Serv
 
 U kunt naar de persoonlijke eindpunt resource gaan om de status van de verbinding te bekijken voordat u doorgaat:
 
-:::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/vault-private-endpoint-connections.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+:::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/vault-private-endpoint-connections.png" alt-text="Scherm opname van de pagina met persoonlijke eindpunt verbindingen van de kluis en de lijst met verbindingen.":::
 
 ### <a name="optional-create-private-endpoints-for-the-cache-storage-account"></a><a name="create-private-endpoints-for-the-cache-storage-account"></a>Beschrijving Privé-eind punten maken voor het cache-opslag account
 
 U kunt een persoonlijk eind punt gebruiken om te Azure Storage. Het maken van privé-eind punten voor toegang tot opslag is optioneel voor replicatie van Azure Site Recovery. Als u een persoonlijk eind punt voor opslag maakt, hebt u een persoonlijk eind punt nodig voor het cache-en logboek opslag account in het virtuele netwerk overs Laan.
+
+> [!NOTE]
+> Als privé-eind punten niet zijn ingeschakeld voor het opslag account, is de beveiliging nog steeds geslaagd. Replicatie verkeer zou echter door gaan via internet naar Azure Site Recovery open bare eind punten. Om ervoor te zorgen dat replicatie verkeer via persoonlijke koppelingen stromen loopt, moet u het opslag account inschakelen met persoonlijke eind punten.
 
 > [!NOTE]
 > Privé-eind punten voor opslag kunnen alleen worden gemaakt voor Algemeen v2-opslag accounts. Zie prijzen voor Azure- [pagina-blobs](https://azure.microsoft.com/pricing/details/storage/page-blobs/)voor prijs informatie.
@@ -147,11 +150,11 @@ In deze stappen wordt beschreven hoe u een roltoewijzing toevoegt aan uw opslag 
 
 1. Selecteer in de sectie **toewijzing van een rol toevoegen** de optie **toevoegen**:
 
-   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/storage-role-assignment.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/storage-role-assignment.png" alt-text="Scherm opname van de pagina toegangs beheer (IAM) voor een opslag account.":::
 
 1. Selecteer op de pagina **een roltoewijzing toevoegen** in de lijst **rol** de rol in de lijst aan het begin van deze sectie. Voer de naam van de kluis in en selecteer vervolgens **Opslaan**.
 
-   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/storage-role-assignment-select-role.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+   :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/storage-role-assignment-select-role.png" alt-text="Scherm opname van de pagina roltoewijzing toevoegen.":::
 
 Nadat u deze machtigingen hebt toegevoegd, moet u toegang tot vertrouwde micro soft-Services toestaan. Ga naar **firewalls en virtuele netwerken** en selecteer **vertrouwde micro soft-Services toegang geven tot dit opslag account** in **uitzonde ringen**.
 
@@ -174,13 +177,13 @@ Maak één privé-DNS-zone om de Site Recovery provider (voor Hyper-V-computers)
 
    1. Zoek naar ' persoonlijke DNS-zone ' in het zoekvak **alle services** en selecteer vervolgens **privé-DNS zone** in de resultaten:
 
-      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/search-private-dns-zone.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/search-private-dns-zone.png" alt-text="Scherm opname van het zoeken naar een privé-DNS-zone op de pagina nieuwe resources in het Azure Portal.":::
 
    1. Selecteer op de pagina **privé-DNS zones** de knop **toevoegen** om te beginnen met het maken van een nieuwe zone.
 
    1. Voer op de pagina **persoonlijke DNS-zone maken** de vereiste gegevens in. Voer **privatelink.siterecovery.windowsazure.com** in als de naam van de privé-DNS-zone. U kunt elke resource groep en elk abonnement kiezen.
 
-      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-dns-zone.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/create-private-dns-zone.png" alt-text="Scherm opname van het tabblad basis principes van de pagina Privé-DNS zone maken.":::
 
    1. Ga naar het tabblad **controleren \+ maken** om de DNS-zone te controleren en te maken.
 
@@ -192,7 +195,7 @@ Maak één privé-DNS-zone om de Site Recovery provider (voor Hyper-V-computers)
 
    1. Voer de vereiste gegevens in. Selecteer in de lijsten **abonnement** en **virtueel netwerk** de optie Details die overeenkomen met het netwerk overs Laan. Laat de standaardwaarden in de andere velden staan.
 
-      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/add-virtual-network-link.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/add-virtual-network-link.png" alt-text="Scherm opname van de pagina koppeling van virtueel netwerk toevoegen.":::
 
 1. Voeg DNS-records toe.
 
@@ -205,11 +208,11 @@ Maak één privé-DNS-zone om de Site Recovery provider (voor Hyper-V-computers)
 
    1. Ga naar uw privé-DNS-zone en ga vervolgens naar het gedeelte **overzicht** in het linkerdeel venster. Selecteer **Recordset** om records toe te voegen.
 
-   1. Voeg op de pagina **recordset toevoegen** een vermelding toe voor elke Fully Qualified Domain name en een persoonlijk IP-adres als **een** type record. In **overzicht**vindt u een lijst met de volledig gekwalificeerde domein namen en IP-adressen op de pagina met het **persoonlijke eind punt** . Zoals u kunt zien in de volgende scherm afbeelding, wordt de eerste Fully Qualified Domain Name van het persoonlijke eind punt toegevoegd aan de recordset in de privé-DNS-zone.
+   1. Voeg op de pagina **recordset toevoegen** een vermelding toe voor elke Fully Qualified Domain name en een persoonlijk IP-adres als **een** type record. In **overzicht** vindt u een lijst met de volledig gekwalificeerde domein namen en IP-adressen op de pagina met het **persoonlijke eind punt** . Zoals u kunt zien in de volgende scherm afbeelding, wordt de eerste Fully Qualified Domain Name van het persoonlijke eind punt toegevoegd aan de recordset in de privé-DNS-zone.
 
       Deze volledig gekwalificeerde domein namen komen overeen met dit patroon: `{Vault-ID}-asr-pod01-{type}-.{target-geo-code}.siterecovery.windowsazure.com`
 
-      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/add-record-set.png" alt-text="Diagram waarin de architectuur voor Azure Site Recovery en privé-eind punten wordt weer gegeven.":::
+      :::image type="content" source="./media/hybrid-how-to-enable-replication-private-endpoints/add-record-set.png" alt-text="Scherm opname van de pagina recordset toevoegen.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

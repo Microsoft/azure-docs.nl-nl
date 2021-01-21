@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 06/29/2020
 ms.author: pdecarlo
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: d14ef742c19556a9df2bd193a54bfaa1672d5964
-ms.sourcegitcommit: 2e72661f4853cd42bb4f0b2ded4271b22dc10a52
+ms.openlocfilehash: 0e044e8102308fce4145d4aa6c887cefaa99be34
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92044221"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629959"
 ---
 # <a name="run-azure-iot-edge-on-ubuntu-virtual-machines"></a>Azure IoT Edge uitvoeren op Ubuntu Virtual Machines
 
@@ -50,7 +50,7 @@ Met de [knop implementeren in azure kunt u](../azure-resource-manager/templates/
 
     **Gebruikers naam beheerder**: een gebruikers naam, die machtigingen voor het hoofd niveau van de implementatie krijgt.
 
-    **Verbindings reeks voor apparaat**: een [verbindings reeks](./how-to-manual-provision-symmetric-key.md) voor het apparaat voor een apparaat dat is gemaakt in uw beoogde [IOT hub](../iot-hub/about-iot-hub.md).
+    **Verbindings reeks voor apparaat**: een [apparaat Connection String](./how-to-register-device.md) voor een apparaat dat is gemaakt in uw beoogde [IOT hub](../iot-hub/about-iot-hub.md).
 
     **VM-grootte**: de [grootte](../cloud-services/cloud-services-sizes-specs.md) van de virtuele machine die moet worden geïmplementeerd
 

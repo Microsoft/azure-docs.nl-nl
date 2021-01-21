@@ -7,16 +7,28 @@ ms.author: pariks
 ms.custom: mvc
 ms.topic: overview
 ms.date: 8/20/2020
-ms.openlocfilehash: 986bc5ef24855ac0014975edc0a26a11a82ec6ca
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
-ms.translationtype: HT
+ms.openlocfilehash: ca75416a66bcf2c90028c7f1dc11fbe23a9a9bd9
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97510959"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98631364"
 ---
 # <a name="common-errors"></a>Algemene fouten
 
 Azure Database for MySQL is een volledig beheerde service die wordt ondersteund door de communityversie van MySQL. De MySQL-ervaring in een beheerde service-omgeving kan afwijken van het uitvoeren van MySQL in uw eigen omgeving. In dit artikel ziet u enkele veelvoorkomende fouten die gebruikers kunnen tegenkomen tijdens het voor de eerste keer migreren naar of ontwikkelen met de Azure Database for MySQL-service.
+
+## <a name="common-connection-errors"></a>Veelvoorkomende verbindings fouten
+
+#### <a name="error-1184-08s01-aborted-connection-22-to-db-db-name-user-user-host-hostip-init_connect-command-failed"></a>FOUT 1184 (08S01): de verbinding 22 met DB is afgebroken: ' db-name ' gebruiker: ' gebruiker ' host: ' hostIP ' (init_connect opdracht is mislukt)
+De bovenstaande fout treedt op nadat de aanmelding is geslaagd, maar voordat een opdracht werd uitgevoerd wanneer de sessie tot stand is gebracht. In het bovenstaande bericht wordt aangegeven dat u een onjuiste waarde van init_connect server parameter hebt ingesteld, waardoor de initialisatie van de sessie mislukt.
+
+Er zijn enkele server parameters, zoals require_secure_transport die niet worden ondersteund op sessie niveau en wanneer u de waarden van deze para meters probeert te wijzigen met behulp van init_connect kan resulteren in fout 1184 tijdens het verbinden met de MySQL-server zoals hieronder wordt weer gegeven
+
+MySQL-> data bases weer geven; FOUT 2006 (HY000): de MySQL-server is niet verbonden. Poging tot opnieuw verbinding maken... Verbindings-id: 64897 huidige Data Base: * * * geen * * _ fout 1184 (08S01): de verbinding 22 met DB is afgebroken: ' db-name ' gebruiker: ' host van de gebruiker: ' hostIP ' (init_connect opdracht is mislukt)
+
+_ *Oplossing**: u moet init_connect waarde op het tabblad Server parameters in azure Portal opnieuw instellen en alleen de ondersteunde server parameters instellen met behulp van de init_connect para meter. 
+
 
 ## <a name="errors-due-to-lack-of-super-privilege-and-dba-role"></a>Fouten vanwege ontbreken van SUPER-machtiging en DBA-rol
 

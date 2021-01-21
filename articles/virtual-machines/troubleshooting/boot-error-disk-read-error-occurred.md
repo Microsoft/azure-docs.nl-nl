@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/01/2020
 ms.author: v-miegge
-ms.openlocfilehash: f59903ed111be1fe414f4b3ded250d754c91d323
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75d1cf8638f922bb0275322568eb1399db4f49e8
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87069150"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629722"
 ---
 # <a name="troubleshoot-boot-error---disk-read-error-occurred"></a>Opstart fout oplossen-schijf lees fout opgetreden
 
@@ -38,6 +38,9 @@ Dit fout bericht geeft aan dat de schijf structuur beschadigd en onleesbaar is. 
 ## <a name="solution"></a>Oplossing
 
 ### <a name="process-overview"></a>Overzicht van het proces
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 1. Een herstel-VM maken en openen.
 1. Selecteer een oplossing:

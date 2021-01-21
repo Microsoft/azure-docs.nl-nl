@@ -9,14 +9,14 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/21/2020
+ms.date: 01/18/2021
 ms.author: jeedes
-ms.openlocfilehash: d7cafdcbbf44f3f501d54c13d1b4549c446ed8c8
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
-ms.translationtype: HT
+ms.openlocfilehash: ebd07990767d91c88f245b4ed7f8a66f93de0b85
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97723963"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98631355"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-citrix-sharefile"></a>Zelfstudie: Azure Active Directory-integratie met Citrix ShareFile
 
@@ -32,7 +32,7 @@ De integratie van Citrix ShareFile met Azure AD heeft de volgende voordelen:
 U hebt het volgende nodig om Azure AD-integratie te configureren met Citrix ShareFile:
 
 * Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Abonnement op Citrix ShareFile met eenmalige aanmelding (SSO) ingeschakeld
+* Eenmalige aanmelding voor Citrix share file-abonnement.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -126,7 +126,7 @@ In dit gedeelte gaat u B. Simon toestemming geven voor gebruik van eenmalige aan
 1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
 1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
 1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
-Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
 1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ## <a name="configure-citrix-sharefile-sso"></a>Eenmalige aanmelding voor Citrix ShareFile configureren
@@ -141,7 +141,7 @@ Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u d
 
 3. Als u Citrix ShareFile handmatig wilt instellen, meldt u zich in een ander webbrowservenster aan als beheerder bij uw Citrix ShareFile-bedrijfssite.
 
-1. Klik in het **Dashboard** op **Instellingen** en selecteer **Beheerdersinstellingen**
+1. Klik in het **dash board** op **instellingen** en selecteer **beheer instellingen**.
 
     ![Beheer](./media/sharefile-tutorial/settings.png)
 
@@ -165,7 +165,9 @@ Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u d
     
     f. Plak in het tekstvak **Logout URL** de waarde van **Afmeldings-URL** die u hebt gekopieerd uit de Azure-portal.
 
-5. Klik op **Save** in de beheerportal van Citrix ShareFile.
+    g. Kies in de **optionele instellingen** de optie door **SP geïnitieerde verificatie context** als **gebruikers naam en wacht woord** en **exact**.
+
+5. Klik op **Opslaan**.
 
 ## <a name="create-citrix-sharefile-test-user"></a>Testgebruiker voor Citrix ShareFile maken
 

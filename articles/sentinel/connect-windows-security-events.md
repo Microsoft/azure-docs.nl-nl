@@ -1,6 +1,6 @@
 ---
 title: Gegevens van Windows-beveiligings gebeurtenissen verbinden met Azure Sentinel | Microsoft Docs
-description: Meer informatie over het gebruik van de connector voor beveiligings gebeurtenissen voor het streamen van alle beveiligings gebeurtenissen van uw Windows-systemen naar uw Azure Sentinel-werk ruimte. 
+description: Meer informatie over het gebruik van de connector voor beveiligings gebeurtenissen voor het streamen van alle beveiligings gebeurtenissen van uw Windows-systemen naar uw Azure Sentinel-werk ruimte.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: a16afcafa03ef2ab8642316db560e30a473a526b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 226d5a46482d6611fdecf214d040fc27af9ac586
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90883707"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632043"
 ---
 # <a name="connect-windows-security-events"></a>Verbinding maken met Windows-beveiligingsgebeurtenissen 
 
@@ -44,38 +44,38 @@ Met de connector voor beveiligings gebeurtenissen kunt u alle beveiligings gebeu
 
 > [!NOTE]
 > De verzameling van beveiligings gebeurtenissen in de context van één werk ruimte kan worden geconfigureerd vanuit Azure Security Center of Azure Sentinel, maar niet voor beide. Als u de Azure-Sentinel onboardt in een werk ruimte waarvoor al Azure Defender-waarschuwingen van Azure Security Center worden opgehaald en is ingesteld op het verzamelen van beveiligings gebeurtenissen, hebt u twee opties:
-> - Zorg ervoor dat de verzameling beveiligings gebeurtenissen in Azure Security Center ongewijzigd blijft. U kunt deze gebeurtenissen in azure Sentinel en in azure Defender doorzoeken en analyseren. U kunt de verbindings status van de connector echter niet controleren of de configuratie wijzigen in azure Sentinel. Als dit belang rijk voor u is, kunt u de tweede optie overwegen.
+> - Laat de verzameling van beveiligingsgebeurtenissen in Azure Security Center ongewijzigd. U kunt deze gebeurtenissen in Azure Sentinel en in Azure Defender doorzoeken en analyseren. U kunt echter niet de verbindingsstatus van de connector controleren of de configuratie ervan wijzigen in Azure Sentinel. Als dit belangrijk voor u is, kunt u de tweede optie overwegen.
 >
-> - [Schakel de verzameling van beveiligings gebeurtenissen](../security-center/security-center-enable-data-collection.md) in azure Security Center uit en voeg alleen de beveiligings gebeurtenissen connector toe aan Azure Sentinel. Net als bij de eerste optie kunt u gebeurtenissen in zowel Azure Sentinel als Azure Defender/ASC opvragen en analyseren, maar u kunt nu de verbindings status van de connector bewaken of de configuratie ervan wijzigen in-en alleen in-azure-Sentinel.
+> - [Schakel de verzameling van beveiligingsgebeurtenissen uit](../security-center/security-center-enable-data-collection.md) in Azure Security Center en voeg vervolgens de connector voor beveiligingsgebeurtenissen toe aan Azure-Sentinel. Net zoals bij de eerste optie, kunt u gebeurtenissen in Azure Sentinel en Azure Defender/ASC opvragen en analyseren, maar u kunt nu de verbindingsstatus van de connector bewaken of de configuratie ervan wijzigen in (en alleen in) Azure Sentinel.
 
 ## <a name="set-up-the-windows-security-events-connector"></a>De Windows-beveiligings gebeurtenissen connector instellen
 
 Uw Windows-beveiligings gebeurtenissen in azure-Sentinel verzamelen:
 
-1. Selecteer in het navigatie menu van de Azure-Sentinel **Data connectors**. Klik in de lijst met connectors op **beveiligings gebeurtenissen**en klik vervolgens op de knop **pagina connector openen** op de rechter benedenhoek. Volg vervolgens de instructies op het scherm op het tabblad **instructies** , zoals wordt beschreven in de rest van deze sectie.
+1. Selecteer in het navigatie menu van de Azure-Sentinel **Data connectors**. Klik in de lijst met connectors op **beveiligings gebeurtenissen** en klik vervolgens op de knop **pagina connector openen** op de rechter benedenhoek. Volg vervolgens de instructies op het scherm op het tabblad **instructies** , zoals wordt beschreven in de rest van deze sectie.
 
-1. Controleer of u de juiste machtigingen hebt, zoals wordt beschreven onder **vereisten**.
+1. Controleer of u de juiste machtigingen hebt, zoals wordt beschreven in de sectie **vereisten** op de pagina connector.
 
 1. Down load en installeer de [log Analytics-agent](../azure-monitor/platform/log-analytics-agent.md) (ook wel bekend als micro soft monitoring agent of MMA) op de computers waarvoor u beveiligings gebeurtenissen in azure Sentinel wilt streamen.
 
     Voor Azure Virtual Machines:
     
-    1. Klik op **agent installeren op de virtuele machine van Azure Windows**en klik vervolgens op de koppeling die hieronder wordt weer gegeven.
+    1. Klik op **agent installeren op de virtuele machine van Azure Windows** en klik vervolgens op de koppeling die hieronder wordt weer gegeven.
     1. Voor elke virtuele machine die u wilt verbinden, klikt u op de naam in de lijst die aan de rechter kant wordt weer gegeven en klikt u vervolgens op **verbinding maken**.
 
     Voor niet-Azure Windows-machines (fysiek, Virtual on-premises of virtueel in een andere Cloud):
 
-    1. Klik op **agent installeren op niet-Azure Windows-computers**en klik vervolgens op de koppeling die hieronder wordt weer gegeven.
-    1. Klik op de juiste download koppelingen die aan de rechter kant onder **Windows-computers**worden weer gegeven.
+    1. Klik op **agent installeren op niet-Azure Windows-computers** en klik vervolgens op de koppeling die hieronder wordt weer gegeven.
+    1. Klik op de juiste download koppelingen die aan de rechter kant onder **Windows-computers** worden weer gegeven.
     1. Installeer de agent op de Windows-systemen van uw keuze met behulp van het gedownloade uitvoer bare bestand en configureer dit met de **werk ruimte-id en de sleutels** die worden weer gegeven onder de hierboven vermelde Download koppelingen.
 
     > [!NOTE]
     >
     > Als u wilt toestaan dat Windows-systemen zonder de benodigde Internet verbinding nog steeds gebeurtenissen streamen naar Azure Sentinel, downloadt en installeert u de **OMS-gateway** op een afzonderlijke computer, met behulp van de koppeling rechtsonder, om als proxy te fungeren.  U moet de Log Analytics agent nog steeds installeren op elk Windows-systeem waarvan u de gebeurtenissen wilt verzamelen.
     >
-    > Zie de documentatie over [ **log Analytics gateway** ](../azure-monitor/platform/gateway.md)voor meer informatie over dit scenario.
+    > Zie de documentatie over [ **log Analytics gateway**](../azure-monitor/platform/gateway.md)voor meer informatie over dit scenario.
 
-    Raadpleeg de documentatie van de [ **log Analytics-agent** ](../azure-monitor/platform/agent-windows.md)voor aanvullende installatie opties en meer informatie.
+    Raadpleeg de documentatie van de [ **log Analytics-agent**](../azure-monitor/platform/agent-windows.md)voor aanvullende installatie opties en meer informatie.
 
 1. Selecteer welke gebeurtenissenset ([alles, algemeen of mini maal](#event-sets)) u wilt streamen.
 
@@ -106,7 +106,7 @@ Azure Sentinel kan machine learning (ML) Toep assen op gegevens van beveiligings
 
 1. U moet RDP-aanmeldings gegevens (gebeurtenis-ID 4624) verzamelen via de Data Connector voor **beveiligings gebeurtenissen** . Zorg ervoor dat u een [gebeurtenissenset](#event-sets) hebt geselecteerd, behalve ' geen ', om naar Azure Sentinel te streamen.
 
-1. Klik in de Azure-Sentinel Portal op **Analytics**en klik vervolgens op het tabblad **regel sjablonen** . Kies de regel voor **afwijkende RDP-aanmeldings detectie (preview)** en verplaats de schuif regelaar **status** naar **ingeschakeld**.
+1. Klik in de Azure-Sentinel Portal op **Analytics** en klik vervolgens op het tabblad **regel sjablonen** . Kies de regel voor **afwijkende RDP-aanmeldings detectie (preview)** en verplaats de schuif regelaar **status** naar **ingeschakeld**.
 
     > [!NOTE]
     > Omdat voor het machine learning-algoritme 30 dagen aan gegevens nodig is om een basislijn Profiel van gebruikers gedrag te maken, moet u ervoor zorgen dat er 30 dagen aan gegevens over beveiligings gebeurtenissen worden verzameld voordat er incidenten kunnen worden gedetecteerd.

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/08/2020
 ms.author: v-miegge
-ms.openlocfilehash: 4f181a6dee7ed182150bd0cad2b51690b6c77d7a
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 6c139398182ca9d875de0d3b21c58afe503bd8a5
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91963122"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632271"
 ---
 # <a name="vm-is-unresponsive-while-applying-default-domain-controllers-policy"></a>VM is niet responsief wanneer een beleid voor domeincontrollers wordt toegepast
 
@@ -28,7 +28,7 @@ Dit artikel bevat stappen voor het oplossen van problemen waarbij het standaard 
 
 ## <a name="symptom"></a>Symptoom
 
-Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruikt om de scherm opname van de virtuele machine weer te geven, ziet u dat het besturings systeem niet meer reageert tijdens het opstarten met het **standaard beleid voor domein controllers**van het bericht.
+Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruikt om de scherm opname van de virtuele machine weer te geven, ziet u dat het besturings systeem niet meer reageert tijdens het opstarten met het **standaard beleid voor domein controllers** van het bericht.
 
   ![In afbeelding 1 wordt het besturings systeem weer gegeven dat is vastgelopen met het bericht standaard domein controllers beleid](./media/vm-unresponsive-domain-controllers-policy/1-default-domain-controllers-policy.png)
 
@@ -37,6 +37,9 @@ Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruik
 Dit probleem kan worden veroorzaakt door recente wijzigingen aan het standaard beleid voor domein controllers. Anders moet er een analyse van het geheugen dump bestand worden uitgevoerd om de hoofd oorzaak te bepalen.
 
 ## <a name="solution"></a>Oplossing
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 Als u onlangs wijzigingen hebt aangebracht in het standaard beleid voor domein controllers, kunt u deze wijzigingen ongedaan maken om het probleem op te lossen. Als u niet zeker weet wat het probleem veroorzaakt, verzamelt u een geheugen dump en verzendt u een ondersteunings ticket.
 

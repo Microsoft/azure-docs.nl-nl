@@ -1,5 +1,5 @@
 ---
-title: Azure-Services die ondersteuning bieden voor Beschikbaarheidszones
+title: Azure-services die beschikbaarheidszones ondersteunen
 description: Als u Maxi maal beschik bare en flexibele toepassingen in azure wilt maken, Beschikbaarheidszones u fysiek afzonderlijke locaties bieden die u kunt gebruiken om uw resources uit te voeren.
 author: cynthn
 ms.service: azure
@@ -7,14 +7,14 @@ ms.topic: article
 ms.date: 12/17/2020
 ms.author: cynthn
 ms.custom: fasttrack-edit, mvc, references_regions
-ms.openlocfilehash: 0365a60317538ba31f39928cd30a57e2c969c832
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: ea21a56249c8eaa7c6b329b755e96b21b91ebaa1
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97723032"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632305"
 ---
-# <a name="azure-services-that-support-availability-zones"></a>Azure-Services die ondersteuning bieden voor Beschikbaarheidszones
+# <a name="azure-services-that-support-availability-zones"></a>Azure-services die beschikbaarheidszones ondersteunen
 
 Beschikbaarheidszones is een Maxi maal beschik bare aanbieding die uw toepassingen en gegevens beveiligt tegen Data Center-fouten. Zie [regio's en Beschikbaarheidszones in azure](az-overview.md)voor een lijst met bestaande en aanstaande regio's die Beschikbaarheidszones ondersteunen.  
 
@@ -124,7 +124,7 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 | [Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Azure Database for MySQL-flexibele server](../mysql/flexible-server/concepts-high-availability.md) | BxDxH | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Azure Database for PostgreSQL - Flexible Server](../postgresql/flexible-server/overview.md) | BxDxH | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure SQL Database (Algemeen laag)](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview) | BxDxH | : heavy_check_mark: (preview-versie) | BxDxH | : heavy_check_mark: (preview-versie) |
+| [Azure SQL Database (Algemeen laag)](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview) | : heavy_check_mark: (preview-versie) | : heavy_check_mark: (preview-versie) | BxDxH | : heavy_check_mark: (preview-versie) |
 | [Azure SQL Database (Premium-& Bedrijfskritiek-lagen)](../azure-sql/database/high-availability-sla.md#premium-and-business-critical-service-tier-zone-redundant-availability) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | **Analyse** |  |  |  |  |
 | [Event Hubs](../event-hubs/index.yml) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -140,7 +140,7 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 
 
 
-| **Producten** | **Japan East** | **Azië - zuidoost** | **Australië - oost** |
+| **Producten** | **Japan - oost** | **Azië - zuidoost** | **Australië - oost** |
 |--|--|--|--|
 | **Compute** |  |  |  |
 | [App Service omgevingen (ILB)](../app-service/environment/zone-redundancy.md#how-to-deploy-an-app-service-environment-in-an-availability-zone) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -169,7 +169,7 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 | [Azure Data Explorer](/azure/data-explorer/create-cluster-database-portal) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Azure Database for MySQL-flexibele server](../mysql/flexible-server/concepts-high-availability.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | [Azure Database for PostgreSQL - Flexible Server](../postgresql/flexible-server/overview.md) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| [Azure SQL Database (Algemeen laag)](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview) | BxDxH | : heavy_check_mark: (preview-versie) | : heavy_check_mark: (preview-versie) |
+| [Azure SQL Database (Algemeen laag)](../azure-sql/database/high-availability-sla.md#general-purpose-service-tier-zone-redundant-availability-preview) | : heavy_check_mark: (preview-versie) | : heavy_check_mark: (preview-versie) | : heavy_check_mark: (preview-versie) |
 | [Azure SQL Database (Premium-& Bedrijfskritiek-lagen)](../azure-sql/database/high-availability-sla.md#premium-and-business-critical-service-tier-zone-redundant-availability) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | **Analyse** |  |  |  |
 | [Event Hubs](../event-hubs/index.yml) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
@@ -187,7 +187,7 @@ Als u een uitgebreide bedrijfs continuïteit wilt bereiken op Azure, bouwt u uw 
 Azure biedt Beschikbaarheidszones ondersteuning in de volgende regio's:
 - VS (overheid) - Virginia
 - Zuid-Afrika - noord
-- South Central US
+- VS - zuid-centraal
 - Duitsland - west-centraal
 
 De lijst met bestaande en aanstaande regio's die ondersteuning bieden voor Beschikbaarheidszones, vindt u [hier](https://azure.microsoft.com/global-infrastructure/geographies/).    

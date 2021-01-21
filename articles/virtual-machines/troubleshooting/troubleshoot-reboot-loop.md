@@ -12,12 +12,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 10/15/2018
 ms.author: genli
-ms.openlocfilehash: 4c336fe9a65d7bcc44790a4bfb02bed44f028733
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad0ed7e9619f0b789bf8949fe398aa27bc36b9e0
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86500919"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629637"
 ---
 # <a name="windows-reboot-loop-on-an-azure-vm"></a>Windows-lus voor opnieuw opstarten op een virtuele machine van Azure
 In dit artikel wordt de herstart-lus beschreven die kan optreden op een virtuele Windows-machine (VM) in Microsoft Azure.
@@ -50,6 +50,9 @@ Beschadiging van het bestands systeem kan dit tot gevolg hebben. Het is echter m
 
 ## <a name="solution"></a>Oplossing
 
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
+
 Om dit probleem op te lossen, maakt u een [back-up van de besturingssysteem schijf](../windows/snapshot-copy-managed-disk.md)en [koppelt u de besturingssysteem schijf aan een virtuele machine voor herstel](./troubleshoot-recovery-disks-portal-windows.md)en volgt u de oplossings opties dienovereenkomstig of probeert u de oplossingen één voor één.
 
 ### <a name="solution-for-cause-1"></a>Oplossing voor oorzaak 1
@@ -62,7 +65,7 @@ Om dit probleem op te lossen, maakt u een [back-up van de besturingssysteem schi
 
 4. Open de Windows REGI ster-editor (regedit) op de virtuele machine voor herstel.
 
-5. Selecteer de sleutel **HKEY_LOCAL_MACHINE** en selecteer vervolgens **File**  >  **component bestand laden** in het menu.
+5. Selecteer de sleutel **HKEY_LOCAL_MACHINE** en selecteer vervolgens   >  **component bestand laden** in het menu.
 
 6. Blader naar het systeem bestand in de map **\Windows\System32\Config** .
 
@@ -80,13 +83,13 @@ Om dit probleem op te lossen, maakt u een [back-up van de besturingssysteem schi
 
 11. Als de waarde van de register sleutel is ingesteld op **2**, wijzigt u de waarde van **2** in **1**.
 
-12. Als een van de volgende sleutels bestaat en de waarde **2** of **3**is, en wijzig deze waarden in **1** dienovereenkomstig:
+12. Als een van de volgende sleutels bestaat en de waarde **2** of **3** is, en wijzig deze waarden in **1** dienovereenkomstig:
 
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupCoordinatorSvc\ErrorControl`
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupInquirySvc\ErrorControl`
     - `HKEY_LOCAL_MACHINE\BROKENSYSTEM\ControlSet00x\Services\AzureWLBackupPluginSvc\ErrorControl`
 
-13. Selecteer de sleutel **BROKENSYSTEM** en selecteer vervolgens **File**  >  **component bestand verwijderen** in het menu.
+13. Selecteer de sleutel **BROKENSYSTEM** en selecteer vervolgens   >  **component bestand verwijderen** in het menu.
 
 14. Ontkoppel de besturingssysteem schijf van de virtuele machine voor probleem oplossing.
 

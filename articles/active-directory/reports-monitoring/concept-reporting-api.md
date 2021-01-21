@@ -13,16 +13,16 @@ ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.subservice: report-monitor
-ms.date: 11/13/2018
+ms.date: 01/21/2021
 ms.author: markvi
 ms.reviewer: dhanyahk
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: af448d5d28c5add39176500b988824b17f85b9fb
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 2027f713baf2b8039187e933ffc7bb0b68b5cc5f
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861966"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98631958"
 ---
 # <a name="get-started-with-the-azure-active-directory-reporting-api"></a>Aan de slag met de API voor Azure Active Directory rapportage
 
@@ -49,8 +49,10 @@ Zie voor gedetailleerde instructies de [vereisten voor toegang tot de Azure Acti
 
 Het Microsoft Graph API-eind punt voor audit Logboeken is `https://graph.microsoft.com/v1.0/auditLogs/directoryAudits` en het Microsoft Graph API-eind punt voor aanmeldingen is `https://graph.microsoft.com/v1.0/auditLogs/signIns` . Zie de naslag informatie over de [controle-API](/graph/api/resources/directoryaudit) en [aanmeldings-API](/graph/api/resources/signIn)voor meer gegevens.
 
-Daarnaast kunt u de [API voor risico detectie van identiteits beveiliging](/graph/api/resources/identityriskevent?view=graph-rest-beta) gebruiken om programmatisch toegang te krijgen tot beveiligings detecties met behulp van Microsoft Graph. Zie [aan de slag met Azure Active Directory Identity Protection en Microsoft Graph](../identity-protection/howto-identity-protection-graph-api.md)voor meer informatie. 
+U kunt de [API voor risico detectie van identiteits beveiliging](/graph/api/resources/identityriskevent?view=graph-rest-beta) gebruiken om programmatisch toegang te krijgen tot beveiligings detecties met behulp van Microsoft Graph. Zie [aan de slag met Azure Active Directory Identity Protection en Microsoft Graph](../identity-protection/howto-identity-protection-graph-api.md)voor meer informatie. 
   
+U kunt ook de API voor het [inrichtings logboek](https://docs.microsoft.com/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta) gebruiken om programmatisch toegang te krijgen tot het inrichtings gebeurtenissen in uw Tenant. 
+
 ## <a name="apis-with-microsoft-graph-explorer"></a>Api's met Microsoft Graph Explorer
 
 U kunt de [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer) gebruiken om uw aanmeld-en controle-API-gegevens te verifiëren. Meld u aan bij uw account met behulp van beide aanmeld knoppen in de gebruikers interface van Graph Explorer en stel **AuditLog. Read. all** en **Directory. Read. all** in voor uw Tenant, zoals wordt weer gegeven.   

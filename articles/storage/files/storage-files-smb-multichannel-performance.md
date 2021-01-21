@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 11/16/2020
 ms.author: gunjanj
 ms.subservice: files
-ms.openlocfilehash: 4f4cd8189c9166ee08c1e4ccd800a1202d3b5893
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: cbded0a9c905bb488e1bae0f92d777e2e7ed7441
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724813"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630850"
 ---
 # <a name="smb-multichannel-performance"></a>Prestaties van SMB Multichannel
 
@@ -119,7 +119,7 @@ De volgende tips kunnen u helpen uw prestaties te optimaliseren:
 - Zorg ervoor dat uw opslag account en uw client zich in dezelfde Azure-regio bevinden om de netwerk latentie te verminderen.
 - Gebruik toepassingen met meerdere threads en verspreide taken over meerdere bestanden.
 - Prestatie voordelen van SMB meerdere kanalen nemen toe met het aantal bestanden dat de belasting distribueert.
-- De prestaties van Premium-shares zijn gebonden aan de ingerichte share grootte (IOPS/uitgaand/binnenkomend) en limieten voor één bestand. Zie voor meer informatie [over het inrichten van Premium-bestands shares](understanding-billing.md#provisioned-billing).
+- De prestaties van Premium-shares zijn gebonden aan de ingerichte share grootte (IOPS/uitgaand/binnenkomend) en limieten voor één bestand. Zie voor meer informatie [over het inrichten van Premium-bestands shares](understanding-billing.md#provisioned-model).
 - De maximale prestaties van één VM-client zijn nog steeds gebonden aan VM-limieten. [Standard_D32s_v3](../../virtual-machines/dv3-dsv3-series.md) kan bijvoorbeeld een maximale band breedte van 16.000 Mbps (of 2 Gbps) ondersteunen. de uitvoer van de virtuele machine (schrijf bewerkingen naar opslag) is niet toegestaan in een Data limiet, ingangs (Lees bewerkingen van opslag). De prestaties van bestands shares zijn afhankelijk van de netwerk limieten van de computer, Cpu's, interne opslag beschik bare netwerk bandbreedte, i/o-grootte, parallelle uitvoering en andere factoren.
 - De eerste test is doorgaans een warm-up, de resultaten worden verwijderd en de test wordt herhaald.
 - Als de prestaties beperkt zijn door één client en de werk belasting nog steeds lager is dan de ingerichte limieten voor shares, kunnen hogere prestaties worden bereikt door de belasting over meerdere clients te spreiden.

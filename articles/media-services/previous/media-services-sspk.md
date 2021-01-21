@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/21/2019
 ms.author: xpouyat
-ms.openlocfilehash: cdb575d7b3884370e1a53f79f1184d40cd15d270
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: eb88d2cf96cc8557f2b8c729554106530cf6f956
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97732390"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629620"
 ---
 # <a name="licensing-microsoftreg-smooth-streaming-client-porting-kit"></a>Licenties voor micro soft &reg; Smooth streaming client Porting kit
 
@@ -128,6 +128,7 @@ Interim-en definitieve SSPK-licenties kunnen technische vragen verzenden naar [s
 * Hongkong Konka Ltd
 * Innolux Corporation
 * Innopia Technologies, Inc
+* Jinpin Electric Company Ltd. Zhuhai. S. E. Z
 * K-Tronics (Suzhou) Technology Co., Ltd. 
 * Kaonmedia co., Ltd.
 * KDDI Corporation

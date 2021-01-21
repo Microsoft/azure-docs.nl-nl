@@ -1,53 +1,51 @@
 ---
 title: 'Snelstartgids: een Azure IoT Edge-apparaat maken in Windows | Microsoft Docs'
 description: In deze snelstartgids leert u hoe u een IoT Edge-apparaat maakt en daarna kant-en-klare code op afstand implementeert vanuit Azure Portal.
-author: kgremban
-manager: philmea
-ms.author: kgremban
-ms.date: 06/30/2020
+author: rsameser
+manager: kgremban
+ms.author: riameser
+ms.date: 01/20/2021
 ms.topic: quickstart
 ms.service: iot-edge
 services: iot-edge
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 547bf111e73813c939caa917c0117dac6c8989e9
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
-ms.translationtype: HT
+monikerRange: =iotedge-2018-06
+ms.openlocfilehash: f3af2b7839465f886d1edba01eb9988419761dac
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922462"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630892"
 ---
-# <a name="quickstart-deploy-your-first-iot-edge-module-to-a-virtual-windows-device"></a>Quickstart: Uw eerste IoT Edge-module implementeren in een virtueel Windows-apparaat
+# <a name="quickstart-deploy-your-first-iot-edge-module-to-a-windows-device-preview"></a>Quick Start: uw eerste IoT Edge-module implementeren op een Windows-apparaat (preview)
 
-Probeer Azure IoT Edge uit in deze quickstart door code in een container te implementeren op een virtueel Windows IoT Edge-apparaat. Met IoT Edge kunt u code op uw apparaten op afstand beheren zodat u meer van uw workloads naar de rand kunt verzenden. Voor deze quickstart kunt u het beste een virtuele Azure-machine gebruiken voor uw IoT Edge-apparaat. Met een virtuele machine kunt u snel een testmachine maken, de vereisten installeren en deze vervolgens verwijderen wanneer u klaar bent.
+Probeer Azure IoT Edge in deze Snelstartgids door container code te implementeren naar een Linux op Windows IoT Edge-apparaat. Met IoT Edge kunt u code op uw apparaten op afstand beheren zodat u meer van uw workloads naar de rand kunt verzenden. Voor deze Snelstartgids kunt u het beste uw eigen apparaat gebruiken om te zien hoe eenvoudig het is om Azure IoT Edge te gebruiken voor Linux in Windows.
 
 In deze snelstart leert u de volgende zaken:
 
 * Maak een IoT-hub.
 * Een IoT Edge-apparaat registreren in uw IoT-hub.
-* De IoT Edge-runtime op uw virtuele apparaat installeren en starten.
-* Op afstand een module op een IoT Edge-apparaat implementeren en telemetrie naar IoT Hub verzenden.
+* Installeer en start de IoT Edge voor Linux in Windows runtime op uw apparaat.
+* Een module op afstand implementeren op een IoT Edge apparaat en telemetrie verzenden.
 
 ![Diagram - Snelstartarchitectuur voor apparaat en cloud](./media/quickstart/install-edge-full.png)
 
-In deze quickstart leert u hoe u een Windows VM maakt die is geconfigureerd als een IoT Edge-apparaat. Vervolgens implementeert u een module vanuit Azure Portal op uw apparaat. De module die in deze quickstart wordt gebruikt, is een gesimuleerde sensor waarmee temperatuur-, luchtvochtigheids- en drukgegevens worden gegenereerd. De andere Azure IoT Edge-zelfstudies bouwen voort op het werk dat u hier doet door aanvullende modules te implementeren waarmee de gesimuleerde gegevens worden geanalyseerd voor zakelijke inzichten.
+In deze snelstartgids vindt u informatie over het instellen van uw Azure IoT Edge voor Linux op een Windows-apparaat. Vervolgens implementeert u een module vanuit Azure Portal op uw apparaat. De module die in deze quickstart wordt gebruikt, is een gesimuleerde sensor waarmee temperatuur-, luchtvochtigheids- en drukgegevens worden gegenereerd. De andere Azure IoT Edge-zelfstudies bouwen voort op het werk dat u hier doet door aanvullende modules te implementeren waarmee de gesimuleerde gegevens worden geanalyseerd voor zakelijke inzichten.
 
 Als u nog geen actief abonnement op Azure hebt, maakt u een [gratis Azure-account](https://azure.microsoft.com/free) aan voordat u begint.
+
+>[!NOTE]
+>IoT Edge voor Linux in Windows is in [open bare preview](https://azure.microsoft.com/support/legal/preview-supplemental-terms/).
 
 ## <a name="prerequisites"></a>Vereisten
 
 Bereid uw omgeving voor op Azure CLI.
 
-- Gebruik [Azure Cloud Shell](/azure/cloud-shell/quickstart-powershell) met behulp van de PowerShell-environment.
-
-   [![Starten insluiten](https://shell.azure.com/images/launchcloudshell.png "Azure Cloud Shell starten")](https://shell.azure.com)   
-- [Installeer](/cli/azure/install-azure-cli) de Azure CLI, indien gewenst, om CLI-referentieopdrachten uit te voeren.
-   - Als u een lokale installatie gebruikt, meldt u zich aan bij Azure CLI met behulp van de opdracht [AZ login](/cli/azure/reference-index#az-login).  Volg de stappen die worden weergegeven in de terminal, om het verificatieproces te voltooien.  Zie [Aanmelden met Azure CLI](/cli/azure/authenticate-azure-cli) voor aanvullende aanmeldingsopties.
-  - Installeer de Azure CLI-extensie bij het eerste gebruik, wanneer u hierom wordt gevraagd.  Zie [Extensies gebruiken met Azure CLI](/cli/azure/azure-cli-extensions-overview) voor meer informatie over extensies.
-  - Voer [az version](/cli/azure/reference-index?#az_version) uit om de geïnstalleerde versie en afhankelijke bibliotheken te vinden. Voer [az upgrade](/cli/azure/reference-index?#az_upgrade) uit om te upgraden naar de nieuwste versie.
+[!INCLUDE [azure-cli-prepare-your-environment-no-header.md](../../includes/azure-cli-prepare-your-environment-no-header.md)]
 
 Cloudresources:
 
-- Een resourcegroep voor het beheren van alle resources die u in deze snelstart maakt.
+* Een resourcegroep voor het beheren van alle resources die u in deze snelstart maakt.
 
    ```azurecli-interactive
    az group create --name IoTEdgeResources --location westus2
@@ -55,28 +53,9 @@ Cloudresources:
 
 IoT Edge-apparaat:
 
-- Een Windows VM die fungeert als uw IoT Edge-apparaat. U kunt deze virtuele machine maken met behulp van de volgende opdracht, waarbij `{password}` wordt vervangen door een beveiligd wachtwoord:
-
-  ```azurecli-interactive
-  az vm create --resource-group IoTEdgeResources --name EdgeVM --image MicrosoftWindowsDesktop:Windows-10:rs5-pro:latest --admin-username azureuser --admin-password {password} --size Standard_DS1_v2
-  ```
-
-  Het maken en starten van de nieuwe virtuele machine kan een paar minuten duren.
-
-  Zodra uw virtuele machine start, kunt u vervolgens een RDP-bestand downloaden dat moet worden gebruikt om verbinding te maken met uw virtuele machine:
-
-  1. Navigeer naar uw nieuwe Windows VM in Azure Portal.
-  1. Selecteer **Verbinden**.
-  1. Selecteer op het tabblad **RDP** de optie **RDP-bestand downloaden**.
-
-  Open dit bestand met Verbinding met extern bureaublad om verbinding te maken met uw virtuele Windows-machine. Gebruik de beheerdersnaam en het beheerderswachtwoord die u hebt opgegeven met de opdracht `az vm create`.
-
-> [!NOTE]
-> Uw virtuele Windows-machine wordt gestart met Windows versie 1809 (build 17763). Dit is de nieuwste [Windows-build met langetermijnondersteuning](/windows/release-information/). In Windows wordt standaard elke 22 uur automatisch op updates gecontroleerd. Na een controle op uw virtuele machine wordt door Windows een versie-update gepusht die niet compatibel is met IoT Edge voor Windows, waardoor IoT Edge voor Windows-functies niet meer kunnen worden gebruikt. U wordt aangeraden om uw virtuele machine niet langer dan 22 uur te gebruiken of [Windows-updates tijdelijk te onderbreken](https://support.microsoft.com/help/4028233/windows-10-manage-updates).
->
-> Voor het gemak wordt in deze quickstart gebruikgemaakt van een Windows VM. Zie [Systemen met ondersteuning voor Azure IoT Edge](support.md) voor meer informatie over welke Windows-besturingssystemen algemeen beschikbaar zijn voor productiescenario's.
->
-> Als u uw eigen Windows-apparaat wilt configureren voor IoT Edge, met inbegrip van apparaten met IoT Core, volgt u de stappen in [De Azure IoT Edge-runtime installeren](how-to-install-iot-edge.md).
+* Uw apparaat moet een Windows-PC of-server zijn, versie 1809 of hoger
+* Ten minste 4 GB geheugen, aanbevolen 8 GB geheugen
+* 10 GB beschikbare schijfruimte
 
 ## <a name="create-an-iot-hub"></a>Een IoT Hub maken
 
@@ -97,7 +76,8 @@ Met de volgende code wordt een gratis **F1**-hub gemaakt in de resourcegroep `Io
 ## <a name="register-an-iot-edge-device"></a>Een IoT Edge-apparaat registreren
 
 Registreer een IoT Edge-apparaat bij uw net gemaakte IoT Hub.
-![Diagram - Een apparaat registreren met een IoT Hub-entiteit](./media/quickstart/register-device.png)
+
+![Diagram - Een apparaat registreren met een IoT Hub-id](./media/quickstart/register-device.png)
 
 Maak een apparaat-id voor uw gesimuleerde apparaat, zodat het met uw IoT-hub kan communiceren. De apparaat-id is opgeslagen in de cloud, en u gebruikt een unieke apparaatverbindingsreeks om een fysiek apparaat te koppelen aan een apparaat-id.
 
@@ -123,75 +103,63 @@ Omdat IoT Edge-apparaten zich anders gedragen en anders kunnen worden beheerd da
 
 ## <a name="install-and-start-the-iot-edge-runtime"></a>De IoT Edge-runtime installeren en starten
 
-Installeer de Azure IoT Edge-runtime op uw IoT Edge-apparaat en configureer deze met een apparaatverbindingsreeks.
-![Diagram - De runtime op apparaat starten](./media/quickstart/start-runtime.png)
+Installeer IoT Edge voor Linux in Windows op uw apparaat en configureer dit met een apparaat connection string.
 
-De IoT Edge-runtime wordt op alle IoT Edge-apparaten geïmplementeerd. Deze bevat drie onderdelen. De *IoT Edge-beveiligingsdaemon* wordt telkens gestart wanneer een IoT Edge-apparaat wordt opgestart en start het apparaat op door de IoT Edge-agent te starten. De *IoT Edge-agent* beheert de implementatie en bewaking van modules op het IoT Edge-apparaat, inclusief de IoT Edge-hub. De *IoT Edge-hub* verzorgt de communicatie tussen modules op het IoT Edge-apparaat en tussen het apparaat en IoT Hub.
+![Diagram: de IoT Edge runtime starten op het apparaat](./media/quickstart/start-runtime.png)
 
-Het installatiescript bevat ook de containerengine Moby waarmee de containerinstallatiekopieën op uw IoT Edge-apparaat worden beheerd.
+1. [Down load Windows-beheer centrum](https://aka.ms/WACDownloadEFLOW).
+2. Volg de installatie wizard om Windows-beheer centrum op uw apparaat in te stellen.
+3. Zodra u zich in het Windows-beheer centrum bevindt, selecteert u rechtsboven in het scherm het **tandwiel pictogram instellingen**  
+4. Klik in het menu instellingen onder gateway op **extensies** .
+5. Selecteer in de lijst met **beschik bare uitbrei dingen** **Azure IOT Edge**
+6. De uitbrei ding **installeren**
 
-Tijdens de installatie van de runtime wordt u naar de apparaatverbindingsreeks gevraagd. Gebruik de tekenreeks die u hebt opgehaald via de Azure CLI. Deze tekenreeks koppelt uw fysieke apparaat aan de IoT Edge-apparaat-id in Azure.
+7. Zodra de uitbrei ding is geïnstalleerd, gaat u naar de hoofd pagina van het dash board door **Windows-beheer centrum** linksboven op het scherm te selecteren.
 
-### <a name="connect-to-your-iot-edge-device"></a>Verbinding maken met uw IoT Edge-apparaat
+8. U ziet de verbinding van de lokale host waarmee de PC wordt aangegeven waarop u Windows-beheer centrum uitvoert.
 
-Aangezien de stappen in deze sectie allemaal plaatsvinden op uw IoT Edge-apparaat, maakt u nu via extern bureaublad verbinding met de desbetreffende virtuele machine.
+   :::image type="content" source="media/quickstart/windows-admin-center-start-page.png" alt-text="Scherm opname-start pagina van Windows-beheerder":::
 
-### <a name="install-and-configure-the-iot-edge-service"></a>De IoT Edge-service installeren en configureren
+9. Selecteer **Toevoegen**.
 
-Gebruik PowerShell om de IoT Edge-runtime te downloaden en te installeren. Gebruik de apparaatverbindingsreeks die u hebt opgehaald via IoT Hub om uw apparaat te configureren.
+   :::image type="content" source="media/quickstart/windows-admin-center-start-page-add.png" alt-text="Scherm opname-start pagina toevoegen van de Windows-beheerder":::
 
-1. Voer PowerShell uit op de virtuele machine als beheerder.
+10. Zoek de tegel Azure IoT Edge en selecteer **nieuwe maken**. Hiermee wordt de installatie wizard gestart.
 
-   >[!NOTE]
-   >Gebruik een AMD64-sessie van PowerShell om IoT Edge, niet PowerShell (x86), te installeren. Als u niet zeker weet welk sessietype u gebruikt, voert u de volgende opdracht uit:
-   >
-   >```powershell
-   >(Get-Process -Id $PID).StartInfo.EnvironmentVariables["PROCESSOR_ARCHITECTURE"]
-   >```
+    :::image type="content" source="media/quickstart/select-tile-screen.png" alt-text="Scherm opname-Azure IoT Edge voor Linux op Windows-tegel":::
 
-2. Met de opdracht **Deploy-IoTEdge** wordt gecontroleerd of de Windows-computer een ondersteunde versie heeft, wordt de containersfunctie ingeschakeld en worden achtereenvolgens de Moby- en IoT Edge-runtime gedownload.
+11. Ga door met de installatie wizard om de gebruiksrecht overeenkomst te accepteren en kies **volgende**
 
-   ```powershell
-   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
-   Deploy-IoTEdge -ContainerOs Windows
-   ```
+    :::image type="content" source="media/quickstart/wizard-welcome-screen.png" alt-text="Scherm opname-welkom van de wizard":::
 
-3. De machine wordt mogelijk automatisch opnieuw opgestart. Als u door de opdracht Deploy-IoTEdge wordt gevraagd opnieuw op te starten, doet u dat.
+12. Kies de **optionele diagnostische gegevens** om uitgebreide diagnostische gegevens op te geven waarmee micro soft de kwaliteit van de service kan controleren en onderhouden, en klik op **volgende: implementeren**
 
-4. Voer PowerShell weer uit als beheerder.
+    :::image type="content" source="media/quickstart/diagnostic-data-screen.png" alt-text="Scherm opname-diagnostische gegevens":::
 
-5. Met de opdracht **Initialize-IoTEdge** configureert u de IoT Edge-runtime op uw machine. De opdracht wordt standaard ingesteld op handmatig inrichten met Windows-containers.
+13. Selecteer op het scherm **doel apparaat selecteren** het gewenste doel apparaat om te valideren dat het voldoet aan de minimale vereisten. Voor deze Quick Start installeren we IoT Edge op het lokale apparaat. Kies daarom de localhost-verbinding. Nadat dit is bevestigd, klikt u op **volgende** om door te gaan
 
-   ```powershell
-   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; `
-   Initialize-IoTEdge -ContainerOs Windows
-   ```
+    :::image type="content" source="media/quickstart/wizard-select-target-device-screen.png" alt-text="Scherm opname-doel apparaat selecteren":::
 
-6. Als u wordt gevraagd naar een **DeviceConnectionString**, geeft u de tekenreeks op die u in de vorige sectie hebt gekopieerd. Plaats geen aanhalingstekens rond de verbindingsreeks.
+14. Accepteer de standaard instellingen door **volgende** te kiezen.
 
-### <a name="view-the-iot-edge-runtime-status"></a>De IoT Edge runtime-status bekijken
+15. Het scherm implementatie toont het proces van het downloaden van het pakket, het installeren van het pakket, het configureren van de host en het laatste instellen van de virtuele Linux-machine.  Een geslaagde implementatie ziet er als volgt uit:
 
-Controleer of de runtime goed is geïnstalleerd en geconfigureerd. Het kan enkele minuten duren voordat de installatie is voltooid en de IoT Edge-agentmodule wordt gestart.
+    :::image type="content" source="media/quickstart/wizard-deploy-success-screen.png" alt-text="Scherm opname-de wizard implementatie is voltooid":::
 
-1. Controleer de status van de IoT Edge-service.
+16. Klik op **volgende: verbinding maken** om door te gaan naar de laatste stap om uw Azure IOT edge apparaat in te richten met de apparaat-id van de IOT hub-instantie.
 
-   ```powershell
-   Get-Service iotedge
-   ```
+17. Kopieer de connection string van het apparaat in azure IoT Hub en plak het in het veld apparaat connection string. Kies vervolgens **inrichten met de geselecteerde methode**.
 
-2. Als u problemen met de service moet oplossen, haalt u de servicelogboeken op.
+    > [!NOTE]
+    > Zie stap 3 in de vorige sectie [een IOT edge apparaat registreren](#register-an-iot-edge-device)om uw Connection String op te halen.
 
-   ```powershell
-   . {Invoke-WebRequest -useb aka.ms/iotedge-win} | Invoke-Expression; Get-IoTEdgeLog
-   ```
+    :::image type="content" source="media/quickstart/wizard-provision.png" alt-text="Scherm afbeelding-inrichting van wizard":::
 
-3. Bekijk alle modules die op uw IoT Edge-apparaat worden uitgevoerd. Aangezien de service net voor het eerst is gestart, zou u moeten zien dat alleen de **edgeAgent**-module actief is. De edgeAgent-module wordt standaard uitgevoerd en helpt bij het installeren en starten van aanvullende modules die u op uw apparaat implementeert.
+18. Zodra de inrichting is voltooid, selecteert u **volt** ooien om te volt ooien en gaat u terug naar het Start scherm van Windows-beheer centrum. U kunt uw apparaat nu weer geven als een IoT Edge apparaat.
 
-    ```powershell
-    iotedge list
-    ```
+    :::image type="content" source="media/quickstart/windows-admin-center-device-screen.png" alt-text="Scherm opname-Windows-beheer centrum Azure IoT Edge apparaat":::
 
-   ![Eén module op uw apparaat bekijken](./media/quickstart/iotedge-list-1.png)
+19. Selecteer uw Azure IoT Edge-apparaat om het dash board ervan weer te geven. U ziet dat de werk belastingen van uw apparaat tussen Azure IoT Hub zijn geïmplementeerd. In de **lijst IOT Edge module** moet één module worden weer gegeven, **edgeAgent**, en de **IOT Edge status** moet **actief (actief)** zijn.
 
 Uw IoT Edge-apparaat is nu geconfigureerd. Het is gereed voor de uitvoering van modules die in de cloud zijn geïmplementeerd.
 
@@ -209,24 +177,36 @@ In deze snelstart hebt u een nieuw IoT Edge-apparaat gemaakt en de IoT Edge-runt
 
 In dit geval worden met de module die u hebt gepusht, gegevens voor een voorbeeldomgeving gegenereerd die u later voor testen kunt gebruiken. De gesimuleerde sensor bewaakt zowel een machine als de omgeving rond die machine. Deze sensor kan zich bijvoorbeeld in een serverruimte, in een fabriek of op een windturbine bevinden. Het bericht bevat informatie over de omgevingstemperatuur, de luchtvochtigheid, de machinetemperatuur en de druk, evenals een tijdstempel. In de IoT Edge-zelfstudies worden gegevens van deze module gebruikt als testgegevens voor analyses.
 
-Bevestig dat de module die vanuit de cloud is geïmplementeerd, op uw IoT Edge -apparaat wordt uitgevoerd.
+Controleer of de module die is geïmplementeerd vanuit de Cloud wordt uitgevoerd op uw IoT Edge-apparaat door te navigeren naar de opdracht shell in het Windows-beheer centrum.
 
-```powershell
-iotedge list
-```
+1. Verbinding maken met uw nieuw gemaakte IoT Edge-apparaat
 
-   ![Drie modules op uw apparaat bekijken](./media/quickstart/iotedge-list-2.png)
+   :::image type="content" source="media/quickstart/connect-edge-screen.png" alt-text="Scherm opname-apparaat verbinden":::
 
-Bekijk de berichten die vanaf de temperatuursensormodule naar de cloud worden verzonden.
+2. Op de **overzichts** pagina ziet u de **lijst met IoT Edge modules** en **IOT Edge status** waar u de verschillende modules kunt zien die zijn geïmplementeerd, evenals de status van het apparaat.  
 
-```powershell
-iotedge logs SimulatedTemperatureSensor -f
-```
+3. Onder **extra** selecteert u **opdracht shell**. De opdracht shell is een Power shell-terminal die automatisch SSH (Secure Shell) gebruikt om verbinding te maken met de Linux-VM van uw Azure IoT Edge apparaat op uw Windows-PC.
+
+   :::image type="content" source="media/quickstart/command-shell-screen.png" alt-text="Scherm afbeelding-opdracht shell":::
+
+4. Als u de drie modules op uw apparaat wilt controleren, voert u de volgende **bash-opdracht** uit:
+
+   ```bash
+   sudo iotedge list
+   ```
+
+   :::image type="content" source="media/quickstart/iotedge-list-screen.png" alt-text="Scherm opname-opdracht shell-lijst":::
+
+5. Bekijk de berichten die vanaf de temperatuursensormodule naar de cloud worden verzonden.
+
+   ```bash
+   iotedge logs SimulatedTemperatureSensor -f
+   ```
 
    >[!TIP]
    >IoT Edge-opdrachten zijn hoofdlettergevoelig wanneer u naar modulenamen verwijst.
 
-   ![De gegevens van uw module bekijken](./media/quickstart/iotedge-logs.png)
+   :::image type="content" source="media/quickstart/temperature-sensor-screen.png" alt-text="Scherm opname-temperatuur sensor":::
 
 U kunt de berichten ook zien binnenkomen bij uw IoT Hub door de [Azure IoT Hub-extensie voor Visual Studio Code](https://marketplace.visualstudio.com/items?itemName=vsciot-vscode.azure-iot-toolkit) te gebruiken.
 
@@ -251,6 +231,15 @@ U kunt controleren of de resourcegroep is verwijderd door de lijst met resourceg
 az group list
 ```
 
+### <a name="clean-removal-of-azure-iot-edge-for-linux-on-windows"></a>Schone verwijdering van Azure IoT Edge voor Linux in Windows
+
+U kunt Azure IoT Edge voor Linux in Windows verwijderen van uw IoT Edge-apparaat via de dash board-extensie in het Windows-beheer centrum.
+
+1. Maak verbinding met de Azure IoT Edge voor Linux op Windows-apparaat-verbinding in het Windows-beheer centrum. De extensie van het Azure dash board-hulp programma wordt geladen.
+2. Selecteer **Verwijderen**. Als Azure IoT Edge voor Linux in Windows is verwijderd, gaat u naar de start pagina van het Windows-beheer centrum en verwijdert u de vermelding van het Azure IoT Edge apparaat uit de lijst.
+
+Een andere manier om Azure IOT Edge van uw Windows-systeem te verwijderen, is door naar de apps voor de **Start**  >  **instellingen** te gaan  >    >  **Azure IOT Edge**  >  de installatie op uw IOT edge apparaat te **verwijderen** . Hiermee verwijdert u Azure IoT Edge van uw IoT Edge apparaat, maar sluit u de verbinding achter in het Windows-beheer centrum. Het Windows-beheer centrum kan ook worden verwijderd uit het menu instellingen.
+
 ## <a name="next-steps"></a>Volgende stappen
 
 In deze snelstart hebt u een IoT Edge-apparaat gemaakt en de Azure IoT Edge-cloudinterface gebruikt om code te implementeren op het apparaat. U hebt nu een testapparaat waarmee ruwe gegevens over de omgeving worden gegenereerd.
@@ -258,4 +247,4 @@ In deze snelstart hebt u een IoT Edge-apparaat gemaakt en de Azure IoT Edge-clou
 De volgende stap bestaat uit het instellen van uw lokale ontwikkelomgeving, zodat u kunt beginnen met het maken van IoT Edge-modules die uw bedrijfslogica uitvoeren.
 
 > [!div class="nextstepaction"]
-> [Beginnen met het ontwikkelen van IoT Edge-modules voor Windows-apparaten](tutorial-develop-for-windows.md)
+> [Beginnen met het ontwikkelen van IoT Edge modules](tutorial-develop-for-linux.md)

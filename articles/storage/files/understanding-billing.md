@@ -4,22 +4,22 @@ description: Meer informatie over hoe u de ingerichte en betalen per gebruik-fac
 author: roygara
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/1/2020
+ms.date: 01/20/2021
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: 880ec90ce1cf0efffce0cfd6800bdbaed23f8dd0
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 19ecbea70d9cb6b8cc31c72ed3c1294cd137ce93
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831462"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632475"
 ---
 # <a name="understanding-azure-files-billing"></a>Wat is Azure Files facturering?
 Azure Files biedt twee verschillende facturerings modellen: ingericht en betalen naar gebruik. Het ingerichte model is alleen beschikbaar voor Premium-bestands shares, de bestands shares worden geïmplementeerd in het type opslag account **FileStorage** . Het betalen naar gebruik-model is alleen beschikbaar voor standaard bestands shares. Dit zijn bestands shares geïmplementeerd in het type **GPv2 (General version 2)-** opslag account. In dit artikel wordt uitgelegd hoe beide modellen werken om u te helpen uw maandelijkse Azure Files factuur te begrijpen.
 
 U kunt de huidige prijzen voor Azure Files vinden op de [pagina met Azure files prijzen](https://azure.microsoft.com/pricing/details/storage/files/).
 
-## <a name="provisioned-billing"></a>Ingerichte facturering
+## <a name="provisioned-model"></a>Ingericht model
 Azure Files gebruikt een ingericht model voor Premium-bestands shares. In een ingericht bedrijfs model geeft u proactief op voor de Azure Files-service wat uw opslag vereisten zijn, in plaats van te worden gefactureerd op basis van wat u gebruikt. Dit is vergelijkbaar met het kopen van hardware on-premises, in dat geval bij het inrichten van een Azure-bestands share met een bepaalde hoeveelheid opslag ruimte, u betaalt voor die opslag, ongeacht of u deze gebruikt of niet, net zoals u niet begint met het betalen van de kosten van fysieke media op locatie wanneer u ruimte gebruikt. In tegens telling tot aanschaf van fysieke media op locatie, kunnen ingerichte bestands shares dynamisch worden uitgebreid of omlaag worden geschaald, afhankelijk van uw opslag-en i/o-prestatie kenmerken.
 
 Wanneer u een Premium-bestands share inricht, geeft u op hoeveel GiBs uw werk belasting vereist. Elke GiB die u inricht, geeft u recht op extra IOPS en door Voer op een vaste verhouding. Naast de basis lijn-IOPS waarvoor u gegarandeerd bent, ondersteunt elke Premium-bestands share bursting op basis van beste inspanningen. De formules voor IOPS en door Voer zijn als volgt:
@@ -63,7 +63,7 @@ Aandelen tegoeden hebben drie statussen:
 
 Nieuwe bestands shares beginnen met het volledige aantal tegoeden in de burst-Bucket. Burst-tegoed wordt niet in rekening gebracht als de delen IOPS onder de basis lijn IOPS vallen vanwege het beperken van de server.
 
-## <a name="pay-as-you-go-billing"></a>Betalen per gebruik-facturering
+## <a name="pay-as-you-go-model"></a>Model voor betalen naar gebruik
 Azure Files maakt gebruik van een zakelijk model voor betalen per gebruik voor standaard bestands shares. In een zakelijk model voor betalen per gebruik wordt het bedrag dat u betaalt, bepaald door de hoeveelheid die u daad werkelijk gebruikt, in plaats van op basis van een ingerichte hoeveelheid. Op hoog niveau betaalt u kosten voor de hoeveelheid gegevens die op de schijf is opgeslagen en vervolgens een extra reeks trans acties op basis van uw gebruik van die gegevens. Een model voor betalen per gebruik kan rendabel zijn, omdat u geen rekening hoeft te houden met het oog op toekomstige groei-of prestatie vereisten of als u de inrichting van uw werk belasting in de loop van de tijd wilt afbreken. Anderzijds kan een model voor betalen naar gebruik moeilijk worden gepland als onderdeel van een budget proces, omdat het facturerings model voor betalen per gebruik wordt aangestuurd door het verbruik van eind gebruikers.
 
 ### <a name="differences-in-standard-tiers"></a>Verschillen in de standaard lagen
@@ -92,7 +92,7 @@ Er zijn vijf basis transactie Categorieën: schrijven, lijst, lezen, Overig en v
 > [!Note]  
 > NFS 4,1 is alleen beschikbaar voor Premium-bestands shares, die gebruikmaken van het ingerichte facturerings model, trans acties hebben geen invloed op facturering voor Premium-bestands shares.
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 - [Azure files pagina met prijzen](https://azure.microsoft.com/pricing/details/storage/files/).
 - [Planning voor een Azure files implementatie](./storage-files-planning.md) en [planning voor een implementatie van Azure file sync](./storage-sync-files-planning.md).
 - [Maak een bestands share](./storage-how-to-create-file-share.md) en [Implementeer Azure file sync](./storage-sync-files-deployment-guide.md).

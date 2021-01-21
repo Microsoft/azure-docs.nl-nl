@@ -5,19 +5,19 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: mijos, rarayudu, logicappspm
 ms.topic: conceptual
-ms.date: 11/20/2020
-ms.openlocfilehash: 0057a4671dbc63bf53bafa8d2d742d4edcda1e5e
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.date: 01/20/2021
+ms.openlocfilehash: d31fbd813f0c5d63ee9eddbff5b299209618626b
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741045"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629671"
 ---
 # <a name="set-up-customer-managed-keys-to-encrypt-data-at-rest-for-integration-service-environments-ises-in-azure-logic-apps"></a>Door de klant beheerde sleutels instellen om gegevens in rust te versleutelen voor integratie service omgevingen (ISEs) in Azure Logic Apps
 
 Azure Logic Apps is afhankelijk van Azure Storage om gegevens in rust op te slaan en automatisch te [versleutelen](../storage/common/storage-service-encryption.md). Deze versleuteling beveiligt uw gegevens en helpt u te voldoen aan de verplichtingen voor beveiliging en naleving van uw organisatie. Azure Storage maakt standaard gebruik van door micro soft beheerde sleutels om uw gegevens te versleutelen. Zie voor meer informatie over de werking van Azure Storage versleuteling [Azure Storage versleuteling voor Data-at-rest](../storage/common/storage-service-encryption.md) en [Azure Data Encryption-at-rest](../security/fundamentals/encryption-atrest.md).
 
-Wanneer u een [Integration service Environment (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) maakt voor het hosten van uw logische apps en u meer controle wilt hebben over de versleutelings sleutels die worden gebruikt door Azure Storage, kunt u uw eigen sleutel instellen, gebruiken en beheren met behulp van [Azure Key Vault](../key-vault/general/overview.md). Deze mogelijkheid is ook bekend als ' Bring Your Own Key ' (BYOK) en uw sleutel wordt een ' door de klant beheerde sleutel ' genoemd.
+Wanneer u een [Integration service Environment (ISE)](../logic-apps/connect-virtual-network-vnet-isolated-environment-overview.md) maakt voor het hosten van uw logische apps en u meer controle wilt hebben over de versleutelings sleutels die worden gebruikt door Azure Storage, kunt u uw eigen sleutel instellen, gebruiken en beheren met behulp van [Azure Key Vault](../key-vault/general/overview.md). Deze mogelijkheid staat bekend als ' Bring Your Own Key ' (BYOK) en uw sleutel wordt een ' door de klant beheerde sleutel ' genoemd. Met deze functie Azure Storage automatisch [dubbele versleuteling of *infrastructuur versleuteling* ingeschakeld met behulp van door het platform beheerde sleutels](../security/fundamentals/double-encryption.md) voor uw sleutel. Zie voor meer informatie [dubbele gegevens versleutelen met infrastructuur versleuteling](../storage/common/storage-service-encryption.md#doubly-encrypt-data-with-infrastructure-encryption).
 
 In dit onderwerp wordt beschreven hoe u uw eigen versleutelings sleutel instelt en opgeeft die u wilt gebruiken wanneer u uw ISE maakt met behulp van de Logic Apps REST API. Zie voor de algemene stappen voor het maken van een ISE via Logic Apps REST API [een Integration service Environment (ISE) maken met behulp van de Logic Apps rest API](../logic-apps/create-integration-service-environment-rest-api.md).
 
@@ -39,7 +39,7 @@ In dit onderwerp wordt beschreven hoe u uw eigen versleutelings sleutel instelt 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Dezelfde vereisten [prerequisites](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) en [voor waarden om toegang te krijgen tot uw ISE](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) als bij het maken van een ISE in de Azure Portal
+* Dezelfde vereisten [](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#prerequisites) en [voor waarden om toegang te krijgen tot uw ISE](../logic-apps/connect-virtual-network-vnet-isolated-environment.md#enable-access) als bij het maken van een ISE in de Azure Portal
 
 * Een Azure-sleutel kluis met de opties **voorlopig verwijderen** en **niet opschonen** ingeschakeld
 
@@ -51,7 +51,7 @@ In dit onderwerp wordt beschreven hoe u uw eigen versleutelings sleutel instelt 
   |----------|-------|
   | **Sleutel type** | RSA |
   | **RSA-sleutel grootte** | 2048 |
-  | **Ingeschakeld** | Ja |
+  | **Ingeschakeld** | Yes |
   |||
 
   ![Uw door de klant beheerde versleutelings sleutel maken](./media/customer-managed-keys-integration-service-environment/create-customer-managed-key-for-encryption.png)

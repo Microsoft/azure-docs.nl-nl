@@ -4,12 +4,12 @@ description: Meer informatie over het aanpassen van de functie voor verificatie 
 ms.topic: article
 ms.date: 07/08/2020
 ms.custom: seodec18, devx-track-azurecli
-ms.openlocfilehash: 85fd7fdba4c62f4837a419af44c83f7e46cb9e39
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 4f2f43b142b290d29a4a90e504422b6c9ba2739c
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601778"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630324"
 ---
 # <a name="advanced-usage-of-authentication-and-authorization-in-azure-app-service"></a>Geavanceerd gebruik van verificatie en autorisatie in Azure App Service
 
@@ -115,7 +115,7 @@ Standaard wordt de client door een geslaagde aanmelding omgeleid naar de URL `/.
 GET /.auth/logout?post_logout_redirect_uri=/index.html
 ```
 
-Het is raadzaam om de [encode](https://wikipedia.org/wiki/Percent-encoding) waarde van te coderen `post_logout_redirect_uri` .
+Het is raadzaam om de [](https://wikipedia.org/wiki/Percent-encoding) waarde van te coderen `post_logout_redirect_uri` .
 
 Wanneer u Fully Qualified Url's gebruikt, moet de URL ofwel worden gehost in hetzelfde domein of worden geconfigureerd als een toegestane externe omleidings-URL voor uw app. In het volgende voor beeld wordt een omleiding naar `https://myexternalurl.com` die niet gehost in hetzelfde domein:
 
@@ -279,6 +279,150 @@ De ID-provider kan bepaalde machtigingen voor een schakel sleutel geven. Bijvoor
 ### <a name="application-level"></a>Toepassings niveau
 
 Als een van de andere niveaus niet de autorisatie biedt die u nodig hebt, of als uw platform of ID-provider niet wordt ondersteund, moet u aangepaste code schrijven om gebruikers te autoriseren op basis van de [gebruikers claims](#access-user-claims).
+
+## <a name="updating-the-configuration-version-preview"></a>De configuratie versie bijwerken (preview)
+
+Er zijn twee versies van de beheer-API voor de functie voor verificatie/autorisatie. De preview v2-versie is vereist voor de ervaring authenticatie (preview) in de Azure Portal. Een app die al de V1-API gebruikt, kan een upgrade uitvoeren naar versie v2 wanneer er enkele wijzigingen zijn aangebracht. In het bijzonder moet de geheime configuratie worden verplaatst naar de instellingen van een sleuf-Sticky-toepassing. De configuratie van de micro soft-account provider wordt ook momenteel niet ondersteund in v2.
+
+> [!WARNING]
+> Door de migratie naar v2 Preview wordt het beheer van de functie voor App Service verificatie/autorisatie voor uw toepassing via sommige clients, zoals de bestaande ervaring in de Azure Portal, Azure CLI en Azure PowerShell, uitgeschakeld. Dit kan niet worden omgekeerd. Tijdens de preview wordt de migratie van productie werkbelastingen niet aangemoedigd of ondersteund. Volg de stappen in deze sectie alleen voor test toepassingen.
+
+### <a name="moving-secrets-to-application-settings"></a>Geheimen verplaatsen naar toepassings instellingen
+
+1. De bestaande configuratie ophalen met behulp van de V1 API:
+
+   ```azurecli
+   # For Web Apps
+   az webapp auth show -g <group_name> -n <site_name>
+
+   # For Azure Functions
+   az functionapp auth show -g <group_name> -n <site_name>
+   ```
+
+   Noteer de geheime waarde die wordt gebruikt voor elke provider die u hebt geconfigureerd in de resulterende JSON-nettolading:
+
+   * Aad `clientSecret`
+   * Google `googleClientSecret`
+   * Facebook `facebookAppSecret`
+   * Twitter `twitterConsumerSecret`
+   * Micro soft-account: `microsoftAccountClientSecret`
+
+   > [!IMPORTANT]
+   > De geheime waarden zijn belang rijke beveiligings referenties en moeten zorgvuldig worden afgehandeld. U kunt deze waarden niet delen of persistent maken op een lokale computer.
+
+1. Maak voor elke geheime waarde een sleuf-Sticky toepassings instellingen. U kunt de naam van elke toepassings instelling kiezen. De waarde moet overeenkomen met wat u in de vorige stap hebt verkregen of [naar een Key Vault geheim](./app-service-key-vault-references.md?toc=/azure/azure-functions/toc.json) dat u met die waarde hebt gemaakt.
+
+   Als u de instelling wilt maken, kunt u de Azure Portal gebruiken of een variant van het volgende voor elke provider uitvoeren:
+
+   ```azurecli
+   # For Web Apps, Google example    
+   az webapp config appsettings set -g <group_name> -n <site_name> --slot-settings GOOGLE_PROVIDER_AUTHENTICATION_SECRET=<value_from_previous_step>
+
+   # For Azure Functions, Twitter example
+   az functionapp config appsettings set -g <group_name> -n <site_name> --slot-settings TWITTER_PROVIDER_AUTHENTICATION_SECRET=<value_from_previous_step>
+   ```
+
+   > [!NOTE]
+   > De toepassings instellingen voor deze configuratie moeten worden gemarkeerd als sleuf-plak, wat betekent dat ze niet tussen omgevingen worden verplaatst tijdens het wisselen van een [sleuf](./deploy-staging-slots.md). Dit komt doordat uw verificatie configuratie zelf is gekoppeld aan de omgeving. 
+
+1. Maak een nieuw JSON-bestand met de naam `authsettings.json` . Neem de uitvoer die u eerder hebt ontvangen en verwijder elke geheime waarde uit deze. Schrijf de resterende uitvoer naar het bestand en zorg ervoor dat er geen geheim is opgenomen. In sommige gevallen kan de configuratie matrices hebben die lege teken reeksen bevatten. Zorg ervoor dat dat `microsoftAccountOAuthScopes` niet het geval is, en als dat zo is, schakelt u deze waarde in `null` .
+
+1. Voeg een eigenschap toe `authsettings.json` die verwijst naar de naam van de toepassings instelling die u eerder hebt gemaakt voor elke provider:
+ 
+   * Aad `clientSecretSettingName`
+   * Google `googleClientSecretSettingName`
+   * Facebook `facebookAppSecretSettingName`
+   * Twitter `twitterConsumerSecretSettingName`
+   * Micro soft-account: `microsoftAccountClientSecretSettingName`
+
+   Een voorbeeld bestand na deze bewerking kan er ongeveer als volgt uitzien, in dit geval alleen geconfigureerd voor AAD:
+
+   ```json
+   {
+       "id": "/subscriptions/00d563f8-5b89-4c6a-bcec-c1b9f6d607e0/resourceGroups/myresourcegroup/providers/Microsoft.Web/sites/mywebapp/config/authsettings",
+       "name": "authsettings",
+       "type": "Microsoft.Web/sites/config",
+       "location": "Central US",
+       "properties": {
+           "enabled": true,
+           "runtimeVersion": "~1",
+           "unauthenticatedClientAction": "AllowAnonymous",
+           "tokenStoreEnabled": true,
+           "allowedExternalRedirectUrls": null,
+           "defaultProvider": "AzureActiveDirectory",
+           "clientId": "3197c8ed-2470-480a-8fae-58c25558ac9b",
+           "clientSecret": null,
+           "clientSecretSettingName": "MICROSOFT_IDENTITY_AUTHENTICATION_SECRET",
+           "clientSecretCertificateThumbprint": null,
+           "issuer": "https://sts.windows.net/0b2ef922-672a-4707-9643-9a5726eec524/",
+           "allowedAudiences": [
+               "https://mywebapp.azurewebsites.net"
+           ],
+           "additionalLoginParams": null,
+           "isAadAutoProvisioned": true,
+           "aadClaimsAuthorization": null,
+           "googleClientId": null,
+           "googleClientSecret": null,
+           "googleClientSecretSettingName": null,
+           "googleOAuthScopes": null,
+           "facebookAppId": null,
+           "facebookAppSecret": null,
+           "facebookAppSecretSettingName": null,
+           "facebookOAuthScopes": null,
+           "gitHubClientId": null,
+           "gitHubClientSecret": null,
+           "gitHubClientSecretSettingName": null,
+           "gitHubOAuthScopes": null,
+           "twitterConsumerKey": null,
+           "twitterConsumerSecret": null,
+           "twitterConsumerSecretSettingName": null,
+           "microsoftAccountClientId": null,
+           "microsoftAccountClientSecret": null,
+           "microsoftAccountClientSecretSettingName": null,
+           "microsoftAccountOAuthScopes": null,
+           "isAuthFromFile": "false"
+       }   
+   }
+   ```
+
+1. Dien dit bestand in als de nieuwe verificatie/autorisatie configuratie voor uw app:
+
+   ```azurecli
+   az rest --method PUT --url "/subscriptions/<subscription_id>/resourceGroups/<group_name>/providers/Microsoft.Web/sites/<site_name>/config/authsettings?api-version=2020-06-01" --body @./authsettings.json
+   ```
+
+1. Controleer of de app nog steeds wordt uitgevoerd zoals verwacht na deze penbeweging.
+
+1. Verwijder het bestand dat u in de vorige stappen hebt gebruikt.
+
+U hebt nu de app gemigreerd voor het opslaan van geheimen van de identiteits provider als toepassings instellingen.
+
+### <a name="support-for-microsoft-account-registrations"></a>Ondersteuning voor Microsoft-account registraties
+
+De v2-API biedt momenteel geen ondersteuning voor micro soft-accounts als een DISTINCT-provider. In plaats daarvan maakt het gebruik van het geconvergeerde [micro soft Identity-platform](../active-directory/develop/v2-overview.md) om gebruikers te registreren met persoonlijke micro soft-accounts. Wanneer u overschakelt naar de v2 API, wordt de configuratie v1 Azure Active Directory gebruikt voor het configureren van de micro soft Identity platform-provider.
+
+Als uw bestaande configuratie een micro soft-account provider bevat en geen Azure Active Directory provider heeft, kunt u de configuratie overschakelen naar de Azure Active Directory provider en vervolgens de migratie uitvoeren. Om dit te doen:
+
+1. Ga naar [**app-registraties**](https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade) in het Azure Portal en zoek de registratie die is gekoppeld aan uw micro soft-account provider. Deze kan zich onder de kop ' toepassingen van persoonlijk account ' bevinden.
+1. Ga naar de pagina verificatie voor de registratie. Onder omleidings-Uri's moet er een vermelding worden weer gegeven die eindigt op `/.auth/login/microsoftaccount/callback` . Kopieer deze URI.
+1. Voeg een nieuwe URI toe die overeenkomt met de URL die u zojuist hebt gekopieerd, behalve in plaats daarvan eindigen op `/.auth/login/aad/callback` . Hiermee staat u toe dat de registratie wordt gebruikt door de configuratie voor App Service verificatie/autorisatie.
+1. Ga naar de App Service verificatie/autorisatie configuratie voor uw app.
+1. Verzamel de configuratie voor de micro soft-account provider.
+1. Configureer de Azure Active Directory provider met behulp van de ' geavanceerde ' beheer modus, waarbij u de client-ID en client Secret-waarden opgeeft die u in de vorige stap hebt verzameld. Gebruik voor de URL van de uitgever gebruik `<authentication-endpoint>/<tenant-id>/v2.0` en vervang door *\<authentication-endpoint>* het [verificatie-eind punt voor uw cloud omgeving](../active-directory/develop/authentication-national-cloud.md#azure-ad-authentication-endpoints) (bijvoorbeeld: " https://login.microsoftonline.com " voor wereld wijd Azure), vervangen *\<tenant-id>* door de id van uw **Directory (Tenant)**.
+1. Nadat u de configuratie hebt opgeslagen, moet u de aanmeldings stroom testen door in uw browser naar het `/.auth/login/aad` eind punt op uw site te navigeren en de aanmeldings stroom te volt ooien.
+1. U hebt nu de configuratie gekopieerd over, maar de bestaande configuratie van de micro soft-account provider blijft behouden. Voordat u het verwijdert, moet u ervoor zorgen dat alle onderdelen van uw app naar de Azure Active Directory provider verwijzen via aanmeldings koppelingen, enzovoort. Controleer of alle onderdelen van uw app werken zoals verwacht.
+1. Zodra u hebt gevalideerd dat dingen werken aan de AAD-Azure Active Directory provider, kunt u de configuratie van de micro soft-account provider verwijderen.
+
+Sommige apps hebben mogelijk al afzonderlijke registraties voor Azure Active Directory en het micro soft-account. Deze apps kunnen op dit moment niet worden gemigreerd. 
+
+> [!WARNING]
+> U kunt de twee registraties convergeren door de [ondersteunde account typen](../active-directory/develop/supported-accounts-validation.md) voor de registratie van de Aad-app te wijzigen. Dit zou er echter toe leiden dat er een nieuwe toestemming wordt gevraagd voor gebruikers van micro soft-accounts en dat de identiteits claims van die gebruikers kunnen verschillen in de structuur, met `sub` name het wijzigen van waarden sinds een nieuwe app-id wordt gebruikt. Deze methode wordt niet aanbevolen, tenzij zorgvuldig is begrepen. U moet in plaats daarvan wachten op ondersteuning voor de twee registraties in het v2 API-Opper vlak.
+
+### <a name="switching-to-v2"></a>Overschakelen naar v2
+
+Zodra de bovenstaande stappen zijn uitgevoerd, gaat u naar de app in de Azure Portal. Selecteer de sectie verificatie (preview). 
+
+U kunt ook een PUT-aanvraag indienen `config/authsettingsv2` bij de resource onder de site resource. Het schema voor de payload is hetzelfde als vastgelegd in de sectie [configureren met een bestand](#config-file) .
 
 ## <a name="configure-using-a-file-preview"></a><a name="config-file"> </a>Configureren met behulp van een bestand (preview)
 

@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 08/24/2020
 ms.author: v-miegge
-ms.openlocfilehash: 7d1233c97ec80d5a2efa8b53c68e9e07a823165d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: cbfdb9a73f53e194b43010c0b2d84357aa3e2e5b
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91977028"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98631982"
 ---
 # <a name="windows-stop-error---0x00000074-bad-system-config-info"></a>Windows-Stop fout-0x00000074 onjuiste systeem configuratie gegevens
 
@@ -27,10 +27,10 @@ Dit artikel bevat stappen voor het oplossen van problemen waarbij Windows niet k
 
 ## <a name="symptom"></a>Symptoom
 
-Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruikt om de scherm opname van de virtuele machine weer te geven, ziet u dat de scherm opname de Windows-stop code **#0x00000074** of **BAD_SYSTEM_CONFIG_INFO**weergeeft.
+Wanneer u [Diagnostische gegevens over opstarten](./boot-diagnostics.md) gebruikt om de scherm opname van de virtuele machine weer te geven, ziet u dat de scherm opname de Windows-stop code **#0x00000074** of **BAD_SYSTEM_CONFIG_INFO** weergeeft.
 
 *Er is een probleem opgetreden op de PC en opnieuw moet worden opgestart. U kunt opnieuw opstarten.* 
- *Ga voor meer informatie over dit probleem en mogelijke oplossingen naar http://windows.com/stopcode * 
+ *Ga voor meer informatie over dit probleem en mogelijke oplossingen naar http://windows.com/stopcode* 
  *Als u een ondersteunings medewerker belt, geeft u deze informatie:* 
  *Stop code: BAD_SYSTEM_CONFIG_INFO*
 
@@ -47,6 +47,9 @@ De **BAD_SYSTEM_CONFIG_INFO** stop code treedt op als het **systeem** register o
 ## <a name="solution"></a>Oplossing
 
 ### <a name="process-overview"></a>Overzicht van het proces:
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 1. Een herstel-VM maken en openen.
 1. Controleer op beschadiging van Hive.
@@ -73,7 +76,7 @@ Met de onderstaande instructies kunt u bepalen of de oorzaak is veroorzaakt door
 1. Open de **REGI ster-editor** op de virtuele machine voor herstel. Typ ' REGEDIT ' in de Windows-zoek balk om het bestand te zoeken.
 1. Selecteer in de REGI ster-editor **HKEY_LOCAL_MACHINE** om deze te markeren en selecteer vervolgens **bestand > component laden...** in het menu.
 1. Blader naar `<VOLUME LETTER OF BROKEN OS DISK>:\windows\system32\config\SYSTEM` en selecteer **openen**.
-1. Wanneer u wordt gevraagd een naam in te voeren, voert u **BROKENSYSTEM**in.
+1. Wanneer u wordt gevraagd een naam in te voeren, voert u **BROKENSYSTEM** in.
 
    1. Als de Hive niet kan worden geopend of als deze leeg is, is het onderdeel beschadigd. Als de component is beschadigd, [opent u een ondersteunings ticket](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 

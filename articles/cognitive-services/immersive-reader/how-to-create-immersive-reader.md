@@ -10,12 +10,12 @@ ms.subservice: immersive-reader
 ms.topic: conceptual
 ms.date: 07/22/2019
 ms.author: rwaller
-ms.openlocfilehash: b012da0b2aea4a50002e9adbc0876396ddd4b5e7
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.openlocfilehash: 2503355a24a7452ca1ff9886a80f2956897889c4
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94368726"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630392"
 ---
 # <a name="create-an-immersive-reader-resource-and-configure-azure-active-directory-authentication"></a>Een resource voor insluitende lezer maken en Azure Active Directory authenticatie configureren
 
@@ -143,21 +143,27 @@ Het script is zo ontworpen dat het flexibel is. Er wordt eerst gezocht naar best
     }
     ```
 
-1. Voer de functie uit `Create-ImmersiveReaderResource` en geef zo nodig de para meters op.
+1. Voer de functie uit `Create-ImmersiveReaderResource` en geef zo nodig de tijdelijke aanduidingen <PARAMETER_VALUES> op met uw eigen waarden.
 
     ```azurepowershell-interactive
+    Create-ImmersiveReaderResource -SubscriptionName '<SUBSCRIPTION_NAME>' -ResourceName '<RESOURCE_NAME>' -ResourceSubdomain '<RESOURCE_SUBDOMAIN>' -ResourceSKU '<RESOURCE_SKU>' -ResourceLocation '<RESOURCE_LOCATION>' -ResourceGroupName '<RESOURCE_GROUP_NAME>' -ResourceGroupLocation '<RESOURCE_GROUP_LOCATION>' -AADAppDisplayName '<AAD_APP_DISPLAY_NAME>' -AADAppIdentifierUri '<AAD_APP_IDENTIFIER_URI>' -AADAppClientSecret '<AAD_APP_CLIENT_SECRET>' -AADAppClientSecretExpiration '<AAD_APP_CLIENT_SECRET_EXPIRATION>'
+    ```
+
+    De volledige opdracht ziet er ongeveer als volgt uit. Hier hebben we elke para meter op een eigen regel voor duidelijkheid geplaatst, zodat u de hele opdracht kunt zien. Deze opdracht mag niet worden gekopieerd of gebruikt. Kopieer en gebruik de bovenstaande opdracht met uw eigen waarden. Dit voor beeld bevat dummy waarden voor de bovenstaande <PARAMETER_VALUES>. Uw eigen namen voor deze waarden komen niet overeen met uw eigen naam.
+
+    ```
     Create-ImmersiveReaderResource
-      -SubscriptionName '<SUBSCRIPTION_NAME>' `
-      -ResourceName '<RESOURCE_NAME>' `
-      -ResourceSubdomain '<RESOURCE_SUBDOMAIN>' `
-      -ResourceSKU '<RESOURCE_SKU>' `
-      -ResourceLocation '<RESOURCE_LOCATION>' `
-      -ResourceGroupName '<RESOURCE_GROUP_NAME>' `
-      -ResourceGroupLocation '<RESOURCE_GROUP_LOCATION>' `
-      -AADAppDisplayName '<AAD_APP_DISPLAY_NAME>' `
-      -AADAppIdentifierUri '<AAD_APP_IDENTIFIER_URI>' `
-      -AADAppClientSecret '<AAD_APP_CLIENT_SECRET>'
-      -AADAppClientSecretExpiration '<AAD_APP_CLIENT_SECRET_EXPIRATION>'
+        -SubscriptionName 'MyOrganizationSubscriptionName'
+        -ResourceName 'MyOrganizationImmersiveReader'
+        -ResourceSubdomain 'MyOrganizationImmersiveReader'
+        -ResourceSKU 'S0'
+        -ResourceLocation 'westus2'
+        -ResourceGroupName 'MyResourceGroupName'
+        -ResourceGroupLocation 'westus2'
+        -AADAppDisplayName 'MyOrganizationImmersiveReaderAADApp'
+        -AADAppIdentifierUri 'https://MyOrganizationImmersiveReaderAADApp'
+        -AADAppClientSecret 'SomeStrongPassword'
+        -AADAppClientSecretExpiration '2021-12-31'
     ```
 
     | Parameter | Opmerkingen |
@@ -165,7 +171,7 @@ Het script is zo ontworpen dat het flexibel is. Er wordt eerst gezocht naar best
     | SubscriptionName |De naam van het Azure-abonnement dat moet worden gebruikt voor uw insluitende lezer-resource. U moet een abonnement hebben om een resource te kunnen maken. |
     | ResourceName |  Moet alfanumeriek zijn en kan '-' bevatten, zolang het niet het eerste of laatste teken is. De lengte mag niet langer zijn dan 63 tekens.|
     | ResourceSubdomain |Er is een aangepast subdomein nodig voor uw insluitende lezer-resource. Het subdomein wordt gebruikt door de SDK bij het aanroepen van de insluitende lezer-service om de lezer te starten. Het subdomein moet globaal uniek zijn. Het subdomein moet alfanumeriek zijn en kan '-' bevatten, zolang het niet het eerste of laatste teken is. De lengte mag niet langer zijn dan 63 tekens. Deze para meter is optioneel als de resource al bestaat. |
-    | ResourceSKU |Opties: `S0` . Ga naar onze [pagina met Cognitive Services prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/immersive-reader/) voor meer informatie over elke beschik bare SKU. Deze para meter is optioneel als de resource al bestaat. |
+    | ResourceSKU |Opties: `S0` (Standard-laag) of `S1` (onderwijs/non-profit organisaties). Ga naar onze [pagina met Cognitive Services prijzen](https://azure.microsoft.com/pricing/details/cognitive-services/immersive-reader/) voor meer informatie over elke beschik bare SKU. Deze para meter is optioneel als de resource al bestaat. |
     | ResourceLocation |Opties: `eastus` , `eastus2` , `southcentralus` , `westus` , `westus2` , `australiaeast` , `southeastasia` , `centralindia` , `japaneast` , `northeurope` , `uksouth` , `westeurope` . Deze para meter is optioneel als de resource al bestaat. |
     | ResourceGroupName |Resources worden gemaakt in resource groepen binnen abonnementen. Geef de naam van een bestaande resource groep op. Als de resource groep nog niet bestaat, wordt er een nieuwe met deze naam gemaakt. |
     | ResourceGroupLocation |Als uw resource groep niet bestaat, moet u een locatie opgeven voor het maken van de groep. Voer uit om een lijst met locaties te vinden `az account list-locations` . Gebruik de eigenschap *name* (zonder spaties) van het geretourneerde resultaat. Deze para meter is optioneel als uw resource groep al bestaat. |

@@ -6,13 +6,13 @@ ms.author: bagol
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
-ms.date: 12/03/2020
-ms.openlocfilehash: 003a71f962652b1a1436f5d9875835534090a77a
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.date: 01/19/2021
+ms.openlocfilehash: b376883ab7d8ef0ffd57a271e74862b684788ebd
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196585"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630273"
 ---
 # <a name="automatically-label-your-data-in-azure-purview"></a>Voorzie uw gegevens automatisch in azure controle sfeer liggen
 
@@ -32,10 +32,9 @@ In controle sfeer liggen zijn classificaties vergelijkbaar met de labels van tag
 
 Controle sfeer liggen maakt gebruik van dezelfde classificaties, ook wel aangeduid als gevoelige informatie typen, als Microsoft 365.  MIP-gevoeligheids labels worden gemaakt in de Microsoft 365 Security and Compliance Center (SCC). Op deze manier kunt u uw bestaande gevoelige labels uitbreiden over uw Azure controle sfeer liggen-assets.
 
-> [!NOTE]
-> Classificaties worden rechtstreeks overeenkomen, zoals een sofi-nummer, dat een classificatie heeft van het **sofi-nummer**. 
->
-> In contrast worden labels van gevoeligheid toegepast wanneer een of meer classificaties en voor waarden samen worden gevonden. In deze context verwijzen de [voor waarden](/microsoft-365/compliance/apply-sensitivity-label-automatically) naar alle para meters die u kunt definiëren voor ongestructureerde gegevens, zoals **nabijheid van een andere classificatie** en **% betrouw baarheid**. 
+**Classificaties** worden rechtstreeks overeenkomen, zoals een sofi-nummer, dat een classificatie heeft van het **sofi-nummer**. 
+
+In contrast worden **labels van gevoeligheid** toegepast wanneer een of meer classificaties en voor waarden samen worden gevonden. In deze context verwijzen de [voor waarden](/microsoft-365/compliance/apply-sensitivity-label-automatically) naar alle para meters die u kunt definiëren voor ongestructureerde gegevens, zoals *nabijheid van een andere classificatie* en *% betrouw baarheid*. 
 
 Gevoeligheids labels in azure controle sfeer liggen kunnen worden gebruikt om automatisch labels toe te passen op bestanden en database kolommen.
 
@@ -44,6 +43,7 @@ Zie voor meer informatie:
 - [Meer informatie over gevoeligheids labels](/microsoft-365/compliance/sensitivity-labels) in de Microsoft 365 documentatie
 - [Wat zijn regels voor auto labeling?](#what-are-autolabeling-rules)
 - [Ondersteunde gegevens typen voor gevoeligheids labels in azure controle sfeer liggen](#supported-data-types-for-sensitivity-labels-in-azure-purview)
+- [Labelen voor SQL database kolommen](#labeling-for-sql-database-columns)
 
 #### <a name="what-are-autolabeling-rules"></a>Wat zijn regels voor auto labeling?
 
@@ -54,7 +54,6 @@ Regels voor het autolabelen zijn voor waarden die u opgeeft, waarbij wordt aange
 Wanneer u uw etiketten maakt, moet u ervoor zorgen dat u regels voor automatisch labelen definieert voor zowel [bestanden](#define-autolabeling-rules-for-files) als [database kolommen](#define-autolabeling-rules-for-database-columns) om uw labels te laten Toep assen met elke gegevens scan. 
 
 Nadat u uw gegevens in controle sfeer liggen hebt gescand, kunt u de labels weer geven die automatisch zijn toegepast in de controle sfeer liggen-catalogus en inzicht rapporten.
-
 #### <a name="supported-data-types-for-sensitivity-labels-in-azure-purview"></a>Ondersteunde gegevens typen voor gevoeligheids labels in azure controle sfeer liggen
 
 Gevoeligheids labels worden ondersteund in azure controle sfeer liggen voor de volgende gegevens typen:
@@ -62,8 +61,16 @@ Gevoeligheids labels worden ondersteund in azure controle sfeer liggen voor de v
 |Gegevenstype  |Bronnen  |
 |---------|---------|
 |Automatische labeling voor bestanden     |     -Azure Blob Storage  </br>-Azure Data Lake Storage gen 1 en gen 2  |
-|Automatische labeling voor database kolommen     |  -SQL Server </br>-Azure SQL database </br>-Azure SQL Database beheerd exemplaar   <br> -Azure Synapse  <br>-Azure Cosmos DB   |
+|Automatische labeling voor database kolommen     |  -SQL Server </br>-Azure SQL database </br>-Azure SQL Database beheerd exemplaar   <br> -Azure Synapse  <br>-Azure Cosmos DB <br><br>Zie voor meer informatie [labelen voor SQL database kolommen](#labeling-for-sql-database-columns) hieronder.  |
 | | |
+
+#### <a name="labeling-for-sql-database-columns"></a>Labelen voor SQL database kolommen
+
+Naast controle sfeer liggen-labels voor database kolommen ondersteunt micro soft ook labels voor SQL database kolommen met behulp van de SQL-gegevens classificatie in [SQL Server Management Studio (SSMS)](/sql/ssms/sql-server-management-studio-ssms). Hoewel controle sfeer liggen gebruikmaakt van de globale [MIP-gevoeligheids labels](/microsoft-365/compliance/sensitivity-labels), maakt SSMS alleen gebruik van labels die lokaal zijn gedefinieerd.
+
+Labels in controle sfeer liggen en labeling in SSMS zijn afzonderlijke processen die momenteel niet met elkaar communiceren. Labels die in SSMS worden toegepast, worden daarom niet weer gegeven in controle sfeer liggen en vice versa. We raden Azure controle sfeer liggen aan voor het labelen van SQL-data bases, omdat hierin globale MIP-labels worden gebruikt die kunnen worden toegepast op meerdere platforms.
+
+Zie de documentatie voor SQL- [gegevens detectie en-classificatie](/sql/relational-databases/security/sql-data-discovery-and-classification)voor meer informatie.
 
 ## <a name="how-to-create-sensitivity-labels-in-microsoft-365"></a>Gevoeligheids labels maken in Microsoft 365
 
@@ -86,7 +93,7 @@ MIP-gevoeligheids labels zijn standaard alleen beschikbaar voor assets in Micros
 
 Voor het Toep assen van MIP-gevoeligheids labels op Azure-assets in azure controle sfeer liggen moet u expliciet toestemming geven om de labels uit te breiden en de specifieke labels te selecteren die u beschikbaar wilt maken in controle sfeer liggen.
 
-Door de gevoeligheids labels van MIP uit te breiden met Azure controle sfeer liggen, kunnen organisaties nu de gevoeligheid van een breder scala aan gegevens bronnen detecteren, classificeren en er inzicht in krijgen, waardoor het risico op naleving wordt geminimaliseerd.
+Door de gevoeligheids labels van MIP uit te breiden met Azure controle sfeer liggen, kunnen organisaties nu inzicht krijgen in de gevoeligheid van een breder scala aan gegevens bronnen en zo een grotere mate van de nalevings Risico's beperken.
 
 > [!NOTE]
 > Omdat Microsoft 365 en Azure controle sfeer liggen afzonderlijke services zijn, is het mogelijk dat ze in verschillende regio's worden geïmplementeerd. Label namen en aangepaste gevoelige informatie typen worden beschouwd als klant gegevens en worden op dezelfde geografische locatie bewaard, standaard om de gevoeligheid van uw gegevens te beschermen en AVG wetten te voor komen.
@@ -123,7 +130,7 @@ Wanneer u labels uitbreidt naar assets in azure controle sfeer liggen, kunt u de
 
     Zie voor meer informatie over de wizard opties [wat gevoeligheids labels kunnen doen](/microsoft-365/compliance/sensitivity-labels#what-sensitivity-labels-can-do) in de Microsoft 365 documentatie.
 
-1. Herhaal de hierboven vermelde stappen om extra labels te maken. 
+1. Herhaal de hierboven vermelde stappen om meer labels te maken. 
 
     Als u een sublabel wilt maken, selecteert u het bovenliggende label > **...**  >  **Meer acties**  >  **Sublabel toevoegen**.
 
@@ -181,7 +188,7 @@ Scan uw gegevens in azure controle sfeer liggen om automatisch de labels toe te 
 
 Voor meer informatie over het instellen van scans op diverse assets in azure controle sfeer liggen raadpleegt u:
 
-|Bron  |Referentie  |
+|Bron  |Naslaginformatie  |
 |---------|---------|
 |**Azure Blob Storage**     |[Azure-Blob Storage registreren en controleren](register-scan-azure-blob-storage-source.md)         |
 |**Azure Data Lake Storage**     |[Azure Data Lake Storage Gen1 registreren en scannen](register-scan-adls-gen1.md) </br>[Azure Data Lake Storage Gen2 registreren en scannen](register-scan-adls-gen2.md)         |

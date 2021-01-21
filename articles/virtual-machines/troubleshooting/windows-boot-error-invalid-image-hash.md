@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/03/2020
 ms.author: v-miegge
-ms.openlocfilehash: e58e349d7b7385ec913986c39462c17deadcb61d
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 22db9c7966b6f988ca0ea799104275f3f86c77ea
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91969599"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629569"
 ---
 # <a name="windows-boot-manager-error---0xc0000428-status-invalid-image-hash"></a>Windows Boot Manager-fout: 0xC0000428-status ongeldige afbeeldings-hash
 
@@ -65,6 +65,9 @@ U kunt de vervaldatum van een preview-installatiekopie niet verlengen. Zodra de 
 - In azure bevatten alle installatie kopieën voor Windows die Preview-versies zijn, een opmerking in hun beschrijving die niet bedoeld is voor productie en die alleen beschikbaar zijn voor gebruik voor een opgegeven proef periode of als een preview-versie.
 
 ## <a name="solution"></a>Oplossing
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 Als uw installatie kopie een voorbeeld afbeelding is, is er geen manier om de verval datum voor de gebruikte installatie kopie uit te breiden, moet u [een nieuwe VM implementeren](../windows/quick-create-portal.md) met een niet-preview-installatie kopie. De volgende stappen helpen u bij het identificeren van een voorbeeld installatie kopie en het leveren van resources die u kunnen helpen bij het overbrengen van gegevens van deze VM naar een nieuwe VM. Als u de afbeelding hebt geïdentificeerd als een preview-afbeelding, kan de afbeelding niet worden hersteld, omdat deze nu is verlopen.
 

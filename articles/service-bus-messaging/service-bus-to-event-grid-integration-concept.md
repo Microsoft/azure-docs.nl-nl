@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/23/2020
 ms.author: spelluru
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 5cc112767b2204d019cb1b7bd23b1603cefdf416
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 71ee21c971b71c4000a123d1561e7e93d21203e1
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882514"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629144"
 ---
 # <a name="azure-service-bus-to-event-grid-integration-overview"></a>Overzicht integratie Azure Service Bus met Azure Event Grid
 
@@ -186,7 +186,7 @@ Ga als volgt te werk als u een nieuw Event Grid-abonnement wilt maken:
 
 ## <a name="azure-cli-instructions"></a>Instructies voor Azure CLI
 
-Controleer eerst of Azure CLI versie 2.0 of hoger is geïnstalleerd. [Download het installatieprogramma](/cli/azure/install-azure-cli?view=azure-cli-latest). Selecteer **Windows + X** en open een nieuwe Power shell-console met beheerders machtigingen. U kunt ook een opdrachtshell in Azure Portal gebruiken.
+Controleer eerst of Azure CLI versie 2.0 of hoger is geïnstalleerd. [Download het installatieprogramma](/cli/azure/install-azure-cli). Selecteer **Windows + X** en open een nieuwe Power shell-console met beheerders machtigingen. U kunt ook een opdrachtshell in Azure Portal gebruiken.
 
 Voer de volgende code uit:
 

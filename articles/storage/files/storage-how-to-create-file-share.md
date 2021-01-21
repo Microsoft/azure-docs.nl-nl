@@ -9,12 +9,12 @@ ms.date: 2/22/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli, references_regions
-ms.openlocfilehash: 705910a9e2f4ebc80a63ab22ac4edecc5ae03cd0
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 7f72d703e5377f725addc4aa8c52e1cdb0fa571d
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724796"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630748"
 ---
 # <a name="create-an-azure-file-share"></a>Een Azure-bestandsshare maken
 Als u een Azure-bestands share wilt maken, moet u drie vragen beantwoorden over hoe u deze gaat gebruiken:
@@ -124,7 +124,7 @@ $storAcct = New-AzStorageAccount `
     -Kind FileStorage 
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 Als u een opslag account wilt maken met behulp van de Azure CLI, gebruikt u de opdracht AZ Storage account create. Deze opdracht heeft veel opties; alleen de vereiste opties worden weer gegeven. Zie de [ `az storage account create` opdracht documentatie](/cli/azure/storage/account)voor meer informatie over de geavanceerde opties.
 
 Om het maken van het opslag account en de volgende bestands share te vereenvoudigen, worden in variabelen verschillende para meters opgeslagen. U kunt de variabele inhoud vervangen door de waarden die u wilt, maar houd er rekening mee dat de naam van het opslag account globaal uniek moet zijn.
@@ -172,7 +172,7 @@ De eigenschap **quota** houdt in dat iets verschilt tussen Premium-en standaard 
 
 - Voor standaard bestands shares is dit een bovengrens van de Azure-bestands share, waardoor eind gebruikers deze niet kunnen starten. Het primaire doel voor het quotum voor een standaard bestands share is budget: "Ik wil deze bestands share niet groter maken dan dit punt". Als er geen quotum is opgegeven, kan de standaard bestands share tot 100 TiB (of 5 TiB als de eigenschap grote bestands shares niet is ingesteld voor een opslag account).
 
-- Voor Premium-bestands shares is het quotum overbelast met de gemiddelde **ingerichte grootte**. De ingerichte grootte is het bedrag waarvoor u wordt gefactureerd, ongeacht het werkelijke gebruik. Wanneer u een Premium-bestands share inricht, moet u rekening houden met twee factoren: 1) de toekomstige groei van het aandeel van een ruimte gebruiks perspectief en 2) de IOPS die vereist is voor uw werk belasting. Elke ingerichte GiB geeft u recht op extra gereserveerde en burst-IOPS. Zie [Premium-bestands shares inrichten](understanding-billing.md#provisioned-billing)voor meer informatie over het plannen van een Premium-bestands share.
+- Voor Premium-bestands shares is het quotum overbelast met de gemiddelde **ingerichte grootte**. De ingerichte grootte is het bedrag waarvoor u wordt gefactureerd, ongeacht het werkelijke gebruik. Wanneer u een Premium-bestands share inricht, moet u rekening houden met twee factoren: 1) de toekomstige groei van het aandeel van een ruimte gebruiks perspectief en 2) de IOPS die vereist is voor uw werk belasting. Elke ingerichte GiB geeft u recht op extra gereserveerde en burst-IOPS. Zie [Premium-bestands shares inrichten](understanding-billing.md#provisioned-model)voor meer informatie over het plannen van een Premium-bestands share.
 
 # <a name="portal"></a>[Portal](#tab/azure-portal)
 Als u uw opslag account zojuist hebt gemaakt, kunt u ernaar navigeren vanuit het scherm implementatie door **naar resource te gaan**. Als u het opslag account eerder hebt gemaakt, kunt u ernaar navigeren via de resource groep waarin het is opgenomen. Selecteer in het opslag account de tegel gelabelde **Bestands shares** (u kunt ook naar **Bestands shares** gaan via de inhouds opgave van het opslag account).
@@ -225,7 +225,7 @@ New-AzRmStorageShare `
 > [!Note]  
 > De mogelijkheid om lagen in te stellen en te wijzigen via Power shell, vindt u in de preview AZ. Storage Power shell-module. Deze cmdlets of hun uitvoer kunnen worden gewijzigd voordat ze worden vrijgegeven in de algemeen beschik bare AZ. Storage Power shell-module. u kunt hiervoor ook scripts maken.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 U kunt een Azure-bestands share maken met behulp van de [`az storage share-rm create`](/cli/azure/storage/share-rm?preserve-view=true&view=azure-cli-latest#az_storage_share_rm_create) opdracht. Bij de volgende Azure CLI-opdrachten wordt ervan uitgegaan dat u de variabelen `$resourceGroupName` en `$storageAccountName` zoals hierboven gedefinieerd hebt ingesteld in de sectie een opslag account maken met Azure cli.
 
 De functionaliteit voor het maken of verplaatsen van een bestands share naar een specifieke laag is beschikbaar in de meest recente update voor Azure CLI. Het bijwerken van Azure CLI is specifiek voor het besturings systeem/Linux-distributie dat u gebruikt. Zie [de Azure cli installeren](/cli/azure/install-azure-cli?preserve-view=true&view=azure-cli-latest)voor instructies over het bijwerken van Azure CLI op uw systeem.
@@ -282,7 +282,7 @@ Update-AzRmStorageShare `
     -AccessTier Cool
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 De volgende Azure CLI-opdracht gaat ervan uit dat u de `$resourceGroupName` -, `$storageAccountName` -en-variabelen hebt ingesteld `$shareName` zoals beschreven in de vorige secties van dit document.
 
 ```bash

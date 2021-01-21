@@ -7,12 +7,12 @@ ms.service: iot-fundamentals
 ms.topic: conceptual
 ms.date: 12/18/2020
 ms.author: jlian
-ms.openlocfilehash: 08f033cbe121135e281379a013e11a33ae962dfb
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 1e28c7767868904fb20ae6d27c6aea9e7077eb62
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97703803"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630290"
 ---
 # <a name="iot-hub-support-for-virtual-networks-with-private-link-and-managed-identity"></a>Ondersteuning voor virtuele netwerken IoT Hub met persoonlijke koppelingen en beheerde identiteit
 
@@ -70,6 +70,9 @@ Het [ingebouwde Event hub-compatibele eind punt](iot-hub-devguide-messages-read-
 
 :::image type="content" source="media/virtual-network-support/private-built-in-endpoint.png" alt-text="Afbeelding met twee persoonlijke eind punten die elke IoT Hub privé-koppeling hebben gekregen":::
 
+Het [IP-filter](iot-hub-ip-filtering.md) van IOT hub kan optioneel de open bare toegang tot het ingebouwde eind punt beheren. 
+
+Als u de open bare netwerk toegang tot uw IoT-hub volledig wilt blok keren, [schakelt u open bare netwerk toegang uit](iot-hub-public-network-access.md) of gebruikt u IP-filter om alle IP-adressen te blok keren en selecteert u de optie om regels toe te passen op het ingebouwde eind punt.
 
 ### <a name="pricing-for-private-link"></a>Prijs voor privé koppeling
 

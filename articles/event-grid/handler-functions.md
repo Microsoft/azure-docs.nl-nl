@@ -3,12 +3,12 @@ title: Een functie in azure gebruiken als gebeurtenis-handler voor Azure Event G
 description: Hierin wordt beschreven hoe u functies kunt gebruiken die zijn gemaakt in en worden gehost door Azure Functions als gebeurtenis-handlers voor Event Grid-gebeurtenissen.
 ms.topic: conceptual
 ms.date: 09/18/2020
-ms.openlocfilehash: 5a1ec575b58829a422e4d263ae0324e0343d5ad3
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: beddc35f2dd8db974492d14aec27ce754a74737c
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98034965"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632509"
 ---
 # <a name="use-a-function-as-an-event-handler-for-event-grid-events"></a>Een functie gebruiken als gebeurtenis-handler voor Event Grid gebeurtenissen
 
@@ -75,7 +75,7 @@ U kunt deze waarden voor een bestaand abonnement bijwerken op het tabblad **func
 U kunt **maxEventsPerBatch** en **preferredBatchSizeInKilobytes** instellen in een Azure Resource Manager sjabloon. Zie voor meer informatie [micro soft. EventGrid eventSubscriptions-sjabloon verwijzing](/azure/templates/microsoft.eventgrid/eventsubscriptions).
 
 ### <a name="azure-cli"></a>Azure CLI
-U kunt de opdracht [AZ eventgrid Event-Subscription Create](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_create&preserve-view=true) of [AZ eventgrid Event-Subscription update](/cli/azure/eventgrid/event-subscription?view=azure-cli-latest#az_eventgrid_event_subscription_update&preserve-view=true) gebruiken om batch-gerelateerde instellingen te configureren met de volgende para meters: `--max-events-per-batch` of `--preferred-batch-size-in-kilobytes` .
+U kunt de opdracht [AZ eventgrid Event-Subscription Create](/cli/azure/eventgrid/event-subscription#az_eventgrid_event_subscription_create&preserve-view=true) of [AZ eventgrid Event-Subscription update](/cli/azure/eventgrid/event-subscription#az_eventgrid_event_subscription_update&preserve-view=true) gebruiken om batch-gerelateerde instellingen te configureren met de volgende para meters: `--max-events-per-batch` of `--preferred-batch-size-in-kilobytes` .
 
 ### <a name="azure-powershell"></a>Azure PowerShell
 U kunt de cmdlet [New-AzEventGridSubscription](/powershell/module/az.eventgrid/new-azeventgridsubscription) of [Update-AzEventGridSubscription](/powershell/module/az.eventgrid/update-azeventgridsubscription) gebruiken om batch instellingen te configureren met behulp van de volgende para meters: `-MaxEventsPerBatch` of `-PreferredBatchSizeInKiloBytes` .

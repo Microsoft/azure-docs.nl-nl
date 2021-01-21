@@ -8,12 +8,12 @@ ms.date: 10/06/2020
 ms.topic: reference
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: a082ccb62103ab5bd027bf49b9ee05bc48c63115
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 2878d682d0f2025a50f26baf87476f66aa236e2c
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91979515"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630613"
 ---
 # <a name="powershell-scripts-for-iot-edge-on-windows"></a>Power shell-scripts voor IoT Edge in Windows
 
@@ -101,8 +101,6 @@ Met de Initialize-IoTEdge-opdracht configureert u IoT Edge met uw apparaat conne
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Meer informatie over het gebruik van deze opdrachten in de volgende artikelen:
+Meer informatie over het gebruik van deze opdrachten in het volgende artikel:
 
-* [De runtime van Azure IoT Edge installeren of verwijderen](how-to-install-iot-edge.md)
-* [Een Azure IoT Edge apparaat inrichten met symmetrische sleutel verificatie](how-to-manual-provision-symmetric-key.md)
-* [Een Azure IoT Edge apparaat inrichten met X. 509-certificaat verificatie](how-to-manual-provision-x509.md)
+* [Azure IoT Edge voor Windows installeren of verwijderen](how-to-install-iot-edge-windows-on-windows.md)

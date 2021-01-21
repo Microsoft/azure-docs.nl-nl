@@ -4,12 +4,12 @@ description: De maximale hoeveelheid Beschik baarheid en consistentie bieden met
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 81bacd5507396352bb814310979498234ee35347
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 7b97d76f29ee8b7e44373c865baa09ba5ea4dd23
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96902898"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98631916"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Beschikbaarheid en consistentie in Event Hubs
 
@@ -30,10 +30,10 @@ Event Hubs is gebaseerd op een gepartitioneerd gegevens model. U kunt het aantal
 De eenvoudigste manier om aan de slag te gaan met Event Hubs is het standaard gedrag te gebruiken. 
 
 #### <a name="azuremessagingeventhubs-500-or-later"></a>[Azure. Messa ging. Event hubs (5.0.0 of hoger)](#tab/latest)
-Als u een nieuw **[EventHubProducerClient](/dotnet/api/azure.messaging.eventhubs.producer.eventhubproducerclient?view=azure-dotnet)** -object maakt en de methode **[SendAsync](/dotnet/api/azure.messaging.eventhubs.producer.eventhubproducerclient.sendasync?view=azure-dotnet)** gebruikt, worden uw gebeurtenissen automatisch gedistribueerd tussen partities in uw event hub. Dit gedrag zorgt voor de grootste hoeveelheid tijd.
+Als u een nieuw **[EventHubProducerClient](/dotnet/api/azure.messaging.eventhubs.producer.eventhubproducerclient)** -object maakt en de methode **[SendAsync](/dotnet/api/azure.messaging.eventhubs.producer.eventhubproducerclient.sendasync)** gebruikt, worden uw gebeurtenissen automatisch gedistribueerd tussen partities in uw event hub. Dit gedrag zorgt voor de grootste hoeveelheid tijd.
 
 #### <a name="microsoftazureeventhubs-410-or-earlier"></a>[Micro soft. Azure. Event hubs (4.1.0 of eerder)](#tab/old)
-Als u een nieuw **[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient)** -object maakt en de **[Verzend](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync?view=azure-dotnet#Microsoft_Azure_EventHubs_EventHubClient_SendAsync_Microsoft_Azure_EventHubs_EventData_)** methode gebruikt, worden uw gebeurtenissen automatisch gedistribueerd tussen partities in uw event hub. Dit gedrag zorgt voor de grootste hoeveelheid tijd.
+Als u een nieuw **[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient)** -object maakt en de **[Verzend](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync#Microsoft_Azure_EventHubs_EventHubClient_SendAsync_Microsoft_Azure_EventHubs_EventData_)** methode gebruikt, worden uw gebeurtenissen automatisch gedistribueerd tussen partities in uw event hub. Dit gedrag zorgt voor de grootste hoeveelheid tijd.
 
 ---
 

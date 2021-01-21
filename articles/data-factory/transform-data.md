@@ -10,12 +10,12 @@ ms.author: abnarain
 manager: shwang
 ms.custom: seo-lt-2019
 ms.date: 07/31/2018
-ms.openlocfilehash: 37eac4acab7232e44f94e852b1c04c5549447b09
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 43a035662cc76dc6de1de3fa990e06f2e00cfd66
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637680"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632322"
 ---
 # <a name="transform-data-in-azure-data-factory"></a>Gegevens transformeren in Azure Data Factory
 
@@ -47,9 +47,9 @@ Data Factory ondersteunt de volgende activiteiten voor gegevens transformatie di
 
 Het toewijzen van gegevens stromen zijn visueel ontworpen gegevens transformaties in Azure Data Factory. Met gegevens stromen kunnen data engineers grafische gegevens transformatie logica ontwikkelen zonder code te schrijven. De resulterende gegevens stromen worden uitgevoerd als activiteiten binnen Azure Data Factory pijp lijnen die gebruikmaken van geschaalde Spark-clusters. Gegevens stroom activiteiten kunnen worden uitgevoerd via bestaande Data Factory plannings-, beheer-, stroom-en bewakings mogelijkheden. Zie [gegevens stromen toewijzen](concepts-data-flow-overview.md)voor meer informatie.
 
-### <a name="wrangling-data-flows"></a>Wrangling-gegevens stromen
+### <a name="data-wrangling"></a>Gegevens wrangling
 
-Met Wrangling-gegevens stromen in Azure Data Factory kunt u de gegevens voorbereiding voor code gratis uitvoeren op de Cloud schaal. Wrangling-gegevens stromen kunnen worden geïntegreerd met [Power query online](/power-query/) en maken Power query M-functies beschikbaar voor gegevens Wrangling op Cloud schaal via Spark-uitvoering. Zie [wrangling Data Flows](wrangling-data-flow-overview.md)(Engelstalig) voor meer informatie.
+Met Power Query in Azure Data Factory kunt u gegevens wrangling in de Cloud schaal, waarmee u code-gratis gegevens voorbereiding kunt uitvoeren op de Cloud schaal. Data wrangling kan worden geïntegreerd met [Power query online](/power-query/) en maakt Power query M-functies beschikbaar voor gegevens wrangling op Cloud schaal via Spark-uitvoering. Zie [Data wrangling in ADF](wrangling-overview.md)voor meer informatie.
 
 ## <a name="external-transformations"></a>Externe transformaties
 
@@ -78,7 +78,7 @@ In de loop van de tijd moeten de voorspellende modellen in de Studio (klassieke)
 Zie [Azure machine learning Studio (klassieke) activiteiten gebruiken](transform-data-using-machine-learning.md) voor meer informatie over deze studio-activiteiten (klassiek). 
 
 ### <a name="stored-procedure-activity"></a>Opgeslagen procedure activiteit
-U kunt de SQL Server opgeslagen procedure-activiteit in een Data Factory-pijp lijn gebruiken om een opgeslagen procedure in een van de volgende gegevens archieven aan te roepen: Azure SQL Database, Azure Synapse Analytics (voorheen SQL Data Warehouse), SQL Server data base in uw onderneming of een Azure-VM. Zie het artikel [opgeslagen procedure-activiteit](transform-data-using-stored-procedure.md) voor meer informatie.  
+U kunt de SQL Server opgeslagen procedure-activiteit in een Data Factory-pijp lijn gebruiken voor het aanroepen van een opgeslagen procedure in een van de volgende gegevens archieven: Azure SQL Database, Azure Synapse Analytics, SQL Server data base in uw onderneming of een Azure-VM. Zie het artikel [opgeslagen procedure-activiteit](transform-data-using-stored-procedure.md) voor meer informatie.  
 
 ### <a name="data-lake-analytics-u-sql-activity"></a>Data Lake Analytics U-SQL-activiteit
 Met Data Lake Analytics U-SQL-activiteit wordt een U-SQL-script op een Azure Data Lake Analytics cluster uitgevoerd. Zie [het artikel Data Analytics U-SQL-activiteit](transform-data-using-data-lake-analytics.md) voor meer informatie. 
@@ -103,7 +103,7 @@ U kunt een aangepaste activiteit maken om R-scripts uit te voeren op uw HDInsigh
 ### <a name="compute-environments"></a>Reken omgevingen
 U maakt een gekoppelde service voor de compute-omgeving en gebruikt vervolgens de gekoppelde service wanneer u een trans formatie-activiteit definieert. Er zijn twee soorten reken omgevingen die door Data Factory worden ondersteund. 
 
-- **Op aanvraag** : in dit geval wordt de computer omgeving volledig beheerd door Data Factory. Het wordt automatisch gemaakt door de Data Factory-service voordat een taak wordt verzonden om gegevens te verwerken en te worden verwijderd wanneer de taak is voltooid. U kunt gedetailleerde instellingen van de compute-omgeving op aanvraag voor taak uitvoering, Cluster beheer en acties voor Boots traping configureren en beheren. 
+- **Op aanvraag**: in dit geval wordt de computer omgeving volledig beheerd door Data Factory. Het wordt automatisch gemaakt door de Data Factory-service voordat een taak wordt verzonden om gegevens te verwerken en te worden verwijderd wanneer de taak is voltooid. U kunt gedetailleerde instellingen van de compute-omgeving op aanvraag voor taak uitvoering, Cluster beheer en acties voor Boots traping configureren en beheren. 
 - **Neem uw eigen** werk: in dit geval kunt u uw eigen computer omgeving (bijvoorbeeld HDInsight-cluster) registreren als een gekoppelde service in Data Factory. De computer omgeving wordt beheerd door u en de Data Factory-service gebruikt deze om de activiteiten uit te voeren. 
 
 Zie het artikel [Compute linked Services](compute-linked-services.md) voor meer informatie over Compute-services die door Data Factory worden ondersteund. 

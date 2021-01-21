@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: mysql
 ms.topic: conceptual
 ms.date: 6/30/2020
-ms.openlocfilehash: 233dcbeee0bccc714e3b4fe93e7c8b19aa9f2df0
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: e9182a2a0b88f85af5305f5794fec2ffe7935701
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93242446"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98631730"
 ---
 # <a name="azure-database-for-mysql-infrastructure-double-encryption"></a>Dubbele versleuteling van Azure Database for MySQL-infra structuur
 
@@ -20,7 +20,7 @@ Azure Database for MySQL maakt gebruik van opslag [versleuteling van gegevens op
 Infrastructuur dubbele versleuteling voegt een tweede laag versleuteling toe met door service beheerde sleutels. Er wordt gebruikgemaakt van de FIPS 140-2-gevalideerde cryptografische module, maar met een ander versleutelings algoritme. Dit biedt een extra beveiligingslaag voor uw gegevens in rust. De sleutel die in de infra structuur met dubbele versleuteling wordt gebruikt, wordt ook beheerd door de Azure Database for MySQL-service. De infra structuur met dubbele versleuteling is niet standaard ingeschakeld, omdat de extra versleutelings versleuteling de prestaties kan beïnvloeden.
 
 > [!NOTE]
-> Deze functie wordt alleen ondersteund voor de prijs Categorieën Algemeen en geoptimaliseerd voor geheugen in Azure Database for PostgreSQL.
+> Deze functie wordt alleen ondersteund voor de prijs Categorieën Algemeen en geoptimaliseerd voor geheugen in Azure Database for MySQL.
 
 Infrastructuur laag versleuteling biedt het voor deel dat wordt geïmplementeerd op de laag die het dichtst bij het opslag apparaat of netwerk draden ligt. Azure Database for MySQL implementeert de twee coderings lagen met door service beheerde sleutels. Hoewel u nog steeds technisch in de service slaag bent, wordt het zeer dicht bij de hardware die de gegevens in rust opslaat. U kunt nog steeds gegevens versleuteling op rest inschakelen met behulp van de door de [klant beheerde sleutel](concepts-data-encryption-mysql.md) voor de ingerichte mysql-server. 
 
@@ -59,13 +59,7 @@ De versleutelings mogelijkheden die door Azure Database for MySQL worden geboden
 Voor Azure Database for MySQL heeft de ondersteuning voor infra structuur met dubbele versleuteling met door de service beheerde sleutel de volgende beperkingen:
 
 * Ondersteuning voor deze functionaliteit is beperkt tot de prijs categorie **Algemeen** en **geoptimaliseerd voor geheugen** .
-* U kunt een Azure Database for MySQL maken waarop infrastructuur versleuteling is ingeschakeld in de volgende regio's:
-
-   * VS - oost
-   * VS - zuid-centraal
-   * US - west 2
-   
-* * Deze functie wordt alleen ondersteund in regio's en servers, die ondersteuning bieden voor opslag tot Maxi maal 16 TB. Raadpleeg de [opslag documentatie](concepts-pricing-tiers.md#storage)voor de lijst met Azure-regio's die ondersteuning bieden voor opslag tot 16 TB.
+* Deze functie wordt alleen ondersteund in regio's en servers, die ondersteuning bieden voor opslag tot Maxi maal 16 TB. Raadpleeg de [opslag documentatie](concepts-pricing-tiers.md#storage)voor de lijst met Azure-regio's die ondersteuning bieden voor opslag tot 16 TB.
 
     > [!NOTE]
     > - Alle **nieuwe** mysql-servers die zijn gemaakt in de hierboven vermelde regio's, ondersteunen ook de versleuteling van gegevens met klant Manager-sleutels. In dit geval komen servers die zijn gemaakt via PITR (Point-in-time Restore) of lees replica's niet in aanmerking als ' nieuw '.

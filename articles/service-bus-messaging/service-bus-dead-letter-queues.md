@@ -4,12 +4,12 @@ description: Beschrijft wacht rijen voor onbestelbare berichten in Azure Service
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: fasttrack-edit, devx-track-csharp
-ms.openlocfilehash: 4dbd1216d3ff81e785f16ebed6ceabfa5d5897db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ad62f946584071e7ce6fd55f48b5f7ee8db44a2f
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91301020"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98630095"
 ---
 # <a name="overview-of-service-bus-dead-letter-queues"></a>Overzicht van Service Bus wacht rijen voor onbestelbare berichten
 
@@ -30,7 +30,7 @@ Het is niet mogelijk om het aantal berichten in de wachtrij voor onbestelbare me
 
 ![Aantal DLQ-berichten](./media/service-bus-dead-letter-queues/dead-letter-queue-message-count.png)
 
-U kunt ook het aantal DLQ-berichten ophalen met behulp van de Azure CLI-opdracht: [`az servicebus topic subscription show`](/cli/azure/servicebus/topic/subscription?view=azure-cli-latest#az-servicebus-topic-subscription-show) . 
+U kunt ook het aantal DLQ-berichten ophalen met behulp van de Azure CLI-opdracht: [`az servicebus topic subscription show`](/cli/azure/servicebus/topic/subscription#az-servicebus-topic-subscription-show) . 
 
 ## <a name="moving-messages-to-the-dlq"></a>Berichten verplaatsen naar de DLQ
 
@@ -80,7 +80,7 @@ Als u deze berichten met een onbestelbare bericht wilt ophalen, kunt u een ontva
 
 ## <a name="example"></a>Voorbeeld
 
-Met het volgende code fragment wordt een ontvanger van een bericht gemaakt. In de receive-lus voor de hoofd wachtrij wordt met de code het bericht met de status [Receive (time span. Zero)](/dotnet/api/microsoft.servicebus.messaging.messagereceiver)opgehaald, waarmee de Broker wordt gevraagd om onmiddellijk een bericht te retour neren dat direct beschikbaar is, of om te retour neren zonder resultaat. Als de code een bericht ontvangt, wordt deze onmiddellijk afgebroken, waardoor de wordt verhoogd  `DeliveryCount` . Zodra het systeem het bericht naar de DLQ verplaatst, is de hoofd wachtrij leeg en wordt de lus afgesloten, omdat [ReceiveAsync](/dotnet/api/microsoft.servicebus.messaging.messagereceiver) **Null**retourneert.
+Met het volgende code fragment wordt een ontvanger van een bericht gemaakt. In de receive-lus voor de hoofd wachtrij wordt met de code het bericht met de status [Receive (time span. Zero)](/dotnet/api/microsoft.servicebus.messaging.messagereceiver)opgehaald, waarmee de Broker wordt gevraagd om onmiddellijk een bericht te retour neren dat direct beschikbaar is, of om te retour neren zonder resultaat. Als de code een bericht ontvangt, wordt deze onmiddellijk afgebroken, waardoor de wordt verhoogd  `DeliveryCount` . Zodra het systeem het bericht naar de DLQ verplaatst, is de hoofd wachtrij leeg en wordt de lus afgesloten, omdat [ReceiveAsync](/dotnet/api/microsoft.servicebus.messaging.messagereceiver) **Null** retourneert.
 
 ```csharp
 var receiver = await receiverFactory.CreateMessageReceiverAsync(queueName, ReceiveMode.PeekLock);

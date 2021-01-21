@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/16/2020
 ms.author: fauhse
 ms.subservice: files
-ms.openlocfilehash: 08ed07adbfe0fc4b22d8a3d0afcfc9ab1312dba4
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 76a244810042adf3cec64b15fe847c5b684527c2
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134344"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98631181"
 ---
 # <a name="storsimple-8100-and-8600-migration-to-azure-file-sync"></a>StorSimple 8100 en 8600 migratie naar Azure File Sync
 
@@ -160,7 +160,7 @@ U kunt kiezen voor Premium Storage (SSD) voor Azure-bestands shares of standaard
 
 Nog steeds niet zeker?
 
-* Kies Premium Storage als u de [prestaties van een Premium Azure-bestands share](understanding-billing.md#provisioned-billing)nodig hebt.
+* Kies Premium Storage als u de [prestaties van een Premium Azure-bestands share](understanding-billing.md#provisioned-model)nodig hebt.
 * Kies standaard opslag voor werk belastingen voor bestands servers voor algemeen gebruik, waaronder gegevens over dynamische gegevens en archieven. Kies ook standaard opslag als de enige werk belasting op de share in de Cloud wordt Azure File Sync.
 
 #### <a name="account-kind"></a>Soort account

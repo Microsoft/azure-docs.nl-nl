@@ -9,12 +9,12 @@ ms.subservice: azure-sentinel
 ms.topic: how-to
 ms.date: 06/24/2020
 ms.author: yelevin
-ms.openlocfilehash: 69ab76bf213653ea10db8dfd181b615a7e0f47b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f420e80f10072c440f5401c042d6370a061b1a7f
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85564480"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632238"
 ---
 # <a name="connect-data-from-azure-active-directory-azure-ad-identity-protection"></a>Verbinding maken met gegevens van Azure Active Directory (Azure AD) identiteits beveiliging
 
@@ -24,7 +24,6 @@ U kunt Logboeken van [Azure AD Identity Protection](../active-directory/identity
 
 - U moet een [Azure AD Premium P2-abonnement](https://azure.microsoft.com/pricing/details/active-directory/)hebben.
 - U moet een gebruiker hebben met de machtigingen globale beheerder of beveiligings beheerder.
-
 
 ## <a name="connect-to-azure-ad-identity-protection"></a>Verbinding maken met Azure AD Identity Protection
 

@@ -12,12 +12,12 @@ ms.custom:
 - amqp
 - mqtt
 monikerRange: '>=iotedge-2020-11'
-ms.openlocfilehash: 37c237cdaf6c0d4f766d4b2e39c10e3e96215463
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 1258fd4b5c69b399b70d1f2db1be63765771e631
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96187830"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629400"
 ---
 # <a name="connect-a-downstream-iot-edge-device-to-an-azure-iot-edge-gateway-preview"></a>Een downstream-IoT Edge apparaat verbinden met een Azure IoT Edge gateway (preview-versie)
 
@@ -118,7 +118,7 @@ Om gateway detectie in te scha kelen, moet elk IoT Edge gateway apparaat worden 
 
 Om beveiligde verbindingen in te scha kelen, moet elk IoT Edge apparaat in een gateway scenario worden geconfigureerd met een uniek CA-certificaat voor het apparaat en een kopie van het basis-CA-certificaat dat wordt gedeeld door alle apparaten in de gateway hiërarchie.
 
-U moet IoT Edge al op uw apparaat hebben geïnstalleerd. Als dat niet het geval is, volgt u de stappen om [de Azure IOT Edge runtime te installeren](how-to-install-iot-edge.md) en vervolgens uw apparaat in te richten met een [symmetrische sleutel verificatie](how-to-manual-provision-symmetric-key.md) of [X. 509-certificaat verificatie](how-to-manual-provision-x509.md).
+U moet IoT Edge al op uw apparaat hebben geïnstalleerd. Als dat niet het geval is, volgt u de stappen voor het [registreren van een IOT edge apparaat in IOT hub](how-to-register-device.md) en installeert u vervolgens [de Azure IOT Edge runtime](how-to-install-iot-edge.md).
 
 De stappen in deze sectie verwijzen naar het **basis-CA-certificaat** en de **certificerings instantie van het apparaat en de persoonlijke sleutel** die eerder in dit artikel zijn besproken. Als u deze certificaten op een ander apparaat hebt gemaakt, moet u deze op dit apparaat beschikbaar hebben. U kunt de bestanden fysiek overdragen, zoals met een USB-station, met een service zoals [Azure Key Vault](../key-vault/general/overview.md), of met een functie zoals een [beveiligde bestands kopie](https://www.ssh.com/ssh/scp/).
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/20/2021
 ms.author: yelevin
-ms.openlocfilehash: 9700e5d9179f7c1e33b2371eea89be9bb1c8d08f
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: e84484990725b0c39b132aead51e9b01dbb7e7ef
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98621359"
+ms.locfileid: "98632288"
 ---
 # <a name="connect-data-from-azure-active-directory-azure-ad"></a>Verbinding maken met gegevens van Azure Active Directory (Azure AD)
 
@@ -28,7 +28,7 @@ U kunt de ingebouwde connector van Azure Sentinel gebruiken om gegevens van [Azu
 
 ## <a name="prerequisites"></a>Vereisten
 
-- U moet een [Azure AD Premium P2](https://azure.microsoft.com/pricing/details/active-directory/) -abonnement hebben om logboek registraties in te loggen bij Azure Sentinel. Extra kosten per gigabyte kunnen van toepassing zijn op Azure Monitor (Log Analytics) en Azure Sentinel.
+- Elke Azure AD-licentie (Free/O365/P1/P2) is voldoende voor het opnemen van aanmeldings Logboeken in azure Sentinel. Extra kosten per gigabyte kunnen van toepassing zijn op Azure Monitor (Log Analytics) en Azure Sentinel.
 
 - Aan uw gebruiker moet de rol Azure Sentinel contributor worden toegewezen in de werk ruimte.
 
@@ -42,11 +42,27 @@ U kunt de ingebouwde connector van Azure Sentinel gebruiken om gegevens van [Azu
 
 1. Selecteer in de galerie data connectors de optie **Azure Active Directory** en selecteer vervolgens **pagina connector openen**.
 
-1. Schakel de selectie vakjes in naast de logboeken die u wilt streamen naar Azure Sentinel en klik op **verbinden**.
+1. Schakel de selectie vakjes in naast de logboek typen die u wilt streamen naar Azure Sentinel en klik op **verbinden**. Dit zijn de logboek typen waaruit u kunt kiezen:
 
-1. U kunt selecteren of u wilt dat de waarschuwingen van Azure AD automatisch incidenten genereren in azure Sentinel. Selecteer **inschakelen** onder **incidenten maken** om de standaard analyse regel in te scha kelen die incidenten automatisch maakt op basis van waarschuwingen die zijn gegenereerd in de verbonden beveiligings service. U kunt deze regel vervolgens bewerken onder **analyse** en vervolgens op **actieve regels**.
+    - Aanmeldingslogboeken
+    - Auditlogboeken
+    - Logboeken voor niet-interactieve gebruikers aanmelding
+    - Logboeken voor Service-Principal-aanmelding
+    - Logboeken voor beheerde identiteits aanmelding
+    - Inrichtingslogboeken
 
-1. Als u het relevante schema in Log Analytics wilt gebruiken voor het uitvoeren van query's op Azure AD-waarschuwingen, typt u `SigninLogs` of `AuditLogs` in het query venster.
+## <a name="find-your-data"></a>Uw gegevens zoeken
+
+Nadat de verbinding tot stand is gebracht, worden de gegevens weer gegeven in **Logboeken**, onder de sectie **LogManagement** , in de volgende tabellen:
+
+- `SigninLogs`
+- `AuditLogs`
+- `AADNonInteractiveUserSignInLogs`
+- `AADServicePrincipalSignInLogs`
+- `AADManagedIdentitySignInLogs`
+- `AADProvisioningLogs`
+
+Als u de Azure AD-logboeken wilt doorzoeken, voert u de relevante tabel naam boven in het query venster in.
 
 ## <a name="next-steps"></a>Volgende stappen
 In dit document hebt u geleerd hoe u Azure Active Directory kunt verbinden met Azure Sentinel. Zie de volgende artikelen voor meer informatie over Azure Sentinel:

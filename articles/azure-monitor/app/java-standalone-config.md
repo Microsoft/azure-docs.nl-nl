@@ -6,12 +6,12 @@ ms.date: 11/04/2020
 author: MS-jgol
 ms.custom: devx-track-java
 ms.author: jgol
-ms.openlocfilehash: 98499961f55b55b15687d5742b4d593e3d461e49
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 397c650d1d7a593a855c8f26e61dbf12ec6360fa
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625327"
+ms.locfileid: "98631318"
 ---
 # <a name="configuration-options---azure-monitor-application-insights-for-java"></a>Configuratie opties-Azure Monitor Application Insights voor Java
 
@@ -296,7 +296,9 @@ Als uw toepassing zich achter een firewall bevindt en niet rechtstreeks verbindi
 }
 ```
 
-[//]: # "Let erop dat u geen OpenTelemetry-ondersteuning adverteert tot wij 0.10.0 ondersteunen. Dit heeft een enorme invloed op het verbreken van 0.9.0"
+Application Insights Java 3,0 is ook van toepassing op het globale `-Dhttps.proxyHost` en `-Dhttps.proxyPort` als deze zijn ingesteld.
+
+[//]: # "Opmerking OpenTelemetry-ondersteuning bevindt zich in een persoonlijke preview totdat de OpenTelemetry-API 1,0 bedraagt"
 
 [//]: # "# # Ondersteuning voor OpenTelemetry-API-releases van vóór 1,0"
 
@@ -343,6 +345,8 @@ Application Insights Java 3,0-logboeken worden standaard op niveau `INFO` naar h
 `maxSizeMb` is de maximale grootte van het logboek bestand voordat deze wordt doorgevoerd.
 
 `maxHistory` is het aantal doorgevoerde logboek bestanden dat wordt bewaard (naast het huidige logboek bestand).
+
+Vanaf versie 3.0.2 kunt u de zelf diagnostische gegevens ook instellen `level` met behulp van de omgevings variabele `APPLICATIONINSIGHTS_SELF_DIAGNOSTICS_LEVEL` .
 
 ## <a name="an-example"></a>Een voor beeld
 

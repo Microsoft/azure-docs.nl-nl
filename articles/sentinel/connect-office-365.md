@@ -14,20 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/30/2020
 ms.author: yelevin
-ms.openlocfilehash: 4d3e3615ede7406a3b581171ae759ec0ec53f13e
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 05848eb2761284669e659b3875e96acdfa71f90f
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655367"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98632179"
 ---
 # <a name="connect-office-365-logs-to-azure-sentinel"></a>Office 365-logboeken verbinden met Azure Sentinel
 
 De [Office 365](/office/) -logboek connector brengt Azure-Sentinel-informatie over op lopende gebruikers-en beheer activiteiten in **Exchange** en **share point** (inclusief **OneDrive**), en nu ook in **teams** . Deze informatie omvat Details over acties zoals het downloaden van bestanden, het verzenden van toegangs aanvragen, wijzigingen in groeps gebeurtenissen, Postvak bewerkingen, teams gebeurtenissen (zoals chat-, team-, lid-en kanaal gebeurtenissen), evenals de details van de gebruiker die de acties heeft uitgevoerd. Door Office 365-logboeken te koppelen aan Azure Sentinel kunt u deze gegevens in uw werkmappen weer geven en analyseren, query's uitvoeren om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek proces te verbeteren, zodat u meer inzicht hebt in uw Office 365-beveiliging.
-
-> [!IMPORTANT]
-> De uitbrei ding van de Office 365-logboek connector **voor micro soft teams-logboeken** is momenteel beschikbaar in de open bare preview.
-> Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 

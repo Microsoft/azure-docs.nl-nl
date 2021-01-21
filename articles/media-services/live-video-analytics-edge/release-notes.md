@@ -3,12 +3,12 @@ title: Live video Analytics op IoT Edge opmerkingen bij de release-Azure
 description: Dit onderwerp bevat opmerkingen bij de release van live video Analytics over IoT Edge releases, verbeteringen, fout oplossingen en bekende problemen.
 ms.topic: conceptual
 ms.date: 08/19/2020
-ms.openlocfilehash: 7f8957d1ec93259cf6defe7980f19298f782ea5e
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 328fe97c4e03f039a1224d13ce6712ccff06b3b7
+ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121240"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98629773"
 ---
 # <a name="live-video-analytics-on-iot-edge-release-notes"></a>Opmerkingen bij de release van live video op IoT Edge
 
@@ -51,9 +51,12 @@ Deze versie is de open bare preview-versie voor het vernieuwen van live video-an
 * Er is ondersteuning toegevoegd voor het beheer van schijf ruimte voor Sink-knoop punten.
 * `MediaGraphGrpcExtension` het knoop punt ondersteunt nu de eigenschap [extensionConfiguration](grpc-extension-protocol.md) voor het gebruik van meerdere AI-modellen binnen één gRPC-server.
 * Er is ondersteuning toegevoegd voor het verzamelen van metrische gegevens van de module live video Analytics in de [Prometheus-indeling](https://prometheus.io/docs/practices/naming/). Meer informatie over het [verzamelen van metrische gegevens en weer gave in azure monitor.](monitoring-logging.md#azure-monitor-collection-via-telegraf) 
+* De mogelijkheid om de uitvoer selectie te filteren is toegevoegd. U kunt **alleen audio** en video of **Audio en video** **alleen** door geven met behulp van `outputSelectors` een grafiek knooppunt. 
 * Processor voor frame frequentie filter is **afgeschaft**.  
     * Het beheer van de frame frequentie is nu beschikbaar in de processor knooppunten van de grafiek extensie zelf.
 
+### <a name="visual-studio-code-extension"></a>Visual Studio Code-extensie
+* Vrijgegeven [Live video Analytics op IOT Edge](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.live-video-analytics-edge) : een Visual Studio code-extensie waarmee u LVA-media grafieken kunt beheren. Deze uitbrei ding werkt met de **LVA 2,0-module** en biedt het bewerken en beheren van media grafieken met een zeer gestroomlijnde en eenvoudig te gebruiken grafische interface.
 ## <a name="september-22-2020"></a>22 september 2020
 
 Deze release code is voor de september 2020 vernieuwing van de module is:

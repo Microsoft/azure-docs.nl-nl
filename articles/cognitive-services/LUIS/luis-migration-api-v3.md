@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 06/30/2020
-ms.openlocfilehash: 59cf250a9db5a1f6759495c1b5a3c48cb07cde15
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 59dfa439f6428f2db972a8f848887e1a74bc2622
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95018783"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624300"
 ---
 # <a name="prediction-endpoint-changes-for-v3"></a>Wijzigingen in het Voorspellings eindpunt voor v3
 
@@ -66,9 +66,6 @@ Deze API wordt niet ondersteund in het v3-Voorspellings eindpunt-door gebruik te
 
 Ga verder met het gebruik van het v2 API-Voorspellings eindpunt totdat de V 4.7 van het bot-Framework wordt uitgebracht.
 
-## <a name="v2-api-deprecation"></a>V2-API-afschaffing
-
-De v2-Voorspellings-API wordt niet afgeschaft gedurende ten minste negen maanden na de preview-versie van v3 juni 2020.
 
 ## <a name="endpoint-url-changes"></a>Eind punt-URL wordt gewijzigd
 
@@ -268,9 +265,6 @@ In v3 heeft hetzelfde resultaat `verbose` als de markering voor het retour neren
 
 Meer informatie over het [uitbreiden van de](schema-change-prediction-runtime.md) app tijdens de voor spelling-runtime.
 
-## <a name="deprecation"></a>Afschaffing
-
-De v2 API wordt niet afgeschaft gedurende ten minste negen maanden na de preview-versie van v3.
 
 ## <a name="next-steps"></a>Volgende stappen
 

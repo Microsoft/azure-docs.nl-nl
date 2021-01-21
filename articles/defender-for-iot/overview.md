@@ -12,18 +12,18 @@ ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/09/2020
-ms.openlocfilehash: 13f9e2271dd18121ba740c843e99fae86c76821d
-ms.sourcegitcommit: 5ef018fdadd854c8a3c360743245c44d306e470d
+ms.openlocfilehash: 5b4ab207462955be3876dc1a25fae491e48a9cd2
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/01/2021
-ms.locfileid: "97845409"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621707"
 ---
 # <a name="welcome-to-azure-defender-for-iot"></a>Welkom bij Azure Defender voor IoT
 
 Operational Technology (OT)-netwerken hebben veel van de meest kritieke aspecten van onze samenleving. Maar veel van deze technologieën zijn niet ontworpen met het oog op de beveiliging en kunnen niet worden beveiligd met traditionele IT-beveiligings controles. Ondertussen maakt de Internet of Things (IoT) een nieuwe golf van innovatie mogelijk met miljarden verbonden apparaten, waardoor de kwets baarheid en het risico van aanvallen worden verhoogd.  
 
-Azure Defender voor IoT is een uniforme beveiligings oplossing voor het identificeren van IoT/OT-assets, beveiligings problemen en bedreigingen. Zo kunt u uw volledige IoT/OT-omgeving beveiligen, of u bestaande IoT/OT-apparaten wilt beveiligen of beveiliging wilt bouwen in nieuwe IoT-innovaties.  
+Azure Defender voor IoT is een uniforme beveiligings oplossing voor het identificeren van IoT/OT-apparaten, beveiligings problemen en bedreigingen. Zo kunt u uw volledige IoT/OT-omgeving beveiligen, of u bestaande IoT/OT-apparaten wilt beveiligen of beveiliging wilt bouwen in nieuwe IoT-innovaties.  
 
 Azure Defender voor IoT biedt twee mogelijkheden voor het aanpassen van de behoeften van uw omgeving.
 
@@ -47,7 +47,7 @@ De bewakings mogelijkheden zonder agents in azure Defender voor IoT geven u inzi
 
 ### <a name="automatic-device-discovery"></a>Automatische detectie van apparaten  
 
-Gebruik passieve netwerk bewaking zonder agents om een volledige inventarisatie te krijgen van al uw IoT/OT-assets, hun Details en hoe ze communiceren, met geen invloed op het IoT/OT-netwerk.  
+Gebruik passieve netwerk bewaking zonder agents om een volledige inventarisatie te krijgen van al uw IoT/OT-apparaten, hun Details en hoe ze communiceren, met nul gevolgen voor het IoT/OT-netwerk.  
 
 ### <a name="proactive-visibility-into-risk-and-vulnerabilities"></a>Proactief inzicht in Risico's en beveiligings problemen
  
@@ -61,7 +61,7 @@ Detecteer afwijkende of niet-geautoriseerde activiteiten met gespecialiseerde Io
 
 Integreer in azure Sentinel voor een vogel weergave van uw hele organisatie. Implementeer Unified IoT/OT Security governance met integratie in uw bestaande werk stromen, met inbegrip van hulpprogram ma's van derden, zoals Splunk, IBM QRadar en ServiceNow. 
 
-## <a name="agent-based-solution-for-device-builders"></a>Oplossing op basis van een agent voor apparaten bouwers 
+## <a name="agent-based-solution-for-device-builders"></a>Oplossing met agent voor apparaatbouwers 
 
 Beveiliging is een bijna universele bezorgdheid voor IoT-implementaties. IoT-apparaten hebben unieke behoeften voor controle van eind punten, beveiliging postuur beheer en detectie van bedreigingen, allemaal met zeer specifieke prestatie vereisten. 
 
@@ -81,6 +81,6 @@ Detecteer bedreigingen zoals botnets, beveiligings pogingen, crypto-Miners en ve
 
 De Azure Defender voor IoT micro-agent bevat bron code, zodat u de micro agent kunt opnemen in de firmware of aanpassen zodat deze alleen kan bevatten wat u nodig hebt. Het is ook beschikbaar als een binair pakket, of rechtstreeks geïntegreerd in andere Azure IoT-oplossingen. 
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 [Azure Defender voor IoT-architectuur](architecture.md)

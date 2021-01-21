@@ -7,14 +7,14 @@ ms.author: shhazam
 ms.date: 12/13/2020
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: 1ac87f98af555aae155a201cc20692c950fc7924
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 419e32a127947cde1d3761507f0df7a889528ff2
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97839666"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621925"
 ---
-# <a name="basic-concepts"></a>Basisconcepten 
+# <a name="basic-concepts"></a>Basisbegrippen 
 
 In dit artikel worden de belangrijkste voor delen van Azure Defender voor IoT beschreven.
 
@@ -22,7 +22,7 @@ In dit artikel worden de belangrijkste voor delen van Azure Defender voor IoT be
 
 Defender voor IoT Sens oren maken verbinding met een SPANNe-poort of netwerk en beginnen met het verzamelen van ICS-netwerk verkeer via passieve bewaking (zonder agent). Diepe pakket inspectie (DPI) wordt gebruikt voor het dissect van verkeer van zowel het seriële als het Ethernet-beheer netwerk apparatuur. Defender voor IoT heeft geen invloed op de netwerken, omdat deze niet worden geplaatst in het gegevenspad en niet actief worden gescand op apparaten. 
 
-Voor het leveren van onmiddellijke moment opnamen van gedetailleerde informatie over de activa, is Defender voor IoT-sensor een passieve bewaking met een optioneel actief onderdeel. Dit onderdeel maakt gebruik van veilige, door de leverancier goedgekeurde opdrachten voor het opvragen van zowel Windows-als controller apparaten voor activa gegevens, zo vaak of zo vaak als u wilt.
+Voor het leveren van directe moment opnamen van gedetailleerde apparaatgegevens biedt Defender voor IoT sensor een passieve bewaking met een optioneel actief onderdeel. Dit onderdeel maakt gebruik van veilige, door de leverancier goedgekeurde opdrachten om zowel Windows-als controller apparaten te doorzoeken op apparaatgegevens, zo vaak of zo vaak als u wilt.
 
 ## <a name="embedded-knowledge-of-ics-protocols-devices-and-applications"></a>Inge sloten kennis van ICS-protocollen,-apparaten en-toepassingen
 
@@ -34,7 +34,7 @@ Engines identificeren beveiligings problemen via voortdurende bewaking en vijf a
 
 - **Detectie van protocol schendingen**: Hiermee wordt het gebruik van pakket structuren en veld waarden aangegeven die in strijd zijn met de specificaties van het ICS-protocol.
 
-- **Detectie van beleids overtreding**: identificeert beleids schendingen zoals onbevoegd gebruik van functie codes, toegang tot specifieke objecten of wijzigingen in de configuratie van activa.
+- **Detectie van beleids overtreding**: identificeert beleids schendingen, zoals onbevoegd gebruik van functie codes, toegang tot specifieke objecten of wijzigingen in de apparaatconfiguratie.
 
 - **Industriële detectie van malware**: identificeert gedrag dat aangeeft dat er sprake is van bekende schadelijke software, zoals Conficker, Black Energy, WannaCry en NotPetya.
 

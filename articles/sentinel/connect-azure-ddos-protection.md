@@ -7,20 +7,16 @@ ms.assetid: bfa2eca4-abdc-49ce-b11a-0ee229770cdd
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: how-to
-ms.date: 09/01/2020
+ms.date: 01/20/2021
 ms.author: yelevin
-ms.openlocfilehash: c54b5b785f6da1bb651d8b1f508da42ab0fb802d
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 8089b1e74e88db81c1c15ad2cbf2072abcfff241
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538385"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621342"
 ---
 # <a name="connect-data-from-azure-ddos-protection"></a>Verbinding maken met gegevens van Azure DDoS Protection
-
-> [!IMPORTANT]
-> De Azure DDoS Protection gegevens connector in azure Sentinel is momenteel beschikbaar als open bare preview.
-> Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Met DDoS-aanvallen (Distributed Denial of service) wordt geprobeerd om de resources van een toepassing te laten uitgeputen, waardoor de toepassing niet beschikbaar is voor legitieme gebruikers. DDoS-aanvallen kunnen worden gericht op elk eindpunt dat openbaar bereikbaar is via internet. [Azure DDoS Protection](../ddos-protection/ddos-protection-overview.md), gecombineerd met aanbevolen procedures voor het ontwerpen van toepassingen, biedt een robuuste verdediging tegen DDoS-aanvallen. U kunt Azure DDoS Protection-logboeken verbinden met Azure-Sentinel, zodat u logboek gegevens in werkmappen weer geven, kunt gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek te verbeteren. 
 

@@ -1,5 +1,5 @@
 ---
-title: 'Quickstart: Een apparaat beheren vanuit Azure IoT Hub (Android) | Microsoft Docs'
+title: 'Quick Start: een apparaat beheren vanuit Azure IoT Hub Snelstartgids (Android) | Microsoft Docs'
 description: In deze snelstartgids gaan we twee in Java geschreven voorbeeldtoepassingen uitvoeren. De ene toepassing is een servicetoepassing waarmee u op afstand apparaten kunt beheren die zijn verbonden met de hub. De andere toepassing wordt uitgevoerd op een fysiek of gesimuleerd apparaat dat is verbonden met de hub en dat op afstand kan worden beheerd.
 author: wesmc7777
 manager: philmea
@@ -14,12 +14,12 @@ ms.custom:
 - devx-track-azurecli
 ms.date: 06/21/2019
 ms.author: wesmc
-ms.openlocfilehash: 969ae6dc1e3667bc360890c292371a0a9b1ba2dc
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 345b82d8120be52066ce6f834b7f2338b6c3bfd0
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844588"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623295"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-android"></a>Quickstart: Een apparaat beheren dat is verbonden met een IoT-hub (Android)
 
@@ -73,7 +73,7 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
    **YourIoTHubName**: vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string \
+    az iot hub device-identity connection-string show\
       --hub-name {YourIoTHubName} \
       --device-id MyAndroidDevice \
       --output table
@@ -133,7 +133,7 @@ Deze app moet actief blijven op een fysiek apparaat of op een emulator, terwijl 
 
 ## <a name="read-the-telemetry-from-your-hub"></a>De telemetrie van uw hub lezen
 
-In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest) voor het bewaken van de berichten die worden verzonden met het Android-apparaat.
+In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest&preserve-view=true) voor het bewaken van de berichten die worden verzonden met het Android-apparaat.
 
 1. Voer met de Azure Cloud Shell de volgende opdracht uit om te verbinden en berichten te lezen uit uw IoT-hub:
 

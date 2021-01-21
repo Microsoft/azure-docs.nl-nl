@@ -4,12 +4,12 @@ description: Dit artikel bevat informatie over het schrijven van code voor Azure
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 46bd0c3c1488d6dd7afbae5e88e0b83f56654bb8
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: a299813620ee90591d8c9491991237f75f2e9382
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131233"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623045"
 ---
 # <a name="net-programming-guide-for-azure-event-hubs-legacy-microsoftazureeventhubs-package"></a>.NET-programmeer handleiding voor Azure Event Hubs (verouderd micro soft. Azure. Event hubs-pakket)
 In dit artikel worden enkele algemene scenario's beschreven voor het schrijven van code met behulp van Azure Event Hubs. Er wordt uitgegaan van een basisbegrip van Event Hubs. Zie het [Overzicht van Event Hubs](./event-hubs-about.md) voor een conceptueel overzicht van Event Hubs.
@@ -97,7 +97,7 @@ Eén batch mag niet groter zijn dan de limiet van 1 MB van een gebeurtenis. Daar
 
 ## <a name="send-asynchronously-and-send-at-scale"></a>Asynchroon verzenden en op schaal verzenden
 
-U verzendt gebeurtenissen asynchroon naar een Event Hub. Het per ongeluk verzenden van de frequentie verhoogt de snelheid waarmee een client gebeurtenissen kan verzenden. [SendAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync) retourneert een [Task](/dotnet/api/system.threading.tasks.task?view=netcore-3.1) -object. U kunt de [RetryPolicy](/dotnet/api/microsoft.servicebus.retrypolicy) -klasse op de client gebruiken om de opties voor de client opnieuw proberen te beheren.
+U verzendt gebeurtenissen asynchroon naar een Event Hub. Het per ongeluk verzenden van de frequentie verhoogt de snelheid waarmee een client gebeurtenissen kan verzenden. [SendAsync](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync) retourneert een [Task](/dotnet/api/system.threading.tasks.task) -object. U kunt de [RetryPolicy](/dotnet/api/microsoft.servicebus.retrypolicy) -klasse op de client gebruiken om de opties voor de client opnieuw proberen te beheren.
 
 ## <a name="event-consumers"></a>Gebeurtenisconsumers
 Met de klasse [EventProcessorHost][] worden gegevens uit Event Hubs verwerkt. Gebruik deze implementatie bij het bouwen van gebeurtenislezers op het .NET-platform. [EventProcessorHost][] biedt een thread-veilige, beveiligde runtimeomgeving met meerdere processen voor implementaties van gebeurtenisprocessors die ook beheer biedt van controlepunten en partitielease.

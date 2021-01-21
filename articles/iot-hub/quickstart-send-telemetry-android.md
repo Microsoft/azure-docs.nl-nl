@@ -1,5 +1,5 @@
 ---
-title: Telemetrie verzenden naar Azure IoT Hub (Android) | Microsoft Docs
+title: Quick Start-telemetrie verzenden naar Azure IoT Hub Snelstartgids (Android) | Microsoft Docs
 description: In deze quickstart voert u een Android-voorbeeldtoepassing uit om gesimuleerde telemetrie te verzenden naar een IoT-hub, en telemetrie van de IoT-hub te lezen voor verwerking in de cloud.
 author: wesmc7777
 manager: philmea
@@ -14,12 +14,12 @@ ms.custom:
 - devx-track-azurecli
 ms.date: 03/15/2019
 ms.author: wesmc
-ms.openlocfilehash: d9598f7a0bc8e4a8b92ac53612023585eb19f4c4
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: dd622f0d55be000e2318c53f200bebf49c373724
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121512"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624317"
 ---
 # <a name="quickstart-send-iot-telemetry-from-an-android-device"></a>Quickstart: IoT-telemetrie verzenden vanaf een Android-apparaat
 
@@ -100,7 +100,7 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
 
 ## <a name="read-the-telemetry-from-your-hub"></a>De telemetrie van uw hub lezen
 
-In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest) voor het bewaken van de apparaatberichten die worden verzonden met het Android-apparaat.
+In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest&preserve-view=true) voor het bewaken van de apparaatberichten die worden verzonden met het Android-apparaat.
 
 1. Voer met de Azure Cloud Shell de volgende opdracht uit om te verbinden en berichten te lezen uit uw IoT-hub:
 

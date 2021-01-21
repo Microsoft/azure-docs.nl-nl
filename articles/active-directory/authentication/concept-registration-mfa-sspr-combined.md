@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/04/2020
+ms.date: 01/19/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: c8dce284c0fffe10fe077fcb6c6713ba65c45751
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
+ms.openlocfilehash: 9442489efd2a84ac8a31dfb2efb5718e1fd4f594
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96743901"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621790"
 ---
 # <a name="combined-security-information-registration-for-azure-active-directory-overview"></a>Registratie van gecombineerde beveiligings gegevens voor Azure Active Directory overzicht
 
@@ -30,18 +30,18 @@ In dit artikel vindt u een overzicht van de gecombineerde beveiligings registrat
 > [!div class="nextstepaction"]
 > [Gecombineerde beveiligings registratie inschakelen](howto-registration-mfa-sspr-combined.md)
 
-![Mijn profiel waarin geregistreerde beveiligings gegevens voor een gebruiker worden weer gegeven](media/concept-registration-mfa-sspr-combined/combined-security-info-defualts-registered.png)
+![Mijn account waarin geregistreerde beveiligings gegevens voor een gebruiker worden weer gegeven](media/concept-registration-mfa-sspr-combined/combined-security-info-defaults-registered.png)
 
 Voordat u de nieuwe ervaring inschakelt, raadpleegt u deze documentatie met beheerders rechten en de gebruikers gerichte documentatie om te controleren of u de functionaliteit en het effect van deze functie begrijpt. Baseer uw training op de [gebruikers documentatie](../user-help/security-info-setup-signin.md) om uw gebruikers voor te bereiden op de nieuwe ervaring en om te zorgen voor een geslaagde implementatie.
 
 Registratie van gegevens over gecombineerde beveiliging van Azure AD is momenteel niet beschikbaar voor nationale Clouds, zoals Azure Duitsland en Azure China 21Vianet. Het is beschikbaar voor de Amerikaanse overheid van Azure.
 
 > [!IMPORTANT]
-> Gebruikers die zijn ingeschakeld voor de oorspronkelijke preview-versie en de verbeterde gecombineerde registratie-ervaring, zien het nieuwe gedrag. Gebruikers die zijn ingeschakeld voor beide ervaringen, zien alleen de nieuwe ervaring mijn profiel. Het nieuwe *Mijn profiel* wordt uitgelijnd met het uiterlijk van de gecombineerde registratie en biedt een naadloze ervaring voor gebruikers. Gebruikers kunnen mijn profiel zien door naar te gaan [https://myprofile.microsoft.com](https://myprofile.microsoft.com) .
+> Gebruikers die zijn ingeschakeld voor de oorspronkelijke preview-versie en de verbeterde gecombineerde registratie-ervaring, zien het nieuwe gedrag. Gebruikers die zijn ingeschakeld voor beide ervaringen, zien alleen de ervaring mijn account. De *Mijn account* wordt uitgelijnd met het uiterlijk van de gecombineerde registratie en biedt een naadloze ervaring voor gebruikers. Gebruikers kunnen mijn account zien door naar te gaan [https://myaccount.microsoft.com](https://myaccount.microsoft.com) .
 >
 > Er wordt mogelijk een fout bericht weer gegeven wanneer u probeert toegang te krijgen tot de optie beveiligings gegevens, zoals ' Sorry, we kunnen u niet aanmelden '. Bevestig dat u geen configuratie-of groeps beleidsobject hebt waarmee cookies van derden in de webbrowser worden geblokkeerd.
 
-*Mijn profiel* pagina's worden gelokaliseerd op basis van de taal instellingen van de computer die toegang heeft tot de pagina. Micro soft slaat de meest recente taal op die wordt gebruikt in de cache van de browser, zodat de volgende keer dat de pagina's worden geopend, worden weer gegeven in de laatste gebruikte taal. Als u de cache wist, worden de pagina's opnieuw weer gegeven.
+*Mijn account* pagina's worden gelokaliseerd op basis van de taal instellingen van de computer die toegang heeft tot de pagina. Micro soft slaat de meest recente taal op die wordt gebruikt in de cache van de browser, zodat de volgende keer dat de pagina's worden geopend, worden weer gegeven in de laatste gebruikte taal. Als u de cache wist, worden de pagina's opnieuw weer gegeven.
 
 Als u een specifieke taal wilt forceren, kunt u `?lng=<language>` aan het einde van de URL toevoegen, waarbij `<language>` de code is van de taal die u wilt weer geven.
 
@@ -116,7 +116,7 @@ Als het SSPR-beleid vereist dat gebruikers hun beveiligings gegevens met regel m
 
 ### <a name="manage-mode"></a>Beheer modus
 
-Gebruikers hebben toegang tot de beheer modus door te gaan naar [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) of door in mijn profiel **beveiligings gegevens** te selecteren. Van daaruit kunnen gebruikers methoden toevoegen, bestaande methoden verwijderen of wijzigen, de standaard methode wijzigen en nog veel meer.
+Gebruikers kunnen toegang krijgen tot de beheer modus door te gaan naar [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) of door **beveiligings gegevens** van mijn account te selecteren. Van daaruit kunnen gebruikers methoden toevoegen, bestaande methoden verwijderen of wijzigen, de standaard methode wijzigen en nog veel meer.
 
 ## <a name="key-usage-scenarios"></a>Scenario's voor het gebruik van sleutels
 
@@ -126,17 +126,17 @@ Een beheerder heeft de registratie afgedwongen.
 
 Een gebruiker heeft niet alle vereiste beveiligings gegevens ingesteld en gaat naar het Azure Portal. Nadat de gebruikers naam en het wacht woord zijn ingevoerd, wordt de gebruiker gevraagd om beveiligings gegevens in te stellen. De gebruiker volgt vervolgens de stappen die in de wizard worden weer gegeven om de vereiste beveiligings gegevens in te stellen. Als uw instellingen dit toestaan, kan de gebruiker kiezen om andere methoden dan die standaard worden weer gegeven in te stellen. Nadat de wizard is voltooid, bekijken gebruikers de methoden die ze hebben ingesteld en de standaard methode voor Multi-Factor Authentication. Om het installatie proces te volt ooien, bevestigt de gebruiker de gegevens en gaat het Azure Portal.
 
-### <a name="set-up-security-info-from-my-profile"></a>Beveiligings gegevens van mijn profiel instellen
+### <a name="set-up-security-info-from-my-account"></a>Beveiligings gegevens van mijn account instellen
 
 Een beheerder heeft de registratie niet afgedwongen.
 
-Een gebruiker die de vereiste beveiligings gegevens nog niet heeft ingesteld, gaat naar [https://myprofile.microsoft.com](https://myprofile.microsoft.com) . De gebruiker selecteert **beveiligings gegevens** in het linkerdeel venster. Van daaruit kiest de gebruiker om een methode toe te voegen, selecteert een van de beschik bare methoden en volgt de stappen om die methode in te stellen. Wanneer u klaar bent, ziet de gebruiker de methode die is ingesteld op de pagina met beveiligings gegevens.
+Een gebruiker die de vereiste beveiligings gegevens nog niet heeft ingesteld, gaat naar [https://myaccount.microsoft.com](https://myaccount.microsoft.com) . De gebruiker selecteert **beveiligings gegevens** in het linkerdeel venster. Van daaruit kiest de gebruiker om een methode toe te voegen, selecteert een van de beschik bare methoden en volgt de stappen om die methode in te stellen. Wanneer u klaar bent, ziet de gebruiker de methode die is ingesteld op de pagina met beveiligings gegevens.
 
-### <a name="delete-security-info-from-my-profile"></a>Beveiligings gegevens uit mijn profiel verwijderen
+### <a name="delete-security-info-from-my-account"></a>Beveiligings gegevens verwijderen uit mijn account
 
 Een gebruiker die eerder ten minste één methode heeft ingesteld, gaat naar [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) . De gebruiker kiest ervoor een van de eerder geregistreerde methoden te verwijderen. Als u klaar bent, ziet de gebruiker deze methode niet meer op de pagina beveiligings gegevens.
 
-### <a name="change-the-default-method-from-my-profile"></a>De standaard methode van mijn profiel wijzigen
+### <a name="change-the-default-method-from-my-account"></a>De standaard methode van mijn account wijzigen
 
 Een gebruiker die eerder ten minste één methode heeft ingesteld die kan worden gebruikt voor Multi-Factor Authentication naar [https://aka.ms/mysecurityinfo](https://aka.ms/mysecurityinfo) . De gebruiker wijzigt de huidige standaard methode in een andere standaard methode. Wanneer u klaar bent, ziet de gebruiker de nieuwe standaard methode op de pagina beveiligings gegevens.
 

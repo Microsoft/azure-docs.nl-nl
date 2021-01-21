@@ -13,32 +13,28 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/11/2020
+ms.date: 01/20/2021
 ms.author: yelevin
-ms.openlocfilehash: 279f54c3de964580cc37d1288a6e1b7726348e10
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9700e5d9179f7c1e33b2371eea89be9bb1c8d08f
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88208613"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621359"
 ---
 # <a name="connect-data-from-azure-active-directory-azure-ad"></a>Verbinding maken met gegevens van Azure Active Directory (Azure AD)
-
-
 
 U kunt de ingebouwde connector van Azure Sentinel gebruiken om gegevens van [Azure Active Directory](../active-directory/fundamentals/active-directory-whatis.md) te verzamelen en deze in de Azure-Sentinel te streamen. Met de connector kunt u [aanmeldings logboeken](../active-directory/reports-monitoring/concept-sign-ins.md) en [audit logboeken](../active-directory/reports-monitoring/concept-audit-logs.md)streamen.
 
 ## <a name="prerequisites"></a>Vereisten
 
-
-- Elke Azure AD-licentie (Free/O365/P1/P2) is voldoende voor het opnemen van aanmeldings Logboeken in azure Sentinel. Extra kosten per gigabyte kunnen van toepassing zijn op Azure Monitor (Log Analytics) en Azure Sentinel.
+- U moet een [Azure AD Premium P2](https://azure.microsoft.com/pricing/details/active-directory/) -abonnement hebben om logboek registraties in te loggen bij Azure Sentinel. Extra kosten per gigabyte kunnen van toepassing zijn op Azure Monitor (Log Analytics) en Azure Sentinel.
 
 - Aan uw gebruiker moet de rol Azure Sentinel contributor worden toegewezen in de werk ruimte.
 
 - Aan uw gebruiker moet de rol van globale beheerder of beveiligings beheerder zijn toegewezen voor de Tenant waarvan u de logboeken wilt streamen.
 
 - Uw gebruiker moet lees-en schrijf machtigingen hebben voor de diagnostische instellingen van Azure AD om de verbindings status te kunnen zien. 
-
 
 ## <a name="connect-to-azure-active-directory"></a>Verbinding maken met Azure Active Directory
 

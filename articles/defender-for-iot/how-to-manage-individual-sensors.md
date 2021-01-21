@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 68fa3ea15199ec1d9cc99f92f497847fb029acd6
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 16031c3d67b075e962c73fbb38ada36c7efeddad
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539576"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621211"
 ---
 # <a name="manage-individual-sensors"></a>Afzonderlijke sensoren beheren
 
@@ -282,7 +282,7 @@ Wanneer u de CLI-opdracht gebruikt:
 
 Beheer uw certificaten met de volgende opdrachten:
 
-| Beschrijving | CLI-opdracht |
+| Description | CLI-opdracht |
 |--|--|
 | Een nieuwe aanvraag voor een persoonlijke sleutel en certificaat ondertekening genereren | `openssl req -out CSR.csr -new -newkey rsa:2048 -nodes -keyout privateKey.key` |
 | Een zelfondertekend certificaat maken | `openssl req -x509 -sha256 -nodes -days 365 -newkey rsa:2048 -keyout privateKey.key -out certificate.crt` |
@@ -292,7 +292,7 @@ Beheer uw certificaten met de volgende opdrachten:
 
 Als u de gegevens in een certificaat, CSR of persoonlijke sleutel wilt controleren, gebruikt u deze opdrachten.
 
-| Beschrijving | CLI-opdracht |
+| Description | CLI-opdracht |
 |--|--|
 | Een aanvraag voor certificaat ondertekening controleren (CSR) | `openssl req -text -noout -verify -in CSR.csr` |
 | Een persoonlijke sleutel controleren | `openssl rsa -in privateKey.key -check` |
@@ -300,13 +300,13 @@ Als u de gegevens in een certificaat, CSR of persoonlijke sleutel wilt controler
 
 Als er een fout bericht wordt weer gegeven dat de persoonlijke sleutel niet overeenkomt met het certificaat, of dat een certificaat dat u hebt geïnstalleerd op een site niet wordt vertrouwd, gebruikt u deze opdrachten om de fout op te lossen.
 
-| Beschrijving | CLI-opdracht |
+| Description | CLI-opdracht |
 |--|--|
 | Een MD5-hash van de open bare sleutel controleren om ervoor te zorgen dat deze overeenkomt met wat er in een CSR of persoonlijke sleutel staat | i. `openssl x509 -noout -modulus -in certificate.crt | openssl md5` <br /> twee. `openssl rsa -noout -modulus -in privateKey.key | openssl md5` <br /> 3. `openssl req -noout -modulus -in CSR.csr | openssl md5 ` |
 
 Als u certificaten en sleutels naar verschillende indelingen wilt converteren om ze compatibel te maken met specifieke typen servers of software, gebruikt u deze opdrachten.
 
-| Beschrijving | CLI-opdracht |
+| Description | CLI-opdracht |
 |--|--|
 | Een DER-bestand (. CRT. cer. der) converteren naar PEM  | `openssl x509 -inform der -in certificate.cer -out certificate.pem`  |
 | Een PEM-bestand converteren naar DER | `openssl x509 -outform der -in certificate.pem -out certificate.der`  |
@@ -315,7 +315,7 @@ Als u certificaten en sleutels naar verschillende indelingen wilt converteren om
 
 ## <a name="connect-a-sensor-to-the-management-console"></a>Een sensor verbinden met de beheer console
 
-In deze sectie wordt beschreven hoe u verbinding tussen de sensor en de on-premises beheer console waarborgt. Doe dit als u werkt met een Air-gapped-netwerk en u Asset-en waarschuwings gegevens wilt verzenden naar de beheer console van de sensor. Met deze verbinding kan ook de beheer console systeem instellingen naar de sensor pushen en andere beheer taken op de sensor uitvoeren.
+In deze sectie wordt beschreven hoe u verbinding tussen de sensor en de on-premises beheer console waarborgt. U moet dit doen als u in een Air-gapped-netwerk werkt en u apparaat-en waarschuwings gegevens wilt verzenden naar de beheer console van de sensor. Met deze verbinding kan ook de beheer console systeem instellingen naar de sensor pushen en andere beheer taken op de sensor uitvoeren.
 
 Verbinding maken:
 
@@ -504,7 +504,7 @@ Er worden herstel fouten weer gegeven in de console.
 
 In de volgende procedure wordt beschreven hoe u een zelfstandige sensor bijwerkt met behulp van de sensor console. Het update proces duurt ongeveer 30 minuten.
 
-1. Ga naar [Azure Portal](https://portal.azure.com/).
+1. Ga naar de [Azure Portal](https://portal.azure.com/).
 
 2. Ga naar Defender voor IoT.
 

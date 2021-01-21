@@ -9,33 +9,29 @@ ms.service: active-directory
 ms.subservice: saas-app-tutorial
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/24/2018
+ms.date: 01/13/2021
 ms.author: jeedes
-ms.openlocfilehash: b989d6191180cefabf4754786e1b93b38b3ae141
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
-ms.translationtype: HT
+ms.openlocfilehash: 18d64e2b2ac359a9036ebd548ef886cb0efd3405
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517892"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622194"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-splunk-enterprise-and-splunk-cloud"></a>Zelfstudie: Azure Active Directory-integratie met Splunk Enterprise en Splunk Cloud
 
-In deze zelfstudie leert u hoe u Splunk Enterprise en Splunk Cloud integreert in Azure Active Directory (Azure AD).
-De integratie van Splunk Enterprise en Splunk Cloud met Azure AD heeft de volgende voordelen:
+In deze zelf studie leert u hoe u Splunk Enter prise en Splunk Cloud integreert met Azure Active Directory (Azure AD). Wanneer u Splunk Enter prise en Splunk Cloud integreert met Azure AD, kunt u het volgende doen:
 
-* U kunt in Azure AD bepalen wie toegang krijgt tot Splunk Enterprise en Splunk Cloud.
-* U kunt inschakelen dat gebruikers automatisch met hun Azure AD-account worden aangemeld bij Splunk Enterprise en Splunk Cloud (eenmalige aanmelding).
-* U kunt uw accounts vanaf één centrale locatie beheren: de Azure-portal.
-
-Zie [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?) als u wilt graag meer wilt weten over de integratie van SaaS-apps met Azure AD.
-Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.microsoft.com/free/) voordat u begint.
+* Controle in azure AD die toegang heeft tot Splunk Enter prise en Splunk Cloud.
+* Stel uw gebruikers in staat om automatisch te worden aangemeld bij Splunk Enter prise-en Splunk-Cloud met hun Azure AD-accounts.
+* Uw accounts op één centrale locatie beheren: de Azure-portal.
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u de Azure AD-integratie met Splunk Enterprise en Splunk Cloud wilt configureren, hebt u de volgende zaken nodig:
+Als u Azure AD-integratie met Splunk Enter prise en Splunk Cloud wilt configureren, hebt u de volgende items nodig:
 
 * Een Azure AD-abonnement Als u geen Azure AD-omgeving hebt, kunt u [hier](https://azure.microsoft.com/pricing/free-trial/) de proefversie van één maand krijgen.
-* Abonnement voor Splunk Enterprise en Splunk Cloud waarvoor eenmalige aanmelding is ingeschakeld
+* Splunk Enter prise-en Splunk-abonnement voor eenmalige aanmelding voor de Cloud.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -43,65 +39,42 @@ In deze zelfstudie gaat u in een testomgeving eenmalige aanmelding van Azure AD 
 
 * Splunk Enterprise en Splunk Cloud bieden ondersteuning voor door **SP** geïnitieerde eenmalige aanmelding
 
-## <a name="adding-splunk-enterprise-and-splunk-cloud-from-the-gallery"></a>Splunk Enterprise en Splunk Cloud toevoegen vanuit de galerie
+## <a name="add-splunk-enterprise-and-splunk-cloud-from-the-gallery"></a>Splunk Enter prise-en Splunk-Cloud toevoegen vanuit de galerie
 
 Als u de integratie van Splunk Enterprise en Splunk Cloud in Azure AD wilt configureren, moet u Splunk Enterprise en Splunk Cloud vanuit de galerie toevoegen aan uw lijst beheerde SaaS-apps.
 
-**Voer de volgende stappen uit om Splunk Enterprise en Splunk Cloud vanuit de galerie toe te voegen:**
+1. Meld u bij de Azure-portal aan met een werk- of schoolaccount of een persoonlijk Microsoft-account.
+1. Selecteer in het linkernavigatiedeelvenster de service **Azure Active Directory**.
+1. Ga naar **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer **Nieuwe toepassing** om een nieuwe toepassing toe te voegen.
+1. In de sectie **toevoegen vanuit de galerie** typt u **Splunk Enter prise en Splunk Cloud** in het zoekvak.
+1. Selecteer **Splunk Enter prise en Splunk Cloud** in het paneel resultaten en voeg vervolgens de app toe. Wacht enkele seconden tot de app is toegevoegd aan de tenant.
 
-1. Klik in het linkernavigatievenster in de **[Azure-portal](https://portal.azure.com)** op het **Azure Active Directory** -pictogram.
+## <a name="configure-and-test-azure-ad-sso-for-splunk-enterprise-and-splunk-cloud"></a>Azure AD SSO configureren en testen voor Splunk Enter prise-en Splunk-Cloud
 
-    ![De knop Azure Active Directory](common/select-azuread.png)
+Configureer en test Azure AD SSO met Splunk Enter prise-en Splunk-Cloud met behulp van een test gebruiker met de naam **B. Simon**. Voor het werken met SSO moet u een koppelings relatie tot stand brengen tussen een Azure AD-gebruiker en de bijbehorende gebruiker in Splunk Enter prise en Splunk Cloud.
 
-2. Navigeer naar **Bedrijfstoepassingen** en selecteer vervolgens de optie **Alle toepassingen**.
+Voer de volgende stappen uit om Azure AD SSO te configureren en te testen met Splunk Enter prise-en Splunk-Cloud:
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+1. **[Eenmalige aanmelding van Azure AD configureren](#configure-azure-ad-sso)** : zodat uw gebruikers deze functie kunnen gebruiken.
+    1. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : om eenmalige aanmelding van Azure AD te testen met B.Simon.
+    1. **[De Azure AD-testgebruiker toewijzen](#assign-the-azure-ad-test-user)** zodat B.Simon eenmalige aanmelding van Azure AD kan gebruiken.
+1. **[Splunk Enter prise en Splunk Cloud SSO configureren](#configure-splunk-enterprise-and-splunk-cloud-sso)** : voor het configureren van de instellingen voor eenmalige aanmelding aan de kant van de toepassing.
+    1. **[Maak Splunk Enter prise en Splunk Cloud test User](#create-splunk-enterprise-and-splunk-cloud-test-user)** -om een soort tegen te brengen van B. Simon in Splunk Enter prise en Splunk Cloud die is gekoppeld aan de Azure AD-representatie van de gebruiker.
+1. **[Eenmalige aanmelding testen](#test-sso)** : om te controleren of de configuratie werkt.
 
-3. Als u de nieuwe toepassing wilt toevoegen, klikt u op de knop **Nieuwe toepassing** boven aan het dialoogvenster.
+### <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-    ![De knop Nieuwe toepassing](common/add-new-app.png)
+Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure Portal.
 
-4. Typ **Splunk Enterprise en Splunk Cloud** in het zoekvak, selecteer **Splunk Enterprise en Splunk Cloud** in het resultatendeelvenster en klik dan op **Toevoegen** om de toepassing toe te voegen.
+1. Zoek in de Azure Portal op de pagina **Splunk Enter prise and Splunk Cloud** Application Integration de sectie **Manage** en selecteer **eenmalige aanmelding**.
+1. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**.
+1. Op de pagina **Eenmalige aanmelding instellen met SAML** klikt u op het potloodpictogram voor **Standaard-SAML-configuratie** om de instellingen te bewerken.
 
-     ![Splunk Enterprise en Splunk Cloud in de lijst resultaten](common/search-new-app.png)
+   ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
+4. Voer het volgende patroon uit in de sectie **basis configuratie van SAML** :
 
-## <a name="configure-and-test-azure-ad-single-sign-on"></a>Azure AD-eenmalige aanmelding configureren en testen
-
-In dit gedeelte configureert en test u eenmalige aanmelding van Azure AD met Splunk Enterprise en Splunk Cloud op basis van een testgebruiker met de naam **Britta Simon**.
-Eenmalige aanmelding werkt alleen als er een koppelingsrelatie tussen een Azure AD-gebruiker en de daaraan gerelateerde gebruiker in Splunk Enterprise en Splunk Cloud tot stand is gebracht.
-
-Voltooi de volgende bouwstenen om eenmalige aanmelding van Azure AD voor Splunk Enterprise en Splunk Cloud te configureren en testen:
-
-1. **[Azure AD-eenmalige aanmelding configureren](#configure-azure-ad-single-sign-on)** : als u wilt dat uw gebruikers deze functie kunnen gebruiken.
-2. **[Eenmalige aanmelding bij Splunk Enterprise en Splunk Cloud configureren](#configure-splunk-enterprise-and-splunk-cloud-single-sign-on)** : de instellingen voor eenmalige aanmelding aan de toepassingszijde configureren.
-3. **[Een Azure AD-testgebruiker maken](#create-an-azure-ad-test-user)** : als u Azure AD-eenmalige aanmelding wil testen met Britta Simon.
-4. **[De testgebruiker van Azure AD-toewijzen](#assign-the-azure-ad-test-user)** : als u wilt dat Britta Simon gebruik kan maken van Azure AD-eenmalige aanmelding.
-5. **[Een Splunk Enterprise- en Splunk Cloud-testgebruiker maken](#create-splunk-enterprise-and-splunk-cloud-test-user)** : als u een equivalent van Britta Simon wilt maken in Splunk Enterprise en Splunk Cloud dat is gekoppeld aan de Azure AD-versie van de gebruiker.
-6. **[Eenmalige aanmelding testen](#test-single-sign-on)** : als u wilt controleren of de configuratie werkt.
-
-### <a name="configure-azure-ad-single-sign-on"></a>Azure AD configureren voor eenmalige aanmelding
-
-In deze sectie gaat u Azure AD-eenmalige aanmelding in de Azure-portal inschakelen.
-
-Als u de eenmalige aanmelding van Azure AD bij Splunk Enterprise en Splunk Cloud wilt configureren, voert u de volgende stappen uit:
-
-1. In [Azure Portal](https://portal.azure.com/) selecteert u op de toepassingsintegratiepagina van **Splunk Enterprise en Splunk Cloud** de optie **Eenmalige aanmelding**.
-
-    ![Koppeling Eenmalige aanmelding configureren](common/select-sso.png)
-
-2. In het dialoogvenster **Een methode voor eenmalige aanmelding selecteren** selecteert u de modus **SAML/WS-Federation** om eenmalige aanmelding in te schakelen.
-
-    ![De modus Eenmalige aanmelding selecteren](common/select-saml-option.png)
-
-3. Op de pagina **Eenmalige aanmelding met SAML instellen** klikt u op het pictogram **Bewerken** om het dialoogvenster **Standaard SAML-configuratie** te openen.
-
-    ![Standaard SAML-configuratie bewerken](common/edit-urls.png)
-
-4. In de sectie **Standaard SAML-configuratie** voert u de volgende stappen uit:
-
-    ![Informatie over Splunk Enterprise- en Splunk Cloud-domeinen en URL's voor eenmalige aanmelding](common/sp-identifier-reply.png)
-
-    a. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon: `https://<splunkserverUrl>/en-US/app/launcher/home`
+    a. In het tekstvak **Aanmeldings-URL** typt u een URL met het volgende patroon: `https://<splunkserverUrl>/app/launcher/home`
 
     b. In het tekstvak **Id** typt u een URL met het volgende patroon: `<splunkserverUrl>`
 
@@ -114,75 +87,49 @@ Als u de eenmalige aanmelding van Azure AD bij Splunk Enterprise en Splunk Cloud
 
     ![De link om het certificaat te downloaden](common/metadataxml.png)
 
-### <a name="configure-splunk-enterprise-and-splunk-cloud-single-sign-on"></a>Eenmalige aanmelding configureren voor Splunk Enterprise en Splunk Cloud
+### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken
 
-Als u eenmalige aanmelding wilt configureren aan de **Splunk Enterprise- en Splunk Cloud** -zijde, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste gekopieerde URL's uit Azure Portal verzenden naar het [Splunk Enterprise- en Splunk Cloud-ondersteuningsteam](https://www.splunk.com/en_us/about-splunk/contact-us.html). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
+In deze sectie gaat u een testgebruiker met de naam B.Simon maken in Azure Portal.
 
-### <a name="create-an-azure-ad-test-user"></a>Een Azure AD-testgebruiker maken 
-
-Het doel van deze sectie is om in de Azure-portal een testgebruiker met de naam Britta Simon te maken.
-
-1. Selecteer in het linkerdeelvenster in de Azure-portal de optie **Azure Active Directory** , selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
-
-    ![De koppelingen Gebruikers en groepen en Alle gebruikers](common/users.png)
-
-2. Selecteer **Nieuwe gebruiker** boven aan het scherm.
-
-    ![Knop Nieuwe gebruiker](common/new-user.png)
-
-3. In Gebruikerseigenschappen voert u de volgende stappen uit.
-
-    ![Het dialoogvenster Gebruiker](common/user-properties.png)
-
-    a. Voer in het veld **Naam** **Britta Simon** in.
-  
-    b. In het veld **Gebruikersnaam** typt u **brittasimon\@yourcompanydomain.extension**  
-    Bijvoorbeeld: BrittaSimon@contoso.com
-
-    c. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak Wachtwoord.
-
-    d. Klik op **Create**.
+1. Selecteer in het linkerdeelvenster van Azure Portal de optie **Azure Active Directory**, selecteer **Gebruikers** en selecteer vervolgens **Alle gebruikers**.
+1. Selecteer **Nieuwe gebruiker** boven aan het scherm.
+1. Volg de volgende stappen bij de eigenschappen voor **Gebruiker**:
+   1. Voer in het veld **Naam**`B.Simon` in.  
+   1. Voer username@companydomain.extension in het veld **Gebruikersnaam** in. Bijvoorbeeld `B.Simon@contoso.com`.
+   1. Schakel het selectievakje **Wachtwoord weergeven** in en noteer de waarde die wordt weergegeven in het vak **Wachtwoord**.
+   1. Klik op **Create**.
 
 ### <a name="assign-the-azure-ad-test-user"></a>De Azure AD-testgebruiker toewijzen
 
-In dit gedeelte hebt u Britta Simon in staat gesteld gebruik te maken van eenmalige aanmelding van Azure door haar toegang te geven tot Splunk Enterprise en Splunk Cloud.
+In deze sectie schakelt u B. Simon in om de eenmalige aanmelding van Azure te gebruiken door toegang te verlenen aan de Cloud Splunk Enter prise en Splunk.
 
-1. Selecteer in Azure Portal **Bedrijfstoepassingen** , selecteer **Alle toepassingen** en selecteer vervolgens **Splunk Enterprise en Splunk Cloud**.
+1. Selecteer in Azure Portal de optie **Bedrijfstoepassingen** en selecteer vervolgens **Alle toepassingen**.
+1. Selecteer in de lijst toepassingen de optie **Splunk Enter prise en Splunk Cloud**.
+1. Zoek op de overzichtspagina van de app de sectie **Beheren** en selecteer **Gebruikers en groepen**.
+1. Selecteer **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
+1. Selecteer in het dialoogvenster **Gebruikers en groepen** de optie **B.Simon** in de lijst Gebruikers. Klik vervolgens op de knop **Selecteren** onderaan het scherm.
+1. Als u verwacht dat er een rol aan de gebruikers moet worden toegewezen, kunt u de rol selecteren in de vervolgkeuzelijst **Selecteer een rol**. Als er geen rol is ingesteld voor deze app, wordt de rol Standaardtoegang geselecteerd.
+1. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
-    ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
+### <a name="configure-splunk-enterprise-and-splunk-cloud-sso"></a>Splunk Enter prise en Splunk Cloud SSO configureren
 
-2. Typ in de lijst met toepassingen **Splunk Enterprise en Splunk Cloud** en selecteer deze optie.
+  Als u eenmalige aanmelding wilt configureren aan de **Splunk Enterprise- en Splunk Cloud**-zijde, moet u het gedownloade **XML-bestand met federatieve metagegevens** en de juiste gekopieerde URL's uit Azure Portal verzenden naar het [Splunk Enterprise- en Splunk Cloud-ondersteuningsteam](https://www.splunk.com/en_us/about-splunk/contact-us.html). Het team stelt de instellingen zo in dat de verbinding tussen SAML en eenmalige aanmelding aan beide zijden goed is ingesteld.
 
-    ![De koppeling naar Splunk Enterprise en Splunk Cloud in de lijst met toepassingen](common/all-applications.png)
-
-3. Selecteer in het menu aan de linkerkant **Gebruikers en groepen**.
-
-    ![De koppeling Gebruikers en groepen](common/users-groups-blade.png)
-
-4. Klik op de knop **Gebruiker toevoegen** en selecteer vervolgens **Gebruikers en groepen** in het dialoogvenster **Toewijzing toevoegen**.
-
-    ![Het deelvenster Toewijzing toevoegen](common/add-assign-user.png)
-
-5. Selecteer in het dialoogvenster **Gebruikers en groepen** **Britta Simon** in de lijst met gebruikers en klik op de knop **Selecteren** onder aan het scherm.
-
-6. Als u een waarde voor een rol verwacht in de SAML-bewering, moet u in het dialoogvenster **Rol selecteren** de juiste rol voor de gebruiker in de lijst selecteren en vervolgens op de knop **Selecteren** onder aan het scherm klikken.
-
-7. Klik in het dialoogvenster **Toewijzing toevoegen** op de knop **Toewijzen**.
 
 ### <a name="create-splunk-enterprise-and-splunk-cloud-test-user"></a>Een testgebruiker maken voor Splunk Enterprise en Splunk Cloud
 
 In dit gedeelte maakt u de gebruiker Britta Simon in Splunk Enterprise en Splunk Cloud. Neem contact op met het [ondersteuningsteam van Splunk Enterprise en Splunk Cloud](https://www.splunk.com/en_us/about-splunk/contact-us.html) om de gebruikers toe te voegen in het Splunk Enterprise- en Splunk Cloud-platform. Er moeten gebruikers worden gemaakt en geactiveerd voordat u eenmalige aanmelding kunt gebruiken.
 
-### <a name="test-single-sign-on"></a>Eenmalige aanmelding testen 
+### <a name="test-sso"></a>Eenmalige aanmelding testen
 
-In deze sectie gaat u uw configuratie van Azure AD-eenmalige aanmelding testen via het toegangsvenster.
+In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met behulp van de volgende opties. 
 
-Wanneer u op de Splunk Enterprise- en Splunk Cloud-tegel in het toegangsvenster klikt, wordt u automatisch aangemeld bij de Splunk Enterprise- en Splunk Cloud-versie waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* Klik in Azure Portal op **Deze toepassing testen**. Dit wordt omgeleid naar de aanmeldings-URL van de Splunk Enter prise-en Splunk, waar u de aanmeldings stroom kunt initiëren. 
 
-## <a name="additional-resources"></a>Aanvullende resources
+* Ga rechtstreeks naar de Splunk Enter prise-en Splunk-URL voor aanmelding bij de Cloud en start de aanmeldings stroom vanaf daar.
 
-- [Lijst met zelfstudies over het integreren van SaaS-apps met Azure Active Directory](./tutorial-list.md)
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de Cloud tegel Splunk Enter prise en Splunk in de mijn apps klikt, wordt dit omgeleid naar Splunk Enter prise en Splunk-URL voor aanmelden bij de Cloud. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/user-help/my-apps-portal-end-user-access) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
-- [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
+## <a name="next-steps"></a>Volgende stappen
 
-- [Wat is voorwaardelijke toegang in Azure Active Directory?](../conditional-access/overview.md)
+Nadat u de Splunk Enter prise-en Splunk-Cloud hebt geconfigureerd, kunt u sessie beheer afdwingen, waardoor exfiltration en infiltratie van de gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app)

@@ -4,16 +4,16 @@ description: Zelf studie waarin wordt getoond hoe u verrijkingen van berichten g
 author: robinsh
 ms.service: iot-hub
 services: iot-hub
-ms.topic: conceptual
+ms.topic: tutorial
 ms.date: 12/20/2019
 ms.author: robinsh
 ms.custom: mqtt, devx-track-azurecli, devx-track-csharp
-ms.openlocfilehash: 60bd416cf330676485f83720be4365b56c56baaf
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: ddc212e99c0e55156f56df6bf77e122408a727f9
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96436705"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624052"
 ---
 # <a name="tutorial-use-azure-iot-hub-message-enrichments"></a>Zelf studie: verrijkingen van Azure IoT Hub-berichten gebruiken
 
@@ -83,7 +83,7 @@ Dit zijn de resources die zijn gemaakt door het script. *Verrijkt* betekent dat 
 | container naam | Origineel  |
 | container naam | geavanceerde  |
 | IoT-apparaatnaam | Contoso-test-apparaat |
-| Naam van de IoT Hub | ContosoTestHubMsgEn |
+| IoT Hub naam | ContosoTestHubMsgEn |
 | Naam van opslag account | contosostorage |
 | eindpunt naam 1 | ContosoStorageEndpointOriginal |
 | Naam van eind punt 2 | ContosoStorageEndpointEnriched|
@@ -279,7 +279,7 @@ Op dit moment worden de resources allemaal ingesteld en wordt de bericht routeri
 ## <a name="create-and-configure-by-using-a-resource-manager-template"></a>Maken en configureren met behulp van een resource manager-sjabloon
 U kunt een resource manager-sjabloon gebruiken om de resources, bericht Routering en verrijkingen van berichten te maken en te configureren.
 
-1. Meld u aan bij Azure Portal. Selecteer **+ een resource maken** om een zoekvak weer te geven. Voer de *sjabloon implementatie* in en zoek ernaar. Selecteer in het deel venster met resultaten **Sjabloonimlementatie (implementeren met aangepaste sjabloon)**.
+1. Meld u aan bij de Azure-portal. Selecteer **+ een resource maken** om een zoekvak weer te geven. Voer de *sjabloon implementatie* in en zoek ernaar. Selecteer in het deel venster met resultaten **Sjabloonimlementatie (implementeren met aangepaste sjabloon)**.
 
    ![Sjabloonimlementatie in de Azure Portal](./media/tutorial-message-enrichments/template-select-deployment.png)
 
@@ -303,7 +303,7 @@ U kunt een resource manager-sjabloon gebruiken om de resources, bericht Routerin
    | container naam | Origineel  |
    | container naam | geavanceerde  |
    | IoT-apparaatnaam | Contoso-test-apparaat |
-   | Naam van de IoT Hub | ContosoTestHubMsgEn |
+   | IoT Hub naam | ContosoTestHubMsgEn |
    | Naam van opslag account | contosostorage |
    | eindpunt naam 1 | ContosoStorageEndpointOriginal |
    | Naam van eind punt 2 | ContosoStorageEndpointEnriched|
@@ -386,7 +386,7 @@ Als u alle resources wilt verwijderen die u in deze zelf studie hebt gemaakt, ve
 
 ### <a name="use-the-azure-cli-to-clean-up-resources"></a>Resources opschonen met de Azure-CLI
 
-U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete). Terughalen dat `$resourceGroup` is ingesteld op **ContosoResourcesMsgEn** aan het begin van deze zelf studie.
+U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete&preserve-view=true). Terughalen dat `$resourceGroup` is ingesteld op **ContosoResourcesMsgEn** aan het begin van deze zelf studie.
 
 ```azurecli-interactive
 az group delete --name $resourceGroup
@@ -397,6 +397,7 @@ az group delete --name $resourceGroup
 In deze zelf studie hebt u geconfigureerd en getest hoe u verrijkingen van berichten kunt toevoegen aan IoT Hub berichten door de volgende stappen uit te voeren:
 
 **IoT Hub verrijkingen van berichten gebruiken**
+
 > [!div class="checklist"]
 > * Eerste methode: resources maken en bericht routering configureren met behulp van de Azure CLI. Configureer de verrijkingen van het bericht hand matig met behulp van de [Azure Portal](https://portal.azure.com).
 > * Tweede methode: resources maken en berichten Routering en verrijkingen van berichten configureren met behulp van een Azure Resource Manager sjabloon.
@@ -407,5 +408,8 @@ Zie [overzicht van verrijkingen van berichten](iot-hub-message-enrichments-overv
 
 Zie de volgende artikelen voor meer informatie over het routeren van berichten:
 
-* [IoT Hub bericht routering gebruiken om apparaat-naar-Cloud-berichten te verzenden naar verschillende eind punten](iot-hub-devguide-messages-d2c.md)
-* [Zelf studie: IoT Hub route ring](tutorial-routing.md)
+> [!div class="nextstepaction"]
+> [IoT Hub bericht routering gebruiken om apparaat-naar-Cloud-berichten te verzenden naar verschillende eind punten](iot-hub-devguide-messages-d2c.md)
+
+> [!div class="nextstepaction"]
+> [Zelf studie: IoT Hub route ring](tutorial-routing.md)

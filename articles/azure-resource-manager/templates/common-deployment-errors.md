@@ -3,13 +3,13 @@ title: Veelvoorkomende implementatiefouten oplossen
 description: Hierin wordt beschreven hoe u veelvoorkomende fouten oplost wanneer u resources implementeert in azure met behulp van Azure Resource Manager.
 tags: top-support-issue
 ms.topic: troubleshooting
-ms.date: 09/09/2020
-ms.openlocfilehash: 785a74184cae8523b99da7f647ca87fda53c8648
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.date: 01/20/2021
+ms.openlocfilehash: bb701baf164cfd6ba1dd5c670a406343e83c5c70
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185824"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622808"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Veelvoorkomende fouten met Azure-implementatie oplossen met Azure Resource Manager
 
@@ -34,7 +34,7 @@ Als u op zoek bent naar informatie over een fout code en deze informatie niet in
 | DeploymentNameLengthLimitExceeded | De namen van de implementaties zijn beperkt tot 64 tekens.  | |
 | Heeft | De heeft-fout is een algemene fout die niet de details biedt die u nodig hebt om de fout op te lossen. Bekijk de fout Details voor een fout code die meer informatie bevat. | [Fout code zoeken](#find-error-code) |
 | DeploymentQuotaExceeded | Als u de limiet van 800 implementaties per resource groep bereikt, verwijdert u implementaties uit de geschiedenis die niet meer nodig zijn. | [Fout oplossen wanneer het aantal implementaties groter is dan 800](deployment-quota-exceeded.md) |
-| DeploymentSizeExceeded | Vereenvoudig uw sjabloon om de grootte te verminderen. | [Fouten in de sjabloon grootte oplossen](error-job-size-exceeded.md) |
+| DeploymentJobSizeExceeded | Vereenvoudig uw sjabloon om de grootte te verminderen. | [Fouten in de sjabloon grootte oplossen](error-job-size-exceeded.md) |
 | DnsRecordInUse | De naam van de DNS-record moet uniek zijn. Voer een andere naam in. | |
 | ImageNotFound | Controleer de instellingen van de VM-installatie kopie. |  |
 | InUseSubnetCannotBeDeleted | Deze fout kan optreden wanneer u een resource probeert bij te werken en de aanvraag wordt verwerkt door de resource te verwijderen en te maken. Zorg ervoor dat u alle ongewijzigde waarden opgeeft. | [Bron bijwerken](/azure/architecture/building-blocks/extending-templates/update-resource) |

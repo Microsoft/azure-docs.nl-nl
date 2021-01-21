@@ -1,6 +1,6 @@
 ---
-title: Berichtroutering configureren voor Azure IoT Hub met behulp van de Azure CLI
-description: Hiermee configureert u berichtroutering voor Azure IoT Hub met behulp van de Azure CLI. Afhankelijk van de eigenschappen in het bericht, kunt u berichten routeren naar een opslagaccount of een Service Bus-wachtrij.
+title: 'Zelf studie: bericht routering voor Azure IoT Hub configureren met behulp van Azure CLI'
+description: 'Zelf studie: berichten routering voor Azure IoT Hub configureren met behulp van de Azure CLI. Afhankelijk van de eigenschappen in het bericht, kunt u berichten routeren naar een opslagaccount of een Service Bus-wachtrij.'
 author: robinsh
 manager: philmea
 ms.service: iot-hub
@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2019
 ms.author: robinsh
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 239d8f2bcc1422a1098fb8f6cb3fba6706d671f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 25c3ff7582ed408776c0ae6904e4bacddd89e40b
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87500194"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624168"
 ---
 # <a name="tutorial-use-the-azure-cli-to-configure-iot-hub-message-routing"></a>Zelfstudie: Azure CLI gebruiken om IoT Hub-berichtroutering te configureren
 
@@ -147,7 +147,7 @@ Nu de basisresources zijn ingesteld, kunt u de berichtroutering configureren.
 
 [!INCLUDE [iot-hub-include-create-routing-description](../../includes/iot-hub-include-create-routing-description.md)]
 
-Als u een routeringseindpunt wilt maken, gebruikt u [az iot hub routing-endpoint create](/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest#az-iot-hub-routing-endpoint-create). Als u de berichtroute voor het eindpunt wilt maken, gebruikt u [az iot hub route create](/cli/azure/iot/hub/route?view=azure-cli-latest#az-iot-hub-route-create).
+Als u een routeringseindpunt wilt maken, gebruikt u [az iot hub routing-endpoint create](/cli/azure/iot/hub/routing-endpoint?view=azure-cli-latest#az-iot-hub-routing-endpoint-create&preserve-view=true). Als u de berichtroute voor het eindpunt wilt maken, gebruikt u [az iot hub route create](/cli/azure/iot/hub/route?view=azure-cli-latest#az-iot-hub-route-create&preserve-view=true).
 
 ### <a name="route-to-a-storage-account"></a>Routeren naar een opslagaccount
 

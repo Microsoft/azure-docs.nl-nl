@@ -15,19 +15,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: f28243be6b4f998e8bdea0ce02da3ceedde23e02
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1131c8e79d9df2883dcf7e975af9732c21318a49
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85559122"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621161"
 ---
-# <a name="connect-your-barracuda-appliance"></a>Verbinding maken met uw Barracuda-apparaat 
-
-
+# <a name="connect-your-barracuda-waf-appliance"></a>Uw Barracuda WAF-apparaat aansluiten 
 
 Met de Barracuda Web Application firewall (WAF) kunt u eenvoudig uw Barracuda-logboeken verbinden met uw Azure-Sentinel, om Dash boards weer te geven, aangepaste waarschuwingen te maken en het onderzoek te verbeteren. Dit geeft u meer inzicht in het netwerk van uw organisatie en verbetert de mogelijkheden van beveiligings bewerkingen. Azure Sentinel maakt gebruik van de systeem eigen integratie tussen **Barracuda** en log Analytics agent om naadloze integratie mogelijk te maken. 
-
 
 > [!NOTE]
 > Gegevens worden opgeslagen in de geografische locatie van de werk ruimte waarop u Azure Sentinel uitvoert.

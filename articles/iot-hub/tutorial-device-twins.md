@@ -1,6 +1,6 @@
 ---
-title: Apparaatstatus synchroniseren vanuit Azure IoT Hub | Microsoft Docs
-description: Ontdek hoe u apparaatdubbels kunt gebruiken om uw apparaten te configureren vanuit de cloud en om status- en nalevingsgegevens van uw apparaten te ontvangen.
+title: Zelf studie-Apparaatstatus synchroniseren vanuit Azure IoT Hub | Microsoft Docs
+description: 'Zelf studie: meer informatie over het gebruik van apparaatdubbels voor het configureren van uw apparaten vanuit de Cloud en het ontvangen van status-en compatibiliteits gegevens van uw apparaten.'
 services: iot-hub
 author: wesmc7777
 ms.author: wesmc
@@ -15,12 +15,12 @@ ms.custom:
 - 'Role: IoT Device'
 - devx-track-js
 - devx-track-azurecli
-ms.openlocfilehash: 9ec2c51f01d6b13f33bc2d537a8f73a6721967d4
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
-ms.translationtype: HT
+ms.openlocfilehash: 912e59197970e60f57a13c049ffadbd2ad938a9b
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96572521"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621409"
 ---
 <!-- **TODO** Update publish config with repo paths before publishing! -->
 

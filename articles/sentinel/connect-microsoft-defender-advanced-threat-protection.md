@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/16/2020
 ms.author: yelevin
-ms.openlocfilehash: 72b2ba0ea444fb14ef9fc1bc3ea6aea3654677df
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 0db4e0fe0472c75f1eae392980ae697f53007244
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655524"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623363"
 ---
 # <a name="connect-alerts-from-microsoft-defender-for-endpoint-formerly-microsoft-defender-atp"></a>Verbinding maken met waarschuwingen van micro soft Defender voor eind punt (voorheen micro soft Defender ATP)
 
@@ -28,10 +28,6 @@ ms.locfileid: "94655524"
 > - **Micro soft Defender voor eind punt** was voorheen bekend als **micro soft Defender Advanced Threat Protection** of **MDATP**.
 >
 >     Mogelijk ziet u de oude naam die nog steeds wordt gebruikt in het product (inclusief de gegevens connector in azure Sentinel) gedurende een bepaalde periode.
->
-> - Opname van micro soft Defender voor eindpunt waarschuwingen is momenteel beschikbaar als open bare preview.
-> Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen.
-> Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Met de [micro soft Defender for Endpoint](/windows/security/threat-protection/microsoft-defender-atp/microsoft-defender-advanced-threat-protection) -connector kunt u waarschuwingen van micro soft Defender naar het eind punt streamen naar Azure Sentinel. Op die manier kunt u beveiligings gebeurtenissen in uw organisatie uitgebreid analyseren en playbooks bouwen voor een effectief en direct antwoord.
 
@@ -51,7 +47,7 @@ Als micro soft Defender voor het eind punt is geïmplementeerd en uw gegevens wo
 
 1. In azure Sentinel selecteert u **gegevens connectors**, selecteert u **micro soft Defender voor eind punt** (kan nog steeds *micro soft Defender Advanced Threat Protection* worden genoemd) in de galerie en selecteert u de **pagina connector openen**.
 
-1. Klik op **Verbinding maken**. 
+1. Klik op **Verbinden**. 
 
 1. Als u een query wilt uitvoeren voor micro soft Defender for Endpoint-waarschuwingen in **Logboeken**, voert u **SecurityAlert** in het query venster in en voegt u een filter toe waarbij de **provider naam** **MDATP** is.
 

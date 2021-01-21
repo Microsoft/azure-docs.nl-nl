@@ -1,5 +1,5 @@
 ---
-title: Telemetrie verzenden naar Azure IoT Hub (C#) | Microsoft Docs
+title: Quick Start-telemetrie verzenden naar Azure IoT Hub Snelstartgids (C) | Microsoft Docs
 description: In deze snelstart voert u twee C-voorbeeldtoepassingen uit om gesimuleerde telemetrie te verzenden naar een IoT-hub en telemetrie van de IoT-hub te lezen voor verwerking in de cloud.
 author: wesmc7777
 manager: philmea
@@ -14,12 +14,12 @@ ms.custom:
 - devx-track-azurecli
 ms.date: 04/10/2019
 ms.author: wesmc
-ms.openlocfilehash: 175ec6766f7cad96c2cc386894f01e5e9fb393fc
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 89b872557275db8651f3b55502d340ff55b7e626
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121470"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624283"
 ---
 # <a name="quickstart-send-telemetry-from-a-device-to-an-iot-hub-and-read-it-with-a-back-end-application-c"></a>Quickstart: Telemetrie vanaf een apparaat verzenden naar een IoT-hub en lezen met een back-endtoepassing (C)
 
@@ -114,7 +114,7 @@ In deze snelstart bereidt u een ontwikkelomgeving voor die wordt gebruikt om de 
 
 ## <a name="register-a-device"></a>Een apparaat registreren
 
-Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan maken. In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest) om een gesimuleerd apparaat te registreren.
+Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan maken. In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest&preserve-view=true) om een gesimuleerd apparaat te registreren.
 
 1. Voer de volgende opdrachten uit in Azure Cloud Shell om de apparaat-id te maken.
 
@@ -183,7 +183,7 @@ De toepassing voor het gesimuleerde apparaat maakt verbinding met een apparaatsp
 
 ## <a name="read-the-telemetry-from-your-hub"></a>De telemetrie van uw hub lezen
 
-In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest) voor het bewaken van de apparaatberichten die door het gesimuleerde apparaat worden verzonden.
+In deze sectie gebruikt u Azure Cloud Shell met de [IoT-extensie](/cli/azure/ext/azure-iot/iot?view=azure-cli-latest&preserve-view=true) voor het bewaken van de apparaatberichten die door het gesimuleerde apparaat worden verzonden.
 
 1. Voer met de Azure Cloud Shell de volgende opdracht uit om te verbinden en berichten te lezen uit uw IoT-hub:
 

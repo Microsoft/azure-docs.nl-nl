@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Service Bus | Microsoft Docs
 description: In dit artikel vindt u antwoorden op enkele veelgestelde vragen over Azure Service Bus.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: acd741101928f5a2dfd72eab1598af6e4556a3d1
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: 576df12a9d53ec3585f8691016cd250bf1ba4be3
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96022133"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623104"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Azure Service Bus-Veelgestelde vragen (FAQ)
 
@@ -57,7 +57,7 @@ De officiële Azure-Sdk's gebruiken meestal het AMQP-protocol voor het verzenden
 
 [!INCLUDE [service-bus-websockets-options](../../includes/service-bus-websockets-options.md)]
 
-Het oudere WindowsAzure. ServiceBus-pakket voor de .NET Framework heeft een optie voor het gebruik van het verouderde ' Service Bus Messa ging Protocol ' (SBMP), ook wel ' netmessa ging ' genoemd. Dit protocol maakt gebruik van TCP-poorten 9350-9354. De standaard modus voor dit pakket is om automatisch te detecteren of deze poorten beschikbaar zijn voor communicatie en om over te scha kelen naar websockets met TLS via poort 443, als dat niet het geval is. U kunt deze instelling negeren en deze modus afdwingen door de `Https` [ConnectivityMode](/dotnet/api/microsoft.servicebus.connectivitymode?view=azure-dotnet) in te stellen voor de [`ServiceBusEnvironment.SystemConnectivity`](/dotnet/api/microsoft.servicebus.servicebusenvironment.systemconnectivity?view=azure-dotnet) instelling, die wereld wijd van toepassing is op de toepassing.
+Het oudere WindowsAzure. ServiceBus-pakket voor de .NET Framework heeft een optie voor het gebruik van het verouderde ' Service Bus Messa ging Protocol ' (SBMP), ook wel ' netmessa ging ' genoemd. Dit protocol maakt gebruik van TCP-poorten 9350-9354. De standaard modus voor dit pakket is om automatisch te detecteren of deze poorten beschikbaar zijn voor communicatie en om over te scha kelen naar websockets met TLS via poort 443, als dat niet het geval is. U kunt deze instelling negeren en deze modus afdwingen door de `Https` [ConnectivityMode](/dotnet/api/microsoft.servicebus.connectivitymode) in te stellen voor de [`ServiceBusEnvironment.SystemConnectivity`](/dotnet/api/microsoft.servicebus.servicebusenvironment.systemconnectivity) instelling, die wereld wijd van toepassing is op de toepassing.
 
 ### <a name="what-ip-addresses-do-i-need-to-add-to-allow-list"></a>Welke IP-adressen moet ik toevoegen aan de acceptatie lijst?
 Ga als volgt te werk om de juiste IP-adressen te zoeken die u wilt toevoegen aan de lijst toestaan voor uw verbindingen:

@@ -11,12 +11,12 @@ ms.author: amsaied
 ms.reviewer: sgilley
 ms.date: 09/15/2020
 ms.custom: tracking-python
-ms.openlocfilehash: ab497dee35afdd60247d156d0f30bbf003ea1210
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
-ms.translationtype: HT
+ms.openlocfilehash: c08d9ee6704203d0634d7a1b90a57de9c6a99d31
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072153"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622792"
 ---
 # <a name="tutorial-use-your-own-data-part-4-of-4"></a>Zelfstudie: Uw eigen gegevens gebruiken (Deel 4 van 4)
 
@@ -99,6 +99,20 @@ tutorial
 ```
 
 Als u `train.py` niet lokaal hebt uitgevoerd in de vorige zelfstudie, hebt u de map `data/` niet. In dit geval voert u de `torchvision.datasets.CIFAR10`-methode lokaal uit met `download=True` in uw `train.py`-script.
+
+Zorg er ook voor dat u de zelf studie omgeving afsluit en de nieuwe Conda-omgeving activeert om lokaal uit te voeren.
+
+```bash
+conda deactivate                # If you are still using the tutorial environment, exit it
+```
+
+```bash
+conda env create -f .azureml/pytorch-env.yml    # create the new conda environment with updated dependencies
+```
+
+```bash
+conda activate pytorch-aml-env          # activate new conda environment
+```
 
 Om het gewijzigde trainingsscript lokaal uit te voeren, roept u het volgende aan:
 

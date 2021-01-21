@@ -2,13 +2,13 @@
 title: Wat is er nieuw in Azure Site Recovery
 description: Biedt een samen vatting van nieuwe functies en de meest recente updates in de Azure Site Recovery-service.
 ms.topic: conceptual
-ms.date: 10/22/2020
-ms.openlocfilehash: 3667f963eac0ebc719872db00ac069c7da70ec91
-ms.sourcegitcommit: b849ecdc8aa97337299b0f09970b7810c59cd044
+ms.date: 01/20/2021
+ms.openlocfilehash: 2778f1af99512c4594d2d688eea7e04b3b81ae47
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96310354"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621757"
 ---
 # <a name="whats-new-in-site-recovery"></a>Nieuw in Site Recovery
 
@@ -22,13 +22,27 @@ Voor Site Recovery-onderdelen ondersteunen we N-4 versies, waarbij N de meest re
 
 **Bijwerken** |  **Unified Setup** | **Eicellen van de configuratie server** | **Mobility Service-agent** | **Site Recovery provider** | **Recovery Services-agent**
 --- | --- | --- | --- | --- | ---
+[Pakket 53](https://support.microsoft.com/help/4602881/)  | 9.40.5850.1 | 5.1.6537.0 | 9.40.5850.1 | 5.1.6537.0  | 2.0.9202.0
 [Pakket 52](https://support.microsoft.com/help/4597409/)  | 9.39.5796.1 | 5.1.6458.0 | 9.39.5796.1 | 5.1.6458.0  | 2.0.9196.0
 [Pakket 51](https://support.microsoft.com/help/4590304)  | 9.38.5761.1 | 5.1.6400.0 | 9.38.5761.1 | 5.1.6400.0  | 2.0.9193.0
 [Pakket 50](https://support.microsoft.com/help/4582666/) | 9.37.5724.1 | 5.1.6347.0 | 9.37.5724.1 | 5.1.6347.0  | 2.0.9192.0
 [Pakket 49](https://support.microsoft.com/help/4578241/) | 9.36.5696.1 | 5.1.6315.0 | 9.36.5696.1 | 5.1.6315.0 | 2.0.9188.0
-[Pakket 48](https://support.microsoft.com/help/4573888/) | 9.35.5659.1 | 5.1.6200.0 | 9.35.5659.1 | 5.1.6200.0 | 2.0.9186.0
+
 
 Meer [informatie](service-updates-how-to.md) over installatie en ondersteuning van de update.
+
+## <a name="updates-january-2021"></a>Updates (januari 2021)
+
+### <a name="update-rollup-53"></a>Update pakket 53
+
+[Update pakket 53](https://support.microsoft.com/help/4602881/update-rollup-53-for-azure-site-recovery) bevat de volgende updates:
+
+**Bijwerken** | **Details**
+--- | ---
+**Providers en agents** | Updates van Site Recovery agents en providers zoals beschreven in het pakket.
+**Problemen/verbeteringen van het probleem** | Een aantal oplossingen en verbeteringen zoals beschreven in de samen telling. 
+**Herstel na nood gevallen voor Azure VM** | De replicatie voor labels wordt nu ondersteund. Labels die zijn toegevoegd aan Azure Vm's, schijven en Nic's in de bron regio worden gerepliceerd naar computers in de doel regio.<br/><br/> Virtuele Azure-machines waarop Debian 10 wordt uitgevoerd, worden nu ondersteund voor replicatie.
+**VMware-VM/fysieke nood herstel naar Azure** | De update bevat verbeteringen in de logboeken voor de replicatie van virtuele VMware-machines naar Azure en verbeterde fout berichten.<br/><br/> VMware-Vm's en fysieke machines met Debian 10 worden nu ondersteund voor replicatie.
 
 
 ## <a name="updates-november-2020"></a>Updates (november 2020)
@@ -380,7 +394,7 @@ De functies die deze maand zijn toegevoegd, worden in de tabel samenvatten.
 
 **Functie** | **Details**
 --- | ---
-**Azure Managed Disks** | De replicatie van on-premises virtuele VMware-machines en fysieke servers is nu rechtstreeks voor beheerde schijven in Azure. On-premises gegevens worden verzonden naar een cache-opslag account in Azure en er worden herstel punten gemaakt op beheerde schijven op de doel locatie. Dit zorgt ervoor dat u niet meerdere doel opslag accounts hoeft te beheren.
+**Beheerde schijven** | De replicatie van on-premises virtuele VMware-machines en fysieke servers is nu rechtstreeks voor beheerde schijven in Azure. On-premises gegevens worden verzonden naar een cache-opslag account in Azure en er worden herstel punten gemaakt op beheerde schijven op de doel locatie. Dit zorgt ervoor dat u niet meerdere doel opslag accounts hoeft te beheren.
 **Configuratieserver** | Site Recovery ondersteunt nu configuratie servers met meerdere Nic's. Voeg extra adapters toe aan de configuratie Server-VM voordat u de configuratie server in de kluis registreert. Als u later toevoegt, moet u de server opnieuw registreren in de kluis.
 
 
@@ -413,7 +427,7 @@ De functies die deze maand zijn toegevoegd, worden in de tabel samenvatten.
 **Functie** | **Details**
 --- | ---
 **Netwerktoewijzing** | Voor herstel na nood gevallen van Azure VM kunt u nu elk beschik bare doelnet werken gebruiken wanneer u replicatie inschakelt.
-**Standard - SSD** | U kunt nu herstel na nood gevallen instellen voor Azure-Vm's met behulp van [Standard-SSD-schijven](../virtual-machines/disks-types.md#standard-ssd).
+**Standard SSD** | U kunt nu herstel na nood gevallen instellen voor Azure-Vm's met behulp van [Standard-SSD-schijven](../virtual-machines/disks-types.md#standard-ssd).
 **Opslagruimten direct** | U kunt herstel na nood gevallen instellen voor apps die worden uitgevoerd op Azure VM-apps met behulp van [opslagruimten direct](/windows-server/storage/storage-spaces/storage-spaces-direct-overview) voor hoge Beschik baarheid.  Het gebruik van Opslagruimten Direct (S2D) in combi natie met Site Recovery biedt uitgebreide beveiliging van Azure VM-workloads. Met S2D kunt u een gast cluster hosten in Azure. Dit is vooral handig wanneer een virtuele machine als host fungeert voor een kritieke toepassing, zoals SAP ASCS Layer, SQL Server of scale-out Bestands server.
 
 
@@ -480,7 +494,7 @@ De functies die deze maand zijn toegevoegd, worden in de tabel samenvatten.
 --- | ---
 **Linux Support** |  Er is ondersteuning toegevoegd voor Oracle Linux 6,8, Oracle Linux 6,9 en Oracle Linux 7,0 met de Red Hat compatible kernel en voor de onbreekbare UEK-versie (Enter prise kernel) 5.
 **LVM** | Ondersteuning toegevoegd voor LVM-en LVM2-volumes.<br/><br/> De/boot-map op een schijf partitie en op LVM-volumes wordt nu ondersteund.
-**Adressen** | Er is ondersteuning toegevoegd voor deze mappen die zijn ingesteld als afzonderlijke partities of bestands systemen die zich niet op dezelfde systeem schijf bevinden:<br/><br/> /(root),/boot,/usr,/usr/local,/var,/etc.
+**Mappen** | Er is ondersteuning toegevoegd voor deze mappen die zijn ingesteld als afzonderlijke partities of bestands systemen die zich niet op dezelfde systeem schijf bevinden:<br/><br/> /(root),/boot,/usr,/usr/local,/var,/etc.
 **Windows Server 2008** | Ondersteuning voor dynamische schijven is toegevoegd.
 **Failover** | Verbeterde failover-tijd voor VMware-Vm's waarbij storvsc en vsbus geen stuur Programma's worden opgestart.
 **UEFI-ondersteuning** | Azure-Vm's ondersteunen boot type UEFI niet. U kunt nu on-premises fysieke servers met UEFI migreren naar Azure met Site Recovery. Site Recovery migreert de server door het opstart type te converteren naar BIOS vóór de migratie. Site Recovery eerder deze conversie alleen voor Vm's ondersteund. Ondersteuning is beschikbaar voor fysieke servers met Windows Server 2012 of hoger.

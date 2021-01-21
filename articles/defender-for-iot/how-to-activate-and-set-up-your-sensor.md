@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 4ad1562bdd9853b6ff3c537790a54dbeab96b5b8
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 908460bd0a034e21524b6ea6d3042f362cc810d4
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538559"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623586"
 ---
 # <a name="activate-and-set-up-your-sensor"></a>Uw sensor activeren en instellen
 
@@ -44,7 +44,7 @@ Voordat gebruikers zich aanmelden bij de sensor console, hebben ze toegang tot:
 
 Uw sensor is in een specifieke beheer modus onboardd naar Azure Defender voor IoT:
 
-| Type modus | Beschrijving |
+| Type modus | Description |
 |--|--|
 | **Modus verbonden met de Cloud** | Gegevens die door de sensor worden gedetecteerd, worden weer gegeven in de sensor console. Waarschuwings gegevens worden ook geleverd via de IoT-hub en kunnen worden gedeeld met andere Azure-Services, zoals Azure Sentinel. |
 | **Lokaal verbonden modus** | Gegevens die door de sensor worden gedetecteerd, worden weer gegeven in de sensor console. Detectie gegevens worden ook gedeeld met de on-premises beheer console als de sensor hieraan is gekoppeld. |
@@ -134,9 +134,9 @@ Nadat u zich hebt aangemeld, wordt de Azure Defender voor IoT-console geopend.
 
 ## <a name="initial-setup-and-learning-for-administrators"></a>Eerste installatie en Learning (voor beheerders)
 
-Na uw eerste aanmelding wordt de Azure Defender voor IoT-sensor automatisch gestart om uw netwerk te controleren. Netwerk assets worden weer gegeven in de secties Asset Maps en Asset Inventory. Azure Defender voor IoT detecteert en waarschuwt u voor alle beveiligings-en operationele incidenten die zich in uw netwerk voordoen. U kunt vervolgens rapporten en query's maken op basis van de gedetecteerde informatie.
+Na uw eerste aanmelding wordt de Azure Defender voor IoT-sensor automatisch gestart om uw netwerk te controleren. Netwerk apparaten worden weer gegeven in de secties Apparaatbeheer en apparaat inventaris. Azure Defender voor IoT detecteert en waarschuwt u voor alle beveiligings-en operationele incidenten die zich in uw netwerk voordoen. U kunt vervolgens rapporten en query's maken op basis van de gedetecteerde informatie.
 
-In eerste instantie wordt deze activiteit uitgevoerd in de leer modus, waardoor uw sensor de gebruikelijke activiteiten van uw netwerk kan ontdekken. Zo leert de sensor in uw netwerk gedetecteerde assets, gedetecteerde protocollen in het netwerk en bestands overdrachten die tussen specifieke assets plaatsvinden. Deze activiteit wordt de basislijn activiteit van uw netwerk.
+In eerste instantie wordt deze activiteit uitgevoerd in de leer modus, waardoor uw sensor de gebruikelijke activiteiten van uw netwerk kan ontdekken. De sensor leert bijvoorbeeld apparaten die in uw netwerk zijn gedetecteerd, protocollen die in het netwerk zijn gedetecteerd en bestands overdrachten die tussen specifieke apparaten plaatsvinden. Deze activiteit wordt de basislijn activiteit van uw netwerk.
 
 ### <a name="review-and-update-basic-system-settings"></a>Basis systeem instellingen controleren en bijwerken
 
@@ -177,7 +177,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 
 **Navigatie** 
 
-| Venster | Pictogram | Beschrijving |
+| Venster | Pictogram | Description |
 | -----------|--|--|
 | Dashboard | :::image type="icon" source="media/concept-sensor-console-overview/dashboard-icon-azure.png" border="false"::: | Bekijk een intuïtieve moment opname van de status van de beveiliging van het netwerk. |
 | Apparaattoewijzing | :::image type="icon" source="media/concept-sensor-console-overview/asset-map-icon-azure.png" border="false"::: | Bekijk de netwerk apparaten, de verbindingen van apparaten en de apparaateigenschappen in een kaart. Er zijn verschillende opties voor inzoomen, markeren en filteren beschikbaar om uw netwerk weer te geven. |
@@ -187,13 +187,13 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 
 **Bepaling**
 
-| Venster| Pictogram | Beschrijving |
+| Venster| Pictogram | Description |
 |---|---|---|
 | Tijd lijn van gebeurtenis | :::image type="icon" source="media/concept-sensor-console-overview/event-timeline-icon-azure.png" border="false"::: | Bekijk een tijd lijn met informatie over waarschuwingen, netwerk gebeurtenissen (informatief) en gebruikers bewerkingen, zoals aanmeldingen van gebruikers en het verwijderen van gebruikers.|
 
 **Navigatie**
 
-| Venster | Pictogram | Beschrijving |
+| Venster | Pictogram | Description |
 |---|---|---|
 | Gegevens analyse | :::image type="icon" source="media/concept-sensor-console-overview/data-mining-icon-azure.png" border="false"::: | Uitgebreide en gedetailleerde informatie over de apparaten van uw netwerk op verschillende lagen genereren. |
 | Trends en statistieken | :::image type="icon" source="media/concept-sensor-console-overview/trends-and-statistics-icon-azure.jpg" border="false"::: | Bekijk trends en statistieken in een uitgebreid scala aan widgets. |
@@ -201,7 +201,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 
 **Beheerder**
 
-| Venster | Pictogram | Beschrijving |
+| Venster | Pictogram | Description |
 |---|---|---|
 | Gebruikers | :::image type="icon" source="media/concept-sensor-console-overview/users-icon-azure.png" border="false"::: | Definieer gebruikers en rollen met verschillende toegangs niveaus. |
 | Doorsturen | :::image type="icon" source="media/concept-sensor-console-overview/forwarding-icon-azure.png" border="false"::: | Stuur waarschuwings gegevens door naar partners die zijn geïntegreerd met Defender voor IoT, e-mail adressen, webhook-servers en meer. <br /> Zie [informatie over het door sturen van waarschuwingen](how-to-forward-alert-information-to-partners.md) voor meer informatie. |
@@ -210,7 +210,7 @@ U opent console hulpprogramma's vanuit het menu aan de zijkant.
 
 **Ondersteuning**
 
-| Venster| Pictogram | Beschrijving |
+| Venster| Pictogram | Description |
 |----|---|---|
 | Ondersteuning | :::image type="icon" source="media/concept-sensor-console-overview/support-icon-azure.png" border="false"::: | Neem contact op met [Microsoft ondersteuning](https://support.microsoft.com/) voor hulp. |
 

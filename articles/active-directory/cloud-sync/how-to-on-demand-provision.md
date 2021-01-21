@@ -11,12 +11,12 @@ ms.date: 09/14/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0daca8b19f9a712253bc231cba9a0245553b0adb
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 6ac186d4b460165605ccf0fc53bdb0b691348bf3
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98613281"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622521"
 ---
 # <a name="azure-ad-connect-cloud-sync-on-demand-provisioning"></a>Inrichting van de Cloud synchronisatie op aanvraag Azure AD Connect
 
@@ -32,9 +32,9 @@ Volg de onderstaande stappen om de nieuwe functie te gebruiken.
 
 1.  Selecteer in Azure Portal **Azure Active Directory**.
 2.  Selecteer **Azure AD Connect**.
-3.  Selecteer **inrichting beheren**.
+3.  Selecteer **Cloud synchronisatie beheren**.
 
-    ![Inrichting beheren](media/how-to-configure/manage-1.png)
+    ![Inrichting beheren](media/how-to-install/install-6.png)
 4. Selecteer uw configuratie onder **configuratie**.
 5. Klik onder **valideren** op de knop **een gebruiker inrichten** . 
 

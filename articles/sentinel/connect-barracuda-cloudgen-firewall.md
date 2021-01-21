@@ -14,19 +14,16 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/30/2019
 ms.author: yelevin
-ms.openlocfilehash: aaedbfdd3b1bbbc653756d74ee86fc277b21caec
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dd0115fa34b10805570b6e9d8d09ae96fc169dfc
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "77588498"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621128"
 ---
 # <a name="connect-barracuda-cloudgen-firewall"></a>Verbinding maken met Barracuda CloudGen-firewall
 
 Met de Barracuda CloudGen firewall-connector (CGFW) kunt u eenvoudig uw Barracuda CGFW-logboeken met Azure Sentinel verbinden, Dash boards weer geven, aangepaste waarschuwingen maken en het onderzoek verbeteren. Dit geeft u meer inzicht in het netwerk van uw organisatie en verbetert de mogelijkheden van beveiligings bewerkingen.
-
-
-
 
 ## <a name="prerequisites"></a>Vereisten
 

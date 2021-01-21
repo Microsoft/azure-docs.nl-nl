@@ -5,14 +5,14 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: how-to
-ms.date: 8/15/2018
+ms.date: 01/20/2021
 ms.author: victorh
-ms.openlocfilehash: 413ae2ee19f0b8e427de9167b52971e413cdf573
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: f0c06a94498f4d2481a6e953b959d766c60415fb
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93397209"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622177"
 ---
 # <a name="renew-application-gateway-certificates"></a>Application Gateway certificaten vernieuwen
 
@@ -20,13 +20,13 @@ Op een bepaald moment moet u uw certificaten vernieuwen als u uw toepassings gat
 
 U kunt een certificaat dat is gekoppeld aan een listener vernieuwen met behulp van de Azure Portal, Azure PowerShell of Azure CLI:
 
-## <a name="azure-portal"></a>Azure-portal
+## <a name="azure-portal"></a>Azure Portal
 
-Als u een listener-certificaat wilt vernieuwen vanuit de portal, gaat u naar de gateway-listeners van uw toepassing. Klik op de listener met een certificaat dat moet worden vernieuwd en klik vervolgens op het **geselecteerde certificaat vernieuwen of bewerken**.
+Als u een listener-certificaat wilt vernieuwen vanuit de portal, gaat u naar de gateway-listeners van uw toepassing. Selecteer de listener met een certificaat dat moet worden vernieuwd, en selecteer vervolgens het **geselecteerde certificaat vernieuwen of bewerken**.
 
-![Certificaat verlengen](media/renew-certificate/ssl-cert.png)
+:::image type="content" source="media/renew-certificate/ssl-cert.png" alt-text="Certificaat verlengen":::
 
-Upload uw nieuwe PFX-certificaat, geef het een naam, typ het wacht woord en klik vervolgens op **Opslaan**.
+Upload uw nieuwe PFX-certificaat, geef het een naam, typ het wacht woord en selecteer vervolgens **Opslaan**.
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 

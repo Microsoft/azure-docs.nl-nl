@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 1/13/2021
 ms.author: shhazam
-ms.openlocfilehash: f3239434a7ba737bc9323bc4f383afd794800db1
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 66b960bf874cc46985230e488c749663eff0b835
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201469"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621094"
 ---
 # <a name="azure-defender-for-iot-architecture"></a>Azure Defender voor IoT-architectuur
 
@@ -81,7 +81,7 @@ Het beheren van Azure Defender voor IoT in hybride omgevingen geschiedt via twee
 - Azure Portal
 
 ### <a name="sensor-console"></a>Sensor console
-Sensor detecties worden weer gegeven in de sensor console, waar ze kunnen worden weer gegeven, onderzocht en geanalyseerd in een netwerk kaart, inventarisatie van activa en in een uitgebreide reeks rapporten, bijvoorbeeld rapporten voor risico analyse, gegevens analyse query's en aanvals vectoren. U kunt ook de-console gebruiken om bedreigingen weer te geven en te verwerken die zijn gedetecteerd door sensor motoren, gegevens door te sturen naar partner systemen, gebruikers te beheren en meer.
+Sensor detecties worden weer gegeven in de sensor console, waar ze kunnen worden weer gegeven, onderzocht en geanalyseerd in een netwerk kaart, een inventarisatie van apparaten en in een uitgebreide reeks rapporten, bijvoorbeeld rapporten voor risico analyse, gegevens analyse query's en aanvals vectoren. U kunt ook de-console gebruiken om bedreigingen weer te geven en te verwerken die zijn gedetecteerd door sensor motoren, gegevens door te sturen naar partner systemen, gebruikers te beheren en meer.
 
 :::image type="content" source="./media/architecture/sensor-console-v2.png" alt-text="Defender voor IoT-sensor console":::
 
@@ -96,7 +96,7 @@ De-beheer console kan worden geïmplementeerd voor een configuratie met een hoge
 
 Nauw geïntegreerd met uw SOC-werk stromen en rapporten uitvoeren, maakt het eenvoudig om de prioriteit van oplossings activiteiten en de correlatie van bedreigingen op meerdere locaties te verbeteren.
 
-- Holistische-Verminder complexiteit met één uniform platform voor het beheren van activa, Risico's en beveiligings problemen, en het bewaken van bedreigingen met incident reacties.
+- Holistische-Verminder complexiteit met één uniform platform voor Apparaatbeheer, risico-en beveiligings problemen en het controleren van bedreigingen met incident reacties.
 
 - Aggregatie en correlatie: gegevens en waarschuwingen die zijn verzameld van alle sites weer geven, verzamelen en analyseren.
 

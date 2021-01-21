@@ -1,5 +1,5 @@
 ---
-title: 'Snelstartgids: Een apparaat beheren vanuit Azure IoT Hub (.NET) | Microsoft Docs'
+title: 'Quick Start: een apparaat beheren vanuit Azure IoT Hub Snelstartgids (.NET) | Microsoft Docs'
 description: In deze snelstartgids gaan we twee voorbeeldtoepassingen geschreven in C# uitvoeren. De ene toepassing is een servicetoepassing waarmee u op afstand apparaten kunt beheren die zijn verbonden met de hub. De andere toepassing simuleert een apparaat dat is verbonden met uw hub en dat op afstand kan worden beheerd.
 author: robinsh
 manager: philmea
@@ -14,12 +14,12 @@ ms.custom:
 - 'Role: Cloud Development'
 - devx-track-azurecli
 ms.date: 03/04/2020
-ms.openlocfilehash: 39cfa64b756ef6bf20f8cbf3d6e8f8a25e81c674
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
-ms.translationtype: HT
+ms.openlocfilehash: 88b818a25a0888cc74783a210cc7a1c0acb455ac
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97092870"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623261"
 ---
 # <a name="quickstart-control-a-device-connected-to-an-iot-hub-net"></a>Quickstart: Een apparaat beheren dat is verbonden met een IoT-hub (.NET)
 
@@ -82,7 +82,7 @@ Een apparaat moet zijn geregistreerd bij uw IoT-hub voordat het verbinding kan m
    **YourIoTHubName**: vervang deze tijdelijke aanduiding door een door u gekozen naam voor de IoT-hub.
 
     ```azurecli-interactive
-    az iot hub device-identity show-connection-string \
+    az iot hub device-identity connection-string show \
       --hub-name {YourIoTHubName} \
       --device-id MyDotnetDevice \
       --output table

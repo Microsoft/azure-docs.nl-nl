@@ -7,20 +7,16 @@ ms.assetid: bfa2eca4-abdc-49ce-b11a-0ee229770cdd
 ms.service: azure-sentinel
 ms.subservice: azure-sentinel
 ms.topic: how-to
-ms.date: 08/30/2020
+ms.date: 01/20/2021
 ms.author: yelevin
-ms.openlocfilehash: 4dffaac329f1581d9082fd8ab2c314f52b1730ab
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: b21ce75bfb33b5a8869c63b7d3f71fb9f0c93768
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656017"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621292"
 ---
 # <a name="connect-data-from-azure-firewall"></a>Verbinding maken met gegevens van Azure Firewall
-
-> [!IMPORTANT]
-> De Azure Firewall gegevens connector in azure Sentinel is momenteel beschikbaar als open bare preview.
-> Deze functie wordt zonder service level agreement gegeven en wordt niet aanbevolen voor productie werkbelastingen. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Azure Firewall is een beheerde, cloudgebaseerde netwerkbeveiligingsservice die uw Azure Virtual Network-resources beschermt. Het is een volledig stateful firewall-as-a-service met ingebouwde hoge Beschik baarheid en een onbeperkte Cloud schaalbaarheid. 
 

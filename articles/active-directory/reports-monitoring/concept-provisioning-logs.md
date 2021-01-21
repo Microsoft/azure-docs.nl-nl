@@ -17,12 +17,12 @@ ms.date: 1/19/2021
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 05a514debcf8036a296bbe66b2dd75c7dacacdc2
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 4c7d02b48d30fa558f8fd12f92705046dab74057
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600741"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98624232"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Rapporten inrichten in de Azure Active Directory Portal (preview)
 
@@ -37,7 +37,11 @@ De rapportage architectuur in Azure Active Directory (Azure AD) bestaat uit de v
     - **Risk ante aanmeldingen** : een [Risk ante aanmelding](../identity-protection/overview-identity-protection.md) is een indicator voor een aanmeldings poging die mogelijk is uitgevoerd door iemand die geen rechtmatige eigenaar van een gebruikers account is.
     - **Gebruikers die zijn gemarkeerd voor risico** : een [Risk ante gebruiker](../identity-protection/overview-identity-protection.md) is een indicator voor een gebruikers account dat mogelijk is aangetast.
 
-In dit onderwerp vindt u een overzicht van het inrichtings rapport.
+In dit onderwerp vindt u een overzicht van de inrichtings Logboeken. Ze bieden antwoorden op vragen zoals: 
+
+* Welke groepen zijn met succes gemaakt in ServiceNow?
+* Wat zijn de gebruikers van Adobe verwijderd?
+* Wat zijn de gebruikers van workday gemaakt in Active Directory? 
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -52,14 +56,16 @@ In dit onderwerp vindt u een overzicht van het inrichtings rapport.
 
 Aan uw Tenant moet een Azure AD Premium-licentie zijn gekoppeld om het rapport alle inrichtings activiteiten te bekijken. Zie [Aan de slag met Azure Active Directory Premium](../fundamentals/active-directory-get-started-premium.md) om uw versie van Azure Active Directory te upgraden. 
 
-## <a name="provisioning-logs"></a>Inrichtingslogboeken
 
-De inrichtings logboeken bieden antwoorden op de volgende vragen:
+## <a name="ways-of-interacting-with-the-provisioning-logs"></a>Manieren van interactie met de inrichtings logboeken 
+Klanten hebben vier manieren van interactie met de inrichtings logboeken:
 
-* Welke groepen zijn met succes gemaakt in ServiceNow?
-* Wat zijn de gebruikers van Adobe verwijderd?
-* Wat zijn de gebruikers die niet met succes zijn gemaakt in DropBox?
+1. Toegang tot de logboeken vanuit de Azure Portal, zoals hieronder wordt beschreven.
+1. Streamen van de inrichtings Logboeken in [Azure monitor](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-log-analytics), waardoor uitgebreide gegevens retentie is toegestaan en aangepaste Dash boards, waarschuwingen en query's kunnen worden samengesteld.
+1. Query's uitvoeren op de [Microsoft Graph-API](https://docs.microsoft.com/graph/api/resources/provisioningobjectsummary?view=graph-rest-beta) voor de inrichtings Logboeken.
+1. De inrichtings logboeken downloaden als een CSV-bestand of JSON.
 
+## <a name="access-the-logs-from-the-azure-portal"></a>Toegang tot de logboeken vanuit de Azure Portal
 U kunt toegang krijgen tot de inrichtings logboeken door **inrichtings logboeken** te selecteren in de sectie **bewaking** van de Blade **Azure Active Directory** in de [Azure Portal](https://portal.azure.com). Het kan Maxi maal twee uur duren voordat bepaalde inrichtings records worden weer gegeven in de portal.
 
 ![Inrichtingslogboeken](./media/concept-provisioning-logs/access-provisioning-logs.png "Inrichtingslogboeken")
@@ -87,7 +93,7 @@ Hiermee kunt u extra velden weergeven of velden verwijderen die al worden weerge
 
 Selecteer een item in de lijst weergave voor meer gedetailleerde informatie.
 
-![Gedetailleerde informatie](./media/concept-provisioning-logs/steps.png "Filteren")
+![Gedetailleerde informatie](./media/concept-provisioning-logs/steps.png "Filter")
 
 
 ## <a name="filter-provisioning-activities"></a>Inrichtings activiteiten filteren
@@ -101,7 +107,7 @@ In de standaard weergave kunt u de volgende filters selecteren:
 - Bewerking
 
 
-![Filters toevoegen](./media/concept-provisioning-logs/default-filter.png "Filteren")
+![Filters toevoegen](./media/concept-provisioning-logs/default-filter.png "Filter")
 
 Met het **identiteits** filter kunt u de naam of de identiteit opgeven die u bevalt. Deze identiteit kan een gebruiker, een groep, een rol of een ander object zijn. U kunt zoeken op de naam of ID van het object. De ID is afhankelijk van het scenario. Wanneer u bijvoorbeeld een object inricht vanuit Azure AD naar Sales Force, is de bron-ID de object-ID van de gebruiker in azure AD terwijl de TargetID de ID van de gebruiker in Sales Force is. Bij het inrichten van workday naar Active Directory, is de bron-ID de werk nemer-ID van de werkdag. Houd er rekening mee dat de naam van de gebruiker mogelijk niet altijd aanwezig is in de identiteits kolom. Er wordt altijd één ID weer. 
 
@@ -192,7 +198,7 @@ Het tabblad **stappen** bevat een overzicht van de stappen voor het inrichten va
 
 
 
-![Scherm afbeelding toont het tabblad stappen, waarin de inrichtings stappen worden weer gegeven.](./media/concept-provisioning-logs/steps.png "Filteren")
+![Scherm afbeelding toont het tabblad stappen, waarin de inrichtings stappen worden weer gegeven.](./media/concept-provisioning-logs/steps.png "Filter")
 
 
 ### <a name="troubleshoot-and-recommendations"></a>Problemen oplossen en aanbevelingen
@@ -205,10 +211,57 @@ Op het tabblad **probleem oplossing en aanbevelingen** vindt u de fout code en d
 
 De **gewijzigde eigenschappen** bevat de oude waarde en nieuwe waarde. In gevallen waarin er geen oude waarde is, is de kolom oude waarde leeg. 
 
-
 ### <a name="summary"></a>Samenvatting
 
 Op het tabblad **samen vatting** vindt u een overzicht van wat er is gebeurd en de id's voor het object in het bron-en doel systeem. 
+
+## <a name="download-logs-as-csv-or-json"></a>Logboeken downloaden als CSV of JSON
+
+U kunt de inrichtings logboeken voor later gebruik downloaden door te navigeren naar de logboeken in de Azure Portal en op downloaden te klikken. Het bestand wordt gefilterd op basis van de filter criteria die u hebt geselecteerd. Mogelijk wilt u de filters zo specifiek mogelijk maken om de tijd te verkorten die nodig is om te downloaden en de grootte van de down load. De CSV-down load is opgesplitst in drie bestanden:
+
+* ProvisioningLogs: Hiermee worden alle logboeken gedownload, met uitzonde ring van de inrichtings stappen en gewijzigde eigenschappen.
+* ProvisioningLogs_ProvisioningSteps: bevat de inrichtings stappen en de wijzigings-ID. De wijzigings-ID kan worden gebruikt om de gebeurtenis samen te voegen met de andere twee bestanden.
+* ProvisioningLogs_ModifiedProperties: bevat de kenmerken die zijn gewijzigd en de wijzigings-ID. De wijzigings-ID kan worden gebruikt om de gebeurtenis samen te voegen met de andere twee bestanden.
+
+#### <a name="opening-the-json-file"></a>Het JSON-bestand openen
+Als u het JSON-bestand wilt openen, gebruikt u een tekst editor zoals [micro soft Visual Studio code](https://aka.ms/vscode). Visual Studio code vereenvoudigt het lezen met behulp van syntaxis markeringen. Het JSON-bestand kan ook worden geopend met behulp van browsers in een niet-bewerk bare indeling, zoals [micro soft Edge](https://aka.ms/msedge) 
+
+#### <a name="prettifying-the-json-file"></a>Het JSON-bestand Prettifying
+Het JSON-bestand wordt gedownload in de minified-indeling om de download grootte te verkleinen. Dit kan op zijn beurt de payload moeilijk leesbaar maken. Bekijk twee opties om het bestand te Prettify:
+
+1. Visual Studio code gebruiken om de JSON te Format teren
+
+Volg de instructies die [hier](https://code.visualstudio.com/docs/languages/json#_formatting) zijn gedefinieerd om het JSON-bestand op te maken met Visual Studio code.
+
+2. Power shell gebruiken om de JSON te Format teren
+
+Met dit script wordt de JSON uitgevoerd in een prettified-indeling met tabs en spaties. 
+
+` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
+
+`$JSONContent | ConvertTo-Json > <PATH TO OUTPUT THE JSON FILE>`
+
+#### <a name="parsing-the-json-file"></a>Het JSON-bestand parseren
+
+Hier volgen enkele voorbeeld opdrachten voor het gebruik van het JSON-bestand met behulp van Power shell. U kunt elke programmeer taal gebruiken waarmee u vertrouwd bent.  
+
+Lees eerst [het JSON-bestand](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/convertfrom-json?view=powershell-7.1) door uit te voeren:
+
+` $JSONContent = Get-Content -Path "<PATH TO THE PROVISIONING LOGS FILE>" | ConvertFrom-JSON`
+
+Nu kunt u de gegevens parseren per scenario. Hieronder vindt u enkele voorbeelden: 
+
+1. Alle jobIDs in de JsonFile uitvoeren
+
+`foreach ($provitem in $JSONContent) { $provitem.jobId }`
+
+2. Alle changeIds uitvoeren voor gebeurtenissen waarbij de actie ' maken ' is
+
+`foreach ($provitem in $JSONContent) { `
+`   if ($provItem.action -eq 'Create') {`
+`       $provitem.changeId `
+`   }`
+`}`
 
 ## <a name="what-you-should-know"></a>Wat u moet weten
 
@@ -226,7 +279,7 @@ Op het tabblad **samen vatting** vindt u een overzicht van wat er is gebeurd en 
 
 Gebruik de onderstaande tabel voor meer informatie over het oplossen van fouten die u in de inrichtings Logboeken kunt vinden. Geef feedback met behulp van de koppeling onder aan deze pagina voor eventuele ontbrekende fout codes. 
 
-|Foutcode|Beschrijving|
+|Foutcode|Description|
 |---|---|
 |Conflict, EntryConflict|Corrigeer de conflicterende kenmerk waarden in azure AD of de toepassing of Controleer de overeenkomende kenmerk configuratie als het conflicterende gebruikers account zou moeten overeenkomen en moeten worden overgenomen. Raadpleeg de volgende [documentatie](../app-provisioning/customize-application-attributes.md) voor meer informatie over het configureren van overeenkomende kenmerken.|
 |TooManyRequests|De doel-app heeft deze poging geweigerd de gebruiker bij te werken omdat deze is overbelast en te veel aanvragen ontvangt. Er is niets te doen. Deze poging wordt automatisch buiten gebruik gesteld. Micro soft is ook op de hoogte gesteld van dit probleem.|
@@ -234,14 +287,14 @@ Gebruik de onderstaande tabel voor meer informatie over het oplossen van fouten 
 |InsufficientRights, MethodNotAllowed, NotPermitted, niet geautoriseerd| Azure AD kan worden geverifieerd met de doel toepassing, maar is niet gemachtigd om de update uit te voeren. Lees alle instructies van de doel toepassing en de bijbehorende [zelf studie](../saas-apps/tutorial-list.md)over toepassingen.|
 |UnprocessableEntity|De doel toepassing heeft een onverwacht antwoord geretourneerd. De configuratie van de doel toepassing is mogelijk niet juist of er is mogelijk een service probleem met de doel toepassing die verhindert dat dit werkt.|
 |WebExceptionProtocolError |Er is een HTTP-protocol fout opgetreden tijdens het verbinden met de doel toepassing. Er is niets te doen. Deze poging wordt binnen 40 minuten automatisch ingetrokken.|
-|InvalidAnchor|Een gebruiker die eerder is gemaakt of die overeenkomt met de inrichtings service, bestaat niet meer. Controleer of de gebruiker bestaat. Als u een nieuwe overeenkomst wilt afdwingen van alle gebruikers, gebruikt u de MS Graph API om de [taak opnieuw te starten](/graph/api/synchronization-synchronizationjob-restart?tabs=http&view=graph-rest-beta). Houd er rekening mee dat bij het opnieuw starten van de inrichting een eerste cyclus wordt geactiveerd. Dit kan enige tijd duren. Ook wordt de cache verwijderd die wordt gebruikt door de inrichtings service, wat betekent dat alle gebruikers en groepen in de Tenant opnieuw moeten worden geëvalueerd en dat bepaalde inrichtings gebeurtenissen kunnen worden verwijderd.|
+|InvalidAnchor|Een gebruiker die eerder is gemaakt of die overeenkomt met de inrichtings service, bestaat niet meer. Controleer of de gebruiker bestaat. Als u een nieuwe overeenkomst wilt afdwingen van alle gebruikers, gebruikt u de MS Graph API om de [taak opnieuw te starten](/graph/api/synchronization-synchronizationjob-restart?tabs=http&view=graph-rest-beta). Bij het opnieuw starten van de inrichting wordt een eerste cyclus geactiveerd. Dit kan enige tijd duren. Ook wordt de cache verwijderd die wordt gebruikt door de inrichtings service, wat betekent dat alle gebruikers en groepen in de Tenant opnieuw moeten worden geëvalueerd en dat bepaalde inrichtings gebeurtenissen kunnen worden verwijderd.|
 |Niet geïmplementeerd | De doel-app heeft een onverwacht antwoord geretourneerd. De configuratie van de app is mogelijk niet juist of er is mogelijk een service probleem met de doel-app die verhindert dat dit werkt. Lees alle instructies van de doel toepassing en de bijbehorende [zelf studie](../saas-apps/tutorial-list.md)over toepassingen. |
 |MandatoryFieldsMissing, MissingValues |De gebruiker kan niet worden gemaakt omdat vereiste waarden ontbreken. Corrigeer de ontbrekende kenmerk waarden in de bron record of Controleer de overeenkomende kenmerk configuratie om ervoor te zorgen dat de vereiste velden niet worden wegge laten. Meer [informatie](../app-provisioning/customize-application-attributes.md) over het configureren van overeenkomende kenmerken.|
 |SchemaAttributeNotFound |Kan de bewerking niet uitvoeren omdat er een kenmerk is opgegeven dat niet bestaat in de doel toepassing. Raadpleeg de [documentatie](../app-provisioning/customize-application-attributes.md) over het aanpassen van kenmerken en zorg ervoor dat uw configuratie juist is.|
 |InternalError |Er is een interne service fout opgetreden in de Azure AD-inrichtings service. Er is niets te doen. Deze poging wordt binnen 40 minuten automatisch opnieuw geprobeerd.|
 |InvalidDomain |De bewerking kan niet worden uitgevoerd vanwege een kenmerk waarde met een ongeldige domein naam. Werk de domein naam op de gebruiker bij of voeg deze toe aan de lijst met toegestane items in de doel toepassing. |
 |Time-out |De bewerking kan niet worden voltooid omdat de doel toepassing te lang duurde om te reageren. Er is niets te doen. Deze poging wordt binnen 40 minuten automatisch opnieuw geprobeerd.|
-|LicenseLimitExceeded|De gebruiker kan niet worden gemaakt in de doel toepassing omdat er geen beschik bare licenties voor deze gebruiker zijn. U kunt aanvullende licenties voor de doel toepassing aanschaffen of uw gebruikers toewijzingen en configuratie van kenmerk toewijzing controleren om ervoor te zorgen dat de juiste gebruikers zijn toegewezen met de juiste kenmerken.|
+|LicenseLimitExceeded|De gebruiker kan niet worden gemaakt in de doel toepassing omdat er geen beschik bare licenties voor deze gebruiker zijn. U kunt meer licenties voor de doel toepassing aanschaffen of uw gebruikers toewijzingen en configuratie van kenmerk toewijzing controleren om ervoor te zorgen dat de juiste gebruikers zijn toegewezen met de juiste kenmerken.|
 |DuplicateTargetEntries  |De bewerking kan niet worden voltooid omdat er meer dan één gebruiker in de doel toepassing is gevonden met de geconfigureerde overeenkomende kenmerken. Verwijder de dubbele gebruiker uit de doel toepassing of configureer de kenmerk toewijzingen opnieuw, zoals [hier](../app-provisioning/customize-application-attributes.md)wordt beschreven.|
 |DuplicateSourceEntries | De bewerking kan niet worden voltooid omdat er meer dan één gebruiker met de geconfigureerde overeenkomende kenmerken is gevonden. Verwijder de dubbele gebruiker of configureer de kenmerk toewijzingen opnieuw, zoals [hier](../app-provisioning/customize-application-attributes.md)wordt beschreven.|
 |ImportSkipped | Wanneer elke gebruiker wordt geëvalueerd, wordt geprobeerd de gebruiker te importeren uit het bron systeem. Deze fout treedt doorgaans op wanneer de gebruiker die wordt geïmporteerd, de overeenkomende eigenschap die is gedefinieerd in uw kenmerk toewijzingen ontbreekt. Zonder dat er een waarde aanwezig is in het gebruikers object voor het overeenkomende kenmerk, kunnen we geen bereik-, zoek-of export wijzigingen evalueren. Let op: de aanwezigheid van deze fout geeft niet aan dat de gebruiker zich in het bereik bevindt omdat er nog geen bereik voor de gebruiker is geëvalueerd.|

@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 1/12/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: d344b3d9ea54243d61cc6a1f3f0982eb5ab1d238
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 94a1db30419e5d7e52f369392d94b817d0dc273a
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538580"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623751"
 ---
 # <a name="activate-and-set-up-your-on-premises-management-console"></a>Uw on-premises beheerconsole activeren en instellen 
 
@@ -147,13 +147,13 @@ Tunneling op de sensor instellen:
 
 ## <a name="set-up-a-site"></a>Een site instellen
 
-Het standaard overzicht van de onderneming biedt een overzicht van uw assets op basis van verschillende niveaus van geografische locaties.
+Het standaard overzicht van de onderneming biedt een overzicht van uw apparaten op basis van verschillende niveaus van geografische locaties.
 
-De weer gave van uw assets kan vereist zijn wanneer de organisatie structuur en de gebruikers machtigingen complex zijn. In dergelijke gevallen kan het instellen van een site worden bepaald door een algemene organisatie structuur, naast de standaard site-of zone structuur.
+De weer gave van uw apparaten is mogelijk vereist wanneer de organisatie structuur en de gebruikers machtigingen complex zijn. In dergelijke gevallen kan het instellen van een site worden bepaald door een algemene organisatie structuur, naast de standaard site-of zone structuur.
 
 Ter ondersteuning van deze omgeving moet u een wereld wijde bedrijfs topologie maken die is gebaseerd op de bedrijfs eenheden, regio's, sites en zones van uw organisatie. U moet ook gebruikers toegangs machtigingen voor deze entiteiten definiëren met behulp van toegangs groepen.
 
-Met toegangs groepen kunt u beter bepalen waar gebruikers assets beheren en analyseren in het Defender voor IoT-platform.
+Met toegangs groepen kunt u beter bepalen waar gebruikers apparaten beheren en analyseren in het Defender voor IoT-platform.
 
 ### <a name="how-it-works"></a>Uitleg
 
@@ -215,7 +215,7 @@ Een site verwijderen:
 
 ## <a name="create-enterprise-zones"></a>Ondernemings zones maken
 
-Zones zijn logische entiteiten waarmee u activa binnen een site kunt verdelen in groepen op basis van verschillende kenmerken. U kunt bijvoorbeeld groepen maken voor productie lijnen, substations, site gebieden of typen activa. U kunt zones definiëren op basis van elk kenmerk dat geschikt is voor uw organisatie.
+Zones zijn logische entiteiten waarmee u apparaten binnen een site in groepen kunt verdelen op basis van verschillende kenmerken. U kunt bijvoorbeeld groepen maken voor productie lijnen, substations, site gebieden of typen apparaten. U kunt zones definiëren op basis van elk kenmerk dat geschikt is voor uw organisatie.
 
 U configureert zones als onderdeel van het site configuratie proces.
 
@@ -225,13 +225,13 @@ In de volgende tabel worden de para meters in het venster **site beheer** beschr
 
 | Parameter | Beschrijving |
 |--|--|
-| Naam | De naam van de sensor. U kunt deze naam alleen wijzigen van de sensor. Zie de gebruikers handleiding voor Defender voor IoT voor meer informatie. |
+| Name | De naam van de sensor. U kunt deze naam alleen wijzigen van de sensor. Zie de gebruikers handleiding voor Defender voor IoT voor meer informatie. |
 | IP | Het IP-adres van de sensor. |
 | Versie | De sensor versie. |
 | Connectiviteit | De verbindings status van de sensor. De status kan worden **verbonden** of **verbroken**. |
 | Laatste upgrade | De datum van de laatste upgrade. |
 | Voortgang van de upgrade | Op de voortgangs balk wordt de status van het upgrade proces als volgt weer gegeven:<br />-Pakket uploaden<br />-Installatie voorbereiden<br />-Processen stoppen<br />-Back-ups maken van gegevens<br />Maken van moment opname<br />-Configuratie bijwerken<br />-Afhankelijkheden worden bijgewerkt<br />-Bibliotheken bijwerken<br />-Data bases bijwerken<br />-Start processen<br />-Sanity van het systeem valideren<br />-Validatie geslaagd<br />-Geslaagd<br />-Fout<br />-Upgrade gestart<br />-Installatie startenogress bar shows the status of the upgrade process, as follows:<br />- Uploading package<br />- Preparing to install<br />- Stopping processes<br />- Backing up data<br />- Taking snapshot<br />- Updating configuration<br />- Updating dependencies<br />- Updating libraries<br />- Patching databases<br />- Starting processes<br />- Validating system sanity<br />- Validation succeeded<br />- Success<br />- Failure<br />- Upgrade started<br />- Starting installation<br /></br >Raadpleeg [Microsoft ondersteuning](https://support.microsoft.com/) voor hulp voor meer informatie over het uitvoeren van een upgrade. |
-| Assets | Het aantal activa dat door de sensor wordt gecontroleerd. |
+| Apparaten | Het aantal apparaten dat door de sensor wordt gecontroleerd. |
 | Waarschuwingen | Het aantal waarschuwingen op de sensor. |
 | :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/assign-icon.png" border="false"::: | Hiermee kunt u een sensor aan zones toewijzen. |
 | :::image type="icon" source="media/how-to-activate-and-set-up-your-on-premises-management-console/delete-icon.png" border="false":::| Hiermee kunt u een niet-verbonden sensor van de site verwijderen. |

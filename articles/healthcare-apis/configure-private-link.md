@@ -8,17 +8,14 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 10/12/2020
 ms.author: matjazl
-ms.openlocfilehash: bfbdb98e691312db5665261743f8ce698541d4cc
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: cdb41f12e8f050e3c74fccddb392d7a816c15b2f
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93398212"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621875"
 ---
 # <a name="configure-private-link"></a>Persoonlijke koppeling configureren
-
-> [!IMPORTANT]
-> Deze functie is in openbare preview en wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
 Met persoonlijke koppeling kunt u toegang krijgen tot de Azure-API voor FHIR via een persoonlijk eind punt, een netwerk interface waarmee u privé en veilig verbinding maakt met behulp van een privé-IP-adres van uw virtuele netwerk. Met persoonlijke koppeling kunt u onze services veilig vanuit uw Vnet openen als een eerste partij service zonder dat u een open bare DNS hoeft te door lopen. Dit artikel helpt u bij het maken, testen en beheren van uw persoonlijke eind punt voor Azure API voor FHIR.
 
@@ -40,7 +37,7 @@ Als u een persoonlijk eind punt voor uw FHIR-resource maakt, wordt het open bare
 
 ## <a name="create-private-endpoint"></a>Privé-eindpunt maken
 
-Voor het maken van een persoonlijk eind punt kan een ontwikkelaar met RBAC-machtigingen voor de FHIR-resource gebruikmaken van Azure Portal, [Azure PowerShell](../private-link/create-private-endpoint-powershell.md)of [Azure cli](../private-link/create-private-endpoint-cli.md). In dit artikel worden de stappen beschreven voor het gebruik van Azure Portal. Het gebruik van Azure Portal wordt aanbevolen omdat hiermee het maken en configureren van de Privé-DNS zone wordt geautomatiseerd. U kunt verwijzen naar de [persoonlijke koppeling Quick Start hand leidingen](../private-link/create-private-endpoint-portal.md) voor meer informatie.
+Voor het maken van een persoonlijk eind punt kan een ontwikkelaar met RBAC-machtigingen voor de FHIR-resource gebruikmaken van Azure Portal, [Azure PowerShell](../private-link/create-private-endpoint-powershell.md)of [Azure cli](../private-link/create-private-endpoint-cli.md). In dit artikel worden de stappen beschreven voor het gebruik van Azure Portal. Het gebruik van Azure Portal wordt aanbevolen omdat hiermee het maken en configureren van de Privé-DNS zone wordt geautomatiseerd. U kunt verwijzen naar de [persoonlijke koppeling snel starten hand leidingen](../private-link/create-private-endpoint-portal.md) voor meer informatie.
 
 Er zijn twee manieren om een persoonlijk eind punt te maken. Met de automatische goedkeurings stroom kan een gebruiker met RBAC-machtigingen voor de FHIR-resource een persoonlijk eind punt maken zonder dat hiervoor goed keuring nodig is. Met hand matige goedkeurings stroom kan een gebruiker zonder machtigingen voor de FHIR-resource een persoonlijk eind punt aanvragen dat moet worden goedgekeurd door eigen aren van de FHIR-resource.
 
@@ -90,6 +87,6 @@ Persoonlijke eind punten en de bijbehorende NIC zijn zichtbaar in Azure Portal v
 
 ### <a name="delete"></a>Verwijderen
 
-Privé-eind punten kunnen alleen worden verwijderd uit Azure Portal via de Blade overzicht (zoals hieronder) of via de optie verwijderen onder netwerk (preview) ' particuliere endpoint Connections '. Als u op de knop verwijderen klikt, worden het persoonlijke eind punt en de bijbehorende NIC verwijderd. Als u alle persoonlijke eind punten aan de FHIR-resource verwijdert en de toegang tot het open bare netwerk is uitgeschakeld, wordt deze door geen enkele aanvraag naar uw FHIR-server door gemaakt. Alle persoonlijke eind punten moeten worden verwijderd uit de FHIR-resource voordat de FHIR-resource kan worden verwijderd of verplaatst.
+Privé-eind punten kunnen alleen worden verwijderd uit Azure Portal via de Blade overzicht (zoals hieronder) of via de optie verwijderen onder netwerk (preview) ' particuliere endpoint Connections '. Als u op de knop verwijderen klikt, worden het persoonlijke eind punt en de bijbehorende NIC verwijderd. Als u alle persoonlijke eind punten aan de FHIR-resource verwijdert en de toegang tot het open bare netwerk is uitgeschakeld, wordt deze door geen enkele aanvraag naar uw FHIR-server door gemaakt.
 
 ![Persoonlijk eind punt verwijderen](media/private-link/private-link-delete.png)

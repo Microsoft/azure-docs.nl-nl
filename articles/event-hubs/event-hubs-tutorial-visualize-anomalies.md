@@ -3,12 +3,12 @@ title: Azure Event Hubs - Gegevensanomalieën binnen in realtime verzonden gebeu
 description: 'Zelfstudie: Gegevensanomalieën binnen in realtime naar Microsoft Azure Event Hubs verzonden gebeurtenissen visualiseren'
 ms.topic: tutorial
 ms.date: 06/23/2020
-ms.openlocfilehash: b72b82f3959565e6bd0598fef8e21bb64fedb053
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
-ms.translationtype: HT
+ms.openlocfilehash: bd08d611761e125fdd03173ce6027c60e82baed6
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655676"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98623456"
 ---
 # <a name="tutorial-visualize-data-anomalies-in-real-time-events-sent-to-azure-event-hubs"></a>Zelfstudie: gegevensanomalieën binnen in realtime naar Azure Event Hubs verzonden gebeurtenissen visualiseren
 
@@ -306,7 +306,7 @@ Klik in de Stream Analytics-taak op **Start**, vervolgens op **Nu**  en daarna o
 
    ![Schermafbeelding van het opgeven van een gegevensset.](./media/event-hubs-tutorial-visualize-anomalies/power-bi-dashboard-select-dataset.png)
 
-9. Selecteer **Kaart** als visualisatietype. Klik onder **Velden** op **Waarde toevoegen** en selecteer `fraudulentuses`.
+9. Selecteer **Kaart** als visualisatietype. Klik onder **velden** op **waarde toevoegen** en selecteer `fraudulentuses` .
 
    ![Schermafbeelding van het opgeven van visualisatietype en velden.](./media/event-hubs-tutorial-visualize-anomalies/power-bi-add-card-tile.png)
 
@@ -327,9 +327,9 @@ Klik in de Stream Analytics-taak op **Start**, vervolgens op **Nu**  en daarna o
 
 12. Selecteer onder **Type visualisatie** de optie **Lijndiagram**.
 
-13. Klik onder **As** op **Waarde toevoegen** en selecteer `windowend`. 
+13. Klik onder **as** op **waarde toevoegen** en selecteer `windowend` . 
 
-14. Klik onder **Waarden** op **Waarde toevoegen** en selecteer `fraudulentuses`.
+14. Klik onder **waarden** op **waarde toevoegen** en selecteer `fraudulentuses` .
 
 15. Selecteer onder **Tijdvenster voor weergave** de laatste vijf minuten. Klik op **Volgende**.
 
@@ -349,7 +349,7 @@ Meld u aan bij uw Power BI-account. Ga naar **Mijn werkruimte**. Klik op de rege
 
 ### <a name="clean-up-resources-using-azure-cli"></a>Resources opschonen met Azure CLI
 
-U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest#az-group-delete).
+U kunt de resourcegroep verwijderen met de opdracht [az group delete](/cli/azure/group#az-group-delete).
 
 ```azurecli-interactive
 az group delete --name $resourceGroup

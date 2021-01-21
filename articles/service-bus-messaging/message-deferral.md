@@ -4,12 +4,12 @@ description: In dit artikel wordt uitgelegd hoe u de bezorging van Azure Service
 ms.topic: article
 ms.date: 06/23/2020
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 7c9ec55de24c97df3530d80deef55ed87be84077
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e3a940f8aa9e72d9b09e9c0a3305521c6f17dfb0
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86511276"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98622042"
 ---
 # <a name="message-deferral"></a>Berichten uitstellen
 
@@ -26,7 +26,7 @@ Uiteindelijk worden hulp middelen voor uitstel bij het opnieuw ordenen van beric
 
 ## <a name="message-deferral-apis"></a>Api's voor uitstel van berichten
 
-De API is [BrokeredMessage. defer](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.defer?view=azureservicebus-4.1.1#Microsoft_ServiceBus_Messaging_BrokeredMessage_Defer) of [BrokeredMessage. DeferAsync](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deferasync?view=azureservicebus-4.1.1#Microsoft_ServiceBus_Messaging_BrokeredMessage_DeferAsync) in de .NET Framework-client, [MessageReceiver. DeferAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deferasync) in de .NET Standard-client en [IMessageReceiver. defer](/java/api/com.microsoft.azure.servicebus.imessagereceiver.defer?view=azure-java-stable) of [IMessageReceiver. DeferAsync](/java/api/com.microsoft.azure.servicebus.imessagereceiver.deferasync?view=azure-java-stable) in de Java-client. 
+De API is [BrokeredMessage. defer](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.defer#Microsoft_ServiceBus_Messaging_BrokeredMessage_Defer) of [BrokeredMessage. DeferAsync](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.deferasync#Microsoft_ServiceBus_Messaging_BrokeredMessage_DeferAsync) in de .NET Framework-client, [MessageReceiver. DeferAsync](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver.deferasync) in de .NET Standard-client en [IMessageReceiver. defer](/java/api/com.microsoft.azure.servicebus.imessagereceiver.defer) of [IMessageReceiver. DeferAsync](/java/api/com.microsoft.azure.servicebus.imessagereceiver.deferasync) in de Java-client. 
 
 Uitgestelde berichten blijven in de hoofd wachtrij, samen met alle andere actieve berichten (in tegens telling tot onbestelbare berichten in een subwachtrij), maar ze kunnen niet langer worden ontvangen met de normale receive/ReceiveAsync-functies. Uitgestelde berichten kunnen worden gedetecteerd via het [Bladeren door berichten](message-browsing.md) als een toepassing deze niet kan bijhouden.
 

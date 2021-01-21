@@ -7,12 +7,12 @@ ms.author: shhazam
 ms.date: 01/03/2021
 ms.topic: how-to
 ms.service: azure
-ms.openlocfilehash: 2053632f24504f896d1045f99d581b9aa6050b55
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: a71ea75eb603b141c4b28cff5f2b4aa957583bcd
+ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573136"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98621309"
 ---
 # <a name="about-azure-defender-for-iot-network-setup"></a>Over de installatie van het Azure Defender for IoT-netwerk
 
@@ -94,35 +94,36 @@ De volgende browsers worden ondersteund voor de-webtoepassingen Sens oren en on-
 
 Controleer of het beveiligings beleid van uw organisatie toegang biedt tot het volgende:
 
-| **Doel** | **Protocol** | **Transport** | **In of uit** | **Poort** | **Categorie** |
-| ----------- | ----------- | ------------ | ---------- | -------- | ------------ |
-| **Toegang tot de webconsole** | HTTPS | TCP | In of uit | 443 | On-premises beheer console voor het Defender voor IoT-platform |
-| **Toegang tot de CLI** | SSH | TCP | In of uit | 22 | CLI |
-| **Verbinding tussen het Defender voor IoT-platform en de on-premises beheer console** | SSL | TCP | In of uit | 443 | Sensor-en on-premises beheer console|
-| **On-premises beheer console die als NTP wordt gebruikt voor de sensor** | NTP | UDP| In in CM | 123 | Tijdsynchronisatie | 
-| **Sensor verbonden met externe NTP-server (indien van toepassing)** | NTP | UDP | In of uit| 123 | Tijdsynchronisatie |
-| **Verbinding tussen het platform en het beheer platform van de Defender voor IoT en de e-mail server (indien van toepassing)** | SMTP | TCP | Out-of-sensor beheer | 25 | Email |
-| **Logboeken die vanaf de on-premises beheer console naar de syslog-server worden verzonden (indien van toepassing)** | Syslog | UDP | Out-of-sensor beheer| 514 | LEEF |
-| **DNS-server poort (indien van toepassing)** | DNS | N.v.t. | In of uit| 53 | DNS |
-| **Verbinding tussen de Defender voor IoT-platform en de on-premises beheer console voor Active Directory (indien van toepassing)** | LDAPS | TCP | In of uit | 636 <br />389 | Active Directory |
-| **Externe SNMP-verzamelaars (indien van toepassing)** | SNMP | UDP | Out-of-sensor beheer| 161 | Bewaking |
-| **Windows-eindpunt bewaking (indien van toepassing)** | WMI | UDP | Out-of-sensor beheer| 135 | Bewaking |
-| **Windows-eindpunt bewaking (indien van toepassing)** | WMI | TCP | Out-of-sensor beheer| 1024 en hoger | Bewaking |
-| **Tunneling (indien van toepassing)** | Tunneling | TCP | IN IN CM | 9000<br />Naast poort 443<br />Van de eind gebruiker naar de on-premises beheer console <br />Poort 22 van de sensor naar de on-premises beheer console | Bewaking |
-| **Uitgaand naar de Defender voor IoT hub** | HTTPS | TCP | Out-of-sensor beheer| **URL**<br />*. azure-devices.net:443<br />of als joker tekens niet worden ondersteund<br />{de naam van uw IoT-hub}. Azure-devices.net:443 |
+| Protocol | Transport | In/Out | Poort | Gebruikt | Doel | Bron | Doel |
+|--|--|--|--|--|--|--|--|
+| HTTPS | TCP | IN/UIT | 443 | De webconsole van de sensor en on-premises beheer console | Toegang tot de webconsole | Client | Sensor-en on-premises beheer console |
+| SSH | TCP | IN/UIT | 22 | CLI | Toegang tot de CLI | Client | Sensor-en on-premises beheer console |
+| SSL | TCP | IN/UIT | 443 | Sensor-en on-premises beheer console | Verbinding tussen Cyberx-platform en het centrale beheer platform | sensor | On-premises beheer console |
+| NTP | UDP | IN | 123 | Tijd synchronisatie | On-premises beheer console gebruiken als NTP voor sensor | sensor | on-premises beheer console |
+| NTP | UDP | IN/UIT | 123 | Tijd synchronisatie | Sensor verbonden met externe NTP-server, wanneer er geen on-premises beheer console is geïnstalleerd | sensor | NTP |
+| SMTP | TCP | AF | 25 | E-mail | De verbinding tussen het Cyber-platform en het beheer platform en de e-mail server | Sensor-en on-premises beheer console | E-mail server |
+| Syslog | UDP | AF | 514 | LEEF | Logboeken die vanuit de on-premises beheer console naar syslog-server worden verzonden | On-premises beheer console en sensor | Syslog-server |
+| DNS |  | IN/UIT | 53 | DNS | DNS-server poort | On-premises beheer console en sensor | DNS-server |
+| LDAP | TCP | IN/UIT | 389 | Active Directory | De verbinding tussen het Cyberx-platform en het beheer platform voor de Active Directory | On-premises beheer console en sensor | LDAP-server |
+| LDAPS | TCP | IN/UIT | 636 | Active Directory | De verbinding tussen het Cyberx-platform en het beheer platform voor de Active Directory | On-premises beheer console en sensor | LDAPS-server |
+| SNMP | UDP | AF | 161 | Bewaking | Externe SNMP-verzamelaars. | On-premises beheer console en sensor | SNMP-server |
+| WMI | UDP | AF | 135 | bewaking | Controle van Windows-eind punten | Sensoren | Relevant netwerk element |
+| Tunneling | TCP | IN | 9000 <br /><br />-boven op poort 443 <br /><br />Van de eind gebruiker naar de on-premises beheer console. <br /><br />-Poort 22 van sensor naar de on-premises beheer console  | bewaking | Tunneling | Sensoren | On-premises beheer console |
 
 ### <a name="planning-rack-installation"></a>Rack installatie plannen
 
 Uw rack installatie plannen:
 
 1. Bereid een monitor en een toetsen bord voor uw toestel netwerk instellingen voor.
-2. Wijs de rack ruimte voor het apparaat toe.
-3. Netstroom beschikbaar voor het apparaat.
-4. Bereid de LAN-kabel voor om het beheer te verbinden met de netwerk switch.
-5. Bereid de LAN-kabels voor op het aansluiten van Switch SPAN-poorten (mirror) en of netwerk kranen naar het apparaat Defender voor IoT. 
-6. In de gespiegelde switches configureren, verbinding maken en valideren van SPANNe poorten zoals beschreven in de architectuur controle sessie.
-7. Verbind de geconfigureerde bereik poort met een computer met wireshark en controleer of de poort correct is geconfigureerd.
-8. Open alle relevante firewall poorten.
+
+1. Wijs de rack ruimte voor het apparaat toe.
+
+1. Netstroom beschikbaar voor het apparaat.
+1. Bereid de LAN-kabel voor om het beheer te verbinden met de netwerk switch.
+1. Bereid de LAN-kabels voor op het aansluiten van Switch SPAN-poorten (mirror) en of netwerk kranen naar het apparaat Defender voor IoT. 
+1. In de gespiegelde switches configureren, verbinding maken en valideren van SPANNe poorten zoals beschreven in de architectuur controle sessie.
+1. Verbind de geconfigureerde bereik poort met een computer met wireshark en controleer of de poort correct is geconfigureerd.
+1. Open alle relevante firewall poorten.
 
 ## <a name="about-passive-network-monitoring"></a>Over passieve netwerk bewaking
 
@@ -141,6 +142,7 @@ In de volgende secties worden Purdue-niveaus beschreven.
 Niveau 0 bestaat uit een groot aantal Sens oren, actuators en apparaten die bij het basis productie proces betrokken zijn. Deze apparaten voeren de basis functies van het industrieel automatiserings-en controle systeem uit, zoals:
 
 - Een motor rijden.
+
 - Meet variabelen.
 - Een uitvoer instellen.
 - Het uitvoeren van belang rijke functies, zoals schilderen, lassen en buigen.
@@ -227,7 +229,7 @@ Hier volgen enkele aanbevelingen voor het implementeren van meerdere Sens oren:
 |--|--|--|--|
 | De maximale afstand tussen switches | 80 meters | Voor bereide Ethernet-kabel | Meer dan 1 |
 | Aantal netwerken | Meer dan 1 | Geen fysieke verbinding | Meer dan 1 |
-| Aantal switches | Kan RSPAN-configuratie gebruiken | Maxi maal 8 switches met de lokale periode dicht bij de sensor door de afstand tussen kabels | Meer dan 1 |
+| Aantal switches | Kan RSPAN-configuratie gebruiken | Maxi maal acht switches met de lokale periode dicht bij de sensor door de afstand tussen kabels | Meer dan 1 |
 
 #### <a name="traffic-mirroring"></a>Mirroring van verkeer  
 
@@ -353,7 +355,7 @@ Een actieve of passieve aggregatie Tik is geïnstalleerd inline naar de netwerk 
 
 Het Terminal toegangs punt (tik) is een hardwareapparaat waarmee netwerk verkeer van poort A naar poort B en van poort B naar poort A kan worden getransporteerd, zonder onderbreking. Hiermee maakt u een exacte kopie van beide zijden van de verkeers stroom, zonder dat dit de netwerk integriteit in gevaar brengt. Sommige kranen verzamelen en ontvangen verkeer met behulp van switch instellingen, indien gewenst. Als aggregatie niet wordt ondersteund, gebruikt elke tik twee sensor poorten voor het bewaken van het verzenden en ontvangen van verkeer.
 
-Kranen kunnen om verschillende redenen handig zijn. Ze zijn gebaseerd op hardware en kunnen niet worden aangetast. Ze slagen alle verkeer, zelfs beschadigde berichten, waardoor de switches vaak wegvallen. Ze zijn geen processor gevoelig, dus pakket timing is exact waar switches de spiegel functie als een taak met lage prioriteit afhandelen die van invloed kunnen zijn op de timing van de gespiegelde pakketten. Een tik is het beste apparaat voor forensische-doel einden.
+Kranen kunnen om verschillende redenen worden benut. Ze zijn gebaseerd op hardware en kunnen niet worden aangetast. Ze slagen alle verkeer, zelfs beschadigde berichten, waardoor de switches vaak wegvallen. Ze zijn geen processor gevoelig, dus pakket timing is exact waar switches de spiegel functie als een taak met lage prioriteit afhandelen die van invloed kunnen zijn op de timing van de gespiegelde pakketten. Een tik is het beste apparaat voor forensische-doel einden.
 
 Tik op aggregaties kan ook worden gebruikt voor poort bewaking. Deze apparaten zijn gebaseerd op processors en zijn niet zo intrinsiek beveiligd als hardware-tikken. Deze kunnen niet overeenkomen met de exacte pakket timing.
 
@@ -364,10 +366,10 @@ Tik op aggregaties kan ook worden gebruikt voor poort bewaking. Deze apparaten z
 Deze modellen zijn getest op compatibiliteit. Andere leveranciers en modellen zijn mogelijk ook compatibel.
 
 | Installatiekopie | Model |
-| -- | -- |
-| :::image type="content" source="media/how-to-set-up-your-network/garland-p1gccas-v2.png" alt-text="Scherm opname van Garland P1GCCAS.":::  | Garland P1GCCAS  |
-| :::image type="content" source="media/how-to-set-up-your-network/ixia-tpa2-cu3-v2.png" alt-text="Scherm opname van IXIA TPA2-CU3.":::  | IXIA TPA2-CU3  |
-| :::image type="content" source="media/how-to-set-up-your-network/us-robotics-usr-4503-v2.png" alt-text="Scherm afbeelding van US Robotics USR 4503.":::  | US Robotics USR 4503  |
+|--|--|
+| :::image type="content" source="media/how-to-set-up-your-network/garland-p1gccas-v2.png" alt-text="Scherm opname van Garland P1GCCAS."::: | Garland P1GCCAS |
+| :::image type="content" source="media/how-to-set-up-your-network/ixia-tpa2-cu3-v2.png" alt-text="Scherm opname van IXIA TPA2-CU3."::: | IXIA TPA2-CU3 |
+| :::image type="content" source="media/how-to-set-up-your-network/us-robotics-usr-4503-v2.png" alt-text="Scherm afbeelding van US Robotics USR 4503."::: | US Robotics USR 4503 |
 
 ##### <a name="special-tap-configuration"></a>Speciale TAP-configuratie
 
@@ -425,7 +427,7 @@ Relevante informatie:
 
 - Als het apparaat Defender voor IoT moet worden aangesloten op die switch, is er dan fysieke beschik bare rack ruimte in dat cabinet?
 
-#### <a name="additional-considerations"></a>Aanvullende overwegingen
+#### <a name="other-considerations"></a>Andere overwegingen
 
 Het doel van het apparaat Defender voor IoT is het bewaken van verkeer van lagen 1 en 2.
 
@@ -671,7 +673,7 @@ Geef adres gegevens op voor de sensor-NIC die wordt verbonden met het bedrijfs n
 | Geheime sleutel | |
 | SNMP v2-Community-teken reeks |
 
-### <a name="cm-ssl-certificate"></a>CM SSL-certificaat
+### <a name="on-premises-management-console-ssl-certificate"></a>SSL-certificaat van on-premises beheer console
 
 Bent u van plan om een SSL-certificaat te gebruiken? Ja of nee
 

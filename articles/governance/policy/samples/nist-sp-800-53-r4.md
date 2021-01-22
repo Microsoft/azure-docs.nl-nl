@@ -1,15 +1,15 @@
 ---
 title: Details van Naleving van regelgeving voor NIST SP 800-53 R4
 description: Details van het ingebouwde initiatief voor Naleving van regelgeving voor NIST SP 800-53 R4. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 7e74acf11316cb736651241388b8c975d790799a
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 14e5e6918557f11cf2e3058c75087a646c2916ff
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98047855"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682119"
 ---
 # <a name="details-of-the-nist-sp-800-53-r4-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor Naleving van regelgeving voor NIST SP 800-53 R4
 

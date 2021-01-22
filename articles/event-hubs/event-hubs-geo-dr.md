@@ -3,12 +3,12 @@ title: Geo-nood herstel-Azure Event Hubs | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood gevallen in azure Event Hubs
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 8824334e762237c3f18cb763d5b39fa55d6415a3
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: 0e0a207630898eb7fe7613acb311364a64f9b38b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108460"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681680"
 ---
 # <a name="azure-event-hubs---geo-disaster-recovery"></a>Azure-Event Hubs-geo-nood herstel 
 
@@ -43,8 +43,10 @@ In dit artikel worden de volgende termen gebruikt:
 
 -  *Alias*: de naam voor een nood herstel configuratie die u hebt ingesteld. De alias biedt een enkele stabiele FQDN-naam (Fully Qualified Domain Name) connection string. Toepassingen gebruiken deze alias connection string om verbinding te maken met een naam ruimte. 
 
--  *Primaire/secundaire naam ruimte*: de naam ruimten die overeenkomen met de alias. De primaire naam ruimte is actief en ontvangt berichten (dit kan een bestaande of nieuwe naam ruimte zijn). De secundaire naam ruimte is ' passief ' en ontvangt geen berichten. De meta gegevens tussen beide zijn synchroon, zodat beide berichten zonder toepassings code of connection string wijzigingen naadloos kunnen accepteren. Om ervoor te zorgen dat alleen de actieve naam ruimte berichten ontvangt, moet u de alias gebruiken. 
+-  *Primaire/secundaire naam ruimte*: de naam ruimten die overeenkomen met de alias. De primaire naam ruimte is actief en ontvangt berichten (dit kan een bestaande of nieuwe naam ruimte zijn). De secundaire naam ruimte is ' passief ' en ontvangt geen berichten. De meta gegevens tussen beide zijn synchroon, zodat beide berichten zonder toepassings code of connection string wijzigingen naadloos kunnen accepteren. Om ervoor te zorgen dat alleen de actieve naam ruimte berichten ontvangt, moet u de alias gebruiken.
 
+    > [!IMPORTANT]
+    > Voor de functie voor het maken van een geo-nood herstel moet het abonnement en de resource groep hetzelfde zijn voor de primaire en secundaire naam ruimten. 
 -  *Meta gegevens*: entiteiten zoals Event hubs en consumenten groepen; en hun eigenschappen van de service die aan de naam ruimte zijn gekoppeld. Alleen entiteiten en hun instellingen worden automatisch gerepliceerd. Berichten en gebeurtenissen worden niet gerepliceerd. 
 
 -  *Failover*: het proces van het activeren van de secundaire naam ruimte.
@@ -54,10 +56,10 @@ De volgende combi Naties van primaire en secundaire naam ruimten worden onderste
 
 | Primaire naam ruimte | Secundaire naam ruimte | Ondersteund | 
 | ----------------- | -------------------- | ---------- |
-| Standard | Standard | Ja | 
-| Standard | Toegewezen | Ja | 
-| Toegewezen | Toegewezen | Ja | 
-| Toegewezen | Standard | Nee | 
+| Standard | Standard | Yes | 
+| Standard | Toegewezen | Yes | 
+| Toegewezen | Toegewezen | Yes | 
+| Toegewezen | Standard | No | 
 
 > [!NOTE]
 > U kunt geen naam ruimten koppelen die zich in hetzelfde toegewezen cluster bevinden. U kunt naam ruimten in afzonderlijke clusters koppelen. 
@@ -73,12 +75,12 @@ De volgende sectie bevat een overzicht van het failoverproces en legt uit hoe de
 U maakt of gebruikt eerst een bestaande primaire naam ruimte en een nieuwe secundaire naam ruimte en koppelt deze twee. Met deze koppeling krijgt u een alias die u kunt gebruiken om verbinding te maken. Omdat u een alias gebruikt, hoeft u geen verbindings reeksen te wijzigen. U kunt alleen nieuwe naam ruimten toevoegen aan uw failover-koppeling. 
 
 1. Maak de primaire naam ruimte.
-1. Maak de secundaire naam ruimte. Deze stap is optioneel. U kunt de secundaire naam ruimte maken terwijl u de koppeling in de volgende stap maakt. 
+1. Maak de secundaire naam ruimte in het abonnement en de resource groep die de primaire naam ruimte heeft. Deze stap is optioneel. U kunt de secundaire naam ruimte maken terwijl u de koppeling in de volgende stap maakt. 
 1. Ga in het Azure Portal naar uw primaire naam ruimte.
 1. Selecteer **geo-Recovery** in het menu links en selecteer **koppelen starten** op de werk balk. 
 
     :::image type="content" source="./media/event-hubs-geo-dr/primary-namspace-initiate-pairing-button.png" alt-text="Koppeling vanuit de primaire naam ruimte initiëren":::    
-1. Selecteer op de pagina **koppeling** maken de optie een bestaande secundaire naam ruimte of maak er een, en selecteer vervolgens **maken**. In het volgende voor beeld wordt een bestaande secundaire naam ruimte geselecteerd. 
+1. Selecteer op de pagina **koppeling** maken een bestaande secundaire naam ruimte of maak er een in het abonnement en de resource groep die de primaire naam ruimte heeft. Ten slotte selecteert u **Create**. In het volgende voor beeld wordt een bestaande secundaire naam ruimte geselecteerd. 
 
     :::image type="content" source="./media/event-hubs-geo-dr/initiate-pairing-page.png" alt-text="Secundaire naam ruimte selecteren":::        
 1. Wanneer u vervolgens **geo-Recovery** selecteert voor de primaire naam ruimte, ziet u de pagina **geo-Dr-alias** die eruitziet als de volgende afbeelding:

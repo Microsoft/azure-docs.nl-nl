@@ -11,14 +11,14 @@ ms.date: 07/13/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: da80af9fe598186fa25d59601c9fa4faccb4286a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d67460c654c854c5a855560dde1d67732fa818c7
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87447047"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681952"
 ---
-# <a name="import-and-export-azure-ad-connect-configuration-settings-public-preview"></a>Azure AD Connect configuratie-instellingen importeren en exporteren (open bare preview)
+# <a name="import-and-export-azure-ad-connect-configuration-settings"></a>Azure AD Connect configuratie-instellingen importeren en exporteren 
 
 Azure Active Directory (Azure AD) Connect-implementaties variëren van één installatie van de forest Express-modus tot complexe implementaties die worden gesynchroniseerd tussen meerdere forests met behulp van aangepaste synchronisatie regels. Vanwege het grote aantal configuratie opties en-mechanismen is het belang rijk om te begrijpen welke instellingen van kracht zijn en snel een server met een identieke configuratie kunnen implementeren. Deze functie introduceert de mogelijkheid om de configuratie van een bepaalde synchronisatie server te catalogiseren en de instellingen te importeren in een nieuwe implementatie. Verschillende moment opnamen van synchronisatie-instellingen kunnen worden vergeleken om eenvoudig de verschillen tussen twee servers te visualiseren of dezelfde server gedurende een bepaalde periode.
 
@@ -77,10 +77,10 @@ De instellingen migreren:
 
    ![Scherm opname van Azure AD Connect directory's.](media/how-to-connect-import-export-config/migrate1.png)
 
-1. Voer het script uit zoals hier wordt weer gegeven en sla de volledige server configuratie directory op. Kopieer deze map naar de nieuwe staging-server. U moet de volledige **geëxporteerde-ServerConfiguration-*-** map naar de nieuwe server kopiëren.
+1. Voer het script uit zoals hier wordt weer gegeven en sla de volledige server configuratie directory op. Kopieer deze map naar de nieuwe staging-server. U moet de volledige **geëxporteerde-ServerConfiguration-_-** map naar de nieuwe server kopiëren.
 
    ![Scherm opname van het script in Windows Power shell. ](media/how-to-connect-import-export-config/migrate2.png)
-    ![ Scherm opname van het kopiëren van de geëxporteerde-ServerConfiguration-*-map.](media/how-to-connect-import-export-config/migrate3.png)
+    ![ Scherm opname van het kopiëren van de map geëxporteerd-ServerConfiguration-_.](media/how-to-connect-import-export-config/migrate3.png)
 
 1. Start **Azure AD Connect** door te dubbel klikken op het pictogram op het bureau blad. Ga akkoord met de licentie voorwaarden voor micro soft-software en selecteer op de volgende pagina **aanpassen**.
 1. Schakel het selectie vakje **synchronisatie-instellingen importeren** in. Selecteer **Bladeren** om door de gekopieerde-over geëxporteerde-ServerConfiguration-*-map te bladeren. Selecteer de MigratedPolicy.jsin om de gemigreerde instellingen te importeren.
@@ -91,7 +91,7 @@ De instellingen migreren:
 
 Het vergelijken van het oorspronkelijk geïmporteerde instellingen bestand met het geëxporteerde-instellingen bestand van de zojuist geïmplementeerde server is een essentiële stap bij het goed keuren van eventuele verschillen tussen de beoogde implementaties. Met uw favoriete side-by-side-toepassing voor tekst vergelijking krijgt u een snelle visualisatie die snel de gewenste of onbedoelde wijzigingen markeert.
 
-Hoewel veel eerder hand matige configuratie stappen nu zijn verwijderd, moet u nog steeds het certificerings proces van uw organisatie volgen om ervoor te zorgen dat er geen aanvullende configuratie is vereist. Deze configuratie kan optreden als u geavanceerde instellingen gebruikt, die momenteel niet worden vastgelegd in de open bare preview-versie van instellingen beheer.
+Hoewel veel eerder hand matige configuratie stappen nu zijn verwijderd, moet u nog steeds het certificerings proces van uw organisatie volgen om ervoor te zorgen dat er geen aanvullende configuratie is vereist. Deze configuratie kan optreden als u geavanceerde instellingen gebruikt, die momenteel niet worden vastgelegd in deze versie van instellingen beheer.
 
 Hier volgen enkele bekende beperkingen:
 - **Synchronisatie regels**: de prioriteit voor een aangepaste regel moet in het gereserveerde bereik van 0 tot 99 liggen om conflicten met de standaard regels van micro soft te voor komen. Als u een aangepaste regel buiten het gereserveerde bereik plaatst, kan dit ertoe leiden dat uw aangepaste regel wordt verplaatst als standaard regels worden toegevoegd aan de configuratie. Er treedt een soortgelijk probleem op als uw configuratie gewijzigde standaard regels bevat. Het wijzigen van een standaard regel wordt afgeraden en het is waarschijnlijk dat de plaatsing van de regel onjuist is.

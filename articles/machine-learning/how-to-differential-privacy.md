@@ -1,7 +1,7 @@
 ---
-title: De privacy van gegevens behouden met behulp van de SmartNoise-pakketten (preview)
+title: Differentiële privacy How-to-SmartNoise (preview)
 titleSuffix: Azure Machine Learning
-description: Meer informatie over het Toep assen van aanbevolen procedures voor privacybeleid om modellen te Azure Machine Learning met behulp van de SmartNoise-pakketten.
+description: Meer informatie over het Toep assen van aanbevolen procedures voor privacybeleid om modellen te Azure Machine Learning met behulp van de open-source-SmartNoise-bibliotheken.
 services: machine-learning
 ms.service: machine-learning
 ms.subservice: core
@@ -10,19 +10,19 @@ ms.custom: how-to, responsible-ml
 ms.author: slbird
 author: slbird
 ms.reviewer: luquinta
-ms.date: 12/21/2020
-ms.openlocfilehash: ebc14d6c9d0ebaa6e0258578f94771c9f286bdb4
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.date: 01/21/2020
+ms.openlocfilehash: 62a002569696da4ef18e7bd967f027eb8247ef65
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98221932"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681401"
 ---
 # <a name="use-differential-privacy-in-azure-machine-learning-preview"></a>Differentiële privacy in Azure Machine Learning gebruiken (preview-versie)
 
-Meer informatie over het Toep assen van aanbevolen procedures voor privacybeleid voor het Azure Machine Learning modellen met behulp van de Python-pakketten van SmartNoise.
+Meer informatie over het Toep assen van de aanbevolen procedures voor privacybeleid voor het Azure Machine Learning modellen met behulp van de open-source-SmartNoise python-bibliotheken.
 
-Differentiële privacy is de Gold-Standard-definitie van privacy. Systemen die voldoen aan deze definitie van privacy, bieden sterke garanties tegen een breed scala aan gegevens herstel en het hernoemen van aanvallen, met inbegrip van aanvallen door aanvallers met informatie over de hulp. Meer informatie over hoe [differentiële privacy werkt](./concept-differential-privacy.md).
+Differentiële privacy is de Gold-Standard-definitie van privacy. Systemen die voldoen aan deze definitie van privacy, bieden sterke garanties tegen een breed scala aan gegevens herstel en het hernoemen van aanvallen, met inbegrip van aanvallen door aanvallers met informatie over de hulp. Meer informatie over [hoe differentiële privacy werkt](./concept-differential-privacy.md).
 
 
 ## <a name="prerequisites"></a>Vereisten
@@ -30,7 +30,7 @@ Differentiële privacy is de Gold-Standard-definitie van privacy. Systemen die v
 - Als u geen Azure-abonnement hebt, maakt u een gratis account voordat u begint. Probeer vandaag nog de [gratis of betaalde versie van Azure Machine Learning](https://aka.ms/AMLFree).
 - [Python 3](https://www.python.org/downloads/)
 
-## <a name="install-smartnoise-packages"></a>SmartNoise-pakketten installeren
+## <a name="install-smartnoise-python-libraries"></a>SmartNoise python-bibliotheken installeren
 
 ### <a name="standalone-installation"></a>Zelfstandige installatie
 
@@ -51,7 +51,7 @@ import opendp.smartnoise.sql
 
 Als de imports zijn voltooid, zijn de bibliotheken geïnstalleerd en klaar voor gebruik.
 
-### <a name="docker-image"></a>Docker-installatiekopie
+### <a name="docker-image-installation"></a>Installatie van docker-installatie kopie
 
 U kunt ook SmartNoise-pakketten gebruiken met docker.
 

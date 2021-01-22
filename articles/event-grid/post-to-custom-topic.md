@@ -3,12 +3,12 @@ title: Het onderwerp gebeurtenis op aangepast Azure Event Grid plaatsen
 description: In dit artikel wordt beschreven hoe u een gebeurtenis op een aangepast onderwerp plaatst. Hier ziet u de indeling van de post-en gebeurtenis gegevens.
 ms.topic: conceptual
 ms.date: 07/07/2020
-ms.openlocfilehash: 197d8eb1963300bc6576e664c7c3fd470cf70bb2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ed126487938e524264c94544903460854ffc4d41
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86108240"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681597"
 ---
 # <a name="post-to-custom-topic-for-azure-event-grid"></a>Bericht plaatsen op aangepast onderwerp voor Azure Event Grid
 
@@ -34,7 +34,7 @@ Als u het eind punt voor een aangepast onderwerp met Azure PowerShell wilt ophal
 (Get-AzEventGridTopic -ResourceGroupName <topic-resource-group> -Name <topic-name>).Endpoint
 ```
 
-## <a name="header"></a>Koptekst
+## <a name="header"></a>Header
 
 Neem in de aanvraag een header waarde op met de naam `aeg-sas-key` die een sleutel voor verificatie bevat.
 
@@ -71,10 +71,7 @@ Voor aangepaste onderwerpen bevatten de gegevens op het hoogste niveau dezelfde 
 ]
 ```
 
-Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een beschrijving van deze eigenschappen. Bij het posten van gebeurtenissen naar een event grid-onderwerp kan de matrix een totale grootte hebben van Maxi maal 1 MB. Elke gebeurtenis in de matrix is beperkt tot 64 KB (algemene Beschik baarheid) of 1 MB (preview-versie).
-
-> [!NOTE]
-> Een gebeurtenis met een grootte van Maxi maal 64 KB wordt gedekt door de algemene Beschik baarheid (GA) Service Level Agreement (SLA). De ondersteuning voor een gebeurtenis met een grootte van Maxi maal 1 MB is momenteel als preview-versie beschikbaar. Gebeurtenissen van meer dan 64 KB worden in rekening gebracht in stappen van 64-KB. 
+Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor een beschrijving van deze eigenschappen. Bij het posten van gebeurtenissen naar een event grid-onderwerp kan de matrix een totale grootte hebben van Maxi maal 1 MB. De Maxi maal toegestane grootte voor een gebeurtenis is ook 1 MB. Gebeurtenissen van meer dan 64 KB worden in rekening gebracht in stappen van 64-KB. 
 
 Een geldig schema voor gebeurtenis gegevens is bijvoorbeeld:
 

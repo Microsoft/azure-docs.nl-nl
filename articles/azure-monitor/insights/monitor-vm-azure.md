@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/05/2020
-ms.openlocfilehash: fc89790c7d268bcfa0c08bd26249bc91979d7fca
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 7fb84d544138b771170f95b5df71c33087252564
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96186895"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679480"
 ---
 # <a name="monitoring-azure-virtual-machines-with-azure-monitor"></a>Virtuele Azure-machines bewaken met Azure Monitor
 In dit artikel wordt beschreven hoe u Azure Monitor kunt gebruiken om bewakings gegevens van virtuele Azure-machines te verzamelen en analyseren om hun status te behouden. Virtuele machines kunnen worden bewaakt voor Beschik baarheid en prestaties met Azure Monitor zoals elke [andere Azure-resource](monitor-azure-resource.md), maar ze zijn uniek van andere resources, aangezien u ook de gast besturingssystemen en het systeem en de werk belastingen die hierop worden uitgevoerd, moet bewaken. 
@@ -113,7 +113,7 @@ Verzamel platform metrieken met een diagnostische instelling voor de virtuele ma
 Set-AzDiagnosticSetting -Name vm-diagnostics -ResourceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-vm" -Enabled $true -MetricCategory AllMetrics -workspaceId "/subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourcegroups/my-resource-group/providers/microsoft.operationalinsights/workspaces/my-workspace"
 ```
 
-```CLI
+```azurecli
 az monitor diagnostic-settings create \
 --name VM-Diagnostics 
 --resource /subscriptions/xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx/resourceGroups/my-resource-group/providers/Microsoft.Compute/virtualMachines/my-vm \
@@ -148,7 +148,7 @@ U kunt metrische gegevens voor virtuele machines analyseren met metrische gegeve
 
 Er zijn drie naam ruimten die door virtuele machines worden gebruikt voor metrische gegevens:
 
-| Naamruimte | Description | Vereiste |
+| Naamruimte | Beschrijving | Vereiste |
 |:---|:---|:---|
 | Host van virtuele machine | Metrische gegevens van de host worden automatisch verzameld voor alle virtuele machines van Azure. Gedetailleerde lijst met metrische gegevens bij [micro soft. Compute/informatie](../platform/metrics-supported.md#microsoftcomputevirtualmachines). | Automatisch verzameld zonder configuratie vereist. |
 | Gast (klassiek) | Beperkte set gast besturingssysteem en prestatie gegevens van toepassingen. Beschikbaar in Metrics Explorer, maar niet op andere Azure Monitor functies, zoals metrische waarschuwingen.  | [Diagnostische uitbrei ding](../platform/diagnostics-extension-overview.md) geïnstalleerd. Gegevens worden uit Azure Storage gelezen.  |

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/14/2021
 ms.author: jamesmantu
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 4e1addc9a5b07f9ae6f119b89b0e7d6f8186f29a
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 58e8fd5006e72465e35912a5b15cade1201d680f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98634455"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680312"
 ---
 # <a name="quickstart-sign-in-and-get-an-access-token-in-a-react-spa-using-the-auth-code-flow"></a>Snelstartgids: Meld u aan en ontvang een toegangs token in een beveiligd-wachtwoord verificatie met behulp van de autorisatie code stroom
 
@@ -66,6 +66,15 @@ Deze Snelstartgids maakt gebruik van MSAL reageren met de autorisatie code stroo
 > 1. Klik op de knop **configureren** om de wijzigingen toe te passen.
 > 1. Onder **platform configuraties** wordt een **toepassing met één pagina** uitgevouwen.
 > 1. Controleer of onder **verleende typen** ![ die ](media/quickstart-v2-javascript/green-check.png) de omleidings-URI al hebben geconfigureerd, in aanmerking komt voor de autorisatie code stroom met PKCE.
+
+> [!div class="sxs-lookup" renderon="portal"]
+> #### <a name="step-1-configure-your-application-in-the-azure-portal"></a>Stap 1: uw toepassing configureren in Azure Portal
+> U moet een `redirectUri` als `http://localhost:3000/` toevoegen voor een juiste werking van het codevoorbeeld uit deze quickstart.
+> > [!div renderon="portal" id="makechanges" class="nextstepaction"]
+> > [Breng deze wijzigingen voor mij aan]()
+>
+> > [!div id="appconfigured" class="alert alert-info"]
+> > ![Al geconfigureerd](media/quickstart-v2-javascript/green-check.png) Uw toepassing is al geconfigureerd met deze kenmerken.
 
 #### <a name="step-2-download-the-project"></a>Stap 2: Het project downloaden
 

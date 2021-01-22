@@ -11,16 +11,16 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 939a74a2bbedf6b00159f0c33a50eeb93595cda4
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 547f697c4f8ffb903006e48e94086433d64225c7
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98116072"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681333"
 ---
 # <a name="quickstart-bulk-load-data-using-the-copy-statement"></a>Quickstart: Gegevens bulksgewijs laden met behulp van de instructie COPY
 
-In deze quickstart laadt u gegevens bulksgewijs in uw toegewezen SQL-pool met behulp van de eenvoudige en flexibele [COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) voor gegevensopname met hoge doorvoer. De instructie COPY is het aanbevolen hulpprogramma voor het laden omdat u er naadloos en flexibel gegevens mee kunt laden door middel van de volgende functionaliteit:
+In deze quickstart laadt u gegevens bulksgewijs in uw toegewezen SQL-pool met behulp van de eenvoudige en flexibele [COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) voor gegevensopname met hoge doorvoer. De instructie COPY is het aanbevolen hulpprogramma voor het laden omdat u er naadloos en flexibel gegevens mee kunt laden door middel van de volgende functionaliteit:
 
 - Sta gebruikers met een beperkte bevoegdheid toe om gegevens te laden zonder dat er strikte CONTROL-machtigingen voor het datawarehouse nodig zijn
 - Gebruik slechts één T-SQL-instructie zonder extra databaseobjecten te hoeven maken

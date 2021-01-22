@@ -13,12 +13,12 @@ ms.date: 01/04/2021
 ms.author: ryanwi
 ms.custom: aaddev, content-perf, FY21Q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 4d6a7150c854ba89c3cd8eacd6b553c4b8e97343
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: 883a06bdffcd0afcbc1be6f2c761d6a1c2c2ea2a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97963346"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681872"
 ---
 # <a name="configure-token-lifetime-policies-preview"></a>Levens duur van token beleid configureren (preview-versie)
 U kunt de levens duur opgeven van een token voor toegang, SAML of ID dat is uitgegeven door het micro soft Identity-platform. U kunt de levensduur van een token instellen voor alle apps in uw organisatie, voor een multitenanttoepassing (voor meerdere organisaties) of voor een specifieke service-principal in uw organisatie. Lees de [levens duur van Configureer bare tokens](active-directory-configurable-token-lifetimes.md)voor meer informatie.
@@ -87,7 +87,7 @@ In dit voor beeld maakt u een beleid waarmee gebruikers vaker moeten worden geve
 > [!IMPORTANT]
 > Vanaf mei 2020 kunnen nieuwe tenants geen vernieuwings-en sessie token levensduur configureren.  Tenants met een bestaande configuratie kunnen vernieuwings-en sessie token beleid aanpassen tot 30 januari 2021.  Azure Active Directory zal na 30 januari 2021 niet langer de configuratie van bestaande vernieuwings-en sessie tokens in het beleid naleven. U kunt de levens duur van de toegangs-, SAML-en ID-tokens na de buiten gebruiks telling nog steeds configureren.
 >
-> Als u moet door gaan met het definiëren van de tijds periode voordat een gebruiker wordt gevraagd zich opnieuw aan te melden, configureert u de aanmeldings frequentie in voorwaardelijke toegang. Lees voor meer informatie over voorwaardelijke toegang [verificatie sessie beheer configureren met voorwaardelijke toegang](/azure/active-directory/conditional-access/howto-conditional-access-session-lifetime).
+> Als u moet door gaan met het definiëren van de tijds periode voordat een gebruiker wordt gevraagd zich opnieuw aan te melden, configureert u de aanmeldings frequentie in voorwaardelijke toegang. Lees voor meer informatie over voorwaardelijke toegang [verificatie sessie beheer configureren met voorwaardelijke toegang](../conditional-access/howto-conditional-access-session-lifetime.md).
 >
 > Als u na de pensionering geen gebruik wilt maken van voorwaardelijke toegang, worden uw vernieuwings-en sessie tokens op die datum ingesteld op de [standaard configuratie](active-directory-configurable-token-lifetimes.md#configurable-token-lifetime-properties-after-the-retirement) en kunt u de levens duur ervan niet meer wijzigen.
 

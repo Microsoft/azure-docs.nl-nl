@@ -11,12 +11,12 @@ ms.date: 12/04/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e65569cadd8f778a94f93aa22dd3924c52ff12f8
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 3796b3d86f647e38cf2ff018e8c0c903d9a64e41
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98613384"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682035"
 ---
 # <a name="inbound-synchronization-for-cloud-sync-using-ms-graph-api"></a>Inkomende synchronisatie voor Cloud synchronisatie met behulp van MS Graph API
 
@@ -31,7 +31,7 @@ De structuur van dit proces bestaat uit de volgende stappen.  Dit zijn:
 - [Synchronisatie taak starten](#start-sync-job)
 - [Beoordelings status](#review-status)
 
-Gebruik deze [Microsoft Azure Active Directory-module voor Windows PowerShell](https://docs.microsoft.com/powershell/module/msonline/) opdrachten om synchronisatie in te scha kelen voor een productie Tenant, een vereiste om de beheer webservice aan te roepen voor die Tenant.
+Gebruik deze [Microsoft Azure Active Directory-module voor Windows PowerShell](/powershell/module/msonline/) opdrachten om synchronisatie in te scha kelen voor een productie Tenant, een vereiste om de beheer webservice aan te roepen voor die Tenant.
 
 ## <a name="basic-setup"></a>Basisconfiguratie
 
@@ -60,7 +60,7 @@ U moet deze toepassings-ID 1a4721b3-e57f-4451-ae87-ef078703ec94 gebruiken. Displ
 ## <a name="create-sync-job"></a>Synchronisatie taak maken
 De uitvoer van de bovenstaande opdracht retourneert het objectId van de service-principal die is gemaakt. Voor dit voor beeld is de objectId 614ac0e9-a59b-481f-bd8f-79a73d167e1c.  Gebruik Microsoft Graph om een synchronizationJob toe te voegen aan die service-principal.  
 
-Documentatie over het maken van een synchronisatie taak vindt u [hier](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-post?view=graph-rest-beta&tabs=http).
+Documentatie over het maken van een synchronisatie taak vindt u [hier](/graph/api/synchronization-synchronizationjob-post?tabs=http&view=graph-rest-beta).
 
 Als u de bovenstaande ID niet hebt geregistreerd, kunt u de Service-Principal vinden door de volgende MS Graph-aanroep uit te voeren. U hebt Directory. Read. alle machtigingen nodig om de volgende aanroep uit te voeren:
  
@@ -216,11 +216,11 @@ De taak kan opnieuw worden opgehaald via de volgende opdracht:
 
  `GET https://graph.microsoft.com/beta/servicePrincipals/[SERVICE_PRINCIPAL_ID]/synchronization/jobs/ ` 
 
-Documentatie voor het ophalen van taken vindt u [hier](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-list?view=graph-rest-beta&tabs=http). 
+Documentatie voor het ophalen van taken vindt u [hier](/graph/api/synchronization-synchronizationjob-list?tabs=http&view=graph-rest-beta). 
  
 Als u de taak wilt starten, geeft u deze aanvraag uit met het objectId van de service-principal die u in de eerste stap hebt gemaakt en de taak-id die is geretourneerd door de aanvraag die de taak heeft gemaakt.
 
-Documentatie over het starten van een taak vindt u [hier](https://docs.microsoft.com/graph/api/synchronization-synchronizationjob-start?view=graph-rest-beta&tabs=http). 
+Documentatie over het starten van een taak vindt u [hier](/graph/api/synchronization-synchronizationjob-start?tabs=http&view=graph-rest-beta). 
 
  ```
  POST  https://graph.microsoft.com/beta/servicePrincipals/8895955e-2e6c-4d79-8943-4d72ca36878f/synchronization/jobs/AD2AADProvisioning.fc96887f36da47508c935c28a0c0b6da/start
@@ -228,7 +228,7 @@ Documentatie over het starten van een taak vindt u [hier](https://docs.microsoft
 
 De verwachte reactie is... HTTP 204/geen-inhoud.
 
-Andere opdrachten voor het beheren van de taak worden [hier](https://docs.microsoft.com/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-beta)beschreven.
+Andere opdrachten voor het beheren van de taak worden [hier](/graph/api/resources/synchronization-synchronizationjob?view=graph-rest-beta)beschreven.
  
 Als u een taak opnieuw wilt starten, gebruikt u...
 
@@ -254,4 +254,4 @@ Zoek in de sectie ' status ' van het object Return naar relevante Details
 
 - [Wat is Azure AD Connect Cloud synchronisatie?](what-is-cloud-sync.md)
 - [Transformaties](how-to-transformation.md)
-- [Azure AD-synchronisatie-API](https://docs.microsoft.com/graph/api/resources/synchronization-overview?view=graph-rest-beta)
+- [Azure AD-synchronisatie-API](/graph/api/resources/synchronization-overview?view=graph-rest-beta)

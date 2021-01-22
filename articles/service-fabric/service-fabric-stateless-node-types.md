@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 09/25/2020
 ms.author: pepogors
-ms.openlocfilehash: 0876891e42ce629a3b088d8068c74386d690492d
-ms.sourcegitcommit: e0ec3c06206ebd79195d12009fd21349de4a995d
+ms.openlocfilehash: 3767a16656ac4d11511c0928be8b2703c4e94c7c
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97683189"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680600"
 ---
 # <a name="deploy-an-azure-service-fabric-cluster-with-stateless-only-node-types-preview"></a>Een Azure Service Fabric-cluster implementeren met stateless knooppunt typen (preview-versie)
 Service Fabric knooppunt typen worden geleverd met inherente veronderstelling dat op een bepaald moment stateful Services kunnen worden geplaatst op de knoop punten. Stateless knooppunt typen versoepelen deze veronderstelling voor een knooppunt type, waardoor het knooppunt type ook andere functies kan gebruiken, zoals het snel uitbreiden van bewerkingen, ondersteuning voor automatische upgrades van besturings systemen op Bronze duurzaamheid en uitschalen naar meer dan 100 knoop punten in één virtuele-machine schaalset.
@@ -253,6 +253,8 @@ U moet de nieuwe resources toevoegen aan uw bestaande resource manager-sjabloon 
 
 Zodra de implementatie van de resources is voltooid, kunt u beginnen met het uitschakelen van de knoop punten in het knooppunt type dat u uit het oorspronkelijke cluster wilt verwijderen.
 
+>[!NOTE]
+> Bij het gebruik van automatisch schalen met stateless nodetypes met Bronze duurzaamheid, nadat de bewerking is geschaald, wordt de status van het knoop punt niet automatisch opgeschoond. Als u de NodeState van de knoop punten wilt opschonen tijdens het automatisch schalen, wordt u aangeraden [service Fabric AutoScale-helper](https://github.com/Azure/service-fabric-autoscale-helper) te gebruiken.
 
 ## <a name="next-steps"></a>Volgende stappen 
 * [Reliable Services](service-fabric-reliable-services-introduction.md)

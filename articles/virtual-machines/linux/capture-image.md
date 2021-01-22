@@ -8,24 +8,24 @@ ms.topic: how-to
 ms.date: 10/08/2018
 ms.author: cynthn
 ms.custom: legacy, devx-track-azurecli
-ms.openlocfilehash: eacd1426b856de11a18b0da6c509d281b3bca94c
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 53fb11216e65ebead43c02a7153d937c37b841a0
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97655166"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681057"
 ---
 # <a name="how-to-create-a-managed-image-of-a-virtual-machine-or-vhd"></a>Een beheerde installatie kopie van een virtuele machine of VHD maken
 
 Als u meerdere exemplaren van een virtuele machine (VM) wilt maken voor gebruik in azure voor ontwikkeling en testen, moet u een beheerde installatie kopie van de VM of van de VHD van het besturings systeem vastleggen. Zie voor meer informatie over het maken, opslaan en delen [van installatie kopieën](../shared-images-cli.md)op schaal.
 
-Eén beheerde installatie kopie ondersteunt Maxi maal 20 gelijktijdige implementaties. Als u probeert om meer dan 20 Vm's gelijktijdig te maken, vanuit dezelfde beheerde installatie kopie, kan dit leiden tot het inrichten van time-outs als gevolg van de opslag prestatie beperkingen van één VHD. Als u meer dan 20 Vm's gelijktijdig wilt maken, gebruikt u een afbeelding voor [gedeelde afbeeldings galerieën](shared-image-galleries.md) die is geconfigureerd met 1 replica voor elke 20 gelijktijdige VM-implementaties.
+Eén beheerde installatie kopie ondersteunt Maxi maal 20 gelijktijdige implementaties. Als u probeert om meer dan 20 Vm's gelijktijdig te maken, vanuit dezelfde beheerde installatie kopie, kan dit leiden tot het inrichten van time-outs als gevolg van de opslag prestatie beperkingen van één VHD. Als u meer dan 20 Vm's gelijktijdig wilt maken, gebruikt u een afbeelding voor [gedeelde afbeeldings galerieën](../shared-image-galleries.md) die is geconfigureerd met 1 replica voor elke 20 gelijktijdige VM-implementaties.
 
 Als u een beheerde installatie kopie wilt maken, moet u persoonlijke account gegevens verwijderen. In de volgende stappen kunt u de inrichting van een bestaande virtuele machine ongedaan maken, de toewijzing ervan opheffen en een installatie kopie maken. U kunt deze installatie kopie gebruiken om Vm's te maken voor elke resource groep in uw abonnement.
 
 Zie [een virtuele Linux-machine uploaden en maken op basis van een aangepaste schijf kopie](upload-vhd.md)om een kopie te maken van uw bestaande virtuele Linux-machine voor back-up of fout opsporing of om een speciale Linux-VHD te uploaden vanaf een on-premises VM.  
 
-U kunt de **Azure VM Image Builder-service (open bare preview)** gebruiken om uw aangepaste installatie kopie te bouwen, geen hulp middelen meer te leren of door pijp lijnen voor het bouwen van een installatie kopie te maken, simpelweg een configuratie voor de installatie kopieën te bieden en de installatie kopie wordt gemaakt met de opbouw functie voor installatie kopieën. Zie aan de slag [met Azure VM Image Builder](./image-builder-overview.md)voor meer informatie.
+U kunt de **Azure VM Image Builder-service (open bare preview)** gebruiken om uw aangepaste installatie kopie te bouwen, geen hulp middelen meer te leren of door pijp lijnen voor het bouwen van een installatie kopie te maken, simpelweg een configuratie voor de installatie kopieën te bieden en de installatie kopie wordt gemaakt met de opbouw functie voor installatie kopieën. Zie aan de slag [met Azure VM Image Builder](../image-builder-overview.md)voor meer informatie.
 
 Voordat u een installatie kopie maakt, hebt u de volgende items nodig:
 

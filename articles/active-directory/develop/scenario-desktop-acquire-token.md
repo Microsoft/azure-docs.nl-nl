@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: e15dce586dc4dd43cf56fd1cbb08b84ebcda1787
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 040f9fa67617b058138926310706f4bc56c4ff62
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232298"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680970"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen
 
@@ -105,7 +105,7 @@ if not result:
     result = app.acquire_token_by_xxx(scopes=config["scope"])
 ```
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 ### <a name="in-msal-for-ios-and-macos"></a>In MSAL voor iOS en macOS
 
@@ -374,7 +374,7 @@ if not result:
 
 ```
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 ### <a name="in-msal-for-ios-and-macos"></a>In MSAL voor iOS en macOS
 
@@ -590,7 +590,7 @@ private static IAuthenticationResult acquireTokenIwa() throws Exception {
 
 Deze stroom wordt nog niet ondersteund in MSAL python.
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Deze stroom is niet van toepassing op macOS.
 
@@ -912,7 +912,7 @@ if not result:
         config["username"], config["password"], scopes=config["scope"])
 ```
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Deze stroom wordt niet ondersteund op MSAL voor macOS.
 
@@ -1145,7 +1145,7 @@ if not result:
         # and then keep calling acquire_token_by_device_flow(flow) in your own customized loop
 ```
 
-# <a name="macos"></a>[macOS](#tab/macOS)
+# <a name="macos"></a>[MacOS](#tab/macOS)
 
 Deze stroom is niet van toepassing op macOS.
 
@@ -1181,7 +1181,7 @@ De aanpassing van de token cache-serialisatie voor het delen van de SSO-status t
 
 ### <a name="simple-token-cache-serialization-msal-only"></a>Eenvoudige token cache-serialisatie (alleen MSAL)
 
-Het volgende voor beeld is een Naïve-implementatie van aangepaste serialisatie van een token cache voor bureaublad toepassingen. Hier bevindt de token cache van de gebruiker zich in een bestand in dezelfde map als de toepassing of, in een per gebruiker per app-map, in het geval waarin de app een [verpakte bureaublad toepassing](https://docs.microsoft.com/windows/msix/desktop/desktop-to-uwp-behind-the-scenes)is. Voor de volledige code raadpleegt u het volgende voor beeld: [Active-Directory-DotNet-Desktop-MSGraph-v2](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2).
+Het volgende voor beeld is een Naïve-implementatie van aangepaste serialisatie van een token cache voor bureaublad toepassingen. Hier bevindt de token cache van de gebruiker zich in een bestand in dezelfde map als de toepassing of, in een per gebruiker per app-map, in het geval waarin de app een [verpakte bureaublad toepassing](/windows/msix/desktop/desktop-to-uwp-behind-the-scenes)is. Voor de volledige code raadpleegt u het volgende voor beeld: [Active-Directory-DotNet-Desktop-MSGraph-v2](https://github.com/Azure-Samples/active-directory-dotnet-desktop-msgraph-v2).
 
 Nadat u de toepassing hebt gemaakt, schakelt u de serialisatie in door ``TokenCacheHelper.EnableSerialization()`` de toepassing aan te roepen en door te geven `UserTokenCache` .
 

@@ -8,12 +8,12 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: ce854c8f2d1d317c3660aaab9c0a6569aae0bb36
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
-ms.translationtype: HT
+ms.openlocfilehash: 4d6401c53071235784a5371a4a6315e4e25a438f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97895968"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680262"
 ---
 # <a name="tutorial-sign-in-users-and-call-a-protected-api-from-a-blazor-webassembly-app"></a>Zelfstudie: Gebruikers aanmelden en een beveiligde API aanroepen vanuit een Blazor WebAssembly-app
 
@@ -26,7 +26,7 @@ In deze zelfstudie hebt u het volgende gedaan:
 > * Een nieuwe Blazor WebAssembly-app maken die is geconfigureerd om Azure AD (Active Directory) te gebruiken voor [verificatie en autorisatie](authentication-vs-authorization.md), met behulp van het Microsoft-identiteitsplatform
 > * Gegevens ophalen uit een beveiligde web-API, in dit geval [Microsoft Graph](/graph/overview)
 
-In deze zelfstudie wordt .NET Core 3.1 gebruikt. De .NET-documentatie bevat instructies over [hoe u een Blazor WebAssembly-app kunt beveiligen](https://docs.microsoft.com/aspnet/core/blazor/security/webassembly/graph-api) met behulp van ASP.NET Core 5.0. 
+In deze zelfstudie wordt .NET Core 3.1 gebruikt. De .NET-documentatie bevat instructies over [hoe u een Blazor WebAssembly-app kunt beveiligen](/aspnet/core/blazor/security/webassembly/graph-api) met behulp van ASP.NET Core 5.0. 
 
 We hebben ook een [zelfstudie voor Blazor Server](tutorial-blazor-server.md). 
 
@@ -80,7 +80,7 @@ De onderdelen van deze sjabloon die aanmeldingen met Azure AD mogelijk maken via
 
 [Microsoft Graph](/graph/overview) bevat API's die toegang bieden tot Microsoft 365-gegevens voor uw gebruikers. Het ondersteunt ook de tokens die zijn uitgegeven door het Microsoft Identity-platform. Hierdoor is het een goede beveiligde API om als voorbeeld te gebruiken. In deze sectie voegt u code toe om Microsoft Graph aan te roepen en de e-mails van ingelogde gebruikers weer te geven op de pagina 'Gegevens ophalen' van de toepassing.
 
-Deze sectie is geschreven met behulp van een algemene benadering voor het aanroepen van een beveiligde API met behulp van een benoemde client. Dezelfde methode kan worden gebruikt voor andere beveiligde API's die u wilt aanroepen. Als u echter van plan bent om Microsoft Graph aan te roepen vanuit uw toepassing, kunt u de Graph SDK gebruiken om de standaard te verminderen. De .NET-documentatie bevat instructies over [het gebruik van de Graph SDK](https://docs.microsoft.com/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0).
+Deze sectie is geschreven met behulp van een algemene benadering voor het aanroepen van een beveiligde API met behulp van een benoemde client. Dezelfde methode kan worden gebruikt voor andere beveiligde API's die u wilt aanroepen. Als u echter van plan bent om Microsoft Graph aan te roepen vanuit uw toepassing, kunt u de Graph SDK gebruiken om de standaard te verminderen. De .NET-documentatie bevat instructies over [het gebruik van de Graph SDK](/aspnet/core/blazor/security/webassembly/graph-api?view=aspnetcore-5.0).
 
 Voordat u begint, moet u zich afmelden bij uw app, aangezien u wijzigingen aanbrengt in de vereiste machtigingen en uw huidige token daarvoor niet werkt. Als u dat nog niet hebt gedaan, voert u de app opnieuw uit en selecteert u **Afmelden** voordat u de onderstaande code bijwerkt.
 

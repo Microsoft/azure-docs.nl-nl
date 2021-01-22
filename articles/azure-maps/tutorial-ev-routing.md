@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 7a33cf4e66ce31f8fb8534de25d7564a5784ca3a
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 7341d1f07e8814edcad7b84f6b3b46c7bece3159
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625046"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680329"
 ---
 # <a name="tutorial-route-electric-vehicles-by-using-azure-notebooks-python"></a>Zelfstudie: Elektrische voertuigen routeren met behulp van Azure Notebooks (Python)
 
@@ -27,7 +27,7 @@ In deze zelfstudie leert u hoe u een bestuurder helpt van wie de accu van het el
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
-> * Maak een Jupyter Notebook-bestand en voer het uit in [Azure Notebooks](../notebooks/index.yml) in de cloud.
+> * Maak een Jupyter Notebook-bestand en voer het uit in [Azure Notebooks](https://notebooks.azure.com) in de cloud.
 > * REST API's van Azure Maps aanroepen in Python.
 > * Een bereik zoeken op basis van het verbruiksmodel van het elektrische voertuig.
 > * Zoeken naar laadstations voor elektrische voertuigen binnen het bereik, ofwel de isochroon.
@@ -49,7 +49,7 @@ Zie [Verificatie beheren in Azure Maps](./how-to-manage-authentication.md) voor 
 
 Voor deze zelfstudie moet u een Azure Notebooks-project maken en het Jupyter Notebook-bestand downloaden en uitvoeren. Het Jupyter Notebook-bestand bevat Python-code waarmee het scenario in deze zelfstudie wordt geïmplementeerd. Voer de volgende stappen uit om een Azure Notebooks-project te maken en het Jupyter Notebook-document te uploaden naar dat project:
 
-1. Ga naar [Azure Notebooks](https://notebooks.azure.com) en meld u aan. Zie voor meer informatie [Snelstart: Aanmelden en een gebruikers-id instellen](../notebooks/quickstart-sign-in-azure-notebooks.md).
+1. Ga naar [Azure Notebooks](https://notebooks.azure.com) en meld u aan. Zie voor meer informatie [Snelstart: Aanmelden en een gebruikers-id instellen](https://notebooks.azure.com).
 1. Selecteer bovenaan de openbare profielpagina **Mijn projecten**.
 
     ![De knop Mijn projecten](./media/tutorial-ev-routing/myproject.png)
@@ -408,4 +408,4 @@ Er zijn geen resources die moeten worden opgeruimd.
 Voor meer informatie over Azure Notebooks, zie
 
 > [!div class="nextstepaction"]
-> [Azure Notebooks](../notebooks/index.yml)
+> [Azure Notebooks](https://notebooks.azure.com)

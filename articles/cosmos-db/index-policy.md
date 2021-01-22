@@ -5,14 +5,14 @@ author: timsander1
 ms.service: cosmos-db
 ms.subservice: cosmosdb-sql
 ms.topic: conceptual
-ms.date: 12/07/2020
+ms.date: 01/21/2021
 ms.author: tisande
-ms.openlocfilehash: 00c80fa311837918a78f26e941f00cb17f1dc279
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 4d2ad9cf6b47d8307d9652419b82de8ffcbcb099
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019173"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681647"
 ---
 # <a name="indexing-policies-in-azure-cosmos-db"></a>Indexeringsbeleid in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -35,6 +35,17 @@ Azure Cosmos DB ondersteunt twee indexerings modi:
 > Azure Cosmos DB ondersteunt ook een vertraagde indexerings modus. Luie indexering voert updates op de index met een veel lager prioriteitsniveau uit als de engine geen andere taken uitvoert. Dit kan leiden tot **inconsistente of onvolledige** queryresultaten. Als u van plan bent om een query uit te voeren op een Cosmos-container, moet u geen luie indexering selecteren. Nieuwe containers kunnen geen luie indexering selecteren. U kunt een uitzonde ring aanvragen door contact op te nemen met de [ondersteuning van Azure](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) (behalve als u een Azure Cosmos-account gebruikt in de [serverloze](serverless.md) modus die geen ondersteuning biedt voor Lazy indexering).
 
 Indexerings beleid is standaard ingesteld op `automatic` . Het wordt bereikt door de `automatic` eigenschap in het indexerings beleid in te stellen op `true` . Als u deze eigenschap instelt op, `true` kan Azure CosmosDB documenten automatisch indexeren wanneer ze zijn geschreven.
+
+## <a name="index-size"></a><a id="index-size"></a>Index grootte
+
+In Azure Cosmos DB is de totale hoeveelheid verbruikte opslag de combi natie van de gegevens grootte en de index grootte. Hier volgen enkele kenmerken van index grootte:
+
+* De index grootte is afhankelijk van het indexerings beleid. Als alle eigenschappen zijn geïndexeerd, kan de index grootte groter zijn dan de grootte van de gegevens.
+* Wanneer gegevens worden verwijderd, worden de indexen bijna voortdurend gecomprimeerd. Voor kleine gegevens verwijderingen is het echter mogelijk dat u niet onmiddellijk een afname van de index grootte ziet.
+* De index grootte kan in de volgende gevallen toenemen:
+
+  * Duur van partitie splitsing: de index ruimte wordt vrijgegeven nadat het splitsen van de partitie is voltooid.
+  * Wanneer een partitie wordt gesplitst, neemt de index ruimte tijdens het splitsen van de partitie tijdelijk toe. 
 
 ## <a name="including-and-excluding-property-paths"></a><a id="include-exclude-paths"></a>Eigenschaps paden opnemen en uitsluiten
 
@@ -91,7 +102,7 @@ Bij het opnemen en uitsluiten van paden kunnen de volgende kenmerken optreden:
 
 Als deze eigenschap niet is opgegeven, hebben deze eigenschappen de volgende standaard waarden:
 
-| **Eigenschaps naam**     | **Standaard waarde** |
+| **Eigenschapsnaam**     | **Standaardwaarde** |
 | ----------------------- | -------------------------------- |
 | `kind`   | `range` |
 | `precision`   | `-1`  |

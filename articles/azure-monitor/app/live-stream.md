@@ -4,12 +4,12 @@ description: Bewaak uw web-app in realtime met aangepaste metrische gegevens en 
 ms.topic: conceptual
 ms.date: 04/22/2019
 ms.reviewer: sdash
-ms.openlocfilehash: c50f7e57c520321d752d6d46e36c45c615b5e785
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 865de94f1d9b4012a908643bbf87f38aeb8594a0
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803575"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679463"
 ---
 # <a name="live-metrics-stream-monitor--diagnose-with-1-second-latency"></a>Live Metrics Stream: controleren & diagnose met een latentie van 1 seconde
 
@@ -36,7 +36,7 @@ Live metrics worden momenteel ondersteund voor ASP.NET-, ASP.NET Core-, Azure Fu
    * [ASP.net core](./asp-net-core.md)-Live Metrics is standaard ingeschakeld.
    * [.Net/.net Core-Console/werk nemer](./worker-service.md)-Live Metrics is standaard ingeschakeld.
    * [.NET-toepassingen: Schakel code](#enable-livemetrics-using-code-for-any-net-application)in.
-    * [Java](https://docs.microsoft.com/azure/azure-monitor/app/java-in-process-agent) -Live-metrische gegevens is standaard ingeschakeld.
+    * [Java](./java-in-process-agent.md) -Live-metrische gegevens is standaard ingeschakeld.
    * [Node.js](./nodejs.md#live-metrics)
 
 2. Open in de [Azure Portal](https://portal.azure.com)de Application Insights resource voor uw app en open Live Stream.

@@ -13,12 +13,12 @@ ms.date: 9/18/2019
 ms.author: brianmel
 ms.reviewer: rapong
 ms.custom: aaddev
-ms.openlocfilehash: a8c7ae8de41a01cb07a4bbbcd5943fb6290eced8
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: f87f2e79bd9439fddb52fad82c7ab4712fc68fb9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98131641"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680362"
 ---
 # <a name="use-msal-for-android-with-b2c"></a>MSAL voor Android gebruiken met B2C
 
@@ -36,7 +36,7 @@ Op basis van een B2C-toepassing met twee beleids regels:
 
 In het configuratie bestand voor de app worden twee gedeclareerd `authorities` . Eén voor elk beleid. De `type` eigenschap van elke instantie is `B2C` .
 
->Opmerking: de `account_mode` moet worden ingesteld op **meerdere** voor B2C-toepassingen. Raadpleeg de documentatie voor meer informatie over [open bare client-apps voor meerdere accounts](https://docs.microsoft.com/azure/active-directory/develop/single-multi-account#multiple-account-public-client-application).
+>Opmerking: de `account_mode` moet worden ingesteld op **meerdere** voor B2C-toepassingen. Raadpleeg de documentatie voor meer informatie over [open bare client-apps voor meerdere accounts](./single-multi-account.md#multiple-account-public-client-application).
 
 ### `app/src/main/res/raw/msal_config.json`
 ```json

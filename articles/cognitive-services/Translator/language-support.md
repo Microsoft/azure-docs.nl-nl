@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/10/2020
 ms.author: swmachan
-ms.openlocfilehash: 6163f059581c2699d0b2780545c3ad5ec80f2907
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 60da61d094316b29c8fbc5454472bb898d693937
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97882412"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681580"
 ---
 # <a name="language-and-region-support-for-text-and-speech-translation"></a>Ondersteuning van talen en regio's voor tekst-en spraak omzetting
 
@@ -195,24 +195,38 @@ De methode transtranscrib ondersteunt de volgende talen. In de ' aan/van ', ' <-
 |:----------- |:-------------:|:-------------:|:-------------:|:-------------:|
 | Arabisch | `ar` | Arabisch `Arab` | <--> | Latijnse `Latn` |
 | Bengaals  | `bn` | Bengaals `Beng` | <--> | Latijnse `Latn` |
+|Wit-Russisch| `be` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
+|Bulgaars| `bg` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 | Chinees (Vereenvoudigd) | `zh-Hans` | Vereenvoudigd Chinees `Hans`| <--> | Latijnse `Latn` |
 | Chinees (Vereenvoudigd) | `zh-Hans` | Vereenvoudigd Chinees `Hans`| <--> | Traditioneel Chinees `Hant`|
 | Chinees (Traditioneel) | `zh-Hant` | Traditioneel Chinees `Hant`| <--> | Latijnse `Latn` |
 | Chinees (Traditioneel) | `zh-Hant` | Traditioneel Chinees `Hant`| <--> | Vereenvoudigd Chinees `Hans` |
+|Grieks| `el` | Grieks `Grek`  | <--> | Latijnse `Latn` |
 | Gujarati | `gu`  | Gujarati `Gujr` | <--> | Latijnse `Latn` |
 | Hebreeuws | `he` | Hebreeuws `Hebr` | <--> | Latijnse `Latn` |
 | Hindi | `hi` | Devanagari `Deva` | <--> | Latijnse `Latn` |
 | Japans | `ja` | Japans `Jpan` | <--> | Latijnse `Latn` |
 | Kannada | `kn` | Kannada `Knda` | <--> | Latijnse `Latn` |
+|Kazachs| `kk` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
+|Kirgizisch| `ky` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
+|Macedonisch| `mk` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 | Malayalam | `ml` | Malajalam `Mlym` | <--> | Latijnse `Latn` |
 | Mahrati | `mr` | Devanagari `Deva` | <--> | Latijnse `Latn` |
+|Mongools| `mn` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 | Odia | `or` | Odia `Orya` | <--> | Latijnse `Latn` |
+|Perzisch| `fa` | Arabisch `Arab`  | <--> | Latijnse `Latn` |
 | Punjabi | `pa` | Gurmukhi `Guru`  | <--> | Latijnse `Latn`  |
+|Russisch| `ru` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 | Servisch (Cyrillisch) | `sr-Cyrl` | Cyrillisch `Cyrl`  | --> | Latijnse `Latn` |
 | Servisch (Latijns) | `sr-Latn` | Latijnse `Latn` | --> | Cyrillisch `Cyrl`|
+|Sindhi| `sd` | Arabisch `Arab`  | <--> | Latijnse `Latn` |
+|Tadzjieks| `tg` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 | Tamil | `ta` | Tamil `Taml` | <--> | Latijnse `Latn` |
+|Tataars| `tt` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 | Telugu | `te` | Telugu `Telu` | <--> | Latijnse `Latn` |
 | Thai | `th` | Thais `Thai` | --> | Latijnse `Latn` |
+|Oekraïens| `uk` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
+|Urdu| `ur` | Arabisch `Arab`  | <--> | Latijnse `Latn` |
 
 ### <a name="dictionary"></a>Woordenlijst
 

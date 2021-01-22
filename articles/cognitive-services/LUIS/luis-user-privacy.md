@@ -4,17 +4,17 @@ titleSuffix: Azure Cognitive Services
 description: U hebt volledige controle over het weer geven, exporteren en verwijderen van de gegevens. Verwijder klant gegevens om te zorgen voor privacy en naleving.
 services: cognitive-services
 manager: nitinme
-ms.custom: seodec18
+ms.custom: seodec18, references_regions
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
-ms.date: 12/08/2020
-ms.openlocfilehash: cd9b353300b88c69efb0c458245a86963c579064
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.date: 12/10/2020
+ms.openlocfilehash: 0a2d0ce683261ca3460c7aeaa0d7a42152b81a1e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007735"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680173"
 ---
 # <a name="export-and-delete-your-customer-data-in-language-understanding-luis-in-cognitive-services"></a>Uw klant gegevens in Language Understanding (LUIS) in Cognitive Services exporteren en verwijderen
 
@@ -58,31 +58,38 @@ Om [actief leren](luis-how-to-review-endpoint-utterances.md#log-user-queries-to-
 
 Met uitzonde ring van actieve leer gegevens (hieronder beschreven), volgt LUIS de [gegevensopslag methoden voor regionale Services](https://azuredatacentermap.azurewebsites.net/).
 
+[!INCLUDE [portal consolidation](includes/portal-consolidation.md)]
+
+
 ### <a name="europe"></a>Europa
 
-De [EU.Luis.ai](https://eu.luis.ai) -Portal en Europa-ontwerping (ook wel programmatische api's genoemd) worden gehost in de Europa-wereld van Azure. De eu.luis.ai-Portal en Europa-ontwerp (ook wel programmatische Api's genoemd) ondersteunen de implementatie van eind punten naar de volgende Azure-geografi:
+Europa-ontwerpen (ook wel programmeer-Api's genoemd) worden gehost in de geografische regio van Azure en ondersteunen de implementatie van eind punten naar de volgende Azure-geografi:
 
 * Europa
 * Frankrijk
 * Verenigd Koninkrijk
 
-Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de Europa-wereld van Azure voor actief onderwijs. U kunt actief leren uitschakelen. Zie voor het [uitschakelen van actief leren](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Zie [Utterance verwijderen](luis-how-to-review-endpoint-utterances.md#delete-utterance)om opgeslagen uitingen te beheren.
+Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de Europa-wereld van Azure voor actief onderwijs.
 
 ### <a name="australia"></a>Australië
 
-De [au.Luis.ai](https://au.luis.ai) -Portal en Australië-ontwerping (ook wel programmatische api's genoemd) worden gehost in de geografische regio van Azure. De au.luis.ai-Portal en Australië-ontwerping (ook wel programmatische Api's genoemd) ondersteunen de implementatie van eind punten naar de volgende Azure-geografies:
+Australië-resources (ook wel programmeer-Api's genoemd) worden gehost in de geografische regio van Azure en ondersteunen de implementatie van eind punten naar de volgende Azure-geografi:
 
 * Australië
 
-Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de geografische regio van Azure voor actief onderwijs. U kunt actief leren uitschakelen. Zie voor het [uitschakelen van actief leren](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Zie [Utterance verwijderen](luis-how-to-review-endpoint-utterances.md#delete-utterance)om opgeslagen uitingen te beheren.
+Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de geografische regio van Azure voor actief onderwijs.
 
 ### <a name="united-states"></a>Verenigde Staten
 
-De [Luis.ai](https://www.luis.ai) -portal en Verenigde Staten-ontwerp (ook wel programmatische api's genoemd) worden gehost in de Verenigde Staten Geografie van Azure. De luis.ai-Portal en Verenigde Staten-ontwerp (ook wel programmatische Api's genoemd) ondersteunen de implementatie van eind punten naar de volgende Azure-geografi:
+Verenigde Staten-ontwerpen (ook wel programmeer-Api's genoemd) worden gehost in het Verenigde Staten Geografie van Azure en ondersteunen de implementatie van eind punten naar de volgende Azure-geografies:
 
 * Azure-geografi niet ondersteund door de ontwerp regio's Europa of Australië
 
-Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de Verenigde Staten Geografie van Azure voor actief onderwijs. U kunt actief leren uitschakelen. Zie voor het [uitschakelen van actief leren](luis-how-to-review-endpoint-utterances.md#disable-active-learning). Zie [Utterance verwijderen](luis-how-to-review-endpoint-utterances.md#delete-utterance)om opgeslagen uitingen te beheren.
+Wanneer u implementeert in deze Azure-grafieken, wordt de uitingen die door het eind punt van de eind gebruikers van uw app worden ontvangen, opgeslagen in de Verenigde Staten Geografie van Azure voor actief onderwijs. 
+
+## <a name="disable-active-learning"></a>Actief leren uitschakelen
+
+Zie [actief leren uitschakelen](luis-how-to-review-endpoint-utterances.md#disable-active-learning)voor meer informatie over het uitschakelen van actief leren. Zie [Utterance verwijderen](luis-how-to-review-endpoint-utterances.md#delete-utterance)om opgeslagen uitingen te beheren.
 
 
 ## <a name="next-steps"></a>Volgende stappen

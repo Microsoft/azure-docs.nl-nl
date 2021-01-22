@@ -3,18 +3,20 @@ title: Samen werken met anderen-LUIS
 titleSuffix: Azure Cognitive Services
 description: Een eigenaar van een app kan mede werkers toevoegen aan de ontwerp bron. Deze inzenders kunnen het model, de training en de publicatie van de App wijzigen.
 services: cognitive-services
+author: aahill
+ms.author: aahi
 manager: nitinme
 ms.custom: seodec18
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
-ms.date: 12/08/2020
-ms.openlocfilehash: d4bde21dd13b562ffbb51b27ef083ee53685397a
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.date: 01/21/2021
+ms.openlocfilehash: ea95b2097c611635eb937498c6f1d87cb544bcd1
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007960"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681091"
 ---
 # <a name="add-contributors-to-your-app"></a>Inzenders toevoegen aan uw app
 
@@ -66,9 +68,7 @@ LUIS maakt gebruik van de toestemmings stroom van de standaard Azure Active Dire
 De Tenant beheerder moet direct samen werken met de gebruiker die toegang nodig heeft om LUIS te gebruiken in azure AD.
 
 * Eerst meldt de gebruiker zich aan bij LUIS en ziet u het pop-updialoogvenster dat door de beheerder moet worden goedgekeurd. De gebruiker neemt contact op met de Tenant beheerder voordat u doorgaat.
-* Ten tweede meldt de Tenant beheerder zich aan bij LUIS en ziet hij een pop-upvenster met goedkeurings stroom. Dit is het dialoog venster dat de beheerder moet machtigen voor de gebruiker. Zodra de beheerder de machtiging heeft geaccepteerd, kan de gebruiker door gaan met LUIS. Als de Tenant beheerder zich niet bij LUIS aanmeldt, heeft de beheerder toegang tot [toestemming](https://account.activedirectory.windowsazure.com/r#/applications) voor Luis, zoals weer gegeven in de volgende scherm afbeelding. U ziet dat de lijst is gefilterd op items die de naam bevatten `LUIS` .
-
-![Toestemming van Azure Active Directory per app-website](./media/luis-how-to-collaborate/tenant-permissions.png)
+* Ten tweede meldt de Tenant beheerder zich aan bij LUIS en ziet hij een pop-upvenster met goedkeurings stroom. Dit is het dialoog venster dat de beheerder moet machtigen voor de gebruiker. Zodra de beheerder de machtiging heeft geaccepteerd, kan de gebruiker door gaan met LUIS. Als de Tenant beheerder niet wordt aangemeld bij LUIS, heeft de beheerder toegang tot de [toestemming](https://account.activedirectory.windowsazure.com/r#/applications) voor Luis. Op deze pagina kunt u de lijst filteren op items die de naam bevatten `LUIS` .
 
 Als de Tenant beheerder alleen bepaalde gebruikers in staat wilt stellen om LUIS te gebruiken, zijn er enkele mogelijke oplossingen:
 * De "toestemming van de beheerder" (toestemming geven aan alle gebruikers van de Azure AD), maar vervolgens ingesteld op "ja" de "gebruikers toewijzing vereist" onder eigenschappen van bedrijfs toepassing en uiteindelijk alleen de gewenste gebruikers aan de toepassing toewijzen/toevoegen. Met deze methode wordt de beheerder nog steeds ' toestemming van de beheerder ' gegeven aan de app, maar het is mogelijk om de gebruikers te beheren die er toegang toe hebben.

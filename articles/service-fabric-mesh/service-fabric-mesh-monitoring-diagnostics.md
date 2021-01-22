@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: srrengar
 ms.custom: mvc, devcenter, devx-track-azurecli
-ms.openlocfilehash: eda0b62729343b0a138d027548d8750b1e0fc74f
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 63c79169646f05cddc7c605c764398bdef7492d4
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844400"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682068"
 ---
 # <a name="monitoring-and-diagnostics"></a>Controle en diagnose
 Azure Service Fabric Mesh is een volledig beheerde service waarmee ontwikkelaars microservices-toepassingen kunnen implementeren zonder virtuele machines, opslag of netwerken hoeven te beheren. Bewaking en diagnose van Service Fabric net zijn onderverdeeld in drie hoofd typen diagnostische gegevens:
@@ -26,7 +26,7 @@ In dit artikel worden de bewakings-en diagnostische opties voor de nieuwste prev
 
 U kunt uw docker-logboeken vanuit uw geïmplementeerde containers weer geven op basis van per container. In het Service Fabric-net-toepassings model is elke container een code pakket in uw toepassing. Als u de bijbehorende logboeken wilt weer geven met een code pakket, gebruikt u de volgende opdracht:
 
-```cli
+```azurecli
 az mesh code-package-log get --resource-group <nameOfRG> --app-name <nameOfApp> --service-name <nameOfService> --replica-name <nameOfReplica> --code-package-name <nameOfCodePackage>
 ```
 
@@ -35,7 +35,7 @@ az mesh code-package-log get --resource-group <nameOfRG> --app-name <nameOfApp> 
 
 Hier ziet u de logboeken van de VotingWeb. code-container van de stem toepassing:
 
-```cli
+```azurecli
 az mesh code-package-log get --resource-group <nameOfRG> --application-name SbzVoting --service-name VotingWeb --replica-name 0 --code-package-name VotingWeb.Code
 ```
 
@@ -74,7 +74,7 @@ Elke dimensie komt overeen met verschillende onderdelen van het [service Fabric-
 
 ### <a name="azure-monitor-cli"></a>Azure Monitor CLI
 
-Er is een volledige lijst met opdrachten beschikbaar in de [Azure monitor cli-documenten](/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list) , maar we hebben een paar handige voor beelden opgenomen 
+Er is een volledige lijst met opdrachten beschikbaar in de [Azure monitor cli-documenten](/cli/azure/monitor/metrics#az-monitor-metrics-list) , maar we hebben een paar handige voor beelden opgenomen 
 
 In elk voor beeld volgt de resource-ID dit patroon
 
@@ -83,21 +83,21 @@ In elk voor beeld volgt de resource-ID dit patroon
 
 * CPU-gebruik van de containers in een toepassing
 
-```cli
+```azurecli
     az monitor metrics list --resource <resourceId> --metric "CpuUtilization"
 ```
 * Geheugen gebruik voor elke service replica
-```cli
+```azurecli
     az monitor metrics list --resource <resourceId> --metric "MemoryUtilization" --dimension "ServiceReplicaName"
 ``` 
 
 * Wordt opnieuw gestart voor elke container in een venster van één uur 
-```cli
+```azurecli
     az monitor metrics list --resource <resourceId> --metric "RestartCount" --start-time 2019-02-01T00:00:00Z --end-time 2019-02-01T01:00:00Z
 ``` 
 
 * Gemiddeld CPU-gebruik voor alle services met de naam ' VotingWeb ' in een venster van één uur
-```cli
+```azurecli
     az monitor metrics list --resource <resourceId> --metric "CpuUtilization" --start-time 2019-02-01T00:00:00Z --end-time 2019-02-01T01:00:00Z --aggregation "Average" --filter "ServiceName eq 'VotingWeb'"
 ``` 
 
@@ -118,4 +118,4 @@ In addition to the metrics explorer, we also have a dashboard available out of t
 
 ## <a name="next-steps"></a>Volgende stappen
 * Lees [Wat is Service Fabric Mesh?](service-fabric-mesh-overview.md) voor meer informatie over Service Fabric Mesh.
-* Raadpleeg de [Azure monitor cli-documenten](/cli/azure/monitor/metrics?view=azure-cli-latest#az-monitor-metrics-list)voor meer informatie over de Azure monitor metrische opdrachten.
+* Raadpleeg de [Azure monitor cli-documenten](/cli/azure/monitor/metrics#az-monitor-metrics-list)voor meer informatie over de Azure monitor metrische opdrachten.

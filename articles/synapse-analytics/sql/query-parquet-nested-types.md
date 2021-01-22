@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 45e1ae5b8a1084334b7596f62c272e16294c4c14
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 6df8c3238ed6dfeb37fd10d0a7e97aa839e7bf26
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118758"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98681074"
 ---
 # <a name="query-nested-types-in-parquet-and-json-files-by-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Geneste typen in Parquet-en JSON-bestanden doorzoeken met serverloze SQL-groep in azure Synapse Analytics
 
@@ -147,7 +147,7 @@ FROM
 
 ## <a name="access-elements-from-repeated-columns"></a>Elementen benaderen vanuit herhaalde kolommen
 
-De volgende query leest het bestand justSimpleArray. Parquet en gebruikt [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) om een scalair element op te halen in een herhaalde kolom, zoals een matrix of kaart:
+De volgende query leest het bestand justSimpleArray. Parquet en gebruikt [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om een scalair element op te halen in een herhaalde kolom, zoals een matrix of kaart:
 
 ```sql
 SELECT
@@ -172,7 +172,7 @@ Dit is het resultaat:
 
 ## <a name="access-sub-objects-from-complex-columns"></a>Onderliggende objecten openen vanuit complexe kolommen
 
-Met de volgende query wordt het bestand mapExample. Parquet gelezen en wordt [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) gebruikt om een niet-scalair element op te halen uit een herhaalde kolom, zoals een matrix of kaart:
+Met de volgende query wordt het bestand mapExample. Parquet gelezen en wordt [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) gebruikt om een niet-scalair element op te halen uit een herhaalde kolom, zoals een matrix of kaart:
 
 ```sql
 SELECT

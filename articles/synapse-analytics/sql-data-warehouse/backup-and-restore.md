@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019"
-ms.openlocfilehash: b033fd9c0a7f752cf08d6e679facc9fa27b44037
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: d8c680ec30dcecc56c064f08e4690cbbde9c2377
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120203"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679910"
 ---
 # <a name="backup-and-restore-in-azure-synapse-dedicated-sql-pool"></a>Back-ups maken en herstellen in een toegewezen SQL-groep in azure Synapse
 
@@ -88,7 +88,7 @@ Zie [prijzen voor Azure Synapse](https://azure.microsoft.com/pricing/details/sql
 
 Elke moment opname maakt een herstel punt dat staat voor de tijd waarop de moment opname is gestart. Als u een Data Warehouse wilt herstellen, kiest u een herstel punt en geeft u een opdracht herstellen op.  
 
-U kunt het herstelde data warehouse en de huidige herstellen, of een van beide verwijderen. Als u het huidige Data Warehouse wilt vervangen door het herstelde data warehouse, kunt u de naam ervan wijzigen met [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) met de optie naam wijzigen.
+U kunt het herstelde data warehouse en de huidige herstellen, of een van beide verwijderen. Als u het huidige Data Warehouse wilt vervangen door het herstelde data warehouse, kunt u de naam ervan wijzigen met [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) met de optie naam wijzigen.
 
 Als u een Data Warehouse wilt herstellen, raadpleegt u [een toegewezen SQL-groep herstellen](sql-data-warehouse-restore-points.md#create-user-defined-restore-points-through-the-azure-portal).
 

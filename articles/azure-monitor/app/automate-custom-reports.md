@@ -4,12 +4,12 @@ description: Aangepaste dagelijkse/wekelijkse/maandelijkse rapporten automatiser
 ms.topic: conceptual
 ms.date: 05/20/2019
 ms.reviewer: sdash
-ms.openlocfilehash: d465666ce5d631a234644d1adc85afcf6e3c1e27
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: da465fbc899cb52fc48dbde830d3db4f3b58c68b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010602"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680447"
 ---
 # <a name="automate-custom-reports-with-azure-application-insights-data"></a>Aangepaste rapporten automatiseren met Azure-toepassing Insights-gegevens
 
@@ -33,7 +33,7 @@ U kunt [programmatisch query's uitvoeren op Application Insights](https://dev.ap
 
 * [Rapporten automatiseren met automatische stroom](../platform/logicapp-flow-connector.md)
 * [Rapporten automatiseren met Logic Apps](automate-with-logic-apps.md)
-* Gebruik de [Azure function](../../azure-functions/functions-create-first-azure-function.md) -sjabloon ' Application Insights gepland overzicht ' in het bewakings scenario. Deze functie maakt gebruik van SendGrid om het e-mail bericht te leveren. 
+* Gebruik de [Azure function](../../azure-functions/functions-get-started.md) -sjabloon ' Application Insights gepland overzicht ' in het bewakings scenario. Deze functie maakt gebruik van SendGrid om het e-mail bericht te leveren. 
 
     ![Azure-functie sjabloon](./media/automate-custom-reports/azure-function-template.png)
 
@@ -72,7 +72,7 @@ availabilityResults
 
 1. Maak een Azure-functie-app. ( _Application Insights is_ alleen vereist als u de nieuwe functie-app wilt controleren met Application Insights)
 
-   Ga naar de Azure Functions-documentatie voor meer informatie over het [maken van een functie-app](../../azure-functions/functions-create-first-azure-function.md#create-a-function-app)
+   Ga naar de Azure Functions-documentatie voor meer informatie over het [maken van een functie-app](../../azure-functions/functions-get-started.md)
 
 2. Wanneer de implementatie van uw nieuwe functie-app is voltooid, selecteert **u naar resource**.
 
@@ -91,7 +91,7 @@ availabilityResults
 
    ![Scherm opname van functie-instellingen](./media/automate-custom-reports/scheduled-digest.png)
 
-6. Selecteer de configuratie van de **functie-app**  >  **platform onderdelen**  >  **Configuration**.
+6. Selecteer de configuratie van de **functie-app**  >  **platform onderdelen**  >  .
 
     ![Scherm opname van de Azure function-toepassings instellingen](./media/automate-custom-reports/config.png)
 
@@ -154,4 +154,3 @@ Deze stappen zijn alleen van toepassing als u nog geen SendGrid-account hebt gec
 * Meer informatie over het [programmatisch opvragen van Application Insights gegevens](https://dev.applicationinsights.io/)
 * Meer informatie over [Logic Apps](../../logic-apps/logic-apps-overview.md).
 * Meer informatie over [micro soft power Automatiseer](https://ms.flow.microsoft.com).
-

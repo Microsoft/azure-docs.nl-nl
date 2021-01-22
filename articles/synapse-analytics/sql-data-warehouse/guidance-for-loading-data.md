@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: c91310d9d1e67dd77098ee13a87190ee6d411607
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 10e43332728ea70d27c08cf4d3dfe116c83b3f1f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120101"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679801"
 ---
 # <a name="best-practices-for-loading-data-using-dedicated-sql-pools-in-azure-synapse-analytics"></a>Aanbevolen procedures voor het laden van gegevens met behulp van exclusieve SQL-groepen in azure Synapse Analytics
 
@@ -47,7 +47,7 @@ In dit voor beeld wordt een door een gebruiker geclassificeerde belasting gemaak
    CREATE LOGIN loader WITH PASSWORD = 'a123STRONGpassword!';
 ```
 
-Verbinding maken met de toegewezen SQL-groep en een gebruiker aanmaken. In de volgende code wordt ervan uitgegaan dat u bent verbonden met de data base met de naam mySampleDataWarehouse. Hier ziet u hoe u een gebruiker met de naam loader maakt en de gebruiker machtigingen geeft om tabellen te maken en te laden met behulp van de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). Vervolgens wordt de gebruiker geclassificeerd met de werkbelasting groep DataLoads met het maximum aantal resources. 
+Verbinding maken met de toegewezen SQL-groep en een gebruiker aanmaken. In de volgende code wordt ervan uitgegaan dat u bent verbonden met de data base met de naam mySampleDataWarehouse. Hier ziet u hoe u een gebruiker met de naam loader maakt en de gebruiker machtigingen geeft om tabellen te maken en te laden met behulp van de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true). Vervolgens wordt de gebruiker geclassificeerd met de werkbelasting groep DataLoads met het maximum aantal resources. 
 
 ```sql
    -- Connect to the dedicated SQL pool
@@ -79,7 +79,7 @@ Als u een belasting wilt uitvoeren met resources voor de werkbelasting groep lad
 
 ## <a name="allowing-multiple-users-to-load-polybase"></a>Meerdere gebruikers toestaan om te laden (poly base)
 
-Het is vaak nood zakelijk dat meerdere gebruikers gegevens laden naar een toegewezen SQL-groep. Bij het laden met de [Create Table als Select (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (poly base) zijn machtigingen vereist van de-data base.  De CONTROL-machtiging biedt beheertoegang tot alle schema's.
+Het is vaak nood zakelijk dat meerdere gebruikers gegevens laden naar een toegewezen SQL-groep. Bij het laden met de [Create Table als Select (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (poly base) zijn machtigingen vereist van de-data base.  De CONTROL-machtiging biedt beheertoegang tot alle schema's.
 
 Mogelijk wilt u niet alle gebruikers die laadtaken uitvoeren, beheertoegang tot alle schema's verlenen. Als u machtigingen wilt beperken, kunt u de instructie DENY CONTROL gebruiken.
 
@@ -114,7 +114,7 @@ Bij geheugenbelasting kan het zijn dat de columnstore-index de maximale compress
 
 ## <a name="increase-batch-size-when-using-sqlbulkcopy-api-or-bcp"></a>Batch grootte verg Roten bij gebruik van SqLBulkCopy-API of BCP
 
-Het laden met de instructie COPY biedt de hoogste door Voer met toegewezen SQL-groepen. Als u de te laden kopie niet kunt gebruiken en u de [SqLBulkCopy-API](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) of [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)moet gebruiken, kunt u overwegen om de Batch grootte te verg Roten voor een betere door voer.
+Het laden met de instructie COPY biedt de hoogste door Voer met toegewezen SQL-groepen. Als u de te laden kopie niet kunt gebruiken en u de [SqLBulkCopy-API](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json) of [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)moet gebruiken, kunt u overwegen om de Batch grootte te verg Roten voor een betere door voer.
 
 > [!TIP]
 > Een batch grootte tussen 100 K en 1M rijen is de aanbevolen basis lijn voor het bepalen van de optimale grootte van de batch capaciteit.
@@ -130,11 +130,11 @@ Een gegevens record wordt als vuil beschouwd als deze voldoet aan een van de vol
 
 U kunt vervuilde records voorkomen door ervoor te zorgen dat uw externe tabel- en bestandindelingsdefinities correct zijn en uw externe gegevens overeenstemmen met deze definities.
 
-Als een subset van externe gegevens records ongeldig is, kunt u ervoor kiezen deze records voor uw query's af te wijzen met behulp van de afwijzings opties in [Create External Table (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Als een subset van externe gegevens records ongeldig is, kunt u ervoor kiezen deze records voor uw query's af te wijzen met behulp van de afwijzings opties in [Create External Table (Transact-SQL)](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ## <a name="inserting-data-into-a-production-table"></a>Gegevens in een productietabel invoegen
 
-Een eenmalige laadtaak naar een kleine tabel met een [INSERT-instructie](/sql/t-sql/statements/insert-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) of zelfs een periodieke herlaadtaak kan een acceptabel resultaat geven met een instructie zoals `INSERT INTO MyLookup VALUES (1, 'Type 1')`.  Het invoegen van singletons is echter niet zo efficiënt als bulksgewijs laden.
+Een eenmalige laadtaak naar een kleine tabel met een [INSERT-instructie](/sql/t-sql/statements/insert-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) of zelfs een periodieke herlaadtaak kan een acceptabel resultaat geven met een instructie zoals `INSERT INTO MyLookup VALUES (1, 'Type 1')`.  Het invoegen van singletons is echter niet zo efficiënt als bulksgewijs laden.
 
 Als u de hele dag door duizenden of meerdere enkele gegevens wilt invoeren, voeg de gegevens dan samen tot een batch zodat deze bulksgewijs kunt laden.  Ontwikkel uw processen om de afzonderlijke gegevens aan een bestand toe te voegen en maak vervolgens een ander proces dat het bestand periodiek laadt.
 
@@ -158,7 +158,7 @@ Het is verstandig uit veiligheidsoverwegingen de toegangssleutel in de blob-opsl
 
 Sleutels van het Microsoft Azure Storage-account draaien:
 
-Voor elk opslagaccount waarvan de sleutel is gewijzigd, moet u [ALTER DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/alter-database-scoped-credential-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) uitvoeren.
+Voor elk opslagaccount waarvan de sleutel is gewijzigd, moet u [ALTER DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/alter-database-scoped-credential-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) uitvoeren.
 
 Voorbeeld:
 

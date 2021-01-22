@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 12/15/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 3fd1e644d69fe1d721526afcacb362adca48bf7a
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: 77a32872726e3c67f0d3c542ca699271846a193b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831802"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680667"
 ---
 # <a name="collect-spring-cloud-resilience4j-circuit-breaker-metrics-preview"></a>Metrische gegevens van de Resilience4J-circuit onderbreker van Lente verzamelen (preview-versie)
 
@@ -41,7 +41,7 @@ cd spring-cloud-circuitbreaker-demo && mvn clean package -DskipTests
 
 2. Toepassingen maken met eind punten
 
-```azcli
+```azurecli
 az spring-cloud app create --name resilience4j --is-public \
     -s ${asc-service-name} -g ${asc-resource-group}
 az spring-cloud app create --name reactive-resilience4j --is-public \
@@ -50,7 +50,7 @@ az spring-cloud app create --name reactive-resilience4j --is-public \
 
 3. Toepassingen implementeren.
 
-```azcli
+```azurecli
 az spring-cloud app deploy -n resilience4j \
     --jar-path ./spring-cloud-circuitbreaker-demo-resilience4j/target/spring-cloud-circuitbreaker-demo-resilience4j-0.0.1.BUILD-SNAPSHOT.jar \
     -s ${service_name} -g ${resource_group}
@@ -91,7 +91,7 @@ az spring-cloud app deploy -n reactive-resilience4j \
 >
 > Ga naar de URL die wordt verschaft door gateway toepassingen en open het eind punt via de volgende [demo](https://github.com/spring-cloud-samples/spring-cloud-circuitbreaker-demo) :
 >
->   ```
+>   ```console
 >   /get
 >   /get/delay/{seconds}
 >   /get/fluxdelay/{seconds}
@@ -123,7 +123,7 @@ az spring-cloud app deploy -n reactive-resilience4j \
 
    [![resilience4J 5](media/spring-cloud-resilience4j/resilience4j-5.png)](media/spring-cloud-resilience4j/resilience4j-5.PNG)
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 
 * [Application Insights](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-howto-application-insights)
 * [Gedistribueerde tracering](spring-cloud-tutorial-distributed-tracing.md)

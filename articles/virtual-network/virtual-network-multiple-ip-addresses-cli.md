@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 11/17/2016
 ms.author: allensu
-ms.openlocfilehash: a1d94166c6c56a3652dc0ad532bd481c6e792c52
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 0b5e8f28be9960a2bb4e1406a293ab5e03962681
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217087"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98680566"
 ---
 # <a name="assign-multiple-ip-addresses-to-virtual-machines-using-the-azure-cli"></a>Meerdere IP-adressen toewijzen aan virtuele machines met behulp van de Azure CLI
 
@@ -38,7 +38,7 @@ In de volgende stappen wordt uitgelegd hoe u een voor beeld van een virtuele mac
 3. Meld u vanuit een opdracht shell aan met de opdracht `az login` en selecteer het abonnement dat u gebruikt.
 4. Maak de virtuele machine door het script uit te voeren dat volgt op een Linux-of Mac-computer. Met het script maakt u een resource groep, een virtueel netwerk (VNet), één NIC met drie IP-configuraties en een virtuele machine waaraan de twee Nic's zijn gekoppeld. De NIC, het open bare IP-adres, het virtuele netwerk en de VM-resources moeten allemaal aanwezig zijn op dezelfde locatie en hetzelfde abonnement. De resources hoeven echter niet in dezelfde resource groep te bestaan, in het volgende script.
 
-```bash
+```azurecli
     
 #!/bin/sh
     

@@ -8,14 +8,14 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 09/28/2020
+ms.date: 01/21/2021
 ms.custom: seodec18
-ms.openlocfilehash: 1b512a80fcfc26efbe5c008884509aebfd86ed3e
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 748eaca93eaee5ec858ea43261995111cef8ceda
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020841"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676848"
 ---
 # <a name="data-storage"></a>Gegevensopslag
 

@@ -8,20 +8,20 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: philmea
-ms.openlocfilehash: 8b7726e4e8fee0044a7865c8c494ef6451425676
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
+ms.openlocfilehash: 9c8e971b4fda313ffede58455dd6d057d6848ce4
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96903867"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678126"
 ---
 # <a name="azure-maps-weather-services-preview-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure Maps-Services (preview)
 
 > [!IMPORTANT]
-> Azure Maps weer Services zijn momenteel beschikbaar als open bare preview.
+> Azure Maps Weather-services zijn momenteel beschikbaar in de openbare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-In dit artikel vindt u antwoorden op veelgestelde vragen over de gegevens en functies van Azure Maps [weer Services](https://docs.microsoft.com/rest/api/maps/weather) . De volgende onderwerpen komen aan bod:
+In dit artikel vindt u antwoorden op veelgestelde vragen over de gegevens en functies van Azure Maps [weer Services](/rest/api/maps/weather) . De volgende onderwerpen komen aan bod:
 
 * Gegevens bronnen en gegevens modellen
 * Dekking en beschik baarheid van weer Services
@@ -59,7 +59,7 @@ Een groot aantal voor weers pellen-hulp systemen wordt gebruikt voor het formule
 
 **Wat voor soort dekking kan ik verwachten voor verschillende landen/regio's?**
 
-De weers cover service is afhankelijk van het land/de regio. Alle functies zijn niet beschikbaar in elk land/elke regio. Zie de documentatie van de [behoefte](https://docs.microsoft.com/azure/azure-maps/weather-coverage)voor meer informatie.
+De weers cover service is afhankelijk van het land/de regio. Alle functies zijn niet beschikbaar in elk land/elke regio. Zie de documentatie van de [behoefte](./weather-coverage.md)voor meer informatie.
 
 ## <a name="data-update-frequency"></a>Gegevens update frequentie
 
@@ -79,7 +79,7 @@ Azure Maps Forecast-Api's worden opgeslagen in de cache van Maxi maal 30 minuten
 
 **Ondersteunt Azure Maps websdk systeem eigen integratie van weer Services (preview-versie)?**
 
-De Azure Maps Web-SDK biedt een Services-module. De Services-module is een helper-bibliotheek waarmee u gemakkelijk de Azure Maps REST-services in web-of Node.js toepassingen kunt gebruiken. met behulp van Java script of type script. Zie onze [documentatie](https://docs.microsoft.com/azure/azure-maps/how-to-use-services-module)als u aan de slag wilt gaan.
+De Azure Maps Web-SDK biedt een Services-module. De Services-module is een helper-bibliotheek waarmee u gemakkelijk de Azure Maps REST-services in web-of Node.js toepassingen kunt gebruiken. met behulp van Java script of type script. Zie onze [documentatie](./how-to-use-services-module.md)als u aan de slag wilt gaan.
 
 **Ondersteunt Azure Maps Android SDK systeem eigen integratie van weer Services (preview-versie)?**
 
@@ -91,26 +91,26 @@ We gaan een service module voor Java/Android maken, vergelijkbaar met de Web SDK
 
 **Biedt Azure Maps Power BI visuele ondersteuning Azure Maps weer tegels?**
 
-Ja. Zie [een laag toevoegen aan Power bi Visual](https://docs.microsoft.com/azure/azure-maps/power-bi-visual-add-tile-layer)voor meer informatie over het migreren van radar-en infra rood satelliet tegels naar het micro soft power BIe-element. 
+Ja. Zie [een laag toevoegen aan Power bi Visual](./power-bi-visual-add-tile-layer.md)voor meer informatie over het migreren van radar-en infra rood satelliet tegels naar het micro soft power BIe-element. 
 
 **Hoe kan ik interpreteert kleuren die worden gebruikt voor radar-en satelliet tegels?**
 
-Het Azure Maps [weer geven concept artikel](https://docs.microsoft.com/azure/azure-maps/weather-services-concepts#radar-and-satellite-imagery-color-scale) bevat een hand leiding voor het interpreteren van kleuren die worden gebruikt voor radar-en satelliet tegels. In het artikel worden kleur voorbeelden en HEXADECIMALe kleur codes beschreven.
+Het Azure Maps [weer geven concept artikel](./weather-services-concepts.md#radar-and-satellite-imagery-color-scale) bevat een hand leiding voor het interpreteren van kleuren die worden gebruikt voor radar-en satelliet tegels. In het artikel worden kleur voorbeelden en HEXADECIMALe kleur codes beschreven.
  
 **Kan ik tegel animaties van radar en satelliet maken?**
 
-Ja. Naast de tegels in realtime radar en satellieten kunnen Azure Maps klanten eerdere en toekomstige tegels aanvragen om gegevens visualisaties met kaart-overlays te verbeteren. Dit kan worden gedaan door direct Calling [kaarten tegel v2 API](https://aka.ms/AzureMapsWeatherTiles ) of door tegels aan te vragen via Azure Maps Web SDK. Radar tegels zijn in het verleden tot 1,5 uur en Maxi maal 2 uur in de toekomst. De tegels en zijn beschikbaar in intervallen van vijf minuten. De infra rood tegels zijn in het verleden Maxi maal drie uur lang en zijn beschikbaar in intervallen van tien minuten. Zie voor meer informatie het voor beeld van een open source weer tegel animatie [code](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Animated%20tile%20layer).  
+Ja. Naast de tegels in realtime radar en satellieten kunnen Azure Maps klanten eerdere en toekomstige tegels aanvragen om gegevens visualisaties met kaart-overlays te verbeteren. Dit kan worden gedaan door direct Calling [kaarten tegel v2 API](/rest/api/maps/renderv2/getmaptilepreview) of door tegels aan te vragen via Azure Maps Web SDK. Radar tegels zijn in het verleden tot 1,5 uur en Maxi maal 2 uur in de toekomst. De tegels en zijn beschikbaar in intervallen van vijf minuten. De infra rood tegels zijn in het verleden Maxi maal drie uur lang en zijn beschikbaar in intervallen van tien minuten. Zie voor meer informatie het voor beeld van een open source weer tegel animatie [code](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Animated%20tile%20layer).  
 
 **Biedt u pictogrammen voor verschillende weers omstandigheden?**
 
-Ja. U kunt [hier](https://docs.microsoft.com/azure/azure-maps/weather-services-concepts#weather-icons)pictogrammen en de bijbehorende codes vinden. U ziet dat slechts een deel van de Api's van de weer service (preview-versie), zoals de  [huidige voor waarden van de API ophalen](https://aka.ms/azuremapsweathercurrentconditions), de *iconCode* in het antwoord retour neren. Zie het huidige WeatherConditions open source-voor [beeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Get%20current%20weather%20at%20a%20location)voor meer informatie.
+Ja. U kunt [hier](./weather-services-concepts.md#weather-icons)pictogrammen en de bijbehorende codes vinden. U ziet dat slechts een deel van de Api's van de weer service (preview-versie), zoals de  [huidige voor waarden van de API ophalen](/rest/api/maps/weather/getcurrentconditionspreview), de *iconCode* in het antwoord retour neren. Zie het huidige WeatherConditions open source-voor [beeld](https://azuremapscodesamples.azurewebsites.net/index.html?sample=Get%20current%20weather%20at%20a%20location)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Als deze veelgestelde vragen niet beantwoordt aan uw vraag, kunt u contact met ons opnemen via de volgende kanalen (in de volg orde waarin ze worden doorzocht):
 
 * De sectie opmerkingen van dit artikel.
-* [MSFT Q&een pagina voor Azure Maps](https://docs.microsoft.com/answers/topics/azure-maps.html).
+* [MSFT Q&een pagina voor Azure Maps](/answers/topics/azure-maps.html).
 * Microsoft Ondersteuning. Als u een nieuwe ondersteunings aanvraag wilt maken, selecteert u in het [Azure Portal](https://portal.azure.com/)op het tabblad Help de knop **Help** en ondersteuning en selecteert u vervolgens **nieuwe ondersteunings aanvraag**.
 * [Azure Maps UserVoice](https://feedback.azure.com/forums/909172-azure-maps) om functie aanvragen te verzenden.
 
@@ -125,4 +125,4 @@ Artikel over concepten van Azure Maps weer Services (preview):
 Verken de API-documentatie voor Azure Maps weer Services (preview):
 
 > [!div class="nextstepaction"]
-> [Azure Maps weer Services](/rest/api/maps/weather)
+> [Weather-services voor Azure Maps](/rest/api/maps/weather)

@@ -3,12 +3,12 @@ title: Azure Service Bus geo-nood herstel | Microsoft Docs
 description: Over het gebruik van geografische regio's om een failover uit te voeren en herstel na nood geval in Azure Service Bus
 ms.topic: article
 ms.date: 01/04/2021
-ms.openlocfilehash: c07721c07923a40da9fe28e0e3116bfd6a52210f
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: b25fd1befded253c79267b1b016cef979005d01e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862355"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676452"
 ---
 # <a name="azure-service-bus-geo-disaster-recovery"></a>Azure Service Bus geo-nood herstel
 
@@ -48,6 +48,8 @@ In dit artikel worden de volgende termen gebruikt:
 
 -  *Primaire/secundaire naam ruimte*: de naam ruimten die overeenkomen met de alias. De primaire naam ruimte is actief en ontvangt berichten (dit kan een bestaande of nieuwe naam ruimte zijn). De secundaire naam ruimte is ' passief ' en ontvangt geen berichten. De meta gegevens tussen beide zijn synchroon, zodat beide berichten zonder toepassings code of connection string wijzigingen naadloos kunnen accepteren. Om ervoor te zorgen dat alleen de actieve naam ruimte berichten ontvangt, moet u de alias gebruiken. 
 
+    > [!IMPORTANT]
+    > Voor de functie voor het maken van een geo-nood herstel moet het abonnement en de resource groep hetzelfde zijn voor de primaire en secundaire naam ruimten.
 -  *Meta gegevens*: entiteiten zoals wacht rijen, onderwerpen en abonnementen; en hun eigenschappen van de service die aan de naam ruimte zijn gekoppeld. Houd er rekening mee dat alleen entiteiten en hun instellingen automatisch worden gerepliceerd. Berichten worden niet gerepliceerd.
 
 -  *Failover*: het proces van het activeren van de secundaire naam ruimte.

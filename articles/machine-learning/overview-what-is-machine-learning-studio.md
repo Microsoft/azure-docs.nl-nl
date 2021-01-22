@@ -8,12 +8,12 @@ ms.topic: overview
 author: peterclu
 ms.author: peterlu
 ms.date: 08/24/2020
-ms.openlocfilehash: f59ed16f98a22f77b2e67ec2bf829f58dccef611
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
-ms.translationtype: HT
+ms.openlocfilehash: 4212c76d052fe1f272963003e836425b50d6f105
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740501"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677611"
 ---
 # <a name="what-is-azure-machine-learning-studio"></a>What is Azure Machine Learning-studio?
 
@@ -90,7 +90,7 @@ De volgende tabel bevat een overzicht van enkele van de belangrijkste verschille
 | Functie | ML Studio (klassiek) | Azure Machine Learning |
 |---| --- | --- |
 | Interface met slepen en neerzetten | Klassieke ervaring | Bijgewerkte ervaring - [Azure Machine Learning Designer](concept-designer.md)| 
-| Code-SDK's | Niet ondersteund | Volledig geïntegreerd met [Azure Machine Learning Python](/python/api/overview/azure/ml/) en [R](tutorial-1st-r-experiment.md) SDK's |
+| Code-SDK's | Niet ondersteund | Volledig geïntegreerd met [Azure Machine Learning Python](/python/api/overview/azure/ml/) en [R](https://github.com/Azure/azureml-sdk-for-r) SDK's |
 | Experiment | Schaalbaar (max. 10 GB aan trainingsgegevens) | Schalen met rekendoel |
 | Rekendoelen voor training | Eigen rekendoel, alleen CPU-ondersteuning | Breed scala aan aanpasbare [rekendoelen voor training](concept-compute-target.md#train). Inclusief GPU- en CPU-ondersteuning | 
 | Rekendoelen voor implementatie | Bedrijfseigen webservice-indeling, niet aanpasbaar | Breed scala aan aanpasbare [rekendoelen voor implementatie](concept-compute-target.md#deploy). Inclusief GPU- en CPU-ondersteuning |

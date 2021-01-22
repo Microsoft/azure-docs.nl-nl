@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: a3481830a09b183213e84490b5300f2fb38f8d19
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: b5c65035f8b51b53f617d4562fe1982f53f0deec
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625062"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678269"
 ---
 # <a name="tutorial-implement-iot-spatial-analytics-by-using-azure-maps"></a>Zelfstudie: Ruimtelijke IoT-analyse implementeren met behulp van Azure Maps
 
@@ -161,15 +161,15 @@ IoT Hub maakt veilige en betrouwbare tweerichtingscommunicatie mogelijk tussen e
 > [!NOTE]
 > De mogelijkheid om telemetriegebeurtenissen van apparaten in Event Grid te publiceren, is momenteel in openbare preview. Deze functie is beschikbaar in alle regio's, met uitzondering van de volgende: US - oost, US - west, Europa - west, Azure Government, Azure China 21Vianet en Microsoft Azure Duitsland.
 
-Als u een IoT-hub wilt maken in de resourcegroep *ContosoRental*, volgt u de stappen in [Een IoT-hub maken](https://docs.microsoft.com/azure/iot-hub/quickstart-send-telemetry-dotnet#create-an-iot-hub).
+Als u een IoT-hub wilt maken in de resourcegroep *ContosoRental*, volgt u de stappen in [Een IoT-hub maken](../iot-hub/quickstart-send-telemetry-dotnet.md#create-an-iot-hub).
 
 ## <a name="register-a-device-in-your-iot-hub"></a>Een apparaat registreren in uw IoT-hub
 
-Apparaten kunnen geen verbinding maken met de IoT-hub, tenzij ze zijn geregistreerd in het IoT Hub-identiteitsregister. Hier maakt u één apparaat met de naam *InVehicleDevice*. Als u het apparaat wilt maken en registreren in uw IoT-hub, volgt u de stappen in [Een nieuw apparaat registreren in de IoT-hub](https://docs.microsoft.com/azure/iot-hub/iot-hub-create-through-portal#register-a-new-device-in-the-iot-hub). Zorg ervoor dat u de primaire verbindingsreeks van het apparaat kopieert. U hebt deze later nodig.
+Apparaten kunnen geen verbinding maken met de IoT-hub, tenzij ze zijn geregistreerd in het IoT Hub-identiteitsregister. Hier maakt u één apparaat met de naam *InVehicleDevice*. Als u het apparaat wilt maken en registreren in uw IoT-hub, volgt u de stappen in [Een nieuw apparaat registreren in de IoT-hub](../iot-hub/iot-hub-create-through-portal.md#register-a-new-device-in-the-iot-hub). Zorg ervoor dat u de primaire verbindingsreeks van het apparaat kopieert. U hebt deze later nodig.
 
 ## <a name="create-a-function-and-add-an-event-grid-subscription"></a>Een functie maken en een Event Grid-abonnement toevoegen
 
-Azure Functions is een serverloze rekenservice waarmee u kleine codefragmenten (functies) kunt uitvoeren zonder dat u de rekeninfrastructuur expliciet hoeft in te richten of te beheren. Zie [Azure Functions](https://docs.microsoft.com/azure/azure-functions/functions-overview)voor meer informatie.
+Azure Functions is een serverloze rekenservice waarmee u kleine codefragmenten (functies) kunt uitvoeren zonder dat u de rekeninfrastructuur expliciet hoeft in te richten of te beheren. Zie [Azure Functions](../azure-functions/functions-overview.md)voor meer informatie.
 
 Een functie wordt geactiveerd via een bepaalde gebeurtenis. Hier maakt u een functie die wordt geactiveerd met een Event Grid-trigger. Maak de relatie tussen de trigger en de functie door een gebeurtenisabonnement te maken voor de telemetriegebeurtenissen van het IoT Hub-apparaat. Wanneer een telemetriegebeurtenis van het apparaat optreedt, wordt de functie aangeroepen als eindpunt, en ontvangt deze de relevante gegevens voor het apparaat dat u eerder hebt geregistreerd in IoT Hub.
 
@@ -223,7 +223,7 @@ Stel nu uw Azure-functie in.
 
 ## <a name="filter-events-by-using-iot-hub-message-routing"></a>Gebeurtenissen filteren met behulp van berichtroutering van IoT Hub
 
-Wanneer u een Event Grid-abonnement toevoegt aan de Azure-functie, wordt automatisch een berichtroute gemaakt in de opgegeven IoT-hub. Met berichtroutering kunt u verschillende gegevenstypen naar meerdere eindpunten routeren. Je kunt bijvoorbeeld telemetrieberichten van apparaten, levenscyclusgebeurtenissen van apparaten en dubbele wijzigingen van apparaten routeren. Zie [IoT Hub-berichtroutering gebruiken](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messages-d2c) voor meer informatie.
+Wanneer u een Event Grid-abonnement toevoegt aan de Azure-functie, wordt automatisch een berichtroute gemaakt in de opgegeven IoT-hub. Met berichtroutering kunt u verschillende gegevenstypen naar meerdere eindpunten routeren. Je kunt bijvoorbeeld telemetrieberichten van apparaten, levenscyclusgebeurtenissen van apparaten en dubbele wijzigingen van apparaten routeren. Zie [IoT Hub-berichtroutering gebruiken](../iot-hub/iot-hub-devguide-messages-d2c.md) voor meer informatie.
 
 :::image type="content" source="./media/tutorial-iot-hub-maps/hub-route.png" alt-text="Schermopname van berichtroutering in IoT Hub.":::
 
@@ -232,7 +232,7 @@ In het voorbeeldscenario wilt u alleen berichten ontvangen wanneer de huurauto w
 :::image type="content" source="./media/tutorial-iot-hub-maps/hub-filter.png" alt-text="Schermopname van routeringsberichten filteren.":::
 
 >[!TIP]
->Er zijn verschillende manieren om een query uit te voeren op IoT-apparaat-naar-cloud-berichten. Raadpleeg [IoT Hub-berichtroutering gebruiken](https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-routing-query-syntax) voor meer informatie over syntaxis van berichtroutering.
+>Er zijn verschillende manieren om een query uit te voeren op IoT-apparaat-naar-cloud-berichten. Raadpleeg [IoT Hub-berichtroutering gebruiken](../iot-hub/iot-hub-devguide-routing-query-syntax.md) voor meer informatie over syntaxis van berichtroutering.
 
 ## <a name="send-telemetry-data-to-iot-hub"></a>Stuur telemetriegegevens naar IoT Hub
 

@@ -12,14 +12,14 @@ ms.subservice: extensions
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 02/11/2019
-ms.author: akjosh
-ms.openlocfilehash: c06d8e4ab368934182ed67b91dedb9ba9bcfc199
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.date: 01/21/2021
+ms.author: amverma
+ms.openlocfilehash: a241086e6a590096cf40cbdb7a84838b14889f73
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965320"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678285"
 ---
 # <a name="nvidia-gpu-driver-extension-for-linux"></a>Uitbrei ding van NVIDIA GPU-stuur programma voor Linux
 
@@ -39,8 +39,8 @@ Deze extensie ondersteunt de volgende OS distributies, afhankelijk van de onders
 | Distributie | Versie |
 |---|---|
 | Linux: Ubuntu | 16,04 LTS, 18,04 LTS |
-| Linux: Red Hat Enterprise Linux | 7,3, 7,4, 7,5, 7,6, 7,7 |
-| Linux: CentOS | 7,3, 7,4, 7,5, 7,6, 7,7 |
+| Linux: Red Hat Enterprise Linux | 7,3, 7,4, 7,5, 7,6, 7,7, 7,8 |
+| Linux: CentOS | 7,3, 7,4, 7,5, 7,6, 7,7, 7,8 |
 
 ### <a name="internet-connectivity"></a>Internetconnectiviteit
 
@@ -74,7 +74,7 @@ In de volgende JSON wordt het schema voor de uitbrei ding weer gegeven.
 
 | Name | Waarde/voor beeld | Gegevenstype |
 | ---- | ---- | ---- |
-| apiVersion | 2015-06-15 | datum |
+| apiVersion | 2015-06-15 | date |
 | publisher | Micro soft. HpcCompute | tekenreeks |
 | type | NvidiaGpuDriverLinux | tekenreeks |
 | typeHandlerVersion | 1.3 | int |
@@ -86,8 +86,8 @@ Alle instellingen zijn optioneel. Standaard wordt de kernel niet bijgewerkt als 
 | Naam | Beschrijving | Standaardwaarde | Geldige waarden | Gegevenstype |
 | ---- | ---- | ---- | ---- | ---- |
 | updateOS | De kernel bijwerken, zelfs als deze niet vereist is voor installatie van Stuur Programma's | onjuist | de waarde True, false | booleaans |
-| driverVersion | NV: raster versie van het stuur programma<br> NC/ND: CUDA Toolkit-versie. De meest recente Stuur Programma's voor de gekozen CUDA worden automatisch geïnstalleerd. | meest recente | RASTER: ' 430,30 ', ' 418,70 ', ' 410,92 ', ' 410,71 ', ' 390,75 ', ' 390,57 ', ' 390,42 '<br> CUDA: "10.0.130", "9.2.88", "9.1.85" | tekenreeks |
-| installCUDA | Installeer de CUDA Toolkit. Alleen relevant voor virtuele machines van de NC/ND-serie. | waar | de waarde True, false | booleaans |
+| driverVersion | NV: raster versie van het stuur programma<br> NC/ND: CUDA Toolkit-versie. De meest recente Stuur Programma's voor de gekozen CUDA worden automatisch geïnstalleerd. | meest recente | [Lijst](https://github.com/Azure/azhpc-extensions/blob/master/NvidiaGPU/resources.json) met ondersteunde versies van Stuur Programma's | tekenreeks |
+| installCUDA | Installeer de CUDA Toolkit. Alleen relevant voor virtuele machines van de NC/ND-serie. | true | de waarde True, false | booleaans |
 
 
 ## <a name="deployment"></a>Implementatie

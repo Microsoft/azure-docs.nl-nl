@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jlu
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b7519b6c7e1f3381be77b9a0734ddda250228e7d
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: fd14c7911676768a61d2b2c0e366d2c227455be8
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96860300"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678201"
 ---
 # <a name="continuous-access-evaluation"></a>Continue toegangsevaluatie
 
@@ -28,7 +28,7 @@ Voor een tijdige reactie op beleids schendingen of beveiligings problemen is een
 
 De eerste implementatie van voortdurende toegangs beoordeling is gericht op Exchange, teams en share point online.
 
-Als u uw toepassingen wilt voorbereiden op het gebruik van CAE, raadpleegt u [api's voor continue toegang gebruiken in uw toepassingen](/azure/active-directory/develop/app-resilience-continuous-access-evaluation).
+Als u uw toepassingen wilt voorbereiden op het gebruik van CAE, raadpleegt u [api's voor continue toegang gebruiken in uw toepassingen](../develop/app-resilience-continuous-access-evaluation.md).
 
 ### <a name="key-benefits"></a>Belangrijkste voordelen
 
@@ -128,7 +128,7 @@ In het volgende voor beeld heeft een beheerder van de voorwaardelijke toegang ee
 ## <a name="enable-or-disable-cae-preview"></a>CAE in-of uitschakelen (preview-versie)
 
 1. Meld u aan bij de **Azure Portal** als beheerder voor voorwaardelijke toegang, beveiligings beheerder of globale beheerder
-1. Blader naar **Azure Active Directory**  >  **Security**  >  **evaluatie van continue toegang** van de beveiliging.
+1. Blader naar **Azure Active Directory**  >    >  **evaluatie van continue toegang** van de beveiliging.
 1. Kies **voor beeld inschakelen**.
 
 Op deze pagina kunt u optioneel de gebruikers en groepen beperken die aan de preview-versie worden onderworpen.

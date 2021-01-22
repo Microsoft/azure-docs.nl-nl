@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: anvang
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: f3eaa6383b174e06ff6ce9b1b08c4eba9108d770
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: ffffeb38aeb9d1f01f376d58a52323bb7b84b306
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115511"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676320"
 ---
 # <a name="quickstart-scale-compute-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-using-t-sql"></a>Quickstart: Schaal de rekenkracht voor toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics met behulp van T-SQL
 
@@ -26,7 +26,7 @@ Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Download en installeer de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SQL Server Management Studio).
+Download en installeer de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SQL Server Management Studio).
 
 ## <a name="create-a-dedicated-sql-pool-formerly-sql-dw"></a>Een toegewezen SQL-pool (voorheen SQL DW) maken
 
@@ -34,7 +34,7 @@ Gebruik [Quickstart: maken en verbinden - portal](create-data-warehouse-portal.m
 
 ## <a name="connect-to-the-server-as-server-admin"></a>Als serverbeheerder verbinding maken met de server
 
-In deze sectie wordt gebruikgemaakt van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SQL Server Management Studio) om een verbinding tot stand te brengen met de Azure SQL-server.
+In deze sectie wordt gebruikgemaakt van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SQL Server Management Studio) om een verbinding tot stand te brengen met de Azure SQL-server.
 
 1. Open SQL Server Management Studio.
 
@@ -90,7 +90,7 @@ In de toegewezen SQL-pool (voorheen SQL DW) kunt u het aantal rekenresources ver
 DWU’s wijzigen:
 
 1. Klik met de rechtermuisknop op **master** en selecteer **Nieuwe query**.
-2. Gebruik de T-SQL-instructie [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om de servicedoelstelling te wijzigen. Voer de volgende query uit om de servicedoelstelling te wijzigen in DW300.
+2. Gebruik de T-SQL-instructie [ALTER DATABASE](/sql/t-sql/statements/alter-database-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om de servicedoelstelling te wijzigen. Voer de volgende query uit om de servicedoelstelling te wijzigen in DW300.
 
     ```Sql
     ALTER DATABASE mySampleDataWarehouse
@@ -136,7 +136,7 @@ Wanneer een toegewezen SQL-pool (voorheen SQL DW) wordt onderbroken, kunt u geen
 
 ## <a name="check-operation-status"></a>Bewerkingsstatus controleren
 
-Voer de volgende query uit in de DMV [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om informatie te krijgen over de verschillende beheerbewerkingen in uw toegewezen SQL-pool (voorheen SQL DW). Zo wordt bijvoorbeeld de bewerking en de status van de bewerking (IN_PROGRESS of COMPLETED) geretourneerd.
+Voer de volgende query uit in de DMV [sys.dm_operation_status](/sql/relational-databases/system-dynamic-management-views/sys-dm-operation-status-azure-sql-database?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om informatie te krijgen over de verschillende beheerbewerkingen in uw toegewezen SQL-pool (voorheen SQL DW). Zo wordt bijvoorbeeld de bewerking en de status van de bewerking (IN_PROGRESS of COMPLETED) geretourneerd.
 
 ```sql
 SELECT *

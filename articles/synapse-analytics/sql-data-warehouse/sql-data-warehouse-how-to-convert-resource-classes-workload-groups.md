@@ -11,12 +11,12 @@ ms.date: 08/13/2020
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: b82342ffb76f8bb58b8f6875751601094d6131ca
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: b6dd2199452837d81c201cf4aef2bcd94b35cda3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461894"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677202"
 ---
 # <a name="convert-resource-classes-to-workload-groups"></a>Resource klassen omzetten in werkbelasting groepen
 
@@ -56,7 +56,7 @@ CREATE WORKLOAD GROUP wgDataLoads WITH
 
 ## <a name="create-the-classifier"></a>De classificatie maken
 
-Voorheen werd de toewijzing van query's aan resource klassen uitgevoerd met [sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Als u dezelfde functionaliteit wilt gebruiken en aanvragen wilt toewijzen aan werkbelasting groepen, gebruikt u de [classificatie syntaxis werk belasting maken](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .  Als u sp_addrolemember gebruikt, hebt u alleen de mogelijkheid om resources toe te wijzen aan een aanvraag op basis van een aanmelding.  Een classificatie biedt extra opties naast aanmelding, zoals:
+Voorheen werd de toewijzing van query's aan resource klassen uitgevoerd met [sp_addrolemember](resource-classes-for-workload-management.md#change-a-users-resource-class).  Als u dezelfde functionaliteit wilt gebruiken en aanvragen wilt toewijzen aan werkbelasting groepen, gebruikt u de [classificatie syntaxis werk belasting maken](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .  Als u sp_addrolemember gebruikt, hebt u alleen de mogelijkheid om resources toe te wijzen aan een aanvraag op basis van een aanmelding.  Een classificatie biedt extra opties naast aanmelding, zoals:
     - label
     - Sessie
     - tijd in het onderstaande voor beeld worden query's toegewezen uit de `AdfLogin` aanmelding waarvoor ook het [optie label](sql-data-warehouse-develop-label.md)  is ingesteld op `factloads` de eerder gemaakte werkbelasting groep `wgDataLoads` .
@@ -91,4 +91,4 @@ SELECT request_id, [label], classifier_name, group_name, command
 - [Isolatie van werk belasting](sql-data-warehouse-workload-isolation.md)
 - [Een werkbelasting groep maken](quickstart-configure-workload-isolation-tsql.md)
 - [CLASSIFICATIE van werk belasting maken (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?&view=azure-sqldw-latest)
-- [Werkbelasting groep maken (Transact-SQL)](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest)
+- [Werkbelasting groep maken (Transact-SQL)](/sql/t-sql/statements/create-workload-group-transact-sql?view=azure-sqldw-latest&preserve-view=true)

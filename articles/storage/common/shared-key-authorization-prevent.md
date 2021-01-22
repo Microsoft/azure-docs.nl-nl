@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/07/2020
+ms.date: 01/21/2021
 ms.author: tamram
 ms.reviewer: fryu
-ms.openlocfilehash: 6a24713a6027c38d2b9817928f3a82161bd37314
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: e4a5803b3d04b59316f71e50af24945efc87cb69
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96936723"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677560"
 ---
 # <a name="prevent-shared-key-authorization-for-an-azure-storage-account-preview"></a>Verificatie van gedeelde sleutels voor een Azure Storage account voor komen (preview-versie)
 
@@ -123,7 +123,7 @@ De eigenschap **AllowSharedKeyAccess** is niet standaard ingesteld en retourneer
 > [!WARNING]
 > Als clients momenteel toegang hebben tot gegevens in uw opslag account met een gedeelde sleutel, raadt micro soft u aan deze clients te migreren naar Azure AD voordat u de gedeelde sleutel toegang tot het opslag account niet toestaat.
 
-# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
 
 Voer de volgende stappen uit om de verificatie van de gedeelde sleutel voor een opslag account in de Azure Portal niet toe te staan:
 
@@ -239,8 +239,6 @@ Sommige hulpprogram ma's van Azure bieden de mogelijkheid om Azure AD-autorisati
 ## <a name="about-the-preview"></a>Over de preview-versie
 
 De preview voor het niet toestaan van gedeelde sleutel autorisatie is beschikbaar in de open bare Azure-Cloud. Het wordt ondersteund voor opslag accounts die alleen gebruikmaken van het Azure Resource Manager-implementatie model. Zie [typen opslag accounts](storage-account-overview.md#types-of-storage-accounts)voor meer informatie over welke opslag accounts gebruikmaken van het Azure Resource Manager-implementatie model.
-
-Als u zich wilt registreren voor de preview-versie, raadpleegt u [Azure Storage gedeelde sleutel toegang met beperkte open bare preview toestaan](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbRxW65f1VQyNCuBHMIMBV8qlUN1o4TUtUUzZBV0JYVlhKQ1FITDlVUUU0Ui4u).
 
 > [!IMPORTANT]
 > Dit voor beeld is alleen bedoeld voor niet-productie gebruik.

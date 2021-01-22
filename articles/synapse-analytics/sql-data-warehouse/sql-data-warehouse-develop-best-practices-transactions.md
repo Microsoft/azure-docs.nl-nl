@@ -11,12 +11,12 @@ ms.date: 04/19/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 46a165ea7fa21c02e859c16027086695f1f378c3
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3f7d6f8ca285fdc024db9ba952af9f7d169e7188
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462795"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678471"
 ---
 # <a name="optimizing-transactions-in-dedicated-sql-pool-in-azure-synapse-analytics"></a>Trans acties in de toegewezen SQL-groep in azure Synapse Analytics optimaliseren
 
@@ -69,7 +69,7 @@ CTAS en invoegen... Selecteer beide bewerkingen voor bulksgewijs laden. Beide wo
 
 | Primaire index | Scenario voor laden | Modus logboek registratie |
 | --- | --- | --- |
-| Heap |Elk |**Minimaal** |
+| Heap |Alle |**Minimaal** |
 | Geclusterde index |Lege doel tabel |**Minimaal** |
 | Geclusterde index |Geladen rijen overlappen niet met bestaande pagina's in het doel |**Minimaal** |
 | Geclusterde index |Geladen rijen overlappen met bestaande pagina's in het doel |Volledig |
@@ -85,7 +85,7 @@ Het laden van gegevens in een niet-lege tabel met een geclusterde index kan vaak
 
 ## <a name="optimizing-deletes"></a>Verwijderingen optimaliseren
 
-VERWIJDEREN is een volledig geregistreerde bewerking.  Als u een grote hoeveelheid gegevens in een tabel of partitie moet verwijderen, is het vaak beter voor `SELECT` de gegevens die u wilt blijven gebruiken, die kunnen worden uitgevoerd als een mini maal vastgelegde bewerking.  Als u de gegevens wilt selecteren, maakt u een nieuwe tabel met [CTAS](sql-data-warehouse-develop-ctas.md).  Nadat deze is gemaakt, gebruikt u de [naam wijzigen](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om de oude tabel om te wisselen met de zojuist gemaakte tabel.
+VERWIJDEREN is een volledig geregistreerde bewerking.  Als u een grote hoeveelheid gegevens in een tabel of partitie moet verwijderen, is het vaak beter voor `SELECT` de gegevens die u wilt blijven gebruiken, die kunnen worden uitgevoerd als een mini maal vastgelegde bewerking.  Als u de gegevens wilt selecteren, maakt u een nieuwe tabel met [CTAS](sql-data-warehouse-develop-ctas.md).  Nadat deze is gemaakt, gebruikt u de [naam wijzigen](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om de oude tabel om te wisselen met de zojuist gemaakte tabel.
 
 ```sql
 -- Delete all sales transactions for Promotions except PromotionKey 2.
@@ -117,7 +117,7 @@ RENAME OBJECT [dbo].[FactInternetSales_d] TO [FactInternetSales];
 
 ## <a name="optimizing-updates"></a>Updates optimaliseren
 
-UPDATE is een volledig geregistreerde bewerking.  Als u een groot aantal rijen in een tabel of partitie moet bijwerken, kan het veel efficiënter zijn om een mini maal geregistreerde bewerking zoals [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) te gebruiken.
+UPDATE is een volledig geregistreerde bewerking.  Als u een groot aantal rijen in een tabel of partitie moet bijwerken, kan het veel efficiënter zijn om een mini maal geregistreerde bewerking zoals [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) te gebruiken.
 
 In het voor beeld onder een volledige tabel update is geconverteerd naar een CTAS, zodat de logboek registratie mini maal mogelijk is.
 
@@ -414,7 +414,7 @@ Met exclusieve SQL-pool kunt u uw toegewezen SQL-groep op aanvraag [onderbreken,
 
 Het beste scenario is om trans acties voor het wijzigen van de vlucht gegevens te laten volt ooien voordat een toegewezen SQL-groep wordt onderbroken of geschaald. Dit scenario is echter mogelijk niet altijd praktisch. Als u het risico van een lange terugdraai actie wilt beperken, kunt u een van de volgende opties overwegen:
 
-* Langlopende bewerkingen opnieuw uitvoeren met [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+* Langlopende bewerkingen opnieuw uitvoeren met [CTAS](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 * De bewerking in segmenten opsplitsen. werken op een subset van de rijen
 
 ## <a name="next-steps"></a>Volgende stappen

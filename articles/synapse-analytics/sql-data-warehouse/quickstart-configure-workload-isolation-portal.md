@@ -11,12 +11,12 @@ ms.date: 05/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 302249b7d8490e43b841116c52500e686626433d
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 5773691852ddc723ec84503edee37c678bbbcfd9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460561"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677501"
 ---
 # <a name="quickstart-configure-dedicated-sql-pool-workload-isolation-using-a-workload-group-in-the-azure-portal"></a>Quickstart: Isolatie van workloads in een toegewezen SQL-pool configureren met een workloadgroep in Azure Portal
 
@@ -93,7 +93,7 @@ Volg deze stappen om de resources op te schonen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u de werkbelastinggroep `DataLoads` wilt gebruiken, moet er een [werkbelastingclassificatie](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) worden gemaakt om aanvragen naar de werkbelastinggroep te routeren.  Ga door naar de zelfstudie [Een werkbelastingclassficatie maken](quickstart-create-a-workload-classifier-portal.md) om een werkbelastingclassificatie te maken voor `DataLoads`.
+Als u de werkbelastinggroep `DataLoads` wilt gebruiken, moet er een [werkbelastingclassificatie](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) worden gemaakt om aanvragen naar de werkbelastinggroep te routeren.  Ga door naar de zelfstudie [Een werkbelastingclassficatie maken](quickstart-create-a-workload-classifier-portal.md) om een werkbelastingclassificatie te maken voor `DataLoads`.
 
 ## <a name="see-also"></a>Zie ook
 Zie het artikel [Procedures voor het beheren en bewaken van werkbelastingbeheer](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md) voor meer informatie over het bewaken van werkbelastingen voor werkbelastingbeheer.

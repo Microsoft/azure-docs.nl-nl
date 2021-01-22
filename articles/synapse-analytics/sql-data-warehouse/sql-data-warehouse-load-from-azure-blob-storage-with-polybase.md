@@ -11,12 +11,12 @@ ms.date: 11/20/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: bbe61444404b16a09a1e0d2bdead72ac53a60744
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: aac0d8b923dc87f8be59cb594b155aafcf25fd0e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452887"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677151"
 ---
 # <a name="load-contoso-retail-data-into-dedicated-sql-pools-in-azure-synapse-analytics"></a>Retail-gegevens van Contoso in speciale SQL-groepen in azure Synapse Analytics laden
 
@@ -77,7 +77,7 @@ WITH (
 
 ## <a name="create-the-external-data-source"></a>De externe gegevens bron maken
 
-Gebruik deze opdracht [externe gegevens bron maken](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om de locatie van de gegevens en het gegevens type op te slaan.
+Gebruik deze opdracht [externe gegevens bron maken](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om de locatie van de gegevens en het gegevens type op te slaan.
 
 ```sql
 CREATE EXTERNAL DATA SOURCE AzureStorage_west_public
@@ -221,7 +221,7 @@ GO
 
 ### <a name="load-the-data-into-new-tables"></a>De gegevens in nieuwe tabellen laden
 
-Als u gegevens uit Azure Blob-opslag wilt laden in de Data Warehouse-tabel, gebruikt u de instructie [create table as select (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) . Het laden met [CTAS](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) maakt gebruik van de sterk getypeerde externe tabellen die u hebt gemaakt. Als u de gegevens in nieuwe tabellen wilt laden, gebruikt u een CTAS-instructie per tabel.
+Als u gegevens uit Azure Blob-opslag wilt laden in de Data Warehouse-tabel, gebruikt u de instructie [create table as select (Transact-SQL)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) . Het laden met [CTAS](../sql-data-warehouse/sql-data-warehouse-develop-ctas.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) maakt gebruik van de sterk getypeerde externe tabellen die u hebt gemaakt. Als u de gegevens in nieuwe tabellen wilt laden, gebruikt u een CTAS-instructie per tabel.
 
 CTAS maakt een nieuwe tabel en vult deze met de resultaten van een SELECT-instructie. CTAS definieert de nieuwe tabel om dezelfde kolommen en gegevens typen te hebben als de resultaten van de SELECT-instructie. Als u alle kolommen uit een externe tabel selecteert, is de nieuwe tabel een replica van de kolommen en gegevens typen in de externe tabel.
 

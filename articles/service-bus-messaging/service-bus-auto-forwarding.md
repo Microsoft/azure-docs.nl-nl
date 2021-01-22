@@ -2,18 +2,21 @@
 title: Azure Service Bus Messa ging-entiteiten automatisch door sturen
 description: In dit artikel wordt beschreven hoe u een Azure Service Bus wachtrij of een abonnement koppelt aan een andere wachtrij of een onderwerp.
 ms.topic: article
-ms.date: 06/23/2020
+ms.date: 01/20/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8f5f93f65871c0b9658a75264ab959dbae7fefe7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 80bef52d568130fa800a1da661f4867abb3df02c
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91819571"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678985"
 ---
 # <a name="chaining-service-bus-entities-with-autoforwarding"></a>Service Bus entiteiten koppelen met autoforwarding
 
 Met de functie voor het *door sturen* van service bus kunt u een wachtrij of abonnement koppelen aan een andere wachtrij of een onderwerp dat deel uitmaakt van dezelfde naam ruimte. Wanneer automatisch door sturen is ingeschakeld, verwijdert Service Bus berichten die in de eerste wachtrij of dit abonnement (bron) worden geplaatst en worden deze in de tweede wachtrij of het onderwerp (bestemming) geplaatst. Het is nog steeds mogelijk om rechtstreeks een bericht naar de doel entiteit te verzenden.
+
+> [!NOTE]
+> De laag basis van Service Bus biedt geen ondersteuning voor de functie voor automatisch door sturen. De standaard-en Premium-laag bieden ondersteuning voor de functie. Zie [Service Bus prijzen](https://azure.microsoft.com/pricing/details/service-bus/)voor verschillen tussen deze lagen.
 
 ## <a name="using-autoforwarding"></a>Autoforwarden gebruiken
 

@@ -11,12 +11,12 @@ ms.date: 03/22/2019
 ms.author: xiaoyul
 ms.custom: azure-synapse
 ms.reviewer: igorstan
-ms.openlocfilehash: 67cb4868ee8d4190c47e23315bf2a22e5c847ff1
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 8144c588d4b6794cadc0577bf63dabc2cc3e0efd
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98121172"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677283"
 ---
 # <a name="use-transactions-in-a-sql-pool-in-azure-synapse"></a>Trans acties gebruiken in een SQL-groep in azure Synapse 
 
@@ -30,7 +30,7 @@ Zoals verwacht, ondersteunt de SQL-groep trans acties als onderdeel van de werk 
 
 De SQL-Groep implementeert zure trans acties. Het isolatie niveau van de transactionele ondersteuning is standaard om niet-doorgevoerd te lezen.  U kunt deze wijzigen om doorgevoerde MOMENTOPNAME isolatie te lezen door de optie READ_COMMITTED_SNAPSHOT data base in te scha kelen voor een gebruikers-SQL-groep wanneer deze is verbonden met de hoofd database.  
 
-Wanneer deze optie is ingeschakeld, worden alle trans acties in deze data base uitgevoerd onder Lees-VASTGELEGDe snap shot-isolatie en wordt het lezen van niet-toegewezen op sessie niveau niet in rekening gehouden. Raadpleeg [ALTER data base set Options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor meer informatie.
+Wanneer deze optie is ingeschakeld, worden alle trans acties in deze data base uitgevoerd onder Lees-VASTGELEGDe snap shot-isolatie en wordt het lezen van niet-toegewezen op sessie niveau niet in rekening gehouden. Raadpleeg [ALTER data base set Options (Transact-SQL)](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor meer informatie.
 
 ## <a name="transaction-size"></a>Transactie grootte
 

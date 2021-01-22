@@ -9,18 +9,18 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 967250cf29d1f0248f296cb545a764bd8e611773
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 9500d682a99e6345289a83b4b3b2fc29ffe18457
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462667"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676881"
 ---
 # <a name="query-storage-files-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Query's op opslagbestanden uitvoeren met een serverloze SQL-pool in Azure Synapse Analytics
 
 Met een serverloze SQL-pool kunt u query's uitvoeren op uw gegevens in uw data lake. Het biedt een T-SQL query-surface area dat geschikt is voor semi-gestructureerde en ongestructureerde gegevensquery's. Voor het uitvoeren van query's worden de volgende T-SQL-aspecten ondersteund:
 
-- Volledige [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)-surface area, met inbegrip van de meeste [SQL-functies en -operatoren](overview-features.md).
+- Volledige [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)-surface area, met inbegrip van de meeste [SQL-functies en -operatoren](overview-features.md).
 - Met CREATE EXTERNAL TABLE AS SELECT ([CETAS](develop-tables-cetas.md)) wordt een [externe tabel](develop-tables-external-tables.md) gemaakt en parallel de resultaten van een Transact-SQL SELECT-instructie geëxporteerd naar Azure Storage.
 
 Lees het artikel [Overzicht van serverloze SQL-pools](on-demand-workspace-overview.md) voor meer informatie over wat momenteel niet wordt ondersteund, of lees de volgende artikelen:
@@ -190,15 +190,15 @@ Raadpleeg de sectie Elementen benaderen vanuit geneste kolommen in het artikel [
 
 #### <a name="access-elements-from-repeated-columns"></a>Elementen benaderen vanuit herhaalde kolommen
 
-Gebruik de functie [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) voor elk scalair element dat u wilt projecteren om elementen van een herhaalde kolom te benaderen, zoals een element van een Matrix of Map en geef het volgende op:
+Gebruik de functie [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor elk scalair element dat u wilt projecteren om elementen van een herhaalde kolom te benaderen, zoals een element van een Matrix of Map en geef het volgende op:
 
 - als eerste parameter Geneste of herhaalde kolom
-- als tweede parameter een [JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) dat de elementen of de eigenschappen opgeeft die moeten worden benaderd
+- als tweede parameter een [JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) dat de elementen of de eigenschappen opgeeft die moeten worden benaderd
 
-Gebruik de functie [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) voor elk niet-scalair element dat u wilt projecteren om niet-scalaire elementen van een herhaalde kolom te benaderen en geef het volgende op:
+Gebruik de functie [JSON_QUERY](/sql/t-sql/functions/json-query-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor elk niet-scalair element dat u wilt projecteren om niet-scalaire elementen van een herhaalde kolom te benaderen en geef het volgende op:
 
 - als eerste parameter Geneste of herhaalde kolom
-- als tweede parameter een [JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) dat de elementen of de eigenschappen opgeeft die moeten worden benaderd
+- als tweede parameter een [JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) dat de elementen of de eigenschappen opgeeft die moeten worden benaderd
 
 Zie hieronder een syntaxis-fragment:
 

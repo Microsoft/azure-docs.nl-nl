@@ -7,19 +7,22 @@ ms.subservice: cosmosdb-table
 ms.topic: sample
 ms.date: 10/07/2020
 ms.author: mjbrown
-ms.openlocfilehash: 60d55745f22b2babe29eb3fc8b8840810b9bcddb
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
-ms.translationtype: HT
+ms.openlocfilehash: 061bd06c0fa54497d8f00db0e5d4a808e949c2d3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93094758"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679141"
 ---
 # <a name="throughput-rus-operations-with-powershell-for-a-table-for-azure-cosmos-db---table-api"></a>Doorvoerbewerkingen (RU/s) met PowerShell voor een tabel voor Azure Cosmos DB - Table-API
 [!INCLUDE[appliesto-table-api](../../../includes/appliesto-table-api.md)]
 
 [!INCLUDE [updated-for-az](../../../../../includes/updated-for-az.md)]
 
-[!INCLUDE [sample-powershell-install](../../../../../includes/sample-powershell-install-no-ssh.md)]
+Voor dit voor beeld is Azure PowerShell AZ 5.4.0 of later vereist. Voer `Get-Module -ListAvailable Az` uit om te zien welke versies zijn geïnstalleerd.
+Als u PowerShell moet installeren, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps).
+
+Voer [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount) uit om u aan te melden bij Azure.
 
 ## <a name="get-throughput"></a>Doorvoer bepalen
 

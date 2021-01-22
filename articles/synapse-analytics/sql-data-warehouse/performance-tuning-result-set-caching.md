@@ -11,12 +11,12 @@ ms.date: 10/10/2019
 ms.author: xiaoyul
 ms.reviewer: nidejaco;
 ms.custom: azure-synapse
-ms.openlocfilehash: 2b54277d0306244dc4ab6740fdd30e52668dd63c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d8c6c8d22c059c63fb4f84c84a02a70de30d4ebe
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460781"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678522"
 ---
 # <a name="performance-tuning-with-result-set-caching"></a>Prestaties afstemmen door resultatensets op te slaan in de cache
 
@@ -24,13 +24,13 @@ Als de cache voor het instellen van de resultatenset is ingeschakeld, slaat de t
 
 ## <a name="key-commands"></a>Belangrijkste opdrachten
 
-[IN-en uitschakelen van de cache voor de resultatenset voor een gebruikers database](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+[IN-en uitschakelen van de cache voor de resultatenset voor een gebruikers database](/sql/t-sql/statements/alter-database-transact-sql-set-options?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
-[IN-en uitschakelen van de cache voor de resultatenset voor een sessie](/sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+[IN-en uitschakelen van de cache voor de resultatenset voor een sessie](/sql/t-sql/statements/set-result-set-caching-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
-[De grootte van de resultatenset in de cache controleren](/sql/t-sql/database-console-commands/dbcc-showresultcachespaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)  
+[De grootte van de resultatenset in de cache controleren](/sql/t-sql/database-console-commands/dbcc-showresultcachespaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)  
 
-[De cache opschonen](/sql/t-sql/database-console-commands/dbcc-dropresultsetcache-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+[De cache opschonen](/sql/t-sql/database-console-commands/dbcc-dropresultsetcache-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
 ## <a name="whats-not-cached"></a>Wat wordt niet in cache opgeslagen  
 
@@ -74,7 +74,7 @@ De resultatenset in de cache wordt opnieuw gebruikt voor een query als aan alle 
 - Er is een exacte overeenkomst tussen de nieuwe query en de vorige query die de cache met resultaten sets heeft gegenereerd.
 - Er zijn geen gegevens of schema wijzigingen in de tabellen waarin de resultatenset in de cache is gegenereerd.
 
-Voer deze opdracht uit om te controleren of een query is uitgevoerd met een treffer voor de resultaten cache of ontbreekt. De kolom result_cache_hit retourneert 1 voor cache treffer, 0 voor Missing in cache en negatieve waarden om redenen waarom het instellen van een cache voor de resultatenset niet is gebruikt. Raadpleeg [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor meer informatie.
+Voer deze opdracht uit om te controleren of een query is uitgevoerd met een treffer voor de resultaten cache of ontbreekt. De kolom result_cache_hit retourneert 1 voor cache treffer, 0 voor Missing in cache en negatieve waarden om redenen waarom het instellen van een cache voor de resultatenset niet is gebruikt. Raadpleeg [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor meer informatie.
 
 ```sql
 SELECT request_id, command, result_cache_hit FROM sys.dm_pdw_exec_requests

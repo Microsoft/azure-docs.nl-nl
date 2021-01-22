@@ -3,12 +3,12 @@ title: Veelgestelde vragen over Azure Service Bus | Microsoft Docs
 description: In dit artikel vindt u antwoorden op enkele veelgestelde vragen over Azure Service Bus.
 ms.topic: article
 ms.date: 09/16/2020
-ms.openlocfilehash: 576df12a9d53ec3585f8691016cd250bf1ba4be3
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: e5bc9aae081868c92e0968c88c8cb6dcfb8ee57c
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98623104"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676371"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Azure Service Bus-Veelgestelde vragen (FAQ)
 
@@ -168,6 +168,8 @@ Select-AzSubscription -SubscriptionId 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'
 $res = Find-AzResource -ResourceNameContains mynamespace -ResourceType 'Microsoft.ServiceBus/namespaces'
 Move-AzResource -DestinationResourceGroupName 'targetRG' -DestinationSubscriptionId 'ffffffff-ffff-ffff-ffff-ffffffffffff' -ResourceId $res.ResourceId
 ```
+## <a name="is-it-possible-to-disable-tls-10-or-11-on-service-bus-namespaces"></a>Is het mogelijk om TLS 1,0 of 1,1 op Service Bus naam ruimten uit te scha kelen?
+Nee. Het is niet mogelijk om TLS 1,0 of 1,1 uit te scha kelen voor Service Bus naam ruimten. Gebruik TLS 1,2 of hoger in uw client toepassingen die verbinding maken met Service Bus. Zie [het afdwingen van TLS 1,2-gebruik met Azure service bus-micro soft tech Community](https://techcommunity.microsoft.com/t5/messaging-on-azure/enforcing-tls-1-2-use-with-azure-service-bus/ba-p/370912)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 Raadpleeg de volgende artikelen voor meer informatie over Service Bus:

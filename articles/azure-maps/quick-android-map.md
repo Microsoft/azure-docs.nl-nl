@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: mvc
-ms.openlocfilehash: 874da5ffcd2777648bb06c6e702932d64a32e59c
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
-ms.translationtype: HT
+ms.openlocfilehash: 740563935e12d5a7418bada2a18b48fb573f6e7d
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97681871"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98679004"
 ---
 # <a name="quickstart-create-an-android-app-with-azure-maps"></a>Quickstart: een Android-app maken met Azure Maps
 
@@ -59,7 +59,7 @@ Als het Azure Kaarten-account is gemaakt, haalt u de primaire sleutel op waarmee
 3. Kopieer de **Primaire Sleutel** naar het Klembord. Sla de sleutel lokaal op voor gebruik verderop in deze zelfstudie.
 
 >[!NOTE]
-> Als u de Azure-abonnementssleutel gebruikt in plaats van de primaire Azure Maps-sleutel, wordt uw kaart niet juist weergegeven. Bovendien wordt om veiligheidsredenen aanbevolen dat u roteert tussen de primaire en secundaire sleutel. Als u sleutels wilt roteren, werkt u de app bij om de secundaire sleutel te gebruiken. Vervolgens implementeert u en drukt u op de knop voor cyclus/vernieuwen naast de primaire sleutel om een nieuwe primaire sleutel te genereren. De oude primaire sleutel wordt uitgeschakeld. Zie [Azure Key Vault instellen met wisselen en controleren van sleutels](https://docs.microsoft.com/azure/key-vault/secrets/key-rotation-log-monitoring) voor meer informatie over het roteren van sleutels
+> Als u de Azure-abonnementssleutel gebruikt in plaats van de primaire Azure Maps-sleutel, wordt uw kaart niet juist weergegeven. Bovendien wordt om veiligheidsredenen aanbevolen dat u roteert tussen de primaire en secundaire sleutel. Als u sleutels wilt roteren, werkt u de app bij om de secundaire sleutel te gebruiken. Vervolgens implementeert u en drukt u op de knop voor cyclus/vernieuwen naast de primaire sleutel om een nieuwe primaire sleutel te genereren. De oude primaire sleutel wordt uitgeschakeld. Zie [Azure Key Vault instellen met wisselen en controleren van sleutels](../key-vault/secrets/tutorial-rotation-dual.md) voor meer informatie over het roteren van sleutels
 
 ![Primaire sleutel voor Azure Maps ophalen in de Azure-portal](media/quick-android-map/get-key.png)
 

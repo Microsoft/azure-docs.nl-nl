@@ -11,12 +11,12 @@ ms.date: 05/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 4c761404ab5a95bc0189407cc97ce779b66356fe
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 1f4d113f3bc6add67dd34a7ef5e3f8cdc08cecf0
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460649"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677518"
 ---
 # <a name="quickstart-create-a-dedicated-sql-pool-workload-classifier-using-the-azure-portal"></a>Quickstart: Een workloadclassificatie voor een toegewezen SQL-pool maken met behulp van de Azure Portal
 
@@ -45,7 +45,7 @@ Er bestaat een workloadgroep `DataLoads`.  Zie de zelfstudie [Quickstart: Isolat
 
 ## <a name="create-a-login-for-eltlogin"></a>Aanmeldingsgegevens maken voor ELTLogin
 
-Maak een SQL Server-verificatieaanmeldingsgegevens in de `master`database met behulp van [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor `ELTLogin`.
+Maak een SQL Server-verificatieaanmeldingsgegevens in de `master`database met behulp van [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor `ELTLogin`.
 
 ```sql
 IF NOT EXISTS (SELECT * FROM sys.sql_logins WHERE name = 'ELTLogin')
@@ -57,7 +57,7 @@ END
 
 ## <a name="create-user-and-grant-permissions"></a>Gebruiker maken en machtigingen verlenen
 
-Nadat de aanmeldingsgegevens zijn gemaakt, moet er een gebruiker worden gemaakt in de database.  Gebruik [CREATE USER](/sql/t-sql/statements/create-user-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om de SQL-gebruiker `ELTRole` te maken in **mySampleDataWarehouse**.  Omdat we de classificatie gaan testen tijdens deze zelfstudie, moet u `ELTLogin` machtigingen verlenen voor **mySampleDataWarehouse**. 
+Nadat de aanmeldingsgegevens zijn gemaakt, moet er een gebruiker worden gemaakt in de database.  Gebruik [CREATE USER](/sql/t-sql/statements/create-user-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om de SQL-gebruiker `ELTRole` te maken in **mySampleDataWarehouse**.  Omdat we de classificatie gaan testen tijdens deze zelfstudie, moet u `ELTLogin` machtigingen verlenen voor **mySampleDataWarehouse**. 
 
 ```sql
 IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'ELTLogin')
@@ -96,13 +96,13 @@ Met classificaties kunt u aanvragen routeren naar een workloadgroep op basis van
     ![Klik op Configureren](./media/quickstart-create-a-workload-classifier-portal/config-wc.png)
 
 ## <a name="verify-and-test-classification"></a>Classificatie verifiëren en testen
-Controleer de catalogusweergave [sys.workload_management_workload_classifiers](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifiers-transact-sql?view=azure-sqldw-latest) om de aanwezigheid van classificatie `ELTLoginDataLoads` te verifiëren.
+Controleer de catalogusweergave [sys.workload_management_workload_classifiers](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifiers-transact-sql?view=azure-sqldw-latest&preserve-view=true) om de aanwezigheid van classificatie `ELTLoginDataLoads` te verifiëren.
 
 ```sql
 SELECT * FROM sys.workload_management_workload_classifiers WHERE name = 'ELTLoginDataLoads'
 ```
 
-Controleer de catalogusweergave [sys.workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?view=azure-sqldw-latest) om de details van de classificatie te verifiëren.
+Controleer de catalogusweergave [sys.workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?view=azure-sqldw-latest&preserve-view=true) om de details van de classificatie te verifiëren.
 
 ```sql
 SELECT c.[name], c.group_name, c.importance, cd.classifier_type, cd.classifier_value

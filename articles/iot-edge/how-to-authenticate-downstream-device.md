@@ -8,12 +8,12 @@ ms.date: 10/15/2020
 ms.topic: conceptual
 ms.service: iot-edge
 services: iot-edge
-ms.openlocfilehash: f2dd7cac8370c261f24f5587e801bd621fbdb0f0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 3876b44bc6bb1ddbc5398126421fb9651003838f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016995"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678820"
 ---
 # <a name="authenticate-a-downstream-device-to-azure-iot-hub"></a>Een downstream-apparaat verifiëren voor Azure IoT Hub
 
@@ -71,7 +71,7 @@ Wanneer u de nieuwe apparaat-id maakt, geeft u de volgende informatie op:
 
 U kunt ook de [IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension) gebruiken om dezelfde bewerking te volt ooien. In het volgende voor beeld wordt de opdracht [AZ IOT hub apparaat-Identity](/cli/azure/ext/azure-iot/iot/hub/device-identity) gebruikt voor het maken van een nieuw IOT-apparaat met symmetrische sleutel verificatie en het toewijzen van een bovenliggend apparaat:
 
-```cli
+```azurecli
 az iot hub device-identity create -n {iothub name} -d {new device ID} --pd {existing gateway device ID}
 ```
 
@@ -126,7 +126,7 @@ Voor X. 509 zelfondertekende verificatie, ook wel vingerafdruk verificatie genoe
 
 U kunt ook de [IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension) gebruiken om de bewerking voor het maken van het apparaat te volt ooien. In het volgende voor beeld wordt de opdracht [AZ IOT hub apparaat-Identity](/cli/azure/ext/azure-iot/iot/hub/device-identity) gebruikt voor het maken van een nieuw IOT-apparaat met X. 509 zelfondertekende authenticatie en het toewijzen van een bovenliggend apparaat:
 
-```cli
+```azurecli
 az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway device ID} --am x509_thumbprint --ptp {primary thumbprint} --stp {secondary thumbprint}
 ```
 
@@ -170,7 +170,7 @@ Deze sectie is gebaseerd op de instructies in het artikel IoT Hub [X. 509-beveil
 
 U kunt ook de [IOT-extensie voor Azure cli](https://github.com/Azure/azure-iot-cli-extension) gebruiken om de bewerking voor het maken van het apparaat te volt ooien. In het volgende voor beeld wordt de opdracht [AZ IOT hub apparaat-Identity](/cli/azure/ext/azure-iot/iot/hub/device-identity) gebruikt voor het maken van een nieuw IOT-apparaat met X. 509 certificerings instantie ondertekend verificatie en wijst een bovenliggend apparaat toe:
 
-```cli
+```azurecli
 az iot hub device-identity create -n {iothub name} -d {device ID} --pd {gateway device ID} --am x509_ca
 ```
 
@@ -191,19 +191,19 @@ Verbindings reeksen voor downstream-apparaten hebben de volgende onderdelen nodi
 
 Alle samen, een volledig connection string ziet er als volgt uit:
 
-```
+```console
 HostName=myiothub.azure-devices.net;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz;GatewayHostName=myGatewayDevice
 ```
 
 Of
 
-```
+```console
 HostName=myiothub.azure-devices.net;DeviceId=myDownstreamDevice;x509=true;GatewayHostName=myGatewayDevice
 ```
 
 Dankzij de relatie tussen bovenliggende en onderliggende items kunt u de connection string vereenvoudigen door de gateway rechtstreeks aan te roepen als de host van de verbinding. Bijvoorbeeld:
 
-```
+```console
 HostName=myGatewayDevice;DeviceId=myDownstreamDevice;SharedAccessKey=xxxyyyzzz
 ```
 

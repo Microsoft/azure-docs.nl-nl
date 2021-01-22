@@ -4,12 +4,12 @@ description: Voeg een paar regels code toe aan de apparaat-of bureau blad-app, d
 ms.topic: conceptual
 ms.date: 05/11/2020
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: d553c192d62baedb93c7f8270c56526fbf8edb62
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 8fecca4875ba291da093bf1eea596eef290f80c8
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98233743"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678109"
 ---
 # <a name="application-insights-api-for-custom-events-and-metrics"></a>Application Insights-API voor aangepaste gebeurtenissen en metrische gegevens
 
@@ -534,7 +534,7 @@ Als er [steek proeven](./sampling.md) worden uitgevoerd, wordt in de eigenschap 
 Gebruik de aanroep TrackDependency om de reactie tijden en succes percentages van aanroepen naar een externe code te volgen. De resultaten worden weer gegeven in de afhankelijkheids grafieken in de portal. Het onderstaande code fragment moet worden toegevoegd wanneer een afhankelijkheids aanroep wordt gedaan.
 
 > [!NOTE]
-> Voor .NET en .NET Core kunt u ook de `TelemetryClient.StartOperation` methode (Extension) gebruiken om de eigenschappen te vullen `DependencyTelemetry` die nodig zijn voor correlatie en enkele andere eigenschappen, zoals de start tijd en de duur, zodat u geen aangepaste timer hoeft te maken, zoals in de onderstaande voor beelden. Raadpleeg de [sectie over het bijhouden van uitgaande afhankelijkheden](https://docs.microsoft.com/azure/azure-monitor/app/custom-operations-tracking#outgoing-dependencies-tracking)voor meer informatie.
+> Voor .NET en .NET Core kunt u ook de `TelemetryClient.StartOperation` methode (Extension) gebruiken om de eigenschappen te vullen `DependencyTelemetry` die nodig zijn voor correlatie en enkele andere eigenschappen, zoals de start tijd en de duur, zodat u geen aangepaste timer hoeft te maken, zoals in de onderstaande voor beelden. Raadpleeg de [sectie over het bijhouden van uitgaande afhankelijkheden](./custom-operations-tracking.md#outgoing-dependencies-tracking)voor meer informatie.
 
 *C#*
 

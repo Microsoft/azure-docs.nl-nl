@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 2f26716a4d04b574bf393f502758a725948419da
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 85bc6f4468e0365d247b0adc204bd53ce9fa3006
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89299946"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676713"
 ---
 # <a name="copy-an-image-from-another-gallery-using-powershell"></a>Een afbeelding uit een andere galerie kopiëren met behulp van Power shell
 
@@ -164,6 +164,6 @@ $job.State
 
 Een virtuele machine maken van een [gegeneraliseerde](vm-generalized-image-version-powershell.md) of een [gespecialiseerde](vm-specialized-image-version-powershell.md) installatie kopie versie.
 
-Met [Azure Image Builder (preview)](./linux/image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md). 
+Met [Azure Image Builder (preview)](./image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md). 
 
 Zie voor meer informatie over het verstrekken van informatie over het aankoop plan [Azure Marketplace-informatie over het aankoop plan bij het maken van installatie kopieën](marketplace-images.md).

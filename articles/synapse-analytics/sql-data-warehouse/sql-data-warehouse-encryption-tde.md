@@ -11,12 +11,12 @@ ms.date: 04/30/2019
 ms.author: jrasnick
 ms.reviewer: rortloff
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 45c7b53d3bbe0c57e96fc5435650c4e86b0cb032
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: da4be6f4bc8335e0976a0a4a87c4d232b2a2285f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96455266"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676303"
 ---
 # <a name="get-started-with-transparent-data-encryption-tde-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Aan de slag met Transparent Data Encryption (TDE) voor een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics
 
@@ -39,7 +39,7 @@ Volg de onderstaande stappen om TDE in te scha kelen:
 2. Klik op de Blade Data Base op de knop **instellingen**
 3. Selecteer de optie voor het **transparant gegevens versleutelen** ![ Portal instellingen](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings.png)
 4. Selecteer de instellingen voor het instellen **van** de ![ Portal op](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-on.png)
-5. Selecteer **Save** 
+5. Selecteer  
     ![ Portal instellingen opslaan opslaan](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-save.png)  
 
 ## <a name="disabling-encryption"></a>Versleuteling uitschakelen
@@ -50,12 +50,12 @@ Volg de onderstaande stappen om TDE uit te scha kelen:
 2. Klik op de Blade Data Base op de knop **instellingen**
 3. Selecteer de optie voor het **transparant gegevens versleutelen** ![ Portal instellingen](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings.png)
 4. Schakel de Portal-instellingen **uit** instellen ![ uit](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-off.png)
-5. Selecteer **Save** 
+5. Selecteer  
     ![ Portal instelling opslaan 2](./media/sql-data-warehouse-security-tde/sql-data-warehouse-security-tde-portal-settings-save2.png)  
 
 ## <a name="encryption-dmvs"></a>Versleuteling Dmv's
 
 Versleuteling kan worden bevestigd met de volgende Dmv's:
 
-* [sys.databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-* [sys.dm_pdw_nodes_database_encryption_keys](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-nodes-database-encryption-keys-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+* [sys.databases](/sql/relational-databases/system-catalog-views/sys-databases-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+* [sys.dm_pdw_nodes_database_encryption_keys](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-nodes-database-encryption-keys-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)

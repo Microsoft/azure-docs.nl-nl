@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc, devx-track-python
-ms.openlocfilehash: 32ce875600bb948e7c3e8479f712e99d25eb6367
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 276dd5b7eba33081c5131eba722df91d8685adff
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624948"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678160"
 ---
 # <a name="tutorial-join-sensor-data-with-weather-forecast-data-by-using-azure-notebooks-python"></a>Zelfstudie: Sensorgegevens samenvoegen met weervoorspellingsgegevens met behulp van Azure Notebooks (Python)
 
@@ -27,7 +27,7 @@ Windkracht is een alternatieve energiebron voor fossiele brandstoffen om klimaat
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
-> * Werken met gegevensbestanden in [Azure Notebooks](../notebooks/index.yml) in de cloud.
+> * Werken met gegevensbestanden in [Azure Notebooks](https://notebooks.azure.com) in de cloud.
 > * Demogegevens laden uit een bestand.
 > * Azure Maps REST API's aanroepen in Python.
 > * Locatiegegevens op de kaart weergeven.
@@ -206,4 +206,4 @@ Er zijn geen resources die moeten worden opgeruimd.
 Voor meer informatie over Azure Notebooks, zie
 
 > [!div class="nextstepaction"]
-> [Azure Notebooks](../notebooks/index.yml)
+> [Azure Notebooks](https://notebooks.azure.com)

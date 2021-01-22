@@ -2,17 +2,17 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 4ce4225d4137a334e7bd26e429396e6b4b1e121b
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: b68eb8df4757badf93223634796eaaafae3c95f0
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050835"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676392"
 ---
-## <a name="azure-security-benchmark"></a>Azure Security-benchmark
+## <a name="azure-security-benchmark-v1"></a>Azure Security Benchmark v1
 
 De [Azure Security-benchmark](../../../../articles/security/benchmarks/overview.md) biedt aanbevelingen voor hoe u uw cloudoplossingen in Azure kunt beveiligen. Bekijk de [toewijzingsbestanden van de Azure Security-benchmark](https://github.com/MicrosoftDocs/SecurityBenchmarks/tree/master/Azure%20Offer%20Security%20Baselines) om te zien hoe deze service volledig is toegewezen aan de Azure Security-benchmark.
 

@@ -8,12 +8,12 @@ ms.topic: reference
 ms.service: virtual-machines
 ms.subservice: imaging
 ms.reviewer: cynthn
-ms.openlocfilehash: 43f33093010aa6a70d02c58e9faa34f7f0e2dfee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9ae477dd04237e285915157615dcb6a6b841ca99
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91307276"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678252"
 ---
 # <a name="preview-create-an-azure-image-builder-template"></a>Voor beeld: een Azure Image Builder-sjabloon maken 
 
@@ -154,7 +154,7 @@ Voor de API is een source type vereist dat de bron voor de build van de installa
 > Wanneer u bestaande Windows-aangepaste installatie kopieën gebruikt, kunt u de Sysprep-opdracht Maxi maal acht keer uitvoeren op één Windows-installatie kopie. Raadpleeg de documentatie van [Sysprep](/windows-hardware/manufacture/desktop/sysprep--generalize--a-windows-installation#limits-on-how-many-times-you-can-run-sysprep) voor meer informatie.
 
 ### <a name="platformimage-source"></a>PlatformImage-bron 
-Azure Image Builder biedt ondersteuning voor Windows Server-en client-en Linux Azure Marketplace-installatie kopieën. Zie [hier](../windows/image-builder-overview.md#os-support) voor de volledige lijst. 
+Azure Image Builder biedt ondersteuning voor Windows Server-en client-en Linux Azure Marketplace-installatie kopieën. Zie [hier](../image-builder-overview.md#os-support) voor de volledige lijst. 
 
 ```json
         "source": {

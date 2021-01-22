@@ -9,12 +9,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: akjosh
-ms.openlocfilehash: 8a0ee8565d22e935535bbe1e830d8399b2489f5c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 803bbf485d783fc160d1f2644a56e1339f73690e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86527520"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678302"
 ---
 # <a name="tutorial-create-and-use-a-custom-image-for-virtual-machine-scale-sets-with-azure-powershell"></a>Zelfstudie: Een aangepaste installatiekopie voor virtuele-machineschaalsets maken en gebruiken met Azure PowerShell
 
@@ -80,7 +80,7 @@ $gallery = New-AzGallery `
 
 ## <a name="create-an-image-definition"></a>Een definitie voor de installatiekopie maken 
 
-Definities van installatiekopieën maken een logische groepering voor installatiekopieën. Die worden gebruikt voor het beheren van informatie over de installatiekopieversies die daarbinnen worden gemaakt. Namen van installatiekopiedefinities kunnen bestaan uit hoofdletters, kleine letters, cijfers, streepjes en punten. Zie [Installatiekopiedefinities](../virtual-machines/windows/shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
+Definities van installatiekopieën maken een logische groepering voor installatiekopieën. Die worden gebruikt voor het beheren van informatie over de installatiekopieversies die daarbinnen worden gemaakt. Namen van installatiekopiedefinities kunnen bestaan uit hoofdletters, kleine letters, cijfers, streepjes en punten. Zie [Installatiekopiedefinities](../virtual-machines/shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
 
 Maak de definitie van de installatiekopie met behulp van [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). In dit voorbeeld heeft de installatiekopie in de galerie de naam *myGalleryImage* en wordt deze gemaakt voor een gespecialiseerde installatiekopie. 
 
@@ -256,7 +256,7 @@ Remove-AzResourceGroup -Name myResoureceGroup
 
 ## <a name="azure-image-builder"></a>Azure Image Builder
 
-Azure biedt ook de service [Azure VM Image Builder](../virtual-machines/windows/image-builder-overview.md), die is gebouwd op Packer. U hoeft slechts uw aanpassingen in een sjabloon te beschrijven en de service handelt het maken van de installatiekopie af. 
+Azure biedt ook de service [Azure VM Image Builder](../virtual-machines/image-builder-overview.md), die is gebouwd op Packer. U hoeft slechts uw aanpassingen in een sjabloon te beschrijven en de service handelt het maken van de installatiekopie af. 
 
 ## <a name="next-steps"></a>Volgende stappen
 In deze zelfstudie hebt u geleerd hoe u een aangepaste VM-installatiekopie maakt en gebruikt voor uw schaalsets met Azure PowerShell:

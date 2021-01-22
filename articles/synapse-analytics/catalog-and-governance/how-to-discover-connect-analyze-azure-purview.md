@@ -8,24 +8,21 @@ ms.topic: how-to
 ms.date: 12/16/2020
 ms.author: acomet
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7c6b25fd3615fa76bc76e6d360f4c76a21a9ad02
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 817f9a88bd3536e9c0ec8a1057098e6b4a96716e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97918264"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676354"
 ---
 # <a name="discover-connect-and-explore-data-in-synapse-using-azure-purview"></a>Gegevens detecteren, verbinden en verkennen in Synapse met behulp van Azure controle sfeer liggen 
-
-> [!IMPORTANT]
-> De integratie tussen Azure Synapse Analytics en Azure controle sfeer liggen is momenteel in de preview-versie. Als u geïnteresseerd bent in azure controle sfeer liggen in Synapse, kunt u contact maken met uw micro soft-verkoop medewerker. 
 
 In dit document vindt u informatie over het type interacties dat u kunt uitvoeren bij het registreren van een Azure controle sfeer liggen-account in Synapse. 
 
 ## <a name="prerequisites"></a>Vereisten 
 
-- [Azure controle sfeer liggen-account](../../purview/create-catalog-portal.md) 
-- [Synapse-werk ruimte](../quickstart-create-workspace.md) 
+- [Azure Purview-account](../../purview/create-catalog-portal.md) 
+- [Synapse-werkruimte](../quickstart-create-workspace.md) 
 - [Een Azure controle sfeer liggen-account verbinden met Synapse](quickstart-connect-azure-purview.md) 
 
 ## <a name="using-azure-purview-in-synapse"></a>Azure controle sfeer liggen gebruiken in Synapse 
@@ -71,5 +68,5 @@ Met een **nieuwe gegevens stroom** kunt u een integratie-gegevensset maken die k
 
 ##  <a name="nextsteps"></a>Volgende stappen 
 
-- [Azure Synapse-assets registreren en controleren in azure controle sfeer liggen](../../purview/register-scan-azure-synapse-analytics.md)
+- [Azure Synapse-assets registreren en scannen in Azure Purview](../../purview/register-scan-azure-synapse-analytics.md)
 - [Gegevens zoeken in azure controle sfeer liggen Data Catalog](../../purview/how-to-search-catalog.md)

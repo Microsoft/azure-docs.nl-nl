@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 531c423e42338b72b41c54466d5bfe8a89cd3c45
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e69781bf6d33c176d27c16a7f3cf38539ec28f07
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91969634"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678235"
 ---
 # <a name="azure-image-builder-service-networking-options"></a>Azure Image Builder service-netwerk opties
 
@@ -89,4 +89,4 @@ Voor de service voor persoonlijke koppelingen is een IP-adres van het opgegeven 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [overzicht van Azure Image Builder](image-builder-overview.md)voor meer informatie.
+Zie [overzicht van Azure Image Builder](../image-builder-overview.md)voor meer informatie.

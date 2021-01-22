@@ -5,12 +5,12 @@ author: pkshultz
 ms.topic: how-to
 ms.date: 07/17/2020
 ms.author: peshultz
-ms.openlocfilehash: 404103caf376b792d363996664a69f655d5bd202
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 2ed19846209d098d9eba8dba991e08d1fc57f185
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326009"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678006"
 ---
 # <a name="configure-customer-managed-keys-for-your-azure-batch-account-with-azure-key-vault-and-managed-identity"></a>Door de klant beheerde sleutels voor uw Azure Batch account configureren met Azure Key Vault en beheerde identiteit
 
@@ -39,7 +39,7 @@ Nadat het account is gemaakt, kunt u een unieke GUID vinden in het veld **id-Pri
 
 Wanneer u een nieuw batch-account maakt, moet u `SystemAssigned` voor de `--identity` para meter opgeven.
 
-```powershell
+```azurecli
 resourceGroupName='myResourceGroup'
 accountName='mybatchaccount'
 
@@ -52,7 +52,7 @@ az batch account create \
 
 Nadat het account is gemaakt, kunt u controleren of de door het systeem toegewezen beheerde identiteit is ingeschakeld voor dit account. Noteer de `PrincipalId` , aangezien deze waarde nodig is om dit batch-account toegang te verlenen tot de Key Vault.
 
-```powershell
+```azurecli
 az batch account show \
     -n $accountName \
     -g $resourceGroupName \
@@ -74,7 +74,7 @@ Wanneer u een Azure Key Vault-exemplaar met door de klant beheerde sleutels voor
 
 Voeg in de Azure Portal, nadat de Key Vault is gemaakt, in het **toegangs beleid** onder **instelling**, het batch-account toegang toe met behulp van beheerde identiteit. Selecteer bij **sleutel machtigingen** **Get**, **Inpakken** en de **toets inpakken**. 
 
-![Toegangs beleid toevoegen](./media/batch-customer-managed-key/key-permissions.png)
+![Toegangsbeleid toevoegen](./media/batch-customer-managed-key/key-permissions.png)
 
 Vul in het veld **selecteren** onder **Principal** de in `principalId` die u eerder hebt opgehaald, of de naam van het batch-account.
 
@@ -100,7 +100,7 @@ Ga in het [Azure Portal](https://portal.azure.com/)naar de pagina batch-account.
 
 Nadat het batch-account is gemaakt met een door het systeem toegewezen beheerde identiteit en de toegang tot Key Vault is verleend, werkt u het batch-account bij met de `{Key Identifier}` URL onder `keyVaultProperties` para meter. Stel ook **encryption_key_source** in als `Microsoft.KeyVault` .
 
-```powershell
+```azurecli
 az batch account set \
     -n $accountName \
     -g $resourceGroupName \
@@ -118,7 +118,7 @@ Wanneer u een nieuwe versie van een sleutel maakt, werkt u het batch-account bij
 
 U kunt ook Azure CLI gebruiken om de versie bij te werken.
 
-```powershell
+```azurecli
 az batch account set \
     -n $accountName \
     -g $resourceGroupName \
@@ -134,7 +134,7 @@ Voer de volgende stappen uit om de sleutel te wijzigen die wordt gebruikt voor b
 
 U kunt ook Azure CLI gebruiken voor het gebruik van een andere sleutel.
 
-```powershell
+```azurecli
 az batch account set \
     -n $accountName \
     -g $resourceGroupName \

@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: 07c781672874bff306c9d25a464ec66414ebc9f1
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 06d1957d182f2cabc336afcfc47a790442a3cb9a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93322121"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678403"
 ---
 # <a name="azure-synapse-analytics-workload-importance"></a>Prioriteit van Azure Synapse Analytics-workload
 
@@ -38,7 +38,7 @@ Naast het scenario met de basis prioriteit die hierboven wordt beschreven met ve
 
 ### <a name="locking"></a>Vergrendelen
 
-Toegang tot de vergren delingen voor lees-en schrijf activiteiten is één gebied met natuurlijke conflicten. Voor activiteiten zoals het overschakelen van een [partitie](sql-data-warehouse-tables-partition.md) of het [wijzigen van de naam van het object](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) is verhoogde vergren deling vereist  Zonder urgentie van de workload is de toegewezen SQL-groep in azure Synapse geoptimaliseerd voor door voer. Optimalisatie voor door Voer betekent dat wanneer in-en in de wachtrij geplaatste aanvragen dezelfde vergrendelings behoeften hebben en resources beschikbaar zijn, de aanvragen in de wachtrij kunnen verzoeken met een hogere vergrendelings behoefte die eerder in de wachtrij voor aanvragen is aangekomen, worden overgeslagen. Zodra de urgentie van de werk belasting wordt toegepast op aanvragen met hogere vergrendelings behoeften. Een aanvraag met een hogere urgentie wordt uitgevoerd vóór de aanvraag met een lagere urgentie.
+Toegang tot de vergren delingen voor lees-en schrijf activiteiten is één gebied met natuurlijke conflicten. Voor activiteiten zoals het overschakelen van een [partitie](sql-data-warehouse-tables-partition.md) of het [wijzigen van de naam van het object](/sql/t-sql/statements/rename-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) is verhoogde vergren deling vereist  Zonder urgentie van de workload is de toegewezen SQL-groep in azure Synapse geoptimaliseerd voor door voer. Optimalisatie voor door Voer betekent dat wanneer in-en in de wachtrij geplaatste aanvragen dezelfde vergrendelings behoeften hebben en resources beschikbaar zijn, de aanvragen in de wachtrij kunnen verzoeken met een hogere vergrendelings behoefte die eerder in de wachtrij voor aanvragen is aangekomen, worden overgeslagen. Zodra de urgentie van de werk belasting wordt toegepast op aanvragen met hogere vergrendelings behoeften. Een aanvraag met een hogere urgentie wordt uitgevoerd vóór de aanvraag met een lagere urgentie.
 
 Kijk eens naar het volgende voorbeeld:
 
@@ -62,8 +62,8 @@ Omdat Q5 mediumrc is, zijn er twee gelijktijdigheids sleuven nodig. Q5 moet wach
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [classificatie werk belasting maken (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)voor meer informatie over het maken van een classificatie.  
+- Zie de [classificatie werk belasting maken (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie over het maken van een classificatie.  
 - Zie [workload classificatie](sql-data-warehouse-workload-classification.md)voor meer informatie over de classificatie van werk belastingen.  
 - Zie de Snelstartgids [werk belasting maken classificatie](quickstart-create-a-workload-classifier-tsql.md) voor het maken van een classificatie van werk belastingen.
 - Zie ook de artikelen over [Workloadurgentie configureren](sql-data-warehouse-how-to-configure-workload-importance.md) en [Workloadbeheer beheren en bewaken](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
-- Zie [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om query's en de toegewezen urgentie weer te geven.
+- Zie [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om query's en de toegewezen urgentie weer te geven.

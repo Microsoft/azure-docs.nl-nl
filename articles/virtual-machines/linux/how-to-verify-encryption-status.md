@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.author: kaib
 ms.date: 03/11/2020
 ms.custom: seodec18, devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 7f51aae39c2cb60d8b60d4fb496f74eadb91b33b
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: 42b1aed2f6c66dbfc0f04759b232855f3b7f0a2a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92487650"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676815"
 ---
 # <a name="verify-encryption-status-for-linux"></a>Versleutelings status voor Linux controleren 
 
@@ -37,7 +37,7 @@ Selecteer in de Azure Portal, in de sectie **extensies** , de Azure Disk Encrypt
 
 In de lijst met extensies ziet u de bijbehorende versie van de Azure Disk Encryption-extensie. Versie 0. x komt overeen met Azure Disk Encryption Dual Pass en versie 1. x komt overeen met Azure Disk Encryption single pass.
 
-U kunt meer informatie krijgen door de uitbrei ding te selecteren en vervolgens **gedetailleerde status weer geven**te selecteren. De gedetailleerde status van het versleutelings proces wordt weer gegeven in JSON-indeling.
+U kunt meer informatie krijgen door de uitbrei ding te selecteren en vervolgens **gedetailleerde status weer geven** te selecteren. De gedetailleerde status van het versleutelings proces wordt weer gegeven in JSON-indeling.
 
 ![De controle van de portal met de koppeling gedetailleerde status weer geven gemarkeerd](./media/disk-encryption/verify-encryption-linux/portal-check-002.png)
 
@@ -70,7 +70,7 @@ U kunt de versleutelings instellingen van elke schijf vastleggen met behulp van 
 ### <a name="single-pass"></a>Eenmalige Pass
 In één keer worden de versleutelings instellingen op elk van de schijven (besturings systeem en gegevens) geplaatst. U kunt de versleutelings instellingen voor een besturingssysteem schijf in één keer vastleggen als volgt:
 
-``` powershell
+```powershell
 $RGNAME = "RGNAME"
 $VMNAME = "VMNAME"
 
@@ -160,7 +160,7 @@ Write-Host "====================================================================
 
 U kunt de *algemene* versleutelings status van een versleutelde virtuele machine valideren met behulp van de volgende Azure cli-opdrachten:
 
-```bash
+```azurecli
 VMNAME="VMNAME"
 RGNAME="RGNAME"
 az vm encryption show --name ${VMNAME} --resource-group ${RGNAME} --query "substatus"
@@ -170,14 +170,14 @@ az vm encryption show --name ${VMNAME} --resource-group ${RGNAME} --query "subst
 ### <a name="single-pass"></a>Eenmalige Pass
 U kunt de versleutelings instellingen voor elke schijf valideren met behulp van de volgende Azure CLI-opdrachten:
 
-```bash
+```azurecli
 az vm encryption show -g ${RGNAME} -n ${VMNAME} --query "disks[*].[name, statuses[*].displayStatus]"  -o table
 ```
 
 ![Instellingen voor gegevens versleuteling](./media/disk-encryption/verify-encryption-linux/data-encryption-settings-2.png)
 
 >[!IMPORTANT]
-> Als de schijf geen versleutelings instellingen heeft, wordt de tekst **schijf niet versleuteld**weer geven.
+> Als de schijf geen versleutelings instellingen heeft, wordt de tekst **schijf niet versleuteld** weer geven.
 
 Gebruik de volgende opdrachten om gedetailleerde status-en versleutelings instellingen op te halen.
 
@@ -203,7 +203,7 @@ done
 
 Gegevens schijven:
 
-```bash
+```azurecli
 RGNAME="RGNAME"
 VMNAME="VMNAME"
 az vm encryption show --name ${VMNAME} --resource-group ${RGNAME} --query "substatus"
@@ -223,7 +223,7 @@ done
 
 ### <a name="dual-pass"></a>Dubbele Pass
 
-``` bash
+```azurecli
 az vm encryption show --name ${VMNAME} --resource-group ${RGNAME} -o table
 ```
 
@@ -276,7 +276,7 @@ Als u de Details voor een specifieke schijf wilt weer geven, moet u het volgende
 
 Met deze opdracht worden alle Id's voor al uw opslag accounts weer gegeven:
 
-```bash
+```azurecli
 az storage account list --query [].[id] -o tsv
 ```
 De Id's van het opslag account worden in de volgende vorm weer gegeven:
@@ -295,7 +295,7 @@ ConnectionString=$(az storage account show-connection-string --ids $id --query c
 ```
 
 Met de volgende opdracht worden alle containers onder een opslag account weer gegeven:
-```bash
+```azurecli
 az storage container list --connection-string $ConnectionString --query [].[name] -o tsv
 ```
 De container die wordt gebruikt voor schijven heet meestal vhd's.
@@ -306,7 +306,7 @@ ContainerName="name of the container"
 ```
 
 Gebruik deze opdracht om alle blobs in een bepaalde container weer te geven:
-```bash 
+```azurecli 
 az storage blob list -c ${ContainerName} --connection-string $ConnectionString --query [].[name] -o tsv
 ```
 Kies de schijf die u wilt doorzoeken en sla de naam op in een variabele:
@@ -314,7 +314,7 @@ Kies de schijf die u wilt doorzoeken en sla de naam op in een variabele:
 DiskName="diskname.vhd"
 ```
 Query uitvoeren op de instellingen voor schijf versleuteling:
-```bash
+```azurecli
 az storage blob show -c ${ContainerName} --connection-string ${ConnectionString} -n ${DiskName} --query metadata.DiskEncryptionSettings
 ```
 
@@ -323,7 +323,7 @@ Controleer of de partities met de gegevens schijf zijn versleuteld (en de bestur
 
 Wanneer een partitie of schijf wordt versleuteld, wordt deze weer gegeven als een type **crypt** . Wanneer het niet is versleuteld, wordt het weer gegeven als **onderdeel/schijf** type.
 
-``` bash
+```bash
 lsblk
 ```
 
@@ -340,15 +340,15 @@ lsblk -o NAME,TYPE,FSTYPE,LABEL,SIZE,RO,MOUNTPOINT
 
 Als extra stap kunt u controleren of er sleutels zijn geladen op de gegevens schijf:
 
-``` bash
+```bash
 cryptsetup luksDump /dev/VGNAME/LVNAME
 ```
 
-``` bash
+```bash
 cryptsetup luksDump /dev/sdd1
 ```
 
-En u kunt controleren welke **DM** -apparaten als **crypt**worden weer gegeven:
+En u kunt controleren welke **DM** -apparaten als **crypt** worden weer gegeven:
 
 ```bash
 dmsetup ls --target crypt

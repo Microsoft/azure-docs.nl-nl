@@ -16,12 +16,12 @@ ms.subservice: hybrid
 ms.reviewer: chmutali
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e4cdda52271bc7b9e9d854e0af181e2c8f22ad9a
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 1f39ef611e2ea15ef3bc3dbfcf09e9624cbcf8b3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98613289"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678218"
 ---
 # <a name="manage-agent-registry-options"></a>Agent Register opties beheren
 
@@ -34,7 +34,7 @@ Bij het uitvoeren van LDAP-bewerkingen op geconfigureerde Active Directory domei
 System.DirectoryServices.Protocols.LdapException: The operation was aborted because the client side timeout limit was exceeded.
 `
 
-LDAP-Zoek bewerkingen kunnen langer duren als het zoek kenmerk niet is geïndexeerd. Als eerste stap, als u de bovenstaande fout ontvangt, controleert u eerst of het kenmerk Search/lookup is [geïndexeerd](https://docs.microsoft.com/windows/win32/ad/indexed-attributes). Als de zoek kenmerken worden geïndexeerd en de fout blijft bestaan, kunt u de time-out voor LDAP-verbindingen verhogen met behulp van de volgende stappen: 
+LDAP-Zoek bewerkingen kunnen langer duren als het zoek kenmerk niet is geïndexeerd. Als eerste stap, als u de bovenstaande fout ontvangt, controleert u eerst of het kenmerk Search/lookup is [geïndexeerd](/windows/win32/ad/indexed-attributes). Als de zoek kenmerken worden geïndexeerd en de fout blijft bestaan, kunt u de time-out voor LDAP-verbindingen verhogen met behulp van de volgende stappen: 
 
 1. Meld u als Administrator aan op de Windows-Server waarop de Azure AD Connect inrichtings agent wordt uitgevoerd.
 1. Gebruik de menu opdracht *uitvoeren* om de REGI ster-editor (regedit.exe) te openen. 
@@ -48,7 +48,7 @@ LDAP-Zoek bewerkingen kunnen langer duren als het zoek kenmerk niet is geïndexe
 1. Als u meerdere inrichtings agenten hebt geïmplementeerd, moet u deze register wijziging Toep assen op alle agents voor consistentie. 
 
 ## <a name="configure-referral-chasing"></a>Referentie Chasing configureren
-Standaard worden [verwijzingen](https://docs.microsoft.com/windows/win32/ad/referrals)niet door de Azure AD Connect-inrichtings agent opsporen. Het is raadzaam om referentie Chasing in te scha kelen, ter ondersteuning van bepaalde HR-inrichtings scenario's voor inkomend verkeer, zoals: 
+Standaard worden [verwijzingen](/windows/win32/ad/referrals)niet door de Azure AD Connect-inrichtings agent opsporen. Het is raadzaam om referentie Chasing in te scha kelen, ter ondersteuning van bepaalde HR-inrichtings scenario's voor inkomend verkeer, zoals: 
 * De uniekheid van de UPN in meerdere domeinen controleren
 * Verwijzingen naar Kruis domein beheer oplossen
 

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 09/05/2019
 ms.author: xiaoyul
 ms.reviewer: nibruno; jrasnick; azure-synapse
-ms.openlocfilehash: 902f0ac96349cf3e30ec12aeda02130afc2b800c
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e137611809e2d2beefecfeaea11b4295bf6ba141
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96460749"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678488"
 ---
 # <a name="performance-tune-with-materialized-views"></a>Prestaties afstemmen met gerealiseerde weer gaven
 
@@ -29,7 +29,7 @@ Een standaard weergave berekent de gegevens telkens wanneer de weer gave wordt g
 
 Met een gerealiseerde weer gave worden de gegevens in de SQL-groep, net als in een tabel, opgeslagen en bewaard.  Telkens wanneer een gerealiseerde weer gave wordt gebruikt, is er geen herberekening nodig.  Daarom kunnen query's die gebruikmaken van alle of subset van de gegevens in gerealiseerde weer gaven, betere prestaties krijgen.  Daarnaast kunt u met query's gebruikmaken van een gerealiseerde weer gave zonder dat hiervoor direct een verwijzing wordt gemaakt. u hoeft geen toepassings code te wijzigen.  
 
-De meeste vereisten voor een standaard weergave zijn nog steeds van toepassing op een gerealiseerde weer gave. Zie [gerealiseerde weer gave maken als selecteren](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor meer informatie over de syntaxis van gerealiseerde weer gaven en andere vereisten.
+De meeste vereisten voor een standaard weergave zijn nog steeds van toepassing op een gerealiseerde weer gave. Zie [gerealiseerde weer gave maken als selecteren](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor meer informatie over de syntaxis van gerealiseerde weer gaven en andere vereisten.
 
 | Vergelijking                     | Weergave                                         | Gerealiseerde weergave
 |:-------------------------------|:---------------------------------------------|:--------------------------------------------------------------|
@@ -55,8 +55,8 @@ De gerealiseerde weer gaven die in de SQL-groep zijn geïmplementeerd, bieden oo
 Vergelijken met andere data warehouse-providers, bieden de gerealiseerde weer gaven die in azure Synapse Analytics worden geïmplementeerd ook de volgende extra voor delen:
 
 - Automatische en synchrone gegevens vernieuwing met gegevens wijzigingen in basis tabellen. Er is geen gebruikers actie vereist.
-- Ondersteuning voor uitgebreide statistische functies. Zie [gerealiseerde weer gave maken als Select (Transact-SQL)](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
-- De ondersteuning voor query-specifieke gerealiseerde weergave aanbeveling.  Zie [uitleggen (Transact-SQL)](/sql/t-sql/queries/explain-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Ondersteuning voor uitgebreide statistische functies. Zie [gerealiseerde weer gave maken als Select (Transact-SQL)](/sql/t-sql/statements/create-materialized-view-as-select-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+- De ondersteuning voor query-specifieke gerealiseerde weergave aanbeveling.  Zie [uitleggen (Transact-SQL)](/sql/t-sql/queries/explain-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ## <a name="common-scenarios"></a>Algemene scenario's  
 

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 09/07/2020
 ms.author: alkohli
-ms.openlocfilehash: 8ea0c27fdd64bae1e6fe9443df76c86e0eb89a75
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
-ms.translationtype: HT
+ms.openlocfilehash: 54a4a938be18d39993652cecb87b3604e268fcef
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97762912"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678950"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>VM's implementeren op uw GPU-apparaat voor Azure Stack Edge Pro met behulp van Azure CLI en Python
 
@@ -123,7 +123,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
     Hier volgt een voorbeeld van de uitvoer van de bovenstaande opdracht:
 
-    ```powershell
+    ```output
     PS C:\windows\system32> az --version
     azure-cli                         2.0.80
     
@@ -147,7 +147,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
     PS C:\windows\system32>
     ```
 
-    Als u Azure CLI nog niet hebt, kunt u Azure CLI downloaden en [installeren in Windows](/cli/azure/install-azure-cli-windows?view=azure-cli-latest). U kunt Azure CLI uitvoeren via de Windows-opdrachtprompt of via Windows PowerShell.
+    Als u Azure CLI nog niet hebt, kunt u Azure CLI downloaden en [installeren in Windows](/cli/azure/install-azure-cli-windows). U kunt Azure CLI uitvoeren via de Windows-opdrachtprompt of via Windows PowerShell.
 
 2. Noteer de locatie van Python voor de CLI. U hebt deze nodig om de locatie van het basisvertrouwensarchief voor certificaten voor Azure CLI te bepalen.
 
@@ -171,7 +171,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
     In de volgende voorbeelduitvoer ziet u de installatie van Haikunator:
 
-    ```powershell
+    ```output
     PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2> .\python.exe -m pip install haikunator
 
     Collecting haikunator
@@ -187,7 +187,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
     In de volgende voorbeelduitvoer ziet u de installatie van pip voor `msrestazure`: 
     
-    ```powershell
+    ```output
     PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2> .\python.exe -m pip install msrestazure==0.6.2
     Requirement already satisfied: msrestazure==0.6.2 in c:\program files (x86)\microsoft sdks\azure\cli2\lib\site-packages (0.6.2)
     Requirement already satisfied: msrest<2.0.0,>=0.6.0 in c:\program files (x86)\microsoft sdks\azure\cli2\lib\site-packages (from msrestazure==0.6.2) (0.6.10)
@@ -211,7 +211,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
     
     De cmdlet retourneert de certificaatlocatie, zoals hieronder wordt weergegeven:  
         
-    ```powershell
+    ```output
     PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2> .\python -c "import certifi; print(certifi.where())"
     C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\lib\site-packages\certifi\cacert.pem
     PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2>
@@ -323,7 +323,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
    Hier volgt een voorbeeld van de uitvoer van een geslaagde aanmelding na het invoeren van het wachtwoord:  
    
-   ```powershell
+   ```output
    PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2> az login -u EdgeARMuser
    Password:
    [

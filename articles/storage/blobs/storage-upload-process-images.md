@@ -9,12 +9,12 @@ ms.date: 06/24/2020
 ms.author: mhopkins
 ms.reviewer: dineshm
 ms.custom: devx-track-js, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: c20c78cb3c946c666b1640ccac6f86c9b52387ea
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: b50aadfa16ed95bacb5247187c15489a1b017d39
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94843865"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676571"
 ---
 # <a name="tutorial-upload-image-data-in-the-cloud-with-azure-storage"></a>Zelfstudie: Afbeeldingsgegevens uploaden in de cloud met Azure Storage
 
@@ -55,7 +55,7 @@ Een resourcegroep maken met de opdracht [az group create](/cli/azure/group). Een
 
 In het volgende voorbeeld wordt een resourcegroep met de naam `myResourceGroup` gemaakt.
 
-```bash
+```azurecli
 az group create --name myResourceGroup --location southeastasia
 ```
 
@@ -72,7 +72,7 @@ Met het voorbeeld worden afbeeldingen geüpload naar een blobcontainer in een Az
 
 Vervang de tijdelijke aanduiding `<blob_storage_account>` in de volgende opdracht door uw eigen, wereldwijd unieke naam voor het Blob-opslagaccount.
 
-```bash
+```azurecli
 blobStorageAccount="<blob_storage_account>"
 
 az storage account create --name $blobStorageAccount --location southeastasia \
@@ -130,7 +130,7 @@ Maak een App Service-plan met de opdracht [az appservice plan create](/cli/azure
 
 In het volgende voorbeeld wordt een App Service-plan gemaakt met de naam `myAppServicePlan` en de prijscategorie **Gratis**:
 
-```bash
+```azurecli
 az appservice plan create --name myAppServicePlan --resource-group myResourceGroup --sku Free
 ```
 
@@ -144,7 +144,7 @@ De web-app biedt een hostingruimte voor de code van de voorbeeld-app. De ruimte 
 
 Vervang `<web_app>` in de volgende opdracht door een unieke naam. Geldige tekens zijn `a-z`, `0-9` en `-`. Als `<web_app>` niet uniek is, krijgt u het volgende foutbericht: *Er bestaat al een website met de naam `<web_app>`.* De standaard-URL van de web-app is `https://<web_app>.azurewebsites.net`.  
 
-```bash
+```azurecli
 webapp="<web_app>"
 
 az webapp create --name $webapp --resource-group myResourceGroup --plan myAppServicePlan
@@ -164,7 +164,7 @@ App Service ondersteunt diverse manieren om inhoud in een web-app te implementer
 
 Het voorbeeldproject bevat een [ASP.NET MVC](https://www.asp.net/mvc)-app. De app accepteert een afbeelding, slaat deze op in een opslagaccount en geeft afbeeldingen weer vanuit een miniaturencontainer. De web-app maakt gebruik van de naamruimten [Azure.Storage](/dotnet/api/azure.storage), [Azure.Storage.Blobs](/dotnet/api/azure.storage.blobs) en [Azure.Storage.Blobs.Models](/dotnet/api/azure.storage.blobs.models) voor interactie met de Azure Storage-service.
 
-```bash
+```azurecli
 az webapp deployment source config --name $webapp --resource-group myResourceGroup \
   --branch master --manual-integration \
   --repo-url https://github.com/Azure-Samples/storage-blob-upload-from-webapp
@@ -180,7 +180,7 @@ az webapp deployment source config --name $webapp --resource-group myResourceGro
 
 App Service ondersteunt diverse manieren om inhoud in een web-app te implementeren. In deze zelfstudie implementeert u de web-app vanaf een [openbare GitHub-voorbeeldopslagplaats](https://github.com/Azure-Samples/azure-sdk-for-js-storage-blob-stream-nodejs) (Engelstalig). Configureer GitHub-implementatie naar de webtoepassing met de opdracht [az webapp deployment source config](/cli/azure/webapp/deployment/source).
 
-```bash
+```azurecli
 az webapp deployment source config --name $webapp --resource-group myResourceGroup \
   --branch master --manual-integration \
   --repo-url https://github.com/Azure-Samples/azure-sdk-for-js-storage-blob-stream-nodejs
@@ -200,7 +200,7 @@ az webapp deployment source config --name $webapp --resource-group myResourceGro
 
 De voorbeeld-web-app gebruikt de [Azure Storage Api's voor .NET](/dotnet/api/overview/azure/storage) om installatiekopieën te uploaden. Referenties van het opslagaccount worden ingesteld in de app-instellingen voor de web-app. Voeg app-instellingen toe aan de geïmplementeerde app met de opdracht [az webapp config appsettings set](/cli/azure/webapp/config/appsettings).
 
-```bash
+```azurecli
 az webapp config appsettings set --name $webapp --resource-group myResourceGroup \
   --settings AzureStorageConfig__AccountName=$blobStorageAccount \
     AzureStorageConfig__ImageContainer=images \
@@ -220,7 +220,7 @@ az webapp config appsettings set --name $webapp --resource-group myResourceGroup
 
 De voorbeeld-web-app gebruikt de [Azure Storage-clientbibliotheek voor JavaScript](https://github.com/Azure/azure-sdk-for-js/tree/master/sdk/storage) om installatiekopieën te uploaden. Referenties van het opslagaccount worden ingesteld in de app-instellingen voor de web-app. Voeg app-instellingen toe aan de geïmplementeerde app met de opdracht [az webapp config appsettings set](/cli/azure/webapp/config/appsettings).
 
-```bash
+```azurecli
 az webapp config appsettings set --name $webapp --resource-group myResourceGroup \
   --settings AZURE_STORAGE_ACCOUNT_NAME=$blobStorageAccount \
     AZURE_STORAGE_ACCOUNT_ACCESS_KEY=$blobStorageAccountKey

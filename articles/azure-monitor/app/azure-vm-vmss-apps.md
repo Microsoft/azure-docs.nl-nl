@@ -3,12 +3,12 @@ title: Prestaties bewaken op virtuele machines van Azure-Azure-toepassing Insigh
 description: Bewaking van toepassings prestaties voor Azure VM en virtuele-machine schaal sets van Azure. Grafiek belasting en respons tijd, afhankelijkheids informatie en waarschuwingen instellen voor prestaties.
 ms.topic: conceptual
 ms.date: 08/26/2019
-ms.openlocfilehash: 6bc70b3d9a1a7a2d3fffb71ad28f2cf64cbd323b
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: ed56bc88a9d2e8a9490331605cd4a72aef6930db
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461728"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677940"
 ---
 # <a name="deploy-the-azure-monitor-application-insights-agent-on-azure-virtual-machines-and-azure-virtual-machine-scale-sets"></a>De Azure Monitor Application Insights-agent implementeren op virtuele machines van Azure en virtuele-machine schaal sets van Azure
 
@@ -17,7 +17,7 @@ Het inschakelen van bewaking op uw .NET-webtoepassingen die worden uitgevoerd op
 Dit artikel helpt u bij het inschakelen van Application Insights bewaking met behulp van de Application Insights agent en voorziet in voorlopige richt lijnen voor het automatiseren van het proces voor grootschalige implementaties.
 
 > [!IMPORTANT]
-> Azure-toepassing Insights-agent voor ASP.NET-toepassingen die worden uitgevoerd op **virtuele machines in Azure en VMSS** , is momenteel beschikbaar als open bare preview. Voor het bewaken van uw ASP.Net-toepassingen die **on-premises** worden uitgevoerd, gebruikt u de [Azure-toepassing Insights-agent voor on-premises servers](https://docs.microsoft.com/azure/azure-monitor/app/status-monitor-v2-overview), die algemeen beschikbaar en volledig wordt ondersteund.
+> Azure-toepassing Insights-agent voor ASP.NET-toepassingen die worden uitgevoerd op **virtuele machines in Azure en VMSS** , is momenteel beschikbaar als open bare preview. Voor het bewaken van uw ASP.Net-toepassingen die **on-premises** worden uitgevoerd, gebruikt u de [Azure-toepassing Insights-agent voor on-premises servers](./status-monitor-v2-overview.md), die algemeen beschikbaar en volledig wordt ondersteund.
 > De preview-versie voor virtuele Azure-machines en VMSS wordt zonder een service overeenkomst aangestuurd en wij raden deze niet aan voor productie werkbelastingen. Sommige functies worden mogelijk niet ondersteund en andere hebben mogelijk beperkte mogelijkheden.
 > Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 

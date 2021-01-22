@@ -7,12 +7,12 @@ ms.date: 12/11/2020
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: ece9f62e64eb64b1f34af46b42d57ec583f8f214
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 43c89b0fac08bf9f2c72f885fbf4788371876b17
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97675874"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678573"
 ---
 # <a name="build-deploy-and-extend-the-iot-plug-and-play-bridge"></a>De IoT Plug en Play-brug bouwen, implementeren en uitbreiden
 
@@ -173,8 +173,8 @@ In het [Leesmij-bestand](https://github.com/Azure/iot-plug-and-play-bridge/blob/
 
 | Platform | Ondersteund |
 | :-----------: | :-----------: |
-| Windows |  Ja |
-| Linux | Ja |
+| Windows |  Yes |
+| Linux | Yes |
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -188,7 +188,7 @@ Als u deze sectie wilt volt ooien, moet u de volgende software installeren op uw
 
 Kloon de [IoT Plug en Play Bridge](https://github.com/Azure/iot-plug-and-play-bridge) -opslag plaats naar uw lokale computer:
 
-```cmd/sh
+```console
 git clone https://github.com/Azure/iot-plug-and-play-bridge.git
 
 cd iot-plug-and-play-bridge
@@ -205,7 +205,7 @@ Het duurt enkele minuten voordat de vorige opdracht is uitgevoerd.
 
 Open de **opdracht prompt voor ontwikkel aars voor VS 2019** en navigeer naar de map met de opslag plaats die u hebt gekloond en voer de volgende opdrachten uit:
 
-```cmd
+```console
 cd pnpbridge\scripts\windows
 
 build.cmd
@@ -279,7 +279,7 @@ Bekijk de rest van het configuratie bestand om te zien welke interface onderdele
 
 Start de Bridge door het uit te voeren vanaf de opdracht prompt:
 
-```cmd
+```console
 cd iot-plug-and-play-bridge\pnpbridge\cmake\pnpbridge_x86\src\pnpbridge\samples\console
 
 Debug\pnpbridge_bin.exe
@@ -296,7 +296,7 @@ Debug\pnpbridge_bin.exe
 | Platform | Ondersteund |
 | :-----------: | :-----------: |
 | Windows |  Nee |
-| Linux | Ja |
+| Linux | Yes |
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -330,13 +330,13 @@ Met de opdrachten in dit onderwerp maakt u een IoT Edge apparaat dat wordt uitge
 
 Als u een IoT Edge apparaatregistratie in uw IoT-hub wilt maken, voert u de volgende opdrachten uit in uw WSL 2-omgeving. Gebruik de `az login` opdracht om u aan te melden bij uw Azure-abonnement:
 
-```bash
+```azurecli
 az iot hub device-identity create --device-id bridge-edge-device --edge-enabled true --hub-name {your IoT hub name}
 ```
 
 Voer de volgende opdrachten uit om een virtuele Azure-machine te maken waarop de IoT Edge-runtime is geïnstalleerd. Werk de tijdelijke aanduidingen bij met de juiste waarden:
 
-```bash
+```azurecli
 az group create --name bridge-edge-resources --location eastus
 az deployment group create \
 --resource-group bridge-edge-resources \
@@ -350,7 +350,7 @@ az deployment group create \
 
 U hebt nu de IoT Edge runtime die wordt uitgevoerd op een virtuele machine. U kunt de volgende opdracht gebruiken om te controleren of de **$edgeAgent** en **$edgeHub** worden uitgevoerd op het apparaat:
 
-```bash
+```azurecli
 az iot hub module-identity list --device-id bridge-edge-device -o table --hub-name {your IoT hub name}
 ```
 
@@ -405,7 +405,7 @@ Een IoT Edge apparaat downloadt de module-installatie kopieën uit een container
 
 Maak een Azure-container register in de resource groep **Bridge-Edge-resources** . Schakel vervolgens beheerders toegang in voor het container register en ontvang de referenties die uw IoT Edge apparaat nodig heeft om de module installatie kopieën te downloaden:
 
-```bash
+```azurecli
 az acr create -g bridge-edge-resources --sku Basic -n {your container registry name}
 az acr update --admin-enabled true -n {your container registry name}
 az acr credential show -n {your container registry name}
@@ -517,7 +517,7 @@ In VS code klikt u met de rechter muisknop op de *pnpbridge/config/deployment.am
 
 Als u de status van de modules op uw apparaat wilt weer geven, voert u de volgende opdracht uit:
 
-```bash
+```azurecli
 az iot hub module-identity list --device-id bridge-edge-device -o table --hub-name {your IoT hub name}
 ```
 
@@ -527,7 +527,7 @@ De lijst met actieve modules bevat nu de **ModulePnpBridge** -module die is geco
 
 Als u de virtuele machine en het container register van uw Azure-abonnement wilt verwijderen, voert u de volgende opdracht uit:
 
-```bash
+```azurecli
 az group delete -n bridge-edge-resources
 ```
 

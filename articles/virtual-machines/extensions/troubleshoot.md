@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 03/29/2016
 ms.author: kundanap
-ms.openlocfilehash: b8b7a03d5176f5dbd8500b5ff9044c2f22ecbfc0
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 343ddb109de41a0959533b16b11762841b5b1105
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127138"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676756"
 ---
 # <a name="troubleshooting-azure-windows-vm-extension-failures"></a>Problemen met extensie fouten van Azure Windows VM oplossen
 [!INCLUDE [virtual-machines-common-extensions-troubleshoot](../../../includes/virtual-machines-common-extensions-troubleshoot.md)]
@@ -85,7 +85,7 @@ Het certificaat wordt automatisch opnieuw gegenereerd door de Windows-gast agent
 - Klik met de rechter muisknop en selecteer taak beëindigen. Het proces wordt automatisch opnieuw gestart
 
 
-U kunt ook een nieuwe GoalState naar de virtuele machine activeren door een ' VM reapply ' uit te voeren. VM [opnieuw Toep assen](https://docs.microsoft.com/rest/api/compute/virtualmachines/reapply) is een API die is geïntroduceerd in 2020 om de status van een virtuele machine opnieuw toe te passen. We raden u aan dit op een bepaald moment te doen wanneer u een korte uitval tijd van de VM kunt verdragen. Als zichzelf opnieuw wordt toegepast, is het niet mogelijk om een VM opnieuw op te starten en de meeste keren dat opnieuw wordt aangeroepen, wordt de VM niet opnieuw opgestart. er is een zeer klein risico dat een andere in behandeling zijnde update voor het VM-model wordt toegepast wanneer het opnieuw Toep assen van triggers een nieuwe doel status heeft en die andere wijziging kan vereisen dat de computer opnieuw wordt opgestart. 
+U kunt ook een nieuwe GoalState naar de virtuele machine activeren door een ' VM reapply ' uit te voeren. VM [opnieuw Toep assen](/rest/api/compute/virtualmachines/reapply) is een API die is geïntroduceerd in 2020 om de status van een virtuele machine opnieuw toe te passen. We raden u aan dit op een bepaald moment te doen wanneer u een korte uitval tijd van de VM kunt verdragen. Als zichzelf opnieuw wordt toegepast, is het niet mogelijk om een VM opnieuw op te starten en de meeste keren dat opnieuw wordt aangeroepen, wordt de VM niet opnieuw opgestart. er is een zeer klein risico dat een andere in behandeling zijnde update voor het VM-model wordt toegepast wanneer het opnieuw Toep assen van triggers een nieuwe doel status heeft en die andere wijziging kan vereisen dat de computer opnieuw wordt opgestart. 
 
 Azure Portal:
 

@@ -10,12 +10,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: kevin
 ms.reviewer: igorstan
-ms.openlocfilehash: 58e14ab04084871dfd5de400cac0c38401855d0c
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: a89fa72db3deaec12a9073233f861aa6835288a5
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120254"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678352"
 ---
 # <a name="design-a-polybase-data-loading-strategy-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Een polybase data-strategie voor het laden van gegevens ontwerpen voor een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -50,7 +50,7 @@ Het ophalen van gegevens uit uw bron systeem is afhankelijk van de opslag locati
 
 Poly base laadt gegevens van UTF-8-en UTF-16-gecodeerde tekst bestanden met scheidings tekens. Naast de tekst bestanden met scheidings tekens, wordt deze geladen vanuit de Hadoop-bestands indelingen RC-bestand, ORC en Parquet. Poly Base kan ook gegevens laden uit gzip-en Snappy gecomprimeerde bestanden. Poly Base ondersteunt momenteel geen uitgebreide ASCII-indeling met een vaste breedte en geneste indelingen zoals WinZip, JSON en XML.
 
-Als u exporteert vanaf SQL Server, kunt u het [opdracht regel programma BCP](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) gebruiken om de gegevens te exporteren naar tekst bestanden met scheidings tekens. De Parquet voor Azure Synapse Analytics-gegevens type toewijzing is als volgt:
+Als u exporteert vanaf SQL Server, kunt u het [opdracht regel programma BCP](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) gebruiken om de gegevens te exporteren naar tekst bestanden met scheidings tekens. De Parquet voor Azure Synapse Analytics-gegevens type toewijzing is als volgt:
 
 | **Parquet-gegevens type** |                      **SQL-gegevens type**                       |
 | :-------------------: | :----------------------------------------------------------: |
@@ -97,9 +97,9 @@ Voordat u gegevens kunt laden, moet u externe tabellen definiëren in uw data wa
 
 Als u externe tabellen definieert, moet u de gegevens bron, de indeling van de tekst bestanden en de tabel definities opgeven. Hieronder vindt u de functies van de T-SQL-syntaxis die u nodig hebt:
 
-- [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [CREATE EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+- [CREATE EXTERNAL FILE FORMAT](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+- [CREATE EXTERNAL TABLE](/sql/t-sql/statements/create-external-table-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
 
 ### <a name="format-text-files"></a>Tekst bestanden opmaken
 
@@ -108,7 +108,7 @@ De tekst bestanden opmaken:
 
 - Als uw gegevens afkomstig zijn uit een niet-relationele bron, moet u deze omzetten in rijen en kolommen. Of de gegevens afkomstig zijn uit een relationele of niet-relationele bron, dat de gegevens moeten worden getransformeerd om te worden uitgelijnd met de kolom definities voor de tabel waarin u de gegevens wilt laden.
 - Gegevens in het tekst bestand opmaken om uit te lijnen met de kolommen en gegevens typen in de doel tabel van de SQL-pool. Een onjuiste uitlijning tussen gegevens typen in de externe tekst bestanden en de Data Warehouse tabel zorgt ervoor dat rijen worden afgewezen tijdens het laden.
-- Scheid velden in het tekst bestand met een terminator.  Zorg ervoor dat u een teken of een teken reeks gebruikt die niet in uw bron gegevens is gevonden. Gebruik de Terminator die u hebt opgegeven met [externe BESTANDS indeling maken](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest).
+- Scheid velden in het tekst bestand met een terminator.  Zorg ervoor dat u een teken of een teken reeks gebruikt die niet in uw bron gegevens is gevonden. Gebruik de Terminator die u hebt opgegeven met [externe BESTANDS indeling maken](/sql/t-sql/statements/create-external-file-format-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ## <a name="4-load-the-data-into-dedicated-sql-pool-staging-tables-using-polybase"></a>4. Laad de gegevens in speciale faserings tabellen van de SQL-groep met poly base
 
@@ -119,13 +119,13 @@ Het is best practice om gegevens in een faserings tabel te laden. Met faserings 
 Als u gegevens wilt laden met poly Base, kunt u een van de volgende laad opties gebruiken:
 
 - [Poly Base met T-SQL](../sql-data-warehouse/load-data-from-azure-blob-storage-using-copy.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) werkt goed als uw gegevens zich in Azure Blob storage of Azure data Lake Store bevinden. Het biedt u de meeste controle over het laad proces, maar u moet ook externe gegevens objecten definiëren. Met de andere methoden worden deze objecten achter de schermen gedefinieerd wanneer u bron tabellen aan doel tabellen toewijst.  U kunt met behulp van Azure Data Factory-, SSIS-of Azure-functies voor het organiseren van T-SQL-belasting.
-- [Poly Base met SSIS](/sql/integration-services/load-data-to-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) werkt goed als uw bron gegevens zich in SQL Server bevinden. SSIS definieert de bron-naar-doel tabel toewijzingen en organiseert ook de belasting. Als u al SSIS-pakketten hebt, kunt u de pakketten wijzigen om met de nieuwe Data Warehouse-bestemming te werken.
+- [Poly Base met SSIS](/sql/integration-services/load-data-to-sql-data-warehouse?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) werkt goed als uw bron gegevens zich in SQL Server bevinden. SSIS definieert de bron-naar-doel tabel toewijzingen en organiseert ook de belasting. Als u al SSIS-pakketten hebt, kunt u de pakketten wijzigen om met de nieuwe Data Warehouse-bestemming te werken.
 - [Poly Base met Azure Data Factory (ADF)](../../data-factory/load-azure-sql-data-warehouse.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) is een andere Orchestration-tool.  Hierin worden een pijp lijn en plannings taken gedefinieerd.
 - [Poly Base met Azure Databricks](/azure/databricks/scenarios/databricks-extract-load-sql-data-warehouse?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fsynapse-analytics%2ftoc.json) gegevens overdraagt van een Azure Synapse Analytics-tabel naar een Databricks data frame en/of schrijft gegevens van een Databricks data frame naar een Azure Synapse Analytics-tabel met poly base.
 
 ### <a name="non-polybase-loading-options"></a>Opties voor het laden van niet-poly base
 
-Als uw gegevens niet compatibel zijn met poly Base, kunt u [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) of de [SQLBulkCopy-API](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)gebruiken. BCP wordt rechtstreeks naar een toegewezen SQL-groep geladen zonder Azure Blob-opslag te passeren en is uitsluitend bedoeld voor kleine belastingen. Houd er rekening mee dat de belasting prestaties van deze opties aanzienlijk langzamer zijn dan poly base.
+Als uw gegevens niet compatibel zijn met poly Base, kunt u [bcp](/sql/tools/bcp-utility?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) of de [SQLBulkCopy-API](/dotnet/api/system.data.sqlclient.sqlbulkcopy?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json)gebruiken. BCP wordt rechtstreeks naar een toegewezen SQL-groep geladen zonder Azure Blob-opslag te passeren en is uitsluitend bedoeld voor kleine belastingen. Houd er rekening mee dat de belasting prestaties van deze opties aanzienlijk langzamer zijn dan poly base.
 
 ## <a name="5-transform-the-data"></a>5. de gegevens transformeren
 

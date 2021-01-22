@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: c537d3109f770c1ce77be6495bdacd24270dad5f
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 0e87451531750e502f67dc30e6fbd26c8c944d22
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98119591"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678590"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-architecture-in-azure-synapse-analytics"></a>Exclusieve architectuur van een SQL-groep (voorheen SQL DW) in azure Synapse Analytics
 
@@ -61,7 +61,7 @@ Het beheerknooppunt is het brein van de architectuur. Het is de front-end met in
 
 De rekenknooppunten leveren de rekenkracht. Distributies worden toegewezen aan reken knooppunten voor verwerking. Wanneer u betaalt voor meer reken bronnen, worden distributies opnieuw toegewezen aan beschik bare reken knooppunten. Het aantal Compute-knoop punten ligt tussen 1 en 60, en wordt bepaald door het service niveau voor Synapse SQL.
 
-Elk Compute-knoop punt heeft een knoop punt-ID die zichtbaar is in systeem weergaven. U kunt de ID van het reken knooppunt zien door te zoeken naar de node_id kolom in systeem weergaven waarvan de namen beginnen met sys.pdw_nodes. Zie [Synapse SQL System views](/sql/relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)(Engelstalig) voor een lijst met deze systeem weergaven.
+Elk Compute-knoop punt heeft een knoop punt-ID die zichtbaar is in systeem weergaven. U kunt de ID van het reken knooppunt zien door te zoeken naar de node_id kolom in systeem weergaven waarvan de namen beginnen met sys.pdw_nodes. Zie [Synapse SQL System views](/sql/relational-databases/system-catalog-views/sql-data-warehouse-and-parallel-data-warehouse-catalog-views?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)(Engelstalig) voor een lijst met deze systeem weergaven.
 
 ### <a name="data-movement-service"></a>Data Movement Service
 

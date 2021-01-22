@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: a63cd95fdcee7c9ed0c49ba41b4d7e7e6de8f4bf
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: e757c8047bf6d634ab6d7cbc8963087c0eccc46a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96458729"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677365"
 ---
 # <a name="quickstart-create-a-workload-classifier-using-t-sql"></a>Quickstart: Een workloadclassificatie maken met T-SQL
 
@@ -39,7 +39,7 @@ Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 ## <a name="create-login-for-theceo"></a>Aanmelding maken voor TheCEO
 
-Maak een SQL Server-verificatieaanmelding in de `master` database met behulp van [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) voor 'TheCEO'.
+Maak een SQL Server-verificatieaanmelding in de `master` database met behulp van [CREATE LOGIN](/sql/t-sql/statements/create-login-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor 'TheCEO'.
 
 ```sql
 IF NOT EXISTS (SELECT * FROM sys.sql_logins WHERE name = 'TheCEO')
@@ -51,7 +51,7 @@ END
 
 ## <a name="create-user"></a>Gebruiker maken
 
-[Maak gebruiker](/sql/t-sql/statements/create-user-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) 'TheCEO' in mySampleDataWarehouse
+[Maak gebruiker](/sql/t-sql/statements/create-user-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) 'TheCEO' in mySampleDataWarehouse
 
 ```sql
 IF NOT EXISTS (SELECT * FROM sys.database_principals WHERE name = 'THECEO')
@@ -63,7 +63,7 @@ END
 
 ## <a name="create-a-workload-classifier"></a>Een werkbelastingclassficatie maken
 
-Maak een [workloadclassificatie](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) met hoge urgentie voor ‘TheCEO’.
+Maak een [workloadclassificatie](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) met hoge urgentie voor ‘TheCEO’.
 
 ```sql
 DROP WORKLOAD CLASSIFIER [wgcTheCEO];
@@ -104,6 +104,6 @@ Volg deze stappen om de resources op te schonen.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- U hebt nu een workloadclassificatie gemaakt. Voer enkele query's uit als TheCEO om te zien hoe ze presteren. Zie [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om query's en de toegewezen urgentie weer te geven.
+- U hebt nu een workloadclassificatie gemaakt. Voer enkele query's uit als TheCEO om te zien hoe ze presteren. Zie [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om query's en de toegewezen urgentie weer te geven.
 - Zie [Workloadurgentie](sql-data-warehouse-workload-importance.md) en [Workloadclassificatie](sql-data-warehouse-workload-classification.md)voor meer informatie over het beheer van de workload van toegewezen SQL-pools.
 - Zie ook de artikelen over [Workloadurgentie configureren](sql-data-warehouse-how-to-configure-workload-importance.md) en [Workloadbeheer beheren en bewaken](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).

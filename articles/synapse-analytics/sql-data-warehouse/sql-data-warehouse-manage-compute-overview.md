@@ -11,12 +11,12 @@ ms.date: 11/12/2019
 ms.author: rortloff
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 300759b4ab6f806c02e748ff4c9a63a6a772bff4
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 4a2ce18f4a02ccaadf66a96049b00f3837b927e4
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461080"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677034"
 ---
 # <a name="manage-compute-for-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Compute voor exclusieve SQL-groep (voorheen SQL DW) beheren in azure Synapse Analytics
 
@@ -122,7 +122,7 @@ Zie de Snelstartgids [Power shell](quickstart-scale-compute-powershell.md#check-
 
 ## <a name="permissions"></a>Machtigingen
 
-Voor het schalen van de toegewezen SQL-groep (voorheen SQL DW) zijn de machtigingen vereist die worden beschreven in [ALTER data base](/sql/t-sql/statements/alter-database-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).  Voor onderbreken en hervatten is de machtiging [SQL DB-Inzender](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#sql-db-contributor) vereist, met name micro soft. SQL/servers/data bases/action.
+Voor het schalen van de toegewezen SQL-groep (voorheen SQL DW) zijn de machtigingen vereist die worden beschreven in [ALTER data base](/sql/t-sql/statements/alter-database-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).  Voor onderbreken en hervatten is de machtiging [SQL DB-Inzender](../../role-based-access-control/built-in-roles.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json#sql-db-contributor) vereist, met name micro soft. SQL/servers/data bases/action.
 
 ## <a name="next-steps"></a>Volgende stappen
 

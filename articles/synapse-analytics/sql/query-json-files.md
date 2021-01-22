@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/20/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 5703e4ac3d4a545041c7d258f0b1f0e7c79a33b5
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8dc07a3aa954a74ba594eb99da1ea3ee59610c9b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462613"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678318"
 ---
 # <a name="query-json-files-using-serverless-sql-pool-in-azure-synapse-analytics"></a>Een query uitvoeren op JSON-bestanden met serverloze SQL-groep in azure Synapse Analytics
 
@@ -126,7 +126,7 @@ De query voorbeelden lezen *JSON* -bestanden met documenten met de volgende stru
 
 ### <a name="query-json-files-using-json_value"></a>Een query uitvoeren op JSON-bestanden met JSON_VALUE
 
-De onderstaande query laat zien hoe u [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) kunt gebruiken om scalaire waarden (titel, uitgever) op te halen uit een JSON-document:
+De onderstaande query laat zien hoe u [JSON_VALUE](/sql/t-sql/functions/json-value-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) kunt gebruiken om scalaire waarden (titel, uitgever) op te halen uit een JSON-document:
 
 ```sql
 select
@@ -146,7 +146,7 @@ order by JSON_VALUE(doc, '$.geo_id') desc
 
 ### <a name="query-json-files-using-openjson"></a>Een query uitvoeren op JSON-bestanden met openjson
 
-De volgende query maakt gebruik van [openjson](/sql/t-sql/functions/openjson-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest). Er worden COVID statistieken opgehaald die zijn gerapporteerd in Servië:
+De volgende query maakt gebruik van [openjson](/sql/t-sql/functions/openjson-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Er worden COVID statistieken opgehaald die zijn gerapporteerd in Servië:
 
 ```sql
 select

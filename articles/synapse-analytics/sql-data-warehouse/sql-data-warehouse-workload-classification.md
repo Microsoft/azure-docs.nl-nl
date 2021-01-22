@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: bf19e2d1674d0a0c2102280b28b5549505c1dfab
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 7cd3619aa60f1bd8ac13ff767857b44348989285
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447760"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98678420"
 ---
 # <a name="workload-classification-for-dedicated-sql-pool-in-azure-synapse-analytics"></a>Werk belasting classificatie voor toegewezen SQL-groep in azure Synapse Analytics
 
@@ -36,7 +36,7 @@ Niet alle instructies worden geclassificeerd omdat ze geen bronnen nodig hebben 
 
 ## <a name="classification-process"></a>Classificatie proces
 
-De classificatie voor de toegewezen SQL-groep wordt vandaag bereikt door gebruikers toe te wijzen aan een rol waaraan een bijbehorende resource klasse is toegewezen met behulp van [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). De mogelijkheid om aanvragen te kenmerken buiten een aanmelding bij een resource klasse is beperkt met deze mogelijkheid. Een rijkere methode voor classificatie is nu beschikbaar met de [classificatie syntaxis CREATE WORKLOAD](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .  Met deze syntaxis kunnen gebruikers van een toegewezen SQL-groep prioriteit toewijzen en hoeveel systeem bronnen worden toegewezen aan een aanvraag via de `workload_group` para meter.
+De classificatie voor de toegewezen SQL-groep wordt vandaag bereikt door gebruikers toe te wijzen aan een rol waaraan een bijbehorende resource klasse is toegewezen met behulp van [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). De mogelijkheid om aanvragen te kenmerken buiten een aanmelding bij een resource klasse is beperkt met deze mogelijkheid. Een rijkere methode voor classificatie is nu beschikbaar met de [classificatie syntaxis CREATE WORKLOAD](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .  Met deze syntaxis kunnen gebruikers van een toegewezen SQL-groep prioriteit toewijzen en hoeveel systeem bronnen worden toegewezen aan een aanvraag via de `workload_group` para meter.
 
 > [!NOTE]
 > De classificatie wordt per aanvraag geëvalueerd. Meerdere aanvragen in één sessie kunnen op verschillende manieren worden geclassificeerd.
@@ -76,7 +76,7 @@ Denkt u zich het volgende scenario eens in:
 - Als u de nieuwe classificatie syntaxis wilt testen, heeft de databaserol DBARole (waarvan DBAUser lid is), een classificatie gemaakt waarmee ze worden toegewezen aan mediumrc en hoge urgentie.
 - Wanneer DBAUser zich aanmeldt en een query uitvoert, wordt de query toegewezen aan largerc. Omdat een gebruiker voor rang heeft op een rollidmaatschap.
 
-Om het oplossen van problemen met een fout te vereenvoudigen, raden we u aan om resource klasse-roltoewijzingen te verwijderen tijdens het maken van de werk belasting classificaties.  De onderstaande code retourneert bestaande lidmaatschappen van resource klassen.  Voer [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) uit voor elke lidnaam die wordt geretourneerd door de bijbehorende resource klasse.
+Om het oplossen van problemen met een fout te vereenvoudigen, raden we u aan om resource klasse-roltoewijzingen te verwijderen tijdens het maken van de werk belasting classificaties.  De onderstaande code retourneert bestaande lidmaatschappen van resource klassen.  Voer [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) uit voor elke lidnaam die wordt geretourneerd door de bijbehorende resource klasse.
 
 ```sql
 SELECT  r.name AS [Resource Class]
@@ -92,7 +92,7 @@ sp_droprolemember '[Resource Class]', membername
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie de [classificatie werk belasting maken (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)voor meer informatie over het maken van een classificatie.  
+- Zie de [classificatie werk belasting maken (Transact-SQL)](/sql/t-sql/statements/create-workload-classifier-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie over het maken van een classificatie.  
 - Zie de Snelstartgids voor het maken van een classificatie van werk belastingen [een classificatie van werk belasting maken](quickstart-create-a-workload-classifier-tsql.md).
 - Zie de artikelen met procedures voor het [configureren van de urgentie van werk belastingen](sql-data-warehouse-how-to-configure-workload-importance.md) en het [beheren en bewaken van workload Management](sql-data-warehouse-how-to-manage-and-monitor-workload-importance.md).
-- Zie [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om query's en de toegewezen urgentie weer te geven.
+- Zie [sys. dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om query's en de toegewezen urgentie weer te geven.

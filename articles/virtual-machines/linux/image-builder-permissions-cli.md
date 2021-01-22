@@ -7,12 +7,12 @@ ms.date: 05/06/2020
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: f598ed3e2aef2f53b90b213d0bd1b002f56bd30c
-ms.sourcegitcommit: 5831eebdecaa68c3e006069b3a00f724bea0875a
+ms.openlocfilehash: 19320b8b497202c473f72f4751daf2110a347080
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/11/2020
-ms.locfileid: "94517747"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676747"
 ---
 # <a name="configure-azure-image-builder-service-permissions-using-azure-cli"></a>Service machtigingen van Azure Image Builder configureren met behulp van Azure CLI
 
@@ -238,4 +238,4 @@ Voor meer informatie over het gebruik van een door de gebruiker toegewezen behee
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [overzicht van Azure Image Builder](image-builder-overview.md)voor meer informatie.
+Zie [overzicht van Azure Image Builder](../image-builder-overview.md)voor meer informatie.

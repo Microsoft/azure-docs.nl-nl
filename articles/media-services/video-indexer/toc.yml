@@ -25,6 +25,8 @@
       href: 'https://github.com/Azure-Samples/media-services-video-indexer'
 - name: Concepten
   items:
+    - name: Overzicht
+      href: concepts-overview.md
     - name: Instellingen van Video Indexer en Media Services met elkaar vergelijken
       href: compare-video-indexer-with-media-services-presets.md
     - name: Meerdere tenants beheren
@@ -113,7 +115,7 @@
       href: 'https://gallery.technet.microsoft.com/Overview-of-Azure-c1be3942'
     - name: Releaseopmerkingen
       href: release-notes.md
-    - name: Stack Overflow
+    - name: Stackoverloop
       href: 'https://stackoverflow.com/search?q=video-indexer'
     - name: Mening van gebruikers
       href: 'https://cognitive.uservoice.com/forums/598144-video-indexer'

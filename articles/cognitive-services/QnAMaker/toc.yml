@@ -14,9 +14,7 @@
           href: Quickstarts/create-publish-knowledge-base.md
         - name: Een query uitvoeren op een Knowledge Base
           href: Quickstarts/get-answer-from-knowledge-base-using-url-tool.md
-    - name: REST gebruiken
-      href: Quickstarts/quickstart-rest-curl.md
-    - name: SDK gebruiken
+    - name: Client bibliotheken of REST API gebruiken
       href: Quickstarts/quickstart-sdk.md
 - name: Zelfstudies
   items:

@@ -58,6 +58,8 @@
       href: fqdn-filtering-network-rules.md
     - name: Beveiligingsbasislijn
       href: security-baseline.md
+    - name: Ondersteuning voor actieve FTP
+      href: active-ftp-support.md
 - name: Instructiegidsen
   items:
     - name: Implementeren met Azure PowerShell

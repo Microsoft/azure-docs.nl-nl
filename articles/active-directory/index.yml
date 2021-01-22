@@ -12,12 +12,12 @@ metadata:
   ms.author: mtillman
   manager: daveba
   ms.date: 12/01/2020
-  ms.openlocfilehash: 5261d535170feb5c0aaac3731cd27e0af7847cfa
-  ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-  ms.translationtype: HT
+  ms.openlocfilehash: de96c1ed6828a6933102755d6c020cf01c4c9c7b
+  ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/02/2020
-  ms.locfileid: "96498044"
+  ms.lasthandoff: 01/20/2021
+  ms.locfileid: "98611148"
 highlightedContent:
   items:
   - title: Wat is Azure AD?
@@ -82,19 +82,19 @@ conceptualContent:
     footerLink:
       url: ./authentication/index.yml
       text: Meer informatie
-  - title: Cloudinrichting
+  - title: Cloud synchronisatie
     links:
-    - url: ./cloud-provisioning/what-is-cloud-provisioning.md
+    - url: ./cloud-sync/what-is-cloud-sync.md
       itemType: overview
-      text: Wat is cloudinrichting?
-    - url: ./cloud-provisioning/tutorial-single-forest.md
+      text: Wat is Cloud synchronisatie?
+    - url: ./cloud-sync/tutorial-single-forest.md
       itemType: tutorial
       text: Een enkele forest integreren met enkele Azure AD-tenant
-    - url: ./cloud-provisioning/how-to-install.md
+    - url: ./cloud-sync/how-to-install.md
       itemType: how-to-guide
-      text: Agent van Azure AD Connect-cloudinrichting installeren
+      text: Azure AD Connect-inrichtings agent installeren
     footerLink:
-      url: ./cloud-provisioning/index.yml
+      url: ./cloud-sync/index.yml
       text: Meer informatie
   - title: Voorwaardelijke toegang
     links:

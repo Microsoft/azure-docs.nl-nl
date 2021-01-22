@@ -9,12 +9,12 @@ metadata:
   author: dcurwin
   ms.author: dacurwin
   ms.date: 12/01/2019
-  ms.openlocfilehash: e2afc60f6fa67c1dc0582839e2d3f7480907facc
-  ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
-  ms.translationtype: HT
+  ms.openlocfilehash: ea54d6e4a08ff5baa2a46051a8ec342128175de3
+  ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/18/2021
-  ms.locfileid: "98556491"
+  ms.lasthandoff: 01/21/2021
+  ms.locfileid: "98707313"
 landingContent:
 - title: Meer informatie over Azure Backup
   linkLists:
@@ -40,8 +40,6 @@ landingContent:
       url: quick-backup-vm-cli.md
     - text: Een back-up maken van een VM met Resource Manager-sjabloon
       url: quick-backup-vm-template.md
-- title: Probeer deze stapsgewijze zelfstudies
-  linkLists:
   - linkListType: tutorial
     links:
     - text: Back-ups maken van Azure-VM's
@@ -84,6 +82,20 @@ landingContent:
       url: backup-azure-vm-backup-faq.md
     - text: Back-ups van Azure-VM's beheren
       url: backup-azure-manage-vms.md
+- title: Back-up van Azure Managed Disks (in preview-versie)
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Overzicht van Azure Disk Backup
+      url: disk-backup-overview.md
+    - text: Ondersteunings matrix voor Azure Disk Backup
+      url: disk-backup-support-matrix.md
+    - text: Back-up maken van Azure Managed Disks
+      url: backup-managed-disks.md
+    - text: Veelgestelde vragen-Azure Managed Disks
+      url: disk-backup-faq.md
+    - text: Problemen met Azure Managed Disks backup oplossen
+      url: disk-backup-troubleshoot.md
 - title: Een back-up maken van SQL Server op virtuele Azure-machines
   linkLists:
   - linkListType: concept

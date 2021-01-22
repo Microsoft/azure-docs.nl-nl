@@ -210,6 +210,8 @@
           items:
             - name: Bestanden herstellen van Azure naar Windows Server
               href: backup-azure-restore-windows-server.md
+            - name: Alle bestanden in een volume herstellen
+              href: restore-all-files-volume-mars.md
             - name: Windows Server-systeemstatus herstellen
               href: backup-azure-restore-system-state.md
         - name: Beheren

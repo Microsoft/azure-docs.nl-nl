@@ -4,15 +4,15 @@ description: QnA Maker is een cloud-NLP-service voor het eenvoudig maken van een
 ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: overview
-ms.date: 05/26/2020
+ms.date: 01/22/2021
 ms.custom: cog-serv-seo-aug-2020
 keywords: qna maker, chatbots met weinig code, gesprekken met meerdere paden
-ms.openlocfilehash: 9655f64da455fb7a7124a97e6dc2d1d8437d05b7
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 16f30801d52aa46184c4eb394f3d1cfebecd4be6
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353133"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98700712"
 ---
 # <a name="what-is-qna-maker"></a>Wat is QnA Maker?
 
@@ -85,8 +85,6 @@ We bieden quickstarts in de populairste programmeertalen, die zijn ontworpen om 
 
 * [Aan de slag met QnA Maker-clientbibliotheek](../quickstarts/quickstart-sdk.md)
 * [Aan de slag met QnA Maker-portal](../quickstarts/create-publish-knowledge-base.md)
-* [Aan de slag met QnA Maker REST API's](../quickstarts/quickstart-rest-curl.md)
-
 
 ## <a name="next-steps"></a>Volgende stappen
 QnA Maker biedt alles wat u nodig hebt om uw aangepaste Knowledge Base te bouwen, beheren en implementeren.

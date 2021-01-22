@@ -98,7 +98,7 @@
           href: reservations/reserved-instance-windows-software-costs.md?toc=/azure/cost-management-billing/toc.json
         - name: Gebruiksgegevens voor afzonderlijke abonnementen
           href: reservations/understand-reserved-instance-usage.md?toc=/azure/cost-management-billing/toc.json
-        - name: Gebruiksgegevens voor Enterprise-klanten
+        - name: Gebruiks gegevens voor Enter prise-en micro soft-klanten overeenkomst
           href: reservations/understand-reserved-instance-usage-ea.md?toc=/azure/cost-management-billing/toc.json
     - name: Billing
       items:

@@ -38,7 +38,7 @@
           href: ../containers/index.yml
 - name: Concepten
   items:
-    - name: Best practices voor de Anomaly Detector-API
+    - name: Aanbevolen procedures voor anomalie detectie-API
       href: concepts/anomaly-detection-best-practices.md
 - name: Naslaginformatie
   items:

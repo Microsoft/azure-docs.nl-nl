@@ -19,6 +19,8 @@
       href: virtual-machines-custom-preferences.md
     - name: VM's inschakelen via Azure Policy
       href: virtual-machines-policy-enable.md
+    - name: Fouten bij onboarding oplossen
+      href: common-errors.md
     - name: Een beschadigd Automanage-account herstellen
       href: repair-automanage-account.md
 - name: Resources

@@ -17,9 +17,9 @@
   items:
     - name: De ontwikkelomgeving instellen
       items:
-        - name: Ontwikkelen voor Linux-apparaten
+        - name: Ontwikkelen met Linux-containers
           href: tutorial-develop-for-linux.md
-        - name: Ontwikkelen voor Windows-apparaten
+        - name: Ontwikkelen met Windows-containers
           href: tutorial-develop-for-windows.md
     - name: Aangepaste codemodules ontwikkelen
       items:
@@ -77,6 +77,8 @@
   items:
     - name: IoT Edge-runtime
       href: iot-edge-runtime.md
+    - name: IoT Edge voor Linux op Windows
+      href: iot-edge-for-linux-on-windows.md
     - name: IoT Edge-modules
       items:
         - name: Informatie over Azure IoT Edge-modules
@@ -119,23 +121,25 @@
   items:
     - name: Een IoT Edge-apparaat maken
       items:
-        - name: Runtime installeren
-          href: how-to-install-iot-edge.md
-        - name: Apparaat registreren en verifiëren
+        - name: Apparaat registreren bij IoT Hub
+          href: how-to-register-device.md
+        - name: IoT Edge installeren en inrichten
           items:
-            - name: Verificatie met symmetrische sleutel
-              href: how-to-manual-provision-symmetric-key.md
-            - name: Verificatie met X.509-certificaat
-              href: how-to-manual-provision-x509.md
+            - name: IoT Edge voor Linux installeren
+              href: how-to-install-iot-edge.md
+            - name: IoT Edge uitvoeren voor Linux op Windows
+              href: how-to-install-iot-edge-on-windows.md
         - name: Runtime bijwerken
           href: how-to-update-iot-edge.md
         - name: Apparaatcertificaten beheren
           href: how-to-manage-device-certificates.md
-        - name: Testcertificaten maken
-          href: how-to-create-test-certificates.md
-        - name: IoT Edge in Kubernetes
+    - name: Scenario's voor alternatieve apparaten
+      items:
+        - name: IoT Edge uitvoeren met Windows-containers
+          href: how-to-install-iot-edge-windows-on-windows.md
+        - name: IoT Edge uitvoeren op Kubernetes
           href: how-to-install-iot-edge-kubernetes.md
-        - name: Virtuele machine in IoT Edge met een ARM-sjabloon
+        - name: IoT Edge VM implementeren met een ARM-sjabloon
           href: how-to-install-iot-edge-ubuntuvm.md
     - name: Automatisch inrichten met DPS
       items:
@@ -243,6 +247,8 @@
           href: troubleshoot-common-errors.md
 - name: Naslaginformatie
   items:
+    - name: Testcertificaten maken
+      href: how-to-create-test-certificates.md
     - name: Scripts voor Windows-apparaatbeheer
       href: reference-windows-scripts.md
     - name: Azure CLI

@@ -50,6 +50,8 @@
           href: create-data-controller-using-azdata.md
         - name: Kubernetes-hulpprogramma's
           href: create-data-controller-using-kubernetes-native-tools.md
+        - name: SCC Toep assen (open Shift)
+          href: how-to-apply-security-context-constraint.md
     - name: Algemene ervaringen met gegevensservices met Azure Arc
       items:
         - name: Bewaken met dashboards (Azure Data Studio)

@@ -9,12 +9,12 @@ ms.topic: overview
 ms.date: 06/24/2020
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 8e3f0435d9856d2b602a4f2b6f604aee05e040ba
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
-ms.translationtype: HT
+ms.openlocfilehash: b55ea814214397e12e50e7bc5047988394623940
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505202"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703586"
 ---
 # <a name="introduction-to-azure-blob-storage"></a>Inleiding tot Azure Blob-opslag
 
@@ -70,7 +70,7 @@ Er zijn een aantal oplossingen waarmee u bestaande gegevens naar de blobopslag k
 - **Azure Data Factory** ondersteunt het kopiëren van gegevens naar en van de blobopslag met behulp van de accountsleutel, Shared Access Signature, de service-principal of beheerde identiteiten voor Azure-resources. Zie [Gegevens naar en van Azure Blob Storage kopiëren met Azure Data Factory](../../data-factory/connector-azure-blob-storage.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json) voor meer informatie.
 - **Blobfuse** is een stuurprogramma voor het virtuele bestandssysteem voor Azure Blob Storage. U kunt Blobfuse gebruiken om via het Linux-bestandssysteem toegang te krijgen tot uw bestaande blok-blobgegevens in uw Azure Storage-account. Zie [Blob-opslag koppelen als een bestandssysteem met Blobfuse](storage-how-to-mount-container-linux.md) voor meer informatie.
 - De **Azure Data Box**-service is beschikbaar voor het overzetten van on-premises gegevens naar de blobopslag, wanneer vanwege grote gegevenssets of netwerkbeperkingen de kabel geen realistische optie is voor het uploaden van gegevens. Afhankelijk van uw gegevensgrootte kunt u [Azure Data Box Disk](../../databox/data-box-disk-overview.md)-, [Azure Data Box](../../databox/data-box-overview.md)- of [Azure Data Box Heavy](../../databox/data-box-heavy-overview.md)-apparaten van Microsoft aanvragen. U kunt vervolgens uw gegevens naar deze apparaten kopiëren en ze terugsturen naar Microsoft, waarna ze worden geüpload naar Blob Storage.
-- De **Azure Import/Export-service** biedt een manier om grote hoeveelheden gegevens te importeren of exporteren naar en van uw opslagaccount met harde schijven die u voorziet. Zie [De Microsoft Azure Import/Export-service gebruiken om gegevens over te zetten naar de blobopslag](../common/storage-import-export-service.md) voor meer informatie.
+- De **Azure Import/Export-service** biedt een manier om grote hoeveelheden gegevens te importeren of exporteren naar en van uw opslagaccount met harde schijven die u voorziet. Zie [De Microsoft Azure Import/Export-service gebruiken om gegevens over te zetten naar de blobopslag](../../import-export/storage-import-export-service.md) voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

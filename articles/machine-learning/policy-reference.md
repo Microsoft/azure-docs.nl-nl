@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleids definities voor Azure Machine Learning
 description: Een lijst met Azure Policy ingebouwde beleids definities voor Azure Machine Learning. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.author: larryfr
 author: BlackMist
 ms.topic: reference
 ms.service: machine-learning
 ms.custom: subject-policy-reference
-ms.openlocfilehash: f7f380492d7e261038aab0fba9e775f1eaa28aa9
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 778930d7370496387067823e88aa63f840b46782
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98072289"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703556"
 ---
 # <a name="azure-policy-built-in-policy-definitions-for-azure-machine-learning"></a>Azure Policy ingebouwde beleids definities voor Azure Machine Learning
 

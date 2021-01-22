@@ -154,9 +154,9 @@
           href: howto-password-ban-bad-on-premises-faq.md
         - name: Versiegeschiedenis van agent
           href: howto-password-ban-bad-on-premises-agent-versions.md
-    - name: Verificatie op basis van SMS gebruiken (preview)
+    - name: Verificatie op basis van SMS gebruiken
       href: howto-authentication-sms-signin.md
-    - name: Aanmelden met e-mailadres gebruiken (preview)
+    - name: E-mail adres aanmelden gebruiken
       href: howto-authentication-use-email-signin.md
     - name: Slimme vergrendeling van Azure AD
       href: howto-password-smart-lockout.md

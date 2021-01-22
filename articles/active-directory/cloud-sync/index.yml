@@ -1,0 +1,50 @@
+### YamlMime:Landing
+title: Documentatie over Cloud synchronisatie Azure AD Connect
+summary: Azure AD Connect Cloud Sync helpt bij het vereenvoudigen en automatiseren van het beheer van Azure AD-gebruikers, via door de Cloud beheerde regels voor het synchroniseren van deze gebruikers uit bestaande AD-forests.
+metadata:
+  author: billmath
+  description: Cloud synchronisatie helpt bij het vereenvoudigen en automatiseren van het beheer van Azure AD-gebruikers, via door de Cloud beheerde regels voor het synchroniseren van deze gebruikers uit bestaande AD-forests.
+  ms.author: billmath
+  ms.collection: na
+  ms.date: 09/05/2019
+  ms.service: active-directory
+  ms.subservice: na
+  ms.topic: landing-page
+  services: active-directory
+  ms.openlocfilehash: 52032c39e77fb4ebd6488f25d660428ba59dfbd3
+  ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 01/20/2021
+  ms.locfileid: "98611736"
+landingContent:
+- title: Over Cloud synchronisatie
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Azure AD Connect Cloud synchronisatie?
+      url: what-is-cloud-sync.md
+- title: De beste oplossing leren implementeren om de levenscyclus van uw gebruikers en groepen te beheren
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Eén AD-forest met één Azure AD-Tenant integreren
+      url: tutorial-single-forest.md
+    - text: Een bestaande forest en een nieuwe forest integreren met enkele Azure AD-tenant
+      url: tutorial-existing-forest.md
+    - text: Pilot Cloud Sync voor een bestaand gesynchroniseerd AD-forest
+      url: tutorial-pilot-aadc-aadccp.md
+- title: Aan de slag met Cloud synchronisatie
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Vereisten voor Azure AD Connect Cloud synchronisatie
+      url: how-to-prerequisites.md
+    - text: Azure AD Connect Cloud synchronisatie installeren
+      url: how-to-install.md
+    - text: Configuratie van Azure AD Connect-inrichtings agent
+      url: how-to-configure.md
+  - linkListType: reference
+    links:
+    - text: Ondersteunde topologieën en scenario's
+      url: plan-cloud-sync-topologies.md

@@ -3,12 +3,12 @@ title: Back-ups maken van Windows-machines met behulp van de MARS-agent
 description: Gebruik de Microsoft Azure Recovery Services (MARS)-agent om een back-up te maken van Windows-machines.
 ms.topic: conceptual
 ms.date: 03/03/2020
-ms.openlocfilehash: d2cdd5d1fa98462a70d72fd9f8723685952b665a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 54932192d61633da55657e2ba57adf4e30c4fbc7
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90052219"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702765"
 ---
 # <a name="back-up-windows-server-files-and-folders-to-azure"></a>Back-ups maken van Windows Server-bestanden en-mappen naar Azure
 
@@ -43,8 +43,8 @@ Ga als volgt te werk om een back-upbeleid te maken:
 1. Onder **acties**, selecteert u **back-up plannen**.
 
     ![Een back-up van de Windows Server plannen](./media/backup-configure-vault/schedule-first-backup.png)
-1. Selecteer **aan**de slag volgende in de wizard Back-up plannen  >  **Next**.
-1. Selecteer **items toevoegen**onder **items selecteren waarvan u een back-up wilt maken**.
+1. Selecteer **aan** de slag volgende in de wizard Back-up plannen  >  .
+1. Selecteer **items toevoegen** onder **items selecteren waarvan u een back-up wilt maken**.
 
     ![Items toevoegen voor back-up](./media/backup-azure-manage-mars/select-item-to-backup.png)
 
@@ -52,7 +52,7 @@ Ga als volgt te werk om een back-upbeleid te maken:
 
     ![Items selecteren waarvan u een back-up wilt maken](./media/backup-azure-manage-mars/selected-items-to-backup.png)
 
-1. Selecteer **volgende**op de pagina **items selecteren voor back-up** .
+1. Selecteer **volgende** op de pagina **items selecteren voor back-up** .
 1. Geef op de pagina **back-upschema opgeven** op wanneer u dagelijks of wekelijks back-ups wilt maken. Selecteer vervolgens **Volgende**.
 
     * Wanneer er een back-up wordt gemaakt, wordt er een herstel punt aangemaakt.
@@ -104,7 +104,7 @@ Een offline-overdracht uitvoeren:
 1. Schrijf de back-upgegevens naar een faserings locatie.
 1. Gebruik het hulp programma AzureOfflineBackupDiskPrep om de gegevens van de faserings locatie naar een of meer SATA-schijven te kopiëren.
 
-    Het hulp programma maakt een Azure import-taak. Zie [Wat is de Azure import/export-service](../storage/common/storage-import-export-service.md)voor meer informatie.
+    Het hulp programma maakt een Azure import-taak. Zie [Wat is de Azure import/export-service](../import-export/storage-import-export-service.md)voor meer informatie.
 1. Verzend de SATA-schijven naar een Azure-Data Center.
 
     In het Data Center worden de schijf gegevens gekopieerd naar een Azure-opslag account. Azure Backup kopieert de gegevens van het opslag account naar de kluis en incrementele back-ups worden gepland.
@@ -129,7 +129,7 @@ Netwerk beperking inschakelen:
 
 ## <a name="run-an-on-demand-backup"></a>Een on-demand back-up uitvoeren
 
-1. Selecteer **Nu back-up maken**in de Mars-agent.
+1. Selecteer **Nu back-up maken** in de Mars-agent.
 
     ![Nu back-up maken in Windows Server](./media/backup-configure-vault/backup-now.png)
 

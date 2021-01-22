@@ -11,22 +11,33 @@ ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: 4813a71a0bdd14e747aa4cfe51ab5a4191df62a4
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 1ab79c32bfc28f6b4582d5a7d7177d5a9c04d682
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563038"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702672"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Micro soft Identity platform docs: What's New
 
 Welkom bij wat is er nieuw in de documentatie voor micro soft Identity platform. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden.
 
+## <a name="january-2021"></a>Januari 2021
+
+### <a name="updated-articles"></a>Bijgewerkte artikelen
+
+- [Verificatie vs. autorisatie](authentication-vs-authorization.md)
+- [Procedure: uw Azure AD-App beperken tot een set gebruikers in een Azure AD-Tenant](howto-restrict-your-app-to-a-set-of-users.md)
+- [Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform](v2-permissions-and-consent.md)
+- [Configureer bare levens duur van tokens in micro soft Identity platform (preview-versie)](active-directory-configurable-token-lifetimes.md)
+- [Levens duur van token beleid configureren (preview-versie)](configure-token-lifetimes.md)
+- [Micro soft Identity platform en OAuth 2,0-autorisatie code stroom](v2-oauth2-auth-code-flow.md)
+
 ## <a name="december-2020"></a>December 2020
 
 ### <a name="new-articles"></a>Nieuwe artikelen
 
-- [Snelstartgids: ASP.NET Core web-app die gebruikers aantekent en Microsoft Graph namens u aanroept](quickstart-v2-aspnet-core-webapp-calls-graph.md)
+- [Quickstart: ASP.NET Core-web-app om gebruikers aan te melden en namens hen Microsoft Graph aan te roepen](quickstart-v2-aspnet-core-webapp-calls-graph.md)
 - [Fouten en uitzonderingen verwerken in MSAL.NET](msal-error-handling-dotnet.md)
 - [Fouten en uitzonderingen verwerken in MSAL voor iOS/macOS](msal-error-handling-ios.md)
 - [Fouten en uitzonderingen verwerken in MSAL voor Java](msal-error-handling-java.md)
@@ -36,6 +47,7 @@ Welkom bij wat is er nieuw in de documentatie voor micro soft Identity platform.
 
 ### <a name="updated-articles"></a>Bijgewerkte artikelen
 
+- [Quickstart: Aanmelden met Microsoft toevoegen aan een Java-webapp](quickstart-v2-java-webapp.md)
 - [Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt](tutorial-v2-aspnet-daemon-web-app.md)
 - [Web-app die zich aanmeldt bij gebruikers: app-registratie](scenario-web-app-sign-user-app-registration.md)
 - [Micro soft Identity-platform en impliciete toekennings stroom](v2-oauth2-implicit-grant-flow.md)
@@ -56,49 +68,3 @@ Welkom bij wat is er nieuw in de documentatie voor micro soft Identity platform.
 - [Procedure: optionele claims voor uw app opgeven](active-directory-optional-claims.md)
 - [Uw app publiceren in de app-galerie van Azure AD](v2-howto-app-gallery-listing.md)
 - [Procedure: app-rollen toevoegen aan uw toepassing en deze ontvangen in het token](howto-add-app-roles-in-azure-ad-apps.md)
-
-## <a name="october-2020"></a>Oktober 2020
-
-### <a name="new-articles"></a>Nieuwe artikelen
-
-- [Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een Node.js-web-app met behulp van de verificatiecodestroom](quickstart-v2-nodejs-webapp-msal.md)
-- [Procedure: cross-app SSO inschakelen op Android met behulp van MSAL](msal-android-single-sign-on.md)
-- [Ondersteuning voor eenmalige aanmelding en app-beveiligings beleid in mobiele apps die u ontwikkelt](mobile-sso-support-overview.md)
-- Micro soft Identity platform docs: What's New (dit artikel)
-- [Zelfstudie: Gebruikers aanmelden en een beveiligde API aanroepen vanuit een Blazor WebAssembly-app](tutorial-blazor-webassembly.md)
-- [Micro soft Identity Web authentication-bibliotheek](microsoft-identity-web.md)
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [Configureer bare levens duur van tokens in micro soft Identity platform (preview-versie)](active-directory-configurable-token-lifetimes.md)
-- [Procedure: Een Azure Active Directory-gebruiker aanmelden met behulp van het patroon voor multitenant-toepassingen](howto-convert-app-to-be-multi-tenant.md)
-- [Quickstart: De accounts wijzigen die worden ondersteund door een toepassing](quickstart-modify-supported-accounts.md)
-- [Microsoft Identity Platform-video's](identity-videos.md)
-- [Migratie handleiding voor ADAL naar MSAL voor Android](migrate-android-adal-msal.md)
-- [Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform](quickstart-v2-dotnet-native-aspnet.md)
-- [Referenties voor verificatie certificaat voor micro soft-identiteits platform](active-directory-certificate-credentials.md)
-- [Zelfstudie: Gebruikers aanmelden en Microsoft Graph aanroepen vanuit een iOS- of macOS-app](tutorial-v2-ios.md)
-- [Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een JavaScript-toepassing met één pagina (SPA)](tutorial-v2-javascript-spa.md)
-- [Zelfstudie: Modus voor gedeelde apparaten gebruiken in een Android-toepassing](tutorial-v2-shared-device-mode.md)
-
-## <a name="september-2020"></a>September 2020
-
-### <a name="new-articles"></a>Nieuwe artikelen
-
-- [Quickstart: Een ASP.NET Core Web-API beveiligen met het microsoft-identiteitsplatform](quickstart-v2-aspnet-core-web-api.md)
-- [Zelfstudie: Een Blazor Server-app maken die gebruikmaakt van het Microsoft-identiteitsplatform voor verificatie](tutorial-blazor-server.md)
-
-### <a name="updated-articles"></a>Bijgewerkte artikelen
-
-- [Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Android-app](tutorial-v2-android.md)
-- [Een web-app die web-Api's aanroept: code configuratie](scenario-web-app-call-api-app-configuration.md)
-- [Een web-app die web-Api's aanroept: een web-API aanroepen](scenario-web-app-call-api-call-api.md)
-- [Een web-API die web-Api's aanroept: code configuratie](scenario-web-api-call-api-app-configuration.md)
-- [Een web-API die web-Api's aanroept: een API aanroepen](scenario-web-api-call-api-call-api.md)
-- [Gebruikers aanmelden en Microsoft Graph aanroepen vanuit een iOS- of macOS-app](tutorial-v2-ios.md)
-- [Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform](quickstart-v2-dotnet-native-aspnet.md)
-- [Quickstart: aanmelding met Microsoft toevoegen aan een ASP.NET Core-web-app](quickstart-v2-aspnet-core-webapp.md)
-- [Overwegingen voor het gebruik van Xamarin iOS met MSAL.NET](msal-net-xamarin-ios-considerations.md)
-- [Quickstart: Een clienttoepassing configureren voor toegang tot een web-API](quickstart-configure-app-access-web-apis.md)
-- [Quickstart: Een toepassing configureren om een web-API beschikbaar te maken](quickstart-configure-app-expose-web-apis.md)
-- [Snelstart: Een toepassing registreren bij het Microsoft-identiteitsplatform](quickstart-register-app.md)

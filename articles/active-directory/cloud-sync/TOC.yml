@@ -1,0 +1,88 @@
+- name: Cloud synchronisatie
+  href: index.yml
+- name: Overzicht
+  items:
+    - name: Wat is identiteitsinrichting?
+      href: what-is-provisioning.md
+    - name: Wat is Azure AD Connect Cloud synchronisatie?
+      href: what-is-cloud-sync.md
+      maintainContext: true
+- name: Zelfstudies
+  expanded: true
+  items:
+    - name: Een enkele AD-forest integreren met enkele Azure AD-tenant
+      href: tutorial-single-forest.md
+    - name: Een bestaande forest en een nieuwe forest integreren met enkele Azure AD-tenant
+      href: tutorial-existing-forest.md
+    - name: Pilot Cloud Sync voor een bestaand gesynchroniseerd AD-forest
+      href: tutorial-pilot-aadc-aadccp.md
+- name: Concepten
+  items:
+    - name: Uitleg
+      href: concept-how-it-works.md
+    - name: Wat is wachtwoord-hashsynchronisatie?
+      href: ../hybrid/whatis-phs.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcloud-provisioning-context
+    - name: 'Informatie over het Azure AD-schema, kenmerken en expressies'
+      href: concept-attributes.md
+    - name: Expressies schrijven voor kenmerktoewijzingen in Azure Active Directory
+      href: reference-expressions.md
+- name: Instructiegidsen
+  items:
+    - name: Installatie en upgrade
+      items:
+        - name: Installatievereisten
+          href: how-to-prerequisites.md
+        - name: De agent voor Azure AD Connect-cloudinrichting installeren
+          href: how-to-install.md
+        - name: Configuratie van Cloud synchronisatie
+          href: how-to-configure.md
+        - name: Inrichting on-demand
+          href: how-to-on-demand-provision.md
+        - name: Kenmerktoewijzing
+          href: how-to-attribute-mapping.md
+        - name: Eenmalige aanmelding gebruiken
+          href: how-to-sso.md
+    - name: Plannen en ontwerpen
+      items:
+        - name: Topologieën en scenario's voor Azure AD Connect Cloud synchronisatie
+          href: plan-cloud-sync-topologies.md
+    - name: Beheren
+      items:
+        - name: Automatische upgrade voor agent
+          href: how-to-automatic-upgrade.md
+        - name: Onbedoeld verwijderen
+          href: how-to-accidental-deletes.md
+        - name: Agent-registeropties
+          href: how-to-manage-registry-options.md
+        - name: Power shell-cmdlets voor agent gMSA
+          href: how-to-gmsa-cmdlets.md
+        - name: De inrichtings agent installeren met behulp van Power shell
+          href: how-to-install-pshell.md
+    - name: Ontwikkelen
+      items:
+        - name: Transformaties
+          href: how-to-transformation.md
+        - name: Inkomende synchronisatie met de MS Graph API
+          href: how-to-inbound-synch-ms-graph.md
+        - name: Synchronisatie-API voor Azure AD
+          href: /graph/api/resources/synchronization-overview
+    - name: Problemen oplossen
+      items:
+        - name: Problemen met Cloud synchronisatie oplossen
+          href: how-to-troubleshoot.md
+        - name: Dubbele kenmerken
+          href: ../hybrid/how-to-connect-syncservice-duplicate-attribute-resiliency.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context
+- name: Naslaginformatie
+  items:
+    - name: Versiegeschiedenis voor de agent voor Azure AD Connect-cloudinrichting
+      href: reference-version-history.md
+    - name: Veelgestelde vragen over Cloud synchronisatie Azure AD Connect
+      href: reference-cloud-sync-faq.md
+    - name: AADCloudSyncTools PowerShell-module
+      href: reference-powershell.md
+    - name: Kenmerken die worden gesynchroniseerd
+      href: ../hybrid/reference-connect-sync-attributes-synchronized.md?context=%2fazure%2factive-directory%2fcloud-provisioning%2fcontext%2fcp-context
+    - name: Foutcodes en beschrijvingen
+      href: reference-error-codes.md
+    - name: Eenvoudige Active Directory en Azure AD-omgeving
+      href: tutorial-basic-ad-azure.md

@@ -7,40 +7,44 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: overview
-ms.date: 12/17/2020
+ms.date: 01/22/2021
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 1814555f738f37523c5b23ae729bf20bff62e1f9
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
-ms.translationtype: HT
+ms.openlocfilehash: 893bf37a5a4c8a314e5182bf2ac4bc28502b98d9
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679527"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98699431"
 ---
 # <a name="what-is-azure-cognitive-search"></a>Wat is Azure Cognitive Search?
 
 Azure Cognitive Search ([voorheen 'Azure Search'](whats-new.md#new-service-name)) is een cloudzoekservice die ontwikkelaars API’s en hulpprogramma’s biedt. Hiermee kunnen ze een uitgebreide zoekervaring bouwen binnen privé- en heterogene inhoud in web-, mobiele en ondernemingstoepassingen. 
 
-Wanneer u een Cognitive Search-service maakt, krijgt u:
+Een zoek service heeft de volgende onderdelen:
 
-+ een zoekprogramma dat indexering en query's uitvoert
-+ permanente opslag van zoekindexen die u maakt en beheert
-+ een querytaal voor het opstellen van eenvoudige tot complexe query's
-+ [Verrijkingen op basis van AI](cognitive-search-concept-intro.md), het maken van doorzoekbare inhoud uit afbeeldingen, onbewerkte tekst, toepassingsbestanden
-+ Integratie met andere Azure-services voor gegevens, machine learning/AI, en beveiliging
++ Zoek machine voor zoeken in volledige tekst
++ Permanente opslag van geïndexeerde inhoud die eigendom is van de gebruiker
++ Api's voor indexering en query's
++ Optionele [op AI gebaseerde verrijkingen](cognitive-search-concept-intro.md), waardoor Doorzoek bare inhoud kan worden gemaakt van installatie kopieën, onbewerkte tekst, toepassings bestanden
++ Optionele integratie met andere Azure-Services voor gegevens, machine learning/AI en beveiliging
 
-In de architectuur wordt een zoekservice geplaatst tussen de externe gegevensarchieven die uw niet-geïndexeerde gegevens bevatten en een client-app die query-aanvragen naar een zoekindex verzendt en het antwoord verwerkt.
+In architectuur is een zoek service tussen de externe gegevens archieven die uw niet-geïndexeerde gegevens bevatten, en uw client-app die query aanvragen naar een zoek index verzendt en het antwoord verwerkt.
 
 ![Architectuur van Azure Cognitive Search](media/search-what-is-azure-search/azure-search-diagram.svg "Architectuur van Azure Cognitive Search")
 
-Een zoekservice kan worden geïntegreerd met andere Azure-services. Dit kan in de vorm van specifieke *indexeerfuncties* en *vaardighedensets*. De indexeerfuncties nemen of halen gegevens op van Azure-gegevensbronnen. De vaardighedensets integreren verbruikbare AI van Cognitive Services (zoals afbeeldings- en tekstanalyse) of aangepaste AI-elementen die u in Azure Machine Learning maakt of binnen Azure Functions inpakt.
+Daarnaast kan de zoek functie worden geïntegreerd met andere Azure-Services in de vorm van *Indexeer* functies waarmee gegevens opname wordt geautomatiseerd en opgehaald uit Azure-gegevens bronnen, en *vaardig heden* die verbruiks AI van Cognitive Services integreert, zoals afbeeldings-en tekst analyse, of aangepaste AI-elementen die u in Azure Machine Learning maakt of in azure functions inpakt.
+
+## <a name="inside-a-search-service"></a>Binnen een zoek service
 
 Binnen de zoekservice zelf zijn de twee primaire werkbelastingen *indexeren* en *query's uitvoeren*. 
 
-+ Bij het indexeren wordt tekst naar uw zoekservice gebracht en doorzoekbaar gemaakt. Intern wordt inkomende tekst verwerkt in tokens en opgeslagen in omgekeerde indexen voor snelle scans. 
++ [Indexeren](search-what-is-an-index.md) is een inhaal proces dat inhoud in uw zoek service laadt en doorzoekbaar maakt. Intern wordt inkomende tekst verwerkt in tokens en opgeslagen in omgekeerde indexen voor snelle scans. U kunt alle tekst uploaden die in de vorm van JSON-documenten is.
 
-  Bij het indexeren hebt u de mogelijkheid om *AI-verrijking* via [cognitieve vaardigheden](cognitive-search-working-with-skillsets.md) toe te voegen: vooraf gedefinieerde vaardigheden van Microsoft of aangepaste vaardigheden die u hebt gemaakt. De daaropvolgende analyse en transformaties kunnen leiden tot nieuwe informatie en structuren die voorheen nog niet bestonden, waardoor veel hulp voor een groot aantal zoek- en kennisanalysescenario's wordt geboden.
+  Als uw inhoud gemengde bestanden bevat, kunt u ook *AI-verrijking* toevoegen via [cognitieve vaardig heden](cognitive-search-working-with-skillsets.md). AI-verrijking kan Inge sloten tekst in toepassings bestanden extra heren en tekst en structuur van niet-tekst bestanden afleiden door de inhoud te analyseren. 
 
-+ Zodra een index is gevuld met doorzoekbare gegevens, stuurt uw client-app query aanvragen naar een zoekservice en verwerkt deze antwoorden. Alle uitvoeringen van query's verlopen via een zoekindex die u in uw service maakt, bezit en opslaat. In uw client-app wordt de zoekervaring gedefinieerd met behulp van API's van Azure Cognitive Search. De zoekervaring kan het volgende omvatten: afstemming van relevantie, automatische aanvulling, overeenkomende synoniemen, zoeken bij benadering, patroonvergelijking, filteren en sorteren.
+  De vaardig heden die de analyse bieden, zijn vooraf gedefinieerde van micro soft, of aangepaste vaardig heden die u maakt. De daaropvolgende analyse en transformaties kunnen leiden tot nieuwe informatie en structuren die voorheen nog niet bestonden, waardoor veel hulp voor een groot aantal zoek- en kennisanalysescenario's wordt geboden.
+
++ Het [uitvoeren van query's](search-query-overview.md) kan gebeuren wanneer een index is gevuld met Doorzoek bare tekst, wanneer uw client-app query aanvragen verzendt naar een zoek service en reacties verwerkt. Alle uitvoeringen van query's verlopen via een zoekindex die u in uw service maakt, bezit en opslaat. In uw client-app wordt de zoekervaring gedefinieerd met behulp van API's van Azure Cognitive Search. De zoekervaring kan het volgende omvatten: afstemming van relevantie, automatische aanvulling, overeenkomende synoniemen, zoeken bij benadering, patroonvergelijking, filteren en sorteren.
 
 Functionaliteit wordt beschikbaar gemaakt via een eenvoudige [REST API](/rest/api/searchservice/) of [.NET SDK](search-howto-dotnet-sdk.md) waarmee de inherente complexiteit van het ophalen van gegevens wordt gemaskeerd. Azure Portal biedt daarnaast ondersteuning voor service-administratie en inhoudsbeheer, door middel van hulpprogramma’s voor het ontwikkelen van prototypen, het doorzoeken van indexen en het doorzoeken van vaardighedensets. Omdat de service wordt uitgevoerd in de cloud, worden de infrastructuur en beschikbaarheid beheerd met Microsoft.
 
@@ -48,13 +52,13 @@ Functionaliteit wordt beschikbaar gemaakt via een eenvoudige [REST API](/rest/ap
 
 Azure Cognitive Search is geschikt voor de volgende toepassingsscenario's:
 
-+ heterogene inhoud consolideren in een index die privé, enkelvoudig en doorzoekbaar is. U kunt een index vullen met streams van JSON-documenten van elke bron. Gebruik voor ondersteunde bronnen in Azure een *indexeerfunctie* om het indexeren te automatiseren. Controle over het indexschema en het vernieuwingsschema is een belangrijke reden voor het gebruik van Cognitive Search.
++ heterogene inhoud consolideren in een index die privé, enkelvoudig en doorzoekbaar is.
 
-+ Eenvoudige implementatie van zoekfuncties. Azure Cognitive Search API's vereenvoudigen het bouwen van query's, facetnavigatie, filters (inclusief georuimtelijke zoekacties), toewijzing van synoniemen, automatische aanvulling en afstemming van relevantie. Met ingebouwde functies kunt u aan de verwachtingen van eindgebruikers voldoen en een zoekervaring bieden die vergelijkbaar is met commerciële webzoekprogramma's.
++ Implementeer eenvoudig zoek functies: relevantie afstemmen, facet navigatie, filters (inclusief georuimtelijke Zoek opdrachten), synoniemen toewijzing en automatisch aanvullen.
 
-+ Onbewerkte inhoud is een grote hoeveelheid niet-gedifferentieerde tekst, afbeeldingsbestanden of toepassingsbestanden in Azure Blob-opslag of Cosmos DB. U kunt [cognitieve vaardigheden](cognitive-search-concept-intro.md) toepassen tijdens het indexeren om tekst te identificeren en op te halen, structuren te maken of nieuwe informatie te maken, zoals vertaalde tekst of entiteiten.
++ Transformeer grote niet-gedifferentieerde tekst-of afbeeldings bestanden of toepassings bestanden die zijn opgeslagen in Azure Blob Storage of Cosmos DB, naar Doorzoek bare JSON-documenten. Dit wordt bereikt tijdens de index via [cognitieve vaardig heden](cognitive-search-concept-intro.md) die externe verwerking toevoegen.
 
-+ Inhoud vereist linguïstische analyse of aangepaste tekstanalyse. Als u niet-Engelstalige inhoud hebt, ondersteunt Azure Cognitive Search zowel Lucene-analyses als Microsofts natuurlijketaalprocessoren. U kunt ook analysefuncties configureren om gespecialiseerde verwerking van onbewerkte inhoud uit te voeren, zoals het uitfilteren van diakritische tekens of het herkennen en behouden van patronen in tekenreeksen.
++ Voeg taal kundige of aangepaste tekst analyse toe. Als u niet-Engelstalige inhoud hebt, ondersteunt Azure Cognitive Search zowel Lucene-analyses als Microsofts natuurlijketaalprocessoren. U kunt ook analysefuncties configureren om gespecialiseerde verwerking van onbewerkte inhoud uit te voeren, zoals het uitfilteren van diakritische tekens of het herkennen en behouden van patronen in tekenreeksen.
 
 Zie [Functies van Azure Cognitive Search](search-features-list.md) voor meer informatie over specifieke functionaliteiten
 
@@ -62,18 +66,18 @@ Zie [Functies van Azure Cognitive Search](search-features-list.md) voor meer inf
 
 Een end-to-end-onderzoek van de belangrijkste zoekfuncties kan in vier stappen worden bereikt:
 
-1. [**Maak een zoekservice**](search-create-service-portal.md) bij de gratis laag die wordt gedeeld met andere abonnees of een [betaalde laag](https://azure.microsoft.com/pricing/details/search/) voor toegewezen resources die alleen door uw service worden gebruikt. Alle snelstartgidsen en zelfstudies kunnen worden gevolgd in de gratis service.
+1. [**Maak een zoek service**](search-create-service-portal.md) in de gedeelde gratis laag of een [factureer bare laag](https://azure.microsoft.com/pricing/details/search/) voor speciale resources die alleen door uw service worden gebruikt. Alle Snelstartgids en zelf studies kunnen worden uitgevoerd op een gedeelde service.
 
-1. [**Maak een zoekindex**](search-what-is-an-index.md) met behulp van de portal, [REST API](/rest/api/searchservice/create-index). [.NET SDK](search-howto-dotnet-sdk.md) of een andere SDK. Het indexschema bepaalt de structuur van doorzoekbare inhoud.
+1. [**Maak een zoek index**](search-what-is-an-index.md) met behulp van de portal, [rest API](/rest/api/searchservice/create-index), [.NET SDK](search-howto-dotnet-sdk.md)of een andere SDK. Het indexschema bepaalt de structuur van doorzoekbare inhoud.
 
-1. [**Upload inhoud**](search-what-is-data-import.md) naar de index. Gebruik het ['push'-model](tutorial-optimize-indexing-push-api.md) om JSON-documenten vanuit een willekeurige bron te pushen of gebruik het ['pull'-model (indexeerfuncties)](search-indexer-overview.md) als uw brongegevens zich in Azure bevinden.
+1. [**Upload inhoud**](search-what-is-data-import.md) met het [' push '-model](tutorial-optimize-indexing-push-api.md) om JSON-documenten vanuit een wille keurige bron te pushen, of gebruik het [pull-model (Indexeer functies)](search-indexer-overview.md) als uw bron gegevens zich in azure bevindt.
 
 1. [**Vraag een index op**](search-query-overview.md) met behulp van [Search Explorer](search-explorer.md) in de portal, [REST API](search-get-started-rest.md), [.NET SDK](/dotnet/api/azure.search.documents.searchclient.search) of een andere SDK.
 
 > [!TIP]
 > Beperk het aantal stappen door te beginnen met de [**wizard Gegevens importeren**](search-get-started-portal.md) en een Azure-gegevensbron om in een paar minuten een index te maken, te laden en op te vragen.
 
-## <a name="how-it-compares"></a>Vergelijking
+## <a name="compare-search-options"></a>Zoekopties vergelijken
 
 Klanten vragen vaak wat de verschillen zijn tussen Azure Cognitive Search en andere zoekgerelateerde oplossingen. In de volgende tabel worden de verschillen samengevat.
 

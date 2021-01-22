@@ -1,0 +1,54 @@
+- name: Documentatie voor Azure import/export
+  href: ./index.yml
+- name: Overzicht
+  expanded: true
+  items:
+    - name: Wat is importeren/exporteren?
+      href: storage-import-export-service.md
+- name: Concepten
+  items:
+    - name: Vereisten beoordelen
+      href: storage-import-export-requirements.md
+    - name: Veelgestelde vragen
+      href: storage-import-export-service-faq.md
+- name: Procedures
+  expanded: true
+  items:
+    - name: Implementeren
+      items:
+        - name: Gegevens naar blobs importeren
+          href: storage-import-export-data-to-blobs.md
+        - name: Gegevens naar bestanden importeren
+          href: storage-import-export-data-to-files.md
+        - name: Gegevens uit blobs exporteren
+          href: storage-import-export-data-from-blobs.md
+    - name: Door de klant beheerde sleutels gebruiken
+      href: storage-import-export-encryption-key-portal.md
+    - name: Monitor
+      items:
+        - name: Status van station weergeven
+          href: storage-import-export-view-drive-status.md
+        - name: Taakstatus controleren
+          href: storage-import-export-tool-reviewing-job-status-v1.md
+    - name: Problemen oplossen
+      items:
+        - name: Veelvoorkomende fouten oplossen
+          href: storage-import-export-tool-troubleshooting-v1.md
+        - name: Een import taak herstellen
+          href: storage-import-export-tool-repairing-an-import-job-v1.md
+        - name: Een export taak herstellen
+          href: storage-import-export-tool-repairing-an-export-job-v1.md
+        - name: Contact met ondersteuning
+          href: storage-import-export-contact-microsoft-support.md
+- name: Naslaginformatie
+  items:
+    - name: REST-API
+      href: /rest/api/storageimportexport/jobs
+    - name: Azure PowerShell
+      href: /powershell/module/Az.ImportExport
+- name: Resources
+  items:
+    - name: Gegevens offline exporteren
+      href: /learn/modules/export-data-with-azure-import-export
+    - name: Andere opties voor offline-overdracht
+      href: ../databox/index.yml

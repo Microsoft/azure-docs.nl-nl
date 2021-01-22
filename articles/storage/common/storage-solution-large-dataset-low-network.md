@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: 8afedec224fed55f617340af512485726ff44326
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 9b83ba106b35a0a3abd035e85f60c4c39bbadd3b
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92792936"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704637"
 ---
 # <a name="data-transfer-for-large-datasets-with-low-or-no-network-bandwidth"></a>Gegevensoverdracht voor grote gegevenssets met weinig of geen netwerkbandbreedte
  
@@ -38,12 +38,12 @@ Gebruik de volgende tabel om te controleren of een fysiek apparaat de juiste opt
 
 De beschik bare opties in dit scenario zijn apparaten voor Azure Data Box offline-overdracht of Azure import/export.
 
-- **Azure data Box-serie voor offline overdrachten** : gebruik apparaten van door micro soft geleverde data Box apparaten om grote hoeveel heden gegevens naar Azure te verplaatsen wanneer u beperkt bent door tijd, netwerk beschikbaarheid of kosten. On-premises gegevens kopiëren met behulp van hulpprogram ma's zoals Robocopy. Afhankelijk van de grootte van de gegevens die u wilt overdragen, kunt u kiezen uit Data Box Disk, Data Box of Data Box Heavy.
-- **Azure import/export** : gebruik Azure import/export-service door uw eigen schijf stations te verzenden om grote hoeveel heden gegevens veilig te importeren naar Azure Blob-opslag en Azure files. Deze service kan ook worden gebruikt om gegevens over te dragen van Azure Blob-opslag naar schijf stations en te verzenden naar uw on-premises sites.
+- **Azure data Box-serie voor offline overdrachten** : gebruik apparaten van door micro soft geleverde data Box apparaten om grote hoeveel heden gegevens naar Azure te verplaatsen wanneer u beperkt bent door tijd, netwerk beschikbaarheid of kosten. On-premises gegevens kopiëren met behulp van hulpprogramma's zoals Robocopy. Afhankelijk van de grootte van de gegevens die u wilt overdragen, kunt u kiezen uit Data Box Disk, Data Box of Data Box Heavy.
+- **Azure import/export** : gebruik Azure import/export-service door uw eigen schijf stations te verzenden om grote hoeveel heden gegevens veilig te importeren naar Azure Blob-opslag en Azure files. Deze service kan ook worden gebruikt om gegevens over te dragen van Azure Blob-opslag naar schijfstations en te verzenden naar uw on-premises-locaties.
 
 ## <a name="comparison-of-key-capabilities"></a>Vergelijking van de belangrijkste mogelijkheden
 
-De volgende tabel bevat een overzicht van de verschillen in de belangrijkste mogelijkheden.
+In de volgende tabel worden de verschillen tussen de belangrijkste mogelijkheden samengevat.
 
 |                                     |    Data Box Disk      |    Data Box                                      |    Data Box Heavy              |    Import/Export                       |
 |-------------------------------------|---------------------------------|--------------------------------------------------|------------------------------------------|----------------------------------------|
@@ -52,7 +52,7 @@ De volgende tabel bevat een overzicht van de verschillen in de belangrijkste mog
 |    **Vorm factor**                  |    5 Ssd's per bestelling             |    1 X 50 kg. apparaat op computer formaat per bestelling    |    1 X ~ 500 kg. groot apparaat per order    |    Maxi maal 10 Hdd's/Ssd's per bestelling        |
 |    **Eerste instel tijd**           |    Beperkt <br>(15 minuten)            |    Laag tot gemiddeld <br> (<30 minuten)               |    Matig<br>(1-2 uur)               |    Gemiddeld tot moeilijk<br>variabeletype |
 |    **Gegevens verzenden naar Azure**           |    Ja                          |    Ja                                           |    Ja                                   |    Ja                                 |
-|    **Gegevens importeren uit Azure**       |    Nee                           |    Nee                                            |    Nee                                    |    Ja                                 |
+|    **Gegevens vanuit Azure exporteren**       |    Nee                           |    Nee                                            |    Nee                                    |    Ja                                 |
 |    **Versleuteling**                   |    AES 128-bits                  |    AES 256-bits                                   |    AES 256-bits                           |    AES 128-bits                         |
 |    **Hardware**                     |     Geleverd door micro soft          |    Geleverd door micro soft                            |    Geleverd door micro soft                    |    Klant verstrekt                   |
 |    **Netwerkinterface**            |    USB 3.1/SATA                 |    RJ 45, SFP +                                   |    RJ45, QSFP +                           |    SATA II/SATA III                    |
@@ -68,4 +68,4 @@ De volgende tabel bevat een overzicht van de verschillen in de belangrijkste mog
 
     - [Gegevens overdragen met data Box Disk](../../databox/data-box-disk-quickstart-portal.md).
     - [Gegevens overdragen met data Box](../../databox/data-box-quickstart-portal.md).
-    - [Gegevens overdragen met import/export](./storage-import-export-data-to-blobs.md).
+    - [Gegevens overdragen met import/export](../../import-export/storage-import-export-data-to-blobs.md).

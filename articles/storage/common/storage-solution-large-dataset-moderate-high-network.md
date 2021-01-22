@@ -8,12 +8,12 @@ ms.subservice: blobs
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: alkohli
-ms.openlocfilehash: f1ded1ce87df1cb57960bbc99cd950ed7b3f97ee
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: cf0e423648db174433f0717f2e5971ac49697b42
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96573932"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704620"
 ---
 # <a name="data-transfer-for-large-datasets-with-moderate-to-high-network-bandwidth"></a>Gegevensoverdracht voor grote gegevenssets met gemiddelde tot grote netwerkbandbreedte
  
@@ -95,7 +95,7 @@ Als u online gegevens overdracht gebruikt, gebruikt u de tabel in de volgende se
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Meer informatie over het overdragen van gegevens met import/export](./storage-import-export-data-to-blobs.md).
+- [Meer informatie over het overdragen van gegevens met import/export](../../import-export/storage-import-export-data-to-blobs.md).
 - Begrijpen hoe u
 
     - [Gegevens overdragen met data Box Disk](../../databox/data-box-disk-quickstart-portal.md).

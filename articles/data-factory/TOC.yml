@@ -109,8 +109,8 @@
               href: tutorial-data-flow.md
             - name: Videozelfstudies om gegevens toe te wijzen
               href: data-flow-tutorials.md
-        - name: Gegevens voorbereiden met wrangling-gegevensstromen
-          href: wrangling-data-flow-tutorial.md
+        - name: Gegevens voorbereiden met wrangling
+          href: wrangling-tutorial.md
         - name: Externe services gebruiken
           items:
             - name: HDInsight Spark
@@ -197,12 +197,12 @@
               href: concepts-data-flow-expression-builder.md
             - name: Expressietaal
               href: data-flow-expression-functions.md
-        - name: Gegevens voorbereiden met wrangling-gegevensstromen
+        - name: Gegevens voorbereiden met Power Query data wrangling
           items:
-            - name: Overzicht van Wrangling-gegevensstromen
-              href: wrangling-data-flow-overview.md
+            - name: Overzicht van gegevens wrangling
+              href: wrangling-overview.md
             - name: Ondersteunde functies
-              href: wrangling-data-flow-functions.md
+              href: wrangling-functions.md
     - name: Rollen en machtigingen
       href: concepts-roles-permissions.md
     - name: Naamgevingsregels
@@ -464,6 +464,8 @@
       items:
         - name: Gegevensstroomactiviteit uitvoeren
           href: control-flow-execute-data-flow-activity.md
+        - name: Power Query activiteit uitvoeren
+          href: control-flow-power-query-activity.md
         - name: Azure Function-activiteit
           href: control-flow-azure-function-activity.md
         - name: Aangepaste activiteit

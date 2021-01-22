@@ -59,8 +59,12 @@
   items:
     - name: Voorbeelden van directe methode voor C#
       href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-csharp'
+    - name: Voor beelden van C#-SDK
+      href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-csharp-sdk'
     - name: Voorbeelden van directe methode voor Python
       href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-python'
+    - name: Python SDK-voorbeelden
+      href: 'https://github.com/Azure-Samples/live-video-analytics-iot-edge-python-sdk'
 - name: Concepten
   items:
     - name: Mediagrafiek

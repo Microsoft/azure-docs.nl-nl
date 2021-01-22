@@ -55,7 +55,7 @@
               href: manage-vm-extensions-powershell.md
             - name: Extensies implementeren met ARM-sjabloon
               href: manage-vm-extensions-template.md
-        - name: Gebruikte beheerde identiteiten op de server
+        - name: Beheerde identiteiten gebruiken op server
           href: managed-identity-authentication.md
         - name: Agent beheren
           href: manage-agent.md
@@ -71,7 +71,7 @@
           href: troubleshoot-agent-onboard.md
         - name: Problemen met VM-extensies
           href: troubleshoot-vm-extensions.md
-- name: Naslaginformatie
+- name: Verwijzing
   items:
     - name: Gegevenslocatie
       href: data-residency.md
@@ -82,7 +82,7 @@
     - name: .NET
       href: /dotnet/api/overview/azure/hybridcompute/management
     - name: Azure Stack HCI REST
-      href: 'https://docs.microsoft.com/rest/api/stackhci'
+      href: /rest/api/stackhci
     - name: REST
       href: /rest/api/hybridcompute
     - name: Aan de slag

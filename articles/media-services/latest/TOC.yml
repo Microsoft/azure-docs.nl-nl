@@ -258,14 +258,49 @@
               href: job-error-codes.md
         - name: Accountreferenties opnieuw instellen
           href: cli-reset-account-credentials.md
-    - name: Migratie van v2 naar v3
+    - name: Migratiehandleiding
+      displayName: migration
       items:
-        - name: v2 vs v3
-          displayName: 'migrate, v2 to v3'
-          href: media-services-v2-vs-v3.md
-        - name: Migratierichtlijnen
-          href: migrate-from-v2-to-v3.md
-          displayName: naming
+        - name: Inleiding tot migratie handleiding
+          href: migrate-v-2-v-3-migration-introduction.md
+          displayName: migration
+        - name: 'Stap 1: voor delen'
+          href: migrate-v-2-v-3-migration-benefits.md
+          displayName: 'migration, benefits'
+        - name: 'Stap 2: verschillen'
+          items:
+            - name: API-toegang
+              href: migrate-v-2-v-3-differences-api-access.md
+              displayName: 'migration, api'
+            - name: Functie hiaten
+              href: migrate-v-2-v-3-differences-feature-gaps.md
+              displayName: 'migration, features'
+            - name: Terminologie en entiteits wijzigingen
+              href: migrate-v-2-v-3-differences-terminology.md
+              displayName: 'migration, entity, api'
+        - name: Stap 3-SDK-installatie
+          href: migrate-v-2-v-3-migration-setup.md
+          displayName: 'migration, SDK`'
+        - name: Stap 4-richt lijnen voor migratie op basis van Scenario's
+          items:
+            - name: Encoding
+              href: migrate-v-2-v-3-migration-scenario-based-encoding.md
+              displayName: 'migration, encoding'
+            - name: Live streamen
+              href: migrate-v-2-v-3-migration-scenario-based-live-streaming.md
+              displayName: 'migration, live streaming'
+            - name: Verpakking en levering
+              href: migrate-v-2-v-3-migration-scenario-based-publishing.md
+              displayName: 'migration, packaging, delivery, publishing'
+            - name: Inhoudsbeveiliging
+              href: migrate-v-2-v-3-migration-scenario-based-content-protection.md
+              displayName: 'migration, content protection, DRM, digital rights management'
+            - name: Gereserveerde media-eenheden (MRU)
+              href: migrate-v-2-v-3-migration-scenario-based-media-reserved-units.md
+              displayName: 'migration, media reserved units'
+        - name: Voor beelden vergelijken
+          href: migrate-v-2-v-3-migration-samples.md
+          displayName: 'migration, samples'
 - name: Instructiegidsen
   items:
     - name: Assets maken en media uploaden

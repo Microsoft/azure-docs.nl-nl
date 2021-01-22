@@ -71,6 +71,8 @@
           href: spring-cloud-howto-launch-from-source.md
         - name: IntelliJ gebruiken om apps te implementeren
           href: spring-cloud-tutorial-intellij-deploy-apps.md
+        - name: VS code gebruiken om apps te implementeren
+          href: 'https://code.visualstudio.com/docs/java/java-spring-cloud'
         - name: Azure Spring Cloud implementeren met Azure PowerShell
           href: spring-cloud-howto-deploy-powershell.md
     - name: Configureren

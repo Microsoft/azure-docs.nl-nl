@@ -89,8 +89,10 @@
       items:
         - name: SQL Server naar SQL Database
           href: howto-sql-server-to-azure-sql-powershell.md
-        - name: SQL Server naar SQL Managed Instance
-          href: howto-sql-server-to-azure-sql-mi-powershell.md
+        - name: SQL Server naar SQL MI (online)
+          href: howto-sql-server-to-azure-sql-managed-instance-powershell-online.md
+        - name: SQL Server naar SQL MI (offline)
+          href: howto-sql-server-to-azure-sql-managed-instance-powershell-offline.md
     - name: SSIS-pakket opnieuw implementeren naar
       items:
         - name: Azure SQL Database
@@ -137,17 +139,17 @@
               href: known-issues-dms-hybrid-mode.md
         - name: Bekende problemen met de migratie
           items:
-            - name: naar SQL Database
+            - name: SQL Database
               href: known-issues-azure-sql-online.md
             - name: SQL Managed Instance
               href: known-issues-azure-sql-db-managed-instance-online.md
-            - name: naar Azure DB for MySQL
+            - name: Azure DB voor MySQL
               href: known-issues-azure-mysql-online.md
-            - name: van PostgreSQL naar Azure DB for PostgreSQL
+            - name: PostgreSQL naar Azure DB voor PostgreSQL
               href: known-issues-azure-postgresql-online.md
-            - name: van Oracle naar Azure DB for PostgreSQL
+            - name: Oracle naar Azure DB voor PostgreSQL
               href: known-issues-oracle-azure-postgresql-online.md
-            - name: van MongoDB naar Azure Cosmos DB's API voor MongoDB
+            - name: MongoDB Azure Cosmos DB-API voor MongoDB
               href: known-issues-mongo-cosmos-db.md
     - name: Video's
       items:

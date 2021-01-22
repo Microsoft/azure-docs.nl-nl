@@ -8,14 +8,14 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: anomaly-detector
 ms.topic: conceptual
-ms.date: 03/26/2019
+ms.date: 01/22/2021
 ms.author: mbullwin
-ms.openlocfilehash: 9457c610b256dd4602ef0dc51a47eeffb3c63b49
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: b0869335c386712e6b759bb0ced459ebd1bf383c
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705146"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702723"
 ---
 # <a name="best-practices-for-using-the-anomaly-detector-api"></a>Aanbevolen procedures voor het gebruik van de anomalie detectie-API
 
@@ -34,7 +34,7 @@ Met het batch detectie-eind punt van de afwijkings detectie-API kunt u afwijking
 * Een seizoen tijd reeks, met incidentele afwijkingen.
 * Een reeks vaste trend tijden, met incidentele pieken/spannings dips. 
 
-Het is niet raadzaam om batch anomalie detectie te gebruiken voor realtime gegevens bewaking of het gebruik ervan op tijdreeks gegevens die geen hogere kenmerken hebben. 
+Het is niet raadzaam om batch anomalie detectie te gebruiken voor realtime gegevens bewaking of het gebruik ervan op tijdreeks gegevens die niet de bovenstaande kenmerken hebben. 
 
 * Batch detectie maakt en past slechts één model toe, de detectie voor elk punt wordt uitgevoerd in de context van de hele reeks. Als de tijdreeks gegevens trends omhoog en omlaag dalen zonder seizoensgebondenheid, kunnen sommige wijzigingen (spannings dips en pieken in de gegevens) worden gemist door het model. Het is ook mogelijk dat sommige wijzigingen die minder belang rijk zijn dan later in de gegevensset, niet als groot genoeg worden beschouwd om in het model te worden opgenomen.
 
@@ -87,7 +87,7 @@ Ontbrekende gegevens punten zijn gebruikelijk in gelijkmatig gedistribueerde tij
 
 ### <a name="aggregate-distributed-data"></a>Gedistribueerde gegevens verzamelen
 
-De anomalie detectie-API werkt het beste op een even gedistribueerde tijd reeks. Als uw gegevens wille keurig worden gedistribueerd, moet u deze samen voegen met een tijds eenheid, bijvoorbeeld per minuut, elk uur of dagelijks.
+De anomalie detectie-API werkt het beste op een even gedistribueerde tijd reeks. Als uw gegevens wille keurig worden gedistribueerd, moet u deze samen voegen met een tijds eenheid, zoals per minuut, elk uur of dagelijks.
 
 ## <a name="anomaly-detection-on-data-with-seasonal-patterns"></a>Anomalie detectie voor gegevens met seizoensgebonden patronen
 
@@ -95,7 +95,7 @@ Als u weet dat uw time series-gegevens een seizoensgebonden patroon hebben (een 
 
 `period`Wanneer u een JSON-aanvraag maakt, kan er een afwijkende detectie latentie van Maxi maal 50% worden opgegeven. Het `period` is een geheel getal dat ongeveer aangeeft hoeveel gegevens punten de tijd reeks duurt om een patroon te herhalen. Een tijd reeks met één gegevens punt per dag zou bijvoorbeeld een `period` as hebben `7` en een tijd reeks met één punt per uur (met hetzelfde wekelijkse patroon) zou een `period` van hebben  `7*24` . Als u niet zeker bent van de patronen van uw gegevens, hoeft u deze para meter niet op te geven.
 
-Voor de beste resultaten geeft u 4 aan `period` gegevens punt op, plus een extra. Zo moeten gegevens per uur met een wekelijks patroon, zoals hierboven wordt beschreven, 673 gegevens punten leveren in de aanvraag tekst ( `7 * 24 * 4 + 1` ).
+Voor de beste resultaten geeft u vier `period` gegevens punten op, plus een extra. Zo moeten gegevens per uur met een wekelijks patroon, zoals hierboven wordt beschreven, 673 gegevens punten leveren in de aanvraag tekst ( `7 * 24 * 4 + 1` ).
 
 ### <a name="sampling-data-for-real-time-monitoring"></a>Bemonsterings gegevens voor realtime-bewaking
 
@@ -104,4 +104,4 @@ Als uw streaminggegevens worden bemonsterd met een kort interval (bijvoorbeeld s
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Wat is de Anomaly Detector-API?](../overview.md)
-* [Snelstartgids: afwijkingen in uw time series-gegevens detecteren met behulp van de anomalie detectie](../quickstarts/client-libraries.md)
+* [Snelstart: Anomalieën detecteren in uw tijdreeksgegevens met behulp van de Anomaly Detector](../quickstarts/client-libraries.md)

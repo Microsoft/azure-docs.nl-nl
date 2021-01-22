@@ -6,16 +6,16 @@ ms.service: data-lake-store
 ms.topic: how-to
 ms.date: 05/29/2018
 ms.author: twooley
-ms.openlocfilehash: d04a5c0e53e9a5db8bba03a5a9e9d95b87a8b5a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 940b7ac90f85e0254d59459b70ccc15312cd69f4
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85855676"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98700836"
 ---
 # <a name="use-the-azure-importexport-service-for-offline-copy-of-data-to-data-lake-storage-gen1"></a>De Azure import/export-service gebruiken voor het offline kopiëren van gegevens naar Data Lake Storage Gen1
 
-In dit artikel vindt u informatie over het kopiëren van enorme gegevens sets (>200 GB) in Data Lake Storage Gen1 met behulp van methoden voor het gebruik van offline kopieën, zoals de [Azure import/export-service](../storage/common/storage-import-export-service.md). Het bestand dat als voor beeld in dit artikel wordt gebruikt, is 339.420.860.416 bytes of ongeveer 319 GB op schijf. We bellen u het bestand 319GB. TSV.
+In dit artikel vindt u informatie over het kopiëren van enorme gegevens sets (>200 GB) in Data Lake Storage Gen1 met behulp van methoden voor het gebruik van offline kopieën, zoals de [Azure import/export-service](../import-export/storage-import-export-service.md). Het bestand dat als voor beeld in dit artikel wordt gebruikt, is 339.420.860.416 bytes of ongeveer 319 GB op schijf. We bellen u het bestand 319GB. TSV.
 
 Met de Azure import/export-service kunt u grote hoeveel heden gegevens veiliger overzetten naar Azure Blob-opslag door harde schijven naar een Azure-Data Center te verzenden.
 
@@ -44,7 +44,7 @@ Met de bewerking splitsen worden bestanden met de volgende namen gemaakt.
 
 ## <a name="get-disks-ready-with-data"></a>Schijven gereed met gegevens ophalen
 
-Volg de instructies in [met de Azure import/export-service](../storage/common/storage-import-export-service.md) (onder de sectie **uw stations voorbereiden** ) om uw harde schijven voor te bereiden. Hier volgt de algemene volg orde:
+Volg de instructies in [met de Azure import/export-service](../import-export/storage-import-export-service.md) (onder de sectie **uw stations voorbereiden** ) om uw harde schijven voor te bereiden. Hier volgt de algemene volg orde:
 
 1. Het aanschaffen van een harde schijf die voldoet aan de vereiste om te worden gebruikt voor de Azure import/export-service.
 2. Identificeer een Azure Storage-account waar de gegevens worden gekopieerd nadat deze zijn verzonden naar het Azure-Data Center.
@@ -53,12 +53,12 @@ Volg de instructies in [met de Azure import/export-service](../storage/common/st
     ```
     WAImportExport PrepImport /sk:<StorageAccountKey> /t: <TargetDriveLetter> /format /encrypt /logdir:e:\myexportimportjob\logdir /j:e:\myexportimportjob\journal1.jrn /id:myexportimportjob /srcdir:F:\demo\ExImContainer /dstdir:importcontainer/vf1/
     ```
-    Zie [de Azure import/export-service gebruiken](../storage/common/storage-import-export-service.md) voor meer voorbeeld fragmenten.
+    Zie [de Azure import/export-service gebruiken](../import-export/storage-import-export-service.md) voor meer voorbeeld fragmenten.
 4. Met de voor gaande opdracht maakt u een logboek bestand op de opgegeven locatie. Gebruik dit logboek bestand om een import taak te maken op basis van de [Azure Portal](https://portal.azure.com).
 
 ## <a name="create-an-import-job"></a>Een import taak maken
 
-U kunt nu een import taak maken met behulp van de instructies in [de Azure import/export-service](../storage/common/storage-import-export-service.md) (in het gedeelte de **import taak maken** ). Voor deze import taak geeft u met andere gegevens ook het logboek bestand dat is gemaakt tijdens het voorbereiden van de schijf stations.
+U kunt nu een import taak maken met behulp van de instructies in [de Azure import/export-service](../import-export/storage-import-export-service.md) (in het gedeelte de **import taak maken** ). Voor deze import taak geeft u met andere gegevens ook het logboek bestand dat is gemaakt tijdens het voorbereiden van de schijf stations.
 
 ## <a name="physically-ship-the-disks"></a>De schijven fysiek verzenden
 

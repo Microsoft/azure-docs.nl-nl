@@ -1,14 +1,14 @@
 ---
 title: ISM-BEVEILIGING Australische overheid blauwdrukvoorbeeldoverzicht
 description: Overzicht van blauwdrukvoorbeeld van de ISM-BEVEILIGING van de Australische overheid. Met dit blauwdrukvoorbeeld kunnen klanten specifieke beheeropties van ISM-BEVEILIGING bekijken.
-ms.date: 09/11/2020
+ms.date: 01/21/2021
 ms.topic: sample
-ms.openlocfilehash: 69f18c7a34bdf39ebbc2031b187d033c999165a9
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
-ms.translationtype: HT
+ms.openlocfilehash: ee28ccb0d76327f3db073c98bcbc44a78c2f1a17
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955566"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98707363"
 ---
 # <a name="overview-of-the-australian-government-ism-protected-blueprint-sample"></a>Overzicht van blauwdrukvoorbeeld van de ISM-BEVEILIGING van de Australische overheid
 

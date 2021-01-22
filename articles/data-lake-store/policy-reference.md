@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Data Lake Storage Gen1
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Data Lake Storage Gen1. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: reference
 author: twooley
 ms.author: twooley
 ms.service: data-lake-store
 ms.custom: subject-policy-reference
-ms.openlocfilehash: a79a1a2d77893087c73e96f17f05eff55b301520
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 6bb46a6082140de36c232a86f9ccd68465d267ee
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048608"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98700332"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-data-lake-storage-gen1"></a>Ingebouwde Azure Policy-definities voor Azure Data Lake Storage Gen1
 

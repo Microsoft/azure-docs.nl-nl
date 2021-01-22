@@ -1,15 +1,15 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Service Fabric
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Service Fabric. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 8ca4f0b43962856c9bafc1654a732ae2c7783f5c
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 95fd494430ac742f90b3c28dde97270cd0c2263a
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98043984"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98700653"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-service-fabric"></a>Ingebouwde Azure Policy-definities voor Azure Service Fabric
 

@@ -1,0 +1,71 @@
+### YamlMime:Landing
+title: Documentatie voor Azure import/export-online overdracht
+summary: Gebruik Azure import/export om veilig grote hoeveel heden gegevens te importeren naar Azure Blob-opslag en Azure Files door schijf stations naar een Azure-Data Center te verzenden.
+metadata:
+  title: Documentatie voor Azure import/export
+  description: Documentatie over het importeren/exporteren van Azure om grote hoeveel heden gegevens van en naar Azure-data centers veilig te importeren/exporteren door fysieke schijven te verzenden.
+  services: storage
+  ms.service: storage
+  ms.subservice: storage
+  ms.topic: landing-page
+  ms.collection: collection
+  author: v-dalc
+  ms.author: alkohli
+  ms.date: 01/08/201
+  ms.openlocfilehash: 5bccc4c64da4493e2f6d5e969949eb13df8bc1e7
+  ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 01/22/2021
+  ms.locfileid: "98707641"
+landingContent:
+- title: Over Azure import/export
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is importeren/exporteren?
+      url: storage-import-export-service.md
+  - linkListType: architecture
+    links:
+    - text: Opties voor gegevensoverdracht kiezen
+      url: /azure/storage/common/storage-choose-data-transfer-solution
+    - text: Netwerk- of offline-overdracht gebruiken
+      url: /azure/storage/common/storage-solution-large-dataset-low-network#offline-transfer-or-network-transfer
+- title: Vereisten
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Vereisten
+      url: storage-import-export-requirements.md
+    - text: Veelgestelde vragen
+      url: storage-import-export-service-faq.md
+- title: Implementeren
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Gegevens naar blobs importeren
+      url: storage-import-export-data-to-blobs.md
+    - text: Gegevens naar bestanden importeren
+      url: storage-import-export-data-to-files.md
+    - text: Gegevens uit blobs exporteren
+      url: storage-import-export-data-from-blobs.md
+  - linkListType: learn
+    links:
+    - text: Gegevens offline exporteren met import/export
+      url: /learn/modules/export-data-with-azure-import-export/
+- title: Monitor
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Status van station weergeven
+      url: storage-import-export-view-drive-status.md
+    - text: Taakstatus controleren
+      url: storage-import-export-tool-reviewing-job-status-v1.md
+- title: Problemen oplossen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Problemen oplossen
+      url: storage-import-export-contact-microsoft-support.md
+    - text: Contact met ondersteuning
+      url: storage-import-export-contact-microsoft-support.md

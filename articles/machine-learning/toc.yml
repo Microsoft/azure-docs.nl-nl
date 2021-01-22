@@ -70,10 +70,6 @@
         - name: Afbeeldingsgegevens labelen
           displayName: 'tag, tagging, images'
           href: tutorial-labeling.md
-    - name: R SDK
-      items:
-        - name: Uw eerste Machine Learning-experiment maken (R)
-          href: tutorial-1st-r-experiment.md
     - name: CLI
       items:
         - name: Trainen en implementeren met CLI

@@ -11,12 +11,12 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: fea314d595fb39a1e35dec8ab24533ad4b893f98
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: fabbdf330d43737ffa85379f9cc4d5ac59c4a734
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448067"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673515"
 ---
 # <a name="indexing-dedicated-sql-pool-tables-in-azure-synapse-analytics"></a>Unieke SQL-pool tabellen indexeren in azure Synapse Analytics
 
@@ -24,9 +24,9 @@ Aanbevelingen en voor beelden voor het indexeren van tabellen in een toegewezen 
 
 ## <a name="index-types"></a>Indextypen
 
-Een toegewezen SQL-groep biedt verschillende indexerings opties, waaronder [geclusterde column Store-indexen](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [geclusterde indexen en niet-geclusterde indexen](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), en een niet-index optie die ook wel een [heap](/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)is genoemd.  
+Een toegewezen SQL-groep biedt verschillende indexerings opties, waaronder [geclusterde column Store-indexen](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), [geclusterde indexen en niet-geclusterde indexen](/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), en een niet-index optie die ook wel een [heap](/sql/relational-databases/indexes/heaps-tables-without-clustered-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)is genoemd.  
 
-Als u een tabel met een index wilt maken, raadpleegt u de documentatie van [Create Table (exclusieve SQL-groep)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .
+Als u een tabel met een index wilt maken, raadpleegt u de documentatie van [Create Table (exclusieve SQL-groep)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .
 
 ## <a name="clustered-columnstore-indexes"></a>Geclusterde column Store-indexen
 
@@ -230,7 +230,7 @@ EXEC sp_addrolemember 'xlargerc', 'LoadUser'
 
 Meld u aan als de gebruiker uit stap 1 (bijvoorbeeld LoadUser), dat nu gebruikmaakt van een hogere resource klasse en voer de instructies ALTER INDEX uit. Zorg ervoor dat deze gebruiker gewijzigde machtigingen heeft voor de tabellen waarin de index opnieuw wordt opgebouwd. In deze voor beelden ziet u hoe u de volledige column store-index opnieuw bouwt of hoe u een enkele partitie opnieuw bouwt. In grote tabellen is het praktisch om indexen op één keer tegelijk opnieuw op te bouwen.
 
-U kunt de tabel ook kopiëren naar een nieuwe tabel [met behulp van CTAS](sql-data-warehouse-develop-ctas.md)in plaats van de index opnieuw samen te stellen. Wat is de beste manier? Voor grote hoeveel heden gegevens is CTAS doorgaans sneller dan [ALTER index](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Voor kleinere gegevens volumes is ALTER INDEX eenvoudiger te gebruiken en hoeft u de tabel niet uit te wisselen.
+U kunt de tabel ook kopiëren naar een nieuwe tabel [met behulp van CTAS](sql-data-warehouse-develop-ctas.md)in plaats van de index opnieuw samen te stellen. Wat is de beste manier? Voor grote hoeveel heden gegevens is CTAS doorgaans sneller dan [ALTER index](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Voor kleinere gegevens volumes is ALTER INDEX eenvoudiger te gebruiken en hoeft u de tabel niet uit te wisselen.
 
 ```sql
 -- Rebuild the entire clustered index
@@ -252,7 +252,7 @@ ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_CO
 ALTER INDEX ALL ON [dbo].[FactInternetSales] REBUILD Partition = 5 WITH (DATA_COMPRESSION = COLUMNSTORE)
 ```
 
-Het opnieuw opbouwen van een index in de toegewezen SQL-groep is een offline bewerking.  Voor meer informatie over het opnieuw opbouwen van indexen raadpleegt u de sectie ALTER INDEX Rebuild in [Column Store-indexen defragmenteren](/sql/relational-databases/indexes/columnstore-indexes-defragmentation?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)en [ALTER index](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
+Het opnieuw opbouwen van een index in de toegewezen SQL-groep is een offline bewerking.  Voor meer informatie over het opnieuw opbouwen van indexen raadpleegt u de sectie ALTER INDEX Rebuild in [Column Store-indexen defragmenteren](/sql/relational-databases/indexes/columnstore-indexes-defragmentation?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)en [ALTER index](/sql/t-sql/statements/alter-index-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
 
 ### <a name="step-3-verify-clustered-columnstore-segment-quality-has-improved"></a>Stap 3: controleren of de kwaliteit van geclusterde column Store-segmenten is verbeterd
 
@@ -260,7 +260,7 @@ Voer de query opnieuw uit met een slechte segment kwaliteit en controleer of de 
 
 ## <a name="rebuilding-indexes-with-ctas-and-partition-switching"></a>Indexen opnieuw samen stellen met CTAS en partitie wisseling
 
-In dit voor beeld wordt de instructie [create table as select (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) en Partition switch gebruikt voor het opnieuw samen stellen van een tabel partitie.
+In dit voor beeld wordt de instructie [create table as select (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) en Partition switch gebruikt voor het opnieuw samen stellen van een tabel partitie.
 
 ```sql
 -- Step 1: Select the partition of data and write it out to a new table using CTAS

@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 07/06/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 2a17825d062496e6600966dc7c90b14749507e4d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0fea82c376a178de0be8ede6c0393e1de21de614
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86494510"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675801"
 ---
 # <a name="disable-or-remove-the-linux-agent-from-vms-and-images"></a>De Linux-agent uit Vm's en installatie kopieën uitschakelen of verwijderen
 
@@ -31,9 +31,9 @@ Het Azure-platform fungeert als host voor veel uitbrei dingen die variëren van 
 
 ## <a name="disabling-extension-processing"></a>Uitbrei ding verwerken uitschakelen
 
-Er zijn verschillende manieren om de verwerking van extensies uit te scha kelen, afhankelijk van uw behoeften, maar voordat u doorgaat, **moet** u alle extensies verwijderen die zijn geïmplementeerd op de VM, bijvoorbeeld AZ CLI, u kunt een [lijst](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-list) maken en [verwijderen](/cli/azure/vm/extension?view=azure-cli-latest#az-vm-extension-delete):
+Er zijn verschillende manieren om de verwerking van uitbrei dingen uit te scha kelen, afhankelijk van uw behoeften, maar voordat u doorgaat, **moet** u alle uitbrei dingen verwijderen die zijn geïmplementeerd op de VM, bijvoorbeeld met behulp van Azure CLI, u kunt een [lijst](/cli/azure/vm/extension#az-vm-extension-list) maken en [verwijderen](/cli/azure/vm/extension#az-vm-extension-delete):
 
-```bash
+```azurecli
 az vm extension delete -g MyResourceGroup --vm-name MyVm -n extension_name
 ```
 > [!Note]
@@ -43,7 +43,7 @@ az vm extension delete -g MyResourceGroup --vm-name MyVm -n extension_name
 ### <a name="disable-at-the-control-plane"></a>Uitschakelen op het besturings vlak
 Als u niet zeker weet of u uitbrei dingen in de toekomst nodig hebt, kunt u de Linux-agent op de virtuele machine installeren en vervolgens de extensie verwerkings mogelijkheden van het platform uitschakelen. Deze optie is beschikbaar in `Microsoft.Compute` `2018-06-01` de API-versie of hoger en heeft geen afhankelijkheid van de geïnstalleerde versie van de Linux-agent.
 
-```bash
+```azurecli
 az vm update -g <resourceGroup> -n <vmName> --set osProfile.allowExtensionOperations=false
 ```
 U kunt de verwerkings uitbreiding eenvoudig opnieuw inschakelen vanaf het platform, met de bovenstaande opdracht, maar instellen op ' True '.
@@ -132,7 +132,7 @@ Zodra u het bovenstaande hebt voltooid, kunt u de aangepaste installatie kopie m
 
 
 **Een normale beheerde installatie kopie maken**
-```bash
+```azurecli
 az vm deallocate -g <resource_group> -n <vm_name>
 az vm generalize -g <resource_group> -n <vm_name>
 az image create -g <resource_group> -n <image_name> --source <vm_name>
@@ -140,7 +140,7 @@ az image create -g <resource_group> -n <image_name> --source <vm_name>
 
 **Een installatie kopie versie maken in een galerie met gedeelde afbeeldingen**
 
-```bash
+```azurecli
 az sig image-version create \
     -g $sigResourceGroup 
     --gallery-name $sigName 
@@ -157,7 +157,7 @@ Wanneer u de virtuele machine maakt op basis van de installatie kopie zonder Lin
 
 Als u de VM wilt implementeren met uitbrei dingen die zijn uitgeschakeld, kunt u de Azure CLI gebruiken met [--Enable-agent](/cli/azure/vm#az-vm-create).
 
-```bash
+```azurecli
 az vm create \
     --resource-group $resourceGroup \
     --name $prodVmName \

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 11/23/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 19aa847ce7ce1a6ba727a4733aefcdfad845e8c6
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 282ec6a25dc381dc51f28534d272bae57d2e792e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629388"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674990"
 ---
 # <a name="tutorial-to-configure-nevis-with-azure-active-directory-b2c-for-passwordless-authentication"></a>Zelf studie voor het configureren van Nevis met Azure Active Directory B2C voor verificatie zonder wacht woord
 
@@ -30,9 +30,9 @@ Om aan de slag te gaan, hebt u het volgende nodig:
 
 - Een Azure AD-abonnement Als u er nog geen hebt, kunt u een [gratis account](https://azure.microsoft.com/free/)aanvragen.
 
-- Een [Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) die is gekoppeld aan uw Azure-abonnement.
+- Een [Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.
 
-- Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started), als u Nevis wilt integreren in uw aanmeldings beleids stroom.
+- Geconfigureerde Azure AD B2C-omgeving voor het gebruik van [aangepast beleid](./custom-policy-get-started.md), als u Nevis wilt integreren in uw aanmeldings beleids stroom.
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -104,7 +104,7 @@ U ontvangt twee e-mail berichten:
 
 ### <a name="integrate-azure-ad-b2c-with-nevis"></a>Azure AD B2C integreren met Nevis
 
-1. Open [Azure Portal](https://portal.azure.com/).
+1. Open de [Azure Portal](https://portal.azure.com/).
 
 2. Schakel over naar uw Azure AD B2C-Tenant. Zorg ervoor dat u de juiste Tenant hebt geselecteerd, omdat de Azure AD B2C Tenant doorgaans zich in een afzonderlijke Tenant bevindt.
 
@@ -134,9 +134,9 @@ U ontvangt twee e-mail berichten:
 
 4. **Sla** de wijzigingen in het bestand op.
 
-5. Volg de [instructies](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#2-create-an-azure-blob-storage-account) en upload het **nevis.html** -bestand naar uw Azure Blob-opslag.
+5. Volg de [instructies](./customize-ui-with-html.md#2-create-an-azure-blob-storage-account) en upload het **nevis.html** -bestand naar uw Azure Blob-opslag.
 
-6. Volg de [instructies](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#3-configure-cors) om cross-Origin resource SHARING (CORS) voor dit bestand in te scha kelen.
+6. Volg de [instructies](./customize-ui-with-html.md#3-configure-cors) om cross-Origin resource SHARING (CORS) voor dit bestand in te scha kelen.
 
 7. Zodra het uploaden is voltooid en CORS is ingeschakeld, selecteert u het **nevis.html** -bestand in de lijst.
 
@@ -268,6 +268,6 @@ U ontvangt twee e-mail berichten:
 
 Raadpleeg de volgende artikelen voor meer informatie
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)

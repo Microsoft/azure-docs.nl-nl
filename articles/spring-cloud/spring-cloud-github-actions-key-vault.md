@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 09/08/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: 995d10b3c7064e462500e0bec4d5d8aa010afe64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0ea0db1faf8c452958b8d95c193d45506057777c
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90888781"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673329"
 ---
 # <a name="authenticate-azure-spring-cloud-with-key-vault-in-github-actions"></a>Azure Spring Cloud verifiëren met Key Vault in GitHub Actions
 
@@ -22,13 +22,14 @@ Sleutel kluis is een veilige plaats voor het opslaan van sleutels. Zakelijke geb
 
 ## <a name="generate-credential"></a>Referentie genereren
 Voor het genereren van een sleutel voor toegang tot de sleutel kluis voert u de volgende opdracht uit op de lokale computer:
-```
+
+```azurecli
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID>/resourceGroups/<RESOURCE_GROUP>/providers/Microsoft.KeyVault/vaults/<KEY_VAULT> --sdk-auth
 ```
 Met het bereik dat is opgegeven door de `--scopes` para meter wordt de sleutel toegang tot de bron beperkt.  Het kan alleen toegang krijgen tot het sterke vak.
 
 Met resultaten:
-```
+```output
 {
     "clientId": "<GUID>",
     "clientSecret": "<GUID>",
@@ -50,7 +51,7 @@ Ga naar het **Key Vault** dash board in azure Portal, klik op het **toegangs beh
 
  ![Toegangs beleid instellen](./media/github-actions/key-vault1.png)
 
-Kopieer de referentie naam, bijvoorbeeld `azure-cli-2020-01-19-04-39-02` . Open het menu **toegangs beleid** en klik op koppeling naar **toegangs beleid toevoegen** .  Selecteer `Secret Management` voor **sjabloon**en selecteer vervolgens **Principal**. Plak de referentie naam in **Principal**invoervak / **selecteren** :
+Kopieer de referentie naam, bijvoorbeeld `azure-cli-2020-01-19-04-39-02` . Open het menu **toegangs beleid** en klik op koppeling naar **toegangs beleid toevoegen** .  Selecteer `Secret Management` voor **sjabloon** en selecteer vervolgens **Principal**. Plak de referentie naam in **Principal** invoervak / **selecteren** :
 
  ![Selecteer](./media/github-actions/key-vault2.png)
 
@@ -59,12 +60,12 @@ Kopieer de referentie naam, bijvoorbeeld `azure-cli-2020-01-19-04-39-02` . Open 
 ## <a name="generate-full-scope-azure-credential"></a>Azure-referentie met een volledige bereik genereren
 Dit is de hoofd sleutel voor het openen van alle deuren in het gebouw. De procedure is vergelijkbaar met de vorige stap, maar hier wijzigen we het bereik voor het genereren van de hoofd sleutel:
 
-```
+```azurecli
 az ad sp create-for-rbac --role contributor --scopes /subscriptions/<SUBSCRIPTION_ID> --sdk-auth
 ```
 
 Opnieuw, resultaten:
-```
+```output
 {
     "clientId": "<GUID>",
     "clientSecret": "<GUID>",
@@ -84,7 +85,7 @@ Kopieer de volledige JSON-teken reeks.  Bo terug naar **Key Vault** dash board. 
 ## <a name="combine-credentials-in-github-actions"></a>Referenties combi neren in GitHub acties
 Stel de referenties in die worden gebruikt wanneer de CICD-pijp lijn wordt uitgevoerd:
 
-```
+```console
 on: [push]
 
 jobs:

@@ -11,12 +11,12 @@ ms.date: 03/22/2019
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: 6984ad41c07f7790a746dbd197c18dce2aa83e2f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: d668c3e505d6849d3cde52d52698a95c1c5647d9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453715"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676159"
 ---
 # <a name="maximizing-rowgroup-quality-for-columnstore-indexes-in-dedicated-sql-pool"></a>Maximale Rijg roep-kwaliteit voor column Store-indexen in toegewezen SQL-groep 
 
@@ -28,7 +28,7 @@ Omdat een column store-index een tabel scant door kolom segmenten van afzonderli
 
 Wanneer Rijg roepen een groot aantal rijen heeft, verbetert de gegevens compressie dat betekent dat er minder gegevens kunnen worden gelezen van de schijf.
 
-Zie [Column Store-indexen gids](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)voor meer informatie over Rijg roepen.
+Zie [Column Store-indexen gids](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie over Rijg roepen.
 
 ## <a name="target-size-for-rowgroups"></a>Doel grootte voor Rijg roepen
 
@@ -42,11 +42,11 @@ Tijdens het opnieuw opbouwen van bulksgewijs laden of column store-index is er m
 
 Als er onvoldoende geheugen is om ten minste 10.000 rijen in elke Rijg roep te comprimeren, wordt er een fout gegenereerd.
 
-Zie [bulksgewijs laden in een geclusterde column store-index](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)voor meer informatie over bulksgewijs laden.
+Zie [bulksgewijs laden in een geclusterde column store-index](/sql/relational-databases/indexes/columnstore-indexes-data-loading-guidance?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie over bulksgewijs laden.
 
 ## <a name="how-to-monitor-rowgroup-quality"></a>Rijg roep-kwaliteit bewaken
 
-De DMV-sys.dm_pdw_nodes_db_column_store_row_group_physical_stats ([sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) bevat de weergave definitie die overeenkomt met de SQL-data base) waarmee nuttige informatie wordt weer gegeven, zoals het aantal rijen in Rijg roepen en de reden voor het verkleinen van de gegevens, als deze is bijgesneden.
+De DMV-sys.dm_pdw_nodes_db_column_store_row_group_physical_stats ([sys.dm_db_column_store_row_group_physical_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-column-store-row-group-physical-stats-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) bevat de weergave definitie die overeenkomt met de SQL-data base) waarmee nuttige informatie wordt weer gegeven, zoals het aantal rijen in Rijg roepen en de reden voor het verkleinen van de gegevens, als deze is bijgesneden.
 
 U kunt de volgende weer gave maken als een handige manier om een query uit te geven op deze DMV om informatie op te halen over Rijg roep-bijsnijden.
 

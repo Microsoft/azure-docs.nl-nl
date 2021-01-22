@@ -10,12 +10,12 @@ ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 0e53bebf9cdb8c0fc084d04550c7444c1c01be50
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 56611794bc2f190eccef739679da8474c9b04eb4
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96352861"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675957"
 ---
 # <a name="clone-a-managed-image-to-an-image-version-using-the-azure-cli"></a>Een beheerde installatie kopie klonen naar een installatie kopie versie met behulp van de Azure CLI
 Als u een bestaande beheerde installatie kopie hebt die u in een galerie met gedeelde afbeeldingen wilt klonen, kunt u rechtstreeks vanuit de beheerde installatie kopie een installatie kopie van een gedeelde installatie kopie maken. Wanneer u de nieuwe installatie kopie hebt getest, kunt u de door de bron beheerde installatie kopie verwijderen. U kunt ook migreren van een beheerde installatie kopie naar een galerie met gedeelde afbeeldingen met behulp van [Power shell](image-version-managed-image-powershell.md).
@@ -41,11 +41,11 @@ Omdat beheerde installatie kopieën altijd gegeneraliseerde installatie kopieën
 
 Namen van installatiekopiedefinities kunnen bestaan uit hoofdletters, kleine letters, cijfers, streepjes en punten. 
 
-Zie [Installatiekopiedefinities](./linux/shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
+Zie [Installatiekopiedefinities](./shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
 
 Een installatiekopiedefinitie in de galerie maken met [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
-In dit voor beeld heeft de definitie van de installatie kopie de naam *myImageDefinition* en is voor een [gegeneraliseerde](./linux/shared-image-galleries.md#generalized-and-specialized-images) installatie kopie van Linux-besturings systeem. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
+In dit voor beeld heeft de definitie van de installatie kopie de naam *myImageDefinition* en is voor een [gegeneraliseerde](./shared-image-galleries.md#generalized-and-specialized-images) installatie kopie van Linux-besturings systeem. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
 
 ```azurecli-interactive 
 resourceGroup=myGalleryRG

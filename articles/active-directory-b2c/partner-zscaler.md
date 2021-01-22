@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 12/09/2020
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 254f8da74a187e88cfb973da7100fe5654c84bb6
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: fe427150b15c6bccb97172ae751235d388c95c7b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97732443"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675023"
 ---
 # <a name="tutorial-configure-zscaler-private-access-with-azure-active-directory-b2c"></a>Zelf studie: Zscaler persoonlijke toegang configureren met Azure Active Directory B2C
 
@@ -27,7 +27,7 @@ In deze zelf studie leert u hoe u Azure Active Directory B2C (Azure AD B2C)-veri
 Voordat u begint, hebt u het volgende nodig:
 
 - Een Azure-abonnement. Als u geen abonnement hebt, kunt u zich aanmelden voor een [gratis account](https://azure.microsoft.com/free/).  
-- [Een Azure AD B2C-Tenant](https://docs.microsoft.com/azure/active-directory-b2c/tutorial-create-tenant) die is gekoppeld aan uw Azure-abonnement.  
+- [Een Azure AD B2C-Tenant](./tutorial-create-tenant.md) die is gekoppeld aan uw Azure-abonnement.  
 - [Een ZPA-abonnement](https://azuremarketplace.microsoft.com/marketplace/apps/aad.zscalerprivateaccess?tab=Overview).
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
@@ -96,15 +96,15 @@ Nadat u Azure AD B2C hebt geconfigureerd, wordt de rest van de IdP-configuratie 
 >[!Note]
 >Deze stap is alleen vereist als u nog geen aangepaste beleids regels hebt geconfigureerd. Als u al een of meer aangepaste beleids regels hebt, kunt u deze stap overs Laan.
 
-Zie aan de [slag met aangepaste beleids regels in azure Active Directory B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started)om aangepast beleid te configureren voor uw Azure AD B2C Tenant.
+Zie aan de [slag met aangepaste beleids regels in azure Active Directory B2C](./custom-policy-get-started.md)om aangepast beleid te configureren voor uw Azure AD B2C Tenant.
 
 ### <a name="step-3-register-zpa-as-a-saml-application-in-azure-ad-b2c"></a>Stap 3: ZPA registreren als een SAML-toepassing in Azure AD B2C
 
-Als u een SAML-toepassing in Azure AD B2C wilt configureren, raadpleegt u [een SAML-toepassing registreren in azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/connect-with-saml-service-providers). 
+Als u een SAML-toepassing in Azure AD B2C wilt configureren, raadpleegt u [een SAML-toepassing registreren in azure AD B2C](./connect-with-saml-service-providers.md). 
 
-Kopieer of noteer de IdP SAML-meta gegevens-URL die wordt gebruikt door Azure AD B2C in stap ["3,2 uw meta gegevens voor beleid uploaden en testen"](https://docs.microsoft.com/azure/active-directory-b2c/connect-with-saml-service-providers#32-upload-and-test-your-policy-metadata). U hebt deze later nodig.
+Kopieer of noteer de IdP SAML-meta gegevens-URL die wordt gebruikt door Azure AD B2C in stap ["3,2 uw meta gegevens voor beleid uploaden en testen"](./connect-with-saml-service-providers.md#32-upload-and-test-your-policy-metadata). U hebt deze later nodig.
 
-Volg de instructies in stap [4,2 het app-manifest bijwerken](https://docs.microsoft.com/azure/active-directory-b2c/connect-with-saml-service-providers#42-update-the-app-manifest). Werk in stap 4,2 de eigenschappen van het app-manifest als volgt bij:
+Volg de instructies in stap [4,2 het app-manifest bijwerken](./connect-with-saml-service-providers.md#42-update-the-app-manifest). Werk in stap 4,2 de eigenschappen van het app-manifest als volgt bij:
 
 - Voor **identifierUris**: gebruik de ENTITEITS-id van de service provider die u eerder hebt gekopieerd of genoteerd in ' Step 1.6. b '.  
 - Voor **samlMetadataUrl**: sla deze eigenschap over, omdat ZPA geen URL voor SAML-meta gegevens host.  
@@ -149,7 +149,7 @@ Ga naar een ZPA-gebruikers portal of een toepassing voor browser toegang en test
 
 Raadpleeg de volgende artikelen voor meer informatie:
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started)
-- [Een SAML-toepassing registreren in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/connect-with-saml-service-providers)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md)
+- [Een SAML-toepassing registreren in Azure AD B2C](./connect-with-saml-service-providers.md)
 - [Stapsgewijze configuratie handleiding voor ZPA](https://help.zscaler.com/zpa/step-step-configuration-guide-zpa)
 - [Een IdP configureren voor eenmalige aanmelding](https://help.zscaler.com/zpa/configuring-idp-single-sign)

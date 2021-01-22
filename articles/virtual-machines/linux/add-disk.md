@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 08/20/2020
 ms.author: cynthn
 ms.subservice: disks
-ms.openlocfilehash: 9520196c8dce9ea511c2f3b799bd12b34c6f988f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: ad3a2ae9fd9a99398b384ef4e4a44820faccf8c7
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499744"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675882"
 ---
 # <a name="add-a-disk-to-a-linux-vm"></a>Een schijf toevoegen aan een virtuele Linux-machine
 
@@ -181,5 +181,5 @@ Er zijn twee manieren om ondersteuning voor het verkleinen van de virtuele Linux
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Bekijk de aanbevelingen voor het [optimaliseren van uw Linux-machine](optimization.md) om ervoor te zorgen dat uw Linux-VM correct is geconfigureerd.
+* Bekijk de aanbevelingen voor het [optimaliseren van uw Linux-machine](/previous-versions/azure/virtual-machines/linux/optimization) om ervoor te zorgen dat uw Linux-VM correct is geconfigureerd.
 * Breid uw opslag capaciteit uit door extra schijven toe te voegen en [RAID te configureren](/previous-versions/azure/virtual-machines/linux/configure-raid) voor extra prestaties.

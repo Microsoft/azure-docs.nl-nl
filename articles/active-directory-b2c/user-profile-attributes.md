@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/13/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7b134c4e9e980104a54f6a96d45445ee114556a5
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: f76aecc80537e6db55c8c4f2e5a7a240be6b1415
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178718"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675743"
 ---
 # <a name="user-profile-attributes"></a>Kenmerken van gebruikersprofiel
 
@@ -41,7 +41,7 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 
 |Naam     |Type     |Beschrijving|Azure Portal|Gebruikersstromen|Aangepast beleid|
 |---------|---------|----------|------------|----------|-------------|
-|accountEnabled  |Boolean|Hiermee wordt aangegeven of het gebruikers account is in-of uitgeschakeld: **True** als het account is ingeschakeld, anders **False**.|Ja|Nee|Persistent gemaakt, uitvoer|
+|accountEnabled  |Booleaans|Hiermee wordt aangegeven of het gebruikers account is in-of uitgeschakeld: **True** als het account is ingeschakeld, anders **False**.|Ja|Nee|Persistent gemaakt, uitvoer|
 |ageGroup        |Tekenreeks|De leeftijds groep van de gebruiker. Mogelijke waarden: null, undefined, Minor, volwassene, NotAdult.|Ja|Nee|Persistent gemaakt, uitvoer|
 |alternativeSecurityId ([identiteiten](#identities-attribute))|Tekenreeks|Eén gebruikers identiteit van de externe ID-provider.|Nee|Nee|Invoer, persistent, uitvoer|
 |alternativeSecurityIds ([identiteiten](#identities-attribute))|alternatieve securityId-verzameling|Een verzameling gebruikers identiteiten van externe ID-providers.|Nee|Nee|Persistent gemaakt, uitvoer|
@@ -50,7 +50,7 @@ In de volgende tabel worden de kenmerken van het [bron type](/graph/api/resource
 |country         |Tekenreeks|Het land/de regio waarin de gebruiker zich bevindt. Voor beeld: "US" of "UK". Maximale lengte van 128.|Ja|Ja|Persistent gemaakt, uitvoer|
 |createdDateTime|DateTime|De datum waarop het gebruikers object is gemaakt. Alleen-lezen.|Nee|Nee|Persistent gemaakt, uitvoer|
 |creationType    |Tekenreeks|Als het gebruikers account is gemaakt als een lokaal account voor een Azure Active Directory B2C Tenant, is de waarde LocalAccount of nameCoexistence. Alleen-lezen.|Nee|Nee|Persistent gemaakt, uitvoer|
-|dateOfBirth     |Datum|Geboortedatum.|Nee|Nee|Persistent gemaakt, uitvoer|
+|dateOfBirth     |Date|Geboortedatum.|Nee|Nee|Persistent gemaakt, uitvoer|
 |department      |Tekenreeks|De naam van de afdeling waarin de gebruiker werkt. Maximale lengte van 64.|Ja|Nee|Persistent gemaakt, uitvoer|
 |displayName     |Tekenreeks|De weergave naam voor de gebruiker. Maximale lengte van 256.|Ja|Ja|Persistent gemaakt, uitvoer|
 |facsimileTelephoneNumber<sup>1</sup>|Tekenreeks|Het telefoon nummer van de zakelijke faxmachine van de gebruiker.|Ja|Nee|Persistent gemaakt, uitvoer|
@@ -160,7 +160,7 @@ Als de accounts die u wilt migreren, een zwakkere wachtwoord sterkte hebben dan 
 
 ## <a name="mfa-phone-number-attribute"></a>Kenmerk MFA-telefoon nummer
 
-Wanneer u een telefoon gebruikt voor multi-factor Authentication (MFA), wordt de mobiele telefoon gebruikt voor het verifiëren van de identiteit van de gebruiker. Als u een nieuw telefoon nummer wilt [toevoegen](https://docs.microsoft.com/graph/api/authentication-post-phonemethods) via programma code, het telefoon nummer [bijwerken](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-update), [ophalen](https://docs.microsoft.com/graph/api/b2cauthenticationmethodspolicy-get)of [verwijderen](https://docs.microsoft.com/graph/api/phoneauthenticationmethod-delete) , gebruikt u MS Graph API [methode voor telefonische verificatie](https://docs.microsoft.com/graph/api/resources/phoneauthenticationmethod).
+Wanneer u een telefoon gebruikt voor multi-factor Authentication (MFA), wordt de mobiele telefoon gebruikt voor het verifiëren van de identiteit van de gebruiker. Als u een nieuw telefoon nummer wilt [toevoegen](/graph/api/authentication-post-phonemethods) via programma code, het telefoon nummer [bijwerken](/graph/api/b2cauthenticationmethodspolicy-update), [ophalen](/graph/api/b2cauthenticationmethodspolicy-get)of [verwijderen](/graph/api/phoneauthenticationmethod-delete) , gebruikt u MS Graph API [methode voor telefonische verificatie](/graph/api/resources/phoneauthenticationmethod).
 
 In Azure AD B2C [aangepast beleid](custom-policy-overview.md), het telefoon nummer is beschikbaar via `strongAuthenticationPhoneNumber` claim type.
 
@@ -185,7 +185,7 @@ De volgende gegevens typen worden ondersteund bij het definiëren van een kenmer
 
 |Type |Opmerkingen  |
 |--------------|---------|
-|Boolean    | Mogelijke waarden: **True** of **False**. |
+|Booleaans    | Mogelijke waarden: **True** of **False**. |
 |DateTime   | Moet worden opgegeven in ISO 8601-indeling. Worden opgeslagen in UTC.   |
 |Geheel getal    | 32-bits waarde.               |
 |Tekenreeks     | Maxi maal 256 tekens.     |

@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 15b4b61fd250dfb7d68c563f9f42c7d288a0019c
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 9aca01bae7911d2b6234d48bedc14b116e911a79
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070861"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675371"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C ISV-partners
 
@@ -40,6 +40,7 @@ Micro soft-partners met de volgende Isv's voor identiteits verificatie en contro
 |![Scherm opname van een Experian-logo.](./media/partner-gallery/experian-logo.png) | [Experian](./partner-experian.md) is een identiteits controle-provider waarmee risico beoordelingen worden uitgevoerd op basis van gebruikers kenmerken om fraude te voor komen. |
 |![Scherm opname van een IDology-logo.](./media/partner-gallery/idology-logo.png) | [IDology](./partner-idology.md) is een identiteits verificatie en controle provider met id-verificatie oplossingen, fraude preventie oplossingen, compatibiliteits oplossingen en anderen.|
 |![Scherm opname van een Jumio-logo.](./media/partner-gallery/jumio-logo.png) | [Jumio](./partner-jumio.md) is een id-verificatie service waarmee realtime-verificatie via een geautomatiseerde id wordt ingeschakeld, waarbij klant gegevens worden beschermd. |
+|![Scherm afbeelding van een logo met een toets zonder toets.](./media/partner-gallery/keyless-logo.png) | ' [Minder](./partner-keyless.md) dan een id-verificatie service die verificatie biedt in de vorm van een biometrische scan en elimineert fraude, phishing en hergebruik van referenties.
 | ![Scherm opname van een LexisNexis-logo.](./media/partner-gallery/lexisnexis-logo.png) | [LexisNexis](./partner-lexisnexis.md) is een profilerings-en identiteits validatie provider die gebruikers identificatie verifieert en uitgebreide risico analyse biedt op basis van het apparaat van de gebruiker. |
 | ![Scherm afbeelding van een Onfido-logo](./media/partner-gallery/onfido-logo.png) | [Onfido](./partner-onfido.md) is een verificatie oplossing met een document-id en gelaats biometrie waarmee bedrijven voldoen aan de vereisten van *uw klant* en identiteit in real-time.  |
 
@@ -78,9 +79,9 @@ Micro soft-partners met de volgende Isv's voor beveiliging.
 
 ## <a name="additional-information"></a>Aanvullende informatie
 
-- [Aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)
+- [Aangepast beleid in Azure AD B2C](./custom-policy-overview.md)
 
-- [Aan de slag met aangepast beleid in Azure AD B2C](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started?tabs=applications)
+- [Aan de slag met aangepast beleid in Azure AD B2C](./custom-policy-get-started.md?tabs=applications)
 
 ## <a name="next-steps"></a>Volgende stappen
 

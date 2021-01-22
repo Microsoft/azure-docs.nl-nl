@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 629a063d80c9f1bb1a9ae3d56783e07491149f24
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 55966173c7ab16e605e9d97a2631c2224745ff7a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98118238"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98676008"
 ---
 # <a name="transact-sql-features-supported-in-azure-synapse-sql"></a>Transact-SQL-functies die worden ondersteund in Azure Synapse SQL
 
@@ -55,7 +55,7 @@ Querytalen die in Synapse SQL worden gebruikt, kunnen afhankelijk van het verbru
 | **INSERT-instructie** | Ja | Nee |
 | **UPDATE-instructie** | Ja | Nee |
 | **DELETE-instructie** | Ja | Nee |
-| **MERGE-instructie** | Nee | Nee |
+| **MERGE-instructie** | Ja ([Preview-versie](https://docs.microsoft.com/sql/t-sql/statements/merge-transact-sql?view=sql-server-ver15)) | Nee |
 | **[Transacties](develop-transactions.md)** | Ja | Ja, van toepassing op metagegevensobjecten. |
 | **[Labels](develop-label.md)** | Ja | Nee |
 | **Gegevens laden** | Ja. Het hulpprogramma dat de voorkeur heeft, is de [COPY](/sql/t-sql/statements/copy-into-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)-instructie, maar het systeem ondersteunt zowel BULKsgewijs laden (BCP) als [CETAS](/sql/t-sql/statements/create-external-table-as-select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) voor het laden van gegevens. | Nee |
@@ -84,7 +84,7 @@ Met Synapse SQL kunt u ingebouwde beveiligingsfuncties gebruiken om uw gegevens 
 | **Passthrough-verificatie voor opslag voor Azure AD (Azure Active Directory)** | Ja | Ja |
 | **SAS-tokenverificatie voor opslag** | Nee | Ja, met behulp van [DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) in [EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) of [CREDENTIAL](/sql/t-sql/statements/create-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) op exemplaarniveau. |
 | **Verificatie met toegangssleutel voor opslag** | Ja, met behulp van [DATABASE SCOPED CREDENTIAL](/sql/t-sql/statements/create-database-scoped-credential-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) in [EXTERNAL DATA SOURCE](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Nee |
-| **Verificatie van [beheerde identiteit](../security/synapse-workspace-managed-identity.md) voor opslag** | Ja, met behulp van [Managed Service Identity-referenties](../../azure-sql/database/vnet-service-endpoint-rule-overview.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&preserve-view=true&toc=%2fazure%2fsynapse-analytics%2ftoc.json&view=azure-sqldw-latest) | Ja, met `Managed Identity`-referenties. |
+| **Verificatie van [beheerde identiteit](../security/synapse-workspace-managed-identity.md) voor opslag** | Ja, met behulp van [Managed Service Identity-referenties](../../azure-sql/database/vnet-service-endpoint-rule-overview.md?bc=%2fazure%2fsynapse-analytics%2fbreadcrumb%2ftoc.json&preserve-view=true&toc=%2fazure%2fsynapse-analytics%2ftoc.json&view=azure-sqldw-latest&preserve-view=true) | Ja, met `Managed Identity`-referenties. |
 | **Verificatie van toepassingsidentiteit voor opslag** | [Ja](/sql/t-sql/statements/create-external-data-source-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) | Nee |
 | **Machtigingen - objectniveau** | Ja, inclusief de mogelijkheid om machtigingen voor gebruikers toe te kennen, te weigeren en in te trekken | Ja, inclusief de mogelijkheid om machtigingen toe te kennen, te weigeren en in te trekken voor gebruikers/aanmeldingen op de ondersteunde systeemobjecten |
 | **Machtigingen - schemaniveau** | Ja, inclusief de mogelijkheid om machtigingen voor gebruikers/aanmeldingen in het schema toe te kennen, te weigeren en in te trekken | Ja, inclusief de mogelijkheid om machtigingen voor gebruikers/aanmeldingen in het schema toe te kennen, te weigeren en in te trekken |

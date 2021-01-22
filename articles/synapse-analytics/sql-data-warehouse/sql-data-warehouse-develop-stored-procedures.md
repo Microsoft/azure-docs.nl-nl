@@ -11,12 +11,12 @@ ms.date: 04/02/2019
 ms.author: emtehran
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: cc6a58b4ef78aca60d2a26870980e032c0b11a52
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e28eeac131c737d673cac947a3fda30239180a62
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463214"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673583"
 ---
 # <a name="using-stored-procedures-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>Opgeslagen procedures gebruiken voor toegewezen SQL-groepen in azure Synapse Analytics
 
@@ -73,7 +73,7 @@ GO
 EXEC prc_nesting
 ```
 
-De toegewezen SQL-groep biedt momenteel geen ondersteuning voor [@ @NESTLEVEL ](/sql/t-sql/functions/nestlevel-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest). Als zodanig moet u het nest niveau bijhouden. Het is niet waarschijnlijk dat u de limiet van acht geneste niveaus overschrijdt. Maar als u dat wel doet, moet u uw code opnieuw instellen zodat deze overeenkomt met de geneste niveaus binnen deze limiet.
+De toegewezen SQL-groep biedt momenteel geen ondersteuning voor [@ @NESTLEVEL ](/sql/t-sql/functions/nestlevel-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true). Als zodanig moet u het nest niveau bijhouden. Het is niet waarschijnlijk dat u de limiet van acht geneste niveaus overschrijdt. Maar als u dat wel doet, moet u uw code opnieuw instellen zodat deze overeenkomt met de geneste niveaus binnen deze limiet.
 
 ## <a name="insertexecute"></a>INSERT..EXESCHATTIGE
 

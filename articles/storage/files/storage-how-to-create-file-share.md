@@ -9,12 +9,12 @@ ms.date: 2/22/2020
 ms.author: rogarana
 ms.subservice: files
 ms.custom: devx-track-azurecli, references_regions
-ms.openlocfilehash: 7f72d703e5377f725addc4aa8c52e1cdb0fa571d
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 3ff7b3cd29740461a4f94f3c1d433086db119a09
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630748"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673803"
 ---
 # <a name="create-an-azure-file-share"></a>Een Azure-bestandsshare maken
 Als u een Azure-bestands share wilt maken, moet u drie vragen beantwoorden over hoe u deze gaat gebruiken:
@@ -129,7 +129,7 @@ Als u een opslag account wilt maken met behulp van de Azure CLI, gebruikt u de o
 
 Om het maken van het opslag account en de volgende bestands share te vereenvoudigen, worden in variabelen verschillende para meters opgeslagen. U kunt de variabele inhoud vervangen door de waarden die u wilt, maar houd er rekening mee dat de naam van het opslag account globaal uniek moet zijn.
 
-```bash
+```azurecli
 resourceGroupName="myResourceGroup"
 storageAccountName="mystorageacct$RANDOM"
 region="westus2"
@@ -137,7 +137,7 @@ region="westus2"
 
 Als u een opslag account wilt maken dat standaard Azure-bestands shares kan opslaan, wordt de volgende opdracht gebruikt. De `--sku` para meter is gekoppeld aan het type redundantie gewenst. Als u een geografisch redundant of geo-zone-redundant opslag account wilt, moet u ook de `--enable-large-file-share` para meter verwijderen.
 
-```bash
+```azurecli
 az storage account create \
     --resource-group $resourceGroupName \
     --name $storageAccountName \
@@ -149,7 +149,7 @@ az storage account create \
 
 Als u een opslag account wilt maken waarmee Premium Azure-bestands shares kunnen worden opgeslagen, wordt de volgende opdracht gebruikt. Houd er rekening mee dat de `--sku` para meter is gewijzigd om zowel `Premium` het gewenste redundantie niveau van lokaal redundante () op te geven `LRS` . De `--kind` para meter is `FileStorage` in plaats van `StorageV2` omdat Premium-bestands shares moeten worden gemaakt in een FileStorage-opslag account in plaats van een GPv2-opslag account.
 
-```bash
+```azurecli
 az storage account create \
     --resource-group $resourceGroupName \
     --name $storageAccountName \
@@ -233,7 +233,7 @@ De functionaliteit voor het maken of verplaatsen van een bestands share naar een
 > [!Important]  
 > Voor Premium-bestands shares `--quota` verwijst de para meter naar de ingerichte grootte van de bestands share. De ingerichte grootte van de bestands share is de hoeveelheid die wordt gefactureerd, ongeacht het gebruik. Standaard bestands shares worden gefactureerd op basis van het gebruik in plaats van de ingerichte grootte.
 
-```bash
+```azurecli
 shareName="myshare"
 
 az storage share-rm create \
@@ -285,7 +285,7 @@ Update-AzRmStorageShare `
 # <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 De volgende Azure CLI-opdracht gaat ervan uit dat u de `$resourceGroupName` -, `$storageAccountName` -en-variabelen hebt ingesteld `$shareName` zoals beschreven in de vorige secties van dit document.
 
-```bash
+```azurecli
 az storage share-rm update \
     --resource-group $resourceGroupName \
     --storage-account $storageAccountName \

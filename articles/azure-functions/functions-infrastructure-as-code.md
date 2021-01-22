@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: dbb380dca231f75f6d6e77676c9059ef3762dac5
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 4b649942a52c51aef0d6edd17b913f75e1fb247b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050932"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674164"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>De implementatie van resources voor uw functie-app in Azure Functions automatiseren
 
@@ -114,7 +114,7 @@ De definitie van het hosting plan varieert, en kan een van de volgende zijn:
 * [Premium-abonnement](#premium)
 * [App Service-plan](#app-service-plan)
 
-### <a name="function-app"></a>Function App
+### <a name="function-app"></a>Functie-app
 
 De functie-app resource wordt gedefinieerd met behulp van een resource van het type **micro soft. web/sites** en de soort **functionapp**:
 
@@ -692,7 +692,7 @@ Meer informatie over het ontwikkelen en configureren van Azure Functions.
 
 * [Naslaginformatie over Azure Functions voor ontwikkelaars](functions-reference.md)
 * [Instellingen voor Azure function-apps configureren](functions-how-to-use-azure-function-app-settings.md)
-* [Uw eerste Azure-functie maken](functions-create-first-azure-function.md)
+* [Uw eerste Azure-functie maken](./functions-get-started.md)
 
 <!-- LINKS -->
 

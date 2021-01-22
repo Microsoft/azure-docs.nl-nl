@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 3b61df954e913671eafff4b739e0f53a4d420c28
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 5aefe869041d9fff8112b6aa380961ca6568ae0b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98117296"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673566"
 ---
 # <a name="guidance-for-designing-distributed-tables-using-dedicated-sql-pool-in-azure-synapse-analytics"></a>Richt lijnen voor het ontwerpen van gedistribueerde tabellen met een toegewezen SQL-groep in azure Synapse Analytics
 
@@ -96,7 +96,7 @@ Gegevens die zijn opgeslagen in de kolom distributie kunnen worden bijgewerkt. H
 
 Het kiezen van een distributie kolom is een belang rijke ontwerp beslissing omdat de waarden in deze kolom bepalen hoe de rijen worden gedistribueerd. De beste keuze is afhankelijk van verschillende factoren en is doorgaans van compromissen. Zodra een distributie kolom is gekozen, kunt u deze niet meer wijzigen.  
 
-Als u de beste kolom de eerste keer niet hebt gekozen, kunt u [Create Table als Select (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) gebruiken om de tabel opnieuw te maken met een andere distributie kolom.
+Als u de beste kolom de eerste keer niet hebt gekozen, kunt u [Create Table als Select (CTAS)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) gebruiken om de tabel opnieuw te maken met een andere distributie kolom.
 
 ### <a name="choose-a-distribution-column-with-data-that-distributes-evenly"></a>Een distributie kolom kiezen met gegevens die gelijkmatig worden gedistribueerd
 
@@ -133,7 +133,7 @@ Nadat de gegevens in een hash-gedistribueerde tabel zijn geladen, controleert u 
 
 ### <a name="determine-if-the-table-has-data-skew"></a>Bepalen of het scheef trekken van gegevens in de tabel is
 
-Een snelle manier om te controleren op gegevens scheefheid is door [DBCC PDW_SHOWSPACEUSED](/sql/t-sql/database-console-commands/dbcc-pdw-showspaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)te gebruiken. De volgende SQL-code retourneert het aantal tabel rijen dat is opgeslagen in elk van de 60-distributies. Voor evenwichtige prestaties moeten de rijen in de gedistribueerde tabel gelijkmatig worden verdeeld over alle distributies.
+Een snelle manier om te controleren op gegevens scheefheid is door [DBCC PDW_SHOWSPACEUSED](/sql/t-sql/database-console-commands/dbcc-pdw-showspaceused-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)te gebruiken. De volgende SQL-code retourneert het aantal tabel rijen dat is opgeslagen in elk van de 60-distributies. Voor evenwichtige prestaties moeten de rijen in de gedistribueerde tabel gelijkmatig worden verdeeld over alle distributies.
 
 ```sql
 -- Find data skew for a distributed table
@@ -183,7 +183,7 @@ Omdat u de kolom distributie op een bestaande tabel niet kunt wijzigen, kunt u g
 
 ### <a name="re-create-the-table-with-a-new-distribution-column"></a>De tabel opnieuw maken met een nieuwe distributie kolom
 
-In dit voor beeld wordt [Create Table als selecteren](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om een tabel met een andere hash-distributie kolom opnieuw te maken.
+In dit voor beeld wordt [Create Table als selecteren](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om een tabel met een andere hash-distributie kolom opnieuw te maken.
 
 ```sql
 CREATE TABLE [dbo].[FactInternetSales_CustomerKey]
@@ -225,5 +225,5 @@ RENAME OBJECT [dbo].[FactInternetSales_CustomerKey] TO [FactInternetSales];
 
 Als u een gedistribueerde tabel wilt maken, gebruikt u een van de volgende instructies:
 
-- [CREATE TABLE (toegewezen SQL-groep)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
-- [CREATE TABLE als selecteren (toegewezen SQL-groep)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)
+- [CREATE TABLE (toegewezen SQL-groep)](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)
+- [CREATE TABLE als selecteren (toegewezen SQL-groep)](/sql/t-sql/statements/create-table-as-select-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)

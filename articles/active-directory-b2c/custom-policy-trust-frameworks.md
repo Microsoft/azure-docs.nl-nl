@@ -10,12 +10,12 @@ ms.topic: reference
 ms.date: 12/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: ed477a931ed63c0db378ff84f85544072492ef96
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 644192de74a888daa0391b31dd42eb6028403fd8
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387034"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674471"
 ---
 # <a name="azure-ad-b2c-custom-policy-overview"></a>Overzicht van Azure AD B2C aangepaste beleids regels
 
@@ -53,7 +53,7 @@ De [claim transformaties](claimstransformations.md) zijn vooraf gedefinieerde fu
 
 ### <a name="customize-and-localize-your-ui"></a>Uw gebruikers interface aanpassen en lokaliseren
 
-Als u informatie van uw gebruikers wilt verzamelen door een pagina in hun webbrowser te presen teren, gebruikt u het [zelfondertekende technische profiel](self-asserted-technical-profile.md). U kunt uw door uzelf bevestigde technische profiel bewerken om [claims toe te voegen en gebruikers invoer](custom-policy-configure-user-input.md)aan te passen.
+Als u informatie van uw gebruikers wilt verzamelen door een pagina in hun webbrowser te presen teren, gebruikt u het [zelfondertekende technische profiel](self-asserted-technical-profile.md). U kunt uw door uzelf bevestigde technische profiel bewerken om [claims toe te voegen en gebruikers invoer](./configure-user-input.md)aan te passen.
 
 Als u [de gebruikers interface](customize-ui-with-html.md) voor uw zelfondertekende technische profiel wilt aanpassen, geeft u een URL op in het [inhouds definitie](contentdefinitions.md) -element met aangepaste HTML-inhoud. In het zelf-beweringen technische profiel wijst u deze inhouds definitie-ID aan.
 
@@ -133,11 +133,11 @@ Binnen een Azure AD B2C aangepast beleid kunt u uw eigen bedrijfs logica integre
 
 - Maak uw logica in het **uitbrei ding beleid** of het door geven van **partij beleid**. U kunt nieuwe elementen toevoegen, waardoor het basis beleid wordt overschreven door naar dezelfde ID te verwijzen. Op deze manier kunt u uw project uitschalen terwijl u het basis beleid later gemakkelijker kunt upgraden als micro soft nieuwe Starter Packs vrijgeeft.
 - Binnen het **basis beleid** raden wij u ten zeerste aan om te voor komen dat u wijzigingen aanbrengt.  Indien nodig, opmerkingen maken waar de wijzigingen worden aangebracht.
-- Wanneer u een element overschrijft, zoals technische profiel meta gegevens, moet u voor komen dat het hele technische profiel wordt gekopieerd uit het basis beleid. Kopieer in plaats daarvan alleen de vereiste sectie van het element. Zie [e-mail verificatie uitschakelen](custom-policy-disable-email-verification.md) voor een voor beeld van hoe u de wijziging aanbrengt.
+- Wanneer u een element overschrijft, zoals technische profiel meta gegevens, moet u voor komen dat het hele technische profiel wordt gekopieerd uit het basis beleid. Kopieer in plaats daarvan alleen de vereiste sectie van het element. Zie [e-mail verificatie uitschakelen](./disable-email-verification.md) voor een voor beeld van hoe u de wijziging aanbrengt.
 - Als u het dupliceren van technische profielen wilt reduceren, waarbij de kern functionaliteit wordt gedeeld, gebruikt u [technisch profiel opnemen](technicalprofiles.md#include-technical-profile).
 - Vermijd het schrijven naar de Azure AD-Directory tijdens het aanmelden, wat kan leiden tot het beperken van problemen.
 - Als uw beleid externe afhankelijkheden heeft, zoals REST API ervoor zorgt dat deze Maxi maal beschikbaar zijn.
-- Voor een betere gebruikers ervaring zorgt u ervoor dat uw aangepaste HTML-sjablonen wereld wijd worden geïmplementeerd met behulp van [online content delivery](https://docs.microsoft.com/azure/cdn/). Met Azure Content Delivery Network (CDN) kunt u de laad tijden verminderen, band breedte besparen en de reactie tijd van de snelheid verhogen.
+- Voor een betere gebruikers ervaring zorgt u ervoor dat uw aangepaste HTML-sjablonen wereld wijd worden geïmplementeerd met behulp van [online content delivery](../cdn/index.yml). Met Azure Content Delivery Network (CDN) kunt u de laad tijden verminderen, band breedte besparen en de reactie tijd van de snelheid verhogen.
 - Als u een wijziging wilt aanbrengen in de gebruikers reis. Kopieer de volledige gebruikers reis van het basis beleid naar het extensie beleid. Geef een unieke reis-ID voor de gebruiker op die u hebt gekopieerd. Wijzig vervolgens in het [Relying Party beleid](relyingparty.md)het [standaard gebruikers traject](relyingparty.md#defaultuserjourney) -element dat naar de nieuwe gebruikers traject wijst.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
@@ -168,9 +168,9 @@ Aan de slag met Azure AD B2C aangepast beleid:
 
 Nadat u uw Azure AD B2C-beleid hebt ingesteld en getest, kunt u beginnen met het aanpassen van uw beleid. Ga door de volgende artikelen voor meer informatie over:
 
-- [Claims toevoegen en gebruikers invoer aanpassen](custom-policy-configure-user-input.md) met aangepast beleid. Meer informatie over het definiëren van een claim, het toevoegen van een claim aan de gebruikers interface door een aantal van de technische profielen van het Start pakket aan te passen.
+- [Claims toevoegen en gebruikers invoer aanpassen](./configure-user-input.md) met aangepast beleid. Meer informatie over het definiëren van een claim, het toevoegen van een claim aan de gebruikers interface door een aantal van de technische profielen van het Start pakket aan te passen.
 - [Pas de gebruikers interface](customize-ui-with-html.md) van uw toepassing aan met behulp van een aangepast beleid. Meer informatie over het maken van uw eigen HTML-inhoud en het aanpassen van de inhouds definitie.
-- [Lokalisatie van de gebruikers interface](custom-policy-localization.md) van uw toepassing met behulp van een aangepast beleid. Meer informatie over het instellen van de lijst met ondersteunde talen en het bieden van taalspecifieke labels door het element gelokaliseerde resources toe te voegen.
-- Tijdens het ontwikkelen en testen van uw beleid kunt u [e-mail verificatie uitschakelen](custom-policy-disable-email-verification.md). Meer informatie over het overschrijven van een technische profiel meta gegevens.
-- [Stel aanmelden met een Google-account](identity-provider-google-custom.md) in met behulp van aangepast beleid. Meer informatie over het maken van een nieuwe claim provider met het technische profiel OAuth2. Pas vervolgens de reis van de gebruiker aan, zodat deze de Google-aanmeldings optie bevat.
+- [Lokalisatie van de gebruikers interface](./language-customization.md) van uw toepassing met behulp van een aangepast beleid. Meer informatie over het instellen van de lijst met ondersteunde talen en het bieden van taalspecifieke labels door het element gelokaliseerde resources toe te voegen.
+- Tijdens het ontwikkelen en testen van uw beleid kunt u [e-mail verificatie uitschakelen](./disable-email-verification.md). Meer informatie over het overschrijven van een technische profiel meta gegevens.
+- [Stel aanmelden met een Google-account](./identity-provider-google.md) in met behulp van aangepast beleid. Meer informatie over het maken van een nieuwe claim provider met het technische profiel OAuth2. Pas vervolgens de reis van de gebruiker aan, zodat deze de Google-aanmeldings optie bevat.
 - Als u problemen met uw aangepaste beleid wilt vaststellen, kunt u [Azure Active Directory B2C-logboeken verzamelen met Application Insights](troubleshoot-with-application-insights.md). Meer informatie over het toevoegen van nieuwe technische profielen en het configureren van het beleid voor de relay-partij.

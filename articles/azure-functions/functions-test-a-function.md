@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.custom: devx-track-csharp, devx-track-js
 ms.date: 03/25/2019
 ms.author: cshoe
-ms.openlocfilehash: 2488a476fe40c2bf1f3e290b462babceff30a9b0
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: f75f42f3879f551a945bdeb2d88450ae3b9d6106
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96601387"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674147"
 ---
 # <a name="strategies-for-testing-your-code-in-azure-functions"></a>Strategieën voor het testen van uw code in Azure Functions
 
@@ -36,8 +36,8 @@ In het volgende voor beeld wordt beschreven hoe u een C#-functie-app maakt in Vi
 
 Als u uw omgeving wilt instellen, maakt u een functie-en test-app. De volgende stappen helpen u bij het maken van de apps en functies die nodig zijn voor de ondersteuning van de tests:
 
-1. [Een nieuwe functions-app maken](./functions-create-first-azure-function.md) en **hieraan** een naam toe te voegen
-2. [Maak een HTTP-functie op basis van de sjabloon](./functions-create-first-azure-function.md) en geef deze de naam **MyHttpTrigger**.
+1. [Een nieuwe functions-app maken](./functions-get-started.md) en **hieraan** een naam toe te voegen
+2. [Maak een HTTP-functie op basis van de sjabloon](./functions-get-started.md) en geef deze de naam **MyHttpTrigger**.
 3. [Maak een timer functie op basis van de sjabloon](./functions-create-scheduled-function.md) en noem deze **MyTimerTrigger**.
 4. [Maak een xUnit-test-app](https://xunit.net/docs/getting-started/netcore/cmdline) in de oplossing en geef deze de naam **Function. tests**.
 5. Gebruik NuGet om een verwijzing toe te voegen vanuit de test-app naar [micro soft. AspNetCore. MVC](https://www.nuget.org/packages/Microsoft.AspNetCore.Mvc/)
@@ -251,7 +251,7 @@ De leden die in deze klasse worden geïmplementeerd zijn:
 
 - **Timer_should_log_message**: met deze test wordt een exemplaar van gemaakt `ListLogger` en door gegeven aan een timer-functie. Zodra de functie is uitgevoerd, wordt het logboek gecontroleerd om te controleren of het verwachte bericht aanwezig is.
 
-Als u toegang wilt krijgen tot toepassings instellingen in uw tests, kunt [inject](./functions-dotnet-dependency-injection.md) u een `IConfiguration` instantie met gemodelde omgevings variabele waarden in uw functie injecteren.
+Als u toegang wilt krijgen tot toepassings instellingen in uw tests, kunt [](./functions-dotnet-dependency-injection.md) u een `IConfiguration` instantie met gemodelde omgevings variabele waarden in uw functie injecteren.
 
 ### <a name="run-tests"></a>Tests uitvoeren
 

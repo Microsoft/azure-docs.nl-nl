@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: azure-maps
 services: azure-maps
 manager: cpendle
-ms.openlocfilehash: 2f383876963e3e1d310e7d93f7dc99bb58b189d3
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
+ms.openlocfilehash: 78b0cbbdccc7d6853d4ce2821bf659e888680a5f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97681527"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98674640"
 ---
 # <a name="create-a-data-source-android-sdk"></a>Een gegevens bron maken (Android SDK)
 
@@ -136,7 +136,7 @@ Feature feature = Feature.fromJson(GeoJSON_STRING);
 String featureString = feature.toJson();
 ```
 
-### <a name="import-geojson-data-from-web-or-assets-folder"></a>Geojson-gegevens importeren uit de map web of assets
+### <a name="import-geojson-data-from-web-or-assets-folder"></a>GeoJSON-gegevens importeren vanaf internet of uit een map met assets
 
 De meeste geojson-bestanden bevatten een FeatureCollection. Geojson-bestanden lezen als teken reeksen en de `FeatureCollection.fromJson` methode gebruiken om deze te deserialiseren.
 
@@ -355,10 +355,10 @@ Een vector tegel bron beschrijft hoe een vector tegel laag kan worden geopend. G
 
 Azure Maps voldoet aan de [tegel specificatie Mapbox vector](https://github.com/mapbox/vector-tile-spec), een open standaard. Azure Maps biedt de volgende vector tegel Services als onderdeel van het platform:
 
-- Details van [](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview)de  |  [gegevens indeling](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) voor wegtegels in de documentatie
-- Details van [documentatie](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficincidenttile)voor verkeers incidenten  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles)
-- Details van [](https://docs.microsoft.com/rest/api/maps/traffic/gettrafficflowtile)de  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) van de verkeers stroom
-- Azure Maps Maker kunnen ook aangepaste vector tegels maken en openen via de [weer gave tegel ophalen v2](https://docs.microsoft.com/rest/api/maps/renderv2/getmaptilepreview)
+- Details van [](/rest/api/maps/renderv2/getmaptilepreview)de  |  [gegevens indeling](https://developer.tomtom.com/maps-api/maps-api-documentation-vector/tile) voor wegtegels in de documentatie
+- Details van [documentatie](/rest/api/maps/traffic/gettrafficincidenttile)voor verkeers incidenten  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-incidents/vector-incident-tiles)
+- Details van [](/rest/api/maps/traffic/gettrafficflowtile)de  |  [gegevens indeling](https://developer.tomtom.com/traffic-api/traffic-api-documentation-traffic-flow/vector-flow-tiles) van de verkeers stroom
+- Azure Maps Maker kunnen ook aangepaste vector tegels maken en openen via de [weer gave tegel ophalen v2](/rest/api/maps/renderv2/getmaptilepreview)
 
 Als u gegevens uit een vector tegel bron op de kaart wilt weer geven, verbindt u de bron met een van de gegevens weergave lagen. Alle lagen die gebruikmaken van een vector bron moeten een `sourceLayer` waarde in de opties opgeven. Met de volgende code wordt de Azure Maps traffic flow vector-tegel service als een vector tegel bron geladen en vervolgens weer gegeven op een kaart met behulp van een laag. Deze vector tegel bron heeft één set gegevens in de bron laag met de naam ' verkeers stroom '. De regel gegevens in deze gegevensset hebben een eigenschap `traffic_level` met de naam die wordt gebruikt in deze code om de kleur te selecteren en de grootte van regels te schalen.
 
@@ -508,7 +508,7 @@ Raadpleeg de volgende artikelen voor meer code voorbeelden om toe te voegen aan 
 > [Gegevensgestuurde stijlexpressies gebruiken](create-data-source-android-sdk.md)
 
 > [!div class="nextstepaction"]
-> [Een symbool laag toevoegen](how-to-add-symbol-to-android-map.md)
+> [Een symboollaag toevoegen](how-to-add-symbol-to-android-map.md)
 
 > [!div class="nextstepaction"]
 > [Een Bubble laag toevoegen](map-add-bubble-layer-android.md)
@@ -523,4 +523,4 @@ Raadpleeg de volgende artikelen voor meer code voorbeelden om toe te voegen aan 
 > [Een heatmap toevoegen](map-add-heat-map-layer-android.md)
 
 > [!div class="nextstepaction"]
-> [Voor beelden van Web SDK-code](https://docs.microsoft.com/samples/browse/?products=azure-maps)
+> [Voor beelden van Web SDK-code](/samples/browse/?products=azure-maps)

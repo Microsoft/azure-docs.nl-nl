@@ -11,12 +11,12 @@ ms.date: 03/18/2019
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: f65c1d6fda09d7762a59fb5a932a72ad706a767a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 8a59c24100b433719ccfd3a9ea1b6a676695d381
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96448019"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673431"
 ---
 # <a name="partitioning-tables-in-dedicated-sql-pool"></a>Partitioneren van tabellen in toegewezen SQL-groep
 
@@ -58,9 +58,9 @@ Zie het artikel [indexeren](sql-data-warehouse-tables-index.md) , dat query's be
 
 Een toegewezen SQL-pool introduceert een manier om partities te definiëren die eenvoudiger zijn dan SQL Server. Het partitioneren van functies en schema's wordt niet gebruikt in een toegewezen SQL-groep, omdat deze zich in SQL Server bevinden. In plaats daarvan hoeft u alleen de gepartitioneerde kolom en de grens punten aan te duiden. 
 
-De syntaxis van partitionering kan enigszins afwijken van SQL Server, de basis concepten zijn hetzelfde. SQL Server en toegewezen SQL-pool ondersteunen één partitie kolom per tabel, die partities kan bevatten. Zie [gepartitioneerde tabellen en indexen](/sql/relational-databases/partitions/partitioned-tables-and-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)voor meer informatie over partitioneren.
+De syntaxis van partitionering kan enigszins afwijken van SQL Server, de basis concepten zijn hetzelfde. SQL Server en toegewezen SQL-pool ondersteunen één partitie kolom per tabel, die partities kan bevatten. Zie [gepartitioneerde tabellen en indexen](/sql/relational-databases/partitions/partitioned-tables-and-indexes?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)voor meer informatie over partitioneren.
 
-In het volgende voor beeld wordt de instructie [Create Table](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) gebruikt voor het partitioneren van de tabel FactInternetSales in de kolom OrderDateKey:
+In het volgende voor beeld wordt de instructie [Create Table](/sql/t-sql/statements/create-table-azure-sql-data-warehouse?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) gebruikt voor het partitioneren van de tabel FactInternetSales in de kolom OrderDateKey:
 
 ```sql
 CREATE TABLE [dbo].[FactInternetSales]
@@ -90,8 +90,8 @@ WITH
 
 Als u SQL Server partitie definities wilt migreren naar een exclusieve SQL-groep:
 
-- Elimineer het SQL Server [partitie schema](/sql/t-sql/statements/create-partition-scheme-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest).
-- Voeg de [partitie functie](/sql/t-sql/statements/create-partition-function-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) definitie toe aan uw Create Table.
+- Elimineer het SQL Server [partitie schema](/sql/t-sql/statements/create-partition-scheme-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true).
+- Voeg de [partitie functie](/sql/t-sql/statements/create-partition-function-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) definitie toe aan uw Create Table.
 
 Als u een gepartitioneerde tabel van een SQL Server-exemplaar migreert, kan de volgende SQL u helpen bij het berekenen van het aantal rijen in elke partitie. Houd er rekening mee dat als dezelfde partitie granulatie wordt gebruikt in een toegewezen SQL-groep, het aantal rijen per partitie afneemt met een factor van 60.  
 
@@ -131,7 +131,7 @@ GROUP BY    s.[name]
 
 ## <a name="partition-switching"></a>Partitie overschakelen
 
-De toegewezen SQL-groep ondersteunt het splitsen van partities, samen voegen en scha kelen. Elk van deze functies wordt uitgevoerd met behulp van de instructie [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .
+De toegewezen SQL-groep ondersteunt het splitsen van partities, samen voegen en scha kelen. Elk van deze functies wordt uitgevoerd met behulp van de instructie [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .
 
 Als u wilt scha kelen tussen partities tussen twee tabellen, moet u ervoor zorgen dat de partities worden uitgelijnd op de respectievelijke grenzen en dat de tabel definities overeenkomen. Als er geen controle beperkingen beschikbaar zijn voor het afdwingen van het bereik van waarden in een tabel, moet de bron tabel dezelfde partitie grenzen bevatten als de doel tabel. Als de grenzen van de partitie niet hetzelfde zijn, mislukt de partitie-switch omdat de meta gegevens van de partitie niet worden gesynchroniseerd.
 

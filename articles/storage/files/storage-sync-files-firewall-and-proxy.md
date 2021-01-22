@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 09/30/2020
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: cffa6b1200b7236b3c0a3e48b50c58275cf4c57b
-ms.sourcegitcommit: 5ae2f32951474ae9e46c0d46f104eda95f7c5a06
+ms.openlocfilehash: 01ac42cce29f941a90631936ece025f02afedeaf
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95316617"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673617"
 ---
 # <a name="azure-file-sync-proxy-and-firewall-settings"></a>Proxy- en firewallinstellingen van Azure File Sync
 Azure File Sync maakt verbinding met uw on-premises servers met Azure Files, waarbij functies voor multi-site synchronisatie en Cloud lagen worden ingeschakeld. Als zodanig moet een on-premises server zijn verbonden met internet. Een IT-beheerder moet het beste pad bepalen dat de server kan bereiken in azure Cloud Services.
@@ -114,7 +114,7 @@ Voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt u uw Azure-b
 |--------|--------|----------------------|---------------|---------------|
 | Openbaar |Australië - oost | https: \/ /australiaeast01.AFS.Azure.net<br>https: \/ /kailani-Aue.One.Microsoft.com | Australië - zuidoost | https: \/ /TM-australiaeast01.AFS.Azure.net<br>https: \/ /TM-kailani-Aue.One.Microsoft.com |
 | Openbaar |Australië - zuidoost | https: \/ /australiasoutheast01.AFS.Azure.net<br>https: \/ /kailani-aus.One.Microsoft.com | Australië - oost | https: \/ /TM-australiasoutheast01.AFS.Azure.net<br>https: \/ /TM-kailani-aus.One.Microsoft.com |
-| Openbaar | Brazil South | https: \/ /brazilsouth01.AFS.Azure.net | VS - zuid-centraal | https: \/ /TM-brazilsouth01.AFS.Azure.net |
+| Openbaar | Brazilië - zuid | https: \/ /brazilsouth01.AFS.Azure.net | VS - zuid-centraal | https: \/ /TM-brazilsouth01.AFS.Azure.net |
 | Openbaar | Canada - midden | https: \/ /canadacentral01.AFS.Azure.net<br>https: \/ /kailani-CAC.One.Microsoft.com | Canada - oost | https: \/ /TM-canadacentral01.AFS.Azure.net<br>https: \/ /TM-kailani-CAC.One.Microsoft.com |
 | Openbaar | Canada - oost | https: \/ /canadaeast01.AFS.Azure.net<br>https: \/ /kailani-CAE.One.Microsoft.com | Canada - midden | https: \/ /TM-canadaeast01.AFS.Azure.net<br>https: \/ /TM-kailani.CAE.One.Microsoft.com |
 | Openbaar | India - centraal | https: \/ /centralindia01.AFS.Azure.net<br>https: \/ /kailani-cin.One.Microsoft.com | India - zuid | https: \/ /TM-centralindia01.AFS.Azure.net<br>https: \/ /TM-kailani-cin.One.Microsoft.com |
@@ -133,12 +133,14 @@ Voor bedrijfs continuïteit en herstel na nood gevallen (BCDR) kunt u uw Azure-b
 | Openbaar | VS - zuid-centraal | https: \/ /southcentralus01.AFS.Azure.net | VS - noord-centraal | https: \/ /TM-southcentralus01.AFS.Azure.net |
 | Openbaar | India - zuid | https: \/ /southindia01.AFS.Azure.net<br>https: \/ /kailani-Sin.One.Microsoft.com | India - centraal | https: \/ /TM-southindia01.AFS.Azure.net<br>https: \/ /TM-kailani-Sin.One.Microsoft.com |
 | Openbaar | Azië - zuidoost | https: \/ /southeastasia01.AFS.Azure.net<br>https: \/ /kailani10.One.Microsoft.com | Azië - oost | https: \/ /TM-southeastasia01.AFS.Azure.net<br>https: \/ /TM-kailani10.One.Microsoft.com |
+| Openbaar | Zwitserland - noord | https: \/ /switzerlandnorth01.AFS.Azure.net<br>https: \/ /TM-switzerlandnorth01.AFS.Azure.net | Zwitserland - west | https: \/ /switzerlandwest01.AFS.Azure.net<br>https: \/ /TM-switzerlandwest01.AFS.Azure.net |
+| Openbaar | Zwitserland - west | https: \/ /switzerlandwest01.AFS.Azure.net<br>https: \/ /TM-switzerlandwest01.AFS.Azure.net | Zwitserland - noord | https: \/ /switzerlandnorth01.AFS.Azure.net<br>https: \/ /TM-switzerlandnorth01.AFS.Azure.net |
 | Openbaar | Verenigd Koninkrijk Zuid | https: \/ /uksouth01.AFS.Azure.net<br>https: \/ /kailani-UKs.One.Microsoft.com | Verenigd Koninkrijk West | https: \/ /TM-uksouth01.AFS.Azure.net<br>https: \/ /TM-kailani-UKs.One.Microsoft.com |
 | Openbaar | Verenigd Koninkrijk West | https: \/ /ukwest01.AFS.Azure.net<br>https: \/ /kailani-UKW.One.Microsoft.com | Verenigd Koninkrijk Zuid | https: \/ /TM-ukwest01.AFS.Azure.net<br>https: \/ /TM-kailani-UKW.One.Microsoft.com |
-| Openbaar | VS - west-centraal | https: \/ /westcentralus01.AFS.Azure.net | VS - west 2 | https: \/ /TM-westcentralus01.AFS.Azure.net |
+| Openbaar | VS - west-centraal | https: \/ /westcentralus01.AFS.Azure.net | West US 2 | https: \/ /TM-westcentralus01.AFS.Azure.net |
 | Openbaar | Europa -west | https: \/ /westeurope01.AFS.Azure.net<br>https: \/ /kailani6.One.Microsoft.com | Europa - noord | https: \/ /TM-westeurope01.AFS.Azure.net<br>https: \/ /TM-kailani6.One.Microsoft.com |
 | Openbaar | VS - west | https: \/ /westus01.AFS.Azure.net<br>https: \/ /kailani.One.Microsoft.com | VS - oost | https: \/ /TM-westus01.AFS.Azure.net<br>https: \/ /TM-kailani.One.Microsoft.com |
-| Openbaar | VS - west 2 | https: \/ /westus201.AFS.Azure.net | VS - west-centraal | https: \/ /TM-westus201.AFS.Azure.net |
+| Openbaar | West US 2 | https: \/ /westus201.AFS.Azure.net | VS - west-centraal | https: \/ /TM-westus201.AFS.Azure.net |
 | Overheid | VS (overheid) - Arizona | https: \/ /usgovarizona01.AFS.Azure.us | VS (overheid) - Texas | https: \/ /TM-usgovarizona01.AFS.Azure.us |
 | Overheid | VS (overheid) - Texas | https: \/ /usgovtexas01.AFS.Azure.us | VS (overheid) - Arizona | https: \/ /TM-usgovtexas01.AFS.Azure.us |
 

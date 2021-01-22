@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: b213954dde6ca4eaa0a69ddf0e40398fc09b9063
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: b142c88b0003281237dad125080930c0dd4d3bee
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115766"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673600"
 ---
 # <a name="connect-to-a-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-with-sql-server-management-studio-ssms"></a>Verbinding maken met een toegewezen SQL-groep (voorheen SQL DW) in azure Synapse Analytics met SQL Server Management Studio (SSMS)
 
@@ -35,7 +35,7 @@ Gebruik SQL Server Management Studio (SSMS) om verbinding te maken met en een qu
 Voor deze zelfstudie hebt u het volgende nodig:
 
 * Een bestaande exclusieve SQL-groep. Zie [een toegewezen SQL-groep maken (voorheen SQL DW)](create-data-warehouse-portal.md)om er een te maken.
-* SQL Server Management Studio (SSMS) is geïnstalleerd. [Down load SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) gratis als u dit nog niet hebt gedaan.
+* SQL Server Management Studio (SSMS) is geïnstalleerd. [Down load SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) gratis als u dit nog niet hebt gedaan.
 * De volledig gekwalificeerde SQL-servernaam. Zie [exclusieve SQL-groep (voorheen SQL DW)](sql-data-warehouse-connect-overview.md)om deze informatie te vinden.
 
 ## <a name="1-connect-to-your-dedicated-sql-pool-formerly-sql-dw"></a>1. Maak verbinding met uw toegewezen SQL-groep (voorheen SQL DW)

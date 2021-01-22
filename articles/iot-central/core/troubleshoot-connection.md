@@ -8,12 +8,12 @@ ms.date: 08/13/2020
 ms.topic: troubleshooting
 ms.service: iot-central
 ms.custom: device-developer, devx-track-azurecli
-ms.openlocfilehash: 2bbf400840c968587de3a0a0951d28c7c35b210f
-ms.sourcegitcommit: 9889a3983b88222c30275fd0cfe60807976fd65b
+ms.openlocfilehash: d1a7c94152b611ea0dbea249156add617178d7ca
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94990887"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673231"
 ---
 # <a name="troubleshoot-why-data-from-your-devices-isnt-showing-up-in-azure-iot-central"></a>Probleem oplossen waarbij gegevens van uw apparaten niet worden weergegeven in Azure IoT Central
 
@@ -35,11 +35,11 @@ In deze sectie kunt u bepalen of uw gegevens IoT Central.
 
 Als u dit nog niet hebt gedaan, installeert u het `az cli` hulp programma en de `azure-iot` uitbrei ding.
 
-`az cli`Zie [de Azure cli installeren](/cli/azure/install-azure-cli?view=azure-cli-latest)voor meer informatie over het installeren van de.
+`az cli`Zie [de Azure cli installeren](/cli/azure/install-azure-cli)voor meer informatie over het installeren van de.
 
-Als [install](/cli/azure/azure-cli-reference-for-IoT?view=azure-cli-latest#extension-reference-installation) u de `azure-iot` uitbrei ding wilt installeren, voert u de volgende opdracht uit:
+Als [](/cli/azure/azure-cli-reference-for-IoT#extension-reference-installation) u de `azure-iot` uitbrei ding wilt installeren, voert u de volgende opdracht uit:
 
-```cmd/bash
+```azurecli
 az extension add --name azure-iot
 ```
 
@@ -50,20 +50,20 @@ Wanneer u de `azure-iot` uitbrei ding hebt geïnstalleerd, start u uw apparaat o
 
 Gebruik de volgende opdrachten om u aan te melden bij het abonnement waar u uw IoT Central-toepassing hebt:
 
-```cmd/bash
+```azurecli
 az login
 az set account --subscription <your-subscription-id>
 ```
 
 Als u de telemetrie die het apparaat verzendt, wilt bewaken, gebruikt u de volgende opdracht:
 
-```cmd/bash
+```azurecli
 az iot central diagnostics monitor-events --app-id <app-id> --device-id <device-name>
 ```
 
 Als het apparaat is verbonden met IoT Central, ziet u uitvoer die lijkt op het volgende:
 
-```cmd/bash
+```output
 Monitoring telemetry.
 Filtering on device: device-001
 {
@@ -82,13 +82,13 @@ Filtering on device: device-001
 
 Als u de eigenschaps updates wilt controleren die door het apparaat worden uitgewisseld met IoT Central, gebruikt u de volgende opdracht Preview:
 
-```cmd/bash
+```azurecli
 az iot central diagnostics monitor-properties --app-id <app-id> --device-id <device-name>
 ```
 
 Als het apparaat geslaagde updates van eigenschappen verzendt, ziet u uitvoer die er ongeveer als volgt uitzien:
 
-```cmd/bash
+```output
 Changes in reported properties:
 version : 32
 {'state': 'true', 'name': {'value': {'value': 'Contoso'}, 'status': 'completed', 'desiredVersion': 7, 'ad': 'completed', 'av': 7, 'ac
@@ -106,7 +106,7 @@ Als u nog steeds geen gegevens ziet op uw Terminal, is het waarschijnlijk dat uw
 
 Als uw gegevens niet worden weer gegeven op de monitor, controleert u de inrichtings status van het apparaat door de volgende opdracht uit te voeren:
 
-```cmd/bash
+```azurecli
 az iot central device registration-info --app-id <app-id> --device-id <device-name>
 ```
 
@@ -130,7 +130,7 @@ https://aka.ms/iotcentral-docs-dps-SAS",
 }
 ```
 
-| Inrichtings status van apparaten | Description | Mogelijke beperking |
+| Inrichtings status van apparaten | Beschrijving | Mogelijke beperking |
 | - | - | - |
 | Ingericht | Er is geen onmiddellijk herkenbaar probleem. | N.v.t. |
 | Geregistreerd | Het apparaat is nog niet verbonden met IoT Central. | Controleer de logboeken van uw apparaten op verbindings problemen. |
@@ -150,7 +150,7 @@ De volgende tabellen bevatten de algemene fout codes en mogelijke acties om te b
 
 Als u problemen met uw verificatie stroom ziet:
 
-| Foutcode | Description | Mogelijke beperking |
+| Foutcode | Beschrijving | Mogelijke beperking |
 | - | - | - |
 | 400 | De hoofd tekst van de aanvraag is ongeldig. Het kan bijvoorbeeld niet worden geparseerd of het object kan niet worden gevalideerd. | Zorg ervoor dat u de juiste aanvraag tekst verzendt als onderdeel van de Attestation-stroom of gebruik een apparaat-SDK. |
 | 401 | Het autorisatie token kan niet worden gevalideerd. Het is bijvoorbeeld verlopen of is niet van toepassing op de URI van de aanvraag. Deze fout code wordt ook geretourneerd naar apparaten als onderdeel van de TPM-attest stroom. | Zorg ervoor dat uw apparaat de juiste referenties heeft. |
@@ -176,13 +176,13 @@ Als u wilt detecteren in welke categorieën uw probleem zich bevindt, voert u de
 
 - Als u telemetrie wilt valideren, gebruikt u de opdracht Preview:
 
-    ```cmd/bash
+    ```azurecli
     az iot central diagnostics validate-messages --app-id <app-id> --device-id <device-name>
     ```
 
 - Als u de updates van eigenschappen wilt valideren, gebruikt u de opdracht preview
 
-    ```cmd/bash
+    ```azurecli
     az iot central diagnostics validate-properties --app-id <app-id> --device-id <device-name>
     ```
 
@@ -190,7 +190,7 @@ Als u wilt detecteren in welke categorieën uw probleem zich bevindt, voert u de
 
 In de volgende uitvoer ziet u een voor beeld van fout-en waarschuwings berichten van de opdracht validate:
 
-```cmd/bash
+```output
 Validating telemetry.
 Filtering on device: v22upeoqx6.
 Exiting after 300 second(s), or 10 message(s) have been parsed (whichever happens first).

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/19/2019
 ms.author: rogarana
 ms.subservice: files
-ms.openlocfilehash: c271107b85e4903153c29b58aadadd37fb051b76
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 5161d8e169a7eb9e757dfbfa71fa697880e1806e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022561"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673684"
 ---
 # <a name="use-azure-files-with-linux"></a>Azure Files gebruiken met Linux
 [Azure Files ](storage-files-introduction.md) is het eenvoudig te gebruiken cloudbestandssysteem van Microsoft. Azure-bestands shares kunnen worden gekoppeld in Linux-distributies met behulp van de [SMB-kernel-client](https://wiki.samba.org/index.php/LinuxCIFS). In dit artikel ziet u twee manieren om een Azure-bestands share te koppelen: op aanvraag met de `mount` opdracht en aan-opstarten door een item in te maken `/etc/fstab` .
@@ -59,7 +59,7 @@ uname -r
     sudo yum install cifs-utils 
     ```
 
-    Gebruik **openSUSE** pakket beheer op openSUSE `zypper` :
+    Gebruik pakket beheer op openSUSE `zypper` :
 
     ```bash
     sudo zypper install cifs-utils
@@ -67,7 +67,7 @@ uname -r
 
     Gebruik op andere distributies de juiste pakket beheer-of [compilatie van de bron](https://wiki.samba.org/index.php/LinuxCIFS_utils#Download)
 
-* **De meest recente versie van de Azure-opdracht regel interface (CLI).** Zie [de Azure cli installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) en uw besturings systeem selecteren voor meer informatie over het installeren van de Azure cli. Als u liever de module Azure PowerShell gebruikt in Power shell 6 +, is het mogelijk dat de onderstaande instructies worden weer gegeven voor de Azure CLI.
+* **De meest recente versie van de Azure-opdracht regel interface (CLI).** Zie [de Azure cli installeren](/cli/azure/install-azure-cli) en uw besturings systeem selecteren voor meer informatie over het installeren van de Azure cli. Als u liever de module Azure PowerShell gebruikt in Power shell 6 +, is het mogelijk dat de onderstaande instructies worden weer gegeven voor de Azure CLI.
 
 * **Zorg ervoor dat poort 445 is geopend**: SMB communiceert via TCP-poort 445-Controleer of de firewall TCP-poorten 445 van de client computer niet blokkeert.  Vervang `<your-resource-group>` en `<your-storage-account>` Voer het volgende script uit:
     ```bash
@@ -87,7 +87,7 @@ uname -r
 
     Als de verbinding is geslaagd, ziet u een melding die vergelijkbaar is met de volgende uitvoer:
 
-    ```
+    ```ouput
     Connection to <your-storage-account> 445 port [tcp/microsoft-ds] succeeded!
     ```
 
@@ -215,7 +215,7 @@ Wanneer u klaar bent met het gebruik van de Azure-bestands share, kunt u gebruik
     ```bash
     sudo yum install autofs 
     ```
-    Gebruik **openSUSE** pakket beheer op openSUSE `zypper` :
+    Gebruik pakket beheer op openSUSE `zypper` :
     ```bash
     sudo zypper install autofs
     ```

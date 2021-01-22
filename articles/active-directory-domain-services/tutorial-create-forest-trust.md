@@ -8,18 +8,18 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 07/06/2020
+ms.date: 01/21/2021
 ms.author: justinha
-ms.openlocfilehash: faa46178262777454d4d67d23bbd0bb013974ab5
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: e381c80dddc4484d541f5f81de6b5df712cff69b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208485"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673465"
 ---
 # <a name="tutorial-create-an-outbound-forest-trust-to-an-on-premises-domain-in-azure-active-directory-domain-services"></a>Zelfstudie: Een uitgaande forestvertrouwensrelatie in één richting maken naar een on-premises domein in Azure Active Directory Domain Services
 
-In omgevingen waarin u geen wachtwoordhashes kunt synchroniseren, of waarin gebruikers werken die zich alleen aanmelden via een smartcard (zodat ze hun wachtwoord niet kennen), kunt u een resourceforest gebruiken in Azure AD DS (Azure Active Directory Domain Services). Een resourceforest maakt gebruik van een uitgaande vertrouwensrelatie in één richting van Azure AD DS naar één of meer on-premises AD DS-omgevingen. Met deze vertrouwensrelatie kunnen gebruikers, toepassingen en computers worden geverifieerd in een on-premises domein vanuit het met Azure AD DS beheerde domein. Bij gebruik van een resourceforest worden hashes van on-premises wachtwoorden nooit gesynchroniseerd.
+In omgevingen waar u geen wacht woord-hashes kunt synchroniseren, of waar gebruikers zich alleen aanmelden met Smart Cards en hun wacht woord niet kennen, kunt u een resource-forest in Azure Active Directory Domain Services (Azure AD DS) gebruiken. Een resourceforest maakt gebruik van een uitgaande vertrouwensrelatie in één richting van Azure AD DS naar één of meer on-premises AD DS-omgevingen. Met deze vertrouwensrelatie kunnen gebruikers, toepassingen en computers worden geverifieerd in een on-premises domein vanuit het met Azure AD DS beheerde domein. Bij gebruik van een resourceforest worden hashes van on-premises wachtwoorden nooit gesynchroniseerd.
 
 ![Diagram van forestvertrouwensrelatie van Azure AD DS naar on-premises AD DS](./media/concepts-resource-forest/resource-forest-trust-relationship.png)
 
@@ -61,7 +61,7 @@ Voordat u een forestvertrouwensrelatie configureert in Azure AD DS, moet u contr
 
 * Ze moeten gebruikmaken van privé-IP-adressen. Ze mogen niet afhankelijk zijn van DHCP met dynamische toewijzing van IP-adres.
 * Vermijd overlappende IP-adresruimten, zodat bij peering van virtuele netwerken en routering goed kan worden gecommuniceerd tussen Azure en on-premises.
-* Een virtueel Azure-netwerk heeft een gatewaysubnet nodig om een [Azure site-naar-site (S2S) VPN][vpn-gateway]- of [ExpressRoute][expressroute]-verbinding te configureren
+* Een virtueel Azure-netwerk heeft een gateway-subnet nodig om een [Azure site-naar-site (S2S) VPN-][vpn-gateway] of [ExpressRoute][expressroute] -verbinding te configureren.
 * Maak subnetten met voldoende IP-adressen ter ondersteuning van uw scenario.
 * Zorg ervoor dat Azure AD DS een eigen subnet heeft. Deel dit subnet van het virtuele netwerk niet met de toepassings-VM's en -services.
 * Gekoppelde virtuele netwerken zijn NIET transitief.
@@ -84,8 +84,8 @@ Het on-premises AD DS-domein heeft een binnenkomende forestvertrouwensrelatie vo
 
 Als u een binnenkomende vertrouwensrelatie in het on-premises AD DS-domein wilt configureren, voltooit u de volgende stappen vanuit een beheerwerkstation voor het on-premises AD DS-domein:
 
-1. Selecteer **Start | Systeem beheer | Active Directory domeinen en vertrouwens relaties**.
-1. Klik met de rechter muisknop op domein, zoals *onprem.contoso.com*, en selecteer vervolgens **Eigenschappen**.
+1. Selecteer **Start**  >  **systeem beheer**  >  **Active Directory domeinen en vertrouwens relaties**.
+1. Klik met de rechter muisknop op het domein, zoals *onprem.contoso.com*, en selecteer vervolgens **Eigenschappen**.
 1. Klik op het tabblad **vertrouwens relaties** en vervolgens op **nieuw vertrouwen**.
 1. Voer de naam voor de Azure AD DS-domein naam in, bijvoorbeeld *aaddscontoso.com*, en selecteer vervolgens **volgende**.
 1. Selecteer de optie om een **Forestvertrouwensrelatie** te maken. Maak vervolgens een vertrouwensrelatie van het type **In één richting: binnenkomend**.
@@ -93,6 +93,14 @@ Als u een binnenkomende vertrouwensrelatie in het on-premises AD DS-domein wilt 
 1. Kies voor het gebruik van **Forestdekkende verificatie**. Voer vervolgens een wachtwoord voor de vertrouwensrelatie in en bevestig dit. Dit wachtwoord wordt ook ingevoerd in de Azure-portal in de volgende sectie.
 1. Doorloop de volgende paar vensters met standaardopties, en kies vervolgens de optie **Nee, uitgaande vertrouwensrelatie niet bevestigen**.
 1. Selecteer **Finish**.
+
+Als de forestvertrouwensrelatie niet langer nodig is voor een omgeving, voert u de volgende stappen uit om deze uit het on-premises domein te verwijderen:
+
+1. Selecteer **Start**  >  **systeem beheer**  >  **Active Directory domeinen en vertrouwens relaties**.
+1. Klik met de rechter muisknop op het domein, zoals *onprem.contoso.com*, en selecteer vervolgens **Eigenschappen**.
+1. Kies het tabblad **vertrouwens relaties** en vervolgens de **domeinen die dit domein vertrouwen (binnenkomende vertrouwens relaties)**, klikt u op de vertrouwens relatie die u wilt verwijderen en klikt u vervolgens op **verwijderen**.
+1. Klik op het tabblad vertrouwens relaties, onder **domeinen die door dit domein worden vertrouwd (uitgaande vertrouwens relaties)**, op de vertrouwens relatie die moet worden verwijderd en klik vervolgens op verwijderen.
+1. Klik op **Nee, verwijder de vertrouwens relatie alleen uit het lokale domein**.
 
 ## <a name="create-outbound-forest-trust-in-azure-ad-ds"></a>Een uitgaande vertrouwensrelatie maken in Azure AD DS
 
@@ -107,11 +115,17 @@ Om de uitgaande vertrouwensrelatie voor het beheerde domein in de Azure-portal t
    > Als u de menuoptie **Vertrouwensrelaties** niet ziet, zoekt u onder **Eigenschappen** naar het *Foresttype*. Vertrouwensrelaties kunnen alleen worden gemaakt met *resourceforests*. Als het foresttype *Gebruikers* is, kunt u geen vertrouwensrelaties maken. Het is momenteel niet mogelijk om het foresttype van een beheerd domein te wijzigen. U moet het beheerde domein verwijderen en opnieuw maken als een resourceforest.
 
 1. Voer een weergave naam in die de vertrouwens relatie identificeert en vervolgens de naam van het on-premises vertrouwde forest-DNS, zoals *onprem.contoso.com*.
-1. Geef hetzelfde wachtwoord voor de vertrouwensrelatie op dat in de vorige sectie is gebruikt bij het configureren van de binnenkomende forestvertrouwensrelatie voor het on-premises AD DS-domein.
+1. Geef het wacht woord voor de vertrouwens relatie op dat is gebruikt voor het configureren van de binnenkomende forestvertrouwensrelatie voor het on-premises AD DS domein in de vorige sectie.
 1. Geef ten minste twee DNS-servers op voor het on-premises AD DS domein, zoals *10.1.1.4* en *10.1.1.5*.
 1. Wanneer u klaar bent, **slaat** u de uitgaande forestvertrouwensrelatie op.
 
     ![Een uitgaande vertrouwensrelatie maken in de Azure-portal](./media/tutorial-create-forest-trust/portal-create-outbound-trust.png)
+
+Als de forestvertrouwensrelatie niet langer nodig is voor een omgeving, voert u de volgende stappen uit om de vertrouwens relatie van Azure AD DS te verwijderen:
+
+1. In de Azure Portal zoekt en selecteert u **Azure AD Domain Services** en selecteert u vervolgens uw beheerde domein, zoals *aaddscontoso.com*.
+1. Selecteer **vertrouwen** in het menu aan de linkerkant van het beheerde domein, kies de vertrouwens relatie en klik op **verwijderen**.
+1. Geef het wacht woord voor de vertrouwens relatie op dat is gebruikt voor het configureren van de forestvertrouwensrelatie en klik op **OK**.
 
 ## <a name="validate-resource-authentication"></a>Verificatie van resources valideren
 

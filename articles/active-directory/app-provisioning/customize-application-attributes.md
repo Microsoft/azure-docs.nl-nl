@@ -10,12 +10,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/10/2020
 ms.author: kenwith
-ms.openlocfilehash: 012038399796a0f2dc87acfb350043542268379a
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
-ms.translationtype: HT
+ms.openlocfilehash: efdbec10c74a6b1892df13b8308538e61f42f679
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96936978"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673498"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory
 
@@ -115,7 +115,7 @@ Enkele voorbeelden van toepassingen en systemen die ondersteuning bieden voor aa
 
 
 > [!NOTE]
-> Het bewerken van de lijst met ondersteunde kenmerken wordt alleen aanbevolen voor beheerders die het schema van hun toepassingen en systemen hebben aangepast, en die weten hoe hun aangepaste kenmerken zijn gedefinieerd. Hiervoor kan het nodig zijn om ervaring te hebben met de API's en ontwikkeltools van een toepassing of systeem. De mogelijkheid om de lijst met ondersteunde kenmerken te bewerken is standaard vergrendeld, maar klanten kunnen deze mogelijkheid inschakelen door naar de volgende URL te gaan: https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true. U kunt vervolgens naar uw toepassing navigeren om de kenmerkenlijst weer te geven, zoals [hierboven](https://docs.microsoft.com/azure/active-directory/app-provisioning/customize-application-attributes#editing-the-list-of-supported-attributes) wordt beschreven. 
+> Het bewerken van de lijst met ondersteunde kenmerken wordt alleen aanbevolen voor beheerders die het schema van hun toepassingen en systemen hebben aangepast, en die weten hoe hun aangepaste kenmerken zijn gedefinieerd. Hiervoor kan het nodig zijn om ervaring te hebben met de API's en ontwikkeltools van een toepassing of systeem. De mogelijkheid om de lijst met ondersteunde kenmerken te bewerken is standaard vergrendeld, maar klanten kunnen deze mogelijkheid inschakelen door naar de volgende URL te gaan: https://portal.azure.com/?Microsoft_AAD_IAM_forceSchemaEditorEnabled=true. U kunt vervolgens naar uw toepassing navigeren om de kenmerkenlijst weer te geven, zoals [hierboven](#editing-the-list-of-supported-attributes) wordt beschreven. 
 
 Bij het bewerken van de lijst met ondersteunde kenmerken zijn de volgende eigenschappen beschikbaar:
 

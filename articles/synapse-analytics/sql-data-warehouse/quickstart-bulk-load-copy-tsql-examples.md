@@ -9,16 +9,16 @@ ms.subservice: sql-dw
 ms.date: 07/10/2020
 ms.author: kevin
 ms.reviewer: jrasnick
-ms.openlocfilehash: 25c692ea9a2dce4723472f6812ac46d82b2b318d
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 1551e85bd45d4d64861b43bf53dd0c155520861f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120985"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98673634"
 ---
 # <a name="securely-load-data-using-synapse-sql"></a>Gegevens veilig laden met Synapse SQL
 
-In dit artikel vindt u voorbeelden over de veilige verificatiemechanismen voor de [COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest). De instructie COPY is de meest flexibele en veilige manier om gegevens bulksgewijs te laden in Synapse SQL.
+In dit artikel vindt u voorbeelden over de veilige verificatiemechanismen voor de [COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true). De instructie COPY is de meest flexibele en veilige manier om gegevens bulksgewijs te laden in Synapse SQL.
 ## <a name="supported-authentication-mechanisms"></a>Ondersteunde verificatiemechanismen
 
 De volgende matrix beschrijft de ondersteunde verificatiemethoden voor elk bestandstype en opslagaccount. Dit geldt voor de bronopslaglocatie en de locatie van het foutbestand.
@@ -176,5 +176,5 @@ Beheerde identiteitsverificatie is vereist wanneer uw opslagaccount is gekoppeld
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Raadpleeg het [artikel over COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax) voor de gedetailleerde syntaxis
+- Raadpleeg het [artikel over COPY-instructie](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax) voor de gedetailleerde syntaxis
 - Controleer het overzichtsartikel [gegevens laden](./design-elt-data-loading.md#what-is-elt) voor het laden van aanbevolen procedures

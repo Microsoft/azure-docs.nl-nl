@@ -5,12 +5,12 @@ ms.topic: conceptual
 author: cweining
 ms.author: cweining
 ms.date: 12/18/2020
-ms.openlocfilehash: 3060bd6ea8d7fbc4a4bf005b84cd07d420987ab6
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: d86455eae0834f29099c7d5c96f8326408daf519
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97696377"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98675526"
 ---
 # <a name="enable-snapshot-debugger-for-net-and-net-core-apps-in-azure-functions"></a>Snapshot Debugger voor .NET-en .NET core-apps in Azure Functions inschakelen
 
@@ -22,7 +22,7 @@ Voor de meeste toepassingen beschikken de gratis en gedeelde service lagen niet 
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [Application Insights bewaking in uw functie-app inschakelen](https://docs.microsoft.com/azure/azure-functions/configure-monitoring#add-to-an-existing-function-app)
+* [Application Insights bewaking in uw functie-app inschakelen](../../azure-functions/configure-monitoring.md#add-to-an-existing-function-app)
 
 ## <a name="enable-snapshot-debugger"></a>Snapshot Debugger inschakelen
 
@@ -147,5 +147,5 @@ We raden u aan Snapshot Debugger in te scha kelen in al uw apps om de diagnose v
 
 - Verkeer genereren voor uw toepassing die een uitzonde ring kan veroorzaken. Wacht vervolgens 10 tot 15 minuten totdat moment opnamen naar het Application Insights-exemplaar worden verzonden.
 - [Moment opnamen weer geven](snapshot-debugger.md?toc=/azure/azure-monitor/toc.json#view-snapshots-in-the-portal) in de Azure Portal.
-- Pas Snapshot Debugger configuratie aan op basis van uw gebruik in uw functie-app. Zie voor meer informatie [moment opname configuratie in host.jsop](https://docs.microsoft.com/azure/azure-functions/functions-host-json#applicationinsightssnapshotconfiguration).
+- Pas Snapshot Debugger configuratie aan op basis van uw gebruik in uw functie-app. Zie voor meer informatie [moment opname configuratie in host.jsop](../../azure-functions/functions-host-json.md#applicationinsightssnapshotconfiguration).
 - Zie [Snapshot debugger Troubleshooting](snapshot-debugger-troubleshoot.md?toc=/azure/azure-monitor/toc.json)(Engelstalig) voor hulp bij het oplossen van problemen met snapshot debugger.

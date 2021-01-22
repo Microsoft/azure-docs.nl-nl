@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.date: 09/04/2020
 ms.author: deanwe
 ms.custom: references_regions
-ms.openlocfilehash: ab056e0685264b03d35ee6b95afad7c6362f9db6
-ms.sourcegitcommit: b6267bc931ef1a4bd33d67ba76895e14b9d0c661
+ms.openlocfilehash: 0d8ce501b951f3543e1baf54c8a52648b13f6e66
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97695796"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695667"
 ---
 # <a name="azure-automanage-for-virtual-machines"></a>Azure automanage voor virtuele machines
 
@@ -43,16 +43,16 @@ Er zijn verschillende vereisten die u moet overwegen voordat u Azure automanage 
 
 - Alleen Windows Server Vm's
 - Vm's moeten worden uitgevoerd
-- Vm's moeten zich in een ondersteunde regio bevinden
+- Vm's moeten zich in een ondersteunde regio bevinden (Zie de onderstaande alinea)
 - De gebruiker moet over de juiste machtigingen beschikken (Zie de onderstaande alinea)
 - Automanage biedt momenteel geen ondersteuning voor sandbox-abonnementen
 
-U moet de rol **Inzender** hebben voor de resource groep die uw vm's bevat om het gebruik van een bestaande automanage-account in te scha kelen op vm's. Als u automanage inschakelt met een nieuw automanage-account, hebt u de volgende machtigingen nodig voor uw abonnement: rol van **eigenaar** of **Inzender** samen met beheerders rollen van **gebruikers toegang** . 
+Het is ook belang rijk te weten dat automanage alleen virtuele Windows-machines ondersteunt die zich in de volgende regio's bevinden: Europa-west, VS-Oost, VS-West 2, Canada-centraal, West-Centraal VS, Japan-Oost.
+
+U moet de rol **Inzender** hebben voor de resource groep die uw vm's bevat om het gebruik van een bestaande automanage-account in te scha kelen op vm's. Als u automanage inschakelt met een nieuw automanage-account, hebt u de volgende machtigingen nodig voor uw abonnement: rol van **eigenaar** of **Inzender** samen met beheerders rollen van **gebruikers toegang** .
 
 > [!NOTE]
 > Als u automanage wilt gebruiken op een virtuele machine die is verbonden met een werk ruimte in een ander abonnement, moet u de hiervoor vermelde machtigingen hebben voor elk abonnement.
-
-Het is ook belang rijk te weten dat automanage alleen virtuele Windows-machines ondersteunt die zich in de volgende regio's bevinden: Europa-west, VS-Oost, VS-West 2, Canada-centraal, West-Centraal VS, Japan-Oost.
 
 ## <a name="participating-services"></a>Deelnemende Services
 
@@ -102,12 +102,20 @@ U kunt de instellingen van een standaard configuratie profiel aanpassen via voor
 
 ## <a name="automanage-account"></a>Account voor automanage
 
-Het account voor automatisch beheer is de beveiligings context of de identiteit waaronder de geautomatiseerde bewerkingen plaatsvinden. Normaal gesp roken hoeft u de optie voor het automatisch beheren van het account niet te selecteren, maar als er sprake is van een overdrachts scenario waarbij u het geautomatiseerd beheer (mogelijk tussen twee systeem beheerders) wilt verdelen, kunt u met deze optie een Azure-identiteit definiëren voor elk van deze beheerders.
+Het account voor automatisch beheer is de beveiligings context of de identiteit waaronder de geautomatiseerde bewerkingen plaatsvinden. Normaal gesp roken hoeft u de optie voor het automatisch beheren van het account niet te selecteren, maar als er sprake is van een overdrachts scenario waarbij u het geautomatiseerde beheer van uw resources (mogelijk tussen twee systeem beheerders) wilt verdelen, kunt u met deze optie een Azure-identiteit definiëren voor elk van deze beheerders.
 
 Wanneer u automatisch beheer op uw virtuele machines inschakelt, is er een geavanceerde vervolg keuzelijst op de Blade **Azure VM-best practice inschakelen** waarmee u het automatisch beheer account kunt toewijzen of hand matig maken. Azure Portal
 
+Voor het account voor automatisch beheer worden Inzender **rollen en functies** voor het **resource beleid** worden verleend aan de abonnementen met de machine (s) die u wilt beheren. U kunt hetzelfde account voor automatisch beheer op machines op meerdere abonnementen gebruiken, waarmee de **Inzender** en de Inzender machtigingen voor het **resource beleid** voor alle abonnementen worden verleend.
+
+Als uw virtuele machine is verbonden met een Log Analytics-werk ruimte in een ander abonnement, wordt aan de automanage- **account zowel Inzender** als **Inzender voor resource beleid** verleend in dat andere abonnement.
+
+Als u automanage inschakelt met een nieuw automanage-account, hebt u de volgende machtigingen nodig voor uw abonnement: rol van **eigenaar** of **Inzender** samen met beheerders rollen van **gebruikers toegang** .
+
+Als u automanage met een bestaand automanage-account inschakelt, moet u de rol **Inzender** hebben voor de resource groep die uw virtuele machines bevat.
+
 > [!NOTE]
-> U moet de rol **Inzender** hebben voor de resource groep die uw virtuele machines bevat voor het inschakelen van automanage op vm's met behulp van een bestaand automanage-account. Als u automanage inschakelt met een nieuw automanage-account, hebt u de volgende machtigingen nodig voor uw abonnement: rol van **eigenaar** of **Inzender** samen met beheerders rollen van **gebruikers toegang** .
+> Wanneer u aanbevolen procedures voor automatisch beheer uitschakelt, blijven de machtigingen voor het automatisch beheren van het account voor gekoppelde abonnementen behouden. Verwijder de machtigingen hand matig door naar de IAM-pagina van het abonnement te gaan of door het account voor automatisch beheer te verwijderen. Het automanage-account kan niet worden verwijderd als er nog computers worden beheerd.
 
 
 ## <a name="status-of-vms"></a>Status van virtuele machines
@@ -122,6 +130,7 @@ In de kolom **status** kunnen de volgende statussen worden weer gegeven:
 - *In uitvoering* : de VM is zojuist ingeschakeld en wordt geconfigureerd
 - *Geconfigureerd* : de virtuele machine is geconfigureerd en er is geen drift gedetecteerd
 - *Mislukt* : de VM is gedrift en kan niet worden hersteld
+- *In behandeling* : de virtuele machine wordt op dit moment niet uitgevoerd en er wordt geprobeerd om de VM op te lossen of te herstellen wanneer deze de volgende keer wordt uitgevoerd
 
 Als u de **status** als *mislukt* ziet, kunt u problemen met de implementatie oplossen via de resource groep waar uw VM zich bevindt. Ga naar **resource groepen**, selecteer uw resource groep, klik op **implementaties** en Bekijk de status *mislukt* samen met de fout Details.
 
@@ -145,7 +154,6 @@ Lees aandachtig door de berichten in het pop-upvenster voordat u akkoord gaat me
 
 
 In eerste instantie is de virtuele machine niet uit een van de services die we hebben opgedaan bij en geconfigureerd. Alle kosten die door deze services worden gemaakt, blijven Factureerbaar. Als dat nodig is, moet u uit de weg. Elk automatisch beheer gedrag wordt direct gestopt. De virtuele machine wordt bijvoorbeeld niet langer bewaakt voor drift.
-
 
 ## <a name="next-steps"></a>Volgende stappen
 

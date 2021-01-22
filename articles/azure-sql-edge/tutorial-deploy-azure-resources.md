@@ -9,12 +9,12 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 05/19/2020
-ms.openlocfilehash: 9578793c88c069b885f03dd682c47ae9f1f1b0a1
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
-ms.translationtype: HT
+ms.openlocfilehash: bc2f802a902212633fdbc081d33a51407d374e36
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802623"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696360"
 ---
 # <a name="install-software-and-set-up-resources-for-the-tutorial"></a>Software installeren en resources instellen voor de zelfstudie
 
@@ -32,7 +32,6 @@ In deze driedelige zelfstudie maakt u een machine learning-model voor het voorsp
 5. Installeer de nieuwste versie van [Azure CLI](https://github.com/Azure/azure-powershell/releases/tag/v3.5.0-February2020). De volgende scripts vereisen de meest recente versie van AZ PowerShell (3.5.0, feb. 2020).
 6. Stel de omgeving in op het opsporen van fouten in de IoT Edge-oplossing, en het uitvoeren en testen van de oplossing door [Azure IoT EdgeHub Dev Tool](https://pypi.org/project/iotedgehubdev/) te installeren.
 7. Installeer Docker.
-8. Download het DACPAC-bestand dat in de zelfstudie wordt gebruikt. 
 
 ## <a name="deploy-azure-resources-using-powershell-script"></a>Azure-resources implementeren met behulp van een PowerShell-script
 

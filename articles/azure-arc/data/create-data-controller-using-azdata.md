@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 19451fb09919238a04ac953c9c38fc70b4744d16
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 986019ec4de2fc25b6d8714a8c687cc9342f47b8
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955294"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696059"
 ---
 # <a name="create-azure-arc-data-controller-using-the-azure-data-cli-azdata"></a>Een Azure-Arc-gegevens controller maken met behulp van de [!INCLUDE [azure-data-cli-azdata](../../../includes/azure-data-cli-azdata.md)]
 
@@ -266,34 +266,11 @@ Wanneer u de opdracht hebt uitgevoerd, gaat u door met om [de aanmaak status te 
 
 ### <a name="create-on-azure-red-hat-openshift-aro"></a>Maken op Azure Red Hat open Shift (ARO)
 
-#### <a name="apply-the-scc"></a>Het SCC Toep assen
+Voor Azure Red Hat open Shift is een beveiligings context beperking vereist.
 
-Voordat u de gegevens controller op Azure Red Hat open SHIFT maakt, moet u specifieke beveiligings context beperkingen (SCC) Toep assen. Voor de preview-versie versoepelt deze de beveiligings beperkingen. Toekomstige releases bieden bijgewerkte SCC.
+#### <a name="apply-the-security-context"></a>De beveiligings context Toep assen
 
-1. Down load de aangepaste beveiligings context beperking (SCC). Gebruik een van de volgende opties: 
-   - [GitHub](https://github.com/microsoft/azure_arc/tree/main/arc_data_services/deploy/yaml/arc-data-scc.yaml) 
-   - ([Onbewerkt](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml))
-   - `curl` Met de volgende opdracht worden Arc-data-SCC. yaml gedownload:
-
-      ```console
-      curl https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml -o arc-data-scc.yaml
-      ```
-
-1. Maak SCC.
-
-   ```console
-   oc create -f arc-data-scc.yaml
-   ```
-
-1. Pas het SCC toe op het service account.
-
-   > [!NOTE]
-   > Gebruik hier dezelfde naam ruimte en in de `azdata arc dc create` onderstaande opdracht. Voor beeld is `arc` .
-
-   ```console
-   oc adm policy add-scc-to-user arc-data-scc --serviceaccount default --namespace arc
-   ```
-
+[!INCLUDE [apply-security-context-constraint](includes/apply-security-context-constraint.md)]
 
 #### <a name="create-custom-deployment-profile"></a>Aangepast implementatie profiel maken
 
@@ -324,33 +301,11 @@ Wanneer u de opdracht hebt uitgevoerd, gaat u door met om [de aanmaak status te 
 > [!NOTE]
 > Als u het Red Hat open Shift container platform gebruikt in azure, is het raadzaam om de meest recente beschik bare versie te gebruiken.
 
-#### <a name="apply-the-scc"></a>Het SCC Toep assen
+Voordat u de gegevens controller op Red Hat OCP maakt, moet u specifieke beveiligings context beperkingen Toep assen. 
 
-Voordat u de gegevens controller op Red Hat OCP maakt, moet u specifieke beveiligings context beperkingen (SCC) Toep assen. Voor de preview-versie versoepelt deze de beveiligings beperkingen. Toekomstige releases bieden bijgewerkte SCC.
+#### <a name="apply-the-security-context-constraint"></a>De beveiligings context beperking Toep assen
 
-1. Down load de aangepaste beveiligings context beperking (SCC). Gebruik een van de volgende opties: 
-   - [GitHub](https://github.com/microsoft/azure_arc/tree/main/arc_data_services/deploy/yaml/arc-data-scc.yaml) 
-   - ([Onbewerkt](https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml))
-   - `curl` Met de volgende opdracht worden Arc-data-SCC. yaml gedownload:
-
-      ```console
-      curl https://raw.githubusercontent.com/microsoft/azure_arc/main/arc_data_services/deploy/yaml/arc-data-scc.yaml -o arc-data-scc.yaml
-      ```
-
-1. Maak SCC.
-
-   ```console
-   oc create -f arc-data-scc.yaml
-   ```
-
-1. Pas het SCC toe op het service account.
-
-   > [!NOTE]
-   > Gebruik hier dezelfde naam ruimte en in de `azdata arc dc create` onderstaande opdracht. Voor beeld is `arc` .
-
-   ```console
-   oc adm policy add-scc-to-user arc-data-scc --serviceaccount default --namespace arc
-   ```
+[!INCLUDE [apply-security-context-constraint](includes/apply-security-context-constraint.md)]
 
 #### <a name="determine-storage-class"></a>Opslag klasse bepalen
 

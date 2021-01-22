@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/31/2019
 ms.author: tomsh
-ms.openlocfilehash: 9dcb1113bb37cb0f5f65c54ae9d6ca76a88330c1
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: c3674b6877438a0dd4fe53569cf6852e872334a7
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94698662"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693609"
 ---
 # <a name="azure-operational-security-overview"></a>Overzicht van Azure Operational Security
 
@@ -171,21 +171,21 @@ Blauw drukken biedt een declaratieve manier om de implementatie van verschillend
 
 ## <a name="devops"></a>DevOps
 
-Voordat [ontwikkel aars (DevOps)](https://www.visualstudio.com/learn/what-is-devops/) toepassingen ontwikkelen, waren teams verantwoordelijk voor het verzamelen van bedrijfs vereisten voor een software programma en het schrijven van code. Vervolgens test een afzonderlijk team van QA het programma in een geïsoleerde ontwikkel omgeving. Als aan de vereisten is voldaan, heeft het QA-team de code voor de te implementeren bewerkingen vrijgegeven. De implementatie teams zijn verder gefragmenteerd in groepen zoals netwerken en data bases. Elke keer dat een software programma wordt ' veroorzaakt over de muur ' naar een onafhankelijk team, zijn er knel punten toegevoegd.
+Voordat [ontwikkel aars (DevOps)](https://azure.microsoft.com/overview/what-is-devops/) toepassingen ontwikkelen, waren teams verantwoordelijk voor het verzamelen van bedrijfs vereisten voor een software programma en het schrijven van code. Vervolgens test een afzonderlijk team van QA het programma in een geïsoleerde ontwikkel omgeving. Als aan de vereisten is voldaan, heeft het QA-team de code voor de te implementeren bewerkingen vrijgegeven. De implementatie teams zijn verder gefragmenteerd in groepen zoals netwerken en data bases. Elke keer dat een software programma wordt ' veroorzaakt over de muur ' naar een onafhankelijk team, zijn er knel punten toegevoegd.
 
 DevOps stelt teams in staat om sneller en goed koopere oplossingen van hogere kwaliteit te leveren. Klanten verwachten een dynamische en betrouw bare ervaring bij het gebruik van software en services. Teams moeten snel op software-updates herhalen en de impact van de updates meten. Ze moeten snel reageren met nieuwe ontwikkelings herhalingen om problemen op te lossen of meer waarde te bieden.  
 
 Cloud platforms, zoals Microsoft Azure, hebben traditionele knel punten verwijderd en hebben de commoditize-infra structuur geholpen. Software-Reigns in elk bedrijf als Key onderscheid en factor in bedrijfs resultaten. Geen organisatie, ontwikkelaar of IT-mede werker kan of de DevOps-verplaatsing niet voor komen.
 
-Volwassen DevOps-artsen nemen een aantal van de volgende procedures. Deze procedures [hebben betrekking](https://www.visualstudio.com/learn/what-is-devops-culture/) op het maken van strategieën voor gebruikers op basis van de bedrijfs scenario's. Hulp middelen kunnen helpen bij het automatiseren van de verschillende procedures.
+Volwassen DevOps-artsen nemen een aantal van de volgende procedures. Deze procedures [hebben betrekking](/azure/devops/learn/what-is-devops-culture) op het maken van strategieën voor gebruikers op basis van de bedrijfs scenario's. Hulp middelen kunnen helpen bij het automatiseren van de verschillende procedures.
 
 - [Flexibele plannings-en project beheer](https://www.visualstudio.com/learn/what-is-agile/) technieken worden gebruikt voor het plannen en isoleren van werk in sprints, het beheren van de team capaciteit en het snel aanpassen van de veranderende behoeften van uw bedrijf.
-- [Versie beheer, meestal met git](https://www.visualstudio.com/learn/what-is-git/), zorgt ervoor dat teams overal ter wereld bronnen kunnen delen en integreren met hulpprogram ma's voor software ontwikkeling om de release pijplijn te automatiseren.
-- [Doorlopende integratie](https://www.visualstudio.com/learn/what-is-continuous-integration/) verstuurt het voortdurend samen voegen en testen van code, wat leidt tot een vroeg aantal defecten.  Andere voor delen zijn minder tijd verspild op het bestrijden van samenvoeg problemen en snelle feedback voor ontwikkel teams.
-- [Continue levering](https://www.visualstudio.com/learn/what-is-continuous-delivery/) van software oplossingen aan productie-en test omgevingen helpt organisaties om snel fouten op te lossen en te reageren op steeds veranderende bedrijfs vereisten.
-- [Bewaking](https://www.visualstudio.com/learn/what-is-monitoring/) van het uitvoeren van toepassingen, met inbegrip van productie omgevingen voor toepassings status, en het gebruik van de klant--helpt organisaties een hypo these te vormen en snel te valideren of te disproveen.  Uitgebreide gegevens worden vastgelegd en opgeslagen in verschillende indelingen voor logboek registratie.
-- [Infrastructure as code (IaC)](https://www.visualstudio.com/learn/what-is-infrastructure-as-code/) is een praktijk waarmee de automatisering en validatie van het maken en teardown van netwerken en virtuele machines kan worden geautomatiseerd voor het leveren van veilige, stabiele platformen voor hosting van toepassingen.
-- Micro [Services](https://www.visualstudio.com/learn/what-are-microservices/) -architectuur wordt gebruikt voor het isoleren van zakelijke gebruiks cases in kleine herbruikbare Services.  Deze architectuur maakt schaal baarheid en efficiëntie mogelijk.
+- [Versie beheer, meestal met git](/azure/devops/learn/git/what-is-git), zorgt ervoor dat teams overal ter wereld bronnen kunnen delen en integreren met hulpprogram ma's voor software ontwikkeling om de release pijplijn te automatiseren.
+- [Doorlopende integratie](/azure/devops/learn/what-is-continuous-integration) verstuurt het voortdurend samen voegen en testen van code, wat leidt tot een vroeg aantal defecten.  Andere voor delen zijn minder tijd verspild op het bestrijden van samenvoeg problemen en snelle feedback voor ontwikkel teams.
+- [Continue levering](/azure/devops/learn/what-is-continuous-delivery) van software oplossingen aan productie-en test omgevingen helpt organisaties om snel fouten op te lossen en te reageren op steeds veranderende bedrijfs vereisten.
+- [Bewaking](/azure/devops/learn/what-is-monitoring) van het uitvoeren van toepassingen, met inbegrip van productie omgevingen voor toepassings status, en het gebruik van de klant--helpt organisaties een hypo these te vormen en snel te valideren of te disproveen.  Uitgebreide gegevens worden vastgelegd en opgeslagen in verschillende indelingen voor logboek registratie.
+- [Infrastructure as code (IaC)](/azure/devops/learn/what-is-infrastructure-as-code) is een praktijk waarmee de automatisering en validatie van het maken en teardown van netwerken en virtuele machines kan worden geautomatiseerd voor het leveren van veilige, stabiele platformen voor hosting van toepassingen.
+- Micro [Services](/azure/devops/learn/what-are-microservices) -architectuur wordt gebruikt voor het isoleren van zakelijke gebruiks cases in kleine herbruikbare Services.  Deze architectuur maakt schaal baarheid en efficiëntie mogelijk.
 
 ## <a name="next-steps"></a>Volgende stappen
 

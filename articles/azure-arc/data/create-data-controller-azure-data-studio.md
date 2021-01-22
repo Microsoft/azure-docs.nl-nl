@@ -7,14 +7,14 @@ ms.subservice: azure-arc-data
 author: twright-msft
 ms.author: twright
 ms.reviewer: mikeray
-ms.date: 09/22/2020
+ms.date: 12/09/2020
 ms.topic: how-to
-ms.openlocfilehash: 208c9b4172719b876766f0c4d07a17caa24bfd63
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
+ms.openlocfilehash: 0c599f17ab37ca30ea9ef3681ea3c75dd0c2648e
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92310957"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693465"
 ---
 # <a name="create-data-controller-in-azure-data-studio"></a>Gegevens controller maken in Azure Data Studio
 
@@ -34,33 +34,37 @@ Volg deze stappen om een Azure-Arc-gegevens controller te maken met behulp van d
 
 1. Klik in Azure Data Studio op het tabblad verbindingen in de linkernavigatiebalk.
 2. Klik op de knop **...** boven aan het deel venster verbindingen en kies **nieuwe implementatie...**
-3. Kies in de wizard nieuwe implementatie de optie **Azure Arc-gegevens controller**, schakel het selectie vakje licentie acceptatie in en klik vervolgens op de knop **selecteren** onderaan.
-4. Gebruik het standaard kubeconfig-bestand of selecteer een andere.  Klik op **Volgende**.
-5. Kies een Kubernetes-cluster context. Klik op **Volgende**.
-6. Kies een configuratie profiel bestand voor de implementatie, afhankelijk van uw doel-Kubernetes-cluster. **Klik op volgende**.
-8. Kies het gewenste abonnement en de resource groep.
-9. Voer een naam in voor de gegevens controller en voor de naam ruimte waarin de gegevens controller wordt gemaakt.  
+3. Kies in de wizard nieuwe implementatie de optie **Azure Arc data controller** en klik vervolgens op de knop **selecteren** onder aan de pagina.
+4. Zorg ervoor dat de vereiste hulpprogram ma's beschikbaar zijn en voldoen aan de benodigde versies. **Klik op volgende**.
+5. Gebruik het standaard kubeconfig-bestand of selecteer een andere.  Klik op **Volgende**.
+6. Kies een Kubernetes-cluster context. Klik op **Volgende**.
+7. Kies een implementatie configuratie profiel, afhankelijk van uw doel-Kubernetes-cluster. **Klik op volgende**.
+8. Als u Azure Red Hat open Shift of Red Hat open Shift container platform gebruikt, past u beveiligings context beperkingen toe. Volg de instructies in [een beveiligings context beperking Toep assen voor Azure Arc enabled Data Services op open Shift](how-to-apply-security-context-constraint.md).
 
-> [!NOTE]
-> Als de naam ruimte al bestaat, wordt deze gebruikt als de naam ruimte nog geen andere Kubernetes-objecten bevat: Peul, enzovoort.  Als de naam ruimte niet bestaat, wordt er een poging gedaan om de naam ruimte te maken.  Voor het maken van een naam ruimte in een Kubernetes-cluster zijn Kubernetes-cluster beheerder bevoegdheden vereist.  Als u geen Kubernetes hebt, vraagt u uw Kubernetes-cluster beheerder de eerste paar stappen uit te voeren in het artikel [een gegevens controller maken met Kubernetes-systeem eigen hulpprogram ma's](./create-data-controller-using-kubernetes-native-tools.md) die moeten worden uitgevoerd door een Kubernetes-beheerder voordat u deze wizard voltooit.
+   >[!IMPORTANT]
+   >Op Azure Red Hat open Shift of Red Hat open Shift container platform moet u de beveiligings context beperking Toep assen voordat u de gegevens controller maakt.
 
-> [!NOTE]
-> Opmerking: de gegevens controller en naam van de naam ruimte worden gebruikt voor het maken van een aangepaste resource in het Kubernetes-cluster, zodat ze moeten voldoen aan de [Kubernetes-naamgevings conventies](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names).
-
-10. Selecteer een Azure-locatie.
+1. Kies het gewenste abonnement en de resource groep.
+1. Selecteer een Azure-locatie.
    
-> [!NOTE]
-> De Azure-locatie die u hier selecteert, is de locatie in azure waar de *meta gegevens* van de gegevens controller en de data base-exemplaren die worden beheerd, worden opgeslagen.  De gegevens controller-en data base-instanties worden in werkelijkheid crewted in uw Kubernetes-cluster waar dit mogelijk is.
+   De Azure-locatie die u hier selecteert, is de locatie in azure waar de *meta gegevens* van de gegevens controller en de data base-exemplaren die worden beheerd, worden opgeslagen. De gegevens controller-en data base-instanties worden in werkelijkheid crewted in uw Kubernetes-cluster waar dit mogelijk is.
 
-11.  Voer een gebruikers naam en wacht woord in en bevestig het wacht woord voor het gebruikers account van de gegevens controller beheerder.
+10. Selecteer de juiste connectiviteits modus. Meer informatie over [connectiviteits modi](https://docs.microsoft.com/azure/azure-arc/data/connectivity). **Klik op volgende**.
 
-> [!NOTE]
-> Het wacht woord moet ten minste acht tekens lang zijn.
+    Als u de Service-Principal-referenties voor de directe connectiviteits modus selecteert zoals beschreven in [Create Service Principal](upload-metrics-and-logs-to-azure-monitor.md#create-service-principal).
 
-1.  Klik op **Volgende**.
-2.  Bekijk en klik op **script naar notebook**.
-3.  **Bekijk het gegenereerde notitie blok**.  Breng de gewenste wijzigingen aan, zoals namen van opslag klassen of service typen.
-4.  Klik boven aan het notitie blok op **alles uitvoeren** .
+11. Voer een naam in voor de gegevens controller en voor de naam ruimte waarin de gegevens controller wordt gemaakt.
+
+    De gegevens controller en naam van de naam ruimte worden gebruikt voor het maken van een aangepaste resource in het Kubernetes-cluster, zodat deze voldoen aan de [naamgevings conventies van Kubernetes](https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names).
+    
+    Als de naam ruimte al bestaat, wordt deze gebruikt als de naam ruimte nog geen andere Kubernetes-objecten bevat: Peul, enzovoort.  Als de naam ruimte niet bestaat, wordt er een poging gedaan om de naam ruimte te maken.  Voor het maken van een naam ruimte in een Kubernetes-cluster zijn Kubernetes-cluster beheerder bevoegdheden vereist.  Als u geen Kubernetes hebt, vraagt u uw Kubernetes-cluster beheerder de eerste paar stappen uit te voeren in het artikel [een gegevens controller maken met Kubernetes-systeem eigen hulpprogram ma's](./create-data-controller-using-kubernetes-native-tools.md) die moeten worden uitgevoerd door een Kubernetes-beheerder voordat u deze wizard voltooit.
+
+
+12. Selecteer de opslag klasse waar de gegevens controller wordt geïmplementeerd. 
+13.  Voer een gebruikers naam en wacht woord in en bevestig het wacht woord voor het gebruikers account van de gegevens controller beheerder. Klik op **Volgende**.
+
+14. Controleer de implementatie configuratie.
+15. Klik op **implementeren** om de gewenste configuratie of het **script naar de notebook** te implementeren om de implementatie-instructies te controleren of wijzigingen aan te brengen die nodig zijn, zoals namen van opslag klassen of service typen. Klik boven aan het notitie blok op **alles uitvoeren** .
 
 ## <a name="monitoring-the-creation-status"></a>De aanmaak status bewaken
 

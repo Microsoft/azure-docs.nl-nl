@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a0e2f785bb3c097b7d2918198457a3f7baf6a39c
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 91ed9482903d66ffcf1283c4024f89fc461bab1b
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96023445"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695066"
 ---
 # <a name="use-aes-128-dynamic-encryption-and-the-key-delivery-service"></a>Dynamische AES-128-versleuteling en de sleutelleveringsservice gebruiken
 
@@ -33,7 +33,7 @@ ms.locfileid: "96023445"
 >  
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 U kunt Media Services gebruiken om HTTP Live Streaming (HLS) te leveren en Smooth Streaming versleuteld met de AES door gebruik te maken van 128-bits coderings sleutels. Media Services biedt ook de sleutelleveringsservice die versleutelingssleutels levert aan gemachtigde gebruikers. Als u wilt dat Media Services een Asset versleutelt, koppelt u een versleutelings sleutel aan de Asset en configureert u ook autorisatie beleid voor de sleutel. Wanneer een stroom wordt aangevraagd door een speler, gebruikt Media Services de opgegeven sleutel om uw inhoud dynamisch te versleutelen met behulp van AES-versleuteling. Voor het ontsleutelen van de stream, wordt door de speler de sleutel van de sleutelleveringsservice aangevraagd. Om te bepalen of de gebruiker gemachtigd is om de sleutel op te halen, evalueert de service het autorisatie beleid dat u hebt opgegeven voor de sleutel.
 

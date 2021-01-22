@@ -6,12 +6,12 @@ ms.topic: reference
 ms.date: 02/21/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: f04e2aa97cafe2345918e433bcef5e719cee7483
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: eaba099725530f24dcd6aa5da7eb59cb233efd46
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610162"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695642"
 ---
 # <a name="azure-functions-http-trigger"></a>HTTP-trigger Azure Functions
 
@@ -749,6 +749,10 @@ In de volgende configuratie ziet u hoe de `{id}` para meter wordt door gegeven a
 }
 ```
 
+Wanneer u route parameters gebruikt, `invoke_URL_template` wordt er automatisch een gemaakt voor uw functie. Uw clients kunnen de URL-sjabloon gebruiken om inzicht te krijgen in de para meters die moeten worden door gegeven in de URL wanneer de functie wordt aangeroepen met behulp van de URL. Navigeer naar een van de functies die door HTTP worden geactiveerd in de [Azure Portal](https://portal.azure.com) en selecteer **functie-URL ophalen**.
+
+U kunt via een programma toegang krijgen tot de `invoke_URL_template` met behulp van de Azure Resource Manager-api's voor [lijst functies](https://docs.microsoft.com/rest/api/appservice/webapps/listfunctions) of [Get-functie](https://docs.microsoft.com/rest/api/appservice/webapps/getfunction).
+
 ## <a name="working-with-client-identities"></a>Werken met client identiteiten
 
 Als uw functie-app gebruikmaakt van [app service verificatie/autorisatie](../app-service/overview-authentication-authorization.md), kunt u informatie weer geven over geverifieerde clients vanuit uw code. Deze informatie is beschikbaar als [aanvraag headers die zijn geïnjecteerd door het platform](../app-service/app-service-authentication-how-to.md#access-user-claims).
@@ -846,11 +850,17 @@ De geverifieerde gebruiker is beschikbaar via [http-headers](../app-service/app-
 
 ## <a name="obtaining-keys"></a>Sleutels verkrijgen
 
-Sleutels worden opgeslagen als onderdeel van de functie-app in Azure en worden op rest versleuteld. Als u de sleutels wilt weer geven, nieuwe wilt maken of sleutels naar nieuwe waarden wilt versleutelen, gaat u naar een van de functies die via HTTP worden geactiveerd in de [Azure Portal](https://portal.azure.com) en selecteert u **beheren**.
+Sleutels worden opgeslagen als onderdeel van de functie-app in Azure en worden op rest versleuteld. Als u de sleutels wilt weer geven, nieuwe wilt maken of sleutels naar nieuwe waarden wilt versleutelen, gaat u naar een van de functies die via HTTP worden geactiveerd in de [Azure Portal](https://portal.azure.com) en selecteert u **functie toetsen**.
 
-![Functie sleutels in de portal beheren.](./media/functions-bindings-http-webhook/manage-function-keys.png)
+U kunt ook host-sleutels beheren. Navigeer naar de functie-app in het [Azure Portal](https://portal.azure.com) en selecteer **app-sleutels**.
 
-U kunt functie sleutels programmatisch verkrijgen met behulp van [Key Management-api's](https://github.com/Azure/azure-functions-host/wiki/Key-management-API).
+U kunt functie-en host-sleutels programmatisch verkrijgen met behulp van de Azure Resource Manager-Api's. Er zijn Api's voor het [weer geven van functie sleutels](/rest/api/appservice/webapps/listfunctionkeys) en het [weer geven van host-sleutels](/rest/api/appservice/webapps/listhostkeys), en wanneer u implementatie-sleuven gebruikt, zijn de equivalente Api's een [lijst functie sleutels sleuf](/rest/api/appservice/webapps/listfunctionkeysslot) en [sleuf voor host-sleutels weer geven](/rest/api/appservice/webapps/listhostkeysslot).
+
+U kunt ook op een programmatische manier nieuwe functie-en host-sleutels maken met behulp van de [functie geheim maken of bijwerken](/rest/api/appservice/webapps/createorupdatefunctionsecret), een [geheime sleuf maken](/rest/api/appservice/webapps/createorupdatefunctionsecretslot)of bijwerken, een geheim voor het [hosten](/rest/api/appservice/webapps/createorupdatehostsecret) maken of bijwerken en de geheime sleuf-api's voor [hosts maken of bijwerken](/rest/api/appservice/webapps/createorupdatehostsecretslot) .
+
+Functie-en host-sleutels kunnen via een programma worden verwijderd met behulp van de [verwijderen functie geheim](/rest/api/appservice/webapps/deletefunctionsecret), [functie geheime sleuf](/rest/api/appservice/webapps/deletefunctionsecretslot)verwijderen, [host Secret verwijderen](/rest/api/appservice/webapps/deletehostsecret)en host-api's van de [geheime sleuf](/rest/api/appservice/webapps/deletehostsecretslot) verwijderen.
+
+U kunt ook de [oudere api's voor sleutel beheer gebruiken om functie sleutels te verkrijgen](https://github.com/Azure/azure-functions-host/wiki/Key-management-API), maar met behulp van de Azure Resource Manager-api's wordt in plaats daarvan aanbevolen.
 
 ## <a name="api-key-authorization"></a>Verificatie van API-sleutels
 

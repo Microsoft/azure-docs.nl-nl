@@ -10,12 +10,12 @@ ms.topic: include
 ms.date: 12/15/2020
 ms.author: pafarley
 ms.custom: devx-track-js
-ms.openlocfilehash: 50d1222f5c33b327c92799ccf27ed0650ba0226c
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 8fd7c820a25f098799f1c2fa69ba700a334e932d
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560862"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98698116"
 ---
 <a name="HOLTop"></a>
 
@@ -58,6 +58,12 @@ Installeer de NPM-pakketten `ms-rest-azure` en `@azure/cognitiveservices-compute
 npm install @azure/cognitiveservices-computervision
 ```
 
+Installeer ook de async-module:
+
+```console
+npm install async
+```
+
 Het `package.json`-bestand van uw app wordt bijgewerkt met de afhankelijkheden.
 
 Maak een nieuw bestand, *index.js* en open dit in een tekstbewerkingsprogramma. Voeg de volgende importeerinstructies toe.
@@ -72,7 +78,7 @@ Maak variabelen voor het Azure-eindpunt en de Azure-sleutel voor uw resource.
 [!code-javascript[](~/cognitive-services-quickstart-code/javascript/ComputerVision/ComputerVisionQuickstart.js?name=snippet_vars)]
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de [productnaam]-resource die u in de sectie **Vereisten** hebt gemaakt, is geïmplementeerd, klikt u op de knop **Naar de resource gaan** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
+> Ga naar Azure Portal. Als de Computer Vision-resource die u in de sectie **Vereisten** hebt gemaakt, succesvol is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
 >
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
 

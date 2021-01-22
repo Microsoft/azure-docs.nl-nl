@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 24e4bf9940de0f7b0e851bdfdbd2d788757034e0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e99d2c2676d05772106296d8b960dd55fd30501c
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89267731"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696469"
 ---
 # <a name="use-azure-webhooks-to-monitor-media-services-job-notifications-with-net"></a>Gebruik Azure-webhooks om Media Services taak meldingen te bewaken met .NET
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Wanneer u taken uitvoert, hebt u vaak een manier nodig om de voortgang van de taak bij te houden. U kunt Media Services taak meldingen bewaken met behulp van Azure-webhooks of [Azure Queue-opslag](media-services-dotnet-check-job-progress-with-queues.md). In dit artikel wordt beschreven hoe u kunt werken met webhooks.
 
@@ -64,7 +64,7 @@ Wanneer u Media Services functies ontwikkelt, is het handig om omgevings variabe
 
 De sectie [Toepassings instellingen](media-services-dotnet-how-to-use-azure-functions.md#configure-function-app-settings) definieert para meters die worden gebruikt in de webhook die in dit artikel is gedefinieerd. Voeg ook de volgende para meters toe aan de app-instellingen. 
 
-|Naam|Definitie|Voorbeeld| 
+|Name|Definitie|Voorbeeld| 
 |---|---|---|
 |SigningKey |Een handtekening sleutel.| j0txf1f8msjytzvpe40nxbpxdcxtqcgxy0nt|
 |WebHookEndpoint | Een adres van een webhook-eind punt. Zodra de webhook-functie is gemaakt, kunt u de URL kopiëren van de koppeling **functie-URL ophalen** . | https: \/ /juliakofuncapp.azurewebsites.net/API/Notification_Webhook_Function?code=iN2phdrTnCxmvaKExFWOTulfnm4C71mMLIy8tzLr7Zvf6Z22HHIK5g = =.|
@@ -80,7 +80,7 @@ Als uw functie-app is geïmplementeerd, kunt u deze vinden in **App Services** A
 
 ### <a name="files"></a>Files
 
-Uw Azure-functie is gekoppeld aan code bestanden en andere bestanden die in deze sectie worden beschreven. Standaard is een functie gekoppeld aan **function.js** en **Run. CSX** (C#)-bestanden. U moet eenproject.jstoevoegen ** aan** het bestand. In de rest van deze sectie worden de definities van deze bestanden weer gegeven.
+Uw Azure-functie is gekoppeld aan code bestanden en andere bestanden die in deze sectie worden beschreven. Standaard is een functie gekoppeld aan **function.js** en **Run. CSX** (C#)-bestanden. U moet eenproject.jstoevoegen **aan** het bestand. In de rest van deze sectie worden de definities van deze bestanden weer gegeven.
 
 ![bestanden](./media/media-services-azure-functions/media-services-azure-functions003.png)
 

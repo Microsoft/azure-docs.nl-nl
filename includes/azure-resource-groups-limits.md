@@ -4,12 +4,12 @@ ms.service: azure-resource-manager
 ms.topic: include
 ms.date: 09/01/2020
 ms.author: tomfitz
-ms.openlocfilehash: f1e7b33630ea52bb0cb675b81fff9cc738f27980
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: 543aa50d72de5a06a9a1c7ac88ac5ecae993bc9d
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95557512"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697917"
 ---
 | Resource | Limiet |
 | --- | --- |
@@ -37,4 +37,4 @@ ms.locfileid: "95557512"
 | Sjabloongrootte |4 MB |
 | Grootte van parameterbestand |64 kB |
 
-U kunt enkele limieten voor sjablonen overschrijden met behulp van een geneste sjabloon. Voor meer informatie raadpleegt u [Use linked templates when you deploy Azure resources](../articles/azure-resource-manager/templates/linked-templates.md) (Gekoppelde sjablonen gebruiken bij het implementeren van Azure-resources). Als u het aantal parameters, variabelen of uitvoerwaarden wilt verkleinen, kunt u verschillende waarden combineren in een object. Raadpleeg [Objects as parameters](/azure/architecture/building-blocks/extending-templates/objects-as-parameters) (Objecten als parameters) voor meer informatie.
+U kunt enkele limieten voor sjablonen overschrijden met behulp van een geneste sjabloon. Voor meer informatie raadpleegt u [Use linked templates when you deploy Azure resources](../articles/azure-resource-manager/templates/linked-templates.md) (Gekoppelde sjablonen gebruiken bij het implementeren van Azure-resources). Als u het aantal parameters, variabelen of uitvoerwaarden wilt verkleinen, kunt u verschillende waarden combineren in een object. Raadpleeg [Objects as parameters](/azure/architecture/guide/azure-resource-manager/advanced-templates/objects-as-parameters) (Objecten als parameters) voor meer informatie.

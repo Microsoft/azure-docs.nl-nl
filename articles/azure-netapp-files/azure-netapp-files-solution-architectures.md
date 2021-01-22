@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/19/2021
+ms.date: 01/21/2021
 ms.author: b-juche
-ms.openlocfilehash: f50cde2fa67351552d1f31500da09a5f800b2bcc
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 4320222e02f3447dcdff280f04ad26115323e798
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600118"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696143"
 ---
 # <a name="solution-architectures-using-azure-netapp-files"></a>Oplossingsarchitecturen op basis van Azure NetApp Files
 Dit artikel bevat verwijzingen naar aanbevolen procedures waarmee u inzicht krijgt in de oplossings architecturen voor het gebruik van Azure NetApp Files.  
@@ -92,6 +92,10 @@ Deze sectie bevat Naslag informatie over SAP on Azure oplossingen.
 * [Azure NetApp Files – SAP HANA offloading van een back-up met Cloud Sync](https://blog.netapp.com/azure-netapp-files-sap-hana)
 * [Uw SAP HANA-systeem kopieën versnellen met Azure NetApp Files](https://blog.netapp.com/sap-hana-faster-using-azure-netapp-files/)
 * [Cloud volumes ONTAP en Azure NetApp Files: SAP HANA systeem migratie eenvoudig](https://blog.netapp.com/cloud-volumes-ontap-and-azure-netapp-files-sap-hana-system-migration-made-easy/)
+
+## <a name="azure-vmware-solutions"></a>Azure VMware-oplossingen
+
+* [Azure NetApp Files met Azure VMware-oplossing-gast besturingssysteem koppelingen](../azure-vmware/net-app-files-with-azure-vmware-solution.md)
 
 ## <a name="virtual-desktop-infrastructure-solutions"></a>Infrastructuur oplossingen voor Virtual Desktop
 

@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: conceptual
-ms.date: 01/05/2020
+ms.date: 01/21/2020
 ms.author: b-juche
-ms.openlocfilehash: 913d61c506505d18fff416291e7f3b718f1d92f3
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: f680b1ec76200cb4d3bfc90cd83a2c134f379245
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913495"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696122"
 ---
 # <a name="faqs-about-azure-netapp-files"></a>Veelgestelde vragen over Azure NetApp Files
 
@@ -258,6 +258,16 @@ Nee. Azure Data Box biedt momenteel geen ondersteuning voor Azure NetApp Files.
 ### <a name="is-migration-with-azure-importexport-service-supported"></a>Wordt migratie met Azure import/export-service ondersteund?
 
 Nee. De Azure import/export-service biedt momenteel geen ondersteuning voor Azure NetApp Files.
+
+## <a name="product-faqs"></a>Veelgestelde vragen over producten
+
+### <a name="can-i-use-azure-netapp-files-nfs-or-smb-volumes-with-azure-vmware-solution-avs"></a>Kan ik Azure NetApp Files NFS-of SMB-volumes met de Azure VMware-oplossing (AVS) gebruiken?
+
+U kunt Azure NetApp Files NFS-volumes koppelen op AVS Windows Vm's of Linux Vm's. U kunt Azure NetApp Files SMB-shares toewijzen op AVS Windows-Vm's. Zie [Azure NetApp files met Azure VMware-oplossing]( ../azure-vmware/net-app-files-with-azure-vmware-solution.md)voor meer informatie.  
+
+### <a name="what-regions-are-supported-for-using-azure-netapp-files-nfs-or-smb-volumes-with-azure-vmware-solution-avs"></a>Welke regio's worden ondersteund voor het gebruik van Azure NetApp Files NFS-of SMB-volumes met de Azure VMware-oplossing (AVS)?
+
+Het gebruik van Azure NetApp Files NFS-of SMB-volumes met AVS wordt ondersteund in de volgende regio's: VS-Oost, VS-West, Europa-west en Australië-oost.
 
 ## <a name="next-steps"></a>Volgende stappen  
 

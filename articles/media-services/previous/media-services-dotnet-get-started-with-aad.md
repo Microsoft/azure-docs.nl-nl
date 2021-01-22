@@ -14,19 +14,19 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: has-adal-ref, devx-track-csharp
-ms.openlocfilehash: cca17aacc914412d34f613adfeba31617c60c455
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 9de7505ffaab244713706984bdeb9ab395766321
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97652939"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695735"
 ---
 # <a name="use-azure-ad-authentication-to-access-azure-media-services-api-with-net"></a>Azure AD-verificatie gebruiken om toegang te krijgen tot Azure Media Services-API met .NET
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Vanaf windowsazure. Media Services 4.0.0.4 ondersteunt Azure Media Services verificatie op basis van Azure Active Directory (Azure AD). In dit onderwerp wordt beschreven hoe u Azure AD-verificatie gebruikt voor toegang tot Azure Media Services-API met Microsoft .NET.
 

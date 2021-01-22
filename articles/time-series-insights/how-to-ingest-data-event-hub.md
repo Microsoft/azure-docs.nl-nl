@@ -9,14 +9,14 @@ manager: diviso
 ms.reviewer: v-mamcge, jasonh, kfile
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 09/30/2020
+ms.date: 01/21/2021
 ms.custom: seodec18
-ms.openlocfilehash: 7d672da30a4d81ead9115fc6b829c35aeab3ee6a
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: f4b5d4915cd6520edd7a45af85a836c3360eee32
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95016816"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696326"
 ---
 # <a name="add-an-event-hub-event-source-to-your-azure-time-series-insights-environment"></a>Een Event Hub gebeurtenis bron toevoegen aan uw Azure Time Series Insights omgeving
 
@@ -80,7 +80,7 @@ Een nieuwe consumenten groep toevoegen aan uw Event Hub:
        | --- | --- |
        | Abonnement | Het abonnement waartoe de gewenste Event Hub instantie en naam ruimte behoort. |
        | Event hub-naamruimte | De naam ruimte van de Event Hub waarvan de gewenste Event Hub instantie deel uitmaakt. |
-       | Event Hub-naam | De naam van de gewenste Event Hub-instantie. |
+       | Naam van de Event Hub | De naam van de gewenste Event Hub-instantie. |
        | Waarde van Event hub-beleid | Selecteer het gewenste beleid voor gedeelde toegang. U kunt het beleid voor gedeelde toegang maken op het tabblad Event Hub **configureren** . Elk gedeeld toegangs beleid heeft een naam, machtigingen die u instelt en toegangs sleutels. Het gedeelde toegangs beleid voor uw gebeurtenis bron *moet* **Lees** machtigingen hebben. |
        | Event hub-beleids sleutel | Vooraf ingevuld op basis van de geselecteerde Event hub-beleids waarde. |
 
@@ -93,7 +93,7 @@ Een nieuwe consumenten groep toevoegen aan uw Event Hub:
        | Abonnements-id | Het abonnement waartoe de gewenste Event Hub instantie en naam ruimte behoort. |
        | Resourcegroep | De resource groep waarvan de gewenste Event Hub instantie en naam ruimte behoort. |
        | Event hub-naamruimte | De naam ruimte van de Event Hub waarvan de gewenste Event Hub instantie deel uitmaakt. |
-       | Event Hub-naam | De naam van de gewenste Event Hub-instantie. |
+       | Naam van de Event Hub | De naam van de gewenste Event Hub-instantie. |
        | Waarde van Event hub-beleid | Selecteer het gewenste beleid voor gedeelde toegang. U kunt het beleid voor gedeelde toegang maken op het tabblad Event Hub **configureren** . Elk gedeeld toegangs beleid heeft een naam, machtigingen die u instelt en toegangs sleutels. Het gedeelde toegangs beleid voor uw gebeurtenis bron *moet* **Lees** machtigingen hebben. |
        | Event hub-beleids sleutel | De gedeelde toegangs sleutel die wordt gebruikt voor het verifiëren van toegang tot de naam ruimte Service Bus. Voer hier de primaire of secundaire sleutel in. |
 

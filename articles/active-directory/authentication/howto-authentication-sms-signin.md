@@ -11,16 +11,16 @@ author: justinha
 manager: daveba
 ms.reviewer: rateller
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 43573b54be6884e01121e404370d2e1d85a3c4e8
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: d9430066ad92b4d0b69bd07c763e3f7b5d6e889a
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98660878"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693533"
 ---
 # <a name="configure-and-enable-users-for-sms-based-authentication-using-azure-active-directory"></a>Gebruikers configureren en inschakelen voor verificatie op basis van SMS met Azure Active Directory 
 
-Azure Active Directory (Azure AD) biedt meerdere verificatie opties om het aanmelden bij toepassingen en services te vereenvoudigen en te beveiligen. Met verificatie op basis van een SMS kunnen gebruikers zich aanmelden zonder de gebruikers naam en het wacht woord op te geven of zelfs te weten. Nadat het account is gemaakt door een identiteits beheerder, kunnen ze hun telefoon nummer invoeren bij de aanmeldings prompt. Ze ontvangen een verificatie code via een SMS-bericht dat ze kunnen opgeven om de aanmelding te volt ooien. Deze verificatie methode vereenvoudigt de toegang tot toepassingen en services, met name voor werk nemers van de eerste regel.
+Azure Active Directory (Azure AD) biedt meerdere verificatie opties om het aanmelden bij toepassingen en services te vereenvoudigen en te beveiligen. Met verificatie op basis van een SMS kunnen gebruikers zich aanmelden zonder de gebruikers naam en het wacht woord op te geven of zelfs te weten. Nadat het account is gemaakt door een identiteits beheerder, kunnen ze hun telefoon nummer invoeren bij de aanmeldings prompt. Ze ontvangen een verificatie code via een SMS-bericht dat ze kunnen opgeven om de aanmelding te volt ooien. Deze verificatie methode vereenvoudigt de toegang tot toepassingen en services, met name voor Frontline-werk nemers.
 
 Dit artikel laat u zien hoe u verificatie op basis van SMS kunt inschakelen voor geselecteerde gebruikers of groepen in azure AD.
 

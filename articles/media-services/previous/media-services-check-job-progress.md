@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 03/14/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 591f69855204c4489eb3e9c6edb3900044dda2db
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c5a1c45290d07099c1f7d202854284ef638ad638
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89258398"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695972"
 ---
 # <a name="monitor-job-progress-using-net"></a>Taak voortgang bewaken met .NET
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Wanneer u taken uitvoert, hebt u vaak een manier nodig om de voortgang van de taak bij te houden. U kunt de voortgang controleren door een gebeurtenis-handler voor StateChanged te definiëren (zoals beschreven in dit onderwerp) of door Azure Queue Storage te gebruiken om Media Services taak meldingen te bewaken (zoals beschreven in [Dit](media-services-dotnet-check-job-progress-with-queues.md) onderwerp).
 

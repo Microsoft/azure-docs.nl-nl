@@ -7,24 +7,24 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
-ms.date: 12/15/2020
+ms.date: 01/22/2020
 ms.custom: references_regions
-ms.openlocfilehash: ffb5a78c13413a46565a9c57c87dc8273742fd24
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 49364681f0c5b4b6cc4d5f20778edb61e9f6f5b3
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97563446"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695777"
 ---
 # <a name="security-in-azure-cognitive-search---overview"></a>Beveiliging in azure Cognitive Search-overzicht
 
-In dit artikel worden de belangrijkste beveiligings functies in azure Cognitive Search beschreven waarmee u inhoud en bewerkingen kunt beveiligen.
+In dit artikel worden de beveiligings functies in azure Cognitive Search beschreven voor het beveiligen van inhoud en bewerkingen.
 
-+ In de opslaglaag is encryption-at-rest ingebouwd voor alle service-beheerde inhoud die op schijf wordt opgeslagen, inclusief indexen, synoniemen en de definities van Indexeer functies, gegevens bronnen en vaardig heden. Azure Cognitive Search biedt ook ondersteuning voor het toevoegen van door de klant beheerde sleutels (CMK) voor een bijkomende versleuteling van geïndexeerde inhoud. Voor services die na augustus 1 2020 zijn gemaakt, wordt CMK-versleuteling uitgebreid naar gegevens op tijdelijke schijven, voor een volledige dubbele versleuteling van geïndexeerde inhoud.
++ In de opslaglaag is gegevens versleuteling ingebouwd voor alle door service beheerde inhoud die op schijf is opgeslagen, inclusief indexen, synoniemen en de definities van Indexeer functies, gegevens bronnen en vaardig heden. U kunt eventueel door de klant beheerde sleutels (CMK) toevoegen voor een bijkomende versleuteling van geïndexeerde inhoud. Voor services die na augustus 1 2020 zijn gemaakt, wordt CMK-versleuteling uitgebreid naar gegevens op tijdelijke schijven, voor een volledige dubbele versleuteling van geïndexeerde inhoud.
 
-+ Inkomende beveiliging beveiligt het eind punt van de zoek service op toenemende niveaus van beveiliging: van API-sleutels op de aanvraag, tot binnenkomende regels in de firewall, tot privé-eind punten die uw service volledig kunnen afschermen via het open bare Internet.
++ Inkomende beveiliging heeft betrekking op beveiligingen op het eind punt van de zoek service op toenemende niveaus van beveiliging: van API-sleutels op de aanvraag, tot binnenkomende regels in de firewall, tot privé-eind punten die uw service volledig afschermen van het open bare Internet.
 
-+ Uitgaande beveiliging is van toepassing op Indexeer functies die inhoud uit externe bronnen halen. Stel voor uitgaande aanvragen een beheerde identiteit in om te zoeken naar een vertrouwde service wanneer er toegang wordt verkregen tot gegevens van Azure Storage, Azure SQL, Cosmos DB of andere Azure-gegevens bronnen. Een beheerde identiteit is een vervanging van referenties of toegangs sleutels voor de verbinding. In dit artikel komen de uitgaande beveiliging niet aan bod. Zie [verbinding maken met een gegevens bron met behulp van een beheerde identiteit](search-howto-managed-identities-data-sources.md)voor meer informatie over deze mogelijkheid.
++ Uitgaande beveiliging heeft betrekking op Indexeer functies die inhoud uit externe bronnen halen. Stel voor uitgaande aanvragen een beheerde identiteit in om te zoeken naar een vertrouwde service wanneer er toegang wordt verkregen tot gegevens van Azure Storage, Azure SQL, Cosmos DB of andere Azure-gegevens bronnen. Een beheerde identiteit is een vervanging van referenties of toegangs sleutels voor de verbinding. In dit artikel komen de uitgaande beveiliging niet aan bod. Zie [verbinding maken met een gegevens bron met behulp van een beheerde identiteit](search-howto-managed-identities-data-sources.md)voor meer informatie over deze mogelijkheid.
 
 Bekijk deze video met snel tempo voor een overzicht van de beveiligings architectuur en elke functie categorie.
 

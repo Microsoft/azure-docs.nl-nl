@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/3/2020
 ms.author: inhenkel
-ms.openlocfilehash: 001c535a2b39898673f2d587ee807d43b4d5f60a
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: d195ad6715c47b9b4c14dc2e65ba1d07ebf79ce8
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348539"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696258"
 ---
 # <a name="microsoft-azure-media-services-common-scenarios"></a>Algemene scenario's Microsoft Azure Media Services
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. Bekijk de nieuwste versie [Media Services v3](../latest/media-services-overview.md). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. Bekijk de nieuwste versie [Media Services v3](../latest/media-services-overview.md). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Met Microsoft Azure Media Services (AMS) kunt u veilig video- of audio-inhoud uploaden, opslaan, coderen en verpakken, zowel voor levering on-demand als levering via livestreaming aan verschillende clients (bijvoorbeeld tv, pc en mobiele apparaten).
 
@@ -102,7 +102,7 @@ Als u live streamt, kunt u één van de volgende routes kiezen:
 
 ### <a name="working-with-channels-that-receive-multi-bitrate-live-stream-from-on-premises-encoders-pass-through"></a>Werken met kanalen die een multi-bitrate livestream van on-premises encoders ontvangen (pass-through)
 
-Het volgende diagram toont de belangrijkste onderdelen van het AMS-platform die betrokken zijn bij de **passthrough** -werkstroom.
+Het volgende diagram toont de belangrijkste onderdelen van het AMS-platform die betrokken zijn bij de **passthrough**-werkstroom.
 
 ![Diagram met de belangrijkste onderdelen van het A M S-platform dat is betrokken bij de "Pass-Through"-werk stroom.](./media/scenarios-and-availability/media-services-live-streaming-current.png)
 
@@ -128,11 +128,11 @@ Media Services ondersteunt de integratie met Azure CDN. Zie [Streaming-eindpunte
 
 AMS-klanten kunnen streaming-eindpunten, de mediaverwerking en de opslag in hun AMS-accounts schalen.
 
-* Media Services-klanten kunnen een **Standard** -streaming-eindpunt of een Premium- **streaming** -eindpunt kiezen. **Standard** -streaming-eindpunten zijn geschikt voor de meeste streaming-workloads. Deze hebben dezelfde kenmerken als **Premium** -streaming-eindpunten en de uitgaande bandbreedte wordt hiermee automatisch geschaald.
+* Media Services-klanten kunnen een **Standard**-streaming-eindpunt of een Premium-**streaming**-eindpunt kiezen. **Standard**-streaming-eindpunten zijn geschikt voor de meeste streaming-workloads. Deze hebben dezelfde kenmerken als **Premium**-streaming-eindpunten en de uitgaande bandbreedte wordt hiermee automatisch geschaald.
 
-    **Premium** -streaming-eindpunten zijn geschikt voor geavanceerde workloads omdat er gebruik wordt gemaakt van toegewezen, schaalbare bandbreedtecapaciteit. Klanten met een **Premium** -streaming-eindpunt krijgen standaard één streaming-eenheid (SU). Het streaming-eindpunt kan worden geschaald door SU's toe te voegen. Elke SU biedt extra bandbreedtecapaciteit voor de toepassing. Zie het onderwerp [Streaming-eindpunten schalen](media-services-portal-scale-streaming-endpoints.md) voor meer informatie over het schalen van **Premium** -streaming-eindpunten.
+    **Premium**-streaming-eindpunten zijn geschikt voor geavanceerde workloads omdat er gebruik wordt gemaakt van toegewezen, schaalbare bandbreedtecapaciteit. Klanten met een **Premium**-streaming-eindpunt krijgen standaard één streaming-eenheid (SU). Het streaming-eindpunt kan worden geschaald door SU's toe te voegen. Elke SU biedt extra bandbreedtecapaciteit voor de toepassing. Zie het onderwerp [Streaming-eindpunten schalen](media-services-portal-scale-streaming-endpoints.md) voor meer informatie over het schalen van **Premium**-streaming-eindpunten.
 
-* Media Services-accounts worden gekoppeld aan een gereserveerde-eenheidstype, waarmee wordt bepaald hoe snel de mediaverwerkingstaken worden verwerkt. U kunt kiezen uit de volgende gereserveerde-eenheidstypen: **S1** , **S2** en **S3**. Een coderingstaak wordt bijvoorbeeld sneller uitgevoerd wanneer u het gereserveerde-eenheidstype **S2** gebruikt (in vergelijking met het type **S1** ).
+* Media Services-accounts worden gekoppeld aan een gereserveerde-eenheidstype, waarmee wordt bepaald hoe snel de mediaverwerkingstaken worden verwerkt. U kunt kiezen uit de volgende gereserveerde-eenheidstypen: **S1**, **S2** en **S3**. Een coderingstaak wordt bijvoorbeeld sneller uitgevoerd wanneer u het gereserveerde-eenheidstype **S2** gebruikt (in vergelijking met het type **S1**).
 
     Naast het opgeven van het type gereserveerde eenheid kunt u opgeven om uw account in te richten met **gereserveerde eenheden** (RUs). Op basis van het aantal ingerichte RU's wordt bepaald hoeveel mediataken tegelijk kunnen worden verwerkt voor een bepaald account.
 

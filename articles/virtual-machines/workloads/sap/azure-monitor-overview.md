@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 06/30/2020
 ms.author: radeltch
 ms.reviewer: cynthn
-ms.openlocfilehash: bcb912a24dfb2a5e78719cf9010fd23afe0df185
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 1c33011d947d6dc9dd9ee4dd6331c24c06d99b38
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484393"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693821"
 ---
 # <a name="azure-monitor-for-sap-solutions-preview"></a>Azure monitor voor SAP-oplossingen (preview-versie)
 
@@ -35,7 +35,7 @@ Ondersteunde data bases:
 - SAP HANA-database
 - Micro soft SQL Server
 
-Azure Monitor voor SAP-oplossingen maakt gebruik van de kracht van bestaande [Azure monitor](../../../azure-monitor/overview.md) mogelijkheden, zoals log Analytics en [werkmappen](../../../azure-monitor/platform/workbooks-overview.md) , om extra bewakings mogelijkheden te bieden. Klanten kunnen [aangepaste visualisaties](../../../azure-monitor/platform/workbooks-overview.md#getting-started) maken door de standaard werkmappen te bewerken die worden meegeleverd door Azure monitor voor SAP-oplossingen, [aangepaste query's](../../../azure-monitor/log-query/log-analytics-tutorial.md) te schrijven en [aangepaste waarschuwingen](../../../azure-monitor/learn/tutorial-response.md) te maken met behulp van Azure log Analytics-werk ruimte, profiteren van de [flexibele Bewaar periode](../../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) en het koppelen van bewakings gegevens met hun ticket systeem.
+Azure Monitor voor SAP-oplossingen maakt gebruik van de kracht van bestaande [Azure monitor](../../../azure-monitor/overview.md) mogelijkheden, zoals log Analytics en [werkmappen](../../../azure-monitor/platform/workbooks-overview.md) , om meer controle mogelijkheden te bieden. Klanten kunnen [aangepaste visualisaties](../../../azure-monitor/platform/workbooks-overview.md#getting-started) maken door de standaard werkmappen te bewerken die worden meegeleverd door Azure monitor voor SAP-oplossingen, [aangepaste query's](../../../azure-monitor/log-query/log-analytics-tutorial.md) te schrijven en [aangepaste waarschuwingen](../../../azure-monitor/learn/tutorial-response.md) te maken met behulp van Azure log Analytics-werk ruimte, profiteren van de [flexibele Bewaar periode](../../../azure-monitor/platform/manage-cost-storage.md#change-the-data-retention-period) en het koppelen van bewakings gegevens met hun ticket systeem.
 
 ## <a name="what-data-does-azure-monitor-for-sap-solutions-collect"></a>Welke gegevens worden Azure Monitor voor SAP-oplossingen verzameld?
 
@@ -60,8 +60,17 @@ Micro soft SQL Server-telemetrie:
 - Batch-aanvragen, compilaties en levens duur van pagina's verwachting in de loop van de tijd
 - Top 10 van duurste SQL-instructies gedurende een periode
 - Top 12 van de grootste tabel in het SAP-systeem
-- Problemen die worden vastgelegd in de SQL Server-fouten logboeken
+- Problemen vastgelegd in het fouten logboek van SQL Server
 - Blok keren van processen en SQL-wacht statistieken gedurende een periode
+
+Telemetrie van besturings systeem (Linux) 
+- CPU-gebruik, aantal actieve en geblokkeerde processen. 
+- Geheugen gebruik en-distributie onder gebruik, in cache opgeslagen, gebufferd. 
+- Het gebruik, het wissel bestand en de wissel frequentie wisselen. 
+- Gebruik van bestands systemen, aantal gelezen en geschreven bytes per blok apparaat. 
+- Lees/schrijf latentie per blok apparaat. 
+- Doorlopende I/O-telling, bytes met lees-en schrijf toegang voor het permanente geheugen. 
+- Netwerk pakketten in/uit, netwerk bytes in/uit 
 
 ## <a name="data-sharing-with-microsoft"></a>Gegevens delen met micro soft
 
@@ -96,9 +105,9 @@ De belangrijkste onderdelen van de architectuur zijn:
 
 Hier volgen de belangrijkste aandachtspunten van de architectuur:
  - **Meerdere** instanties: klanten kunnen monitors maken voor meerdere exemplaren van een bepaald onderdeel type (bijvoorbeeld Hana DB, ha-cluster, micro soft SQL Server) in meerdere SAP-sid's binnen een VNET met één resource van Azure monitor voor SAP-oplossingen.
- - **Meerdere providers** : in het bovenstaande architectuur diagram wordt de SAP Hana provider als voor beeld weer gegeven. Klanten kunnen ook extra providers configureren voor de bijbehorende onderdelen (bijvoorbeeld HANA DB, HA-cluster, micro soft SQL Server) om gegevens te verzamelen van deze onderdelen.
+ - **Meerdere providers** : in het bovenstaande architectuur diagram wordt de SAP Hana provider als voor beeld weer gegeven. Klanten kunnen ook meer providers configureren voor de bijbehorende onderdelen (bijvoorbeeld HANA DB, HA-cluster, micro soft SQL Server) om gegevens te verzamelen van deze onderdelen.
  - **Open source** : de bron code van Azure monitor voor SAP-oplossingen is beschikbaar in [github](https://github.com/Azure/AzureMonitorForSAPSolutions). Klanten kunnen naar de provider code verwijzen en meer weten over het product, bijdragen of feedback delen.
- - **Uitbreidbaar query Framework** : SQL-query's voor het verzamelen van telemetriegegevens worden in [JSON](https://github.com/Azure/AzureMonitorForSAPSolutions/blob/master/sapmon/content/SapHana.json)geschreven. Extra SQL-query's voor het verzamelen van meer telemetriegegevens kunnen eenvoudig worden toegevoegd. Klanten kunnen specifieke telemetriegegevens aanvragen om toe te voegen aan Azure Monitor voor SAP-oplossingen door feedback te geven via een koppeling aan het einde van dit document of contact op te nemen met hun account team.
+ - **Uitbreidbaar query Framework** : SQL-query's voor het verzamelen van telemetriegegevens worden in [JSON](https://github.com/Azure/AzureMonitorForSAPSolutions/blob/master/sapmon/content/SapHana.json)geschreven. Meer SQL-query's voor het verzamelen van meer telemetriegegevens kunnen eenvoudig worden toegevoegd. Klanten kunnen specifieke telemetriegegevens aanvragen om toe te voegen aan Azure Monitor voor SAP-oplossingen door feedback te geven via een koppeling aan het einde van dit document of contact op te nemen met hun account team.
 
 ## <a name="pricing"></a>Prijzen
 Azure Monitor voor SAP-oplossingen is een gratis product (geen licentie kosten). Klanten zijn verantwoordelijk voor de betaling van de kosten voor de onderliggende onderdelen in de beheerde resource groep.

@@ -13,12 +13,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 99101f31ec955c822c784180dd8b04bfb8e5f73c
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f6f4cfcc07496179908c8349f4282a7633379cd3
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291599"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695815"
 ---
 # <a name="assets-in-azure-media-services-v3"></a>Activa in Azure Media Services v3
 
@@ -48,4 +48,4 @@ De namen van bestanden/blobs in een Asset moeten de [vereisten voor de BLOB-naam
 
 ## <a name="see-also"></a>Zie ook
 
-[Verschillen tussen Media Services v2 en v3](migrate-from-v2-to-v3.md)
+[Verschillen tussen Media Services v2 en v3](migrate-v-2-v-3-migration-introduction.md)

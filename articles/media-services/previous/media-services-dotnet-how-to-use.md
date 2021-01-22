@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8eb45397b1941b9a6955066c22d6d9d00eeef4c3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dda7849b6a5e22eea4891eacb2678b4c500dc1e1
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89262087"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693660"
 ---
 # <a name="media-services-development-with-net"></a>Media Services ontwikkeling met .NET
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 In dit artikel wordt beschreven hoe u Media Services toepassingen gaat ontwikkelen met .NET.
 
@@ -46,7 +46,7 @@ In deze sectie wordt uitgelegd hoe u **NuGet** kunt gebruiken om Media Services 
 
 U kunt ook de nieuwste Media Services .NET SDK-bits verkrijgen via GitHub ([github.com/azure/Azure-SDK-for-Media-Services](https://github.com/Azure/azure-sdk-for-media-services) of [github.com/azure/Azure-SDK-for-Media-Services-Extensions](https://github.com/Azure/azure-sdk-for-media-services-extensions)), de oplossing bouwen en de verwijzingen toevoegen aan het client project. Alle benodigde afhankelijkheden worden automatisch gedownload en opgehaald.
 
-1. Maak in Visual Studio een nieuwe C#-consoletoepassing. Voer de **naam**, **locatie**en naam van de **oplossing**in en klik vervolgens op OK.
+1. Maak in Visual Studio een nieuwe C#-consoletoepassing. Voer de **naam**, **locatie** en naam van de **oplossing** in en klik vervolgens op OK.
 2. Bouw de oplossing.
 3. Gebruik **NuGet** om **Azure Media Services .NET SDK-extensies** (**windowsazure. Media Services. Extensions**) te installeren en toe te voegen. Als u dit pakket installeert, wordt ook de **Media Services .NET SDK** geïnstalleerd en worden alle andere vereiste afhankelijkheden toegevoegd.
    
@@ -62,7 +62,7 @@ U kunt ook de nieuwste Media Services .NET SDK-bits verkrijgen via GitHub ([gith
 4. Als u een schone ontwikkel omgeving wilt promoten, kunt u het NuGet-pakket herstellen inschakelen. Zie [NuGet package Restore](https://docs.nuget.org/consume/package-restore)voor meer informatie.
 5. Voeg een verwijzing naar **System.Configuratie** -assembly toe. Deze assembly bevat de System.Configuratie. Klasse **ConfigurationManager** die wordt gebruikt voor toegang tot configuratie bestanden (bijvoorbeeld App.config).
    
-    1. Als u referenties wilt toevoegen met behulp van het dialoog venster verwijzingen beheren, klikt u met de rechter muisknop op de naam van het project in de Solution Explorer. Klik vervolgens op **toevoegen**en vervolgens op **verwijzing...**.
+    1. Als u referenties wilt toevoegen met behulp van het dialoog venster verwijzingen beheren, klikt u met de rechter muisknop op de naam van het project in de Solution Explorer. Klik vervolgens op **toevoegen** en vervolgens op **verwijzing...**.
    
     2. Het dialoog venster referenties beheren wordt weer gegeven.
     3. Zoek en selecteer onder .NET Framework-assembly's de System.Configuratie-assembly en druk op **OK**.

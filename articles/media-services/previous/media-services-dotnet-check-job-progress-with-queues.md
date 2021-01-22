@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 03/18/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c6c1dcb0af500c47aabbd8e8193c066bb4a921c5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 634b508ca15349152540aca90125575b17943929
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89267765"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696427"
 ---
 # <a name="use-azure-queue-storage-to-monitor-media-services-job-notifications-with-net"></a>Gebruik Azure Queue Storage om Media Services taak meldingen te bewaken met .NET
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Wanneer u coderings taken uitvoert, hebt u vaak een manier nodig om de voortgang van de taak bij te houden. U kunt Media Services configureren voor het leveren van meldingen aan [Azure Queue-opslag](../../storage/queues/storage-dotnet-how-to-use-queues.md). U kunt de voortgang van de taak controleren door meldingen van de wachtrij opslag te ontvangen. 
 
@@ -60,7 +60,7 @@ Het code voorbeeld in deze sectie doet het volgende:
     job.JobNotificationSubscriptions.AddNew(NotificationJobState.FinalStatesOnly, _notificationEndPoint);
     ```
 
-7. Als u **NotificationJobState. alle**hebt, worden alle volgende status wijzigings meldingen weer gegeven: in de wachtrij geplaatst, gepland, verwerkt en voltooid. Zoals eerder vermeld, garandeert de wachtrij opslag echter geen bestelde levering. Voor het best Ellen van berichten gebruikt u de eigenschap **Time Stamp** (gedefinieerd in het type **EncodingJobMessage** in het onderstaande voor beeld). Dubbele berichten zijn mogelijk. Als u wilt controleren op dubbele waarden, gebruikt u de **ETAG-eigenschap** (gedefinieerd in het type **EncodingJobMessage** ). Het is ook mogelijk dat sommige meldingen over status wijziging worden overgeslagen.
+7. Als u **NotificationJobState. alle** hebt, worden alle volgende status wijzigings meldingen weer gegeven: in de wachtrij geplaatst, gepland, verwerkt en voltooid. Zoals eerder vermeld, garandeert de wachtrij opslag echter geen bestelde levering. Voor het best Ellen van berichten gebruikt u de eigenschap **Time Stamp** (gedefinieerd in het type **EncodingJobMessage** in het onderstaande voor beeld). Dubbele berichten zijn mogelijk. Als u wilt controleren op dubbele waarden, gebruikt u de **ETAG-eigenschap** (gedefinieerd in het type **EncodingJobMessage** ). Het is ook mogelijk dat sommige meldingen over status wijziging worden overgeslagen.
 8. Wacht tot de taak is voltooid, door de wachtrij elke 10 seconden te controleren. Verwijdert berichten nadat ze zijn verwerkt.
 9. De wachtrij en het eind punt van de melding worden verwijderd.
 

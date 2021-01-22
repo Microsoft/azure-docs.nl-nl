@@ -14,22 +14,22 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 061d66f08e79f935c778eb84dd47f71cab1a62d7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5ddd31f96ca88a02fa667f8809a00e2a4e3ecc50
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266626"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695421"
 ---
 # <a name="configure-content-protection-policies-by-using-the-azure-portal"></a>Beveiligings beleid voor inhoud configureren met behulp van de Azure Portal
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> U hebt een Azure-account nodig om deze zelfstudie te voltooien. Zie [Gratis proefversie van Azure](https://azure.microsoft.com/pricing/free-trial/) voor meer informatie.   > er geen nieuwe functies of functionaliteit aan Media Services v2 worden toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> U hebt een Azure-account nodig om deze zelfstudie te voltooien. Zie [Gratis proefversie van Azure](https://azure.microsoft.com/pricing/free-trial/) voor meer informatie.   > er geen nieuwe functies of functionaliteit aan Media Services v2 worden toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 >
 
- Met Azure Media Services kunt u uw media beveiligen vanaf het moment dat de computer de opslag, verwerking en levering verlaat. U kunt Media Services gebruiken om uw inhoud dynamisch te versleutelen met de Advanced Encryption Standard (AES) met behulp van 128-bits versleutelings sleutels. U kunt dit ook gebruiken met common Encryption (CENC) met behulp van PlayReady en/of Widevine Digital Rights Management (DRM) en Apple FairPlay. 
+ Met Azure Media Services kunt u uw media beveiligen vanaf het moment dat de computer de opslag, verwerking en levering verlaat. U kunt Media Services gebruiken om uw inhoud dynamisch te versleutelen met de Advanced Encryption Standard (AES) met behulp van 128-bits versleutelings sleutels. U kunt dit ook gebruiken met common Encryption (CENC) met behulp van PlayReady en/of Widevine digital rights management (DRM) en Apple FairPlay. 
 
 Media Services levert een service voor het leveren van DRM-licenties en AES-sleutels aan geautoriseerde clients. U kunt de Azure Portal gebruiken om één sleutel/licentie autorisatie beleid te maken voor alle typen versleuteling.
 
@@ -76,7 +76,7 @@ Als u een licentie als permanent configureert, wordt deze opgeslagen in de perma
 De Widevine-licentie sjabloon stelt de functionaliteit in die is ingeschakeld voor uw Widevine-licenties.
 
 ### <a name="basic"></a>Basic
-Wanneer u **basis**selecteert, wordt de sjabloon gemaakt met alle standaard waarden.
+Wanneer u **basis** selecteert, wordt de sjabloon gemaakt met alle standaard waarden.
 
 ### <a name="advanced"></a>Geavanceerd
 Zie het overzicht van de [Widevine-licentie sjablonen](media-services-widevine-license-template-overview.md)voor meer informatie over de Widevine rechten sjabloon.
@@ -84,7 +84,7 @@ Zie het overzicht van de [Widevine-licentie sjablonen](media-services-widevine-l
 ![Geavanceerde inhouds beveiliging](./media/media-services-portal-content-protection/media-services-content-protection005.png)
 
 ## <a name="fairplay-configuration"></a>FairPlay-configuratie
-Als u FairPlay-versleuteling wilt inschakelen, selecteert u **Fairplay-configuratie**. Selecteer vervolgens het **app-certificaat** en voer de sleutel van het **toepassings geheim**in. Zie [uw HLS-inhoud beveiligen met Apple FairPlay of micro soft PlayReady](media-services-protect-hls-with-FairPlay.md)voor meer informatie over Fairplay-configuratie en-vereisten.
+Als u FairPlay-versleuteling wilt inschakelen, selecteert u **Fairplay-configuratie**. Selecteer vervolgens het **app-certificaat** en voer de sleutel van het **toepassings geheim** in. Zie [uw HLS-inhoud beveiligen met Apple FairPlay of micro soft PlayReady](media-services-protect-hls-with-FairPlay.md)voor meer informatie over Fairplay-configuratie en-vereisten.
 
 ![FairPlay-configuratie](./media/media-services-portal-content-protection/media-services-content-protection006.png)
 
@@ -105,7 +105,7 @@ AES Clear Key-versleuteling is ingeschakeld op alle streaming-protocollen: Smoot
 ![Versleutelings configuratie](./media/media-services-portal-content-protection/media-services-content-protection008.png)
 
 #### <a name="drm"></a>Digital
-1. Nadat u **DRM**hebt geselecteerd, ziet u verschillende beleids regels voor de beveiliging van inhoud (die moeten worden geconfigureerd door dit punt) en een set streaming-protocollen:
+1. Nadat u **DRM** hebt geselecteerd, ziet u verschillende beleids regels voor de beveiliging van inhoud (die moeten worden geconfigureerd door dit punt) en een set streaming-protocollen:
 
     a. **Playready en Widevine met MPEG-Dash** worden uw MPEG-Dash stream dynamisch versleuteld met Playready en Widevine DRMs.
 
@@ -117,7 +117,7 @@ AES Clear Key-versleuteling is ingeschakeld op alle streaming-protocollen: Smoot
     
     e. **Fairplay alleen met HLS** worden uw HLS-stroom dynamisch versleuteld met Fairplay.
 
-1. Als u FairPlay-versleuteling wilt inschakelen, selecteert u **Fairplay-configuratie**op de Blade **globale instellingen Content Protection** . Selecteer vervolgens het **app-certificaat**en voer de **geheime sleutel**van de toepassing in.
+1. Als u FairPlay-versleuteling wilt inschakelen, selecteert u **Fairplay-configuratie** op de Blade **globale instellingen Content Protection** . Selecteer vervolgens het **app-certificaat** en voer de **geheime sleutel** van de toepassing in.
 
     ![Versleutelings type](./media/media-services-portal-content-protection/media-services-content-protection009.png)
 

@@ -4,13 +4,13 @@ description: Dit artikel wordt regelmatig bijgewerkt met nieuws over de Azure Co
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: overview
-ms.date: 01/05/2021
-ms.openlocfilehash: 4591bc26c848032d1c0f8b96720c4ec66b9b064d
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.date: 01/21/2021
+ms.openlocfilehash: 5fdde81d31eae4c50b86a5553742f9b599f32505
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916351"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693592"
 ---
 # <a name="whats-new-in-language-understanding"></a>Nieuwe functies in Language Understanding
 
@@ -18,10 +18,15 @@ Meer informatie over nieuwe functies in de service. Dit kunnen releaseopmerkinge
 
 ## <a name="release-notes"></a>Releaseopmerkingen
 
+### <a name="january-2021"></a>Januari 2021
+
+* De V3 API voor voor spellingen ondersteunt nu de [Bing-spelling-API](luis-how-to-publish-app.md#spelling-correction).
+* De regionale portals (au.luis.ai en eu.luis.ai) zijn geconsolideerd in één portal en URL. Als u een van deze portals gebruikt, wordt u automatisch omgeleid naar luis.ai.
+
 ### <a name="december-2020"></a>December 2020
 
 * Alle LUIS-gebruikers moeten [migreren naar een LUIS-creatieresource](luis-migration-authoring.md)
-* Nieuwe [evaluatie-eindpunten](luis-how-to-batch-test.md#batch-testing-using-the-rest-api) waarmee u batchtesten met behulp van de REST API kunt verzenden en nauwkeurige resultaten voor uw intenties en entiteiten verkrijgt. Beschikbaar vanaf het LUIS-eindpunt v3.0-preview.
+* Nieuwe [evaluatie-eind punten](luis-how-to-batch-test.md#batch-testing-using-the-rest-api) waarmee u batch tests kunt verzenden met behulp van de rest API en de nauw keurigheid van uw intentie en entiteiten krijgt. Beschikbaar vanaf het LUIS-eindpunt v3.0-preview.
 
 ### <a name="june-2020"></a>Juni 2020
 

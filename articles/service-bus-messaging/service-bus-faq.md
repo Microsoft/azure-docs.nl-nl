@@ -2,13 +2,13 @@
 title: Veelgestelde vragen over Azure Service Bus | Microsoft Docs
 description: In dit artikel vindt u antwoorden op enkele veelgestelde vragen over Azure Service Bus.
 ms.topic: article
-ms.date: 09/16/2020
-ms.openlocfilehash: e5bc9aae081868c92e0968c88c8cb6dcfb8ee57c
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.date: 01/20/2021
+ms.openlocfilehash: 3a96cf94ca4a7edd115f12b3e2eded11a5894e04
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676371"
+ms.locfileid: "98693394"
 ---
 # <a name="azure-service-bus---frequently-asked-questions-faq"></a>Azure Service Bus-Veelgestelde vragen (FAQ)
 
@@ -35,8 +35,11 @@ De volg orde van het gebruik van gepartitioneerde entiteiten wordt niet gegarand
 
  Gepartitioneerde entiteiten worden niet meer ondersteund in de [Premium-SKU](service-bus-premium-messaging.md). 
 
-### <a name="where-does-azure-service-bus-store-customer-data"></a><a name="in-region-data-residency"></a>Waar worden klant gegevens Azure Service Bus opgeslagen?
-Azure Service Bus klant gegevens worden opgeslagen. Deze gegevens worden automatisch opgeslagen door Service Bus in één regio, zodat deze service automatisch voldoet aan de locatie vereisten voor regio's, waaronder die in het [vertrouwens centrum](https://azuredatacentermap.azurewebsites.net/).
+### <a name="where-does-azure-service-bus-store-data"></a><a name="in-region-data-residency"></a>Waar worden gegevens Azure Service Bus opgeslagen?
+Azure Service Bus Standard-laag maakt gebruik van Azure SQL Database voor de backend-opslaglaag van de back-uplaag. Voor alle regio's behalve Brazilië-zuid en Zuidoost-Azië wordt de back-up van de data base in een andere regio gehost (meestal de Azure-gekoppelde regio). Voor de regio's van Brazilië-Zuid en Zuidoost-Azië worden database back-ups in dezelfde regio opgeslagen om te voldoen aan de vereisten voor locatie voor deze regio's.
+
+Met Azure Service Bus Premium-laag worden meta gegevens en gegevens opgeslagen in regio's die u selecteert. Als geo-nood herstel is ingesteld voor een Azure Service Bus Premium-naam ruimte, worden de meta gegevens gekopieerd naar de secundaire regio die u selecteert.
+
 
 ### <a name="what-ports-do-i-need-to-open-on-the-firewall"></a>Welke poorten moet ik op de firewall openen? 
 U kunt de volgende protocollen gebruiken met Azure Service Bus voor het verzenden en ontvangen van berichten:

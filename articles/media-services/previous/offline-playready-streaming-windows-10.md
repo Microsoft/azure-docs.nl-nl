@@ -15,12 +15,12 @@ ms.topic: article
 ms.date: 04/16/2019
 ms.author: willzhan
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a26be590d5f7b467f57e8e18eac54ce57be24094
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bd1d50003ef4334f1ea83ac256b371b20d021936
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89266592"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693889"
 ---
 # <a name="offline-playready-streaming-for-windows-10"></a>Offline PlayReady-streaming voor Windows 10
 
@@ -31,7 +31,7 @@ ms.locfileid: "89266592"
 > * [Versie 2](offline-playready-streaming-windows-10.md)
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Azure Media Services offline downloaden/afspelen met DRM-beveiliging ondersteunen. In dit artikel wordt Inge gaan op offline ondersteuning van Azure Media Services voor Windows 10/PlayReady-clients. Raadpleeg de volgende artikelen voor meer informatie over de ondersteuning voor offline modus voor iOS-FairPlay en Android-Widevine-apparaten:
 
@@ -42,7 +42,7 @@ Azure Media Services offline downloaden/afspelen met DRM-beveiliging ondersteune
 
 Deze sectie bevat een achtergrond voor het afspelen van offline modus, met name waarom:
 
-* In sommige landen/regio's is Internet Beschik baarheid en/of band breedte nog steeds beperkt.Gebruikers kunnen ervoor kiezen om eerst te downloaden om inhoud te kunnen bekijken met een hoge resolutie voor een goede weergave ervaring. In dit geval is het probleem vaak niet het netwerk beschikbaar, maar is de netwerk bandbreedte beperkt. OTT/OVP-providers vragen om ondersteuning voor de offline modus.
+* In sommige landen/regio's is Internet Beschik baarheid en/of band breedte nog steeds beperkt. Gebruikers kunnen ervoor kiezen om eerst te downloaden om inhoud te kunnen bekijken met een hoge resolutie voor een goede weergave ervaring. In dit geval is het probleem vaak niet het netwerk beschikbaar, maar is de netwerk bandbreedte beperkt. OTT/OVP-providers vragen om ondersteuning voor de offline modus.
 * Als vermeld bij de Netflix 2016 Q3-aandeel houder, is het downloaden van inhoud een ' oft-aangevraagde functie ', en ' We zijn er open mee ' zei door Reed Hastings, Netflix CEO.
 * Sommige inhouds providers kunnen geen DRM-licentie levering toestaan buiten de rand van een land/regio. Als een gebruiker in het buiten land moet reizen en nog steeds inhoud wil bekijken, is offline downloaden vereist.
  

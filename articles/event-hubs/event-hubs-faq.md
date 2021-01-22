@@ -2,13 +2,13 @@
 title: Veelgestelde vragen-Azure Event Hubs | Microsoft Docs
 description: In dit artikel vindt u een lijst met veelgestelde vragen over Azure Event Hubs en de antwoorden hiervan.
 ms.topic: article
-ms.date: 10/27/2020
-ms.openlocfilehash: e7a34fe0f2ef04fffeeddc5615d3ac1749467902
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.date: 01/20/2021
+ms.openlocfilehash: e6fd4814e771d03827e51f1cd5ee182c9e432cc5
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955413"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696105"
 ---
 # <a name="event-hubs-frequently-asked-questions"></a>Veelgestelde vragen over Event Hubs
 
@@ -33,7 +33,7 @@ De Standard-laag van Azure Event Hubs biedt functies die groter zijn dan in de B
 * Langer bewaren van gebeurtenissen
 * Extra brokered Connections, met een overschrijding kosten voor meer dan het aantal inbegrepen
 * Meer dan één [consumenten groep](event-hubs-features.md#consumer-groups)
-* [Vastleggen](event-hubs-capture-overview.md)
+* [Opnames](event-hubs-capture-overview.md)
 * [Kafka-integratie](event-hubs-for-kafka-ecosystem-overview.md)
 
 Voor meer informatie over prijs categorieën, waaronder Event Hubs Dedicated, raadpleegt u de [Event hubs prijs informatie](https://azure.microsoft.com/pricing/details/event-hubs/).
@@ -55,8 +55,8 @@ U kunt de Bewaar periode voor de vastgelegde gegevens in uw opslag account confi
 ### <a name="how-do-i-monitor-my-event-hubs"></a>Mijn Event Hubs Hoe kan ik controleren?
 Event Hubs levert uitgebreide metrische gegevens die de status van uw resources [Azure monitor](../azure-monitor/overview.md). Ze kunnen ook de algemene status van de Event Hubs-service alleen beoordelen op het niveau van de naam ruimte, maar ook op het niveau van de entiteit. Meer informatie over welke bewaking wordt aangeboden voor [Azure Event hubs](event-hubs-metrics-azure-monitor.md).
 
-### <a name="where-does-azure-event-hubs-store-customer-data"></a><a name="in-region-data-residency"></a>Waar worden klant gegevens opgeslagen door Azure Event Hubs?
-Klant gegevens worden opgeslagen in azure Event Hubs. Deze gegevens worden automatisch opgeslagen door Event Hubs in één regio, zodat deze service automatisch voldoet aan de locatie vereisten voor de regio gegevens, inclusief de items die zijn opgegeven in het [vertrouwens centrum](https://azuredatacentermap.azurewebsites.net/).
+### <a name="where-does-azure-event-hubs-store-data"></a><a name="in-region-data-residency"></a>Waar worden gegevens opgeslagen in azure Event Hubs?
+In azure Event Hubs Standard en de toegewezen lagen worden meta gegevens en gegevens opgeslagen in regio's die u selecteert. Wanneer geo-nood herstel is ingesteld voor een Azure Event Hubs-naam ruimte, worden meta gegevens gekopieerd naar de secundaire regio die u selecteert. Daarom voldoet deze service automatisch aan de locatie vereisten voor de regio gegevens, inclusief de waarden die zijn opgegeven in het [vertrouwens centrum](https://azuredatacentermap.azurewebsites.net/).
 
 [!INCLUDE [event-hubs-connectivity](../../includes/event-hubs-connectivity.md)]
 

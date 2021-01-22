@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.reviewer: johndeu
-ms.openlocfilehash: 84e94a431efdc84ff6896de416bd222120784899
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f48a01bb81829ff2bc10b4db1ed543382f992b58
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89264280"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696224"
 ---
 # <a name="media-services-operations-rest-api-overview"></a>Overzicht van Media Services bewerkingen REST API
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 De REST-API van **Media Services bewerkingen** wordt gebruikt voor het maken van taken, assets, Live kanalen en andere resources in een Media Services-account. Zie [Media Services Operations rest API Reference](/rest/api/media/operations/azure-media-services-rest-api-reference)(Engelstalig) voor meer informatie.
 
@@ -62,7 +62,7 @@ De volgende overwegingen zijn van toepassing wanneer u REST gebruikt.
 ## <a name="standard-http-request-headers-supported-by-media-services"></a>Standaard-HTTP-aanvraag headers die worden ondersteund door Media Services
 Voor elke aanroep die u in Media Services maakt, moet u een set vereiste kopteksten opnemen in uw aanvraag en ook een set optionele kopteksten die u mogelijk wilt opnemen. De volgende tabel bevat de vereiste headers:
 
-| Koptekst | Type | Waarde |
+| Header | Type | Waarde |
 | --- | --- | --- |
 | Autorisatie |Drager |Bearer is het enige geaccepteerde autorisatie mechanisme. De waarde moet ook het toegangs token bevatten dat door Azure Active Directory is geleverd. |
 | x-ms-version |Decimaal |2,17 (of meest recente versie)|
@@ -76,7 +76,7 @@ Voor elke aanroep die u in Media Services maakt, moet u een set vereiste kopteks
 
 Hier volgt een aantal optionele kopteksten:
 
-| Koptekst | Type | Waarde |
+| Header | Type | Waarde |
 | --- | --- | --- |
 | Date |RFC 1123-datum |Tijds tempel van de aanvraag |
 | Accepteren |Inhoudstype |Het aangevraagde inhouds type voor het antwoord, zoals de volgende:<p> -application/json; odata = verbose<p> -Application/Atom + XML<p> Antwoorden kunnen een ander inhouds type hebben, zoals het ophalen van een blob, waarbij een geslaagd antwoord de BLOB-stream als de payload bevat. |
@@ -90,7 +90,7 @@ Hier volgt een aantal optionele kopteksten:
 ## <a name="standard-http-response-headers-supported-by-media-services"></a>Standaard-HTTP-antwoord headers die worden ondersteund door Media Services
 Hier volgt een reeks kopteksten die kunnen worden geretourneerd, afhankelijk van de resource die u hebt aangevraagd en de actie die u wilt uitvoeren.
 
-| Koptekst | Type | Waarde |
+| Header | Type | Waarde |
 | --- | --- | --- |
 | aanvraag-id |Tekenreeks |Een unieke id voor de huidige bewerking, gegenereerde service. |
 | client-aanvraag-id |Tekenreeks |Een id die is opgegeven door de aanroeper in de oorspronkelijke aanvraag, indien aanwezig. |

@@ -7,12 +7,12 @@ ms.author: lagayhar
 ms.date: 06/07/2019
 ms.reviewer: sergkanz
 ms.custom: devx-track-python, devx-track-csharp
-ms.openlocfilehash: 20e9ed7e83ff3359651acebc11a939a998f2889d
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 50b858d0bf05aa46ea20a6cf9e088376be2996e3
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607912"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693423"
 ---
 # <a name="telemetry-correlation-in-application-insights"></a>Intermetrie-correlatie in Application Insights
 
@@ -232,7 +232,55 @@ Wanneer deze code wordt uitgevoerd, worden de volgende afdrukken in de-console:
 ```
 U ziet dat er een `spanId` bericht is dat zich binnen de reeks bevindt. Dit is hetzelfde `spanId` als bij de reeks met de naam `hello` .
 
-U kunt de logboek gegevens exporteren met behulp van `AzureLogHandler` . Zie [dit artikel](./opencensus-python.md#logs)voor meer informatie.
+U kunt de logboek gegevens exporteren met behulp van `AzureLogHandler` . Raadpleeg [dit artikel](./opencensus-python.md#logs) voor meer informatie.
+
+We kunnen ook tracerings gegevens van het ene naar het andere onderdeel door geven voor de juiste correlatie. Denk bijvoorbeeld aan een scenario waarin twee onderdelen `module1` en zijn `module2` . Module1 roept functies aan in Module2 en om logboeken op te halen van zowel `module1` als `module2` in één spoor, kunnen we de volgende aanpak gebruiken:
+
+```python
+# module1.py
+import logging
+
+from opencensus.trace import config_integration
+from opencensus.trace.samplers import AlwaysOnSampler
+from opencensus.trace.tracer import Tracer
+from module2 import function_1
+
+config_integration.trace_integrations(['logging'])
+logging.basicConfig(format='%(asctime)s traceId=%(traceId)s spanId=%(spanId)s %(message)s')
+tracer = Tracer(sampler=AlwaysOnSampler())
+
+logger = logging.getLogger(__name__)
+logger.warning('Before the span')
+with tracer.span(name='hello'):
+   logger.warning('In the span')
+   function_1(tracer)
+logger.warning('After the span')
+
+
+# module2.py
+
+import logging
+
+from opencensus.trace import config_integration
+from opencensus.trace.samplers import AlwaysOnSampler
+from opencensus.trace.tracer import Tracer
+
+config_integration.trace_integrations(['logging'])
+logging.basicConfig(format='%(asctime)s traceId=%(traceId)s spanId=%(spanId)s %(message)s')
+tracer = Tracer(sampler=AlwaysOnSampler())
+
+def function_1(parent_tracer=None):
+    if parent_tracer is not None:
+        tracer = Tracer(
+                    span_context=parent_tracer.span_context,
+                    sampler=AlwaysOnSampler(),
+                )
+    else:
+        tracer = Tracer(sampler=AlwaysOnSampler())
+
+    with tracer.span("function_1"):
+        logger.info("In function_1")
+```
 
 ## <a name="telemetry-correlation-in-net"></a>Telemetrie-correlatie in .NET
 

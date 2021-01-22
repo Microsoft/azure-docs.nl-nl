@@ -16,12 +16,12 @@ ms.date: 05/07/2020
 ms.author: willzhan
 ms.reviewer: dwgeo
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5e003e17490c2e35ef3f8adfdef6de0377cda7d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ae1d4ef81d14d5adfb728cf7a59534cb376a0eb1
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89259707"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695083"
 ---
 # <a name="offline-fairplay-streaming-for-ios"></a>Offline FairPlay-streaming voor iOS
 
@@ -32,7 +32,7 @@ ms.locfileid: "89259707"
 > * [Versie 2](media-services-protect-hls-with-offline-fairplay.md)
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Azure Media Services biedt een aantal goed ontworpen [Content Protection-Services](https://azure.microsoft.com/services/media-services/content-protection/) die betrekking hebben op:
 
@@ -214,7 +214,7 @@ De volgende veelgestelde vragen bieden hulp bij het oplossen van problemen:
 - **Wat betekent de laatste para meter voor in de volgende API voor de offline modus van FPS?**
 `Microsoft.WindowsAzure.MediaServices.Client.FairPlay.FairPlayConfiguration.CreateSerializedFairPlayOptionConfiguration(objX509Certificate2, pfxPassword, pfxPasswordId, askId, iv, RentalAndLeaseKeyType.PersistentUnlimited, 0x9999);`
 
-    Zie de [methode FairPlayConfiguration. CreateSerializedFairPlayOptionConfiguration](/dotnet/api/microsoft.windowsazure.mediaservices.client.fairplay.fairplayconfiguration.createserializedfairplayoptionconfiguration?view=azure-dotnet)voor de documentatie voor deze API. De para meter vertegenwoordigt de duur van de offline huur, met als tweede als eenheid.
+    Zie de [methode FairPlayConfiguration. CreateSerializedFairPlayOptionConfiguration](/dotnet/api/microsoft.windowsazure.mediaservices.client.fairplay.fairplayconfiguration.createserializedfairplayoptionconfiguration)voor de documentatie voor deze API. De para meter vertegenwoordigt de duur van de offline huur, met als tweede als eenheid.
 - **Wat is de gedownloade/offline bestands structuur op iOS-apparaten?** De gedownloade bestands structuur op een iOS-apparaat ziet eruit als in de volgende scherm afbeelding. De `_keys` map slaat de gedownloade fps-licenties op, met één archief bestand voor elke host van de licentie service. De `.movpkg` map slaat audio-en video-inhoud op. De eerste map met een naam die eindigt op een streepje gevolgd door een numeriek bevat video-inhoud. De numerieke waarde is de PeakBandwidth van de video weergaven. De tweede map met een naam die eindigt op een streepje gevolgd door 0, bevat audio-inhoud. De derde map met de naam ' data ' bevat de lijst Master van de FPS-inhoud. Ten slotte biedt boot.xml een volledige beschrijving van de `.movpkg` inhoud van de map. 
 
 ![Bestands structuur van de offline-FairPlay iOS-voorbeeld toepassing](media/media-services-protect-hls-with-offline-FairPlay/media-services-offline-FairPlay-file-structure.png)

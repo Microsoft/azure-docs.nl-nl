@@ -10,16 +10,31 @@ author: VasiyaKrishnan
 ms.author: vakrishn
 ms.reviewer: sstein
 ms.date: 11/24/2020
-ms.openlocfilehash: c18cb1cef9b46b4b3cd2f614945f98abf9de7c58
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: e078fb91b3279b6f4321cd51dfb094f82bbe5f14
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704347"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696376"
 ---
 # <a name="azure-sql-edge-release-notes"></a>Release opmerkingen bij Azure SQL Edge 
 
 In dit artikel wordt beschreven wat er nieuw is en wat er is gewijzigd bij elke nieuwe build van Azure SQL Edge.
+
+## <a name="azure-sql-edge-102"></a>Azure SQL Edge-1.0.2
+
+SQL engine build 15.0.2000.1554
+
+### <a name="fixes"></a>Oplossingen
+
+- T-SQL-streaming  
+   - Herstel in eigendom en machtigingen voor streaming-objecten
+   - Logboek registratie van verbeteringen met logboek rotatie en logboek voorvoegsel
+   - Azure Stream Analytics: verbeteringen in de logboek registratie, fout code/fout berichten in adapters verbeteren 
+
+- ONNX
+    - Fout oplossingen voor parallel query scenario en model opruim fouten
+    - Upgrade van ONNX-runtime naar 1.5.1
 
 ## <a name="azure-sql-edge-101"></a>Azure SQL Edge-1.0.1
 

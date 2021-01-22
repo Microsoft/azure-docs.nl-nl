@@ -9,24 +9,27 @@ ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2021
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 1a1fc0ce634282ffd4fcf374138fe97a04f32062
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 320f02f6ece106b4d0e14293f95533aa5b4e0743
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539591"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693448"
 ---
 # <a name="choose-a-pricing-tier-for-azure-cognitive-search"></a>Een prijs categorie kiezen voor Azure Cognitive Search
 
-Wanneer u [een zoek service maakt](search-create-service-portal.md), kiest u een prijs categorie (of SKU) die is vastgesteld voor de levens duur van de service. De geschatte maandelijkse kosten worden weer gegeven op de pagina **prijs categorie selecteren** in de portal. Als u in plaats daarvan een service maakt via Power shell of Azure CLI, wordt de laag opgegeven via de **`-Sku`** para meter.
+Een deel van het [maken van een zoek service](search-create-service-portal.md) betekent het kiezen van een prijs categorie (of SKU) die is vastgesteld voor de levens duur van de service. Prijzen-of de geschatte maandelijkse kosten van het uitvoeren van de service, worden weer gegeven op de pagina **prijs categorie selecteren** van de Portal wanneer u de service maakt. Als u in plaats daarvan het inrichten via Power shell of Azure CLI gebruikt, wordt de laag opgegeven via de **`-Sku`** para meter en moet u de [service prijzen](https://azure.microsoft.com/pricing/details/search/) controleren voor meer informatie over geschatte kosten.
 
 De laag die u selecteert, bepaalt het volgende:
 
-+ Het maximum aantal indexen en andere objecten dat u op de service kunt maken
++ Maximum aantal indexen en andere objecten die zijn toegestaan voor de service
 + Grootte en snelheid van partities (fysieke opslag)
 + Factureerbaar percentage als vaste maandelijkse kosten, maar ook een incrementele kosten als u capaciteit toevoegt
 
 In enkele gevallen bepaalt de laag die u kiest, de beschik baarheid van [Premium-functies](#premium-features).
+
+> [!NOTE]
+> Zoekt u informatie over "Azure-Sku's"? Begin met [Azure-prijzen](https://azure.microsoft.com/pricing/) en schuif omlaag voor koppelingen naar prijs pagina's per service.
 
 ## <a name="tier-descriptions"></a>Beschrijvingen van lagen
 
@@ -67,7 +70,7 @@ Lagen bepalen de maximale opslag van de service zelf, evenals het maximum aantal
 
 ## <a name="partition-size-and-speed"></a>Partitie grootte en snelheid
 
-De prijs van de laag bevat details over opslag per partitie die variëren van 2 GB voor Basic, Maxi maal 2 TB voor opslag geoptimaliseerde (L2)-lagen. Andere hardwarekenmerken, zoals snelheid van bewerkingen, latentie en overdrachts snelheden, worden niet gepubliceerd, maar lagen die zijn ontworpen voor specifieke oplossings architecturen zijn gebaseerd op hardware met de functies voor het ondersteunen van die scenario's.
+De prijs van de laag bevat details over opslag per partitie die variëren van 2 GB voor Basic, Maxi maal 2 TB voor opslag geoptimaliseerde (L2)-lagen. Andere hardwarekenmerken, zoals snelheid van bewerkingen, latentie en overdrachts snelheden, worden niet gepubliceerd, maar lagen die zijn ontworpen voor specifieke oplossings architecturen zijn gebaseerd op hardware met de functies voor het ondersteunen van die scenario's. Zie voor meer informatie over partities [schatting en beheer capaciteit](search-capacity-planning.md) en [schaal voor prestaties](search-performance-optimization.md).
 
 ## <a name="billing-rates"></a>Facturerings tarieven
 

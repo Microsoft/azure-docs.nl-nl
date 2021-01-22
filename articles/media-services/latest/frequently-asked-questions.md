@@ -11,12 +11,12 @@ ms.workload: ''
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 50a0fe0fa5dece41ac9e343d5a8939e8d9dc634e
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: 9e48d14419e2cd24251f1b00a09fd0289c50c55f
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92426888"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693804"
 ---
 # <a name="media-services-v3-frequently-asked-questions"></a>Veelgestelde vragen over Media Services v3
 
@@ -60,7 +60,7 @@ Wanneer u paginering gebruikt, moet u altijd de volgende koppeling gebruiken om 
 
 ### <a name="what-features-are-not-yet-available-in-azure-media-services-v3"></a>Welke functies zijn nog niet beschikbaar in Azure Media Services v3?
 
-Zie voor meer informatie [functie hiaten met betrekking tot v2-api's](media-services-v2-vs-v3.md#feature-gaps-with-respect-to-v2-apis).
+Zie [de migratie handleiding](migrate-v-2-v-3-migration-introduction.md)voor meer informatie.
 
 ### <a name="what-is-the-process-of-moving-a-media-services-account-between-subscriptions"></a>Wat is het proces van het verplaatsen van een Media Services account tussen abonnementen?  
 
@@ -169,7 +169,7 @@ Gebruik voor alle andere beheer taken (bijvoorbeeld [trans formaties en taken](t
 
 Het `AssetFile` concept is uit de Media Services-API verwijderd om Media Services van de afhankelijkheid van de opslag-SDK te scheiden. De gegevens die horen bij de opslag-SDK, worden nu Azure Storage, niet Media Services. 
 
-Zie [Migrate to Media Services v3](media-services-v2-vs-v3.md)(Engelstalig) voor meer informatie.
+Zie [Migrate to Media Services v3](migrate-v-2-v-3-migration-introduction.md)(Engelstalig) voor meer informatie.
 
 ### <a name="where-did-client-side-storage-encryption-go"></a>Waar is de opslag versleuteling aan de client zijde gebleven?
 

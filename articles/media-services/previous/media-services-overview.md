@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/03/2020
 ms.author: inhenkel
-ms.openlocfilehash: c6f889963e87d900040d1fe77031f943ab368837
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 08a419f021e0315468cb6fa5917b30bb2977d958
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348741"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695506"
 ---
 # <a name="azure-media-services-overview"></a>Overzicht van Azure Media Services
 
@@ -29,7 +29,7 @@ ms.locfileid: "93348741"
 > * [Versie 2](media-services-overview.md)
 
 > [!NOTE]
-> Er worden geen nieuwe functies meer aan Media Services v2 toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies meer aan Media Services v2 toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Microsoft Azure Media Services (AMS) is een uitbreidbaar cloudplatform waarmee ontwikkelaars schaalbare toepassingen voor mediabeheer en -levering kunnen ontwikkelen. Media Services is gebaseerd op de REST API's waarmee u veilig video- of audio-inhoud kunt uploaden, opslaan, coderen en verpakken, zowel voor levering on demand als levering via livestreaming aan verschillende clients (bijvoorbeeld tv, pc en mobiele apparaten).
 
@@ -69,7 +69,7 @@ Als u Media Services-oplossingen wilt maken, kunt u het volgende gebruiken:
     * [Azure PHP SDK](https://github.com/Azure/azure-sdk-for-php)
     * [Azure Media Services voor Node.js](https://github.com/michelle-becker/node-ams-sdk/blob/master/lib/request.js) (Dit is een niet-Microsoft-versie van een Node.js SDK. Deze wordt onderhouden door een community en biedt nog geen 100% dekking voor AMS API's).
 * Bestaande hulpprogramma's:
-    * [Azure-portal](https://portal.azure.com/)
+    * [Azure Portal](https://portal.azure.com/)
     * [Azure-Media-Services-Explorer](https://github.com/Azure/Azure-Media-Services-Explorer) (Azure Media Services Explorer (AMSE) is een Winforms-/C#-toepassing voor Windows)
 
 > [!NOTE]
@@ -78,7 +78,7 @@ Als u Media Services-oplossingen wilt maken, kunt u het volgende gebruiken:
 
 ## <a name="code-samples"></a>Codevoorbeelden
 
-Zoeken naar meerdere codevoorbeelden in de galerie **Azure-codevoorbeelden** : [Azure Media Services-codevoorbeelden](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
+Zoeken naar meerdere codevoorbeelden in de galerie **Azure-codevoorbeelden**: [Azure Media Services-codevoorbeelden](https://azure.microsoft.com/resources/samples/?service=media-services&sort=0).
 
 ## <a name="concepts"></a>Concepten
 

@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 11/03/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2ca47e49af06ab0a6dffc1f4011d7dceb58830be
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 34546e74c9d066af20ece834275732d55b8d6277
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93348505"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695455"
 ---
 # <a name="create-a-media-services-account-using-the-azure-portal"></a>Een Media Services-account maken via de Azure-portal
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Azure Portal biedt een manier om snel een Azure Media Services-account (AMS) te maken. U kunt uw account gebruiken voor toegang tot Media Services waarmee u media-inhoud in Azure kunt opslaan, versleutelen, coderen, beheren en streamen. Op het moment dat u een Media Services-account maakt, maakt u ook een bijbehorend opslagaccount (of gebruikt u een bestaand account). Als u een Media Services-account verwijdert, worden de blobs in uw gerelateerde opslagaccount niet verwijderd.
 
@@ -46,7 +46,7 @@ U hebt een Azure-account nodig om deze zelfstudie te voltooien. Zie [Gratis proe
 In de stappen in deze sectie wordt uitgelegd hoe u een AMS-account maakt.
 
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-2. Klik op **+ een resource maken**  >  **Media**  >  **Media Services**.
+2. Klik op **+ Een resource maken** > **Media** > **Media Services**.
 3. Voer bij **MEDIA SERVICES-ACCOUNT MAKEN** de vereiste waarden in.
 
    1. Voer in **Accountnaam** de naam van het nieuwe AMS-account in. Voor de naam van een Media Services-account mogen alleen cijfers en kleine letters worden gebruikt. Spaties zijn niet toegestaan. De naam mag 3 tot 24 tekens lang zijn.
@@ -66,7 +66,7 @@ In de stappen in deze sectie wordt uitgelegd hoe u een AMS-account maakt.
    
 ## <a name="to-manage-your-ams-account"></a>Uw AMS-account beheren
 
-Selecteer **Instellingen** aan de linkerkant van de portal als u uw AMS-account wilt beheren, bijvoorbeeld om via programmacode verbinding te maken met de AMS-API, video's te uploaden, assets te coderen, beveiliging van inhoud te configureren of de taakvoortgang te bekijken. Ga vanuit **Instellingen** naar een van de beschikbare blades (zoals **API-toegang** , **Assets** , **Taken** of **Inhoudsbeveiliging** ).
+Selecteer **Instellingen** aan de linkerkant van de portal als u uw AMS-account wilt beheren, bijvoorbeeld om via programmacode verbinding te maken met de AMS-API, video's te uploaden, assets te coderen, beveiliging van inhoud te configureren of de taakvoortgang te bekijken. Ga vanuit **Instellingen** naar een van de beschikbare blades (zoals **API-toegang**, **Assets**, **Taken** of **Inhoudsbeveiliging**).
 
 ## <a name="next-steps"></a>Volgende stappen
 

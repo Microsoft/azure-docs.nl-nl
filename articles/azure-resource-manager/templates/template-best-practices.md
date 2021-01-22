@@ -3,12 +3,12 @@ title: Aanbevolen procedures voor sjablonen
 description: Hierin worden aanbevolen benaderingen beschreven voor het ontwerpen van Azure Resource Manager sjablonen (ARM-sjablonen). Biedt suggesties om veelvoorkomende problemen te voor komen bij het gebruik van sjablonen.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 85d58098508d5ac7cad6c1cb3cb68ad6c7f179f9
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: c0b26c300a9474cc5db0b1a7b732c4416a9e6f5f
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724983"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696343"
 ---
 # <a name="arm-template-best-practices"></a>Aanbevolen procedures voor ARM-sjablonen
 
@@ -26,7 +26,7 @@ U bent ook beperkt tot:
 * 64 uitvoer waarden
 * 24.576 tekens in een sjabloon expressie
 
-U kunt enkele limieten voor sjablonen overschrijden met behulp van een geneste sjabloon. Zie voor meer informatie [gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources](linked-templates.md). Als u het aantal parameters, variabelen of uitvoerwaarden wilt verkleinen, kunt u verschillende waarden combineren in een object. Raadpleeg [Objects as parameters](/azure/architecture/building-blocks/extending-templates/objects-as-parameters) (Objecten als parameters) voor meer informatie.
+U kunt enkele limieten voor sjablonen overschrijden met behulp van een geneste sjabloon. Zie voor meer informatie [gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources](linked-templates.md). Als u het aantal parameters, variabelen of uitvoerwaarden wilt verkleinen, kunt u verschillende waarden combineren in een object. Raadpleeg [Objects as parameters](/azure/architecture/guide/azure-resource-manager/advanced-templates/objects-as-parameters) (Objecten als parameters) voor meer informatie.
 
 ## <a name="resource-group"></a>Resourcegroep
 

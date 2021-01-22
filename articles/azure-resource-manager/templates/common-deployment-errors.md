@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u veelvoorkomende fouten oplost wanneer
 tags: top-support-issue
 ms.topic: troubleshooting
 ms.date: 01/20/2021
-ms.openlocfilehash: bb701baf164cfd6ba1dd5c670a406343e83c5c70
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 61a306cd36c55a005ee9ebd897fcfc9a6c88d7c9
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98622808"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696393"
 ---
 # <a name="troubleshoot-common-azure-deployment-errors-with-azure-resource-manager"></a>Veelvoorkomende fouten met Azure-implementatie oplossen met Azure Resource Manager
 
@@ -37,7 +37,7 @@ Als u op zoek bent naar informatie over een fout code en deze informatie niet in
 | DeploymentJobSizeExceeded | Vereenvoudig uw sjabloon om de grootte te verminderen. | [Fouten in de sjabloon grootte oplossen](error-job-size-exceeded.md) |
 | DnsRecordInUse | De naam van de DNS-record moet uniek zijn. Voer een andere naam in. | |
 | ImageNotFound | Controleer de instellingen van de VM-installatie kopie. |  |
-| InUseSubnetCannotBeDeleted | Deze fout kan optreden wanneer u een resource probeert bij te werken en de aanvraag wordt verwerkt door de resource te verwijderen en te maken. Zorg ervoor dat u alle ongewijzigde waarden opgeeft. | [Bron bijwerken](/azure/architecture/building-blocks/extending-templates/update-resource) |
+| InUseSubnetCannotBeDeleted | Deze fout kan optreden wanneer u een resource probeert bij te werken en de aanvraag wordt verwerkt door de resource te verwijderen en te maken. Zorg ervoor dat u alle ongewijzigde waarden opgeeft. | [Bron bijwerken](/azure/architecture/guide/azure-resource-manager/advanced-templates/update-resource) |
 | InvalidAuthenticationTokenTenant | Haal het toegangs token voor de juiste Tenant op. U kunt het token alleen ophalen van de Tenant waarvan uw account deel uitmaakt. | |
 | InvalidContentLink | U hebt waarschijnlijk geprobeerd een koppeling te maken met een geneste sjabloon die niet beschikbaar is. Controleer de URI die u hebt ingevoerd voor de geneste sjabloon dubbel. Als de sjabloon zich in een opslag account bevindt, controleert u of de URI toegankelijk is. Mogelijk moet u een SAS-token door geven. Op dit moment kunt u geen koppeling maken met een sjabloon die zich in een opslag account bevindt achter een [Azure Storage firewall](../../storage/common/storage-network-security.md). Overweeg om uw sjabloon te verplaatsen naar een andere opslag plaats, zoals GitHub. | [Gekoppelde sjablonen](linked-templates.md) |
 | InvalidDeploymentLocation | Wanneer u implementeert op abonnements niveau, hebt u een andere locatie voor een eerder gebruikte implementatie naam ingevoerd. | [Implementaties op abonnements niveau](deploy-to-subscription.md) |
@@ -64,7 +64,7 @@ Als u op zoek bent naar informatie over een fout code en deze informatie niet in
 | PasswordTooLong | Mogelijk hebt u een wacht woord met te veel tekens geselecteerd of hebt u uw wachtwoord waarde naar een beveiligde teken reeks geconverteerd voordat u deze als een para meter door gegeven. Als de sjabloon een **beveiligde teken reeks** parameter bevat, hoeft u de waarde niet te converteren naar een veilige teken reeks. Geef de wachtwoord waarde op als tekst. |  |
 | PrivateIPAddressInReservedRange | Het opgegeven IP-adres bevat een adres bereik dat vereist is voor Azure. Wijzig het IP-adres om gereserveerd bereik te voor komen. | [IP-adressen](../../virtual-network/public-ip-addresses.md) |
 | PrivateIPAddressNotInSubnet | Het opgegeven IP-adres valt buiten het bereik van het subnet. Wijzig het IP-adres in het bereik van het subnet. | [IP-adressen](../../virtual-network/public-ip-addresses.md) |
-| PropertyChangeNotAllowed | Sommige eigenschappen kunnen niet worden gewijzigd op een geïmplementeerde resource. Wanneer u een resource bijwerkt, kunt u de wijzigingen beperken tot toegestane eigenschappen. | [Bron bijwerken](/azure/architecture/building-blocks/extending-templates/update-resource) |
+| PropertyChangeNotAllowed | Sommige eigenschappen kunnen niet worden gewijzigd op een geïmplementeerde resource. Wanneer u een resource bijwerkt, kunt u de wijzigingen beperken tot toegestane eigenschappen. | [Bron bijwerken](/azure/architecture/guide/azure-resource-manager/advanced-templates/update-resource) |
 | RequestDisallowedByPolicy | Uw abonnement bevat een resource beleid waarmee wordt voor komen dat u tijdens de implementatie een actie probeert uit te voeren. Zoek het beleid waarmee de actie wordt geblokkeerd. Wijzig, indien mogelijk, uw implementatie zodat deze voldoet aan de beperkingen van het beleid. | [Beleid oplossen](error-policy-requestdisallowedbypolicy.md) |
 | ReservedResourceName | Geef een resource naam op die geen gereserveerde naam bevat. | [Gereserveerde resource namen](error-reserved-resource-name.md) |
 | ResourceGroupBeingDeleted | Wacht tot de verwijdering is voltooid. | |

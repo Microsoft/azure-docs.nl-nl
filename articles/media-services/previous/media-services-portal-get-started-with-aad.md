@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: 3d6c494232456b4819c9275d66fa6f7ab5de9b77
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c2ac03f600f57ae97cebb77e3b67bcd466955d0b
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89260727"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695404"
 ---
 # <a name="get-started-with-azure-ad-authentication-by-using-the-azure-portal"></a>Aan de slag met verificatie bij Azure Active Directory met de Azure-portal
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Meer informatie over het gebruik van de Azure Portal om toegang te krijgen tot Azure Active Directory-verificatie (Azure AD) voor toegang tot de Azure Media Services API.
 
@@ -45,7 +45,7 @@ Op deze pagina kunt u de verificatie methode selecteren die u wilt gebruiken om 
 
 1. Selecteer uw Media Services account in de [Azure Portal](https://portal.azure.com/).
 2. Selecteer hoe u verbinding wilt maken met de Media Services-API.
-3. Selecteer onder **verbinding maken met Media Services-API**de versie van de Media Services-API waarmee u verbinding wilt maken.
+3. Selecteer onder **verbinding maken met Media Services-API** de versie van de Media Services-API waarmee u verbinding wilt maken.
 
 ## <a name="service-principal-authentication--recommended"></a>Service-Principal-verificatie (aanbevolen)
 

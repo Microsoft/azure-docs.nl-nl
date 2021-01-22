@@ -6,12 +6,12 @@ ms.author: sujie
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 05/15/2019
-ms.openlocfilehash: 9fe1aaed58d6069cd583f8607f7bd6332f97674e
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 0b4356c74b2e0c1494456d5d1082efd7b8953a15
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019887"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693372"
 ---
 # <a name="use-the-azure-stream-analytics-cicd-nuget-package-for-integration-and-development"></a>Het NuGet-pakket voor de Azure Stream Analytics CI/CD gebruiken voor integratie en ontwikkeling 
 In dit artikel wordt beschreven hoe u het Azure Stream Analytics CI/CD NuGet-pakket gebruikt om een doorlopend integratie-en implementatie proces in te stellen.
@@ -51,7 +51,7 @@ De standaard parameters in de parameters.jsin het bestand zijn afkomstig uit de 
       "value": null
     },
 ```
-Meer informatie over hoe u kunt [implementeren met een resource manager-sjabloon bestand en Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md). Meer informatie over het [gebruik van een object als een para meter in een resource manager-sjabloon](/azure/architecture/building-blocks/extending-templates/objects-as-parameters).
+Meer informatie over hoe u kunt [implementeren met een resource manager-sjabloon bestand en Azure PowerShell](../azure-resource-manager/templates/deploy-powershell.md). Meer informatie over het [gebruik van een object als een para meter in een resource manager-sjabloon](/azure/architecture/guide/azure-resource-manager/advanced-templates/objects-as-parameters).
 
 Als u beheerde identiteit voor Azure Data Lake Store gen1 als uitvoer Sink wilt gebruiken, moet u toegang geven tot de service-principal met behulp van Power shell voordat u implementeert in Azure. Meer informatie over het [implementeren van ADLS gen1 met beheerde identiteit met een resource manager-sjabloon](stream-analytics-managed-identities-adls.md#resource-manager-template-deployment).
 

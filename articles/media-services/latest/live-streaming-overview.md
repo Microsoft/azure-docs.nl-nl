@@ -13,12 +13,12 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: dc08e23b6ef040ba5833ffa97f71d8cd1da3bb8a
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 3f9fc9fd1bacce8733949969b496dc03d6c10901
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92019797"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695816"
 ---
 # <a name="live-streaming-with-azure-media-services-v3"></a>Live streamen met Azure Media Services v3
 
@@ -45,7 +45,7 @@ Met Media Services kunt u gebruikmaken van [dynamische pakketten](dynamic-packag
 
 ## <a name="dynamic-encryption"></a>Dynamische versleuteling
 
-Dynamische versleuteling biedt u de mogelijkheid om uw Live of on-demand inhoud dynamisch te versleutelen met AES-128 of een van de drie belangrijkste Digital Rights Management (DRM)-systemen: micro soft PlayReady, Google Widevine en Apple FairPlay. Media Services biedt ook een service voor het leveren van AES-sleutels en DRM-licenties (PlayReady, Widevine en FairPlay) aan geautoriseerde klanten. Zie [dynamische versleuteling](content-protection-overview.md) voor meer informatie.
+Dynamische versleuteling biedt u de mogelijkheid om uw Live of on-demand inhoud dynamisch te versleutelen met AES-128 of een van de drie belangrijkste digital rights management (DRM)-systemen: micro soft PlayReady, Google Widevine en Apple FairPlay. Media Services biedt ook een service voor het leveren van AES-sleutels en DRM-licenties (PlayReady, Widevine en FairPlay) aan geautoriseerde klanten. Zie [dynamische versleuteling](content-protection-overview.md) voor meer informatie.
 
 > [!NOTE]
 > Widevine is een service van Google Inc. en is onderworpen aan de servicevoorwaarden en het privacybeleid van Google Inc.
@@ -62,7 +62,7 @@ Dynamische filtering wordt gebruikt voor het beheren van het aantal sporen, inde
 
 ![Diagram waarin wordt getoond hoe de video-en audio-feeds van een Pass-through live-gebeurtenis worden opgenomen en verwerkt.](./media/live-streaming/pass-through.svg)
 
-Wanneer u de gebeurtenis Pass-Through **Live**gebruikt, vertrouwt u met uw on-premises Live coderings programma om een video stroom met meerdere bitrates te genereren en deze te verzenden als de bijdrage aan de live gebeurtenis (met RTMP of gefragmenteerd-MP4 invoer Protocol). De live-gebeurtenis voert vervolgens via de binnenkomende video stromen naar het dynamische pakket (streaming-eind punt) zonder verdere trans codering. Een dergelijke door gang werkende gebeurtenis is geoptimaliseerd voor langlopende Live-gebeurtenissen of 24x365e lineaire live-streaming. 
+Wanneer u de gebeurtenis Pass-Through **Live** gebruikt, vertrouwt u met uw on-premises Live coderings programma om een video stroom met meerdere bitrates te genereren en deze te verzenden als de bijdrage aan de live gebeurtenis (met RTMP of gefragmenteerd-MP4 invoer Protocol). De live-gebeurtenis voert vervolgens via de binnenkomende video stromen naar het dynamische pakket (streaming-eind punt) zonder verdere trans codering. Een dergelijke door gang werkende gebeurtenis is geoptimaliseerd voor langlopende Live-gebeurtenissen of 24x365e lineaire live-streaming. 
 
 ### <a name="live-encoding"></a>Live Encoding  
 
@@ -103,7 +103,7 @@ Als u inzicht wilt krijgen in de werk stroom voor live streamen in Media Service
 8. Geef een lijst van de paden in de **streaming-Locator** op om terug te gaan naar de url's die moeten worden gebruikt (dit zijn deterministisch).
 9. Haal de hostnaam op voor het **streaming-eind punt** (oorsprong) waaruit u gegevens wilt streamen.
 10. Combi neer de URL uit stap 8 met de hostnaam in stap 9 om de volledige URL op te halen.
-11. Als u uw **live-gebeurtenis** niet meer zichtbaar wilt maken, moet u het streamen van de gebeurtenis stoppen en de **streaming-Locator**verwijderen.
+11. Als u uw **live-gebeurtenis** niet meer zichtbaar wilt maken, moet u het streamen van de gebeurtenis stoppen en de **streaming-Locator** verwijderen.
 12. Als u klaar bent met het streamen van gebeurtenissen en de resources wilt opruimen die eerder zijn ingericht, volgt u de volgende procedure.
 
     * Stop het pushen van de stream vanuit het coderingsprogramma.
@@ -135,4 +135,4 @@ Ga naar het artikel van de [Azure Media Services-community](media-services-commu
 
 * [Snelstartgids voor live streamen](live-events-wirecast-quickstart.md)
 * [Zelf studie over live streamen](stream-live-tutorial-with-api.md)
-* [Migratie richtlijnen voor het overstappen van Media Services versie 2 naar v3](migrate-from-v2-to-v3.md)
+* [Migratie richtlijnen voor het overstappen van Media Services versie 2 naar v3](migrate-v-2-v-3-migration-introduction.md)

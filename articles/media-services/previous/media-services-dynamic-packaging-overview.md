@@ -13,12 +13,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/21/2019
 ms.author: juliako
-ms.openlocfilehash: 5b570efa54d99380f2beff5441dc40a3a10b902a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c4f099df071bccb8a74f29a98953fe1e0323b12
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89269111"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695574"
 ---
 # <a name="dynamic-packaging"></a>Dynamische verpakking
 
@@ -29,7 +29,7 @@ ms.locfileid: "89269111"
 > * [Versie 2](media-services-dynamic-packaging-overview.md)
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Microsoft Azure Media Services kunnen worden gebruikt voor het leveren van veel media bron bestands indelingen, mediastreaming en indelingen voor inhouds beveiliging voor diverse client technologieën (bijvoorbeeld iOS, XBOX, Silverlight, Windows 8). Deze clients begrijpen verschillende protocollen, bijvoorbeeld iOS vereist een HTTP Live Streaming (HLS) v4-indeling en Silverlight en Xbox vereisen Smooth Streaming. Als u een set apparaatafhankelijke bitrate-bestanden (ISO base media 14496-12) hebt of een set adaptieve bitrate Smooth Streaming bestanden die u wilt gebruiken voor clients die een MPEG-DASH, HLS of Smooth Streaming begrijpen, moet u profiteren van Media Services dynamische verpakking.
 

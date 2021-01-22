@@ -13,21 +13,21 @@ ms.devlang: na
 ms.topic: article
 ms.date: 08/31/2020
 ms.author: juliako
-ms.openlocfilehash: d235316ad6a16cdc535c705ec88ec13d6963fb41
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
+ms.openlocfilehash: a95e6c9554c96a530b4c92832a57b4febda86002
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92910284"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695684"
 ---
 # <a name="configure-postman-for-media-services-v2-rest-api-calls"></a>Postman configureren voor Media Services v2-REST API-aanroepen
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
-In deze zelf studie wordt uitgelegd hoe u **postman** zo configureert dat deze kan worden gebruikt om Azure Media Services-rest API'S (AMS) aan te roepen. In de zelf studie ziet u hoe u omgevings-en verzamelings bestanden importeert in een **bericht** . De verzameling bevat gegroepeerde definities van HTTP-aanvragen die de REST-Api's van Azure Media Services (AMS) aanroepen. Het omgevingsbestand bevat variabelen die worden gebruikt door de verzameling.
+In deze zelf studie wordt uitgelegd hoe u **postman** zo configureert dat deze kan worden gebruikt om Azure Media Services-rest API'S (AMS) aan te roepen. In de zelf studie ziet u hoe u omgevings-en verzamelings bestanden importeert in een **bericht**. De verzameling bevat gegroepeerde definities van HTTP-aanvragen die de REST-Api's van Azure Media Services (AMS) aanroepen. Het omgevingsbestand bevat variabelen die worden gebruikt door de verzameling.
 
 Deze omgeving en verzameling wordt in artikelen gebruikt die laten zien hoe u verschillende taken met Azure Media Services REST-Api's kunt bezorgen.
 
@@ -35,16 +35,16 @@ Deze omgeving en verzameling wordt in artikelen gebruikt die laten zien hoe u ve
 
 - Installeer de [Postman](https://www.getpostman.com/) REST-client als u de REST-API's wilt uitvoeren die in een aantal AMS REST-zelfstudies worden weergegeven. 
 
-    We gebruiken **Postman** maar elk ander REST-hulpprogramma is hiervoor geschikt. Enkele andere alternatieven: **Visual Studio Code** met de REST-invoegtoepassing of **Telerik Fiddler** . 
+    We gebruiken **Postman** maar elk ander REST-hulpprogramma is hiervoor geschikt. Enkele andere alternatieven: **Visual Studio Code** met de REST-invoegtoepassing of **Telerik Fiddler**. 
 
 ## <a name="configure-the-environment"></a>De omgeving configureren 
 
-1. Maak een JSON-bestand dat de omgevings variabelen bevat die in AMS-zelf studies worden gebruikt. Noem het bestand (bijvoorbeeld **AzureMediaServices.postman_environment.jsop** ). Open het bestand en plak de code die de Postman-omgeving in de [code vermelding](postman-environment.md)definieert. 
-2. Open de **Postman** .
-3. Selecteer rechts van het scherm de optie **Manage environment** .
+1. Maak een JSON-bestand dat de omgevings variabelen bevat die in AMS-zelf studies worden gebruikt. Noem het bestand (bijvoorbeeld **AzureMediaServices.postman_environment.jsop**). Open het bestand en plak de code die de Postman-omgeving in de [code vermelding](postman-environment.md)definieert. 
+2. Open de **Postman**.
+3. Selecteer rechts van het scherm de optie **Manage environment**.
 
     ![In de scherm afbeelding ziet u de optie omgeving beheren geselecteerd.](./media/media-services-rest-upload-files/postman-create-env.png)
-4. Klik in het dialoogvenster **Manage environment** op **Import** .
+4. Klik in het dialoogvenster **Manage environment** op **Import**.
 5. Blader en selecteer de **AzureMediaServices.postman_environment.jsin** het bestand.
 6. De **Media** -omgeving wordt toegevoegd.
 7. Sluit het dialoogvenster.
@@ -54,7 +54,7 @@ Deze omgeving en verzameling wordt in artikelen gebruikt die laten zien hoe u ve
 
 ## <a name="configure-the-collection"></a>De collectie configureren
 
-1. Maak een JSON-bestand dat de **postman** -verzameling bevat met alle bewerkingen die nodig zijn om een bestand te uploaden naar Media Services. Noem het bestand (bijvoorbeeld **AzureMediaServicesOperations.postman_collection.jsop** ). Open het bestand en plak de code die de **postman** -verzameling definieert vanuit [deze code lijst](postman-collection.md).
+1. Maak een JSON-bestand dat de **postman** -verzameling bevat met alle bewerkingen die nodig zijn om een bestand te uploaden naar Media Services. Noem het bestand (bijvoorbeeld **AzureMediaServicesOperations.postman_collection.jsop**). Open het bestand en plak de code die de **postman** -verzameling definieert vanuit [deze code lijst](postman-collection.md).
 2. Klik op **Import** om het verzamelingbestand te importeren.
 3. Kies de **AzureMediaServicesOperations.postman_collection.jsin** het bestand.
 

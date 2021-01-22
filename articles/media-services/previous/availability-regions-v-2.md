@@ -14,19 +14,19 @@ ms.topic: conceptual
 ms.date: 11/03/2020
 ms.author: inhenkel
 ms.custom: references_regions
-ms.openlocfilehash: cf84e45ff43643c7e9a983b867194a7920aa1b57
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: 458927afc78c46ad365d437a574d0b40b32fc11e
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93351877"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695794"
 ---
 # <a name="media-services-regional-availability"></a>Regionale Beschik baarheid Media Services
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. Bekijk de nieuwste versie [Media Services v3](../latest/media-services-overview.md). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. Bekijk de nieuwste versie [Media Services v3](../latest/media-services-overview.md). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Met Microsoft Azure Media Services (AMS) kunt u veilig video- of audio-inhoud uploaden, opslaan, coderen en verpakken, zowel voor levering on-demand als levering via livestreaming aan verschillende clients (bijvoorbeeld tv, pc en mobiele apparaten).
 
@@ -40,9 +40,9 @@ Gebruik [Azure-producten per regio](https://azure.microsoft.com/global-infrastru
 
 ## <a name="streaming-endpoints"></a>Streaming-eindpunten
 
-Media Services-klanten kunnen een **Standard** -streaming-eindpunt of een Premium- **streaming** -eindpunt kiezen.
+Media Services-klanten kunnen een **Standard**-streaming-eindpunt of een Premium-**streaming**-eindpunt kiezen.
 
-|Naam|Status|Region
+|Name|Status|Regio
 |---|---|---|
 |Standard|Algemene beschikbaarheid|Alles|
 |Premium|Algemene beschikbaarheid|Alles|
@@ -67,7 +67,7 @@ Media Analytics is een verzameling spraakonderdelen en visuele onderdelen waarme
 > [!NOTE]
 > Sommige analyse media-processors worden buiten gebruik gesteld. Zie het onderwerp [oudere onderdelen](legacy-components.md) voor de pensioen datums.
 
-|Naam van mediaprocessor|Status|Region
+|Naam van mediaprocessor|Status|Regio
 |---|---|---|
 |Azure Media Face Detector|Preview|Alles|
 |Azure Media Indexer|Algemene beschikbaarheid|Alles|

@@ -12,12 +12,12 @@ ms.workload: data-services
 ms.custom: seo-lt-2019
 ms.topic: tutorial
 ms.date: 08/04/2020
-ms.openlocfilehash: 0041779abcd97901fb9315125a287a1d45cff133
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 02adb6f47b907fea402f8b312b3f4e8e117927ed
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96350106"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98693677"
 ---
 # <a name="tutorial-migrate-sql-server-to-an-azure-sql-managed-instance-online-using-dms"></a>Zelfstudie: SQL Server online migreren naar een Azure SQL Managed Instance met behulp van DMS
 
@@ -211,7 +211,7 @@ Nadat er een exemplaar van de service is gemaakt, zoekt u het exemplaar in de Az
 
     | | |
     |--------|---------|
-    |**SMB-netwerksharelocatie** | De lokale SMB-netwerkshare of Azure-bestandsshare die de volledige back-upbestanden bevat van uw database en latere back-logbestanden van transacties die Azure Database Migration Service kan gebruiken voor migratie. Het serviceaccount waarmee het SQL Server-bronexemplaar wordt uitgevoerd, moet lees-\schrijfbevoegdheid op deze netwerkshare hebben. Geef een FQDN-naam of IP-adressen op van de server in de netwerkshare, bijvoorbeeld '\\\servernaam.domeinnaam.com\back-upmap' of '\\\IP-adres\back-upmap'. Voor betere prestaties kunt u het beste afzonderlijke mappen gebruiken voor elke database die moet worden gemigreerd. U kunt het pad naar de bestandsshare op databaseniveau opgeven met behulp van de optie **Geavanceerde instellingen**. |
+    |**SMB-netwerksharelocatie** | De lokale SMB-netwerkshare of Azure-bestandsshare die de volledige back-upbestanden bevat van uw database en latere back-logbestanden van transacties die Azure Database Migration Service kan gebruiken voor migratie. Het serviceaccount waarmee het SQL Server-bronexemplaar wordt uitgevoerd, moet lees-\schrijfbevoegdheid op deze netwerkshare hebben. Geef een FQDN-naam of IP-adressen op van de server in de netwerkshare, bijvoorbeeld '\\\servernaam.domeinnaam.com\back-upmap' of '\\\IP-adres\back-upmap'. Voor betere prestaties kunt u het beste afzonderlijke mappen gebruiken voor elke database die moet worden gemigreerd. U kunt het pad naar de bestandsshare op databaseniveau opgeven met behulp van de optie **Geavanceerde instellingen**. Als u problemen ondervindt met het maken van verbinding met de SMB-share, raadpleegt u [SMB-share](known-issues-azure-sql-db-managed-instance-online.md#smb-file-share-connectivity). |
     |**Gebruikersnaam** | Zorg ervoor dat de Windows-gebruiker volledig beheer heeft over de netwerkshare die u hierboven hebt opgegeven. Azure Database Migration Service imiteert de gebruikersreferenties voor het uploaden van de back-upbestanden naar een Azure-opslagcontainer voor herstelbewerkingen. Als u een Azure-bestandsshare gebruikt, gebruikt u de naam van het opslagaccount voorafgegaan door AZURE\ als de gebruikersnaam. |
     |**Wachtwoord** | Het wachtwoord voor de gebruiker. Als u een Azure-bestandsshare gebruikt, gebruikt u een sleutel voor het opslagaccount als wachtwoord. |
     |**Abonnement van het Azure Storage-account** | Selecteer het abonnement met het Azure Storage-account. |

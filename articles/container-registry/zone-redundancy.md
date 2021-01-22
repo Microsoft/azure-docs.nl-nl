@@ -3,12 +3,12 @@ title: Zone-redundant REGI ster voor hoge Beschik baarheid
 description: Meer informatie over het inschakelen van zone redundantie in Azure Container Registry. Maak een container register of replicatie in een Azure-beschikbaarheids zone. Zone redundantie is een functie van de service laag Premium.
 ms.topic: article
 ms.date: 01/07/2021
-ms.openlocfilehash: 8c03b2bb093f8d0fa70ff5132f7448ce86e8779d
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 7de8ed101d2df9e491c475f522a56580798c49a9
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127346"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696275"
 ---
 # <a name="enable-zone-redundancy-in-azure-container-registry-for-resiliency-and-high-availability"></a>Zone redundantie inschakelen in Azure Container Registry voor tolerantie en hoge Beschik baarheid
 
@@ -39,7 +39,7 @@ Als u de Azure CLI wilt gebruiken om zone redundantie in te scha kelen, hebt u A
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Als dat nodig is, voert u de opdracht [AZ Group Create](/cli/az/group#az_group_create) uit om een resource groep te maken voor het REGI ster.
+Als dat nodig is, voert u de opdracht [AZ Group Create](/cli/azure/group#az_group_create) uit om een resource groep te maken voor het REGI ster.
 
 ```azurecli
 az group create --name <resource-group-name> --location <location>
@@ -47,7 +47,7 @@ az group create --name <resource-group-name> --location <location>
 
 ### <a name="create-zone-enabled-registry"></a>REGI ster met zone-ingeschakeld maken
 
-Voer de opdracht [AZ ACR Create](/cli/az/acr#az_acr_create) uit om een zone-redundant REGI ster te maken in de laag Premium-Service. Kies een regio die [beschikbaarheids zones](../availability-zones/az-region.md) voor Azure container Registry ondersteunt. In het volgende voor beeld wordt zone redundantie ingeschakeld in de regio *oostus* . Raadpleeg de `az acr create` Help van de opdracht voor meer Register opties.
+Voer de opdracht [AZ ACR Create](/cli/azure/acr?view=azure-cli-latest#az_acr_create) uit om een zone-redundant REGI ster te maken in de laag Premium-Service. Kies een regio die [beschikbaarheids zones](../availability-zones/az-region.md) voor Azure container Registry ondersteunt. In het volgende voor beeld wordt zone redundantie ingeschakeld in de regio *oostus* . Raadpleeg de `az acr create` Help van de opdracht voor meer Register opties.
 
 ```azurecli
 az acr create \
@@ -69,7 +69,7 @@ In de uitvoer van de opdracht noteert u de `zoneRedundancy` eigenschap van het R
 
 ### <a name="create-zone-redundant-replication"></a>Zone-redundante replicatie maken
 
-Voer de opdracht [AZ ACR Replication Create](/cli/az/acr/replication#az_acr_replication_create) uit om een zone-redundante register replica te maken in een regio die [beschikbaarheids zones ondersteunt](../availability-zones/az-region.md) voor Azure container Registry, zoals *westus2*. 
+Voer de opdracht [AZ ACR Replication Create](/cli/azure/acr/replication?view=azure-cli-latest#az_acr_replication_create) uit om een zone-redundante register replica te maken in een regio die [beschikbaarheids zones ondersteunt](../availability-zones/az-region.md) voor Azure container Registry, zoals *westus2*. 
 
 ```azurecli
 az acr replication create \
@@ -113,7 +113,7 @@ Een zone-redundante replicatie maken:
 
 ### <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Als dat nodig is, voert u de opdracht [AZ Group Create](/cli/az/group#az_group_create) uit om een resource groep te maken voor het REGI ster in een regio die [beschikbaarheids zones ondersteunt](../availability-zones/az-region.md) voor Azure container Registry, zoals *oostus*. Deze regio wordt gebruikt door de sjabloon om de register locatie in te stellen.
+Als dat nodig is, voert u de opdracht [AZ Group Create](/cli/azure/group#az_group_create) uit om een resource groep te maken voor het REGI ster in een regio die [beschikbaarheids zones ondersteunt](../availability-zones/az-region.md) voor Azure container Registry, zoals *oostus*. Deze regio wordt gebruikt door de sjabloon om de register locatie in te stellen.
 
 ```azurecli
 az group create --name <resource-group-name> --location eastus
@@ -219,7 +219,7 @@ Kopieer de volgende inhoud naar een nieuw bestand en sla het op met een bestands
   }
 ```
 
-Voer de volgende opdracht [AZ Deployment Group Create](/cli/az/deployment#az_group_deployment_create) uit om het REGI ster te maken met het voor gaande sjabloon bestand. Indien aangegeven, bieden:
+Voer de volgende opdracht [AZ Deployment Group Create](/cli/azure/group/deployment?view=azure-cli-latest#az_group_deployment_create) uit om het REGI ster te maken met het voor gaande sjabloon bestand. Indien aangegeven, bieden:
 
 * een unieke register naam of implementeer de sjabloon zonder para meters, zodat er een unieke naam voor u wordt gemaakt
 * een locatie voor de replica die beschikbaarheids zones ondersteunt, zoals *westus2*

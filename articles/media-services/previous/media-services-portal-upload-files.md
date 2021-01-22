@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 00035782a17936405b2b042035220dde87da12b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fdb301cd719d98d806e2a9e539cd81e6778461bb
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89257055"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695303"
 ---
 # <a name="upload-files-to-a-media-services-account-in-the-azure-portal"></a>Bestanden uploaden naar een Media Services-account via Azure Portal
 
@@ -32,7 +32,7 @@ ms.locfileid: "89257055"
 > 
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. Voor de bijgewerkte Upload bestanden met de portal raadpleegt u [Portal gebruiken om inhoud te uploaden, coderen en streamen](../latest/manage-assets-quickstart.md).<br/>Kijk ook eens naar: [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. Voor de bijgewerkte Upload bestanden met de portal raadpleegt u [Portal gebruiken om inhoud te uploaden, coderen en streamen](../latest/manage-assets-quickstart.md).<br/>Kijk ook eens naar: [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 In Azure Media Services uploadt u de digitale bestanden naar een asset. De asset kan video, audio, afbeeldingen, verzamelingen van miniaturen, tekstsporen en ondertitelingsbestanden (en de metagegevens voor deze bestanden) bevatten. Nadat de bestanden zijn geüpload, wordt uw inhoud veilig opgeslagen in de cloud voor verdere verwerking en streaming.
 

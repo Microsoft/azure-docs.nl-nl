@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 03/19/2019
 ms.author: juliako
-ms.openlocfilehash: f8b2454bb0e39f5923af00502367f7b16bb040a4
-ms.sourcegitcommit: 2c586a0fbec6968205f3dc2af20e89e01f1b74b5
+ms.openlocfilehash: 0cc3e26895f6bd11ba4f2e5f0b04e4dd36a4fcab
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92018981"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695286"
 ---
 # <a name="get-started-with-delivering-content-on-demand-by-using-the-azure-portal"></a>Aan de slag met het leveren van inhoud op aanvraag via Azure Portal
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 In deze zelfstudie wordt u begeleid bij het implementeren van een basisservice voor levering van video on demand-inhoud met een Azure Media Services-toepassing via Azure Portal.
 
@@ -53,7 +53,7 @@ Bij het werken met Azure Media Services wordt video meestal via Adaptive Bitrate
 
 Het streaming-eindpunt starten:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Selecteer **instellingen**  >  **streaming-eind punten**. 
 3. Selecteert het standaardstreaming-eindpunt. Het venster **standaard gegevens van het streaming-eind punt** wordt weer gegeven.
 4. Selecteer het pictogram **Start**.

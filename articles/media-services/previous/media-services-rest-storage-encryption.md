@@ -15,19 +15,19 @@ ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 8a3a51644f61d4a1e118798986f9c6fb6c52d0e5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4ae1d19ee3da59c43722ca1ea720eb441f6dd484
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89264161"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696207"
 ---
 # <a name="encrypting-your-content-with-storage-encryption"></a>Uw inhoud versleutelen met opslag versleuteling
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> U hebt een Azure-account nodig om deze zelfstudie te voltooien. Zie [Gratis proefversie van Azure](https://azure.microsoft.com/pricing/free-trial/) voor meer informatie.   > er geen nieuwe functies of functionaliteit aan Media Services v2 worden toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> U hebt een Azure-account nodig om deze zelfstudie te voltooien. Zie [Gratis proefversie van Azure](https://azure.microsoft.com/pricing/free-trial/) voor meer informatie.   > er geen nieuwe functies of functionaliteit aan Media Services v2 worden toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 >
 
 Dit artikel bevat een overzicht van de AMS-opslag versleuteling en laat zien hoe u de versleutelde inhoud kunt uploaden:
@@ -110,7 +110,7 @@ Hieronder vindt u algemene stappen voor het genereren van inhouds sleutels die u
     }
     ```
 
-5. Maak de inhouds sleutel met de **EncryptedContentKey** (geconverteerd naar base64-gecodeerde teken reeks), **ProtectionKeyId**, **ProtectionKeyType**, **ContentKeyType**en **controlesom** waarden die u in de vorige stappen hebt ontvangen.
+5. Maak de inhouds sleutel met de **EncryptedContentKey** (geconverteerd naar base64-gecodeerde teken reeks), **ProtectionKeyId**, **ProtectionKeyType**, **ContentKeyType** en **controlesom** waarden die u in de vorige stappen hebt ontvangen.
 
     Voor opslag versleuteling moeten de volgende eigenschappen worden opgenomen in de hoofd tekst van de aanvraag.
 

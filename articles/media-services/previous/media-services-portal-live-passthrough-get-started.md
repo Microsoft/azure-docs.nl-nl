@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: conceptual
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 707c12cac6bbceee925c4710eff29482f687d47f
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 08d1e9cd281cf41a79d1b30d709062c01abbab33
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040722"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695438"
 ---
 # <a name="perform-live-streaming-with-on-premises-encoders-using-azure-portal"></a>Live streamen met on-premises encoders met behulp van Azure Portal
 
@@ -33,7 +33,7 @@ ms.locfileid: "93040722"
 > 
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Deze zelfstudie bevat de stappen voor het maken van een **kanaal** via Azure Portal dat is geconfigureerd voor een doorvoerlevering. 
 
@@ -112,7 +112,7 @@ In deze secties ziet u hoe u de optie **Snelle invoer** gebruikt om een doorvoer
 Zie [Live streamen met on-premises coderingsprogramma's die multi-bitrate streams maken](media-services-live-streaming-with-onprem-encoders.md) voor meer informatie over doorvoerkanalen.
 
 1. Selecteer uw Azure Media Services-account in [Azure Portal](https://portal.azure.com/).
-2. Klik in het venster **Instellingen** op **Live streamen** . 
+2. Klik in het venster **Instellingen** op **Live streamen**. 
    
     ![Aan de slag](./media/media-services-portal-passthrough-get-started/media-services-getting-started.png)
    
@@ -120,13 +120,13 @@ Zie [Live streamen met on-premises coderingsprogramma's die multi-bitrate stream
 3. Klik op **Snelle invoer** om een doorvoerkanaal te maken met het RTMP-opnameprotocol.
    
     Het venster **EEN NIEUW KANAAL MAKEN** wordt weergegeven.
-4. Geef het nieuwe kanaal een naam en klik op **Maken** . 
+4. Geef het nieuwe kanaal een naam en klik op **Maken**. 
    
     Hierop wordt een doorvoerkanaal gemaakt met het RTMP-opnameprotocol.
 
 ## <a name="create-events"></a>Gebeurtenissen maken
 1. Selecteer een kanaal waaraan u een gebeurtenis wilt toevoegen.
-2. Klik op de knop **Live gebeurtenis** .
+2. Klik op de knop **Live gebeurtenis**.
 
 ![Gebeurtenis](./media/media-services-portal-passthrough-get-started/media-services-create-events.png)
 
@@ -151,7 +151,7 @@ Zie [Live streamen met on-premises coderingsprogramma's die multi-bitrate stream
 ## <a name="view-archived-content"></a>Gearchiveerde inhoud weergeven
 Zelfs na het stoppen en verwijderen van de gebeurtenis kunnen gebruikers de gearchiveerde inhoud als video op aanvraag streamen, mits u de asset niet hebt verwijderd. Een asset kan niet worden verwijderd als deze wordt gebruikt door een gebeurtenis. U moet eerst de gebeurtenis verwijderen. 
 
-Voor het beheren van uw assets selecteert u **instelling** en klikt u op **assets** .
+Voor het beheren van uw assets selecteert u **instelling** en klikt u op **assets**.
 
 ![Assets](./media/media-services-portal-passthrough-get-started/media-services-assets.png)
 

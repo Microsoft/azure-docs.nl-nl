@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: overview
 ms.date: 11/23/2020
 ms.author: trbye
-ms.openlocfilehash: 3b20773de62f036b507f1612f2b38d613d54ba2f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: d3d9f41876cf1310fe25a275624f609031c05b00
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485192"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601881"
 ---
 # <a name="what-is-the-speech-service"></a>Wat is de Speech-service?
 
@@ -36,7 +36,7 @@ De volgende onderdelen maken deel uit van de spraakservice. Gebruik de koppeling
 | [Tekst naar spraak](text-to-speech.md) | Tekst naar spraak | Bij tekst-naar-spraak wordt invoertekst omgezet in menselijke spraak die is samengesteld met behulp van [SSML (Speech Synthesis Markup Language)](speech-synthesis-markup.md). Kies uit standaardstemmen en neurale stemmen (zie [Taalondersteuning](language-support.md)). | [Ja](./speech-sdk.md) | [Ja](#reference-docs) |
 | | [Aangepaste stemmen maken](#customize-your-speech-experience) | Maak aangepaste spraakstijlen die uniek zijn voor uw merk of product. | Nee | [Ja](#reference-docs) |
 | [Speech Translation](speech-translation.md) | Spraakomzetting | Spraakomzetting maakt realtime omzetting van spraak in meerdere talen mogelijk voor uw toepassingen, hulpprogramma's en apparaten. Gebruik deze service voor het omzetten van spraak-naar-spraak en spraak-naar-tekst. | [Ja](./speech-sdk.md) | Nee |
-| [Spraakassistenten](voice-assistants.md) | Spraakassistenten | Spraakassistenten die gebruikmaken van de spraakservice stellen ontwikkelaars in staat om natuurlijke, menselijke gespreksinterfaces te maken voor hun toepassingen en gebruikstoepassingen. De spraakassistentservice biedt een snelle, betrouwbare interactie tussen een apparaat en een assistentimplementatie die gebruikmaakt van het Direct Line Speech-kanaal van het Bot Framework of de geïntegreerde service voor het uitvoeren van aangepaste opdrachten (preview) voor het uitvoeren van taken. | [Ja](voice-assistants.md) | Nee |
+| [Spraakassistenten](voice-assistants.md) | Spraakassistenten | Spraakassistenten die gebruikmaken van de spraakservice stellen ontwikkelaars in staat om natuurlijke, menselijke gespreksinterfaces te maken voor hun toepassingen en gebruikstoepassingen. De spraakassistentservice biedt een snelle, betrouwbare interactie tussen een apparaat en een assistentimplementatie die gebruikmaakt van het Direct Line Speech-kanaal van Bot Framework of de geïntegreerde service voor het uitvoeren van aangepaste opdrachten voor het uitvoeren van taken. | [Ja](voice-assistants.md) | Nee |
 | [Speaker Recognition](speaker-recognition-overview.md) | Sprekercontrole en -identificatie | De Speaker Recognition-service biedt algoritmen die sprekers controleren en identificeren aan de hand van hun unieke stemkenmerken. Speaker Recognition wordt gebruikt voor het beantwoorden van de vraag 'Wie spreekt er?'. | Ja | [Ja](/rest/api/speakerrecognition/) |
 
 

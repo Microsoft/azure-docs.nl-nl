@@ -10,13 +10,13 @@ ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
 ms.custom: seo-lt-2019
-ms.date: 01/11/2021
-ms.openlocfilehash: a411f4ce261ee6d203e274efe3cf23ca23203453
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.date: 01/22/2021
+ms.openlocfilehash: 48450218975f2c6ee14e12af8d722942e8db1347
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070878"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695845"
 ---
 # <a name="copy-and-transform-data-in-azure-synapse-analytics-by-using-azure-data-factory"></a>Gegevens in azure Synapse Analytics kopiëren en transformeren met behulp van Azure Data Factory
 
@@ -76,6 +76,9 @@ Raadpleeg de volgende secties over respectievelijk de vereisten en JSON-voor bee
 - [SQL-verificatie](#sql-authentication)
 - Verificatie van Azure AD-toepassings token: [Service-Principal](#service-principal-authentication)
 - Verificatie van Azure AD-toepassings tokens: [beheerde identiteiten voor Azure-resources](#managed-identity)
+
+>[!TIP]
+>Wanneer u een gekoppelde service voor Azure Synapse **serverloze** SQL-groep maakt vanuit de gebruikers interface, kiest u hand matig invoeren in plaats van te bladeren vanuit het abonnement.
 
 >[!TIP]
 >Als u de fout code ' UserErrorFailedToConnectToSqlServer ' aanmeldt en er een bericht wordt weer gegeven als ' de sessie limiet voor de data base is XXX en is bereikt. ', voegt u toe `Pooling=false` aan uw Connection String en probeert u het opnieuw.
@@ -226,7 +229,7 @@ De volgende eigenschappen worden ondersteund voor Azure Synapse Analytics-gegeve
 | :-------- | :----------------------------------------------------------- | :-------------------------- |
 | type      | De eigenschap **type** van de DataSet moet worden ingesteld op **AzureSqlDWTable**. | Ja                         |
 | schema | De naam van het schema. |Nee voor bron, ja voor Sink  |
-| table | De naam van de tabel/weer gave. |Nee voor bron, ja voor Sink  |
+| tabel | De naam van de tabel/weer gave. |Nee voor bron, ja voor Sink  |
 | tableName | De naam van de tabel/weer gave met schema. Deze eigenschap wordt ondersteund voor achterwaartse compatibiliteit. Gebruik en voor nieuwe werk `schema` belasting `table` . | Nee voor bron, ja voor Sink |
 
 ### <a name="dataset-properties-example"></a>Voor beeld van eigenschappen van gegevensset
@@ -391,7 +394,7 @@ Als u gegevens wilt kopiëren naar Azure Synapse Analytics, stelt u het sink-typ
 | writeBatchTimeout | Wacht tijd voordat de batch INSERT-bewerking is voltooid voordat er een time-out optreedt.<br/><br/>De toegestane waarde is **time span**. Voor beeld: "00:30:00" (30 minuten). | Nee.<br/>Toep assen bij het gebruik van bulksgewijs invoegen.        |
 | preCopyScript     | Geef een SQL-query voor de Kopieer activiteit op die moet worden uitgevoerd voordat er in elke uitvoering gegevens naar Azure Synapse Analytics worden geschreven. Gebruik deze eigenschap om de vooraf geladen gegevens op te schonen. | Nee                                            |
 | tableOption | Hiermee wordt aangegeven of [de Sink-tabel automatisch](copy-activity-overview.md#auto-create-sink-tables) moet worden gemaakt als deze niet bestaat op basis van het bron schema. Toegestane waarden zijn: `none` (standaard), `autoCreate` . |Nee |
-| disableMetricsCollection | Data Factory verzamelt metrische gegevens, zoals Azure Synapse Analytics Dwu's voor het optimaliseren van de Kopieer prestaties en aanbevelingen, waarmee extra toegang tot de hoofd database wordt geïntroduceerd. Als u zich zorgen maakt over dit gedrag, geeft u `true` op dat u deze functie wilt uitschakelen. | Nee (standaard instelling `false` ) |
+| disableMetricsCollection | Data Factory verzamelt metrische gegevens zoals Azure Synapse Analytics Dwu's voor het optimaliseren van de Kopieer prestaties en aanbevelingen, die extra toegang tot de hoofd database bieden. Als u zich zorgen maakt over dit gedrag, geeft u `true` op dat u deze functie wilt uitschakelen. | Nee (standaard instelling `false` ) |
 
 #### <a name="azure-synapse-analytics-sink-example"></a>Voor beeld van Azure Synapse Analytics-Sink
 
@@ -780,6 +783,7 @@ Instellingen die specifiek zijn voor Azure Synapse Analytics, zijn beschikbaar o
 
 - Wanneer u beheerde identiteits verificatie voor uw gekoppelde opslag service gebruikt, moet u de benodigde configuraties voor [Azure-Blob](connector-azure-blob-storage.md#managed-identity) en [Azure data Lake Storage Gen2](connector-azure-data-lake-storage.md#managed-identity) .
 - Als uw Azure Storage is geconfigureerd met het VNet-service-eind punt, moet u beheerde identiteits verificatie gebruiken met ' vertrouwde micro soft-service toestaan ' die is ingeschakeld voor het opslag account, raadpleegt u de [gevolgen van het gebruik van VNet-service-eind punten met Azure Storage](../azure-sql/database/vnet-service-endpoint-rule-overview.md#impact-of-using-virtual-network-service-endpoints-with-azure-storage).
+- Wanneer u een Azure Synapse **serverloze** SQL-groep als bron gebruikt, wordt fase ring inschakelen niet ondersteund.
 
 **Query**: als u in het invoer veld query selecteert, voert u een SQL-query in voor uw bron. Deze instelling overschrijft elke tabel die u in de gegevensset hebt gekozen. **Order by** -componenten worden hier niet ondersteund, maar u kunt een volledige Select from-instructie instellen. U kunt ook door de gebruiker gedefinieerde tabel functies gebruiken. **Select * from udfGetData ()** is een UDF in SQL die een tabel retourneert. Met deze query wordt een bron tabel geproduceerd die u in uw gegevens stroom kunt gebruiken. Het gebruik van query's is ook een uitstekende manier om rijen te verminderen voor het testen of voor Zoek opdrachten.
 
@@ -853,7 +857,7 @@ Wanneer u gegevens kopieert vanuit of naar Azure Synapse Analytics, worden de vo
 | nchar                                 | Teken reeks, char []                 |
 | numeriek                               | Decimaal                        |
 | nvarchar                              | Teken reeks, char []                 |
-| werkelijk                                  | Enkel                         |
+| werkelijk                                  | Enkelvoudig                         |
 | rowversion                            | Byte []                         |
 | smalldatetime                         | DateTime                       |
 | smallint                              | Int16                          |

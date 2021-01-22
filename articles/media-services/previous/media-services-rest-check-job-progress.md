@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: 429e443ea0de665632cbacaee13a3ff3be443b9d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 252495df8189f677ada66b67b8a845b320c81aca
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89263396"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98694910"
 ---
 # <a name="how-to-check-job-progress"></a>Procedure: de voortgang van de taak controleren
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Wanneer u taken uitvoert, hebt u vaak een manier nodig om de voortgang van de taak bij te houden. U kunt de taak status achterhalen met behulp van de eigenschap State van het project. Zie Eigenschappen van de [taak entiteit](/rest/api/media/operations/job#job_entity_properties)voor meer informatie over de eigenschap State.
 

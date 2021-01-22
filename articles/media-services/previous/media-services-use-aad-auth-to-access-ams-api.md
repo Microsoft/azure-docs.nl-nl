@@ -13,19 +13,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 9dae3b1adc1f7fecf6a34fc51d2a35bf4c98ea65
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.openlocfilehash: a26359c46caa8085384313f1c385c5740abc0b32
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425914"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98694532"
 ---
 # <a name="access-the-azure-media-services-api-with-azure-ad-authentication"></a>Toegang tot de API van Azure Media Services met Azure Active Directory-verificatie 
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)] 
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 De Azure Media Services-API is een REST API. U kunt deze gebruiken om bewerkingen uit te voeren op media bronnen met behulp van een REST API of door beschik bare client-Sdk's te gebruiken. Azure Media Services biedt een Media Services client-SDK voor Microsoft .NET. Om te worden geautoriseerd voor toegang tot Media Services-resources en de API van Media Services, moet u eerst worden geverifieerd. 
 
@@ -141,7 +141,7 @@ Zie [Azure AD-verificatie gebruiken om toegang te krijgen tot Azure Media Servic
 
 Als u de Media Services .NET-client-SDK niet gebruikt, moet u hand matig een Azure AD-token aanvraag maken met behulp van para meters die worden beschreven in stap 1. Zie [de Azure AD-verificatie bibliotheek gebruiken om het Azure AD-token op te halen](../../active-directory/azuread-dev/active-directory-authentication-libraries.md)voor meer informatie.
 
-## <a name="troubleshooting"></a>Probleemoplossing
+## <a name="troubleshooting"></a>Problemen oplossen
 
 Uitzonde ring: de externe server heeft een fout geretourneerd: (401) niet toegestaan.
 

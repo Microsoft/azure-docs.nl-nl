@@ -12,12 +12,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/19/2021
 ms.author: zhchia
-ms.openlocfilehash: f9e462d66e438e42c40b16ba9b818ddd330e9e5a
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 7afcf6c5814917b3356d86e7288fd2920a04cad7
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98612061"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695989"
 ---
 # <a name="tutorial-configure-templafy-openid-connect-for-automatic-user-provisioning"></a>Zelf studie: Templafy OpenID Connect Connect configureren voor het automatisch inrichten van gebruikers
 
@@ -133,7 +133,26 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Templafy OpenID Connect Connect in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Templafy OpenID Connect Connect for update-bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Templafy OpenID Connect Connect-gebruikers kenmerken](media/templafy-openid-connect-provisioning-tutorial/user-attribute.png)
+   |Kenmerk|Type|Ondersteund voor filteren|
+   |---|---|---|
+   |userName|Tekenreeks|&check;|
+   |actief|Booleaans|
+   |displayName|Tekenreeks|
+   |title|Tekenreeks|
+   |preferredLanguage|Tekenreeks|
+   |name.givenName|Tekenreeks|
+   |name.familyName|Tekenreeks|
+   |phoneNumbers[type eq "work"].value|Tekenreeks|
+   |phoneNumbers[type eq "mobile"].value|Tekenreeks|
+   |phoneNumbers[type eq "fax"].value|Tekenreeks|
+   |externalId|Tekenreeks|
+   |addresses[type eq "work"].locality|Tekenreeks|
+   |addresses[type eq "work"].postalCode|Tekenreeks|
+   |addresses[type eq "work"].region|Tekenreeks|
+   |addresses[type eq "work"].streetAddress|Tekenreeks|
+   |addresses[type eq "work"].country|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Tekenreeks|
 
 10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Templafy**.
 
@@ -141,7 +160,11 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Templafy OpenID Connect Connect in de sectie **kenmerk toewijzing** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de groepen in Templafy OpenID Connect Connect for update-bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Kenmerken van Templafy OpenID Connect Connect-groep](media/templafy-openid-connect-provisioning-tutorial/group-attribute.png)
+      |Kenmerk|Type|Ondersteund voor filteren|
+      |---|---|---|
+      |displayName|Tekenreeks|&check;|
+      |leden|Naslaginformatie|
+      |externalId|Tekenreeks|      
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

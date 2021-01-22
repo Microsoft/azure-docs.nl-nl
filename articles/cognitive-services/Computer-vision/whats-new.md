@@ -8,18 +8,29 @@ manager: nitinme
 ms.service: cognitive-services
 ms.subservice: computer-vision
 ms.topic: overview
-ms.date: 12/15/2020
+ms.date: 01/13/2021
 ms.author: pafarley
-ms.openlocfilehash: 98b8cca95b8815b32fb5de6567adcf4f150551eb
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 33987be39258adc74cf4f88dbb0544f7026f6086
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561967"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98183350"
 ---
 # <a name="whats-new-in-computer-vision"></a>Wat is er nieuw in Computer Vision?
 
 Meer informatie over nieuwe functies in de service. Dit kunnen opmerkingen bij de release, video's, blogposts en andere soorten informatie zijn. Voeg een bladwijzer toe voor deze pagina om up-to-date te blijven over de service.
+
+## <a name="january-2021"></a>Januari 2021
+
+### <a name="spatial-analysis-container-update"></a>Update van de container voor ruimtelijke analyse
+
+Er is een nieuwe versie van de [container voor ruimtelijke analyse](spatial-analysis-container.md) vrijgegeven met een nieuwe functieset. Met deze Docker-container kunt u realtime streaming-video analyseren om inzicht te krijgen in de ruimtelijke relaties tussen mensen en hun bewegingen door fysieke omgevingen. 
+
+* [Bewerkingen voor ruimtelijke analyse](spatial-analysis-operations.md) kunnen nu worden geconfigureerd om te detecteren of een persoon gezichtsbedekkende bescherming draagt, zoals een masker. 
+    * Voor de bewerkingen `personcount`, `personcrossingline` en `personcrossingpolygon` kan een maskerclassificatie worden ingeschakeld door parameter `ENABLE_FACE_MASK_CLASSIFIER` te configureren.
+    * De kenmerken `face_mask` en `face_noMask` worden geretourneerd als metagegevens met een betrouwbaarheidsscore voor elke persoon die in de videostroom wordt gedetecteerd
+
 
 ## <a name="october-2020"></a>Oktober 2020
 

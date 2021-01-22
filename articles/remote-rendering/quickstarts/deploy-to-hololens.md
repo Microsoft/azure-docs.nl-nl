@@ -5,12 +5,12 @@ author: jakrams
 ms.author: jakras
 ms.date: 02/14/2020
 ms.topic: quickstart
-ms.openlocfilehash: 3eec935d0a25f9510cd9a2f6e00b7ac22756e697
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: a5a44b9d27901fcd00f8813096de6bbae5f2310d
+ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "88796796"
+ms.lasthandoff: 01/13/2021
+ms.locfileid: "98179942"
 ---
 # <a name="quickstart-deploy-unity-sample-to-hololens"></a>Quickstart: Unity-voorbeeld implementeren in HoloLens
 
@@ -48,7 +48,7 @@ Controleer of uw referenties correct zijn opgeslagen bij de scène en u verbindi
 1. Ga voor het project 'QuickStart' naar *Eigenschappen > Foutopsporing*
     1. Controleer of de configuratie *Release* actief is
     1. Stel *Op te starten foutopsporingsprogramma* in op **Externe computer**
-    1. Wijzig *Computernaam* naar het **IP-adres van uw HoleLens**
+    1. Wijzig *Computernaam* in het **IP-adres van uw HoloLens**
 
 ## <a name="launch-the-sample-project"></a>Het voorbeeldproject openen
 

@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 03/20/2019
 ms.author: juliako
-ms.openlocfilehash: a541e1b068ec3667120bbb31e65ca7bc35febadb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5e3d7e61b6c2a6ad3c121da9c0198c95ac24850
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89265912"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98694568"
 ---
 # <a name="streaming-endpoints-overview"></a>Overzicht van streaming-eind punten  
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 In Microsoft Azure Media Services (AMS) vertegenwoordigt een **streaming-eind punt** een streaming-service die inhoud rechtstreeks kan leveren aan een client speler of een Content Delivery Network (CDN) voor verdere distributie. Media Services biedt ook naadloze Azure CDN integratie. De uitgaande stroom van een StreamingEndpoint-service kan een live stream, een video op aanvraag of een progressief downloaden van uw asset in uw Media Services-account zijn. Elk Azure Media Services account bevat een standaard-StreamingEndpoint. Aanvullende StreamingEndpoints kunnen worden gemaakt onder het account. Er zijn twee versies van StreamingEndpoints, 1,0 en 2,0. Vanaf 10 januari 2017 zullen nieuw gemaakte AMS-accounts versie 2,0 **standaard** StreamingEndpoint bevatten. Extra streaming-eind punten die u aan dit account toevoegt, zijn ook versie 2,0. Deze wijziging heeft geen invloed op de bestaande accounts. de bestaande StreamingEndpoints wordt versie 1,0 en kan worden bijgewerkt naar versie 2,0. Deze wijziging is van invloed op wijzigingen in de facturerings-en onderdelen (Zie de sectie **streaming-typen en-versies** die hieronder worden beschreven) voor meer informatie.
 
@@ -54,7 +54,7 @@ Vanaf de versie van Media Services januari 2017 hebt u twee streaming-typen: **S
 
 |Type|Beschrijving|
 |--------|--------|  
-|**Standaard**|Het standaard streaming-eind punt is een **standaard** type, dat kan worden gewijzigd in het Premium-type door streaming-eenheden aan te passen.|
+|**Standard**|Het standaard streaming-eind punt is een **standaard** type, dat kan worden gewijzigd in het Premium-type door streaming-eenheden aan te passen.|
 |**Premium** |Deze optie is geschikt voor professionele scenario's die een hogere schaal of beheer vereisen. U gaat naar een **Premium** -type door streaming-eenheden aan te passen.<br/>Toegewezen streaming-eind punten zijn Live in geïsoleerde omgevingen en concurreren niet voor resources.|
 
 Voor klanten die inhoud willen leveren aan grote Internet doelgroepen, raden we u aan CDN op het streaming-eind punt in te scha kelen.
@@ -80,9 +80,9 @@ Als het streaming-eind punt van uw **versie 1,0** >= 1 Premium streaming-eenhede
 |Type|StreamingEndpointVersion|ScaleUnits|CDN|Billing|
 |--------------|----------|-----------------|-----------------|-----------------|
 |Klassiek|1.0|0|NA|Gratis|
-|Standard streaming-eind punt (preview-versie)|2.0|0|Ja|Teken|
-|Premium-streaming-eenheden|1.0|>0|Ja|Teken|
-|Premium-streaming-eenheden|2.0|>0|Ja|Teken|
+|Standard streaming-eind punt (preview-versie)|2,0|0|Yes|Betaald|
+|Premium-streaming-eenheden|1.0|>0|Yes|Betaald|
+|Premium-streaming-eenheden|2,0|>0|Yes|Betaald|
 
 ### <a name="features"></a>Functies
 

@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 11/26/2020
+ms.date: 01/22/2021
 ms.author: jingwang
-ms.openlocfilehash: a48ac86e8f9814adef9be2360b2446335d368447
-ms.sourcegitcommit: 192f9233ba42e3cdda2794f4307e6620adba3ff2
+ms.openlocfilehash: 430b9a1e567d9a79093f50ae388b4b69119c057d
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96296553"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98695870"
 ---
 # <a name="copy-data-from-teradata-vantage-by-using-azure-data-factory"></a>Gegevens van Teradata-Vantage kopiëren met behulp van Azure Data Factory
 
@@ -48,7 +48,7 @@ Deze Teradata-connector ondersteunt met name:
 
 [!INCLUDE [data-factory-v2-integration-runtime-requirements](../../includes/data-factory-v2-integration-runtime-requirements.md)]
 
-Als u een zelf-hosted Integration Runtime gebruikt, ziet u hier een ingebouwd Teradata-stuur programma vanaf versie 3,18. U hoeft geen stuur Programma's hand matig te installeren. Voor het stuur programma is ' Visual C++ Redistributable 2012 update 4 ' op de zelf-hostende Integration runtime-computer vereist. Als u de app nog niet hebt geïnstalleerd, kunt u deze [hier](https://www.microsoft.com/en-sg/download/details.aspx?id=30679)downloaden.
+Als u een zelf-hosted Integration Runtime gebruikt, ziet u hier een ingebouwd Teradata-stuur programma vanaf versie 3,18. U hoeft geen stuur Programma's hand matig te installeren. Voor het stuur programma is ' Visual C++ Redistributable 2012 update 4 ' op de zelf-hostende Integration runtime-computer vereist. Als u deze nog niet hebt geïnstalleerd, downloadt u deze [hier](https://www.microsoft.com/en-sg/download/details.aspx?id=30679).
 
 ## <a name="getting-started"></a>Aan de slag
 
@@ -72,6 +72,7 @@ Meer verbindings eigenschappen die u in connection string per case kunt instelle
 
 | Eigenschap | Beschrijving | Standaardwaarde |
 |:--- |:--- |:--- |
+| TdmstPortNumber | Het nummer van de poort die wordt gebruikt voor toegang tot de Teradata-data base.<br>Wijzig deze waarde niet, tenzij dit door de technische ondersteuning wordt gevraagd. | 1025 |
 | UseDataEncryption | Hiermee geeft u op of alle communicatie met de Teradata-data base moet worden versleuteld. Toegestane waarden zijn 0 of 1.<br><br/>- **0 (uitgeschakeld, standaard instelling)**: alleen verificatie-informatie wordt versleuteld.<br/>- **1 (ingeschakeld)**: versleutelt alle gegevens die tussen het stuur programma en de Data Base worden door gegeven. | `0` |
 | CharacterSet | De tekenset die moet worden gebruikt voor de sessie. Bijvoorbeeld, `CharacterSet=UTF16` .<br><br/>Deze waarde kan een door de gebruiker gedefinieerde tekenset of een van de volgende vooraf gedefinieerde teken sets zijn: <br/>-ASCII<br/>-UTF8<br/>-UTF16<br/>-LATIN1252_0A<br/>-LATIN9_0A<br/>-LATIN1_0A<br/>-Shift-JIS (Windows, DOS-compatibel, KANJISJIS_0S)<br/>-EUC (compatibel met UNIX, KANJIEC_0U)<br/>-IBM mainframe (KANJIEBCDIC5035_0I)<br/>-KANJI932_1S0<br/>-BIG5 (TCHBIG5_1R0)<br/>-GB (SCHGB2312_1T0)<br/>-SCHINESE936_6R0<br/>-TCHINESE950_8R0<br/>-NetworkKorean (HANGULKSC5601_2R4)<br/>-HANGUL949_7R0<br/>-ARABIC1256_6A0<br/>-CYRILLIC1251_2A0<br/>-HEBREW1255_5A0<br/>-LATIN1250_1A0<br/>-LATIN1254_7A0<br/>-LATIN1258_8A0<br/>-THAI874_4A0 | `ASCII` |
 | MaxRespSize |De maximale grootte van de antwoord buffer voor SQL-aanvragen, in kilo bytes (Kb's). Bijvoorbeeld, `MaxRespSize=‭10485760‬` .<br/><br/>Voor de Teradata-Data Base versie 16,00 of hoger is de maximum waarde 7361536. De maximum waarde is 1048576 voor verbindingen die gebruikmaken van eerdere versies. | `65536` |
@@ -171,7 +172,7 @@ Als u gegevens wilt kopiëren uit Teradata, worden de volgende eigenschappen ond
 |:--- |:--- |:--- |
 | type | De eigenschap type van de DataSet moet worden ingesteld op `TeradataTable` . | Yes |
 | database | De naam van het Teradata-exemplaar. | Nee (als "query" in activiteit bron is opgegeven) |
-| table | De naam van de tabel in het Teradata-exemplaar. | Nee (als "query" in activiteit bron is opgegeven) |
+| tabel | De naam van de tabel in het Teradata-exemplaar. | Nee (als "query" in activiteit bron is opgegeven) |
 
 **Voorbeeld:**
 
@@ -326,27 +327,27 @@ Wanneer u gegevens uit Teradata kopieert, zijn de volgende toewijzingen van toep
 | Date |DateTime |
 | Decimaal |Decimaal |
 | Dubbel |Dubbel |
-| Afbeelding |Niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Afbeelding |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
 | Geheel getal |Int32 |
-| Interval dag |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval van dag tot uur |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval van dag tot minuut |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval van dag tot seconde |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval-uur |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval van uur tot minuut |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval per seconde |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval minuut |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval minuut tot seconde |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval maand |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval seconde |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval jaar |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Interval jaar tot maand |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Getal |Dubbel |
-| Periode (datum) |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Periode (tijd) |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Periode (tijd met tijd zone) |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Periode (tijds tempel) |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Periode (tijds tempel met tijd zone) |Niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval dag |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval van dag tot uur |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval van dag tot minuut |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval van dag tot seconde |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval-uur |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval van uur tot minuut |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval per seconde |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval minuut |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval minuut tot seconde |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval maand |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval seconde |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval jaar |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Interval jaar tot maand |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Aantal |Dubbel |
+| Periode (datum) |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Periode (tijd) |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Periode (tijd met tijd zone) |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Periode (tijds tempel) |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Periode (tijds tempel met tijd zone) |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
 | SmallInt |Int16 |
 | Tijd |TimeSpan |
 | Tijd met tijd zone |TimeSpan |
@@ -354,8 +355,8 @@ Wanneer u gegevens uit Teradata kopieert, zijn de volgende toewijzingen van toep
 | Tijds tempel met tijd zone |DateTime |
 | VarByte |Byte [] |
 | VarChar |Tekenreeks |
-| VarGraphic |Niet ondersteund. Expliciete cast Toep assen in bron query. |
-| Xml |Niet ondersteund. Expliciete cast Toep assen in bron query. |
+| VarGraphic |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
+| Xml |Wordt niet ondersteund. Expliciete cast Toep assen in bron query. |
 
 
 ## <a name="lookup-activity-properties"></a>Eigenschappen van opzoek activiteit

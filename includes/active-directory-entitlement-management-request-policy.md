@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 03/30/2020
 ms.author: ajburnle
 ms.custom: include file
-ms.openlocfilehash: b7029c5cdd004910caa83425536bbe481e4b01f3
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 61858a478ead93b3709bb3e05c26335c9acbc24d
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95557639"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98698124"
 ---
 ## <a name="for-users-in-your-directory"></a>Voor gebruikers in uw Directory
 
@@ -191,6 +191,8 @@ Als u bijvoorbeeld Anne en Bob als eerste fiatteur (s) hebt genoteerd, vermeldt 
 1. Klik op **alternatieve goed keurders toevoegen** en selecteer de alternatieve fiatteur (s) in de lijst.
 
     ![Toegangs pakket-beleid-alternatieve goed keurders toevoegen](./media/active-directory-entitlement-management-request-policy/alternate-approvers-add.png)
+
+    Als u Manager als fiatteur selecteert voor de eerste goed keurder, hebt u een extra optie, **tweede niveau Manager als alternatieve goed keurder**, beschikbaar om te kiezen in het veld alternatieve goed keurder. Als u deze optie selecteert, moet u een terugval-fiatteur toevoegen om de aanvraag door te sturen naar wanneer het systeem de tweede niveau Manager niet kan vinden.
 
 1. Stel in het vak **door sturen naar alternatieve goed keurder (en) na hoeveel dagen** het aantal dagen in dat de goed keurders een aanvraag moeten goed keuren of weigeren. Als geen goed keurders de aanvraag hebben goedgekeurd of geweigerd vóór de duur van de aanvraag, is de aanvraag verloopt (time-out) en moet de gebruiker een andere aanvraag indienen voor het toegangs pakket. 
 

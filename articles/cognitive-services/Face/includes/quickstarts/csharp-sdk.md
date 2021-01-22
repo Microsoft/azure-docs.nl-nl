@@ -9,12 +9,12 @@ ms.subservice: face-api
 ms.topic: include
 ms.date: 10/26/2020
 ms.author: pafarley
-ms.openlocfilehash: 70235001ad28901abd3c47872a6a241422e6f916
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
-ms.translationtype: HT
+ms.openlocfilehash: 972609b0a1b2249c9da9ab6da9309c0950e76734
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763645"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98697886"
 ---
 Ga aan de slag met gezichtsherkenning met behulp van de Face-clientbibliotheek voor .NET. Volg deze stappen om het pakket te installeren en de voorbeeldcode voor basistaken uit te proberen. De Face-service biedt u toegang tot geavanceerde algoritmen voor het detecteren en herkennen van menselijke gezichten in afbeeldingen.
 
@@ -94,7 +94,7 @@ Maak in de klasse **Programma** van de toepassing variabelen voor de sleutel en 
 
 
 > [!IMPORTANT]
-> Ga naar Azure Portal. Als de [productnaam]-resource die u in de sectie **Vereisten** hebt gemaakt, is geïmplementeerd, klikt u op de knop **Naar de resource gaan** onder **Volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
+> Ga naar Azure Portal. Als de bron van het gezicht die u hebt gemaakt in de sectie **vereisten** is geïmplementeerd, klikt u op de knop **Ga naar resource** onder **volgende stappen**. U vindt uw sleutel en eindpunt op de pagina **Sleutel en eindpunt** van de resource, onder **Resourcebeheer**. 
 >
 > Vergeet niet de sleutel uit uw code te verwijderen wanneer u klaar bent, en plaats deze sleutel nooit in het openbaar. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../../../cognitive-services-security.md) voor meer informatie.
 

@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 11/02/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: fd958c09a14334d8230e52413c590febb2148851
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 37bd7d91dfe9e4b9e620f89e7504331d8f631a6a
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048947"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602127"
 ---
 # <a name="tutorial-coding-with-the-azure-digital-twins-apis"></a>Zelfstudie: Coderen met de Azure Digital Twins-API's
 
@@ -57,9 +57,12 @@ Hiermee maakt u een aantal bestanden in uw map, met daarin de naam *Program.cs* 
 
 Houd het opdrachtvenster geopend, omdat u het in de zelfstudie blijft gebruiken.
 
-Vervolgens voegt u **twee afhankelijkheden toe aan uw project** die nodig zijn om te werken met Azure Digital Twins. U kunt de onderstaande links gebruiken om naar de pakketten op NuGet te navigeren, waar u de consoleopdrachten (inclusief voor .NET CLI) kunt vinden om de meest recente versie van elk aan uw project toe te voegen.
-* [**Azure.DigitalTwins.Core**](https://www.nuget.org/packages/Azure.DigitalTwins.Core). Dit is het pakket voor de [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true).
-* [**Azure.Identity**](https://www.nuget.org/packages/Azure.Identity). Deze bibliotheek biedt hulpprogramma's voor de verificatie bij Azure.
+Vervolgens voegt u **twee afhankelijkheden toe aan uw project** die nodig zijn om te werken met Azure Digital Twins. De eerste bestaat uit het pakket voor [Azure Digital Twins SDK voor .NET](/dotnet/api/overview/azure/digitaltwins/client?view=azure-dotnet&preserve-view=true), de tweede biedt hulpmiddelen voor de verificatie met Azure.
+
+```cmd/sh
+dotnet add package Azure.DigitalTwins.Core
+dotnet add package Azure.Identity
+```
 
 ## <a name="get-started-with-project-code"></a>Aan de slag met projectcode
 

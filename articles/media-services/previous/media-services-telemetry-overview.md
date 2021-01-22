@@ -14,19 +14,19 @@ ms.devlang: na
 ms.topic: article
 ms.date: 04/01/2019
 ms.author: juliako
-ms.openlocfilehash: 0701e9c6428283d45cf4b4a2e24c8de99d9a286b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4bf9a96d7ffc3b939abe8cfb889c5bd49fee09cc
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89265895"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98694585"
 ---
 # <a name="azure-media-services-telemetry"></a>Azure Media Services telemetrie  
 
 [!INCLUDE [media services api v2 logo](./includes/v2-hr.md)]
 
 > [!NOTE]
-> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-from-v2-to-v3.md)
+> Er worden geen nieuwe functies of functionaliteit meer aan Media Services v2. toegevoegd. <br/>Bekijk de nieuwste versie [Media Services v3](../latest/index.yml). Zie ook [migratie richtlijnen van v2 naar v3](../latest/migrate-v-2-v-3-migration-introduction.md)
 
 Met Azure Media Services (AMS) kunt u toegang krijgen tot gegevens over telemetrische/metrieken voor de services. Met de huidige versie van AMS kunt u telemetrie-gegevens verzamelen voor live **Channel**-, **StreamingEndpoint**-en live- **Archief** entiteiten. 
 
@@ -79,9 +79,9 @@ Eigenschap|Waarde|Voor beelden/opmerkingen
 ---|---|---
 PartitionKey|{account-ID} _ {entiteit-ID}|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab7011cb0f4cdf66<br/<br/>De account-ID is opgenomen in de partitie sleutel om werk stromen te vereenvoudigen waarbij meerdere Media Services-accounts naar hetzelfde opslag account worden geschreven.
 RowKey|{seconden tot middernacht} _ {wille keurige waarde}|01688_00199<br/><br/>De rij begint met het aantal seconden tot middernacht om de bovenste n-stijl query's in een partitie toe te staan. Zie [Dit](../../cosmos-db/table-storage-design-guide.md#log-tail-pattern) artikel voor meer informatie. 
-Tijdstempel|Datum en tijd|Automatische tijds tempel van de Azure-tabel 2016-09-09T22:43:42.241 Z
+Tijdstempel|Datum/tijd|Automatische tijds tempel van de Azure-tabel 2016-09-09T22:43:42.241 Z
 Type|Het type entiteit dat telemetrie-gegevens levert|Kanaal-StreamingEndpoint/archief<br/><br/>Het gebeurtenis type is een teken reeks waarde.
-Naam|De naam van de telemetrie-gebeurtenis|ChannelHeartbeat/StreamingEndpointRequestLog
+Name|De naam van de telemetrie-gebeurtenis|ChannelHeartbeat/StreamingEndpointRequestLog
 ObservedTime|Het tijdstip waarop de telemetrie-gebeurtenis is opgetreden (UTC)|2016-09-09T22:42:36.924 Z<br/><br/>De waargenomen tijd wordt gegeven door de entiteit die de telemetrie verzendt (bijvoorbeeld een kanaal). Er kunnen tijd synchronisatie problemen zijn tussen onderdelen, dus deze waarde is ongeveer gelijk aan
 ServiceID|{Service-ID}|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 Entiteit-specifieke eigenschappen|Zoals gedefinieerd door de gebeurtenis|Streamnaam: stream1, bitrate 10123,...<br/><br/>De overige eigenschappen worden gedefinieerd voor het opgegeven gebeurtenis type. Azure-tabel inhoud is sleutel waardeparen.  (dat wil zeggen dat verschillende rijen in de tabel verschillende sets eigenschappen hebben).
@@ -102,7 +102,7 @@ PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab701
 RowKey|RowKey|01688_00199
 Tijdstempel|Tijdstempel|Automatische tijds tempel van Azure Table 2016-09-09T22:43:42.241 Z
 Type|Type|StreamingEndpoint
-Naam|Naam|StreamingEndpointRequestLog
+Name|Name|StreamingEndpointRequestLog
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924 Z
 ServiceID|Service-id|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 HostName|Hostnaam van het eind punt|builddemoserver.origin.mediaservices.windows.net
@@ -121,7 +121,7 @@ PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab701
 RowKey|RowKey|01688_00199
 Tijdstempel|Tijdstempel|Automatische tijds tempel van de Azure-tabel 2016-09-09T22:43:42.241 Z
 Type|Type|Kanaal
-Naam|Naam|ChannelHeartbeat
+Name|Name|ChannelHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924 Z
 ServiceID|Service-id|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 TrackType|Type track video/audio/tekst|video/audio
@@ -133,10 +133,10 @@ OverlapCount|Overlap ping in de opname|0
 DiscontinuityCount|Oncontinuïteit voor spoor|0
 LastTimestamp|Laatste opgenomen tijds tempel van gegevens|1800488800
 NonincreasingCount|Aantal verwijderde fragmenten vanwege niet-toenemende tijds tempel|2
-UnalignedKeyFrames|Of er fragment (en) (op verschillende kwaliteits niveaus) zijn ontvangen waar de keyframes niet zijn uitgelijnd |True
-UnalignedPresentationTime|Of we fragment (en) (op verschillende kwaliteits niveaus/tracks) ontvangen waarbij de presentatie tijd niet is uitgelijnd|True
-UnexpectedBitrate|Waar, als de berekende/werkelijke bitrate voor audio/video track > 40.000 bps en IncomingBitrate = = 0 of IncomingBitrate en actualBitrate verschillen per 50% |True
-In orde|Waar, als <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime, <br/>UnexpectedBitrate<br/> zijn allemaal 0|True<br/><br/>In orde is een samengestelde functie die onwaar retourneert wanneer een van de volgende voor waarden van toepassing is:<br/><br/>-OverlapCount > 0<br/>-DiscontinuityCount > 0<br/>-NonincreasingCount > 0<br/>-UnalignedKeyFrames = = True<br/>-UnalignedPresentationTime = = True<br/>-UnexpectedBitrate = = True
+UnalignedKeyFrames|Of er fragment (en) (op verschillende kwaliteits niveaus) zijn ontvangen waar de keyframes niet zijn uitgelijnd |Waar
+UnalignedPresentationTime|Of we fragment (en) (op verschillende kwaliteits niveaus/tracks) ontvangen waarbij de presentatie tijd niet is uitgelijnd|Waar
+UnexpectedBitrate|Waar, als de berekende/werkelijke bitrate voor audio/video track > 40.000 bps en IncomingBitrate = = 0 of IncomingBitrate en actualBitrate verschillen per 50% |Waar
+In orde|Waar, als <br/>overlapCount, <br/>DiscontinuityCount, <br/>NonIncreasingCount, <br/>UnalignedKeyFrames, <br/>UnalignedPresentationTime, <br/>UnexpectedBitrate<br/> zijn allemaal 0|Waar<br/><br/>In orde is een samengestelde functie die onwaar retourneert wanneer een van de volgende voor waarden van toepassing is:<br/><br/>-OverlapCount > 0<br/>-DiscontinuityCount > 0<br/>-NonincreasingCount > 0<br/>-UnalignedKeyFrames = = True<br/>-UnalignedPresentationTime = = True<br/>-UnexpectedBitrate = = True
 
 **Live-Archief**
 
@@ -146,7 +146,7 @@ PartitionKey|PartitionKey|e49bef329c29495f9b9570989682069d_64435281c50a4dd8ab701
 RowKey|RowKey|01688_00199
 Tijdstempel|Tijdstempel|Automatische tijds tempel van de Azure-tabel 2016-09-09T22:43:42.241 Z
 Type|Type|Archiveren
-Naam|Naam|ArchiveHeartbeat
+Name|Name|ArchiveHeartbeat
 ObservedTime|ObservedTime|2016-09-09T22:42:36.924 Z
 ServiceID|Service-id|f70bd731-691d-41c6-8f2d-671d0bdc9c7e
 Manifestnaam|Programma-URL|Asset-eb149703-ed0a-483c-91c4-e4066e72cce3/a0a5cfbf-71ec-4bd2-8c01-a92a2b38c9ba. ISM

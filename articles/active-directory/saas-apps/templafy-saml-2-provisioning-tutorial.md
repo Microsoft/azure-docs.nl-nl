@@ -12,12 +12,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 01/19/2021
 ms.author: zhchia
-ms.openlocfilehash: 057b437c5d88c4f292e08828482e5dca0d2ca5b4
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 0e7275ee92431e791fec7bd2c9ec07dd623b0f9e
+ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611961"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98696005"
 ---
 # <a name="tutorial-configure-templafy-saml2-for-automatic-user-provisioning"></a>Zelf studie: Templafy SAML2 configureren voor automatische gebruikers inrichting
 
@@ -133,7 +133,26 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 9. Controleer de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Templafy SAML2 in de sectie **kenmerk toewijzingen** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in Templafy SAML2 voor update bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Templafy SAML2-gebruikers kenmerken](media/templafy-saml-2-provisioning-tutorial/user-attribute.png)
+   |Kenmerk|Type|Ondersteund voor filteren|
+   |---|---|---|
+   |userName|Tekenreeks|&check;|
+   |actief|Booleaans|
+   |displayName|Tekenreeks|
+   |title|Tekenreeks|
+   |preferredLanguage|Tekenreeks|
+   |name.givenName|Tekenreeks|
+   |name.familyName|Tekenreeks|
+   |phoneNumbers[type eq "work"].value|Tekenreeks|
+   |phoneNumbers[type eq "mobile"].value|Tekenreeks|
+   |phoneNumbers[type eq "fax"].value|Tekenreeks|
+   |externalId|Tekenreeks|
+   |addresses[type eq "work"].locality|Tekenreeks|
+   |addresses[type eq "work"].postalCode|Tekenreeks|
+   |addresses[type eq "work"].region|Tekenreeks|
+   |addresses[type eq "work"].streetAddress|Tekenreeks|
+   |addresses[type eq "work"].country|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:department|Tekenreeks|
+   |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:organization|Tekenreeks|
 
 10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met Templafy**.
 
@@ -141,7 +160,12 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 11. Controleer de groeps kenmerken die zijn gesynchroniseerd vanuit Azure AD naar Templafy SAML2 in de sectie **kenmerk toewijzingen** . De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de groepen in Templafy SAML2 voor bijwerk bewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-    ![Templafy SAML2-groeps kenmerken](media/templafy-saml-2-provisioning-tutorial/group-attribute.png)
+      |Kenmerk|Type|Ondersteund voor filteren|
+      |---|---|---|
+      |displayName|Tekenreeks|&check;|
+      |leden|Naslaginformatie|
+      |externalId|Tekenreeks|      
+
 
 12. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 

@@ -1,18 +1,18 @@
 ---
 title: Controles voor naleving van Azure Policy-regelgeving voor Azure Virtual Machines
 description: Een overzicht van de beschikbare controles voor naleving van Azure Policy-regelgeving voor Azure Virtual Machines. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van de naleving van uw Azure-resources.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: sample
 author: cynthn
 ms.author: cynthn
 ms.service: virtual-machines
 ms.custom: subject-policy-compliancecontrols
-ms.openlocfilehash: 195624cff98fb8142b475e455e0df47e427f683a
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 2c29f070b3610437d438cf2119f590b202ed4041
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044799"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684990"
 ---
 # <a name="azure-policy-regulatory-compliance-controls-for-azure-virtual-machines"></a>Controles voor naleving van Azure Policy-regelgeving voor Azure Virtual Machines 
 

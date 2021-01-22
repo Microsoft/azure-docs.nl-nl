@@ -12,12 +12,12 @@ ms.date: 12/14/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 37d9c24d58e0dd9fb10db607ef1b96de0a44eb78
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
+ms.openlocfilehash: 1f1100c27bb3c02e3d1a5040942509c24bab0e65
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97399363"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683985"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Uw app publiceren in de app-galerie van Azure AD
 
@@ -175,7 +175,7 @@ Ondersteuning van [scim](https://aka.ms/scimoverview) -inrichting is een optione
 Zie voor meer informatie over de SCIM-standaarden en-voor delen voor uw klanten [inrichten met scim-aan de slag](https://aka.ms/scimoverview).
 
 ### <a name="understand-the-azure-ad-scim-implementation"></a>Meer informatie over de Azure AD SCIM-implementatie
-Zie [een scim-eind punt bouwen en gebruikers inrichten met Azure AD configureren](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups)voor meer informatie over de implementatie van Azure AD scim.
+Zie [een scim-eind punt bouwen en gebruikers inrichten met Azure AD configureren](../app-provisioning/use-scim-to-provision-users-and-groups.md)voor meer informatie over de implementatie van Azure AD scim.
 
 ### <a name="implement-scim"></a>SCIM implementeren
 Azure AD bevat [referentie code](https://aka.ms/scimoverview) om u te helpen bij het bouwen van een scim-eind punt. Er zijn ook bibliotheken van derden/verwijzingen die u kunt vinden op GitHub.  
@@ -186,7 +186,7 @@ U hebt een Azure AD-Tenant nodig om uw app te kunnen testen. Zie [Quick Start: e
 
 Een Azure AD-Tenant wordt ook geleverd met elk Microsoft 365-abonnement. Als u een gratis Microsoft 365 ontwikkel omgeving wilt instellen, raadpleegt u [lid worden van het Microsoft 365 ontwikkelaars programma](/office/developer-program/microsoft-365-developer-program).
 
-Zodra u een Tenant hebt, moet u eenmalige aanmelding en [inrichting](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client)testen. 
+Zodra u een Tenant hebt, moet u eenmalige aanmelding en [inrichting](../app-provisioning/use-scim-to-provision-users-and-groups.md#step-4-integrate-your-scim-endpoint-with-the-azure-ad-scim-client)testen. 
 
 **Voor OIDC-of Oath-toepassingen** [registreert u uw toepassing](quickstart-register-app.md) als multi tenant-toepassing. Selecteer de optie accounts in een organisatorische map en persoonlijke micro soft-accounts in ondersteunde account typen.
 
@@ -274,7 +274,7 @@ Als u uw toepassing wilt toevoegen aan de lijst in de galerie met behulp van wac
 
 ![Een SSO-toepassing voor wacht woorden in de galerie weer geven](./media/howto-app-gallery-listing/passwordsso.png)
 
-Als u een [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) 2,0-eind punt voor het inrichten van gebruikers implementeert, selecteert u de optie zoals weer gegeven. Wanneer u het schema in de voorbereidings aanvraag levert, volgt u de instructies [hier](https://docs.microsoft.com/azure/active-directory/app-provisioning/export-import-provisioning-configuration) om uw schema te downloaden. We gebruiken het schema dat u hebt geconfigureerd bij het testen van de toepassing voor niet-galerijen om de galerie toepassing te bouwen. 
+Als u een [SCIM](../app-provisioning/use-scim-to-provision-users-and-groups.md) 2,0-eind punt voor het inrichten van gebruikers implementeert, selecteert u de optie zoals weer gegeven. Wanneer u het schema in de voorbereidings aanvraag levert, volgt u de instructies [hier](../app-provisioning/export-import-provisioning-configuration.md) om uw schema te downloaden. We gebruiken het schema dat u hebt geconfigureerd bij het testen van de toepassing voor niet-galerijen om de galerie toepassing te bouwen. 
 
    ![Aanvraag voor gebruikers inrichting](./media/howto-app-gallery-listing/user-provisioning.png)
 

@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 03/10/2020
 ms.reviewer: mimckitt
 ms.custom: mimckitt, devx-track-azurecli
-ms.openlocfilehash: c255a3d68b1a24e25c1c0e308faa3fd364a15861
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: bd16f0ef330d1d4a33dd796af0ec3e94dda5acfc
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97358738"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684590"
 ---
 # <a name="modify-a-virtual-machine-scale-set"></a>Een virtuele-machineschaalset wijzigen
 
@@ -350,7 +350,7 @@ Sommige eigenschappen kunnen worden gewijzigd, met uitzonde ring van de huidige 
 
 - **singlePlacementGroup** -als singlePlacementGroup is ingesteld op True, kan dit worden gewijzigd in false. Als singlePlacementGroup echter False is, kan het **niet** worden gewijzigd in True.
 - **subnet** -het subnet van een schaalset kan worden gewijzigd zolang het oorspronkelijke subnet en het nieuwe subnet zich in hetzelfde virtuele netwerk bevinden.
-- **imageReferenceSku** -image-referentie-SKU kan worden bijgewerkt voor [distributies](https://docs.microsoft.com/azure/virtual-machines/linux/endorsed-distros), Windows Server/client-installatie kopieën en installatie kopieën zonder [plan gegevens](https://docs.microsoft.com/azure/virtual-machines/linux/cli-ps-findimage#view-plan-properties). 
+- **imageReferenceSku** -image-referentie-SKU kan worden bijgewerkt voor [distributies](../virtual-machines/linux/endorsed-distros.md), Windows Server/client-installatie kopieën en installatie kopieën zonder [plan gegevens](../virtual-machines/linux/cli-ps-findimage.md#view-plan-properties). 
 
 ### <a name="properties-that-require-deallocation-to-change"></a>Eigenschappen waarvan de toewijzing moet worden gewijzigd
 Sommige eigenschappen kunnen alleen worden gewijzigd in bepaalde waarden als de toewijzing van de virtuele machines in de schaalset ongedaan wordt gemaakt. Deze eigenschappen zijn onder andere:

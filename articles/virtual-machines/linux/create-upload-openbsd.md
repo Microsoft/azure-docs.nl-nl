@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 05/24/2017
 ms.author: guybo
-ms.openlocfilehash: 08b18dae6cec3f30ba9ecc69a3537eec428cc9ee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: efa38384778bb63857d3c867d74ace7f4f199118
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87372719"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685086"
 ---
 # <a name="create-and-upload-an-openbsd-disk-image-to-azure"></a>Een OpenBSD-schijf kopie maken en uploaden naar Azure
 In dit artikel wordt beschreven hoe u een virtuele harde schijf (VHD) die het OpenBSD-besturings systeem bevat maakt en uploadt. Nadat u het hebt geüpload, kunt u dit als uw eigen installatie kopie gebruiken om een virtuele machine (VM) in azure te maken via Azure CLI.
@@ -56,7 +56,7 @@ Voer de volgende procedures uit op de virtuele machine waarop u het OpenBSD-best
     ln -sf /usr/local/bin/python2.7 /usr/local/bin/python
     ln -sf /usr/local/bin/python2.7-2to3 /usr/local/bin/2to3
     ln -sf /usr/local/bin/python2.7-config /usr/local/bin/python-config
-    ln -sf /usr/local/bin/pydoc2.7  /usr/local/bin/pydoc
+    ln -sf /usr/local/bin/pydoc2.7  /usr/local/bin/pydoc
     ```
 
 6. De nieuwste versie van de Azure-agent kan altijd worden gevonden op [github](https://github.com/Azure/WALinuxAgent/releases). Ga als volgt te werk om de agent te installeren:
@@ -140,7 +140,7 @@ az storage blob upload \
 
 
 ## <a name="create-vm-from-your-vhd"></a>Een VM maken op basis van uw VHD
-U kunt een virtuele machine maken met een [voorbeeld script](../scripts/virtual-machines-linux-cli-sample-create-vm-vhd.md) of rechtstreeks met [AZ VM Create](/cli/azure/vm). Als u de OpenBSD-VHD die u hebt geüpload wilt opgeven, gebruikt u de `--image` para meter als volgt:
+U kunt een virtuele machine maken met een [voorbeeld script](/previous-versions/azure/virtual-machines/scripts/virtual-machines-linux-cli-sample-create-vm-vhd) of rechtstreeks met [AZ VM Create](/cli/azure/vm). Als u de OpenBSD-VHD die u hebt geüpload wilt opgeven, gebruikt u de `--image` para meter als volgt:
 
 ```azurecli
 az vm create \
@@ -168,4 +168,4 @@ ssh azureuser@<ip address>
 ## <a name="next-steps"></a>Volgende stappen
 Als u meer wilt weten over Hyper-V-ondersteuning op OpenBSD 6.1, leest u [OpenBSD 6,1](https://www.openbsd.org/61.html) en [hyper links. 4](https://man.openbsd.org/hyperv.4).
 
-Als u een virtuele machine van een beheerde schijf wilt maken, leest u [AZ Disk](/cli/azure/disk). 
+Als u een virtuele machine van een beheerde schijf wilt maken, leest u [AZ Disk](/cli/azure/disk).

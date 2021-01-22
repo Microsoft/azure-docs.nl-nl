@@ -3,12 +3,12 @@ title: Dubbele bericht detectie Azure Service Bus | Microsoft Docs
 description: In dit artikel wordt uitgelegd hoe u dubbele items kunt detecteren in Azure Service Bus berichten. Het duplicaat bericht kan worden genegeerd en verwijderd.
 ms.topic: article
 ms.date: 01/13/2021
-ms.openlocfilehash: 29972f756c66f524cc2e4684fcb7afd1ca628820
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 8ff98b3a052be6004a2dc070f10d6f8c9ca0617f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98184676"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684805"
 ---
 # <a name="duplicate-detection"></a>Detectie van duplicaten
 
@@ -17,6 +17,9 @@ Als een toepassing mislukt als gevolg van een onherstelbare fout onmiddellijk na
 Het is ook mogelijk dat er een ogen blik geduld op client-of netwerk niveau en dat een verzonden bericht in de wachtrij moet worden doorgevoerd, waarbij de bevestiging niet naar de client wordt geretourneerd. Dit scenario laat de client onzeker weten wat het resultaat van de verzend bewerking is.
 
 Duplicaten detectie neemt de twijfel uit deze situaties door het inschakelen van de afzender om hetzelfde bericht opnieuw te verzenden. de wachtrij of het onderwerp verwijdert dubbele kopieën.
+
+> [!NOTE]
+> De laag basis van Service Bus biedt geen ondersteuning voor duplicaten detectie. De laag Standard en Premium ondersteunen duplicaten detectie. Zie [Service Bus prijzen](https://azure.microsoft.com/pricing/details/service-bus/)voor verschillen tussen deze lagen.
 
 ## <a name="how-it-works"></a>Hoe werkt het? 
 Het inschakelen van duplicaten detectie helpt bij het bijhouden van de door de toepassing beheerde *MessageId* van alle berichten die worden verzonden naar een wachtrij of onderwerp tijdens een opgegeven periode. Als er een nieuw bericht wordt verzonden met een *MessageId* die tijdens het tijd venster is geregistreerd, wordt het bericht gerapporteerd als geaccepteerd (de verzend bewerking slaagt), maar wordt het zojuist verzonden bericht direct genegeerd en verwijderd. Er wordt geen rekening gehouden met andere onderdelen van het bericht dan de *MessageId* .

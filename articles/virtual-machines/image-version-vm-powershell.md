@@ -9,18 +9,18 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 1a0bfb79b03b778696faef29597cabbcff47e6df
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: a7b8cb10f75d7a99198ddfdc1a1bbef3c34a03da
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601662"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685103"
 ---
 # <a name="create-an-image-from-a-vm"></a>Een installatiekopie van een VM maken
 
 Als u een bestaande VM hebt die u wilt gebruiken om meerdere, identieke Vm's te maken, kunt u die VM gebruiken om een installatie kopie in een galerie met gedeelde afbeeldingen te maken met behulp van Azure PowerShell. U kunt ook een installatie kopie van een virtuele machine maken met behulp van de [Azure cli](image-version-vm-cli.md).
 
-U kunt een installatie kopie van zowel [gespecialiseerde als gegeneraliseerde](./windows/shared-image-galleries.md#generalized-and-specialized-images) vm's vastleggen met behulp van Azure PowerShell. 
+U kunt een installatie kopie van zowel [gespecialiseerde als gegeneraliseerde](./shared-image-galleries.md#generalized-and-specialized-images) vm's vastleggen met behulp van Azure PowerShell. 
 
 Afbeeldingen in een afbeeldings galerie hebben twee onderdelen, die we in dit voor beeld gaan maken:
 - Een **definitie van een installatie kopie** bevat informatie over de installatie kopie en vereisten voor het gebruik ervan. Dit omvat of de installatie kopie Windows of Linux, gespecialiseerde of gegeneraliseerde, release opmerkingen en minimale en maximale geheugen vereisten zijn. Het is een definitie van een type installatiekopie. 
@@ -77,7 +77,7 @@ Definities van installatiekopieën maken een logische groepering voor installati
 
 Wanneer u de definitie van de installatie kopie maakt, moet u ervoor zorgen dat alle juiste gegevens worden verstrekt. Als u de virtuele machine hebt gegeneraliseerd (met behulp van Sysprep voor Windows of waagent-deprovision voor Linux), moet u een definitie van een installatie kopie maken met `-OsState generalized` . Als u de virtuele machine niet hebt gegeneraliseerd, maakt u een definitie van een installatie kopie met `-OsState specialized` .
 
-Zie [Installatiekopiedefinities](./windows/shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
+Zie [Installatiekopiedefinities](./shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
 
 Maak de definitie van de installatiekopie met behulp van [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). 
 

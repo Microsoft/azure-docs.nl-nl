@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: cpendle
 ms.custom: devx-track-js
-ms.openlocfilehash: ef2c69409ce3f479338ffc9d418b3469f197ad30
-ms.sourcegitcommit: 66b0caafd915544f1c658c131eaf4695daba74c8
-ms.translationtype: HT
+ms.openlocfilehash: db53e4407674abc1e6c81090dc4a50afa784940d
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97679395"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684822"
 ---
 # <a name="tutorial-migrate-a-web-app-from-bing-maps"></a>Zelfstudie: Een web-app migreren vanuit Bing Kaarten
 
@@ -85,7 +85,7 @@ Azure Maps heeft ook veel extra [opensource-modules voor de web-SDK](open-source
 
 Dit zijn enkele van de belangrijkste verschillen tussen de Bing Kaarten- en Azure Maps Web-SDK waarmee u rekening moet houden:
 
-* Naast het leveren van een gehost eindpunt om toegang te krijgen tot de Azure Maps Web-SDK is er een NPM-pakket beschikbaar om de Web-SDK desgewenst in apps in te sluiten. Raadpleeg deze [documentatie](https://docs.microsoft.com/azure/azure-maps/how-to-use-map-control) voor meer informatie. Dit pakket bevat ook TypeScript-definities.
+* Naast het leveren van een gehost eindpunt om toegang te krijgen tot de Azure Maps Web-SDK is er een NPM-pakket beschikbaar om de Web-SDK desgewenst in apps in te sluiten. Raadpleeg deze [documentatie](./how-to-use-map-control.md) voor meer informatie. Dit pakket bevat ook TypeScript-definities.
 * Bing Kaarten biedt twee gehoste vertakkingen van de SDK: Release en Experimental. De Experimental-vertakking kan meerdere updates per dag ontvangen wanneer er nieuwe ontwikkelingen plaatsvinden. Azure Maps host alleen een releasevertakking. Er worden echter experimentele functies als aangepaste modules gemaakt in het opensource-project met codevoorbeelden voor Azure Maps. Ook had Bing Kaarten een bevroren vertakking die minder vaak werd bijgewerkt, waardoor er minder kans was dat door wijzigingen vanwege de release fouten werden veroorzaakt. In Azure Maps kunt u de NPM-module gebruiken en verwijzen naar een eerdere release van een secundaire versie.
 
 > [!TIP]
@@ -95,7 +95,7 @@ Dit zijn enkele van de belangrijkste verschillen tussen de Bing Kaarten- en Azur
 * Beide platforms gebruiken een soortgelijk tegelsysteem voor de basiskaarten, maar de tegels in Bing Kaarten zijn 256 pixels groot terwijl de tegels in Azure Maps 512 pixels groot zijn. Als u dezelfde kaartweergave in Azure Maps en Bing Kaarten wilt hebben, moet van het zoomniveau in Bing Kaarten 1 worden afgetrokken van het zoomniveau in Azure Maps.
 * Coördinaten in Bing Kaarten worden aangeduid als `latitude, longitude` terwijl in Azure Maps `longitude, latitude` wordt gebruikt. Deze notatie komt overeen met het standaard gebruikte `[x, y]` dat wordt gevolgd door de meeste GIS-platforms.
 
-* Vormen in de Web-SDK van Azure Maps zijn gebaseerd op het GeoJSON-schema. Helperklassen worden weergegeven via de [naamruimte atlas.data](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.data). Ook bestaat er een klasse [atlas.Shape](https://docs.microsoft.com/javascript/api/azure-maps-control/atlas.shape) die kan worden gebruikt om GeoJSON-objecten te verpakken en om deze gemakkelijk te kunnen bijwerken en onderhouden op een manier waarop gegevens kunnen worden verbonden.
+* Vormen in de Web-SDK van Azure Maps zijn gebaseerd op het GeoJSON-schema. Helperklassen worden weergegeven via de [naamruimte atlas.data](/javascript/api/azure-maps-control/atlas.data). Ook bestaat er een klasse [atlas.Shape](/javascript/api/azure-maps-control/atlas.shape) die kan worden gebruikt om GeoJSON-objecten te verpakken en om deze gemakkelijk te kunnen bijwerken en onderhouden op een manier waarop gegevens kunnen worden verbonden.
 * Coördinaten in Azure Maps worden gedefinieerd als Position-objecten die kunnen worden opgegeven als een eenvoudige getallenmatrix in de notatie `[longitude, latitude]` of `new atlas.data.Position(longitude, latitude)`.
 
 > [!TIP]

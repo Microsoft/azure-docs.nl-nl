@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: fb0a5fbf33b48521882646bf8fb5eb3fe5dacca6
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 12b75ad3746cd0f54e27e474e0fd13bb0bba0e05
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96459204"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685239"
 ---
 # <a name="manage-and-monitor-workload-importance-in-dedicated-sql-pool-for-azure-synapse-analytics"></a>De urgentie van werk belastingen in de toegewezen SQL-groep voor Azure Synapse Analytics beheren en bewaken
 
@@ -24,7 +24,7 @@ Beheer en bewaak de toegewijde aanvraag niveau prioriteit van een SQL-groep in a
 
 ## <a name="monitor-importance"></a>Controle prioriteit
 
-Controleer het belang van de kolom nieuwe urgentie in de weer gave dynamisch beheer van [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) .
+Controleer het belang van de kolom nieuwe urgentie in de weer gave dynamisch beheer van [sys.dm_pdw_exec_requests](/sql/relational-databases/system-dynamic-management-views/sys-dm-pdw-exec-requests-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) .
 De onderstaande bewakings query toont de verzend tijd en start tijd voor query's. Controleer de verzend tijd en de begin tijd, samen met het belang om te zien hoe belang rijke planningen worden beïnvloed.
 
 ```sql
@@ -47,7 +47,7 @@ SELECT *
   WHERE classifier_id > 12
 ```
 
-De catalogus weergave, [sys.workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), bevat informatie over de para meters die worden gebruikt bij het maken van de classificatie.  De onderstaande query laat zien dat ExecReportsClassifier is gemaakt op de ```membername``` para meter voor waarden met ExecutiveReports:
+De catalogus weergave, [sys.workload_management_workload_classifier_details](/sql/relational-databases/system-catalog-views/sys-workload-management-workload-classifier-details-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), bevat informatie over de para meters die worden gebruikt bij het maken van de classificatie.  De onderstaande query laat zien dat ExecReportsClassifier is gemaakt op de ```membername``` para meter voor waarden met ExecutiveReports:
 
 ```sql
 SELECT c.name,cd.classifier_type, classifier_value

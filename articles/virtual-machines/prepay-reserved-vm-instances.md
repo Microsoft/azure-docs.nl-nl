@@ -9,15 +9,14 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 10/30/2017
 ms.author: vikdesai
-ms.openlocfilehash: ffc9c8f3143824dd099aaad3e743398eea4e0f43
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: e6cf097e927c4606885dd3f885de6ab8235bf6be
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602536"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682582"
 ---
 # <a name="save-costs-with-azure-reserved-vm-instances"></a>Bespaar kosten met Azure Reserved VM Instances
-
 
 
 Wanneer u een gereserveerde VM-instantie voor Azure doorvoert, kunt u geld besparen. De reserverings korting wordt automatisch toegepast op het aantal actieve virtuele machines die overeenkomen met het reserverings bereik en de kenmerken. U hoeft geen reserve ring aan een virtuele machine toe te wijzen om de kortingen te krijgen. Voor een gereserveerde instantie aankoop geldt alleen het reken onderdeel van uw VM-gebruik. Voor virtuele Windows-machines wordt de gebruiks meter gesplitst in twee afzonderlijke meters. Er is een compute-meter, die gelijk is aan de Linux meter en een Windows IP-meter. De kosten die u ziet wanneer u de aankoop uitvoert, zijn alleen voor de reken kosten. Kosten zijn niet van toepassing op Windows-software. Zie [software kosten die niet zijn opgenomen in azure reserved VM instances](../cost-management-billing/reservations/reserved-instance-windows-software-costs.md)voor meer informatie over software kosten.
@@ -30,10 +29,10 @@ Voordat u een reserve ring koopt, moet u de grootte van de virtuele machine bepa
 
 U kunt reserverings aanbevelingen gebruiken om te helpen bij het bepalen van de reserve ringen die u moet aanschaffen.
 
-- Aanbevelingen voor aankopen en aanbevolen hoeveelheid worden weer gegeven wanneer u een gereserveerde VM-instantie in de Azure Portal koopt.
+- Aanbevelingen voor aankopen en aanbevolen aantallen worden weer gegeven wanneer u een gereserveerde VM-instantie in de Azure Portal koopt.
 - Azure Advisor biedt inkoop aanbevelingen voor afzonderlijke abonnementen.  
 - U kunt de Api's gebruiken voor het verkrijgen van inkoop aanbevelingen voor zowel het gedeelde bereik als het bereik van één abonnement. Zie voor meer informatie [gereserveerde instanties aankoop aanbeveling api's voor zakelijke klanten](/rest/api/billing/enterprise/billing-enterprise-api-reserved-instance-recommendation).
-- Voor Enterprise Agreement (EA) en klanten overeenkomst (MCA) van micro soft, zijn er aanbevelingen voor het delen van gedeelde en enkelvoudige abonnementen beschikbaar met de [Azure Consumption Insights Power bi inhouds pakket](/power-bi/service-connect-to-azure-consumption-insights).
+- Voor Enterprise Overeenkomst (EA) en klanten overeenkomst (MCA) van micro soft, zijn er aanbevelingen voor het delen van gedeelde en enkelvoudige abonnementen beschikbaar met de [Azure Consumption Insights Power bi inhouds pakket](/power-bi/service-connect-to-azure-consumption-insights).
 
 ### <a name="services-that-get-vm-reservation-discounts"></a>Services waarop VM-reserveringskortingen van toepassing zijn
 
@@ -144,7 +143,7 @@ U kunt echter wel een reserve ring *uitwisselen* als u wijzigingen wilt aanbreng
 
 Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde beperkingen. Zie [Selfserviceopties voor inwisselen en retourneren van Azure-reserveringen](../cost-management-billing/reservations/exchange-and-refund-azure-reservations.md) voor meer informatie.
 
-## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
+## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
 
 Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://portal.azure.com/#blade/Microsoft_Azure_Support/HelpAndSupportBlade/newsupportrequest).
 

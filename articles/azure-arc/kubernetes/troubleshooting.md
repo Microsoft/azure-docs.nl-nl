@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: Veelvoorkomende problemen met Kubernetes-clusters met Arc-functionaliteit oplossen.
 keywords: Kubernetes, Arc, Azure, containers
-ms.openlocfilehash: 42c90708854af6973ed1ef399b9867101a736b07
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 0827386eb6ec089cf7951e8fa513a77fc78aef22
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97586156"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684086"
 ---
 # <a name="azure-arc-enabled-kubernetes-troubleshooting-preview"></a>Probleem oplossing voor Azure Arc ingeschakeld Kubernetes (preview)
 
@@ -24,7 +24,7 @@ Dit document bevat een aantal veelvoorkomende scenario's voor probleem oplossing
 ### <a name="azure-cli-set-up"></a>Azure CLI instellen
 Voordat u AZ connectedk8s of AZ k8sconfiguration CLI-opdrachten gebruikt, moet u ervoor zorgen dat AZ is ingesteld om te werken aan het juiste Azure-abonnement.
 
-```console
+```azurecli
 az account set --subscription 'subscriptionId'
 az account show
 ```
@@ -79,7 +79,7 @@ Voor het verbinden van clusters met Azure is toegang vereist tot zowel een Azure
 
 Als het meegeleverde kubeconfig-bestand niet voldoende machtigingen heeft om de Azure Arc-agents te installeren, retourneert de Azure CLI-opdracht een fout bij het aanroepen van de Kubernetes-API.
 
-```console
+```azurecli
 $ az connectedk8s connect --resource-group AzureArc --name AzureArcCluster
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.
@@ -94,7 +94,7 @@ De cluster eigenaar moet een Kubernetes-gebruiker met de machtigingen voor clust
 
 Voor de installatie van de Azure Arc-agent moet een set containers op het doel cluster worden uitgevoerd. Als het cluster wordt uitgevoerd via een trage Internet verbinding, kan het verzamelen van de container installatie kopie langer duren dan de Azure CLI-time-outs.
 
-```console
+```azurecli
 $ az connectedk8s connect --resource-group AzureArc --name AzureArcCluster
 Command group 'connectedk8s' is in preview. It may be changed/removed in a future release.
 Ensure that you have the latest helm version installed before proceeding to avoid unexpected errors.

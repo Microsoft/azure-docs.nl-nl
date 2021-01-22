@@ -2,14 +2,14 @@
 title: Linux uitvoeren op reken knooppunten van virtuele machine
 description: Meer informatie over het verwerken van werk belastingen voor parallelle berekeningen op Pools met virtuele Linux-machines in Azure Batch.
 ms.topic: how-to
-ms.date: 11/10/2020
+ms.date: 01/21/2021
 ms.custom: H1Hack27Feb2017, devx-track-python, devx-track-csharp
-ms.openlocfilehash: 0a9c801a13af05f077b87f296992da7f50742e4b
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: c711ec0d035b9b59ec7628a51fe3cff26de358bc
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94533494"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683697"
 ---
 # <a name="provision-linux-compute-nodes-in-batch-pools"></a>Linux-reken knooppunten inrichten in batch-Pools
 
@@ -17,9 +17,7 @@ U kunt Azure Batch gebruiken om werk belastingen voor parallelle berekeningen ui
 
 ## <a name="virtual-machine-configuration"></a>Configuratie van virtuele machine
 
-Wanneer u een pool van reken knooppunten in batch maakt, hebt u twee opties waaruit u de grootte van het knoop punt en het besturings systeem kunt selecteren: Cloud Services configuratie en configuratie van de virtuele machine. De meeste groepen van Windows-reken knooppunten gebruiken [Cloud Services configuratie](nodes-and-pools.md#cloud-services-configuration), waarmee wordt aangegeven dat de groep bestaat uit Azure Cloud Services knoop punten. Deze groepen bieden alleen Windows-reken knooppunten.
-
-[Virtual machine-configuratie](nodes-and-pools.md#virtual-machine-configuration) daarentegen geeft aan dat de groep bestaat uit virtuele Azure-machines, die kunnen worden gemaakt op basis van Linux-of Windows-installatie kopieën. Wanneer u een pool maakt met virtuele-machine configuratie, moet u een [beschik bare Compute-knooppunt grootte](../virtual-machines/sizes.md)opgeven, de verwijzing naar de installatie kopie van de virtuele machine en de SKU van de batch-knooppunt agent (een programma dat op elk knoop punt wordt uitgevoerd en een interface bieden tussen het knoop punt en de batch-service), en de verwijzing naar de installatie kopie van de virtuele machine die
+Wanneer u een pool van reken knooppunten in batch maakt, hebt u twee opties waaruit u de grootte van het knoop punt en het besturings systeem kunt selecteren: Cloud Services configuratie en configuratie van de virtuele machine. [Virtuele-machine configuratie](nodes-and-pools.md#virtual-machine-configuration) Pools bestaan uit Azure vm's, die kunnen worden gemaakt op basis van Linux-of Windows-installatie kopieën. Wanneer u een pool maakt met virtuele-machine configuratie, geeft u een [beschik bare grootte van een reken knooppunt](../virtual-machines/sizes.md), de verwijzing naar de installatie kopie van de virtuele machine die op de knoop punten moet worden geïnstalleerd en de SKU van de batch-knooppunt agent (een programma dat op elk knoop punt wordt uitgevoerd en biedt een interface tussen het knoop punt en de batch-service).
 
 ### <a name="virtual-machine-image-reference"></a>Naslag informatie voor installatie kopieën van virtuele machines
 
@@ -35,7 +33,11 @@ Wanneer u een verwijzing naar een installatie kopie van een virtuele machine maa
 | Versie |meest recente |
 
 > [!TIP]
-> Meer informatie over deze eigenschappen en hoe u Marketplace-installatie kopieën kunt opgeven in [Linux VM-installatie kopieën zoeken in azure Marketplace met de Azure cli](../virtual-machines/linux/cli-ps-findimage.md). Houd er rekening mee dat niet alle installatie kopieën van Marketplace momenteel compatibel zijn met batch.
+> Meer informatie over deze eigenschappen en hoe u Marketplace-installatie kopieën kunt opgeven in [Linux VM-installatie kopieën zoeken in azure Marketplace met de Azure cli](../virtual-machines/linux/cli-ps-findimage.md). Houd er rekening mee dat sommige installatie kopieën van Marketplace momenteel niet compatibel zijn met batch.
+
+### <a name="list-of-virtual-machine-images"></a>Lijst met installatie kopieën van virtuele machines
+
+Niet alle Marketplace-installatie kopieën zijn compatibel met de momenteel beschik bare batch-knooppunt agenten. Gebruik [list_supported_images](/python/api/azure-batch/azure.batch.operations.AccountOperations#list-supported-images-account-list-supported-images-options-none--custom-headers-none--raw-false----operation-config-) (python), [ListSupportedImages](/dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages) (batch .net) of de bijbehorende API in een andere taal-SDK voor een lijst met alle ondersteunde installatie kopieën voor virtuele machines van de Marketplace voor de batch-service en de bijbehorende node-agent-sku's.
 
 ### <a name="node-agent-sku"></a>SKU van knoop punt agent
 
@@ -44,10 +46,6 @@ De [batch-knooppunt agent](https://github.com/Azure/Batch/blob/master/changelogs
 - batch. node. Ubuntu 18,04
 - batch. node. CentOS 7
 - batch. node. Windows amd64
-
-### <a name="list-of-virtual-machine-images"></a>Lijst met installatie kopieën van virtuele machines
-
-Niet alle Marketplace-installatie kopieën zijn compatibel met de momenteel beschik bare batch-knooppunt agenten. Gebruik [list_supported_images](/python/api/azure-batch/azure.batch.operations.AccountOperations#list-supported-images-account-list-supported-images-options-none--custom-headers-none--raw-false----operation-config-) (python), [ListSupportedImages](/dotnet/api/microsoft.azure.batch.pooloperations.listsupportedimages) (batch .net) of de bijbehorende API in een andere taal-SDK voor een lijst met alle ondersteunde installatie kopieën voor virtuele machines van de Marketplace voor de batch-service en de bijbehorende node-agent-sku's.
 
 ## <a name="create-a-linux-pool-batch-python"></a>Een Linux-groep maken: batch python
 

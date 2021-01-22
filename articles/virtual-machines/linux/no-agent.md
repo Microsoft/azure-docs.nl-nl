@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 09/01/2020
 ms.author: danis
 ms.reviewer: cynthn
-ms.openlocfilehash: 9f0309f4e8273c2ef19ea86636de8e3aa6b6c4bc
-ms.sourcegitcommit: 5e5a0abe60803704cf8afd407784a1c9469e545f
+ms.openlocfilehash: edbcabfe4d0b633a784163562f52b303120916ca
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96435097"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685056"
 ---
 # <a name="creating-generalized-images-without-a-provisioning-agent"></a>Gegeneraliseerde installatie kopieën maken zonder een inrichtings agent
 
@@ -180,7 +180,7 @@ Als op uw virtuele machine python niet is geïnstalleerd of beschikbaar is, kunt
 
 In deze demo wordt gebruikgemaakt van systemed, het meest voorkomende init-systeem in moderne Linux-distributies. De eenvoudigste en meest systeem eigen manier om ervoor te zorgen dat dit voorbereidings mechanisme op het juiste moment wordt uitgevoerd, is door een systeem-service-eenheid te maken. U kunt het volgende eenheids bestand toevoegen aan `/etc/systemd/system` (dit voor beeld is de naam van het eenheids bestand `azure-provisioning.service` ):
 
-```
+```bash
 [Unit]
 Description=Azure Provisioning
 
@@ -204,7 +204,7 @@ Deze gesystemte service heeft drie dingen voor basis inrichting:
 
 Met de eenheid op het bestands systeem voert u de volgende handelingen uit om het bestand in te scha kelen:
 
-```
+```bash
 $ sudo systemctl enable azure-provisioning.service
 ```
 
@@ -214,14 +214,14 @@ De virtuele machine kan nu worden gegeneraliseerd en er moet een installatie kop
 
 Op de ontwikkel computer voert u de volgende handelingen uit om het maken van een installatie kopie voor te bereiden vanuit de basis-VM:
 
-```
+```bash
 $ az vm deallocate --resource-group demo1 --name demo1
 $ az vm generalize --resource-group demo1 --name demo1
 ```
 
 En maak de installatie kopie van deze VM:
 
-```
+```bash
 $ az image create \
     --resource-group demo1 \
     --source demo1 \
@@ -231,7 +231,7 @@ $ az image create \
 
 Nu kunt u een nieuwe virtuele machine (of meerdere Vm's) maken op basis van de installatie kopie:
 
-```
+```bash
 $ IMAGE_ID=$(az image show -g demo1 -n demo1img --query id -o tsv)
 $ az vm create \
     --resource-group demo12 \
@@ -249,7 +249,7 @@ $ az vm create \
 
 Deze VM moet worden ingericht. Als u zich aanmeldt bij de nieuwe virtuele machine, kunt u de uitvoer van de gesystemeerde rapport service bekijken:
 
-```
+```bash
 $ sudo journalctl -u azure-provisioning.service
 -- Logs begin at Thu 2020-06-11 20:28:45 UTC, end at Thu 2020-06-11 20:31:24 UTC. --
 Jun 11 20:28:49 thstringnopa systemd[1]: Starting Azure Provisioning...

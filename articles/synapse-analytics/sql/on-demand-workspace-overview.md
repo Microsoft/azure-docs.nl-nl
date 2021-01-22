@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 34ce36f0ff348f896b7c2ea680c113b5e9e4ea09
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 87f592f0cff8504fbafba392d20f405640e2578a
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96463169"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682967"
 ---
 # <a name="serverless-sql-pool-in-azure-synapse-analytics"></a>Serverloze SQL-pool in Azure Synapse Analytics 
 
@@ -75,7 +75,7 @@ Beveiliging kan worden afgedwongen met:
 
 Ondersteunde T-SQL:
 
-- Volledig [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)-surface area wordt ondersteund, met inbegrip van het merendeel van de SQL-functies
+- Volledig [SELECT](/sql/t-sql/queries/select-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)-surface area wordt ondersteund, met inbegrip van het merendeel van de SQL-functies
 - CETAS - CREATE EXTERNAL TABLE AS SELECT
 - Alleen DDL-instructies met betrekking tot weergaven en beveiliging
 
@@ -89,7 +89,7 @@ Een serverloze SQL-pool heeft geen lokale opslag; alleen metagegevensobjecten wo
 
 ### <a name="extensions"></a>Extensies
 
-Voor een goede ervaring bij het in-place uitvoeren van query's op gegevens die zich in de bestanden in de data lake bevinden, breidt de serverloze SQL-pool de bestaande [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest)-functie uit door de volgende mogelijkheden toe te voegen:
+Voor een goede ervaring bij het in-place uitvoeren van query's op gegevens die zich in de bestanden in de data lake bevinden, breidt de serverloze SQL-pool de bestaande [OPENROWSET](/sql/t-sql/functions/openrowset-transact-sql?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)-functie uit door de volgende mogelijkheden toe te voegen:
 
 [Query uitvoeren op meerdere bestanden of mappen](query-data-storage.md#query-multiple-files-or-folders)
 
@@ -125,7 +125,7 @@ Verificatie van de serverloze SQL-pool verwijst naar hoe gebruikers hun identite
 
 - **Azure Active Directory-verificatie**:
 
-  Bij deze verificatiemethode worden identiteiten gebruikt die worden beheerd door Azure Active Directory. Voor Azure AD-gebruikers kan meervoudige verificatie worden ingeschakeld. Gebruik [waar mogelijk](/sql/relational-databases/security/choose-an-authentication-mode?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest) Active Directory-verificatie (geïntegreerde beveiliging).
+  Bij deze verificatiemethode worden identiteiten gebruikt die worden beheerd door Azure Active Directory. Voor Azure AD-gebruikers kan meervoudige verificatie worden ingeschakeld. Gebruik [waar mogelijk](/sql/relational-databases/security/choose-an-authentication-mode?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) Active Directory-verificatie (geïntegreerde beveiliging).
 
 #### <a name="authorization"></a>Autorisatie
 

@@ -9,12 +9,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: philmea
 ms.custom: mvc
-ms.openlocfilehash: a303f5e6177d0dc4205eaec8c3b1911e8e004fe3
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: d14eda84144105bf2e04f1238284bc58a91c4c03
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98602434"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684052"
 ---
 # <a name="request-elevation-data-using-the-azure-maps-elevation-service-preview"></a>Gegevens over benodigde bevoegdheden aanvragen met behulp van de Azure Maps-uitbreidings service (preview)
 
@@ -22,7 +22,7 @@ ms.locfileid: "98602434"
 > De Azure Maps-uitbreidings service is momenteel beschikbaar als open bare preview.
 > Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads. Misschien worden bepaalde functies niet ondersteund of zijn de mogelijkheden ervan beperkt. Zie [Supplemental Terms of Use for Microsoft Azure Previews (Aanvullende gebruiksvoorwaarden voor Microsoft Azure-previews)](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor meer informatie.
 
-De Azure Maps- [uitbreidings service](https://docs.microsoft.com/rest/api/maps/elevation) voorziet in api's voor het uitvoeren van een query op een wille keurige plaats in het Opper vlak van de aarde. U kunt voor beelden van uitbrei ding van bevoegdheden aanvragen in paden, binnen een bepaald begrenzingsvak of op specifieke coördinaten. U kunt ook de [weer gave-API voor de tegel v2-ophalen](https://docs.microsoft.com/rest/api/maps/renderv2) gebruiken om de uitbreidings gegevens op te halen in de tegel indeling. De tegels worden in de GeoTIFF-Raster indeling geleverd. Dit artikel laat u zien hoe u Azure Maps-uitbreidings service en de tegel-API Get-toewijzing kunt gebruiken om gegevens over benodigde bevoegdheden te vragen. De verhogings gegevens kunnen worden aangevraagd in geojson-en GeoTiff-indelingen.
+De Azure Maps- [uitbreidings service](/rest/api/maps/elevation) voorziet in api's voor het uitvoeren van een query op een wille keurige plaats in het Opper vlak van de aarde. U kunt voor beelden van uitbrei ding van bevoegdheden aanvragen in paden, binnen een bepaald begrenzingsvak of op specifieke coördinaten. U kunt ook de [weer gave-API voor de tegel v2-ophalen](/rest/api/maps/renderv2) gebruiken om de uitbreidings gegevens op te halen in de tegel indeling. De tegels worden in de GeoTIFF-Raster indeling geleverd. Dit artikel laat u zien hoe u Azure Maps-uitbreidings service en de tegel-API Get-toewijzing kunt gebruiken om gegevens over benodigde bevoegdheden te vragen. De verhogings gegevens kunnen worden aangevraagd in geojson-en GeoTiff-indelingen.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -35,7 +35,7 @@ In dit artikel wordt gebruikgemaakt van de toepassing [postman](https://www.post
 
 ## <a name="request-elevation-data-in-raster-tiled-format"></a>Uitbrei ding van gegevens aanvragen in een raster tegel met opmaak
 
-Voor het aanvragen van uitbrei ding van gegevens in de indeling raster tegel, gebruikt u de [tegel-API render v2-kaart ophalen](https://docs.microsoft.com/rest/api/maps/renderv2). Als de tegel kan worden gevonden, retourneert de API de tegel als een GeoTIFF. Anders retourneert de API 0. Alle raster-DEM tegels maken gebruik van de geo-modus (Sea-Level). In dit voor beeld vragen we om verhogings gegevens voor mt. Everest.
+Voor het aanvragen van uitbrei ding van gegevens in de indeling raster tegel, gebruikt u de [tegel-API render v2-kaart ophalen](/rest/api/maps/renderv2). Als de tegel kan worden gevonden, retourneert de API de tegel als een GeoTIFF. Anders retourneert de API 0. Alle raster-DEM tegels maken gebruik van de geo-modus (Sea-Level). In dit voor beeld vragen we om verhogings gegevens voor mt. Everest.
 
 >[!TIP]
 >Als u een tegel op een specifiek gebied op de wereld kaart wilt ophalen, moet u de juiste tegel vinden op het juiste zoom niveau. Houd er ook rekening mee dat WorldDEM de hele wereld wijde landmass omvat, maar niet voor oceanen.  Zie [zoom niveaus en tegel raster](zoom-levels-and-tile-grid.md)voor meer informatie.
@@ -58,9 +58,9 @@ Gebruik de Api's van de Elevation-service (preview-versie) om verhogings gegeven
 
 * [Gegevens ophalen voor punten](/rest/api/maps/elevation/getdataforpoints)
 * [Gegevens plaatsen voor punten](/rest/api/maps/elevation/postdataforpoints)
-* [Gegevens ophalen voor poly lijn](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline)
-* [Gegevens voor poly lijn plaatsen](https://docs.microsoft.com/rest/api/maps/elevation/postdataforpolyline)
-* [Gegevens ophalen voor selectie kader](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)
+* [Gegevens ophalen voor poly lijn](/rest/api/maps/elevation/getdataforpolyline)
+* [Gegevens voor poly lijn plaatsen](/rest/api/maps/elevation/postdataforpolyline)
+* [Gegevens ophalen voor selectie kader](/rest/api/maps/elevation/getdataforboundingbox)
 
 >[!IMPORTANT]
 > Wanneer er geen gegevens kunnen worden geretourneerd, retour neren alle Api's `0` .
@@ -126,11 +126,11 @@ In dit voor beeld gebruiken we de [API gegevens ophalen voor Points](/rest/api/m
 
 ### <a name="request-elevation-data-samples-along-a-polyline"></a>Voor beelden van uitbrei ding van gegevens aanvragen langs een poly lijn
 
-In dit voor beeld gebruiken we de [gegevens ophalen voor poly lijn](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline) om vijf gelijkmatige steek proeven van verhoogde gegevens langs een rechte lijn tussen coördinaten op Mt aan te vragen. Everest en Chamlang bergen. Beide coördinaten moeten worden gedefinieerd in een lange/lat-indeling. Als u geen waarde voor de `samples` para meter opgeeft, wordt het aantal voor beelden standaard ingesteld op 10. Het maximum aantal steek proeven is 2.000.
+In dit voor beeld gebruiken we de [gegevens ophalen voor poly lijn](/rest/api/maps/elevation/getdataforpolyline) om vijf gelijkmatige steek proeven van verhoogde gegevens langs een rechte lijn tussen coördinaten op Mt aan te vragen. Everest en Chamlang bergen. Beide coördinaten moeten worden gedefinieerd in een lange/lat-indeling. Als u geen waarde voor de `samples` para meter opgeeft, wordt het aantal voor beelden standaard ingesteld op 10. Het maximum aantal steek proeven is 2.000.
 
 Vervolgens gebruiken we de gegevens ophalen voor poly lijn om drie even geplaatste steek proeven aan te vragen langs een pad. We definiëren de exacte locatie voor de voor beelden door door te geven in drie lange/lat-coördinaten paren.
 
-Ten slotte gebruiken we de [Post-gegevens voor de poly lijn-API](https://docs.microsoft.com/rest/api/maps/elevation/postdataforpolyline) voor het aanvragen van verhogings gegevens in dezelfde drie, gelijkmatig geplaatste steek proeven.
+Ten slotte gebruiken we de [Post-gegevens voor de poly lijn-API](/rest/api/maps/elevation/postdataforpolyline) voor het aanvragen van verhogings gegevens in dezelfde drie, gelijkmatig geplaatste steek proeven.
 
 De breedte graad en lengte graad van de URL worden verwacht in WGS84 (World Geodetic System).
 
@@ -229,7 +229,7 @@ De breedte graad en lengte graad van de URL worden verwacht in WGS84 (World Geod
     }
     ```
 
-7. Nu noemen we de post- [gegevens voor de poly lijn-API](https://docs.microsoft.com/rest/api/maps/elevation/postdataforpolyline) om de verhogings gegevens voor dezelfde drie punten te verkrijgen. Selecteer de **post** HTTP-methode op het tabblad Builder en voer de volgende URL in. Voor deze aanvraag en andere aanvragen die in dit artikel worden vermeld, vervangt u `{Azure-Maps-Primary-Subscription-key}` door uw primaire abonnementssleutel.
+7. Nu noemen we de post- [gegevens voor de poly lijn-API](/rest/api/maps/elevation/postdataforpolyline) om de verhogings gegevens voor dezelfde drie punten te verkrijgen. Selecteer de **post** HTTP-methode op het tabblad Builder en voer de volgende URL in. Voor deze aanvraag en andere aanvragen die in dit artikel worden vermeld, vervangt u `{Azure-Maps-Primary-Subscription-key}` door uw primaire abonnementssleutel.
 
     ```http
     https://atlas.microsoft.com/elevation/line/json?api-version=1.0&subscription-key={Azure-Maps-Primary-Subscription-key}&samples=5
@@ -256,7 +256,7 @@ De breedte graad en lengte graad van de URL worden verwacht in WGS84 (World Geod
 
 ### <a name="request-elevation-data-by-bounding-box"></a>Gegevens van verhoogde bevoegdheid aanvragen door middel van selectie kader
 
-We gebruiken nu het selectie [vakje gegevens ophalen voor omsluitend kader](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox) voor het aanvragen van verhoogde bevoegdheden bij Mt. Rainier, WA. De verhogings gegevens worden op gelijkmatige locaties in een selectie kader geretourneerd. Het omsluitende gebied dat is gedefinieerd door (2) sets van lat/long-coördinaten (Zuid-breedte graad, westelijke lengte graad | Noord-breedte graad), wordt onderverdeeld in rijen en kolommen. De randen van het selectie kader account voor twee (2) van de rijen en twee (2) van de kolommen. Er worden verhogingen geretourneerd voor de raster hoekpunten die zijn gemaakt bij rij-en kolom intervallen. Maxi maal 2000 verhogingen kunnen in één aanvraag worden geretourneerd.
+We gebruiken nu het selectie [vakje gegevens ophalen voor omsluitend kader](/rest/api/maps/elevation/getdataforboundingbox) voor het aanvragen van verhoogde bevoegdheden bij Mt. Rainier, WA. De verhogings gegevens worden op gelijkmatige locaties in een selectie kader geretourneerd. Het omsluitende gebied dat is gedefinieerd door (2) sets van lat/long-coördinaten (Zuid-breedte graad, westelijke lengte graad | Noord-breedte graad), wordt onderverdeeld in rijen en kolommen. De randen van het selectie kader account voor twee (2) van de rijen en twee (2) van de kolommen. Er worden verhogingen geretourneerd voor de raster hoekpunten die zijn gemaakt bij rij-en kolom intervallen. Maxi maal 2000 verhogingen kunnen in één aanvraag worden geretourneerd.
 
 In dit voor beeld geven we rijen = 3 en kolommen = 6. 18 verhogings waarden worden geretourneerd in het antwoord. In het volgende diagram worden de verhogings waarden besteld, te beginnen met de zuidwest hoek, en gaat u verder met West naar Oost en Zuid naar Noord.  De verhogings punten zijn genummerd in de volg orde waarin ze worden geretourneerd.
 
@@ -488,15 +488,15 @@ Zie voor meer informatie over de Api's voor de Azure Maps-uitbrei ding (preview)
 > [Uitbrei ding (preview): gegevens ophalen voor lat-lange coördinaten](/rest/api/maps/elevation/getdataforpoints)
 
 > [!div class="nextstepaction"]
-> [Uitbrei ding (preview): gegevens ophalen voor selectie kader](https://docs.microsoft.com/rest/api/maps/elevation/getdataforboundingbox)
+> [Uitbrei ding (preview): gegevens ophalen voor selectie kader](/rest/api/maps/elevation/getdataforboundingbox)
 
 > [!div class="nextstepaction"]
-> [Uitbrei ding (preview): gegevens ophalen voor poly lijn](https://docs.microsoft.com/rest/api/maps/elevation/getdataforpolyline)
+> [Uitbrei ding (preview): gegevens ophalen voor poly lijn](/rest/api/maps/elevation/getdataforpolyline)
 
 > [!div class="nextstepaction"]
-> [Rendering v2 – kaart tegel ophalen](https://docs.microsoft.com/rest/api/maps/renderv2)
+> [Rendering v2 – kaart tegel ophalen](/rest/api/maps/renderv2)
 
 Voor een volledige lijst van Azure Maps REST API's, bekijk:
 
 > [!div class="nextstepaction"]
-> [Azure Maps REST API's](https://docs.microsoft.com/rest/api/maps/)
+> [Azure Maps REST API's](/rest/api/maps/)

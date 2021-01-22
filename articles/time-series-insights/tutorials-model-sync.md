@@ -8,14 +8,14 @@ ms.author: radhsrin
 manager: diviso
 ms.workload: big-data
 ms.topic: conceptual
-ms.date: 09/22/2020
+ms.date: 01/19/2021
 ms.custom: dpalled
-ms.openlocfilehash: 0d02a6e3eb2aef4a02c90360b2016e64af579081
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 5e8e5367daa532fa0cc36a18cd28b382e7cd8f78
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95014727"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682899"
 ---
 # <a name="model-synchronization-between-azure-digital-twins-and-time-series-insights-gen2"></a>Modelsynchronisatie tussen Azure Digital Twins en Time Series Insights Gen2
 

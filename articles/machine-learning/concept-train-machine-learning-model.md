@@ -10,12 +10,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.date: 05/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 2448f5f778f19674aec63291acb72536c65ca6c9
-ms.sourcegitcommit: dc342bef86e822358efe2d363958f6075bcfc22a
+ms.openlocfilehash: ac9a1b43ba4ffb537afd658c84edb48ed59a3694
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94555886"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683479"
 ---
 # <a name="train-models-with-azure-machine-learning"></a>Modellen trainen met Azure Machine Learning
 
@@ -31,9 +31,9 @@ Azure Machine Learning biedt verschillende manieren om uw modellen te trainen, v
 
 + [Azure machine learning SDK voor r (preview)](#r-sdk-preview): de SDK voor r maakt gebruik van het Reticulate-pakket om een binding te maken met de PYTHON-sdk van Azure machine learning. Hiermee hebt u toegang tot de kern objecten en-methoden die zijn geïmplementeerd in de python-SDK vanuit elke R-omgeving.
 
-+ **Designer** : Azure machine learning Designer biedt een eenvoudig ingangs punt in machine learning voor het bouwen van een proef versie van concepten of voor gebruikers met weinig code ring. Het biedt u de mogelijkheid om modellen te trainen met behulp van een slepen-en-neerzetten op het web. U kunt python-code gebruiken als onderdeel van het ontwerp of modellen trainen zonder code te schrijven.
++ **Designer**: Azure machine learning Designer biedt een eenvoudig ingangs punt in machine learning voor het bouwen van een proef versie van concepten of voor gebruikers met weinig code ring. Het biedt u de mogelijkheid om modellen te trainen met behulp van een slepen-en-neerzetten op het web. U kunt python-code gebruiken als onderdeel van het ontwerp of modellen trainen zonder code te schrijven.
 
-+ **Cli** : de machine learning cli bevat opdrachten voor algemene taken met Azure machine learning en wordt vaak gebruikt voor het **uitvoeren van scripts en het automatiseren van taken**. Als u bijvoorbeeld een trainings script of pijp lijn hebt gemaakt, kunt u de CLI gebruiken om een training te starten volgens een planning of wanneer de gegevens bestanden die worden gebruikt voor de training, worden bijgewerkt. Voor trainings modellen bevat deze opdrachten voor het verzenden van trainings taken. Het kan taken verzenden met behulp van run-configuraties of-pijp lijnen.
++ **Cli**: de machine learning cli bevat opdrachten voor algemene taken met Azure machine learning en wordt vaak gebruikt voor het **uitvoeren van scripts en het automatiseren van taken**. Als u bijvoorbeeld een trainings script of pijp lijn hebt gemaakt, kunt u de CLI gebruiken om een training te starten volgens een planning of wanneer de gegevens bestanden die worden gebruikt voor de training, worden bijgewerkt. Voor trainings modellen bevat deze opdrachten voor het verzenden van trainings taken. Het kan taken verzenden met behulp van run-configuraties of-pijp lijnen.
 
 Elk van deze trainings methoden kan gebruikmaken van verschillende soorten reken resources voor training. Deze resources worden gezamenlijk aangeduid als [__Compute-doelen__](concept-azure-machine-learning-architecture.md#compute-targets). Een compute-doel kan een lokale machine of een Cloud resource zijn, zoals een Azure Machine Learning compute, Azure HDInsight of een externe virtuele machine.
 
@@ -109,7 +109,6 @@ Met de R-SDK kunt u de R-taal gebruiken met Azure Machine Learning. De SDK gebru
 
 Raadpleeg voor meer informatie de volgende artikelen:
 
-* [Zelf studie: een logistiek regressie model maken](tutorial-1st-r-experiment.md)
 * [Naslag informatie over Azure Machine Learning SDK voor R](https://azure.github.io/azureml-sdk-for-r/index.html)
 
 ## <a name="azure-machine-learning-designer"></a>Azure Machine Learning-ontwerpprogramma

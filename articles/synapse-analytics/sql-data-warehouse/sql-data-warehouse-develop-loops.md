@@ -11,12 +11,12 @@ ms.date: 04/17/2018
 ms.author: emtehran
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019, azure-synapse
-ms.openlocfilehash: 3477b3095414248afa9fbc7417ab707c94f35546
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: a6c4eb98d77ece6e6ae130fd57cc263ee7e5ca64
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462721"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683219"
 ---
 # <a name="using-t-sql-loops-for-dedicated-sql-pools-in-azure-synapse-analytics"></a>T-SQL-lussen gebruiken voor toegewezen SQL-groepen in azure Synapse Analytics
 
@@ -24,7 +24,7 @@ In dit artikel vindt u tips voor het ontwikkelen van exclusieve SQL-groeps oplos
 
 ## <a name="purpose-of-while-loops"></a>Doel van WHILE-lussen
 
-Exclusieve SQL-groepen in azure Synapse ondersteunen de [while](/sql/t-sql/language-elements/while-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) -lus voor het herhaaldelijk uitvoeren van instructie blokken. Deze lus wordt voortgezet zolang de opgegeven voor waarden waar zijn of totdat de code de lus met behulp van het sleutel woord desplit verbreekt.
+Exclusieve SQL-groepen in azure Synapse ondersteunen de [while](/sql/t-sql/language-elements/while-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) -lus voor het herhaaldelijk uitvoeren van instructie blokken. Deze lus wordt voortgezet zolang de opgegeven voor waarden waar zijn of totdat de code de lus met behulp van het sleutel woord desplit verbreekt.
 
 Lussen zijn handig voor het vervangen van cursors die zijn gedefinieerd in SQL-code. Gelukkig zijn bijna alle cursors die in SQL-code zijn geschreven van het besnelde, alleen-lezen RAS. En lussen zijn dus een geweldig alternatief voor het vervangen van cursors.
 

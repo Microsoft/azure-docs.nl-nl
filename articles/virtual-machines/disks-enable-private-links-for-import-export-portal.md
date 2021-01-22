@@ -8,12 +8,12 @@ ms.date: 08/24/2020
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: 68a308952b63d15aa6db90021400f826ef575c0c
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
-ms.translationtype: HT
+ms.openlocfilehash: b80100216003e91fde54b5e555bafb755c942810
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537183"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682916"
 ---
 # <a name="use-the-azure-portal-to-restrict-importexport-access-for-managed-disks-with-private-links"></a>Azure Portal gebruiken om de toegang voor importeren/exporteren voor beheerde schijven te beperken met Private Link
 
@@ -92,4 +92,4 @@ U hebt nu de configuratie van persoonlijke koppelingen voltooid die u kunt gebru
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Veelgestelde vragen over privékoppelingen](./faq-for-disks.md#private-links-for-securely-exporting-and-importing-managed-disks)
-- [Beheerde momentopnamen exporteren/kopiëren als VHD naar een opslagaccount in een andere regio met PowerShell](./scripts/virtual-machines-powershell-sample-copy-snapshot-to-storage-account.md)
+- [Beheerde momentopnamen exporteren/kopiëren als VHD naar een opslagaccount in een andere regio met PowerShell](/previous-versions/azure/virtual-machines/scripts/virtual-machines-powershell-sample-copy-snapshot-to-storage-account)

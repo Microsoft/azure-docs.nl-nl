@@ -8,12 +8,12 @@ ms.service: signalr
 ms.topic: article
 ms.date: 05/06/2020
 ms.author: dayshen
-ms.openlocfilehash: 80369883b84ca30cae475235d41addcfba7e52e1
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 92e93c3746308d2d6c1a489efc6b5c866b0ad2d9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152329"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682627"
 ---
 # <a name="use-private-endpoints-for-azure-signalr-service"></a>Privé-eind punten gebruiken voor de Azure signalerings service
 
@@ -35,7 +35,7 @@ Toepassingen in het VNet kunnen naadloos verbinding maken met de Azure signaleri
 
 Wanneer u in uw VNet een persoonlijk eind punt maakt voor een Azure signalerings service, wordt er een aanvraag voor goed keuring verzonden naar de eigenaar van de Azure signalerings service. Als de gebruiker die het persoonlijke eind punt wil maken ook een eigenaar is van de Azure signalerings service, wordt deze aanvraag voor toestemming automatisch goedgekeurd.
 
-De eigenaar van de Azure signalerings service kan toestemming aanvragen en de persoonlijke eind punten beheren via het tabblad*privé-eind punten*voor de Azure signalerings service in de [Azure Portal](https://portal.azure.com).
+De eigenaar van de Azure signalerings service kan toestemming aanvragen en de persoonlijke eind punten beheren via het tabblad *privé-eind punten* voor de Azure signalerings service in de [Azure Portal](https://portal.azure.com).
 
 > [!TIP]
 > Als u de toegang tot uw Azure signalerings service via het persoonlijke eind punt alleen wilt beperken, [configureert u de netwerk Access Control](howto-network-access-control.md#managing-network-access-control) om toegang via het open bare eind punt te weigeren of te beheren.
@@ -126,55 +126,55 @@ Raadpleeg de volgende artikelen voor meer informatie over het configureren van u
 ### <a name="create-a-private-endpoint-using-azure-cli"></a>Een persoonlijk eind punt maken met behulp van Azure CLI
 
 1. Aanmelden bij Azure CLI
-    ```console
+    ```azurecli
     az login
     ```
 1. Selecteer uw Azure-abonnement
-    ```console
+    ```azurecli
     az account set --subscription {AZURE SUBSCRIPTION ID}
     ```
 1. Een nieuwe brongroep maken
-    ```console
+    ```azurecli
     az group create -n {RG} -l {AZURE REGION}
     ```
 1. Micro soft. SignalRService als provider registreren
-    ```console
+    ```azurecli
     az provider register -n Microsoft.SignalRService
     ```
 1. Een nieuwe Azure signalerings service maken
-    ```console
+    ```azurecli
     az signalr create --name {NAME} --resource-group {RG} --location {AZURE REGION} --sku Standard_S1
     ```
 1. Een Virtual Network maken
-    ```console
+    ```azurecli
     az network vnet create --resource-group {RG} --name {vNet NAME} --location {AZURE REGION}
     ```
 1. Een subnet toevoegen
-    ```console
+    ```azurecli
     az network vnet subnet create --resource-group {RG} --vnet-name {vNet NAME} --name {subnet NAME} --address-prefixes {addressPrefix}
     ```
 1. Virtueel netwerk-beleid uitschakelen
-    ```console
+    ```azurecli
     az network vnet subnet update --name {subnet NAME} --resource-group {RG} --vnet-name {vNet NAME} --disable-private-endpoint-network-policies true
     ```
 1. Een Privé-DNS-zone
-    ```console
+    ```azurecli
     az network private-dns zone create --resource-group {RG} --name privatelink.service.signalr.net
     ```
 1. Privé-DNS zone koppelen aan Virtual Network
-    ```console
+    ```azurecli
     az network private-dns link vnet create --resource-group {RG} --virtual-network {vNet NAME} --zone-name privatelink.service.signalr.net --name {dnsZoneLinkName} --registration-enabled true
     ```
 1. Een privé-eindpunt maken (automatisch goedkeuren)
-    ```console
+    ```azurecli
     az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.SignalRService/SignalR/{NAME}" --group-ids signalr --connection-name {Private Link Connection Name} --location {AZURE REGION}
     ```
 1. Een privé-eindpunt maken (handmatig goedkeuring aanvragen)
-    ```console
+    ```azurecli
     az network private-endpoint create --resource-group {RG} --vnet-name {vNet NAME} --subnet {subnet NAME} --name {Private Endpoint Name}  --private-connection-resource-id "/subscriptions/{AZURE SUBSCRIPTION ID}/resourceGroups/{RG}/providers/Microsoft.SignalRService/SignalR/{NAME}" --group-ids signalr --connection-name {Private Link Connection Name} --location {AZURE REGION} --manual-request
     ```
 1. Verbindingsstatus weergeven
-    ```console
+    ```azurecli
     az network private-endpoint show --resource-group {RG} --name {Private Endpoint Name}
     ```
 

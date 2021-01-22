@@ -7,12 +7,12 @@ ms.date: 08/10/2020
 ms.topic: article
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 43447454b82b74c10b1d53c41c7883b0b9bef242
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 634fc183cc27db1ae949959c3ae7fae8eda5b644
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196500"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684539"
 ---
 # <a name="azure-image-builder-service-devops-task"></a>Azure Image Builder service DevOps-taak
 
@@ -71,10 +71,10 @@ Gebruik de resource groep waarin de sjabloon artefact van de tijdelijke afbeeldi
  
 ### <a name="location"></a>Locatie
 
-De locatie is de regio waar de opbouw functie voor installatie kopieën wordt uitgevoerd. Alleen een set-aantal [regio's](../windows/image-builder-overview.md#regions) wordt ondersteund. De bron installatie kopieën moeten aanwezig zijn op deze locatie. Als u bijvoorbeeld galerie met gedeelde afbeeldingen gebruikt, moet er een replica in die regio bestaan.
+De locatie is de regio waar de opbouw functie voor installatie kopieën wordt uitgevoerd. Alleen een set-aantal [regio's](../image-builder-overview.md#regions) wordt ondersteund. De bron installatie kopieën moeten aanwezig zijn op deze locatie. Als u bijvoorbeeld galerie met gedeelde afbeeldingen gebruikt, moet er een replica in die regio bestaan.
 
 ### <a name="managed-identity-required"></a>Beheerde identiteit (vereist)
-Voor de opbouw functie voor installatie kopieën is een beheerde identiteit vereist, die wordt gebruikt om aangepaste bron afbeeldingen te lezen, verbinding te maken met Azure Storage en aangepaste installatie kopieën te maken. Klik [hier](./image-builder-overview.md#permissions) voor meer informatie.
+Voor de opbouw functie voor installatie kopieën is een beheerde identiteit vereist, die wordt gebruikt om aangepaste bron afbeeldingen te lezen, verbinding te maken met Azure Storage en aangepaste installatie kopieën te maken. Klik [hier](../image-builder-overview.md#permissions) voor meer informatie.
 
 ### <a name="vnet-support"></a>VNET-ondersteuning
 
@@ -335,4 +335,4 @@ Het bron artefact van de afbeeldings sjabloon bevindt zich in de resource groep 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie [overzicht van Azure Image Builder](image-builder-overview.md)voor meer informatie.
+Zie [overzicht van Azure Image Builder](../image-builder-overview.md)voor meer informatie.

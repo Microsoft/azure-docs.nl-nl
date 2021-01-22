@@ -14,12 +14,12 @@ ms.service: azure
 ms.tgt_pltfrm: multiple
 ms.topic: tutorial
 ms.workload: web
-ms.openlocfilehash: 65d8ade438228d7af71de1fc66639e5b6de2edda
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
-ms.translationtype: HT
+ms.openlocfilehash: 735c0955a25a3995c94c73bd6471643ce2783df3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040805"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682611"
 ---
 # <a name="create-a-pivotal-cloud-foundry-cluster-on-azure"></a>Een Pivotal Cloud Foundry-cluster maken op Azure
 
@@ -42,11 +42,13 @@ Zie voor meer informatie, [SSH-sleutels gebruiken met Windows op Azure](../virtu
 
 > [!NOTE]
 >
-> Voor het maken van een service-principal is een machtiging voor het eigenaarsaccount vereist. U kunt bovendien een script schrijven om het maken van de service-principal te automatiseren. Bijvoorbeeld met behulp van de Azure CLI-opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp?view=azure-cli-latest).
+> Voor het maken van een service-principal is een machtiging voor het eigenaarsaccount vereist. U kunt bovendien een script schrijven om het maken van de service-principal te automatiseren. Bijvoorbeeld met behulp van de Azure CLI-opdracht [az ad sp create-for-rbac](/cli/azure/ad/sp).
 
 1. Meld u aan bij uw Azure-account.
 
-    `az login`
+    ```azurecli
+    az login
+    ```
 
     ![Aanmelding bij Azure CLI](media/deploy/az-login-output.png )
  
@@ -54,11 +56,15 @@ Zie voor meer informatie, [SSH-sleutels gebruiken met Windows op Azure](../virtu
 
 2. Stel uw standaardabonnement voor deze configuratie in.
 
-    `az account set -s {id}`
+    ```azurecli
+    az account set -s {id}
+    ```
 
 3. Een Azure Active Directory-toepassing maken voor uw PCF. Geef een uniek alfanumeriek wachtwoord op. Sla het wachtwoord op als uw **clientSecret** voor later gebruik.
 
-    `az ad app create --display-name "Svc Principal for OpsManager" --password {enter-your-password} --homepage "{enter-your-homepage}" --identifier-uris {enter-your-homepage}`
+    ```azurecli
+    az ad app create --display-name "Svc Principal for OpsManager" --password {enter-your-password} --homepage "{enter-your-homepage}" --identifier-uris {enter-your-homepage}
+    ```
 
     Kopieer de waarde 'appId' in de uitvoer als uw **ClientID** voor later gebruik.
 
@@ -68,23 +74,31 @@ Zie voor meer informatie, [SSH-sleutels gebruiken met Windows op Azure](../virtu
 
 4. Maak een service-principal met uw nieuwe app-id.
 
-    `az ad sp create --id {appId}`
+    ```azurecli
+    az ad sp create --id {appId}
+    ```
 
 5. Stel de machtigingsrol van de service-principal in als Inzender.
 
-    `az role assignment create --assignee "{enter-your-homepage}" --role "Contributor"`
+    ```azurecli
+    az role assignment create --assignee "{enter-your-homepage}" --role "Contributor"
+    ```
 
     U kunt ook
 
-    `az role assignment create --assignee {service-principal-name} --role "Contributor"`
+    ```azurecli
+    az role assignment create --assignee {service-principal-name} --role "Contributor"
+    ```
 
     ![de roltoewijzing van de service-principal gebruiken](media/deploy/svc-princ.png )
 
 6. Controleer of u zich kunt aanmelden bij uw service-principal met behulp van de app-id, het wachtwoord en de tenant-id.
 
-    `az login --service-principal -u {appId} -p {your-password}  --tenant {tenantId}`
+    ```azurecli
+    az login --service-principal -u {appId} -p {your-password}  --tenant {tenantId}
+    ```
 
-7. Maak een JSON-bestand in de volgende indeling. Gebruik de waarden van **abonnements-id** , **tenantID** , **clientID** en **clientSecret** die u eerder hebt gekopieerd. Sla het bestand op.
+7. Maak een JSON-bestand in de volgende indeling. Gebruik de waarden van **abonnements-id**, **tenantID**, **clientID** en **clientSecret** die u eerder hebt gekopieerd. Sla het bestand op.
 
     ```json
     {

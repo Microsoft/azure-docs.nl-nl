@@ -9,12 +9,12 @@ ms.subservice: management
 ms.date: 06/26/2020
 ms.reviewer: jushiman
 ms.custom: avverma, devx-track-azurecli
-ms.openlocfilehash: 4ebb16186e613affdb886a8819240d47f944c42f
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: ff1a29577c0778d6ef88d3523c726f7a48739cdc
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763537"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684607"
 ---
 # <a name="azure-virtual-machine-scale-set-automatic-os-image-upgrades"></a>Upgrade van Azure virtual machine-schaalsets automatische installatiekopieën van besturingssystemen
 
@@ -49,7 +49,7 @@ De versie van het besturings systeem voor het upgraden van de schaalset controle
 >Bij automatische upgrade van het besturings systeem wordt de SKU van de referentie-installatie kopie niet bijgewerkt op de schaalset. Als u de SKU wilt wijzigen (zoals Ubuntu 16,04-LTS naar 18,04-LTS), moet u het [model voor de schaalset](virtual-machine-scale-sets-upgrade-scale-set.md#the-scale-set-model) rechtstreeks bijwerken met de gewenste installatie kopie-SKU. Installatie kopie van uitgever en aanbieding kan niet worden gewijzigd voor een bestaande schaalset.  
 
 ## <a name="supported-os-images"></a>Ondersteunde installatie kopieën van besturings systemen
-Er worden momenteel alleen bepaalde installatie kopieën van besturings systemen ondersteund. Aangepaste installatie kopieën [worden ondersteund](virtual-machine-scale-sets-automatic-upgrade.md#automatic-os-image-upgrade-for-custom-images) als de schaalset aangepaste installatie kopieën gebruikt via de [Galerie met gedeelde afbeeldingen](shared-image-galleries.md).
+Er worden momenteel alleen bepaalde installatie kopieën van besturings systemen ondersteund. Aangepaste installatie kopieën [worden ondersteund](virtual-machine-scale-sets-automatic-upgrade.md#automatic-os-image-upgrade-for-custom-images) als de schaalset aangepaste installatie kopieën gebruikt via de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md).
 
 De volgende platform-Sku's worden momenteel ondersteund (en worden regel matig toegevoegd):
 
@@ -89,11 +89,11 @@ Zorg ervoor dat de duurzaamheids instellingen niet overeenkomen met het Service 
 
 ## <a name="automatic-os-image-upgrade-for-custom-images"></a>Automatische upgrade van besturings systeem installatie kopie voor aangepaste installatie kopieën
 
-Automatische upgrade van besturings systeem installatie kopie wordt ondersteund voor aangepaste installatie kopieën die worden geïmplementeerd via de [Galerie met gedeelde afbeeldingen](shared-image-galleries.md). Andere aangepaste installatie kopieën worden niet ondersteund voor automatische upgrades van installatie kopieën van besturings systemen.
+Automatische upgrade van besturings systeem installatie kopie wordt ondersteund voor aangepaste installatie kopieën die worden geïmplementeerd via de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md). Andere aangepaste installatie kopieën worden niet ondersteund voor automatische upgrades van installatie kopieën van besturings systemen.
 
 ### <a name="additional-requirements-for-custom-images"></a>Aanvullende vereisten voor aangepaste installatie kopieën
 - Het installatie-en configuratie proces voor de automatische upgrade van de installatie kopie van het besturings systeem is hetzelfde voor alle schaal sets, zoals beschreven in de [sectie configuratie](virtual-machine-scale-sets-automatic-upgrade.md#configure-automatic-os-image-upgrade) van deze pagina.
-- Exemplaren van schaal sets die zijn geconfigureerd voor automatische upgrades van besturings systeem installatie kopieën worden bijgewerkt naar de nieuwste versie van de afbeelding van de galerie met gedeelde afbeeldingen wanneer een nieuwe versie van de installatie kopie wordt gepubliceerd en wordt [gerepliceerd](shared-image-galleries.md#replication) naar de regio van die schaalset. Als de nieuwe installatie kopie niet wordt gerepliceerd naar de regio waar de schaal wordt geïmplementeerd, worden de exemplaren van de schaalset niet bijgewerkt naar de meest recente versie. Met regionale afbeeldings replicatie kunt u de implementatie van de nieuwe installatie kopie voor uw schaal sets beheren.
+- Exemplaren van schaal sets die zijn geconfigureerd voor automatische upgrades van besturings systeem installatie kopieën worden bijgewerkt naar de nieuwste versie van de afbeelding van de galerie met gedeelde afbeeldingen wanneer een nieuwe versie van de installatie kopie wordt gepubliceerd en wordt [gerepliceerd](../virtual-machines/shared-image-galleries.md#replication) naar de regio van die schaalset. Als de nieuwe installatie kopie niet wordt gerepliceerd naar de regio waar de schaal wordt geïmplementeerd, worden de exemplaren van de schaalset niet bijgewerkt naar de meest recente versie. Met regionale afbeeldings replicatie kunt u de implementatie van de nieuwe installatie kopie voor uw schaal sets beheren.
 - De nieuwe versie van de installatie kopie mag niet worden uitgesloten van de nieuwste versie van de galerie afbeelding. Installatie kopieën die zijn uitgesloten van de meest recente versie van de galerie afbeelding, worden niet meegenomen naar de schaalset via automatische upgrade van de installatie kopie van het besturings systeem.
 
 > [!NOTE]

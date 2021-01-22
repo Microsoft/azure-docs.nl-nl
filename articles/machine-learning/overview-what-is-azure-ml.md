@@ -9,12 +9,12 @@ ms.author: larryfr
 author: BlackMist
 ms.date: 11/04/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: 618b7b9cef5ec78cd53247faea2797e9fc897833
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: a9d471e81c348bfaa92c5d15774517f0d9e0e43f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98630214"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683354"
 ---
 # <a name="what-is-azure-machine-learning"></a>Wat is Azure Machine Learning?
 
@@ -128,7 +128,6 @@ Uw Azure Storage-account, rekendoelen en andere resources kunnen veilig worden g
 - Maak uw eerste experiment met de methode van uw voorkeur:
 - + [Aan de slag gaan in uw eigen ontwikkelomgeving](tutorial-1st-experiment-sdk-setup-local.md)
   + [Jupyter-notebooks gebruiken op een rekeninstantie om ML-modellen te trainen en te implementeren](tutorial-1st-experiment-sdk-setup.md)
-  + [R Markdown gebruiken voor het trainen en implementeren van ML-modellen](tutorial-1st-r-experiment.md) 
   + [Geautomatiseerde machine learning gebruiken voor het trainen en implementeren van ML-modellen](tutorial-first-experiment-automated-ml.md) 
   + [Slepen en neerzetten van de ontwerpfunctie gebruiken voor trainen en implementeren](tutorial-designer-automobile-price-train-score.md) 
   + [De machine learning-CLI gebruiken voor het trainen en implementeren van een model](tutorial-train-deploy-model-cli.md)

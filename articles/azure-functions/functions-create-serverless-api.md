@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 04/27/2020
 ms.author: mahender
 ms.custom: mvc
-ms.openlocfilehash: d683ef92c4e8d11e9defbed5454e5849211bf8f7
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: 7375a46245fbe523ddf0512bb5a55371adff64e9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104747"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683739"
 ---
 # <a name="customize-an-http-endpoint-in-azure-functions"></a>Een HTTP-eind punt in Azure Functions aanpassen
 
@@ -86,7 +86,7 @@ In deze sectie maakt u een nieuwe proxy die fungeert als een frontend voor uw al
 
 ### <a name="setting-up-the-frontend-environment"></a>De front-endomgeving instellen
 
-Herhaal de stappen uit [Een functie-app maken](./functions-create-first-azure-function.md#create-a-function-app) om een nieuwe functie-app te maken waarin u uw proxy maakt. De URL van deze nieuwe app fungeert als de front-end voor de API en de functie-app die u eerder hebt bewerkt, fungeert als back-end.
+Herhaal de stappen uit [Een functie-app maken](./functions-get-started.md) om een nieuwe functie-app te maken waarin u uw proxy maakt. De URL van deze nieuwe app fungeert als de front-end voor de API en de functie-app die u eerder hebt bewerkt, fungeert als back-end.
 
 1. Navigeer naar uw nieuwe front-end functie-app in de portal.
 1. Selecteer **Platformfuncties** en kies **Toepassingsinstellingen**.
@@ -101,7 +101,7 @@ Herhaal de stappen uit [Een functie-app maken](./functions-create-first-azure-fu
 
 1. Ga terug naar de front-end-functie-app in de portal.
 
-1. Selecteer **proxy's**in het menu aan de linkerkant en selecteer vervolgens **toevoegen**. 
+1. Selecteer **proxy's** in het menu aan de linkerkant en selecteer vervolgens **toevoegen**. 
 
 1. Gebruik op de pagina **nieuwe proxy** de instellingen in de volgende tabel en selecteer vervolgens **maken**.
 
@@ -112,7 +112,7 @@ Herhaal de stappen uit [Een functie-app maken](./functions-create-first-azure-fu
     | URL van back-end | https://%HELLO_HOST%/api/hello | Geeft het eindpunt aan waarnaar de aanvraag moet worden geproxied |
 
     
-    :::image type="content" source="./media/functions-create-serverless-api/creating-proxy.png" alt-text="Een HTTP-functie aanpassen":::
+    :::image type="content" source="./media/functions-create-serverless-api/creating-proxy.png" alt-text="Een proxy maken":::
 
     Azure Functions-proxy's levert niet het `/api` basispad voor het basis traject dat moet worden opgenomen in de route sjabloon. De `%HELLO_HOST%` syntaxis verwijst naar de app-instelling die u eerder hebt gemaakt. De omgezette URL verwijst naar uw oorspronkelijke functie.
 
@@ -124,7 +124,7 @@ Herhaal de stappen uit [Een functie-app maken](./functions-create-first-azure-fu
 
 Vervolgens gebruikt u een proxy om een model-API voor uw oplossing te maken. Met deze proxy kan client ontwikkeling worden uitgevoerd, zonder dat de back-end volledig is geïmplementeerd. Later in de ontwikkeling kunt u een nieuwe functie-app maken die deze logica ondersteunt en uw proxy ernaar omleiden.
 
-Als u deze model-API wilt maken, maakt u een nieuwe proxy met de [app service-editor](https://github.com/projectkudu/kudu/wiki/App-Service-Editor). Navigeer eerst naar uw nieuwe functie-app in de portal. Selecteer **platform functies**en onder **ontwikkelingsprogram ma's** vindt u **app service-editor**. De App Service-editor wordt geopend op een nieuw tabblad.
+Als u deze model-API wilt maken, maakt u een nieuwe proxy met de [app service-editor](https://github.com/projectkudu/kudu/wiki/App-Service-Editor). Navigeer eerst naar uw nieuwe functie-app in de portal. Selecteer **platform functies** en onder **ontwikkelingsprogram ma's** vindt u **app service-editor**. De App Service-editor wordt geopend op een nieuw tabblad.
 
 Selecteer `proxies.json` in de linkernavigatiebalk. In dit bestand wordt de configuratie voor al uw proxy's opgeslagen. Als u een van de [functies voor implementatie methoden](./functions-continuous-deployment.md)gebruikt, onderhoudt u dit bestand in broncode beheer. Zie [Geavanceerde configuratie van proxy's](./functions-proxies.md#advanced-configuration) voor meer informatie over dit bestand.
 
@@ -195,5 +195,5 @@ De volgende informatiebronnen kunnen nuttig zijn als u uw API verder ontwikkelt:
 - [Een Azure Functions-API documenteren (preview)](./functions-openapi-definition.md)
 
 
-[Create your first function]: ./functions-create-first-azure-function.md
+[Create your first function]: ./functions-get-started.md
 [Werken met Azure Functions-proxy's]: ./functions-proxies.md

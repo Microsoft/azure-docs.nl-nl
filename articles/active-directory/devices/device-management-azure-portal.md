@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: hafowler
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1a735817f59e43e1a9e5d2a513f1ad397f18aab8
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 92a0cc93b4d159a4ba87c1cadc2d0dedc0a28b2d
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232315"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683807"
 ---
 # <a name="manage-device-identities-using-the-azure-portal"></a>Apparaat-id's beheren in Azure Portal
 
@@ -168,7 +168,7 @@ U moet een van de volgende rollen zijn toegewezen om Apparaatinstellingen weer t
 - **Apparaten die aan Azure AD zijn toegevoegd of waarvoor Azure AD is geregistreerd, vereisen multi-factor Authentication** : u kunt kiezen of gebruikers een extra verificatie factor moeten opgeven om deel te nemen aan of uw apparaat te registreren bij Azure AD. De standaard waarde is **Nee**. U wordt aangeraden multi-factor Authentication te vereisen bij het registreren of toevoegen van een apparaat. Voordat u multi-factor Authentication inschakelt voor deze service, moet u ervoor zorgen dat multi-factor Authentication is geconfigureerd voor de gebruikers die hun apparaten registreren. Zie aan de slag [met Azure AD-multi-factor Authentication](../authentication/concept-mfa-howitworks.md)voor meer informatie over de verschillende azure AD multi-factor Authentication Services. 
 
 > [!NOTE]
-> Voor **apparaten die zijn toegevoegd aan Azure AD of Azure AD is geregistreerd multi-factor Authentication** instelling van toepassing op apparaten die zijn toegevoegd aan Azure AD (met enkele uitzonde ringen) of Azure AD is geregistreerd. Deze instelling is niet van toepassing op hybride Azure AD gekoppelde apparaten, [Azure AD gekoppelde virtuele machines in azure](/azure/active-directory/devices/howto-vm-sign-in-azure-ad-windows#enabling-azure-ad-login-in-for-windows-vm-in-azure) en aan Azure AD gekoppelde apparaten met behulp van de [zelf-implementatie modus van Windows auto pilot](/mem/autopilot/self-deploying).
+> Voor **apparaten die zijn toegevoegd aan Azure AD of Azure AD is geregistreerd multi-factor Authentication** instelling van toepassing op apparaten die zijn toegevoegd aan Azure AD (met enkele uitzonde ringen) of Azure AD is geregistreerd. Deze instelling is niet van toepassing op hybride Azure AD gekoppelde apparaten, [Azure AD gekoppelde virtuele machines in azure](./howto-vm-sign-in-azure-ad-windows.md#enabling-azure-ad-login-in-for-windows-vm-in-azure) en aan Azure AD gekoppelde apparaten met behulp van de [zelf-implementatie modus van Windows auto pilot](/mem/autopilot/self-deploying).
 
 - **Maximum aantal apparaten** : met deze instelling kunt u het maximum aantal aan Azure AD gekoppelde of Azure AD geregistreerde apparaten selecteren dat een gebruiker in azure AD kan hebben. Als een gebruiker dit quotum bereikt, kunnen ze geen extra apparaten toevoegen totdat een of meer van de bestaande apparaten worden verwijderd. De standaard waarde is **50**.
 

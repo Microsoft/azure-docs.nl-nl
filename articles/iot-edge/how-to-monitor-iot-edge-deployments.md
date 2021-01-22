@@ -10,12 +10,12 @@ ms.reviewer: veyalla
 ms.service: iot-edge
 ms.custom: devx-track-azurecli
 services: iot-edge
-ms.openlocfilehash: 4ff4d5a810eb79fb11e66591cd0b695062b1c9f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45df700cc1772250e42a0e007fb4ea91b49471ba
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91450182"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684200"
 ---
 # <a name="monitor-iot-edge-deployments"></a>IoT Edge-implementaties bewaken
 
@@ -41,7 +41,7 @@ Voer de volgende stappen uit om de details van een implementatie weer te geven e
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) en navigeer naar uw IOT hub.
 1. Selecteer **IOT Edge** in het menu van het linkerdeel venster.
 1. Selecteer het tabblad **IOT Edge implementaties** .
-1. Inspecteer de implementatie lijst.Voor elke implementatie kunt u de volgende gegevens bekijken:
+1. Inspecteer de implementatie lijst. Voor elke implementatie kunt u de volgende gegevens bekijken:
 
     | Kolom | Beschrijving |
     | --- | --- |
@@ -54,7 +54,7 @@ Voer de volgende stappen uit om de details van een implementatie weer te geven e
     | Aangepaste metrische gegevens | Het aantal IoT Edge apparaten dat gegevens rapporteert voor alle gegevens die u voor de implementatie hebt gedefinieerd. |
     | Aanmaak tijd | Het tijds tempel van toen de implementatie werd gemaakt. Deze tijds tempel wordt gebruikt om bindingen te verstoren wanneer twee implementaties dezelfde prioriteit hebben. |
 
-1. Selecteer de implementatie die u wilt bewaken.  
+1. Selecteer de implementatie die u wilt bewaken.  
 1. Blader op de pagina **Implementatie Details** naar de onderste sectie en selecteer het tabblad **doel voorwaarde** . Selecteer **weer gave** om de apparaten op te geven die overeenkomen met de doel voorwaarde. U kunt de voor waarde wijzigen en ook de **prioriteit**. Selecteer **Opslaan** als u wijzigingen hebt aangebracht.
 
    ![Doel apparaten voor een implementatie weer geven](./media/how-to-monitor-iot-edge-deployments/target-devices.png)
@@ -69,7 +69,7 @@ Zie [een implementatie wijzigen](how-to-deploy-at-scale.md#modify-a-deployment)a
 
 Gebruik de opdracht [az IOT Edge Deployment show](/cli/azure/ext/azure-iot/iot/edge/deployment#ext-azure-iot-az-iot-edge-deployment-show) om de details van één implementatie weer te geven:
 
-```cli
+```azurecli
 az iot edge deployment show --deployment-id [deployment id] --hub-name [hub name]
 ```
 
@@ -78,7 +78,7 @@ De opdracht show voor de implementatie heeft de volgende para meters:
 * **--implementatie-id** : de naam van de implementatie die in de IOT-hub bestaat. Vereiste parameter.
 * **--hub-name** -naam van de IOT-hub waarin de implementatie bestaat. De hub moet zich in het huidige abonnement benemen. Overschakelen naar het gewenste abonnement met de opdracht `az account set -s [subscription name]`
 
-Inspecteer de implementatie in het opdracht venster.De eigenschap **Metrics** bevat een aantal voor elke metrische waarde die door elke hub wordt geëvalueerd:
+Inspecteer de implementatie in het opdracht venster. De eigenschap **Metrics** bevat een aantal voor elke metrische waarde die door elke hub wordt geëvalueerd:
 
 * **targetedCount** : een systeem metriek waarmee het aantal apparaatdubbels van het apparaat in IOT hub wordt opgegeven dat overeenkomt met de doel voorwaarde.
 * **appliedCount** : met een systeem metriek geeft u het aantal apparaten op waarop de implementatie-inhoud is toegepast op de bijbehorende module apparaatdubbels in IOT hub.
@@ -87,7 +87,7 @@ Inspecteer de implementatie in het opdracht venster.De eigenschap **Metrics** be
 
 U kunt een lijst met apparaat-Id's of objecten voor elk van de metrische gegevens weer geven met de opdracht [az IOT Edge Deployment show-metric](/cli/azure/ext/azure-iot/iot/edge/deployment#ext-azure-iot-az-iot-edge-deployment-show-metric) :
 
-```cli
+```azurecli
 az iot edge deployment show-metric --deployment-id [deployment id] --metric-id [metric id] --hub-name [hub name]
 ```
 

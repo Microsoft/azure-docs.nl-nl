@@ -11,12 +11,12 @@ ms.date: 09/04/2018
 ms.author: xiaoyul
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019
-ms.openlocfilehash: e8826dff6d347f78625272a5620a1f168b8804db
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: bc101e6bb743b9290593937a4d1bac656430b438
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120033"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685307"
 ---
 # <a name="development-best-practices-for-synapse-sql-pool"></a>Aanbevolen procedures voor het ontwikkelen van de Synapse SQL-groep
 
@@ -80,7 +80,7 @@ Een andere manier om terugdraaiacties te voorkomen, is door alleen-metagegevensb
 
 Voor niet-gepartitioneerde tabellen kunt u een CTAS gebruiken voor het schrijven van de gegevens die u in een tabel wilt houden, in plaats van verwijderen te gebruiken.  Als een CTAS dezelfde hoeveelheid tijd in beslag neemt, is het een veel veiliger bewerking om uit te voeren omdat het een minimale transactie logboek registratie heeft en zo nodig snel kan worden geannuleerd.
 
-Zie ook [informatie over trans acties](sql-data-warehouse-develop-transactions.md), [optimalisatie van trans acties](sql-data-warehouse-develop-best-practices-transactions.md), [tabel partities](sql-data-warehouse-tables-partition.md), [Truncate Table](/sql/t-sql/statements/truncate-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest), [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)en [create table as select (CTAS)](sql-data-warehouse-develop-ctas.md).
+Zie ook [informatie over trans acties](sql-data-warehouse-develop-transactions.md), [optimalisatie van trans acties](sql-data-warehouse-develop-best-practices-transactions.md), [tabel partities](sql-data-warehouse-tables-partition.md), [Truncate Table](/sql/t-sql/statements/truncate-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true), [ALTER TABLE](/sql/t-sql/statements/alter-table-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)en [create table as select (CTAS)](sql-data-warehouse-develop-ctas.md).
 
 ## <a name="use-the-smallest-possible-column-size"></a>De kleinst mogelijke kolomgrootte gebruiken
 
@@ -114,7 +114,7 @@ Als uw tabel in dit voorbeeld geen 6 miljoen rijen heeft, kunt u het aantal part
 > [!TIP]
 > Query’s worden sneller uitgevoerd voor een columnstore-tabel als u alleen de kolommen selecteert die u nodig hebt.  
 
-Zie ook [tabel indexen](sql-data-warehouse-tables-index.md), [Column Store-indexen, gids](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) [Column Store-indexen opnieuw samen stellen](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).
+Zie ook [tabel indexen](sql-data-warehouse-tables-index.md), [Column Store-indexen, gids](/sql/relational-databases/indexes/columnstore-indexes-overview?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) [Column Store-indexen opnieuw samen stellen](sql-data-warehouse-tables-index.md#rebuilding-indexes-to-improve-segment-quality).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -4,12 +4,12 @@ description: Leer hoe u uw functie-app kunt verbinden met Application Insights v
 ms.date: 8/31/2020
 ms.topic: how-to
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 24350eb07481db66907d199cd96f84a02cc98c9e
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 73ed679288d9d03b81a0b01670aa0f574a14839f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937277"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684705"
 ---
 # <a name="how-to-configure-monitoring-for-azure-functions"></a>Bewaking voor Azure Functions configureren
 
@@ -233,7 +233,7 @@ az functionapp config appsettings delete --name <FUNCTION_APP_NAME> \
 
 Voor een functie-app voor het verzenden van gegevens naar Application Insights, moet de instrumentatie sleutel van een Application Insights resource bekend zijn. De sleutel moet een app-instelling met de naam **APPINSIGHTS_INSTRUMENTATIONKEY** hebben.
 
-Wanneer u de functie-app maakt [in de Azure Portal](functions-create-first-azure-function.md), vanaf de opdracht regel met behulp van [Azure functions core tools](./create-first-function-cli-csharp.md), of met behulp van [Visual Studio code](./create-first-function-vs-code-csharp.md), Application Insights integratie standaard ingeschakeld. De Application Insights resource heeft dezelfde naam als de functie-app en wordt gemaakt in dezelfde regio of in de dichtstbijzijnde regio.
+Wanneer u de functie-app maakt [in de Azure Portal](./functions-get-started.md), vanaf de opdracht regel met behulp van [Azure functions core tools](./create-first-function-cli-csharp.md), of met behulp van [Visual Studio code](./create-first-function-vs-code-csharp.md), Application Insights integratie standaard ingeschakeld. De Application Insights resource heeft dezelfde naam als de functie-app en wordt gemaakt in dezelfde regio of in de dichtstbijzijnde regio.
 
 ### <a name="new-function-app-in-the-portal"></a>Nieuwe functie-app in de portal
 

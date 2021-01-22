@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: e6dc4656e33b55a2cc695874376baf1cd816a838
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: 6fb17ead2546875c0f334aae322f8fb070e8f1ea
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97796292"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684901"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -85,7 +85,7 @@ Zie [back-up](/sql/t-sql/statements/backup-transact-sql)voor informatie over bac
 
 ## <a name="security"></a>Beveiliging
 
-### <a name="auditing"></a>Controles
+### <a name="auditing"></a>Controleren
 
 De belangrijkste verschillen tussen controles in Microsoft Azure SQL en in SQL Server zijn:
 
@@ -276,6 +276,8 @@ De volgende opties kunnen niet worden gewijzigd:
 - `RESTRICTED_USER`
 - `SINGLE_USER`
 - `WITNESS`
+
+Sommige `ALTER DATABASE` instructies (bijvoorbeeld [set containment](https://docs.microsoft.com/sql/relational-databases/databases/migrate-to-a-partially-contained-database?#converting-a-database-to-partially-contained-using-transact-sql)) kunnen tijdelijk mislukken, bijvoorbeeld tijdens het maken van een automatische database back-up of direct nadat een Data Base is gemaakt. In dit geval `ALTER DATABASE` moet de instructie opnieuw worden uitgevoerd. Zie de [sectie opmerkingen](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current&preserve-view=true&tabs=sqlpool#remarks-2)voor meer informatie en informatie over verwante fout berichten.
 
 Zie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql-file-and-filegroup-options)(Engelstalig) voor meer informatie.
 

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 11/04/2019
 ms.author: martinle
 ms.reviewer: igorstan
-ms.openlocfilehash: b8738b46359287ce1d4e410292cdce213ab80999
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 9077ce35065b1bf45646496cc4c43d6def82d958
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115817"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685222"
 ---
 # <a name="what-is-dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics"></a>Wat is een toegewezen SQL-pool (voorheen SQL DW) in Azure Synapse Analytics?
 
@@ -29,7 +29,7 @@ Azure Synapse Analytics is een analyseservice die datawarehousing voor ondernemi
 
 Toegewezen SQL-pool (voorheen SQL DW) vertegenwoordigt een verzameling analytische resources die worden ingericht tijdens het gebruik van Synapse SQL. De grootte van een toegewezen SQL-pool (voorheen SQL DW) wordt bepaald door DWU’s (Data Warehousing Unit).
 
-Zodra uw toegewezen SQL-pool is gemaakt, kunt u big data met eenvoudige [PolyBase](/sql/relational-databases/polybase/polybase-guide?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) T-SQL-query's importeren en vervolgens de kracht van de gedistribueerde-queryengine gebruiken om krachtige analyses uit te voeren. Terwijl u de gegevens integreert en analyseert, wordt de toegewezen SQL-pool (voorheen SQL DW) de centrale bron waarop uw bedrijf kan rekenen voor het verkrijgen van snellere en meer robuuste inzichten.
+Zodra uw toegewezen SQL-pool is gemaakt, kunt u big data met eenvoudige [PolyBase](/sql/relational-databases/polybase/polybase-guide?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) T-SQL-query's importeren en vervolgens de kracht van de gedistribueerde-queryengine gebruiken om krachtige analyses uit te voeren. Terwijl u de gegevens integreert en analyseert, wordt de toegewezen SQL-pool (voorheen SQL DW) de centrale bron waarop uw bedrijf kan rekenen voor het verkrijgen van snellere en meer robuuste inzichten.
 
 > [!NOTE]
 >Verken de [Documentatie voor Azure Synapse Analytics](../overview-what-is.md).

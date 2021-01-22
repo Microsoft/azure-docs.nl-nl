@@ -7,12 +7,12 @@ ms.author: vkukke
 ms.reviewer: spelluru
 ms.date: 07/08/2020
 ms.topic: article
-ms.openlocfilehash: b3babfe93012fae15e79362ba34f3f48856bc833
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8314447e7d5d282eb428ec9316c4eef6844a7423
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86171734"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682376"
 ---
 # <a name="event-grid-concepts"></a>Concepten binnen Event Grid
 
@@ -48,7 +48,7 @@ Zie [rest API documentatie](api.md) over het beheren van abonnementen in Event g
 
 ## <a name="event-handlers"></a>Event Handlers
 
-Vanuit een Event Grid perspectief is een gebeurtenis-handler het punt waar de gebeurtenis wordt verzonden. De handler moet verdere actie ondernemen om de gebeurtenis te verwerken. Event Grid ondersteunt verschillende typen handlers. U kunt een ondersteunde Azure-service of uw eigen webhook gebruiken als handler. Afhankelijk van het type handler, worden Event Grid verschillende mechanismen gevolgd om de levering van de gebeurtenis te garanderen. Als de doel gebeurtenis-handler een HTTP-webhook is, wordt de gebeurtenis opnieuw geprobeerd wanneer de handler de status code retourneert van `200 – OK` . Als de gebeurtenis wordt geleverd zonder uitzonde ring, wordt de hub als geslaagd beschouwd.
+Vanuit een Event Grid perspectief is een gebeurtenis-handler het punt waar de gebeurtenis wordt verzonden. De handler moet verdere actie ondernemen om de gebeurtenis te verwerken. Event Grid ondersteunt verschillende typen handlers. U kunt een ondersteunde Azure-service of uw eigen webhook gebruiken als handler. Afhankelijk van het type handler, worden Event Grid verschillende mechanismen gevolgd om de levering van de gebeurtenis te garanderen. Als de doel gebeurtenis-handler een HTTP-webhook is, wordt de gebeurtenis opnieuw geprobeerd totdat de handler de status code retourneert van `200 – OK` . Als de gebeurtenis wordt geleverd zonder uitzonde ring, wordt de hub als geslaagd beschouwd.
 
 ## <a name="security"></a>Beveiliging
 

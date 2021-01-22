@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/19/2021
-ms.openlocfilehash: f32739b06920f6b20dc87b8e1fbd2884c323a859
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 3d43a532f57feab361c6a3de79269991f46fc55d
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633920"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684019"
 ---
 # <a name="prepare-data-with-data-wrangling"></a>Gegevens voorbereiden met data wrangling
 
@@ -33,9 +33,9 @@ Er zijn twee manieren om een Power Query te maken in Azure Data Factory. U kunt 
 
 De andere methode bevindt zich in het deel venster activiteiten van het pijp lijn-canvas. Open de **Power query** accordeon en sleep de **Power query** activiteit op het canvas.
 
-![Scherm afbeelding die de Wrangling-gegevens stroom optie markeert.](media/data-flow/power-query-activity.png)
+![Scherm afbeelding die de optie gegevens wrangling markeert.](media/data-flow/power-query-activity.png)
 
-## <a name="author-a-wrangling-data-flow"></a>Een wrangling-gegevens stroom schrijven
+## <a name="author-a-power-query-data-wrangling-activity"></a>Een Power Query data wrangling-activiteit schrijven
 
 Voeg een **bron gegevensset** toe voor uw Power query mix verder. U kunt ofwel een bestaande gegevensset kiezen of een nieuwe maken. U kunt ook een Sink-gegevensset selecteren. U kunt een of meer bron gegevens sets kiezen, maar er is op dit moment slechts één sink toegestaan. Het kiezen van een Sink-gegevensset is optioneel, maar er is ten minste één bron-gegevensset vereist.
 
@@ -45,19 +45,19 @@ Klik op **maken** om de Power query online Mashup-Editor te openen.
 
 ![Scherm opname van de knop maken waarmee de Power Query online Mashup-Editor wordt geopend.](media/wrangling-data-flow/tutorial5.png)
 
-Maak uw wrangling-gegevens stroom met behulp van code-Free Data Preparation. Zie [transformatie functies](wrangling-functions.md)voor een lijst met beschik bare functies. Met ADF wordt het ```M``` script omgezet in een script voor gegevens stroom, zodat u uw Power query op schaal kunt uitvoeren met behulp van de ADF-gegevens stroom Spark-omgeving.
+Ontwerp uw wrangling-Power Query met behulp van code vrije gegevens voorbereiding. Zie [transformatie functies](wrangling-functions.md)voor een lijst met beschik bare functies. ADF vertaalt het M-script in een script voor gegevens stroom, zodat u uw Power Query op schaal kunt uitvoeren met behulp van de Azure Data Factory data flow Spark-omgeving.
 
-![Scherm opname van het proces voor het ontwerpen van uw wrangling-gegevens stroom.](media/wrangling-data-flow/tutorial6.png)
+![Scherm opname van het proces voor het ontwerpen van uw gegevens wrangling Power Query.](media/wrangling-data-flow/tutorial6.png)
 
-## <a name="running-and-monitoring-a-wrangling-data-flow"></a>Een wrangling-gegevens stroom uitvoeren en controleren
+## <a name="running-and-monitoring-a-power-query-data-wrangling-activity"></a>Een Power Query data wrangling-activiteit uitvoeren en controleren
 
-Klik op **debug** in het canvas op de pijp lijn om het uitvoeren van een pijp lijn fout opsporing uit te voeren voor een wrangling-gegevens stroom. Zodra u de gegevens stroom hebt gepubliceerd, voert de **trigger nu** een uitvoering op aanvraag uit van de laatste gepubliceerde pijp lijn. Wrangling-gegevens stromen kunnen worden gepland met alle bestaande Azure Data Factory triggers.
+Klik op **fout opsporing** in het pijp lijn-canvas om het uitvoeren van een pijplijn uitvoering van een Power query activiteit uit te voeren. Zodra u de pijp lijn hebt gepubliceerd, voert de **trigger nu** een uitvoering op aanvraag uit van de laatste gepubliceerde pijp lijn. Power Query pijp lijnen kunnen worden gepland met alle bestaande Azure Data Factory triggers.
 
-![Scherm afbeelding die laat zien hoe u een wrangling-gegevens stroom kunt toevoegen.](media/wrangling-data-flow/tutorial3.png)
+![Scherm afbeelding die laat zien hoe u een Power Query data wrangling-activiteit toevoegt.](media/wrangling-data-flow/tutorial3.png)
 
-Ga naar het tabblad **monitor** om de uitvoer te visualiseren van een triggered wrangling-activiteit voor het uitvoeren van gegevens stromen.
+Ga naar het tabblad **monitor** om de uitvoer te visualiseren van een geactiveerde Power query uitvoering van de activiteit.
 
-![Scherm opname van de uitvoer van een triggered wrangling-activiteit voor het uitvoeren van gegevens stromen.](media/wrangling-data-flow/tutorial2.png)
+![Scherm opname van de uitvoer van een geactiveerde wrangling Power Query uitvoering van de activiteit.](media/wrangling-data-flow/tutorial2.png)
 
 ## <a name="next-steps"></a>Volgende stappen
 

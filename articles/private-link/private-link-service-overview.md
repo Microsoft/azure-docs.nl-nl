@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 09/16/2019
 ms.author: sumi
-ms.openlocfilehash: 27dba675f82c4d34ec793cf492c18b293a6c8c77
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 7983a80da8a5ca9d900e44515b5e078cc9d70d79
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95544255"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684183"
 ---
 # <a name="what-is-azure-private-link-service"></a>Wat is Azure Private Link service?
 
@@ -126,7 +126,7 @@ Aangepaste TLV-gegevens:
 Hier volgen de bekende beperkingen bij het gebruik van de service private link:
 - Alleen ondersteund op Standard Load Balancer 
 - Ondersteunt alleen IPv4-verkeer
-- Biedt alleen ondersteuning voor TCP-verkeer
+- Biedt alleen ondersteuning voor TCP-en UDP-verkeer
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Een persoonlijke koppelings service maken met behulp van Azure PowerShell](create-private-link-service-powershell.md)

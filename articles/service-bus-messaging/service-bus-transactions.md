@@ -4,16 +4,19 @@ description: In dit artikel vindt u een overzicht van transactie verwerking en d
 ms.topic: article
 ms.date: 10/28/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9162b8578fe4f48cc3740b38d9d84ffaa2f260de
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 9a95a200b57d348109884a319b5433f0ffd5dde1
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023598"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684788"
 ---
 # <a name="overview-of-service-bus-transaction-processing"></a>Overzicht van de verwerking van Service Bus transacties
 
 In dit artikel worden de transactie mogelijkheden van Microsoft Azure Service Bus beschreven. Veel van de discussies worden geïllustreerd door de [AMQP-trans acties met Service Bus voor beeld](https://github.com/Azure/azure-service-bus/tree/master/samples/DotNet/Microsoft.Azure.ServiceBus/TransactionsAndSendVia/TransactionsAndSendVia/AMQPTransactionsSendVia). Dit artikel is beperkt tot een overzicht van transactie verwerking en de functie *verzenden via* in service bus, terwijl het voor beeld van atomische trans acties breder en complexer is.
+
+> [!NOTE]
+> De laag basis van Service Bus biedt geen ondersteuning voor trans acties. De Standard-en Premium-lagen ondersteunen trans acties. Zie [Service Bus prijzen](https://azure.microsoft.com/pricing/details/service-bus/)voor verschillen tussen deze lagen.
 
 ## <a name="transactions-in-service-bus"></a>Trans acties in Service Bus
 

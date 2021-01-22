@@ -1,15 +1,15 @@
 ---
 title: Details van naleving van regelgeving voor HIPAA HITRUST 9.2
 description: Details van het ingebouwde initiatief voor naleving van regelgeving voor HIPAA HITRUST 9.2. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: f6f5cbea8be7210c2121129e258b2eb2e0fc63eb
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: a3b43ee64be49d9e71c709f8472d9c56435f8e0e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98047940"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683631"
 ---
 # <a name="details-of-the-hipaa-hitrust-92-regulatory-compliance-built-in-initiative"></a>Details van het ingebouwde initiatief voor naleving van regelgeving voor HIPAA HITRUST 9.2
 

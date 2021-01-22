@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 06/30/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: e694630d8bcd7879d9405152c4141fb6e5bad4e2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9cfb1fe6d2050a63070e9c21e4b8c3ef59efcb15
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297090"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682678"
 ---
 # <a name="create-an-image-from-a-managed-disk-or-snapshot-in-a-shared-image-gallery-using-the-azure-cli"></a>Een installatie kopie maken van een beheerde schijf of moment opname in een galerie met gedeelde afbeeldingen met behulp van de Azure CLI
 
@@ -69,11 +69,11 @@ Definities van installatiekopieën maken een logische groepering voor installati
 
 Wanneer u de definitie van de installatie kopie maakt, moet u ervoor zorgen dat alle juiste gegevens worden verstrekt. In dit voor beeld gaan we ervan uit dat de moment opname of beheerde schijf afkomstig is van een virtuele machine die in gebruik is en niet is gegeneraliseerd. Als de beheerde schijf of moment opname is gemaakt van een gegeneraliseerd besturings systeem (na het uitvoeren van Sysprep voor Windows of [waagent](https://github.com/Azure/WALinuxAgent) `-deprovision` of `-deprovision+user` voor Linux), wijzigt u vervolgens de `-OsState` to `generalized` . 
 
-Zie [Installatiekopiedefinities](./linux/shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
+Zie [Installatiekopiedefinities](./shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
 
 Een installatiekopiedefinitie in de galerie maken met [az sig image-definition create](/cli/azure/sig/image-definition#az-sig-image-definition-create).
 
-In dit voorbeeld heeft de definitie van de installatiekopie de naam *myImageDefinition* en is deze voor een [gespecialiseerde](./linux/shared-image-galleries.md#generalized-and-specialized-images) installatiekopie van een Linux-besturingssysteem. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
+In dit voorbeeld heeft de definitie van de installatiekopie de naam *myImageDefinition* en is deze voor een [gespecialiseerde](./shared-image-galleries.md#generalized-and-specialized-images) installatiekopie van een Linux-besturingssysteem. Als u een definitie wilt maken voor installatiekopieën met een Windows-besturingssysteem, gebruikt u `--os-type Windows`. 
 
 In dit voor beeld heeft de galerie de naam *myGallery*, het bevindt zich in de resource groep *myGalleryRG* en de naam van de definitie van de installatie kopie *mImageDefinition*.
 

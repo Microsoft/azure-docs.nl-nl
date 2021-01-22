@@ -11,12 +11,12 @@ ms.date: 02/04/2020
 ms.author: rortloff
 ms.reviewer: jrasnick
 ms.custom: azure-synapse
-ms.openlocfilehash: a557d4045b18b5c0ff71b3e47f0c189028702863
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7714ce748eb172565357723924ab2212e9559e1f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91289528"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685324"
 ---
 # <a name="workload-management-with-resource-classes-in-azure-synapse-analytics"></a>Werkbelasting beheer met resource klassen in azure Synapse Analytics
 
@@ -129,7 +129,7 @@ De volgende instructies zijn vrijgesteld van resource klassen en worden altijd u
 - WEER gave maken of verwijderen
 - WAARDEN INVOEGEN
 - SELECTEREN uit systeem weergaven en Dmv's
-- BESPREKEN
+- EXPLAIN
 - DBCC
 
 <!--
@@ -162,13 +162,13 @@ WHERE  name LIKE '%rc%' AND type_desc = 'DATABASE_ROLE';
 
 Resource klassen worden geïmplementeerd door gebruikers toe te wijzen aan database rollen. Wanneer een gebruiker een query uitvoert, wordt de query uitgevoerd met de resource klasse van de gebruiker. Als een gebruiker bijvoorbeeld lid is van de databaserol staticrc10, worden de query's uitgevoerd met kleine hoeveel heden geheugen. Als een database gebruiker lid is van de xlargerc-of staticrc80-database rollen, worden de query's uitgevoerd met grote hoeveel heden geheugen.
 
-Als u de resource klasse van een gebruiker wilt verhogen, gebruikt u [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) om de gebruiker toe te voegen aan een databaserol van een grote resource klasse.  De onderstaande code voegt een gebruiker toe aan de databaserol largerc.  Elke aanvraag ontvangt 22% van het systeem geheugen.
+Als u de resource klasse van een gebruiker wilt verhogen, gebruikt u [sp_addrolemember](/sql/relational-databases/system-stored-procedures/sp-addrolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) om de gebruiker toe te voegen aan een databaserol van een grote resource klasse.  De onderstaande code voegt een gebruiker toe aan de databaserol largerc.  Elke aanvraag ontvangt 22% van het systeem geheugen.
 
 ```sql
 EXEC sp_addrolemember 'largerc', 'loaduser';
 ```
 
-Gebruik [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest)om de resource klasse te verlagen.  Als ' loaduser ' geen lid of andere resource klassen is, gaan ze naar de standaard smallrc-resource klasse met een geheugen toekenning van 3%.  
+Gebruik [sp_droprolemember](/sql/relational-databases/system-stored-procedures/sp-droprolemember-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)om de resource klasse te verlagen.  Als ' loaduser ' geen lid of andere resource klassen is, gaan ze naar de standaard smallrc-resource klasse met een geheugen toekenning van 3%.  
 
 ```sql
 EXEC sp_droprolemember 'largerc', 'loaduser';

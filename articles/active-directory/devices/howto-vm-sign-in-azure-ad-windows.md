@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ef2c9d7e2388d2da7a807fbf6b579360115a8323
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 22a4bdc92ea2a91425c1070a5837c672307de665
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629796"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683773"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Aanmelden bij een virtuele Windows-machine in azure met Azure Active Directory authenticatie (preview-versie)
 
@@ -32,7 +32,7 @@ Er zijn veel voor delen van het gebruik van Azure AD-verificatie om u aan te mel
 - U hoeft niet langer lokale beheerders accounts te beheren.
 - Met Azure RBAC kunt u de juiste toegang verlenen aan Vm's op basis van behoefte en deze verwijderen wanneer deze niet meer nodig is.
 - Voordat u toegang tot een virtuele machine toestaat, kan voorwaardelijke toegang van Azure AD aanvullende vereisten afdwingen, zoals: 
-   - Multi-Factor Authentication
+   - Meervoudige verificatie
    - Aanmeldings risico controle
 - Automatiseer en schaal Azure AD-samen voeging van Azure Windows-Vm's die deel uitmaken van uw VDI-implementaties.
 
@@ -335,7 +335,7 @@ Als het volgende fout bericht wordt weer gegeven wanneer u een verbinding met ee
 Controleer of u het [Azure RBAC-beleid](../../virtual-machines/linux/login-using-aad.md) voor de VM hebt geconfigureerd waarmee de gebruiker de beheerder van de virtuele machine of de gebruikers aanmelding voor de virtuele machine verleent:
 
 > [!NOTE]
-> Als u problemen ondervindt met Azure-roltoewijzingen, raadpleegt u [problemen met Azure RBAC oplossen](https://docs.microsoft.com/azure/role-based-access-control/troubleshooting#azure-role-assignments-limit).
+> Als u problemen ondervindt met Azure-roltoewijzingen, raadpleegt u [problemen met Azure RBAC oplossen](../../role-based-access-control/troubleshooting.md#azure-role-assignments-limit).
  
 #### <a name="unauthorized-client"></a>Niet-geautoriseerde client
 

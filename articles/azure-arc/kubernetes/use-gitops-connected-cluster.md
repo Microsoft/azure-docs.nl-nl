@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken voor het configureren van een Azure-Kubernetes-cluster met Arc-functionaliteit (preview-versie)
 keywords: GitOps, Kubernetes, K8s, azure, Arc, Azure Kubernetes service, AKS, containers
-ms.openlocfilehash: 906021377cbfd6960769f98f9dbd15a5c430c71f
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: 751b274a9cae68f6bc9b1adc45804f2dd2ef4c72
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955328"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684754"
 ---
 # <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps in Kubernetes-cluster met Arc (preview)
 
@@ -48,7 +48,7 @@ Als u een persoonlijke opslag plaats koppelt aan de `sourceControlConfiguration`
 
 Gebruik de Azure CLI-extensie om `k8sconfiguration` een verbonden cluster te koppelen aan het [voor beeld van de Git-opslag plaats](https://github.com/Azure/arc-k8s-demo). We zullen deze configuratie een naam geven `cluster-config` , de agent instrueren de operator in de `cluster-config` naam ruimte te implementeren en de operator `cluster-admin` machtigingen geven.
 
-```console
+```azurecli
 az k8sconfiguration create --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --operator-instance-name cluster-config --operator-namespace cluster-config --repository-url https://github.com/Azure/arc-k8s-demo --scope cluster --cluster-type connectedClusters
 ```
 
@@ -179,7 +179,7 @@ Zie [vloei documentatie](https://aka.ms/FluxcdReadme)voor meer informatie.
 
 Als u de Azure CLI gebruikt, controleert u of deze `sourceControlConfiguration` is gemaakt.
 
-```console
+```azurecli
 az k8sconfiguration show --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters
 ```
 
@@ -351,7 +351,7 @@ Een `sourceControlConfiguration` gebruiken van Azure CLI of Azure Portal verwijd
 > Nadat een sourceControlConfiguration met een naam ruimte bereik is gemaakt, is het mogelijk dat gebruikers met `edit` een functie binding in de naam ruimte de werk belasting op deze naam ruimte implementeren. Wanneer `sourceControlConfiguration` het bereik van de naam ruimte wordt verwijderd, blijft de naam ruimte intact en wordt deze niet verwijderd om te voor komen dat deze andere workloads worden opgesplitst.  Indien nodig kunt u deze naam ruimte hand matig verwijderen met kubectl.
 > Wijzigingen in het cluster die het resultaat zijn van implementaties van de getraceerde Git-opslag plaats, worden niet verwijderd wanneer het `sourceControlConfiguration` wordt verwijderd.
 
-```console
+```azurecli
 az k8sconfiguration delete --name cluster-config --cluster-name AzureArcTest1 --resource-group AzureArcTest --cluster-type connectedClusters
 ```
 

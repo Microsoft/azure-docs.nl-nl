@@ -1,14 +1,14 @@
 ---
 title: Voorbeeld van blauwdruk met ISM-BEVEILIGING voor Australische overheid implementeren
 description: Stappen voor implementatie van het blauwdrukvoorbeeld met ISM-BEVEILIGING voor de Australische overheid, inclusief parametergegevens voor blauwdrukartefacten.
-ms.date: 09/11/2020
+ms.date: 01/21/2021
 ms.topic: sample
-ms.openlocfilehash: 4d38a5ad6790b8b2ef09476f4779ef596be9734b
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
-ms.translationtype: HT
+ms.openlocfilehash: 354d010442f896728ef9af1e3f372c2abbc58ef3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91950513"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682276"
 ---
 # <a name="deploy-the-australian-government-ism-protected-blueprint-sample"></a>Voorbeeld van blauwdruk met ISM-BEVEILIGING voor de Australische overheid implementeren
 

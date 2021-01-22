@@ -9,12 +9,12 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: 92cae59978b172993c779e9a486ff67d82309800
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 6bf2054a1b9d42529c3917994e5f446b3c50ecf7
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349919"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98682712"
 ---
 # <a name="clone-a-managed-image-to-a-shared-image-gallery-image"></a>Een beheerde installatie kopie klonen naar een afbeelding van de galerie met gedeelde afbeeldingen
 
@@ -54,7 +54,7 @@ Definities van installatiekopieën maken een logische groepering voor installati
 
 Wanneer u de definitie van de installatie kopie maakt, moet u ervoor zorgen dat alle juiste gegevens worden verstrekt. Omdat beheerde installatie kopieën altijd worden gegeneraliseerd, moet u instellen `-OsState generalized` . 
 
-Zie [Installatiekopiedefinities](./windows/shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
+Zie [Installatiekopiedefinities](./shared-image-galleries.md#image-definitions) voor meer informatie over de waarden die u kunt specificeren voor een installatiekopiedefinitie.
 
 Maak de definitie van de installatiekopie met behulp van [New-AzGalleryImageDefinition](/powershell/module/az.compute/new-azgalleryimageversion). In dit voor beeld wordt de definitie van de installatie kopie met de naam *myImageDefinition* en is deze voor een gegeneraliseerde Windows-besturings systeem. Als u een definitie voor installatie kopieën wilt maken met behulp van een Linux-besturings systeem, gebruikt u `-OsType Linux` . 
 

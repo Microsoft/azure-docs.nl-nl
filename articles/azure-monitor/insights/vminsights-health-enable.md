@@ -7,12 +7,12 @@ author: bwren
 ms.author: bwren
 ms.date: 11/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: 78ce082c6e90cfc9c67ddcfa00926d292b9ed7ea
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
+ms.openlocfilehash: 902bcaa97658802b35fb523a1213e6bbd47f357f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97740467"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684505"
 ---
 # <a name="enable-azure-monitor-for-vms-guest-health-preview"></a>Gaststatus van Azure Monitor voor VM's inschakelen (preview)
 Met Azure Monitor voor VM's gast status kunt u de status van een virtuele machine weer geven zoals gedefinieerd door een set prestatie metingen die regel matig worden steek proeven. In dit artikel wordt beschreven hoe u deze functie inschakelt in uw abonnement en hoe u gast bewaking voor elke virtuele machine inschakelt.
@@ -29,13 +29,13 @@ Op de virtuele machine moet een van de volgende besturings systemen worden uitge
   - Ubuntu 16,04 LTS, Ubuntu 18,04 LTS
   - Windows Server 2012 of hoger
 
-## <a name="supported-regions"></a>Ondersteunde regio's
+## <a name="supported-regions"></a>Ondersteunde regio’s
 
 De virtuele machine moet zich in een van de volgende regio's bevinden:
 
 - Australië - centraal
 - Australië - oost
-- Australia Southeast
+- Australië - zuidoost
 - India - centraal
 - Central US
 - Azië - oost
@@ -43,10 +43,10 @@ De virtuele machine moet zich in een van de volgende regio's bevinden:
 - VS - oost 2
 - VS-Oost 2 EUAP
 - Duitsland - west-centraal
-- Japan East
+- Japan - oost
 - VS - noord-centraal
 - Europa - noord
-- South Central US
+- VS - zuid-centraal
 - Azië - zuidoost
 - Verenigd Koninkrijk Zuid
 - VS - west-centraal
@@ -57,7 +57,7 @@ De virtuele machine moet zich in een van de volgende regio's bevinden:
 
 Log Analytics werk ruimte moet zich in een van de volgende regio's bevinden:
 
-- Central US
+- VS - centraal
 - VS - oost
 - VS - oost 2
 - VS-Oost 2 EUAP
@@ -127,9 +127,9 @@ Implementeer de sjabloon met een [implementatie methode voor Resource Manager-sj
 New-AzResourceGroupDeployment -Name GuestHealthDataCollectionRule -ResourceGroupName my-resource-group -TemplateFile Health.DataCollectionRule.template.json -TemplateParameterFile Health.DataCollectionRule.template.parameters.json
 ```
 
-# <a name="cli"></a>[CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-```cli
+```azurecli
 az deployment group create --name GuestHealthDataCollectionRule --resource-group my-resource-group --template-file Health.DataCollectionRule.template.json --parameters Health.DataCollectionRule.template.parameters.json
 ```
 
@@ -267,9 +267,9 @@ Gebruik bijvoorbeeld de volgende opdrachten voor het implementeren van de sjablo
 New-AzResourceGroupDeployment -Name GuestHealthDeployment -ResourceGroupName my-resource-group -TemplateFile azure-monitor-deploy.json -TemplateParameterFile azure-monitor-deploy.parameters.json
 ```
 
-# <a name="cli"></a>[CLI](#tab/cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
-```cli
+```azurecli
 az deployment group create --name GuestHealthDeployment --resource-group my-resource-group --template-file Health.VirtualMachine.template.json --parameters Health.VirtualMachine.template.parameters.json
 ```
 

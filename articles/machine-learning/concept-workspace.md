@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.author: sgilley
 author: sdgilley
 ms.date: 09/22/2020
-ms.openlocfilehash: 7acb555ddde20d6512119af85a8db055bcd9eeed
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: 5211555102c0a8d29eb05abd7a680935d828f9dc
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701650"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683437"
 ---
 # <a name="what-is-an-azure-machine-learning-workspace"></a>Wat is een Azure Machine Learning-werkruimte?
 
@@ -134,6 +134,5 @@ Om aan de slag te gaan met Azure Machine Learning raadpleegt u:
 + [Een werk ruimte maken en beheren](how-to-manage-workspace.md)
 + [Zelf studie: aan de slag met Azure Machine Learning in uw ontwikkel omgeving](tutorial-1st-experiment-sdk-setup-local.md)
 + [Zelf studie: aan de slag met het maken van uw eerste ML-experiment op een reken instantie](tutorial-1st-experiment-sdk-setup.md)
-+ [Zelf studie: aan de slag met Azure Machine Learning met de R SDK](tutorial-1st-r-experiment.md)
 + [Zelfstudie: Uw eerste classificatiemodel maken met geautomatiseerde machine learning](tutorial-first-experiment-automated-ml.md) 
 + [Zelfstudie: Autoprijzen voorspellen met de ontwerpfunctie](tutorial-designer-automobile-price-train-score.md)

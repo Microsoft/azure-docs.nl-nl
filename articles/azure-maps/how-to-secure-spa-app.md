@@ -10,12 +10,12 @@ ms.service: azure-maps
 services: azure-maps
 manager: timlt
 ms.custom: devx-track-js
-ms.openlocfilehash: c39104912c99b199d38cf489bb61d64e83b89286
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 3b647a02731a4fa404aab4bb648853eea766d92e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92895593"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684069"
 ---
 # <a name="how-to-secure-a-single-page-application-with-non-interactive-sign-in"></a>Een toepassing met één pagina beveiligen met niet-interactieve aanmelding
 
@@ -30,7 +30,7 @@ De volgende hand leiding heeft betrekking op een toepassing die Azure Active Dir
 
 Maak een beveiligde web service-toepassing die verantwoordelijk is voor verificatie bij Azure AD. 
 
-1. Maak een functie in de Azure Portal. Zie [Azure function maken](../azure-functions/functions-create-first-azure-function.md)voor meer informatie.
+1. Maak een functie in de Azure Portal. Zie [Azure function maken](../azure-functions/functions-get-started.md)voor meer informatie.
 
 2. Configureer het CORS-beleid voor de Azure-functie zodat deze toegankelijk is voor de webtoepassing met één pagina. Hiermee worden browser-clients beveiligd tot de toegestane oorsprong van uw webtoepassing. Zie [CORS-functionaliteit toevoegen](../app-service/app-service-web-tutorial-rest-api.md#add-cors-functionality).
 
@@ -102,14 +102,14 @@ Maak een beveiligde web service-toepassing die verantwoordelijk is voor verifica
 
 ## <a name="grant-role-based-access"></a>Op rollen gebaseerde toegang verlenen
 
-U verleent op *rollen gebaseerd toegangs beheer voor Azure (Azure RBAC)* door de door het systeem toegewezen identiteit toe te wijzen aan een of meer Azure-functie definities. Als u de definities van Azure-functies wilt weer geven die beschikbaar zijn voor Azure Maps, gaat u naar **toegangs beheer (IAM)** . Selecteer **rollen** en zoek vervolgens naar rollen die beginnen met *Azure Maps* .
+U verleent op *rollen gebaseerd toegangs beheer voor Azure (Azure RBAC)* door de door het systeem toegewezen identiteit toe te wijzen aan een of meer Azure-functie definities. Als u de definities van Azure-functies wilt weer geven die beschikbaar zijn voor Azure Maps, gaat u naar **toegangs beheer (IAM)**. Selecteer **rollen** en zoek vervolgens naar rollen die beginnen met *Azure Maps*.
 
-1. Ga naar uw **Azure Maps-account** . Selecteer de roltoewijzing van **toegangs beheer (IAM)**  >  **Role assignment** .
+1. Ga naar uw **Azure Maps-account**. Selecteer de roltoewijzing van **toegangs beheer (IAM)**  >  .
 
     > [!div class="mx-imgBorder"]
     > ![Toegang verlenen met behulp van Azure RBAC](./media/how-to-manage-authentication/how-to-grant-rbac.png)
 
-2. Selecteer op **het tabblad roltoewijzingen,** onder **rol** , een ingebouwde Azure Maps roldefinitie, zoals **Azure Maps gegevens lezer** of **Azure Maps gegevensinzender** . Selecteer **functie-app** onder **toegang toewijzen aan** . Selecteer de principal op naam. Selecteer vervolgens **Opslaan** .
+2. Selecteer op **het tabblad roltoewijzingen,** onder **rol**, een ingebouwde Azure Maps roldefinitie, zoals **Azure Maps gegevens lezer** of **Azure Maps gegevensinzender**. Selecteer **functie-app** onder **toegang toewijzen aan**. Selecteer de principal op naam. Selecteer vervolgens **Opslaan**.
 
    * Zie de Details voor het [toevoegen of verwijderen van roltoewijzingen](../role-based-access-control/role-assignments-portal.md).
 

@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.date: 10/13/2020
 ms.author: govindk
 ms.reviewer: sngun
-ms.openlocfilehash: 43625a80df76ff35b8bb1804df5f5fd1524326c5
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.openlocfilehash: ba66013e37c196c58291a6bcd979be7fb5fa0130
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93097529"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98684573"
 ---
 # <a name="online-backup-and-on-demand-data-restore-in-azure-cosmos-db"></a>Herstel van online back-ups en gegevens op aanvraag in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -52,15 +52,15 @@ Gebruik de volgende stappen om de standaard back-upopties voor een bestaand Azur
 
    * **Kopieën van opgeslagen gegevens** -standaard worden twee back-ups van uw gegevens gratis aangeboden. Er worden extra kosten in rekening gebracht als u meer dan twee exemplaren nodig hebt. Zie de sectie over verbruikte opslag in de [pagina met prijzen](https://azure.microsoft.com/pricing/details/cosmos-db/) als u wilt weten wat de exacte prijs voor extra exemplaren is.
 
-   :::image type="content" source="./media/online-backup-and-restore/configure-backup-interval-retention.png" alt-text="Periodieke volledige back-ups van alle Cosmos DB entiteiten in GRS Azure Storage" border="true":::
+   :::image type="content" source="./media/online-backup-and-restore/configure-backup-interval-retention.png" alt-text="Het back-upinterval en de retentie voor een bestaand Azure Cosmos-account configureren" border="true":::
 
-Als u de opties voor back-up configureert tijdens het maken van het account, kunt u het **back-upbeleid** configureren, ofwel **periodiek** of **doorlopend** . Met het periodieke beleid kunt u het back-upinterval en de retentie van back-ups configureren. Het doorlopende beleid is momenteel alleen beschikbaar als u zich aanmeldt. Het Azure Cosmos DB-team zal uw werk belasting beoordelen en uw aanvraag goed keuren.
+Als u de opties voor back-up configureert tijdens het maken van het account, kunt u het **back-upbeleid** configureren, ofwel **periodiek** of **doorlopend**. Met het periodieke beleid kunt u het back-upinterval en de retentie van back-ups configureren. Het doorlopende beleid is momenteel alleen beschikbaar als u zich aanmeldt. Het Azure Cosmos DB-team zal uw werk belasting beoordelen en uw aanvraag goed keuren.
 
-:::image type="content" source="./media/online-backup-and-restore/configure-periodic-continuous-backup-policy.png" alt-text="Periodieke volledige back-ups van alle Cosmos DB entiteiten in GRS Azure Storage" border="true":::
+:::image type="content" source="./media/online-backup-and-restore/configure-periodic-continuous-backup-policy.png" alt-text="Periodiek of continu back-upbeleid configureren voor nieuwe Azure Cosmos-accounts" border="true":::
 
 ## <a name="request-data-restore-from-a-backup"></a>Gegevens terugzetten vanuit een back-up opvragen
 
-Als u per ongeluk uw data base of container verwijdert, kunt u [een ondersteunings ticket indienen](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) of [de ondersteuning van Azure aanroepen](https://azure.microsoft.com/support/options/) om de gegevens van automatische online back-ups te herstellen. Ondersteuning voor Azure is alleen beschikbaar voor geselecteerde abonnementen, zoals **Standard** , **Developer** en abonnementen hoger dan die. Ondersteuning voor Azure is niet beschikbaar voor het **Basic** -abonnement. Zie de pagina [ondersteunings abonnementen voor Azure](https://azure.microsoft.com/support/plans/) voor meer informatie over verschillende ondersteunings abonnementen.
+Als u per ongeluk uw data base of container verwijdert, kunt u [een ondersteunings ticket indienen](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) of [de ondersteuning van Azure aanroepen](https://azure.microsoft.com/support/options/) om de gegevens van automatische online back-ups te herstellen. Ondersteuning voor Azure is alleen beschikbaar voor geselecteerde abonnementen, zoals **Standard**, **Developer** en abonnementen hoger dan die. Ondersteuning voor Azure is niet beschikbaar voor het **Basic** -abonnement. Zie de pagina [ondersteunings abonnementen voor Azure](https://azure.microsoft.com/support/plans/) voor meer informatie over verschillende ondersteunings abonnementen.
 
 Als u een specifieke moment opname van de back-up wilt herstellen, moet Azure Cosmos DB de gegevens beschikbaar hebben voor de duur van de back-upcyclus voor die moment opname.
 U moet de volgende gegevens hebben voordat u een herstel bewerking kunt aanvragen:
@@ -81,7 +81,7 @@ Naast de naam van het Azure Cosmos-account, database namen, container namen, moe
 
 In de volgende scherm afbeelding ziet u hoe u een ondersteunings aanvraag voor een container (verzameling/grafiek/tabel) kunt maken om gegevens te herstellen met behulp van Azure Portal. Geef aanvullende informatie op, zoals het type gegevens, het doel van de herstel tijd, het tijdstip waarop de gegevens zijn verwijderd om ons te helpen bij het bepalen van de prioriteit van de aanvraag.
 
-:::image type="content" source="./media/online-backup-and-restore/backup-support-request-portal.png" alt-text="Periodieke volledige back-ups van alle Cosmos DB entiteiten in GRS Azure Storage":::
+:::image type="content" source="./media/online-backup-and-restore/backup-support-request-portal.png" alt-text="Een verzoek tot ondersteuning voor back-ups maken met behulp van Azure Portal":::
 
 ## <a name="considerations-for-restoring-the-data-from-a-backup"></a>Overwegingen voor het herstellen van de gegevens van een back-up
 
@@ -115,6 +115,13 @@ Als u uw gegevens per ongeluk hebt verwijderd of beschadigd, neemt u binnen 8 uu
 
 Als u de door Voer inricht op database niveau, gebeurt het back-up-en herstel proces in dit geval op het hele database niveau en niet op het niveau van de afzonderlijke containers. In dergelijke gevallen kunt u geen subset van containers selecteren die u wilt herstellen.
 
+## <a name="required-permissions-to-change-retention-or-restore-from-the-portal"></a>Vereiste machtigingen voor het wijzigen van de retentie of het herstellen van de portal
+Principals die deel uitmaken van de rol [CosmosdbBackupOperator](../role-based-access-control/built-in-roles.md#cosmosbackupoperator), eigenaar of Inzender, kunnen een herstel aanvraag aanvragen of de Bewaar periode wijzigen.
+
+## <a name="understanding-costs-of-extra-backups"></a>Meer informatie over de kosten van extra back-ups
+2 back-ups worden gratis en extra back-ups worden in rekening gebracht op basis van de regio prijzen voor back-upopslag die wordt beschreven in de [prijzen voor back-upopslag](https://azure.microsoft.com/en-us/pricing/details/cosmos-db/). Als back-upbewaaring bijvoorbeeld is geconfigureerd op 240 uur, 10 dagen en back-upinterval tot 24 uur. Dit betekent 10 kopieën van de back-upgegevens. Uitgaande van 1 TB aan gegevens in het VS-West 2, is het 1000 * 0,12 ~ $120 voor back-upopslag in de gegeven maand. 
+
+
 ## <a name="options-to-manage-your-own-backups"></a>Opties voor het beheren van uw eigen back-ups
 
 Met Azure Cosmos DB SQL-API-accounts kunt u ook uw eigen back-ups onderhouden met behulp van een van de volgende benaderingen:
@@ -147,4 +154,3 @@ Hierna vindt u informatie over het herstellen van gegevens uit een Azure Cosmos-
 * Neem contact op met de ondersteuning van Azure, maak [een ticket van de Azure Portal](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) om een herstel aanvraag te doen.
 * [Gebruik Cosmos DB Change feed](change-feed.md) om gegevens naar Azure Cosmos DB te verplaatsen.
 * [Gebruik Azure Data Factory](../data-factory/connector-azure-cosmos-db.md) om gegevens te verplaatsen naar Azure Cosmos db.
-

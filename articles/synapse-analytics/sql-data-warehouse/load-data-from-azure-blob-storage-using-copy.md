@@ -11,16 +11,16 @@ ms.date: 11/23/2020
 ms.author: kevin
 ms.reviewer: igorstan
 ms.custom: azure-synapse
-ms.openlocfilehash: ec577e2a70e2b354b8d2013fe259aa9ea622c50e
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: b305a07997ccd2cbab0d963ced2bd23ab7a97690
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120135"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683404"
 ---
 # <a name="tutorial-load-the-new-york-taxicab-dataset"></a>Zelf studie: de over taxi's-gegevensset van New York laden
 
-In deze zelf studie wordt de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) gebruikt voor het laden van een New York over taxi's-gegevensset vanuit een Azure Blob Storage-account. De zelfstudie gebruikt [Azure Portal](https://portal.azure.com) en [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SSMS) voor het volgende:
+In deze zelf studie wordt de [instructie Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) gebruikt voor het laden van een New York over taxi's-gegevensset vanuit een Azure Blob Storage-account. De zelfstudie gebruikt [Azure Portal](https://portal.azure.com) en [SQL Server Management Studio](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SSMS) voor het volgende:
 
 > [!div class="checklist"]
 >
@@ -33,7 +33,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
-Download en installeer voordat u met deze zelfstudie begint de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest) (SQL Server Management Studio).  
+Download en installeer voordat u met deze zelfstudie begint de nieuwste versie van [SSMS](/sql/ssms/download-sql-server-management-studio-ssms?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) (SQL Server Management Studio).  
 
 In deze zelf studie wordt ervan uitgegaan dat u al een toegewezen SQL-groep hebt gemaakt in de volgende [zelf studie](./create-data-warehouse-portal.md#connect-to-the-server-as-server-admin).
 
@@ -251,7 +251,7 @@ Voer de volgende SQL-scripts uit en geef informatie op over de gegevens die u wi
 
 ## <a name="load-the-data-into-your-data-warehouse"></a>De gegevens in uw datawarehouse laden
 
-In deze sectie wordt de [instructie Copy gebruikt om](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest) de voorbeeld gegevens van Azure Storage BLOB te laden.  
+In deze sectie wordt de [instructie Copy gebruikt om](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true) de voorbeeld gegevens van Azure Storage BLOB te laden.  
 
 > [!NOTE]
 > In deze zelfstudie worden de gegevens rechtstreeks in de definitieve tabel geladen. Normaal gesp roken laadt u in een faserings tabel voor de werk belasting van uw productie. U kunt alle benodigde transformaties uitvoeren wanneer de gegevens zich in de faseringstabel bevinden. 
@@ -393,7 +393,7 @@ Volg deze stappen om de resources op te schonen zoals gewenst.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In deze zelfstudie hebt u geleerd hoe u een datawarehouse en een gebruiker voor het laden van gegevens maakt. U hebt de [instructie Simple Copy](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#examples) gebruikt voor het laden van gegevens in uw data warehouse.
+In deze zelfstudie hebt u geleerd hoe u een datawarehouse en een gebruiker voor het laden van gegevens maakt. U hebt de [instructie Simple Copy](/sql/t-sql/statements/copy-into-transact-sql&preserve-view=true?view=azure-sqldw-latest&preserve-view=true#examples) gebruikt voor het laden van gegevens in uw data warehouse.
 
 U hebt het volgende gedaan:
 > [!div class="checklist"]
@@ -413,6 +413,6 @@ Ga naar het overzicht voor ontwikkel aars voor meer informatie over het migreren
 
 Raadpleeg de volgende documentatie voor meer informatie over het laden van voor beelden en verwijzingen:
 
-- [Naslag documentatie over het kopiëren van instructies](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest#syntax)
+- [Naslag documentatie over het kopiëren van instructies](/sql/t-sql/statements/copy-into-transact-sql?view=azure-sqldw-latest&preserve-view=true#syntax)
 - [Voor beelden kopiëren voor elke authenticatie methode](./quickstart-bulk-load-copy-tsql-examples.md)
 - [Quick start voor één tabel kopiëren](./quickstart-bulk-load-copy-tsql.md)

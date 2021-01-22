@@ -8,13 +8,13 @@ ms.workload: big-data
 ms.service: time-series-insights
 services: time-series-insights
 ms.topic: conceptual
-ms.date: 10/01/2020
-ms.openlocfilehash: ee13b2fbe4abbaf9bddf4975f8e25d746dc78f5e
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.date: 01/19/2021
+ms.openlocfilehash: 31398a49de871ad44499a796adfef1be618ccab9
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232179"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685171"
 ---
 # <a name="azure-time-series-insights-gen2-event-sources"></a>Azure Time Series Insights Gen2-gebeurtenis bronnen
 
@@ -45,7 +45,7 @@ Wanneer u een gebeurtenis bron verbindt, worden in uw Azure Time Series Insights
 
 - Ga niet verder dan de limiet van de [doorvoer snelheid](./concepts-streaming-ingress-throughput-limits.md) van uw omgeving of per partitie limiet.
 
-- Configureer een [waarschuwing](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) over vertraging als uw omgeving problemen ondervindt bij het verwerken van gegevens. Zie [productie werkbelastingen](./concepts-streaming-ingestion-event-sources.md#production-workloads) hieronder voor voorgestelde waarschuwings voorwaarden. 
+- Configureer een [waarschuwing](./time-series-insights-environment-mitigate-latency.md#monitor-latency-and-throttling-with-alerts) over vertraging als uw omgeving problemen ondervindt bij het verwerken van gegevens. Zie [productie werkbelastingen](./concepts-streaming-ingestion-event-sources.md#production-workloads) hieronder voor voorgestelde waarschuwings voorwaarden.
 
 - Gebruik Streaming-opname alleen voor bijna realtime-en recente gegevens, en het streamen van historische gegevens wordt niet ondersteund.
 
@@ -55,14 +55,14 @@ Wanneer u een gebeurtenis bron verbindt, worden in uw Azure Time Series Insights
 
 ## <a name="production-workloads"></a>Productieworkloads
 
-Naast de aanbevolen procedures, raden we u aan het volgende te implementeren voor bedrijfskritische workloads. 
+Naast de aanbevolen procedures, raden we u aan het volgende te implementeren voor bedrijfskritische workloads.
 
 - Verg root de Bewaar tijd voor de IoT Hub-of event hub-gegevens tot het maximum van 7 dagen.
 
 - Maak omgevings waarschuwingen in de Azure Portal. Met waarschuwingen op basis van platform [metrische gegevens](https://docs.microsoft.com/azure/time-series-insights/how-to-monitor-tsi-reference#metrics) kunt u end-to-end pijplijn gedrag valideren. De instructies voor het maken en beheren van waarschuwingen vindt u [hier](https://docs.microsoft.com/azure/time-series-insights/time-series-insights-environment-mitigate-latency#monitor-latency-and-throttling-with-alerts). Voorgestelde waarschuwings voorwaarden:
 
-     - IngressReceivedMessagesTimeLag is langer dan vijf minuten
-     - IngressReceivedBytes is 0
+  - IngressReceivedMessagesTimeLag is langer dan vijf minuten
+  - IngressReceivedBytes is 0
 - Houd de opname taak evenwichtig tussen uw IoT Hub-of event hub-partities.
 
 ### <a name="historical-data-ingestion"></a>Historische gegevens opname

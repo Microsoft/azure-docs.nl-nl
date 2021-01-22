@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/5/2020
 ms.author: mbaldwin
-ms.openlocfilehash: e19277aa3639031371e0e8dd28f4dd849efd4597
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 24fef1680c5660a70a20ae727833b045f6c5aa88
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97933928"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664347"
 ---
 # <a name="how-to-create-an-azure-key-vault-and-vault-access-policy-by-using-a-resource-manager-template"></a>Een Azure-sleutel kluis en een beleid voor kluis toegang maken met behulp van een resource manager-sjabloon
 
@@ -150,7 +150,7 @@ U kunt toegangs beleid implementeren voor een bestaande sleutel kluis zonder dat
             "permissions": {
               "keys": "[parameters('keysPermissions')]",
               "secrets": "[parameters('secretsPermissions')]",
-              "certificates": [parameters('certificatesPermissions')]
+              "certificates": "[parameters('certificatesPermissions')]"
             }
           }
         ]
@@ -160,6 +160,7 @@ U kunt toegangs beleid implementeren voor een bestaande sleutel kluis zonder dat
 }
 
 ```
+
 Zie voor meer informatie over Key Vault-sjabloon instellingen [Key Vault arm-sjabloon verwijzing](/azure/templates/microsoft.keyvault/vaults/accesspolicies).
 
 ## <a name="more-key-vault-resource-manager-templates"></a>Meer Key Vault Resource Manager-sjablonen
@@ -213,10 +214,10 @@ Write-Host "Press [ENTER] to continue..."
 
 - Lees een [overzicht van Azure Key Vault](../general/overview.md).
 - Meer informatie over [Azure Resource Manager](../../azure-resource-manager/management/overview.md).
-- Bekijk het [Azure Key Vault Security-overzicht](security-overview.md)
+- Raadpleeg het [Overzicht voor Azure Key Vault-beveiliging](security-overview.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Veilige toegang tot een sleutelkluis](secure-your-key-vault.md)
 - [Verifiëren bij een sleutel kluis](authentication.md)
-- [Gids voor Azure Key Vault-ontwikkelaars](developers-guide.md)
+- [Ontwikkelaars handleiding Azure Key Vault](developers-guide.md)

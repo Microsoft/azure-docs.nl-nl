@@ -3,16 +3,16 @@ title: 'Zelfstudie: Een Azure Database for MariaDB ontwerpen - Azure Portal'
 description: In deze zelfstudie wordt uitgelegd hoe u een Azure Database for MariaDB-server en -database maakt en beheert via de Azure-portal.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: tutorial
 ms.date: 3/18/2020
 ms.custom: mvc
-ms.openlocfilehash: fe503d0e579e30b0c355d3be3e8d02b2bd7a44a8
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
-ms.translationtype: HT
+ms.openlocfilehash: 9df151be99ba81af28f6b7b0cc012eae7db3ea1b
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94542436"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664466"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-database-by-using-the-azure-portal"></a>Zelfstudie: een Azure Database for MariaDB-database ontwerpen met de Azure-portal
 
@@ -55,7 +55,7 @@ U maakt een Azure Database for MariaDB-server met een gedefinieerde set [reken- 
     Abonnement | *uw abonnement* | Selecteer het Azure-abonnement dat u wilt gebruiken voor uw server. Als u meerdere abonnementen hebt, kiest u het abonnement waarin u wordt gefactureerd voor de resource.
     Resourcegroep | **myresourcegroup** | Voer een nieuwe resourcegroepnaam in of selecteer een bestaande resourcegroep.
     Bron selecteren | **Leeg** | Selecteer **Leeg** om een nieuwe server te maken. (Selecteer **Back-up** als u een server maakt op basis van een geo-back-up van een bestaande Azure Database for MariaDB-server.)
-    Aanmeldgegevens van serverbeheerder | **myadmin** | Een aanmeldingsaccount dat moet worden gebruikt om verbinding te maken met de server. De aanmeldingsnaam voor de beheerder kan niet **azure_superuser** , **admin** , **administrator** , **root** , **guest** of **public** zijn.
+    Aanmeldgegevens van serverbeheerder | **myadmin** | Een aanmeldingsaccount dat moet worden gebruikt om verbinding te maken met de server. De aanmeldingsnaam voor de beheerder kan niet **azure_superuser**, **admin**, **administrator**, **root**, **guest** of **public** zijn.
     Wachtwoord | *uw keuze* | Voer een nieuw wachtwoord in voor het beheerdersaccount voor de server. Dit wachtwoord moet tussen 8 en 128 tekens bevatten. Uw wachtwoord moet tekens bevatten uit drie van de volgende categorieën: Nederlandse hoofdletters, Nederlandse kleine letters, cijfers (0-9) en niet-alfanumerieke tekens (!, $, #, %, enzovoort).
     Wachtwoord bevestigen | *uw keuze*| Bevestig het wachtwoord voor het beheerdersaccount.
     Locatie | *de regio het dichtst bij uw gebruikers*| Kies de locatie die zich het dichtst bij uw gebruikers of uw andere Azure-toepassingen bevindt.
@@ -174,10 +174,10 @@ Stel dat u per ongeluk een belangrijke databasetabel hebt verwijderd en dat de g
 
    ![Formulier herstellen](./media/tutorial-design-database-using-portal/2-restore-form.png)
    
-   - **Herstelpunt** : selecteer een tijdstip in het verleden waarnaar u wilt herstellen, binnen de vermelde periode. Zorg ervoor dat u de lokale tijdzone converteert naar UTC.
-   - **Herstellen naar nieuwe server** : geef de naam op van de nieuwe server waarnaar u wilt herstellen.
-   - **Locatie** : de regio is hetzelfde als die van de bronserver en kan niet worden gewijzigd.
-   - **Prijscategorie** : de prijscategorie is hetzelfde als die van de bronserver en kan niet worden gewijzigd.
+   - **Herstelpunt**: selecteer een tijdstip in het verleden waarnaar u wilt herstellen, binnen de vermelde periode. Zorg ervoor dat u de lokale tijdzone converteert naar UTC.
+   - **Herstellen naar nieuwe server**: geef de naam op van de nieuwe server waarnaar u wilt herstellen.
+   - **Locatie**: de regio is hetzelfde als die van de bronserver en kan niet worden gewijzigd.
+   - **Prijscategorie**: de prijscategorie is hetzelfde als die van de bronserver en kan niet worden gewijzigd.
    
 3. Klik op **OK** om de server te [herstellen naar een eerder tijdstip](./howto-restore-server-portal.md), voordat de tabel werd verwijderd. Als u een server herstelt, wordt er een nieuwe kopie van de server gemaakt, op het tijdstip dat u selecteert. 
 

@@ -17,12 +17,12 @@ ms.date: 11/07/2020
 ms.author: mathoma
 ms.reviewer: jroth
 ms.custom: seo-lt-2019
-ms.openlocfilehash: 7ddc13306f4adb1730169c4811b9d2227dedca33
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 481a4ff21c361e4cf82a21d9e98357a4c8b7b1b4
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632763"
+ms.locfileid: "98663669"
 ---
 # <a name="automate-management-with-the-sql-server-iaas-agent-extension"></a>Beheer automatiseren met de uitbrei ding IaaS agent van SQL Server
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -34,7 +34,7 @@ Dit artikel bevat een overzicht van de uitbrei ding. Zie de artikelen voor [auto
 
 ## <a name="overview"></a>Overzicht
 
-De SQL Server IaaS agent-extensie biedt een aantal voor delen voor SQL Server op Azure-Vm's: 
+De SQL Server IaaS agent-extensie biedt integratie met de Azure Portal en is afhankelijk van de beheer modus, ontgrendelt een aantal functie voordelen voor SQL Server op Azure-Vm's: 
 
 - **Functie voordelen**: de uitbrei ding ontgrendelt een aantal voor delen van automatiserings functies, zoals portal beheer, licentie flexibiliteit, automatische back-ups, automatische patching en meer. Zie de voor [delen van functies](#feature-benefits) verderop in dit artikel voor meer informatie. 
 
@@ -74,12 +74,13 @@ De volgende tabel bevat een overzicht van deze voor delen:
 
 | Functie | Beschrijving |
 | --- | --- |
-| **Portalbeheer** | Hiermee ontgrendelt u [het beheer in de portal](manage-sql-vm-portal.md), zodat u al uw SQL Server vm's op één plek kunt bekijken, zodat u SQL-specifieke functies rechtstreeks vanuit de portal kunt inschakelen en uitschakelen. 
-| **Automatische back-up** |Automatiseert het plannen van back-ups voor alle data bases voor het standaard exemplaar of een [correct geïnstalleerd](frequently-asked-questions-faq.md#administration) benoemd exemplaar van SQL Server op de virtuele machine. Zie [automatische back-up voor SQL Server in azure virtual machines (Resource Manager)](automated-backup-sql-2014.md)voor meer informatie. |
-| **Automatische patching** |Hiermee configureert u een onderhouds venster waarin belang rijke Windows-en SQL Server beveiligings updates voor uw virtuele machine kunnen worden uitgevoerd, zodat u updates tijdens piek tijden voor uw werk belasting kunt voor komen. Zie voor meer informatie [automatische patching voor SQL Server in azure virtual machines (Resource Manager)](automated-patching.md). |
-| **Integratie van Azure Key Vault** |Hiermee kunt u Azure Key Vault automatisch installeren en configureren op uw SQL Server-VM. Zie [Azure Key Vault-integratie configureren voor SQL Server op Azure virtual machines (Resource Manager)](azure-key-vault-integration-configure.md)voor meer informatie. |
-| **Flexibele licentie verlening** | Bespaar op kosten door [naadloos te overstappen](licensing-model-azure-hybrid-benefit-ahb-change.md) van uw eigen licentie (ook wel bekend als de Azure Hybrid Benefit) naar het licentie model voor betalen per gebruik en weer terug. | 
-| **Flexibele versie/editie** | Als u besluit de [versie](change-sql-server-version.md) of [editie](change-sql-server-edition.md) van SQL Server te wijzigen, kunt u de meta gegevens in de Azure Portal bijwerken zonder dat u de hele SQL Server VM opnieuw hoeft te implementeren.  | 
+| **Portalbeheer** | Hiermee ontgrendelt u [het beheer in de portal](manage-sql-vm-portal.md), zodat u al uw SQL Server vm's op één plek kunt bekijken, zodat u SQL-specifieke functies rechtstreeks vanuit de portal kunt inschakelen en uitschakelen. <br/> Beheer modus: Lightweight & Full|  
+| **Automatische back-up** |Automatiseert het plannen van back-ups voor alle data bases voor het standaard exemplaar of een [correct geïnstalleerd](frequently-asked-questions-faq.md#administration) benoemd exemplaar van SQL Server op de virtuele machine. Zie [automatische back-up voor SQL Server in azure virtual machines (Resource Manager)](automated-backup-sql-2014.md)voor meer informatie. <br/> Beheer modus: volledig|
+| **Automatische patching** |Hiermee configureert u een onderhouds venster waarin belang rijke Windows-en SQL Server beveiligings updates voor uw virtuele machine kunnen worden uitgevoerd, zodat u updates tijdens piek tijden voor uw werk belasting kunt voor komen. Zie voor meer informatie [automatische patching voor SQL Server in azure virtual machines (Resource Manager)](automated-patching.md). <br/> Beheer modus: volledig|
+| **Integratie van Azure Key Vault** |Hiermee kunt u Azure Key Vault automatisch installeren en configureren op uw SQL Server-VM. Zie [Azure Key Vault-integratie configureren voor SQL Server op Azure virtual machines (Resource Manager)](azure-key-vault-integration-configure.md)voor meer informatie. <br/> Beheer modus: volledig|
+| **Schijf gebruik in de portal weer geven** | Met kunt u een grafische weer gave bekijken van het schijf gebruik van uw SQL-gegevens bestanden in de Azure Portal.  <br/> Beheer modus: volledig | 
+| **Flexibele licentie verlening** | Bespaar op kosten door [naadloos te overstappen](licensing-model-azure-hybrid-benefit-ahb-change.md) van uw eigen licentie (ook wel bekend als de Azure Hybrid Benefit) naar het licentie model voor betalen per gebruik en weer terug. <br/> Beheer modus: Lightweight & Full| 
+| **Flexibele versie/editie** | Als u besluit de [versie](change-sql-server-version.md) of [editie](change-sql-server-edition.md) van SQL Server te wijzigen, kunt u de meta gegevens in de Azure Portal bijwerken zonder dat u de hele SQL Server VM opnieuw hoeft te implementeren.  <br/> Beheer modus: Lightweight & Full| 
 
 
 ## <a name="management-modes"></a>Beheer modi

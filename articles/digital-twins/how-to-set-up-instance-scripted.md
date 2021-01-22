@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 7/23/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 1667c21b9a35b8e93feffb8cf1b37d4409da73c3
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 1552401953a8cba9dda787a0f0e461adb7972920
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98044302"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664449"
 ---
 # <a name="set-up-an-azure-digital-twins-instance-and-authentication-scripted"></a>Een Azure Digital Apparaatdubbels-exemplaar en-verificatie instellen (met een script)
 
@@ -29,11 +29,13 @@ Deze versie van dit artikel voert u deze stappen uit door een voor beeld van een
 
 ## <a name="prerequisites-download-the-script"></a>Vereisten: het script downloaden
 
-Het voorbeeld script is geschreven in Power shell. Het maakt deel uit van de [**end-to-end-voor beelden van Azure Digital apparaatdubbels**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/), die u kunt downloaden naar uw computer door te navigeren naar de voorbeeld koppeling en de knop *zip downloaden* te selecteren onder de titel.
+Het voorbeeld script is geschreven in Power shell. Het maakt deel uit van de [**end-to-end-voor beelden van Azure Digital apparaatdubbels**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/), die u kunt downloaden naar uw machine door te navigeren naar de voorbeeld koppeling en de knop *door de code bladeren* te selecteren onder de titel. Hiermee gaat u naar de GitHub-opslag plaats voor de voor beelden, die u als een kunt downloaden *. ZIP* door de *code* knop te selecteren en de *zip te downloaden*.
 
-Hiermee wordt het voorbeeld project gedownload naar uw computer als _**Azure_Digital_Twins_end_to_end_samples.zip**_. Ga naar de map op de computer en pak deze uit om de bestanden uit te pakken.
+:::image type="content" source="media/includes/download-repo-zip.png" alt-text="Weer gave van de opslag plaats van Digital-apparaatdubbels-samples op GitHub. De knop code is geselecteerd en er wordt een klein dialoog venster geproduceerd waarin de knop voor het downloaden van een ZIP is gemarkeerd." lightbox="media/includes/download-repo-zip.png":::
 
-Het implementatie script bevindt zich in de map ungezipte op _Azure_Digital_Twins_end_to_end_samples > scripts > **deploy.ps1**_.
+Hiermee wordt een gedownload *. ZIP* -map naar de computer als **digital-twins-samples-master.zip**. Ga naar de map op de computer en pak deze uit om de bestanden uit te pakken.
+
+Het implementatie script bevindt zich in de map ungezipte op _Digital-apparaatdubbels-samples-master > scripts > **deploy.ps1**_.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 
@@ -56,7 +58,7 @@ Hier volgen de stappen voor het uitvoeren van het implementatie script in Cloud 
 
     :::image type="content" source="media/how-to-set-up-instance/cloud-shell/cloud-shell-upload.png" alt-text="Cloud Shell venster met de selectie van het pictogram uploaden":::
 
-    Ga naar het _**deploy.ps1**_ bestand op uw computer (in _Azure_Digital_Twins_end_to_end_samples > scripts > **deploy.ps1**_) en klik op openen. Hiermee wordt het bestand geüpload naar Cloud Shell, zodat u het kunt uitvoeren in het Cloud Shell-venster.
+    Ga naar het _**deploy.ps1**_ bestand op uw computer (in _Digital-apparaatdubbels-samples-master > scripts > **deploy.ps1**_) en klik op openen. Hiermee wordt het bestand geüpload naar Cloud Shell, zodat u het kunt uitvoeren in het Cloud Shell-venster.
 
 4. Voer het script uit door de `./deploy.ps1` opdracht in het venster Cloud shell te verzenden. U kunt de onderstaande opdracht kopiëren (intrekken om te plakken in Cloud Shell, u kunt **CTRL + SHIFT + v** op Windows en Linux gebruiken of **Cmd + Shift + v** op macOS. U kunt ook het menu met de rechter muisknop gebruiken).
 
@@ -102,7 +104,7 @@ Op deze pagina vindt u een lijst met alle Azure Digital Apparaatdubbels-instanti
 
 Als de verificatie is mislukt, kunt u het opnieuw proberen om een exemplaar te maken met de [Portal](how-to-set-up-instance-portal.md#create-the-azure-digital-twins-instance) of de [cli](how-to-set-up-instance-cli.md#create-the-azure-digital-twins-instance).
 
-### <a name="collect-instance-values"></a>Instantie waarden verzamelen
+### <a name="collect-instance-values"></a>Exemplaarwaarden verzamelen
 
 Selecteer de naam van uw exemplaar op de [pagina Azure Digital apparaatdubbels](https://ms.portal.azure.com/#blade/HubsExtension/BrowseResource/resourceType/Microsoft.DigitalTwins%2FdigitalTwinsInstances) om de *overzichts* pagina van het exemplaar te openen. Noteer de *naam*, de *resource groep* en de *hostnaam*. U hebt deze mogelijk later nodig om uw exemplaar te identificeren en er verbinding mee te maken.
 

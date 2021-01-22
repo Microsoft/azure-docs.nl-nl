@@ -3,15 +3,15 @@ title: Metrische waarschuwingen configureren-Azure Portal-Azure Database for Mar
 description: In dit artikel wordt beschreven hoe u metrische waarschuwingen voor Azure Database for MariaDB kunt configureren en benaderen vanuit de Azure Portal.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: e108ca3aa346af20b31ff446130014e1250f49c0
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 1e7dafaba6b6792afdec1f1866629fac9ba5a577
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541076"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664415"
 ---
 # <a name="use-the-azure-portal-to-set-up-alerts-on-metrics-for-azure-database-for-mariadb"></a>Gebruik de Azure Portal om waarschuwingen in te stellen voor Azure Database for MariaDB
 
@@ -25,7 +25,7 @@ U kunt een waarschuwing configureren om de volgende acties uit te voeren wanneer
 * Een webhook aanroepen
 
 U kunt informatie over waarschuwings regels configureren en ophalen met behulp van:
-* [Azure-portal](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
+* [Azure Portal](../azure-monitor/platform/alerts-metric.md#create-with-azure-portal)
 * [Azure-CLI](../azure-monitor/platform/alerts-metric.md#with-azure-cli)
 * [Azure Monitor REST API](/rest/api/monitor/metricalerts)
 
@@ -48,7 +48,7 @@ U kunt informatie over waarschuwings regels configureren en ophalen met behulp v
    
    ![Metrische waarde selecteren](./media/howto-alert-metric/6-configure-signal-logic.png)
 
-7. Configureer de waarschuwings logica met inbegrip van de **voor waarde** (bijvoorbeeld ' Groter dan '), **drempel waarde** (bijvoorbeeld 85 procent), **tijd aggregatie** , **periode waarbinnen** de metrische regel moet worden voldaan voordat de waarschuwingen worden geactiveerd (bijvoorbeeld ' In de afgelopen 30 minuten ') en **frequentie**.
+7. Configureer de waarschuwings logica met inbegrip van de **voor waarde** (bijvoorbeeld ' Groter dan '), **drempel waarde** (bijvoorbeeld 85 procent), **tijd aggregatie**, **periode waarbinnen** de metrische regel moet worden voldaan voordat de waarschuwingen worden geactiveerd (bijvoorbeeld ' In de afgelopen 30 minuten ') en **frequentie**.
    
    Selecteer **gereed** wanneer u klaar bent.
 

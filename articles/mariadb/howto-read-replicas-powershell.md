@@ -3,16 +3,16 @@ title: Lees replica's beheren-Azure PowerShell-Azure Database for MariaDB
 description: Meer informatie over het instellen en beheren van Lees replica's in Azure Database for MariaDB met behulp van Power shell.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 6/10/2020
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 713f99f67706caded0694d88ece220373920e555
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 43f0de153a19c0ee7ef44539407c0af4fda61c72
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250516"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664984"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-powershell"></a>Lees replica's maken en beheren in Azure Database for MariaDB met behulp van Power shell
 
@@ -57,7 +57,7 @@ Voor de `New-AzMariaDbServerReplica` opdracht zijn de volgende para meters verei
 | Instelling | Voorbeeldwaarde | Beschrijving  |
 | --- | --- | --- |
 | ResourceGroupName |  myResourceGroup |  De resource groep waar de replica-server is gemaakt.  |
-| Naam | mydemoreplicaserver | De naam van de nieuwe replica server die wordt gemaakt. |
+| Name | mydemoreplicaserver | De naam van de nieuwe replica server die wordt gemaakt. |
 
 Gebruik de **locatie** parameter om een lees replica te maken. In het volgende voor beeld wordt een replica gemaakt in de regio **VS-West** .
 

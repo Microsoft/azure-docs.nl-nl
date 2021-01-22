@@ -3,15 +3,15 @@ title: Migreren met dump en Restore-Azure Database for MariaDB
 description: In dit artikel worden twee algemene manieren uitgelegd voor het maken van back-ups en het herstellen van data bases in uw Azure Database for MariaDB, met behulp van hulpprogram ma's zoals mysqldump, MySQL Workbench en PHPMyAdmin.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 2/27/2020
-ms.openlocfilehash: 6c23b027b428ef58ae51a6ba1d2603e94b1eaaf8
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 8f7cb0710c11e0db9628ad19e2ede7ff05a19f88
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94540855"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664967"
 ---
 # <a name="migrate-your-mariadb-database-to-azure-database-for-mariadb-using-dump-and-restore"></a>Uw MariaDB-data base migreren naar Azure Database for MariaDB met dump en herstel
 In dit artikel worden twee algemene manieren uitgelegd voor het maken van back-ups en het herstellen van data bases in uw Azure Database for MariaDB

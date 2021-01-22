@@ -3,15 +3,15 @@ title: Persoonlijke koppeling-Azure Database for MariaDB
 description: Meer informatie over de werking van een persoonlijke koppeling voor Azure Database for MariaDB.
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: ec43fa995fc9772964db399baa0b6f8c2a7db1db
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 12f52cd497d606fda6bbea9b54f467522373eeb7
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241494"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98665137"
 ---
 # <a name="private-link-for-azure-database-for-mariadb"></a>Persoonlijke koppeling voor Azure Database for MariaDB
 
@@ -114,9 +114,9 @@ De volgende situaties en resultaten zijn mogelijk wanneer u een persoonlijke kop
 
 ## <a name="deny-public-access-for-azure-database-for-mariadb"></a>Open bare toegang weigeren voor Azure Database for MariaDB
 
-Als u volledig alleen wilt vertrouwen op privé-eind punten voor toegang tot hun Azure Database for MariaDB, kunt u het instellen van alle open bare eind punten ( [firewall regels](concepts-firewall-rules.md) en [VNet-service-eind punten](concepts-data-access-security-vnet.md)) uitschakelen door de configuratie voor het **weigeren van open bare netwerk toegang** op de database server in te stellen. 
+Als u volledig alleen wilt vertrouwen op privé-eind punten voor toegang tot hun Azure Database for MariaDB, kunt u het instellen van alle open bare eind punten ([firewall regels](concepts-firewall-rules.md) en [VNet-service-eind punten](concepts-data-access-security-vnet.md)) uitschakelen door de configuratie voor het **weigeren van open bare netwerk toegang** op de database server in te stellen. 
 
-Als deze instelling is ingesteld op *Ja* , zijn alleen verbindingen via persoonlijke eind punten toegestaan voor uw Azure database for MariaDB. Als deze instelling is ingesteld op *Nee* , kunnen clients verbinding maken met uw Azure database for MariaDB op basis van de instellingen van uw firewall of VNet-service-eind punten. Nadat de waarde van de toegang tot het particuliere netwerk is ingesteld, kunnen klanten ook bestaande firewall regels en VNet-service-eindpunt regels toevoegen en/of bijwerken.
+Als deze instelling is ingesteld op *Ja*, zijn alleen verbindingen via persoonlijke eind punten toegestaan voor uw Azure database for MariaDB. Als deze instelling is ingesteld op *Nee*, kunnen clients verbinding maken met uw Azure database for MariaDB op basis van de instellingen van uw firewall of VNet-service-eind punten. Nadat de waarde van de toegang tot het particuliere netwerk is ingesteld, kunnen klanten ook bestaande firewall regels en VNet-service-eindpunt regels toevoegen en/of bijwerken.
 
 > [!Note]
 > Deze functie is beschikbaar in alle Azure-regio's waar Azure Database for PostgreSQL-één server ondersteunt de prijs categorieën voor Algemeen en geoptimaliseerd voor geheugen.

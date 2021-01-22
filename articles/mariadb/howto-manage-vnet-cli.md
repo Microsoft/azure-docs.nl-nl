@@ -3,17 +3,17 @@ title: VNet-eind punten beheren-Azure CLI-Azure Database for MariaDB
 description: In dit artikel wordt beschreven hoe u Azure Database for MariaDB VNet-service-eind punten en-regels maakt en beheert met behulp van de Azure CLI-opdracht regel.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/18/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 43d1b7700395bd06960737eae4f318d61aa03717
-ms.sourcegitcommit: 295db318df10f20ae4aa71b5b03f7fb6cba15fc3
+ms.openlocfilehash: bee4af12b30b64409812d6758521a9ec29b2b61f
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/15/2020
-ms.locfileid: "94635242"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98665086"
 ---
 # <a name="create-and-manage-azure-database-for-mariadb-vnet-service-endpoints-using-azure-cli"></a>Azure Database for MariaDB VNet-service-eind punten maken en beheren met Azure CLI
 
@@ -34,7 +34,7 @@ Service-eindpunten en -regels voor virtuele netwerken (VNets) breiden de privé-
 
 De opdracht [AZ Network vnet](/cli/azure/network/vnet) wordt gebruikt voor het configureren van virtuele netwerken.
 
-Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account#az-account-set). Gebruik de **id** -eigenschap uit de **az login** -uitvoer voor uw abonnement in de tijdelijke aanduiding voor de abonnement-id.
+Als u meerdere abonnementen hebt, kiest u het juiste abonnement waarin de resource moet worden gefactureerd. Selecteer de specifieke abonnements-id in uw account met de opdracht [az account set](/cli/azure/account#az-account-set). Gebruik de **id**-eigenschap uit de **az login**-uitvoer voor uw abonnement in de tijdelijke aanduiding voor de abonnement-id.
 
 - Het account moet beschikken over de benodigde machtigingen voor het maken van een virtueel netwerk en een service-eindpunt.
 
@@ -47,7 +47,7 @@ Meer informatie over [ingebouwde rollen](../role-based-access-control/built-in-r
 VNets en Azure-serviceresources kunnen in hetzelfde abonnement of in verschillende abonnementen zitten. Als de VNet-en Azure-service resources zich in verschillende abonnementen bevinden, moeten de resources onder dezelfde Active Directory (AD)-Tenant vallen. Zorg ervoor dat de **micro soft. SQL** -resource provider is geregistreerd voor beide abonnementen. Raadpleeg [Resource-Manager-registratie][resource-manager-portal] voor meer informatie
 
 > [!IMPORTANT]
-> Het is raadzaam om dit artikel te lezen over service-eindpunt configuraties en overwegingen voordat u service-eind punten configureert. **Service-eind punt Virtual Network:** Een [Virtual Network Service-eind punt](../virtual-network/virtual-network-service-endpoints-overview.md) is een subnet waarvan de eigenschaps waarden een of meer formele namen van Azure-service typen bevatten. VNet-service-eind punten gebruiken de service type naam **micro soft. SQL** , die verwijst naar de Azure-service met de naam SQL database. Deze servicetag is ook van toepassing op de Azure SQL Database-, Azure Database for MariaDB-, PostgreSQL-en MySQL-Services. Het is belang rijk te weten wanneer u de code van het **micro soft. SQL** -service toepast op een VNet-service-eind punt, waarbij service-eindpunt verkeer wordt geconfigureerd voor alle Azure Data Base-Services, waaronder Azure SQL Database, Azure Database for PostgreSQL, Azure Database for MariaDB en Azure database for MySQL servers in het subnet.
+> Het is raadzaam om dit artikel te lezen over service-eindpunt configuraties en overwegingen voordat u service-eind punten configureert. **Service-eind punt Virtual Network:** Een [Virtual Network Service-eind punt](../virtual-network/virtual-network-service-endpoints-overview.md) is een subnet waarvan de eigenschaps waarden een of meer formele namen van Azure-service typen bevatten. VNet-service-eind punten gebruiken de service type naam **micro soft. SQL**, die verwijst naar de Azure-service met de naam SQL database. Deze servicetag is ook van toepassing op de Azure SQL Database-, Azure Database for MariaDB-, PostgreSQL-en MySQL-Services. Het is belang rijk te weten wanneer u de code van het **micro soft. SQL** -service toepast op een VNet-service-eind punt, waarbij service-eindpunt verkeer wordt geconfigureerd voor alle Azure Data Base-Services, waaronder Azure SQL Database, Azure Database for PostgreSQL, Azure Database for MariaDB en Azure database for MySQL servers in het subnet.
 
 ### <a name="sample-script"></a>Voorbeeldscript
 

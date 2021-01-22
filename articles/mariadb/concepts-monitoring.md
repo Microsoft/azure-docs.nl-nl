@@ -3,16 +3,16 @@ title: Bewaking-Azure Database for MariaDB
 description: In dit artikel worden de metrische gegevens beschreven voor bewaking en waarschuwingen voor Azure Database for MariaDB, inclusief CPU-, opslag-en verbindings statistieken.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.custom: references_regions
 ms.date: 10/21/2020
-ms.openlocfilehash: 7420a7c6355fbcd70ce57fbb36ab29d1241df31f
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 3d2cf88dba44a7f18f73fbafb66381d2ef8b29c5
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96453334"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664279"
 ---
 # <a name="monitoring-in-azure-database-for-mariadb"></a>Bewaking in Azure Database for MariaDB
 Het bewaken van gegevens over uw servers helpt u bij het oplossen en optimaliseren van uw werk belasting. Azure Database for MariaDB biedt diverse metrische gegevens die inzicht geven in het gedrag van uw server.
@@ -36,9 +36,9 @@ Deze metrische gegevens zijn beschikbaar voor Azure Database for MariaDB:
 |serverlog_storage_usage|Gebruikte server logboek opslag|Bytes|De hoeveelheid server logboek opslag die in gebruik is.|
 |serverlog_storage_limit|Opslag limiet voor server logboek|Bytes|De maximale server logboek opslag voor deze server.|
 |storage_limit|Opslag limiet|Bytes|De maximale opslag voor deze server.|
-|active_connections|Actieve verbindingen|Aantal|Het aantal actieve verbindingen met de server.|
-|connections_failed|Mislukte verbindingen|Aantal|Het aantal mislukte verbindingen met de server.|
-|seconds_behind_master|Replicatie vertraging in seconden|Aantal|Het aantal seconden dat de replica-server zich bevindt op de bron server. (Niet van toepassing op de servers van de Basic-laag)|
+|active_connections|Actieve verbindingen|Count|Het aantal actieve verbindingen met de server.|
+|connections_failed|Mislukte verbindingen|Count|Het aantal mislukte verbindingen met de server.|
+|seconds_behind_master|Replicatie vertraging in seconden|Count|Het aantal seconden dat de replica-server zich bevindt op de bron server. (Niet van toepassing op de servers van de Basic-laag)|
 |network_bytes_egress|Netwerk uit|Bytes|Netwerk uit over actieve verbindingen.|
 |network_bytes_ingress|Netwerk in|Bytes|Netwerk in meerdere actieve verbindingen.|
 |backup_storage_used|Gebruikte back-upopslag|Bytes|De hoeveelheid back-upopslag die wordt gebruikt. Deze waarde vertegenwoordigt de som van de opslag die wordt gebruikt door alle back-ups van de volledige data base, differentiële back-ups en logboek back-ups die worden bewaard op basis van de Bewaar periode voor back-ups die is ingesteld voor de server. De frequentie van de back-ups wordt beheerd door de service en uitgelegd in het [artikel concepten](concepts-backup.md). Voor geo-redundante opslag is het gebruik van back-upopslag twee keer zo dat van de lokaal redundante opslag.|

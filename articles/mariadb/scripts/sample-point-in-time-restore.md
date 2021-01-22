@@ -3,17 +3,17 @@ title: 'CLI-script: Azure Database for MariaDB-server terugzetten'
 description: Dit Azure CLI-voorbeeldscript laat zien hoe u een Azure Database for MariaDB-server en de databases ervan kunt terugzetten naar een eerder tijdstip.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.devlang: azurecli
 ms.topic: sample
 ms.custom: mvc, devx-track-azurecli
 ms.date: 12/02/2019
-ms.openlocfilehash: a4fc645f43858e80eeffc6c1672f6bd4369e7290
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
-ms.translationtype: HT
+ms.openlocfilehash: eb861a18f25e1413c9ae8ad12f6ca7c9720abbe0
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94536758"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664580"
 ---
 # <a name="restore-an-azure-database-for-mariadb-server-using-azure-cli"></a>Een Azure Database for MariaDB-server terugzetten met behulp van Azure CLI
 Met dit CLI-voorbeeldscript wordt één Azure Database for MariaDB-server teruggezet naar een eerder tijdstip.

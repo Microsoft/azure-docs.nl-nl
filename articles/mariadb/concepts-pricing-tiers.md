@@ -3,15 +3,15 @@ title: Prijscategorieën - Azure Database for MariaDB
 description: Meer informatie over de verschillende prijs categorieën voor Azure Database for MariaDB, waaronder reken generaties, opslag typen, opslag grootte, vCores, geheugen en bewaar perioden voor back-ups.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: b5b5a506b2f932d20a617634ace7ebf02093fbfa
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 6c786ea80ecbe2f174d8c3b701316791e1b6104f
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94536282"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664245"
 ---
 # <a name="azure-database-for-mariadb-pricing-tiers"></a>Azure Database for MariaDB prijs Categorieën
 
@@ -108,7 +108,7 @@ Het schalen van de opslag en het wijzigen van de Bewaar periode voor back-ups is
 
 ## <a name="pricing"></a>Prijzen
 
-Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/mariadb/)voor services voor de meest actuele prijs informatie. Als u de kosten voor de gewenste configuratie wilt zien, geeft de [Azure Portal](https://portal.azure.com/#create/Microsoft.MariaDBServer) de maandelijkse kosten op het tabblad **prijs categorie** weer op basis van de opties die u selecteert. Als u geen Azure-abonnement hebt, kunt u de Azure-prijs calculator gebruiken om een geschatte prijs te krijgen. Selecteer op de website [Azure-prijs calculator](https://azure.microsoft.com/pricing/calculator/) de optie **items toevoegen** , vouw de categorie **data bases** uit en kies **Azure database for MariaDB** om de opties aan te passen.
+Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/mariadb/)voor services voor de meest actuele prijs informatie. Als u de kosten voor de gewenste configuratie wilt zien, geeft de [Azure Portal](https://portal.azure.com/#create/Microsoft.MariaDBServer) de maandelijkse kosten op het tabblad **prijs categorie** weer op basis van de opties die u selecteert. Als u geen Azure-abonnement hebt, kunt u de Azure-prijs calculator gebruiken om een geschatte prijs te krijgen. Selecteer op de website [Azure-prijs calculator](https://azure.microsoft.com/pricing/calculator/) de optie **items toevoegen**, vouw de categorie **data bases** uit en kies **Azure database for MariaDB** om de opties aan te passen.
 
 ## <a name="next-steps"></a>Volgende stappen
 - Meer informatie over de beperkingen van de [service](concepts-limits.md).

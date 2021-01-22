@@ -3,15 +3,15 @@ title: Het juiste implementatie type-Azure Database for MariaDB selecteren
 description: In dit artikel wordt beschreven welke factoren u moet overwegen voordat u Azure Database for MariaDB implementeert als Infrastructure as a Service (IaaS) of platform as a Service (PaaS).
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 3/18/2020
-ms.openlocfilehash: d8885e374142b3d916803fc472ae18351ca6d470
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: 921ad8d187f6c2478bdf92aab0ee0ec3c9e75bce
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93240270"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664515"
 ---
 # <a name="choose-the-right-mariadb-server-option-in-azure"></a>Kies de juiste MariaDB-Server optie in azure
 
@@ -36,7 +36,7 @@ De belangrijkste verschillen tussen deze opties worden weergegeven in de volgend
 | Service Level Agreement (SLA)                | Biedt een SLA van 99,99% Beschik baarheid| Maxi maal 99,95% Beschik baarheid met twee of meer exemplaren in dezelfde beschikbaarheidsset.<br/><br/>99,9% Beschik baarheid met een virtuele machine met één exemplaar met Premium Storage.<br/><br/>99,99% met Beschikbaarheidszones met meerdere exemplaren in meerdere beschikbaarheids sets.<br/><br/>Zie de [virtual machines Sla](https://azure.microsoft.com/support/legal/sla/virtual-machines/v1_8/). |
 | Patches besturings systeem        | Automatisch  | Beheerd door klanten |
 | MariaDB-patching     | Automatisch  | Beheerd door klanten |
-| Maximale beschikbaarheid | Het model voor hoge Beschik baarheid (HA) is gebaseerd op ingebouwde failover-mechanismen voor wanneer een onderbreking op knooppunt niveau optreedt. In dergelijke gevallen maakt de service automatisch een nieuw exemplaar en koppelt de opslag aan dit exemplaar. | Klanten bouwen, implementeren, testen en onderhouden hoge Beschik baarheid. Mogelijkheden zijn onder meer Failover Clustering, altijd op groeps replicatie, logboek verzending of transactionele replicatie.|
+| Hoge beschikbaarheid | Het model voor hoge Beschik baarheid (HA) is gebaseerd op ingebouwde failover-mechanismen voor wanneer een onderbreking op knooppunt niveau optreedt. In dergelijke gevallen maakt de service automatisch een nieuw exemplaar en koppelt de opslag aan dit exemplaar. | Klanten bouwen, implementeren, testen en onderhouden hoge Beschik baarheid. Mogelijkheden zijn onder meer Failover Clustering, altijd op groeps replicatie, logboek verzending of transactionele replicatie.|
 | Zoneredundantie | Momenteel niet ondersteund | Virtuele Azure-machines kunnen worden ingesteld om te worden uitgevoerd in verschillende beschikbaarheids zones. Voor een on-premises oplossing moeten klanten hun eigen secundaire datacentrum maken, beheren en onderhouden.|
 | Hybride scenario's | Met [replicatie van inkomende gegevens](concepts-data-in-replication.md)kunt u gegevens van een externe MariaDB-server synchroniseren met de Azure database for MariaDB-service. De externe server kan on-premises, in virtuele machines of een database service worden gehost door andere cloud providers.<br/><br/> Met de functie [replica lezen](concepts-read-replicas.md) kunt u gegevens van een Azure database for MariaDB bron server naar Maxi maal vijf alleen-lezen replica servers repliceren. De replica's bevinden zich in dezelfde Azure-regio of in verschillende regio's. Alleen-lezen replica's worden asynchroon bijgewerkt met behulp van binlog-replicatie technologie.<br/><br/>De Lees replicatie tussen regio's is momenteel beschikbaar als open bare preview.| Beheerd door klanten
 | Back-ups maken en herstellen | Maakt automatisch [Server back-ups](concepts-backup.md#backups) en slaat deze op in door de gebruiker geconfigureerde opslag die lokaal redundant of geo-redundant is. De service maakt gebruik van volledige, differentiële en back-ups van transactie logboeken | Beheerd door klanten |

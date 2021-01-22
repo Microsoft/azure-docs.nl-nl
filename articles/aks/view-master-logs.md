@@ -4,12 +4,12 @@ description: Meer informatie over het inschakelen en weer geven van de logboeken
 services: container-service
 ms.topic: article
 ms.date: 10/14/2020
-ms.openlocfilehash: 59e7259ae352491bddebe054f2c34bdc810ea48a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 5f0a01adfabe59542fa999af3103a9394f4dd77b
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183223"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664075"
 ---
 # <a name="enable-and-review-kubernetes-master-node-logs-in-azure-kubernetes-service-aks"></a>Logboeken van Kubernetes-hoofdknooppunten inschakelen en controleren in AKS (Azure Kubernetes Service)
 
@@ -53,6 +53,8 @@ kind: Pod
 metadata:
   name: nginx
 spec:
+  nodeSelector:
+    "beta.kubernetes.io/os": linux
   containers:
   - name: mypod
     image: mcr.microsoft.com/oss/nginx/nginx:1.15.5-alpine

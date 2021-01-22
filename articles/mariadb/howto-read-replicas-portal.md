@@ -3,15 +3,15 @@ title: Lees replica's beheren-Azure Portal-Azure Database for MariaDB
 description: In dit artikel wordt beschreven hoe u in Azure Database for MariaDB Lees replica's instelt en beheert met behulp van de portal
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 6/10/2020
-ms.openlocfilehash: 3ca6ef3c368a5f578cc90fae3923caa89f3b076a
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: fa2afdccf9c8bd6ec7f5808674e6eec968838d10
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537744"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98665001"
 ---
 # <a name="how-to-create-and-manage-read-replicas-in-azure-database-for-mariadb-using-the-azure-portal"></a>Lees replica's maken en beheren in Azure Database for MariaDB met behulp van de Azure Portal
 
@@ -122,7 +122,7 @@ Gebruik de volgende stappen om een bron server te verwijderen uit de Azure Porta
 
 1. Selecteer in de [Azure Portal](https://portal.azure.com/)de replica Azure database for MariaDB server die u wilt bewaken.
 
-2. Onder de sectie **bewaking** van de zijbalk selecteert u **metrische gegevens** :
+2. Onder de sectie **bewaking** van de zijbalk selecteert u **metrische gegevens**:
 
 3. Selecteer **replicatie vertraging in seconden in** de vervolg keuzelijst met beschik bare metrische gegevens.
 

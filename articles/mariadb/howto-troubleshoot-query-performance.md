@@ -3,15 +3,15 @@ title: Problemen met de query prestaties oplossen-Azure Database for MariaDB
 description: Meer informatie over het gebruik van uitleg om de prestaties van query's in Azure Database for MariaDB op te lossen.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: troubleshooting
 ms.date: 3/18/2020
-ms.openlocfilehash: 2b7491723ffcff73e4b243fe54ef18608167d636
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 8c996520a77a107017aecad30c221da9ec69137c
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94537234"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664712"
 ---
 # <a name="how-to-use-explain-to-profile-query-performance-in-azure-database-for-mariadb"></a>UITLEGGEN hoe u de prestaties van query's in Azure Database for MariaDB kunt bepalen
 **Uitleg** is een handig hulp programma voor het optimaliseren van query's. De instructie uitleg kan worden gebruikt om informatie op te halen over hoe SQL-instructies worden uitgevoerd. In de volgende uitvoer ziet u een voor beeld van de uitvoering van een uitleg-instructie.
@@ -75,7 +75,7 @@ possible_keys: NULL
         Extra: Using where; Using temporary; Using filesort
 ```
 
-Zoals u kunt zien in de uitvoer, worden er door MariaDB geen indexen gebruikt, omdat er geen geschikte indexen beschikbaar zijn. Er wordt ook *gebruikgemaakt van tijdelijke; Het gebruik van bestanden sorteren* , wat betekent dat MariaDB een tijdelijke tabel maakt om te voldoen aan de component **Group by** .
+Zoals u kunt zien in de uitvoer, worden er door MariaDB geen indexen gebruikt, omdat er geen geschikte indexen beschikbaar zijn. Er wordt ook *gebruikgemaakt van tijdelijke; Het gebruik van bestanden sorteren*, wat betekent dat MariaDB een tijdelijke tabel maakt om te voldoen aan de component **Group by** .
  
 Het maken van een index op kolom **C2** heeft alleen geen verschil en MariaDB moet nog steeds een tijdelijke tabel maken:
 

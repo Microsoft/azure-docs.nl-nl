@@ -7,12 +7,12 @@ ms.author: aymarqui
 ms.date: 09/02/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: d84acc5501b3d40f6db85d0ee6ee369aec5a6aa4
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 71e74789654d2df91d9a087eaaf8d8f2a2664f7b
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98051102"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664109"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-signalr-service"></a>Azure Digital Apparaatdubbels integreren met de Azure signalerings service
 
@@ -40,7 +40,11 @@ U gaat de Azure signalerings Service koppelen aan Azure Digital Apparaatdubbels 
 
 Down load eerst de vereiste voor beeld-apps. U hebt het volgende nodig:
 * [**Azure Digital apparaatdubbels end-to-end-voor beelden**](/samples/azure-samples/digital-twins-samples/digital-twins-samples/): dit voor beeld bevat een *AdtSampleApp* met twee Azure-functies voor het verplaatsen van gegevens over een Azure Digital apparaatdubbels-exemplaar (u vindt meer informatie in dit scenario in de [*zelf studie: verbinding maken met een end-to-end oplossing*](tutorial-end-to-end.md)). Het bevat ook een *DeviceSimulator* -voorbeeld toepassing voor het simuleren van een IOT-apparaat, waarbij elke seconde een nieuwe temperatuur waarde wordt gegenereerd. 
-    - Ga naar de voorbeeld koppeling en klik op de knop *zip downloaden* om een kopie van het voor beeld naar uw computer te downloaden, zoals _**Azure_Digital_Twins_end_to_end_samples.zip**_. Pak de map uit.
+    - Als u het voor beeld nog niet hebt gedownload als onderdeel van de zelf studie in [*vereisten*](#prerequisites), navigeert u naar de voorbeeld koppeling en selecteert u de knop *door de code bladeren* onder de titel. Hiermee gaat u naar de GitHub-opslag plaats voor de voor beelden, die u als een kunt downloaden *. ZIP* door de *code* knop te selecteren en de *zip te downloaden*.
+
+    :::image type="content" source="media/includes/download-repo-zip.png" alt-text="Weer gave van de opslag plaats van Digital-apparaatdubbels-samples op GitHub. De knop code is geselecteerd en er wordt een klein dialoog venster geproduceerd waarin de knop voor het downloaden van een ZIP is gemarkeerd." lightbox="media/includes/download-repo-zip.png":::
+
+    Hiermee wordt een kopie van de voor beeld-opslag plaats gedownload naar uw computer, zoals **digital-twins-samples-master.zip**. Pak de map uit.
 * Voor beeld van een web-app voor de [**Signa lering-integratie**](/samples/azure-samples/digitaltwins-signalr-webapp-sample/digital-twins-samples/): dit is een voor beeld van een reactie op een web-app die gebruikmaakt van Azure Digital apparaatdubbels-telemetriegegevens van een Azure signalerings service.
     -  Ga naar de voorbeeld koppeling en klik op de knop *zip downloaden* om een kopie van het voor beeld naar uw computer te downloaden, zoals _**Azure_Digital_Twins_SignalR_integration_web_app_sample.zip**_. Pak de map uit.
 
@@ -63,7 +67,7 @@ Ga eerst naar de browser waar de Azure Portal is geopend en voer de volgende sta
 
     :::image type="content" source="media/how-to-integrate-azure-signalr/signalr-keys.png" alt-text="Scherm afbeelding van de Azure Portal die de pagina sleutels voor de seingevings instantie weergeeft. Het pictogram kopiëren naar klem bord naast de primaire VERBINDINGS reeks is gemarkeerd." lightbox="media/how-to-integrate-azure-signalr/signalr-keys.png":::
 
-Start vervolgens Visual Studio (of een andere code-editor van uw keuze) en open de code oplossing in de map *Azure_Digital_Twins_end_to_end_samples > ADTSampleApp* . Voer vervolgens de volgende stappen uit om de functies te maken:
+Start vervolgens Visual Studio (of een andere code-editor van uw keuze) en open de code oplossing in de map *Digital-apparaatdubbels-samples-master > ADTSampleApp* . Voer vervolgens de volgende stappen uit om de functies te maken:
 
 1. Maak een nieuwe C#-klasse met de naam **SignalRFunctions.cs** in het *SampleFunctionsApp* -project.
 
@@ -71,7 +75,7 @@ Start vervolgens Visual Studio (of een andere code-editor van uw keuze) en open 
     
     :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/signalRFunction.cs":::
 
-1. Voer in het *console venster package manager* van Visual Studio of een opdracht venster op uw computer in de map *Azure_Digital_Twins_end_to_end_samples \adtsampleapp\samplefunctionsapp* de volgende opdracht uit om het `SignalRService` NuGet-pakket te installeren op het project:
+1. Voer in het *console venster package manager* van Visual Studio of een opdracht venster op uw computer in de map *Digital-Twins-samples-master\AdtSampleApp\SampleFunctionsApp* de volgende opdracht uit om het `SignalRService` NuGet-pakket te installeren op het project:
     ```cmd
     dotnet add package Microsoft.Azure.WebJobs.Extensions.SignalRService --version 1.2.0
     ```
@@ -126,7 +130,7 @@ In deze sectie ziet u het resultaat in actie. Eerst start u de voor beeld- **app
 
 Tijdens de end-to-end-zelf studie hebt u [de Device Simulator geconfigureerd voor het](tutorial-end-to-end.md#configure-and-run-the-simulation) verzenden van gegevens via een IOT hub en naar uw Azure Digital apparaatdubbels-exemplaar.
 
-Nu hoeft u alleen maar het simulator-project te starten, dat zich bevindt in *Azure_Digital_Twins_end_to_end_samples > DeviceSimulator > DeviceSimulator. SLN*. Als u Visual Studio gebruikt, kunt u het project openen en dit vervolgens uitvoeren met deze knop op de werk balk:
+Nu hoeft u alleen maar het simulator-project te starten, dat zich bevindt in *Digital-apparaatdubbels-samples-master > DeviceSimulator > DeviceSimulator. SLN*. Als u Visual Studio gebruikt, kunt u het project openen en dit vervolgens uitvoeren met deze knop op de werk balk:
 
 :::image type="content" source="media/how-to-integrate-azure-signalr/start-button-simulator.png" alt-text="De startknop van Visual Studio (project DeviceSimulator)":::
 
@@ -188,7 +192,7 @@ Met de Azure Cloud Shell of lokale Azure CLI kunt u alle Azure-resources in een 
 az group delete --name <your-resource-group>
 ```
 
-Verwijder tot slot de voorbeeld mappen van het project dat u hebt gedownload naar uw lokale machine (*Azure_Digital_Twins_end_to_end_samples.zip* en *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
+Verwijder tot slot de voorbeeld mappen van het project dat u hebt gedownload naar uw lokale machine (*digital-twins-samples-master.zip* en *Azure_Digital_Twins_SignalR_integration_web_app_sample.zip*).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -3,15 +3,15 @@ title: Server-Azure Portal-Azure Database for MariaDB beheren
 description: Meer informatie over het beheren van een Azure Database for MariaDB-server vanuit de Azure Portal.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: ade70c884a3ef01db45273e4789f34b629473661
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b492e04629f23c991c1c5d69dd5e2c472676d37a
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005024"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664398"
 ---
 # <a name="manage-an-azure-database-for-mariadb-server-using-the-azure-portal"></a>Een Azure Database for MariaDB-server beheren met behulp van de Azure Portal
 Dit artikel laat u zien hoe u uw Azure Database for MariaDB-servers kunt beheren. Beheer taken zijn onder andere berekening en opslag schalen, beheerders wachtwoord opnieuw instellen en server details weer geven.

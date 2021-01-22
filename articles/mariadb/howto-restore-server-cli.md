@@ -3,17 +3,17 @@ title: Back-ups maken en herstellen-Azure CLI-Azure Database for MariaDB
 description: Meer informatie over het maken van een back-up en het herstellen van een server in Azure Database for MariaDB met behulp van de Azure CLI.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.devlang: azurecli
 ms.topic: how-to
 ms.date: 3/27/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: a6e46efd7f998437c3998df9a989ef9e1500e888
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: ceda6c99493818042aa281ab545465e91493a80e
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94539580"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664831"
 ---
 # <a name="how-to-back-up-and-restore-a-server-in-azure-database-for-mariadb-using-the-azure-cli"></a>Een back-up maken en herstellen van een server in Azure Database for MariaDB met behulp van de Azure CLI
 
@@ -100,7 +100,7 @@ Als u de server wilt herstellen, voert u bij de opdracht prompt van Azure CLI de
 az mariadb server georestore --resource-group myresourcegroup --name mydemoserver-georestored --source-server mydemoserver --location eastus --sku-name GP_Gen5_8
 ```
 
-Met deze opdracht maakt u een nieuwe server met de naam *mydemoserver-restored* in VS-Oost, die deel uitmaakt van *myresourcegroup*. Het is een Algemeen, Gen 5-server met 8 vCores. De server wordt gemaakt op basis van de geo-redundante back-up van *mydemoserver* , die ook in de resource groep *myresourcegroup*
+Met deze opdracht maakt u een nieuwe server met de naam *mydemoserver-restored* in VS-Oost, die deel uitmaakt van *myresourcegroup*. Het is een Algemeen, Gen 5-server met 8 vCores. De server wordt gemaakt op basis van de geo-redundante back-up van *mydemoserver*, die ook in de resource groep *myresourcegroup*
 
 Als u de nieuwe server in een andere resource groep van de bestaande server wilt maken, moet u in de `--source-server` para meter de naam van de server kwalificeren, zoals in het volgende voor beeld:
 

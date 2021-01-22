@@ -3,15 +3,15 @@ title: Langzame query logboeken-Azure Database for MariaDB
 description: Hierin worden de Logboeken beschreven die beschikbaar zijn in Azure Database for MariaDB en de beschik bare para meters voor het inschakelen van verschillende registratie niveaus.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 11/6/2020
-ms.openlocfilehash: a5acf3b6447b2e3722a27951700138f756a99251
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: 2d3c3c92cc4d0da38f18c7895f4f7f3f3385c653
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541110"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664160"
 ---
 # <a name="slow-query-logs-in-azure-database-for-mariadb"></a>Trage query Logboeken in Azure Database for MariaDB
 In Azure Database for MariaDB is het langzame query logboek beschikbaar voor gebruikers. Toegang tot het transactie logboek wordt niet ondersteund. Het logboek met trage query's kan worden gebruikt om prestatie knelpunten voor het oplossen van problemen te identificeren.
@@ -25,11 +25,11 @@ Het logboek voor langzame query's is standaard uitgeschakeld. Als u deze wilt in
 
 Andere para meters die u kunt aanpassen zijn onder andere:
 
-- **long_query_time** : als een query langer duurt dan long_query_time (in seconden) dat de query wordt geregistreerd. De standaardinstelling is 10 seconden.
-- **log_slow_admin_statements** : als u beheer instructies zoals ALTER_TABLE en ANALYZE_TABLE in de instructies bevat die naar de slow_query_log zijn geschreven.
-- **log_queries_not_using_indexes** : bepaalt of query's die geen indexen gebruiken, worden geregistreerd in het slow_query_log
-- **log_throttle_queries_not_using_indexes** : deze para meter beperkt het aantal niet-index query's dat naar het langzame query logboek kan worden geschreven. Deze para meter wordt van kracht als log_queries_not_using_indexes is ingesteld op aan.
-- **log_output** : als ' bestand ' is, kan het langzame query logboek worden geschreven naar zowel de lokale server opslag als Azure monitor Diagnostische logboeken. Als 'None' wordt opgegeven, wordt het logboek voor trage query's alleen naar Diagnostische logboeken van Azure Monitor geschreven. 
+- **long_query_time**: als een query langer duurt dan long_query_time (in seconden) dat de query wordt geregistreerd. De standaardinstelling is 10 seconden.
+- **log_slow_admin_statements**: als u beheer instructies zoals ALTER_TABLE en ANALYZE_TABLE in de instructies bevat die naar de slow_query_log zijn geschreven.
+- **log_queries_not_using_indexes**: bepaalt of query's die geen indexen gebruiken, worden geregistreerd in het slow_query_log
+- **log_throttle_queries_not_using_indexes**: deze para meter beperkt het aantal niet-index query's dat naar het langzame query logboek kan worden geschreven. Deze para meter wordt van kracht als log_queries_not_using_indexes is ingesteld op aan.
+- **log_output**: als ' bestand ' is, kan het langzame query logboek worden geschreven naar zowel de lokale server opslag als Azure monitor Diagnostische logboeken. Als 'None' wordt opgegeven, wordt het logboek voor trage query's alleen naar Diagnostische logboeken van Azure Monitor geschreven. 
 
 > [!IMPORTANT]
 > Als uw tabellen niet zijn geïndexeerd, kan het `log_queries_not_using_indexes` instellen `log_throttle_queries_not_using_indexes` van de para meters op in de prestaties van MariaDB beïnvloeden omdat alle query's die worden uitgevoerd op deze niet-geïndexeerde tabellen, worden geschreven naar het logboek voor langzame query's.<br><br>

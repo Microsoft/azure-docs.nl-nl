@@ -6,14 +6,14 @@ author: duongau
 ms.service: expressroute
 ms.topic: conceptual
 ms.workload: infrastructure-services
-ms.date: 01/05/2021
+ms.date: 01/21/2021
 ms.author: duau
-ms.openlocfilehash: c68d9654c673b75742205853ec186caa5d6a3ce5
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 589f8bef7e5023a3667ce0ebf9a14637b007223d
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916147"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664058"
 ---
 # <a name="expressroute-connectivity-partners-and-peering-locations"></a>Partners en peeringlocaties voor ExpressRoute-connectiviteit
 
@@ -93,7 +93,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **[Chief Telecom](https://www.chief.com.tw/)** |Ondersteund |Ondersteund |Hong Kong, Taiwan |
 | **China-Mobiel internationaal** |Ondersteund |Ondersteund | Hong Kong, Hongkong SAR Kong2, Singapore |
 | **China Telecom Global** |Ondersteund |Ondersteund |Hong Kong, Hongkong Kong2 |
-| **Unicom-China-wereld wijd** |Ondersteund |Ondersteund | Singapore2 |
+| **Unicom-China-wereld wijd** |Ondersteund |Ondersteund | Hongkong, Singapore2 |
 | **[Chunghwa Telecom](https://www.cht.com.tw/en/home/cht/about-cht/products-and-services/International/Cloud-Service)** |Ondersteund |Ondersteund |Taipei |
 | **[Claro](https://www.usclaro.com/enterprise-mnc/connectivity/mpls/)** |Ondersteund |Ondersteund |Miami |
 | **[Cologix](https://www.cologix.com/hyperscale/microsoft-azure/)** |Ondersteund |Ondersteund |Chicago, Amsterdam, Minneapolis, Montreal, Toronto, Vancouver, Washington DC |
@@ -121,6 +121,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **[Internet Initiative Japan Inc. - IIJ](https://www.iij.ad.jp/en/news/pressrelease/2015/1216-2.html)** |Ondersteund |Ondersteund |Osaka, Tokio |
 | **[Internet Solutions - Cloud Connect](https://www.is.co.za/solution/cloud-connect/)** |Ondersteund |Ondersteund |Kaapstad, Johannesburg, Londen |
 | **[Interxion](https://www.interxion.com/why-interxion/colocate-with-the-clouds/Microsoft-Azure/)** |Ondersteund |Ondersteund |Amsterdam, Amsterdam2, kopen Hagen, Dublin, Frankfurt, Londen, Marseille, Parijs, Zürich |
+| **[IRIDEOS](https://irideos.it/)** |Ondersteund |Ondersteund |Milaan |
 | **[IX Reach](https://www.ixreach.com/partners/cloud-partners/microsoft-azure/)**|Ondersteund |Ondersteund | Amsterdam, London2, silicone dal, Toronto, Washington DC |
 | **Jaguar-netwerk** |Ondersteund |Ondersteund |Marseille, Parijs |
 | **[Jisc](https://www.jisc.ac.uk/microsoft-azure-expressroute)** |Ondersteund |Ondersteund |Londen, Newport (Wales) |
@@ -159,7 +160,7 @@ De volgende tabel toont de locaties per serviceprovider. Als u alle beschikbare 
 | **[Swisscom](https://www.swisscom.ch/en/business/enterprise/offer/cloud-data-center/microsoft-cloud-services/microsoft-azure-von-swisscom.html)** | Ondersteund | Ondersteund | Zurich |
 | **[Tata Communications](https://www.tatacommunications.com/lp/izo/azure/azure_index.html)** |Ondersteund |Ondersteund |Amsterdam, Chennai, Hongkong SAR, Londen, Mumbai, Sao Paulo, silicium dal, Singapore, Washington DC |
 | **[Telefonica](https://www.business-solutions.telefonica.com/es/enterprise/solutions/efficient-infrastructure/managed-voice-data-connectivity/)** |Ondersteund |Ondersteund |Amsterdam, Sao Paulo |
-| **[Telehouse - KDDI](https://www.telehouse.net/solutions/cloud-services/cloud-link)** |Ondersteund |Ondersteund |Londen, London2 |
+| **[Telehouse - KDDI](https://www.telehouse.net/solutions/cloud-services/cloud-link)** |Ondersteund |Ondersteund |Londen, London2, Singapore2 |
 | **Telenor** |Ondersteund |Ondersteund |Amsterdam, Londen, Utrecht |
 | **[Telia-Carrier](https://www.teliacarrier.com/)** | Ondersteund | Ondersteund |Amsterdam, Chicago, Amsterdam, Frankfurt, Hongkong, Londen, Utrecht, Parijs, silicone dal, Stockholm, Washington DC |
 | **[Telin](https://www.telin.net/)** | Ondersteund | Ondersteund |Jakarta |

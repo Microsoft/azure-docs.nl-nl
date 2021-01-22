@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 06/26/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 33b4c59e14301e496d0eddafa7bdfdf201b7aa29
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5d6e738152e542617046834980d3e7c58e497093
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87005902"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664678"
 ---
 # <a name="windows-stop-error---status-no-memory"></a>Windows-stopfout - Status geen geheugen
 
@@ -45,6 +45,9 @@ De schijf van het besturings systeem is vol, te gefragmenteerd of het besturings
 
 ### <a name="process-overview"></a>Overzicht van het proces:
 
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
+
 1. Een herstel-VM maken en openen
 1. Ruimte vrijmaken op de schijf
 1. Onjuist geheugen uit het BCD-archief verwijderen
@@ -64,7 +67,7 @@ De schijf van het besturings systeem is vol, te gefragmenteerd of het besturings
 
 Als u een virtuele machine van de tweede generatie gebruikt, is er mogelijk geen letter toegewezen aan de EFI-partitie van de gekoppelde schijf. U moet de volgende stappen volgen om een letter aan de partitie toe te wijzen voordat u doorgaat met deze probleemoplossings handleiding.
 
-1. In Windows Search voert u `diskmgmt` de **schijf beheer console**in en opent u deze.
+1. In Windows Search voert u `diskmgmt` de **schijf beheer console** in en opent u deze.
 1. Identificeer de defecte schijf die is gekoppeld aan de reparatie-VM. Deze schijf wordt doorgaans als laatste weer gegeven in de-console en heeft de hoogste numerieke waarde.
 1. Opmerking Als er op die schijf een partitie is met de **EFI-systeem partitie**, waaraan ook geen letter waarde is toegewezen (zoals station *F:*). Als alle partities zijn toegewezen, kunt u overs Laan om ruimte vrij te maken op de schijf. Als dat niet het geval is, gaat u verder met het toewijzen van een letter aan deze schijf.
 
@@ -93,9 +96,9 @@ Als u een virtuele machine van de tweede generatie gebruikt, is er mogelijk geen
 
 Nu de defecte schijf is gekoppeld aan de herstel-VM, moet u controleren of het besturings systeem op die schijf voldoende ruimte heeft om goed te werken. 
 
-1. Controleer of de schijf vol is door met de rechter muisknop op het station van de aangesloten schijf te klikken en **Eigenschappen**te selecteren.
-1. Als de schijf **minder dan 300 MB beschik bare ruimte**heeft, kunt u [deze uitbreiden tot Maxi maal 1 TB met behulp van Power shell](../windows/expand-os-disk.md).
-1. Zodra de schijf grootte **1 TB**is, moet u een schijf opruiming uitvoeren. U kunt het [hulp programma schijf opruiming](https://support.microsoft.com/help/4026616/windows-10-disk-cleanup) gebruiken om ruimte vrij te maken.
+1. Controleer of de schijf vol is door met de rechter muisknop op het station van de aangesloten schijf te klikken en **Eigenschappen** te selecteren.
+1. Als de schijf **minder dan 300 MB beschik bare ruimte** heeft, kunt u [deze uitbreiden tot Maxi maal 1 TB met behulp van Power shell](../windows/expand-os-disk.md).
+1. Zodra de schijf grootte **1 TB** is, moet u een schijf opruiming uitvoeren. U kunt het [hulp programma schijf opruiming](https://support.microsoft.com/help/4026616/windows-10-disk-cleanup) gebruiken om ruimte vrij te maken.
 1. Open een opdracht prompt met verhoogde bevoegdheid (als administrator uitvoeren) en voer een defragmentatie uit op het station:
 
    ``
@@ -137,7 +140,7 @@ Voordat u een van de stappen neemt, moet u een kopie van de map **\Windows\Syste
    ![Het Hive-menu van de REGI ster-editor.](./media/troubleshoot-windows-stop-error/4.png)
 
 1. Selecteer **\windows\system32\config\SYSTEM** in het dialoog venster Hive laden en klik op openen.
-   1. U wordt gevraagd om een naam op te geven. u moet **BROKENSYSTEM**invoeren. Met deze naam kunnen de betrokken componenten worden onderscheiden tijdens het oplossen van problemen.
+   1. U wordt gevraagd om een naam op te geven. u moet **BROKENSYSTEM** invoeren. Met deze naam kunnen de betrokken componenten worden onderscheiden tijdens het oplossen van problemen.
    1. Vouw **HKEY_LOCAL_MACHINE** uit om de nieuwe BROKENSYSTEM-sleutel te zien die u hebt toegevoegd.
 1. Bepaal in de REGI ster-editor op welke Beheerset de computer wordt opgestart.
    1. Navigeer naar **HKEY_LOCAL_MACHINE >> BROKENSYSTEM >> Select**.
@@ -175,7 +178,7 @@ Voer het volgende script uit om geheugen dump verzameling en seriële console in
    
    - Vervang in de opdracht door `<LETTER OF THE EFI SYSTEM PARTITION>` de letter van de EFI-systeem partitie.
    - Het kan handig zijn om de schijf beheer console te starten om de juiste systeem partitie te identificeren die is aangeduid als **EFI-systeem partitie**.
-   - De id mag een unieke GUID zijn of de standaard- **BOOTMGR**zijn.
+   - De id mag een unieke GUID zijn of de standaard- **BOOTMGR** zijn.
 
 1. Voer de volgende opdrachten uit om seriële console in te scha kelen:
 

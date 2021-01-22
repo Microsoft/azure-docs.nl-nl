@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: 68fdc29edfd41799e2628abf40efa6a9453a90b9
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: e603e99c1aa9c49d20bdb281bbfd96131ae2efdd
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633874"
+ms.locfileid: "98663618"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)
 
@@ -61,6 +61,12 @@ In dit artikel worden de stappen beschreven voor het instellen van IoT Edge op e
       ![Selecteer het tandwiel pictogram in de rechter bovenhoek van het dash board om toegang te krijgen tot de instellingen.](./media/how-to-install-iot-edge-on-windows/select-gear-icon.png)
 
    1. Klik in het menu **instellingen** onder **Gateway** op **extensies**.
+
+   1. Selecteer het tabblad **feeds** en selecteer **toevoegen**.
+
+   1. Voer https://aka.ms/wac-insiders-feed in het tekstvak in en selecteer **toevoegen**.
+
+   1. Nadat de feed is toegevoegd, gaat u naar het tabblad **beschik bare uitbrei dingen** . Het kan even duren voordat de lijst met extensies is bijgewerkt.
 
    1. Zoek **Azure IOT Edge** in de lijst met extensies op het tabblad **beschik bare uitbrei dingen** . Kies deze optie en selecteer de **installatie** prompt boven de lijst met extensies.
 

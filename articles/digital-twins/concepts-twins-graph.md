@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: conceptual
 ms.service: digital-twins
-ms.openlocfilehash: d9a6eb572b1ab870fdb848f8b0989f88e6dbc3c0
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: a4875c2c75b133f0ab4046266d6aac36d5478fe4
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045951"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664041"
 ---
 # <a name="understand-digital-twins-and-their-twin-graph"></a>Meer informatie over digitale apparaatdubbels en hun twee grafieken
 
@@ -25,7 +25,9 @@ In een Azure Digital Apparaatdubbels-oplossing worden de entiteiten in uw omgevi
 
 Voordat u een digitale dubbele in uw Azure Digital Apparaatdubbels-exemplaar kunt maken, moet u een *model* hebben dat naar de service wordt geüpload. Een model beschrijft de set eigenschappen, telemetrie-berichten en relaties die een bepaalde dubbele kan hebben, onder andere. Zie [*concepten: Custom modelers*](concepts-models.md)(Engelstalig) voor informatie over de typen die in een model zijn gedefinieerd.
 
-Na het maken en uploaden van een model, kan uw client-app een exemplaar van het type maken. Dit is een digitale dubbele. Nadat u bijvoorbeeld een model van de *vloer* hebt gemaakt, kunt u een of meer digitale apparaatdubbels maken die gebruikmaken van dit type (zoals een *Floor*-type met dubbele naam *GroundFloor*, een andere met de naam *Floor2*, enzovoort). 
+Na het maken en uploaden van een model, kan uw client-app een exemplaar van het type maken. Dit is een digitale dubbele. Nadat u bijvoorbeeld een model van de *vloer* hebt gemaakt, kunt u een of meer digitale apparaatdubbels maken die gebruikmaken van dit type (zoals een *Floor*-type met dubbele naam *GroundFloor*, een andere met de naam *Floor2*, enzovoort).
+
+[!INCLUDE [digital-twins-versus-device-twins](../../includes/digital-twins-versus-device-twins.md)]
 
 ## <a name="relationships-a-graph-of-digital-twins"></a>Relaties: een grafiek met digitale apparaatdubbels
 

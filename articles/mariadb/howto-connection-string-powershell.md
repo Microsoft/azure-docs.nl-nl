@@ -3,16 +3,16 @@ title: Een verbindingsreeks genereren met PowerShell - Azure Database for MariaD
 description: Dit artikel biedt een Azure PowerShell-voorbeeld voor het genereren van een verbindingsreeks om verbinding met Azure Database for MySQL te maken.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.custom: mvc, devx-track-azurepowershell
 ms.topic: how-to
 ms.date: 8/5/2020
-ms.openlocfilehash: 9dee109c701d3760c93f39e639dcfd7cae07b595
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
-ms.translationtype: HT
+ms.openlocfilehash: 79109a7f39debfa14c8a11d9014685382151ab3b
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94538050"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98663720"
 ---
 # <a name="how-to-generate-an-azure-database-for-mariadb-connection-string-with-powershell"></a>Azure Database for MariaDB-verbindingsreeks genereren met PowerShell
 

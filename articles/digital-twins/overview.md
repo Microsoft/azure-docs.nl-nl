@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 3/12/2020
 ms.topic: overview
 ms.service: digital-twins
-ms.openlocfilehash: 49b7bae1a0cc224b92f292b891fae210f2cffa4e
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: 91915f204a68d59a603b8bdea383b497a5b33d34
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400604"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664024"
 ---
 # <a name="what-is-azure-digital-twins"></a>Wat is Azure Digital Twins?
 
@@ -33,6 +33,8 @@ Hier volgt een overzicht van de functies van Azure Digital Twins.
 In Azure Digital Twins definieert u de digitale entiteiten die de personen, plaatsen en dingen in uw fysieke omgeving vertegenwoordigen met aangepaste dubbele typen, die [**modellen**](concepts-models.md) worden genoemd. 
 
 U kunt deze modeldefinities beschouwen als een gespecialiseerde woordenlijst om uw bedrijf te beschrijven. Voor een oplossing voor gebouwbeheer kunt u bijvoorbeeld modellen definiëren zoals gebouw, verdieping en lift. U kunt vervolgens **apparaatdubbels** maken op basis van deze modellen om uw specifieke omgeving weer te geven.
+
+[!INCLUDE [digital-twins-versus-device-twins](../../includes/digital-twins-versus-device-twins.md)]
 
 Modellen worden gedefinieerd in een JSON-achtige taal met de naam [Digital Twins Definition Language (DTDL)](https://github.com/Azure/opendigitaltwins-dtdl/blob/master/DTDL/v2/dtdlv2.md), waarin apparaatdubbels worden beschreven met betrekking tot hun statuseigenschappen, telemetrie-gebeurtenissen, opdrachten, onderdelen en relaties.
 * Modellen definiëren semantische **relaties** tussen uw entiteiten, zodat u uw apparaatdubbels kunt verbinden in een kennisgrafiek die de interacties aangeeft. U kunt de modellen zien als een zelfstandig naamwoord in een beschrijving van uw wereld en de relaties als werkwoorden.

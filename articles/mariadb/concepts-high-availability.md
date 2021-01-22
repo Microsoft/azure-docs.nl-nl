@@ -3,15 +3,15 @@ title: Hoge Beschik baarheid-Azure Database for MariaDB
 description: In dit artikel vindt u informatie over hoge Beschik baarheid in Azure Database for MariaDB
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 7/7/2020
-ms.openlocfilehash: 4dcb1ac7ce4b468374993c11578bce553f766a42
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: dc37474a56ddb7d2c48c7acfce881fb812f0b8a4
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241341"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664330"
 ---
 # <a name="high-availability-in-azure-database-for-mariadb"></a>Hoge Beschik baarheid in Azure Database for MariaDB
 De Azure Database for MariaDB-service biedt een gegarandeerd hoog niveau van Beschik baarheid met de SLA (financieel ondersteunde service level agreement) van [99,99%](https://azure.microsoft.com/support/legal/sla/MariaDB) uptime. Azure Database for MariaDB biedt een hoge Beschik baarheid tijdens geplande gebeurtenissen, zoals de initated van de gebruiker en ook wanneer niet-geplande gebeurtenissen, zoals onderliggende hardware, software of netwerk fouten, optreden. Azure Database for MariaDB kan snel van de meeste kritieke omstandigheden worden hersteld, waardoor er bijna geen toepassings tijd meer is bij het gebruik van deze service.

@@ -3,15 +3,15 @@ title: Server opnieuw starten-Azure Portal-Azure Database for MariaDB
 description: In dit artikel wordt beschreven hoe u een Azure Database for MariaDB server opnieuw kunt opstarten met behulp van Azure Portal.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 3/18/2020
-ms.openlocfilehash: 0c16cf8d67394f6aa50cb30a44b4ff5a677159de
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.openlocfilehash: a912c1cde092b082e4c0229b1f454e80f32e319e
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94538883"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664882"
 ---
 # <a name="restart-azure-database-for-mariadb-server-using-azure-portal"></a>Azure Database for MariaDB server opnieuw opstarten met Azure Portal
 In dit onderwerp wordt beschreven hoe u een Azure Database for MariaDB server opnieuw kunt starten. Mogelijk moet u de server opnieuw opstarten om onderhouds redenen te zorgen, waardoor er een korte storing optreedt terwijl de server de bewerking uitvoert.

@@ -3,17 +3,17 @@ title: 'Zelfstudie: Een server ontwerpen - Azure PowerShell - Azure Database for
 description: In deze zelfstudie wordt uitgelegd hoe u een Azure Database for MariaDB-server en -database maakt en beheert met PowerShell.
 author: savjani
 ms.author: pariks
-ms.service: mariadb
+ms.service: jroth
 ms.devlang: azurepowershell
 ms.topic: tutorial
 ms.date: 05/26/2020
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 9b4500df459e4d4ef67f97dc4fa923988f30401b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 56d901ad05aa589ecf7f2ae97251be2b853f6c55
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96023088"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664498"
 ---
 # <a name="tutorial-design-an-azure-database-for-mariadb-using-powershell"></a>Zelfstudie: Een Azure Database for MariaDB ontwerpen met PowerShell
 
@@ -119,7 +119,7 @@ mydemoserver.mariadb.database.azure.com       myadmin
 
 ## <a name="connect-to-the-server-using-the-mysql-command-line-tool"></a>Verbinding maken met de server met het opdrachtregelprogramma mysql
 
-Maak verbinding met de server met behulp van het `mysql`opdrachtregelprogramma. Zie [MariaDB Community Downloads](https://dev.mysql.com/downloads/shell/) als u het opdrachtregelprogramma wilt downloaden en installeren. U kunt ook een vooraf geïnstalleerde versie openen van het `mysql` opdrachtregelhulpprogramma in Azure Cloud Shell door de knop **Proberen** in een codevoorbeeld in dit artikel te selecteren. Andere manieren om toegang te krijgen tot Azure Cloud Shell zijn de selectie van de knop **> _** in de werkbalk rechtsboven in de Azure Portal of een bezoek aan [shell.azure.com](https://shell.azure.com/).
+Maak verbinding met de server met behulp van het opdrachtregelprogramma `mysql`. Zie [MariaDB Community Downloads](https://dev.mysql.com/downloads/shell/) als u het opdrachtregelprogramma wilt downloaden en installeren. U kunt ook een vooraf geïnstalleerde versie openen van het opdrachtregelhulpprogramma `mysql` in Azure Cloud Shell door in een codevoorbeeld in dit artikel de knop **Proberen** te selecteren. Andere manieren om toegang te krijgen tot Azure Cloud Shell zijn de selectie van de knop **> _** in de werkbalk rechtsboven in de Azure Portal of een bezoek aan [shell.azure.com](https://shell.azure.com/).
 
 ```azurepowershell-interactive
 mysql -h mydemoserver.mariadb.database.azure.com -u myadmin@mydemoserver -p

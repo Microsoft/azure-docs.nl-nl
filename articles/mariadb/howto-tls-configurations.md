@@ -3,15 +3,15 @@ title: TLS-configuratie-Azure Portal-Azure Database for MariaDB
 description: Meer informatie over het instellen van TLS-configuratie met behulp van Azure Portal voor uw Azure Database for MariaDB
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 06/02/2020
-ms.openlocfilehash: 55a664ceb3524a0c545e037dcba7a2af90034ad4
-ms.sourcegitcommit: 80034a1819072f45c1772940953fef06d92fefc8
+ms.openlocfilehash: b4e167714ffccd20b4628fd21fb6b284d5400112
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93241981"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98664763"
 ---
 # <a name="configuring-tls-settings-in-azure-database-for-mariadb-using-azure-portal"></a>TLS-instellingen in Azure Database for MariaDB configureren met Azure Portal
 
@@ -33,7 +33,7 @@ Volg deze stappen voor het instellen van de minimale TLS-versie van de MariaDB-s
 
 1. Klik op de pagina MariaDB-server onder **instellingen** op **verbindings beveiliging** om de pagina verbindings beveiliging configureren te openen.
 
-1. Selecteer in **minimale TLS** -versie **1,2** om verbindingen met een TLS-versie kleiner dan TLS 1,2 voor uw MariaDB-server te weigeren.
+1. Selecteer in **minimale TLS**-versie **1,2** om verbindingen met een TLS-versie kleiner dan TLS 1,2 voor uw MariaDB-server te weigeren.
 
     ![Azure Database for MariaDB TLS-configuratie](./media/howto-tls-configurations/tls-configurations.png)
 

@@ -10,13 +10,13 @@ ms.topic: conceptual
 author: anosov1960
 ms.author: sashan
 ms.reviewer: sstein
-ms.date: 09/03/2020
-ms.openlocfilehash: 9c09a54daa482d738ded9f7aca1c95c2b640617e
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.date: 01/20/2021
+ms.openlocfilehash: 5f9e7e1c96db2b60e41fe0ded69ea562cf8fcea6
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790267"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98663982"
 ---
 # <a name="use-read-only-replicas-to-offload-read-only-query-workloads"></a>Alleen-lezen replica's gebruiken om werk belastingen met alleen-lezen query's te offloaden
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -85,7 +85,7 @@ Wanneer er verbinding wordt gemaakt met een alleen-lezen replica, zien dynamisch
 
 Veelgebruikte weer gaven zijn:
 
-| Naam | Doel |
+| Name | Doel |
 |:---|:---|
 |[sys.dm_db_resource_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-db-resource-stats-azure-sql-database)| Voorziet in de metrische gegevens van het resource gebruik voor het afgelopen uur, inclusief CPU, data IO en logboek schrijf gebruik in verhouding tot service doelstelling limieten.|
 |[sys.dm_os_wait_stats](/sql/relational-databases/system-dynamic-management-views/sys-dm-os-wait-stats-transact-sql)| Biedt geaggregeerde wacht statistieken voor het exemplaar van de data base-engine. |
@@ -115,12 +115,12 @@ In zeldzame gevallen kan het gebeuren dat als een snap shot-isolatie transactie 
 
 ### <a name="long-running-queries-on-read-only-replicas"></a>Langlopende query's voor alleen-lezen replica's
 
-Query's die worden uitgevoerd op alleen-lezen replica's, moeten toegang hebben tot meta gegevens voor de objecten waarnaar wordt verwezen in de query (tabellen, indexen, statistieken, enzovoort). In zeldzame gevallen, als een meta gegevens object op de primaire replica is gewijzigd terwijl een query een vergren deling op hetzelfde object op de alleen-lezen replica bevat, kan de query het proces dat wijzigingen van de primaire replica op de alleen-lezen replica toepast, [blok keren](/sql/database-engine/availability-groups/windows/troubleshoot-primary-changes-not-reflected-on-secondary#BKMK_REDOBLOCK) . Als een dergelijke query al lange tijd zou worden uitgevoerd, zou de alleen-lezen replica aanzienlijk niet synchroon zijn met de primaire replica. 
+Query's die worden uitgevoerd op alleen-lezen replica's, moeten toegang hebben tot meta gegevens voor de objecten waarnaar wordt verwezen in de query (tabellen, indexen, statistieken, enzovoort). In zeldzame gevallen, als een meta gegevens object op de primaire replica is gewijzigd terwijl een query een vergren deling op hetzelfde object op de alleen-lezen replica bevat, kan de query het proces dat wijzigingen van de primaire replica op de alleen-lezen replica toepast, [blok keren](/sql/database-engine/availability-groups/windows/troubleshoot-primary-changes-not-reflected-on-secondary#BKMK_REDOBLOCK) . Als een dergelijke query al lange tijd zou worden uitgevoerd, zou de alleen-lezen replica aanzienlijk niet synchroon zijn met de primaire replica.
 
-Als een langlopende query op een alleen-lezen replica dit soort blok kering veroorzaakt, wordt deze automatisch beëindigd en ontvangt de sessie fout 1219, ' uw sessie is beëindigd vanwege een DDL-bewerking met hoge prioriteit '.
+Als een langlopende query op een alleen-lezen replica dit soort blok kering veroorzaakt, wordt deze automatisch beëindigd. De sessie ontvangt fout 1219, ' uw sessie is verbroken vanwege een DDL-bewerking met hoge prioriteit ', of fout 3947 ' de trans actie is afgebroken omdat de secundaire Compute niet opnieuw kan worden uitgevoerd. Voer de trans actie opnieuw uit.
 
 > [!NOTE]
-> Als fout 3961 of fout 1219 wordt weer gegeven bij het uitvoeren van query's op een alleen-lezen replica, voert u de query opnieuw uit.
+> Als fout 3961, 1219 of 3947 wordt weer gegeven bij het uitvoeren van query's op een alleen-lezen replica, voert u de query opnieuw uit.
 
 > [!TIP]
 > In Premium-en Bedrijfskritiek-service lagen, wanneer verbinding wordt gemaakt met een alleen-lezen replica, `redo_queue_size` `redo_rate` kunnen de kolommen en in de [sys.dm_database_replica_states](/sql/relational-databases/system-dynamic-management-views/sys-dm-database-replica-states-azure-sql-database) dmv worden gebruikt voor het bewaken van het gegevens synchronisatie proces, met als indica toren van gegevens latentie op de alleen-lezen replica.

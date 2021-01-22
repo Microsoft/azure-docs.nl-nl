@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: domain-services
 ms.workload: identity
 ms.topic: how-to
-ms.date: 07/24/2020
+ms.date: 01/20/2021
 ms.author: justinha
-ms.openlocfilehash: c078117baf84d7dbfaaaa2b569abb8a5f5c67e6d
-ms.sourcegitcommit: 8192034867ee1fd3925c4a48d890f140ca3918ce
+ms.openlocfilehash: 04c611b8a902d27f40893a05f301898c0111748f
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/05/2020
-ms.locfileid: "96619008"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660946"
 ---
 # <a name="configure-scoped-synchronization-from-azure-ad-to-azure-active-directory-domain-services-using-azure-ad-powershell"></a>Scoped Synchronization from Azure AD configureren voor Azure Active Directory Domain Services met behulp van Azure AD Power shell
 
@@ -41,15 +41,14 @@ U hebt de volgende resources en bevoegdheden nodig om dit artikel te volt ooien:
 
 Alle gebruikers en groepen uit een Azure AD-adres lijst worden standaard gesynchroniseerd met een beheerd domein. Als slechts een paar gebruikers toegang nodig hebben tot het beheerde domein, kunt u alleen die gebruikers accounts synchroniseren. Deze synchronisatie met een bereik is gebaseerd op een groep. Wanneer u synchronisatie op basis van een groeps bereik configureert, worden alleen de gebruikers accounts die deel uitmaken van de groepen die u opgeeft gesynchroniseerd met het beheerde domein. Geneste groepen worden niet gesynchroniseerd, alleen de specifieke groepen die u selecteert.
 
-U kunt het synchronisatie bereik wijzigen wanneer u het beheerde domein maakt of wanneer het is geïmplementeerd. U kunt nu ook het synchronisatie bereik wijzigen voor een bestaand beheerd domein zonder dat u het opnieuw hoeft te maken.
+U kunt het synchronisatie bereik wijzigen vóór of na het maken van het beheerde domein. Het synchronisatie bereik wordt gedefinieerd door een service-principal met de toepassings-id 2565bd9d-DA50-47d4-8b85-4c97f669dc36. Om te voor komen dat het bereik verloren gaat, moet u de Service-Principal niet verwijderen of wijzigen. Als deze per ongeluk is verwijderd, kan het synchronisatie bereik niet worden hersteld. 
+
+Houd bij het wijzigen van het synchronisatie bereik de volgende voor behoud:
+
+- Er wordt een volledige synchronisatie uitgevoerd.
+- Objecten die niet meer in het beheerde domein zijn vereist, worden verwijderd. Nieuwe objecten worden gemaakt in het beheerde domein.
 
 Zie voor meer informatie over het synchronisatie proces [begrijpen synchronisatie in azure AD Domain Services][concepts-sync].
-
-> [!WARNING]
-> Het wijzigen van het bereik van de synchronisatie zorgt ervoor dat het beheerde domein alle gegevens opnieuw synchroniseert. De volgende overwegingen zijn van toepassing:
->
->  * Wanneer u het synchronisatie bereik voor een beheerd domein wijzigt, wordt een volledige hersynchronisatie uitgevoerd.
->  * Objecten die niet meer in het beheerde domein zijn vereist, worden verwijderd. Nieuwe objecten worden gemaakt in het beheerde domein.
 
 ## <a name="powershell-script-for-scoped-synchronization"></a>Power shell-script voor synchronisatie met scopes
 

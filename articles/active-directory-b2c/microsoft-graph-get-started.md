@@ -1,5 +1,5 @@
 ---
-title: Resources beheren met Microsoft Graph
+title: Een Microsoft Graph-toepassing registreren
 titleSuffix: Azure AD B2C
 description: Bereid u voor op het beheer van Azure AD B2C resources met Microsoft Graph door een toepassing te registreren die de vereiste Graph API machtigingen heeft.
 services: B2C
@@ -8,17 +8,17 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 02/14/2020
+ms.date: 01/21/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 61e32f50e02e45487830c5ea7ff476a0571960f6
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 1886a0308f32ed53a1c9f0974715f20823e8bdd5
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953998"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660349"
 ---
-# <a name="manage-azure-ad-b2c-with-microsoft-graph"></a>Azure AD B2C beheren met Microsoft Graph
+# <a name="register-a-microsoft-graph-application"></a>Een Microsoft Graph-toepassing registreren
 
 Met [Microsoft Graph][ms-graph] kunt u veel van de resources in uw Azure AD B2C Tenant beheren, met inbegrip van gebruikers accounts voor klanten en aangepaste beleids regels. Door scripts of toepassingen te schrijven die de [Microsoft Graph-API][ms-graph-api]aanroepen, kunt u de taken voor het beheer van tenants automatiseren, zoals:
 
@@ -51,7 +51,7 @@ Voordat uw scripts en toepassingen kunnen communiceren met de [Microsoft Graph-A
 1. Zoek en selecteer **Azure AD B2C** in de Azure-portal.
 1. Selecteer **App-registraties** en selecteer vervolgens **Nieuwe registratie**.
 1. Voer een **naam** in voor de toepassing. Bijvoorbeeld *managementapp1*.
-1. Selecteer **alleen accounts in deze organisatie Directory**.
+1. Selecteer **Alleen accounts in deze organisatiemap**.
 1. Schakel onder **machtigingen** het selectie vakje *verlenen beheerder toestemming voor openid connect-en offline_access machtigingen* uit.
 1. Selecteer **Registreren**.
 1. Noteer de **toepassings-id** van de toepassing die wordt weer gegeven op de overzichts pagina van de toepassing. U gebruikt deze waarde in een latere stap.
@@ -83,12 +83,13 @@ Als voor uw toepassing of script gebruikers moeten worden verwijderd of hun wach
 1. Selecteer **Toevoegen**. Het kan enkele minuten duren voordat de machtigingen volledig zijn door gegeven.
 
 ## <a name="next-steps"></a>Volgende stappen
+
 Nu u uw beheer toepassing hebt geregistreerd en de vereiste machtigingen hebt verleend, kunnen uw toepassingen en services (bijvoorbeeld Azure-pijp lijnen) de referenties en machtigingen gebruiken om te communiceren met de Microsoft Graph-API. 
 
 * [Een toegangstoken ophalen uit Azure AD](/graph/auth-v2-service#4-get-an-access-token)
 * [Het toegangs token gebruiken om Microsoft Graph aan te roepen](/graph/auth-v2-service#4-get-an-access-token)
 * [B2C-bewerkingen die door Microsoft Graph worden ondersteund](microsoft-graph-operations.md)
-* [Azure AD B2C gebruikers accounts beheren met Microsoft Graph](manage-user-accounts-graph-api.md)
+* [Azure AD B2C gebruikers accounts beheren met Microsoft Graph](microsoft-graph-operations.md)
 * [Audit logboeken ophalen met de rapportage-API van Azure AD](view-audit-logs.md#get-audit-logs-with-the-azure-ad-reporting-api)
 
 <!-- LINKS -->

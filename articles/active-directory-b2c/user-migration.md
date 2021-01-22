@@ -11,16 +11,16 @@ ms.topic: how-to
 ms.date: 02/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: fea8d93121fcb5622f86257febcc7d834b444098
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 34bc50f5f95725b59c0d2b30b529e12abb6aa7fa
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178803"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661150"
 ---
 # <a name="migrate-users-to-azure-ad-b2c"></a>Gebruikers migreren naar Azure AD B2C
 
-Voor de migratie van een andere ID-provider naar Azure Active Directory B2C (Azure AD B2C) moeten mogelijk ook bestaande gebruikers accounts worden gemigreerd. Hier worden twee migratie methoden besproken, *vooraf migreren* en *naadloze migratie*. Bij beide methoden moet u een toepassing of script schrijven die gebruikmaakt van de Microsoft Graph- [API](manage-user-accounts-graph-api.md) om gebruikers accounts te maken in azure AD B2C.
+Voor de migratie van een andere ID-provider naar Azure Active Directory B2C (Azure AD B2C) moeten mogelijk ook bestaande gebruikers accounts worden gemigreerd. Hier worden twee migratie methoden besproken, *vooraf migreren* en *naadloze migratie*. Bij beide methoden moet u een toepassing of script schrijven die gebruikmaakt van de Microsoft Graph- [API](microsoft-graph-operations.md) om gebruikers accounts te maken in azure AD B2C.
 
 ## <a name="pre-migration"></a>Vooraf migreren
 
@@ -34,7 +34,7 @@ Gebruik de pre-migratie stroom in een van deze twee situaties:
 - U hebt toegang tot de Lees bare referenties van een gebruiker (de gebruikers naam en het wacht woord).
 - De referenties zijn versleuteld, maar u kunt ze ontsleutelen.
 
-Zie [Azure AD B2C gebruikers accounts beheren met Microsoft Graph](manage-user-accounts-graph-api.md)voor meer informatie over het programmatisch maken van gebruikers accounts.
+Zie [Azure AD B2C gebruikers accounts beheren met Microsoft Graph](microsoft-graph-operations.md)voor meer informatie over het programmatisch maken van gebruikers accounts.
 
 ## <a name="seamless-migration"></a>Naadloze migratie
 

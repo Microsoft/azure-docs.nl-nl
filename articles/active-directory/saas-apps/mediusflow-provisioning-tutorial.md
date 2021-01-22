@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 04/30/2020
 ms.author: Zhchia
-ms.openlocfilehash: 881309c040f6c1bdff758d17ab7f51e935437192
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
-ms.translationtype: HT
+ms.openlocfilehash: a49258208f7a5945ac71c8f17db56fccfdcd6515
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97607878"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661997"
 ---
 # <a name="tutorial-configure-mediusflow-for-automatic-user-provisioning"></a>Zelfstudie: MediusFlow configureren voor automatische gebruikersinrichting
 
@@ -155,17 +155,25 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met MediusFlow worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in MediusFlow te vinden voor updatebewerkingen. Als u ervoor kiest om het [overeenkomende doelkenmerk](../app-provisioning/customize-application-attributes.md) te wijzigen, moet u ervoor zorgen dat de API van MediusFlow het filteren van gebruikers op basis van dat kenmerk kan ondersteunen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-   |Kenmerk|Type|
-   |---|---|
-   |userName|Tekenreeks|
+   |Kenmerk|Type|Ondersteund voor filteren|
+   |---|---|---|
+   |userName|Tekenreeks|&check;|
    |emails[type eq "work"].value|Tekenreeks|
    |name.displayName|Tekenreeks|
    |actief|Booleaans|
    |name.givenName|Tekenreeks|
    |name.familyName|Tekenreeks|
    |name.formatted|Tekenreeks|
-   |externalID|Tekenreeks|
+   |externalId|Tekenreeks|
    |urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Naslaginformatie|
+   |urn: IETF: params: scim: schemas: extensie: Medius: 2.0: gebruiker: configurationFilter|Tekenreeks|
+   |urn: IETF: params: scim: schemas: extensie: Medius: 2.0: gebruiker: Identity provider|Tekenreeks|
+   |urn: IETF: params: scim: schemas: extensie: Medius: 2.0: gebruiker: nameIdentifier|Tekenreeks|
+   |urn: IETF: params: scim: schemas: extensie: Medius: 2.0: gebruiker: customFieldText1|Tekenreeks|
+   |urn: IETF: params: scim: schemas: extensie: Medius: 2.0: gebruiker: customFieldText2|Tekenreeks|
+   |urn: IETF: params: scim: schemas: extensie: Medius: 2.0: gebruiker: customFieldText3|Tekenreeks|
+   |urn: IETF: params: scim: schemas: extensie: Medius: 2.0: gebruiker: customFieldText4|Tekenreeks|
+   |urn: IETF: params: scim: schemas: extensie: Medius: 2.0: gebruiker: customFieldText5|Tekenreeks|
 
 
 10. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-groepen synchroniseren met MediusFlow**.
@@ -200,6 +208,10 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 1. Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht
 2. Controleer de [voortgangsbalk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtingscyclus weer te geven en te zien of deze al bijna is voltooid
 3. Als het configureren van de inrichting een foutieve status lijkt te hebben, wordt de toepassing in quarantaine geplaatst. [Klik hier](../app-provisioning/application-provisioning-quarantine-status.md) voor meer informatie over quarantainestatussen.
+
+## <a name="change-log"></a>Wijzigingenlogboek
+
+* 01/21/2021-aangepaste extensie kenmerken **configurationFilter**, **Identity provider**, **nameIdentifier**, **customFieldText1**, **customFieldText2**, **customFieldText3**, **customFieldText3** en **customFieldText5** zijn toegevoegd.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

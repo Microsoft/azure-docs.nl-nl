@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 10/05/2020
 ms.author: kenwith
 ms.reviewer: japere
-ms.openlocfilehash: d39d72a79d4b273918986d0d350df4706592c77d
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: c30d8a66cf9deffaa32e5ec0356a9067575b77e8
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95503173"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660699"
 ---
 # <a name="header-based-single-sign-on-for-on-premises-apps-with-azure-ad-app-proxy-preview"></a>Eenmalige aanmelding op basis van een header voor on-premises apps met Azure AD-app proxy (preview-versie)
 
@@ -88,6 +88,10 @@ Wanneer u al deze stappen hebt voltooid, moet uw app actief zijn en beschikbaar 
 1. Open een nieuw browser venster of een nieuwe persoonlijke browser om ervoor te zorgen dat eerder in de cache geplaatste headers worden gewist. Ga vervolgens naar de **externe URL**   van de proxy-instellingen van de toepassing.
 2. Meld u aan met het test account dat u aan de app hebt toegewezen. Als u de toepassing kunt laden en aanmelden met behulp van SSO, bent u goed. 
 
+## <a name="considerations"></a>Overwegingen
+
+- Toepassings proxy wordt gebruikt voor externe toegang tot apps on-premises of op een privécloud. Toepassings proxy wordt niet aanbevolen voor het afhandelen van verkeer dat intern afkomstig is van het bedrijfs netwerk.
+- Toegang tot op header gebaseerde verificatie toepassingen moet worden beperkt tot alleen verkeer van de connector of een andere toegelaten verificatie oplossing op basis van een header. Dit gebeurt meestal door het beperken van de netwerk toegang tot de toepassing met behulp van een firewall of IP-beperking op de toepassings server.
 
 ## <a name="next-steps"></a>Volgende stappen
 

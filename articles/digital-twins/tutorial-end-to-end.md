@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 4/15/2020
 ms.topic: tutorial
 ms.service: digital-twins
-ms.openlocfilehash: 09ce611b5bca6c04d55da95a82a8fcd7ae348db3
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 4f68eba8106a20d357fe6d3fb2baac1d1661aa1e
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98049213"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660535"
 ---
 # <a name="tutorial-build-out-an-end-to-end-solution"></a>Zelfstudie: Een end-to-end-oplossing bouwen
 
@@ -167,11 +167,13 @@ De volgende stap is de functie-app toegang te geven tot Azure Digital Twins door
 
 [!INCLUDE [digital-twins-role-rename-note.md](../../includes/digital-twins-role-rename-note.md)]
 
-Gebruik in Azure Cloud Shell de volgende opdracht om een toepassingsinstelling in te stellen die door uw functie-app wordt gebruikt om te verwijzen naar uw exemplaar van Azure Digital Twins.
+Gebruik in Azure Cloud Shell de volgende opdracht om een toepassingsinstelling in te stellen die door uw functie-app wordt gebruikt om te verwijzen naar uw exemplaar van Azure Digital Twins. Vul de tijdelijke aanduidingen in met de details van uw resources (Houd er rekening mee dat uw URL van het Azure Digital Apparaatdubbels-exemplaar de hostnaam is voorafgegaan door *https://*).
 
 ```azurecli-interactive
 az functionapp config appsettings set -g <your-resource-group> -n <your-App-Service-(function-app)-name> --settings "ADT_SERVICE_URL=<your-Azure-Digital-Twins-instance-URL>"
 ```
+
+De uitvoer is de lijst met instellingen voor de Azure-functie, die nu een vermelding met de naam *ADT_SERVICE_URL* moet bevatten.
 
 Gebruik de volgende opdracht om de door het systeem beheerde identiteit te maken. Noteer het veld *principalId* in de uitvoer.
 

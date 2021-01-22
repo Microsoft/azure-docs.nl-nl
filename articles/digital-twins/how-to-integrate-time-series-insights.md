@@ -7,12 +7,12 @@ ms.author: alkarche
 ms.date: 1/19/2021
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 24b4f56e5798acc4d9bd0962be7059a359958645
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 97f1f5d0f1f351164e05d18b9f80c7f26450f31b
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573238"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661587"
 ---
 # <a name="integrate-azure-digital-twins-with-azure-time-series-insights"></a>Azure Digital Apparaatdubbels integreren met Azure Time Series Insights
 
@@ -65,7 +65,7 @@ De zelf studie over Azure Digital Apparaatdubbels [*: verbinding maken met een e
 4. Maak een Azure Digital Apparaatdubbels- [eind punt](concepts-route-events.md#create-an-endpoint) dat uw event hub koppelt aan uw Azure Digital apparaatdubbels-exemplaar.
 
     ```azurecli-interactive
-    az dt endpoint create eventhub --endpoint-name <name for your Event Hubs endpoint> --eventhub-resource-group <resource group name> --eventhub-namespace <Event Hubs namespace from above> --eventhub <Twins event hub name from above> --eventhub-policy <Twins auth rule from above> -n <your Azure Digital Twins instance name>
+    az dt endpoint create eventhub -n <your Azure Digital Twins instance name> --endpoint-name <name for your Event Hubs endpoint> --eventhub-resource-group <resource group name> --eventhub-namespace <Event Hubs namespace from above> --eventhub <Twins event hub name from above> --eventhub-policy <Twins auth rule from above>
     ```
 
 5. Maak een [route](concepts-route-events.md#create-an-event-route) in Azure Digital Twins om updategebeurtenissen van de dubbel naar uw eindpunt te verzenden. Met het filter in deze route worden alleen dubbele update berichten door gegeven aan uw eind punt.
@@ -89,11 +89,16 @@ Met deze functie worden deze dubbele update gebeurtenissen van hun oorspronkelij
 
 Zie voor meer informatie over het gebruik van Event Hubs met Azure Functions [*Azure Event hubs trigger voor Azure functions*](../azure-functions/functions-bindings-event-hubs-trigger.md).
 
-Vervang de functie code door de volgende code in de gepubliceerde functie-app.
+Voeg in de gepubliceerde functie-app een nieuwe functie toe met de naam **ProcessDTUpdatetoTSI** met de volgende code.
 
 :::code language="csharp" source="~/digital-twins-docs-samples/sdks/csharp/updateTSI.cs":::
 
-Hier verzendt de functie vervolgens de JSON-objecten die worden gemaakt naar een tweede Event Hub, waarmee u verbinding maakt met Time Series Insights.
+>[!NOTE]
+>Mogelijk moet u de pakketten toevoegen aan uw project met behulp van de `dotnet add package` opdracht of Visual Studio NuGet Package Manager.
+
+Vervolgens **publiceert** u de nieuwe Azure-functie. Zie [*How to: een Azure-functie instellen voor het verwerken van gegevens*](how-to-create-azure-function.md#publish-the-function-app-to-azure)voor instructies over hoe u dit doet.
+
+Met deze functie kunt u de JSON-objecten die worden gemaakt naar een tweede Event Hub verzenden, waarmee u verbinding maakt met Time Series Insights. In de volgende sectie maakt u die Event Hub.
 
 Later gaat u ook enkele omgevings variabelen instellen die met deze functie worden gebruikt om verbinding te maken met uw eigen event hubs.
 
@@ -130,7 +135,7 @@ Vervolgens moet u de omgevings variabelen in uw functie-app van eerder instellen
     az eventhubs eventhub authorization-rule keys list --resource-group <resource group name> --namespace-name <Event Hubs namespace> --eventhub-name <Twins event hub name from earlier> --name <Twins auth rule from earlier>
     ```
 
-2. Gebruik de verbindingstekenreeks die u als resultaat krijgt om een app-instelling in uw functie-app te maken die uw verbindingstekenreeks bevat:
+2. Gebruik de waarde *primaryConnectionString* uit het resultaat om een app-instelling te maken in de functie-app die uw Connection String bevat:
 
     ```azurecli-interactive
     az functionapp config appsettings set --settings "EventHubAppSetting-Twins=<Twins event hub connection string>" -g <resource group> -n <your App Service (function app) name>
@@ -152,15 +157,15 @@ Vervolgens moet u de omgevings variabelen in uw functie-app van eerder instellen
 
 ## <a name="create-and-connect-a-time-series-insights-instance"></a>Een Time Series Insights-instantie maken en verbinden
 
-Vervolgens stelt u een Time Series Insights-exemplaar in om de gegevens van uw tweede Event Hub te ontvangen. Volg de onderstaande stappen en Zie [*zelf studie: een Azure time series Insights GEN2 payg-omgeving instellen*](../time-series-insights/tutorials-set-up-tsi-environment.md)voor meer informatie over dit proces.
+Vervolgens stelt u een Time Series Insights-exemplaar in om de gegevens van uw tweede (TSI) Event Hub te ontvangen. Volg de onderstaande stappen en Zie [*zelf studie: een Azure time series Insights GEN2 payg-omgeving instellen*](../time-series-insights/tutorials-set-up-tsi-environment.md)voor meer informatie over dit proces.
 
-1. Begin met het maken van een Time Series Insights resource in het Azure Portal. 
+1. Begin met het maken van een Time Series Insights omgeving in het Azure Portal. 
     1. Selecteer de prijs categorie **Gen2 (L1)** .
     2. U moet een **tijd reeks-id** voor deze omgeving kiezen. De tijd reeks-ID mag Maxi maal drie waarden zijn die u gaat gebruiken om te zoeken naar uw gegevens in Time Series Insights. Voor deze zelf studie kunt u **$dtId** gebruiken. Meer informatie over het selecteren van een ID-waarde in [*Best practices voor het kiezen van een time series-id*](../time-series-insights/how-to-select-tsid.md).
     
         :::image type="content" source="media/how-to-integrate-time-series-insights/create-twin-id.png" alt-text="De portal voor het maken van een Time Series Insights-omgeving. De prijs categorie Gen2 (L1) is geselecteerd en de eigenschaps naam van de tijd reeks-ID is $dtId" lightbox="media/how-to-integrate-time-series-insights/create-twin-id.png":::
 
-2. Selecteer **volgende: gebeurtenis bron** en selecteer uw event hubs informatie hierboven. U moet ook een nieuwe Event Hubs Consumer groep maken.
+2. Selecteer **volgende: gebeurtenis bron** en selecteer uw TSI Event hub informatie uit eerdere versies. U moet ook een nieuwe Event Hubs Consumer groep maken.
     
     :::image type="content" source="media/how-to-integrate-time-series-insights/event-source-twins.png" alt-text="De portal voor het maken van een Time Series Insights-omgevings gebeurtenis bron. U maakt een gebeurtenis bron met de Event Hub informatie hierboven. U maakt ook een nieuwe consumenten groep." lightbox="media/how-to-integrate-time-series-insights/event-source-twins.png":::
 
@@ -174,7 +179,7 @@ Als u de end-to-end zelf studie gebruikt ([*zelf studie: een end-to-end oplossin
 
 Gegevens moeten nu worden gestroomd naar uw Time Series Insights-exemplaar, die klaar zijn om te worden geanalyseerd. Volg de onderstaande stappen om de gegevens in te verkennen.
 
-1. Open uw Time Series Insights-exemplaar in de [Azure Portal](https://portal.azure.com) (u kunt zoeken naar de naam van uw exemplaar in de zoek balk van de portal). Ga naar de *URL voor Time Series Insights Explorer* die in het exemplarenoverzicht wordt weergegeven.
+1. Open uw Time Series Insights omgeving in het [Azure Portal](https://portal.azure.com) (u kunt zoeken naar de naam van uw omgeving in de zoek balk van de portal). Ga naar de *URL voor Time Series Insights Explorer* die in het exemplarenoverzicht wordt weergegeven.
     
     :::image type="content" source="media/how-to-integrate-time-series-insights/view-environment.png" alt-text="Selecteer de URL van Time Series Insights Explorer op het tabblad Overzicht van uw Time Series Insights omgeving":::
 

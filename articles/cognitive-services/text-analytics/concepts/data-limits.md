@@ -11,17 +11,17 @@ ms.topic: overview
 ms.date: 11/19/2020
 ms.author: aahi
 ms.reviewer: chtufts
-ms.openlocfilehash: 2adca03a820d02731bca252dee99c76debc85e2e
-ms.sourcegitcommit: e46f9981626751f129926a2dae327a729228216e
-ms.translationtype: HT
+ms.openlocfilehash: 9ba9fe7ca73e874fb55c228e22b884a86de736cf
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98028128"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661456"
 ---
 # <a name="data-and-rate-limits-for-the-text-analytics-api"></a>Gegevens- en frequentielimieten voor de Text Analytics-API
 <a name="data-limits"></a>
 
-Lees dit artikel voor informatie over de limieten voor de grootte en de frequenties waarmee u gegevens naar de Text Analytics-API kunt verzenden. 
+Lees dit artikel voor informatie over de limieten voor de grootte en de frequenties waarmee u gegevens naar de Text Analytics-API kunt verzenden. Houd er rekening mee dat de prijzen niet worden beïnvloed door de limieten of frequentie limieten van de gegevens. Prijzen zijn afhankelijk van de [prijs gegevens](https://azure.microsoft.com/pricing/details/cognitive-services/text-analytics/)van uw Text Analytics resource.
 
 ## <a name="data-limits"></a>Gegevenslimieten
 

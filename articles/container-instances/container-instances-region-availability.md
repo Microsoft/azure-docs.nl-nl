@@ -4,12 +4,12 @@ description: Beschik baarheid van reken-en geheugen resources voor de Azure Cont
 ms.topic: article
 ms.date: 04/27/2020
 ms.custom: references_regions
-ms.openlocfilehash: 8651a1cc2c2ba41e2c28e9f63dc78c091a6af61d
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: 63ec7c9027f957714108263dcbb4300a3cc68388
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96763890"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661371"
 ---
 # <a name="resource-availability-for-azure-container-instances-in-azure-regions"></a>Beschik baarheid van resources voor Azure Container Instances in azure-regio's
 
@@ -32,22 +32,24 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 | Regio | Maximaal CPU-gebruik | Maxi maal geheugen (GB) | Maximale CPU voor VNET | Max. VNET-geheugen (GB) | Opslag (GB) | GPU-Sku's (preview-versie) |
 | -------- | :---: | :---: | :----: | :-----: | :-------: | :----: |
 | Australië - oost | 4 | 16 | 4 | 16 | 50 | N.v.t. |
-| Brazil South | 4 | 16 | 2 | 8 | 50 | N.v.t. |
+| Brazilië - zuid | 4 | 16 | 2 | 8 | 50 | N.v.t. |
 | Canada - midden | 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | India - centraal | 4 | 16 | N.v.t. | N.v.t. | 50 | V100 |
-| Central US | 4 | 16 | 4 | 16 | 50 | N.v.t. |
+| VS - centraal | 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | Azië - oost | 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | VS - oost | 4 | 16 | 4 | 16 | 50 | K80, P100, V100 |
 | VS - oost 2 | 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | Frankrijk - centraal | 4 | 16 | 4 | 16 | 50 | N.v.t. |
-| Japan East | 2 | 8 | 4 | 16 | 50 | N.v.t. |
+| Duitsland - west-centraal | 3 | 16 | N.v.t. | N.v.t. | 50 | N.v.t. |
+| Japan - oost | 2 | 8 | 4 | 16 | 50 | N.v.t. |
 | Korea - centraal | 4 | 16 | N.v.t. | N.v.t. | 50 | N.v.t. |
 | VS - noord-centraal | 2 | 3,5 | 4 | 16 | 50 | K80, P100, V100 |
 | Europa - noord | 4 | 16 | 4 | 16 | 50 | K80 |
-| South Central US | 4 | 16 | 4 | 16 | 50 | N.v.t. |
+| VS - zuid-centraal | 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | Azië - zuidoost | 4 | 16 | 4 | 16 | 50 | P100, V100 |
 | India - zuid | 4 | 16 | N.v.t. | N.v.t. | 50 | N.v.t. |
 | Verenigd Koninkrijk Zuid | 4 | 16 | 4 | 16 | 50 | N.v.t. |
+| VAE - noord | 3 | 16 | N.v.t. | N.v.t. | 50 | N.v.t. |
 | VS - west-centraal| 4 | 16 | 4 | 16 | 50 | N.v.t. |
 | Europa -west | 4 | 16 | 4 | 16 | 50 | K80, P100, V100 |
 | VS - west | 4 | 16 | 4 | 16 | 50 | N.v.t. |
@@ -82,18 +84,18 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 | Regio | 1B/2B maximum CPU | 1B/2B Max. geheugen (GB) |3B maximum CPU | 3B Max. geheugen (GB) | Opslag (GB) |
 | -------- | :---: | :---: | :----: | :-----: | :-------: |
 | Australië - oost | 2 | 8 | 2 | 8 | 20 |
-| Brazil South | 4 | 16 | 4 | 16 | 20 |
+| Brazilië - zuid | 4 | 16 | 4 | 16 | 20 |
 | Canada - midden | 2 | 8 | 2 | 3,5 | 20 |
 | India - centraal | 2 | 3,5 | 2 | 3,5 | 20 |
-| Central US | 2 | 3,5 | 2 | 3,5 | 20 |
+| VS - centraal | 2 | 3,5 | 2 | 3,5 | 20 |
 | Azië - oost | 2 | 3,5 | 2 | 3,5 | 20 |
 | VS - oost | 4 | 16 | 2 | 8 | 20 |
 | VS - oost 2 | 2 | 3,5 | 4 | 16 | 20 |
-| Japan East | 4 | 16 | 4 | 16 | 20 |
+| Japan - oost | 4 | 16 | 4 | 16 | 20 |
 | Korea - centraal | 4 | 16 | 4 | 16 | 20 |
 | VS - noord-centraal | 4 | 16 | 4 | 16 | 20 |
 | Europa - noord | 2 | 8 | 2 | 8 | 20 |
-| South Central US | 2 | 3,5 | 2 | 8 | 20 |
+| VS - zuid-centraal | 2 | 3,5 | 2 | 8 | 20 |
 | Azië - zuidoost | N.v.t. | N.v.t. | 2 | 3,5 | 20 |
 | India - zuid | 2 | 3,5 | 2 | 3,5 | 20 |
 | Verenigd Koninkrijk Zuid | 2 | 8 | 2 | 3,5 | 20 |
@@ -111,19 +113,19 @@ De volgende regio's en maximum resources zijn beschikbaar voor container groepen
 | Regio | 1B/2B maximum CPU | 1B/2B Max. geheugen (GB) |3B maximum CPU | 3B Max. geheugen (GB) | Opslag (GB) |
 | -------- | :---: | :---: | :----: | :-----: | :-------: |
 | Australië - oost | 4 | 16 | 4 | 16 | 20 |
-| Brazil South | 4 | 16 | 4 | 16 | 20 |
+| Brazilië - zuid | 4 | 16 | 4 | 16 | 20 |
 | Canada - midden | 4 | 16 | 4 | 16 | 20 |
 | India - centraal | 4 | 16 | 4 | 16 | 20 |
-| Central US | 4 | 16 | 4 | 16 | 20 |
+| VS - centraal | 4 | 16 | 4 | 16 | 20 |
 | Azië - oost | 4 | 16 | 4 | 16 | 20 |
 | VS - oost | 4 | 16 | 4 | 16 | 20 |
 | VS - oost 2 | 2 | 3,5 | 2 | 3,5 | 20 |
 | Frankrijk - centraal | 4 | 16 | 4 | 16 | 20 |
-| Japan East | N.v.t. | N.v.t. | 4 | 16 | 20 |
+| Japan - oost | N.v.t. | N.v.t. | 4 | 16 | 20 |
 | Korea - centraal | 4 | 16 | 4 | 16 | 20 |
 | VS - noord-centraal | 4 | 16 | 4 | 16 | 20 |
 | Europa - noord | 4 | 16 | 4 | 16 | 20 |
-| South Central US | 4 | 16 | 4 | 16 | 20 |
+| VS - zuid-centraal | 4 | 16 | 4 | 16 | 20 |
 | Azië - zuidoost | 4 | 16 | 4 | 16 | 20 |
 | India - zuid | 4 | 16 | 4 | 16 | 20 |
 | Verenigd Koninkrijk Zuid | 4 | 16 | 4 | 16 | 20 |

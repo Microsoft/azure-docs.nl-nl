@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.topic: troubleshooting
 ms.date: 11/13/2020
 ms.author: v-mibufo
-ms.openlocfilehash: 18622d60f3a33658fadfd28c53c93a07b4b438a9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 89faa5b29e0a972f31ad51a7354635a53176541a
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96488643"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661354"
 ---
 # <a name="windows-stop-error---hardware-malfunction"></a>Windows-stopfout - Hardwarestoring
 
@@ -48,6 +48,9 @@ Dit scherm wordt weer gegeven wanneer het gast besturingssysteem niet correct is
 ## <a name="solution"></a>Oplossing
 
 ### <a name="process-overview"></a>Overzicht van het proces 
+
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
 
 1. De register sleutel voor niet-maskeer bare interrupt (NMI) instellen 
 2. Een herstel-VM maken en openen 

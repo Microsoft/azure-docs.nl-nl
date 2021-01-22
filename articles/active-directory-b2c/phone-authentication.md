@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 09/01/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 8d41f8959d0a1ec0d6e48cf2fa4711a8ef8d8ae5
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: 2600ea3488c643bcf215b058425de42cd439dcff
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178939"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660264"
 ---
 # <a name="set-up-phone-sign-up-and-sign-in-with-custom-policies-in-azure-ad-b2c"></a>Stel aanmelding via de telefoon in en meld u aan met aangepast beleid in Azure AD B2C
 
@@ -39,12 +39,12 @@ Met de telefoon registratie en aanmelding kan de gebruiker zich aanmelden voor d
 >
 > *&lt;invoegen: een koppeling naar de privacyverklaring&gt;*<br/>*&lt;invoegen: een koppeling naar uw service voorwaarden&gt;*
 
-Als u uw eigen toestemming wilt geven, past u het volgende voor beeld aan en neemt u het op in de LocalizedResources voor de ContentDefinition die wordt gebruikt door de zelfbevestigende pagina met het besturings element voor weer gave (het *Phone_Email_Base.xml* -bestand in het [telefoon registratie-en aanmeldings-Start pakket][starter-pack-phone]):
+Pas het volgende voor beeld aan om uw eigen toestemming gegevens toe te voegen. Neem deze op in de `LocalizedResources` voor de ContentDefinition die wordt gebruikt door de zelfbevestigende pagina met het besturings element voor weer gave (het *Phone_Email_Base.xml* bestand in het hulp programma voor aanmelding bij de [telefoon en het Starter Pack voor aanmelden][starter-pack-phone]):
 
 ```xml
 <LocalizedResources Id="phoneSignUp.en">        
     <LocalizedStrings>
-    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_msg_intro">By providing your phone number, you consent to receiving a one-time passcode sent by text message to help you sign into {insert your application name}. Standard messsage and data rates may apply.</LocalizedString>          
+    <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_msg_intro">By providing your phone number, you consent to receiving a one-time passcode sent by text message to help you sign into {insert your application name}. Standard message and data rates may apply.</LocalizedString>          
     <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_1_text">Privacy Statement</LocalizedString>                
     <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_1_url">{insert your privacy statement URL}</LocalizedString>          
     <LocalizedString ElementType="DisplayControl" ElementId="phoneControl" StringId="disclaimer_link_2_text">Terms and Conditions</LocalizedString>             
@@ -64,7 +64,7 @@ Er wordt een eenmalige verificatie code verzonden naar het telefoon nummer van d
 
 ![De gebruiker verifieert code tijdens de telefoon registratie](media/phone-authentication/phone-signup-verify-code.png)
 
- De gebruiker voert andere gevraagde gegevens op de registratie pagina in, bijvoorbeeld de **weergave naam**, de voor **naam** en de **naam (land** en telefoon nummer blijven ingevuld). Als de gebruiker een ander telefoon nummer wil gebruiken, kunnen ze het **wijzigings nummer** kiezen om de aanmelding opnieuw te starten. Wanneer u klaar bent, selecteert de gebruiker **door gaan**.
+De gebruiker voert andere gevraagde informatie op de registratie pagina in. De **weergave naam**, de voor **naam** en de naam **(land** en telefoon nummer blijven bijvoorbeeld ingevuld). Als de gebruiker een ander telefoon nummer wil gebruiken, kunnen ze het **wijzigings nummer** kiezen om de aanmelding opnieuw te starten. Wanneer u klaar bent, selecteert de gebruiker **door gaan**.
 
 ![Gebruiker bevat aanvullende informatie](media/phone-authentication/phone-signup-additional-info.png)
 
@@ -100,8 +100,6 @@ U hebt de volgende resources nodig voordat u OTP kunt instellen.
 
 Begin met het bijwerken van de aangepaste beleids bestanden voor het registreren van de telefoon en het aanmelden om met uw Azure AD B2C-Tenant te werken.
 
-Bij de volgende stappen wordt ervan uitgegaan dat u de [vereiste onderdelen](#prerequisites) hebt voltooid en dat de [aangepaste beleids][starter-pack] opslagplaats voor het werk Archief al is gekloond op uw lokale machine.
-
 1. Zoek de [aangepaste beleids bestanden][starter-pack-phone] voor het registreren van de telefoon en het aanmelden in uw lokale kloon van de opslag plaats van het Start pakket, of down load deze rechtstreeks. De XML-beleids bestanden bevinden zich in de volgende map:
 
     `active-directory-b2c-custom-policy-starterpack/scenarios/`**`phone-number-passwordless`**
@@ -136,9 +134,9 @@ Wanneer u elk bestand uploadt, voegt Azure het voor voegsel toe `B2C_1A_` .
 
 ## <a name="get-user-account-by-phone-number"></a>Gebruikers account op telefoon nummer ophalen
 
-Een gebruiker die zich aanmeldt met een telefoon nummer, maar geen herstel-e-mail adres opgeeft, wordt in uw Azure AD B2C Directory opgeslagen met hun telefoon nummer als aanmeldings naam. Als de gebruiker zijn of haar telefoon nummer wil wijzigen, moet uw Help Desk of ondersteunings team eerst zijn of haar account vinden en vervolgens hun telefoon nummer bijwerken.
+Een gebruiker die zich aanmeldt met een telefoon nummer zonder een herstel-e-mail adres wordt vastgelegd in uw Azure AD B2C Directory met hun telefoon nummer als aanmeldings naam. Als u het telefoon nummer wilt wijzigen, moet uw Help Desk of ondersteunings team eerst hun account vinden en vervolgens hun telefoon nummer bijwerken.
 
-U kunt een gebruiker vinden op basis van hun telefoon nummer (aanmeldings naam) door gebruik te maken van [Microsoft Graph](manage-user-accounts-graph-api.md):
+U kunt een gebruiker vinden op basis van hun telefoon nummer (aanmeldings naam) door gebruik te maken van [Microsoft Graph](microsoft-graph-operations.md):
 
 ```http
 GET https://graph.microsoft.com/v1.0/users?$filter=identities/any(c:c/issuerAssignedId eq '+{phone number}' and c/issuer eq '{tenant name}.onmicrosoft.com')

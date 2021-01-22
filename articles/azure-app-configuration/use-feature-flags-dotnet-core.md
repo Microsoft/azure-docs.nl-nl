@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 09/17/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 8c0dd9713c673ad676058acc7dbbb3cb5a65362e
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-ms.translationtype: HT
+ms.openlocfilehash: 1794d5b15c724008d95cfc59b16960b7ae6a0783
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96929188"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661566"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Zelfstudie: Functievlaggen gebruiken in een ASP.NET Core-app
 
@@ -37,7 +37,6 @@ In deze zelfstudie leert u het volgende:
 ## <a name="set-up-feature-management"></a>Functiebeheer instellen
 
 Voeg een verwijzing naar de NuGet-pakketten `Microsoft.FeatureManagement.AspNetCore` en `Microsoft.FeatureManagement` toe om gebruik te maken van de .NET Core-functiebeheerder.
-    
 De .NET Core-functiebeheerder `IFeatureManager` krijgt functievlaggen van het systeemeigen configuratiesysteem van het framework. Als gevolg hiervan kunt u de functievlaggen van uw toepassing definiëren met behulp van een configuratiebron die .NET Core ondersteunt, met inbegrip van het lokale *appsettings.json*-bestand of omgevingsvariabelen. `IFeatureManager` maakt gebruik van .NET Core-afhankelijkheidsinjectie. U kunt de functiebeheerservices registreren met behulp van standaard conventies:
 
 ```csharp
@@ -109,7 +108,7 @@ De eenvoudigste manier om uw .NET Core-toepassing te verbinden met App Configura
 2. Open *Startup.cs* en werk de `Configure`-methode bij om de ingebouwde middleware met de naam `UseAzureAppConfiguration` toe te voegen. Met deze middleware kunnen de waarden van de functievlaggen periodiek worden vernieuwd terwijl de ASP.NET Core-web-app aanvragen blijft ontvangen.
 
    ```csharp
-   public void Configure(IApplicationBuilder app, IHostingEnvironment env)
+   public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
    {
        app.UseAzureAppConfiguration();
        app.UseMvc();
@@ -189,6 +188,8 @@ if (await featureManager.IsEnabledAsync(nameof(MyFeatureFlags.FeatureA)))
 In ASP.NET Core MVC krijgt u toegang tot de functiebeheerder `IFeatureManager` via afhankelijkheidsinjectie:
 
 ```csharp
+using Microsoft.FeatureManagement;
+
 public class HomeController : Controller
 {
     private readonly IFeatureManager _featureManager;

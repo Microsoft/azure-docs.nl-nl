@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/05/2021
+ms.date: 01/21/2021
 ms.author: memildin
-ms.openlocfilehash: 0656000a1d6449306e8afe538f846c55c79a31a2
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.openlocfilehash: 6d656dbb3fb50091fc8721ba40431b37f77c4ad6
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915283"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98662944"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -31,16 +31,35 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 
 ## <a name="planned-changes"></a>Geplande wijzigingen
 
-- [Resources die 'Niet van toepassing' zijn, worden in Azure Policy-beoordelingen voortaan gerapporteerd als 'Compatibel'](#not-applicable-resources-to-be-reported-as-compliant-in-azure-policy-assessments)
+- [Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-recommendations-from-apply-system-updates-security-control-being-deprecated)
+- [Verbeteringen in aanbeveling voor SQL-gegevens classificatie](#enhancements-to-sql-data-classification-recommendation)
 - [Er zijn 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen](#35-preview-recommendations-being-added-to-increase-coverage-of-azure-security-benchmark)
 
-### <a name="not-applicable-resources-to-be-reported-as-compliant-in-azure-policy-assessments"></a>Resources die 'Niet van toepassing' zijn, worden in Azure Policy-beoordelingen voortaan gerapporteerd als 'Compatibel'
 
-**Geschatte datum van wijziging:** Januari 2021
+### <a name="two-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft 
 
-Momenteel worden resources die zijn geëvalueerd voor een aanbeveling, en zijn beoordeeld als **niet van toepassing**, in Azure Policy weergegeven als 'Niet-compatibel'. Er zijn geen gebruikersacties mogelijk om deze status te wijzigen in 'Compatibel'. Vanaf deze geplande wijziging worden ze voor de duidelijkheid gerapporteerd als 'Compatibel'.
+**Geschatte datum voor wijziging:** Februari 2021
 
-Dit is alleen van invloed op Azure Policy, waar het aantal compatibele resources zal toenemen. Het is niet van invloed om uw beveiligingsscore in Azure Security Center.
+De volgende twee aanbevelingen zijn gepland om te worden afgeschaft in februari 2021:
+
+- **Uw computers moeten opnieuw worden opgestart om systeem updates toe te passen**. Dit kan een geringe invloed op uw beveiligde Score opleveren.
+- **Bewakings agent moet op uw computers zijn geïnstalleerd**. Deze aanbeveling is gekoppeld aan on-premises machines en sommige logica wordt overgezet naar een andere aanbeveling, **log Analytics problemen met de agent status moeten worden opgelost op uw computers**. Dit kan een geringe invloed op uw beveiligde Score opleveren.
+
+We raden u aan om uw continue export-en werk stroom Automation-configuraties te controleren om te zien of deze aanbevelingen in hen zijn opgenomen. Daarnaast moeten alle Dash boards of andere bewakings hulpprogramma's die deze kunnen gebruiken, dienovereenkomstig worden bijgewerkt.
+
+Meer informatie over deze aanbevelingen vindt u op de [overzichts pagina met aanbevelingen voor beveiliging](recommendations-reference.md).
+
+
+### <a name="enhancements-to-sql-data-classification-recommendation"></a>Verbeteringen in aanbeveling voor SQL-gegevens classificatie
+
+**Geschatte datum voor wijziging:** Q2 2021
+
+De huidige versie van de gevoelige aanbevelings **gegevens in uw SQL-data bases moet worden geclassificeerd** in het beveiligings beheer **gegevens classificatie Toep assen** wordt afgeschaft en vervangen door een nieuwe versie die beter is afgestemd op de strategie voor gegevens classificatie van micro soft. Als gevolg hiervan:
+
+- De aanbeveling heeft geen invloed meer op uw beveiligde Score
+- Het beveiligings beheer (' gegevens classificatie Toep assen ') heeft geen invloed meer op uw beveiligde Score
+- De ID van de aanbeveling wordt ook gewijzigd (momenteel b0df6f56-862d-4730-8597-38c0fd4ebd59)
+
 
 ### <a name="35-preview-recommendations-being-added-to-increase-coverage-of-azure-security-benchmark"></a>Er worden 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen
 

@@ -4,14 +4,14 @@ description: Veelvoorkomende problemen met Azure Monitor metrische waarschuwinge
 author: harelbr
 ms.author: harelbr
 ms.topic: troubleshooting
-ms.date: 01/11/2021
+ms.date: 01/21/2021
 ms.subservice: alerts
-ms.openlocfilehash: e4e876b58c82605df0c005b225dcf2cdbcda1b34
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 11dc71578b3d94ce41fe040557184ff32bcf3240
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98070725"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661794"
 ---
 # <a name="troubleshooting-problems-in-azure-monitor-metric-alerts"></a>Problemen met metrische waarschuwingen in Azure Monitor oplossen 
 
@@ -24,8 +24,9 @@ Azure Monitor waarschuwingen geven u proactief op de hoogte wanneer er belang ri
 Als u denkt dat een metrische waarschuwing moet worden geactiveerd, maar niet is geactiveerd en niet wordt gevonden in de Azure Portal, probeert u de volgende stappen uit te voeren:
 
 1. **Configuratie** : Controleer de configuratie van de metrische waarschuwings regel om er zeker van te zijn dat deze correct is geconfigureerd:
-    - Controleer of het **samenvoegings type**, de **aggregatie granulatie (punt)** en de **drempel waarde** of **gevoeligheid** als verwacht zijn geconfigureerd
-    - Voor een waarschuwings regel die gebruikmaakt van dynamische drempel waarden, controleert u of geavanceerde instellingen zijn geconfigureerd, omdat het **aantal schendingen** kan waarschuwingen filteren en **gegevens negeert voordat** de drempel waarden worden berekend
+    - Controleer of het **aggregatie type** en de granulatie van de **aggregatie (punt)** zijn geconfigureerd zoals verwacht. **Aggregatie type** bepaalt hoe metrische waarden worden geaggregeerd ( [hier](./metrics-aggregation-explained.md#aggregation-types)vindt u meer informatie) en **aggregatie granulatie (period)** bepaalt hoe ver terug de evaluatie de metrische waarden opstelt wanneer de waarschuwings regel wordt uitgevoerd.
+    -  Controleer of de **drempel waarde** of **gevoeligheid** is geconfigureerd zoals verwacht.
+    - Voor een waarschuwings regel die gebruikmaakt van dynamische drempel waarden, controleert u of geavanceerde instellingen zijn geconfigureerd, omdat het **aantal schendingen** mogelijk waarschuwingen kan filteren en **gegevens kan negeren voordat** de drempel waarden worden berekend.
 
        > [!NOTE] 
        > Dynamische drempel waarden vereisen ten minste 3 dagen en 30 metrische voor beelden voordat ze actief zijn.

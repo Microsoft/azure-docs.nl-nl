@@ -1,5 +1,5 @@
 ---
-title: SMS-aanmeld gebruikers ervaring voor telefoon nummer (preview)-Azure AD
+title: SMS-aanmeld gebruikers ervaring voor telefoon nummer-Azure AD
 description: Meer informatie over de gebruikers ervaring voor SMS-aanmelding voor nieuwe of bestaande telefoon nummers
 services: active-directory
 author: curtand
@@ -8,18 +8,18 @@ ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.topic: end-user-help
-ms.date: 04/14/2020
+ms.date: 01/21/2021
 ms.author: curtand
 ms.reviewer: kasimpso
 ms.custom: user-help, seo-update-azuread-jan
-ms.openlocfilehash: a4dcb6774990c03ce3d55fb6c519b0600a1086f9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1a50f2032a978a552205d1bba602249f34f0478a
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91536882"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661586"
 ---
-# <a name="use-your-phone-number-as-a-user-name-preview"></a>Gebruik uw telefoon nummer als een gebruikers naam (preview-versie)
+# <a name="use-your-phone-number-as-a-user-name"></a>Je telefoon nummer gebruiken als gebruikers naam
 
 Wanneer u een apparaat registreert, krijgt u toegang tot de services van uw organisatie en kunt u uw organisatie geen toegang geven tot uw telefoon. Als u een beheerder bent, kunt u meer informatie vinden in [configureren en gebruikers inschakelen voor verificatie op basis van SMS](../authentication/howto-authentication-sms-signin.md).
 
@@ -36,7 +36,7 @@ Als u een nieuwe telefoon of nieuw nummer krijgt en u registreert bij een organi
 1. Er wordt een prompt weer gegeven met de tekst "SMS geverifieerd. De registratie van uw telefoon is voltooid. "
 
 > [!Important]
-> Als gevolg van een bekend probleem in de preview, wordt voor een korte periode het toevoegen van een telefoon nummer het nummer voor SMS-aanmelding niet geregistreerd. U moet zich aanmelden met het toegevoegde nummer en vervolgens de prompts volgen om het nummer voor SMS-aanmelding te registreren.
+> Als gevolg van een bekend probleem kan het toevoegen van het telefoon nummer voor de korte tijd niet het aantal voor SMS-aanmelding registreren. U moet zich aanmelden met het toegevoegde nummer en vervolgens de prompts volgen om het nummer voor SMS-aanmelding te registreren.
 
 ### <a name="when-the-phone-number-is-in-use"></a>Wanneer het telefoon nummer wordt gebruikt
 
@@ -58,7 +58,7 @@ Als u al een telefoon nummer met een organisatie gebruikt en u uw telefoon numme
 
     [![Banner om SMS-aanmelding in te scha kelen voor een telefoon nummer.](media/sms-sign-in-explainer/sms-sign-in-phone-method.png)](media/sms-sign-in-explainer/sms-sign-in-phone-method.png#lightbox)
 
-1. Selecteer **inschakelen**om de methode in te scha kelen. U wordt gevraagd de actie te bevestigen:
+1. Selecteer **inschakelen** om de methode in te scha kelen. U wordt gevraagd de actie te bevestigen:
 
     ![Bevestigings venster om SMS-aanmelding voor een telefoon nummer in te scha kelen](media/sms-sign-in-explainer/sms-sign-in-confirmation.png)
 

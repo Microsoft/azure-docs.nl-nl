@@ -8,12 +8,12 @@ ms.tgt_pltfrm: ibiza
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: lagayhar
-ms.openlocfilehash: 7af26be91ff129e4c968bcb131cc98290cd8d7b9
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: b2e9c267b0a3723c9ac7b3edd49e23b95741962f
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610077"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660450"
 ---
 # <a name="click-analytics-auto-collection-plugin-for-application-insights-javascript-sdk"></a>Klik op Analytics-invoeg toepassing voor automatische verzamelingen voor Application Insights java script SDK
 
@@ -69,7 +69,7 @@ appInsights.loadAppInsights();
     2. Ter verbetering van de efficiëntie wordt deze tag door de invoeg toepassing gebruikt als een vlag, wanneer deze wordt aangetroffen, waardoor de DOM (Document Object Model) niet meer hoeft te worden verwerkt.
     
     > [!CAUTION]
-    > Eenmaal `parentDataTag` gebruikt, heeft het een permanent effect op uw hele toepassing en niet alleen het HTML-element waarin u het hebt gebruikt.
+    > Eenmaal `parentDataTag` wordt gebruikt, zoekt de SDK naar bovenliggende labels in uw hele toepassing en niet alleen het HTML-element waarin u het hebt gebruikt.
 4. `customDataPrefix` van de gebruiker moet altijd beginnen met `data-` , bijvoorbeeld `data-sample-` . In HTML `data-*` vormen globale kenmerken een klasse kenmerken met de naam aangepaste gegevens kenmerken, waarmee de eigendoms gegevens kunnen worden uitgewisseld tussen de HTML en de bijbehorende dom-weer gave door scripts. Oudere browsers (Internet Explorer, Safari) verwijderen kenmerken die niet worden herkend, tenzij ze beginnen met `data-` .
 
     De `*` in `data-*`  kan worden vervangen door een naam die volgt op de [productie regel van XML-namen](https://www.w3.org/TR/REC-xml/#NT-Name) met de volgende beperkingen:
@@ -101,7 +101,7 @@ appInsights.loadAppInsights();
 
 ### <a name="icustomdatatags"></a>ICustomDataTags
 
-| Naam                      | Type    | Standaard   | Standaard label voor gebruik in HTML |   Description                                                                                |
+| Naam                      | Type    | Standaard   | Standaard label voor gebruik in HTML |   Beschrijving                                                                                |
 |---------------------------|---------|-----------|-------------|----------------------------------------------------------------------------------------------|
 | useDefaultContentNameOrId | booleaans | onjuist     | N.v.t.         |Hiermee wordt het standaard-HTML-kenmerk voor de inhoudsnaam verzameld wanneer een bepaald element niet is gelabeld met de standaard customDataPrefix of wanneer customDataPrefix niet is opgegeven door de gebruiker. |
 | customDataPrefix          | tekenreeks  | `data-`   | `data-*`| Automatische vastleg-inhouds naam en-waarde van elementen die zijn gelabeld met het voor voegsel. `data-*-id` `data-<yourcustomattribute>` Kan bijvoorbeeld worden gebruikt in de HTML-tags.   |
@@ -314,5 +314,5 @@ appInsights.loadAppInsights();
 
 - Bekijk de [github-opslag plaats](https://github.com/microsoft/ApplicationInsights-JS/tree/master/extensions/applicationinsights-clickanalytics-js) en het [NPM-pakket](https://www.npmjs.com/package/@microsoft/applicationinsights-clickanalytics-js) voor de invoeg toepassing voor automatische verzamelingen van de analyse.
 - Gebruik [gebeurtenissen analyse in de gebruiks ervaring](usage-segmentation.md) om de meeste klikken en segment te analyseren op beschik bare dimensies.
-- Zoek op gegevens onder inhouds veld in het kenmerk customDimensions in de tabel CustomEvents in [log Analytics](../log-query/log-analytics-tutorial.md#write-a-query).
+- Zoek op gegevens onder inhouds veld in het kenmerk customDimensions in de tabel CustomEvents in [log Analytics](../log-query/log-analytics-tutorial.md#write-a-query). Zie voor [beeld-app](https://go.microsoft.com/fwlink/?linkid=2152871) voor aanvullende richt lijnen.
 - Een [werkmap](../platform/workbooks-overview.md) bouwen om aangepaste visualisaties van klik gegevens te maken.

@@ -3,15 +3,15 @@ title: Connectiviteits architectuur-Azure Database for MariaDB
 description: Beschrijft de connectiviteits architectuur voor uw Azure Database for MariaDB-server.
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: conceptual
 ms.date: 6/8/2020
-ms.openlocfilehash: 98a75cee88a7d30161fc3166bce0eaec855d347c
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 57e14fa4a026dafb085ea636611ab26b6bad7c01
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97656713"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661701"
 ---
 # <a name="connectivity-architecture-in-azure-database-for-mariadb"></a>Connectiviteits architectuur in Azure Database for MariaDB
 In dit artikel wordt uitgelegd wat de Azure Database for MariaDB connectiviteits architectuur is en hoe het verkeer wordt omgeleid naar uw Azure Database for MariaDB exemplaar van clients, zowel binnen als buiten Azure.
@@ -47,17 +47,17 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Australië-Central2     | 20.36.113.0  | | |
 | Australië - oost | 13.75.149.87, 40.79.161.1     |  | |
 | Australië - zuidoost |191.239.192.109, 13.73.109.251   |  | |
-| Brazil South |191.233.201.8, 191.233.200.16    |  | 104.41.11.5|
+| Brazilië - zuid |191.233.201.8, 191.233.200.16    |  | 104.41.11.5|
 | Canada - midden |40.85.224.249  | | |
 | Canada - oost | 40.86.226.166    | | |
-| Central US | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38 | | |
+| VS - centraal | 23.99.160.139, 13.67.215.62, 52.182.136.37, 52.182.136.38 | | |
 | China East | 139.219.130.35    | | |
 | China - oost 2 | 40.73.82.1  | | |
 | China - noord | 139.219.15.17    | | |
 | China - noord 2 | 40.73.50.0     | | |
 | Azië - oost | 191.234.2.139, 52.175.33.150, 13.75.33.20, 13.75.33.21     | | |
 | VS - oost |40.71.8.203, 40.71.83.113 |40.121.158.30|191.238.6.43 |
-| US - oost 2 |40.79.84.180, 191.239.224.107, 52.177.185.181, 40.70.144.38, 52.167.105.38  | | |
+| VS - oost 2 |40.79.84.180, 191.239.224.107, 52.177.185.181, 40.70.144.38, 52.167.105.38  | | |
 | Frankrijk - centraal | 40.79.137.0, 40.79.129.1  | | |
 | Frankrijk - zuid | 40.79.177.0     | | |
 | Duitsland - centraal | 51.4.144.100     | | |
@@ -65,7 +65,7 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | India - centraal | 104.211.96.159     | | |
 | India - zuid | 104.211.224.146  | | |
 | India - west | 104.211.160.80    | | |
-| Japan East | 13.78.61.196, 191.237.240.43, 40.79.192.23 | | |
+| Japan - oost | 13.78.61.196, 191.237.240.43, 40.79.192.23 | | |
 | Japan - west | 104.214.148.156, 191.238.68.11, 40.74.96.6, 40.74.96.7    | | |
 | Korea - centraal | 52.231.32.42   | | |
 | Korea - zuid | 52.231.200.86    | | |
@@ -73,7 +73,7 @@ De volgende tabel geeft een lijst van de IP-adressen van de gateway van de Azure
 | Europa - noord | 52.138.224.6, 52.138.224.7  |40.113.93.91 |191.235.193.75 |
 | Zuid-Afrika - noord  | 102.133.152.0    | | |
 | Zuid-Afrika - west | 102.133.24.0   | | |
-| South Central US |104.214.16.39, 20.45.120.0  |13.66.62.124  |23.98.162.75 |
+| VS - zuid-centraal |104.214.16.39, 20.45.120.0  |13.66.62.124  |23.98.162.75 |
 | Azië - zuidoost | 104.43.15.0, 23.100.117.95, 40.78.233.2, 23.98.80.12     | | |
 | UAE - centraal | 20.37.72.64  | | |
 | VAE - noord | 65.52.248.0    | | |

@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: overview
-ms.date: 07/13/2020
+ms.date: 01/20/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: sahenry, michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f85b78480e7258780f8dd396431edeb968189e4c
-ms.sourcegitcommit: ad83be10e9e910fd4853965661c5edc7bb7b1f7c
-ms.translationtype: HT
+ms.openlocfilehash: ae7ae239493c999d98100bf9dee4f4f0183addf2
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/06/2020
-ms.locfileid: "96741249"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660810"
 ---
 # <a name="what-is-azure-active-directory-authentication"></a>Wat is Azure Active Directory-verificatie?
 
@@ -27,6 +27,8 @@ Een van de belangrijkste functies van een identiteitsplatform is het *verifiëre
 * Hybride integratie om wachtwoordwijzigingen terug te schrijven naar de on-premises omgeving
 * Hybride integratie om beveiligingsbeleid voor wachtwoorden af te dwingen voor een on-premises omgeving
 * Verificatie zonder wachtwoord
+
+Bekijk onze korte video voor meer informatie over deze verificatie onderdelen.
 
 ## <a name="improve-the-end-user-experience"></a>De ervaring voor de eindgebruiker verbeteren
 
@@ -80,7 +82,7 @@ Het einddoel voor veel omgevingen is het verwijderen van het gebruik van wachtwo
 
 ![Beveiliging versus gemak met het verificatieproces op weg naar een leven zonder wachtwoorden](./media/concept-authentication-passwordless/passwordless-convenience-security.png)
 
-Wanneer u zich aanmeldt via een methode zonder wachtwoorden, worden referenties opgegeven met behulp van methoden zoals biometrische gegevens met Windows Hello for Business of een FIDO2-beveiligingssleutel. Deze verificatiemethoden kunnen niet eenvoudig door een aanvaller worden gedupliceerd.
+Wanneer u zich aanmeldt met een wacht woordloze methode, worden er referenties gegeven met behulp van methoden als biometrie met Windows hello voor bedrijven of een FIDO2-beveiligings sleutel. Deze verificatiemethoden kunnen niet eenvoudig door een aanvaller worden gedupliceerd.
 
 Azure AD biedt verschillende manieren om verificatie via het systeem uit te voeren met methoden zonder wachtwoord om de aanmeldervaring voor gebruikers te vereenvoudigen en het risico van aanvallen te verminderen.
 

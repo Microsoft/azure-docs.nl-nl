@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 09/21/2020
 ms.author: v-mibufo
-ms.openlocfilehash: b13b61aff819271ed1722572f251f9a6d14b17ab
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 8af656e00c457dfa3d438f0cb104d85ccc687745
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976994"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661235"
 ---
 # <a name="windows-stop-error---0xc000021a-status-system-process-terminated"></a>Windows-Stop fout: 0xC000021A status systeem proces beëindigd
 
@@ -48,12 +48,16 @@ Deze fout treedt op wanneer een kritiek proces, zoals WinLogon (winlogon.exe) of
 
 ### <a name="collect-the-memory-dump-file"></a>Het geheugen dump bestand verzamelen
 
+> [!TIP]
+> Als u een recente back-up van de virtuele machine hebt, kunt u proberen [de virtuele machine terug te zetten vanaf de back-up](../../backup/backup-azure-arm-restore-vms.md) om het opstart probleem op te lossen.
+
+
 Om dit probleem op te lossen moet de crash dump worden geanalyseerd. Verzamel het geheugen dump bestand voor de crash en neem contact op met de ondersteuning. Voer de volgende stappen uit om het dump bestand te verzamelen:
 
 ### <a name="attach-the-os-disk-to-a-new-repair-vm"></a>De besturingssysteem schijf koppelen aan een nieuwe herstel-VM
 
 1.  Gebruik stap 1-3 van de [VM-reparatie opdrachten](./repair-windows-vm-using-azure-virtual-machine-repair-commands.md) om een herstel-VM voor te bereiden.
-2.  Maak met behulp van **verbinding met extern bureaublad**verbinding met de herstel-VM.
+2.  Maak met behulp van **verbinding met extern bureaublad** verbinding met de herstel-VM.
 
 ### <a name="locate-the-dump-file-and-submit-a-support-ticket"></a>Het dump bestand zoeken en een ondersteunings ticket verzenden
 

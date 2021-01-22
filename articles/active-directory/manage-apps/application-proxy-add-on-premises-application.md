@@ -8,20 +8,22 @@ ms.service: active-directory
 ms.subservice: app-mgmt
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 12/10/2020
+ms.date: 01/20/2021
 ms.author: kenwith
 ms.reviewer: japere
-ms.custom: contperf-fy21q2
-ms.openlocfilehash: bcb484d62b7c4add7e1ab5562c19417a90cfb7e1
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.custom: contperf-fy21q3
+ms.openlocfilehash: 6b46a5ea71bf8c9705ffc3bc51ea48f4b0c28502
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97587550"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660761"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory
 
 Azure Active Directory (Azure AD) heeft een Application Proxy-service waarmee gebruikers toegang krijgen tot on-premises toepassingen door zich aan te melden met hun Azure AD-account. In deze zelfstudie wordt uw omgeving voorbereid voor gebruik van Application Proxy. Zodra uw omgeving gereed is, gebruikt u de Azure-portal om een on-premises toepassing toe te voegen aan uw Azure AD-tenant.
+
+:::image type="content" source="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png" alt-text="Overzichts diagram toepassings proxy" lightbox="./media/application-proxy-add-on-premises-application/app-proxy-diagram.png":::
 
 Connectors zijn een belangrijk onderdeel van Application Proxy. Zie [Informatie over connectors voor de Azure AD-toepassingsproxy](application-proxy-connectors.md) voor meer informatie over connectors.
 
@@ -126,7 +128,11 @@ Sta toegang tot de volgende URL's toe:
 | login.windows.net<br>secure.aadcdn.microsoftonline-p.com<br>&ast;.microsoftonline.com<br>&ast;.microsoftonline-p.com<br>&ast;.msauth.net<br>&ast;.msauthimages.net<br>&ast;.msecnd.net<br>&ast;.msftauth.net<br>&ast;.msftauthimages.net<br>&ast;.phonefactor.net<br>enterpriseregistration.windows.net<br>management.azure.com<br>policykeyservice.dc.ad.msft.net<br>ctldl.windowsupdate.com<br>www.microsoft.com/pkiops | 443/HTTPS |De connector gebruikt deze URL's tijdens het registratieproces. |
 | ctldl.windowsupdate.com | 80/HTTP |De connector gebruikt deze URL tijdens het registratieproces. |
 
-U kunt verbindingen met &ast;.msappproxy.net, &ast;.servicebus.windows.net en andere URL's hierboven toestaan, als de firewall of proxy toestaat dat u DNS-acceptatielijsten configureert. Zo niet, dan moet u toegang tot de [Azure IP-bereiken en -servicetags – Openbare cloud](https://www.microsoft.com/download/details.aspx?id=56519) toestaan. die overigens elke week worden bijgewerkt.
+U kunt verbinding maken met &ast; msappproxy.net, &ast; . servicebus.Windows.net en andere url's hierboven als uw firewall of proxy u in staat stelt om toegangs regels te configureren op basis van domein achtervoegsels. Zo niet, dan moet u toegang tot de [Azure IP-bereiken en -servicetags – Openbare cloud](https://www.microsoft.com/download/details.aspx?id=56519) toestaan. die overigens elke week worden bijgewerkt.
+
+### <a name="dns-name-resolution-for-azure-ad-application-proxy-endpoints"></a>DNS-naam omzetting voor Azure AD-toepassingsproxy-eind punten
+
+Open bare DNS-records voor Azure AD-toepassingsproxy-eind punten zijn aaneengeschakelde CNAME-records die naar een record verwijzen. Dit zorgt voor de fout tolerantie en flexibiliteit. Het is gegarandeerd dat de Azure AD-toepassingsproxy-connector altijd toegang krijgt tot hostnamen met de domein achtervoegsels _*. msappproxy.net_ of _*. servicebus.Windows.net_. Tijdens de naam omzetting kunnen CNAME-records echter DNS-records met verschillende hostnamen en achtervoegsels bevatten.  Als gevolg hiervan moet u ervoor zorgen dat het apparaat (afhankelijk van uw Setup-connector server, firewall, uitgaande proxy) alle records in de keten kan omzetten en dat er verbinding kan worden met de omgezette IP-adressen. Omdat de DNS-records in de keten mogelijk van tijd tot tijd worden gewijzigd, kunnen we u geen lijst met DNS-records geven.
 
 ## <a name="install-and-register-a-connector"></a>Een connector installeren en registreren
 

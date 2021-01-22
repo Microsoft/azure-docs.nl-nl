@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van beheerde identiteiten in azure
 services: container-service
 ms.topic: article
 ms.date: 12/16/2020
-ms.openlocfilehash: fe11170b1cdf18aacf832f4c8171bfc082339395
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: e991f7313bae5aa67478043b4f9306dbc274e1e7
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98599614"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98659985"
 ---
 # <a name="use-managed-identities-in-azure-kubernetes-service"></a>Beheerde identiteiten gebruiken in azure Kubernetes service
 
@@ -25,7 +25,6 @@ U moet de volgende bron hebben geïnstalleerd:
 
 ## <a name="limitations"></a>Beperkingen
 
-* Tijdens de **upgrade** bewerkingen van het cluster is de beheerde identiteit tijdelijk niet beschikbaar.
 * Tenants verplaatsen/migreren van beheerde identiteits clusters worden niet ondersteund.
 * Als het cluster is `aad-pod-identity` ingeschakeld, wijzigt Node-Managed identiteit (NMI) peul de knoop punten iptables om aanroepen naar het eind punt van de meta gegevens van het Azure-exemplaar te onderscheppen. Deze configuratie houdt in dat elke aanvraag voor het eind punt van de meta gegevens wordt onderschept door NMI, zelfs als de pod niet wordt gebruikt `aad-pod-identity` . AzurePodIdentityException CRD kan zodanig worden geconfigureerd `aad-pod-identity` dat alle aanvragen voor het eind punt van de meta gegevens die afkomstig zijn van een pod die overeenkomt met de labels die zijn gedefinieerd in CRD, via een proxy moeten worden gewaarschuwd zonder enige verwerking in NMI. Het systeem van het `kubernetes.azure.com/managedby: aks` label in de naam ruimte _uitvoeren_ moet worden uitgesloten in `aad-pod-identity` door de AzurePodIdentityException CRD te configureren. Zie [Aad-pod-Identity voor een specifieke Pod of toepassing uitschakelen](https://azure.github.io/aad-pod-identity/docs/configure/application_exception)voor meer informatie.
   Als u een uitzonde ring wilt configureren, installeert u de YAML van de [Mic-uitzonde ring](https://github.com/Azure/aad-pod-identity/blob/master/deploy/infra/mic-exception.yaml).
@@ -34,20 +33,20 @@ U moet de volgende bron hebben geïnstalleerd:
 
 AKS maakt gebruik van verschillende beheerde identiteiten voor ingebouwde services en invoeg toepassingen.
 
-| Identiteit                       | Naam    | Gebruiksvoorbeeld | Standaard machtigingen | Uw eigen identiteit meenemen
+| Identiteit                       | Name    | Gebruiksvoorbeeld | Standaard machtigingen | Uw eigen identiteit meenemen
 |----------------------------|-----------|----------|
 | Besturingsvlak | niet zichtbaar | Wordt gebruikt door AKS-besturings vlak onderdelen voor het beheren van cluster bronnen, waaronder inkomend netwerk taak verdelers en door AKS beheerde open bare Ip's en bewerkingen voor het automatisch schalen van clusters | Rol Inzender voor knooppunt resource groep | Ondersteund
 | Kubelet | AKS-cluster naam-agent pool | Verificatie met Azure Container Registry (ACR) | N.V.T. (voor kubernetes v 1.15 +) | Momenteel niet ondersteund
-| Invoeg toepassing | AzureNPM | Geen identiteit vereist | NA | Nee
-| Invoeg toepassing | AzureCNI netwerk bewaking | Geen identiteit vereist | NA | Nee
-| Invoeg toepassing | Azure-Policy (gate keeper) | Geen identiteit vereist | NA | Nee
-| Invoeg toepassing | Azure-beleid | Geen identiteit vereist | NA | Nee
-| Invoeg toepassing | Calico | Geen identiteit vereist | NA | Nee
-| Invoeg toepassing | Dashboard | Geen identiteit vereist | NA | Nee
-| Invoeg toepassing | HTTPApplicationRouting | Hiermee worden de vereiste netwerk bronnen beheerd | Rol van lezer voor knooppunt resource groep, rol Inzender voor DNS-zone | Nee
-| Invoeg toepassing | Ingangs toepassings gateway | Hiermee worden de vereiste netwerk bronnen beheerd| Rol Inzender voor knooppunt resource groep | Nee
-| Invoeg toepassing | omsagent | Wordt gebruikt om AKS-metrische gegevens naar Azure Monitor te verzenden | Rol van uitgever voor metrische gegevens controleren | Nee
-| Invoeg toepassing | Virtual-Node (ACIConnector) | Beheert vereiste netwerk bronnen voor Azure Container Instances (ACI) | Rol Inzender voor knooppunt resource groep | Nee
+| Invoeg toepassing | AzureNPM | Geen identiteit vereist | NA | No
+| Invoeg toepassing | AzureCNI netwerk bewaking | Geen identiteit vereist | NA | No
+| Invoeg toepassing | Azure-Policy (gate keeper) | Geen identiteit vereist | NA | No
+| Invoeg toepassing | Azure-beleid | Geen identiteit vereist | NA | No
+| Invoeg toepassing | Calico | Geen identiteit vereist | NA | No
+| Invoeg toepassing | Dashboard | Geen identiteit vereist | NA | No
+| Invoeg toepassing | HTTPApplicationRouting | Hiermee worden de vereiste netwerk bronnen beheerd | Rol van lezer voor knooppunt resource groep, rol Inzender voor DNS-zone | No
+| Invoeg toepassing | Ingangs toepassings gateway | Hiermee worden de vereiste netwerk bronnen beheerd| Rol Inzender voor knooppunt resource groep | No
+| Invoeg toepassing | omsagent | Wordt gebruikt om AKS-metrische gegevens naar Azure Monitor te verzenden | Rol van uitgever voor metrische gegevens controleren | No
+| Invoeg toepassing | Virtual-Node (ACIConnector) | Beheert vereiste netwerk bronnen voor Azure Container Instances (ACI) | Rol Inzender voor knooppunt resource groep | No
 | OSS-project | Aad-pod-identiteit | Hiermee kunnen toepassingen veilig toegang krijgen tot Cloud bronnen met Azure Active Directory (AAD) | NA | Stappen voor het verlenen van machtigingen op https://github.com/Azure/aad-pod-identity#role-assignment .
 
 ## <a name="create-an-aks-cluster-with-managed-identities"></a>Een AKS-cluster maken met beheerde identiteiten

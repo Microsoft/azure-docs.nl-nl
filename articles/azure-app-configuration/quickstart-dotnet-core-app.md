@@ -8,12 +8,12 @@ ms.topic: quickstart
 ms.custom: devx-track-csharp
 ms.date: 09/28/2020
 ms.author: alkemper
-ms.openlocfilehash: 1a5e756e05543d9f19775f4e2d1abcee82794f9e
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-ms.translationtype: HT
+ms.openlocfilehash: 0ff80287971365b1477be319dc7a04760687f6a9
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96932061"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98663397"
 ---
 # <a name="quickstart-create-a-net-core-app-with-app-configuration"></a>Quickstart: Een .NET Core-app maken met App Configuration
 
@@ -104,7 +104,7 @@ U gebruikt de [opdrachtregelinterface (CLI) van .NET Core](/dotnet/core/tools/) 
     export ConnectionString='connection-string-of-your-app-configuration-store'
     ```
 
-    Start de opdrachtprompt opnieuw op om de wijziging door te voeren. Druk de waarde van de omgevingsvariabele af om te controleren of deze correct is ingesteld.
+    Start de opdrachtprompt opnieuw op om de wijziging door te voeren. Druk de waarde van de omgevings variabele af om te controleren of deze correct is ingesteld.
 
 2. Voer de volgende opdracht uit om de console-app te bouwen:
 

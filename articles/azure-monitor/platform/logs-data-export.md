@@ -7,12 +7,12 @@ ms.custom: references_regions, devx-track-azurecli
 author: bwren
 ms.author: bwren
 ms.date: 10/14/2020
-ms.openlocfilehash: d9ae9cae1a0a8014f007cd7c4a3d1f97f27128bb
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 4ae69ddeb46d484a64edc4ccabfa6740b36c4264
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610961"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98663261"
 ---
 # <a name="log-analytics-workspace-data-export-in-azure-monitor-preview"></a>Log Analytics werkruimte gegevens exporteren in Azure Monitor (preview-versie)
 Met Log Analytics werkruimte gegevens exporteren in Azure Monitor kunt u voortdurend gegevens exporteren uit geselecteerde tabellen in uw Log Analytics-werk ruimte naar een Azure Storage-account of Azure-Event Hubs wanneer het wordt verzameld. Dit artikel bevat informatie over deze functie en de stappen voor het configureren van gegevens export in uw werk ruimten.
@@ -33,7 +33,7 @@ Log Analytics werk ruimte gegevens exporteren doorlopend exporteert gegevens uit
 - Eenmalig exporteren naar een lokale computer met behulp van Power shell-script. Zie [invoke-AzOperationalInsightsQueryExport](https://www.powershellgallery.com/packages/Invoke-AzOperationalInsightsQueryExport).
 
 
-## <a name="current-limitations"></a>Huidige beperkingen
+## <a name="limitations"></a>Beperkingen
 
 - Configuratie kan op dit moment worden uitgevoerd met CLI-of REST-aanvragen. Azure Portal of Power shell worden nog niet ondersteund.
 - De ```--export-all-tables``` optie in CLI en rest wordt niet ondersteund en wordt verwijderd. U moet de lijst met tabellen in regels voor exporteren expliciet opgeven.

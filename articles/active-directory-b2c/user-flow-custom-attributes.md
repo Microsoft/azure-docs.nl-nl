@@ -12,12 +12,12 @@ ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
 zone_pivot_groups: b2c-policy-type
-ms.openlocfilehash: 9759c1109c7be279520fa187bd3366bcac505d46
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 5552c93c1c65f08f70ed8929d81126035aa2a357
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503740"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98661201"
 ---
 # <a name="define-custom-attributes-in-azure-active-directory-b2c"></a>Aangepaste kenmerken definiëren in Azure Active Directory B2C
 
@@ -31,7 +31,7 @@ Uw Azure AD B2C Directory wordt geleverd met een [ingebouwde set kenmerken](user
 * Een id-provider heeft een unieke gebruikers-id, **uniqueUserGUID**, die persistent moet zijn.
 * Voor een aangepaste gebruikers traject moet de status van de gebruiker, **migrationStatus**, worden behouden, zodat er een andere logica kan worden uitgevoerd.
 
-Met Azure AD B2C kunt u de set met kenmerken die zijn opgeslagen op elk gebruikers account uitbreiden. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](manage-user-accounts-graph-api.md).
+Met Azure AD B2C kunt u de set met kenmerken die zijn opgeslagen op elk gebruikers account uitbreiden. U kunt deze kenmerken ook lezen en schrijven met behulp van de [Microsoft Graph-API](microsoft-graph-operations.md).
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -60,7 +60,7 @@ Het aangepaste kenmerk is nu beschikbaar in de lijst met **gebruikers kenmerken*
 1. Selecteer **toepassings claims** en selecteer vervolgens het aangepaste kenmerk.
 1. Klik op **Opslaan**.
 
-Zodra u een nieuwe gebruiker hebt gemaakt met behulp van een gebruikers stroom die gebruikmaakt van het zojuist gemaakte aangepaste kenmerk, kan het object in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)worden opgevraagd. U kunt ook de functie [gebruikers stroom uitvoeren](./tutorial-create-user-flows.md) op de gebruikers stroom gebruiken om de klant ervaring te controleren. Nu ziet u **ShoeSize** in de lijst met kenmerken die tijdens de registratie worden verzameld en wordt deze weer gegeven in het token dat wordt teruggestuurd naar uw toepassing.
+Zodra u een nieuwe gebruiker hebt gemaakt met behulp van een gebruikers stroom, die gebruikmaakt van het zojuist gemaakte aangepaste kenmerk, kan het object in [Microsoft Graph Explorer](https://developer.microsoft.com/graph/graph-explorer)worden opgevraagd. U kunt ook de functie [gebruikers stroom uitvoeren](./tutorial-create-user-flows.md) op de gebruikers stroom gebruiken om de klant ervaring te controleren. Nu ziet u **ShoeSize** in de lijst met kenmerken die tijdens de registratie worden verzameld en wordt deze weer gegeven in het token dat wordt teruggestuurd naar uw toepassing.
 
 ::: zone-end
 
@@ -132,10 +132,10 @@ Dezelfde extensie kenmerken worden gedeeld door ingebouwde en aangepaste beleids
 
 U kunt deze kenmerken maken met behulp van de portal-gebruikers interface voor of nadat u ze in uw aangepaste beleids regels gebruikt. Wanneer u een kenmerk **loyaltyId** in de portal maakt, moet u dit als volgt:
 
-|Naam     |Gebruikt in |
+|Name     |Gebruikt in |
 |---------|---------|
 |`extension_loyaltyId`  | Aangepast beleid|
-|`extension_<b2c-extensions-app-guid>_loyaltyId`  | [Microsoft Graph API](manage-user-accounts-graph-api.md)|
+|`extension_<b2c-extensions-app-guid>_loyaltyId`  | [Microsoft Graph API](microsoft-graph-operations.md)|
 
 In het volgende voor beeld ziet u hoe aangepaste kenmerken in een Azure AD B2C aangepaste beleids claim definitie worden gebruikt.
 

@@ -3,15 +3,15 @@ title: Privé-koppeling-Azure Portal-Azure Database for MariaDB
 description: Meer informatie over het configureren van een persoonlijke koppeling voor Azure Database for MariaDB van Azure Portal
 author: mksuni
 ms.author: sumuth
-ms.service: mariadb
+ms.service: jroth
 ms.topic: how-to
 ms.date: 01/09/2020
-ms.openlocfilehash: 79b3c3f8eca2fa4442a7845ca4aa3921d0302453
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 127a1c83525c4a9c457f551c05045a63a3c4347a
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005041"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98659621"
 ---
 # <a name="create-and-manage-private-link-for-azure-database-for-mariadb-using-portal"></a>Een persoonlijke koppeling voor Azure Database for MariaDB maken en beheren met behulp van portal
 
@@ -130,7 +130,7 @@ In deze sectie maakt u een Azure Database for MariaDB-server in Azure.
 
 In deze sectie maakt u een persoonlijk eind punt naar de MariaDB-server. 
 
-1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal de optie **een resource maken**  >  **Networking**  >  **persoonlijke netwerk koppeling**.
+1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal de optie **een resource maken**  >    >  **persoonlijke netwerk koppeling**.
 2. Selecteer in **Private Link-centrum – Overzicht** bij de optie **Een particuliere verbinding met een service maken** de optie **Start**.
 
     ![Overzicht van persoonlijke koppelingen](media/concepts-data-access-and-security-private-link/privatelink-overview.png)

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 10/14/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 30b7788419695db7ee5d4b81714bf55248a41b4a
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: e181b90219f340a29e818801ee2b53f1ccbd9c23
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97108719"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660281"
 ---
 # <a name="azure-ad-b2c-frequently-asked-questions-faq"></a>Azure AD B2C: veelgestelde vragen (FAQ)
 
@@ -96,7 +96,7 @@ Zie [bedreigingen voor resources en gegevens in azure Active Directory B2C beher
 
 ### <a name="can-i-use-azure-ad-connect-to-migrate-consumer-identities-that-are-stored-on-my-on-premises-active-directory-to-azure-ad-b2c"></a>Kan ik Azure AD Connect gebruiken om consumenten-id's die op mijn on-premises Active Directory zijn opgeslagen te migreren naar Azure AD B2C?
 
-Nee, Azure AD Connect is niet ontworpen om te werken met Azure AD B2C. Overweeg de [Microsoft Graph-API](manage-user-accounts-graph-api.md) te gebruiken voor gebruikers migratie. Raadpleeg de [hand leiding voor gebruikers migratie](user-migration.md) voor meer informatie.
+Nee, Azure AD Connect is niet ontworpen om te werken met Azure AD B2C. Overweeg de [Microsoft Graph-API](microsoft-graph-operations.md) te gebruiken voor gebruikers migratie. Raadpleeg de [hand leiding voor gebruikers migratie](user-migration.md) voor meer informatie.
 
 ### <a name="can-my-app-open-up-azure-ad-b2c-pages-within-an-iframe"></a>Kan mijn app Azure AD B2C pagina's in een iFrame openen?
 
@@ -145,7 +145,7 @@ U kunt onze nieuwe geïntegreerde **app-registraties** ervaring of onze oudere  
 1. Selecteer **app-registraties** en selecteer vervolgens het tabblad **alle toepassingen** .
 1. Alle toepassingen verwijderen die u hebt geregistreerd.
 1. Verwijder de **B2C-Extensions-app**.
-1. Onder **Beheren**, selecteer **Gebruikers**.
+1. Selecteer onder **Beheren** de optie **Gebruikers**.
 1. Selecteer elke gebruiker op zijn beurt (sluit de gebruikers van de *abonnements beheerder* die u momenteel bent aangemeld als). Selecteer **verwijderen** onder aan de pagina en selecteer **Ja** wanneer u hierom wordt gevraagd.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
 1. Selecteer onder **beheren** de optie **gebruikers instellingen**.
@@ -163,7 +163,7 @@ U kunt onze nieuwe geïntegreerde **app-registraties** ervaring of onze oudere  
 1. Verwijder alle **gebruikers stromen (beleids regels)** in uw Azure AD B2C-Tenant.
 1. Verwijder alle **toepassingen (verouderd)** die u hebt geregistreerd in uw Azure AD B2C-Tenant.
 1. Selecteer **Azure Active Directory** in het menu aan de linkerkant.
-1. Onder **Beheren**, selecteer **Gebruikers**.
+1. Selecteer onder **Beheren** de optie **Gebruikers**.
 1. Selecteer elke gebruiker op zijn beurt (sluit de gebruikers van de *abonnements beheerder* die u momenteel bent aangemeld als). Selecteer **verwijderen** onder aan de pagina en selecteer **Ja** wanneer u hierom wordt gevraagd.
 1. Selecteer **App-registraties** onder **Beheren**.
 1. Selecteer **alle toepassingen weer geven**

@@ -11,12 +11,12 @@ ms.date: 05/25/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 7c9e3344ed819f607feeab88ac43a9dc286a61e0
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 430da23986fc36a0e94c049512ef716aff1fed5c
+ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109093"
+ms.lasthandoff: 01/21/2021
+ms.locfileid: "98660247"
 ---
 # <a name="the-new-app-registrations-experience-for-azure-active-directory-b2c"></a>De nieuwe App-registraties ervaring voor Azure Active Directory B2C
 
@@ -66,9 +66,10 @@ In de verouderde ervaring werden apps altijd gemaakt als klant gerichte toepassi
 U kunt deze optie ook gebruiken om Azure AD B2C als een SAML-service provider te gebruiken. [Meer informatie](identity-provider-adfs.md).
 
 ## <a name="applications-for-devops-scenarios"></a>Toepassingen voor DevOps-scenario's
+
 U kunt de andere account typen gebruiken om een app te maken voor het beheren van uw DevOps-scenario's, zoals het gebruik van Microsoft Graph voor het uploaden van identiteits experience Framework-beleids regels of het inrichten van gebruikers. Meer informatie [over hoe u een Microsoft Graph-toepassing registreert om Azure AD B2C resources te beheren](microsoft-graph-get-started.md).
 
-U ziet mogelijk niet alle Microsoft Graph machtigingen, omdat veel van deze machtigingen niet van toepassing zijn op gebruikers van Azure B2C Consumer. [Meer informatie over het beheren van gebruikers met behulp van Microsoft Graph](manage-user-accounts-graph-api.md).
+U ziet mogelijk niet alle Microsoft Graph machtigingen, omdat veel van deze machtigingen niet van toepassing zijn op gebruikers van Azure B2C Consumer. [Meer informatie over het beheren van gebruikers met behulp van Microsoft Graph](microsoft-graph-operations.md).
 
 ## <a name="admin-consent-and-offline_accessopenid-scopes"></a>Beheerders toestemming en offline_access + OpenID Connect-bereiken
 <!-- Azure AD B2C doesn't support user consent. That is, when a user signs into an application, the user doesn't see a screen requesting consent for the application permissions. All permissions have to be granted through admin consent.  -->

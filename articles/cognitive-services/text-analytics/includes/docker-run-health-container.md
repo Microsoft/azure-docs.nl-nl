@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.topic: include
 ms.date: 11/12/2020
 ms.author: aahi
-ms.openlocfilehash: b19fb3f86be46a5db60fb87f9c7f5c3e28ac6428
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 82c33c038a1f8eaba540c9906efcffa0a9214762
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965141"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98690176"
 ---
 ## <a name="install-the-container"></a>De container installeren
 
@@ -38,7 +38,7 @@ Voer de volgende `docker run` opdracht uit. Vervang onderstaande tijdelijke aand
 | **{API_KEY}** | De sleutel voor uw Text Analytics-resource. U vindt deze op de pagina van de bron **en het eind punt** op de Azure Portal. |`xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx`|
 | **{ENDPOINT_URI}** | Het eind punt voor toegang tot de Text Analytics-API. U vindt deze op de pagina van de bron **en het eind punt** op de Azure Portal. | `https://<your-custom-subdomain>.cognitiveservices.azure.com` |
 | **{IMAGE_ID}** | De afbeeldings-ID van de container. | `1.1.011300001-amd64-preview` |
-| **{INPUT_DIR}** | De invoer Directory voor de container. | Windows `C:\healthcareMount` <br> Linux/MacOS: `/home/username/input` |
+| **{INPUT_DIR}** | De invoer Directory voor de container. | Windows: `C:\healthcareMount` <br> Linux/MacOS: `/home/username/input` |
 
 ```bash
 docker run --rm -it -p 5000:5000 --cpus 6 --memory 12g \
@@ -84,7 +84,7 @@ Azure [Web App for containers](https://azure.microsoft.com/services/app-service/
 
 Voer dit Power shell-script uit met behulp van de Azure CLI om een Web App for Containers te maken, met behulp van uw abonnement en de container installatie kopie via HTTPS. Wacht totdat het script is voltooid (ongeveer 25-30 minuten) voordat u de eerste aanvraag indient.
 
-```bash
+```azurecli
 $subscription_name = ""                    # THe name of the subscription you want you resource to be created on.
 $resource_group_name = ""                  # The name of the resource group you want the AppServicePlan
                                            #    and AppSerivce to be attached to.
@@ -118,7 +118,7 @@ Raadpleeg het artikel over [regionale ondersteuning voor ACI](../../../container
 > [!NOTE] 
 > Azure Container Instances geen HTTPS-ondersteuning voor de ingebouwde domeinen op. Als u HTTPS nodig hebt, moet u deze hand matig configureren, met inbegrip van het maken van een certificaat en het registreren van een domein. U vindt hier instructies om dit te doen met NGINX hieronder.
 
-```bash
+```azurecli
 $subscription_name = ""                    # The name of the subscription you want you resource to be created on.
 $resource_group_name = ""                  # The name of the resource group you want the AppServicePlan
                                            # and AppService to be attached to.

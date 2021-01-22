@@ -2,34 +2,34 @@
 title: Aan de slag met PowerShell
 description: Een korte inleiding in de Azure PowerShell-cmdlets die u kunt gebruiken voor het beheren van Batch-resources.
 ms.topic: how-to
-ms.date: 01/15/2019
+ms.date: 01/21/2021
 ms.custom: seodec18, devx-track-azurepowershell
-ms.openlocfilehash: 3c152733ee3a75732d119db16f7db7c266740fdb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2b51a2a7852df82625fb342bbbbc4a3a1cbf72a3
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89079843"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685507"
 ---
 # <a name="manage-batch-resources-with-powershell-cmdlets"></a>Batch-resources beheren met PowerShell-cmdlets
 
-Met de PowerShell-cmdlets voor Azure Batch kunt u veel van de taken die u uitvoert met de Batch-API's, de Azure-portal en de Azure-opdrachtregelinterface (CLI), uitvoeren en er scripts voor uitvoeren. Dit is een korte inleiding in de cmdlets die u kunt gebruiken om uw Batch-accounts te beheren en te werken met uw Batch-resources, zoals pools en taken.
+Met de Azure Batch Power shell-cmdlets kunt u veel veelvoorkomende batch taken uitvoeren en scripteren. Dit is een korte inleiding in de cmdlets die u kunt gebruiken om uw Batch-accounts te beheren en te werken met uw Batch-resources, zoals pools en taken.
 
 Zie [Naslaginformatie over Azure Batch-cmdlets](/powershell/module/az.batch) voor een volledige lijst met Batch-cmdlets en gedetailleerde cmdlet-syntaxis.
 
-Dit artikel is gebaseerd op cmdlets in Azure Batch-module 1.0.0. Het wordt aangeraden uw Azure PowerShell-modules regelmatig bij te werken om te profiteren van service-updates en -verbeteringen.
+Het wordt aangeraden uw Azure PowerShell-modules regelmatig bij te werken om te profiteren van service-updates en -verbeteringen.
 
 ## <a name="prerequisites"></a>Vereisten
 
-* [De Azure PowerShell-module installeren en configureren](/powershell/azure/). Zie de [PowerShell Gallery](https://www.powershellgallery.com/packages/Az.Batch/1.0.0) voor het installeren van een specifieke Azure Batch-module, zoals een prerelease-module.
+- [De Azure PowerShell-module installeren en configureren](/powershell/azure/). Zie de [PowerShell Gallery](https://www.powershellgallery.com/packages/Az.Batch/) voor het installeren van een specifieke Azure Batch-module, zoals een prerelease-module.
 
-* Voer de cmdlet **Connect-AzAccount** uit om verbinding te maken met uw abonnement (de Azure Batch-cmdlets zijn meegeleverd in de Azure Resource Manager-module):
+- Voer de cmdlet **Connect-AzAccount** uit om verbinding te maken met uw abonnement (de Azure Batch-cmdlets zijn meegeleverd in de Azure Resource Manager-module):
 
   ```powershell
   Connect-AzAccount
   ```
 
-* **Registreer bij de naamruimte van de Batch-provider**. U hoeft deze bewerking slechts **één keer per abonnement** uit te voeren.
+- **Registreer bij de naamruimte van de Batch-provider**. U hoeft deze bewerking slechts **één keer per abonnement** uit te voeren.
   
   ```powershell
   Register-AzResourceProvider -ProviderNamespace Microsoft.Batch
@@ -114,9 +114,9 @@ Wanneer u veel van deze cmdlets gebruikt, moet u niet alleen een BatchContext-ob
 
 ### <a name="create-a-batch-pool"></a>Batch-pool maken
 
-Wanneer u een batch-pool maakt of bijwerkt, selecteert u de Cloud Services-configuratie of de virtuele-machine configuratie voor het besturings systeem op de reken knooppunten (Zie [knoop punten en groepen](nodes-and-pools.md#configurations)). Als u de cloudserviceconfiguratie opgeeft, worden uw rekenknooppunten gerepliceerd met één van de [Azure-gastbesturingssysteemversies](../cloud-services/cloud-services-guestos-update-matrix.md#releases). Als u de VM-configuratie opgeeft, kunt u één van de ondersteunde Linux- of Windows-VM-installatiekopieën opgeven die worden vermeld in de [Azure Virtual Machines Marketplace][vm_marketplace], of u geeft een aangepaste installatiekopie op die u hebt gemaakt.
+Wanneer u een batch-pool maakt of bijwerkt, geeft u een [configuratie](nodes-and-pools.md#configurations)op. Pools moeten in het algemeen worden geconfigureerd met virtuele-machine configuratie, waarmee u een van de ondersteunde Linux-of Windows VM-installatie kopieën kunt opgeven die worden vermeld op de [Azure virtual machines Marketplace](https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images&page=1), of een aangepaste installatie kopie moeten bieden die u hebt voor bereid. Cloud Services-configuratie Pools bieden alleen Windows Compute-knoop punten en bieden geen ondersteuning voor alle batch-functies.
 
-Bij het uitvoeren van **New-AzBatchPool** geeft u de instellingen van het besturingssysteem door in een PSCloudServiceConfiguration- of PSVirtualMachineConfiguration-object. Met het volgende codefragment wordt bijvoorbeeld een Batch-groep gemaakt met rekenknooppunten met de grootte Standard_a1 in de configuratie van de virtuele machine, gerepliceerd met Ubuntu Server 18.04-LTS. Hier geeft de parameter **VirtualMachineConfiguration** de variabele *$configuration* op als het PSVirtualMachineConfiguration-object. Met de parameter **BatchContext** wordt een eerder gedefinieerde variabele *$context* opgegeven als het BatchAccountContext-object.
+Wanneer u **New-AzBatchPool** uitvoert, geeft u de instellingen van het besturings systeem door in een PSVirtualMachineConfiguration-of PSCloudServiceConfiguration-object. Met het volgende codefragment wordt bijvoorbeeld een Batch-groep gemaakt met rekenknooppunten met de grootte Standard_a1 in de configuratie van de virtuele machine, gerepliceerd met Ubuntu Server 18.04-LTS. Hier geeft de parameter **VirtualMachineConfiguration** de variabele *$configuration* op als het PSVirtualMachineConfiguration-object. Met de parameter **BatchContext** wordt een eerder gedefinieerde variabele *$context* opgegeven als het BatchAccountContext-object.
 
 ```powershell
 $imageRef = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSImageReference" -ArgumentList @("UbuntuServer","Canonical","18.04-LTS")
@@ -190,7 +190,10 @@ Get-AzBatchComputeNode -PoolId "myPool" -BatchContext $context | Restart-AzBatch
 
 ## <a name="application-package-management"></a>Beheer van toepassingspakketten
 
-Toepassingspakketten bieden een vereenvoudigde manier om toepassingen te implementeren op de rekenknooppunten in groepen. Met de Batch PowerShell-cmdlets kunt u toepassingspakketten in uw Batch-account uploaden en beheren, en pakketversies implementeren op rekenknooppunten.
+[Toepassings pakketten](batch-application-packages.md) bieden een vereenvoudigde manier om toepassingen te implementeren op de reken knooppunten in uw Pools. Met de Batch PowerShell-cmdlets kunt u toepassingspakketten in uw Batch-account uploaden en beheren, en pakketversies implementeren op rekenknooppunten.
+
+> [!IMPORTANT]
+> U moet een Azure Storage-account koppelen aan het Batch-account om toepassingspakketten te kunnen gebruiken.
 
 Een toepassing **maken** :
 
@@ -247,17 +250,13 @@ $appPackageReference.ApplicationId = "MyBatchApplication"
 $appPackageReference.Version = "1.0"
 ```
 
-Maak nu de configuratie en de groep. In dit voor beeld wordt de para meter **CloudServiceConfiguration** gebruikt voor een `PSCloudServiceConfiguration` type-object dat is geïnitialiseerd in `$configuration` , waarbij het **OSFamily** wordt ingesteld op `6` ' Windows Server 2019 ' en de initialisatie naar **OSVersion** `*` . Geef het pakket referentie object op als argument voor de `ApplicationPackageReferences` optie:
+Nu maakt u de adresgroep en geeft u het pakketverwijzingsobject op als het argument voor de optie `ApplicationPackageReferences`:
 
 ```powershell
-$configuration = New-Object -TypeName "Microsoft.Azure.Commands.Batch.Models.PSCloudServiceConfiguration" -ArgumentList @(6,"*")  # 6 = OSFamily 'Windows Server 2019'
-New-AzBatchPool -Id "PoolWithAppPackage" -VirtualMachineSize "Small" -CloudServiceConfiguration $configuration -BatchContext $context -ApplicationPackageReferences $appPackageReference
+New-AzBatchPool -Id "PoolWithAppPackage" -VirtualMachineSize "Small" -VirtualMachineConfiguration $configuration -BatchContext $context -ApplicationPackageReferences $appPackageReference
 ```
 
 Zie [Deploy applications to compute nodes with Batch application packages](batch-application-packages.md) (Toepassingen implementeren naar rekenknooppunten met Batch-toepassingspakketten) voor meer informatie over toepassingspakketten.
-
-> [!IMPORTANT]
-> U moet een Azure Storage-account koppelen aan het Batch-account om toepassingspakketten te kunnen gebruiken.
 
 ### <a name="update-a-pools-application-packages"></a>De toepassingspakketten van een groep bijwerken
 
@@ -272,7 +271,7 @@ $appPackageReference.Version = "2.0"
 
 ```
 
-Vervolgens haalt u de adresgroep op uit Batch, wist u eventuele bestaande pakketten, voegt u de nieuwe pakketverwijzing toe en werkt u de Batch-service bij met de nieuwe adresgroepinstellingen:
+Vervolgens haalt u de groep op uit batch, wist u eventuele bestaande pakketten, voegt u de nieuwe pakket verwijzing toe en werkt u de batch-service bij met de nieuwe groeps instellingen:
 
 ```powershell
 $pool = Get-AzBatchPool -BatchContext $context -Id "PoolWithAppPackage"
@@ -291,11 +290,9 @@ Get-AzBatchComputeNode -PoolId "PoolWithAppPackage" -BatchContext $context | Res
 ```
 
 > [!TIP]
-> U kunt meerdere toepassingspakketten op de rekenknooppunten in de adresgroep implementeren. Als u een toepassingspakket wilt *toevoegen* in plaats van de huidige geïmplementeerde pakketten te vervangen, laat dan de `$pool.ApplicationPackageReferences.Clear()`-regel hierboven weg.
+> U kunt meerdere toepassingspakketten op de rekenknooppunten in de adresgroep implementeren. Als u een toepassingspakket wilt toevoegen in plaats van de huidige geïmplementeerde pakketten te vervangen, laat dan de `$pool.ApplicationPackageReferences.Clear()`-regel hierboven weg.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [Naslaginformatie over Azure Batch-cmdlets](/powershell/module/az.batch) voor gedetailleerde cmdlet-syntaxis en voorbeelden.
-* Zie [Deploy applications to compute nodes with Batch application packages](batch-application-packages.md) (Toepassingen implementeren naar rekenknooppunten met Batch-toepassingspakketten) voor meer informatie over toepassingen en toepassingspakketten in Batch.
-
-[vm_marketplace]: https://azuremarketplace.microsoft.com/marketplace/apps/category/compute?filters=virtual-machine-images&page=1
+- Raadpleeg de [Azure batch cmdlet-Naslag informatie](/powershell/module/az.batch) voor gedetailleerde cmdlet-syntaxis en voor beelden.
+- Meer informatie over het [implementeren van toepassingen voor reken knooppunten met batch-toepassings pakketten](batch-application-packages.md).

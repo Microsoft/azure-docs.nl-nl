@@ -6,12 +6,12 @@ ms.topic: article
 ms.author: jpalma
 ms.date: 11/09/2020
 author: palma21
-ms.openlocfilehash: a1d045e66771026d2b4cf7ad44fd6943d2d407f4
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
+ms.openlocfilehash: c6160d36240b59c60fafa955b916fb6167c2648e
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701599"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685751"
 ---
 # <a name="control-egress-traffic-for-cluster-nodes-in-azure-kubernetes-service-aks"></a>Uitgaand verkeer beheren voor cluster knooppunten in azure Kubernetes service (AKS)
 
@@ -311,7 +311,7 @@ Azure Firewall binnenkomende en uitgaande regels moeten worden geconfigureerd. H
 
 > [!IMPORTANT]
 > Als uw cluster of toepassing een groot aantal uitgaande verbindingen maakt dat is omgeleid naar dezelfde of een kleine subset van bestemmingen, hebt u mogelijk meer frontend-Ip's van de firewall nodig om te voor komen dat de poorten per frontend-IP-adres worden maxing.
-> Zie hier voor meer informatie over het maken van een Azure-Firewall met meerdere IP-adressen. [ **here**](../firewall/quick-create-multiple-ip-template.md)
+> Zie hier voor meer informatie over het maken van een Azure-Firewall met meerdere IP-adressen. [ ](../firewall/quick-create-multiple-ip-template.md)
 
 Maak een open bare IP-resource van een standaard-SKU die wordt gebruikt als het front-Azure Firewall front-end-adres.
 
@@ -745,7 +745,7 @@ voting-storage     ClusterIP      10.41.221.201   <none>        3306/TCP       9
 
 De service-IP ophalen door uit te voeren:
 ```bash
-SERVICE_IP=$(k get svc voting-app -o jsonpath='{.status.loadBalancer.ingress[*].ip}')
+SERVICE_IP=$(kubectl get svc voting-app -o jsonpath='{.status.loadBalancer.ingress[*].ip}')
 ```
 
 Voeg de NAT-regel toe door uit te voeren:

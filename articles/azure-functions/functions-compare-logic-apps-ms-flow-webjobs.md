@@ -4,12 +4,12 @@ description: 'Vergelijk Microsoft cloud-services die zijn geoptimaliseerd voor i
 ms.topic: overview
 ms.date: 04/09/2018
 ms.custom: mvc
-ms.openlocfilehash: 81b143219fd0b53d4cd00761af6b767c173ed88d
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 95167791efe13526b0a70c28fa89771542a9d220
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934863"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685558"
 ---
 # <a name="choose-the-right-integration-and-automation-services-in-azure"></a>Kies de juiste integratie- en automatiseringsservices in Azure
 
@@ -79,7 +79,7 @@ Azure Functions is gebaseerd op de WebJobs SDK en deelt daarom veel triggers en 
 |  | Functions | WebJobs met WebJobs SDK |
 | --- | --- | --- |
 |**[App-model zonder server](https://azure.microsoft.com/solutions/serverless/) met [automatisch schalen](event-driven-scaling.md)**|✔||
-|**[Ontwikkelen en testen in de browser](functions-create-first-azure-function.md)** |✔||
+|**[Ontwikkelen en testen in de browser](./functions-get-started.md)** |✔||
 |**[Betalen per gebruik](consumption-plan.md)**|✔||
 |**[Integratie met Logic Apps](functions-twitter-email.md)**|✔||
 | **Trigger-gebeurtenissen** |[Timer](functions-bindings-timer.md)<br>[Azure Storage-wachtrijen en -blobs](functions-bindings-storage-blob.md)<br>[Azure Service Bus-wachtrijen en -onderwerpen](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Azure Event Hubs](functions-bindings-event-hubs.md)<br>[HTTP/WebHook (GitHub, Slack)](functions-bindings-http-webhook.md)<br>[Azure Event Grid](functions-bindings-event-grid.md)|[Timer](functions-bindings-timer.md)<br>[Azure Storage-wachtrijen en -blobs](functions-bindings-storage-blob.md)<br>[Azure Service Bus-wachtrijen en -onderwerpen](functions-bindings-service-bus.md)<br>[Azure Cosmos DB](functions-bindings-cosmosdb.md)<br>[Azure Event Hubs](functions-bindings-event-hubs.md)<br>[Bestandssysteem](https://github.com/Azure/azure-webjobs-sdk-extensions/blob/master/src/WebJobs.Extensions/Extensions/Files/FileTriggerAttribute.cs)|
@@ -124,4 +124,4 @@ Begin met het maken van uw eerste stroom, logische app of functie-app. Selecteer
 
 * [Aan de slag met Power Automate](/power-automate/getting-started)
 * [Een logische app maken](../logic-apps/quickstart-create-first-logic-app-workflow.md)
-* [Uw eerste Azure-functie maken](functions-create-first-azure-function.md)
+* [Uw eerste Azure-functie maken](./functions-get-started.md)

@@ -9,12 +9,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: how-to
 ms.date: 07/22/2020
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 243f6f26be592e2db82d8f46df3de9aafcd2078b
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b0760b86012504ea86e4a0cde36ae878e8ff3b26
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996981"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685734"
 ---
 # <a name="monitor-and-debug-with-metrics-in-azure-cosmos-db"></a>Controleren en fouten opsporen met metrische gegevens in Azure Cosmos DB
 [!INCLUDE[appliesto-all-apis](includes/appliesto-all-apis.md)]
@@ -77,7 +77,7 @@ Nadat u hebt vastgesteld welke partitie sleutel het hellen van de verdeling vero
 
 ## <a name="compare-data-size-against-index-size"></a>Gegevens grootte vergelijken met index grootte
 
-In Azure Cosmos DB is de totale hoeveelheid verbruikte opslag de combi natie van de gegevens grootte en de index grootte. Normaal gesp roken is de index grootte een fractie van de gegevens grootte. Op het tabblad opslag in de Blade metrische gegevens in de [Azure Portal](https://portal.azure.com)wordt de uitsplitsing van het opslag verbruik op basis van gegevens en index gedemonstreerd.
+In Azure Cosmos DB is de totale hoeveelheid verbruikte opslag de combi natie van de gegevens grootte en de index grootte. Normaal gesp roken is de index grootte een fractie van de gegevens grootte. Zie het artikel [Index grootte](index-policy.md#index-size) voor meer informatie. Op het tabblad opslag in de Blade metrische gegevens in de [Azure Portal](https://portal.azure.com)wordt de uitsplitsing van het opslag verbruik op basis van gegevens en index gedemonstreerd.
 
 ```csharp
 // Measure the document size usage (which includes the index size)  

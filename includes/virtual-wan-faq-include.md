@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 09/02/2020
 ms.author: cherylmc
 ms.custom: include file
-ms.openlocfilehash: 5aab11b31756ee8430e8ae4d54a2b3de5ea2e136
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.openlocfilehash: 8cd6f6a32071dc7bbd4aaccb92168cda009933a6
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97612613"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98690044"
 ---
 ### <a name="is-azure-virtual-wan-in-ga"></a>Is Azure Virtual WAN algemeen beschikbaar?
 
@@ -198,6 +198,9 @@ Wanneer VPN-sites verbinding maken met een hub, doen ze dit via verbindingen. Vi
 ### <a name="what-is-the-total-vpn-throughput-of-a-vpn-tunnel-and-a-connection"></a>Wat is de totale VPN-doorvoer van een VPN-tunnel en een -verbinding?
 
 De totale VPN-doorvoer van een hub is maximaal 20 Gbps op basis van de gekozen schaaleenheid van de VPN-gateway. De doorvoer wordt gedeeld door alle bestaande verbindingen. Elke tunnel in een verbinding kan maximaal 1 Gbps ondersteunen.
+
+### <a name="can-i-use-nat-t-on-my-vpn-connections"></a>Kan ik NAT-T op mijn VPN-verbindingen gebruiken?
+Ja, NAT-Traversal (NAT-T) wordt ondersteund. Met virtuele WAN-VPN Gateway wordt geen NAT-achtige functionaliteit uitgevoerd voor de interne pakketten van/naar de IPsec-tunnels. Controleer in deze configuratie of het on-premises apparaat de IPSec-tunnel initieert.
 
 ### <a name="i-dont-see-the-20-gbps-setting-for-the-virtual-hub-in-portal-how-do-i-configure-that"></a>De instelling van 20 Gbps wordt niet weergeven voor de virtuele hub in de portal. Hoe kan ik dit configureren?
 

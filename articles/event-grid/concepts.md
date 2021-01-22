@@ -2,13 +2,13 @@
 title: Azure Event Grid concepten
 description: Beschrijving van Azure Event Grid en de concepten ervan. Definieert verschillende belang rijke onderdelen van Event Grid.
 ms.topic: conceptual
-ms.date: 10/29/2020
-ms.openlocfilehash: 6cfb8b3aaf16a0080b9864ce5198b8a7232e8bc8
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.date: 01/21/2021
+ms.openlocfilehash: 6edc8a3980bfea15f28cfb7114bb9f8350a47a3f
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93075106"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685700"
 ---
 # <a name="concepts-in-azure-event-grid"></a>Concepten in Azure Event Grid
 
@@ -18,10 +18,7 @@ In dit artikel worden de belangrijkste concepten in Azure Event Grid beschreven.
 
 Een gebeurtenis is de kleinste hoeveelheid informatie die in het systeem volledig beschrijft wat er is gebeurd. Elke gebeurtenis heeft algemene informatie, zoals: bron van de gebeurtenis, het tijdstip waarop het evenement plaatsvond en de unieke id. Elke gebeurtenis bevat ook specifieke informatie die alleen relevant is voor het specifieke gebeurtenis type. Een gebeurtenis over het maken van een nieuw bestand in Azure Storage bevat bijvoorbeeld informatie over het bestand, zoals de waarde `lastTimeModified`. Een Event Hubs-gebeurtenis bevat de URL van het Capture-bestand. 
 
-Een gebeurtenis met een grootte van Maxi maal 64 KB wordt gedekt door de algemene Beschik baarheid (GA) Service Level Agreement (SLA). De ondersteuning voor een gebeurtenis met een grootte van Maxi maal 1 MB is momenteel als preview-versie beschikbaar. Gebeurtenissen van meer dan 64 KB worden in rekening gebracht in stappen van 64-KB. 
-
-
-Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor de eigenschappen die in een gebeurtenis worden verzonden.
+De Maxi maal toegestane grootte voor een gebeurtenis is 1 MB. Gebeurtenissen van meer dan 64 KB worden in rekening gebracht in stappen van 64-KB. Zie [Azure Event grid-gebeurtenis schema](event-schema.md)voor de eigenschappen die in een gebeurtenis worden verzonden.
 
 ## <a name="publishers"></a>Uitgevers
 
@@ -41,7 +38,7 @@ Het event grid-onderwerp bevat een eind punt waar gebeurtenissen door de bron wo
 
 **Aangepaste onderwerpen** zijn toepassingen en onderwerpen van derden. Wanneer u een aangepast onderwerp maakt of u er toegang toe krijgt, ziet u dat aangepaste onderwerp in uw abonnement. Zie [aangepaste onderwerpen](custom-topics.md)voor meer informatie. Bij het ontwerpen van uw toepassing hebt u de flexibiliteit bij het bepalen van het aantal te maken onderwerpen. Voor grote oplossingen maakt u een aangepast onderwerp voor elke categorie gerelateerde gebeurtenissen. Neem bijvoorbeeld een toepassing die gebeurtenissen over het bewerken van gebruikersaccounts en het verwerken van orders verzendt. De kans is klein dat er gebeurtenis-handlers zijn die beide gebeurteniscategorieën kunnen verwerken. Maak daarom twee aangepaste onderwerpen en laat gebeurtenis-handlers zich abonneren op het onderwerp dat hen interesseert. Voor kleine oplossingen kunt u de voor keur geven aan het verzenden van alle gebeurtenissen naar één onderwerp. Gebeurtenis abonnees kunnen filteren op de gewenste gebeurtenis typen.
 
-Er is een ander type onderwerp: **partner onderwerp** . Met de functie voor [partner gebeurtenissen](partner-events-overview.md) kan een SaaS-provider van derden gebeurtenissen van zijn Services publiceren om ze beschikbaar te maken voor gebruikers die zich op die gebeurtenissen kunnen abonneren. De SaaS-provider geeft een onderwerp, een **partner onderwerp** , dat abonnees gebruiken om gebeurtenissen te consumeren. Het biedt ook een schoon pub-submodel door problemen en eigendom van resources die worden gebruikt door gebeurtenis uitgevers en abonnees, te scheiden.
+Er is een ander type onderwerp: **partner onderwerp**. Met de functie voor [partner gebeurtenissen](partner-events-overview.md) kan een SaaS-provider van derden gebeurtenissen van zijn Services publiceren om ze beschikbaar te maken voor gebruikers die zich op die gebeurtenissen kunnen abonneren. De SaaS-provider geeft een onderwerp, een **partner onderwerp**, dat abonnees gebruiken om gebeurtenissen te consumeren. Het biedt ook een schoon pub-submodel door problemen en eigendom van resources die worden gebruikt door gebeurtenis uitgevers en abonnees, te scheiden.
 
 ## <a name="event-subscriptions"></a>Gebeurtenisabonnementen
 
@@ -76,10 +73,7 @@ Als Event Grid niet kan bevestigen dat er een gebeurtenis is ontvangen door het 
 
 ## <a name="batching"></a>Batchverwerking
 
-Wanneer u een aangepast onderwerp gebruikt, moeten gebeurtenissen altijd in een matrix worden gepubliceerd. Dit kan een batch zijn van één voor scenario's met een lage door Voer, maar voor het gebruik van grote volumes is het raadzaam om meerdere gebeurtenissen per publicatie op te nemen voor een hogere efficiëntie. Batches kunnen Maxi maal 1 MB groot zijn. Elke gebeurtenis mag nog steeds niet groter zijn dan 64 KB (algemene Beschik baarheid) of 1 MB (preview-versie).
-
-> [!NOTE]
-> Een gebeurtenis met een grootte van Maxi maal 64 KB wordt gedekt door de algemene Beschik baarheid (GA) Service Level Agreement (SLA). De ondersteuning voor een gebeurtenis met een grootte van Maxi maal 1 MB is momenteel als preview-versie beschikbaar. Gebeurtenissen van meer dan 64 KB worden gefactureerd in stappen van 64 KB. 
+Wanneer u een aangepast onderwerp gebruikt, moeten gebeurtenissen altijd in een matrix worden gepubliceerd. Dit kan een batch zijn van één voor scenario's met een lage door Voer, maar voor het gebruik van grote volumes is het raadzaam om meerdere gebeurtenissen per publicatie op te nemen voor een hogere efficiëntie. Batches kunnen Maxi maal 1 MB groot zijn en de maximale grootte van een gebeurtenis is 1 MB. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

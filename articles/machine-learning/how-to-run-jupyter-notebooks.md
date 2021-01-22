@@ -11,12 +11,12 @@ ms.subservice: core
 ms.topic: conceptual
 ms.custom: how-to
 ms.date: 01/19/2021
-ms.openlocfilehash: cdd8783daf9e1e1458f47e773eb3b6ccedfbae83
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: d6832238b0c76059079e2a1330d31eed3212b242
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624554"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685575"
 ---
 # <a name="how-to-run-jupyter-notebooks-in-your-workspace"></a>Hoe u Jupyter-notebooks uitvoert in uw werkruimte
 
@@ -230,6 +230,7 @@ Het notitie blok vindt automatisch alle Jupyter-kernels die zijn geïnstalleerd 
     conda install -y ipykernel
     python -m ipykernel install --user --name newenv --display-name "Python (newenv)"
     ```
+1. Nadat u de kernel hebt geïnstalleerd, moet u de pagina vernieuwen en een notitie blok openen. De nieuwe kernel wordt nu weer geven in de lijst met kernels.
 
 > [!NOTE]
 > Voor pakket beheer binnen een notebook gebruikt u **% PIP** of **% Conda** Magic functions om pakketten automatisch te installeren in de **kernel die momenteel wordt uitgevoerd**, in plaats van **! PIP** of **! Conda** die verwijst naar alle pakketten (inclusief pakketten buiten de actieve kernel)
@@ -264,7 +265,7 @@ Een cel bevindt zich in de opdracht modus als er geen tekst cursor wordt gevraag
 
    :::image type="content" source="media/how-to-run-jupyter-notebooks/command-mode.png" alt-text="Notebook-cel in de opdracht modus ":::
 
-| Shortcutdimensie                      | Description                          |
+| Shortcutdimensie                      | Beschrijving                          |
 | ----------------------------- | ------------------------------------|
 | Enter                         | De modus Bewerken openen             |        
 | Shift+Enter                 | Run-cel, hieronder selecteren         |     
@@ -308,7 +309,7 @@ De bewerkings modus wordt aangegeven door een tekst cursor waarin u wordt gevraa
 
 Met de volgende sneltoetsen kunt u gemakkelijker code in Azure Machine Learning notitie blokken navigeren en uitvoeren in de bewerkings modus.
 
-| Shortcutdimensie                      | Description|                                     
+| Shortcutdimensie                      | Beschrijving|                                     
 | ----------------------------- | ----------------------------------------------- |
 | Escape                        | Voer de opdracht modus in|  
 | Control/Command + Space       | IntelliSense activeren |

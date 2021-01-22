@@ -1,25 +1,25 @@
 ---
-title: Informatie over naleving van regelgeving met Azure Security Benchmark
-description: Informatie over het ingebouwde initiatief voor naleving van regelgeving in Azure Security Benchmark. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 01/08/2021
+title: Details van de naleving van de regelgeving voor Azure Security Bench Mark v1
+description: Details van de Azure Security Bench Mark v1-regelgeving voor naleving ingebouwde initiatief. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
+ms.date: 01/21/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 3768db8662f84cf33aac54be61ba1cdd7f885c84
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 4bfef8f3cf0e3b001834dc28e990b24c0ae3ac78
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046291"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685676"
 ---
-# <a name="details-of-the-azure-security-benchmark-regulatory-compliance-built-in-initiative"></a>Informatie over het ingebouwde initiatief voor naleving van regelgeving in Azure Security Benchmark
+# <a name="details-of-the-azure-security-benchmark-v1-regulatory-compliance-built-in-initiative"></a>Details van de Azure Security Bench Mark v1-regelgeving voor naleving ingebouwde initiatief
 
-Het volgende artikel beschrijft hoe de definitie van het ingebouwde initiatief voor naleving van regelgeving in Azure Policy wordt toegewezen aan **nalevingsdomeinen** en **beheeropties** in Azure Security Benchmark.
-Zie [Azure Security Benchmark](../../../security/benchmarks/overview.md)voor meer informatie over deze nalevingsstandaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
+Het volgende artikel bevat informatie over de wijze waarop de Azure Policy reglementaire nalevings definitie voor naleving is gekoppeld aan **compatibiliteits domeinen** en **besturings elementen** in azure Security Bench Mark v1.
+Zie [Azure Security Bench Mark v1](../../../security/benchmarks/overview.md)(Engelstalig) voor meer informatie over deze nalevings standaard. Zie [Azure Policy-beleidsdefinitie](../concepts/definition-structure.md#type) en [Gedeelde verantwoordelijkheid in de Cloud](../../../security/fundamentals/shared-responsibility.md) om _Eigendom_ te begrijpen.
 
-De volgende toewijzingen zijn aan de beheeropties van **Azure Security Benchmark**. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
+De volgende toewijzingen zijn de **Azure Security Bench Mark v1** -besturings elementen. Gebruik de navigatie aan de rechterkant om rechtstreeks naar een toewijzing van een specifiek **nalevingsdomein** te gaan. Veel van de beheeropties worden geïmplementeerd met een [Azure Policy](../overview.md)-initiatiefdefinitie. Als u de complete initiatiefdefinitie wilt bekijken, opent u **Beleid** in de Azure-portal en selecteert u de pagina **Definities**.
 Ga vervolgens naar de ingebouwde initiatiefdefinitie voor naleving van regelgeving in **Azure Security Benchmark v1**, en selecteer deze.
 
-Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdrukvoorbeeld van Azure Security Benchmark](../../blueprints/samples/azure-security-benchmark.md).
+Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [Azure Security Bench Mark v1 blauw druk](../../blueprints/samples/azure-security-benchmark.md)-voor beeld.
 
 > [!IMPORTANT]
 > Elke beheeroptie hieronder is gekoppeld aan een of meer [Azure Policy](../overview.md)-definities.

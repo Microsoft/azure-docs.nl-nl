@@ -8,12 +8,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 07/23/2020
 ms.reviewer: sngun
-ms.openlocfilehash: 165fb2937db5edfa4f51f62033afaf87cfff83ef
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: 9eb2b916bfe6c73a1535afb077b04fbb081dd5f1
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353099"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685717"
 ---
 # <a name="unique-key-constraints-in-azure-cosmos-db"></a>Beperkingen voor unieke sleutels in Azure Cosmos DB
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -22,7 +22,7 @@ Unieke sleutels voegen een laag van gegevens integriteit toe aan een Azure Cosmo
 
 Nadat u een container met een beleid met unieke sleutels hebt gemaakt, wordt het maken van een nieuwe of een update van een bestaand item dat resulteert in een duplicaat in een logische partitie, voor komen, zoals opgegeven door de beperking van de unieke sleutel. De partitie sleutel in combi natie met de unieke sleutel garandeert de uniekheid van een item binnen het bereik van de container.
 
-Denk bijvoorbeeld aan een Azure Cosmos-container met e-mail adres als de unieke-sleutel beperking en `CompanyID` als de partitie sleutel. Wanneer u het e-mail adres van de gebruiker met een unieke sleutel configureert, heeft elk item een uniek e-mail adres binnen een gegeven `CompanyID` . Twee items kunnen niet worden gemaakt met dubbele e-mail adressen en met dezelfde partitie sleutel waarde. In de SQL-API (core) van Azure Cosmos DB worden items opgeslagen als JSON-waarden. Deze JSON-waarden zijn hoofdletter gevoelig. Wanneer u een eigenschap kiest als een unieke sleutel, kunt u hoofdletter gevoelige waarden voor die eigenschap invoegen. Als u bijvoorbeeld een unieke sleutel hebt gedefinieerd voor de eigenschap naam, komt ' Gaby ' niet overeen met ' Gaby ' en kunt u beide invoegen in de container.
+Denk bijvoorbeeld aan een Azure Cosmos-container met `Email address` als de unieke sleutel beperking en `CompanyID` als de partitie sleutel. Wanneer u het e-mail adres van de gebruiker met een unieke sleutel configureert, heeft elk item een uniek e-mail adres binnen een gegeven `CompanyID` . Twee items kunnen niet worden gemaakt met dubbele e-mail adressen en met dezelfde partitie sleutel waarde. In de SQL-API (core) van Azure Cosmos DB worden items opgeslagen als JSON-waarden. Deze JSON-waarden zijn hoofdletter gevoelig. Wanneer u een eigenschap kiest als een unieke sleutel, kunt u hoofdletter gevoelige waarden voor die eigenschap invoegen. Als u bijvoorbeeld een unieke sleutel hebt gedefinieerd voor de eigenschap naam, komt ' Gaby ' niet overeen met ' Gaby ' en kunt u beide invoegen in de container.
 
 Als u items met hetzelfde e-mail adres wilt maken, maar niet dezelfde voor naam, achternaam en e-mail adres, voegt u meer paden toe aan het beleid voor unieke sleutels. In plaats van een unieke sleutel te maken op basis van het e-mail adres, kunt u ook een unieke sleutel maken met een combi natie van de voor naam, achternaam en e-mail adres. Deze sleutel wordt ook wel een samengestelde unieke sleutel genoemd. In dit geval is elke unieke combi natie van de drie waarden binnen een opgegeven `CompanyID` toegestaan. 
 

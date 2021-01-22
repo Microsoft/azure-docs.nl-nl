@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 4ba06af98714004e4429fe802a206acdfa8fb148
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 117bc71ba304445e3186b4e633f5888647be9223
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127614"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685626"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -77,7 +77,7 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
     + De XREF-waarschuwingen voor documentatie in het azureml core-pakket herstellen
     + Doc-teken reeks oplossingen voor de functie opdracht ondersteuning in SDK
     + Opdracht eigenschap toevoegen aan RunConfiguration. Met deze functie kunnen gebruikers een daad werkelijke opdracht of uitvoer bare bestanden uitvoeren op de compute via de AzureML-SDK.
-    + Gebruikers kunnen een leeg experiment verwijderen, gezien de id van het experiment.
+    + Gebruikers kunnen een leeg experiment verwijderen, gezien de ID van het experiment.
   + **azureml-dataprep**
     + Er is ondersteuning toegevoegd voor de gegevensset voor Spark die is gebouwd met scala 2,12. Hiermee wordt de bestaande 2,11-ondersteuning toegevoegd.
   + **azureml-mlflow**
@@ -149,7 +149,7 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
     + Het opgeven van invoer-en uitvoer namen van een gegevensset die de kans op conflicten met gemeen schappelijke omgevings variabelen hebben, resulteren nu in een waarschuwing
     + De para meter is opnieuw bedoelt `grant_workspace_access` bij het registreren van gegevens opslag. Stel deze in op `True` om toegang te krijgen tot gegevens achter het virtuele netwerk vanaf machine learning Studio.
       [Meer informatie](./how-to-enable-studio-virtual-network.md)
-    + De API van de gekoppelde service is verfijnd. In plaats van een resource-id op te geven, hebben we drie afzonderlijke para meters sub_id, RG en de naam gedefinieerd in de configuratie.
+    + De API van de gekoppelde service is verfijnd. In plaats van een resource-ID op te geven, hebben we drie afzonderlijke para meters sub_id, RG en de naam gedefinieerd in de configuratie.
     + Als u wilt dat klanten zelf problemen met token beschadiging kunnen oplossen, kunt u de synchronisatie van werk ruimte-tokens op een open bare manier inschakelen.
     + Met deze wijziging kan een lege teken reeks worden gebruikt als waarde voor een script_param
   + **azureml-train-automl-client**
@@ -1421,7 +1421,7 @@ Toegang tot de volgende webgebaseerde hulp middelen voor ontwerpen vanuit Studio
 
 ### <a name="r-sdk"></a>R SDK 
  
-Gegevens wetenschappers en AI-ontwikkel aars gebruiken de [Azure machine learning SDK voor R](tutorial-1st-r-experiment.md) om machine learning werk stromen met Azure machine learning te bouwen en uit te voeren.
+Gegevens wetenschappers en AI-ontwikkel aars gebruiken de [Azure machine learning SDK voor R](https://github.com/Azure/azureml-sdk-for-r) om machine learning werk stromen met Azure machine learning te bouwen en uit te voeren.
 
 De Azure Machine Learning SDK voor R gebruikt het `reticulate` pakket om een verbinding te maken met de python-SDK. Door rechtstreeks aan python te binden, kunt u met de SDK voor R toegang krijgen tot kern objecten en methoden die zijn geïmplementeerd in de python-SDK vanuit elke R-omgeving die u kiest.
 
@@ -1597,13 +1597,13 @@ Azure Machine Learning is nu een resource provider voor Event Grid, kunt u machi
   + **azureml-Train-automl**
     + Als u een [experiment](/python/api/azureml-core/azureml.core.experiment.experiment) object maakt, wordt het experiment in de Azure machine learning-werk ruimte gemaakt, zodat het bijhouden van de uitvoerings geschiedenis kan worden uitgevoerd. Het experiment-ID en de gearchiveerde tijd worden gevuld in het object experiment bij het maken. Voorbeeld:
 
-        ```py
+        ```python
         experiment = Experiment(workspace, "New Experiment")
         experiment_id = experiment.id
         ```
         [Archive ()](/python/api/azureml-core/azureml.core.experiment.experiment#archive--) en [reactivate ()](/python/api/azureml-core/azureml.core.experiment.experiment#reactivate-new-name-none-) zijn functies die kunnen worden aangeroepen voor een experiment om het experiment te verbergen en te herstellen, zodat het niet wordt weer gegeven in de UX of standaard wordt geretourneerd in een aanroep naar lijst experimenten. Als een nieuw experiment wordt gemaakt met dezelfde naam als een gearchiveerd experiment, kunt u de naam van het gearchiveerde experiment wijzigen door een nieuwe naam door te geven. Er kan slechts één actief experiment met een bepaalde naam zijn. Voorbeeld:
 
-        ```py
+        ```python
         experiment1 = Experiment(workspace, "Active Experiment")
         experiment1.archive()
         # Create new active experiment with the same name as the archived.
@@ -1612,7 +1612,7 @@ Azure Machine Learning is nu een resource provider voor Event Grid, kunt u machi
         ```
         De [lijst met statische methoden ()](/python/api/azureml-core/azureml.core.experiment.experiment#list-workspace--experiment-name-none--view-type--activeonly---tags-none-) in experiment kan een naam filter en een View type-filter hebben. View type-waarden zijn ' ACTIVE_ONLY ', ' ARCHIVED_ONLY ' en ' ALL '. Voorbeeld:
 
-        ```py
+        ```python
         archived_experiments = Experiment.list(workspace, view_type="ARCHIVED_ONLY")
         all_first_experiments = Experiment.list(workspace, name="First Experiment", view_type="ALL")
         ```
@@ -1768,7 +1768,7 @@ Het tabblad experiment in de [nieuwe werkruimte Portal](https://ml.azure.com) is
     + Er is ondersteuning toegevoegd voor dockerfile in de `environment_definition` para meter in de schattingen.
     + Vereenvoudigde gedistribueerde trainings parameters in schattingen.
 
-         ```py
+         ```python
         from azureml.train.dnn import TensorFlow, Mpi, ParameterServer
         ```
 
@@ -1820,14 +1820,14 @@ Op het moment van deze release worden de volgende browsers ondersteund: Chrome, 
   + **azureml-core**
     + Introduceer Dataset.get_all (werk ruimte), die een woorden boek van `TabularDataset` en `FileDataset` objecten retourneert op basis van hun registratie naam.
 
-    ```py
+    ```python
     workspace = Workspace.from_config()
     all_datasets = Dataset.get_all(workspace)
     mydata = all_datasets['my-data']
     ```
 
     + Als argument inintroducen `parition_format` voor `Dataset.Tabular.from_delimited_files` en `Dataset.Tabular.from_parquet.files` . De partitie gegevens van elk gegevenspad worden geëxtraheerd in kolommen op basis van de opgegeven indeling. {column_name} maakt een teken reeks kolom, en {column_name: JJJJ/MM/DD/uu/mm/SS} maakt de kolom datetime, waarbij ' jjjj ', ' MM ', ' DD ', ' HH ', ' mm ' en ' ss ' worden gebruikt voor het uitpakken van jaar, maand, dag, uur, minuut en seconde voor het type datum/tijd. Het partition_format moet beginnen met de positie van de eerste partitie sleutel tot het einde van het bestandspad. Bijvoorbeeld, op basis van het pad '.. /USA/2019/01/01/data.csv ' waarbij de partitie zich bevindt op land en tijd, partition_format = '/{Country}/{PartitionDate: JJJJ/MM/DD}/data.csv ' maakt teken reeks kolom ' land ' met waarde ' USA ' en datum/tijd kolom ' PartitionDate ' met de waarde ' 2019-01-01 '.
-        ```py
+        ```python
         workspace = Workspace.from_config()
         all_datasets = Dataset.get_all(workspace)
         mydata = all_datasets['my-data']
@@ -2239,7 +2239,7 @@ De [`PipelineEndpoint`](/python/api/azureml-pipeline-core/azureml.pipeline.core.
 
 ### <a name="azure-machine-learning-sdk-for-python-v1018"></a>Azure Machine Learning SDK voor python v-1.0.18
 
- + **Gewijzigde**
+ + **Wijzigingen**
    + Het azureml-tensorboard-pakket vervangt azureml-contrib-tensorboard.
    + Met deze release kunt u een gebruikers account instellen op uw beheerde Compute-Cluster (amlcompute), terwijl u het maakt. U kunt dit doen door deze eigenschappen door te geven in de inrichtings configuratie. Meer informatie kunt u vinden in de [SDK-referentie documentatie](/python/api/azureml-core/azureml.core.compute.amlcompute.amlcompute#provisioning-configuration-vm-size-----vm-priority--dedicated---min-nodes-0--max-nodes-none--idle-seconds-before-scaledown-none--admin-username-none--admin-user-password-none--admin-user-ssh-key-none--vnet-resourcegroup-name-none--vnet-name-none--subnet-name-none--tags-none--description-none--remote-login-port-public-access--notspecified--).
 

@@ -1,23 +1,24 @@
 ---
-title: Azure Cloud Services beheren met Azure Automation | Microsoft Docs
+title: Azure Cloud Services (klassiek) beheren met Azure Automation | Microsoft Docs
 description: Meer informatie over hoe de Azure Automation-Service kan worden gebruikt voor het beheren van Azure Cloud Services op schaal.
-services: cloud-services, automation
-author: jodoglevy
-manager: timlt
-editor: ''
-ms.assetid: 3789810a-2892-4eef-bf29-c781c1b5af48
-ms.service: cloud-services
 ms.topic: article
-ms.date: 06/20/2016
-ms.author: timlt
-ms.openlocfilehash: 67830f8c00d9f74f62883e0714ffe1c2bbbd6903
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 530efd09f3632637c6a12648495dcff0e7bf0e6d
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075617"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743488"
 ---
-# <a name="managing-azure-cloud-services-using-azure-automation"></a>Azure Cloud Services beheren met Azure Automation
+# <a name="managing-azure-cloud-services-classic-using-azure-automation"></a>Azure Cloud Services (klassiek) beheren met Azure Automation
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 In deze hand leiding vindt u informatie over de Azure Automation-Service en hoe u deze kunt gebruiken om het beheer van uw Azure-Cloud Services te vereenvoudigen.
 
 ## <a name="what-is-azure-automation"></a>Wat is Azure Automation?

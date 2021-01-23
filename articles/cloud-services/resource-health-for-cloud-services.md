@@ -1,20 +1,25 @@
 ---
 title: Resource Health voor Cloud Services (klassiek)
 description: Dit artikel spreekt over Resource Health Check-ondersteuning (RHC) voor Microsoft Azure Cloud Services (klassiek)
-services: cloud-services
-author: tanmaygore
-ms.service: cloud-services
 ms.topic: article
-ms.date: 9/1/2020
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: f99dd8131df9f8bc5d3e4013d4438faa8c25e53b
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 37294e681066eb27ace69bcacee3a813b750b8eb
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92072710"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743505"
 ---
 # <a name="resource-health-check-rhc-support-for-azure-cloud-services-classic"></a>Resource Health Check-ondersteuning (RHC) voor Azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Dit artikel spreekt over Resource Health Check-ondersteuning (RHC) voor [Microsoft Azure Cloud Services (klassiek)](https://azure.microsoft.com/services/cloud-services)
 
 [Azure resource Health](../service-health/resource-health-overview.md) voor Cloud Services helpt u bij het vaststellen en verkrijgen van ondersteuning voor service problemen die van invloed zijn op de implementatie van uw Cloud service, rollen & rolinstanties. Het rapporteert over de huidige en eerdere status van uw Cloud Services tijdens de implementatie, Role & Role-instantie niveau.

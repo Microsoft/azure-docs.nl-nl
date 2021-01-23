@@ -3,12 +3,12 @@ title: Versleuteling van back-upgegevens met door de klant beheerde sleutels
 description: Meer informatie over hoe u met Azure Backup uw back-upgegevens kunt versleutelen met behulp van door de klant beheerde sleutels (CMK).
 ms.topic: conceptual
 ms.date: 07/08/2020
-ms.openlocfilehash: 30bcf907e1a2759c8a9977e50cb4880c2e254ca2
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: d5daa88475e3becde6e513391c555471f80396c5
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562757"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735857"
 ---
 # <a name="encryption-of-backup-data-using-customer-managed-keys"></a>Versleuteling van back-upgegevens met door de klant beheerde sleutels
 
@@ -77,7 +77,7 @@ Azure Backup maakt gebruik van door het systeem toegewezen beheerde identiteit o
 
 **Met Power shell:**
 
-Gebruik de opdracht [Update-AzRecoveryServicesVault](https://docs.microsoft.com/powershell/module/az.recoveryservices/update-azrecoveryservicesvault) om door het systeem toegewezen beheerde identiteit voor de Recovery Services-kluis in te scha kelen.
+Gebruik de opdracht [Update-AzRecoveryServicesVault](/powershell/module/az.recoveryservices/update-azrecoveryservicesvault) om door het systeem toegewezen beheerde identiteit voor de Recovery Services-kluis in te scha kelen.
 
 Voorbeeld:
 
@@ -121,7 +121,7 @@ U moet nu toestaan dat de Recovery Services kluis toegang heeft tot de Azure Key
 
 **Met Power shell**:
 
-Gebruik de opdracht [set-AzRecoveryServicesVaultProperty](https://docs.microsoft.com/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultproperty) om versleuteling in te scha kelen met door de klant beheerde sleutels en om de versleutelings sleutel die moet worden gebruikt, toe te wijzen of bij te werken.
+Gebruik de opdracht [set-AzRecoveryServicesVaultProperty](/powershell/module/az.recoveryservices/set-azrecoveryservicesvaultproperty) om versleuteling in te scha kelen met door de klant beheerde sleutels en om de versleutelings sleutel die moet worden gebruikt, toe te wijzen of bij te werken.
 
 Voorbeeld:
 
@@ -290,7 +290,7 @@ De schijf versleutelings set is opgegeven onder versleutelings instellingen in h
 
 **Met Power shell**:
 
-Gebruik de opdracht [Get-AzRecoveryServicesBackupItem](https://docs.microsoft.com/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem) met de para meter [ `-DiskEncryptionSetId <string>` ] om [de des](https://docs.microsoft.com/powershell/module/az.compute/get-azdiskencryptionset) op te geven die moet worden gebruikt voor het versleutelen van de herstelde schijf. Zie [dit artikel](https://docs.microsoft.com/azure/backup/backup-azure-vms-automation#restore-an-azure-vm)voor meer informatie over het herstellen van schijven uit een back-up van de virtuele machine.
+Gebruik de opdracht [Get-AzRecoveryServicesBackupItem](/powershell/module/az.recoveryservices/get-azrecoveryservicesbackupitem) met de para meter [ `-DiskEncryptionSetId <string>` ] om [de des](/powershell/module/az.compute/get-azdiskencryptionset) op te geven die moet worden gebruikt voor het versleutelen van de herstelde schijf. Zie [dit artikel](./backup-azure-vms-automation.md#restore-an-azure-vm)voor meer informatie over het herstellen van schijven uit een back-up van de virtuele machine.
 
 Voorbeeld:
 

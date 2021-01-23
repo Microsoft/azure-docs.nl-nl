@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: virtual-machines-windows
 ms.subservice: imaging
 ms.reviewer: danis
-ms.openlocfilehash: 94e3b95e5e1d3c65550046c5db56e0f783fd60c3
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 8ae41167b642be75c7bb99042bca829fd8c1728e
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976280"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736346"
 ---
 # <a name="use-azure-image-builder-for-windows-vms-allowing-access-to-an-existing-azure-vnet"></a>Azure Image Builder voor Windows-Vm's gebruiken om toegang te krijgen tot een bestaand Azure VNET
 
@@ -90,7 +90,7 @@ Maak de resourcegroep.
 New-AzResourceGroup -Name $imageResourceGroup -Location $location
 ```
 
-## <a name="configure-networking"></a>Netwerk configureren
+## <a name="configure-networking"></a>Netwerken configureren
 
 Als u geen bestaande VNET\Subnet\NSG hebt, gebruikt u het volgende script om er een te maken.
 
@@ -233,7 +233,7 @@ $buildJsonStatus
 
 ```
 
-De installatie kopie die voor dit voor beeld wordt gebouwd, duurt ongeveer 50 minuten (meerdere keer opnieuw opstarten, Windows Update wordt geïnstalleerd/opnieuw opgestart) wanneer u een query op de status uitvoert, moet u naar *lastRunStatus*zoeken, hieronder ziet u dat de build nog steeds wordt uitgevoerd, als deze is voltooid.
+De installatie kopie die voor dit voor beeld wordt gebouwd, duurt ongeveer 50 minuten (meerdere keer opnieuw opstarten, Windows Update wordt geïnstalleerd/opnieuw opgestart) wanneer u een query op de status uitvoert, moet u naar *lastRunStatus* zoeken, hieronder ziet u dat de build nog steeds wordt uitgevoerd, als deze is voltooid.
 
 ```text
   "lastRunStatus": {
@@ -258,7 +258,7 @@ $runOutJsonStatus
 ```
 ## <a name="create-a-vm"></a>Een virtuele machine maken
 
-Nu de build is voltooid, kunt u een VM maken op basis van de installatie kopie. Gebruik de voor beelden van de [Power shell-New-AzVM documentatie](/powershell/module/az.compute/new-azvm?view=azps-2.5.0#description).
+Nu de build is voltooid, kunt u een VM maken op basis van de installatie kopie. Gebruik de voor beelden van de [Power shell-New-AzVM documentatie](/powershell/module/az.compute/new-azvm#description).
 
 ## <a name="clean-up"></a>Opschonen
 

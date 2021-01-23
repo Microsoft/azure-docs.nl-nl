@@ -366,6 +366,8 @@
           href: sql-data-warehouse-restore-deleted-dw.md
         - name: Herstellen vanaf geo-back-up
           href: sql-data-warehouse-restore-from-geo-backup.md
+        - name: Geo-back-ups uitschakelen
+          href: disable-geo-backup.md
     - name: Integreren
       items:
         - name: Machine Learning gebruiken

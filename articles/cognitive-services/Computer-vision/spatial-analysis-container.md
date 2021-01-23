@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: bb40586a93a40c2aaa3f0f884a0e747f168c324b
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: db21f1170dacbfa1e4367e7f22143ec3d0b0f6e4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186055"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737333"
 ---
 # <a name="install-and-run-the-spatial-analysis-container-preview"></a>De container voor ruimtelijke analyse installeren en uitvoeren (preview-versie)
 
@@ -62,7 +62,7 @@ In dit artikel downloadt en installeert u de volgende software pakketten. De hos
 * [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) runtime.
 
 #### <a name="azure-vm-with-gpu"></a>[Azure VM met GPU](#tab/virtual-machine)
-In ons voor beeld gebruiken we een VM- [serie](https://docs.microsoft.com/azure/virtual-machines/nc-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) met één K80-GPU.
+In ons voor beeld gebruiken we een VM- [serie](../../virtual-machines/nc-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) met één K80-GPU.
 
 ---
 
@@ -266,7 +266,7 @@ sudo az iot hub device-identity create --hub-name "test-iot-hub-123" --device-id
 
 Als de hostcomputer geen Azure Stack edge-apparaat is, moet u [Azure IOT Edge](../../iot-edge/how-to-install-iot-edge.md) versie 1.0.9 installeren. Volg deze stappen om de juiste versie te downloaden:
 
-Ubuntu-Server 18,04:
+Ubuntu Server 18.04:
 ```bash
 curl https://packages.microsoft.com/config/ubuntu/18.04/multiarch/prod.list > ./microsoft-prod.list
 ```
@@ -276,7 +276,7 @@ Kopieer de gegenereerde lijst.
 sudo cp ./microsoft-prod.list /etc/apt/sources.list.d/
 ```
 
-Installeer de open bare sleutel van micro soft GPG.
+Installeer de openbare Microsoft GPG-sleutel.
 
 ```bash
 curl https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor > microsoft.gpg
@@ -309,13 +309,13 @@ Open op de hostcomputer  `/etc/iotedge/config.yaml` om te bewerken. Vervang door
 sudo systemctl restart iotedge
 ```
 
-Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer, hetzij van de [Azure Portal](../../iot-edge/how-to-deploy-modules-portal.md) of [Azure cli](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows). Als u de portal gebruikt, stelt u de afbeeldings-URI in op de locatie van uw Azure Container Registry. 
+Implementeer de container voor ruimtelijke analyse als een IoT-module op de hostcomputer, hetzij van de [Azure Portal](../../iot-edge/how-to-deploy-modules-portal.md) of [Azure cli](../cognitive-services-apis-create-account-cli.md?tabs=windows). Als u de portal gebruikt, stelt u de afbeeldings-URI in op de locatie van uw Azure Container Registry. 
 
 Gebruik de onderstaande stappen om de container te implementeren met behulp van de Azure CLI.
 
 #### <a name="azure-vm-with-gpu"></a>[Azure VM met GPU](#tab/virtual-machine)
 
-Een virtuele machine van Azure met een GPU kan ook worden gebruikt om ruimtelijke analyse uit te voeren. In het volgende voor beeld wordt een VM van de [NC-serie](https://docs.microsoft.com/azure/virtual-machines/nc-series?toc=/azure/virtual-machines/linux/toc.json&bc=/azure/virtual-machines/linux/breadcrumb/toc.json) gebruikt die één K80-GPU heeft.
+Een virtuele machine van Azure met een GPU kan ook worden gebruikt om ruimtelijke analyse uit te voeren. In het volgende voor beeld wordt een VM van de [NC-serie](../../virtual-machines/nc-series.md?bc=%2fazure%2fvirtual-machines%2flinux%2fbreadcrumb%2ftoc.json&toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json) gebruikt die één K80-GPU heeft.
 
 #### <a name="create-the-vm"></a>De VM maken
 
@@ -335,7 +335,7 @@ Selecteer vervolgens **nc6** of **NC6_Promo**.
 
 Maak vervolgens de virtuele machine. Nadat u hebt gemaakt, gaat u naar de VM-resource in de Azure Portal en selecteert u in `Extensions` het linkerdeel venster. Het venster extensies wordt weer gegeven met alle beschik bare uitbrei dingen. Selecteer `NVIDIA GPU Driver Extension` , klik op maken en voltooi de wizard.
 
-Zodra de uitbrei ding met succes is toegepast, gaat u naar de hoofd pagina van de VM in de Azure Portal en klikt u op `Connect` . U kunt toegang krijgen tot de virtuele machine via SSH of RDP. RDP is handig als het weer geven van het venster voor het visualiseren van Vensters wordt ingeschakeld (later uitgelegd). Configureer de RDP-toegang door de volgende [stappen uit te voeren](https://docs.microsoft.com/azure/virtual-machines/linux/use-remote-desktop) en een verbinding met een extern bureau blad te openen met de virtuele machine.
+Zodra de uitbrei ding met succes is toegepast, gaat u naar de hoofd pagina van de VM in de Azure Portal en klikt u op `Connect` . U kunt toegang krijgen tot de virtuele machine via SSH of RDP. RDP is handig als het weer geven van het venster voor het visualiseren van Vensters wordt ingeschakeld (later uitgelegd). Configureer de RDP-toegang door de volgende [stappen uit te voeren](../../virtual-machines/linux/use-remote-desktop.md) en een verbinding met een extern bureau blad te openen met de virtuele machine.
 
 ### <a name="verify-graphics-drivers-are-installed"></a>Controleren of grafische Stuur Programma's zijn geïnstalleerd
 
@@ -426,7 +426,7 @@ In de volgende tabel ziet u de verschillende omgevings variabelen die worden geb
 > [!IMPORTANT]
 > De `Eula` `Billing` Opties, en `ApiKey` moeten worden opgegeven om de container uit te voeren. anders wordt de container niet gestart.  Zie [facturering](#billing)voor meer informatie.
 
-Zodra u het implementatie manifest voor [Azure stack edge-apparaten](https://go.microsoft.com/fwlink/?linkid=2142179), [een desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270) of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) met uw eigen instellingen en een selectie van bewerkingen hebt bijgewerkt, kunt u de onderstaande [Azure cli](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows) -opdracht gebruiken om de container op de hostcomputer te implementeren, als een IOT Edge-module.
+Zodra u het implementatie manifest voor [Azure stack edge-apparaten](https://go.microsoft.com/fwlink/?linkid=2142179), [een desktop machine](https://go.microsoft.com/fwlink/?linkid=2152270) of [Azure VM met GPU](https://go.microsoft.com/fwlink/?linkid=2152189) met uw eigen instellingen en een selectie van bewerkingen hebt bijgewerkt, kunt u de onderstaande [Azure cli](../cognitive-services-apis-create-account-cli.md?tabs=windows) -opdracht gebruiken om de container op de hostcomputer te implementeren, als een IOT Edge-module.
 
 ```azurecli
 sudo az login
@@ -457,7 +457,7 @@ U moet [ruimtelijke analyse bewerkingen](spatial-analysis-operations.md) gebruik
 
 ## <a name="redeploy-or-delete-the-deployment"></a>Implementatie opnieuw implementeren of verwijderen
 
-Als u de implementatie wilt bijwerken, moet u ervoor zorgen dat uw vorige implementaties zijn geïmplementeerd, of moet u IoT Edge-apparaten verwijderen die niet zijn voltooid. Anders wordt deze implementaties voortgezet, waardoor het systeem een slechte status heeft. U kunt de Azure Portal of de [Azure cli](https://docs.microsoft.com/azure/cognitive-services/cognitive-services-apis-create-account-cli?tabs=windows)gebruiken.
+Als u de implementatie wilt bijwerken, moet u ervoor zorgen dat uw vorige implementaties zijn geïmplementeerd, of moet u IoT Edge-apparaten verwijderen die niet zijn voltooid. Anders wordt deze implementaties voortgezet, waardoor het systeem een slechte status heeft. U kunt de Azure Portal of de [Azure cli](../cognitive-services-apis-create-account-cli.md?tabs=windows)gebruiken.
 
 ## <a name="use-the-output-generated-by-the-container"></a>De uitvoer gebruiken die door de container is gegenereerd
 

@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 7/01/2019
 ms.author: msangapu
 zone_pivot_groups: app-service-containers-windows-linux
-ms.openlocfilehash: e75eef86a4a0c679a44a61267f94d337538daaa8
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: ab27de9274043439f790a8fecd443223e5f26b08
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97007616"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736201"
 ---
 # <a name="access-azure-storage-preview-as-a-network-share-from-a-container-in-app-service"></a>Toegang Azure Storage (preview) als een netwerk share van een container in App Service
 
@@ -39,7 +39,7 @@ In deze hand leiding wordt uitgelegd hoe u Azure Storage kunt koppelen aan een L
 
 - [Een bestaande Windows-container-app in Azure App Service](quickstart-custom-container.md)
 - [Een Azure-bestands share maken](../storage/files/storage-how-to-use-files-cli.md)
-- [Bestanden uploaden naar Azure-bestands share](../storage/files/storage-files-deployment-guide.md)
+- [Bestanden uploaden naar Azure-bestands share](../storage/files/storage-how-to-create-file-share.md)
 
 ::: zone-end
 

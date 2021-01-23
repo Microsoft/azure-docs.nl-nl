@@ -3,12 +3,12 @@ title: Back-up maken van Azure Managed Disks
 description: Meer informatie over het maken van een back-up van Azure Managed Disks vanuit de Azure Portal.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 2169e2f44e3ffb2c05c674d633efabed2c531878
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: ca86550c4dec4b51c60d9ecdef124e38783a3764
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573119"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98738149"
 ---
 # <a name="back-up-azure-managed-disks-in-preview"></a>Back-up van Azure Managed Disks (in preview-versie)
 
@@ -17,7 +17,7 @@ ms.locfileid: "98573119"
 >
 >[Vul dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR1vE8L51DIpDmziRt_893LVUNFlEWFJBN09PTDhEMjVHS05UWFkxUlUzUS4u) in om u aan te melden voor de preview-versie.
 
-In dit artikel wordt uitgelegd hoe u een back-up van [Azure Managed Disk](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview) maakt vanuit het Azure Portal.
+In dit artikel wordt uitgelegd hoe u een back-up van [Azure Managed Disk](../virtual-machines/managed-disks-overview.md) maakt vanuit het Azure Portal.
 
 In dit artikel leert u het volgende:
 
@@ -46,7 +46,7 @@ Een back-upkluis is een opslag entiteit in azure die back-upgegevens bevat voor 
 
    ![Initiëren: kluis maken](./media/backup-managed-disks/initiate-create-vault.png)
 
-1. Op het tabblad **basis beginselen** geeft u het abonnement, de resource groep, de naam van de back-upkluis, de regio en de redundantie opslag voor back-ups op. Ga door **en selecteer controleren + maken**. Meer informatie over het [maken van een back-upkluis](https://docs.microsoft.com/azure/backup/backup-vault-overview#create-a-backup-vault).
+1. Op het tabblad **basis beginselen** geeft u het abonnement, de resource groep, de naam van de back-upkluis, de regio en de redundantie opslag voor back-ups op. Ga door **en selecteer controleren + maken**. Meer informatie over het [maken van een back-upkluis](./backup-vault-overview.md#create-a-backup-vault).
 
    ![Een kluis controleren en maken](./media/backup-managed-disks/review-and-create.png)
 
@@ -67,7 +67,7 @@ Een back-upkluis is een opslag entiteit in azure die back-upgegevens bevat voor 
 
    ![Frequentie van back-upschema selecteren](./media/backup-managed-disks/backup-schedule-frequency.png)
 
-   Azure Disk Backup biedt meerdere back-ups per dag. Als u vaker back-ups nodig hebt, kiest u de frequentie van de back-up **per uur** met de mogelijkheid om back-ups te maken met intervallen van elke 4, 6, 8 of 12 uur. De back-ups worden gepland op basis van het geselecteerde **tijds** interval. Als u bijvoorbeeld **elke vier uur** selecteert, worden de back-ups op ongeveer de interval van elke 4 uur genomen, zodat de back-ups gelijkmatig over de hele dag worden gedistribueerd. Als een back-up van één dag voldoende is, kiest u de frequentie van **dagelijkse** back-ups. In de dagelijkse back-upfrequentie kunt u het tijdstip van de dag opgeven wanneer uw back-ups worden gemaakt. Het is belang rijk te weten dat de tijd van de dag de begin tijd van de back-up aangeeft en niet de tijd waarop de back-up is voltooid. De tijd die nodig is voor het volt ooien van de back-upbewerking is afhankelijk van verschillende factoren, zoals de grootte van de schijf en het verloop frequentie tussen opeenvolgende back-ups. Azure Disk Backup is echter een back-up zonder agent die gebruikmaakt van [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal), wat geen invloed heeft op de prestaties van de productie-toepassing.
+   Azure Disk Backup biedt meerdere back-ups per dag. Als u vaker back-ups nodig hebt, kiest u de frequentie van de back-up **per uur** met de mogelijkheid om back-ups te maken met intervallen van elke 4, 6, 8 of 12 uur. De back-ups worden gepland op basis van het geselecteerde **tijds** interval. Als u bijvoorbeeld **elke vier uur** selecteert, worden de back-ups op ongeveer de interval van elke 4 uur genomen, zodat de back-ups gelijkmatig over de hele dag worden gedistribueerd. Als een back-up van één dag voldoende is, kiest u de frequentie van **dagelijkse** back-ups. In de dagelijkse back-upfrequentie kunt u het tijdstip van de dag opgeven wanneer uw back-ups worden gemaakt. Het is belang rijk te weten dat de tijd van de dag de begin tijd van de back-up aangeeft en niet de tijd waarop de back-up is voltooid. De tijd die nodig is voor het volt ooien van de back-upbewerking is afhankelijk van verschillende factoren, zoals de grootte van de schijf en het verloop frequentie tussen opeenvolgende back-ups. Azure Disk Backup is echter een back-up zonder agent die gebruikmaakt van [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md), wat geen invloed heeft op de prestaties van de productie-toepassing.
 
 1. Op het tabblad **back-upbeleid** selecteert u instellingen voor retentie die voldoen aan de vereiste voor de Recovery Point OBJECTIVE (RPO).
 
@@ -80,7 +80,7 @@ Een back-upkluis is een opslag entiteit in azure die back-upgegevens bevat voor 
    ![Bewaar instellingen](./media/backup-managed-disks/retention-settings.png)
 
    >[!NOTE]
-   >Azure Backup voor Managed Disks gebruikt incrementele moment opnamen die zijn beperkt tot 200 moment opnamen per schijf. Als u back-ups op aanvraag wilt maken, afgezien van geplande back-ups, beperkt het back-upbeleid de totale back-ups tot 180. Meer informatie over [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) voor beheerde schijven.
+   >Azure Backup voor Managed Disks gebruikt incrementele moment opnamen die zijn beperkt tot 200 moment opnamen per schijf. Als u back-ups op aanvraag wilt maken, afgezien van geplande back-ups, beperkt het back-upbeleid de totale back-ups tot 180. Meer informatie over [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) voor beheerde schijven.
 
 1. Voltooi het back-upbeleid door op **revisie + maken** te klikken.
 
@@ -88,7 +88,7 @@ Een back-upkluis is een opslag entiteit in azure die back-upgegevens bevat voor 
 
 Backup-kluis maakt gebruik van beheerde identiteit voor toegang tot andere Azure-resources. Voor het configureren van een back-up van beheerde schijven, moet de beheerde identiteit van de back-upkluis een set machtigingen hebben op de bron schijven en resource groepen waarop moment opnamen worden gemaakt en beheerd.
 
-Een door het systeem toegewezen beheerde identiteit is beperkt tot één per resource en is verbonden met de levens cyclus van deze resource. U kunt machtigingen verlenen aan de beheerde identiteit door gebruik te maken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type dat alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+Een door het systeem toegewezen beheerde identiteit is beperkt tot één per resource en is verbonden met de levens cyclus van deze resource. U kunt machtigingen verlenen aan de beheerde identiteit door gebruik te maken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type dat alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md).
 
 De volgende vereisten zijn vereist voor het configureren van een back-up van beheerde schijven:
 
@@ -115,7 +115,7 @@ De volgende vereisten zijn vereist voor het configureren van een back-up van beh
 
    - U kunt deze resource groep gebruiken voor het opslaan van moment opnamen op meerdere schijven waarvan een back-up wordt gemaakt (of gepland).  
 
-   - U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Kies de resource groep in hetzelfde abonnement als die van de schijf waarvan een back-up moet worden gemaakt. Meer informatie over [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) voor beheerde schijven.
+   - U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Kies de resource groep in hetzelfde abonnement als die van de schijf waarvan een back-up moet worden gemaakt. Meer informatie over [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) voor beheerde schijven.
 
    Voer de volgende stappen uit om de rol toe te wijzen:
 
@@ -129,8 +129,6 @@ De volgende vereisten zijn vereist voor het configureren van een back-up van beh
    >Typ de naam van de back-upkluis om de beheerde identiteit van de kluis te selecteren.
 
    ![Rol Inzender voor schijf momentopname toevoegen](./media/backup-managed-disks/disk-snapshot-contributor-role.png)
-
-1. Als de schijf waarvan een back-up moet worden gemaakt, is versleuteld met door de [klant beheerde sleutels (CMK)](https://docs.microsoft.com/azure/virtual-machines/disks-enable-customer-managed-keys-portal) of [Als u dubbele versleuteling gebruikt met door het platform beheerde sleutels en door de klant beheerde sleutels](https://docs.microsoft.com/azure/virtual-machines/disks-enable-double-encryption-at-rest-portal), wijst u de machtiging **lezer** toe aan de beheerde identiteit van de back-upkluis op de **schijf Encryption set** resource.
 
 1. Controleer of de beheerde identiteit van de back-upkluis de juiste set roltoewijzingen heeft op de bron schijf en de resource groep die fungeert als moment opname van de gegevens opslag.
 
@@ -154,7 +152,7 @@ De volgende vereisten zijn vereist voor het configureren van een back-up van beh
    ![Azure-schijf selecteren](./media/backup-managed-disks/select-azure-disk.png)
 
    >[!NOTE]
-   >Azure Backup gebruikt [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) van Managed disks, waarbij alleen de Delta wijzigingen op de schijf worden opgeslagen sinds de laatste moment opname op Standard-HDD opslag, ongeacht het opslag type van de bovenliggende schijf. Voor extra betrouw baarheid worden incrementele moment opnamen standaard op zone redundant Storage (ZRS) opgeslagen in regio's die ondersteuning bieden voor ZRS. Op dit moment ondersteunt Azure Disk Backup een operationele back-up van beheerde schijven waarbij de back-ups niet worden gekopieerd naar back-upkluis. Daarom is de instelling back-upopslaglocatie van back-ups van backup-kluis niet van toepassing op de herstel punten.
+   >Azure Backup gebruikt [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) van Managed disks, waarbij alleen de Delta wijzigingen op de schijf worden opgeslagen sinds de laatste moment opname op Standard-HDD opslag, ongeacht het opslag type van de bovenliggende schijf. Voor extra betrouw baarheid worden incrementele moment opnamen standaard op zone redundant Storage (ZRS) opgeslagen in regio's die ondersteuning bieden voor ZRS. Op dit moment ondersteunt Azure Disk Backup een operationele back-up van beheerde schijven waarbij de back-ups niet worden gekopieerd naar back-upkluis. Daarom is de instelling back-upopslaglocatie van back-ups van backup-kluis niet van toepassing op de herstel punten.
 
 1. Kies op het tabblad **back-upbeleid** een back-upbeleid.
 

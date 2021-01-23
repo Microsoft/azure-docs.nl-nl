@@ -6,12 +6,12 @@ ms.author: ambhatna
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 10/21/2020
-ms.openlocfilehash: 0691411f57944f8203120ec2a6ed19013135458c
-ms.sourcegitcommit: 03c0a713f602e671b278f5a6101c54c75d87658d
+ms.openlocfilehash: 8db556709f68a1184046989a15fad147542a05a7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94920250"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735738"
 ---
 # <a name="planned-maintenance-notification-in-azure-database-for-postgresql---single-server"></a>Melding over gepland onderhoud in Azure Database for PostgreSQL - Eén server
 
@@ -25,7 +25,7 @@ Een gepland onderhoud is een onderhouds venster wanneer deze service-updates wor
 
 ## <a name="planned-maintenance---duration-and-customer-impact"></a>Gepland onderhoud-duur en klant impact
 
-Voor een gepland onderhoud voor een bepaalde Azure-regio wordt doorgaans 15 uur verwacht. Het venster bevat ook buffer tijd voor het uitvoeren van een rollback-plan als dat nodig is. Tijdens gepland onderhoud kunnen de database server opnieuw worden opgestart of failovers, wat kan leiden tot een kortere Beschik baarheid van de database servers voor eind gebruikers. Azure Database for PostgreSQL-servers worden uitgevoerd in containers zodat de database server opnieuw wordt opgestart, wordt doorgaans in 60-120 seconden snel uitgevoerd. De volledige geplande onderhouds gebeurtenis, inclusief het opnieuw opstarten van de server, wordt zorgvuldig gecontroleerd door het technische team. De tijd van de failover van de server is afhankelijk van de herstel tijd van de data base, waardoor de data base langer online kan worden uitgevoerd als er sprake is van een zware trans actie op de server op het moment van de failover. Om te voor komen dat de computer opnieuw wordt opgestart, wordt aanbevolen om langlopende trans acties (bulksgewijs laden) te voor komen tijdens geplande onderhouds gebeurtenissen.
+Een gepland onderhoud voor een bepaalde Azure-regio wordt doorgaans binnen 15 uur verwacht. Dit tijd venster bevat ook buffer tijd voor het uitvoeren van een rollback-plan als dat nodig is. Azure Database for PostgreSQL-servers worden uitgevoerd in containers zodat het opnieuw opstarten van de database server 60-120 seconden duurt, maar er is geen deterministische manier om te weten wanneer binnen dit 15 uur het venster van uw server wordt beïnvloed. De volledige geplande onderhouds gebeurtenis, inclusief het opnieuw opstarten van de server, wordt zorgvuldig gecontroleerd door het technische team. De failovertijd van de server is afhankelijk van het herstel van de data base, waardoor de data base langer online kan worden uitgevoerd als er sprake is van langdurige trans actie op de server op het moment van de failover. Om te voor komen dat de computer opnieuw wordt opgestart, wordt aanbevolen om langlopende trans acties (bulksgewijs laden) te voor komen tijdens geplande onderhouds gebeurtenissen.
 
 In samen vatting, terwijl de geplande onderhouds gebeurtenis gedurende 15 uur wordt uitgevoerd, is de impact van de afzonderlijke server 60 seconden lang, afhankelijk van de transactionele activiteit op de server. Er wordt een melding verzonden van 72 kalender uren voordat gepland onderhoud begint en een andere, terwijl er onderhoud wordt uitgevoerd voor een bepaalde regio.
 

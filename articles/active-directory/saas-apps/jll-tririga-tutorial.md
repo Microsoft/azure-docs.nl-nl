@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 11/17/2020
 ms.author: jeedes
-ms.openlocfilehash: fbf0b6f929fc0999249298f5f271a86ccf3bef39
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
-ms.translationtype: HT
+ms.openlocfilehash: b33db1b766d99aeb8d0a08f6396b5384948f118e
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602877"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736866"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-jll-tririga"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met JLL TRIRIGA
 
@@ -140,11 +140,9 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op Deze toepassing testen in Azure Portal. U wordt automatisch aangemeld bij de instantie van JLL TRIRIGA waarvoor u eenmalige aanmelding hebt ingesteld
 
-* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel van JLL TRIRIGA klikt in het toegangsvenster, wordt u automatisch aangemeld bij het exemplaar van JLL TRIRIGA waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
+* U kunt het Microsoft-toegangsvenster gebruiken. Wanneer u op de tegel van JLL TRIRIGA klikt in het toegangsvenster, wordt u automatisch aangemeld bij het exemplaar van JLL TRIRIGA waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to the Access Panel](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot het toegangsvenster) voor meer informatie over het toegangsvenster.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u JLL TRIRIGA hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
-
-
+Zodra u JLL TRIRIGA hebt geconfigureerd, kunt u sessiebeheer afdwingen, waardoor exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime worden beschermd. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

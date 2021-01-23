@@ -1,15 +1,15 @@
 ---
 title: Uw resources organiseren met beheergroepen - Azure Governance
 description: Informatie over de managementgroepen, hoe hun machtigingen werken en hoe u ze gebruikt.
-ms.date: 11/17/2020
+ms.date: 01/22/2021
 ms.topic: overview
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: 9f23a279733169f17f0f82cb80aa08bfafcd45d0
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: e86501527ff68319fc8d2e942e7ffa977dcecbe6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030668"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736319"
 ---
 # <a name="what-are-azure-management-groups"></a>Wat zijn Azure-beheergroepen?
 
@@ -162,16 +162,16 @@ Er zijn verschillende opties om dit scenario op te lossen:
 - Verwijder de roltoewijzing uit het abonnement voordat u het abonnement naar een nieuwe bovenliggende beheergroep verplaatst.
 - Voeg het abonnement toe aan het toewijsbare bereik van de roldefinitie.
 - Wijzig het toewijsbare bereik in de roldefinitie. In het bovenstaande voorbeeld kunt u de toewijsbare bereiken bijwerken vanuit Marketing naar de hoofdbeheergroep, zodat de definitie kan worden bereikt door beide vertakkingen van de hiërarchie.  
-- Maak een extra aangepaste rol die wordt gedefinieerd in de andere vertakking. Deze nieuwe rol vereist ook dat de roltoewijzing voor het abonnement wordt gewijzigd.  
+- Maak een andere aangepaste rol die is gedefinieerd in de andere vertakking. Voor deze nieuwe rol moet de roltoewijzing ook worden gewijzigd in het abonnement.  
 
 ### <a name="limitations"></a>Beperkingen  
 
 Er bestaan beperkingen wanneer u aangepaste rollen gebruikt voor beheergroepen. 
 
  - U kunt slechts één beheergroep definiëren in het toewijsbare bereik van een nieuwe rol. Deze beperking bestaat om het aantal situaties te verminderen waarin de koppeling tussen roldefinities en roltoewijzingen wordt verbroken. Deze situatie treedt op wanneer een abonnement of beheergroep met een roltoewijzing wordt verplaatst naar een andere bovenliggende site die niet over de roldefinitie beschikt.  
- - Resourceprovider-gegevensvlakacties kunnen niet worden gedefinieerd in de aangepaste rollen van een beheergroep. Deze beperking bestaat omdat er een latentieprobleem is met het bijwerken van de gegevensvlak-resourceproviders.
-   Er wordt aan dit latentieprobleem gewerkt en deze acties worden uitgeschakeld in de roldefinitie om risico's te beperken.
- - De Azure Resource Manager valideert niet het bestaan van de beheergroep in het toewijsbare bereik van de roldefinitie. Als er een typfout of een onjuiste beheergroep-id staat, wordt de roldefinitie toch gemaakt.
+ - Resourceprovider-gegevensvlakacties kunnen niet worden gedefinieerd in de aangepaste rollen van een beheergroep. Deze beperking bestaat omdat er een latentieprobleem is met het bijwerken van de gegevensvlak-resourceproviders. Er wordt aan dit latentieprobleem gewerkt en deze acties worden uitgeschakeld in de roldefinitie om risico's te beperken.
+ - De Azure Resource Manager valideert niet het bestaan van de beheergroep in het toewijsbare bereik van de roldefinitie. Als er een type fout of een onjuiste beheer groep-ID wordt vermeld, wordt de roldefinitie nog steeds gemaakt.
+ - Roltoewijzing voor een rol met _dataActions_ wordt niet ondersteund. Maak in plaats daarvan de roltoewijzing in het abonnements bereik.
 
 > [!IMPORTANT]
 > Het toevoegen van een beheergroep aan `AssignableScopes` is momenteel in de preview-fase. Deze preview-versie wordt aangeboden zonder service level agreement en wordt niet aanbevolen voor productieworkloads.

@@ -8,12 +8,12 @@ author: mlearned
 ms.author: mlearned
 description: GitOps gebruiken voor het configureren van een Azure-Kubernetes-cluster met Arc-functionaliteit (preview-versie)
 keywords: GitOps, Kubernetes, K8s, azure, Arc, Azure Kubernetes service, AKS, containers
-ms.openlocfilehash: 751b274a9cae68f6bc9b1adc45804f2dd2ef4c72
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: a068ed90ea53b3b25a1f41cebd9a5b8e607afa54
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684754"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737181"
 ---
 # <a name="deploy-configurations-using-gitops-on-arc-enabled-kubernetes-cluster-preview"></a>Configuraties implementeren met behulp van GitOps in Kubernetes-cluster met Arc (preview)
 
@@ -138,7 +138,7 @@ Command group 'k8sconfiguration' is in preview. It may be changed/removed in a f
 > [!NOTE]
 > De persoonlijke verificatie van de HTTPS helm-versie wordt alleen ondersteund met de helm-operator grafiek versie >= 1.2.0.  Versie 1.2.0 wordt standaard gebruikt.
 > De HTTPS-verificatie van de helm-versie wordt momenteel niet ondersteund voor door Azure Kubernetes Services beheerde clusters.
-> Als u een stroom nodig hebt om de Git-opslag plaats via uw proxy te openen, moet u de Azure Arc-agents bijwerken met de proxy instellingen. [Meer informatie](https://docs.microsoft.com/azure/azure-arc/kubernetes/connect-cluster#connect-using-an-outbound-proxy-server)
+> Als u een stroom nodig hebt om de Git-opslag plaats via uw proxy te openen, moet u de Azure Arc-agents bijwerken met de proxy instellingen. [Meer informatie](./connect-cluster.md#connect-using-an-outbound-proxy-server)
 
 #### <a name="additional-parameters"></a>Aanvullende para meters
 

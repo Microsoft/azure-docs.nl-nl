@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.devlang: azurecli
 ms.date: 01/11/2018
 ms.author: delhan
-ms.openlocfilehash: 0681346252f840173d5cd7d4cfe5ef40076f0068
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: ac785d43a71039ce52f0c8cd4315149a11e91cfc
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97912594"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737350"
 ---
 # <a name="use-remote-tools-to-troubleshoot-azure-vm-issues"></a>Externe hulpprogram ma's gebruiken voor het oplossen van problemen met Azure VM
 
@@ -251,7 +251,7 @@ Invoke-Command -ComputerName "<<COMPUTERNAME>" -ScriptBlock {"<<SCRIPT BLOCK>>"}
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie voor meer informatie over de Enter-PSSession-cmdlet [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession?view=powershell-5.1&preserve-view=true).
+- Zie voor meer informatie over de Enter-PSSession-cmdlet [Enter-PSSession](/powershell/module/microsoft.powershell.core/enter-pssession).
 - Zie [aangepaste script extensie voor Windows](../extensions/custom-script-windows.md)voor meer informatie over de aangepaste script extensie voor Windows met behulp van het klassieke implementatie model.
 - PsExec maakt deel uit van de [PSTools-Suite](https://download.sysinternals.com/files/PSTools.zip).
 - Zie [PSTools](/sysinternals/downloads/pstools)voor meer informatie over de PSTools-Suite.

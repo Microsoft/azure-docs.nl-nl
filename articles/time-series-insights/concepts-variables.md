@@ -5,13 +5,13 @@ author: shreyasharmamsft
 ms.author: shresha
 ms.service: time-series-insights
 ms.topic: conceptual
-ms.date: 10/01/2020
-ms.openlocfilehash: f1c394bb1a568d59e0821b61e7acfcf8f25290f7
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.date: 01/22/2021
+ms.openlocfilehash: fd08dc98fa47617bbc7c8d1fff895377837a7327
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95020756"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736731"
 ---
 # <a name="time-series-model-variables"></a>Variabelen voor time series-model
 
@@ -29,7 +29,7 @@ In de volgende tabel ziet u welke eigenschappen relevant zijn voor elk type vari
 
 ## <a name="numeric-variables"></a>Numerieke variabelen
 
-| Eigenschap variable | Description |
+| Eigenschap variable | Beschrijving |
 | --- | ---|
 | Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
 | Waarde van variabele | Telemetrie-waarden die worden gebruikt voor berekeningen die afkomstig zijn van het apparaat of Sens oren of worden getransformeerd met behulp van Time Series-expressies. De variabelen van een numeriek type moeten van het type *Double* zijn.|
@@ -59,7 +59,7 @@ Variabelen voldoen aan het volgende JSON-voor beeld:
 
 ## <a name="categorical-variables"></a>Categorische variabelen
 
-| Eigenschap variable | Description |
+| Eigenschap variable | Beschrijving |
 | --- | ---|
 | Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
 | Waarde van variabele | Telemetrie-waarden die worden gebruikt voor de berekening die afkomstig zijn van het apparaat of de Sens oren. Categorische-variabelen moeten een *Long-waarde* of een *teken reeks* zijn. |
@@ -99,7 +99,7 @@ Variabelen voldoen aan het volgende JSON-voor beeld:
 
 ## <a name="aggregate-variables"></a>Aggregatie variabelen
 
-| Eigenschap variable | Description |
+| Eigenschap variable | Beschrijving |
 | --- | ---|
 | Variabele filter | Filters zijn optionele voorwaardelijke componenten voor het beperken van het aantal rijen dat wordt overwogen voor berekening. |
 | Variabele aggregatie | Voer berekeningen uit via de ondersteunde [aggregatie functies voor aggregatie typen van variabelen](/rest/api/time-series-insights/reference-time-series-expression-syntax#aggregate-variable-kind). |

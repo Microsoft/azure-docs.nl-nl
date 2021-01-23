@@ -7,12 +7,12 @@ author: bobbytreed
 ms.author: robreed
 ms.date: 05/02/2018
 ms.topic: how-to
-ms.openlocfilehash: 0f91bb33116947312173d8f22929b8548d23a9ab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 151bc827cc92c749edd2899cb331eebd22e171a7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87292277"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737826"
 ---
 # <a name="run-scripts-in-your-linux-vm"></a>Scripts uitvoeren in uw virtuele Linux-machine
 
@@ -33,7 +33,7 @@ De [aangepaste script extensie](../extensions/custom-script-linux.md) wordt voor
 Met de functie voor het [uitvoeren van opdrachten](run-command.md) kunt u virtuele machines en toepassings beheer en probleem oplossing met behulp van scripts maken, ook als de computer niet bereikbaar is, bijvoorbeeld als de gast firewall geen RDP-of SSH-poort geopend heeft.
 
 * Voer scripts uit op virtuele machines van Azure.
-* Kan worden uitgevoerd met [Azure Portal](run-command.md), [rest API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand), [Azure cli](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke)of [Power shell](/powershell/module/az.compute/invoke-azvmruncommand)
+* Kan worden uitgevoerd met [Azure Portal](run-command.md), [rest API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand), [Azure cli](/cli/azure/vm/run-command#az_vm_run_command_invoke)of [Power shell](/powershell/module/az.compute/invoke-azvmruncommand)
 * Voer snel een script uit en Bekijk de uitvoer en herhaal dit als dat nodig is in de Azure Portal.
 * Script kan rechtstreeks worden getypt of u kunt een van de ingebouwde scripts uitvoeren.
 * Power shell-script uitvoeren in Windows-computers en bash-script in Linux-machines.

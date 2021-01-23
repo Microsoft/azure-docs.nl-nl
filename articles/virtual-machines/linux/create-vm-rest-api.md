@@ -6,12 +6,12 @@ ms.service: virtual-machines-linux
 ms.topic: how-to
 ms.date: 06/05/2018
 ms.author: cynthn
-ms.openlocfilehash: d6e5195f43991f4d40af57c1ab4b87aaca475b64
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3eeaf5f343b6026e02d17e4d3bd90dba4b991c4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87373399"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737042"
 ---
 # <a name="create-a-linux-virtual-machine-that-uses-ssh-authentication-with-the-rest-api"></a>Maak een virtuele Linux-machine die gebruikmaakt van SSH-verificatie met de REST API
 
@@ -26,7 +26,7 @@ In dit artikel wordt beschreven hoe u de REST API gebruikt om een virtuele Linux
 Voordat u de aanvraag maakt en indient, hebt u het volgende nodig:
 
 * De `{subscription-id}` voor uw abonnement
-  * Als u meerdere abonnementen hebt, raadpleegt u [werken met meerdere abonnementen](/cli/azure/manage-azure-subscriptions-azure-cli?view=azure-cli-latest)
+  * Als u meerdere abonnementen hebt, raadpleegt u [werken met meerdere abonnementen](/cli/azure/manage-azure-subscriptions-azure-cli)
 * Een `{resourceGroupName}` die u eerder hebt gemaakt
 * Een [virtuele netwerk interface](../../virtual-network/virtual-network-network-interface.md) in dezelfde resource groep
 * Een SSH-sleutel paar (u kunt [een nieuw abonnement genereren](mac-create-ssh-keys.md) als u er geen hebt)

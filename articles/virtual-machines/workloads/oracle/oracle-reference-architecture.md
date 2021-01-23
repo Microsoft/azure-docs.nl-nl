@@ -8,12 +8,12 @@ ms.topic: article
 ms.date: 12/13/2019
 ms.author: kegorman
 ms.reviewer: cynthn
-ms.openlocfilehash: 83da8cbf3a87570cfb967e0a6c8da3f0f2ed1766
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: bbaf34c977546891c6ac05fbd4b5feb15f333e04
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96486739"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737809"
 ---
 # <a name="reference-architectures-for-oracle-database-enterprise-edition-on-azure"></a>Referentie architecturen voor Oracle Database Enterprise Edition op Azure
 
@@ -207,7 +207,7 @@ Tijdens de eerste aanvraag verbindt de toepassings server met de Shard Director 
 
 Wanneer u uw Oracle-workloads op Azure implementeert, zorgt micro soft voor alle patches op het niveau van de host-OS. Elk gepland onderhoud op besturingssysteem niveau wordt vooraf aan klanten meegedeeld om de klant in staat te stellen voor dit geplande onderhoud. Twee servers van twee verschillende Beschikbaarheidszones worden nooit tegelijkertijd patches uitgevoerd. Zie [de beschik baarheid van virtuele machines beheren](../../manage-availability.md) voor meer informatie over het onderhoud en de reparatie van de VM. 
 
-Het patchen van het besturings systeem van de virtuele machine kan worden geautomatiseerd met behulp van [Azure Automation updatebeheer](../../../automation/update-management/overview.md). Het patchen en onderhouden van uw Oracle-data base kan worden geautomatiseerd en gepland met behulp van [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines?view=azure-devops) of [Azure Automation updatebeheer](../../../automation/update-management/overview.md) om de downtime te minimaliseren. Zie [continue levering en Blue/groen-implementaties](/azure/devops/learn/what-is-continuous-delivery) om te begrijpen hoe deze kunnen worden gebruikt in de context van uw Oracle-data bases.
+Het patchen van het besturings systeem van de virtuele machine kan worden geautomatiseerd met behulp van [Azure Automation updatebeheer](../../../automation/update-management/overview.md). Het patchen en onderhouden van uw Oracle-data base kan worden geautomatiseerd en gepland met behulp van [Azure-pijp lijnen](/azure/devops/pipelines/get-started/what-is-azure-pipelines) of [Azure Automation updatebeheer](../../../automation/update-management/overview.md) om de downtime te minimaliseren. Zie [continue levering en Blue/groen-implementaties](/azure/devops/learn/what-is-continuous-delivery) om te begrijpen hoe deze kunnen worden gebruikt in de context van uw Oracle-data bases.
 
 ## <a name="architecture-and-design-considerations"></a>Architectuur-en ontwerp overwegingen
 

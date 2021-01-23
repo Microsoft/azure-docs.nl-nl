@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 08/03/2020
 ms.author: matjazl
-ms.openlocfilehash: 31ae5b780bf451e29a97f04202f804db27fc387a
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: bd6f32213a511987c0508dcc954252b2fd4e48f6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96452943"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737588"
 ---
 # <a name="frequently-asked-questions-about-the-azure-api-for-fhir"></a>Veelgestelde vragen over de Azure API voor FHIR
 
@@ -105,6 +105,12 @@ Enkele voor beelden hiervan zijn:
 ### <a name="what-is-the-default-sort-when-searching-for-resources-in-azure-api-for-fhir"></a>Wat is de standaard sortering bij het zoeken naar resources in azure API for FHIR?
 
 Sorteren op de datum die het laatst is bijgewerkt, wordt ondersteund: _sort = _lastUpdated. Bekijk onze [pagina met ondersteunde functies](./fhir-features-supported.md#search)voor meer informatie over andere ondersteunde zoek parameters.
+
+### <a name="does-the-azure-api-for-fhir-support-everything"></a>Biedt de Azure API voor FHIR ondersteuning $everything? 
+
+Nee. Op dit moment bieden we geen ondersteuning voor $everything. Dit kan echter worden bereikt met twee API-aanroepen. Als u bijvoorbeeld al een patiënt wilt ontvangen, kunt u eerst de patiënt record met behulp van/Patient/[ID] en vervolgens een tweede aanroep ophalen om alle patiënt gegevens op te halen met behulp van/Patient/[ID]/*.
+
+U vindt meer informatie in deze [Community post](https://chat.fhir.org/#narrow/stream/179166-implementers/topic/.24everything.20with.20_type). 
 
 ### <a name="how-does-export-work"></a>Hoe werkt $export?
 

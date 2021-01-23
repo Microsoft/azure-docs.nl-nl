@@ -7,12 +7,12 @@ ms.date: 10/02/2020
 ms.topic: troubleshooting
 ms.service: virtual-machines
 ms.subservice: imaging
-ms.openlocfilehash: 7c937353c645ee5d977a52ec0f8e935eba19a940
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 73984694d764234e9e1ec11e6b189a9ad85d97a8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91969973"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737401"
 ---
 # <a name="troubleshoot-azure-image-builder-service"></a>Problemen met de Azure Image Builder-service oplossen
 
@@ -152,11 +152,11 @@ Get-AzImageBuilderTemplate -ImageTemplateName  <imageTemplateName> -ResourceGrou
 
 Wanneer het maken van de installatie kopie wordt uitgevoerd, worden logboeken gemaakt en opgeslagen in een opslag account. Azure Image Builder maakt het opslag account in de tijdelijke resource groep wanneer u een installatie kopie sjabloon artefact maakt.
 
-De naam van het opslag account gebruikt het volgende patroon: **IT_ \<ImageResourceGroupName\> _\<TemplateName\>_ \<GUID\> **
+De naam van het opslag account gebruikt het volgende patroon: **IT_ \<ImageResourceGroupName\> _\<TemplateName\>_ \<GUID\>**
 
 Bijvoorbeeld *IT_aibmdi_helloImageTemplateLinux01*.
 
-U kunt de aanpassing. log in het opslag account in de resource groep bekijken door **opslag account**-  >  **blobs**te selecteren  >  `packerlogs` .  Selecteer vervolgens **directory > Customization. log**.
+U kunt de aanpassing. log in het opslag account in de resource groep bekijken door **opslag account**-  >  **blobs** te selecteren  >  `packerlogs` .  Selecteer vervolgens **directory > Customization. log**.
 
 
 ### <a name="understanding-the-customization-log"></a>Meer informatie over het aanpassings logboek
@@ -320,7 +320,7 @@ Deployment failed. Correlation ID: XXXXXX-XXXX-XXXXXX-XXXX-XXXXXX. Failed in dis
 
 #### <a name="cause"></a>Oorzaak
 
-Er is een time-out opgetreden tijdens het wachten totdat de afbeelding is toegevoegd en gerepliceerd naar de galerie met gedeelde afbeeldingen (SIG). Als de installatie kopie wordt toegevoegd aan de SIG, kan worden aangenomen dat de installatie kopie is gemaakt. Het algehele proces is echter mislukt, omdat de opbouw functie voor installatie kopieën wacht op de galerie met gedeelde afbeeldingen om de replicatie te volt ooien. Hoewel de build is mislukt, wordt de replicatie voortgezet. U kunt de eigenschappen van de installatie kopie versie ophalen door de distributie *runOutput*te controleren.
+Er is een time-out opgetreden tijdens het wachten totdat de afbeelding is toegevoegd en gerepliceerd naar de galerie met gedeelde afbeeldingen (SIG). Als de installatie kopie wordt toegevoegd aan de SIG, kan worden aangenomen dat de installatie kopie is gemaakt. Het algehele proces is echter mislukt, omdat de opbouw functie voor installatie kopieën wacht op de galerie met gedeelde afbeeldingen om de replicatie te volt ooien. Hoewel de build is mislukt, wordt de replicatie voortgezet. U kunt de eigenschappen van de installatie kopie versie ophalen door de distributie *runOutput* te controleren.
 
 ```bash
 $runOutputName=<distributionRunOutput>
@@ -586,7 +586,7 @@ Er zijn mogelijk situaties waarin u een geslaagde build moet onderzoeken en het 
 
 Als de build niet is geannuleerd door een gebruiker, is deze geannuleerd door de Azure DevOps-gebruikers agent. Waarschijnlijk is de time-out van 1 uur opgetreden vanwege Azure DevOps-mogelijkheden. Als u een persoonlijk project en een agent gebruikt, krijgt u 60 minuten tijd om te bouwen. Als de build de time-out overschrijdt, wordt de actieve taak door DevOps geannuleerd.
 
-Zie door [micro soft gehoste agents](/azure/devops/pipelines/agents/hosted?view=azure-devops#capabilities-and-limitations) voor meer informatie over de mogelijkheden en beperkingen van Azure DevOps
+Zie door [micro soft gehoste agents](/azure/devops/pipelines/agents/hosted#capabilities-and-limitations) voor meer informatie over de mogelijkheden en beperkingen van Azure DevOps
  
 #### <a name="solution"></a>Oplossing
 
@@ -606,7 +606,7 @@ In eerste versie van de installatie kopie moet u controleren of er geen openstaa
  
 ## <a name="vms-created-from-aib-images-do-not-create-successfully"></a>Vm's die zijn gemaakt op basis van AIB-installatie kopieën worden niet gemaakt
 
-De Azure Image Builder voert standaard de *inrichtings* code uit aan het einde van elke aanpassings fase van de installatie kopie om de installatie kopie te *generaliseren* . Generalize is een proces waarbij de installatie kopie zo is ingesteld dat deze opnieuw kan worden gebruikt om meerdere virtuele machines te maken en u kunt VM-instellingen, zoals hostname, username, enzovoort, door geven. Voor Windows is Azure Image Builder *Sysprep*uitgevoerd en voor Linux Azure Image Builder wordt uitgevoerd `waagent -deprovision` . 
+De Azure Image Builder voert standaard de *inrichtings* code uit aan het einde van elke aanpassings fase van de installatie kopie om de installatie kopie te *generaliseren* . Generalize is een proces waarbij de installatie kopie zo is ingesteld dat deze opnieuw kan worden gebruikt om meerdere virtuele machines te maken en u kunt VM-instellingen, zoals hostname, username, enzovoort, door geven. Voor Windows is Azure Image Builder *Sysprep* uitgevoerd en voor Linux Azure Image Builder wordt uitgevoerd `waagent -deprovision` . 
 
 Voor Windows maakt Azure Image Builder gebruik van een algemene Sysprep-opdracht. Dit is echter mogelijk niet geschikt voor elke geslaagde Windows-generalisatie. Met Azure Image Builder kunt u de Sysprep-opdracht aanpassen. Opmerking Azure Image Builder is een hulp programma voor het automatiseren van installatie kopieën. Het is verantwoordelijk voor het uitvoeren van de Sysprep-opdracht. Het is echter mogelijk dat u verschillende Sysprep-opdrachten nodig hebt om de installatie kopie te herbruikbaar maken. Voor Linux maakt Azure Image Builder gebruik van een algemene `waagent -deprovision+user` opdracht. Zie de [documentatie van Microsoft Azure Linux-agent](https://github.com/Azure/WALinuxAgent#command-line-options)voor meer informatie.
 

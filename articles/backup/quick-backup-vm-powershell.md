@@ -5,12 +5,12 @@ ms.devlang: azurecli
 ms.topic: quickstart
 ms.date: 04/16/2019
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: 5e83c599ceed76927f2a313f78c83638d708f1bb
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 81005a3032355f566aef2a6794cf2ec5038b0dd8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "90985132"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737113"
 ---
 # <a name="back-up-a-virtual-machine-in-azure-with-powershell"></a>Een back-up van een virtuele machine maken in Azure met PowerShell
 
@@ -18,7 +18,7 @@ De [Azure PowerShell-module](/powershell/azure/new-azureps-module-az) wordt gebr
 
 [Azure Backup](backup-overview.md) maakt een back-up van zowel on-premises machines en apps als Azure-VM's. In dit artikel ziet u hoe u een back-up van een Azure-VM maakt met behulp van de AZ-module. U kunt ook een back-up van een VM maken met behulp van [Azure CLI](quick-backup-vm-cli.md) of in de [Azure-portal](quick-backup-vm-portal.md).
 
-Deze quickstart is bedoeld voor een back-up van een bestaande VM in Azure. Als u nog een VM wilt maken, kan dat ook [met Azure PowerShell](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fpowershell%2fmodule%2ftoc.json).
+Deze quickstart is bedoeld voor een back-up van een bestaande VM in Azure. Als u nog een VM wilt maken, kan dat ook [met Azure PowerShell](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm?toc=%2fpowershell%2fmodule%2ftoc.json).
 
 Voor deze quickstart is versie 1.0.0 of later van de Azure PowerShell-module vereist. Voer `Get-Module -ListAvailable Az` uit om de versie te bekijken. Als u PowerShell wilt installeren of upgraden, raadpleegt u [De Azure PowerShell-module installeren](/powershell/azure/install-az-ps).
 
@@ -45,7 +45,7 @@ Voor deze quickstart is versie 1.0.0 of later van de Azure PowerShell-module ver
 Bij het maken van de kluis:
 
 - Geef voor de resourcegroep en locatie de resourcegroep en de locatie op van de VM waarvan u een back-up wilt maken.
-- Als u dit [voorbeeldscript](../virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm.md?toc=%2fpowershell%2fmodule%2ftoc.json) hebt gebruikt om de VM te maken, is de resourcegroep **myResourceGroup**, is de VM **myVM**, en bevinden de resources zich op de locatie **WestEurope**.
+- Als u dit [voorbeeld script](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm?toc=%2fpowershell%2fmodule%2ftoc.json) hebt gebruikt om de virtuele machine te maken, is de resource groep **myResourceGroup**, de virtuele machine is **_myVM_* en de resources bevinden zich in de **Europa West** -regio.
 - Azure Backup verwerkt automatisch de opslag voor back-upgegevens. De kluis maakt standaard gebruik van [GRS (geografisch redundante opslag)](../storage/common/storage-redundancy.md#geo-redundant-storage). Geografisch redundantie zorgt ervoor dat uw back-upgegevens worden gerepliceerd naar een secundaire Azure-regio, honderden kilometers verwijderd van de primaire regio.
 
 Nu gaat u een kluis maken:

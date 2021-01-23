@@ -8,20 +8,20 @@ ms.author: robreed
 ms.date: 04/26/2019
 ms.topic: how-to
 manager: carmonm
-ms.openlocfilehash: 5baa6d57bd3895640f1654cf7a5ebca52f101cbe
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: dae77dfb72fb6b11721500686991f2b199606b99
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91970568"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737860"
 ---
 # <a name="run-shell-scripts-in-your-linux-vm-by-using-run-command"></a>Shell scripts uitvoeren in uw virtuele Linux-machine met behulp van de opdracht uitvoeren
 
-De functie voor het uitvoeren van opdrachten maakt gebruik van de virtuele machine (VM)-agent voor het uitvoeren van shell scripts in een Azure Linux-VM. U kunt deze scripts gebruiken voor algemeen machine-of toepassings beheer. Ze kunnen u helpen bij het snel diagnosticeren en oplossen van problemen met de toegang tot het netwerk en het herstellen van de VM naar een goede status.
+De functie Opdracht uitvoeren maakt gebruik van de VM-agent (virtuele machine) om shellscripts uit te voeren binnen een Azure Linux-VM. U kunt deze scripts gebruiken voor algemeen machine- of toepassingsbeheer. Ze kunnen u helpen bij het snel diagnosticeren en oplossen van problemen met de toegang tot het netwerk en het herstellen van de VM naar een goede status.
 
 ## <a name="benefits"></a>Voordelen
 
-U kunt op verschillende manieren toegang krijgen tot uw virtuele machines. Met de opdracht uitvoeren kunt u op afstand scripts uitvoeren op uw virtuele machines met behulp van de VM-agent. U gebruikt de opdracht uitvoeren via de Azure Portal, [rest API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand)of [Azure cli](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) voor Linux vm's.
+U kunt op verschillende manieren toegang krijgen tot uw virtuele machines. Met de opdracht uitvoeren kunt u op afstand scripts uitvoeren op uw virtuele machines met behulp van de VM-agent. U gebruikt de opdracht uitvoeren via de Azure Portal, [rest API](/rest/api/compute/virtual%20machines%20run%20commands/runcommand)of [Azure cli](/cli/azure/vm/run-command#az_vm_run_command_invoke) voor Linux vm's.
 
 Deze mogelijkheid is handig in alle scenario's waarin u een script wilt uitvoeren binnen een virtuele machine. Het is een van de enige manieren om problemen op te lossen en een virtuele machine te herstellen waarvoor geen RDP-of SSH-poort is geopend vanwege een onjuiste netwerk-of administratieve gebruikers configuratie.
 
@@ -41,7 +41,7 @@ De volgende beperkingen zijn van toepassing wanneer u de opdracht uitvoeren gebr
 > [!NOTE]
 > Voor een juiste werking moet de opdracht Run (poort 443) zijn vereist voor open bare IP-adressen van Azure. Als de extensie geen toegang tot deze eind punten heeft, kunnen de scripts worden uitgevoerd, maar niet de resultaten retour neren. Als u verkeer op de virtuele machine blokkeert, kunt u [service Tags](../../virtual-network/network-security-groups-overview.md#service-tags) gebruiken om verkeer naar open bare IP-adressen van Azure toe te staan met behulp van de- `AzureCloud` tag.
 
-## <a name="available-commands"></a>Beschik bare opdrachten
+## <a name="available-commands"></a>Beschikbare opdrachten
 
 In deze tabel ziet u de lijst met opdrachten die beschikbaar zijn voor Linux-Vm's. U kunt de opdracht **RunShellScript** gebruiken om elk gewenst aangepast script uit te voeren. Wanneer u de Azure CLI of Power shell gebruikt om een opdracht uit te voeren, moet de waarde die u opgeeft voor de `--command-id` `-CommandId` para meter of een van de volgende vermelde waarden zijn. Wanneer u een waarde opgeeft die geen beschik bare opdracht is, wordt deze fout weer gegeven:
 
@@ -56,7 +56,7 @@ The entity was not found in this Azure location
 
 ## <a name="azure-cli"></a>Azure CLI
 
-In het volgende voor beeld wordt de opdracht [AZ VM Run-Command](/cli/azure/vm/run-command?view=azure-cli-latest#az-vm-run-command-invoke) gebruikt om een shell script uit te voeren op een virtuele Azure Linux-machine.
+In het volgende voor beeld wordt de opdracht [AZ VM Run-Command](/cli/azure/vm/run-command#az_vm_run_command_invoke) gebruikt om een shell script uit te voeren op een virtuele Azure Linux-machine.
 
 ```azurecli-interactive
 az vm run-command invoke -g myResourceGroup -n myVm --command-id RunShellScript --scripts "apt-get update && apt-get install -y nginx"
@@ -71,7 +71,7 @@ Ga naar een virtuele machine in de [Azure Portal](https://portal.azure.com) en s
 
 ![Lijst met opdrachten](./media/run-command/run-command-list.png)
 
-Kies een opdracht die moet worden uitgevoerd. Sommige van de opdrachten hebben mogelijk optionele of vereiste invoer parameters. Voor deze opdrachten worden de para meters als tekst velden weer gegeven, zodat u de invoer waarden kunt opgeven. Voor elke opdracht kunt u het script bekijken dat wordt uitgevoerd door een uitgebreid **weergave script**uit te voeren. **RunShellScript** wijkt af van de andere opdrachten, omdat u hiermee uw eigen aangepaste script kunt opgeven.
+Kies een opdracht die moet worden uitgevoerd. Sommige van de opdrachten hebben mogelijk optionele of vereiste invoer parameters. Voor deze opdrachten worden de para meters als tekst velden weer gegeven, zodat u de invoer waarden kunt opgeven. Voor elke opdracht kunt u het script bekijken dat wordt uitgevoerd door een uitgebreid **weergave script** uit te voeren. **RunShellScript** wijkt af van de andere opdrachten, omdat u hiermee uw eigen aangepaste script kunt opgeven.
 
 > [!NOTE]
 > De ingebouwde opdrachten kunnen niet worden bewerkt.
@@ -88,7 +88,7 @@ In het volgende voor beeld wordt de cmdlet [invoke-AzVMRunCommand](/powershell/m
 Invoke-AzVMRunCommand -ResourceGroupName '<myResourceGroup>' -Name '<myVMName>' -CommandId 'RunShellScript' -ScriptPath '<pathToScript>' -Parameter @{"arg1" = "var1";"arg2" = "var2"}
 ```
 
-## <a name="limiting-access-to-run-command"></a>Toegang beperken tot de opdracht uitvoeren
+## <a name="limiting-access-to-run-command"></a>Toegang tot Opdracht uitvoeren beperken
 
 Voor het weer geven van de uitvoerings opdrachten of het weer geven van de details van een opdracht is de `Microsoft.Compute/locations/runCommands/read` machtiging vereist. De ingebouwde rol [lezer](../../role-based-access-control/built-in-roles.md#reader) en hogere niveaus hebben deze machtiging.
 

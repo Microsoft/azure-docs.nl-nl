@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/21/2020
 ms.author: jeedes
-ms.openlocfilehash: fec95dc033eb5eacaf79f5bbd2b6b294628667b9
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
-ms.translationtype: HT
+ms.openlocfilehash: 3d784979876857e94c1e09ffc5b7bef11c0a0d04
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97725071"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735963"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-easysso-for-bamboo"></a>Zelfstudie: Integratie van eenmalige aanmelding bij Azure Active Directory met EasySSO voor Bamboo
 
@@ -199,7 +199,7 @@ Als u het automatisch inrichten van gebruikers na hun eerste aanmelding echter n
 
 In deze sectie test u uw configuratie van eenmalige aanmelding van Azure AD met behulp van Mijn apps.
 
-Wanneer u op de tegel EasySSO voor Bamboo in het toegangsvenster klikt, wordt u automatisch aangemeld bij het Bamboo-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+Wanneer u op de tegel EasySSO voor Bamboo in het toegangsvenster klikt, wordt u automatisch aangemeld bij het Bamboo-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ### <a name="sp-initiated-workflow"></a>Door SP geïnitieerde werkstroom
 

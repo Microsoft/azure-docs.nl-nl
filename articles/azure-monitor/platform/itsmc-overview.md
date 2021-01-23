@@ -7,12 +7,12 @@ author: nolavime
 ms.author: v-jysur
 ms.date: 12/16/2020
 ms.custom: references_regions
-ms.openlocfilehash: 93b6160b495b609e23e10b3f709d130792067423
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 6d9ad775f91778f95380a19fbe253e2cbbebd3fc
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803779"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736453"
 ---
 # <a name="it-service-management-connector-overview"></a>Overzicht van IT Service Management-connector
 
@@ -32,7 +32,7 @@ ITSMC ondersteunt verbindingen met de volgende ITSM-hulpprogram ma's:
 -   Cherwell
 
    >[!NOTE]
-> We stellen onze klanten van Cher well en Provance voor om de [actie webhook](https://docs.microsoft.com/azure/azure-monitor/platform/action-groups#webhook) te gebruiken voor Cher well en Provance eind punt als een andere oplossing voor de integratie.
+> We stellen onze klanten van Cher well en Provance voor om de [actie webhook](./action-groups.md#webhook) te gebruiken voor Cher well en Provance eind punt als een andere oplossing voor de integratie.
 
 Met ITSMC kunt u het volgende doen:
 

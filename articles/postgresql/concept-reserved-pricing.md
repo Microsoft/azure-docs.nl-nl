@@ -6,12 +6,12 @@ ms.author: sumuth
 ms.service: postgresql
 ms.topic: conceptual
 ms.date: 06/16/2020
-ms.openlocfilehash: 8343c06992c896986ba26a90171e25f9c8c4f2f8
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 9b8dafa4a69358b3f6f09551ac426b908750e2f4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98600108"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735469"
 ---
 # <a name="prepay-for-azure-database-for-postgresql---single-server-compute-resources-with-reserved-capacity"></a>Vooruitbetalen voor Azure Database for PostgreSQL-reken resources met één server met gereserveerde capaciteit
 
@@ -35,7 +35,7 @@ De details over de manier waarop zakelijke klanten en betalen per gebruik-klante
 
 De grootte van de reserve ring moet worden gebaseerd op de totale reken tijd die wordt gebruikt door de bestaande of binnenkort gedistribueerde servers binnen een bepaalde regio en met dezelfde prestatie-laag en hardwarematige generatie.</br>
 
-Stel bijvoorbeeld dat u een GEN5-Data Base voor algemeen gebruik uitvoert: 32 vCore PostgreSQL, en twee door het geheugen geoptimaliseerde GEN5 – 16 vCore PostgreSQL-data bases. Verder is het van plan dat u in de volgende maand een aanvullende algemene doel einden GEN5 – 32 vCore-database server en één door het geheugen geoptimaliseerde GEN5-16 vCore-database server moet implementeren. Stel dat u weet dat u deze resources ten minste één jaar nodig hebt. In dit geval moet u een 64 (2x32)-vCores aanschaffen, een reserve ring van één jaar voor een algemene doel einde van de data base-GEN5 en een 48 (2x16 + 16) vCore één jaar reserve ring voor single data base Optimized-GEN5
+Stel bijvoorbeeld dat u een GEN5-Data Base voor algemeen gebruik uitvoert: 32 vCore PostgreSQL, en twee door het geheugen geoptimaliseerde GEN5 – 16 vCore PostgreSQL-data bases. Verder moet u in de volgende maand een aanvullende algemene doel stelling GEN5 – 8 vCore-database server en één door het geheugen geoptimaliseerde GEN5-32 vCore-database server gebruiken. Stel dat u weet dat u deze resources ten minste één jaar nodig hebt. In dit geval moet u een 40-(32 + 8) vCores aanschaffen, een reserve ring van één jaar voor de enkelvoudige data base-GEN5 en een 64 (2x16 + 32) vCore één jaar reserve ring voor single data base Optimized-GEN5
 
 
 ## <a name="buy-azure-database-for-postgresql-reserved-capacity"></a>Azure Database for PostgreSQL gereserveerde capaciteit kopen
@@ -67,7 +67,8 @@ Annulering, ruiling of terugbetaling van reserveringen is mogelijk met bepaalde 
 
 ## <a name="vcore-size-flexibility"></a>flexibiliteit van vCore-grootte
 
-met de flexibiliteit van vCore-grootte kunt u binnen een prestatie-laag en-regio omhoog of omlaag schalen zonder verlies van het voor deel van de gereserveerde capaciteit. 
+met de flexibiliteit van vCore-grootte kunt u binnen een prestatie-laag en-regio omhoog of omlaag schalen zonder verlies van het voor deel van de gereserveerde capaciteit. Als u schaalt naar een hogere vCores dan de gereserveerde capaciteit, wordt u gefactureerd voor de overtollige vCores met de prijzen voor betalen per gebruik.
+
 
 ## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Contact opnemen
 

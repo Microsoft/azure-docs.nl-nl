@@ -1,5 +1,5 @@
 ---
-title: Proximity-plaatsings groepen gebruiken
+title: Nabijheidsplaatsingsgroepen gebruiken
 description: Meer informatie over het maken en gebruiken van proximity-plaatsings groepen voor virtuele machines in Azure.
 author: cynthn
 ms.service: virtual-machines
@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 10/30/2019
 ms.author: cynthn
-ms.openlocfilehash: ee172203d6aa54b4b539356835f8a6bf2d21bad3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ea50d0fdc5a772cae449951901af36eed4e93771
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87288416"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737622"
 ---
 # <a name="deploy-vms-to-proximity-placement-groups-using-azure-cli"></a>VM's implementeren op nabijheidsplaatsingsgroepen met behulp van Azure CLI
 
@@ -67,7 +67,7 @@ U kunt ook een beschikbaarheidsset maken in de plaatsings groep voor proximity. 
 
 ## <a name="scale-sets"></a>Schaalsets
 
-U kunt ook een schaalset maken in de plaatsings groep voor proximity. Gebruik de dezelfde `--ppg` para meter met [AZ vmss Create](/cli/azure/vmss?view=azure-cli-latest#az-vmss-create) om een schaalset te maken en alle instanties worden gemaakt in dezelfde plaatsings groep.
+U kunt ook een schaalset maken in de plaatsings groep voor proximity. Gebruik de dezelfde `--ppg` para meter met [AZ vmss Create](/cli/azure/vmss#az_vmss_create) om een schaalset te maken en alle instanties worden gemaakt in dezelfde plaatsings groep.
 
 ## <a name="next-steps"></a>Volgende stappen
 

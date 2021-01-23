@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/01/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: c27ef1af3e439b22f00f9247b5270118bbe9ca89
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 3678ead9f3e1ba2556fde3c2fbe30df4e7dc2225
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98197707"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737232"
 ---
 # <a name="azure-security-baseline-for-batch"></a>Azure-beveiligings basislijn voor batch
 
@@ -62,9 +62,9 @@ Schakel, indien van toepassing, de open bare netwerk toegang uit met behulp van 
 
 **Hulp**: Schakel Azure DDoS (Distributed Denial of service) standaard beveiliging in op het virtuele netwerk dat uw Azure batch-groep beschermt tegen beveiliging tegen DDoS-aanvallen. Gebruik Azure Security Center geïntegreerde bedreigings informatie om communicatie met bekende of ongebruikte Internet-IP-adressen te weigeren.
 
-- [DDoS-beveiliging configureren](/azure/virtual-network/manage-ddos-protection)
+- [DDoS-beveiliging configureren](../ddos-protection/manage-ddos-protection.md)
 
-- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](/azure/security-center/security-center-alerts-service-layer)
+- [Meer informatie over Azure Security Center geïntegreerde bedreigings informatie](../security-center/azure-defender.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -126,7 +126,7 @@ Gebruik een van de ingebouwde Azure Policy definities die betrekking hebben op l
 
 U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties op resources te zoeken of uit te voeren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 - [Een virtueel netwerk maken](../virtual-network/quick-create-portal.md)
 
@@ -140,7 +140,7 @@ U kunt Azure PowerShell of Azure CLI gebruiken om op basis van hun labels acties
 
 **Hulp**: Azure-activiteiten logboek gebruiken om netwerk resource configuraties te bewaken en wijzigingen te detecteren voor netwerk bronnen die betrekking hebben op uw Azure batch groepen. Maak waarschuwingen in Azure Monitor die worden geactiveerd wanneer er wijzigingen in kritieke netwerk bronnen plaatsvinden.
 
-- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](/azure/azure-monitor/platform/activity-log-view) 
+- [Activiteiten logboek gebeurtenissen van Azure weer geven en ophalen](../azure-monitor/platform/activity-log.md#view-the-activity-log) 
 
 - [Waarschuwingen maken in Azure Monitor](../azure-monitor/platform/alerts-activity-log.md)
 
@@ -188,7 +188,7 @@ Als dat nodig is, kunt u verbinding maken met de knoop punten van uw afzonderlij
 
 - [Diagnostische logboeken van uw Azure Batch-account verzamelen](batch-diagnostics.md#batch-diagnostics)
 
-- [Extern verbinding maken met de knoop punten van uw Azure Batch-groep](/azure/batch/batch-api-basics#error-handling)
+- [Extern verbinding maken met de knoop punten van uw Azure Batch-groep](./batch-service-workflow-features.md#basic-workflow)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -260,9 +260,9 @@ Als dat nodig is, kunt u verbinding maken met de knoop punten van uw afzonderlij
 
 Daarnaast kunt u de aanbevelingen van Azure Security Center identiteits-en toegangs beheer gebruiken.
 
-- [Een directory-rol verkrijgen in azure AD met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrole?view=azureadps-2.0&amp;preserve-view=true)
+- [Een directory-rol verkrijgen in azure AD met Power shell](/powershell/module/azuread/get-azureaddirectoryrole?preserve-view=true&view=azureadps-2.0)
 
-- [Leden van een directory-rol in azure AD ophalen met Power shell](https://docs.microsoft.com/powershell/module/azuread/get-azureaddirectoryrolemember?view=azureadps-2.0&amp;preserve-view=true)
+- [Leden van een directory-rol in azure AD ophalen met Power shell](/powershell/module/azuread/get-azureaddirectoryrolemember?preserve-view=true&view=azureadps-2.0)
 
 - [Identiteit en toegang controleren met Azure Security Center](../security-center/security-center-identity-access.md)
 
@@ -324,7 +324,7 @@ Daarnaast kunt u de aanbevelingen van Azure Security Center identiteits-en toega
 
 **Richt lijnen**: als u verificatie hebt geïntegreerd voor Azure batch toepassingen met Azure Active Directory, gebruikt u Azure Active Directory beveiligings rapporten voor het genereren van Logboeken en waarschuwingen wanneer verdachte of onveilige activiteiten in de omgeving worden uitgevoerd. Gebruik Azure Security Center om identiteits-en toegangs activiteiten te bewaken.
 
-- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](/azure/active-directory/reports-monitoring/concept-user-at-risk)
+- [Azure AD-gebruikers identificeren die zijn gemarkeerd voor riskante activiteiten](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Identiteits-en toegangs activiteiten van gebruikers controleren in Azure Security Center](../security-center/security-center-identity-access.md)
 
@@ -378,7 +378,7 @@ Daarnaast kunt u de aanbevelingen van Azure Security Center identiteits-en toega
 
 **Hulp**: gebruik Azure Active Directory risico detectie en identiteits beschermings functie om automatische antwoorden te configureren op gedetecteerde verdachte acties met betrekking tot gebruikers identiteiten. Daarnaast kunt u gegevens opnemen in azure Sentinel voor verder onderzoek.
 
-- [Riskante Azure AD-aanmeldingen weergeven](/azure/active-directory/reports-monitoring/concept-risky-sign-ins)
+- [Riskante Azure AD-aanmeldingen weergeven](../active-directory/identity-protection/overview-identity-protection.md)
 
 - [Risico beleid voor identiteits beveiliging configureren en inschakelen](../active-directory/identity-protection/howto-identity-protection-configure-risk-policies.md)
 
@@ -406,7 +406,7 @@ Daarnaast kunt u de aanbevelingen van Azure Security Center identiteits-en toega
 
 **Hulp**: Tags gebruiken om Azure-resources te helpen bij het bijhouden of verwerken van gevoelige informatie.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -418,7 +418,7 @@ Daarnaast kunt u de aanbevelingen van Azure Security Center identiteits-en toega
 
 - [Een Azure Batch groep maken binnen een Virtual Network](batch-virtual-network.md)
 
-- [Azure Storage accounts beveiligen](/azure/storage/common/storage-security-guide)
+- [Azure Storage accounts beveiligen](../storage/blobs/security-recommendations.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -434,7 +434,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
-- [Azure Storage accounts beveiligen](/azure/storage/common/storage-security-guide)
+- [Azure Storage accounts beveiligen](../storage/blobs/security-recommendations.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -462,7 +462,7 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 - [Informatie over beveiliging van klantgegevens in Azure](../security/fundamentals/protection-customer-data.md)
 
-- [Azure Storage accounts beveiligen](/azure/storage/common/storage-security-guide)
+- [Azure Storage accounts beveiligen](../storage/blobs/security-recommendations.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -498,9 +498,9 @@ Voor het onderliggende platform dat door micro soft wordt beheerd, behandelt mic
 
 Azure Disk Encryption kan worden gebruikt om uw gegevens te beschermen en beschermen om te voldoen aan de verplichtingen van de organisatie beveiliging en naleving. Alle beheerde schijven, moment opnamen, installatie kopieën en gegevens die naar bestaande schijven worden geschreven, worden automatisch versleuteld met door het platform beheerde sleutels.
 
-- [Versleutelings sleutels voor Azure Storage accounts beheren](/azure/storage/common/storage-encryption-keys-portal)
+- [Versleutelings sleutels voor Azure Storage accounts beheren](../storage/common/customer-managed-keys-configure-key-vault.md)
 
-- [Door de klant beheerde versleutelings sleutels configureren](/azure/storage/common/storage-encryption-keys-portal)
+- [Door de klant beheerde versleutelings sleutels configureren](../storage/common/customer-managed-keys-configure-key-vault.md)
 
 - [Een groep maken met schijf versleuteling ingeschakeld](disk-encryption.md)
 
@@ -580,7 +580,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 - [Query's maken met Azure Resource Graph Explorer](../governance/resource-graph/first-query-portal.md)
 
-- [Uw Azure-abonnementen weer geven](https://docs.microsoft.com/powershell/module/az.accounts/get-azsubscription?view=azps-4.8.0&amp;preserve-view=true)
+- [Uw Azure-abonnementen weer geven](/powershell/module/az.accounts/get-azsubscription?preserve-view=true&view=azps-4.8.0)
 
 - [Meer informatie over Azure RBAC](../role-based-access-control/overview.md)
 
@@ -592,7 +592,7 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 **Richt lijnen**: Tags Toep assen op Azure-resources die meta gegevens geven om ze logisch in een taxonomie te organiseren.
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Monitoring door Azure Security Center**: Momenteel niet beschikbaar
 
@@ -602,11 +602,11 @@ Hoewel klassieke Azure-resources kunnen worden gedetecteerd via Azure resource G
 
 **Richt lijnen**: Gebruik labels, beheer groepen en afzonderlijke abonnementen, waar nodig, om assets te organiseren en bij te houden. Sluit de inventaris regel matig af en zorg ervoor dat niet-geautoriseerde resources tijdig worden verwijderd uit het abonnement.
 
-- [Aanvullende Azure-abonnementen maken](/azure/billing/billing-create-subscription)
+- [Aanvullende Azure-abonnementen maken](../cost-management-billing/manage/create-subscription.md)
 
-- [Beheergroepen maken](/azure/governance/management-groups/create)
+- [Beheergroepen maken](../governance/management-groups/create-management-group-portal.md)
 
-- [Tags maken en gebruiken](/azure/azure-resource-manager/resource-group-using-tags)
+- [Tags maken en gebruiken](../azure-resource-manager/management/tag-resources.md)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -701,7 +701,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen u
 
 **Hulp**: gebruik Azure Policy aliassen in de naam ruimte ' Microsoft.Bat' om aangepaste beleids regels te maken om de configuratie van uw Azure batch-accounts en-groepen te controleren of af te dwingen.
 
-- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -747,9 +747,9 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen u
 
 **Richt lijnen**: als u aangepaste Azure Policy definities gebruikt voor uw Azure batch accounts, Pools of gerelateerde resources, gebruikt u Azure opslag plaatsen om uw code veilig op te slaan en te beheren.
 
-- [Code opslaan in azure DevOps](https://docs.microsoft.com/azure/devops/repos/git/gitworkflow?view=azure-devops&amp;preserve-view=true)
+- [Code opslaan in azure DevOps](/azure/devops/repos/git/gitworkflow?preserve-view=true&view=azure-devops)
 
-- [Documentatie voor Azure opslag plaatsen](https://docs.microsoft.com/azure/devops/repos/?view=azure-devops&amp;preserve-view=true)
+- [Documentatie voor Azure opslag plaatsen](/azure/devops/repos/?preserve-view=true&view=azure-devops)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -791,7 +791,7 @@ Gebruik Azure resource Graph voor het opvragen/detecteren van resources binnen u
 - Subnetten moeten worden gekoppeld aan een netwerk beveiligings groep-opslag accounts moeten een service-eind punt van een virtueel netwerk gebruiken
 - Diagnostische logboeken in Batch-accounts moeten worden ingeschakeld
 
-- [Beschik bare Azure Policy aliassen weer geven](https://docs.microsoft.com/powershell/module/az.resources/get-azpolicyalias?view=azps-4.8.0&amp;preserve-view=true)
+- [Beschik bare Azure Policy aliassen weer geven](/powershell/module/az.resources/get-azpolicyalias?preserve-view=true&view=azps-4.8.0)
 
 - [Azure Policy configureren en beheren](../governance/policy/tutorials/create-and-manage.md)
 
@@ -884,7 +884,7 @@ Scan vooraf bestanden die worden geüpload naar niet-reken resources van Azure, 
 
 - [Opslag redundantie configureren voor Azure Storage accounts](../storage/common/storage-redundancy.md)
 
-- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultkey?view=azps-4.8.0&amp;preserve-view=true)
+- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -894,9 +894,9 @@ Scan vooraf bestanden die worden geüpload naar niet-reken resources van Azure, 
 
 **Richt lijnen**: als u uw eigen sleutels beheert voor Azure Storage accounts of andere bronnen die betrekking hebben op uw Azure batch-implementatie, kunt u het herstellen van back-upsleutels periodiek testen.
 
-- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](https://docs.microsoft.com/powershell/module/az.keyvault/backup-azkeyvaultkey?view=azps-4.8.0&amp;preserve-view=true)
+- [Hoe kan ik een back-up maken van sleutel kluis sleutels in azure?](/powershell/module/az.keyvault/backup-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
-- [Een door de klant beheerde sleutel herstellen met Power shell](https://docs.microsoft.com/powershell/module/az.keyvault/restore-azkeyvaultkey?view=azps-4.8.0&amp;preserve-view=true)
+- [Een door de klant beheerde sleutel herstellen met Power shell](/powershell/module/az.keyvault/restore-azkeyvaultkey?preserve-view=true&view=azps-4.8.0)
 
 **Azure Security Center-bewaking**: Niet van toepassing
 
@@ -906,7 +906,7 @@ Scan vooraf bestanden die worden geüpload naar niet-reken resources van Azure, 
 
 **Richt lijnen**: als Azure Key Vault wordt gebruikt om sleutels te bewaren die betrekking hebben op Azure batch pool-opslag accounts, schakelt u Soft-Delete in azure Key Vault in om sleutels te beschermen tegen onbedoelde of schadelijke verwijdering.
 
-- [Zacht verwijderen inschakelen in Azure Key Vault](/azure/key-vault/key-vault-soft-delete-powershell)
+- [Zacht verwijderen inschakelen in Azure Key Vault](../key-vault/general/key-vault-recovery.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -994,5 +994,5 @@ U vindt meer informatie over de strategie van micro soft en de uitvoering van Re
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zie [Overzicht Azure Security Benchmark V2](/azure/security/benchmarks/overview)
-- Meer informatie over [Azure-beveiligingsbasislijnen](/azure/security/benchmarks/security-baselines-overview)
+- Zie [Overzicht Azure Security Benchmark V2](../security/benchmarks/overview.md)
+- Meer informatie over [Azure-beveiligingsbasislijnen](../security/benchmarks/security-baselines-overview.md)

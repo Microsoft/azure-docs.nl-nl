@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 1dc321200c7fe85b3f4bd5099d6ca0714e4ca63a
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.openlocfilehash: 6f7b2abecdfae1e8f943cd45df7e4c42f1ddd978
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914328"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736619"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-dotcom-monitor"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Dotcom-Monitor
 
@@ -93,7 +93,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | Rollen | user.assignedroles |
 
     > [!NOTE]
-    > U vindt [hier](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) meer richtlijnen voor het maken van aangepaste rollen in Azure Active Directory.
+    > U vindt [hier](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview) meer richtlijnen voor het maken van aangepaste rollen in Azure Active Directory.
 
 1. Ga op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** naar **XML-bestand met federatieve metagegevens** en selecteer **Downloaden** om het certificaat te downloaden. Sla dit vervolgens op de computer op.
 
@@ -143,7 +143,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van Dotcom-Monitor en initieer de aanmeldingsstroom daar.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Dotcom-Monitor klikt, wordt u omgeleid naar de aanmeldings-URL van Dotcom-Monitor. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel Dotcom-Monitor klikt, wordt u omgeleid naar de aanmeldings-URL van Dotcom-Monitor. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

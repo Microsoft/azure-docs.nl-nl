@@ -6,15 +6,15 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 01/11/2021
-ms.openlocfilehash: 877251ba7e0c1f3c33cab37e20d609479b69520c
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: c213a38286de05df5c3be8e3498bcca4ab6e1fbf
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251825"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736141"
 ---
 # <a name="azure-monitor-for-existing-operations-manager-customers"></a>Azure Monitor voor bestaande Operations Manager klanten
-Dit artikel bevat richt lijnen voor klanten die momenteel [System Center Operations Manager](https://docs.microsoft.com/system-center/scom/welcome) gebruiken en een overgang plannen naar [Azure monitor](overview.md) wanneer ze bedrijfs toepassingen en andere resources migreren naar Azure. Hierbij wordt ervan uitgegaan dat uw ultieme doel stelling een volledige overgang naar de Cloud is, waarbij u zoveel mogelijk Operations Manager functionaliteit kunt vervangen door Azure Monitor, zonder in te leveren op de operationele vereisten van uw bedrijf en IT. 
+Dit artikel bevat richt lijnen voor klanten die momenteel [System Center Operations Manager](/system-center/scom/welcome) gebruiken en een overgang plannen naar [Azure monitor](overview.md) wanneer ze bedrijfs toepassingen en andere resources migreren naar Azure. Hierbij wordt ervan uitgegaan dat uw ultieme doel stelling een volledige overgang naar de Cloud is, waarbij u zoveel mogelijk Operations Manager functionaliteit kunt vervangen door Azure Monitor, zonder in te leveren op de operationele vereisten van uw bedrijf en IT. 
 
 De specifieke aanbevelingen in dit artikel worden gewijzigd als Azure Monitor en Operations Manager onderdelen toevoegen. De fundamentele strategie is echter consistent.
 
@@ -22,13 +22,13 @@ De specifieke aanbevelingen in dit artikel worden gewijzigd als Azure Monitor en
 > Er zijn kosten verbonden aan het implementeren van verschillende Azure Monitor functies die hier worden beschreven, dus u moet de waarde ervan evalueren voordat u deze in uw hele omgeving implementeert.
 
 ## <a name="prerequisites"></a>Vereisten
-In dit artikel wordt ervan uitgegaan dat u [Operations Manager](https://docs.microsoft.com/system-center/scom) al gebruikt en dat er ten minste een basis memorandum van [Azure monitor](overview.md)is. Zie [overzicht van Cloud monitoring: bewakings platforms](/azure/cloud-adoption-framework/manage/monitor/platform-overview)voor een volledige vergelijking tussen de twee. In dit artikel vindt u meer informatie over de verschillen tussen de twee en enkele van de aanbevelingen die hier worden beschreven. 
+In dit artikel wordt ervan uitgegaan dat u [Operations Manager](/system-center/scom) al gebruikt en dat er ten minste een basis memorandum van [Azure monitor](overview.md)is. Zie [overzicht van Cloud monitoring: bewakings platforms](/azure/cloud-adoption-framework/manage/monitor/platform-overview)voor een volledige vergelijking tussen de twee. In dit artikel vindt u meer informatie over de verschillen tussen de twee en enkele van de aanbevelingen die hier worden beschreven. 
 
 
 ## <a name="general-strategy"></a>Algemene strategie
 Er zijn geen migratie hulpprogramma's voor het converteren van activa van Operations Manager naar Azure Monitor omdat de platformen fundamenteel verschillen. De migratie is in plaats daarvan een [standaard Azure monitor implementatie](deploy.md) wanneer u Operations Manager blijft gebruiken. Bij het aanpassen van Azure Monitor om te voldoen aan uw vereisten voor verschillende toepassingen en onderdelen, en naarmate er meer functies worden gerealiseerd, kunt u de verschillende Management Packs en agents in Operations Manager buiten gebruik stellen.
 
-De algemene strategie die in dit artikel wordt aanbevolen, is hetzelfde als in de [Cloud monitoring-hand leiding](https://docs.microsoft.com/azure/cloud-adoption-framework/manage/monitor/), waarmee een hybride strategie voor [Cloud bewaking](/azure/cloud-adoption-framework/manage/monitor/cloud-models-monitor-overview#hybrid-cloud-monitoring) wordt aanbevolen waarmee u een geleidelijke overgang naar de cloud kunt uitvoeren. Hoewel sommige functies elkaar kunnen overlappen, biedt deze strategie u de mogelijkheid om uw bestaande bedrijfs processen te onderhouden terwijl u vertrouwd raakt met het nieuwe platform. Verplaats alleen van Operations Manager functionaliteit, omdat u deze kunt vervangen door Azure Monitor. Het gebruik van meerdere controle hulpprogramma's voegt complexiteit toe, maar biedt u de mogelijkheid om te profiteren van de mogelijkheden van Azure Monitor om de Cloud werkbelasting van de volgende generatie te bewaken, Operations Manager terwijl u de mogelijkheden van de server software en infrastructuur onderdelen die on-premises of andere Clouds zijn, kunt bewaken. 
+De algemene strategie die in dit artikel wordt aanbevolen, is hetzelfde als in de [Cloud monitoring-hand leiding](/azure/cloud-adoption-framework/manage/monitor/), waarmee een hybride strategie voor [Cloud bewaking](/azure/cloud-adoption-framework/manage/monitor/cloud-models-monitor-overview#hybrid-cloud-monitoring) wordt aanbevolen waarmee u een geleidelijke overgang naar de cloud kunt uitvoeren. Hoewel sommige functies elkaar kunnen overlappen, biedt deze strategie u de mogelijkheid om uw bestaande bedrijfs processen te onderhouden terwijl u vertrouwd raakt met het nieuwe platform. Verplaats alleen van Operations Manager functionaliteit, omdat u deze kunt vervangen door Azure Monitor. Het gebruik van meerdere controle hulpprogramma's voegt complexiteit toe, maar biedt u de mogelijkheid om te profiteren van de mogelijkheden van Azure Monitor om de Cloud werkbelasting van de volgende generatie te bewaken, Operations Manager terwijl u de mogelijkheden van de server software en infrastructuur onderdelen die on-premises of andere Clouds zijn, kunt bewaken. 
 
 
 ## <a name="components-to-monitor"></a>Te bewaken onderdelen
@@ -37,7 +37,7 @@ Het helpt bij het categoriseren van de verschillende typen werk belastingen die 
 Voor de Cloud hebt u Operations Manager gebruikt om alle lagen te bewaken. Wanneer u de overgang met de infra structuur als een service (IaaS) start, blijft u Operations Manager gebruiken voor uw virtuele machines, maar kunt u Azure Monitor voor uw cloud resources gebruiken. Als u een andere overstap maakt naar moderne toepassingen die gebruikmaken van platform as a Service (PaaS), kunt u zich richten op Azure Monitor en Operations Manager functionaliteit buiten gebruik stellen.
 
 
-![Cloud modellen](https://docs.microsoft.com/azure/cloud-adoption-framework/strategy/media/monitoring-strategy/cloud-models.png)
+![Cloud modellen](/azure/cloud-adoption-framework/strategy/media/monitoring-strategy/cloud-models.png)
 
 Deze lagen kunnen in de volgende categorieën worden vereenvoudigd, die verder in de rest van dit artikel worden beschreven. Hoewel elke bewakings werk belasting in uw omgeving mogelijk niet netjes in een van deze categorieën past, moet elk systeem voldoende zijn voor een bepaalde categorie, zodat de algemene aanbevelingen kunnen worden toegepast.
 

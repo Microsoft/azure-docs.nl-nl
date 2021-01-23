@@ -7,12 +7,12 @@ author: mimckitt
 ms.author: mimckitt
 ms.topic: conceptual
 ms.date: 11/06/2020
-ms.openlocfilehash: 3ae300ca2746ab9e3478d3fe14fd6fc49c95a93d
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: dc9f7dfdf33411f11d51734b48105be200874d02
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071728"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98738115"
 ---
 # <a name="azure-boot-diagnostics"></a>Diagnostische gegevens over Azure-opstarten
 
@@ -45,7 +45,7 @@ Bij het maken van een virtuele machine in de Azure Portal is de standaard instel
 :::image type="content" source="./media/boot-diagnostics/boot-diagnostics-enable-portal.png" alt-text="Scherm opname voor het inschakelen van beheerde diagnostische gegevens over opstarten tijdens het maken van VM'S.":::
 
 ### <a name="enable-managed-boot-diagnostics-using-cli"></a>Diagnostische gegevens over beheerde opstarten inschakelen met CLI
-Diagnostische gegevens over opstarten met een beheerd opslag account worden ondersteund in azure CLI 2.12.0 en hoger. Als u geen naam of URI voor een opslag account invoert, wordt een beheerd account gebruikt. Zie de [cli-documentatie voor diagnostische](/cli/azure/vm/boot-diagnostics?preserve-view=true&view=azure-cli-latest)gegevens over opstarten voor meer informatie en code voorbeelden.
+Diagnostische gegevens over opstarten met een beheerd opslag account worden ondersteund in azure CLI 2.12.0 en hoger. Als u geen naam of URI voor een opslag account invoert, wordt een beheerd account gebruikt. Zie de [cli-documentatie voor diagnostische](/cli/azure/vm/boot-diagnostics)gegevens over opstarten voor meer informatie en code voorbeelden.
 
 ### <a name="enable-managed-boot-diagnostics-using-azure-resource-manager-arm-templates"></a>Diagnostische sjablonen voor beheerde opstarten met Azure Resource Manager (ARM) inschakelen
 Alle na de API-versie 2020-06-01 ondersteunen diagnostische gegevens over het opstarten van de beheerder. Zie voor meer informatie de [instantie weergave diagnostische gegevens over opstarten](/rest/api/compute/virtualmachines/createorupdate#bootdiagnostics).

@@ -8,12 +8,12 @@ ms.author: rogarana
 ms.service: virtual-machines-windows
 ms.subservice: disks
 ms.custom: references_regions
-ms.openlocfilehash: c231aab47f154b6150368b504872d87317c790cc
-ms.sourcegitcommit: 6a902230296a78da21fbc68c365698709c579093
+ms.openlocfilehash: 9f0642d3421e775d1c6930b672b37643a961178f
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93359949"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736285"
 ---
 # <a name="use-the-azure-powershell-module-to-enable-double-encryption-at-rest-for-managed-disks"></a>De module Azure PowerShell gebruiken om dubbele versleuteling in te scha kelen voor beheerde schijven
 
@@ -21,7 +21,7 @@ Azure Disk Storage ondersteunt dubbele versleuteling in rust voor beheerde schij
 
 ## <a name="prerequisites"></a>Vereisten
 
-Installeer de meest recente [versie van Azure PowerShell](/powershell/azure/install-az-ps)en meld u aan bij een Azure-account met [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount?view=azps-4.3.0).
+Installeer de meest recente [versie van Azure PowerShell](/powershell/azure/install-az-ps)en meld u aan bij een Azure-account met [Connect-AzAccount](/powershell/module/az.accounts/connect-azaccount).
 
 ## <a name="getting-started"></a>Aan de slag
 

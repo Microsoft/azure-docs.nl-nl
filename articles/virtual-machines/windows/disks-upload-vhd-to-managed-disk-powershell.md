@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: virtual-machines
 ms.tgt_pltfrm: linux
 ms.subservice: disks
-ms.openlocfilehash: 17b99a9d3fa6b2934705d913170f2f617c856998
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 1655c48eeb9227bf934c7fd9bb37610327b2b98c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915756"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736268"
 ---
 # <a name="upload-a-vhd-to-azure-or-copy-a-managed-disk-to-another-region---azure-powershell"></a>Een VHD uploaden naar Azure of een beheerde schijf kopiëren naar een andere regio-Azure PowerShell
 
@@ -44,7 +44,7 @@ Dit soort beheerde schijven heeft twee unieke statussen:
 
 Voordat u een lege standaard HDD voor het uploaden kunt maken, hebt u de bestands grootte van de VHD die u wilt uploaden, in bytes. Met de voorbeeld code krijgt u maar zelf, kunt u het volgende gebruiken: `$vhdSizeBytes = (Get-Item "<fullFilePathHere>").length` . Deze waarde wordt gebruikt bij het opgeven van de para meter **-UploadSizeInBytes** .
 
-Maak nu op uw lokale shell een lege standaard HDD voor het uploaden door de **Upload** -instelling op te geven in de para meter **-CreateOption** en de para meter **-UploadSizeInBytes** in de cmdlet [New-AzDiskConfig](/powershell/module/az.compute/new-azdiskconfig?view=azps-1.8.0&preserve-view=true) . Roep vervolgens [New-AzDisk](/powershell/module/az.compute/new-azdisk?view=azps-1.8.0&preserve-view=true) aan om de schijf te maken.
+Maak nu op uw lokale shell een lege standaard HDD voor het uploaden door de **Upload** -instelling op te geven in de para meter **-CreateOption** en de para meter **-UploadSizeInBytes** in de cmdlet [New-AzDiskConfig](/powershell/module/az.compute/new-azdiskconfig) . Roep vervolgens [New-AzDisk](/powershell/module/az.compute/new-azdisk) aan om de schijf te maken.
 
 Vervang `<yourdiskname>` , `<yourresourcegroupname>` en `<yourregion>` Voer de volgende opdrachten uit:
 

@@ -3,12 +3,12 @@ title: Back-upfouten in azure Disk Backup oplossen
 description: Meer informatie over het oplossen van back-upfouten in azure Disk Backup
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 3e7c81d70fc898528532a841a484bf6fff8b83a7
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 855c6c5b19b10bdb699a25f89ebc29001b7941ac
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611233"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737724"
 ---
 # <a name="troubleshooting-backup-failures-in-azure-disk-backup-in-preview"></a>Back-upfouten in azure Disk Backup oplossen (in preview-versie)
 
@@ -115,7 +115,7 @@ Aanbevolen actie: verleen de beheerde identiteit van de back-upkluis de juiste m
 
 Fout bericht: de bewerking is mislukt omdat de maximum limiet voor het schijf quotum voor het abonnement is bereikt.
 
-Aanbevolen actie: Raadpleeg het [Azure-abonnement en de service limieten en de quota documentatie](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits) of neem contact op met Microsoft ondersteuning voor meer informatie.
+Aanbevolen actie: Raadpleeg het [Azure-abonnement en de service limieten en de quota documentatie](../azure-resource-manager/management/azure-subscription-service-limits.md) of neem contact op met Microsoft ondersteuning voor meer informatie.
 
 ### <a name="error-code-usererrordiskbackuprestorergormsipermissionsnotpresent"></a>Fout code: UserErrorDiskBackupRestoreRGOrMSIPermissionsNotPresent
 

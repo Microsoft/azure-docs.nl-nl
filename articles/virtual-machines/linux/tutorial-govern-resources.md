@@ -12,12 +12,12 @@ ms.topic: tutorial
 ms.date: 09/30/2019
 ms.author: tomfitz
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: d1fb9347e33c56c647e15b9e90df4afe5dd55b65
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 695bf57e120889207151209702c16d456da79385
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704739"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736765"
 ---
 # <a name="tutorial-learn-about-linux-virtual-machine-management-with-azure-cli"></a>Zelfstudie: Meer informatie over het beheren van virtuele Linux-machines met Azure CLI
 
@@ -55,7 +55,7 @@ Voor het beheren van virtuele machine-oplossingen zijn er drie resourcespecifiek
 
 In plaats van rollen toe te wijzen aan individuele gebruikers, is het vaak eenvoudiger om een Azure Active Directory-groep te gebruiken die gebruikers bevat die vergelijkbare acties moeten ondernemen. U wijst dan de juiste rol aan die groep toe. Gebruik voor dit artikel een bestaande groep om de virtuele machine te beheren of gebruik de portal om [een Azure Active Directory-groep te maken](../../active-directory/fundamentals/active-directory-groups-create-azure-portal.md).
 
-Gebruik, nadat u een nieuwe groep hebt gemaakt of een bestaande groep hebt gevonden, de opdracht [az role assignment create](/cli/azure/policy/assignment#az-policy-assignment-create) om de nieuwe Azure Active Directory-groep toe te wijzen aan de rol Inzender voor virtuele machines voor de resourcegroep.
+Gebruik, nadat u een nieuwe groep hebt gemaakt of een bestaande groep hebt gevonden, de opdracht [az role assignment create](/cli/azure/policy/assignment#az_policy_assignment_create) om de nieuwe Azure Active Directory-groep toe te wijzen aan de rol Inzender voor virtuele machines voor de resourcegroep.
 
 ```azurecli-interactive
 adgroupId=$(az ad group show --group <your-group-name> --query objectId --output tsv)
@@ -69,7 +69,7 @@ Normaal gesproken herhaalt u het proces voor *Inzender voor netwerken* en *Inzen
 
 ## <a name="azure-policy"></a>Azure Policy
 
-[Azure-beleid](../../governance/policy/overview.md) helpt u ervoor te zorgen dat alle resources in het abonnement voldoen aan de bedrijfsnormen. Uw abonnement heeft al meerdere beleidsdefinities. Als u de beschikbare beleidsdefinities wilt bekijken, gebruikt u de opdracht [az policy definition list](/cli/azure/policy/definition#az-policy-definition-list):
+[Azure-beleid](../../governance/policy/overview.md) helpt u ervoor te zorgen dat alle resources in het abonnement voldoen aan de bedrijfsnormen. Uw abonnement heeft al meerdere beleidsdefinities. Als u de beschikbare beleidsdefinities wilt bekijken, gebruikt u de opdracht [az policy definition list](/cli/azure/policy/definition#az_policy_definition_list):
 
 ```azurecli-interactive
 az policy definition list --query "[].[displayName, policyType, name]" --output table
@@ -81,7 +81,7 @@ U ziet de bestaande beleidsdefinities. Het type beleid is **Ingebouwd** of **Aan
 * De SKU's voor virtuele machines worden beperkt.
 * Controleer virtuele machines die niet gebruikmaken van beheerde schijven.
 
-In het volgende voorbeeld haalt u drie beleidsdefinities op basis van de weergavenaam op. U gebruikt de opdracht [az policy assignment create](/cli/azure/policy/assignment#az-policy-assignment-create) om deze definities toe te wijzen aan de resourcegroep. Voor sommige beleidsregels kunt u parameterwaarden opgeven om de toegestane waarden te specificeren.
+In het volgende voorbeeld haalt u drie beleidsdefinities op basis van de weergavenaam op. U gebruikt de opdracht [az policy assignment create](/cli/azure/policy/assignment#az_policy_assignment_create) om deze definities toe te wijzen aan de resourcegroep. Voor sommige beleidsregels kunt u parameterwaarden opgeven om de toegestane waarden te specificeren.
 
 ```azurecli-interactive
 # Get policy definitions for allowed locations, allowed SKUs, and auditing VMs that don't use managed disks
@@ -143,7 +143,7 @@ Met [resourcevergrendelingen](../../azure-resource-manager/management/lock-resou
 
 Als u beheervergrendelingen wilt maken of verwijderen, moet u toegang hebben tot `Microsoft.Authorization/locks/*`-acties. Van de ingebouwde rollen worden deze acties alleen toegekend aan **Eigenaar** en **Administrator voor gebruikerstoegang**.
 
-Als u de virtuele machine en de netwerkbeveiligingsgroep wilt vergrendelen, gebruikt u de opdracht [az lock create](/cli/azure/resource/lock#az-resource-lock-create):
+Als u de virtuele machine en de netwerkbeveiligingsgroep wilt vergrendelen, gebruikt u de opdracht [az lock create](/cli/azure/resource/lock#az_resource_lock_create):
 
 ```azurecli-interactive
 # Add CanNotDelete lock to the VM
@@ -175,7 +175,7 @@ U past [tags](../../azure-resource-manager/management/tag-resources.md) toe op u
 
 [!INCLUDE [Resource Manager governance tags CLI](../../../includes/resource-manager-governance-tags-cli.md)]
 
-Voor het toepassen van tags op een virtuele machine gebruikt u de opdracht [az resource tag](/cli/azure/resource#az-resource-list). Eventuele bestaande tags in de resource blijven niet behouden.
+Voor het toepassen van tags op een virtuele machine gebruikt u de opdracht [az resource tag](/cli/azure/resource#az_resource_list). Eventuele bestaande tags in de resource blijven niet behouden.
 
 ```azurecli-interactive
 az resource tag -n myVM \
@@ -186,7 +186,7 @@ az resource tag -n myVM \
 
 ### <a name="find-resources-by-tag"></a>Resources zoeken op tag
 
-Als u naar resources met een tagnaam en -waarde wilt zoeken, gebruikt u de opdracht [az resource list](/cli/azure/resource#az-resource-list):
+Als u naar resources met een tagnaam en -waarde wilt zoeken, gebruikt u de opdracht [az resource list](/cli/azure/resource#az_resource_list):
 
 ```azurecli-interactive
 az resource list --tag Environment=Test --query [].name
@@ -204,7 +204,7 @@ az vm stop --ids $(az resource list --tag Environment=Test --query "[?type=='Mic
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-De vergrendelde netwerkbeveiligingsgroep kan pas worden verwijderd nadat de vergrendeling is verwijderd. Als u de vergrendelingen wilt verwijderen, haalt u de id van de vergrendelingen op en voert u er de opdracht [az lock delete](/cli/azure/resource/lock#az-resource-lock-delete) voor uit:
+De vergrendelde netwerkbeveiligingsgroep kan pas worden verwijderd nadat de vergrendeling is verwijderd. Als u de vergrendelingen wilt verwijderen, haalt u de id van de vergrendelingen op en voert u er de opdracht [az lock delete](/cli/azure/resource/lock#az_resource_lock_delete) voor uit:
 
 ```azurecli-interactive
 vmlock=$(az lock show --name LockVM \
@@ -218,7 +218,7 @@ nsglock=$(az lock show --name LockNSG \
 az lock delete --ids $vmlock $nsglock
 ```
 
-U kunt de opdracht [az group delete](/cli/azure/group#az-group-delete) gebruiken om de resourcegroep, de VM en alle gerelateerde resources te verwijderen wanneer u ze niet meer nodig hebt. Sluit SSH-sessie met uw virtuele machine af en verwijder vervolgens de resources als volgt:
+U kunt de opdracht [az group delete](/cli/azure/group#az_group_delete) gebruiken om de resourcegroep, de VM en alle gerelateerde resources te verwijderen wanneer u ze niet meer nodig hebt. Sluit SSH-sessie met uw virtuele machine af en verwijder vervolgens de resources als volgt:
 
 ```azurecli-interactive 
 az group delete --name myResourceGroup

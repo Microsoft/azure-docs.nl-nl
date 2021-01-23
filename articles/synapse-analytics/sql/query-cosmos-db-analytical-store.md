@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 12/04/2020
 ms.author: jovanpop
 ms.reviewer: jrasnick
-ms.openlocfilehash: 4681039f60154b95eeb7e40196ca33055a192c74
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 2059608faa8ce148e5823e48eff6abf9e71c9b01
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222102"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735430"
 ---
 # <a name="query-azure-cosmos-db-data-with-a-serverless-sql-pool-in-azure-synapse-link-preview"></a>Azure Cosmos DB gegevens opvragen met een serverloze SQL-groep in azure Synapse link preview
 
@@ -24,7 +24,7 @@ ms.locfileid: "98222102"
 
 Met een serverloze SQL-pool kunt u gegevens in uw Azure Cosmos DB containers die in bijna realtime zijn ingeschakeld, analyseren zonder dat dit van invloed [is op de](../../cosmos-db/synapse-link.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) prestaties van uw transactionele werk belastingen. Het biedt een bekende T-SQL-syntaxis voor het opvragen van gegevens uit de [analytische opslag](../../cosmos-db/analytical-store-introduction.md?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json) en de geïntegreerde connectiviteit met een breed scala aan Business Intelligence (BI) en ad-hoc query Programma's via de T-SQL-interface.
 
-Voor het uitvoeren van query's in Azure Cosmos DB wordt de volledige [selectie](/sql/t-sql/queries/select-transact-sql?view=sql-server-ver15) Surface Area ondersteund door de functie [OpenRowSet](develop-openrowset.md) , die het meren deel van [SQL-functies en-Opera tors](overview-features.md)bevat. U kunt ook resultaten van de query opslaan die gegevens uit Azure Cosmos DB leest, samen met gegevens in Azure Blob Storage of Azure Data Lake Storage met behulp van de [optie externe tabel maken als Select](develop-tables-cetas.md#cetas-in-serverless-sql-pool) (CETAS). U kunt momenteel geen serverloze query resultaten van SQL-groep in Azure Cosmos DB opslaan met behulp van CETAS.
+Voor het uitvoeren van query's in Azure Cosmos DB wordt de volledige [selectie](/sql/t-sql/queries/select-transact-sql?view=azure-sqldw-latest&preserve-view=true) Surface Area ondersteund door de functie [OpenRowSet](develop-openrowset.md) , die het meren deel van [SQL-functies en-Opera tors](overview-features.md)bevat. U kunt ook resultaten van de query opslaan die gegevens uit Azure Cosmos DB leest, samen met gegevens in Azure Blob Storage of Azure Data Lake Storage met behulp van de [optie externe tabel maken als Select](develop-tables-cetas.md#cetas-in-serverless-sql-pool) (CETAS). U kunt momenteel geen serverloze query resultaten van SQL-groep in Azure Cosmos DB opslaan met behulp van CETAS.
 
 In dit artikel leert u hoe u een query schrijft met een serverloze SQL-groep die gegevens opvraagt uit Azure Cosmos DB containers die zijn ingeschakeld met de koppeling Azure Synapse. In [deze zelf studie](./tutorial-data-analyst.md)vindt u meer informatie over het bouwen van SERVERloze SQL-pool weergaven over Azure Cosmos DB containers en het verbinden ervan met Power bi modellen.
 
@@ -337,7 +337,7 @@ Azure Cosmos DB-accounts van de SQL-API (core) ondersteunen JSON-eigenschaps typ
 
 | Azure Cosmos DB eigenschaps type | SQL-kolom Type |
 | --- | --- |
-| Boolean | bit |
+| Booleaans | bit |
 | Geheel getal | bigint |
 | Decimaal | float |
 | Tekenreeks | varchar (UTF-8-database sortering) |

@@ -10,12 +10,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
 ms.date: 01/15/2021
-ms.openlocfilehash: 6589f451d4db8f2ed77ce70a2bdfa9d76927c1e2
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 35cdfdbdc04d0c88bc49c024ea7465537583e0d7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251213"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735508"
 ---
 # <a name="vcore-model-overview---azure-sql-database-and-azure-sql-managed-instance"></a>overzicht van vCore-model-Azure SQL Database en Azure SQL Managed instance 
 [!INCLUDE[appliesto-sqldb-sqlmi](../includes/appliesto-sqldb-sqlmi.md)]
@@ -94,7 +94,7 @@ De M-serie wordt alleen ondersteund in de laag Bedrijfskritiek en biedt geen ond
 
 #### <a name="azure-offer-types-supported-by-m-series"></a>Azure-aanbiedings typen die worden ondersteund door M-serie
 
-Voor toegang tot de M-serie moet het abonnement een betaald aanbod type zijn, inclusief betalen naar gebruik of Enterprise Agreement (EA).  Zie [huidige aanbiedingen zonder bestedings limieten](https://azure.microsoft.com/support/legal/offer-details)voor een volledige lijst met Azure-aanbiedings typen die door de M-serie worden ondersteund.
+Voor toegang tot de M-serie moet het abonnement een betaald aanbod type zijn, inclusief betalen naar gebruik of Enterprise Overeenkomst (EA).  Zie [huidige aanbiedingen zonder bestedings limieten](https://azure.microsoft.com/support/legal/offer-details)voor een volledige lijst met Azure-aanbiedings typen die door de M-serie worden ondersteund.
 
 <!--
 To enable M-series hardware for a subscription and region, a support request must be opened. The subscription must be a paid offer type including Pay-As-You-Go or Enterprise Agreement (EA).  If the support request is approved, then the selection and provisioning experience of M-series follows the same pattern as for other hardware generations. For regions where M-series is available, see [M-series availability](#m-series).
@@ -106,7 +106,7 @@ To enable M-series hardware for a subscription and region, a support request mus
 > DC-serie is momenteel beschikbaar als **open bare preview**.
 
 - Hardwarematige DC-serie gebruikt Intel-processors met software Guard Extensions (Intel SGX)-technologie.
-- DC-serie is vereist voor [Always encrypted met beveiligde enclaves](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves). dit wordt niet ondersteund met andere hardwareconfiguraties.
+- DC-serie is vereist voor [Always encrypted met beveiligde enclaves](/sql/relational-databases/security/encryption/always-encrypted-enclaves). dit wordt niet ondersteund met andere hardwareconfiguraties.
 - DC-serie is ontworpen voor werk belastingen die gevoelige gegevens en vraag verwerking van vertrouwelijke query's verwerken, die worden geboden door Always Encrypted met beveiligde enclaves.
 - De hardware van de DC-serie biedt evenwichtige reken-en geheugen bronnen.
 
@@ -114,7 +114,7 @@ DC-serie wordt alleen ondersteund voor de ingerichte Compute (Serverloze wordt n
 
 #### <a name="azure-offer-types-supported-by-dc-series"></a>Azure-aanbiedings typen die worden ondersteund door DC-serie
 
-Voor toegang tot de DC-serie moet het abonnement een betaald aanbod type zijn, inclusief betalen naar gebruik of Enterprise Agreement (EA).  Zie [huidige aanbiedingen zonder bestedings limieten](https://azure.microsoft.com/support/legal/offer-details)voor een volledige lijst met Azure-aanbiedings typen die door DC-serie worden ondersteund.
+Voor toegang tot de DC-serie moet het abonnement een betaald aanbod type zijn, inclusief betalen naar gebruik of Enterprise Overeenkomst (EA).  Zie [huidige aanbiedingen zonder bestedings limieten](https://azure.microsoft.com/support/legal/offer-details)voor een volledige lijst met Azure-aanbiedings typen die door DC-serie worden ondersteund.
 
 ### <a name="compute-and-memory-specifications"></a>Specificaties van Compute en geheugen
 

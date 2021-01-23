@@ -5,12 +5,12 @@ keywords: Azure app service, Web-app, mobiele app, API-app, functie-app, beveili
 ms.topic: article
 ms.date: 08/24/2018
 ms.custom: seodec18
-ms.openlocfilehash: 55ffb2d03a42809a41583e6be25066b0b8e104b1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 61bffcfa8b98ed666e450c344023258b752e4880
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88961496"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736102"
 ---
 # <a name="security-in-azure-app-service"></a>Beveiliging in Azure App Service
 
@@ -39,11 +39,11 @@ Als u uw app wilt beveiligen tegen alle niet-versleutelde (HTTP) verbindingen, b
 
 App Service ondersteunt zowel FTP-als FTPS voor het implementeren van uw bestanden. FTPS moet echter wel worden gebruikt in plaats van FTP, indien dit mogelijk is. Wanneer een of beide protocollen niet in gebruik zijn, moet u [deze uitschakelen](deploy-ftp.md#enforce-ftps).
 
-## <a name="static-ip-restrictions"></a>Statische IP-beperkingen
+## <a name="static-ip-restrictions"></a>Beperkingen voor statische IP-adressen
 
 Standaard accepteert uw App Service-app aanvragen van alle IP-adressen van het Internet, maar u kunt de toegang tot een kleine subset van IP-adressen beperken. Met App Service in Windows kunt u een lijst met IP-adressen definiëren die toegang hebben tot uw app. De lijst met toegestane namen kan afzonderlijke IP-adressen bevatten of een bereik van IP-adressen die zijn gedefinieerd door een subnetmasker. Zie [Azure app service static IP-beperkingen](app-service-ip-restrictions.md)voor meer informatie.
 
-Voor App Service in Windows kunt u IP-adressen ook dynamisch beperken door de _web.config_te configureren. Zie [dynamische IP-beveiliging \<dynamicIpSecurity> ](/iis/configuration/system.webServer/security/dynamicIpSecurity/)voor meer informatie.
+Voor App Service in Windows kunt u IP-adressen ook dynamisch beperken door de _web.config_ te configureren. Zie [dynamische IP-beveiliging \<dynamicIpSecurity>](/iis/configuration/system.webServer/security/dynamicIpSecurity/)voor meer informatie.
 
 ## <a name="client-authentication-and-authorization"></a>Client verificatie en-autorisatie
 
@@ -85,8 +85,8 @@ Als u de bron connectiviteit volledig wilt isoleren van de gedeelde netwerken in
 U kunt op drie manieren veilig toegang krijgen tot on-premises resources, zoals data bases: 
 
 - [Hybride verbindingen](app-service-hybrid-connections.md) : Hiermee wordt een Point-to-point-verbinding met uw externe bron tot stand gebracht via een TCP-tunnel. De TCP-tunnel wordt tot stand gebracht met behulp van TLS 1,2 met SAS-sleutels (Shared Access Signature).
-- [Virtual Network integratie](web-sites-integrate-with-vnet.md) met site-naar-site-VPN-zoals beschreven in [resources binnen een Azure-Virtual Network](#resources-inside-an-azure-virtual-network), maar de Virtual Network kan worden verbonden met uw on-premises netwerk via een [site-naar-site-VPN](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md). In deze netwerk topologie kan uw app verbinding maken met on-premises resources zoals andere resources in de Virtual Network.
-- [App service omgeving](environment/intro.md) met site-naar-site-VPN, zoals beschreven in [resources binnen een Azure-Virtual Network](#resources-inside-an-azure-virtual-network), maar de Virtual Network kan worden verbonden met uw on-premises netwerk via een [site-naar-site-VPN](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md). In deze netwerk topologie kan uw app verbinding maken met on-premises resources zoals andere resources in de Virtual Network.
+- [Virtual Network integratie](web-sites-integrate-with-vnet.md) met site-naar-site-VPN-zoals beschreven in [resources binnen een Azure-Virtual Network](#resources-inside-an-azure-virtual-network), maar de Virtual Network kan worden verbonden met uw on-premises netwerk via een [site-naar-site-VPN](../vpn-gateway/tutorial-site-to-site-portal.md). In deze netwerk topologie kan uw app verbinding maken met on-premises resources zoals andere resources in de Virtual Network.
+- [App service omgeving](environment/intro.md) met site-naar-site-VPN, zoals beschreven in [resources binnen een Azure-Virtual Network](#resources-inside-an-azure-virtual-network), maar de Virtual Network kan worden verbonden met uw on-premises netwerk via een [site-naar-site-VPN](../vpn-gateway/tutorial-site-to-site-portal.md). In deze netwerk topologie kan uw app verbinding maken met on-premises resources zoals andere resources in de Virtual Network.
 
 ## <a name="application-secrets"></a>Toepassings geheimen
 

@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 117bc71ba304445e3186b4e633f5888647be9223
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 38f37ff2fe150a9e1998fbe5e963b8737a6e1533
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685626"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737962"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -36,6 +36,7 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
     + Er is een probleem opgelost met de service. opnieuw laden () om wijzigingen in score.py op te halen in de lokale implementatie.
     + `run.get_details()` bevat een extra veld met de naam ' submittedBy ', waarin de auteurnaam voor deze uitvoering wordt weer gegeven.
     + Bewerkings model. REGI ster-methode documentatie om te vermelden hoe model moet worden geregistreerd bij het rechtstreeks uitvoeren
+    + Verwerkings probleem bij het wijzigen van de verbindings status van IOT-Server.
    
 
 ## <a name="2020-12-31"></a>2020-12-31

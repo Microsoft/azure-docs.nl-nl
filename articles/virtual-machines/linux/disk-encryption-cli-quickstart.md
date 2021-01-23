@@ -8,12 +8,12 @@ ms.subservice: security
 ms.topic: quickstart
 ms.date: 05/17/2019
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 3a9c859c32ef9ad387c56d5fc20f2173ee14fac5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
-ms.translationtype: HT
+ms.openlocfilehash: addfa90f5ec793600072aaaaf2786cfe3d5dad38
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91975175"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737012"
 ---
 # <a name="quickstart-create-and-encrypt-a-linux-vm-with-the-azure-cli"></a>Quickstart: Een Linux-VM maken en versleutelen met behulp van Azure CLI
 
@@ -25,7 +25,7 @@ Als u ervoor kiest om de Azure CLI lokaal te installeren en te gebruiken, moet u
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-Een resourcegroep maken met de opdracht [az group create](/cli/azure/group?view=azure-cli-latest#az-group-create). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
+Een resourcegroep maken met de opdracht [az group create](/cli/azure/group#az-group-create). Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd. In het volgende voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *eastus*:
 
 ```azurecli-interactive
 az group create --name "myResourceGroup" --location "eastus"
@@ -33,7 +33,7 @@ az group create --name "myResourceGroup" --location "eastus"
 
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 
-Maak een VM met [az vm create](/cli/azure/vm?view=azure-cli-latest#az-vm-create). In het volgende voorbeeld wordt een VM met de naam *myVM* gemaakt.
+Maak een VM met [az vm create](/cli/azure/vm#az_vm_create). In het volgende voorbeeld wordt een VM met de naam *myVM* gemaakt.
 
 ```azurecli-interactive
 az vm create \
@@ -61,7 +61,7 @@ Het maken van de virtuele machine en de ondersteunende resources duurt enkele mi
 
 ## <a name="create-a-key-vault-configured-for-encryption-keys"></a>Een sleutelkluis maken die is geconfigureerd voor versleutelingssleutels
 
-De versleutelingssleutel van Azure Disk Encryption wordt opgeslagen in een Azure-sleutelkluis. Een sleutelkluis maken met [az keyvault create](/cli/azure/keyvault?view=azure-cli-latest#az-keyvault-create). Gebruik de parameter --enabled-for-disk-encryption om de sleutelkluis in te schakelen voor het opslaan van versleutelingssleutels.
+De versleutelingssleutel van Azure Disk Encryption wordt opgeslagen in een Azure-sleutelkluis. Een sleutelkluis maken met [az keyvault create](/cli/azure/keyvault#az_keyvault_create). Gebruik de parameter --enabled-for-disk-encryption om de sleutelkluis in te schakelen voor het opslaan van versleutelingssleutels.
 
 > [!Important]
 > Elke sleutelkluis moet een naam hebben die uniek is binnen Azure. Vervang in de onderstaande voorbeelden <uw-unieke-sleutelkluisnaam> door de naam die u kiest.
@@ -72,7 +72,7 @@ az keyvault create --name "<your-unique-keyvault-name>" --resource-group "myReso
 
 ## <a name="encrypt-the-virtual-machine"></a>De virtuele machine versleutelen
 
-Versleutel uw virtuele machine met [az vm encryption](/cli/azure/vm/encryption?view=azure-cli-latest), zodat u uw unieke sleutelkluisnaam kunt opgeven voor de parameter --disk-encryption-keyvault.
+Versleutel uw virtuele machine met [az vm encryption](/cli/azure/vm/encryption), zodat u uw unieke sleutelkluisnaam kunt opgeven voor de parameter --disk-encryption-keyvault.
 
 ```azurecli-interactive
 az vm encryption enable -g "MyResourceGroup" --name "myVM" --disk-encryption-keyvault "<your-unique-keyvault-name>"

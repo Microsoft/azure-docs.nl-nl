@@ -11,12 +11,12 @@ ms.date: 11/13/2020
 ms.author: joanpo
 ms.reviewer: igorstan
 ms.custom: seo-lt-2019"
-ms.openlocfilehash: d8c680ec30dcecc56c064f08e4690cbbde9c2377
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 842f2f92133664f58ca60d6d30181d48d63271eb
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98679910"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736302"
 ---
 # <a name="backup-and-restore-in-azure-synapse-dedicated-sql-pool"></a>Back-ups maken en herstellen in een toegewezen SQL-groep in azure Synapse
 
@@ -71,8 +71,16 @@ Wanneer u een toegewezen SQL-groep neerzet, wordt een laatste moment opname gema
 
 Er wordt één keer per dag een geo-back-up gemaakt naar een [gekoppeld Data Center](../../best-practices-availability-paired-regions.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json). De RPO voor een geo-Restore is 24 uur. U kunt de geo-back-up naar een server herstellen in een andere regio waar exclusieve SQL-pool wordt ondersteund. Een geo-back-up zorgt ervoor dat u Data Warehouse kunt herstellen als u geen toegang hebt tot de herstel punten in uw primaire regio.
 
+Als u geen geo-back-ups voor uw toegewezen SQL-groep nodig hebt, kunt u deze uitschakelen en besparen op opslag kosten voor herstel na nood geval. Raadpleeg hiervoor [de hand leiding: Geo-back-ups uitschakelen voor een toegewezen SQL-groep (voorheen SQL DW)](disable-geo-backup.md). Als u geo-back-ups uitschakelt, kunt u uw toegewezen SQL-groep niet herstellen naar uw gekoppelde Azure-regio als uw primaire Azure-Data Center niet beschikbaar is. 
+
 > [!NOTE]
 > Als u een korte RPO voor geo-back-ups nodig hebt, stem dan op [deze functie.](https://feedback.azure.com/forums/307516-sql-data-warehouse) U kunt ook een door de gebruiker gedefinieerd herstel punt maken en herstellen vanuit het zojuist gemaakte herstel punt naar een nieuw data warehouse in een andere regio. Nadat u de gegevens hebt hersteld, hebt u het Data Warehouse online en kunt u het voor onbepaalde tijd pauzeren om reken kosten op te slaan. De gepauzeerde data base maakt kosten per seconde op het Premium Storage tarief van Azure. Als u een actieve kopie van het Data Warehouse nodig hebt, kunt u hervatten. dit duurt slechts enkele minuten.
+
+## <a name="data-residency"></a>Gegevenslocatie 
+
+Als uw gekoppelde Data Center zich buiten uw geografische grens bevindt, kunt u ervoor zorgen dat uw gegevens binnen uw geografische grenzen blijven door het afmelden van geografisch redundante opslag. Dit kan worden gedaan bij het inrichten van uw toegewezen SQL-groep (voorheen SQL DW) via de geo-redundante opslag optie bij het maken of herstellen van een toegewezen SQL-groep (voorheen SQL DW). 
+
+Als u wilt controleren of het gekoppelde Data Center zich in een ander land bevindt, raadpleegt u [Azure gekoppelde regio's](../../best-practices-availability-paired-regions.md?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json).
 
 ## <a name="backup-and-restore-costs"></a>Kosten voor back-up en herstel
 

@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 6634ab3521fee3062ecee465eaf6dcda80ee6ff8
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 0a462c7d713ea9285096db48b4a3bb5c5b0d9874
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98699511"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737367"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -508,15 +508,14 @@ De volgende variabelen, functies en weer gaven retour neren verschillende result
 
 ### <a name="subnet"></a>Subnet
 -  U kunt geen andere resources (bijvoorbeeld virtuele machines) plaatsen in het subnet waar u uw SQL Managed instance hebt geïmplementeerd. Implementeer deze bronnen met behulp van een ander subnet.
-- Het subnet moet voldoende beschik bare [IP-adressen](connectivity-architecture-overview.md#network-requirements)hebben. Mini maal is 16, terwijl aanbeveling ten minste 32 IP-adressen in het subnet.
-- [Service-eind punten kunnen niet worden gekoppeld aan het subnet van het SQL Managed instance](connectivity-architecture-overview.md#network-requirements). Zorg ervoor dat de optie service-eind punten is uitgeschakeld tijdens het maken van het virtuele netwerk.
+- Het subnet moet voldoende beschik bare [IP-adressen](connectivity-architecture-overview.md#network-requirements)hebben. Minimale moet ten minste 32 IP-adressen hebben in het subnet.
 - Het aantal vCores en typen instanties dat u in een regio kunt implementeren, hebben een aantal [beperkingen en](resource-limits.md#regional-resource-limitations)beperkingen.
-- Er zijn enkele [beveiligings regels die moeten worden toegepast op het subnet](connectivity-architecture-overview.md#network-requirements).
+- Er is een [netwerk configuratie](connectivity-architecture-overview.md#network-requirements) die op het subnet moet worden toegepast.
 
 ### <a name="vnet"></a>VNET
 - VNet kan worden geïmplementeerd met behulp van resource model-Klassiek model voor VNet wordt niet ondersteund.
 - Nadat een door SQL beheerd exemplaar is gemaakt, wordt het door SQL beheerde exemplaar of VNet naar een andere resource groep of een ander abonnement niet ondersteund.
-- Sommige services, zoals App Service omgevingen, Logic apps en SQL Managed instance (gebruikt voor geo-replicatie, transactionele replicatie of via gekoppelde servers), hebben geen toegang tot SQL Managed instance in verschillende regio's als hun VNets zijn verbonden via [globale peering](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers). U kunt via VNet-gateways verbinding maken met deze resources via ExpressRoute of VNet-naar-VNet.
+- Voor SQL Managed instances die worden gehost in virtuele clusters die zijn gemaakt voordat 9/22/2020 [Global peering](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) wordt ondersteund, wordt niet toegestaan. U kunt via VNet-gateways verbinding maken met deze resources via ExpressRoute of VNet-naar-VNet.
 
 ### <a name="failover-groups"></a>Failovergroepen
 Systeem databases worden niet gerepliceerd naar het secundaire exemplaar in een failovergroep. Daarom zijn scenario's die afhankelijk zijn van objecten van de systeem databases niet mogelijk op het secundaire exemplaar, tenzij de objecten hand matig op de secundaire instantie worden gemaakt.

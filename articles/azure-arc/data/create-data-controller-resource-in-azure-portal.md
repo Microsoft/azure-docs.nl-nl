@@ -9,18 +9,18 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: 297efa83fb1563e3a360f652a6ac1bc2b1679998
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bd8c079e91a6765dff8ad347085c44d0aa2f8d82
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90936445"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737300"
 ---
 # <a name="create-an-azure-arc-data-controller-in-the-azure-portal"></a>Een Azure-Arc-gegevens controller maken in de Azure Portal
 
 [!INCLUDE [azure-arc-data-preview](../../../includes/azure-arc-data-preview.md)]
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 U kunt de Azure Portal gebruiken om een Azure-Arc-gegevens controller te maken.
 
@@ -40,12 +40,16 @@ Volg de onderstaande stappen om een Azure-Arc-gegevens controller te maken met b
 6. Klik op de knop **Details van gegevens controller** .
 7. Kies een abonnement, resource groep en Azure-locatie, net zoals u zou doen voor andere resources die u in de Azure Portal zou maken. In dit geval wordt de Azure-locatie die u selecteert, waar de meta gegevens van de bron worden opgeslagen.  De resource zelf wordt gemaakt op de infra structuur die u kiest. Het hoeft niet in de Azure-infra structuur te zijn.
 8. Voer een naam in voor de gegevens controller.
-9. Er wordt momenteel alleen de indirect verbonden modus ondersteund in de preview-versie.
-10. Selecteer een configuratie profiel voor de implementatie.
-11. Klik op de knop **openen in azure Studio** .
-12. In het volgende scherm ziet u een samen vatting van uw selecties en een notitie blok dat wordt gegenereerd.  U kunt op de knop **inrichtings notitieblok downloaden** klikken om het notitie blok te downloaden.
-13. Open het notitie blok in Azure Data Studio en klik bovenaan op de knop **alles uitvoeren** .
-14. Volg de aanwijzingen en instructies in het notitie blok om het maken van de gegevens controller te volt ooien.
+9. Selecteer de connectiviteits modus voor de gegevens controller. Meer informatie over [connectiviteits modi en vereisten](./connectivity.md). 
+
+   > [!NOTE] 
+   > Als u de modus **directe** connectiviteit selecteert, controleert u of de referenties van de Service-Principal zijn ingesteld via omgevings variabelen, zoals wordt beschreven in [Service-Principal maken](upload-metrics-and-logs-to-azure-monitor.md#create-service-principal). 
+
+1. Selecteer een configuratie profiel voor de implementatie.
+1. Klik op de knop **openen in azure Studio** .
+1. In het volgende scherm ziet u een samen vatting van uw selecties en een notitie blok dat wordt gegenereerd.  U kunt op de knop **inrichtings notitieblok downloaden** klikken om het notitie blok te downloaden.
+1. Open het notitie blok in Azure Data Studio en klik bovenaan op de knop **alles uitvoeren** .
+1. Volg de aanwijzingen en instructies in het notitie blok om het maken van de gegevens controller te volt ooien.
 
 ## <a name="monitoring-the-creation-status"></a>De aanmaak status bewaken
 

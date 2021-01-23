@@ -4,12 +4,12 @@ description: Vind antwoorden op veelgestelde vragen over het maken van back-ups 
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 7518fc49f7d6d728bd8faa0de4cf0edc1c6d5831
-ms.sourcegitcommit: f7084d3d80c4bc8e69b9eb05dfd30e8e195994d8
+ms.openlocfilehash: 56dcf29a5c703a72fd137a5f1bf129f568a03b4b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97734110"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735806"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Veelgestelde vragen over SQL Server-data bases die worden uitgevoerd op een back-up van Azure VM
 
@@ -108,7 +108,7 @@ Ja, Azure Backup ondersteunt back-ups van SQL Server-data bases of-server waarop
 
 ## <a name="does-azure-backup-perform-a-checksum-operation-on-the-data-stream"></a>Voert Azure Backup een controlesom bewerking uit voor de gegevens stroom?
 
-Er wordt een controlesom bewerking uitgevoerd voor de gegevens stroom. Dit is echter niet te verwarren met [SQL-controlesom](https://docs.microsoft.com/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
+Er wordt een controlesom bewerking uitgevoerd voor de gegevens stroom. Dit is echter niet te verwarren met [SQL-controlesom](/sql/relational-databases/backup-restore/enable-or-disable-backup-checksums-during-backup-or-restore-sql-server).
 Back-up van Azure-workload berekent de controlesom voor de gegevens stroom en slaat deze expliciet op tijdens de back-upbewerking. Deze controlesom stroom wordt vervolgens als referentie gebruikt en wordt kruislings gecontroleerd met de controlesom van de gegevens stroom tijdens de herstel bewerking om ervoor te zorgen dat de gegevens consistent zijn.
 
 ## <a name="next-steps"></a>Volgende stappen

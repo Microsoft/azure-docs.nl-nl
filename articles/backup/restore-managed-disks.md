@@ -3,12 +3,12 @@ title: Azure Managed Disks herstellen
 description: Meer informatie over het herstellen van Azure Managed Disks vanuit de Azure Portal.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 848a7476b1c5095d4e4d3156d4c7ce33da777090
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: b9c9a22f25a8003151217bec15b618e3c380e67e
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611131"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737373"
 ---
 # <a name="restore-azure-managed-disks-in-preview"></a>Azure Managed Disks herstellen (in preview-versie)
 
@@ -17,7 +17,7 @@ ms.locfileid: "98611131"
 >
 >[Vul dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR1vE8L51DIpDmziRt_893LVUNFlEWFJBN09PTDhEMjVHS05UWFkxUlUzUS4u) in om u aan te melden voor de preview-versie.
 
-In dit artikel wordt uitgelegd hoe u [Azure Managed disks](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview) kunt herstellen vanaf een herstel punt dat is gemaakt door Azure backup.
+In dit artikel wordt uitgelegd hoe u [Azure Managed disks](../virtual-machines/managed-disks-overview.md) kunt herstellen vanaf een herstel punt dat is gemaakt door Azure backup.
 
 Op dit moment wordt de optie voor het Original-Location herstellen (herstellen) van het herstellen door de bestaande bron schijf te vervangen van waar de back-ups werden gemaakt, niet ondersteund. U kunt herstellen vanaf een herstel punt om een nieuwe schijf te maken in dezelfde resource groep als die van de bron schijf waar de back-ups zijn gemaakt of in een andere resource groep. Dit staat bekend als Alternate-Location herstel (ALR) en dit helpt de bron schijf en de herstelde (nieuwe) schijf te blijven gebruiken.
 
@@ -31,7 +31,7 @@ In dit artikel leert u het volgende:
 
 Backup-kluis maakt gebruik van beheerde identiteit voor toegang tot andere Azure-resources. Als u wilt herstellen vanuit een back-up, moet de beheerde identiteit van de back-upkluis een set machtigingen hebben voor de resource groep waarin de schijf moet worden hersteld.
 
-Back-upkluis maakt gebruik van een door het systeem toegewezen beheerde identiteit die is beperkt tot één per resource en is verbonden met de levens cyclus van deze resource. U kunt machtigingen verlenen aan de beheerde identiteit door gebruik te maken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type dat alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview).
+Back-upkluis maakt gebruik van een door het systeem toegewezen beheerde identiteit die is beperkt tot één per resource en is verbonden met de levens cyclus van deze resource. U kunt machtigingen verlenen aan de beheerde identiteit door gebruik te maken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type dat alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md).
 
 De volgende vereisten zijn vereist voor het uitvoeren van een herstel bewerking:
 
@@ -89,7 +89,7 @@ Als aan de vereisten wordt voldaan, voert u de volgende stappen uit om de herste
     ![Para meters herstellen](./media/restore-managed-disks/restore-parameters.png)
 
     >[!TIP]
-    >Schijven waarvan een back-up wordt gemaakt, kunnen ook worden gebruikt Azure Backup om een back-up te maken van Azure Backup met behulp van de back-upoplossing van Azure VM met de Recovery Services-kluis. Als u de beveiliging hebt geconfigureerd van de Azure-VM waaraan deze schijf is gekoppeld, kunt u ook de Azure VM-herstel bewerking gebruiken. U kunt ervoor kiezen om de virtuele machine, of schijven en bestanden of mappen, te herstellen vanaf het herstel punt van het bijbehorende back-upexemplaar van Azure VM. Zie [Azure VM backup](https://docs.microsoft.com/azure/backup/about-azure-vm-restore)voor meer informatie.
+    >Schijven waarvan een back-up wordt gemaakt, kunnen ook worden gebruikt Azure Backup om een back-up te maken van Azure Backup met behulp van de back-upoplossing van Azure VM met de Recovery Services-kluis. Als u de beveiliging hebt geconfigureerd van de Azure-VM waaraan deze schijf is gekoppeld, kunt u ook de Azure VM-herstel bewerking gebruiken. U kunt ervoor kiezen om de virtuele machine, of schijven en bestanden of mappen, te herstellen vanaf het herstel punt van het bijbehorende back-upexemplaar van Azure VM. Zie [Azure VM backup](./about-azure-vm-restore.md)voor meer informatie.
 
 1. Zodra de validatie is voltooid, selecteert u **herstellen** om de herstel bewerking te starten.
 
@@ -109,9 +109,9 @@ Met herstellen wordt een nieuwe schijf gemaakt op basis van het geselecteerde he
 
     ![BESTURINGSSYSTEEM schijven wisselen](./media/restore-managed-disks/swap-os-disks.png)
 
-- Voor virtuele Windows-machines, als de herstelde schijf een gegevens schijf is, volgt u de instructies voor [het loskoppelen van de oorspronkelijke gegevens schijf](https://docs.microsoft.com/azure/virtual-machines/windows/detach-disk#detach-a-data-disk-using-the-portal) van de virtuele machine. [Koppel vervolgens de herstelde schijf](https://docs.microsoft.com/azure/virtual-machines/windows/attach-managed-disk-portal) aan de virtuele machine. Volg de instructies voor het [wisselen van de besturingssysteem schijf](https://docs.microsoft.com/azure/virtual-machines/windows/os-disk-swap) van de virtuele machine met de herstelde schijf.
+- Voor virtuele Windows-machines, als de herstelde schijf een gegevens schijf is, volgt u de instructies voor [het loskoppelen van de oorspronkelijke gegevens schijf](../virtual-machines/windows/detach-disk.md#detach-a-data-disk-using-the-portal) van de virtuele machine. [Koppel vervolgens de herstelde schijf](../virtual-machines/windows/attach-managed-disk-portal.md) aan de virtuele machine. Volg de instructies voor het [wisselen van de besturingssysteem schijf](../virtual-machines/windows/os-disk-swap.md) van de virtuele machine met de herstelde schijf.
 
-- Voor virtuele Linux-machines, als de herstelde schijf een gegevens schijf is, volgt u de instructies voor [het loskoppelen van de oorspronkelijke gegevens schijf](https://docs.microsoft.com/azure/virtual-machines/linux/detach-disk#detach-a-data-disk-using-the-portal) van de virtuele machine. [Koppel vervolgens de herstelde schijf](https://docs.microsoft.com/azure/virtual-machines/linux/attach-disk-portal#attach-an-existing-disk) aan de virtuele machine. Volg de instructies voor het [wisselen van de besturingssysteem schijf](https://docs.microsoft.com/azure/virtual-machines/linux/os-disk-swap) van de virtuele machine met de herstelde schijf.
+- Voor virtuele Linux-machines, als de herstelde schijf een gegevens schijf is, volgt u de instructies voor [het loskoppelen van de oorspronkelijke gegevens schijf](../virtual-machines/linux/detach-disk.md#detach-a-data-disk-using-the-portal) van de virtuele machine. [Koppel vervolgens de herstelde schijf](../virtual-machines/linux/attach-disk-portal.md#attach-an-existing-disk) aan de virtuele machine. Volg de instructies voor het [wisselen van de besturingssysteem schijf](../virtual-machines/linux/os-disk-swap.md) van de virtuele machine met de herstelde schijf.
 
 Het is raadzaam om de roltoewijzing van de **operator voor schijf herstel** van de back-upkluis in de **doel resource groep** in te trekken nadat de herstel bewerking is voltooid.
 

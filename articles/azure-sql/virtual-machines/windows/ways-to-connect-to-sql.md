@@ -14,12 +14,12 @@ ms.workload: iaas-sql-server
 ms.date: 12/12/2017
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 28b68178b98e53b7a7d4192ad20c05a667344969
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 37cb8f5a2ff0916f53ae50f5750664204ab1ba75
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97356712"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737486"
 ---
 # <a name="connect-to-a-sql-server-virtual-machine-on-azure"></a>Verbinding maken met een SQL Server virtuele machine in azure
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -82,7 +82,7 @@ Wanneer u **privé** kiest voor het **SQL-verbindings** type in de portal, confi
 > [!IMPORTANT]
 > Het TCP/IP-protocol wordt niet automatisch ingeschakeld voor de installatie kopieën van de virtuele machine voor de SQL Server Developer-en Express-edities. Voor ontwikkel aars en Express-edities moet u SQL Server Configuration Manager gebruiken om [het TCP/IP-protocol hand matig in te scha kelen](#manualtcp) nadat de virtuele machine is gemaakt.
 
-Particuliere verbindingen worden vaak gebruikt in combi natie met een [virtueel netwerk](../../../virtual-network/virtual-networks-overview.md), waardoor verschillende scenario's mogelijk zijn. U kunt virtuele machines in hetzelfde virtuele netwerk verbinden, zelfs als deze Vm's in verschillende resource groepen bestaan. En met een [site-naar-site-VPN](../../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)kunt u een hybride architectuur maken waarmee vm's worden verbonden met on-premises netwerken en machines.
+Particuliere verbindingen worden vaak gebruikt in combi natie met een [virtueel netwerk](../../../virtual-network/virtual-networks-overview.md), waardoor verschillende scenario's mogelijk zijn. U kunt virtuele machines in hetzelfde virtuele netwerk verbinden, zelfs als deze Vm's in verschillende resource groepen bestaan. En met een [site-naar-site-VPN](../../../vpn-gateway/tutorial-site-to-site-portal.md)kunt u een hybride architectuur maken waarmee vm's worden verbonden met on-premises netwerken en machines.
 
 Met virtuele netwerken kunt u ook uw Azure-Vm's toevoegen aan een domein. Dit is de enige manier om Windows-verificatie te gebruiken om SQL Server. De andere verbindings scenario's vereisen SQL-verificatie met gebruikers namen en wacht woorden.
 

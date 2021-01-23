@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: riroloff
 ms.subservice: metrics
-ms.openlocfilehash: 4c895b287f72929e2a0571ccc2cae8cc4f673388
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 5f5f75e63a0b201144329a6e2b7c0d503de54692
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250482"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736470"
 ---
 # <a name="view-multiple-resources-in-the-azure-metrics-explorer"></a>Meerdere resources weer geven in de Azure Metrics Explorer
 
@@ -33,7 +33,7 @@ Sommige resource typen kunnen een query uitvoeren op metrische gegevens over mee
 ![Scherm afbeelding met een menu met bronnen die compatibel zijn met meerdere resources.](./media/metrics-charts/020.png)
 
 > [!WARNING] 
-> U moet een machtiging voor controle lezers hebben op het abonnements niveau om metrische gegevens over meerdere resources, resource groepen of een abonnement te visualiseren. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)voor meer informatie.
+> U moet een machtiging voor controle lezers hebben op het abonnements niveau om metrische gegevens over meerdere resources, resource groepen of een abonnement te visualiseren. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 
 Als u metrische gegevens over meerdere resources wilt visualiseren, begint u met het selecteren van meerdere resources binnen de kiezer voor het bereik van de resource. 
 
@@ -81,13 +81,12 @@ In dit voor beeld filteren we op TailspinToysDemo. Hier verwijdert het filter me
 
 ## <a name="pin-multiple-resource-charts"></a>Grafieken met meerdere bronnen vastmaken 
 
-Voor grafieken met meerdere resources die metrische gegevens over resource groepen en-abonnementen visualiseren, moet de gebruiker de machtiging *controle lezer* hebben op het abonnements niveau. Zorg ervoor dat alle gebruikers van de Dash boards waarnaar u meerdere resource grafieken vastmaakt, voldoende machtigingen hebben. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)voor meer informatie.
+Voor grafieken met meerdere resources die metrische gegevens over resource groepen en-abonnementen visualiseren, moet de gebruiker de machtiging *controle lezer* hebben op het abonnements niveau. Zorg ervoor dat alle gebruikers van de Dash boards waarnaar u meerdere resource grafieken vastmaakt, voldoende machtigingen hebben. Zie [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md)voor meer informatie.
 
-Zie vastmaken [aan dash boards](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-charts#pinning-to-dashboards)om uw diagram met meerdere resources aan een dash board te koppelen. 
+Zie vastmaken [aan dash boards](./metrics-charts.md#pinning-to-dashboards)om uw diagram met meerdere resources aan een dash board te koppelen. 
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Problemen met metrische gegevens Verkenner oplossen](metrics-troubleshoot.md)
 * [Een lijst met beschikbare metrische gegevens voor Azure-services zien](metrics-supported.md)
 * [Voorbeelden van geconfigureerde grafieken zien](metric-chart-samples.md)
-

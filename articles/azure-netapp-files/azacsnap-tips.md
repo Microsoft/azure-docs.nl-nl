@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 86d7b1a6d361ebbc0d8419d184f9a11d390a37f1
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 08edd86fd19e7698a791e411f42a2a89084a91f7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803184"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737130"
 ---
 # <a name="tips-and-tricks-for-using-azure-application-consistent-snapshot-tool-preview"></a>Tips en trucs voor het gebruik van Azure-toepassing consistent momentopname programma (preview-versie)
 
@@ -27,7 +27,7 @@ Dit artikel bevat tips en trucs die handig kunnen zijn wanneer u AzAcSnap gebrui
 
 ## <a name="limit-service-principal-permissions"></a>Machtigingen voor Service-Principal beperken
 
-Het kan nodig zijn om het bereik van de Service-Principal AzAcSnap te beperken.  Raadpleeg de [documentatie van Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/) voor meer informatie over een nauw keurig toegangs beheer van Azure-resources.  
+Het kan nodig zijn om het bereik van de Service-Principal AzAcSnap te beperken.  Raadpleeg de [documentatie van Azure RBAC](../role-based-access-control/index.yml) voor meer informatie over een nauw keurig toegangs beheer van Azure-resources.  
 
 Hier volgt een voor beeld van een roldefinitie met de mini maal vereiste acties die nodig zijn om AzAcSnap te laten functioneren.
 

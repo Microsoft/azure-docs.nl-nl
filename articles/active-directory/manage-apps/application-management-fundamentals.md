@@ -16,12 +16,12 @@ ms.date: 11/13/2019
 ms.subservice: app-mgmt
 ms.author: kenwith
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2f5aaf4bbff4c093872228d647d3850667fb9777
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: d7a570fb322d24bf0d32efcb6f1a2ee515862755
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94656404"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736966"
 ---
 # <a name="application-management-best-practices"></a>Best practices voor toepassingsbeheer
 
@@ -33,9 +33,9 @@ Dit artikel bevat aanbevelingen en aanbevolen procedures voor het beheren van to
 | De Azure AD-toepassings galerie voor apps controleren  | Azure AD heeft een galerie die duizenden vooraf geïntegreerde toepassingen bevat die zijn ingeschakeld met single sign-on (SSO) voor ondernemingen. Zie de [lijst met zelf studies over SaaS-apps](../saas-apps/tutorial-list.md)voor specifieke instructies voor het instellen van apps.  | 
 | Federatieve op SAML gebaseerde SSO gebruiken  | Wanneer een toepassing dit ondersteunt, kunt u gebruikmaken van federatieve, op SAML gebaseerde SSO met Azure AD in plaats van op wacht woord gebaseerde SSO en ADFS.  | 
 | SHA-256 gebruiken voor certificaat ondertekening  | Azure AD maakt standaard gebruik van het SHA-256-algoritme voor het ondertekenen van het SAML-antwoord. Gebruik SHA-256 tenzij de toepassing SHA-1 vereist (Zie [Opties voor certificaat ondertekening](certificate-signing-options.md) en [aanmeldings probleem van de toepassing](application-sign-in-problem-application-error.md)).  | 
-| Gebruikers toewijzing vereisen  | Standaard hebben gebruikers toegang tot uw bedrijfs toepassingen zonder dat ze aan hen zijn toegewezen. Als de toepassing echter rollen beschikbaar stelt of als u wilt dat de toepassing wordt weer gegeven in mijn apps van een gebruiker, moet u de gebruikers toewijzing vereisen. (Zie [ontwikkelaars richtlijnen voor het integreren van toepassingen](developer-guidance-for-integrating-applications.md).)  | 
+| Gebruikers toewijzing vereisen  | Standaard hebben gebruikers toegang tot uw bedrijfs toepassingen zonder dat ze aan hen zijn toegewezen. Als de toepassing echter rollen beschikbaar stelt of als u wilt dat de toepassing wordt weer gegeven in mijn apps van een gebruiker, moet u de gebruikers toewijzing vereisen.  | 
 | Mijn apps naar uw gebruikers implementeren | [Mijn apps](end-user-experiences.md) op `https://myapps.microsoft.com` is een webgebaseerde portal die gebruikers één vermelding biedt voor hun toegewezen Cloud toepassingen. Als er aanvullende mogelijkheden, zoals groeps beheer en self-service voor het opnieuw instellen van wacht woorden, worden toegevoegd, kunnen gebruikers ze vinden in mijn apps. Zie [implementatie van mijn apps plannen](access-panel-deployment-plan.md).
-| Groeps toewijzing gebruiken  | Als u uw abonnement hebt opgenomen, wijst u groepen toe aan een toepassing, zodat u doorlopend toegangs beheer kunt delegeren aan de groeps eigenaar. (Zie [ontwikkelaars richtlijnen voor het integreren van toepassingen](developer-guidance-for-integrating-applications.md).)   | 
+| Groeps toewijzing gebruiken  | Als u uw abonnement hebt opgenomen, wijst u groepen toe aan een toepassing, zodat u doorlopend toegangs beheer kunt delegeren aan de groeps eigenaar.  | 
 | Een proces voor het beheren van certificaten instellen | De maximale levens duur van een handtekening certificaat is drie jaar. Als u storingen wilt voor komen of minimaliseren door het verlopen van een certificaat, gebruikt u rollen en e-mail distributie lijsten om ervoor te zorgen dat certificaat gerelateerde wijzigings meldingen nauw keurig worden bewaakt. |
 
 ## <a name="provisioning-recommendations"></a>Aanbevelingen inrichten

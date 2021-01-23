@@ -3,12 +3,12 @@ title: Azure-bestands share voor Azure Batch Pools
 description: Een Azure Files-share koppelen vanuit reken knooppunten in een Linux-of Windows-groep in Azure Batch.
 ms.topic: how-to
 ms.date: 05/24/2018
-ms.openlocfilehash: 6bbaba20512a17de563e74ba095057c5c3f71f6b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e5682e7ba853973592c3a650a06ce72615cec7b6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87986420"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735491"
 ---
 # <a name="use-an-azure-file-share-with-a-batch-pool"></a>Een Azure-bestands share gebruiken met een batch-pool
 
@@ -20,7 +20,7 @@ ms.locfileid: "87986420"
 
 * Azure-bestands shares zijn [rendabel](https://azure.microsoft.com/pricing/details/storage/files/) en kunnen worden geconfigureerd met gegevens replicatie naar een andere regio, waardoor het wereld wijd redundant is. 
 
-* U kunt een Azure-bestands share gelijktijdig koppelen van een on-premises computer. Zorg er echter voor dat u de [gelijktijdigheids implicaties](../storage/common/storage-concurrency.md) begrijpt met name bij het gebruik van rest api's.
+* U kunt een Azure-bestands share gelijktijdig koppelen van een on-premises computer. Zorg er echter voor dat u de [gelijktijdigheids implicaties](../storage/blobs/concurrency-manage.md) begrijpt met name bij het gebruik van rest api's.
 
 * Zie ook de algemene [overwegingen](../storage/files/storage-files-planning.md) bij de planning voor Azure-bestands shares.
 

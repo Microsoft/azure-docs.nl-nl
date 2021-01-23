@@ -12,12 +12,12 @@ ms.reviewer: jrasnick
 manager: craigg
 ms.custom: seo-lt-2019
 tags: azure-synapse
-ms.openlocfilehash: 6538243cf8fc12131e1480c8578bfa8739c4f561
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e3ebd83646353e34c239e7d1812e380b9e9d2e26
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676286"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737520"
 ---
 # <a name="dedicated-sql-pool-formerly-sql-dw-in-azure-synapse-analytics-release-notes"></a>Exclusieve SQL-groep (voorheen SQL DW) in azure Synapse Analytics-release opmerkingen
 
@@ -52,7 +52,7 @@ Zorg ervoor dat de juiste versie is geïnstalleerd in de opmerking bij de releas
 | Service verbeteringen | Details |
 | --- | --- |
 |**T-SQL inline-Table-Valued functies (preview-versie)**|Met deze versie kunt u nu functies voor in line tabel waarden maken met Transact-SQL en de resultaten opvragen zoals u zou doen met een tabel. Deze functie is momenteel beschikbaar als preview-versie en wordt ondersteund in hulp bij GA. Zie [Create function (Azure Synapse Analytics)](/sql/t-sql/statements/create-function-sql-data-warehouse?view=azure-sqldw-latest&preserve-view=true)voor meer informatie.|
-|**Opdracht samen VOEGen (preview-versie)**|U kunt nu insert-, update-of Delete-bewerkingen uitvoeren op een doel tabel van de resultaten van een samen voeging met een bron tabel. U kunt bijvoorbeeld twee tabellen synchroniseren door rijen in een tabel in te voegen, bij te werken of te verwijderen op basis van verschillen die in de andere tabel zijn gevonden.  Controleer de [samen voeging](/sql/t-sql/statements/merge-transact-sql?view=azuresqldb-current) voor meer informatie.|
+|**Opdracht samen VOEGen (preview-versie)**|U kunt nu insert-, update-of Delete-bewerkingen uitvoeren op een doel tabel van de resultaten van een samen voeging met een bron tabel. U kunt bijvoorbeeld twee tabellen synchroniseren door rijen in een tabel in te voegen, bij te werken of te verwijderen op basis van verschillen die in de andere tabel zijn gevonden.  Controleer de [samen voeging](/sql/t-sql/statements/merge-transact-sql??view=azure-sqldw-latest&preserve-view=true) voor meer informatie.|
 
 ## <a name="aug-2020"></a>Aug 2020
 
@@ -68,7 +68,7 @@ Zorg ervoor dat de juiste versie is geïnstalleerd in de opmerking bij de releas
 |**Versleuteling op kolom niveau (open bare preview)**|Beveilig gevoelige informatie in uw Azure Synapse Analytics door symmetrische versleuteling toe te passen op een kolom met gegevens met behulp van Transact-SQL. Versleuteling op kolom niveau heeft ingebouwde functies die u kunt gebruiken om gegevens te versleutelen met behulp van symmetrische sleutels die verder worden beveiligd met een certificaat, wacht woord, symmetrische sleutel of asymmetrische sleutel. Ga voor meer informatie naar [een kolom met gegevens versleutelen](/sql/relational-databases/security/encryption/encrypt-a-column-of-data?view=azure-sqldw-latest&preserve-view=true).|
 |**Ondersteuning voor compatibiliteits niveau (GA)**|Met deze release kunnen gebruikers nu het compatibiliteits niveau van een Data Base instellen om de Transact-SQL-taal en het verwerkings gedrag van query's te verkrijgen van een specifieke versie van de Synapse SQL-engine. Zie [sys.database_scoped_configurations](/sql/relational-databases/system-catalog-views/sys-database-scoped-configurations-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true) en [ALTER data base scoped Configuration](/sql/t-sql/statements/alter-database-scoped-configuration-transact-sql?toc=/azure/synapse-analytics/sql-data-warehouse/toc.json&bc=/azure/synapse-analytics/sql-data-warehouse/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true)(Engelstalig) voor meer informatie.|
 |**Beveiliging op rijniveau**|Deze release bevat een verbetering voor update-en verwijderings bewerkingen op rijen waarop beveiliging op basis van een gebruikers beleid wordt afgedwongen. Met deze release, update-en verwijder bewerkingen met intrinsieke functies zoals is_rolemember, als de intrinsieke niet verwijst naar een kolom in de DML-doel tabel. Vóór deze verbetering is het mogelijk dat deze bewerkingen niet worden uitgevoerd omdat de onderliggende DML-bewerkingen zijn beperkt.|
-|**DBCC SHRINKDATABASE (GA)**|U kunt nu de grootte van de gegevens en logboek bestanden in de opgegeven Data Base verkleinen. Raadpleeg de [documentatie](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql?view=sql-server-ver15)voor meer informatie.|
+|**DBCC SHRINKDATABASE (GA)**|U kunt nu de grootte van de gegevens en logboek bestanden in de opgegeven Data Base verkleinen. Raadpleeg de [documentatie](/sql/t-sql/database-console-commands/dbcc-shrinkdatabase-transact-sql?view=azure-sqldw-latest&preserve-view=true)voor meer informatie.|
 
 ## <a name="may-2020"></a>Mei 2020
 

@@ -8,12 +8,12 @@ ms.subservice: extensions
 ms.topic: conceptual
 ms.date: 07/05/2019
 ms.author: dacurwin
-ms.openlocfilehash: 66675f77d480ce8d9f21e5ffb507c475337c9dab
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
+ms.openlocfilehash: c6a071956565a8bbc31e5be362c41a7c39d8f551
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92490727"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98738047"
 ---
 # <a name="azure-backup-for-sql-server-running-in-azure-vm"></a>Azure Backup voor SQL Server die worden uitgevoerd in azure VM
 
@@ -85,7 +85,7 @@ In de volgende JSON wordt het schema voor de WorkloadBackup-extensie weer gegeve
 
 ### <a name="property-values"></a>Eigenschaps waarden
 
-Naam | Waarde/voor beeld | Gegevenstype
+Name | Waarde/voor beeld | Gegevenstype
  --- | --- | ---
 landinstelling | nl-nl  |  tekenreeks
 taskId | "1c0ae461-9d3b-418c-a505-bb31dfe2095d"  | tekenreeks
@@ -102,7 +102,7 @@ We raden u aan om de AzureBackupWindowsWorkload-extensie toe te voegen aan een v
 
 ## <a name="powershell-deployment"></a>PowerShell-implementatie
 
-U moet de Azure-VM die de SQL-toepassing met een Recovery Services-kluis bevat registreren. Tijdens de registratie wordt de AzureBackupWindowsWorkload-extensie op de VM geïnstalleerd. Gebruik de cmdlet [REGI ster-AzRecoveryServicesBackupContainerPS](/powershell/module/az.recoveryservices/register-azrecoveryservicesbackupcontainer?view=azps-1.5.0) om de virtuele machine te registreren.
+U moet de Azure-VM die de SQL-toepassing met een Recovery Services-kluis bevat registreren. Tijdens de registratie wordt de AzureBackupWindowsWorkload-extensie op de VM geïnstalleerd. Gebruik de cmdlet [REGI ster-AzRecoveryServicesBackupContainerPS](/powershell/module/az.recoveryservices/register-azrecoveryservicesbackupcontainer) om de virtuele machine te registreren.
 
 ```powershell
 $myVM = Get-AzVM -ResourceGroupName <VMRG Name> -Name <VMName>

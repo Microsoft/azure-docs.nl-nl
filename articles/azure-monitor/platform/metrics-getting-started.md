@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 02/25/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: 2bf56379a32bf8035ea2d0d3fe797776ec6ba40d
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: e31eb8deb3102ab03809f01e33b1e6548113dae4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250397"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736386"
 ---
 # <a name="getting-started-with-azure-metrics-explorer"></a>Aan de slag met Azure Metrics Explorer
 
@@ -29,7 +29,7 @@ Azure Monitor Metrics Explorer is een onderdeel van de Microsoft Azure-portal wa
 
 Als u een metrische grafiek wilt maken, vanuit uw resource, resource groep, abonnement of Azure Monitor weer gave, opent u het tabblad **metrische gegevens** en volgt u deze stappen:
 
-1. Klik op de knop een bereik selecteren om de resource bereik kiezer te openen. Hiermee kunt u de resources selecteren waarvoor u de metrische gegevens wilt bekijken. De resource moet al zijn ingevuld als u metrische gegevens Verkenner hebt geopend vanuit het menu van de resource. [Lees dit artikel](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-dynamic-scope)voor meer informatie over het weer geven van metrische gegevens over meerdere resources.
+1. Klik op de knop een bereik selecteren om de resource bereik kiezer te openen. Hiermee kunt u de resources selecteren waarvoor u de metrische gegevens wilt bekijken. De resource moet al zijn ingevuld als u metrische gegevens Verkenner hebt geopend vanuit het menu van de resource. [Lees dit artikel](./metrics-dynamic-scope.md)voor meer informatie over het weer geven van metrische gegevens over meerdere resources.
     > ![Een resource selecteren](./media/metrics-getting-started/scope-picker.png)
 
 2. Voor sommige resources moet u een naam ruimte kiezen. De naamruimte is slechts een manier om metrische gegevens te organiseren, zodat u ze gemakkelijk kunt vinden. Zo hebben opslagaccounts afzonderlijke naamruimten voor het opslaan van bestanden, tabellen, blobs en wachtrijen. Veel resourcetypen hebben slechts één naamruimte.

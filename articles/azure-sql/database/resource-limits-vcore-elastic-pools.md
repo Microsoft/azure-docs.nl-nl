@@ -10,13 +10,13 @@ ms.topic: reference
 author: oslake
 ms.author: moslake
 ms.reviewer: sstein
-ms.date: 01/15/2021
-ms.openlocfilehash: 2daa07315be85e1fcd543480cd30a57c118d8547
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/22/2021
+ms.openlocfilehash: 619f4deee81c97f2d7a0b4359e2b999c476b1ae2
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251485"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737554"
 ---
 # <a name="resource-limits-for-elastic-pools-using-the-vcore-purchasing-model"></a>Resource limieten voor elastische Pools met behulp van het vCore-aankoop model
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -218,7 +218,7 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |Maximale gegevens grootte TempDB (GB)|83,25|92,5|111|148|166,5|333|
 |Opslagtype|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|
 |I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
-|Max. aantal gegevens IOPS per pool <sup>2</sup>|5760|6400|7680|10240|11520|23040|
+|Max. aantal gegevens IOPS per pool <sup>2</sup>|5760|6400|7680|10240|11520|12800|
 |Maximale logboek frequentie per pool (MBps)|48|48|48|48|48|48|
 |Maxi maal aantal gelijktijdige werk nemers per pool (aanvragen) <sup>3</sup>|900|1000|1200|1600|1800|3600|
 |Maxi maal aantal gelijktijdige aanmeldingen per groep (aanvragen) <sup>3</sup>|1800|2000|2400|3200|3600|7200|
@@ -252,7 +252,7 @@ U kunt de servicelaag, de reken grootte (Service doelstelling) en de opslag hoev
 |Opslagtype|Premium-opslag (extern)|Premium-opslag (extern)|Premium-opslag (extern)|Premium-opslag (extern)|
 |I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
 |Max. aantal gegevens IOPS per pool <sup>2</sup>|800|1600|2400|3200|
-|Maximale logboek frequentie per pool (MBps)|9,4|18,8|28.1|32.8|
+|Maximale logboek frequentie per pool (MBps)|9.4|18,8|28.1|32.8|
 |Maxi maal aantal gelijktijdige werk nemers per pool (aanvragen) <sup>3</sup>|168|336|504|672|
 |Maxi maal aantal gelijktijdige aanmeldingen per groep (aanvragen) <sup>3</sup>|168|336|504|672|
 |Maximaal aantal gelijktijdige sessies|30.000|30.000|30.000|30.000|

@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.workload: infrastructure-services
 ms.date: 09/22/2020
 ms.author: mathapli
-ms.openlocfilehash: 990c396c859477c83e0ef421659a299920ee0c35
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 44d78d9a47f86520a3a4778806c4ddc0f96eec94
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98209131"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737894"
 ---
 # <a name="how-azure-hybrid-benefit-applies-for-linux-virtual-machines"></a>Hoe Azure Hybrid Benefit van toepassing is op virtuele Linux-machines
 
@@ -227,4 +227,4 @@ In deze sectie vindt u veelvoorkomende problemen die u kunt tegen komen en stapp
 | "De actie kan niet worden voltooid omdat uit onze gegevens blijkt dat u Red Hat Cloud Access niet hebt ingeschakeld voor uw Azure-abonnement............ | Als u het voor deel van RHEL Vm's wilt gebruiken, moet u eerst [uw Azure-abonnementen registreren bij Red Hat Cloud Access](https://access.redhat.com/management/cloud).
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Meer informatie over het maken en bijwerken van Vm's en het toevoegen van licentie typen (RHEL_BYOS, SLES_BYOS) voor Azure Hybrid Benefit met behulp van de Azure CLI](/cli/azure/vm?preserve-view=true&view=azure-cli-latest)
+* [Meer informatie over het maken en bijwerken van Vm's en het toevoegen van licentie typen (RHEL_BYOS, SLES_BYOS) voor Azure Hybrid Benefit met behulp van de Azure CLI](/cli/azure/vm)

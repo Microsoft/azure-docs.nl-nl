@@ -3,12 +3,12 @@ title: Verbeter de prestaties van Azure-apps met Advisor
 description: Gebruik aanbevelingen voor prestaties in Azure Advisor om de snelheid en reactie tijd van uw bedrijfskritische toepassingen te verbeteren.
 ms.topic: article
 ms.date: 07/29/2020
-ms.openlocfilehash: d7d4e87670ca529f38465e928c4067daec802b8f
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: f546527011402b9ea33321d56356d8aabe2412c1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98248425"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735525"
 ---
 # <a name="improve-the-performance-of-azure-applications-by-using-azure-advisor"></a>Verbeter de prestaties van Azure-toepassingen met behulp van Azure Advisor
 
@@ -179,7 +179,7 @@ Meer informatie over de [SDK voor insluitende lezer](../cognitive-services/immer
 
 Advisor detecteert dat u een hostgroep hebt waarvan de diepte eerst is ingesteld als het taakverdelings algoritme en dat de maximale sessie limiet van de hostgroep groter is dan of gelijk is aan 999999. Diepte-eerst-taakverdeling maakt gebruik van deze limiet om het maximum aantal gebruikers te bepalen dat gelijktijdig sessies kan hebben op één sessiehost. Als de limiet voor het maximum aantal sessies te hoog is, worden alle gebruikers sessies omgeleid naar dezelfde sessiehost, waardoor er problemen met prestaties en betrouw baarheid ontstaan. Daarom moet u bij het instellen van een hostgroep de diepte van de eerste taak verdeling instellen op basis van de configuratie van de implementatie en capaciteit van uw Vm's. 
 
-Zie voor meer informatie over taak verdeling in het virtuele bureau blad van Windows [de methode Configure Windows Virtual Desktop Load-Balancing](/azure/virtual-desktop/troubleshoot-set-up-overview).
+Zie voor meer informatie over taak verdeling in het virtuele bureau blad van Windows [de methode Configure Windows Virtual Desktop Load-Balancing](../virtual-desktop/troubleshoot-set-up-overview.md).
 
 ## <a name="how-to-access-performance-recommendations-in-advisor"></a>Aanbevelingen voor toegang tot prestatie verbeteringen in Advisor
 

@@ -5,18 +5,18 @@ description: Gebruik bestaande SQL Server licenties voor Azure SQL Database en S
 services: sql-database
 ms.service: sql-db-mi
 ms.subservice: features
-ms.custom: sqldbrb=4, devx-track-azurecli
+ms.custom: sqldbrb=4
 ms.topic: conceptual
 author: stevestein
 ms.author: sstein
 ms.reviewer: sashan, moslake
 ms.date: 11/13/2019
-ms.openlocfilehash: 872b36eae9142473885885d5bf5ad3fa10ae5ccb
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: 51cf4a4d3aa3cb4654b141a98064460a7152fcec
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94841594"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737452"
 ---
 # <a name="azure-hybrid-benefit---azure-sql-database--sql-managed-instance"></a>Azure Hybrid Benefit-Azure SQL Database & beheerde instantie van SQL
 [!INCLUDE[appliesto-sqldb-sqlmi](includes/appliesto-sqldb-sqlmi.md)]
@@ -89,8 +89,8 @@ SQL Database-klanten beschikken over de volgende rechten die zijn gekoppeld aan 
 
 |Licentie footprint|Wat doet Azure Hybrid Benefit voor SQL Server u doen?|
 |---|---|
-|SQL Server Enterprise Edition core-klanten met SA|<li>Kan het basis tarief betalen op Algemeen of Bedrijfskritiek SKU</li><br><li>1 kern on-premises = 4 kernen in Algemeen SKU</li><br><li>1 kern on-premises = 1 kern geheugen in Bedrijfskritiek SKU</li>|
-|SQL Server Standard Edition core-klanten met SA|<li>Het basis tarief voor alleen Algemeen SKU kan worden betaald</li><br><li>1 kern on-premises = 1 kern geheugen in Algemeen SKU</li>|
+|SQL Server Enterprise Edition core-klanten met SA|<li>Kan het basis tarief voor grootschalige, Algemeen of Bedrijfskritiek SKU betalen</li><br><li>1 kern on-premises = 4 kernen in grootschalige SKU</li><br><li>1 kern on-premises = 4 kernen in Algemeen SKU</li><br><li>1 kern on-premises = 1 kern geheugen in Bedrijfskritiek SKU</li>|
+|SQL Server Standard Edition core-klanten met SA|<li>Kan het basis tarief voor grootschalige en alleen Algemeen SKU betalen</li><br><li>1 kern on-premises = 1 kern in grootschalige SKU</li><br><li>1 kern on-premises = 1 kern geheugen in Algemeen SKU</li>|
 |||
 
 

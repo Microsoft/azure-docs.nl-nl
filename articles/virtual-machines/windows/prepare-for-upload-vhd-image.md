@@ -8,12 +8,12 @@ ms.workload: infrastructure-services
 ms.topic: troubleshooting
 ms.date: 09/02/2020
 ms.author: genli
-ms.openlocfilehash: 390cda604b71404735b7c14382d30067e154ef70
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: e409211c167f7b29128faf9fdfc02aa5c0a7d0e3
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91976179"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736251"
 ---
 # <a name="prepare-a-windows-vhd-or-vhdx-to-upload-to-azure"></a>Een Windows VHD of VHDX voorbereiden om te uploaden naar Azure
 
@@ -379,7 +379,7 @@ In het ideale geval moet u de computer bijwerken naar het *patch niveau*, als di
 |                         | http.sys       | 6.1.7601.23403 - KB3125574                | 6.2.9200.17285 - KB3042553                  | 6.3.9600.18574 - KB4022726          | 10.0.14393.251 - KB4022715                  | 10.0.15063.483             | -                                           | -                                           |
 |                         | vmswitch.sys   | 6.1.7601.23727 - KB4022719                | 6.2.9200.22117 - KB4022724                  | 6.3.9600.18654 - KB4022726          | 10.0.14393.1358 - KB4022715                 | 10.0.15063.138             | -                                           | -                                           |
 | Kern                    | ntoskrnl.exe   | 6.1.7601.23807 - KB4022719                | 6.2.9200.22170 - KB4022718                  | 6.3.9600.18696 - KB4022726          | 10.0.14393.1358 - KB4022715                 | 10.0.15063.483             | -                                           | -                                           |
-| Extern bureaublad-services | rdpcorets.dll  | 6.2.9200.21506 - KB4022719                | 6.2.9200.22104 - KB4022724                  | 6.3.9600.18619 - KB4022726          | 10.0.14393.1198 - KB4022715                 | 10.0.15063.0               | -                                           | -                                           |
+| Externe bureaubladservices | rdpcorets.dll  | 6.2.9200.21506 - KB4022719                | 6.2.9200.22104 - KB4022724                  | 6.3.9600.18619 - KB4022726          | 10.0.14393.1198 - KB4022715                 | 10.0.15063.0               | -                                           | -                                           |
 |                         | termsrv.dll    | 6.1.7601.23403 - KB3125574                | 6.2.9200.17048 - KB2973501                  | 6.3.9600.17415-KB3000850          | 10.0.14393.0 - KB4022715                    | 10.0.15063.0               | -                                           | -                                           |
 |                         | termdd.sys     | 6.1.7601.23403 - KB3125574                | -                                           | -                                   | -                                           | -                          | -                                           | -                                           |
 |                         | win32k.sys     | 6.1.7601.23807 - KB4022719                | 6.2.9200.22168 - KB4022718                  | 6.3.9600.18698 - KB4022726          | 10.0.14393.594 - KB4022715                  | -                          | -                                           | -                                           |
@@ -400,7 +400,7 @@ In het ideale geval moet u de computer bijwerken naar het *patch niveau*, als di
 Het hulp programma voor systeem voorbereiding ( `sysprep.exe` ) is een proces dat u kunt uitvoeren om een Windows-installatie opnieuw in te stellen.
 Sysprep biedt een "out-of-Box"-ervaring door alle persoonlijke gegevens te verwijderen en verschillende onderdelen opnieuw in te stellen.
 
-Normaal gesp roken voert u `sysprep.exe` uit om een sjabloon te maken van waaruit u verschillende virtuele machines kunt implementeren die een specifieke configuratie hebben. De sjabloon wordt een *gegeneraliseerde installatie kopie*genoemd.
+Normaal gesp roken voert u `sysprep.exe` uit om een sjabloon te maken van waaruit u verschillende virtuele machines kunt implementeren die een specifieke configuratie hebben. De sjabloon wordt een *gegeneraliseerde installatie kopie* genoemd.
 
 Als u slechts één VM van één schijf wilt maken, hoeft u geen Sysprep te gebruiken. In plaats daarvan kunt u de virtuele machine maken op basis van een *gespecialiseerde installatie kopie*. Zie voor informatie over het maken van een virtuele machine op basis van een gespecialiseerde schijf:
 
@@ -423,17 +423,17 @@ In het bijzonder vereist Sysprep dat de stations volledig worden ontsleuteld voo
 1. Een Power shell-sessie uitvoeren als beheerder.
 1. Verwijder de Panther-map (C:\Windows\Panther).
 1. Wijzig de Directory in `%windir%\system32\sysprep` . Voer vervolgens `sysprep.exe` uit.
-1. Selecteer in het dialoog venster **hulp programma voor systeem voorbereiding** de optie **systeem out-of-Box Experience (OOBE) opgeven**en zorg ervoor dat het selectie vakje **generalize** is geselecteerd.
+1. Selecteer in het dialoog venster **hulp programma voor systeem voorbereiding** de optie **systeem out-of-Box Experience (OOBE) opgeven** en zorg ervoor dat het selectie vakje **generalize** is geselecteerd.
 
     ![Hulp programma voor systeem voorbereiding](media/prepare-for-upload-vhd-image/syspre.png)
-1. Selecteer **Afsluiten**in het **afsluit opties**.
+1. Selecteer **Afsluiten** in het **afsluit opties**.
 1. Selecteer **OK**.
 1. Sluit de virtuele machine af wanneer Sysprep is voltooid. Gebruik niet **opnieuw opstarten** om de virtuele machine af te sluiten.
 
 De VHD is nu klaar om te worden geüpload. Zie [een gegeneraliseerde VHD uploaden en deze gebruiken om een nieuwe virtuele machine in azure te maken](/previous-versions/azure/virtual-machines/windows/sa-upload-generalized)voor meer informatie over het maken van een virtuele machine op basis van een gegeneraliseerde schijf.
 
 >[!NOTE]
-> Een aangepast *unattend.xml* bestand wordt niet ondersteund. Hoewel we de eigenschap **additionalUnattendContent** ondersteunen, biedt dit alleen beperkte ondersteuning voor het toevoegen van opties voor [micro soft-Windows-shell-setup](/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) in het *unattend.xml* bestand dat door de Azure-inrichtings agent wordt gebruikt. U kunt bijvoorbeeld [additionalUnattendContent](/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent?view=azure-dotnet&preserve-view=true) gebruiken om FirstLogonCommands en LogonCommands toe te voegen. Zie [voor beeld van AdditionalUnattendContent FirstLogonCommands](https://github.com/Azure/azure-quickstart-templates/issues/1407)voor meer informatie.
+> Een aangepast *unattend.xml* bestand wordt niet ondersteund. Hoewel we de eigenschap **additionalUnattendContent** ondersteunen, biedt dit alleen beperkte ondersteuning voor het toevoegen van opties voor [micro soft-Windows-shell-setup](/windows-hardware/customize/desktop/unattend/microsoft-windows-shell-setup) in het *unattend.xml* bestand dat door de Azure-inrichtings agent wordt gebruikt. U kunt bijvoorbeeld [additionalUnattendContent](/dotnet/api/microsoft.azure.management.compute.models.additionalunattendcontent) gebruiken om FirstLogonCommands en LogonCommands toe te voegen. Zie [voor beeld van AdditionalUnattendContent FirstLogonCommands](https://github.com/Azure/azure-quickstart-templates/issues/1407)voor meer informatie.
 
 ## <a name="convert-the-virtual-disk-to-a-fixed-size-vhd"></a>De virtuele schijf converteren naar een VHD met een vaste grootte
 
@@ -460,7 +460,7 @@ Gebruik een van de methoden in deze sectie om de virtuele schijf om te zetten en
 
 1. Open Hyper-V-beheer en selecteer uw lokale computer aan de linkerkant. Selecteer in het menu boven de computer lijst **actie**  >  **bewerken schijf**.
 1. Selecteer uw virtuele schijf op de pagina **virtuele harde schijf zoeken** .
-1. Selecteer op de pagina **actie kiezen** de **Convert**optie  >  **volgende**omzetten.
+1. Selecteer op de pagina **actie kiezen** de optie  >  **volgende** omzetten.
 1. Als u wilt converteren van VHDX, selecteert u **VHD**  >  **volgende**.
 1. Als u wilt converteren van een dynamisch uitbreid bare schijf, selecteert u de optie **vaste grootte**  >  **volgende**.
 1. Zoek en selecteer een pad om het nieuwe VHD-bestand op te slaan.

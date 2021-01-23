@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 5c2182fc80c3745e0238c378c1cade0530393181
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 00aaa5bdc0d48adb735679fc4a71b3431970ef09
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632692"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737164"
 ---
 # <a name="install-azure-application-consistent-snapshot-tool-preview"></a>Azure-toepassing consistent snap shot tool installeren (preview-versie)
 
 Dit artikel bevat een hand leiding voor het installeren van het Azure-toepassing consistente momentopname hulpmiddel dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Het Download bare zelf-installatie programma is ontworpen om de snap shot-hulpprogram ma's eenvoudig in te stellen en uit te voeren met niet-hoofd gebruikers bevoegdheden (bijvoorbeeld azacsnap). Het installatie programma stelt de gebruiker in en plaatst de momentopname hulpprogramma's in de `$HOME/bin` submap gebruikers (standaard = `/home/azacsnap/bin` ).
 Het zelf-installatie programma probeert de juiste instellingen en paden te bepalen voor alle bestanden op basis van de configuratie van de gebruiker die de installatie uitvoert (bijvoorbeeld root). Als de vereiste stappen (communicatie met opslag en SAP HANA inschakelen) zijn uitgevoerd als root, worden de persoonlijke sleutel en de `hdbuserstore` locatie van de back-upgebruiker gekopieerd met de installatie. Het is echter wel mogelijk om de stappen uit te voeren die communicatie mogelijk maken met de back-end van de opslag en SAP HANA hand matig moet worden uitgevoerd door een beschik bare beheerder na de installatie.
@@ -34,9 +34,9 @@ Het zelf-installatie programma probeert de juiste instellingen en paden te bepal
 
 Volg de richt lijnen voor het instellen en uitvoeren van de moment opnamen en herstel opdrachten voor nood gevallen. U kunt het beste de volgende stappen uitvoeren als root voordat u de momentopname hulpprogramma's installeert en gebruikt.
 
-1. Voor het **besturings systeem is een patch** uitgevoerd: Zie patches en SMT Setup in [How to install and Configure SAP Hana (grote exemplaren) in azure](/azure/virtual-machines/workloads/sap/hana-installation#setting-up-smt-server-for-suse-linux).
+1. Voor het **besturings systeem is een patch** uitgevoerd: Zie patches en SMT Setup in [How to install and Configure SAP Hana (grote exemplaren) in azure](../virtual-machines/workloads/sap/hana-installation.md#operating-system).
 1. **Tijd synchronisatie is ingesteld**. De klant dient een NTP-compatibele tijd server op te geven en het besturings systeem dienovereenkomstig te configureren.
-1. **Hana is geïnstalleerd** : Zie Hana-installatie-instructies in de [installatie van SAP netweave op Hana data base](https://blogs.msdn.microsoft.com/saponsqlserver/2017/11/21/sap-netweaver-installation-on-hana-database/).
+1. **Hana is geïnstalleerd** : Zie Hana-installatie-instructies in de [installatie van SAP netweave op Hana data base](/archive/blogs/saponsqlserver/sap-netweaver-installation-on-hana-database).
 1. **[Communicatie met opslag inschakelen](#enable-communication-with-storage)** (zie een afzonderlijke sectie voor meer informatie): de klant moet ssh met een privé/openbaar sleutel paar instellen en de open bare sleutel opgeven voor elk knoop punt waar de moment opname-hulpprogram ma's worden gepland om te worden uitgevoerd op micro soft-bewerkingen voor het instellen van de back-end van de opslag.
    1. **Voor Azure NetApp files (zie een afzonderlijke sectie voor meer informatie)**: de klant moet het Service-Principal-verificatie bestand genereren.
    1. **Voor een groot Azure-exemplaar (zie een afzonderlijke sectie voor meer informatie)**: de klant moet ssh instellen met een privé/openbaar sleutel paar en de open bare sleutel opgeven voor elk knoop punt waar de moment opname-hulpprogram ma's zijn gepland om te worden uitgevoerd op micro soft-bewerkingen voor het instellen van de back-end van de opslag.

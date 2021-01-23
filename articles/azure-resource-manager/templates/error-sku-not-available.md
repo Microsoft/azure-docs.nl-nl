@@ -3,16 +3,16 @@ title: Niet-beschik bare SKU-fouten
 description: Hierin wordt beschreven hoe u problemen met de SKU niet beschik bare fout bij het implementeren van resources met Azure Resource Manager.
 ms.topic: troubleshooting
 ms.date: 02/18/2020
-ms.openlocfilehash: 15df8c5ff45994a03e12731cf3798f7f4c2a295b
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
+ms.openlocfilehash: 5b0bbd653907c109eca526af86979013b3137cfa
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91948609"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737147"
 ---
 # <a name="resolve-errors-for-sku-not-available"></a>Fouten voor een niet-beschikbare SKU oplossen
 
-In dit artikel wordt beschreven hoe u de **SkuNotAvailable** -fout kunt oplossen. Als u geen geschikte SKU in die regio/zone of een alternatieve regio/zone kunt vinden die voldoet aan uw bedrijfs behoeften, moet u een [SKU-aanvraag](../../azure-portal/supportability/sku-series-unavailable.md) indienen bij Azure-ondersteuning.
+In dit artikel wordt beschreven hoe u de **SkuNotAvailable** -fout kunt oplossen. Als u geen geschikte SKU in die regio/zone of een alternatieve regio/zone kunt vinden die voldoet aan uw bedrijfs behoeften, moet u een [SKU-aanvraag](/troubleshoot/azure/general/region-access-request-process) indienen bij Azure-ondersteuning.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

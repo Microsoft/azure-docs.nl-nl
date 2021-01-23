@@ -3,12 +3,12 @@ title: Ondersteunde cluster versies in azure Service Fabric
 description: Meer informatie over cluster versies in azure Service Fabric, met inbegrip van een koppeling naar de nieuwste releases van de Service Fabric-team blog.
 ms.topic: troubleshooting
 ms.date: 06/15/2020
-ms.openlocfilehash: c2ea2b53649cf148a19df46835c8936345aa20e5
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 82b90d6b0acf5d83f9509abd9ee4b34cb74d1b48
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234338"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98736781"
 ---
 # <a name="supported-service-fabric-versions"></a>Ondersteunde Service Fabric versies
 
@@ -56,10 +56,13 @@ Om de beveiliging en beschik baarheid te verbeteren, zal Azure-infra structuur e
  #### <a name="impact-if-not-upgraded-to-supported-versions"></a>Impact als er geen upgrade is uitgevoerd naar ondersteunde versies
   Azure Service Fabric clusters die gebruikmaken van de functie voor het **gebruik van [open-netwerken voor](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode) containers voor containers en die worden uitgevoerd op versies die groter zijn dan 6,3 en** die geen wijzigingen bevatten, zullen leiden tot verlies van functionaliteit of onderbrekingen van de service als niet is bijgewerkt naar een van onderstaande ondersteunde versies van **19 januari 2021**.
  
-  - **Voor clusters met een versie van service Fabric hoger dan 6,3 die geen gebruik maakt van de functie** voor het openen van netwerken, blijft het cluster actief, maar de functie voor het openen van netwerken voor containers clusters, werkt niet meer, waardoor er service onderbrekingen kunnen ontstaan voor uw workloads.
+  - **Voor clusters met een versie van service Fabric hoger dan 6,3, die niet gebruikmaken van de open-netwerk functie**, blijft het cluster actief.
 
  - **Voor clusters met een versie van service Fabric hoger dan 6,3 en met de [open-netwerk functie voor containers](https://docs.microsoft.com/azure/service-fabric/service-fabric-networking-modes#set-up-open-networking-mode)** , kan het cluster niet meer beschikbaar zijn en werkt het niet meer, waardoor er service onderbrekingen kunnen ontstaan voor uw workloads.
-  
+ 
+ -   **Voor clusters met [Windows-versies tussen 7,0 en 7.0.466 (beide versies inbegrepen)](https://docs.microsoft.com/azure/service-fabric/service-fabric-versions#supported-version-names) en Windows-besturings systeem is de functie Windows containers ingeschakeld. Opmerking: Linux-versies 7.0.457, 7.0.464 en 7.0.465 worden niet beïnvloed**.
+    - **Impact**: het cluster werkt niet meer, waardoor er service onderbrekingen kunnen ontstaan voor uw workloads.
+       
 #### <a name="required-action"></a>Vereiste actie
 Voer een upgrade uit naar de ondersteunde Service Fabric versies die hieronder worden weer gegeven om downtime of verlies van functionaliteit die betrekking heeft op deze wijziging te voor komen. Zorg ervoor dat uw clusters ten minste deze versies uitvoeren om problemen in uw omgeving te voor komen. 
  

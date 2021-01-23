@@ -4,12 +4,12 @@ description: Meer informatie over Azure Database for PostgreSQL back-up met lang
 ms.topic: conceptual
 ms.date: 09/08/2020
 ms.custom: references_regions
-ms.openlocfilehash: 628f43788c11558185a7b8a735373f0a663fdad1
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: 1e2d83d4a5e21ed747ec9d4dcf2fa03d1e3935cc
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98569484"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737569"
 ---
 # <a name="azure-database-for-postgresql-backup-with-long-term-retention-preview"></a>Azure Database for PostgreSQL back-up met lange termijn retentie (preview-versie)
 
@@ -31,7 +31,7 @@ U kunt deze oplossing afzonderlijk of in aanvulling op de systeem eigen back-upo
 
 |Ondersteuning  |Details  |
 |---------|---------|
-|Ondersteunde implementaties   |  [Azure Database for PostgreSQL - één server](https://docs.microsoft.com/azure/postgresql/overview#azure-database-for-postgresql---single-server)     |
+|Ondersteunde implementaties   |  [Azure Database for PostgreSQL - één server](../postgresql/overview.md#azure-database-for-postgresql---single-server)     |
 |Ondersteunde Azure-regio's |  VS-Oost, VS-Oost 2, VS-centraal, Zuid-Centraal VS, VS-West, VS-West 2, West-Centraal VS, Brazilië-zuid, Canada-centraal, Europa-noord, Europa-west, UK-zuid, UK-west, Duitsland-west-centraal, Zwitserland-noord, Zwitserland-west, Azië-oost, Zuid-Azië-oost, Japan-Oost, Japan-West, Korea-centraal, Korea-Zuid, India centraal, Australië-oost, Australië-centraal, Australië-centraal 2, UAE-Noord  |
 |Ondersteunde Azure PostgreSQL-versies    |   9,5, 9,6, 10, 11      |
 

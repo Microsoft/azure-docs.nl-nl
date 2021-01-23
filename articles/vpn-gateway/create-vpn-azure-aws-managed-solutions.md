@@ -6,14 +6,14 @@ titleSuffix: Azure VPN Gateway
 author: ricmmartins
 ms.service: vpn-gateway
 ms.topic: how-to
-ms.date: 01/15/2021
+ms.date: 01/22/2021
 ms.author: ricmart
-ms.openlocfilehash: 3b9e60eb037182318e9d1ef7336565908a9c8f32
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: a0655ce1d2e9939981bb4fd3280af80e359ea1e1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664780"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737741"
 ---
 # <a name="create-a-vpn-connection-between-azure-and-aws-using-managed-solutions"></a>Een VPN-verbinding tussen Azure en AWS maken met behulp van beheerde oplossingen
 
@@ -42,6 +42,8 @@ Maak een VPN-gateway voor uw virtuele netwerk. Zie [zelf studie: een VPN-gateway
 
 In dit artikel worden de volgende voorbeeld waarden en-instellingen gebruikt:
 
+* **Gateway naam:** VPN-Azure-AWS
+* **Regio:** VS - oost
 * **Gatewaytype:** VPN
 * **VPN-type:** Op route gebaseerd
 * **SKU:** VpnGw1
@@ -173,15 +175,13 @@ In deze sectie maakt u een tweede verbinding om hoge Beschik baarheid te garande
 
    :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/azure-tunnels.png" alt-text="Status van Azure-verbinding":::
 
-1. Bekijk de AWS-verbindingen.
+1. Bekijk de AWS-verbindingen. In dit voor beeld kunt u zien dat de verbindingen nu tot stand zijn gebracht.
 
    :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/aws-tunnels.png" alt-text="Status van AWS-verbinding":::
 
-De verbindingen zijn nu tot stand gebracht.
+## <a name="to-test-connections"></a>Verbindingen testen
 
-## <a name="test-connections"></a>Verbindingen testen
-
-1. Een Internet gateway toevoegen aan de VPC op AWS. De Internet gateway is een logische verbinding tussen een Amazon VPN en Internet. Met deze resource kunt u via Internet verbinding maken via de test-VM vanuit het open bare IP-AWS. Deze resource is niet vereist voor de VPN-verbinding. We gebruiken deze alleen om te testen.
+1. Een **Internet gateway** toevoegen aan de VPC op AWS. De Internet gateway is een logische verbinding tussen een Amazon VPN en Internet. Met deze resource kunt u via Internet verbinding maken via de test-VM vanuit het open bare IP-AWS. Deze resource is niet vereist voor de VPN-verbinding. We gebruiken deze alleen om te testen.
 
    :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/create-igw.png" alt-text="De Internet gateway maken":::
 
@@ -189,7 +189,7 @@ De verbindingen zijn nu tot stand gebracht.
 
    :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/attach-igw.png" alt-text="De Internet gateway koppelen aan VPC":::
 
-1. Selecteer een VPC en **Koppel de Internet gateway**.
+1. Selecteer een VPC en **Voeg Internet gateway toe**.
 
    :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/attach-igw-2.png" alt-text="De gateway koppelen":::
 
@@ -201,11 +201,11 @@ De verbindingen zijn nu tot stand gebracht.
 
    :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/azure-effective-routes.png" alt-text="De efficiënte routes controleren":::
 
-1. Van een virtuele Linux-machine in Azure is de omgeving vergelijkbaar met het volgende voor beeld.
+1. U kunt dit testen vanaf een Linux-VM in Azure. Het resultaat ziet er ongeveer uit zoals in het volgende voor beeld.
 
    :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/azure-overview.png" alt-text="Overzicht van Azure vanuit Linux VM":::
 
-1. Van een virtuele Linux-machine op AWS is de omgeving vergelijkbaar met het volgende voor beeld.
+1. U kunt dit ook testen vanaf een Linux-VM op AWS. Het resultaat ziet er ongeveer uit zoals in het volgende voor beeld.
 
    :::image type="content" source="./media/create-vpn-azure-aws-managed-solutions/aws-overview.png" alt-text="Overzicht van AWS van de Linux-VM":::
 

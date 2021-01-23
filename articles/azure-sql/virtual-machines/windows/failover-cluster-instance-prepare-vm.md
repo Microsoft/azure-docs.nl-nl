@@ -13,12 +13,12 @@ ms.tgt_pltfrm: vm-windows-sql-server
 ms.workload: iaas-sql-server
 ms.date: 06/02/2020
 ms.author: mathoma
-ms.openlocfilehash: 1b8d88167dac6b2d0b1ba2afc90c443fd80b9e46
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 10f01fd5943928eda1f1e4518f30c8e3ccf56b46
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223156"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737792"
 ---
 # <a name="prepare-virtual-machines-for-an-fci-sql-server-on-azure-vms"></a>Virtuele machines voorbereiden voor een FCI (SQL Server op Azure-Vm's)
 [!INCLUDE[appliesto-sqlvm](../../includes/appliesto-sqlvm.md)]
@@ -44,7 +44,7 @@ De configuratie-instellingen voor uw virtuele machine variëren, afhankelijk van
 
 ## <a name="configure-vm-availability"></a>VM-Beschik baarheid configureren 
 
-Voor de functie failover cluster moeten virtuele machines in een [beschikbaarheidsset](../../../virtual-machines/linux/tutorial-availability-sets.md) of een [beschikbaarheids zone](../../../availability-zones/az-overview.md#availability-zones)worden geplaatst. Als u beschikbaarheids sets kiest, kunt u [proximity-plaatsings groepen](../../../virtual-machines/windows/co-location.md#proximity-placement-groups) gebruiken om de vm's dichter te vinden. In feite zijn proximity-plaatsings groepen een vereiste voor het gebruik van gedeelde Azure-schijven. 
+Voor de functie failover cluster moeten virtuele machines in een [beschikbaarheidsset](../../../virtual-machines/linux/tutorial-availability-sets.md) of een [beschikbaarheids zone](../../../availability-zones/az-overview.md#availability-zones)worden geplaatst. Als u beschikbaarheids sets kiest, kunt u [proximity-plaatsings groepen](../../../virtual-machines/co-location.md#proximity-placement-groups) gebruiken om de vm's dichter te vinden. In feite zijn proximity-plaatsings groepen een vereiste voor het gebruik van gedeelde Azure-schijven. 
 
 Selecteer zorgvuldig de optie voor de beschik baarheid van de VM die overeenkomt met de gewenste cluster configuratie: 
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: 1626ee074d51048dbf45c629f261a550822d746c
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: ea984e527eb526e49c87ce5385ba5715803cc72d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200835"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737249"
 ---
 # <a name="azure-security-baseline-for-automation"></a>Azure-beveiligings basislijn voor Automation
 
@@ -556,7 +556,7 @@ Volg Azure Security Center aanbevelingen voor het versleutelen van de rest en de
 
 * [Meer informatie over versleuteling in transit met Azure](../security/fundamentals/encryption-overview.md#encryption-of-data-in-transit)
 
-* [Azure Automation TLS 1,2 afdwingen](/azure/active-directory/hybrid/reference-connect-tls-enforcement)
+* [Azure Automation TLS 1,2 afdwingen](../active-directory/hybrid/reference-connect-tls-enforcement.md)
 
 **Monitoring door Azure Security Center**: Ja
 
@@ -938,7 +938,7 @@ Wanneer u de functie Hybrid Runbook Worker gebruikt, zijn er verschillende optie
 
 Voor de meeste scenario's kan de micro soft-sjablonen voor virtuele machines die worden gecombineerd met de configuratie van de Azure Automation status, helpen bij de vergadering en het onderhouden van de beveiligings vereisten.
 
-* [Informatie over het downloaden van de VM-sjabloon](../virtual-machines/windows/download-template.md)
+* [Informatie over het downloaden van de VM-sjabloon](/previous-versions/azure/virtual-machines/windows/download-template)
 
 * [Informatie over het maken van ARM-sjablonen](../virtual-machines/windows/ps-template.md)
 

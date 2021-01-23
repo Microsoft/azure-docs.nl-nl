@@ -298,8 +298,6 @@
       href: template-best-practices.md
     - name: Veelgestelde vragen
       href: frequently-asked-questions.md
-    - name: Sjabloonspecificaties
-      href: template-specs.md
     - name: Sjablonen voor de consistentie van de cloud
       href: templates-cloud-consistency.md
     - name: Implementatiemodi
@@ -423,6 +421,12 @@
           href: test-toolkit.md
         - name: Testcases
           href: test-cases.md
+    - name: Sjabloonspecificaties
+      items:
+        - name: SjabSjabloonspecificaties maken en implementeren maken en implementeren
+          href: template-specs.md
+        - name: Galerie met Portal sjablonen converteren
+          href: convert-to-template-spec.md
     - name: CI/CD
       items:
         - name: ARM-sjablonen met pijplijnen

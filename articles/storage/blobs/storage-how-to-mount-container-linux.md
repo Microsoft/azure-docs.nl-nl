@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 2/1/2019
 ms.author: tamram
 ms.reviewer: twooley
-ms.openlocfilehash: 8de395e34b43a4edad2affa591adb8ab34ff9e66
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 002e8650a5555b70caf09179e03ce1bad1acdef5
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96921705"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737537"
 ---
 # <a name="how-to-mount-blob-storage-as-a-file-system-with-blobfuse"></a>Blob-opslag koppelen als een bestands systeem met blobfuse
 
@@ -28,9 +28,9 @@ In deze hand leiding wordt beschreven hoe u blobfuse gebruikt en hoe u een BLOB 
 > 
 
 ## <a name="install-blobfuse-on-linux"></a>Blobfuse installeren in Linux
-Blobfuse binaire bestanden zijn beschikbaar in [de micro soft-software opslagplaatsen voor Linux](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) voor Ubuntu-en RHEL-distributies. Als u blobfuse voor deze distributies wilt installeren, configureert u een van de opslag plaatsen in de lijst. U kunt ook de binaire bestanden van de bron code maken na de [Azure Storage installatie stappen](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source) als er geen binaire bestanden beschikbaar zijn voor uw distributie.
+Blobfuse binaire bestanden zijn beschikbaar in [de micro soft-software opslagplaatsen voor Linux](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software) voor Ubuntu-, Debian-, SuSE-, CentoOS-, Oracle Linux-en RHEL-distributies. Als u blobfuse voor deze distributies wilt installeren, configureert u een van de opslag plaatsen in de lijst. U kunt ook de binaire bestanden van de bron code maken na de [Azure Storage installatie stappen](https://github.com/Azure/azure-storage-fuse/wiki/1.-Installation#option-2---build-from-source) als er geen binaire bestanden beschikbaar zijn voor uw distributie.
 
-Blobfuse ondersteunt de installatie op Ubuntu 14,04, 16,04, 18,04 en 20,04. Voer deze opdracht uit om ervoor te zorgen dat er een van de volgende versies is geïmplementeerd:
+Blobfuse ondersteunt de installatie op Ubuntu-versies: 16,04, 18,04 en 20,04, RHELversions: 7,5, 7,8, 8,0, 8,1, 8,2, CentOS versies: 7,0, 8,0, Debian-versies: 9,0, 10,0, SUSE-versie: 15, OracleLinux 8,1. Voer deze opdracht uit om ervoor te zorgen dat er een van de volgende versies is geïmplementeerd:
 ```
 lsb_release -a
 ```
@@ -38,16 +38,16 @@ lsb_release -a
 ### <a name="configure-the-microsoft-package-repository"></a>De micro soft-pakket opslagplaats configureren
 Configureer de [opslag plaats voor Linux-pakketten voor micro soft-producten](/windows-server/administration/Linux-Package-Repository-for-Microsoft-Software).
 
-Als voor beeld voor een Enter prise Linux 6-distributie:
+Als voor beeld voor een Enter prise Linux 8-distributie:
 ```bash
-sudo rpm -Uvh https://packages.microsoft.com/config/rhel/6/packages-microsoft-prod.rpm
+sudo rpm -Uvh https://packages.microsoft.com/config/rhel/8/packages-microsoft-prod.rpm
 ```
 
 Wijzig ook de URL naar `.../rhel/7/...` om naar een Enter prise Linux 7-distributie te verwijzen.
 
-Een ander voor beeld van een Ubuntu 14,04-distributie:
+Een ander voor beeld van een Ubuntu 20,04-distributie:
 ```bash
-wget https://packages.microsoft.com/config/ubuntu/14.04/packages-microsoft-prod.deb
+wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb
 sudo dpkg -i packages-microsoft-prod.deb
 sudo apt-get update
 ```

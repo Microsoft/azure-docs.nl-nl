@@ -7,12 +7,12 @@ ms.topic: include
 ms.date: 03/26/2020
 ms.author: tomfitz
 ms.custom: include file
-ms.openlocfilehash: 204ca121045d1bd53fd507acc7ea9691bfeac12e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: cdcf6215973755444da9e513761de7ac71e479d4
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88748764"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98738561"
 ---
 | Resource | Limiet |
 | --- | --- |
@@ -24,4 +24,4 @@ ms.locfileid: "88748764"
 
 <sup>1</sup>De 6 niveaus zijn exclusief het abonnementsniveau.
 
-<sup>2</sup>Als u de limiet van 800 implementaties bereikt, verwijdert u implementaties die niet meer nodig zijn uit de geschiedenis. Gebruik [Remove-AzManagementGroupDeployment](/powershell/module/az.resources/Remove-AzManagementGroupDeployment) of [az deployment mg delete](/cli/azure/deployment/mg?view=azure-cli-latest#az-deployment-mg-delete) om implementaties op beheergroepsniveau te verwijderen.
+<sup>2</sup>Als u de limiet van 800 implementaties bereikt, verwijdert u implementaties die niet meer nodig zijn uit de geschiedenis. Gebruik [Remove-AzManagementGroupDeployment](/powershell/module/az.resources/Remove-AzManagementGroupDeployment) of [az deployment mg delete](/cli/azure/deployment/mg#az-deployment-mg-delete) om implementaties op beheergroepsniveau te verwijderen.

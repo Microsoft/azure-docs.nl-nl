@@ -9,12 +9,12 @@ ms.subservice: billing
 ms.topic: conceptual
 ms.date: 12/14/2020
 ms.author: banders
-ms.openlocfilehash: 662e1bf721c93ee1d59946d2fd603551f3f88ad3
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
-ms.translationtype: HT
+ms.openlocfilehash: 0d0dd5342cfc57da776e38ddef3df3b9c2199ac2
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503791"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735772"
 ---
 # <a name="cancel-your-azure-subscription"></a>Uw Azure-abonnement opzeggen
 
@@ -79,7 +79,7 @@ Als u een gratis proefabonnement hebt, hoeft u niet 30 dagen te wachten tot het 
 
 ## <a name="reactivate-a-subscription"></a>Een abonnement opnieuw activeren
 
-Als u per ongeluk uw abonnement met tarieven voor betalen per gebruik opzegt, kunt u [het opnieuw activeren in het accountcentrum](subscription-disabled.md).
+Als u uw abonnement per ongeluk betaalt met betalen naar gebruik-tarieven, kunt u [deze opnieuw activeren in de Azure Portal](subscription-disabled.md).
 
 Als uw abonnement geen abonnement is met tarieven voor betalen per gebruik, neemt u binnen 90 dagen na opzegging contact op met het ondersteuningsteam om uw abonnement opnieuw te activeren.
 
@@ -101,4 +101,4 @@ Zie het artikel [Verlenging en opzegging](/visualstudio/subscriptions/faq/admin/
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Zo nodig kunt u een abonnement van het type Betalen per gebruik opnieuw activeren in het [accountcentrum](subscription-disabled.md).
+- Als dat nodig is, kunt u een abonnement op basis van betalen naar gebruik opnieuw activeren in de [Azure Portal](subscription-disabled.md).

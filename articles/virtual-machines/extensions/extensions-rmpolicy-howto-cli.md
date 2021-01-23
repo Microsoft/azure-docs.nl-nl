@@ -14,12 +14,12 @@ ms.workload: infrastructure-services
 ms.date: 03/23/2018
 ms.author: akjosh
 ms.reviewer: cynthn
-ms.openlocfilehash: 26874c33c496b57bf6317a7b837b3afddc2f5e37
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: 41457f26c22e3b8ed529ce77cfaf452618b03655
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94955647"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98737639"
 ---
 # <a name="use-azure-policy-to-restrict-extensions-installation-on-linux-vms"></a>Azure Policy gebruiken om de installatie van extensies op Linux-Vm's te beperken
 
@@ -98,7 +98,7 @@ Wanneer u klaar bent, drukt u op de **ESC** -toets en typt u **: wq** om het bes
 
 ## <a name="create-the-policy"></a>Beleid maken
 
-Een beleids definitie is een object dat wordt gebruikt voor het opslaan van de configuratie die u wilt gebruiken. De beleids definitie gebruikt de regels en parameter bestanden om het beleid te definiëren. Maak de beleids definitie met [AZ Policy Definition Create](/cli/azure/role/assignment?view=azure-cli-latest).
+Een beleids definitie is een object dat wordt gebruikt voor het opslaan van de configuratie die u wilt gebruiken. De beleids definitie gebruikt de regels en parameter bestanden om het beleid te definiëren. Maak de beleids definitie met [AZ Policy Definition Create](/cli/azure/role/assignment).
 
 In dit voor beeld zijn de regels en para meters de bestanden die u hebt gemaakt en opgeslagen als json-bestanden in uw Cloud shell.
 
@@ -117,7 +117,7 @@ az policy definition create \
 
 In dit voor beeld wordt het beleid toegewezen aan een resource groep met [AZ Policy Assignment Create](/cli/azure/policy/assignment). Elke VM die in de resource groep **myResourceGroup** is gemaakt, kan de Linux-VM-toegang of de aangepaste script extensies voor Linux niet installeren. De resource groep moet bestaan voordat u het beleid kunt toewijzen.
 
-Gebruik [AZ account list](/cli/azure/account?view=azure-cli-latest) om uw abonnements-id te verkrijgen die u wilt gebruiken in plaats van het voor beeld.
+Gebruik [AZ account list](/cli/azure/account) om uw abonnements-id te verkrijgen die u wilt gebruiken in plaats van het voor beeld.
 
 
 ```azurecli-interactive

@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 04/15/2020
 ms.author: stefanazaric
 ms.reviewer: jrasnick
-ms.openlocfilehash: 9500d682a99e6345289a83b4b3b2fc29ffe18457
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: b5025aa322ae26f9dd7c683d0e54762fd33eb355
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98676881"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735378"
 ---
 # <a name="query-storage-files-with-serverless-sql-pool-in-azure-synapse-analytics"></a>Query's op opslagbestanden uitvoeren met een serverloze SQL-pool in Azure Synapse Analytics
 
@@ -184,7 +184,7 @@ De functie `OPENROWSET` zoekt standaard naar overeenkomsten van de bronveldnaam 
 - Voor alle Parquet-types die zich niet in de groep Genest type bevinden, retourneert deze functie een scalaire waarde, zoals integer, decimaal en varchar van het opgegeven element en op het opgegeven pad.
 - Als het pad wijst naar een element van het Geneste type, retourneert de functie een JSON-fragment dat begint met het hoogste element in het opgegeven pad. Het JSON-fragment is van het type varchar(8000).
 - Als de eigenschap niet kan worden gevonden in de opgegeven kolomnaam, retourneert de functie een fout.
-- Als de eigenschap niet kan worden gevonden in de opgegeven kolomnaam, retourneert de functie, afhankelijk van [Padmodus](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest#PATHMODE), een fout in de strict-modus of null in de lax-modus.
+- Als de eigenschap niet kan worden gevonden in de opgegeven kolomnaam, retourneert de functie, afhankelijk van [Padmodus](/sql/relational-databases/json/json-path-expressions-sql-server?toc=/azure/synapse-analytics/toc.json&bc=/azure/synapse-analytics/breadcrumb/toc.json&view=azure-sqldw-latest&preserve-view=true#PATHMODE), een fout in de strict-modus of null in de lax-modus.
 
 Raadpleeg de sectie Elementen benaderen vanuit geneste kolommen in het artikel [Query uitvoeren op met Parquet geneste typen](query-parquet-nested-types.md#read-properties-from-nested-object-columns) voor voorbeelden van query's.
 

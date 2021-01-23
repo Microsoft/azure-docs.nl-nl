@@ -6,12 +6,12 @@ ms.author: noakuper
 ms.topic: conceptual
 ms.date: 10/05/2020
 ms.subservice: ''
-ms.openlocfilehash: e8d0dcae81944d5799841c22093585b942934b79
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
+ms.openlocfilehash: 5008da99b63cabba41dade9a745fbd5853345737
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97732101"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734963"
 ---
 # <a name="use-azure-private-link-to-securely-connect-networks-to-azure-monitor"></a>Azure Private Link gebruiken om netwerken veilig te verbinden met Azure Monitor
 
@@ -149,7 +149,7 @@ Nu u resources hebt verbonden met uw AMPLS, maakt u een persoonlijk eind punt om
  
    b.    Kies **Ja** om te **integreren met een privé-DNS-zone** en laat automatisch een nieuwe privé-DNS zone maken. De daad werkelijke DNS-zones kunnen afwijken van wat wordt weer gegeven in de onderstaande scherm afbeelding. 
    > [!NOTE]
-   > Als u ervoor kiest **geen** DNS-records hand matig te beheren, moet u eerst uw persoonlijke koppeling instellen, met inbegrip van dit persoonlijke eind punt en de AMPLS-configuratie. Configureer vervolgens uw DNS volgens de instructies in de [DNS-configuratie voor het persoonlijke eind punt van Azure](../../private-link/private-endpoint-dns.md). Zorg ervoor dat u geen lege records maakt als voor bereiding voor het instellen van uw privé-verbinding. De DNS-records die u maakt, kunnen bestaande instellingen overschrijven en de verbinding met Azure Monitor beïnvloeden.
+   > Als u ervoor kiest **geen** DNS-records hand matig te beheren, moet u eerst uw persoonlijke koppeling instellen, met inbegrip van dit persoonlijke eind punt en de AMPLS-configuratie. Vervolgens configureer u uw DNS volgens de instructies in [DNS-configuratie van Azure-privé-eindpunt](../../private-link/private-endpoint-dns.md). Zorg ervoor dat u geen lege records maakt als voorbereiding voor het instellen van uw privékoppeling. De DNS-records die u maakt, kunnen bestaande instellingen overschrijven en de verbinding met Azure Monitor beïnvloeden.
  
    c.    Klik op **Controleren + maken**.
  
@@ -217,7 +217,7 @@ Het beperken van de toegang op deze manier is alleen van toepassing op gegevens 
 
 U kunt het eerder beschreven proces automatiseren met Azure Resource Manager sjablonen, REST-en opdracht regel interfaces.
 
-Als u privé-koppelings bereik wilt maken en beheren, gebruikt u de [rest API](https://docs.microsoft.com/rest/api/monitor/private%20link%20scopes%20(preview)) of [Azure cli (AZ monitor private-link-scope)](/cli/azure/monitor/private-link-scope?view=azure-cli-latest).
+Als u privé-koppelings bereik wilt maken en beheren, gebruikt u de [rest API](/rest/api/monitor/private%20link%20scopes%20(preview)) of [Azure cli (AZ monitor private-link-scope)](/cli/azure/monitor/private-link-scope?view=azure-cli-latest).
 
 Als u toegang tot het netwerk wilt beheren, gebruikt u de vlaggen `[--ingestion-access {Disabled, Enabled}]` en `[--query-access {Disabled, Enabled}]` op [log Analytics werk ruimten](/cli/azure/monitor/log-analytics/workspace?view=azure-cli-latest) of [Application Insights onderdelen](/cli/azure/ext/application-insights/monitor/app-insights/component?view=azure-cli-latest).
 
@@ -227,7 +227,7 @@ Opslag accounts worden gebruikt in het opname proces van aangepaste Logboeken. S
 
 Zie [opslag accounts van klanten die eigendom zijn van een logboek opname](private-storage.md) voor meer informatie over het inbrengen van uw eigen opslag account
 
-## <a name="restrictions-and-limitations"></a>Beperkingen en beperkingen
+## <a name="restrictions-and-limitations"></a>Beperkingen en limieten
 
 ### <a name="agents"></a>Agents
 

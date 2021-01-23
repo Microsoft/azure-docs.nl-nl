@@ -6,12 +6,12 @@ ms.topic: article
 ms.date: 12/03/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: f1e9d65baacb9c712b92ef6f00abda169031b47e
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: d60a241506dbcf3e038f79c99830ef1a81c06b88
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96582287"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735261"
 ---
 # <a name="customize-node-configuration-for-azure-kubernetes-service-aks-node-pools-preview"></a>De knooppunt configuratie voor Azure Kubernetes service (AKS)-knooppunt Pools aanpassen (preview-versie)
 
@@ -132,7 +132,7 @@ De onderstaande instellingen kunnen worden gebruikt voor het afstemmen van de we
 | `transparentHugePageDefrag` | `always`, `defer`, `defer+madvise`, `madvise`, `never` | `madvise` | Deze waarde bepaalt of de kernel agressief gebruik van geheugen moet maken om meer beschikbaar te maken `hugepages` . | 
 
 > [!IMPORTANT]
-> Voor een gemakkelijke Zoek-en lees baarheid worden de besturingssysteem instellingen in dit document weer gegeven met hun naam, maar moeten ze worden toegevoegd aan het JSON-bestand van de configuratie of de AKS-API met behulp van [camelCase-kapitalisatie Conventie](https://docs.microsoft.com/dotnet/standard/design-guidelines/capitalization-conventions).
+> Voor een gemakkelijke Zoek-en lees baarheid worden de besturingssysteem instellingen in dit document weer gegeven met hun naam, maar moeten ze worden toegevoegd aan het JSON-bestand van de configuratie of de AKS-API met behulp van [camelCase-kapitalisatie Conventie](/dotnet/standard/design-guidelines/capitalization-conventions).
 
 Maak een `kubeletconfig.json` bestand met de volgende inhoud:
 

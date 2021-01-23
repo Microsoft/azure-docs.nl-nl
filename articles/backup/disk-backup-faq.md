@@ -3,12 +3,12 @@ title: Veelgestelde vragen over back-ups van Azure-schijven
 description: Antwoorden vinden op veelgestelde vragen over Azure Disk Backup
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: 4c4c9f4b8388fed95a19c49b705981b9b9bce2e0
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
+ms.openlocfilehash: 3ef18a7d178075194e24889477768583f05f0cdd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98557824"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734559"
 ---
 # <a name="frequently-asked-questions-about-azure-disk-backup-in-preview"></a>Veelgestelde vragen over back-ups van Azure-schijven (in preview-versie)
 
@@ -37,23 +37,23 @@ Azure Disk Backup biedt back-up van de operationele laag voor beheerde schijven.
 
 ### <a name="why-must-the-snapshot-resource-group-be-in-same-subscription-as-that-of-the-disk-being-backed-up"></a>Waarom moet de resource groep van de moment opname zich in hetzelfde abonnement benemen als van de schijf waarvan een back-up wordt gemaakt?
 
-U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Kies de resource groep in hetzelfde abonnement als die van de schijf waarvan een back-up moet worden gemaakt. Meer informatie over [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) voor beheerde schijven.
+U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Kies de resource groep in hetzelfde abonnement als die van de schijf waarvan een back-up moet worden gemaakt. Meer informatie over [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) voor beheerde schijven.
 
 ### <a name="why-do-i-need-to-provide-role-assignments-to-be-able-to-configure-backups-perform-scheduled-and-on-demand-backups-and-restore-operations"></a>Waarom moet ik roltoewijzingen opgeven om back-ups te kunnen configureren, geplande en on-demand back-ups en herstel bewerkingen uit te voeren?
 
-Azure Disk Backup maakt gebruik van de minimale bevoegdheids benadering voor het detecteren, beveiligen en herstellen van de beheerde schijven in uw abonnementen. Azure Backup gebruikt de beheerde identiteit van de [back-upkluis](backup-vault-overview.md) voor het verkrijgen van toegang tot andere Azure-bronnen. Een door het systeem toegewezen beheerde identiteit is beperkt tot één per resource en is verbonden met de levens cyclus van deze resource. U kunt machtigingen verlenen aan de beheerde identiteit door gebruik te maken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type dat alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview). De back-upkluis heeft standaard geen machtiging voor toegang tot de schijf waarvan een back-up moet worden gemaakt, het maken van periodieke moment opnamen, het verwijderen van moment opnamen na de Bewaar periode en het herstellen van een schijf uit een back-up. Door roltoewijzingen expliciet te verlenen aan de beheerde identiteit van de back-upkluis, hebt u controle over het beheer van machtigingen voor de resources op de abonnementen.
+Azure Disk Backup maakt gebruik van de minimale bevoegdheids benadering voor het detecteren, beveiligen en herstellen van de beheerde schijven in uw abonnementen. Azure Backup gebruikt de beheerde identiteit van de [back-upkluis](backup-vault-overview.md) voor het verkrijgen van toegang tot andere Azure-bronnen. Een door het systeem toegewezen beheerde identiteit is beperkt tot één per resource en is verbonden met de levens cyclus van deze resource. U kunt machtigingen verlenen aan de beheerde identiteit door gebruik te maken van Azure op rollen gebaseerd toegangs beheer (Azure RBAC). Beheerde identiteit is een service-principal van een speciaal type dat alleen kan worden gebruikt met Azure-resources. Meer informatie over [beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md). De back-upkluis heeft standaard geen machtiging voor toegang tot de schijf waarvan een back-up moet worden gemaakt, het maken van periodieke moment opnamen, het verwijderen van moment opnamen na de Bewaar periode en het herstellen van een schijf uit een back-up. Door roltoewijzingen expliciet te verlenen aan de beheerde identiteit van de back-upkluis, hebt u controle over het beheer van machtigingen voor de resources op de abonnementen.
 
 ### <a name="why-does-backup-policy-limit-the-retention-duration"></a>Waarom wordt de Bewaar duur beperkt in het back-upbeleid?
 
-Azure Disk Backup maakt gebruik van incrementele moment opnamen, die zijn beperkt tot 200 moment opnamen per schijf. Als u back-ups op aanvraag wilt maken, afgezien van geplande back-ups, beperkt het back-upbeleid de totale back-ups tot 180. Meer informatie over [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) voor beheerde schijven.
+Azure Disk Backup maakt gebruik van incrementele moment opnamen, die zijn beperkt tot 200 moment opnamen per schijf. Als u back-ups op aanvraag wilt maken, afgezien van geplande back-ups, beperkt het back-upbeleid de totale back-ups tot 180. Meer informatie over [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) voor beheerde schijven.
 
 ### <a name="how-does-the-hourly-and-daily-backup-frequency-work-in-the-backup-policy"></a>Hoe werkt de back-upfrequentie per uur en dagelijks in het back-upbeleid?
 
-Azure Disk Backup biedt meerdere back-ups per dag. Als u vaker back-ups nodig hebt, kiest u de frequentie van de back-up **per uur** . De back-ups worden gepland op basis van het geselecteerde **tijds** interval. Als u bijvoorbeeld **elke vier uur** selecteert, worden de back-ups ongeveer elke vier uur gemaakt zodat de back-ups gelijkmatig over de hele dag worden gedistribueerd. Als back-up van de dag voldoende genoeg is, kiest u de frequentie van **dagelijkse** back-ups. Tijdens de dagelijkse back-upfrequentie kunt u het tijdstip van de dag opgeven waarop uw back-ups worden gemaakt. Het is belang rijk te weten dat de tijd van de dag de begin tijd van de back-up aangeeft en niet de tijd waarop de back-up is voltooid. De tijd die nodig is om de back-upbewerking te volt ooien, is afhankelijk van verschillende factoren, waaronder het verloop frequentie tussen opeenvolgende back-ups. Azure Disk Backup is echter een back-up zonder agent die gebruikmaakt van [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal) die geen invloed hebben op de prestaties van de productie-toepassing.
+Azure Disk Backup biedt meerdere back-ups per dag. Als u vaker back-ups nodig hebt, kiest u de frequentie van de back-up **per uur** . De back-ups worden gepland op basis van het geselecteerde **tijds** interval. Als u bijvoorbeeld **elke vier uur** selecteert, worden de back-ups ongeveer elke vier uur gemaakt zodat de back-ups gelijkmatig over de hele dag worden gedistribueerd. Als back-up van de dag voldoende genoeg is, kiest u de frequentie van **dagelijkse** back-ups. Tijdens de dagelijkse back-upfrequentie kunt u het tijdstip van de dag opgeven waarop uw back-ups worden gemaakt. Het is belang rijk te weten dat de tijd van de dag de begin tijd van de back-up aangeeft en niet de tijd waarop de back-up is voltooid. De tijd die nodig is om de back-upbewerking te volt ooien, is afhankelijk van verschillende factoren, waaronder het verloop frequentie tussen opeenvolgende back-ups. Azure Disk Backup is echter een back-up zonder agent die gebruikmaakt van [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md) die geen invloed hebben op de prestaties van de productie-toepassing.
 
 ### <a name="why-does-the-backup-vaults-redundancy-setting-not-apply-to-the-backups-stored-in-operational-tier-the-snapshot-resource-group"></a>Waarom is de redundantie-instelling van de back-upkluis niet van toepassing op de back-ups die zijn opgeslagen in de operationele laag (de resource groep voor de moment opname)?
 
-Azure Backup gebruikt [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) van Managed disks die alleen de Delta wijzigingen op schijven opslaan sinds de laatste moment opname op Standard-HDD opslag, ongeacht het opslag type van de bovenliggende schijf. Voor meer betrouw baarheid worden incrementele moment opnamen standaard op zone redundant Storage (ZRS) opgeslagen in regio's die ondersteuning bieden voor ZRS. Op dit moment ondersteunt Azure-schijf back-ups operationele back-ups van beheerde schijven waarbij de back-ups niet worden gekopieerd naar back-upkluis. De instelling back-upopslag redundantie van de back-upkluis is dus niet van toepassing op de herstel punten.
+Azure Backup gebruikt [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) van Managed disks die alleen de Delta wijzigingen op schijven opslaan sinds de laatste moment opname op Standard-HDD opslag, ongeacht het opslag type van de bovenliggende schijf. Voor meer betrouw baarheid worden incrementele moment opnamen standaard op zone redundant Storage (ZRS) opgeslagen in regio's die ondersteuning bieden voor ZRS. Op dit moment ondersteunt Azure-schijf back-ups operationele back-ups van beheerde schijven waarbij de back-ups niet worden gekopieerd naar back-upkluis. De instelling back-upopslag redundantie van de back-upkluis is dus niet van toepassing op de herstel punten.
 
 ### <a name="can-i-use-backup-center-to-configure-backups-and-manage-backup-instances-for-azure-disks"></a>Kan ik Back-upcentrum gebruiken voor het configureren van back-ups en het beheren van back-upinstanties voor Azure-schijven?
 
@@ -61,7 +61,7 @@ Ja, Azure-schijf back-up is geïntegreerd in [Back-upcentrum](backup-center-over
 
 ### <a name="why-do-i-need-to-create-a-backup-vault-and-not-use-a-recovery-services-vault"></a>Waarom moet ik een back-upkluis maken en geen Recovery Services kluis gebruiken?
 
-Een back-upkluis is een opslag entiteit in azure waarmee back-upgegevens worden opgeslagen voor bepaalde nieuwere werk belastingen die Azure Backup ondersteunt. U kunt back-upkluizen gebruiken voor het bewaren van back-upgegevens voor verschillende Azure-Services, zoals Azure Database for PostgreSQL-servers, Azure-schijven en nieuwere workloads die Azure Backup zullen ondersteunen. Back-upkluizen maken het eenvoudig om uw back-upgegevens te organiseren en zo de beheer overhead te minimaliseren. Raadpleeg [back-upkluizen](https://docs.microsoft.com/azure/backup/backup-vault-overview) voor meer informatie.
+Een back-upkluis is een opslag entiteit in azure waarmee back-upgegevens worden opgeslagen voor bepaalde nieuwere werk belastingen die Azure Backup ondersteunt. U kunt back-upkluizen gebruiken voor het bewaren van back-upgegevens voor verschillende Azure-Services, zoals Azure Database for PostgreSQL-servers, Azure-schijven en nieuwere workloads die Azure Backup zullen ondersteunen. Back-upkluizen maken het eenvoudig om uw back-upgegevens te organiseren en zo de beheer overhead te minimaliseren. Raadpleeg [back-upkluizen](./backup-vault-overview.md) voor meer informatie.
 
 ### <a name="can-the-disk-to-be-backed-up-and-the-backup-vault-be-in-different-subscriptions"></a>Kan er een back-up van de schijf worden gemaakt en moet de back-upkluis zich in verschillende abonnementen bevindt?
 
@@ -132,4 +132,4 @@ Hieronder ziet u de acties die worden gebruikt in de rol **schijf herstel operat
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Ondersteunings matrix voor Azure Disk Backup](disk-backup-support-matrix.md)
+- [Azure Disck Backup-ondersteuningsmatrix](disk-backup-support-matrix.md)

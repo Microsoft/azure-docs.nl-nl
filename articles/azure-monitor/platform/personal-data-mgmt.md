@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 05/18/2018
-ms.openlocfilehash: 2bb1e667758a1430e34d222b9a5c537381c07624
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 40ea367c1298a916df541d362b85e8d485d193f1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97505270"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734929"
 ---
 # <a name="guidance-for-personal-data-stored-in-log-analytics-and-application-insights"></a>Richtlijnen voor persoonsgegevens die zijn opgeslagen in Logboekanalyse en Application Insights
 
@@ -91,7 +91,7 @@ Voor beide gegevens aanvragen weer geven en exporteren moet de [log Analytics qu
 We zijn beschikbaar gesteld als onderdeel van een privacy-verwerkings *-API-* pad. Dit pad moet spaarzaam worden gebruikt vanwege het risico dat eraan is gekoppeld, de potentiële invloed op de prestaties en de kans om alle aggregaties, metingen en andere aspecten van uw Log Analytics gegevens te scheef trekken. Zie de sectie [strategie voor het verwerken van persoonlijke gegevens](#strategy-for-personal-data-handling) voor alternatieve benaderingen voor het afhandelen van persoonlijke gegevens.
 
 > [!NOTE]
-> Zodra de bewerking leegmaken is uitgevoerd, zijn de gegevens niet toegankelijk wanneer de status van de [opschoon bewerking](https://docs.microsoft.com/rest/api/loganalytics/workspacepurge/getpurgestatus) *in behandeling* is. 
+> Zodra de bewerking leegmaken is uitgevoerd, zijn de gegevens niet toegankelijk wanneer de status van de [opschoon bewerking](/rest/api/loganalytics/workspacepurge/getpurgestatus) *in behandeling* is. 
 
 Opschonen is een zeer beschermde bewerking die geen enkele app of gebruiker in azure (inclusief zelfs de resource-eigenaar) toestemming heeft om uit te voeren zonder expliciet een rol in Azure Resource Manager te krijgen. Deze rol is _gegevens verzamelaar_ en moet voorzichtig worden gedelegeerd vanwege het mogelijke verlies van gegevens. 
 
@@ -129,4 +129,3 @@ Zodra de Azure Resource Manager rol is toegewezen, zijn er twee nieuwe API-paden
 ## <a name="next-steps"></a>Volgende stappen
 - Zie [log Analytics Data Security](./data-security.md)(Engelstalig) voor meer informatie over hoe log Analytics gegevens worden verzameld, verwerkt en beveiligd.
 - Zie [Application Insights Data Security](../app/data-retention-privacy.md)(Engelstalig) voor meer informatie over hoe Application Insights gegevens worden verzameld, verwerkt en beveiligd.
-

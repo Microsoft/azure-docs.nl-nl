@@ -10,12 +10,12 @@ ms.workload: infrastructure
 ms.date: 11/29/2018
 ms.author: cynthn
 ms.custom: mvc
-ms.openlocfilehash: e3d81bfaba572361304224932fadb7da5b1cc3f8
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.openlocfilehash: 8ddc94301ae8954fb0a35827ebd21e090c9dfe89
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97912884"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734695"
 ---
 # <a name="tutorial---manage-azure-disks-with-azure-powershell"></a>Zelfstudie: Azure-schijven beheren met Azure PowerShell
 
@@ -64,7 +64,7 @@ In de bovenstaande tabel wordt het max. IOP's per schijf aangegeven, maar er kan
 
 Om het voorbeeld in deze zelfstudie uit te voeren, moet u een bestaande virtuele machine hebben. Maak indien nodig een virtuele machine met de volgende opdrachten.
 
-Stel met [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential?view=powershell-5.1&preserve-view=true) de gebruikersnaam en het wachtwoord in die nodig zijn voor de beheerdersaccount op de virtuele machine:
+Stel met [Get-Credential](/powershell/module/microsoft.powershell.security/get-credential) de gebruikersnaam en het wachtwoord in die nodig zijn voor de beheerdersaccount op de virtuele machine:
 
 
 Maak de virtuele machine met [New-AzVM](/powershell/module/az.compute/new-azvm). U wordt gevraagd een gebruikersnaam en wachtwoord in te voeren voor het administrator-account voor de VM.

@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: c41856c394166f2e3b8fd3bde794f0f294ef6af9
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 4448ce051b0c9e73865e8057cc4f224c9cbeb571
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253372"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732741"
 ---
 # <a name="plan-for-intel-sgx-enclaves-and-attestation-in-azure-sql-database"></a>Plan voor Intel SGX enclaves en Attestation in Azure SQL Database
 
@@ -25,7 +25,7 @@ ms.locfileid: "98253372"
 > [!NOTE]
 > Always Encrypted met beveiligde enclaves voor Azure SQL Database is momenteel beschikbaar als **open bare preview**.
 
-[Always encrypted met beveiligde enclaves](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves) in Azure SQL database maakt gebruik van [Intel SGX-enclaves (software Guard Extensions)](https://itpeernetwork.intel.com/microsoft-azure-confidential-computing/) en is [Microsoft Azure Attestation](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves#secure-enclave-attestation)vereist.
+[Always encrypted met beveiligde enclaves](/sql/relational-databases/security/encryption/always-encrypted-enclaves) in Azure SQL database maakt gebruik van [Intel SGX-enclaves (software Guard Extensions)](https://itpeernetwork.intel.com/microsoft-azure-confidential-computing/) en is [Microsoft Azure Attestation](/sql/relational-databases/security/encryption/always-encrypted-enclaves#secure-enclave-attestation)vereist.
 
 ## <a name="plan-for-intel-sgx-in-azure-sql-database"></a>Plannen voor Intel SGX in Azure SQL Database
 

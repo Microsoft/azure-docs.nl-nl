@@ -10,13 +10,13 @@ ms.topic: reference
 author: stevestein
 ms.author: sstein
 ms.reviewer: ''
-ms.date: 01/15/2021
-ms.openlocfilehash: db3b168826223e4eb958f7700e65623a115e5779
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.date: 01/22/2021
+ms.openlocfilehash: a4be96d35116ed40ca61f00ed8f2ddd786760242
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251468"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735237"
 ---
 # <a name="resource-limits-for-single-databases-using-the-vcore-purchasing-model"></a>Resourcelimieten voor individuele databases met gebruikmaking van het vCore-aankoopmodel
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -411,7 +411,7 @@ De [Compute-laag zonder server](serverless-tier-overview.md) is momenteel alleen
 |Maximale gegevens grootte TempDB (GB)|83,25|92,5|111|148|166,5|333|
 |Opslagtype|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|Externe SSD|
 |I/o-latentie (bij benadering)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|5-7 MS (schrijven)<br>5-10 MS (lezen)|
-|Max. gegevensiops *|5760|6400|7680|10240|11520|23040|
+|Max. gegevensiops *|5760|6400|7680|10240|11520|12800|
 |Maximale logboek frequentie (MBps)|36|36|36|36|36|36|
 |Maxi maal aantal gelijktijdige werk nemers (aanvragen)|900|1000|1200|1600|1800|3600|
 |Maximaal aantal gelijktijdige aanmeldingen|1800|2000|2400|3200|3600|7200|

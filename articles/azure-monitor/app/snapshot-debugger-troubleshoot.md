@@ -6,12 +6,12 @@ author: cweining
 ms.author: cweining
 ms.date: 03/07/2019
 ms.reviewer: mbullwin
-ms.openlocfilehash: 3e45b5a48f9a7fb66d7539e83f385203ae371ad7
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 6e926211a0d86fef55608ede574dca53487f267c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673549"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732724"
 ---
 # <a name="troubleshoot-problems-enabling-application-insights-snapshot-debugger-or-viewing-snapshots"></a><a id="troubleshooting"></a> Problemen oplossen met het inschakelen van Application Insights Snapshot Debugger of het weer geven van moment opnamen
 Als u Application Insights Snapshot Debugger voor uw toepassing hebt ingeschakeld, maar geen moment opnamen voor uitzonde ringen ziet, kunt u deze instructies gebruiken om problemen op te lossen.
@@ -272,4 +272,4 @@ Als er nog steeds geen uitzonde ring wordt weer gegeven met die moment opname-ID
 
 Als uw toepassing verbinding maakt met Internet via een proxy of een firewall, moet u mogelijk de regels bijwerken om te communiceren met de Snapshot Debugger-service.
 
-De IP-adressen die worden gebruikt door Application Insights Snapshot Debugger zijn opgenomen in de code van de Azure Monitor-service. Zie [service Tags-documentatie](https://docs.microsoft.com/azure/virtual-network/service-tags-overview)voor meer informatie.
+De IP-adressen die worden gebruikt door Application Insights Snapshot Debugger zijn opgenomen in de code van de Azure Monitor-service. Zie [service Tags-documentatie](../../virtual-network/service-tags-overview.md)voor meer informatie.

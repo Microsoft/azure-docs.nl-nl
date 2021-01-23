@@ -7,12 +7,12 @@ ms.topic: article
 ms.date: 11/16/2020
 ms.author: ccompy
 ms.custom: seodec18
-ms.openlocfilehash: 680b1f3b6af186eba27a4dd926016a04cd863760
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 0a1221a8de10fd18768a1a0f0ac08277dc2901d6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98013482"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735030"
 ---
 # <a name="app-service-environment-networking"></a>App Service Environment netwerken
 
@@ -52,7 +52,7 @@ In tegens telling tot de ASEv2 kunt u met ASEv3 netwerk beveiligings groepen (Ns
 
 ## <a name="dns"></a>DNS
 
-De apps in uw ASE gebruiken de DNS waarvoor uw VNet is geconfigureerd. Volg de instructies in [een app service Environment gebruiken](https://docs.microsoft.com/azure/app-service/environment/using#dns-configuration) om uw DNS-server te laten verwijzen naar uw ASE. Als u wilt dat sommige apps een andere DNS-server gebruiken dan uw VNet is geconfigureerd met, kunt u deze hand matig instellen op basis van de app-instellingen WEBSITE_DNS_SERVER en WEBSITE_DNS_ALT_SERVER. Met de app-instelling WEBSITE_DNS_ALT_SERVER configureert u de secundaire DNS-server. De secundaire DNS-server wordt alleen gebruikt wanneer er geen reactie is van de primaire DNS-server. 
+De apps in uw ASE gebruiken de DNS waarvoor uw VNet is geconfigureerd. Volg de instructies in [een app service Environment gebruiken](./using.md#dns-configuration) om uw DNS-server te laten verwijzen naar uw ASE. Als u wilt dat sommige apps een andere DNS-server gebruiken dan uw VNet is geconfigureerd met, kunt u deze hand matig instellen op basis van de app-instellingen WEBSITE_DNS_SERVER en WEBSITE_DNS_ALT_SERVER. Met de app-instelling WEBSITE_DNS_ALT_SERVER configureert u de secundaire DNS-server. De secundaire DNS-server wordt alleen gebruikt wanneer er geen reactie is van de primaire DNS-server. 
 
 ## <a name="preview-limitation"></a>Voor beeld van beperking
 
@@ -61,4 +61,3 @@ Er zijn een aantal netwerk functies die niet beschikbaar zijn in ASEv3.  De ding
 • FTP • externe fout opsporing • externe load balancer implementatie • de mogelijkheid om toegang te krijgen tot een persoonlijk container register voor container implementaties • de mogelijkheid om aanroepen naar een wereld wijd peered Vnets • de mogelijkheid om back-ups te maken/te herstellen met een service-eind punt of beveiligde opslag met een persoonlijk eind punt account • de mogelijkheid om met behulp van de sleutel kluis verwijzingen van de app-instellingen op service-eind punten of beveiligde BYOS te gebruiken • de mogelijkheid om een service-eind punt of een beveiligde opslag account voor een persoonlijk eind punt gebruiken • gebruik van Network Watcher of NSG stroom op uitgaand verkeer
     
     
-

@@ -1,26 +1,22 @@
 ---
-title: Aan de slag met het integreren van Azure AD met apps | Microsoft Docs
+title: Aan de slag met het integreren van Azure AD met apps
 description: Dit artikel is een aan de slag-hand leiding voor het integreren van Azure Active Directory (AD) met on-premises toepassingen en Cloud toepassingen.
 services: active-directory
-documentationcenter: ''
 author: kenwith
 manager: celestedg
 ms.service: active-directory
-ms.subservice: app-mgmt
-ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: identity
 ms.date: 07/16/2018
 ms.author: kenwith
 ms.reviewer: asteen
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 913b7975de4598bba7240647c1d9e8c81cd1cec9
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: db3d3623e175d582a2fe271d73aa452ca07b8e8d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94659094"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735063"
 ---
 # <a name="integrating-azure-active-directory-with-applications-getting-started-guide"></a>Hand leiding voor het integreren van Azure Active Directory met toepassingen
 
@@ -77,9 +73,7 @@ Elk van uw toepassingen heeft mogelijk andere verificatie vereisten. Met Azure A
 Met Microsoft Azure AD toepassings proxy kunt u vanaf elke locatie en op elk apparaat toegang bieden tot toepassingen die zich in uw particuliere netwerk bevinden. Nadat u een toepassings proxy connector hebt geïnstalleerd in uw omgeving, kunt u deze eenvoudig configureren met Azure AD.
 
 ### <a name="integrating-custom-applications"></a>Aangepaste toepassingen integreren
-Als u een nieuwe toepassing schrijft en ontwikkel aars wilt helpen om gebruik te maken van de kracht van Azure AD, raadpleegt u [ontwikkel aars](./developer-guidance-for-integrating-applications.md)voor het maken van guid's.
-
-Als u uw aangepaste toepassing wilt toevoegen aan de Azure-toepassing galerie, raadpleegt u [' uw eigen app meenemen ' met Azure AD Self-Service SAML-configuratie](https://cloudblogs.microsoft.com/enterprisemobility/2015/06/17/bring-your-own-app-with-azure-ad-self-service-saml-configuration-now-in-preview/).
+Als u uw aangepaste toepassing wilt toevoegen aan de Azure-toepassing galerie, raadpleegt u [uw app naar de app-galerie van Azure AD publiceren](../develop/v2-howto-app-gallery-listing.md).
 
 ## <a name="managing-access-to-applications"></a>Toegang tot toepassingen beheren
 In de volgende artikelen worden de manieren beschreven waarop u de toegang tot toepassingen kunt beheren wanneer ze zijn geïntegreerd met Azure AD met behulp van Azure AD-connectors en Azure AD.
@@ -95,7 +89,7 @@ Voor gedetailleerde informatie kunt u Azure Active Directory implementatie plann
 
 Een implementatie plan downloaden van de Azure Portal:
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com).
-2. Selecteer **Enterprise Applications**  |  **een app**-  |  **implementatie plan** voor bedrijfs toepassingen.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+2. Selecteer   |  **een app**-  |  **implementatie plan** voor bedrijfs toepassingen.
 
 Geef feedback over implementatie plannen door gebruik te maken van de enquête van het [implementatie plan](https://aka.ms/DeploymentPlanFeedback).

@@ -9,12 +9,12 @@ ms.topic: tutorial
 ms.date: 03/25/2018
 ms.author: robinsh
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: 0db05c8caae8483de3b55448bfbe6b2bcfc23187
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: fdfb2470e83cefaeb6df35115f7bb46149d8ffe6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98625279"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733996"
 ---
 # <a name="tutorial-part-2---view-the-routed-messages"></a>Zelfstudie: Deel 2: de gerouteerde berichten weergeven
 
@@ -48,7 +48,7 @@ De Service Bus-wachtrij moet worden gebruikt voor het ontvangen van berichten di
 
    **Locatie**: gebruik uw locatie. In deze zelfstudie wordt gebruikgemaakt van **VS - west**.
 
-   **Log Analytics**: deze wisselknop moet worden uitgeschakeld.
+   **Log Analytics inschakelen**: deze wissel knop moet worden uitgeschakeld.
 
    ![Het scherm Logische app maken](./media/tutorial-routing-view-message-routing-results/create-logic-app.png)
 
@@ -151,6 +151,8 @@ Als u de gegevens in een Power BI-visualisatie wilt zien, stelt u eerst een Stre
    **Naam van de gegevensset**: de naam van de gegevensset die moet worden gebruikt in Power BI. In deze zelfstudie wordt gebruikgemaakt van **contosodataset**. 
 
    **Tabelnaam**: de naam van de tabel die moet worden gebruikt in Power BI. In deze zelfstudie wordt gebruikgemaakt van **contosotable**.
+
+  **Verificatie modus**: Selecteer de modus die u wilt gebruiken.
 
    Accepteer de standaardwaarden voor de rest van de velden.
 

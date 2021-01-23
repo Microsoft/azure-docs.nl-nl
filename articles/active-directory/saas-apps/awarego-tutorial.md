@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 6599abd6282d0d1eb7cb81002c34ddd5158dab6b
-ms.sourcegitcommit: 63d0621404375d4ac64055f1df4177dfad3d6de6
-ms.translationtype: HT
+ms.openlocfilehash: 4682396f68d6ff1af0b2fb6a5b1a8419d6963529
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97511056"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735331"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-awarego"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met AwareGo
 
@@ -139,11 +139,9 @@ In deze sectie kunt u de configuratie voor eenmalige aanmelding van Azure AD tes
 
 * Ga rechtstreeks naar de aanmeldingspagina van AwareGo, en initieer hier de aanmeldingsstroom.
 
-* Ga naar Mijn apps van Microsoft. Als u in Mijn apps de tegel **AwareGo** selecteert, wordt u naar de aanmeldingspagina van AwareGo geleid. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) voor meer informatie.
+* Ga naar Mijn apps van Microsoft. Als u in Mijn apps de tegel **AwareGo** selecteert, wordt u naar de aanmeldingspagina van AwareGo geleid. Zie [Aanmelden bij en het starten van apps vanuit de Mijn apps-portal](../user-help/my-apps-portal-end-user-access.md) voor meer informatie.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u AwareGo hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van App-beheer voor voorwaardelijke toegang. Zie [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app) voor meer informatie.
-
-
+Zodra u AwareGo hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor worden exfiltratie en infiltratie van gevoelige gegevens van uw organisatie in realtime beschermd. Sessiebeheer is een uitbreiding van App-beheer voor voorwaardelijke toegang. Zie [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app) voor meer informatie.

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 01/05/2021
 author: lgayhardt
 ms.author: lagayhar
-ms.openlocfilehash: 6f25ff02dee16812898d77d0e801f927b354dc78
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 11e21f376ea3b5cf580d54780509529b4536718b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97918208"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734171"
 ---
 # <a name="azure-monitor-for-azure-data-explorer-preview"></a>Azure Monitor voor Azure Data Explorer (preview-versie)
 
@@ -49,7 +49,7 @@ Op het tabblad **overzicht** voor het geselecteerde abonnement worden in de tabe
 
 De tegel item, onder de vervolg keuzelijst, geeft het totale aantal Azure Data Explorer-clusters in de geselecteerde abonnementen weer en laat zien hoeveel er is geselecteerd. Er zijn voorwaardelijke kleur codes voor de kolommen: behoud Alive, CPU, opname gebruik en cache gebruik. Oranje gecodeerde cellen hebben waarden die niet duurzaam zijn voor het cluster. 
 
-Voor een beter begrip van de metrische gegevens, raden we u aan de documentatie over [Azure Data Explorer metrische gegevens](https://docs.microsoft.com/azure/data-explorer/using-metrics#cluster-metrics)te lezen.
+Voor een beter begrip van de metrische gegevens, raden we u aan de documentatie over [Azure Data Explorer metrische gegevens](/azure/data-explorer/using-metrics#cluster-metrics)te lezen.
 
 ### <a name="query-performance-tab"></a>Tabblad Query prestaties
 
@@ -81,7 +81,7 @@ Voor toegang tot Azure Monitor voor Azure Data Explorer-clusters rechtstreeks va
 
 Deze weer gaven zijn ook toegankelijk door de resource naam van een Azure Data Explorer-cluster te selecteren in de Azure Monitor Insights-weer gave.
 
-Azure Monitor voor Azure Data Explorer combineert logboeken en metrische gegevens om een algemene bewakings oplossing te bieden. Voor het opnemen van op Logboeken gebaseerde visualisaties moeten gebruikers de [Diagnostische logboek registratie van hun Azure Data Explorer-cluster inschakelen en naar een log Analytics-werk ruimte verzenden.](https://docs.microsoft.com/azure/data-explorer/using-diagnostic-logs?tabs=commands-and-queries#enable-diagnostic-logs) De diagnostische logboeken die moeten worden ingeschakeld, zijn: **opdracht**, **query**, **TableDetails** en **TableUsageStatistics**.
+Azure Monitor voor Azure Data Explorer combineert logboeken en metrische gegevens om een algemene bewakings oplossing te bieden. Voor het opnemen van op Logboeken gebaseerde visualisaties moeten gebruikers de [Diagnostische logboek registratie van hun Azure Data Explorer-cluster inschakelen en naar een log Analytics-werk ruimte verzenden.](/azure/data-explorer/using-diagnostic-logs?tabs=commands-and-queries#enable-diagnostic-logs) De diagnostische logboeken die moeten worden ingeschakeld, zijn: **opdracht**, **query**, **TableDetails** en **TableUsageStatistics**.
 
 ![Scherm afbeelding van een blauwe knop waarmee de tekst ' logboeken voor bewaking inschakelen ' wordt weer gegeven](./media/data-explorer/enable-logs.png)
 
@@ -90,7 +90,7 @@ Azure Monitor voor Azure Data Explorer combineert logboeken en metrische gegeven
 
 - Tegels met metrische gegevens markeren de beschik baarheid en de algehele status van het cluster om de status snel te beoordelen.
 
-- Een samen vatting van actieve [Advisor-aanbevelingen](https://docs.microsoft.com/azure/data-explorer/azure-advisor) en de status van de [resource status](https://docs.microsoft.com/azure/data-explorer/monitor-with-resource-health) .
+- Een samen vatting van actieve [Advisor-aanbevelingen](/azure/data-explorer/azure-advisor) en de status van de [resource status](/azure/data-explorer/monitor-with-resource-health) .
 
 - Grafieken met de belangrijkste CPU-en geheugen gebruikers en het aantal unieke gebruikers gedurende een bepaalde periode.
 
@@ -114,7 +114,7 @@ Op het tabblad **gebruik** kunnen gebruikers de prestaties van de opdrachten en 
 
 Op het tabblad **tabellen** worden de laatste en historische eigenschappen van tabellen in het cluster weer gegeven. U kunt zien welke tabellen de meeste ruimte verbruiken, de historie van de groei bijhouden op tabel grootte, dynamische gegevens en het aantal rijen in de loop van de tijd.
 
-Op het tabblad **cache** kunnen gebruikers hun werkelijke Zoek patronen van query's analyseren en deze vergelijken met het geconfigureerde cache beleid (voor elke tabel). U kunt tabellen identificeren die worden gebruikt door de meeste query's en tabellen die helemaal niet worden opgevraagd, en het cache beleid dienovereenkomstig aan te passen. U kunt bepaalde aanbevelingen voor cache beleid verkrijgen voor specifieke tabellen in Azure Advisor (momenteel zijn cache aanbevelingen alleen beschikbaar vanuit het [hoofd Azure Advisor dash board](https://docs.microsoft.com/azure/data-explorer/azure-advisor#use-the-azure-advisor-recommendations)), op basis van de werkelijke query's in de afgelopen 30 dagen en een niet-geoptimaliseerd cache beleid voor ten minste 95% van de query's. Aanbevelingen voor cache reductie in Azure Advisor zijn beschikbaar voor clusters die ' gebonden aan gegevens ' zijn (wat betekent dat het cluster weinig CPU en weinig opname verbruikt, maar vanwege een hoge gegevens capaciteit kan het cluster niet worden geschaald of geschaald).
+Op het tabblad **cache** kunnen gebruikers hun werkelijke Zoek patronen van query's analyseren en deze vergelijken met het geconfigureerde cache beleid (voor elke tabel). U kunt tabellen identificeren die worden gebruikt door de meeste query's en tabellen die helemaal niet worden opgevraagd, en het cache beleid dienovereenkomstig aan te passen. U kunt bepaalde aanbevelingen voor cache beleid verkrijgen voor specifieke tabellen in Azure Advisor (momenteel zijn cache aanbevelingen alleen beschikbaar vanuit het [hoofd Azure Advisor dash board](/azure/data-explorer/azure-advisor#use-the-azure-advisor-recommendations)), op basis van de werkelijke query's in de afgelopen 30 dagen en een niet-geoptimaliseerd cache beleid voor ten minste 95% van de query's. Aanbevelingen voor cache reductie in Azure Advisor zijn beschikbaar voor clusters die ' gebonden aan gegevens ' zijn (wat betekent dat het cluster weinig CPU en weinig opname verbruikt, maar vanwege een hoge gegevens capaciteit kan het cluster niet worden geschaald of geschaald).
 
 [![Scherm opname van cache Details](./media/data-explorer/cache-tab.png)](./media/data-explorer/cache-tab.png#lightbox)
 
@@ -153,7 +153,7 @@ Er worden alleen abonnementen weer gegeven die Azure Data Explorer-clusters beva
 
 ### <a name="why-do-i-not-see-any-data-for-my-azure-data-explorer-cluster-under-the-usage-tables-or-cache-sections"></a>Waarom zie ik geen gegevens voor mijn Azure Data Explorer-cluster in de secties gebruik, tabellen of cache?
 
-Als u gegevens op basis van uw logboeken wilt weer geven, moet u [Diagnostische logboeken inschakelen](https://docs.microsoft.com/azure/data-explorer/using-diagnostic-logs?tabs=commands-and-queries#enable-diagnostic-logs) voor elk van de Azure Data Explorer-clusters die u wilt bewaken. Dit kan worden gedaan onder de diagnostische instellingen voor elk cluster. U moet uw gegevens verzenden naar een Log Analytics-werk ruimte. De diagnostische logboeken die moeten worden ingeschakeld, zijn: opdracht, query, TableDetails en TableUsageStatistics.
+Als u gegevens op basis van uw logboeken wilt weer geven, moet u [Diagnostische logboeken inschakelen](/azure/data-explorer/using-diagnostic-logs?tabs=commands-and-queries#enable-diagnostic-logs) voor elk van de Azure Data Explorer-clusters die u wilt bewaken. Dit kan worden gedaan onder de diagnostische instellingen voor elk cluster. U moet uw gegevens verzenden naar een Log Analytics-werk ruimte. De diagnostische logboeken die moeten worden ingeschakeld, zijn: opdracht, query, TableDetails en TableUsageStatistics.
 
 ### <a name="i-have-already-enabled-logs-for-my-azure-data-explorer-cluster-why-am-i-still-unable-to-see-my-data-under-commands-and-queries"></a>Ik heb logboeken voor mijn Azure Data Explorer-cluster al ingeschakeld, waarom kan ik mijn gegevens nog steeds niet zien onder opdrachten en Query's?
 

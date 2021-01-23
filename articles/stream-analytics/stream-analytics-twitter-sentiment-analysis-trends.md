@@ -8,12 +8,12 @@ ms.reviewer: jasonh
 ms.service: stream-analytics
 ms.topic: how-to
 ms.date: 02/10/2020
-ms.openlocfilehash: 3b321e318621c5687a2e3e5f0649985210a2d16c
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 6a461ad906f7611c8a13e2ee495f4d2f62fedd53
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98019870"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734832"
 ---
 # <a name="real-time-twitter-sentiment-analysis-in-azure-stream-analytics"></a>Analyse van realtime Twitter-gevoel in Azure Stream Analytics
 
@@ -40,6 +40,10 @@ In deze hand leiding kunt u een client toepassing gebruiken die verbinding maakt
 * De TwitterClientCore-toepassing, die de Twitter-feed leest. Down load [TwitterClientCore](https://github.com/Azure/azure-stream-analytics/tree/master/DataGenerators/TwitterClientCore)om deze toepassing op te halen.
 
 * Installeer de [.net core SLI](/dotnet/core/tools/?tabs=netcore2x) versie 2.1.0.
+
+Hieronder ziet u de architectuur van de oplossing die u gaat implementeren.
+
+   ![Een diagram van verschillende services en toepassingen die worden gebruikt voor het bouwen van de oplossing.](./media/stream-analytics-twitter-sentiment-analysis-trends/solution-diagram.png "Oplossings diagram")
 
 ## <a name="create-an-event-hub-for-streaming-input"></a>Een Event Hub maken voor streaming-invoer
 
@@ -161,7 +165,7 @@ Nu Tweet-gebeurtenissen in realtime worden gestreamd vanuit Twitter, kunt u een 
    |Invoeralias| *TwitterStream* | Voer een alias in voor de invoer. |
    |Abonnement  | \<Your subscription\> |  Selecteer het Azure-abonnement dat u wilt gebruiken. |
    |Event hub-naamruimte | *ASA-Twitter-eventhub* |
-   |Event Hub-naam | *socialtwitter-eh* | Kies *bestaande gebruiken*. Selecteer vervolgens de Event hub die u hebt gemaakt.|
+   |Naam van de Event Hub | *socialtwitter-eh* | Kies *bestaande gebruiken*. Selecteer vervolgens de Event hub die u hebt gemaakt.|
    |Gebeurteniscompressietype| GZip | Het type gegevens compressie.|
 
    Wijzig de resterende standaard waarden en selecteer **Opslaan**.

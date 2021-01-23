@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: fipopovi
 ms.reviewer: jrasnick
-ms.openlocfilehash: 7e7dce7ec4b8d4d55e734487595bb330e97ab18b
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 2ead7291f52f33c271768ae2f470af65aca98030
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120441"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734744"
 ---
 # <a name="how-to-use-openrowset-using-serverless-sql-pool-in-azure-synapse-analytics"></a>OPENROWSET gebruiken met behulp van serverloze SQL-pool in Azure Synapse Analytics
 
@@ -171,7 +171,7 @@ WITH (
 )
 ```
 
-json_path = [expressie van het JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15) naar kolom of geneste eigenschap. De standaard voor [padenmodus](/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15#PATHMODE) is lax.
+json_path = [expressie van het JSON-pad](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true) naar kolom of geneste eigenschap. De standaard voor [padenmodus](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true#PATHMODE) is lax.
 
 > [!NOTE]
 > In de strikte modus zal de query mislukken en een fout weergeven als het gegeven pad niet bestaat. In de lax-modus zal de query slagen en zal de expressie van het JSON-pad worden geëvalueerd als NULL.
@@ -371,7 +371,7 @@ WITH (
 
 ### <a name="specify-columns-using-json-paths"></a>Kolommen opgeven met behulp van JSON-paden
 
-In het volgende voorbeeld ziet u hoe u [Expressies van JSON-paden](/sql/relational-databases/json/json-path-expressions-sql-server?view=sql-server-ver15) kunt gebruiken in de component WITH. U ziet ook het verschil tussen de strikte en de lax modi: 
+In het volgende voorbeeld ziet u hoe u [Expressies van JSON-paden](/sql/relational-databases/json/json-path-expressions-sql-server?view=azure-sqldw-latest&preserve-view=true) kunt gebruiken in de component WITH. U ziet ook het verschil tussen de strikte en de lax modi: 
 
 ```sql
 SELECT 

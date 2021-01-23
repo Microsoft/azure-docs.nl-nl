@@ -10,12 +10,12 @@ ms.subservice: computer-vision
 ms.topic: conceptual
 ms.date: 01/12/2021
 ms.author: aahi
-ms.openlocfilehash: b530fc320f6c29dd7a86a39c5a7019265bb6b724
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: d19190723ebc415e9cf3053b929788dff68aeb0e
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624419"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734536"
 ---
 # <a name="spatial-analysis-operations"></a>Ruimtelijke analyse bewerkingen
 
@@ -23,7 +23,7 @@ Met ruimtelijke analyse kunt u het realtime streamen van video van camera's anal
 
 De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
 
-| Bewerkings-id| Description|
+| Bewerkings-id| Beschrijving|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. De zone moet volledig worden gedekt door één camera zodat PersonCount een nauw keurig totaal kan registreren. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -32,7 +32,7 @@ De container voor ruimtelijke analyse implementeert de volgende bewerkingen:
 
 Alle bovenstaande bewerkingen zijn ook beschikbaar in de `.debug` versie, die de mogelijkheid hebben om de video frames te visualiseren wanneer ze worden verwerkt. U moet `xhost +` op de hostcomputer worden uitgevoerd om de visualisatie van video frames en-gebeurtenissen in te scha kelen.
 
-| Bewerkings-id| Description|
+| Bewerkings-id| Beschrijving|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount. debug | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline. debug | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -43,7 +43,7 @@ Ruimtelijke analyse kan ook worden uitgevoerd met [Live video Analytics](../../m
 
 <!--more details on the setup can be found in the [LVA Setup page](LVA-Setup.md). Below is the list of the operations supported with Live Video Analytics. -->
 
-| Bewerkings-id| Description|
+| Bewerkings-id| Beschrijving|
 |---------|---------|
 | cognitiveservices. Vision. spatialanalysis-personcount. livevideoanalytics | Telt het aantal personen in een aangewezen zone in het veld weer gave van de camera. <br> Hiermee wordt een eerste _personCountEvent_ -gebeurtenis verzonden en vervolgens _personCountEvent_ -gebeurtenissen wanneer het aantal wordt gewijzigd.  |
 | cognitiveservices. Vision. spatialanalysis-personcrossingline. livevideoanalytics | Hiermee wordt getraceerd wanneer een persoon een opgegeven regel in het veld weer gave van de camera kruist. <br>Hiermee wordt een _personLineEvent_ -gebeurtenis verzonden wanneer de persoon de lijn snijdt en informatie geeft over de richting. 
@@ -57,11 +57,11 @@ Live video Analytics-bewerkingen zijn ook beschikbaar in de `.debug` versie (bij
 
 Dit zijn de para meters die vereist zijn voor elk van deze ruimtelijke analyse bewerkingen.
 
-| Bewerkingsparameters| Description|
+| Bewerkingsparameters| Beschrijving|
 |---------|---------|
 | Bewerkings-ID | De bewerkings-id uit de bovenstaande tabel.|
 | enabled | Booleaans: waar of onwaar|
-| VIDEO_URL| De RTSP-URL voor het camera apparaat (bijvoorbeeld: `rtsp://username:password@url` ). Ruimtelijke analyse ondersteunt H. 264-gecodeerde stream via RTSP, http of MP4. Video_URL kan worden voorzien van een verborgen base64-teken reeks waarde met AES-versleuteling en als de video-URL is verborgen `KEY_ENV` en `IV_ENV` moet worden ingesteld als omgevings variabelen. Een voor beeld van een hulp programma voor het genereren van sleutels en versleuteling vindt u [hier](https://docs.microsoft.com/dotnet/api/system.security.cryptography.aesmanaged?view=net-5.0&preserve-view=true). |
+| VIDEO_URL| De RTSP-URL voor het camera apparaat (bijvoorbeeld: `rtsp://username:password@url` ). Ruimtelijke analyse ondersteunt H. 264-gecodeerde stream via RTSP, http of MP4. Video_URL kan worden voorzien van een verborgen base64-teken reeks waarde met AES-versleuteling en als de video-URL is verborgen `KEY_ENV` en `IV_ENV` moet worden ingesteld als omgevings variabelen. Een voor beeld van een hulp programma voor het genereren van sleutels en versleuteling vindt u [hier](/dotnet/api/system.security.cryptography.aesmanaged?preserve-view=true&view=net-5.0). |
 | VIDEO_SOURCE_ID | Een beschrijvende naam voor het camera apparaat of de video stroom. Dit wordt geretourneerd met de JSON-uitvoer van de gebeurtenis.|
 | VIDEO_IS_LIVE| True voor camera apparaten; ONWAAR voor opgenomen Video's.|
 | VIDEO_DECODE_GPU_INDEX| De GPU voor het decoderen van het video frame. De standaard waarde is 0. Moet hetzelfde zijn als de `gpu_index` in andere configuratie van het knoop punt `VICA_NODE_CONFIG` , zoals, `DETECTOR_NODE_CONFIG` .|
@@ -122,7 +122,7 @@ Dit is een voor beeld van de DETECTOR_NODE_CONFIG para meters voor alle ruimteli
 }
 ```
 
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -167,7 +167,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `lines` | list| Lijst met regels.|
 | `name` | tekenreeks| Beschrijvende naam voor deze regel.|
@@ -213,7 +213,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -247,7 +247,7 @@ Dit is een voor beeld van een JSON-invoer voor de para meter SPACEANALYTICS_CONF
 }
 ```
 
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `zones` | list| Lijst met zones. |
 | `name` | tekenreeks| Beschrijvende naam voor deze zone.|
@@ -964,7 +964,7 @@ U kunt de prestaties en het gebruik van de Gpu's optimaal benutten door gebruik 
       }
   }
   ```
-| Naam | Type| Description|
+| Naam | Type| Beschrijving|
 |---------|---------|---------|
 | `batch_size` | int | Hiermee wordt het aantal camera's aangegeven dat in de bewerking wordt gebruikt. |
 

@@ -13,12 +13,12 @@ ms.topic: tutorial
 ms.date: 09/17/2020
 ms.author: alkemper
 ms.custom: devx-track-csharp, mvc
-ms.openlocfilehash: 1794d5b15c724008d95cfc59b16960b7ae6a0783
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 2f141b896ef11fecdf156d062a78252ce6f7ffb3
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661566"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734980"
 ---
 # <a name="tutorial-use-feature-flags-in-an-aspnet-core-app"></a>Zelfstudie: Functievlaggen gebruiken in een ASP.NET Core-app
 
@@ -105,7 +105,7 @@ De eenvoudigste manier om uw .NET Core-toepassing te verbinden met App Configura
               .UseStartup<Startup>();
    ```
 
-2. Open *Startup.cs* en werk de `Configure`-methode bij om de ingebouwde middleware met de naam `UseAzureAppConfiguration` toe te voegen. Met deze middleware kunnen de waarden van de functievlaggen periodiek worden vernieuwd terwijl de ASP.NET Core-web-app aanvragen blijft ontvangen.
+2. Open *Startup.cs* en werk de `Configure` `ConfigureServices` methode en bij om de ingebouwde middleware met de naam toe te voegen `UseAzureAppConfiguration` . Met deze middleware kunnen de waarden van de functievlaggen periodiek worden vernieuwd terwijl de ASP.NET Core-web-app aanvragen blijft ontvangen.
 
    ```csharp
    public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -115,6 +115,13 @@ De eenvoudigste manier om uw .NET Core-toepassing te verbinden met App Configura
    }
    ```
 
+   ```csharp
+   public void ConfigureServices(IServiceCollection services)
+   {
+       services.AddAzureAppConfiguration();
+   }
+   ```
+   
 De waarden van de functievlaggen worden naar verwachting in de loop van de tijd gewijzigd. Standaard worden de waarden van de functievlaggen in de cache opgeslagen gedurende een periode van 30 seconden. Als een vernieuwingsbewerking wordt geactiveerd terwijl de middleware een aanvraag ontvangt, wordt de waarde dus pas bijgewerkt als de waarde in de cache verloopt. De volgende code laat zien hoe u de vervaltijd van de cache of het polling-interval wijzigt in 5 minuten met de aanroep `options.UseFeatureFlags()`.
 
 ```csharp

@@ -11,9 +11,10 @@
     - name: Onbeperkte app-registraties maken
       href: quickstart-app-registration-limits.md
 - name: Zelfstudies
+  expanded: true
   items:
-    - name: Een dynamische groep maken
-      href: ../enterprise-users/users-revoke-access.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
+    - name: Gebruikers aan beheerdersrollen toewijzen
+      href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
 - name: Concepten
   expanded: true
   items:
@@ -28,18 +29,6 @@
 - name: Instructiegidsen
   expanded: true
   items:
-    - name: Gebruikers en rollen
-      items:
-        - name: Gebruikers aan beheerdersrollen toewijzen
-          href: ../fundamentals/active-directory-users-assign-role-azure-portal.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: De toegang van een gebruiker intrekken
-          href: ../enterprise-users/users-revoke-access.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: Rol toewijzen aan gastgebruiker
-          href: ../external-identities/add-guest-to-role.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: Toegang van gastgebruikers beperken
-          href: ../enterprise-users/users-restrict-guest-permissions.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
-        - name: Dynamische groepen en gasten
-          href: ../external-identities/use-dynamic-groups.md?context=%2fazure%2factive-directory%2froles%2fcontext%2fugr-context
     - name: Rollen en machtigingen
       expanded: true
       items:
@@ -119,7 +108,7 @@
     - name: Documentatie voor Microsoft 365-rollen
       href: m365-workload-docs.md
     - name: Graph API
-      href: /graph/api/resources/azure-ad-overview?view=graph-rest-1.0
+      href: /graph/api/resources/directoryrole?view=graph-rest-1.0
     - name: Azure AD CLI
       href: /cli/azure/ad
     - name: Azure AD PowerShell voor Graph

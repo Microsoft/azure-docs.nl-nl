@@ -99,4 +99,4 @@
 - name: Resources
   items:
     - name: Azure Arc-snelstart
-      href: 'https://github.com/microsoft/azure_arc'
+      href: 'https://azurearcjumpstart.io'

@@ -11,12 +11,12 @@ author: oslake
 ms.author: moslake
 ms.reviewer: ninarn, sstein
 ms.date: 12/9/2020
-ms.openlocfilehash: d1ba9445441f38c55b40a8f8ca55471ea8b0a06d
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: f50042caf21630c5054ead76825e49b820405c5b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008585"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732691"
 ---
 # <a name="elastic-pools-help-you-manage-and-scale-multiple-databases-in-azure-sql-database"></a>Meerdere databases in Azure SQL Database beheren en schalen met elastische pools
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -156,7 +156,7 @@ Wanneer u klaar bent met het configureren van de groep, kunt u op Toep assen kli
 
 In de Azure Portal kunt u het gebruik van een elastische pool en de data bases in die groep bewaken. U kunt ook een reeks wijzigingen aanbrengen in uw elastische pool en alle wijzigingen tegelijk verzenden. Deze wijzigingen omvatten het toevoegen of verwijderen van data bases, het wijzigen van de instellingen voor de elastische groep of het wijzigen van de data base-instellingen.
 
-U kunt gebruikmaken van de ingebouwde [hulpprogram ma's](https://docs.microsoft.com/azure/azure-sql/database/alerts-insights-configure-portal)voor [prestatie bewaking](https://docs.microsoft.com/azure/azure-sql/database/performance-guidance) en waarschuwingen, in combi natie met prestatie classificaties.  Daarnaast kan SQL Database [metrische gegevens en resourcelogboeken verzenden](https://docs.microsoft.com/azure/azure-sql/database/metrics-diagnostic-telemetry-logging-streaming-export-configure?tabs=azure-portal) die bewaking eenvoudiger maken.
+U kunt gebruikmaken van de ingebouwde [hulpprogram ma's](./alerts-insights-configure-portal.md)voor [prestatie bewaking](./performance-guidance.md) en waarschuwingen, in combi natie met prestatie classificaties.  Daarnaast kan SQL Database [metrische gegevens en resourcelogboeken verzenden](./metrics-diagnostic-telemetry-logging-streaming-export-configure.md?tabs=azure-portal) die bewaking eenvoudiger maken.
 
 ## <a name="customer-case-studies"></a>Casestudy's van klanten
 

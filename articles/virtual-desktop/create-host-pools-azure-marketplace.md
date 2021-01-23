@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 09/14/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 2830d8b82f5b53300d0af3f48e55b573d78ad295
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 268f1c4bff84a2c9ef67c3f6b5749bc8d0b90e85
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91287386"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735178"
 ---
 # <a name="tutorial-create-a-host-pool-with-the-azure-portal"></a>Zelfstudie: Een hostpool maken met de Azure-portal
 
@@ -118,7 +118,7 @@ Ga als volgt te werk om uw virtuele machine in te stellen binnen het installatie
       - Windows 10 Enterprise voor meerdere sessies, versie 2004
       - Windows 10 Enterprise voor meerdere sessies, versie 2004 + Microsoft 365 Apps
 
-     Als u de gewenste installatiekopie niet ziet, selecteert u **Door alle afbeeldingen en schijven bladeren**, waarmee u een andere afbeelding in uw galerie of een installatiekopie van Microsoft en andere uitgevers kunt selecteren.
+     Als u de gewenste installatiekopie niet ziet, selecteert u **Door alle afbeeldingen en schijven bladeren**, waarmee u een andere afbeelding in uw galerie of een installatiekopie van Microsoft en andere uitgevers kunt selecteren. Zorg ervoor dat de afbeelding die u kiest een van de [ondersteunde installatie kopieën van het besturings systeem](overview.md#supported-virtual-machine-os-images)is.
 
      > [!div class="mx-imgBorder"]
      > ![Een schermopname van de Marketplace met een lijst met installatiekopieën van Microsoft.](media/marketplace-images.png)
@@ -136,7 +136,7 @@ Ga als volgt te werk om uw virtuele machine in te stellen binnen het installatie
 
 9. Selecteer vervolgens of u een openbaar IP-adres voor de virtuele machines wilt. U kunt het beste **Nee** selecteren, omdat een privé-IP-adres veiliger is.
 
-10. Selecteer het gewenste type beveiligingsgroep: **Basis**, **Geavanceerd**of **Geen**.
+10. Selecteer het gewenste type beveiligingsgroep: **Basis**, **Geavanceerd** of **Geen**.
 
     Als u **Basis** selecteert, moet u selecteren of u een binnenkomende poort wilt openen. Als u **Ja** selecteert, maakt u een keuze uit de lijst met standaardpoorten om binnenkomende verbindingen naar toe te staan.
 
@@ -166,7 +166,7 @@ Ga als volgt te werk om de bureaubladtoepassingsgroep te registreren bij een wer
 
 1. Selecteer **Ja**.
 
-   Als u **Nee**selecteert, kunt u de app-groep later registreren. We raden u echter aan de registratie van de werkruimte in te stellen zodra u dit kunt doen, zodat uw hostgroep goed werkt.
+   Als u **Nee** selecteert, kunt u de app-groep later registreren. We raden u echter aan de registratie van de werkruimte in te stellen zodra u dit kunt doen, zodat uw hostgroep goed werkt.
 
 2. Kies vervolgens of u een nieuwe werkruimte wilt maken of een bestaande werkruimte wilt selecteren. De app-groep kan alleen worden geregistreerd bij werkruimten die op dezelfde locatie als de hostgroep zijn gemaakt.
 

@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: 94923b13181290a290f13339da5b05f6fdddff38
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: d9c2bec575f2c7a948f3eb6e65be6a735a3c03e8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98252146"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733806"
 ---
 # <a name="tutorial-getting-started-with-always-encrypted-with-secure-enclaves-in-azure-sql-database"></a>Zelf studie: aan de slag met Always Encrypted met beveiligde enclaves in Azure SQL Database
 
@@ -25,7 +25,7 @@ ms.locfileid: "98252146"
 > [!NOTE]
 > Always Encrypted met beveiligde enclaves voor Azure SQL Database is momenteel beschikbaar als **open bare preview**.
 
-In deze zelf studie leert u hoe u aan de slag kunt gaan met [Always encrypted met beveiligde enclaves](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves) in Azure SQL database. Hiermee wordt het volgende weer gegeven:
+In deze zelf studie leert u hoe u aan de slag kunt gaan met [Always encrypted met beveiligde enclaves](/sql/relational-databases/security/encryption/always-encrypted-enclaves) in Azure SQL database. Hiermee wordt het volgende weer gegeven:
 
 > [!div class="checklist"]
 > - Een omgeving maken voor het testen en evalueren van Always Encrypted met beveiligde enclaves.
@@ -33,11 +33,11 @@ In deze zelf studie leert u hoe u aan de slag kunt gaan met [Always encrypted me
 
 ## <a name="prerequisites"></a>Vereisten
 
-Voor deze zelf studie is Azure PowerShell en [SSMS](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms)vereist.
+Voor deze zelf studie is Azure PowerShell en [SSMS](/sql/ssms/download-sql-server-management-studio-ssms)vereist.
 
 ### <a name="powershell-requirements"></a>Power shell-vereisten
 
-Zie [Overzicht van Azure PowerShell](https://docs.microsoft.com/powershell/azure) voor meer informatie over het installeren en uitvoeren van Azure PowerShell. 
+Zie [Overzicht van Azure PowerShell](/powershell/azure) voor meer informatie over het installeren en uitvoeren van Azure PowerShell. 
 
 Minimale versie van AZ-modules die vereist zijn om Attestation-bewerkingen te ondersteunen:
 
@@ -66,7 +66,7 @@ Als u wilt blijven werken met de PowerShell Gallery, voert u de volgende opdrach
 
 ### <a name="ssms-requirements"></a>SSMS-vereisten
 
-Zie [down load SQL Server Management Studio (SSMS)](https://docs.microsoft.com/sql/ssms/download-sql-server-management-studio-ssms) voor informatie over het downloaden van SSMS.
+Zie [down load SQL Server Management Studio (SSMS)](/sql/ssms/download-sql-server-management-studio-ssms) voor informatie over het downloaden van SSMS.
 
 De vereiste minimale versie van SSMS is 18,8.
 
@@ -75,7 +75,7 @@ De vereiste minimale versie van SSMS is 18,8.
 
  In deze stap maakt u een nieuwe Azure SQL Database logische server en een nieuwe Data Base met behulp van de configuratie van de DC-serie. Always Encrypted met beveiligde enclaves in Azure SQL Database maakt gebruik van Intel SGX enclaves, die worden ondersteund in de configuratie van de DC-serie. Zie [DC-Series](service-tiers-vcore.md#dc-series)voor meer informatie.
 
-1. Open een Power shell-console en meld u aan bij Azure. Als dat nodig is, [schakelt u over naar het abonnement](https://docs.microsoft.com/powershell/azure/manage-subscriptions-azureps) dat u voor deze zelf studie gebruikt.
+1. Open een Power shell-console en meld u aan bij Azure. Als dat nodig is, [schakelt u over naar het abonnement](/powershell/azure/manage-subscriptions-azureps) dat u voor deze zelf studie gebruikt.
 
   ```PowerShell
   Connect-AzAccount
@@ -356,10 +356,10 @@ U kunt uitgebreide query's uitvoeren op de versleutelde kolommen. Er wordt een v
 ## <a name="next-steps"></a>Volgende stappen
 
 Nadat u deze zelf studie hebt voltooid, kunt u naar een van de volgende zelf studies gaan:
-- [Zelf studie: een .NET-toepassing ontwikkelen met behulp van Always Encrypted met beveiligde enclaves](https://docs.microsoft.com/sql/connect/ado-net/sql/tutorial-always-encrypted-enclaves-develop-net-apps)
-- [Zelf studie: een .NET Framework-toepassing ontwikkelen met behulp van Always Encrypted met beveiligde enclaves](https://docs.microsoft.com/sql/relational-databases/security/tutorial-always-encrypted-enclaves-develop-net-framework-apps)
-- [Zelf studie: indexen maken en gebruiken voor met enclave ingeschakelde kolommen met wille keurige versleuteling](https://docs.microsoft.com/sql/relational-databases/security/tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption)
+- [Zelf studie: een .NET-toepassing ontwikkelen met behulp van Always Encrypted met beveiligde enclaves](/sql/connect/ado-net/sql/tutorial-always-encrypted-enclaves-develop-net-apps)
+- [Zelf studie: een .NET Framework-toepassing ontwikkelen met behulp van Always Encrypted met beveiligde enclaves](/sql/relational-databases/security/tutorial-always-encrypted-enclaves-develop-net-framework-apps)
+- [Zelf studie: indexen maken en gebruiken voor met enclave ingeschakelde kolommen met wille keurige versleuteling](/sql/relational-databases/security/tutorial-creating-using-indexes-on-enclave-enabled-columns-using-randomized-encryption)
 
 ## <a name="see-also"></a>Zie ook
 
-- [Always Encrypted configureren en gebruiken met beveiligde enclaves](https://docs.microsoft.com/sql/relational-databases/security/encryption/configure-always-encrypted-enclaves)
+- [Always Encrypted configureren en gebruiken met beveiligde enclaves](/sql/relational-databases/security/encryption/configure-always-encrypted-enclaves)

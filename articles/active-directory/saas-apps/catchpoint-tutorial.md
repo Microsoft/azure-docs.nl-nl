@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.author: jeedes
-ms.openlocfilehash: 940915186176efcb39be03efe6673c138132ebd6
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.openlocfilehash: a8515920985c569df74b1e328d6bfe1c4ec97195
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916300"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98735311"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-integration-with-catchpoint"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met Catchpoint
 
@@ -101,7 +101,7 @@ Volg deze stappen in de Azure-portal om eenmalige aanmelding van Azure AD in te 
     | naamruimte | user.assignedrole |
 
     > [!NOTE]
-    > De claim `namespace` moet worden toegewezen met de accountnaam. Deze accountnaam moet worden ingesteld met een rol in Azure AD om te worden teruggegeven in het SAML-antwoord. Zie [De rolclaim configureren die in het SAML-token is uitgegeven voor bedrijfstoepassingen](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) voor meer informatie over rollen in Azure AD.
+    > De claim `namespace` moet worden toegewezen met de accountnaam. Deze accountnaam moet worden ingesteld met een rol in Azure AD om te worden teruggegeven in het SAML-antwoord. Zie [De rolclaim configureren die in het SAML-token is uitgegeven voor bedrijfstoepassingen](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview) voor meer informatie over rollen in Azure AD.
 
 1. Ga naar de pagina **Eenmalige aanmelding instellen met SAML**. Zoek **Certificaat (Base64)** in de sectie **SAML-handtekeningcertificaat**. Selecteer **Downloaden** om het certificaat op uw computer op te slaan.
 
@@ -176,7 +176,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik in Azure Portal op **Deze toepassing testen**. U wordt automatisch aangemeld bij de instantie van Catchpoint waarvoor u eenmalige aanmelding hebt ingesteld 
 
-U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in 'Mijn apps' op de tegel 'Catchpoint' klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij het Catchpoint-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+U kunt ook Mijn apps van Microsoft gebruiken om de toepassing in een willekeurige modus te testen. Wanneer u in 'Mijn apps' op de tegel 'Catchpoint' klikt, en deze is geconfigureerd in de SP-modus, wordt u omgeleid naar de aanmeldingspagina van de toepassing voor het initiëren van de aanmeldingsstroom. Als deze is geconfigureerd in de IDP-modus, wordt u automatisch aangemeld bij het Catchpoint-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 > [!NOTE]

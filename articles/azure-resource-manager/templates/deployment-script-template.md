@@ -7,12 +7,12 @@ ms.service: azure-resource-manager
 ms.topic: conceptual
 ms.date: 12/28/2020
 ms.author: jgao
-ms.openlocfilehash: 4d2a55355318a1bf916017fa77026a87a95b7f57
-ms.sourcegitcommit: 31d242b611a2887e0af1fc501a7d808c933a6bf6
+ms.openlocfilehash: 574dcf50111c14f4924f009a74ed6f2ac2bb31e9
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97809714"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733837"
 ---
 # <a name="use-deployment-scripts-in-arm-templates"></a>Implementatie scripts gebruiken in ARM-sjablonen
 
@@ -143,7 +143,7 @@ Details van eigenschaps waarde:
   >[!IMPORTANT]
   > Het implementatie script maakt gebruik van de beschik bare CLI-installatie kopieën van micro soft Container Registry (MCR). Het duurt ongeveer één maand om een CLI-installatie kopie te certificeren voor het implementatie script. Gebruik de CLI-versies die binnen 30 dagen zijn uitgebracht. Zie opmerkingen bij de [release van Azure cli](/cli/azure/release-notes-azure-cli?view=azure-cli-latest&preserve-view=true)om de release datums voor de installatie kopieën te vinden. Als er een niet-ondersteunde versie wordt gebruikt, wordt in het fout bericht een lijst met ondersteunde versies weer gegeven.
 
-- `arguments`: Geef de parameter waarden op. De waarden worden gescheiden door een spatie.
+- `arguments`: Geef de parameterwaarden op. De waarden worden gescheiden door een spatie.
 
   Met implementatie scripts worden de argumenten gesplitst in een matrix met teken reeksen door het aanroepen van de [CommandLineToArgvW ](/windows/win32/api/shellapi/nf-shellapi-commandlinetoargvw) -systeem aanroep. Deze stap is nodig omdat de argumenten worden door gegeven als een [opdracht eigenschap](/rest/api/container-instances/containergroups/createorupdate#containerexec) naar Azure container instance en de opdracht eigenschap een matrix van teken reeks is.
 
@@ -158,13 +158,13 @@ Details van eigenschaps waarde:
   Zie voor meer informatie de [voorbeeld sjabloon](https://raw.githubusercontent.com/Azure/azure-docs-json-samples/master/deployment-script/deploymentscript-jsonEscape.json).
 
 - `environmentVariables`: Geef de omgevings variabelen op die moeten worden door gegeven aan het script. Zie [implementatie scripts ontwikkelen](#develop-deployment-scripts)voor meer informatie.
-- `scriptContent`: Geef de script inhoud op. Als u een extern script wilt uitvoeren, gebruikt u `primaryScriptUri` in plaats daarvan. Zie [inline-script gebruiken](#use-inline-scripts) en [extern script gebruiken](#use-external-scripts)voor voor beelden.
+- `scriptContent`: Geef de scriptinhoud op. Als u een extern script wilt uitvoeren, gebruikt u in plaats daarvan `primaryScriptUri`. Zie [inline-script gebruiken](#use-inline-scripts) en [extern script gebruiken](#use-external-scripts)voor voor beelden.
   > [!NOTE]
   > Met de Azure Portal kan een implementatie script met meerdere regels niet worden geparseerd. Als u een sjabloon wilt implementeren met een implementatie script van de Azure Portal, kunt u de Power shell-opdrachten koppelen met behulp van punt komma's in één regel of de `primaryScriptUri` eigenschap gebruiken met een extern script bestand.
 
 - `primaryScriptUri`: Geef een openbaar toegankelijke URL op voor het primaire implementatie script met ondersteunde bestands extensies.
 - `supportingScriptUris`: Geef een matrix met openbaar toegankelijke Url's op voor de ondersteunende bestanden die worden genoemd in `scriptContent` of `primaryScriptUri` .
-- `timeout`: Geef de maximale toegestane uitvoerings tijd voor het script op dat is opgegeven in de [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601). Standaardwaarde is **P1D**.
+- `timeout`: Geef de maximale toegestane uitvoeringstijd voor het script op, opgegeven in de [ISO 8601-indeling](https://en.wikipedia.org/wiki/ISO_8601). Standaardwaarde is **P1D**.
 - `cleanupPreference`. Geef de voor keur op voor het opschonen van implementatie resources wanneer de uitvoering van het script wordt uitgevoerd in een Terminal status. De standaard instelling is **altijd**, wat betekent dat de resources worden verwijderd ondanks de status van de Terminal (geslaagd, mislukt, geannuleerd). Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
 - `retentionInterval`: Geef het interval op waarvoor de service de implementatie script bronnen behoudt nadat de uitvoering van het implementatie script een Terminal status heeft bereikt. De resources van het implementatie script worden verwijderd wanneer deze duur verloopt. De duur is gebaseerd op het [ISO 8601-patroon](https://en.wikipedia.org/wiki/ISO_8601). Het retentie-interval ligt tussen 1 en 26 uur (PT26H). Deze eigenschap wordt gebruikt wanneer `cleanupPreference` is ingesteld op **OnExpiration**. De eigenschap **OnExpiration** is momenteel niet ingeschakeld. Zie [Resources van implementatiescripts opschonen](#clean-up-deployment-script-resources) voor meer informatie.
 
@@ -542,7 +542,7 @@ De levens cyclus van deze resources wordt bepaald door de volgende eigenschappen
 > [!NOTE]
 > Het is niet raadzaam om het opslag account en het container exemplaar dat door de script service wordt gegenereerd voor andere doel einden te gebruiken. De twee resources kunnen worden verwijderd, afhankelijk van de levens cyclus van het script.
 
-Het container exemplaar en het opslag account worden verwijderd volgens de `cleanupPreference` . Als het script mislukt en `cleanupPreference` niet is ingesteld op **altijd**, houdt het implementatie proces de container automatisch gedurende één uur actief. U kunt dit uur gebruiken om het script op te lossen. Als u wilt dat de container wordt uitgevoerd nadat de implementatie is voltooid, voegt u een slaapstandtoets toe aan het script. Voeg bijvoorbeeld [Start-slaap stand](https://docs.microsoft.com/powershell/module/microsoft.powershell.utility/start-sleep) toe aan het einde van uw script. Als u de stap van de slaap stand niet toevoegt, wordt de container ingesteld op een Terminal status en is deze niet toegankelijk, zelfs niet als deze nog niet is verwijderd.
+Het container exemplaar en het opslag account worden verwijderd volgens de `cleanupPreference` . Als het script mislukt en `cleanupPreference` niet is ingesteld op **altijd**, houdt het implementatie proces de container automatisch gedurende één uur actief. U kunt dit uur gebruiken om het script op te lossen. Als u wilt dat de container wordt uitgevoerd nadat de implementatie is voltooid, voegt u een slaapstandtoets toe aan het script. Voeg bijvoorbeeld [Start-slaap stand](/powershell/module/microsoft.powershell.utility/start-sleep) toe aan het einde van uw script. Als u de stap van de slaap stand niet toevoegt, wordt de container ingesteld op een Terminal status en is deze niet toegankelijk, zelfs niet als deze nog niet is verwijderd.
 
 ## <a name="run-script-more-than-once"></a>Script meer dan één keer uitvoeren
 

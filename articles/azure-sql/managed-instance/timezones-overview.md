@@ -11,12 +11,12 @@ author: MladjoA
 ms.author: mlandzic
 ms.reviewer: ''
 ms.date: 10/12/2020
-ms.openlocfilehash: bf0cfd70c9850cc6a5ff4482b494d68700022ad8
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 8a4c1b2ac53679153c8d9485443a231b817df77a
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92790624"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734576"
 ---
 # <a name="time-zones-in-azure-sql-managed-instance"></a>Tijd zones in Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -32,7 +32,7 @@ T-SQL-functies [, zoals getdate ()](/sql/t-sql/functions/getdate-transact-sql) o
 
 Een set ondersteunde tijd zones wordt overgenomen van het onderliggende besturings systeem van het beheerde exemplaar. Het wordt regel matig bijgewerkt om nieuwe tijdzone definities op te halen en wijzigingen aan te brengen in de bestaande.
 
-Met het [beleid voor zomer tijd/tijd zone wijzigingen](https://aka.ms/time) wordt de historische nauw keurigheid van 2010 voorwaarts gegarandeerd.
+Met het [beleid voor zomer tijd/tijd zone wijzigingen](/troubleshoot/windows-client/system-management-components/daylight-saving-time-help-support) wordt de historische nauw keurigheid van 2010 voorwaarts gegarandeerd.
 
 Een lijst met namen van de ondersteunde tijd zones wordt weer gegeven via de [sys.time_zone_info](/sql/relational-databases/system-catalog-views/sys-time-zone-info-transact-sql) systeem weergave.
 

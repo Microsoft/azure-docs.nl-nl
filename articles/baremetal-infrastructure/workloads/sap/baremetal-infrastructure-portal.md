@@ -3,12 +3,12 @@ title: BareMetal instantie-eenheden in azure
 description: Meer informatie over het identificeren en gebruiken van BareMetal-exemplaar eenheden via de Azure Portal.
 ms.topic: how-to
 ms.date: 1/4/2021
-ms.openlocfilehash: 30e1661e82546dbaf6d8dc4288ad896df89f401e
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: b089b45c35ff05f10ae59f8ce793645361be1e9b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97861038"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733260"
 ---
 # <a name="manage-baremetal-instances-through-the-azure-portal"></a>BareMetal-instanties beheren via de Azure Portal
  
@@ -43,14 +43,14 @@ U moet uw abonnement vermelden in de Azure Portal en vervolgens dubbel klikken o
 
 1. Selecteer **Alle services** in het menu van Azure Portal.
 
-1. Voer in het vak **alle services** het **abonnement** in en selecteer vervolgens **abonnementen**.
+1. Voer **abonnement** in het vak **Alle services** in, en selecteer vervolgens **Abonnementen**.
 
-1. Selecteer het abonnement dat u wilt weer geven in de lijst met abonnementen.
+1. Selecteer het abonnement in de lijst met abonnementen om dit weer te geven.
 
 1. Selecteer **resource providers** en voer **BareMetalInfrastructure** in de zoek opdracht in. De resource provider moet worden **geregistreerd**, omdat de afbeelding wordt weer gegeven.
  
 >[!NOTE]
->Als de resource provider niet is geregistreerd, selecteert u **registreren**.
+>Als de resourceprovider niet is geregistreerd, selecteert u **Registreren**.
  
 :::image type="content" source="media/baremetal-infrastructure-portal/register-resource-provider-azure-portal.png" alt-text="Scherm opname van de geregistreerde BareMetal-instantie-eenheid":::
  
@@ -97,7 +97,7 @@ De mogelijke hardware revisies zijn:
 >[!NOTE]
 >Rev 4,2 is de meest recente BareMetal-infra structuur met een eigenlijke rebranding en maakt gebruik van de bestaande Rev 4-architectuur. Rev 4 biedt dichter nabijheid van de Azure virtual machine-hosts (VM). Het heeft aanzienlijke verbeteringen in de netwerk latentie tussen Azure Vm's en BareMetal exemplaar eenheden die zijn geïmplementeerd in Rev 4-stem pels of-rijen. U kunt uw BareMetal-instanties openen en beheren via de Azure Portal. Zie [BareMetal-infra structuur op Azure](baremetal-overview-architecture.md)voor meer informatie.
  
-Aan de rechter kant ziet u ook de naam van de [locatie van de Azure nabijheid](../../../virtual-machines/linux/co-location.md) , die automatisch wordt gemaakt voor elke geïmplementeerde BareMetal-exemplaar-eenheid. Verwijs naar de plaatsings groep voor proximity wanneer u de virtuele Azure-machines implementeert die als host fungeren voor de toepassingslaag. Wanneer u de plaatsings groep voor proximity gebruikt die is gekoppeld aan de BareMetal-exemplaar-eenheid, zorgt u ervoor dat de virtuele Azure-machines dicht bij de BareMetal-exemplaar-eenheid worden geïmplementeerd.
+Aan de rechter kant ziet u ook de naam van de [locatie van de Azure nabijheid](../../../virtual-machines/co-location.md) , die automatisch wordt gemaakt voor elke geïmplementeerde BareMetal-exemplaar-eenheid. Verwijs naar de plaatsings groep voor proximity wanneer u de virtuele Azure-machines implementeert die als host fungeren voor de toepassingslaag. Wanneer u de plaatsings groep voor proximity gebruikt die is gekoppeld aan de BareMetal-exemplaar-eenheid, zorgt u ervoor dat de virtuele Azure-machines dicht bij de BareMetal-exemplaar-eenheid worden geïmplementeerd.
  
 >[!TIP]
 >Als u de toepassingslaag in hetzelfde Azure-Data Center wilt vinden als revisie 4. x, raadpleegt u [Azure proximity placement groups voor optimale netwerk latentie](../../../virtual-machines/workloads/sap/sap-proximity-placement-scenarios.md).

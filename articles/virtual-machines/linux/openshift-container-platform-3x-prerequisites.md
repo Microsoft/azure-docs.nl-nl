@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 10/23/2019
 ms.author: haroldw
-ms.openlocfilehash: 68bd748e890659e4b79d76e4ccab038f251a937a
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 51f6a2ac4f524ac2a504fb8e0c3dd90ec25c9f93
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016026"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734727"
 ---
 # <a name="common-prerequisites-for-deploying-openshift-container-platform-311-in-azure"></a>Algemene vereisten voor het implementeren van open Shift container platform 3,11 in azure
 
@@ -134,7 +134,7 @@ Noteer de eigenschap appId en het wacht woord die worden geretourneerd door de o
  > [!WARNING] 
  > Zorg ervoor dat u het beveiligde wacht woord noteert omdat het niet mogelijk is om dit wacht woord opnieuw op te halen.
 
-Zie [een Azure-service-principal maken met Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli?view=azure-cli-latest)voor meer informatie over service-principals.
+Zie [een Azure-service-principal maken met Azure cli](/cli/azure/create-an-azure-service-principal-azure-cli)voor meer informatie over service-principals.
 
 ## <a name="prerequisites-applicable-only-to-resource-manager-template"></a>Vereisten die alleen van toepassing zijn op de Resource Manager-sjabloon
 

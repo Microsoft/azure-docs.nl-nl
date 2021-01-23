@@ -12,12 +12,12 @@ ms.date: 09/14/2020
 ms.author: erhopf
 ms.custom: cog-serv-seo-aug-2020
 keywords: translator, translator-service, tekst vertalen, tekst transliteren, taaldetectie
-ms.openlocfilehash: 68bbb31ae87ebbb84cda752c2f4a7c1bd1116dda
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
-ms.translationtype: HT
+ms.openlocfilehash: 38bd4d28a8ae4c737155cd74bcb39d1acfaf699c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369525"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733491"
 ---
 # <a name="quickstart-get-started-with-translator"></a>Quickstart: Aan de slag met Translator
 
@@ -123,7 +123,7 @@ Wanneer u de Translator-service via REST aanroept, moet u ervoor zorgen dat de v
 
 ## <a name="keys-and-endpoints"></a>Sleutels en eindpunten
 
-De voorbeelden op deze pagina gebruiken voor het gemak in code vastgelegde sleutels en eindpunten. Vergeet niet **de sleutel uit uw code te verwijderen wanneer u klaar bent** , en **maak deze sleutel nooit openbaar**. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../cognitive-services-security.md) voor meer informatie.
+De voorbeelden op deze pagina gebruiken voor het gemak in code vastgelegde sleutels en eindpunten. Vergeet niet **de sleutel uit uw code te verwijderen wanneer u klaar bent**, en **maak deze sleutel nooit openbaar**. Overweeg om voor productie een veilige manier te gebruiken voor het opslaan en openen van uw referenties. Zie het artikel Cognitive Services [Beveiliging](../cognitive-services-security.md) voor meer informatie.
 
 ## <a name="translate-text"></a>Tekst vertalen 
 
@@ -968,7 +968,8 @@ Als u tekst naar een taal wilt vertalen die gebruikmaakt van een ander alfabet (
 
 Als u een transliteratie wilt met het `translate`-eindpunt, gebruikt u de parameter `toScript` .
 
-> ![OPMERKING] Zie [Taalondersteuning](language-support.md) voor een volledige lijst met beschikbare talen en transliteratie-opties.
+> [!NOTE]
+> Zie [taal ondersteuning](language-support.md)voor een volledige lijst met beschik bare talen en vele opties.
 
 # <a name="c"></a>[C#](#tab/csharp)
 
@@ -1247,7 +1248,8 @@ Na een geslaagde aanroep ziet u het volgende antwoord. Houd er rekening mee dat 
 
 U kunt ook het `transliterate`-eindpunt gebruiken voor een transliteratie. Wanneer u het eindpunt voor transliteratie gebruikt, moet u de brontaal (`language`), het bronscript/-alfabet (`fromScript`) en het uitvoerscript/-alfabet (`toScript`) als parameters opgeven. In dit voorbeeld gaan we een transliteratie maken van สวัสดี. 
 
-> ![OPMERKING] Zie [Taalondersteuning](language-support.md) voor een volledige lijst met beschikbare talen en transliteratie-opties.
+> [!NOTE]
+> Zie [taal ondersteuning](language-support.md)voor een volledige lijst met beschik bare talen en vele opties.
 
 # <a name="c"></a>[C#](#tab/csharp)
 

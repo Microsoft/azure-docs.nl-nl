@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 04/22/2020
 ms.author: apimpm
-ms.openlocfilehash: 01ac59ec435b19f5da56ca345840628964263a47
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
-ms.translationtype: HT
+ms.openlocfilehash: f66395b1e0f45f1e80cd0ac93bf8c9ae8674a0f2
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93147025"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732942"
 ---
 # <a name="import-an-azure-function-app-as-an-api-in-azure-api-management"></a>Een Azure-functie-app als API importeren in Azure API Management
 
@@ -38,7 +38,7 @@ U leert het volgende:
 ## <a name="prerequisites"></a>Vereisten
 
 * Lees de snelstart [Een Azure API Management-exemplaar maken](get-started-create-service-instance.md).
-* Controleer of er een Azure Functions-app in uw abonnement aanwezig is. Zie [Een Azure-functie-app maken](../azure-functions/functions-create-first-azure-function.md#create-a-function-app) voor meer informatie. Deze moet functies bevatten met HTTP-trigger en waarbij het verificatieniveau is ingesteld op *Anoniem* of *Functie*.
+* Controleer of er een Azure Functions-app in uw abonnement aanwezig is. Zie [Een Azure-functie-app maken](../azure-functions/functions-get-started.md) voor meer informatie. Deze moet functies bevatten met HTTP-trigger en waarbij het verificatieniveau is ingesteld op *Anoniem* of *Functie*.
 
 [!INCLUDE [api-management-navigate-to-instance.md](../../includes/api-management-navigate-to-instance.md)]
 
@@ -78,7 +78,7 @@ Voer de volgende stappen uit om een nieuwe API te maken vanuit een Azure-functie
 
 Voer de volgende stappen uit om de Azure-functie-app toe te voegen aan een bestaande API.
 
-1. Selecteer in uw **Azure API Management** -service-exemplaar de optie **API's** in het menu links.
+1. Selecteer in uw **Azure API Management**-service-exemplaar de optie **API's** in het menu links.
 
 2. Kies een API waarin u een Azure-functie-app wilt importeren. Klik op **...** en selecteer **Importeren** in het contextmenu.
 
@@ -112,8 +112,8 @@ Voer de volgende stappen uit om de Azure-functie-app toe te voegen aan een besta
 
 Bij het importeren van een Azure-functie-app wordt automatisch het volgende gegenereerd:
 
-* Hostsleutel binnen de functie-app met de naam apim-{ *de naam van uw Azure API Management service-exemplaar* },
-* de benoemde waarde binnen het Azure API Management-exemplaar met de naam { *de naam van uw exemplaar van Azure-functie-app* }-key, die de gemaakte hostsleutel bevat.
+* Hostsleutel binnen de functie-app met de naam apim-{*de naam van uw Azure API Management service-exemplaar*},
+* de benoemde waarde binnen het Azure API Management-exemplaar met de naam {*de naam van uw exemplaar van Azure-functie-app*}-key, die de gemaakte hostsleutel bevat.
 
 Voor Api's die na 4 april 2019 zijn gemaakt, wordt de hostsleutel in HTTP-aanvragen van API Management aan de functie-app in een header doorgegeven. Oudere API's geven de hostsleutel als [een query parameter](../azure-functions/functions-bindings-http-webhook-trigger.md#api-key-authorization). Dit gedrag kan worden gewijzigd via de `PATCH Backend` [REST API-aanroep](/rest/api/apimanagement/2019-12-01/backend/update#backendcredentialscontract) op de *Back-end* entiteit die aan de functie-app is gekoppeld.
 

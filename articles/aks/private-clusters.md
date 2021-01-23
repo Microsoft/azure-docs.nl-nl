@@ -4,12 +4,12 @@ description: Meer informatie over het maken van een AKS-cluster (private Azure K
 services: container-service
 ms.topic: article
 ms.date: 7/17/2020
-ms.openlocfilehash: 2b0cc8a2fe9a45120bf0b74dbad5e107fd860845
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 66072032b3fd1ac33bef60922c62f73a8cfb11bd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98664364"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98734661"
 ---
 # <a name="create-a-private-azure-kubernetes-service-cluster"></a>Een persoonlijk Azure Kubernetes service-cluster maken
 
@@ -121,18 +121,18 @@ Zoals gezegd, is peering in virtuele netwerken een manier om toegang te krijgen 
 3. In scenario's waarin het VNet dat uw cluster bevat aangepaste DNS-instellingen (4) heeft, mislukt de implementatie van het cluster, tenzij de privé-DNS-zone is gekoppeld aan het VNet dat de aangepaste DNS-resolvers (5) bevat. Deze koppeling kan hand matig worden gemaakt nadat de privé zone is gemaakt tijdens het inrichten van een cluster of via Automation wanneer de zone wordt gedetecteerd met behulp van implementatie mechanismen op basis van gebeurtenissen (bijvoorbeeld Azure Event Grid en Azure Functions).
 
 > [!NOTE]
-> Als u [uw eigen route tabel gebruikt met kubenet](https://docs.microsoft.com/azure/aks/configure-kubenet#bring-your-own-subnet-and-route-table-with-kubenet) en uw eigen DNS-server naar een privé cluster brengt, mislukt het maken van het cluster. U moet de [RouteTable](https://docs.microsoft.com/azure/aks/configure-kubenet#bring-your-own-subnet-and-route-table-with-kubenet) in de knooppunt resource groep koppelen aan het subnet nadat het maken van het cluster is mislukt, zodat het maken is geslaagd.
+> Als u [uw eigen route tabel gebruikt met kubenet](./configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) en uw eigen DNS-server naar een privé cluster brengt, mislukt het maken van het cluster. U moet de [RouteTable](./configure-kubenet.md#bring-your-own-subnet-and-route-table-with-kubenet) in de knooppunt resource groep koppelen aan het subnet nadat het maken van het cluster is mislukt, zodat het maken is geslaagd.
 
 ## <a name="limitations"></a>Beperkingen 
 * Toegestane IP-bereiken kunnen niet worden toegepast op het eind punt van de persoonlijke API-server, maar zijn alleen van toepassing op de open bare API-server
 * De beperkingen van de [Azure Private Link-service][private-link-service] zijn van toepassing op persoonlijke clusters.
-* Geen ondersteuning voor door micro soft gehoste DevOps-agents van Azure met persoonlijke clusters. Overweeg [zelf-hostende agents](https://docs.microsoft.com/azure/devops/pipelines/agents/agents?view=azure-devops&tabs=browser&preserve-view=true)te gebruiken. 
+* Geen ondersteuning voor door micro soft gehoste DevOps-agents van Azure met persoonlijke clusters. Overweeg [zelf-hostende agents](/azure/devops/pipelines/agents/agents?preserve-view=true&tabs=browser&view=azure-devops)te gebruiken. 
 * Voor klanten die Azure Container Registry kunnen gebruiken met persoonlijke AKS, moet het virtuele netwerk Container Registry worden gekoppeld aan het virtuele netwerk van het agent cluster.
 * Geen ondersteuning voor het converteren van bestaande AKS-clusters naar particuliere clusters
 * Als u het persoonlijke eind punt in het subnet van de klant verwijdert of wijzigt, werkt het cluster niet meer. 
 * Azure Monitor voor containers Live-gegevens wordt momenteel niet ondersteund.
 * Nadat klanten de A-record op hun eigen DNS-servers hebben bijgewerkt, zullen die peulen nog steeds apiserver FQDN omzetten naar het oudere IP-adres na de migratie tot ze opnieuw zijn opgestart. Klanten moeten hostNetwork peul en standaard-DNSPolicy peul opnieuw opstarten na de migratie van het controle vlak.
-* In het geval van onderhoud op het besturings vlak kan uw [AKS-IP](https://docs.microsoft.com/azure/aks/limit-egress-traffic#:~:text=By%20default%2C%20AKS%20clusters%20have%20unrestricted%20outbound%20%28egress%29,be%20accessible%20to%20maintain%20healthy%20cluster%20maintenance%20tasks.) worden gewijzigd. In dit geval moet u de A-record die verwijst naar het privé-IP-adres van de API-server op uw aangepaste DNS-server bijwerken en aangepaste peulen of implementaties opnieuw starten met behulp van hostNetwork.
+* In het geval van onderhoud op het besturings vlak kan uw [AKS-IP](./limit-egress-traffic.md) worden gewijzigd. In dit geval moet u de A-record die verwijst naar het privé-IP-adres van de API-server op uw aangepaste DNS-server bijwerken en aangepaste peulen of implementaties opnieuw starten met behulp van hostNetwork.
 
 <!-- LINKS - internal -->
 [az-provider-register]: /cli/azure/provider?view=azure-cli-latest#az-provider-register

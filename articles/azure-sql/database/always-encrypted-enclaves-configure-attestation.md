@@ -11,12 +11,12 @@ author: jaszymas
 ms.author: jaszymas
 ms.reviwer: vanto
 ms.date: 01/15/2021
-ms.openlocfilehash: e8cb423d4d700c4b6b6caa30a02eac3e7ef10cb6
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 51431bf0da9145e1b61da708942b675e4c3eea78
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98253380"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733812"
 ---
 # <a name="configure-azure-attestation-for-your-azure-sql-logical-server"></a>Azure Attestation configureren voor uw logische Azure SQL-Server
 
@@ -27,7 +27,7 @@ ms.locfileid: "98253380"
 
 [Microsoft Azure Attestation](../../attestation/overview.md) is een oplossing voor het TEEs (Trusted Execution Environment), met inbegrip van Intel-software Guard Extensions (Intel SGX) enclaves. 
 
-Als u Azure-Attestation wilt gebruiken voor de verificatie van Intel SGX-enclaves die wordt gebruikt voor [Always encrypted met Secure enclaves](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves) in Azure SQL database, moet u het volgende doen:
+Als u Azure-Attestation wilt gebruiken voor de verificatie van Intel SGX-enclaves die wordt gebruikt voor [Always encrypted met Secure enclaves](/sql/relational-databases/security/encryption/always-encrypted-enclaves) in Azure SQL database, moet u het volgende doen:
 
 1. Maak een [Attestation-provider](../../attestation/basic-concepts.md#attestation-provider) en configureer deze met het aanbevolen Attestation-beleid.
 
@@ -114,7 +114,7 @@ Tijdens de Attestation-werk stroom roept de logische Azure SQL-Server met uw dat
 
 ### <a name="use-azure-portal-to-assign-permission"></a>Azure Portal gebruiken om machtigingen toe te wijzen
 
-Als u de identiteit van een Azure SQL-Server wilt toewijzen aan de rol van de Attestation-lezer voor een Attestation-provider, volgt u de algemene instructies in [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal). Als u zich in het deel venster **toewijzing van rol toevoegen** bevindt:
+Als u de identiteit van een Azure SQL-Server wilt toewijzen aan de rol van de Attestation-lezer voor een Attestation-provider, volgt u de algemene instructies in [Azure-roltoewijzingen toevoegen of verwijderen met behulp van de Azure Portal](../../role-based-access-control/role-assignments-portal.md). Als u zich in het deel venster **toewijzing van rol toevoegen** bevindt:
 
 1. Selecteer in de vervolg keuzelijst **rol** de rol **Attestation-lezer** .
 1. Voer in het veld **selecteren** de naam van uw Azure SQL-Server in om ernaar te zoeken.
@@ -143,11 +143,11 @@ $attestationResourceGroupName = "<attestation provider resource group name>"
 New-AzRoleAssignment -ObjectId $server.Identity.PrincipalId -RoleDefinitionName "Attestation Reader" -ResourceGroupName $attestationResourceGroupName
 ```
 
-Zie [Azure-roltoewijzingen toevoegen of verwijderen met Azure PowerShell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell#add-a-role-assignment)voor meer informatie.
+Zie [Azure-roltoewijzingen toevoegen of verwijderen met Azure PowerShell](../../role-based-access-control/role-assignments-powershell.md#add-role-assignment-examples)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Manage keys for Always Encrypted with secure enclaves](https://docs.microsoft.com/sql/relational-databases/security/encryption/always-encrypted-enclaves-manage-keys) (Sleutels beheren voor Always Encrypted met beveiligde enclaves)
+- [Manage keys for Always Encrypted with secure enclaves](/sql/relational-databases/security/encryption/always-encrypted-enclaves-manage-keys) (Sleutels beheren voor Always Encrypted met beveiligde enclaves)
 
 ## <a name="see-also"></a>Zie ook
 

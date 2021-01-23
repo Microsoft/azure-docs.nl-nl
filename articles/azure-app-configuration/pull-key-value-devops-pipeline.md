@@ -7,12 +7,12 @@ ms.service: azure-app-configuration
 ms.topic: how-to
 ms.date: 11/17/2020
 ms.author: drewbat
-ms.openlocfilehash: fbe517c766b3835bf4265a1309b8737a25925b7c
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 4d80c034ab03fed6b9ae2ed0c4c0420afe6f7e32
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914957"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728088"
 ---
 # <a name="pull-settings-to-app-configuration-with-azure-pipelines"></a>Instellingen voor app-configuratie ophalen met Azure-pijp lijnen
 
@@ -47,7 +47,7 @@ Nu uw service verbinding is gemaakt, zoekt u de naam van de service-principal di
 
 Wijs de juiste app-configuratie functie toe aan de service verbinding die wordt gebruikt binnen de taak, zodat de taak toegang heeft tot de app-configuratie opslag.
 
-1. Navigeer naar de configuratie Store van uw doel-app. Voor een overzicht van het instellen van een app-configuratie archief raadpleegt u [een app-configuratie archief maken](/azure/azure-app-configuration/quickstart-dotnet-core-app#create-an-app-configuration-store) in een van de Quick starts voor de configuratie van Azure-app.
+1. Navigeer naar de configuratie Store van uw doel-app. Voor een overzicht van het instellen van een app-configuratie archief raadpleegt u [een app-configuratie archief maken](./quickstart-dotnet-core-app.md#create-an-app-configuration-store) in een van de Quick starts voor de configuratie van Azure-app.
 1. Selecteer aan de linkerkant **toegangs beheer (IAM)**.
 1. Selecteer aan de bovenkant **+** **roltoewijzing** toevoegen en kiezen.
 1. Onder **rol** selecteert u **app Configuration Data Reader**. Met deze rol kan de taak uit het configuratie archief van de app worden gelezen. 

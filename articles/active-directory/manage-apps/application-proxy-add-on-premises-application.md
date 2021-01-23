@@ -12,12 +12,12 @@ ms.date: 01/20/2021
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q3
-ms.openlocfilehash: 6b46a5ea71bf8c9705ffc3bc51ea48f4b0c28502
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 6f8fdb23222944eab4742d1e972280e1e27e30a3
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98660761"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728511"
 ---
 # <a name="tutorial-add-an-on-premises-application-for-remote-access-through-application-proxy-in-azure-active-directory"></a>Zelfstudie: Een on-premises toepassing voor externe toegang toevoegen via Application Proxy in Azure Active Directory
 
@@ -97,7 +97,7 @@ TLS 1.2 inschakelen:
 1. Start de server opnieuw.
 
 > [!Note]
-> Microsoft werkt Azure-services bij om TLS-certificaten te gebruiken van een andere set basis-CA's (certificeringsinstanties). Deze wijziging wordt doorgevoerd omdat de huidige CA-certificaten niet voldoen aan een van de forumbasislijnvereisten voor CA's/browsers. Raadpleeg [Wijzigingen in Azure TLS-certificaten](https://docs.microsoft.com/azure/security/fundamentals/tls-certificate-changes) voor meer informatie.
+> Microsoft werkt Azure-services bij om TLS-certificaten te gebruiken van een andere set basis-CA's (certificeringsinstanties). Deze wijziging wordt doorgevoerd omdat de huidige CA-certificaten niet voldoen aan een van de forumbasislijnvereisten voor CA's/browsers. Raadpleeg [Wijzigingen in Azure TLS-certificaten](../../security/fundamentals/tls-certificate-changes.md) voor meer informatie.
 
 ## <a name="prepare-your-on-premises-environment"></a>Bereid uw on-premises omgeving voor
 

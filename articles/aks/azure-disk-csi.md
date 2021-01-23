@@ -5,12 +5,12 @@ services: container-service
 ms.topic: article
 ms.date: 08/27/2020
 author: palma21
-ms.openlocfilehash: 2dba9fbcbddbc7a66763636986f3d98f4f95332c
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: b75f4c85831fe66158da875c21af60ee73531026
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94683128"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728253"
 ---
 # <a name="use-the-azure-disk-container-storage-interface-csi-drivers-in-azure-kubernetes-service-aks-preview"></a>Gebruik de Azure Disk container Storage interface (CSI)-Stuur Programma's in azure Kubernetes service (AKS) (preview)
 Het stuur programma voor de Azure Disk container Storage interface (CSI) is een stuur programma voor [CSI-specificatie](https://github.com/container-storage-interface/spec/blob/master/spec.md)dat door Azure Kubernetes service (AKS) wordt gebruikt voor het beheren van de levens cyclus van Azure-schijven.
@@ -101,7 +101,7 @@ storageclass.storage.k8s.io/azuredisk-csi-waitforfirstconsumer created
 
 ## <a name="volume-snapshots"></a>Volume momentopnamen
 
-Het Azure Disk CSI-stuur programma ondersteunt het maken [van moment opnamen van permanente volumes](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html). Als onderdeel van deze mogelijkheid kan het stuur programma *volledige* of [ *incrementele* moment opnamen](../virtual-machines/windows/disks-incremental-snapshots.md) uitvoeren, afhankelijk van de waarde die in de `incremental` para meter is ingesteld (de standaard instelling is True).
+Het Azure Disk CSI-stuur programma ondersteunt het maken [van moment opnamen van permanente volumes](https://kubernetes-csi.github.io/docs/snapshot-restore-feature.html). Als onderdeel van deze mogelijkheid kan het stuur programma *volledige* of [ *incrementele* moment opnamen](../virtual-machines/disks-incremental-snapshots.md) uitvoeren, afhankelijk van de waarde die in de `incremental` para meter is ingesteld (de standaard instelling is True).
 
 Zie [para meters voor volume snap shot-klasse](https://github.com/kubernetes-sigs/azuredisk-csi-driver/blob/master/docs/driver-parameters.md#volumesnapshotclass)voor meer informatie over alle para meters.
 

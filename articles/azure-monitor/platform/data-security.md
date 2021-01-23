@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 11/11/2020
-ms.openlocfilehash: 87cdecd29d684c712853970c8246002132d274ac
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: a618a5d94513f7d648d118ae3bebdb34e4f5b1c4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97094332"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728856"
 ---
 # <a name="log-analytics-data-security"></a>Log Analytics gegevens beveiliging
 Dit document is bedoeld om informatie te verschaffen die specifiek is voor Log Analytics, een functie van Azure Monitor, om de informatie over [Vertrouwenscentrum van Azure](https://www.microsoft.com/en-us/trust-center?rtc=1)aan te vullen.  
@@ -72,7 +72,7 @@ De volgende tabel bevat een aantal van de beschik bare oplossingen en biedt voor
 
 De volgende tabel bevat voor beelden van gegevens typen:
 
-| **Gegevens type** | **Fields** |
+| **Gegevenstype** | **Fields** |
 | --- | --- |
 | Waarschuwing |Naam van waarschuwing, beschrijving van waarschuwing, BaseManagedEntityId, probleem-ID, IsMonitorAlert, RuleId, ResolutionState, prioriteit, Ernst, categorie, eigenaar, ResolvedBy, TimeRaised, TimeAdded, LastModified, LastModifiedBy, LastModifiedExceptRepeatCount, TimeResolved, TimeResolutionStateLastModified, TimeResolutionStateLastModifiedInDB, RepeatCount |
 | Configuratie |KlantId, AgentID, EntityID, ManagedTypeID, ManagedTypePropertyID, CurrentValue, Change date |
@@ -183,11 +183,10 @@ U kunt deze aanvullende beveiligings functies gebruiken om uw Azure Monitor/Log 
 - Door de [klant beheerde sleutels (beveiliging)](customer-managed-keys.md) : u kunt door de klant beheerde sleutels gebruiken om gegevens te versleutelen die naar uw log Analytics-werk ruimten worden verzonden. Hiervoor is het gebruik van Azure Key Vault vereist. 
 - [Persoonlijke/door de klant beheerde opslag](private-storage.md) : beheer uw persoonlijke versleutelde opslag account en vertel log Analytics het gebruik ervan om bewakings gegevens op te slaan 
 - [Particulier netwerk](private-link-security.md) : met de persoonlijke Azure-koppeling kunt u Azure PaaS-Services (met inbegrip van Azure monitor) veilig koppelen aan uw virtuele netwerk met behulp van privé-eind punten. 
-- [Azure klant-lockbox](/azure/security/fundamentals/customer-lockbox-overview#supported-services-and-scenarios-in-preview) -Klanten-lockbox voor Microsoft Azure biedt klanten een interface voor het controleren en goed keuren of afwijzen van aanvragen voor toegang tot klant gegevens. Dit wordt gebruikt in gevallen waarin een Microsoft-engineer toegang heeft tot klant gegevens tijdens een ondersteuningsaanvraag.
+- [Azure klant-lockbox](../../security/fundamentals/customer-lockbox-overview.md#supported-services-and-scenarios-in-preview) -Klanten-lockbox voor Microsoft Azure biedt klanten een interface voor het controleren en goed keuren of afwijzen van aanvragen voor toegang tot klant gegevens. Dit wordt gebruikt in gevallen waarin een Microsoft-engineer toegang heeft tot klant gegevens tijdens een ondersteuningsaanvraag.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 * Meer informatie over het verzamelen van gegevens met Log Analytics voor uw virtuele Azure-machines na de [Snelstartgids van Azure VM](../learn/quick-collect-azurevm.md).  
 
 *  Als u gegevens wilt verzamelen van fysieke of virtuele Windows-of Linux-computers in uw omgeving, raadpleegt u de [Quick start voor Linux-computers](../learn/quick-collect-linux-computer.md) of [Quick start voor Windows-computers](../learn/quick-collect-windows-computer.md)
-

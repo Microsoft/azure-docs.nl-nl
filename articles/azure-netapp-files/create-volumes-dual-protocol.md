@@ -12,14 +12,14 @@ ms.workload: storage
 ms.tgt_pltfrm: na
 ms.devlang: na
 ms.topic: how-to
-ms.date: 01/12/2020
+ms.date: 01/22/2020
 ms.author: b-juche
-ms.openlocfilehash: c914ab007f482e4d2b560b1cb461e27d4f4442ec
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 47aefecce846f58128335768018ba59d3520bd87
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133154"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726677"
 ---
 # <a name="create-a-dual-protocol-nfsv3-and-smb-volume-for-azure-netapp-files"></a>Een NFSv3-en SMB-volume (Dual-Protocol) maken voor Azure NetApp Files
 
@@ -51,6 +51,7 @@ Azure NetApp Files biedt ondersteuning voor het maken van volumes met behulp van
     | `Unix`    | NFS   | NFSv3 modus-bits   | UNIX  | NFS en Windows   |
     | `Ntfs`    | Windows   | NTFS-Acl's     | NTFS  |NFS en Windows|
 * UNIX-gebruikers die het volume van de NTFS-beveiligings stijl koppelen met behulp van NFS, worden geverifieerd als Windows-gebruiker `root` voor UNIX `root` en `pcuser` voor alle andere gebruikers. Zorg ervoor dat deze gebruikers accounts aanwezig zijn in uw Active Directory voordat u het volume koppelt bij het gebruik van NFS. 
+* U hebt geen Server basis-CA-certificaat nodig voor het maken van een Dual-protocol volume. Het is alleen vereist als LDAP via TLS is ingeschakeld.
 
 
 ## <a name="create-a-dual-protocol-volume"></a>Een volume met dubbele protocollen maken

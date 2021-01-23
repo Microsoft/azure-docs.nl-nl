@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: cdb72eb857f60400e8f7c23bbd1af39df802df76
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
-ms.translationtype: HT
+ms.openlocfilehash: 5802df8bec8a0d938b132e099dd71fdb1d22a5b7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968905"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98727463"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-kronos"></a>Zelfstudie: Integratie van eenmalige aanmelding (SSO) bij Azure Active Directory met Kronos
 
@@ -147,7 +147,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik in Azure Portal op Deze toepassing testen. U wordt automatisch aangemeld bij het exemplaar van Kronos waarvoor u eenmalige aanmelding hebt ingesteld
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Kronos klikt in Mijn apps, wordt u automatisch aangemeld bij het exemplaar van Kronos waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Kronos klikt in Mijn apps, wordt u automatisch aangemeld bij het exemplaar van Kronos waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

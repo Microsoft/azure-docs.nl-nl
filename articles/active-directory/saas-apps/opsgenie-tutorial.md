@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 622ead38a62e593e304f49da9a9d3f652a868bde
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
-ms.translationtype: HT
+ms.openlocfilehash: 2ab1f9ee6095dfc0f708ec33622aad6f70fcae65
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814394"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728505"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-opsgenie"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met OpsGenie
 
@@ -187,7 +187,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik in Azure Portal op Deze toepassing testen. U wordt automatisch aangemeld bij het exemplaar van OpsGenie waarvoor u eenmalige aanmelding hebt ingesteld
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel OpsGenie in Mijn apps klikt, wordt u automatisch aangemeld bij het OpsGenie-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel OpsGenie in Mijn apps klikt, wordt u automatisch aangemeld bij het OpsGenie-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 

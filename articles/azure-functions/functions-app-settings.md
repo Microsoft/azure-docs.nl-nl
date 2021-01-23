@@ -3,12 +3,12 @@ title: Naslaginformatie over app-instellingen voor Azure Functions
 description: Referentie documentatie voor de Azure Functions app-instellingen of omgevings variabelen.
 ms.topic: conceptual
 ms.date: 09/22/2018
-ms.openlocfilehash: 72b42e392f350a8693ca8a052bdec1d5fd337234
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 80b2daebbd64f08dd4f5d728b2a9a4ee04b8952f
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97937107"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728989"
 ---
 # <a name="app-settings-reference-for-azure-functions"></a>Naslaginformatie over app-instellingen voor Azure Functions
 
@@ -131,7 +131,7 @@ Hiermee geeft u de opslag plaats of provider op die moet worden gebruikt voor sl
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|
-|AzureWebJobsSecretStorageType|Bestanden|
+|AzureWebJobsSecretStorageType|Files|
 
 ## <a name="azurewebjobsstorage"></a>AzureWebJobsStorage
 
@@ -229,11 +229,13 @@ De waarde voor deze sleutel wordt opgegeven in de indeling `<DESTINATION>:<VERBO
 
 ## <a name="website_contentazurefileconnectionstring"></a>WEBSITE- \_ CONTENTAZUREFILECONNECTIONSTRING
 
-Alleen voor verbruik & Premium-abonnementen. De verbindings reeks voor het opslag account waarin de code en configuratie van de functie-app worden opgeslagen. Zie [een functie-app maken](functions-infrastructure-as-code.md#create-a-function-app).
+Verbindings reeks voor het opslag account waarin de code en configuratie van de functie-app worden opgeslagen in op gebeurtenissen gebaseerde schaal plannen die worden uitgevoerd op Windows. Zie [een functie-app maken](functions-infrastructure-as-code.md#windows)voor meer informatie.
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|
 |WEBSITE_CONTENTAZUREFILECONNECTIONSTRING|DefaultEndpointsProtocol = https; AccountName = [name]; AccountKey = [sleutel]|
+
+Wordt alleen gebruikt bij het implementeren van een verbruik of Premium-abonnementen die worden uitgevoerd op Windows. Niet ondersteund voor Linux. Als u deze instelling wijzigt of verwijdert, wordt de functie-app mogelijk niet gestart. Zie [dit artikel over probleem oplossing](functions-recover-storage-account.md#storage-account-application-settings-were-deleted)voor meer informatie. 
 
 ## <a name="website_contentovervnet"></a>WEBSITE- \_ CONTENTOVERVNET
 
@@ -245,11 +247,15 @@ Alleen voor Premium-abonnementen. Met een waarde van `1` kan uw functie-app word
 
 ## <a name="website_contentshare"></a>WEBSITE- \_ CONTENTSHARE
 
-Alleen voor verbruik & Premium-abonnementen. Het bestandspad naar de code en configuratie van de functie-app. Gebruikt met WEBSITE_CONTENTAZUREFILECONNECTIONSTRING. De standaard waarde is een unieke teken reeks die begint met de naam van de functie-app. Zie [een functie-app maken](functions-infrastructure-as-code.md#create-a-function-app).
+Het bestandspad naar de code en configuratie van de functie-app in een op gebeurtenissen gebaseerd schaal plan in Windows. Gebruikt met WEBSITE_CONTENTAZUREFILECONNECTIONSTRING. De standaard waarde is een unieke teken reeks die begint met de naam van de functie-app. Zie [een functie-app maken](functions-infrastructure-as-code.md#windows).
 
 |Sleutel|Voorbeeldwaarde|
 |---|------------|
 |WEBSITE_CONTENTSHARE|functionapp091999e2|
+
+Wordt alleen gebruikt door functie-apps op een verbruik of Premium-abonnementen die worden uitgevoerd op Windows. Niet ondersteund voor Linux. Als u deze instelling wijzigt of verwijdert, wordt de functie-app mogelijk niet gestart. Zie [dit artikel over probleem oplossing](functions-recover-storage-account.md#storage-account-application-settings-were-deleted)voor meer informatie.
+
+Wanneer u een Azure Resource Manager gebruikt voor het maken van een functie-app tijdens de implementatie, neemt u WEBSITE_CONTENTSHARE niet op in de sjabloon. Deze toepassings instelling wordt gegenereerd tijdens de implementatie. Zie voor meer informatie [resource-implementatie automatiseren voor uw functie-app](functions-infrastructure-as-code.md#windows).   
 
 ## <a name="website_max_dynamic_application_scale_out"></a>WEBSITE \_ maximum \_ aantal \_ uitschalen van dynamische toepassing \_ \_
 

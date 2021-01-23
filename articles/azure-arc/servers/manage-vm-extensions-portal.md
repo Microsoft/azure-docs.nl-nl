@@ -1,14 +1,14 @@
 ---
 title: VM-extensie van Azure Portal inschakelen
 description: In dit artikel wordt beschreven hoe u virtuele-machine uitbreidingen implementeert voor Azure Arc-servers die worden uitgevoerd in hybride Cloud omgevingen van de Azure Portal.
-ms.date: 11/06/2020
+ms.date: 01/22/2020
 ms.topic: conceptual
-ms.openlocfilehash: 48d7d4085dce893d94436fe0c6be32cfeea9cda3
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 43bbcef28b77e7c7112880fdac1bbd4809791cef
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94359082"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728943"
 ---
 # <a name="enable-azure-vm-extensions-from-the-azure-portal"></a>Azure VM-extensies inschakelen vanuit de Azure Portal
 
@@ -39,6 +39,18 @@ Voor VM-extensies kan uw Arc worden toegepast voor de door de server beheerde ma
 
 >[!NOTE]
 >Hoewel meerdere uitbrei dingen tegelijk kunnen worden gebatcheerd en verwerkt, worden ze serieel geïnstalleerd. Zodra de eerste installatie van de extensie is voltooid, wordt de installatie van de volgende uitbrei ding geprobeerd.
+
+## <a name="list-extensions-installed"></a>Lijst met geïnstalleerde uitbrei dingen
+
+U kunt op de Azure Portal een lijst met de VM-extensies op uw server met Arc-functionaliteit ophalen. Voer de volgende stappen uit om ze weer te geven.
+
+1. Ga in uw browser naar de [Azure Portal](https://portal.azure.com).
+
+2. Ga in de portal naar **servers-Azure-boog** en selecteer uw hybride machine in de lijst.
+
+3. Kies **extensies** en de lijst met geïnstalleerde uitbrei dingen wordt geretourneerd.
+
+    ![VM-extensie weer geven die is geïmplementeerd op de geselecteerde computer](./media/manage-vm-extensions/list-vm-extensions.png)
 
 ## <a name="uninstall-extension"></a>Extensie verwijderen
 

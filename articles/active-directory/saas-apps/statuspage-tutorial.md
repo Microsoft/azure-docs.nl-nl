@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: 40cb3c6e326cbacfbfb9879cfa92b5780d86fe99
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
-ms.translationtype: HT
+ms.openlocfilehash: cc3ce56ecd17d627001f4925355c055afdc09d22
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724201"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98729613"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-statuspage"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met StatusPage
 
@@ -206,7 +206,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op Deze toepassing testen in Azure Portal. U wordt dan automatisch aangemeld bij de instantie van StatusPage waarvoor u eenmalige aanmelding hebt ingesteld
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de StatusPage-tegel in Mijn apps klikt, zou u automatisch moeten worden aangemeld bij de instantie van StatusPage waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de StatusPage-tegel in Mijn apps klikt, zou u automatisch moeten worden aangemeld bij de instantie van StatusPage waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 

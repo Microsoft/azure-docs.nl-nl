@@ -12,12 +12,12 @@ ms.date: 04/07/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 808357b95f4de904ead0741d848480d548a2e26a
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: b6ecea10c884bffb10c936ca7c619d70d2449467
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030073"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728488"
 ---
 # <a name="work-with-existing-on-premises-proxy-servers"></a>Werken met bestaande on-premises proxyservers
 
@@ -169,7 +169,7 @@ De beste manier om verbindings problemen met connectors op te sporen en op te lo
 U kunt het controle programma van uw keuze gebruiken. Voor de doel einden van dit artikel hebben we micro soft Message Analyzer gebruikt.
 
 > [!NOTE]
-> [Micro soft Message Analyzer (MMA) is buiten gebruik gesteld](https://docs.microsoft.com/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) en de Download pakketten zijn verwijderd van Microsoft.com-sites op 25 2019 november.  Er is op dit moment geen micro soft-vervanging voor micro soft Message Analyzer in ontwikkeling.  Voor een vergelijk bare functionaliteit kunt u overwegen een hulp programma voor netwerk protocol analyse van derden, zoals wireshark, te gebruiken.
+> [Micro soft Message Analyzer (MMA) is buiten gebruik gesteld](/openspecs/blog/ms-winintbloglp/dd98b93c-0a75-4eb0-b92e-e760c502394f) en de Download pakketten zijn verwijderd van Microsoft.com-sites op 25 2019 november.  Er is op dit moment geen micro soft-vervanging voor micro soft Message Analyzer in ontwikkeling.  Voor een vergelijk bare functionaliteit kunt u overwegen een hulp programma voor netwerk protocol analyse van derden, zoals wireshark, te gebruiken.
 
 De volgende voor beelden zijn specifiek voor Message Analyzer, maar de principes kunnen worden toegepast op elk analyse programma.
 

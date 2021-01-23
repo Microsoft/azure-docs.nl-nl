@@ -3,12 +3,12 @@ title: IP-adressen in Azure Functions
 description: Meer informatie over het vinden van binnenkomende en uitgaande IP-adressen voor functie-apps en wat ertoe leidt dat deze worden gewijzigd.
 ms.topic: conceptual
 ms.date: 12/03/2018
-ms.openlocfilehash: 291a1cda7b8a2acc5426ea255519e1c2e58a2d7c
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: fcc92e61e180d25bc67d5ca3f9e2bff4af01fd3f
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936716"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726728"
 ---
 # <a name="ip-addresses-in-azure-functions"></a>IP-adressen in Azure Functions
 
@@ -27,8 +27,7 @@ Elke functie-app heeft één inkomend IP-adres. Het IP-adres zoeken:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 2. Navigeer naar de functie-app.
-3. Selecteer **platform functies**.
-4. Selecteer **Eigenschappen** en het inkomende IP-adres wordt weer gegeven onder **virtueel IP-adres**.
+3. Selecteer onder **Alle instellingen** de optie **Eigenschappen**. Het inkomende IP-adres wordt weer gegeven onder **virtueel IP-adres**.
 
 ## <a name="function-app-outbound-ip-addresses"></a><a name="find-outbound-ip-addresses"></a>Uitgaande IP-adressen van functie-app
 

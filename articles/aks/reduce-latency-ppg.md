@@ -5,19 +5,19 @@ services: container-service
 manager: gwallace
 ms.topic: article
 ms.date: 10/19/2020
-ms.openlocfilehash: fa81e293bc5e53a852bdb404f9e6d41c4297647b
-ms.sourcegitcommit: 99955130348f9d2db7d4fb5032fad89dad3185e7
+ms.openlocfilehash: c30051008474a32ae6c847ee3f840c8ae35b469b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93349032"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726799"
 ---
 # <a name="reduce-latency-with-proximity-placement-groups"></a>Minder latentie met proximity-plaatsings groepen
 
 > [!Note]
 > Wanneer u proximity-plaatsings groepen gebruikt op AKS, is de co-locatie alleen van toepassing op de agent knooppunten. Knoop punt naar knoop punt en de bijbehorende gehoste Pod naar pod latentie is verbeterd. De co-locatie heeft geen invloed op de plaatsing van het besturings vlak van een cluster.
 
-Wanneer u uw toepassing in azure implementeert, wordt er netwerk latentie gemaakt door het verspreiden van virtuele machine-exemplaren (VM) in regio's of beschikbaarheids zones. Dit kan van invloed zijn op de algehele prestaties van uw toepassing. Een proximity-plaatsings groep is een logische groepering die wordt gebruikt om ervoor te zorgen dat Azure Compute-resources zich fysiek dicht bij elkaar bevinden. Sommige toepassingen, zoals gaming, technische simulaties en hoge frequentie handel (HFT) vereisen een lage latentie en taken die snel kunnen worden voltooid. Voor scenario's met High Performance Computing (HPC) zoals deze kunt u overwegen om [proximity placement groups](../virtual-machines/linux/co-location.md#proximity-placement-groups) (PPG) te gebruiken voor de knooppunt groepen van uw cluster.
+Wanneer u uw toepassing in azure implementeert, wordt er netwerk latentie gemaakt door het verspreiden van virtuele machine-exemplaren (VM) in regio's of beschikbaarheids zones. Dit kan van invloed zijn op de algehele prestaties van uw toepassing. Een proximity-plaatsings groep is een logische groepering die wordt gebruikt om ervoor te zorgen dat Azure Compute-resources zich fysiek dicht bij elkaar bevinden. Sommige toepassingen, zoals gaming, technische simulaties en hoge frequentie handel (HFT) vereisen een lage latentie en taken die snel kunnen worden voltooid. Voor scenario's met High Performance Computing (HPC) zoals deze kunt u overwegen om [proximity placement groups](../virtual-machines/co-location.md#proximity-placement-groups) (PPG) te gebruiken voor de knooppunt groepen van uw cluster.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -133,7 +133,7 @@ az group delete --name myResourceGroup --yes --no-wait
 [nodepool-upgrade]: use-multiple-node-pools.md#upgrade-a-node-pool
 [az-extension-add]: /cli/azure/extension#az-extension-add
 [az-extension-update]: /cli/azure/extension#az-extension-update
-[proximity-placement-groups]: ../virtual-machines/linux/co-location.md#proximity-placement-groups
+[proximity-placement-groups]: ../virtual-machines/co-location.md#proximity-placement-groups
 [az-aks-create]: /cli/azure/aks#az-aks-create
 [system-pool]: ./use-system-pools.md
 [az-aks-nodepool-add]: /cli/azure/aks/nodepool?view=azure-cli-latest#az-aks-nodepool-add

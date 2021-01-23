@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 601f268f81c222ada5a4f99b05ae8ffcdfc13a23
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: ca2a844364d11dbb5ac2a244945e07d8ca725c1c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916283"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728437"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>SAP-workloads op Azure: controle lijst voor planning en implementatie
 
@@ -66,7 +66,7 @@ Tijdens deze fase plant u de migratie van uw SAP-werk belasting naar het Azure-p
     - Architectuur met hoge Beschik baarheid en herstel na nood gevallen.
         - Bepaal op basis van RTO en RPO hoe de architectuur voor hoge Beschik baarheid en herstel na nood gevallen moet worden weer geven.
         - Voor maximale Beschik baarheid binnen een zone, controleert u wat de gewenste DBMS in azure moet aanbieden. De meeste DBMS-pakketten bieden synchrone methoden van een synchrone hot stand-by, die we aanraden voor productie systemen. Raadpleeg ook de SAP-gerelateerde documentatie voor verschillende data bases, te beginnen met [overwegingen voor Azure virtual machines DBMS-implementatie voor SAP-werk belastingen](./dbms_guide_general.md) en gerelateerde documenten.
-           Het gebruik van Windows Server failover clustering met een gedeelde schijf configuratie voor de DBMS-laag als bijvoorbeeld [beschreven voor SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server?view=sql-server-2017&preserve-view=true), wordt niet ondersteund. Gebruik in plaats daarvan oplossingen zoals:
+           Het gebruik van Windows Server failover clustering met een gedeelde schijf configuratie voor de DBMS-laag als bijvoorbeeld [beschreven voor SQL Server](/sql/sql-server/failover-clusters/windows/always-on-failover-cluster-instances-sql-server), wordt niet ondersteund. Gebruik in plaats daarvan oplossingen zoals:
            - [SQL Server Always On](/previous-versions/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-ps-sql-alwayson-availability-groups)
            - [Oracle Data Guard](../oracle/configure-oracle-dataguard.md)
            - [HANA-systeem replicatie](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.01/en-US/b74e16a9e09541749a745f41246a065e.html)

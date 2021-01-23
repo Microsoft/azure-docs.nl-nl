@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 09/10/2020
 ms.author: jeedes
-ms.openlocfilehash: 0e16cb3d24f9dd33b156bca72ce1c99e7aae957a
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
-ms.translationtype: HT
+ms.openlocfilehash: 1b9c9182b8ffc6e9ea2e05fd4863783f111f81dd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97963601"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98727146"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-palo-alto-networks-captive-portal"></a>Zelfstudie: Azure Active Directory-integratie met Palo Alto Networks Captive Portal
 
@@ -150,7 +150,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op Deze app testen in Azure Portal en u wordt automatisch aangemeld bij de Palo Alto Networks Captive Portal waarvoor u de SSO hebt ingesteld
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Palo Alto Networks Captive Portal klikt in Mijn apps, wordt u automatisch aangemeld bij het exemplaar van Palo Alto Networks Captive Portal waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Palo Alto Networks Captive Portal klikt in Mijn apps, wordt u automatisch aangemeld bij het exemplaar van Palo Alto Networks Captive Portal waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

@@ -3,12 +3,12 @@ title: Het bestaande VM-back-upbeleid bijwerken met CLI
 description: Meer informatie over het bijwerken van het bestaande VM-back-upbeleid met behulp van Azure CLI.
 ms.topic: conceptual
 ms.date: 12/31/2020
-ms.openlocfilehash: ba4ded4c82a1eaea7c20ea94da580a8702467b85
-ms.sourcegitcommit: 89c0482c16bfec316a79caa3667c256ee40b163f
+ms.openlocfilehash: 33083d6585d2b9296cd184ba258b8d2143d685b4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97858832"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728575"
 ---
 # <a name="update-the-existing-vm-backup-policy-using-cli"></a>Het bestaande VM-back-upbeleid bijwerken met CLI
 
@@ -18,7 +18,7 @@ U kunt Azure CLI gebruiken om een bestaand back-upbeleid voor VM'S bij te werken
 
 Voer de volgende stappen uit om een bestaand back-upbeleid voor VM'S te wijzigen:
 
-1. Voer de opdracht [AZ backup policy show](https://docs.microsoft.com/cli/azure/backup/policy#az_backup_policy_show) uit om de details op te halen van het beleid dat u wilt bijwerken.
+1. Voer de opdracht [AZ backup policy show](/cli/azure/backup/policy#az_backup_policy_show) uit om de details op te halen van het beleid dat u wilt bijwerken.
 
     Voorbeeld:
 
@@ -101,14 +101,14 @@ Voer de volgende stappen uit om een bestaand back-upbeleid voor VM'S te wijzigen
     ```
 
 1. Sla de wijzigingen op.
-1. Voer de opdracht [AZ backup policy set](https://docs.microsoft.com/cli/azure/backup/policy#az_backup_policy_set) uit en geef het volledige pad van het bijgewerkte JSON-bestand door als waarde voor de para meter **--Policy** .
+1. Voer de opdracht [AZ backup policy set](/cli/azure/backup/policy#az_backup_policy_set) uit en geef het volledige pad van het bijgewerkte JSON-bestand door als waarde voor de para meter **--Policy** .
 
     ```azurecli
     az backup policy set --resource-group rg1234 --vault-name testvault --policy C:\temp2\Policy.json --name testing123
     ```
 
 >[!NOTE]
->U kunt ook het voor beeld-JSON-beleid ophalen door de opdracht [AZ backup policy Get-default-for-VM](https://docs.microsoft.com/cli/azure/backup/policy#az_backup_policy_get_default_for_vm) uit te voeren.
+>U kunt ook het voor beeld-JSON-beleid ophalen door de opdracht [AZ backup policy Get-default-for-VM](/cli/azure/backup/policy#az_backup_policy_get_default_for_vm) uit te voeren.
 
 ## <a name="next-steps"></a>Volgende stappen
 

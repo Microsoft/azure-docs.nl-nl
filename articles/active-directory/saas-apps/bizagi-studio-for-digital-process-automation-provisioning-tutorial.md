@@ -15,16 +15,16 @@ ms.devlang: na
 ms.topic: article
 ms.date: 10/20/2020
 ms.author: Zhchia
-ms.openlocfilehash: 4eaac716d06b102a07872059af28da4986889caa
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 72e021f47bb8db4dedf0e434d0d94bb2118a4c00
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673433"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98728155"
 ---
 # <a name="tutorial-configure-bizagi-studio-for-digital-process-automation-for-automatic-user-provisioning"></a>Zelf studie: bizagi Studio configureren voor digitale proces automatisering voor automatische gebruikers inrichting
 
-In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel bizagi Studio for Digital Process Automation als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer dit is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en ongedaan gemaakt in [bizagi Studio voor digitale proces automatisering](https://www.bizagi.com/) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../manage-apps/user-provisioning.md). 
+In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel bizagi Studio for Digital Process Automation als Azure Active Directory (Azure AD) voor het configureren van automatische gebruikers inrichting. Wanneer dit is geconfigureerd, worden gebruikers en groepen door Azure AD automatisch ingericht en ongedaan gemaakt in [bizagi Studio voor digitale proces automatisering](https://www.bizagi.com/) met behulp van de Azure AD-inrichtings service. Zie voor belangrijke details over wat deze service doet, hoe het werkt en veelgestelde vragen [Inrichting en ongedaan maken van inrichting van gebruikers automatiseren naar SaaS-toepassingen met Azure Active Directory](../app-provisioning/user-provisioning.md). 
 
 
 ## <a name="capabilities-supported"></a>Ondersteunde mogelijkheden
@@ -32,22 +32,22 @@ In deze zelf studie worden de stappen beschreven die u moet uitvoeren in zowel b
 > * Gebruikers in bizagi Studio maken voor digitale proces automatisering
 > * Gebruikers in bizagi Studio verwijderen voor digitale proces automatisering wanneer ze niet meer toegang nodig hebben
 > * Gebruikers kenmerken gesynchroniseerd laten tussen Azure AD en bizagi Studio voor het automatiseren van digitale processen
-> * [Eenmalige aanmelding](https://docs.microsoft.com/azure/active-directory/saas-apps/bizagi-studio-for-digital-process-automation-tutorial) voor bizagi Studio voor het automatiseren van digitale processen (aanbevolen)
+> * [Eenmalige aanmelding](./bizagi-studio-for-digital-process-automation-tutorial.md) voor bizagi Studio voor het automatiseren van digitale processen (aanbevolen)
 
 ## <a name="prerequisites"></a>Vereisten
 
 In het scenario dat in deze zelfstudie wordt beschreven, wordt ervan uitgegaan dat u al beschikt over het volgende:
 
-* [Een Azure AD-tenant](https://docs.microsoft.com/azure/active-directory/develop/quickstart-create-new-tenant). 
-* Een gebruikersaccount in Azure AD met [machtiging](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles) om inrichting te configureren. Voor beelden hiervan zijn: toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder. 
+* [Een Azure AD-tenant](../develop/quickstart-create-new-tenant.md). 
+* Een gebruikersaccount in Azure AD met [machtiging](../roles/permissions-reference.md) om inrichting te configureren. Voor beelden hiervan zijn: toepassings beheerder, Cloud toepassings beheerder, eigenaar van de toepassing of globale beheerder. 
 * Bizagi Studio voor Digital Process Automation versie 11.2.4.2 X of hoger.
 
 ## <a name="plan-your-provisioning-deployment"></a>Implementatie van de inrichting plannen
 Volg deze stappen voor het plannen van:
 
-1. Lees [hoe de inrichtingsservice werkt](https://docs.microsoft.com/azure/active-directory/manage-apps/user-provisioning).
-2. Bepaal wie binnen het [bereik van de inrichting](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts)valt.
-3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en bizagi Studio voor het automatiseren van digitale processen](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes). 
+1. Lees [hoe de inrichtingsservice werkt](../app-provisioning/user-provisioning.md).
+2. Bepaal wie binnen het [bereik van de inrichting](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)valt.
+3. Bepaal welke gegevens moeten worden [toegewezen tussen Azure AD en bizagi Studio voor het automatiseren van digitale processen](../app-provisioning/customize-application-attributes.md). 
 
 ## <a name="configure-to-support-provisioning-with-azure-ad"></a>Configureren voor ondersteuning van inrichting met Azure AD
 Ga als volgt te werk om bizagi Studio voor digitale proces automatisering te configureren ter ondersteuning van het inrichten met Azure AD:
@@ -69,17 +69,17 @@ Ga als volgt te werk om bizagi Studio voor digitale proces automatisering te con
 
 ## <a name="add-the-application-from-the-azure-ad-gallery"></a>De toepassing toevoegen vanuit de Azure AD-galerie
 
-Voeg de app toe vanuit de Azure AD-toepassings galerie om te beginnen met het beheren van de inrichting voor bizagi Studio voor het digitaal proces automatiseren. Als u in een eerder stadium bizagi Studio hebt ingesteld voor de automatisering van digitale processen voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. Wanneer u de integratie voor het eerst test, moet u echter een afzonderlijke app maken. Zie [Quick Start: een toepassing toevoegen aan uw Azure Active Directory-Tenant (Azure AD)](https://docs.microsoft.com/azure/active-directory/manage-apps/add-gallery-app)voor meer informatie. 
+Voeg de app toe vanuit de Azure AD-toepassings galerie om te beginnen met het beheren van de inrichting voor bizagi Studio voor het digitaal proces automatiseren. Als u in een eerder stadium bizagi Studio hebt ingesteld voor de automatisering van digitale processen voor eenmalige aanmelding, kunt u dezelfde toepassing gebruiken. Wanneer u de integratie voor het eerst test, moet u echter een afzonderlijke app maken. Zie [Quick Start: een toepassing toevoegen aan uw Azure Active Directory-Tenant (Azure AD)](../manage-apps/add-application-portal.md)voor meer informatie. 
 
 ## <a name="define-who-is-in-scope-for-provisioning"></a>Definiëren wie binnen het bereik van de inrichting valt 
 
-Met de Azure AD-inrichtings service kunt u bereiken die zijn ingericht op basis van de toewijzing aan de toepassing, op basis van de kenmerken van de gebruiker en de groep, of beide. Als u op basis van de toewijzing werkt, raadpleegt u de stappen in [gebruikers toewijzen of intrekken voor een app met behulp van de Graph API](../manage-apps/assign-user-or-group-access-portal.md) om gebruikers en groepen toe te wijzen aan de toepassing. Als u de scope alleen op basis van kenmerken van de gebruiker of groep maakt, kunt u een bereik filter gebruiken. Zie [op kenmerken gebaseerde toepassing inrichten met bereik filters](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts)voor meer informatie. 
+Met de Azure AD-inrichtings service kunt u bereiken die zijn ingericht op basis van de toewijzing aan de toepassing, op basis van de kenmerken van de gebruiker en de groep, of beide. Als u op basis van de toewijzing werkt, raadpleegt u de stappen in [gebruikers toewijzen of intrekken voor een app met behulp van de Graph API](../manage-apps/assign-user-or-group-access-portal.md) om gebruikers en groepen toe te wijzen aan de toepassing. Als u de scope alleen op basis van kenmerken van de gebruiker of groep maakt, kunt u een bereik filter gebruiken. Zie [op kenmerken gebaseerde toepassing inrichten met bereik filters](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)voor meer informatie. 
 
 Houd rekening met de volgende punten over bereik:
 
-* Wanneer u gebruikers en groepen toewijst aan bizagi Studio voor het digitaal proces automatisering, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol standaard toegang worden uitgesloten van het inrichten en zijn gemarkeerd in de inrichtings logboeken, aangezien ze zijn gemarkeerd als niet effectief in aanmerking komen. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps) om meer rollen toe te voegen. 
+* Wanneer u gebruikers en groepen toewijst aan bizagi Studio voor het digitaal proces automatisering, moet u een andere rol dan **standaard toegang** selecteren. Gebruikers met de rol standaard toegang worden uitgesloten van het inrichten en zijn gemarkeerd in de inrichtings logboeken, aangezien ze zijn gemarkeerd als niet effectief in aanmerking komen. Als Standaardtoegang de enige beschikbare rol voor de toepassing is, kunt u [het manifest van de toepassing bijwerken](../develop/howto-add-app-roles-in-azure-ad-apps.md) om meer rollen toe te voegen. 
 
-* Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen toe te wijzen aan de app. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [op kenmerken gebaseerd bereik filter](https://docs.microsoft.com/azure/active-directory/manage-apps/define-conditional-rules-for-provisioning-user-accounts)opgeven. 
+* Begin klein. Test de toepassing met een kleine set gebruikers en groepen voordat u de toepassing naar iedereen uitrolt. Wanneer het bereik voor inrichting is ingesteld op toegewezen gebruikers en groepen, kunt u dit beheren door een of twee gebruikers of groepen toe te wijzen aan de app. Wanneer het bereik is ingesteld op alle gebruikers en groepen, kunt u een [op kenmerken gebaseerd bereik filter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)opgeven. 
 
 
 ## <a name="configure-automatic-user-provisioning"></a>Automatische gebruikersinrichting configureren 
@@ -121,7 +121,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 8. Selecteer in de sectie **toewijzingen** de optie **Azure Active Directory gebruikers synchroniseren met bizagi Studio voor digitale proces automatisering**.
 
-9. Controleer in de sectie **kenmerk toewijzing** de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar bizagi Studio voor het automatiseren van digitale processen. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in bizagi Studio voor het maken van een digitale proces automatisering voor update bewerkingen. Als u het [overeenkomende doel kenmerk](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes)wijzigt, moet u ervoor zorgen dat de bizagi Studio voor de API voor digitale proces automatisering het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer **Opslaan** om eventuele wijzigingen toe te passen.
+9. Controleer in de sectie **kenmerk toewijzing** de gebruikers kenmerken die zijn gesynchroniseerd vanuit Azure AD naar bizagi Studio voor het automatiseren van digitale processen. De kenmerken die zijn geselecteerd als **overeenkomende** eigenschappen worden gebruikt om te voldoen aan de gebruikers accounts in bizagi Studio voor het maken van een digitale proces automatisering voor update bewerkingen. Als u het [overeenkomende doel kenmerk](../app-provisioning/customize-application-attributes.md)wijzigt, moet u ervoor zorgen dat de bizagi Studio voor de API voor digitale proces automatisering het filteren van gebruikers op basis van dat kenmerk ondersteunt. Selecteer **Opslaan** om eventuele wijzigingen toe te passen.
 
    |Kenmerk|Type|Ondersteund voor filteren|
    |---|---|---|
@@ -137,12 +137,12 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
    
     ![Kenmerk lijst bewerken.](media/bizagi-studio-for-digital-process-automation-provisioning-tutorial/edit.png)  
 
-   Meer informatie over het toevoegen van aangepaste kenmerken vindt u in [Customize Application Attributes](https://docs.microsoft.com/azure/active-directory/manage-apps/customize-application-attributes).
+   Meer informatie over het toevoegen van aangepaste kenmerken vindt u in [Customize Application Attributes](../app-provisioning/customize-application-attributes.md).
 
 > [!NOTE]
 > Alleen elementaire type-eigenschappen worden ondersteund (bijvoorbeeld String, integer, Boolean, DateTime, etc). De eigenschappen die zijn gekoppeld aan parametrische tabellen of meerdere typen, worden nog niet ondersteund.
 
-10. Zie voor het configureren van bereik filters de [zelf studie](../manage-apps/define-conditional-rules-for-provisioning-user-accounts.md)voor het filteren op bereik.
+10. Zie voor het configureren van bereik filters de [zelf studie](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md)voor het filteren op bereik.
 
 11. Als u de Azure AD-inrichtings service voor bizagi Studio voor digitale proces automatisering wilt inschakelen, wijzigt u in de sectie **instellingen** de **inrichtings status** in **op aan**.
 
@@ -152,7 +152,7 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
     ![Scherm afbeelding van Scope opties.](common/provisioning-scope.png)
 
-13. Selecteer **Opslaan** als u klaar bent voor het inrichten.
+13. Selecteer **Opslaan** als u klaar bent om in te richten.
 
     ![Scherm afbeelding van besturings element voor opslaan.](common/provisioning-configuration-save.png)
 
@@ -161,15 +161,15 @@ Met deze bewerking wordt de eerste synchronisatiecyclus gestart van alle gebruik
 ## <a name="monitor-your-deployment"></a>Uw implementatie bewaken
 Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende bronnen om uw implementatie te bewaken:
 
-- Gebruik de [inrichtingslogboeken](https://docs.microsoft.com/azure/active-directory/reports-monitoring/concept-provisioning-logs) om te bepalen welke gebruikers al dan niet met succes zijn ingericht.
-- Controleer de [voortgangs balk](https://docs.microsoft.com/azure/active-directory/app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user) om de status van de inrichtings cyclus weer te geven en hoe sluiten deze moet worden voltooid.
-- Als de inrichtings configuratie een slechte status heeft, wordt de toepassing in quarantaine gezet. Zie [toepassings inrichting in quarantaine status](https://docs.microsoft.com/azure/active-directory/manage-apps/application-provisioning-quarantine-status)voor meer informatie.  
+- Gebruik de [inrichtingslogboeken](../reports-monitoring/concept-provisioning-logs.md) om te bepalen welke gebruikers al dan niet met succes zijn ingericht.
+- Controleer de [voortgangs balk](../app-provisioning/application-provisioning-when-will-provisioning-finish-specific-user.md) om de status van de inrichtings cyclus weer te geven en hoe sluiten deze moet worden voltooid.
+- Als de inrichtings configuratie een slechte status heeft, wordt de toepassing in quarantaine gezet. Zie [toepassings inrichting in quarantaine status](../app-provisioning/application-provisioning-quarantine-status.md)voor meer informatie.  
 
 ## <a name="additional-resources"></a>Aanvullende resources
 
-* [Gebruikersaccountinrichting voor zakelijke apps beheren](../manage-apps/configure-automatic-user-provisioning-portal.md)
+* [Gebruikersaccountinrichting voor zakelijke apps beheren](../app-provisioning/configure-automatic-user-provisioning-portal.md)
 * [What is application access and single sign-on with Azure Active Directory?](../manage-apps/what-is-single-sign-on.md) (Wat houden toegang tot toepassingen en eenmalige aanmelding met Azure Active Directory in?)
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../manage-apps/check-status-user-account-provisioning.md)
+* [Meer informatie over het controleren van logboeken en het ophalen van rapporten over de inrichtingsactiviteit](../app-provisioning/check-status-user-account-provisioning.md)

@@ -21,8 +21,13 @@
         - name: ARM-sjabloon gebruiken
           displayName: Resource Manager
           href: fhir-paas-arm-template-quickstart.md
-    - name: Azure IoT Connector for FHIR (preview) implementeren - Portal
-      href: iot-fhir-portal-quickstart.md
+    - name: Azure IoT Connector for FHIR (preview) implementeren
+      expanded: false
+      items:
+        - name: Portal gebruiken
+          href: iot-fhir-portal-quickstart.md
+        - name: ARM-sjabloon gebruiken
+          href: iot-fhir-arm-template-quickstart.md
 - name: Zelfstudies
   expanded: false
   items:

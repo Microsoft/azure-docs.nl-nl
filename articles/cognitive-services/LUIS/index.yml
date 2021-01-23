@@ -12,12 +12,12 @@ metadata:
   title: Documentatie voor Language Understanding (LUIS)
   titleSuffix: Azure Cognitive Services
   description: Met de Language Understanding-service (LUIS) begrijpt uw toepassing wat een persoon in zijn eigen woorden wilt. Met behulp van machine learning geeft LUIS ontwikkelaars de mogelijkheid om toepassingen te ontwikkelen die gebruikersinvoer in een natuurlijke taal ontvangen en hieraan betekenis geven.
-  ms.openlocfilehash: ff928f1879f8cfd356fa020ff6afaa68b72f63c5
-  ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
-  ms.translationtype: HT
+  ms.openlocfilehash: ca9209295d8265eeac5545091e4d4c5c9678e994
+  ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/21/2020
-  ms.locfileid: "95019378"
+  ms.lasthandoff: 01/23/2021
+  ms.locfileid: "98738064"
 landingContent:
 - title: Over Language Understanding (LUIS)
   linkLists:
@@ -60,9 +60,9 @@ landingContent:
     - text: 'Portal: Een nieuwe LUIS-app maken'
       url: get-started-portal-build-app.md
     - text: Met C# SDK
-      url: azure-sdk-quickstart.md?pivots=programming-language-csharp
+      url: ./client-libraries-rest-api.md?pivots=rest-api
     - text: Met Python SDK
-      url: azure-sdk-quickstart.md?pivots=programming-language-python
+      url: ./client-libraries-rest-api.md?pivots=rest-api
   - linkListType: how-to-guide
     links:
     - text: Een nieuwe LUIS-app maken
@@ -82,13 +82,13 @@ landingContent:
     - text: Interactief testen
       url: luis-concept-test.md
     - text: Batchgewijs testen
-      url: luis-concept-batch-test.md
+      url: ./luis-how-to-batch-test.md
   - linkListType: quickstart
     links:
     - text: 'Portal: App implementeren in voorspellingseindpunt'
       url: get-started-portal-deploy-app.md
     - text: SDK gebruiken
-      url: azure-sdk-quickstart.md
+      url: ./client-libraries-rest-api.md?pivots=rest-api
   - linkListType: how-to-guide
     links:
     - text: Versiebeheer van uw app
@@ -106,7 +106,7 @@ landingContent:
   - linkListType: quickstart
     links:
     - text: SDK gebruiken
-      url: azure-sdk-quickstart.md
+      url: ./client-libraries-rest-api.md?pivots=rest-api
   - linkListType: quickstart
     links:
     - text: Met C# met REST

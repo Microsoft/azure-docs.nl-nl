@@ -3,12 +3,12 @@ title: Knoop punten en Pools in Azure Batch
 description: Meer informatie over reken knooppunten en Pools en hoe deze worden gebruikt in een Azure Batch werk stroom vanuit een ontwikkelings oogpunt.
 ms.topic: conceptual
 ms.date: 11/20/2020
-ms.openlocfilehash: c229381ba1019a5a40a4ca6b7db88f534f57de29
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: e55be57968eae2a371a21b214dbd15921641e31f
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934642"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741771"
 ---
 # <a name="nodes-and-pools-in-azure-batch"></a>Knoop punten en Pools in Azure Batch
 
@@ -114,7 +114,7 @@ Zie [batch-prijzen](https://azure.microsoft.com/pricing/details/batch/)voor prij
 
 ## <a name="node-size"></a>Knooppuntgrootte
 
-Wanneer u een Azure Batch-groep maakt, kunt u kiezen uit bijna alle reeksen en grootten virtuele machines die beschikbaar zijn in Azure. Azure biedt verscheidene VM-grootten voor verschillende workloads, met inbegrip van VM-grootten die speciaal zijn bedoeld voor [HPC](../virtual-machines/sizes-hpc.md) of [GPU](../virtual-machines/sizes-gpu.md). 
+Wanneer u een Azure Batch-groep maakt, kunt u kiezen uit bijna alle reeksen en grootten virtuele machines die beschikbaar zijn in Azure. Azure biedt verscheidene VM-grootten voor verschillende workloads, met inbegrip van VM-grootten die speciaal zijn bedoeld voor [HPC](../virtual-machines/sizes-hpc.md) of [GPU](../virtual-machines/sizes-gpu.md). Houd er rekening mee dat knooppunt grootten alleen kunnen worden gekozen op het moment dat een pool wordt gemaakt. Met andere woorden, wanneer een pool is gemaakt, kan de knooppunt grootte niet meer worden gewijzigd.
 
 Zie [Choose a VM size for compute nodes in an Azure Batch pool](batch-pool-vm-sizes.md) (Een VM-grootte voor rekenknooppunten in een Azure Batch-groep kiezen) voor meer informatie.
 

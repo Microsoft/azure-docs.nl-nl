@@ -1,32 +1,35 @@
 ---
-title: Activiteiten voor de levens cyclus van Cloud Services verwerken | Microsoft Docs
+title: Levenscyclus gebeurtenissen van Cloud service (klassiek) verwerken | Microsoft Docs
 description: Meer informatie over het gebruik van de levenscyclus methoden van een Cloud serviceprovider in .NET, waaronder RoleEntryPoint, waarmee methoden kunnen worden gereageerd op levenscyclus gebeurtenissen.
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-ms.service: cloud-services
-ms.custom: devx-track-csharp
 ms.topic: article
-ms.date: 07/18/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: d64414abfbc62e52b172a2c42796ec8d89d1719f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: b5aa4bd061647f63ebcc70109f0ba21b39e814cc
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88930057"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741329"
 ---
 # <a name="customize-the-lifecycle-of-a-web-or-worker-role-in-net"></a>De levens cyclus van een web-of worker-rol in .NET aanpassen
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Wanneer u een worker-rol maakt, breidt u de klasse [RoleEntryPoint](/previous-versions/azure/reference/ee758619(v=azure.100)) uit. deze biedt methoden die u kunt opheffen, waarmee u kunt reageren op levenscyclus gebeurtenissen. Voor webrollen is deze klasse optioneel, dus u moet deze gebruiken om te reageren op levenscyclus gebeurtenissen.
 
 ## <a name="extend-the-roleentrypoint-class"></a>De klasse RoleEntryPoint uitbreiden
-De klasse [RoleEntryPoint](/previous-versions/azure/reference/ee758619(v=azure.100)) bevat methoden die worden aangeroepen door Azure bij het **starten**, **uitvoeren**of **stoppen** van een web-of worker-rol. U kunt deze methoden eventueel overschrijven om de functie-initialisatie, de afsluitings volgorde van rollen of de uitvoerings thread van de rol te beheren. 
+De klasse [RoleEntryPoint](/previous-versions/azure/reference/ee758619(v=azure.100)) bevat methoden die worden aangeroepen door Azure bij het **starten**, **uitvoeren** of **stoppen** van een web-of worker-rol. U kunt deze methoden eventueel overschrijven om de functie-initialisatie, de afsluitings volgorde van rollen of de uitvoerings thread van de rol te beheren. 
 
-Wanneer u **RoleEntryPoint**uitbreidt, moet u rekening houden met het volgende gedrag van de methoden:
+Wanneer u **RoleEntryPoint** uitbreidt, moet u rekening houden met het volgende gedrag van de methoden:
 
 * De methode [ONSTART](/previous-versions/azure/reference/ee772851(v=azure.100)) retourneert een Booleaanse waarde, waardoor het mogelijk is dat **False** wordt geretourneerd van deze methode.
   
-   Als uw code **Onwaar**retourneert, wordt het Role-proces abrupt beëindigd, zonder dat er een afsluit procedure wordt uitgevoerd die u mogelijk hebt. Over het algemeen moet u voor komen dat **Onwaar** wordt geretourneerd van de methode **onstart** .
+   Als uw code **Onwaar** retourneert, wordt het Role-proces abrupt beëindigd, zonder dat er een afsluit procedure wordt uitgevoerd die u mogelijk hebt. Over het algemeen moet u voor komen dat **Onwaar** wordt geretourneerd van de methode **onstart** .
 * Een niet-onderschepte uitzonde ring in een overbelasting van een **RoleEntryPoint** -methode wordt behandeld als een onverwerkte uitzonde ring.
   
    Als er een uitzonde ring optreedt in een van de levenscyclus methoden, wordt de [UnhandledException](/dotnet/api/system.appdomain.unhandledexception) -gebeurtenis door Azure verhoogd, waarna het proces wordt beëindigd. Nadat uw rol offline is gehaald, wordt deze opnieuw gestart door Azure. Wanneer er een onverwerkte uitzonde ring optreedt, wordt de gebeurtenis [stoppen](/previous-versions/azure/reference/ee758136(v=azure.100)) niet geactiveerd en wordt de methode **OnStop** niet aangeroepen.
@@ -41,7 +44,7 @@ Als uw rol niet kan worden gestart, of als deze wordt gerecycled tussen de statu
 ## <a name="onstart-method"></a>Onstart-methode
 De methode **ONSTART** wordt aangeroepen wanneer uw rolinstantie online wordt gebracht door Azure. Terwijl de onstart code wordt uitgevoerd, wordt de rolinstantie gemarkeerd als **bezet** en wordt er geen extern verkeer naar het proces geleid door de Load Balancer. U kunt deze methode onderdrukken om initialisatie werkzaamheden uit te voeren, zoals het implementeren van gebeurtenis-handlers en het starten van [Azure Diagnostics](cloud-services-how-to-monitor.md).
 
-Als **ONSTART** **True**retourneert, wordt het exemplaar geïnitialiseerd en roept Azure de methode **RoleEntryPoint. run** aan. Als **ONSTART** **Onwaar**retourneert, wordt de rol onmiddellijk beëindigd zonder dat er geplande afsluit reeksen worden uitgevoerd.
+Als **ONSTART** **True** retourneert, wordt het exemplaar geïnitialiseerd en roept Azure de methode **RoleEntryPoint. run** aan. Als **ONSTART** **Onwaar** retourneert, wordt de rol onmiddellijk beëindigd zonder dat er geplande afsluit reeksen worden uitgevoerd.
 
 In het volgende code voorbeeld ziet u hoe u de methode **ONSTART** overschrijft. Met deze methode wordt een diagnostische monitor geconfigureerd en gestart wanneer de rolinstantie wordt gestart en een overdracht van logboek gegevens naar een opslag account wordt ingesteld:
 
@@ -73,7 +76,7 @@ U kunt de methode **Run** overschrijven om een langlopende thread voor uw rolins
 Het is niet nodig om de methode **Run** te overschrijven. met de standaard implementatie wordt een thread gestart die permanent in slaap stand wordt gezet. Als u de methode **Run** overschrijft, moet uw code voor onbepaalde tijd worden geblokkeerd. Als de methode **Run** wordt geretourneerd, wordt de rol automatisch zonder problemen gerecycled. met andere woorden: Azure verhoogt de gebeurtenis **stoppen** en roept de methode **OnStop** aan zodat uw afsluit sequenties kunnen worden uitgevoerd voordat de rol offline wordt genomen.
 
 ### <a name="implementing-the-aspnet-lifecycle-methods-for-a-web-role"></a>De ASP.NET levenscyclus methoden voor een webrole implementeren
-U kunt de ASP.NET levenscyclus methoden, naast die van de klasse **RoleEntryPoint** , gebruiken voor het beheren van initialisatie-en afsluit reeksen voor een webrole. Dit kan handig zijn voor compatibiliteits doeleinden als u een bestaande ASP.NET-toepassing naar Azure wilt overbrengen. De ASP.NET levenscyclus methoden worden aangeroepen vanuit de **RoleEntryPoint** -methoden. De ** \_ Start** methode van de toepassing wordt aangeroepen nadat de methode **RoleEntryPoint. onstart** is voltooid. De ** \_ End** -methode van de toepassing wordt aangeroepen voordat de methode **RoleEntryPoint. OnStop** wordt aangeroepen.
+U kunt de ASP.NET levenscyclus methoden, naast die van de klasse **RoleEntryPoint** , gebruiken voor het beheren van initialisatie-en afsluit reeksen voor een webrole. Dit kan handig zijn voor compatibiliteits doeleinden als u een bestaande ASP.NET-toepassing naar Azure wilt overbrengen. De ASP.NET levenscyclus methoden worden aangeroepen vanuit de **RoleEntryPoint** -methoden. De **\_ Start** methode van de toepassing wordt aangeroepen nadat de methode **RoleEntryPoint. onstart** is voltooid. De **\_ End** -methode van de toepassing wordt aangeroepen voordat de methode **RoleEntryPoint. OnStop** wordt aangeroepen.
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over het [maken van een Cloud service pakket](cloud-services-model-and-package.md).

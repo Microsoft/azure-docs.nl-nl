@@ -1,26 +1,25 @@
 ---
-title: Azure Cloud Services def. NetworkTrafficRules-schema | Microsoft Docs
+title: Cloud Services van Azure (klassiek) def. NetworkTrafficRules-schema | Microsoft Docs
 description: Meer informatie over NetworkTrafficRules, die de rollen beperkt die toegang hebben tot de interne eind punten van een rol. Deze combi natie met rollen in een service definitie bestand.
-ms.custom: ''
-ms.date: 04/14/2015
-services: cloud-services
-ms.reviewer: ''
+ms.topic: article
 ms.service: cloud-services
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: reference
-ms.assetid: 351b369f-365e-46c1-82ce-03fc3655cc88
-caps.latest.revision: 17
-author: tgore03
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: e53c10395ec3168e656633cc43fb2d01902209fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 2c8ab53068b71652d03d03bf79a224fe5e34dff3
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79534725"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98739765"
 ---
-# <a name="azure-cloud-services-definition-networktrafficrules-schema"></a>NetworkTrafficRules-schema voor Azure Cloud Services definition
+# <a name="azure-cloud-services-classic-definition-networktrafficrules-schema"></a>NetworkTrafficRules-schema voor Azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Het `NetworkTrafficRules` knoop punt is een optioneel element in het service definitie bestand dat aangeeft hoe rollen met elkaar communiceren. Hiermee wordt beperkt welke rollen toegang hebben tot de interne eind punten van de specifieke rol. Het `NetworkTrafficRules` is geen zelfstandig element; het wordt gecombineerd met twee of meer rollen in een service definitie bestand.
 
 De standaard extensie voor het service definitie bestand is. csdef.

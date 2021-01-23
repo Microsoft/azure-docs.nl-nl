@@ -1,27 +1,25 @@
 ---
-title: Problemen met toewijzing van Cloud Services oplossen | Microsoft Docs
+title: Problemen met toewijzing van Cloud service (klassiek) oplossen | Microsoft Docs
 description: Los een toewijzings fout op wanneer u Azure Cloud Services implementeert. Meer informatie over hoe de toewijzing werkt en waarom de toewijzing kan mislukken.
-services: azure-service-management, cloud-services
-documentationcenter: ''
-author: simonxjx
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: 529157eb-e4a1-4388-aa2b-09e8b923af74
+ms.topic: article
 ms.service: cloud-services
-ms.workload: na
-ms.tgt_pltfrm: ibiza
-ms.topic: troubleshooting
-ms.date: 06/15/2018
-ms.author: v-six
-ms.openlocfilehash: 1d82b7223c2b392e6b9aebffdc545dc38b38ca2f
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 0c172add9aa49b2ca64d2fb2281d326256e3aec7
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92074223"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741584"
 ---
-# <a name="troubleshooting-allocation-failure-when-you-deploy-cloud-services-in-azure"></a>Toewijzingsfouten oplossen die zijn opgetreden bij het implementeren van Cloud Services in Azure
+# <a name="troubleshooting-allocation-failure-when-you-deploy-cloud-services-classic-in-azure"></a>Toewijzings fouten oplossen wanneer u Cloud Services (klassiek) in azure implementeert
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 ## <a name="summary"></a>Samenvatting
 Bij het implementeren van exemplaren in een Cloud service of het toevoegen van nieuwe web-of worker-rolinstanties, Microsoft Azure het toewijzen van reken resources. U kunt af en toe fouten ontvangen tijdens het uitvoeren van deze bewerkingen, zelfs voordat u de limieten voor Azure-abonnementen bereikt. In dit artikel worden de oorzaken beschreven van enkele algemene toewijzings fouten en suggesties voor mogelijke herstel bewerkingen. De informatie kan ook nuttig zijn bij het plannen van de implementatie van uw services.
 

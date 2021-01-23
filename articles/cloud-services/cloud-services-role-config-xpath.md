@@ -1,20 +1,25 @@
 ---
-title: Cheat-venster voor functie configuratie Cloud Services Microsoft Docs
+title: Cloud Services (klassiek) Cheat blad voor het configureren van de rollen Microsoft Docs
 description: De verschillende XPath-instellingen die u in de configuratie van de Cloud service functie kunt gebruiken om instellingen beschikbaar te stellen als een omgevings variabele.
-services: cloud-services
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 04/19/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 380b0be4e4e4b19d16cb611b0b472294339f2199
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 397bc6845dc8d2d8bc44c00c27f6c12037651337
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75386082"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741380"
 ---
 # <a name="expose-role-configuration-settings-as-an-environment-variable-with-xpath"></a>Rollen configuratie-instellingen beschikbaar stellen als een omgevings variabele met XPath
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 In het definitie bestand van de Cloud Service Worker-service of webfunctie kunt u runtime configuratie waarden weer geven als omgevings variabelen. De volgende XPath-waarden worden ondersteund (die overeenkomen met de API-waarden).
 
 Deze XPath-waarden zijn ook beschikbaar via de bibliotheek [micro soft. WindowsAzure. ServiceRuntime](/previous-versions/azure/reference/ee773173(v=azure.100)) . 

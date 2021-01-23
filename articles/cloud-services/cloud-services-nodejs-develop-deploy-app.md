@@ -1,23 +1,24 @@
 ---
 title: Introductiehandleiding voor Node.js
 description: Informatie over het maken van een eenvoudige Node.js-webtoepassing en het implementeren van deze toepassing in een cloudservice van Azure.
-services: cloud-services
-documentationcenter: nodejs
-author: tgore03
+ms.topic: article
 ms.service: cloud-services
-ms.devlang: nodejs
-ms.topic: conceptual
-ms.date: 08/17/2017
+ms.date: 10/14/2020
 ms.author: tagore
-ms.custom: devx-track-js
-ms.openlocfilehash: 86bc968c922bcfb90da9ae2babd456ce4db81cb7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 9889e0e95db84b4dbc5856ba6425f0f303161068
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327473"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741618"
 ---
-# <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service"></a>Een Node.js-toepassing maken en implementeren in een Azure Cloud Service
+# <a name="build-and-deploy-a-nodejs-application-to-an-azure-cloud-service-classic"></a>Een Node.js-toepassing bouwen en implementeren in een Azure-Cloud service (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 In deze zelfstudie kunt u zien hoe u een eenvoudige Node.js-toepassing kunt maken die wordt uitgevoerd in een Azure Cloud Service. Cloud Services vormen de bouwstenen van schaalbare cloudtoepassingen in Azure. Deze bieden de mogelijkheid om de front-end- en back-end-onderdelen van uw toepassing te scheiden en onafhankelijk van elkaar te beheren en uit te schalen.  Cloud Services bieden een robuuste toegewezen virtuele machine voor het op betrouwbare wijze hosten van elke rol.
 
@@ -87,7 +88,7 @@ http.createServer(function (req, res) {
 
 Deze code is in wezen hetzelfde als het testitem 'Hallo wereld' op de [nodejs.org]-website, behalve dat het poortnummer wordt gebruikt dat is toegewezen door de cloudomgeving.
 
-## <a name="deploy-the-application-to-azure"></a>De app implementeren in Azure
+## <a name="deploy-the-application-to-azure"></a>De toepassing implementeren in Azure
 
 > [!NOTE]
 > U hebt een Azure-account nodig om deze zelfstudie te voltooien. U kunt [de voor delen van uw MSDN-abonnee activeren](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/?WT.mc_id=A85619ABF) of [zich aanmelden voor een gratis account](https://azure.microsoft.com/pricing/free-trial/?WT.mc_id=A85619ABF).

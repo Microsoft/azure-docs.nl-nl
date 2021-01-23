@@ -3,22 +3,22 @@ title: Mijn personeel gebruiken om gebruikers beheer te delegeren (preview)-Azur
 description: Gebruikers beheer delegeren met mijn personeel en administratieve eenheden
 services: active-directory
 documentationcenter: ''
-author: curtand
+author: rolyon
 manager: daveba
 ms.topic: how-to
 ms.service: active-directory
 ms.subservice: user-help
 ms.workload: identity
 ms.date: 05/08/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: sahenry
 ms.custom: oldportal;it-pro;
-ms.openlocfilehash: 927d1f6dff9a24fb8427bb9c353e6cc61ac6a1f0
-ms.sourcegitcommit: 28c5fdc3828316f45f7c20fc4de4b2c05a1c5548
+ms.openlocfilehash: 304d88dfcf0c72769f27911186df04c66224419e
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92375277"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740139"
 ---
 # <a name="manage-your-users-with-my-staff-preview"></a>Uw gebruikers beheren met mijn personeel (preview)
 
@@ -54,7 +54,7 @@ U hebt de volgende resources en bevoegdheden nodig om dit artikel te volt ooien:
 Zodra u AUs hebt geconfigureerd, kunt u dit bereik Toep assen op uw gebruikers die toegang hebben tot mijn personeel. Alleen gebruikers aan wie een beheerdersrol is toegewezen, hebben toegang tot mijn personeel. Als u mijn personeel wilt inschakelen, voert u de volgende stappen uit:
 
 1. Meld u aan bij de Azure Portal als een gebruikers beheerder.
-2. Blader naar **Azure Active Directory**gebruikers  >  **instellingen**  >  **previews**  >  **voor de preview-functie van gebruikers onderdelen beheren**.
+2. Blader naar **Azure Active Directory** gebruikers  >  **instellingen**  >  **previews**  >  **voor de preview-functie van gebruikers onderdelen beheren**.
 3. Onder **beheerders hebben toegang tot mijn personeel**. u kunt ervoor kiezen om in te scha kelen voor alle gebruikers, geselecteerde gebruikers of geen gebruikers toegang.
 
 > [!Note]
@@ -94,7 +94,7 @@ De volgende rollen zijn gemachtigd om het wacht woord van een gebruiker opnieuw 
 - [Gebruikersbeheerder](permissions-reference.md#user-administrator)
 - [Wachtwoordbeheerder](permissions-reference.md#password-administrator)
 
-Open vanuit **mijn personeel**het profiel van een gebruiker. Selecteer **wacht woord opnieuw instellen**.
+Open vanuit **mijn personeel** het profiel van een gebruiker. Selecteer **wacht woord opnieuw instellen**.
 
 - Als de gebruiker alleen in de Cloud staat, kunt u een tijdelijk wacht woord zien dat u aan de gebruiker kunt geven.
 - Als de gebruiker is gesynchroniseerd vanaf de on-premises Active Directory, kunt u een wacht woord invoeren dat voldoet aan uw on-premises AD-beleid. U kunt dat wacht woord vervolgens aan de gebruiker geven.
@@ -105,7 +105,7 @@ De gebruiker moet het wacht woord wijzigen wanneer ze zich de volgende keer aanm
 
 ## <a name="manage-a-phone-number"></a>Een telefoon nummer beheren
 
-Open vanuit **mijn personeel**het profiel van een gebruiker.
+Open vanuit **mijn personeel** het profiel van een gebruiker.
 
 - Selecteer de sectie **telefoon nummer toevoegen** om een telefoon nummer voor de gebruiker toe te voegen
 - Selecteer **telefoon nummer bewerken** om het telefoon nummer te wijzigen
@@ -119,7 +119,7 @@ Als u het telefoon nummer van een gebruiker wilt beheren, moet u een van de volg
 - [Beheerder voor geprivilegieerde authenticatie](permissions-reference.md#privileged-authentication-administrator)
 - [Globale beheerder](permissions-reference.md#global-administrator--company-administrator)
 
-## <a name="search"></a>Search
+## <a name="search"></a>Zoeken
 
 U kunt zoeken naar AUs en gebruikers in uw organisatie met behulp van de zoek balk in mijn personeel. U kunt zoeken in alle AUs en gebruikers in uw organisatie, maar u kunt alleen wijzigingen aanbrengen aan gebruikers die zich in een AU bevinden waarvoor u beheerders machtigingen hebt gekregen.
 

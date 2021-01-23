@@ -2,23 +2,23 @@
 title: Limieten voor het maken van app-registraties verwijderen - Azure AD | Microsoft Docs
 description: Een aangepaste rol toewijzen voor het verlenen van onbeperkte app-registraties in de Azure AD-Active Directory
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: quickstart
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, devx-track-azurepowershell
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4a78296d3fd040b047c2a6cc3761d429883aa9d1
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
-ms.translationtype: HT
+ms.openlocfilehash: 260b0621bf204c6d7593b3696c602665c42ad77e
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378785"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740853"
 ---
 # <a name="quickstart-grant-permission-to-create-unlimited-app-registrations"></a>Quickstart: Machtigingen verlenen voor onbeperkte app-registraties
 
@@ -29,7 +29,7 @@ Als u geen abonnement op Azure hebt, maakt u een [gratis account](https://azure.
 ## <a name="create-a-custom-role-using-the-azure-ad-portal"></a>Een aangepaste rol maken met behulp van de Azure AD-Portal
 
 1. Meld u aan bij het [Azure AD-beheercentrum](https://aad.portal.azure.com) met de machtigingen Beheerder voor bevoorrechte rollen of Globale beheerder in de Azure AD-organisatie.
-1. Selecteer **Azure Active Directory** , selecteer **Rollen en beheerders** en selecteer vervolgens **Nieuwe aangepaste rol**.
+1. Selecteer **Azure Active Directory**, selecteer **Rollen en beheerders** en selecteer vervolgens **Nieuwe aangepaste rol**.
 
     ![Rollen maken of bewerken op de pagina Rollen en beheerders](./media/quickstart-app-registration-limits/new-custom-role.png)
 

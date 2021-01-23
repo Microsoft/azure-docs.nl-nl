@@ -2,23 +2,23 @@
 title: Azure Active Directory-rolconcepten begrijpen
 description: Meer informatie over ingebouwde en aangepaste rollen van Azure Active Directory met resourcebereik in Azure Active Directory.
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: overview
 ms.date: 11/20/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: db3eaef240e1f76e4c61a454e104336806666a7c
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
-ms.translationtype: HT
+ms.openlocfilehash: 8b46262e34f57b3ff9aeb6bd4ea671ec611b99df
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803898"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740343"
 ---
 # <a name="understand-roles-in-azure-active-directory"></a>Rollen in Azure Active Directory begrijpen
 

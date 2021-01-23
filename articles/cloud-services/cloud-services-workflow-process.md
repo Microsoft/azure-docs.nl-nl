@@ -1,27 +1,25 @@
 ---
 title: Werk stroom van de architectuur van de Windows Azure-VM | Microsoft Docs
 description: In dit artikel vindt u een overzicht van de werk stroom processen wanneer u een service implementeert.
-services: cloud-services
-documentationcenter: ''
-author: genlin
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: 9f2af8dd-2012-4b36-9dd5-19bf6a67e47d
+ms.topic: article
 ms.service: cloud-services
-ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: tbd
-ms.date: 04/08/2019
-ms.author: kwill
-ms.openlocfilehash: d29c98ecbbb6c9da18e6356a0e38122e253a34b6
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: bda066dd50d2f95776981eafc01e3ddd04d33e54
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93026459"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741057"
 ---
-#    <a name="workflow-of-windows-azure-classic-vm-architecture"></a>Werk stroom van de klassieke Windows Azure-VM-architectuur 
+# <a name="workflow-of-windows-azure-classic-vm-architecture"></a>Werk stroom van de klassieke Windows Azure-VM-architectuur 
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Dit artikel bevat een overzicht van de werk stroom processen die zich voordoen wanneer u een Azure-resource, zoals een virtuele machine, implementeert of bijwerkt. 
 
 > [!NOTE]
@@ -33,28 +31,28 @@ Het volgende diagram toont de architectuur van Azure-resources.
 
 ## <a name="workflow-basics"></a>Basis principes van werk stromen
    
-**A** . RDFE/FFE is het communicatie traject van de gebruiker naar de infra structuur. RDFE (RedDog Front End) is de open bare API die de front-end is voor de Beheerportal en de Service Management-API, zoals Visual Studio, Azure MMC, enzovoort.  Alle aanvragen van de gebruiker passeren de RDFE. FFE (infra structuur-front-end) is de laag waarmee aanvragen van RDFE worden vertaald in infrastructuur opdrachten. Alle aanvragen van RDFE gaan door de FFE om de infrastructuur controllers te bereiken.
+**A**. RDFE/FFE is het communicatie traject van de gebruiker naar de infra structuur. RDFE (RedDog Front End) is de open bare API die de front-end is voor de Beheerportal en de Service Management-API, zoals Visual Studio, Azure MMC, enzovoort.  Alle aanvragen van de gebruiker passeren de RDFE. FFE (infra structuur-front-end) is de laag waarmee aanvragen van RDFE worden vertaald in infrastructuur opdrachten. Alle aanvragen van RDFE gaan door de FFE om de infrastructuur controllers te bereiken.
 
-**B** . De infrastructuur controller is verantwoordelijk voor het onderhouden en bewaken van alle resources in het Data Center. Het communiceert met Fabric host agents in het Fabric-besturings systeem, zoals de versie van het gast besturingssysteem, het service pakket, de service configuratie en de service status.
+**B**. De infrastructuur controller is verantwoordelijk voor het onderhouden en bewaken van alle resources in het Data Center. Het communiceert met Fabric host agents in het Fabric-besturings systeem, zoals de versie van het gast besturingssysteem, het service pakket, de service configuratie en de service status.
 
-**C** . De Hosta Gent bevindt zich op het hostbesturingssysteem en is verantwoordelijk voor het instellen van het gast besturingssysteem en het communiceren met de gast agent (WindowsAzureGuestAgent) om de rol bij te werken naar een beoogde doel status en heartbeat-controles uit te voeren met de gast agent. Als de Hosta Gent gedurende tien minuten geen heartbeat-antwoord ontvangt, wordt het gast besturingssysteem door de host-agent opnieuw gestart.
+**C**. De Hosta Gent bevindt zich op het hostbesturingssysteem en is verantwoordelijk voor het instellen van het gast besturingssysteem en het communiceren met de gast agent (WindowsAzureGuestAgent) om de rol bij te werken naar een beoogde doel status en heartbeat-controles uit te voeren met de gast agent. Als de Hosta Gent gedurende tien minuten geen heartbeat-antwoord ontvangt, wordt het gast besturingssysteem door de host-agent opnieuw gestart.
 
-**C2** . WaAppAgent is verantwoordelijk voor het installeren, configureren en bijwerken van WindowsAzureGuestAgent.exe.
+**C2**. WaAppAgent is verantwoordelijk voor het installeren, configureren en bijwerken van WindowsAzureGuestAgent.exe.
 
-**D** .  WindowsAzureGuestAgent is verantwoordelijk voor het volgende:
+**D**.  WindowsAzureGuestAgent is verantwoordelijk voor het volgende:
 
 1. Het gast besturingssysteem configureren, met inbegrip van Firewall, Acl's, LocalStorage resources, service pakket en configuratie en certificaten.
 2. Instellen van de SID voor het gebruikers account waarvoor de rol wordt uitgevoerd.
 3. De status van de rol te communiceren met de infra structuur.
 4. WaHostBootstrapper starten en controleren om er zeker van te zijn dat de functie de doel status heeft.
 
-**E** . WaHostBootstrapper is verantwoordelijk voor:
+**E**. WaHostBootstrapper is verantwoordelijk voor:
 
 1. Het lezen van de functie configuratie en het starten van alle juiste taken en processen om de rol te configureren en uit te voeren.
 2. Alle onderliggende processen bewaken.
 3. Het verhogen van de gebeurtenis StatusCheck in het hostproces van de rol.
 
-**F** . IISConfigurator wordt uitgevoerd als de rol is geconfigureerd als een volledige IIS-webrole. Het is verantwoordelijk voor:
+**F**. IISConfigurator wordt uitgevoerd als de rol is geconfigureerd als een volledige IIS-webrole. Het is verantwoordelijk voor:
 
 1. De standaard IIS-services starten
 2. De module herschrijven in de Webconfiguratie configureren
@@ -63,15 +61,15 @@ Het volgende diagram toont de architectuur van Azure-resources.
 5. Machtigingen en Acl's configureren
 6. De website bevindt zich in% roleroot%: \sitesroot\0 en de AppPool verwijst naar deze locatie om IIS uit te voeren. 
 
-**G** . Opstart taken worden gedefinieerd door het Role Model en gestart door WaHostBootstrapper. Opstart taken kunnen asynchroon op de achtergrond worden uitgevoerd en de Boots Trapper start de opstart taak en gaat vervolgens door met andere opstart taken. Opstart taken kunnen ook worden geconfigureerd om te worden uitgevoerd in de modus eenvoudig (standaard), waarbij de host Boots Trapper wacht totdat de opstart taak is voltooid en retour neren een geslaagde (0) afsluit code voordat u verdergaat met de volgende opstart taak.
+**G**. Opstart taken worden gedefinieerd door het Role Model en gestart door WaHostBootstrapper. Opstart taken kunnen asynchroon op de achtergrond worden uitgevoerd en de Boots Trapper start de opstart taak en gaat vervolgens door met andere opstart taken. Opstart taken kunnen ook worden geconfigureerd om te worden uitgevoerd in de modus eenvoudig (standaard), waarbij de host Boots Trapper wacht totdat de opstart taak is voltooid en retour neren een geslaagde (0) afsluit code voordat u verdergaat met de volgende opstart taak.
 
-**H** . Deze taken maken deel uit van de SDK en worden gedefinieerd als invoeg toepassingen in de service definitie (. csdef) van de functie. Bij het uitvouwen van opstart taken zijn de **DiagnosticsAgent** en **RemoteAccessAgent** uniek in die gebruikers elk twee opstart taken definiëren, een regel matig en een die een **/blockStartup** -para meter heeft. De normale opstart taak wordt gedefinieerd als een opstart taak op de achtergrond zodat deze op de achtergrond kan worden uitgevoerd terwijl de rol zelf wordt uitgevoerd. De opstart taak **/blockStartup** wordt gedefinieerd als een eenvoudige opstart taak, zodat WaHostBootstrapper wacht totdat deze is afgesloten voordat u doorgaat. De taak **/blockStartup** wacht totdat de normale taak is geïnitialiseerd en vervolgens wordt afgesloten en de host Boots Trapper kan door gaan. Dit wordt gedaan, zodat diagnostische gegevens en RDP-toegang kunnen worden geconfigureerd voordat de functie wordt gestart (dit wordt gedaan via de taak/blockStartup). Op deze manier kunnen diagnostische gegevens en RDP-toegang blijven worden uitgevoerd nadat de opstart taken zijn voltooid door de Boots Trapper van de host (dit gebeurt via de normale taak).
+**H**. Deze taken maken deel uit van de SDK en worden gedefinieerd als invoeg toepassingen in de service definitie (. csdef) van de functie. Bij het uitvouwen van opstart taken zijn de **DiagnosticsAgent** en **RemoteAccessAgent** uniek in die gebruikers elk twee opstart taken definiëren, een regel matig en een die een **/blockStartup** -para meter heeft. De normale opstart taak wordt gedefinieerd als een opstart taak op de achtergrond zodat deze op de achtergrond kan worden uitgevoerd terwijl de rol zelf wordt uitgevoerd. De opstart taak **/blockStartup** wordt gedefinieerd als een eenvoudige opstart taak, zodat WaHostBootstrapper wacht totdat deze is afgesloten voordat u doorgaat. De taak **/blockStartup** wacht totdat de normale taak is geïnitialiseerd en vervolgens wordt afgesloten en de host Boots Trapper kan door gaan. Dit wordt gedaan, zodat diagnostische gegevens en RDP-toegang kunnen worden geconfigureerd voordat de functie wordt gestart (dit wordt gedaan via de taak/blockStartup). Op deze manier kunnen diagnostische gegevens en RDP-toegang blijven worden uitgevoerd nadat de opstart taken zijn voltooid door de Boots Trapper van de host (dit gebeurt via de normale taak).
 
-**I** . WaWorkerHost is het standaard hostproces voor normale werk rollen. Dit hostproces host alle Dll's van de rol en de code van het toegangs punt, zoals onstart en run.
+**I**. WaWorkerHost is het standaard hostproces voor normale werk rollen. Dit hostproces host alle Dll's van de rol en de code van het toegangs punt, zoals onstart en run.
 
-**J** . WaIISHost is het hostproces voor de functie-invoer punt code voor webrollen die gebruikmaken van volledige IIS. Dit proces laadt de eerste gevonden DLL die de klasse **RoleEntryPoint** gebruikt en voert de code uit deze klasse uit (onstart, run, OnStop). Alle **RoleEnvironment** -gebeurtenissen (zoals StatusCheck en gewijzigd) die in de RoleEntryPoint-klasse zijn gemaakt, worden in dit proces gegenereerd.
+**J**. WaIISHost is het hostproces voor de functie-invoer punt code voor webrollen die gebruikmaken van volledige IIS. Dit proces laadt de eerste gevonden DLL die de klasse **RoleEntryPoint** gebruikt en voert de code uit deze klasse uit (onstart, run, OnStop). Alle **RoleEnvironment** -gebeurtenissen (zoals StatusCheck en gewijzigd) die in de RoleEntryPoint-klasse zijn gemaakt, worden in dit proces gegenereerd.
 
-**K** . W3WP is het standaard-IIS-werk proces dat wordt gebruikt als de rol is geconfigureerd voor het gebruik van volledige IIS. Hiermee wordt de AppPool uitgevoerd die is geconfigureerd vanuit IISConfigurator. Alle RoleEnvironment-gebeurtenissen (zoals StatusCheck en gewijzigd) die hier worden gemaakt, worden in dit proces gegenereerd. Houd er rekening mee dat RoleEnvironment-gebeurtenissen worden gestart op beide locaties (WaIISHost en w3wp.exe) als u zich abonneert op gebeurtenissen in beide processen.
+**K**. W3WP is het standaard-IIS-werk proces dat wordt gebruikt als de rol is geconfigureerd voor het gebruik van volledige IIS. Hiermee wordt de AppPool uitgevoerd die is geconfigureerd vanuit IISConfigurator. Alle RoleEnvironment-gebeurtenissen (zoals StatusCheck en gewijzigd) die hier worden gemaakt, worden in dit proces gegenereerd. Houd er rekening mee dat RoleEnvironment-gebeurtenissen worden gestart op beide locaties (WaIISHost en w3wp.exe) als u zich abonneert op gebeurtenissen in beide processen.
 
 ## <a name="workflow-processes"></a>Werk stroom processen
 
@@ -84,8 +82,8 @@ Het volgende diagram toont de architectuur van Azure-resources.
 7. WaHostBootstrapper leest de **opstart** taken van E:\RoleModel.xml en begint met het uitvoeren van opstart taken. WaHostBootstrapper wacht totdat alle eenvoudige opstart taken zijn voltooid en het bericht ' geslaagd ' heeft geretourneerd.
 8. Voor volledige IIS-webfuncties vertelt WaHostBootstrapper IISConfigurator het configureren van de IIS-AppPool en wijst de site naar `E:\Sitesroot\<index>` , waarbij `<index>` een 0-index is in het aantal elementen dat is `<Sites>` gedefinieerd voor de service.
 9. WaHostBootstrapper start het host proces, afhankelijk van het type rol:
-    1. **Worker-rol** : WaWorkerHost.exe is gestart. WaHostBootstrapper voert de methode onstart () uit. Nadat deze is geretourneerd, begint WaHostBootstrapper met het uitvoeren van de methode Run () en wordt de functie vervolgens gelijktijdig gemarkeerd als gereed en wordt deze in de load balancer draaiing geplaatst (als InputEndpoints zijn gedefinieerd). WaHostBootsrapper gaat vervolgens naar een lus voor het controleren van de functie status.
-    2. **Volledige IIS-webrole** : aIISHost is gestart. WaHostBootstrapper voert de methode onstart () uit. Nadat deze is geretourneerd, wordt de methode Run () gestart en wordt de functie vervolgens gelijktijdig gemarkeerd als gereed en wordt deze in de load balancer draaiing geplaatst. WaHostBootsrapper gaat vervolgens naar een lus voor het controleren van de functie status.
+    1. **Worker-rol**: WaWorkerHost.exe is gestart. WaHostBootstrapper voert de methode onstart () uit. Nadat deze is geretourneerd, begint WaHostBootstrapper met het uitvoeren van de methode Run () en wordt de functie vervolgens gelijktijdig gemarkeerd als gereed en wordt deze in de load balancer draaiing geplaatst (als InputEndpoints zijn gedefinieerd). WaHostBootsrapper gaat vervolgens naar een lus voor het controleren van de functie status.
+    2. **Volledige IIS-webrole**: aIISHost is gestart. WaHostBootstrapper voert de methode onstart () uit. Nadat deze is geretourneerd, wordt de methode Run () gestart en wordt de functie vervolgens gelijktijdig gemarkeerd als gereed en wordt deze in de load balancer draaiing geplaatst. WaHostBootsrapper gaat vervolgens naar een lus voor het controleren van de functie status.
 10. Binnenkomende webaanvragen voor een volledige IIS-webfunctie activeert IIS om het W3WP-proces te starten en de aanvraag te behandelen, op dezelfde manier als in een on-premises IIS-omgeving.
 
 ## <a name="log-file-locations"></a>Locaties van logboek bestanden

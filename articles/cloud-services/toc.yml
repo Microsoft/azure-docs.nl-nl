@@ -1,8 +1,8 @@
-- name: Documentatie voor Cloud Services
+- name: Documentatie voor Cloud Services (klassiek)
   href: index.yml
 - name: Overzicht
   items:
-    - name: Wat is Cloud Services?
+    - name: Wat is Cloud Services (klassiek)?
       href: cloud-services-choose-me.md
     - name: Configuratiebestanden en verpakking van een cloudservice
       href: cloud-services-model-and-package.md

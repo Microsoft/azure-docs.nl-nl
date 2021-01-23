@@ -2,23 +2,23 @@
 title: Azure AD-beheerders rollen toewijzen met Microsoft Graph-API | Microsoft Docs
 description: Azure AD-beheerders rollen toewijzen en verwijderen met Graph API in Azure Active Directory
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: how-to
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2a3f6fab4d3e1a4c2b73c2fe4ab0df3447b75480
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 0bec789d8ef79e221007b172550100b80b76197a
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378340"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740275"
 ---
 # <a name="assign-custom-admin-roles-using-the-microsoft-graph-api-in-azure-active-directory"></a>Wijs aangepaste beheerders rollen toe met behulp van de Microsoft Graph-API in Azure Active Directory 
 

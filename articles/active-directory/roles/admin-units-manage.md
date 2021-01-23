@@ -3,23 +3,23 @@ title: Beheer eenheden toevoegen en verwijderen-Azure Active Directory | Microso
 description: Beheer eenheden gebruiken om het bereik van rolmachtigingen te beperken in Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: roles
 ms.workload: identity
 ms.date: 11/04/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bbe76d21d948525421790f574830da7b3a163216
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: 537847d84b417814bddb16cf5b961bdb221af488
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93395390"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740445"
 ---
 # <a name="manage-administrative-units-in-azure-active-directory"></a>Beheer eenheden in Azure Active Directory beheren
 
@@ -44,7 +44,7 @@ Voor gedetailleerdere administratieve controle in Azure Active Directory (Azure 
 
 U kunt een administratieve eenheid toevoegen met behulp van de Azure Portal of Power shell.
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 1. Ga in de Azure Portal naar Azure AD. Selecteer vervolgens in het linkerdeel venster **beheer eenheden**.
 
@@ -83,7 +83,7 @@ Request body
 
 In azure AD kunt u een administratieve eenheid verwijderen die u niet meer nodig hebt als een eenheid van het bereik voor beheerders rollen.
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 1. Ga in de Azure Portal naar **Azure AD** en selecteer vervolgens **beheer eenheden**. 
 1. Selecteer de beheer eenheid die u wilt verwijderen en selecteer vervolgens **verwijderen**. 

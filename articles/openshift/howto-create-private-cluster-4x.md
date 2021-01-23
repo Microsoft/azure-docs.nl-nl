@@ -4,16 +4,16 @@ description: Meer informatie over het maken van een Azure Red Hat open Shift pri
 ms.service: container-service
 ms.topic: article
 ms.date: 03/12/2020
-author: georgewallace
-ms.author: gwallace
+author: sakthi-vetrivel
+ms.author: suvetriv
 keywords: Aro, open Shift, AZ Aro, Red Hat, cli
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 3864d48399f00d5cfbdfa0a94939be0d88a73322
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 6daeb617e7d1922427fe1889b41512a61c5067cf
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92928056"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740921"
 ---
 # <a name="create-an-azure-red-hat-openshift-4-private-cluster"></a>Een persoonlijk Azure Red Hat open Shift 4-cluster maken
 
@@ -23,7 +23,7 @@ In dit artikel maakt u een voor bereiding van uw omgeving voor het maken van Azu
 > * De vereisten instellen en het vereiste virtuele netwerk en subnetten maken
 > * Een cluster met een persoonlijk API-server eindpunt en een persoonlijke ingangs controller implementeren
 
-Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
+Als u ervoor kiest om de CLI lokaal te installeren en te gebruiken, moet u Azure CLI 2.6.0 of hoger gebruiken voor deze zelfstudie. Voer `az --version` uit om de versie te bekijken. Zie [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest&preserve-view=true) als u de CLI wilt installeren of een upgrade wilt uitvoeren.
 
 ## <a name="before-you-begin"></a>Voordat u begint
 
@@ -192,7 +192,7 @@ az aro create \
 Nadat de `az aro create`-opdracht is uitgevoerd, duurt het doorgaans ongeveer 35 minuten om een cluster te maken.
 
 >[!IMPORTANT]
-> Als u ervoor kiest om een aangepast domein op te geven, bijvoorbeeld **foo.example.com** , is de OpenShift-console beschikbaar op een URL, zoals `https://console-openshift-console.apps.foo.example.com`, in plaats van in het ingebouwde domein `https://console-openshift-console.apps.<random>.<location>.aroapp.io`.
+> Als u ervoor kiest om een aangepast domein op te geven, bijvoorbeeld **foo.example.com**, is de OpenShift-console beschikbaar op een URL, zoals `https://console-openshift-console.apps.foo.example.com`, in plaats van in het ingebouwde domein `https://console-openshift-console.apps.<random>.<location>.aroapp.io`.
 >
 > Open SHIFT maakt standaard gebruik van zelfondertekende certificaten voor alle routes die zijn gemaakt op `*.apps.<random>.<location>.aroapp.io` .  Als u aangepaste DNS kiest nadat u verbinding hebt gemaakt met het cluster, moet u de open Shift-documentatie volgen om [een aangepaste certificerings instantie voor uw ingangs controller](https://docs.openshift.com/container-platform/4.3/authentication/certificates/replacing-default-ingress-certificate.html) en [aangepaste certificerings instantie voor uw API-server](https://docs.openshift.com/container-platform/4.3/authentication/certificates/api-server.html)te configureren.
 
@@ -233,9 +233,9 @@ Start de console-URL in een browser en meld u aan met de referenties van `kubead
 
 ## <a name="install-the-openshift-cli"></a>De OpenShift CLI installeren
 
-Zodra u bent aangemeld bij de OpenShift-webconsole, klikt u op **?** in de rechterbovenhoek en klikt u vervolgens op **Opdrachtregel hulpprogrammarogramma's** . Download de versie die geschikt is voor uw computer.
+Zodra u bent aangemeld bij de OpenShift-webconsole, klikt u op **?** in de rechterbovenhoek en klikt u vervolgens op **Opdrachtregel hulpprogrammarogramma's**. Download de versie die geschikt is voor uw computer.
 
-![Aanmeldingsscherm voor Azure Red Hat OpenShift](media/aro4-download-cli.png)
+![Afbeelding toont het aanmeldings scherm van Azure Red Hat open Shift](media/aro4-download-cli.png)
 
 U kunt ook de meest recente versie van de CLI die geschikt is voor uw computer downloaden van <https://mirror.openshift.com/pub/openshift-v4/clients/ocp/latest/>.
 

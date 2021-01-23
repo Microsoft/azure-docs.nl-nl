@@ -2,23 +2,23 @@
 title: Aangepaste rollen toewijzen met behulp van Azure AD Power shell-Azure AD | Microsoft Docs
 description: Leden van een aangepaste rol van Azure AD-beheerder beheren met Azure AD Power shell.
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: how-to
 ms.date: 11/04/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8b155ccd7f8f0d7f6d63d906d7d0baaa3243512b
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: 7828313844b8f95b2bac5bff37022a822686ab33
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562774"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740241"
 ---
 # <a name="assign-custom-roles-with-resource-scope-using-powershell-in-azure-active-directory"></a>Aangepaste rollen met resource bereik toewijzen met behulp van Power shell in Azure Active Directory
 

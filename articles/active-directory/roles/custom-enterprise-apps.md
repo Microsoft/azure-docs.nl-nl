@@ -2,23 +2,23 @@
 title: Aangepaste rolmachtigingen voor toegangs toewijzingen voor Enter prise-apps-Azure Active Directory | Microsoft Docs
 description: Aangepaste Azure AD-rollen voor toegang tot bedrijfs-apps maken en toewijzen in Azure Active Directory
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: how-to
 ms.date: 11/04/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 0932e4b6163264b0b514958e1e898b297e249870
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: d3cb65503ffab610f9545acb313f7284ffb11ed1
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378547"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741142"
 ---
 # <a name="assign-custom-roles-to-manage-enterprise-apps-in-azure-active-directory"></a>Aangepaste rollen toewijzen voor het beheren van zakelijke apps in Azure Active Directory
 
@@ -46,7 +46,7 @@ Het verlenen van de update machtiging geschiedt in twee stappen:
 > Aangepaste rollen worden gemaakt en beheerd op basis van een organisatie niveau en zijn alleen beschikbaar op de overzichts pagina van de organisatie.
 
 1. Meld u aan bij het [Azure AD-beheer centrum](https://aad.portal.azure.com) met privileged Role Administrator of Global Administrator Permissions in uw organisatie.
-1. Selecteer **Azure Active Directory** , selecteer **Rollen en beheerders** en selecteer vervolgens **Nieuwe aangepaste rol**.
+1. Selecteer **Azure Active Directory**, selecteer **Rollen en beheerders** en selecteer vervolgens **Nieuwe aangepaste rol**.
 
     ![Een nieuwe aangepaste rol toevoegen vanuit de lijst rollen in azure AD](./media/custom-enterprise-apps/new-custom-role.png)
 
@@ -70,7 +70,7 @@ Het verlenen van de update machtiging geschiedt in twee stappen:
 
     ![Rollen en beheerders openen en zoeken naar de aangepaste rol](./media/custom-enterprise-apps/select-custom-role.png)
 
-1. Selecteer **toewijzing toevoegen** , selecteer de gewenste gebruiker en klik vervolgens op **selecteren** om roltoewijzing toe te voegen aan de gebruiker.
+1. Selecteer **toewijzing toevoegen**, selecteer de gewenste gebruiker en klik vervolgens op **selecteren** om roltoewijzing toe te voegen aan de gebruiker.
 
     ![Een toewijzing voor de aangepaste rol toevoegen aan de gebruiker](./media/custom-enterprise-apps/assign-user-to-role.png)
 

@@ -1,20 +1,24 @@
 ---
-title: Een Cloud service bijwerken | Microsoft Docs
+title: Een Cloud service bijwerken (klassiek) | Microsoft Docs
 description: Meer informatie over het bijwerken van Cloud Services in Azure. Meer informatie over hoe een update in een Cloud service wordt uitgevoerd om de beschik baarheid te garanderen.
-services: cloud-services
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 04/19/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: f12e5b6b0b2902d69936b9cf2695b7ee21db88e2
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 5d85003ca7b4307c308914484502ae03269f66ac
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075039"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741108"
 ---
-# <a name="how-to-update-a-cloud-service"></a>Een Cloud service bijwerken
+# <a name="how-to-update-an-azure-cloud-service-classic"></a>Een Azure-Cloud service bijwerken (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 Het bijwerken van een Cloud service, met inbegrip van de rollen en het gast besturingssysteem, is een drie stappen procedure. Ten eerste moet u de binaire bestanden en configuratie voor de nieuwe Cloud service of versie van het besturings systeem uploaden. Vervolgens reserveert Azure computer-en netwerk bronnen voor de Cloud service op basis van de vereisten van de nieuwe versie van de Cloud service. Ten slotte voert Azure een rolling upgrade uit om de Tenant incrementeel bij te werken naar de nieuwe versie of het gast besturingssysteem, terwijl uw Beschik baarheid behouden blijft. In dit artikel worden de details van deze laatste stap beschreven: de rolling upgrade.
 
@@ -149,7 +153,7 @@ Tijdens de implementatie van de upgrade roept u de [upgrade-implementatie](/prev
 <a name="multiplemutatingoperations"></a>
 
 ## <a name="initiating-multiple-mutating-operations-on-an-ongoing-deployment"></a>Meerdere muteren-bewerkingen initiëren voor een doorlopende implementatie
-In sommige gevallen wilt u mogelijk meerdere gelijktijdige muteren-bewerkingen initiëren op een doorlopende implementatie. U kunt bijvoorbeeld een service-update uitvoeren en, terwijl deze update wordt doorgevoerd in uw service, u een bepaalde wijziging wilt aanbrengen, bijvoorbeeld om de update terug te draaien, een andere update toe te passen of zelfs de implementatie te verwijderen. Een geval waarin dit nodig kan zijn, is als een service-upgrade een code voor de fout opsporing bevat die ervoor zorgt dat een bijgewerkte rolinstantie herhaaldelijk vastloopt. In dit geval kan de Azure Fabric-controller geen voortgang maken bij het Toep assen van deze upgrade omdat een ontoereikend aantal exemplaren in het bijgewerkte domein in orde is. Deze status wordt een *vastgelopen implementatie*genoemd. U kunt de implementatie ontsteken door de update terug te draaien of door een nieuwe update toe te passen boven op een failover.
+In sommige gevallen wilt u mogelijk meerdere gelijktijdige muteren-bewerkingen initiëren op een doorlopende implementatie. U kunt bijvoorbeeld een service-update uitvoeren en, terwijl deze update wordt doorgevoerd in uw service, u een bepaalde wijziging wilt aanbrengen, bijvoorbeeld om de update terug te draaien, een andere update toe te passen of zelfs de implementatie te verwijderen. Een geval waarin dit nodig kan zijn, is als een service-upgrade een code voor de fout opsporing bevat die ervoor zorgt dat een bijgewerkte rolinstantie herhaaldelijk vastloopt. In dit geval kan de Azure Fabric-controller geen voortgang maken bij het Toep assen van deze upgrade omdat een ontoereikend aantal exemplaren in het bijgewerkte domein in orde is. Deze status wordt een *vastgelopen implementatie* genoemd. U kunt de implementatie ontsteken door de update terug te draaien of door een nieuwe update toe te passen boven op een failover.
 
 Zodra de eerste aanvraag voor het bijwerken of upgraden van de service is ontvangen door de Azure Fabric-controller, kunt u de volgende muteren-bewerkingen starten. Dat wil zeggen dat u niet hoeft te wachten tot de eerste bewerking is voltooid voordat u een andere muteren-bewerking kunt starten.
 

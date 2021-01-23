@@ -1,20 +1,25 @@
 ---
-title: Wat is een Cloud service model en-pakket | Microsoft Docs
+title: Wat is een Cloud service (klassiek) model en pakket | Microsoft Docs
 description: Hierin worden het Cloud service model (. csdef,. cscfg) en het pakket (. cspkg) in azure beschreven
-services: cloud-services
-author: tanmaygore
-ms.service: cloud-services
 ms.topic: article
-ms.date: 07/05/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 180295599082a762fc525c4740079ceefc0954a1
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 1cf8e966b80e005a0cb2cf7ea46f355e38cb0011
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077181"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741533"
 ---
-# <a name="what-is-the-cloud-service-model-and-how-do-i-package-it"></a>Wat is het Cloud service model en hoe kan ik het pakket inpakken?
+# <a name="what-is-the-cloud-service-classic-model-and-how-do-i-package-it"></a>Wat is het model Cloud service (klassiek) en hoe kan ik het pakket inpakken?
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Een Cloud service wordt gemaakt op basis van drie onderdelen, de service definitie *(. csdef)*, de service configuratie *(. cscfg)* en een service pakket *(. cspkg)*. De bestanden **ServiceDefinition. csdef** en **ServiceConfig. cscfg** zijn gebaseerd op XML en beschrijven de structuur van de Cloud service en hoe deze zijn geconfigureerd. het model wordt gezamenlijk genoemd. **ServicePackage. cspkg** is een zip-bestand dat is gegenereerd op basis van de **ServiceDefinition. csdef** en onder andere, bevat alle vereiste op basis van binaire afhankelijkheden. Azure maakt een Cloud service van zowel **ServicePackage. cspkg** als **ServiceConfig. cscfg**.
 
 Zodra de Cloud service wordt uitgevoerd in azure, kunt u deze opnieuw configureren via het **ServiceConfig. cscfg** -bestand, maar u kunt de definitie niet wijzigen.
@@ -236,7 +241,7 @@ Als u een toepassing als een Cloud service in azure wilt implementeren, moet u d
 <p />
 
 > [!TIP]
-> Voer uw Cloud service lokaal uit in de **Microsoft Azure Compute-emulator**en gebruik de optie **/copyonly** . Met deze optie kopieert u de binaire bestanden voor de toepassing naar een directory-indeling van waaruit ze kunnen worden uitgevoerd in de compute emulator.
+> Voer uw Cloud service lokaal uit in de **Microsoft Azure Compute-emulator** en gebruik de optie **/copyonly** . Met deze optie kopieert u de binaire bestanden voor de toepassing naar een directory-indeling van waaruit ze kunnen worden uitgevoerd in de compute emulator.
 > 
 > 
 

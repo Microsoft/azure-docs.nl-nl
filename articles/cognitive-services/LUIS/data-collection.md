@@ -1,16 +1,16 @@
 ---
-title: Gegevensverzameling
+title: Gegevens verzamelen
 description: Meer informatie over de voorbeeld gegevens die moeten worden verzameld tijdens het ontwikkelen van uw app
 ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/06/2020
-ms.openlocfilehash: bb00595a5d5be130bf6c1177004bf3042ef8f9f0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c901d4024292ad03a9195ad0cbd226f473917ee4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91327184"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98738081"
 ---
 # <a name="data-collection-for-your-app"></a>Gegevens verzameling voor uw app
 
@@ -26,7 +26,7 @@ Selecteer uitingen voor uw Trainingsset op basis van de volgende criteria:
 
 * **Echte gegevens zijn het beste**:
     * **Echte gegevens uit de client toepassing**: Selecteer uitingen die echte gegevens uit uw client toepassing zijn.  Als de klant vandaag een webformulier met hun query verzendt en u een bot bouwt, kunt u beginnen met de webformuliergegevens.
-    * **Gegevens**in de bron: als u geen bestaande gegevens hebt, overweegt u de uitingen.  Probeer te uitingen van uw werkelijke gebruikers populatie voor uw scenario om de beste benadering te krijgen van de werkelijke gegevens die uw toepassing te zien krijgt. Geuitingeneerde humane-producten zijn beter dan door de computer gegenereerde uitingen.  Wanneer u een gegevensset bouwt van synthetische uitingen die op specifieke patronen worden gegenereerd, is het niet erg belang rijk dat er veel van de natuurlijke variatie wordt weer gegeven bij mensen die de uitingen maken en niet optimaal generaliseren in de productie omgeving.
+    * **Gegevens** in de bron: als u geen bestaande gegevens hebt, overweegt u de uitingen.  Probeer te uitingen van uw werkelijke gebruikers populatie voor uw scenario om de beste benadering te krijgen van de werkelijke gegevens die uw toepassing te zien krijgt. Geuitingeneerde humane-producten zijn beter dan door de computer gegenereerde uitingen.  Wanneer u een gegevensset bouwt van synthetische uitingen die op specifieke patronen worden gegenereerd, is het niet erg belang rijk dat er veel van de natuurlijke variatie wordt weer gegeven bij mensen die de uitingen maken en niet optimaal generaliseren in de productie omgeving.
 * **Gegevens diversiteit**:
     * **Regio diversiteit**: Zorg ervoor dat de gegevens voor elke intentie zo divers mogelijk zijn, zoals _formule ring_ (woord keuze) en _grammatica_.  Als u een doel stelling voor HR-beleid over vakantie dagen wilt voor komen, moet u ervoor zorgen dat u uitingen hebt die de voor waarden vertegenwoordigen die worden gebruikt voor alle regio's die u wilt gebruiken.  Zo kan bijvoorbeeld in Europa vragen over en worden gevraagd `taking a holiday` naar de IT-mede werkers `taking vacation days` .
     * **Taal diversiteit**: als u gebruikers met verschillende systeem eigen talen hebt die in een tweede taal communiceren, moet u ervoor zorgen dat uitingen die niet-systeem eigen sprekers vertegenwoordigen.
@@ -71,7 +71,7 @@ De volgende voor verwerkings stappen helpen u bij het bouwen van een betere LUIS
 
 ## <a name="test-data-selection-for-batch-testing"></a>Test gegevens selectie voor batch tests
 
-Alle hierboven genoemde principes voor training uitingen zijn van toepassing op uitingen die u moet gebruiken voor uw [testset](luis-concept-batch-test.md). Zorg ervoor dat de distributie over intenties en entiteiten de echte distributie zo nauw keurig mogelijk spiegelt.
+Alle hierboven genoemde principes voor training uitingen zijn van toepassing op uitingen die u moet gebruiken voor uw [testset](./luis-how-to-batch-test.md). Zorg ervoor dat de distributie over intenties en entiteiten de echte distributie zo nauw keurig mogelijk spiegelt.
 
 Hergebruik uitingen niet uit uw Trainingsset in uw testset. Hierdoor worden de resultaten onjuist weer geven en krijgt u niet de juiste indicatie van hoe uw LUIS-app in productie zal worden uitgevoerd.
 

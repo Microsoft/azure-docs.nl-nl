@@ -3,25 +3,25 @@ title: Rollen toewijzen en weer geven met het bereik van de beheer eenheid-Azure
 description: Beheer eenheden gebruiken om het bereik van roltoewijzingen in Azure Active Directory te beperken.
 services: active-directory
 documentationcenter: ''
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: roles
 ms.workload: identity
 ms.date: 11/04/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 73ed2741c7dd754127a57642703b650a70637c63
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: ecfa9186ef42d4822c9b3053d76b7c0160841621
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93393435"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740394"
 ---
-# <a name="assign-scoped-roles-to-an-administrative-unit"></a>Scoped rollen toewijzen aan een beheer eenheid
+# <a name="assign-scoped-roles-to-an-administrative-unit"></a>Specifieke rollen toewijzen aan een beheereenheid
 
 In Azure Active Directory (Azure AD) kunt u, voor uitgebreidere administratieve controle, gebruikers toewijzen aan een Azure AD-rol met een bereik dat beperkt is tot een of meer beheer eenheden.
 
@@ -31,11 +31,11 @@ Zie aan de [slag](admin-units-manage.md#get-started)voor het voorbereiden van he
 
 Rol  |  Beschrijving
 ----- |  -----------
-Verificatie beheerder  |  Heeft toegang voor het weer geven, instellen en opnieuw instellen van verificatie methode-informatie voor een niet-beheerders gebruiker in de toegewezen beheer eenheid.
-Groeps beheerder  |  Kan alle aspecten van groepen en groeps instellingen, zoals naamgeving en verloop beleid, in de toegewezen administratieve eenheid beheren.
-Helpdesk beheerder  |  Kan wacht woorden voor niet-beheerders en helpdesk beheerders opnieuw instellen in de toegewezen beheer eenheid.
-Licentie beheerder  |  Kan alleen licentie toewijzingen binnen de beheer eenheid toewijzen, verwijderen en bijwerken.
-Wachtwoord beheerder  |  Kan wacht woorden voor niet-beheerders en wachtwoord beheerders binnen de toegewezen beheer eenheid opnieuw instellen.
+Verificatiebeheerder  |  Heeft toegang voor het weer geven, instellen en opnieuw instellen van verificatie methode-informatie voor een niet-beheerders gebruiker in de toegewezen beheer eenheid.
+Groepsbeheerder  |  Kan alle aspecten van groepen en groeps instellingen, zoals naamgeving en verloop beleid, in de toegewezen administratieve eenheid beheren.
+Helpdeskbeheerder  |  Kan wacht woorden voor niet-beheerders en helpdesk beheerders opnieuw instellen in de toegewezen beheer eenheid.
+Licentiebeheerder  |  Kan alleen licentie toewijzingen binnen de beheer eenheid toewijzen, verwijderen en bijwerken.
+Wachtwoordbeheerder  |  Kan wacht woorden voor niet-beheerders en wachtwoord beheerders binnen de toegewezen beheer eenheid opnieuw instellen.
 Gebruikersbeheerder  |  Kan alle aspecten van gebruikers en groepen beheren, met inbegrip van het opnieuw instellen van wacht woorden voor beperkte beheerders binnen de toegewezen beheer eenheid.
 
 ## <a name="security-principals-that-can-be-assigned-to-a-scoped-role"></a>Beveiligings-principals die kunnen worden toegewezen aan een scoped rol
@@ -50,7 +50,7 @@ De volgende beveiligings-principals kunnen worden toegewezen aan een rol met een
 
 U kunt een scoped-rol toewijzen met behulp van de Azure Portal, Power shell of Microsoft Graph.
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 1. Ga in de Azure Portal naar **Azure AD**.
 
@@ -101,7 +101,7 @@ Request body
 
 U kunt een lijst met scoped beheerders weer geven met behulp van de Azure Portal, Power shell of Microsoft Graph.
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 U kunt alle roltoewijzingen weer geven die zijn gemaakt met een bereik administratieve eenheid in het [gedeelte Administrative units van Azure AD](https://ms.portal.azure.com/?microsoft_aad_iam_adminunitprivatepreview=true&microsoft_aad_iam_rbacv2=true#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/AdminUnit). 
 

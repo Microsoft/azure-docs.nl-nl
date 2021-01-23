@@ -1,27 +1,25 @@
 ---
-title: Veelvoorkomende oorzaken voor het recyclen van Cloud service rollen | Microsoft Docs
+title: Veelvoorkomende oorzaken voor het recyclen van Cloud service (klassiek) rollen | Microsoft Docs
 description: Een Cloud service functie die plotseling kan worden gerecycled, kan aanzienlijke uitval tijd veroorzaken. Hier volgen enkele veelvoorkomende problemen die ertoe leiden dat rollen worden gerecycled, zodat u downtime kunt verlagen.
-services: cloud-services
-documentationcenter: ''
-author: simonxjx
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: 533930d1-8035-4402-b16a-cf887b2c4f85
+ms.topic: article
 ms.service: cloud-services
-ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: tbd
-ms.date: 06/15/2018
-ms.author: v-six
-ms.openlocfilehash: 0484eb919a9de11b64dcc3334c5a9a942d875ca6
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 9610b32207f8367b9415c0881e49b54e24c49ad7
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075124"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741159"
 ---
-# <a name="common-issues-that-cause-roles-to-recycle"></a>Algemene problemen waardoor rollen worden herhaald
+# <a name="common-issues-that-cause-azure-cloud-service-classic-roles-to-recycle"></a>Veelvoorkomende problemen die ervoor zorgen dat de rollen van de Azure-Cloud service (klassiek) worden gerecycled
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 In dit artikel worden enkele veelvoorkomende oorzaken van implementatie problemen beschreven en tips voor het oplossen van problemen die u kunnen helpen bij het oplossen van deze problemen. Een indicatie dat er een probleem is met een toepassing is wanneer de rolinstantie niet kan worden gestart, of wordt gerecycled tussen de status initialisatie, bezet en gestopt.
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]

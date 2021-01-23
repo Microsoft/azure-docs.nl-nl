@@ -1,32 +1,30 @@
 ---
-title: Problemen met de implementatie van Cloud Services oplossen | Microsoft Docs
+title: Problemen met de implementatie van Cloud Services (klassiek) oplossen | Microsoft Docs
 description: Er zijn enkele veelvoorkomende problemen die u kunt ondervinden bij het implementeren van een Cloud service naar Azure. In dit artikel vindt u oplossingen voor sommige daarvan.
-services: cloud-services
-documentationcenter: ''
-author: simonxjx
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: a18ae415-0d1c-4bc4-ab6c-c1ddea02c870
+ms.topic: article
 ms.service: cloud-services
-ms.topic: troubleshooting
-ms.tgt_pltfrm: na
-ms.workload: tbd
-ms.date: 06/15/2018
-ms.author: v-six
-ms.openlocfilehash: 0e7cd496f031f76320df5127d7e1aa3f2f7b06c7
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 7b3d7a9a674aab3976da9399f71ff4d8df08eb62
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075073"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741074"
 ---
-# <a name="troubleshoot-cloud-service-deployment-problems"></a>Problemen met de implementatie van Cloud Services oplossen
+# <a name="troubleshoot-azure-cloud-services-classic-deployment-problems"></a>Problemen met de implementatie van Azure Cloud Services (klassiek) oplossen
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Wanneer u een Cloud service toepassings pakket implementeert in azure, kunt u informatie over de implementatie verkrijgen via het deel venster **Eigenschappen** in de Azure Portal. U kunt de details in dit deel venster gebruiken om problemen met de Cloud service op te lossen en u kunt deze informatie aan Azure-ondersteuning verstrekken bij het openen van een nieuwe ondersteunings aanvraag.
 
 U kunt het deel venster **Eigenschappen** als volgt vinden:
 
-* Klik in de Azure Portal op de implementatie van uw Cloud service, klik op **alle instellingen**en klik vervolgens op **Eigenschappen**.
+* Klik in de Azure Portal op de implementatie van uw Cloud service, klik op **alle instellingen** en klik vervolgens op **Eigenschappen**.
 
 > [!NOTE]
 > U kunt de inhoud van het deel venster **Eigenschappen** naar het klem bord kopiëren door te klikken op het pictogram in de rechter bovenhoek van het deel venster.
@@ -60,20 +58,20 @@ Een VIP-swap is niet toegestaan als een implementatie-update wordt uitgevoerd. I
 Als u wilt weten of een automatische update verhindert dat u een VIP-wissel uitvoert:
 
 1. Klik in de Azure Portal op de implementatie van uw Cloud service.
-2. Bekijk in het deel venster **Eigenschappen** van de Azure Portal de waarde **status**. Als de app **klaar**is, controleert u de **laatste bewerking** om te zien of er onlangs een fout is opgetreden waardoor de VIP niet kan worden gewisseld.
+2. Bekijk in het deel venster **Eigenschappen** van de Azure Portal de waarde **status**. Als de app **klaar** is, controleert u de **laatste bewerking** om te zien of er onlangs een fout is opgetreden waardoor de VIP niet kan worden gewisseld.
 3. Herhaal stap 1 en 2 voor de productie-implementatie.
 4. Als een automatische update wordt uitgevoerd, wacht u totdat deze is voltooid voordat u de VIP-swap uitvoert.
 
 ## <a name="problem-a-role-instance-is-looping-between-started-initializing-busy-and-stopped"></a>Probleem: een rolinstantie is een lus tussen start, initialiseren, bezet en gestopt
-Dit probleem kan duiden op een probleem met uw programmacode, pakket of configuratiebestand. In dat geval ziet u dat de status elke paar minuten kan worden gewijzigd. de Azure Portal kan bijvoorbeeld worden **gerecycled**, **bezet**of **initialisatie**. Dit geeft aan dat er iets mis is met de toepassing die ervoor zorgt dat de rolinstantie actief blijft.
+Dit probleem kan duiden op een probleem met uw programmacode, pakket of configuratiebestand. In dat geval ziet u dat de status elke paar minuten kan worden gewijzigd. de Azure Portal kan bijvoorbeeld worden **gerecycled**, **bezet** of **initialisatie**. Dit geeft aan dat er iets mis is met de toepassing die ervoor zorgt dat de rolinstantie actief blijft.
 
 Voor meer informatie over het oplossen van problemen met dit probleem raadpleegt u het blog bericht [Azure PaaS Compute Diagnostics-gegevens](/archive/blogs/kwill/windows-azure-paas-compute-diagnostics-data) en [veelvoorkomende problemen waardoor rollen kunnen worden gerecycled](cloud-services-troubleshoot-common-issues-which-cause-roles-recycle.md).
 
 ## <a name="problem-my-application-stopped-working"></a>Probleem: mijn toepassing werkt niet meer
 1. Klik in de Azure Portal op de rolinstantie.
 2. Houd rekening met de volgende voor waarden in het deel venster **Eigenschappen** van de Azure Portal om het probleem op te lossen:
-   * Als de rolinstantie onlangs is gestopt (u kunt de waarde van het **aantal afgebroken items**controleren), kan de implementatie worden bijgewerkt. Wacht om te zien of de rolinstantie wordt hervat.
-   * Als de rolinstantie **bezet**is, controleert u de toepassings code om te zien of de gebeurtenis [StatusCheck](/previous-versions/azure/reference/ee758135(v=azure.100)) wordt verwerkt. Mogelijk moet u een code toevoegen of herstellen waarmee deze gebeurtenis wordt afgehandeld.
+   * Als de rolinstantie onlangs is gestopt (u kunt de waarde van het **aantal afgebroken items** controleren), kan de implementatie worden bijgewerkt. Wacht om te zien of de rolinstantie wordt hervat.
+   * Als de rolinstantie **bezet** is, controleert u de toepassings code om te zien of de gebeurtenis [StatusCheck](/previous-versions/azure/reference/ee758135(v=azure.100)) wordt verwerkt. Mogelijk moet u een code toevoegen of herstellen waarmee deze gebeurtenis wordt afgehandeld.
    * Bespreek de diagnostische gegevens en scenario's voor probleem oplossing in de blog post [Azure PaaS Compute Diagnostics-gegevens](/archive/blogs/kwill/windows-azure-paas-compute-diagnostics-data).
 
 > [!WARNING]

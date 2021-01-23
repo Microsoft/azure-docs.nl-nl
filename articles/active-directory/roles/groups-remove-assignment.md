@@ -2,23 +2,23 @@
 title: Roltoewijzingen uit een groep in Azure Active Directory verwijderen | Microsoft Docs
 description: Bekijk een voorbeeld van aangepaste Azure AD-rollen voor het delegeren van identiteitsbeheer. Beheer Azure-rollen in Azure Portal, PowerShell of Graph API.
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: article
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d58465c56be310d3f9d500ab551c7d2b19ffaa83
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 89fa3bb94f72ab04c2ea68641b8d1dff7695aa53
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93378377"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741023"
 ---
 # <a name="remove-role-assignments-from-a-group-in-azure-active-directory"></a>Roltoewijzingen uit een groep in Azure Active Directory verwijderen
 
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe een IT-beheerder Azure AD-rollen kan verwijd
 
 1. Meld u aan bij het [Azure AD-beheer centrum](https://portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Overview) met privileged Role Administrator of Global Administrator Permissions in de Azure AD-organisatie.
 
-1. Selecteer **rollen en beheerders** > * *_rolnaam_* _.
+1. Selecteer **rollen en beheerders** > **_rolnaam_* _.
 
 1. Selecteer de groep waaruit u de roltoewijzing wilt verwijderen en selecteer _ * toewijzing verwijderen * *.
 

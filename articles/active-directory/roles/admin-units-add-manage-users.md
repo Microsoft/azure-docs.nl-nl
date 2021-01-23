@@ -3,23 +3,23 @@ title: Gebruikers toevoegen, verwijderen en weer geven in een beheer eenheid-Azu
 description: Gebruikers en machtigingen voor rollen beheren in een beheer eenheid in Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: roles
 ms.workload: identity
 ms.date: 11/04/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b490e03ea7ac0a3bc780fa731629217126b6828a
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: d3dc7b37c96d2d82ae42d9bce32a97beab2d91e9
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93395526"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740513"
 ---
 # <a name="add-and-manage-users-in-an-administrative-unit-in-azure-active-directory"></a>Gebruikers toevoegen en beheren in een beheer eenheid in Azure Active Directory
 
@@ -29,7 +29,7 @@ Zie aan de [slag](admin-units-manage.md#get-started)voor het voorbereiden van he
 
 ## <a name="add-users-to-an-administrative-unit"></a>Gebruikers toevoegen aan een beheer eenheid
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 U kunt gebruikers afzonderlijk of als een bulk bewerking toewijzen aan beheer eenheden.
 
@@ -49,7 +49,7 @@ U kunt gebruikers afzonderlijk of als een bulk bewerking toewijzen aan beheer ee
 
    1. Meld u aan bij het [Azure AD-beheer centrum](https://portal.azure.com) met privileged Role Administrator Permissions.
    1. Selecteer **beheer eenheden** en selecteer vervolgens de administratieve eenheid waaraan de gebruiker moet worden toegewezen.
-   1. Selecteer **alle gebruikers** , selecteer **lid toevoegen** en selecteer vervolgens in het deel venster **lid toevoegen** een of meer gebruikers die u wilt toewijzen aan de beheer eenheid.
+   1. Selecteer **alle gebruikers**, selecteer **lid toevoegen** en selecteer vervolgens in het deel venster **lid toevoegen** een of meer gebruikers die u wilt toewijzen aan de beheer eenheid.
 
         ![Scherm opname van het deel venster "gebruikers" van de beheer eenheid voor het toewijzen van een gebruiker aan een beheer eenheid.](./media/admin-units-add-manage-users/assign-to-admin-unit.png)
 
@@ -99,7 +99,7 @@ Voorbeeld:
 
 ## <a name="view-a-list-of-administrative-units-for-a-user"></a>Een lijst met beheer eenheden voor een gebruiker weer geven
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 In de Azure Portal kunt u een gebruikers profiel openen door het volgende te doen:
 
@@ -131,7 +131,7 @@ https://graph.microsoft.com/v1.0/users/{id}/memberOf/$/Microsoft.Graph.Administr
 
 ## <a name="remove-a-single-user-from-an-administrative-unit"></a>Eén gebruiker uit een beheer eenheid verwijderen
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 U kunt op twee manieren een gebruiker uit een administratieve eenheid verwijderen: 
 

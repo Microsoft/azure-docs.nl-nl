@@ -1,21 +1,24 @@
 ---
-title: Verzamelen van prestatie meter items in azure Cloud Services | Microsoft Docs
+title: Verzamelen van prestatie meter items in azure Cloud Services (klassiek) | Microsoft Docs
 description: Meer informatie over het detecteren, gebruiken en maken van prestatie meter items in Cloud Services met Azure Diagnostics en Application Insights.
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 02/02/2018
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 39843ad83830a72b5d6b01cc00ecd65269c02e12
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 16b54e8a59eb42c6e2351d37ec0a29d775161493
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92078592"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98739833"
 ---
-# <a name="collect-performance-counters-for-your-azure-cloud-service"></a>Prestatie meter items verzamelen voor uw Azure-Cloud service
+# <a name="collect-performance-counters-for-your-azure-cloud-service-classic"></a>Prestatie meter items verzamelen voor uw Azure-Cloud service (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 Prestatie meter items bieden u een manier om te volgen hoe goed uw toepassing en de host worden uitgevoerd. Windows Server biedt veel verschillende prestatie meter items die betrekking hebben op hardware, toepassingen, het besturings systeem en meer. Door prestatie meter items te verzamelen en te verzenden naar Azure, kunt u deze informatie analyseren om betere beslissingen te nemen. 
 

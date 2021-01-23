@@ -1,28 +1,25 @@
 ---
 title: De functie handleiding voor Service Management-API (python) gebruiken
 description: Informatie over het programmatisch uitvoeren van algemene Service beheer taken vanuit Python.
-services: cloud-services
-documentationcenter: python
-author: tanmaygore
-manager: vashan
-editor: ''
-ms.assetid: 61538ec0-1536-4a7e-ae89-95967fe35d73
-ms.service: cloud-services
-ms.workload: tbd
-ms.tgt_pltfrm: na
-ms.devlang: python
 ms.topic: article
-ms.date: 05/30/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.custom: devx-track-python
-ms.openlocfilehash: ef155116904ee0d3ecab250a254010e2f7664757
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 02993f2b79e37e5e50c20c4ee07220bcbd36edb8
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92073985"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741397"
 ---
 # <a name="use-service-management-from-python"></a>Service beheer van python gebruiken
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 In deze hand leiding wordt beschreven hoe u via programma code veelvoorkomende Service beheer taken vanuit python kunt uitvoeren. De **maken** -klasse in de [Azure SDK voor python](https://github.com/Azure/azure-sdk-for-python) ondersteunt programmatische toegang tot veel van de functies voor Service beheer die beschikbaar zijn in de [Azure Portal][management-portal]. U kunt deze functie gebruiken om Cloud Services, implementaties, gegevens beheer Services en virtuele machines te maken, bij te werken en te verwijderen. Deze functionaliteit kan nuttig zijn bij het bouwen van toepassingen die programmatische toegang tot Service beheer nodig hebben.
 
 ## <a name="what-is-service-management"></a><a name="WhatIs"> </a>Wat is Service beheer?
@@ -120,19 +117,19 @@ Wanneer u een Cloud service of opslag service maakt, moet u een geldige locatie 
 * Europa - noord
 * Azië - zuidoost
 * Azië - oost
-* Central US
+* VS - centraal
 * VS - noord-centraal
 * VS - zuid-centraal
 * VS - west
 * VS - oost
 * Japan - oost
 * Japan - west
-* Brazil South
+* Brazilië - zuid
 * Australië - oost
 * Australië - zuidoost
 
 ## <a name="create-a-cloud-service"></a><a name="CreateCloudService"> </a>Een Cloud service maken
-Wanneer u een toepassing maakt en deze in azure uitvoert, worden de code en configuratie samen een Azure- [Cloud service][cloud service]genoemd. (Het heette een *gehoste service* in eerdere versies van Azure.) U kunt de methode ** \_ gehoste \_ service maken** gebruiken om een nieuwe gehoste service te maken. Maak de service door een gehoste service naam op te geven (deze moet uniek zijn in Azure), een label (automatisch gecodeerd naar base64), een beschrijving en een locatie.
+Wanneer u een toepassing maakt en deze in azure uitvoert, worden de code en configuratie samen een Azure- [Cloud service][cloud service]genoemd. (Het heette een *gehoste service* in eerdere versies van Azure.) U kunt de methode **\_ gehoste \_ service maken** gebruiken om een nieuwe gehoste service te maken. Maak de service door een gehoste service naam op te geven (deze moet uniek zijn in Azure), een label (automatisch gecodeerd naar base64), een beschrijving en een locatie.
 
 ```python
 from azure import *
@@ -148,7 +145,7 @@ location = 'West US'
 sms.create_hosted_service(name, label, desc, location)
 ```
 
-U kunt alle gehoste services voor uw abonnement weer geven met de ** \_ gehoste methode \_ Services** .
+U kunt alle gehoste services voor uw abonnement weer geven met de **\_ gehoste methode \_ Services** .
 
 ```python
 result = sms.list_hosted_services()
@@ -170,10 +167,10 @@ print('Management URL: ' + hosted_service.url)
 print('Location: ' + hosted_service.hosted_service_properties.location)
 ```
 
-Nadat u een Cloud service hebt gemaakt, implementeert u de code in de service met de methode ** \_ implementatie maken** .
+Nadat u een Cloud service hebt gemaakt, implementeert u de code in de service met de methode **\_ implementatie maken** .
 
 ## <a name="delete-a-cloud-service"></a><a name="DeleteCloudService"> </a>Een Cloud service verwijderen
-U kunt een Cloud service verwijderen door de service naam door te geven aan de methode ** \_ gehoste \_ service verwijderen** .
+U kunt een Cloud service verwijderen door de service naam door te geven aan de methode **\_ gehoste \_ service verwijderen** .
 
 ```python
 sms.delete_hosted_service('myhostedservice')
@@ -182,7 +179,7 @@ sms.delete_hosted_service('myhostedservice')
 Voordat u een service kunt verwijderen, moeten alle implementaties voor de service eerst worden verwijderd. Zie [een implementatie verwijderen](#DeleteDeployment)voor meer informatie.
 
 ## <a name="delete-a-deployment"></a><a name="DeleteDeployment"> </a>Een implementatie verwijderen
-Als u een implementatie wilt verwijderen, gebruikt u de methode ** \_ implementatie verwijderen** . In het volgende voor beeld ziet u hoe u een implementatie verwijdert met de naam `v1` :
+Als u een implementatie wilt verwijderen, gebruikt u de methode **\_ implementatie verwijderen** . In het volgende voor beeld ziet u hoe u een implementatie verwijdert met de naam `v1` :
 
 ```python
 from azure import *
@@ -213,9 +210,9 @@ operation_result = sms.get_operation_status(result.request_id)
 print('Operation status: ' + operation_result.status)
 ```
 
-In het vorige voor beeld kan de status van de bewerking ** \_ opslag \_ account maken** worden opgehaald door het resultaat dat wordt geretourneerd door het maken van een ** \_ opslag \_ account** aan de methode **Get \_ Operation- \_ status** door te geven. 
+In het vorige voor beeld kan de status van de bewerking **\_ opslag \_ account maken** worden opgehaald door het resultaat dat wordt geretourneerd door het maken van een **\_ opslag \_ account** aan de methode **Get \_ Operation- \_ status** door te geven. 
 
-U kunt uw opslag accounts en de bijbehorende eigenschappen weer geven met de methode ** \_ opslag \_ accounts weer geven** .
+U kunt uw opslag accounts en de bijbehorende eigenschappen weer geven met de methode **\_ opslag \_ accounts weer geven** .
 
 ```python
 from azure import *
@@ -231,7 +228,7 @@ for account in result:
 ```
 
 ## <a name="delete-a-storage-service"></a><a name="DeleteStorageService"> </a>Een opslag service verwijderen
-Als u een opslag service wilt verwijderen, geeft u de naam van de opslag service door aan de methode voor het verwijderen van een ** \_ opslag \_ account** . Als u een opslag service verwijdert, worden alle gegevens die zijn opgeslagen in de service (blobs, tabellen en wacht rijen) verwijderd.
+Als u een opslag service wilt verwijderen, geeft u de naam van de opslag service door aan de methode voor het verwijderen van een **\_ opslag \_ account** . Als u een opslag service verwijdert, worden alle gegevens die zijn opgeslagen in de service (blobs, tabellen en wacht rijen) verwijderd.
 
 ```python
 from azure import *
@@ -243,7 +240,7 @@ sms.delete_storage_account('mystorageaccount')
 ```
 
 ## <a name="list-available-operating-systems"></a><a name="ListOperatingSystems"> </a>Beschik bare besturings systemen weer geven
-Gebruik de methode ** \_ Operating \_ Systems** om de besturings systemen weer te geven die beschikbaar zijn voor hosting services.
+Gebruik de methode **\_ Operating \_ Systems** om de besturings systemen weer te geven die beschikbaar zijn voor hosting services.
 
 ```python
 from azure import *
@@ -259,7 +256,7 @@ for os in result:
     print('Active: ' + str(os.is_active))
 ```
 
-U kunt ook de methode voor het ** \_ besturings \_ systeem \_ listen** gebruiken, waarin de besturings systemen worden gegroepeerd op familie.
+U kunt ook de methode voor het **\_ besturings \_ systeem \_ listen** gebruiken, waarin de besturings systemen worden gegroepeerd op familie.
 
 ```python
 result = sms.list_operating_system_families()
@@ -274,7 +271,7 @@ for family in result:
 ```
 
 ## <a name="create-an-operating-system-image"></a><a name="CreateVMImage"> </a>Een installatie kopie van een besturings systeem maken
-Als u een installatie kopie van een besturings systeem wilt toevoegen aan de opslag plaats voor installatie kopieën, gebruikt u de methode ** \_ OS- \_ installatie kopie toevoegen** .
+Als u een installatie kopie van een besturings systeem wilt toevoegen aan de opslag plaats voor installatie kopieën, gebruikt u de methode **\_ OS- \_ installatie kopie toevoegen** .
 
 ```python
 from azure import *
@@ -293,7 +290,7 @@ operation_result = sms.get_operation_status(result.request_id)
 print('Operation status: ' + operation_result.status)
 ```
 
-Als u wilt weer geven welke installatie kopieën van het besturings systeem beschikbaar zijn, gebruikt u de methode ** \_ \_ installatie kopieën lijst besturingssysteem** . Het bevat alle platform installatie kopieën en gebruikers installatie kopieën.
+Als u wilt weer geven welke installatie kopieën van het besturings systeem beschikbaar zijn, gebruikt u de methode **\_ \_ installatie kopieën lijst besturingssysteem** . Het bevat alle platform installatie kopieën en gebruikers installatie kopieën.
 
 ```python
 result = sms.list_os_images()
@@ -310,7 +307,7 @@ for image in result:
 ```
 
 ## <a name="delete-an-operating-system-image"></a><a name="DeleteVMImage"> </a>Een installatie kopie van een besturings systeem verwijderen
-Als u een installatie kopie van een gebruiker wilt verwijderen, gebruikt u de methode ** \_ \_ installatie kopie van het besturings systeem verwijderen** .
+Als u een installatie kopie van een gebruiker wilt verwijderen, gebruikt u de methode **\_ \_ installatie kopie van het besturings systeem verwijderen** .
 
 ```python
 from azure import *
@@ -325,7 +322,7 @@ print('Operation status: ' + operation_result.status)
 ```
 
 ## <a name="create-a-virtual-machine"></a><a name="CreateVM"> </a>Een virtuele machine maken
-Als u een virtuele machine wilt maken, moet u eerst een [Cloud service](#CreateCloudService)maken. Maak vervolgens de implementatie van de virtuele machine met behulp van de ** \_ implementatie methode virtuele \_ machine \_ maken** .
+Als u een virtuele machine wilt maken, moet u eerst een [Cloud service](#CreateCloudService)maken. Maak vervolgens de implementatie van de virtuele machine met behulp van de **\_ implementatie methode virtuele \_ machine \_ maken** .
 
 ```python
 from azure import *
@@ -365,7 +362,7 @@ sms.create_virtual_machine_deployment(service_name=name,
 ```
 
 ## <a name="delete-a-virtual-machine"></a><a name="DeleteVM"> </a>Een virtuele machine verwijderen
-Als u een virtuele machine wilt verwijderen, verwijdert u eerst de implementatie met behulp van de ** \_ implementatie methode verwijderen** .
+Als u een virtuele machine wilt verwijderen, verwijdert u eerst de implementatie met behulp van de **\_ implementatie methode verwijderen** .
 
 ```python
 from azure import *
@@ -377,7 +374,7 @@ sms.delete_deployment(service_name='myvm',
     deployment_name='myvm')
 ```
 
-De Cloud service kan vervolgens worden verwijderd met behulp van de methode ** \_ gehoste \_ service verwijderen** .
+De Cloud service kan vervolgens worden verwijderd met behulp van de methode **\_ gehoste \_ service verwijderen** .
 
 ```python
 sms.delete_hosted_service(service_name='myvm')
@@ -419,7 +416,7 @@ Om ervoor te zorgen dat u de installatie kopie hebt vastgelegd, gebruikt u de **
 images = sms.list_vm_images()
 ```
 
-Als u de virtuele machine tot slot wilt maken met behulp van de vastgelegde installatie kopie, gebruikt u de methode voor het maken van een ** \_ virtuele \_ machine \_ ** als voorheen, maar deze tijd geeft u in plaats daarvan op in de vm_image_name.
+Als u de virtuele machine tot slot wilt maken met behulp van de vastgelegde installatie kopie, gebruikt u de methode voor het maken van een **\_ virtuele \_ machine \_** als voorheen, maar deze tijd geeft u in plaats daarvan op in de vm_image_name.
 
 ```python
 from azure import *

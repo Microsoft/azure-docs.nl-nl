@@ -1,8 +1,8 @@
 ### YamlMime:Landing
-title: Documentatie voor Azure Cloud Services
+title: Documentatie voor Azure Cloud Services (klassiek)
 summary: Leer hoe u Cloud Services kunt gebruiken om maximaal beschikbare, schaalbare cloudtoepassingen en API's te hosten en uit te voeren. Legt uit hoe u VM-hosts kunt beheren en software kunt configureren, patchen en installeren.
 metadata:
-  title: Documentatie voor Azure Cloud Services
+  title: Documentatie voor Azure Cloud Services (klassiek)
   description: Beschrijft hoe u Cloud Services kunt gebruiken om maximaal beschikbare, schaalbare cloudtoepassingen en API's te hosten en uit te voeren.
   ms.service: cloud-services
   service: cloud-services
@@ -10,22 +10,22 @@ metadata:
   author: tgore03
   ms.author: tagore
   ms.date: 03/06/2020
-  ms.openlocfilehash: 11699a28ab3b5863812c9c171428896aeaaefec1
-  ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-  ms.translationtype: HT
+  ms.openlocfilehash: 596fbac75c93ec36906123ee6ff5c7f13e3706b9
+  ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 10/09/2020
-  ms.locfileid: "78943185"
+  ms.lasthandoff: 01/23/2021
+  ms.locfileid: "98739714"
 landingContent:
-- title: Over Cloud Services
+- title: Over Cloud Services (klassiek)
   linkLists:
   - linkListType: overview
     links:
-    - text: Wat is Cloud Services?
+    - text: Wat is Cloud Services (klassiek)?
       url: cloud-services-choose-me.md
   - linkListType: video
     links:
-    - text: Videobibliotheek voor Cloud Services
+    - text: Video bibliotheek Cloud Services (klassiek)
       url: https://azure.microsoft.com/documentation/videos/index/?services=cloud-services
 - title: Aan de slag
   linkLists:
@@ -49,9 +49,9 @@ landingContent:
   linkLists:
   - linkListType: how-to-guide
     links:
-    - text: Een cloudservice maken en implementeren in Portal
+    - text: Een Cloud service (klassiek) maken en implementeren in de portal
       url: cloud-services-how-to-create-deploy-portal.md
-    - text: Een lege cloudservicecontainer maken in PowerShell
+    - text: Een lege Cloud service (klassieke) container maken in Power shell
       url: cloud-services-powershell-create-cloud-container.md
 - title: Beheren
   linkLists:
@@ -59,5 +59,5 @@ landingContent:
     links:
     - text: Veelvoorkomende beheertaken
       url: cloud-services-how-to-manage-portal.md
-    - text: Cloudservice configureren
+    - text: Cloud service (klassiek) configureren
       url: cloud-services-how-to-configure-portal.md

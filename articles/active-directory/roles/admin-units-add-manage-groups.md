@@ -3,23 +3,23 @@ title: Groepen toevoegen, verwijderen en weer geven in een beheer eenheid-Azure 
 description: Groepen en machtigingen voor rollen beheren in een beheer eenheid in Azure Active Directory.
 services: active-directory
 documentationcenter: ''
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.topic: how-to
 ms.subservice: roles
 ms.workload: identity
 ms.date: 11/04/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: anandy
 ms.custom: oldportal;it-pro;
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 092604429cf5a527d7ee62b412e879ad9991eace
-ms.sourcegitcommit: 0ce1ccdb34ad60321a647c691b0cff3b9d7a39c8
+ms.openlocfilehash: d628903f98f96fc205c9a6c9196a90b251e52af2
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93394744"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98740547"
 ---
 # <a name="add-and-manage-groups-in-an-administrative-unit-in-azure-active-directory"></a>Groepen toevoegen en beheren in een beheer eenheid in Azure Active Directory
 
@@ -31,7 +31,7 @@ Zie aan de [slag](admin-units-manage.md#get-started)voor het voorbereiden van he
 
 U kunt groepen toevoegen aan een administratieve eenheid door gebruik te maken van de Azure Portal, Power shell of Microsoft Graph.
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 U kunt alleen afzonderlijke groepen toewijzen aan een beheer eenheid. Er is geen optie om groepen toe te wijzen als een bulk bewerking. In de Azure Portal kunt u op twee manieren een groep toewijzen aan een beheer eenheid:
 
@@ -95,7 +95,7 @@ Voorbeeld:
 
 ## <a name="view-a-list-of-groups-in-an-administrative-unit"></a>Een lijst met groepen in een beheer eenheid weer geven
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 1. Ga in de Azure Portal naar **Azure AD**.
 
@@ -139,7 +139,7 @@ Request body
 
 ## <a name="view-a-list-of-administrative-units-for-a-group"></a>Een lijst met beheer eenheden voor een groep weer geven
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 1. Ga in de Azure Portal naar **Azure AD**.
 
@@ -169,7 +169,7 @@ https://graph.microsoft.com/v1.0/groups/<group-id>/memberOf/$/Microsoft.Graph.Ad
 
 ## <a name="remove-a-group-from-an-administrative-unit"></a>Een groep verwijderen uit een beheer eenheid
 
-### <a name="use-the-azure-portal"></a>Azure Portal gebruiken
+### <a name="use-the-azure-portal"></a>De Azure-portal gebruiken
 
 U kunt op twee manieren een groep uit een beheer eenheid verwijderen in de Azure Portal:
 

@@ -1,22 +1,25 @@
 ---
-title: Azure Cloud Services def. LoadBalancerProbe-schema | Microsoft Docs
+title: Cloud Services van Azure (klassiek) def. LoadBalancerProbe-schema | Microsoft Docs
 description: De door de klant gedefinieerde LoadBalancerProbe is een status test van eind punten in rolinstanties. Het is gecombineerd met de web-of werk rollen in een service definitie bestand.
-ms.custom: ''
-ms.date: 04/14/2015
-services: cloud-services
+ms.topic: article
 ms.service: cloud-services
-ms.topic: reference
-caps.latest.revision: 14
-author: georgewallace
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 6d0e84b6724d9df4162d4be3e06a9952087a53a6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 3dca519f7fb4523ce9d9267f7629c1177cc5e3b6
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79537343"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98739783"
 ---
-# <a name="azure-cloud-services-definition-loadbalancerprobe-schema"></a>LoadBalancerProbe-schema voor Azure Cloud Services definition
+# <a name="azure-cloud-services-classic-definition-loadbalancerprobe-schema"></a>LoadBalancerProbe-schema voor Azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 De load balancer test is een door de klant gedefinieerde status test van UDP-eind punten en-eind punten in rolinstanties. Het `LoadBalancerProbe` is geen zelfstandig element. het wordt gecombineerd met de webrole-of worker-rol in een service definitie bestand. Een `LoadBalancerProbe` kan worden gebruikt door meer dan één rol.
 
 De standaard extensie voor het service definitie bestand is. csdef.

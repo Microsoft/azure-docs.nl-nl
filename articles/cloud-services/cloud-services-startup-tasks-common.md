@@ -1,21 +1,25 @@
 ---
-title: Veelvoorkomende opstart taken voor Cloud Services | Microsoft Docs
+title: Veelvoorkomende opstart taken voor Cloud Services (klassiek) | Microsoft Docs
 description: Hier vindt u enkele voor beelden van veelvoorkomende opstart taken die u mogelijk wilt uitvoeren in de webfunctie van uw Cloud Services of de werk rollen.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 07/18/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 77cea7ebd333b958675438aaeb5e0e2a326a5866
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: f55b225e615a3e7a5fbcf56b405054883d3b5413
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075175"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741193"
 ---
-# <a name="common-cloud-service-startup-tasks"></a>Veelvoorkomende opstart taken voor de Cloud service
+# <a name="common-cloud-service-classic-startup-tasks"></a>Veelvoorkomende opstart taken voor Cloud service (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Dit artikel bevat enkele voor beelden van veelvoorkomende opstart taken die u in uw Cloud service wilt uitvoeren. U kunt opstart taken gebruiken om bewerkingen uit te voeren voordat een rol wordt gestart. Bewerkingen die u mogelijk wilt uitvoeren, zijn onder andere het installeren van een onderdeel, het registreren van COM-onderdelen, het instellen van register sleutels of het starten van een langlopend proces. 
 
 Raadpleeg [dit artikel](cloud-services-startup-tasks.md) voor meer informatie over de werking van opstart taken en het maken van de vermeldingen waarmee een opstart taak wordt gedefinieerd.
@@ -52,13 +56,13 @@ Variabelen kunnen ook een [geldige Azure XPath-waarde](cloud-services-role-confi
 
 
 ## <a name="configure-iis-startup-with-appcmdexe"></a>Opstarten met IIS configureren met AppCmd.exe
-Het opdracht regel programma [AppCmd.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635852(v=ws.11)) kan worden gebruikt om IIS-instellingen te beheren bij het opstarten van Azure. *AppCmd.exe* biedt handige, opdracht regel toegang tot configuratie-instellingen voor gebruik in opstart taken in Azure. U kunt met behulp van *AppCmd.exe*website-instellingen toevoegen, wijzigen of verwijderen voor toepassingen en sites.
+Het opdracht regel programma [AppCmd.exe](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/jj635852(v=ws.11)) kan worden gebruikt om IIS-instellingen te beheren bij het opstarten van Azure. *AppCmd.exe* biedt handige, opdracht regel toegang tot configuratie-instellingen voor gebruik in opstart taken in Azure. U kunt met behulp van *AppCmd.exe* website-instellingen toevoegen, wijzigen of verwijderen voor toepassingen en sites.
 
 Er zijn echter enkele zaken om te bekijken in het gebruik van *AppCmd.exe* als een opstart taak:
 
 * Opstart taken kunnen meer dan één keer worden uitgevoerd tussen het opnieuw opstarten. Bijvoorbeeld wanneer een rol wordt gerecycled.
 * Als een *AppCmd.exe* actie meer dan één keer wordt uitgevoerd, kan er een fout optreden. Als u bijvoorbeeld een sectie probeert toe te voegen aan *Web.config* twee keer een fout gegenereerd.
-* Opstart taken mislukken als er een afsluit code of **Error level**wordt geretourneerd die niet gelijk is aan nul. Als *AppCmd.exe* bijvoorbeeld een fout genereert.
+* Opstart taken mislukken als er een afsluit code of **Error level** wordt geretourneerd die niet gelijk is aan nul. Als *AppCmd.exe* bijvoorbeeld een fout genereert.
 
 Het is een goed idee om **Error level** te controleren na het aanroepen van *AppCmd.exe*. Dit is heel eenvoudig als u de aanroep naar *AppCmd.exe* verpakken met een *. cmd* -bestand. Als u een bekend **Error level** -antwoord detecteert, kunt u dit negeren of door sturen.
 
@@ -83,7 +87,7 @@ De relevante secties van het bestand [ServiceDefinition. csdef] worden hier weer
 Het batch bestand *Startup. cmd* maakt gebruik van *AppCmd.exe* om een compressie sectie en een compressie vermelding voor json toe te voegen aan het *Web.config* bestand. Het verwachte **Error level** van 183 wordt ingesteld op nul met behulp van het opdracht regel programma VERIFY.EXE. Onverwachte error levels worden geregistreerd in StartupErrorLog.txt.
 
 ```cmd
-REM   *** Add a compression section to the Web.config file. ***
+REM   **_ Add a compression section to the Web.config file. _*_
 %windir%\system32\inetsrv\appcmd set config /section:urlCompression /doDynamicCompression:True /commit:apphost >> "%TEMP%\StartupLog.txt" 2>&1
 
 REM   ERRORLEVEL 183 occurs when trying to add a section that already exists. This error is expected if this
@@ -98,7 +102,7 @@ IF %ERRORLEVEL% NEQ 0 (
     GOTO ErrorExit
 )
 
-REM   *** Add compression for json. ***
+REM   _*_ Add compression for json. _*_
 %windir%\system32\inetsrv\appcmd set config  -section:system.webServer/httpCompression /+"dynamicTypes.[mimeType='application/json; charset=utf-8',enabled='True']" /commit:apphost >> "%TEMP%\StartupLog.txt" 2>&1
 IF %ERRORLEVEL% EQU 183 VERIFY > NUL
 IF %ERRORLEVEL% NEQ 0 (
@@ -106,10 +110,10 @@ IF %ERRORLEVEL% NEQ 0 (
     GOTO ErrorExit
 )
 
-REM   *** Exit batch file. ***
+REM   _*_ Exit batch file. _*_
 EXIT /b 0
 
-REM   *** Log error and exit ***
+REM   _*_ Log error and exit _*_
 :ErrorExit
 REM   Report the date, time, and ERRORLEVEL of the error.
 DATE /T >> "%TEMP%\StartupLog.txt" 2>&1
@@ -125,7 +129,7 @@ De tweede firewall regelt de verbindingen tussen de virtuele machine en de proce
 
 Azure maakt firewall regels voor de processen die zijn gestart binnen uw rollen. Wanneer u bijvoorbeeld een service of programma start, worden automatisch de benodigde firewall regels gemaakt om ervoor te zorgen dat de service kan communiceren met internet. Als u echter een service maakt die is gestart door een proces buiten uw rol (zoals een COM+-service of een geplande taak van Windows), moet u hand matig een firewall regel maken om toegang tot die service toe te staan. Deze firewall regels kunnen worden gemaakt met behulp van een opstart taak.
 
-Een opstart taak waarmee een firewall regel wordt gemaakt, moet een [executionContext]-[taak] van **verhoogde bevoegdheden**hebben. Voeg de volgende opstart taak toe aan het bestand [ServiceDefinition. csdef] .
+Een opstart taak waarmee een firewall regel wordt gemaakt, moet een [executionContext]-[taak] hebben van _ * verhoogde * *. Voeg de volgende opstart taak toe aan het bestand [ServiceDefinition. csdef] .
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -300,7 +304,7 @@ U kunt de opstart taak gebruiken om verschillende stappen uit te voeren wanneer 
 
 Deze mogelijkheid om verschillende acties uit te voeren op de compute-emulator en de cloud kan worden gerealiseerd door een omgevings variabele te maken in het bestand [ServiceDefinition. csdef] . Vervolgens test u de omgevings variabele voor een waarde in de opstart taak.
 
-Als u de omgevings variabele wilt maken [Variable], voegt u het / [RoleInstanceValue] -element variabele toe en maakt u een XPath-waarde van `/RoleEnvironment/Deployment/@emulated` . De waarde van de omgevings variabele **% ComputeEmulatorRunning%** is `true` wanneer deze wordt uitgevoerd op de compute-emulator en `false` wanneer deze wordt uitgevoerd in de Cloud.
+Als u de omgevings variabele wilt maken [], voegt u het / [RoleInstanceValue] -element variabele toe en maakt u een XPath-waarde van `/RoleEnvironment/Deployment/@emulated` . De waarde van de omgevings variabele **% ComputeEmulatorRunning%** is `true` wanneer deze wordt uitgevoerd op de compute-emulator en `false` wanneer deze wordt uitgevoerd in de Cloud.
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -383,7 +387,7 @@ Als u uw XML wilt vereenvoudigen, kunt u een wrapper- *cmd* -bestand maken dat a
 
 Het kan voor komen dat u aan `>> "%TEMP%\StartupLog.txt" 2>&1` het einde van elke opstart taak kunt gebruiken. U kunt de taak logboek registratie afdwingen door een wrapper te maken waarmee logboek registratie voor u wordt afgehandeld. Deze wrapper roept het daad werkelijke batch-bestand op dat u wilt uitvoeren. Alle uitvoer van het doel batch bestand wordt omgeleid naar het *Startuplog.txt* -bestand.
 
-In het volgende voor beeld ziet u hoe u alle uitvoer van een batch-opstart bestand omleidt. In dit voor beeld maakt het bestand ServerDefinition. csdef een opstart taak die *logwrap. cmd*aanroept. *logwrap. cmd* roept *Startup2. cmd*aan, waarbij alle uitvoer wordt omgeleid naar **% temp% \\StartupLog.txt**.
+In het volgende voor beeld ziet u hoe u alle uitvoer van een batch-opstart bestand omleidt. In dit voor beeld maakt het bestand ServerDefinition. csdef een opstart taak die *logwrap. cmd* aanroept. *logwrap. cmd* roept *Startup2. cmd* aan, waarbij alle uitvoer wordt omgeleid naar **% temp% \\StartupLog.txt**.
 
 ServiceDefinition. cmd:
 
@@ -469,7 +473,7 @@ Met het[taak] kenmerk [executionContext]wordt het bevoegdheden niveau van de ops
 Een voor beeld van een opstart taak waarvoor verhoogde bevoegdheden zijn vereist, is een opstart taak die gebruikmaakt van **AppCmd.exe** om IIS te configureren. **AppCmd.exe** vereist `executionContext="elevated"` .
 
 ### <a name="use-the-appropriate-tasktype"></a>De juiste taskType gebruiken
-Het [TaskType]-[taak] kenmerk bepaalt hoe de opstart taak wordt uitgevoerd. Er zijn drie waarden: **eenvoudig**, op de **achtergrond**en op de voor **grond**. De achtergrond-en voorgrond taken worden asynchroon gestart, waarna de eenvoudige taken synchroon worden uitgevoerd.
+Het [TaskType]-[taak] kenmerk bepaalt hoe de opstart taak wordt uitgevoerd. Er zijn drie waarden: **eenvoudig**, op de **achtergrond** en op de voor **grond**. De achtergrond-en voorgrond taken worden asynchroon gestart, waarna de eenvoudige taken synchroon worden uitgevoerd.
 
 Met **eenvoudige** opstart taken kunt u de volg orde instellen waarin de taken worden uitgevoerd in de volg orde waarin de taken worden weer gegeven in het bestand ServiceDefinition. csdef. Als een **eenvoudige** taak eindigt met een afsluit code die niet gelijk is aan nul, wordt de opstart procedure gestopt en wordt de rol niet gestart.
 
@@ -506,7 +510,7 @@ Meer informatie over hoe [taken](cloud-services-startup-tasks.md) werken.
 [Variabele]: /previous-versions/azure/reference/gg557552(v=azure.100)#Variable
 [RoleInstanceValue]: /previous-versions/azure/reference/gg557552(v=azure.100)#RoleInstanceValue
 [RoleEnvironment]: /previous-versions/azure/reference/ee773173(v=azure.100)
-[Eind punten]: /previous-versions/azure/reference/gg557552(v=azure.100)#Endpoints
+[Eindpunten]: /previous-versions/azure/reference/gg557552(v=azure.100)#Endpoints
 [LocalStorage]: /previous-versions/azure/reference/gg557552(v=azure.100)#LocalStorage
 [LocalResources]: /previous-versions/azure/reference/gg557552(v=azure.100)#LocalResources
 [RoleInstanceValue]: /previous-versions/azure/reference/gg557552(v=azure.100)#RoleInstanceValue

@@ -6,12 +6,12 @@ ms.author: makromer
 ms.service: data-factory
 ms.topic: conceptual
 ms.date: 01/19/2021
-ms.openlocfilehash: aa829f8f3de145cf831719a39cfb66163d9cc4f9
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: f922e7a2755a6e26a0d9f93f2668753e2f4dad5a
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98633925"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98738166"
 ---
 # <a name="what-is-data-wrangling"></a>Wat is gegevens wrangling?
 
@@ -27,6 +27,8 @@ Data Factory vertaalt M dat door de Power Query online Mashup-Editor is gegenere
 > De Power Query activiteit in Azure Data Factory is momenteel beschikbaar in de open bare preview
 
 ## <a name="use-cases"></a>Gebruiksvoorbeelden
+
+> [!VIDEO https://www.microsoft.com/en-us/videoplayer/embed/RE4MFkW]
 
 ### <a name="fast-interactive-data-exploration-and-preparation"></a>Snel interactieve gegevens verkennen en voorbereiden
 

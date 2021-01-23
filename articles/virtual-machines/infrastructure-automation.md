@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.workload: infrastructure
 ms.date: 07/17/2020
 ms.author: cynthn
-ms.openlocfilehash: a20c19c3da89801570ca4d74a646e3cf0d8434b6
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 7a702fbf405011a9df3e7e77936a9a37f0fdfad7
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675899"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730635"
 ---
 # <a name="use-infrastructure-automation-tools-with-virtual-machines-in-azure"></a>Infrastructuur Automation-hulpprogram ma's gebruiken met virtuele machines in azure
 
@@ -126,7 +126,7 @@ Leer hoe u het volgende doet:
 
 Meer informatie over:
 
-- [Azure DevOps Services](/azure/devops/user-guide/index?view=vsts).
+- [Azure DevOps Services](/azure/devops/user-guide/index).
 
 
 ## <a name="jenkins"></a>Jenkins

@@ -51,8 +51,6 @@
           href: non-gallery-apps.md
         - name: Een My Apps-implementatie plannen
           href: access-panel-deployment-plan.md
-        - name: Begeleiding voor ontwikkelaars
-          href: developer-guidance-for-integrating-applications.md
     - name: Eenmalige aanmelding
       items:
         - name: Een implementatie van eenmalige aanmelding plannen

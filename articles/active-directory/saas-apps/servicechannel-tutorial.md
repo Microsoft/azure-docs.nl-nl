@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: 039f13838edf80f6f80c1821c868c8b99549f72f
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.openlocfilehash: 413ffa54a7413ad9b2482a3a8b6c698b34116301
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97916470"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98729827"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-servicechannel"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met ServiceChannel
 
@@ -83,7 +83,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     > [!NOTE]
     > Dit zijn geen echte waarden. Werk deze waarden bij met de werkelijke id en antwoord-URL. Wij raden u aan hiervoor de unieke waarde van de tekenreeks in de id te gebruiken. Neem contact op met het [ondersteuningsteam van ServiceChannel](https://servicechannel.zendesk.com/hc/) voor deze waarden. U kunt ook verwijzen naar het patroon dat wordt weergegeven in de sectie **Standaard SAML-configuratie** in de Azure-portal.
 
-1. De rolclaim is vooraf geconfigureerd, zodat u deze niet hoeft te configureren, maar u moet deze wel in Azure AD maken. Lees daarvoor dit [artikel](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui). U kunt [hier](https://servicechannel.zendesk.com/hc/articles/217514326-Azure-AD-Configuration-Example) de handleiding voor ServiceChannel raadplegen voor meer hulp bij claims.
+1. De rolclaim is vooraf geconfigureerd, zodat u deze niet hoeft te configureren, maar u moet deze wel in Azure AD maken. Lees daarvoor dit [artikel](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview). U kunt [hier](https://servicechannel.zendesk.com/hc/articles/217514326-Azure-AD-Configuration-Example) de handleiding voor ServiceChannel raadplegen voor meer hulp bij claims.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
@@ -131,7 +131,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Klik op Deze toepassing testen in Azure Portal. U wordt automatisch aangemeld bij de instantie van ServiceChannel waarvoor u eenmalige aanmelding hebt ingesteld
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel ServiceChannel klikt, wordt u automatisch aangemeld bij het ServiceChannel-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel ServiceChannel klikt, wordt u automatisch aangemeld bij het ServiceChannel-exemplaar waarvoor u eenmalige aanmelding hebt ingesteld. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

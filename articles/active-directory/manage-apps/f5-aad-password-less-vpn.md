@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/12/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2961f3f01f6ea4398fab6144b34fcb4409cdd96f
-ms.sourcegitcommit: e5f9126c1b04ffe55a2e0eb04b043e2c9e895e48
+ms.openlocfilehash: 84e177f1ce55d803f54bb2553078441557e5c191
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96317958"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730884"
 ---
 # <a name="tutorial-for-azure-active-directory-single-sign-on-integration-with-f5-big-ip-for-password-less-vpn"></a>Zelf studie voor het Azure Active Directory van eenmalige aanmelding met F5 BIG-IP voor wacht woord-minder VPN
 
@@ -24,13 +24,13 @@ In deze zelf studie leert u hoe u F5's BIG-IP-gebaseerde Secure Socket Layer-opl
 
 Het integreren van een BIG-IP SSL-VPN met Azure AD biedt [veel belang rijke voor delen](f5-aad-integration.md), waaronder:
 
-- Verbeterd beheer van nul door [Azure AD vooraf-authenticatie en autorisatie](https://docs.microsoft.com/azure/app-service/overview-authentication-authorization)
+- Verbeterd beheer van nul door [Azure AD vooraf-authenticatie en autorisatie](../../app-service/overview-authentication-authorization.md)
 
 - [Verificatie zonder wacht woord voor de VPN-service](https://www.microsoft.com/security/business/identity/passwordless)
 
 - Identiteiten en toegang beheren vanuit één besturings vlak: de [Azure Portal](https://portal.azure.com/#home)
 
-Ondanks deze geweldige waarde voegt de klassieke VPN-verbinding echter wel voor op het principe van een netwerk perimeter, waar vertrouwd zich bevindt en niet vertrouwd de buiten. Dit model is niet langer effectief bij het bereiken van een echte postuur, omdat bedrijfs middelen niet langer worden beperkt tot de wanden van een Enter prise Data Center, maar in omgevingen met meerdere clouds zonder vaste grenzen. Daarom raden we onze klanten aan om over te stappen op een meer identiteits gerichte aanpak bij [het beheren van de toegang per toepassing](https://docs.microsoft.com/azure/active-directory/fundamentals/five-steps-to-full-application-integration-with-azure-ad).
+Ondanks deze geweldige waarde voegt de klassieke VPN-verbinding echter wel voor op het principe van een netwerk perimeter, waar vertrouwd zich bevindt en niet vertrouwd de buiten. Dit model is niet langer effectief bij het bereiken van een echte postuur, omdat bedrijfs middelen niet langer worden beperkt tot de wanden van een Enter prise Data Center, maar in omgevingen met meerdere clouds zonder vaste grenzen. Daarom raden we onze klanten aan om over te stappen op een meer identiteits gerichte aanpak bij [het beheren van de toegang per toepassing](../fundamentals/five-steps-to-full-application-integration-with-azure-ad.md).
 
 ## <a name="scenario-description"></a>Scenariobeschrijving
 
@@ -47,9 +47,9 @@ Eerdere ervaring of kennis van F5 BIG-IP is echter niet nodig, maar u hebt het v
 
 - Een gratis Azure AD- [abonnement](https://azure.microsoft.com/trial/get-started-active-directory/) of hoger
 
-- Gebruikers identiteiten moeten worden [gesynchroniseerd van de on-premises Directory](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-sync-whatis) naar Azure AD.
+- Gebruikers identiteiten moeten worden [gesynchroniseerd van de on-premises Directory](../hybrid/how-to-connect-sync-whatis.md) naar Azure AD.
 
-- Een account met [machtigingen](https://docs.microsoft.com/azure/active-directory/users-groups-roles/directory-assign-admin-roles#application-administrator) voor de Azure AD-toepassings beheerder
+- Een account met [machtigingen](../roles/permissions-reference.md#application-administrator) voor de Azure AD-toepassings beheerder
 
 - Een bestaande BIG-IP-infra structuur met route ring van client verkeer naar en van de BIG-IP of het [implementeren van een Big-IP-editie in azure](f5-bigip-deployment-guide.md).
 
@@ -64,7 +64,7 @@ Als u vertrouwd bent met [F5 BIG-IP terminologie](https://www.f5.com/services/re
 
 ## <a name="add-f5-big-ip-from-the-azure-ad-gallery"></a>Voeg F5 BIG-IP toe vanuit de Azure AD-galerie
 
-Bij het instellen van een SAML Federation-vertrouwens relatie tussen het BIG-IP-adres kan Azure AD BIG-IP de pre-authenticatie en [voorwaardelijke toegang](https://docs.microsoft.com/azure/active-directory/conditional-access/overview) tot Azure AD afleveren voordat toegang wordt verleend aan de gepubliceerde VPN-service.
+Bij het instellen van een SAML Federation-vertrouwens relatie tussen het BIG-IP-adres kan Azure AD BIG-IP de pre-authenticatie en [voorwaardelijke toegang](../conditional-access/overview.md) tot Azure AD afleveren voordat toegang wordt verleend aan de gepubliceerde VPN-service.
 
 1. Meld u aan bij de Azure AD-Portal met een account met beheerders rechten voor de toepassing
 
@@ -78,19 +78,19 @@ Bij het instellen van een SAML Federation-vertrouwens relatie tussen het BIG-IP-
 
 ## <a name="configure-azure-ad-sso"></a>Eenmalige aanmelding van Azure AD configureren
 
-1. Ga met de nieuwe eigenschappen van de F5-toepassing in **Manage** de weer gave naar  >  **eenmalige aanmelding** beheren
+1. Ga met de nieuwe eigenschappen van de F5-toepassing in de weer gave naar  >  **eenmalige aanmelding** beheren
 
 2. Selecteer **SAML** op de pagina **Selecteer een methode voor eenmalige aanmelding**. Sla de vraag om de instellingen voor eenmalige aanmelding op te slaan door nee te selecteren **, ik wil later opslaan**.
 
 3. Selecteer in het menu **eenmalige aanmelding instellen met SAML** het pictogram voor de **eenvoudige SAML-configuratie** om de volgende details op te geven:
 
-   - Vervang de vooraf gedefinieerde **ID-URL** door de URL voor de gepubliceerde Big-IP-service. bijvoorbeeld `https://ssl-vpn.contoso.com`
+   - Vervang de vooraf gedefinieerde **ID-URL** door de URL voor de gepubliceerde Big-IP-service. Bijvoorbeeld: `https://ssl-vpn.contoso.com`
 
-   - Doe hetzelfde met het tekstvak **antwoord-URL** , met inbegrip van het SAML-eindpunt pad. bijvoorbeeld `https://ssl-vpn.contoso.com/saml/sp/profile/post/acs`
+   - Doe hetzelfde met het tekstvak **antwoord-URL** , met inbegrip van het SAML-eindpunt pad. Bijvoorbeeld: `https://ssl-vpn.contoso.com/saml/sp/profile/post/acs`
 
    - In deze configuratie wordt de toepassing alleen uitgevoerd in een door IDP gestarte modus, waarbij Azure AD de gebruiker een SAML-bevestiging geeft voordat deze wordt omgeleid naar de SAML-service voor BIG-IP. Voor apps die de gestarte modus IDP niet ondersteunen, geeft u de **aanmeldings-URL** op voor de Service Big-IP SAML. Bijvoorbeeld `https://ssl-vpn.contoso.com`.
 
-   - Voor de afmeldings-URL voert u het BIG-IP APM-eind punt voor eenmalige afmelding (SLO) pended door de host-header van de service die wordt gepubliceerd. bijvoorbeeld `https://ssl-vpn.contoso.com/saml/sp/profile/redirect/slr`
+   - Voor de afmeldings-URL voert u het BIG-IP APM-eind punt voor eenmalige afmelding (SLO) pended door de host-header van de service die wordt gepubliceerd. Bijvoorbeeld: `https://ssl-vpn.contoso.com/saml/sp/profile/redirect/slr`
 
    Als u een SLO-URL opgeeft, zorgt u ervoor dat een gebruikers sessie wordt beëindigd aan beide uiteinden, het BIG-IP-adres en Azure AD, nadat de gebruiker zich afmeldt. Geavanceerd APM biedt ook een [optie](https://support.f5.com/csp/article/K12056) voor het beëindigen van alle sessies bij het aanroepen van een specifieke toepassings-URL.
 
@@ -105,7 +105,7 @@ Bekijk de eigenschappen van de **gebruikers kenmerken & sectie claims** , omdat 
 
 ![Afbeelding toont de gebruikers kenmerken claims](media/f5-sso-vpn/user-attributes-claims.png)
 
-U kunt ook een andere specifieke claim toevoegen die wordt verwacht door uw BIG-IP-gepubliceerde service, terwijl de claims die naast de standaard set zijn gedefinieerd, alleen worden uitgegeven als deze bestaan in azure AD, als gevulde kenmerken. Op dezelfde manier moeten Directory [rollen of groepslid](https://docs.microsoft.com/azure/active-directory/hybrid/how-to-connect-fed-group-claims) maatschappen ook worden gedefinieerd op basis van een gebruikers object in azure AD voordat ze als een claim kunnen worden uitgegeven.
+U kunt ook een andere specifieke claim toevoegen die wordt verwacht door uw BIG-IP-gepubliceerde service, terwijl de claims die naast de standaard set zijn gedefinieerd, alleen worden uitgegeven als deze bestaan in azure AD, als gevulde kenmerken. Op dezelfde manier moeten Directory [rollen of groepslid](../hybrid/how-to-connect-fed-group-claims.md) maatschappen ook worden gedefinieerd op basis van een gebruikers object in azure AD voordat ze als een claim kunnen worden uitgegeven.
 
 ![Afbeelding toont koppeling voor downloaden van federatieve meta gegevens](media/f5-sso-vpn/saml-signing-certificate.png)
 
@@ -119,7 +119,7 @@ Azure AD geeft standaard alleen tokens aan gebruikers die toegang tot een servic
 
 2. Selecteer **+ gebruiker toevoegen** en selecteer in het menu toewijzing toevoegen de optie **gebruikers en groepen** .
 
-3. Voeg in het dialoog venster **gebruikers en groepen** de groepen gebruikers toe die zijn gemachtigd voor toegang tot het VPN, gevolgd **Select** door  >  **toewijzen** selecteren
+3. Voeg in het dialoog venster **gebruikers en groepen** de groepen gebruikers toe die zijn gemachtigd voor toegang tot het VPN, gevolgd door  >  **toewijzen** selecteren
 
 ![Afbeelding toont toevoegen van gebruikers koppeling ](media/f5-sso-vpn/add-user-link.png)
 
@@ -131,7 +131,7 @@ Azure AD geeft standaard alleen tokens aan gebruikers die toegang tot een servic
 
 In het volgende gedeelte maakt u de BIG-IP SAML-service provider en bijbehorende SAML IDP-objecten die zijn vereist om federeren de VPN-service met Azure AD te volt ooien.
 
-1. Ga naar **de**  >  lokale SP-services van de **Federation**  >  **SAML-service provider**  >  **Local SP Services** en selecteer **maken**
+1. Ga naar **de**  >  lokale SP-services van de **Federation**  >  **SAML-service provider**  >   en selecteer **maken**
 
 ![Afbeelding toont de configuratie van BIG-IP-SAML](media/f5-sso-vpn/bigip-saml-configuration.png)
 
@@ -163,7 +163,7 @@ In het volgende gedeelte maakt u de BIG-IP SAML-service provider en bijbehorende
 
 Met de volgende stappen kan de SSL-VPN-verbinding worden aangeboden aan gebruikers via een eigen webportal van een BIG-IP-adres.
 
-1. Ga naar **toegang tot**  >  **Webtops**  >  **WebTop lijsten** van webdoppen en selecteer **maken**.
+1. Ga naar **toegang tot**  >    >  **WebTop lijsten** van webdoppen en selecteer **maken**.
 
 2. Geef een naam op voor de portal en stel het type in op **Full**. Bijvoorbeeld `Contoso_webtop`.
 
@@ -175,7 +175,7 @@ Met de volgende stappen kan de SSL-VPN-verbinding worden aangeboden aan gebruike
 
 De VPN-mogelijkheid bestaat uit verschillende elementen, waarbij elk een ander aspect van de algehele service wordt beheerd.
 
-1. Ga naar de IPv4-lease groepen voor **toegang tot**  >  **connectiviteit/VPN**-  >  **netwerk toegang (VPN)**  >  **IPV4 Lease Pools** en selecteer **maken**.
+1. Ga naar de IPv4-lease groepen voor **toegang tot**  >  **connectiviteit/VPN**-  >  **netwerk toegang (VPN)**  >   en selecteer **maken**.
 
 2. Geef een naam op voor de groep IP-adressen die worden toegewezen aan VPN-clients. Bijvoorbeeld Contoso_vpn_pool
 
@@ -185,7 +185,7 @@ De VPN-mogelijkheid bestaat uit verschillende elementen, waarbij elk een ander a
 
 Een lijst met netwerk toegang is van toepassing op de service met IP-en DNS-instellingen van de VPN-groep, machtigingen voor gebruikers Routering en kan indien nodig ook toepassingen starten.
 
-1. Ga naar **toegangs**  >  **verbindingen/VPN: netwerk toegangs lijsten (VPN)**  >  **Network Access Lists** en selecteer **maken**.
+1. Ga naar **toegangs**  >  **verbindingen/VPN: netwerk toegangs lijsten (VPN)**  >   en selecteer **maken**.
 
 2. Geef een naam op voor de VPN-toegangs lijst en het bijschrift, bijvoorbeeld contoso-VPN, gevolgd door **voltooid**.
 
@@ -213,7 +213,7 @@ Een lijst met netwerk toegang is van toepassing op de service met IP-en DNS-inst
 
 Een BIG-IP-verbindings profiel is nu vereist voor het configureren van de instellingen voor elk van de VPN-client typen die door de VPN-service moeten worden ondersteund. Bijvoorbeeld Windows, OSX en Android.
 
-1. Ga naar connectiviteits profielen voor **toegang**  >  **/VPN**  >  **Connectivity**  >  **Profiles** en selecteer **toevoegen**.
+1. Ga naar connectiviteits profielen voor **toegang**  >  **/VPN**  >    >   en selecteer **toevoegen**.
 
 2. Geef een profiel naam op en stel het bovenliggende profiel in op **/common/connectivity**, bijvoorbeeld Contoso_VPN_Profile.
 
@@ -273,7 +273,7 @@ Als de VPN-objecten zijn geconfigureerd, is een toegangs beleid vereist om de se
 
 Voor alle instellingen op locatie vereist de APM nu een front-end-virtuele server om te Luis teren naar clients die verbinding maken met het VPN.
 
-1. Selecteer een virtuele server lijst voor het **lokale verkeer** van  >  **virtuele servers**  >  **Virtual Server List** en selecteer **maken**.
+1. Selecteer een virtuele server lijst voor het **lokale verkeer** van  >  **virtuele servers**  >   en selecteer **maken**.
 
 2. Geef een **naam** op voor de virtuele VPN-server, bijvoorbeeld **VPN_Listener**.
 
@@ -295,15 +295,15 @@ Voor alle instellingen op locatie vereist de APM nu een front-end-virtuele serve
 
 8.  Uw SSL-VPN-service wordt nu via SHA gepubliceerd en toegankelijk via de bijbehorende URL of door middel van toepassings portals van micro soft.
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 
 - [Het einde van wacht woorden, wacht woordloos](https://www.microsoft.com/security/business/identity/passwordless)
 
-- [Wat is voorwaardelijke toegang?](https://docs.microsoft.com/azure/active-directory/conditional-access/overview)
+- [Wat is voorwaardelijke toegang?](../conditional-access/overview.md)
 
 - [Micro soft Zero Trust Framework om extern werk in te scha kelen](https://www.microsoft.com/security/blog/2020/04/02/announcing-microsoft-zero-trust-assessment-tool/)
 
-- [Vijf stappen voor volledige toepassings integratie met Azure AD](https://docs.microsoft.com/azure/active-directory/fundamentals/five-steps-to-full-application-integration-with-azure-ad)
+- [Vijf stappen voor volledige toepassings integratie met Azure AD](../fundamentals/five-steps-to-full-application-integration-with-azure-ad.md)
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -312,4 +312,4 @@ Open een browser op een externe Windows-client en blader naar de URL van de **Bi
 ![Installatie kopie toont het VPN-start programma](media/f5-sso-vpn/vpn-launcher.png)
 
 Als u de VPN-tegel selecteert, wordt de client met een grote IP-Edge geïnstalleerd en wordt een VPN-verbinding tot stand gebracht die is geconfigureerd voor SHA.
-De F5-VPN-toepassing moet ook worden weer gegeven als doel bron in voorwaardelijke toegang van Azure AD. Bekijk onze [richt lijnen](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-policies) voor het maken van beleid voor voorwaardelijke toegang en het inschakelen van gebruikers voor Azure AD [-wacht woord-less-verificatie](https://www.microsoft.com/security/business/identity/passwordless).
+De F5-VPN-toepassing moet ook worden weer gegeven als doel bron in voorwaardelijke toegang van Azure AD. Bekijk onze [richt lijnen](../conditional-access/concept-conditional-access-policies.md) voor het maken van beleid voor voorwaardelijke toegang en het inschakelen van gebruikers voor Azure AD [-wacht woord-less-verificatie](https://www.microsoft.com/security/business/identity/passwordless).

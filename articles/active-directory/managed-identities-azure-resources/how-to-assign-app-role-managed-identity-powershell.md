@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 12/10/2020
 ms.author: jodowns
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 409ba7a954830bb2370ce83989b9e8b08b742fe7
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: f2d844054e3744aafa01f43ded354a5b5d9f8b4b
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97631173"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732061"
 ---
 # <a name="assign-a-managed-identity-access-to-an-application-role-using-powershell"></a>Een beheerde identiteits toegang toewijzen aan een toepassingsrol met behulp van Power shell
 
@@ -36,7 +36,7 @@ In dit artikel leert u hoe u een beheerde identiteit kunt toewijzen aan een toep
 - Als u nog geen Azure-account hebt, [registreer u dan voor een gratis account](https://azure.microsoft.com/free/) voordat u verdergaat.
 - Als u de voorbeeldscripts wilt uitvoeren, hebt u twee opties:
     - Gebruik de [Azure Cloud shell](../../cloud-shell/overview.md), die u kunt openen met behulp van de knop **try it** in de rechter bovenhoek van code blokken.
-    - Voer scripts lokaal uit door de nieuwste versie van [Azure AD Power shell](https://docs.microsoft.com/powershell/azure/active-directory/install-adv2)te installeren.
+    - Voer scripts lokaal uit door de nieuwste versie van [Azure AD Power shell](/powershell/azure/active-directory/install-adv2)te installeren.
 
 ## <a name="assign-a-managed-identity-access-to-another-applications-app-role"></a>Een beheerde identiteits toegang tot de app-rol van een andere toepassing toewijzen
 

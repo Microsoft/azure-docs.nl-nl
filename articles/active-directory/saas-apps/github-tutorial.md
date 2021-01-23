@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/24/2020
 ms.author: jeedes
-ms.openlocfilehash: 68de75f25c70db9e2f5fcdb524e6b55fb6939e9a
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
-ms.translationtype: HT
+ms.openlocfilehash: c87f66e48aa7b39a7f3fc5f9b8572dd6925abbc0
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98186279"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732146"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-a-github-enterprise-cloud-organization"></a>Zelfstudie: integratie van eenmalige aanmelding (SSO) van Azure Active Directory met een GitHub Enterprise Cloud-organisatie
 
@@ -205,7 +205,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van GitHub en initieer hier de aanmeldingsstroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel GitHub klikt, wordt u omgeleid naar de aanmeldings-URL van GitHub. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel GitHub klikt, wordt u omgeleid naar de aanmeldings-URL van GitHub. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="next-steps"></a>Volgende stappen
 

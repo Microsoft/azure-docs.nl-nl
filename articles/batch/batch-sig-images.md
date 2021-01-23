@@ -4,16 +4,16 @@ description: Aangepaste installatie kopie groepen zijn een efficiënte manier om
 ms.topic: conceptual
 ms.date: 11/18/2020
 ms.custom: devx-track-python, devx-track-azurecli
-ms.openlocfilehash: eb21a9e0d355274142e34fbb5c90a4d293c88ef1
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: 98dbb965d77da43d937dccbc0f99abf12c195929
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96327301"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731358"
 ---
 # <a name="use-the-shared-image-gallery-to-create-a-custom-image-pool"></a>De galerie met gedeelde afbeeldingen gebruiken om een aangepaste installatie kopie groep te maken
 
-Wanneer u een Azure Batch groep maakt met behulp van de configuratie van de virtuele machine, geeft u een VM-installatie kopie op die het besturings systeem levert voor elk reken knooppunt in de pool. U kunt een groep virtuele machines maken met behulp van een ondersteunde installatie kopie van Azure Marketplace of een aangepaste installatie kopie maken met een afbeelding van de [Galerie met gedeelde installatie kopieën](../virtual-machines/windows/shared-image-galleries.md).
+Wanneer u een Azure Batch groep maakt met behulp van de configuratie van de virtuele machine, geeft u een VM-installatie kopie op die het besturings systeem levert voor elk reken knooppunt in de pool. U kunt een groep virtuele machines maken met behulp van een ondersteunde installatie kopie van Azure Marketplace of een aangepaste installatie kopie maken met een afbeelding van de [Galerie met gedeelde installatie kopieën](../virtual-machines/shared-image-galleries.md).
 
 ## <a name="benefits-of-the-shared-image-gallery"></a>Voor delen van de galerie met gedeelde afbeeldingen
 
@@ -31,7 +31,7 @@ Het gebruik van een gedeelde installatie kopie die voor uw scenario is geconfigu
 - **Kopieer een grote hoeveelheid gegevens eenmaal.** Statische gegevens delen van de beheerde gedeelde installatie kopie maken door deze te kopiëren naar de gegevens schijven van een beheerde installatie kopie. Dit hoeft slechts één keer te worden gedaan en er worden gegevens beschikbaar gemaakt voor elk knoop punt van de groep.
 - **Verg root Pools tot grotere grootten.** Met de galerie gedeelde afbeeldingen kunt u met uw aangepaste installatie kopieën grote groepen maken, samen met meer gedeelde afbeeldings replica's.
 - **Betere prestaties dan het gebruik van alleen een beheerde installatie kopie als een aangepaste installatie kopie.** Voor een aangepaste afbeeldings groep voor een gedeelde installatie kopie is de tijd voor het bereiken van de constante status tot 25% sneller en is de latentie van de VM-inactiviteit tot wel 30% korter.
-- **Installatie kopie versie en groepering voor eenvoudiger beheer.** De definitie van de groepering van installatie kopieën bevat informatie over waarom de installatie kopie is gemaakt, waarvoor het besturings systeem is en informatie over het gebruik van de installatie kopie. Door installatie kopieën te groeperen kunt u het beheer van afbeeldingen vereenvoudigen. Zie [afbeeldings definities](../virtual-machines/windows/shared-image-galleries.md#image-definitions)voor meer informatie.
+- **Installatie kopie versie en groepering voor eenvoudiger beheer.** De definitie van de groepering van installatie kopieën bevat informatie over waarom de installatie kopie is gemaakt, waarvoor het besturings systeem is en informatie over het gebruik van de installatie kopie. Door installatie kopieën te groeperen kunt u het beheer van afbeeldingen vereenvoudigen. Zie [afbeeldings definities](../virtual-machines/shared-image-galleries.md#image-definitions)voor meer informatie.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -226,4 +226,4 @@ Als u van plan bent om een pool met honderden of duizenden Vm's of meer te maken
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie [batch service workflow en resources](batch-service-workflow-features.md)voor een uitgebreid overzicht van batch.
-- Meer informatie over de [Galerie met gedeelde afbeeldingen](../virtual-machines/windows/shared-image-galleries.md).
+- Meer informatie over de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md).

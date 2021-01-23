@@ -11,12 +11,12 @@ ms.subservice: msi
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: references_regions
-ms.openlocfilehash: 2da0407f848b0795414b071b9e082c7ed60a633d
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 7ebe56b95b0c4b938c31c0ece04d27fd1b234b05
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861881"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98729909"
 ---
 # <a name="services-that-support-managed-identities-for-azure-resources"></a>Services die beheerde identiteiten voor Azure-resources ondersteunen
 
@@ -34,7 +34,7 @@ De volgende Azure-Services ondersteunen beheerde identiteiten voor Azure-resourc
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
 | Door de gebruiker toegewezen | Preview | Preview | Niet beschikbaar | Preview |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure API Management te configureren (in regio's waar beschikbaar):
@@ -45,8 +45,8 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure API Management 
 
 | Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
-| Door de gebruiker toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check]  | Niet beschikbaar  | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | Niet beschikbaar | ![Beschikken][check] |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check]  | Niet beschikbaar  | ![Beschikken][check] |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure-app configuratie te configureren (in regio's waar beschikbaar):
 
@@ -56,8 +56,8 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure-app configurati
 
 | Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | ![Beschikbaar][check] | ![Beschikbaar][check] |
-| Door de gebruiker toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check]  | ![Beschikbaar][check]  | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check]  | ![Beschikken][check]  | ![Beschikken][check] |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure App Service te configureren (in regio's waar beschikbaar):
 
@@ -89,8 +89,8 @@ Raadpleeg het volgende document als u een beheerde identiteit opnieuw wilt confi
 
 |Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar |
-| Door de gebruiker toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar |
 
 Raadpleeg de volgende lijst voor het gebruik van een beheerde identiteit met [Azure-blauw drukken](../../governance/blueprints/overview.md):
 
@@ -102,14 +102,14 @@ Raadpleeg de volgende lijst voor het gebruik van een beheerde identiteit met [Az
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 ### <a name="azure-cognitive-services"></a>Azure Cognitive Services
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 
@@ -142,14 +142,14 @@ Raadpleeg de volgende lijst voor het configureren van een beheerde identiteit vo
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 ### <a name="azure-data-factory-v2"></a>Azure Data Factory V2
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 Raadpleeg de volgende lijst voor het configureren van een beheerde identiteit voor Azure Data Factory v2 (in regio's waar beschikbaar):
@@ -180,8 +180,8 @@ Type beheerde identiteit |Alles algemeen beschikbaar<br>Wereld wijde Azure-regio
 
 Type beheerde identiteit |Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | ![Beschikbaar][check] | ![Beschikbaar][check] |
-| Door de gebruiker toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check]  | ![Beschikbaar][check]  | ![Beschikbaar][check]  |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check]  | ![Beschikken][check]  | ![Beschikken][check]  |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Functions te configureren (in regio's waar beschikbaar):
 
@@ -194,7 +194,7 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Functions te co
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 Raadpleeg de volgende lijst voor het configureren van een beheerde identiteit voor Azure Data Factory v2 (in regio's waar beschikbaar):
@@ -212,7 +212,7 @@ Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regi
 
 | Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar |
 | Door de gebruiker toegewezen | Preview | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 
@@ -223,8 +223,8 @@ Zie [beheerde identiteiten gebruiken in azure Kubernetes service](../../aks/use-
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
-| Door de gebruiker toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikbaar][check] | Niet beschikbaar | ![Beschikbaar][check] |
 
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Logic Apps te configureren (in regio's waar beschikbaar):
@@ -245,7 +245,7 @@ Zie [Managed Identities met Azure machine learning](../../machine-learning/how-t
 
 |Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | ![Beschikbaar][check] | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] | ![Beschikken][check] |
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Policy te configureren (in regio's waar beschikbaar):
@@ -263,8 +263,8 @@ De [beheerde identiteit voor service Fabric toepassingen](../../service-fabric/c
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar | niet beschikbaar |
-| Door de gebruiker toegewezen | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar |Niet beschikbaar |
+| Door het systeem toegewezen | ![Beschikken][check] | Niet beschikbaar | Niet beschikbaar | niet beschikbaar |
+| Door de gebruiker toegewezen | ![Beschikken][check] | Niet beschikbaar | Niet beschikbaar |Niet beschikbaar |
 
 Raadpleeg de volgende lijst voor het configureren van beheerde identiteit voor Azure Service Fabric-toepassingen in alle regio's:
 
@@ -274,7 +274,7 @@ Raadpleeg de volgende lijst voor het configureren van beheerde identiteit voor A
 
 | Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | Niet beschikbaar | Niet beschikbaar | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | Niet beschikbaar | Niet beschikbaar | ![Beschikken][check] |
 | Door de gebruiker toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
 
@@ -291,8 +291,8 @@ Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regi
 
 |Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Preview | ![Beschikbaar][check] |
-| Door de gebruiker toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Preview | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | Preview | ![Beschikken][check] |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check] | Preview | ![Beschikken][check] |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Virtual Machine Scale Sets te configureren (in regio's waar beschikbaar):
 
@@ -308,8 +308,8 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Virtual Machine
 
 | Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
-| Door het systeem toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Preview | ![Beschikbaar][check] |
-| Door de gebruiker toegewezen | ![Beschikbaar][check] | ![Beschikbaar][check] | Preview | ![Beschikbaar][check] |
+| Door het systeem toegewezen | ![Beschikken][check] | ![Beschikken][check] | Preview | ![Beschikken][check] |
+| Door de gebruiker toegewezen | ![Beschikken][check] | ![Beschikken][check] | Preview | ![Beschikken][check] |
 
 Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Virtual Machines te configureren (in regio's waar beschikbaar):
 
@@ -326,9 +326,9 @@ Raadpleeg de volgende lijst om de beheerde identiteit voor Azure Virtual Machine
 | Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
 | --- | :-: | :-: | :-: | :-: |
 | Door het systeem toegewezen | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
-| Door de gebruiker toegewezen | [Beschikbaar in ondersteunde regio's](../../virtual-machines/windows/image-builder-overview.md#regions) | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
+| Door de gebruiker toegewezen | [Beschikbaar in ondersteunde regio's](../../virtual-machines/image-builder-overview.md#regions) | Niet beschikbaar | Niet beschikbaar | Niet beschikbaar |
 
-Voor meer informatie over het configureren van een beheerde identiteit voor de opbouw functie voor installatie kopieën van Azure VM (in regio's waar beschikbaar), raadpleegt u het [overzicht van Image Builder](../../virtual-machines/windows/image-builder-overview.md#permissions).
+Voor meer informatie over het configureren van een beheerde identiteit voor de opbouw functie voor installatie kopieën van Azure VM (in regio's waar beschikbaar), raadpleegt u het [overzicht van Image Builder](../../virtual-machines/image-builder-overview.md#permissions).
 ### <a name="azure-signalr-service"></a>Azure SignalR-service
 
 Type beheerde identiteit | Alles algemeen beschikbaar<br>Wereld wijde Azure-regio's | Azure Government | Azure Duitsland | Azure China 21Vianet |
@@ -355,25 +355,25 @@ Raadpleeg de volgende lijst om de toegang tot Azure Resource Manager te configur
 
 | Cloud | Resource-id | Status |
 |--------|------------|:-:|
-| Azure Global | `https://management.azure.com/`| ![Beschikbaar][check] |
-| Azure Government | `https://management.usgovcloudapi.net/` | ![Beschikbaar][check] |
-| Azure Duitsland | `https://management.microsoftazure.de/` | ![Beschikbaar][check] |
-| Azure China 21Vianet | `https://management.chinacloudapi.cn` | ![Beschikbaar][check] |
+| Azure Global | `https://management.azure.com/`| ![Beschikken][check] |
+| Azure Government | `https://management.usgovcloudapi.net/` | ![Beschikken][check] |
+| Azure Duitsland | `https://management.microsoftazure.de/` | ![Beschikken][check] |
+| Azure China 21Vianet | `https://management.chinacloudapi.cn` | ![Beschikken][check] |
 
 ### <a name="azure-key-vault"></a>Azure Key Vault
 
 | Cloud | Resource-id | Status |
 |--------|------------|:-:|
-| Azure Global | `https://vault.azure.net`| ![Beschikbaar][check] |
-| Azure Government | `https://vault.usgovcloudapi.net` | ![Beschikbaar][check] |
-| Azure Duitsland |  `https://vault.microsoftazure.de` | ![Beschikbaar][check] |
-| Azure China 21Vianet | `https://vault.azure.cn` | ![Beschikbaar][check] |
+| Azure Global | `https://vault.azure.net`| ![Beschikken][check] |
+| Azure Government | `https://vault.usgovcloudapi.net` | ![Beschikken][check] |
+| Azure Duitsland |  `https://vault.microsoftazure.de` | ![Beschikken][check] |
+| Azure China 21Vianet | `https://vault.azure.cn` | ![Beschikken][check] |
 
 ### <a name="azure-data-lake"></a>Azure Data Lake
 
 | Cloud | Resource-id | Status |
 |--------|------------|:-:|
-| Azure Global | `https://datalake.azure.net/` | ![Beschikbaar][check] |
+| Azure Global | `https://datalake.azure.net/` | ![Beschikken][check] |
 | Azure Government |  | Niet beschikbaar |
 | Azure Duitsland |   | Niet beschikbaar |
 | Azure China 21Vianet |  | Niet beschikbaar |
@@ -382,16 +382,16 @@ Raadpleeg de volgende lijst om de toegang tot Azure Resource Manager te configur
 
 | Cloud | Resource-id | Status |
 |--------|------------|:-:|
-| Azure Global | `https://database.windows.net/` | ![Beschikbaar][check] |
-| Azure Government | `https://database.usgovcloudapi.net/` | ![Beschikbaar][check] |
-| Azure Duitsland | `https://database.cloudapi.de/` | ![Beschikbaar][check] |
-| Azure China 21Vianet | `https://database.chinacloudapi.cn/` | ![Beschikbaar][check] |
+| Azure Global | `https://database.windows.net/` | ![Beschikken][check] |
+| Azure Government | `https://database.usgovcloudapi.net/` | ![Beschikken][check] |
+| Azure Duitsland | `https://database.cloudapi.de/` | ![Beschikken][check] |
+| Azure China 21Vianet | `https://database.chinacloudapi.cn/` | ![Beschikken][check] |
 
 ### <a name="azure-event-hubs"></a>Azure Event Hubs
 
 | Cloud | Resource-id | Status |
 |--------|------------|:-:|
-| Azure Global | `https://eventhubs.azure.net` | ![Beschikbaar][check] |
+| Azure Global | `https://eventhubs.azure.net` | ![Beschikken][check] |
 | Azure Government |  | Niet beschikbaar |
 | Azure Duitsland |   | Niet beschikbaar |
 | Azure China 21Vianet |  | Niet beschikbaar |
@@ -400,8 +400,8 @@ Raadpleeg de volgende lijst om de toegang tot Azure Resource Manager te configur
 
 | Cloud | Resource-id | Status |
 |--------|------------|:-:|
-| Azure Global | `https://servicebus.azure.net`  | ![Beschikbaar][check] |
-| Azure Government |  | ![Beschikbaar][check] |
+| Azure Global | `https://servicebus.azure.net`  | ![Beschikken][check] |
+| Azure Government |  | ![Beschikken][check] |
 | Azure Duitsland |   | Niet beschikbaar |
 | Azure China 21Vianet |  | Niet beschikbaar |
 
@@ -417,19 +417,19 @@ Raadpleeg de volgende lijst om de toegang tot Azure Resource Manager te configur
 
 | Cloud | Resource-id | Status |
 |--------|------------|:-:|
-| Azure Global | `https://storage.azure.com/` <br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | ![Beschikbaar][check] |
-| Azure Government | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.usgovcloudapi.net` <br /><br />`https://<account>.queue.core.usgovcloudapi.net` | ![Beschikbaar][check] |
-| Azure Duitsland | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.cloudapi.de` <br /><br />`https://<account>.queue.core.cloudapi.de` | ![Beschikbaar][check] |
-| Azure China 21Vianet | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.chinacloudapi.cn` <br /><br />`https://<account>.queue.core.chinacloudapi.cn` | ![Beschikbaar][check] |
+| Azure Global | `https://storage.azure.com/` <br /><br />`https://<account>.blob.core.windows.net` <br /><br />`https://<account>.queue.core.windows.net` | ![Beschikken][check] |
+| Azure Government | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.usgovcloudapi.net` <br /><br />`https://<account>.queue.core.usgovcloudapi.net` | ![Beschikken][check] |
+| Azure Duitsland | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.cloudapi.de` <br /><br />`https://<account>.queue.core.cloudapi.de` | ![Beschikken][check] |
+| Azure China 21Vianet | `https://storage.azure.com/`<br /><br />`https://<account>.blob.core.chinacloudapi.cn` <br /><br />`https://<account>.queue.core.chinacloudapi.cn` | ![Beschikken][check] |
 
 ### <a name="azure-analysis-services"></a>Azure Analysis Services
 
 | Cloud | Resource-id | Status |
 |--------|------------|:-:|
-| Azure Global | `https://*.asazure.windows.net` | ![Beschikbaar][check] |
-| Azure Government | `https://*.asazure.usgovcloudapi.net` | ![Beschikbaar][check] |
-| Azure Duitsland | `https://*.asazure.cloudapi.de` | ![Beschikbaar][check] |
-| Azure China 21Vianet | `https://*.asazure.chinacloudapi.cn` | ![Beschikbaar][check] |
+| Azure Global | `https://*.asazure.windows.net` | ![Beschikken][check] |
+| Azure Government | `https://*.asazure.usgovcloudapi.net` | ![Beschikken][check] |
+| Azure Duitsland | `https://*.asazure.cloudapi.de` | ![Beschikken][check] |
+| Azure China 21Vianet | `https://*.asazure.chinacloudapi.cn` | ![Beschikken][check] |
 
 > [!Note]
 > Micro soft Power BI [biedt ook ondersteuning voor beheerde identiteiten](../../stream-analytics/powerbi-output-managed-identity.md).

@@ -7,17 +7,17 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 06/12/2020
-ms.openlocfilehash: e60f77495cdb822a0c50be936c2b0d3ac31348f3
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 2b68afcb9d200970ca4ea29b13175223f52c77e0
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98116706"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730986"
 ---
 # <a name="cross-service-query---azure-monitor-and-azure-data-explorer-preview"></a>Query's voor meerdere services, Azure Monitor en Azure Data Explorer (preview-versie)
-Query's tussen meerdere services en [Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/), [Application Insights](/azure/azure-monitor/app/app-insights-overview)en [log Analytics](/azure/azure-monitor/platform/data-platform-logs)maken.
+Query's tussen meerdere services en [Azure Data Explorer](/azure/data-explorer/), [Application Insights](../app/app-insights-overview.md)en [log Analytics](./data-platform-logs.md)maken.
 ## <a name="azure-monitor-and-azure-data-explorer-cross-service-querying"></a>Query's voor Azure Monitor en Azure Data Explorer meerdere services
-Met deze ervaring kunt u [query's voor meerdere services maken tussen Azure Data Explorer en Azure monitor](https://docs.microsoft.com/azure/data-explorer/query-monitor-data) en [query's voor meerdere services maken tussen Azure Monitor en Azure Data Explorer](https://docs.microsoft.com/azure/azure-monitor/platform/azure-monitor-data-explorer-proxy).
+Met deze ervaring kunt u [query's voor meerdere services maken tussen Azure Data Explorer en Azure monitor](/azure/data-explorer/query-monitor-data) en [query's voor meerdere services maken tussen Azure Monitor en Azure Data Explorer](./azure-monitor-data-explorer-proxy.md).
 
 Bijvoorbeeld (query's uitvoeren op Azure Data Explorer vanuit Log Analytics):
 ```kusto
@@ -34,15 +34,15 @@ Als de buitenste query een query uitvoert in een tabel in de werk ruimte en verv
 
 Bij het exporteren van gegevens uit Azure Monitor naar een Azure Storage-account is een lage Bewaar periode en de mogelijkheid om Logboeken opnieuw toe te wijzen aan verschillende regio's.
 
-Gebruik Azure Data Explorer om query's uit te voeren op gegevens die zijn geëxporteerd uit uw Log Analytics-werk ruimten. Eenmaal geconfigureerd, worden ondersteunde tabellen die vanuit uw werk ruimten worden verzonden naar een Azure-opslag account, beschikbaar als gegevens bron voor Azure-Data Explorer. [Query's van Azure monitor geëxporteerde gegevens met behulp van Azure Data Explorer (preview)](https://docs.microsoft.com/azure/azure-monitor/platform/azure-data-explorer-query-storage).
+Gebruik Azure Data Explorer om query's uit te voeren op gegevens die zijn geëxporteerd uit uw Log Analytics-werk ruimten. Eenmaal geconfigureerd, worden ondersteunde tabellen die vanuit uw werk ruimten worden verzonden naar een Azure-opslag account, beschikbaar als gegevens bron voor Azure-Data Explorer. [Query's van Azure monitor geëxporteerde gegevens met behulp van Azure Data Explorer (preview)](./azure-data-explorer-query-storage.md).
 
 :::image type="content" source="media\azure-data-explorer-query-storage\exported-data-query.png" alt-text="Azure Data Explorer query vanuit de opslag stroom.":::
 
 >[!tip] 
-> * Als u alle gegevens uit uw Log Analytics-werk ruimte wilt exporteren naar een Azure-opslag account of Event Hub, gebruikt u de functie Log Analytics werkruimte gegevens exporteren van Azure Monitor Logboeken. [Zie log Analytics werkruimte gegevens exporteren in azure monitor (preview)](https://docs.microsoft.com/azure/data-explorer/query-monitor-data).
+> * Als u alle gegevens uit uw Log Analytics-werk ruimte wilt exporteren naar een Azure-opslag account of Event Hub, gebruikt u de functie Log Analytics werkruimte gegevens exporteren van Azure Monitor Logboeken. [Zie log Analytics werkruimte gegevens exporteren in azure monitor (preview)](/azure/data-explorer/query-monitor-data).
 
 ## <a name="next-steps"></a>Volgende stappen
 Meer informatie over:
-* [query's voor meerdere services maken tussen Azure Data Explorer en Azure monitor](https://docs.microsoft.com/azure/data-explorer/query-monitor-data). Azure Monitor gegevens opvragen vanuit Azure Data Explorer
-* [query's voor meerdere services maken tussen Azure monitor en Azure Data Explorer](https://docs.microsoft.com/azure/azure-monitor/platform/azure-monitor-data-explorer-proxy). Query's uitvoeren op Azure Data Explorer gegevens vanuit Azure Monitor
-* [Log Analytics werkruimte gegevens exporteren in azure monitor (preview)](https://docs.microsoft.com/azure/data-explorer/query-monitor-data). Koppel en zoek aan Azure Blob Storage-account met Log Analytics geëxporteerde gegevens.
+* [query's voor meerdere services maken tussen Azure Data Explorer en Azure monitor](/azure/data-explorer/query-monitor-data). Azure Monitor gegevens opvragen vanuit Azure Data Explorer
+* [query's voor meerdere services maken tussen Azure monitor en Azure Data Explorer](./azure-monitor-data-explorer-proxy.md). Query's uitvoeren op Azure Data Explorer gegevens vanuit Azure Monitor
+* [Log Analytics werkruimte gegevens exporteren in azure monitor (preview)](/azure/data-explorer/query-monitor-data). Koppel en zoek aan Azure Blob Storage-account met Log Analytics geëxporteerde gegevens.

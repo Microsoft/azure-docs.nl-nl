@@ -3,16 +3,16 @@ title: Configuratie van batch-pool migreren van Cloud Services naar Virtual Mach
 description: Meer informatie over hoe u uw pool configuratie kunt bijwerken naar de nieuwste en aanbevolen configuratie
 ms.topic: how-to
 ms.date: 1/6/2021
-ms.openlocfilehash: d987a185efb6593fd541dd14fa74b6c4d3ca41be
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 417738be2c69101129079b8ff3a3d80634f9f99c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98234304"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731496"
 ---
 # <a name="migrate-batch-pool-configuration-from-cloud-services-to-virtual-machines"></a>Configuratie van batch-pool migreren van Cloud Services naar Virtual Machines
 
-Batch-Pools kunnen worden gemaakt met behulp van [cloudServiceConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#cloudserviceconfiguration) of [virtualMachineConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#virtualmachineconfiguration). ' virtualMachineConfiguration ' is de aanbevolen configuratie, omdat deze alle batch-mogelijkheden ondersteunt. cloudServiceConfiguration-groepen bieden geen ondersteuning voor alle functies en er zijn geen nieuwe functies gepland.
+Batch-Pools kunnen worden gemaakt met behulp van [cloudServiceConfiguration](/rest/api/batchservice/pool/add#cloudserviceconfiguration) of [virtualMachineConfiguration](/rest/api/batchservice/pool/add#virtualmachineconfiguration). ' virtualMachineConfiguration ' is de aanbevolen configuratie, omdat deze alle batch-mogelijkheden ondersteunt. cloudServiceConfiguration-groepen bieden geen ondersteuning voor alle functies en er zijn geen nieuwe functies gepland.
 
 Als u ' cloudServiceConfiguration-groepen gebruikt, wordt u ten zeerste aangeraden om de groep ' virtualMachineConfiguration ' te gebruiken. Zo kunt u profiteren van alle mogelijkheden van de batch, zoals een uitgebreide [selectie van VM-serie](batch-pool-vm-sizes.md), Linux vm's, [containers](batch-docker-container-workloads.md), [Azure Resource Manager virtuele netwerken](batch-virtual-network.md)en [schijf versleuteling van knoop punten](disk-encryption.md).
 
@@ -41,4 +41,4 @@ Bij het bijwerken van de groeps configuratie moet rekening worden gehouden met h
 
 - Meer informatie over [pool configuraties](nodes-and-pools.md#configurations).
 - Meer informatie over [Aanbevolen procedures voor Pools](best-practices.md#pools).
-- REST API verwijzing voor de toevoeging van een [pool](https://docs.microsoft.com/rest/api/batchservice/pool/add) en [virtualMachineConfiguration](https://docs.microsoft.com/rest/api/batchservice/pool/add#virtualmachineconfiguration).
+- REST API verwijzing voor de toevoeging van een [pool](/rest/api/batchservice/pool/add) en [virtualMachineConfiguration](/rest/api/batchservice/pool/add#virtualmachineconfiguration).

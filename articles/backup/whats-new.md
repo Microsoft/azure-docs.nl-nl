@@ -3,12 +3,12 @@ title: Wat is er nieuw in Azure Backup
 description: Meer informatie over nieuwe functies in Azure Backup.
 ms.topic: conceptual
 ms.date: 11/11/2020
-ms.openlocfilehash: 62a6146990863c339917777b2624fee76ebe60d8
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: 935c2a806ed3b08f19e680bf1522d98a9ad67666
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98569416"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730286"
 ---
 # <a name="whats-new-in-azure-backup"></a>Wat is er nieuw in Azure Backup
 
@@ -37,7 +37,7 @@ Meer informatie over de nieuwe releases vindt u in blad wijzers op deze pagina o
 
 ## <a name="azure-disk-backup-in-preview"></a>Back-ups van Azure-schijf (in preview-versie)
 
-Azure Disk Backup biedt een kant-en-klare oplossing voor het beheer van de moment opname van [azure Managed disks](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview) door het periodiek maken van moment opnamen te automatiseren en deze te bewaren voor een geconfigureerde duur met behulp van het back-upbeleid. U kunt de moment opnamen van de schijf met nul kosten van de infra structuur beheren, zonder dat u hiervoor aangepaste scripts of beheer overhead nodig hebt. Dit is een crash consistente back-upoplossing die tijdgebonden back-ups maakt van een beheerde schijf met behulp van [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots) met ondersteuning voor meerdere back-ups per dag. Het is ook een oplossing zonder agent en heeft geen invloed op de prestaties van productie toepassingen. Het ondersteunt back-ups en herstel van zowel besturings systeem-als gegevens schijven (inclusief gedeelde schijven), ongeacht of ze momenteel zijn gekoppeld aan een actieve virtuele machine van Azure.
+Azure Disk Backup biedt een kant-en-klare oplossing voor het beheer van de moment opname van [azure Managed disks](../virtual-machines/managed-disks-overview.md) door het periodiek maken van moment opnamen te automatiseren en deze te bewaren voor een geconfigureerde duur met behulp van het back-upbeleid. U kunt de moment opnamen van de schijf met nul kosten van de infra structuur beheren, zonder dat u hiervoor aangepaste scripts of beheer overhead nodig hebt. Dit is een crash consistente back-upoplossing die tijdgebonden back-ups maakt van een beheerde schijf met behulp van [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md) met ondersteuning voor meerdere back-ups per dag. Het is ook een oplossing zonder agent en heeft geen invloed op de prestaties van productie toepassingen. Het ondersteunt back-ups en herstel van zowel besturings systeem-als gegevens schijven (inclusief gedeelde schijven), ongeacht of ze momenteel zijn gekoppeld aan een actieve virtuele machine van Azure.
 
 Zie [Azure Disk Backup (in Preview)](disk-backup-overview.md)voor meer informatie.
 

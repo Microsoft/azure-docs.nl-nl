@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/10/2019
 ms.author: jeedes
-ms.openlocfilehash: 71f4cfa9e7b69e51bafa5364f857f8ab689f2ad0
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
-ms.translationtype: HT
+ms.openlocfilehash: 928b8118c614d7d16293c8d6e0cec194a270314e
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955464"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98729903"
 ---
 # <a name="tutorial-configure-servicenow-for-automatic-user-provisioning"></a>Zelfstudie: ServiceNow configureren voor automatische gebruikersinrichting
 
@@ -155,7 +155,7 @@ Nadat u het inrichten hebt geconfigureerd, gebruikt u de volgende resources om u
 
 * **IP-bereiken** 
 
-   De Azure AD-inrichtingsservice werkt momenteel onder bepaalde IP-bereiken. Indien nodig kunt u andere IP-bereiken beperken en deze specifieke IP-bereiken aan de acceptatielijst van uw toepassing toevoegen om verkeer van de Azure AD-inrichtingsservice naar uw toepassing te laten stromen. Raadpleeg de documentatie onder [IP-bereiken](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#ip-ranges).
+   De Azure AD-inrichtingsservice werkt momenteel onder bepaalde IP-bereiken. Indien nodig kunt u andere IP-bereiken beperken en deze specifieke IP-bereiken aan de acceptatielijst van uw toepassing toevoegen om verkeer van de Azure AD-inrichtingsservice naar uw toepassing te laten stromen. Raadpleeg de documentatie onder [IP-bereiken](../app-provisioning/use-scim-to-provision-users-and-groups.md#ip-ranges).
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

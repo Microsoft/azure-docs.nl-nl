@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/12/2020
 ms.author: gasinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6c03009b08dcf33bf4b84bc91232af96e7ba2c71
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: f962bf131b87f17712186145b8c8b8e6090f7002
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095182"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730653"
 ---
 # <a name="tutorial-to-deploy-f5-big-ip-virtual-edition-vm-in-azure-iaas-for-secure-hybrid-access"></a>Zelf studie voor het implementeren van een VM met een virtuele editie van F5 in azure IaaS voor beveiligde hybride toegang
 
@@ -216,7 +216,7 @@ Bij de volgende stappen wordt ervan uitgegaan dat de DNS-zone van het open bare 
  |:-------|:-----------|
  |Abonnement| Hetzelfde abonnement als de BIG-IP-VM|
  |DNS-zone| DNS-zone die gemachtigd is voor het geverifieerde domein achtervoegsel dat door uw gepubliceerde websites wordt gebruikt, bijvoorbeeld www.contoso.com |
- |Naam | De hostnaam die u opgeeft, wordt omgezet in het open bare IP-adres dat is gekoppeld aan het geselecteerde secundaire IP-adres. Zorg ervoor dat u de juiste DNS-IP-toewijzingen definieert. Zie laatste installatie kopie in de sectie configuratie van netwerken, bijvoorbeeld intranet.contoso.com > 13.77.148.215|
+ |Name | De hostnaam die u opgeeft, wordt omgezet in het open bare IP-adres dat is gekoppeld aan het geselecteerde secundaire IP-adres. Zorg ervoor dat u de juiste DNS-IP-toewijzingen definieert. Zie laatste installatie kopie in de sectie configuratie van netwerken, bijvoorbeeld intranet.contoso.com > 13.77.148.215|
  | TTL | 1 |
  |TTL-eenheden | Tijden |
 
@@ -250,7 +250,7 @@ Standaard zijn Azure VNets en gekoppelde subnetten particuliere netwerken die ge
  |Protocol| TCP |
  |Bewerking| Toestaan|
  |Prioriteit|De laagste beschik bare waarde tussen 100 en 4096|
- |Naam | Een beschrijvende naam, bijvoorbeeld: `BIG-IP-VM_Web_Services_80_443`|
+ |Name | Een beschrijvende naam, bijvoorbeeld: `BIG-IP-VM_Web_Services_80_443`|
 
 3. Selecteer **toevoegen** om de wijzigingen door te voeren en sluit het **netwerk** menu.
 
@@ -264,7 +264,7 @@ Een BIG-IP-systeem wordt beheerd via de web-gebruikers interface van de Webconfi
 
 - Van een VPN-client die is verbonden met het interne netwerk van een BIG-IP-VM
 
-- Gepubliceerd via [Azure AD-toepassingsproxy](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-add-on-premises-application)
+- Gepubliceerd via [Azure AD-toepassingsproxy](./application-proxy-add-on-premises-application.md)
 
 U moet de meest geschikte methode kiezen voordat u kunt door gaan met de resterende configuraties. Als dat nodig is, kunt u rechtstreeks verbinding maken met de Web-config door het primaire IP-adres van het BIG IP-adres te configureren met een openbaar IP. Voeg vervolgens een NSG-regel toe om het 8443-verkeer naar dat primaire IP toe te staan. Zorg ervoor dat u de bron beperkt tot uw eigen vertrouwde IP, anders kan iedereen verbinding maken.
 
@@ -276,7 +276,7 @@ Nadat u klaar bent, bevestigt u dat u verbinding kunt maken met de Web-config va
 
 Een BIG-IP-systeem kan ook worden beheerd via de onderliggende SSH-omgeving, die meestal wordt gebruikt voor opdracht regel taken en toegang op toegangs punt niveau. Er zijn verschillende opties voor het maken van verbinding met de CLI, waaronder:
 
-- [Azure Bastion-service](https://docs.microsoft.com/azure/bastion/bastion-overview): maakt snelle en veilige verbindingen mogelijk met elke virtuele machine binnen een vNET, vanaf elke locatie
+- [Azure Bastion-service](../../bastion/bastion-overview.md): maakt snelle en veilige verbindingen mogelijk met elke virtuele machine binnen een vNET, vanaf elke locatie
 
 - Rechtstreeks verbinding maken via een SSH-client zoals PuTTy via de JIT-benadering
 
@@ -423,7 +423,7 @@ Wanneer het BIG-IP-systeem nu volledig is ingericht, wordt u aangeraden een voll
 
 6. Sla het Archief voor gebruikers configuratie (UCS) lokaal op door de koppeling van de back-up te kiezen en **down load** te selecteren.
 
-Als optionele stap kunt u ook een back-up van de volledige systeem schijf maken met behulp van [Azure snap shots](https://docs.microsoft.com/azure/virtual-machines/windows/snapshot-copy-managed-disk), wat in tegens telling tot de back-up van de Webconfiguratie kan enige nood geval zijn voor het testen tussen TMOS-versies of het terugdraaien van een nieuw systeem.
+Als optionele stap kunt u ook een back-up van de volledige systeem schijf maken met behulp van [Azure snap shots](../../virtual-machines/windows/snapshot-copy-managed-disk.md), wat in tegens telling tot de back-up van de Webconfiguratie kan enige nood geval zijn voor het testen tussen TMOS-versies of het terugdraaien van een nieuw systeem.
 
 ```PowerShell
 # Install modules

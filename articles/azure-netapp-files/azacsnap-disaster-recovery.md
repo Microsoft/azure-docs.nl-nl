@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: c34ca08ae2ede9430804f6b8bb33f2bfcb0b39ab
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 70e1823b30814d7dc29fef69215fcb53a2a2ab96
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632689"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730867"
 ---
 # <a name="disaster-recovery-using-azure-application-consistent-snapshot-tool-preview"></a>Herstel na nood geval met Azure-toepassing consistent momentopname programma (preview-versie)
 
@@ -28,7 +28,7 @@ In dit artikel wordt uitgelegd hoe u herstel na nood gevallen uitvoert wanneer u
 > [!IMPORTANT]
 > Deze bewerking is alleen van toepassing op een **grote Azure-instantie** .
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Het platform voor grote exemplaren van Azure kan ook een nood herstel site hebben die is geconfigureerd voor het repliceren van moment opnamen van opslag volumes naar.  Als moment opnamen correct zijn geconfigureerd met een dergelijke installatie, is het mogelijk om op deze site een herstel na nood geval uit te voeren.  Dit document is bedoeld als richt lijn voor het uitvoeren van herstel na nood gevallen voor deze installatie.
 
@@ -40,7 +40,7 @@ Aan de volgende vereisten moet worden voldaan voordat u de failover voor herstel
 - U werkt met opslag replicatie. Het micro soft Operations-team voert de configuratie van de opslag replicatie uit op het moment dat de DR-inrichting automatisch wordt ingericht. U kunt de opslag replicatie bewaken met behulp van de opdracht `azacsnap -c details --details replication` op de Dr-site.
 - U hebt opslag momentopnamen ingesteld en geconfigureerd op de primaire locatie.
 - Er is een HANA-exemplaar geïnstalleerd op de DR-site voor de primaire met dezelfde SID als het primaire exemplaar.
-- U leest en begrijpt de procedure voor DR-failover beschreven in [SAP Hana large instances hoge Beschik baarheid en herstel na nood gevallen op Azure](/azure/virtual-machines/workloads/sap/hana-overview-high-availability-disaster-recovery#disaster-recovery-failover-procedure)
+- U leest en begrijpt de procedure voor DR-failover beschreven in [SAP Hana large instances hoge Beschik baarheid en herstel na nood gevallen op Azure](../virtual-machines/workloads/sap/hana-failover-procedure.md)
 - U hebt opslag momentopnamen ingesteld en geconfigureerd op de DR-locatie.
 - Er is een configuratie bestand (bijvoorbeeld `DR.json` ) gemaakt met de Dr-opslag volumes en de bijbehorende informatie op de Dr-server.
 - U hebt de stappen op de DR-site voltooid voor het volgende:

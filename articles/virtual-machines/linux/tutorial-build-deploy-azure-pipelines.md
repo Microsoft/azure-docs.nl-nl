@@ -11,12 +11,12 @@ ms.workload: infrastructure
 ms.date: 1/3/2020
 ms.author: ushan
 ms.custom: devops, devx-track-js
-ms.openlocfilehash: 3d26da693d83fd680c644849d581ea35ca7b49af
-ms.sourcegitcommit: 44844a49afe8ed824a6812346f5bad8bc5455030
-ms.translationtype: HT
+ms.openlocfilehash: 4ca431290fe168f8fc073908bb3735ecb5992562
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97739702"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731248"
 ---
 # <a name="tutorial-deploy-your-app-to-linux-virtual-machines-in-azure-using-azure-devops-services-and-azure-pipelines"></a>Zelfstudie: Uw app implementeren naar virtuele Linux-machines in Azure met behulp van Azure DevOps Services en Azure Pipelines
 
@@ -24,7 +24,7 @@ Continue integratie (CI) en continue implementatie (CD) vormen een pijplijn waar
 
 Azure Pipelines biedt een volledige set hulpprogramma's voor het automatiseren van CI/CD voor implementaties op virtuele machines, zowel on-premises als in een cloud.
 
-In deze zelfstudie configureert u een op YAML gebaseerde CI/CD-pijplijn om uw app te implementeren naar een [omgeving](/azure/devops/pipelines/process/environments?view=azure-devops) van Azure Pipelines met virtuele Linux-machines als resources, die allemaal fungeren als webservers om de app uit te voeren.
+In deze zelfstudie configureert u een op YAML gebaseerde CI/CD-pijplijn om uw app te implementeren naar een [omgeving](/azure/devops/pipelines/process/environments) van Azure Pipelines met virtuele Linux-machines als resources, die allemaal fungeren als webservers om de app uit te voeren.
 
 In deze zelfstudie leert u procedures om het volgende te doen:
 
@@ -41,7 +41,7 @@ In deze zelfstudie leert u procedures om het volgende te doen:
   U kunt een [gratis Azure DevOps Services-organisatie](https://go.microsoft.com/fwlink/?LinkId=307137&clcid=0x409&wt.mc_id=o~msft~vscom~home-vsts-hero~27308&campaign=o~msft~vscom~home-vsts-hero~27308) krijgen.
 
   > [!NOTE]
-  > Zie [Verbinding maken met Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects?view=vsts) voor meer informatie.
+  > Zie [Verbinding maken met Azure DevOps Services](/azure/devops/organizations/projects/connect-to-projects) voor meer informatie.
 
 *  U hebt een virtuele Linux-machine nodig voor een implementatiedoel.  Zie [Virtuele Linux-machines maken en beheren met de Azure CLI](./tutorial-manage-vm.md) voor meer informatie.
 
@@ -222,7 +222,7 @@ Volg de stappen in [Node.js-app bouwen met gulp](/azure/devops/pipelines/ecosyst
        tags: web
    ```
 2. U kunt specifieke sets virtuele machines selecteren in de omgeving voor de implementatie door de **tags** op te geven die u hebt gedefinieerd voor elke virtuele machine in de omgeving.
-[Hier](/azure/devops/pipelines/yaml-schema?view=azure-devops&tabs=schema#deployment-job) vindt u het volledige YAML-schema voor de implementatietaak.
+[Hier](/azure/devops/pipelines/yaml-schema?tabs=schema#deployment-job) vindt u het volledige YAML-schema voor de implementatietaak.
 
 3. U kunt `runOnce` of `rolling` opgeven als implementatiestrategie. 
 

@@ -14,18 +14,18 @@ ms.devlang: na
 ms.topic: reference
 ms.date: 12/14/2020
 ms.author: phjensen
-ms.openlocfilehash: 1051859d514c77bad1aa5f14becc2218a923df44
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 17c29fdf88495f6ecc40963eda08858887173fd1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97632767"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730935"
 ---
 # <a name="back-up-using-azure-application-consistent-snapshot-tool-preview"></a>Back-up maken met Azure-toepassing consistent snap shot tool (preview)
 
 Dit artikel bevat een hand leiding voor het uitvoeren van de back-upopdracht van het hulp programma Azure-toepassing consistente moment opname dat u kunt gebruiken met Azure NetApp Files.
 
-## <a name="introduction"></a>Inleiding
+## <a name="introduction"></a>Introductie
 
 Een back-up op basis van een opslag momentopname wordt uitgevoerd met de `azacsnap -c backup` opdracht.  Met deze opdracht wordt de indeling van een consistente opslag momentopname van een Data Base op de gegevens volumes en een opslag momentopname (zonder database consistentie-instelling) op de andere volumes uitgevoerd.  
 
@@ -143,7 +143,7 @@ De naam van het *logboek bestand* in dit voor beeld is `azacsnap-backup-bootVol.
 > De naam van het logboek bestand bestaat uit de "(opdracht naam-(de `-c` optie)-(de naam van het configuratie bestand)".  Als u bijvoorbeeld de `-c backup` optie met de naam van het logboek bestand van gebruikt `h80.json` , wordt het logboek bestand aangeroepen `azacsnap-backup-h80.log` .  Of als u de `-c test` optie met hetzelfde configuratie bestand gebruikt, wordt het logboek bestand aangeroepen `azacsnap-test-h80.log` .
 
 - HANA grote instantie type: er zijn twee geldige waarden met `TYPEI` of `TYPEII` afhankelijk van de Hana-eenheid voor grote exemplaren.
-- Bekijk [beschik bare sku's voor Hana grote instanties](/azure/virtual-machines/workloads/sap/hana-available-skus) om de beschik bare sku's te bevestigen.
+- Bekijk [beschik bare sku's voor Hana grote instanties](../virtual-machines/workloads/sap/hana-available-skus.md) om de beschik bare sku's te bevestigen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

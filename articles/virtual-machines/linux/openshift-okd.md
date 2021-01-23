@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.workload: infrastructure
 ms.date: 10/15/2019
 ms.author: haroldw
-ms.openlocfilehash: ed74d0829a8372ea8391fcd331eef2ef3af3dae0
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: d0a10c6c700f11e540dc7edaa27baee35396d814
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704908"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732391"
 ---
 # <a name="deploy-okd-in-azure"></a>OKD implementeren in azure
 
@@ -119,7 +119,7 @@ Verschillende releases hebben mogelijk verschillende para meters. Controleer de 
 
 
 > [!NOTE] 
-> Voor de volgende opdracht is Azure CLI 2.0.8 of hoger vereist. U kunt de CLI-versie controleren met de `az --version` opdracht. Zie [Azure cli installeren](/cli/azure/install-azure-cli?view=azure-cli-latest)voor informatie over het bijwerken van de CLI-versie.
+> Voor de volgende opdracht is Azure CLI 2.0.8 of hoger vereist. U kunt de CLI-versie controleren met de `az --version` opdracht. Zie [Azure cli installeren](/cli/azure/install-azure-cli)voor informatie over het bijwerken van de CLI-versie.
 
 In het volgende voor beeld worden het OKD-cluster en alle gerelateerde resources geïmplementeerd in een resource groep met de naam openshiftrg, met een implementatie naam van myOpenShiftCluster. Er wordt rechtstreeks vanuit de GitHub-opslag plaats naar de sjabloon verwezen tijdens het gebruik van een lokaal parameter bestand met de naam azuredeploy.parameters.jsop.
 

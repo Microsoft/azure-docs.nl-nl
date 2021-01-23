@@ -1,26 +1,27 @@
 ---
-title: Aan de slag met Azure Cloud Services en ASP.NET | Microsoft Docs
+title: Aan de slag met Azure Cloud Services (klassiek) en ASP.NET | Microsoft Docs
 description: Informatie over het maken van een app met meerdere lagen met ASP.NET MVC en Azure. De app wordt uitgevoerd in een cloudservice, met een webrol en een werkrol. De app maakt gebruik van Entity Framework, SQL Database, en wachtrijen en blobs van Azure Storage.
-services: cloud-services, storage
-documentationcenter: .net
-author: tgore03
-manager: carmonm
+ms.topic: article
 ms.service: cloud-services
-ms.devlang: dotnet
-ms.custom: devx-track-csharp
-ms.topic: conceptual
-ms.date: 05/15/2017
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: a875c036c79419357f1134c32f62fdb060fec7c6
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: ae7fd5a7c9bc858cb18473374e7bd5589717eac6
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562290"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742077"
 ---
-# <a name="get-started-with-azure-cloud-services-and-aspnet"></a>Aan de slag met Azure Cloud Services en ASP.NET
+# <a name="get-started-with-azure-cloud-services-classic-and-aspnet"></a>Aan de slag met Azure Cloud Services (klassiek) en ASP.NET
 
 ## <a name="overview"></a>Overzicht
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Deze zelfstudie laat zien hoe u een .NET-toepassing met meerdere lagen maakt met een ASP.NET MVC-front-end en deze implementeert in een [Azure-cloudservice](cloud-services-choose-me.md). De toepassing gebruikt [Azure SQL Database](/previous-versions/azure/ee336279(v=azure.100)), de [Azure Blob-service](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage) en de [Azure Queue-service](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern). U kunt [het Visual Studio-project downloaden uit de ](https://code.msdn.microsoft.com/Simple-Azure-Cloud-Service-e01df2e4) uit de MSDN-codegalerie.
 
 In de zelfstudie leert u hoe u de toepassing lokaal maakt en uitvoert, hoe u deze in Azure implementeert en uitvoert in de cloud, en hoe u deze van het begin af aan bouwt. Desgewenst kunt u de toepassing eerst van het begin af aan bouwen en vervolgens later de test doen en stappen implementeren.
@@ -28,7 +29,7 @@ In de zelfstudie leert u hoe u de toepassing lokaal maakt en uitvoert, hoe u dez
 ## <a name="contoso-ads-application"></a>Toepassing Contoso Ads
 De toepassing is een bulletinboard voor advertenties. Gebruikers maken een advertentie door de tekst in te voeren en een afbeelding te uploaden. Ze kunnen een lijst met advertenties bekijken met miniatuurafbeeldingen. Als ze een advertentie selecteren om de details te bekijken, kunnen ze de afbeelding op volledige grootte weergeven.
 
-![Advertentielijst](./media/cloud-services-dotnet-get-started/list.png)
+![Afbeelding toont AD List](./media/cloud-services-dotnet-get-started/list.png)
 
 De toepassing maakt gebruik van het [wachtrijgerichte werkpatroon](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/queue-centric-work-pattern) om de CPU te ontlasten bij het maken van miniatuurweergaven voor een back-endproces (een CPU-intensieve bewerking).
 
@@ -60,7 +61,7 @@ Als u deze niet hebt, wordt Visual Studio mogelijk automatisch geïnstalleerd wa
 ## <a name="application-architecture"></a>Toepassingsarchitectuur
 De app slaat de advertenties met behulp van Entity Framework Code First op in een SQL-database om de tabellen te maken en toegang te krijgen tot de gegevens. Voor elke advertentie slaat de database twee URL's op: één voor de afbeelding op volledige grootte en één voor de miniatuur.
 
-![Advertentietabel](./media/cloud-services-dotnet-get-started/adtable.png)
+![Dit is een afbeelding van een AD-tabel](./media/cloud-services-dotnet-get-started/adtable.png)
 
 Wanneer een gebruiker een afbeelding uploadt, slaat de front-end (die wordt uitgevoerd in een webrol) de afbeelding op in een [Azure-blob](https://www.asp.net/aspnet/overview/developing-apps-with-windows-azure/building-real-world-cloud-apps-with-windows-azure/unstructured-blob-storage). De advertentiegegevens worden opgeslagen in de database, samen met een URL die naar de blob verwijst. Tegelijkertijd schrijft de front-end een bericht naar een Azure-wachtrij. Een back-end-proces dat wordt uitgevoerd in een werkrol, peilt de wachtrij periodiek op nieuwe berichten. Wanneer er een nieuw bericht binnenkomt, maakt de werkrol een miniatuur voor de betreffende afbeelding en werkt deze het databaseveld met de miniatuur-URL voor de advertentie bij. Het volgende diagram toont de wisselwerking tussen de onderdelen van de toepassing.
 
@@ -83,11 +84,11 @@ Wanneer een gebruiker een afbeelding uploadt, slaat de front-end (die wordt uitg
 
     De eerste keer dat u een cloudserviceproject uitvoert, duurt het ongeveer een minuut voordat de emulator opstart. Nadat de emulator is opgestart, wordt de standaardbrowser geopend met de startpagina van de toepassing.
 
-    ![Architectuur van Contoso Ads](./media/cloud-services-dotnet-get-started/home.png)
+    ![Contoso Ads-architectuur 1](./media/cloud-services-dotnet-get-started/home.png)
 8. Klik op **Create an Ad**.
 9. Voer enkele testgegevens in en selecteer een *.jpg*-afbeelding om te uploaden. Klik vervolgens op **Create**.
 
-    ![De pagina Create](./media/cloud-services-dotnet-get-started/create.png)
+    ![Afbeelding toont pagina maken](./media/cloud-services-dotnet-get-started/create.png)
 
     De app gaat naar de indexpagina, maar geeft voor de nieuwe advertentie geen miniatuur weer omdat de betreffende bewerking nog niet heeft plaatsgevonden.
 10. Wacht even en vernieuw vervolgens de indexpagina om de miniatuur te zien.
@@ -129,7 +130,7 @@ Een Azure-cloudservice is de omgeving waarin de toepassing wordt uitgevoerd.
 
     Op de volgende afbeelding ziet u een cloudservice met de URL CSvccontosoads.cloudapp.net.
 
-    ![Nieuwe cloudservice](./media/cloud-services-dotnet-get-started/newcs.png)
+    ![Afbeelding toont nieuwe Cloud service](./media/cloud-services-dotnet-get-started/newcs.png)
 
 ### <a name="create-a-database-in-azure-sql-database"></a>Een database maken in Azure SQL Database
 Wanneer de app wordt uitgevoerd in de cloud, gebruikt deze een cloudgebaseerde database.
@@ -230,7 +231,7 @@ Azure-opslagaccountverbindingsreeksen voor het webrolroject en het werkrolprojec
 
 1. Klik in **Solution Explorer** met de rechtermuisknop op **ContosoAdsWeb** (onder **Roles** in het **ContosoAdsCloudService**-project) en klik vervolgens op **Properties**.
 
-    ![Roleigenschappen](./media/cloud-services-dotnet-get-started/roleproperties.png)
+    ![Afbeelding van eigenschappen van rollen weer geven](./media/cloud-services-dotnet-get-started/roleproperties.png)
 2. Klik op het tabblad **instellingen** . Kies **Cloud** in de vervolg keuzelijst **Service configuratie** .
 
     ![Cloudconfiguratie](./media/cloud-services-dotnet-get-started/sccloud.png)
@@ -378,7 +379,8 @@ In deze sectie configureert u Azure Storage- en SQL-verbindingsreeksen om lokaal
 2. Sla uw wijzigingen op.
 3. Klik in het project ContosoAdsCloudService met de rechtermuisknop op ContosoAdsWeb (onder **Roles**) en klik vervolgens op **Properties**.
 
-    ![Scherm opname van de menu optie Eigenschappen onder rollen.](./media/cloud-services-dotnet-get-started/roleproperties.png)
+    ![Afbeelding van eigenschappen van rol](./media/cloud-services-dotnet-get-started/roleproperties.png)
+
 4. Klik in het eigenschappenvenster van **ContosoAdsCommon [rol]** op het tabblad **Settings** en vervolgens op **Add Setting**.
 
     Laat **Service Configuration** ingesteld op **All Configurations**.

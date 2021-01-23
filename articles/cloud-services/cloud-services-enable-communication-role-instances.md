@@ -1,23 +1,26 @@
 ---
-title: Communicatie voor rollen in Cloud Services | Microsoft Docs
+title: Communicatie voor rollen in Cloud Services (klassiek) | Microsoft Docs
 description: Voor rolinstanties in Cloud Services kunnen eind punten (http, HTTPS, TCP, UDP) worden gedefinieerd die communiceren met de buiten-of andere rolinstanties.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-manager: carmonm
-ms.service: cloud-services
 ms.topic: article
-ms.date: 12/14/2016
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 094e08becf4f3a60c98d89bfae7e7c3a69b677f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 82aa1579a1f7feb36732153341e1eacf266a7218
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75386337"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743029"
 ---
-# <a name="enable-communication-for-role-instances-in-azure"></a>Communicatie inschakelen voor rolinstanties in azure
-Cloud service rollen communiceren via interne en externe verbindingen. Externe verbindingen worden **invoer eindpunten** genoemd terwijl interne verbindingen **interne eind punten**worden genoemd. In dit onderwerp wordt beschreven hoe u de [service definitie](cloud-services-model-and-package.md#csdef) wijzigt om eind punten te maken.
+# <a name="enable-communication-for-role-instances-in-azure-cloud-services-classic"></a>Communicatie inschakelen voor rolinstanties in azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
+Cloud service rollen communiceren via interne en externe verbindingen. Externe verbindingen worden **invoer eindpunten** genoemd terwijl interne verbindingen **interne eind punten** worden genoemd. In dit onderwerp wordt beschreven hoe u de [service definitie](cloud-services-model-and-package.md#csdef) wijzigt om eind punten te maken.
 
 ## <a name="input-endpoint"></a>Invoer eindpunt
 Het invoer eindpunt wordt gebruikt wanneer u een poort aan de buiten kant beschikbaar wilt stellen. U geeft het protocol type en de poort van het eind punt op die vervolgens worden toegepast voor de externe en interne poorten voor het eind punt. Als u wilt, kunt u een andere interne poort voor het eind punt opgeven met het kenmerk [localPort](/previous-versions/azure/reference/gg557552(v=azure.100)#inputendpoint) .
@@ -106,7 +109,7 @@ De eigenschap **instances** retourneert een verzameling **RoleInstance** -object
 > 
 > 
 
-Om het poort nummer voor een intern eind punt op een rolinstantie te bepalen, kunt u de eigenschap [InstanceEndpoints](/previous-versions/azure/reference/ee741917(v=azure.100)) gebruiken om een Dictionary-object te retour neren dat de namen van het eind punt en de bijbehorende IP-adressen en poorten bevat. De eigenschap [IPEndpoint](/previous-versions/azure/reference/ee741919(v=azure.100)) retourneert het IP-adres en de poort voor een opgegeven eind punt. De eigenschap **PublicIPEndpoint** retourneert de poort voor een eind punt met gelijke taak verdeling. Het IP-adres gedeelte van de eigenschap **PublicIPEndpoint** wordt niet gebruikt.
+Om het poort nummer voor een intern eind punt op een rolinstantie te bepalen, kunt u de [`InstanceEndpoints`](/previous-versions/azure/reference/ee741917(v=azure.100)) eigenschap gebruiken om een Dictionary-object te retour neren met de namen van eind punten en de bijbehorende IP-adressen en poorten. De [`IPEndpoint`](/previous-versions/azure/reference/ee741919(v=azure.100)) eigenschap retourneert het IP-adres en de poort voor een opgegeven eind punt. De `PublicIPEndpoint` eigenschap retourneert de poort voor een eind punt met gelijke taak verdeling. Het IP-adres gedeelte van de `PublicIPEndpoint` eigenschap wordt niet gebruikt.
 
 Hier volgt een voor beeld waarin rolinstanties worden herhaald.
 
@@ -294,7 +297,7 @@ Hiermee wordt alleen netwerk verkeer van **WebRole1** naar **WorkerRole1** en **
 ```
 
 ### <a name="scenario-3"></a>Scenario 3
-Hiermee wordt alleen netwerk verkeer van **WebRole1** naar **WorkerRole1**en **WorkerRole1** naar **WorkerRole2**.
+Hiermee wordt alleen netwerk verkeer van **WebRole1** naar **WorkerRole1** en **WorkerRole1** naar **WorkerRole2**.
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">
@@ -323,7 +326,7 @@ Hiermee wordt alleen netwerk verkeer van **WebRole1** naar **WorkerRole1**en **W
 ```
 
 ### <a name="scenario-4"></a>Scenario 4
-Hiermee wordt alleen netwerk verkeer van **WebRole1** naar **WorkerRole1**, **WebRole1** tot **WorkerRole2**en **WorkerRole1** naar **WorkerRole2**toegestaan.
+Hiermee wordt alleen netwerk verkeer van **WebRole1** naar **WorkerRole1**, **WebRole1** tot **WorkerRole2** en **WorkerRole1** naar **WorkerRole2** toegestaan.
 
 ```xml
 <ServiceDefinition name="MyService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition">

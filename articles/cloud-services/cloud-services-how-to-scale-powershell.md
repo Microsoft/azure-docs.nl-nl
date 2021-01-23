@@ -1,21 +1,24 @@
 ---
-title: Een Azure-Cloud service schalen in Windows Power shell | Microsoft Docs
+title: Een Azure-Cloud service (klassiek) schalen in Windows Power shell | Microsoft Docs
 description: klassieke Meer informatie over het gebruik van Power shell om een webrole of worker-rol in of uit te schalen in Azure.
-services: cloud-services
-author: mmccrory
-ms.service: cloud-services
 ms.topic: article
-ms.date: 12/01/2016
-ms.author: memccror
-ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: c2cec08d86760694ec3c41a98af62c6b86e0a4c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: a090da1933b0fcd6edb5b2415c773f9efcb27387
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89071088"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743301"
 ---
-# <a name="how-to-scale-a-cloud-service-in-powershell"></a>Een Cloud service schalen in Power shell
+# <a name="how-to-scale-an-azure-cloud-service-classic-in-powershell"></a>Een Azure-Cloud service (klassiek) schalen in Power shell
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 U kunt Windows Power shell gebruiken om een webrol of werk rollen in of uit te schalen door instanties toe te voegen of te verwijderen.  
 

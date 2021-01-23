@@ -6,12 +6,12 @@ ms.topic: how-to
 ms.date: 11/10/2020
 ms.author: helohr
 manager: lizross
-ms.openlocfilehash: 85026092e513ecc9ec3c23e292a416297774a2e4
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 052d11fe0125de7970fb7d02931edfc7f3c2e4d9
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98217835"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743114"
 ---
 # <a name="use-microsoft-teams-on-windows-virtual-desktop"></a>Micro soft teams gebruiken op het virtuele bureau blad van Windows
 
@@ -146,6 +146,7 @@ Het gebruik van teams in een gevirtualiseerde omgeving verschilt van het gebruik
 - Teams op Windows virtueel bureau blad bieden alleen ondersteuning voor één binnenkomende video-invoer per keer. Dit betekent dat wanneer iemand het scherm probeert te delen, het scherm wordt weer gegeven in plaats van het scherm van de Voorzitter van de vergadering.
 - Vanwege WebRTC-beperkingen is de omzetting van inkomende en uitgaande video stromen beperkt tot 720p.
 - De app teams ondersteunt geen HID-knoppen of LED-besturings elementen met andere apparaten.
+- Nieuwe Vergader ervaring (NME) wordt momenteel niet ondersteund in VDI-omgevingen.
 
 Voor teams bekende problemen die niet zijn gerelateerd aan gevirtualiseerde omgevingen raadpleegt [u ondersteunings teams in uw organisatie](/microsoftteams/known-issues)
 

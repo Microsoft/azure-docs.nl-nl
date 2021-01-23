@@ -1,14 +1,14 @@
 ---
 title: Regel voor Azure Service Bus abonnement de SQL-actie syntaxis | Microsoft Docs
-description: Dit artikel bevat een verwijzing voor de syntaxis van de SQL-regel actie. De acties worden geschreven in de syntaxis op basis van SQL-taal die wordt uitgevoerd op een bericht.
+description: Dit artikel bevat een verwijzing voor de syntaxis van de SQL-regel actie. De acties worden geschreven in de op SQL-taal gebaseerde syntaxis die wordt uitgevoerd op een bericht.
 ms.topic: article
 ms.date: 11/24/2020
-ms.openlocfilehash: 606281d42d5598d7f73312990d3a19775a202c08
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: f7b8cdfcccc22508b98a42391d2a0ef9955232d0
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632808"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742676"
 ---
 # <a name="subscription-rule-sql-action-syntax"></a>Syntaxis van SQL-actie voor abonnements regel
 
@@ -146,9 +146,9 @@ Er is een fout opgetreden bij een poging toegang te krijgen tot een niet-bestaan
     2  
     ```  
   
--   `<decimal_constant>` is een teken reeks die niet tussen aanhalings tekens staat en een decimaal teken bevat. De waarden worden intern opgeslagen `System.Double` en volgen hetzelfde bereik/dezelfde precisie.  
+-   `<decimal_constant>` is een teken reeks met getallen die niet tussen aanhalings tekens staan en die een decimaal teken bevatten. De waarden worden intern opgeslagen `System.Double` en volgen hetzelfde bereik/dezelfde precisie.  
   
-     In een toekomstige versie kan dit nummer worden opgeslagen in een ander gegevens type ter ondersteuning van nauw keurige semantiek, dus moet u niet vertrouwen op het feit dat het onderliggende gegevens type `System.Double` voor is `<decimal_constant>` .  
+     In een toekomstige versie kan dit nummer worden opgeslagen in een ander gegevens type ter ondersteuning van nauw keurige semantiek, zodat u niet hoeft te vertrouwen op het feit dat het onderliggende gegevens type `System.Double` voor is `<decimal_constant>` .  
   
      Hier volgen enkele voor beelden van decimale constanten:  
   
@@ -195,9 +195,11 @@ Teken reeks constanten worden tussen enkele aanhalings tekens geplaatst en bevat
   
 ### <a name="remarks"></a>Opmerkingen  
 
-De `newid()` functie retourneert een **System. GUID** die is gegenereerd door de- `System.Guid.NewGuid()` methode.  
+De `newid()` functie retourneert een `System.Guid` gegenereerd door de- `System.Guid.NewGuid()` methode.  
   
 De `property(name)` functie retourneert de waarde van de eigenschap waarnaar wordt verwezen door `name` . De `name` waarde kan een geldige expressie zijn die een teken reeks waarde retourneert.  
+
+[!INCLUDE [service-bus-filter-examples](../../includes/service-bus-filter-examples.md)]
   
 ## <a name="considerations"></a>Overwegingen
 
@@ -205,7 +207,7 @@ De `property(name)` functie retourneert de waarde van de eigenschap waarnaar wor
 - VERWIJDEREN wordt gebruikt om een eigenschap te verwijderen.
 - SET voert impliciete omzetting uit indien mogelijk wanneer het expressie type en het bestaande eigenschaps type verschillend zijn.
 - De actie mislukt als er naar niet-bestaande systeem eigenschappen wordt verwezen.
-- De actie mislukt als er niet-bestaande gebruikers eigenschappen naar worden verwezen.
+- De actie mislukt als er naar niet-bestaande gebruikers eigenschappen wordt verwezen.
 - Een niet-bestaande gebruikers eigenschap wordt intern geëvalueerd als ' onbekend ', volgens dezelfde semantiek als [SQLFilter](/dotnet/api/microsoft.servicebus.messaging.sqlfilter) bij het evalueren van Opera tors.
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -214,5 +216,5 @@ De `property(name)` functie retourneert de waarde van de eigenschap waarnaar wor
 - [SQLRuleAction-klasse (.NET Standard)](/dotnet/api/microsoft.azure.servicebus.sqlruleaction)
 - [SqlRuleAction-klasse (Java)](/java/api/com.microsoft.azure.servicebus.rules.sqlruleaction)
 - [SqlRuleAction (Java script)](/javascript/api/@azure/service-bus/sqlruleaction)
-- [regel voor het abonnement AZ servicebus topic](/cli/azure/servicebus/topic/subscription/rule)
+- [`az servicebus topic subscription rule`](/cli/azure/servicebus/topic/subscription/rule)
 - [New-AzServiceBusRule](/powershell/module/az.servicebus/new-azservicebusrule)

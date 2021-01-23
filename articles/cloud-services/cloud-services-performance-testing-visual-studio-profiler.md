@@ -1,27 +1,25 @@
 ---
-title: Een Cloud service lokaal profileren in de compute-emulator | Microsoft Docs
-services: cloud-services
+title: Een Cloud service (klassiek) lokaal in de compute-emulator profileren | Microsoft Docs
 description: Prestatie problemen in Cloud Services onderzoeken met de Visual Studio Profiler
-documentationcenter: ''
-author: mikejo
-manager: jillfra
-editor: ''
-tags: ''
-ms.assetid: 25e40bf3-eea0-4b0b-9f4a-91ffe797f6c3
-ms.service: cloud-services
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 11/18/2016
-ms.author: mikejo
-ms.openlocfilehash: 6b5707405879c462a1d919e04730d368332ba68c
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 2f924d84967c1a1928a47b59fd3a8c28da091130
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077152"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743556"
 ---
-# <a name="testing-the-performance-of-a-cloud-service-locally-in-the-azure-compute-emulator-using-the-visual-studio-profiler"></a>De prestaties van een Cloud service lokaal in de Azure Compute-emulator testen met behulp van de Visual Studio Profiler
+# <a name="testing-the-performance-of-a-cloud-service-classic-locally-in-the-azure-compute-emulator-using-the-visual-studio-profiler"></a>De prestaties van een Cloud service (klassiek) lokaal in de Azure Compute-emulator testen met behulp van de Visual Studio Profiler
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Er zijn verschillende hulpprogram ma's en technieken beschikbaar voor het testen van de prestaties van Cloud Services.
 Wanneer u een Cloud service naar Azure publiceert, kunt u met Visual Studio profilerings gegevens verzamelen en deze lokaal analyseren, zoals beschreven in [profileren van een Azure-toepassing][1].
 U kunt ook diagnostische gegevens gebruiken voor het bijhouden van verschillende prestatie meter items, zoals beschreven in [prestatie meter items gebruiken in azure][2].
@@ -30,11 +28,11 @@ Mogelijk wilt u uw toepassing ook lokaal in de compute-emulator gebruiken voorda
 Dit artikel heeft betrekking op de CPU-steekproef methode voor profile ring, die lokaal kan worden uitgevoerd in de emulator. CPU-steek proeven zijn een manier om een profileren te doen die niet zeer opvallend is. Bij een aangewezen steekproef interval maakt de Profiler een moment opname van de aanroep stack. De gegevens worden verzameld over een bepaalde tijd en weer gegeven in een rapport. Deze methode van profile ring geeft aan waar in een reken kundige, intensieve toepassing het meren deel van het CPU-werk wordt uitgevoerd.  Zo kunt u zich richten op het ' warme pad ' waar uw toepassing de meeste tijd in de praktijk brengt.
 
 ## <a name="1-configure-visual-studio-for-profiling"></a>1: Visual Studio configureren voor profile ring
-Eerst zijn er enkele opties voor Visual Studio-configuratie die handig kunnen zijn bij het profileren van een profiel. Om inzicht te hebben in de profilerings rapporten, hebt u symbolen (. PDB-bestanden) nodig voor uw toepassing en ook symbolen voor systeem bibliotheken. U wilt er zeker van zijn dat u naar de beschik bare symbool servers verwijst. U doet dit door in het menu **extra** in Visual Studio **Opties**te kiezen en vervolgens **fout opsporing**en **symbolen**te kiezen. Zorg ervoor dat de micro soft-symbool servers worden weer gegeven onder **symbool bestand (. pdb)-locaties**.  U kunt ook verwijzen naar https://referencesource.microsoft.com/symbols , die mogelijk aanvullende symbool bestanden bevat.
+Eerst zijn er enkele opties voor Visual Studio-configuratie die handig kunnen zijn bij het profileren van een profiel. Om inzicht te hebben in de profilerings rapporten, hebt u symbolen (. PDB-bestanden) nodig voor uw toepassing en ook symbolen voor systeem bibliotheken. U wilt er zeker van zijn dat u naar de beschik bare symbool servers verwijst. U doet dit door in het menu **extra** in Visual Studio **Opties** te kiezen en vervolgens **fout opsporing** en **symbolen** te kiezen. Zorg ervoor dat de micro soft-symbool servers worden weer gegeven onder **symbool bestand (. pdb)-locaties**.  U kunt ook verwijzen naar https://referencesource.microsoft.com/symbols , die mogelijk aanvullende symbool bestanden bevat.
 
 ![Symbool opties][4]
 
-Desgewenst kunt u de rapporten die door de Profiler worden gegenereerd, vereenvoudigen door Just My Code in te stellen. Als Just My Code is ingeschakeld, worden aanroep stacks van functies vereenvoudigd, zodat ze volledig intern aan bibliotheken aanroepen en de .NET Framework in de rapporten worden verborgen. Kies **Opties**in het menu **extra** . Vouw vervolgens het knoop punt **prestatie hulpprogramma's** uit en kies **Algemeen**. Schakel het selectie vakje in voor het **inschakelen van Just my code voor Profiler rapporten**.
+Desgewenst kunt u de rapporten die door de Profiler worden gegenereerd, vereenvoudigen door Just My Code in te stellen. Als Just My Code is ingeschakeld, worden aanroep stacks van functies vereenvoudigd, zodat ze volledig intern aan bibliotheken aanroepen en de .NET Framework in de rapporten worden verborgen. Kies **Opties** in het menu **extra** . Vouw vervolgens het knoop punt **prestatie hulpprogramma's** uit en kies **Algemeen**. Schakel het selectie vakje in voor het **inschakelen van Just my code voor Profiler rapporten**.
 
 ![Just My Code opties][17]
 
@@ -145,7 +143,7 @@ public static string Concatenate(int number)
 }
 ```
 
-Voer een andere prestaties uit en vergelijkt de prestaties. Als de uitvoeringen zich in dezelfde sessie in de performance Explorer bevinden, kunt u beide rapporten selecteren, het snelmenu openen en **prestatie rapporten vergelijken**kiezen. Als u wilt vergelijken met een uitvoering in een andere prestatie sessie, opent u het menu **analyseren** en kiest u **prestatie rapporten vergelijken**. Geef beide bestanden op in het dialoog venster dat wordt weer gegeven.
+Voer een andere prestaties uit en vergelijkt de prestaties. Als de uitvoeringen zich in dezelfde sessie in de performance Explorer bevinden, kunt u beide rapporten selecteren, het snelmenu openen en **prestatie rapporten vergelijken** kiezen. Als u wilt vergelijken met een uitvoering in een andere prestatie sessie, opent u het menu **analyseren** en kiest u **prestatie rapporten vergelijken**. Geef beide bestanden op in het dialoog venster dat wordt weer gegeven.
 
 ![De optie prestatie rapporten vergelijken][15]
 
@@ -153,7 +151,7 @@ De rapporten markeren de verschillen tussen de twee uitvoeringen.
 
 ![Vergelijkend rapport][16]
 
-Gefeliciteerd! U bent klaar met de Profiler.
+Gefeliciteerd U bent klaar met de Profiler.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 * Zorg ervoor dat u een release-build profileert en start zonder fouten opsporen.

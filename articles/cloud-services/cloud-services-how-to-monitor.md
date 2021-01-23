@@ -1,21 +1,24 @@
 ---
-title: Een Azure-Cloud service bewaken | Microsoft Docs
+title: Een Azure-Cloud service (klassiek) bewaken | Microsoft Docs
 description: Hierin wordt beschreven welke bewaking een Azure-Cloud service omvat en wat uw opties zijn.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 01/29/2018
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 61c794ba03934ae1828ba310f3f776bfb61b652b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 60f320f86860cca482cdf25c7d93f84dae8c4e5f
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85847240"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743369"
 ---
-# <a name="introduction-to-cloud-service-monitoring"></a>Inleiding tot Cloud service monitoring
+# <a name="introduction-to-cloud-service-classic-monitoring"></a>Inleiding tot de bewaking van Cloud service (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 U kunt belang rijke prestatie gegevens voor elke Cloud service bewaken. Elke Cloud service functie verzamelt minimale gegevens: CPU-gebruik, netwerk gebruik en schijf gebruik. Als de Cloud service de `Microsoft.Azure.Diagnostics` uitbrei ding op een rol heeft toegepast, kan die rol aanvullende gegevens punten verzamelen. Dit artikel bevat een inleiding tot Azure Diagnostics voor Cloud Services.
 

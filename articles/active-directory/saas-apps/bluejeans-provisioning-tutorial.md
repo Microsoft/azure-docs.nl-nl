@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 03/27/2019
 ms.author: jeedes
-ms.openlocfilehash: 204cdc689d5a117df428bb314a81a35081f7b13c
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
-ms.translationtype: HT
+ms.openlocfilehash: 8e155a253910cc5ee3f4fc71cf9ea66ced5cb46f
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94357637"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742111"
 ---
 # <a name="tutorial-configure-bluejeans-for-automatic-user-provisioning"></a>Zelfstudie: BlueJeans configureren voor automatische gebruikersinrichting
 
@@ -50,7 +50,7 @@ Voordat u BlueJeans configureert voor het automatisch inrichten van gebruikers m
 
     ![De blade Bedrijfstoepassingen](common/enterprise-applications.png)
 
-3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** boven in het deelvenster.
+3. Als u een nieuwe toepassing wilt toevoegen, selecteert u de knop **Nieuwe toepassing** bovenin het deelvenster.
 
     ![De knop Nieuwe toepassing](common/add-new-app.png)
 
@@ -91,49 +91,51 @@ In deze sectie wordt u begeleid bij de stappen voor het configureren van de Azur
 
 3. Selecteer het tabblad **Inrichten**.
 
-    ![Schermopname van de zijbalk van de bedrijfstoepassing BlueJeans met de optie Inrichten gemarkeerd.](./media/bluejeans-provisioning-tutorial/BluejeansProvisioningTab.png)
+    ![Tabblad Inrichting](common/provisioning.png)
 
 4. Stel de **Inrichtingsmodus** in op **Automatisch**.
 
-    ![Schermopname van de pagina Inrichten met de secties Inrichtingsmodus en Referenties voor beheerder gemarkeerd.](./media/bluejeans-provisioning-tutorial/Bluejeans1.png)
+    ![De inrichtingsmodus ingesteld op Automatisch](common/provisioning-automatic.png)
 
-5. Voer in de sectie **Referenties voor beheerder** de **gebruikersnaam** en het **wachtwoord** van de beheerder van uw BlueJeans-account in. Voorbeelden van deze waarden zijn:
+5. Geef in het gedeelte **beheerders referenties** de BlueJeans-TENANT-URL en het geheime token op. Klik op **verbinding testen** om te controleren of Azure AD verbinding kan maken met BlueJeans. Als de verbinding mislukt, moet u controleren of uw BlueJeans-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
 
-   * Vul in het vak **Gebruikersnaam van de beheerder** de gebruikersnaam van het beheerdersaccount in op uw BlueJeans-tenant. Bijvoorbeeld: admin@contoso.com.
+    ![Token](common/provisioning-testconnection-tenanturltoken.png)
 
-   * Vul in het veld **Beheerderswachtwoord** het wachtwoord in dat overeenkomt met de gebruikersnaam van de beheerder.
 
-6. Klik bij het invullen van de velden die worden weergegeven in stap 5 op **Verbinding testen** om ervoor te zorgen dat Azure AD verbinding kan maken met BlueJeans. Als de verbinding mislukt, moet u controleren of uw BlueJeans-account beheerdersmachtigingen heeft. Probeer het daarna opnieuw.
+6. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en vink het vakje **Een e-mailmelding verzenden als een fout optreedt** aan.
 
-    ![Schermopname van de sectie Referenties voor beheerder met de optie Verbinding testen gemarkeerd.](./media/bluejeans-provisioning-tutorial/BluejeansTestConnection.png)
+    ![E-mailadres voor meldingen](common/provisioning-notification-email.png)
 
-7. Voer in het veld **E-mailadres voor meldingen** het e-mailadres in van een persoon of groep die de inrichtingsfoutmeldingen zou moeten ontvangen en vink het vakje **Een e-mailmelding verzenden als een fout optreedt** aan.
+7. Klik op **Opslaan**.
 
-    ![Schermopname van het tekstvak E-mailadres voor meldingen.](./media/bluejeans-provisioning-tutorial/BluejeansNotificationEmail.png)
+8. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met BlueJeans**.
 
-8. Klik op **Opslaan**.
+9. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met BlueJeans worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in BlueJeans te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
 
-9. Selecteer in de sectie **Toewijzingen** de optie **Azure Active Directory-gebruikers synchroniseren met BlueJeans**.
+|Kenmerk|Type|Ondersteund voor filteren|
+|---|---|---|
+|userName|Tekenreeks|&check;|
+|actief|Booleaans|
+|title|Tekenreeks|
+|emails[type eq "work"].value|Tekenreeks|
+|name.givenName|Tekenreeks|
+|name.familyName|Tekenreeks|
+|phoneNumbers[type eq "work"].value|Tekenreeks|
+|urn:ietf:params:scim:schemas:extension:enterprise:2.0:User:manager|Tekenreeks|
 
-    ![Schermopname van de sectie Toewijzingen met de optie Azure Active Directory-gebruikers synchroniseren met BlueJeans gemarkeerd.](./media/bluejeans-provisioning-tutorial/BluejeansMapping.png)
+10. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
 
-10. Controleer in de sectie **Kenmerktoewijzingen** de gebruikerskenmerken die vanuit Azure AD met BlueJeans worden gesynchroniseerd. De kenmerken die als **overeenkomende** eigenschappen zijn geselecteerd, worden gebruikt om de gebruikersaccounts in BlueJeans te vinden voor updatebewerkingen. Selecteer de knop **Opslaan** om eventuele wijzigingen door te voeren.
+11. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor BlueJeans.
 
-    ![Schermopname van de sectie Kenmerktoewijzingen met zeven toewijzingen weergegeven.](./media/bluejeans-provisioning-tutorial/BluejeansUserMappingAtrributes.png)
+    ![Inrichtingsstatus ingeschakeld](common/provisioning-toggle-on.png)
 
-11. Als u bereikfilters wilt configureren, raadpleegt u de volgende instructies in de [zelfstudie Bereikfilter](../app-provisioning/define-conditional-rules-for-provisioning-user-accounts.md).
+12. Definieer de gebruikers en/of groepen die u aan BlueJeans wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen**.
 
-12. Wijzig **Inrichtingsstatus** in **Aan** in de sectie **Instellingen** om de Azure AD-inrichtingsservice in te schakelen voor BlueJeans.
+    ![Inrichtingsbereik](common/provisioning-scope.png)
 
-    ![Schermopname van de sectie Instellingen waar de optie Inrichtingsstatus is ingesteld op Aan.](./media/bluejeans-provisioning-tutorial/BluejeansProvisioningStatus.png)
+13. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
 
-13. Definieer de gebruikers en/of groepen die u aan BlueJeans wilt toevoegen door de gewenste waarden te kiezen in **Bereik** in de sectie **Instellingen**.
-
-    ![Schermopname van de instelling Bereik met de optie Alleen toegewezen gebruikers en groepen synchroniseren gemarkeerd.](./media/bluejeans-provisioning-tutorial/UserGroupSelection.png)
-
-14. Wanneer u klaar bent om in te richten, klikt u op **Opslaan**.
-
-    ![Schermopname van de zijbalk van de bedrijfstoepassing BlueJeans met de optie Opslaan gemarkeerd.](./media/bluejeans-provisioning-tutorial/SaveProvisioning.png)
+    ![Inrichtingsconfiguratie opslaan](common/provisioning-configuration-save.png)
 
 Met deze bewerking wordt de eerste synchronisatie gestart van alle gebruikers en/of groepen die zijn gedefinieerd onder **Bereik** in de sectie **Instellingen**. De initiële synchronisatie duurt langer dan volgende synchronisaties, die ongeveer om de 40 minuten plaatsvinden zolang de Azure AD-inrichtingsservice wordt uitgevoerd. U kunt het gedeelte **Synchronisatiedetails** gebruiken om de voortgang te controleren en koppelingen te volgen naar het activiteitenrapport van de inrichting, waarin alle acties worden beschreven die door de Azure AD-inrichtingsservice op BlueJeans worden uitgevoerd.
 
@@ -141,7 +143,7 @@ Zie [Rapportage over automatische inrichting van gebruikersaccounts](../app-prov
 
 ## <a name="connector-limitations"></a>Connectorbeperkingen
 
-* Bluejeans staat het gebruik van gebruikersnamen van meer dan 30 tekens niet toe.
+* Met Bluejeans zijn geen gebruikers namen toegestaan die meer dan 30 tekens bevatten.
 
 ## <a name="additional-resources"></a>Aanvullende resources
 

@@ -1,21 +1,24 @@
 ---
 title: TLS configureren voor een Cloud service | Microsoft Docs
 description: Meer informatie over het opgeven van een HTTPS-eind punt voor een webrole en het uploaden van een TLS/SSL-certificaat om uw toepassing te beveiligen. In deze voor beelden wordt gebruikgemaakt van de Azure Portal.
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 05/26/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: c69b74cf91d8e097f8ad8a9ba2a16f3375f483ae
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 33aa088efd7768153d4a17472d82e0826f4ffa6b
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82024843"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742638"
 ---
 # <a name="configuring-tls-for-an-application-in-azure"></a>TLS configureren voor een toepassing in azure
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 Transport Layer Security (TLS), voorheen bekend als SSL-versleuteling (Secure Socket Layer), is de meest gebruikte methode voor het beveiligen van gegevens die via internet worden verzonden. In deze algemene taak wordt beschreven hoe u een HTTPS-eind punt opgeeft voor een webrole en hoe u een TLS/SSL-certificaat kunt uploaden om uw toepassing te beveiligen.
 
@@ -34,10 +37,10 @@ Het certificaat moet voldoen aan de volgende vereisten voor TLS/SSL-certificaten
 
 * Het certificaat moet een open bare sleutel bevatten.
 * Het certificaat moet worden gemaakt voor sleutel uitwisseling, exporteerbaar naar een pfx-bestand (Personal Information Exchange).
-* De onderwerpnaam van het certificaat moet overeenkomen met het domein dat wordt gebruikt voor toegang tot de Cloud service. U kunt geen TLS/SSL-certificaat verkrijgen van een certificerings instantie (CA) voor het cloudapp.net-domein. U moet een aangepaste domein naam verkrijgen die u kunt gebruiken om toegang te krijgen tot uw service. Wanneer u een certificaat van een certificerings instantie aanvraagt, moet de onderwerpnaam van het certificaat overeenkomen met de aangepaste domein naam die wordt gebruikt voor toegang tot uw toepassing. Als uw aangepaste domein naam bijvoorbeeld **contoso.com** is, vraagt u een certificaat aan bij uw CA voor ***. contoso.com** of **www \. contoso.com**.
+* De onderwerpnaam van het certificaat moet overeenkomen met het domein dat wordt gebruikt voor toegang tot de Cloud service. U kunt geen TLS/SSL-certificaat verkrijgen van een certificerings instantie (CA) voor het cloudapp.net-domein. U moet een aangepaste domein naam verkrijgen die u kunt gebruiken om toegang te krijgen tot uw service. Wanneer u een certificaat van een certificerings instantie aanvraagt, moet de onderwerpnaam van het certificaat overeenkomen met de aangepaste domein naam die wordt gebruikt voor toegang tot uw toepassing. Als uw aangepaste domein naam bijvoorbeeld **contoso.com** is, vraagt u een certificaat aan bij uw CA voor **_. contoso.com_* of **www \. contoso.com**.
 * Het certificaat moet mini maal 2048 bits versleuteling gebruiken.
 
-Voor test doeleinden kunt u een zelfondertekend certificaat [maken](cloud-services-certs-create.md) en gebruiken. Een zelfondertekend certificaat wordt niet geverifieerd via een certificerings instantie en kan het domein cloudapp.net als de URL van de website gebruiken. De volgende taak maakt bijvoorbeeld gebruik van een zelfondertekend certificaat waarin de algemene naam (CN) die in het certificaat wordt gebruikt, **sslexample.cloudapp.net**is.
+Voor test doeleinden kunt u een zelfondertekend certificaat [maken](cloud-services-certs-create.md) en gebruiken. Een zelfondertekend certificaat wordt niet geverifieerd via een certificerings instantie en kan het domein cloudapp.net als de URL van de website gebruiken. De volgende taak maakt bijvoorbeeld gebruik van een zelfondertekend certificaat waarin de algemene naam (CN) die in het certificaat wordt gebruikt, **sslexample.cloudapp.net** is.
 
 Vervolgens moet u informatie over het certificaat in uw service definitie en configuratie bestanden van de service toevoegen.
 
@@ -130,7 +133,7 @@ Uw toepassing moet worden geconfigureerd voor het gebruik van het certificaat en
 
 (In dit voor beeld wordt **SHA1** gebruikt voor het vinger afdruk algoritme. Geef de juiste waarde op voor het vinger afdruk algoritme van uw certificaat.)
 
-Nu de service definitie en de service configuratie bestanden zijn bijgewerkt, pakt u uw implementatie in voor uploaden naar Azure. Als u **cspack**gebruikt, gebruikt u de vlag **/generateConfigurationFile** niet, aangezien de certificaat gegevens die u zojuist hebt ingevoegd, worden overschreven.
+Nu de service definitie en de service configuratie bestanden zijn bijgewerkt, pakt u uw implementatie in voor uploaden naar Azure. Als u **cspack** gebruikt, gebruikt u de vlag **/generateConfigurationFile** niet, aangezien de certificaat gegevens die u zojuist hebt ingevoegd, worden overschreven.
 
 ## <a name="step-3-upload-a-certificate"></a>Stap 3: een certificaat uploaden
 Verbinding maken met de Azure Portal en...
@@ -147,7 +150,7 @@ Verbinding maken met de Azure Portal en...
 
     ![Klik op het menu-item uploaden](media/cloud-services-configure-ssl-certificate-portal/Upload_menu.png)
 
-4. Geef het **bestand**, het **wacht woord**en klik op **uploaden** onder aan het gebied voor gegevens invoer.
+4. Geef het **bestand**, het **wacht woord** en klik op **uploaden** onder aan het gebied voor gegevens invoer.
 
 ## <a name="step-4-connect-to-the-role-instance-by-using-https"></a>Stap 4: verbinding maken met de rolinstantie met behulp van HTTPS
 Nu uw implementatie in azure wordt uitgevoerd, kunt u er verbinding mee maken met behulp van HTTPS.
@@ -156,7 +159,7 @@ Nu uw implementatie in azure wordt uitgevoerd, kunt u er verbinding mee maken me
 
    ![Klik op de site-URL](media/cloud-services-configure-ssl-certificate-portal/navigate.png)
 
-2. Wijzig in uw webbrowser de koppeling voor gebruik van **https** in plaats van **http**en ga vervolgens naar de pagina.
+2. Wijzig in uw webbrowser de koppeling voor gebruik van **https** in plaats van **http** en ga vervolgens naar de pagina.
 
    > [!NOTE]
    > Als u een zelfondertekend certificaat gebruikt en u bladert naar een HTTPS-eind punt dat is gekoppeld aan het zelfondertekende certificaat, ziet u mogelijk een certificaat fout in de browser. Het gebruik van een certificaat dat is ondertekend door een vertrouwde certificerings instantie elimineert dit probleem. Ondertussen kunt u de fout negeren. (Een andere optie is het toevoegen van het zelfondertekende certificaat aan het certificaat archief van de vertrouwde certificerings instantie van de gebruiker.)

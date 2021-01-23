@@ -903,16 +903,14 @@
               href: ./workloads/redhat/redhat-rhui.md
 - name: Installatiekopieën
   items:
-    - name: Marketplace-installatie kopieën
+    - name: Azure Marketplace-installatie kopieën zoeken
       items:
-        - name: Azure Marketplace-installatie kopieën zoeken
-          items:
-            - name: CLI
-              href: ./linux/cli-ps-findimage.md
-            - name: PowerShell
-              href: ./windows/cli-ps-findimage.md
-            - name: Windows-client installatie kopieën
-              href: ./windows/client-images.md
+        - name: CLI
+          href: ./linux/cli-ps-findimage.md
+        - name: PowerShell
+          href: ./windows/cli-ps-findimage.md
+        - name: Windows-client installatie kopieën
+          href: ./windows/client-images.md
     - name: Aangepaste Linux-installatie kopieën
       items:
         - name: Overzicht
@@ -1058,6 +1056,8 @@
           href: image-version-encryption.md
         - name: Beheerde schijf van installatiekopieversie
           href: managed-disk-from-image-version.md
+        - name: Aankoopplaninformatie
+          href: marketplace-images.md
     - name: Functie voor het maken van installatiekopieën (preview)
       items:
         - name: Overzicht
@@ -1105,8 +1105,6 @@
           href: ./linux/image-builder-user-assigned-identity.md
         - name: Problemen oplossen
           href: ./linux/image-builder-troubleshoot.md
-    - name: Aankoopplaninformatie
-      href: marketplace-images.md
     - name: Een installatiekopie maken met Packer
       items:
         - name: Linux

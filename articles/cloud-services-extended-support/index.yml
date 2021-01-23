@@ -1,0 +1,83 @@
+### YamlMime:Landing
+title: Documentatie voor Azure Cloud Services (uitgebreide ondersteuning)
+summary: Leer hoe u Cloud Services kunt gebruiken om maximaal beschikbare, schaalbare cloudtoepassingen en API's te hosten en uit te voeren. Legt uit hoe u VM-hosts kunt beheren en software kunt configureren, patchen en installeren.
+metadata:
+  title: Documentatie voor Azure Cloud Services (uitgebreide ondersteuning)
+  description: Beschrijft hoe u Cloud Services kunt gebruiken om maximaal beschikbare, schaalbare cloudtoepassingen en API's te hosten en uit te voeren.
+  ms.service: cloud-services-extended-support
+  service: cloud-services-extended-support
+  ms.topic: landing-page
+  author: mimckitt
+  ms.author: mimckitt
+  ms.date: 03/06/2020
+  ms.openlocfilehash: 8f999851c1566b2a488daa4bdc5da73761f7ce0b
+  ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+  ms.translationtype: MT
+  ms.contentlocale: nl-NL
+  ms.lasthandoff: 01/23/2021
+  ms.locfileid: "98745244"
+landingContent:
+- title: Over Cloud Services (uitgebreide ondersteuning)
+  linkLists:
+  - linkListType: overview
+    links:
+    - text: Wat is Cloud Services (uitgebreide ondersteuning)?
+      url: overview.md
+    - text: Vereisten voor implementatie
+      url: deploy-prerequisite.md
+    - text: Configuratie bestanden en-pakketten
+      url: cloud-services-model-and-package.md
+- title: Zelfstudies
+  linkLists:
+  - linkListType: tutorial
+    links:
+    - text: Implementeren met PowerShell
+      url: deploy-powershell.md
+    - text: Implementeren met behulp van de Azure-portal
+      url: deploy-portal.md
+    - text: Implementeren met ARM-sjablonen
+      url: deploy-template.md
+    - text: Implementeren met Visual Studio
+      url: deploy-visual-studio.md
+- title: Concepten
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Beschikbare grootten
+      url: available-sizes.md
+    - text: Veelgestelde vragen
+      url: faq.md
+- title: Handleidingen
+  linkLists:
+  - linkListType: how-to-guide
+    links:
+    - text: Uitbreidingen
+      url: extensions.md
+    - text: Waarschuwingen inschakelen
+      url: enable-alerts.md
+    - text: Schalen configureren
+      url: configure-scaling.md
+    - text: Certificaten
+      url: certificates-and-key-vault.md
+- title: Voorbeelden
+  linkLists:
+  - linkListType: sample
+    links:
+    - text: Een Cloud service-implementatie maken
+      url: sample-create-cloud-service.md
+    - text: Informatie over een Cloud service-implementatie ophalen
+      url: sample-get-cloud-service.md
+    - text: Een Cloud service-implementatie bijwerken
+      url: sample-update-cloud-service.md
+    - text: Een Cloud service-implementatie opnieuw instellen
+      url: sample-reset-cloud-service.md
+- title: Schema-informatie
+  linkLists:
+  - linkListType: concept
+    links:
+    - text: Configuratie schema
+      url: schema-cscfg-file.md
+    - text: Definitie schema
+      url: schema-csdef-file.md
+    - text: Schema voor configuratie rollen
+      url: schema-cscfg-role.md

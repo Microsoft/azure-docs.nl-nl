@@ -1,27 +1,31 @@
 ---
-title: Een Cloud service maken en implementeren | Microsoft Docs
+title: Een Cloud service maken en implementeren (klassiek) | Microsoft Docs
 description: Meer informatie over hoe u de methode voor snel maken gebruikt om een Cloud service te maken en uploads te gebruiken om een Cloud service-pakket te uploaden en te implementeren in Azure.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 05/18/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 66938975784f1de2abdc0ac22e62aaca82279f86
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 879b86714adf50b5a4da4398389405063ac046dc
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92164161"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743403"
 ---
-# <a name="how-to-create-and-deploy-a-cloud-service"></a>Een Cloud service maken en implementeren
+# <a name="how-to-create-and-deploy-an-azure-cloud-service-classic"></a>Een Azure-Cloud service maken en implementeren (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 De Azure Portal biedt twee manieren om een Cloud service te maken en te implementeren: *snel maken* en *aangepast maken*.
 
 In dit artikel wordt uitgelegd hoe u de methode voor snel maken gebruikt om een nieuwe Cloud service te maken en vervolgens **uploaden** kunt gebruiken om een Cloud service-pakket te uploaden en te implementeren in Azure. Wanneer u deze methode gebruikt, maakt de Azure Portal handige koppelingen beschikbaar voor het volt ooien van alle vereisten. Als u klaar bent voor het implementeren van uw Cloud service wanneer u deze maakt, kunt u beide op hetzelfde moment doen met behulp van aangepaste maken.
 
 > [!NOTE]
-> Als u van plan bent om uw Cloud service vanuit Azure DevOps te publiceren, gebruikt u snel maken en stelt u vervolgens Azure DevOps Publishing in vanuit de Snelstartgids of het dash board van Azure. Zie [continue levering naar Azure met behulp van Azure DevOps][TFSTutorialForCloudService]of Raadpleeg de Help voor de pagina **Quick Start** voor meer informatie.
+> Als u van plan bent om uw Cloud service vanuit Azure DevOps te publiceren, gebruikt u snel maken en stelt u vervolgens Azure DevOps Publishing in vanuit de Snelstartgids of het dash board van Azure. Zie [continue levering naar Azure met behulp van Azure DevOps][TFSTutorialForCloudService]of Raadpleeg de Help voor de pagina **snel starten** voor meer informatie.
 >
 >
 
@@ -54,9 +58,10 @@ Als u een Cloud service wilt maken met implementaties van webrollen of werk roll
 
 ## <a name="create-and-deploy"></a>Maken en implementeren
 1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
-2. Klik op **een resource maken > Compute**en schuif omlaag naar en klik vervolgens op **Cloud service**.
+2. Klik op **een resource maken > Compute** en schuif omlaag naar en klik vervolgens op **Cloud service**.
 
-    ![Scherm afbeelding van de optie Cloud service onder Create a resource > compute.](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
+    ![Uw Cloud Service1 publiceren](media/cloud-services-how-to-create-deploy-portal/create-cloud-service.png)
+
 3. Voer in het deel venster nieuwe **Cloud service** een waarde in voor de **DNS-naam**.
 4. Maak een nieuwe **resource groep** of selecteer een bestaande.
 5. Selecteer een **locatie**.
@@ -65,22 +70,22 @@ Als u een Cloud service wilt maken met implementaties van webrollen of werk roll
 8. Klik op **OK** om het deel venster **een pakket uploaden** te sluiten.
 9. Als er geen certificaten zijn om toe te voegen, klikt u op **maken**.
 
-    ![Uw Cloud service publiceren](media/cloud-services-how-to-create-deploy-portal/select-package.png)
+    ![Uw Cloud Service2 publiceren](media/cloud-services-how-to-create-deploy-portal/select-package.png)
 
 ## <a name="upload-a-certificate"></a>Een certificaat uploaden
 Als uw implementatie pakket is [geconfigureerd voor het gebruik van certificaten](cloud-services-configure-ssl-certificate-portal.md#modify), kunt u het certificaat nu uploaden.
 
-1. Selecteer **certificaten**en selecteer in het deel venster **certificaten toevoegen** het bestand TLS/SSL Certificate. pfx en geef het **wacht woord** voor het certificaat op.
-2. Klik op **certificaat koppelen**en klik vervolgens op **OK** in het deel venster **certificaten toevoegen** .
+1. Selecteer **certificaten** en selecteer in het deel venster **certificaten toevoegen** het bestand TLS/SSL Certificate. pfx en geef het **wacht woord** voor het certificaat op.
+2. Klik op **certificaat koppelen** en klik vervolgens op **OK** in het deel venster **certificaten toevoegen** .
 3. Klik op **maken** in het deel venster **Cloud service** . Wanneer de implementatie de status **gereed** heeft bereikt, kunt u door gaan met de volgende stappen.
 
-    ![Scherm afbeelding die het proces voor het uploaden van een certificaat markeert.](media/cloud-services-how-to-create-deploy-portal/attach-cert.png)
+    ![Uw Cloud Service3 publiceren](media/cloud-services-how-to-create-deploy-portal/attach-cert.png)
 
 ## <a name="verify-your-deployment-completed-successfully"></a>Controleren of uw implementatie is voltooid
 1. Klik op het Cloud service-exemplaar.
 
     De status geeft aan dat de service wordt **uitgevoerd**.
-2. Onder **Essentials**klikt u op de **site-URL** om uw Cloud service in een webbrowser te openen.
+2. Onder **Essentials** klikt u op de **site-URL** om uw Cloud service in een webbrowser te openen.
 
     ![CloudServices_QuickGlance](./media/cloud-services-how-to-create-deploy-portal/running.png)
 

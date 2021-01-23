@@ -3,12 +3,12 @@ title: Met Azure Batch worden grootschalige parallelle jobs uitgevoerd in de clo
 description: Meer informatie over het gebruik van de Azure Batch-service voor grootschalige parallelle en HPC-workloads
 ms.topic: overview
 ms.date: 07/30/2020
-ms.openlocfilehash: 93dcf19b3b6af0f369fe19b7823bf43d597a9c21
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
-ms.translationtype: HT
+ms.openlocfilehash: dbd27dc1a00966a2d71952335cfb47c7ca55bc24
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97106645"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743097"
 ---
 # <a name="what-is-azure-batch"></a>Wat is Azure Batch?
 
@@ -74,6 +74,9 @@ Het volgende diagram toont een algemene Batch-werkstroom, met een clienttoepassi
 De hierboven beschreven werkstroom is slechts één manier waarop Batch kan worden gebruikt, maar Batch biedt nog veel meer functies en mogelijkheden. Bijvoorbeeld, kunt u [meerdere taken parallel](batch-parallel-node-tasks.md) op elk rekenknooppunt uitvoeren. U kunt ook [taakvoorbereiding en -voltooiingsopdrachten](batch-job-prep-release.md) gebruiken om de knooppunten voor te bereiden op uw taken, en ze daarna opschonen.
 
 Zie [Werkstroom van de Batch-service en resources](batch-service-workflow-features.md) voor een overzicht van functies als pools, knooppunten, jobs en taken. Zie ook de meest recente [Batch-service-updates](https://azure.microsoft.com/updates/?product=batch).
+
+## <a name="in-region-data-residency"></a>Gegevenslocatie in uw regio
+Azure Batch verplaatst of slaat klant gegevens niet uit de regio waarin deze is geïmplementeerd. 
 
 ## <a name="next-steps"></a>Volgende stappen
 

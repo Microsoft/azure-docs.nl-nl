@@ -1,28 +1,24 @@
 ---
 title: Implementatie problemen voor Microsoft Azure Cloud Services Veelgestelde vragen | Microsoft Docs
 description: In dit artikel vindt u de veelgestelde vragen over de implementatie van Microsoft Azure Cloud Services.
-services: cloud-services
-documentationcenter: ''
-author: genlin
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: 84985660-2cfd-483a-8378-50eef6a0151d
-ms.service: cloud-services
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 10/31/2018
-ms.author: genli
-ms.openlocfilehash: 63a219078927e9001a8eb4085c722e7ec8d2fac9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 67c20823d1f80360b2ab23dc3f208673d36a7374
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "75980633"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742213"
 ---
-# <a name="deployment-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Implementatie problemen voor Azure Cloud Services: veelgestelde vragen (FAQ)
+# <a name="deployment-issues-for-azure-cloud-services-classic-frequently-asked-questions-faqs"></a>Implementatie problemen voor Azure Cloud Services (klassiek): veelgestelde vragen (FAQ)
 
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 In dit artikel vindt u veelgestelde vragen over implementatie problemen voor [Microsoft Azure Cloud Services](https://azure.microsoft.com/services/cloud-services). U kunt ook de [pagina Cloud Services VM-grootte](cloud-services-sizes-specs.md) raadplegen voor informatie over de grootte.
 
 [!INCLUDE [support-disclaimer](../../includes/support-disclaimer.md)]
@@ -63,9 +59,9 @@ U kunt de VM-grootte van een geïmplementeerde Cloud service niet wijzigen zonde
 
 Zie [How to update a Cloud service](cloud-services-update-azure-service.md)(Engelstalig) voor meer informatie.
 
-## <a name="why-am-i-not-able-to-deploy-cloud-services-through-service-management-apis-or-powershell-when-using-azure-resource-manager-storage-account"></a>Waarom kan ik Cloud Services niet implementeren via Service Management-Api's of Power shell wanneer ik Azure Resource Manager-opslag account gebruik? 
+## <a name="why-am-i-not-able-to-deploy-cloud-services-through-service-management-apis-or-powershell-when-using-azure-resource-manager-storage-account"></a>Waarom kan ik Cloud Services niet implementeren via Service Management-Api's of Power shell wanneer ik Azure Resource Manager-opslag account gebruik? 
 
-Omdat de Cloud service een klassieke resource is die niet rechtstreeks compatibel is met het Azure Resource Manager model, kunt u deze niet koppelen aan de Azure Resource Manager-opslag accounts. Hier volgen enkele opties: 
+Omdat de Cloud service een klassieke resource is die niet rechtstreeks compatibel is met het Azure Resource Manager model, kunt u deze niet koppelen aan de Azure Resource Manager-opslag accounts. Hier volgen enkele opties: 
 
 - Implementeren via REST API.
 
@@ -73,7 +69,7 @@ Omdat de Cloud service een klassieke resource is die niet rechtstreeks compatibe
 
 - Implementeren via [Azure Portal](https://portal.azure.com).
 
-    Dit werkt vanaf de [Azure Portal](https://portal.azure.com) omdat de aanroep via een proxy/Shim wordt verzonden waarmee communicatie tussen Azure Resource Manager en klassieke resources mogelijk is. 
+    Dit werkt vanaf de [Azure Portal](https://portal.azure.com) omdat de aanroep via een proxy/Shim wordt verzonden waarmee communicatie tussen Azure Resource Manager en klassieke resources mogelijk is. 
 
 ## <a name="why-does-azure-portal-require-me-to-provide-a-storage-account-for-deployment"></a>Waarom moet ik een opslag account opgeven voor de implementatie van Azure Portal?
 

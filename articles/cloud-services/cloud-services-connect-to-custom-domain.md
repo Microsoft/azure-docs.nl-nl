@@ -1,20 +1,25 @@
 ---
-title: Een Cloud service verbinden met een aangepaste domein controller | Microsoft Docs
+title: Een Cloud service (klassiek) verbinden met een aangepaste domein controller | Microsoft Docs
 description: Meer informatie over hoe u uw web-en werk rollen verbindt met een aangepast AD-domein met behulp van Power shell en AD-domein extensie
-services: cloud-services
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 07/18/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: fa918a3a6894205ed36c4b576608e7a71e523a92
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 8c2c8377944caa7ad28f6b379531e6d5bf44c9e7
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87092708"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742502"
 ---
-# <a name="connecting-azure-cloud-services-roles-to-a-custom-ad-domain-controller-hosted-in-azure"></a>Azure Cloud Services-rollen koppelen aan een aangepaste AD-domein controller die wordt gehost in azure
+# <a name="connecting-azure-cloud-services-classic-roles-to-a-custom-ad-domain-controller-hosted-in-azure"></a>Azure Cloud Services-rollen (klassiek) verbinden met een aangepaste AD-domein controller die wordt gehost in azure
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 We gaan eerst een Virtual Network (VNet) in azure instellen. We gaan vervolgens een Active Directory-domein controller (gehost op een virtuele machine van Azure) toevoegen aan het VNet. Daarna gaan we bestaande Cloud service rollen toevoegen aan het vooraf gemaakte VNet en vervolgens verbinden met de domein controller.
 
 Voordat we aan de slag gaan, moet u zich op een paar dingen herinneren:
@@ -24,10 +29,10 @@ Voordat we aan de slag gaan, moet u zich op een paar dingen herinneren:
 
 Volg deze stapsgewijze hand leiding en als u problemen ondervindt, kunt u aan het einde van het artikel een opmerking ontvangen. Iemand krijgt een antwoord (Ja, we lezen opmerkingen).
 
-Het netwerk waarnaar wordt verwezen door de Cloud service moet een **klassiek virtueel netwerk**zijn.
+Het netwerk waarnaar wordt verwezen door de Cloud service moet een **klassiek virtueel netwerk** zijn.
 
 ## <a name="create-a-virtual-network"></a>Een Virtual Network maken
-U kunt een Virtual Network in azure maken met behulp van de Azure Portal of Power shell. Voor deze zelf studie wordt Power shell gebruikt. Zie [een virtueel netwerk maken](../virtual-network/quick-create-portal.md)voor het maken van een virtueel netwerk met behulp van de Azure Portal. In het artikel wordt beschreven hoe u een virtueel netwerk (Resource Manager) maakt, maar u moet een virtueel netwerk (klassiek) maken voor Cloud Services. Als u dit wilt doen, selecteert u in de Portal de optie **een resource maken**, type *virtueel netwerk* in het **zoekvak** en drukt u vervolgens op **Enter**. In de zoek resultaten, onder **Alles**, selecteert u **virtueel netwerk**. Selecteer onder **een implementatie model selecteren de**optie **klassiek**en selecteer vervolgens **maken**. U kunt vervolgens de stappen in het artikel volgen.
+U kunt een Virtual Network in azure maken met behulp van de Azure Portal of Power shell. Voor deze zelf studie wordt Power shell gebruikt. Zie [een virtueel netwerk maken](../virtual-network/quick-create-portal.md)voor het maken van een virtueel netwerk met behulp van de Azure Portal. In het artikel wordt beschreven hoe u een virtueel netwerk (Resource Manager) maakt, maar u moet een virtueel netwerk (klassiek) maken voor Cloud Services. Als u dit wilt doen, selecteert u in de Portal de optie **een resource maken**, type *virtueel netwerk* in het **zoekvak** en drukt u vervolgens op **Enter**. In de zoek resultaten, onder **Alles**, selecteert u **virtueel netwerk**. Selecteer onder **een implementatie model selecteren de** optie **klassiek** en selecteer vervolgens **maken**. U kunt vervolgens de stappen in het artikel volgen.
 
 ```powershell
 #Create Virtual Network

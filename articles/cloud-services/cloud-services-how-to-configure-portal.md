@@ -1,21 +1,24 @@
 ---
-title: Een Cloud service (Portal) configureren | Microsoft Docs
+title: Een Cloud service (klassiek) configureren-Portal | Microsoft Docs
 description: Meer informatie over het configureren van Cloud Services in Azure. Meer informatie over het bijwerken van de configuratie van de Cloud service en het configureren van externe toegang tot rolinstanties. In deze voor beelden wordt gebruikgemaakt van de Azure Portal.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 12/07/2016
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 4f2b5716e253f2810ff953a10c879574c6a6c342
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: f16fcfe227663958279281659b09929a4cd2d386
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91576656"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743420"
 ---
-# <a name="how-to-configure-cloud-services"></a>Cloud Services configureren
+# <a name="how-to-configure-and-azure-cloud-service-classic"></a>De configuratie en Azure-Cloud service (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 U kunt de meestgebruikte instellingen voor een Cloud service configureren in de Azure Portal. Als u uw configuratie bestanden direct wilt bijwerken, downloadt u een service configuratie bestand om bij te werken en uploadt u vervolgens het bijgewerkte bestand en werkt u de Cloud service bij met de configuratie wijzigingen. In beide gevallen worden de configuratie-updates naar alle rolinstanties gepusht.
 
@@ -29,7 +32,7 @@ Ga na het openen van de [Azure Portal](https://portal.azure.com/)naar uw Cloud s
 
 ![Pagina instellingen](./media/cloud-services-how-to-configure-portal/cloud-service.png)
 
-Met de koppelingen **instellingen** of **alle instellingen** worden **instellingen** geopend, waar u de **Eigenschappen**kunt wijzigen, de **configuratie**wijzigen, de **certificaten**beheert, **waarschuwings regels**instelt en de **gebruikers** beheert die toegang hebben tot deze Cloud service.
+Met de koppelingen **instellingen** of **alle instellingen** worden **instellingen** geopend, waar u de **Eigenschappen** kunt wijzigen, de **configuratie** wijzigen, de **certificaten** beheert, **waarschuwings regels** instelt en de **gebruikers** beheert die toegang hebben tot deze Cloud service.
 
 ![Instellingen van de Azure-Cloud service](./media/cloud-services-how-to-configure-portal/cs-settings-blade.png)
 
@@ -62,7 +65,7 @@ Hier kunt u een waarschuwing instellen. In de vervolg keuzelijst **metriek** kun
 
 ### <a name="configure-monitoring-from-a-metric-tile"></a>Bewaking configureren op basis van een metrische tegel
 
-In plaats van **instellingen**voor  >  **waarschuwings regels**te gebruiken, kunt u klikken op een van de metrische tegels in de sectie **bewaking** van de Cloud service.
+In plaats van **instellingen** voor  >  **waarschuwings regels** te gebruiken, kunt u klikken op een van de metrische tegels in de sectie **bewaking** van de Cloud service.
 
 ![Cloud service bewaken](./media/cloud-services-how-to-configure-portal/cs-monitoring.png)
 
@@ -84,7 +87,7 @@ U kunt vervolgens een verbinding met een extern bureau blad initiëren, het exem
 
 Mogelijk moet u de Cloud service opnieuw configureren via het [cscfg-bestand (service config)](cloud-services-model-and-package.md#cscfg) . Eerst moet u uw cscfg-bestand downloaden, wijzigen en vervolgens uploaden.
 
-1. Klik op het **instellingen** pictogram of de koppeling **alle instellingen** om **instellingen**te openen.
+1. Klik op het **instellingen** pictogram of de koppeling **alle instellingen** om **instellingen** te openen.
 
     ![Pagina instellingen](./media/cloud-services-how-to-configure-portal/cloud-service.png)
 2. Klik op het **configuratie** -item.

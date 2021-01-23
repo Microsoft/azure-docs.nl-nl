@@ -1,25 +1,24 @@
 ---
-title: Extern bureaublad inschakelen voor een rol (Azure Cloud Services) met behulp van Visual Studio
+title: Gebruik Visual Studio om Extern bureaublad in te scha kelen voor een rol (Azure Cloud Services Classic)
 description: Uw Azure Cloud service-toepassing configureren om extern bureau blad-verbindingen toe te staan
-services: cloud-services
-author: ghogen
-manager: jillfra
-ms.assetid: f5727ebe-9f57-4d7d-aff1-58761e8de8c1
-ms.prod: visual-studio-dev15
-ms.technology: vs-azure
-ms.custom: vs-azure
-ms.topic: conceptual
-ms.workload: azure-vs
-ms.date: 03/06/2018
-ms.author: ghogen
-ms.openlocfilehash: f4622e44c795182ee68c617f335c9e1651d3adcc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.topic: article
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: ad95cefbdf839c28b0979b051e217a1dfec76eea
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80294391"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743233"
 ---
-# <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-using-visual-studio"></a>Verbinding met extern bureaublad inschakelen voor een rol in azure Cloud Services met behulp van Visual Studio
+# <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-classic-using-visual-studio"></a>Verbinding met extern bureaublad inschakelen voor een rol in azure Cloud Services (klassiek) met behulp van Visual Studio
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 > [!div class="op_single_selector"]
 > * [Azure-portal](cloud-services-role-enable-remote-desktop-new-portal.md)
@@ -36,18 +35,18 @@ Met Visual Studio 2017 versie 15,5 en hoger is het echter raadzaam om Extern bur
 
 Wanneer u Visual Studio 2017 versie 15,4 en eerder gebruikt, kunt u de optie **extern bureaublad voor alle rollen inschakelen** gebruiken in de wizard Publiceren. U kunt de wizard nog steeds met Visual Studio 2017 versie 15,5 en hoger gebruiken, maar de optie Extern bureaublad niet gebruiken.
 
-1. Start in Visual Studio de wizard publiceren door met de rechter muisknop te klikken op het Cloud service project in Solution Explorer en vervolgens **publiceren**te kiezen.
+1. Start in Visual Studio de wizard publiceren door met de rechter muisknop te klikken op het Cloud service project in Solution Explorer en vervolgens **publiceren** te kiezen.
 
 2. Meld u indien nodig aan bij uw Azure-abonnement en selecteer **volgende**.
 
-3. Selecteer op de pagina **instellingen** de optie **extern bureaublad inschakelen voor alle rollen**en selecteer vervolgens de koppeling **instellingen...** om het dialoog venster **extern bureaublad configuratie** te openen.
+3. Selecteer op de pagina **instellingen** de optie **extern bureaublad inschakelen voor alle rollen** en selecteer vervolgens de koppeling **instellingen...** om het dialoog venster **extern bureaublad configuratie** te openen.
 
 4. Selecteer onder in het dialoog venster **meer opties**. Met deze opdracht wordt een vervolg keuzelijst weer gegeven waarin u een certificaat maakt of kiest, zodat u referentie gegevens kunt versleutelen wanneer u verbinding maakt via extern bureau blad.
 
    > [!Note]
    > De certificaten die u nodig hebt voor een verbinding met een extern bureau blad, wijken af van de certificaten die u voor andere Azure-bewerkingen gebruikt. Het RAS-certificaat moet een persoonlijke sleutel hebben.
 
-5. Selecteer een certificaat in de lijst of kies ** &lt; maken... &gt; **. Als u een nieuw certificaat maakt, geeft u een beschrijvende naam op voor het nieuwe certificaat wanneer u hierom wordt gevraagd en selecteert u **OK**. Het nieuwe certificaat wordt weer gegeven in de vervolg keuzelijst.
+5. Selecteer een certificaat in de lijst of kies **&lt; maken... &gt;**. Als u een nieuw certificaat maakt, geeft u een beschrijvende naam op voor het nieuwe certificaat wanneer u hierom wordt gevraagd en selecteert u **OK**. Het nieuwe certificaat wordt weer gegeven in de vervolg keuzelijst.
 
 6. Geef een gebruikers naam en wacht woord op. U kunt geen bestaand account gebruiken. Gebruik ' Administrator ' niet als de gebruikers naam voor het nieuwe account.
 

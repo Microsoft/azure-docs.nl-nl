@@ -3,23 +3,23 @@ title: Rollen delegeren per beheer taak-Azure Active Directory | Microsoft Docs
 description: Rollen voor het delegeren van identiteits taken in Azure Active Directory
 services: active-directory
 documentationcenter: ''
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: reference
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7e83ff37140369cb073f4bdc2bd24ac08ee9b1ab
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 3ad48141c69d78096981b89758afd56089093021
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379091"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742927"
 ---
 # <a name="administrator-roles-by-admin-task-in-azure-active-directory"></a>Beheerders rollen per beheer taak in Azure Active Directory
 
@@ -45,13 +45,13 @@ Taak | Minst bevoorrechte rol | Aanvullende rollen
 Azure AD B2C mappen maken | Alle niet-gast gebruikers ([Zie documentatie](../fundamentals/users-default-permissions.md)) | 
 B2C-toepassingen maken | Hoofdbeheerder | 
 Bedrijfs toepassingen maken | Beheerder van de cloudtoepassing | Toepassingsbeheerder
-B2C-beleid maken, lezen, bijwerken en verwijderen | B2C IEF-beleids beheerder | 
-Id-providers maken, lezen, bijwerken en verwijderen | Beheerder van externe ID-provider | 
-Gebruikers stromen voor het opnieuw instellen van wacht woorden maken, lezen, bijwerken en verwijderen | Externe ID gebruikers stroom beheerder | 
-Gebruikers stromen voor het bewerken van profielen maken, lezen, bijwerken en verwijderen | Externe ID gebruikers stroom beheerder | 
-Gebruikers stromen voor het aanmelden maken, lezen, bijwerken en verwijderen | Externe ID gebruikers stroom beheerder | 
-Gebruikers stroom voor het aanmelden maken, lezen, bijwerken en verwijderen |Externe ID gebruikers stroom beheerder | 
-Gebruikers kenmerken maken, lezen, bijwerken en verwijderen | Externe ID gebruikers stroom kenmerk beheerder | 
+B2C-beleid maken, lezen, bijwerken en verwijderen | Beheerder van B2C IEF-beleid | 
+Id-providers maken, lezen, bijwerken en verwijderen | Beheerder van externe id-providers | 
+Gebruikers stromen voor het opnieuw instellen van wacht woorden maken, lezen, bijwerken en verwijderen | Beheerder van externe id-gebruikersstromen | 
+Gebruikers stromen voor het bewerken van profielen maken, lezen, bijwerken en verwijderen | Beheerder van externe id-gebruikersstromen | 
+Gebruikers stromen voor het aanmelden maken, lezen, bijwerken en verwijderen | Beheerder van externe id-gebruikersstromen | 
+Gebruikers stroom voor het aanmelden maken, lezen, bijwerken en verwijderen |Beheerder van externe id-gebruikersstromen | 
+Gebruikers kenmerken maken, lezen, bijwerken en verwijderen | Beheerder van externe id-gebruikersstroomkenmerken | 
 Gebruikers maken, lezen, bijwerken en verwijderen | Gebruikersbeheerder
 Alle configuratie lezen | Algemene lezer | 
 B2C-controle logboeken lezen | Algemene lezer ([Zie documentatie](../../active-directory-b2c/faq.md)) | 
@@ -84,9 +84,9 @@ Naadloze eenmalige aanmelding | Hoofdbeheerder  |
 
 Taak | Minst bevoorrechte rol | Aanvullende rollen
 ---- | --------------------- | ----------------
-Passthrough-verificatie | Hybride identiteits beheerder  | 
-Alle configuratie lezen | Algemene lezer | Hybride identiteits beheerder  |
-Naadloze eenmalige aanmelding | Hybride identiteits beheerder  | 
+Passthrough-verificatie | Hybrid Identity-beheerder  | 
+Alle configuratie lezen | Algemene lezer | Hybrid Identity-beheerder  |
+Naadloze eenmalige aanmelding | Hybrid Identity-beheerder  | 
 
 ## <a name="connect-health"></a>Connect Health
 
@@ -135,7 +135,7 @@ Taak | Minst bevoorrechte rol | Aanvullende rollen
 ---- | --------------------- | ----------------
 Toestemming geven aan alle gedelegeerde machtigingen | Beheerder van de Cloud toepassing | Toepassings beheerder
 Toestemming geven aan toepassings machtigingen die niet inclusief Microsoft Graph | Beheerder van de Cloud toepassing | Toepassings beheerder
-Toestemming voor het Microsoft Graph van toepassings machtigingen | Beheerder van geprivilegieerde rol | 
+Toestemming voor het Microsoft Graph van toepassings machtigingen | Beheerder voor bevoorrechte rollen | 
 Toestemming geven aan toepassingen die toegang krijgen tot de eigen gegevens | Standaard gebruikersrol ([Zie de documentatie](../fundamentals/users-default-permissions.md)) | 
 Bedrijfs toepassing maken | Beheerder van de Cloud toepassing | Toepassings beheerder
 Toepassings proxy beheren | Toepassings beheerder | 
@@ -164,10 +164,10 @@ Licentie toewijzen | Gebruikersbeheerder |
 Groep maken | Groeps beheerder | Gebruikersbeheerder
 Toegangs beoordeling van een groep of een app maken, bijwerken of verwijderen | Gebruikersbeheerder | 
 Groeps verloop beheren | Gebruikersbeheerder | 
-Groepsinstellingen beheren | Groeps beheerder | Gebruikersbeheerder | 
+Groepsinstellingen beheren | Groepsbeheerder | Gebruikersbeheerder | 
 Alle configuraties lezen (met uitzonde ring van verborgen lidmaatschap) | Adreslijst lezers | Standaard gebruikersrol ([Zie de documentatie](../fundamentals/users-default-permissions.md))
 Verborgen lidmaatschap lezen | Groepslid | Groeps eigenaar, wachtwoord beheerder, Exchange-beheerder, share point-beheerder, team beheerder, gebruikers beheerder
-Lidmaatschap van groepen met verborgen lidmaatschap lezen | Helpdesk beheerder | Gebruikers beheerder, team beheerder
+Lidmaatschap van groepen met verborgen lidmaatschap lezen | Helpdeskbeheerder | Gebruikers beheerder, team beheerder
 Licentie intrekken | Licentiebeheerder | Gebruikersbeheerder
 Groepslid maatschap bijwerken | Groeps eigenaar ([Zie documentatie](../fundamentals/users-default-permissions.md)) | Gebruikersbeheerder
 Groeps eigenaren bijwerken | Groeps eigenaar ([Zie documentatie](../fundamentals/users-default-permissions.md)) | Gebruikersbeheerder
@@ -211,7 +211,7 @@ Taak | Minst bevoorrechte rol | Aanvullende rollen
 ---- | --------------------- | ----------------
 Aanmeld logboeken lezen | Rapport lezer | Beveiligings lezer, beveiligings beheerder
 
-## <a name="multi-factor-authentication"></a>Multi-Factor Authentication
+## <a name="multi-factor-authentication"></a>Meervoudige verificatie
 
 Taak | Minst bevoorrechte rol | Aanvullende rollen
 ---- | --------------------- | ----------------
@@ -219,8 +219,8 @@ Alle bestaande app-wacht woorden verwijderen die zijn gegenereerd door de gesele
 MFA uitschakelen | Hoofdbeheerder | 
 MFA inschakelen | Hoofdbeheerder | 
 Instellingen voor MFA-service beheren | Hoofdbeheerder | 
-Vereisen dat geselecteerde gebruikers opnieuw contact methoden opgeven | Verificatie beheerder | 
-Multi-factor Authentication herstellen op alle onthouden apparaten  | Verificatie beheerder | 
+Vereisen dat geselecteerde gebruikers opnieuw contact methoden opgeven | Verificatiebeheerder | 
+Multi-factor Authentication herstellen op alle onthouden apparaten  | Verificatiebeheerder | 
 
 ## <a name="mfa-server"></a>MFA-server
 
@@ -243,7 +243,7 @@ Server status lezen | Algemene lezer |
 
 Taak | Minst bevoorrechte rol | Aanvullende rollen
 ---- | --------------------- | ----------------
-Id-providers beheren | Beheerder van externe ID-provider | 
+Id-providers beheren | Beheerder van externe id-providers | 
 Instellingen beheren | Hoofdbeheerder | 
 Gebruiks voorwaarden beheren | Hoofdbeheerder | 
 Alle configuratie lezen | Algemene lezer | 
@@ -341,17 +341,17 @@ Gebruiker maken | Gebruikersbeheerder |
 Gebruikers verwijderen | Gebruikersbeheerder | 
 Vernieuwings tokens van beperkte beheerders ongeldig maken (Zie de documentatie) | Gebruikersbeheerder | 
 Vernieuwen van tokens van niet-beheerders ongeldig maken (zie documentatie) | Wachtwoordbeheerder | Gebruikersbeheerder
-Vernieuwen van tokens van bevoegde beheerders ongeldig maken (zie documentatie) | Beheerder voor geprivilegieerde authenticatie | 
+Vernieuwen van tokens van bevoegde beheerders ongeldig maken (zie documentatie) | Bevoorrechte verificatiebeheerder | 
 Basis configuratie lezen | Standaard gebruikersrol ([Zie de documentatie](../fundamentals/users-default-permissions.md) | 
 Wacht woord opnieuw instellen voor beperkte beheerders (Zie de documentatie) | Gebruikersbeheerder | 
 Het wacht woord van niet-beheerders opnieuw instellen (Zie de documentatie) | Wachtwoordbeheerder | Gebruikersbeheerder
-Wacht woord van bevoegde beheerders opnieuw instellen | Beheerder voor geprivilegieerde authenticatie | 
+Wacht woord van bevoegde beheerders opnieuw instellen | Bevoorrechte verificatiebeheerder | 
 Licentie intrekken | Licentiebeheerder | Gebruikersbeheerder
 Alle eigenschappen bijwerken met uitzonde ring van Principal-naam van gebruiker | Gebruikersbeheerder | 
 Principal-naam van gebruiker voor beperkte beheerders bijwerken (Zie de documentatie) | Gebruikersbeheerder | 
 De eigenschap User Principal name voor bevoegde beheerders bijwerken (Zie de documentatie) | Hoofdbeheerder | 
 Gebruikers instellingen bijwerken | Hoofdbeheerder | 
-Verificatie methoden bijwerken | Verificatie beheerder | Beheerder van geprivilegieerde authenticatie, globale beheerder
+Verificatie methoden bijwerken | Verificatiebeheerder | Beheerder van geprivilegieerde authenticatie, globale beheerder
 
 
 ## <a name="support"></a>Ondersteuning

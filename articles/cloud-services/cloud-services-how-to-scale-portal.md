@@ -1,20 +1,24 @@
 ---
-title: Een Cloud service in de portal automatisch schalen | Microsoft Docs
+title: Een Cloud service (klassiek) automatisch schalen in de portal | Microsoft Docs
 description: Meer informatie over het gebruik van de portal voor het configureren van regels voor automatisch schalen voor een web-of werk rollen van de Cloud service in Azure.
-services: cloud-services
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 05/18/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 06a0209c2bbd0982054d33c199685d016f405b0c
-ms.sourcegitcommit: 419c8c8061c0ff6dc12c66ad6eda1b266d2f40bd
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: a3e7f72dbe16c51280b922da2b5fc6550dee1d34
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/18/2020
-ms.locfileid: "92165482"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743352"
 ---
-# <a name="how-to-configure-auto-scaling-for-a-cloud-service-in-the-portal"></a>Automatisch schalen configureren voor een Cloud service in de portal
+# <a name="how-to-configure-auto-scaling-for-a-cloud-service-classic-in-the-portal"></a>Automatisch schalen configureren voor een Cloud service (klassiek) in de portal
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 Er kunnen voor waarden worden ingesteld voor een werk rollen van de Cloud service die een schaal-of uitvoer bewerking activeren. De voor waarden voor de rol kunnen worden gebaseerd op de CPU, schijf of netwerk belasting van de rol. U kunt ook een voor waarde instellen op basis van een berichten wachtrij of de metriek van een andere Azure-resource die aan uw abonnement is gekoppeld.
 
@@ -34,7 +38,7 @@ U moet rekening houden met de volgende informatie voordat u schaling voor uw toe
 
 * Als u een hoge Beschik baarheid van uw toepassing wilt inschakelen, moet u ervoor zorgen dat deze wordt geïmplementeerd met twee of meer rolinstanties. Zie [Service overeenkomst](https://azure.microsoft.com/support/legal/sla/)voor meer informatie.
 
-* Automatisch schalen gebeurt alleen als alle rollen de status **gereed** hebben.  
+* Automatisch schalen gebeurt alleen als alle rollen de status **gereed** hebben.  
 
 
 ## <a name="where-scale-is-located"></a>Waar de schaal zich bevindt
@@ -53,7 +57,7 @@ U kunt schaal instellingen configureren voor een functie met twee modi **hand ma
 
 Stel de optie **schalen op** in voor het **plannen en uitvoeren van regels**.
 
-![Scherm afbeelding met de optie planning en prestatie regels.](./media/cloud-services-how-to-scale-portal/schedule-basics.png)
+![afbeelding Cloud Services schaal instellingen met profiel en regel](./media/cloud-services-how-to-scale-portal/schedule-basics.png)
 
 1. Een bestaand profiel.
 2. Voeg een regel voor het bovenliggende profiel toe.

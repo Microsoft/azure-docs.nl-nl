@@ -12,14 +12,18 @@ ms.tgt_pltfrm: na
 ms.workload: ''
 ms.date: 03/16/2020
 ms.author: tagore
-ms.openlocfilehash: ae284a6afa1f2e396aef8177229c344b569be6ec
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+ms.openlocfilehash: 70bcf5bce1c8c07633baf070149a9bb80c331d9c
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92075668"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742570"
 ---
 # <a name="troubleshooting-applications-that-dont-support-tls-12"></a>Problemen oplossen met toepassingen die TLS 1,2 niet ondersteunen
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 In dit artikel wordt beschreven hoe u de oudere TLS-protocollen (TLS 1,0 en 1,1) inschakelt, en het Toep assen van verouderde coderings suites ter ondersteuning van de extra protocollen op de web-en werk rollen van de Windows Server 2019 Cloud service. 
 
 We begrijpen dat we met de stappen voor het afnemen van TLS 1,0 en TLS 1,1 de oudere protocollen en coderings suites mogelijk moeten ondersteunen totdat ze hun afschaffing kunnen plannen.  We raden u aan om deze verouderde waarden niet opnieuw in te scha kelen. we bieden hulp bij het helpen van klanten. We raden klanten aan om het risico van regressie te evalueren voordat ze de wijzigingen implementeren die in dit artikel worden beschreven. 

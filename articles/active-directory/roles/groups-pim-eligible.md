@@ -2,23 +2,23 @@
 title: Een rol toewijzen aan een groep met behulp van Privileged Identity Management in azure AD | Microsoft Docs
 description: Meer informatie over hoe u een Azure Active Directory (Azure AD)-rol aan een groep kunt toewijzen met behulp van Azure AD Privileged Identity Management (PIM).
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: article
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 74ad503374e0148e9813508b6c7f8b21e2dca7a3
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 10f179ab1bf328a2132c9206580dfa58efb80f1b
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93379159"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98741918"
 ---
 # <a name="assign-a-role-to-a-group-using-privileged-identity-management"></a>Een rol toewijzen aan een groep met behulp van Privileged Identity Management
 
@@ -31,7 +31,7 @@ In dit artikel wordt beschreven hoe u een Azure Active Directory-rol (Azure AD) 
 
 1. Meld u aan bij [Azure AD privileged Identity Management](https://ms.portal.azure.com/?Microsoft_AAD_IAM_GroupRoles=true&Microsoft_AAD_IAM_userRolesV2=true&Microsoft_AAD_IAM_enablePimIntegration=true#blade/Microsoft_Azure_PIMCommon/CommonMenuBlade/quickStart) als beheerder van een bevoorrechte rol of als globale beheerder in uw organisatie.
 
-1. **Privileged Identity Management**  >  functies van **Azure AD-rollen** selecteren  >  **Roles**  >  **toewijzingen toevoegen**
+1. **Privileged Identity Management**  >  functies van **Azure AD-rollen** selecteren  >    >  **toewijzingen toevoegen**
 
 1. Selecteer een rol en selecteer vervolgens een groep. Alleen groepen die in aanmerking komen voor roltoewijzing (groepen die kunnen worden toegewezen aan rollen) worden weer gegeven, niet alle groepen.
 

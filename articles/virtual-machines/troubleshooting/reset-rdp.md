@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/25/2019
 ms.author: genli
-ms.openlocfilehash: 2f242de3bfa6a2bc95dc46b4ca5c10222b755a2f
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 720d25079e1350315c9f403a8215f650db49ceb7
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98200920"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743080"
 ---
 # <a name="reset-remote-desktop-services-or-its-administrator-password-in-a-windows-vm"></a>Extern bureaublad-services of het beheerders wachtwoord opnieuw instellen in een Windows-VM
 Als u geen verbinding kunt maken met een virtuele Windows-machine (VM), kunt u het lokale beheerders wachtwoord opnieuw instellen of de Extern bureaublad-services configuratie opnieuw instellen (niet ondersteund op Windows-domein controllers). Voor het opnieuw instellen van het wachtwoord gebruikt u de Azure-portal of de VM-toegangsextensie in Azure PowerShell. Wanneer u zich bij de VM hebt aangemeld, stelt u het wachtwoord van die lokale beheerder opnieuw in.  
@@ -90,10 +90,14 @@ Controleer eerst of de [meest recente Power shell-module is geïnstalleerd en ge
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- Als de toegang tot de Azure VM-extensie niet reageert en u het wacht woord niet opnieuw kunt instellen, [stelt u het lokale Windows-wacht woord offline opnieuw](reset-local-password-without-agent.md)in. Deze methode is Geavanceerd en vereist dat u de virtuele harde schijf van de problematische VM verbindt met een andere virtuele machine. Volg de stappen die in dit artikel worden beschreven eerst en probeer de methode voor offline wachtwoord herstel alleen uit te voeren als deze stappen niet werken.
+
+- Als de installatie van de Azure VM-toegangs extensie mislukt, kunt u problemen [met VM-extensies oplossen](../extensions/troubleshoot.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).
+
+- Als u het wacht woord niet opnieuw kunt instellen met behulp van de extensie voor toegang tot de VM, moet u [het lokale Windows-wacht woord offline opnieuw instellen](reset-local-password-without-agent.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json). Deze methode is Geavanceerd en vereist dat u de virtuele harde schijf van de problematische VM verbindt met een andere virtuele machine. Volg de stappen die in dit artikel worden beschreven eerst en probeer de methode voor offline wachtwoord herstel alleen uit te voeren als deze stappen niet werken.
 
 - [Meer informatie over Azure VM-extensies en-functies](../extensions/features-windows.md).
 
 - [Verbinding maken met een virtuele machine van Azure met RDP of SSH](/previous-versions/azure/dn535788(v=azure.100)).
 
-- [Problemen met extern bureaublad verbindingen met een virtuele Azure-machine op basis van Windows oplossen](troubleshoot-rdp-connection.md).
+
+- [Problemen met extern bureaublad verbindingen met een virtuele Azure-machine op basis van Windows oplossen](troubleshoot-rdp-connection.md?toc=%2fazure%2fvirtual-machines%2fwindows%2ftoc.json).

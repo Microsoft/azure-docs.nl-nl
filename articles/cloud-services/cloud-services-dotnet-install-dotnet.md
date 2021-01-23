@@ -1,24 +1,25 @@
 ---
-title: .NET installeren op Azure Cloud Services-rollen | Microsoft Docs
+title: .NET-rollen in azure Cloud Services (klassieke) installeren | Microsoft Docs
 description: In dit artikel wordt beschreven hoe u de .NET Framework hand matig installeert op de web-en werk rollen van uw Cloud service
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-manager: carmonm
-ms.service: cloud-services
-ms.devlang: dotnet
-ms.custom: devx-track-dotnet
 ms.topic: article
-ms.date: 06/22/2018
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 6de4b79560557fc86edb9e1a25e32a6a1983ceb0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 18665fabad079a8759f26be8834b2fe029ab5f49
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88932233"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742774"
 ---
-# <a name="install-net-on-azure-cloud-services-roles"></a>.NET installeren op Azure Cloud Services-rollen
+# <a name="install-net-on-azure-cloud-services-classic-roles"></a>.NET Cloud Services-rollen (klassiek) installeren in azure
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 In dit artikel wordt beschreven hoe u versies van .NET Framework installeert die niet worden meegeleverd met het Azure-gast besturingssysteem. U kunt .NET gebruiken op het gast besturingssysteem om uw web-en werk rollen van de Cloud service te configureren.
 
 U kunt bijvoorbeeld .NET Framework 4.6.2 installeren op de gast besturingssysteem familie 4, die niet wordt geleverd met een versie van .NET Framework 4,6. (De gast besturingssysteem familie 5 wordt geleverd met .NET Framework 4,6.) Zie het [Azure Guest OS release News](cloud-services-guestos-update-matrix.md)(Engelstalig) voor de meest recente informatie over de versies van het Azure-gast besturingssysteem. 
@@ -36,11 +37,11 @@ Als u het web-installatie programma voor de .NET Framework wilt downloaden, kies
 * [.NET Framework 4.6.2 web installer](https://www.microsoft.com/download/details.aspx?id=53345)
 
 Het installatie programma voor een *webrol toevoegen* :
-  1. Klik in **Solution Explorer**onder **rollen** *in uw Cloud* service project met de rechter muisknop op uw webfunctie en **Add**Selecteer  >  **nieuwe map**toevoegen. Maak een map met de naam **bin**.
-  2. Klik met de rechter muisknop op de map **Add**bin en selecteer  >  **bestaand item**toevoegen. Selecteer .NET Installer en voeg deze toe aan de bin-map.
+  1. Klik in **Solution Explorer** onder **rollen** *in uw Cloud* service project met de rechter muisknop op uw webfunctie en Selecteer  >  **nieuwe map** toevoegen. Maak een map met de naam **bin**.
+  2. Klik met de rechter muisknop op de map bin en selecteer  >  **bestaand item** toevoegen. Selecteer .NET Installer en voeg deze toe aan de bin-map.
   
 Het installatie programma voor een *werk* rollen toevoegen:
-* Klik *met de rechter* muisknop op uw werknemersrol **Add**en selecteer  >  **bestaand item**toevoegen. Selecteer .NET Installer en voeg deze toe aan de rol. 
+* Klik *met de rechter* muisknop op uw werknemersrol en selecteer  >  **bestaand item** toevoegen. Selecteer .NET Installer en voeg deze toe aan de rol. 
 
 Wanneer bestanden op deze manier aan de map rol inhoud worden toegevoegd, worden ze automatisch toegevoegd aan uw Cloud service pakket. De bestanden worden vervolgens geïmplementeerd op een consistente locatie op de virtuele machine. Herhaal dit proces voor elke web-en werk functie in uw Cloud service, zodat alle rollen een kopie van het installatie programma hebben.
 
@@ -198,7 +199,7 @@ U kunt opstart taken gebruiken om bewerkingen uit te voeren voordat een rol word
    EXIT /B 0
    ```
 
-3. Voeg het bestand install. cmd aan elke rol toe met **Add**behulp van  >  **bestaand item** toevoegen in **Solution Explorer** zoals eerder in dit onderwerp wordt beschreven. 
+3. Voeg het bestand install. cmd aan elke rol toe met behulp van  >  **bestaand item** toevoegen in **Solution Explorer** zoals eerder in dit onderwerp wordt beschreven. 
 
     Nadat deze stap is voltooid, moeten alle rollen het .NET-installatie bestand en het bestand install. cmd hebben.
 
@@ -223,7 +224,7 @@ Met deze XML worden diagnostische gegevens geconfigureerd voor het overdragen va
 ## <a name="deploy-your-cloud-service"></a>Uw Cloud service implementeren
 Wanneer u uw Cloud service implementeert, installeren de opstart taken de .NET Framework als deze nog niet is geïnstalleerd. De Cloud service rollen zijn in de status *bezet* terwijl het Framework wordt geïnstalleerd. Als de Framework-installatie opnieuw moet worden gestart, kunnen de service rollen ook opnieuw worden gestart. 
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 * [De .NET Framework installeren][Installing the .NET Framework]
 * [Bepalen welke .NET Framework versies worden geïnstalleerd][How to: Determine Which .NET Framework Versions Are Installed]
 * [Problemen met .NET Framework-installaties oplossen][Troubleshooting .NET Framework Installations]

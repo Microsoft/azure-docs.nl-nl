@@ -2,23 +2,23 @@
 title: Machtigingen voor beheerdersrol weer geven en toewijzen-Azure AD | Microsoft Docs
 description: U kunt nu leden van een Azure AD-beheerdersrol weer geven en beheren in de portal. Voor degenen die regel matig roltoewijzingen beheren.
 services: active-directory
-author: curtand
+author: rolyon
 manager: daveba
 ms.service: active-directory
 ms.workload: identity
 ms.subservice: roles
 ms.topic: how-to
 ms.date: 11/05/2020
-ms.author: curtand
+ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9330c6d34dcf5a799d65ebba176565ff031cb956
-ms.sourcegitcommit: 0d171fe7fc0893dcc5f6202e73038a91be58da03
+ms.openlocfilehash: 26217930b79b958ae86d976d06a28ba4a4852ab6
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/05/2020
-ms.locfileid: "93376779"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742009"
 ---
 # <a name="view-and-assign-administrator-roles-in-azure-active-directory"></a>Beheerdersrollen bekijken en toewijzen in Azure Active Directory
 

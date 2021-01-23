@@ -1,24 +1,24 @@
 ---
-title: Een Node.js Express-app bouwen en implementeren op Azure Cloud Services
-titleSuffix: Azure Cloud Services
+title: Een Node.js Express-app bouwen en implementeren op Azure Cloud Services (klassiek)
 description: Gebruik deze zelf studie om een nieuwe toepassing te maken met behulp van de Express-module, die een MVC-Framework biedt voor het maken van Node.js-webtoepassingen.
-services: cloud-services
-documentationcenter: nodejs
-author: tgore03
-ms.service: cloud-services
-ms.devlang: nodejs
 ms.topic: article
-ms.date: 08/17/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.custom: devx-track-js
-ms.openlocfilehash: 7ecaccf36988e94d0cb1114bd04c5d571d4fe86d
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: e15af589b3a3c496738c97c0c2c6429ba708ba7e
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92071860"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743335"
 ---
-# <a name="build-and-deploy-a-nodejs-web-application-using-express-on-an-azure-cloud-services"></a>Een Node.js-webtoepassing bouwen en implementeren met behulp van Express op een Azure-Cloud Services
+# <a name="build-and-deploy-a-nodejs-web-application-using-express-on-an-azure-cloud-services-classic"></a>Een Node.js-webtoepassing bouwen en implementeren met behulp van Express op een Azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 Node.js bevat een minimale set functionaliteit in de kern runtime.
 Ontwikkel aars gebruiken vaak modules van derden om extra functionaliteit te bieden bij het ontwikkelen van een Node.js-toepassing. In deze zelf studie maakt u een nieuwe toepassing met behulp van de [Express](https://github.com/expressjs/express) -module. deze biedt een MVC-Framework voor het maken van Node.js-webtoepassingen.
@@ -32,7 +32,7 @@ Hieronder ziet u een scherm opname van de voltooide toepassing:
 
 Voer de volgende stappen uit om een nieuw Cloud service project met de naam ' expressapp ' te maken:
 
-1. Zoek in het **menu Start** of in het **Start scherm**naar **Windows Power shell**. Klik ten slotte met de rechter muisknop op **Windows Power shell** en selecteer **als administrator uitvoeren**.
+1. Zoek in het **menu Start** of in het **Start scherm** naar **Windows Power shell**. Klik ten slotte met de rechter muisknop op **Windows Power shell** en selecteer **als administrator uitvoeren**.
 
     ![Azure PowerShell pictogram](./media/cloud-services-nodejs-develop-deploy-express-app/azure-powershell-start.png)
 2. Wijzig de mappen in de map **c: \\ knoop punt** en voer de volgende opdrachten in om een nieuwe oplossing te maken met de naam **expressapp** en een webrol met de naam **WebRole1**:
@@ -44,7 +44,7 @@ Voer de volgende stappen uit om een nieuw Cloud service project met de naam ' ex
    ```
 
    > [!NOTE]
-   > Standaard gebruikt **add-AzureNodeWebRole** een oudere versie van Node.js. De instructie **set-AzureServiceProjectRole** hierboven geeft Azure opdracht om v 0.10.21 van het knoop punt te gebruiken.  Houd er rekening mee dat de para meters hoofdletter gevoelig zijn.  U kunt controleren of de juiste versie van Node.js is geselecteerd door de eigenschap **engines** in **WebRole1\package.js**in te scha kelen.
+   > Standaard gebruikt **add-AzureNodeWebRole** een oudere versie van Node.js. De instructie **set-AzureServiceProjectRole** hierboven geeft Azure opdracht om v 0.10.21 van het knoop punt te gebruiken.  Houd er rekening mee dat de para meters hoofdletter gevoelig zijn.  U kunt controleren of de juiste versie van Node.js is geselecteerd door de eigenschap **engines** in **WebRole1\package.js** in te scha kelen.
 >
 >
 

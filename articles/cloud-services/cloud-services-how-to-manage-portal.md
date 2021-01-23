@@ -1,21 +1,25 @@
 ---
 title: Algemene beheer taken voor Cloud Services | Microsoft Docs
 description: Meer informatie over het beheren van Cloud Services in de Azure Portal. In deze voor beelden wordt gebruikgemaakt van de Azure Portal.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 07/05/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 84e450a55f9482c3a713943adfcc4d7940ab873f
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 306da8dae31c2bbdb487e7128e3a2e24424c239d
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92076705"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743386"
 ---
-# <a name="manage-cloud-services-in-the-azure-portal"></a>Cloud Services beheren in de Azure Portal
+# <a name="manage-cloud-services-classic-in-the-azure-portal"></a>Cloud Services (klassiek) beheren in de Azure Portal
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 In het gedeelte **Cloud Services** van de Azure Portal kunt u het volgende doen:
 
 * Een service functie of implementatie bijwerken.
@@ -30,7 +34,7 @@ Als u de toepassings code voor uw Cloud service moet bijwerken, gebruikt u **Upd
 
 1. Selecteer in de [Azure Portal][Azure portal]de Cloud service die u wilt bijwerken. Met deze stap wordt de Blade Cloud service-exemplaar geopend.
 
-2. Selecteer **bijwerken**op de Blade.
+2. Selecteer **bijwerken** op de Blade.
 
     ![Knop bijwerken](./media/cloud-services-how-to-manage-portal/update-button.png)
 
@@ -55,7 +59,7 @@ U kunt implementaties van de **Cloud Services** pagina of het dash board wissele
 
 1. Selecteer in de [Azure Portal][Azure portal]de Cloud service die u wilt bijwerken. Met deze stap wordt de Blade Cloud service-exemplaar geopend.
 
-2. Selecteer **wisselen**op de Blade.
+2. Selecteer **wisselen** op de Blade.
 
     ![Knop Cloud Services wisselen](./media/cloud-services-how-to-manage-portal/swap-button.png)
 
@@ -77,7 +81,7 @@ Er zijn twee belang rijke vereisten voor een geslaagde implementatie swap:
 
 - Als u een statisch IP-adres voor uw productie sleuf wilt gebruiken, moet u deze ook reserveren voor uw staging-sleuf. Anders mislukt de wissel.
 
-- Alle exemplaren van uw rollen moeten worden uitgevoerd voordat u de swap kunt uitvoeren. U kunt de status van uw instanties controleren op de Blade **overzicht** van de Azure Portal. U kunt ook de opdracht [Get-AzureRole](/powershell/module/servicemanagement/azure.service/get-azurerole?view=azuresmps-3.7.0) gebruiken in Windows Power shell.
+- Alle exemplaren van uw rollen moeten worden uitgevoerd voordat u de swap kunt uitvoeren. U kunt de status van uw instanties controleren op de Blade **overzicht** van de Azure Portal. U kunt ook de opdracht [Get-AzureRole](/powershell/module/servicemanagement/azure.service/get-azurerole?view=azuresmps-3.7.0&preserve-view=true) gebruiken in Windows Power shell.
 
 Houd er rekening mee dat de bewerkingen voor het bijwerken van gast besturingssystemen en service retouchies ook kunnen leiden tot het mislukken van implementaties. Zie [problemen met Cloud service-implementatie oplossen](cloud-services-troubleshoot-deployment-problems.md)voor meer informatie.
 
@@ -94,7 +98,7 @@ Gebruik de volgende procedure om een implementatie of uw Cloud service te verwij
 
 1. Selecteer in de [Azure Portal][Azure portal]de Cloud service die u wilt verwijderen. Met deze stap wordt de Blade Cloud service-exemplaar geopend.
 
-2. Selecteer **verwijderen**op de Blade.
+2. Selecteer **verwijderen** op de Blade.
 
     ![Knop Cloud Services verwijderen](./media/cloud-services-how-to-manage-portal/delete-button.png)
 

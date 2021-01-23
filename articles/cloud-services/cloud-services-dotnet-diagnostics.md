@@ -1,25 +1,26 @@
 ---
-title: Azure Diagnostics (.NET) gebruiken met Cloud Services | Microsoft Docs
+title: Azure Diagnostics (.NET) gebruiken met Cloud Services (klassiek) | Microsoft Docs
 description: Azure Diagnostics gebruiken voor het verzamelen van gegevens uit Azure Cloud Services voor het opsporen van fouten, het meten van prestaties, bewaking, verkeers analyse en meer.
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-manager: carmonm
-ms.service: cloud-services
-ms.devlang: dotnet
-ms.custom: devx-track-csharp
 ms.topic: article
-ms.date: 05/22/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 6a015a8d56cf3991d04b212db73d5b752c13a793
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 89ba50b91e8ff2e2d7a05d59f2b738a1f87a5fd2
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077538"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742145"
 ---
-# <a name="enabling-azure-diagnostics-in-azure-cloud-services"></a>Azure Diagnostics in azure inschakelen Cloud Services
-Zie [Azure Diagnostics overzicht](../azure-monitor/platform/diagnostics-extension-overview.md) voor een achtergrond op Azure Diagnostics.
+# <a name="enabling-azure-diagnostics-in-azure-cloud-services-classic"></a>Inschakelen van Azure Diagnostics in azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
+Zie [Azure Diagnostics overzicht](../azure-diagnostics.md) voor een achtergrond op Azure Diagnostics.
 
 ## <a name="how-to-enable-diagnostics-in-a-worker-role"></a>Diagnostische gegevens inschakelen in een worker-rol
 In dit scenario wordt beschreven hoe u een Azure worker-rol implementeert die telemetriegegevens verzendt met behulp van de .NET Event source-klasse. Azure Diagnostics wordt gebruikt om de telemetriegegevens te verzamelen en op te slaan in een Azure-opslag account. Wanneer u een werknemersrol maakt, schakelt Visual Studio automatisch diagnostische gegevens van 1,0 in als onderdeel van de oplossing in azure Sdk's voor .NET 2,4 en eerdere versies. De volgende instructies beschrijven het proces voor het maken van de rol van werk nemers, het uitschakelen van diagnose 1,0 van de oplossing en het implementeren van diagnostische gegevens 1,2 of 1,3 voor uw werknemersrol.
@@ -31,7 +32,7 @@ In dit artikel wordt ervan uitgegaan dat u een Azure-abonnement hebt en Visual S
 1. Start **Visual Studio**.
 2. Maak een **Azure-Cloud service** project op basis van de **Cloud** sjabloon die gericht is op .NET Framework 4,5.  Geef het project de naam ' WadExample ' en klik op OK.
 3. Selecteer **werk rollen** en klik op OK. Het project wordt gemaakt.
-4. Dubbel klik in **Solution Explorer**op het eigenschappen bestand **WorkerRole1** .
+4. Dubbel klik in **Solution Explorer** op het eigenschappen bestand **WorkerRole1** .
 5. Schakel op het tabblad **configuratie** de optie **Diagnostische gegevens inschakelen** uit om diagnostische gegevens te uitschakelen 1,0 (Azure SDK 2,4 en eerder).
 6. Bouw uw oplossing om te controleren of er geen fouten zijn.
 
@@ -137,7 +138,7 @@ namespace WorkerRole1
     ```powershell
     (Get-AzureServiceAvailableExtension -ExtensionName 'PaaSDiagnostics' -ProviderNamespace 'Microsoft.Azure.Diagnostics').PublicConfigurationSchema | Out-File -Encoding utf8 -FilePath 'WadConfig.xsd'
     ```
-2. Voeg een XML-bestand toe aan uw **WorkerRole1** -project door met de rechter muisknop op het **WorkerRole1** -project te klikken en nieuw item **toevoegen**te selecteren  ->  **...** -> **Visual C#-items**  ->  **Gegevens**  ->  **XML-bestand**. Geef het bestand de naam WadExample.xml.
+2. Voeg een XML-bestand toe aan uw **WorkerRole1** -project door met de rechter muisknop op het **WorkerRole1** -project te klikken en nieuw item **toevoegen** te selecteren  ->  **...** -> **Visual C#-items**  ->  **Gegevens**  ->  **XML-bestand**. Geef het bestand de naam WadExample.xml.
 
    ![CloudServices_diag_add_xml](./media/cloud-services-dotnet-diagnostics/AddXmlFile.png)
 3. Koppel de WadConfig. XSD aan het configuratie bestand. Zorg ervoor dat het venster WadExample.xml editor het actieve venster is. Druk op **F4** om het venster **Eigenschappen** te openen. Klik op de eigenschap **schemas** in het venster **Eigenschappen** . Klik op de **..** . in de eigenschap **schemas** . Klik op de knop **Toevoegen...** en navigeert u naar de locatie waar u het XSD-bestand hebt opgeslagen en selecteert u het bestand WadConfig. XSD. Klik op **OK**.
@@ -183,7 +184,7 @@ Set-AzureServiceDiagnosticsExtension -StorageContext $storageContext -Diagnostic
 ```
 
 ### <a name="step-6-look-at-your-telemetry-data"></a>Stap 6: uw telemetrie-gegevens bekijken
-Ga in Visual Studio **Server Explorer**naar het opslag account wadexample. Nadat de Cloud service ongeveer vijf (5) minuten is uitgevoerd, ziet u de tabellen **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** en **WADSetOtherTable**. Dubbel klik op een van de tabellen om de telemetrie weer te geven die is verzameld.
+Ga in Visual Studio **Server Explorer** naar het opslag account wadexample. Nadat de Cloud service ongeveer vijf (5) minuten is uitgevoerd, ziet u de tabellen **WADEnumsTable**, **WADHighFreqTable**, **WADMessageTable**, **WADPerformanceCountersTable** en **WADSetOtherTable**. Dubbel klik op een van de tabellen om de telemetrie weer te geven die is verzameld.
 
 ![CloudServices_diag_tables](./media/cloud-services-dotnet-diagnostics/WadExampleTables.png)
 

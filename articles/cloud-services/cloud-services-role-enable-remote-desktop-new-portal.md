@@ -1,22 +1,24 @@
 ---
 title: De portal gebruiken om Extern bureaublad in te scha kelen voor een rol
-titleSuffix: Azure Cloud Services
 description: Uw Azure Cloud service-toepassing configureren om extern bureau blad-verbindingen toe te staan
-services: cloud-services
-documentationcenter: ''
-author: mmccrory
-ms.service: cloud-services
 ms.topic: article
-ms.date: 11/28/2016
-ms.author: memccror
-ms.openlocfilehash: 507af87c3126be00a802bcbc5170f8ad364c06fc
-ms.sourcegitcommit: 3bdeb546890a740384a8ef383cf915e84bd7e91e
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 8fa0d3c0e29c53e6fe9cb32ddf02168686be1efe
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93099314"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743250"
 ---
-# <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services"></a>Verbinding met extern bureaublad inschakelen voor een rol in azure Cloud Services
+# <a name="enable-remote-desktop-connection-for-a-role-in-azure-cloud-services-classic"></a>Verbinding met extern bureaublad inschakelen voor een rol in azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 > [!div class="op_single_selector"]
 > * [Azure-portal](cloud-services-role-enable-remote-desktop-new-portal.md)
@@ -31,11 +33,11 @@ U kunt tijdens de ontwikkeling een Extern bureaublad verbinding in uw rol instel
 
 De Azure Portal gebruikt de Extern bureaublad-uitbreidings benadering zodat u Extern bureaublad zelfs nadat de toepassing is geïmplementeerd, kunt inschakelen. Met de **extern bureaublad** -instellingen voor uw Cloud service kunt u extern bureaublad inschakelen, het lokale Administrator-account wijzigen dat wordt gebruikt om verbinding te maken met de virtuele machines, het certificaat dat wordt gebruikt voor de verificatie en de verval datum in te stellen.
 
-1. Klik op **Cloud Services** , selecteer de naam van de Cloud service en selecteer vervolgens **extern bureaublad** .
+1. Klik op **Cloud Services**, selecteer de naam van de Cloud service en selecteer vervolgens **extern bureaublad**.
 
-    ![Scherm afbeelding die de Extern bureaublad-optie markeert.](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop.png)
+    ![afbeelding toont het extern bureau blad van Cloud Services](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop.png)
 
-2. Kies of u Extern bureaublad wilt inschakelen voor een afzonderlijke rol of voor alle rollen, en wijzig vervolgens de waarde van de schakelaar in **ingeschakeld** .
+2. Kies of u Extern bureaublad wilt inschakelen voor een afzonderlijke rol of voor alle rollen, en wijzig vervolgens de waarde van de schakelaar in **ingeschakeld**.
 
 3. Vul de vereiste velden in voor de gebruikers naam, het wacht woord, de verval datum en het certificaat.
 
@@ -46,7 +48,7 @@ De Azure Portal gebruikt de Extern bureaublad-uitbreidings benadering zodat u Ex
 
 4. In **rollen** selecteert u de rol die u wilt bijwerken of selecteert u **Alles** voor alle rollen.
 
-5. Wanneer u klaar bent met de configuratie-updates, selecteert u **Opslaan** . Het duurt enkele ogen blikken voordat de rolinstanties gereed zijn voor het ontvangen van verbindingen.
+5. Wanneer u klaar bent met de configuratie-updates, selecteert u **Opslaan**. Het duurt enkele ogen blikken voordat de rolinstanties gereed zijn voor het ontvangen van verbindingen.
 
 ## <a name="remote-into-role-instances"></a>Extern in rolinstanties
 
@@ -56,12 +58,12 @@ Als Extern bureaublad is ingeschakeld voor de rollen, kunt u rechtstreeks vanuit
 2. Selecteer een rolinstantie waarvoor Extern bureaublad is geconfigureerd.
 3. Klik op **verbinding maken** om een RDP-bestand voor de rolinstantie te downloaden.
 
-    ![Schermopname met de knop Verbinding maken gemarkeerd.](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Connect.png)
+    ![Installatie kopie van extern bureau blad voor Cloud Services](./media/cloud-services-role-enable-remote-desktop-new-portal/CloudServices_Remote_Desktop_Connect.png)
 
 4. Klik op **openen** en vervolgens op **verbinding maken** om de Extern bureaublad verbinding te starten.
 
 >[!NOTE]
-> Als uw Cloud service zich achter een NSG bevindt, moet u mogelijk regels maken die verkeer op de poorten **3389** en **20000** toestaan.  Extern bureaublad maakt gebruik van poort **3389** .  Cloud service-exemplaren worden gelijkmatig verdeeld, zodat u niet rechtstreeks kunt bepalen met welk exemplaar verbinding moet worden gemaakt.  De *RemoteForwarder* -en *remoteaccess* -agents beheren RDP-verkeer en toestaan dat de client een RDP-cookie verzendt en een afzonderlijk exemplaar opgeeft waarmee verbinding moet worden gemaakt.  De *RemoteForwarder* -en *remoteaccess* -agents vereisen dat poort **20000** * is geopend. deze kan worden geblokkeerd als u een NSG hebt.
+> Als uw Cloud service zich achter een NSG bevindt, moet u mogelijk regels maken die verkeer op de poorten **3389** en **20000** toestaan.  Extern bureaublad maakt gebruik van poort **3389**.  Cloud service-exemplaren worden gelijkmatig verdeeld, zodat u niet rechtstreeks kunt bepalen met welk exemplaar verbinding moet worden gemaakt.  De *RemoteForwarder* -en *remoteaccess* -agents beheren RDP-verkeer en toestaan dat de client een RDP-cookie verzendt en een afzonderlijk exemplaar opgeeft waarmee verbinding moet worden gemaakt.  De *RemoteForwarder* -en *remoteaccess* -agents vereisen dat poort **20000*** is geopend. deze kan worden geblokkeerd als u een NSG hebt.
 
 ## <a name="additional-resources"></a>Aanvullende bronnen
 

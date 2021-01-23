@@ -1,21 +1,25 @@
 ---
-title: Grootte van virtuele machines voor Azure-Cloud Services | Microsoft Docs
+title: Grootte van virtuele machines voor Azure Cloud Services (klassiek) | Microsoft Docs
 description: Geeft een lijst van de verschillende grootten van virtuele machines (en Id's) voor web-en werk rollen van Azure Cloud service.
-services: cloud-services
-documentationcenter: ''
-author: tgore03
-ms.service: cloud-services
 ms.topic: article
-ms.date: 07/18/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: b617ba8db8f9dbb1c25ac34aa879613c29c723b7
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 55fa3ab4e5bd4472f7dae9692ae3ac9bcfa8e2b6
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96340285"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743165"
 ---
-# <a name="sizes-for-cloud-services"></a>Grootte voor Cloud Services
+# <a name="sizes-for-cloud-services-classic"></a>Grootten voor Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 In dit onderwerp worden de beschik bare grootten en opties voor Cloud service-rolinstanties (webrollen en werk rollen) beschreven. Het biedt ook overwegingen bij de implementatie bij het plannen van het gebruik van deze resources. Elke grootte heeft een ID die u in het [service definitie bestand](cloud-services-model-and-package.md#csdef)plaatst. De prijzen voor elke grootte zijn beschikbaar op de pagina met [Cloud Services prijzen](https://azure.microsoft.com/pricing/details/cloud-services/) .
 
 > [!NOTE]
@@ -63,7 +67,7 @@ We hebben het concept van de Azure Compute Unit (ACU) ontwikkeld om een manier t
 | [D v3](#dv3-series) |160-190 * |
 | [E v3](#ev3-series) |160-190 * |
 | [Kg](#g-series) |180 - 240* |
-| [H](#h-series) |290 - 300* |
+| [HxBxD](#h-series) |290 - 300* |
 
 ACU's die met een * zijn gemarkeerd, maken gebruik van Intel® Turbo-technologie om de CPU-frequentie te verhogen en nóg betere prestaties te leveren. Hoe groot die extra prestaties zijn, is afhankelijk van de VM-grootte, de workload en de andere workloads die op dezelfde host worden uitgevoerd.
 

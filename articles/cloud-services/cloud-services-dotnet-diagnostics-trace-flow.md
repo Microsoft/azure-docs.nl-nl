@@ -1,25 +1,26 @@
 ---
-title: De stroom in Cloud Services toepassing traceren met Azure Diagnostics
-titleSuffix: Azure Cloud Services
+title: De stroom in Cloud Services (klassieke) toepassing traceren met Azure Diagnostics
 description: Voeg tracerings berichten toe aan een Azure-toepassing voor het opsporen van fouten, het meten van prestaties, bewaking, verkeers analyse en meer.
-services: cloud-services
-documentationcenter: .net
-author: tgore03
-ms.service: cloud-services
-ms.devlang: dotnet
-ms.custom: devx-track-dotnet
 ms.topic: article
-ms.date: 02/20/2016
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 8270766413729454181c461d469d49e418a1aa67
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: b00bb28128cfe9a2e701647ad174ea2c9dd458e4
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88932301"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742122"
 ---
-# <a name="trace-the-flow-of-a-cloud-services-application-with-azure-diagnostics"></a>De stroom van een Cloud Services toepassing traceren met Azure Diagnostics
-Tracering is een manier om de uitvoering van uw toepassing te bewaken terwijl deze wordt uitgevoerd. U kunt de klassen [System. Diagnostics. trace](/dotnet/api/system.diagnostics.trace), [System. Diagnostics. debug](/dotnet/api/system.diagnostics.debug)en [System. Diagnostics. TraceSource](/dotnet/api/system.diagnostics.tracesource) gebruiken om informatie vast te leggen over fouten en de uitvoering van toepassingen in Logboeken, tekst bestanden of andere apparaten voor latere analyse. Zie [toepassingen traceren en instrumenteren](/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications)voor meer informatie over tracering.
+# <a name="trace-the-flow-of-a-cloud-services-classic-application-with-azure-diagnostics"></a>De stroom van een Cloud Services (klassieke) toepassing traceren met Azure Diagnostics
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
+Tracering is een methode waarmee u de uitvoering van uw toepassing kunt bewaken terwijl deze wordt uitgevoerd. U kunt de klassen [System. Diagnostics. trace](/dotnet/api/system.diagnostics.trace), [System. Diagnostics. debug](/dotnet/api/system.diagnostics.debug)en [System. Diagnostics. TraceSource](/dotnet/api/system.diagnostics.tracesource) gebruiken om informatie vast te leggen over fouten en de uitvoering van toepassingen in Logboeken, tekst bestanden of andere apparaten voor latere analyse. Zie [toepassingen traceren en instrumenteren](/dotnet/framework/debug-trace-profile/tracing-and-instrumenting-applications)voor meer informatie over tracering.
 
 ## <a name="use-trace-statements-and-trace-switches"></a>Trace-instructies en tracerings switches gebruiken
 Implementeer tracering in uw Cloud Services-toepassing door de [DiagnosticMonitorTraceListener](/previous-versions/azure/reference/ee758610(v=azure.100)) toe te voegen aan de toepassings configuratie en aanroepen naar System. Diagnostics. trace of System. Diagnostics. debug te maken in de toepassings code. Gebruik het configuratie bestand *app.config* voor werk rollen en de *web.config* voor webrollen. Wanneer u een nieuwe gehoste service maakt met behulp van een Visual Studio-sjabloon, wordt Azure Diagnostics automatisch toegevoegd aan het project en wordt de DiagnosticMonitorTraceListener toegevoegd aan het juiste configuratie bestand voor de functies die u toevoegt.

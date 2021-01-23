@@ -1,26 +1,25 @@
 ---
-title: Def. webrole-schema voor Azure Cloud Services | Microsoft Docs
+title: Cloud Services voor Azure (klassiek) def. webrollen schema | Microsoft Docs
 description: De Azure-webfunctie is aangepast voor de programmering van webtoepassingen die ondersteuning bieden voor ASP.NET, PHP, WCF en FastCGI. Meer informatie over service-definitie-elementen van een webrole.
-ms.custom: ''
-ms.date: 04/14/2015
-services: cloud-services
-ms.reviewer: ''
+ms.topic: article
 ms.service: cloud-services
-ms.suite: ''
-ms.tgt_pltfrm: ''
-ms.topic: reference
-ms.assetid: 85368e4e-a0db-4c02-8dbc-8e2928fa6091
-caps.latest.revision: 60
-author: tgore03
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 4368bb38a280461fdd77348de60a0e5793ee9582
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: 3c5811649d7d6c0aa1e90ed34c61be6a7f9339f8
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011316"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743148"
 ---
-# <a name="azure-cloud-services-definition-webrole-schema"></a>Webrollen schema voor Azure Cloud Services definition
+# <a name="azure-cloud-services-classic-definition-webrole-schema"></a>Webrole-schema voor de definitie van Azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 De Azure-webfunctie is een rol die is aangepast voor programmering van webtoepassingen zoals ondersteund door IIS 7, zoals ASP.NET, PHP, Windows Communication Foundation en FastCGI.
 
 De standaard extensie voor het service definitie bestand is. csdef.
@@ -124,7 +123,7 @@ Het service definitie bestand bevat deze elementen, zoals beschreven in de volge
 
 [Rusland](#Imports)
 
-[Wederinvoer](#Import)
+[Importeren](#Import)
 
 [Runtime](#Runtime)
 
@@ -263,7 +262,7 @@ Het `FixedPort` element is alleen beschikbaar via de Azure SDK-versie 1,3 of hog
 
 In de volgende tabel worden de kenmerken van het `FixedPort` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |poort|int|Vereist. De poort voor het interne eind punt. Dit heeft hetzelfde effect als het instellen van de `FixedPortRange` minimum-en maximum waarde op dezelfde poort.<br /><br /> Mogelijke waarden variëren tussen 1 en 65535, inclusief (Azure SDK-versie 1,7 of hoger).|  
 
@@ -277,7 +276,7 @@ Het `FixedPortRange` element is alleen beschikbaar via de Azure SDK-versie 1,3 o
 
 In de volgende tabel worden de kenmerken van het `FixedPortRange` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |min.|int|Vereist. De minimale poort in het bereik. Mogelijke waarden variëren tussen 1 en 65535, inclusief (Azure SDK-versie 1,7 of hoger).|  
 |max|tekenreeks|Vereist. De maximum poort in het bereik. Mogelijke waarden variëren tussen 1 en 65535, inclusief (Azure SDK-versie 1,7 of hoger).|  
@@ -309,7 +308,7 @@ Het `Import` element is alleen beschikbaar via de Azure SDK-versie 1,3 of hoger.
 
 In de volgende tabel worden de kenmerken van het `Import` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |moduleName|tekenreeks|Vereist. De naam van de module die u wilt importeren. Geldige import modules zijn:<br /><br /> -RemoteAccess<br />- RemoteForwarder<br />-Diagnostische gegevens<br /><br /> Met de modules RemoteAccess en RemoteForwarder kunt u uw rolinstantie voor extern bureau blad-verbindingen configureren. Zie [verbinding met extern bureaublad inschakelen](cloud-services-role-enable-remote-desktop-new-portal.md)voor meer informatie.<br /><br /> Met de module diagnostiek kunt u Diagnostische gegevens verzamelen voor een rolinstantie.|  
 
@@ -320,7 +319,7 @@ Het `Runtime` element is alleen beschikbaar via de Azure SDK-versie 1,3 of hoger
 
 In de volgende tabel worden de kenmerken van het `Runtime` element beschreven:  
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |executionContext|tekenreeks|Optioneel. Hiermee geeft u de context waarin het Role proces wordt gestart. De standaard context is `limited` .<br /><br /> -   `limited` : Het proces wordt gestart zonder beheerders bevoegdheden.<br />-   `elevated` : Het proces wordt gestart met Administrator bevoegdheden.|  
 
@@ -344,7 +343,7 @@ Het `RoleInstanceValue` element geeft het xPath op waaruit de waarde van de vari
 
 In de volgende tabel worden de kenmerken van het `RoleInstanceValue` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |XPath|tekenreeks|Optioneel. Locatiepad van de implementatie-instellingen voor het exemplaar. Zie [Configuration Varia bles with XPath](cloud-services-role-config-xpath.md)(Engelstalig) voor meer informatie.<br /><br /> U moet een kenmerk value of een- `RoleInstanceValue` element bevatten.|  
 
@@ -361,7 +360,7 @@ Het `NetFxEntryPoint` element geeft het programma op dat moet worden uitgevoerd 
 
 In de volgende tabel worden de kenmerken van het `NetFxEntryPoint` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |assemblyName|tekenreeks|Vereist. Het pad en de bestands naam van de assembly met het toegangs punt. Het pad is relatief ten opzichte van de map **\\ %ROLEROOT%\Approot** (in **\\** `commandLine` wordt aangenomen dat er geen%ROLEROOT%\Approot is opgegeven). **% ROLEROOT%** is een omgevings variabele die wordt onderhouden door Azure en vertegenwoordigt de locatie van de hoofdmap voor uw rol. De map **\\ %ROLEROOT%\Approot** vertegenwoordigt de toepassingsmap voor uw rol.<br /><br /> Voor HWC-rollen is het pad altijd relatief ten opzichte van de map **\\ %ROLEROOT%\Approot\bin** .<br /><br /> Als de assembly niet kan worden gevonden ten opzichte van de map **\\ %ROLEROOT%\Approot** , wordt de **\\ %ROLEROOT%\APPROOT\BIN** doorzocht voor volledige IIS-en IIS Express webrollen.<br /><br /> Het gedrag van deze terugvallen voor volledige IIS is niet een aanbevolen best practice en kan in toekomstige versies worden verwijderd.|  
 |targetFrameworkVersion|tekenreeks|Vereist. De versie van .NET Framework waarop de assembly is gebouwd. Bijvoorbeeld `targetFrameworkVersion="v4.0"`.|  
@@ -428,7 +427,7 @@ Het `Startup` element beschrijft een verzameling taken die worden uitgevoerd wan
 
 In de volgende tabel wordt het kenmerk van het `Startup` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |priority|int|Alleen voor intern gebruik.|  
 
@@ -439,7 +438,7 @@ Het `Task` element is alleen beschikbaar via de Azure SDK-versie 1,3 of hoger.
 
 In de volgende tabel worden de kenmerken van het `Task` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |commandLine|tekenreeks|Vereist. Een script, zoals een CMD-bestand, dat de opdrachten bevat die moeten worden uitgevoerd. Opstart opdrachten en batch bestanden moeten worden opgeslagen in ANSI-indeling. Bestands indelingen die een byte volgorde markering instellen aan het begin van het bestand, worden niet goed verwerkt.|  
 |executionContext|tekenreeks|Hiermee geeft u de context waarin het script wordt uitgevoerd.<br /><br /> -   `limited` [Standaard]: Voer uit met dezelfde bevoegdheden als voor de rol die het proces host.<br />-   `elevated` – Uitvoeren met beheerders bevoegdheden.|  
@@ -457,7 +456,7 @@ Het `Content` element is alleen beschikbaar via de Azure SDK-versie 1,5 of hoger
 
 In de volgende tabel worden de kenmerken van het `Content` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |doel|tekenreeks|Vereist. De locatie op de virtuele Azure-machine waarop de inhoud is geplaatst. Deze locatie is relatief ten opzichte van de map **%ROLEROOT%\Approot**.|  
 
@@ -470,7 +469,7 @@ Het `SourceDirectory` element is alleen beschikbaar via de Azure SDK-versie 1,5 
 
 In de volgende tabel worden de kenmerken van het `SourceDirectory` element beschreven.
 
-| Kenmerk | Type | Description |  
+| Kenmerk | Type | Beschrijving |  
 | --------- | ---- | ----------- |  
 |leertraject|tekenreeks|Vereist. Relatief of absoluut pad van een lokale map waarvan de inhoud wordt gekopieerd naar de virtuele machine van Azure. De uitbrei ding van omgevings variabelen in het mappad wordt ondersteund.|  
   

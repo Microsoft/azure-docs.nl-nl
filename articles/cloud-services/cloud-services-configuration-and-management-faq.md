@@ -1,28 +1,24 @@
 ---
 title: Veelgestelde vragen over configuratie-en beheer problemen
-titleSuffix: Azure Cloud Services
 description: In dit artikel vindt u de veelgestelde vragen over de configuratie en het beheer van Microsoft Azure Cloud Services.
-services: cloud-services
-documentationcenter: ''
-author: genlin
-manager: dcscontentpm
-editor: ''
-tags: top-support-issue
-ms.assetid: 84985660-2cfd-483a-8378-50eef6a0151d
-ms.service: cloud-services
-ms.workload: na
-ms.tgt_pltfrm: na
 ms.topic: article
-ms.date: 07/23/2018
-ms.author: genli
-ms.openlocfilehash: c4497805e64ef303c9d7340c48a49027b3a26bef
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.service: cloud-services
+ms.date: 10/14/2020
+ms.author: tagore
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: c5dd09292897d69f90606e8661b4e6cb28090612
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96011015"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742587"
 ---
-# <a name="configuration-and-management-issues-for-azure-cloud-services-frequently-asked-questions-faqs"></a>Configuratie-en beheer problemen voor Azure Cloud Services: veelgestelde vragen (FAQ)
+# <a name="configuration-and-management-issues-for-azure-cloud-services-classic-frequently-asked-questions-faqs"></a>Configuratie-en beheer problemen voor Azure Cloud Services (klassiek): veelgestelde vragen (FAQ)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 In dit artikel vindt u veelgestelde vragen over configuratie-en beheer problemen voor [Microsoft Azure Cloud Services](https://azure.microsoft.com/services/cloud-services). U kunt ook de [pagina Cloud Services VM-grootte](cloud-services-sizes-specs.md) raadplegen voor informatie over de grootte.
 
@@ -62,7 +58,7 @@ In dit artikel vindt u veelgestelde vragen over configuratie-en beheer problemen
 
 **Algemeen**
 
-- [Kunt u ' all sniff ' toevoegen aan mijn website? Hoe kan ik](#how-do-i-add-nosniff-to-my-website)
+- [Hoe kan ik toevoegen `nosniff` aan mijn website?](#how-do-i-add-nosniff-to-my-website)
 - [Hoe kan ik IIS aanpassen voor een webrol?](#how-do-i-customize-iis-for-a-web-role)
 - [Wat is de quotum limiet voor mijn Cloud service?](#what-is-the-quota-limit-for-my-cloud-service)
 - [Waarom geeft het station op mijn Cloud service-VM weinig vrije schijf ruimte weer?](#why-does-the-drive-on-my-cloud-service-vm-show-very-little-free-disk-space)
@@ -128,7 +124,7 @@ $cert = New-SelfSignedCertificate -DnsName yourdomain.cloudapp.net -CertStoreLoc
 $password = ConvertTo-SecureString -String "your-password" -Force -AsPlainText
 Export-PfxCertificate -Cert $cert -FilePath ".\my-cert-file.pfx" -Password $password
 ```
-De mogelijkheid om BLOB of lokaal te kiezen voor uw csdef-en cscfg-upload locatie is binnenkort beschikbaar. Met behulp van [New-Azure](/powershell/module/servicemanagement/azure.service/new-azuredeployment?view=azuresmps-4.0.0)kunt u elke locatie waarde instellen.
+De mogelijkheid om BLOB of lokaal te kiezen voor uw csdef-en cscfg-upload locatie is binnenkort beschikbaar. Met behulp van [New-Azure](/powershell/module/servicemanagement/azure.service/new-azuredeployment?view=azuresmps-4.0.0&preserve-view=true)kunt u elke locatie waarde instellen.
 
 De mogelijkheid om metrische gegevens op instantie niveau te bewaken. Er zijn extra bewakings mogelijkheden beschikbaar [voor het bewaken van Cloud Services](cloud-services-how-to-monitor.md).
 
@@ -148,7 +144,7 @@ U kunt de logboek registratie van Windows Azure Diagnostics (WAD) inschakelen vi
 2. [Via .NET-code inschakelen](./cloud-services-dotnet-diagnostics.md)
 3. [Inschakelen via Power shell](./cloud-services-diagnostics-powershell.md)
 
-Als u de huidige WAD-instellingen van uw Cloud service wilt ophalen, kunt u [Get-AzureServiceDiagnosticsExtensions](./cloud-services-diagnostics-powershell.md#get-current-diagnostics-extension-configuration) PS cmd gebruiken of kunt u deze weer geven via de portal op de blade Cloud Services-> uitbrei dingen.
+Als u de huidige WAD-instellingen van uw Cloud service wilt ophalen, kunt u [Get-AzureServiceDiagnosticsExtensions](./cloud-services-diagnostics-powershell.md#get-current-diagnostics-extension-configuration) Power shell cmd gebruiken of kunt u deze weer geven via de portal op de blade Cloud Services-> uitbrei dingen.
 
 
 ## <a name="network-configuration"></a>Netwerkconfiguratie
@@ -254,7 +250,7 @@ Zie voor meer informatie over het inschakelen van Azure Diagnostics logboek regi
 
 ## <a name="generic"></a>Algemeen
 
-### <a name="how-do-i-add-nosniff-to-my-website"></a>Kunt u ' all sniff ' toevoegen aan mijn website? Hoe kan ik
+### <a name="how-do-i-add-nosniff-to-my-website"></a>Hoe kan ik toevoegen `nosniff` aan mijn website?
 Als u wilt voor komen dat clients de MIME-typen sniffen, voegt u een instelling toe in uw *web.config* -bestand.
 
 ```xml
@@ -284,11 +280,11 @@ Zie [servicespecifieke limieten](../azure-resource-manager/management/azure-subs
 ### <a name="why-does-the-drive-on-my-cloud-service-vm-show-very-little-free-disk-space"></a>Waarom geeft het station op mijn Cloud service-VM weinig vrije schijf ruimte weer?
 Dit is normaal gedrag en er mag geen problemen met uw toepassing optreden. Logboeken is ingeschakeld voor het% AppRoot%-station in azure PaaS-Vm's, wat in feite de hoeveelheid ruimte in beslag neemt die normaal gesp roken wordt geconsumeerd. Er zijn echter verschillende zaken waarmee u rekening moet houden, waardoor dit een niet-probleem is.
 
-De grootte van het station% AppRoot% wordt berekend als \<size of .cspkg + max journal size + a margin of free space> , of 1,5 GB, afhankelijk van wat groter is. De grootte van uw virtuele machine heeft geen invloed op deze berekening. (De grootte van de virtuele machine is alleen van invloed op de grootte van het tijdelijke station C:.) 
+De grootte van het station% AppRoot% wordt berekend als <grootte van. cspkg + maximum grootte van het logboek en een marge vrije ruimte>, of 1,5 GB, afhankelijk van wat groter is. De grootte van uw virtuele machine heeft geen invloed op deze berekening. (De grootte van de virtuele machine is alleen van invloed op de grootte van het tijdelijke station C:.) 
 
 Kan niet schrijven naar het station% AppRoot%. Als u naar de Azure-VM schrijft, moet u dit doen in een tijdelijke LocalStorage-resource (of een andere optie, zoals Blob Storage, Azure Files, enzovoort). De hoeveelheid vrije ruimte voor de map% AppRoot% is dus niet zinvol. Als u niet zeker weet of uw toepassing naar het% AppRoot%-station schrijft, kunt u de service in een paar dagen altijd laten uitvoeren en vervolgens de grootten ' voor ' en ' na ' vergelijkt. 
 
-Azure schrijft niets naar het station% AppRoot%. Zodra de VHD is gemaakt vanuit uw. cspkg en is gekoppeld aan de virtuele machine van Azure, is het enige wat u kunt schrijven naar dit station is uw toepassing. 
+Azure schrijft niets naar het station% AppRoot%. Zodra de VHD is gemaakt van uw `.cspkg` en is gekoppeld aan de virtuele machine van Azure, is het enige wat u kunt schrijven naar dit station, uw toepassing. 
 
 De logboek instellingen kunnen niet worden geconfigureerd, zodat u deze niet kunt uitschakelen.
 
@@ -297,7 +293,7 @@ De logboek instellingen kunnen niet worden geconfigureerd, zodat u deze niet kun
 U kunt de antimalware-uitbrei ding inschakelen met behulp van Power shell-script in de opstart taak. Volg de stappen in deze artikelen om deze te implementeren: 
  
 - [Een Power shell-opstart taak maken](cloud-services-startup-tasks-common.md#create-a-powershell-startup-task)
-- [Set-AzureServiceAntimalwareExtension](/powershell/module/servicemanagement/azure.service/Set-AzureServiceAntimalwareExtension?view=azuresmps-4.0.0 )
+- [Set-AzureServiceAntimalwareExtension](/powershell/module/servicemanagement/azure.service/Set-AzureServiceAntimalwareExtension?view=azuresmps-4.0.0&preserve-view=true)
 
 Zie [antimalware-implementatie scenario's](../security/fundamentals/antimalware.md#antimalware-deployment-scenarios)voor meer informatie over antimalware-implementatie scenario's en hoe u deze kunt inschakelen vanuit de portal.
 

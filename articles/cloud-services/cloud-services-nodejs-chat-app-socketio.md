@@ -1,23 +1,24 @@
 ---
 title: Node.js toepassing met behulp van Socket.io-Azure
 description: Gebruik deze zelf studie om te leren hoe u een socket host. Op IO gebaseerde chat toepassing op Azure. Socket.IO biedt realtime communicatie voor een node.js-server en-clients.
-services: cloud-services
-documentationcenter: nodejs
-author: tgore03
-ms.service: cloud-services
-ms.devlang: nodejs
 ms.topic: article
-ms.date: 08/17/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.custom: devx-track-js
-ms.openlocfilehash: ef7325b53f7d6450acdff4664f3e338c31be9612
-ms.sourcegitcommit: a92fbc09b859941ed64128db6ff72b7a7bcec6ab
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: abc02769d7d978e14975d90ae0f98547bdc4faf7
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/15/2020
-ms.locfileid: "92077215"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98743318"
 ---
-# <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service"></a>Een Node.js Chat-toepassing bouwen met Socket.IO in een Azure-Cloud service
+# <a name="build-a-nodejs-chat-application-with-socketio-on-an-azure-cloud-service-classic"></a>Een Node.js Chat-toepassing bouwen met Socket.IO in een Azure-Cloud service (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
 
 Socket.IO biedt realtime communicatie tussen uw node.js-server en-clients. In deze zelf studie wordt u begeleid bij het hosten van een socket. Op IO gebaseerde chat toepassing in Azure. Zie [socket.io](https://socket.io)voor meer informatie over socket.io.
 
@@ -35,7 +36,7 @@ Zorg ervoor dat de volgende producten en versies zijn geïnstalleerd om het voor
 ## <a name="create-a-cloud-service-project"></a>Een Cloud service project maken
 Met de volgende stappen maakt u het Cloud service project dat als host moet fungeren voor de Socket.IO-toepassing.
 
-1. Zoek in het **menu Start** of in het **Start scherm**naar **Windows Power shell**. Klik ten slotte met de rechter muisknop op **Windows Power shell** en selecteer **als administrator uitvoeren**.
+1. Zoek in het **menu Start** of in het **Start scherm** naar **Windows Power shell**. Klik ten slotte met de rechter muisknop op **Windows Power shell** en selecteer **als administrator uitvoeren**.
 
     ![Azure PowerShell pictogram][powershell-menu]
 2. Maak een map met de naam **c: \\ node**.
@@ -50,7 +51,7 @@ Met de volgende stappen maakt u het Cloud service project dat als host moet fung
     PS C:\> cd node
     ```
 
-4. Voer de volgende opdrachten in om een nieuwe oplossing met de naam **chatapp** en een werknemersrol te maken met de naam **WorkerRole1**:
+4. Voer de volgende opdrachten in om een nieuwe oplossing te maken met de naam `chatapp` en een werk rollen met de naam `WorkerRole1` :
 
     ```powershell
     PS C:\node> New-AzureServiceProject chatapp
@@ -92,16 +93,16 @@ Voordat u de toepassing in de Azure-emulator test, moeten we enkele kleine wijzi
 3. Om ervoor te zorgen dat de toepassing naar de juiste poort luistert, opent u server.js in Klad blok of uw favoriete editor en wijzigt u de volgende regel door **3000** te vervangen door **process. env. Port** , zoals hieronder wordt weer gegeven:
 
     ```js
-    //app.listen(3000, function () {            //Original
+    //app.listen(3000, function () {            //Original
     app.listen(process.env.port, function () {  //Updated
       var addr = app.address();
       console.log('   app listening on http://' + addr.address + ':' + addr.port);
     });
     ```
 
-Nadat u de wijzigingen in **server.js**hebt opgeslagen, voert u de volgende stappen uit om de vereiste modules te installeren en test u de toepassing in de Azure-emulator:
+Nadat u de wijzigingen in **server.js** hebt opgeslagen, voert u de volgende stappen uit om de vereiste modules te installeren en test u de toepassing in de Azure-emulator:
 
-1. Wijzig met **Azure PowerShell**de mappen in de map **C: \\ node \\ chatapp \\ WorkerRole1** en gebruik de volgende opdracht om de modules te installeren die vereist zijn voor deze toepassing:
+1. Wijzig met **Azure PowerShell** de mappen in de map **C: \\ node \\ chatapp \\ WorkerRole1** en gebruik de volgende opdracht om de modules te installeren die vereist zijn voor deze toepassing:
 
     ```powershell
     PS C:\node\chatapp\WorkerRole1> npm install

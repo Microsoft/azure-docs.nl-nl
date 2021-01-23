@@ -1,20 +1,25 @@
 ---
-title: Wat is Azure Cloud Services | Microsoft Docs
+title: Wat is Azure Cloud Services (klassiek) | Microsoft Docs
 description: Meer informatie over wat Azure Cloud Services is, met name dat het is ontworpen voor de ondersteuning van toepassingen die schaalbaar, betrouwbaar en goed koop werken.
-services: cloud-services
-author: tgore03
-ms.service: multiple
 ms.topic: article
-ms.date: 04/19/2017
+ms.service: cloud-services
+ms.date: 10/14/2020
 ms.author: tagore
-ms.openlocfilehash: 0013a3a29bae9d2dde7896b3ae23d0d358946f2b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+author: tanmaygore
+ms.reviewer: mimckitt
+ms.custom: ''
+ms.openlocfilehash: cbb9aae57b952c05aa722f81309158a11aef826b
+ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88224285"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98742808"
 ---
-# <a name="overview-of-azure-cloud-services"></a>Overzicht van Azure Cloud Services
+# <a name="overview-of-azure-cloud-services-classic"></a>Overzicht van Azure Cloud Services (klassiek)
+
+> [!IMPORTANT]
+> [Azure Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md) is een nieuw implementatie model op basis van Azure Resource Manager voor het Azure Cloud Services-product.Met deze wijziging worden Azure-Cloud Services die worden uitgevoerd op het Azure Service Manager gebaseerde implementatie model, de naam van Cloud Services (klassiek) gewijzigd en moeten alle nieuwe implementaties [Cloud Services (uitgebreide ondersteuning)](../cloud-services-extended-support/overview.md)gebruiken.
+
 Azure Cloud Services is een voor beeld van een [platform as a Service](https://azure.microsoft.com/overview/what-is-paas/) (PaaS). Net als [Azure app service](../app-service/overview.md)is deze technologie ontworpen voor de ondersteuning van toepassingen die schaalbaar, betrouwbaar en goed koop zijn om te kunnen worden gebruikt. Op dezelfde manier als App Service wordt gehost op virtuele machines (Vm's), is ook Azure Cloud Services. U hebt echter meer controle over de Vm's. U kunt uw eigen software installeren op Vm's die gebruikmaken van Azure Cloud Services en u kunt deze op afstand openen.
 
 ![Cloud Services diagram van Azure](./media/cloud-services-choose-me/diagram.png)

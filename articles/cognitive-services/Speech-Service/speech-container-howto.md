@@ -12,12 +12,12 @@ ms.date: 11/17/2020
 ms.author: aahi
 ms.custom: cog-serv-seo-aug-2020
 keywords: on-premises, docker, container
-ms.openlocfilehash: 829514637b72582dbb317970b0d23f92eb11bcad
-ms.sourcegitcommit: aeba98c7b85ad435b631d40cbe1f9419727d5884
+ms.openlocfilehash: 79e53bf39e411569f87a46bfc275c784ce84babc
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/04/2021
-ms.locfileid: "97862290"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703323"
 ---
 # <a name="install-and-run-docker-containers-for-the-speech-service-apis"></a>Docker-containers voor de speech service-Api's installeren en uitvoeren 
 
@@ -119,7 +119,7 @@ Container installatie kopieën voor spraak zijn beschikbaar in de volgende Conta
 |-----------|------------|
 | Aangepaste spraak-naar-tekst | `mcr.microsoft.com/azure-cognitive-services/speechservices/custom-speech-to-text:latest` |
 
-# <a name="text-to-speech"></a>[Tekst naar spraak](#tab/tts)
+# <a name="text-to-speech"></a>[Tekst-naar-spraak](#tab/tts)
 
 | Container | Opslagplaats |
 |-----------|------------|
@@ -194,7 +194,7 @@ docker pull mcr.microsoft.com/azure-cognitive-services/speechservices/custom-spe
 > [!NOTE]
 > De `locale` en `voice` voor aangepaste spraak containers worden bepaald door het aangepaste model dat door de container is opgenomen.
 
-# <a name="text-to-speech"></a>[Tekst naar spraak](#tab/tts)
+# <a name="text-to-speech"></a>[Tekst-naar-spraak](#tab/tts)
 
 #### <a name="docker-pull-for-the-text-to-speech-container"></a>Docker-pull voor de tekst-naar-spraak-container
 
@@ -374,13 +374,6 @@ Als u meerdere woord groepen wilt toevoegen, roept u `.addPhrase()` elke woord g
 
 De *Custom speech-naar-tekst* -container is afhankelijk van een aangepast spraak model. Het aangepaste model moet zijn [getraind](how-to-custom-speech-train-model.md) met behulp van de [aangepaste spraak Portal](https://speech.microsoft.com/customspeech).
 
-> [!IMPORTANT]
-> Het Custom Speech model moet worden getraind vanuit een van de volgende model versies:
-> * **20181201 (v 3.3 Unified)**
-> * **20190520 (v 4.14 Unified)**
-> * **20190701 (v 4.17 Unified)**<br>
-> ![Custom Speech Train-container model](media/custom-speech/custom-speech-train-model-container-scoped.png)
-
 De ID van het aangepaste spraak **model** is vereist voor het uitvoeren van de container. U kunt dit vinden op de pagina **training** van de portal voor aangepaste spraak. Ga in de aangepaste spraak Portal naar de pagina **training** en selecteer het model.
 <br>
 
@@ -462,7 +455,7 @@ Checking available base model for en-us
 Vanaf v 2.5.0 van de functie voor aangepaste spraak naar tekst kunt u een aangepast uitspraak resultaat krijgen in de uitvoer. U hoeft alleen maar uw eigen aangepaste uitspraak regels in uw aangepaste model in te stellen en het model te koppelen aan de container voor aangepaste spraak naar tekst.
 
 
-# <a name="text-to-speech"></a>[Tekst naar spraak](#tab/tts)
+# <a name="text-to-speech"></a>[Tekst-naar-spraak](#tab/tts)
 
 Voer de volgende opdracht uit om de standaard *-tekst-naar-spraak-* container uit te voeren `docker run` .
 
@@ -756,7 +749,7 @@ In dit artikel hebt u concepten en werk stromen geleerd om spraak containers te 
 * Spraak biedt vier Linux-containers voor docker, die verschillende mogelijkheden inkapselen:
   * *Spraak naar tekst*
   * *Aangepaste spraak-naar-tekst*
-  * *Tekst naar spraak*
+  * *Tekst-naar-spraak*
   * *Aangepaste tekst-naar-spraak*
   * *Neurale tekst-naar-spraak*
   * *Spraak Taaldetectie*

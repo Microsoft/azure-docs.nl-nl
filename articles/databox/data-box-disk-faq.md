@@ -8,12 +8,12 @@ ms.subservice: disk
 ms.topic: conceptual
 ms.date: 12/17/2020
 ms.author: alkohli
-ms.openlocfilehash: 3df8f75a726639e87157a1aa7fd9ff4d35c0ef4f
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 103e4453ecf848822db0d82bc13e93b0c8c68331
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654622"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702131"
 ---
 # <a name="azure-data-box-disk-frequently-asked-questions"></a>Azure Data Box Disk: veelgestelde vragen
 
@@ -66,7 +66,7 @@ Als u bijvoorbeeld gegevens op uw locatie in Canada wilt verplaatsen naar een Az
 
 ### <a name="option-1"></a>Optie 1: 
 
-Verzend een [ondersteunde schijf](../storage/common/storage-import-export-requirements.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#supported-disks) met gegevens met de [Azure import/export-service](../storage/common/storage-import-export-service.md) van de bron locatie in Canada naar het Azure West US-Data Center.
+Verzend een [ondersteunde schijf](../import-export/storage-import-export-requirements.md?toc=%2fazure%2fstorage%2fblobs%2ftoc.json#supported-disks) met gegevens met de [Azure import/export-service](../import-export/storage-import-export-service.md) van de bron locatie in Canada naar het Azure West US-Data Center.
 
 ### <a name="option-2"></a>Optie 2:
 
@@ -84,10 +84,10 @@ A. Als u problemen ondervindt met Data Box schijven, [neemt u contact op met Mic
 ### <a name="q-how-do-i-get-data-box-disk"></a>V. Hoe kan ik Data Box Disk ophalen? 
 A.  Als u Azure Data Box Disk wilt ontvangen, meldt u zich aan bij de Azure Portal en maakt u een Data Box Disk order. Geef uw contactgegevens en overige informatie op. Wanneer u een bestelling op basis van de beschik baarheid plaatst, wordt Data Box Disk binnen 10 dagen naar u verzonden. Ga voor meer informatie naar [Een Data Box bestellen](data-box-disk-deploy-ordered.md).
 
-### <a name="q-i-couldnt-create-a-data-box-disk-order-in-the-azure-portal-why"></a>V. Ik kan geen Data Box Disk volgorde maken in de Azure Portal. Waarom?
+### <a name="q-i-couldnt-create-a-data-box-disk-order-in-the-azure-portal-why"></a>V. Ik kan geen Data Box Disk volgorde maken in de Azure Portal. Hoe komt dat?
 A. Als u geen Data Box Disk order kunt maken, is er een probleem met het type abonnement of de toegang.
 
-Raadpleeg uw abonnement. Data Box Disk is alleen beschikbaar voor de aanbiedingen Enterprise Agreement (EA) en Cloud Solution Provider (CSP). Als u niet een van deze typen abonnementen hebt, neemt u contact op met Microsoft Ondersteuning om uw abonnement bij te werken.
+Raadpleeg uw abonnement. Data Box Disk is alleen beschikbaar voor de aanbiedingen Enterprise Overeenkomst (EA) en Cloud Solution Provider (CSP). Als u niet een van deze typen abonnementen hebt, neemt u contact op met Microsoft Ondersteuning om uw abonnement bij te werken.
 
 Controleer het toegangsniveau van uw abonnement als u een ondersteund type aanbieding voor het abonnement hebt. U moet inzender of eigenaar van een abonnement zijn om een bestelling te kunnen maken.
 

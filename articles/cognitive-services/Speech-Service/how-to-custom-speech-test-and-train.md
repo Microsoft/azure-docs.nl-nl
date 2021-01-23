@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 03/27/2020
 ms.author: trbye
-ms.openlocfilehash: ed79d9fb3be192d300587eda5198d9b153109241
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 605bae706bbc1db2e008b8d050cbba9eacd16933
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98209777"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702199"
 ---
 # <a name="prepare-data-for-custom-speech"></a>Gegevens voorbereiden voor Custom Speech
 
@@ -46,9 +46,9 @@ In deze tabel worden de geaccepteerde gegevens typen vermeld, wanneer elk gegeve
 
 | Gegevenstype | Gebruikt voor testen | Aanbevolen aantal | Gebruikt voor training | Aanbevolen aantal |
 |-----------|-----------------|----------|-------------------|----------|
-| [Audio](#audio-data-for-testing) | Yes<br>Gebruikt voor visuele inspectie | 5 + audio bestanden | No | N.v.t. |
-| [Audio en Transcripten met menselijke labels](#audio--human-labeled-transcript-data-for-testingtraining) | Yes<br>Wordt gebruikt om de nauw keurigheid te evalueren | 0,5-5 uur audio | Yes | 1-20 uur aan audio |
-| [Gerelateerde tekst](#related-text-data-for-training) | No | N.v.t. | Yes | 1-200 MB aan Verwante tekst |
+| [Audio](#audio-data-for-testing) | Ja<br>Gebruikt voor visuele inspectie | 5 + audio bestanden | Nee | N.v.t. |
+| [Audio en Transcripten met menselijke labels](#audio--human-labeled-transcript-data-for-testingtraining) | Ja<br>Wordt gebruikt om de nauw keurigheid te evalueren | 0,5-5 uur audio | Ja | 1-20 uur aan audio |
+| [Gerelateerde tekst](#related-text-data-for-training) | Nee | N.v.t. | Ja | 1-200 MB aan Verwante tekst |
 
 Wanneer u een nieuw model traint, begint u met [Verwante tekst](#related-text-data-for-training). Met deze gegevens wordt de herkenning van speciale termen en zinsdelen al verbeterd. Training met tekst is veel sneller dan training met audio (minuten versus dagen).
 
@@ -174,7 +174,7 @@ Gebruik deze tabel om ervoor te zorgen dat het gerelateerde gegevens bestand voo
 
 Daarnaast wilt u rekening met de volgende beperkingen:
 
-* Vermijd meer dan vier keer herhaalde tekens. Bijvoorbeeld: ' AAAA ' of ' UUUU '.
+* Vermijd het gebruik van herhaalde tekens, woorden of groepen woorden meer dan drie keer. Bijvoorbeeld: "AAAA", "ja ja ja ja" of "dat is het IT-bestand dat het is?". De spraak service kan regels met te veel herhalingen verwijderen.
 * Gebruik geen speciale tekens of UTF-8-tekens hierboven `U+00A1` .
 * Uri's worden geweigerd.
 

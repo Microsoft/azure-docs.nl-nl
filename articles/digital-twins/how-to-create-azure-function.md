@@ -7,12 +7,12 @@ ms.author: baanders
 ms.date: 8/27/2020
 ms.topic: how-to
 ms.service: digital-twins
-ms.openlocfilehash: 04ca8d515dbc5a28a7d3a30369d97877928c9dc1
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 1178b0ab5af3642026fe78c7de788f354691b13a
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683861"
+ms.locfileid: "98701154"
 ---
 # <a name="connect-function-apps-in-azure-for-processing-data"></a>Functie-apps in azure verbinden voor het verwerken van gegevens
 
@@ -38,19 +38,19 @@ Hier volgt een overzicht van de stappen die het bevat:
 
 Selecteer in Visual Studio 2019 _bestand > nieuw > project_ en zoek naar de _Azure functions_ sjabloon. Selecteer _Next_.
 
-:::image type="content" source="media/how-to-create-azure-function/create-azure-function-project.png" alt-text="Visual Studio: dialoog venster Nieuw project":::
+:::image type="content" source="media/how-to-create-azure-function/create-azure-function-project.png" alt-text="Scherm opname van Visual Studio waarin het dialoog venster Nieuw project wordt weer gegeven. De Azure Functions project sjabloon is gemarkeerd.":::
 
 Geef een naam op voor de functie-app en selecteer _maken_.
 
-:::image type="content" source="media/how-to-create-azure-function/configure-new-project.png" alt-text="Visual Studio: nieuw project configureren":::
+:::image type="content" source="media/how-to-create-azure-function/configure-new-project.png" alt-text="Scherm opname van Visual Studio waarin het dialoog venster wordt weer gegeven voor het configureren van een nieuw project, met inbegrip van de project naam, de locatie van de opslag, het maken van een nieuwe oplossing en de naam van de oplossing.":::
 
 Selecteer het type functie-app van *Event grid trigger* en selecteer _maken_.
 
-:::image type="content" source="media/how-to-create-azure-function/event-grid-trigger-function.png" alt-text="Visual Studio: dialoog venster Azure Functions project activeren":::
+:::image type="content" source="media/how-to-create-azure-function/event-grid-trigger-function.png" alt-text="Scherm opname van Visual Studio waarin het dialoog venster wordt weer gegeven voor het maken van een nieuwe Azure Functions-toepassing. De optie Trigger Event Grid is gemarkeerd.":::
 
 Als uw functie-app is gemaakt, wordt in Visual Studio een code voorbeeld gegenereerd in een **Function1.cs** -bestand in de projectmap. Deze korte functie wordt gebruikt om gebeurtenissen te registreren.
 
-:::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Visual Studio: Project venster met voorbeeld code":::
+:::image type="content" source="media/how-to-create-azure-function/visual-studio-sample-code.png" alt-text="Scherm opname van Visual Studio in het project venster voor het nieuwe project dat is gemaakt. Er is code voor een voorbeeld functie met de naam Function1." lightbox="media/how-to-create-azure-function/visual-studio-sample-code.png":::
 
 ## <a name="write-a-function-with-an-event-grid-trigger"></a>Een functie schrijven met een Event Grid trigger
 
@@ -150,27 +150,27 @@ Met een door het systeem toegewezen beheerde identiteit kunnen Azure-bronnen wor
 
 Zoek in de [Azure Portal](https://portal.azure.com/)op de zoek balk naar _functie-app_ met de naam van de functie-app die u eerder hebt gemaakt. Selecteer de *functie-app* in de lijst. 
 
-:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Azure Portal: zoek functie-app":::
+:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Scherm afbeelding van de Azure Portal: de naam van de functie-app wordt doorzocht in de zoek balk van de portal en het Zoek resultaat is gemarkeerd.":::
 
 Selecteer in het venster functie-app _identiteit_ in de navigatie balk aan de linkerkant om beheerde identiteit in te scha kelen.
 Schakel onder _systeem toegewezen_ tabblad de _status_ in op aan en _Sla_ deze op. Er wordt een pop-up weer gegeven om door het _systeem toegewezen beheerde identiteit in te scha kelen_.
 Selecteer de knop _Ja_ . 
 
-:::image type="content" source="media/how-to-create-azure-function/enable-system-managed-identity.png" alt-text="Azure Portal: door systeem beheerde identiteit inschakelen":::
+:::image type="content" source="media/how-to-create-azure-function/enable-system-managed-identity.png" alt-text="Scherm afbeelding van de Azure Portal: op de pagina identiteit voor de functie-app wordt de optie voor het inschakelen van door het systeem toegewezen beheerde identiteit ingesteld op Ja. De optie status is ingesteld op aan.":::
 
 U kunt in de meldingen controleren dat de functie is geregistreerd bij Azure Active Directory.
 
-:::image type="content" source="media/how-to-create-azure-function/notifications-enable-managed-identity.png" alt-text="Azure Portal: meldingen":::
+:::image type="content" source="media/how-to-create-azure-function/notifications-enable-managed-identity.png" alt-text="Scherm afbeelding van de Azure Portal: in de lijst met meldingen ziet u het pictogram voor de klok vorm in de bovenste balk van de portal. Er is een melding dat de gebruiker door het systeem toegewezen beheerde identiteit heeft ingeschakeld.":::
 
 Noteer ook de **object-id** die wordt weer gegeven op de pagina _identiteit_ , zoals deze wordt gebruikt in de volgende sectie.
 
-:::image type="content" source="media/how-to-create-azure-function/object-id.png" alt-text="De object-ID kopiëren die u in de toekomst wilt gebruiken":::
+:::image type="content" source="media/how-to-create-azure-function/object-id.png" alt-text="Scherm afbeelding van de Azure Portal: een markering rond het veld object-ID van de Azure function-pagina id.":::
 
 ### <a name="assign-access-roles-using-azure-portal"></a>Toegangs rollen toewijzen met behulp van Azure Portal
 
 Selecteer de knop _Azure Role Assignments_ , waarmee de pagina met *Azure-roltoewijzingen* wordt geopend. Selecteer vervolgens _+ roltoewijzing toevoegen (preview)_.
 
-:::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Azure Portal: roltoewijzing toevoegen":::
+:::image type="content" source="media/how-to-create-azure-function/add-role-assignments.png" alt-text="Scherm afbeelding van de Azure Portal: een markering voor de knop Azure-functie toewijzingen onder machtigingen op de pagina identiteit van Azure function.":::
 
 Selecteer op de pagina _roltoewijzing toevoegen (preview)_ die wordt geopend:
 
@@ -181,7 +181,7 @@ Selecteer op de pagina _roltoewijzing toevoegen (preview)_ die wordt geopend:
 
 Sla uw gegevens vervolgens op door te klikken op de knop _Opslaan_ .
 
-:::image type="content" source="media/how-to-create-azure-function/add-role-assignment.png" alt-text="Azure Portal: roltoewijzing toevoegen (preview) ":::
+:::image type="content" source="media/how-to-create-azure-function/add-role-assignment.png" alt-text="Scherm afbeelding van het dialoog venster Azure Portal: om een nieuwe roltoewijzing toe te voegen (preview). Er zijn velden voor het bereik, het abonnement, de resource groep en de rol.":::
 
 ### <a name="configure-application-settings-using-azure-portal"></a>Toepassings instellingen configureren met behulp van Azure Portal
 
@@ -189,37 +189,37 @@ U kunt de URL van uw Azure Digital Apparaatdubbels-exemplaar toegankelijk maken 
 
 Als u een omgevings variabele met de URL van uw exemplaar wilt instellen, moet u eerst de URL ophalen door de hostnaam van het Azure Digital Apparaatdubbels-exemplaar te vinden. Zoek in de zoek balk van [Azure Portal](https://portal.azure.com) naar uw instantie. Selecteer vervolgens _overzicht_ op de linkernavigatiebalk om de _hostnaam_ weer te geven. Kopieer deze waarde.
 
-:::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Azure Portal: overzicht-> de hostnaam kopiëren voor gebruik in het veld _Value_.":::
+:::image type="content" source="media/how-to-create-azure-function/adt-hostname.png" alt-text="Scherm afbeelding van de Azure Portal: op de pagina overzicht voor het Azure Digital Apparaatdubbels-exemplaar wordt de waarde voor de hostnaam gemarkeerd.":::
 
 U kunt nu een toepassings instelling maken aan de hand van de volgende stappen:
 
-1. Zoek naar uw app met behulp van de naam van de functie-app in de zoek balk en selecteer de functie-app in de lijst
+1. Zoek naar uw functie-app in de zoek balk van de portal en selecteer deze in de resultaten
 1. Selecteer _configuratie_ op de navigatie balk aan de linkerkant om een nieuwe toepassings instelling te maken
 1. Selecteer op het tabblad _Toepassings instellingen_ _+ nieuwe toepassings instelling_
 
-:::image type="content" source="media/how-to-create-azure-function/search-for-azure-function.png" alt-text="Azure Portal: zoeken naar een bestaande functie-app" lightbox="media/how-to-create-azure-function/search-for-azure-function.png":::
+:::image type="content" source="media/how-to-create-azure-function/portal-search-for-function-app.png" alt-text="Scherm afbeelding van de Azure Portal: de naam van de functie-app wordt doorzocht in de zoek balk van de portal en het Zoek resultaat is gemarkeerd.":::
 
-:::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Azure Portal: toepassings instellingen configureren":::
+:::image type="content" source="media/how-to-create-azure-function/application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: op de pagina configuratie voor de functie-app wordt de knop voor het maken van een nieuwe toepassings instelling gemarkeerd.":::
 
 In het venster dat wordt geopend, gebruikt u de waarde voor de hostnaam gekopieerd hierboven om een toepassings instelling te maken.
-* _Naam_ : ADT_SERVICE_URL
-* _Waarde_: https://{Your-Azure-Digital-apparaatdubbels-host-name}
+* **Naam**: ADT_SERVICE_URL
+* **Waarde**: https://{Your-Azure-Digital-apparaatdubbels-host-name}
 
 Selecteer _OK_ om een toepassings instelling te maken.
 
-:::image type="content" source="media/how-to-create-azure-function/add-application-setting.png" alt-text="Azure Portal: toepassings instellingen toevoegen.":::
+:::image type="content" source="media/how-to-create-azure-function/add-application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: de knop OK wordt gemarkeerd na het invullen van de velden naam en waarde op de pagina Toepassings instelling toevoegen/bewerken.":::
 
 U kunt de toepassings instellingen weer geven onder het veld _naam_ in de naam van de toepassing. Sla de toepassings instellingen vervolgens op door de knop _Opslaan_ te selecteren.
 
-:::image type="content" source="media/how-to-create-azure-function/application-setting-save-details.png" alt-text="Azure Portal: de toepassing weer geven die is gemaakt en de toepassing opnieuw starten":::
+:::image type="content" source="media/how-to-create-azure-function/application-setting-save-details.png" alt-text="Scherm afbeelding van de Azure Portal: de pagina Toepassings instellingen, met de instelling nieuwe ADT_SERVICE_URL gemarkeerd. De knop Opslaan is ook gemarkeerd.":::
 
 Voor wijzigingen in de toepassings instellingen moet de toepassing opnieuw worden gestart. Selecteer _door gaan_ om de toepassing opnieuw op te starten.
 
-:::image type="content" source="media/how-to-create-azure-function/save-application-setting.png" alt-text="Azure Portal: toepassings instellingen opslaan":::
+:::image type="content" source="media/how-to-create-azure-function/save-application-setting.png" alt-text="Scherm afbeelding van de Azure Portal: er is een melding dat er wijzigingen in de toepassings instellingen zijn aangebracht met het opnieuw opstarten van de toepassing. De knop door gaan is gemarkeerd.":::
 
 U kunt zien dat de toepassings instellingen worden bijgewerkt door het pictogram _meldingen_ te selecteren. Als uw toepassings instelling niet is gemaakt, kunt u opnieuw proberen een toepassings instelling toe te voegen door het bovenstaande proces te volgen.
 
-:::image type="content" source="media/how-to-create-azure-function/notifications-update-web-app-settings.png" alt-text="Azure Portal: meldingen voor het bijwerken van toepassings instellingen":::
+:::image type="content" source="media/how-to-create-azure-function/notifications-update-web-app-settings.png" alt-text="Scherm afbeelding van de Azure Portal: in de lijst met meldingen ziet u het pictogram voor de klok vorm in de bovenste balk van de portal. Er is een melding dat de web-app-instellingen zijn bijgewerkt.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

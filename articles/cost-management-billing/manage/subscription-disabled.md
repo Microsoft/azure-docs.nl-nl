@@ -8,14 +8,14 @@ tags: billing
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 01/19/2021
 ms.author: banders
-ms.openlocfilehash: cad3082981bcfc699bc230badf44e2ffc2e1bed3
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
-ms.translationtype: HT
+ms.openlocfilehash: d7b5f1ae6db633bd1af10b1a0de1392c2a1fbcef
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94744422"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685528"
 ---
 # <a name="reactivate-a-disabled-azure-subscription"></a>Een uitgeschakeld Azure-abonnement opnieuw activeren
 
@@ -23,41 +23,43 @@ Uw Azure-abonnementen kunnen worden gedeactiveerd omdat uw tegoed op is, uw best
 
 ## <a name="your-credit-is-expired"></a>Uw tegoed is verlopen
 
-Wanneer u zich registreert voor een gratis Azure-account, ontvangt u een proefversieabonnement met $ 200 in Azure-tegoed voor 30 dagen en 12 maanden aan gratis services. Aan het einde van 30 dagen schakelt Azure uw abonnement uit. Uw abonnement wordt uitgeschakeld om te voorkomen dat er kosten in rekening worden gebracht voor gebruik buiten het tegoed en de gratis services die bij uw abonnement horen. Als u gebruik wilt blijven maken van Azure-services, moet u [uw abonnement upgraden](upgrade-azure-subscription.md). Na uw upgrade hebt u met uw abonnement nog steeds 12 maanden toegang tot gratis services. Er worden alleen kosten in rekening gebracht buiten de gratis services en volumes.
+Wanneer u zich registreert voor een gratis Azure-account, ontvangt u een proefversieabonnement met $ 200 in Azure-tegoed voor 30 dagen en 12 maanden aan gratis services. Aan het einde van 30 dagen schakelt Azure uw abonnement uit. Uw abonnement wordt uitgeschakeld om te voorkomen dat er kosten in rekening worden gebracht voor gebruik buiten het tegoed en de gratis services die bij uw abonnement horen. Als u gebruik wilt blijven maken van Azure-services, moet u [uw abonnement upgraden](upgrade-azure-subscription.md). Na uw upgrade hebt u met uw abonnement nog steeds 12 maanden toegang tot gratis services. Er worden alleen kosten in rekening gebracht voor gebruik buiten de limieten voor gratis service hoeveelheden.
 
 ## <a name="you-reached-your-spending-limit"></a>Uw bestedingslimiet is bereikt
 
-Op Azure-abonnementen met tegoed zoals Gratis proefversie en Visual Studio Enterprise zijn bestedingslimieten van toepassing. Dit houdt in dat u alleen services kunt gebruiken tot aan het opgenomen tegoed. Wanneer uw gebruik het bestedingslimiet bereikt, schakelt Azure uw abonnement uit voor de resterende factureringsperiode. Uw abonnement wordt uitgeschakeld om te voorkomen dat er kosten in rekening worden gebracht voor gebruik buiten het tegoed dat bij uw abonnement hoort. Als u uw bestedingslimiet wilt verwijderen, raadpleegt u [De bestedingslimiet verwijderen in het Accountcentrum](spending-limit.md#remove).
+Op Azure-abonnementen met tegoed zoals Gratis proefversie en Visual Studio Enterprise zijn bestedingslimieten van toepassing. U kunt alleen services tot het inbegrepen tegoed gebruiken. Wanneer uw gebruik de bestedings limiet bereikt, schakelt Azure uw abonnement uit voor de rest van die facturerings periode. Uw abonnement wordt uitgeschakeld om te voorkomen dat er kosten in rekening worden gebracht voor gebruik buiten het tegoed dat bij uw abonnement hoort. Als u uw bestedings limiet wilt verwijderen, raadpleegt u [de bestedings limiet verwijderen in de Azure Portal](spending-limit.md#remove).
 
 > [!NOTE]
 > Als u een abonnement voor een gratis proefversie hebt en u de bestedingslimiet verwijdert, wordt uw abonnement omgezet in een afzonderlijk abonnement met tarieven voor betalen per gebruik zodra de gratis proefversie is beëindigd. U behoudt uw resterende tegoed voor de volledige 30 dagen nadat u het abonnement hebt gemaakt. U hebt ook gedurende 12 maanden toegang tot gratis services.
 
 Zie [Plannen om Azure-kosten te beheren](../understand/plan-manage-costs.md) voor informatie over het bewaken en beheren van factureringsactiviteit voor Azure.
 
-
 ## <a name="your-bill-is-past-due"></a>De vervaldatum van de factuur is verstreken
 
-Zie [Verschuldigde bedragen betalen voor uw Azure-abonnement na een e-mail van Azure](resolve-past-due-balance.md) om verschuldigde bedragen te betalen.
+Zie een van de volgende artikelen voor het oplossen van een achterstallig saldo:
+
+- Voor abonnementen op micro soft online Subscription Program, waaronder betalen per gebruik, raadpleegt u [het voor uw Azure-abonnement verlopen saldo oplossen nadat u een e-mail van Azure hebt ontvangen](resolve-past-due-balance.md).
+- Zie [uw factuur betalen voor Microsoft Azure](../understand/pay-bill.md)voor micro soft-abonnementen voor klant overeenkomsten.
 
 ## <a name="the-bill-exceeds-your-credit-card-limit"></a>De factuur overschrijdt de limiet van uw creditcard
 
-U kunt dit probleem oplossen door [over te schakelen naar een andere creditcard](change-credit-card.md). Als u een bedrijf vertegenwoordigt, kunt u ook [overschakelen naar betalen via factuur](pay-by-invoice.md).
+Om het probleem op te lossen, [schakelt u over naar een andere credit card](change-credit-card.md). Als u een bedrijf vertegenwoordigt, kunt u ook [overschakelen naar betalen via factuur](pay-by-invoice.md).
 
 ## <a name="the-subscription-was-accidentally-canceled"></a>Het abonnement is per ongeluk opgezegd
 
-Als u de accountbeheerder bent en een afzonderlijk abonnement met tarieven voor betalen per gebruik per ongeluk hebt opgezegd, kunt u dit abonnement opnieuw activeren in het Accountcentrum.
+Als u de account beheerder bent en per ongeluk een abonnement voor betalen naar gebruik hebt geannuleerd, kunt u deze opnieuw activeren in de Azure Portal.
 
-1. Meld u aan bij het [Accountcentrum](https://account.windowsazure.com/Subscriptions).
-1. Selecteer het abonnement dat is opgezegd.
-1. Klik op **Opnieuw activeren**.
-
-    ![Schermopname met koppelingen voor opnieuw activeren in het rechterdeelvenster](./media/subscription-disabled/reactivate-sub.png)
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Ga naar abonnementen en selecteer vervolgens het geannuleerde abonnement.
+1. Selecteer **opnieuw activeren**.
+1. Bevestig opnieuw activeren door **OK** te selecteren.  
+    :::image type="content" source="./media/subscription-disabled/reactivate-sub.png" alt-text="Scherm opname van de weer gave van het opnieuw activeren" :::
 
 Voor andere abonnementstypen [neemt u contact op met de ondersteuning](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) om uw abonnement opnieuw te activeren.
 
 ## <a name="after-reactivation"></a>Na het opnieuw activeren
 
-Nadat uw abonnement opnieuw is geactiveerd, kan er vertraging optreden bij het maken of beheren van resources. Als de vertraging langer duurt dan 30 minuten, neemt u contact op met [ondersteuning voor Azure-facturering](https://go.microsoft.com/fwlink/?linkid=2083458) voor hulp. De meeste Azure-resources worden automatisch hervat en vereisen geen actie. We raden u echter aan om uw Azure-serviceresources te controleren en de resources die niet automatisch worden hervat, opnieuw te starten.
+Nadat uw abonnement opnieuw is geactiveerd, kan er vertraging optreden bij het maken of beheren van resources. Als de vertraging langer is dan 30 minuten, neemt u contact op met de [ondersteuning voor Azure-facturering](https://go.microsoft.com/fwlink/?linkid=2083458) voor hulp. De meeste Azure-resources worden automatisch hervat en vereisen geen actie. We raden u echter aan om uw Azure-serviceresources te controleren en de resources die niet automatisch worden hervat, opnieuw te starten.
 
 ## <a name="need-help-contact-us"></a>Hulp nodig? Neem contact met ons op.
 

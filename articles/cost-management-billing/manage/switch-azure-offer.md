@@ -1,30 +1,30 @@
 ---
 title: Azure-aanbieding wijzigen
-description: Krijg meer informatie over het wijzigen van uw Azure-abonnement en het overschakelen naar een andere aanbieding met behulp van het Azure-accountcentrum.
+description: Meer informatie over het wijzigen van uw Azure-abonnement en overschakelen naar een andere aanbieding.
 author: bandersmsft
 ms.reviewer: amberb
 tags: billing,top-support-issue
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: conceptual
-ms.date: 08/20/2020
+ms.date: 01/20/2021
 ms.author: banders
-ms.openlocfilehash: e62ea7052420e2d0c20b99935659a5443540a942
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
-ms.translationtype: HT
+ms.openlocfilehash: dd8040effc5972d86e620793e437f5b185e12603
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686816"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98685451"
 ---
 # <a name="change-your-azure-subscription-to-a-different-offer"></a>Uw Azure-abonnement wijzigen in een andere aanbieding
 
-Als klant met een [individueel abonnement met Betalen per gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/), kunt u uw Azure-abonnement in het [accountcentrum](https://account.windowsazure.com/Subscriptions) overschakelen naar een andere aanbieding. U kunt deze functie bijvoorbeeld gebruiken om te profiteren van de [maandelijkse tegoeden voor Visual Studio-abonnees](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
+Als klant met een abonnement voor [betalen per gebruik](https://azure.microsoft.com/offers/ms-azr-0003p/) kunt u uw Azure-abonnement overschakelen naar een andere aanbieding in de Azure Portal. U kunt deze functie bijvoorbeeld gebruiken om te profiteren van de [maandelijkse tegoeden voor Visual Studio-abonnees](https://azure.microsoft.com/pricing/member-offers/msdn-benefits-details/).
 
 **Wilt u slechts upgraden vanaf een gratis proefversie?** Raadpleeg [Uw abonnement bijwerken](upgrade-azure-subscription.md).
 
 ## <a name="whats-supported"></a>Wat er wordt ondersteund:
 
-U kunt overschakelen van een individueel abonnement met betalen-per-gebruiktarieven naar:
+U kunt overschakelen van een betalen per gebruik-abonnement naar:
 
 - [Pay-As-You-Go Dev/Test](https://azure.microsoft.com/offers/ms-azr-0023p/)
 - [Visual Studio Professional](https://azure.microsoft.com/offers/ms-azr-0059p/)
@@ -35,43 +35,31 @@ U kunt overschakelen van een individueel abonnement met betalen-per-gebruiktarie
 
 > [!NOTE]
 > Voor andere wijzigingen in aanbiedingen kunt u [contact opnemen met ondersteuning](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
->
->
 
 ## <a name="switch-subscription-offer"></a>Van abonnement wisselen
 
-> [!VIDEO https://channel9.msdn.com/Series/Microsoft-Azure-Tutorials/Switch-to-a-different-Azure-offer/player]
->
->
-
-1. Meld u aan bij het [Azure-accountcentrum](https://account.windowsazure.com/Subscriptions).
-1. Selecteer uw individuele abonnement met betalen-per-gebruiktarieven.
-1. Klik op **Overstappen naar een andere aanbieding**. De optie is alleen beschikbaar als u een individueel abonnement hebt met tarieven voor betalen-per-gebruik en u uw eerste factureringsperiode hebt voltooid.
-
-   ![U ziet de knop Overschakelen aan de rechterkant van de pagina](./media/switch-azure-offer/switchbutton.png)
-1. **Selecteer de gewenste aanbieding** in de lijst met aanbiedingen waarnaar u kunt overschakelen. Deze lijst verschilt afhankelijk van de lidmaatschappen die aan uw account zijn gekoppeld. Als er niets beschikbaar is, raadpleegt u de [lijst met beschikbare aanbiedingen waarnaar u kunt overschakelen](#whats-supported) en controleert u of u de juiste lidmaatschappen hebt.
-
-   ![Selecteer een aanbieding waarnaar u wilt overschakelen](./media/switch-azure-offer/selectoffer.png)
-1. Afhankelijk van de aanbieding waarnaar u overschakelt, ziet u mogelijk een opmerking over de gevolgen van het overschakelen. Neem de lijst zorgvuldig door en volg de instructies voordat u doorgaat.
-
-   ![Bekijk de opmerkingen](./media/switch-azure-offer/thingstonote.png)
-1. U kunt de naam van uw abonnement wijzigen. Standaard is deze niet ingesteld op de naam van de nieuwe aanbieding. Klik op **Overschakelen** om het proces te voltooien.
-
-   ![Klik op de groene knop](./media/switch-azure-offer/confirmpage.png)
-1. Gelukt! Uw abonnement is nu overgeschakeld naar de nieuwe aanbieding.
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Navigeer naar **abonnementen** en selecteer vervolgens uw betalen per gebruik-abonnement.
+1. Selecteer aan de bovenkant van de pagina **Switch-aanbieding**. De optie is alleen beschikbaar als u een abonnement voor betalen per gebruik hebt en uw eerste facturerings periode hebt voltooid.  
+    :::image type="content" source="./media/switch-azure-offer/switch-offer.png" alt-text="ALTImage geeft abonnements gegevens weer met de switch aanbieding optionTEXT" lightbox="./media/switch-azure-offer/switch-offer.png" :::
+1. Selecteer de gewenste aanbieding in de lijst met aanbiedingen waarmee uw abonnement kan worden overgeschakeld. Deze lijst verschilt afhankelijk van de lidmaatschappen die aan uw account zijn gekoppeld. Als er niets beschikbaar is, raadpleegt u de [lijst met beschikbare aanbiedingen waarnaar u kunt overschakelen](#whats-supported) en controleert u of u de juiste lidmaatschappen hebt. Selecteer vervolgens **Volgende**.
+    :::image type="content" source="./media/switch-azure-offer/select-offer.png" alt-text="Selecteer een aanbieding waarnaar u wilt overschakelen" lightbox="./media/switch-azure-offer/select-offer.png" :::
+    Afhankelijk van de aanbieding waarnaar u overschakelt, ziet u mogelijk een opmerking over de gevolgen van het overschakelen. Neem de lijst zorgvuldig door en volg de instructies voordat u doorgaat. Mogelijk moet u ook uw telefoon nummer controleren.
+1. Nadat u de notities hebt bekeken of uw telefoon nummer hebt gecontroleerd, selecteert u **aanbieding scha kelen**.
+1. Uw abonnement is nu overgeschakeld naar de nieuwe aanbieding.
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 In de volgende secties worden veelgestelde vragen beantwoord.
 
 ### <a name="what-is-an-azure-offer"></a>Wat is een Azure-aanbieding?
 
-Een Azure-aanbieding is het *type* Azure-abonnement dat u hebt. [Een abonnement met Betalen per gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/), [Azure in Open](https://azure.microsoft.com/offers/ms-azr-0111p/) en [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) zijn bijvoorbeeld allemaal Azure-aanbiedingen. Elke aanbieding heeft verschillende [voorwaarden](https://azure.microsoft.com/support/legal/offer-details/), en sommige aanbiedingen hebben speciale voordelen. De aanbieding van uw abonnement vindt u op de abonnementspagina van het accountcentrum. Klik op de naam van de aanbieding voor meer informatie.
+Een Azure-aanbieding is het *type* Azure-abonnement dat u hebt. [Een abonnement met Betalen per gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/), [Azure in Open](https://azure.microsoft.com/offers/ms-azr-0111p/) en [Visual Studio Enterprise](https://azure.microsoft.com/offers/ms-azr-0063p/) zijn bijvoorbeeld allemaal Azure-aanbiedingen. Elke aanbieding heeft verschillende [voorwaarden](https://azure.microsoft.com/support/legal/offer-details/), en sommige aanbiedingen hebben speciale voordelen. De aanbieding van uw abonnement wordt weer gegeven op de pagina abonnements Details.
 
-   ![Klik op de aanbiedingskoppeling in het accountcentrum voor meer informatie](./media/switch-azure-offer/offerlink01.png)
+:::image type="content" source="./media/switch-azure-offer/subscription-details.png" alt-text="Pagina abonnements Details met het aanbiedings type" lightbox="./media/switch-azure-offer/subscription-details.png" :::
 
 ### <a name="why-dont-i-see-the-button"></a>Waarom zie ik de knop niet?
 
-In de volgende gevallen wordt de knop **Overstappen naar een andere aanbieding** mogelijk niet weergegeven:
+U ziet de optie **aanbieding uitschakelen** mogelijk niet in de volgende gevallen:
 
 * U hebt geen [abonnement met Betalen per gebruik-tarieven](https://azure.microsoft.com/offers/ms-azr-0003p/). Op dit moment kunnen alleen abonnementen met Betalen per gebruik-tarieven worden omgezet naar een andere aanbieding.
   * Als u een [Gratis proefversie](https://azure.microsoft.com/free/) gebruikt, leest u hier hoe u kunt[upgraden naar Betalen per gebruik](upgrade-azure-subscription.md).
@@ -85,7 +73,7 @@ In de volgende gevallen wordt de knop **Overstappen naar een andere aanbieding**
 
 ### <a name="what-does-switching-azure-offers-do-to-my-service-and-billing"></a>Wat gebeurt er met mijn service en facturering als ik overschakel naar een andere Azure-aanbieding?
 
-Hier zijn de details van wat er gebeurt als u in het accountcentrum overschakelt naar een andere Azure-aanbieding.
+Hier volgen de details van wat er gebeurt wanneer u overschakelt naar Azure-aanbiedingen.
 
 #### <a name="no-service-downtime"></a>Geen servicedowntime
 
@@ -102,7 +90,7 @@ Op de dag dat u overschakelt, wordt een factuur gegenereerd voor alle openstaand
 ### <a name="can-i-migrate-from-a-subscription-with-pay-as-you-go-rates-to-cloud-solution-provider-csp-or-enterprise-agreement-ea"></a>Kan ik migreren van een abonnement met Betalen per gebruik-tarieven naar CSP (Cloud Solution Provider) of EA (Enterprise Agreement)?
 
 * Zie [Overdracht van Azure-abonnementen tussen abonnees en CSP's](transfer-subscriptions-subscribers-csp.md) om te migreren naar CSP.
-* Als u wilt migreren naar EA, vraagt u de inschrijvingsbeheerder om uw account toe te voegen aan EA. Volg de instructies in de uitnodigings-e-mail om uw abonnementen te laten verplaatsen onder EA-inschrijving. Zie [Een bestaand account koppelen](https://ea.azure.com/helpdocs/associateExistingAccount) in de EA-portal voor meer informatie.
+* Als u wilt migreren naar EA, vraagt u de inschrijvingsbeheerder om uw account toe te voegen aan EA. Volg de instructies in de e-mail met de uitnodiging om uw abonnementen te laten verplaatsen met de EA-inschrijving.
 
 ### <a name="can-i-migrate-data-and-services-to-a-new-subscription"></a>Kan ik gegevens en services migreren naar een nieuw abonnement?
 

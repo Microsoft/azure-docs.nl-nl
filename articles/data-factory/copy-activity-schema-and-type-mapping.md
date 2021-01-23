@@ -11,12 +11,12 @@ ms.workload: data-services
 ms.topic: conceptual
 ms.date: 06/22/2020
 ms.author: jingwang
-ms.openlocfilehash: ce7c0cba4a231fbdb33679f8cdac7d57c79845f5
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: afcc7ad34807b74fa0b1ddaaa29223d8a6e25584
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968871"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702216"
 ---
 # <a name="schema-and-data-type-mapping-in-copy-activity"></a>Schema en gegevens type toewijzing in Kopieer activiteit
 [!INCLUDE[appliesto-adf-asa-md](includes/appliesto-adf-asa-md.md)]
@@ -185,6 +185,9 @@ U kunt een dergelijke toewijzing definiëren op Data Factory gebruikers interfac
 2. Selecteer de matrix waarvan u de gegevens wilt herhalen en ophalen. Deze wordt automatisch ingevuld als een **verzamelings verwijzing**. Opmerking: er wordt slechts één matrix ondersteund voor deze bewerking.
 
 3. Wijs de vereiste velden toe aan de sink. Data Factory bepaalt automatisch de bijbehorende JSON-paden voor de hiërarchische zijde.
+
+> [!NOTE]
+> Voor records waarbij de matrix die als verzamelings verwijzing is gemarkeerd, leeg is en het selectie vakje is ingeschakeld, wordt de gehele record overgeslagen.
 
 ![Hiërarchisch toewijzen aan tabel vorm met behulp van gebruikers interface](media/copy-activity-schema-and-type-mapping/map-hierarchical-to-tabular-ui.png)
 

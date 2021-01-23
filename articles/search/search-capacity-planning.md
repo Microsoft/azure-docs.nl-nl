@@ -8,18 +8,18 @@ ms.author: heidist
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 01/15/2021
-ms.openlocfilehash: 4a9a6b61e392ed2efd68cdcb1cf7e53d6bde5ccd
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 8d984a303234a24423ceae100bd139cb484d6495
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98249686"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702782"
 ---
 # <a name="estimate-and-manage-capacity-of-an-azure-cognitive-search-service"></a>De capaciteit van een Azure Cognitive Search-service schatten en beheren
 
 Voordat u [een zoek service inricht](search-create-service-portal.md) en vergren delen in een specifieke prijs categorie, duurt het enkele minuten om te begrijpen hoe capaciteit werkt en hoe u replica's en partities kunt aanpassen voor de schommeling van de werk belasting.
 
-Capaciteit is een functie [van de servicelaag](search-sku-tier.md). Lagen worden onderscheiden door de maximale opslag, opslag per partitie en de maximum limieten voor het aantal objecten dat u kunt maken. De laag basis is ontworpen voor apps met een bescheiden opslag vereisten (slechts één partitie), met de mogelijkheid om te worden uitgevoerd in een configuratie met hoge Beschik baarheid (3 replica's). Andere lagen zijn ontworpen voor specifieke werk belastingen of patronen, zoals multitenancy. Intern zijn services die zijn gemaakt op deze lagen voor delen van hardware die deze scenario's helpt.
+Capaciteit is een functie [van de servicelaag, waarbij de maximale](search-sku-tier.md)opslag per service, per partitie en de maximum limieten voor het aantal objecten dat u kunt maken. De laag basis is ontworpen voor apps met een bescheiden opslag vereisten (slechts één partitie), met de mogelijkheid om te worden uitgevoerd in een configuratie met hoge Beschik baarheid (3 replica's). Andere lagen zijn ontworpen voor specifieke werk belastingen of patronen, zoals multitenancy. Intern zijn services die zijn gemaakt op deze lagen voor delen van hardware die deze scenario's helpt.
 
 De schaal baarheids architectuur in azure Cognitive Search is gebaseerd op flexibele combi Naties van replica's en partities, zodat u de capaciteit kunt variëren, afhankelijk van of u meer query-of indexerings functies nodig hebt. Zodra een service is gemaakt, kunt u het aantal replica's of partities onafhankelijk verg Roten of verkleinen. De kosten worden berekend op basis van elke extra fysieke resource, maar zodra grote werk belastingen zijn voltooid, kunt u de schaal verlagen om uw factuur te verlagen. Afhankelijk van de laag en de grootte van de aanpassing kan het toevoegen of beperken van de capaciteit 15 minuten tot enkele uren duren.
 

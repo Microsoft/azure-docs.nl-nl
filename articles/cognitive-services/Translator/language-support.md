@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/10/2020
 ms.author: swmachan
-ms.openlocfilehash: 60da61d094316b29c8fbc5454472bb898d693937
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: e8e54a97c13a69fce2e80676fa68d6d795736a83
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681580"
+ms.locfileid: "98703119"
 ---
 # <a name="language-and-region-support-for-text-and-speech-translation"></a>Ondersteuning van talen en regio's voor tekst-en spraak omzetting
 
@@ -194,6 +194,7 @@ De methode transtranscrib ondersteunt de volgende talen. In de ' aan/van ', ' <-
 | Taal    | Taalcode | Script | Naar/van | Script|
 |:----------- |:-------------:|:-------------:|:-------------:|:-------------:|
 | Arabisch | `ar` | Arabisch `Arab` | <--> | Latijnse `Latn` |
+| Assamees | `as` | Bengaals `Beng` | <--> | Latijnse `Latn` |
 | Bengaals  | `bn` | Bengaals `Beng` | <--> | Latijnse `Latn` |
 |Wit-Russisch| `be` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 |Bulgaars| `bg` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
@@ -208,6 +209,7 @@ De methode transtranscrib ondersteunt de volgende talen. In de ' aan/van ', ' <-
 | Japans | `ja` | Japans `Jpan` | <--> | Latijnse `Latn` |
 | Kannada | `kn` | Kannada `Knda` | <--> | Latijnse `Latn` |
 |Kazachs| `kk` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
+|Koreaans| `ko` | Koreaans `Kore`  | <--> | Latijnse `Latn` |
 |Kirgizisch| `ky` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 |Macedonisch| `mk` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 | Malayalam | `ml` | Malajalam `Mlym` | <--> | Latijnse `Latn` |
@@ -220,6 +222,7 @@ De methode transtranscrib ondersteunt de volgende talen. In de ' aan/van ', ' <-
 | Servisch (Cyrillisch) | `sr-Cyrl` | Cyrillisch `Cyrl`  | --> | Latijnse `Latn` |
 | Servisch (Latijns) | `sr-Latn` | Latijnse `Latn` | --> | Cyrillisch `Cyrl`|
 |Sindhi| `sd` | Arabisch `Arab`  | <--> | Latijnse `Latn` |
+|Sinhala| `si` | Sinhala `Sinh`  | <--> | Latijnse `Latn` |
 |Tadzjieks| `tg` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |
 | Tamil | `ta` | Tamil `Taml` | <--> | Latijnse `Latn` |
 |Tataars| `tt` | Cyrillisch `Cyrl`  | <--> | Latijnse `Latn` |

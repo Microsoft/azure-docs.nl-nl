@@ -3,12 +3,12 @@ title: Resource providers door Azure-Services
 description: Een lijst met alle naam ruimten van de resource provider voor Azure Resource Manager en toont de Azure-service voor die naam ruimte.
 ms.topic: conceptual
 ms.date: 12/01/2020
-ms.openlocfilehash: 5e89b2b7cf7c27a501d93f63c74d81d8fb40883c
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: c319a6d06cbbcf5d36178c37207cc13f295a5897
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97033541"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702850"
 ---
 # <a name="resource-providers-for-azure-services"></a>Resource providers for Azure services (Resourceproviders voor Azure-services)
 
@@ -80,7 +80,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. DBforMariaDB | [Azure Database for MariaDB](../../mariadb/index.yml) |
 | Micro soft. DBforMySQL | [Azure Database for MySQL](../../mysql/index.yml) |
 | Micro soft. DBforPostgreSQL | [Azure Database for PostgreSQL](../../postgresql/index.yml) |
-| Micro soft. DeploymentManager | [Azure Deployment Manager](../templates/deployment-manager-overview.md) |
+| Micro soft. DeploymentManager | [Azure Configuratiebeheer](../templates/deployment-manager-overview.md) |
 | Micro soft. DesktopVirtualization | [Windows Virtual Desktop](../../virtual-desktop/index.yml) |
 | Microsoft.Devices | [Azure IoT Hub](../../iot-hub/index.yml)<br />[Azure IoT Hub Device Provisioning Service](../../iot-dps/index.yml) |
 | Micro soft. DevOps | [Azure DevOps](/azure/devops/) |
@@ -102,7 +102,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Microsoft.HybridCompute | [Azure Arc](../../azure-arc/index.yml) |
 | Micro soft. HybridData | [StorSimple](../../storsimple/index.yml) |
 | Micro soft. HybridNetwork  | [Zones met persoonlijke randen](../../networking/edge-zones-overview.md) |
-| Microsoft.ImportExport | [Azure Import/Export](../../storage/common/storage-import-export-service.md) |
+| Microsoft.ImportExport | [Azure Import/Export](../../import-export/storage-import-export-service.md) |
 | micro soft. Insights | [Azure Monitor](../../azure-monitor/index.yml) |
 | Micro soft. IoTCentral | [Azure IoT Central](../../iot-central/index.yml) |
 | Micro soft. IoTSpaces | [Azure Digital Twins](../../digital-twins/index.yml) |
@@ -138,7 +138,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Microsoft.OperationsManagement | [Azure Monitor](../../azure-monitor/index.yml) |
 | Micro soft. peering | [Azure Peering Service](../../peering-service/index.yml) |
 | Microsoft.PolicyInsights | [Azure Policy](../../governance/policy/index.yml) |
-| Micro soft. Portal- [geregistreerd](#registration) | [Azure-portal](../../azure-portal/index.yml) |
+| Micro soft. Portal- [geregistreerd](#registration) | [Azure Portal](../../azure-portal/index.yml) |
 | Micro soft. PowerBI | [Power BI](/power-bi/power-bi-overview) |
 | Micro soft. PowerBIDedicated | [Power BI Embedded](/azure/power-bi-embedded/) |
 | Micro soft. PowerPlatform | [Power Platform](/power-platform/) |
@@ -164,7 +164,7 @@ De resource providers die zijn gemarkeerd met **-geregistreerd** , worden standa
 | Micro soft. SoftwarePlan | Licentie |
 | Micro soft. Solutions | [Azure Managed Applications](../managed-applications/index.yml) |
 | Microsoft.Sql | [Azure SQL Database](../../azure-sql/database/index.yml)<br /> [Azure SQL Managed Instance](../../azure-sql/managed-instance/index.yml) <br />[Azure Synapse Analytics](/azure/sql-data-warehouse/) |
-| Micro soft. SqlVirtualMachine | [SQL Server op Azure Virtual Machines](../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) |
+| Micro soft. SqlVirtualMachine | [SQL Server op virtuele machines in Azure](../../azure-sql/virtual-machines/windows/sql-server-on-azure-vm-iaas-what-is-overview.md) |
 | Microsoft.Storage | [Storage](../../storage/index.yml) |
 | Micro soft. StorageCache | [Azure HPC Cache](../../hpc-cache/index.yml) |
 | Micro soft. StorageSync | [Storage](../../storage/index.yml) |

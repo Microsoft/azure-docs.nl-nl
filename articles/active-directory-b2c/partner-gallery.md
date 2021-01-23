@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 01/11/2021
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 9aca01bae7911d2b6234d48bedc14b116e911a79
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6af68f51e76f60c807be2008ae61e27879ebbb11
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98675371"
+ms.locfileid: "98703204"
 ---
 # <a name="azure-active-directory-b2c-isv-partners"></a>Azure Active Directory B2C ISV-partners
 
@@ -40,7 +40,6 @@ Micro soft-partners met de volgende Isv's voor identiteits verificatie en contro
 |![Scherm opname van een Experian-logo.](./media/partner-gallery/experian-logo.png) | [Experian](./partner-experian.md) is een identiteits controle-provider waarmee risico beoordelingen worden uitgevoerd op basis van gebruikers kenmerken om fraude te voor komen. |
 |![Scherm opname van een IDology-logo.](./media/partner-gallery/idology-logo.png) | [IDology](./partner-idology.md) is een identiteits verificatie en controle provider met id-verificatie oplossingen, fraude preventie oplossingen, compatibiliteits oplossingen en anderen.|
 |![Scherm opname van een Jumio-logo.](./media/partner-gallery/jumio-logo.png) | [Jumio](./partner-jumio.md) is een id-verificatie service waarmee realtime-verificatie via een geautomatiseerde id wordt ingeschakeld, waarbij klant gegevens worden beschermd. |
-|![Scherm afbeelding van een logo met een toets zonder toets.](./media/partner-gallery/keyless-logo.png) | ' [Minder](./partner-keyless.md) dan een id-verificatie service die verificatie biedt in de vorm van een biometrische scan en elimineert fraude, phishing en hergebruik van referenties.
 | ![Scherm opname van een LexisNexis-logo.](./media/partner-gallery/lexisnexis-logo.png) | [LexisNexis](./partner-lexisnexis.md) is een profilerings-en identiteits validatie provider die gebruikers identificatie verifieert en uitgebreide risico analyse biedt op basis van het apparaat van de gebruiker. |
 | ![Scherm afbeelding van een Onfido-logo](./media/partner-gallery/onfido-logo.png) | [Onfido](./partner-onfido.md) is een verificatie oplossing met een document-id en gelaats biometrie waarmee bedrijven voldoen aan de vereisten van *uw klant* en identiteit in real-time.  |
 
@@ -52,6 +51,7 @@ Micro soft-partners met de volgende Isv's voor MFA en verificatie zonder wacht w
 |:-------------------------|:--------------|
 | ![Scherm afbeelding van een hypr-logo](./media/partner-gallery/hypr-logo.png) | [Hypr](./partner-hypr.md) is een verificatie provider zonder wacht woord, waarmee wacht woorden met een open bare sleutel versleuteling worden vervangen door fraude, phishing en hergebruik van referenties. |
 | ![Scherm afbeelding van een Itsme-logo](./media/partner-gallery/itsme-logo.png) | [Itsme](./partner-itsme.md) is een digitale id-oplossing voor identificatie, authenticatie en Trust Services (eiDAS) waarmee gebruikers veilig kunnen worden aangemeld zonder kaart lezers, wacht woorden, twee ledige verificatie en meerdere pincodes. |
+|![Scherm afbeelding van een logo met een toets zonder toets.](./media/partner-gallery/keyless-logo.png) | [Minder](./partner-keyless.md) dan een wacht woordloze verificatie provider die verificatie biedt in de vorm van een biometrische scan van het gezichts signaal en elimineert fraude, phishing en hergebruik van referenties.
 | ![Scherm afbeelding van een Nevis-logo](./media/partner-gallery/nevis-logo.png) | [Nevis](./partner-nevis.md) maakt verificatie zonder wacht woord mogelijk en biedt een volledige, volledig brandende eindgebruikers ervaring met Nevis Access-app voor sterke klant verificatie en om te voldoen aan de PSD2-transactie vereisten. |
 | ![Scherm afbeelding van een trusona-logo](./media/partner-gallery/trusona-logo.png) | [Trusona](./partner-trusona.md) -integratie helpt u veilig te registreren en maakt verificatie zonder wacht woord, MFA en digitale licentie controle mogelijk. |
 | ![Scherm opname van een twilio-logo.](./media/partner-gallery/twilio-logo.png) | [Twilio verify app](./partner-twilio.md) biedt meerdere oplossingen om MFA in te scha kelen via EENMALIGe SMS-wacht woord (OTP), op tijd gebaseerd wacht woord (mobiele totp) en push meldingen, en om te voldoen aan de vereisten voor de SCA voor PSD2. |

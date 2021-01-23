@@ -1,24 +1,24 @@
 ---
-title: Informatie over gebruik van Azure-reserveringen voor Enterprise Agreements
-description: Lees hier hoe u gegevens van uw gebruik kunt opvragen om te begrijpen hoe de Azure-reservering voor uw Enterprise-registratie wordt toegepast.
+title: Meer informatie over het gebruik van Azure-reserve ringen voor Enterprise Overeenkomst en de klant overeenkomst van micro soft
+description: Lees hoe u uw gebruiks gegevens kunt lezen om te begrijpen hoe een Azure-reserve ring van toepassing is op Enterprise Overeenkomst en het gebruik van de klant overeenkomst van micro soft.
 author: bandersmsft
 ms.reviewer: yashar
 tags: billing
 ms.service: cost-management-billing
 ms.subservice: reservations
 ms.topic: conceptual
-ms.date: 12/02/2020
+ms.date: 01/19/2020
 ms.author: banders
-ms.openlocfilehash: 874d5cb022a38b172bb37009bd86b5e6988f3204
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
-ms.translationtype: HT
+ms.openlocfilehash: 0c69e9533130d6ca70c57422c7cdd5fc75adff72
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96545601"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98683714"
 ---
-# <a name="get-enterprise-agreement-reservation-costs-and-usage"></a>Reserveringskosten en gebruiksgegevens voor Enterprise Agreement opvragen
+# <a name="get-enterprise-agreement-and-microsoft-customer-agreement-reservation-costs-and-usage"></a>De kosten en het gebruik van Enterprise Overeenkomst en micro soft-klanten overeenkomst ophalen
 
-Enterprise Agreement-klanten kunnen reserveringskosten en gebruiksgegevens bekijken in de Azure-portal en via REST-API's. In dit artikel worden de volgende onderwerpen besproken:
+Uitgebreide gegevens voor reserverings kosten en gebruik zijn beschikbaar voor Enterprise Overeenkomst (EA) en het gebruik van micro soft Customer Agreement (MCA) in kosten beheer. In dit artikel worden de volgende onderwerpen besproken:
 
 - Aankoopgegevens van reserveringen ophalen
 - Controleren welke abonnementen, resourcegroepen of resources de reservering hebben gebruikt
@@ -61,9 +61,7 @@ Er zijn aanpassingen doorgevoerd in andere gegevens die beschikbaar zijn voor Az
 
 U kunt de gegevens opvragen met behulp van de API of door ze te downloaden uit de Azure-portal.
 
-Als u nieuwe gegevens wilt opvragen, roept u de [API voor gebruiksgegevens](/rest/api/consumption/usagedetails/list) aan. Zie de [gebruiksvoorwaarden](../understand/understand-usage.md)voor meer informatie over de gebruikte terminologie. De persoon die de aanroep verstuurt, moet een ondernemingsbeheerder zijn voor de Enterprise Agreement en hiervoor moet de [EA-portal](https://ea.azure.com) worden gebruikt. Ondernemingsbeheerders met de bevoegdheid Alleen-lezen kunnen de gegevens ook opvragen.
-
-Let op: deze gegevens zijn niet beschikbaar in [Rapportage-API's voor Enterprise-klanten - Gebruiksgegevens](/rest/api/billing/enterprise/billing-enterprise-api-usage-detail).
+Als u nieuwe gegevens wilt opvragen, roept u de [API voor gebruiksgegevens](/rest/api/consumption/usagedetails/list) aan. Zie de [gebruiksvoorwaarden](../understand/understand-usage.md)voor meer informatie over de gebruikte terminologie.
 
 Hier ziet u een voorbeeld van een aanroep naar de API voor gebruiksgegevens:
 
@@ -87,7 +85,7 @@ De informatie in de onderstaande tabel over metrische gegevens en filters kan he
 
 ## <a name="download-the-usage-csv-file-with-new-data"></a>CSV-bestand met nieuwe gebruiksgegevens downloaden
 
-Als u een EA-beheerder bent, kunt u vanuit de Azure-portal het CSV-bestand downloaden dat nieuwe gebruiksgegevens bevat. Deze gegevens zijn niet beschikbaar vanuit de EA Portal (ea.azure.com). U moet het gebruiksbestand downloaden via de Azure-portal (portal.azure.com) om de nieuwe gegevens te zien.
+Als u een EA-beheerder bent, kunt u het CSV-bestand downloaden dat nieuwe gebruiks gegevens bevat van Azure Portal. Deze gegevens zijn niet beschikbaar vanuit de EA Portal (ea.azure.com). U moet het gebruiksbestand downloaden via de Azure-portal (portal.azure.com) om de nieuwe gegevens te zien.
 
 Ga in de Azure-portal naar [Kostenbeheer en facturering](https://portal.azure.com/#blade/Microsoft_Azure_Billing/ModernBillingMenuBlade/BillingAccounts).
 
@@ -150,7 +148,7 @@ Reserveringskosten zijn beschikbaar in [Kostenanalyse](https://aka.ms/costanalys
 
 Groepeer op kostensoort om een uitsplitsing te zien naar gebruik, aankopen en restituties. Groepeer op reservering voor een uitsplitsing van de kosten voor reserveringen en on-demand. Vergeet niet dat als u naar de werkelijke kosten kijkt, alleen de reserveringskosten voor aankopen worden weergegeven. De kosten worden echter wel toegerekend aan de afzonderlijke resources die het voordeel hebben gebruikt, als u naar de afgeschreven kosten kijkt. U ziet ook een nieuwe kostensoort **UnusedReservation** wanneer u de afgeschreven kosten bekijkt.
 
-## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Neem contact met ons op.
+## <a name="need-help-contact-us"></a>Hebt u hulp nodig? Contact opnemen
 
 Als u vragen hebt of hulp nodig hebt, [kunt u een ondersteuningsaanvraag maken](https://go.microsoft.com/fwlink/?linkid=2083458).
 

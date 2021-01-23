@@ -1,20 +1,20 @@
 ---
-title: Geplande gebeurtenissen controleren voor uw Windows-Vm's in azure
+title: Geplande gebeurtenissen voor uw virtuele machines bewaken in azure
 description: Meer informatie over het bewaken van uw virtuele Azure-machines voor geplande gebeurtenissen.
 author: mysarn
-ms.service: virtual-machines-windows
+ms.service: virtual-machines
 ms.subservice: monitoring
 ms.date: 08/20/2019
 ms.author: sarn
 ms.topic: how-to
-ms.openlocfilehash: 0d1edde5ac1b83feab458eb5d12d524163d3ffb1
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: e3e44019d09927ff700e74b713a1b02136fedbc1
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96483297"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702267"
 ---
-# <a name="monitoring-scheduled-events"></a>Bewakings Scheduled Events
+# <a name="monitor-scheduled-events-for-your-azure-vms"></a>Geplande gebeurtenissen voor uw virtuele Azure-machines bewaken
 
 Updates worden elke dag toegepast op verschillende onderdelen van Azure, om ervoor te zorgen dat de services die worden uitgevoerd, veilig en up-to-date blijven. Naast geplande updates kunnen ook niet-geplande gebeurtenissen optreden. Als er bijvoorbeeld hardware-degradatie of-fouten worden gedetecteerd, moeten Azure-Services mogelijk niet-gepland onderhoud uitvoeren. Het gebruik van Livemigratie, het bewaren van updates en het algemeen houden van een strikte balk over de impact van updates, in de meeste gevallen zijn deze gebeurtenissen bijna transparant voor klanten en ze hebben geen invloed op een paar seconden van het blok keren van virtuele machines. Voor sommige toepassingen kan het echter zelfs enkele seconden duren voordat de blok kering van de virtuele machine gevolgen kan hebben. Het is belang rijk dat u op de hoogte bent van aanstaande onderhouds werkzaamheden van Azure, om ervoor te zorgen dat deze toepassingen optimaal worden ervaren. [Scheduled events-service](scheduled-events.md) biedt u een programmatische interface om op de hoogte te worden gesteld van aanstaande onderhouds werkzaamheden en kunt u het onderhoud op de juiste manier afhandelen. 
 
@@ -39,7 +39,7 @@ U moet ook [een log Analytics-werk ruimte maken](../../azure-monitor/learn/quick
 
 ## <a name="set-up-the-environment"></a>De omgeving instellen
 
-Nu moet u twee initiële Vm's in een beschikbaarheidsset hebben. Nu moet u in dezelfde beschikbaarheidsset een derde VM maken met de naam myCollectorVM. 
+Nu moet u twee initiële Vm's in een beschikbaarheidsset hebben. Nu moet u een derde VM maken, `myCollectorVM` die wordt aangeroepen in dezelfde beschikbaarheidsset. 
 
 ```azurepowershell-interactive
 New-AzVm `
@@ -150,7 +150,7 @@ Zodra de gebeurtenissen naar Log Analytics zijn gepusht, kunt u de volgende [que
     | project-away RenderedDescription,ReqJson
     ```
 
-1. Selecteer **Opslaan** en typ *logQuery* voor de naam, geef **query** op als type, typ *VMLogs* als de **categorie** en selecteer vervolgens **Opslaan**. 
+1. Selecteer **Opslaan**, en typ vervolgens `ogQuery` voor de naam, geef **query** op als type, typ `VMLogs` als **categorie** en selecteer vervolgens **Opslaan**. 
 
     ![De query opslaan](./media/notifications/save-query.png)
 
@@ -160,7 +160,7 @@ Zodra de gebeurtenissen naar Log Analytics zijn gepusht, kunt u de volgende [que
 1. Voer bij **drempel waarde** *0* in en selecteer vervolgens **gereed**.
 1. Onder **acties**, selecteer **actie groep maken**. De pagina **actie groep toevoegen** wordt geopend.
 1. Typ *myActionGroup* in de naam van de **actie groep**.
-1. Typ **myActionGroup** in **short name**.
+1. Typ *myActionGroup* in **short name**.
 1. Selecteer **resourcegroupavailability** in de **resource groep**.
 1. Onder acties, Typ in **actie naam** **e-mail** en selecteer vervolgens **e-mail/SMS/push/Voice**. De pagina **e-mail/SMS/push/Voice** wordt geopend.
 1. Selecteer **e-mail**, typ uw e-mail adres en selecteer vervolgens **OK**.

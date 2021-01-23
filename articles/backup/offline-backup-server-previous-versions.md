@@ -3,12 +3,12 @@ title: Offline back-up voor Data Protection Manager (DPM) en Microsoft Azure Bac
 description: Met Azure Backup kunt u gegevens van het netwerk verzenden met behulp van de Azure import/export-service. In dit artikel wordt de werk stroom voor offline back-ups voor eerdere versies van DPM en Azure Backup Server uitgelegd.
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: b747fd3c682dc1caf7312ba7279470a1e6b38bd5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0405ab66b7714f00349419e94bb064267ca711a6
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88890090"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702182"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server-previous-versions"></a>Offline back-upwerk stroom voor DPM en Azure Backup Server (vorige versies)
 
@@ -17,7 +17,7 @@ ms.locfileid: "88890090"
 
 Azure Backup heeft verschillende ingebouwde efficiency waarmee netwerk-en opslag kosten worden bespaard tijdens de eerste volledige back-ups van gegevens naar Azure. Bij eerste volledige back-ups worden grote hoeveel heden gegevens overgebracht en is er meer netwerk bandbreedte nodig in vergelijking met de volgende back-ups die alleen de Deltas/toenames overdragen. Azure Backup comprimeert de eerste back-ups. Dankzij het proces van offline seeding kan Azure Backup schijven gebruiken om de gecomprimeerde initiële back-upgegevens offline te uploaden naar Azure.
 
-Het offline-seeding proces van Azure Backup is nauw geïntegreerd met de [Azure import/export-service](../storage/common/storage-import-export-service.md). Met deze service kunt u gegevens overdragen naar Azure met behulp van schijven. Als u een TBs hebt van de eerste back-upgegevens die moeten worden overgezet via een netwerk met een hoge latentie en een lage band breedte, kunt u de werk stroom voor offline seeding gebruiken om de eerste back-up op een of meer harde schijven naar een Azure-Data Center te verzenden. Dit artikel bevat een overzicht en verdere stappen voor het volt ooien van deze werk stroom voor System Center Data Protection Manager (DPM) en Microsoft Azure Backup Server (MABS).
+Het offline-seeding proces van Azure Backup is nauw geïntegreerd met de [Azure import/export-service](../import-export/storage-import-export-service.md). Met deze service kunt u gegevens overdragen naar Azure met behulp van schijven. Als u een TBs hebt van de eerste back-upgegevens die moeten worden overgezet via een netwerk met een hoge latentie en een lage band breedte, kunt u de werk stroom voor offline seeding gebruiken om de eerste back-up op een of meer harde schijven naar een Azure-Data Center te verzenden. Dit artikel bevat een overzicht en verdere stappen voor het volt ooien van deze werk stroom voor System Center Data Protection Manager (DPM) en Microsoft Azure Backup Server (MABS).
 
 > [!NOTE]
 > Het proces van offline back-up voor de Microsoft Azure Recovery Services-agent (MARS) verschilt van DPM en MABS. Zie [offline back-upwerk stroom in azure backup](backup-azure-backup-import-export.md)voor meer informatie over het gebruik van offline back-ups met de Mars-agent. Offline back-up wordt niet ondersteund voor systeem status back-ups die worden uitgevoerd met behulp van de Azure Backup-Agent.
@@ -66,7 +66,7 @@ Zorg ervoor dat aan de volgende vereisten wordt voldaan voordat u de werk stroom
   ![Een opslag account maken met Resource Manager-ontwikkeling](./media/offline-backup-dpm-mabs-previous-versions/storage-account-resource-manager.png)
 
 * Een faserings locatie, die een netwerk share kan zijn of een extra station op de computer, intern of extern, met voldoende schijf ruimte om uw eerste kopie te bewaren, wordt gemaakt. Als u bijvoorbeeld een back-up van een bestands server van 500 GB wilt maken, moet u ervoor zorgen dat de tijdelijke ruimte ten minste 500 GB is. (Er wordt een kleiner bedrag gebruikt vanwege compressie.)
-* Zorg ervoor dat er voor schijven die naar Azure worden verzonden, alleen 2,5-inch SSD-of 2,5-inch of 3,5-inch SATA II/III interne harde schijven worden gebruikt. U kunt harde schijven van Maxi maal 10 TB gebruiken. Raadpleeg de [documentatie van de Azure import/export-service](../storage/common/storage-import-export-requirements.md#supported-hardware) voor de meest recente set stations die door de service worden ondersteund.
+* Zorg ervoor dat er voor schijven die naar Azure worden verzonden, alleen 2,5-inch SSD-of 2,5-inch of 3,5-inch SATA II/III interne harde schijven worden gebruikt. U kunt harde schijven van Maxi maal 10 TB gebruiken. Raadpleeg de [documentatie van de Azure import/export-service](../import-export/storage-import-export-requirements.md#supported-hardware) voor de meest recente set stations die door de service worden ondersteund.
 * De SATA-schijven moeten zijn verbonden met een computer (waarnaar wordt verwezen als een *Kopieer computer*) van waaruit het kopiëren van back-upgegevens van de faserings locatie naar de SATA-schijven is voltooid. Zorg ervoor dat BitLocker is ingeschakeld op de Kopieer computer.
 
 ## <a name="prepare-the-server-for-the-offline-backup-process"></a>De server voorbereiden voor het offline back-upproces
@@ -99,7 +99,7 @@ Zorg ervoor dat aan de volgende vereisten wordt voldaan voordat u de werk stroom
 
 Volg deze stappen om het offline back-upcertificaat hand matig te uploaden naar een eerder gemaakte Azure Active Directory toepassing die bedoeld is voor offline back-ups.
 
-1. Meld u aan bij Azure Portal.
+1. Meld u aan bij de Azure-portal.
 1. Ga naar **Azure Active Directory** > **App-registraties**.
 1. Zoek op het tabblad **toepassingen in eigendom** een toepassing met de indeling van de weergave naam `AzureOfflineBackup _<Azure User Id` .
 
@@ -107,16 +107,16 @@ Volg deze stappen om het offline back-upcertificaat hand matig te uploaden naar 
 
 1. Selecteer de toepassing. Ga onder **beheren** in het linkerdeel venster naar **certificaten & geheimen**.
 1. Controleer op bestaande certificaten of open bare sleutels. Als er geen is, kunt u de toepassing veilig verwijderen door de knop **verwijderen** te selecteren op de **overzichts** pagina van de toepassing. Vervolgens kunt u de stappen opnieuw uitvoeren om [de server voor te bereiden voor het offline back-](#prepare-the-server-for-the-offline-backup-process) upproces en de volgende stappen over te slaan. Ga anders verder met de volgende stappen van het DPM-exemplaar of Azure Backup server waarvoor u offline back-ups wilt configureren.
-1. Typ *Certlm. msc*uit het **Start** - **Run**. Selecteer in het venster **certificaten-lokale computer** het tabblad **certificaten-lokale computer**  >  **persoonlijk** . Zoek naar het certificaat met de naam `CB_AzureADCertforOfflineSeeding_<ResourceId>` .
-1. Selecteer het certificaat, klik met de rechter muisknop op **alle taken**en selecteer vervolgens **exporteren**, zonder een persoonlijke sleutel, in de. CER-indeling.
+1. Typ *Certlm. msc* uit het **Start** - **Run**. Selecteer in het venster **certificaten-lokale computer** het tabblad **certificaten-lokale computer**  >  **persoonlijk** . Zoek naar het certificaat met de naam `CB_AzureADCertforOfflineSeeding_<ResourceId>` .
+1. Selecteer het certificaat, klik met de rechter muisknop op **alle taken** en selecteer vervolgens **exporteren**, zonder een persoonlijke sleutel, in de. CER-indeling.
 1. Ga naar de Azure-toepassing voor offline back-ups in de Azure Portal.
-1. Selecteer **Manage**  >  **certificaten beheren & geheimen**  >  **Upload certificaat**. Upload het certificaat dat u in de vorige stap hebt geëxporteerd.
+1. Selecteer   >  **certificaten beheren & geheimen**  >  **Upload certificaat**. Upload het certificaat dat u in de vorige stap hebt geëxporteerd.
 
     ![Het certificaat uploaden](./media/offline-backup-dpm-mabs-previous-versions/upload-certificate.png)
 
 1. Open het REGI ster op de server door in het venster uitvoeren **regedit** in te voeren.
 1. Ga naar de register vermelding *Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\Config\CloudBackupProvider*.
-1. Klik met de rechter muisknop op **CloudBackupProvider**en voeg een nieuwe teken reeks waarde toe met de naam `AzureADAppCertThumbprint_<Azure User Id>` .
+1. Klik met de rechter muisknop op **CloudBackupProvider** en voeg een nieuwe teken reeks waarde toe met de naam `AzureADAppCertThumbprint_<Azure User Id>` .
 
     >[!NOTE]
     > Voer een van de volgende stappen uit om de gebruikers-ID van Azure te vinden:
@@ -125,7 +125,7 @@ Volg deze stappen om het offline back-upcertificaat hand matig te uploaden naar 
     >* Ga naar het registerpad `Computer\HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows Azure Backup\DbgSettings\OnlineBackup; Name: CurrentUserId;` .
 
 1. Klik met de rechter muisknop op de teken reeks die u in de vorige stap hebt toegevoegd en selecteer **wijzigen**. Geef in de waarde de vinger afdruk op van het certificaat dat u in stap 7 hebt geëxporteerd. Selecteer vervolgens **OK**.
-1. Als u de waarde van de vinger afdruk wilt ophalen, dubbelklikt u op het certificaat. Selecteer het tabblad **Details** en schuif omlaag totdat u het veld vinger afdruk ziet. Selecteer **vinger afdruk**en kopieer de waarde.
+1. Als u de waarde van de vinger afdruk wilt ophalen, dubbelklikt u op het certificaat. Selecteer het tabblad **Details** en schuif omlaag totdat u het veld vinger afdruk ziet. Selecteer **vinger afdruk** en kopieer de waarde.
 
     ![Waarde kopiëren uit het veld vinger afdruk](./media/offline-backup-dpm-mabs-previous-versions/thumbprint-field.png)
 
@@ -133,7 +133,7 @@ Volg deze stappen om het offline back-upcertificaat hand matig te uploaden naar 
 
 ## <a name="workflow"></a>Werkstroom
 
-De informatie in deze sectie helpt u bij het volt ooien van de werk stroom voor offline back-ups, zodat uw gegevens kunnen worden geleverd aan een Azure-Data Center en naar Azure Storage worden geüpload. Als u vragen hebt over de import service of een aspect van het proces, raadpleegt u de [documentatie overzicht](../storage/common/storage-import-export-service.md) van het importeren van de service.
+De informatie in deze sectie helpt u bij het volt ooien van de werk stroom voor offline back-ups, zodat uw gegevens kunnen worden geleverd aan een Azure-Data Center en naar Azure Storage worden geüpload. Als u vragen hebt over de import service of een aspect van het proces, raadpleegt u de [documentatie overzicht](../import-export/storage-import-export-service.md) van het importeren van de service.
 
 ### <a name="initiate-offline-backup"></a>Offline back-up initiëren
 
@@ -238,7 +238,7 @@ Het hulp programma *AzureOfflineBackupDiskPrep* wordt gebruikt om de SATA-schijv
 
     ![Verzend gegevens invoeren](./media/offline-backup-dpm-mabs-previous-versions/shipping-inputs.png)<br/>
 
-1. Nadat alle invoer gegevens zijn verstrekt, controleert u de details aandachtig en voert u de verzend gegevens door die u hebt verstrekt door **Ja**in te voeren.
+1. Nadat alle invoer gegevens zijn verstrekt, controleert u de details aandachtig en voert u de verzend gegevens door die u hebt verstrekt door **Ja** in te voeren.
 
     ![Verzend gegevens controleren](./media/offline-backup-dpm-mabs-previous-versions/review-shipping-information.png)<br/>
 
@@ -271,7 +271,7 @@ De status van de import taak controleren:
 
     ![Status van import taak controleren](./media/offline-backup-dpm-mabs-previous-versions/import-job-status-reporting.png)<br/>
 
-Zie [de status van Azure import/export-taken weer geven](../storage/common/storage-import-export-view-drive-status.md)voor meer informatie over de verschillende statussen van de Azure import-taak.
+Zie [de status van Azure import/export-taken weer geven](../import-export/storage-import-export-view-drive-status.md)voor meer informatie over de verschillende statussen van de Azure import-taak.
 
 ### <a name="finish-the-workflow"></a>De werk stroom volt ooien
 
@@ -283,4 +283,4 @@ Op het moment van de volgende geplande back-up voert Azure Backup incrementele b
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [de Microsoft Azure import/export-service gebruiken voor het overdragen van gegevens naar de Blob-opslag](../storage/common/storage-import-export-service.md)voor vragen over de Azure import/export-service werk stroom.
+* Zie [de Microsoft Azure import/export-service gebruiken voor het overdragen van gegevens naar de Blob-opslag](../import-export/storage-import-export-service.md)voor vragen over de Azure import/export-service werk stroom.

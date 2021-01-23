@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Service Bus Messaging
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Service Bus Messaging. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: reference
 author: spelluru
 ms.author: spelluru
 ms.service: service-bus-messaging
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 62080a81f7437e42a9b7beb68b199d5cc2cf7e68
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: aa9a364de07e72b28b250404353bbae9328db6fd
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98048557"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98702988"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-service-bus-messaging"></a>Ingebouwde Azure Policy-definities voor Azure Service Bus Messaging
 

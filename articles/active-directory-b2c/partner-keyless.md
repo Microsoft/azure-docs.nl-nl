@@ -11,14 +11,14 @@ ms.topic: how-to
 ms.date: 1/17/2021
 ms.author: gasinh
 ms.subservice: B2C
-ms.openlocfilehash: 7e6f19e03eee6fb6ddf946ea79d197a231f5f113
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2ab1b5ae87cee6265c965c45b706c7fbf10dfe3f
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690421"
+ms.locfileid: "98702951"
 ---
-# <a name="tutorial-for-configuring-keyless-with-azure-active-directory-b2c"></a>Zelf studie voor het configureren van de waarde voor de verkorte Azure Active Directory B2C
+# <a name="tutorial-configure-keyless-with-azure-active-directory-b2c"></a>Zelf studie: met Azure Active Directory B2C configureren
 
 In deze voorbeeld zelfstudie bieden we richt lijnen voor het configureren van Azure Active Directory (AD) B2C met een [lagere](https://keyless.io/)waarde. Met Azure AD B2C als een id-provider kunt u de functie voor het verkorten van uw klant toepassingen integreren met een wille keurig wacht woordloze verificatie voor uw gebruikers.
 

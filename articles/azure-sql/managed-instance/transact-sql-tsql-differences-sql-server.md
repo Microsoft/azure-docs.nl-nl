@@ -11,12 +11,12 @@ ms.author: jovanpop
 ms.reviewer: sstein, bonova, danil
 ms.date: 11/10/2020
 ms.custom: seoapril2019, sqldbrb=1
-ms.openlocfilehash: 6fb17ead2546875c0f334aae322f8fb070e8f1ea
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6634ab3521fee3062ecee465eaf6dcda80ee6ff8
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684901"
+ms.locfileid: "98699511"
 ---
 # <a name="t-sql-differences-between-sql-server--azure-sql-managed-instance"></a>T-SQL-verschillen tussen SQL Server & Azure SQL Managed instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -277,7 +277,7 @@ De volgende opties kunnen niet worden gewijzigd:
 - `SINGLE_USER`
 - `WITNESS`
 
-Sommige `ALTER DATABASE` instructies (bijvoorbeeld [set containment](https://docs.microsoft.com/sql/relational-databases/databases/migrate-to-a-partially-contained-database?#converting-a-database-to-partially-contained-using-transact-sql)) kunnen tijdelijk mislukken, bijvoorbeeld tijdens het maken van een automatische database back-up of direct nadat een Data Base is gemaakt. In dit geval `ALTER DATABASE` moet de instructie opnieuw worden uitgevoerd. Zie de [sectie opmerkingen](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current&preserve-view=true&tabs=sqlpool#remarks-2)voor meer informatie en informatie over verwante fout berichten.
+Sommige `ALTER DATABASE` instructies (bijvoorbeeld [set containment](https://docs.microsoft.com/sql/relational-databases/databases/migrate-to-a-partially-contained-database?#converting-a-database-to-partially-contained-using-transact-sql)) kunnen tijdelijk mislukken, bijvoorbeeld tijdens de automatische database back-up of direct nadat een Data Base is gemaakt. In dit geval `ALTER DATABASE` moet de instructie opnieuw worden uitgevoerd. Zie de [sectie opmerkingen](https://docs.microsoft.com/sql/t-sql/statements/alter-database-transact-sql?view=azuresqldb-mi-current&preserve-view=true&tabs=sqlpool#remarks-2)voor meer informatie over verwante fout berichten.
 
 Zie [ALTER data base](/sql/t-sql/statements/alter-database-transact-sql-file-and-filegroup-options)(Engelstalig) voor meer informatie.
 
@@ -400,12 +400,12 @@ Zie [FILESTREAM](/sql/relational-databases/blob/filestream-sql-server) en [FileT
 Gekoppelde servers in SQL Managed instance ondersteunen een beperkt aantal doelen:
 
 - Ondersteunde doelen zijn SQL Managed instance, SQL Database, Azure Synapse SQL [serverloze](https://devblogs.microsoft.com/azure-sql/linked-server-to-synapse-sql-to-implement-polybase-like-scenarios-in-managed-instance/) en dedicated pools en SQL Server exemplaren. 
-- Gekoppelde servers ondersteunen geen gedistribueerde Beschrijf bare trans acties (MS DTC).
+- Gedistribueerde Beschrijf bare trans acties zijn alleen mogelijk voor beheerde exemplaren. Zie [gedistribueerde trans acties](https://docs.microsoft.com/azure/azure-sql/database/elastic-transactions-overview)voor meer informatie. MS DTC wordt echter niet ondersteund.
 - Doelen die niet worden ondersteund zijn bestanden, Analysis Services en andere RDBMS. Gebruik een systeem eigen CSV-Import van Azure Blob Storage met `BULK INSERT` of `OPENROWSET` als alternatief voor het importeren van bestanden of het laden van bestand met een [serverloze SQL-groep in azure Synapse Analytics](https://devblogs.microsoft.com/azure-sql/linked-server-to-synapse-sql-to-implement-polybase-like-scenarios-in-managed-instance/).
 
 Bewerkingen: 
 
-- Trans acties voor cross-instances worden niet ondersteund.
+- Trans acties voor [Cross-instance](https://docs.microsoft.com/azure/azure-sql/database/elastic-transactions-overview) write worden alleen ondersteund voor beheerde exemplaren.
 - `sp_dropserver` wordt ondersteund voor het verwijderen van een gekoppelde server. Zie [sp_dropserver](/sql/relational-databases/system-stored-procedures/sp-dropserver-transact-sql).
 - De `OPENROWSET` functie kan worden gebruikt om alleen query's uit te voeren op SQL Server exemplaren. Ze kunnen worden beheerd, on-premises of in virtuele machines. Zie [OPENrowset](/sql/t-sql/functions/openrowset-transact-sql).
 - De `OPENDATASOURCE` functie kan worden gebruikt om alleen query's uit te voeren op SQL Server exemplaren. Ze kunnen worden beheerd, on-premises of in virtuele machines. Alleen de `SQLNCLI` `SQLNCLI11` waarden, en `SQLOLEDB` worden ondersteund als een provider. Een voorbeeld is `SELECT * FROM OPENDATASOURCE('SQLNCLI', '...').AdventureWorks2012.HumanResources.Employee`. Zie [OPENDATA source](/sql/t-sql/functions/opendatasource-transact-sql).
@@ -413,7 +413,7 @@ Bewerkingen:
 
 ### <a name="polybase"></a>PolyBase
 
-De enige beschik bare typen externe bronnen zijn RDBMS (in open bare preview) tot Azure SQL database, Azure SQL Managed instance en Azure Synapse pool. U kunt [een externe tabel gebruiken die verwijst naar een serverloze SQL-groep in Synapse Analytics](https://devblogs.microsoft.com/azure-sql/read-azure-storage-files-using-synapse-sql-external-tables/) als tijdelijke oplossing voor poly base externe tabellen die rechtstreeks vanuit de Azure-opslag worden gelezen. In Azure SQL Managed Instance kunt u gekoppelde servers gebruiken voor [een serverloze SQL-groep in Synapse Analytics](https://devblogs.microsoft.com/azure-sql/linked-server-to-synapse-sql-to-implement-polybase-like-scenarios-in-managed-instance/) of SQL Server voor het lezen van Azure Storage-gegevens.
+Het enige beschik bare type externe bron is RDBMS (in open bare preview) van Azure SQL database, Azure SQL Managed instance en Azure Synapse pool. U kunt [een externe tabel gebruiken die verwijst naar een serverloze SQL-groep in Synapse Analytics](https://devblogs.microsoft.com/azure-sql/read-azure-storage-files-using-synapse-sql-external-tables/) als tijdelijke oplossing voor poly base externe tabellen die rechtstreeks vanuit de Azure-opslag worden gelezen. In Azure SQL Managed Instance kunt u gekoppelde servers gebruiken voor [een serverloze SQL-groep in Synapse Analytics](https://devblogs.microsoft.com/azure-sql/linked-server-to-synapse-sql-to-implement-polybase-like-scenarios-in-managed-instance/) of SQL Server voor het lezen van Azure Storage-gegevens.
 Zie [poly base](/sql/relational-databases/polybase/polybase-guide)voor meer informatie over poly base.
 
 ### <a name="replication"></a>Replicatie

@@ -3,17 +3,17 @@ title: REST API's in Azure Enterprise
 description: In dit artikel worden de REST API's beschreven die u kunt gebruiken bij de inschrijving van uw Azure-onderneming.
 author: bandersmsft
 ms.author: banders
-ms.date: 09/03/2020
+ms.date: 01/21/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.openlocfilehash: c4c99142c64278514066efa8925ed8e3f6617235
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: 1fdf64053a55eb33d80ed461c231e8c6dd84d63b
+ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132581"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98677728"
 ---
 # <a name="azure-enterprise-rest-apis"></a>REST API's in Azure Enterprise
 
@@ -93,17 +93,9 @@ Als u een API gebruikt, worden de antwoordstatuscodes weergegeven. Ze worden in 
 
 De gegevensbestanden voor gebruik en facturering worden elke 24 uur bijgewerkt voor de huidige factureringsmaand. Er kan echter een gegevenslatentie zijn van maximaal drie dagen. Als er bijvoorbeeld sprake is van gebruik op maandag, kan het zijn dat het gegevensbestand pas donderdag wordt weergegeven.
 
-### <a name="test-enrollment-for-development"></a>Testinschrijving voor ontwikkeling
-
-Als u een partner of ontwikkelaar bent zonder Azure Enterprise-inschrijving en u toegang wilt krijgen tot de API, kunt u de testinschrijving gebruiken. De naam van de inschrijving is _EnrollmentNumber 100_ . U kunt gebruiksgegevens vinden en testen tot juni 2018. Vervolgens kunt u de volgende sleutel gebruiken om de API aan te roepen en voorbeeldgegevens te bekijken.
-
-```
-eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6ImpoeXA2UU9DWlZmY1pmdmhDVGR1OFdxeTJ5byJ9.eyJFbnJvbGxtZW50TnVtYmVyIjoiMTAwIiwiSWQiOiI1ZTc2ZmNiMy0xN2I4LTQ5ZDItYjdkOC0zMDU0YjUwOWY0MWYiLCJSZXBvcnRWaWV3IjoiU3lzdGVtIiwiUGFydG5lcklkIjoiIiwiRGVwYXJ0bWVudElkIjoiIiwiQWNjb3VudElkIjoiIiwiaXNzIjoiZWEubWljcm9zb2Z0YXp1cmUuY29tIiwiYXVkIjoiY2xpZW50LmVhLm1pY3Jvc29mdGF6dXJlLmNvbSIsImV4cCI6MTU4NjM5MDA2OSwibmJmIjoxNTcwNTc4ODY5fQ.lENR5pCBph6iZCVexUlN1b-j7StaILCyBewVHoILD-_fn8S2o2bHY1qUseGOkBwNlaFQfk2OZIo-jQYvnf3eP3UNrNVTCINT0APbc1RqgwSjZSxugVVHH9jnSzEjONkJaSKmi4tlidk6zkF1-uY-TPJkKxYN_9ar7BgLshF9JGXk7t8OZhxSCxDZc-smntu6ORFDl4gRZZVBKXhqOGjOAdYX5tPiGDF2Bxb68RSzh9Xyr5PXxKLx5yivZzUdo0-GFHo13V9w6a5VQM4R1w4_ro8jF8WAo3mpGZ_ovx_U5IY6zMNmi_AoA1mUyvTGotgcu94RragutoJRxAGHbNJZ0Q
-```
-
 ### <a name="azure-service-catalog"></a>Azure-servicecatalogus
 
-Alle Azure-services worden in een Azure Storage-blog verzonden naar een catalogus in CSV-indeling. De catalogus is handig als u een gecureerde catalogus wilt bouwen van alle Azure-services voor uw systeem. De huidige catalogus staat hier: [https://azurecatalog.blob.core.windows.net/catalog/AzureCatalog.csv](https://azurecatalog.blob.core.windows.net/catalog/AzureCatalog.csv).
+Alle Azure-services worden in een Azure Storage-blog verzonden naar een catalogus in CSV-indeling. De catalogus is handig als u een gecureerde catalogus wilt bouwen van alle Azure-services voor uw systeem. De huidige catalogus bevindt zich op [https://azurecatalog.blob.core.windows.net/catalog/AzureCatalog.csv](https://azurecatalog.blob.core.windows.net/catalog/AzureCatalog.csv) .
 
 ### <a name="csv-data-file-details"></a>Details van het CSV-gegevensbestand
 
@@ -120,31 +112,31 @@ De JSON-indeling wordt gegenereerd op basis van het CSV-rapport. Als gevolg hier
 | ServiceAdministratorId | ServiceAdministratorLiveId | ServiceAdministratorLiveId |   |
 | SubscriptionId | SubscriptionId | SubscriptionId |   |
 | SubscriptionGuid | MOCPSubscriptionGuid | SubscriptionGuid |   |
-| Abonnementsnaam | SubscriptionName | SubscriptionName |   |
+| Subscription Name | SubscriptionName | SubscriptionName |   |
 | Date | Date | Date | Hier wordt de datum weergegeven waarop het servicecatalogusrapport is gemaakt. De indeling is een gegevenstekenreeks zonder tijdstempel. |
-| Month | Maand | Month |   |
-| Dag | Day | Day |   |
-| Year | Year | Jaar |   |
+| Maand | Maand | Maand |   |
+| Dag | Dag | Dag |   |
+| Jaar | Jaar | Jaar |   |
 | Product | BillableItemName | Product |   |
-| Id van de meter | ResourceGUID | MeterId |   |
+| Meter ID | ResourceGUID | MeterId |   |
 | De categorie van de meter | Service | MeterCategory | Nuttig voor het zoeken van services. Relevant voor services met meerdere servicetypen (ServiceType). Voorbeeld: virtuele machines. |
-| De subcategorie van de meter | ServiceType | MeterSubCategory | Biedt een tweede detailniveau voor een service. Voorbeeld: A1 VM (niet-Windows).  |
-| De regio van de meter | ServiceRegion | MeterRegion | Het derde detailniveau dat is vereist voor een service. Handig om de regiocontext van de ResourceGUID te vinden. |
-| De naam van de meter | ServiceResource | MeterName | De naam van de service. |
-| Verbruikt aantal | ResourceQtyConsumed | ConsumedQuantity |   |
+| Meter Sub-Category | ServiceType | MeterSubCategory | Biedt een tweede detailniveau voor een service. Voorbeeld: A1 VM (niet-Windows).  |
+| Meter Region | ServiceRegion | MeterRegion | Het derde detailniveau dat is vereist voor een service. Handig om de regiocontext van de ResourceGUID te vinden. |
+| Meter Name | ServiceResource | MeterName | De naam van de service. |
+| Consumed Quantity | ResourceQtyConsumed | ConsumedQuantity |   |
 | ResourceRate | ResourceRate | ResourceRate |   |
 | ExtendedCost | ExtendedCost | ExtendedCost |   |
-| Resourcelocatie | ServiceSubRegion | ResourceLocation |   |
-| Verbruikte service | ServiceInfo | ConsumedService |   |
-| Exemplaar-id | Onderdeel | InstanceId |   |
+| Resource Location | ServiceSubRegion | ResourceLocation |   |
+| Consumed Service | ServiceInfo | ConsumedService |   |
+| Instance ID | Onderdeel | InstanceId |   |
 | ServiceInfo1 | ServiceInfo1 | ServiceInfo1 |   |
 | ServiceInfo2 | ServiceInfo2 | ServiceInfo2 |   |
 | AdditionalInfo | AdditionalInfo | AdditionalInfo |   |
 | Tags | Tags | Tags |   |
-| Service-id voor de Store   | OrderNumber | StoreServiceIdentifier   |   |
-| Naam van de afdeling | DepartmentName | DepartmentName |   |
-| Kostenplaats | CostCenter | CostCenter |   |
-| Meeteenheid | UnitOfMeasure | UnitOfMeasure | Voorbeeldwaarden: Uren, GB, gebeurtenissen, pushes, eenheid, eenheiduren, MB, dagelijkse eenheden |
+| Store Service Identifier   | OrderNumber | StoreServiceIdentifier   |   |
+| Department Name | DepartmentName | DepartmentName |   |
+| Cost Center | CostCenter | CostCenter |   |
+| Meeteenheid | UnitOfMeasure | UnitOfMeasure | Voorbeeld waarden: uren, GB, gebeurtenissen, pushes, eenheid, Eenheiduren, MB, eenheden per dag |
 | ResourceGroup | ResourceGroup | ResourceGroup |   |
 
 #### <a name="azure-marketplace-report"></a>Azure Marketplace-rapport
@@ -155,25 +147,25 @@ De JSON-indeling wordt gegenereerd op basis van het CSV-rapport. Als gevolg hier
 | Accountnaam | AccountName | AccountName |
 | SubscriptionId | SubscriptionId | SubscriptionId |
 | SubscriptionGuid | SubscriptionGuid | SubscriptionGuid |
-| Abonnementsnaam | SubscriptionName |  SubscriptionName |
-| Date | BillingCycle |  Datum (Alleen datumreeks. Geen tijdstempel.)
-| Month | Maand |  Month |
-| Dag | Day |  Day |
-| Year | Year |  Year |
-| Id van de meter | MeterResourceId |  MeterId |
+| Subscription Name | SubscriptionName |  SubscriptionName |
+| Datum | BillingCycle |  Datum (Alleen datumreeks. Geen tijdstempel.)
+| Maand | Maand |  Maand |
+| Dag | Dag |  Dag |
+| Jaar | Jaar |  Jaar |
+| Meter ID | MeterResourceId |  MeterId |
 | Naam van de uitgever | PublisherFriendlyName |  PublisherName |
 | Naam van aanbieding | OfferFriendlyName |  OfferName |
 | Naam van het plan | PlanFriendlyName |  PlanName |
-| Verbruikt aantal | BilledQty |  ConsumedQuantity |
+| Consumed Quantity | BilledQty |  ConsumedQuantity |
 | ResourceRate | ResourceRate | ResourceRate |
 | ExtendedCost | ExtendedCost | ExtendedCost |
 | Meeteenheid | UnitOfMeasure | UnitOfMeasure |
-| Exemplaar-id | InstanceId | InstanceId |
+| Instance ID | InstanceId | InstanceId |
 | Aanvullende informatie | AdditionalInfo | AdditionalInfo |
 | Tags | Tags | Tags |
 | Bestelnummer | OrderNumber | OrderNumber |
-| Naam van de afdeling | DepartmentNames | DepartmentName |
-| Kostenplaats | CostCenters |  CostCenter |
+| Department Name | DepartmentNames | DepartmentName |
+| Cost Center | CostCenters |  CostCenter |
 | Resourcegroep | ResourceGroup |  ResourceGroup |
 
 #### <a name="price-sheet"></a>Prijzenoverzicht
@@ -192,7 +184,7 @@ Omdat u gebruikmaakt van Azure Enterprise REST API's, kan het zijn dat u tegen d
 
 U kunt proberen een API-sleutel te gebruiken die niet over het juiste verificatietype beschikt. API-sleutels kunnen worden gegenereerd door:
 
-- Ondernemingsbeheerder
+- Zakelijke beheerder
 - Afdelingsbeheerder (DA)
 - Accounteigenaar (AO)
 
@@ -211,4 +203,4 @@ U ziet mogelijk meldingen van 400- en 404-fouten (niet beschikbaar) die worden g
 ## <a name="next-steps"></a>Volgende stappen
 
 - Azure EA Portal-beheerders moeten [Beheer van Azure EA Portal](ea-portal-administration.md) lezen voor meer informatie over algemene beheertaken.
-- Zie [Problemen met toegang tot Azure EA Portal oplossen](ea-portal-troubleshoot.md) als u hulp nodig hebt met het oplossen van problemen met Azure EA Portal.
+- Zie [Problemen met toegang tot Azure EA Portal](ea-portal-troubleshoot.md) als u hulp nodig hebt met het oplossen van problemen Azure EA Portal.

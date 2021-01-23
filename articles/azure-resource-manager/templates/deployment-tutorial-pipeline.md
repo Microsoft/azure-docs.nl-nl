@@ -4,12 +4,12 @@ description: Meer informatie over het continu bouwen, testen en implementeren va
 ms.date: 08/24/2020
 ms.topic: tutorial
 ms.author: jgao
-ms.openlocfilehash: 8e9f047497f493752947d8115084dcfe86f5e040
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
-ms.translationtype: HT
+ms.openlocfilehash: e7e2cda0524e4d754fbf879c046fee2d43c44cb3
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588128"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98701709"
 ---
 # <a name="tutorial-continuous-integration-of-arm-templates-with-azure-pipelines"></a>Zelfstudie: Continue integratie van ARM-sjablonen met Azure Pipelines
 
@@ -39,12 +39,12 @@ Als u dit artikel wilt voltooien, hebt u het volgende nodig:
 
 * **Een GitHub-account**, dat u gebruikt om een opslagplaats voor uw sjablonen te maken. Als u nog geen account hebt, kunt u [gratis een account maken](https://github.com). Zie [GitHub-opslagplaatsen maken](/azure/devops/pipelines/repos/github) voor meer informatie over het gebruik van GitHub-opslagplaatsen.
 * **Installeer Git**. In deze zelfstudie-instructie gebruikt u *Git Bash* of *Git Shell*. Zie [Install Git](https://www.atlassian.com/git/tutorials/install-git) (Engelstalig) voor instructies.
-* **Een Azure DevOps-organisatie**. Als u nog geen account hebt, kunt u gratis een account maken. Zie [Een organisatie-of projectverzameling maken](/azure/devops/organizations/accounts/create-organization?view=azure-devops).
+* **Een Azure DevOps-organisatie**. Als u nog geen account hebt, kunt u gratis een account maken. Zie [Een organisatie-of projectverzameling maken](/azure/devops/organizations/accounts/create-organization).
 * (optioneel) **Visual Studio Code met de extensie Resource Manager Tools**. Zie [Quickstart: ARM-sjablonen maken met Visual Studio Code](quickstart-create-templates-use-visual-studio-code.md).
 
 ## <a name="prepare-a-github-repository"></a>Een GitHub-opslagplaats voorbereiden
 
-GitHub wordt gebruikt voor het opslaan van de broncode van uw project, inclusief Resource Manager-sjablonen. Zie [opslagplaatsen die worden ondersteund door Azure DevOps](/azure/devops/pipelines/repos/?view=azure-devops) voor andere ondersteunde opslagplaatsen.
+GitHub wordt gebruikt voor het opslaan van de broncode van uw project, inclusief Resource Manager-sjablonen. Zie [opslagplaatsen die worden ondersteund door Azure DevOps](/azure/devops/pipelines/repos/) voor andere ondersteunde opslagplaatsen.
 
 ### <a name="create-a-github-repository"></a>Een GitHub-opslagplaats maken
 

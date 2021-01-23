@@ -3,12 +3,12 @@ title: Offline back-ups voor DPM en Azure Backup Server
 description: Met Azure Backup kunt u gegevens van het netwerk verzenden met behulp van de Azure import/export-service. In dit artikel wordt de werk stroom voor offline back-ups voor DPM en Azure Backup Server uitgelegd.
 ms.topic: conceptual
 ms.date: 05/24/2020
-ms.openlocfilehash: 368ae846a24ec04ee4b7da9b5971c00180be611d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 006c0fa4d67c9a85426d7a007912df65876313da
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89378454"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98701810"
 ---
 # <a name="offline-backup-workflow-for-dpm-and-azure-backup-server-mabs"></a>Offline back-upwerk stroom voor DPM en Azure Backup Server (MABS)
 
@@ -17,7 +17,7 @@ ms.locfileid: "89378454"
 
 System Center Data Protection Manager en Azure Backup Server (MABS) zijn geïntegreerd met Azure Backup en gebruiken verschillende ingebouwde efficiency functies waarmee netwerk-en opslag kosten worden bespaard tijdens de eerste volledige back-ups van gegevens naar Azure. Bij eerste volledige back-ups worden grote hoeveel heden gegevens overgebracht en is er meer netwerk bandbreedte nodig in vergelijking met de volgende back-ups die alleen de Deltas/toenames overdragen. Azure Backup comprimeert de eerste back-ups. Dankzij het proces van offline seeding kan Azure Backup schijven gebruiken om de gecomprimeerde initiële back-upgegevens offline te uploaden naar Azure.
 
-Het offline-seeding proces van Azure Backup is nauw geïntegreerd met de [Azure import/export-service](../storage/common/storage-import-export-service.md). Met deze service kunt u gegevens overdragen naar Azure met behulp van schijven. Als u een TBs hebt van de eerste back-upgegevens die moeten worden overgezet via een netwerk met een hoge latentie en een lage band breedte, kunt u de werk stroom voor offline seeding gebruiken om de eerste back-up op een of meer harde schijven naar een Azure-Data Center te verzenden. Dit artikel bevat een overzicht en verdere stappen voor het volt ooien van deze werk stroom voor System Center Data Protection Manager (DPM) en Microsoft Azure Backup Server (MABS).
+Het offline-seeding proces van Azure Backup is nauw geïntegreerd met de [Azure import/export-service](../import-export/storage-import-export-service.md). Met deze service kunt u gegevens overdragen naar Azure met behulp van schijven. Als u een TBs hebt van de eerste back-upgegevens die moeten worden overgezet via een netwerk met een hoge latentie en een lage band breedte, kunt u de werk stroom voor offline seeding gebruiken om de eerste back-up op een of meer harde schijven naar een Azure-Data Center te verzenden. Dit artikel bevat een overzicht en verdere stappen voor het volt ooien van deze werk stroom voor System Center Data Protection Manager (DPM) en Microsoft Azure Backup Server (MABS).
 
 > [!NOTE]
 > Het proces van offline back-up voor de Microsoft Azure Recovery Services-agent (MARS) verschilt van DPM en MABS. Zie [offline back-upwerk stroom in azure backup](backup-azure-backup-import-export.md)voor meer informatie over het gebruik van offline back-ups met de Mars-agent. Offline back-up wordt niet ondersteund voor systeem status back-ups die worden uitgevoerd met behulp van de Azure Backup-Agent.
@@ -59,12 +59,12 @@ Zorg ervoor dat aan de volgende vereisten wordt voldaan voordat u de werk stroom
        ![De resource provider registreren](./media/backup-azure-backup-server-import-export/register-import-export.png)
 
 * Een faserings locatie, die een netwerk share kan zijn of een extra station op de computer, intern of extern, met voldoende schijf ruimte om uw eerste kopie te bewaren, wordt gemaakt. Als u bijvoorbeeld een back-up van een bestands server van 500 GB wilt maken, moet u ervoor zorgen dat de tijdelijke ruimte ten minste 500 GB is. (Er wordt een kleiner bedrag gebruikt vanwege compressie.)
-* Zorg ervoor dat er voor schijven die naar Azure worden verzonden, alleen 2,5-inch SSD-of 2,5-inch of 3,5-inch SATA II/III interne harde schijven worden gebruikt. U kunt harde schijven van Maxi maal 10 TB gebruiken. Raadpleeg de [documentatie van de Azure import/export-service](../storage/common/storage-import-export-requirements.md#supported-hardware) voor de meest recente set stations die door de service worden ondersteund.
+* Zorg ervoor dat er voor schijven die naar Azure worden verzonden, alleen 2,5-inch SSD-of 2,5-inch of 3,5-inch SATA II/III interne harde schijven worden gebruikt. U kunt harde schijven van Maxi maal 10 TB gebruiken. Raadpleeg de [documentatie van de Azure import/export-service](../import-export/storage-import-export-requirements.md#supported-hardware) voor de meest recente set stations die door de service worden ondersteund.
 * De SATA-schijven moeten zijn verbonden met een computer (waarnaar wordt verwezen als een *Kopieer computer*) van waaruit het kopiëren van back-upgegevens van de faserings locatie naar de SATA-schijven is voltooid. Zorg ervoor dat BitLocker is ingeschakeld op de Kopieer computer.
 
 ## <a name="workflow"></a>Werkstroom
 
-De informatie in deze sectie helpt u bij het volt ooien van de werk stroom voor offline back-ups, zodat uw gegevens kunnen worden geleverd aan een Azure-Data Center en naar Azure Storage worden geüpload. Als u vragen hebt over de import service of een aspect van het proces, raadpleegt u de documentatie overzicht van het importeren van de [service](../storage/common/storage-import-export-service.md) .
+De informatie in deze sectie helpt u bij het volt ooien van de werk stroom voor offline back-ups, zodat uw gegevens kunnen worden geleverd aan een Azure-Data Center en naar Azure Storage worden geüpload. Als u vragen hebt over de import service of een aspect van het proces, raadpleegt u de documentatie overzicht van het importeren van de [service](../import-export/storage-import-export-service.md) .
 
 ## <a name="initiate-offline-backup"></a>Offline back-up initiëren
 
@@ -90,11 +90,11 @@ De informatie in deze sectie helpt u bij het volt ooien van de werk stroom voor 
 
     Sla de **faserings locatie** en de gegevens van de **Azure import-taak naam** op die u hebt ingevoerd. Het is vereist om de schijven voor te bereiden.
 
-4. Voltooi de werk stroom om de beveiliging te maken of bij te werken. En de offline back-upkopie te initiëren, klikt u met de rechter muisknop op de **beveiligings groep**en kiest u vervolgens de optie **herstel punt maken** . Vervolgens kiest u de optie voor **online beveiliging** .
+4. Voltooi de werk stroom om de beveiliging te maken of bij te werken. En de offline back-upkopie te initiëren, klikt u met de rechter muisknop op de **beveiligings groep** en kiest u vervolgens de optie **herstel punt maken** . Vervolgens kiest u de optie voor **online beveiliging** .
 
-   ![Herstelpunt maken](./media/backup-azure-backup-server-import-export/create-recovery-point.png)
+   ![Herstel punt maken](./media/backup-azure-backup-server-import-export/create-recovery-point.png)
 
-5. Controleer de taak voor het maken van een online replica in het deel venster bewaking. De taak moet worden voltooid met de waarschuwing *wachten tot de Azure import-taak*is voltooid.
+5. Controleer de taak voor het maken van een online replica in het deel venster bewaking. De taak moet worden voltooid met de waarschuwing *wachten tot de Azure import-taak* is voltooid.
 
    ![Herstel punt volt ooien](./media/backup-azure-backup-server-import-export/complete-recovery-point.png)
 
@@ -160,7 +160,7 @@ Met de volgende procedure worden de verzend gegevens van de Azure import-taak bi
 * Verzend gegevens retour neren voor uw schijven
 
    1. Meld u aan bij uw Azure-abonnement.
-   2. Selecteer in het hoofd menu **alle services** en typ importeren in het dialoog venster alle services. Wanneer u **import/export-taken**ziet, selecteert u deze.
+   2. Selecteer in het hoofd menu **alle services** en typ importeren in het dialoog venster alle services. Wanneer u **import/export-taken** ziet, selecteert u deze.
        ![Verzend gegevens invoeren](./media/backup-azure-backup-server-import-export/search-import-job.png)
 
        De lijst met het menu **import/export-taken** wordt geopend en de lijst met alle import/export-taken in het geselecteerde abonnement wordt weer gegeven.
@@ -188,7 +188,7 @@ De hoeveelheid tijd die nodig is voor het verwerken van een Azure import-taak va
 
 ### <a name="monitor-azure-import-job-status"></a>Status van Azure import-taak controleren
 
-U kunt de status van uw import taak controleren vanuit de Azure Portal door te navigeren naar de pagina **import/export-taken** en uw taak te selecteren. Zie het artikel [Storage import export service](../storage/common/storage-import-export-service.md) voor meer informatie over de status van de import taken.
+U kunt de status van uw import taak controleren vanuit de Azure Portal door te navigeren naar de pagina **import/export-taken** en uw taak te selecteren. Zie het artikel [Storage import export service](../import-export/storage-import-export-service.md) voor meer informatie over de status van de import taken.
 
 ### <a name="complete-the-workflow"></a>De werk stroom volt ooien
 
@@ -198,4 +198,4 @@ Op het moment van de volgende geplande taak voor het maken van een online replic
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* Zie [de Microsoft Azure import/export-service gebruiken voor het overdragen van gegevens naar de Blob-opslag](../storage/common/storage-import-export-service.md)voor vragen over de Azure import/export-service werk stroom.
+* Zie [de Microsoft Azure import/export-service gebruiken voor het overdragen van gegevens naar de Blob-opslag](../import-export/storage-import-export-service.md)voor vragen over de Azure import/export-service werk stroom.

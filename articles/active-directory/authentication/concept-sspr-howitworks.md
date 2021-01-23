@@ -11,12 +11,12 @@ author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e5bcc6503af5f5f685ee589ed7671b4715834fef
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 496a8dba9b9ea7fb82ad9016479154d6a61cb767
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779359"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703272"
 ---
 # <a name="how-it-works-azure-ad-self-service-password-reset"></a>How it works: Azure AD self-service password reset (Hoe het werkt: selfservice voor wachtwoordherstel in Azure AD)
 
@@ -137,7 +137,7 @@ Wanneer u een mobiele app gebruikt als methode voor het opnieuw instellen van wa
 Gebruikers hebben geen optie om hun mobiele app te registreren wanneer ze zich registreren voor selfservice voor wachtwoord herstel van [https://aka.ms/ssprsetup](https://aka.ms/ssprsetup) . Gebruikers kunnen hun mobiele app registreren op [https://aka.ms/mfasetup](https://aka.ms/mfasetup) of in de registratie van gecombineerde beveiligings gegevens op [https://aka.ms/setupsecurityinfo](https://aka.ms/setupsecurityinfo) .
 
 > [!IMPORTANT]
-> De verificator-app kan niet als enige verificatie methode worden geselecteerd als alleen de methode vereist is. Op dezelfde manier kan de verificator-app en slechts één extra methode worden geselecteerd wanneer er twee methoden vereist zijn.
+> De verificator-app kan niet worden geselecteerd als de enige verificatie methode wanneer er slechts één methode vereist is. Op dezelfde manier kan de verificator-app en slechts één extra methode worden geselecteerd wanneer er twee methoden vereist zijn.
 >
 > Bij het configureren van SSPR-beleid dat de verificator-app als methode bevat, moet er ten minste één extra methode worden geselecteerd wanneer één methode vereist is, en moeten er ten minste twee extra methoden worden geselecteerd wanneer twee methoden worden geconfigureerd.
 >

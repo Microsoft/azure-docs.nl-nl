@@ -7,16 +7,16 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 10/13/2020
-ms.openlocfilehash: 8942735ed65f8aa0cf6d315568e00412adcb353a
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: a31ef69d84f64e4bcaa46adac26a29d2cc367351
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060534"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731697"
 ---
 # <a name="query-data-in-azure-monitor-using-azure-data-explorer-preview"></a>Query's uitvoeren op gegevens in Azure Monitor met behulp van Azure Data Explorer (preview-versie)
 
-De Azure Data Explorer ondersteunt query's van meerdere services tussen Azure Data Explorer, [Application Insights (AI)](/azure/azure-monitor/app/app-insights-overview)en [log Analytics (La)](/azure/azure-monitor/platform/data-platform-logs). U kunt vervolgens een query uitvoeren op uw Log Analytics/Application Insights werk ruimte met behulp van Azure Data Explorer-hulpprogram ma's en hiernaar verwijzen in een query voor query's op meerdere services. In dit artikel wordt beschreven hoe u een query voor meerdere services maakt en hoe u de Log Analytics-Application Insights-werk ruimte toevoegt aan Azure Data Explorer web-UI.
+De Azure Data Explorer ondersteunt query's van meerdere services tussen Azure Data Explorer, [Application Insights (AI)](../app/app-insights-overview.md)en [log Analytics (La)](./data-platform-logs.md). U kunt vervolgens een query uitvoeren op uw Log Analytics/Application Insights werk ruimte met behulp van Azure Data Explorer-hulpprogram ma's en hiernaar verwijzen in een query voor query's op meerdere services. In dit artikel wordt beschreven hoe u een query voor meerdere services maakt en hoe u de Log Analytics-Application Insights-werk ruimte toevoegt aan Azure Data Explorer web-UI.
 
 De query stroom voor Azure Data Explorer query's op meerdere services: :::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-data-explorer-monitor-flow.png" alt-text="proxy stroom van Azure Data Explorer.":::
 
@@ -62,7 +62,7 @@ U kunt de query's uitvoeren met client hulpprogramma's die ondersteuning bieden 
 > * De naam van de data base moet dezelfde naam hebben als de resource die in de query voor meerdere services is opgegeven. Namen zijn hoofdlettergevoelig.
 > * In query's voor meerdere clusters moet u ervoor zorgen dat de naamgeving van Application Insights-apps en Log Analytics-werk ruimten juist is.
 > * Als namen speciale tekens bevatten, worden deze vervangen door URL-code ring in de query op meerdere services.
-> * Als namen tekens bevatten die niet voldoen aan de [KQL-id-naam regels](https://docs.microsoft.com/azure/data-explorer/kusto/query/schema-entities/entity-names), worden deze vervangen door het koppel **-** teken.
+> * Als namen tekens bevatten die niet voldoen aan de [KQL-id-naam regels](/azure/data-explorer/kusto/query/schema-entities/entity-names), worden deze vervangen door het koppel **-** teken.
 
 ### <a name="direct-query-on-your-log-analytics-or-application-insights-workspaces-from-azure-data-explorer-client-tools"></a>Direct query op uw Log Analytics-of Application Insights-werk ruimten van Azure Data Explorer client hulpprogramma's
 
@@ -90,7 +90,7 @@ union <Azure Data Explorer table>, cluster(CL1).database(<workspace-name>).<tabl
 
 :::image type="content" source="media\azure-data-explorer-monitor-proxy\azure-data-explorer-cross-query-proxy.png" alt-text="Query's voor meerdere services van Azure Data Explorer.":::
 
-Voor het gebruik van de [ `join` operator](https://docs.microsoft.com/azure/data-explorer/kusto/query/joinoperator), in plaats van Union, kan het nodig zijn [`hint`](https://docs.microsoft.com/azure/data-explorer/kusto/query/joinoperator#join-hints) om het uit te voeren op een Azure Data Explorer systeem eigen cluster.
+Voor het gebruik van de [ `join` operator](/azure/data-explorer/kusto/query/joinoperator), in plaats van Union, kan het nodig zijn [`hint`](/azure/data-explorer/kusto/query/joinoperator#join-hints) om het uit te voeren op een Azure Data Explorer systeem eigen cluster.
 
 ### <a name="join-data-from-an-azure-data-explorer-cluster-in-one-tenant-with-an-azure-monitor-resource-in-another"></a>Gegevens uit een Azure Data Explorer-cluster samen voegen in één Tenant met een Azure Monitor bron in een andere.
 
@@ -98,9 +98,9 @@ Query's tussen tenants tussen de services worden niet ondersteund. U bent aangem
 
 Als de Azure Data Explorer-bron zich in Tenant A bevindt en Log Analytics werk ruimte zich in de Tenant B bevindt, gebruikt u een van de volgende twee methoden:
 
-1. Met Azure Data Explorer kunt u rollen toevoegen voor principals in verschillende tenants. Voeg uw gebruikers-ID in de Tenant ' B ' toe als geautoriseerde gebruiker op het Azure Data Explorer-cluster. Valideer de eigenschap *[' TrustedExternalTenant '](https://docs.microsoft.com/powershell/module/az.kusto/update-azkustocluster)* in het Azure Data Explorer-cluster bevat Tenant ' B '. Voer de Kruis query volledig uit in de Tenant B.
+1. Met Azure Data Explorer kunt u rollen toevoegen voor principals in verschillende tenants. Voeg uw gebruikers-ID in de Tenant ' B ' toe als geautoriseerde gebruiker op het Azure Data Explorer-cluster. Valideer de eigenschap *[' TrustedExternalTenant '](/powershell/module/az.kusto/update-azkustocluster)* in het Azure Data Explorer-cluster bevat Tenant ' B '. Voer de Kruis query volledig uit in de Tenant B.
 
-2. Gebruik [Lighthouse](https://docs.microsoft.com/azure/lighthouse/) om de Azure monitor resource te projecteren in Tenant A.
+2. Gebruik [Lighthouse](../../lighthouse/index.yml) om de Azure monitor resource te projecteren in Tenant A.
 ### <a name="connect-to-azure-data-explorer-clusters-from-different-tenants"></a>Verbinding maken met Azure Data Explorer clusters van verschillende tenants
 
 Kusto Explorer meldt u automatisch aan bij de Tenant waarvan het gebruikers account oorspronkelijk deel uitmaakt. Om toegang te krijgen tot bronnen in andere tenants met hetzelfde gebruikers account, moet `tenantId` expliciet worden opgegeven in de Connection String: `Data Source=https://ade.applicationinsights.io/subscriptions/SubscriptionId/resourcegroups/ResourceGroupName;Initial Catalog=NetDefaultDB;AAD Federated Security=True;Authority ID=` **TenantId**
@@ -134,4 +134,4 @@ De volgende syntaxis opties zijn beschikbaar wanneer u de Log Analytics-of Appli
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over de [gegevens structuur van log Analytics-werk ruimten en Application Insights](data-platform-logs.md).
-- Meer informatie over het [schrijven van query's in Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/write-queries).
+- Meer informatie over het [schrijven van query's in Azure Data Explorer](/azure/data-explorer/write-queries).

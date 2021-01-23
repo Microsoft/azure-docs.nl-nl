@@ -3,12 +3,12 @@ title: De implementatie van Azure VMware Solution plannen
 description: In dit artikel vindt u een overzicht van de implementatiewerkstroom voor Azure VMware Solution.  Het uiteindelijke resultaat is een omgeving die gereed is om virtuele machines te maken en te migreren.
 ms.topic: tutorial
 ms.date: 10/16/2020
-ms.openlocfilehash: 2cc4d40fd8088a632e0c24e3c4b770ebdc9de2e8
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.openlocfilehash: cdf4ddd6166920fa7461bfd85e01ef0efd6dfbb9
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97912730"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704558"
 ---
 # <a name="planning-the-azure-vmware-solution-deployment"></a>De implementatie van Azure VMware Solution plannen
 
@@ -95,26 +95,32 @@ Denk hierbij aan het volgende:
 
 ## <a name="azure-virtual-network-to-attach-azure-vmware-solution"></a>Azure Virtual Network om Azure VMware Solution toe te voegen
 
-Om toegang te krijgen tot uw Azure VMware Solution-privécloud, moet het ExpressRoute-circuit, dat wordt geleverd met Azure VMware Solution, gekoppeld worden aan een Azure Virtual Network.  Tijdens de implementatie kunt u een nieuw virtueel netwerk definiëren of er een bestaande selecteren.
+In deze stap identificeert u een virtuele ExpressRoute-netwerk gateway en het virtuele netwerk van Azure dat wordt gebruikt om verbinding te maken met het ExpressRoute-circuit van de Azure VMware-oplossing.  Het ExpressRoute-circuit vereenvoudigt de connectiviteit van en naar de privécloud van Azure VMware-oplossingen voor andere Azure-Services, Azure-resources en on-premises omgevingen.
 
-Het ExpressRoute-circuit van Azure VMware Solution maakt verbinding met een ExpressRoute-gateway in het Azure Virtual Network dat u in deze stap definieert.  
-
->[!IMPORTANT]
->U kunt een bestaande ExpressRoute-gateway gebruiken om verbinding te maken met Azure VMware Solution zolang u de limiet van vier ExpressRoute-circuits per virtueel netwerk niet overschrijdt.  Als u toegang wilt krijgen tot Azure VMware Solution on-premises via ExpressRoute, moet u beschikken over ExpressRoute Global Reach, omdat de ExpressRoute-gateway geen transitieve routering biedt tussen de verbonden circuits.  
-
-Als u het ExpressRoute-circuit van Azure VMware Solution wilt verbinden met een bestaande ExpressRoute-gateway, dan kunt u dit doen na de implementatie.  
-
-Samengevat: u wilt Azure VMware Solution verbinden met een bestaande ExpressRoute-gateway?  
-
-* **Ja** = Identificeer het virtueel netwerk dat tijdens de implementatie niet wordt gebruikt.
-* **Nee** = Selecteer een bestaand virtueel netwerk of maak er een nieuw tijdens de implementatie.
-
-In beide gevallen kunt u documenteren wat u in deze stap wilt doen.
-
->[!NOTE]
->Dit virtueel netwerk is zichtbaar voor uw on-premises omgeving en Azure VMware Solution. Zorg er dus voor dat het IP-segment dat u in dit virtueel netwerk gebruikt en subnetten niet overlappen.
+U kunt een *bestaande* of *nieuwe* ExpressRoute virtuele netwerk gateway gebruiken.
 
 :::image type="content" source="media/pre-deployment/azure-vmware-solution-expressroute-diagram.png" alt-text="Identiteit - Azure Virtual Network om Azure VMware Solution toe te voegen" border="false":::
+
+### <a name="use-an-existing-expressroute-virtual-network-gateway"></a>Een bestaande virtuele ExpressRoute-netwerk gateway gebruiken
+
+Als u een *bestaande* virtuele ExpressRoute-netwerk gateway gebruikt, wordt het ExpressRoute-circuit van de Azure VMware-oplossing tot stand gebracht nadat u de privécloud hebt geïmplementeerd.  U hoeft dus niet het **Virtual Network** veld in te vullen.  
+
+Noteer de ExpressRoute van de virtuele netwerk gateway die u gaat gebruiken en ga door naar de volgende stap.
+
+### <a name="create-a-new-expressroute-virtual-network-gateway"></a>Een nieuwe virtuele ExpressRoute-netwerk gateway maken
+
+Als u een *nieuwe* ExpressRoute-gateway voor een virtueel netwerk maakt, kunt u een bestaande azure-Virtual Network gebruiken, of kunt u een nieuwe Azure Virtual Network maken.  
+
+Als u een bestaande Azure-Virtual Network wilt gebruiken, controleert u of er geen bestaande virtuele ExpressRoute-netwerk gateways in het virtuele netwerk aanwezig zijn en selecteert u deze in de Virtual Network vervolg keuzelijst van het scherm een implementatie van een privécloud maken.
+
+Als u kiest voor het maken van een nieuwe Azure-Virtual Network kan deze van tevoren of tijdens de implementatie worden gemaakt door te klikken op de optie nieuwe maken van Virtual Network in het scherm een implementatie van een privécloud maken.
+
+Ter referentie: Hieronder vindt u een afbeelding van het scherm **een Privécloud maken** en wordt beschreven in rood, is het veld Azure **Virtual Network** dat in deze sectie wordt genoemd.
+
+:::image type="content" source="media/pre-deployment/azure-vmware-solution-deployment-screen-vnet-circle.png" alt-text="Scherm afbeelding van het implementatie scherm van de Azure VMware-oplossing met de gateway van het virtuele netwerk.":::
+
+>[!NOTE]
+>Elk virtueel netwerk dat wordt gebruikt of gemaakt, kan worden gezien door uw on-premises omgeving en Azure VMware-oplossing. Zorg er dus voor dat het IP-segment dat u in dit virtuele netwerk gebruikt en dat subnetten elkaar niet overlappen.
 
 ## <a name="vmware-hcx-network-segments"></a>VMware HCX-netwerksegmenten
 

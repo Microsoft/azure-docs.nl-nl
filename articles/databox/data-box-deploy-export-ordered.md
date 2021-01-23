@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: how-to
 ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: ac86dfba02b54730773a1d243981e85d563517e7
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: aac1fb8e2da7a3c84b3abff47c8f476b9fb9049c
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98183827"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704335"
 ---
 # <a name="tutorial-create-export-order-for-azure-data-box"></a>Zelf studie: export volgorde voor Azure Data Box maken
 
@@ -100,7 +100,7 @@ Voer de volgende stappen uit in de Azure-portal om een apparaat te bestellen.
     |---------|---------|
     |Opslagaccount     | Het Azure Storage account van waaruit u gegevens wilt exporteren. |
     |Export type     | Hiermee geeft u het type gegevens op dat van **alle objecten** moet worden geëxporteerd en het **XML-bestand moet worden gebruikt**.<ul><li> **Alle objecten** : Hiermee geeft u op dat de taak alle gegevens exporteert, afhankelijk van uw selectie voor de **overdrachts opties**.</li><li> **XML-bestand gebruiken** : Hiermee geeft u een XML-bestand op dat een set paden en voor voegsels bevat voor blobs en/of bestanden die uit het opslag account moeten worden geëxporteerd. Het XML-bestand moet zich in de container van het geselecteerde opslag account bevinden en er wordt momenteel geen ondersteuning voor het selecteren van bestands shares ondersteund. Het bestand moet een niet-leeg XML-bestand zijn.</li></ul>        |
-    |Overdrachts opties     |  Hiermee geeft u de opties voor gegevens overdracht van **Alles selecteren**, **alle blobs** en **alle bestanden**. <ul><li> **Alles selecteren** : Hiermee geeft u op dat alle blobs en Azure files worden geëxporteerd. Als u een opslag account gebruikt dat alleen blobs (Blob Storage-account) ondersteunt, kan de optie **alle bestanden** niet worden geselecteerd.</li><li> **Alle blobs** : Hiermee geeft u op dat alleen blok-en pagina-blobs worden geëxporteerd.</li><li> **Alle bestanden** : Hiermee geeft u op dat alle bestanden met uitzonde ring van blobs worden geëxporteerd. Het type opslag account dat u hebt (GPv1-en GPv2-, Premium-opslag of Blob-opslag) bepaalt de typen gegevens die u kunt exporteren. Zie [ondersteunde opslag accounts voor export](../storage/common/storage-import-export-requirements.md#supported-storage-types)voor meer informatie.</li></ul>         |
+    |Overdrachts opties     |  Hiermee geeft u de opties voor gegevens overdracht van **Alles selecteren**, **alle blobs** en **alle bestanden**. <ul><li> **Alles selecteren** : Hiermee geeft u op dat alle blobs en Azure files worden geëxporteerd. Als u een opslag account gebruikt dat alleen blobs (Blob Storage-account) ondersteunt, kan de optie **alle bestanden** niet worden geselecteerd.</li><li> **Alle blobs** : Hiermee geeft u op dat alleen blok-en pagina-blobs worden geëxporteerd.</li><li> **Alle bestanden** : Hiermee geeft u op dat alle bestanden met uitzonde ring van blobs worden geëxporteerd. Het type opslag account dat u hebt (GPv1-en GPv2-, Premium-opslag of Blob-opslag) bepaalt de typen gegevens die u kunt exporteren. Zie [ondersteunde opslag accounts voor export](../import-export/storage-import-export-requirements.md#supported-storage-types)voor meer informatie.</li></ul>         |
     |Uitgebreid logboek opnemen     | Hiermee wordt aangegeven of u een uitgebreid logboek bestand wilt met een lijst met alle bestanden die zijn geëxporteerd.        |
 
     > [!NOTE]
@@ -181,7 +181,7 @@ Voer de volgende stappen uit in de Azure-portal om een apparaat te bestellen.
 
     Een door de gebruiker toegewezen beheerde identiteit is een zelfstandige Azure-resource die kan worden gebruikt voor het beheren van meerdere resources. Zie [Beheerde identiteitstypen](/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.  
 
-    Als u een nieuwe beheerde identiteit wilt maken, volgt u de richt lijnen in [maken, lijst, verwijderen of een rol toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
+    Als u een nieuwe beheerde identiteit wilt maken, volgt u de richtlijnen in [Een rol maken, weergeven, verwijderen of toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
     
     ![Een gebruikersidentiteit selecteren](./media/data-box-deploy-export-ordered/customer-managed-key-10.png)
 

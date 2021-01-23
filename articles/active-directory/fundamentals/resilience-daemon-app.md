@@ -11,12 +11,12 @@ author: knicholasa
 ms.author: nichola
 manager: martinco
 ms.date: 11/23/2020
-ms.openlocfilehash: 74bfc9eeeb8375fca2c88a3fd3c31f17e130fc99
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a7b8f893026bb96c8d768d2e6d07d0240ecb81fa
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919625"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724838"
 ---
 # <a name="increase-the-resilience-of-authentication-and-authorization-in-daemon-applications-you-develop"></a>Verhoog de flexibiliteit van verificatie en autorisatie in de daemon-toepassingen die u ontwikkelt
 
@@ -26,7 +26,7 @@ Dit artikel bevat richt lijnen voor het gebruik van het micro soft-identiteits p
 
 ## <a name="use-managed-identities-for-azure-resources"></a>Beheerde identiteiten gebruiken voor Azure-resources
 
-Ontwikkel aars die daemon-apps bouwen op Microsoft Azure kunnen [beheerde identiteiten voor Azure-resources](https://docs.microsoft.com/azure/active-directory/managed-identities-azure-resources/overview)gebruiken. Beheerde identiteiten voor komen dat ontwikkel aars geheimen en referenties hoeven te beheren. De functie verbetert de flexibiliteit door fouten bij het verlopen van certificaten, rotatie fouten of vertrouwen te vermijden. Het bevat ook verschillende ingebouwde functies die specifiek zijn ontworpen om de flexibiliteit te verg Roten.
+Ontwikkel aars die daemon-apps bouwen op Microsoft Azure kunnen [beheerde identiteiten voor Azure-resources](../managed-identities-azure-resources/overview.md)gebruiken. Beheerde identiteiten voor komen dat ontwikkel aars geheimen en referenties hoeven te beheren. De functie verbetert de flexibiliteit door fouten bij het verlopen van certificaten, rotatie fouten of vertrouwen te vermijden. Het bevat ook verschillende ingebouwde functies die specifiek zijn ontworpen om de flexibiliteit te verg Roten.
 
 Beheerde identiteiten gebruiken lange toegangs tokens en gegevens van micro soft-identiteit om proactief nieuwe tokens te verkrijgen binnen een groot tijd venster voordat het bestaande token verloopt. Uw app kan blijven worden uitgevoerd tijdens het verkrijgen van een nieuw token.
 
@@ -34,11 +34,11 @@ Beheerde identiteiten gebruiken ook regionale eind punten om de prestaties en fl
 
 ## <a name="use-the-microsoft-authentication-library"></a>De micro soft-verificatie bibliotheek gebruiken
 
-Ontwikkel aars van daemon-apps die geen beheerde identiteiten gebruiken, kunnen gebruikmaken van de [micro soft Authentication Library (MSAL)](https://docs.microsoft.com/azure/active-directory/develop/msal-overview), waardoor verificatie en autorisatie eenvoudig kunnen worden geïmplementeerd en automatisch aanbevolen procedures voor tolerantie worden gebruikt. MSAL maakt het proces van het leveren van de vereiste client referenties eenvoudiger. Uw toepassing hoeft bijvoorbeeld geen JSON Web Token asserties voor het maken en ondertekenen te implementeren bij gebruik van referenties op basis van certificaten.
+Ontwikkel aars van daemon-apps die geen beheerde identiteiten gebruiken, kunnen gebruikmaken van de [micro soft Authentication Library (MSAL)](../develop/msal-overview.md), waardoor verificatie en autorisatie eenvoudig kunnen worden geïmplementeerd en automatisch aanbevolen procedures voor tolerantie worden gebruikt. MSAL maakt het proces van het leveren van de vereiste client referenties eenvoudiger. Uw toepassing hoeft bijvoorbeeld geen JSON Web Token asserties voor het maken en ondertekenen te implementeren bij gebruik van referenties op basis van certificaten.
 
 ### <a name="use-microsoftidentityweb-for-net-developers"></a>Micro soft. Identity. web voor .NET-ontwikkel aars gebruiken
 
-Ontwikkel aars die daemon-apps bouwen op ASP.NET Core kunnen gebruikmaken van de [micro soft. Identity. Web](https://docs.microsoft.com/azure/active-directory/develop/microsoft-identity-web) -bibliotheek. Deze tape wisselaar is gebaseerd op MSAL om de implementatie van autorisaties nog eenvoudiger te maken voor ASP.NET Core-Apps. Het bevat verschillende strategieën voor [gedistribueerde token cache](https://github.com/AzureAD/microsoft-identity-web/wiki/token-cache-serialization#distributed-token-cache) voor gedistribueerde apps die in meerdere regio's kunnen worden uitgevoerd.
+Ontwikkel aars die daemon-apps bouwen op ASP.NET Core kunnen gebruikmaken van de [micro soft. Identity. Web](../develop/microsoft-identity-web.md) -bibliotheek. Deze tape wisselaar is gebaseerd op MSAL om de implementatie van autorisaties nog eenvoudiger te maken voor ASP.NET Core-Apps. Het bevat verschillende strategieën voor [gedistribueerde token cache](https://github.com/AzureAD/microsoft-identity-web/wiki/token-cache-serialization#distributed-token-cache) voor gedistribueerde apps die in meerdere regio's kunnen worden uitgevoerd.
 
 ## <a name="cache-and-store-tokens"></a>Tokens in de cache opslaan en bewaren
 

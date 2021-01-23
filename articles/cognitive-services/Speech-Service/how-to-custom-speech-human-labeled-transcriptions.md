@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 09/06/2019
 ms.author: erhopf
-ms.openlocfilehash: cc373a67ee0f4ed2e900e7b41cbcb96d31d67b34
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: eafdebc795d5bede7fa52a3562d33c806035697f
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98126883"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704428"
 ---
 # <a name="how-to-create-human-labeled-transcriptions"></a>Transcripties met menselijke labels maken
 
@@ -47,6 +47,8 @@ Tekst normalisatie is de trans formatie van woorden in een consistente indeling 
 - Niet-alfabetische tekens of gecombineerde alfanumerieke tekens moeten worden getranscribeerd als uitgesp roken.
 - Afkortingen die worden uitgesp roken als woorden, mogen niet worden bewerkt (zoals ' radar ', ' Laser ', ' RAM ' of ' NAVO ').
 - Schrijf afkortingen die worden uitgesp roken als afzonderlijke letters, waarbij elke letter wordt gescheiden door een spatie.
+- Als u audio gebruikt, transcribeert u getallen als woorden die overeenkomen met de audio (bijvoorbeeld ' 101 ' kunnen worden uitgesp roken als ' 1 0 1 ' of ' 101 ').
+- Vermijd het gebruik van herhaalde tekens, woorden of groepen woorden meer dan drie keer, zoals ' ja ja ja ja '. Regels met dergelijke herhalingen kunnen door de spraak service worden verwijderd.
 
 Hier volgen enkele voor beelden van normalisatie die u moet uitvoeren op de transcriptie:
 

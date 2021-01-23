@@ -15,12 +15,12 @@ ms.topic: how-to
 ms.date: 08/18/2018
 ms.author: mathoma
 ms.reviewer: jroth
-ms.openlocfilehash: 4cd37128893309be5a1e362671b9e28dcc436b1b
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: f6e9009040d2d02702f8a71c352716491d07d1f7
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97356205"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704301"
 ---
 # <a name="migrate-a-sql-server-database-to-sql-server-on-an-azure-virtual-machine"></a>Een SQL Server-Data Base migreren naar SQL Server op een virtuele machine van Azure
 
@@ -68,7 +68,7 @@ De volgende tabel bevat een overzicht van de primaire migratie methoden en komt 
 | [Maak een back-up naar de URL en herstel de virtuele Azure-machine vanuit de URL](#backup-to-url-and-restore-from-url) |SQL Server 2012 SP1 CU2 of hoger | SQL Server 2012 SP1 CU2 of hoger | < 12,8 TB voor SQL Server 2016, anders < 1 TB | Deze methode is een andere manier om het back-upbestand naar de virtuele machine te verplaatsen met behulp van Azure Storage. |
 | [Ontkoppel en kopieer vervolgens de gegevens-en logboek bestanden naar Azure Blob-opslag en koppel deze vervolgens aan SQL Server in azure virtual machine van URL](#detach-and-attach-from-a-url) | SQL Server 2005 of hoger |SQL Server 2014 of hoger | [Opslag limiet voor Azure VM](../../../index.yml) | Gebruik deze methode wanneer u van plan bent om [deze bestanden op te slaan met behulp van de Azure Blob Storage-service](/sql/relational-databases/databases/sql-server-data-files-in-microsoft-azure) en deze te koppelen aan SQL Server die worden uitgevoerd in een Azure-VM, met name met zeer grote data bases |
 | [De on-premises machine converteren naar Hyper-V-Vhd's, uploaden naar Azure Blob Storage en vervolgens een nieuwe virtuele machine implementeren met geüploade VHD](#convert-to-a-vm-upload-to-a-url-and-deploy-as-a-new-vm) |SQL Server 2005 of hoger |SQL Server 2005 of hoger |[Opslag limiet voor Azure VM](../../../index.yml) |Gebruiken wanneer u [uw eigen SQL Server-licentie](../../../azure-sql/azure-sql-iaas-vs-paas-what-is-overview.md)meebrengt bij het migreren van een Data Base die u uitvoert op een oudere versie van SQL Server, of bij het migreren van systeem-en gebruikers databases samen als onderdeel van de migratie van data base afhankelijk van andere gebruikers databases en/of systeem databases. |
-| [Harde schijf verzenden met Windows import/export-service](#ship-a-hard-drive) |SQL Server 2005 of hoger |SQL Server 2005 of hoger |[Opslag limiet voor Azure VM](../../../index.yml) |Gebruik de [Windows import/export-service](../../../storage/common/storage-import-export-service.md) als de methode voor hand matig kopiëren te langzaam is, zoals bij zeer grote data bases |
+| [Harde schijf verzenden met Windows import/export-service](#ship-a-hard-drive) |SQL Server 2005 of hoger |SQL Server 2005 of hoger |[Opslag limiet voor Azure VM](../../../index.yml) |Gebruik de [Windows import/export-service](../../../import-export/storage-import-export-service.md) als de methode voor hand matig kopiëren te langzaam is, zoals bij zeer grote data bases |
 | [De wizard Azure replica toevoegen gebruiken](/previous-versions/azure/virtual-machines/windows/sqlclassic/virtual-machines-windows-classic-sql-onprem-availability) |SQL Server 2012 of hoger |SQL Server 2012 of hoger |[Opslag limiet voor Azure VM](../../../index.yml) |Minimaliseert downtime, gebruik wanneer u een on-premises implementatie hebt |
 | [SQL Server transactionele replicatie gebruiken](/sql/relational-databases/replication/transactional/transactional-replication) |SQL Server 2005 of hoger |SQL Server 2005 of hoger |[Opslag limiet voor Azure VM](../../../index.yml) |Gebruiken wanneer u downtime wilt minimaliseren en geen on-premises implementatie hebt |
 
@@ -83,7 +83,7 @@ Maak een back-up van uw data base met compressie, kopieer de back-up naar de vir
 
 ## <a name="backup-to-url-and-restore-from-url"></a>Back-up naar URL en herstellen vanaf URL
 
-In plaats van een back-up naar een lokaal bestand te maken, kunt u [back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) gebruiken en vervolgens van URL naar de virtuele machine herstellen. SQL Server 2016 ondersteunt gestripde back-upsets. Ze worden aanbevolen voor prestaties en zijn vereist om de maximale grootte per BLOB te overschrijden. Voor zeer grote data bases wordt het gebruik van de [Windows import/export-service](../../../storage/common/storage-import-export-service.md) aanbevolen.
+In plaats van een back-up naar een lokaal bestand te maken, kunt u [back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) gebruiken en vervolgens van URL naar de virtuele machine herstellen. SQL Server 2016 ondersteunt gestripde back-upsets. Ze worden aanbevolen voor prestaties en zijn vereist om de maximale grootte per BLOB te overschrijden. Voor zeer grote data bases wordt het gebruik van de [Windows import/export-service](../../../import-export/storage-import-export-service.md) aanbevolen.
 
 ## <a name="detach-and-attach-from-a-url"></a>Loskoppelen en koppelen vanuit een URL
 
@@ -106,7 +106,7 @@ Gebruik deze methode voor het migreren van alle systeem-en gebruikers databases 
 
 ## <a name="ship-a-hard-drive"></a>Een harde schijf verzenden
 
-Gebruik de [service methode van Windows import/export](../../../storage/common/storage-import-export-service.md) om grote hoeveel heden bestands gegevens over te brengen naar Azure Blob-opslag in situaties waarin het uploaden via het netwerk prohibitively kostbaar of niet haalbaar is. Met deze service stuurt u een of meer harde schijven met daarin de gegevens naar een Azure-Data Center waar uw gegevens naar uw opslag account worden geüpload.
+Gebruik de [service methode van Windows import/export](../../../import-export/storage-import-export-service.md) om grote hoeveel heden bestands gegevens over te brengen naar Azure Blob-opslag in situaties waarin het uploaden via het netwerk prohibitively kostbaar of niet haalbaar is. Met deze service stuurt u een of meer harde schijven met daarin de gegevens naar een Azure-Data Center waar uw gegevens naar uw opslag account worden geüpload.
 
 ## <a name="next-steps"></a>Volgende stappen
 

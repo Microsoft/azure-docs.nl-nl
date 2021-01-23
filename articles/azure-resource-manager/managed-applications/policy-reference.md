@@ -1,17 +1,17 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Managed Applications
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Managed Applications. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: reference
 author: tfitzmac
 ms.author: tomfitz
 ms.custom: subject-policy-reference
-ms.openlocfilehash: dae65dda1d708a3382f6a78b9fabb77b0b793aeb
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: b68846d4ddea3c37268f6a38d5625e77bd065ec9
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046568"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703820"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-managed-applications"></a>Ingebouwde Azure Policy-definities voor Azure Managed Applications
 

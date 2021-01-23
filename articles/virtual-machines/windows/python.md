@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 06/22/2017
 ms.author: cynthn
 ms.custom: devx-track-python
-ms.openlocfilehash: 15714405c683889c0f783359011a0f0f5f9f3f43
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: d99f9326b3113742fdc0c14a4ae39d552df47edd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201787"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98730153"
 ---
 # <a name="create-and-manage-windows-vms-in-azure-using-python"></a>Windows-Vm's maken en beheren in azure met behulp van python
 
@@ -567,4 +567,4 @@ Omdat er in rekening worden gebracht voor resources die worden gebruikt in azure
 ## <a name="next-steps"></a>Volgende stappen
 
 - Als er problemen met de implementatie zijn, raadpleegt u als volgende stap [Problemen met resourcegroepimplementaties in Azure Portal oplossen](../../azure-resource-manager/templates/deployment-history.md).
-- Meer informatie over de [Azure python-bibliotheek](/python/api/overview/azure/?view=azure-python)
+- Meer informatie over de [Azure python-bibliotheek](/python/api/overview/azure/)

@@ -6,12 +6,12 @@ ms.service: signalr
 ms.topic: article
 ms.date: 06/8/2020
 ms.author: chenyl
-ms.openlocfilehash: 4f70cbacf686210c1188cb0a87e6116af8ed4b01
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: dee15977318eda7bcd0b1950286bb33f621221dd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763144"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731581"
 ---
 # <a name="managed-identities-for-azure-signalr-service"></a>Beheerde identiteiten voor de Azure signalerings service
 
@@ -104,7 +104,7 @@ De signaal service heeft toegang tot Key Vault om geheim te krijgen met behulp v
 
 1. Voeg een door het systeem toegewezen identiteit of door de gebruiker toegewezen identiteit voor de Azure signalerings service toe.
 
-2. Verleen geheim Lees machtiging voor de beheerde identiteit in het toegangs beleid in de Key Vault. Zie [toegangs beleid voor Key Vault toewijzen met behulp van de Azure Portal](https://docs.microsoft.com/azure/key-vault/general/assign-access-policy-portal)
+2. Verleen geheim Lees machtiging voor de beheerde identiteit in het toegangs beleid in de Key Vault. Zie [toegangs beleid voor Key Vault toewijzen met behulp van de Azure Portal](../key-vault/general/assign-access-policy-portal.md)
 
 Deze functie kan momenteel worden gebruikt in de volgende scenario's:
 

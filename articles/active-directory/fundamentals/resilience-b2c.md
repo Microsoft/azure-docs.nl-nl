@@ -13,16 +13,16 @@ ms.reviewer: ''
 ms.date: 11/30/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: ba7b8ff2555fd7014cf16f66745721c6425ff868
-ms.sourcegitcommit: 2e9643d74eb9e1357bc7c6b2bca14dbdd9faa436
+ms.openlocfilehash: b40918db03c260f899c36d306c892b787cc6371c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96029520"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724888"
 ---
 # <a name="build-resilience-in-your-customer-identity-and-access-management-with-azure-active-directory-b2c"></a>Ontwikkel flexibiliteit in uw klant identiteits-en toegangs beheer met Azure Active Directory B2C
 
-[Azure Active Directory (AD) B2C](https://docs.microsoft.com/azure/active-directory-b2c/overview) is een CIAM-platform (Customer Identity and Access Management) dat is ontworpen om u te helpen bij het starten van uw essentiële klant gerichte toepassingen. We hebben veel ingebouwde functies voor [flexibiliteit](https://azure.microsoft.com/blog/advancing-azure-active-directory-availability/) , die zijn ontworpen om onze service op uw behoeften aan te kunnen schalen en de flexibiliteit te verbeteren in het vlak van mogelijke storings situaties. Wanneer u een essentiële toepassing start, is het belang rijk om verschillende ontwerp-en configuratie-elementen in uw toepassing te overwegen en te bepalen hoe de toepassing wordt geconfigureerd in Azure AD B2C om ervoor te zorgen dat u een flexibel gedrag krijgt in reactie op storingen of fout scenario's. In dit artikel bespreken we enkele van de aanbevolen procedures om u te helpen de flexibiliteit te verg Roten.
+[Azure Active Directory (AD) B2C](../../active-directory-b2c/overview.md) is een CIAM-platform (Customer Identity and Access Management) dat is ontworpen om u te helpen bij het starten van uw essentiële klant gerichte toepassingen. We hebben veel ingebouwde functies voor [flexibiliteit](https://azure.microsoft.com/blog/advancing-azure-active-directory-availability/) , die zijn ontworpen om onze service op uw behoeften aan te kunnen schalen en de flexibiliteit te verbeteren in het vlak van mogelijke storings situaties. Wanneer u een essentiële toepassing start, is het belang rijk om verschillende ontwerp-en configuratie-elementen in uw toepassing te overwegen en te bepalen hoe de toepassing wordt geconfigureerd in Azure AD B2C om ervoor te zorgen dat u een flexibel gedrag krijgt in reactie op storingen of fout scenario's. In dit artikel bespreken we enkele van de aanbevolen procedures om u te helpen de flexibiliteit te verg Roten.
 
 Een flexibele dienst is een service die ondanks onderbrekingen blijft functioneren. U kunt de flexibiliteit in uw service helpen verbeteren door:
 
@@ -49,3 +49,6 @@ Wanneer u uw toepassing ontwikkelt, raden we u aan om te overwegen hoe u de [tol
 - [Flexibiliteit in uw verificatie-infra structuur maken](resilience-in-infrastructure.md)
 
 - [Verhoog de flexibiliteit van verificatie en autorisatie in uw toepassingen](resilience-app-development-overview.md)
+
+Bekijk deze video om te weten hoe u met Azure AD B2C robuuste en schaal bare stromen bouwt.
+>[!Video https://www.youtube.com/embed/8f_Ozpw9yTs]

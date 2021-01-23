@@ -5,20 +5,23 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 01/22/2021
 ms.author: victorh
-ms.openlocfilehash: 2ff61d06885c182454c99ee7e982a3a1a1f5013c
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2c89eb19025212490d29c97a061da52e779ecf42
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690457"
+ms.locfileid: "98704394"
 ---
 # <a name="azure-firewall-active-ftp-support"></a>Ondersteuning voor Active FTP Azure Firewall
 
 Met Active FTP initieert de FTP-server de gegevens verbinding met de toegewezen FTP-client gegevens poort. Firewalls in het netwerk van de client blok keren normaal gesp roken een externe verbindings aanvraag naar een interne client poort. Zie voor meer informatie [Active FTP versus passieve FTP, een definitieve uitleg](https://slacksite.com/other/ftp.html).
 
 Active FTP-ondersteuning is standaard uitgeschakeld op Azure Firewall voor beveiliging tegen FTP-aanvallen met de FTP- `PORT` opdracht. U kunt Active FTP echter inschakelen wanneer u implementeert met behulp van Azure PowerShell, de Azure CLI of een Azure ARM-sjabloon.
+
+> [!NOTE]
+> Actieve FTP wordt momenteel alleen ondersteund voor firewalls die zijn geïmplementeerd in een virtueel netwerk. Virtuele WAN-ondersteuning wordt later toegevoegd.
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 

@@ -3,18 +3,18 @@ title: Visual Studio-resource groeps projecten maken & implementeren
 description: Gebruik Visual Studio om een Azure-resourcegroepproject te maken en de resources in Azure te implementeren.
 ms.topic: conceptual
 ms.date: 10/16/2019
-ms.openlocfilehash: 479dbed1f288148c24fc8464f7895cd3e2b182f9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f1a06a3e89c5fd2ea8906ff9a438c170f135d6ec
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91372643"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704411"
 ---
 # <a name="creating-and-deploying-azure-resource-groups-through-visual-studio"></a>Azure-resourcegroepen maken en implementeren met Visual Studio
 
 Met Visual Studio kunt u een project maken waarmee uw infrastructuur en code in Azure worden geïmplementeerd. U kunt bijvoorbeeld de web-host, de website en de code voor de website implementeren. Visual Studio biedt veel verschillende startsjablonen om te implementeren in algemene scenario's. In dit artikel implementeert u een web-app.
 
-In dit artikel wordt beschreven hoe u [Visual Studio 2019 of hoger gebruikt met de Azure Development-en ASP.net-workloads die zijn geïnstalleerd](/visualstudio/install/install-visual-studio?view=vs-2019). Als u Visual Studio 2017 gebruikt, is uw ervaring grotendeels hetzelfde.
+In dit artikel wordt beschreven hoe u [Visual Studio 2019 of hoger gebruikt met de Azure Development-en ASP.net-workloads die zijn geïnstalleerd](/visualstudio/install/install-visual-studio). Als u Visual Studio 2017 gebruikt, is uw ervaring grotendeels hetzelfde.
 
 ## <a name="create-azure-resource-group-project"></a>Een Azure-resourcegroepproject maken
 
@@ -139,7 +139,7 @@ Open een Power shell-console in het AZ-module script en voer het volgende uit:
 
 Voor het AzureRM-module script gebruikt u Visual Studio:
 
-1. Kies in het snelmenu van het knoop punt implementatie project de **Deploy**optie  >  **nieuwe**implementeren.
+1. Kies in het snelmenu van het knoop punt implementatie project de optie  >  **nieuwe** implementeren.
 
     ![Menu-item nieuwe implementatie](./media/create-visual-studio-deployment-project/deploy.png)
 
@@ -167,11 +167,11 @@ Laten we de resultaten bekijken.
 
 U hebt nu de infrastructuur geïmplementeerd voor uw app, maar er is nog geen code geïmplementeerd in uw project.
 
-1. Voeg een project toe aan uw Visual Studio-oplossing. Klik met de rechter muisknop op de oplossing **Add**en selecteer  >  **Nieuw project**toevoegen.
+1. Voeg een project toe aan uw Visual Studio-oplossing. Klik met de rechter muisknop op de oplossing en selecteer  >  **Nieuw project** toevoegen.
 
     ![Project toevoegen](./media/create-visual-studio-deployment-project/add-project.png)
 
-1. Een **ASP.net core-webtoepassing**toevoegen.
+1. Een **ASP.net core-webtoepassing** toevoegen.
 
     ![Web-app toevoegen](./media/create-visual-studio-deployment-project/add-app.png)
 
@@ -259,7 +259,7 @@ Open nu een Power shell-console en voer de volgende handelingen uit:
 
 Voor het AzureRM-module script gebruikt u Visual Studio:
 
-1. Als u opnieuw wilt implementeren, kiest u **implementeren**en de resource groep die u eerder hebt geïmplementeerd.
+1. Als u opnieuw wilt implementeren, kiest u **implementeren** en de resource groep die u eerder hebt geïmplementeerd.
 
     ![Project opnieuw implementeren](./media/create-visual-studio-deployment-project/redeploy.png)
 

@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive,seoapr2020
 ms.date: 04/28/2020
-ms.openlocfilehash: d6c3dbc28da7bee0bc24a6dc24608c78e480c20e
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: e7a8a72d0669f39cc27c997d83af1e6272d045a6
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96462163"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704149"
 ---
 # <a name="extract-transform-and-load-etl-at-scale"></a>Uitpakken, transformeren en laden (ETL) op de juiste schaal
 
@@ -82,7 +82,7 @@ Voor het uploaden van gegevens sets in het terabyte-bereik kan de netwerk latent
 
 - **Azure-ExpressRoute:** Maak particuliere verbindingen tussen Azure-data centers en uw on-premises infra structuur. Deze verbindingen bieden een betrouw bare optie voor het overbrengen van grote hoeveel heden gegevens. Zie de [documentatie van Azure ExpressRoute](../../expressroute/expressroute-introduction.md)voor meer informatie.
 
-- **Gegevens uploaden van harde schijven:** U kunt de [Azure import/export-service](../../storage/common/storage-import-export-service.md) gebruiken om harde schijven met uw gegevens naar een Azure-Data Center te verzenden. Uw gegevens worden eerst geüpload naar Azure Blob-opslag. U kunt vervolgens Azure Data Factory of het hulp programma AdlCopy gebruiken om gegevens uit Azure Blob-opslag te kopiëren naar Data Lake Storage.
+- **Gegevens uploaden van harde schijven:** U kunt de [Azure import/export-service](../../import-export/storage-import-export-service.md) gebruiken om harde schijven met uw gegevens naar een Azure-Data Center te verzenden. Uw gegevens worden eerst geüpload naar Azure Blob-opslag. U kunt vervolgens Azure Data Factory of het hulp programma AdlCopy gebruiken om gegevens uit Azure Blob-opslag te kopiëren naar Data Lake Storage.
 
 ### <a name="azure-synapse-analytics"></a>Azure Synapse Analytics
 

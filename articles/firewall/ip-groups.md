@@ -5,14 +5,14 @@ services: firewall
 author: vhorne
 ms.service: firewall
 ms.topic: conceptual
-ms.date: 01/21/2021
+ms.date: 01/22/2021
 ms.author: victorh
-ms.openlocfilehash: dc1eb64b5cfb527c10967a1a46525a418fdc37e3
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 6910fda855402d2f99994da1e835560be84ca2dd
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/22/2021
-ms.locfileid: "98673994"
+ms.locfileid: "98703374"
 ---
 # <a name="ip-groups-in-azure-firewall"></a>IP-groepen in Azure Firewall
 
@@ -28,7 +28,7 @@ Een IP-groep kan één IP-adres, meerdere IP-adressen of een of meer IP-adresber
 IP-groepen kunnen opnieuw worden gebruikt in Azure Firewall DNAT-, netwerk-en toepassings regels voor meerdere firewalls voor verschillende regio's en abonnementen in Azure. Groeps namen moeten uniek zijn. U kunt een IP-groep configureren in de Azure Portal, Azure CLI of REST API. Er wordt een voorbeeld sjabloon gegeven om u te helpen aan de slag te gaan.
 
 > [!NOTE]
-> IP-groepen zijn momenteel niet beschikbaar in azure National Clouds-omgevingen.
+> IP-groepen zijn momenteel niet beschikbaar in azure National Cloud-omgevingen.
 
 ## <a name="sample-format"></a>Sample-indeling
 

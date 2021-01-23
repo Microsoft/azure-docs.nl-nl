@@ -11,12 +11,12 @@ metadata:
   services: cognitive-services
   title: Documentatie voor QnA Maker
   description: QnA Maker is een cloudgebaseerde API-service voor het maken van een vraag- en antwoordlaag over uw gegevens in gespreksstijl. Met QnA Maker kunt u een vraag- en antwoordservice maken op basis van uw semi-gestructureerde inhoud zoals FAQ-documenten, URL's en producthandleidingen. De QnA Maker-service beantwoordt de in natuurlijke taal gestelde vragen van uw gebruikers door deze te koppelen aan de best mogelijke antwoorden uit de QnA's in uw Knowledge Base.
-  ms.openlocfilehash: d1236b8a40d43ac5203cd4cac8aa607c925a04d7
-  ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
-  ms.translationtype: HT
+  ms.openlocfilehash: 6bc5587612a953f2e0bb43765f579adb56fab336
+  ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/09/2020
-  ms.locfileid: "96932724"
+  ms.lasthandoff: 01/22/2021
+  ms.locfileid: "98707665"
 landingContent:
 - title: Over QnA Maker
   linkLists:
@@ -60,9 +60,7 @@ landingContent:
     links:
     - text: 'Quickstart: Met behulp van Postman of cURL'
       url: quickstarts/get-answer-from-knowledge-base-using-url-tool.md
-    - text: 'Quickstart: REST en cURL gebruiken'
-      url: quickstarts/quickstart-rest-curl.md
-    - text: 'Quickstart: SDK gebruiken'
+    - text: 'Snelstartgids: SDK en REST API gebruiken'
       url: quickstarts/quickstart-sdk.md
   - linkListType: how-to-guide
     links:

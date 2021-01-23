@@ -10,12 +10,12 @@ ms.topic: conceptual
 ms.date: 01/20/2021
 ms.author: v-tcassi
 monikerRange: =iotedge-2018-06
-ms.openlocfilehash: e603e99c1aa9c49d20bdb281bbfd96131ae2efdd
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 3470e07c1b5673efa6cd015e43e077828da1573e
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98663618"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703662"
 ---
 # <a name="install-and-provision-azure-iot-edge-for-linux-on-a-windows-device-preview"></a>Azure IoT Edge voor Linux installeren en inrichten op een Windows-apparaat (preview)
 
@@ -162,7 +162,7 @@ Installeer IoT Edge voor Linux in Windows op uw doel apparaat als u dat nog niet
    Als het uitvoerings beleid van `local machine` niet het geval is `AllSigned` , kunt u het uitvoerings beleid instellen met behulp van:
 
    ```azurepowershell-interactive
-   Set-ExecutionPolicy - ExecutionPolicy AllSigned -Force
+   Set-ExecutionPolicy -ExecutionPolicy AllSigned -Force
    ```
 
 1. Maak de IoT Edge voor Linux op Windows-implementatie.

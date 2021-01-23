@@ -7,12 +7,12 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: cf21ed73d74adb9f9a5a7229a45192bc63aca2c3
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
-ms.translationtype: HT
+ms.openlocfilehash: 5c2b88ad7bef5fb8f7ba576e5f7b416f7458378c
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98104241"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98731598"
 ---
 # <a name="quickstart-create-a-private-endpoint-using-azure-powershell"></a>Quickstart: Een privé-eindpunt maken met behulp van de Azure PowerShell
 
@@ -22,8 +22,8 @@ In deze quickstart maakt u een privé-eindpunt voor Azure Attestation en impleme
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Meer informatie over [Azure Private Link](/azure/private-link/private-link-overview)
-* [Azure Attestation instellen met behulp van Microsoft Azure PowerShell](/azure/attestation/quickstart-powershell)
+* Meer informatie over [Azure Private Link](../private-link/private-link-overview.md)
+* [Azure Attestation instellen met behulp van Microsoft Azure PowerShell](./quickstart-powershell.md)
 
 ## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
@@ -207,4 +207,3 @@ In deze sectie gebruikt u de virtuele machine die u in de vorige stap hebt gemaa
     Non-authoritative answer:
     Name:    myattestationprovider.eastus.test.attest.azure.net
     ```
-

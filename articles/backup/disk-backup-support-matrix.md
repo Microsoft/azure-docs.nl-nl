@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 01/07/2021
 ms.custom: references_regions
-ms.openlocfilehash: 099e83d8a2fb109da862657265dad8be8143f608
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: 447283ba1d63267722e4167e0727a827e63d2e0d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624931"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98732976"
 ---
 # <a name="azure-disk-backup-support-matrix-in-preview"></a>Ondersteunings matrix voor Azure Disk Backup (in Preview)
 
@@ -18,7 +18,7 @@ ms.locfileid: "98624931"
 >
 >[Vul dit formulier](https://forms.office.com/Pages/ResponsePage.aspx?id=v4j5cvGGr0GRqy180BHbR1vE8L51DIpDmziRt_893LVUNFlEWFJBN09PTDhEMjVHS05UWFkxUlUzUS4u) in om u aan te melden voor de preview-versie.
 
-U kunt [Azure backup](https://docs.microsoft.com/azure/backup/backup-overview) gebruiken om Azure-schijven te beveiligen. In dit artikel vindt u een overzicht van de beschik baarheid van regio's, ondersteunde scenario's en beperkingen.
+U kunt [Azure backup](./backup-overview.md) gebruiken om Azure-schijven te beveiligen. In dit artikel vindt u een overzicht van de beschik baarheid van regio's, ondersteunde scenario's en beperkingen.
 
 ## <a name="supported-regions"></a>Ondersteunde regio’s
 
@@ -36,9 +36,9 @@ Er worden meer regio's aangekondigd wanneer deze beschikbaar komen.
 
 - Op dit moment wordt de optie voor het Original-Location herstel (herstellen) hersteld door bestaande bron schijven te vervangen van waaruit de back-ups zijn gemaakt niet ondersteund. U kunt herstellen vanaf herstel punt om een nieuwe schijf te maken in dezelfde resource groep als die van de bron schijf van waaruit de back-ups zijn gemaakt of in een andere resource groep. Dit wordt Alternate-Location herstel (ALR) genoemd.
 
-- Azure Backup voor Managed Disks gebruikt incrementele moment opnamen, die zijn beperkt tot 200 moment opnamen per schijf. Als u back-ups op aanvraag wilt maken van geplande back-ups, beperkt het back-upbeleid de totale back-ups tot 180. Meer informatie over [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) voor beheerde schijven.
+- Azure Backup voor Managed Disks gebruikt incrementele moment opnamen, die zijn beperkt tot 200 moment opnamen per schijf. Als u back-ups op aanvraag wilt maken van geplande back-ups, beperkt het back-upbeleid de totale back-ups tot 180. Meer informatie over [incrementele moment opnamen](../virtual-machines/disks-incremental-snapshots.md#restrictions) voor beheerde schijven.
 
-- De [limieten](https://docs.microsoft.com/azure/azure-resource-manager/management/azure-subscription-service-limits#virtual-machine-disk-limits) voor Azure-abonnementen en-services zijn van toepassing op het totale aantal moment opnamen per regio per abonnement.
+- De [limieten](../azure-resource-manager/management/azure-subscription-service-limits.md#virtual-machine-disk-limits) voor Azure-abonnementen en-services zijn van toepassing op het totale aantal moment opnamen per regio per abonnement.
 
 - Punt-in-time moment opnamen van meerdere schijven die zijn gekoppeld aan een virtuele machine worden niet ondersteund.
 
@@ -58,13 +58,13 @@ Er worden meer regio's aangekondigd wanneer deze beschikbaar komen.
 
 - Het gebruik van Power shell en Azure CLI voor het configureren van back-ups en het terugzetten van schijven wordt momenteel niet ondersteund (tijdens de preview-versie).
 
-- Bij het configureren van de back-up moet de schijf die u hebt geselecteerd om een back-up te maken en de resource groep met moment opnamen waarvan de moment opnamen moeten worden opgeslagen, deel uitmaken van hetzelfde abonnement. U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Meer informatie over [incrementele moment opnamen](https://docs.microsoft.com/azure/virtual-machines/windows/disks-incremental-snapshots-portal#restrictions) voor beheerde schijven. Zie  [back-up configureren](backup-managed-disks.md#configure-backup)voor meer informatie over het kiezen van een resource groep voor moment opnamen.
+- Bij het configureren van de back-up moet de schijf die u hebt geselecteerd om een back-up te maken en de resource groep met moment opnamen waarvan de moment opnamen moeten worden opgeslagen, deel uitmaken van hetzelfde abonnement. U kunt geen incrementele moment opname maken voor een bepaalde schijf buiten het abonnement van de schijf. Meer informatie over [incrementele moment opnamen](../virtual-machines/windows/disks-incremental-snapshots-portal.md#restrictions) voor beheerde schijven. Zie  [back-up configureren](backup-managed-disks.md#configure-backup)voor meer informatie over het kiezen van een resource groep voor moment opnamen.
 
 - Voor geslaagde back-up-en herstel bewerkingen zijn roltoewijzingen vereist voor de beheerde identiteit van de back-upkluis. Gebruik alleen de roldefinities die in de documentatie zijn opgenomen. Het gebruik van andere rollen, zoals owner, Inzender, enzovoort, wordt niet ondersteund. U kunt machtigings problemen ondervinden als u na het toewijzen van rollen begint met het configureren van back-up-of herstel bewerkingen. Dit komt doordat het enkele minuten duren voordat de roltoewijzingen van kracht worden.
 
-- Met Managed disks kunt u de prestatie-laag wijzigen tijdens de implementatie of daarna zonder de grootte van de schijf te wijzigen. De oplossing voor de back-up van Azure-schijven ondersteunt de laag van de prestatie tier van de bron schijf waarvan een back-up wordt gemaakt. Tijdens het herstellen is de prestatie tier van de herstelde schijf hetzelfde als die van de bron schijf op het moment van de back-up. Volg de documentatie [hier](https://docs.microsoft.com/azure/virtual-machines/disks-performance-tiers-portal) om de prestatie-laag van uw schijf te wijzigen nadat de herstel bewerking is uitgevoerd.
+- Met Managed disks kunt u de prestatie-laag wijzigen tijdens de implementatie of daarna zonder de grootte van de schijf te wijzigen. De oplossing voor de back-up van Azure-schijven ondersteunt de laag van de prestatie tier van de bron schijf waarvan een back-up wordt gemaakt. Tijdens het herstellen is de prestatie tier van de herstelde schijf hetzelfde als die van de bron schijf op het moment van de back-up. Volg de documentatie [hier](../virtual-machines/disks-performance-tiers-portal.md) om de prestatie-laag van uw schijf te wijzigen nadat de herstel bewerking is uitgevoerd.
 
-- Met de ondersteuning voor [persoonlijke koppelingen](https://docs.microsoft.com/azure/virtual-machines/disks-enable-private-links-for-import-export-portal) voor Managed disks kunt u het exporteren en importeren van beheerde schijven beperken zodat deze alleen plaatsvindt in uw virtuele Azure-netwerk. Azure Disk Backup ondersteunt back-ups van schijven waarop privé-eind punten zijn ingeschakeld. Dit omvat niet de back-upgegevens of moment opnamen die toegankelijk moeten zijn via het persoonlijke eind punt.
+- Met de ondersteuning voor [persoonlijke koppelingen](../virtual-machines/disks-enable-private-links-for-import-export-portal.md) voor Managed disks kunt u het exporteren en importeren van beheerde schijven beperken zodat deze alleen plaatsvindt in uw virtuele Azure-netwerk. Azure Disk Backup ondersteunt back-ups van schijven waarop privé-eind punten zijn ingeschakeld. Dit omvat niet de back-upgegevens of moment opnamen die toegankelijk moeten zijn via het persoonlijke eind punt.
 
 ## <a name="next-steps"></a>Volgende stappen
 

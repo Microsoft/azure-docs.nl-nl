@@ -7,15 +7,15 @@ ms.reviewer: bwren
 ms.subservice: logs
 ms.topic: conceptual
 ms.date: 12/02/2020
-ms.openlocfilehash: 1a35b80ceec12b378a01555f42b7a0500b8f6229
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: 5671ec68901be289a87c23b6883160f9cda2b651
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060449"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98733180"
 ---
 # <a name="cross-resource-query-azure-data-explorer-by-using-azure-monitor"></a>Meerdere resources: query's uitvoeren op Azure Data Explorer met behulp van Azure Monitor
-Azure Monitor ondersteunt query's tussen de verschillende services van Azure Data Explorer, [Application Insights](/azure/azure-monitor/app/app-insights-overview)en [log Analytics](/azure/azure-monitor/platform/data-platform-logs). U kunt vervolgens een query uitvoeren op uw Azure Data Explorer-cluster met behulp van Log Analytics/Application Insights-hulpprogram ma's en hiernaar verwijzen in een query's voor meerdere services. In dit artikel wordt beschreven hoe u een query voor meerdere services maakt.
+Azure Monitor ondersteunt query's tussen de verschillende services van Azure Data Explorer, [Application Insights](../app/app-insights-overview.md)en [log Analytics](./data-platform-logs.md). U kunt vervolgens een query uitvoeren op uw Azure Data Explorer-cluster met behulp van Log Analytics/Application Insights-hulpprogram ma's en hiernaar verwijzen in een query's voor meerdere services. In dit artikel wordt beschreven hoe u een query voor meerdere services maakt.
 
 In het volgende diagram ziet u de Azure Monitor cross-service flow:
 
@@ -62,8 +62,8 @@ Query's tussen tenants tussen de services worden niet ondersteund. U bent aangem
 
 Als de Azure Data Explorer-resource zich in Tenant A bevindt en de Log Analytics-werk ruimte zich in Tenant B bevindt, gebruikt u een van de volgende methoden:
 
-*  Met Azure Data Explorer kunt u rollen toevoegen voor principals in verschillende tenants. Voeg uw gebruikers-ID toe aan Tenant B als geautoriseerde gebruiker op het Azure Data Explorer-cluster. Controleer of de eigenschap [TrustedExternalTenant](https://docs.microsoft.com/powershell/module/az.kusto/update-azkustocluster) op het Azure Data Explorer-cluster Tenant B bevat. Voer de query's volledig uit in Tenant b.
-*  Gebruik [Lighthouse](https://docs.microsoft.com/azure/lighthouse/) om de Azure monitor resource in Tenant A te projecteren.
+*  Met Azure Data Explorer kunt u rollen toevoegen voor principals in verschillende tenants. Voeg uw gebruikers-ID toe aan Tenant B als geautoriseerde gebruiker op het Azure Data Explorer-cluster. Controleer of de eigenschap [TrustedExternalTenant](/powershell/module/az.kusto/update-azkustocluster) op het Azure Data Explorer-cluster Tenant B bevat. Voer de query's volledig uit in Tenant b.
+*  Gebruik [Lighthouse](../../lighthouse/index.yml) om de Azure monitor resource in Tenant A te projecteren.
 
 ## <a name="connect-to-azure-data-explorer-clusters-from-different-tenants"></a>Verbinding maken met Azure Data Explorer clusters van verschillende tenants
 
@@ -72,6 +72,6 @@ Kusto Explorer meldt u automatisch aan bij de Tenant waarvan het gebruikers acco
 `Data Source=https://ade.applicationinsights.io/subscriptions/SubscriptionId/resourcegroups/ResourceGroupName;Initial Catalog=NetDefaultDB;AAD Federated Security=True;Authority ID=TenantId`
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Query's schrijven](https://docs.microsoft.com/azure/data-explorer/write-queries)
-* [Query's uitvoeren op gegevens in Azure Monitor met behulp van Azure Data Explorer](https://docs.microsoft.com/azure/data-explorer/query-monitor-data)
-* [Query's tussen bronnen en logboeken uitvoeren in Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/log-query/cross-workspace-query)
+* [Query's schrijven](/azure/data-explorer/write-queries)
+* [Query's uitvoeren op gegevens in Azure Monitor met behulp van Azure Data Explorer](/azure/data-explorer/query-monitor-data)
+* [Query's tussen bronnen en logboeken uitvoeren in Azure Monitor](../log-query/cross-workspace-query.md)

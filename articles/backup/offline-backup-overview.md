@@ -4,12 +4,12 @@ description: Meer informatie over de onderdelen van offline back-ups. Ze omvatte
 ms.topic: conceptual
 ms.date: 1/28/2020
 ms.custom: references_regions
-ms.openlocfilehash: c5e0f4e722e2dd15b7277a484af2a101844344e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7c65cf6b36af3057fb06c6a6584fa458b1030c72
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86503622"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704132"
 ---
 # <a name="overview-of-offline-backup"></a>Overzicht van offline back-up
 
@@ -45,7 +45,7 @@ Als u offline back-ups wilt gebruiken op basis van Azure Data Box, raadpleegt u 
 
 ## <a name="offline-backup-based-on-the-azure-importexport-service"></a>Offline back-up op basis van de Azure import/export-service
 
-Deze optie wordt ondersteund door Microsoft Azure Backup Server (MABS), System Center Data Protection Manager (DPM) DPM-A en de MARS-agent. Er wordt gebruikgemaakt van de [Azure import/export-service](../storage/common/storage-import-export-service.md). U kunt initiële back-upgegevens naar Azure overdragen met behulp van uw eigen Azure-compatibele schijven en connectors. Voor deze benadering moet u tijdelijke opslag inrichten die bekend staat als de faserings locatie en gebruikmaken van vooraf ontwikkelde hulpprogram ma's voor het format teren en kopiëren van de back-upgegevens op schijven die eigendom zijn van de klant.
+Deze optie wordt ondersteund door Microsoft Azure Backup Server (MABS), System Center Data Protection Manager (DPM) DPM-A en de MARS-agent. Er wordt gebruikgemaakt van de [Azure import/export-service](../import-export/storage-import-export-service.md). U kunt initiële back-upgegevens naar Azure overdragen met behulp van uw eigen Azure-compatibele schijven en connectors. Voor deze benadering moet u tijdelijke opslag inrichten die bekend staat als de faserings locatie en gebruikmaken van vooraf ontwikkelde hulpprogram ma's voor het format teren en kopiëren van de back-upgegevens op schijven die eigendom zijn van de klant.
 
 Hier ziet u een architectuur waarin de verplaatsing van back-upgegevens met deze optie wordt beschreven.
 
@@ -73,7 +73,7 @@ In de volgende tabel worden de twee beschik bare opties vergeleken, zodat u de j
 | Maximum aantal back-upgegevens per server (MARS) of per beveiligings groep (MABS, DPM-A) | [Azure data Box schijf](../databox/data-box-disk-overview.md) -7,2 TB <br> [Azure data Box](../databox/data-box-overview.md) -80 TB       | 80 TB (Maxi maal 10 schijven van 8 TB elk)                          |
 | Beveiliging (gegevens, apparaat en service)                           | [Data](../databox/data-box-security.md#data-box-data-protection) -AES 256-bits versleuteld <br> [Apparaat](../databox/data-box-security.md#data-box-device-protection) -robuuste behuizing, bedrijfs eigen, op referenties gebaseerde interface voor het kopiëren van gegevens <br> [Service](../databox/data-box-security.md#data-box-service-protection) -beveiligd door Azure-beveiligings functies | Door BitLocker versleutelde gegevens                                 |
 | Tijdelijke opslag locatie inrichten                     | Niet vereist                                                | Meer dan of gelijk aan de geschatte grootte van de back-upgegevens        |
-| Ondersteunde regio’s                                           | [Azure Data Box schijf regio's](../databox/data-box-disk-overview.md#region-availability) <br> [Azure Data Box regio's](../databox/data-box-disk-overview.md#region-availability) | [Azure import/export-service regio's](../storage/common/storage-import-export-service.md#region-availability) |
+| Ondersteunde regio’s                                           | [Azure Data Box schijf regio's](../databox/data-box-disk-overview.md#region-availability) <br> [Azure Data Box regio's](../databox/data-box-disk-overview.md#region-availability) | [Azure import/export-service regio's](../import-export/storage-import-export-service.md#region-availability) |
 | Verzen ding tussen landen                                     | Niet ondersteund  <br>    Het bron adres en het doel-Azure-Data Center moeten zich in hetzelfde land/dezelfde regio bevinden * | Ondersteund                                                    |
 | Logistiek overdragen (levering, Trans Port, ophalen)           | Volledig door micro soft beheerd                                     | Door de klant beheerd                                            |
 | Prijzen                                                      | [Azure Data Box prijzen](https://azure.microsoft.com/pricing/details/databox/) <br> [Prijzen Azure Data Box schijf](https://azure.microsoft.com/pricing/details/databox/disk/) | [Prijzen voor Azure import/export-service](https://azure.microsoft.com/pricing/details/storage-import-export/) |

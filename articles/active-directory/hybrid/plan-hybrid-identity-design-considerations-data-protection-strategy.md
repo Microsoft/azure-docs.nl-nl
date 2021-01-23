@@ -17,12 +17,12 @@ ms.subservice: hybrid
 ms.author: billmath
 ms.custom: seohack1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e991fb0c60e8f08eb43cb7799027d4200263c9b5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bac3f53def6db1038a6dd7e45d7933daa22df9f0
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89659550"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703849"
 ---
 # <a name="define-data-protection-strategy-for-your-hybrid-identity-solution"></a>Strategie voor gegevens beveiliging definiëren voor uw hybride identiteits oplossing
 In deze taak definieert u de strategie voor gegevens beveiliging voor uw hybride identiteits oplossing om te voldoen aan de bedrijfs vereisten die u hebt gedefinieerd in:
@@ -37,7 +37,7 @@ Zoals wordt uitgelegd in de [vereisten voor adreslijst synchronisatie bepalen](p
 
 Na verificatie wordt de user principal name (UPN) gelezen uit het verificatie token. Vervolgens bepaalt het autorisatie systeem de gerepliceerde partitie en container die overeenkomt met het domein van de gebruiker. Informatie over de aanwezigheid van de gebruiker, de status ingeschakeld en de rol helpt het autorisatie systeem vervolgens te bepalen of de toegang tot de doel-Tenant is geautoriseerd voor de gebruiker in die sessie. Bepaalde goedgekeurde acties (met name voor het maken van gebruikers-en wachtwoord herstel) een audittrail maken die door een Tenant beheerder wordt gebruikt om de nalevings inspanningen of onderzoek te beheren.
 
-Het verplaatsen van gegevens van uw on-premises Data Center naar Azure Storage via een Internet verbinding is mogelijk niet altijd haalbaar vanwege gegevens volume, band breedte Beschik baarheid of andere overwegingen. De [Azure Storage import/export-service](../../storage/common/storage-import-export-service.md) biedt een optie op basis van hardware voor het plaatsen/ophalen van grote hoeveel heden gegevens in Blob Storage. Hiermee kunt u [BitLocker-versleutelde](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn306081(v=ws.11)#BKMK_BL2012R2) harde schijven rechtstreeks naar een Azure-Data Center verzenden, waar Cloud operators de inhoud naar uw opslag account uploaden, of ze kunnen uw Azure-gegevens naar uw stations downloaden om naar u terug te gaan. Alleen versleutelde schijven worden voor dit proces geaccepteerd (met behulp van een BitLocker-sleutel die door de service zelf wordt gegenereerd tijdens de installatie van de taak). De BitLocker-sleutel wordt afzonderlijk aan Azure verstrekt, waardoor het delen van de band-sleutel wordt verzorgd.
+Het verplaatsen van gegevens van uw on-premises Data Center naar Azure Storage via een Internet verbinding is mogelijk niet altijd haalbaar vanwege gegevens volume, band breedte Beschik baarheid of andere overwegingen. De [Azure Storage import/export-service](../../import-export/storage-import-export-service.md) biedt een optie op basis van hardware voor het plaatsen/ophalen van grote hoeveel heden gegevens in Blob Storage. Hiermee kunt u [BitLocker-versleutelde](/previous-versions/windows/it-pro/windows-server-2012-R2-and-2012/dn306081(v=ws.11)#BKMK_BL2012R2) harde schijven rechtstreeks naar een Azure-Data Center verzenden, waar Cloud operators de inhoud naar uw opslag account uploaden, of ze kunnen uw Azure-gegevens naar uw stations downloaden om naar u terug te gaan. Alleen versleutelde schijven worden voor dit proces geaccepteerd (met behulp van een BitLocker-sleutel die door de service zelf wordt gegenereerd tijdens de installatie van de taak). De BitLocker-sleutel wordt afzonderlijk aan Azure verstrekt, waardoor het delen van de band-sleutel wordt verzorgd.
 
 Omdat gegevens in transit in verschillende scenario's kunnen plaatsvinden, is ook relevant om te weten dat Microsoft Azure gebruik maakt van [virtuele netwerken](https://azure.microsoft.com/documentation/services/virtual-network/) om het verkeer van tenants van elkaar te isoleren, waarbij metingen zoals host-en gast niveau firewalls, het filteren van IP-pakketten, poort blokkering en HTTPS-eind punten worden gebruikt. De meeste interne communicatie van Azure, met inbegrip van de infra structuur-naar-infra structuur en de infra structuur naar de klant (on-premises), wordt echter ook versleuteld. Een ander belang rijk scenario is de communicatie binnen Azure-data centers. Micro soft beheert netwerken om ervoor te zorgen dat er geen virtuele machine kan worden geïmiteerd of Eavesdrop op het IP-adres van een andere. TLS/SSL wordt gebruikt bij het openen van Azure Storage-of SQL-data bases, of bij het maken van verbinding met Cloud Services. In dit geval is de beheerder van de klant verantwoordelijk voor het verkrijgen van een TLS/SSL-certificaat en het implementeren ervan in de Tenant-infra structuur. Gegevens verkeer dat tussen Virtual Machines in dezelfde implementatie of tussen tenants in één implementatie via Microsoft Azure Virtual Network wordt verplaatst, kan worden beveiligd via versleutelde communicatie protocollen zoals HTTPS, SSL/TLS of anderen.
 

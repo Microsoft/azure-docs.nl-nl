@@ -3,12 +3,12 @@ title: Azure Backup Server voor de Azure VMware-oplossing instellen
 description: Stel uw Azure VMware-oplossings omgeving in om een back-up te maken van virtuele machines met behulp van Azure Backup Server.
 ms.topic: how-to
 ms.date: 10/23/2020
-ms.openlocfilehash: e71ec19402d22643d51f1435d1abcf56b20a290b
-ms.sourcegitcommit: 59f506857abb1ed3328fda34d37800b55159c91d
+ms.openlocfilehash: 7885c0bc73bd5f7cd802e76ed9db470f77eda30d
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/24/2020
-ms.locfileid: "92517375"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703399"
 ---
 # <a name="set-up-azure-backup-server-for-azure-vmware-solution"></a>Azure Backup Server voor de Azure VMware-oplossing instellen
 
@@ -154,7 +154,7 @@ Een Recovery Services kluis is een opslag entiteit waarin de herstel punten word
 
    Het dialoogvenster **Recovery Service-kluis** wordt geopend.
 
-1. Voer waarden in voor de **naam**, het **abonnement**, de **resource groep**en de **locatie**.
+1. Voer waarden in voor de **naam**, het **abonnement**, de **resource groep** en de **locatie**.
 
    ![Configureer de Recovery Services kluis.](../backup/media/backup-create-rs-vault/create-new-vault-dialog.png)
 
@@ -178,9 +178,9 @@ Met de optie voor opslag replicatie kunt u kiezen tussen geo-redundante opslag (
 > [!IMPORTANT]
 > Het wijzigen van de instelling van het **type opslag replicatie lokaal redundant/geo-redundant** voor een Recovery Services kluis moet worden gedaan voordat u back-ups in de kluis configureert. Nadat u back-ups hebt geconfigureerd, is de optie om deze te wijzigen uitgeschakeld en kunt u het type opslag replicatie niet meer wijzigen.
 
-1. In **Recovery Services kluizen**selecteert u de nieuwe kluis. 
+1. In **Recovery Services kluizen** selecteert u de nieuwe kluis. 
 
-1. Selecteer onder **Alle instellingen** de optie **Eigenschappen**. Selecteer **Update**onder **back-upconfiguratie**.
+1. Selecteer onder **Alle instellingen** de optie **Eigenschappen**. Selecteer **Update** onder **back-upconfiguratie**.
 
 1. Selecteer het type opslag replicatie en selecteer **Opslaan**.
 
@@ -190,13 +190,13 @@ Volg de stappen in deze sectie om het software pakket te downloaden, uit te pakk
 
 ### <a name="download-the-software-package"></a>Het software pakket downloaden
 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 
 1. Als er al een Recovery Services kluis is geopend, gaat u verder met de volgende stap. Als u geen Recovery Services kluis hebt geopend en u zich in de Azure Portal bevindt, selecteert u in het hoofd menu **Bladeren**.
 
-   1. Voer **Recovery Services**in de lijst met resources in.
+   1. Voer **Recovery Services** in de lijst met resources in.
 
-   1. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Wanneer u **Recovery Services kluizen**ziet, selecteert u deze.
+   1. Als u begint te typen, wordt de lijst gefilterd op basis van uw invoer. Wanneer u **Recovery Services kluizen** ziet, selecteert u deze.
 
    ![Recovery Services kluis maken stap 1](../backup/media/backup-azure-microsoft-azure-backup/open-recovery-services-vault.png)
 
@@ -218,21 +218,21 @@ Volg de stappen in deze sectie om het software pakket te downloaden, uit te pakk
 
    1. Selecteer in het menu **waar wordt uw workload uitgevoerd? de** optie **on-premises**.
 
-      :::image type="content" source="media/azure-vmware-solution-backup/deploy-mabs-on-premises-workload.png" alt-text="Azure Backup Server wordt geïmplementeerd als een Azure-infra structuur als een service (IaaS) voor de beveiliging van virtuele machines met Azure VMware-oplossingen.":::
+      :::image type="content" source="media/azure-vmware-solution-backup/deploy-mabs-on-premises-workload.png" alt-text="Waar wordt uw werk belasting uitgevoerd?":::
 
    1. Selecteer in het menu **waarvan wilt u een back-up maken?** de werk belastingen die u wilt beveiligen met behulp van Azure backup server.
 
    1. Selecteer **infra structuur voorbereiden** om Azure backup server en de kluis referenties te downloaden en te installeren.
 
-      :::image type="content" source="media/azure-vmware-solution-backup/deploy-mabs-prepare-infrastructure.png" alt-text="Azure Backup Server wordt geïmplementeerd als een Azure-infra structuur als een service (IaaS) voor de beveiliging van virtuele machines met Azure VMware-oplossingen.":::
+      :::image type="content" source="media/azure-vmware-solution-backup/deploy-mabs-prepare-infrastructure.png" alt-text="Infra structuur voorbereiden":::
 
 1. In het venster **infra structuur voorbereiden** dat wordt geopend:
 
    1. Selecteer de **Download** koppeling om Azure backup server te installeren.
 
-   1. 1. Selecteer **al gedownload of gebruik de nieuwste Azure backup server-installatie** en **down load** de kluis referenties. U gebruikt deze referenties wanneer u de Azure Backup Server registreert bij de Recovery Services kluis. Met de koppelingen gaat u naar het Download centrum, waar u het software pakket downloadt.
+   1. Selecteer **al gedownload of gebruik de nieuwste Azure backup server-installatie** en **down load** de kluis referenties. U gebruikt deze referenties wanneer u de Azure Backup Server registreert bij de Recovery Services kluis. Met de koppelingen gaat u naar het Download centrum, waar u het software pakket downloadt.
 
-   :::image type="content" source="media/azure-vmware-solution-backup/deploy-mabs-prepare-infrastructure2.png" alt-text="Azure Backup Server wordt geïmplementeerd als een Azure-infra structuur als een service (IaaS) voor de beveiliging van virtuele machines met Azure VMware-oplossingen.":::
+   :::image type="content" source="media/azure-vmware-solution-backup/deploy-mabs-prepare-infrastructure2.png" alt-text="Infra structuur voorbereiden-Azure Backup Server":::
 
 1. Selecteer op de pagina downloaden de optie alle bestanden en selecteer **volgende**.
 
@@ -256,14 +256,14 @@ Als u het software pakket naar een andere server hebt gedownload, kopieert u de 
 
    ![Selecteer extra heren om het extractie proces te starten.](../backup/media/backup-azure-microsoft-azure-backup/extract/03.png)
 
-1. Zodra het bestand is geëxtraheerd, selecteert u de optie om setup.exeuit te **voeren ** en selecteert u vervolgens **volt ooien**.
+1. Zodra het bestand is geëxtraheerd, selecteert u de optie om setup.exeuit te **voeren** en selecteert u vervolgens **volt ooien**.
 
 > [!TIP]
 > U kunt het setup.exe-bestand ook vinden in de map waar u het software pakket hebt uitgepakt.
 
 ### <a name="install-the-software-package"></a>Het software pakket installeren
 
-1. Selecteer in het venster Setup onder **installeren**de optie **Microsoft Azure backup** om de installatie wizard te openen.
+1. Selecteer in het venster Setup onder **installeren** de optie **Microsoft Azure backup** om de installatie wizard te openen.
 
    ![Selecteer in het venster Setup onder installeren de optie Microsoft Azure Backup om de installatie wizard te openen.](../backup/media/backup-azure-microsoft-azure-backup/launch-screen2.png)
 
@@ -288,7 +288,7 @@ Als u het software pakket naar een andere server hebt gedownload, kopieert u de 
 
    **Reporting Services configureren met SQL Server 2017**
 
-   Als u uw exemplaar van SQL Server 2017 gebruikt, moet u SQL Server 2017 Reporting Services (SSRS) hand matig configureren. Nadat u SSRS hebt geconfigureerd, moet u de eigenschap **IsInitialized** van SSRS instellen op **True**. Als deze eigenschap is ingesteld op **True**Azure backup server, wordt ervan uitgegaan dat SSRS al is geconfigureerd en dat de SSRS-configuratie is overgeslagen.
+   Als u uw exemplaar van SQL Server 2017 gebruikt, moet u SQL Server 2017 Reporting Services (SSRS) hand matig configureren. Nadat u SSRS hebt geconfigureerd, moet u de eigenschap **IsInitialized** van SSRS instellen op **True**. Als deze eigenschap is ingesteld op **True** Azure backup server, wordt ervan uitgegaan dat SSRS al is geconfigureerd en dat de SSRS-configuratie is overgeslagen.
 
    Als u de configuratie status van SSRS wilt controleren, voert u de volgende handelingen uit:
 
@@ -302,10 +302,10 @@ Als u het software pakket naar een andere server hebt gedownload, kopieert u de 
 
    Gebruik de volgende waarden voor de SSRS-configuratie:
 
-   * **Service account**: **ingebouwde account gebruiken** moet **netwerk service**zijn.
-   * **URL van webservice**: de **virtuele map** moet **ReportServer_ \<SQLInstanceName> **zijn.
-   * **Data Base**: **DATABASENAME** moet ** \<SQLInstanceName> Report Server $** zijn.
-   * **URL van webportal**: de **virtuele map** moet **Reports_ \<SQLInstanceName> **zijn.
+   * **Service account**: **ingebouwde account gebruiken** moet **netwerk service** zijn.
+   * **URL van webservice**: de **virtuele map** moet **ReportServer_ \<SQLInstanceName>** zijn.
+   * **Data Base**: **DATABASENAME** moet **\<SQLInstanceName> Report Server $** zijn.
+   * **URL van webportal**: de **virtuele map** moet **Reports_ \<SQLInstanceName>** zijn.
 
    Meer [informatie](/sql/reporting-services/report-server/configure-and-administer-a-report-server-ssrs-native-mode) over de configuratie van SSRS.
 
@@ -332,7 +332,7 @@ Als u het software pakket naar een andere server hebt gedownload, kopieert u de 
 
    ![Selecteer of u Microsoft Update wilt gebruiken om te controleren op updates en selecteer volgende.](../backup/media/backup-azure-microsoft-azure-backup/update-opt-screen2.png)
 
-1. Bekijk het **samen vatting van instellingen**en selecteer **installeren**.
+1. Bekijk het **samen vatting van instellingen** en selecteer **installeren**.
 
    De installatie vindt plaats in fasen. 
    - In de eerste fase wordt de Microsoft Azure Recovery Services-agent geïnstalleerd.

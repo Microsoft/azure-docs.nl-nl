@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Stream Analytics
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Stream Analytics. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/08/2021
+ms.date: 01/21/2021
 ms.topic: reference
 author: sidramadoss
 ms.author: sidram
 ms.service: stream-analytics
 ms.custom: subject-policy-reference
-ms.openlocfilehash: e5db57eba7d8d3778fa4f0202b9b2d9918c96e36
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: 2fc8438f362ab0cae02d14c34e7140b0ce2743cc
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98050664"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704272"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-stream-analytics"></a>Ingebouwde Azure Policy-definities voor Azure Stream Analytics
 

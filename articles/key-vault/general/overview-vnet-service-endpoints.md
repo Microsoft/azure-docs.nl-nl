@@ -1,5 +1,5 @@
 ---
-title: Virtuele netwerk service-eind punten voor Azure Key Vault
+title: Service-eindpunten voor virtuele netwerken voor Azure Key Vault
 description: Meer informatie over hoe u met virtuele netwerk service-eind punten voor Azure Key Vault de toegang tot een opgegeven virtueel netwerk kunt beperken, met inbegrip van gebruiks scenario's.
 services: key-vault
 author: amitbapat
@@ -9,14 +9,14 @@ ms.date: 01/02/2019
 ms.service: key-vault
 ms.subservice: general
 ms.topic: conceptual
-ms.openlocfilehash: 9dcabe10822fd09c8f7a0da6259d81a089c1a042
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 4a817f386d68c144968540dd05f3fa6859bb0acc
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936291"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98704166"
 ---
-# <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Virtuele netwerk service-eind punten voor Azure Key Vault
+# <a name="virtual-network-service-endpoints-for-azure-key-vault"></a>Service-eindpunten voor virtuele netwerken voor Azure Key Vault
 
 Met de service-eind punten voor virtuele netwerken voor Azure Key Vault kunt u de toegang tot een opgegeven virtueel netwerk beperken. Met de eind punten kunt u ook de toegang beperken tot een lijst met IPv4-adresbereiken (Internet Protocol versie 4). Gebruikers die verbinding maken met uw sleutel kluis van buiten deze bronnen, krijgen geen toegang.
 
@@ -43,7 +43,7 @@ Hier volgt een lijst met vertrouwde services die toegang mogen hebben tot een sl
 | --- | --- |
 |Azure Virtual Machines Deployment-service|[Implementeer certificaten op vm's vanuit door de klant beheerde Key Vault](/archive/blogs/kv/updated-deploy-certificates-to-vms-from-customer-managed-key-vault).|
 |Implementatie service voor Azure Resource Manager-sjabloon|[Beveiligde waarden door geven tijdens de implementatie](../../azure-resource-manager/templates/key-vault-parameter.md).|
-|Azure-toepassing gateway v2 SKU|[TLS-beëindiging met Key Vault certificaten](../../application-gateway/key-vault-certs.md)|
+|Azure-toepassing gateway v2 SKU|[TLS-beëindiging met Key Vault-certificaten](../../application-gateway/key-vault-certs.md)|
 |Volume Encryption-service Azure Disk Encryption|Toegang tot de BitLocker-sleutel (Windows-VM) of DM-wachtwoordzin (Linux-VM) en sleutel versleutelings sleutel toestaan tijdens de implementatie van de virtuele machine. Hiermee maakt u [Azure Disk Encryption](../../security/fundamentals/encryption-overview.md)mogelijk.|
 |Azure Backup|Het maken van back-ups en het herstellen van relevante sleutels en geheimen tijdens Azure Virtual Machines backup toestaan met behulp van [Azure backup](../../backup/backup-overview.md).|
 |Exchange Online & share point online|Toegang tot de klant sleutel toestaan voor de code ring van Azure Storage-service met de code van de [klant](/microsoft-365/compliance/customer-key-overview).|
@@ -57,7 +57,7 @@ Hier volgt een lijst met vertrouwde services die toegang mogen hebben tot een sl
 |Azure Data Factory|[Referenties voor gegevens opslag ophalen in Key Vault van Data Factory](https://go.microsoft.com/fwlink/?linkid=2109491)|
 |Azure Event Hubs|[Toegang verlenen tot een sleutel kluis voor het scenario door de klant beheerde sleutels](../../event-hubs/configure-customer-managed-key.md)|
 |Azure Service Bus|[Toegang verlenen tot een sleutel kluis voor het scenario door de klant beheerde sleutels](../../service-bus-messaging/configure-customer-managed-key.md)|
-|Azure Import/Export| [Door de klant beheerde sleutels gebruiken in Azure Key Vault voor de import/export-service](../../storage/common/storage-import-export-encryption-key-portal.md)
+|Azure Import/Export| [Door de klant beheerde sleutels gebruiken in Azure Key Vault voor de import/export-service](../../import-export/storage-import-export-encryption-key-portal.md)
 |Azure Container Registry|[Register versleuteling met door de klant beheerde sleutels](../../container-registry/container-registry-customer-managed-keys.md)
 
 > [!NOTE]

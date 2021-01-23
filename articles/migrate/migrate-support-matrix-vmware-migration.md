@@ -6,12 +6,12 @@ ms.author: anvar
 ms.manager: bsiva
 ms.topic: conceptual
 ms.date: 06/08/2020
-ms.openlocfilehash: b263d3e62ae97914fc8e06580486bddd0cb9b3b7
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
+ms.openlocfilehash: 0b671fbdfe16848012ac94671ce68e8a33a8b3e8
+ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968446"
+ms.lasthandoff: 01/22/2021
+ms.locfileid: "98703866"
 ---
 # <a name="support-matrix-for-vmware-migration"></a>Ondersteuningsmatrix voor VMware-migratie
 
@@ -62,15 +62,15 @@ De tabel bevat een overzicht van de migratie vereisten zonder agent voor virtuel
 **Schijf grootte** | 2 TB besturingssysteem schijf;  32 TB voor gegevens schijven.
 **Schijf limieten** |  Maxi maal 60 schijven per VM.
 **Versleutelde schijven/volumes** | Vm's met versleutelde schijven/volumes worden niet ondersteund voor migratie.
-**Gedeeld schijf cluster** | Niet ondersteund.
-**Onafhankelijke schijven** | Niet ondersteund.
+**Gedeeld schijf cluster** | Wordt niet ondersteund.
+**Onafhankelijke schijven** | Wordt niet ondersteund.
 **RDM/passthrough-schijven** | Als Vm's een RDM-of passthrough-schijf hebben, worden deze schijven niet gerepliceerd naar Azure.
 **NFS** | NFS-volumes die zijn gekoppeld als volumes op de Vm's, worden niet gerepliceerd.
 **iSCSI-doelen** | Vm's met iSCSI-doelen worden niet ondersteund voor migratie zonder agent.
-**Multipath IO** | Niet ondersteund.
-**Storage vMotion** | Niet ondersteund. De replicatie wordt niet uitgevoerd als een virtuele machine gebruikmaakt van Storage vMotion.
-**Team kaarten** | Niet ondersteund.
-**IPv6** | Niet ondersteund.
+**Multipath IO** | Wordt niet ondersteund.
+**Storage vMotion** | Wordt niet ondersteund. De replicatie wordt niet uitgevoerd als een virtuele machine gebruikmaakt van Storage vMotion.
+**Team kaarten** | Wordt niet ondersteund.
+**IPv6** | Wordt niet ondersteund.
 **Doel schijf** | Vm's kunnen alleen worden gemigreerd naar Managed disks (standaard HDD, standaard SSD, Premium SSD) in Azure.
 **Gelijktijdige replicatie** | 300 Vm's per vCenter Server. Als u meer hebt, migreert u deze in batches van 300.
 **Automatische installatie van de Azure VM-agent (Windows-agent)** | Ondersteund voor Windows Server 2008 R2.
@@ -125,15 +125,15 @@ De tabel bevat een overzicht van de VMware VM-ondersteuning voor VMware-Vm's die
 **Schijf grootte** | 2 TB besturingssysteem schijf; 32 TB voor gegevens schijven.
 **Schijf limieten** |  Maxi maal 63 schijven per VM.
 **Versleutelde schijven/volumes** | Vm's met versleutelde schijven/volumes worden niet ondersteund voor migratie.
-**Gedeeld schijf cluster** | Niet ondersteund.
+**Gedeeld schijf cluster** | Wordt niet ondersteund.
 **Onafhankelijke schijven** | Ondersteund.
 **Passthrough-schijven** | Ondersteund.
 **NFS** | NFS-volumes die zijn gekoppeld als volumes op de Vm's, worden niet gerepliceerd.
 **iSCSI-doelen** | Ondersteund.
-**Multipath IO** | Niet ondersteund.
+**Multipath IO** | Wordt niet ondersteund.
 **Storage vMotion** | Ondersteund
-**Team kaarten** | Niet ondersteund.
-**IPv6** | Niet ondersteund.
+**Team kaarten** | Wordt niet ondersteund.
+**IPv6** | Wordt niet ondersteund.
 
 
 
@@ -166,11 +166,11 @@ Architectuur van gast besturingssysteem | 64-bits.
 Grootte van de besturingssysteemschijf | Maxi maal 2.048 GB. 
 Aantal besturingssysteemschijven | 1 
 Aantal gegevensschijven | 64 of minder. 
-Grootte van de gegevens schijf | Maxi maal 8.095 GB
+Grootte van de gegevens schijf | Tot 32 TB
 Netwerkadapters | Meerdere adapters worden ondersteund.
-Gedeelde VHD | Niet ondersteund. 
-FC-schijf | Niet ondersteund. 
-BitLocker | Niet ondersteund.<br/><br/> BitLocker moet worden uitgeschakeld voordat u de computer migreert.
+Gedeelde VHD | Wordt niet ondersteund. 
+FC-schijf | Wordt niet ondersteund. 
+BitLocker | Wordt niet ondersteund.<br/><br/> BitLocker moet worden uitgeschakeld voordat u de computer migreert.
 VM-naam | Van 1 tot 63 tekens.<br/><br/> Alleen letters, cijfers en afbreekstreepjes.<br/><br/> De naam van de computer moet beginnen en eindigen met een letter of cijfer. 
 Verbinding maken na migratie-Windows | Verbinding maken met virtuele Azure-machines na de migratie:<br/><br/> -Schakel voor de migratie RDP in op de on-premises VM.<br/><br/> Zorg dat TCP- en UDP-regels zijn toegevoegd voor het profiel **Openbaar** en dat RDP is toegestaan in **Windows Firewall** > **Toegestane apps** voor alle profielen.<br/><br/> Schakel voor site-naar-site-VPN-toegang RDP in en sta RDP toe in **Windows Firewall**  ->  **toegestane apps en functies** voor **domein-en particuliere** netwerken.<br/><br/> Controleer bovendien of het SAN-beleid van het besturings systeem is ingesteld op **OnlineAll**. [Meer informatie](prepare-for-migration.md).
 Verbinding maken na migratie-Linux | Verbinding maken met virtuele Azure-machines na de migratie met SSH:<br/><br/> Controleer voordat u de migratie op de on-premises computer controleert of de Secure shell-service is ingesteld op Start en of de firewall regels een SSH-verbinding toestaan.<br/><br/> Nadat de failover is uitgevoerd op de Azure-VM, moet u binnenkomende verbindingen met de SSH-poort toestaan voor de regels voor de netwerk beveiligings groep op de virtuele machine die is mislukt en voor het Azure-subnet waarmee deze is verbonden.<br/><br/> Voeg bovendien een openbaar IP-adres voor de virtuele machine toe.  

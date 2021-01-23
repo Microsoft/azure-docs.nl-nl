@@ -5,12 +5,12 @@ ms.assetid: d20743e3-aab6-442c-a836-9bcea09bfd32
 ms.topic: conceptual
 ms.date: 04/03/2019
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 4b649942a52c51aef0d6edd17b913f75e1fb247b
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: a1b621b5d5601e6d8bffef48e23d217e0eee1d6a
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98674164"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725816"
 ---
 # <a name="automate-resource-deployment-for-your-function-app-in-azure-functions"></a>De implementatie van resources voor uw functie-app in Azure Functions automatiseren
 
@@ -212,9 +212,11 @@ Als u het verbruiks abonnement expliciet definieert, moet u de `serverFarmId` ei
 
 ### <a name="create-a-function-app"></a>Een functie-app maken
 
+De instellingen die zijn vereist voor een functie-app die wordt uitgevoerd in een verbruiks abonnement, worden uitgesteld tussen Windows en Linux. 
+
 #### <a name="windows"></a>Windows
 
-In Windows zijn voor een verbruiks abonnement twee extra instellingen vereist in de site configuratie: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` en `WEBSITE_CONTENTSHARE` . Met deze eigenschappen configureert u het opslag account en het bestandspad waar de code en configuratie van de functie-app worden opgeslagen.
+In Windows is voor een verbruiks abonnement een extra instelling in de site configuratie vereist: [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](functions-app-settings.md#website_contentazurefileconnectionstring) . Met deze eigenschap wordt het opslag account geconfigureerd waarin de code en configuratie van de functie-app worden opgeslagen.
 
 ```json
 {
@@ -238,10 +240,6 @@ In Windows zijn voor een verbruiks abonnement twee extra instellingen vereist in
                     "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2019-06-01').keys[0].value)]"
                 },
                 {
-                    "name": "WEBSITE_CONTENTSHARE",
-                    "value": "[toLower(variables('functionAppName'))]"
-                },
-                {
                     "name": "FUNCTIONS_WORKER_RUNTIME",
                     "value": "node"
                 },
@@ -259,9 +257,12 @@ In Windows zijn voor een verbruiks abonnement twee extra instellingen vereist in
 }
 ```
 
+> [!IMPORTANT]
+> Stel de [`WEBSITE_CONTENTSHARE`](functions-app-settings.md#website_contentshare) instelling niet in zoals deze wordt gegenereerd wanneer de site voor het eerst wordt gemaakt.  
+
 #### <a name="linux"></a>Linux
 
-Op Linux moet de functie-app zijn `kind` ingesteld op `functionapp,linux` en moet de eigenschap zijn `reserved` ingesteld op `true` :
+Op Linux moet de functie-app zijn `kind` ingesteld op `functionapp,linux` en moet de eigenschap zijn `reserved` ingesteld op `true` . 
 
 ```json
 {
@@ -299,8 +300,9 @@ Op Linux moet de functie-app zijn `kind` ingesteld op `functionapp,linux` en moe
 }
 ```
 
-<a name="premium"></a>
+De [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](functions-app-settings.md#website_contentazurefileconnectionstring) [`WEBSITE_CONTENTSHARE`](functions-app-settings.md#website_contentshare) instellingen en worden niet ondersteund in Linux.
 
+<a name="premium"></a>
 ## <a name="deploy-on-premium-plan"></a>Implementeren in Premium-abonnement
 
 Het Premium-abonnement biedt dezelfde schaal als het verbruiks abonnement, maar bevat speciale resources en aanvullende mogelijkheden. Zie [Azure functions Premium-abonnement](./functions-premium-plan.md)voor meer informatie.
@@ -332,7 +334,7 @@ Een Premium-abonnement is een speciaal type resource ' server farm '. U kunt dit
 
 ### <a name="create-a-function-app"></a>Een functie-app maken
 
-Voor een functie-app voor een Premium-abonnement moet de `serverFarmId` eigenschap zijn ingesteld op de resource-id van het abonnement dat u eerder hebt gemaakt. Daarnaast is voor een Premium-abonnement twee extra instellingen vereist in de site configuratie: `WEBSITE_CONTENTAZUREFILECONNECTIONSTRING` en `WEBSITE_CONTENTSHARE` . Met deze eigenschappen configureert u het opslag account en het bestandspad waar de code en configuratie van de functie-app worden opgeslagen.
+Voor een functie-app voor een Premium-abonnement moet de `serverFarmId` eigenschap zijn ingesteld op de resource-id van het abonnement dat u eerder hebt gemaakt. Daarnaast is voor een Premium-abonnement een extra instelling in de site configuratie vereist: [`WEBSITE_CONTENTAZUREFILECONNECTIONSTRING`](functions-app-settings.md#website_contentazurefileconnectionstring) . Met deze eigenschap wordt het opslag account geconfigureerd waarin de code en configuratie van de functie-app worden opgeslagen.
 
 ```json
 {
@@ -358,10 +360,6 @@ Voor een functie-app voor een Premium-abonnement moet de `serverFarmId` eigensch
                     "value": "[concat('DefaultEndpointsProtocol=https;AccountName=', variables('storageAccountName'), ';AccountKey=', listKeys(variables('storageAccountid'),'2019-06-01').keys[0].value)]"
                 },
                 {
-                    "name": "WEBSITE_CONTENTSHARE",
-                    "value": "[toLower(variables('functionAppName'))]"
-                },
-                {
                     "name": "FUNCTIONS_WORKER_RUNTIME",
                     "value": "node"
                 },
@@ -378,6 +376,8 @@ Voor een functie-app voor een Premium-abonnement moet de `serverFarmId` eigensch
     }
 }
 ```
+> [!IMPORTANT]
+> Stel de [`WEBSITE_CONTENTSHARE`](functions-app-settings.md#website_contentshare) instelling niet in zoals deze wordt gegenereerd wanneer de site voor het eerst wordt gemaakt.  
 
 <a name="app-service-plan"></a>
 

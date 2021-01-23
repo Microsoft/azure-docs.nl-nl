@@ -12,12 +12,12 @@ author: srdan-bozovic-msft
 ms.author: srbozovi
 ms.reviewer: sstein, bonova
 ms.date: 10/22/2020
-ms.openlocfilehash: 9a35c0dc8a3b994b015d7a8d64f76f7e10d95a00
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 58563629b30e7be764732a9810162e1a0b1931e6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97722399"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725833"
 ---
 # <a name="connectivity-architecture-for-azure-sql-managed-instance"></a>Connectiviteitsarchitectuur van Azure SQL Managed Instance
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -107,11 +107,11 @@ Implementeer SQL Managed instance in een toegewezen subnet in het virtuele netwe
 - **Voldoende IP-adressen:** Het subnet van het SQL-beheerde exemplaar moet ten minste 32 IP-adressen hebben. Zie [de grootte van het subnet voor SQL Managed instance bepalen](vnet-subnet-determine-size.md)voor meer informatie. U kunt beheerde exemplaren in [het bestaande netwerk](vnet-existing-add-subnet.md) implementeren nadat u deze hebt geconfigureerd om te voldoen aan [de netwerk vereisten voor SQL Managed instance](#network-requirements). Als dat niet mogelijk is, kunt u een [nieuw netwerk en subnet](virtual-network-subnet-create-arm-template.md) maken.
 
 > [!IMPORTANT]
-> Wanneer u een beheerd exemplaar maakt, wordt een netwerk intentie beleid toegepast op het subnet om niet-compatibele wijzigingen in de netwerk installatie te voor komen. Nadat het laatste exemplaar van het subnet is verwijderd, wordt het netwerkintentiebeleid ook verwijderd. De onderstaande regels zijn alleen bedoeld ter informatie en u moet ze niet implementeren met ARM-sjabloon/Power shell/CLI. Als u de meest recente officiële sjabloon wilt gebruiken, kunt u [deze altijd ophalen uit de portal](https://docs.microsoft.com/azure/azure-resource-manager/templates/quickstart-create-templates-use-the-portal).
+> Wanneer u een beheerd exemplaar maakt, wordt een netwerk intentie beleid toegepast op het subnet om niet-compatibele wijzigingen in de netwerk installatie te voor komen. Nadat het laatste exemplaar van het subnet is verwijderd, wordt het netwerkintentiebeleid ook verwijderd. De onderstaande regels zijn alleen bedoeld ter informatie en u moet ze niet implementeren met ARM-sjabloon/Power shell/CLI. Als u de meest recente officiële sjabloon wilt gebruiken, kunt u [deze altijd ophalen uit de portal](../../azure-resource-manager/templates/quickstart-create-templates-use-the-portal.md).
 
 ### <a name="mandatory-inbound-security-rules-with-service-aided-subnet-configuration"></a>Verplichte regels voor binnenkomende beveiliging met configuratie van geaidede subnetten
 
-| Naam       |Poort                        |Protocol|Bron           |Doel|Actie|
+| Name       |Poort                        |Protocol|Bron           |Doel|Bewerking|
 |------------|----------------------------|--------|-----------------|-----------|------|
 |beheer  |9000, 9003, 1438, 1440, 1452|TCP     |SqlManagement    |MI-SUBNET  |Toestaan |
 |            |9000, 9003                  |TCP     |CorpnetSaw       |MI-SUBNET  |Toestaan |
@@ -121,14 +121,14 @@ Implementeer SQL Managed instance in een toegewezen subnet in het virtuele netwe
 
 ### <a name="mandatory-outbound-security-rules-with-service-aided-subnet-configuration"></a>Verplichte uitgaande beveiligings regels met een service-aided subnet-configuratie
 
-| Naam       |Poort          |Protocol|Bron           |Doel|Actie|
+| Name       |Poort          |Protocol|Bron           |Doel|Bewerking|
 |------------|--------------|--------|-----------------|-----------|------|
 |beheer  |443, 12000    |TCP     |MI-SUBNET        |AzureCloud |Toestaan |
 |mi_subnet   |Alle           |Alle     |MI-SUBNET        |MI-SUBNET  |Toestaan |
 
 ### <a name="user-defined-routes-with-service-aided-subnet-configuration"></a>Door de gebruiker gedefinieerde routes met de service-aided subnet-configuratie
 
-|Naam|Adresvoorvoegsel|Volgende hop|
+|Name|Adresvoorvoegsel|Volgende hop|
 |----|--------------|-------|
 |subnet-to-vnetlocal|MI-SUBNET|Virtueel netwerk|
 |Mi-13-64-11-nexthop-Internet|13.64.0.0/11|Internet|

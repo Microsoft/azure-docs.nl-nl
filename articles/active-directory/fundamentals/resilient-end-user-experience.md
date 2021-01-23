@@ -13,12 +13,12 @@ ms.reviewer: ''
 ms.date: 11/30/2020
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c695466fbd50435a85c63842ceb50ce80765760
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: f6896a812ec173994a1299a28ff2e99a0f351391
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630289"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724438"
 ---
 # <a name="resilient-end-user-experience"></a>Flexibele ervaring voor eind gebruikers
 
@@ -34,19 +34,19 @@ De ervaring voor het registreren en aanmelden van eind gebruikers bestaat uit de
 
 ## <a name="choose-between-user-flow-and-custom-policy"></a>Kiezen tussen gebruikers stroom en aangepast beleid  
 
-Azure AD B2C biedt ingebouwde Configureer bare [gebruikers stromen](https://docs.microsoft.com/azure/active-directory-b2c/user-flow-overview)om u te helpen bij het instellen van de meest voorkomende identiteits taken. U kunt ook uw eigen [aangepaste beleids regels](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview)maken. Dit biedt u maximale flexibiliteit. Het is echter raadzaam aangepaste beleids regels alleen te gebruiken om complexe scenario's te verhelpen.
+Azure AD B2C biedt ingebouwde Configureer bare [gebruikers stromen](../../active-directory-b2c/user-flow-overview.md)om u te helpen bij het instellen van de meest voorkomende identiteits taken. U kunt ook uw eigen [aangepaste beleids regels](../../active-directory-b2c/custom-policy-overview.md)maken. Dit biedt u maximale flexibiliteit. Het is echter raadzaam aangepaste beleids regels alleen te gebruiken om complexe scenario's te verhelpen.
 
 ### <a name="how-to-decide-between-user-flow-and-custom-policy"></a>Hoe gebruikers stromen en aangepaste beleids regels kunnen bepalen
 
 Kies ingebouwde gebruikers stromen als aan uw bedrijfs vereisten kan worden voldaan. Aangezien micro soft uitgebreid is getest, kunt u de test die nodig is voor het valideren van functionaliteit op beleids niveau, prestaties of schalen van deze identiteits gebruikers stromen, minimaliseren. U moet uw toepassingen nog steeds testen op functionaliteit, prestaties en schaal.
 
-Als u [aangepaste beleids regels wilt kiezen](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-get-started) vanwege uw bedrijfs vereisten, moet u ervoor zorgen dat u een test op beleids niveau uitvoert voor functionele, prestatie of schaal baarheid naast het testen op toepassings niveau.
+Als u [aangepaste beleids regels wilt kiezen](../../active-directory-b2c/custom-policy-get-started.md) vanwege uw bedrijfs vereisten, moet u ervoor zorgen dat u een test op beleids niveau uitvoert voor functionele, prestatie of schaal baarheid naast het testen op toepassings niveau.
 
-Zie het artikel waarin de [gebruikers stromen en aangepaste beleids](https://docs.microsoft.com/azure/active-directory-b2c/custom-policy-overview#comparing-user-flows-and-custom-policies) regels worden vergeleken om u te helpen beslissen.
+Zie het artikel waarin de [gebruikers stromen en aangepaste beleids](../../active-directory-b2c/custom-policy-overview.md#comparing-user-flows-and-custom-policies) regels worden vergeleken om u te helpen beslissen.
 
 ## <a name="choose-multiple-idps"></a>Meerdere id kiezen
 
-Wanneer u een [externe ID-provider](https://docs.microsoft.com/azure/active-directory-b2c/technical-overview#external-identity-providers) gebruikt, zoals Facebook, moet u ervoor zorgen dat er een terugval plan is voor het geval de externe provider niet beschikbaar is.
+Wanneer u een [externe ID-provider](../../active-directory-b2c/technical-overview.md#external-identity-providers) gebruikt, zoals Facebook, moet u ervoor zorgen dat er een terugval plan is voor het geval de externe provider niet beschikbaar is.
 
 ### <a name="how-to-set-up-multiple-idps"></a>Meerdere id instellen
 
@@ -58,11 +58,11 @@ Als onderdeel van het registratie proces van de externe ID-provider, moet u een 
 
  2. Configureer een profiel beleid zodat gebruikers [de andere identiteit aan hun account kunnen koppelen](https://github.com/Azure-Samples/active-directory-b2c-advanced-policies/tree/master/account-linking) nadat ze zich hebben aangemeld.
 
- 3. Waarschuw en sta gebruikers toe om [over te scha kelen naar een alternatieve IDP](https://docs.microsoft.com/azure/active-directory-b2c/customize-ui-with-html#configure-dynamic-custom-page-content-uri) tijdens een storing.
+ 3. Waarschuw en sta gebruikers toe om [over te scha kelen naar een alternatieve IDP](../../active-directory-b2c/customize-ui-with-html.md#configure-dynamic-custom-page-content-uri) tijdens een storing.
 
 ## <a name="availability-of-multi-factor-authentication"></a>Beschik baarheid van multi-factor Authentication
 
-Wanneer u een [telefoon service voor multi-factor Authentication (MFA)](https://docs.microsoft.com/azure/active-directory-b2c/phone-authentication)gebruikt, moet u rekening houden met een alternatieve service provider. De lokale telecommunicatie of Phone-service provider kan onderbrekingen ondervinden in hun service.
+Wanneer u een [telefoon service voor multi-factor Authentication (MFA)](../../active-directory-b2c/phone-authentication.md)gebruikt, moet u rekening houden met een alternatieve service provider. De lokale telecommunicatie of Phone-service provider kan onderbrekingen ondervinden in hun service.
 
 ### <a name="how-to-choose-an-alternate-mfa"></a>Een alternatieve MFA kiezen  
 

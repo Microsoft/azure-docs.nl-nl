@@ -1,5 +1,5 @@
 ### YamlMime:Landing
-title: Documentatie voor Azure import/export-online overdracht
+title: Documentatie voor Azure import/export
 summary: Gebruik Azure import/export om veilig grote hoeveel heden gegevens te importeren naar Azure Blob-opslag en Azure Files door schijf stations naar een Azure-Data Center te verzenden.
 metadata:
   title: Documentatie voor Azure import/export
@@ -12,12 +12,12 @@ metadata:
   author: v-dalc
   ms.author: alkohli
   ms.date: 01/08/201
-  ms.openlocfilehash: 5bccc4c64da4493e2f6d5e969949eb13df8bc1e7
-  ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+  ms.openlocfilehash: fe86eab66b0f03cb23072a7a34c4be161ca4fb38
+  ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
   ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 01/22/2021
-  ms.locfileid: "98707641"
+  ms.lasthandoff: 01/23/2021
+  ms.locfileid: "98725734"
 landingContent:
 - title: Over Azure import/export
   linkLists:

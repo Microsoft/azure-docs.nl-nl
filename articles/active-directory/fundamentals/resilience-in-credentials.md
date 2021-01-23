@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b5fd5cf419adb137df5c578e3b17b88749215be5
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 399d2f71fa20d63dce89cf3be5c12ffd63264895
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919617"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724707"
 ---
 # <a name="build-resilience-with-credential-management"></a>Tolerantie bouwen met referentie beheer
 
@@ -61,7 +61,7 @@ Naast de hierboven beschreven tolerantie voor individuele gebruikers, moeten ond
 
 * [Wachtwoord hash-synchronisatie](../hybrid/whatis-phs.md) inschakelen voor hybride accounts die zijn gesynchroniseerd vanuit Windows Server Active Directory. Deze optie kan naast Federation Services worden ingeschakeld, zoals AD FS en biedt een terugvallen voor het geval de Federation service mislukt.
 
-* [Analyseer het gebruik van multi-factor Authentication-methoden](https://docs.microsoft.com/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) om gebruikers ervaring te verbeteren.
+* [Analyseer het gebruik van multi-factor Authentication-methoden](/samples/azure-samples/azure-mfa-authentication-method-analysis/azure-mfa-authentication-method-analysis/) om gebruikers ervaring te verbeteren.
 
 * [Een flexibele strategie voor toegangs beheer implementeren](../authentication/concept-resilient-controls.md)
 

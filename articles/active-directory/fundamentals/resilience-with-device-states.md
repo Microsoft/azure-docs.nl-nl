@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: faa334c21e23ecddad287846d34aaf0d72af66cc
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 6d476be7a417cfc31cca76d3409074aaaa281a56
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602181"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724607"
 ---
 # <a name="build-resilience-with-device-states"></a>Een tolerantie bouwen met de status van het apparaat
 
@@ -40,11 +40,11 @@ Wanneer een PRT wordt gebruikt om toegang aan te vragen voor een toepassing, wor
 
   Als er oudere versies van Windows in uw organisatie aanwezig zijn, moet u deze apparaten upgraden om Windows 10 te gebruiken.
 
-* Gebruikers browser standaardiseren om [micro soft Edge](https://docs.microsoft.com/deployedge/microsoft-edge-security-identity) of Google Chrome te gebruiken met [ondersteunde](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) [uitbrei dingen](https://chrome.google.com/webstore/detail/office/ndjpnladcallmjemlbaebfadecfhkepb) die naadloze SSO op webtoepassingen met behulp van de PRT hebben ingeschakeld.
+* Gebruikers browser standaardiseren om [micro soft Edge](/deployedge/microsoft-edge-security-identity) of Google Chrome te gebruiken met [ondersteunde](https://chrome.google.com/webstore/detail/windows-10-accounts/ppnbnpeolgkicgegkbkbjmhlideopiji) [uitbrei dingen](https://chrome.google.com/webstore/detail/office/ndjpnladcallmjemlbaebfadecfhkepb) die naadloze SSO op webtoepassingen met behulp van de PRT hebben ingeschakeld.
 
-* Voor persoonlijke of bedrijfs eigendom iOS-en Android-apparaten wordt de [Microsoft Authenticator-app](../user-help/user-help-auth-app-overview.md)geïmplementeerd. Naast de mogelijkheden voor multi-factor Authentication en wacht woord-minder aanmelding biedt de Microsoft Authenticator-app eenmalige aanmelding mogelijk via een systeem eigen toepassing via [brokered Authentication](../develop/brokered-auth.md) met minder verificatie vragen voor eind gebruikers.
+* Voor persoonlijke of bedrijfs eigendom iOS-en Android-apparaten wordt de [Microsoft Authenticator-app](../user-help/user-help-auth-app-overview.md)geïmplementeerd. Naast de mogelijkheden voor multi-factor Authentication en wacht woord-minder aanmelding biedt de Microsoft Authenticator-app eenmalige aanmelding mogelijk via een systeem eigen toepassing via [brokered Authentication](../develop/msal-android-single-sign-on.md) met minder verificatie vragen voor eind gebruikers.
 
-* Voor persoonlijk of bedrijfs eigendom iOS-en Android-apparaten gebruiken [Mobile Application Management](https://docs.microsoft.com/mem/intune/apps/app-management) om veilig toegang te krijgen tot bedrijfs resources met minder verificatie aanvragen. 
+* Voor persoonlijk of bedrijfs eigendom iOS-en Android-apparaten gebruiken [Mobile Application Management](/mem/intune/apps/app-management) om veilig toegang te krijgen tot bedrijfs resources met minder verificatie aanvragen. 
 
 * [Gebruik de micro soft Enter PRISE SSO-invoeg toepassing voor Apple-apparaten (preview)](../develop/apple-sso-plugin.md). Hiermee wordt het apparaat geregistreerd en vindt u SSO via browser-en systeem eigen Azure AD-toepassingen. 
 

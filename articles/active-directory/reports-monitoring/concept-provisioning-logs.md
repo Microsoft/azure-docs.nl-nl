@@ -17,12 +17,12 @@ ms.date: 1/19/2021
 ms.author: markvi
 ms.reviewer: arvinh
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 4c7d02b48d30fa558f8fd12f92705046dab74057
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.openlocfilehash: deab3460baf9c46e2a3073eb41b738b0e7ad586f
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624232"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726298"
 ---
 # <a name="provisioning-reports-in-the-azure-active-directory-portal-preview"></a>Rapporten inrichten in de Azure Active Directory Portal (preview)
 
@@ -48,7 +48,7 @@ In dit onderwerp vindt u een overzicht van de inrichtings Logboeken. Ze bieden a
 ### <a name="who-can-access-the-data"></a>Wie hebben er toegang tot de gegevens?
 * Eigen aren van toepassingen kunnen logboeken weer geven voor toepassingen waarvan ze eigenaar zijn
 * Gebruikers in de rollen beveiligings beheerder, beveiligings lezer, rapport lezer, toepassings beheerder en Cloud toepassings beheerder
-* Gebruikers in een aangepaste rol met de [machtiging provisioningLogs](https://docs.microsoft.com/azure/active-directory/roles/custom-enterprise-app-permissions#full-list-of-permissions)
+* Gebruikers in een aangepaste rol met de [machtiging provisioningLogs](../roles/custom-enterprise-app-permissions.md#full-list-of-permissions)
 * Globale beheerders
 
 
@@ -102,7 +102,7 @@ U kunt uw inrichtings gegevens filteren. Sommige filter waarden worden dynamisch
 In de standaard weergave kunt u de volgende filters selecteren:
 
 - Identiteit
-- Date
+- Datum
 - Status
 - Bewerking
 
@@ -279,7 +279,7 @@ Nu kunt u de gegevens parseren per scenario. Hieronder vindt u enkele voorbeelde
 
 Gebruik de onderstaande tabel voor meer informatie over het oplossen van fouten die u in de inrichtings Logboeken kunt vinden. Geef feedback met behulp van de koppeling onder aan deze pagina voor eventuele ontbrekende fout codes. 
 
-|Foutcode|Description|
+|Foutcode|Beschrijving|
 |---|---|
 |Conflict, EntryConflict|Corrigeer de conflicterende kenmerk waarden in azure AD of de toepassing of Controleer de overeenkomende kenmerk configuratie als het conflicterende gebruikers account zou moeten overeenkomen en moeten worden overgenomen. Raadpleeg de volgende [documentatie](../app-provisioning/customize-application-attributes.md) voor meer informatie over het configureren van overeenkomende kenmerken.|
 |TooManyRequests|De doel-app heeft deze poging geweigerd de gebruiker bij te werken omdat deze is overbelast en te veel aanvragen ontvangt. Er is niets te doen. Deze poging wordt automatisch buiten gebruik gesteld. Micro soft is ook op de hoogte gesteld van dit probleem.|

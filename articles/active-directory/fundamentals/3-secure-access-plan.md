@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40738f8fcb14c48ccfe3bc7869e5176c4ab63165
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 202f2190e68b89d790c628248ae89f0cb274ff76
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222327"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725208"
 ---
 # <a name="3-create-a-security-plan-for-external-access"></a>3. een beveiligings plan voor externe toegang maken 
 
@@ -93,7 +93,7 @@ Aanmeldings voorwaarden worden geconfigureerd in [voorwaardelijke toegang voor A
 | Hoog risico| MFA altijd vereisen voor externe gebruikers |
 
 
-U kunt nu [multi-factor Authentication afdwingen voor B2B-gebruikers in uw Tenant](https://docs.microsoft.com/azure/active-directory/external-identities/b2b-tutorial-require-mfa). 
+U kunt nu [multi-factor Authentication afdwingen voor B2B-gebruikers in uw Tenant](../external-identities/b2b-tutorial-require-mfa.md). 
 
 **Aanmeldings voorwaarden op basis van gebruikers en apparaten**.
 
@@ -106,11 +106,11 @@ U kunt nu [multi-factor Authentication afdwingen voor B2B-gebruikers in uw Tenan
 
 Vandaag moet het apparaat worden geregistreerd of gekoppeld aan uw Tenant om de apparaatstatus te gebruiken als invoer voor een beleid. 
 
-[Beleid voor risico op basis van identiteits beveiliging](https://docs.microsoft.com/azure/active-directory/conditional-access/howto-conditional-access-policy-risk) kan worden gebruikt. Problemen moeten echter worden verholpen in de thuis Tenant van de gebruiker.
+[Beleid voor risico op basis van identiteits beveiliging](../conditional-access/howto-conditional-access-policy-risk.md) kan worden gebruikt. Problemen moeten echter worden verholpen in de thuis Tenant van de gebruiker.
 
-Voor [netwerk locaties](https://docs.microsoft.com/azure/active-directory/conditional-access/howto-conditional-access-policy-location)kunt u de toegang beperken tot elk IP-adres bereik waarvan u eigenaar bent. U kunt dit bijvoorbeeld gebruiken als u alleen externe partners toegang tot een toepassing wilt geven wanneer deze zich op de site van uw organisatie bevinden.
+Voor [netwerk locaties](../conditional-access/howto-conditional-access-policy-location.md)kunt u de toegang beperken tot elk IP-adres bereik waarvan u eigenaar bent. U kunt dit bijvoorbeeld gebruiken als u alleen externe partners toegang tot een toepassing wilt geven wanneer deze zich op de site van uw organisatie bevinden.
 
-[Meer informatie over beleids regels voor voorwaardelijke toegang](https://docs.microsoft.com/azure/active-directory/conditional-access/overview).
+[Meer informatie over beleids regels voor voorwaardelijke toegang](../conditional-access/overview.md).
 
 ## <a name="document-access-review-policies"></a>Toegangs beoordelings beleid documenteren
 
@@ -126,13 +126,13 @@ Houd rekening met het volgende wanneer uw beleids regels zeer worden aangepast a
 
 * **Toegangs Beoordelingen voor rechten beheer**. Gebruik de functionaliteit in het recht beheer om
 
-   * De [toegangs pakketten automatisch laten verlopen](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-access-package-lifecycle-policy)en dus externe gebruikers hebben toegang tot de Inge sloten resources.
+   * De [toegangs pakketten automatisch laten verlopen](../governance/entitlement-management-access-package-lifecycle-policy.md)en dus externe gebruikers hebben toegang tot de Inge sloten resources.
 
-   * Stel een [vereiste beoordelings frequentie](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-access-reviews-create) in voor toegangs Beoordelingen.
+   * Stel een [vereiste beoordelings frequentie](../governance/entitlement-management-access-reviews-create.md) in voor toegangs Beoordelingen.
 
-   * Als u [verbonden organisaties](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-organization) gebruikt voor het groeperen van alle gebruikers van één partner, moet u regel matig beoordelingen plannen met de eigenaar van het bedrijf en de vertegenwoordiger van de partner.
+   * Als u [verbonden organisaties](../governance/entitlement-management-organization.md) gebruikt voor het groeperen van alle gebruikers van één partner, moet u regel matig beoordelingen plannen met de eigenaar van het bedrijf en de vertegenwoordiger van de partner.
 
-* **Microsoft 365 groepen**. Stel een [verloop beleid voor groepen](https://docs.microsoft.com/microsoft-365/solutions/microsoft-365-groups-expiration-policy?view=o365-worldwide) in voor Microsoft 365 groepen waaraan externe gebruikers worden uitgenodigd. 
+* **Microsoft 365 groepen**. Stel een [verloop beleid voor groepen](/microsoft-365/solutions/microsoft-365-groups-expiration-policy?view=o365-worldwide) in voor Microsoft 365 groepen waaraan externe gebruikers worden uitgenodigd. 
 
 * **Andere opties**. Als externe gebruikers toegang hebben tot buiten rechten beheer toegangs pakketten of Microsoft 365 groepen, stelt u bedrijfs processen in om te controleren wanneer accounts inactief moeten worden gemaakt of verwijderd. Bijvoorbeeld:
 
@@ -146,9 +146,9 @@ Houd rekening met het volgende wanneer uw beleids regels zeer worden aangepast a
 
 Nu u weet wat u wilt beheren van de toegang tot, hoe deze activa moeten worden gegroepeerd voor algemene toegang en de vereiste aanmeldings-en toegangs beoordelings beleid, kunt u bepalen hoe u uw plan moet uitvoeren. 
 
-Sommige functies, bijvoorbeeld het [beheer van rechten](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-overview), zijn alleen beschikbaar met een P2-licentie (Azure AD Premium 2). Microsoft 365 E5 en Office 365 E5-licenties zijn Azure AD P2-licenties. 
+Sommige functies, bijvoorbeeld het [beheer van rechten](../governance/entitlement-management-overview.md), zijn alleen beschikbaar met een P2-licentie (Azure AD Premium 2). Microsoft 365 E5 en Office 365 E5-licenties zijn Azure AD P2-licenties. 
 
-Andere Combi Naties van Microsoft 365, Office 365 en Azure AD bieden ook een aantal functies voor het beheren van externe gebruikers. Zie [Information Protection](https://docs.microsoft.com/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance) voor meer informatie.
+Andere Combi Naties van Microsoft 365, Office 365 en Azure AD bieden ook een aantal functies voor het beheren van externe gebruikers. Zie [Information Protection](/office365/servicedescriptions/microsoft-365-service-descriptions/microsoft-365-tenantlevel-services-licensing-guidance/microsoft-365-security-compliance-licensing-guidance) voor meer informatie.
 
 > [!NOTE]
 > Licenties zijn per gebruiker. Daarom kunt u specifieke gebruikers, waaronder beheerders en zakelijke eigen aren, gedelegeerde toegangs beheer, op het niveau van Azure AD P2 of Microsoft 365 E5, zonder dat u deze licenties voor alle gebruikers hoeft in te scha kelen. Uw eerste 50.000 externe gebruikers zijn gratis. Als u P2-licenties niet inschakelt voor uw andere interne gebruikers, kunnen ze geen rechten voor beheer gebruiken zoals toegangs pakketten. 
@@ -180,7 +180,7 @@ Azure AD P2 en Microsoft 365 E5 hebben de volledige suite met hulpprogram ma's v
 
 ### <a name="entitlement-management"></a>Beheer rechten 
 
-[Toegangs pakketten voor rechten beheer](https://docs.microsoft.com/azure/active-directory/governance/entitlement-management-access-package-create) bieden het inrichten en ongedaan maken van de inrichting van toegang tot groepen en teams, toepassingen en share point-sites. U kunt definiëren welke verbonden organisaties toegang mogen hebben, of selfservice aanvragen zijn toegestaan en welke goedkeurings werk stromen zijn vereist (indien van toepassing) om toegang te verlenen. Om ervoor te zorgen dat de toegang niet langer dan nodig is, kunt u een verloop beleid en toegangs Beoordelingen voor elk toegangs pakket definiëren. 
+[Toegangs pakketten voor rechten beheer](../governance/entitlement-management-access-package-create.md) bieden het inrichten en ongedaan maken van de inrichting van toegang tot groepen en teams, toepassingen en share point-sites. U kunt definiëren welke verbonden organisaties toegang mogen hebben, of selfservice aanvragen zijn toegestaan en welke goedkeurings werk stromen zijn vereist (indien van toepassing) om toegang te verlenen. Om ervoor te zorgen dat de toegang niet langer dan nodig is, kunt u een verloop beleid en toegangs Beoordelingen voor elk toegangs pakket definiëren. 
 
  
 

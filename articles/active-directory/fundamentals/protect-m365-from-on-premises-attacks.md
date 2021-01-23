@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 97893dece068dfdde85159f734095401288231d2
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: ecddb950c06c9f8e61f31e104051f5e3b3640ae5
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201345"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725007"
 ---
 # <a name="protecting-microsoft-365-from-on-premises-attacks"></a>Microsoft 365 beveiligen tegen on-premises aanvallen
 
@@ -60,7 +60,7 @@ Als u de hierboven beschreven bedreigings vectoren wilt aanpakken, raden we u aa
 
      *  Alleen toegankelijk via Azure Managed workstations.
 
-Dit zijn accounts met beperkte toegang. **Er mogen zich geen lokale accounts met beheerders bevoegdheden bevinden in Microsoft 365.** Zie dit [overzicht van Microsoft 365 beheerders rollen](https://docs.microsoft.com/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)voor meer informatie.
+Dit zijn accounts met beperkte toegang. **Er mogen zich geen lokale accounts met beheerders bevoegdheden bevinden in Microsoft 365.** Zie dit [overzicht van Microsoft 365 beheerders rollen](/microsoft-365/admin/add-users/about-admin-roles?view=o365-worldwide)voor meer informatie.
 Zie ook [rollen voor Microsoft 365 in azure Active Directory](../roles/m365-workload-docs.md).
 
 *  **Apparaten beheren vanaf Microsoft 365.** Gebruik Azure AD-deelname en cloud-gebaseerde Mobile Device Management (MDM) om afhankelijkheden te elimineren op uw on-premises infra structuur voor Apparaatbeheer, waardoor apparaten en beveiligings maatregelen kunnen worden aangetast.
@@ -82,7 +82,7 @@ In azure AD zijn gebruikers met geprivilegieerde rollen, zoals beheerders, de ba
 
 * Gebruik alleen Cloud accounts voor Azure AD en Microsoft 365 geprivilegieerde rollen. d
 
-* Implementeer [geprivilegieerde toegangs apparaten](https://docs.microsoft.com/security/compass/privileged-access-devices#device-roles-and-profiles) voor bevoegde toegang om Microsoft 365 en Azure ad te beheren.
+* Implementeer [geprivilegieerde toegangs apparaten](/security/compass/privileged-access-devices#device-roles-and-profiles) voor bevoegde toegang om Microsoft 365 en Azure ad te beheren.
 
 *  Implementeer [Azure AD privileged Identity Management](../privileged-identity-management/pim-configure.md) (PIM) voor Just-in-time (JIT) toegang tot alle Human accounts met geprivilegieerde rollen en verplicht sterke verificatie voor het activeren van rollen.
 
@@ -92,7 +92,7 @@ In azure AD zijn gebruikers met geprivilegieerde rollen, zoals beheerders, de ba
 
 * Implementeer [toegangs accounts voor nood gevallen](../roles/security-emergency-access.md) en gebruik geen on-premises wachtwoord kluizen om referenties op te slaan.
 
-Zie voor meer informatie [beveiliging van bevoegde toegang](https://aka.ms/SPA), die gedetailleerde richt lijnen voor dit onderwerp bevat. Zie ook [beveiligde toegangs procedures voor beheerders in azure AD](../roles/security-planning.md).
+Zie voor meer informatie [beveiliging van bevoegde toegang](/security/compass/overview), die gedetailleerde richt lijnen voor dit onderwerp bevat. Zie ook [beveiligde toegangs procedures voor beheerders in azure AD](../roles/security-planning.md).
 
 ### <a name="use-cloud-authentication"></a>Cloud verificatie gebruiken 
 
@@ -100,15 +100,15 @@ Referenties zijn een primaire aanvals vector. Implementeer de volgende procedure
 
 * [Implementatie van wacht woordloze verificatie](../authentication/howto-authentication-passwordless-deployment.md): Verminder het gebruik van wacht woorden zo veel mogelijk door wacht woordloze referenties te implementeren. Deze referenties worden beheerd en gevalideerd systeem eigen in de Cloud. U kunt kiezen uit:
 
-   * [Windows hello voor bedrijven](https://docs.microsoft.com/windows/security/identity-protection/hello-for-business/passwordless-strategy)
+   * [Windows hello voor bedrijven](/windows/security/identity-protection/hello-for-business/passwordless-strategy)
 
    * [Authenticator-app](../authentication/howto-authentication-passwordless-phone.md)
 
    * [FIDO2-beveiligings sleutels](../authentication/howto-authentication-passwordless-security-key-windows.md)
 
-* [Implementeer multi-factor Authentication](https://aka.ms/deploymentplans/mfa): richt [meerdere sterke referenties in met Azure AD MFA](../fundamentals/resilience-in-credentials.md). Op die manier hebben toegang tot cloud resources een referentie die wordt beheerd in azure AD naast een on-premises wacht woord dat kan worden bewerkt.
+* [Implementeer multi-factor Authentication](../authentication/howto-mfa-getstarted.md): richt [meerdere sterke referenties in met Azure AD MFA](../fundamentals/resilience-in-credentials.md). Op die manier hebben toegang tot cloud resources een referentie die wordt beheerd in azure AD naast een on-premises wacht woord dat kan worden bewerkt.
 
-   * Zie [een flexibele toegangs beheer strategie maken met Azure Active Directory](https://aka.ms/resilientaad)voor meer informatie.
+   * Zie [een flexibele toegangs beheer strategie maken met Azure Active Directory](./resilience-overview.md)voor meer informatie.
 
 **Beperkingen en nadelen**
 
@@ -131,7 +131,7 @@ Inrichting verwijst naar het maken van gebruikers accounts en-groepen in toepass
 
    *  Toegang tot gasten beperken tot navigatie van groepen en andere eigenschappen in de Directory. Gebruik de instellingen voor externe samen werking om de functionaliteit van de gast te beperken tot het lezen van groepen die geen deel uitmaken van. 
 
-    *   Toegang tot de Azure Portal blok keren. U kunt zeldzame nood zakelijke uitzonde ringen maken.  Een beleid voor voorwaardelijke toegang maken dat alle gasten en externe gebruikers bevat en vervolgens [een beleid implementeert om de toegang te blok keren](/azure/role-based-access-control/conditional-access-azure-management). 
+    *   Toegang tot de Azure Portal blok keren. U kunt zeldzame nood zakelijke uitzonde ringen maken.  Een beleid voor voorwaardelijke toegang maken dat alle gasten en externe gebruikers bevat en vervolgens [een beleid implementeert om de toegang te blok keren](../../role-based-access-control/conditional-access-azure-management.md). 
 
 * Niet- **verbonden forests:** Gebruik [Azure AD Cloud inrichting](../cloud-provisioning/what-is-cloud-provisioning.md). Op die manier kunt u verbinding maken met niet-verbonden forests, waardoor u geen verbinding met meerdere forests of vertrouwens relaties hoeft te maken, waarmee de impact van een on-premises inbreuk kan worden uitgebreid. * 
  
@@ -143,7 +143,7 @@ Inrichting verwijst naar het maken van gebruikers accounts en-groepen in toepass
 
 Met Cloud groepen kunt u uw samen werking en toegang tot uw on-premises infra structuur afbreken.
 
-* **Samen werking:** Gebruik Microsoft 365 groepen en micro soft teams voor moderne samen werking. On-premises distributie lijsten buiten gebruik stellen en [distributie lijsten upgraden naar Microsoft 365 groepen in Outlook](https://docs.microsoft.com/office365/admin/manage/upgrade-distribution-lists?view=o365-worldwide).
+* **Samen werking:** Gebruik Microsoft 365 groepen en micro soft teams voor moderne samen werking. On-premises distributie lijsten buiten gebruik stellen en [distributie lijsten upgraden naar Microsoft 365 groepen in Outlook](/office365/admin/manage/upgrade-distribution-lists?view=o365-worldwide).
 
 * **Toegang:** Gebruik Azure AD-beveiligings groepen of Microsoft 365 groepen voor het machtigen van toegang tot toepassingen in azure AD.
 * **Office 365-licentie verlening:** Gebruik op groepen gebaseerde licentie verlening voor het inrichten van Office 365 met alleen Cloud groepen. Dit is de controle over groepslid maatschap van de on-premises infra structuur.
@@ -156,7 +156,7 @@ Neem meer over directe manipulatie van groepslid maatschappen on-premises of man
 
 Gebruik Azure AD-mogelijkheden om apparaten veilig te beheren.
 
--   **Windows 10-werk stations gebruiken:** [Implementeer aan Azure AD gekoppelde](../devices/azureadjoin-plan.md) apparaten met MDM-beleid. Schakel [Windows auto pilot](https://docs.microsoft.com/mem/autopilot/windows-autopilot) in voor een volledig geautomatiseerde inrichtings ervaring.
+-   **Windows 10-werk stations gebruiken:** [Implementeer aan Azure AD gekoppelde](../devices/azureadjoin-plan.md) apparaten met MDM-beleid. Schakel [Windows auto pilot](/mem/autopilot/windows-autopilot) in voor een volledig geautomatiseerde inrichtings ervaring.
 
     -   Reafschaffing van Windows 8,1 en eerdere machines.
 
@@ -164,7 +164,7 @@ Gebruik Azure AD-mogelijkheden om apparaten veilig te beheren.
 
     -   Gebruik [Microsoft intune](https://www.microsoft.com/en/microsoft-365/enterprise-mobility-security/microsoft-intune) als bron van de autoriteit van alle werk belastingen voor Apparaatbeheer.
 
--   [**Implementeer geprivilegieerde toegangs apparaten**](https://docs.microsoft.com/security/compass/privileged-access-devices#device-roles-and-profiles) voor bevoegde toegang om Microsoft 365 en Azure ad te beheren.
+-   [**Implementeer geprivilegieerde toegangs apparaten**](/security/compass/privileged-access-devices#device-roles-and-profiles) voor bevoegde toegang om Microsoft 365 en Azure ad te beheren.
 
  ## <a name="workloads-applications-and-resources"></a>Werk belastingen, toepassingen en resources 
 
@@ -181,38 +181,38 @@ Gebruik Azure AD-mogelijkheden om apparaten veilig te beheren.
 
 *  **Toepassings-en werkbelasting servers**
 
-   * Toepassingen of resources waarmee de benodigde servers kunnen worden gemigreerd naar Azure IaaS en gebruikmaken van [Azure AD Domain Services](https://docs.microsoft.com/azure/active-directory-domain-services/overview) (Azure AD DS) om vertrouwen en afhankelijkheid van ad on-premises te koppelen. Om deze ontkoppeling te realiseren, mogen virtuele netwerken die worden gebruikt voor Azure AD DS geen verbinding met bedrijfs netwerken hebben.
+   * Toepassingen of resources waarmee de benodigde servers kunnen worden gemigreerd naar Azure IaaS en gebruikmaken van [Azure AD Domain Services](../../active-directory-domain-services/overview.md) (Azure AD DS) om vertrouwen en afhankelijkheid van ad on-premises te koppelen. Om deze ontkoppeling te realiseren, mogen virtuele netwerken die worden gebruikt voor Azure AD DS geen verbinding met bedrijfs netwerken hebben.
 
-   * Volg de richt lijnen van de [referentie lagen](https://aka.ms/TierModel). Toepassings servers worden doorgaans beschouwd als laag 1-assets.
+   * Volg de richt lijnen van de [referentie lagen](/security/compass/privileged-access-access-model#ADATM_BM). Toepassings servers worden doorgaans beschouwd als laag 1-assets.
 
  ## <a name="conditional-access-policies"></a>Beleid voor voorwaardelijke toegang
 
-Gebruik voorwaardelijke toegang van Azure AD om signalen te interpreteren en verificatie beslissingen te nemen op basis van deze. Zie voor meer informatie het [implementatie plan voor voorwaardelijke toegang.](https://aka.ms/deploymentplans/ca)
+Gebruik voorwaardelijke toegang van Azure AD om signalen te interpreteren en verificatie beslissingen te nemen op basis van deze. Zie voor meer informatie het [implementatie plan voor voorwaardelijke toegang.](../conditional-access/plan-conditional-access.md)
 
 * [Verouderde verificatie protocollen](../fundamentals/auth-sync-overview.md): Gebruik voorwaardelijke toegang om zoveel mogelijk [verouderde verificatie protocollen te blok keren](../conditional-access/howto-conditional-access-policy-block-legacy.md) . U kunt ook verouderde verificatie protocollen op toepassings niveau uitschakelen met toepassingsspecifieke configuratie.
 
-   * Bekijk specifieke Details voor [Exchange Online](https://docs.microsoft.com/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online#how-basic-authentication-works-in-exchange-online) en [share point online](https://docs.microsoft.com/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps).
+   * Bekijk specifieke Details voor [Exchange Online](/exchange/clients-and-mobile-in-exchange-online/disable-basic-authentication-in-exchange-online#how-basic-authentication-works-in-exchange-online) en [share point online](/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps).
 
-* Implementeer de aanbevolen [identiteits-en toegangs configuraties voor apparaten.](https://docs.microsoft.com/microsoft-365/security/office-365-security/identity-access-policies?view=o365-worldwide)
+* Implementeer de aanbevolen [identiteits-en toegangs configuraties voor apparaten.](/microsoft-365/security/office-365-security/identity-access-policies?view=o365-worldwide)
 
 * Als u een versie van Azure AD gebruikt die geen voorwaardelijke toegang bevat, moet u ervoor zorgen dat u de [standaard instellingen voor Azure AD-beveiliging](../fundamentals/concept-fundamentals-security-defaults.md)gebruikt.
 
    * Zie de [prijs gids voor Azure AD](https://azure.microsoft.com/pricing/details/active-directory/)voor meer informatie over de licentie verlening voor Azure AD-functies.
 
-## <a name="monitoring"></a>Controleren 
+## <a name="monitoring"></a>Bewaking 
 
 Nadat u uw omgeving hebt geconfigureerd om uw Microsoft 365 te beschermen tegen een on-premises inbreuk, controleert u de omgeving [proactief](../reports-monitoring/overview-monitoring.md) .
 ### <a name="scenarios-to-monitor"></a>Te bewaken scenario's
 
 Bewaak de volgende belang rijke scenario's naast scenario's die specifiek zijn voor uw organisatie. U moet bijvoorbeeld proactief de toegang tot uw bedrijfskritische toepassingen en resources bewaken.
 
-* **Verdachte activiteit**: alle [Azure AD-risico gebeurtenissen](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection#risk-detection-and-remediation) moeten worden gecontroleerd op verdachte activiteiten. [Azure AD Identity Protection](https://docs.microsoft.com/azure/active-directory/identity-protection/overview-identity-protection) is systeem eigen geïntegreerd met Azure Security Center.
+* **Verdachte activiteit**: alle [Azure AD-risico gebeurtenissen](../identity-protection/overview-identity-protection.md#risk-detection-and-remediation) moeten worden gecontroleerd op verdachte activiteiten. [Azure AD Identity Protection](../identity-protection/overview-identity-protection.md) is systeem eigen geïntegreerd met Azure Security Center.
 
    * Definieer het netwerk met de [naam locaties](../reports-monitoring/quickstart-configure-named-locations.md) om ruis detecties te voor komen voor op locatie gebaseerde signalen. 
 *  **UEBA-waarschuwingen (User entity behaviorion Analytics)** Gebruik UEBA om inzicht te krijgen in anomalie detectie.
-   * Microsoft Cloud app-detectie (MCAS) biedt [UEBA in de Cloud](https://docs.microsoft.com/cloud-app-security/tutorial-ueba).
+   * Microsoft Cloud app-detectie (MCAS) biedt [UEBA in de Cloud](/cloud-app-security/tutorial-ueba).
 
-   * U kunt [on-premises UEBA integreren vanuit Azure ATP](https://docs.microsoft.com/defender-for-identity/install-step2). MCAS leest signalen van Azure AD Identity Protection. 
+   * U kunt [on-premises UEBA integreren vanuit Azure ATP](/defender-for-identity/install-step2). MCAS leest signalen van Azure AD Identity Protection. 
 
 * **Activiteit van accounts voor nood toegang**: toegang tot [accounts met nood](../roles/security-emergency-access.md) toegang moet worden bewaakt en er moeten waarschuwingen worden gemaakt voor onderzoek. Deze bewaking moet het volgende omvatten: 
 
@@ -223,7 +223,7 @@ Bewaak de volgende belang rijke scenario's naast scenario's die specifiek zijn v
    * Alle updates voor groepslid maatschappen. 
 
    *    Toepassings toewijzingen. 
-* **Activiteit van geprivilegieerde rol**: beveiligings [waarschuwingen die zijn gegenereerd door Azure AD PIM](https://docs.microsoft.com/azure/active-directory/privileged-identity-management/pim-how-to-configure-security-alerts?tabs=new#security-alerts)configureren en controleren.
+* **Activiteit van geprivilegieerde rol**: beveiligings [waarschuwingen die zijn gegenereerd door Azure AD PIM](../privileged-identity-management/pim-how-to-configure-security-alerts.md?tabs=new#security-alerts)configureren en controleren.
     De directe toewijzing van geprivilegieerde rollen buiten PIM bewaken door waarschuwingen te genereren wanneer een gebruiker rechtstreeks wordt toegewezen.
 * **Azure AD-Tenant configuraties**: elke wijziging in Tenant configuraties moet waarschuwingen in het systeem genereren. Dit zijn onder andere, maar zijn niet beperkt tot
   *  Aangepaste domeinen bijwerken  
@@ -254,11 +254,11 @@ Definieer een logboek opslag-en bewaar strategie, ontwerp en implementatie om ee
 
    * Risicogebeurtenissen 
 
-Azure AD biedt [Azure monitor integratie](../reports-monitoring/concept-activity-logs-azure-monitor.md) voor het logboek met aanmeld activiteiten en audit Logboeken. Risico gebeurtenissen kunnen worden opgenomen via [Microsoft Graph-API](https://aka.ms/AzureADSecuredAzure/32b). U kunt [Azure AD-logboeken streamen naar Azure monitor-logboeken](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md).
+Azure AD biedt [Azure monitor integratie](../reports-monitoring/concept-activity-logs-azure-monitor.md) voor het logboek met aanmeld activiteiten en audit Logboeken. Risico gebeurtenissen kunnen worden opgenomen via [Microsoft Graph-API](/graph/api/resources/identityriskevent). U kunt [Azure AD-logboeken streamen naar Azure monitor-logboeken](../reports-monitoring/howto-integrate-activity-logs-with-log-analytics.md).
 
 * **Beveiligings logboeken van het hybride infrastructuur systeem.** Alle besturingssysteem logboeken van de hybride identiteits infrastructuur moeten worden gearchiveerd en zorgvuldig worden bewaakt als een <br>Systeem op laag 0, gezien de surface area implicaties. Dit omvat: 
 
-   *  Azure AD Connect. [Azure AD Connect Health](https://aka.ms/AzureADSecuredAzure/32e) moet worden geïmplementeerd voor het bewaken van identiteits synchronisatie.
+   *  Azure AD Connect. [Azure AD Connect Health](../hybrid/whatis-azure-ad-connect.md) moet worden geïmplementeerd voor het bewaken van identiteits synchronisatie.
 
    *  Application proxy-agents 
 

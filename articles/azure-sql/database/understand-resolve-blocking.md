@@ -14,12 +14,12 @@ author: WilliamDAssafMSFT
 ms.author: wiassaf
 ms.reviewer: ''
 ms.date: 1/14/2020
-ms.openlocfilehash: d3bd63566daaf6e1d3e3343b5956d8a8d5fc8ea5
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: b73e72969a851428034499d447ecb162a61aa9ab
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98224479"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725783"
 ---
 # <a name="understand-and-resolve-azure-sql-database-blocking-problems"></a>Problemen met het Azure SQL Database blok keren begrijpen en oplossen
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -345,7 +345,7 @@ De volgende scenario's worden in deze scenario's uitgebreid.
     Nadat een query naar de server is verzonden, moeten alle resulterende rijen onmiddellijk worden opgehaald om te worden voltooid. Als een toepassing niet alle resultaat rijen ophaalt, kunnen de vergren delingen op de tabellen worden achtergelaten en kunnen andere gebruikers worden geblokkeerd. Als u een toepassing gebruikt waarmee SQL-instructies op transparante wijze naar de server worden verzonden, moet de toepassing alle resultaat rijen ophalen. Als dat niet het geval is (en als dit niet kan worden geconfigureerd), kunt u het blokkerings probleem mogelijk niet oplossen. Om het probleem te voor komen, kunt u slecht gelaagde toepassingen beperken tot een rapportage of een beslissings-ondersteunings database.
     
     > [!NOTE]
-    > Zie de [richt lijnen voor logica voor nieuwe pogingen](/azure/azure-sql/database/troubleshoot-common-connectivity-issues#retry-logic-for-transient-errors) voor toepassingen die verbinding maken met Azure SQL database. 
+    > Zie de [richt lijnen voor logica voor nieuwe pogingen](./troubleshoot-common-connectivity-issues.md#retry-logic-for-transient-errors) voor toepassingen die verbinding maken met Azure SQL database. 
     
     **Oplossing**: de toepassing moet opnieuw worden geschreven om alle rijen van het resultaat op te halen dat moet worden voltooid. Hiermee wordt het gebruik van [Offset en ophalen in de order by-component](/sql/t-sql/queries/select-order-by-clause-transact-sql#using-offset-and-fetch-to-limit-the-rows-returned) van een query voor het uitvoeren van paginering aan de server zijde niet beschreven.
 

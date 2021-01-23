@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 11/22/2020
-ms.openlocfilehash: 01af7b251c9ce3bfebb87016c85ea3efd9c0e8ac
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: dbd7937667a3c4d5af9f13e15cdd4ff2081241f0
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928763"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98723877"
 ---
 # <a name="how-to-connect-azure-data-factory-and-azure-purview"></a>Verbinding maken met Azure Data Factory en Azure controle sfeer liggen
 
@@ -99,10 +99,10 @@ De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen ee
 
 | Systeem voor gegevens opslag | Ondersteund als bron | Ondersteund als Sink |
 | ------------------- | ------------------- | ----------------- |
-| ADLS Gen1 (geen JSON-ondersteuning) | Yes | Ja (alleen niet-binaire kopie) |
-| ADLS Gen2 (geen JSON-ondersteuning) | Ja | Ja |
-| Azure-Blob (geen JSON-ondersteuning) | Ja | Ja |
-| Azure Cosmos DB (SQL API) | Ja | Ja |
+| ADLS Gen1 | Ja | Ja (alleen niet-binaire kopie) |
+| ADLS Gen2 | Ja | Ja |
+| Azure Blob | Ja | Ja |
+| Azure Cosmos DB (SQL-API) | Ja | Ja |
 | Azure Cosmos DB (Mongo-API) | Ja | Ja |
 | Azure Cognitive Search | Ja | Ja |
 | Azure Data Explorer | Ja | Ja |
@@ -128,24 +128,24 @@ De integratie tussen Data Factory en controle sfeer liggen ondersteunt alleen ee
 
 | Systeem voor gegevens opslag | Ondersteund |
 | ------------------- | ------------------- | ----------------- |
-| ADLS Gen1 | Yes |
-| ADLS Gen2 | Yes |
-| Azure Blob | Yes |
-| Azure SQL Database \* | Yes |
-| Azure Synapse Analytics (voorheen SQL DW) \* | Yes |
+| ADLS Gen1 | Ja |
+| ADLS Gen2 | Ja |
+| Azure Blob | Ja |
+| Azure SQL Database \* | Ja |
+| Azure Synapse Analytics (voorheen SQL DW) \* | Ja |
 
 ### <a name="data-factory-execute-ssis-package-support"></a>Ondersteuning voor het uitvoeren van SSIS-pakketten Data Factory
 
 | Systeem voor gegevens opslag | Ondersteund |
 | ------------------- | ------------------- | ----------------- |
-| Azure Blob | Yes |
-| ADLS Gen1 | Yes |
-| ADLS Gen2 | Yes |
-| Azure SQL Database \* | Yes |
-| Azure SQL MI \*| Yes |
-| Azure Synapse Analytics (voorheen SQL DW) \* | Yes |
-| On-premises SQL Server \* | Yes |
-| Azure File Storage | Yes |
+| Azure Blob | Ja |
+| ADLS Gen1 | Ja |
+| ADLS Gen2 | Ja |
+| Azure SQL Database \* | Ja |
+| Azure SQL MI \*| Ja |
+| Azure Synapse Analytics (voorheen SQL DW) \* | Ja |
+| On-premises SQL Server \* | Ja |
+| Azure File Storage | Ja |
 
 *\* Voor SQL-scenario's (Azure en on-premises) biedt Azure controle sfeer liggen geen ondersteuning voor opgeslagen procedures of scripts voor afkomst of scans. Afkomst is beperkt tot tabel-en weergave bronnen.*
 

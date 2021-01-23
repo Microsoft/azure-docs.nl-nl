@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 5c45b362bc37df71346fc3b635c8ae4a51f62cdc
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: de01788c01d4d6dedd9563faaaac07bff30bbd97
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919585"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724756"
 ---
 # <a name="build-resilience-in-your-hybrid-architecture"></a>Maak flexibiliteit in uw hybride architectuur
 
@@ -42,7 +42,7 @@ Micro soft biedt drie mechanismen voor hybride verificatie. De opties worden wee
    
 Het is mogelijk dat u een of meer van deze methoden in uw organisatie gebruikt. Zie [de juiste verificatie methode kiezen voor uw Azure AD hybride identiteits oplossing](../hybrid/choose-ad-authn.md)voor meer informatie. Dit artikel bevat een beslissings structuur die u kan helpen bij het bepalen van uw methodologie.
 
-## <a name="password-hash-synchronization"></a>Wachtwoord-hashsynchronisatie
+## <a name="password-hash-synchronization"></a>Synchronisatie van wachtwoord-hashes
 
 De eenvoudigste en meest flexibele hybride verificatie optie voor Azure AD is een [wachtwoord hash-synchronisatie](../hybrid/whatis-phs.md) zonder een on-premises identiteits infrastructuur afhankelijkheid bij het verwerken van verificatie aanvragen. Wanneer de identiteiten met wacht woord-hashes zijn gesynchroniseerd met Azure AD, kunnen gebruikers zich verifiëren bij cloud resources zonder afhankelijkheid van de on-premises identiteits onderdelen. 
 
@@ -82,7 +82,7 @@ Zie de volgende bronnen voor het implementeren van Pass-Through-verificatie.
 
 Federatie omvat het maken van een vertrouwens relatie tussen Azure AD en de Federation-service, waaronder de uitwisseling van eind punten, certificaten voor token-ondertekening en andere meta gegevens. Wanneer een aanvraag bij Azure AD komt, wordt de configuratie gelezen en wordt de gebruiker omgeleid naar de geconfigureerde eind punten. Op dat moment communiceert de gebruiker met de Federation service, die een SAML-verklaring uitgeeft die door Azure AD is gevalideerd. 
 
-In het volgende diagram ziet u een topologie van een Enter prise Active Directory Federation Services (AD FS), implementatie met redundante Federatie-en Web Application proxy-servers voor meerdere on-premises data centers. Deze configuratie is afhankelijk van de infra structuur van bedrijfs netwerken, zoals DNS, netwerk taakverdeling met geo-affiniteits mogelijkheden, firewalls enzovoort. Alle on-premises onderdelen en verbindingen zijn gevoelig voor fouten. Ga naar de [documentatie over capaciteits planning voor AD FS](https://docs.microsoft.com/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity) voor meer informatie.
+In het volgende diagram ziet u een topologie van een Enter prise Active Directory Federation Services (AD FS), implementatie met redundante Federatie-en Web Application proxy-servers voor meerdere on-premises data centers. Deze configuratie is afhankelijk van de infra structuur van bedrijfs netwerken, zoals DNS, netwerk taakverdeling met geo-affiniteits mogelijkheden, firewalls enzovoort. Alle on-premises onderdelen en verbindingen zijn gevoelig voor fouten. Ga naar de [documentatie over capaciteits planning voor AD FS](/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity) voor meer informatie.
 
 > [!NOTE]
 >  Federatie heeft het hoogste aantal on-premises afhankelijkheden en daarom de meest potentiële fout punten. Hoewel in dit diagram AD FS worden weer gegeven, zijn andere on-premises id-providers onderhevig aan vergelijk bare ontwerp overwegingen voor hoge Beschik baarheid, schaal baarheid en failover.
@@ -99,9 +99,9 @@ Raadpleeg de volgende bronnen als u een Federated Authentication strategie imple
 
 * [Azure AD-federation compatibiliteitslijst](../hybrid/how-to-connect-fed-compatibility.md)
 
-* Volg de [documentatie over de AD FS capaciteits planning](https://docs.microsoft.com/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity)
+* Volg de [documentatie over de AD FS capaciteits planning](/windows-server/identity/ad-fs/design/planning-for-ad-fs-server-capacity)
 
-* [AD FS implementeren in azure IaaS](https://docs.microsoft.com/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs)
+* [AD FS implementeren in azure IaaS](/windows-server/identity/ad-fs/deployment/how-to-connect-fed-azure-adfs)
 
 * [PHS](../hybrid/tutorial-phs-backup.md) samen met uw Federatie inschakelen
 

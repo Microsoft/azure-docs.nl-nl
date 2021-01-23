@@ -3,12 +3,12 @@ title: Azure Backup woordenlijst
 description: In dit artikel worden de termen gedefinieerd die nuttig zijn voor gebruik met Azure Backup.
 ms.topic: conceptual
 ms.date: 12/21/2020
-ms.openlocfilehash: 121258665ab275fdcffd618e7c0cf1b3e0537e70
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 5b575e0f56c9cf39987e9e77850ab1d9b2e80d93
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661473"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98723911"
 ---
 # <a name="azure-backup-glossary"></a>Azure Backup woordenlijst
 
@@ -21,7 +21,7 @@ Deze verklarende woorden lijst kan handig zijn bij het gebruik van Azure Backup.
 
 ## <a name="afs-azure-file-shares"></a>AFS (Azure-bestands shares)
 
-Raadpleeg de [documentatie van Azure files](https://docs.microsoft.com/azure/storage/files/storage-files-introduction).
+Raadpleeg de [documentatie van Azure files](../storage/files/storage-files-introduction.md).
 
 ## <a name="alternate-location-recovery"></a>Herstel naar een andere locatie
 
@@ -35,7 +35,7 @@ Toepassings consistente back-ups nemen geheugen inhoud en I/O-bewerkingen in beh
 
 ## <a name="azure-resource-manager-arm-templates"></a>ARM-sjablonen (Azure Resource Manager)
 
-Raadpleeg de [documentatie van arm-sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/templates/overview).
+Raadpleeg de [documentatie van arm-sjablonen](../azure-resource-manager/templates/overview.md).
 
 ## <a name="autoprotection-for-databases"></a>Autoprotection (voor data bases)
 
@@ -49,38 +49,38 @@ Azure Backup biedt drie typen replicatie om uw opslag en gegevens Maxi maal besc
 
 ### <a name="lrs"></a>LRS
 
-Met [lokaal redundante opslag (LRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy#locally-redundant-storage) worden uw back-upgegevens drie keer gerepliceerd (er worden drie kopieën van uw back-upgegevens gemaakt) in een opslag schaal eenheid in een Data Center. Alle kopieën van de back-upgegevens bevinden zich in dezelfde regio. LRS is een goedkope optie voor het beveiligen van uw back-upgegevens tegen lokale hardwarefouten.
+Met [lokaal redundante opslag (LRS)](../storage/common/storage-redundancy.md#locally-redundant-storage) worden uw back-upgegevens drie keer gerepliceerd (er worden drie kopieën van uw back-upgegevens gemaakt) in een opslag schaal eenheid in een Data Center. Alle kopieën van de back-upgegevens bevinden zich in dezelfde regio. LRS is een goedkope optie voor het beveiligen van uw back-upgegevens tegen lokale hardwarefouten.
 
 ### <a name="grs"></a>GRS
 
-[Geografisch redundante opslag (GRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy#geo-redundant-storage) is de standaardinstelling en is de replicatieoptie die wordt aanbevolen. GRS repliceert uw back-upgegevens naar een secundaire regio, honderden kilo meters van de primaire locatie van de bron gegevens. GRS kost meer dan LRS, maar GRS biedt een hoger duurzaamheids niveau voor uw back-upgegevens, zelfs als er sprake is van een regionale storing.
+[Geografisch redundante opslag (GRS)](../storage/common/storage-redundancy.md#geo-redundant-storage) is de standaardinstelling en is de replicatieoptie die wordt aanbevolen. GRS repliceert uw back-upgegevens naar een secundaire regio, honderden kilo meters van de primaire locatie van de bron gegevens. GRS kost meer dan LRS, maar GRS biedt een hoger duurzaamheids niveau voor uw back-upgegevens, zelfs als er sprake is van een regionale storing.
 
 >[!NOTE]
 >Voor GRS-kluizen waarvoor de functie voor het terugzetten van meerdere regio's is ingeschakeld, wordt back-upopslag geüpgraded van GRS naar RA-GRS (Geo-Redundant opslag met lees toegang).
 
 ### <a name="zrs"></a>ZRS
 
-[Zone-redundante opslag (ZRS)](https://docs.microsoft.com/azure/storage/common/storage-redundancy#zone-redundant-storage) repliceert uw back-upgegevens in [beschikbaarheids zones](https://docs.microsoft.com/azure/availability-zones/az-overview#availability-zones), waarbij de back-upgegevens locatie en tolerantie in dezelfde regio worden gegarandeerd. Daarom kan een back-up worden gemaakt van uw kritieke workloads waarvoor [gegevens locatie](https://azure.microsoft.com/resources/achieving-compliant-data-residency-and-security-with-azure/) vereist zijn in ZRS.
+[Zone-redundante opslag (ZRS)](../storage/common/storage-redundancy.md#zone-redundant-storage) repliceert uw back-upgegevens in [beschikbaarheids zones](../availability-zones/az-overview.md#availability-zones), waarbij de back-upgegevens locatie en tolerantie in dezelfde regio worden gegarandeerd. Daarom kan een back-up worden gemaakt van uw kritieke workloads waarvoor [gegevens locatie](https://azure.microsoft.com/resources/achieving-compliant-data-residency-and-security-with-azure/) vereist zijn in ZRS.
 
 ## <a name="azure-command-line-interface-cli"></a>Azure-opdrachtregelinterface (CLI)
 
-Raadpleeg de [documentatie van Azure cli](https://docs.microsoft.com/cli/azure/what-is-azure-cli).
+Raadpleeg de [documentatie van Azure cli](/cli/azure/what-is-azure-cli).
 
 ## <a name="azure-policy"></a>Azure Policy
 
-Raadpleeg de [documentatie van Azure Policy](https://docs.microsoft.com/azure/governance/policy/overview).
+Raadpleeg de [documentatie van Azure Policy](../governance/policy/overview.md).
 
 ## <a name="azure-powershell"></a>Azure PowerShell
 
-Raadpleeg de [documentatie van Azure PowerShell](https://docs.microsoft.com/powershell/azure/).
+Raadpleeg de [documentatie van Azure PowerShell](/powershell/azure/).
 
 ## <a name="azure-resource-manager-arm"></a>Azure Resource Manager (ARM)
 
-Raadpleeg de [documentatie van Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/overview).
+Raadpleeg de [documentatie van Azure Resource Manager](../azure-resource-manager/management/overview.md).
 
 ## <a name="azure-disk-encryption-ade"></a>Azure Disk Encryption (ADE)
 
-Raadpleeg de [documentatie van Azure Disk Encryption](https://docs.microsoft.com/azure/security/fundamentals/azure-disk-encryption-vms-vmss).
+Raadpleeg de [documentatie van Azure Disk Encryption](../security/fundamentals/azure-disk-encryption-vms-vmss.md).
 
 ## <a name="backend-storage--cloud-storage--backup-storage"></a>Back-end opslag/Cloud opslag/back-upopslag
 
@@ -124,11 +124,11 @@ Crash-consistente moment opnamen doen zich meestal voor als een Azure-VM wordt a
 
 ## <a name="cross-region-restore-crr"></a>Meerdere regio's herstellen (CRR)
 
-Als een van de [Opties voor terugzetten](backup-azure-arm-restore-vms.md#restore-options)met behulp van cross Region Restore (CRR) kunt u back-upitems herstellen in een secundaire regio, een [Azure-gekoppelde regio](https://docs.microsoft.com/azure/best-practices-availability-paired-regions#what-are-paired-regions).
+Als een van de [Opties voor terugzetten](backup-azure-arm-restore-vms.md#restore-options)met behulp van cross Region Restore (CRR) kunt u back-upitems herstellen in een secundaire regio, een [Azure-gekoppelde regio](../best-practices-availability-paired-regions.md#what-are-paired-regions).
 
 ## <a name="data-box"></a>Data box
 
-Raadpleeg de [documentatie van het data Box](https://docs.microsoft.com/azure/databox/data-box-overview).
+Raadpleeg de [documentatie van het data Box](../databox/data-box-overview.md).
 
 ## <a name="datasource"></a>Gegevensbron
 
@@ -138,11 +138,11 @@ Een resource (Azure-resource, proxy bron of on-premises resource) die een kandid
 
 (Werk belasting-specifieke termijn)
 
-Raadpleeg de [documentatie van DPM](https://docs.microsoft.com/system-center/dpm/dpm-overview).
+Raadpleeg de [documentatie van DPM](/system-center/dpm/dpm-overview).
 
 ## <a name="expressroute"></a>ExpressRoute
 
-Raadpleeg de [ExpressRoute-documentatie](https://docs.microsoft.com/azure/expressroute/expressroute-introduction).
+Raadpleeg de [ExpressRoute-documentatie](../expressroute/expressroute-introduction.md).
 
 ## <a name="file-system-consistent-backup"></a>Bestandssysteem consistente back-up
 
@@ -164,7 +164,7 @@ Een GFS-back-upbeleid (groot vader-vader-zoon) is een bestand waarmee u wekelijk
 
 ## <a name="iaas-vms--azure-vms"></a>IaaS Vm's/Azure Vm's
 
-Raadpleeg de [documentatie van Azure VM](https://docs.microsoft.com/azure/virtual-machines/).
+Raadpleeg de [documentatie van Azure VM](../virtual-machines/index.yml).
 
 ## <a name="incremental-backup"></a>Incrementele back-up
 
@@ -196,7 +196,7 @@ Met Azure Backup Server kunt u werk belastingen van toepassingen, zoals virtuele
 
 ## <a name="managed-disks"></a>Managed Disks
 
-Raadpleeg de [documentatie voor Managed disks](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
+Raadpleeg de [documentatie voor Managed disks](../virtual-machines/managed-disks-overview.md).
 
 ## <a name="mars-agent"></a>MARS-agent
 
@@ -206,7 +206,7 @@ De MARS-agent wordt ook wel **Azure backup agent** -of **Recovery Services-agent
 
 ## <a name="nsg-network-security-group"></a>NSG (netwerk beveiligings groep)
 
-Raadpleeg de [NSG-documentatie](https://docs.microsoft.com/azure/virtual-network/network-security-groups-overview).
+Raadpleeg de [NSG-documentatie](../virtual-network/network-security-groups-overview.md).
 
 ## <a name="offline-seeding"></a>Offline seeding
 
@@ -228,7 +228,7 @@ Een wachtwoordzin wordt gebruikt voor het versleutelen en ontsleutelen van gegev
 
 ## <a name="private-endpoint"></a>Privé-eindpunt
 
-Raadpleeg de [documentatie over het persoonlijke eind punt](https://docs.microsoft.com/azure/private-link/private-endpoint-overview).
+Raadpleeg de [documentatie over het persoonlijke eind punt](../private-link/private-endpoint-overview.md).
 
 ## <a name="protected-instance"></a>Beveiligd exemplaar
 
@@ -236,7 +236,7 @@ Een beveiligd exemplaar verwijst naar de computer, fysieke of virtuele server di
 
 ## <a name="rbac-role-based-access-control"></a>RBAC (toegangs beheer op basis van rollen)
 
-Raadpleeg de [RBAC-documentatie](https://docs.microsoft.com/azure/role-based-access-control/overview).
+Raadpleeg de [RBAC-documentatie](../role-based-access-control/overview.md).
 
 ## <a name="recovery-point-restore-point-retention-point--point-in-time-pit"></a>Herstel punt/herstel punt/bewaar punt/punt in tijd (PIT)
 
@@ -248,11 +248,11 @@ Een Azure Resource Manager resource van het type *micro soft. Recovery Services/
 
 ## <a name="resource-group"></a>Resourcegroep
 
-Raadpleeg de [documentatie van Azure Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal#what-is-a-resource-group).
+Raadpleeg de [documentatie van Azure Resource Manager](../azure-resource-manager/management/manage-resource-groups-portal.md#what-is-a-resource-group).
 
 ## <a name="rest-api"></a>REST-API
 
-Raadpleeg de [documentatie van Azure rest API](https://docs.microsoft.com/rest/api/azure/).
+Raadpleeg de [documentatie van Azure rest API](/rest/api/azure/).
 
 ## <a name="retention-rule"></a>Bewaar regel
 
@@ -272,7 +272,7 @@ Een back-uptaak die automatisch wordt geactiveerd door het back-upbeleid dat voo
 
 ## <a name="secondary-region--paired-region"></a>Secundaire regio/gekoppelde regio
 
-Een regionaal paar bestaat uit twee regio's binnen dezelfde geografie. De ene is de primaire regio en de andere is de secundaire regio. Gekoppelde regio's worden door sommige Azure-Services (inclusief Azure Backup met GRS-instellingen) gebruikt om bedrijfs continuïteit te garanderen en te beschermen tegen gegevens verlies. [Meer informatie](https://docs.microsoft.com/azure/best-practices-availability-paired-regions).
+Een regionaal paar bestaat uit twee regio's binnen dezelfde geografie. De ene is de primaire regio en de andere is de secundaire regio. Gekoppelde regio's worden door sommige Azure-Services (inclusief Azure Backup met GRS-instellingen) gebruikt om bedrijfs continuïteit te garanderen en te beschermen tegen gegevens verlies. [Meer informatie](../best-practices-availability-paired-regions.md).
 
 ## <a name="soft-delete"></a>Voorlopig verwijderen
 
@@ -280,11 +280,11 @@ Zacht verwijderen is een functie die bescherming biedt tegen onbedoeld verwijder
 
 ## <a name="snapshot"></a>Momentopname
 
-Een moment opname is een volledige, alleen-lezen kopie van een virtuele harde schijf (VHD) of een Azure-bestands share. Meer informatie over [moment opnamen van schijven](https://docs.microsoft.com/azure/virtual-machines/windows/snapshot-copy-managed-disk) en [moment opnamen van bestanden](https://docs.microsoft.com/azure/storage/files/storage-snapshots-files).
+Een moment opname is een volledige, alleen-lezen kopie van een virtuele harde schijf (VHD) of een Azure-bestands share. Meer informatie over [moment opnamen van schijven](../virtual-machines/windows/snapshot-copy-managed-disk.md) en [moment opnamen van bestanden](../storage/files/storage-snapshots-files.md).
 
 ## <a name="storage-account"></a>Storage-account
 
-Raadpleeg de documentatie van het [opslag account](https://docs.microsoft.com/azure/storage/common/storage-account-overview).
+Raadpleeg de documentatie van het [opslag account](../storage/common/storage-account-overview.md).
 
 ## <a name="subscription"></a>Abonnement
 
@@ -302,7 +302,7 @@ Een tenant vertegenwoordigt een organisatie. Een tenant is een toegewezen Azure 
 
 ## <a name="unmanaged-disk"></a>Niet-beheerde schijf
 
-Raadpleeg de [documentatie over niet-beheerde schijven](https://docs.microsoft.com/azure/storage/common/storage-disaster-recovery-guidance#azure-unmanaged-disks).
+Raadpleeg de [documentatie over niet-beheerde schijven](../storage/common/storage-disaster-recovery-guidance.md#azure-unmanaged-disks).
 
 ## <a name="vault"></a>Kluis
 
@@ -314,11 +314,11 @@ Het kluis referentie bestand is een certificaat dat is gegenereerd door de porta
 
 ## <a name="vnet-virtual-network"></a>VNET (Virtual Network)
 
-Raadpleeg de [VNET-documentatie](https://docs.microsoft.com/azure/virtual-network/virtual-networks-overview).
+Raadpleeg de [VNET-documentatie](../virtual-network/virtual-networks-overview.md).
 
 ## <a name="vss-windows-volume-shadow-copy-service"></a>VSS (Windows Volume Shadow Copy Service)
 
-Raadpleeg de [VSS-documentatie](https://docs.microsoft.com/windows-server/storage/file-server/volume-shadow-copy-service).
+Raadpleeg de [VSS-documentatie](/windows-server/storage/file-server/volume-shadow-copy-service).
 
 ## <a name="next-steps"></a>Volgende stappen
 

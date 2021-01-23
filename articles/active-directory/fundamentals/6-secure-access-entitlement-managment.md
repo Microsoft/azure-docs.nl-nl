@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 9de0ce5e83b33cd793953e2b863f26dffafe58ee
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: f06a54f59405d9833194b2e7d4488bc93d2437ae
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222391"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725175"
 ---
 # <a name="manage-external-access-with-entitlement-management"></a>Externe toegang beheren met het rechten beheer 
 
@@ -94,15 +94,15 @@ Zie [de implementatie van Azure AD-toegangs beoordelingen plannen](../governance
 
 ## <a name="using-automation-in-entitlement-management"></a>Automatisering gebruiken in het beheer van rechten
 
-U kunt [rechten op het beheer uitvoeren met behulp van Microsoft Graph](https://docs.microsoft.com/graph/tutorial-access-package-api), waaronder
+U kunt [rechten op het beheer uitvoeren met behulp van Microsoft Graph](/graph/tutorial-access-package-api), waaronder
 
-* [Toegangs pakketten beheren](https://docs.microsoft.com/graph/api/resources/accesspackage?view=graph-rest-beta)
+* [Toegangs pakketten beheren](/graph/api/resources/accesspackage?view=graph-rest-beta)
 
-* [Toegangs beoordelingen beheren](https://docs.microsoft.com/graph/api/resources/accessreviewsv2-root?view=graph-rest-beta)
+* [Toegangs beoordelingen beheren](/graph/api/resources/accessreviewsv2-root?view=graph-rest-beta)
 
-* [Verbonden organisaties beheren](https://docs.microsoft.com/graph/api/resources/connectedorganization?view=graph-rest-beta)
+* [Verbonden organisaties beheren](/graph/api/resources/connectedorganization?view=graph-rest-beta)
 
-* [Instellingen voor rechten beheer beheren](https://docs.microsoft.com/graph/api/resources/entitlementmanagementsettings?view=graph-rest-beta)
+* [Instellingen voor rechten beheer beheren](/graph/api/resources/entitlementmanagementsettings?view=graph-rest-beta)
 
 ## <a name="recommendations"></a>Aanbevelingen 
 
@@ -112,7 +112,7 @@ U wordt aangeraden de procedures voor externe toegang te bepalen met het beheer 
 
 * Als u B2B-gebruikers al in uw directory hebt, kunt u ze ook rechtstreeks toewijzen aan de juiste toegangs pakketten.
 
-* U kunt toegang toewijzen in de [Azure Portal](../governance/entitlement-management-access-package-assignments.md)of via [Microsoft Graph](https://docs.microsoft.com/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-beta).
+* U kunt toegang toewijzen in de [Azure Portal](../governance/entitlement-management-access-package-assignments.md)of via [Microsoft Graph](/graph/api/resources/accesspackageassignmentrequest?view=graph-rest-beta).
 
 **Gebruik uw instellingen voor identiteits beheer om gebruikers uit uw directory te verwijderen wanneer hun toegangs pakketten verlopen**.
 
@@ -173,4 +173,3 @@ Raadpleeg de volgende artikelen over het beveiligen van externe toegang tot bron
 
  
 
- 

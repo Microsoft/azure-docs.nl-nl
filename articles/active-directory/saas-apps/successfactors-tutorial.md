@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/26/2020
 ms.author: jeedes
-ms.openlocfilehash: fba29f77d67c5b571253b842f865ae29a6ccfacd
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
-ms.translationtype: HT
+ms.openlocfilehash: a903eb6000cdd5212ad358cae4952e27a4719070
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968378"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725258"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-successfactors"></a>Zelfstudie: Integratie van eenmalige aanmelding van Azure Active Directory met SuccessFactors
 
@@ -225,7 +225,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van SuccessFactors en initieer hier de aanmeldingsstroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel SuccessFactors klikt, wordt u omgeleid naar de aanmeldings-URL van SuccessFactors. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel SuccessFactors klikt, wordt u omgeleid naar de aanmeldings-URL van SuccessFactors. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

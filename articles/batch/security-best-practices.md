@@ -3,12 +3,12 @@ title: Best practices voor batch beveiliging en naleving
 description: Leer de aanbevolen procedures en handige tips voor het verbeteren van de beveiliging met uw Azure Batch oplossingen.
 ms.date: 12/18/2020
 ms.topic: conceptual
-ms.openlocfilehash: b9732ffb810a1038a6f402a46fa8b809f180f0a8
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 6ec4a1d89ebaa9318986fc0d51e832652ba51683
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97802283"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98723809"
 ---
 # <a name="batch-security-and-compliance-best-practices"></a>Best practices voor batch beveiliging en naleving
 
@@ -137,8 +137,8 @@ Batch Compute-knoop punten hebben standaard twee schijven: een besturingssysteem
 
 Voor extra beveiliging kunt u deze schijven versleutelen met behulp van een van deze Azure Disk Encryption-functies:
 
-- [Beheerde schijf versleuteling op rest met door het platform beheerde sleutels](../virtual-machines/windows/disk-encryption.md#platform-managed-keys)
-- [Versleuteling op de host met een door een platform beheerde sleutel](../virtual-machines/windows/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
+- [Beheerde schijf versleuteling op rest met door het platform beheerde sleutels](../virtual-machines/disk-encryption.md#platform-managed-keys)
+- [Versleuteling op de host met een door een platform beheerde sleutel](../virtual-machines/disk-encryption.md#encryption-at-host---end-to-end-encryption-for-your-vm-data)
 - [Azure Disk Encryption](disk-encryption.md)
 
 ## <a name="securely-access-services-from-compute-nodes"></a>Veilige toegang tot services van reken knooppunten

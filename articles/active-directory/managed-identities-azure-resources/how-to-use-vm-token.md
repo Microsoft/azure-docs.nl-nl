@@ -15,12 +15,12 @@ ms.workload: identity
 ms.date: 11/03/2020
 ms.author: barclayn
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: bed64df921326ad4d219f934f7a7bc6860bfc7d8
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
+ms.openlocfilehash: 541f76ad825f492679530902c571096ca4b01902
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96861898"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726228"
 ---
 # <a name="how-to-use-managed-identities-for-azure-resources-on-an-azure-vm-to-acquire-an-access-token"></a>Beheerde identiteiten voor Azure-resources gebruiken op een Azure VM om een toegangs token te verkrijgen 
 
@@ -125,7 +125,7 @@ Content-Type: application/json
 
 ## <a name="get-a-token-using-the-microsoftazureservicesappauthentication-library-for-net"></a>Een Token ophalen met behulp van de micro soft. Azure. Services. AppAuthentication-bibliotheek voor .NET
 
-Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met beheerde identiteiten voor Azure-resources via het pakket micro soft. Azure. Services. AppAuthentication. Met deze bibliotheek kunt u uw code ook lokaal op uw ontwikkel computer testen met behulp van uw gebruikers account uit Visual Studio, de [Azure cli](/cli/azure)of Active Directory geïntegreerde verificatie. Zie de [referentie micro soft. Azure. Services. AppAuthentication](../../key-vault/general/service-to-service-authentication.md)voor meer informatie over de lokale ontwikkelings opties voor deze bibliotheek. In deze sectie wordt beschreven hoe u aan de slag kunt met de bibliotheek in uw code.
+Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met beheerde identiteiten voor Azure-resources via het pakket micro soft. Azure. Services. AppAuthentication. Met deze bibliotheek kunt u uw code ook lokaal op uw ontwikkel computer testen met behulp van uw gebruikers account uit Visual Studio, de [Azure cli](/cli/azure)of Active Directory geïntegreerde verificatie. Zie de [referentie micro soft. Azure. Services. AppAuthentication](/dotnet/api/overview/azure/service-to-service-authentication)voor meer informatie over de lokale ontwikkelings opties voor deze bibliotheek. In deze sectie wordt beschreven hoe u aan de slag kunt met de bibliotheek in uw code.
 
 1. Voeg referenties toe aan de [micro soft. Azure. Services. AppAuthentication](https://www.nuget.org/packages/Microsoft.Azure.Services.AppAuthentication) -en [micro soft. Azure.](https://www.nuget.org/packages/Microsoft.Azure.KeyVault) NuGet-pakketten voor uw toepassing.
 
@@ -141,7 +141,7 @@ Voor .NET-toepassingen en-functies is de eenvoudigste manier om te werken met be
     var kv = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
     ```
     
-Voor meer informatie over micro soft. Azure. Services. AppAuthentication en de bewerkingen die worden weer gegeven, raadpleegt u de naslag informatie over [micro soft. Azure. Services. AppAuthentication](../../key-vault/general/service-to-service-authentication.md) en de [app service en de sleutel kluis met beheerde identiteiten voor Azure resources .net-voor beeld](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
+Voor meer informatie over micro soft. Azure. Services. AppAuthentication en de bewerkingen die worden weer gegeven, raadpleegt u de naslag informatie over [micro soft. Azure. Services. AppAuthentication](/dotnet/api/overview/azure/service-to-service-authentication) en de [app service en de sleutel kluis met beheerde identiteiten voor Azure resources .net-voor beeld](https://github.com/Azure-Samples/app-service-msi-keyvault-dotnet).
 
 ## <a name="get-a-token-using-c"></a>Een Token ophalen met C #
 

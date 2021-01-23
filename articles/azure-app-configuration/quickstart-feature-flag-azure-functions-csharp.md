@@ -8,12 +8,12 @@ ms.custom: devx-track-csharp
 ms.topic: quickstart
 ms.date: 8/26/2020
 ms.author: alkemper
-ms.openlocfilehash: 6996fdd9dce4314e9365177815d7d310ac80c7cb
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
-ms.translationtype: HT
+ms.openlocfilehash: 96efc0ea6300e482ddeeda8fa177847f02b7e126
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98046070"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724245"
 ---
 # <a name="quickstart-add-feature-flags-to-an-azure-functions-app"></a>Quickstart: Functiemarkeringen toevoegen aan een Azure Functions-app
 
@@ -46,7 +46,7 @@ De .NET Feature Management-bibliotheken breiden het framework uit met ondersteun
 
 ## <a name="connect-to-an-app-configuration-store"></a>Verbinding maken met een App Configuration-archief
 
-In dit project wordt gebruikgemaakt van [afhankelijkheidsinjectie in .NET Azure Functions](/azure/azure-functions/functions-dotnet-dependency-injection). Hierbij wordt Azure App Configuration wordt toegevoegd als een extra configuratiebron waar uw functievlaggen worden opgeslagen.
+In dit project wordt gebruikgemaakt van [afhankelijkheidsinjectie in .NET Azure Functions](../azure-functions/functions-dotnet-dependency-injection.md). Hierbij wordt Azure App Configuration wordt toegevoegd als een extra configuratiebron waar uw functievlaggen worden opgeslagen.
 
 1. Klik met de rechtermuisknop op het project en selecteer **NuGet-pakketten beheren**. Zoek op het tabblad **Bladeren** de volgende NuGet-pakketten en voeg deze toe aan uw project.
    - [Microsoft.Extensions.Configuration.AzureAppConfiguration](https://www.nuget.org/packages/Microsoft.Extensions.Configuration.AzureAppConfiguration/) versie 4.1.0 of nieuwer

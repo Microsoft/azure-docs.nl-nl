@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/16/2020
 ms.author: jeedes
-ms.openlocfilehash: c1f102182a9f91d2f8038947b6009fff1af1a508
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.openlocfilehash: 40c533874dcfb00384ae3ab604a3aef8b9c50fc8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97914260"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726111"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-heybuddy"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met HeyBuddy
 
@@ -99,7 +99,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     | | |
     
     > [!NOTE]
-    > Raadpleeg deze [koppeling](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) over het configureren en instellen van de rollen voor de toepassing.
+    > Raadpleeg deze [koppeling](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview) over het configureren en instellen van de rollen voor de toepassing.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op de kopieerknop om de **URL voor federatieve metagegevens van de app** te kopiëren en slaat u deze op uw computer op.
 
@@ -148,9 +148,9 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van HeyBuddy en initieer daar de aanmeldingsstroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel HeyBuddy klikt, wordt u omgeleid naar de aanmeldings-URL van HeyBuddy. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in Mijn apps op de tegel HeyBuddy klikt, wordt u omgeleid naar de aanmeldings-URL van HeyBuddy. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zodra u HeyBuddy hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor wordt uw organisatie in real time beveiligd tegen exfiltratie en infiltratie van gevoelige gegevens. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](https://docs.microsoft.com/cloud-app-security/proxy-deployment-any-app).
+Zodra u HeyBuddy hebt geconfigureerd, kunt u sessiebeheer afdwingen. Hierdoor wordt uw organisatie in real time beveiligd tegen exfiltratie en infiltratie van gevoelige gegevens. Sessiebeheer is een uitbreiding van voorwaardelijke toegang. [Meer informatie over het afdwingen van sessiebeheer met Microsoft Cloud App Security](/cloud-app-security/proxy-deployment-any-app).

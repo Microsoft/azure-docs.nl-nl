@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 18036644dc4df51bfacc5019f70ae7694757f753
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 218208891cccb4f606a574a9c1c09f30c4ac0b11
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222238"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725075"
 ---
 # <a name="secure-external-access-to-microsoft-teams-sharepoint-and-onedrive-for-business"></a>Externe toegang tot micro soft teams, share point en OneDrive voor bedrijven beveiligen 
 
@@ -77,7 +77,7 @@ Er zijn drie opties onder samenwerkings beperkingen. Uw bedrijfs vereisten bepal
 
 ## <a name="govern-access-in-teams"></a>Toegang beheren in teams
 
-[Teams onderscheiden zich van externe gebruikers (iedereen buiten uw organisatie) en gast gebruikers (personen met gast accounts)](https://docs.microsoft.com/microsoftteams/communicate-with-users-from-other-organizations?WT.mc_id=TeamsAdminCenterCSH)). U kunt de instelling voor samen werking beheren in de [Beheer Portal teams](https://admin.teams.microsoft.com/company-wide-settings/external-communications) onder instellingen voor het hele organisatie. 
+[Teams onderscheiden zich van externe gebruikers (iedereen buiten uw organisatie) en gast gebruikers (personen met gast accounts)](/microsoftteams/communicate-with-users-from-other-organizations?WT.mc_id=TeamsAdminCenterCSH%e2%80%8b)). U kunt de instelling voor samen werking beheren in de [Beheer Portal teams](https://admin.teams.microsoft.com/company-wide-settings/external-communications) onder instellingen voor het hele organisatie. 
 
 > [!NOTE]
 > Instellingen voor samen werking met externe identiteiten in Azure Active Directory de juiste machtigingen bepalen. U kunt de beperkingen in teams verg Roten, maar niet verkleinen van wat er in azure AD is ingesteld.
@@ -88,13 +88,13 @@ Er zijn drie opties onder samenwerkings beperkingen. Uw bedrijfs vereisten bepal
 
 Raadpleeg de volgende bronnen voor meer informatie over het beheren van externe toegang in teams.
 
-* [Externe toegang beheren in micro soft teams](https://docs.microsoft.com/microsoftteams/manage-external-access)
+* [Externe toegang beheren in micro soft teams](/microsoftteams/manage-external-access)
 
-* [Microsoft 365 identiteits modellen en Azure Active Directory](https://docs.microsoft.com/microsoft-365/enterprise/about-microsoft-365-identity?view=o365-worldwide)
+* [Microsoft 365 identiteits modellen en Azure Active Directory](/microsoft-365/enterprise/about-microsoft-365-identity?view=o365-worldwide)
 
-* [Identiteits modellen en verificatie voor micro soft-teams](https://docs.microsoft.com/MicrosoftTeams/identify-models-authentication)
+* [Identiteits modellen en verificatie voor micro soft-teams](/MicrosoftTeams/identify-models-authentication)
 
-* [Gevoeligheids labels voor micro soft-teams](https://docs.microsoft.com/MicrosoftTeams/sensitivity-labels)
+* [Gevoeligheids labels voor micro soft-teams](/MicrosoftTeams/sensitivity-labels)
 
 ## <a name="govern-access-in-sharepoint-and-onedrive"></a>Toegang beheren in share point en OneDrive
 
@@ -102,9 +102,9 @@ Share point-beheerders hebben veel instellingen beschikbaar voor samen werking. 
 
 ### <a name="integrating-sharepoint-and-one-drive-with-azure-ad-b2b"></a>Share point en één station integreren met Azure AD B2B
 
-Als onderdeel van uw algemene strategie voor het beheren van externe samen werking, raden we u aan [de preview-versie van share point en OneDrive in te scha kelen met Azure AD B2B](https://docs.microsoft.com/sharepoint/sharepoint-azureb2b-integration-preview) .
+Als onderdeel van uw algemene strategie voor het beheren van externe samen werking, raden we u aan [de preview-versie van share point en OneDrive in te scha kelen met Azure AD B2B](/sharepoint/sharepoint-azureb2b-integration-preview) .
 
-Azure AD B2B biedt authenticatie en beheer van gast gebruikers. Met share point en OneDrive-integratie worden [eenmalige wachtwoord codes van Azure AD](https://docs.microsoft.com/azure/active-directory/external-identities/one-time-passcode) gebruikt voor het extern delen van bestanden, mappen, lijst items, document bibliotheken en sites. Deze functie biedt een bijgewerkte ervaring van de bestaande [veilige ontvanger voor het delen van externe gebruikers](https://docs.microsoft.com/sharepoint/what-s-new-in-sharing-in-targeted-release).
+Azure AD B2B biedt authenticatie en beheer van gast gebruikers. Met share point en OneDrive-integratie worden [eenmalige wachtwoord codes van Azure AD](../external-identities/one-time-passcode.md) gebruikt voor het extern delen van bestanden, mappen, lijst items, document bibliotheken en sites. Deze functie biedt een bijgewerkte ervaring van de bestaande [veilige ontvanger voor het delen van externe gebruikers](/sharepoint/what-s-new-in-sharing-in-targeted-release).
 
 > [!NOTE]
 > Als u de preview-versie van Azure AD B2B-integratie inschakelt, is het delen van share point en OneDrive onderhevig aan de instellingen voor Azure AD-organisatie relaties, zoals **leden kunnen uitnodigen** en **gasten kunnen uitnodigen**.
@@ -171,9 +171,9 @@ Het is niet raadzaam om koppelingen naar iedereen in te scha kelen. Als u dit do
 
 Zie het volgende voor meer informatie over het beheren van externe toegang tot share point:
 
-* [Overzicht van extern delen van share point](https://docs.microsoft.com/sharepoint/external-sharing-overview)
+* [Overzicht van extern delen van share point](/sharepoint/external-sharing-overview)
 
-* [Share point en OneDrive-integratie met Azure AD B2B](https://docs.microsoft.com/sharepoint/sharepoint-azureb2b-integration-preview)
+* [Share point en OneDrive-integratie met Azure AD B2B](/sharepoint/sharepoint-azureb2b-integration-preview)
 
 #### <a name="next-steps"></a>Volgende stappen
 

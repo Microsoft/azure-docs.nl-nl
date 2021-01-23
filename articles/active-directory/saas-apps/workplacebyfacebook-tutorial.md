@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/28/2020
 ms.author: jeedes
-ms.openlocfilehash: 3ac81e89aaea5bc37297d2f83dce9e2158ae28d8
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
-ms.translationtype: HT
+ms.openlocfilehash: 3f66da38d3303b47c2a9b6cefeee19af6bf64ec1
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060653"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725487"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-workplace-by-facebook"></a>Zelfstudie: Azure Active Directory-integratie voor eenmalige aanmelding met Workplace by Facebook
 
@@ -205,7 +205,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van Workplace by Facebook en initieer daar de aanmeldingsstroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Workplace by Facebook in Mijn apps klikt, wordt u doorgestuurd naar de aanmeldings-URL van Facebook. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Workplace by Facebook in Mijn apps klikt, wordt u doorgestuurd naar de aanmeldings-URL van Facebook. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 ## <a name="test-sso-for-workplace-by-facebook-mobile"></a>Eenmalige aanmelding voor Workplace by Facebook testen (mobiel)
 

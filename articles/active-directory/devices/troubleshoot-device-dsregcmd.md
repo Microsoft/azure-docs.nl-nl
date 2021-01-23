@@ -11,12 +11,12 @@ author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: spunukol
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2cd782cdab625934fe60617142e5ac0baf756398
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 614b3f927dc22bc534168f8fe95cc2f97031b621
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "80128761"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725520"
 ---
 # <a name="troubleshooting-devices-using-the-dsregcmd-command"></a>Problemen met apparaten oplossen met behulp van de dsregcmd-opdracht
 
@@ -305,10 +305,10 @@ In deze sectie wordt de uitvoer weer gegeven van Sanity controles die zijn uitge
 
 ## <a name="ngc-prerequisite-check"></a>NGC-vereisten controle
 
-In deze sectie worden de Perquisite controles uitgevoerd voor het inrichten van Windows hello voor bedrijven (WHFB). 
+In deze sectie worden de vereisten controles uitgevoerd voor het inrichten van Windows hello voor bedrijven (WHFB). 
 
 > [!NOTE]
-> U ziet mogelijk geen details van de NGC-vereisten controle in dsregcmd/status als de gebruiker WHFB al correct heeft geconfigureerd.
+> U kunt de details van de NGC-vereisten controle niet zien in dsregcmd/status als de gebruiker WHFB al correct heeft geconfigureerd.
 
 - **IsDeviceJoined:** -ingesteld op Ja als het apparaat is gekoppeld aan Azure AD.
 - **IsUserAzureAD:** -stel deze waarde in op Ja als de aangemelde gebruiker aanwezig is in azure AD.

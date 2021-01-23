@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 7557985b23991f1a53d45f6f2d2283500c0d73f3
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 302e4becd337c8e7b0b425a52ed46d562db5bae4
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222408"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725324"
 ---
 # <a name="discover-the-current-state-of-external-collaboration-in-your-organization"></a>De huidige status van externe samen werking in uw organisatie detecteren 
 
@@ -34,11 +34,11 @@ Personen in uw organisatie kunnen waarschijnlijk al samen werken met gebruikers 
 
 De gebruikers die externe samen werking initiëren, hebben het beste inzicht in de toepassingen die het meest relevant zijn voor externe samen werking en wanneer die toegang moet eindigen. Meer informatie over deze gebruikers kunt u bepalen wie moet worden gemachtigd voor het uitnodigen van externe gebruikers, het maken van toegangs pakketten en het volt ooien van toegangs Beoordelingen.
 
-Als u wilt zoeken naar gebruikers die momenteel samen werken, raadpleegt u het [Microsoft 365 audit logboek voor delen en activiteiten voor toegangs aanvragen](https://docs.microsoft.com/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=o365-worldwide#sharing-and-access-request-activities). U kunt ook het [controle logboek van Azure AD bekijken voor meer informatie over wie B2B](../external-identities/auditing-and-reporting.md) -gebruikers naar uw Directory hebben uitgenodigd.
+Als u wilt zoeken naar gebruikers die momenteel samen werken, raadpleegt u het [Microsoft 365 audit logboek voor delen en activiteiten voor toegangs aanvragen](/microsoft-365/compliance/search-the-audit-log-in-security-and-compliance?view=o365-worldwide#sharing-and-access-request-activities). U kunt ook het [controle logboek van Azure AD bekijken voor meer informatie over wie B2B](../external-identities/auditing-and-reporting.md) -gebruikers naar uw Directory hebben uitgenodigd.
 
 ## <a name="find-current-collaboration-partners"></a>Huidige samenwerkings partners zoeken
 
-Externe gebruikers kunnen [Azure AD B2B-gebruikers](../external-identities/what-is-b2b.md) (voor keur) met door partners beheerde referenties of externe gebruikers met lokaal ingerichte referenties zijn. Deze gebruikers zijn doorgaans (maar niet altijd) gemarkeerd met een User type van gast. U kunt gast gebruikers opsommen via de [Microsoft Graph-API](https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0&tabs=http), [Power shell](https://docs.microsoft.com/graph/api/user-list?view=graph-rest-1.0&tabs=http)of de [Azure Portal](../enterprise-users/users-bulk-download.md).
+Externe gebruikers kunnen [Azure AD B2B-gebruikers](../external-identities/what-is-b2b.md) (voor keur) met door partners beheerde referenties of externe gebruikers met lokaal ingerichte referenties zijn. Deze gebruikers zijn doorgaans (maar niet altijd) gemarkeerd met een User type van gast. U kunt gast gebruikers opsommen via de [Microsoft Graph-API](/graph/api/user-list?tabs=http&view=graph-rest-1.0), [Power shell](/graph/api/user-list?tabs=http&view=graph-rest-1.0)of de [Azure Portal](../enterprise-users/users-bulk-download.md).
 
 ### <a name="use-email-domains-and-companyname-property"></a>E-mail domeinen en eigenschap companyName gebruiken
 
@@ -55,7 +55,7 @@ Als u gebruikmaakt van rechten beheer, kunt u ook toegangs pakketten bereiken me
 
 ## <a name="find-access-being-granted-to-external-users"></a>Toegang krijgen tot externe gebruikers
 
-Zodra u een inventaris van externe gebruikers en organisaties hebt, kunt u de toegang tot deze gebruikers bepalen met behulp van de Microsoft Graph-API om het [lidmaatschap](https://docs.microsoft.com/graph/api/resources/groups-overview?view=graph-rest-1.0) van Azure ad-groepen of een [directe toepassings toewijzing](https://docs.microsoft.com/graph/api/resources/approleassignment?view=graph-rest-1.0) in azure ad te bepalen.
+Zodra u een inventaris van externe gebruikers en organisaties hebt, kunt u de toegang tot deze gebruikers bepalen met behulp van de Microsoft Graph-API om het [lidmaatschap](/graph/api/resources/groups-overview?view=graph-rest-1.0) van Azure ad-groepen of een [directe toepassings toewijzing](/graph/api/resources/approleassignment?view=graph-rest-1.0) in azure ad te bepalen.
 
 
 ### <a name="enumerate-application-specific-permissions"></a>Toepassingsspecifieke machtigingen opsommen
@@ -65,7 +65,7 @@ U kunt ook inventarisatie van toepassingsspecifieke machtigingen uitvoeren. U ku
 Onderzoek specifiek de toegang tot al uw zakelijke gevoelige en bedrijfskritische apps, zodat u volledig op de hoogte bent van alle externe toegang.
 
 ### <a name="detect-ad-hoc-sharing"></a>Ad-hoc delen detecteren
-Als uw e-mail en netwerk abonnementen dit inschakelen, kunt u inhoud onderzoeken die via e-mail wordt gedeeld of via SaaS-apps (software als een service voor onbevoegden). [Microsoft 365 bescherming tegen gegevens verlies](https://docs.microsoft.com/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide) helpt u bij het identificeren, voor komen en bewaken van onbedoelde delen van gevoelige informatie over uw Microsoft 365-infra structuur. [Microsoft Cloud app Security](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/cloud-app-security) kunt u helpen bij het identificeren van het gebruik van niet-geautoriseerde SaaS-apps in uw omgeving.
+Als uw e-mail en netwerk abonnementen dit inschakelen, kunt u inhoud onderzoeken die via e-mail wordt gedeeld of via SaaS-apps (software als een service voor onbevoegden). [Microsoft 365 bescherming tegen gegevens verlies](/microsoft-365/compliance/data-loss-prevention-policies?view=o365-worldwide) helpt u bij het identificeren, voor komen en bewaken van onbedoelde delen van gevoelige informatie over uw Microsoft 365-infra structuur. [Microsoft Cloud app Security](https://www.microsoft.com/microsoft-365/enterprise-mobility-security/cloud-app-security) kunt u helpen bij het identificeren van het gebruik van niet-geautoriseerde SaaS-apps in uw omgeving.
 
 ## <a name="next-steps"></a>Volgende stappen
 

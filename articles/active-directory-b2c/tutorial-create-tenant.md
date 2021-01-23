@@ -10,12 +10,12 @@ ms.topic: tutorial
 ms.date: 12/03/2020
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 5229175af618f897caeae7310338cbe51966a48d
-ms.sourcegitcommit: 21c3363797fb4d008fbd54f25ea0d6b24f88af9c
-ms.translationtype: HT
+ms.openlocfilehash: 4b8292d99bd16f9b6f98f4ae8ca82edbfc02ff76
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96859585"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725751"
 ---
 # <a name="tutorial-create-an-azure-active-directory-b2c-tenant"></a>Zelfstudie: Een Azure Active Directory B2C-tenant maken
 
@@ -68,7 +68,7 @@ Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://a
     ![Een tenantformulier maken met voorbeeldwaarden in Azure Portal](media/tutorial-create-tenant/review-and-create-tenant.png)
 
 1. Selecteer **Controleren en maken**.
-1. Controleer de instellingen voor uw map. Selecteer vervolgens **Maken**.
+1. Controleer de instellingen voor uw map. Selecteer vervolgens **Maken**. Voor het [oplossen van implementatie fouten](https://docs.microsoft.com/azure/azure-resource-manager/templates/common-deployment-errors).
 
 U kunt meerdere Azure AD B2C-tenants koppelen aan één Azure-abonnement voor factureringsdoeleinden. Als u een tenant wilt koppelen, moet u een beheerder zijn in de Azure AD B2C-tenant en moet aan u ten minste een rol van Inzender zijn toegewezen binnen het Azure-abonnement. Zie [Een Azure AD B2C-tenant koppelen aan een abonnement](billing.md#link-an-azure-ad-b2c-tenant-to-a-subscription).
 

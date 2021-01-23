@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/21/2020
 ms.author: jeedes
-ms.openlocfilehash: daeef90c78fe1f4b98ee1865f48ce86fb3b48023
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
-ms.translationtype: HT
+ms.openlocfilehash: 605f033ed48dd79fd164aabd95e326a6467d0ecd
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936461"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726183"
 ---
 # <a name="tutorial-azure-active-directory-integration-with-zscaler-zscloud"></a>Zelfstudie: Integratie van Azure Active Directory met Zscaler ZSCloud
 
@@ -109,7 +109,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     f. Klik op **Opslaan**.
 
     > [!NOTE]
-    > Klik [hier](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) als u wilt weten hoe u rollen in Azure AD moet configureren.
+    > Klik [hier](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview) als u wilt weten hoe u rollen in Azure AD moet configureren.
 
 7. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** klikt u op **Downloaden** om het **Certificaat (Base64)** te downloaden uit de opgegeven opties overeenkomstig uw behoeften, en slaat u dit op uw computer op.
 
@@ -249,7 +249,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de aanmeldings-URL van Zscaler ZSCloud en initieer hier de aanmeldingsstroom.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u in 'Mijn apps' op de tegel 'Zscaler ZSCloud' klikt, wordt u omgeleid naar de aanmeldings-URL van Zscaler ZSCloud. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u in 'Mijn apps' op de tegel 'Zscaler ZSCloud' klikt, wordt u omgeleid naar de aanmeldings-URL van Zscaler ZSCloud. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

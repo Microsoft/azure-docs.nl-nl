@@ -13,12 +13,12 @@ ms.author: ajburnle
 ms.reviewer: vincesm
 ms.custom: it-pro, seodec18, contperf-fy21q1
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2c556940ace02f2e7bf0354e67d32df7c5c6714e
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: eb01a3e0fc5bc11a4d3de62b16aafb7dd308e34a
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97032759"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724268"
 ---
 # <a name="what-are-the-default-user-permissions-in-azure-active-directory"></a>Wat zijn de standaard machtigingen voor gebruikers in Azure Active Directory?
 In Azure Active Directory (Azure AD) wordt aan alle gebruikers een reeks standaardmachtigingen verleend. De toegang van een gebruiker bestaat uit het type gebruiker, hun [roltoewijzingen](active-directory-users-assign-role-azure-portal.md)en hun eigendom van afzonderlijke objecten. Dit artikel beschrijft deze standaardmachtigingen en bevat een vergelijking van de standaardinstellingen voor lid- en gastgebruikers. De standaard gebruikers machtigingen kunnen alleen worden gewijzigd in gebruikers instellingen in azure AD.
@@ -63,7 +63,7 @@ Standaard machtigingen voor gast gebruikers kunnen op de volgende manieren worde
 
 Machtiging | Uitleg van de instelling
 ---------- | ------------
-Gebruikers toegangs beperkingen van gasten (preview-versie) | Als u deze optie instelt op **gast gebruikers, hebben dezelfde toegang als leden,** waarbij alle gebruikers machtigingen voor alle leden standaard worden verleend aan gast gebruikers.<p>Als u deze optie instelt op de **toegang van gast gebruikers is beperkt tot eigenschappen en lidmaatschappen van hun eigen Directory-objecten** , beperkt de gast toegang alleen tot hun eigen gebruikers profiel. Toegang tot andere gebruikers is niet langer toegestaan, zelfs niet als u zoekt op UPN (User Principal Name), ObjectId of weergave naam. Toegang tot groeps informatie, waaronder groepslid maatschappen, is ook niet meer toegestaan.<p>**Opmerking**: met deze instelling wordt niet voor komen dat de toegang tot samengevoegde groepen wordt gebruikt in sommige Microsoft 365 Services, zoals micro soft teams. Zie [gast toegang van micro soft teams](https://docs.microsoft.com/MicrosoftTeams/guest-access) voor meer informatie.<p>Gast gebruikers kunnen nog steeds worden toegevoegd aan beheerders rollen, ongeacht deze machtigings instellingen.
+Gebruikers toegangs beperkingen van gasten (preview-versie) | Als u deze optie instelt op **gast gebruikers, hebben dezelfde toegang als leden,** waarbij alle gebruikers machtigingen voor alle leden standaard worden verleend aan gast gebruikers.<p>Als u deze optie instelt op de **toegang van gast gebruikers is beperkt tot eigenschappen en lidmaatschappen van hun eigen Directory-objecten** , beperkt de gast toegang alleen tot hun eigen gebruikers profiel. Toegang tot andere gebruikers is niet langer toegestaan, zelfs niet als u zoekt op UPN (User Principal Name), ObjectId of weergave naam. Toegang tot groeps informatie, waaronder groepslid maatschappen, is ook niet meer toegestaan.<p>**Opmerking**: met deze instelling wordt niet voor komen dat de toegang tot samengevoegde groepen wordt gebruikt in sommige Microsoft 365 Services, zoals micro soft teams. Zie [gast toegang van micro soft teams](/MicrosoftTeams/guest-access) voor meer informatie.<p>Gast gebruikers kunnen nog steeds worden toegevoegd aan beheerders rollen, ongeacht deze machtigings instellingen.
 Gasten kunnen uitnodigingen versturen | Als u deze optie instelt op Ja, kunnen gasten andere gasten uitnodigen. Zie [uitnodigingen voor B2B-samen werking delegeren](../external-identities/delegate-invitations.md#configure-b2b-external-collaboration-settings) voor meer informatie.
 Leden kunnen uitnodigingen versturen | Als u deze optie instelt op Ja, kunnen niet-beheerders leden van uw directory gasten uitnodigen. Zie [uitnodigingen voor B2B-samen werking delegeren](../external-identities/delegate-invitations.md#configure-b2b-external-collaboration-settings) voor meer informatie.
 Beheerders en gebruikers in de rol van gastuitnodiger kunnen uitnodigingen versturen | Als u deze optie instelt op Ja, kunnen beheerders en gebruikers in de rol ' gast uitnodiging ' gasten uitnodigen. Als deze optie is ingesteld op Ja, kunnen gebruikers in de rol gast-uitnodiging nog steeds gasten uitnodigen, ongeacht de leden kunnen de instelling uitnodigen. Zie [uitnodigingen voor B2B-samen werking delegeren](../external-identities/delegate-invitations.md#assign-the-guest-inviter-role-to-a-user) voor meer informatie.

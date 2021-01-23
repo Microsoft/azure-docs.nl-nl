@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: e6814cafcf6dafa6f007bdd9d3623d30ef079084
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 37c27e84f15a01a2d8832baae137518685de59a8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222442"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725438"
 ---
 # <a name="determine-your-security-posture-for-external-access"></a>Uw beveiligings postuur voor externe toegang bepalen 
 
@@ -69,7 +69,7 @@ Afhankelijk van wat u voor uw organisatie en scenario's hebt, moet u:
 
 * **Toegang tot toepassingen, gegevens en inhoud beheren**. Dit kan worden bereikt via verschillende methoden, afhankelijk van uw versies van [Azure AD](https://azure.microsoft.com/pricing/details/active-directory/) en [Microsoft 365](https://www.microsoft.com/microsoft-365/compare-microsoft-365-enterprise-plans). 
 
-* **Verminder de kwets** baarheid voor aanvallen. [Privileged Identity Management](../privileged-identity-management/pim-configure.md), [preventie van gegevens verlies (DLP)](https://docs.microsoft.com/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention) en [versleutelings mogelijkheden](https://docs.microsoft.com/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention) verminderen de kwets baarheid.
+* **Verminder de kwets** baarheid voor aanvallen. [Privileged Identity Management](../privileged-identity-management/pim-configure.md), [preventie van gegevens verlies (DLP)](/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention) en [versleutelings mogelijkheden](/exchange/security-and-compliance/data-loss-prevention/data-loss-prevention) verminderen de kwets baarheid.
 
 * **Controleer regel matig de activiteiten en het controle logboek om de naleving te bevestigen**. HET kan toegangs beslissingen van zakelijke eigen aren delegeren via rechten beheer terwijl toegangs beoordelingen een manier bieden om regel matig blijvende toegang te bevestigen. Geautomatiseerde gegevens classificatie met gevoeligheids labels helpt bij het automatiseren van de versleuteling van gevoelige inhoud, waardoor de eind gebruikers van werk nemers gemakkelijk kunnen voldoen.
 
@@ -96,4 +96,3 @@ Raadpleeg de volgende artikelen over het beveiligen van externe toegang tot bron
 9. [Beveiligde toegang tot micro soft teams, OneDrive en share point](9-secure-access-teams-sharepoint.md)
  
 
- 

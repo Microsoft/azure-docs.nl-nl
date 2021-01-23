@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/18/2020
 ms.author: jeedes
-ms.openlocfilehash: 77b2d41e28f39debea2d28ad8287e9ce2679d8ad
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: 84c74d5c1452cf5945aa4f66c3ed3c6af48681b3
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98538593"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98726112"
 ---
 # <a name="tutorial-azure-active-directory-single-sign-on-sso-integration-with-zscaler"></a>Zelfstudie: Eenmalige aanmelding van Azure Active Directory integreren met Zscaler
 
@@ -104,7 +104,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     f. Klik op **Opslaan**.
 
     > [!NOTE]
-    > Klik [hier](https://docs.microsoft.com/azure/active-directory/develop/howto-add-app-roles-in-azure-ad-apps#app-roles-ui) als u wilt weten hoe u rollen in Azure AD moet configureren.
+    > Klik [hier](../develop/howto-add-app-roles-in-azure-ad-apps.md#app-roles-ui--preview) als u wilt weten hoe u rollen in Azure AD moet configureren.
 
 1. Op de pagina **Eenmalige aanmelding met SAML instellen** in de sectie **SAML-handtekeningcertificaat** gaat u naar **Certificaat (Base64)** en selecteert u **Downloaden** om het certificaat te downloaden en op te slaan op uw computer.
 
@@ -233,7 +233,7 @@ In deze sectie test u de configuratie voor eenmalige aanmelding van Azure AD met
 
 * Ga rechtstreeks naar de URL voor Zscaler-aanmelding en start de aanmeldings stroom vanaf daar.
 
-* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Zscaler in de mijn apps klikt, wordt dit omgeleid naar de Zscaler-aanmeldings-URL. Zie [Introduction to My Apps](https://docs.microsoft.com/azure/active-directory/active-directory-saas-access-panel-introduction) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
+* U kunt Microsoft Mijn apps gebruiken. Wanneer u op de tegel Zscaler in de mijn apps klikt, wordt dit omgeleid naar de Zscaler-aanmeldings-URL. Zie [Introduction to My Apps](../user-help/my-apps-portal-end-user-access.md) (Inleiding tot Mijn apps) voor meer informatie over Mijn apps.
 
 
 ## <a name="next-steps"></a>Volgende stappen

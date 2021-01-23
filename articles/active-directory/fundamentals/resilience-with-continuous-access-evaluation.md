@@ -13,16 +13,16 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 8ad36c2a7f47948d9362b85e78355e6046cda703
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 1a12cc3299fbb5916afba48d2608024f28999634
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919561"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724624"
 ---
 # <a name="build-resilience-by-using-continuous-access-evaluation"></a>Een tolerantie bouwen met behulp van evaluatie van continue toegang
 
-Met [doorlopende toegangs beoordeling](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-continuous-access-evaluation) (CAE) kunnen Azure AD-toepassingen zich abonneren op kritieke gebeurtenissen die vervolgens kunnen worden geëvalueerd en afgedwongen. Dit omvat de evaluatie van de volgende gebeurtenissen:
+Met [doorlopende toegangs beoordeling](../conditional-access/concept-continuous-access-evaluation.md) (CAE) kunnen Azure AD-toepassingen zich abonneren op kritieke gebeurtenissen die vervolgens kunnen worden geëvalueerd en afgedwongen. Dit omvat de evaluatie van de volgende gebeurtenissen:
 
 * Het gebruikers account wordt verwijderd of uitgeschakeld
 
@@ -48,11 +48,11 @@ Micro soft werkt samen met de industrie om [standaarden](https://openid.net/wg/s
 
 ## <a name="how-do-i-implement-cae"></a>Hoe kan ik CAE implementeren?
 
-* [Activeer CAE](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-continuous-access-evaluation) in de Azure AD-beveiligings configuratie.
+* [Activeer CAE](../conditional-access/concept-continuous-access-evaluation.md) in de Azure AD-beveiligings configuratie.
 
-* Zorg ervoor dat uw organisatie [compatibele versies](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-continuous-access-evaluation) van Microsoft Office systeem eigen toepassingen gebruikt.
+* Zorg ervoor dat uw organisatie [compatibele versies](../conditional-access/concept-continuous-access-evaluation.md) van Microsoft Office systeem eigen toepassingen gebruikt.
 
-* [Optimaliseer uw prompts](https://docs.microsoft.com/azure/active-directory/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime)voor opnieuw verifiëren.
+* [Optimaliseer uw prompts](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md)voor opnieuw verifiëren.
 
  
 ## <a name="next-steps"></a>Volgende stappen

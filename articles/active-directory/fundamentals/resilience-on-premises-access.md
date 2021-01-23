@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f8bfc3fb239f30911eddf0aa27496a465e36c486
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8fed78d7d2250d749ced7fe343689df76329b60d
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95919567"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724657"
 ---
 # <a name="build-resilience-in-application-access-with-application-proxy"></a>Tolerantie in toepassings toegang bouwen met toepassings proxy
 
@@ -27,7 +27,7 @@ Toepassings proxy is een functie van Azure AD waarmee gebruikers toegang kunnen 
 Gebruikers hebben toegang tot on-premises resources via een URL die is gepubliceerd via een toepassings proxy. Ze worden omgeleid naar de aanmeldings pagina van Azure AD. De Application proxy-service in azure AD stuurt vervolgens een token naar de connector voor toepassings proxy in het bedrijfs netwerk, waarmee het token wordt door gegeven aan de on-premises Active Directory de geverifieerde gebruiker toegang tot de on-premises resource kan krijgen. In het onderstaande diagram worden [connectors](../manage-apps/application-proxy-connectors.md) weer gegeven in een [connector groep](../manage-apps/application-proxy-connector-groups.md).
 
 > [!IMPORTANT]
-> Wanneer u uw toepassingen publiceert via toepassings proxy, moet u [de capaciteits planning en de juiste redundantie voor de Application proxy-connectors](https://docs.microsoft.com/azure/active-directory/manage-apps/application-proxy-connectors#capacity-planning)implementeren.
+> Wanneer u uw toepassingen publiceert via toepassings proxy, moet u [de capaciteits planning en de juiste redundantie voor de Application proxy-connectors](../manage-apps/application-proxy-connectors.md#capacity-planning)implementeren.
 
 ![Architectuur diagram van toepassings y](./media/resilience-on-prem-access/admin-resilience-app-proxy.png))
 

@@ -11,12 +11,12 @@ author: stevestein
 ms.author: sstein
 ms.reviewer: ''
 ms.date: 01/08/2020
-ms.openlocfilehash: be966a651df0c896ac7e1973d7783bb7fb686be3
-ms.sourcegitcommit: 4cb89d880be26a2a4531fedcc59317471fe729cd
+ms.openlocfilehash: 3a02876234d43df2e98a3a4e60453fc3f1f74ef6
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92676491"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724166"
 ---
 # <a name="import-or-export-an-azure-sql-database-without-allowing-azure-services-to-access-the-server"></a>Een Azure SQL Database importeren of exporteren zonder dat Azure-Services toegang hebben tot de server
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -46,22 +46,22 @@ De volgende stappen laten zien hoe u verbinding kunt maken met uw virtuele machi
 
    ![Scherm afbeelding toont een overzichts pagina voor virtuele machines met een knop verbinding maken.](./media/database-import-export-azure-services-off/vm.png)  
 
-2. Selecteer **Verbinding maken** .
+2. Selecteer **Verbinding maken**.
 
    Een Remote Desktop Protocol-bestand (RDP-bestand) wordt weergegeven met het openbare IP-adres en het poortnummer voor de virtuele machine.
 
    ![RDP-formulier](./media/database-import-export-azure-services-off/rdp.png)  
 
-3. Selecteer **RDP-bestand downloaden** .
+3. Selecteer **RDP-bestand downloaden**.
 
    > [!NOTE]
    > U kunt ook SSH gebruiken om verbinding te maken met uw virtuele machine.
 
-4. Sluit het formulier **Verbinding maken met virtuele machine** .
+4. Sluit het formulier **Verbinding maken met virtuele machine**.
 5. Open het gedownloade RDP-bestand om verbinding met de VM te maken.
 6. Selecteer **Verbinding maken** wanneer hierom wordt gevraagd. Op een Mac hebt u een RDP-client nodig, zoals deze [Extern-bureaubladclient](https://apps.apple.com/app/microsoft-remote-desktop-10/id1295203466?mt=12) uit de Mac App Store.
 
-7. Voer de gebruikers naam en het wacht woord in die u hebt opgegeven bij het maken van de virtuele machine en klik vervolgens op **OK** .
+7. Voer de gebruikers naam en het wacht woord in die u hebt opgegeven bij het maken van de virtuele machine en klik vervolgens op **OK**.
 
 8. Er wordt mogelijk een certificaatwaarschuwing weergegeven tijdens het aanmelden. Kies **Ja** of **Doorgaan** om door te gaan met de verbinding.
 
@@ -77,7 +77,7 @@ Voeg het open bare IP-adres van de virtuele machine toe aan de firewall van de s
 
 Met de volgende stappen maakt u een IP-firewall regel op server niveau voor het open bare IP-adres van uw virtuele machine en maakt u connectiviteit vanaf de virtuele machine mogelijk.
 
-1. Selecteer **SQL-data bases** in het menu aan de linkerkant en selecteer vervolgens uw Data Base op de pagina **SQL-data bases** . De overzichts pagina voor de data base wordt geopend, met de volledig gekwalificeerde server naam (zoals **servername.database.Windows.net** ) en biedt opties voor verdere configuratie.
+1. Selecteer **SQL-data bases** in het menu aan de linkerkant en selecteer vervolgens uw Data Base op de pagina **SQL-data bases** . De overzichts pagina voor de data base wordt geopend, met de volledig gekwalificeerde server naam (zoals **servername.database.Windows.net**) en biedt opties voor verdere configuratie.
 
 2. Kopieer deze volledig gekwalificeerde server naam om te gebruiken bij het maken van verbinding met uw server en de bijbehorende data bases.
 
@@ -89,9 +89,9 @@ Met de volgende stappen maakt u een IP-firewall regel op server niveau voor het 
 
 4. Kies **client-IP toevoegen** op de werk balk om het open bare IP-adres van uw virtuele machine toe te voegen aan een nieuwe IP-firewall regel op server niveau. Een IP-firewallregel op serverniveau kan poort 1433 openen voor een individueel IP-adres of voor een bereik van IP-adressen.
 
-5. Selecteer **Opslaan** . Er wordt een IP-firewall regel op server niveau gemaakt voor het open bare IP-adres van uw virtuele machine, waarmee poort 1433 op de server wordt geopend.
+5. Selecteer **Opslaan**. Er wordt een IP-firewall regel op server niveau gemaakt voor het open bare IP-adres van uw virtuele machine, waarmee poort 1433 op de server wordt geopend.
 
-6. Sluit de pagina **Firewallinstellingen** .
+6. Sluit de pagina **Firewallinstellingen**.
 
 ## <a name="export-a-database-using-sqlpackage"></a>Een Data Base exporteren met behulp van SqlPackage
 
@@ -111,7 +111,7 @@ Voor het importeren van een SQL Server-database met behulp van het opdrachtregel
 
 Voor schaalbaarheid en prestaties wordt u aangeraden in de meeste productieomgevingen SqlPackage te gebruiken in plaats van Azure Portal. Ga voor een blogartikel van het SQL Server-klantadviesteam over migratie met behulp van `BACPAC`-bestanden naar [migreren van SQL Server naar Azure SQL Database met BACPAC-bestanden](/archive/blogs/sqlcat/migrating-from-sql-server-to-azure-sql-database-using-bacpac-files).
 
-Met de volgende SqlPackage-opdracht wordt de **AdventureWorks2017** -data base uit de lokale opslag naar een Azure SQL database geïmporteerd. Er wordt een nieuwe database gemaakt met de naam **myMigratedDatabase** met een **Premium** -servicelaag en een **P6** Service Objective. Wijzig deze waarden in waarden die geschikt zijn voor uw omgeving.
+Met de volgende SqlPackage-opdracht wordt de **AdventureWorks2017** -data base uit de lokale opslag naar een Azure SQL database geïmporteerd. Er wordt een nieuwe database gemaakt met de naam **myMigratedDatabase** met een **Premium**-servicelaag en een **P6** Service Objective. Wijzig deze waarden in waarden die geschikt zijn voor uw omgeving.
 
 ```cmd
 sqlpackage.exe /a:import /tcs:"Data Source=<serverName>.database.windows.net;Initial Catalog=myMigratedDatabase>;User Id=<userId>;Password=<password>" /sf:AdventureWorks2017.bacpac /p:DatabaseEdition=Premium /p:DatabaseServiceObjective=P6
@@ -147,7 +147,7 @@ Gebruik Azure Files om de beste prestaties te krijgen. SqlPackage werkt met het 
 
 Gebruik Azure blobs, wat lager is dan een Premium Azure-bestands share, om de kosten te verlagen. Het is echter wel nodig om de te kopiëren [. BACPAC-bestand](/sql/relational-databases/data-tier-applications/data-tier-applications#bacpac) tussen de BLOB en het lokale bestands systeem vóór de import-of export bewerking. Als gevolg hiervan zal het proces langer duren.
 
-Uploaden of downloaden. BACPAC-bestanden, Zie [gegevens overdragen met AzCopy en Blob Storage](../../storage/common/storage-use-azcopy-blobs.md)en [gegevens overdragen met AzCopy en File Storage](../../storage/common/storage-use-azcopy-files.md).
+Uploaden of downloaden. BACPAC-bestanden, Zie [gegevens overdragen met AzCopy en Blob Storage](../../storage/common/storage-use-azcopy-v10.md#transfer-data)en [gegevens overdragen met AzCopy en File Storage](../../storage/common/storage-use-azcopy-files.md).
 
 Afhankelijk van uw omgeving moet u mogelijk [Azure Storage firewalls en virtuele netwerken configureren](../../storage/common/storage-network-security.md).
 

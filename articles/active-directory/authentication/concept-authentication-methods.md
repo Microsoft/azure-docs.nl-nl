@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 12/14/2020
+ms.date: 01/22/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 24b29cfb1f58a61193f67ba924e583d4264dfc51
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: 1459dd41fcdc30a29a5f9f93ec9704083767a342
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97562120"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725668"
 ---
 # <a name="what-authentication-and-verification-methods-are-available-in-azure-active-directory"></a>Welke authenticatie- en verificatiemethoden zijn er beschikbaar in Azure Active Directory?
 
@@ -70,7 +70,7 @@ De volgende tabel geeft een overzicht van de wijze waarop een verificatie method
 | FIDO2-beveiligings sleutel (preview-versie)   | Ja                    | MFA                       |
 | OATH-hardware-tokens (preview-versie) | Nee                     | MFA                       |
 | OATH-software tokens           | Nee                     | MFA                       |
-| Sms                            | Ja (preview-versie)          | MFA en SSPR              |
+| Sms                            | Ja                    | MFA en SSPR              |
 | Spraakoproep                     | Nee                     | MFA en SSPR              |
 | Wachtwoord                       | Ja                    |                           |
 
@@ -83,7 +83,7 @@ Raadpleeg de volgende afzonderlijke conceptuele artikelen voor meer informatie o
 * [FIDO2-beveiligings sleutel (preview-versie)](concept-authentication-passwordless.md#fido2-security-keys)
 * [OATH-hardware-tokens (preview-versie)](concept-authentication-oath-tokens.md#oath-hardware-tokens-preview)
 * [OATH-software tokens](concept-authentication-oath-tokens.md#oath-software-tokens)
-* SMS [-aanmelding (preview-versie)](howto-authentication-sms-signin.md) en [verificatie](concept-authentication-phone-options.md#mobile-phone-verification)
+* [SMS-aanmelding](howto-authentication-sms-signin.md) en [verificatie](concept-authentication-phone-options.md#mobile-phone-verification)
 * [Verificatie van spraak oproep](concept-authentication-phone-options.md)
 * Wachtwoord
 

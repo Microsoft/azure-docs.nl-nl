@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f83e5584f8f9c6823e1259cb5e6034d8b13ae3a6
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 7eb168610f10ac336084ac04c19679d26fc913e0
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222374"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98725241"
 ---
 # <a name="securing-external-access-with-groups"></a>Externe toegang beveiligen met groepen 
 
@@ -48,13 +48,13 @@ Wanneer u de groeps strategie ontwikkelt om externe toegang tot uw resources te 
 
    * *Elk Tenant lid kan standaard Azure AD-beveiligings groepen maken*. 
 
-      * U kunt [de toegang tot de portal beperken voor niet-beheerders en de mogelijkheid tot het](../develop/howto-restrict-your-app-to-a-set-of-users.md) maken van groepen uitschakelen in [Power shell.](../users-groups-roles/groups-troubleshooting.md) 
+      * U kunt [de toegang tot de portal beperken voor niet-beheerders en de mogelijkheid tot het](../develop/howto-restrict-your-app-to-a-set-of-users.md) maken van groepen uitschakelen in [Power shell.](../enterprise-users/groups-troubleshooting.md) 
 
-      * U kunt ook [self-service groeps beheer instellen in azure Active Directory](../users-groups-roles/groups-self-service-management.md). 
+      * U kunt ook [self-service groeps beheer instellen in azure Active Directory](../enterprise-users/groups-self-service-management.md). 
 
    * *Standaard kunnen alle gebruikers M365 groepen en groepen maken zijn geopend voor alle (interne en externe) gebruikers in uw Tenant om lid te* worden. 
 
-      * [U kunt het maken van Microsoft 365 groepen beperken](https://docs.microsoft.com/microsoft-365/solutions/manage-creation-of-groups?view=o365-worldwide) tot de leden van een bepaalde beveiligings groep. Gebruik Windows Power shell om deze instelling te configureren. 
+      * [U kunt het maken van Microsoft 365 groepen beperken](/microsoft-365/solutions/manage-creation-of-groups?view=o365-worldwide) tot de leden van een bepaalde beveiligings groep. Gebruik Windows Power shell om deze instelling te configureren. 
 
 * **Wie moet personen kunnen uitnodigen voor groepen?** Kunnen alle leden van de groep andere leden toevoegen, of kunnen alleen leden van de groep eigen aren toevoegen?
 
@@ -80,7 +80,7 @@ Dynamische groepen kunnen gebruikers of apparaten bevatten, maar niet beide. U k
 
 ![Scherm opname van het configureren van dynamische lidmaatschaps regels.](media/secure-external-access/4-dynamic-membership-rules.png)
 
-Zie [een dynamische groep maken of bijwerken in azure Active Directory](../users-groups-roles/groups-create-rule.md) voor meer informatie over dynamische groepen.
+Zie [een dynamische groep maken of bijwerken in azure Active Directory](../enterprise-users/groups-create-rule.md) voor meer informatie over dynamische groepen.
 
 ### <a name="do-not-use-groups-for-multiple-purposes"></a>Gebruik geen groepen voor meerdere doel einden
 
@@ -117,7 +117,7 @@ Gebruik Microsoft 365 groepen om een set Microsoft 365 resources te maken en te 
 
 ## <a name="azure-ad-security-groups"></a>Azure AD-beveiligingsgroepen 
 
-[Azure AD-beveiligings groepen](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups) kunnen gebruikers of apparaten bevatten en kunnen worden gebruikt om toegang te beheren tot 
+[Azure AD-beveiligings groepen](./active-directory-manage-groups.md) kunnen gebruikers of apparaten bevatten en kunnen worden gebruikt om toegang te beheren tot 
 
 * Azure-resources, zoals Microsoft 365 apps, aangepaste apps en SaaS-apps (Software as a Service), zoals ServiceNow van Dropbox.
 
@@ -127,11 +127,11 @@ Gebruik Microsoft 365 groepen om een set Microsoft 365 resources te maken en te 
 
 Azure AD-beveiligings groepen kunnen ook worden gebruikt voor het volgende:
 
-* Wijs licenties toe voor services zoals M365, Dynamics 365 en Enter prise Mobility en Security. Zie voor meer informatie [op groepen gebaseerde licentie verlening](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-licensing-whatis-azure-portal).
+* Wijs licenties toe voor services zoals M365, Dynamics 365 en Enter prise Mobility en Security. Zie voor meer informatie [op groepen gebaseerde licentie verlening](./active-directory-licensing-whatis-azure-portal.md).
 
-* verhoogde machtigingen toewijzen. Zie [Cloud groepen gebruiken voor het beheren van roltoewijzingen (preview-versie](https://docs.microsoft.com/azure/active-directory/users-groups-roles/roles-groups-concept)) voor meer informatie. 
+* verhoogde machtigingen toewijzen. Zie [Cloud groepen gebruiken voor het beheren van roltoewijzingen (preview-versie](../roles/groups-concept.md)) voor meer informatie. 
 
-Als u een groep wilt maken [in de Azure Portal](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-groups-create-azure-portal) navigeert u naar Azure Active Directory en vervolgens naar groepen. U kunt ook Azure AD-beveiligings groepen maken met behulp van [Power shell-cmdlets](https://docs.microsoft.com/azure/active-directory/users-groups-roles/groups-settings-v2-cmdlets). 
+Als u een groep wilt maken [in de Azure Portal](./active-directory-groups-create-azure-portal.md) navigeert u naar Azure Active Directory en vervolgens naar groepen. U kunt ook Azure AD-beveiligings groepen maken met behulp van [Power shell-cmdlets](../enterprise-users/groups-settings-v2-cmdlets.md). 
 
 > [!NOTE]
 > Een beveiligings groep kan worden gebruikt voor het toewijzen van Maxi maal 1500 toepassingen, maar niet meer. 
@@ -146,17 +146,17 @@ Als u een groep wilt maken [in de Azure Portal](https://docs.microsoft.com/azure
 
 Hybride organisaties hebben zowel een on-premises infra structuur als een Azure AD-Cloud infrastructuur. Veel hybride organisaties die gebruikmaken van Active Directory hun beveiligings groepen on-premises maken en deze synchroniseren met de Cloud. Met deze methode kunnen alleen gebruikers in de on-premises omgeving worden toegevoegd aan de beveiligings groepen.
 
-**Uw on-premises infra structuur beveiligen tegen inbreuk, omdat een schending on-premises kan worden gebruikt om toegang te krijgen tot uw Microsoft 365-Tenant**. Zie [Microsoft 365 beschermen tegen on-premises aanvallen](https://aka.ms/protectm365) voor hulp.
+**Uw on-premises infra structuur beveiligen tegen inbreuk, omdat een schending on-premises kan worden gebruikt om toegang te krijgen tot uw Microsoft 365-Tenant**. Zie [Microsoft 365 beschermen tegen on-premises aanvallen](./protect-m365-from-on-premises-attacks.md) voor hulp.
 
 ## <a name="microsoft-365-groups"></a>Microsoft 365 groepen
 
-[Microsoft 365 groepen](https://docs.microsoft.com/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide) zijn de basis lidmaatschaps service waarmee alle toegang via M365 wordt geclusterd. Ze kunnen worden gemaakt op basis van de [Azure Portal](https://portal.azure.com/), of de [M365-Portal](https://admin.microsoft.com/). Wanneer een M365-groep is gemaakt, kunt u toegang verlenen tot een groep resources die wordt gebruikt om samen te werken. Zie [overzicht van Microsoft 365 groepen voor beheerders](https://docs.microsoft.com/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide) voor een volledige lijst met deze resources.
+[Microsoft 365 groepen](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide) zijn de basis lidmaatschaps service waarmee alle toegang via M365 wordt geclusterd. Ze kunnen worden gemaakt op basis van de [Azure Portal](https://portal.azure.com/), of de [M365-Portal](https://admin.microsoft.com/). Wanneer een M365-groep is gemaakt, kunt u toegang verlenen tot een groep resources die wordt gebruikt om samen te werken. Zie [overzicht van Microsoft 365 groepen voor beheerders](/microsoft-365/admin/create-groups/office-365-groups?view=o365-worldwide) voor een volledige lijst met deze resources.
 
 M365-groepen hebben de volgende nuances voor hun rollen
 
 * **Eigen** aren: groeps eigenaren kunnen leden toevoegen of verwijderen en beschikken over unieke machtigingen zoals de mogelijkheid om gesp rekken uit het gedeelde Postvak in te verwijderen of door de groeps instellingen te wijzigen. Groeps eigenaren kunnen de naam van de groep wijzigen, de beschrijving of afbeelding bijwerken en nog veel meer.
 
-* **Leden** : leden hebben toegang tot alles in de groep, maar kunnen geen groeps instellingen wijzigen. Standaard kunnen groeps leden gasten uitnodigen om lid te worden van uw groep, maar u kunt [deze instelling beheren](https://docs.microsoft.com/microsoft-365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide).
+* **Leden** : leden hebben toegang tot alles in de groep, maar kunnen geen groeps instellingen wijzigen. Standaard kunnen groeps leden gasten uitnodigen om lid te worden van uw groep, maar u kunt [deze instelling beheren](/microsoft-365/admin/create-groups/manage-guest-access-in-groups?view=o365-worldwide).
 
 * **Gasten-groep** gasten zijn leden die afkomstig zijn van buiten uw organisatie. Gasten hebben standaard enkele limieten voor de functionaliteit van teams.
 

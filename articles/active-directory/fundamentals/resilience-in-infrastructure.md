@@ -13,12 +13,12 @@ ms.author: baselden
 ms.reviewer: ajburnle
 ms.custom: it-pro, seodec18
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f65ab02e06319519548eaa2c02120691a0ceef02
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 64fe4b8c217ec46cbb6dd046339c3ac65eebb121
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498554"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724674"
 ---
 # <a name="build-resilience-in-your-identity-and-access-management-infrastructure"></a>Maak flexibiliteit in uw infra structuur voor identiteits-en toegangs beheer
 
@@ -32,7 +32,7 @@ De documentenset is ontworpen voor
 
 * Identiteits bewerkings teams
 
-Raadpleeg ook de documentatie voor [toepassings ontwikkelaars](https://aka.ms/azureadresilience/developer) en voor [Azure AD B2C systemen](resilience-b2c.md).
+Raadpleeg ook de documentatie voor [toepassings ontwikkelaars](./resilience-app-development-overview.md) en voor [Azure AD B2C systemen](resilience-b2c.md).
 
 ## <a name="what-is-resilience"></a>Wat is tolerantie?
 
@@ -44,7 +44,7 @@ Elke aanroep van het verificatie systeem is onderhevig aan onderbrekingen als ee
 
 In een verificatie systeem op basis van tokens, zoals Azure AD, moet de toepassing (client) van een gebruiker een beveiligings token van het identiteits systeem verkrijgen voordat het toegang heeft tot een toepassing of een andere bron. Gedurende de geldigheids periode kan een client hetzelfde token meerdere keren aanbieden voor toegang tot de toepassing.
 
-Wanneer het token dat aan de toepassing wordt gepresenteerd, verloopt, wordt het token door de toepassing geweigerd en moet de client een nieuw token van Azure AD verkrijgen. Voor het verkrijgen van een nieuw token is mogelijk gebruikers interactie vereist, zoals referentie prompts of voor andere vereisten van het verificatie systeem. Het verminderen van de frequentie van verificatie aanroepen met langere tokens vermindert onnodige interacties. U moet echter de levens duur van het token balanceren met het risico dat door minder beleids evaluaties is gemaakt. Voor meer informatie over het beheren van de levens duur van tokens raadpleegt u dit artikel over het [optimaliseren van herauthenticatie prompts](https://docs.microsoft.com/azure/active-directory/authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime).
+Wanneer het token dat aan de toepassing wordt gepresenteerd, verloopt, wordt het token door de toepassing geweigerd en moet de client een nieuw token van Azure AD verkrijgen. Voor het verkrijgen van een nieuw token is mogelijk gebruikers interactie vereist, zoals referentie prompts of voor andere vereisten van het verificatie systeem. Het verminderen van de frequentie van verificatie aanroepen met langere tokens vermindert onnodige interacties. U moet echter de levens duur van het token balanceren met het risico dat door minder beleids evaluaties is gemaakt. Voor meer informatie over het beheren van de levens duur van tokens raadpleegt u dit artikel over het [optimaliseren van herauthenticatie prompts](../authentication/concepts-azure-multi-factor-authentication-prompts-session-lifetime.md).
 
 ## <a name="ways-to-increase-resilience"></a>Manieren om de tolerantie te verhogen
 In het volgende diagram ziet u zes concrete manieren waarop u de tolerantie kunt verhogen. Elke methode wordt gedetailleerd uitgelegd in de artikelen die in het gedeelte volgende stappen van dit artikel zijn gekoppeld.

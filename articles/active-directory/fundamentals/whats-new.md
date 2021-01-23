@@ -16,12 +16,12 @@ ms.author: ajburnle
 ms.reviewer: dhanyahk
 ms.custom: it-pro
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: b6da9f27e25fa5543f949716824f54af2b9f1ad1
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 12b5c95b67f8fada29914d3a8de559280e6145f8
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132542"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724217"
 ---
 # <a name="whats-new-in-azure-active-directory"></a>Wat is er nieuw in Azure Active Directory?
 
@@ -100,7 +100,7 @@ U kunt nu het maken, bijwerken en verwijderen van gebruikers accounts automatise
 - [Bizagi Studio voor digitale procesautomatisering](../saas-apps/bizagi-studio-for-digital-process-automation-provisioning-tutorial.md)
 - [CybSafe](../saas-apps/cybsafe-provisioning-tutorial.md)
 - [GroupTalk](../saas-apps/grouptalk-provisioning-tutorial.md)
-- [PaperCut Cloud Print Management](/azure/active-directory/saas-apps/papercut-cloud-print-management-provisioning-tutorial)
+- [PaperCut Cloud Print Management](../saas-apps/papercut-cloud-print-management-provisioning-tutorial.md)
 - [Parsable](../saas-apps/parsable-provisioning-tutorial.md)
 - [Shopify Plus](../saas-apps/shopify-plus-provisioning-tutorial.md)
 
@@ -191,7 +191,7 @@ Voor het weer geven van uw toepassing in de app-galerie van Azure AD raadpleegt 
 **Service categorie:** RBAC  
 **Product mogelijkheden:** Access Control
  
- [Aangepaste RBAC-rollen voor gedelegeerd beheer van bedrijfs toepassingen](../users-groups-roles/roles-custom-available-permissions.md) zijn nu beschikbaar als open bare preview. Deze nieuwe machtigingen zijn gebaseerd op de aangepaste rollen voor het beheer van app-registratie, waarmee nauw keurige controle kan worden uitgevoerd op de toegang die uw beheerders hebben. Na verloop van tijd worden extra machtigingen voor het delegeren van het beheer van Azure AD vrijgegeven.
+ [Aangepaste RBAC-rollen voor gedelegeerd beheer van bedrijfs toepassingen](../roles/custom-available-permissions.md) zijn nu beschikbaar als open bare preview. Deze nieuwe machtigingen zijn gebaseerd op de aangepaste rollen voor het beheer van app-registratie, waarmee nauw keurige controle kan worden uitgevoerd op de toegang die uw beheerders hebben. Na verloop van tijd worden extra machtigingen voor het delegeren van het beheer van Azure AD vrijgegeven.
 
 Enkele algemene delegatie scenario's:
 - toewijzing van gebruikers en groepen die toegang hebben tot op SAML gebaseerde toepassingen voor eenmalige aanmelding
@@ -247,7 +247,7 @@ U kunt nu het maken, bijwerken en verwijderen van gebruikers accounts automatise
 - [Boter-kaas en mobiel](../saas-apps/tic-tac-mobile-provisioning-tutorial.md)
 - [Visibly](../saas-apps/visibly-provisioning-tutorial.md)
 
-Zie [Gebruikers inrichten voor SaaS-toepassingen automatiseren met Azure AD](../manage-apps/user-provisioning.md)voor meer informatie.
+Zie [Gebruikers inrichten voor SaaS-toepassingen automatiseren met Azure AD](../app-provisioning/user-provisioning.md)voor meer informatie.
  
 ---
 
@@ -301,7 +301,7 @@ De inrichtings agent voor Cloud is vrijgegeven in de open bare preview-versie en
  
 Voorheen kon u BitLocker-sleutels herstellen via het/BitLocker-eind punt. We zullen dit eind punt uiteindelijk afnemen en klanten moeten beginnen met het gebruiken van de API die nu onder/informationProtection. 
 
-Raadpleeg de [BitLocker Recovery API](https://docs.microsoft.com/graph/api/resources/bitlockerrecoverykey?view=graph-rest-beta) voor updates in de documentatie om deze wijzigingen weer te geven.
+Raadpleeg de [BitLocker Recovery API](/graph/api/resources/bitlockerrecoverykey?view=graph-rest-beta) voor updates in de documentatie om deze wijzigingen weer te geven.
 
 ---
 
@@ -1126,4 +1126,3 @@ Als uw organisatie de Azure MFA SDK gebruikt, moet u de migratie op 30 september
 
 ---
 
- 

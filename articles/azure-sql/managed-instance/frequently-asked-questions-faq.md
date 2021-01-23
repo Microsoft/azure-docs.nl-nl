@@ -12,12 +12,12 @@ author: jovanpop-msft
 ms.author: jovanpop
 ms.reviewer: sstein
 ms.date: 09/21/2020
-ms.openlocfilehash: 6b217e77310224779ea3ea840e613e28da6c86a3
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: 5d15947254d80d97b6a241a717fb7d33a3d5ccb5
+ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92779863"
+ms.lasthandoff: 01/23/2021
+ms.locfileid: "98724013"
 ---
 # <a name="azure-sql-managed-instance-frequently-asked-questions-faq"></a>Veelgestelde vragen over Azure SQL Managed Instance (FAQ)
 [!INCLUDE[appliesto-sqlmi](../includes/appliesto-sqlmi.md)]
@@ -118,7 +118,7 @@ Het wijzigen van de naam van een beheerd exemplaar wordt niet ondersteund.
 
 Ja, de standaard DNS-zone van het beheerde exemplaar *. database.Windows.net* kan worden gewijzigd. 
 
-Als u een andere DNS-zone wilt gebruiken in plaats van de standaard instelling, bijvoorbeeld *. contoso.com* : 
+Als u een andere DNS-zone wilt gebruiken in plaats van de standaard instelling, bijvoorbeeld *. contoso.com*: 
 - Gebruik CliConfig voor het definiëren van een alias. Het hulp programma is slechts een wrapper voor register instellingen, zodat het kan worden uitgevoerd met behulp van groeps beleid of een script.
 - Gebruik *CNAME* met de optie *TrustServerCertificate = True* .
 
@@ -240,7 +240,7 @@ Ja, het wordt ondersteund en is beschikbaar voor SQL Server 2005 en versies.  Al
 
 Systeem databases worden niet gerepliceerd naar het secundaire exemplaar in een failovergroep. Daarom zijn scenario's die afhankelijk zijn van objecten van de systeem databases niet mogelijk op het secundaire exemplaar, tenzij de objecten hand matig op de secundaire instantie worden gemaakt. Zie scenario's die afhankelijk zijn van [het object van de systeem databases inschakelen](../database/auto-failover-group-overview.md?tabs=azure-powershell#enable-scenarios-dependent-on-objects-from-the-system-databases)voor tijdelijke oplossingen.
  
-## <a name="networking-requirements"></a>Netwerk vereisten 
+## <a name="networking-requirements"></a>Netwerkvereisten 
 
 **Wat zijn de huidige binnenkomende/uitgaande NSG-beperkingen op het subnet van het beheerde exemplaar?**
 
@@ -339,7 +339,7 @@ De peering voor Express route-circuits is de beste manier om dat te doen. Global
 > [!IMPORTANT]
 > [Op 9/22/2020 zijn wereld wijde virtuele netwerk peering aangekondigd voor nieuwe virtuele clusters](https://azure.microsoft.com/en-us/updates/global-virtual-network-peering-support-for-azure-sql-managed-instance-now-available/). Dit betekent dat de peering van globale virtuele netwerken wordt ondersteund voor SQL-beheerde instanties die zijn gemaakt in lege subnetten na de aankondigings datum, en ook voor alle daaropvolgende beheerde exemplaren die in deze subnetten zijn gemaakt. Voor alle andere SQL Managed instances-ondersteuning voor peering is beperkt tot de netwerken in dezelfde regio vanwege de [beperkingen van globale virtuele netwerk peering](../../virtual-network/virtual-network-manage-peering.md#requirements-and-constraints). Zie ook de relevante sectie van het artikel Veelgestelde [vragen over virtuele netwerken van Azure](../../virtual-network/virtual-networks-faq.md#what-are-the-constraints-related-to-global-vnet-peering-and-load-balancers) voor meer informatie. 
 
-Als multi route-Circuit peering en globale virtuele netwerk peering niet mogelijk is, is de enige andere optie het maken van een site-naar-site-VPN-verbinding ([Azure Portal](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md), [Power shell](../../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md), [Azure cli](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md)).
+Als multi route-Circuit peering en globale virtuele netwerk peering niet mogelijk is, is de enige andere optie het maken van een site-naar-site-VPN-verbinding ([Azure Portal](../../vpn-gateway/tutorial-site-to-site-portal.md), [Power shell](../../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md), [Azure cli](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md)).
 
 ## <a name="mitigate-data-exfiltration-risks"></a>Gegevens exfiltration Risico's beperken  
 
@@ -409,8 +409,8 @@ U kunt TDE-Protector voor een beheerd exemplaar draaien met behulp van Azure Clo
 
 Ja, u hoeft uw data base niet te ontsleutelen om deze te herstellen naar een SQL-beheerd exemplaar. U moet een certificaat/sleutel opgeven die wordt gebruikt als de versleutelings sleutel beveiliging op het bron systeem naar SQL Managed instance om gegevens van het versleutelde back-upbestand te kunnen lezen. Er zijn twee manieren waarop u dit kunt doen:
 
-- *Upload certificaat beveiliging naar een beheerd exemplaar van SQL* . Dit kan alleen worden gedaan met behulp van Power shell. In het [voorbeeld script](./tde-certificate-migrate.md) wordt het hele proces beschreven.
-- De *asymmetrische sleutel beveiliging uploaden naar Azure Key Vault en naar de SQL-beheerde instantie verwijzen* . Deze benadering lijkt op het gebruik van uw BYOK-TDE-toepassing (your-own-Key) die ook Key Vault-integratie gebruikt om de versleutelings sleutel op te slaan. Als u de sleutel niet wilt gebruiken als een versleutelings sleutel beveiliging en alleen de sleutel beschikbaar wilt maken voor SQL Managed instance om versleutelde data bases te herstellen, volgt u de instructies voor het [instellen van BYOK TDe](../database/transparent-data-encryption-tde-overview.md#manage-transparent-data-encryption)en schakelt u het selectie vakje de **geselecteerde sleutel de standaard TDe-Protector maken** in.
+- *Upload certificaat beveiliging naar een beheerd exemplaar van SQL*. Dit kan alleen worden gedaan met behulp van Power shell. In het [voorbeeld script](./tde-certificate-migrate.md) wordt het hele proces beschreven.
+- De *asymmetrische sleutel beveiliging uploaden naar Azure Key Vault en naar de SQL-beheerde instantie verwijzen*. Deze benadering lijkt op het gebruik van uw BYOK-TDE-toepassing (your-own-Key) die ook Key Vault-integratie gebruikt om de versleutelings sleutel op te slaan. Als u de sleutel niet wilt gebruiken als een versleutelings sleutel beveiliging en alleen de sleutel beschikbaar wilt maken voor SQL Managed instance om versleutelde data bases te herstellen, volgt u de instructies voor het [instellen van BYOK TDe](../database/transparent-data-encryption-tde-overview.md#manage-transparent-data-encryption)en schakelt u het selectie vakje de **geselecteerde sleutel de standaard TDe-Protector maken** in.
 
 Zodra u de versleutelings beveiliging beschikbaar maakt voor een SQL-beheerd exemplaar, kunt u door gaan met de standaard procedure voor het herstellen van data bases.
 
@@ -443,7 +443,7 @@ Zie de [pagina met prijzen](https://azure.microsoft.com/pricing/details/azure-sq
 
 **Hoe kan ik de facturerings kosten voor mijn beheerde exemplaar volgen?**
 
-U kunt dit doen met behulp van de [Azure Cost Management-oplossing](../../cost-management-billing/index.yml). Navigeer naar **abonnementen** in het [Azure Portal](https://portal.azure.com) en selecteer **kosten analyse** . 
+U kunt dit doen met behulp van de [Azure Cost Management-oplossing](../../cost-management-billing/index.yml). Navigeer naar **abonnementen** in het [Azure Portal](https://portal.azure.com) en selecteer **kosten analyse**. 
 
 Gebruik de optie **geaccumuleerde kosten** en filter vervolgens op het **resource type** als `microsoft.sql/managedinstances` .
 

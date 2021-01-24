@@ -73,6 +73,8 @@
       href: sample-reset-cloud-service.md
 - name: Verwijzing
   items:
+    - name: Voor beelden van implementatie bestanden
+      href: 'https://github.com/Azure-Samples/cloud-services-extended-support'
     - name: AZ. Microsoftcompute-module
       href: 'https://www.powershellgallery.com/packages/Az.CloudService/0.1.0'
     - name: PowerShell-cmdlets

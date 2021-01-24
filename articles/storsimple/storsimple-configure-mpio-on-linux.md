@@ -7,12 +7,12 @@ ms.service: storsimple
 ms.topic: how-to
 ms.date: 06/12/2019
 ms.author: alkohli
-ms.openlocfilehash: 6584b2ecc54efd257bb30c479fd0f22150e8d9e1
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 2b7ddf6423db4c471ee2065635f4e3e89f7eb7b2
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608585"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745730"
 ---
 # <a name="configure-mpio-on-a-storsimple-host-running-centos"></a>MPIO configureren op een StorSimple-host met CentOS
 In dit artikel worden de stappen beschreven die nodig zijn voor het configureren van MPIO (multipath-i/o) op de CentOS 6,6-hostserver. De hostserver is verbonden met uw Microsoft Azure StorSimple-apparaat voor hoge Beschik baarheid via iSCSI-initia tors. Hierin wordt de automatische detectie van multipath-apparaten en de specifieke installatie van alleen voor StorSimple-volumes beschreven.
@@ -21,10 +21,6 @@ Deze procedure is van toepassing op alle modellen van de StorSimple 8000-serie a
 
 > [!NOTE]
 > Deze procedure kan niet worden gebruikt voor een StorSimple Cloud Appliance. Zie voor meer informatie host-servers configureren voor uw Cloud apparaat.
-
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *Black*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
-
 
 ## <a name="about-multipathing"></a>Over meerdere paden
 Met de functie multipath kunt u meerdere I/O-paden configureren tussen een hostserver en een opslag apparaat. Deze I/O-paden zijn fysieke SAN-verbindingen die afzonderlijke kabels, switches, netwerk interfaces en controllers kunnen bevatten. Met meerdere paden worden de I/O-paden geaggregeerd om een nieuw apparaat te configureren dat is gekoppeld aan alle geaggregeerde paden.
@@ -54,7 +50,7 @@ Het multipath. conf heeft vijf secties:
 
 - **Standaard waarden systeem niveau** *(standaard instellingen)*: u kunt de standaard instellingen van het systeem niveau opheffen.
 - **Apparaten in de zwarte** *lijst: u* kunt opgeven welke apparaten moeten worden beheerd door de toewijzing van het apparaat.
-- **Black-uitzonde ringen** *(blacklist_exceptions)*: u kunt specifieke apparaten identificeren die moeten worden behandeld als apparaten met meerdere paden, zelfs als ze in de zwarte lijst worden weer gegeven.
+- **Black-uitzonde ringen** *(blacklist_exceptions)*: u kunt specifieke apparaten identificeren die moeten worden behandeld als apparaten met meerdere paden, zelfs als deze worden vermeld in de blokkerings lijst.
 - **Specifieke instellingen voor de opslag controller** *(apparaten)*: u kunt configuratie-instellingen opgeven die worden toegepast op apparaten met leverancier-en product informatie.
 - **Apparaatspecifieke instellingen** *(meerdere paden)*: u kunt deze sectie gebruiken om de configuratie-instellingen voor afzonderlijke lun's te verfijnen.
 
@@ -215,12 +211,12 @@ De apparaten die door meerdere paden worden ondersteund, kunnen automatisch word
     ```
 
 ### <a name="step-2-configure-multipathing-for-storsimple-volumes"></a>Stap 2: meerdere paden configureren voor StorSimple-volumes
-Standaard worden alle apparaten zwart weer gegeven in het bestand met meerdere paden. conf en worden deze omzeild. U moet zwarte uitzonde ringen maken om meerdere paden voor volumes van StorSimple-apparaten toe te staan.
+Standaard zijn alle apparaten blocklisted in het bestand met meerdere paden. conf en worden overgeslagen. U moet blokkerings lijst-uitzonde ringen maken om meerdere paden voor volumes van StorSimple-apparaten toe te staan.
 
 1. Het bestand `/etc/mulitpath.conf` bewerken. Type:
    
     `vi /etc/multipath.conf`
-1. Zoek de sectie blacklist_exceptions in het bestand met meerdere paden. conf. Uw StorSimple-apparaat moet in deze sectie als een uitzonde ring Black List worden weer gegeven. U kunt opmerkingen van relevante regels in dit bestand opheffen om deze te wijzigen, zoals hieronder wordt weer gegeven (gebruik alleen het specifieke model van het apparaat dat u gebruikt):
+1. Zoek de sectie blacklist_exceptions in het bestand met meerdere paden. conf. Uw StorSimple-apparaat moet in deze sectie worden vermeld als een blokkerings lijst-uitzonde ring. U kunt opmerkingen van relevante regels in dit bestand opheffen om deze te wijzigen, zoals hieronder wordt weer gegeven (gebruik alleen het specifieke model van het apparaat dat u gebruikt):
    
     ```config
     blacklist_exceptions {

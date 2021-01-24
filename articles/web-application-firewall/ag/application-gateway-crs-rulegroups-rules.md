@@ -8,19 +8,16 @@ ms.service: web-application-firewall
 ms.date: 11/14/2019
 ms.author: victorh
 ms.topic: conceptual
-ms.openlocfilehash: 890e2b972818cf9805623d94709ce5631b50aaf5
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: e2c88091072921f1ca674868e401c34d354418de
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608602"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746506"
 ---
 # <a name="web-application-firewall-crs-rule-groups-and-rules"></a>CRS-regel groepen en-regels voor Web Application firewall
 
 Application Gateway Web Application Firewall (WAF) beschermt webtoepassingen tegen veelvoorkomende beveiligings problemen en aanvallen. Dit doet u door regels die zijn gedefinieerd op basis van de OWASP core Rule sets 3,1, 3,0 of 2.2.9. Deze regels kunnen per regel afzonderlijk worden uitgeschakeld. Dit artikel bevat de huidige regels en regel sets die worden aangeboden.
-
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *Black*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 ## <a name="core-rule-sets"></a>Core Rule Sets
 
@@ -262,7 +259,7 @@ De volgende regel groepen en regels zijn beschikbaar wanneer Web Application fir
 |941150|XSS-filter-categorie 5 = niet-toegestane HTML-kenmerken|
 |941160|NoScript XSS InjectionChecker: HTML-injectie|
 |941170|NoScript XSS InjectionChecker: kenmerk injectie|
-|941180|Tref woorden Node-Validator zwarte lijst|
+|941180|Node-Validator blokkerings lijst-tref woorden|
 |941190|XSS met Style Sheets|
 |941200|XSS met behulp van VML-frames|
 |941210|XSS met verborgen java script|
@@ -490,7 +487,7 @@ De volgende regel groepen en regels zijn beschikbaar wanneer Web Application fir
 |941130|XSS-filter-categorie 3 = kenmerk vector|
 |941140|XSS-filter-categorie 4 = java script-URI-vector|
 |941150|XSS-filter-categorie 5 = niet-toegestane HTML-kenmerken|
-|941180|Tref woorden Node-Validator zwarte lijst|
+|941180|Node-Validator blokkerings lijst-tref woorden|
 |941190|XSS met Style Sheets|
 |941200|XSS met behulp van VML-frames|
 |941210|XSS met verborgen java script|

@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: overview
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/21/2021
+ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: 6d656dbb3fb50091fc8721ba40431b37f77c4ad6
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 1b034c0f1c62eecf8139ed908a5a242060f3e886
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98662944"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746557"
 ---
 # <a name="important-upcoming-changes-to-azure-security-center"></a>Belangrijke aanstaande wijzigingen aan Azure Security Center
 
@@ -31,10 +31,40 @@ Als u op zoek bent naar de nieuwste opmerkingen bij de release, vindt u deze in 
 
 ## <a name="planned-changes"></a>Geplande wijzigingen
 
+- [De aanbevelingen voor de beveiliging van Kubernetes-workloads worden binnenkort uitgebracht voor algemene Beschik baarheid (GA)](#kubernetes-workload-protection-recommendations-will-soon-be-released-for-general-availability-ga)
 - [Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft](#two-recommendations-from-apply-system-updates-security-control-being-deprecated)
 - [Verbeteringen in aanbeveling voor SQL-gegevens classificatie](#enhancements-to-sql-data-classification-recommendation)
 - [Er zijn 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen](#35-preview-recommendations-being-added-to-increase-coverage-of-azure-security-benchmark)
 
+
+### <a name="kubernetes-workload-protection-recommendations-will-soon-be-released-for-general-availability-ga"></a>De aanbevelingen voor de beveiliging van Kubernetes-workloads worden binnenkort uitgebracht voor algemene Beschik baarheid (GA)
+
+**Geschatte datum van wijziging:** Januari 2021
+
+De aanbevelingen voor de beveiliging van Kubernetes-workloads die worden beschreven in [uw Kubernetes-workloads beveiligen](kubernetes-workload-protections.md) , zijn momenteel beschikbaar als preview-versie. Hoewel een aanbeveling een preview-versie is, wordt er geen resource weer gegeven en is deze niet opgenomen in de berekeningen van uw beveiligde Score.
+
+Deze aanbevelingen worden binnenkort uitgebracht voor algemene Beschik baarheid (GA *), en worden dus opgenomen* in de score berekening. Als u deze nog niet hebt doorgevoerd, kan dit leiden tot een geringe invloed op uw beveiligde Score.
+
+Herstel ze waar mogelijk (meer informatie over het [oplossen van aanbevelingen in azure Security Center](security-center-remediate-recommendations.md)).
+
+De aanbevelingen voor de beveiliging van Kubernetes-werk belasting zijn:
+
+- Azure Policy-invoeg toepassing voor Kubernetes moet zijn geïnstalleerd en ingeschakeld op uw clusters
+- De CPU- en geheugenlimieten van containers moeten worden afgedwongen
+- Bevoegde containers moeten worden vermeden
+- Onveranderbaar (alleen-lezen) hoofdbestandssysteem moet worden afgedwongen voor containers
+- Container met escalatie van bevoegdheden moet worden vermeden
+- Het uitvoeren van containers als hoofdgebruiker moet worden vermeden
+- Containers die gevoelige hostnaamruimten delen, moeten worden vermeden
+- Minimaal bevoegde Linux-functies moeten worden afgedwongen voor containers
+- Het gebruik van HostPath-volumekoppelingen voor pods moet worden beperkt tot een bekende lijst
+- Containers mogen alleen op toegestane poorten luisteren
+- Services mogen alleen op toegestane poorten luisteren
+- Het gebruik van hostnetwerken en -poorten moet worden beperkt
+- Het overschrijven of uitschakelen van het AppArmor-profiel voor containers moet worden beperkt
+- Container installatie kopieën moeten alleen worden geïmplementeerd vanuit vertrouwde registers             
+
+Meer informatie over deze aanbevelingen vindt [u in Beveilig uw Kubernetes-workloads](kubernetes-workload-protections.md).
 
 ### <a name="two-recommendations-from-apply-system-updates-security-control-being-deprecated"></a>Twee aanbevelingen van het beveiligings beheer ' systeem updates Toep assen ' worden afgeschaft 
 

@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: 7336078d1f04b9dcb6c2f229654f1c36d9b3114b
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: bc229974cf14ba364e5e7111dc1d2704e03c3635
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96919969"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746795"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -345,7 +345,9 @@ Dit is mogelijk als uw code dergelijke gegevens verzendt. Dit kan ook gebeuren a
 
 **Alle** octetten van het webadres van de client zijn altijd ingesteld op 0 nadat de geografische locatie kenmerken zijn opgezocht.
 
-### <a name="my-instrumentation-key-is-visible-in-my-web-page-source"></a>Mijn instrumentatie sleutel is zichtbaar in de bron van de webpagina. 
+De [Application Insights java script SDK](app/javascript.md) bevat standaard geen persoonlijke gegevens in de automatisch aanvullen. Sommige persoons gegevens die in uw toepassing worden gebruikt, kunnen echter door de SDK worden opgenomen (bijvoorbeeld volledige namen in `window.title` of account-id's in xhr URL-query parameters). Voeg een [telemetrie-initialisatie functie](app/api-filtering-sampling.md#javascript-web-applications)toe voor aangepaste gegevens maskering voor de persoon.
+
+### <a name="my-instrumentation-key-is-visible-in-my-web-page-source"></a>Mijn instrumentatie sleutel is zichtbaar in de bron van de webpagina.
 
 * Dit is gebruikelijk bij het controleren van oplossingen.
 * Het kan niet worden gebruikt om uw gegevens te stelen.

@@ -1,27 +1,26 @@
 ---
-title: IoT Plug en Play-brug bouwen, implementeren en uitbreiden | Microsoft Docs
-description: Identificeer de IoT Plug en Play Bridge-onderdelen. Meer informatie over hoe u de Bridge kunt uitbreiden en hoe u deze kunt uitvoeren op IoT-apparaten, gateways en als IoT Edge-module.
+title: IoT Plug en Play-brug bouwen en implementeren | Microsoft Docs
+description: Identificeer de IoT Plug en Play Bridge-onderdelen. Meer informatie over hoe u deze kunt uitvoeren op IoT-apparaten, gateways en als IoT Edge-module.
 author: usivagna
 ms.author: ugans
-ms.date: 12/11/2020
+ms.date: 1/20/2021
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: 43c89b0fac08bf9f2c72f885fbf4788371876b17
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: b7947eab93ebc8e523e163af601893522132e06a
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678573"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745664"
 ---
-# <a name="build-deploy-and-extend-the-iot-plug-and-play-bridge"></a>De IoT Plug en Play-brug bouwen, implementeren en uitbreiden
+# <a name="build-and-deploy-the-iot-plug-and-play-bridge"></a>De IoT Plug en Play-brug bouwen en implementeren
 
-Met de IoT Plug en Play-brug kunt u de bestaande apparaten die zijn gekoppeld aan een gateway, verbinden met uw IoT-hub. U gebruikt de Bridge om IoT Plug en Play-interfaces toe te wijzen aan de gekoppelde apparaten. Een IoT Plug en Play-interface definieert de telemetrie die een apparaat verzendt, de eigenschappen gesynchroniseerd tussen het apparaat en de Cloud en de opdrachten waarop het apparaat reageert. U kunt de open-source Bridge-toepassing installeren en configureren op Windows-of Linux-gateways.
+Met de [iot Plug en Play-brug](concepts-iot-pnp-bridge.md#iot-plug-and-play-bridge-architecture) kunt u de bestaande apparaten die zijn gekoppeld aan een gateway, verbinden met uw IOT-hub. U gebruikt de Bridge om IoT Plug en Play-interfaces toe te wijzen aan de gekoppelde apparaten. Een IoT Plug en Play-interface definieert de telemetrie die een apparaat verzendt, de eigenschappen gesynchroniseerd tussen het apparaat en de Cloud en de opdrachten waarop het apparaat reageert. U kunt de open-source Bridge-toepassing installeren en configureren op Windows-of Linux-gateways. Daarnaast kan de Bridge worden uitgevoerd als een Azure IoT Edge runtime-module.
 
 In dit artikel wordt uitgelegd hoe u het volgende kunt doen:
 
 - Een brug configureren.
-- Breid een brug uit door nieuwe adapters te maken.
 - Hoe u de Bridge in verschillende omgevingen bouwt en uitvoert.
 
 Zie voor een eenvoudig voor beeld waarin wordt getoond hoe u de Bridge kunt gebruiken [hoe u verbinding maakt met het IoT Plug en Play Bridge-voor beeld dat op Linux of Windows wordt uitgevoerd om te IOT hub](howto-use-iot-pnp-bridge.md).
@@ -78,103 +77,12 @@ Het [schema van het configuratie bestand](https://github.com/Azure/iot-plug-and-
 
 Wanneer de Bridge wordt uitgevoerd als een IoT Edge module op een IoT Edge runtime, wordt het configuratie bestand verzonden vanuit de Cloud als een update naar de `PnpBridgeConfig` gewenste eigenschap. De brug wacht op het bijwerken van deze eigenschap voordat de adapters en onderdelen worden geconfigureerd.
 
-## <a name="extend-the-bridge"></a>De Bridge uitbreiden
-
-Als u de mogelijkheden van de Bridge wilt uitbreiden, kunt u uw eigen brug adapters ontwerpen.
-
-De Bridge gebruikt adapters voor het volgende:
-
-- Een verbinding tot stand brengen tussen een apparaat en de Cloud.
-- Schakel de gegevens stroom tussen een apparaat en de cloud in.
-- Schakel Apparaatbeheer in vanuit de Cloud.
-
-Elke brug adapter moet:
-
-- Een Digital apparaatdubbels-interface maken.
-- Gebruik de interface om de functionaliteit van het apparaat te binden aan Cloud mogelijkheden zoals telemetrie, eigenschappen en opdrachten.
-- Bepaal de controle-en gegevens communicatie met de hardware of firmware van het apparaat.
-
-Elke brug adapter communiceert met een specifiek type apparaat op basis van de manier waarop de adapter verbinding maakt en communiceert met het apparaat. Zelfs als communicatie met een apparaat een shaking-protocol gebruikt, kan een brug adapter meerdere manieren hebben om de gegevens van het apparaat te interpreteren. In dit scenario gebruikt de brug adapter informatie voor de adapter in het configuratie bestand om de *interface configuratie* te bepalen die de adapter moet gebruiken voor het parseren van de gegevens.
-
-Voor de interactie met het apparaat gebruikt een brug adapter een communicatie protocol dat wordt ondersteund door het apparaat en Api's die worden geboden door het onderliggende besturings systeem of de leverancier van het apparaat.
-
-Voor de interactie met de Cloud gebruikt een brug adapter Api's die worden geleverd door de Azure IoT Device C SDK voor het verzenden van telemetrie, het maken van digitale dubbele interfaces, het verzenden van eigenschappen updates en het maken van call back-functies voor eigenschaps updates en opdrachten.
-
-### <a name="create-a-bridge-adapter"></a>Een brug adapter maken
-
-De Bridge verwacht een brug adapter voor het implementeren van de Api's die zijn gedefinieerd in de [_PNP_ADAPTER](https://github.com/Azure/iot-plug-and-play-bridge/blob/9964f7f9f77ecbf4db3b60960b69af57fd83a871/pnpbridge/src/pnpbridge/inc/pnpadapter_api.h#L296) -Interface:
-
-```c
-typedef struct _PNP_ADAPTER {
-  // Identity of the IoT Plug and Play adapter that is retrieved from the config
-  const char* identity;
-
-  PNPBRIDGE_ADAPTER_CREATE createAdapter;
-  PNPBRIDGE_COMPONENT_CREATE createPnpComponent;
-  PNPBRIDGE_COMPONENT_START startPnpComponent;
-  PNPBRIDGE_COMPONENT_STOP stopPnpComponent;
-  PNPBRIDGE_COMPONENT_DESTROY destroyPnpComponent;
-  PNPBRIDGE_ADAPTER_DESTOY destroyAdapter;
-} PNP_ADAPTER, * PPNP_ADAPTER;
-```
-
-In deze interface:
-
-- `PNPBRIDGE_ADAPTER_CREATE` Hiermee maakt u de adapter en worden de bronnen voor interface beheer ingesteld. Een adapter kan ook gebruikmaken van globale adapter parameters voor het maken van adapters. Deze functie wordt eenmaal voor één adapter aangeroepen.
-- `PNPBRIDGE_COMPONENT_CREATE` maakt de digitale twee-client interfaces en koppelt de call back-functies. De adapter initieert het communicatie kanaal op het apparaat. De adapter kan de resources zo instellen dat de telemetrische stroom wordt ingeschakeld, maar er wordt geen telemetrie gerapporteerd totdat deze `PNPBRIDGE_COMPONENT_START` wordt aangeroepen. Deze functie wordt eenmaal aangeroepen voor elk interface onderdeel in het configuratie bestand.
-- `PNPBRIDGE_COMPONENT_START` wordt aangeroepen zodat de brug adapter telemetrie van het apparaat naar de digitale dubbele client kan sturen. Deze functie wordt eenmaal aangeroepen voor elk interface onderdeel in het configuratie bestand.
-- `PNPBRIDGE_COMPONENT_STOP` Hiermee wordt de telemetrie stroom gestopt.
-- `PNPBRIDGE_COMPONENT_DESTROY` de digitale dubbele client en de bijbehorende interface bronnen worden vernietigd. Deze functie wordt eenmaal aangeroepen voor elk interface onderdeel in het configuratie bestand wanneer de Bridge wordt gescheurd of wanneer er een fatale fout optreedt.
-- `PNPBRIDGE_ADAPTER_DESTROY` de resources van de brug adapter opruimen.
-
-### <a name="bridge-core-interaction-with-bridge-adapters"></a>Kern interactie van Bridge met brug adapters
-
-In de volgende lijst wordt beschreven wat er gebeurt wanneer de Bridge wordt gestart:
-
-1. Wanneer de Bridge wordt gestart, zoekt de brug adapter Manager elk interface onderdeel dat is gedefinieerd in het configuratie bestand en aanroepen `PNPBRIDGE_ADAPTER_CREATE` op de juiste adapter. De adapter kan globale adapter configuratie parameters gebruiken om bronnen in te stellen voor de ondersteuning van de verschillende *Interface configuraties*.
-1. Voor elk apparaat in het configuratie bestand initieert Bridge Manager het maken van de interface door de `PNPBRIDGE_COMPONENT_CREATE` juiste brug adapter aan te roepen.
-1. De adapter ontvangt alle optionele adapter configuratie-instellingen voor het interface onderdeel en gebruikt deze informatie om verbindingen met het apparaat in te stellen.
-1. De adapter maakt de digitale twee client interfaces en koppelt de call back-functies voor eigenschaps updates en opdrachten. Het tot stand brengen van apparaat-verbindingen mag het retour neren van de aanroepen niet blok keren nadat de digitale dubbele interface is gemaakt. De verbinding met het actieve apparaat is onafhankelijk van de actieve interface client die door de Bridge wordt gemaakt. Als een verbinding mislukt, wordt ervan uitgegaan dat het apparaat niet actief is. De brug adapter kan ervoor kiezen om deze verbinding opnieuw tot stand te brengen.
-1. Nadat het beheer van de brug adapter alle interface onderdelen heeft gemaakt die in het configuratie bestand zijn opgegeven, registreert alle interfaces met Azure IoT Hub. Registratie is een blokkerende, asynchrone aanroep. Wanneer de oproep is voltooid, wordt een call back in de brug adapter geactiveerd, waarmee de verwerking van eigenschappen en opdrachten in de cloud kan worden gestart.
-1. De brug adapter manager roept vervolgens `PNPBRIDGE_INTERFACE_START` op elk onderdeel en de brug adapter begint met het rapporteren van telemetrie naar de digitale dubbele client.
-
-### <a name="design-guidelines"></a>Ontwerprichtlijnen
-
-Volg deze richt lijnen wanneer u een nieuwe brug adapter ontwikkelt:
-
-- Bepaal welke apparaatfuncties worden ondersteund en wat de interface definitie van de onderdelen die deze adapter gebruiken eruitziet als.
-- Bepaal in welke interface en globale para meters uw adapter moet worden gedefinieerd in het configuratie bestand.
-- Bepaal de communicatie op laag niveau die vereist is voor de ondersteuning van de onderdeel eigenschappen en-opdrachten.
-- Bepaal hoe de adapter de onbewerkte gegevens van het apparaat moet parseren en converteer deze naar de telemetrie-typen die door de IoT Plug en Play interface definitie is opgegeven.
-- Implementeer de eerder beschreven brug adapter-interface.
-- Voeg de nieuwe adapter toe aan het adapter manifest en bouw de Bridge.
-
-### <a name="enable-a-new-bridge-adapter"></a>Een nieuwe brug adapter inschakelen
-
-U schakelt adapters in de Bridge in door een verwijzing toe te voegen aan [adapter_manifest. c](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/src/adapters/src/shared/adapter_manifest.c):
-
-```c
-  extern PNP_ADAPTER MyPnpAdapter;
-  PPNP_ADAPTER PNP_ADAPTER_MANIFEST[] = {
-    .
-    .
-    &MyPnpAdapter
-  }
-```
-
-> [!IMPORTANT]
-> Retour aanroepen van Bridge-adapters worden sequentieel aangeroepen. Een adapter mag geen call back blok keren, omdat hiermee wordt voor komen dat de Bridge-kern voortgang kan maken.
-
-### <a name="sample-camera-adapter"></a>Voor beeld camera adapter
-
-In het [Leesmij-bestand](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/src/adapters/src/Camera/readme.md) van de camera wordt een voor beeld van een camera adapter beschreven die u kunt inschakelen.
-
 ## <a name="build-and-run-the-bridge-on-an-iot-device-or-gateway"></a>De brug bouwen en uitvoeren op een IoT-apparaat of-gateway
 
 | Platform | Ondersteund |
 | :-----------: | :-----------: |
-| Windows |  Yes |
-| Linux | Yes |
+| Windows |  Ja |
+| Linux | Ja |
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -296,7 +204,7 @@ Debug\pnpbridge_bin.exe
 | Platform | Ondersteund |
 | :-----------: | :-----------: |
 | Windows |  Nee |
-| Linux | Yes |
+| Linux | Ja |
 
 ### <a name="prerequisites"></a>Vereisten
 
@@ -378,7 +286,6 @@ Start VS code, open het opdracht palet, Voer *externe WSL in: map openen in WSL*
 Open het *pnpbridge\Dockerfile.amd64* -bestand. Bewerk de definities van omgevings variabelen als volgt:
 
 ```dockerfile
-ENV IOTHUB_DEVICE_CONNECTION_STRING="{Add your device connection string here}"
 ENV PNP_BRIDGE_ROOT_MODEL_ID="dtmi:com:example:RootPnpBridgeSampleDevice;1"
 ENV PNP_BRIDGE_HUB_TRACING_ENABLED="false"
 ENV IOTEDGE_WORKLOADURI="something"

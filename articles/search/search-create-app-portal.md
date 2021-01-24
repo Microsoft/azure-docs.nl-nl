@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: quickstart
-ms.date: 09/25/2020
-ms.openlocfilehash: b69feec7249c80fc63d803a14f360614bcf880fa
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.date: 01/23/2021
+ms.openlocfilehash: 590afe4c396942c5179826cd831908e37f48c3e4
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "91399819"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745747"
 ---
 # <a name="quickstart-create-a-demo-app-in-the-portal-azure-cognitive-search"></a>Quickstart: Een demo-app maken in de portal (Azure Cognitive Search)
 
@@ -61,7 +61,7 @@ De wizard biedt een basisindeling voor weergegeven zoekresultaten die ruimte bev
 
 1. Kies bij Beschrijving een veld dat details biedt waarmee iemand kan bepalen of er moet worden geklikt op het desbetreffende document.
 
-   :::image type="content" source="media/search-create-app-portal/configure-results.png" alt-text="gegevensbronpagina voor samplegegevens" border="false":::
+   :::image type="content" source="media/search-create-app-portal/configure-results.png" alt-text="resultaten voor voorbeeldgegevens configureren" border="false":::
 
 ## <a name="add-a-sidebar"></a>Een zijbalk toevoegen
 
@@ -72,8 +72,9 @@ In Azure Cognitive Search is facetnavigatie een cumulatieve filterervaring. Als 
 > [!TIP]
 > U kunt het volledige indexschema bekijken in de portal. Zoek naar de koppeling **Indexdefinitie (JSON)** op de overzichtspagina van elke index. Velden die in aanmerking komen voor facetnavigatie hebben de kenmerken filterbaar:waar en facetbaar:waar.
 
-Accepteer de huidige selectie facetten en ga door naar de volgende pagina.
+1. Selecteer in de wizard het tabblad **zijbalk** boven aan de pagina. Er wordt een lijst weer geven met alle velden die zijn toegeschreven als filterbaar en bruikbaar in de index.
 
+1. Accepteer de huidige selectie van facet velden en ga door naar de volgende pagina.
 
 ## <a name="add-typeahead"></a>Typeahead toevoegen
 
@@ -83,20 +84,44 @@ Suggesties worden ingeschakeld voor specifieke velddefinities. De wizard biedt o
 
 In de volgende schermopname ziet u de opties in de wizard met daarnaast een weergegeven pagina in de app. U kunt zien hoe veldselecties worden gebruikt en hoe Veldnaam weergeven wordt gebruikt voor het opnemen of weglaten van labels in de suggestie.
 
-:::image type="content" source="media/search-create-app-portal/suggestions.png" alt-text="gegevensbronpagina voor samplegegevens":::
+:::image type="content" source="media/search-create-app-portal/suggestions.png" alt-text="Configuratie van querysuggesties":::
+
+## <a name="add-suggestions"></a>Suggesties toevoegen
+
+Suggesties verwijzen naar Automatische query prompts die zijn gekoppeld aan het zoekvak. Cognitive Search ondersteunt twee: automatisch *aanvullen* van een gedeeltelijk ingevoerde zoek term en *suggesties* voor een vervolg keuzelijst met mogelijke overeenkomende documenten op basis van.
+
+De wizard ondersteunt suggesties en de velden die voorgestelde resultaten kunnen bieden, zijn afgeleid van een [`Suggesters`](index-add-suggesters.md) construct in de index:
+
+```JSON
+  "suggesters": [
+    {
+      "name": "sg",
+      "searchMode": "analyzingInfixMatching",
+      "sourceFields": [
+        "number",
+        "street",
+        "city",
+        "region",
+        "postCode",
+        "tags"
+      ]
+```
+
+1. Selecteer in de wizard het tabblad **suggesties** boven aan de pagina. Er wordt een lijst weer geven met alle velden die zijn opgegeven in het index schema als suggesties providers.
+
+1. De huidige selectie accepteren en door gaan naar de volgende pagina.
 
 ## <a name="create-download-and-execute"></a>Maken, downloaden en uitvoeren
 
-1. Selecteer **Demo-app maken** om het HTML-bestand te genereren.
+1. Selecteer **demo-app maken** onder aan de pagina om het HTML-bestand te genereren.
 
 1. Selecteer desgevraagd **Uw app downloaden** om het bestand te downloaden.
 
-1. Open het bestand. U ziet een vergelijkbare pagina als in de volgende schermopname. Voer een term in en gebruik filters om de resultaten te beperken. 
+1. Open het bestand en klik op de zoek knop. Met deze actie wordt een query uitgevoerd. Dit kan een lege query ( `*` ) zijn die een wille keurige resultatenset retourneert. De pagina moet er ongeveer uitzien als in de volgende scherm afbeelding. Voer een term in en gebruik filters om de resultaten te beperken. 
 
 De onderliggende index bestaat uit fictieve gegenereerde gegevens die zijn gedupliceerd in andere documenten en beschrijvingen die soms niet overeenkomen met de afbeelding. U kunt een samenhangende ervaring verwachten als u een app maakt op basis van uw eigen indexen.
 
-:::image type="content" source="media/search-create-app-portal/run-app.png" alt-text="gegevensbronpagina voor samplegegevens":::
-
+:::image type="content" source="media/search-create-app-portal/run-app.png" alt-text="De app uitvoeren":::
 
 ## <a name="clean-up-resources"></a>Resources opschonen
 
@@ -108,7 +133,7 @@ Als u een gratis service gebruikt, moet u er rekening mee houden dat u bent bepe
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Hoewel de standaard-app nuttig is voor de eerste verkenning en kleine taken, kunt u de concepten en werkstroom beter begrijpen als u de API's vroegtijdig bekijkt:
+De demo-app is handig voor het prototypen, omdat u een eindgebruikers ervaring kunt simuleren zonder Java script-of front-end-code te hoeven schrijven. Begin met facet navigatie voor meer informatie over front-end-functies:
 
 > [!div class="nextstepaction"]
-> [Een index maken met behulp van de .NET-SDK](./search-get-started-dotnet.md)
+> [Een facet filter maken](search-filters-facets.md)

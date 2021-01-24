@@ -11,19 +11,16 @@ author: justinha
 manager: daveba
 ms.reviewer: michmcla
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 6d436414393d77c83acc835110f17e55e491dce1
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 695261ceae9d64be9395e6de082f97be04292078
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503486"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745982"
 ---
 # <a name="advanced-configuration-options-for-the-nps-extension-for-multi-factor-authentication"></a>Geavanceerde configuratieopties voor de NPS-extensie voor Multi-Factor Authentication
 
 De uitbrei ding Network Policy Server (NPS) breidt de Azure AD-Multi-Factor Authentication van uw Cloud uit in uw on-premises infra structuur. In dit artikel wordt ervan uitgegaan dat u de uitbrei ding al hebt geïnstalleerd en wilt weten hoe u de uitbrei ding voor uw behoeften kunt aanpassen.
-
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 ## <a name="alternate-login-id"></a>Alternatieve aanmeldings-ID
 
@@ -54,7 +51,7 @@ Als u een lijst met toegestane IP-adressen wilt configureren, gaat u naar `HKLM\
 > [!NOTE]
 > Deze register sleutel wordt niet standaard gemaakt door het installatie programma en er wordt een fout weer gegeven in het AuthZOptCh-logboek wanneer de service opnieuw wordt gestart. Deze fout in het logboek kan worden genegeerd, maar als deze register sleutel is gemaakt en leeg blijft als deze niet nodig is, wordt het fout bericht niet weer gegeven.
 
-Wanneer een aanvraag afkomstig is van een IP-adres dat in de is `IP_WHITELIST` , wordt verificatie in twee stappen overgeslagen. De IP-lijst wordt vergeleken met het IP-adres dat is opgenomen in het kenmerk *ratNASIPAddress* van de RADIUS-aanvraag. Als een RADIUS-aanvraag wordt geleverd zonder het kenmerk ratNASIPAddress, wordt de volgende waarschuwing vastgelegd: "P_WHITE_LIST_WARNING:: IP-white list wordt genegeerd als bron-IP ontbreekt in de RADIUS-aanvraag in het kenmerk NasIpAddress."
+Wanneer een aanvraag afkomstig is van een IP-adres dat in de is `IP_WHITELIST` , wordt verificatie in twee stappen overgeslagen. De IP-lijst wordt vergeleken met het IP-adres dat is opgenomen in het kenmerk *ratNASIPAddress* van de RADIUS-aanvraag. Als een RADIUS-aanvraag wordt geleverd zonder het kenmerk ratNASIPAddress, wordt er een waarschuwing vastgelegd: "IP_WHITE_LIST_WARNING:: IP-white list wordt genegeerd omdat het bron-IP-adres ontbreekt in het kenmerk NasIpAddress van de RADIUS-aanvraag.
 
 ## <a name="next-steps"></a>Volgende stappen
 

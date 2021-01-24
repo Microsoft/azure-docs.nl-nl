@@ -1,23 +1,23 @@
 ---
-title: 'Zelfstudie: Een aangepaste vaardigheid maken en implementeren met Azure Machine Learning'
+title: 'Voor beeld: een aangepaste vaardigheid maken en implementeren met Azure Machine Learning'
 titleSuffix: Azure Cognitive Search
-description: Deze zelfstudie demonstreert hoe u Azure Machine Learning kunt gebruiken om een aangepaste vaardigheid te ontwerpen en implementeren voor de AI-verrijkingspijplijn van Azure Cognitive Search.
+description: In dit voor beeld ziet u hoe u Azure Machine Learning kunt gebruiken om een aangepaste vaardigheid te maken en te implementeren voor de AI-verrijkings pijplijn van Azure Cognitive Search.
 manager: nitinme
 author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
-ms.topic: tutorial
+ms.topic: conceptual
 ms.date: 09/25/2020
-ms.openlocfilehash: fa961a5a6d3a3b827a082fbac2acc3431ac40949
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
-ms.translationtype: HT
+ms.openlocfilehash: 98d8395236bf955eed88f36c03c96981fa0e4b6b
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057600"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745631"
 ---
-# <a name="tutorial-build-and-deploy-a-custom-skill-with-azure-machine-learning"></a>Zelfstudie: Een aangepaste vaardigheid ontwerpen en implementeren met Azure Machine Learning 
+# <a name="example-build-and-deploy-a-custom-skill-with-azure-machine-learning"></a>Voor beeld: een aangepaste vaardigheid bouwen en implementeren met Azure Machine Learning 
 
-In deze zelfstudie gebruikt u de [gegevensset Hotelrecensies](https://www.kaggle.com/datafiniti/hotel-reviews) (gedistribueerd onder de Creative Commons-licentie [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)) om met behulp van Azure Machine Learning een [aangepaste vaardigheid](./cognitive-search-aml-skill.md) te maken voor het extraheren van aspectgebaseerd sentiment uit de recensies. Op die manier kan positief en negatief sentiment in dezelfde recensie correct worden toegewezen aan geïdentificeerde entiteiten zoals personeel, kamer, lobby of zwembad.
+In dit voor beeld gebruikt u de [gegevensset](https://www.kaggle.com/datafiniti/hotel-reviews) voor het hotels (gedistribueerd onder de Creative Commons [-licentie CC by-NC-SA 4,0](https://creativecommons.org/licenses/by-nc-sa/4.0/legalcode.txt)) om een [aangepaste vaardigheid](./cognitive-search-aml-skill.md) te maken met behulp van Azure machine learning om op aspect gebaseerde sentiment uit de beoordelingen te halen. Op die manier kan positief en negatief sentiment in dezelfde recensie correct worden toegewezen aan geïdentificeerde entiteiten zoals personeel, kamer, lobby of zwembad.
 
 Om het model voor aspectgebaseerd sentiment te trainen in Azure Machine Learning, gebruikt u de [opslagplaats met NLP-recepten](https://github.com/microsoft/nlp-recipes/tree/master/examples/sentiment_analysis/absa). Het model wordt vervolgens als een eindpunt geïmplementeerd in een Azure Kubernetes-cluster. Na implementatie wordt het eindpunt als een AML-vaardigheid aan de verrijkingspijplijn toegevoegd voor gebruik door de Cognitive Search-service.
 

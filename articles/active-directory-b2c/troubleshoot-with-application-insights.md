@@ -12,12 +12,12 @@ ms.date: 10/16/2020
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 1628d78c9d1e4db1f59982d696dcc886646fe604
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
+ms.openlocfilehash: 33504487b6175023e18893812c533950305cb1d3
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92132054"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745999"
 ---
 # <a name="collect-azure-active-directory-b2c-logs-with-application-insights"></a>Azure Active Directory B2C-logboeken met Application Insights verzamelen
 
@@ -26,7 +26,7 @@ In dit artikel worden de stappen beschreven voor het verzamelen van logboeken va
 De gedetailleerde activiteiten logboeken die hier worden beschreven, moeten **alleen** worden ingeschakeld tijdens de ontwikkeling van uw aangepaste beleids regels.
 
 > [!WARNING]
-> Stel de to niet `DeploymentMode` `Developer` in in productie omgevingen. In Logboeken worden alle claims verzameld die worden verzonden naar en van id-providers. U bent als ontwikkelaar verantwoordelijk voor alle persoons gegevens die in uw Application Insights-logboeken worden verzameld. Deze gedetailleerde logboeken worden alleen verzameld wanneer het beleid in de **ontwikkelaars modus**wordt geplaatst.
+> Stel de to niet `DeploymentMode` `Development` in in productie omgevingen. In Logboeken worden alle claims verzameld die worden verzonden naar en van id-providers. U bent als ontwikkelaar verantwoordelijk voor alle persoons gegevens die in uw Application Insights-logboeken worden verzameld. Deze gedetailleerde logboeken worden alleen verzameld wanneer het beleid in de **ontwikkelaars modus** wordt geplaatst.
 
 ## <a name="set-up-application-insights"></a>Application Insights instellen
 
@@ -35,8 +35,8 @@ Als u er nog geen hebt, maakt u een instantie van Application Insights in uw abo
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
 1. Selecteer het filter **Directory + abonnement** in het bovenste menu en selecteer vervolgens de map die uw Azure-abonnement bevat (niet uw Azure AD B2C Directory).
 1. Selecteer **een resource maken** in het navigatie menu aan de linkerkant.
-1. Zoek en selecteer **Application Insights**en selecteer vervolgens **maken**.
-1. Vul het formulier in, selecteer **controleren + maken**en selecteer vervolgens **maken**.
+1. Zoek en selecteer **Application Insights** en selecteer vervolgens **maken**.
+1. Vul het formulier in, selecteer **controleren + maken** en selecteer vervolgens **maken**.
 1. Zodra de implementatie is voltooid, selecteert **u naar resource**.
 1. Onder **configureren** in Application Insights menu, selecteert u **Eigenschappen**.
 1. Noteer de **instrumentatie sleutel** voor gebruik in een latere stap.
@@ -59,7 +59,7 @@ Als u er nog geen hebt, maakt u een instantie van Application Insights in uw abo
     ```
 
     * `DeveloperMode="true"` vertelt ApplicationInsights om de telemetrie te versnellen door de verwerkings pijplijn. Goed voor ontwikkeling, maar beperkt op hoge volumes. Stel in productie de in `DeveloperMode` op `false` .
-    * `ClientEnabled="true"` Hiermee wordt het ApplicationInsights-client script verzonden voor het bijhouden van de pagina weergave en fouten aan de client zijde. U kunt deze weer geven in de tabel **browserTimings** in de Application Insights Portal. Als u deze instelling inschakelt `ClientEnabled= "true"` , voegt u Application Insights toe aan uw pagina script en krijgt u een tijds duur van het laden van pagina's en Ajax-aanroepen, tellingen, Details van browser uitzonderingen en Ajax-fouten, en het aantal gebruikers en sessies. Dit veld is **optioneel**en is standaard ingesteld op `false` .
+    * `ClientEnabled="true"` Hiermee wordt het ApplicationInsights-client script verzonden voor het bijhouden van de pagina weergave en fouten aan de client zijde. U kunt deze weer geven in de tabel **browserTimings** in de Application Insights Portal. Als u deze instelling inschakelt `ClientEnabled= "true"` , voegt u Application Insights toe aan uw pagina script en krijgt u een tijds duur van het laden van pagina's en Ajax-aanroepen, tellingen, Details van browser uitzonderingen en Ajax-fouten, en het aantal gebruikers en sessies. Dit veld is **optioneel** en is standaard ingesteld op `false` .
     * `ServerEnabled="true"` Hiermee wordt de bestaande UserJourneyRecorder-JSON als aangepaste gebeurtenis verzonden naar Application Insights.
 
     Bijvoorbeeld:

@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 09/25/2020
+ms.date: 01/23/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 960657d27be4b9dab9f242428592bbb404a49d86
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
-ms.translationtype: HT
+ms.openlocfilehash: e2ca5f42120661b887d07e697596f41cb7a7fce4
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94697166"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745764"
 ---
 # <a name="tutorial-index-azure-sql-data-using-the-net-sdk"></a>Zelfstudie: Azure SQL-gegevens indexeren met de .NET SDK
 
@@ -107,14 +107,14 @@ Voor API-aanroepen is de service-URL en een toegangssleutel vereist. Een zoekser
 
 1. Open **appsettings.json** in Solution Explorer om verbindingsgegevens op te geven.
 
-1. Voor `searchServiceName` geldt: als de volledige URL https://my-demo-service.search.windows.net is, moet u de servicenaam my-demo-service opgeven.
+1. Voor `SearchServiceEndPoint` , als de volledige URL op de pagina service overzicht is " https://my-demo-service.search.windows.net ", is de waarde die moet worden verstrekt de URL.
 
 1. Voor `AzureSqlConnectionString` is de tekenreeksindeling vergelijkbaar met het volgende: `"Server=tcp:{your_dbname}.database.windows.net,1433;Initial Catalog=hotels-db;Persist Security Info=False;User ID={your_username};Password={your_password};MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;"`
 
     ```json
     {
-      "SearchServiceName": "<placeholder-Azure-Search-service-name>",
-      "SearchServiceAdminApiKey": "<placeholder-admin-key-for-Azure-Search>",
+      "SearchServiceEndPoint": "<placeholder-search-url>",
+      "SearchServiceAdminApiKey": "<placeholder-admin-key-for-search-service>",
       "AzureSqlConnectionString": "<placeholder-ADO.NET-connection-string",
     }
     ```
@@ -130,11 +130,12 @@ Voor indexeerfuncties is een gegevensbronobject en een index vereist. Relevante 
 
 ### <a name="in-hotelcs"></a>In hotel.cs
 
-Het indexschema definieert de verzameling met velden, met inbegrip van kenmerken die toegestane bewerkingen opgeven, bijvoorbeeld of de volledige tekst van een veld kan worden doorzocht, gefilterd of gesorteerd zoals wordt weergegeven in de volgende velddefinitie voor HotelName. 
+Het indexschema definieert de verzameling met velden, met inbegrip van kenmerken die toegestane bewerkingen opgeven, bijvoorbeeld of de volledige tekst van een veld kan worden doorzocht, gefilterd of gesorteerd zoals wordt weergegeven in de volgende velddefinitie voor HotelName. Een [SearchableField](/dotnet/api/azure.search.documents.indexes.models.searchablefield) is zoek opdrachten in volledige tekst per definitie. Andere kenmerken worden expliciet toegewezen.
 
 ```csharp
 . . . 
-[IsSearchable, IsFilterable, IsSortable]
+[SearchableField(IsFilterable = true, IsSortable = true)]
+[JsonPropertyName("hotelName")]
 public string HotelName { get; set; }
 . . .
 ```
@@ -143,59 +144,73 @@ Een schema kan ook andere elementen bevatten, zoals scoreprofielen om een zoeksc
 
 ### <a name="in-programcs"></a>In Program.cs
 
-Het hoofdprogramma bevat logica voor het maken van een client, een index, een gegevensbron en een indexeerfunctie. De code controleert op en verwijdert bestaande resources met dezelfde naam, waarbij ervan wordt uitgegaan dat u dit programma meerdere keren uitvoert.
+Het hoofd programma bevat logica voor het maken van [een Indexeer functie-client](/dotnet/api/azure.search.documents.indexes.models.searchindexer), een index, een gegevens bron en een Indexeer functie. De code controleert op en verwijdert bestaande resources met dezelfde naam, waarbij ervan wordt uitgegaan dat u dit programma meerdere keren uitvoert.
 
-Het gegevensbronobject is geconfigureerd met instellingen die specifiek zijn voor Azure SQL Database-resources, waaronder [gedeeltelijke of incrementele indexering](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#capture-new-changed-and-deleted-rows) voor het gebruik van de ingebouwde [functies voor het detecteren van veranderingen](/sql/relational-databases/track-changes/about-change-tracking-sql-server) van Azure SQL. De voorbeelddatabase voor hotels in Azure SQL heeft een kolom 'voorlopig verwijderen' met de naam **IsDeleted**. Als deze kolom is ingesteld op True in de database, verwijdert de indexeerfunctie het bijbehorende document uit de Azure Cognitive Search-index.
+Het gegevensbronobject is geconfigureerd met instellingen die specifiek zijn voor Azure SQL Database-resources, waaronder [gedeeltelijke of incrementele indexering](search-howto-connecting-azure-sql-database-to-azure-search-using-indexers.md#capture-new-changed-and-deleted-rows) voor het gebruik van de ingebouwde [functies voor het detecteren van veranderingen](/sql/relational-databases/track-changes/about-change-tracking-sql-server) van Azure SQL. De resource-demo database in Azure SQL heeft een kolom ' voorlopig verwijderen ' met de naam **IsDeleted**. Als deze kolom is ingesteld op True in de database, verwijdert de indexeerfunctie het bijbehorende document uit de Azure Cognitive Search-index.
 
-  ```csharp
-  Console.WriteLine("Creating data source...");
+```csharp
+Console.WriteLine("Creating data source...");
 
-  DataSource dataSource = DataSource.AzureSql(
-      name: "azure-sql",
-      sqlConnectionString: configuration["AzureSQLConnectionString"],
-      tableOrViewName: "hotels",
-      deletionDetectionPolicy: new SoftDeleteColumnDeletionDetectionPolicy(
-          softDeleteColumnName: "IsDeleted",
-          softDeleteMarkerValue: "true"));
-  dataSource.DataChangeDetectionPolicy = new SqlIntegratedChangeTrackingPolicy();
+var dataSource =
+      new SearchIndexerDataSourceConnection(
+         "hotels-sql-ds",
+         SearchIndexerDataSourceType.AzureSql,
+         configuration["AzureSQLConnectionString"],
+         new SearchIndexerDataContainer("hotels"));
 
-  searchService.DataSources.CreateOrUpdateAsync(dataSource).Wait();
-  ```
+indexerClient.CreateOrUpdateDataSourceConnection(dataSource);
+```
 
-Een indexeerfunctie-object is platform-neutraal, waarbij de configuratie, planning en aanroep hetzelfde zijn, ongeacht de bron. Dit voorbeeld bevat een schema, een hersteloptie waarmee de indexeringsgeschiedenis wordt gewist en een methode wordt aangeroepen om de indexeerfunctie direct te maken en uit te voeren.
+Een indexeerfunctie-object is platform-neutraal, waarbij de configuratie, planning en aanroep hetzelfde zijn, ongeacht de bron. Dit voorbeeld bevat een schema, een hersteloptie waarmee de indexeringsgeschiedenis wordt gewist en een methode wordt aangeroepen om de indexeerfunctie direct te maken en uit te voeren. Gebruik [CreateOrUpdateIndexerAsync](/dotnet/api/azure.search.documents.indexes.searchindexerclient.createorupdateindexerasync)om een Indexeer functie te maken of bij te werken.
 
-  ```csharp
-  Console.WriteLine("Creating Azure SQL indexer...");
-  Indexer indexer = new Indexer(
-      name: "azure-sql-indexer",
-      dataSourceName: dataSource.Name,
-      targetIndexName: index.Name,
-      schedule: new IndexingSchedule(TimeSpan.FromDays(1)));
-  // Indexers contain metadata about how much they have already indexed
-  // If we already ran the sample, the indexer will remember that it already
-  // indexed the sample data and not run again
-  // To avoid this, reset the indexer if it exists
-  exists = await searchService.Indexers.ExistsAsync(indexer.Name);
-  if (exists)
-  {
-      await searchService.Indexers.ResetAsync(indexer.Name);
-  }
+```csharp
+Console.WriteLine("Creating Azure SQL indexer...");
 
-  await searchService.Indexers.CreateOrUpdateAsync(indexer);
+var schedule = new IndexingSchedule(TimeSpan.FromDays(1))
+{
+      StartTime = DateTimeOffset.Now
+};
 
-  // We created the indexer with a schedule, but we also
-  // want to run it immediately
-  Console.WriteLine("Running Azure SQL indexer...");
+var parameters = new IndexingParameters()
+{
+      BatchSize = 100,
+      MaxFailedItems = 0,
+      MaxFailedItemsPerBatch = 0
+};
 
-  try
-  {
-      await searchService.Indexers.RunAsync(indexer.Name);
-  }
-  catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
-  {
+// Indexer declarations require a data source and search index.
+// Common optional properties include a schedule, parameters, and field mappings
+// The field mappings below are redundant due to how the Hotel class is defined, but 
+// we included them anyway to show the syntax 
+var indexer = new SearchIndexer("hotels-sql-idxr", dataSource.Name, searchIndex.Name)
+{
+      Description = "Data indexer",
+      Schedule = schedule,
+      Parameters = parameters,
+      FieldMappings =
+      {
+         new FieldMapping("_id") {TargetFieldName = "HotelId"},
+         new FieldMapping("Amenities") {TargetFieldName = "Tags"}
+      }
+};
+
+await indexerClient.CreateOrUpdateIndexerAsync(indexer);
+```
+
+Indexeer functie-uitvoeringen worden doorgaans gepland, maar tijdens de ontwikkeling kunt u de Indexeer functie direct uitvoeren met behulp van [RunIndexerAsync](/dotnet/api/azure.search.documents.indexes.searchindexerclient.runindexerasync).
+
+```csharp
+Console.WriteLine("Running Azure SQL indexer...");
+
+try
+{
+      await indexerClient.RunIndexerAsync(indexer.Name);
+}
+catch (CloudException e) when (e.Response.StatusCode == (HttpStatusCode)429)
+{
       Console.WriteLine("Failed to run indexer: {0}", e.Response.Content);
-  }
-  ```
+}
+```
 
 ## <a name="4---build-the-solution"></a>4 - De oplossing bouwen
 
@@ -205,9 +220,9 @@ Druk op F5 om de oplossing te bouwen en uit te voeren. Het programma wordt uitge
 
 Uw code wordt lokaal uitgevoerd in Visual Studio en maakt verbinding met uw zoekservice in Azure, die op zijn beurt verbinding maakt met Azure SQL Database en de gegevensset op te halen. Met dit aantal bewerkingen zijn er verschillende mogelijke foutpunten. Als er een fout optreedt, controleert u eerst de volgende voorwaarden:
 
-+ De verbindingsgegevens van de zoekservice die u opgeeft, zijn in deze zelfstudie beperkt tot de servicenaam. Als u de volledige URL hebt ingevoerd, stopt de verwerking bij het maken van de index, met het foutbericht dat er geen verbinding kan worden gemaakt.
++ De verbindings gegevens van de zoek service die u opgeeft, zijn de volledige URL. Als u alleen de service naam hebt ingevoerd, worden de bewerkingen gestopt bij het maken van de index, waarbij de fout niet kan worden gemaakt.
 
-+ Gegevens over de databaseverbinding in **appsettings.json**. Dit moet de ADO.NET-verbindingsreeks zijn die u hebt verkregen via de portal en die is gewijzigd, zodat deze een gebruikersnaam en wachtwoord bevat die geldig zijn voor uw database. Het gebruikersaccount moet machtigingen hebben om gegevens op te halen. Het IP-adres van uw lokale client moet toegang hebben.
++ Gegevens over de databaseverbinding in **appsettings.json**. Dit moet de ADO.NET-verbindingsreeks zijn die u hebt verkregen via de portal en die is gewijzigd, zodat deze een gebruikersnaam en wachtwoord bevat die geldig zijn voor uw database. Het gebruikersaccount moet machtigingen hebben om gegevens op te halen. Het IP-adres van uw lokale client moet binnenkomende toegang hebben via de firewall.
 
 + Bronlimieten. Onthoud dat voor de Gratis-laag een limiet van 3 indexen, indexeerfuncties en gegevensbronnen geldt. Een service met de maximale limiet kan geen nieuwe objecten maken.
 

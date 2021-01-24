@@ -9,12 +9,12 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 38f37ff2fe150a9e1998fbe5e963b8737a6e1533
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 11aa739beeb07c3de056d8a2430b556fcc40b178
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98737962"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746727"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
@@ -493,8 +493,8 @@ Meer informatie over de [segmentatie van afbeeldings instanties](how-to-label-im
     + Gebruikers kunnen nu een tijd reeks frequentie voor prognose taken opgeven met behulp van de `freq` para meter.
   + **azureml-train-automl-runtime**
     + Verbeterde console-uitvoer wanneer de aanbevolen model uitleg mislukt.
-    + De naam van de invoer parameter ' backlist_models ' is gewijzigd in ' blocked_models '.
-      + De naam van de invoer parameter ' whitelist_models ' is gewijzigd in ' allowed_models '.
+    + De hernoemde invoer parameter op ' blocked_models ' om een gevoelige term te verwijderen.
+      + De hernoemde invoer parameter op ' allowed_models ' om een gevoelige term te verwijderen.
     + Gebruikers kunnen nu een tijd reeks frequentie voor prognose taken opgeven met behulp van de `freq` para meter.
 
   

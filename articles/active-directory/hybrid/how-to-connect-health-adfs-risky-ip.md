@@ -16,12 +16,12 @@ ms.date: 02/26/2019
 ms.author: billmath
 ms.custom: H1Hack27Feb2017
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 57d74272d77183baa2284265aee298967f641250
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: e0b76d2f943f254eb06208e2c190bae4d4088030
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504879"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746067"
 ---
 # <a name="risky-ip-report-public-preview"></a>Risk ante IP-rapport (open bare preview)
 AD FS klanten kunnen wacht woord verificatie-eind punten beschikbaar stellen aan Internet om verificatie services te bieden aan eind gebruikers die toegang hebben tot SaaS-toepassingen, zoals Microsoft 365. In dat geval kunnen criminelen aanmeldpogingen uitvoeren op uw AD FS-systeem om het wachtwoord van een eindgebruiker te achterhalen en toegang te krijgen tot toepassingsresources. AD FS biedt de extranetfunctionaliteit voor accountvergrendeling om dergelijke aanvallen te voorkomen vanaf AD FS in Windows Server 2012 R2. Als u een lagere versie gebruikt, raden we u ten zeerste aan uw AD FS-systeem naar Windows Server 2016 te upgraden. <br />
@@ -37,9 +37,6 @@ Daarnaast is het mogelijk dat vanaf één IP-adres meerdere aanmeldpogingen voor
 > Om dit rapport te gebruiken, moet u controles voor AD FS hebben ingeschakeld. Ga voor meer informatie naar [Controles voor AD FS inschakelen](how-to-connect-health-agent-install.md#enable-auditing-for-ad-fs). <br />
 > Voor toegang tot de preview-versie is een machtiging als Globale beheerder of [Beveiligingslezer](../../role-based-access-control/built-in-roles.md#security-reader) vereist.  
 >
-
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 ## <a name="what-is-in-the-report"></a>Wat is er in het rapport?
 De mislukte aanmeldings activiteit client-IP-adressen worden geaggregeerd via Web Application proxy-servers. Elk item in het rapport Riskant IP-adres toont verzamelde informatie over mislukte AD FS-aanmeldactiviteiten die de aangewezen drempelwaarde overschrijden. Het bevat de volgende informatie: ![ scherm afbeelding met een Risk ante IP-rapport met kolom koppen gemarkeerd.](./media/how-to-connect-health-adfs/report4a.png)

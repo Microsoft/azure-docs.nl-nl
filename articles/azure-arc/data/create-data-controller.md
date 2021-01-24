@@ -1,5 +1,5 @@
 ---
-title: Een gegevenscontroller maken
+title: Gegevenscontroller maken
 description: Maak een Azure-Arc-gegevens controller op een typisch Kubernetes-cluster met meerdere knoop punten dat u al hebt geïmplementeerd.
 services: azure-arc
 ms.service: azure-arc
@@ -9,12 +9,12 @@ ms.author: twright
 ms.reviewer: mikeray
 ms.date: 09/22/2020
 ms.topic: how-to
-ms.openlocfilehash: b9a41f4d4bb10599d50e58ad6f08d61aaba7ecfc
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: cd41f740d3cdb8130199a5dda6e73209637d5142
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97608779"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98745931"
 ---
 # <a name="create-the-azure-arc-data-controller"></a>De Azure Arc-gegevens controller maken
 
@@ -54,7 +54,7 @@ Ongeacht de optie die u kiest, moet u tijdens het aanmaak proces de volgende inf
 - **Gebruikers naam van de gegevens controller** : de gebruikers naam voor de beheerder van de gegevens controller.
 - **Wacht woord voor gegevens controller** : een wacht woord voor de gebruiker van de gegevens controller beheerder.
 - **Naam van uw Kubernetes-naam ruimte** : de naam van de Kubernetes-naam ruimte waarin u de gegevens controller wilt maken.
-- **Connectiviteits modus** : de [connectiviteits modus](./connectivity.md) van uw cluster. Momenteel wordt alleen indirect ondersteund.
+- **Connectiviteits modus** : de connectiviteits modus bepaalt de mate van connectiviteit van uw Azure Arc enabled Data Services-omgeving naar Azure. Preview ondersteunt momenteel alleen indirect verbonden en rechtstreeks verbonden modi.  Zie [connectiviteits modus](./connectivity.md)voor meer informatie. 
 - **Azure-abonnements-id** : de GUID van het Azure-abonnement waarvoor u de gegevens controller bron in azure wilt maken.
 - **Naam van de Azure-resource groep** : de naam van de resource groep waar u de gegevens controller bron in azure wilt maken.
 - **Azure-locatie** : de Azure-locatie waar de meta gegevens van de resource controller bron worden opgeslagen in Azure. Zie [globale Azure-infra structuur/-producten per regio](https://azure.microsoft.com/global-infrastructure/services/?products=azure-arc)voor een lijst met beschik bare regio's.

@@ -13,15 +13,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure
-ms.date: 11/26/2020
+ms.date: 01/23/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 8c4aa608e892867daaf954284a9dfce997a9ae1f
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 01c6a2eb53e82965dd96deaa1a09afb1e70dda24
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96484274"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746744"
 ---
 # <a name="sap-hana-azure-virtual-machine-storage-configurations"></a>Configuraties van SAP HANA in virtuele Azure-machineopslag
 
@@ -63,10 +63,22 @@ Sommige richt lijnen voor het selecteren van de opslag configuratie voor HANA ku
 - Bepaal het type opslag op basis van [Azure Storage typen voor SAP-werk belasting](./planning-guide-storage.md) en [Selecteer een schijf type](../../disks-types.md)
 - De totale I/O-door Voer van de virtuele machine en IOPS beperken bij het verg Roten/verkleinen of bepalen van een virtuele machine. De totale VM-opslag doorvoer wordt beschreven in de grootte van het door het artikel [geoptimaliseerde virtuele machines](../../sizes-memory.md)
 - Bij het bepalen van de opslag configuratie kunt u de algemene door Voer van de virtuele machine blijven vervangen door de **/Hana/data** -volume configuratie. Het schrijven van opslag punten, SAP HANA kan agressief uitgeven I/O's zijn. Het is eenvoudig om te pushen naar de doorvoer limieten van uw **/Hana/data** -volume tijdens het schrijven van een opslag punt. Als uw schijven die het **/Hana/data** -volume bouwen een hogere door voer hebben dan uw virtuele machine toestaat, kunt u in situaties optreden waarbij de door Voer die wordt gebruikt door de schrijf bewerking voor het opslag punt, de doorvoer vereisten van de logboeken voor het opnieuw registreren van het opnieuw schrijven verstoort. Een situatie die de door Voer van de toepassing kan beïnvloeden
-- Als u Azure Premium Storage gebruikt, is de minst dure configuratie het gebruik van logische volume managers om stripesets te bouwen om de **/Hana/data** -en **/Hana/log** -volumes te bouwen.
+
 
 > [!IMPORTANT]
 > De suggesties voor de opslag configuraties zijn bedoeld als instructies om te beginnen met. Bij het uitvoeren van de werk belasting en het analyseren van patronen voor opslag gebruik kunt u realiseren dat u niet alle beschik bare opslag bandbreedte of IOPS gebruikt. U kunt Overweeg in de opslag dan overwegen. Het is ook mogelijk dat uw workload meer opslag doorvoer vereist dan bij deze configuraties wordt voorgesteld. Als gevolg hiervan moet u mogelijk meer capaciteit, IOPS of door Voer implementeren. In het veld van de spanning tussen de vereiste opslag capaciteit, opslag latentie vereist, opslag doorvoer en IOPS vereist en geduurde configuratie, biedt Azure voldoende verschillende opslag typen met verschillende mogelijkheden en verschillende prijs punten voor het vinden en aanpassen van de juiste inbreuk voor u en uw HANA-workloads.
+
+
+## <a name="stripe-sets-versus-sap-hana-data-volume-partitioning"></a>Stripesets versus SAP HANA gegevens volume partitioneren
+Met Azure Premium Storage kunt u de beste prijs-prestatie verhouding bereiken wanneer u het **/Hana/data** -en/of **/Hana/log** -volume op meerdere Azure-schijven verwijdert. In plaats van grotere schijf volumes te implementeren die de meer op IOPS of door voer nodig hebben. Tot dusver werd dit gedaan met LVM-en MDADM-volume managers die deel uitmaken van Linux. De methode voor het verwijderen van schijven is tien tallen oud en goed bekend. Net zoals die striped volumes moeten profiteren van de IOPS-of doorvoer mogelijkheden die u nodig hebt, worden er ingewikkelde opties toegevoegd om deze striped volumes te beheren. Met name in gevallen waarin de volumes een uitgebreide capaciteit moeten krijgen. Ten minste voor **/Hana/data** heeft SAP een alternatieve methode geïntroduceerd waarmee hetzelfde doel wordt gerealiseerd als over meerdere Azure-schijven. Sinds SAP HANA 2,0 SPS03 is de HANA-indexserver in staat om de I/O-activiteit over meerdere HANA-gegevens bestanden te verwijderen die zich op verschillende Azure-schijven bevinden. Het voor deel is dat u geen striped volume kunt maken en beheren op verschillende Azure-schijven. De SAP HANA functionaliteit van partitionering van gegevens volumes wordt gedetailleerd beschreven in:
+
+- [De HANA-beheerders handleiding](https://help.sap.com/viewer/6b94445c94ae495c83a19646e7c3fd56/2.0.05/en-US/40b2b2a880ec4df7bac16eae3daef756.html?q=hana%20data%20volume%20partitioning)
+- [Blog over SAP HANA-gegevens volumes partitioneren](https://blogs.sap.com/2020/10/07/sap-hana-partitioning-data-volumes/)
+- [SAP-notitie #2400005](https://launchpad.support.sap.com/#/notes/2400005)
+- [SAP-notitie #2700123](https://launchpad.support.sap.com/#/notes/2700123)
+
+Door de details te lezen, is het duidelijk dat het gebruik van deze functionaliteit complexer maakt op basis van op volume manager gebaseerde stripesets. U kunt er ook voor zorgen dat de HANA-gegevens volume-partitionering niet alleen werkt voor Azure Block Storage, zoals Azure Premium Storage. U kunt deze functionaliteit gebruiken om over NFS-shares te verwijderen, voor het geval deze shares over IOPS of door Voer beperkingen hebben.  
+
 
 ## <a name="linux-io-scheduler-mode"></a>Scheduler-modus Linux I/O
 Linux heeft verschillende I/O-plannings modi. Algemene aanbeveling via Linux-leveranciers en SAP is om de I/O scheduler-modus voor schijf volumes van de modus **MQ-deadline** of **kyber** te herconfigureren in de **nooperation** (niet-multiwachtrij) of **geen** voor modus (meerdere wacht rijen). Er wordt naar Details verwezen in [SAP Note #1984787](https://launchpad.support.sap.com/#/notes/1984787). 

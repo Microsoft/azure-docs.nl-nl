@@ -14,15 +14,15 @@ ms.subservice: workloads
 ms.topic: article
 ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
-ms.date: 01/18/2021
+ms.date: 01/23/2021
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 0b323268c625ed25236cf4a9f9faa17606bd967c
-ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.openlocfilehash: 0a0f17df13b5b101aebf585b7f1f3fb2a5b48006
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98570062"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746050"
 ---
 # <a name="use-azure-to-host-and-run-sap-workload-scenarios"></a>Azure gebruiken om SAP-werkbelasting scenario's te hosten en uit te voeren
 
@@ -84,6 +84,7 @@ In deze sectie vindt u documenten over integratie van micro soft Power BI in SAP
 
 ## <a name="change-log"></a>Wijzigingslogboek
 
+- 01/23/2021: de functionaliteit van HANA-gegevens volume partitioneren als functionaliteit voor het Stripe van I/O-bewerkingen op HANA-gegevens bestanden op verschillende Azure-schijven of NFS-shares zonder gebruik te maken van een schijf volume manager in artikelen [SAP Hana Azure virtual machine-opslag configuraties](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-storage) en [NFS v 4.1-volumes op Azure NetApp files voor SAP Hana](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 - 01/18/2021: er is ondersteuning toegevoegd voor Azure net apps-bestanden op basis van NFS voor Oracle in [azure virtual machines Oracle DBMS-implementatie voor SAP-werk belasting](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/dbms_guide_oracle) en het aanpassen van decimalen in tabel in document [NFS v 4.1-volumes op Azure NetApp files voor SAP Hana](https://docs.microsoft.com/azure/virtual-machines/workloads/sap/hana-vm-operations-netapp)
 - 01/11/2021: kleine wijzigingen in [ha voor SAP NW op Azure-vm's op RHEL voor SAP-toepassingen](./high-availability-guide-rhel.md), [ha voor SAP NW op Azure vm's op RHEL met ANF](./high-availability-guide-rhel-netapp-files.md) en [ha voor SAP NW op Azure VM'S in RHEL multi-sid-hand leiding](./high-availability-guide-rhel-multi-sid.md) voor het aanpassen van opdrachten voor zowel RHEL8 als RHEL7, en ENSA1 en ENSA2
 - 01/05/2021: wijzigingen in [SAP Hana uitschalen met het stand-by-knoop punt op virtuele machines van Azure met ANF op SLES](./sap-hana-scale-out-standby-netapp-files-suse.md) en [SAP Hana uitschalen met het knoop punt stand-by op virtuele machines van Azure met ANF op RHEL](./sap-hana-scale-out-standby-netapp-files-rhel.md), waarbij de aanbevolen configuratie wordt aangepast zodat SAP host agent het lokale poort bereik kan beheren  

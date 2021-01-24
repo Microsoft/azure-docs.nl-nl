@@ -1,5 +1,5 @@
 ---
-title: Horizon-SDK
+title: Horizon SDK
 titleSuffix: Azure Defender for IoT
 description: Met de horizon-SDK kunnen met Azure Defender voor IoT-ontwikkel aars de modules voor het netwerk verkeer worden gedecodeerd, zodat deze kunnen worden verwerkt door automatische Defender voor IoT-netwerk analyse Programma's.
 author: shhazam-ms
@@ -8,12 +8,12 @@ ms.author: shhazam
 ms.date: 1/13/2021
 ms.topic: article
 ms.service: azure
-ms.openlocfilehash: d6105f65508eff59164246020d9a3f286b68c5a1
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 53aafc4146680c89dd01174ec5fde765f1cc0c01
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210566"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746016"
 ---
 # <a name="horizon-proprietary-protocol-dissector"></a>Horizon-eigendom protocol Dissector
 
@@ -315,7 +315,7 @@ In deze sectie worden de basis parameters beschreven.
 
 | Parameter label | Beschrijving | Type |
 |--|--|--|
-| **ID** | De naam van het protocol. Verwijder de standaard waarde en voeg de naam van het protocol toe zoals deze wordt weer gegeven. | Tekenreeks |
+| **Id** | De naam van het protocol. Verwijder de standaard waarde en voeg de naam van het protocol toe zoals deze wordt weer gegeven. | Tekenreeks |
 | **endianess** | Hiermee wordt gedefinieerd hoe de multi byte gegevens worden gecodeerd. Gebruik de term ' kleine ' of ' Big ' alleen. Overgenomen van de protocol specificatie of verkeers opname | Tekenreeks |
 | **sanity_failure_codes** | Dit zijn de codes die worden geretourneerd door de parser wanneer er sprake is van een Sanity-conflict met betrekking tot de identiteit van de code. Zie Magic-nummer validatie in de sectie C++. | Tekenreeks |
 | **malformed_codes** | Dit zijn de codes die juist zijn geïdentificeerd, maar er wordt een fout gedetecteerd. Bijvoorbeeld als de veld lengte te kort of lang is of een waarde ongeldig is. | Tekenreeks |
@@ -819,7 +819,7 @@ In deze sectie worden de JSON-configuratie velden beschreven.
 
 | Veldnaam | Beschrijving | Mogelijke waarden |
 |--|--|--|
-| **ID** | Hiermee wordt één waarschuwings-ID aangeduid. Deze moet uniek zijn in deze context. | Numerieke waarde 0-10000 |
+| **Id** | Hiermee wordt één waarschuwings-ID aangeduid. Deze moet uniek zijn in deze context. | Numerieke waarde 0-10000 |
 | **Bericht** | Informatie die wordt weer gegeven aan de gebruiker. Met dit veld kunt u verschillende velden gebruiken. | Gebruik een wille keurig veld uit uw protocol of een protocol voor een lagere laag. |
 | **hoofd** | De titel van de waarschuwing |  |
 | **expression** | Wanneer u wilt dat deze waarschuwing wordt pop-up. | Gebruik een numeriek veld in lagere lagen of de huidige laag.</br></br> Elk veld moet wrapper hebben met, zodat de SDK het kan `{}` detecteren als een veld, de ondersteunde logische Opera tors zijn</br> = =-Is gelijk aan</br> <=-kleiner dan of gelijk aan</br> >=-meer dan of gelijk aan</br> >-meer dan</br> <-kleiner dan</br> ~ =-Niet gelijk aan |
@@ -885,7 +885,7 @@ U kunt ook waarden uit protocollen die eerder zijn geparseerd, gebruiken om aanv
 
 Voor de waarde, die is gebaseerd op TCP, kunt u bijvoorbeeld de waarden van IPv4-laag gebruiken. Vanuit deze laag kunt u waarden extra heren, zoals de bron van het pakket en de bestemming.
 
-Om dit te kunnen doen, moet het JSON-configuratie bestand worden bijgewerkt met behulp van de `whitelist` eigenschap.
+Om dit te kunnen doen, moet het JSON-configuratie bestand worden bijgewerkt met behulp van de `whitelists` eigenschap.
 
 ## <a name="allow-list-data-mining-fields"></a>Velden voor acceptatie lijst (gegevens analyse)
 

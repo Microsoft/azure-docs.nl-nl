@@ -7,12 +7,12 @@ ms.service: application-gateway
 ms.topic: troubleshooting
 ms.date: 06/09/2020
 ms.author: surmb
-ms.openlocfilehash: 05df2144b892aed764f9606fb19bd6a3242b97f3
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 5e5be79371b640431603409a34b1a7812ed5c2a3
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934897"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746101"
 ---
 <a name="troubleshoot-backend-health-issues-in-application-gateway"></a>Problemen met back-endservers oplossen in Application Gateway
 ==================================================
@@ -21,9 +21,6 @@ ms.locfileid: "97934897"
 --------
 
 Azure-toepassing gateway test back-endservers standaard om de status te controleren en om te controleren of ze gereed zijn om te dienen voor aanvragen. Gebruikers kunnen ook aangepaste tests maken om de hostnaam, het pad dat wordt onderzocht en de status codes als in orde te vermelden. Als de back-endserver niet met succes reageert, markeert Application Gateway de server als beschadigd en stopt het door sturen van aanvragen naar de server. Nadat de server met succes is gestart, wordt Application Gateway hervat met het door sturen van de aanvragen.
-
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *whitelist*, een term die Microsoft niet meer gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
 
 ### <a name="how-to-check-backend-health"></a>De status van de back-end controleren
 
@@ -245,7 +242,7 @@ Zie voor meer informatie over het uitpakken en uploaden van vertrouwde basis cer
 
 #### <a name="trusted-root-certificate-mismatch"></a>Niet-overeenkomende vertrouwde basis certificaten
 
-**Bericht:** Het basis certificaat van het server certificaat dat door de back-end wordt gebruikt, komt niet overeen met het vertrouwde basis certificaat dat is toegevoegd aan de toepassings gateway. Zorg ervoor dat u het juiste basis certificaat toevoegt aan White List de back-end
+**Bericht:** Het basis certificaat van het server certificaat dat door de back-end wordt gebruikt, komt niet overeen met het vertrouwde basis certificaat dat is toegevoegd aan de toepassings gateway. Zorg ervoor dat u het juiste basis certificaat toevoegt aan allowlist de back-end.
 
 **Oorzaak:** End-to-end SSL met Application Gateway v2 vereist dat het certificaat van de back-endserver wordt geverifieerd om te zorgen dat de server in orde is.
 Een TLS/SSL-certificaat kan alleen worden vertrouwd als het back-endserver certificaat is uitgegeven door een certificerings instantie die is opgenomen in het vertrouwde archief van Application Gateway. Als het certificaat niet is uitgegeven door een vertrouwde certificerings instantie (bijvoorbeeld als er een zelfondertekend certificaat is gebruikt), moeten gebruikers het certificaat van de verlener uploaden naar Application Gateway.
@@ -357,8 +354,8 @@ Dit gedrag kan om een of meer van de volgende redenen optreden:
 1.  De NSG op het Application Gateway-subnet blokkeert de inkomende toegang tot poorten 65503-65534 (v1 SKU) of 65200-65535 (v2-SKU) van Internet.
 1.  De UDR op het Application Gateway subnet is ingesteld op de standaard route (0.0.0.0/0) en de volgende hop is niet opgegeven als ' Internet '.
 1.  De standaard route wordt via BGP geadverteerd door een ExpressRoute/VPN-verbinding met een virtueel netwerk.
-1.  De aangepaste DNS-server is geconfigureerd in een virtueel netwerk dat geen open bare domein namen kan omzetten.
-1.  Application Gateway een slechte status heeft.
+1.  De aangepaste DNS-server is geconfigureerd in een virtueel netwerk dat geen openbare domeinnamen kan omzetten.
+1.  Toepassingsgateway bevindt zich in een foutstatus.
 
 **Oplossing:**
 

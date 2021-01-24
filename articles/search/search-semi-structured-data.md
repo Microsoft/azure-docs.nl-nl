@@ -7,13 +7,13 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 09/25/2020
-ms.openlocfilehash: 7c88aea6aff942cdcf5cbc022df8f07cfe0d4cce
-ms.sourcegitcommit: e2dc549424fb2c10fcbb92b499b960677d67a8dd
-ms.translationtype: HT
+ms.date: 01/25/2021
+ms.openlocfilehash: a7a010e3c60d6b96947597878fcd870e9845b2b3
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94701276"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746134"
 ---
 # <a name="tutorial-index-json-blobs-from-azure-storage-using-rest"></a>Zelfstudie: JSON-blobs vanuit Azure Storage indexeren met behulp van REST
 
@@ -98,13 +98,13 @@ REST-aanroepen hebben voor elke aanvraag de service-URL en een toegangssleutel n
 
 1. Haal onder **Instellingen** > **Sleutels** een beheersleutel op voor volledige rechten op de service. Er zijn twee uitwisselbare beheersleutels die voor bedrijfscontinuïteit worden verstrekt voor het geval u een moet overschakelen. U kunt de primaire of secundaire sleutel gebruiken op aanvragen voor het toevoegen, wijzigen en verwijderen van objecten.
 
-:::image type="content" source="media/search-get-started-rest/get-url-key.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen" border="false":::
+   :::image type="content" source="media/search-get-started-rest/get-url-key.png" alt-text="Een HTTP-eindpunt en toegangssleutel ophalen" border="false":::
 
 Voor alle aanvragen is een API-sleutel vereist op elke aanvraag die naar uw service wordt verzonden. Met een geldige sleutel stelt u per aanvraag een vertrouwensrelatie in tussen de toepassing die de aanvraag verzendt en de service die de aanvraag afhandelt.
 
 ## <a name="2---set-up-postman"></a>2 - Postman instellen
 
-Start Postman en stel een HTTP-aanvraag in. Als u niet bekend bent met dit hulpprogramma, raadpleegt u [REST API's van Azure Cognitive Search verkennen](search-get-started-rest.md).
+Start Postman en stel een HTTP-aanvraag in. Als u niet bekend bent met dit hulp programma, raadpleegt u [een zoek index maken met behulp van rest-api's](search-get-started-rest.md).
 
 De aanvraagmethoden voor elke aanroep in deze zelfstudie zijn **POST** en **GET**. U maakt drie API-aanroepen naar uw zoekservice om een gegevensbron, een index en een indexeerfunctie te maken. De gegevensbron bevat een verwijzing naar uw opslagaccount en uw JSON-gegevens. Uw zoekservice maakt de verbinding tijdens het laden van de gegevens.
 
@@ -158,7 +158,7 @@ Met de [Create Data Source-API](/rest/api/searchservice/create-data-source) word
     ```
 
 ## <a name="4---create-an-index"></a>4 - Een index maken
-    
+
 De tweede aanroep is [Create Index-API](/rest/api/searchservice/create-index), waarmee een Azure Cognitive Search-index wordt gemaakt waarin alle doorzoekbare gegevens worden opgeslagen. Een index geeft alle parameters en hun kenmerken op.
 
 1. Stel het eindpunt van deze aanroep in op `https://[service name].search.windows.net/indexes?api-version=2020-06-30`. Vervang `[service name]` door de naam van uw zoekservice.

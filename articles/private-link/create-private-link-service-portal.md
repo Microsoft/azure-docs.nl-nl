@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: quickstart
 ms.date: 01/18/2021
 ms.author: allensu
-ms.openlocfilehash: 3e9ade329d2b26d36763db579b0fcec03e938aad
-ms.sourcegitcommit: 6628bce68a5a99f451417a115be4b21d49878bb2
-ms.translationtype: HT
+ms.openlocfilehash: d394a475c5121607f70c03437382e104a5d0cbee
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98555454"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746404"
 ---
 # <a name="quickstart-create-a-private-link-service-by-using-the-azure-portal"></a>Snelstart: Een Private Link-service maken met behulp van de Azure-portal
 
@@ -171,7 +171,7 @@ In deze sectie maakt u een load balancer-regel:
 
 4. Laat de overige standaardwaarden staan en selecteer **OK**.
 
-## <a name="create-a-private-link-service"></a>Een Private Link-service maken
+## <a name="create-a-private-link-service"></a>Een persoonlijke koppelings service maken
 
 In dit gedeelte maakt u een Private Link-service achter een standard load balancer.
 
@@ -217,9 +217,115 @@ In dit gedeelte maakt u een Private Link-service achter een standard load balanc
 
 12. Selecteer **Maken** in het tabblad **Beoordelen en maken**.
 
+Uw persoonlijke koppelings service is gemaakt en kan verkeer ontvangen. Als u verkeers stromen wilt zien, configureert u uw toepassing achter uw standaard load balancer.
+
+
+## <a name="create-private-endpoint"></a>Privé-eindpunt maken
+
+In deze sectie wijst u de persoonlijke koppelings service toe aan een persoonlijk eind punt. Een virtueel netwerk bevat het persoonlijke eind punt voor de persoonlijke koppelings service. Dit virtuele netwerk bevat de resources die toegang hebben tot uw persoonlijke koppelings service.
+
+### <a name="create-private-endpoint-virtual-network"></a>Virtueel netwerk voor een privé-eind punt maken
+
+1. Selecteer in de linkerbovenhoek van het scherm **Een resource maken > Netwerken > Virtueel netwerk** of zoek naar **Virtueel netwerk** in het zoekvak.
+
+2. Typ of selecteer in **Virtueel netwerk maken** de volgende gegevens op het tabblad **Basisinstellingen**:
+
+    | **Instelling**          | **Waarde**                                                           |
+    |------------------|-----------------------------------------------------------------|
+    | **Projectgegevens**  |                                                                 |
+    | Abonnement     | Selecteer uw Azure-abonnement                                  |
+    | Resourcegroep   | Selecteer **CreatePrivLinkService-rg** |
+    | **Exemplaardetails** |                                                                 |
+    | Naam             | **MyVNetPE** invoeren                                    |
+    | Regio           | Selecteer **US - oost 2** |
+
+3. Selecteer het tabblad **IP-adressen** of klik op de knop **Volgende: IP-adressen** onderaan de pagina.
+
+4. Voer op het tabblad **IP-adressen** deze gegevens in:
+
+    | Instelling            | Waarde                      |
+    |--------------------|----------------------------|
+    | IPv4-adresruimte | Voer **11.1.0.0/16** in |
+
+5. Onder **Subnetnaam** selecteert u het woord **standaard**.
+
+6. Voer in **Subnet bewerken** deze gegevens in:
+
+    | Instelling            | Waarde                      |
+    |--------------------|----------------------------|
+    | Subnetnaam | **MySubnetPE** invoeren |
+    | Subnetadresbereik | Voer **11.1.0.0/24** in |
+
+7. Selecteer **Opslaan**.
+
+8. Selecteer het tabblad **Controleren + maken** of klik op de knop **Controleren + maken**.
+
+9. Selecteer **Maken**.
+
+### <a name="create-private-endpoint"></a>Privé-eindpunt maken
+
+1. Selecteer in de linkerbovenhoek van het scherm in de portal **Een resource maken** > **Netwerken** > **Private Link**, of typ **Private Link** in het zoekvak.
+
+2. Selecteer **Maken**.
+
+3. Selecteer in **Private link Center** **Privé-eindpunt** in het menu aan de linkerkant.
+
+4. Selecteer **+ Toevoegen** onder **Privé-eindpunten**.
+
+5. Typ of selecteer op het tabblad **Basisgegevens** van **Een privé-eindpunt maken** de volgende gegevens:
+
+    | Instelling | Waarde |
+    | ------- | ----- |
+    | **Projectgegevens** | |
+    | Abonnement | Selecteer uw abonnement. |
+    | Resourcegroep | Selecteer **CreatePrivLinkService-rg**. U hebt deze resourcegroep in de vorige sectie gemaakt.|
+    | **Exemplaardetails** |  |
+    | Naam  | Voer **myPrivateEndpoint** in. |
+    | Regio | Selecteer **VS - oost 2**. |
+
+6. Selecteer het tabblad **Resource** of de knop **Volgende: resource** onderaan de pagina.
+    
+7. Typ of selecteer in **Resource** de volgende gegevens:
+
+    | Instelling | Waarde |
+    | ------- | ----- |
+    | Verbindingsmethode | Selecteer **Verbinding maken met een Azure-resource in mijn directory**. |
+    | Abonnement | Selecteer uw abonnement. |
+    | Resourcetype | Selecteer **micro soft. Network/privateLinkServices**. |
+    | Resource | Selecteer **myPrivateLinkService**. |
+
+8. Selecteer het tabblad **Configuratie** of de knop **Volgende: configuratie** onderaan het scherm.
+
+9. Typ of selecteer in **Configuratie** de volgende gegevens:
+
+    | Instelling | Waarde |
+    | ------- | ----- |
+    | **Netwerken** |  |
+    | Virtual Network | Selecteer **myVNetPE**. |
+    | Subnet | Selecteer **mySubnetPE**. |
+
+10. Selecteer het tabblad **controleren + maken** of de knop **controleren + maken** onder aan het scherm.
+
+11. Selecteer **Maken**.
+
+### <a name="ip-address-of-private-endpoint"></a>IP-adres van persoonlijk eind punt
+
+In deze sectie vindt u het IP-adres van het privé-eind punt dat overeenkomt met de load balancer en de persoonlijke koppelings service.
+
+1. Selecteer **resource groepen** in de linkerkolom van het Azure Portal.
+
+2. Selecteer de resource groep **CreatePrivLinkService-RG** .
+
+3. Selecteer in de resource groep **CreatePrivLinkService-RG** **myPrivateEndpoint**.
+
+4. Selecteer op de pagina **overzicht** van **myPrivateEndpoint** de naam van de netwerk interface die aan het persoonlijke eind punt is gekoppeld.  De naam van de netwerk interface begint met **myPrivateEndpoint. nic**.
+
+5. Op de pagina **overzicht** van de NIC van het persoonlijke eind punt wordt het IP-adres van het eind punt weer gegeven in het **privé-IP-adres**.
+    
+
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Wanneer u klaar bent met het gebruik van de Private Link-service, verwijdert u de resourcegroep om de resources op te schonen die in deze quickstart worden gebruikt.
+Wanneer u klaar bent met het gebruik van de persoonlijke koppelings service, verwijdert u de resource groep om de resources op te schonen die in deze Quick Start worden gebruikt.
 
 1. Voer **CreatePrivLinkService-rg** in het zoekvenster boven in de portal in en selecteer **CreatePrivLinkService-rg** in de zoekresultaten.
 1. Selecteer **Resourcegroep verwijderen**.
@@ -231,7 +337,8 @@ Wanneer u klaar bent met het gebruik van de Private Link-service, verwijdert u d
 In deze snelstart, gaat u het volgende doen:
 
 * Een virtueel netwerk gemaakt en een interne Azure Load Balancer.
-* Een Private Link-service gemaakt
+* Er is een persoonlijke koppelings service gemaakt.
+* Er is een virtueel netwerk en een persoonlijk eind punt voor de persoonlijke koppelings service gemaakt.
 
 Voor meer informatie over Azure Privé-eindpunt gaat u naar:
 > [!div class="nextstepaction"]

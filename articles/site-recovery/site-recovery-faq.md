@@ -4,12 +4,12 @@ description: In dit artikel worden populaire algemene vragen over Azure Site Rec
 ms.topic: conceptual
 ms.date: 7/14/2020
 ms.author: raynew
-ms.openlocfilehash: add5874dc828f05c7c51f0f378988c94cbd42486
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: ca30f9ba190dfa3c7e224e47b90be4d3bc5d47ae
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97109552"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746472"
 ---
 # <a name="general-questions-about-azure-site-recovery"></a>Algemene vragen over Azure Site Recovery
 
@@ -344,6 +344,14 @@ Ja, u kunt het herstel van de alternatieve locatie gebruiken om naar een andere 
 
 * [Voor virtuele VMware-machines](concepts-types-of-failback.md#alternate-location-recovery-alr)
 * [Voor virtuele Hyper-V-machines](hyper-v-azure-failback.md#fail-back-to-an-alternate-location)
+
+### <a name="what-is-the-difference-between-complete-migration-commit-and-disable-replication"></a>Wat is het verschil tussen het volt ooien van de migratie, het door voeren en uitschakelen van replicatie?
+
+Als er een failover is uitgevoerd naar de doel locatie van een machine vanaf de bron locatie, zijn er drie opties beschikbaar waaruit u kunt kiezen. Alle drie de verschillende doel einden gebruiken-
+
+1.  Als u de **migratie voltooit** , gaat u niet meer terug naar de bron locatie. U hebt gemigreerd naar de doel regio en nu bent u klaar. Klik op volledige migratie triggers door voeren en schakel de replicatie vervolgens intern uit. 
+2.  **Door voeren** houdt in dat dit niet het einde van uw replicatie proces is. Het replicatie-item in combi natie met de configuratie blijft behouden en u kunt op een later tijdstip **opnieuw beveiligen** om de replicatie van uw machines naar de bron regio mogelijk te maken. 
+3.  Als u **replicatie uitschakelt** , wordt de replicatie uitgeschakeld en wordt alle gerelateerde configuratie verwijderd. Dit heeft geen invloed op de reeds bestaande machine in de doel regio.
 
 ## <a name="automation"></a>Automation
 

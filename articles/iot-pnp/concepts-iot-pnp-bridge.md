@@ -3,17 +3,17 @@ title: IoT Plug en Play-brug | Microsoft Docs
 description: Begrijp de IoT Plug en Play-brug en hoe u deze kunt gebruiken voor het verbinden van bestaande apparaten die zijn gekoppeld aan een Windows-of Linux-gateway als IoT Plug en Play-apparaten.
 author: usivagna
 ms.author: ugans
-ms.date: 09/22/2020
+ms.date: 1/20/2021
 ms.topic: conceptual
 ms.service: iot-pnp
 services: iot-pnp
 ms.custom: mvc
-ms.openlocfilehash: 34af380d057ad47811e394da1e7a29198e102920
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: 05b9df2c5083d24ae6a78212bdd29cd1c740e1d1
+ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97672777"
+ms.lasthandoff: 01/24/2021
+ms.locfileid: "98746489"
 ---
 # <a name="iot-plug-and-play-bridge"></a>IoT Plug and Play-brug
 
@@ -36,7 +36,7 @@ IoT Plug en Play Bridge ondersteunt standaard de volgende typen rand apparatuur,
 |De [SerialPnP-adapter](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/serialpnp/Readme.md) verbindt apparaten die communiceren via een seriële verbinding.               |Ja|Ja|
 |[Windows USB-rand apparatuur](https://github.com/Azure/iot-plug-and-play-bridge/blob/master/pnpbridge/docs/coredevicehealth_adapter.md) maakt gebruik van een lijst met adapters die worden ondersteund door de adapter, om apparaten te verbinden die een specifieke hardware-id hebben.  |Ja|Niet van toepassing|
 
-Zie voor meer informatie over het uitbreiden van de IoT Plug en Play-brug ter ondersteuning van extra protocollen voor apparaten [de iot Plug en Play-brug bouwen, implementeren en uitbreiden](howto-build-deploy-extend-pnp-bridge.md).
+Zie voor meer informatie over het uitbreiden van de IoT Plug en Play-brug voor het ondersteunen van extra apparaten protocollen [de iot Plug en Play-brug uitbreiden](howto-author-pnp-bridge-adapter.md). Zie voor meer informatie over het bouwen en implementeren van de IoT Plug en Play-brug [de iot Plug en Play-brug bouwen en implementeren](howto-build-deploy-extend-pnp-bridge.md).
 
 ## <a name="iot-plug-and-play-bridge-architecture"></a>IoT Plug en Play Bridge-architectuur
 
@@ -148,6 +148,7 @@ U kunt ook de bron code van [IoT Plug en Play Bridge](https://github.com/Azure/i
 
 Nu u een overzicht hebt van de architectuur van IoT Plug en Play Bridge, moeten de volgende stappen worden uitgevoerd om meer te weten te komen over:
 
-- [IoT Plug en Play Bridge gebruiken](./howto-use-iot-pnp-bridge.md)
-- [IoT Plug en Play-brug bouwen, implementeren en uitbreiden](howto-build-deploy-extend-pnp-bridge.md)
+- [Verbinding maken met een IoT Plug en Play Bridge-voor beeld dat wordt uitgevoerd in Linux of Windows naar IoT Hub](./howto-use-iot-pnp-bridge.md)
+- [IoT Plug en Play-brug bouwen en implementeren](howto-build-deploy-extend-pnp-bridge.md)
+- [IoT Plug en Play-brug uitbreiden](howto-build-deploy-extend-pnp-bridge.md)
 - [IoT Plug en Play-brug op GitHub](https://github.com/Azure/iot-plug-and-play-bridge)

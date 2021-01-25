@@ -6,16 +6,16 @@ ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: how-to
 ms.date: 11/23/2020
-ms.openlocfilehash: de0c48bb775b96052fe16d60aa58049bfd58ca4d
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 750cf0a938fffd4e5bfe25811bb276f7cb1b5583
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567773"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757556"
 ---
 # <a name="create-and-manage-azure-migrate-projects"></a>Azure Migrate-projecten maken en beheren
 
-In dit artikel wordt beschreven hoe u [Azure migrate](migrate-services-overview.md) projecten maakt, beheert en verwijdert. Als u werkt met klassieke Azure Migrate projecten, verwijdert u deze projecten en volgt u de stappen om een nieuw Azure Migrate project te maken. U kunt geen klassieke Azure Migrate projecten of onderdelen naar de Azure Migrate bijwerken.
+In dit artikel wordt beschreven hoe u [Azure migrate](migrate-services-overview.md) projecten maakt, beheert en verwijdert. Als u werkt met klassieke Azure Migrate projecten, verwijdert u deze projecten en volgt u de stappen om een nieuw Azure Migrate project te maken. U kunt geen klassieke Azure Migrate projecten of onderdelen naar de Azure Migrate bijwerken. Bekijk [Veelgestelde vragen](https://docs.microsoft.com/azure/migrate/resources-faq#i-have-a-project-with-the-previous-classic-experience-of-azure-migrate-how-do-i-start-using-the-new-version) voordat u begint met het maken van het proces.
 
 Een Azure Migrate project wordt gebruikt voor het opslaan van de metagegevens voor detectie, evaluatie en migratie die zijn verzameld uit de omgeving die u wilt beoordelen of migreren. In een project kunt u gedetecteerde assets volgen, beoordelingen maken en migraties naar Azure organiseren.  
 

@@ -15,12 +15,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/20/2021
 ms.author: yelevin
-ms.openlocfilehash: e84484990725b0c39b132aead51e9b01dbb7e7ef
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 409a316bd9c4222dd9b8ff30e42e37d23805c38b
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98632288"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757759"
 ---
 # <a name="connect-data-from-azure-active-directory-azure-ad"></a>Verbinding maken met gegevens van Azure Active Directory (Azure AD)
 
@@ -44,12 +44,12 @@ U kunt de ingebouwde connector van Azure Sentinel gebruiken om gegevens van [Azu
 
 1. Schakel de selectie vakjes in naast de logboek typen die u wilt streamen naar Azure Sentinel en klik op **verbinden**. Dit zijn de logboek typen waaruit u kunt kiezen:
 
-    - Aanmeldingslogboeken
-    - Auditlogboeken
-    - Logboeken voor niet-interactieve gebruikers aanmelding
-    - Logboeken voor Service-Principal-aanmelding
-    - Logboeken voor beheerde identiteits aanmelding
-    - Inrichtingslogboeken
+    - **Aanmeld logboeken**: informatie over het gebruik van beheerde toepassingen en aanmeldings activiteiten voor gebruikers.
+    - **Audit logboeken**: informatie over systeem activiteit over gebruikers-en groeps beheer, beheerde toepassingen en Directory-activiteiten.
+    - **Niet-interactieve aanmelding van gebruikers Logboeken**: informatie over aanmeldingen die zijn uitgevoerd door een client namens een gebruiker, waarvoor geen interactie of verificatie factor van de gebruiker is vereist.
+    - **Logboeken voor Service-Principal-aanmelding**: informatie over aanmeldingen door apps en service-principals die geen gebruik maken van een gebruiker. In deze aanmeldingen biedt de app of service een referentie voor het verifiëren of openen van bronnen.
+    - **Aanmeldings logboeken voor beheerde identiteit**: aanmeldingen op Azure-resources met geheimen die worden beheerd door Azure.
+    - **Inrichtings logboeken**: informatie over systeem activiteit over gebruikers, groepen en rollen die worden ingericht door de Azure AD-inrichtings service.
 
 ## <a name="find-your-data"></a>Uw gegevens zoeken
 

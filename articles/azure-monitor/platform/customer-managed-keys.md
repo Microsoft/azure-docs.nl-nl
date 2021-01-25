@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: f2807501b1e18d4cbffaa34d70bccf8d70565266
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: b6836eee7e0e6ccbfa2628e0e371152f31ddf9d2
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747220"
+ms.locfileid: "98757539"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -126,7 +126,7 @@ Deze instellingen kunnen worden bijgewerkt in Key Vault via CLI en Power shell:
 ## <a name="create-cluster"></a>Cluster maken
 
 Clusters ondersteunen twee [beheerde identiteits typen](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types): systeem toegewezen en door de gebruiker toegewezen, terwijl één identiteit kan worden gedefinieerd in een cluster, afhankelijk van uw scenario. 
-- Door het systeem toegewezen beheerde identiteit is eenvoudiger en wordt automatisch gegenereerd met het maken van clusters wanneer de identiteit `type` is ingesteld op '*SystemAssigned*'. Deze identiteit kan later worden gebruikt om het cluster toegang te verlenen tot uw Key Vault. 
+- Door het systeem toegewezen beheerde identiteit is eenvoudiger en wordt automatisch gegenereerd met het maken van clusters wanneer de identiteit `type` is ingesteld op '*SystemAssigned*'. Deze identiteit kan later worden gebruikt om opslag toegang te verlenen aan uw Key Vault voor verpakkende en onverpakte bewerkingen. 
   
   Identiteits instellingen in het cluster voor door het systeem toegewezen beheerde identiteit
   ```json
@@ -137,7 +137,7 @@ Clusters ondersteunen twee [beheerde identiteits typen](../../active-directory/m
   }
   ```
 
-- Als u door de klant beheerde sleutel wilt configureren bij het maken van het cluster, moet u een door de gebruiker toegewezen identiteit in uw Key Vault vooraf hebben verleend en vervolgens het cluster maken met de volgende instellingen: identiteit `type` als '*UserAssigned*', `UserAssignedIdentities` met de resource-id van de identiteit.
+- Als u door de klant beheerde sleutel wilt configureren bij het maken van het cluster, moet u een door de gebruiker toegewezen identiteit in uw Key Vault vooraf hebben verleend en vervolgens het cluster maken met de volgende instellingen: identiteit `type` als '*UserAssigned*', `UserAssignedIdentities` met de *resource-id* van uw identiteit.
 
   Identiteits instellingen in het cluster voor door de gebruiker toegewezen beheerde identiteit
   ```json
@@ -151,27 +151,7 @@ Clusters ondersteunen twee [beheerde identiteits typen](../../active-directory/m
   ```
 
 > [!IMPORTANT]
-> U kunt door de klant beheerde sleutel niet gebruiken met door de gebruiker toegewezen beheerde identiteit als uw Key Vault zich in Private-Link (vNet) bevindt. In dit scenario kunt u door het systeem toegewezen beheerde identiteit gebruiken.
-
-```json
-{
-  "identity": {
-    "type": "SystemAssigned"
-}
-```
- 
-Door:
-
-```json
-{
-  "identity": {
-  "type": "UserAssigned",
-    "userAssignedIdentities": {
-      "subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft. ManagedIdentity/UserAssignedIdentities/<user-assigned-managed-identity-name>"
-      }
-}
-```
-
+> U kunt door de gebruiker toegewezen beheerde identiteit niet gebruiken als uw Key Vault zich in Private-Link (vNet) bevindt. In dit scenario kunt u door het systeem toegewezen beheerde identiteit gebruiken.
 
 Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](../log-query/logs-dedicated-clusters.md#creating-a-cluster). 
 
@@ -452,7 +432,7 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
   - U kunt door de klant beheerde sleutel niet gebruiken met door de gebruiker toegewezen beheerde identiteit als uw Key Vault zich in Private-Link (vNet) bevindt. In dit scenario kunt u door het systeem toegewezen beheerde identiteit gebruiken.
 
-## <a name="troubleshooting"></a>Problemen oplossen
+## <a name="troubleshooting"></a>Probleemoplossing
 
 - Gedrag met Key Vault Beschik baarheid
   - In normale werking: opslag caches AEK gedurende korte tijd en terugvallen op Key Vault om regel matig de vertraging op te lossen.

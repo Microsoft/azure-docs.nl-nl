@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: c2eddf75f99b751773220ae677d66fe8c09abb0e
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: f9029a36dc3b778e139b4553524e8e2ca6b4bbad
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744580"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757166"
 ---
 # <a name="extensions-for-cloud-services-extended-support"></a>Uitbrei dingen voor Cloud Services (uitgebreide ondersteuning)
 
@@ -35,7 +35,7 @@ Met de basis controle worden gegevens van de prestatie meter items uit rolinstan
 
 Met geavanceerde controle worden extra metrische gegevens bemonsterd en verzameld met intervallen van vijf minuten, 1 uur en 12 uur. De geaggregeerde gegevens worden opgeslagen in een opslag account, in tabellen, en worden na 10 dagen verwijderd. Het gebruikte opslag account wordt geconfigureerd door de rol; u kunt verschillende opslag accounts voor verschillende rollen gebruiken. 
 
-De uitbrei ding voor Windows-Azure Diagnostics kan worden ingeschakeld voor Cloud Services (uitgebreide ondersteuning) via [Power shell](deploy-powershell.md) of [arm-sjabloon](deploy-template.md)
+Zie [de Windows Azure Diagnostics-extensie Toep assen in Cloud Services (uitgebreide ondersteuning)](enable-wad.md) voor meer informatie
 
 
 ## <a name="next-steps"></a>Volgende stappen 

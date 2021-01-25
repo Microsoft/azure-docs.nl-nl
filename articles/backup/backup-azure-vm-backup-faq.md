@@ -3,12 +3,12 @@ title: 'Veelgestelde vragen: back-ups maken van virtuele Azure-machines'
 description: In dit artikel vindt u antwoorden op veelgestelde vragen over het maken van back-ups van virtuele Azure-machines met de Azure Backup-service.
 ms.topic: conceptual
 ms.date: 09/17/2019
-ms.openlocfilehash: ba2779305302e91f68cb2664c90f53fdf9a9ca55
-ms.sourcegitcommit: 273c04022b0145aeab68eb6695b99944ac923465
+ms.openlocfilehash: edc48aaf0a05867de81bd7d5f64f8be4e54ddb8a
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97008347"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757505"
 ---
 # <a name="frequently-asked-questions-back-up-azure-vms"></a>Veelgestelde vragen: back-ups maken van virtuele Azure-machines
 
@@ -113,6 +113,10 @@ Azure Backup ondersteunt nu selectieve back-up en herstel met behulp van de back
 ### <a name="are-managed-identities-preserved-if-a-tenant-change-occurs-during-backup"></a>Worden beheerde identiteiten behouden als er een Tenant wijziging optreedt tijdens het maken van een back-up?
 
 Als er wijzigingen in de [Tenant](/azure/devops/organizations/accounts/change-azure-ad-connection) optreden, moet u [beheerde identiteiten](../active-directory/managed-identities-azure-resources/overview.md) uitschakelen en opnieuw inschakelen om back-ups opnieuw te laten werken.
+
+### <a name="does-azure-backup-support-backing-up-nfs-files-mounted-from-storage"></a>Ondersteunt Azure Backup het maken van back-ups van NFS-bestanden die zijn gekoppeld vanuit opslag?
+
+Azure Backup biedt geen ondersteuning voor het maken van back-ups van NFS-bestanden die zijn gekoppeld vanuit opslag, of van andere NFS-servers, op Linux-of Windows-computers. Er worden alleen back-ups gemaakt van schijven die lokaal zijn gekoppeld aan de virtuele machine.
 
 ## <a name="restore"></a>Herstellen
 

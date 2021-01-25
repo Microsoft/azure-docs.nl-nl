@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/07/2020
 ms.author: memildin
-ms.openlocfilehash: d03177e3224bbd3f53320871efc6a0d6b3ea479d
-ms.sourcegitcommit: fec60094b829270387c104cc6c21257826fccc54
+ms.openlocfilehash: 5b257e45a86a7b22e9064fcfc6092b3c946ae99b
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96922721"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757632"
 ---
 # <a name="organize-management-groups-subscriptions-and-tenant-wide-visibility"></a>Beheer groepen, abonnementen en zicht baarheid van de hele Tenant organiseren
 
@@ -81,7 +81,7 @@ U kunt abonnementen toevoegen aan de beheer groep die u hebt gemaakt.
 
 ## <a name="grant-tenant-wide-permissions-to-yourself"></a>Machtigingen voor de hele Tenant verlenen
 
-Een gebruiker met de Azure Active Directory rol van de **globale beheerder** heeft mogelijk verantwoordelijkheden voor de hele Tenant, maar heeft geen Azure-machtigingen voor het weer geven van de organisatie-brede informatie in azure Security Center. 
+Een gebruiker met de Azure Active Directory-rol **Globale beheerder** kan verantwoordelijkheden hebben voor de hele tenant, maar geen Azure-machtigingen om deze organisatiebrede informatie te bekijken in Azure Security Center. 
 
 > [!TIP]
 > Als uw organisatie toegang tot resources beheert met [Azure AD privileged Identity Management (PIM)](../active-directory/privileged-identity-management/pim-configure.md)of een ander PIM-hulp programma, moet de rol van globale beheerder actief zijn voor de gebruiker die deze wijzigingen aanbrengt.
@@ -107,10 +107,40 @@ Machtigingen op Tenant niveau toewijzen:
 
 1. Zodra u toegang hebt tot verhoogde bevoegdheden, opent of vernieuwt u Azure Security Center om te controleren of u zicht hebt op alle abonnementen onder uw Azure AD-Tenant. 
 
+
+## <a name="request-tenant-wide-permissions-when-yours-are-insufficient"></a>Machtigingen voor de hele Tenant aanvragen wanneer u niet voldoende bent
+
+Als u zich aanmeldt bij Security Center en een banner ziet dat uw weer gave beperkt is, kunt u klikken om een aanvraag naar de globale beheerder voor uw organisatie te verzenden. In de aanvraag kunt u de rol toevoegen die u wilt toewijzen en de globale beheerder neemt een beslissing over welke rol moet worden verleend. 
+
+Het is het besluit van de globale beheerder of u deze aanvragen accepteert of weigert. 
+
+> [!IMPORTANT]
+> U kunt slechts elke zeven dagen één aanvraag indienen.
+
+Verhoogde machtigingen aanvragen bij de globale beheerder:
+
+1. Open Azure Security Center vanuit het Azure Portal.
+
+1. Als de banner ' u ziet beperkte informatie ' wordt weer gegeven. Selecteer deze.
+
+    :::image type="content" source="media/security-center-management-groups/request-tenant-permissions.png" alt-text="Vaandel dat een gebruiker informeert, kan de machtigingen voor de hele Tenant aanvragen.":::
+
+1. Selecteer in het formulier voor gedetailleerde aanvragen de gewenste rol en de reden waarom u deze machtigingen nodig hebt.
+
+    :::image type="content" source="media/security-center-management-groups/request-tenant-permissions-details.png" alt-text="Details pagina voor het aanvragen van Tenant machtigingen van uw globale beheerder van Azure":::
+
+1. Selecteer **toegang aanvragen**.
+
+    Er wordt een e-mail bericht verzonden naar de globale beheerder. Het e-mail bericht bevat een koppeling naar Security Center waar ze de aanvraag kunnen goed keuren of afwijzen.
+
+    :::image type="content" source="media/security-center-management-groups/request-tenant-permissions-email.png" alt-text="Een e-mail naar de globale beheerder verzenden voor nieuwe machtigingen":::
+
+    Nadat de globale beheerder **de aanvraag** heeft geselecteerd en het proces heeft voltooid, wordt de beslissing verzonden naar de gebruiker die het verzoek heeft ingediend. 
+
 ## <a name="assign-azure-roles-to-other-users"></a>Azure-rollen toewijzen aan andere gebruikers
 
 ### <a name="assign-azure-roles-to-users-through-the-azure-portal"></a>Wijs Azure-rollen toe aan gebruikers via de Azure Portal: 
-1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
 1. Als u beheer groepen wilt weer geven, selecteert u **alle services** onder het hoofd menu van Azure en selecteert u vervolgens **beheergroepen**.
 1.  Selecteer een beheer groep en selecteer **Details**.
 
@@ -149,6 +179,7 @@ Machtigingen op Tenant niveau toewijzen:
     ```
 
 ## <a name="remove-elevated-access"></a>Verhoogde toegang verwijderen 
+
 Zodra de Azure-functies aan de gebruikers zijn toegewezen, moet de Tenant beheerder zichzelf verwijderen van de rol beheerder van gebruikers toegang.
 
 1. Meld u aan bij de [Azure Portal](https://portal.azure.com) of het [Azure Active Directory beheer centrum](https://aad.portal.azure.com).

@@ -8,12 +8,12 @@ ms.author: arjagann
 ms.service: cognitive-search
 ms.topic: conceptual
 ms.date: 10/14/2020
-ms.openlocfilehash: 12943d5d22a9e81c7e99522fa4728f4798549682
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 01a88be9c54a2701130daace26c44159ee364e4c
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96499948"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757240"
 ---
 # <a name="configure-ip-firewall-rules-to-allow-indexer-connections-azure-cognitive-search"></a>IP-firewall regels configureren om Indexeer functie verbindingen toe te staan (Azure Cognitive Search)
 
@@ -30,7 +30,7 @@ Verkrijg de Fully Qualified Domain Name (FQDN) van uw zoek service. Dit ziet er 
 
    ![FQDN van service verkrijgen](media\search-indexer-howto-secure-access\search-service-portal.png "FQDN van service verkrijgen")
 
-Het IP-adres van de zoek service kan worden verkregen door een `nslookup` (of een `ping` ) van de FQDN uit te voeren. In het onderstaande voor beeld voegt u ' 10.50.10.50 ' toe aan een regel voor binnenkomende verbindingen op de Azure Storage firewall.
+Het IP-adres van de zoek service kan worden verkregen door een `nslookup` (of een `ping` ) van de FQDN uit te voeren. In het onderstaande voor beeld voegt u ' 150.0.0.1 ' toe aan een regel voor binnenkomende verbindingen op de Azure Storage firewall. Het kan tot vijf tien minuten duren nadat de firewall instellingen zijn bijgewerkt voor de Indexeer functie van de zoek service om toegang te krijgen tot het Azure Storage-account.
 
 ```azurepowershell
 

@@ -4,12 +4,12 @@ description: Hierin wordt een overzicht gegeven van de ondersteunings instelling
 ms.topic: conceptual
 ms.date: 09/13/2019
 ms.custom: references_regions
-ms.openlocfilehash: ade92e445897e36139e74353fa703ddf50d3f9b3
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: d3329d9cac9547fbe9ec971bb8944f50971732b5
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562723"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757403"
 ---
 # <a name="support-matrix-for-azure-vm-backup"></a>Ondersteuningsmatrix voor back-up van Azure-VM
 
@@ -25,7 +25,7 @@ Andere ondersteunings matrices:
 
 Hier vindt u informatie over het maken van back-ups en het herstellen van virtuele Azure-machines met de Azure Backup-service.
 
-**Scenario** | **Een back-up maken** | **Agent** |**Herstellen**
+**Scenario** | **Een back-up maken** | **Tussen** |**Herstellen**
 --- | --- | --- | ---
 Directe back-ups van virtuele Azure-machines  | Maak een back-up van de volledige VM.  | Er is geen extra agent nodig op de Azure-VM. Azure Backup installeert en gebruikt een uitbrei ding van de [Azure VM-agent](../virtual-machines/extensions/agent-windows.md) die wordt uitgevoerd op de VM. | Herstel als volgt:<br/><br/> - **Een basis-VM maken**. Dit is handig als de VM geen speciale configuratie heeft, zoals meerdere IP-adressen.<br/><br/> - **Herstel de VM-schijf**. Herstel de schijf. Koppel deze vervolgens aan een bestaande virtuele machine of maak een nieuwe virtuele machine op basis van de schijf met behulp van Power shell.<br/><br/> - **Vervang de VM-schijf**. Als er een virtuele machine bestaat en beheerde schijven (niet-versleuteld) worden gebruikt, kunt u een schijf herstellen en deze gebruiken om een bestaande schijf op de virtuele machine te vervangen.<br/><br/> - **Specifieke bestanden/mappen herstellen**. U kunt bestanden/mappen herstellen vanaf een virtuele machine in plaats van vanaf de hele VM.
 Directe back-ups van virtuele Azure-machines (alleen Windows)  | Maak een back-up van specifieke bestanden/mappen/volume. | Installeer de [Azure Recovery Services-agent](backup-azure-file-folder-backup-faq.md).<br/><br/> U kunt de MARS-agent naast de back-upextensie voor de Azure VM-agent uitvoeren om een back-up te maken van de virtuele machine op het niveau van het bestand of de map. | Specifieke mappen/bestanden herstellen.
@@ -81,6 +81,7 @@ Voor Azure VM Linux-back-ups ondersteunt Azure Backup de lijst met Linux- [distr
 - Azure Backup biedt geen ondersteuning voor 32-bits besturingssystemen.
 - Andere uw eigen Linux-distributies kunnen werken zolang de [Azure VM-agent voor Linux](../virtual-machines/extensions/agent-linux.md) beschikbaar is op de virtuele machine en zolang python wordt ondersteund.
 - Azure Backup biedt geen ondersteuning voor een door een proxy geconfigureerde Linux-VM als er geen python-versie 2,7 is geïnstalleerd.
+- Azure Backup biedt geen ondersteuning voor het maken van back-ups van NFS-bestanden die zijn gekoppeld vanuit opslag, of van andere NFS-servers, op Linux-of Windows-computers. Er worden alleen back-ups gemaakt van schijven die lokaal zijn gekoppeld aan de virtuele machine.
 
 ## <a name="backup-frequency-and-retention"></a>Back-upfrequentie en retentie
 
@@ -144,10 +145,11 @@ Back-ups maken van Vm's die zijn geïmplementeerd vanuit een aangepaste installa
 Back-ups maken van virtuele machines die zijn gemigreerd naar Azure| Ondersteund.<br/><br/> Als u een back-up wilt maken van de VM, moet de VM-agent op de gemigreerde computer zijn geïnstalleerd.
 Back-up van multi-VM-consistentie | Azure Backup biedt geen consistentie van gegevens en toepassingen op meerdere Vm's.
 Back-up met [Diagnostische instellingen](../azure-monitor/platform/platform-logs-overview.md)  | Niet-ondersteunde. <br/><br/> Als het herstellen van de virtuele machine van Azure met Diagnostische instellingen wordt geactiveerd met de optie [nieuwe maken](backup-azure-arm-restore-vms.md#create-a-vm) , mislukt de herstel bewerking.
-Herstellen van op zones vastgemaakte Vm's | Ondersteund (voor een VM waarvan een back-up is gemaakt na 2019 januari en waar [beschikbaarheids zones](https://azure.microsoft.com/global-infrastructure/availability-zones/) beschikbaar zijn).<br/><br/>We ondersteunen momenteel het herstellen naar dezelfde zone die is vastgemaakt in Vm's. Als de zone echter niet beschikbaar is, mislukt de herstel bewerking.
+Herstellen van op zones vastgemaakte Vm's | Ondersteund (voor een VM waarvan een back-up is gemaakt na 2019 januari en waar [beschikbaarheids zones](https://azure.microsoft.com/global-infrastructure/availability-zones/) beschikbaar zijn).<br/><br/>We ondersteunen momenteel het herstellen naar dezelfde zone die is vastgemaakt in Vm's. Als de zone echter niet beschikbaar is vanwege een storing, mislukt de herstel bewerking.
 Gen2 Vm's | Ondersteund <br> Azure Backup ondersteunt het maken van back-ups en het herstellen van [Gen2-vm's](https://azure.microsoft.com/updates/generation-2-virtual-machines-in-azure-public-preview/). Wanneer deze Vm's worden hersteld vanaf het herstel punt, worden ze teruggezet als [Gen2 vm's](https://azure.microsoft.com/updates/generation-2-virtual-machines-in-azure-public-preview/).
 Back-ups van virtuele Azure-machines met vergren delingen | Niet ondersteund voor niet-beheerde Vm's. <br><br> Ondersteund voor beheerde Vm's.
 [Spot-VM's](../virtual-machines/spot-vms.md) | Niet-ondersteunde. Azure Backup de locatie van de virtuele machines als gewone virtuele machines van Azure herstelt.
+[Voor Azure toegewezen host](https://docs.microsoft.com/azure/virtual-machines/dedicated-hosts) | Ondersteund
 
 ## <a name="vm-storage-support"></a>Ondersteuning voor VM-opslag
 
@@ -165,6 +167,7 @@ Grootte van schijf op beveiligde virtuele machine wijzigen | Ondersteund.
 Gedeelde opslag| Het maken van back-ups van virtuele machines met Cluster Shared Volume (CSV) of Scale-Out Bestands server wordt niet ondersteund. CSV-schrijvers mislukken waarschijnlijk tijdens het maken van de back-up. Bij het terugzetten kunnen schijven met CSV-volumes mogelijk niet worden opgehaald.
 [Gedeelde schijven](../virtual-machines/disks-shared-enable.md) | Wordt niet ondersteund.
 Ultra-SSD schijven | Wordt niet ondersteund. Zie deze [beperkingen](selective-disk-backup-restore.md#limitations)voor meer informatie.
+[Tijdelijke schijven](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview#temporary-disk) | Er wordt geen back-up van de tijdelijke schijven gemaakt door Azure Backup.
 
 ## <a name="vm-network-support"></a>VM-netwerk ondersteuning
 

@@ -5,14 +5,14 @@ services: data-factory
 author: lrtoyou1223
 ms.service: data-factory
 ms.topic: troubleshooting
-ms.date: 11/17/2020
+ms.date: 01/25/2021
 ms.author: lle
-ms.openlocfilehash: ccebdbf428180f8ff4ab10dc6007c3ec35a66362
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: e81a12f4c5d817670fe1f7968184bcc97e78a53c
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503570"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757675"
 ---
 # <a name="troubleshoot-self-hosted-integration-runtime"></a>Problemen met zelf-hostende Integration runtime oplossen
 
@@ -67,31 +67,6 @@ Een nieuwe activiteit kan een OOM-fout veroorzaken als de IR-machine even veel g
 #### <a name="resolution"></a>Oplossing
 
 Controleer het resource gebruik en de uitvoering van gelijktijdige activiteiten op het IR-knoop punt. Pas de interne en activerings tijd van de uitvoering van de activiteit aan om te veel uitvoering op één IR-knoop punt te voor komen.
-
-
-### <a name="ssltls-certificate-issue"></a>Probleem met SSL/TLS-certificaat
-
-#### <a name="symptoms"></a>Symptomen
-
-Wanneer u probeert een Secure Sockets Layer (SSL)-certificaat (/Transport Layer Security) in te scha kelen door het certificaat te kiezen (nadat u **zelf-hostende IR Configuration Manager**  >  **externe toegang via intranet** hebt geselecteerd), krijgt u de volgende fout:
-
-De instellingen voor externe toegang zijn ongeldig. Het controleren van de identiteit voor het uitgaande bericht is mislukt. De verwachte DNS-identiteit van het externe eind punt is abc.microsoft.com, maar het externe eind punt heeft de DNS-claim microsoft.com ontvangen. Als dit een geldig extern eind punt is, kunt u het probleem oplossen door expliciet DNS-identiteit ' microsoft.com ' op te geven als de identiteits eigenschap van EndpointAddress bij het maken van de kanaal proxy. '
-
-In het vorige voor beeld is het gekozen certificaat ' microsoft.com ' toegevoegd.
-
-#### <a name="cause"></a>Oorzaak
-
-Dit is een bekend probleem in Windows Communication Foundation (WCF). De validatie van de WCF SSL/TLS controleert alleen voor de laatste DNSName in het veld **alternatieve naam voor onderwerp** (San). 
-
-#### <a name="resolution"></a>Oplossing
-
-Een Joker teken certificaat wordt ondersteund in de Azure Data Factory v2 zelf-hostende IR. Dit probleem treedt normaal op omdat het SSL-certificaat onjuist is. De laatste DNSName in het SAN moet geldig zijn. 
-
-Ga als volgt te werk om de DNSName te controleren en te corrigeren: 
-
-1. Open de beheer console.
-1. Dubbel Controleer onder **Details van certificaat** de waarde in de vakken **onderwerp** en **alternatieve naam voor onderwerp** . Bijvoorbeeld ' DNS name = microsoft.com.com ' is geen geldige naam.
-1. Neem contact op met het certificaat van de uitgevende onderneming om het onjuiste DNSName te verwijderen.
 
 ### <a name="concurrent-jobs-limit-issue"></a>Probleem met limiet voor gelijktijdige taken
 
@@ -376,7 +351,7 @@ Ga naar het gebeurtenis logboek van Integration runtime om de fout te controlere
     
         ![Scherm opname van het deel venster "aanmelden" voor het service account.](media/self-hosted-integration-runtime-troubleshoot-guide/logon-service-account.png)
 
-    1. Controleer of het aanmeldings service account is **aangemeld als service** machtigingen voor het starten van de Windows-service:
+    1. Controleer of het aanmeldings service account is **aangemeld als service** machtiging voor het starten van de Windows-service:
 
         ![Scherm afbeelding van het eigenschappen venster Aanmelden als service.](media/self-hosted-integration-runtime-troubleshoot-guide/logon-as-service.png)
 

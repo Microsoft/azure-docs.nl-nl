@@ -21,10 +21,10 @@
   expanded: true
 - name: Concepten
   items:
+    - name: Uitbreidingen
+      href: extensions.md
     - name: Beschik bare VM-grootten
       href: available-sizes.md
-    - name: Veelgestelde vragen
-      href: faq.md
     - name: Patches voor gastbesturingssysteem
       href: ../cloud-services/cloud-services-guestos-msrc-releases.md?toc=/azure/cloud-services-extended-support/toc.json&bc=/azure/cloud-services-extended-support/breadcrumb/toc.json
     - name: Buitengebruikstelling van gastbesturingssysteem
@@ -49,10 +49,10 @@
           href: schema-cscfg-role.md
         - name: NetworkConfiguration-schema
           href: schema-cscfg-networkconfiguration.md
+    - name: Veelgestelde vragen
+      href: faq.md
 - name: Procedures
   items:
-    - name: Overzicht van extensies
-      href: extensions.md
     - name: Extern bureaublad extensie Toep assen
       href: enable-rdp.md
     - name: WAD-extensie Toep assen
@@ -71,7 +71,7 @@
       href: sample-get-cloud-service.md
     - name: Een Cloud service opnieuw instellen
       href: sample-reset-cloud-service.md
-- name: Verwijzing
+- name: Naslaginformatie
   items:
     - name: Voor beelden van implementatie bestanden
       href: 'https://github.com/Azure-Samples/cloud-services-extended-support'
@@ -83,6 +83,8 @@
       href: 'https://docs.microsoft.com/azure/templates/microsoft.compute/cloudservices'
     - name: REST
       href: 'https://docs.microsoft.com/rest/api/compute/cloudservices'
+    - name: SDK
+      href: 'https://www.nuget.org/packages/Microsoft.Azure.Management.Compute/43.0.0-preview'
 - name: Resources
   items:
     - name: Azure-roadmap

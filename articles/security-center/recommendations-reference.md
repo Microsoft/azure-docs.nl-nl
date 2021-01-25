@@ -4,22 +4,21 @@ description: In dit artikel vindt u beveiligingsaanbevelingen van Azure Security
 author: memildin
 ms.service: security-center
 ms.topic: reference
-ms.date: 01/12/2021
+ms.date: 01/24/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: 11d4830908b4e86da12cd5e40cc26b1c1b1aecbd
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: cd72e904f659b7bd9c7e2df86b46fe20bd26ec33
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133034"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757094"
 ---
 # <a name="security-recommendations---a-reference-guide"></a>Aanbevelingen voor beveiliging: een naslaggids
 
 In dit artikel vindt u een overzicht van de aanbevelingen die u mogelijk in Azure Security Center ziet. De aanbevelingen die in uw omgeving worden weergegeven, zijn afhankelijk van de resources die u beveiligt en uw aangepaste configuratie.
 
-De aanbevelingen van Security Center zijn gebaseerd op aanbevolen procedures. Sommige zijn afgestemd op de **Azure Security-benchmark**, de door Microsoft ontworpen, voor Azure specifieke richtlijnen voor aanbevolen procedures voor beveiliging en naleving op basis van algemene nalevingskaders.
-[Meer informatie over Azure Security-benchmark](../security/benchmarks/introduction.md).
+De aanbevelingen van Security Center zijn gebaseerd op de [beveiligings benchmark van Azure](../security/benchmarks/introduction.md). Azure Security Benchmark is de door Microsoft ontworpen, Azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingsframeworks. Dit algemeen gerespecteerde Bench Mark bouwt voort op de besturings elementen van het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging.
 
 Zie [Aanbevelingen oplossen in Azure Security Center](security-center-remediate-recommendations.md) voor meer informatie over hoe u kunt reageren op deze aanbevelingen.
 

@@ -2,164 +2,274 @@
 title: Een persoonlijke Azure-koppelings service maken met behulp van Azure CLI
 description: Meer informatie over het maken van een Azure-service voor persoonlijke koppelingen met behulp van Azure CLI
 services: private-link
-author: malopMSFT
+author: asudbring
 ms.service: private-link
 ms.topic: how-to
-ms.date: 09/16/2019
+ms.date: 01/22/2021
 ms.author: allensu
-ms.openlocfilehash: cfffafaab2e2d4ef6b165ef03beb827342c94608
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 567ed736c52e8b3cbb03edeb19b3c0e2364e4112
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96018049"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757336"
 ---
 # <a name="create-a-private-link-service-using-azure-cli"></a>Een persoonlijke koppelings service maken met behulp van Azure CLI
-In dit artikel wordt beschreven hoe u een persoonlijke koppelings service maakt in azure met behulp van Azure CLI.
 
-[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)]
+Aan de slag met een Private Link-service die naar uw service verwijst.  Geef Private Link toegang tot uw service of resource die achter een Azure Standard Load Balancer is geïmplementeerd.  Gebruikers van uw service hebben persoonlijke toegang via hun virtuele netwerk.
 
-- Dit artikel vereist de nieuwste versie van de Azure CLI. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
+[!INCLUDE [quickstarts-free-trial-note](../../includes/quickstarts-free-trial-note.md)]
 
-## <a name="create-a-private-link-service"></a>Een Private Link-service maken
-### <a name="create-a-resource-group"></a>Een resourcegroep maken
+[!INCLUDE [azure-cli-prepare-your-environment.md](../../includes/azure-cli-prepare-your-environment.md)] 
 
-Voordat u een virtueel netwerk kunt maken, moet u een resourcegroep maken die het virtuele netwerk host. Maak een resourcegroep maken met [az group create](/cli/azure/group). Dit voorbeeld wordt een resourcegroep met de naam *myResourceGroup* gemaakt op de locatie *westcentralus*:
+- Voor deze quickstart is versie 2.0.28 of hoger van Azure CLI vereist. Als u Azure Cloud Shell gebruikt, is de nieuwste versie al geïnstalleerd.
 
-```azurecli-interactive
-az group create --name myResourceGroup --location westcentralus
-```
-### <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
-Maak een virtueel netwerk met [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create). In dit voor beeld wordt een standaard virtueel netwerk gemaakt met de naam *myVirtualNetwork* met één subnet met de naam *mySubnet*:
+## <a name="create-a-resource-group"></a>Een resourcegroep maken
 
-```azurecli-interactive
-az network vnet create --resource-group myResourceGroup --name myVirtualNetwork --address-prefix 10.0.0.0/16  
-```
-### <a name="create-a-subnet"></a>Een subnet maken
-Maak een subnet voor het virtuele netwerk met [AZ Network vnet subnet Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). In dit voor beeld maakt u een subnet met de naam *mySubnet* in het virtuele netwerk *myVirtualNetwork* :
+Een Azure-resourcegroep is een logische container waarin Azure-resources worden geïmplementeerd en beheerd.
+
+Maak een resourcegroep maken met [az group create](/cli/azure/group#az_group_create):
+
+* Met de naam **CreatePrivLinkService-RG**. 
+* Op de locatie **eastus**.
 
 ```azurecli-interactive
-az network vnet subnet create --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --address-prefixes 10.0.0.0/24    
+  az group create \
+    --name CreatePrivLinkService-rg \
+    --location eastus2
+
 ```
-### <a name="create-a-internal-load-balancer"></a>Een interne Load Balancer maken 
-Maak een interne load balancer met [AZ Network lb Create](/cli/azure/network/lb#az-network-lb-create). In dit voor beeld wordt een interne load balancer gemaakt met de naam *myILB* in de resource groep met de naam *myResourceGroup*. 
+
+## <a name="create-an-internal-load-balancer"></a>Een interne load balancer maken
+
+In dit gedeelte maakt u een virtueel netwerken en een interne Azure Load Balancer.
+
+### <a name="virtual-network"></a>Virtueel netwerk
+
+In dit gedeelte maakt u een virtueel netwerk en een subnet om de load balancer te hosten die toegang heeft tot uw Private Link-service.
+
+Maak een Virtual Network met [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create).
+
+* Met de naam **myVNet**.
+* Adresvoorvoegsel van **10.1.0.0/16**.
+* Subnet met de naam **mySubnet**.
+* Subnetvoorvoegsel van **10.1.0.0/24**.
+* In de **CreatePrivLinkService-RG-** resource groep.
+* Locatie van **eastus2**.
+* Schakel het netwerk beleid voor de service private link uit op het subnet.
 
 ```azurecli-interactive
-az network lb create --resource-group myResourceGroup --name myILB --sku standard --vnet-name MyVirtualNetwork --subnet mySubnet --frontend-ip-name myFrontEnd --backend-pool-name myBackEndPool
+  az network vnet create \
+    --resource-group CreatePrivLinkService-rg \
+    --location eastus2 \
+    --name myVNet \
+    --address-prefixes 10.1.0.0/16 \
+    --subnet-name mySubnet \
+    --subnet-prefixes 10.1.0.0/24
+
 ```
 
-### <a name="create-a-load-balancer-health-probe"></a>Een load balancer-statustest maken
+Gebruik [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update): voor het bijwerken van het subnet voor het uitschakelen van het netwerk beleid van een particuliere koppelings service.
 
-Een statustest controleert alle exemplaren van de virtuele machines om ervoor te zorgen dat deze netwerkverkeer kunnen ontvangen. Het exemplaar van een virtuele machine met mislukte testcontroles wordt uit de load balancer verwijderd totdat deze weer online komt en een testcontrole bepaalt of deze in orde is. Maak met [az network lb probe create](/cli/azure/network/lb/probe?view=azure-cli-latest) een statustest om de status van de virtuele machines te bewaken. 
+```azurecli-interactive
+az network vnet subnet update \
+    --name mySubnet \
+    --resource-group CreatePrivLinkService-rg \
+    --vnet-name myVNet \
+    --disable-private-link-service-network-policies true
+```
+
+### <a name="create-standard-load-balancer"></a>Een standaard load balancer maken
+
+In deze sectie wordt beschreven hoe u de volgende onderdelen van de load balancer kunt maken en configureren:
+
+  * Een front-end-IP-pool die het binnenkomende netwerkverkeer op de load balancer ontvangt.
+  * Een back-end-IP-pools waar de front-endpool het netwerkverkeer naartoe stuurt dat door de load balancer is verdeeld.
+  * Een statustest die de status van de back-end-VM-instanties vaststelt.
+  * Een load balancer-regel die bepaalt hoe het verkeer over de VM's wordt verdeeld.
+
+### <a name="create-the-load-balancer-resource"></a>De load balancer-resource maken
+
+Maak een openbare load balancer met [az network lb create](/cli/azure/network/lb#az-network-lb-create):
+
+* Genaamd **myLoadBalancer**.
+* Een front-endgroep met de naam **myFrontEnd**.
+* Een back-endgroep met de naam MyBackendPool.
+* Gekoppeld aan het virtuele netwerk **myVNet**.
+* Gekoppeld aan het back-end-subnet **mySubnet**.
+
+```azurecli-interactive
+  az network lb create \
+    --resource-group CreatePrivLinkService-rg \
+    --name myLoadBalancer \
+    --sku Standard \
+    --vnet-name myVnet \
+    --subnet mySubnet \
+    --frontend-ip-name myFrontEnd \
+    --backend-pool-name myBackEndPool
+```
+
+### <a name="create-the-health-probe"></a>Statustest maken
+
+Met een statustest worden alle VM-instanties gecontroleerd om na te gaan of ze netwerkverkeer kunnen verzenden. 
+
+Een virtuele machine met een mislukte test wordt verwijderd uit de load balancer. De virtuele machine wordt weer toegevoegd aan de load balancer wanneer de fout is opgelost.
+
+Gebruik een statustest met [az network lb probe create](/cli/azure/network/lb/probe#az-network-lb-probe-create):
+
+* Bewaakt de status van de virtuele machines.
+* Met de naam **myHealthProbe**.
+* Protocol: **TCP**.
+* Controleert **poort 80**.
 
 ```azurecli-interactive
   az network lb probe create \
-    --resource-group myResourceGroup \
-    --lb-name myILB \
+    --resource-group CreatePrivLinkService-rg \
+    --lb-name myLoadBalancer \
     --name myHealthProbe \
     --protocol tcp \
-    --port 80   
+    --port 80
 ```
 
-### <a name="create-a-load-balancer-rule"></a>Een load balancer-regel maken
+### <a name="create-the-load-balancer-rule"></a>Load balancer-regel maken
 
-Een load balancer-regel definieert de front-end-IP-configuratie voor het binnenkomende verkeer en de back-end-IP-pool om het verkeer te ontvangen, samen met de gewenste bron- en doelpoort. Maak met [az network lb rule create](/cli/azure/network/lb/rule?view=azure-cli-latest) de regel *myHTTPRule* voor het luisteren naar poort 80 in de front-endgroep *myFrontEnd* en het verzenden van netwerkverkeer met gelijke taakverdeling naar de back-endadresgroep *myBackEndPool* waarbij ook van poort 80 gebruik wordt gemaakt. 
+Met een load balancer-regel wordt het volgende gedefinieerd:
+
+* De front-end-IP-configuratie voor het binnenkomende verkeer.
+* De back-end-IP-adresgroep voor het ontvangen van verkeer.
+* De vereiste bron- en doelpoort. 
+
+Gebruik [az network lb rule create](/cli/azure/network/lb/rule#az-network-lb-rule-create) om een load balancer-regel te maken:
+
+* Naam: **myHTTPRule**
+* Luistert aan **poort 80** in de front-endpool **myFrontEnd**.
+* Verzendt netwerkverkeer volgens taakverdeling naar de back-endadresgroep **myBackEndPool** via **poort 80**. 
+* Gebruikt statustest **myHealthProbe**.
+* Protocol: **TCP**.
+* Time-out voor inactiviteit: **15 minuten**.
+* Schakel TCP opnieuw instellen in.
 
 ```azurecli-interactive
   az network lb rule create \
-    --resource-group myResourceGroup \
-    --lb-name myILB \
+    --resource-group CreatePrivLinkService-rg \
+    --lb-name myLoadBalancer \
     --name myHTTPRule \
     --protocol tcp \
     --frontend-port 80 \
     --backend-port 80 \
     --frontend-ip-name myFrontEnd \
     --backend-pool-name myBackEndPool \
-    --probe-name myHealthProbe  
+    --probe-name myHealthProbe \
+    --idle-timeout 15 \
+    --enable-tcp-reset true
 ```
-### <a name="create-backend-servers"></a>Back-endservers maken
 
-In dit voor beeld hebben we geen betrekking op het maken van virtuele machines. U kunt de stappen in Quick Start volgen [: Maak een interne Load Balancer voor het laden van vm's met behulp van Azure cli](../load-balancer/quickstart-load-balancer-standard-internal-cli.md) om twee virtuele machines te maken die moeten worden gebruikt als back-endservers voor de Load Balancer. 
+## <a name="create-a-private-link-service"></a>Een persoonlijke koppelings service maken
 
+In deze sectie maakt u een persoonlijke koppelings service die gebruikmaakt van de Azure Load Balancer gemaakt in de vorige stap.
 
-### <a name="disable-private-link-service-network-policies-on-subnet"></a>Particuliere koppeling service-netwerk beleid op subnet uitschakelen 
-De service voor persoonlijke koppelingen vereist een IP-adres van elk gewenst subnet in een virtueel netwerk. Op dit moment ondersteunen we geen netwerk beleid op deze IP-adressen.  Daarom moeten we het netwerk beleid op het subnet uitschakelen. Werk het subnet bij om het netwerk beleid van de privé koppelings service uit te scha kelen met [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update).
+Een persoonlijke koppelings service maken met behulp van een standaard-front-load balancer frontend-IP-configuratie met [AZ Network Private-Link-service Create](/cli/azure/network/private-link-service#az-network-private-link-service-create):
 
-```azurecli-interactive
-az network vnet subnet update --resource-group myResourceGroup --vnet-name myVirtualNetwork --name mySubnet --disable-private-link-service-network-policies true 
-```
- 
-## <a name="create-a-private-link-service-using-standard-load-balancer"></a>Een persoonlijke koppelings service maken met behulp van Standard Load Balancer 
- 
-Een persoonlijke koppelings service maken met behulp van de front-end-IP-configuratie van Standard Load Balancer met [AZ Network Private-Link-service Create](/cli/azure/network/private-link-service#az-network-private-link-service-create). In dit voor beeld wordt een persoonlijke koppelings service met de naam *myPLS* gemaakt met behulp van Standard Load Balancer met de naam *myLoadBalancer* in de resource groep genaamd *myResourceGroup*. 
+* Met de naam **myPrivateLinkService**.
+* In virtueel netwerk **myVnet**.
+* Gekoppeld aan standaard load balancer **myLoadBalancer** en front-end configuratie **myFrontEnd**.
+* Op de locatie **eastus2** .
  
 ```azurecli-interactive
 az network private-link-service create \
---resource-group myResourceGroup \
---name myPLS \
---vnet-name myVirtualNetwork \
---subnet mySubnet \
---lb-name myILB \
---lb-frontend-ip-configs myFrontEnd \
---location westcentralus 
+    --resource-group CreatePrivLinkService-rg \
+    --name myPrivateLinkService \
+    --vnet-name myVNet \
+    --subnet mySubnet \
+    --lb-name myLoadBalancer \
+    --lb-frontend-ip-configs myFrontEnd \
+    --location eastus2
 ```
-Noteer de service-ID van de persoonlijke koppeling nadat deze is gemaakt. U hebt dit later nodig voor het aanvragen van een verbinding met deze service.  
- 
-In deze fase is uw persoonlijke koppelings service gemaakt en is deze klaar om het verkeer te ontvangen. Het bovenstaande voor beeld is alleen om te demonstreren hoe u een persoonlijke koppelings service maakt met behulp van Azure CLI.  De load balancer back-end-Pools of een toepassing op de back-endservers voor het Luis teren naar het verkeer is niet geconfigureerd. Als u end-to-end verkeers stromen wilt zien, wordt u ten zeerste aangeraden uw toepassing achter uw Standard Load Balancer te configureren.  
- 
-Vervolgens laten we zien hoe u deze service kunt toewijzen aan een persoonlijk eind punt in een ander virtueel netwerk met behulp van Azure CLI. Het voor beeld is beperkt tot het maken van het persoonlijke eind punt en het verbinden met de persoonlijke koppelings service die hierboven is gemaakt met behulp van Azure CLI. Daarnaast kunt u virtuele machines in het virtuele netwerk maken voor het verzenden en ontvangen van verkeer naar het persoonlijke eind punt.        
- 
-## <a name="private-endpoints"></a>Privé-eindpunten
 
-### <a name="create-the-virtual-network"></a>Het virtuele netwerk maken 
-Maak een virtueel netwerk met [AZ Network vnet Create](/cli/azure/network/vnet#az-network-vnet-create). In dit voor beeld wordt een virtueel netwerk gemaakt met de naam  *myPEVNet*   in de resource groep met de naam *myResourcegroup*: 
+Uw persoonlijke koppelings service is gemaakt en kan verkeer ontvangen. Als u verkeers stromen wilt zien, configureert u uw toepassing achter uw standaard load balancer.
+
+
+## <a name="create-private-endpoint"></a>Privé-eindpunt maken
+
+In deze sectie wijst u de persoonlijke koppelings service toe aan een persoonlijk eind punt. Een virtueel netwerk bevat het persoonlijke eind punt voor de persoonlijke koppelings service. Dit virtuele netwerk bevat de resources die toegang hebben tot uw persoonlijke koppelings service.
+
+### <a name="create-private-endpoint-virtual-network"></a>Virtueel netwerk voor een privé-eind punt maken
+
+Maak een Virtual Network met [az network vnet create](/cli/azure/network/vnet#az-network-vnet-create).
+
+* Met de naam **myVNetPE**.
+* Adres voorvoegsel van **11.1.0.0/16**.
+* Subnet met de naam **mySubnetPE**.
+* Het subnetvoorvoegsel van **11.1.0.0/24**.
+* In de **CreatePrivLinkService-RG-** resource groep.
+* Locatie van **eastus2**.
+
 ```azurecli-interactive
-az network vnet create \
---resource-group myResourceGroup \
---name myPEVnet \
---address-prefix 10.0.0.0/16  
+  az network vnet create \
+    --resource-group CreatePrivLinkService-rg \
+    --location eastus2 \
+    --name myVNetPE \
+    --address-prefixes 11.1.0.0/16 \
+    --subnet-name mySubnetPE \
+    --subnet-prefixes 11.1.0.0/24
 ```
-### <a name="create-the-subnet"></a>Het subnet maken 
-Maak een subnet in een virtueel netwerk met [AZ Network vnet subnet Create](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-create). In dit voor beeld wordt een subnet met de naam  *mySubnet* gemaakt in het virtuele netwerk met de naam   *myPEVnet* in de resource groep met de naam *myResourcegroup*: 
 
-```azurecli-interactive 
-az network vnet subnet create \
---resource-group myResourceGroup \
---vnet-name myPEVnet \
---name myPESubnet \
---address-prefixes 10.0.0.0/24 
-```   
-## <a name="disable-private-endpoint-network-policies-on-subnet"></a>Beleid voor privé-eindpunt netwerk op subnet uitschakelen 
-Persoonlijk eind punt kan in elk gewenst subnet binnen een virtueel netwerk worden gemaakt. Op dit moment ondersteunen we geen netwerk beleid op privé-eind punten.  Daarom moeten we het netwerk beleid op het subnet uitschakelen. Werk het subnet bij om beleid voor privé-eindpunt netwerk uit te scha kelen met [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update). 
+Gebruik [AZ Network vnet subnet update](/cli/azure/network/vnet/subnet#az-network-vnet-subnet-update): voor het bijwerken van het subnet om beleid voor privé-eindpunt netwerk uit te scha kelen.
 
 ```azurecli-interactive
 az network vnet subnet update \
---resource-group myResourceGroup \
---vnet-name myPEVnet \
---name myPESubnet \
---disable-private-endpoint-network-policies true 
+    --name mySubnetPE \
+    --resource-group CreatePrivLinkService-rg \
+    --vnet-name myVNetPE \
+    --disable-private-endpoint-network-policies true
 ```
-## <a name="create-private-endpoint-and-connect-to-private-link-service"></a>Een persoonlijk eind punt maken en verbinding maken met de service voor persoonlijke koppelingen 
-Maak een persoonlijk eind punt voor het gebruik van de service voor persoonlijke koppelingen die hierboven in uw virtuele netwerk is gemaakt:
-  
+
+### <a name="create-endpoint-and-connection"></a>Eind punt en verbinding maken
+
+* Gebruik [AZ Network Private-Link-service show](/cli/azure/network/private-link-service#az_network_private_link_service_show) om de resource-id van de persoonlijke koppelings service op te halen. Met de opdracht wordt de resource-ID in een variabele geplaatst voor later gebruik.
+
+* Gebruik [AZ Network private-endpoint Create](/cli/azure/network/private-endpoint#az_network_private_endpoint_create) om het persoonlijke eind punt te maken in het virtuele netwerk dat u eerder hebt gemaakt.
+
+* Met de naam **MyPrivateEndpoint**.
+* In de **CreatePrivLinkService-RG-** resource groep.
+* Verbindings naam **myPEconnectiontoPLS**.
+* Locatie van **eastus2**.
+* In virtueel netwerk **myVNetPE** en subnet **mySubnetPE**.
+
 ```azurecli-interactive
-az network private-endpoint create \
---resource-group myResourceGroup \
---name myPE \
---vnet-name myPEVnet \
---subnet myPESubnet \
---private-connection-resource-id {PLS_resourceURI} \
---connection-name myPEConnectingPLS \
---location westcentralus 
+  export resourceid=$(az network private-link-service show \
+    --name myPrivateLinkService \
+    --resource-group CreatePrivLinkService-rg \
+    --query id \
+    --output tsv)
+
+  az network private-endpoint create \
+    --connection-name myPEconnectiontoPLS \
+    --name myPrivateEndpoint \
+    --private-connection-resource-id $resourceid \
+    --resource-group CreatePrivLinkService-rg \
+    --subnet mySubnetPE \
+    --manual-request false \
+    --vnet-name myVNetPE 
+
 ```
-U kunt de *privé-verbinding-resource-id* ophalen met behulp `az network private-link-service show` van de service private link. De ID ziet er als volgt uit:   
-/subscriptions/subID/resourceGroups/*resourcegroupname*/providers/Microsoft.Network/privateLinkServices/**privatelinkservicename** 
- 
-## <a name="show-private-link-service-connections"></a>Verbindingen met de persoonlijke koppelings service weer geven 
- 
-Zie verbindings aanvragen op uw privé koppelings service met [AZ Network Private-Link-service show](/cli/azure/network/private-link-service#az-network-private-link-service-show).    
-```azurecli-interactive 
-az network private-link-service show --resource-group myResourceGroup --name myPLS 
+
+## <a name="clean-up-resources"></a>Resources opschonen
+
+Als u deze niet meer nodig hebt, gebruikt u de opdracht [AZ Group delete](/cli/azure/group#az-group-delete) om de resource groep, de persoonlijke koppelings service, Load Balancer en alle gerelateerde resources te verwijderen.
+
+```azurecli-interactive
+  az group delete \
+    --name CreatePrivLinkService-rg 
 ```
+
 ## <a name="next-steps"></a>Volgende stappen
-- Meer informatie over [Azure Private Link service](private-link-service-overview.md)
+
+In deze snelstart, gaat u het volgende doen:
+
+* Een virtueel netwerk gemaakt en een interne Azure Load Balancer.
+* Een Private Link-service gemaakt
+
+Voor meer informatie over Azure Privé-eindpunt gaat u naar:
+> [!div class="nextstepaction"]
+> [Quickstart: Een privé-eindpunt maken met behulp van Azure CLI](create-private-endpoint-cli.md)

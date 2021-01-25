@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 09/11/2020
 ms.author: yelevin
-ms.openlocfilehash: 60e86c7c849bf09b3a5577453a6935466ab447f6
-ms.sourcegitcommit: b8eba4e733ace4eb6d33cc2c59456f550218b234
+ms.openlocfilehash: 4312a819f8fd41805dca095556efdc6189f23af9
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/23/2020
-ms.locfileid: "95483910"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98757116"
 ---
 # <a name="extend-azure-sentinel-across-workspaces-and-tenants"></a>Azure-Sentinel uitbreiden in werkruimten en tenants
 
@@ -94,18 +94,18 @@ Een functie kan ook een vaak gebruikte samen voeging vereenvoudigen. U kunt bijv
 
 U kunt vervolgens een query op beide werk ruimten schrijven door te beginnen met `unionSecurityEvent | where ...` .
 
-#### <a name="scheduled-alerts"></a>Geplande waarschuwingen
+#### <a name="cross-workspace-analytics-rules"></a>Regels voor cross-Workspace Analytics<a name="scheduled-alerts"></a>
+<!-- Bookmark added for backward compatibility with old heading -->
+Query's voor meerdere werk ruimten kunnen nu worden opgenomen in geplande analyse regels, afhankelijk van de volgende beperkingen:
 
-Query's in meerdere werk ruimten kunnen nu worden opgenomen in geplande waarschuwingen in analyse regels, afhankelijk van de volgende beperkingen:
-
-- Maxi maal 10 werk ruimten kunnen worden opgenomen in één query.
+- Er kunnen Maxi maal 15 werk ruimten in één query worden opgenomen.
 - Azure Sentinel moet worden geïmplementeerd op elke werk ruimte waarnaar wordt verwezen in de query.
 
 > [!NOTE] 
 > Het uitvoeren van query's in meerdere werk ruimten in dezelfde query kan van invloed zijn op de prestaties en wordt daarom alleen aanbevolen als de logica deze functionaliteit vereist.
 
-### <a name="using-cross-workspace-workbooks"></a>Werkmappen in meerdere werk ruimten gebruiken
-
+#### <a name="cross-workspace-workbooks"></a>Werkmappen in meerdere werk ruimten<a name="using-cross-workspace-workbooks"></a>
+<!-- Bookmark added for backward compatibility with old heading -->
 [Werkmappen](./overview.md#workbooks) bieden Dash boards en apps naar Azure Sentinel. Wanneer u werkt met meerdere werk ruimten, bieden ze bewaking en acties in verschillende werk ruimten.
 
 Werkmappen kunnen query's in meerdere werk ruimten bieden op een van de volgende drie manieren, elk met verschillende niveaus van expertise op eind gebruiker:
@@ -117,7 +117,7 @@ Werkmappen kunnen query's in meerdere werk ruimten bieden op een van de volgende
 | De werkmap interactief bewerken | Een ervaren gebruiker die een bestaande werkmap wijzigt, kan de query's hierin bewerken en de doel werkruimte selecteren met behulp van de werkruimte kiezer in de editor. | Met deze optie kan een hoofd gebruiker gemakkelijk bestaande werkmappen aanpassen om met meerdere werk ruimten te werken. |
 |
 
-### <a name="cross-workspace-hunting"></a>Jacht in meerdere werk ruimten
+#### <a name="cross-workspace-hunting"></a>Jacht in meerdere werk ruimten
 
 Azure Sentinel biedt vooraf geladen query voorbeelden, ontworpen om u op weg te helpen en u vertrouwd te raken met de tabellen en de query taal. Deze ingebouwde jacht-query's worden doorlopend ontwikkeld door micro soft-beveiligings onderzoekers, zowel het toevoegen van nieuwe query's en het verfijnen van bestaande query's, om u een ingangs punt te bieden om te zoeken naar nieuwe detecties en te identificeren van de aanspraken van indringing die mogelijk niet worden gedetecteerd door uw beveiligings Programma's.  
 

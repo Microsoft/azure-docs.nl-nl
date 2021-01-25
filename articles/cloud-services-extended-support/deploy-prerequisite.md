@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 45f2b75be9a0090b883c5cc62a0886366e81a302
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 28c7f2c0a61150b2014f669f37ac84ee3a94aebf
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98744279"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752155"
 ---
 # <a name="prerequisites-for-deploying-azure-cloud-services-extended-support"></a>Vereisten voor het implementeren van Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -42,12 +42,12 @@ CloudServices           Microsoft.Compute    Registered
 ## <a name="required-service-configuration-cscfg-file-updates"></a>Vereiste updates voor het service configuratie bestand (. cscfg)
 
 ### <a name="1-virtual-network"></a>1) Virtual Network
-Implementaties van Cloud service (uitgebreide ondersteuning) moeten zich in een virtueel netwerk bestaan. U kunt een virtueel netwerk maken via [Azure Portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal), [Power shell](https://docs.microsoft.com/azure/virtual-network/quick-create-powershell), de [Azure cli](https://docs.microsoft.com/azure/virtual-network/quick-create-cli) -of [arm-sjabloon](https://docs.microsoft.com/azure/virtual-network/quick-create-template). Naar het virtuele netwerk en subnetten moet ook worden verwezen in de service configuratie (. cscfg) onder de `NetworkConfiguration` sectie. 
+Implementaties van Cloud service (uitgebreide ondersteuning) moeten zich in een virtueel netwerk bestaan. U kunt een virtueel netwerk maken via [Azure Portal](https://docs.microsoft.com/azure/virtual-network/quick-create-portal), [Power shell](https://docs.microsoft.com/azure/virtual-network/quick-create-powershell), de [Azure cli](https://docs.microsoft.com/azure/virtual-network/quick-create-cli) -of [arm-sjabloon](https://docs.microsoft.com/azure/virtual-network/quick-create-template). Naar het virtuele netwerk en subnetten moet ook worden verwezen in de service configuratie (. cscfg) onder de sectie [NetworkConfiguration](schema-cscfg-networkconfiguration.md) . 
 
 Voor een virtueel netwerk dat deel uitmaakt van dezelfde resource groep als de Cloud service, is alleen het verwijzen naar de naam van het virtuele apparaat in het service configuratie bestand (. cscfg) voldoende. Als het virtuele netwerk en de Cloud service zich in twee verschillende resource groepen bevinden, moet de volledige Azure Resource Manager-ID van het virtuele netwerk worden opgegeven in het bestand met de service configuratie (. cscfg).
  
 #### <a name="virtual-network-located-in-same-resource-group"></a>Virtual Network zich in dezelfde resource groep bevinden
-```json
+```xml
 <VirtualNetworkSite name="<vnet-name>"/> 
 <AddressAssignments> 
 <InstanceAddress roleName="<role-name>"> 
@@ -58,8 +58,8 @@ Voor een virtueel netwerk dat deel uitmaakt van dezelfde resource groep als de C
 ```
 
 #### <a name="virtual-network-located-in-different-resource-group"></a>Virtueel netwerk bevindt zich in een andere resource groep
-```json
-“/subscriptions/<sub-id>/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>/> 
+```xml
+<VirtualNetworkSite name="/subscriptions/<sub-id>/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>"/> 
 <AddressAssignments> 
 <InstanceAddress roleName="<role-name>"> 
 <Subnets> 

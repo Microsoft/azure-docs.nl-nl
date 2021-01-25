@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/26/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 4a888c3ad771e4a7edbd7110ba584050fe68e810
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: b8360a22c815fa28626bb07a1518bd82ba6e3e46
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443786"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753515"
 ---
 # <a name="a-web-api-that-calls-web-apis-code-configuration"></a>Een web-API die web-Api's aanroept: code configuratie
 
@@ -88,7 +88,7 @@ Micro soft. Identity. Web biedt verschillende manieren om certificaten te beschr
 
 ## <a name="startupcs"></a>Startup.cs
 
-De Web-API moet een token aanschaffen voor de downstream API. U geeft deze op door de `.EnableTokenAcquisitionToCallDownstreamApi()` regel na te voegen `.AddMicrosoftIdentityWebApi(Configuration)` . Deze regel beschrijft de `ITokenAcquisition` service, die u kunt gebruiken in de acties van uw besturing/pagina. Zoals u echter in de volgende twee opsommings punten ziet, kunt u nog eenvoudiger werken. U moet ook een implementatie van de token cache kiezen, bijvoorbeeld `.AddInMemoryTokenCaches()` in *Startup.cs* :
+De Web-API moet een token aanschaffen voor de downstream API. U geeft deze op door de `.EnableTokenAcquisitionToCallDownstreamApi()` regel na te voegen `.AddMicrosoftIdentityWebApi(Configuration)` . Deze regel beschrijft de `ITokenAcquisition` service, die u kunt gebruiken in de acties van uw besturing/pagina. Zoals u echter in de volgende twee opsommings punten ziet, kunt u nog eenvoudiger werken. U moet ook een implementatie van de token cache kiezen, bijvoorbeeld `.AddInMemoryTokenCaches()` in *Startup.cs*:
 
 ```csharp
 using Microsoft.Identity.Web;
@@ -252,7 +252,7 @@ U kunt ook een voor beeld van een OBO-stroom implementatie bekijken in [Node.js 
 
 ## <a name="protocol"></a>Protocol
 
-Zie voor meer informatie over het OBO-protocol [micro soft Identity platform en OAuth 2,0-of-flow](./v2-oauth2-on-behalf-of-flow.md).
+Voor meer informatie over het OBO-protocol raadpleegt u het [micro soft Identity platform en de OAuth 2,0-stroom](./v2-oauth2-on-behalf-of-flow.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

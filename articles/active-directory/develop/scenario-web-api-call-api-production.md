@@ -1,5 +1,6 @@
 ---
-title: Web-API aanroepen van web-Api's naar productie-micro soft Identity-platform | Azure
+title: Web-API voor het aanroepen van web-Api's naar productie verplaatsen | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het verplaatsen van een web-API die web-Api's aanroept voor productie.
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: aea3a173fd07b66021d35142a84499ae9c66c014
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 370bedf04dc61e2a637f735580cd4df14061264a
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86518195"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753343"
 ---
 # <a name="a-web-api-that-calls-web-apis-move-to-production"></a>Een web-API die web-Api's aanroept: verplaatsen naar productie
 
@@ -30,4 +31,4 @@ Nu u de basis principes kent van het aanroepen van web-Api's vanuit uw eigen web
 
 | Voorbeeld | Platform | Beschrijving |
 |--------|----------|-------------|
-| [Active-Directory-aspnetcore-webapi-zelf studie-v2](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) hoofd stuk 1 | ASP.NET Core Web-API, bureau blad (WPF) | ASP.NET Core Web-API-aanroepen Microsoft Graph, die u aanroept vanuit een WPF-toepassing met behulp van het micro soft Identity platform (v 2.0). |
+| [Active-Directory-aspnetcore-webapi-zelf studie-v2](https://github.com/Azure-Samples/active-directory-dotnet-native-aspnetcore-v2/tree/master/2.%20Web%20API%20now%20calls%20Microsoft%20Graph) hoofd stuk 1 | ASP.NET Core Web-API, bureau blad (WPF) | ASP.NET Core Web API-aanroepen Microsoft Graph, die u aanroept vanuit een WPF-toepassing met behulp van het micro soft Identity-platform. |

@@ -13,12 +13,12 @@ ms.date: 05/19/2020
 ms.author: hirsin
 ms.reviewer: kkrishna
 ms.custom: aaddev
-ms.openlocfilehash: 064c9a00e1cd7c139f3f42a053dcf8a5db13f161
-ms.sourcegitcommit: ae6e7057a00d95ed7b828fc8846e3a6281859d40
+ms.openlocfilehash: eed4e919684575bb2c63170d91517b661fac4acf
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92104577"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753974"
 ---
 # <a name="handle-itp-in-safari-and-other-browsers-where-third-party-cookies-are-blocked"></a>ITP in Safari en andere browsers waar cookies van derden worden geblokkeerd, afhandelen
 
@@ -26,7 +26,7 @@ In veel browsers worden cookies van derden geblokkeerd op aanvragen voor domeine
 
 ## <a name="what-is-intelligent-tracking-protection-itp"></a>Wat is intelligente traceer beveiliging (ITP)?
 
-Apple Safari heeft een standaard functie voor privacy-beveiliging, die [intelligente traceer beveiliging](https://webkit.org/tracking-prevention-policy/)of *ITP*wordt genoemd. ITP blokkeert "cookies van derden" cookies op aanvragen die tussen domeinen.
+Apple Safari heeft een standaard functie voor privacy-beveiliging, die [intelligente traceer beveiliging](https://webkit.org/tracking-prevention-policy/)of *ITP* wordt genoemd. ITP blokkeert "cookies van derden" cookies op aanvragen die tussen domeinen.
 
 Een veelvoorkomende vorm van gebruikers tracering wordt uitgevoerd door een IFRAME te laden naar een site van derden op de achtergrond en cookies te gebruiken om de gebruiker via internet te correleren. Helaas is dit patroon ook de standaard methode voor het implementeren van de [impliciete stroom](v2-oauth2-implicit-grant-flow.md) in apps met één pagina (Spas). Wanneer een browser cookies van derden blokkeert om het volgen van gebruikers te voor komen, worden SPAs ook verbroken.
 
@@ -77,7 +77,7 @@ Een algemeen patroon in web-apps is het gebruik van een iframe om één app binn
 
 Het verlenen van vernieuwings tokens aan de browser wordt beschouwd als een beveiligings probleem. Aanvallen met cross-site scripting (XSS) of met gemanipuleerd JS-pakketten kunnen het vernieuwings token stelen en extern gebruiken totdat het verloopt of wordt ingetrokken. Om het risico van gestolen vernieuwings tokens te minimaliseren, worden SPAs tokens uitgegeven die slechts 24 uur geldig zijn. Na 24 uur moet de app een nieuwe autorisatie code verkrijgen via een frame op het hoogste niveau Ga naar de aanmeldings pagina.
 
-Dit vernieuwings token patroon voor beperkte levens duur is gekozen als een evenwicht tussen beveiliging en gedegradeerde UX. Zonder vernieuwings tokens of cookies van derden wordt de autorisatie code stroom (zoals aanbevolen door het concept van de [Best practices voor OAuth-beveiliging](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14)) verlieslatend als nieuwe of extra tokens zijn vereist. Voor elke token is een omleiding met volledige pagina's of pop-up vereist, elke keer dat een token verloopt (elk uur meestal voor tokens van micro soft Identity platform).
+Dit vernieuwings token patroon voor beperkte levens duur is gekozen als een evenwicht tussen beveiliging en gedegradeerde UX. Zonder vernieuwings tokens of cookies van derden wordt de autorisatie code stroom (zoals aanbevolen door het concept van de [Best practices voor OAuth-beveiliging](https://tools.ietf.org/html/draft-ietf-oauth-security-topics-14)) verlieslatend als nieuwe of extra tokens zijn vereist. Voor elke token is een omleiding met volledige pagina's of pop-up vereist, telkens wanneer een token verloopt (elk uur meestal voor de tokens van micro soft Identity platform).
 
 ## <a name="next-steps"></a>Volgende stappen
 

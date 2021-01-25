@@ -13,12 +13,12 @@ ms.date: 05/22/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 71e930898f1f86622357f9e02da69be7bf2f8088
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: de1fcdc259de3f72e35feb411bcc836354352eb4
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91256582"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752589"
 ---
 # <a name="microsoft-identity-platform-and-openid-connect-protocol"></a>Micro soft Identity platform en OpenID Connect Connect protocol
 
@@ -88,7 +88,7 @@ De meta gegevens zijn een eenvoudig JavaScript Object Notation (JSON)-document. 
 
 Als uw app aangepaste handtekening sleutels heeft als gevolg van het gebruik van de functie voor het [toewijzen van claims](active-directory-claims-mapping.md) , moet u een `appid` query parameter met de app-id toevoegen om een `jwks_uri` verwijzing naar de handtekening sleutel gegevens van uw app te krijgen. Bijvoorbeeld: `https://login.microsoftonline.com/{tenant}/v2.0/.well-known/openid-configuration?appid=6731de76-14a6-49ae-97bc-6eba6914391e` bevat een `jwks_uri` van `https://login.microsoftonline.com/{tenant}/discovery/v2.0/keys?appid=6731de76-14a6-49ae-97bc-6eba6914391e` .
 
-Normaal gesp roken gebruikt u dit meta gegevens document voor het configureren van een OpenID Connect Connect-bibliotheek of-SDK. de-bibliotheek gebruikt de meta gegevens om het werk uit te voeren. Als u echter geen vooraf gemaakte OpenID Connect Connect-bibliotheek gebruikt, kunt u de stappen in de rest van dit artikel volgen om u aan te melden in een web-app met behulp van het micro soft Identity platform-eind punt.
+Normaal gesp roken gebruikt u dit meta gegevens document voor het configureren van een OpenID Connect Connect-bibliotheek of-SDK. de-bibliotheek gebruikt de meta gegevens om het werk uit te voeren. Als u echter geen vooraf gemaakte OpenID Connect Connect-bibliotheek gebruikt, kunt u de stappen in de rest van dit artikel volgen om u aan te melden in een web-app met behulp van het micro soft Identity-platform.
 
 ## <a name="send-the-sign-in-request"></a>De aanmeldings aanvraag verzenden
 
@@ -116,7 +116,7 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 &nonce=678910
 ```
 
-| Parameter | Conditie | Beschrijving |
+| Parameter | Voorwaarde | Beschrijving |
 | --- | --- | --- |
 | `tenant` | Vereist | U kunt de `{tenant}` waarde in het pad van de aanvraag gebruiken om te bepalen wie zich kan aanmelden bij de toepassing. De toegestane waarden zijn `common` , `organizations` , `consumers` en Tenant-id's. Zie [basis beginselen van protocollen](active-directory-v2-protocols.md#endpoints)voor meer informatie. |
 | `client_id` | Vereist | De **client-id** van de toepassing die de [Azure Portal – app-registraties](https://go.microsoft.com/fwlink/?linkid=2083908) ervaring die aan uw app is toegewezen. |
@@ -126,13 +126,13 @@ client_id=6731de76-14a6-49ae-97bc-6eba6914391e
 | `nonce` | Vereist | Een waarde die is opgenomen in de aanvraag, gegenereerd door de app, die wordt opgenomen in de resulterende id_token waarde als een claim. De app kan deze waarde verifiëren om token replay-aanvallen te verhelpen. De waarde is doorgaans een wille keurige, unieke teken reeks die kan worden gebruikt om de oorsprong van de aanvraag te identificeren. |
 | `response_mode` | Aanbevolen | Hiermee geeft u de methode op die moet worden gebruikt om de resulterende autorisatie code terug te sturen naar uw app. Deze waarde kan `form_post` of `fragment` zijn. Voor webtoepassingen raden wij u `response_mode=form_post` aan om te zorgen voor de veiligste overdracht van tokens naar uw toepassing. |
 | `state` | Aanbevolen | Een waarde die in de aanvraag is opgenomen en die ook wordt geretourneerd in het token antwoord. Dit kan een teken reeks zijn van elke gewenste inhoud. Een wille keurig gegenereerde unieke waarde wordt doorgaans gebruikt om [vervalsing van aanvragen op meerdere sites te voor komen](https://tools.ietf.org/html/rfc6749#section-10.12). De status wordt ook gebruikt om informatie over de status van de gebruiker in de app te coderen voordat de verificatie aanvraag is uitgevoerd, zoals de pagina of weer gave waarin de gebruiker zich bevond. |
-| `prompt` | Optioneel | Hiermee wordt het type gebruikers interactie aangegeven dat vereist is. De enige geldige waarden op dit moment zijn `login` , `none` , en `consent` . De `prompt=login` claim dwingt de gebruiker om hun referenties in te voeren voor die aanvraag, waardoor eenmalige aanmelding wordt genegeerd. De `prompt=none` claim is het tegenovergestelde. Met deze claim zorgt u ervoor dat de gebruiker niet wordt aangeboden met een interactieve prompt op. Als de aanvraag niet op de achtergrond kan worden voltooid via eenmalige aanmelding, wordt een fout geretourneerd door het micro soft Identity platform-eind punt. `prompt=consent`Met de claim wordt het dialoog venster OAuth-toestemming geactiveerd nadat de gebruiker zich heeft aangemeld. In het dialoog venster wordt de gebruiker gevraagd om machtigingen te verlenen aan de app. |
+| `prompt` | Optioneel | Hiermee wordt het type gebruikers interactie aangegeven dat vereist is. De enige geldige waarden op dit moment zijn `login` , `none` , en `consent` . De `prompt=login` claim dwingt de gebruiker om hun referenties in te voeren voor die aanvraag, waardoor eenmalige aanmelding wordt genegeerd. De `prompt=none` claim is het tegenovergestelde. Met deze claim zorgt u ervoor dat de gebruiker niet wordt aangeboden met een interactieve prompt op. Als de aanvraag niet op de achtergrond kan worden voltooid via eenmalige aanmelding, wordt een fout geretourneerd door het micro soft Identity-platform. `prompt=consent`Met de claim wordt het dialoog venster OAuth-toestemming geactiveerd nadat de gebruiker zich heeft aangemeld. In het dialoog venster wordt de gebruiker gevraagd om machtigingen te verlenen aan de app. |
 | `login_hint` | Optioneel | U kunt deze para meter gebruiken om het veld gebruikers naam en e-mail adres vooraf in te vullen op de aanmeldings pagina voor de gebruiker, als u de gebruikers naam van tevoren kent. Apps gebruiken deze para meter vaak tijdens het opnieuw verifiëren, nadat u de gebruikers naam al hebt geëxtraheerd van een eerdere aanmelding met behulp van de `preferred_username` claim. |
 | `domain_hint` | Optioneel | De realm van de gebruiker in een federatieve Directory.  Hiermee wordt het detectie proces op basis van e-mail overs Laan dat de gebruiker op de aanmeldings pagina doorloopt, voor een iets meer gestroomlijnde gebruikers ervaring. Voor tenants die zich bevinden in een on-premises Directory als AD FS, resulteert dit vaak in een naadloze aanmelding vanwege de bestaande aanmeldings sessie. |
 
-Op dit moment wordt de gebruiker gevraagd om hun referenties in te voeren en de verificatie te volt ooien. Het micro soft Identity platform-eind punt controleert of de gebruiker heeft ingestemd met de machtigingen die zijn aangegeven in de `scope` query parameter. Als de gebruiker niet heeft ingestemd met een van deze machtigingen, wordt de gebruiker door het micro soft Identity platform-eind punt gevraagd om toestemming te geven voor de vereiste machtigingen. U kunt meer lezen over [machtigingen, toestemming en apps met meerdere tenants](v2-permissions-and-consent.md).
+Op dit moment wordt de gebruiker gevraagd om hun referenties in te voeren en de verificatie te volt ooien. Het micro soft Identity-platform controleert of de gebruiker heeft ingestemd met de machtigingen die zijn aangegeven in de `scope` query parameter. Als de gebruiker niet heeft ingestemd met een van deze machtigingen, wordt de gebruiker door het micro soft Identity-platform gevraagd om toestemming te geven voor de vereiste machtigingen. U kunt meer lezen over [machtigingen, toestemming en apps met meerdere tenants](v2-permissions-and-consent.md).
 
-Nadat de gebruiker zich heeft geverifieerd en toestemming verleent, retourneert het micro soft Identity platform-eind punt een antwoord op uw app bij de aangegeven omleidings-URI met behulp van de methode die is opgegeven in de `response_mode` para meter.
+Nadat de gebruiker zich heeft geverifieerd en toestemming verleent, retourneert het micro soft Identity-platform een reactie op uw app bij de aangegeven omleidings-URI met behulp van de methode die is opgegeven in de `response_mode` para meter.
 
 ### <a name="successful-response"></a>Geslaagde reactie
 
@@ -184,7 +184,7 @@ In de volgende tabel worden fout codes beschreven die kunnen worden geretourneer
 
 ## <a name="validate-the-id-token"></a>Het ID-token valideren
 
-Alleen het ontvangen van een id_token is niet altijd voldoende om de gebruiker te verifiëren. mogelijk moet u ook de hand tekening van de id_token valideren en de claims in het token verifiëren volgens de vereisten van uw app. Net als alle OIDC-platforms maakt het micro soft Identity platform-eind punt gebruik van [JSON-Webtokens (JWTs)](https://tools.ietf.org/html/rfc7519) en open bare-sleutel cryptografie voor het ondertekenen van id-tokens en om te controleren of ze geldig zijn.
+Alleen het ontvangen van een id_token is niet altijd voldoende om de gebruiker te verifiëren. mogelijk moet u ook de hand tekening van de id_token valideren en de claims in het token verifiëren volgens de vereisten van uw app. Net als alle OIDC-platforms maakt het micro soft Identity-platform gebruik van [JSON-Webtokens (JWTs)](https://tools.ietf.org/html/rfc7519) en open bare-sleutel cryptografie voor het ondertekenen van id-tokens en om te controleren of ze geldig zijn.
 
 Niet alle apps profiteren van het controleren van de ID-token-systeem eigen apps en apps met één pagina, bijvoorbeeld zelden voor deel van het valideren van het ID-token.  Iemand met fysieke toegang tot het apparaat (of browser) kan de validatie op tal van manieren overs Laan: van het bewerken van het webverkeer naar het apparaat om te voorzien in valse tokens en sleutels om de toepassing eenvoudigweg te debuggen om de validatie logica over te slaan.  Op de andere kant moeten web-apps en Api's die gebruikmaken van een ID-token voor autorisatie, het ID-token zorgvuldig valideren omdat ze beperking toegang tot gegevens.
 
@@ -283,7 +283,7 @@ Raadpleeg de [documentatie van user info](userinfo.md#calling-the-api) om te zie
 
 ## <a name="send-a-sign-out-request"></a>Een afmeldings aanvraag verzenden
 
-Wanneer u de gebruiker wilt afmelden bij uw app, is het niet voldoende om de cookies van uw app te wissen of de sessie van de gebruiker anderszins te beëindigen. U moet ook de gebruiker omleiden naar het micro soft Identity platform-eind punt om u af te melden. Als u dit niet doet, wordt de gebruiker opnieuw geverifieerd bij uw app zonder dat ze hun referenties opnieuw in te voeren, omdat ze een geldige sessie voor eenmalige aanmelding met het micro soft Identity platform-eind punt hebben.
+Wanneer u de gebruiker wilt afmelden bij uw app, is het niet voldoende om de cookies van uw app te wissen of de sessie van de gebruiker anderszins te beëindigen. U moet ook de gebruiker omleiden naar het micro soft Identity-platform om u af te melden. Als u dit niet doet, wordt de gebruiker opnieuw geverifieerd bij uw app zonder dat ze hun referenties opnieuw in te voeren, omdat ze een geldige sessie voor eenmalige aanmelding hebben met het micro soft Identity-platform.
 
 U kunt de gebruiker omleiden naar de `end_session_endpoint` lijst in het OpenID Connect Connect meta data-document:
 
@@ -292,13 +292,13 @@ GET https://login.microsoftonline.com/common/oauth2/v2.0/logout?
 post_logout_redirect_uri=http%3A%2F%2Flocalhost%2Fmyapp%2F
 ```
 
-| Parameter | Conditie | Beschrijving |
+| Parameter | Voorwaarde | Beschrijving |
 | ----------------------- | ------------------------------- | ------------ |
-| `post_logout_redirect_uri` | Aanbevolen | De URL waarnaar de gebruiker wordt omgeleid na het afmelden. Als de para meter niet is opgenomen, wordt de gebruiker een algemeen bericht weer gegeven dat wordt gegenereerd door het micro soft Identity platform-eind punt. Deze URL moet overeenkomen met een van de omleidings-Uri's die zijn geregistreerd voor uw toepassing in de app-registratie Portal. |
+| `post_logout_redirect_uri` | Aanbevolen | De URL waarnaar de gebruiker wordt omgeleid na het afmelden. Als de para meter niet is opgenomen, wordt de gebruiker een algemeen bericht weer gegeven dat wordt gegenereerd door het micro soft Identity-platform. Deze URL moet overeenkomen met een van de omleidings-Uri's die zijn geregistreerd voor uw toepassing in de app-registratie Portal. |
 
 ## <a name="single-sign-out"></a>Eenmalige afmelding
 
-Wanneer u de gebruiker omleidt naar de `end_session_endpoint` , wordt de sessie van de gebruiker uit de browser gewist met het micro soft Identity platform-eind punt. De gebruiker kan echter nog steeds zijn aangemeld bij andere toepassingen die gebruikmaken van micro soft-accounts voor authenticatie. Om ervoor te zorgen dat deze toepassingen de gebruiker gelijktijdig kunnen ondertekenen, stuurt het micro soft Identity platform-eind punt een HTTP GET-aanvraag naar de geregistreerde `LogoutUrl` van alle toepassingen waarbij de gebruiker momenteel is aangemeld. Toepassingen moeten reageren op deze aanvraag door een wille keurige sessie te wissen waarmee de gebruiker wordt geïdentificeerd en een antwoord wordt geretourneerd `200` . Als u eenmalige afmelding wilt ondersteunen in uw toepassing, moet u deze implementeren `LogoutUrl` in de code van uw toepassing. U kunt de `LogoutUrl` app-registratie-Portal instellen.
+Wanneer u de gebruiker omleidt naar de, wordt de `end_session_endpoint` sessie van de gebruiker uit de browser gewist door het micro soft Identity-platform. De gebruiker kan echter nog steeds zijn aangemeld bij andere toepassingen die gebruikmaken van micro soft-accounts voor authenticatie. Om ervoor te zorgen dat deze toepassingen de gebruiker tegelijk kunnen ondertekenen, verzendt het micro soft Identity-platform een HTTP GET-aanvraag naar de geregistreerde `LogoutUrl` van alle toepassingen waarbij de gebruiker momenteel is aangemeld. Toepassingen moeten reageren op deze aanvraag door een wille keurige sessie te wissen waarmee de gebruiker wordt geïdentificeerd en een antwoord wordt geretourneerd `200` . Als u eenmalige afmelding wilt ondersteunen in uw toepassing, moet u deze implementeren `LogoutUrl` in de code van uw toepassing. U kunt de `LogoutUrl` app-registratie-Portal instellen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

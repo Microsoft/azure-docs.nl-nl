@@ -1,5 +1,6 @@
 ---
-title: Een daemon-app bouwen die web-Api's aanroept-micro soft Identity-platform | Azure
+title: Een daemon-app bouwen die web-Api's aanroept | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het bouwen van een daemon-app die web-Api's aanroept
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 01/31/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: e63a948260863c93a92e4241044be5e0baf8afca
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 45af940382a261f1793583e471871b9cceed0a57
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443259"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753836"
 ---
 # <a name="scenario-daemon-application-that-calls-web-apis"></a>Scenario: Een daemon-app die web-API's aanroept
 
@@ -45,7 +46,7 @@ Toepassingen die een token voor hun eigen identiteiten verkrijgen:
 
 > [!IMPORTANT]
 >
-> - Gebruikers kunnen niet communiceren met een daemon-toepassing. Een daemon-toepassing vereist een eigen identiteit. Met dit type toepassing wordt een toegangs token aangevraagd met behulp van de toepassings-ID en worden de toepassings-id's, referenties (wacht woord of certificaat) en de URI van de toepassings-ID naar Azure AD gepresenteerd. Na een geslaagde verificatie ontvangt de daemon een toegangs token (en een vernieuwings token) van het micro soft Identity platform-eind punt. Dit token wordt vervolgens gebruikt om de Web-API aan te roepen (en wordt naar behoefte vernieuwd).
+> - Gebruikers kunnen niet communiceren met een daemon-toepassing. Een daemon-toepassing vereist een eigen identiteit. Met dit type toepassing wordt een toegangs token aangevraagd met behulp van de toepassings-ID en worden de toepassings-id's, referenties (wacht woord of certificaat) en de URI van de toepassings-ID naar Azure AD gepresenteerd. Na een geslaagde verificatie ontvangt de daemon een toegangs token (en een vernieuwings token) van het micro soft Identity-platform. Dit token wordt vervolgens gebruikt om de Web-API aan te roepen (en wordt naar behoefte vernieuwd).
 > - Omdat gebruikers niet kunnen communiceren met daemon-toepassingen, is het niet mogelijk om een incrementele toestemming te nemen. Alle vereiste API-machtigingen moeten worden geconfigureerd bij de registratie van de toepassing. De code van de toepassing verzoekt alleen statisch gedefinieerde machtigingen. Dit betekent ook dat daemon-toepassingen geen ondersteuning bieden voor incrementele toestemming.
 
 Voor ontwikkel aars heeft de end-to-end-ervaring voor dit scenario de volgende aspecten:

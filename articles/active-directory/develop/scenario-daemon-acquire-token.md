@@ -1,5 +1,5 @@
 ---
-title: Tokens verkrijgen om een web-API (daemon-app) aan te roepen-micro soft Identity-platform | Azure
+title: Tokens verkrijgen om een web-API (daemon-app) aan te roepen-het micro soft Identity-platform | Azure
 description: Meer informatie over het bouwen van een daemon-app die web-Api's aanroept (tokens ophalen)
 services: active-directory
 author: jmprieur
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 9416005c708cafe5adbad2b09ce70c41fae66fd7
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: 295897be03a7dd8e397e8202ff1cf10e6d59cdfb
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936019"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753863"
 ---
 # <a name="daemon-app-that-calls-web-apis---acquire-a-token"></a>Daemon-app die web-Api's aanroept-een Token ophalen
 
@@ -204,7 +204,7 @@ scope=https%3A%2F%2Fgraph.microsoft.com%2F.default
 
 Zie de documentatie over het [micro soft-identiteits platform en de OAuth 2,0-client referenties stroom](v2-oauth2-client-creds-grant-flow.md)voor meer informatie.
 
-## <a name="troubleshooting"></a>Problemen oplossen
+## <a name="troubleshooting"></a>Probleemoplossing
 
 ### <a name="did-you-use-the-resourcedefault-scope"></a>Hebt u het resource/.-standaard bereik gebruikt?
 

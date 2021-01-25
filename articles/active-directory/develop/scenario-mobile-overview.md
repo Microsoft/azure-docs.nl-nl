@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: f60e21f98092df65ef01e68fe9c2e64833a24855
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: a678e8545f761e98abbdf026886afa624f9d2b4e
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063209"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753640"
 ---
 # <a name="scenario-mobile-application-that-calls-web-apis"></a>Scenario: Een mobiele app die web-API's aanroept
 
@@ -34,7 +34,7 @@ Als u dat nog niet hebt gedaan, maakt u uw eerste toepassing door een Snelstartg
 
 ## <a name="overview"></a>Overzicht
 
-Een persoonlijke, naadloze gebruikers ervaring is essentieel voor mobiele apps.  Met micro soft Identity platform kunnen mobiele ontwikkel aars die ervaring voor iOS-en Android-gebruikers maken. Uw toepassing kan zich aanmelden Azure Active Directory-gebruikers (Azure AD), persoonlijke Microsoft-account gebruikers en Azure AD B2C gebruikers. Het kan ook tokens verkrijgen om namens u een web-API aan te roepen. Voor het implementeren van deze stromen gebruikt u de micro soft Authentication Library (MSAL). MSAL implementeert de industrie standaard [OAuth 2.0-autorisatie code stroom](v2-oauth2-auth-code-flow.md).
+Een persoonlijke, naadloze gebruikers ervaring is essentieel voor mobiele apps. Met het micro soft Identity-platform kunnen mobiele ontwikkel aars die ervaring voor iOS-en Android-gebruikers maken. Uw toepassing kan zich aanmelden Azure Active Directory-gebruikers (Azure AD), persoonlijke Microsoft-account gebruikers en Azure AD B2C gebruikers. Het kan ook tokens verkrijgen om namens u een web-API aan te roepen. Voor het implementeren van deze stromen gebruikt u de micro soft Authentication Library (MSAL). MSAL implementeert de industrie standaard [OAuth 2.0-autorisatie code stroom](v2-oauth2-auth-code-flow.md).
 
 ![Daemon-apps](./media/scenarios/mobile-app.svg)
 

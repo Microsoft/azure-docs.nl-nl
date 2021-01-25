@@ -1,5 +1,6 @@
 ---
-title: Bureau blad-apps registreren die web-Api's aanroepen-micro soft Identity-platform | Azure
+title: Bureau blad-apps registreren die web-Api's aanroepen | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het bouwen van een bureau blad-app die web-Api's aanroept (app-registratie)
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 09/09/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c769fd86f432d135542c1f09b83ea5a01c6ab0a6
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 46c8127a93cef8f662930fffd07a2fa3d22b8871
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250601"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753720"
 ---
 # <a name="desktop-app-that-calls-web-apis-app-registration"></a>Bureau blad-app voor het aanroepen van web-Api's: app-registratie
 

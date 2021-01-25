@@ -13,12 +13,12 @@ ms.date: 09/21/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 8f3fd462a52b035cd5b5447560e5472b41f237fa
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3bd0621d607b121f19bc47c717343b8e2e39b04f
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653227"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752727"
 ---
 # <a name="microsoft-identity-platform-userinfo-endpoint"></a>User info-eind punt voor micro soft Identity platform
 
@@ -28,7 +28,7 @@ Het user info-eind punt maakt deel uit van de [OpenID Connect Connect Standard](
 
 U kunt het user info-eind punt met behulp van het OpenID Connect Connect Discovery-document op een programmatische manier detecteren `https://login.microsoftonline.com/common/v2.0/.well-known/openid-configuration` . Deze wordt weer gegeven in het `userinfo_endpoint` veld en dit patroon kan worden gebruikt in verschillende Clouds om het juiste eind punt aan te wijzen.  Het is niet raadzaam het user info-eind punt in uw app op te nemen. gebruik in plaats daarvan het OIDC Discovery-document om dit eind punt tijdens runtime te vinden.
 
-Als onderdeel van de OpenID Connect Connect-specificatie wordt het user info-eind punt vaak automatisch aangeroepen door [OIDC compatibele bibliotheken](https://openid.net/developers/certified/)  om informatie over de gebruiker te verkrijgen.  Zonder dat dit eind punt wordt gehost, is micro soft Identity platform niet compatibel met standaarden en kunnen sommige tape wisselaars mislukken.  In de [lijst met claims die zijn geïdentificeerd in de OIDC-standaard](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) , produceren we de naam claims, de onderwerps claim en de e-mail wanneer deze beschikbaar zijn en worden verzonden voor.  
+Als onderdeel van de OpenID Connect Connect-specificatie wordt het user info-eind punt vaak automatisch aangeroepen door [OIDC compatibele bibliotheken](https://openid.net/developers/certified/)  om informatie over de gebruiker te verkrijgen.  Zonder dat dit eind punt wordt gehost, is het micro soft Identity-platform niet compatibel met de standaarden en kunnen sommige tape wisselaars mislukken.  In de [lijst met claims die zijn geïdentificeerd in de OIDC-standaard](https://openid.net/specs/openid-connect-core-1_0.html#StandardClaims) , produceren we de naam claims, de onderwerps claim en de e-mail wanneer deze beschikbaar zijn en worden verzonden voor.  
 
 ## <a name="consider-use-an-id-token-instead"></a>Overwegen: gebruik in plaats daarvan een ID-token
 

@@ -12,18 +12,18 @@ ms.workload: identity
 ms.date: 08/28/2019
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40
-ms.openlocfilehash: dcb8675350442274418920bb9439b65643f1b046
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
-ms.translationtype: HT
+ms.openlocfilehash: 8b12df62a7080e57e47b52cb79ed8a67e12bd526
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178242"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753103"
 ---
 # <a name="tutorial-add-sign-in-to-microsoft-to-an-aspnet-web-app"></a>Zelfstudie: Aanmelding bij Microsoft toevoegen aan een ASP.NET-web-app
 
 In deze zelfstudie bouwt u een ASP.NET MVC-web-app die gebruikers aanmeldt met behulp van de Open Web Interface voor .NET-middleware (OWIN) en het Microsoft-identiteitsplatform.
 
-Wanneer u deze handleiding hebt voltooid, kunt u aanmeldingen met persoonlijke accounts van bijvoorbeeld outlook.com en live.com aanvaarden. Daarnaast kunnen ook werk- en schoolaccounts van elk bedrijf of elke organisatie geïntegreerd met het Microsoft Identity Platform zich aanmelden bij uw app.
+Wanneer u deze handleiding hebt voltooid, kunt u aanmeldingen met persoonlijke accounts van bijvoorbeeld outlook.com en live.com aanvaarden. Daarnaast kunnen werk-en school accounts van een bedrijf of organisatie die is geïntegreerd met het micro soft Identity-platform, zich aanmelden bij uw app.
 
 In deze zelfstudie:
 
@@ -119,7 +119,7 @@ De volgende stappen worden gebruikt om een opstartklasse van OWIN-middleware te 
         // Tenant is the tenant ID (e.g. contoso.onmicrosoft.com, or 'common' for multi-tenant)
         static string tenant = System.Configuration.ConfigurationManager.AppSettings["Tenant"];
 
-        // Authority is the URL for authority, composed by Microsoft identity platform endpoint and the tenant name (e.g. https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0)
+        // Authority is the URL for authority, composed of the Microsoft identity platform and the tenant name (e.g. https://login.microsoftonline.com/contoso.onmicrosoft.com/v2.0)
         string authority = String.Format(System.Globalization.CultureInfo.InvariantCulture, System.Configuration.ConfigurationManager.AppSettings["Authority"], tenant);
 
         /// <summary>
@@ -406,14 +406,13 @@ Wanneer u klaar bent om uw test uit te voeren, gebruikt u een Azure AD-account (
 <br/><br/>
 ![Aanmelden bij uw Microsoft-account](media/active-directory-develop-guidedsetup-aspnetwebapp-test/aspnetbrowsersignin2.png)
 
-#### <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform
-
-Toepassingen die zijn geïntegreerd met het Microsoft Identity Platform volgen een autorisatiemodel dat gebruikers en beheerders controle geeft over de toegang tot gegevens. Nadat een gebruiker zich verifieerd met Microsoft Identity Platform om toegang te krijgen tot deze toepassing, wordt hij gevraagd om toestemming te geven voor de machtigingen die de toepassing vraagt ('Uw basisprofiel weergeven' en 'Toegang onderhouden tot gegevens waarvoor u deze toegang hebt verleend'). Nadat hij deze machtigingen heeft aanvaard, gaat de gebruiker door naar de resultaten van de toepassing. Het is echter mogelijk dat de gebruiker een pagina **Beheerderstoestemming is nodig** te zien krijgt als een van de volgende dingen gebeurt:
+#### <a name="permissions-and-consent-in-the-microsoft-identity-platform"></a>Machtigingen en toestemming in het micro soft Identity-platform
+Toepassingen die zijn geïntegreerd met het micro soft Identity platform, volgen een autorisatie model waarmee gebruikers en beheerders kunnen bepalen hoe gegevens toegankelijk zijn. Nadat een gebruiker is geverifieerd met het micro soft-identiteits platform voor toegang tot deze toepassing, wordt u gevraagd om toestemming te geven aan de machtigingen die door de toepassing zijn aangevraagd (uw basis profiel bekijken en de toegang tot gegevens waartoe u toegang hebt verleend). Nadat hij deze machtigingen heeft aanvaard, gaat de gebruiker door naar de resultaten van de toepassing. Het is echter mogelijk dat de gebruiker een pagina **Beheerderstoestemming is nodig** te zien krijgt als een van de volgende dingen gebeurt:
 
 - De ontwikkelaar van de toepassing voegt extra machtigingen toe waarvoor **Beheerderstoestemming** nodig is.
 - Of de tenant is geconfigureerd (in **Bedrijfstoepassingen -> Gebruikersinstellingen**), waarbij gebruikers geen toestemming kunnen geven om apps in hun naam toegang te geven tot bedrijfsgegevens.
 
-Bekijk [Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform](./v2-permissions-and-consent.md) voor meer informatie.
+Raadpleeg [machtigingen en toestemming in het micro soft Identity-platform](./v2-permissions-and-consent.md)voor meer informatie.
 
 ### <a name="view-application-results"></a>Resultaten van de toepassing weergeven
 

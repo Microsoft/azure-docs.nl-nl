@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 0d759b3af097067ba0c9215b65b212d50474d571
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
-ms.translationtype: HT
+ms.openlocfilehash: 5bfdf90ddbd500fd9d1c504bd37ed4ac35d8bf70
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178344"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752766"
 ---
 # <a name="tutorial-call-the-microsoft-graph-api-from-a-windows-desktop-app"></a>Zelfstudie: De Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
@@ -47,7 +47,7 @@ Met de voorbeeldtoepassing die u in deze handleiding maakt, kan een Windows-bure
 
 ## <a name="handling-token-acquisition-for-accessing-protected-web-apis"></a>Het afhandelen van tokens voor toegang tot beveiligde web-API's
 
-Nadat de gebruiker is geverifieerd, ontvangt de voorbeeldtoepassing een token dat u kunt gebruiken voor het uitvoeren van een query op de Microsoft Graph API of een web-API die wordt beveiligd door het Microsoft-identiteitsplatform voor ontwikkelaars.
+Nadat de gebruiker is geverifieerd, ontvangt de voorbeeld toepassing een token dat u kunt gebruiken voor het opvragen van Microsoft Graph-API of een web-API die wordt beveiligd door het micro soft Identity-platform.
 
 API's zoals Microsoft Graph vereisen een token om toegang tot specifieke resources toe te staan. Een token is bijvoorbeeld vereist om het profiel van een gebruiker te lezen, de agenda van een gebruiker te openen of een e-mail te verzenden. Uw toepassing kan een toegangstoken aanvragen met behulp van MSAL om toegang te krijgen tot deze resources door de API-bereiken op te geven. Deze toegangstoken wordt vervolgens toegevoegd aan de HTTP-autorisatie-header voor elke aanroep die wordt gedaan voor de beveiligde resource.
 

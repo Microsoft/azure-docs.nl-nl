@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 016a2917c02deaecf35c526426cb2a6dbc89e338
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: b294a56a523adaa2629a5d1e72a7ccef532956e0
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96173186"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753290"
 ---
 # <a name="a-web-app-that-calls-web-apis-call-a-web-api"></a>Een web-app die web-Api's aanroept: een web-API aanroepen
 
@@ -37,7 +37,7 @@ Wanneer u *micro soft. Identity. Web* gebruikt, hebt u drie gebruiks opties voor
 
 #### <a name="option-1-call-microsoft-graph-with-the-sdk"></a>Optie 1: Microsoft Graph aanroepen met de SDK
 
-U wilt Microsoft Graph aanroepen. In dit scenario hebt u Startup.cs toegevoegd `AddMicrosoftGraph` zoals *Startup.cs* opgegeven in [code configuratie](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph), en kunt u het in de-controller of de pagina-constructor rechtstreeks injecteren `GraphServiceClient` voor gebruik in de acties. In het volgende voor beeld wordt een pagina weer gegeven met de foto van de aangemelde gebruiker.
+U wilt Microsoft Graph aanroepen. In dit scenario hebt u Startup.cs toegevoegd `AddMicrosoftGraph` zoals  opgegeven in [code configuratie](scenario-web-app-call-api-app-configuration.md#option-1-call-microsoft-graph), en kunt u het in de-controller of de pagina-constructor rechtstreeks injecteren `GraphServiceClient` voor gebruik in de acties. In het volgende voor beeld wordt een pagina weer gegeven met de foto van de aangemelde gebruiker.
 
 ```CSharp
 [Authorize]

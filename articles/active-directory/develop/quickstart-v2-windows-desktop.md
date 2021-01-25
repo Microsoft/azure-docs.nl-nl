@@ -1,6 +1,6 @@
 ---
 title: 'Snelstart: Gebruikers aanmelden en Microsoft Graph aanroepen in een Universeel Windows-platform-desktop-app | Azure'
-description: In deze quickstart leert u hoe met een .NET-toepassing (XAML) voor Windows-bureaublad een token kan worden opgehaald en een API kan worden aangeroepen die is beveiligd met een Microsoft-identiteitsplatform-eindpunt.
+description: In deze Quick Start leert u hoe een Windows Desktop .NET (XAML)-toepassing een toegangs token kan ophalen en een API kan aanroepen die wordt beveiligd door het micro soft Identity-platform.
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 12/12/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 1cac8ab4ccf23047bd5eb2d15c174a2009f2864a
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: b54438441b0e34cccda7fbec37dc1d1740101e9e
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178293"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754008"
 ---
 # <a name="quickstart-acquire-a-token-and-call-microsoft-graph-api-from-a-windows-desktop-app"></a>Quickstart: Een token verkrijgen en Microsoft Graph API aanroepen vanuit een Windows-bureaublad-app
 
@@ -145,7 +145,7 @@ MSAL biedt twee methoden om tokens te verkrijgen: `AcquireTokenInteractive` en `
 
 #### <a name="get-a-user-token-interactively"></a>Een gebruikerstoken interactief ophalen
 
-In sommige situaties is het nodig om gebruiker via een pop-upvenster te dwingen het Microsoft-identiteitsplatform-eindpunt te gebruiken om hun referenties te valideren of om toestemming te geven. Voorbeelden zijn:
+In sommige situaties is het afdwingen van gebruikers met het micro soft-identiteits platform via een pop-upvenster verplicht hun referenties te valideren of toestemming te geven. Voorbeelden zijn:
 
 - De eerste keer dat gebruikers zich aanmelden bij de toepassing
 - Wanneer gebruikers mogelijk hun referenties opnieuw moeten opgeven omdat het wachtwoord is verlopen

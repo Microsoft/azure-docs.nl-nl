@@ -1,5 +1,6 @@
 ---
-title: Een web-app configureren die zich aanmeldt bij gebruikers-micro soft Identity platform | Azure
+title: Een web-app configureren die zich aanmeldt bij gebruikers | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het bouwen van een web-app die wordt aangemeld bij gebruikers (code configuratie)
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: dad7b0563fd1ca0dbf60403bc6172e7616e278b2
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 45f3a066283a921f60909a4aa3cfdc76f3faad06
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443650"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753264"
 ---
 # <a name="web-app-that-signs-in-users-code-configuration"></a>Web-app die gebruikers aanmeldt: code configuratie
 
@@ -202,7 +203,7 @@ SESSION_TYPE = "filesystem"  # So the token cache will be stored in a server-sid
 
 ## <a name="initialization-code"></a>Initialisatie code
 
-De initialisatie code verschilt, afhankelijk van het platform. Voor ASP.NET Core en ASP.NET wordt het aanmelden van gebruikers overgedragen aan de middleware OpenID Connect Connect. Met de sjabloon ASP.NET of ASP.NET Core worden webtoepassingen gegenereerd voor het Azure Active Directory (Azure AD) v 1.0-eind punt. Sommige configuratie is vereist om deze aan te passen aan het micro soft Identity platform (v 2.0)-eind punt. In het geval van Java wordt het afgehandeld met de samen werking van de toepassing.
+De initialisatie code verschilt, afhankelijk van het platform. Voor ASP.NET Core en ASP.NET wordt het aanmelden van gebruikers overgedragen aan de middleware OpenID Connect Connect. Met de sjabloon ASP.NET of ASP.NET Core worden webtoepassingen gegenereerd voor het Azure Active Directory (Azure AD) v 1.0-eind punt. Sommige configuratie is vereist om deze aan te passen aan het micro soft Identity-platform. In het geval van Java wordt het afgehandeld met de samen werking van de toepassing.
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
@@ -262,7 +263,7 @@ In de bovenstaande code:
 - De `AddMicrosoftIdentityWebAppAuthentication` extensie methode is gedefinieerd in **micro soft. Identity. Web**. ,
   - Hiermee voegt u de verificatie service toe.
   - Hiermee configureert u opties voor het lezen van het configuratie bestand (hier uit de sectie ' AzureAD ')
-  - Hiermee configureert u de OpenID Connect Connect-opties, zodat de instantie het micro soft Identity platform-eind punt is.
+  - Hiermee configureert u de OpenID Connect Connect-opties, zodat de instantie het micro soft Identity-platform is.
   - Valideert de uitgever van het token.
   - Zorgt ervoor dat de claims die overeenkomen met de naam, zijn toegewezen uit de `preferred_username` claim in het ID-token.
 
@@ -291,7 +292,7 @@ De code die betrekking heeft op verificatie in een ASP.NET-Web-app en Web-Api's 
   app.UseOpenIdConnectAuthentication(
     new OpenIdConnectAuthenticationOptions
     {
-     // `Authority` represents the identity platform endpoint - https://login.microsoftonline.com/common/v2.0.
+     // Authority` represents the identity platform endpoint - https://login.microsoftonline.com/common/v2.0.
      // `Scope` describes the initial permissions that your app will need.
      //  See https://azure.microsoft.com/documentation/articles/active-directory-v2-scopes/.
      ClientId = clientId,
@@ -316,7 +317,7 @@ Zie de `doFilter()` methode in [AuthFilter. java](https://github.com/Azure-Sampl
 > [!NOTE]
 > De code van de `doFilter()` is in een iets andere volg orde geschreven, maar de stroom is die wordt beschreven.
 
-Zie [micro soft Identity platform and OAuth 2,0 Authorization code flow](v2-oauth2-auth-code-flow.md)(Engelstalig) voor meer informatie over de autorisatie code stroom die door deze methode wordt geactiveerd.
+Zie de [micro soft Identity platform and OAuth 2,0 Authorization code flow](v2-oauth2-auth-code-flow.md)(Engelstalig) voor meer informatie over de autorisatie code stroom die door deze methode wordt geactiveerd.
 
 # <a name="python"></a>[Python](#tab/python)
 

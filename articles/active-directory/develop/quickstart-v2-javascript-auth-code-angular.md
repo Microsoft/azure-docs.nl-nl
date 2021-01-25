@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/14/2021
 ms.author: jamesmantu
 ms.custom: aaddev, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: acaa87f44fbd496aea843de673c0b2d7652fe542
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: b6e83f8c4ba00f64bd924ce7b404cd3acfcecd14
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681040"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754198"
 ---
 # <a name="quickstart-sign-in-and-get-an-access-token-in-an-angular-spa-using-the-auth-code-flow"></a>Snelstartgids: Meld u aan en ontvang een toegangs token in een hoek SPA met behulp van de verificatie code stroom
 
@@ -39,9 +39,7 @@ In deze Snelstartgids wordt gebruikgemaakt van MSAL hoek v2 met de autorisatie c
 >
 > ### <a name="option-1-express-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1 (Express): registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-> 1. Als u via uw account toegang hebt tot meerdere tenants, selecteert u uw account rechts bovenin en stelt u de portalsessie in op de Azure Active Directory-tenant die u wilt gebruiken.
-> 1. Selecteer [App-registraties](https://aka.ms/AAatehv).
+> 1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/ApplicationsListBlade/quickStartType/JavascriptSpaQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Voer een naam in voor de toepassing.
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**.
@@ -51,18 +49,17 @@ In deze Snelstartgids wordt gebruikgemaakt van MSAL hoek v2 met de autorisatie c
 >
 > #### <a name="step-1-register-your-application"></a>Stap 1: Uw toepassing registreren
 >
-> 1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
-> 1. Als uw account u toegang geeft tot meer dan één Tenant, selecteert u uw account in de rechter bovenhoek en stelt u vervolgens uw portal-sessie in op de Azure Active Directory (Azure AD)-Tenant die u wilt gebruiken.
-> 1. Selecteer [App-registraties](https://go.microsoft.com/fwlink/?linkid=2083908).
-> 1. Selecteer **Nieuwe registratie**.
-> 1. Wanneer de pagina **Een toepassing registreren** wordt weergegeven, voert u een naam in voor de toepassing.
+> 1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
+> 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
+> 1. Zoek en selecteer de optie **Azure Active Directory**.
+> 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
+> 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
-> 1. Selecteer in het linkerdeelvenster van de geregistreerde toepassing de optie **Verificatie**.
-> 1. Onder **platform configuraties** selecteert u `Add a platform` .
-> 1. Selecteer in het resulterende venster een **toepassing met één pagina**.
+> 1. Selecteer **Verificatie** onder **Beheren**.
+> 1. Selecteer **Een platform toevoegen** onder **Platformconfiguraties**. Selecteer **Toepassing met één pagina** in het deelvenster dat wordt geopend.
 > 1. Stel de waarde voor de **omleidings-uri's** in op `http://localhost:4200/` . Dit is de standaard poort NodeJS luistert op uw lokale machine. Nadat de gebruiker is geverifieerd, wordt de verificatie reactie naar deze URI geretourneerd. 
-> 1. Klik op de knop **configureren** om de wijzigingen toe te passen.
+> 1. Selecteer **configureren** om de wijzigingen toe te passen.
 > 1. Onder **platform configuraties** wordt een **toepassing met één pagina** uitgevouwen.
 > 1. Controleer of onder **verleende typen** ![ die ](media/quickstart-v2-javascript/green-check.png) de omleidings-URI al hebben geconfigureerd, in aanmerking komt voor de autorisatie code stroom met PKCE.
 
@@ -181,7 +178,7 @@ Het project uitvoeren met een webserver met behulp van Node.js:
 
 ### <a name="msaljs"></a>msal.js
 
-De MSAL.js-bibliotheek meldt gebruikers aan en verzoekt dat tokens worden gebruikt voor toegang tot een API die wordt beveiligd door het Microsoft Identity-platform. 
+De MSAL.js-bibliotheek meldt zich aan bij gebruikers en vraagt de tokens aan die worden gebruikt voor toegang tot een API die wordt beveiligd door het micro soft Identity-platform. 
 
 Als Node.js is geïnstalleerd, kunt u de nieuwste versie downloaden met behulp van Node.js Package Manager (npm):
 

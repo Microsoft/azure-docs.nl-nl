@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.author: memildin
-ms.openlocfilehash: d171e3a7f1f0d63d0a5d130c6e19b246bf0cd795
-ms.sourcegitcommit: 52e3d220565c4059176742fcacc17e857c9cdd02
+ms.openlocfilehash: 349f0b72ad7f3cb98e8f4ae9105efa9718f0b11b
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98661811"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752238"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -33,13 +33,40 @@ Zie [Belangrijke aanstaande wijzigingen aan Azure Security Center](upcoming-chan
 
 ## <a name="january-2021"></a>Januari 2021
 
-Updates in december omvatten:
+De updates in januari zijn onder andere:
 
+- [Azure Security Bench Mark is nu het standaard beleids initiatief voor Azure Security Center](#azure-security-benchmark-is-now-the-default-policy-initiative-for-azure-security-center)
 - [Evaluatie van beveiligings problemen voor on-premises en multi-Cloud machines wordt uitgebracht voor algemene Beschik baarheid (GA)](#vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-released-for-general-availability-ga)
+- [Beveiligde score voor beheer groepen is nu beschikbaar als preview-versie](#secure-score-for-management-groups-is-now-available-in-preview)
 - [Secure Score-API wordt uitgebracht voor algemene Beschik baarheid (GA)](#secure-score-api-is-released-for-general-availability-ga)
+- [Multi-Cloud connectors worden uitgebracht voor algemene Beschik baarheid (GA)](#multi-cloud-connectors-are-released-for-general-availability-ga)
+- [Volledige aanbevelingen uitsluiten van uw beveiligde score voor abonnementen en beheer groepen](#exempt-entire-recommendations-from-your-secure-score-for-subscriptions-and-management-groups)
+- [Gebruikers kunnen nu de Tenant-brede zicht baarheid aanvragen bij hun globale beheerder](#users-can-now-request-tenant-wide-visibility-from-their-global-administrator)
+- [Er zijn 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen](#35-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark)
 - [CSV-export van een gefilterde lijst met aanbevelingen](#csv-export-of-filtered-list-of-recommendations)
 - [' Niet van toepassing ' bronnen die nu zijn gerapporteerd als ' compatibel ' in Azure Policy-evaluaties](#not-applicable-resources-now-reported-as-compliant-in-azure-policy-assessments)
 
+
+### <a name="azure-security-benchmark-is-now-the-default-policy-initiative-for-azure-security-center"></a>Azure Security Bench Mark is nu het standaard beleids initiatief voor Azure Security Center
+
+Azure Security Benchmark is de door Microsoft ontworpen, Azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingsframeworks. Dit algemeen gerespecteerde Bench Mark bouwt voort op de besturings elementen van het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging.
+
+In de afgelopen maanden is de lijst met ingebouwde beveiligings aanbevelingen van Security Center significant geworden om onze dekking van deze benchmark periode uit te breiden.
+
+In deze release is de Bench Mark de basis voor de aanbevelingen van Security Center en volledig geïntegreerd als het standaard beleid. 
+
+Alle Azure-Services hebben een beveiligings basislijn pagina in hun documentatie. [Dit is bijvoorbeeld de basis lijn van Security Center](security-baseline.md). Deze basis lijnen zijn gebaseerd op de beveiligings benchmarks van Azure.
+
+Als u een dash board voor nalevings vereisten van Security Center gebruikt, ziet u twee exemplaren van de Bench Mark tijdens een overgangs periode:
+
+:::image type="content" source="media/release-notes/regulatory-compliance-with-azure-security-benchmark.png" alt-text="Het dash board nalevings beleid van de Azure Security Center met de Security Bench Mark van Azure":::
+
+Bestaande aanbevelingen worden niet beïnvloed en naarmate de Bench Mark groeit, worden wijzigingen automatisch weer gegeven in Security Center. 
+
+Ga voor meer informatie naar de volgende pagina's:
+
+- [Meer informatie over Azure Security Benchmark](../security/benchmarks/introduction.md)
+- [De set normen aanpassen in uw nalevings dashboard voor regelgeving](update-regulatory-compliance-packages.md)
 
 ### <a name="vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-released-for-general-availability-ga"></a>Evaluatie van beveiligings problemen voor on-premises en multi-Cloud machines wordt uitgebracht voor algemene Beschik baarheid (GA)
 
@@ -63,6 +90,14 @@ Belangrijkste functies:
 [Meer informatie over servers met Azure Arc](../azure-arc/servers/index.yml).
 
 
+### <a name="secure-score-for-management-groups-is-now-available-in-preview"></a>Beveiligde score voor beheer groepen is nu beschikbaar als preview-versie
+
+Op de pagina beveiligde Score worden nu de geaggregeerde beveiligde scores voor uw beheer groepen weer gegeven naast het abonnements niveau. Nu ziet u de lijst met beheer groepen in uw organisatie en de score voor elke beheer groep.
+
+:::image type="content" source="media/secure-score-security-controls/secure-score-management-groups.png" alt-text="Bekijk de beveiligde scores voor u-beheer groepen.":::
+
+Meer informatie over [beveiligingsscore en besturingselementen voor beveiliging in Azure Security Center](secure-score-security-controls.md).
+
 ### <a name="secure-score-api-is-released-for-general-availability-ga"></a>Secure Score-API wordt uitgebracht voor algemene Beschik baarheid (GA)
 
 U hebt nu toegang tot uw score via de [API voor beveiligde scores](/rest/api/securitycenter/securescores/). De API-methoden bieden de flexibiliteit om query's uit te voeren op de gegevens en uw eigen rapportagemechanisme te bouwen van uw beveiligingsscores in de loop van de tijd. U kunt bijvoorbeeld de **Beveiligingsscore**-API gebruiken om de score voor een specifiek abonnement op te halen. Daarnaast kunt u de API voor **besturingselementen van de beveiligingsscore** gebruiken om de besturingselementen voor beveiliging en de huidige score van uw abonnementen weer te geven.
@@ -70,6 +105,87 @@ U hebt nu toegang tot uw score via de [API voor beveiligde scores](/rest/api/sec
 Zie [het gebied voor beveiligingsscores van onze GitHub-community](https://github.com/Azure/Azure-Security-Center/tree/master/Secure%20Score) voor voorbeelden van externe hulpprogramma's die mogelijk zijn gemaakt met de Beveiligingsscore-API.
 
 Meer informatie over [beveiligingsscore en besturingselementen voor beveiliging in Azure Security Center](secure-score-security-controls.md).
+
+
+### <a name="multi-cloud-connectors-are-released-for-general-availability-ga"></a>Multi-Cloud connectors worden uitgebracht voor algemene Beschik baarheid (GA)
+
+Veel workloads in de cloud beslaan meerdere cloudplatforms, dus moeten cloudbeveiligingsservices hetzelfde doen.
+
+Azure Security Center biedt bescherming voor workloads in Azure, Amazon Web Services (AWS) en Google Cloud Platform (GCP).
+
+Het verbinden van uw AWS-of GCP-accounts integreert de systeem eigen beveiligings Programma's, zoals AWS Security hub en GCP Security-opdracht centrum in Azure Security Center.
+
+Dit betekent dat Security Center zicht baarheid en bescherming biedt in alle grote Cloud omgevingen. Enkele van de voor delen van deze integratie:
+
+- Automatic agent Provisioning-Security Center gebruikt Azure Arc om de Log Analytics agent te implementeren in uw AWS-instanties
+- Beleidsbeheer
+- Beheer van beveiligingsproblemen
+- Geïntegreerde eindpuntdetectie en -respons (EDR)
+- Detectie van onjuiste beveiligingsconfiguraties
+- Eén weer gave met aanbevelingen voor de beveiliging van alle cloud providers
+- Al uw resources opnemen in de berekening van de veilige Score van Security Center
+- Nalevings beoordeling van de regelgeving van uw AWS-en GCP-resources
+
+Selecteer in het menu van Security Center **meerdere Cloud connectors** en u ziet de opties voor het maken van nieuwe connectors:
+
+:::image type="content" source="./media/quickstart-onboard-aws/add-aws-account.png" alt-text="Knop 'AWS-account toevoegen' op de pagina voor meerdere cloudconnectors van Security Center":::
+
+Meer informatie in:
+- [Uw AWS-accounts verbinden met Azure Security Center](quickstart-onboard-aws.md)
+- [Uw GCP-accounts verbinden met Azure Security Center](quickstart-onboard-gcp.md)
+
+
+### <a name="exempt-entire-recommendations-from-your-secure-score-for-subscriptions-and-management-groups"></a>Volledige aanbevelingen uitsluiten van uw beveiligde score voor abonnementen en beheer groepen
+
+De uitzonde ring kan worden uitgebreid om volledige aanbevelingen op te nemen. Meer opties voor het afstemmen van de beveiligings aanbevelingen die Security Center maakt voor uw abonnementen, beheer groep of resources.
+
+In sommige gevallen wordt een resource als beschadigd weer gegeven wanneer u weet dat het probleem is opgelost door een hulp programma van derden dat Security Center niet is gedetecteerd. Het is ook mogelijk dat er een aanbeveling wordt weer gegeven in een bereik waarvan u denkt dat deze niet deel uitmaakt. De aanbeveling is mogelijk niet geschikt voor een specifiek abonnement. Of misschien heeft uw organisatie besloten om de Risico's te accepteren die zijn gerelateerd aan de specifieke resource of aanbeveling.
+
+Met deze preview-functie kunt u nu een uitzonde ring maken voor een aanbeveling:
+
+- **Een resource vrij** te stellen om ervoor te zorgen dat deze niet in de toekomst wordt weer gegeven met de foutieve resources en niet van invloed is op uw beveiligde Score. De resource wordt weer gegeven als niet van toepassing en de reden wordt weer gegeven als ' uitgesloten ' met de specifieke reden die u selecteert.
+
+- De **uitsluiting van een abonnement of beheer groep** om ervoor te zorgen dat de aanbeveling niet van invloed is op uw beveiligde Score en niet in de toekomst wordt weer gegeven voor het abonnement of de beheer groep. Dit heeft betrekking op bestaande resources en alle die u in de toekomst maakt. De aanbeveling wordt gemarkeerd met de specifieke reden die u selecteert voor het bereik dat u hebt geselecteerd.
+
+Meer informatie over [het uitsluiten van resources en aanbevelingen van uw beveiligde Score](exempt-resource.md).
+
+
+
+### <a name="users-can-now-request-tenant-wide-visibility-from-their-global-administrator"></a>Gebruikers kunnen nu de Tenant-brede zicht baarheid aanvragen bij hun globale beheerder
+
+Als een gebruiker geen machtigingen heeft om Security Center gegevens weer te geven, zien ze nu een koppelings aanvraag machtigingen van de globale beheerder van de organisatie. De aanvraag bevat de gewenste rol en de reden waarom het nodig is.
+
+:::image type="content" source="media/security-center-management-groups/request-tenant-permissions.png" alt-text="Vaandel dat een gebruiker informeert, kan de machtigingen voor de hele Tenant aanvragen.":::
+
+Meer informatie over [het aanvragen van machtigingen voor tenants wanneer dat niet het geval is](security-center-management-groups.md#request-tenant-wide-permissions-when-yours-are-insufficient) .
+
+
+### <a name="35-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark"></a>Er zijn 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen
+
+Azure Security Bench Mark is het standaard beleid Initiative in Azure Security Center. 
+
+Om de dekking van deze bench Mark te verg Roten, zijn de volgende 35 preview-aanbevelingen toegevoegd aan Security Center.
+
+> [!TIP]
+> Preview-aanbevelingen zorgen er niet voor dat een resource als beschadigd wordt weergegeven en ze worden niet opgenomen in de berekeningen van uw beveiligde score. Herstel ze waar mogelijk, zodat zij wanneer de preview-periode afloopt zullen bijdragen aan uw score. Zie [Aanbevelingen oplossen in Azure Security Center](security-center-remediate-recommendations.md) voor meer informatie over hoe u kunt reageren op deze aanbevelingen.
+
+| Beveiligingsmaatregelen                     | Nieuwe aanbevelingen                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
+|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Versleuteling at-rest inschakelen            | - Voor Azure Cosmos DB-accounts moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest<br>- Azure Machine Learning-werkruimten moeten worden versleuteld met een door de klant beheerde sleutel (CMK)<br>- BYOK-gegevensversleuteling moet zijn ingeschakeld voor MySQL-servers<br>- BYOK-gegevensversleuteling moet zijn ingeschakeld voor PostgreSQL-servers<br>- Voor Cognitive Services-accounts moet gegevensversleuteling zijn ingeschakeld met een door de klant beheerde sleutel (CMK)<br>- Containerregisters moeten worden versleuteld met een door de klant beheerde sleutel (CMK)<br>- Voor SQL Managed Instance moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest<br>- Voor SQL Server moeten door de klant beheerde sleutels worden gebruikt voor het versleutelen van data-at-rest<br>- Voor opslagaccounts moet een door de klant beheerde sleutel (CMK) worden gebruikt voor versleuteling                                                                                                                                                              |
+| Best practices voor beveiliging implementeren    | - Abonnementen moeten een e-mailadres van contactpersonen voor beveiligingsproblemen bevatten<br> - Automatisch inrichten van de Log Analytics-agent moet zijn ingeschakeld voor uw abonnement<br> - E-mailmelding voor waarschuwingen met hoge urgentie moet zijn ingeschakeld<br> - E-mailmelding aan abonnementseigenaar voor waarschuwingen met hoge urgentie moet zijn ingeschakeld<br> - Beveiliging tegen leegmaken moet zijn ingeschakeld voor sleutelkluizen<br> - Voorlopig verwijderen moet zijn ingeschakeld voor sleutelkluizen |
+| Toegang en machtigingen beheren        | - Clientcertificaten (binnenkomende clientcertificaten) moeten voor functie-apps zijn ingeschakeld |
+| Toepassingen beschermen tegen DDoS-aanvallen | - WAF (Web Application Firewall) moet zijn ingeschakeld voor Application Gateway<br> - WAF (Web Application Firewall) moet zijn ingeschakeld voor de Azure Front Door-service |
+| Onbevoegde netwerktoegang beperken | - De firewall moet zijn ingeschakeld in Key Vault<br> - Er moet een privé-eindpunt worden geconfigureerd voor Key Vault<br> - Voor App Configuration moeten privékoppelingen worden gebruikt<br> - Azure Cache voor Redis moet zich in een virtueel netwerk bevinden<br> - Voor Azure Event Grid-domeinen moet Private Link worden gebruikt<br> - Voor Azure Event Grid-onderwerpen moete Private Link worden gebruikt<br> - Voor Azure Machine Learning-werkruimten moet Private Link worden gebruikt<br> - Voor Azure SignalR Service moet Private Link worden gebruikt<br> - Azure Spring Cloud moet netwerkinjectie gebruiken<br> - Containerregisters mogen geen onbeperkte netwerktoegang toestaan<br> - Voor containerregisters moet Private Link worden gebruikt<br> - Openbare netwerktoegang moet worden uitgeschakeld voor MariaDB-servers<br> - Openbare netwerktoegang moet worden uitgeschakeld voor MySQL-servers<br> - Openbare netwerktoegang moet worden uitgeschakeld voor PostgreSQL-servers<br> - Voor een opslagaccount moet een Private Link-verbinding worden gebruikt<br> - Opslagaccounts moeten netwerktoegang beperken met behulp van regels voor virtuele netwerken<br> - Voor VM Image Builder-sjablonen moet Private Link worden gebruikt|
+|                                      |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+
+Gerelateerde links:
+
+- [Meer informatie over Azure Security Benchmark](../security/benchmarks/introduction.md)
+- [Meer informatie over Azure Database for MariaDB](../mariadb/overview.md)
+- [Meer informatie over Azure Database for MySQL](../mysql/overview.md)
+- [Meer informatie over Azure Database for PostgreSQL](../postgresql/overview.md)
+
+
 
 
 ### <a name="csv-export-of-filtered-list-of-recommendations"></a>CSV-export van een gefilterde lijst met aanbevelingen 

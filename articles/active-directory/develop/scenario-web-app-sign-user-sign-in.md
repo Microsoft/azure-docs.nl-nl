@@ -1,5 +1,6 @@
 ---
-title: Een web-app schrijven die in/uit-gebruikers aanmeldt-micro soft Identity-platform | Azure
+title: Een web-app schrijven die gebruikers aanmeldt/uitschrijft | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het bouwen van een web-app die in/uit-gebruikers aanmeldt
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: e7397f6d02d71a6344953b8210b0349b9ee26360
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 5b0b86321f7f2b320c3fea8e7c5bfa45bd936b77
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443548"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753004"
 ---
 # <a name="web-app-that-signs-in-users-sign-in-and-sign-out"></a>Web-app die gebruikers aanmeldt: aanmelden en afmelden
 
@@ -112,7 +113,7 @@ def index():
 
 # <a name="aspnet-core"></a>[ASP.NET Core](#tab/aspnetcore)
 
-In ASP.NET wordt de **Sign-in** `SignIn` actie op de controller geactiveerd wanneer u de knop aanmelden in de web-app selecteert `AccountController` . In eerdere versies van de ASP.NET core-sjablonen `Account` is de controller Inge sloten met de web-app. Dat is niet langer het geval omdat de controller nu deel uitmaakt van het **micro soft. Identity. Web. UI** NuGet-pakket. Zie [AccountController.cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) voor meer informatie.
+In ASP.NET wordt de  `SignIn` actie op de controller geactiveerd wanneer u de knop aanmelden in de web-app selecteert `AccountController` . In eerdere versies van de ASP.NET core-sjablonen `Account` is de controller Inge sloten met de web-app. Dat is niet langer het geval omdat de controller nu deel uitmaakt van het **micro soft. Identity. Web. UI** NuGet-pakket. Zie [AccountController.cs](https://github.com/AzureAD/microsoft-identity-web/blob/master/src/Microsoft.Identity.Web.UI/Areas/MicrosoftIdentity/Controllers/AccountController.cs) voor meer informatie.
 
 Deze controller verwerkt ook de Azure AD B2C toepassingen.
 
@@ -213,7 +214,7 @@ Nadat de gebruiker zich heeft aangemeld bij uw app, moet u deze inschakelen om u
 Afmelden bij een web-app omvat meer dan het verwijderen van de informatie over het aangemelde account uit de status van de web-app.
 De web-app moet ook de gebruiker omleiden naar het micro soft Identity platform- `logout` eind punt om u af te melden.
 
-Als uw web-app de gebruiker omleidt naar het `logout` eind punt, wordt met dit eind punt de sessie van de gebruiker uit de browser gewist. Als uw app niet naar het `logout` eind punt gaat, wordt de gebruiker opnieuw geverifieerd bij uw app zonder de referenties opnieuw in te voeren. De reden hiervoor is dat er een geldige sessie voor eenmalige aanmelding met het micro soft Identity platform-eind punt is.
+Als uw web-app de gebruiker omleidt naar het `logout` eind punt, wordt met dit eind punt de sessie van de gebruiker uit de browser gewist. Als uw app niet naar het `logout` eind punt gaat, wordt de gebruiker opnieuw geverifieerd bij uw app zonder de referenties opnieuw in te voeren. De reden hiervoor is dat ze een geldige sessie voor eenmalige aanmelding hebben met het micro soft Identity-platform.
 
 Zie de sectie [een aanvraag voor een afmelding verzenden](v2-protocols-oidc.md#send-a-sign-out-request) in het [micro soft Identity-platform en de OpenID Connect Connect protocol](v2-protocols-oidc.md) -documentatie voor meer informatie.
 

@@ -12,12 +12,12 @@ ms.date: 12/14/2020
 ms.author: kenwith
 ms.reviewer: jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 1f1100c27bb3c02e3d1a5040942509c24bab0e65
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 8f5324e967c5a67ee77559087a02c3421611d8f3
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683985"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752863"
 ---
 # <a name="publish-your-app-to-the-azure-ad-app-gallery"></a>Uw app publiceren in de app-galerie van Azure AD
 
@@ -148,7 +148,7 @@ Zie [Wat is verificatie?](../azuread-dev/v1-authentication-scenarios.md)voor mee
 
 Voor OpenID Connect Connect moet de toepassing meerdere tenants zijn en moet het [Azure AD toestemmings raamwerk](consent-framework.md) goed worden geïmplementeerd voor de toepassing. De gebruiker kan de aanmeldings aanvraag naar een gemeen schappelijk eind punt verzenden, zodat elke klant toestemming kan geven voor de toepassing. U kunt de gebruikers toegang beheren op basis van de Tenant-ID en de UPN van de gebruiker die in het token is ontvangen.
 
-Zie [micro soft Identity platform-code voorbeelden](sample-v2-code.md)voor specifieke voor beelden. 
+Zie de [micro soft Identity platform](sample-v2-code.md)-voor beelden voor meer informatie over het bekijken van specifieke voor beelden. 
 
 Zie voor specifieke voor beelden voor mobiele apparaten: 
 * [Android](quickstart-v2-android.md)

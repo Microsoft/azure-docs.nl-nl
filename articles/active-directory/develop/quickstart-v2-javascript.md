@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 04/11/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:JavaScript, devx-track-js
-ms.openlocfilehash: 532fcc7db849af192ceddb1c239e99f31a2a3088
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: b475d8072c4103e8a532cdf703e2d75b0c8aafa2
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178463"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754150"
 ---
 # <a name="quickstart-sign-in-users-and-get-an-access-token-in-a-javascript-spa"></a>Quickstart: Gebruikers aanmelden en een toegangstoken verkrijgen in een JavaScript SPA
 
@@ -54,7 +54,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
 > 1. Selecteer onder **Ondersteunde accounttypen** de optie **Accounts in een organisatieadreslijst en persoonlijke Microsoft-account**.
 > 1. Selecteer **Registreren**. Noteer de waarde **Toepassings-id (client)** op de app-pagina **Overzicht** voor later gebruik.
-> 1. Voor deze quickstart moet de [Impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld. Selecteer in het linkerdeelvenster van de geregistreerde toepassing de optie **Verificatie**.
+> 1. Voor deze quickstart moet de [Impliciete toekenningsstroom](v2-oauth2-implicit-grant-flow.md) zijn ingeschakeld. Selecteer **Verificatie** onder **Beheren**.
 > 1. Selecteer **Een platform toevoegen** onder **Platformconfiguraties**. Er opent een venster aan de linkerkant. Selecteer daar de regio **Webtoepassingen**.
 > 1. Stel links de waarde van **Omleidings-URI** in op `http://localhost:3000/`. Selecteer vervolgens **Toegangstoken** en **Id-token**.
 > 1. Selecteer **Configureren**.
@@ -266,14 +266,14 @@ myMSALObj.acquireTokenSilent(tokenRequest)
 
 #### <a name="get-a-user-token-interactively"></a>Een gebruikerstoken interactief ophalen
 
-Er zijn situaties waarin u wilt afdwingen dat gebruikers met het Microsoft-identity platform-eindpunt communiceren. Bijvoorbeeld:
+Er zijn situaties waarin u gebruikers moet dwingen te communiceren met het micro soft Identity-platform. Bijvoorbeeld:
 * Gebruikers moeten mogelijk hun referenties opnieuw opgeven omdat het wachtwoord is verlopen.
 * De toepassing vraagt toegang tot aanvullende resourcebereiken waarvoor de gebruiker toestemming moet geven.
 * Verificatie in twee stappen is vereist.
 
 Het patroon dat gewoonlijk wordt aanbevolen voor de meeste toepassingen: eerst `acquireTokenSilent` aanroepen, vervolgens de uitzondering detecteren, en daarna `acquireTokenPopup` (of `acquireTokenRedirect`) aanroepen om een interactieve aanvraag te starten.
 
-De `acquireTokenPopup` aanroepen opent een pop-upvenster voor aanmelding. (Of `acquireTokenRedirect` leidt gebruikers om naar het eindpunt van het Microsoft-identiteitsplatform.) In dat venster moeten gebruikers hun referenties bevestigen, toestemming geven voor de vereiste resource of verificatie in wee stappen uitvoeren.
+De `acquireTokenPopup` aanroepen opent een pop-upvenster voor aanmelding. (Of `acquireTokenRedirect` resulteert in het omleiden van gebruikers naar het micro soft Identity-platform). In dat venster moeten gebruikers communiceren door hun referenties te bevestigen, toestemming te geven voor de vereiste resource of de twee ledige verificatie uit te voeren.
 
 ```javascript
 // Add here scopes for access token to be used at MS Graph API endpoints.

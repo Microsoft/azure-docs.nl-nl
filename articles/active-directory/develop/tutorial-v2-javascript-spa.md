@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 08/06/2020
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: 51b548beae57ce1da32006b61dfd222b0a4e6218
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 874488e5de7888edad5310afce1afd1baec4ece0
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015858"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753060"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-application-spa"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een JavaScript-toepassing met één pagina (SPA)
 
@@ -45,7 +45,7 @@ In deze zelfstudie:
 
 ![Er wordt getoond hoe de voorbeeld-app werkt die wordt gegenereerd in deze zelfstudie](media/active-directory-develop-guidedsetup-javascriptspa-introduction/javascriptspa-intro.svg)
 
-Met de voorbeeldtoepassing die in deze gids wordt gemaakt, kan een JavaScript-toepassing met één pagina een query uitvoeren bij de Microsoft Graph API of een web-API die tokens accepteert van het Microsoft-identity platform-eindpunt. Wanneer in dit scenario een gebruiker zich aanmeldt, wordt er een toegangstoken gevraagd en toegevoegd aan HTTP-aanvragen via de autorisatie-header. Dit token wordt gebruikt om het profiel en de e-mailberichten van de gebruiker op te halen via **MS Graph API**.
+Met de voorbeeld toepassing die door deze hand leiding is gemaakt, kan een Java script-beveiligd-wachtwoord verificatie query's uitvoeren op de Microsoft Graph-API of een web-API die tokens van het micro soft Identity-platform accepteert. Wanneer in dit scenario een gebruiker zich aanmeldt, wordt er een toegangstoken gevraagd en toegevoegd aan HTTP-aanvragen via de autorisatie-header. Dit token wordt gebruikt om het profiel en de e-mailberichten van de gebruiker op te halen via **MS Graph API**.
 
 Het ophalen en vernieuwen van tokens worden verwerkt door de [Microsoft Authentication Library voor JavaScript (MSAL.js)](https://github.com/AzureAD/microsoft-authentication-library-for-js) .
 
@@ -413,13 +413,13 @@ De toepassing met één pagina die u met behulp van deze gids hebt gegenereerd, 
 
 #### <a name="get-a-user-token-interactively"></a>Een gebruikerstoken interactief ophalen
 
-Na de eerste aanmelding wilt u gebruikers niet meer vragen om zich telkens opnieuw te verifiëren wanneer ze een token moeten aanvragen voor toegang tot een resource. Daarom moet de meeste tijd *acquireTokenSilent* worden gebruikt voor het verkrijgen van tokens. Maar er zijn situaties waarin u wilt afdwingen dat gebruikers met het Microsoft-identity platform-eindpunt communiceren. Voorbeelden zijn:
+Na de eerste aanmelding wilt u gebruikers niet meer vragen om zich telkens opnieuw te verifiëren wanneer ze een token moeten aanvragen voor toegang tot een resource. Daarom moet de meeste tijd *acquireTokenSilent* worden gebruikt voor het verkrijgen van tokens. Er zijn echter situaties waarin u gebruikers moet dwingen om te communiceren met het micro soft Identity-platform. Voorbeelden zijn:
 
 - Gebruikers moeten hun referenties opnieuw opgeven omdat het wachtwoord is verlopen.
 - Uw toepassing vraagt toegang tot een resource waarvoor de gebruiker toestemming moet geven.
 - Verificatie in twee stappen is vereist.
 
-Als u *acquireTokenPopup* aanroept, wordt een pop-upvenster geopend (of, als u *acquireTokenRedirect* aanroept, worden gebruikers omgeleid naar het Microsoft-identity platform-eindpunt). In dat venster moeten gebruikers hun referenties bevestigen, toestemming geven voor de vereiste resource of verificatie in wee stappen uitvoeren.
+Als *acquireTokenPopup* wordt aangeroepen, wordt een pop-upvenster geopend (of worden gebruikers door *acquireTokenRedirect* omgeleid naar het micro soft-identiteits platform). In dat venster moeten gebruikers hun referenties bevestigen, toestemming geven voor de vereiste resource of verificatie in wee stappen uitvoeren.
 
 #### <a name="get-a-user-token-silently"></a>Een gebruikerstoken op de achtergrond ophalen
 
@@ -483,7 +483,7 @@ In de voorbeeldtoepassing die aan de hand van deze gids wordt gemaakt, wordt de 
    ```
 1. Voer in uw browser **http://localhost:3000** of **http://localhost:{port}** in, waarbij *poort* de poort is waarnaar uw webserver luistert. U moet de inhoud van uw bestand *index.html* en de knop **Aanmelden** zien.
 
-Nadat de browser het bestand *index.html* heeft geladen, selecteert u **Aanmelden**. U wordt gevraagd om u aan te melden met het Microsoft-identiteitsplatform-eindpunt:
+Nadat de browser het bestand *index.html* heeft geladen, selecteert u **Aanmelden**. U wordt gevraagd om u aan te melden met het micro soft Identity-platform:
 
 ![Het aanmeldvenster voor het account voor de JavaScript-toepassing met één pagina](media/active-directory-develop-guidedsetup-javascriptspa-test/javascriptspascreenshot1.png)
 

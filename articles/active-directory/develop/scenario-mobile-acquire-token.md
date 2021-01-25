@@ -13,12 +13,12 @@ ms.date: 05/07/2019
 ms.author: jmprieur
 ms.reviewer: brandwe
 ms.custom: aaddev
-ms.openlocfilehash: 946908bf28a50bc8b523c4efd853e8720b115c7b
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: c071cb9a8a27964a93e039e4d1536e078730bfc9
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063073"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98753626"
 ---
 # <a name="get-a-token-for-a-mobile-app-that-calls-web-apis"></a>Een Token ophalen voor een mobiele app die web-Api's aanroept
 
@@ -28,7 +28,7 @@ Voordat uw app beveiligde web-Api's kan aanroepen, heeft deze een toegangs token
 
 Wanneer u een token aanvraagt, moet u een bereik definiëren. Het bereik bepaalt welke gegevens uw app kan gebruiken.
 
-De eenvoudigste manier om een bereik te definiëren is het combi neren van de gewenste Web-API `App ID URI` met het bereik `.default` . Deze definitie vertelt micro soft Identity platform dat uw app alle scopes vereist die in de portal zijn ingesteld.
+De eenvoudigste manier om een bereik te definiëren is het combi neren van de gewenste Web-API `App ID URI` met het bereik `.default` . Deze definitie vertelt het micro soft-identiteits platform dat uw app alle scopes vereist die in de portal zijn ingesteld.
 
 ### <a name="android"></a>Android
 ```Java
@@ -243,7 +243,7 @@ De klasse definieert de volgende constanten:
 
 ##### <a name="withextrascopetoconsent"></a>WithExtraScopeToConsent
 
-Gebruik de `WithExtraScopeToConsent` wijzigings functie in een geavanceerd scenario waar de gebruiker vooraf toestemming voor verschillende resources moet bieden. U kunt deze optie gebruiken als u geen incrementele toestemming wilt gebruiken, die normaal gesp roken wordt gebruikt met MSAL.NET of micro soft Identity platform 2,0. Zie voor meer informatie [de gebruiker toestemming geven vóór verschillende bronnen](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
+Gebruik de `WithExtraScopeToConsent` wijzigings functie in een geavanceerd scenario waar de gebruiker vooraf toestemming voor verschillende resources moet bieden. U kunt deze optie gebruiken als u geen incrementele toestemming wilt gebruiken, die normaal gesp roken wordt gebruikt met MSAL.NET of het micro soft Identity-platform. Zie voor meer informatie [de gebruiker toestemming geven vóór verschillende bronnen](scenario-desktop-production.md#have-the-user-consent-upfront-for-several-resources).
 
 Hier volgt een code voorbeeld:
 

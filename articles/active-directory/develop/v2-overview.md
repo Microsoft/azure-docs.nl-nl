@@ -13,12 +13,12 @@ ms.date: 07/09/2020
 ms.author: ryanwi
 ms.reviewer: agirling, saeeda, benv
 ms.custom: identityplatformtop40, contperf-fy21q2
-ms.openlocfilehash: e5a9292097933ff35eb8b77445f07f10def6e5c3
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 662523b1544fe3ca9e8bda993efa7b578b9f69cc
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97029614"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98752583"
 ---
 # <a name="what-is-the-microsoft-identity-platform"></a>Wat is het Microsoft Identity Platform?
 
@@ -78,7 +78,7 @@ Meer informatie over de basisverificatie- en Azure AD-concepten die van toepassi
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Als u een Azure-account hebt, hebt u al toegang tot een Azure Active Directory-tenant, maar de meeste ontwikkelaars van het Microsoft-identiteitsplatform hebben hun eigen Azure AD-tenant nodig om te gebruiken terwijl ze toepassing ontwikkelen, een 'dev-tenant'.
+Als u een Azure-account hebt, hebt u al toegang tot een Azure Active Directory-Tenant, maar de meeste ontwikkel aars van micro soft-identiteits platform hebben hun eigen Azure AD-Tenant nodig voor gebruik tijdens het ontwikkelen van toepassingen, een ' dev Tenant '.
 
 Meer informatie over het maken van uw eigen tenant om te gebruiken terwijl u uw toepassingen bouwt:
 

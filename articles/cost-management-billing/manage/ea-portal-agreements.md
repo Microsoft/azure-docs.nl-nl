@@ -3,17 +3,17 @@ title: Azure EA-overeenkomsten en -aanpassingen
 description: In dit wordt uitleg gegeven over hoe de Azure EA-overeenkomsten en -aanpassingen van invloed zijn op uw gebruik van Azure EA Portal.
 author: bandersmsft
 ms.author: banders
-ms.date: 09/03/2020
+ms.date: 01/19/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.openlocfilehash: 9e6750bd8404b4f9b910dda93859a0ca3fd268d4
-ms.sourcegitcommit: bf1340bb706cf31bb002128e272b8322f37d53dd
-ms.translationtype: HT
+ms.openlocfilehash: c2c3636e98d67616826b03cca9657b806c5bd653
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/03/2020
-ms.locfileid: "89442527"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598008"
 ---
 # <a name="azure-ea-agreements-and-amendments"></a>Azure EA-overeenkomsten en -aanpassingen
 
@@ -21,7 +21,7 @@ In het artikel wordt beschreven hoe Azure EA-overeenkomsten en -aanpassingen van
 
 ## <a name="enrollment-provisioning-status"></a>De inrichtingsstatus voor inschrijving
 
-De begindatum van een nieuwe Azure-vooruitbetaling wordt gedefinieerd op basis van de datum waarop het regionale Operations Center de vooruitbetaling verwerkt. Omdat orders voor Azure-vooruitbetaling via Azure EA Portal worden verwerkt in de tijdzone UTC, kan er enige vertraging optreden als uw inkooporder voor Azure-vooruitbetaling in een andere regio is verwerkt. De begindatum van de dekking op de inkooporder staat gelijk aan de begindatum van de Azure-vooruitbetaling. De begindatum van de dekking is dezelfde datum als de datum waarop de Azure-vooruitbetaling wordt weergegeven in Azure EA Portal.
+De begindatum van een nieuwe Azure-vooruitbetaling (voorheen financiële toezegging) wordt gedefinieerd op basis van de datum waarop het regionale Operations Center de vooruitbetaling verwerkt. Omdat orders voor Azure-vooruitbetaling via Azure EA Portal worden verwerkt in de tijdzone UTC, kan er enige vertraging optreden als uw inkooporder voor Azure-vooruitbetaling in een andere regio is verwerkt. De begindatum van de dekking op de inkooporder staat gelijk aan de begindatum van de Azure-vooruitbetaling. De begindatum van de dekking is dezelfde datum als de datum waarop de Azure-vooruitbetaling wordt weergegeven in Azure EA Portal.
 
 ## <a name="support-for-enterprise-customers"></a>Ondersteuning voor Enterprise-klanten
 
@@ -60,7 +60,7 @@ Microsoft heeft voor geen enkel doeleinde toegang tot de opgegeven prijsverhogin
 
 ### <a name="how-the-calculation-works"></a>Hoe werkt de berekening?
 
-De LSP geeft één percentagegetal op in EA Portal.  Alle commerciële gegevens op de portal worden verhoogd met het percentage dat is opgegeven door de LSP. Voorbeeld:
+De LSP geeft één percentagegetal op in EA Portal.    Alle commerciële gegevens op de portal worden verhoogd met het percentage dat is opgegeven door de LSP. Voorbeeld:
 
 - Klant ondertekent een EA met een Azure-vooruitbetaling van USD 100.000.
 - Het metertarief voor service A is 10 USD/uur.
@@ -101,13 +101,14 @@ Controleer de commerciële gegevens (gegevens over het financiële saldo, de pri
 Controleer de prijsverhoging in het _Gebruiksoverzicht_ voor de vooruitbetalingsperiode in de klantweergave. De Microsoft-prijs wordt nog steeds weergegeven in de partnerweergave. De weergaven kunnen worden in- of uitgeschakeld met de schakeloptie voor de partnerprijsverhoging 'personen' in de rechterbovenhoek.
 
 1. Controleer de prijzen in het prijzenoverzicht.
-1. U kunt wijzigingen aanbrengen voordat u publiceert door **Bewerken** te selecteren op het tabblad _Gebruiksoverzicht bekijken > Klantweergave_.  
-  Zowel de serviceprijzen als de vooruitbetalingssaldi worden met dezelfde percentages verhoogd. Als u verschillende percentages gebruikt voor het financiële saldo en de metertarieven of verschillende percentages gebruikt voor verschillende services, kunt u deze functie niet gebruiken.
+1. U kunt wijzigingen aanbrengen voordat u publiceert door **Bewerken** te selecteren op het tabblad _Gebruiksoverzicht bekijken > Klantweergave_. 
+   
+Zowel de serviceprijzen als de vooruitbetalingssaldi worden met dezelfde percentages verhoogd. Als u verschillende percentages gebruikt voor het financiële saldo en de metertarieven of verschillende percentages gebruikt voor verschillende services, kunt u deze functie niet gebruiken.
 
 **Derde stap: publiceren**
 
 Nadat de prijzen zijn gecontroleerd en gevalideerd, klikt u op **Publiceren**.
-  
+  
 De prijzen met verhogingen zijn direct beschikbaar voor ondernemingsbeheerders nadat u deze hebt gepubliceerd. U kunt geen wijzigingen aanbrengen in de prijsverhoging. U moet de prijsverhoging uitschakelen en weer bij de eerste stap beginnen.
 
 ### <a name="which-enrollments-have-a-markup-enabled"></a>Voor welke inschrijvingen is een prijsverhoging ingeschakeld?

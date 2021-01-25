@@ -14,12 +14,12 @@ ms.author: ryanwi
 ms.reviewer: lenalepa
 ms.custom: aaddev
 ROBOTS: NOINDEX
-ms.openlocfilehash: b165cd4abd55026e10aa43eb20faa85b887de194
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 6a33da602eaa9bee20f155eaa550e558e5dcbeca
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065040"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755565"
 ---
 # <a name="app-registration-reference"></a>Naslaginformatie over app-registratie
 
@@ -27,7 +27,7 @@ In dit document vindt u context en beschrijvingen van diverse functies die in de
 
 ## <a name="my-applications-or-converged-applications"></a>Mijn toepassingen of geconvergeerde toepassingen
 
-Deze lijst bevat alle toepassingen die zijn geregistreerd voor gebruik met het micro soft Identity platform (v 2.0)-eind punt. Met deze toepassingen kunnen gebruikers zich aanmelden met persoonlijke micro soft-accounts en werk-of school accounts van Azure Active Directory. Zie het [overzicht van v 2.0](./v2-overview.md)voor meer informatie over het identiteits platform-eind punt. Deze toepassingen kunnen ook worden gebruikt om te integreren met het Microsoft-account verificatie-eind punt `https://login.live.com` .
+Deze lijst bevat alle toepassingen die zijn geregistreerd voor gebruik met het micro soft Identity-platform. Met deze toepassingen kunnen gebruikers zich aanmelden met persoonlijke micro soft-accounts en werk-of school accounts van Azure Active Directory. Meer informatie over het micro soft-identiteits platform vindt u in het [overzicht van v 2.0](./v2-overview.md). Deze toepassingen kunnen ook worden gebruikt om te integreren met het Microsoft-account verificatie-eind punt `https://login.live.com` .
 
 ## <a name="azure-ad-only-applications"></a>Alleen Azure AD-toepassingen
 
@@ -39,7 +39,7 @@ Deze lijst bevat alle toepassingen die zijn geregistreerd voor gebruik met Micro
 
 ## <a name="application-secrets"></a>Toepassings geheimen
 
-Toepassings geheimen zijn referenties waarmee uw toepassing betrouw bare [client verificatie](https://tools.ietf.org/html/rfc6749#section-2.3) kan uitvoeren met het micro soft Identity-platform. In OAuth & OpenID Connect Connect wordt een toepassings geheim doorgaans aangeduid als een `client_secret` . In het v 2.0-protocol moet elke toepassing die een beveiligings token ontvangt op een webadresseer bare locatie (met behulp `https` van een schema) een toepassings geheim gebruiken om zichzelf te identificeren voor het micro soft Identity-platform op het moment dat het beveiligings token wordt uitgewisseld. Daarnaast mag elke native client die tokens ontvangt op een apparaat, geen toepassings geheim gebruiken om client verificatie uit te voeren. Hiermee wordt de opslag van geheimen in onbeveiligde omgevingen geraden.
+Toepassings geheimen zijn referenties waarmee uw toepassing betrouw bare [client verificatie](https://tools.ietf.org/html/rfc6749#section-2.3) kan uitvoeren met het micro soft Identity-platform. In OAuth & OpenID Connect Connect wordt een toepassings geheim doorgaans aangeduid als een `client_secret` . In het v 2.0-protocol moet elke toepassing die een beveiligings token ontvangt op een webadresseer bare locatie (met behulp `https` van een schema) een toepassings geheim gebruiken om zichzelf te identificeren bij het micro soft Identity-platform op het moment dat het beveiligings token wordt afgezet. Daarnaast mag elke native client die tokens ontvangt op een apparaat, geen toepassings geheim gebruiken om client verificatie uit te voeren. Hiermee wordt de opslag van geheimen in onbeveiligde omgevingen geraden.
 
 Elke app kan op elk gewenst moment twee geldige toepassings geheimen bevatten. Door twee geheimen te bewaren, hebt u de mogelijkheid om periodieke sleutel rollover uit te voeren in de gehele omgeving van uw toepassing. Wanneer u de volledige versie van uw toepassing naar een nieuw geheim hebt gemigreerd, kunt u het oude geheim verwijderen en een nieuw item inrichten.
 

@@ -6,21 +6,21 @@ services: application-gateway
 author: vhorne
 ms.service: application-gateway
 ms.topic: quickstart
-ms.date: 08/27/2020
+ms.date: 01/19/2021
 ms.author: victorh
 ms.custom: mvc, devx-track-js, devx-track-azurecli
-ms.openlocfilehash: d4b6fc296ae41667d271e243e9aca9b594e4a5b6
-ms.sourcegitcommit: 230d5656b525a2c6a6717525b68a10135c568d67
-ms.translationtype: HT
+ms.openlocfilehash: 1a691d8ab212dd436b0dc9f7aafbc19a406b12b7
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/19/2020
-ms.locfileid: "94886699"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601785"
 ---
 # <a name="quickstart-direct-web-traffic-with-azure-application-gateway---azure-cli"></a>Quickstart: Webverkeer omleiden met Azure Application Gateway - Azure CLI
 
 In deze quickstart gebruikt u Azure CLI om een toepassingsgateway te maken. Vervolgens test u de toepassing om te controleren of alles correct werkt. 
 
-De toepassingsgateway stuurt webverkeer van toepassingen naar specifieke resources in een back-endpool. U wijst listeners toe aan poorten, maakt regels en voegt resources toe aan een back-endpool. Dit artikel gebruikt een eenvoudige configuratie met een openbaar front-end-IP, een eenvoudige listener om een enkele site op de toepassingsgateway te hosten, een eenvoudige regel voor doorsturen van aanvragen en twee virtuele machines in de back-endpool.
+De toepassingsgateway stuurt webverkeer van toepassingen naar specifieke resources in een back-endpool. U wijst listeners toe aan poorten, maakt regels en voegt resources toe aan een back-endpool. Dit artikel gebruikt een eenvoudige configuratie met een openbaar IP-adres voor de front-end, een eenvoudige listener om een enkele site op de toepassingsgateway te hosten, een eenvoudige regel voor doorsturen van aanvragen en twee virtuele machines in de back-endpool.
 
 U kunt deze quickstart ook uitvoeren met [Azure PowerShell](quick-create-powershell.md) of [Azure Portal](quick-create-portal.md).
 

@@ -12,12 +12,12 @@ ms.date: 1/06/2021
 ms.author: ryanwi
 ms.reviewer: paulgarn, hirsin, keyam
 ms.custom: aaddev
-ms.openlocfilehash: 6b5c328503a28c6eb92c2c20ca54d4d3d80c9a15
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 6855e8f550c14574795ec00f4fed36762944dca1
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232468"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756039"
 ---
 # <a name="how-to-provide-optional-claims-to-your-app"></a>Procedure: optionele claims voor uw app opgeven
 
@@ -26,12 +26,12 @@ Ontwikkel aars van toepassingen kunnen optionele claims in hun Azure AD-toepassi
 U kunt optionele claims gebruiken voor het volgende:
 
 - Selecteer extra claims die moeten worden toegevoegd aan de tokens voor uw toepassing.
-- Wijzig het gedrag van bepaalde claims die micro soft Identity platform retourneert in tokens.
+- Wijzig het gedrag van bepaalde claims die het micro soft Identity-platform retourneert in tokens.
 - Aangepaste claims toevoegen en openen voor uw toepassing.
 
 Zie de documentatie voor [toegangs tokens](access-tokens.md) en [id_token](id-tokens.md) claims voor de lijsten met standaard claims.
 
-Hoewel optionele claims worden ondersteund in de indelings tokens v 1.0 en v 2.0, en op SAML-tokens, bieden ze de meeste waarde bij het overstappen van v 1.0 naar v 2.0. Een van de doel stellingen van het [micro soft Identity platform-eind punt van de v 2.0](./v2-overview.md) is kleiner dan de grootte van tokens om optimale prestaties door clients te garanderen. Als gevolg hiervan zijn enkele claims voorheen opgenomen in de toegangs-en ID-tokens niet meer aanwezig in de v 2.0-tokens en moeten ze specifiek worden gevraagd per toepassing.
+Hoewel optionele claims worden ondersteund in de indelings tokens v 1.0 en v 2.0, en op SAML-tokens, bieden ze de meeste waarde bij het overstappen van v 1.0 naar v 2.0. Een van de doel stellingen van het [micro soft Identity platform](./v2-overview.md) is een kleiner aantal tokens om optimale prestaties door clients te garanderen. Als gevolg hiervan zijn enkele claims voorheen opgenomen in de toegangs-en ID-tokens niet meer aanwezig in de v 2.0-tokens en moeten ze specifiek worden gevraagd per toepassing.
 
 **Tabel 1: toepasselijkheid**
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 349caa9a4fa34d87e0a4d99089a1063be66307f4
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 8e54f71ef58b3ea76a5fe55347a1caa173046320
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017558"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754497"
 ---
 # <a name="quickstart-aspnet-core-web-app-that-signs-in-users-and-calls-microsoft-graph-on-their-behalf"></a>Quickstart: ASP.NET Core-web-app om gebruikers aan te melden en namens hen Microsoft Graph aan te roepen
 
@@ -38,7 +38,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1: registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Ga naar de [Azure-portal - App-registraties](https://aka.ms/aspnetcore-webapp-calls-graph-quickstart-v2).
+> 1. Ga naar de quickstart <a href="https://portal.azure.com/#blade/Microsoft_AAD_RegisteredApps/applicationsListBlade/quickStartType/AspNetCoreWebAppQuickstartPage/sourceType/docs" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 > 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 >
@@ -52,10 +52,10 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Zoek en selecteer de optie **Azure Active Directory**.
 > 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
 > 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
-> 1. Voer een **Omleidings-URI** van `https://localhost:44321/signin-oidc` in
+> 1. Voer een **omleidings-URI** van in `https://localhost:44321/signin-oidc` .
 > 1. Selecteer **Registreren**.
 > 1. Selecteer **Verificatie** onder **Beheren**.
-> 1. Voer een **Logout-URL** van `https://localhost:44321/signout-oidc` in
+> 1. Voer een **Afmeldings-URL** van in `https://localhost:44321/signout-oidc` .
 > 1. Selecteer **Opslaan**.
 > 1. Selecteer onder **Beheren** achtereenvolgens **Certificaten en geheimen** > **Nieuw clientgeheim**.
 > 1. Voer een **Beschrijving** in, bijvoorbeeld `clientsecret1`.
@@ -166,7 +166,7 @@ De *Microsoft.AspNetCore.Authentication*-middleware maakt gebruik van een `Start
 
 Met de methode `AddAuthentication()` wordt de service geconfigureerd voor het toevoegen van verificatie op basis van cookies. Deze verificatie wordt gebruikt in browserscenario's en om vragen te sturen naar OpenID Connect.
 
-Met de regel die `.AddMicrosoftIdentityWebApp` bevat, wordt het Microsoft-identiteitsplatform toegevoegd aan uw toepassing. Deze wordt geleverd met [Microsoft.Identity.Web](microsoft-identity-web.md). Deze wordt vervolgens geconfigureerd om u aan te melden met het Microsoft Identity platform-eindpunt op basis van de informatie in de sectie `AzureAD` van het bestand *appSettings.json* :
+Met de regel die `.AddMicrosoftIdentityWebApp` bevat, wordt het Microsoft-identiteitsplatform toegevoegd aan uw toepassing. Deze wordt geleverd met [Microsoft.Identity.Web](microsoft-identity-web.md). Deze wordt vervolgens geconfigureerd om u aan te melden met het micro soft-identiteits platform op basis van de informatie in de `AzureAD` sectie van de *appsettings.jsin* het configuratie bestand:
 
 | Sleutel *appSettings.json* | Description                                                                                                                                                          |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|

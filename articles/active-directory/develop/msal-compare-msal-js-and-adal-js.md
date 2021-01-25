@@ -13,16 +13,16 @@ ms.date: 04/10/2019
 ms.author: nacanuma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 6894d84f489d3719f1106ba4de79cb85fa45c5ed
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: a1ec8c31681ab6c0ac40ba33e94f33057ee948e7
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064947"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754793"
 ---
 # <a name="differences-between-msaljs-and-adaljs"></a>Verschillen tussen MSAL.js en ADAL.js
 
-Zowel de micro soft-verificatie bibliotheek voor Java script (MSAL.js) als Azure AD-verificatie bibliotheek voor Java script (ADAL.js) wordt gebruikt voor het verifiëren van Azure AD-entiteiten en het aanvragen van tokens van Azure AD. Tot nu toe hebben de meeste ontwikkel aars met Azure AD voor ontwikkel aars (v 1.0) gewerkt voor het verifiëren van Azure AD-identiteiten (werk-en school accounts) door tokens aan te vragen met behulp van ADAL. Nu met behulp van MSAL.js kunt u een bredere set met micro soft-identiteiten (Azure AD-identiteiten en micro soft-accounts en sociale en lokale accounts via Azure AD B2C) verifiëren via micro soft Identity platform (v 2.0).
+Zowel de micro soft-verificatie bibliotheek voor Java script (MSAL.js) als Azure AD-verificatie bibliotheek voor Java script (ADAL.js) wordt gebruikt voor het verifiëren van Azure AD-entiteiten en het aanvragen van tokens van Azure AD. Tot nu toe hebben de meeste ontwikkel aars met Azure AD voor ontwikkel aars (v 1.0) gewerkt voor het verifiëren van Azure AD-identiteiten (werk-en school accounts) door tokens aan te vragen met behulp van ADAL. Nu met behulp van MSAL.js kunt u een bredere set met micro soft-identiteiten (Azure AD-identiteiten en micro soft-accounts en sociale en lokale accounts via Azure AD B2C) verifiëren via het micro soft Identity-platform.
 
 In dit artikel wordt beschreven hoe u kiest tussen de micro soft-verificatie bibliotheek voor Java script (MSAL.js) en de Azure AD-verificatie bibliotheek voor Java script (ADAL.js) en de twee bibliotheken vergelijkt.
 

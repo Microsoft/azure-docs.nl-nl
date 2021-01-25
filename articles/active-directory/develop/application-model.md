@@ -1,7 +1,7 @@
 ---
 title: Toepassings model | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over het proces van het registreren van uw toepassing, zodat deze kan worden geïntegreerd met het micro soft Identity platform (v 2.0).
+description: Meer informatie over het proces van het registreren van uw toepassing, zodat deze kan worden geïntegreerd met het micro soft Identity-platform.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -13,12 +13,12 @@ ms.date: 04/28/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 5aca96a9c3bc4e8f1061f677e316565b10014ac9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2ba41e36d12b58da2e572cf870195716eacaddef
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88117478"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755679"
 ---
 # <a name="application-model"></a>Toepassingsmodel
 
@@ -32,16 +32,16 @@ Als een id-provider weet dat een gebruiker toegang heeft tot een bepaalde app, m
 * Bepaal of u gebruikers alleen wilt laten aanmelden als ze tot uw organisatie behoren. Dit is één Tenant toepassing. Of sta gebruikers toe om zich aan te melden met een werk-of school account. Dit is een toepassing met meerdere tenants. U kunt ook persoonlijke micro soft-accounts of een sociaal account van LinkedIn, Google, enzovoort toestaan.
 * Machtigingen voor het bereik van aanvragen. U kunt bijvoorbeeld het bereik ' gebruiker. read ' aanvragen, dat toestemming geeft om het profiel van de aangemelde gebruiker te lezen.
 * Definieer bereiken waarmee de toegang tot uw web-API wordt gedefinieerd. Wanneer een app toegang wil krijgen tot uw API, moet dit doorgaans machtigingen aanvragen voor de bereiken die u definieert.
-* Deel een geheim met het micro soft Identity-platform waarmee de identiteit van de app wordt bewezen.  Dit is van belang voor het geval dat de app een vertrouwelijke client toepassing is. Een vertrouwelijke client toepassing is een toepassing die referenties veilig kan bevatten. Er is een vertrouwde back-end-server nodig om de referenties op te slaan.
+* Deel een geheim met het micro soft-identiteits platform waarmee de identiteit van de app wordt bewezen.  Dit is van belang voor het geval dat de app een vertrouwelijke client toepassing is. Een vertrouwelijke client toepassing is een toepassing die referenties veilig kan bevatten. Er is een vertrouwde back-end-server nodig om de referenties op te slaan.
 
-Na de registratie krijgt de toepassing een unieke id die de App deelt met het micro soft Identity-platform wanneer het tokens aanvraagt. Als de app een [vertrouwelijk client toepassing](developer-glossary.md#client-application)is, wordt ook het geheim of de open bare sleutel gedeeld, afhankelijk van het feit of er certificaten of geheimen zijn gebruikt.
+Na de registratie krijgt de toepassing een unieke id die de App deelt met het micro soft-identiteits platform wanneer het tokens aanvraagt. Als de app een [vertrouwelijk client toepassing](developer-glossary.md#client-application)is, wordt ook het geheim of de open bare sleutel gedeeld, afhankelijk van het feit of er certificaten of geheimen zijn gebruikt.
 
-Micro soft Identity platform vertegenwoordigt toepassingen die gebruikmaken van een model dat voldoet aan twee belang rijke functies:
+Het micro soft Identity-platform vertegenwoordigt toepassingen die gebruikmaken van een model dat voldoet aan twee belang rijke functies:
 
 * Bepaal de app aan de hand van de verificatie protocollen die worden ondersteund
 * Geef alle id's, Url's, geheimen en gerelateerde informatie die nodig zijn voor verificatie
 
-Micro soft Identity-platform:
+Het micro soft Identity-platform:
 
 * Bevat alle gegevens die nodig zijn voor de ondersteuning van verificatie tijdens runtime
 * Bevat alle gegevens om te bepalen welke resources een app nodig heeft voor toegang en onder welke omstandigheden een bepaalde aanvraag moet worden vervuld
@@ -55,7 +55,7 @@ Micro soft Identity-platform:
 
 ## <a name="multi-tenant-apps"></a>Apps met meerdere tenants
 
-In het micro soft Identity-platform beschrijft een [toepassings object](developer-glossary.md#application-object) een toepassing. Tijdens de implementatie gebruikt micro soft Identity platform het object Application als een blauw druk om een [Service-Principal](developer-glossary.md#service-principal-object)te maken. Dit is een concreet exemplaar van een toepassing in een directory of Tenant. De Service-Principal definieert wat de app daad werkelijk kan doen in een specifieke doel directory, wie deze kan gebruiken, tot welke resources toegang heeft, enzovoort. Met micro soft Identity platform maakt u via [toestemming](developer-glossary.md#consent)een service-principal van een toepassings object.
+In het micro soft Identity-platform beschrijft een [toepassings object](developer-glossary.md#application-object) een toepassing. Tijdens de implementatie gebruikt het micro soft Identity-platform het object van de toepassing als een blauw druk om een [Service-Principal](developer-glossary.md#service-principal-object)te maken, die een concreet exemplaar van een toepassing in een directory of Tenant vertegenwoordigt. De Service-Principal definieert wat de app daad werkelijk kan doen in een specifieke doel directory, wie deze kan gebruiken, tot welke resources toegang heeft, enzovoort. Met het micro soft Identity-platform maakt u via [toestemming](developer-glossary.md#consent)een service-principal van een toepassings object.
 
 Het volgende diagram toont een vereenvoudigd micro soft Identity platform inrichtings stroom op basis van toestemming. Er worden twee tenants weer gegeven: *A* en *B*.
 
@@ -69,7 +69,7 @@ De inrichtingsstroom verloopt als volgt:
 1. Een gebruiker van Tenant B probeert zich aan te melden bij de app. het autorisatie-eind punt vraagt een token voor de toepassing aan.
 1. De gebruikers referenties zijn verkregen en geverifieerd voor authenticatie.
 1. De gebruiker wordt gevraagd toestemming te geven voor de app om toegang te krijgen tot Tenant B.
-1. Micro soft Identity platform gebruikt het toepassings object in Tenant A als een blauw druk voor het maken van een Service-Principal in Tenant B.
+1. Het micro soft Identity-platform gebruikt het toepassings object in Tenant A als een blauw druk voor het maken van een Service-Principal in Tenant B.
 1. De gebruiker ontvangt het aangevraagde token.
 
 U kunt dit proces herhalen voor aanvullende tenants. Tenant A behoudt de blauw druk voor de app (toepassings object). Gebruikers en beheerders van alle andere tenants waar de app toestemming krijgt, houden de controle over wat de toepassing mag doen via het bijbehorende service-principal-object in elke Tenant. Zie [Application and Service Principal Objects in micro soft Identity platform](app-objects-and-service-principals.md)(Engelstalig) voor meer informatie.

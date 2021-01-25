@@ -8,12 +8,12 @@ ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
 ms.custom: references_regions
-ms.openlocfilehash: 6a587ecbe7ff67908b22d4f2429cfdd0c511e07d
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
-ms.translationtype: HT
+ms.openlocfilehash: 0d1b2bd039f3e110c83d7ad4bf32f1e53e4c7a79
+ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96748770"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98610145"
 ---
 # <a name="microsoft-azure-attestation-preview"></a>Microsoft Azure Attestation (preview)
 
@@ -39,6 +39,12 @@ Clienttoepassingen kunnen worden ontworpen om gebruik te maken van SGX-enclaves 
 [Open Enclave](https://openenclave.io/sdk/) (OE) is een verzameling van bibliotheken die gericht zijn op het maken van een enkelvoudige enclaving-abstractie voor ontwikkelaars voor het bouwen van op TEE gebaseerde toepassingen. Het biedt een universeel veilig app-model dat platformbijzonderheden minimaliseert. Microsoft beschouwt dit als een essentiële opstap voor democratisering van op hardware gebaseerde enclave-technologieën zoals SGX en het verhogen van hun opname op Azure.
 
 OE standaardiseert specifieke vereisten voor de verificatie van een enclave-bewijs. Hiermee wordt OE gekwalificeerd als een uiterst aanpasbare Attestation-consument van Azure Attestation.
+
+### <a name="tpm-attestation"></a>TPM-attestation 
+
+Attestation op basis van TPM (Trusted Platform Module) is van cruciaal belang om de status van een platform te kunnen bewijzen. TPM fungeert als de basis voor het vertrouwen en van de beveiligingscoprocessor om cryptografische geldigheid aan de metingen (bewijs) te verlenen. Apparaten met een TPM kunnen vertrouwen op attestation om te bewijzen dat tijdens het opstarten de opstartintegriteit niet wordt aangetast en dat de claims worden gebruikt om activeringsmogelijkheden van functiestatussen te detecteren. 
+
+Clienttoepassingen kunnen worden ontworpen om gebruik te maken van TPM-attestation door beveiligingsgevoelige taken te delegeren, zodat deze alleen kunnen worden uitgevoerd nadat een platform op veiligheid is gevalideerd. Dergelijke toepassingen kunnen vervolgens gebruik maken van Azure Attestation om regelmatig een vertrouwensrelatie met het platform tot stand te brengen en van de mogelijkheid toegang te krijgen tot gevoelige gegevens.
 
 ## <a name="azure-attestation-can-run-in-a-tee"></a>Azure Attestation kan worden uitgevoerd in een TEE
 

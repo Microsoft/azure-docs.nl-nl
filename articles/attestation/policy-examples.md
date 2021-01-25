@@ -7,40 +7,50 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 252026f7c59f73dfb37f69d7708a80be827ce104
-ms.sourcegitcommit: 003ac3b45abcdb05dc4406661aca067ece84389f
-ms.translationtype: HT
+ms.openlocfilehash: 51e8f01726c732604199ff08323f073d508da66e
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96748787"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602317"
 ---
 # <a name="examples-of-an-attestation-policy"></a>Voorbeelden van een attestation-beleid
 
 Attestation-beleid wordt gebruikt om de attestation-bewijzen te verwerken en te bepalen of Azure Attestation een attestation-token zal uitgeven. Het genereren van attestion-tokens kan worden beheerd met aangepast beleid. Hieronder ziet u enkele voorbeelden van een attestation-beleid.
 
-## <a name="default-policy-for-an-sgx-enclave-with-policyformattext"></a>Standaardbeleid voor een SGX-enclave met PolicyFormat=Text
+## <a name="default-policy-for-an-sgx-enclave"></a>Standaardbeleid voor een SGX-enclave 
 
 ```
-Version= 1.0;
+version= 1.0;
 authorizationrules
 {
-    c:[type==”$is-debuggable”] => permit();
+    c:[type=="$is-debuggable"] => permit();
 };
+
 issuancerules
 {
-    c:[type==”$is-debuggable”] => issue(type=”is-debuggable”, value=c.value);
-    c:[type==”$sgx-mrsigner”] => issue(type=”sgx-mrsigner”, value=c.value);
-    c:[type==”$sgx-mrenclave”] => issue(type=”sgx-mrenclave”, value=c.value);
-    c:[type==”$product-id”] => issue(type=”product-id”, value=c.value);
-    c:[type==”$svn”] => issue(type=”svn”, value=c.value);
-    c:[type==”$tee”] => issue(type=”tee”, value=c.value);
+    c:[type=="$is-debuggable"] => issue(type="is-debuggable", value=c.value);
+    c:[type=="$sgx-mrsigner"] => issue(type="sgx-mrsigner", value=c.value);
+    c:[type=="$sgx-mrenclave"] => issue(type="sgx-mrenclave", value=c.value);
+    c:[type=="$product-id"] => issue(type="product-id", value=c.value);
+    c:[type=="$svn"] => issue(type="svn", value=c.value);
+    c:[type=="$tee"] => issue(type="tee", value=c.value);
 };
 ```
 
-## <a name="default-policy-for-vbs-enclave"></a>Standaardbeleid voor VBS-enclave
+## <a name="sample-custom-policy-for-an-sgx-enclave"></a>Voorbeeld van standaardbeleid voor een SGX-enclave 
 
-Er is geen standaardbeleid voor een VBS-enclave
-
+```
+version= 1.0;
+authorizationrules
+{
+       [ type=="x-ms-sgx-is-debuggable", value==false ]
+        && [ type=="x-ms-sgx-product-id", value==<product-id> ]
+        && [ type=="x-ms-sgx-svn", value>= 0 ]
+        && [ type=="x-ms-sgx-mrsigner", value=="<mrsigner>"]
+    => permit();
+};
+```
 
 ## <a name="unsigned-policy-for-an-sgx-enclave-with-policyformatjwt"></a>Niet-ondertekend beleid voor een SGX-enclave met PolicyFormat=JWT
 
@@ -58,5 +68,5 @@ eyJhbGciOiJSU0EyNTYiLCJ4NWMiOlsiTUlJQzFqQ0NBYjZnQXdJQkFnSUlTUUdEOUVGakJcdTAwMkJZ
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Een attestation-beleid ontwerpen en ondertekenen](author-sign-policy.md)
+- [Een Attestation-beleid ontwerpen en ondertekenen](author-sign-policy.md)
 - [Azure Attestation instellen met behulp van PowerShell](quickstart-powershell.md)

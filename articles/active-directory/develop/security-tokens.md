@@ -1,7 +1,7 @@
 ---
 title: Beveiligings tokens | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over de basis principes van beveiligings tokens in micro soft Identity platform (v 2.0).
+description: Meer informatie over de basis principes van beveiligings tokens in het micro soft Identity-platform.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -13,22 +13,22 @@ ms.date: 05/11/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 88dc4bb86459cd0390c4c01deb871aa93e39c6d1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9668d3b0b57e36fb95421f8b502b9b743be8eb31
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84266743"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756221"
 ---
 # <a name="security-tokens"></a>Beveiligingstokens
 
-Een gecentraliseerde ID-provider is vooral nuttig voor apps die gebruikers op de hele wereld hebben die zich niet per se aanmelden vanuit het netwerk van de onderneming. Micro soft Identity platform verifieert gebruikers en biedt beveiligings tokens, zoals [toegangs token](developer-glossary.md#access-token), [vernieuwings token](developer-glossary.md#refresh-token)en [id-token](developer-glossary.md#id-token), waarmee een [client toepassing](developer-glossary.md#client-application) toegang kan krijgen tot beveiligde bronnen op een [bron server](developer-glossary.md#resource-server).
+Een gecentraliseerde ID-provider is vooral nuttig voor apps die gebruikers op de hele wereld hebben die zich niet per se aanmelden vanuit het netwerk van de onderneming. Het micro soft Identity-platform verifieert gebruikers en biedt beveiligings tokens, zoals [toegangs token](developer-glossary.md#access-token), [vernieuwings token](developer-glossary.md#refresh-token)en [id-token](developer-glossary.md#id-token), waarmee een [client toepassing](developer-glossary.md#client-application) toegang kan krijgen tot beveiligde bronnen op een [bron server](developer-glossary.md#resource-server).
 
-Een **toegangs token** is een beveiligings token dat is uitgegeven door een [autorisatie server](developer-glossary.md#authorization-server) als onderdeel van een [OAuth 2,0](active-directory-v2-protocols.md) -stroom. Het bevat informatie over de gebruiker en de app waarvoor het token is bedoeld; die kunnen worden gebruikt voor toegang tot Web-Api's en andere beveiligde bronnen. Zie [toegangs tokens](access-tokens.md)voor meer informatie over de wijze waarop micro soft Identity platform toegangs tokens verleent.
+Een **toegangs token** is een beveiligings token dat is uitgegeven door een [autorisatie server](developer-glossary.md#authorization-server) als onderdeel van een [OAuth 2,0](active-directory-v2-protocols.md) -stroom. Het bevat informatie over de gebruiker en de app waarvoor het token is bedoeld; die kunnen worden gebruikt voor toegang tot Web-Api's en andere beveiligde bronnen. Zie [toegangs tokens](access-tokens.md)voor meer informatie over hoe het micro soft Identity-platform toegangs tokens uitgeeft.
 
-Toegangs tokens zijn alleen geldig gedurende korte tijd, waardoor autorisatie servers soms een **vernieuwings token** uitgeven op hetzelfde moment dat het toegangs token wordt uitgegeven. De client toepassing kan dit vernieuwings token vervolgens voor een nieuw toegangs token uitwisselen wanneer dat nodig is. Zie het [intrekken van tokens](access-tokens.md#token-revocation)voor meer informatie over hoe micro soft Identity platform vernieuwings tokens gebruikt om machtigingen in te trekken.
+Toegangs tokens zijn alleen geldig gedurende korte tijd, waardoor autorisatie servers soms een **vernieuwings token** uitgeven op hetzelfde moment dat het toegangs token wordt uitgegeven. De client toepassing kan dit vernieuwings token vervolgens voor een nieuw toegangs token uitwisselen wanneer dat nodig is. Zie voor meer informatie over de manier waarop het micro soft Identity-platform vernieuwings tokens gebruikt voor het intrekken van machtigingen, het [intrekken van tokens](access-tokens.md#token-revocation).
 
-**Id-tokens** worden verzonden naar de client toepassing als onderdeel van een [OpenID Connect Connect](v2-protocols-oidc.md) -stroom. Ze kunnen worden verzonden aan de zijkant of in plaats van een toegangs token en worden door de client gebruikt om de gebruiker te verifiëren. Zie [id-tokens](id-tokens.md)voor meer informatie over het oplossen van problemen met id-tokens van micro soft Identity platform.
+**Id-tokens** worden verzonden naar de client toepassing als onderdeel van een [OpenID Connect Connect](v2-protocols-oidc.md) -stroom. Ze kunnen worden verzonden aan de zijkant of in plaats van een toegangs token en worden door de client gebruikt om de gebruiker te verifiëren. Zie [id-tokens](id-tokens.md)voor meer informatie over hoe de tokens van het micro soft Identity-platform worden uitgegeven.
 
 > [!NOTE]
 > In dit artikel worden beveiligings tokens beschreven die worden gebruikt door de Connect-protocollen OAuth2 en OpenID Connect. Veel zakelijke toepassingen gebruiken SAML om gebruikers te verifiëren. Zie overzicht van [Azure AD SAML-tokens](reference-saml-tokens.md) voor informatie over SAML-bevestigingen.
@@ -46,7 +46,7 @@ Toegangs tokens worden door gegeven aan een web-API als het Bearer-token in de `
 
 ## <a name="json-web-tokens-jwts-and-claims"></a>JSON-webtokens (JWTs) en claims
 
-Het micro soft Identity-platform implementeert beveiligings tokens als **JSON-Webtokens (JWTs)** die **claims**bevatten. Aangezien JWTs als beveiligings tokens worden gebruikt, wordt deze vorm van verificatie ook wel **JWT-verificatie**genoemd.
+Het micro soft Identity-platform implementeert beveiligings tokens als **JSON-Webtokens (JWTs)** die **claims** bevatten. Aangezien JWTs als beveiligings tokens worden gebruikt, wordt deze vorm van verificatie ook wel **JWT-verificatie** genoemd.
 
 Een [claim](developer-glossary.md#claim) biedt bevestigingen over één entiteit, zoals een client toepassing of [resource-eigenaar](developer-glossary.md#resource-owner), naar een andere entiteit, zoals een resource server. Een claim kan ook worden aangeduid als een JWT-claim of JSON Web Token claim.
 
@@ -67,7 +67,7 @@ Een claim bestaat uit sleutel-waardeparen die informatie geven, zoals:
 * Doel groep: de app waarvoor het token is gegenereerd
 * De app (de client) die voor het token is aangevraagd. In het geval van web-apps kan dit hetzelfde zijn als de doel groep
 
-Zie [toegangs tokens](access-tokens.md) en [id-tokens](id-tokens.md)voor meer informatie over het implementeren van tokens en claim informatie door het micro soft Identity-platform.
+Zie [toegangs tokens](access-tokens.md) en [id-tokens](id-tokens.md)voor meer informatie over de wijze waarop het micro soft Identity-platform tokens en claim informatie implementeert.
 
 ## <a name="how-each-flow-emits-tokens-and-codes"></a>Hoe elke stroom tokens en codes uitstraalt
 
@@ -80,7 +80,7 @@ Afhankelijk van hoe uw client is gebouwd, kunnen er één (of meerdere) verifica
 |[Hybride OIDC-stroom](v2-protocols-oidc.md#protocol-diagram-access-token-acquisition)| | x  | |          |            x   |
 |[Aflossingen van token vernieuwen](v2-oauth2-auth-code-flow.md#refresh-the-access-token) | token vernieuwen | x | x | x| |
 |[Namens-stroom](v2-oauth2-on-behalf-of-flow.md) | toegangs token| x| x| x| |
-|[Clientreferenties](v2-oauth2-client-creds-grant-flow.md) | | | x (alleen app)| | |
+|[Client referenties](v2-oauth2-client-creds-grant-flow.md) | | | x (alleen app)| | |
 
 Tokens die zijn uitgegeven via de impliciete modus, hebben een beperkte lengte omdat ze via de URL worden teruggestuurd naar de browser (waarbij `response_mode` `query` of `fragment` ).  Voor sommige browsers geldt een limiet voor de grootte van de URL die in de browser balk kan worden geplaatst en die kan worden uitgevoerd als deze te lang is.  Daarom hebben deze tokens geen `groups` `wids` claims.
 

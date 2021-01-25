@@ -1,7 +1,7 @@
 ---
-title: Aanmeldings flow voor apps met micro soft Identity platform | Azure
+title: Aanmeldings stroom van de app met het micro soft-identiteits platform | Azure
 titleSuffix: Microsoft identity platform
-description: Meer informatie over de aanmeldings stroom van web-, desktop-en Mobile-apps in micro soft Identity platform (v 2.0).
+description: Meer informatie over de aanmeldings stroom van web-, desktop-en Mobile-apps in het micro soft Identity-platform.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -13,14 +13,14 @@ ms.date: 05/18/2020
 ms.author: ryanwi
 ms.reviewer: jmprieur, saeeda, sureshja, hirsin
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: af5b27dc85a276c731a61135ab59ab81f5aaf3c2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 1f9f330ab140fa66b5a66a112c47ca2a68ba56bf
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83772196"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755694"
 ---
-# <a name="app-sign-in-flow-with-microsoft-identity-platform"></a>Aanmeldings flow voor apps met micro soft Identity platform
+# <a name="app-sign-in-flow-with-the-microsoft-identity-platform"></a>Aanmeldings flow voor apps met het micro soft Identity-platform
 
 In dit onderwerp wordt de basis-aanmeldings stroom voor web-, desktop-en Mobile-apps beschreven met behulp van micro soft Identity platform. Zie [verificatie stromen en app-scenario's](authentication-flows-app-scenarios.md) voor meer informatie over aanmeldings scenario's die worden ondersteund door het micro soft Identity-platform.
 
@@ -34,7 +34,7 @@ Wanneer een gebruiker in de browser naar een web-app navigeert, gebeurt het volg
 
 Wanneer de gebruiker is geverifieerd:
 
-* Micro soft Identity platform verzendt een token naar de web-app.
+* Het micro soft Identity-platform verzendt een token naar de web-app.
 * Er wordt een cookie opgeslagen dat is gekoppeld aan het domein van Azure AD. Dit bevat de identiteit van de gebruiker in het cookie jar van de browser. De volgende keer dat een app de browser gebruikt om te navigeren naar het micro soft Identity platform Authorization-eind punt, geeft de browser de cookie weer zodat de gebruiker zich niet opnieuw hoeft aan te melden. Dit is ook de manier waarop SSO wordt behaald. De cookie wordt gemaakt door Azure AD en kan alleen worden geïnterpreteerd door Azure AD.
 * De web-app valideert vervolgens het token. Als de validatie slaagt, wordt de beveiligde pagina weer gegeven in de web-app en wordt een sessie cookie in het cookie jar van de browser opgeslagen. Wanneer de gebruiker naar een andere pagina navigeert, weet de web-app dat de gebruiker is geverifieerd op basis van de sessie cookie.
 
@@ -48,7 +48,7 @@ Web app-ontwikkel aars kunnen aangeven of voor alle of alleen bepaalde pagina's 
 
 Met dit kenmerk wordt ASP.NET gecontroleerd op de aanwezigheid van een sessie cookie met de identiteit van de gebruiker. Als er geen cookie aanwezig is, stuurt ASP.NET de verificatie door naar de opgegeven id-provider. Als de ID-provider Azure AD is, wordt de verificatie door de web-app omgeleid naar `https://login.microsoftonline.com` , waardoor een dialoog venster voor aanmelden wordt weer gegeven.
 
-### <a name="how-a-web-app-delegates-sign-in-to-microsoft-identity-platform-and-obtains-a-token"></a>Hoe een web-app zich kan aanmelden bij het micro soft Identity-platform en een token verkrijgt
+### <a name="how-a-web-app-delegates-sign-in-to-the-microsoft-identity-platform-and-obtains-a-token"></a>Hoe een web-app zich aanmeldt bij het micro soft Identity-platform en een token verkrijgt
 
 Gebruikers verificatie gebeurt via de browser. Het OpenID Connect-protocol gebruikt standaard berichten van het HTTP-protocol.
 

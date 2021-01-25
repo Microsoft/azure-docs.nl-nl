@@ -8,15 +8,15 @@ tags: billing,top-support-issue
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 11/11/2020
+ms.date: 01/06/2021
 ms.author: banders
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: d37225f988cc906bdd92467afcf3f286220eebda
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: ae588708a41c1259628b726a3a471034dba7d131
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027863"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601536"
 ---
 # <a name="transfer-billing-ownership-of-an-azure-subscription-to-another-account"></a>Eigendom van de facturering van een Azure-abonnement overdragen aan een ander account
 
@@ -72,6 +72,18 @@ Als u het eigendom van de facturering van een Azure-abonnement hebt geaccepteerd
    1. Toegangssleutels voor services zoals Storage. Zie [Over Azure-opslagaccounts](../../storage/common/storage-account-create.md) voor meer informatie
    1. Referenties voor externe toegang voor services zoals Azure Virtual Machines.
 1. Als u met een partner werkt, kunt u overwegen om de partner-id voor het abonnement bij te werken. U kunt de partner-id bijwerken in [Azure Portal](https://portal.azure.com). Zie [Een partner-id aan uw Azure-accounts koppelen](link-partner-id.md) voor meer informatie
+
+## <a name="cancel-a-transfer-request"></a>Een overdrachtsaanvraag annuleren
+
+Er is slechts één overdrachtsaanvraag tegelijk actief. Een overdrachtsaanvraag is 15 dagen geldig. Na 15 dagen verloopt de overdrachtsaanvraag.
+
+Een overdrachtsaanvraag annuleren:
+
+1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Ga naar **Abonnementen** > selecteer het abonnement waarvoor u een overdrachtsaanvraag hebt verzonden > selecteer **Eigendom van facturering overdragen**.
+1. Selecteer onder aan de pagina **De overdrachtsaanvraag annuleren**.
+
+:::image type="content" source="./media/billing-subscription-transfer/transfer-billing-owership-cancel-request.png" alt-text="Voorbeeld van het venster Eigendom van facturering overdragen met de optie De overdrachtsaanvraag annuleren" lightbox="./media/billing-subscription-transfer/transfer-billing-owership-cancel-request.png" :::
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

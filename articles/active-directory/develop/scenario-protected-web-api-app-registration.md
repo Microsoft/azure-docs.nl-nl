@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/15/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7a38e2384c5f24bc3a72e1ef8e8f7119b2db0f2f
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: c3d9cd5e710eb263707e87c4afe0f08809b8d50c
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443939"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756458"
 ---
 # <a name="protected-web-api-app-registration"></a>Beveiligde web-API: app-registratie
 
@@ -27,7 +27,7 @@ Voor de algemene stappen voor het registreren van een app raadpleegt u [Quick St
 
 ## <a name="accepted-token-version"></a>Geaccepteerde token versie
 
-Met het micro soft Identity platform-eind punt kunnen v 1.0-tokens en v 2.0-tokens worden uitgegeven. Zie [toegangs tokens](access-tokens.md)voor meer informatie over deze tokens.
+Op het micro soft Identity-platform kunnen v 1.0-tokens en v 2.0-tokens worden uitgegeven. Zie [toegangs tokens](access-tokens.md)voor meer informatie over deze tokens.
 
 De token versie die uw API kan accepteren, is afhankelijk van de selectie van uw **ondersteunde account typen** wanneer u de registratie van de Web-API-toepassing maakt in de Azure Portal.
 
@@ -44,7 +44,7 @@ Nadat u de toepassing hebt gemaakt, kunt u de geaccepteerde token versie vastste
 1. Als u de token versie hebt gewijzigd, selecteert u **Opslaan**.
 
 > [!NOTE]
-> De Web-API geeft aan welke token versie wordt geaccepteerd. Wanneer een client een token voor uw web-API opvraagt vanuit het micro soft Identity platform (v 2.0)-eind punt, wordt door de client een token opgehaald waarmee wordt aangegeven welke token versie wordt geaccepteerd door de Web-API.
+> De Web-API geeft aan welke token versie wordt geaccepteerd. Wanneer een client een token voor uw web-API opvraagt vanuit het micro soft Identity-platform, haalt de client een token op dat aangeeft welke token versie door de Web-API wordt geaccepteerd.
 
 ## <a name="no-redirect-uri"></a>Geen omleidings-URI
 
@@ -145,7 +145,7 @@ Deze verhoogde beveiliging toe te voegen:
    >
    > Als u de **gebruikers toewijzing** hebt ingesteld op vereist? in azure **AD worden de** toewijzingen van de app-rollen van een client gecontroleerd wanneer deze een web API-toegangs token aanvraagt. Als de client niet is toegewezen aan de app-rollen, retourneert Azure AD de fout melding "invalid_client: AADSTS501051: \<application name\> de toepassing is niet toegewezen aan een rol voor de \<web API\> ".
    >
-   > Als u de **gebruikers toewijzing verplicht stelt?** ingesteld op **Nee** , worden de toewijzingen van de app-rollen niet door Azure AD gecontroleerd wanneer een client een toegangs token voor uw web-API aanvraagt. Elke daemon-client, wat betekent dat elke client die gebruikmaakt van de client referentie stroom, een toegangs token voor de API kan krijgen door de doel groep op te geven. Elke toepassing kan toegang krijgen tot de API zonder dat hiervoor machtigingen moeten worden gevraagd.
+   > Als u de **gebruikers toewijzing verplicht stelt?** ingesteld op **Nee**, worden de toewijzingen van de app-rollen niet door Azure AD gecontroleerd wanneer een client een toegangs token voor uw web-API aanvraagt. Elke daemon-client, wat betekent dat elke client die gebruikmaakt van de client referentie stroom, een toegangs token voor de API kan krijgen door de doel groep op te geven. Elke toepassing kan toegang krijgen tot de API zonder dat hiervoor machtigingen moeten worden gevraagd.
    >
    > Maar zoals beschreven in de vorige sectie, kan uw web-API altijd controleren of de toepassing de juiste rol heeft, die door de Tenant beheerder wordt geautoriseerd. De API voert deze verificatie uit door te valideren dat het toegangs token een rol claim heeft en dat de waarde voor deze claim juist is. In het vorige JSON-voor beeld is de waarde `access_as_application` .
 

@@ -1,6 +1,6 @@
 ---
 title: Protocollen voor toestemming van micro soft Identity platform-beheerder
-description: Een beschrijving van autorisatie in het micro soft Identity platform-eind punt, met inbegrip van scopes, machtigingen en toestemming.
+description: Een beschrijving van de autorisatie in het micro soft Identity-platform, met inbegrip van scopes, machtigingen en toestemming.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -12,12 +12,12 @@ ms.date: 12/18/2020
 ms.author: ryanwi
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 353c349ebe348addac60c5f9f7b1bf0fbb1fc425
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
+ms.openlocfilehash: 13cff9f3a6037a16d7c3b9cf233d26c6e9518bc1
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97703311"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756103"
 ---
 # <a name="admin-consent-on-the-microsoft-identity-platform"></a>Toestemming van de beheerder op het micro soft Identity-platform
 
@@ -27,7 +27,7 @@ Sommige machtigingen vereisen toestemming van een beheerder voordat ze kunnen wo
 
 Wanneer u een toepassing bouwt die gebruikmaakt van het door de beheerder toestemmings eindpunt, moet de app doorgaans een pagina of weer gave hebben waarin de beheerder de machtigingen van de app kan goed keuren. Deze pagina kan deel uitmaken van de registratie stroom van de app, een deel van de instellingen van de app of een specifieke stroom ' Connect ' zijn. In veel gevallen is het zinvol voor de app om deze weer gave ' verbinding maken ' alleen weer te geven nadat een gebruiker zich heeft aangemeld met een werk-of school Microsoft-account.
 
-Wanneer u de gebruiker aan uw app ondertekent, kunt u de organisatie waarvan de beheerder deel uitmaakt, identificeren voordat u deze vraagt om de benodigde machtigingen goed te keuren. Hoewel het niet strikt nood zakelijk is, kan het u helpen een meer intuïtieve ervaring te creëren voor de gebruikers van uw organisatie. Als u de gebruiker wilt ondertekenen in, volgt u onze [zelf studies voor het micro soft Identity platform-protocol](active-directory-v2-protocols.md).
+Wanneer u de gebruiker aan uw app ondertekent, kunt u de organisatie waarvan de beheerder deel uitmaakt, identificeren voordat u deze vraagt om de benodigde machtigingen goed te keuren. Hoewel het niet strikt nood zakelijk is, kan het u helpen een meer intuïtieve ervaring te creëren voor de gebruikers van uw organisatie. Als u de gebruiker wilt ondertekenen in, volgt u de [zelf studies voor het micro soft Identity platform-protocol](active-directory-v2-protocols.md).
 
 ## <a name="request-the-permissions-from-a-directory-admin"></a>De machtigingen van een adreslijst beheerder aanvragen
 

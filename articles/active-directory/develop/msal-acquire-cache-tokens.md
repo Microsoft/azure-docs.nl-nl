@@ -13,12 +13,12 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 34cdaa42f3a41ae04c73c570bb4fede01a786af2
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 98ae81626db637f5b0bd6bfe9e294c32293d09e5
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107835"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755067"
 ---
 # <a name="acquire-and-cache-tokens-using-the-microsoft-authentication-library-msal"></a>Tokens verkrijgen en in de cache opslaan met behulp van de micro soft Authentication Library (MSAL)
 
@@ -30,7 +30,7 @@ U kunt ook de token cache wissen. dit wordt bereikt door de accounts uit de cach
 
 ## <a name="scopes-when-acquiring-tokens"></a>Bereiken bij het ophalen van tokens
 
-[Scopes](v2-permissions-and-consent.md) zijn de machtigingen die een web-API toont dat client toepassingen toegang kunnen vragen tot. Client toepassingen vragen de toestemming van de gebruiker voor deze bereiken bij het maken van verificatie aanvragen voor het verkrijgen van tokens voor toegang tot de Web-Api's. Met MSAL kunt u tokens ophalen om toegang te krijgen tot Azure AD voor ontwikkel aars (v 1.0) en micro soft Identity platform (v 2.0) Api's. v 2.0-protocol gebruikt scopes in plaats van resource in de aanvragen. Lees de [vergelijking van v 1.0 en v 2.0](../azuread-dev/azure-ad-endpoint-comparison.md)voor meer informatie. Op basis van de configuratie van de token die door de Web-API wordt geaccepteerd, retourneert het v 2.0-eind punt het toegangs token voor MSAL.
+[Scopes](v2-permissions-and-consent.md) zijn de machtigingen die een web-API toont dat client toepassingen toegang kunnen vragen tot. Client toepassingen vragen de toestemming van de gebruiker voor deze bereiken bij het maken van verificatie aanvragen voor het verkrijgen van tokens voor toegang tot de Web-Api's. Met MSAL kunt u tokens ophalen om toegang te krijgen tot Azure AD voor ontwikkel aars (v 1.0) en de micro soft Identity platform-Api's. v 2.0-protocol gebruikt scopes in plaats van resource in de aanvragen. Lees de [vergelijking van v 1.0 en v 2.0](../azuread-dev/azure-ad-endpoint-comparison.md)voor meer informatie. Op basis van de configuratie van de token die door de Web-API wordt geaccepteerd, retourneert het v 2.0-eind punt het toegangs token voor MSAL.
 
 Diverse methoden voor het verkrijgen van tokens voor MSAL vereisen een `scopes` para meter. De `scopes` para meter is een lijst met teken reeksen die de gewenste machtigingen en de aangevraagde bronnen declareren. Bekende bereiken zijn de [Microsoft Graph machtigingen](/graph/permissions-reference).
 

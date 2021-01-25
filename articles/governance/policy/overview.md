@@ -1,14 +1,14 @@
 ---
 title: Overzicht van Azure-beleid
 description: Azure Policy is een service in Azure die u gebruikt om beleidsdefinities in uw Azure-omgeving te maken, toe te wijzen en te beheren.
-ms.date: 10/05/2020
+ms.date: 01/14/2021
 ms.topic: overview
-ms.openlocfilehash: 96fd29b5e3d24bc3e678461a95005e004a8a3a80
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
-ms.translationtype: HT
+ms.openlocfilehash: df430586af2e701ec2881f6ea760095fd2ca79d0
+ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803949"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98220725"
 ---
 # <a name="what-is-azure-policy"></a>Wat is Azure Policy?
 
@@ -83,7 +83,7 @@ Als geen van de ingebouwde rollen de vereiste machtigingen heeft, maakt u een [a
 
 ### <a name="resources-covered-by-azure-policy"></a>Resources die worden gedekt door Azure Policy
 
-Azure Policy evalueert alle resources in Azure en met ingeschakelde Arc. Voor bepaalde resourceproviders, zoals [Gastconfiguratie](./concepts/guest-configuration.md), [Azure Kubernetes Service](../../aks/intro-kubernetes.md) en [Azure Key Vault](../../key-vault/general/overview.md), is er een uitgebreidere integratie voor het beheren van instellingen en objecten. Zie [Modi van resourceproviders](./concepts/definition-structure.md) voor meer informatie.
+Azure Policy evalueert alle Azure-resources op of onder het abonnementsniveau, met inbegrip van resources met Arc. Voor bepaalde resourceproviders, zoals [Gastconfiguratie](./concepts/guest-configuration.md), [Azure Kubernetes Service](../../aks/intro-kubernetes.md) en [Azure Key Vault](../../key-vault/general/overview.md), is er een uitgebreidere integratie voor het beheren van instellingen en objecten. Zie [Modi van resourceproviders](./concepts/definition-structure.md) voor meer informatie.
 
 ### <a name="recommendations-for-managing-policies"></a>Aanbevelingen voor het beheren van beleid
 

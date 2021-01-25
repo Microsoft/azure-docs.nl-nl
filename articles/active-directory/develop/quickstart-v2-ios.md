@@ -13,12 +13,12 @@ ms.date: 09/24/2019
 ms.author: marsma
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:iOS
-ms.openlocfilehash: 2fbff2abeb454fe02aa4bd50615033b9a0b7f27b
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: ef2ab6511d80f7f1f836805055e7cc7f48a488e7
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178599"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754299"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-ios-or-macos-app"></a>Quickstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een iOS- of macOS-app
 
@@ -181,7 +181,7 @@ self.applicationContext = try MSALPublicClientApplication(configuration: msalCon
 > |Waar: | Beschrijving |
 > |---------|---------|
 > | `clientId` | De toepassings-id van de toepassing die is geregistreerd in _portal.azure.com* |
-> | `authority` | Het Microsoft identity platform-eindpunt. In de meeste gevallen is dit `https://login.microsoftonline.com/common` |
+> | `authority` | Het micro soft Identity-platform. In de meeste gevallen is dit `https://login.microsoftonline.com/common` |
 > | `redirectUri` | De omleidings-URI van de toepassing. U kunt 'nil' doorgeven om de standaardwaarde te gebruiken, of uw aangepaste omleidings-URI gebruiken. |
 
 ### <a name="for-ios-only-additional-app-requirements"></a>Alleen voor iOS: extra app-vereisten

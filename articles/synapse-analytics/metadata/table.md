@@ -10,12 +10,12 @@ ms.date: 05/01/2020
 ms.author: mrys
 ms.reviewer: jrasnick
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9ee18edd563d94a85dedf48b7a4d6df394c09707
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: b93addfe659847187dffe61f12f5a2bfac9dca21
+ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461385"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98209624"
 ---
 # <a name="azure-synapse-analytics-shared-metadata-tables"></a>Gedeelde Azure Synapse Analytics-metagegevenstabellen
 
@@ -32,7 +32,7 @@ Omdat de tabellen asynchroon worden gesynchroniseerd naar de serverloze SQL-pool
 
 Gebruik Spark voor het beheren van met Spark gemaakte databases. U kunt een database bijvoorbeeld verwijderen via een serverloze Apache Spark-pooltaak en er tabellen in maken vanuit Spark.
 
-Als u objecten in een dergelijke database van de serverloze SQL-pool maakt of de database verwijdert, wordt de bewerking uitgevoerd, maar wordt de oorspronkelijke Spark-database niet gewijzigd.
+Als u objecten in een dergelijke database maakt met een serverloze SQL-pool, of als u de database probeert te verwijderen, mislukt de bewerking. De oorspronkelijke Spark-database kan niet worden gewijzigd via een serverloze SQL-pool.
 
 ## <a name="expose-a-spark-table-in-sql"></a>Een Spark-tabel beschikbaar maken in SQL
 

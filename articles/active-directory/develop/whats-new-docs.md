@@ -11,16 +11,16 @@ ms.subservice: develop
 ms.topic: reference
 ms.workload: identity
 ms.author: marsma
-ms.openlocfilehash: 1ab79c32bfc28f6b4582d5a7d7177d5a9c04d682
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 0beaef9162f4bdb540764a100243c579b40d1324
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98702672"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755958"
 ---
 # <a name="microsoft-identity-platform-docs-whats-new"></a>Micro soft Identity platform docs: What's New
 
-Welkom bij wat is er nieuw in de documentatie voor micro soft Identity platform. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden.
+Welkom bij wat er nieuw is in de documentatie voor micro soft Identity platform. In dit artikel vindt u een lijst met nieuwe documenten die zijn toegevoegd en die in de afgelopen drie maanden aanzienlijke updates hebben ondervonden.
 
 ## <a name="january-2021"></a>Januari 2021
 

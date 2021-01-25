@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: b7d7380114046fbeaaf4b6eb2660997d64168715
-ms.sourcegitcommit: 5dbea4631b46d9dde345f14a9b601d980df84897
-ms.translationtype: HT
+ms.openlocfilehash: 390a8b421a7b34391bde689e4b968fa98cdbaf76
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 09/25/2020
-ms.locfileid: "91368563"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599173"
 ---
 # <a name="optimize-azure-databricks-costs-with-a-pre-purchase"></a>De kosten voor Azure Databricks optimaliseren door hiervoor vooraf te betalen
 
@@ -48,7 +48,7 @@ U kunt Databricks-abonnementen kopen in de [Azure-portal](https://portal.azure.c
 **Ga als volgt te werk om gereserveerde capaciteit te kopen:**
 
 1. Ga naar de [Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22Databricks%22%7D).
-1. Selecteer een abonnement. Selecteer in de lijst **Abonnementen** het abonnement dat u wilt gebruiken om voor de gereserveerde capaciteit te betalen. Via de betalingswijze voor het abonnement worden de kosten voor de gereserveerde capaciteit vooraf in rekening gebracht. De kosten worden in mindering gebracht op het toezeggingsbedrag van de inschrijving of in rekening gebracht als overschrijding.
+1. Selecteer een abonnement. Selecteer in de lijst **Abonnementen** het abonnement dat u wilt gebruiken om voor de gereserveerde capaciteit te betalen. Via de betalingswijze voor het abonnement worden de kosten voor de gereserveerde capaciteit vooraf in rekening gebracht. De kosten worden in mindering gebracht op het saldo van Azure-vooruitbetaling (voorheen financiële toezegging) van de inschrijving of in rekening gebracht als overschrijding.
 1. Selecteer een bereik. Gebruik de lijst **Bereik** om een abonnementsbereik te selecteren:
     - **Bereik van één resourcegroep**: de reserveringskorting wordt alleen toegepast op de overeenkomende resources in de geselecteerde resourcegroep.
     - **Bereik van één abonnement**: de reserveringskorting wordt toegepast op de overeenkomende resources in het geselecteerde abonnement.

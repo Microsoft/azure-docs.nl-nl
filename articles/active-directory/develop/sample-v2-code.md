@@ -1,6 +1,6 @@
 ---
 title: Codevoorbeelden voor Microsoft identity platform
-description: Biedt een index van beschikbare codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt), geordend op scenario.
+description: Biedt een index van beschik bare micro soft Identity platform-code voorbeelden, geordend op scenario.
 services: active-directory
 author: mmacy
 manager: CelesteDG
@@ -12,23 +12,23 @@ ms.date: 11/04/2020
 ms.author: marsma
 ms.reviewer: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 3baeb87bf3fe1cdcd5e9f27aed2587eed060c5a8
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
-ms.translationtype: HT
+ms.openlocfilehash: 368a1acdfda66c3714979d27037737a75bbada5a
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064518"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756650"
 ---
 # <a name="microsoft-identity-platform-code-samples-v20-endpoint"></a>Codevoorbeelden voor Microsoft identity platform (v2.0-eindpunt)
 
-U kunt Microsoft identity platform gebruiken voor het volgende:
+U kunt het micro soft Identity-platform gebruiken voor het volgende:
 
 - Verificatie en autorisatie toevoegen aan uw webtoepassingen en web-API's.
 - Een toegangstoken vereisen voor toegang tot een beveiligde web-API.
 
-Dit artikel bevat een korte beschrijving van en koppelingen naar voorbeelden voor het Microsoft identity platform-eindpunt. Deze voorbeelden laten zien hoe het werkt en bevatten ook codefragmenten die u kunt gebruiken in uw toepassingen. Op de pagina met codevoorbeelden vindt u gedetailleerde leesmij-onderwerpen om u te helpen bij de vereisten, installatie en configuratie. Opmerkingen in de code helpen u de kritieke secties te begrijpen.
+In dit artikel wordt kort beschreven en vindt u koppelingen naar voor beelden voor het micro soft Identity-platform. Deze voorbeelden laten zien hoe het werkt en bevatten ook codefragmenten die u kunt gebruiken in uw toepassingen. Op de pagina met codevoorbeelden vindt u gedetailleerde leesmij-onderwerpen om u te helpen bij de vereisten, installatie en configuratie. Opmerkingen in de code helpen u de kritieke secties te begrijpen.
 
-Zie [App-typen voor het Microsoft identity platform-eindpunt](v2-app-types.md) voor meer informatie over het basisscenario voor elk type voorbeeld.
+Zie [app-typen voor het micro soft-identiteits platform](v2-app-types.md)voor meer informatie over het basis scenario voor elk type voor beeld.
 
 U kunt ook bijdragen aan de voorbeelden op GitHub. Zie [Voorbeelden en documentatie voor Microsoft Azure Active Directory](https://github.com/Azure-Samples?page=3&query=active-directory) voor meer informatie.
 
@@ -121,7 +121,7 @@ De volgende voorbeelden laten zien hoe u uw toepassing kunt configureren om aanm
 
 ## <a name="web-apis"></a>Web-API's
 
-De volgende voorbeelden laten zien hoe u een web-API kunt beveiligen met het Microsoft identity platform-eindpunt en hoe u een downstream API aanroept vanuit de web-API.
+De volgende voor beelden laten zien hoe u een web-API kunt beveiligen met het micro soft-identiteits platform en hoe u een downstream API aanroept vanuit de Web-API.
 
 | Platform | Voorbeeld |
 | -------- | ------------------- |
@@ -133,7 +133,7 @@ De volgende voorbeelden laten zien hoe u een web-API kunt beveiligen met het Mic
 
 ## <a name="azure-functions-as-web-apis"></a>Azure Functions als web-API's
 
-De volgende voorbeelden laten zien hoe u een Azure Function met HttpTrigger kunt beveiligen en een web-API kunt openstellen met het Microsoft identity platform-eindpunt en hoe u een downstream API aanroept vanuit de web-API.
+In de volgende voor beelden ziet u hoe u een Azure-functie kunt beveiligen met behulp van http trigger en een web-API met het micro soft-identiteits platform zichtbaar maken en hoe u een downstream API aanroept vanuit de Web-API.
 
 | Platform | Voorbeeld |
 | -------- | ------------------- |

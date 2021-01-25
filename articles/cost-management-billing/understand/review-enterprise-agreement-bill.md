@@ -9,18 +9,18 @@ ms.subservice: enterprise
 ms.topic: tutorial
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: d707051e20b4ce9d1289557aec6f8256c2e6bfba
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
-ms.translationtype: HT
+ms.openlocfilehash: 643aac7927cc7b14693387fbb5765bdcd0214dc2
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92150083"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598243"
 ---
 # <a name="understand-your-azure-enterprise-agreement-bill"></a>Meer informatie over uw Azure Enterprise Agreement-factuur
 
 Azure-klanten met een Enterprise Agreement ontvangen een factuur wanneer ze het tegoed van de organisatie overschrijden of services gebruiken die niet onder het tegoed vallen.
 
-Het tegoed van uw organisatie omvat uw financiële toezegging. De financiële toezegging is het bedrag dat uw organisatie vooraf heeft betaald voor het gebruik van Azure-services. U kunt financiële toezeggingsfondsen aan uw Enterprise Agreement toevoegen door contact op te nemen met uw Microsoft-accountmanager of reseller.
+Het tegoed van uw organisatie bevat uw Azure-vooruitbetaling (voorheen financiële toezegging). De Azure-vooruitbetaling is het bedrag dat uw organisatie vooraf heeft betaald voor het gebruik van Azure-services. U kunt Azure-vooruitbetalingsfondsen aan uw Enterprise Agreement toevoegen door contact op te nemen met uw Microsoft-accountmanager of reseller.
 
 Deze zelfstudie geldt alleen voor Azure-klanten met een Azure Enterprise Agreement.
 
@@ -60,7 +60,7 @@ In uw factuur worden eerst de Azure-gebruikskosten met de hieraan gekoppelde kos
 
 Vergelijk het gecombineerde totaalbedrag dat wordt weergegeven in **Rapporten** > **Gebruiksoverzicht** met uw Azure-factuur. De bedragen in het **gebruiksoverzicht** zijn exclusief belasting.
 
-Meld u aan bij de [Azure EA-portal](https://ea.azure.com). Selecteer vervolgens **Rapporten**. Wijzig in de rechterbovenhoek van het tabblad de weergave van**M** in **C** en selecteer de periode die op de factuur wordt vermeld.  
+Meld u aan bij de [Azure EA-portal](https://ea.azure.com). Selecteer vervolgens **Rapporten**. Wijzig in de rechterbovenhoek van het tabblad de weergave van **M** in **C** en selecteer de periode die op de factuur wordt vermeld.  
 
 ![Schermopname van de optie M + C in het gebruiksoverzicht.](./media/review-enterprise-agreement-bill/ea-portal-usage-sumary-cm-option.png)
 
@@ -97,7 +97,7 @@ Deze sectie is alleen van toepassing als u zich bevindt in Australië, Japan of 
 
 Vergelijk het totaalbedrag voor uw gebruik in de Enterprise-portal in **Rapporten** > **Gebruiksoverzicht** met uw serviceoverschrijdingsfactuur. De serviceoverschrijdingsfactuur omvat het gebruik dat het tegoed van uw organisatie overschrijdt en/of services die niet onder het tegoed vallen. De bedragen in het **gebruiksoverzicht** zijn exclusief belasting.
 
-Meld u aan bij de [Azure EA-portal](https://ea.azure.com) en selecteer **Rapporten**. Wijzig in de rechterbovenhoek van het tabblad de weergave van**M** in **C** en selecteer de periode die op de factuur wordt vermeld.  
+Meld u aan bij de [Azure EA-portal](https://ea.azure.com) en selecteer **Rapporten**. Wijzig in de rechterbovenhoek van het tabblad de weergave van **M** in **C** en selecteer de periode die op de factuur wordt vermeld.  
 
 ![Schermopname van de optie M + C in het gebruiksoverzicht.](./media/review-enterprise-agreement-bill/ea-portal-usage-sumary-cm-option.png)
 
@@ -121,7 +121,7 @@ Deze sectie is alleen van toepassing als u zich bevindt in Australië, Japan of 
 
 Vergelijk uw Azure Marketplace-totaal in **Rapporten** > **Gebruiksoverzicht** in de Enterprise-portal met uw Marketplace-factuur. De Marketplace-factuur betreft alleen Azure Marketplace-aankopen en -gebruik. De bedragen op het **Gebruiksoverzicht** bevatten al een belasting die wordt bepaald door de uitgever.
 
-Meld u aan bij de [Enterprise-portal](https://ea.azure.com) en selecteer **Rapporten**. Wijzig in de rechterbovenhoek van het tabblad de weergave van**M** in **C** en selecteer de periode die op de factuur wordt vermeld.  
+Meld u aan bij de [Enterprise-portal](https://ea.azure.com) en selecteer **Rapporten**. Wijzig in de rechterbovenhoek van het tabblad de weergave van **M** in **C** en selecteer de periode die op de factuur wordt vermeld.  
 
 ![Schermopname van de optie M + C in het gebruiksoverzicht.](./media/review-enterprise-agreement-bill/ea-portal-usage-sumary-cm-option.png)  
 
@@ -155,7 +155,7 @@ Enkele redenen voor verschillen in prijzen:
 
 ## <a name="request-detailed-usage-information"></a>Gedetailleerde gebruiksgegevens aanvragen
 
-Ondernemingsbeheerders kunnen een overzicht van hun gebruiksgegevens, gebruikte financiële toezegging en de kosten voor aanvullend gebruik bekijken in de Azure Enterprise-portal. De kosten worden weergegeven op overzichtsniveau voor alle accounts en abonnementen.
+Ondernemingsbeheerders kunnen een overzicht van hun gebruiksgegevens, gebruikte Azure-vooruitbetaling en de kosten voor aanvullend gebruik bekijken in de Azure Enterprise-portal. De kosten worden weergegeven op overzichtsniveau voor alle accounts en abonnementen.
 
 Als u het gedetailleerde gebruik in specifieke accounts wilt weergeven, downloadt u het gebruiksgegevensrapport door naar **Rapporten** > **Gebruik downloaden** te gaan.
 
@@ -166,7 +166,7 @@ Voor indirecte enrollments moet uw partner de functie Markeringen inschakelen vo
 
 ## <a name="reports"></a>Rapporten
 
-Ondernemingsbeheerders kunnen een overzicht van hun gebruiksgegevens, gebruikte financiële toezegging en de kosten voor aanvullend gebruik bekijken in de Azure Enterprise-portal. De kosten worden weergegeven op overzichtsniveau voor alle accounts en abonnementen.
+Ondernemingsbeheerders kunnen een overzicht van hun gebruiksgegevens, gebruikte Azure-vooruitbetaling en de kosten voor aanvullend gebruik bekijken in de Azure Enterprise-portal. De kosten worden weergegeven op overzichtsniveau voor alle accounts en abonnementen.
 
 ### <a name="azure-enterprise-reports"></a>Azure Enterprise-rapporten
 

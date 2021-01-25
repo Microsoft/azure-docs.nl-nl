@@ -1,6 +1,6 @@
 ---
 title: Micro soft Identity platform accounts & Tenant profielen op Android | Azure
-description: Een overzicht van micro soft Identity platform-accounts voor Android
+description: Een overzicht van de micro soft Identity platform-accounts voor Android
 services: active-directory
 author: shoatman
 manager: CelesteDG
@@ -13,18 +13,18 @@ ms.date: 09/14/2019
 ms.author: shoatman
 ms.custom: aaddev, devx-track-java
 ms.reviewer: shoatman
-ms.openlocfilehash: 404ffbc09a69b623a421bd0c01550d72e5c03158
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: fac66e8f82ea4c04e866b28fed5f8d0860ab81ef
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88115982"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755964"
 ---
 # <a name="accounts--tenant-profiles-android"></a>Accounts en tenantprofielen (Android)
 
 Dit artikel bevat een overzicht van wat er `account` in het micro soft-identiteits platform is.
 
-De micro soft Authentication Library (MSAL)-API vervangt de term *gebruiker* met het *account*voor de term. Een reden is dat een gebruiker (Human of software agent) mogelijk meerdere accounts heeft of kan gebruiken. Deze accounts kunnen zich in de eigen organisatie van de gebruiker bevinden en/of in andere organisaties waarvan de gebruiker lid is.
+De micro soft Authentication Library (MSAL)-API vervangt de term *gebruiker* met het *account* voor de term. Een reden is dat een gebruiker (Human of software agent) mogelijk meerdere accounts heeft of kan gebruiken. Deze accounts kunnen zich in de eigen organisatie van de gebruiker bevinden en/of in andere organisaties waarvan de gebruiker lid is.
 
 Een account in het micro soft Identity platform bestaat uit:
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 03/05/2020
 ms.author: hahamil
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: c4c7d021c7c3a5a32d537a50fa45449fdee7e817
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
-ms.translationtype: HT
+ms.openlocfilehash: 105353598a2af60c407bacf02b4527b2de84e450
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94979926"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756162"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-an-angular-single-page-application"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Angular-app met één pagina
 
@@ -271,7 +271,7 @@ Bijvoorbeeld:
 
 #### <a name="get-a-user-token-interactively"></a>Een gebruikerstoken interactief ophalen
 
-Soms moet de gebruiker het Microsoft-identiteitsplatformeindpunt gebruiken. Bijvoorbeeld:
+Soms hebt u de gebruiker nodig om te kunnen communiceren met het micro soft Identity-platform. Bijvoorbeeld:
 
 * Gebruikers moeten mogelijk hun referenties opnieuw opgeven omdat het wachtwoord is verlopen.
 * De toepassing vraagt toegang tot aanvullende resourcebereiken waarvoor de gebruiker toestemming moet geven.
@@ -279,7 +279,7 @@ Soms moet de gebruiker het Microsoft-identiteitsplatformeindpunt gebruiken. Bijv
 
 Het patroon dat wordt aanbevolen voor de meeste toepassingen: eerst `acquireTokenSilent` aanroepen, vervolgens de uitzondering detecteren, en daarna `acquireTokenPopup` (of `acquireTokenRedirect`) aanroepen om een interactieve aanvraag te starten.
 
-Als u `acquireTokenPopup` aanroept, wordt er een aanmeldvenster geopend. Het is ook mogelijk dat `acquireTokenRedirect` gebruikers omleidt naar het Microsoft-identiteitsplatformeindpunt. In dat venster moeten gebruikers hun referenties bevestigen, toestemming geven aan de vereiste resource of tweeledige verificatie uitvoeren.
+Als u `acquireTokenPopup` aanroept, wordt er een aanmeldvenster geopend. U kunt ook `acquireTokenRedirect` gebruikers omleiden naar het micro soft Identity-platform. In dat venster moeten gebruikers hun referenties bevestigen, toestemming geven aan de vereiste resource of tweeledige verificatie uitvoeren.
 
 ```javascript
   const requestObj = {

@@ -13,18 +13,18 @@ ms.date: 04/10/2019
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: devx-track-csharp, aaddev
-ms.openlocfilehash: c6049bf55e379a2629e8cd4ef1427f91fc31d2cd
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: b437efcfa2b0bb2a725929ae0253f48d97d11552
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063600"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754822"
 ---
 # <a name="migrating-applications-to-msalnet"></a>Toepassingen migreren naar MSAL.NET
 
 Zowel de micro soft Authentication Library voor .NET (MSAL.NET) als Azure AD-verificatie bibliotheek voor .NET (ADAL.NET) worden gebruikt voor het verifiëren van Azure AD-entiteiten en het aanvragen van tokens van Azure AD. Tot nu toe hebben de meeste ontwikkel aars met Azure AD voor ontwikkel aars platform (v 1.0) gewerkt voor het verifiëren van Azure AD-identiteiten (werk-en school accounts) door tokens aan te vragen met behulp van Azure AD Authentication Library (ADAL). MSAL gebruiken:
 
-- u kunt een bredere set met micro soft-identiteiten (Azure AD-identiteiten en micro soft-accounts en sociale en lokale accounts via Azure AD B2C) verifiëren, zoals het micro soft Identity platform-eind punt gebruikt.
+- u kunt een bredere set met micro soft-identiteiten (Azure AD-identiteiten en micro soft-accounts en sociale en lokale accounts via Azure AD B2C) verifiëren, omdat deze gebruikmaakt van het micro soft Identity-platform.
 - uw gebruikers krijgen de beste ervaring voor eenmalige aanmelding.
 - uw toepassing kan stapsgewijze toestemming bieden en het ondersteunen van voorwaardelijke toegang is eenvoudiger
 - u profiteert van de innovatie.
@@ -35,9 +35,9 @@ In dit artikel worden de verschillen beschreven tussen de micro soft Authenticat
 
 ## <a name="differences-between-adal-and-msal-apps"></a>Verschillen tussen ADAL-en MSAL-apps
 
-In de meeste gevallen wilt u MSAL.NET en het micro soft Identity platform-eind punt gebruiken. Dit is de nieuwste generatie micro soft-verificatie bibliotheken. Met MSAL.NET kunt u tokens verkrijgen voor gebruikers die zich aanmelden bij uw toepassing met Azure AD (werk-en school accounts), micro soft (persoonlijk) accounts (MSA) of Azure AD B2C.
+In de meeste gevallen wilt u MSAL.NET en het micro soft-identiteits platform gebruiken. Dit is de nieuwste generatie micro soft-verificatie bibliotheken. Met MSAL.NET kunt u tokens verkrijgen voor gebruikers die zich aanmelden bij uw toepassing met Azure AD (werk-en school accounts), micro soft (persoonlijk) accounts (MSA) of Azure AD B2C.
 
-Als u al bekend bent met het Azure AD voor ontwikkel aars (v 1.0)-eind punt (en ADAL.NET), wilt u wellicht lezen [wat er anders is dan het micro soft Identity platform (v 2.0)-eind punt?](../azuread-dev/azure-ad-endpoint-comparison.md).
+Als u al bekend bent met het Azure AD voor ontwikkel aars (v 1.0)-eind punt (en ADAL.NET), kunt u lezen [wat er anders is dan het micro soft-identiteits platform?](../azuread-dev/azure-ad-endpoint-comparison.md).
 
 U moet echter nog steeds ADAL.NET gebruiken als uw toepassing zich moet aanmelden bij eerdere versies van [Active Directory Federation Services (ADFS)](/windows-server/identity/active-directory-federation-services). Zie [ADFS-ondersteuning](https://aka.ms/msal-net-adfs-support)voor meer informatie.
 
@@ -266,4 +266,4 @@ U kunt deze methode ook gebruiken voor verschillende integratie scenario's waari
 
 ## <a name="next-steps"></a>Volgende stappen
 
-U kunt meer informatie vinden over de bereiken in [bereiken, machtigingen en toestemming in het micro soft Identity platform-eind punt](v2-permissions-and-consent.md)
+U kunt meer informatie vinden over de bereiken in [bereiken, machtigingen en toestemming in het micro soft Identity-platform](v2-permissions-and-consent.md)

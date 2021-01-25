@@ -9,15 +9,15 @@ ms.service: active-directory
 ms.subservice: develop
 ms.topic: conceptual
 ms.workload: identity
-ms.date: 07/08/2020
+ms.date: 01/25/2021
 ms.author: marsma
 ms.reviewer: saeeda
-ms.openlocfilehash: 4a902ed53e92cd073d81626e80bdb3c8629ad072
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 78932e5852453fe996e26a278f8a1859a8ecf546
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89437867"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755019"
 ---
 # <a name="authentication-flows"></a>Verificatie stromen
 
@@ -26,7 +26,7 @@ De micro soft Authentication Library (MSAL) ondersteunt verschillende verificati
 | Stroom | Beschrijving | Gebruikt in |
 |--|--|--|
 | [Autorisatiecode](#authorization-code) | Wordt gebruikt in apps die op een apparaat zijn geïnstalleerd om toegang te krijgen tot beveiligde bronnen, zoals web-Api's. Hiermee kunt u aanmelding en API-toegang toevoegen aan uw mobiele en desktop-apps. | [Bureau blad-apps](scenario-desktop-overview.md), [mobiele apps](scenario-mobile-overview.md), [Web-apps](scenario-web-app-call-api-overview.md) |
-| [Clientreferenties](#client-credentials) | Hiermee krijgt u toegang tot webhoste bronnen met behulp van de identiteit van een toepassing. Wordt meestal gebruikt voor server-naar-server-interacties die op de achtergrond moeten worden uitgevoerd, zonder directe interactie met een gebruiker. | [Daemon-apps](scenario-daemon-overview.md) |
+| [Client referenties](#client-credentials) | Hiermee krijgt u toegang tot webhoste bronnen met behulp van de identiteit van een toepassing. Wordt meestal gebruikt voor server-naar-server-interacties die op de achtergrond moeten worden uitgevoerd, zonder directe interactie met een gebruiker. | [Daemon-apps](scenario-daemon-overview.md) |
 | [Apparaatcode](#device-code) | Hiermee kunnen gebruikers zich aanmelden op apparaten met invoer beperkingen, zoals een Smart TV, IoT-apparaat of printer. | [Desktop/mobiele apps](scenario-desktop-acquire-token.md#command-line-tool-without-a-web-browser) |
 | [Impliciete toekenning](#implicit-grant) | Hiermee kan de app tokens ophalen zonder dat er een back-end-server referentie-uitwisseling wordt uitgevoerd. Hiermee kunt u de app in staat stelt om zich aan te melden bij de gebruiker, de sessie te onderhouden en tokens te verkrijgen voor andere web-Api's, allemaal in de Java script-code van de client | [Toepassingen met één pagina (SPA)](scenario-spa-overview.md) |
 | [Namens-van](#on-behalf-of) | Een toepassing roept een service of Web-API aan, die op zijn beurt een andere service of Web-API moet aanroepen. Het is verstandig om de gedelegeerde gebruikers identiteit en de machtigingen via de aanvraag keten door te geven. | [Web-API's](scenario-web-api-call-api-overview.md) |
@@ -40,7 +40,7 @@ Afhankelijk van hoe uw client toepassing is gebouwd, kunnen ze een of meer van d
 | Stroom                                                                               | Nodig            | id_token | toegangs token | token vernieuwen | autorisatie code |
 |------------------------------------------------------------------------------------|:-------------------:|:--------:|:------------:|:-------------:|:------------------:|
 | [Autorisatie code stroom](v2-oauth2-auth-code-flow.md)                             |                     | x        | x            | x             | x                  |
-| [Clientreferenties](v2-oauth2-client-creds-grant-flow.md)                         |                     |          | x (alleen app) |               |                    |
+| [Client referenties](v2-oauth2-client-creds-grant-flow.md)                         |                     |          | x (alleen app) |               |                    |
 | [Stroom voor apparaatcode](v2-oauth2-device-code.md)                                       |                     | x        | x            | x             |                    |
 | [Impliciete stroom](v2-oauth2-implicit-grant-flow.md)                                  |                     | x        | x            |               |                    |
 | [Namens-stroom](v2-oauth2-on-behalf-of-flow.md)                                | toegangs token        | x        | x            | x             |                    |
@@ -53,9 +53,9 @@ Afhankelijk van hoe uw client toepassing is gebouwd, kunnen ze een of meer van d
 Verschillende van deze stromen bieden ondersteuning voor zowel interactieve als niet-interactieve token overname.
 
   - **Interactief** betekent dat de gebruiker wordt gevraagd om in te voeren. Bijvoorbeeld: de gebruiker wordt gevraagd om zich aan te melden, multi-factor Authentication (MFA) uit te voeren of extra toestemming te verlenen voor resources.
-  - **Niet-interactieve**of *stille*verificatie pogingen om een token op een manier te verkrijgen waarop de aanmeldings server de gebruiker *niet kan* vragen om aanvullende informatie.
+  - **Niet-interactieve** of *stille* verificatie pogingen om een token op een manier te verkrijgen waarop de aanmeldings server de gebruiker *niet kan* vragen om aanvullende informatie.
 
-Uw MSAL-toepassing moet eerst proberen om een token op de *achtergrond*te verkrijgen en alleen interactief als de niet-interactieve methode mislukt. Zie voor meer informatie over dit patroon [tokens verkrijgen en cache gebruiken met behulp van de micro soft Authentication Library (MSAL)](msal-acquire-cache-tokens.md).
+Uw MSAL-toepassing moet eerst proberen om een token op de *achtergrond* te verkrijgen en alleen interactief als de niet-interactieve methode mislukt. Zie voor meer informatie over dit patroon [tokens verkrijgen en cache gebruiken met behulp van de micro soft Authentication Library (MSAL)](msal-acquire-cache-tokens.md).
 
 ## <a name="authorization-code"></a>Autorisatiecode
 
@@ -78,7 +78,7 @@ In het voor gaande diagram wordt de toepassing:
 
 ## <a name="client-credentials"></a>Clientreferenties
 
-Met de [OAuth 2 client-gegevens stroom](v2-oauth2-client-creds-grant-flow.md) kunt u toegang krijgen tot webbronnen met behulp van de identiteit van een toepassing. Dit type toekenning wordt meestal gebruikt voor server-naar-server-interacties die op de achtergrond moeten worden uitgevoerd, zonder directe interactie met een gebruiker. Deze typen toepassingen worden vaak daemons of service accounts genoemd.
+Met de [OAuth 2 client-gegevens stroom](v2-oauth2-client-creds-grant-flow.md) kunt u toegang krijgen tot webbronnen met behulp van de identiteit van een toepassing. Dit type toekenning wordt meestal gebruikt voor server-naar-server-interacties die op de achtergrond moeten worden uitgevoerd, zonder directe interactie met een gebruiker. Deze typen toepassingen worden vaak daemons of serviceaccounts genoemd.
 
 De overdrachts stroom van client referenties staat een webservice (een vertrouwelijke client) toe om eigen referenties te gebruiken, in plaats van een gebruiker te imiteren, om te verifiëren bij het aanroepen van een andere webservice. In dit scenario is de client doorgaans een middelste laag, een daemon-service of een website. Voor een hoger garantie niveau kan het micro soft Identity-platform ook een certificaat (in plaats van een gedeeld geheim) als referentie gebruiken.
 
@@ -223,7 +223,7 @@ Dit betekent dat een van de volgende voor waarden waar is:
 - U hebt de mogelijkheid gegeven om gebruikers toestemming te geven voor de toepassing; Zie [toestemming van individuele gebruiker aanvragen](v2-permissions-and-consent.md#requesting-individual-user-consent).
 - U hebt de mogelijkheid van de Tenant beheerder om toestemming te geven voor de toepassing. Zie [toestemming](v2-permissions-and-consent.md#requesting-consent-for-an-entire-tenant)van de beheerder.
 
-De IWA-stroom is ingeschakeld voor .NET Desktop-, .NET core-en Windows Universal platform-apps. In .NET Core moet u de gebruikers naam opgeven voor IWA, omdat .NET core geen gebruikers namen kan ophalen uit het besturings systeem.
+De IWA-stroom is ingeschakeld voor .NET Desktop-, .NET core-en Windows Universal platform-apps.
 
 Zie [v 2.0-machtigingen en-toestemming](v2-permissions-and-consent.md)voor meer informatie over toestemming.
 

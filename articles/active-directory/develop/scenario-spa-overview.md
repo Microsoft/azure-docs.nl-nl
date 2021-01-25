@@ -1,5 +1,6 @@
 ---
-title: 'Java script: app-scenario met één pagina-micro soft Identity-platform | Azure'
+title: Java script-scenario met één pagina-app
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het maken van een toepassing met één pagina (scenario-overzicht) met behulp van het micro soft Identity-platform.
 services: active-directory
 author: navyasric
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: nacanuma
 ms.custom: aaddev, identityplatformtop40, devx-track-js
-ms.openlocfilehash: 17acb2bc5e96a136f31371c0be912c2c758c0f76
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 47b8c8c074a5e0ce3ed73a2a9a4b06aa307cdff3
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94443854"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756429"
 ---
 # <a name="scenario-single-page-application"></a>Scenario: Toepassing met één pagina
 
@@ -34,7 +35,7 @@ Veel moderne webtoepassingen zijn gebouwd als toepassingen met één pagina aan 
 
 Het micro soft Identity-platform biedt **twee** opties voor het inschakelen van toepassingen met één pagina voor het aanmelden van gebruikers en het ophalen van tokens voor toegang tot back-end-services of Web-api's:
 
-- [OAuth 2.0-autorisatiecodestroom (met PKCE)](./v2-oauth2-auth-code-flow.md). De autorisatiecodestroom stelt de toepassing in staat een autorisatiecode uit te wisselen voor **id-tokens** , om de geverifieerde gebruiker te vertegenwoordigen, en de benodigde **toegangstokens** om beveiligde API’s aan te roepen. Daarnaast worden met deze stroom **vernieuwingstokens** geretourneerd, die namens gebruikers langetermijntoegang bieden tot resources, zonder dat interactie met deze gebruikers is vereist. Dit is de **aanbevolen** methode.
+- [OAuth 2.0-autorisatiecodestroom (met PKCE)](./v2-oauth2-auth-code-flow.md). De autorisatiecodestroom stelt de toepassing in staat een autorisatiecode uit te wisselen voor **id-tokens**, om de geverifieerde gebruiker te vertegenwoordigen, en de benodigde **toegangstokens** om beveiligde API’s aan te roepen. Daarnaast worden met deze stroom **vernieuwingstokens** geretourneerd, die namens gebruikers langetermijntoegang bieden tot resources, zonder dat interactie met deze gebruikers is vereist. Dit is de **aanbevolen** methode.
 
 ![Toepassingen met één pagina - verificatie](./media/scenarios/spa-app-auth.svg)
 

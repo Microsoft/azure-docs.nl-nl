@@ -12,12 +12,12 @@ ms.date: 09/03/2020
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, contperf-fy21q1, contperf-fy21q2
 ms.reviewer: aragra, lenalepa, sureshja
-ms.openlocfilehash: cc0d908f479fe5bdf14abb2ace0e6c046fd6d7d5
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 6052e2243f8b31aa57d4abf27c24a4b045c9eae2
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011946"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754623"
 ---
 # <a name="quickstart-register-an-application-with-the-microsoft-identity-platform"></a>Snelstart: Een toepassing registreren bij het Microsoft-identiteitsplatform
 
@@ -84,8 +84,8 @@ Als u toepassingsinstellingen wilt configureren op basis van het platform of app
 
     | Platform | Configuratie-instellingen |
     | -------- | ---------------------- |
-    | **Web** | Voer een **Omleidings-URI** voor de app in, de locatie waar het Microsoft Identity Platform een client van de gebruiker naartoe omleidt en beveiligingstokens naartoe stuurt na de verificatie.<br/><br/>Selecteer dit platform voor standaardwebtoepassingen die worden uitgevoerd op een server. |
-    | **Toepassing met één pagina** | Voer een **Omleidings-URI** voor de app in, de locatie waar het Microsoft Identity Platform een client van de gebruiker naartoe omleidt en beveiligingstokens naartoe stuurt na de verificatie.<br/><br/>Selecteer dit platform als u een web-app aan de clientzijde bouwt in JavaScript of met een framework zoals Angular, Vue.js, React.js of Blazor WebAssembly. |
+    | **Web** | Voer een **omleidings-URI** in voor uw app, de locatie waar het micro soft Identity-platform de client van een gebruiker omleidt en verzendt na verificatie beveiligings tokens.<br/><br/>Selecteer dit platform voor standaardwebtoepassingen die worden uitgevoerd op een server. |
+    | **Toepassing met één pagina** | Voer een **omleidings-URI** in voor uw app, de locatie waar het micro soft Identity-platform de client van een gebruiker omleidt en verzendt na verificatie beveiligings tokens.<br/><br/>Selecteer dit platform als u een web-app aan de clientzijde bouwt in JavaScript of met een framework zoals Angular, Vue.js, React.js of Blazor WebAssembly. |
     | **iOS / macOS** | Voer de **Bundel-id** van de app in. Deze vindt u in XCode in *Info.plist*, of in de instellingen voor de build.<br/><br/>Er wordt een omleidings-URI gegenereerd wanneer u een bundel-id opgeeft. |
     | **Android** | Voer de **Pakketnaam** van de app in. Deze vindt u in het bestand *AndroidManifest.xml*. Genereer vervolgens de **Hash voor ondertekening** en voer deze in.<br/><br/>Er wordt een omleidings-URI gegenereerd wanneer u deze instellingen opgeeft. |
     | **Mobiele toepassingen en desktoptoepassingen** | Selecteer een van de **Voorgestelde omleidings-URI's** of geef een **Aangepaste omleidings-URI** op.<br/>Voor desktoptoepassingen kunt u het beste het volgende doen:<br/>`https://login.microsoftonline.com/common/oauth2/nativeclient`<br/><br/>Selecteer dit platform voor mobiele toepassingen die niet gebruikmaken van de nieuwste MSAL-versie (Microsoft Authentication Library) of die geen broker gebruiken. Selecteer dit platform ook voor desktoptoepassingen. |
@@ -97,7 +97,7 @@ Er gelden bepaalde beperkingen voor de indeling van de omleidings-URI's die u to
 
 ## <a name="add-credentials"></a>Referenties toevoegen
 
-Referenties worden gebruikt voor vertrouwelijke clienttoepassingen die toegang hebben tot een web-API. Voorbeelden van vertrouwelijke clients zijn web-apps, andere web-API's, of service- en daemontoepassingen. Met referenties kan uw toepassing zichzelf verifiëren, waardoor er geen interactie van een gebruiker tijdens runtime nodig is.
+Referenties worden gebruikt door [vertrouwelijke client toepassingen](msal-client-applications.md) die toegang hebben tot een web-API. Voor beelden van vertrouwelijke clients zijn [Web-apps](scenario-web-app-call-api-overview.md), andere web- [api's](scenario-protected-web-api-overview.md)of [service-en daemon-type toepassingen](scenario-daemon-overview.md). Met referenties kan uw toepassing zichzelf verifiëren, waardoor er geen interactie van een gebruiker tijdens runtime nodig is. 
 
 U kunt zowel certificaten als clientgeheimen (een tekenreeks) toevoegen als referenties voor de registratie van uw vertrouwelijke client-app.
 
@@ -105,7 +105,7 @@ U kunt zowel certificaten als clientgeheimen (een tekenreeks) toevoegen als refe
 
 ### <a name="add-a-certificate"></a>Een certificaat toevoegen
 
-Certificaten worden ook wel een *openbare sleutel* genoemd en zijn het aanbevolen referentietype, omdat ze een hoger controleniveau bieden dan een clientgeheim.
+Certificaten worden ook wel een *openbare sleutel* genoemd en zijn het aanbevolen referentietype, omdat ze een hoger controleniveau bieden dan een clientgeheim. Zie voor meer informatie over het gebruik van certificaat als verificatie methode in uw toepassing [micro soft Identity platform Application verificatie certificaat referenties](active-directory-certificate-credentials.md)
 
 1. Selecteer de toepassing in **App-registraties** in de Azure-portal.
 1. Selecteer **Certificaten en geheimen** > **Certificaat uploaden**.
@@ -114,7 +114,7 @@ Certificaten worden ook wel een *openbare sleutel* genoemd en zijn het aanbevole
 
 ### <a name="add-a-client-secret"></a>Een clientgeheim toevoegen
 
-Het clientgeheim, ook wel *toepassingswachtwoord* genoemd, is een tekenreekswaarde die de app kan gebruiken (in plaats van een certificaat) om zichzelf te identificeren. Dit type is het eenvoudigste van de twee referentietypen om te gebruiken, en wordt vaak gebruikt in de ontwikkelfase, maar wordt beschouwd als minder veilig dan een certificaat. Voor toepassingen die worden uitgevoerd in de productieomgeving, kunt u beter certificaten gebruiken.
+Het clientgeheim, ook wel *toepassingswachtwoord* genoemd, is een tekenreekswaarde die de app kan gebruiken (in plaats van een certificaat) om zichzelf te identificeren. Dit type is het eenvoudigste van de twee referentietypen om te gebruiken, en wordt vaak gebruikt in de ontwikkelfase, maar wordt beschouwd als minder veilig dan een certificaat. Voor toepassingen die worden uitgevoerd in de productieomgeving, kunt u beter certificaten gebruiken. Zie [Best practices en aanbevelingen voor het micro soft-identiteits platform](identity-platform-integration-checklist.md#security) voor meer informatie over aanbevelingen voor toepassings beveiliging.
 
 1. Selecteer de toepassing in **App-registraties** in de Azure-portal.
 1. Selecteer **Certificaten en geheimen** >  **Nieuw clientgeheim**.
@@ -122,6 +122,8 @@ Het clientgeheim, ook wel *toepassingswachtwoord* genoemd, is een tekenreekswaar
 1. Selecteer een duur.
 1. Selecteer **Toevoegen**.
 1. **Noteer de waarde van het geheim** voor gebruik in de code van de clienttoepassing. Als u deze pagina verlaat wordt de waarde *nooit meer weergegeven*.
+
+**Opmerking:** De ID die wordt gegenereerd samen met de geheime waarde is de ID van het geheim, wat afwijkt van de toepassings-ID.
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: overview
 ms.date: 12/15/2020
 ms.author: banders
-ms.openlocfilehash: b79bde204d82b069b3314855a45a680b863c3f69
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 0e45e9741e92bb9e1fe23af79695cae06e64e871
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560488"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602052"
 ---
 # <a name="what-are-azure-reservations"></a>Wat zijn Azure-reserveringen?
 
@@ -56,7 +56,7 @@ Zie  [Een reservering kopen](prepare-buy-reservation.md) voor meer informatie
 
 ## <a name="how-is-a-reservation-billed"></a>Op welke manier wordt een reservering gefactureerd? 
 
-De aangeschafte reservering wordt verrekend volgens de betalingswijze die is gekoppeld aan het abonnement. De reserveringskosten worden afgetrokken van het saldo van uw financiële toezegging, indien beschikbaar. Wanneer het saldo van uw financiële toezegging ontoereikend is voor de kosten van de reservering, wordt de overschrijding gefactureerd. Als u een abonnement hebt van een afzonderlijk plan met tarieven voor betalen per gebruik, worden kosten voor vooruitbetalingen onmiddellijk in rekening gebracht op de creditcard die in uw account is geregistreerd. Maandelijkse betalingen worden op uw factuur weergegeven en deze kosten worden maandelijks op uw creditcard in rekening gebracht. Wanneer u per factuur wordt gefactureerd, ziet u de kosten op uw volgende factuur. 
+De aangeschafte reservering wordt verrekend volgens de betalingswijze die is gekoppeld aan het abonnement. De reserveringskosten worden afgetrokken van het saldo van uw Azure-vooruitbetaling (voorheen financiële toezegging), indien beschikbaar. Wanneer het saldo van uw Azure-vooruitbetaling ontoereikend is voor de kosten van de reservering, wordt de overschrijding gefactureerd. Als u een abonnement hebt van een afzonderlijk plan met tarieven voor betalen per gebruik, worden kosten voor vooruitbetalingen onmiddellijk in rekening gebracht op de creditcard die in uw account is geregistreerd. Maandelijkse betalingen worden op uw factuur weergegeven en deze kosten worden maandelijks op uw creditcard in rekening gebracht. Wanneer u per factuur wordt gefactureerd, ziet u de kosten op uw volgende factuur. 
 
 ## <a name="who-can-manage-a-reservation-by-default"></a>Wie kunnen standaard een reservering beheren?
 

@@ -4,14 +4,14 @@ titleSuffix: Azure Kubernetes Service
 description: Lees hoe u met Azure Portal snel een Kubernetes-cluster kunt maken, een toepassing kunt implementeren en de prestaties kunt bewaken in Azure Kubernetes Service (AKS).
 services: container-service
 ms.topic: quickstart
-ms.date: 10/06/2020
+ms.date: 01/13/2021
 ms.custom: mvc, seo-javascript-october2019
-ms.openlocfilehash: f4cbfb78ec0900e757683fff35403dfcbd38b391
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
-ms.translationtype: HT
+ms.openlocfilehash: 9304d3ee3cac364bfec3f2686de0cf84fb1d7d92
+ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97824682"
+ms.lasthandoff: 01/16/2021
+ms.locfileid: "98249122"
 ---
 # <a name="quickstart-deploy-an-azure-kubernetes-service-aks-cluster-using-the-azure-portal"></a>Quickstart: Een AKS-cluster (Azure Kubernetes Service) implementeren met Azure Portal
 
@@ -68,6 +68,9 @@ Als u een Kubernetes-cluster wilt beheren, gebruikt u [kubectl][kubectl], de Kub
 Open Cloud Shell met behulp van de knop `>_` boven in de Azure-portal.
 
 ![Open Azure Cloud Shell in de portal](media/kubernetes-walkthrough-portal/aks-cloud-shell.png)
+
+> [!NOTE]
+> Als u deze bewerkingen in een lokale shell-installatie wilt uitvoeren, moet u eerst controleren of Azure CLI is geïnstalleerd en vervolgens verbinding maken met Azure via de opdracht `az login`.
 
 Gebruik de opdracht [az aks get-credentials][az-aks-get-credentials] om `kubectl` zodanig te configureren dat er verbinding wordt gemaakt met het Kubernetes-cluster. Bij deze opdracht worden referenties gedownload en wordt Kubernetes CLI geconfigureerd voor het gebruik van deze referenties. In het volgende voorbeeld worden de referenties opgehaald voor de clusternaam *myAKSCluster* in de resourcegroep met de naam *myResourceGroup*:
 
@@ -278,7 +281,7 @@ Voor meer informatie over AKS en een volledig stapsgewijs voorbeeld van code tot
 
 <!-- LINKS - internal -->
 [kubernetes-concepts]: concepts-clusters-workloads.md
-[az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest#az-aks-get-credentials
+[az-aks-get-credentials]: /cli/azure/aks?view=azure-cli-latest&preserve-view=true#az-aks-get-credentials
 [az-aks-delete]: /cli/azure/aks#az-aks-delete
 [aks-monitor]: ../azure-monitor/insights/container-insights-overview.md
 [aks-network]: ./concepts-network.md

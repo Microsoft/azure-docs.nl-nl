@@ -13,16 +13,16 @@ ms.date: 11/15/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: marsma, aragra, lenalepa, sureshja
-ms.openlocfilehash: 033d5cfa5dbe5e0010bc1182f54643ec04db3ce3
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 24c29d34c14e6237bc79e38741ea244da5429e9e
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98017609"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754559"
 ---
 # <a name="how-to-remove-an-application-registered-with-the-microsoft-identity-platform"></a>Een toepassing verwijderen die bij het Microsoft Identity Platform is geregistreerd
 
-Bedrijfsontwikkelaars en SaaS-providers (software als een dienst) die toepassingen hebben geregistreerd bij het Microsoft Identity Platform moeten mogelijk de registratie van een toepassing verwijderen.
+Bedrijfs ontwikkelaars en SaaS-providers (Software-as-a-Service) die toepassingen hebben geregistreerd bij het micro soft Identity-platform, moeten mogelijk de registratie van een toepassing verwijderen.
 
 In de volgende secties leert u het volgende:
 

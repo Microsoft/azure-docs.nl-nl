@@ -13,12 +13,12 @@ ms.date: 10/27/2020
 ms.author: ryanwi
 ms.reviewer: marsma, jmprieur, lenalepa, sureshja, kkrishna
 ms.custom: aaddev
-ms.openlocfilehash: 22d6cacc36363b17f9bc32d354982eb71974b31d
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 4f87c3fd0cfda2db535b2c8f7f7330a273e6b767
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779750"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755348"
 ---
 # <a name="how-to-sign-in-any-azure-active-directory-user-using-the-multi-tenant-application-pattern"></a>Procedure: Een Azure Active Directory-gebruiker aanmelden met behulp van het patroon voor multitenant-toepassingen
 
@@ -52,7 +52,7 @@ Bij een toepassing met één Tenant worden aanmeldings aanvragen verzonden naar 
 
 Met een multi tenant-toepassing kent de toepassing niet de voor zijde van de Tenant van de gebruiker. Daarom kunt u geen aanvragen verzenden naar het eind punt van een Tenant. In plaats daarvan worden aanvragen verzonden naar een eind punt dat multiplext voor alle Azure AD-tenants: `https://login.microsoftonline.com/common`
 
-Wanneer micro soft Identity platform een aanvraag ontvangt op het/veelvoorkomende-eind punt, wordt de gebruiker in en als gevolg hiervan gedetecteerd welke Tenant de gebruiker is. Het/veelvoorkomende-eind punt werkt met alle verificatie protocollen die worden ondersteund door Azure AD: OpenID Connect Connect, OAuth 2,0, SAML 2,0 en WS-Federation.
+Wanneer het micro soft Identity-platform een aanvraag ontvangt in het/veelvoorkomende-eind punt, wordt de gebruiker in en als gevolg hiervan gedetecteerd welke Tenant de gebruiker is. Het/veelvoorkomende-eind punt werkt met alle verificatie protocollen die worden ondersteund door Azure AD: OpenID Connect Connect, OAuth 2,0, SAML 2,0 en WS-Federation.
 
 Het aanmeldings antwoord voor de toepassing bevat vervolgens een token dat de gebruiker vertegenwoordigt. De waarde van de verlener in het token geeft aan op welke toepassing de gebruiker zich bevindt. Wanneer een antwoord wordt geretourneerd vanuit het/veelvoorkomende-eind punt, komt de waarde van de verlener in het token overeen met de Tenant van de gebruiker.
 

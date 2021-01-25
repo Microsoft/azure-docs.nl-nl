@@ -3,12 +3,12 @@ title: Overzicht van Recovery Services-kluizen
 description: Een overzicht van Recovery Services kluizen.
 ms.topic: conceptual
 ms.date: 08/17/2020
-ms.openlocfilehash: ab6b27bdc7ac9b01385ed43830d0af5900210d43
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0ed37446e1ccf0780f924143c8f063964adf0004
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96017318"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755123"
 ---
 # <a name="recovery-services-vaults-overview"></a>Overzicht van Recovery Services-kluizen
 
@@ -22,7 +22,7 @@ In dit artikel worden de functies van een Recovery Services kluis beschreven. Ee
 
 - **Voorlopig verwijderen**: met zacht verwijderen, zelfs als een schadelijke actor een back-up verwijdert (of de back-upgegevens per ongeluk zijn verwijderd), worden de back-upgegevens 14 extra dagen bewaard, zodat het back-upitem zonder gegevens verlies kan worden hersteld. De extra 14 dagen voor het bewaren van back-upgegevens in de status ' voorlopig verwijderen ' maken geen kosten voor u. [Meer informatie](backup-azure-security-feature-cloud.md).
 
-- **Restore voor meerdere regio's**: met cross Region Restore (CRR) kunt u virtuele Azure-machines herstellen in een secundaire regio, een Azure-gekoppelde regio. Als Azure een nood geval in de primaire regio declareert, kunnen de gegevens die in de secundaire regio worden gerepliceerd, in de secundaire regio worden teruggezet om de werkelijke downtime in de primaire regio voor hun omgeving te verminderen. [Meer informatie](backup-azure-arm-restore-vms.md#cross-region-restore).
+- **Restore voor meerdere regio's**: met cross Region Restore (CRR) kunt u virtuele Azure-machines herstellen in een secundaire regio, een Azure-gekoppelde regio. Als u deze functie inschakelt op het niveau van de [kluis](backup-create-rs-vault.md#set-cross-region-restore), kunt u de gerepliceerde gegevens op elk gewenst moment herstellen in de secundaire regio, wanneer u dat hebt gekozen. Zo kunt u de gegevens van de secundaire regio herstellen voor controle-naleving en tijdens uitval scenario's, zonder te wachten tot Azure een ramp declareert (in tegens telling tot de GRS-instellingen van de kluis). [Meer informatie](backup-azure-arm-restore-vms.md#cross-region-restore).
 
 ## <a name="storage-settings-in-the-recovery-services-vault"></a>Opslag instellingen in de Recovery Services kluis
 

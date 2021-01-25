@@ -12,12 +12,12 @@ ms.date: 04/24/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jmprieur, saeeda, jesakowi, nacanuma
-ms.openlocfilehash: b02329d624eda440230fb99e02e08c841c5580f2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 77a4e7389952b81df13dae929dc1aec664fcc0b7
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90705993"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755645"
 ---
 # <a name="microsoft-identity-platform-developer-glossary"></a>Woorden lijst voor ontwikkel aars van micro soft Identity platform
 
@@ -34,7 +34,7 @@ Toegangs tokens worden ook wel ' gebruiker + app ' of ' alleen app ' genoemd, af
 * Autorisatie-autorisatie [code verleend](#authorization-grant), de eind gebruiker verifieert eerst als de resource-eigenaar, waarbij autorisatie wordt gedelegeerd aan de client om toegang te krijgen tot de resource. De client verifieert achteraf wanneer het toegangs token wordt verkregen. Het token kan soms specifiek worden aangeduid als een gebruikers-en app-token, aangezien het de gebruiker is die de client toepassing heeft geautoriseerd en de toepassing.
 * ["Client referenties"-autorisatie verlenen](#authorization-grant), de client biedt de enige verificatie, werkt zonder de verificatie/autorisatie van de resource-eigenaar, zodat het token soms ook wel een ' app-only '-token kan worden genoemd.
 
-Zie de naslag informatie over [micro soft Identity platform-tokens][AAD-Tokens-Claims] voor meer details.
+Zie de naslag informatie voor het [micro soft Identity platform-token][AAD-Tokens-Claims] voor meer details.
 
 ## <a name="application-id-client-id"></a>toepassings-ID (client-ID)
 
@@ -83,19 +83,19 @@ Zie de secties [autorisatie typen][OAuth2-AuthZ-Grant-Types] van de OAuth2-speci
 
 ## <a name="authorization-grant"></a>autorisatie verlenen
 
-Een referentie voor de [resource owner's](#resource-owner) [autorisatie](#authorization) van de resource-eigenaar om toegang te krijgen tot de beveiligde bronnen die aan een [client toepassing](#client-application)worden verleend. Een client toepassing kan een van de [vier toekennings typen die door het OAuth2-autorisatie raamwerk worden gedefinieerd][OAuth2-AuthZ-Grant-Types] , gebruiken om een subsidie te verkrijgen, afhankelijk van het type/de vereisten van de client: "autorisatie code verlenen", "client referenties verlenen", "impliciete toekenning" en "wachtwoord referenties van de resource-eigenaar". De referentie die wordt geretourneerd naar de client is een [toegangs token](#access-token)of een [autorisatie code](#authorization-code) (later voor een toegangs token), afhankelijk van het type autorisatie toekenning dat wordt gebruikt.
+Een referentie voor de [](#resource-owner) [autorisatie](#authorization) van de resource-eigenaar om toegang te krijgen tot de beveiligde bronnen die aan een [client toepassing](#client-application)worden verleend. Een client toepassing kan een van de [vier toekennings typen die door het OAuth2-autorisatie raamwerk worden gedefinieerd][OAuth2-AuthZ-Grant-Types] , gebruiken om een subsidie te verkrijgen, afhankelijk van het type/de vereisten van de client: "autorisatie code verlenen", "client referenties verlenen", "impliciete toekenning" en "wachtwoord referenties van de resource-eigenaar". De referentie die wordt geretourneerd naar de client is een [toegangs token](#access-token)of een [autorisatie code](#authorization-code) (later voor een toegangs token), afhankelijk van het type autorisatie toekenning dat wordt gebruikt.
 
 ## <a name="authorization-server"></a>autorisatie server
 
 Zoals gedefinieerd in het [OAuth2-verificatie raamwerk][OAuth2-Role-Def], de server die verantwoordelijk is voor het verlenen van toegangs tokens aan de [client](#client-application) na verificatie van de [resource-eigenaar](#resource-owner) en het verkrijgen van de autorisatie. Een [client toepassing](#client-application) communiceert met de autorisatie server tijdens runtime via de [autorisatie](#authorization-endpoint) -en [token](#token-endpoint) -eind punten, in overeenstemming met de OAuth2-gedefinieerde [autorisatie toekenningen](#authorization-grant).
 
-In het geval van micro soft Identity platform Application Integration, implementeert micro soft Identity platform de rol van de autorisatie server voor Azure AD-toepassingen en micro soft-service-Api's, bijvoorbeeld [Microsoft Graph-api's][Microsoft-Graph].
+In het geval van micro soft Identity platform Application Integration, implementeert het micro soft Identity-platform de functie van de autorisatie server voor Azure AD-toepassingen en micro soft-service-Api's, bijvoorbeeld [Microsoft Graph api's][Microsoft-Graph].
 
 ## <a name="claim"></a>optreedt
 
 Een [beveiligings token](#security-token) bevat claims, waarmee beweringen over één entiteit (zoals een [client toepassing](#client-application) of [resource-eigenaar](#resource-owner)) aan een andere entiteit (zoals de [resource server](#resource-server)) worden verstrekt. Claims zijn naam/waarde-paren die feiten over het onderwerp van de token door geven (bijvoorbeeld de beveiligingsprincipal die is geverifieerd door de [autorisatie server](#authorization-server)). De claims die aanwezig zijn in een gegeven token zijn afhankelijk van verschillende variabelen, zoals het type token, het type referentie dat wordt gebruikt voor het verifiëren van het onderwerp, de toepassings configuratie, enzovoort.
 
-Zie de naslag informatie over [micro soft Identity platform-tokens][AAD-Tokens-Claims] voor meer details.
+Zie de naslag informatie voor het [micro soft Identity platform-token][AAD-Tokens-Claims] voor meer details.
 
 ## <a name="client-application"></a>client toepassing
 
@@ -113,11 +113,11 @@ Zie het [instemming-Framework](consent-framework.md) voor meer informatie.
 
 Een [OpenID Connect Connect-][OpenIDConnect-ID-Token] [beveiligings token](#security-token) dat wordt verschaft door het [autorisatie-eind punt](#authorization-endpoint)van een [autorisatie server](#authorization-server) , dat [claims](#claim) bevat die betrekking hebben op de verificatie van de [resource-eigenaar](#resource-owner)van een eind gebruiker. Net als een toegangs token worden ID-tokens ook weer gegeven als een digitaal ondertekende [JSON Web token (JWT)][JWT]. In tegens telling tot een toegangs token worden claims van een ID-token niet gebruikt voor doel einden met betrekking tot toegang tot resources en specifiek toegangs beheer.
 
-Zie de naslag informatie over [micro soft Identity platform-tokens][AAD-Tokens-Claims] voor meer details.
+Zie de naslag informatie voor het [micro soft Identity platform-token][AAD-Tokens-Claims] voor meer details.
 
 ## <a name="microsoft-identity-platform"></a>Microsoft-identiteitsplatform
 
-Het Microsoft Identity Platform bouwt voort op de identiteitsservice en het ontwikkelaarsplatform van Azure Active Directory (Azure AD). Met het Microsoft Identity Platform kunnen ontwikkelaars toepassingen maken waarbij gebruikers zich met alle Microsoft-identiteiten kunnen aanmelden en waarmee tokens worden opgehaald voor het aanroepen van Microsoft Graph, andere Microsoft-API's of API's die door ontwikkelaars zijn gemaakt. Het is een volledig uitgeruste platform dat bestaat uit een verificatie service, Bibliotheken, toepassings registratie en-configuratie, volledige documentatie voor ontwikkel aars, code voorbeelden en andere inhoud voor ontwikkel aars. Het Microsoft Identity Platform biedt ondersteuning voor standaardprotocollen als OAuth 2.0 en OpenID Connect.
+Het micro soft Identity-platform is een evolutie van de identiteits service en het ontwikkel platform van de Azure Active Directory (Azure AD). Met het Microsoft Identity Platform kunnen ontwikkelaars toepassingen maken waarbij gebruikers zich met alle Microsoft-identiteiten kunnen aanmelden en waarmee tokens worden opgehaald voor het aanroepen van Microsoft Graph, andere Microsoft-API's of API's die door ontwikkelaars zijn gemaakt. Het is een volledig uitgeruste platform dat bestaat uit een verificatie service, Bibliotheken, toepassings registratie en-configuratie, volledige documentatie voor ontwikkel aars, code voorbeelden en andere inhoud voor ontwikkel aars. Het Microsoft Identity Platform biedt ondersteuning voor standaardprotocollen als OAuth 2.0 en OpenID Connect.
 
 ## <a name="multi-tenant-application"></a>multi tenant-toepassing
 
@@ -222,7 +222,7 @@ Een type [client toepassing](#client-application) dat alle code op een webserver
 
 ## <a name="next-steps"></a>Volgende stappen
 
-De [micro soft Identity platform Developer's Guide][AAD-Dev-Guide] is de landings pagina die moet worden gebruikt voor alle ontwikkel-gerelateerde onderwerpen over micro soft Identity platform, met inbegrip van een overzicht van [toepassings integratie][AAD-How-To-Integrate] en de basis beginselen van [verificatie van micro soft-identiteits platform en ondersteunde verificatie scenario's][AAD-Auth-Scenarios]. U kunt ook code voorbeelden & zelf studies vinden om snel aan de slag te gaan met [github](https://github.com/azure-samples?utf8=%E2%9C%93&q=active%20directory&type=&language=).
+De [micro soft Identity platform Developer's Guide][AAD-Dev-Guide] is de landings pagina die moet worden gebruikt voor alle ontwikkel-gerelateerde onderwerpen over micro soft Identity platform, inclusief een overzicht van [toepassings integratie][AAD-How-To-Integrate] en de basis principes van [micro soft Identity platform-verificatie en ondersteunde verificatie scenario's][AAD-Auth-Scenarios]. U kunt ook code voorbeelden & zelf studies vinden om snel aan de slag te gaan met [github](https://github.com/azure-samples?utf8=%E2%9C%93&q=active%20directory&type=&language=).
 
 Gebruik de sectie volgende opmerkingen om feedback te geven en te helpen bij het verfijnen en vormen van deze inhoud, inclusief aanvragen voor nieuwe definities of het bijwerken van bestaande gegevens.
 
@@ -235,7 +235,7 @@ Gebruik de sectie volgende opmerkingen om feedback te geven en te helpen bij het
 [AAD-Dev-Guide]:azure-ad-developers-guide.md
 [Graph-Perm-Scopes]: /graph/permissions-reference
 [Graph-App-Resource]: /graph/api/resources/application
-[Graph-Sp-Resource]: /graph/api/resources/serviceprincipal?view=graph-rest-beta
+[Graph-Sp-Resource]: /graph/api/resources/serviceprincipal?view=graph-rest-beta&preserve-view=true
 [Graph-User-Resource]: /graph/api/resources/user
 [AAD-How-Subscriptions-Assoc]:../fundamentals/active-directory-how-subscriptions-associated-directory.md
 [AAD-How-To-Integrate]: ./active-directory-how-to-integrate.md

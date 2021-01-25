@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: d6d0d0a4c4b3328fa50777b5106bac202c9972ef
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
-ms.translationtype: HT
+ms.openlocfilehash: ea1ee2311d8655ce17017c73309bc69e89f4b5f4
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151499"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599120"
 ---
 # <a name="save-on-sap-hana-large-instances-with-an-azure-reservation"></a>Besparen op SAP HANA Large Instances met een Azure-reservering
 
@@ -224,7 +224,7 @@ Hier worden de verschillende reserveringsvelden besproken.
 
   **reservedResourceType**: `SapHana`
 
-  **subscription**: het abonnement dat wordt gebruikt voor het betalen van de reservering. Via de betalingswijze voor het abonnement worden de kosten voor de reservering in rekening gebracht. Het abonnementstype moet een Enterprise-overeenkomst zijn (nummers van aanbieding: MS-AZR-0017P or MS-AZR-0148P) of Microsoft-klantovereenkomst. De kosten worden in mindering gebracht op het saldo van het reserveringsbedrag, indien beschikbaar, of in rekening gebracht als overschrijding.
+  **subscription**: het abonnement dat wordt gebruikt voor het betalen van de reservering. Via de betalingswijze voor het abonnement worden de kosten voor de reservering in rekening gebracht. Het abonnementstype moet een Enterprise-overeenkomst zijn (nummers van aanbieding: MS-AZR-0017P or MS-AZR-0148P) of Microsoft-klantovereenkomst. De kosten worden in mindering gebracht op het saldo van Azure-vooruitbetaling (voorheen financiële toezegging), indien beschikbaar, of in rekening gebracht als overschrijding.
 
   **scope**: het bereik van de reservering moet een enkel bereik zijn.
 

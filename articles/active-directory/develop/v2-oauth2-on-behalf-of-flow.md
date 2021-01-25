@@ -13,12 +13,12 @@ ms.date: 08/7/2020
 ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev
-ms.openlocfilehash: 8c8167142876dfac0ae0aeff51e85b66c65c607b
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: ff8e03b813e2cb890192667e3466d920eaabc72c
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208845"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756086"
 ---
 # <a name="microsoft-identity-platform-and-oauth-20-on-behalf-of-flow"></a>Micro soft Identity platform en OAuth 2,0-of-flow
 
@@ -130,7 +130,7 @@ Een reactie op geslaagde pogingen is een JSON OAuth 2,0-antwoord met de volgende
 
 | Parameter | Beschrijving |
 | --- | --- |
-| `token_type` | Geeft de waarde van het token type aan. Het enige type dat door micro soft Identity platform wordt ondersteund, is `Bearer` . Zie voor meer informatie over Bearer-tokens het [OAuth 2,0 Authorization Framework: Bearer-token gebruik (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
+| `token_type` | Geeft de waarde van het token type aan. Het enige type dat het micro soft Identity-platform ondersteunt is `Bearer` . Zie voor meer informatie over Bearer-tokens het [OAuth 2,0 Authorization Framework: Bearer-token gebruik (RFC 6750)](https://www.rfc-editor.org/rfc/rfc6750.txt). |
 | `scope` | Het bereik van toegang dat in het token wordt verleend. |
 | `expires_in` | De tijds duur in seconden dat het toegangs token geldig is. |
 | `access_token` | Het aangevraagde toegangs token. De aanroepende service kan dit token gebruiken om te verifiëren bij de ontvangende service. |
@@ -151,7 +151,7 @@ Het volgende voor beeld toont een geslaagde reactie op een aanvraag voor een toe
 }
 ```
 
-Het bovenstaande toegangs token is een token met v 1.0-indeling voor Microsoft Graph. Dit komt doordat de token indeling is gebaseerd op de **bron** waartoe toegang wordt verkregen en die niet gerelateerd is aan de eind punten die worden gebruikt om deze te vragen. De Microsoft Graph is ingesteld om v 1.0-tokens te accepteren, waardoor het micro soft Identity-platform v 1.0 toegangs tokens produceert wanneer een client tokens voor Microsoft Graph aanvraagt. Andere apps kunnen aangeven dat ze v 2.0-indelings tokens, v 1.0-notatie tokens of zelfs eigen of versleutelde token-indelingen willen hebben.  Zowel de eind punten van de v 1.0 als van de v 2.0 kunnen een wille keurige indeling van het token geven: de resource kan altijd de juiste indeling van token verkrijgen, ongeacht hoe of waar het token door de client is aangevraagd. 
+Het bovenstaande toegangs token is een token met v 1.0-indeling voor Microsoft Graph. Dit komt doordat de token indeling is gebaseerd op de **bron** waartoe toegang wordt verkregen en die niet gerelateerd is aan de eind punten die worden gebruikt om deze te vragen. De Microsoft Graph is ingesteld om v 1.0-tokens te accepteren. het micro soft Identity-platform produceert nu toegangs tokens van v 1.0 wanneer een client tokens voor Microsoft Graph aanvraagt. Andere apps kunnen aangeven dat ze v 2.0-indelings tokens, v 1.0-notatie tokens of zelfs eigen of versleutelde token-indelingen willen hebben.  Zowel de eind punten van de v 1.0 als van de v 2.0 kunnen een wille keurige indeling van het token geven: de resource kan altijd de juiste indeling van token verkrijgen, ongeacht hoe of waar het token door de client is aangevraagd. 
 
 Alleen toepassingen moeten de toegangs tokens bekijken. Clients **mogen deze niet** controleren. Als de toegangs tokens voor andere apps in uw code worden geïnspecteerd, wordt de app onverwacht verbroken wanneer de app de indeling van de tokens wijzigt of versleutelt. 
 
@@ -201,7 +201,7 @@ Afhankelijk van de architectuur of het gebruik van uw toepassing, kunt u verschi
 
 ### <a name="default-and-combined-consent"></a>/.default en gecombineerde toestemming
 
-De middelste laag toepassing voegt de client toe aan de lijst met bekende client toepassingen in het manifest en vervolgens kan de client een gecombineerde toestemmings stroom voor zowel zichzelf als de middelste laag toepassing activeren. Op het micro soft Identity platform-eind punt wordt dit gedaan met de [ `/.default` Scope](v2-permissions-and-consent.md#the-default-scope). Wanneer er een goedkeurings scherm wordt geactiveerd met behulp van bekende client toepassingen en `/.default` , wordt in  het venster toestemming de machtigingen voor de client voor de middelste laag weer gegeven en wordt ook elke machtiging gevraagd die nodig is voor de API van het tweede niveau. De gebruiker geeft toestemming voor beide toepassingen en vervolgens werkt de OBO-stroom.
+De middelste laag toepassing voegt de client toe aan de lijst met bekende client toepassingen in het manifest en vervolgens kan de client een gecombineerde toestemmings stroom voor zowel zichzelf als de middelste laag toepassing activeren. Op het micro soft-identiteits platform wordt dit gedaan met de [ `/.default` Scope](v2-permissions-and-consent.md#the-default-scope). Wanneer er een goedkeurings scherm wordt geactiveerd met behulp van bekende client toepassingen en `/.default` , wordt in  het venster toestemming de machtigingen voor de client voor de middelste laag weer gegeven en wordt ook elke machtiging gevraagd die nodig is voor de API van het tweede niveau. De gebruiker geeft toestemming voor beide toepassingen en vervolgens werkt de OBO-stroom.
 
 ### <a name="pre-authorized-applications"></a>Vooraf geautoriseerde toepassingen
 

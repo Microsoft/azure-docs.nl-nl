@@ -1,5 +1,6 @@
 ---
-title: Bureau blad-apps configureren die web-Api's aanroepen-micro soft Identity-platform | Azure
+title: Bureau blad-apps configureren die web-Api's aanroepen | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het configureren van de code van een bureau blad-app die web-Api's aanroept
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 27c9f2ab8b02c96d016fea66acd2b3840d79d09d
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: 5b74c817a974378a7fefc71e4eed67e6564765be
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94444120"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756560"
 ---
 # <a name="desktop-app-that-calls-web-apis-code-configuration"></a>Bureau blad-app voor het aanroepen van web-Api's: code configuratie
 

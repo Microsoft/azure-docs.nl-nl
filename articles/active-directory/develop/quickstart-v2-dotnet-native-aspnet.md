@@ -1,7 +1,7 @@
 ---
-title: 'Snelstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform | Azure'
+title: 'Quick Start: een ASP.NET-Web-API aanroepen die wordt beveiligd door het micro soft-identiteits platform | Azure'
 titleSuffix: Microsoft identity platform
-description: In deze quickstart leert u hoe u een ASP.NET-web-API die wordt beveiligd door Azure Active Directory aanroept vanuit een Windows-desktoptoepassing (WPF).
+description: In deze Quick Start leert u hoe u een ASP.NET-Web-API aanroept die wordt beveiligd door het micro soft-identiteits platform van een Windows Desktop-toepassing (WPF).
 services: active-directory
 author: jmprieur
 manager: CelesteDG
@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/05/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 2967476d06b8f6f88b740f811a94c5fdb4284b4d
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: ec8fd05c0661178cc07b9165793c9f34f2463948
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011863"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754316"
 ---
 # <a name="quickstart-call-an-aspnet-web-api-thats-protected-by-microsoft-identity-platform"></a>Quickstart: Een ASP.NET-web-API aanroepen die wordt beveiligd door Microsoft-identiteitsplatform
 

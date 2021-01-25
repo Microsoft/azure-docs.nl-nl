@@ -5,12 +5,12 @@ services: container-service
 ms.topic: overview
 ms.date: 05/06/2019
 ms.custom: mvc
-ms.openlocfilehash: 75f4602be15ef2487272ed5790d92c4c884c551f
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
-ms.translationtype: HT
+ms.openlocfilehash: 4115ab2140cd3bf67135e494e16fb8121c040ff6
+ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94681547"
+ms.lasthandoff: 01/15/2021
+ms.locfileid: "98246193"
 ---
 # <a name="azure-kubernetes-service-aks"></a>Azure Kubernetes Service (AKS)
 
@@ -60,15 +60,15 @@ Zie [Ondersteunde Kubernetes-versies in AKS][aks-supported versions] voor meer i
 
 ### <a name="gpu-enabled-nodes"></a>GPU-knooppunten
 
-AKS ondersteunt het maken van GPU-knooppuntpools. Azure biedt momenteel VM’s met een of meerdere GPU’s. GPU-VM's zijn ontworpen voor rekenintensieve, grafisch-intensieve en visualisatiewerkbelastingen.
+AKS ondersteunt het maken van GPU-knooppuntpools. Azure biedt momenteel VM's met een of meerdere GPU's. GPU-VM's zijn ontworpen voor rekenintensieve, grafisch-intensieve en visualisatiewerkbelastingen.
 
 Zie [GPU's gebruiken op AKS][aks-gpu] voor meer informatie.
 
 ### <a name="confidential-computing-nodes-public-preview"></a>Confidential Computing-knooppunten (openbare preview)
 
-AKS biedt ondersteuning voor het maken van op Intel SGX gebaseerde, vertrouwelijke computing-knooppuntpools (DCSv2-VM's). Met vertrouwelijke computingknooppunten kunnen containers worden uitgevoerd in een op hardware gebaseerde vertrouwde en geïsoleerde uitvoeringsomgeving (enclaves). De isolatie tussen containers in combinatie met code-integriteit via attestation kan helpen bij uw diepgaande beveiligingsstrategie voor containers. Vertrouwelijke computingknooppunten ondersteunen zowel vertrouwelijke containers (bestaande docker-apps) als enclave-compatibele containers.
+AKS biedt ondersteuning voor het maken van op Intel SGX gebaseerde, vertrouwelijke computing-knooppuntpools (DCSv2-VM's). Met vertrouwelijke computingknooppunten kunnen containers worden uitgevoerd in een op hardware gebaseerde vertrouwde uitvoeringsomgeving (enclaves). De isolatie tussen containers in combinatie met code-integriteit via attestation kan helpen bij uw diepgaande beveiligingsstrategie voor containers. Vertrouwelijke computingknooppunten ondersteunen zowel vertrouwelijke containers (bestaande Docker-apps) als enclave-compatibele containers.
 
-Zie [Vertrouwelijke computing-knooppunten op AKS][conf-com-node] voor meer informatie
+Zie [Vertrouwelijke rekenknooppunten op AKS][conf-com-node] voor meer informatie.
 
 ### <a name="storage-volume-support"></a>Opslagvolumeondersteuning
 
@@ -80,7 +80,7 @@ Ga aan de slag met dynamische permanente volumes met [Azure Disks][azure-disk] o
 
 ## <a name="virtual-networks-and-ingress"></a>Virtual Networks en inkomend verkeer
 
-Een AKS-cluster kan worden geïmplementeerd in een bestaand virtueel netwerk. In deze configuratie krijgt elke pod in het cluster een IP-adres toegewezen in het virtueel netwerk. De pod kan direct communiceren met andere pods in het cluster en met andere knooppunten in het virtueel netwerk. Pods kunnen ook verbinding maken met andere services in een gekoppeld virtueel netwerk en met on-premises netwerken via ExpressRoute en S2S VPN-verbindingen (site-to-site).
+Een AKS-cluster kan worden geïmplementeerd in een bestaand virtueel netwerk. In deze configuratie krijgt elke pod in het cluster een IP-adres toegewezen in het virtueel netwerk. De pod kan direct communiceren met andere pods in het cluster en met andere knooppunten in het virtueel netwerk. Pods kunnen ook verbinding maken met andere services in een gekoppeld virtueel netwerk en met on-premises netwerken via ExpressRoute en VPN-verbindingen (site-to-site).
 
 Zie [Netwerkconcepten voor toepassingen in AKS][aks-networking] voor meer informatie.
 
@@ -98,15 +98,15 @@ Kubernetes heeft een uitgebreid ecosysteem van hulpprogramma’s voor ontwikkeli
 
 Bovendien biedt Azure Dev Spaces een snelle, iteratieve Kubernetes-ontwikkelervaring voor teams. Met een minimale configuratie kunt u containers rechtstreeks in AKS uitvoeren en debuggen. Zie [Azure Dev Spaces][azure-dev-spaces] om aan de slag te gaan.
 
-Het Azure DevOps-project biedt een eenvoudige oplossing voor het overbrengen van bestaande code en Git-opslagplaatsen naar Azure. Het DevOps-project maakt automatisch Azure-resources zoals AKS, een release-pipeline in Azure DevOps Services met een build-pipeline voor CI, stelt een release-pipeline in voor CD en maakt vervolgens een Azure Application Insights-resource voor bewaking.
+DevOps Starter biedt een eenvoudige oplossing voor het overbrengen van bestaande code en Git-opslagplaatsen naar Azure. DevOps Starter maakt automatisch Azure-resources, bijvoorbeeld AKS, een release-pipeline in Azure DevOps Services met een build-pipeline voor CI, stelt een release-pipeline in voor CD en maakt vervolgens een Azure Application Insights-resource voor bewaking.
 
-Zie [Azure DevOps-project][azure-devops] voor meer informatie.
+Zie [DevOps Starter][azure-devops] voor meer informatie.
 
 ## <a name="docker-image-support-and-private-container-registry"></a>Ondersteuning voor Docker-installatiekopieën en registers voor persoonlijke containers
 
 AKS ondersteunt de Docker-installatiekopie-indeling. Voor privéopslag van uw Docker-installatiekopieën kunt u AKS integreren met Azure Container Registry (ACR).
 
-Zie [Azure Container Registry][acr-docs] voor informatie over het maken van opslag voor persoonlijke installatiekopieën.
+Zie [Azure Container Registry][acr-docs] om opslag voor persoonlijke installatiekopieën te maken.
 
 ## <a name="kubernetes-certification"></a>Kubernetes-certificering
 

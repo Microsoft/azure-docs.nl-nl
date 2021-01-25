@@ -14,12 +14,12 @@ ms.date: 11/04/2019
 ms.author: sagonzal
 ms.reviewer: nacanuma, twhitney
 ms.custom: aaddev, devx-track-java
-ms.openlocfilehash: 0183471db274bb7fca59ed8f24aa87b2bf997fb6
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 1d1512447b5d0474f8fabe92dbc7a36259f4618c
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063736"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754975"
 ---
 # <a name="adal-to-msal-migration-guide-for-java"></a>Migratie handleiding voor ADAL naar MSAL voor Java
 
@@ -29,7 +29,7 @@ Zowel de micro soft-verificatie bibliotheek voor Java (MSAL4J) als Azure AD-veri
 
 MSAL biedt de volgende voor delen:
 
-- Omdat er gebruik wordt gemaakt van het nieuwere micro soft Identity platform-eind punt, kunt u een uitgebreidere set micro soft-identiteiten, zoals Azure AD-identiteiten, micro soft-accounts en sociale en lokale accounts, verifiëren via Azure AD Business to consumer (B2C).
+- Omdat er gebruik wordt gemaakt van het nieuwere micro soft-identiteits platform, kunt u een uitgebreidere set micro soft-identiteiten, zoals Azure AD-identiteiten, micro soft-accounts en sociale en lokale accounts, verifiëren via Azure AD Business to consumer (B2C).
 - Uw gebruikers krijgen de beste ervaring voor eenmalige aanmelding.
 - Uw toepassing kan stapsgewijze toestemming bieden en het ondersteunen van voorwaardelijke toegang is eenvoudiger.
 
@@ -37,13 +37,13 @@ MSAL voor Java is de verificatie bibliotheek die u kunt gebruiken met het micro 
 
 ## <a name="differences"></a>Verschillen
 
-Als u met het eind punt (en ADAL4J) van Azure AD voor ontwikkel aars (v 1.0) hebt gewerkt, wilt u wellicht lezen [wat er anders is dan het micro soft Identity platform (v 2.0)-eind punt?](../azuread-dev/azure-ad-endpoint-comparison.md).
+Als u met het eind punt (en ADAL4J) van Azure AD voor ontwikkel aars (v 1.0) hebt gewerkt, wilt u mogelijk [een andere informatie over het micro soft-identiteits platform lezen?](../azuread-dev/azure-ad-endpoint-comparison.md).
 
 ## <a name="scopes-not-resources"></a>Scopes die geen resources zijn
 
 ADAL4J schaft tokens aan voor resources, terwijl MSAL voor Java tokens ophaalt voor scopes. Een aantal MSAL voor Java-klassen vereist een scope-para meter. Deze para meter is een lijst met teken reeksen die de gewenste machtigingen en benodigde bronnen declareren. Bekijk [de bereiken van Microsoft Graph](/graph/permissions-reference) om voorbeeld bereik te bekijken.
 
-U kunt het `/.default` bereik achtervoegsel toevoegen aan de resource om uw apps van het v 1.0-eind punt (ADAL) te migreren naar het micro soft Identity platform-eind punt (MSAL). Bijvoorbeeld: voor de resource waarde van `https://graph.microsoft.com` is de equivalente bereik waarde `https://graph.microsoft.com/.default` .  Als de bron zich niet in het URL-formulier bevindt, maar een resource-ID van het formulier `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX` , kunt u de waarde van bereik nog steeds gebruiken als `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX/.default` .
+U kunt het `/.default` bereik achtervoegsel toevoegen aan de resource om uw apps te migreren van de ADAL naar MSAL. Bijvoorbeeld: voor de resource waarde van `https://graph.microsoft.com` is de equivalente bereik waarde `https://graph.microsoft.com/.default` .  Als de bron zich niet in het URL-formulier bevindt, maar een resource-ID van het formulier `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX` , kunt u de waarde van bereik nog steeds gebruiken als `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX/.default` .
 
 Voor meer informatie over de verschillende typen bereiken, verwijzen wij u naar [machtigingen en toestemming in het micro soft-identiteits platform](./v2-permissions-and-consent.md) en de [scopes voor een web API die v 1.0-tokens accepteert](./msal-v1-app-scopes.md) .
 

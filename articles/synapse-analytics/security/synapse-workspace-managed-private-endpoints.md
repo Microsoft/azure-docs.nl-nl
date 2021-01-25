@@ -8,12 +8,12 @@ ms.subservice: security
 ms.date: 01/12/2020
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2d2b65261e09d056ec76b25d6fcb6627bc54770b
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
-ms.translationtype: HT
+ms.openlocfilehash: 65794c695fa4b36586b23a308845b1f12a20b7cb
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165719"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569943"
 ---
 # <a name="synapse-managed-private-endpoints"></a>Beheerde privé-eindpunten in Synapse
 

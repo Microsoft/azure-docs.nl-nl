@@ -14,12 +14,12 @@ ms.date: 11/11/2019
 ms.author: rayluo
 ms.reviewer: marsma, rayluo, nacanuma
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 213184409c9f5ee21ac9f61be1ad138fbbaa3590
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 42ffc7ffba20868b23675fd8613fd3ef11b0924a
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107852"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755058"
 ---
 # <a name="adal-to-msal-migration-guide-for-python"></a>Migratie handleiding voor ADAL naar MSAL voor python
 
@@ -38,13 +38,13 @@ Steun
   - OAuth v 2.0
   - OpenID Connect Connect (OIDC)
 
-Zie [Wat is er anders in het micro soft Identity platform (v 2.0)-eind punt?](../azuread-dev/azure-ad-endpoint-comparison.md) voor meer informatie.
+Zie [Wat is er anders in het micro soft-identiteits platform?](../azuread-dev/azure-ad-endpoint-comparison.md) voor meer informatie.
 
 ### <a name="scopes-not-resources"></a>Scopes die geen resources zijn
 
 ADAL python schaft tokens voor bronnen aan, maar MSAL python verkrijgt tokens voor scopes. Het API-Opper vlak in MSAL python heeft geen resource parameter meer. U moet bereiken opgeven als een lijst met teken reeksen die de gewenste machtigingen en benodigde bronnen declareren. Zie [Microsoft Graph scopes](/graph/permissions-reference)voor een voor beeld van bereiken.
 
-U kunt het `/.default` bereik achtervoegsel toevoegen aan de resource om uw apps van het v 1.0-eind punt (ADAL) te migreren naar het micro soft Identity platform-eind punt (MSAL). Bijvoorbeeld: voor de resource waarde van `https://graph.microsoft.com` is de equivalente bereik waarde `https://graph.microsoft.com/.default` .  Als de bron zich niet in het URL-formulier bevindt, maar een resource-ID van het formulier `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX` , kunt u de waarde van bereik nog steeds gebruiken als `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX/.default` .
+U kunt het `/.default` bereik achtervoegsel toevoegen aan de resource om uw apps van het v 1.0-eind punt (ADAL) te migreren naar het micro soft Identity platform (MSAL). Bijvoorbeeld: voor de resource waarde van `https://graph.microsoft.com` is de equivalente bereik waarde `https://graph.microsoft.com/.default` .  Als de bron zich niet in het URL-formulier bevindt, maar een resource-ID van het formulier `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX` , kunt u de waarde van bereik nog steeds gebruiken als `XXXXXXXX-XXXX-XXXX-XXXXXXXXXXXX/.default` .
 
 Voor meer informatie over de verschillende typen bereiken, verwijzen wij u naar [machtigingen en toestemming in het micro soft-identiteits platform](./v2-permissions-and-consent.md) en de [scopes voor een web API die v 1.0-tokens accepteert](./msal-v1-app-scopes.md) .
 
@@ -92,7 +92,7 @@ def get_preexisting_rt_and_their_scopes_from_elsewhere():
     # You may be able to append "/.default" to your v1 resource to form a scope
     # See https://docs.microsoft.com/azure/active-directory/develop/v2-permissions-and-consent#the-default-scope
 
-    # Or maybe you have an app already talking to Microsoft identity platform v2,
+    # Or maybe you have an app already talking to the Microsoft identity platform,
     # powered by some 3rd-party auth library, and persist its tokens somehow.
 
     # Either way, you need to extract RTs from there, and return them like this.

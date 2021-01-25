@@ -1,5 +1,6 @@
 ---
-title: Bureau blad-app die web-Api's aanroept, verplaatsen naar productie-micro soft Identity-platform | Azure
+title: De bureau blad-app voor het aanroepen van web-Api's naar productie verplaatsen | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het verplaatsen van een bureau blad-app die web-Api's aanroept voor productie
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 10/30/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 325f95f2830ef021a4ac79de48695dda570f7817
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: 05b93848bff66adc49d2855ee98fff6c9b7a2d3d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629779"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756513"
 ---
 # <a name="desktop-app-that-calls-web-apis-move-to-production"></a>Bureau blad-app voor het aanroepen van web-Api's: verplaatsen naar productie
 
@@ -29,9 +30,9 @@ In de verschillende stromen hebt u geleerd hoe u de fouten voor de Stille strome
 ## <a name="have-the-user-consent-upfront-for-several-resources"></a>De gebruiker vooraf toestemming geven voor verschillende bronnen
 
 > [!NOTE]
-> Het verkrijgen van toestemming voor verschillende bronnen werkt voor micro soft Identity platform, maar niet voor Azure Active Directory (Azure AD) B2C. Azure AD B2C ondersteunt alleen beheerders toestemming en geen toestemming van de gebruiker.
+> Het verkrijgen van toestemming voor verschillende bronnen werkt voor het micro soft Identity-platform, maar niet voor Azure Active Directory (Azure AD) B2C. Azure AD B2C ondersteunt alleen beheerders toestemming en geen toestemming van de gebruiker.
 
-U kunt geen token voor meerdere resources tegelijk ophalen met het micro soft Identity platform (v 2.0)-eind punt. De `scopes` para meter kan alleen bereiken voor één resource bevatten. U kunt ervoor zorgen dat de gebruiker vooraf toestuurt naar verschillende bronnen met behulp van de `extraScopesToConsent` para meter.
+U kunt geen token voor meerdere resources tegelijk ophalen met het micro soft Identity-platform. De `scopes` para meter kan alleen bereiken voor één resource bevatten. U kunt ervoor zorgen dat de gebruiker vooraf toestuurt naar verschillende bronnen met behulp van de `extraScopesToConsent` para meter.
 
 U kunt bijvoorbeeld twee resources hebben met twee bereiken:
 

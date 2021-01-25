@@ -15,12 +15,12 @@ ms.workload: infrastructure-services
 ms.date: 07/30/2020
 ms.author: allensu
 ms.custom: mvc
-ms.openlocfilehash: 14203021846e97a53f59c3bc24a1586774613dec
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: f70116847a8743cf8b3cb56ff35f9d913f13f359
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97704330"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562349"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-the-azure-portal"></a>Quickstart: Een interne load balancer maken met Azure Portal om taken te verdelen over VM's
 
@@ -41,11 +41,13 @@ Meld u aan bij de Azure Portal op [https://portal.azure.com](https://portal.azur
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen.  Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
 
-:::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal.png" alt-text="Resources voor de Standard-load balancer die worden gemaakt voor de quickstart." border="false":::
-
 In deze sectie maakt u een load balancer die taken van virtuele machines verdeelt. 
 
 Wanneer u een interne load balancer maakt, wordt een virtueel netwerk geconfigureerd als netwerk voor de load balancer. 
+
+Het volgende diagram bevat de resources die u in deze quickstart hebt gemaakt:
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal.png" alt-text="Resources voor de Standard-load balancer die worden gemaakt voor de quickstart." border="false":::
 
 Een privé-IP-adres in het virtuele netwerk wordt geconfigureerd als de front-end (standaard **LoadBalancerFrontend** genoemd) voor de load balancer. 
 
@@ -199,12 +201,8 @@ In deze sectie maakt u een load balancer-regel:
     | Statustest | Selecteer **myHealthProbe**. |
     | Time-out voor inactiviteit (minuten) | Verplaats de schuifregelaar naar **15** minuten. |
     | Opnieuw instellen van TCP | Selecteer **Ingeschakeld**. |
-    | Uitgaande SNAT (Source Network Address Translation) | Selecteer **(Aanbevolen) Uitgaande regels gebruiken om leden van de back-endgroep toegang te geven tot internet.** |
-
+    
 4. Laat de overige standaardwaarden staan en selecteer **OK**.
-
->[!NOTE]
->De virtuele machines in de back-end-pool hebben geen uitgaande internetverbinding met deze configuratie. </br> Voor meer informatie over het bieden van uitgaande connectiviteit raadpleegt u: </br> **[Uitgaande verbindingen in Azure](load-balancer-outbound-connections.md)**</br> Opties voor het bieden van connectiviteit: </br> **[Load balancer-configuratie voor alleen uitgaand verkeer](egress-only.md)** </br> **[Wat is Azure Virtual Network NAT?](../virtual-network/nat-overview.md)**
 
 ## <a name="create-backend-servers"></a>Back-endservers maken
 
@@ -278,11 +276,13 @@ Deze VM's worden toegevoegd aan de back-endpool van de load balancer die eerder 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen.  Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
 
-:::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal-basic.png" alt-text="Resources voor de Basic-load balancer die worden gemaakt in de quickstart." border="false":::
-
 In deze sectie maakt u een load balancer die taken van virtuele machines verdeelt. 
 
 Wanneer u een interne load balancer maakt, wordt een virtueel netwerk geconfigureerd als netwerk voor de load balancer. 
+
+Het volgende diagram bevat de resources die u in deze quickstart hebt gemaakt:
+
+:::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal-basic.png" alt-text="Resources voor de Basic-load balancer die worden gemaakt in de quickstart." border="false":::
 
 Een privé-IP-adres in het virtuele netwerk wordt geconfigureerd als de front-end (standaard **LoadBalancerFrontend** genoemd) voor de load balancer. 
 

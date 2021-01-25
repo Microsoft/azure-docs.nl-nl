@@ -13,16 +13,16 @@ ms.date: 01/04/2021
 ms.author: ryanwi
 ms.custom: aaddev, identityplatformtop40, content-perf, FY21Q1, contperf-fy21q1
 ms.reviewer: hirsin, jlu, annaba
-ms.openlocfilehash: 33dffa40e0236483d641c2e2bbe318bb62a7724d
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: f4ae26a489b823e2347841cf72690d6cd8462611
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678184"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755301"
 ---
-# <a name="configurable-token-lifetimes-in-microsoft-identity-platform-preview"></a>Configureer bare levens duur van tokens in micro soft Identity platform (preview-versie)
+# <a name="configurable-token-lifetimes-in-the-microsoft-identity-platform-preview"></a>Configureer bare levens duur van tokens in het micro soft Identity-platform (preview-versie)
 
-U kunt de levens duur opgeven van een toegangs-ID of SAML-token dat is uitgegeven door het micro soft Identity-platform. U kunt de levensduur van een token instellen voor alle apps in uw organisatie, voor een multitenanttoepassing (voor meerdere organisaties) of voor een specifieke service-principal in uw organisatie. We bieden momenteel geen ondersteuning voor het configureren van de levens duur van tokens voor [beheerde ID service-principals](../managed-identities-azure-resources/overview.md).
+U kunt de levens duur opgeven van een toegangs-, ID-of SAML-token die is uitgegeven door het micro soft Identity-platform. U kunt de levensduur van een token instellen voor alle apps in uw organisatie, voor een multitenanttoepassing (voor meerdere organisaties) of voor een specifieke service-principal in uw organisatie. We bieden momenteel geen ondersteuning voor het configureren van de levens duur van tokens voor [beheerde ID service-principals](../managed-identities-azure-resources/overview.md).
 
 In azure AD vertegenwoordigt een beleids object een set regels die worden afgedwongen voor afzonderlijke toepassingen of voor alle toepassingen in een organisatie. Elk beleids type heeft een unieke structuur, met een reeks eigenschappen die worden toegepast op objecten waaraan ze zijn toegewezen.
 
@@ -50,7 +50,7 @@ Clients gebruiken toegangs tokens om toegang te krijgen tot een beveiligde bron.
 
 ### <a name="saml-tokens"></a>SAML-tokens
 
-SAML-tokens worden gebruikt door veel web-gebaseerde SAAS-toepassingen en worden verkregen met behulp van het SAML2-protocol eindpunt van Azure Active Directory. Ze worden ook gebruikt door toepassingen die gebruikmaken van WS-Federation. De standaard levensduur van het token is 1 uur. Vanuit het oogpunt van een toepassing wordt de geldigheids periode van het token opgegeven door de NotOnOrAfter-waarde van het `<conditions …>` element in het token. Nadat de geldigheids periode van het token is beëindigd, moet de client een nieuwe verificatie aanvraag initiëren, die vaak wordt vervuld zonder interactief aanmelden als gevolg van de sessie token voor eenmalige aanmelding (SSO).
+SAML-tokens worden gebruikt door veel web-gebaseerde SaaS-toepassingen en worden verkregen met behulp van het SAML2-protocol eindpunt van Azure Active Directory. Ze worden ook gebruikt door toepassingen die gebruikmaken van WS-Federation. De standaard levensduur van het token is 1 uur. Vanuit het oogpunt van een toepassing wordt de geldigheids periode van het token opgegeven door de NotOnOrAfter-waarde van het `<conditions …>` element in het token. Nadat de geldigheids periode van het token is beëindigd, moet de client een nieuwe verificatie aanvraag initiëren, die vaak wordt vervuld zonder interactief aanmelden als gevolg van de sessie token voor eenmalige aanmelding (SSO).
 
 De waarde van NotOnOrAfter kan worden gewijzigd met behulp `AccessTokenLifetime` van de para meter in een `TokenLifetimePolicy` . Deze wordt ingesteld op de levens duur die in het beleid is geconfigureerd, plus een klok scheefheid factor van vijf minuten.
 
@@ -106,9 +106,9 @@ Open bare clients kunnen een client wachtwoord (geheim) niet veilig opslaan. Een
 De maximale leeftijds eigenschap is de tijds duur dat één token kan worden gebruikt. 
 
 ### <a name="single-sign-on-session-tokens"></a>Sessie tokens voor eenmalige aanmelding
-Wanneer een gebruiker zich verifieert met het micro soft Identity-platform, wordt één aanmeldings sessie (SSO) tot stand gebracht met de browser van de gebruiker en het micro soft Identity-platform. De SSO-token, in de vorm van een cookie, vertegenwoordigt deze sessie. Het SSO-sessie token is niet gebonden aan een specifieke bron/client toepassing. SSO-sessie tokens kunnen worden ingetrokken en de geldigheid ervan wordt gecontroleerd elke keer dat ze worden gebruikt.
+Wanneer een gebruiker zich verifieert bij het micro soft-identiteits platform, wordt een eenmalige aanmelding (SSO) tot stand gebracht met de browser van de gebruiker en het micro soft Identity-platform. De SSO-token, in de vorm van een cookie, vertegenwoordigt deze sessie. Het SSO-sessie token is niet gebonden aan een specifieke bron/client toepassing. SSO-sessie tokens kunnen worden ingetrokken en de geldigheid ervan wordt gecontroleerd elke keer dat ze worden gebruikt.
 
-Micro soft Identity platform gebruikt twee soorten SSO-sessie tokens: permanent en niet-persistent. Permanente sessie tokens worden opgeslagen als permanente cookies door de browser. Niet-permanente sessie tokens worden opgeslagen als sessie cookies. (Sessie cookies worden vernietigd wanneer de browser wordt gesloten.) Normaal gesp roken wordt een niet-persistent sessie token opgeslagen. Maar wanneer de gebruiker het selectie vakje **aangemeld blijven** tijdens de verificatie inschakelt, wordt een persistent sessie token opgeslagen.
+Het micro soft Identity-platform gebruikt twee soorten SSO-sessie tokens: permanent en niet-persistent. Permanente sessie tokens worden opgeslagen als permanente cookies door de browser. Niet-permanente sessie tokens worden opgeslagen als sessie cookies. (Sessie cookies worden vernietigd wanneer de browser wordt gesloten.) Normaal gesp roken wordt een niet-persistent sessie token opgeslagen. Maar wanneer de gebruiker het selectie vakje **aangemeld blijven** tijdens de verificatie inschakelt, wordt een persistent sessie token opgeslagen.
 
 Niet-permanente sessie tokens hebben een levens duur van 24 uur. Permanente tokens hebben een levens duur van 90 dagen. Wanneer een SSO-sessie token wordt gebruikt binnen de geldigheids periode, wordt de geldigheids periode nog eens 24 uur of 90 dagen verlengd, afhankelijk van het type token. Als een SSO-sessie token niet binnen de geldigheids periode wordt gebruikt, wordt dit beschouwd als verlopen en wordt het niet langer geaccepteerd.
 

@@ -1,6 +1,7 @@
 ---
-title: Problemen met de verificatie van de uitgever oplossen-micro soft Identity-platform | Azure
-description: Hierin wordt beschreven hoe u een verificatie van de uitgever van micro soft Identity platform kunt oplossen door Microsoft Graph-Api's aan te roepen.
+title: Problemen met de verificatie van de uitgever oplossen | Azure
+titleSuffix: Microsoft identity platform
+description: Hierin wordt beschreven hoe u de verificatie van uitgevers voor het micro soft Identity-platform kunt oplossen door Microsoft Graph-Api's aan te roepen.
 services: active-directory
 author: rwike77
 manager: CelesteDG
@@ -12,12 +13,12 @@ ms.date: 05/08/2020
 ms.author: ryanwi
 ms.custom: aaddev
 ms.reviewer: jesakowi
-ms.openlocfilehash: 857659cdd97666dba585c1ec22c750e29bf28879
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 10609f2706d257dbe5d8f43b85da5f06cb986cae
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169168"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756188"
 ---
 # <a name="troubleshoot-publisher-verification"></a>Problemen met Verificatie van uitgever oplossen
 Als u het proces niet kunt volt ooien of onverwachte problemen ondervindt met de verificatie van de [Uitgever](publisher-verification-overview.md), moet u eerst het volgende doen als u fouten ontvangt of een onverwacht gedrag ziet: 

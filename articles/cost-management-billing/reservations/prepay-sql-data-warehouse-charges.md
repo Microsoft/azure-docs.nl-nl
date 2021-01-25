@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: b82f4252754e79813629e0c792ee0ba35e437714
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
-ms.translationtype: HT
+ms.openlocfilehash: bd43b668c318b825c5c5b6f36fc1da1055863bed
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151526"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599094"
 ---
 # <a name="save-costs-for-azure-synapse-analytics-charges-with-reserved-capacity"></a>Bespaar op Azure Synapse Analytics-kosten met gereserveerde capaciteit
 
@@ -46,7 +46,7 @@ Stel dat uw totale verbruik van Azure Synapse Analytics DW3000c is. U wilt voor 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 2. Selecteer **Alle services** > **Reserveringen**.
 3. Selecteer een abonnement. Gebruik de lijst Abonnementen om het abonnement te kiezen dat wordt gebruikt om te betalen voor de gereserveerde capaciteit. Via de betalingswijze voor het abonnement worden de kosten voor de gereserveerde capaciteit in rekening gebracht. Het abonnementstype moet een Enterprise-overeenkomst zijn (nummers van aanbieding: MS-AZR-0017P of MS-AZR-0148P) of Betalen per gebruik (nummers van aanbieding: MS-AZR-0003P of MS-AZR-0023P).
-   - Voor een Enterprise-abonnement worden de kosten in mindering gebracht op het toezeggingsbedrag of ze worden in rekening gebracht als overschrijding.
+   - Voor een Enterprise-abonnement worden de kosten in mindering gebracht op het saldo van Azure-vooruitbetaling (voorheen financiële toezegging) of in rekening gebracht als overschrijding.
    - Voor een Betalen per gebruik-abonnement worden de kosten in rekening gebracht op de creditcard of de factuurbetalingswijze van het abonnement.
 4. Selecteer een bereik. Gebruik de lijst Bereik om een abonnementsbereik te kiezen.
    - **Bereik van één resourcegroep**: de reserveringskorting wordt alleen toegepast op de overeenkomende resources in de geselecteerde resourcegroep.

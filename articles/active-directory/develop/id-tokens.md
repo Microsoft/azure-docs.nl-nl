@@ -14,12 +14,12 @@ ms.author: hirsin
 ms.reviewer: hirsin
 ms.custom: aaddev, identityplatformtop40
 ms:custom: fasttrack-edit
-ms.openlocfilehash: eec24ca19af8c41a842b1db3db4b9e16f748f029
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 6a1f4a02ebf42c0f181b595aae0a5fa0bcc9b41d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97653245"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755911"
 ---
 # <a name="microsoft-identity-platform-id-tokens"></a>Tokens van micro soft Identity platform ID
 
@@ -89,7 +89,7 @@ In deze lijst worden de JWT-claims weer gegeven die in de meeste id_tokens stand
 |`groups:src1`|JSON-object | Voor token aanvragen die geen beperkte lengte hebben (Zie `hasgroups` hierboven), maar nog steeds te groot zijn voor het token, wordt een koppeling naar de lijst met volledige groepen voor de gebruiker opgenomen. Voor JWTs als een gedistribueerde claim voor SAML als een nieuwe claim in plaats van de `groups` claim. <br><br>**Voor beeld-JWT-waarde**: <br> `"groups":"src1"` <br> `"_claim_sources`: `"src1" : { "endpoint" : "https://graph.microsoft.com/v1.0/users/{userID}/getMemberObjects" }`<br><br> Zie voor meer informatie [Groups overschrijding claim](#groups-overage-claim).|
 
 > [!NOTE]
-> De id_token v 1.0 en v 2.0 hebben verschillen in de hoeveelheid gegevens die ze in de bovenstaande voor beelden kunnen verwerken. De versie is gebaseerd op het eind punt van waaruit het is aangevraagd. Hoewel bestaande toepassingen waarschijnlijk gebruikmaken van het Azure AD-eind punt, moeten nieuwe toepassingen het eind punt van het micro soft Identity-platform ' v 2.0 ' gebruiken.
+> De id_token v 1.0 en v 2.0 hebben verschillen in de hoeveelheid gegevens die ze in de bovenstaande voor beelden kunnen verwerken. De versie is gebaseerd op het eind punt van waaruit het is aangevraagd. Hoewel bestaande toepassingen waarschijnlijk gebruikmaken van het Azure AD-eind punt, moeten nieuwe toepassingen gebruikmaken van het micro soft-identiteits platform.
 >
 > - v 1.0: Azure AD-eind punten: `https://login.microsoftonline.com/common/oauth2/authorize`
 > - v 2.0: micro soft Identity platform-eind punten: `https://login.microsoftonline.com/common/oauth2/v2.0/authorize`

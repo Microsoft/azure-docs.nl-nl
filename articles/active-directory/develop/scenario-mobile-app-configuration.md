@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 06/16/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: e2c632de3d602fe2d3e5bfa74f78e90f48412067
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: ebc22e3cf300b664aae5842f7cf924769d4d907e
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98208910"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756488"
 ---
 # <a name="configure-a-mobile-app-that-calls-web-apis"></a>Een mobiele app configureren die web-Api's aanroept
 

@@ -6,12 +6,12 @@ ms.topic: quickstart
 ms.custom:
 - devx-track-java
 - devx-track-azurecli
-ms.openlocfilehash: 504d3a834760605149c93c0beea84bbe1b59e263
-ms.sourcegitcommit: 17e9cb8d05edaac9addcd6e0f2c230f71573422c
-ms.translationtype: HT
+ms.openlocfilehash: 5ebb30101d191bb254017db7b0de2f9b8bce145d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97707551"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755175"
 ---
 # <a name="quickstart-create-a-java-function-in-azure-from-the-command-line"></a>Quickstart: Een Java-functie maken in Azure vanaf de opdrachtregel
 
@@ -113,7 +113,7 @@ Het antwoordbericht wordt gegenereerd door de API [HttpResponseMessage.Builder](
 
 Instellingen voor de Azure-resources die zijn gemaakt voor het hosten van uw app, worden gedefinieerd in het element **Configuratie** van de invoegtoepassing met een **groupId** van `com.microsoft.azure` in het gegenereerde bestand pom.xml. Het configuratie-element hieronder geeft bijvoorbeeld een Maven-implementatie de instructie om een functie-app te maken in de resourcegroep `java-functions-group` in de regio `westus`. De functie-app zelf wordt uitgevoerd in Windows binnen het `java-functions-app-service-plan`-plan. Dit is standaard een serverloos verbruiksabonnement.
 
-:::code language="java" source="~/azure-functions-samples-java/pom.xml" range="62-102":::
+:::code language="java" source="~/azure-functions-samples-java/pom.xml" range="62-107":::
 
 U kunt deze instellingen wijzigen om te bepalen hoe resources worden gemaakt in Azure, zoals door `runtime.os` van `windows` te wijzigen in `linux` vóór de eerste implementatie. Zie de [Configuratiedetails](https://github.com/microsoft/azure-maven-plugins/wiki/Azure-Functions:-Configuration-Details)voor een volledige lijst met instellingen die worden ondersteund door de Maven-invoegtoepassing.
 

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.date: 09/19/2020
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: 6864502a9d338a786e1e77dbf9888a7818bb94e9
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
+ms.openlocfilehash: c858f48a67cd434a620fb610046833d29b7475f7
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95748645"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756597"
 ---
 # <a name="daemon-app-that-calls-web-apis---code-configuration"></a>Daemon-app die web-Api's aanroept-code configuratie
 
@@ -26,7 +26,7 @@ Meer informatie over het configureren van de code voor uw daemon-toepassing die 
 
 Deze micro soft-bibliotheken ondersteunen daemon-apps:
 
-  MSAL-bibliotheek | Description
+  MSAL-bibliotheek | Beschrijving
   ------------ | ----------
   ![MSAL.NET](media/sample-v2-code/logo_NET.png) <br/> MSAL.NET  | De .NET Framework-en .NET Core-platformen worden ondersteund voor het bouwen van daemon-toepassingen. (UWP, Xamarin. iOS en Xamarin. Android worden niet ondersteund omdat deze platformen worden gebruikt voor het bouwen van open bare client toepassingen.)
   ![Python](media/sample-v2-code/logo_python.png) <br/> MSAL Python | Ondersteuning voor daemon-toepassingen in python.

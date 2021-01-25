@@ -5,16 +5,16 @@ author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
 ms.topic: how-to
-ms.date: 11/17/2020
+ms.date: 01/13/2021
 ms.reviewer: andalmia
 ms.author: banders
 ms.custom: devx-track-azurepowershell, devx-track-azurecli
-ms.openlocfilehash: 0cdd25b2937dd1fb2cc70ef7b1c5a9e9ddaef375
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
-ms.translationtype: HT
+ms.openlocfilehash: bd155ea3c98231cf20fa7c62325e3c2ecfb89920
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96780600"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185917"
 ---
 # <a name="programmatically-create-azure-enterprise-agreement-subscriptions-with-the-latest-apis"></a>Programmatisch Azure Enterprise Agreement-abonnementen maken met de nieuwste API's
 
@@ -31,7 +31,9 @@ Wanneer u programmatisch een Azure-abonnement maakt, wordt dat abonnement beheer
 U moet de rol van eigenaar hebben voor een inschrijvingsaccount om een abonnement te maken. U kunt de rol op twee manieren verkrijgen:
 
 * De Enterprise-beheerder van uw inschrijving kan [u een accounteigenaar maken](https://ea.azure.com/helpdocs/addNewAccount) (aanmelden vereist) waardoor u eigenaar van het inschrijvingsaccount bent.
-* Een bestaande eigenaar van het inschrijvingsaccount kan [u toegang verlenen](grant-access-to-create-subscription.md). En als u een service-principal wilt gebruiken om een EA-abonnement te maken, moet u [die service-principal de mogelijkheid verlenen abonnementen te maken](grant-access-to-create-subscription.md).
+* Een bestaande eigenaar van het inschrijvingsaccount kan [u toegang verlenen](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). En als u een service-principal wilt gebruiken om een EA-abonnement te maken, moet u [die service-principal de mogelijkheid verlenen abonnementen te maken](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). 
+  > [!NOTE]
+  > Zorg ervoor dat u de juiste API-versie gebruikt om de eigenaarsmachtigingen voor het inschrijvingsaccount te verlenen. Voor dit artikel en voor de API's die erin worden beschreven, gebruikt u de API [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Als u migreert om de nieuwere API's te gebruiken, moet u de eigenaarsmachtigingen opnieuw toekennen met behulp van [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Uw vorige configuratie die is gemaakt met [versie 2015-07-01](grant-access-to-create-subscription.md) wordt niet automatisch geconverteerd voor het gebruik van de nieuwere API's.
 
 ## <a name="find-accounts-you-have-access-to"></a>Accounts zoeken waartoe u toegang hebt
 

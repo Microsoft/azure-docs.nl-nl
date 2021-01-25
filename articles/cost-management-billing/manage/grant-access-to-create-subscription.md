@@ -4,20 +4,23 @@ description: Meer informatie over hoe u een gebruiker of service-principal de mo
 author: bandersmsft
 ms.service: cost-management-billing
 ms.subservice: billing
-ms.reviewer: amberb
+ms.reviewer: andalmia
 ms.topic: conceptual
-ms.date: 08/26/2020
+ms.date: 01/13/2021
 ms.author: banders
-ms.openlocfilehash: c13670df26e5d0f7774b5a2aac81f656de94c960
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
-ms.translationtype: HT
+ms.openlocfilehash: 039e728f6518d21ddfb9c7c359a6cf2ec743f232
+ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844707"
+ms.lasthandoff: 01/14/2021
+ms.locfileid: "98185101"
 ---
 # <a name="grant-access-to-create-azure-enterprise-subscriptions-preview"></a>Toegang verlenen voor het maken van Azure Enterprise-abonnementen (preview)
 
 Als Azure-klant op [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/)kunt u een andere gebruiker of Service-Principal toestemming geven om abonnementen te maken die aan uw account worden gefactureerd. In dit artikel leert u hoe u [op rollen gebaseerd toegangsbeheer (Azure RBAC) van Azure](../../role-based-access-control/role-assignments-portal.md) kunt gebruiken om de mogelijkheid te delen om abonnementen te maken, en hoe u het maken van abonnementen kunt controleren. U moet de rol van Eigenaar hebben voor het account dat u wilt delen.
+
+> [!NOTE]
+> Deze API werkt alleen met de [preview-API's voor het maken van een abonnement](programmatically-create-subscription-preview.md). Als u de [GA-versie](programmatically-create-subscription-enterprise-agreement.md) (versie van algemene beschikbaarheid) wilt gebruiken, gebruikt u de nieuwste API-versie op [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Als u migreert om de nieuwere API's te gebruiken, moet u opnieuw eigenaarsmachtigingen toekennen met behulp van [2019-10-01-preview](/rest/api/billing/2019-10-01-preview/enrollmentaccountroleassignments/put). Uw vorige configuratie met de volgende API's wordt niet automatisch geconverteerd voor het gebruik van nieuwere API's.
 
 [!INCLUDE [updated-for-az](../../../includes/updated-for-az.md)]
 

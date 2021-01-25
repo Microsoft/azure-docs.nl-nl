@@ -13,16 +13,16 @@ ms.date: 12/09/2020
 ms.author: kenwith
 ms.reviewer: luleon, paulgarn, jeedes
 ms.custom: aaddev
-ms.openlocfilehash: 9fb5e229882532fed076f2e0d800f32acfcdbf4c
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 0ded249a55e5a59bdcad7407694cbd5ed4cf2352
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98013784"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756069"
 ---
 # <a name="how-to-customize-claims-issued-in-the-saml-token-for-enterprise-applications"></a>Procedure: claims aanpassen die zijn uitgegeven in het SAML-token voor zakelijke toepassingen
 
-Tegenwoordig ondersteunt micro soft Identity platform eenmalige aanmelding (SSO) met de meeste zakelijke toepassingen, waaronder toepassingen die vooraf zijn geïntegreerd in de Azure AD-App-galerie en aangepaste toepassingen. Wanneer een gebruiker via het SAML 2,0-protocol met het micro soft Identity-platform wordt geverifieerd bij een toepassing, stuurt micro soft Identity platform een token naar de toepassing (via een HTTP POST). Vervolgens valideert en gebruikt de toepassing het token voor het registreren van de gebruiker in plaats van een gebruikers naam en wacht woord op te vragen. Deze SAML-tokens bevatten stukjes informatie over de gebruiker die *claims* wordt genoemd.
+Tegenwoordig ondersteunt het micro soft-identiteits platform eenmalige aanmelding (SSO) met de meeste zakelijke toepassingen, waaronder toepassingen die vooraf zijn geïntegreerd in de Azure AD-App-galerie en aangepaste toepassingen. Wanneer een gebruiker via het micro soft Identity-platform een verificatie uitvoert via het SAML 2,0-protocol, stuurt het micro soft Identity-platform een token naar de toepassing (via een HTTP POST). Vervolgens valideert en gebruikt de toepassing het token voor het registreren van de gebruiker in plaats van een gebruikers naam en wacht woord op te vragen. Deze SAML-tokens bevatten stukjes informatie over de gebruiker die *claims* wordt genoemd.
 
 Een *claim* is informatie die een id-provider staat voor een gebruiker binnen het token dat wordt uitgegeven voor die gebruiker. In het [SAML-token](https://en.wikipedia.org/wiki/SAML_2.0)bevinden deze gegevens zich doorgaans in de instructie SAML Attribute. De unieke ID van de gebruiker wordt gewoonlijk weer gegeven in het SAML-onderwerp, ook wel naam-id genoemd.
 
@@ -50,13 +50,13 @@ De NameID (naam-id-waarde) bewerken:
 
 Als de SAML-aanvraag het element NameIDPolicy met een specifieke indeling bevat, zal het micro soft Identity-platform voldoen aan de indeling in de aanvraag.
 
-Als de SAML-aanvraag geen element voor NameIDPolicy bevat, wordt het NameID door het micro soft Identity-platform uitgegeven met de indeling die u opgeeft. Als er geen indeling is opgegeven, gebruikt micro soft Identity platform de standaard bron indeling die is gekoppeld aan de geselecteerde claim bron.
+Als de SAML-aanvraag geen element bevat voor NameIDPolicy, wordt het NameID door het micro soft Identity-platform uitgegeven met de indeling die u opgeeft. Als er geen indeling is opgegeven, gebruikt het micro soft Identity-platform de standaard bron indeling die is gekoppeld aan de geselecteerde claim bron.
 
 U kunt een van de volgende opties selecteren in de vervolg keuzelijst **Kies naam-id-indeling** .
 
 | NameID-indeling | Beschrijving |
 |---------------|-------------|
-| **Standaard** | Micro soft Identity platform gebruikt de standaard indeling voor de bron. |
+| **Prijs** | Micro soft Identity platform gebruikt de standaard indeling voor de bron. |
 | **Permanent** | Micro soft Identity platform gebruikt persistent als de NameID-indeling. |
 | **EmailAddress** | Micro soft Identity platform gebruikt EmailAddress als NameID-indeling. |
 | **Niet opgegeven** | Het micro soft Identity-platform wordt niet opgegeven als de NameID-indeling. |
@@ -69,7 +69,7 @@ Selecteer de gewenste bron voor de `NameIdentifier` claim (of NameID). U kunt ki
 
 | Naam | Beschrijving |
 |------|-------------|
-| E-mail | Het e-mailadres van de gebruiker |
+| Email | Het e-mailadres van de gebruiker |
 | userprincipalName | UPN (User Principal Name) van de gebruiker |
 | onpremisessamaccount | SAM-account naam die is gesynchroniseerd vanuit on-premises Azure AD |
 | id | Objectid van de gebruiker in azure AD |
@@ -170,7 +170,7 @@ De volg orde waarin u de voor waarden toevoegt, is belang rijk. Azure AD evaluee
 
 Zo is Julia Simon een gast gebruiker in de contoso-Tenant. Ze maakt deel uit van een andere organisatie die ook gebruikmaakt van Azure AD. Op basis van de onderstaande configuratie voor de fabrikam-toepassing, wanneer Julia zich probeert aan te melden bij Fabrikam, worden de voor waarden als volgt geëvalueerd door het micro soft Identity-platform.
 
-Eerst controleert het micro soft Identity-platform of het gebruikers type van Julia is `All guests` . Aangezien dit het geval is, wijst micro soft Identity platform de bron voor de claim toe aan `user.extensionattribute1` . Ten tweede controleert micro soft Identity platform of het gebruikers type van Julia is `AAD guests` , omdat dit ook het geval is, de bron voor de claim wordt toegewezen aan het micro soft Identity-platform `user.mail` . Ten slotte wordt de claim verzonden met de waarde `user.mail` voor Julia.
+Eerst controleert het micro soft Identity-platform of het gebruikers type van Julia is `All guests` . Aangezien dit het geval is, wijst het micro soft Identity-platform de bron voor de claim toe aan `user.extensionattribute1` . Ten tweede controleert het micro soft Identity-platform of het gebruikers type van Julia is `AAD guests` , omdat dit ook waar is, wijst het micro soft Identity-platform de bron voor de claim toe aan `user.mail` . Ten slotte wordt de claim verzonden met de waarde `user.mail` voor Julia.
 
 ![Voorwaardelijke configuratie van claims](./media/active-directory-saml-claims-customization/sso-saml-user-conditional-claims.png)
 

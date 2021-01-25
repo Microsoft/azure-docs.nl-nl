@@ -16,12 +16,12 @@ ms.workload: infrastructure-services
 ms.date: 08/27/2020
 ms.author: allensu
 ms:custom: seodec18
-ms.openlocfilehash: d2d266462cb119e4a803b0e1012f5dfbe94a4a6e
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
-ms.translationtype: HT
+ms.openlocfilehash: 5844b321fd3050bab9288657189ddcd87bba14db
+ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97630552"
+ms.lasthandoff: 01/18/2021
+ms.locfileid: "98562332"
 ---
 # <a name="quickstart-create-an-internal-load-balancer-to-load-balance-vms-using-azure-powershell"></a>Quickstart: Een interne load balancer maken met Azure PowerShell om taken te verdelen over VM's
 
@@ -49,6 +49,12 @@ New-AzResourceGroup -Name 'CreateIntLBQS-rg' -Location 'eastus'
 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen. Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
+
+In deze sectie maakt u een load balancer die taken van virtuele machines verdeelt. 
+
+Wanneer u een interne load balancer maakt, wordt een virtueel netwerk geconfigureerd als netwerk voor de load balancer. 
+
+Het volgende diagram bevat de resources die u in deze quickstart hebt gemaakt:
 
 :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal.png" alt-text="Resources voor de Standard-load balancer die worden gemaakt voor de quickstart." border="false":::
 
@@ -190,7 +196,7 @@ $lbrule = @{
     FrontendIpConfiguration = $feip
     BackendAddressPool = $bePool
 }
-$rule = New-AzLoadBalancerRuleConfig @lbrule -EnableTcpReset -DisableOutboundSNAT
+$rule = New-AzLoadBalancerRuleConfig @lbrule -EnableTcpReset
 
 ## Create the load balancer resource. ##
 $loadbalancer = @{
@@ -206,8 +212,6 @@ $loadbalancer = @{
 New-AzLoadBalancer @loadbalancer
 
 ```
->[!NOTE]
->De virtuele machines in de back-end-pool hebben geen uitgaande internetverbinding met deze configuratie. </br> Voor meer informatie over het bieden van uitgaande connectiviteit raadpleegt u: </br> **[Uitgaande verbindingen in Azure](load-balancer-outbound-connections.md)**</br> Opties voor het bieden van connectiviteit: </br> **[Load balancer-configuratie voor alleen uitgaand verkeer](egress-only.md)** </br> **[Wat is Azure Virtual Network NAT?](../virtual-network/nat-overview.md)**
 
 ## <a name="create-virtual-machines---standard"></a>Virtuele machines maken - Standard
 
@@ -304,6 +308,12 @@ Id     Name            PSJobTypeName   State         HasMoreData     Location   
 
 >[!NOTE]
 >Voor productieworkloads wordt de load balancer uit de Standard SKU aanbevolen. Zie **[Azure Load Balancer-SKU's](skus.md)** voor meer informatie over SKU's.
+
+In deze sectie maakt u een load balancer die taken van virtuele machines verdeelt. 
+
+Wanneer u een interne load balancer maakt, wordt een virtueel netwerk geconfigureerd als netwerk voor de load balancer. 
+
+Het volgende diagram bevat de resources die u in deze quickstart hebt gemaakt:
 
 :::image type="content" source="./media/quickstart-load-balancer-standard-internal-portal/resources-diagram-internal-basic.png" alt-text="Resources voor de Basic-load balancer die worden gemaakt in de quickstart." border="false":::
 

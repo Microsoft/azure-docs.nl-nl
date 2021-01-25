@@ -8,12 +8,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 07/24/2020
 ms.author: banders
-ms.openlocfilehash: feb7be6ad5dbd0dfbd04b05836842d0476780d40
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
-ms.translationtype: HT
+ms.openlocfilehash: fb463d80e8cb980505df825d6f22d75f8a5c5f5a
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151533"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599199"
 ---
 # <a name="save-costs-for-azure-app-service-isolated-stamp-fee-with-reserved-capacity"></a>Bespaar op zegelkosten voor Azure App Service Isolated met gereserveerde capaciteit
 
@@ -48,7 +48,7 @@ U kunt gereserveerde capaciteit voor Isolated-zegels kopen in [Azure Portal](htt
 
 1. Ga naar [Azure Portal](https://portal.azure.com/#blade/Microsoft_Azure_Reservations/CreateBlade/referrer/documentation/filters/%7B%22reservedResourceType%22%3A%22AppService%22%7D).
 1. Selecteer een abonnement. Gebruik de lijst **Abonnementen** om het abonnement te kiezen dat wordt gebruikt om te betalen voor de gereserveerde capaciteit. Via de betalingswijze voor het abonnement worden de kosten voor de gereserveerde capaciteit in rekening gebracht. Het abonnementstype moet een Enterprise-overeenkomst zijn (nummers van aanbieding: MS-AZR-0017P of MS-AZR-0148P) of Betalen per gebruik (nummers van aanbieding: MS-AZR-0003P of MS-AZR-0023P) of een CSP-abonnement.
-    - Voor een Enterprise-abonnement worden de kosten in mindering gebracht op het toezeggingsbedrag of ze worden in rekening gebracht als overschrijding.
+    - Voor een Enterprise-abonnement worden de kosten in mindering gebracht op het saldo van Azure-vooruitbetaling (voorheen financiële toezegging) of in rekening gebracht als overschrijding.
     - Voor een Betalen per gebruik-abonnement worden de kosten in rekening gebracht op de creditcard of de factuurbetalingswijze van het abonnement.
 1. Selecteer een waarde voor **Bereik** om een abonnementsbereik te kiezen.
     - **Bereik van één resourcegroep**: de reserveringskorting wordt alleen toegepast op de overeenkomende resources in de geselecteerde resourcegroep.

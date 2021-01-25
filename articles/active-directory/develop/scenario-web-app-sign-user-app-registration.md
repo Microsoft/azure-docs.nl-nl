@@ -1,5 +1,6 @@
 ---
-title: Een web-app registreren die zich aanmeldt bij gebruikers-micro soft Identity platform | Azure
+title: Een web-app registreren die zich aanmeldt bij gebruikers | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het registreren van een web-app die wordt aangemeld bij gebruikers
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 07/14/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 7ca294d3d7764737d4e2be55aae25bc8ff08a8d1
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: b6240f88d309cbf4f26375c5f961d716b472755d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011523"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756276"
 ---
 # <a name="web-app-that-signs-in-users-app-registration"></a>Web-app die zich aanmeldt bij gebruikers: app-registratie
 
@@ -41,7 +42,7 @@ U kunt deze koppelingen gebruiken om het maken van uw webtoepassing te Boots tra
 > De te gebruiken Portal verschilt, afhankelijk van of uw toepassing wordt uitgevoerd in de Microsoft Azure open bare Cloud of in een nationale of soevereine Cloud. Zie [National Clouds](./authentication-national-cloud.md#app-registration-endpoints)(Engelstalig) voor meer informatie.
 
 
-1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">de <span class="docon docon-navigate-external x-hidden-focus"></span> Azure Portal</a>. 
+1. Meld u aan bij <a href="https://portal.azure.com/" target="_blank">Azure Portal<span class="docon docon-navigate-external x-hidden-focus"></span></a>. 
 1. Als u toegang hebt tot meerdere tenants, gebruikt u het filter **Directory + abonnement** :::image type="icon" source="./media/common/portal-directory-subscription-filter.png" border="false"::: in het bovenste menu om de tenant te selecteren waarin u een toepassing wilt registreren.
 1. Zoek en selecteer de optie **Azure Active Directory**.
 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.

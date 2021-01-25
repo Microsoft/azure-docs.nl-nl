@@ -3,18 +3,18 @@ title: Facturen voor Azure Enterprise-inschrijvingen
 description: In dit artikel wordt uitgelegd hoe u uw Azure Enterprise-factuur kunt beheren en erop kunt reageren.
 author: bandersmsft
 ms.author: banders
-ms.date: 12/09/2020
+ms.date: 01/19/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
 ms.custom: contperf-fy21q1
-ms.openlocfilehash: c64127f7ebbb416d9dfebb5e417cd27d51697665
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
-ms.translationtype: HT
+ms.openlocfilehash: 90ae9bdcee5f5f4c4281f2c3f931389b2ebf9486
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97030719"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98598073"
 ---
 # <a name="azure-enterprise-enrollment-invoices"></a>Facturen voor Azure Enterprise-inschrijvingen
 
@@ -238,7 +238,7 @@ Raadpleeg [Azure-services](https://azure.microsoft.com/services/) en [Azure-prij
 
 ### <a name="enterprise-agreement-units-of-measure"></a>Maateenheden voor Enterprise Agreement
 
-De maateenheden voor Enterprise Agreement zijn vaak anders dan in onze andere programma's, zoals MOSA (Microsoft Online Subscription Overeenkomst). Dit verschil betekent dat voor een aantal services de maateenheid wordt samengevoegd om de standaardprijzen te leveren. De maateenheid die wordt weergegeven in de weergave Gebruiksoverzicht van de Azure Enterprise-portal, is altijd de Enterprise-meting. Het Excel-bestand [Beschrijvende servicenamen](https://azurepricing.blob.core.windows.net/supplemental/Friendly_Service_Names.xlsx) biedt een volledige lijst met huidige maateenheden en conversies voor elke service.
+De maateenheden voor Enterprise Agreement zijn vaak anders dan in onze andere programma's, zoals MOSA (Microsoft Online Subscription Overeenkomst). Dit verschil betekent dat voor een aantal services de maateenheid wordt samengevoegd om de standaardprijzen te leveren. De maateenheid die wordt weergegeven in de weergave Gebruiksoverzicht van de Azure Enterprise-portal, is altijd de Enterprise-meting. Er wordt een volledige lijst met huidige maateenheden en conversies voor elke service aangeboden via een [ondersteuningsaanvraag](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade).
 
 ### <a name="conversion-between-usage-detail-report-and-the-usage-summary-page"></a>Conversie tussen het gebruiksgegevensrapport en de pagina gebruiksoverzicht
 
@@ -324,13 +324,6 @@ Als de wijziging van kanaalpartner (COCP) midden in de maand plaatsvindt, ontvan
 De facturen worden opgemaakt in de maand die volgt op de beëindiging van de factureringsperiode. Bij maandelijkse facturering wordt de factuur van september voor beide partners in oktober opgemaakt. Bij een factureringsperiode van een kwartaal of een jaar ontvangt de klant een factuur voor de eerder gekoppelde partner voor het gebruik in de bijbehorende periode, en is de rest voor de nieuwe partner op basis van het factureringsinterval.
 
 ## <a name="next-steps"></a>Volgende stappen
-
-- In de volgende Excel-bestanden ziet u details van Azure-services. Deze worden elke 6e en 20e dag van de maand bijgewerkt:
-
-   | Titel | Beschrijving | Bestandsnaam |
-   | --- | --- | --- |
-   | [Beschrijvende servicenamen](https://azurepricing.blob.core.windows.net/supplemental/Friendly_Service_Names.xlsx) | Hierin worden alle actieve services vermeld en omvat ook: <br>  <ul><li>servicecategorie</li>   <li>beschrijvende servicenamen</li>   <li>Vooruitbetalingsnaam en onderdeelnummer</li> <li>verbruiksnaam en onderdeelnummer</li>   <li>meeteenheid</li>   <li>conversiefactoren tussen gerapporteerd gebruik en weergegeven gebruik van de Enterprise-portal</li></ul> | Friendly\_Service\_Names.xlsx |
-   | [Service Download Fields](https://azurepricing.blob.core.windows.net/supplemental/Service_Download_Fields.xlsx) | Dit werk blad bevat een lijst met alle mogelijke combinaties van de velden die aan de service zijn gerelateerd in het rapport voor het downloaden van het gebruik. | Service\_Download\_Fields.xlsx |
 
 - Zie [Meer informatie over uw Azure Enterprise-factuur](../understand/review-enterprise-agreement-bill.md) voor informatie over uw factuur en kosten.
 - Zie [Aan de slag met Azure Enterprise-portal](ea-portal-get-started.md) om te beginnen met het gebruik van Azure Enterprise-portal.

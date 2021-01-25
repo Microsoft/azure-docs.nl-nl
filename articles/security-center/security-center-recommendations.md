@@ -11,24 +11,25 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/25/2020
+ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: 115d89783a849a9c4c7adb2fceceaf8d1575c785
-ms.sourcegitcommit: ab829133ee7f024f9364cd731e9b14edbe96b496
+ms.openlocfilehash: dbda0aecdadd81da0f7681a5fc9b140157d5e8f3
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/28/2020
-ms.locfileid: "97795977"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756814"
 ---
 # <a name="security-recommendations-in-azure-security-center"></a>Aanbevelingen voor beveiliging in Azure Security Center 
+
 In dit onderwerp wordt uitgelegd hoe u de aanbevelingen in Azure Security Center kunt bekijken en begrijpen om u te helpen uw Azure-resources te beveiligen.
 
 
 ## <a name="what-are-security-recommendations"></a>Wat zijn beveiligings aanbevelingen?
 
-Aanbevelingen zijn acties die u kunt uitvoeren om uw resources te beveiligen.
-
 Security Center analyseert periodiek de beveiligingsstatus van uw Azure-resources om mogelijke beveiligingsproblemen op te sporen. Vervolgens krijgt u aanbevelingen voor het oplossen van deze beveiligingsproblemen.
+
+Aanbevelingen zijn acties die u kunt uitvoeren om uw resources te beveiligen en te beschermen. 
 
 Elke aanbeveling biedt u het volgende:
 
@@ -36,13 +37,21 @@ Elke aanbeveling biedt u het volgende:
 - De herstel stappen die moeten worden uitgevoerd om de aanbeveling te implementeren
 - De betrokken resources
 
+## <a name="how-does-microsoft-decide-what-needs-securing-and-hardening"></a>Hoe beslist micro soft wat er nodig is om te beveiligen en te beschermen?
+
+De aanbevelingen van Security Center zijn gebaseerd op de beveiligings benchmark van Azure. 
+
+Azure Security Benchmark is de door Microsoft ontworpen, Azure-specifieke set richtlijnen voor best practices voor beveiliging en naleving op basis van algemene nalevingsframeworks. Dit algemeen gerespecteerde Bench Mark bouwt voort op de besturings elementen van het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging.
+
+Meer informatie over [Azure Security Benchmark](../security/benchmarks/introduction.md).
+
 ## <a name="monitor-recommendations"></a>Aanbevelingen controleren <a name="monitor-recommendations"></a>
 
 Security Center analyseert de beveiligings status van uw resources om mogelijke beveiligings problemen te identificeren. 
 
 1. Open in het menu van Security Center de pagina **aanbevelingen** om de aanbevelingen te zien die van toepassing zijn op uw omgeving. Aanbevelingen zijn onderverdeeld in beveiligings controles.
 
-    :::image type="content" source="./media/security-center-recommendations/view-recommendations.png" alt-text="Aanbevelingen gegroepeerd op beveiligings beheer" lightbox="./media/security-center-recommendations/view-recommendations.png":::
+    :::image type="content" source="./media/security-center-recommendations/view-recommendations.png" alt-text="Aanbevelingen gegroepeerd op beveiligingsbeheer" lightbox="./media/security-center-recommendations/view-recommendations.png":::
 
 1. Als u aanbevelingen wilt vinden die specifiek zijn voor het resource type, de ernst, de omgeving of andere criteria die belang rijk voor u zijn, gebruikt u de optionele filters boven de lijst met aanbevelingen.
 

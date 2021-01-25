@@ -7,12 +7,12 @@ ms.subservice: reservations
 ms.topic: how-to
 ms.date: 12/15/2020
 ms.author: banders
-ms.openlocfilehash: b0f17149eb646b6108dc6a81922e6e5b00f143d6
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
-ms.translationtype: HT
+ms.openlocfilehash: 045ab35a35aa4caefb1e1bcbbf7bf78b726c09f7
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97560539"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98601453"
 ---
 # <a name="self-service-exchanges-and-refunds-for-azure-reservations"></a>Selfserviceopties voor inruilen en retourneren voor Azure Reservations
 
@@ -47,7 +47,7 @@ Microsoft annuleert eerst de bestaande reservering en restitueert het aangepaste
 
 ### <a name="enterprise-agreement-customers"></a>Enterprise Agreement-klanten
 
-Geld wordt toegevoegd aan de financiële toezegging voor uitwisselingen en restituties als de oorspronkelijke aankoop hiermee is gedaan. Als de financiële toezeggingstermijn die gebruikmaakt van de reservering niet langer actief is, wordt tegoed toegevoegd aan uw huidige financiële toezeggingsperiode van de Enterprise Agreement. Het tegoed is 90 dagen vanaf de terugbetalingsdatum geldig. Ongebruikt tegoed verloopt na 90 dagen.
+Geld wordt toegevoegd aan de Azure-vooruitbetaling (voorheen financiële toezegging) voor uitwisselingen en restituties als de oorspronkelijke aankoop hiermee is gedaan. Als de Azure-vooruitbetalingstermijn die gebruikmaakt van de reservering niet langer actief is, wordt tegoed toegevoegd aan uw huidige Azure-vooruitbetalingstermijn van de Enterprise Agreement. Het tegoed is 90 dagen vanaf de terugbetalingsdatum geldig. Ongebruikt tegoed verloopt na 90 dagen.
 
 Als de oorspronkelijke aankoop is gedaan als een overschrijding, worden de oorspronkelijke factuur waarop de reservering is aangeschaft en alle latere facturen opnieuw geopend en opnieuw aangepast. Microsoft geeft een tegoednota uit voor de restituties.
 

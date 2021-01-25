@@ -1,5 +1,6 @@
 ---
-title: Een web-app die zich aanmeldt bij gebruikers verplaatsen naar productie-micro soft Identity-platform | Azure
+title: Web-app verplaatsen waarmee gebruikers zich aanmelden bij productie | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het bouwen van een web-app die wordt aangemeld bij gebruikers (verplaatsen naar productie)
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 09/17/2019
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: fd9890cb94bf6bb4b82ebbb585ab8bbb9d5ba46a
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: c7abad31c9936729b8d9c19ed2efcb841ac103ca
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96169287"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756234"
 ---
 # <a name="web-app-that-signs-in-users-move-to-production"></a>Web-app die zich aanmeldt bij gebruikers: verplaatsen naar productie
 
@@ -24,7 +25,7 @@ Nu u weet hoe u een token kunt ophalen om Web-Api's aan te roepen, lees dan hoe 
 
 [!INCLUDE [Move to production common steps](../../../includes/active-directory-develop-scenarios-production.md)]
 
-## <a name="troubleshooting"></a>Problemen oplossen
+## <a name="troubleshooting"></a>Probleemoplossing
 
 > [!NOTE]
 > Wanneer gebruikers zich voor de eerste keer aanmelden bij de webtoepassing, moeten ze toestemming geven. In sommige organisaties kunnen gebruikers echter een bericht zien als het volgende:

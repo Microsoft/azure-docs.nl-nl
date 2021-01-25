@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/11/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:aspnet-core
-ms.openlocfilehash: 34af3a7b6c3dd9420c07b6b29ff114b8139fea39
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: c20685c0c392ece68dc80b57afc6680f2efd9e35
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98011965"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754512"
 ---
 # <a name="quickstart-add-sign-in-with-microsoft-to-an-aspnet-core-web-app"></a>Quickstart: aanmelding met Microsoft toevoegen aan een ASP.NET Core-web-app
 
@@ -38,7 +38,7 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 >
 > ### <a name="option-1-register-and-auto-configure-your-app-and-then-download-your-code-sample"></a>Optie 1: registreer de toepassing en laat deze automatisch configureren. Download vervolgens het codevoorbeeld
 >
-> 1. Ga naar de [Azure-portal - App-registraties](https://aka.ms/aspnetcore2-1-aad-quickstart-v2).
+> 1. Ga naar de quickstart <a href="https://aka.ms/aspnetcore2-1-aad-quickstart-v2/" target="_blank">Azure Portal - App-registraties<span class="docon docon-navigate-external x-hidden-focus"></span></a>.
 > 1. Voer een naam in voor de toepassing en selecteer **Registreren**.
 > 1. Volg de instructies om de nieuwe toepassing met slechts één klik te downloaden en automatisch te configureren.
 >
@@ -52,11 +52,11 @@ Zie [Hoe het voorbeeld werkt](#how-the-sample-works) voor een illustratie.
 > 1. Zoek en selecteer de optie **Azure Active Directory**.
 > 1. Selecteer onder **Beheren** de optie **App-registraties** > **Nieuwe registratie**.
 > 1. Voer een **Naam** in voor de toepassing. Gebruikers van uw app kunnen de naam zien. U kunt deze later wijzigen.
-> 1. Voer een **Omleidings-URI** van `https://localhost:44321/` in
+> 1. Voer een **omleidings-URI** van in `https://localhost:44321/` .
 > 1. Selecteer **Registreren**.
 > 1. Selecteer **Verificatie** onder **Beheren**.
-> 1. Selecteer onder **Omleidings-URI's** **Toevoegen URI** en voer vervolgens `https://localhost:44321/signin-oidc` in
-> 1. Voer een **Logout-URL** van `https://localhost:44321/signout-oidc` in
+> 1. Selecteer onder **omleidings-uri's** de optie **URI toevoegen** en voer vervolgens in `https://localhost:44321/signin-oidc` .
+> 1. Voer een **Afmeldings-URL** van in `https://localhost:44321/signout-oidc` .
 > 1. Selecteer **id-tokens** onder **Impliciete toekenning**.
 > 1. Selecteer **Opslaan**.
 
@@ -148,7 +148,7 @@ De *Microsoft.AspNetCore.Authentication*-middleware maakt gebruik van een `Start
 
 Met de methode `AddAuthentication()` wordt de service geconfigureerd voor het toevoegen van verificatie op basis van cookies. Deze verificatie wordt gebruikt in browserscenario's en om vragen te sturen naar OpenID Connect.
 
-Met de regel die `.AddMicrosoftIdentityWebApp` bevat, wordt het Microsoft-identiteitsplatform toegevoegd aan uw toepassing. Deze wordt vervolgens geconfigureerd om u aan te melden met het Microsoft Identity platform-eindpunt op basis van de informatie in de sectie `AzureAD` van het bestand *appSettings.json* :
+Met de regel die `.AddMicrosoftIdentityWebApp` bevat, wordt het Microsoft-identiteitsplatform toegevoegd aan uw toepassing. Deze wordt vervolgens geconfigureerd om u aan te melden met het micro soft-identiteits platform op basis van de informatie in de `AzureAD` sectie van de *appsettings.jsin* het configuratie bestand:
 
 | Sleutel *appSettings.json* | Description                                                                                                                                                          |
 |------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------|

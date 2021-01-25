@@ -13,15 +13,15 @@ ms.date: 10/30/2019
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: 2b6266f308fce75f136aa4a2482c5b1be6eedb8e
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: c16eb2af5dfb103541c2eac207eb8ee5c303168f
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063362"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754719"
 ---
-# <a name="overview-of-the-microsoft-authentication-library-msal"></a>Overzicht van de micro soft Authentication Library (MSAL)
-Met de micro soft Authentication Library (MSAL) kunnen ontwikkel aars [tokens](developer-glossary.md#security-token) verkrijgen van het micro soft Identity platform-eind punt om gebruikers te verifiëren en beveiligde web-api's te gebruiken. Het kan worden gebruikt om veilige toegang te bieden tot Microsoft Graph, andere micro soft-Api's, Web-Api's van derden of uw eigen web-API. MSAL ondersteunt veel verschillende toepassings architecturen en platformen, waaronder .NET, java script, Java, Python, Android en iOS.
+# <a name="overview-of-the-microsoft-authentication-library-msal"></a>Overzicht van MSAL (Microsoft Authentication Library)
+Met de micro soft Authentication Library (MSAL) kunnen ontwikkel aars [tokens](developer-glossary.md#security-token) verkrijgen van het micro soft Identity-platform om gebruikers te verifiëren en beveiligde web-api's te gebruiken. Het kan worden gebruikt om veilige toegang te bieden tot Microsoft Graph, andere micro soft-Api's, Web-Api's van derden of uw eigen web-API. MSAL ondersteunt veel verschillende toepassings architecturen en platformen, waaronder .NET, java script, Java, Python, Android en iOS.
 
 MSAL biedt u een groot aantal manieren om tokens te verkrijgen, met een consistente API voor een aantal platforms. Het gebruik van MSAL biedt de volgende voor delen:
 
@@ -59,6 +59,6 @@ MSAL kan worden gebruikt in veel toepassings scenario's, waaronder de volgende:
 
 ## <a name="differences-between-adal-and-msal"></a>Verschillen tussen ADAL en MSAL
 
-Active Directory Authentication Library (ADAL) wordt geïntegreerd met het eind punt van Azure AD voor ontwikkel aars (v 1.0), waarbij MSAL integreert met het micro soft Identity platform (v 2.0)-eind punt. Het eind punt v 1.0 ondersteunt werk accounts, maar geen persoonlijke accounts. Het v 2.0-eind punt is het combineert van persoonlijke micro soft-accounts en werk accounts in één verificatie systeem. Daarnaast kunt u met MSAL ook verificaties voor Azure AD B2C ophalen.
+Active Directory Authentication Library (ADAL) is geïntegreerd met het eind punt van Azure AD voor ontwikkel aars (v 1.0), waarbij MSAL integreert met het micro soft Identity-platform. Het eind punt v 1.0 ondersteunt werk accounts, maar geen persoonlijke accounts. Het v 2.0-eind punt is het combineert van persoonlijke micro soft-accounts en werk accounts in één verificatie systeem. Daarnaast kunt u met MSAL ook verificaties voor Azure AD B2C ophalen.
 
 Lees voor meer informatie over [het migreren naar MSAL.net van ADAL.net](msal-net-migration.md) en [migratie naar MSAL.js vanuit ADAL.js](msal-compare-msal-js-and-adal-js.md).

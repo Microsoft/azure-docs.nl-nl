@@ -12,16 +12,16 @@ ms.workload: identity
 ms.date: 03/03/2020
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started
-ms.openlocfilehash: 383bdaebaa8a1795a9bfddb7da23e172aea111a0
-ms.sourcegitcommit: d6e92295e1f161a547da33999ad66c94cf334563
+ms.openlocfilehash: c441d8e9fa5a3375b1ec4cd3e68d92e92738261d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96762931"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755779"
 ---
 # <a name="authentication-flows-and-application-scenarios"></a>Verificatiestromen en app-scenario's
 
-Het micro soft Identity platform (v 2.0)-eind punt ondersteunt verificatie voor verschillende soorten architectuur van moderne toepassingen. Alle architecturen zijn gebaseerd op de industrie standaard protocollen [OAuth 2,0 en OpenID Connect Connect](active-directory-v2-protocols.md). Met behulp van de [verificatie bibliotheken voor het micro soft-identiteits platform](reference-v2-libraries.md)verifiëren toepassingen identiteiten en verkrijgen tokens voor toegang tot beveiligde api's.
+Het micro soft Identity-platform ondersteunt verificatie voor verschillende soorten moderne toepassings architecturen. Alle architecturen zijn gebaseerd op de industrie standaard protocollen [OAuth 2,0 en OpenID Connect Connect](active-directory-v2-protocols.md). Met behulp van de [verificatie bibliotheken voor het micro soft-identiteits platform](reference-v2-libraries.md)verifiëren toepassingen identiteiten en verkrijgen tokens voor toegang tot beveiligde api's.
 
 In dit artikel worden de verificatie stromen en de toepassings scenario's beschreven waarin ze worden gebruikt.
 
@@ -79,7 +79,7 @@ Zie [supported account types](v2-supported-account-types.md#account-type-support
 
 ## <a name="application-scenarios"></a>Toepassingsscenario's
 
-Het micro soft Identity platform-eind punt ondersteunt verificatie voor deze app-architecturen:
+Het micro soft Identity-platform ondersteunt verificatie voor deze app-architecturen:
 
 - Toepassingen met één pagina
 - Web-apps
@@ -95,7 +95,7 @@ Toepassingen gebruiken de verschillende verificatie stromen voor het aanmelden v
 
 Veel moderne web-apps zijn gebouwd als toepassingen met één pagina aan de client zijde. Deze toepassingen gebruiken Java script of een framework zoals hoek, vue en reageren. Deze toepassingen worden uitgevoerd in een webbrowser.
 
-Toepassingen met één pagina verschillen van traditionele web-apps aan de server zijde in termen van verificatie kenmerken. Door gebruik te maken van het micro soft-identiteits platform kunnen toepassingen met één pagina gebruikers aanmelden en tokens verkrijgen voor toegang tot back-end-services of Web-Api's. Micro soft Identity platform biedt twee toekennings typen voor Java script-toepassingen: 
+Toepassingen met één pagina verschillen van traditionele web-apps aan de server zijde in termen van verificatie kenmerken. Door gebruik te maken van het micro soft-identiteits platform kunnen toepassingen met één pagina gebruikers aanmelden en tokens verkrijgen voor toegang tot back-end-services of Web-Api's. Het micro soft Identity-platform biedt twee toekennings typen voor Java script-toepassingen: 
 
 | MSAL.js (2. x) | MSAL.js (1. x) |
 |---|---|
@@ -149,7 +149,7 @@ Net als bij een bureau blad-app roept een mobiele app de interactieve methoden v
 
 MSAL iOS en MSAL Android gebruiken standaard de systeem webbrowser. U kunt ze echter ook gebruiken om in plaats daarvan de Inge sloten webweergave in te richten. Er zijn specifieke kenmerken die afhankelijk zijn van het mobiele platform: Universeel Windows-platform (UWP), iOS of Android.
 
-In sommige scenario's, zoals die voor voorwaardelijke toegang tot een apparaat-ID of een apparaatregistratie, moet een Broker op het apparaat worden geïnstalleerd. Voor beelden van makelaars zijn micro soft Bedrijfsportal op Android en Microsoft Authenticator op Android en iOS. MSAL kan nu communiceren met brokers. Zie voor meer informatie over Brokers gebruikmaken [van makelaars op Android en IOS](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/leveraging-brokers-on-Android-and-iOS).
+In sommige scenario's, zoals die voor voorwaardelijke toegang tot een apparaat-ID of een apparaatregistratie, moet een Broker op het apparaat worden geïnstalleerd. Voor beelden van makelaars zijn micro soft bedrijfsportal op Android en Microsoft Authenticator op Android en iOS. MSAL kan nu communiceren met brokers. Zie voor meer informatie over Brokers gebruikmaken [van makelaars op Android en IOS](https://github.com/AzureAD/azure-activedirectory-library-for-dotnet/wiki/leveraging-brokers-on-Android-and-iOS).
 
 Zie voor meer informatie [mobiele app die web-api's aanroept](scenario-mobile-overview.md).
 
@@ -160,7 +160,7 @@ Zie voor meer informatie [mobiele app die web-api's aanroept](scenario-mobile-ov
 
 ### <a name="protected-web-api"></a>Beveiligde web-API
 
-U kunt het micro soft Identity platform-eind punt gebruiken om webservices te beveiligen, zoals de REST Web-API van uw app. Een beveiligde web-API wordt aangeroepen via een toegangs token. Het token helpt de gegevens van de API te beveiligen en inkomende aanvragen te verifiëren. De aanroeper van een web-API voegt een toegangs token toe in de autorisatie-header van een HTTP-aanvraag.
+U kunt het micro soft-identiteits platform gebruiken om webservices te beveiligen, zoals de REST Web-API van uw app. Een beveiligde web-API wordt aangeroepen via een toegangs token. Het token helpt de gegevens van de API te beveiligen en inkomende aanvragen te verifiëren. De aanroeper van een web-API voegt een toegangs token toe in de autorisatie-header van een HTTP-aanvraag.
 
 Als u uw ASP.NET of ASP.NET Core Web-API wilt beveiligen, moet u het toegangs token valideren. Voor deze validatie gebruikt u de ASP.NET JWT-middleware. De validatie wordt uitgevoerd door de [Identity model-uitbrei dingen voor de .net](https://github.com/AzureAD/azure-activedirectory-identitymodel-extensions-for-dotnet/wiki) -bibliotheek en niet door MSAL.net.
 

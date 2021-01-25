@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
-ms.openlocfilehash: 0c4299bc41a656fd678c14d63ae1d4987dba327b
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: a4838dd6e8f9f4959fc1e4d0dc8dbc2218a30f30
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060636"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755477"
 ---
 # <a name="understand-metrics-for-azure-spring-cloud"></a>Informatie over metrische gegevens voor Azure lente-Cloud
 
@@ -89,16 +89,17 @@ In de volgende tabellen worden de beschik bare metrische gegevens en details wee
 
 ### <a name="error"></a>Fout
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|----|----|----|------------|
 >| Tomcat. Global. error | Tomcat. Global. error | Count | Aantal fouten dat is opgetreden in verwerkte aanvragen |
 
 ### <a name="performance"></a>Prestaties
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|----|----|----|------------|
->| System. CPU. Usage | System. CPU. Usage | Percentage | Recent CPU-gebruik voor het hele systeem. Deze waarde is een double in het interval van [0,0, 1,0]. Een waarde van 0,0 betekent dat alle Cpu's inactief zijn geweest tijdens de meest recente periode, terwijl een waarde van 1,0 betekent dat alle Cpu's op dit moment 100% van de tijd actief werden tijdens de meest recente periode.|
->| proces. CPU. Usage | CPU-gebruiks percentage van app | Percentage | Recent CPU-gebruik voor het Java Virtual Machine proces. Deze waarde is een double in het interval van [0,0, 1,0]. Een waarde van 0,0 betekent dat geen van de Cpu's threads uit het JVM-proces heeft uitgevoerd gedurende de recent gebruikte periode, terwijl een waarde van 1,0 betekent dat alle Cpu's actief threads van de JVM 100% van de tijd tijdens de laatste periode hebben uitgevoerd. Threads van de JVM bevatten de Application threads en de JVM interne threads.|
+>| System. CPU. Usage | System. CPU. Usage | Percentage | Recent CPU-gebruik voor het hele systeem (verouderd en wordt niet meer gebruikt). Deze waarde is een double in het interval van [0,0, 1,0]. Een waarde van 0,0 betekent dat alle Cpu's inactief zijn geweest tijdens de meest recente periode, terwijl een waarde van 1,0 betekent dat alle Cpu's op dit moment 100% van de tijd actief werden tijdens de meest recente periode.|
+>| proces. CPU. Usage | CPU-gebruiks percentage van app | Percentage | Recent CPU-gebruik voor het Java Virtual Machine proces (verouderd en wordt niet meer gebruikt). Deze waarde is een double in het interval van [0,0, 1,0]. Een waarde van 0,0 betekent dat geen van de Cpu's threads uit het JVM-proces heeft uitgevoerd gedurende de recent gebruikte periode, terwijl een waarde van 1,0 betekent dat alle Cpu's actief threads van de JVM 100% van de tijd tijdens de laatste periode hebben uitgevoerd. Threads van de JVM bevatten de Application threads en de JVM interne threads.|
+>| AppCpuUsage | CPU-gebruik van de app (preview-versie) | Percentage | Recent CPU-gebruik van het JVM-proces voor de CPU die is toegewezen aan deze app, double type waarde tussen [0,0, 1.0]. Een waarde van 0,0 betekent dat geen van de Cpu's threads uit het JVM-proces heeft uitgevoerd gedurende de recent gebruikte periode, terwijl een waarde van 1,0 betekent dat alle Cpu's actief threads van de JVM 100% van de tijd tijdens de laatste periode hebben uitgevoerd. Threads van de JVM bevatten de Application threads en de JVM interne threads.|
 >| JVM. Memory. committed | JVM. Memory. committed | Bytes | Vertegenwoordigt de hoeveelheid geheugen die gegarandeerd beschikbaar is voor gebruik door de JVM. De JVM kan geheugen vrijgeven aan het systeem en de toegewezen kan minder zijn dan init. doorgevoerd is altijd groter dan of gelijk aan het gebruik. |
 >| JVM. Memory. used | JVM. Memory. used | Bytes | Vertegenwoordigt de hoeveelheid geheugen die momenteel wordt gebruikt in bytes. |
 >| JVM. Memory. Max | JVM. Memory. Max | Bytes | Hiermee wordt de maximale hoeveelheid geheugen aangegeven die kan worden gebruikt voor geheugen beheer. De hoeveelheid gebruikt en toegewezen geheugen is altijd kleiner dan of gelijk aan maximum als maximum is gedefinieerd. Een geheugen toewijzing kan mislukken als er wordt geprobeerd het gebruikte geheugen te verg Roten, zoals het gebruik van > vastgelegd, zelfs als dit wordt gebruikt <= Max zou wel waar zijn (bijvoorbeeld wanneer het systeem weinig virtueel geheugen heeft). |
@@ -112,7 +113,7 @@ In de volgende tabellen worden de beschik bare metrische gegevens en details wee
 ### <a name="performance-net"></a>Prestaties (.NET)
 
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|------|-----------------------------|------|---------|
 >| CPU-gebruik       | CPU-gebruik      | Percentage      | Het percentage van het CPU-gebruik van het proces ten opzichte van alle systeem-CPU-resources [0-100]. |
 >| Werkset     | Working-set    | Mega bytes    | De hoeveelheid werkset die door het proces wordt gebruikt. |
@@ -137,7 +138,7 @@ Zie voor meer informatie [DotNet-tellers](/dotnet/core/diagnostics/dotnet-counte
 
 ### <a name="request"></a>Aanvraag
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|----|----|----|------------|
 >| Tomcat. Global. sent | Tomcat. Global. sent | Bytes | De hoeveelheid gegevens die Tomcat webserver heeft verzonden |
 >| Tomcat. Global. ontvangen | Tomcat. Global. ontvangen | Bytes | De hoeveelheid gegevens die Tomcat webserver heeft ontvangen |
@@ -147,7 +148,7 @@ Zie voor meer informatie [DotNet-tellers](/dotnet/core/diagnostics/dotnet-counte
 ### <a name="request-net"></a>Aanvraag (.NET)
 
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|------|-----------------------------|------|---------|
 >| Aanvragen per seconde | aanvragen per seconde | Count | Aanvraag frequentie. |
 >| Totaal aantal aanvragen | Totaal-aanvragen | Count | Totaal aantal aanvragen. |
@@ -158,7 +159,7 @@ Zie voor meer informatie [DotNet-tellers](/dotnet/core/diagnostics/dotnet-counte
 
 ### <a name="session"></a>Sessie
 >[!div class="mx-tdCol2BreakAll"]
->| Naam | Naam van bron van Lente aandrijving | Eenheid | Details |
+>| Name | Naam van bron van Lente aandrijving | Eenheid | Details |
 >|----|----|----|------------|
 >| Tomcat. Sessions. Active. Max | Tomcat. Sessions. Active. Max | Count | Het maximum aantal sessies dat tegelijkertijd actief is geweest |
 >| Tomcat. Sessions. Alive. Max | Tomcat. Sessions. Alive. Max | Milliseconden | Langste tijd (in seconden) dat een verlopen sessie actief was |

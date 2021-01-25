@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: adwise
-ms.openlocfilehash: c59bd7f9bc8c5049572afdf93343222b30c0007b
-ms.sourcegitcommit: 33368ca1684106cb0e215e3280b828b54f7e73e8
-ms.translationtype: HT
+ms.openlocfilehash: d1546ef92d923b9d72c4aca0ddf61d2b93646656
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/16/2020
-ms.locfileid: "92131901"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602348"
 ---
 # <a name="use-cost-alerts-to-monitor-usage-and-spending"></a>Kostenwaarschuwingen gebruiken om gebruik en uitgaven te controleren
 
@@ -29,7 +29,7 @@ U kunt de Budget-API gebruiken om e-mailmeldingen in een andere taal te verzende
 
 ## <a name="credit-alerts"></a>Tegoedwaarschuwingen
 
-Met tegoedwaarschuwingen wordt u op de hoogte gebracht wanneer de financiële toezeggingen voor uw Azure-tegoed zijn verbruikt. Financiële toezeggingen worden gebruikt voor organisaties met een Enterprise Overeenkomst. Tegoedwaarschuwingen worden automatisch gegenereerd bij 90% en 100% van het saldo voor uw Azure-tegoed. Wanneer er een waarschuwing wordt gegenereerd, wordt deze weergegeven in de kostenmeldingen en in het e-mailbericht dat naar de eigenaren van het account wordt verzonden.
+Met tegoedwaarschuwingen wordt u op de hoogte gesteld van het verbruik van uw Azure-vooruitbetaling (voorheen financiële toezegging). Azure-vooruitbetaling is voor organisaties met een Enterprise Agreement. Tegoedwaarschuwingen worden automatisch gegenereerd bij 90% en 100% van uw Azure-vooruitbetalingstegoed. Wanneer er een waarschuwing wordt gegenereerd, wordt deze weergegeven in de kostenmeldingen en in het e-mailbericht dat naar de eigenaren van het account wordt verzonden.
 
 ## <a name="department-spending-quota-alerts"></a>Waarschuwingen voor bestedingsquota van afdelingen
 

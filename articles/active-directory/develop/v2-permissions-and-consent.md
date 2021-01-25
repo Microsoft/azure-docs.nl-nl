@@ -12,16 +12,16 @@ ms.date: 09/23/2020
 ms.author: ryanwi
 ms.reviewer: hirsin, jesakowi, jmprieur, marsma
 ms.custom: aaddev, fasttrack-edit, contperf-fy21q1, identityplatformtop40
-ms.openlocfilehash: 35499810ae13a8ddc5b7bb6306deafef0ef24e0f
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: aa8c00d1ee2a0dc3d019cc75b4e411ede984e74a
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98246788"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756051"
 ---
-# <a name="permissions-and-consent-in-the-microsoft-identity-platform-endpoint"></a>Machtigingen en toestemming in het eindpunt van het Microsoft-identiteitsplatform
+# <a name="permissions-and-consent-in-the-microsoft-identity-platform"></a>Machtigingen en toestemming in het micro soft Identity-platform
 
-Toepassingen die zijn geïntegreerd met het Microsoft Identity Platform volgen een autorisatiemodel dat gebruikers en beheerders controle geeft over de toegang tot gegevens. De implementatie van het autorisatie model is bijgewerkt op het micro soft Identity platform-eind punt. Het wijzigt hoe een app moet communiceren met het micro soft Identity-platform. In dit artikel worden de basis concepten van dit autorisatie model beschreven, met inbegrip van scopes, machtigingen en toestemming.
+Toepassingen die zijn geïntegreerd met het micro soft Identity platform, volgen een autorisatie model waarmee gebruikers en beheerders kunnen bepalen hoe gegevens toegankelijk zijn. De implementatie van het autorisatie model is bijgewerkt op het micro soft Identity-platform. Het wijzigt hoe een app moet communiceren met het micro soft Identity-platform. In dit artikel worden de basis concepten van dit autorisatie model beschreven, met inbegrip van scopes, machtigingen en toestemming.
 
 ## <a name="scopes-and-permissions"></a>Bereiken en machtigingen
 
@@ -53,7 +53,7 @@ Een app vraagt meestal deze machtigingen door de scopes op te geven in aanvragen
 
 ## <a name="permission-types"></a>Machtigings typen
 
-Micro soft Identity platform ondersteunt twee typen machtigingen: *gedelegeerde machtigingen* en *toepassings machtigingen*.
+Het micro soft Identity-platform ondersteunt twee typen machtigingen: *gedelegeerde machtigingen* en *toepassings machtigingen*.
 
 * **Gedelegeerde machtigingen** worden gebruikt door apps waarvoor een aangemelde gebruiker aanwezig is. Voor deze apps wordt de gebruiker of een beheerder gemachtigd om de machtigingen te ontvangen die door de app worden aangevraagd. De app is gemachtigd om te fungeren als de aangemelde gebruiker bij het aanroepen van de doel resource. 
 
@@ -128,7 +128,7 @@ https%3A%2F%2Fgraph.microsoft.com%2Fmail.send
 
 De `scope` para meter is een door spaties gescheiden lijst met gedelegeerde machtigingen die de app aanvraagt. Elke machtiging wordt aangegeven door de machtigings waarde toe te voegen aan de id van de resource (de URI van de toepassings-ID). In het voor beeld van de aanvraag moet de app toestemming hebben om de agenda van de gebruiker te lezen en e-mail te verzenden als de gebruiker.
 
-Nadat de gebruiker zijn of haar referenties heeft ingevoerd, controleert het micro soft Identity platform-eind punt een overeenkomende record van de toestemming van de *gebruiker*. Als de gebruiker in het verleden niet heeft ingestemd met een van de aangevraagde machtigingen en als de beheerder geen toestemming heeft gegeven namens de hele organisatie, wordt de gebruiker door het micro soft Identity platform-eind punt gevraagd om de aangevraagde machtigingen te verlenen.
+Nadat de gebruiker zijn of haar referenties heeft ingevoerd, controleert het micro soft Identity-platform op een overeenkomende record van de toestemming van de *gebruiker*. Als de gebruiker in het verleden niet heeft ingestemd met een van de aangevraagde machtigingen en als de beheerder geen toestemming heeft gegeven namens de hele organisatie, vraagt het micro soft Identity-platform de gebruiker de aangevraagde machtigingen te verlenen.
 
 Op dit moment wordt de machtiging `offline_access` (' toegang tot de gegevens die u hebt gegeven, behouden ') en `user.read` (' aanmelden en uw profiel lezen ') automatisch opgenomen in de eerste toestemming voor een toepassing.  Deze machtigingen zijn over het algemeen vereist voor de juiste app-functionaliteit. De `offline_access` machtiging geeft de app toegang tot het vernieuwen van tokens die essentieel zijn voor systeem eigen apps en web-apps. `user.read`Met de machtiging krijgt u toegang tot de `sub` claim. De client of app kan de gebruiker na verloop van tijd op de juiste wijze identificeren en elementaire-gebruikers gegevens openen.
 
@@ -164,7 +164,7 @@ Als de toepassing toepassings machtigingen aanvraagt en een beheerder deze macht
 
 Nadat u het beheerders toestemming-eind punt hebt gebruikt om beheerders toestemming te verlenen, bent u klaar. Gebruikers hoeven geen verdere actie te ondernemen. Nadat de beheerder toestemming heeft gegeven, kunnen gebruikers een toegangs token verkrijgen via een typische verificatie stroom. Het resulterende toegangs token heeft de toegestane machtigingen.
 
-Wanneer een bedrijfs beheerder uw toepassing gebruikt en wordt omgeleid naar het toestemming eind punt, detecteert micro soft Identity platform de rol van de gebruiker. Er wordt gevraagd of de beheerder van het bedrijf wil akkoord namens de volledige Tenant voor de aangevraagde machtigingen. U kunt in plaats daarvan een speciaal beheerders toestemming-eind punt gebruiken om een beheerder te vragen om toestemming te verlenen namens de hele Tenant. Dit eind punt is ook nodig voor het aanvragen van toepassings machtigingen. Toepassings machtigingen kunnen niet worden aangevraagd met behulp van het toestaan van het eind punt.
+Wanneer een bedrijfs beheerder uw toepassing gebruikt en wordt omgeleid naar het toestemming eind punt, detecteert het micro soft Identity-platform de rol van de gebruiker. Er wordt gevraagd of de beheerder van het bedrijf wil akkoord namens de volledige Tenant voor de aangevraagde machtigingen. U kunt in plaats daarvan een speciaal beheerders toestemming-eind punt gebruiken om een beheerder te vragen om toestemming te verlenen namens de hele Tenant. Dit eind punt is ook nodig voor het aanvragen van toepassings machtigingen. Toepassings machtigingen kunnen niet worden aangevraagd met behulp van het toestaan van het eind punt.
 
 Als u deze stappen volgt, kan uw app machtigingen aanvragen voor alle gebruikers in een Tenant, met inbegrip van beheerders beperkte bereiken. Deze bewerking is een hoge bevoegdheid. Gebruik de bewerking alleen als dat nodig is voor uw scenario.
 
@@ -335,7 +335,7 @@ response_type=token            //Code or a hybrid flow is also possible here
 
 Dit code voorbeeld produceert een toestemmings pagina voor alle geregistreerde machtigingen als de voor gaande beschrijvingen van toestemming en van `/.default` toepassing zijn op het scenario. Vervolgens retourneert de code een `id_token` , in plaats van een toegangs token.  
 
-Dit gedrag geldt voor enkele verouderde clients die worden verplaatst van Azure AD Authentication Library (ADAL) naar micro soft Authentication Library (MSAL). Dit installatie programma *mag* niet worden gebruikt door nieuwe clients die gericht zijn op het micro soft Identity platform-eind punt.
+Dit gedrag geldt voor enkele verouderde clients die worden verplaatst van Azure AD Authentication Library (ADAL) naar de micro soft Authentication Library (MSAL). Dit installatie programma *mag* niet worden gebruikt door nieuwe clients die gericht zijn op het micro soft Identity-platform.
 
 ### <a name="client-credentials-grant-flow-and-default"></a>Client referenties geven stroom en/.default  
 
@@ -357,5 +357,5 @@ Zie [onverwachte fout bij het uitvoeren van een aanvraag voor een toepassing](..
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [ID-tokens in micro soft Identity platform](id-tokens.md)
+* [ID-tokens in het micro soft Identity-platform](id-tokens.md)
 * [Toegangs tokens in het micro soft Identity-platform](access-tokens.md)

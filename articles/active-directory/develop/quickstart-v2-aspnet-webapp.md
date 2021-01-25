@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: devx-track-csharp, aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET, contperf-fy21q1
-ms.openlocfilehash: dbddf35b0aa1494ef719803fa84cafae04f3ec50
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: e2a71313294457e09e2bb152dea98c84b7730236
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178581"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754402"
 ---
 # <a name="quickstart-add-microsoft-identity-platform-sign-in-to-an-aspnet-web-app"></a>Quickstart: Aanmelding voor Microsoft Identity Platform toevoegen aan een ASP.NET-web-app
 
@@ -169,7 +169,7 @@ public void Configuration(IAppBuilder app)
 > |---------|---------|
 > | `ClientId`     | Toepassings-id van de toepassing die is geregistreerd in Azure Portal |
 > | `Authority`    | Het STS-eindpunt voor de gebruiker voor verificatie. Meestal `https://login.microsoftonline.com/{tenant}/v2.0` voor openbare cloud, waarbij {tenant} de naam is van uw tenant, uw tenant-id of *common* voor een verwijzing naar het algemene eindpunt (gebruikt voor toepassingen met meerdere tenants) |
-> | `RedirectUri`  | URL waar gebruikers naartoe worden gestuurd na verificatie bij Microsoft Identity Platform-eindpunt |
+> | `RedirectUri`  | URL waar gebruikers na verificatie worden verzonden op het micro soft Identity-platform |
 > | `PostLogoutRedirectUri`     | URL waar gebruikers naartoe worden gestuurd na afmelding |
 > | `Scope`     | De lijst met bereiken die wordt aangevraagd, gescheiden door spaties |
 > | `ResponseType`     | Aanvragen dat het antwoord van de verificatie een id-token bevat |

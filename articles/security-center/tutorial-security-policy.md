@@ -12,14 +12,14 @@ ms.topic: conceptual
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/04/2019
+ms.date: 01/24/2021
 ms.author: memildin
-ms.openlocfilehash: 88af554faab9479a402dd393b0a7eed0835ce59e
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: 7ea871428fffe685cc9d43dd698bfefb8d8a511a
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814343"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756683"
 ---
 # <a name="manage-security-policies"></a>Beveiligingsbeleid beheren
 
@@ -33,7 +33,7 @@ Azure Security Center worden de beveiligings aanbevelingen gebaseerd op uw gekoz
 
 Security Center biedt de volgende opties voor het werken met beveiligings beleid:
 
-* **Het ingebouwde standaard beleid weer geven en bewerken** : wanneer u Security Center inschakelt, wordt er automatisch een ingebouwd initiatief met de naam ' ASC default ' toegewezen aan alle Security Center geregistreerde abonnementen. Als u dit initiatief wilt aanpassen, kunt u afzonderlijk beleids regels in-of uitschakelen. Bekijk de lijst met [ingebouwde beveiligings beleidsregels](./policy-reference.md) om inzicht te krijgen in de beschik bare opties.
+* **Het ingebouwde standaard beleid weer geven en bewerken** : wanneer u Security Center inschakelt, wordt de initiatief naam ' Azure Security Bench Mark ' automatisch toegewezen aan alle Security Center geregistreerde abonnementen. Als u dit initiatief wilt aanpassen, kunt u afzonderlijk beleids regels in-of uitschakelen. Bekijk de lijst met [ingebouwde beveiligings beleidsregels](./policy-reference.md) om inzicht te krijgen in de beschik bare opties.
 
 * **Uw eigen aangepaste beleids regels toevoegen** : als u de beveiligings initiatieven wilt aanpassen die op uw abonnement zijn toegepast, kunt u dit doen in Security Center. U ontvangt dan aanbevelingen als uw computers niet voldoen aan het beleid dat u maakt. Zie [aangepaste beveiligings beleidsregels gebruiken](custom-security-policies.md)voor instructies voor het maken en toewijzen van aangepaste beleids regels.
 

@@ -3,18 +3,18 @@ title: Aan de slag met Azure Cost Management voor partners
 description: In dit artikel wordt uitgelegd hoe partners Azure Cost Management-functies gebruiken en hoe ze toegang tot Cost Management voor hun klanten mogelijk maken.
 author: bandersmsft
 ms.author: banders
-ms.date: 11/16/2020
+ms.date: 01/19/2021
 ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: cost-management
 ms.reviewer: aparnag
 ms.custom: secdec18
-ms.openlocfilehash: cd3ca4d3ddf73469cd1f1fc065eccb369cf765af
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-ms.translationtype: HT
+ms.openlocfilehash: 8a04cb2c590bc4f0104a93ac7c7c2cf7b71a4662
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905671"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602171"
 ---
 # <a name="get-started-with-azure-cost-management-for-partners"></a>Aan de slag met Azure Cost Management voor partners
 
@@ -71,9 +71,9 @@ Nadat u uw klanten hebt voorbereid op een Microsoft-klantovereenkomst, zijn de v
 
 Gebruik het bereik van de factureringsrekening om kosten vóór belastingen voor al uw klanten en factureringsprofielen weer te geven. Factuurkosten worden alleen weergegeven voor producten op basis van verbruik op de Microsoft-klantovereenkomst. Factuurkosten worden echter weergegeven voor op aankopen gebaseerde producten voor klanten op zowel de Microsoft-klantovereenkomst als de CSP-aanbieding. Op dit moment is de standaardvaluta voor het weergeven van de kosten in het bereik Amerikaanse dollars. Budgetten die zijn ingesteld voor het bereik, zijn ook in USD.
 
-In het kader van verschillende klant-gefactureerde valuta's gebruiken partners het bereik van factureringsrekeningen om budgetten in te stellen en kosten in USD te beheren voor hun klanten, abonnementen, resources en resourcegroepen.
+In het kader van verschillende gefactureerde valuta's gebruiken partners het bereik van factureringsrekeningen om budgetten in te stellen en kosten in USD te beheren voor hun klanten, abonnementen, resources en resourcegroepen.
 
-Partners filteren ook kosten in een specifieke factuurvaluta voor klanten in de weergave voor kostenanalyse. Selecteer de lijst met **Werkelijke kosten** om de kosten in de ondersteunde factureringsvaluta van de klant weer te geven.
+Partners filteren ook kosten in een specifieke factuurvaluta voor klanten in de weergave voor kostenanalyse. Selecteer de lijst met **Werkelijke kosten** om de kosten in de ondersteunde factureringsvaluta's weer te geven.
 
 ![Voorbeeld van de werkelijke kostenselectie voor valuta's](./media/get-started-partners/actual-cost-selector.png)
 
@@ -83,7 +83,7 @@ Gebruik de weergave [Afgeschreven kosten](quick-acm-cost-analysis.md#customize-c
 
 Gebruik het bereik van het factureringsprofiel om de kosten vóór belasting in de factureringsvaluta voor al uw klanten te bekijken voor alle producten en abonnementen die in een factuur zijn opgenomen. U kunt de kosten in een factureringsprofiel voor een specifieke factuur filteren met behulp van het filter **InvoiceID**. Het filter toont het verbruik en de aanschafkosten van het product voor een specifieke factuur. U kunt ook de kosten voor een specifieke klant op de factuur filteren om de kosten vóór belasting te bekijken.
 
-Nadat u klanten voorbereidt op een Microsoft-klantovereenkomst, ontvangt u een factuur met alle kosten voor alle producten (verbruik, aankopen en rechten) voor deze klanten op de Microsoft-klantovereenkomst. Wanneer in dezelfde valuta wordt gefactureerd, omvatten deze facturen ook de kosten voor rechten en aangeschafte producten zoals SaaS, Azure Marketplace en reserveringen voor klanten die zich nog in de CSP-aanbieding bevinden.
+Nadat u klanten voorbereidt op een Microsoft-klantovereenkomst, ontvangt u een factuur met alle kosten voor alle producten (verbruik, aankopen en rechten) voor deze klanten op de Microsoft-klantovereenkomst. Wanneer in dezelfde valuta wordt gefactureerd, omvatten deze facturen ook de kosten voor rechten en aangeschafte producten zoals SaaS, Azure Marketplace en reserveringen voor klanten die zich nog in de klassieke CSP-aanbieding van het Azure-plan bevinden.
 
 Voor het afstemmen van de kosten voor de klantfactuur kunt u met het bereik van het factureringsprofiel alle kosten bekijken die opgeteld worden voor een factuur voor uw klanten. Net als bij de factuur toont het bereik de kosten voor elke klant in de nieuwe Microsoft-klantovereenkomst. In het bereik worden ook de kosten van producten voor klantrechten weergegeven die nog in de huidige CSP-aanbieding zijn opgenomen.
 
@@ -91,7 +91,7 @@ De bereiken van het factureringsprofiel en de factureringsrekening zijn de enige
 
 In factureringsprofielen worden de abonnementen gedefinieerd die zijn opgenomen in een factuur. Factureringsprofielen zijn het functionele equivalent van een Enterprise Agreement-inschrijving. Een factureringsprofiel is het bereik waarin facturen worden gegenereerd.
 
-Op dit moment is de factureringsvaluta van de klant de standaardvaluta bij het weergeven van de kosten in het bereik van het factureringsprofiel. Budgetten die zijn ingesteld op het bereik van het factureringsprofiel, worden in de factureringsvaluta opgenomen.
+Op dit moment is de factureringsvaluta de standaardvaluta bij het weergeven van de kosten in het bereik van het factureringsprofiel. Budgetten die zijn ingesteld op het bereik van het factureringsprofiel, worden in de factureringsvaluta opgenomen.
 
 Partners kunnen het bereik gebruiken voor het afstemmen op facturen. En ze gebruiken het bereik om budgetten in te stellen in de factureringsvaluta voor de volgende items:
 
@@ -220,7 +220,7 @@ De volgende gegevensvelden zijn te vinden in detailbestanden voor gebruik en Cos
 | Aantal | Gemeten hoeveelheid die is gekocht of verbruikt. De hoeveelheid van de meter die wordt gebruikt tijdens de factureringsperiode. | Aantal eenheden. Zorg ervoor dat deze overeenkomt met de informatie in uw factureringssysteem tijdens het afstemmen. |
 | unitOfMeasure | Hiermee wordt de eenheid geïdentificeerd waarin de service wordt gefactureerd. Bijvoorbeeld GB en uren. | Hiermee wordt de eenheid geïdentificeerd waarin de service wordt gefactureerd. Bijvoorbeeld GB, uren of per 10.000. |
 | pricingCurrency | De valuta waarin de eenheidsprijs wordt gedefinieerd. | De valuta in de prijslijst.|
-| billingCurrency | De valuta waarin de gefactureerde kosten worden gedefinieerd. | De valuta van de geografische regio van de klant. |
+| billingCurrency | De valuta waarin de gefactureerde kosten worden gedefinieerd. | De valuta die is gedefinieerd als de gefactureerde valuta op de factuur. |
 | chargeType | Definieert het type kosten dat de kosten vertegenwoordigen in Azure Cost Management, zoals aankoop en terugbetaling. | Het type kosten of correctie. Niet beschikbaar voor huidige activiteit. |
 | costinBillingCurrency | ExtendedCost of overvloeikosten vóór belasting in de gefactureerde valuta. | N.v.t. |
 | costinPricingCurrency | Berekende kosten of overvloeikosten vóór belasting in de prijsvaluta om te correleren met prijzen. | N.v.t. |

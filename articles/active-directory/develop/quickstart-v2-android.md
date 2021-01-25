@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 10/15/2019
 ms.author: marsma
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:Android
-ms.openlocfilehash: f5909a3a824149d9bb4247c78eaaa895b040c6f2
-ms.sourcegitcommit: 1bf144dc5d7c496c4abeb95fc2f473cfa0bbed43
-ms.translationtype: HT
+ms.openlocfilehash: 42a054f211d2509dee4e9e55eeb3ea82fa46da9d
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95993972"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754583"
 ---
 # <a name="quickstart-sign-in-users-and-call-the-microsoft-graph-api-from-an-android-app"></a>Snelstart: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een Android-app
 

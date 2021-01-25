@@ -1,5 +1,6 @@
 ---
-title: Een web-API bouwen die web-Api's aanroept-micro soft Identity-platform | Azure
+title: Een web-API bouwen die web-Api's aanroept | Azure
+titleSuffix: Microsoft identity platform
 description: Meer informatie over het bouwen van een web-API die downstream Web-Api's (overzicht) aanroept.
 services: active-directory
 author: jmprieur
@@ -11,12 +12,12 @@ ms.workload: identity
 ms.date: 05/07/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: ee9d879849a94ac255a0967ad4fbc762417f8cd4
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: a66f0a2de1d8239baffbe53dfb5d6f2dd275d448
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442647"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756336"
 ---
 # <a name="scenario-a-web-api-that-calls-web-apis"></a>Scenario: een web-API die web-Api's aanroept
 

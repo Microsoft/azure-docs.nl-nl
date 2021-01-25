@@ -5,15 +5,15 @@ author: RonyMSFT
 ms.service: synapse-analytics
 ms.topic: overview
 ms.subservice: security
-ms.date: 04/15/2020
+ms.date: 01/18/2021
 ms.author: ronytho
 ms.reviewer: jrasnick
-ms.openlocfilehash: 949b7e55569cc6fceacc37677ed06a28bb85d7c2
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: f55251932c8aa8f632bd3b498943ac722f006dee
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98116361"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569900"
 ---
 # <a name="azure-synapse-analytics-managed-virtual-network"></a>Beheerd virtueel netwerk in Azure Synapse Analytics
 
@@ -52,8 +52,21 @@ Als u het selectievakje uitgeschakeld laat, wordt er geen virtueel netwerk gekop
 
 ![Een beheerd, aan werkruimte gekoppeld virtueel netwerk inschakelen](./media/synapse-workspace-managed-vnet/enable-managed-vnet-1.png)
 
+Nadat u ervoor hebt gekozen om een beheerd, aan een werkruimte gekoppeld virtueel netwerk aan uw werkruimte te koppelen, kunt u deze beveiligen tegen gegevensexfiltratie door uitgaande verbindingen van het beheerde, aan de werkruimte gekoppeld virtueel netwerk alleen toe te staan voor goedgekeurde doelen met behulp van [Beheerde privé-eindpunten](./synapse-workspace-managed-private-endpoints.md). Selecteer **Ja** om uitgaand verkeer van het beheerde, aan uw werkruimte gekoppelde virtuele netwerk te beperken tot doelen via beheerde privé-eindpunten. 
 
-U kunt controleren of uw Azure Synapse-werkruimte is gekoppeld aan een beheerd virtueel netwerk door in Azure Portal **Overzicht** te selecteren.
+
+>[!IMPORTANT]
+>De metastore is uitgeschakeld in Synapse-werkruimten met een beheerd virtueel netwerk waarvoor bescherming van gegevensexfiltratie is ingeschakeld. In deze werkruimten kunt u geen Spark SQL gebruiken.
+
+![Uitgaand verkeer dat gebruikmaakt van beheerde privé-eindpunten](./media/synapse-workspace-managed-vnet/select-outbound-connectivity.png)
+
+Selecteer **Nee** om uitgaand verkeer van de werkruimte naar een willekeurig doel toe te staan.
+
+U kunt ook de doelen beheren waarmee beheerde privé-eindpunten worden gemaakt vanuit uw Azure Synapse-werkruimte. Beheerde privé-eindpunten naar resources in dezelfde AAD-tenant waartoe uw abonnement behoort, worden standaard toegestaan. Als u een beheerd privé-eindpunt wilt maken voor een resource in een AAD-tenant die afwijkt van de tenant waartoe uw abonnement behoort, kunt u die AAD-tenant toevoegen door **+ Toevoegen** te selecteren. U kunt de AAD-tenant selecteren in de vervolgkeuzelijst of de id van de AAD-tenant handmatig invoeren.
+
+![Extra AAD-tenants toevoegen](./media/synapse-workspace-managed-vnet/add-additional-azure-active-directory-tenants.png)
+
+Nadat de werkruimte is gemaakt, kunt u controleren of uw Azure Synapse-werkruimte is gekoppeld aan een beheerd virtueel netwerk door in Azure Portal **Overzicht** te selecteren.
 
 ![Overzicht van werkruimten in de Azure-portal](./media/synapse-workspace-managed-vnet/enable-managed-vnet-2.png)
 

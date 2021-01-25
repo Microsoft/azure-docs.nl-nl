@@ -8,19 +8,19 @@ ms.subservice: enterprise
 ms.topic: reference
 ms.date: 08/20/2020
 ms.author: banders
-ms.openlocfilehash: b78b046e2991fa4ebfb575e4f6a1cc900df0d298
-ms.sourcegitcommit: 56cbd6d97cb52e61ceb6d3894abe1977713354d9
-ms.translationtype: HT
+ms.openlocfilehash: a1c420eed89b7b45ea6c50345737b8615f39ad8c
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 08/20/2020
-ms.locfileid: "88686901"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98602086"
 ---
 # <a name="overview-of-reporting-apis-for-enterprise-customers"></a>Overzicht van rapportage-API's voor Enterprise-klanten
 
 > [!Note]
 > Microsoft werkt de Azure Billing - Enterprise Reporting-API’s niet langer bij. Gebruik in plaats daarvan de [Azure Consumption](/rest/api/consumption)-API’s.
 
-Met de rapportage-API's kunnen klanten van Azure Enterprise programmatisch verbruiks-en factureringsgegevens ophalen en gebruiken in de tools voor gegevensanalyse van hun voorkeur. Enterprise-klanten hebben een [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) ondertekend met Azure om overeengekomen monetaire toezeggingen te doen en toegang te krijgen tot aangepaste prijzen voor Azure-resources.
+Met de rapportage-API's kunnen klanten van Azure Enterprise programmatisch verbruiks-en factureringsgegevens ophalen en gebruiken in de tools voor gegevensanalyse van hun voorkeur. Enterprise-klanten hebben een [Enterprise Agreement (EA)](https://azure.microsoft.com/pricing/enterprise-agreement/) ondertekend met Azure om een overeengekomen Azure-vooruitbetaling (voorheen financiële toezegging) te doen en toegang te krijgen tot aangepaste prijzen voor Azure-resources.
 
 Alle parameters voor datum en tijd die zijn vereist voor API’s, moeten worden weergegeven in UTC-waarden (Coordinated Universal Time). Waarden die worden geretourneerd via API’s, hebben de UTC-indeling.
 

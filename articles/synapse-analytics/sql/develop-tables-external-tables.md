@@ -9,12 +9,12 @@ ms.subservice: sql
 ms.date: 05/07/2020
 ms.author: jrasnick
 ms.reviewer: jrasnick
-ms.openlocfilehash: 02194bd6122cc97ac9dfd6887c6ae2161182c13a
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: 0fbf5c07b2d8fd5d754a46484d6b072cc9b682d6
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120424"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98599841"
 ---
 # <a name="use-external-tables-with-synapse-sql"></a>Externe tabellen gebruiken met Synapse SQL
 
@@ -381,7 +381,7 @@ SELECT TOP 1 * FROM census_external_table
 
 ## <a name="create-and-query-external-tables-from-a-file-in-azure-data-lake"></a>Externe tabellen maken en hierop query's uitvoeren via een bestand in Azure Data Lake
 
-Met de verkenningsmogelijkheden van Data Lake kunt u nu een externe tabel maken en hierop query's uitvoeren met een toegewezen SQL-pool of serverloze SQL-pool door eenvoudig met de rechtermuisknop op het bestand te klikken.
+Met de verkenningsmogelijkheden van Data Lake kunt u nu een externe tabel maken en hierop query's uitvoeren met een toegewezen SQL-pool of serverloze SQL-pool door eenvoudig met de rechtermuisknop op het bestand te klikken. De mogelijkheid om vanuit het ADLS Gen2-opslagaccount met één klik externe tabellen te maken wordt alleen ondersteund voor Parquet-bestanden. 
 
 ### <a name="prerequisites"></a>Vereisten
 

@@ -1,6 +1,6 @@
 ---
 title: Micro soft Identity platform-verificatie bibliotheken
-description: Compatibele client bibliotheken en middleware-bibliotheken voor servers, samen met verwante bibliotheek-, bron-en voorbeeld koppelingen, voor het micro soft Identity platform-eind punt.
+description: Compatibele client bibliotheken en middleware-bibliotheken voor servers, samen met verwante bibliotheek-, bron-en voorbeeld koppelingen, voor het micro soft Identity-platform.
 services: active-directory
 author: negoe
 manager: CelesteDG
@@ -12,16 +12,16 @@ ms.date: 07/25/2019
 ms.author: negoe
 ms.reviewer: jmprieur, saeeda
 ms.custom: aaddev
-ms.openlocfilehash: a7792e989444c87ba80088f8a850cacb4aa0dc3c
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 51b60d7b81d7402f69415b79cd575f51915dc38f
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064536"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756666"
 ---
 # <a name="microsoft-identity-platform-authentication-libraries"></a>Micro soft Identity platform-verificatie bibliotheken
 
-Het [micro soft Identity platform-eind punt](../azuread-dev/azure-ad-endpoint-comparison.md) ondersteunt de industrie standaard OAuth 2,0 en openid connect Connect 1,0-protocollen. De micro soft Authentication Library (MSAL) is ontworpen om te werken met het micro soft Identity platform-eind punt. U kunt ook open-source bibliotheken gebruiken die ondersteuning bieden voor OAuth 2,0 en OpenID Connect Connect 1,0.
+Het [micro soft Identity-platform ](../azuread-dev/azure-ad-endpoint-comparison.md) biedt ondersteuning voor de industrie standaard OAuth 2,0 en openid connect Connect 1,0-protocollen. De micro soft Authentication Library (MSAL) is ontworpen voor gebruik met het micro soft Identity-platform. U kunt ook open-source bibliotheken gebruiken die ondersteuning bieden voor OAuth 2,0 en OpenID Connect Connect 1,0.
 
 U wordt aangeraden bibliotheken te gebruiken die zijn geschreven door protocol domein experts die een SDL-methodologie (Security Development Lifecycle) volgen. Deze methodologieën bevatten [de methoden die micro soft volgt][Microsoft-SDL]. Als u code voor de protocollen wilt, moet u een methodologie zoals micro soft SDL volgen. Let op de beveiligings overwegingen in de standaard specificaties van elk protocol.
 
@@ -30,7 +30,7 @@ U wordt aangeraden bibliotheken te gebruiken die zijn geschreven door protocol d
 
 ## <a name="types-of-libraries"></a>Typen bibliotheken
 
-Het micro soft Identity platform-eind punt werkt met twee typen bibliotheken:
+Het micro soft Identity-platform werkt met twee typen bibliotheken:
 
 * **Client bibliotheken**: native clients en servers gebruiken client bibliotheken om toegangs tokens te verkrijgen voor het aanroepen van een bron, zoals Microsoft Graph.
 * **Server middleware-bibliotheken**: Web-apps gebruiken server middleware-bibliotheken voor aanmelding door gebruikers. Web-Api's gebruiken middleware-bibliotheken voor servers om tokens te valideren die door systeem eigen clients of door andere servers worden verzonden.
@@ -40,9 +40,9 @@ Het micro soft Identity platform-eind punt werkt met twee typen bibliotheken:
 Bibliotheken zijn beschikbaar in twee ondersteunings Categorieën:
 
 * **Ondersteund door micro soft**: micro soft biedt oplossingen voor deze bibliotheken en heeft SDL op deze tape wisselaars aangehouden.
-* **Compatibel**: micro soft heeft deze bibliotheken getest in de basis scenario's en heeft bevestigd dat ze werken met het micro soft Identity platform-eind punt. Micro soft biedt geen oplossingen voor deze bibliotheken en heeft geen beoordeling van deze bibliotheken uitgevoerd. Problemen en functie aanvragen moeten worden omgeleid naar het open-source project van de bibliotheek.
+* **Compatibel**: micro soft heeft deze bibliotheken getest in de basis scenario's en heeft bevestigd dat ze werken met het micro soft-identiteits platform. Micro soft biedt geen oplossingen voor deze bibliotheken en heeft geen beoordeling van deze bibliotheken uitgevoerd. Problemen en functie aanvragen moeten worden omgeleid naar het open-source project van de bibliotheek.
 
-Zie de volgende secties voor een lijst met bibliotheken die samen werken met het micro soft Identity platform-eind punt.
+Zie de volgende secties voor een lijst met bibliotheken die samen werken met het micro soft-identiteits platform.
 
 ## <a name="microsoft-supported-client-libraries"></a>Door micro soft ondersteunde client bibliotheken
 
@@ -98,16 +98,16 @@ Zie ook [scenario's voor ondersteunde platforms en talen](authentication-flows-a
 | ![Ruby](media/sample-v2-code/logo_ruby.png) |[OmniAuth](https://github.com/omniauth/omniauth/wiki) |omniauth: 1.3.1<br />omniauth-oauth2:1.4.0 |[OmniAuth](https://github.com/omniauth/omniauth)<br />[OmniAuth OAuth2](https://github.com/intridea/omniauth-oauth2) |  |
 | iOS, macOS, & Android  | [Verificatie van systeem eigen app reageren](https://github.com/FormidableLabs/react-native-app-auth) | [Versie 4.2.0](https://github.com/FormidableLabs/react-native-app-auth/releases/tag/v4.2.0) | [Verificatie van systeem eigen app reageren](https://github.com/FormidableLabs/react-native-app-auth) | |
 
-U kunt voor elke bibliotheek die voldoet aan de normen, het micro soft Identity platform-eind punt gebruiken. Het is belang rijk om te weten waar u naar ondersteuning moet gaan:
+U kunt gebruikmaken van het micro soft-identiteits platform voor een bibliotheek die voldoet aan de normen. Het is belang rijk om te weten waar u naar ondersteuning moet gaan:
 
 * Neem contact op met de eigenaar van de bibliotheek voor problemen en nieuwe functie aanvragen in bibliotheek code.
 * Neem contact op met micro soft voor problemen en nieuwe functie aanvragen in de service-side protocol-implementatie.
 * [Een functie aanvraag indienen](https://feedback.azure.com/forums/169401-azure-active-directory) voor aanvullende functies die u wilt weer geven in het protocol.
-* [Een ondersteunings aanvraag maken](../../azure-portal/supportability/how-to-create-azure-support-request.md) als u een probleem vindt waarbij het micro soft Identity platform-eind punt niet compatibel is met OAuth 2,0 of openid connect Connect 1,0.
+* [Een ondersteunings aanvraag maken](../../azure-portal/supportability/how-to-create-azure-support-request.md) als u een probleem vindt waarbij het micro soft-identiteits platform niet compatibel is met OAuth 2,0 of openid connect Connect 1,0.
 
 ## <a name="related-content"></a>Gerelateerde inhoud
 
-Zie het [micro soft Identity platform Overview][AAD-App-Model-V2-Overview](Engelstalig) voor meer informatie over het micro soft Identity platform-eind punt.
+Zie voor meer informatie over het micro soft-identiteits platform het [overzicht van micro soft Identity platform][AAD-App-Model-V2-Overview].
 
 <!--Image references-->
 

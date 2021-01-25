@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 12/10/2019
 ms.author: jmprieur
 ms.custom: aaddev, identityplatformtop40, scenarios:getting-started, languages:ASP.NET
-ms.openlocfilehash: 5f2560cdc062edb41ecda935eb9b8efe630949dc
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
-ms.translationtype: HT
+ms.openlocfilehash: 7d34039a5d56feb42473b1a2b24def5244ec3e04
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98015943"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756134"
 ---
 # <a name="tutorial-build-a-multi-tenant-daemon-that-uses-the-microsoft-identity-platform"></a>Zelfstudie: Een multitenant-daemon bouwen die het Microsoft-identiteitsplatform gebruikt
 
@@ -49,7 +49,7 @@ Omdat de app een multitenant-app voor zakelijke Microsoft-klanten is, moet deze 
 
 ![Diagram waarin de UserSync-app wordt weergegeven met drie lokale items die verbinding maken met Azure. Hierbij wordt voor Startup.Auth een token interactief opgehaald om verbinding te maken met Azure AD, wordt voor AccountController toestemming van de beheerder verkregen om verbinding te maken met Azure AD en worden met SyncController gebruikers gelezen om verbinding te maken met Microsoft Graph.](./media/tutorial-v2-aspnet-daemon-webapp/topology.png)
 
-Lees de [documentatie voor het clientreferentieprotocol voor het identiteitsplatformeindpunt](v2-oauth2-client-creds-grant-flow.md) voor meer informatie over de in dit voorbeeld gebruikte concepten.
+Meer informatie over de concepten die in dit voor beeld worden gebruikt, vindt u in de documentatie over het [client referentie protocol voor het identiteits platform](v2-oauth2-client-creds-grant-flow.md).
 
 ## <a name="clone-or-download-this-repository"></a>Deze opslagplaats klonen of downloaden
 

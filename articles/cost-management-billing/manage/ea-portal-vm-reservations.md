@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.service: cost-management-billing
 ms.subservice: enterprise
 ms.reviewer: boalcsva
-ms.openlocfilehash: 7c8a35e7c8ecd0952f8e02b66c5071253d9b0445
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: 072377f98939d996547cb6ee9f9a535b4b32a3dc
+ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96348922"
+ms.lasthandoff: 01/20/2021
+ms.locfileid: "98597951"
 ---
 # <a name="azure-ea-vm-reserved-instances"></a>Gereserveerde exemplaren Azure EA-VM
 
@@ -25,7 +25,7 @@ U kunt een reservering inwisselen voor een andere reservering van hetzelfde type
 
 ### <a name="partial-refunds"></a>Gedeeltelijke restitutie
 
-Er wordt een gedeeltelijke restitutie gegeven wanneer EA-klanten reserveringen retourneren die zijn gekocht met overschrijding en geen financiële toezegging.
+Er wordt een gedeeltelijke restitutie gegeven wanneer EA-klanten reserveringen retourneren die zijn gekocht met overschrijding en niet met Azure-vooruitbetaling (voorheen financiële toezegging).
 
 De restitutie wordt in de EA-portal weer gegeven als een negatieve correctie in de vorige maand en een positieve correctie in de huidige maand. Het wordt op dezelfde manier weergegeven als bij een reserveringsuitwisseling. De creditnota verwijst naar het oorspronkelijke factuurnummer. Verwijs dus naar het oorspronkelijke factuurnummer bij het afstemmen van de aanvankelijke aankoop met de creditnota.
 

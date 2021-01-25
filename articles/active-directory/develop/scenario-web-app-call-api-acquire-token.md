@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 09/25/2020
 ms.author: jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: c8af9ddd3649e2a5757e47ab2a3d8edca1c83929
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
+ms.openlocfilehash: cfd479382cb69e7355b033312e165699223fdbf0
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94442613"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756307"
 ---
 # <a name="a-web-app-that-calls-web-apis-acquire-a-token-for-the-app"></a>Een web-app die web-Api's aanroept: een Token ophalen voor de app
 

@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: b7d14ee321a1160420d106151276ae6aef513c5b
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
-ms.translationtype: HT
+ms.openlocfilehash: 1ec046ca6b42a5ca8f33b0347c562c85abd42684
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98064399"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98756168"
 ---
 # <a name="tutorial-sign-in-users-and-call-the-microsoft-graph-api-from-a-javascript-single-page-app-spa-using-auth-code-flow"></a>Zelfstudie: Gebruikers aanmelden en de Microsoft Graph API aanroepen vanuit een JavaScript-app met één pagina met behulp van autorisatiecodestroom
 
@@ -28,7 +28,7 @@ In deze zelfstudie hebt u het volgende gedaan:
 > * De OAuth 2.0-autorisatiecodestroom uitvoeren met PKCE
 > * Zowel werk- en schoolaccounts als persoonlijke Microsoft-accounts aanmelden
 > * Een toegangstoken verkrijgen
-> * Roep Microsoft Graph aan of uw eigen API die toegangstokens vereist die zijn verkregen van het Microsoft identiteitsplatform-eindpunt
+> * Bel Microsoft Graph of uw eigen API waarvoor toegangs tokens zijn vereist die zijn verkregen van het micro soft Identity-platform
 
 MSAL.js 2.0 verbetert MSAL.js 1.0 door de autorisatiecodestroom in de browser te ondersteunen in plaats van de impliciete toekenningsstroom. MSAL.js 2.0 biedt **GEEN** ondersteuning voor de impliciete stroom.
 
@@ -41,7 +41,7 @@ MSAL.js 2.0 verbetert MSAL.js 1.0 door de autorisatiecodestroom in de browser te
 
 :::image type="content" source="media/tutorial-v2-javascript-auth-code/diagram-01-auth-code-flow.png" alt-text="Diagram van de autorisatiecodestroom voor een toepassing met één pagina":::
 
-Met de toepassing die u in deze zelfstudie maakt, kunt u een JavaScript-SPA uitvoeren op de Microsoft Graph API door beveiligingstokens van het Microsoft identiteitsplatform-eindpunt te verkrijgen. Wanneer een gebruiker zich aanmeldt, wordt in dit scenario een toegangstoken aangevraagd en toegevoegd aan HTTP-aanvragen in de autorisatie-header. Het ophalen en vernieuwen van tokens worden verwerkt door de Microsoft Authentication Library voor JavaScript (MSAL.js).
+Met de toepassing die u in deze zelf studie maakt, kunt u een Java script-beveiligd-wachtwoord verificatie uitvoeren op de Microsoft Graph-API door beveiligings tokens van het micro soft Identity-platform te verkrijgen. Wanneer een gebruiker zich aanmeldt, wordt in dit scenario een toegangstoken aangevraagd en toegevoegd aan HTTP-aanvragen in de autorisatie-header. Het ophalen en vernieuwen van tokens worden verwerkt door de Microsoft Authentication Library voor JavaScript (MSAL.js).
 
 Deze zelfstudie maakt gebruik van de volgende bibliotheek:
 
@@ -558,13 +558,13 @@ De SPA die u in deze zelfstudie hebt gemaakt, roept `acquireTokenSilent` en/of `
 
 #### <a name="get-a-user-token-interactively"></a>Een gebruikerstoken interactief ophalen
 
-Na de eerste aanmelding moet uw app gebruikers niet meer vragen om opnieuw te verifiëren voor elke keer dat ze toegang moeten krijgen tot een beveiligde bron (dat wil zeggen, om een token aan te vragen). Roep `acquireTokenSilent` aan om dergelijke nieuwe verificatieverzoeken te voorkomen. Er zijn echter een aantal situaties waarin u mogelijk wilt afdwingen dat gebruikers met het Microsoft-identiteitsplatform-eindpunt kunnen communiceren. Bijvoorbeeld:
+Na de eerste aanmelding moet uw app gebruikers niet meer vragen om opnieuw te verifiëren voor elke keer dat ze toegang moeten krijgen tot een beveiligde bron (dat wil zeggen, om een token aan te vragen). Roep `acquireTokenSilent` aan om dergelijke nieuwe verificatieverzoeken te voorkomen. Er zijn echter een aantal situaties waarin u mogelijk gebruikers moet dwingen te communiceren met het micro soft Identity-platform. Bijvoorbeeld:
 
 - Gebruikers moeten mogelijk hun referenties opnieuw opgeven omdat het wachtwoord is verlopen.
 - Uw toepassing vraagt toegang tot een resource waarvoor de gebruiker toestemming moet geven.
 - Verificatie in twee stappen is vereist.
 
-Als u `acquireTokenPopup` aanroept, wordt een pop-upvenster geopend (of `acquireTokenRedirect` gebruikers omgeleid naar het Microsoft-identiteitsplatform-eindpunt). In dat venster moeten gebruikers hun referenties bevestigen, toestemming geven voor de vereiste resource of verificatie in wee stappen uitvoeren.
+Met aanroepen `acquireTokenPopup` wordt een pop-upvenster geopend (of `acquireTokenRedirect` worden gebruikers omgeleid naar het micro soft-identiteits platform). In dat venster moeten gebruikers hun referenties bevestigen, toestemming geven voor de vereiste resource of verificatie in wee stappen uitvoeren.
 
 #### <a name="get-a-user-token-silently"></a>Een gebruikerstoken op de achtergrond ophalen
 
@@ -618,7 +618,7 @@ Het maken van de toepassing is voltooid en u bent nu klaar om de Node.js-webserv
 
 ### <a name="sign-in-to-the-application"></a>Aanmelden bij Azure Portal
 
-Nadat de browser het bestand *index.html* heeft geladen, selecteert u **Aanmelden**. U wordt gevraagd om u aan te melden met het Microsoft-identiteitsplatform-eindpunt:
+Nadat de browser het bestand *index.html* heeft geladen, selecteert u **Aanmelden**. U wordt gevraagd om u aan te melden met het micro soft Identity-platform:
 
 :::image type="content" source="media/tutorial-v2-javascript-auth-code/spa-01-signin-dialog.png" alt-text="Webbrowser waarin het dialoogvenster voor de aanmelding wordt weergegeven":::
 

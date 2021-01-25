@@ -13,12 +13,12 @@ ms.date: 08/28/2019
 ms.author: marsma
 ms.reviewer: oldalton
 ms.custom: aaddev
-ms.openlocfilehash: fb66d8a4bf97a6f8a10534c9c4459123ad6a2654
-ms.sourcegitcommit: 6172a6ae13d7062a0a5e00ff411fd363b5c38597
+ms.openlocfilehash: 7dc3241198fbc6eeddba059251f28c6dc35c8a29
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97107916"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754944"
 ---
 # <a name="migrate-applications-to-msal-for-ios-and-macos"></a>Toepassingen migreren naar MSAL voor iOS en macOS
 
@@ -38,14 +38,14 @@ Het micro soft Identity-platform heeft enkele belang rijke verschillen met Azure
 
 ### <a name="standards-compliance"></a>Naleving van standaarden
 
-* Het micro soft Identity platform-eind punt volgt OAuth 2,0 en OpenID Connect Connect-standaarden.
+* Het micro soft Identity-platform is gebaseerd op OAuth 2,0 en OpenID Connect Connect-standaarden.
 
 ### <a name="incremental-and-dynamic-consent"></a>Incrementele en dynamische toestemming
 
 * Het Azure Active Directory v 1.0-eind punt vereist dat alle machtigingen vooraf worden gedeclareerd tijdens de registratie van de toepassing. Dit betekent dat deze machtigingen statisch zijn.
 * Met het micro soft Identity-platform kunt u dynamisch machtigingen aanvragen. Apps kunnen alleen om machtigingen vragen als dat nodig is en meer aanvragen als de app nodig heeft.
 
-Voor meer informatie over verschillen tussen Azure Active Directory v 1.0 en het micro soft-identiteits platform, Zie [Waarom bijwerken naar micro soft Identity platform (v 2.0)?](../azuread-dev/azure-ad-endpoint-comparison.md).
+Voor meer informatie over verschillen tussen Azure Active Directory v 1.0 en het micro soft-identiteits platform, Zie [Waarom bijwerken naar micro soft Identity platform?](../azuread-dev/azure-ad-endpoint-comparison.md).
 
 ## <a name="adal-and-msal-library-differences"></a>Verschillen in ADAL-en MSAL-bibliotheek
 

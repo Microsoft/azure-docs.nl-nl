@@ -11,14 +11,14 @@ ms.workload: data-services
 ms.tgt_pltfrm: ''
 ms.devlang: rest-api
 ms.topic: quickstart
-ms.date: 06/10/2019
+ms.date: 01/18/2021
 ms.author: jingwang
-ms.openlocfilehash: 48928c5c4f3a2787e8f00e4084daacf6a64f1ea7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
-ms.translationtype: HT
+ms.openlocfilehash: 34a2e423e06782b0d43766cccac9319ce68239d4
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96461564"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98569467"
 ---
 # <a name="quickstart-create-an-azure-data-factory-and-pipeline-by-using-the-rest-api"></a>Quickstart: Een Azure data factory en pijplijn maken door de REST-API te gebruiken
 
@@ -303,7 +303,7 @@ Hier volgt een voorbeeld van uitvoer:
 ```
 ## <a name="create-pipeline"></a>Pijplijn maken
 
-In dit voorbeeld bevat deze pijplijn één activiteit en heeft deze twee parameters: het pad van de invoerblob en het pad van de uitvoerblob. De waarden voor deze parameters worden ingesteld wanneer de pijplijn wordt geactiveerd of uitgevoerd. De kopieeractiviteit verwijst naar dezelfde blobgegevensset die u in de vorige stap heb gemaakt als invoer en uitvoer. Wanneer de dataset wordt gebruikt als invoergegevensset, wordt het invoerpad opgegeven. En wanneer de dataset wordt gebruikt als uitvoergegevensset, wordt het uitvoerpad opgegeven.
+In dit voorbeeld bevat deze pijplijn één Copy-activiteit. De Copy-activiteit verwijst naar de gegevenssets InputDataset en OutputDataset die u in de vorige stap heb gemaakt als invoer en uitvoer.
 
 ```powershell
 $request = "https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.DataFactory/factories/${dataFactoryName}/pipelines/Adfv2QuickStartPipeline?api-version=${apiVersion}"
@@ -383,10 +383,7 @@ Hier volgt een voorbeeld van uitvoer:
 
 ## <a name="create-pipeline-run"></a>Pijplijnuitvoering maken
 
-In deze stap stelt u de waarden van de parameters **inputPath** en **outputPath** die in de pijplijn worden opgegeven, in op de werkelijke waarden van de bron- en sinkblobpaden, en activeert u het uitvoeren van de pijplijn. De pijplijn-run-id die in de hoofdtekst van het antwoord wordt geretourneerd, wordt later in de bewakings-API gebruikt.
-
-Vervang voordat u het bestand opslaat de waarde van **inputPath** en **outputPath** door het bron- en sinkblobpad waarvan en waarnaar u gegevens kopieert.
-
+In deze stap activeert u een pijplijnuitvoering. De pijplijn-run-id die in de hoofdtekst van het antwoord wordt geretourneerd, wordt later in de bewakings-API gebruikt.
 
 ```powershell
 $request = "https://management.azure.com/subscriptions/${subscriptionId}/resourceGroups/${resourceGroupName}/providers/Microsoft.DataFactory/factories/${factoryName}/pipelines/Adfv2QuickStartPipeline/createRun?api-version=${apiVersion}"

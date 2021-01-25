@@ -3,16 +3,16 @@ title: Uw AWS-account verbinden met Azure Security Center
 description: Uw AWS-resources bewaken vanuit Azure Security Center
 author: memildin
 ms.author: memildin
-ms.date: 12/29/2020
+ms.date: 01/24/2021
 ms.topic: quickstart
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 4c919115efb39a8e8c008eab69dc087792f7b105
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
-ms.translationtype: HT
+ms.openlocfilehash: 2ad3ab8c39d9f9a29e74bd139fb5ddd1e5faeff9
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814309"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755150"
 ---
 #  <a name="connect-your-aws-accounts-to-azure-security-center"></a>Uw AWS-accounts verbinden met Azure Security Center
 
@@ -33,13 +33,13 @@ Met de onboarding van uw AWS-account in Security Center worden AWS Security Hub 
 
 In de onderstaande schermopname ziet u de AWS-accounts die worden weergegeven in het overzichtsdashboard van Security Center.
 
-:::image type="content" source="./media/quickstart-onboard-aws/aws-account-in-overview.png" alt-text="3 GCP-projecten worden weergegevens op het overzichtsdashboard van Security Center" lightbox="./media/quickstart-onboard-gcp/gcp-account-in-overview.png":::
+:::image type="content" source="./media/quickstart-onboard-aws/aws-account-in-overview.png" alt-text="Drie GCP-projecten die worden vermeld op het overzichts Dashboard van Security Center" lightbox="./media/quickstart-onboard-gcp/gcp-account-in-overview.png":::
 
 ## <a name="availability"></a>Beschikbaarheid
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Preview<br>[!INCLUDE [Legalese](../../includes/security-center-preview-legal-text.md)] |
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|[Azure Defender voor servers](defender-for-servers-introduction.md) is vereist|
 |Vereiste rollen en machtigingen:|**Eigenaar**: voor het relevante Azure-abonnement<br>**Inzender**: kan ook verbinding maken met een AWS-account, indien een eigenaar de details van de service-principal levert|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
@@ -136,9 +136,9 @@ AWS Systems Manager is vereist voor het automatiseren van taken in uw AWS-resour
 1. Configureer de opties op het tabblad **AWS-verificatie**:
     1. Voer een **Weergavenaam** in voor de connector.
     1. Bevestig dat het abonnement het juiste is. Dit abonnement gaat de connector en de aanbevelingen van AWS Security Hub bevatten.
-    1. Dit is afhankelijk van de verificatieoptie die u hebt gekozen in [Stap 2. Verificatie instellen voor Security Center in AWS](#step-2-set-up-authentication-for-security-center-in-aws):
+    1. Afhankelijk van de verificatie optie, kiest u in [stap 2. Verificatie instellen voor Security Center in AWS](#step-2-set-up-authentication-for-security-center-in-aws):
         - Selecteer **Rol aannemen** en plak de ARN van [Een IAM-rol maken voor Security Center](#create-an-iam-role-for-security-center).
-            :::image type="content" source="./media/quickstart-onboard-aws/paste-arn-in-portal.png" alt-text="Het ARN-bestand in het relevante veld van de wizard AWS-verbinding in azure Portal plakken":::
+            :::image type="content" source="./media/quickstart-onboard-aws/paste-arn-in-portal.png" alt-text="Plakken van het ARN-bestand in het relevante veld van de wizard AWS-verbinding in de Azure Portal":::
 
             OF
 
@@ -164,7 +164,7 @@ AWS Systems Manager is vereist voor het automatiseren van taken in uw AWS-resour
 
 ### <a name="step-6-confirmation"></a>Stap 6. Bevestiging
 
-Wanneer de connector is gemaakt en AWS Security Hub correct is geconfigureerd:
+Als de connector is gemaakt, is de AWS Security hub correct geconfigureerd:
 
 - Security Center scant de omgeving op AWS EC2-instanties en gaat over op de onboarding naar Azure Arc, zodat de Log Analytics-agent kan worden geïnstalleerd en bescherming tegen beveiligingen en beveiligingsaanbevelingen kunnen worden geboden. 
 - De ASC-service scant elke 6 uur op nieuwe AWS EC2-instanties en gaat over tot onboarding op basis van de configuratie.
@@ -190,7 +190,7 @@ Als u alle actieve aanbevelingen voor uw resources op resourcetype wilt weergeve
 Ondersteunde besturingssystemen voor automatische onboarding naar Azure Arc voor AWS-machines
 
 - Ubuntu 16.04 - SSM-agent is standaard vooraf geïnstalleerd
-- Ubuntu 18.04 - SSM-agent is standaard vooraf geïnstalleerd
+- Ubuntu 18,04-SSM-agent is standaard vooraf geïnstalleerd
 - Windows Server - SSM-agent is standaard vooraf geïnstalleerd
 - CentOS Linux 7 – SSM moet handmatig worden geïnstalleerd of apart worden gehouden bij het onboarden
 - SUSE Linux Enterprise Server (SLES) 15 (x64) - SSM moet handmatig worden geïnstalleerd of apart worden gehouden bij het onboarden

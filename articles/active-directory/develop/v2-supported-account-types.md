@@ -1,5 +1,6 @@
 ---
-title: Ondersteunde account typen-micro soft Identity platform | Azure
+title: Ondersteunde account typen | Azure
+titleSuffix: Microsoft identity platform
 description: Conceptuele documentatie over doel groepen en ondersteunde account typen in toepassingen
 services: active-directory
 author: jmprieur
@@ -12,16 +13,16 @@ ms.date: 07/14/2020
 ms.author: jmprieur
 ms.reviewer: saeeda
 ms.custom: aaddev, identityplatformtop40
-ms.openlocfilehash: f0895cfc14b0237db8f2f762602fee949354e6cb
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: d6c184e2983a072dec4b3021a1b58a61cd206dba
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347452"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98755994"
 ---
 # <a name="supported-account-types"></a>Ondersteunde accounttypen
 
-In dit artikel wordt uitgelegd welke typen accounts (ook wel *doel groepen* worden genoemd) worden ondersteund in micro soft Identity platform-toepassingen.
+In dit artikel wordt uitgelegd welke typen accounts (ook wel *doel groepen* worden genoemd) worden ondersteund in de micro soft Identity platform-toepassingen.
 
 <!-- This section can be in an include for many of the scenarios (SPA, web app signing-in users, protecting a web API, Desktop (depending on the flows), Mobile -->
 

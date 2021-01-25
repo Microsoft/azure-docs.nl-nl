@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 07/17/2020
 ms.author: hahamil
 ms.custom: aaddev, devx-track-js
-ms.openlocfilehash: 2c03e6940d392e3e2c03bf6508de41a7a19aef3b
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: e6bbebafab45080a2076f33d66dd96296a761e4f
+ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98063770"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98754958"
 ---
 # <a name="migrate-a-javascript-single-page-app-from-implicit-grant-to-auth-code-flow"></a>Een JavaScript-app met één pagina migreren van impliciete toekenning naar autorisatiecodestroom
 
@@ -90,7 +90,7 @@ Schakel de impliciete toekenningsstroom **niet** uit voordat u al uw toepassinge
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Voor meer informatie over de autorisatiecodestroom, met inbegrip van de verschillen tussen de impliciete en autorisatiecodestromen, raadpleegt u [Microsoft-identiteitsplatform en de OAuth 2.0-autorisatiecodestroom](v2-oauth2-auth-code-flow.md).
+Zie de [micro soft Identity platform and OAuth 2,0 Authorization code flow](v2-oauth2-auth-code-flow.md)(Engelstalig) voor meer informatie over de autorisatie code stroom, met inbegrip van de verschillen tussen de impliciete en auth-code stromen.
 
 Als u meer wilt weten over het ontwikkelen van toepassingen met één pagina op het Microsoft-identiteitsplatform, is de reeks artikelen [Scenario: Een toepassing met één pagina](scenario-spa-overview.md)-serie artikelen is nuttig om mee aan de slag te gaan.
 

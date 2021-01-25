@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: overview
-ms.date: 09/23/2020
+ms.date: 01/18/2021
 ms.author: alkohli
-ms.openlocfilehash: 059aad8b45aa449f5cd28c97f4ba55e2204c04ce
-ms.sourcegitcommit: dea56e0dd919ad4250dde03c11d5406530c21c28
+ms.openlocfilehash: 31947ca4d5eb632998f5c50257c12ef9a52dfc66
+ms.sourcegitcommit: 9d9221ba4bfdf8d8294cf56e12344ed05be82843
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96937063"
+ms.lasthandoff: 01/19/2021
+ms.locfileid: "98570096"
 ---
 # <a name="what-is-azure-stack-edge-pro-with-gpu"></a>Wat is Azure Stack Edge Pro met GPU?
 
@@ -71,7 +71,7 @@ De Azure Stack Edge Pro-oplossing bestaat uit een Azure Stack Edge-resource, een
 
 Het fysieke Azure Stack Edge Pro-apparaat, de Azure-resource en het doelopslagaccount waarnaar u gegevens overdraagt hoeven zich niet allemaal in dezelfde regio te bevinden.
 
-- **Beschikbaarheid van resource**: voor deze preview-versie is de resource beschikbaar in de regio's US - oost, EU - west en Azië - zuidoost.
+- **Beschikbaarheid van resource**: voor deze release is de resource beschikbaar in de regio's US - oost, EU - west en Azië - zuidoost.
 
 - **Beschikbaarheid van het apparaat** - Om een lijst in te zien van alle landen/regio's waar het Azure Stack Edge Pro-apparaat beschikbaar is, gaat u naar de tab **Azure Stack Edge Pro** voor [Azure Stack Edge Pro prijzen](https://azure.microsoft.com/pricing/details/azure-stack/edge/#azureStackEdgePro) en vervolgens naar de sectie **Beschikbaarheid**.
     

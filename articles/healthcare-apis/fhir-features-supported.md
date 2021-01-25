@@ -8,12 +8,12 @@ ms.subservice: fhir
 ms.topic: reference
 ms.date: 1/21/2021
 ms.author: cavoeg
-ms.openlocfilehash: 43372eb0a9f7c08f6957627950769c1941580bd8
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 28c01e99c0e8708750341b445b4a31f6eaeab3ce
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98745864"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747522"
 ---
 # <a name="features"></a>Functies
 
@@ -147,12 +147,14 @@ Op dit moment worden de toegestane acties voor een bepaalde rol *globaal* toegep
 
 De prestaties van het systeem zijn afhankelijk van het aantal RUs, gelijktijdige verbindingen en het type bewerkingen dat u uitvoert (put, post, enz.). Hieronder vindt u enkele algemene bereiken van wat u kunt verwachten op basis van het geconfigureerde RUs. Over het algemeen schaalt prestaties lineair met een toename van RUs:
 
-| # RUs | Bronnen per seconde |
-|----------|---------------|
-| 400      | 5-10          |
-| 1000    | 100-150       |
-| 10.000   | 225-400       |
-| 100.000  | 2500-4000   |
+| # RUs | Bronnen per seconde |    Maximale opslag ruimte (GB) *    |
+|----------|---------------|--------|                 
+| 400      | 5-10          |     40   |
+| 1000    | 100-150       |      100  |
+| 10.000   | 225-400       |      1000  |
+| 100.000  | 2500-4000   |      10.000  |
+
+Opmerking: per Cosmos DB vereiste is er een minimale door Voer van 10 RU/s per GB opslag ruimte vereist. Bekijk [Cosmos DB Service quota's](../cosmos-db/concepts-limits.md)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

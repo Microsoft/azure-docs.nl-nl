@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/05/2021
 ms.author: yelevin
-ms.openlocfilehash: 557f53e39781406674b9903dcf0bb3cb536cd804
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: f9fb1c917a0719cb9d250b997329d3415b5872eb
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97897481"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747471"
 ---
 # <a name="step-3-validate-connectivity"></a>STAP 3: connectiviteit valideren
 
@@ -44,7 +44,7 @@ Houd er rekening mee dat het ongeveer 20 minuten kan duren voordat uw logboeken 
 1. Voer het volgende script uit op de logboek-doorstuur server (waarbij de werk ruimte-ID in plaats van de tijdelijke aanduiding wordt toegepast) om te controleren of de verbinding tussen uw beveiligings oplossing, de logboek-forwarder en Azure-Sentinel wordt gecontroleerd. Met dit script wordt gecontroleerd of de daemon op de juiste poorten luistert, of het door sturen correct is geconfigureerd en dat er geen communicatie tussen de daemon en de Log Analytics agent wordt geblokkeerd. Er worden ook beeldberichten TestCommonEventFormat verzonden om end-to-end-connectiviteit te controleren. <br>
 
     ```bash
-    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]
+    sudo wget -O cef_troubleshoot.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_troubleshoot.py&&sudo python cef_troubleshoot.py [WorkspaceID]
     ```
 
    - Mogelijk wordt er een bericht weer gegeven waarin u wordt gevraagd een opdracht uit te voeren om een probleem met de **toewijzing van het *computer* veld** te corrigeren. Zie de [uitleg bij het validatie script](#mapping-command) voor meer informatie.

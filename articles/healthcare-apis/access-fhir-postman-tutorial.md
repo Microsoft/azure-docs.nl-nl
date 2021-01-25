@@ -9,12 +9,12 @@ ms.reviewer: dseven
 ms.author: matjazl
 author: matjazl
 ms.date: 02/07/2019
-ms.openlocfilehash: 37086a925d65a80f219c8e0a3358c834a2691701
-ms.sourcegitcommit: 4b76c284eb3d2b81b103430371a10abb912a83f4
-ms.translationtype: HT
+ms.openlocfilehash: b0acfbf9636c2ad1df7df3197a0a1a83ec91b5c3
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/01/2020
-ms.locfileid: "93145647"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747337"
 ---
 # <a name="access-azure-api-for-fhir-with-postman"></a>Azure API for FHIR openen met Postman
 
@@ -32,7 +32,7 @@ U hebt de volgende gegevens nodig om Postman te gebruiken:
 
 - De URL van uw FHIR-server, bijvoorbeeld `https://MYACCOUNT.azurehealthcareapis.com`
 - De id-provider `Authority` voor uw FHIR-server, bijvoorbeeld `https://login.microsoftonline.com/{TENANT-ID}`
-- De geconfigureerde `audience`. Dit is doorgaans de URL van de FHIR-server, bijvoorbeeld `https://MYACCOUNT.azurehealthcareapis.com` of alleen `https://azurehealthcareapis.com`.
+- De geconfigureerde `audience`. Dit is doorgaans de URL van de FHIR-server, bijvoorbeeld `https://<FHIR-SERVER-NAME>.azurehealthcareapis.com` of alleen `https://azurehealthcareapis.com` .
 - De `client_id` (of toepassings-id) van de [clienttoepassing](register-confidential-azure-ad-client-app.md) die u gebruikt om toegang te krijgen tot de FHIR-service.
 - De `client_secret` (of het toepassingsgeheim) van de clienttoepassing.
 

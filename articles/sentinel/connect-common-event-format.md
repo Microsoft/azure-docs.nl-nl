@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/01/2020
 ms.author: yelevin
-ms.openlocfilehash: 4b34477a40530a0e6f26b59dd9707c019418b2a4
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 6010242e7fbd14aa117c481dee0d05e92928ef1b
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94655847"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747488"
 ---
 # <a name="connect-your-external-solution-using-common-event-format"></a>Verbind uw externe oplossing met de algemene gebeurtenis indeling
 
@@ -77,6 +77,12 @@ Zorg ervoor dat de Linux-machine die u als een logboek-doorstuur server gebruikt
   - Syslog RFC 5424
  
 Zorg ervoor dat uw computer ook aan de volgende vereisten voldoet: 
+
+- Capaciteit
+  - Uw computer moet mini maal **4 CPU-kernen en 8 GB RAM-geheugen** hebben.
+
+    > [!NOTE]
+    > - Een single-doorstuur machine voor logboek registratie met behulp van de **rsyslog** -daemon heeft een ondersteunde capaciteit van **Maxi maal 8500 gebeurtenissen per seconde (EPS)** verzameld.
 
 - Machtigingen
   - U moet over verhoogde machtigingen (sudo) beschikken op uw computer. 

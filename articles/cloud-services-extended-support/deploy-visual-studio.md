@@ -9,16 +9,16 @@ ms.workload: azure-vs
 ms.topic: tutorial
 ms.date: 10/5/2020
 ms.author: ghogen
-ms.openlocfilehash: 1c2264cb76e062f5f22c0460572ec01750086a04
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: b12f8beeee054e547a6b58750d8482d32ee14453
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98745008"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747254"
 ---
 # <a name="create-and-deploy-a-azure-cloud-service-extended-support-using-visual-studio"></a>Een Azure-Cloud service (uitgebreide ondersteuning) maken en implementeren met behulp van Visual Studio
 
-Vanaf Visual Studio 2019 versie 16,9 preview 1 kunt u werken met Cloud Services (uitgebreide ondersteuning) met behulp van Azure Resource Manager, waardoor het onderhoud en beheer van Azure-resources aanzienlijk wordt vereenvoudigd en modern. U kunt ook een bestaand Cloud service project converteren naar een uitgebreide ondersteuning Cloud service project.
+Vanaf [Visual Studio 2019 versie 16,9](https://visualstudio.microsoft.com/vs/preview/) (momenteel in Preview) kunt u werken met Cloud Services met behulp van Azure Resource Manager (arm), waardoor het onderhoud en beheer van Azure-resources aanzienlijk eenvoudiger en moderner is. Dit wordt ingeschakeld door een nieuwe Azure-service waarnaar wordt verwezen als Cloud Services (uitgebreide ondersteuning). U kunt een bestaande Cloud service publiceren naar Cloud Services (uitgebreide ondersteuning). Zie [Cloud Services (uitgebreide ondersteunings documentatie)](overview.md)voor meer informatie over deze Azure-service.
 
 > [!IMPORTANT]
 > Cloud Services (uitgebreide ondersteuning) is momenteel beschikbaar als open bare preview.

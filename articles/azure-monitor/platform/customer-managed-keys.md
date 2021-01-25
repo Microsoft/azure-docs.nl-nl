@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: 6061980ec556fccde3de882a291bc390b88c5a24
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: f2807501b1e18d4cbffaa34d70bccf8d70565266
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611080"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747220"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -125,11 +125,53 @@ Deze instellingen kunnen worden bijgewerkt in Key Vault via CLI en Power shell:
 
 ## <a name="create-cluster"></a>Cluster maken
 
-> [!NOTE]
-> Clusters ondersteunen twee [typen beheerde identiteiten](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types): aan het systeem toegewezen en door de gebruiker toegewezen en elk type kan worden gebaseerd, afhankelijk van uw scenario. Door het systeem toegewezen beheerde identiteit is eenvoudiger en wordt automatisch gemaakt met het maken van een cluster wanneer de identiteit `type` is ingesteld als '*SystemAssigned*'. deze identiteit kan later worden gebruikt om het cluster toegang te verlenen tot uw Key Vault. Als u een cluster wilt maken terwijl door de klant beheerde sleutel wordt gedefinieerd tijdens het maken van het cluster, moet u een sleutel hebben gedefinieerd en de door de gebruiker toegewezen identiteit in uw Key Vault vooraf hebben opgegeven. vervolgens maakt u het cluster met de volgende instellingen: identiteit `type` als '*UserAssigned*', `UserAssignedIdentities` met de resource-id van de identiteit en `keyVaultProperties` met belang rijke gegevens.
+Clusters ondersteunen twee [beheerde identiteits typen](../../active-directory/managed-identities-azure-resources/overview.md#managed-identity-types): systeem toegewezen en door de gebruiker toegewezen, terwijl één identiteit kan worden gedefinieerd in een cluster, afhankelijk van uw scenario. 
+- Door het systeem toegewezen beheerde identiteit is eenvoudiger en wordt automatisch gegenereerd met het maken van clusters wanneer de identiteit `type` is ingesteld op '*SystemAssigned*'. Deze identiteit kan later worden gebruikt om het cluster toegang te verlenen tot uw Key Vault. 
+  
+  Identiteits instellingen in het cluster voor door het systeem toegewezen beheerde identiteit
+  ```json
+  {
+    "identity": {
+      "type": "SystemAssigned"
+      }
+  }
+  ```
+
+- Als u door de klant beheerde sleutel wilt configureren bij het maken van het cluster, moet u een door de gebruiker toegewezen identiteit in uw Key Vault vooraf hebben verleend en vervolgens het cluster maken met de volgende instellingen: identiteit `type` als '*UserAssigned*', `UserAssignedIdentities` met de resource-id van de identiteit.
+
+  Identiteits instellingen in het cluster voor door de gebruiker toegewezen beheerde identiteit
+  ```json
+  {
+  "identity": {
+  "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft. ManagedIdentity/UserAssignedIdentities/<cluster-assigned-managed-identity>"
+      }
+  }
+  ```
 
 > [!IMPORTANT]
-> U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt en u in dit geval de door het systeem toegewezen beheerde identiteit wilt gebruiken.
+> U kunt door de klant beheerde sleutel niet gebruiken met door de gebruiker toegewezen beheerde identiteit als uw Key Vault zich in Private-Link (vNet) bevindt. In dit scenario kunt u door het systeem toegewezen beheerde identiteit gebruiken.
+
+```json
+{
+  "identity": {
+    "type": "SystemAssigned"
+}
+```
+ 
+Door:
+
+```json
+{
+  "identity": {
+  "type": "UserAssigned",
+    "userAssignedIdentities": {
+      "subscriptions/<subscription-id>/resourcegroups/<resource-group-name>/providers/Microsoft. ManagedIdentity/UserAssignedIdentities/<user-assigned-managed-identity-name>"
+      }
+}
+```
+
 
 Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](../log-query/logs-dedicated-clusters.md#creating-a-cluster). 
 
@@ -243,15 +285,13 @@ Volg de procedure die wordt geïllustreerd in het [artikel dedicated clusters](.
 
 ## <a name="key-revocation"></a>Intrekking van sleutel
 
-U kunt de toegang tot gegevens intrekken door de sleutel uit te scha kelen of door het toegangs beleid van het cluster in uw Key Vault te verwijderen. 
-
 > [!IMPORTANT]
-> - Als uw cluster is ingesteld met een door de gebruiker toegewezen beheerde identiteit, wordt `UserAssignedIdentities` `None` het cluster onderbroken en wordt de toegang tot uw gegevens voor komen, maar u kunt de intrekking niet herstellen en het cluster activeren zonder dat er een ondersteunings aanvraag wordt geopend. Deze beperking is niet van toepassing op door het systeem toegewezen beheerde identiteit.
-> - De aanbevolen actie voor het intrekken van de sleutel is door de sleutel in uw Key Vault uit te scha kelen.
+> - De aanbevolen manier om de toegang tot uw gegevens in te trekken, is door de sleutel uit te scha kelen of door het toegangs beleid in uw Key Vault te verwijderen.
+> - Als u het cluster instelt `identity` `type` op geen, wordt de toegang tot uw gegevens ook ingetrokken, maar deze methode wordt niet aanbevolen omdat u de intrekking niet kunt herstellen wanneer u de in het cluster opnieuw indeelt `identity` zonder de ondersteunings aanvraag te openen.
 
-De cluster opslag respecteert altijd wijzigingen in de sleutel machtigingen binnen een uur of binnenkort en de opslag wordt niet meer beschikbaar. Nieuwe gegevens die zijn opgenomen in werk ruimten die zijn gekoppeld aan het cluster, worden verwijderd en kunnen niet worden hersteld, gegevens worden ontoegankelijk en query's op deze werk ruimten mislukken. Eerder opgenomen gegevens blijven in de opslag, zolang uw cluster en uw werk ruimten niet worden verwijderd. Ontoegankelijke gegevens zijn onderworpen aan het Bewaar beleid voor gegevens en worden verwijderd wanneer de Bewaar termijn wordt bereikt. Opgenomen gegevens in de afgelopen 14 dagen worden ook opgeslagen in een hot-cache (met SSD-back-ups) voor een efficiënte bewerking van query-engine. Dit wordt verwijderd bij het verwijderen van de sleutel en wordt ook niet toegankelijk.
+De cluster opslag respecteert altijd wijzigingen in de sleutel machtigingen binnen een uur of binnenkort en de opslag wordt niet meer beschikbaar. Nieuwe gegevens die zijn opgenomen in werk ruimten die zijn gekoppeld aan het cluster, worden verwijderd en kunnen niet worden hersteld, gegevens worden ontoegankelijk en query's op deze werk ruimten mislukken. Eerder opgenomen gegevens blijven in de opslag, zolang uw cluster en uw werk ruimten niet worden verwijderd. Ontoegankelijke gegevens zijn onderworpen aan het Bewaar beleid voor gegevens en worden verwijderd wanneer de Bewaar termijn wordt bereikt. Opgenomen gegevens in de afgelopen 14 dagen worden ook opgeslagen in een hot-cache (met SSD-back-ups) voor een efficiënte bewerking van query-engine. Dit wordt verwijderd bij het verwijderen van de sleutel en wordt ontoegankelijk.
 
-In de opslag ruimte van het cluster worden uw Key Vault periodiek gecontroleerd om te proberen de versleutelings sleutel op te halen en eenmaal te zijn geopend, gegevens opname en query's te hervatten binnen 30 minuten.
+In de opslag ruimte van het cluster wordt uw Key Vault periodiek gecontroleerd om te proberen de versleutelings sleutel op te halen en wanneer deze eenmaal is geopend, wordt de opname en query van gegevens binnen 30 minuten hervat.
 
 ## <a name="key-rotation"></a>Sleutelroulatie
 
@@ -259,7 +299,7 @@ Voor de door de klant beheerde sleutel rotatie is een expliciete update van het 
 
 Al uw gegevens blijven toegankelijk na de bewerking voor het wijzigen van de sleutel, omdat gegevens altijd worden versleuteld met de account versleutelings sleutel (AEK) terwijl AEK nu wordt versleuteld met uw nieuwe Key Encryption Key (KEK)-versie in Key Vault.
 
-## <a name="customer-managed-key-for-queries"></a>Door de klant beheerde sleutel voor query's
+## <a name="customer-managed-key-for-saved-queries"></a>Door de klant beheerde sleutel voor opgeslagen query's
 
 De query taal die in Log Analytics wordt gebruikt, is een exprestje en kan gevoelige informatie bevatten in opmerkingen die u toevoegt aan query's of in de query syntaxis. Sommige organisaties vereisen dat dergelijke informatie wordt beveiligd onder het door de klant beheerde sleutel beleid en dat u uw query's die zijn versleuteld met uw sleutel, moet opslaan. Met Azure Monitor kunt u *opgeslagen Zoek opdrachten* en *waarschuwingen voor logboek registraties* die zijn versleuteld met uw sleutel in uw eigen opslag account opslaan wanneer u verbinding hebt met uw werk ruimte. 
 
@@ -410,7 +450,7 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
   - Als uw cluster is ingesteld met een door de gebruiker toegewezen beheerde identiteit, wordt `UserAssignedIdentities` `None` het cluster onderbroken en wordt de toegang tot uw gegevens voor komen, maar u kunt de intrekking niet herstellen en het cluster activeren zonder dat er een ondersteunings aanvraag wordt geopend. Deze beperking hebben ' toegepast op door het systeem toegewezen beheerde identiteit.
 
-  - U kunt op dit moment geen door de klant beheerde sleutel met door de gebruiker toegewezen beheerde identiteit definiëren als uw Key Vault zich in Private-Link (vNet) bevindt en u in dit geval de door het systeem toegewezen beheerde identiteit wilt gebruiken.
+  - U kunt door de klant beheerde sleutel niet gebruiken met door de gebruiker toegewezen beheerde identiteit als uw Key Vault zich in Private-Link (vNet) bevindt. In dit scenario kunt u door het systeem toegewezen beheerde identiteit gebruiken.
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 

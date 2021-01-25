@@ -973,6 +973,8 @@
           href: managed-instance/virtual-cluster-delete.md
         - name: Aangepaste DNS configureren
           href: managed-instance/custom-dns-configure.md
+        - name: DNS-configuratie synchroniseren
+          href: managed-instance/synchronize-vnet-dns-servers-setting-on-virtual-cluster.md
         - name: Netwerkconfiguratie synchroniseren
           href: managed-instance/azure-app-sync-network-configuration.md
         - name: IP-adres voor eindpuntbeheer zoeken

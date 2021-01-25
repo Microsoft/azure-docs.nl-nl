@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/28/2019
+ms.date: 01/24/2021
 ms.author: terrylan
-ms.openlocfilehash: 038f30ee186a5b3a9d87d64054726324051c37b4
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: d85b1fdd433c372bb41adec6e3d33013f19363f0
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94842750"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747170"
 ---
 # <a name="azure-security-management-and-monitoring-overview"></a>Overzicht van Azure-beveiligings beheer en-bewaking
 Dit artikel bevat een overzicht van de beveiligings functies en-services die Azure biedt om u te helpen bij het beheer en de bewaking van Azure-Cloud Services en virtuele machines.
@@ -85,7 +85,7 @@ VPN-gateways, ook wel virtuele Azure-netwerk gateways genoemd, worden gebruikt v
 Meer informatie:
 
 * [Over VPN-gateways](../../vpn-gateway/vpn-gateway-about-vpngateways.md)
-* [Overzicht van Azure-netwerk beveiliging](network-overview.md)
+* [Overzicht van Azure-netwerkbeveiliging](network-overview.md)
 
 ## <a name="privileged-identity-management"></a>Privileged Identity Management
 
@@ -117,15 +117,18 @@ Meer informatie:
 
 ## <a name="security-center"></a>Beveiligingscentrum
 
-Azure Security Center helpt u bedreigingen te voorkomen, te detecteren en erop te reageren. Security Center biedt u meer inzicht in en controle over de beveiliging van uw Azure-resources. Het biedt geïntegreerde beveiligings bewaking en beleids beheer in uw Azure-abonnementen. Het helpt bedreigingen te detecteren die anders niet kunnen worden opgemerkt en die werken met een breed ecosysteem van beveiligings oplossingen.
+Azure Security Center helpt u bedreigingen te voorkomen, te detecteren en erop te reageren. Security Center biedt u meer inzicht in en controle over de beveiliging van uw Azure-resources, evenals die in uw hybride cloud omgeving. 
+
+Security Center voert doorlopende beveiligings evaluaties van uw verbonden bronnen uit en vergelijkt de configuratie en implementatie van de [Azure Security-Bench Mark](../benchmarks/introduction.md) om gedetailleerde beveiligings aanbevelingen te bieden die zijn afgestemd op uw omgeving.
 
 Security Center helpt u de beveiliging van uw Azure-resources te optimaliseren en te controleren door:
 
-* U kunt beleids regels voor uw Azure-abonnements resources definiëren op basis van:
-  * De beveiligings behoeften van uw bedrijf.
-  * Het type toepassingen of de gevoeligheid van de gegevens in elk abonnement.
-* Bewaken van de status van uw virtuele machines, netwerken en toepassingen van Azure.
-* Bieden van een lijst met beveiligings waarschuwingen met prioriteit, inclusief waarschuwingen van geïntegreerde partner oplossingen. Het bevat ook de informatie die u nodig hebt om snel een aanval te onderzoeken en aanbevelingen voor het oplossen ervan.
+- U kunt beleids regels voor uw Azure-abonnements resources definiëren op basis van:
+    - De beveiligings behoeften van uw organisatie.
+    - Het type toepassingen of de gevoeligheid van de gegevens in elk abonnement.
+    - Industrie-of regelgevings normen of benchmarks die u op uw abonnementen toepast. 
+- Bewaken van de status van uw virtuele machines, netwerken en toepassingen van Azure.
+- Bieden van een lijst met beveiligings waarschuwingen met prioriteit, inclusief waarschuwingen van geïntegreerde partner oplossingen. Het bevat ook de informatie die u nodig hebt om snel een aanval te onderzoeken en aanbevelingen voor het oplossen ervan.
 
 Meer informatie:
 

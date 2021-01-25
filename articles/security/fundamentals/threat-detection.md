@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: article
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 11/21/2017
+ms.date: 01/24/2021
 ms.author: TomSh
-ms.openlocfilehash: b9770a43309f5471760dc2482833e4bab45c6f5b
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
+ms.openlocfilehash: c8fbb2f6d858b2f654ff404bef3b415bf170ab37
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94409923"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747270"
 ---
 # <a name="azure-advanced-threat-detection"></a>Geavanceerde bedreigingsdetectie van Azure
 
@@ -92,15 +92,15 @@ Azure Monitor logboeken helpen u snel en eenvoudig inzicht te krijgen in de alge
 
 Het Log Analytics Beveiliging en audit dash board is onderverdeeld in vier hoofd categorieën:
 
--   **Beveiligings domeinen** : Hiermee kunt u beveiligings records na verloop van tijd verkennen. toegang tot malware-evaluaties; Update-evaluaties; informatie over netwerk beveiliging, identiteit en toegang weer geven; computers weer geven met beveiligings gebeurtenissen; en snel toegang tot het dash board van Azure Security Center.
+-   **Beveiligings domeinen**: Hiermee kunt u beveiligings records na verloop van tijd verkennen. toegang tot malware-evaluaties; Update-evaluaties; informatie over netwerk beveiliging, identiteit en toegang weer geven; computers weer geven met beveiligings gebeurtenissen; en snel toegang tot het dash board van Azure Security Center.
 
--   Opvallende **problemen** : Hiermee kunt u snel het aantal actieve problemen en de ernst van de problemen identificeren.
+-   Opvallende **problemen**: Hiermee kunt u snel het aantal actieve problemen en de ernst van de problemen identificeren.
 
--   **Detecties (preview)** : Hiermee kunt u aanvals patronen identificeren door beveiligings waarschuwingen weer te geven die voor uw resources worden uitgevoerd.
+-   **Detecties (preview)**: Hiermee kunt u aanvals patronen identificeren door beveiligings waarschuwingen weer te geven die voor uw resources worden uitgevoerd.
 
--   **Threat Intelligence** : Hiermee kunt u aanvals patronen identificeren door het totale aantal servers met uitgaand schadelijk IP-verkeer, het type schadelijke dreigingen en een kaart van de ip's-locaties weer te geven.
+-   **Threat Intelligence**: Hiermee kunt u aanvals patronen identificeren door het totale aantal servers met uitgaand schadelijk IP-verkeer, het type schadelijke dreigingen en een kaart van de ip's-locaties weer te geven.
 
--   **Veelvoorkomende beveiligings query's** : bevat een lijst met de meest voorkomende beveiligings query's die u kunt gebruiken om uw omgeving te bewaken. Wanneer u een query selecteert, wordt het zoek venster geopend en worden de resultaten voor de query weer gegeven.
+-   **Veelvoorkomende beveiligings query's**: bevat een lijst met de meest voorkomende beveiligings query's die u kunt gebruiken om uw omgeving te bewaken. Wanneer u een query selecteert, wordt het zoek venster geopend en worden de resultaten voor de query weer gegeven.
 
 ### <a name="insight-and-analytics"></a>Inzicht en analyse
 In het midden van [Azure monitor logboeken](../../azure-monitor/log-query/log-query-overview.md) bevindt zich de opslag plaats, die wordt gehost door Azure.
@@ -135,21 +135,25 @@ U kunt DSC-resources maken en beheren die worden gehost in Azure en deze Toep as
 
 ## <a name="azure-security-center"></a>Azure Security Center
 
-Azure Security Center helpt bij het beveiligen van uw Azure-resources. Het biedt geïntegreerde beveiligings bewaking en beleids beheer in uw Azure-abonnementen. Binnen de service kunt u Policies voor uw Azure-abonnementen en [resource groepen](../../azure-resource-manager/management/manage-resources-portal.md) definiëren voor een grotere granulariteit.
+Azure Security Center helpt bij het beschermen van uw hybride cloud omgeving. Door continue beveiligings beoordelingen van uw verbonden bronnen uit te voeren, kunnen er gedetailleerde beveiligings aanbevelingen worden geboden voor de ontdekte beveiligings problemen.
 
-![Azure Security Center diagram](./media/threat-detection/azure-threat-detection-fig8.png)
+De aanbevelingen van Security Center zijn gebaseerd op de [Azure Security Bench Mark](../benchmarks/introduction.md) -de door micro soft ontworpen, specifieke set richt lijnen voor beveiliging en naleving aanbevolen procedures op basis van algemene nalevings kaders. Dit algemeen gerespecteerde Bench Mark bouwt voort op de besturings elementen van het [Center voor Internet Security (CIS)](https://www.cisecurity.org/benchmark/azure/) en het [National Institute of Standards and Technology (NIST)](https://www.nist.gov/) met een focus op Cloud gerichte beveiliging.
+
+Het geïntegreerde CWPP (Cloud workload Protection platform) van Security Center, **Azure Defender**, biedt geavanceerde, intelligente beveiliging van uw Azure-en hybride bronnen en workloads. Het inschakelen van Azure Defender biedt diverse extra beveiligings functies (Zie [Inleiding tot Azure Defender](../../security-center/azure-defender.md)). Het Azure Defender-dashboard in Security Center biedt inzicht in en controle over de CWP-functies voor uw omgeving:
+
+:::image type="content" source="../../security-center/media/azure-defender/sample-defender-dashboard.png" alt-text="Een voorbeeld van het Azure Defender-dashboard" lightbox="../../security-center/media/azure-defender/sample-defender-dashboard.png":::
 
 Beveiligingsonderzoekers van Microsoft zijn voortdurend op zoek naar bedreigingen. Ze hebben toegang tot een uitgebreide set telemetrie, afkomstig van de wereldwijde aanwezigheid van Microsoft in de cloud en on-premises. Deze verrijkende en uitgebreide verzameling gegevenssets stelt Microsoft in staat om nieuwe aanvalspatronen en -trends te ontdekken in on-premises producten voor consumenten en ondernemingen, evenals in haar online services.
 
 Security Center kunt de detectie algoritmen snel bijwerken wanneer aanvallers nieuwe en steeds meer geavanceerde cracks uitbrengen. Deze benadering helpt u bij het bedenken van een snel bewegende bedreigings omgeving.
 
-![Detectie van Security Center-dreigingen](./media/threat-detection/azure-threat-detection-fig9.jpg)
+:::image type="content" source="../../security-center/media/security-center-managing-and-responding-alerts/alerts-page.png" alt-text="Lijst met beveiligings waarschuwingen voor Azure Security Center":::
 
-Het detecteren van bedreigingen van Security Center werkt volgens het automatisch verzamelen van beveiligingsgegevens van uw Azure-resources, het netwerk en verbonden partneroplossingen. Het analyseert deze informatie en correleert informatie uit meerdere bronnen om bedreigingen te identificeren.
+Azure Defender verzamelt automatisch beveiligings gegevens van uw resources, het netwerk en verbonden partner oplossingen. Het analyseert deze informatie en correleert informatie uit meerdere bronnen om bedreigingen te identificeren.
 
-Beveiligingswaarschuwingen krijgen in Security Center een prioriteit, evenals aanbevelingen voor het oplossen van de bedreiging.
+De waarschuwingen van Azure Defender worden in Security Center beschreven, samen met aanbevelingen voor het oplossen van de bedreigingen.
 
-Security Center maakt gebruik van geavanceerde beveiligingsanalyses die veel verder gaan dan op handtekeningen gebaseerde benaderingen. Door braak in big data en [machine learning](https://azure.microsoft.com/blog/machine-learning-in-azure-security-center/) technologieën worden gebruikt voor het evalueren van gebeurtenissen in de gehele Cloud infrastructuur. Geavanceerde analyse kan bedreigingen detecteren die onmogelijk zouden kunnen worden geïdentificeerd via hand matige benaderingen en de ontwikkeling van aanvallen voors pellen. Deze typen beveiligings analyse worden in de volgende secties besproken.
+Security Center maakt gebruik van geavanceerde beveiligingsanalyses die veel verder gaan dan op handtekeningen gebaseerde benaderingen. Door braak in big data en [machine learning](https://azure.microsoft.com/blog/machine-learning-in-azure-security-center/) technologieën worden gebruikt om gebeurtenissen in de hele Cloud te evalueren. Geavanceerde analyse kan bedreigingen detecteren die onmogelijk zouden kunnen worden geïdentificeerd via hand matige benaderingen en de ontwikkeling van aanvallen voors pellen. Deze typen beveiligings analyse worden in de volgende secties besproken.
 
 ### <a name="threat-intelligence"></a>Informatie over bedreigingen
 
@@ -161,15 +165,15 @@ Telemetrie loopt over van meerdere bronnen, zoals Azure, Microsoft 365, micro so
 
 Onderzoekers ontvangen ook informatie over bedreigingen die worden gedeeld met belang rijke Cloud serviceproviders en die zich abonneren op bedreigings informatie-feeds van derden. Azure Security Center kan deze informatie gebruiken om u te waarschuwen over bedreigingen van bekende beveiligingsrisico’s. Voorbeelden zijn:
 
--   **Het benutten van de kracht van machine learning** : Azure Security Center heeft toegang tot een grote hoeveelheid gegevens over Cloud netwerk activiteit, die kan worden gebruikt om bedreigingen te detecteren die zijn gericht op uw Azure-implementaties.
+-   **Het benutten van de kracht van machine learning**: Azure Security Center heeft toegang tot een grote hoeveelheid gegevens over Cloud netwerk activiteit, die kan worden gebruikt om bedreigingen te detecteren die zijn gericht op uw Azure-implementaties.
 
--   **Detectie van brute kracht** : machine learning wordt gebruikt voor het maken van een historisch patroon van externe toegangs pogingen, waarmee het mogelijk is om beveiligings aanvallen te detecteren op basis van beveiliging van de SSH-, Remote Desktop Protocol (RDP) en SQL-poorten.
+-   **Detectie van brute kracht**: machine learning wordt gebruikt voor het maken van een historisch patroon van externe toegangs pogingen, waarmee het mogelijk is om beveiligings aanvallen te detecteren op basis van beveiliging van de SSH-, Remote Desktop Protocol (RDP) en SQL-poorten.
 
--   **Uitgaande DDOS-en botnet-detectie** : een gemeen schappelijke doel stelling van aanvallen om cloud resources te gebruiken, is het gebruik van de reken kracht van deze resources om andere aanvallen uit te voeren.
+-   **Uitgaande DDOS-en botnet-detectie**: een gemeen schappelijke doel stelling van aanvallen om cloud resources te gebruiken, is het gebruik van de reken kracht van deze resources om andere aanvallen uit te voeren.
 
--   **Nieuwe gedrags Analytics-servers en-vm's** : wanneer er is geknoeid met een server of virtuele machine, gebruiken aanvallers een groot aantal technieken voor het uitvoeren van schadelijke code op dat systeem, terwijl detectie wordt voor komen, behoud van persistentie en waardoor-beveiligings controles.
+-   **Nieuwe gedrags Analytics-servers en-vm's**: wanneer er is geknoeid met een server of virtuele machine, gebruiken aanvallers een groot aantal technieken voor het uitvoeren van schadelijke code op dat systeem, terwijl detectie wordt voor komen, behoud van persistentie en waardoor-beveiligings controles.
 
--   **Azure SQL database detectie van dreigingen** : detectie van bedreigingen voor Azure SQL database, waarmee afwijkende database activiteiten worden geïdentificeerd die duiden op ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot data bases of deze te gebruiken.
+-   **Azure SQL database detectie van dreigingen**: detectie van bedreigingen voor Azure SQL database, waarmee afwijkende database activiteiten worden geïdentificeerd die duiden op ongebruikelijke en potentieel schadelijke pogingen om toegang te krijgen tot data bases of deze te gebruiken.
 
 ### <a name="behavioral-analytics"></a>Gedragsanalyse
 
@@ -182,15 +186,15 @@ De patronen worden ook bepaald door een zorgvuldige analyse van schadelijk gedra
 Daarnaast worden patronen gecorreleerd met andere signalen om te controleren op ondersteunende bewijzen van een veralgemeende campagne. Aan de hand van dit verband kan beter worden vastgesteld welke gebeurtenissen samenhangen met de opgestelde indicatoren van inbreuk.
 
 Voorbeelden zijn:
--   **Uitvoering van verdachte processen** : de aanvallers maken gebruik van verschillende methoden om schadelijke software uit te voeren zonder te worden gedetecteerd. Een aanvaller kan bijvoorbeeld schadelijke software dezelfde namen geven als legitieme systeem bestanden, maar deze bestanden op een andere locatie plaatsen, een naam gebruiken die vergelijkbaar is met die van een goed aardig bestand of de extensie van het bestand maskeren. Security Center modellen proces gedrag en bewaak proces uitvoeringen om uitbijters te detecteren, zoals deze.
+-   **Uitvoering van verdachte processen**: de aanvallers maken gebruik van verschillende methoden om schadelijke software uit te voeren zonder te worden gedetecteerd. Een aanvaller kan bijvoorbeeld schadelijke software dezelfde namen geven als legitieme systeem bestanden, maar deze bestanden op een andere locatie plaatsen, een naam gebruiken die vergelijkbaar is met die van een goed aardig bestand of de extensie van het bestand maskeren. Security Center modellen proces gedrag en bewaak proces uitvoeringen om uitbijters te detecteren, zoals deze.
 
--   **Verborgen malware en exploitatie pogingen** : geavanceerde malware kan omzeilen van traditionele antimalware door nooit naar schijf te schrijven of software onderdelen te versleutelen die op schijf zijn opgeslagen. Dergelijke schadelijke software kan echter worden gedetecteerd met behulp van geheugen analyse, omdat de malware traceringen in het geheugen moet laten functioneren. Wanneer software vastloopt, bevat een crashdump een gedeelte van het geheugen ten tijde van de crash. Door het geheugen in de crash dump te analyseren, kunt Azure Security Center technieken detecteren die worden gebruikt voor het exploiteren van beveiligings problemen in software, toegang krijgen tot vertrouwelijke gegevens en ongemerkt blijven bestaan binnen een getroffen machine zonder dat dit van invloed is op de prestaties van uw machine.
+-   **Verborgen malware en exploitatie pogingen**: geavanceerde malware kan omzeilen van traditionele antimalware door nooit naar schijf te schrijven of software onderdelen te versleutelen die op schijf zijn opgeslagen. Dergelijke schadelijke software kan echter worden gedetecteerd met behulp van geheugen analyse, omdat de malware traceringen in het geheugen moet laten functioneren. Wanneer software vastloopt, bevat een crashdump een gedeelte van het geheugen ten tijde van de crash. Door het geheugen in de crash dump te analyseren, kunt Azure Security Center technieken detecteren die worden gebruikt voor het exploiteren van beveiligings problemen in software, toegang krijgen tot vertrouwelijke gegevens en ongemerkt blijven bestaan binnen een getroffen machine zonder dat dit van invloed is op de prestaties van uw machine.
 
--   **Zijdelingse verplaatsing en interne Reconnaissance** : als u in een aangetast netwerk wilt blijven en waardevolle gegevens wilt zoeken en verzamelen, trachten de aanvallers vaak later van de geïnfecteerde machine naar anderen binnen hetzelfde netwerk te gaan. Met Security Center worden proces-en aanmeldings activiteiten gecontroleerd om pogingen tot het uitbreiden van de aanvaller binnen van een aanvaller binnen het netwerk te detecteren, zoals het uitvoeren van externe opdrachten, het zoeken van netwerken en het inventariseren van accounts.
+-   **Zijdelingse verplaatsing en interne Reconnaissance**: als u in een aangetast netwerk wilt blijven en waardevolle gegevens wilt zoeken en verzamelen, trachten de aanvallers vaak later van de geïnfecteerde machine naar anderen binnen hetzelfde netwerk te gaan. Met Security Center worden proces-en aanmeldings activiteiten gecontroleerd om pogingen tot het uitbreiden van de aanvaller binnen van een aanvaller binnen het netwerk te detecteren, zoals het uitvoeren van externe opdrachten, het zoeken van netwerken en het inventariseren van accounts.
 
--   **Schadelijke Power shell-scripts** : Power shell kan door aanvallers worden gebruikt om schadelijke code uit te voeren op virtuele doel machines voor verschillende doel einden. Security Center inspecteert PowerShell-activiteit op tekenen van verdachte activiteiten.
+-   **Schadelijke Power shell-scripts**: Power shell kan door aanvallers worden gebruikt om schadelijke code uit te voeren op virtuele doel machines voor verschillende doel einden. Security Center inspecteert PowerShell-activiteit op tekenen van verdachte activiteiten.
 
--   **Uitgaande aanvallen** : aanvallers richten zich vaak op cloudresources met het doel deze resources te gebruiken voor het uitvoeren van nieuwe aanvallen. Gemanipuleerde virtuele machines kunnen bijvoorbeeld worden gebruikt voor het starten van beveiligings aanvallen op andere virtuele machines, het verzenden van spam of het scannen van open poorten en andere apparaten op internet. Door machine learning toe te passen op netwerkverkeer kan Security Center het detecteren wanneer uitgaande netwerkcommunicatie groter is dan de norm. Als er spam wordt gedetecteerd, geeft Security Center ook ongebruikelijk e-mail verkeer met intelligentie van Microsoft 365 aan om te bepalen of het e-mail bericht waarschijnlijk kwaadwillend is of het resultaat is van een legitieme e-mail campagne.
+-   **Uitgaande aanvallen**: aanvallers richten zich vaak op cloudresources met het doel deze resources te gebruiken voor het uitvoeren van nieuwe aanvallen. Gemanipuleerde virtuele machines kunnen bijvoorbeeld worden gebruikt voor het starten van beveiligings aanvallen op andere virtuele machines, het verzenden van spam of het scannen van open poorten en andere apparaten op internet. Door machine learning toe te passen op netwerkverkeer kan Security Center het detecteren wanneer uitgaande netwerkcommunicatie groter is dan de norm. Als er spam wordt gedetecteerd, geeft Security Center ook ongebruikelijk e-mail verkeer met intelligentie van Microsoft 365 aan om te bepalen of het e-mail bericht waarschijnlijk kwaadwillend is of het resultaat is van een legitieme e-mail campagne.
 
 ### <a name="anomaly-detection"></a>Afwijkingsdetectie
 
@@ -202,13 +206,13 @@ Azure Security Center maakt ook gebruik van afwijkingsdetectie om bedreigingen t
 
 Azure Security Center werkt met beveiligings onderzoek en data wetenschappen teams overal ter wereld die voortdurend te controleren op wijzigingen in de bedreigings instellingen. Dit omvat de volgende initiatieven:
 
--   **Threat Intelligence-bewaking** : bedreigings informatie omvat mechanismen, indica toren, implicaties en bruikbare adviezen over bestaande of opkomende bedreigingen. Deze informatie wordt gedeeld in de beveiligings Community, en micro soft bewaakt voortdurend bedreigings informatie-feeds van interne en externe bronnen.
+-   **Threat Intelligence-bewaking**: bedreigings informatie omvat mechanismen, indica toren, implicaties en bruikbare adviezen over bestaande of opkomende bedreigingen. Deze informatie wordt gedeeld in de beveiligings Community, en micro soft bewaakt voortdurend bedreigings informatie-feeds van interne en externe bronnen.
 
--   **Signaal deling** : inzichten van beveiligings teams in de brede micro soft-portefeuille van Cloud-en on-premises Services, servers en client eindpunt apparaten worden gedeeld en geanalyseerd.
+-   **Signaal deling**: inzichten van beveiligings teams in de brede micro soft-portefeuille van Cloud-en on-premises Services, servers en client eindpunt apparaten worden gedeeld en geanalyseerd.
 
--   **Micro soft-beveiligings specialisten** : lopende betrokkenheid bij teams in micro soft die werken in gespecialiseerde beveiligings velden, zoals forensische en detectie van webaanval.
+-   **Micro soft-beveiligings specialisten**: lopende betrokkenheid bij teams in micro soft die werken in gespecialiseerde beveiligings velden, zoals forensische en detectie van webaanval.
 
--   **Detectie afstemmen** : algoritmen worden uitgevoerd op basis van echte klant gegevens sets en beveiligings onderzoekers werken samen met klanten om de resultaten te valideren. Echte en fout-positieven worden gebruikt voor het verfijnen van machine learning-algoritmen.
+-   **Detectie afstemmen**: algoritmen worden uitgevoerd op basis van echte klant gegevens sets en beveiligings onderzoekers werken samen met klanten om de resultaten te valideren. Echte en fout-positieven worden gebruikt voor het verfijnen van machine learning-algoritmen.
 
 Deze gecombineerde inspanningen culminate in nieuwe en verbeterde detecties, die u direct kunt voor delen. U hoeft geen actie te ondernemen.
 
@@ -222,25 +226,25 @@ Deze gecombineerde inspanningen culminate in nieuwe en verbeterde detecties, die
 
 Hier vindt u de functies van Azure voor het implementeren en inschakelen van micro soft antimalware voor uw toepassingen:
 
--   **Realtime-beveiliging** : controleert activiteit in Cloud Services en op virtuele machines om de uitvoering van schadelijke software te detecteren en blok keren.
+-   **Realtime-beveiliging**: controleert activiteit in Cloud Services en op virtuele machines om de uitvoering van schadelijke software te detecteren en blok keren.
 
--   **Gepland scannen** : voert periodiek gerichte scans uit voor het detecteren van malware, waaronder actieve Program ma's.
+-   **Gepland scannen**: voert periodiek gerichte scans uit voor het detecteren van malware, waaronder actieve Program ma's.
 
--   **Herstel van malware** : werkt automatisch op gedetecteerde malware, zoals het verwijderen of in quarantaine van schadelijke bestanden en het opschonen van schadelijke Register vermeldingen.
+-   **Herstel van malware**: werkt automatisch op gedetecteerde malware, zoals het verwijderen of in quarantaine van schadelijke bestanden en het opschonen van schadelijke Register vermeldingen.
 
--   **Handtekening updates** : installeert automatisch de nieuwste beveiligings handtekeningen (virus definities) om ervoor te zorgen dat de beveiliging up-to-date is op een vooraf ingestelde frequentie.
+-   **Handtekening updates**: installeert automatisch de nieuwste beveiligings handtekeningen (virus definities) om ervoor te zorgen dat de beveiliging up-to-date is op een vooraf ingestelde frequentie.
 
--   **Antimalware engine updates** : werkt automatisch de micro soft-antimalware engine bij.
+-   **Antimalware engine updates**: werkt automatisch de micro soft-antimalware engine bij.
 
--   **Updates van het antimalware** -platform: Hiermee wordt het micro soft antimalware-platform automatisch bijgewerkt.
+-   **Updates van het antimalware**-platform: Hiermee wordt het micro soft antimalware-platform automatisch bijgewerkt.
 
--   **Actieve beveiliging** : Hiermee wordt een telemetrie-meta gegevens over gedetecteerde bedreigingen en verdachte bronnen gerapporteerd om Microsoft Azure te zorgen voor een snelle reactie op het groeiende risico op de concurrentie, waardoor synchrone hand tekeningen in realtime kunnen worden geleverd via het micro soft Active Protection-systeem.
+-   **Actieve beveiliging**: Hiermee wordt een telemetrie-meta gegevens over gedetecteerde bedreigingen en verdachte bronnen gerapporteerd om Microsoft Azure te zorgen voor een snelle reactie op het groeiende risico op de concurrentie, waardoor synchrone hand tekeningen in realtime kunnen worden geleverd via het micro soft Active Protection-systeem.
 
--   Voor **beelden van rapportage** : biedt en rapport voorbeelden aan de micro soft-antimalwareservice om de service te verfijnen en probleem oplossing in te scha kelen.
+-   Voor **beelden van rapportage**: biedt en rapport voorbeelden aan de micro soft-antimalwareservice om de service te verfijnen en probleem oplossing in te scha kelen.
 
--   **Uitzonde ringen** : Hiermee kunnen toepassings-en service beheerders bepaalde bestanden, processen en stations configureren voor uitsluiting van beveiliging en scannen op prestaties en andere redenen.
+-   **Uitzonde ringen**: Hiermee kunnen toepassings-en service beheerders bepaalde bestanden, processen en stations configureren voor uitsluiting van beveiliging en scannen op prestaties en andere redenen.
 
--   **Gebeurtenis verzameling voor antimalware** : registreert de status van de antimalware-service, verdachte activiteiten en herstel bewerkingen die zijn uitgevoerd in het gebeurtenis logboek van het besturings systeem en verzamelt deze in het Azure-opslag account van de klant.
+-   **Gebeurtenis verzameling voor antimalware**: registreert de status van de antimalware-service, verdachte activiteiten en herstel bewerkingen die zijn uitgevoerd in het gebeurtenis logboek van het besturings systeem en verzamelt deze in het Azure-opslag account van de klant.
 
 ### <a name="azure-sql-database-threat-detection"></a>Detectie van Azure SQL Database-dreigingen
 
@@ -262,9 +266,9 @@ Wanneer gebruikers een e-mail melding met een bedreigings detectie ontvangen, ku
 
 SQL Database bedreigings detecties gebruiken een van de volgende detectie methoden:
 
--   **Deterministische detectie** : detecteert verdachte patronen (op regels gebaseerd) in de SQL-Client query's die overeenkomen met bekende aanvallen. Deze methodologie heeft een hoge detectie en een lage fout-positief, maar een beperkte dekking omdat deze binnen de categorie "atomische detecties" valt.
+-   **Deterministische detectie**: detecteert verdachte patronen (op regels gebaseerd) in de SQL-Client query's die overeenkomen met bekende aanvallen. Deze methodologie heeft een hoge detectie en een lage fout-positief, maar een beperkte dekking omdat deze binnen de categorie "atomische detecties" valt.
 
--   **Gedrags detectie** : detecteert afwijkende activiteit, die abnormaal gedrag in de data base is die gedurende de laatste 30 dagen niet is gedetecteerd. Voor beelden van afwijkende activiteiten van SQL client kunnen een piek zijn bij mislukte aanmeldingen of query's, een groot aantal gegevens dat wordt geëxtraheerd, ongebruikelijke canonieke query's of onbekende IP-adressen die worden gebruikt voor toegang tot de data base.
+-   **Gedrags detectie**: detecteert afwijkende activiteit, die abnormaal gedrag in de data base is die gedurende de laatste 30 dagen niet is gedetecteerd. Voor beelden van afwijkende activiteiten van SQL client kunnen een piek zijn bij mislukte aanmeldingen of query's, een groot aantal gegevens dat wordt geëxtraheerd, ongebruikelijke canonieke query's of onbekende IP-adressen die worden gebruikt voor toegang tot de data base.
 
 ### <a name="application-gateway-web-application-firewall"></a>Application Gateway Web Application firewall
 
@@ -304,19 +308,19 @@ De anomalie detectie-API is een API die nuttig is voor het detecteren van versch
 
 De [anomalie detectie-API](../../machine-learning/team-data-science-process/apps-anomaly-detection-api.md) kan de volgende typen afwijkingen in de tijdreeks gegevens detecteren:
 
--   **Pieken en spannings dips** : wanneer u het aantal mislukte aanmeldingen in een service of het aantal afhandelingen in een e-commerce site bewaakt, kunnen ongebruikelijke pieken of spannings dips duiden op beveiligings aanvallen of onderbrekingen in de service.
+-   **Pieken en spannings dips**: wanneer u het aantal mislukte aanmeldingen in een service of het aantal afhandelingen in een e-commerce site bewaakt, kunnen ongebruikelijke pieken of spannings dips duiden op beveiligings aanvallen of onderbrekingen in de service.
 
--   **Positieve en negatieve trends** : wanneer u het geheugen gebruik bewaken in computing, wordt de grootte van het beschik bare geheugen een mogelijke geheugenlek. Voor de bewaking van de service wachtrij lengte kan een permanente opwaartse trend duiden op een onderliggend software probleem.
+-   **Positieve en negatieve trends**: wanneer u het geheugen gebruik bewaken in computing, wordt de grootte van het beschik bare geheugen een mogelijke geheugenlek. Voor de bewaking van de service wachtrij lengte kan een permanente opwaartse trend duiden op een onderliggend software probleem.
 
--   **Niveau wijzigingen en wijzigingen in dynamische waarden reeks** : niveau wijzigingen in latentie van een service na een service-upgrade of lagere niveaus van uitzonde ringen na de upgrade kan interessant zijn om te bewaken.
+-   **Niveau wijzigingen en wijzigingen in dynamische waarden reeks**: niveau wijzigingen in latentie van een service na een service-upgrade of lagere niveaus van uitzonde ringen na de upgrade kan interessant zijn om te bewaken.
 
 Met de op machine learning gebaseerde API kunt u het volgende doen:
 
 -   **Flexibele en robuuste detectie: met** de anomalie detectie modellen kunnen gebruikers gevoeligheids instellingen configureren en afwijkingen tussen seizoen-en niet-seizoen gegevens sets detecteren. Gebruikers kunnen het model voor anomalie detectie aanpassen om de detectie-API minder of meer gevoelig te maken op basis van hun behoeften. Dit leidt ertoe dat er minder of meer zicht bare afwijkingen worden gedetecteerd in gegevens met en zonder seizoen patronen.
 
--   **Schaal bare en tijdige detectie** : de traditionele manier om te controleren met de huidige drempel waarden die zijn ingesteld door de domein kennis van deskundigen, zijn kostbaar en niet schaalbaar voor miljoenen gegevens sets die dynamisch worden gewijzigd. De anomalie detectie modellen in deze API worden geleerd en modellen worden automatisch afgestemd op zowel historische als realtime gegevens.
+-   **Schaal bare en tijdige detectie**: de traditionele manier om te controleren met de huidige drempel waarden die zijn ingesteld door de domein kennis van deskundigen, zijn kostbaar en niet schaalbaar voor miljoenen gegevens sets die dynamisch worden gewijzigd. De anomalie detectie modellen in deze API worden geleerd en modellen worden automatisch afgestemd op zowel historische als realtime gegevens.
 
--   **Proactieve en bruikbare detectie** : trage trend en detectie van niveau wijziging kan worden toegepast voor vroegtijdige anomalie detectie. De vroege abnormale signalen die worden gedetecteerd, kunnen worden gebruikt om mensen te leiden om de probleem gebieden te onderzoeken en op te treden. Daarnaast kunnen analyse modellen van de hoofd oorzaak en hulpprogram ma's voor waarschuwings Programma's worden ontwikkeld boven op deze anomalie detectie-API-service.
+-   **Proactieve en bruikbare detectie**: trage trend en detectie van niveau wijziging kan worden toegepast voor vroegtijdige anomalie detectie. De vroege abnormale signalen die worden gedetecteerd, kunnen worden gebruikt om mensen te leiden om de probleem gebieden te onderzoeken en op te treden. Daarnaast kunnen analyse modellen van de hoofd oorzaak en hulpprogram ma's voor waarschuwings Programma's worden ontwikkeld boven op deze anomalie detectie-API-service.
 
 De anomalie detectie-API is een effectieve en efficiënte oplossing voor een breed scala aan scenario's, zoals service status en KPI-bewaking, IoT, prestatie bewaking en netwerk verkeer bewaking. Hier volgen enkele populaire scenario's waarin deze API nuttig kan zijn:
 

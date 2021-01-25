@@ -14,12 +14,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/05/2021
 ms.author: yelevin
-ms.openlocfilehash: 617599e3eb6dcca74324a7bdfd51e604904a2fa1
-ms.sourcegitcommit: d7d5f0da1dda786bda0260cf43bd4716e5bda08b
+ms.openlocfilehash: 8261856598a155e97f90ea350cedcd4c10e6893c
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97897498"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747303"
 ---
 # <a name="step-1-deploy-the-log-forwarder"></a>Stap 1: de logboek-doorstuur server implementeren
 
@@ -42,6 +42,11 @@ In deze stap wijst en configureert u de Linux-computer waarmee de logboeken word
 
 - De Linux-machine mag niet worden verbonden met een Azure-werk ruimte voordat u de Log Analytics-Agent installeert.
 
+- Uw Linux-machine moet mini maal **4 CPU-kernen en 8 GB RAM-geheugen** hebben.
+
+    > [!NOTE]
+    > - Een single-doorstuur machine voor logboek registratie met behulp van de **rsyslog** -daemon heeft een ondersteunde capaciteit van **Maxi maal 8500 gebeurtenissen per seconde (EPS)** verzameld.
+
 - Mogelijk hebt u de werk ruimte-ID en de primaire sleutel voor de werk ruimte op een bepaald moment in dit proces nodig. U vindt deze in de werkruimte resource onder **agent beheer**.
 
 ## <a name="run-the-deployment-script"></a>Het implementatiescript uitvoeren
@@ -51,7 +56,7 @@ In deze stap wijst en configureert u de Linux-computer waarmee de logboeken word
 1. Onder **1,2 Installeer de CEF-Collector op de Linux-computer**, kopieer de koppeling die u hebt gemaakt onder **Voer het volgende script uit om de CEF-Collector te installeren en toe te passen**, of uit de onderstaande tekst (waarbij de werk ruimte-id en de primaire sleutel worden toegepast in plaats van de tijdelijke aanduidingen):
 
     ```bash
-    sudo wget -O https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]
+    sudo wget -O cef_installer.py https://raw.githubusercontent.com/Azure/Azure-Sentinel/master/DataConnectors/CEF/cef_installer.py&&sudo python cef_installer.py [WorkspaceID] [Workspace Primary Key]
     ```
 
 1. Zorg ervoor dat het script wordt uitgevoerd en controleer of er geen fout-of waarschuwings berichten worden weer gegeven.
@@ -73,7 +78,7 @@ In deze stap wijst en configureert u de Linux-computer waarmee de logboeken word
 > [!NOTE]
 > **De bron van het veld TimeGenerated wijzigen**
 >
-> - Standaard vult de Log Analytics agent het veld *TimeGenerated* in het schema in met de tijd dat de agent de gebeurtenis van de syslog-daemon heeft ontvangen. Als gevolg hiervan wordt het tijdstip waarop de gebeurtenis op het bron systeem werd gegenereerd, niet vastgelegd in azure Sentinel.
+> - Standaard vult de Log Analytics agent het veld *TimeGenerated* in het schema in met de tijd dat de agent de gebeurtenis van de syslog-daemon heeft ontvangen. Als gevolg hiervan wordt de tijd waarop de gebeurtenis is gegenereerd in het bronsysteem, niet opgeslagen in Azure Sentinel.
 >
 > - U kunt echter de volgende opdracht uitvoeren, zodat het script wordt gedownload en uitgevoerd `TimeGenerated.py` . Met dit script wordt de Log Analytics-agent zo geconfigureerd dat het veld *TimeGenerated* wordt ingevuld met de oorspronkelijke tijd van de gebeurtenis op het bron systeem, in plaats van de tijd die door de agent is ontvangen.
 >
@@ -94,8 +99,8 @@ Kies een syslog-daemon om de juiste beschrijving te bekijken.
     - Hiermee wordt het installatie script gedownload voor de Linux-agent van Log Analytics (OMS).
 
         ```bash
-        wget -O https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/
-            onboard_agent.sh
+        wget -O onboard_agent.sh https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/
+            master/installer/scripts/onboard_agent.sh
         ```
 
     - Hiermee wordt de Log Analytics-agent geïnstalleerd.
@@ -160,8 +165,8 @@ Kies een syslog-daemon om de juiste beschrijving te bekijken.
     - Hiermee wordt het installatie script gedownload voor de Linux-agent van Log Analytics (OMS).
 
         ```bash
-        wget -O https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/master/installer/scripts/
-            onboard_agent.sh
+        wget -O onboard_agent.sh https://raw.githubusercontent.com/Microsoft/OMS-Agent-for-Linux/
+            master/installer/scripts/onboard_agent.sh
         ```
 
     - Hiermee wordt de Log Analytics-agent geïnstalleerd.

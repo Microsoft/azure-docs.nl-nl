@@ -93,6 +93,11 @@
           href: export-data.md
         - name: Niet-geïdentificeerde export
           href: de-identified-export.md
+    - name: Gegevens converteren
+      expanded: false
+      items:
+        - name: Sjablonen voor de extensie $convert-data-en FHIR-Converter
+          href: convert-data.md
     - name: ID's van identiteitsobjecten vinden
       href: find-identity-object-ids.md
     - name: Diagnostische logboeken en metrische gegevens

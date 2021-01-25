@@ -1,6 +1,6 @@
 ---
 title: Syslog-gegevens verbinden met Azure-Sentinel | Microsoft Docs
-description: Verbind elke computer of apparaat dat syslog ondersteunt op Azure Sentinel door gebruik te maken van een agent op een Linux-machine tussen het apparaat en de Sentinel. 
+description: Verbind elke computer of apparaat dat syslog ondersteunt op Azure Sentinel door gebruik te maken van een agent op een Linux-machine tussen het apparaat en de Sentinel.
 services: sentinel
 documentationcenter: na
 author: yelevin
@@ -14,19 +14,19 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 07/17/2020
 ms.author: yelevin
-ms.openlocfilehash: 7670d00a2dd25961a51d18c50c102e0f92b30975
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8c3cf4c3c135b3f275542af4f531d1071e180ebe
+ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88566145"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98747187"
 ---
 # <a name="collect-data-from-linux-based-sources-using-syslog"></a>Gegevens verzamelen van op Linux gebaseerde bronnen met behulp van syslog
 
 U kunt gebeurtenissen streamen van op Linux gebaseerde machines of toestellen die met syslog worden ondersteund in azure Sentinel, met behulp van de Log Analytics-agent voor Linux (voorheen bekend als de OMS-agent). U kunt dit doen voor elke machine waarmee u de Log Analytics-agent rechtstreeks op de computer kunt installeren. Met de systeem eigen syslog-daemon van de machine worden lokale gebeurtenissen van de opgegeven typen verzameld en lokaal naar de agent doorgestuurd. deze worden naar uw Log Analytics-werk ruimte gestreamd.
 
 > [!NOTE]
-> - Als uw apparaat **algemene gebeurtenis indeling (CEF) via syslog**ondersteunt, wordt er een meer gegevens verzameling verzameld en worden de gegevens geparseerd bij het verzamelen. Kies deze optie en volg de instructies in [verbinding maken met uw externe oplossing met behulp van CEF](connect-common-event-format.md).
+> - Als uw apparaat **algemene gebeurtenis indeling (CEF) via syslog** ondersteunt, wordt er een meer gegevens verzameling verzameld en worden de gegevens geparseerd bij het verzamelen. Kies deze optie en volg de instructies in [verbinding maken met uw externe oplossing met behulp van CEF](connect-common-event-format.md).
 >
 > - Log Analytics ondersteunt het verzamelen van berichten die worden verzonden door de **rsyslog** of **syslog-ng-** daemons, waarbij rsyslog de standaard waarde is. De standaard syslog-daemon op versie 5 van Red Hat Enterprise Linux (RHEL), CentOS en Oracle Linux versie (**sysklog**) wordt niet ondersteund voor de verzameling syslog-gebeurtenissen. Als u syslog-gegevens uit deze versie van deze distributies wilt verzamelen, moet de rsyslog-daemon worden geïnstalleerd en geconfigureerd om sysklog te vervangen.
 
@@ -73,7 +73,7 @@ Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/platform/data-so
     
     - Voeg de faciliteiten toe die uw syslog-apparaat in de logboek headers heeft opgenomen. 
     
-    - Als u afwijkende SSH-aanmeldings detectie wilt gebruiken met de gegevens die u verzamelt, voegt u **auth** en **authpriv**toe. Raadpleeg de [volgende sectie](#configure-the-syslog-connector-for-anomalous-ssh-login-detection) voor meer informatie.
+    - Als u afwijkende SSH-aanmeldings detectie wilt gebruiken met de gegevens die u verzamelt, voegt u **auth** en **authpriv** toe. Raadpleeg de [volgende sectie](#configure-the-syslog-connector-for-anomalous-ssh-login-detection) voor meer informatie.
 
 1. Wanneer u alle faciliteiten hebt toegevoegd die u wilt bewaken en de ernst opties voor elke functie hebt aangepast, schakelt u het selectie vakje **op de onderstaande configuratie Toep assen op mijn computers in**.
 
@@ -81,7 +81,7 @@ Zie [syslog-gegevens bronnen in azure monitor](../azure-monitor/platform/data-so
 
 1. Controleer op uw virtuele machine of apparaat of u de door u opgegeven faciliteiten wilt verzenden.
 
-1. Als u de gegevens van het syslog-logboek in **Logboeken**wilt opvragen, typt u `Syslog` in het query venster.
+1. Als u de gegevens van het syslog-logboek in **Logboeken** wilt opvragen, typt u `Syslog` in het query venster.
 
 1. U kunt de query parameters die worden beschreven in [functies gebruiken in azure monitor logboek query's](../azure-monitor/log-query/functions.md) gebruiken om uw syslog-berichten te parseren. U kunt de query vervolgens opslaan als een nieuwe Log Analytics functie en deze gebruiken als een nieuw gegevens type.
 
@@ -118,10 +118,14 @@ Voor deze detectie is een specifieke configuratie van de syslog-gegevens connect
     > [!div class="mx-imgBorder"]
     > ![Voorzieningen die zijn vereist voor afwijkende SSH-aanmeldings detectie](./media/connect-syslog/facilities-ssh-detection.png)
 
-2. Zorg dat er voldoende tijd is om syslog-gegevens te verzamelen. Ga vervolgens naar **Azure Sentinel-logs**en kopieer en plak de volgende query:
+2. Zorg dat er voldoende tijd is om syslog-gegevens te verzamelen. Ga vervolgens naar **Azure Sentinel-logs** en kopieer en plak de volgende query:
     
-    ```console
-    Syslog |  where Facility in ("authpriv","auth")| extend c = extract( "Accepted\\s(publickey|password|keyboard-interactive/pam)\\sfor ([^\\s]+)",1,SyslogMessage)| where isnotempty(c) | count 
+    ```kusto
+    Syslog
+    | where Facility in ("authpriv","auth")
+    | extend c = extract( "Accepted\\s(publickey|password|keyboard-interactive/pam)\\sfor ([^\\s]+)",1,SyslogMessage)
+    | where isnotempty(c)
+    | count 
     ```
     
     Wijzig het **tijds bereik** indien nodig en selecteer **uitvoeren**.

@@ -157,6 +157,8 @@
               href: howto-use-app-templates.md
             - name: De status van de toepassing bewaken
               href: howto-monitor-application-health.md
+            - name: V2 migreren naar v3-toepassing
+              href: howto-migrate.md
             - name: Over uw toepassing
               href: howto-get-app-info.md
             - name: X.509-certificaten rouleren

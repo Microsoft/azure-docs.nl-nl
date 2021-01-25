@@ -13,12 +13,12 @@ ms.date: 11/20/2020
 ms.author: marsma
 ms.reviewer: saeeda
 ms.custom: aaddev
-ms.openlocfilehash: 9ec8a5fe5de751e40ebaa17629ff72c5f6b2adca
-ms.sourcegitcommit: f311f112c9ca711d88a096bed43040fcdad24433
+ms.openlocfilehash: 46626c3ebe9d70600be1cc5f73c43677f67bcd09
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94979981"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761373"
 ---
 # <a name="application-configuration-options"></a>Configuratie opties voor toepassingen
 
@@ -147,8 +147,20 @@ Voor daemon-apps hoeft u geen omleidings-URI op te geven.
 Met deze optie geeft u het client geheim op voor de vertrouwelijke client-app. Dit geheim (app-wacht woord) wordt geleverd door de portal voor toepassings registratie of geleverd aan Azure AD tijdens de registratie van de app met Power shell AzureAD, Power shell AzureRM of Azure CLI.
 
 ## <a name="logging"></a>Logboekregistratie
+Voor hulp bij het oplossen van problemen met fout opsporing en verificatie, biedt de micro soft-verificatie bibliotheek ingebouwde ondersteuning voor logboek registratie. Bij logboek registratie wordt elke bibliotheek behandeld in de volgende artikelen:
 
-Met de andere configuratie opties kunt u logboek registratie en probleem oplossing inschakelen. Zie het artikel [logboek registratie](msal-logging.md) voor meer informatie over het gebruik ervan.
+:::row:::
+    :::column:::
+        - [Logboekregistratie in MSAL.NET](msal-logging-dotnet.md)
+        - [Logboekregistratie in MSAL voor Android](msal-logging-android.md)
+        - [Logboekregistratie in MSAL.js](msal-logging-js.md)
+    :::column-end:::
+    :::column:::
+        - [Logboekregistratie in MSAL voor iOS/macOS](msal-logging-ios.md)
+        - [Logboekregistratie in MSAL voor Java](msal-logging-java.md)
+        - [Logboekregistratie in MSAL voor Python](msal-logging-python.md)
+    :::column-end:::
+:::row-end:::
 
 ## <a name="next-steps"></a>Volgende stappen
 

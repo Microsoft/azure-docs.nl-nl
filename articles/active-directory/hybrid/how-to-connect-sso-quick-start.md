@@ -16,21 +16,18 @@ ms.date: 04/16/2019
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eadb20bc570545356508d82c05e1746424a14b71
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 59cc50274b291c23aeec4620ec7a09312cc0c1fb
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97504386"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762254"
 ---
 # <a name="azure-active-directory-seamless-single-sign-on-quickstart"></a>Azure Active Directory naadloze eenmalige aanmelding: Quick Start
 
 ## <a name="deploy-seamless-single-sign-on"></a>Naadloze single Sign-On implementeren
 
 Azure Active Directory (Azure AD) naadloze single Sign-On (naadloze SSO) worden automatisch ondertekend door gebruikers wanneer ze zich op hun bedrijfs Desk tops bevinden die zijn verbonden met uw bedrijfs netwerk. Naadloze SSO biedt uw gebruikers eenvoudige toegang tot uw Cloud toepassingen zonder dat hiervoor extra on-premises onderdelen nodig zijn.
-
-> [!NOTE]
-> Dit artikel bevat verwijzingen naar de term *white list*, een term die micro soft niet meer gebruikt. Wanneer de periode van de software wordt verwijderd, worden deze uit dit artikel verwijderd.
 
 Voer de volgende stappen uit om naadloze SSO te implementeren.
 
@@ -40,7 +37,7 @@ Zorg ervoor dat aan de volgende vereisten is voldaan:
 
 * **Uw Azure AD Connect-server instellen**: als u [Pass-Through-verificatie](how-to-connect-pta.md) gebruikt als uw aanmeldings methode, is er geen aanvullende controle op vereisten vereist. Als u [wachtwoord hash-synchronisatie](how-to-connect-password-hash-synchronization.md) gebruikt als uw aanmeldings methode en als er een firewall is tussen Azure AD Connect en Azure AD, moet u ervoor zorgen dat:
    - U gebruikt versie 1.1.644.0 of hoger van Azure AD Connect. 
-   - Als uw firewall of proxy toestaat, voegt u de verbindingen toe aan de lijst met toegestane **\* Msappproxy.net** -url's via poort 443. Als dat niet het geval is, moet u toegang toestaan tot de [IP-adresbereiken van Azure Datacenter](https://www.microsoft.com/download/details.aspx?id=41653), die elke week worden bijgewerkt. Deze vereiste is alleen van toepassing wanneer u de functie inschakelt. Het is niet vereist voor de werkelijke gebruikers aanmeldingen.
+   - Als uw firewall of proxy toestaat, voegt u de verbindingen toe aan de lijst met toegestane **\* Msappproxy.net** -url's via poort 443. Als u een specifieke URL vereist in plaats van een Joker teken voor proxy configuratie, kunt u **tenantid.registration.msappproxy.net** configureren, waarbij TENANTID de GUID is van de Tenant waar u de functie configureert. Als op URL gebaseerde proxy-uitzonde ringen in uw organisatie niet mogelijk zijn, kunt u in plaats daarvan toegang verlenen tot de [IP-bereiken van het Azure-Data Center](https://www.microsoft.com/download/details.aspx?id=41653), die wekelijks worden bijgewerkt. Deze vereiste is alleen van toepassing wanneer u de functie inschakelt. Het is niet vereist voor de werkelijke gebruikers aanmeldingen.
 
     >[!NOTE]
     >Azure AD Connect versies 1.1.557.0, 1.1.558.0, 1.1.561.0 en 1.1.614.0 hebben een probleem met de synchronisatie van wacht woord-hashes. Als u de synchronisatie van wacht woord-hash _niet_ wilt gebruiken in combi natie met Pass-Through-verificatie, raadpleegt u de opmerkingen bij de [Azure AD Connect-release](./reference-connect-version-history.md) voor meer informatie.

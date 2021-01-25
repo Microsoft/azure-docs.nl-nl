@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: how-to
 ms.date: 12/01/2020
 ms.author: b-juche
-ms.openlocfilehash: cd2a293ebcc35d4884211f50783738a502dcc7de
-ms.sourcegitcommit: 48cb2b7d4022a85175309cf3573e72c4e67288f5
+ms.openlocfilehash: 48ee05eebd91c60fa2cfecc80898d3be54367269
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/08/2020
-ms.locfileid: "96854822"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762683"
 ---
 # <a name="create-an-smb-volume-for-azure-netapp-files"></a>Een SMB-volume maken voor Azure NetApp Files
 
@@ -74,7 +74,7 @@ Er moet een subnet zijn gedelegeerd aan Azure NetApp Files.
 
     Zie [de site topologie ontwerpen](/windows-server/identity/ad-ds/plan/designing-the-site-topology) over AD-sites en-services. 
     
-* U kunt AES-versleuteling inschakelen voor een SMB-volume door het selectie vakje **AES-versleuteling** in het venster [lid worden Active Directory](#create-an-active-directory-connection) te controleren. Azure NetApp Files ondersteunt DES-, Kerberos AES 128-en Kerberos AES 256-versleutelings typen (van het minst veilig tot het veiligst). Als u AES-versleuteling inschakelt, moeten de gebruikers referenties die worden gebruikt om lid te worden van Active Directory de hoogste overeenkomende account optie ingeschakeld hebben die overeenkomt met de mogelijkheden die zijn ingeschakeld voor uw Active Directory.    
+* U kunt AES-versleuteling voor AD-verificatie inschakelen door het selectie vakje **AES-versleuteling** in het venster [lid worden van Active Directory](#create-an-active-directory-connection) in te scha kelen. Azure NetApp Files ondersteunt DES-, Kerberos AES 128-en Kerberos AES 256-versleutelings typen (van het minst veilig tot het veiligst). Als u AES-versleuteling inschakelt, moeten de gebruikers referenties die worden gebruikt om lid te worden van Active Directory de hoogste overeenkomende account optie ingeschakeld hebben die overeenkomt met de mogelijkheden die zijn ingeschakeld voor uw Active Directory.    
 
     Als uw Active Directory bijvoorbeeld alleen de functie AES-128 heeft, moet u de optie AES-128-account inschakelen voor de gebruikers referenties. Als uw Active Directory de functie AES-256 heeft, moet u de optie AES-256-account inschakelen (deze ondersteunt ook AES-128). Als uw Active Directory geen Kerberos-coderings functie heeft, gebruikt Azure NetApp Files standaard DES.  
 

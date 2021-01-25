@@ -5,13 +5,13 @@ services: logic-apps
 ms.suite: integration
 ms.reviewer: estfan, logicappspm, az-logic-apps-dev
 ms.topic: conceptual
-ms.date: 12/07/2020
-ms.openlocfilehash: 7c15b3a854b533d93bc05f7e5302671711da75c2
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 01/22/2021
+ms.openlocfilehash: a4d1543c5c4ce7a44825a879b838e7829b8c84fd
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936121"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98760633"
 ---
 # <a name="overview-azure-logic-apps-preview"></a>Overzicht: Azure Logic Apps Preview
 
@@ -139,6 +139,8 @@ Azure Logic Apps Preview bevat een groot aantal huidige en aanvullende mogelijkh
 
 * Schakel diagnostische logboek registratie en tracerings mogelijkheden in voor uw logische app door gebruik te maken van [Application Insights](../azure-monitor/app/app-insights-overview.md) als dit wordt ondersteund door uw Azure-abonnement en de instellingen van de logische app.
 
+* Opnieuw genereren van toegangs sleutels voor beheerde verbindingen die door afzonderlijke werk stromen worden gebruikt in een **logische app (preview)-** resource. Volg voor deze taak [dezelfde stappen voor de **Logic apps** resource, maar op het individuele werk stroom niveau](logic-apps-securing-a-logic-app.md#regenerate-access-keys), niet op het resource niveau van de logische app.
+
 > [!NOTE]
 > Raadpleeg de [pagina met bekende problemen Logic apps open bare preview in github](https://github.com/Azure/logicapps/blob/master/articles/logic-apps-public-preview-known-issues.md)voor meer informatie over bekende problemen.
 
@@ -165,7 +167,7 @@ Raadpleeg de volgende onderwerpen voor meer informatie over de prijs modellen di
 
 ## <a name="changed-limited-unavailable-or-unsupported-capabilities"></a>Gewijzigde, beperkte, niet-beschik bare en niet-ondersteunde mogelijkheden
 
-In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd of ze zijn momenteel beperkt, niet beschikbaar of worden niet ondersteund:
+In Azure Logic Apps Preview zijn deze mogelijkheden gewijzigd, of ze zijn momenteel beperkt, niet beschikbaar of niet-ondersteund:
 
 * **Triggers en acties**: sommige ingebouwde triggers zijn niet beschikbaar, zoals het schuif venster en batch. Als u uw werk stroom wilt starten, gebruikt u de trigger voor het [ingebouwde terugkeer patroon, aanvraag, http, HTTP-webhook, Event hubs of service bus](../connectors/apis-list.md). Ingebouwde triggers en acties worden standaard uitgevoerd in de runtime van Azure Logic Apps Preview, terwijl beheerde connectors worden geïmplementeerd in Azure. In de ontwerp functie worden ingebouwde triggers en acties weer gegeven onder het **ingebouwde** tabblad, terwijl beheerde connector triggers en acties worden weer gegeven op het tabblad **Azure** .
 

@@ -9,14 +9,14 @@ ms.author: ericg
 ms.service: app-service
 ms.workload: web
 ms.custom: fasttrack-edit, references_regions
-ms.openlocfilehash: bebc7dcbc18a25b0d6d0761a8ca3ac476e83e581
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
+ms.openlocfilehash: 4534a315429a120af45dfd495df4a8c29b233de7
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96183036"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763024"
 ---
-# <a name="using-private-endpoints-for-azure-web-app"></a>Privé-eind punten gebruiken voor Azure-web-app
+# <a name="using-private-endpoints-for-azure-web-app"></a>Privé-eindpunten voor Azure Web App
 
 > [!IMPORTANT]
 > Er is een persoonlijk eind punt beschikbaar voor Windows-en Linux-web-apps, die worden containerd of niet, gehost op deze App Service plannen: **geïsoleerd**, **PremiumV2**, **PremiumV3**, **functions Premium** (ook wel het elastische Premium-abonnement genoemd). 
@@ -116,7 +116,7 @@ Zie [prijzen van Azure Private Link][pricing] voor meer informatie over prijzen.
 
 Wanneer u de functie Azure gebruikt in een elastisch Premium-abonnement met een privé-eind punt, moet u directe toegang tot het netwerk hebben of u een HTTP 403-fout ontvangen om de functies in azure Web Portal uit te voeren of uit te voeren. Met andere woorden, uw browser moet het persoonlijke eind punt kunnen bereiken om de functie uit te voeren vanuit de Azure-webportal. 
 
-U kunt Maxi maal 100 persoonlijk eind punt verbinden met een bepaalde web-app.
+U kunt Maxi maal 100 persoonlijke eind punten verbinden met een bepaalde web-app.
 
 Sleuven kunnen geen persoonlijk eind punt gebruiken.
 

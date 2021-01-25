@@ -10,12 +10,12 @@ ms.date: 11/09/2020
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurecli, devx-track-azurepowershell
-ms.openlocfilehash: 9f2b0dccde0532646457a0841fc2798e103d8cc7
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: 226601eadf922a9d834ab84520fd1edf964348fa
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97347945"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762936"
 ---
 # <a name="configure-object-replication-for-block-blobs"></a>Object replicatie configureren voor blok-blobs
 
@@ -146,7 +146,7 @@ Set-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
     -InputObject $destPolicy
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een replicatie beleid wilt maken met Azure CLI, installeert u eerst Azure CLI versie 2.11.1 of hoger. Zie [aan de slag met Azure cli](/cli/azure/get-started-with-azure-cli)voor meer informatie.
 
@@ -158,11 +158,7 @@ az login
 az storage account blob-service-properties update \
     --resource-group <resource-group> \
     --account-name <source-storage-account> \
-    --enable-versioning
-
-az storage account blob-service-properties update \
-    --resource-group <resource-group> \
-    --account-name <source-storage-account> \
+    --enable-versioning \
     --enable-change-feed
 
 az storage account blob-service-properties update \
@@ -326,7 +322,7 @@ Set-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
     -Rule $object.Rules
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de replicatie beleids definitie voor het doel account wilt schrijven naar een JSON-bestand vanuit Azure CLI, roept u de opdracht [AZ Storage account of-Policy show](/cli/azure/storage/account/or-policy#az_storage_account_or_policy_show) aan en voert u uit naar een bestand.
 
@@ -376,7 +372,7 @@ $blobSrc = Get-AzStorageBlob -Container $srcContainerName1 `
 $blobSrc.BlobProperties.ObjectReplicationSourceProperties[0].Rules[0].ReplicationStatus
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u de replicatie status voor een BLOB in het bron account met Azure CLI wilt controleren, haalt u de waarde van de eigenschap object replicatie **status** op, zoals wordt weer gegeven in het volgende voor beeld:
 
@@ -427,7 +423,7 @@ Remove-AzStorageObjectReplicationPolicy -ResourceGroupName $rgname `
     -PolicyId $destPolicy.PolicyId
 ```
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 Als u een replicatie beleid wilt verwijderen, verwijdert u het beleid van zowel het bron account als het doel account. Als u het beleid verwijdert, worden ook alle bijbehorende regels verwijderd.
 

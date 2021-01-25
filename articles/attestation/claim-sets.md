@@ -7,92 +7,143 @@ ms.service: attestation
 ms.topic: overview
 ms.date: 08/31/2020
 ms.author: mbaldwin
-ms.openlocfilehash: e17002534d35f477467f0c35833560a0267dd596
-ms.sourcegitcommit: d76108b476259fe3f5f20a91ed2c237c1577df14
-ms.translationtype: HT
+ms.openlocfilehash: eb08bb262806cb662822a75898196546a5c1058e
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92909774"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762541"
 ---
 # <a name="claim-sets"></a>Claimsets
 
 Claims die worden gegenereerd in het proces van het attesten van enclaves met behulp van Microsoft Azure Attestation kunnen worden onderverdeeld in de volgende categorieën:
 
-- **Binnenkomende claims** : Claims die zijn gegenereerd door Microsoft Azure Attestation na het parseren van het Attestation-bewijs.
+- **Binnenkomende claims**: claims die zijn gegenereerd door Microsoft Azure Attestation na het parseren van het Attestation-bewijs en kunnen worden gebruikt door auteurs van beleid om autorisatie regels in een aangepast beleid te definiëren
 
-- **Uitgaande claims** : Claims die zijn gemaakt als uitvoer door Azure Attestation. Het bevat alle claims die moeten eindigen in het Attestation-token.
+- **Uitgaande claims**: claims die zijn gegenereerd door Azure Attestation en bevatten alle claims die in het Attestation-token eindigen
 
-- **Eigenschapsclaims** : Claims die zijn gemaakt als uitvoer door Azure Attestation. Het bevat alle claims die eigenschappen van het Attestation-token vertegenwoordigen, zoals het coderen van het rapport, de geldigheidsduur van het rapport, enzovoort.
+- **Eigenschapsclaims**: Claims die zijn gemaakt als uitvoer door Azure Attestation. Het bevat alle claims die eigenschappen van het Attestation-token vertegenwoordigen, zoals het coderen van het rapport, de geldigheidsduur van het rapport, enzovoort.
 
-Hieronder worden de claims beschreven die zijn gedefinieerd door de JWT-RFC en gebruikt door Azure Attestation in het antwoordobject:
+### <a name="common-incoming-claims-across-all-attestation-types"></a>Algemene binnenkomende claims voor alle Attestation-typen
 
-- **"iss" (verlener)-claim** : De "iss" (verlener)-claim identificeert de principal die de JWT heeft uitgegeven. De verwerking van deze claim is in het algemeen toepassingsspecifiek. De "iss"-waarde is een hoofdlettergevoelige tekenreeks met een StringOrURI-waarde.
-- **"iat" (uitgegeven op)-claim** : The "iat" (uitgegeven op)-claim geeft de tijd aan wanneer de JWT was uitgegeven. Deze claim kan worden gebruikt om de leeftijd van de JWT te bepalen. De waarde MOET een getal zijn dat een NumericDate-waarde bevat.
-- **"exp" (vervaltijd)-claim** : De "exp" (vervaltijd)-claim identificeert de vervaltijd op of waarna de JWT niet moet worden geaccepteerd voor verwerking. Voor de verwerking van de "exp"-claim MOET de huidige datum/tijd vóór de vervaldatum/-tijd van de "exp"-claim zijn.
+Onderstaande claims worden gegenereerd door Azure Attestation en kunnen worden gebruikt voor het definiëren van autorisatie regels in een aangepast beleid:
+- **x-MS-ver**: JWT-schema versie (verwacht wordt ' 1,0 ')
+- **x-MS-Attestation-type**: teken reeks waarde voor Attestation-type 
+- **x-MS-Policy-hash**: hash van het Azure Attestation-evaluatie beleid berekend als BASE64URL (sha256 (UTF8 (BASE64URL) (UTF8 (Policy text))))
+- **x-MS-Policy-Signer**: JSON-object met het lid ' jwk ' voor de sleutel van een klant die is gebruikt voor het ondertekenen van het beleid, wanneer de klant een ondertekend beleid uploadt
 
-  Opmerking: Een speling van 5 minuten wordt toegevoegd aan de probleemtijd (IAT), om rekening te houden met tijdverschil.
-- **"nbf" (niet vóór)-claim** : De "nbf" (niet vóór)-claim identificeert de tijd waarna de JWT NIET wordt geaccepteerd voor verwerking. Voor de verwerking van de "nbf"-claim MOET de huidige datum/tijd later of gelijk zijn aan de niet-vóór-datum/tijd die wordt vermeld in de "nbf"-claim.
-  Opmerking: Een speling van 5 minuten wordt toegevoegd aan de probleemtijd (IAT), om rekening te houden met tijdverschil.
+Onderstaande claims worden als afgeschaft beschouwd, maar worden volledig ondersteund. Het is raadzaam om de niet-afgeschafte claim namen te gebruiken.
 
-## <a name="claims-issued-by-azure-attestation-in-sgx-enclaves"></a>Claims die zijn uitgegeven door Azure Attestation in SGX-enclaves
+Afgeschafte claim | Aanbevolen claim 
+--- | --- 
+ver | x-MS-ver
+Tee | x-MS-Attestation-type
+maa-policyHash | x-MS-Policy-hash
+policy_hash | x-MS-Policy-hash
+policy_signer | x-MS-Policy-Signer
 
-### <a name="incoming-claims"></a>Binnenkomende claims 
+### <a name="common-outgoing-claims-across-all-attestation-types"></a>Veelvoorkomende uitgaande claims voor alle Attestation-typen
 
-- **$is-debuggable** : Een Booleaanse waarde die aangeeft of de enclave is ingeschakeld voor foutopsporing of niet
-- **$sgx-mrsigner** : hexadecimale waarde van het veld "mrsigner" van de prijsopgave
-- **$sgx-mrenclave** : hexadecimale waarde van het veld "mrenclave" van de prijsopgave
-- **$product-id**
-- **$svn** : nummer van de beveiligingsversie dat is gecodeerd in de prijsopgave 
-- **$tee** : type enclave 
+Onder de claims die zijn gedefinieerd door de [IETF JWT](https://tools.ietf.org/html/rfc7519) en die worden gebruikt door Azure Attestation in het antwoord object:
 
-### <a name="outgoing-claims"></a>Uitgaande claims
+- **Claim ' JTI ' (JWT-ID)**
+- **Claim ' ISS ' (verlener)**
+- **Claim ' iat ' (uitgegeven op)**
+- **Claim ' exp ' (verval tijd)**
+- **Claim ' NBF ' (niet voor)**
 
-- **is-debuggable** : Een Booleaanse waarde die aangeeft of de enclave is ingeschakeld voor foutopsporing of niet
-- **sgx-mrsigner** : hexadecimale waarde van het veld "mrsigner" van de prijsopgave
-- **sgx-mrenclave** : hexadecimale waarde van het veld "mrenclave" van de prijsopgave
-- **product-id**
-- **svn** : nummer van de beveiligingsversie dat is gecodeerd in de prijsopgave 
-- **tee** : type enclave 
-- **maa-ehd** :  Base64Url-gecodeerde versie van de "enclave-gegevens" die is opgegeven in de Attestation-aanvraag 
-- **aas-ehd** :  Base64Url-gecodeerde versie van de "enclave-gegevens" die is opgegeven in de Attestation-aanvraag 
+Onder de claims die zijn gedefinieerd door de [IETF-eten](https://tools.ietf.org/html/draft-ietf-rats-eat-03#page-9) en die worden gebruikt door Azure Attestation in het antwoord object:
+- **Nonce-claim (nonce)**
 
-## <a name="claims-issued-by-azure-attestation-in-vbs-enclaves"></a>Claims die zijn uitgegeven door Azure Attestation in VBS-enclaves
+Hieronder worden claims standaard gegenereerd op basis van de binnenkomende claims
+- **x-MS-ver**: JWT-schema versie (verwacht wordt ' 1,0 ')
+- **x-MS-Attestation-type**: teken reeks waarde voor Attestation-type 
+- **x-MS-Policy-hash**: teken reeks waarde met SHA256 hash van de beleids tekst berekend door BASE64URL (sha256 (UTF8 (BASE64URL)))
+- **x-MS-Policy-Signer**: bevat een JWK met de open bare sleutel of de certificaat keten die aanwezig is in de ondertekende beleids header. x-MS-Policy-Signer wordt alleen toegevoegd als het beleid is ondertekend
 
-### <a name="incoming-claims-can-also-be-used-as-outgoing-claims"></a>Binnenkomende claims (kunnen ook worden gebruikt als uitgaande claims)
+## <a name="claims-specific-to-sgx-enclaves"></a>Claims die specifiek zijn voor SGX-enclaves
 
-- **aikValidated** :  Booleaanse waarde die informatie bevat of het certificaat van de Attestation-identiteitssleutel (AIK) is gevalideerd of niet.
-- **aikPubHash** :  Tekenreeks met de base64(SHA256(openbare-sleutel van AIK n DER-formaat)).
-- **tpmVersion** :   Geheel getal-waarde met de primaire versie van de Trusted Platform Module (TPM).
-- **secureBootEnabled** : Booleaanse waarde die aangeeft of beveiligd opstarten is ingeschakeld.
-- **iommuEnabled** :  Boolean waarde die aangeeft of Input-output-geheugensbeheer-unit (Iommu) is ingeschakeld.
-- **bootDebuggingDisabled** : Booleaanse waarde die aangeeft of opstart-foutopsporing is uitgeschakeld.
-- **notSafeMode** :  Booleaanse waarde die aangeeft of Windows niet wordt uitgevoerd in de veilige modus.
-- **notWinPE** :  Booleaanse waarde die aangeeft of Windows niet in de WinPE-modus wordt uitgevoerd.
-- **vbsEnabled** :  Booleaanse waarde die aangeeft of VBS is ingeschakeld.
-- **vbsReportPresent** :  Booleaanse waarde waarmee wordt aangegeven of het VBS enclave-rapport beschikbaar is.
-- **enclaveAuthorId** :  Tekenreekswaarde met de versleutelde waarde Base64Url van de enclave Auteur-id - de id van de auteur van de primaire module voor de enclave.
-- **enclaveImageId** :  Tekenreekswaarde met de versleutelde waarde Base64Url van de enclave-installatie Installatiekopie-id - de id van de installatiekopie van de primaire module voor de enclave.
-- **enclaveOwnerId** :  Tekenreekswaarde met de versleutelde waarde Base64Url van de enclave-installatie Eigenaars-id - de id van de eigenaar van de primaire module voor de enclave.
-- **enclaveFamilyId** :  Tekenreekswaarde met de Base64Url gecodeerde waarde van de id van de enclave-familie. De familie-id van de primaire module voor de enclave.
-- **enclaveSvn** :  Een geheel getalwaarde met het nummer van de beveiligingsversie voor de primaire module voor de enclave.
-- **enclavePlatformSvn** :  Een geheel getalwaarde met het nummer van de beveiligingsversie van het platform waarop de enclave wordt gehost.
-- **enclaveFlags** :  De enclaveFlags-claim is een geheel getal dat de vlaggen bevat waarmee het runtime-beleid voor de enclave wordt beschreven.
-  
-### <a name="outgoing-claims"></a>Uitgaande claims
+### <a name="incoming-claims-specific-to-sgx-attestation"></a>Binnenkomende claims die specifiek zijn voor SGX-Attestation
 
-- **policy_hash** :  Tekenreekswaarde met de SHA256-hash van de beleidstekst die wordt berekend door BASE64URL (SHA256 (BASE64URL (UTF8 (Beleidstekst)))).
-- **policy_signer** :  Bevat een JWK met de openbare sleutel of de certificaatketen die voorkomt in de ondertekende beleidsheader.
-- **ver (Versie)** :  Tekenreekswaarde met de versie van het rapport. Momenteel 1.0.
-- **cnf (Bevestigings)-claim** :  De "cnf"-claim wordt gebruikt om de bewijs-van-bezit-sleutel te identificeren. Een bevestigingsclaim zoals gedefinieerd in RFC 7800 bevat het openbare deel van de Attestation-sleutelenclave die wordt weergegeven als een JSON Web Key (JWK)-object (RFC 7517).
-- **rp_data (relying party-gegevens)** :  De Relying Party gegevens, indien van toepassing, die zijn opgegeven in de aanvraag, die door de Relying Party als gelegenheid worden gebruikt om de versheid van het rapport te garanderen.
-- **"jti" (JWT ID)-claim** : De "jti" (JWT ID)-claim biedt een unieke id voor de JWT. De id-waarde wordt toegewezen op een manier die ervoor zorgt dat er een verwaarloosbare kans is dat dezelfde waarde per ongeluk wordt toegewezen aan een ander gegevensobject.
+Hieronder worden claims gegenereerd door de service voor SGX-Attestation en kunnen worden gebruikt voor het definiëren van autorisatie regels in een aangepast beleid:
+- **x-MS-SGX-is-** debuggable: een Booleaanse waarde die aangeeft of fout opsporing is ingeschakeld voor de enclave of niet
+- **x-MS-SGX-product-id**
+- **x-MS-SGX-mrsigner**: hex-gecodeerde waarde van het veld ' mrsigner ' van de prijs opgave
+- **x-MS-SGX-mrenclave**: hex-gecodeerde waarde van het veld ' mrenclave ' van de prijs opgave
+- **x-MS-SGX-svn**: beveiligings versie nummer dat is gecodeerd in de prijs opgave 
+
+### <a name="outgoing-claims-specific-to-sgx-attestation"></a>Uitgaande claims die specifiek zijn voor SGX-Attestation
+
+Hieronder worden claims gegenereerd door de service en opgenomen in het antwoord object voor SGX-Attestation:
+- **x-MS-SGX-is-** debuggable: een Booleaanse waarde die aangeeft of fout opsporing is ingeschakeld voor de enclave of niet
+- **x-MS-SGX-product-id**
+- **x-MS-SGX-mrsigner**: hex-gecodeerde waarde van het veld ' mrsigner ' van de prijs opgave
+- **x-MS-SGX-mrenclave**: hex-gecodeerde waarde van het veld ' mrenclave ' van de prijs opgave
+- **x-MS-SGX-svn**: beveiligings versie nummer dat is gecodeerd in de prijs opgave 
+- **x-MS-SGX-hetzij**: enclave opgeslagen gegevens die zijn ingedeeld als BASE64URL (enclave-gegevens)
+- **x-MS-SGX-onderpand**: JSON-object dat het onderpand beschrijft dat wordt gebruikt om Attestation uit te voeren. De waarde voor de x-MS-SGX-onderpand claim is een genest JSON-object met de volgende sleutel/waarde-paren:
+    - **qeidcertshash**: sha256-waarde van QE Identity-certificaten
+    - **qeidcrlhash**: sha256 waarde van de CRL-lijst voor het verlenen van certificaten van QE
+    - **qeidhash**: sha256-waarde van de QE Identity onderpand
+    - **quotehash**: sha256-waarde van de geëvalueerde prijs opgave
+    - **tcbinfocertshash**: sha256-waarde van de TCB-gegevens die certificaten verlenen
+    - **tcbinfocrlhash**: sha256-waarde van de TCB-gegevens die certificaten van de CRL-lijst uitgeven
+    - **tcbinfohash**: JSON-object dat het onderpand beschrijft dat is gebruikt om Attestation uit te voeren
+
+Onderstaande claims worden als afgeschaft beschouwd, maar worden volledig ondersteund en blijven in de toekomst opgenomen. Het is raadzaam om de niet-afgeschafte claim namen te gebruiken.
+
+Afgeschafte claim | Aanbevolen claim
+--- | --- 
+$is: fouten opsporen | x-MS-SGX-is-fout opsporing
+$sgx-mrsigner | x-MS-SGX-mrsigner
+$sgx-mrenclave | x-MS-SGX-mrenclave
+$product-id | x-MS-SGX-product-id
+$svn | x-MS-SGX-svn
+$tee | x-MS-Attestation-type
+Maa-hetzij | x-MS-SGX-hetzij
+aas-hetzij | x-MS-SGX-hetzij
+maa-attestationcollateral | x-MS-SGX-onderpand
+
+## <a name="claims-specific-to-trusted-platform-module-tpm-vbs-attestation"></a>Claims die specifiek zijn voor Trusted Platform Module (TPM)/VBS-Attestation
+
+### <a name="incoming-claims-for-tpm-attestation"></a>Binnenkomende claims voor TPM-Attestation
+
+Claims die zijn uitgegeven door Azure Attestation voor TPM-Attestation. De beschik baarheid van de claims is afhankelijk van het bewijs materiaal dat is verstrekt voor Attestation.
+
+- **aikValidated**: Booleaanse waarde met informatie als het certificaat van de Attestation-identiteits sleutel (AIK) is gevalideerd of niet
+- **aikPubHash**: teken reeks met de base64-(sha256-open bare AIK-sleutel in der notatie)
+- **tpmVersion**: een geheel getal dat de primaire versie van de Trusted Platform Module (TPM) bevat
+- **secureBootEnabled**: een Booleaanse waarde die aangeeft of beveiligd opstarten is ingeschakeld
+- **iommuEnabled**: een Booleaanse waarde die aangeeft of de invoer-uitvoer geheugen beheer eenheid (IOMMU) is ingeschakeld
+- **bootDebuggingDisabled**: een Booleaanse waarde die aangeeft of opstart fout opsporing is uitgeschakeld
+- **notSafeMode**: een Booleaanse waarde die aangeeft of de Windows niet wordt uitgevoerd in de veilige modus
+- **notWinPE**: Boolean-waarde die aangeeft of Windows niet wordt uitgevoerd in de WinPE-modus
+- **vbsEnabled**: een Booleaanse waarde die aangeeft of vbs is ingeschakeld
+- **vbsReportPresent**: Boolean-waarde die aangeeft of het vbs enclave-rapport beschikbaar is
+
+### <a name="incoming-claims-for-vbs-attestation"></a>Binnenkomende claims voor VBS-Attestation
+
+Claims die zijn uitgegeven door Azure Attestation voor VBS Attestation, zijn een aanvulling op de claims die beschikbaar worden gesteld voor TPM-Attestation. De beschik baarheid van de claims is afhankelijk van het bewijs materiaal dat is verstrekt voor Attestation.
+
+- **enclaveAuthorId**: String-waarde met de Base64Url gecodeerde waarde van de enclave Author id: de auteur-id van de primaire module voor de enclave
+- **enclaveImageId**: teken reeks waarde met de Base64Url gecodeerde waarde van de enclave-installatie kopie-id: de afbeeldings-id van de primaire module voor de enclave
+- **enclaveOwnerId**: String-waarde met de Base64Url gecodeerde waarde van de enclave eigenaar-id: de id van de eigenaar van de enclave
+- **enclaveFamilyId**: String-waarde met de Base64Url gecodeerde waarde van de enclave Family id. De familie-id van de primaire module voor de enclave
+- **enclaveSvn**: een integer-waarde met het beveiligings versie nummer van de primaire module voor de enclave
+- **enclavePlatformSvn**: een geheel getal dat het beveiligings versie nummer bevat van het platform dat als host fungeert voor de enclave
+- **enclaveFlags**: de enclaveFlags-claim is een geheel getal dat vlaggen bevat waarmee het runtime beleid voor de enclave wordt beschreven
+
+### <a name="outgoing-claims-specific-to-tpm-and-vbs-attestation"></a>Uitgaande claims die specifiek zijn voor TPM en VBS-Attestation
+
+- **cnf (bevestiging)**: de claim ' cnf ' wordt gebruikt om de bewijs-of-eigendoms sleutel te identificeren. Bevestigings claim zoals gedefinieerd in RFC 7800, bevat het open bare deel van de Attestation-sleutel enclave die wordt weer gegeven als een JSON Web Key (JWK)-object (RFC 7517)
+- **rp_data (Relying Party gegevens)**: Relying Party gegevens, indien van toepassing, opgegeven in de aanvraag, die door de Relying Party als een nonce wordt gebruikt om de versheid van het rapport te garanderen. rp_data wordt alleen toegevoegd als er rp_data
 
 ### <a name="property-claims"></a>Eigenschapsclaims
 
-- **report_validity_in_minutes** : Een geheel getal-claim die aangeeft hoe lang het token geldig is.
+- **report_validity_in_minutes**: Een geheel getal-claim die aangeeft hoe lang het token geldig is.
   - **Standaardwaarde (tijd)** : Eén dag in minuten.
   - **Maximale waarde (tijd)** : Één jaar in minuten.
-- **omit_x5c** : Een Booleaanse claim die aangeeft of het certificaat dat wordt gebruikt voor het controleren van de service-authenticiteit, door Azure Attestation moet worden weggelaten. Indien true, wordt x5t toegevoegd aan het Attestation-token. Indien false, wordt x5c toegevoegd aan het Attestation-token.
+- **omit_x5c**: Een Booleaanse claim die aangeeft of het certificaat dat wordt gebruikt voor het controleren van de service-authenticiteit, door Azure Attestation moet worden weggelaten. Indien true, wordt x5t toegevoegd aan het Attestation-token. Indien false, wordt x5c toegevoegd aan het Attestation-token.
 
 ## <a name="next-steps"></a>Volgende stappen
 - [Een Attestation-beleid ontwerpen en ondertekenen](author-sign-policy.md)

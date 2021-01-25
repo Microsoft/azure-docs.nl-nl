@@ -2,14 +2,14 @@
 title: Beschik baarheid en consistentie-Azure Event Hubs | Microsoft Docs
 description: De maximale hoeveelheid Beschik baarheid en consistentie bieden met Azure Event Hubs met behulp van partities.
 ms.topic: article
-ms.date: 06/23/2020
+ms.date: 01/25/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 7b97d76f29ee8b7e44373c865baa09ba5ea4dd23
-ms.sourcegitcommit: 484f510bbb093e9cfca694b56622b5860ca317f7
+ms.openlocfilehash: 5ffa2df992eb0c22aafbbb7436250405998d8073
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98631916"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762804"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Beschikbaarheid en consistentie in Event Hubs
 
@@ -22,6 +22,11 @@ Brewer van theorema definieert consistentie en beschik baarheid als volgt:
 * Partitie tolerantie: de mogelijkheid van een systeem voor gegevens verwerking om gegevens te blijven verwerken, zelfs als er een partitie fout optreedt.
 * Beschik baarheid: een niet-mislukt knoop punt retourneert binnen een redelijke hoeveelheid tijd (zonder fouten of time-outs) een redelijke reactie.
 * Consistentie: een lees bewerking is gegarandeerd de meest recente schrijf bewerking voor een bepaalde client te retour neren.
+
+> [!NOTE]
+> De term **partitie** wordt gebruikt in verschillende contexten in Event hubs en Cap theorema. 
+> - Met **Event hubs** worden gebeurtenissen in een of meer partities ingedeeld. Partities zijn onafhankelijk en bevatten hun eigen reeks gegevens, maar ze groeien vaak met verschillende snelheden. Zie [Partities](event-hubs-features.md#partitions) voor meer informatie.
+> - In **Cap theorema** is een partitie een communicatie-afbreek binnen tussen knoop punten in een gedistribueerd systeem.
 
 ## <a name="partition-tolerance"></a>Partitie tolerantie
 Event Hubs is gebaseerd op een gepartitioneerd gegevens model. U kunt het aantal partities in uw Event Hub configureren tijdens de installatie, maar u kunt deze waarde later niet wijzigen. Omdat u partities moet gebruiken met Event Hubs, dient u een beslissing te nemen over de beschik baarheid en consistentie voor uw toepassing.

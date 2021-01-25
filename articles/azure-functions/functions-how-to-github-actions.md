@@ -6,18 +6,18 @@ ms.topic: conceptual
 ms.date: 10/07/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python, github-actions-azure
-ms.openlocfilehash: bc80a4f5c6c2919f0cb3faa15958fb75eed70270
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: cc356b307a752b10ba6f1c1a7151381c5644ca1e
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98035220"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762723"
 ---
 # <a name="continuous-delivery-by-using-github-action"></a>Continue levering met behulp van GitHub-actie
 
 Gebruik [github-acties](https://github.com/features/actions) om een werk stroom te definiëren om automatisch code te bouwen en te implementeren in uw functie-app in azure functions. 
 
-In GitHub acties is een [werk stroom](https://docs.github.com/en/free-pro-team@latest/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) een geautomatiseerd proces dat u in uw github-opslag plaats definieert. Dit proces vertelt u GitHub hoe u uw functie-app-project bouwt en implementeert op GitHub. 
+In GitHub acties is een [werk stroom](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions#the-components-of-github-actions) een geautomatiseerd proces dat u in uw github-opslag plaats definieert. Dit proces vertelt u GitHub hoe u uw functie-app-project bouwt en implementeert op GitHub. 
 
 Een werkstroom wordt gedefinieerd door een YAML-bestand (.yml) in het pad `/.github/workflows/` in uw opslagplaats. Deze definitie bevat de verschillende stappen en parameters die deel uitmaken van de werkstroom. 
 
@@ -26,7 +26,7 @@ Voor een Azure Functions werk stroom heeft het bestand drie secties:
 | Sectie | Taken |
 | ------- | ----- |
 | **Verificatie** | Down load een publicatie profiel.<br/>Maak een GitHub-geheim.|
-| **Ontwikkelen** | Stel de omgeving in.<br/>Bouw de functie-app.|
+| **Build** | Stel de omgeving in.<br/>Bouw de functie-app.|
 | **Implementeren** | Implementeer de functie-app.|
 
 ## <a name="prerequisites"></a>Vereisten
@@ -40,7 +40,7 @@ Voor een Azure Functions werk stroom heeft het bestand drie secties:
 
 De aanbevolen manier om te verifiëren met Azure Functions voor GitHub-acties is door gebruik te maken van een publicatie profiel. U kunt ook verifiëren met een service-principal. Zie [deze github-opslag plaats](https://github.com/Azure/functions-action)voor meer informatie. 
 
-Nadat u de referentie voor het publicatie profiel hebt opgeslagen als een [github-geheim](https://docs.github.com/en/free-pro-team@latest/actions/reference/encrypted-secrets), gebruikt u dit geheim in uw werk stroom om te verifiëren met Azure. 
+Nadat u de referentie voor het publicatie profiel hebt opgeslagen als een [github-geheim](https://docs.github.com/en/actions/reference/encrypted-secrets), gebruikt u dit geheim in uw werk stroom om te verifiëren met Azure. 
 
 #### <a name="download-your-publish-profile"></a>Uw publicatie profiel downloaden
 

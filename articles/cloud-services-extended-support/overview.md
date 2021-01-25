@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: cf7c4b881697b664403d8c817c3b9e48fb48944d
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 969f60cd92e8c1cbe93f1646cccd08c942ad9923
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746761"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762834"
 ---
 # <a name="about-azure-cloud-services-extended-support"></a>Over Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -27,9 +27,11 @@ Met deze wijziging wordt de naam van het implementatie model op basis van Azure 
 
 ## <a name="what-does-not-change"></a>Wat wordt niet gewijzigd 
 - U maakt de code, definieert de configuraties en implementeert deze in Azure. Azure stelt de reken omgeving in, voert uw code uit en bewaakt deze voor u.
-- Cloud Services (uitgebreide ondersteuning) ondersteunt ook twee soorten rollen: [Web en worker](../cloud-services/cloud-services-choose-me.md). 
-- De drie onderdelen, de service definitie (. csdef), de service configuratie (. cscfg) en een service pakket (. cspkg) van een Cloud service worden getransporteerd en er is geen wijziging in de [notaties](cloud-services-model-and-package.md). 
-- Er zijn geen wijzigingen vereist voor runtime code omdat het gegevens vlak hetzelfde is en het besturings vlak alleen wordt gewijzigd.  
+- Cloud Services (uitgebreide ondersteuning) ondersteunt ook twee soorten rollen: [Web en worker](../cloud-services/cloud-services-choose-me.md). Er zijn geen wijzigingen in het ontwerp, de architectuur of de onderdelen van de web-en werk rollen. 
+- De drie onderdelen van een Cloud service, de service definitie (. csdef), de service configuratie (. cscfg) en het service pakket (. cspkg) worden getransporteerd en er is geen wijziging in de [notaties](cloud-services-model-and-package.md). 
+- Er zijn geen wijzigingen vereist voor runtime code omdat het gegevens vlak hetzelfde is en het besturings vlak alleen wordt gewijzigd. 
+- Releases van Azure GuestOS en de bijbehorende updates zijn afgestemd op Cloud Services (klassiek)
+- Onderliggend update proces ten aanzien van update domeinen, hoe upgrades worden uitgevoerd, terugdraai bewerkingen en toegestane service wijzigingen tijdens een update niet worden gewijzigd
 
 ## <a name="changes-in-deployment-model"></a>Wijzigingen in het implementatie model
 

@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.topic: article
 ms.date: 12/05/2020
 ms.author: apimpm
-ms.openlocfilehash: 25356e7101293fc27d4107b3a618cfc481aee969
-ms.sourcegitcommit: 8b4b4e060c109a97d58e8f8df6f5d759f1ef12cf
+ms.openlocfilehash: 223d119786d99eac611ece597fc0e8de4fcaf6bd
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96779580"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762398"
 ---
 # <a name="how-to-implement-disaster-recovery-using-service-backup-and-restore-in-azure-api-management"></a>Noodherstel implementeren met back-up en herstellen van services in Azure API Management
 
@@ -55,7 +55,7 @@ Alle taken die u op resources uitvoert met behulp van de Azure Resource Manager 
 
 ### <a name="create-an-azure-active-directory-application"></a>Een Azure Active Directory-toepassing maken
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Ga met het abonnement dat uw API Management service-exemplaar bevat naar het tabblad **app-registraties** in **Azure Active Directory** (Azure Active Directory > beheer/app-registraties).
 
     > [!NOTE]
@@ -68,7 +68,7 @@ Alle taken die u op resources uitvoert met behulp van de Azure Resource Manager 
 4. Voer een naam in voor de toepassing.
 5. Selecteer **systeem eigen** voor het toepassings type.
 6. Voer een URL voor de tijdelijke aanduiding in `http://resources` , zoals voor de **omleidings-URI**, omdat het een vereist veld is, maar de waarde niet later wordt gebruikt. Klik op het selectie vakje om de toepassing op te slaan.
-7. Klik op **Maken**.
+7. Klik op **Create**.
 
 ### <a name="add-an-application"></a>Een toepassing toevoegen
 
@@ -221,8 +221,8 @@ Herstellen is een langlopende bewerking die Maxi maal 30 minuten kan duren. Als 
 
 ## <a name="what-is-not-backed-up"></a>Waarvan wordt geen back-up gemaakt?
 -   **Gebruiks gegevens** die worden gebruikt voor het maken van analyse rapporten, worden **niet opgenomen** in de back-up. Gebruik [Azure API Management rest API][azure api management rest api] om periodiek analyse rapporten op te halen voor het bewaren van gegevens.
--   [TLS/SSL-certificaten voor aangepast domein](configure-custom-domain.md)
--   [Aangepast CA-certificaat](api-management-howto-ca-certificates.md), dat tussenliggende of basis certificaten bevat die zijn geüpload door de klant
+-   [TLS/SSL-](configure-custom-domain.md) certificaten van het aangepaste domein.
+-   [Aangepast CA-certificaat](api-management-howto-ca-certificates.md), dat tussenliggende of basis certificaten omvat die door de klant zijn geüpload.
 -   Instellingen voor integratie met [virtuele netwerken](api-management-using-with-vnet.md) .
 -   Configuratie van [beheerde identiteit](api-management-howto-use-managed-service-identity.md) .
 -   [Azure monitor diagnose](api-management-howto-use-azure-monitor.md) Configuratie.

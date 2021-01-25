@@ -10,16 +10,16 @@ ms.author: jukullam
 ms.date: 10/19/2020
 ms.topic: conceptual
 ms.custom: github-actions-azure
-ms.openlocfilehash: e7f6066cb7ed5c166d3e2bdc3f895073b05b92b9
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 8bce95b65d9b944505d7f9153159b342e49427cd
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605022"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762907"
 ---
 # <a name="use-github-actions-with-azure-machine-learning"></a>GitHub-acties gebruiken met Azure Machine Learning
 
-Aan de slag met [github-acties](https://docs.github.com/en/free-pro-team@latest/actions) voor het trainen van een model op Azure machine learning. 
+Aan de slag met [github-acties](https://docs.github.com/en/actions) voor het trainen van een model op Azure machine learning. 
 
 > [!NOTE]
 > GitHub-acties voor Azure Machine Learning worden meegeleverd als-is en worden niet volledig ondersteund door micro soft. Als u problemen ondervindt met een specifieke actie, opent u een probleem in de opslag plaats voor de actie. Als u bijvoorbeeld een probleem ondervindt met de actie AML-Deploy, meldt u het probleem in de [https://github.com/Azure/aml-deploy]( https://github.com/Azure/aml-deploy) opslag plaats.

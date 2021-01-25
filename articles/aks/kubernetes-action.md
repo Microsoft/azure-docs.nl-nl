@@ -7,16 +7,16 @@ ms.topic: article
 ms.date: 11/06/2020
 ms.author: atulmal
 ms.custom: github-actions-azure
-ms.openlocfilehash: d03acab340e593a925f042ca41f9e8967b468858
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
+ms.openlocfilehash: 94134360de49a066f825cbb0c85712995d90b37f
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97605442"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761459"
 ---
 # <a name="github-actions-for-deploying-to-kubernetes-service"></a>GitHub acties voor het implementeren van de Kubernetes-service
 
-[Github-acties](https://docs.github.com/en/free-pro-team@latest/actions) bieden u de flexibiliteit om een geautomatiseerde werk stroom voor de levens cyclus van software ontwikkeling te bouwen. U kunt meerdere Kubernetes-acties gebruiken om te implementeren in containers van Azure Container Registry naar Azure Kubernetes service met GitHub-acties. 
+[Github-acties](https://docs.github.com/en/actions) bieden u de flexibiliteit om een geautomatiseerde werk stroom voor de levens cyclus van software ontwikkeling te bouwen. U kunt meerdere Kubernetes-acties gebruiken om te implementeren in containers van Azure Container Registry naar Azure Kubernetes service met GitHub-acties. 
 
 ## <a name="prerequisites"></a>Vereisten 
 
@@ -34,7 +34,7 @@ Voor een werk stroom gericht AKS heeft het bestand drie secties:
 |Sectie  |Taken  |
 |---------|---------|
 |**Verificatie** | Aanmelden bij een persoonlijk container register (ACR) |
-|**Ontwikkelen** | De container installatie kopie bouwen & pushen  |
+|**Build** | De container installatie kopie bouwen & pushen  |
 |**Implementeren** | 1. Stel het doel-AKS-cluster in |
 | |2. Maak een algemeen/docker-register geheim in het Kubernetes-cluster  |
 ||3. implementeren naar het Kubernetes-cluster|

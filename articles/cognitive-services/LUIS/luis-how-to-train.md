@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 11/15/2019
-ms.openlocfilehash: a53857061110d5a77ac3d166277e7076f4f7f9c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 47b006932aace3149dd94e136e334c1b6e5bfcef
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91541370"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762701"
 ---
 # <a name="train-your-active-version-of-the-luis-app"></a>Train uw actieve versie van de LUIS-app
 
@@ -40,9 +40,15 @@ De trainings datum en-tijd zijn GMT + 2.
 
 ## <a name="train-with-all-data"></a>Train met alle gegevens
 
-Training maakt gebruik van een klein percentage van negatieve steek proeven. Als u alle gegevens wilt gebruiken in plaats van de kleine negatieve steek proef, gebruikt u de [API](#version-settings-api-use-of-usealltrainingdata).
+Voor de training wordt een klein percentage negatieve steekproeven gebruikt. U kunt alle beschik bare gegevens gebruiken in plaats van de portal of API. 
 
-### <a name="version-settings-api-use-of-usealltrainingdata"></a>API-gebruik van versie-instellingen van UseAllTrainingData
+### <a name="using-the-luis-portal"></a>De LUIS-Portal gebruiken
+
+Meld u aan bij de [Luis-Portal](https://www.luis.ai/) en klik op uw app. Selecteer **beheren** boven aan het scherm en selecteer vervolgens **instellingen** en schakel de optie **gebruik-deterministische training** in of uit. Als deze is uitgeschakeld, worden alle beschik bare gegevens gebruikt voor de training.
+
+![Een knop voor het in-of uitschakelen van niet-deterministische training](./media/non-determinstic-training.png)
+
+### <a name="using-the-version-settings-api"></a>De API voor versie-instellingen gebruiken
 
 Gebruik de [API versie-instellingen](https://westus.dev.cognitive.microsoft.com/docs/services/5890b47c39e2bb17b84a55ff/operations/versions-update-application-version-settings) met de `UseAllTrainingData` waarde True om deze functie uit te scha kelen.
 

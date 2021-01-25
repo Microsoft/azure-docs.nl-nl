@@ -3,12 +3,12 @@ title: Hosting van Azure Functions-verbruiks abonnement
 description: Meer informatie over hoe u met Azure function plan hosting uw code kunt uitvoeren in een omgeving die dynamisch wordt geschaald, maar u betaalt alleen voor resources die worden gebruikt tijdens de uitvoering.
 ms.date: 8/31/2020
 ms.topic: conceptual
-ms.openlocfilehash: ffb556ce48f18702e06fcdb02dda84f41ae5f906
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: d292a70a8dfaa4cebdb99f2bcb5420c8b8ab9cd8
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98684688"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98760547"
 ---
 # <a name="azure-functions-consumption-plan-hosting"></a>Hosting van Azure Functions-verbruiks abonnement
 
@@ -16,7 +16,7 @@ Wanneer u het verbruiks abonnement gebruikt, worden instanties van de Azure Func
 
 ## <a name="benefits"></a>Voordelen
 
-Het verbruiks abonnement wordt automatisch geschaald, zelfs zelfs tijdens een periode van hoge belasting. Bij het uitvoeren van functions in een verbruiks abonnement worden alleen reken bronnen in rekening gebracht wanneer uw functies worden uitgevoerd. Bij een verbruiksabonnement treedt er na een ingestelde periode een time-out op voor een functie-uitvoering.
+Het verbruiks abonnement wordt automatisch geschaald, zelfs tijdens het aantal Peri Oden met een hoge belasting. Bij het uitvoeren van functions in een verbruiks abonnement worden alleen reken bronnen in rekening gebracht wanneer uw functies worden uitgevoerd. Bij een verbruiksabonnement treedt er na een ingestelde periode een time-out op voor een functie-uitvoering.
 
 Zie [functie schaal en hosting opties](functions-scale.md)voor een vergelijking van het verbruiks plan voor het andere plan en de hosting typen.
 
@@ -33,7 +33,7 @@ Wanneer u een functie-app maakt in de Azure Portal, is het verbruiks abonnement 
 Gebruik de volgende koppelingen voor meer informatie over het maken van een serverloze functie-app in een verbruiks abonnement, hetzij programmatisch, hetzij in de Azure Portal:
 
 + [Azure-CLI](./scripts/functions-cli-create-serverless.md)
-+ [Azure Portal](./functions-get-started.md)
++ [Azure-portal](./functions-get-started.md)
 + [Azure Resource Manager-sjabloon](functions-create-first-function-resource-manager.md)
 
 U kunt ook functie-apps maken in een verbruiks abonnement wanneer u een functions-project publiceert vanuit [Visual Studio code](./create-first-function-vs-code-csharp.md#publish-the-project-to-azure) of [Visual Studio](functions-create-your-first-function-visual-studio.md#publish-the-project-to-azure).

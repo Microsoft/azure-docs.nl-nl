@@ -1,0 +1,59 @@
+---
+title: Logboek registratie van fouten en uitzonde ringen in MSAL voor python
+titleSuffix: Microsoft identity platform
+description: Meer informatie over het vastleggen van fouten en uitzonde ringen in MSAL voor python
+services: active-directory
+author: mmacy
+manager: CelesteDG
+ms.service: active-directory
+ms.subservice: develop
+ms.topic: conceptual
+ms.workload: identity
+ms.date: 01/25/2021
+ms.author: marsma
+ms.reviewer: saeeda, jmprieur
+ms.custom: aaddev
+ms.openlocfilehash: f660bd17954afb4ae02da77e93d4d9cc36f3d355
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.translationtype: MT
+ms.contentlocale: nl-NL
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763419"
+---
+# <a name="logging-in-msal-for-python"></a>Logboekregistratie in MSAL voor Python
+
+[!INCLUDE [MSAL logging introduction](../../../includes/active-directory-develop-error-logging-introduction.md)]
+
+## <a name="msal-for-python-logging"></a>MSAL voor python-logboek registratie
+
+Logboek registratie in MSAL python maakt gebruik van het standaard logboek registratie mechanisme van python, bijvoorbeeld `logging.info("msg")` kunt u de MSAL-logboek registratie als volgt configureren (en in de [username_password_sample](https://github.com/AzureAD/microsoft-authentication-library-for-python/blob/1.0.0/sample/username_password_sample.py#L31L32)in actie zien):
+
+### <a name="enable-debug-logging-for-all-modules"></a>Logboek registratie voor fout opsporing inschakelen voor alle modules
+
+De logboek registratie in een python-script is standaard uitgeschakeld. Als u logboek registratie voor fout opsporing wilt inschakelen voor alle modules in het hele python-script, gebruikt u:
+
+```python
+logging.basicConfig(level=logging.DEBUG)
+```
+
+### <a name="silence-only-msal-logging"></a>Alleen stilte MSAL-logboek registratie
+
+Als u alleen logboek registratie van de MSAL-bibliotheek wilt uitvoeren en logboek registratie voor fout opsporing in alle andere modules in uw python-script wilt inschakelen, schakelt u de logboeken uit die door MSAL python worden gebruikt:
+
+```Python
+logging.getLogger("msal").setLevel(logging.WARN)
+```
+
+### <a name="personal-and-organizational-data-in-python"></a>Persoonlijke en organisatie gegevens in python
+
+MSAL voor python registreert geen persoonlijke gegevens of bedrijfs gegevens. Er is geen eigenschap om logboek registratie van persoonlijke of organisatie gegevens in of uit te scha kelen.
+
+U kunt de standaard logboek registratie van python gebruiken om logboeken te maken wat u wilt, maar u bent zelf verantwoordelijk voor het veilig afhandelen van gevoelige gegevens en de volgende regelgevings vereisten.
+
+Raadpleeg voor meer informatie over logboek registratie in python de  [logboek registratie van python: How-to](https://docs.python.org/3/howto/logging.html#logging-basic-tutorial).
+
+## <a name="next-steps"></a>Volgende stappen
+
+Raadpleeg de [micro soft Identity platform-code voorbeelden](sample-v2-code.md)voor meer code voorbeelden.
+
+---

@@ -12,12 +12,12 @@ ms.date: 07/23/2020
 ms.author: kenwith
 ms.reviewer: japere
 ms.custom: contperf-fy21q2
-ms.openlocfilehash: 49388ee75fa3e5570a906998fdeaa579208fd636
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: f1a1d43f9bfc960628447a3c20e7dab2ac701dc5
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97588587"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762574"
 ---
 # <a name="active-directory-azure-ad-application-proxy-frequently-asked-questions"></a>Veelgestelde vragen over de toepassings proxy van Active Directory (Azure AD)
 
@@ -101,6 +101,10 @@ Hier volgen enkele tips voor het oplossen van deze fout:
 ### <a name="what-is-the-length-of-the-default-and-long-back-end-timeout-can-the-timeout-be-extended"></a>Wat is de lengte van de standaard waarde en ' lange ' time-out voor back-end? Kan de time-out worden verlengd?
 
 De standaard lengte is 85 seconden. De instelling ' lang ' is 180 seconden. De time-outlimiet kan niet worden uitgebreid.
+
+### <a name="can-a-service-principal-manage-application-proxy-using-powershell-or-microsoft-graph-apis"></a>Kan een Service-Principal toepassings proxy beheren met behulp van Power shell-of Microsoft Graph-Api's?
+
+Nee, dit wordt momenteel niet ondersteund.
 
 ### <a name="how-do-i-change-the-landing-page-my-application-loads"></a>Hoe kan ik de landings pagina wijzigen die door mijn toepassing worden geladen?
 

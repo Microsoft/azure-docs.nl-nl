@@ -6,15 +6,15 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: tutorial
-ms.date: 01/06/2021
+ms.date: 01/22/2021
 ms.author: alkohli
 Customer intent: As an IT admin, I need to understand how to prepare the portal to deploy Azure Stack Edge Pro so I can use it to transfer data to Azure.
-ms.openlocfilehash: aabc141666fe5c9fb52a3eac5ee1866f390e4551
-ms.sourcegitcommit: 9514d24118135b6f753d8fc312f4b702a2957780
-ms.translationtype: HT
+ms.openlocfilehash: 07b526d443b5f1b41bc6f811b7cccc0fbc6165ee
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97968488"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761712"
 ---
 # <a name="tutorial-prepare-to-deploy-azure-stack-edge-pro"></a>Zelfstudie: Voorbereidingen voor de implementatie van Azure Stack Edge Pro  
 
@@ -60,7 +60,7 @@ Zorg voordat u begint voor het volgende:
   * U moet een **Eigenaar** op abonnementsniveau zijn om Inzender-toegang te verlenen. Als u Inzender-toegang wilt verlenen aan iemand anders, gaat u in de Azure-portal naar **Alle services** > **Abonnementen** > **Access Control (IAM)**  >  **+Toevoegen** > **Roltoewijzing toevoegen**. Zie [Zelfstudie: Toegang tot Azure-resources verlenen aan een gebruiker met behulp van de Azure-portal](../role-based-access-control/quickstart-assign-role-user-portal.md).
 
   * Als u een Azure Stack Eedge / Data Box Gateway resource wilt maken, moet u machtigingen hebben als inzender (of hoger) op het niveau van de resourcegroep. U moet er ook voor zorgen dat de `Microsoft.DataBoxEdge`-resourceprovider is geregistreerd. Ga voor meer informatie over het registreren van een resourceprovider naar [Resourceprovider registreren](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
-  * Als u een IoT Hub-resource wilt maken, moet u ervoor zorgen dat de provider Microsoft.Devices is geregistreerd. Ga voor meer informatie over het registreren naar [Resourceprovider registreren](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
+  * Als u een IoT Hub resource wilt maken, moet u ervoor zorgen dat de provider micro soft. devices is geregistreerd. Ga voor meer informatie over het registreren naar [Resourceprovider registreren](azure-stack-edge-manage-access-power-connectivity-mode.md#register-resource-providers).
   * Als u een resource voor een Storage-account wilt maken, moet u een toegangsbereik van een inzender of hoger hebben op het niveau van de resourcegroep. Azure Storage is standaard een geregistreerde resourceprovider.
 * U hebt beheerder-of gebruikerstoegang tot Azure Active Directory Graph API. Zie [Azure Active Directory Graph API](/previous-versions/azure/ad/graph/howto/azure-ad-graph-api-permission-scopes#default-access-for-administrators-users-and-guest-users-) voor meer informatie.
 * U hebt een Microsoft Azure Storage-account met toegangsreferenties.
@@ -118,14 +118,14 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
 
     |Instelling  |Waarde  |
     |---------|---------|
-    |Naam   | Een beschrijvende naam om de resource aan te duiden.<br>De naam is tussen 2 en 50 tekens lang en kan letters, cijfers en afbreekstreepjes bevatten.<br> De naam begint en eindigt met een letter of cijfer.        |
+    |Naam   | Een beschrijvende naam om de resource aan te duiden.<br>De naam heeft een waarde van 2 tot 50 tekens, inclusief letters, cijfers en afbreek streepjes.<br> De naam begint en eindigt met een letter of cijfer.        |
     |Regio     |Zie [Azure-producten die beschikbaar zijn per regio](https://azure.microsoft.com/global-infrastructure/services/?products=databox&regions=all) voor een lijst met alle regio's waar de Azure Stack Edge-resource beschikbaar is. Als Azure Government wordt gebruikt, zijn alle overheidsregio's beschikbaar, zoals wordt weergegeven in de [Azure-regio's](https://azure.microsoft.com/global-infrastructure/regions/).<br> Kies een locatie die het dichtst bij de geografische regio ligt waar u uw apparaat wilt implementeren.|
 
     ![Details van het project en exemplaar](media/azure-stack-edge-deploy-prep/data-box-edge-resource.png)
 
 5. Selecteer **Volgende: Verzendadres**.
 
-    - Als u al een apparaat hebt, selecteert u de keuzelijst met invoervak voor **Ik heb een Azure Stack Edge Pro-apparaat**.
+    - Als u al een apparaat hebt, selecteert u de keuze lijst met invoervak voor **Ik heb een Azure stack edge-apparaat**.
     - Als dit het nieuwe apparaat is dat u bestelt, voert u de naam van de contactpersoon, het bedrijf, het adres voor het verzenden van het apparaat en contactgegevens in.
 
     ![Verzendadres voor nieuw apparaat](media/azure-stack-edge-deploy-prep/data-box-edge-resource1.png)
@@ -138,19 +138,23 @@ Voer de volgende stappen uit in de Azure-portal om een Azure Stack Edge-resource
 
 8. Selecteer **Maken**.
 
-Het maken van de resource duurt enkele minuten. Nadat de resource succesvol is gemaakt en geïmplementeerd, wordt u daarvan op de hoogte gebracht. Selecteer **Ga naar resource**.
+   Het maken van de resource duurt enkele minuten. Nadat de resource succesvol is gemaakt en geïmplementeerd, wordt u daarvan op de hoogte gebracht. Selecteer **Ga naar resource**.
 
-![Ga naar de Azure Stack Edge-resource](media/azure-stack-edge-deploy-prep/data-box-edge-resource3.png)
+   ![Ga naar de Azure Stack Edge-resource](media/azure-stack-edge-deploy-prep/data-box-edge-resource3.png)
 
 Nadat de bestelling is geplaatst, controleert Microsoft de bestelling en neemt contact met u op (via e-mail) met verzendgegevens.
 
 ![Melding voor beoordeling van de volgorde van de Azure Stack Edge Pro](media/azure-stack-edge-deploy-prep/data-box-edge-resource4.png)
 
+
+> [!NOTE]
+> Als u meerdere bestellingen tegelijk wilt doen of een bestaande bestelling wilt klonen, kunt u de [scripts in Azure Samples](https://github.com/Azure-Samples/azure-stack-edge-order) gebruiken. Zie het Leesmij-bestand voor meer informatie.
+
 ## <a name="get-the-activation-key"></a>De activeringssleutel ophalen
 
 Nadat de Azure Stack Edge-resource is geactiveerd, hebt u de activeringssleutel nodig. Deze sleutel wordt gebruikt om uw Azure Stack Edge Pro-apparaat te activeren en te verbinden met de resource. U kunt deze sleutel nu ophalen, terwijl u Azure Portal geopend hebt.
 
-1. Ga naar de resource die u hebt gemaakt, en selecteer vervolgens **Overzicht**. U ziet een melding over dat uw bestelling wordt verwerkt.
+1. Ga naar de resource die u hebt gemaakt en selecteer **overzicht**. U ziet een melding over dat uw bestelling wordt verwerkt.
 
     ![Selecteer Overzicht](media/azure-stack-edge-deploy-prep/data-box-edge-select-devicesetup.png)
 

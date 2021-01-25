@@ -8,12 +8,12 @@ ms.date: 11/05/2020
 ms.topic: how-to
 ms.service: iot-central
 ms.custom: contperf-fy21q1, contperf-fy21q3
-ms.openlocfilehash: 3079b8384a24642322d6f6eb86e2ca7f0927db15
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 74de0481bf6786d245fb96f5d102ab72a00031c8
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065385"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98760904"
 ---
 # <a name="export-iot-data-to-cloud-destinations-using-data-export"></a>IoT-gegevens exporteren naar Cloud bestemmingen met behulp van gegevens export
 
@@ -35,6 +35,8 @@ U kunt bijvoorbeeld:
 ## <a name="prerequisites"></a>Vereisten
 
 Als u functies voor gegevens export wilt gebruiken, moet u een [v3-toepassing](howto-get-app-info.md)hebben en moet u de machtiging [gegevens exporteren](howto-manage-users-roles.md) hebben.
+
+Als u een v2-toepassing hebt, raadpleegt u [uw V2 IOT Central-toepassing migreren naar v3](howto-migrate.md).
 
 ## <a name="set-up-export-destination"></a>Export bestemming instellen
 
@@ -273,7 +275,7 @@ In het volgende voor beeld ziet u het wijzigings bericht voor een geëxporteerde
 
 In de volgende tabel ziet u de verschillen tussen de [verouderde gegevens export](howto-export-data-legacy.md) en de nieuwe functies voor gegevens export:
 
-| Functionaliteit  | Verouderde gegevens export | Nieuwe gegevens export |
+| Functies  | Verouderde gegevens export | Nieuwe gegevens export |
 | :------------- | :---------- | :----------- |
 | Beschik bare gegevens typen | Telemetrie, apparaten, apparaatprofielen | Telemetrie, eigenschaps wijzigingen |
 | Filteren | Geen | Is afhankelijk van het geëxporteerde gegevens type. Filteren op telemetrie, bericht eigenschappen, eigenschaps waarden |

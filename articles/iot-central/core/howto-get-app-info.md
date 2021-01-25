@@ -7,12 +7,12 @@ ms.author: dobett
 ms.date: 06/26/2020
 ms.topic: how-to
 ms.service: iot-central
-ms.openlocfilehash: 12ba8526be68d2cb15e37510e66f959ab65c6e99
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5118fa22a198ee6871a4cfb455e88d345d6a44e0
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85802111"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98760847"
 ---
 # <a name="about-your-application"></a>Over uw toepassing
 
@@ -40,3 +40,5 @@ Informatie over uw IoT Central-toepassing ophalen:
 ## <a name="next-steps"></a>Volgende stappen
 
 Nu u weet hoe u de versie van uw IoT Central-toepassing kunt vinden, kunt u een voorgestelde volgende stap door gaan met het verkennen van de artikelen met procedures voor beheerders: [wijzig IOT Central toepassings instellingen](howto-administer.md).
+
+Als u een v2-toepassing hebt, raadpleegt u [uw V2 IOT Central-toepassing migreren naar v3](howto-migrate.md).

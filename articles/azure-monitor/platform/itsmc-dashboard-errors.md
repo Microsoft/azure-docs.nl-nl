@@ -6,20 +6,20 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 01/18/2021
-ms.openlocfilehash: 9521c13b21317bb0a782b0bea0b08312ff24b113
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: c3e6408a6a3473380edbe2966eba41970bd73562
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610349"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762759"
 ---
-# <a name="errors-in-the-connector-status"></a>Fouten in de connector status
+# <a name="errors-in-the-connector-status-section"></a>Fouten in de sectie connector status
 
-In de lijst connector status vindt u fouten die u kunnen helpen bij het oplossen van problemen in uw ITSM-connector.
+In het gedeelte connector status lijst in het dash board vindt u fouten die u kunnen helpen bij het oplossen van problemen in uw ITSM-connector.
 
 ## <a name="status-common-errors"></a>Status veelvoorkomende fouten
 
-in deze sectie vindt u de algemene fouten die worden weer gegeven in de sectie connector status en hoe u deze kunt oplossen:
+In deze sectie vindt u de algemene fouten die worden weer gegeven in de sectie connector status en hoe u deze moet oplossen:
 
 * **Fout: er** is een onverwachte reactie van ServiceNow samen met de status code voor geslaagd. Antwoord: {"import_set": "{import_set_id}", "staging_table": "x_mioms_microsoft_oms_incident", "resultaat": [{"transform_map": "OMS-incident", "tabel": "incident", "status": "Error", "error_message": "{target record is niet gevonden | Ongeldige tabel | Ongeldige faserings tabel}
 
@@ -27,7 +27,7 @@ in deze sectie vindt u de algemene fouten die worden weer gegeven in de sectie c
   * Een aangepast script dat in ServiceNow-exemplaar is geïmplementeerd, zorgt ervoor dat incidenten worden genegeerd.
   * De code van de OMS integrator-app is gewijzigd op de ServiceNow-kant, bijvoorbeeld het script onBefore.
 
-  **Oplossing**: alle aangepaste scripts of code wijzigingen van het pad voor het importeren van gegevens uitschakelen.
+  **Oplossing**: Schakel alle aangepaste scripts of code wijzigingen uit.
 
 * **Fout**: "{" Error ": {" bericht ":" de bewerking is mislukt "," detail ":" de uitzonde ring van de toegangs beheer lijst is mislukt vanwege beveiligings beperkingen "}"
 
@@ -58,7 +58,7 @@ in deze sectie vindt u de algemene fouten die worden weer gegeven in de sectie c
     **Oorzaak**: ITSM-connector is verwijderd.
 
     **Oplossing**: de ITSM-connector is verwijderd, maar er zijn nog steeds ITSM-actie groepen gekoppeld. Er zijn twee opties om dit probleem op te lossen:
-  * Deze actie zoeken en uitschakelen of verwijderen
+  * Dergelijke actie groepen zoeken en uitschakelen of verwijderen
   * [Configureer de actie groep opnieuw voor het](./itsmc-definition.md#create-itsm-work-items-from-azure-alerts) gebruik van een bestaande ITSM-connector.
   * [Maak een nieuwe ITSM-connector](./itsmc-definition.md#create-an-itsm-connection) en [Configureer de actie groep opnieuw om deze te gebruiken](itsmc-definition.md#create-itsm-work-items-from-azure-alerts).
 

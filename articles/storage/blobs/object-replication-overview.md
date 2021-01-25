@@ -10,12 +10,12 @@ ms.date: 01/13/2021
 ms.author: tamram
 ms.subservice: blobs
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: ff2408e35d76a6ea0d5221e04c7a41ed6cde7ac9
-ms.sourcegitcommit: c136985b3733640892fee4d7c557d40665a660af
+ms.openlocfilehash: e7fa6b1ee7c92f82c3e15335991f5a240c7acc52
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98178973"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762886"
 ---
 # <a name="object-replication-for-block-blobs"></a>Object replicatie voor blok-blobs
 
@@ -88,7 +88,9 @@ Wanneer u een replicatie regel maakt, worden standaard alleen de nieuwe blok-blo
 
 U kunt ook een of meer filters opgeven als onderdeel van een replicatie regel voor het filteren van blok-blobs op voor voegsel. Wanneer u een voor voegsel opgeeft, worden alleen blobs die overeenkomen met het voor voegsel in de bron container gekopieerd naar de doel container.
 
-De bron-en doel containers moeten beide bestaan voordat u ze in een regel kunt opgeven. Nadat u het replicatiebeleid hebt gemaakt, wordt de doelcontainer alleen-lezen. Pogingen om naar de doelcontainer te schrijven, mislukken met foutcode 409 (Conflict). U kunt echter de bewerking [BLOB-laag instellen](/rest/api/storageservices/set-blob-tier) aanroepen op een BLOB in de doel container om deze naar de laag archief te verplaatsen. Zie voor meer informatie over de laag archief [Azure Blob-opslag: dynamische, koude en archief toegangs lagen](storage-blob-storage-tiers.md#archive-access-tier).
+De bron-en doel containers moeten beide bestaan voordat u ze in een regel kunt opgeven. Nadat u het replicatie beleid hebt gemaakt, zijn schrijf bewerkingen naar de doel container niet toegestaan. Pogingen om naar de doelcontainer te schrijven, mislukken met foutcode 409 (Conflict). Als u wilt schrijven naar een doel container waarvoor een replicatie regel is geconfigureerd, moet u de regel die is geconfigureerd voor die container verwijderen of het replicatie beleid verwijderen. Lees-en verwijder bewerkingen voor de doel container zijn toegestaan wanneer het replicatie beleid actief is.
+
+U kunt de bewerking [set BLOB tier](/rest/api/storageservices/set-blob-tier) aanroepen op een BLOB in de doel container om deze naar de laag archief te verplaatsen. Zie voor meer informatie over de laag archief [Azure Blob-opslag: dynamische, koude en archief toegangs lagen](storage-blob-storage-tiers.md#archive-access-tier).
 
 ## <a name="replication-status"></a>Replicatiestatus
 

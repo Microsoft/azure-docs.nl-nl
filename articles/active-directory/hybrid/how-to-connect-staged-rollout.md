@@ -10,12 +10,12 @@ ms.date: 06/03/2020
 ms.subservice: hybrid
 ms.author: billmath
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: d348b8c2325c7bc2cdaa28356151647a9430684f
-ms.sourcegitcommit: 08458f722d77b273fbb6b24a0a7476a5ac8b22e0
+ms.openlocfilehash: 10fe3b895ea5084247822f1c35275e68d80b73fa
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98247043"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762972"
 ---
 # <a name="migrate-to-cloud-authentication-using-staged-rollout-preview"></a>Migreren naar Cloud authenticatie met behulp van gefaseerde implementatie (preview-versie)
 
@@ -61,7 +61,10 @@ De volgende scenario's worden ondersteund voor gefaseerde implementatie. De func
 - Gebruikers die zijn ingericht voor Azure AD met behulp van Azure AD Connect. Het is niet van toepassing op gebruikers met alleen Clouds.
 
 - Aanmeld verkeer van gebruikers bij browsers en *moderne verificatie* -clients. Toepassingen of Cloud Services die gebruikmaken van verouderde verificatie, vallen terug op Federated Authentication stromen. Een voor beeld is mogelijk Exchange Online met moderne verificatie uitgeschakeld of Outlook 2010, dat geen ondersteuning biedt voor moderne verificatie.
+
 - De groeps grootte is momenteel beperkt tot 50.000 gebruikers.  Als u groepen hebt die groter zijn dan 50.000 gebruikers, wordt het aanbevolen deze groep te splitsen over meerdere groepen voor gefaseerde implementatie.
+
+- Windows 10 Hybrid Join's of Azure AD koppelt het primaire vernieuwings token zonder regel te verkrijgen aan de Federatie server voor Windows 10 versie 1903 en hoger, wanneer de UPN van de gebruiker routeerbaar is en domein achtervoegsel wordt gecontroleerd in azure AD.
 
 ## <a name="unsupported-scenarios"></a>Niet-ondersteunde scenario's
 
@@ -87,6 +90,10 @@ De volgende scenario's worden niet ondersteund voor gefaseerde implementatie:
 - Wanneer u voor het eerst een beveiligings groep voor gefaseerde implementatie toevoegt, bent u beperkt tot 200 gebruikers om een UX-time-out te voor komen. Nadat u de groep hebt toegevoegd, kunt u, indien nodig, meer gebruikers toevoegen.
 
 - Wanneer gebruikers zich in de gefaseerde implementatie bevinden, wordt het beleid voor het verlopen van wacht woorden ingesteld op 90 dagen, wanneer EnforceCloudPasswordPolicyForPasswordSyncedUsers is ingeschakeld. 
+
+- Windows 10 hybride koppeling of Azure AD-deelname primair vernieuwings Token ophalen voor Windows 10-versie ouder dan 1903. Dit scenario gaat terug naar het WS-Trust-eind punt van de Federatie server, zelfs als de gebruiker die zich aanmeldt, zich binnen het bereik van de gefaseerde implementatie bevindt.
+
+- Windows 10 Hybrid Join's of Azure AD koppelt het primaire vernieuwings token voor alle versies, wanneer de on-premises UPN van de gebruiker niet routeerbaar is. Dit scenario gaat terug naar het WS-Trust-eind punt in de modus voor gefaseerde implementatie, maar werkt niet meer wanneer de gefaseerde migratie is voltooid en de aanmelding van de gebruiker is niet langer afhankelijk van de Federatie server.
 
 
 ## <a name="get-started-with-staged-rollout"></a>Aan de slag met gefaseerde implementatie

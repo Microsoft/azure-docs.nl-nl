@@ -329,7 +329,7 @@
               href: msal-error-handling-dotnet.md
               displayName: 'handling, catch'
             - name: Logboekregistratie in MSAL.NET
-              href: msal-logging.md?tabs=dotnet
+              href: msal-logging-dotnet.md
             - name: Een token uit de cache ophalen
               href: msal-net-acquire-token-silently.md
             - name: Serialisatie van tokencache
@@ -371,7 +371,7 @@
               href: msal-error-handling-js.md
               displayName: 'handling, catch'
             - name: Logboekregistratie in MSAL.js
-              href: msal-logging.md?tabs=javascript
+              href: msal-logging-js.md
         - name: MSAL voor iOS en macOS
           items:
             - name: Verschillen tussen MSAL voor iOS en macOS
@@ -401,7 +401,7 @@
               href: msal-error-handling-ios.md
               displayName: 'handling, catch'
             - name: Logboekregistratie in MSAL voor iOS/macOS
-              href: msal-logging.md?tabs=swift
+              href: msal-logging-ios.md
         - name: MSAL voor Python
           items:
             - name: Serialisatie van aangepaste tokencache
@@ -414,7 +414,7 @@
               href: msal-error-handling-python.md
               displayName: 'handling, catch'
             - name: Logboekregistratie in MSAL voor Python
-              href: msal-logging.md?tabs=python
+              href: msal-logging-python.md
         - name: MSAL voor Java
           items:
             - name: Serialisatie van aangepaste tokencache
@@ -429,7 +429,7 @@
               href: msal-error-handling-java.md
               displayName: 'handling, catch'
             - name: Logboekregistratie in MSAL voor Java
-              href: msal-logging.md?tabs=java
+              href: msal-logging-java.md
         - name: MSAL voor Android
           items:
             - name: Accounts en tenantprofielen
@@ -449,7 +449,7 @@
               href: msal-android-handling-exceptions.md
               displayName: 'android, mobile, handling, catch'
             - name: Logboekregistratie in MSAL voor Android
-              href: msal-logging.md?tabs=android
+              href: msal-logging-android.md
     - name: Tokens en claims aanpassen
       items:
         - name: Rolclaim configureren

@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: troubleshooting
-ms.date: 08/11/2020
+ms.date: 01/21/2021
 ms.author: alkohli
-ms.openlocfilehash: f668136713024ba57d72bf5a457cd249742a3b11
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 09325289dd5cb83bfc26dd26b266d50b622fe098
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91742023"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763080"
 ---
 # <a name="troubleshoot-your-azure-stack-edge-pro-issues"></a>Problemen met uw Azure Stack Edge Pro oplossen
 
@@ -26,6 +26,7 @@ In dit artikel leert u het volgende:
 > * Diagnose uitvoeren
 > * Ondersteuningspakket verzamelen
 > * Logboeken gebruiken om problemen op te lossen
+> * Problemen met IoT Edge oplossen
 
 ## <a name="run-diagnostics"></a>Diagnose uitvoeren
 
@@ -81,6 +82,10 @@ Eventuele fouten die zich hebben voorgedaan tijdens de upload- en vernieuwingspr
 3. Als er een fout in dit bestand wordt weer geven (gemarkeerd in het voor beeld), noteert u de fout code, in dit geval 16001. Zoek de beschrijving van deze foutcode op in de volgende naslaginformatie voor fouten.
 
     [!INCLUDE [data-box-edge-edge-upload-error-reference](../../includes/data-box-edge-gateway-upload-error-reference.md)]
+
+## <a name="troubleshoot-iot-edge-errors"></a>Problemen met IoT Edge oplossen
+
+[!INCLUDE [Troubleshoot IoT Edge runtime](../../includes/azure-stack-edge-iot-troubleshoot-compute.md)]
 
 ## <a name="next-steps"></a>Volgende stappen
 

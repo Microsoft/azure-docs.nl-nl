@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: troubleshooting
-ms.date: 10/07/2020
+ms.date: 01/21/2021
 ms.author: alkohli
-ms.openlocfilehash: d07d9dccb0aa273f79b251f2ffb4a920f3cac2e7
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 0976dd9f3c4d0228ec0f170a755ec13800da435b
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96447620"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761552"
 ---
 # <a name="troubleshoot-issues-on-your-azure-stack-edge-pro-gpu-device"></a>Problemen met uw Azure Stack Edge Pro GPU-apparaat oplossen 
 
@@ -26,7 +26,7 @@ In dit artikel wordt beschreven hoe u problemen oplost op uw Azure Stack Edge Pr
 
 U kunt de diagnostische tests uitvoeren om apparaatfouten vast te stellen en op te lossen. Voer de volgende stappen uit in de lokale webinterface van uw apparaat om diagnostische tests uit te voeren.
 
-1. Ga in de lokale webinterface naar **Probleemoplossing > Diagnostische tests**. Selecteer de test die u wilt uitvoeren en selecteer **test uitvoeren**. Hiermee voert u de tests uit om mogelijke problemen met uw netwerk-, apparaat-, webproxy-, tijd- of cloudinstellingen vast te stellen. U ontvangt een melding dat er tests op het apparaat worden uitgevoerd.
+1. Ga in de lokale webinterface naar **Probleemoplossing > Diagnostische tests**. Selecteer de test die u wilt uitvoeren en selecteer **test uitvoeren**. Met de test worden mogelijke problemen met uw netwerk, apparaat, webproxy, tijd of Cloud instellingen vastgesteld. U ontvangt een melding dat er tests op het apparaat worden uitgevoerd.
 
     ![Testen selecteren ](media/azure-stack-edge-gpu-troubleshoot/run-diag-1.png)
  
@@ -97,7 +97,7 @@ Voor het detecteren van eventuele hardwareproblemen op het apparaat worden momen
 
 - Het systeem gebeurtenis logboek van het apparaat wordt gelezen met de `racadm` cmdlet. Deze gebeurtenissen worden vervolgens gefilterd op gebeurtenis met betrekking tot het chassis in een `HWIntrusion.txt` bestand.
 
-- Als u alleen het hardwareprobleem in het ondersteunings pakket wilt ontvangen, gebruikt u de `-Include HWSelLog` optie bij het maken van het ondersteunings pakket. 
+- Als u alleen het hardwareprobleem in het ondersteunings pakket wilt ontvangen, gebruikt `-Include HWSelLog` u de optie bij het maken van het ondersteunings pakket. 
 
 - Als er geen specifieke insluitings optie is opgegeven, wordt het inbraak logboek van de hardware opgenomen als standaard waarde in het ondersteunings pakket.
 
@@ -187,7 +187,7 @@ Hier vindt u de fouten met betrekking tot Blob Storage op Azure Stack Edge Pro/D
 | **Probleem/fouten** |  **Oplossing** | 
 |--------------------|-----------------|
 |Kan geen onderliggende resources ophalen. De waarde voor een van de HTTP-headers heeft niet de juiste indeling.| Selecteer in het menu **bewerken** de optie **doel-Azure stack-api's**. Start Azure Storage Explorer vervolgens opnieuw.|
-|getaddrinfo ENOTFOUND <accountname> . blob. <serialnumber> . microsoftdatabox.com|Controleer of de naam van het eind punt `<accountname>.blob.<serialnumber>.microsoftdatabox.com` is toegevoegd aan het hosts-bestand op dit pad: `C:\Windows\System32\drivers\etc\hosts` in Windows of `/etc/hosts` op Linux.|
+|`getaddrinfo ENOTFOUND <accountname>.blob.<serialnumber>.microsoftdatabox.com`|Controleer of de naam van het eind punt `<accountname>.blob.<serialnumber>.microsoftdatabox.com` is toegevoegd aan het hosts-bestand op dit pad: `C:\Windows\System32\drivers\etc\hosts` in Windows of `/etc/hosts` op Linux.|
 |Kan geen onderliggende resources ophalen.<br> Details: zelfondertekend certificaat |Importeer het SSL-certificaat voor uw apparaat in Azure Storage Explorer: <ol><li>Down load het certificaat van de Azure Portal. Zie [het certificaat downloaden](../databox/data-box-deploy-copy-data-via-rest.md#download-certificate)voor meer informatie.</li><li>Selecteer in het menu **bewerken** de optie SSL-certificaten en selecteer vervolgens **certificaten importeren**.</li></ol>|
 |De AzCopy-opdracht lijkt niet meer te reageren gedurende een minuut voordat deze fout wordt weer gegeven:<br>`Failed to enumerate directory https://… The remote name could not be resolved <accountname>.blob.<serialnumber>.microsoftdatabox.com`|Controleer of de naam van het eind punt `<accountname>.blob.<serialnumber>.microsoftdatabox.com` is toegevoegd aan het hosts-bestand op: `C:\Windows\System32\drivers\etc\hosts` .|
 |De AzCopy-opdracht lijkt niet meer te reageren gedurende een minuut voordat deze fout wordt weer gegeven:<br>`Error parsing source location. The underlying connection was closed: Could not establish trust relationship for the SSL/TLS secure channel`. |Importeer het SSL-certificaat voor uw apparaat in het certificaat archief van het systeem. Zie [het certificaat downloaden](../databox/data-box-deploy-copy-data-via-rest.md#download-certificate)voor meer informatie.|
@@ -199,6 +199,9 @@ Hier vindt u de fouten met betrekking tot Blob Storage op Azure Stack Edge Pro/D
 |… [SSL: CERTIFICATE_VERIFY_FAILED]...| Voordat u python uitvoert, stelt u de omgevings variabele REQUESTS_CA_BUNDLE in op het pad van het met base64 gecodeerde SSL-certificaat bestand (Zie How to [down load the Certificate](../databox/data-box-deploy-copy-data-via-rest.md#download-certificate). Bijvoorbeeld:<br>`export REQUESTS_CA_BUNDLE=/tmp/mycert.cer`<br>`python`<br>U kunt het certificaat ook toevoegen aan het certificaat archief van het systeem en deze omgevings variabele vervolgens instellen op het pad van dat archief. Bijvoorbeeld op Ubuntu:<br>`export REQUESTS_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt`<br>`python`.|
 |Er is een time-out opgestaan.|Meld u aan bij de Azure Stack Edge Pro en controleer of deze is ontgrendeld. Telkens wanneer het apparaat opnieuw wordt opgestart, blijft het vergrendeld totdat iemand zich aanmeldt.|
 
+## <a name="troubleshoot-iot-edge-errors"></a>Problemen met IoT Edge oplossen
+
+[!INCLUDE [Troubleshoot IoT Edge runtime](../../includes/azure-stack-edge-iot-troubleshoot-compute.md)]
 
 
 ## <a name="next-steps"></a>Volgende stappen

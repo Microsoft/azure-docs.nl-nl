@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 04/12/2020
-ms.openlocfilehash: a4a7b7a4008d5cc4636e2d533c225a618f35af05
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: e43c5fb36c5395e12fd0b9c2c67b787a1137f5d0
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611182"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761976"
 ---
 # <a name="troubleshooting-problems-in-itsm-connector"></a>Problemen oplossen in ITSM-connector
 
@@ -43,24 +43,23 @@ Als u Servicetoewijzing gebruikt, kunt u de Service Desk-items weer geven die zi
 
 ![Scherm opname van de Log Analytics scherm.](media/itsmc-overview/itsmc-overview-integrated-solutions.png)
 
-## <a name="troubleshoot-itsm-connections"></a>Problemen met ITSM-verbindingen oplossen
-
-- Als er geen verbinding kan worden gemaakt met het ITSM systeem en er een **fout optreedt bij het opslaan van het verbindings** bericht, voert u de volgende stappen uit:
-   - Voor ServiceNow-, Cher well-en Provance-verbindingen:  
-     - Zorg ervoor dat u de gebruikers naam, het wacht woord, de client-ID en het client geheim juist hebt ingevoerd voor elk van de verbindingen.  
-     - Zorg ervoor dat u voldoende bevoegdheden hebt in het bijbehorende ITSM-product om de verbinding tot stand te brengen.  
-   - Voor Service Manager verbindingen:  
-     - Zorg ervoor dat de web-app is geïmplementeerd en dat de hybride verbinding is gemaakt. Als u wilt controleren of de verbinding tot stand is gebracht met de on-premises Service Manager computer, gaat u naar de URL van de web-app zoals beschreven in de documentatie voor het maken van de [hybride verbinding](./itsmc-connections-scsm.md#configure-the-hybrid-connection).  
-
-- Als Log Analytics waarschuwingen geactiveerd, maar er worden geen werk items gemaakt in het ITSM-product, als configuratie-items niet zijn gemaakt/gekoppeld aan werk items, of als u andere informatie wilt, raadpleegt u deze bronnen:
-   -  ITSMC: de oplossing toont een [samen vatting van verbindingen](itsmc-dashboard.md), werk items, computers en meer. Selecteer de tegel met het label **status** van de connector. Hiermee gaat u zoeken naar **Logboeken** met de relevante query. Bekijk logboek records met een `LogType_S` van `ERROR` voor meer informatie.
-   [Hier](itsmc-dashboard-errors.md)vindt u details over de berichten in de tabel.
-   - **Zoek pagina voor logboeken** : de fouten en gerelateerde informatie rechtstreeks weer geven met behulp van de query `*ServiceDeskLog_CL*` .
-
 ## <a name="common-symptoms---how-should-it-be-resolved"></a>Veelvoorkomende symptomen: hoe moet het worden opgelost?
 
 De onderstaande lijst bevat algemene symptomen en hoe moet deze worden opgelost:
 
+* **Symptoom**: als een verbinding geen verbinding kan maken met het ITSM systeem en er een **fout optreedt bij het opslaan van het verbindings** bericht.
+
+    **Oorzaak**: de oorzaak kan een van de volgende opties zijn:
+    * Onjuiste referenties
+     * Onvoldoende bevoegdheden
+     * De web-app moet correct worden geïmplementeerd
+
+    **Oplossing**:
+    * Voor ServiceNow-, Cher well-en Provance-verbindingen:
+        * Zorg ervoor dat u de gebruikers naam, het wacht woord, de client-ID en het client geheim juist hebt ingevoerd voor elk van de verbindingen.  
+        * Voor ServiceNow: Zorg ervoor dat u voldoende bevoegdheden hebt in het bijbehorende ITSM-product om de verbinding op te [geven.](itsmc-connections-servicenow.md#install-the-user-app-and-create-the-user-role)
+  * Voor Service Manager verbindingen:  
+      * Zorg ervoor dat de web-app is geïmplementeerd en dat de hybride verbinding is gemaakt. Als u wilt controleren of de verbinding tot stand is gebracht met de on-premises Service Manager computer, gaat u naar de URL van de web-app zoals beschreven in de documentatie voor het maken van de [hybride verbinding](./itsmc-connections-scsm.md#configure-the-hybrid-connection).  
 * **Symptoom**: er zijn dubbele werk items gemaakt
 
     **Oorzaak**: de oorzaak kan een van de volgende twee opties zijn:

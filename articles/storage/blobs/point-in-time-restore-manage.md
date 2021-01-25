@@ -6,15 +6,15 @@ services: storage
 author: tamram
 ms.service: storage
 ms.topic: how-to
-ms.date: 12/28/2020
+ms.date: 01/15/2021
 ms.author: tamram
 ms.subservice: blobs
-ms.openlocfilehash: 7bd85c60025475e8208847a12ccc2729743a975a
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: f550f96a8bd2e402556089061604654b11d47844
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97803915"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762897"
 ---
 # <a name="perform-a-point-in-time-restore-on-block-blob-data"></a>Herstel naar een bepaald tijdstip uitvoeren op blok-BLOB-gegevens
 
@@ -23,7 +23,7 @@ U kunt herstel punt in tijd gebruiken om een of meer sets blok-blobs naar een ee
 Zie herstel naar een bepaald tijdstip [voor blok-blobs voor](point-in-time-restore-overview.md)meer informatie over herstel naar een bepaald tijdstip.
 
 > [!CAUTION]
-> Herstel naar een bepaald tijdstip biedt alleen ondersteuning voor het herstellen van bewerkingen op blok-blobs. Bewerkingen op containers kunnen niet worden hersteld. Als u een container uit het opslag account verwijdert door de bewerking voor het verwijderen van een [container](/rest/api/storageservices/delete-container) aan te roepen, kan deze container niet worden hersteld met een herstel bewerking. In plaats van een volledige container te verwijderen, moet u afzonderlijke blobs verwijderen als u deze mogelijk later wilt herstellen.
+> Herstel naar een bepaald tijdstip biedt alleen ondersteuning voor het herstellen van bewerkingen op blok-blobs. Bewerkingen op containers kunnen niet worden hersteld. Als u een container uit het opslag account verwijdert door de bewerking voor het verwijderen van een [container](/rest/api/storageservices/delete-container) aan te roepen, kan deze container niet worden hersteld met een herstel bewerking. In plaats van een volledige container te verwijderen, moet u afzonderlijke blobs verwijderen als u deze mogelijk later wilt herstellen. Micro soft raadt u aan om voorlopig verwijderen voor containers en blobs in te scha kelen om te beschermen tegen onbedoeld verwijderen. Zie voor meer informatie [voorlopig verwijderen voor containers (preview)](soft-delete-container-overview.md) en [zacht verwijderen voor blobs](soft-delete-blob-overview.md).
 
 ## <a name="enable-and-configure-point-in-time-restore"></a>Herstel naar een bepaald tijdstip inschakelen en configureren
 
@@ -36,7 +36,7 @@ Voordat u herstel naar een bepaald tijdstip inschakelt en configureert, moet u d
 > [!IMPORTANT]
 > Het inschakelen van de functie voor voorlopig verwijderen, wijzigings invoer en BLOB-versie beheer kan leiden tot extra kosten. Zie voor meer informatie [voorlopig verwijderen voor blobs](soft-delete-blob-overview.md), [ondersteuning voor feeds wijzigen in Azure Blob Storage](storage-blob-change-feed.md)en [BLOB-versie beheer](versioning-overview.md).
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om herstel naar een bepaald tijdstip met de Azure Portal te configureren:
 
@@ -52,19 +52,16 @@ In de volgende afbeelding ziet u een opslag account dat is geconfigureerd voor h
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Als u herstel naar een bepaald tijdstip wilt configureren met Power shell, installeert u eerst de [AZ. Storage](https://www.powershellgallery.com/packages/Az.Storage) -module versie 2.6.0 of hoger. Roep vervolgens de Enable-AzStorageBlobRestorePolicy opdracht om herstel naar een bepaald tijdstip voor het opslag account in te scha kelen.
+Als u herstel naar een bepaald tijdstip wilt configureren met Power shell, installeert u eerst de [AZ. Storage](https://www.powershellgallery.com/packages/Az.Storage) -module versie 2.6.0 of hoger. Roep vervolgens de opdracht [Enable-AzStorageBlobRestorePolicy](/powershell/module/az.storage/enable-azstorageblobrestorepolicy) aan om herstel naar een bepaald tijdstip voor het opslag account in te scha kelen.
 
-In het volgende voor beeld wordt zacht verwijderen ingeschakeld en wordt de Bewaar periode voor de tijdelijke verwijdering ingesteld, wordt feed en versie beheer ingeschakeld en wordt vervolgens herstel naar een bepaald tijdstip mogelijk.    Wanneer u het voor beeld uitvoert, moet u de waarden tussen punt haken vervangen door uw eigen waarden:
+In het volgende voor beeld wordt zacht verwijderen ingeschakeld en wordt de Bewaar periode voor de tijdelijke verwijdering ingesteld, wordt feed en versie beheer ingeschakeld en wordt vervolgens herstel naar een bepaald tijdstip mogelijk. Wanneer u het voor beeld uitvoert, moet u de waarden tussen punt haken vervangen door uw eigen waarden:
 
 ```powershell
-# Sign in to your Azure account.
-Connect-AzAccount
-
 # Set resource group and account variables.
 $rgName = "<resource-group>"
 $accountName = "<storage-account>"
 
-# Enable soft delete with a retention of 14 days.
+# Enable blob soft delete with a retention of 14 days.
 Enable-AzStorageBlobDeleteRetentionPolicy -ResourceGroupName $rgName `
     -StorageAccountName $accountName `
     -RetentionDays 14
@@ -87,11 +84,33 @@ Get-AzStorageBlobServiceProperty -ResourceGroupName $rgName `
     -StorageAccountName $accountName
 ```
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u herstel naar een bepaald tijdstip wilt configureren met Azure CLI, installeert u eerst de Azure CLI-versie 2.2.0 of hoger. Vervolgens roept u de opdracht [AZ Storage account BLOB-Service-Properties update](/cli/azure/ext/storage-blob-preview/storage/account/blob-service-properties#ext_storage_blob_preview_az_storage_account_blob_service_properties_update) aan om herstel naar een bepaald tijdstip en de andere vereiste instellingen voor gegevens beveiliging voor het opslag account in te scha kelen.
+
+In het volgende voor beeld wordt zacht verwijderen ingeschakeld en wordt de Bewaar periode voor de tijdelijke verwijdering ingesteld op 14 dagen, wordt feed en versie beheer ingeschakeld en wordt herstel naar een bepaald tijdstip met een herstel periode van 7 dagen ingeschakeld. Wanneer u het voor beeld uitvoert, moet u de waarden tussen punt haken vervangen door uw eigen waarden:
+
+```azurecli
+az storage account blob-service-properties update \
+    --resource-group <resource_group> \
+    --account-name <storage-account> \
+    --enable-delete-retention true \
+    --delete-retention-days 14 \
+    --enable-versioning true \
+    --enable-change-feed true \
+    --enable-restore-policy true \
+    --restore-days 7
+```
+
 ---
 
-## <a name="perform-a-restore-operation"></a>Een herstel bewerking uitvoeren
+## <a name="choose-a-restore-point"></a>Een herstel punt kiezen
 
-Wanneer u een herstel bewerking uitvoert, moet u het herstel punt opgeven als een UTC-waarde voor **datum/tijd** . Containers en blobs worden op die dag en tijd hersteld naar hun status. Het kan enkele minuten duren voordat de herstel bewerking is voltooid.
+Het herstel punt is de datum en tijd waarop de gegevens worden teruggezet. Azure Storage maakt altijd gebruik van een UTC-waarde voor datum/tijd als het herstel punt. Met de Azure Portal kunt u echter het herstel punt in de lokale tijd opgeven en deze datum/tijd-waarde vervolgens converteren naar een UTC-waarde voor datum/tijd om de herstel bewerking uit te voeren.
+
+Wanneer u een herstel bewerking uitvoert met Power shell of Azure CLI, moet u het herstel punt opgeven als een UTC-datum/-tijd waarde. Als het herstel punt is opgegeven met een lokale tijd waarde in plaats van een UTC-tijd waarde, werkt de herstel bewerking mogelijk nog steeds zoals verwacht in sommige gevallen. Als uw lokale tijd bijvoorbeeld UTC min vijf uur is, geeft u een lokale tijd waarde als resultaat in een herstel punt dat vijf uur eerder is dan de waarde die u hebt opgegeven. Als er geen wijzigingen zijn aangebracht aan de gegevens in het bereik dat tijdens deze periode van vijf uur moet worden hersteld, produceert de herstel bewerking dezelfde resultaten, ongeacht de tijd waarde die is opgegeven. Het opgeven van een UTC-tijd voor het herstel punt wordt aanbevolen om onverwachte resultaten te voor komen.
+
+## <a name="perform-a-restore-operation"></a>Een herstel bewerking uitvoeren
 
 U kunt alle containers in het opslag account herstellen of u kunt een bereik van blobs in een of meer containers herstellen. Een bereik van blobs is gedefinieerd lexicographically, wat betekent dat het om een woordenboek volgorde gaat. Er worden Maxi maal tien lexicographical-bereiken ondersteund per herstel bewerking. Het begin van het bereik is inclusief en het einde van het bereik is exclusief.
 
@@ -114,7 +133,7 @@ Alleen blok-blobs worden hersteld. Pagina-blobs en toevoeg-blobs worden niet opg
 
 U kunt alle containers in het opslag account herstellen om ze te retour neren naar de vorige status op een bepaald moment.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om alle containers en blobs in het opslag account te herstellen met de Azure Portal:
 
@@ -128,7 +147,7 @@ Voer de volgende stappen uit om alle containers en blobs in het opslag account t
 
 # <a name="powershell"></a>[PowerShell](#tab/powershell)
 
-Als u alle containers en blobs in het opslag account met Power shell wilt herstellen, roept u de opdracht **Restore-AzStorageBlobRange** aan. Standaard wordt de opdracht **Restore-AzStorageBlobRange** asynchroon uitgevoerd en wordt een object van het type **PSBlobRestoreStatus** geretourneerd dat u kunt gebruiken om de status van de herstel bewerking te controleren.
+Als u alle containers en blobs in het opslag account met Power shell wilt herstellen, roept u de opdracht **Restore-AzStorageBlobRange** aan en geeft u het herstel punt op als een UTC-datum/-tijd waarde. Standaard wordt de opdracht **Restore-AzStorageBlobRange** asynchroon uitgevoerd en wordt een object van het type **PSBlobRestoreStatus** geretourneerd dat u kunt gebruiken om de status van de herstel bewerking te controleren.
 
 In het volgende voor beeld worden de containers in het opslag account asynchroon teruggezet naar de status 12 uur vóór het huidige moment en worden enkele eigenschappen van de herstel bewerking gecontroleerd:
 
@@ -136,7 +155,7 @@ In het volgende voor beeld worden de containers in het opslag account asynchroon
 # Specify -TimeToRestore as a UTC value
 $restoreOperation = Restore-AzStorageBlobRange -ResourceGroupName $rgName `
     -StorageAccountName $accountName `
-    -TimeToRestore (Get-Date).AddHours(-12)
+    -TimeToRestore (Get-Date).ToUniversalTime().AddHours(-12)
 
 # Get the status of the restore operation.
 $restoreOperation.Status
@@ -154,13 +173,29 @@ Restore-AzStorageBlobRange -ResourceGroupName $rgName `
     -TimeToRestore (Get-Date).AddHours(-12) -WaitForComplete
 ```
 
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u alle containers en blobs in het opslag account wilt herstellen met Azure CLI, roept u de opdracht [AZ Storage BLOB Restore](/cli/azure/storage/blob#az_storage_blob_restore) aan en geeft u het herstel punt op als een UTC-datum/tijd-waarde.
+
+In het volgende voor beeld worden alle containers in het opslag account asynchroon teruggezet naar de status 12 uur vóór een opgegeven datum en tijd. Als u de status van de herstel bewerking wilt controleren, roept u [AZ Storage account show](/cli/azure/storage/account#az_storage_account_show):
+
+```azurecli
+az storage blob restore \
+    --resource-group <resource_group> \
+    --account-name <storage-account> \
+    --time-to-restore 2021-01-14T06:31:22Z \
+    --no-wait
+```
+
+Als u de opdracht **AZ Storage BLOB Restore** synchroon wilt uitvoeren en de uitvoering wilt blok keren totdat de herstel bewerking is voltooid, laat u de `--no-wait` para meter weg.
+
 ---
 
 ### <a name="restore-ranges-of-block-blobs"></a>Bereiken van blok-blobs herstellen
 
 U kunt een of meer lexicographical-bereiken van blobs binnen één container of meerdere containers herstellen om deze blobs op een bepaald moment in hun vorige status te retour neren.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Voer de volgende stappen uit om een reeks blobs in een of meer containers te herstellen met de Azure Portal:
 
@@ -244,6 +279,25 @@ $restoreOperation.Parameters.BlobRanges
 ```
 
 Als u de herstel bewerking synchroon wilt uitvoeren en de uitvoering wilt blok keren totdat deze is voltooid, neemt u de para meter **-WaitForComplete** op in de opdracht.
+
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
+
+Als u een bereik van blobs wilt herstellen, roept u de opdracht [AZ Storage BLOB Restore](/cli/azure/storage/blob#az_storage_blob_restore) aan en geeft u een lexicographical-bereik van container-en BLOB-namen op voor de `--blob-range` para meter. Als u meerdere bereiken wilt opgeven, geeft u de `--blob-range` para meter op voor elk afzonderlijk bereik.
+
+Als u bijvoorbeeld de blobs in één container met de naam *container1* wilt herstellen, kunt u een bereik opgeven dat begint met *container1* en eindigt met *container2*. Er zijn geen vereisten voor de containers met de naam in het begin-en eind bereik. Omdat het einde van het bereik exclusief is, zelfs als het opslag account een container met de naam *container2* bevat, wordt alleen de container met de naam *container1* hersteld.
+
+Als u een subset van blobs in een container wilt herstellen, gebruikt u een slash (/) om de container naam van het voor voegsel van de BLOB te scheiden. In het onderstaande voor beeld wordt een bereik van blobs in een container met de naam begin asynchroon hersteld `d` `f` .
+
+```azurecli
+az storage blob restore \
+    --account-name <storage-account> \
+    --time-to-restore 2021-01-14T06:31:22Z \
+    --blob-range container1 container2
+    --blob-range container3/d container3/g
+    --no-wait
+```
+
+Als u de opdracht **AZ Storage BLOB Restore** synchroon wilt uitvoeren en de uitvoering wilt blok keren totdat de herstel bewerking is voltooid, laat u de `--no-wait` para meter weg.
 
 ---
 

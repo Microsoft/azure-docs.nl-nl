@@ -1,17 +1,17 @@
 ---
 title: VMware-evaluatie ondersteuning in Azure Migrate
 description: Meer informatie over ondersteuning voor VMware VM-evaluatie met Azure Migrate server-evaluatie.
-author: rashi-ms
-ms.author: rajosh
+author: vineetvikram
+ms.author: vivikram
 ms.manager: abhemraj
 ms.topic: conceptual
 ms.date: 11/10/2020
-ms.openlocfilehash: 02757477ca4a07f4526df0339291122eda57c9b5
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: ce8a1d77ae74a3946174ef58abf9add2e81eb90b
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567432"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98763000"
 ---
 # <a name="support-matrix-for-vmware-assessment"></a>Ondersteunings matrix voor VMware-evaluatie 
 
@@ -37,7 +37,7 @@ Meer [informatie](concepts-assessment-calculation.md) over evaluaties.
 **VMware** | **Details**
 --- | ---
 **vCenter Server** | Machines die u wilt detecteren en beoordelen, moeten worden beheerd door vCenter Server versie 5,5, 6,0, 6,5, 6,7 of 7,0.<br/><br/> De detectie van VMware-Vm's door ESXi in het apparaat op te geven, wordt momenteel niet ondersteund.
-**Machtigingen** | Server Assessment heeft een vCenter Server alleen-lezen account nodig voor detectie en evaluatie.<br/><br/> Als u toepassings detectie of afhankelijkheids visualisatie wilt uitvoeren, moet de account bevoegdheden hebben om **virtual machines**-  >  **gast bewerkingen** in te scha kelen.
+**Machtigingen** | Server Assessment heeft een vCenter Server alleen-lezen account nodig voor detectie en evaluatie.<br/><br/> Als u toepassings detectie of afhankelijkheids visualisatie wilt uitvoeren, heeft het account bevoegdheden nodig die zijn ingeschakeld voor **virtual machines**-  >  **gast bewerkingen**.
 
 ## <a name="vm-requirements"></a>VM-vereisten
 **VMware** | **Details**

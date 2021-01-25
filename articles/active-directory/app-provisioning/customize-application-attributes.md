@@ -8,14 +8,14 @@ ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 11/10/2020
+ms.date: 1/25/2021
 ms.author: kenwith
-ms.openlocfilehash: efdbec10c74a6b1892df13b8308538e61f42f679
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 2a27124ea76d6e5aaa7ec4b8ca36c388718ffb94
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98673498"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98761296"
 ---
 # <a name="tutorial---customize-user-provisioning-attribute-mappings-for-saas-applications-in-azure-active-directory"></a>Zelfstudie - Kenmerktoewijzingen voor het inrichten van gebruikers aanpassen voor SaaS-toepassingen in Azure Active Directory
 
@@ -75,7 +75,7 @@ Hier beschrijven we de kenmerken die u kunt gebruiken met kenmerktoewijzingen:
   - **Alleen tijdens het maken van een object**: deze toewijzing alleen toepassen bij het maken van gebruikers.
 
 ## <a name="matching-users-in-the-source-and-target--systems"></a>Overeenkomende gebruikers in de bron- en doelsystemen
-De inrichtingsservice van Azure AD kan worden geïmplementeerd in zowel 'greenfield'-scenario's (waarbij gebruikers niet bestaan in het doelsysteem) als 'brownfield'-scenario's (waarbij gebruikers al bestaan in het doelsysteem). Om beide scenario's te ondersteunen, hanteert de inrichtingsservice het concept van overeenkomende kenmerken. Overeenkomende kenmerken maken het mogelijk om te bepalen hoe een gebruiker in het bronsysteem uniek wordt geïdentificeerd en wordt gekoppeld aan de gebruiker in het doelsysteem. Als onderdeel van het plannen van uw implementatie, identificeert u het kenmerk dat kan worden gebruikt om een gebruiker uniek te identificeren in de bron- en doelsystemen. Aandachtspunten:
+De Azure AD-inrichtings service kan worden geïmplementeerd in de scenario's met het ' groene veld ' (waarbij gebruikers niet worden afgesloten in het doel systeem) en ' Brownfield-scenario's (waarbij gebruikers al bestaan in het doel systeem). Om beide scenario's te ondersteunen, hanteert de inrichtingsservice het concept van overeenkomende kenmerken. Overeenkomende kenmerken maken het mogelijk om te bepalen hoe een gebruiker in het bronsysteem uniek wordt geïdentificeerd en wordt gekoppeld aan de gebruiker in het doelsysteem. Als onderdeel van het plannen van uw implementatie, identificeert u het kenmerk dat kan worden gebruikt om een gebruiker uniek te identificeren in de bron- en doelsystemen. Aandachtspunten:
 
 - **Overeenkomende kenmerken moeten uniek zijn:** Klanten gebruiken vaak kenmerken als userPrincipalName, mail of objectID als het overeenkomende kenmerk.
 - **U kunt meerdere kenmerken gebruiken als overeenkomende kenmerken:** U kunt meerdere kenmerken definiëren die moeten worden geëvalueerd bij het koppelen van gebruikers, evenals de volgorde waarin ze worden geëvalueerd (gedefinieerd via Prioriteit bij koppelen in de gebruikersinterface). Als u bijvoorbeeld drie kenmerken definieert als overeenkomende kenmerken en een gebruiker uniek is gekoppeld na het evalueren van de eerste twee kenmerken, wordt het derde kenmerk niet meer geëvalueerd door de service. De service evalueert overeenkomende kenmerken in de opgegeven volgorde en stopt met de evaluatie zodra er een overeenkomst is gevonden.  
@@ -156,6 +156,7 @@ Aangepaste kenmerken kunnen geen referentiële kenmerken zijn, en evenmin kenmer
       "urn:ietf:params:scim:schemas:extension:enterprise:2.0:User",
       "urn:ietf:params:scim:schemas:extension:CustomExtensionName:2.0:User"],
      "userName":"bjensen",
+     "id": "48af03ac28ad4fb88478",
      "externalId":"bjensen",
      "name":{
        "formatted":"Ms. Barbara J Jensen III",

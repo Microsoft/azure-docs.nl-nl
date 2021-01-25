@@ -4,17 +4,17 @@ description: In dit artikel leest u hoe u problemen met de Windows Update Agent 
 services: automation
 author: mgoedtel
 ms.author: magoedte
-ms.date: 01/16/2020
+ms.date: 01/25/2020
 ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: 92020313fccf1b8be0add58a7bafab62b5daa4d5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d5c2cc014c87a345507e9c0f99c507d151d59b86
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187129"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762126"
 ---
 # <a name="troubleshoot-windows-update-agent-issues"></a>Problemen met de Windows Update-agent oplossen
 
@@ -27,10 +27,10 @@ Er kunnen verschillende redenen zijn waarom uw computer niet wordt weer gegeven 
 > [!NOTE]
 > Er kan een lichte vertraging optreden tussen de Azure Portal weer geven en de huidige status van een machine.
 
-In dit artikel wordt beschreven hoe u de probleem Oplosser uitvoert voor Azure-machines vanaf het Azure Portal en niet-Azure-machines in het [offline scenario](#troubleshoot-offline). 
+In dit artikel wordt beschreven hoe u de probleem Oplosser uitvoert voor Azure-machines vanaf het Azure Portal en niet-Azure-machines in het [offline scenario](#troubleshoot-offline).
 
 > [!NOTE]
-> Het script voor de probleem Oplosser bevat nu controles voor Windows Server Update Services (WSUS) en voor de sleutels autodown load en install. 
+> Het script voor de probleem Oplosser bevat nu controles voor Windows Server Update Services (WSUS) en voor de sleutels autodown load en install.
 
 ## <a name="start-the-troubleshooter"></a>De probleem Oplosser starten
 
@@ -59,7 +59,7 @@ Met de controle van het besturings systeem wordt gecontroleerd of op de Hybrid R
 |---------|---------|
 |Windows Server 2012 en hoger |.NET Framework 4,6 of hoger is vereist. ([Down load de .NET Framework](/dotnet/framework/install/guide-for-developers).)<br/> Windows Power shell 5,1 is vereist.  ([Down load Windows Management Framework 5,1](https://www.microsoft.com/download/details.aspx?id=54616).)        |
 
-### <a name="net-462"></a>.NET-4.6.2
+### <a name="net-462"></a>.NET 4.6.2
 
 Met de .NET Framework controle wordt gecontroleerd of het systeem [.NET Framework 4.6.2](https://www.microsoft.com/en-us/download/details.aspx?id=53345) of hoger is geïnstalleerd.
 
@@ -110,7 +110,7 @@ De toegangs controle voor de cryptografie mappen bepaalt of het lokale systeem a
 
 ## <a name="troubleshoot-offline"></a><a name="troubleshoot-offline"></a>Problemen met offline oplossen
 
-U kunt de probleem Oplosser op een Hybrid Runbook Worker offline gebruiken door het script lokaal uit te voeren. Haal het volgende script op uit de PowerShell Gallery: [Troubleshooting-WindowsUpdateAgentRegistration](https://www.powershellgallery.com/packages/Troubleshoot-WindowsUpdateAgentRegistration). Als u het script wilt uitvoeren, moet u WMF 4,0 of hoger hebben geïnstalleerd. Zie [verschillende versies van Power Shell installeren](/powershell/scripting/install/installing-powershell)voor informatie over het downloaden van de meest recente versie van Power shell.
+U kunt de probleem Oplosser op een Hybrid Runbook Worker offline gebruiken door het script lokaal uit te voeren. Haal het volgende script op uit GitHub: [UM_Windows_Troubleshooter_Offline.ps1](https://github.com/Azure/updatemanagement/blob/main/UM_Windows_Troubleshooter_Offline.ps1). Als u het script wilt uitvoeren, moet u WMF 4,0 of hoger hebben geïnstalleerd. Zie [verschillende versies van Power Shell installeren](/powershell/scripting/install/installing-powershell)voor informatie over het downloaden van de meest recente versie van Power shell.
 
 De uitvoer van dit script ziet eruit als in het volgende voor beeld:
 

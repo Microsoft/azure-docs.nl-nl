@@ -4,17 +4,17 @@ description: In dit artikel leest u hoe u problemen oplost en oplost met de Linu
 services: automation
 author: mgoedtel
 ms.author: magoedte
-ms.date: 12/03/2019
+ms.date: 01/25/2021
 ms.topic: conceptual
 ms.service: automation
 ms.subservice: update-management
 manager: carmonm
-ms.openlocfilehash: f1351b29a0102a374b75d832687d66c3b5572c75
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a7ac5e8324d9979b17ee93d16b3e007fe7916a8a
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83680872"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98762617"
 ---
 # <a name="troubleshoot-linux-update-agent-issues"></a>Problemen met de Linux Update-agent oplossen
 
@@ -27,7 +27,7 @@ Er kunnen verschillende redenen zijn waarom uw computer niet wordt weer gegeven 
 > [!NOTE]
 > Er kan een lichte vertraging optreden tussen de Azure Portal weer geven en de huidige status van een machine.
 
-In dit artikel wordt beschreven hoe u de probleem oplosser voor Azure-machines uitvoert vanaf de Azure Portal-en niet-Azure-machines in het [offline scenario](#troubleshoot-offline). 
+In dit artikel wordt beschreven hoe u de probleem oplosser voor Azure-machines uitvoert vanaf de Azure Portal-en niet-Azure-machines in het [offline scenario](#troubleshoot-offline).
 
 > [!NOTE]
 > Het script voor de probleem Oplosser stuurt momenteel geen verkeer via een proxy server als er een is geconfigureerd.
@@ -90,7 +90,6 @@ Updatebeheer downloadt Hybrid Runbook Worker pakketten van het eind punt van de 
 
 Met deze controle wordt gecontroleerd of de Hybrid Runbook Worker op de computer wordt uitgevoerd. De processen in het onderstaande voor beeld moeten aanwezig zijn als de Hybrid Runbook Worker correct wordt uitgevoerd.
 
-
 ```bash
 nxautom+   8567      1  0 14:45 ?        00:00:00 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/main.py /var/opt/microsoft/omsagent/state/automationworker/oms.conf rworkspace:<workspaceId> <Linux hybrid worker version>
 nxautom+   8593      1  0 14:45 ?        00:00:02 python /opt/microsoft/omsconfig/modules/nxOMSAutomationWorker/DSCResources/MSFT_nxOMSAutomationWorkerResource/automationworker/worker/hybridworker.py /var/opt/microsoft/omsagent/state/automationworker/worker.conf managed rworkspace:<workspaceId> rversion:<Linux hybrid worker version>
@@ -129,7 +128,7 @@ Met deze controle wordt gecontroleerd of de computer toegang heeft tot de eind p
 
 ## <a name="troubleshoot-offline"></a><a name="troubleshoot-offline"></a>Problemen met offline oplossen
 
-U kunt de probleem Oplosser offline gebruiken op een Hybrid Runbook Worker door het script lokaal uit te voeren. Het python-script, [update_mgmt_health_check. py](https://gallery.technet.microsoft.com/scriptcenter/Troubleshooting-utility-3bcbefe6), vindt u in Script Center. In het volgende voor beeld ziet u een voor beeld van de uitvoer van dit script:
+U kunt de probleem Oplosser offline gebruiken op een Hybrid Runbook Worker door het script lokaal uit te voeren. Het python-script, [UM_Linux_Troubleshooter_Offline. py](https://github.com/Azure/updatemanagement/blob/main/UM_Linux_Troubleshooter_Offline.py), bevindt zich in github. In het volgende voor beeld ziet u een voor beeld van de uitvoer van dit script:
 
 ```output
 Debug: Machine Information:   Static hostname: LinuxVM2

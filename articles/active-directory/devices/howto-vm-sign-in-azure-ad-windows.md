@@ -12,12 +12,12 @@ manager: daveba
 ms.reviewer: sandeo
 ms.custom: references_regions, devx-track-azurecli
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 22a4bdc92ea2a91425c1070a5837c672307de665
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 3e22e5fc4bc7211d905dbe8775b0ef6e893bd2cc
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98683773"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98760998"
 ---
 # <a name="sign-in-to-windows-virtual-machine-in-azure-using-azure-active-directory-authentication-preview"></a>Aanmelden bij een virtuele Windows-machine in azure met Azure Active Directory authenticatie (preview-versie)
 
@@ -350,7 +350,9 @@ Controleer of de Windows 10-computer die u gebruikt voor het initiëren van de v
 > [!NOTE]
 > Windows 10 build 20H1 heeft ondersteuning toegevoegd voor een Azure AD-geregistreerde computer om de RDP-verbinding met uw virtuele machine te initiëren. Wanneer u een Azure AD-PC (niet toegevoegd aan Azure AD of hybride Azure AD) als de RDP-client gebruikt om verbindingen met uw virtuele machine te initiëren, moet u referenties opgeven in de notatie AzureAD\UPn (bijvoorbeeld AzureAD\john@contoso.com ).
 
-Controleer ook of de AADLoginForWindows-extensie niet is verwijderd nadat de Azure AD-deelname is voltooid.
+Controleer of de AADLoginForWindows-extensie niet is verwijderd nadat de Azure AD-deelname is voltooid.
+
+Zorg er ook voor dat het beveiligings beleid ' netwerk beveiliging: PKU2U-verificatie aanvragen op deze computer voor het gebruik van online-identiteiten toestaan ' is ingeschakeld op zowel de server *als* de client.
  
 #### <a name="mfa-sign-in-method-required"></a>De MFA-aanmeldings methode is vereist
 

@@ -4,7 +4,7 @@
   items:
     - name: Wat is ExpressRoute?
       href: expressroute-introduction.md
-- name: Snelstartgidsen
+- name: Quickstarts
   items:
     - name: Een ExpressRoute-circuit maken - Portal
       href: expressroute-howto-circuit-portal-resource-manager.md
@@ -82,7 +82,7 @@
           href: about-upgrade-circuit-bandwidth.md
         - name: Circuits verplaatsen van klassiek naar Resource Manager
           href: expressroute-move.md
-    - name: Over Expressroute-gateways
+    - name: Over ExpressRoute-gateways
       href: expressroute-about-virtual-network-gateways.md
     - name: Over ExpressRoute FastPath
       href: about-fastpath.md

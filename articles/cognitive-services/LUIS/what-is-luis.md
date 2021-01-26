@@ -7,12 +7,12 @@ ms.subservice: language-understanding
 ms.topic: overview
 ms.date: 11/23/2020
 ms.custom: cog-serv-seo-aug-2020
-ms.openlocfilehash: fb36ab8a86a89d6383f93ad58c23956472841de2
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
-ms.translationtype: HT
+ms.openlocfilehash: f21a2cc8218dde8b0cf7203a1fcb1f5cfb9424a2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95539257"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790864"
 ---
 # <a name="what-is-language-understanding-luis"></a>Wat is Language Understanding (LUIS)?
 
@@ -66,7 +66,7 @@ Ontwerp uw model met categorieën gebruikersintenties, ook wel **[intenties](lui
 |`When does your store open?`|StoreHoursAndLocation|open|
 |`Schedule a meeting at 1pm with Bob in Distribution`|ScheduleMeeting|13:00 uur, Bob|
 
-U bouwt het model op met de [ontwerp](https://go.microsoft.com/fwlink/?linkid=2092087 "authoring")-API's of met de **[LUIS-portal](https://www.luis.ai "LUIS-portal")**, of beide. Leer meer over bouwen met behulp van de [portal](get-started-portal-build-app.md "portal") en de [SDK-clientbibliotheken](azure-sdk-quickstart.md "SDK-clientbibliotheken").
+U bouwt het model op met de [ontwerp](https://go.microsoft.com/fwlink/?linkid=2092087 "authoring")-API's of met de **[LUIS-portal](https://www.luis.ai "LUIS-portal")**, of beide. Leer meer over bouwen met behulp van de [portal](get-started-portal-build-app.md "portal") en de [SDK-clientbibliotheken](./client-libraries-rest-api.md?pivots=rest-api "SDK-clientbibliotheken").
 
 ## <a name="step-2-get-the-query-prediction"></a>Stap 2: De queryvoorspelling ophalen
 
@@ -128,7 +128,7 @@ LUIS biedt functionaliteit van Text Analytics als onderdeel van uw bestaande LUI
 
 ## <a name="learn-with-the-quickstarts"></a>Leren met behulp van quickstarts
 
-Gebruik de praktische quickstarts in de [portal](get-started-portal-build-app.md "portal") en de [SDK-clientbibliotheken](azure-sdk-quickstart.md "SDK-clientbibliotheken") om meer te leren over LUIS.
+Gebruik de praktische quickstarts in de [portal](get-started-portal-build-app.md "portal") en de [SDK-clientbibliotheken](./client-libraries-rest-api.md?pivots=rest-api "SDK-clientbibliotheken") om meer te leren over LUIS.
 
 
 ## <a name="deploy-on-premises-using-docker-containers"></a>On-premises implementeren met behulp van Docker-containers

@@ -7,19 +7,19 @@ ms.date: 08/10/2020
 ms.service: key-vault
 ms.subservice: general
 ms.topic: how-to
-ms.openlocfilehash: 8e4e64cd872794354479c29d4aaa000cee45c5a3
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
-ms.translationtype: HT
+ms.openlocfilehash: c5fab8b856ff9c82a0de887dc9c322dbf541348b
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97901212"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791404"
 ---
 # <a name="troubleshooting-azure-key-vault-access-policy-issues"></a>Problemen met het toegangsbeleid voor Azure Key Vault oplossen
 
 ## <a name="frequently-asked-questions"></a>Veelgestelde vragen
 
 ### <a name="i-am-not-able-to-list-or-get-secretskeyscertificate-i-am-seeing-something-went-wrong-error"></a>Ik kan geheimen/sleutels/certificaat niet vermelden of ophalen. Ik krijg te zien: er is iets misgegaan... Fout.
-Als u een probleem hebt met het weergeven/ophalen/maken of openen van een geheim, moet u ervoor zorgen dat er toegangsbeleid is gedefinieerd voor deze bewerking: [Toegangsbeleid van Key Vault](https://docs.microsoft.com/azure/key-vault/general/group-permissions-for-apps)
+Als u een probleem hebt met het weergeven/ophalen/maken of openen van een geheim, moet u ervoor zorgen dat er toegangsbeleid is gedefinieerd voor deze bewerking: [Toegangsbeleid van Key Vault](./assign-access-policy-cli.md)
 
 ### <a name="how-can-i-identify-how-and-when-key-vaults-are-accessed"></a>Hoe kan ik vaststellen hoe en wanneer sleutelkluizen worden geopend?
 

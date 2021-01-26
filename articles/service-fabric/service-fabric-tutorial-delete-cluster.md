@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een door Azure gehost Service Fabr
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: aa5b09b627db6bd3a3d573c32e7e68a359e2c04d
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: 60c43adddd4799a639c2d58e0293086eb1776588
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738990"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791085"
 ---
 # <a name="tutorial-remove-a-service-fabric-cluster-running-in-azure"></a>Zelfstudie: Een Service Fabric-cluster dat in Azure wordt uitgevoerd, verwijderen
 
@@ -43,7 +43,7 @@ Voor u met deze zelfstudie begint:
 ## <a name="delete-the-resource-group-containing-the-service-fabric-cluster"></a>Verwijder de resourcegroep die het Service Fabric-cluster bevat
 De eenvoudigste manier om het cluster en alle resources te verwijderen, is om de resourcegroep te verwijderen.
 
-Meld u aan bij Azure en selecteer de abonnements-id waarmee u het cluster wilt verwijderen.  U kunt uw abonnements-id vinden door u aan te melden bij [Azure Portal](https://portal.azure.com). Verwijder de resourcegroep en alle clusterresources met behulp van de cmdlet [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) of de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest).
+Meld u aan bij Azure en selecteer de abonnements-id waarmee u het cluster wilt verwijderen.  U kunt uw abonnements-id vinden door u aan te melden bij [Azure Portal](https://portal.azure.com). Verwijder de resourcegroep en alle clusterresources met behulp van de cmdlet [Remove-AzResourceGroup](/powershell/module/az.resources/remove-azresourcegroup) of de opdracht [az group delete](/cli/azure/group).
 
 ```powershell
 Connect-AzAccount

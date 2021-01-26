@@ -6,12 +6,12 @@ ms.topic: tutorial
 ms.date: 07/22/2019
 ms.author: srrengar
 ms.custom: mvc, devx-track-csharp
-ms.openlocfilehash: f9ad0f443b1647499f7085693f34f4da9ec85398
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
-ms.translationtype: HT
+ms.openlocfilehash: ecd05a838425d57e0eaff2fa571d72b5a87e92a6
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92331988"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791775"
 ---
 # <a name="tutorial-monitor-a-service-fabric-cluster-in-azure"></a>Zelfstudie: Een Service Fabric-cluster bewaken in Azure
 
@@ -55,7 +55,7 @@ Als u toegang wilt krijgen tot de Service Fabric Analytics-oplossing, gaat u naa
 
 Selecteer de resource **ServiceFabric(mysfomsworkspace)** .
 
-In **Overzicht** worden de tegels weergegeven in de vorm van een grafiek voor elk van de ingeschakelde oplossingen, inclusief een voor Service Fabric. Klik op de **Service Fabric** -grafiek om door te gaan naar de oplossing Service Fabric-analyse.
+In **Overzicht** worden de tegels weergegeven in de vorm van een grafiek voor elk van de ingeschakelde oplossingen, inclusief een voor Service Fabric. Klik op de **Service Fabric**-grafiek om door te gaan naar de oplossing Service Fabric-analyse.
 
 ![Schermopname van de Service Fabric-graaf.](media/service-fabric-tutorial-monitor-cluster/oms-service-fabric-summary.png)
 
@@ -74,7 +74,7 @@ De volgende afbeelding toont de startpagina van de oplossing Service Fabric-anal
 
 ### <a name="view-service-fabric-events-including-actions-on-nodes"></a>Service Fabric-gebeurtenissen weergeven, met inbegrip van acties op knooppunten
 
-Klik op de pagina Service Fabric-analyse op de grafiek voor **Clustergebeurtenissen** .  De logboeken voor alle verzamelde systeemgebeurtenissen worden weergegeven. Ter referentie: deze komen van de **WADServiceFabricSystemEventsTable** in het Azure Storage-account. De Reliable Services- en Actors-gebeurtenissen die u hierna ziet, komen ook uit de bijbehorende tabellen.
+Klik op de pagina Service Fabric-analyse op de grafiek voor **Clustergebeurtenissen**.  De logboeken voor alle verzamelde systeemgebeurtenissen worden weergegeven. Ter referentie: deze komen van de **WADServiceFabricSystemEventsTable** in het Azure Storage-account. De Reliable Services- en Actors-gebeurtenissen die u hierna ziet, komen ook uit de bijbehorende tabellen.
     
 ![Query's uitvoeren op het operationele kanaal](media/service-fabric-tutorial-monitor-cluster/oms-service-fabric-events.png)
 
@@ -87,7 +87,7 @@ ServiceFabricOperationalEvent
 
 Kusto is een krachtige querytaal. Hier volgen enkele andere nuttige query's.
 
-Maak een *ServiceFabricEvent* -opzoektabel als een door de gebruiker gedefinieerde functie door de query op te slaan als een functie met de alias ServiceFabricEvent:
+Maak een *ServiceFabricEvent*-opzoektabel als een door de gebruiker gedefinieerde functie door de query op te slaan als een functie met de alias ServiceFabricEvent:
 
 ```kusto
 let ServiceFabricEvent = datatable(EventId: int, EventName: string)
@@ -183,7 +183,7 @@ app('PlunkoServiceFabricCluster').traces
 
 ### <a name="view-service-fabric-application-events"></a>Service Fabric-toepassingsgebeurtenissen weergeven
 
-U kunt gebeurtenissen weergeven voor de toepassingen Reliable Services en Reliable Actors die op het cluster zijn geïmplementeerd.  Klik op de pagina Service Fabric-analyse op de grafiek voor **Toepassingsgebeurtenissen** .
+U kunt gebeurtenissen weergeven voor de toepassingen Reliable Services en Reliable Actors die op het cluster zijn geïmplementeerd.  Klik op de pagina Service Fabric-analyse op de grafiek voor **Toepassingsgebeurtenissen**.
 
 Voer de volgende query uit om gebeurtenissen van uw Reliable Services-toepassingen weer te geven:
 ```kusto
@@ -227,20 +227,20 @@ Als u gedetailleerdere gebeurtenissen voor Reliable Actors wilt configureren, ku
 ## <a name="view-performance-counters-with-azure-monitor-logs"></a>Prestatiemeteritems weergeven met Azure Monitor-logboeken
 Als u prestatiemeteritems wilt weergeven, gaat u naar de [Azure-portal](https://portal.azure.com) en de resourcegroep waarin u de oplossing Service Fabric-analyse hebt gemaakt. 
 
-Selecteer de resource **ServiceFabric(mysfomsworkspace)** en selecteer vervolgens **Log Analytics-werkruimte** en **Geavanceerde instellingen** .
+Selecteer de resource **ServiceFabric(mysfomsworkspace)** en selecteer vervolgens **Log Analytics-werkruimte** en **Geavanceerde instellingen**.
 
-Klik op **Data** en klik vervolgens op **Windows-prestatiemeteritems** . Er is een lijst met standaard meteritems die u kunt inschakelen en u kunt ook het interval voor verzameling instellen. U kunt ook [aanvullende prestatiemeteritems toevoegen](service-fabric-diagnostics-event-generation-perf.md) om te verzamelen. In dit [artikel](/windows/desktop/PerfCtrs/specifying-a-counter-path) wordt verwezen naar de juiste indeling. Klik op **Opslaan** en klik vervolgens op **OK** .
+Klik op **Data** en klik vervolgens op **Windows-prestatiemeteritems**. Er is een lijst met standaard meteritems die u kunt inschakelen en u kunt ook het interval voor verzameling instellen. U kunt ook [aanvullende prestatiemeteritems toevoegen](service-fabric-diagnostics-event-generation-perf.md) om te verzamelen. In dit [artikel](/windows/desktop/PerfCtrs/specifying-a-counter-path) wordt verwezen naar de juiste indeling. Klik op **Opslaan** en klik vervolgens op **OK**.
 
-Sluit de blade Geavanceerde instellingen en selecteer **Samenvatting van werkruimten** onder de kop **Algemeen** . Voor elk van de oplossingen die zijn ingeschakeld, is er een grafische tegel, met inbegrip van Service Fabric. Klik op de **Service Fabric** -grafiek om door te gaan naar de oplossing Service Fabric-analyse.
+Sluit de blade Geavanceerde instellingen en selecteer **Samenvatting van werkruimten** onder de kop **Algemeen**. Voor elk van de oplossingen die zijn ingeschakeld, is er een grafische tegel, met inbegrip van Service Fabric. Klik op de **Service Fabric**-grafiek om door te gaan naar de oplossing Service Fabric-analyse.
 
-Er zijn grafische tegels voor operationeel-kanaalgebeurtenissen en Reliable Services-gebeurtenissen. De grafische weergave van de inkomende gegevens voor de meteritems die u hebt geselecteerd, wordt weergegeven onder **Metrische knooppuntgegevens** . 
+Er zijn grafische tegels voor operationeel-kanaalgebeurtenissen en Reliable Services-gebeurtenissen. De grafische weergave van de inkomende gegevens voor de meteritems die u hebt geselecteerd, wordt weergegeven onder **Metrische knooppuntgegevens**. 
 
 Selecteer de grafiek **Metrische gegevens voor containers** om meer details weer te geven. U kunt ook query's uitvoeren op gegevens van prestatiemeteritems, net als bij clustergebeurtenissen, en filteren op de knooppunten, de naam van het prestatiemeteritem en waarden met behulp van de Kusto-querytaal.
 
 ## <a name="query-the-eventstore-service"></a>Query's uitvoeren op de EventStore-service
 De [EventStore-service](service-fabric-diagnostics-eventstore.md) biedt een manier om op elk moment meer inzicht te krijgen in de status van uw cluster of workloads. EventStore is een stateful Service Fabric-service die gebeurtenissen van het cluster bijhoudt. De gebeurtenissen worden weergegeven via [Service Fabric Explorer](service-fabric-visualizing-your-cluster.md), REST en API's. EventStore voert rechtstreeks query's op het cluster uit om diagnostische gegevens op te halen voor elke entiteit in uw cluster. Als u een volledige lijst van gebeurtenissen die beschikbaar zijn in EventStore wilt weergeven, raadpleegt u [Service Fabric-gebeurtenissen](service-fabric-diagnostics-event-generation-operational.md).
 
-Op de EventStore-API's kunnen programmatisch query's worden uitgevoerd met behulp van de [Service Fabric-clientbibliotheek](/dotnet/api/overview/azure/service-fabric?view=azure-dotnet#client-library).
+Op de EventStore-API's kunnen programmatisch query's worden uitgevoerd met behulp van de [Service Fabric-clientbibliotheek](/dotnet/api/overview/azure/service-fabric#client-library).
 
 Hier volgt een voorbeeldaanvraag voor alle clustergebeurtenissen tussen 2018-04-03T18:00:00Z en 2018-04-04T18:00:00Z via de functie GetClusterEventListAsync.
 
@@ -299,10 +299,10 @@ Service Fabric introduceert een [statusmodel](service-fabric-health-introduction
 
 Het cluster wordt automatisch ingevuld met statusrapporten die worden verzonden door de systeemonderdelen. Lees [Systeemstatusrapporten gebruiken om fouten op te lossen](service-fabric-understand-and-troubleshoot-with-system-health-reports.md) voor meer informatie.
 
-Service Fabric geeft statusquery's weer voor alle ondersteunde [entiteitstypes](service-fabric-health-introduction.md#health-entities-and-hierarchy). Ze kunnen worden geopend via de API met behulp van methoden op [FabricClient.HealthManager](/dotnet/api/system.fabric.fabricclient.healthmanager?view=azure-dotnet), PowerShell-cmdlets en REST. Deze query's retourneren gegevens over de status van de entiteit: de geaggregeerde status, de statusgebeurtenissen van de entiteit, de status van onderliggende items (indien van toepassing), de beschadigde evaluaties (wanneer de entiteit niet in orde is) en de statusstatistieken van onderliggende items (indien van toepassing).
+Service Fabric geeft statusquery's weer voor alle ondersteunde [entiteitstypes](service-fabric-health-introduction.md#health-entities-and-hierarchy). Ze kunnen worden geopend via de API met behulp van methoden op [FabricClient.HealthManager](/dotnet/api/system.fabric.fabricclient.healthmanager), PowerShell-cmdlets en REST. Deze query's retourneren gegevens over de status van de entiteit: de geaggregeerde status, de statusgebeurtenissen van de entiteit, de status van onderliggende items (indien van toepassing), de beschadigde evaluaties (wanneer de entiteit niet in orde is) en de statusstatistieken van onderliggende items (indien van toepassing).
 
 ### <a name="get-cluster-health"></a>Clusterstatus ophalen
-De [cmdlet Get-ServiceFabricClusterHealth](/powershell/module/servicefabric/get-servicefabricclusterhealth) retourneert de status van de clusterentiteit en bevat de statussen van toepassingen en knooppunten (onderliggende items van het cluster).  Maak eerst verbinding met het cluster met behulp van de [cmdlet Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps).
+De [cmdlet Get-ServiceFabricClusterHealth](/powershell/module/servicefabric/get-servicefabricclusterhealth) retourneert de status van de clusterentiteit en bevat de statussen van toepassingen en knooppunten (onderliggende items van het cluster).  Maak eerst verbinding met het cluster met behulp van de [cmdlet Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster).
 
 De status van het cluster is 11 knooppunten, de systeemtoepassing en fabric:/Voting geconfigureerd zoals beschreven.
 
@@ -454,7 +454,7 @@ HealthEvents            : None
 ```
 
 ### <a name="get-node-health"></a>Status van knooppunten ophalen
-De [cmdlet Get-ServiceFabricNodeHealth](/powershell/module/servicefabric/get-servicefabricnodehealth) retourneert de status van een knooppuntentiteit en bevat de statusgebeurtenissen die op het knooppunt zijn gerapporteerd. Gebruik eerst de [cmdlet Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) om verbinding te maken met het cluster. In het volgende voorbeeld wordt de status van een specifiek knooppunt opgehaald met behulp van standaard statusbeleid:
+De [cmdlet Get-ServiceFabricNodeHealth](/powershell/module/servicefabric/get-servicefabricnodehealth) retourneert de status van een knooppuntentiteit en bevat de statusgebeurtenissen die op het knooppunt zijn gerapporteerd. Gebruik eerst de [cmdlet Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) om verbinding te maken met het cluster. In het volgende voorbeeld wordt de status van een specifiek knooppunt opgehaald met behulp van standaard statusbeleid:
 
 ```powershell
 Get-ServiceFabricNodeHealth _nt1vm_3

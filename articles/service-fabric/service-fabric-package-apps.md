@@ -4,12 +4,12 @@ description: Meer informatie over het inpakken van een Azure Service Fabric-toep
 ms.topic: conceptual
 ms.date: 2/23/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 11a3fdd5dbaef53af321342952f786ed8119689c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 168e6d6dc7ab5bfeccc4e1dabc7bd50efcbe8f34
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96021058"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789699"
 ---
 # <a name="package-an-application"></a>Toepassingspakket maken
 
@@ -75,7 +75,7 @@ D:\Temp> msbuild HelloWorld.sfproj /t:Package
 
 ## <a name="test-the-package"></a>Het pakket testen
 
-U kunt de pakket structuur lokaal controleren via Power shell met behulp van de opdracht [test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage?view=azureservicefabricps) .
+U kunt de pakket structuur lokaal controleren via Power shell met behulp van de opdracht [test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage) .
 Met deze opdracht worden de problemen met het parseren van manifesten gecontroleerd en alle verwijzingen geverifieerd. Met deze opdracht wordt alleen de structurele juistheid van de directory's en bestanden in het pakket gecontroleerd.
 Er wordt niet gecontroleerd of de inhoud van het code-of gegevens pakket wordt gecontroleerd, behalve dat alle benodigde bestanden aanwezig zijn.
 
@@ -121,7 +121,7 @@ Test-ServiceFabricApplicationPackage .\MyApplicationType
 True
 ```
 
-Als voor uw toepassing [toepassings parameters](service-fabric-manage-multiple-environment-app-configuration.md) zijn gedefinieerd, kunt u deze door geven in [test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage?view=azureservicefabricps) voor een juiste validatie.
+Als voor uw toepassing [toepassings parameters](service-fabric-manage-multiple-environment-app-configuration.md) zijn gedefinieerd, kunt u deze door geven in [test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage) voor een juiste validatie.
 
 Als u het cluster kent waarop de toepassing wordt geïmplementeerd, wordt u aangeraden de para meter door te geven `ImageStoreConnectionString` . In dit geval wordt het pakket ook gevalideerd op basis van eerdere versies van de toepassing die al in het cluster worden uitgevoerd. De validatie kan bijvoorbeeld detecteren of een pakket met dezelfde versie maar een andere inhoud al is geïmplementeerd.  
 
@@ -135,9 +135,9 @@ Voor een gecomprimeerd toepassings pakket kan [het uploaden van het toepassings 
 Het implementatie mechanisme is hetzelfde voor gecomprimeerde en niet-gecomprimeerde pakketten. Als het pakket is gecomprimeerd, wordt het opgeslagen als zodanig in het cluster installatie kopie archief en wordt het gedecomprimeerd op het knoop punt voordat de toepassing wordt uitgevoerd.
 De compressie vervangt het geldige Service Fabric-pakket door de gecomprimeerde versie. De map moet schrijf machtigingen toestaan. Het uitvoeren van compressie op een al gecomprimeerd pakket resulteert niet in wijzigingen.
 
-U kunt een pakket comprimeren door de Power shell [-opdracht copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) uit te voeren met de `CompressPackage` Switch. U kunt het pakket decomprimeren met dezelfde opdracht met behulp van `UncompressPackage` Switch.
+U kunt een pakket comprimeren door de Power shell [-opdracht copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage) uit te voeren met de `CompressPackage` Switch. U kunt het pakket decomprimeren met dezelfde opdracht met behulp van `UncompressPackage` Switch.
 
-Met de volgende opdracht wordt het pakket gecomprimeerd zonder dat het naar het archief met installatie kopieën wordt gekopieerd. U kunt een gecomprimeerd pakket kopiëren naar een of meer Service Fabric clusters, indien nodig, met behulp van [copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) zonder de `SkipCopy` vlag.
+Met de volgende opdracht wordt het pakket gecomprimeerd zonder dat het naar het archief met installatie kopieën wordt gekopieerd. U kunt een gecomprimeerd pakket kopiëren naar een of meer Service Fabric clusters, indien nodig, met behulp van [copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage) zonder de `SkipCopy` vlag.
 Het pakket bevat nu gezipte bestanden voor `code` de `config` pakketten, en `data` . Het manifest van de toepassing en de service manifesten zijn niet ingepakt, omdat ze nodig zijn voor veel interne bewerkingen. Bijvoorbeeld pakket delen, naam van het toepassings type en de versie extractie voor bepaalde validaties hebben alle toegang tot de manifesten nodig. Als u de manifesten inpakken, worden deze bewerkingen inefficiënt.
 
 ```
@@ -179,7 +179,7 @@ D:\TEMP\MYAPPLICATIONTYPE
 
 ```
 
-U kunt ook het pakket comprimeren en kopiëren met [copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) in één stap.
+U kunt ook het pakket comprimeren en kopiëren met [copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage) in één stap.
 Als het pakket groot is, moet u een groot genoeg time-out opgeven om tijd te bieden voor zowel de pakket compressie als de upload naar het cluster.
 
 ```powershell
@@ -212,7 +212,7 @@ Met deze optie hoeft het toepassings pakket niet naar het archief met installati
 Het `sfpkg` bestand is een zip die het oorspronkelijke toepassings pakket bevat en de extensie '. sfpkg ' heeft.
 In de zip kan het toepassings pakket gecomprimeerd of gedecomprimeerd zijn. De compressie van het toepassings pakket in het zip-bestand wordt uitgevoerd op het niveau van code, configuratie en gegevens pakket, zoals [eerder beschreven](service-fabric-package-apps.md#compress-a-package).
 
-Als u een wilt maken `sfpkg` , begint u met een map die het oorspronkelijke toepassings pakket bevat of niet. Gebruik vervolgens elk hulp programma om de map met de extensie '. sfpkg ' te laten overgaan. Gebruik bijvoorbeeld [ZipFile. CreateFromDirectory](/dotnet/api/system.io.compression.zipfile.createfromdirectory?view=netcore-3.1#System_IO_Compression_ZipFile_CreateFromDirectory_System_String_System_String_System_IO_Compression_CompressionLevel_System_Boolean_).
+Als u een wilt maken `sfpkg` , begint u met een map die het oorspronkelijke toepassings pakket bevat of niet. Gebruik vervolgens elk hulp programma om de map met de extensie '. sfpkg ' te laten overgaan. Gebruik bijvoorbeeld [ZipFile. CreateFromDirectory](/dotnet/api/system.io.compression.zipfile.createfromdirectory#System_IO_Compression_ZipFile_CreateFromDirectory_System_String_System_String_System_IO_Compression_CompressionLevel_System_Boolean_).
 
 ```csharp
 ZipFile.CreateFromDirectory(appPackageDirectoryPath, sfpkgFilePath);

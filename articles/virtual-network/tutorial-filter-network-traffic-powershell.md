@@ -17,16 +17,14 @@ ms.workload: infrastructure
 ms.date: 03/30/2018
 ms.author: kumud
 ms.custom: mvc, devx-track-azurepowershell
-ms.openlocfilehash: f72264e49a155068f866559db7edf79e68585c55
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 8ab22e7960e233d6ae934fb52989aa73a494b33a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222272"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791507"
 ---
 # <a name="filter-network-traffic-with-a-network-security-group-using-powershell"></a>Netwerk verkeer filteren met een netwerk beveiligings groep met behulp van Power shell
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 U kunt het netwerkverkeer inkomend in en uitgaand naar een subnet van een virtueel netwerk filteren met een netwerkbeveiligingsgroep. Netwerkbeveiligingsgroepen bevatten beveiligingsregels die netwerkverkeer filteren op IP-adres, poort en protocol. Beveiligingsregels worden toegepast op resources die zijn geïmplementeerd in een subnet. In dit artikel leert u het volgende:
 
@@ -35,7 +33,7 @@ U kunt het netwerkverkeer inkomend in en uitgaand naar een subnet van een virtue
 * Virtuele machines (VM) implementeren in een subnet
 * Verkeersfilters testen
 
-Als u nog geen Azure-abonnement hebt, maakt u een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) voordat u begint.
+Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
 

@@ -7,12 +7,12 @@ ms.reviewer: klam, logicappspm
 ms.topic: article
 ms.date: 10/01/2019
 ms.custom: devx-track-js
-ms.openlocfilehash: fd04e5a7f084de7a95f20b54b99a9e4590f10cd7
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 7df9f7d072af7c5f6523fd1be0432ce51954fa10
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98034761"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791876"
 ---
 # <a name="call-functions-from-azure-logic-apps"></a>Functies aanroepen vanuit Azure Logic Apps
 
@@ -31,7 +31,7 @@ Als u code fragmenten wilt uitvoeren zonder Azure Functions te gebruiken, leert 
 
 * Een Azure-abonnement. Als u nog geen abonnement op Azure hebt, [registreer u dan nu voor een gratis Azure-account](https://azure.microsoft.com/free/).
 
-* Een functie-app, een container voor een functie die wordt gemaakt in Azure Functions, samen met de functie die u maakt. Als u geen functie-app hebt, moet u [eerst uw functie-app maken](../azure-functions/functions-create-first-azure-function.md). U kunt de functie vervolgens buiten uw logische app maken in de Azure Portal, of [vanuit uw logische](#create-function-designer) app in de ontwerp functie voor logische apps.
+* Een functie-app, een container voor een functie die wordt gemaakt in Azure Functions, samen met de functie die u maakt. Als u geen functie-app hebt, moet u [eerst uw functie-app maken](../azure-functions/functions-get-started.md). U kunt de functie vervolgens buiten uw logische app maken in de Azure Portal, of [vanuit uw logische](#create-function-designer) app in de ontwerp functie voor logische apps.
 
 * Wanneer u werkt met Logic apps, gelden dezelfde vereisten voor functie-apps en-functies, ongeacht of ze al dan niet bestaande of nieuw zijn:
 
@@ -102,9 +102,9 @@ Nu u uw functie in azure hebt gemaakt, volgt u de stappen om [functies toe te vo
 
 ## <a name="create-functions-inside-logic-apps"></a>Functies in Logic apps maken
 
-U kunt functies rechtstreeks vanuit de werk stroom van uw logische app maken met behulp van de ingebouwde Azure Functions actie in de Logic app Designer, maar u kunt deze methode alleen gebruiken voor functies die zijn geschreven in Java script. Voor andere talen kunt u functies maken via de Azure Functions-ervaring in de Azure Portal. Zie [uw eerste functie maken in de Azure Portal](../azure-functions/functions-create-first-azure-function.md)voor meer informatie.
+U kunt functies rechtstreeks vanuit de werk stroom van uw logische app maken met behulp van de ingebouwde Azure Functions actie in de Logic app Designer, maar u kunt deze methode alleen gebruiken voor functies die zijn geschreven in Java script. Voor andere talen kunt u functies maken via de Azure Functions-ervaring in de Azure Portal. Zie [uw eerste functie maken in de Azure Portal](../azure-functions/functions-get-started.md)voor meer informatie.
 
-Voordat u de functie in azure kunt maken, moet u echter al een functie-app hebben. Dit is een container voor uw functies. Als u geen functie-app hebt, moet u eerst die functie-app maken. Zie [uw eerste functie maken in de Azure Portal](../azure-functions/functions-create-first-azure-function.md).
+Voordat u de functie in azure kunt maken, moet u echter al een functie-app hebben. Dit is een container voor uw functies. Als u geen functie-app hebt, moet u eerst die functie-app maken. Zie [uw eerste functie maken in de Azure Portal](../azure-functions/functions-get-started.md).
 
 1. Open in de [Azure Portal](https://portal.azure.com)uw logische app in de ontwerp functie voor logische apps.
 
@@ -126,7 +126,7 @@ Voordat u de functie in azure kunt maken, moet u echter al een functie-app hebbe
 
    1. Geef in het vak **functie naam** een naam op voor de functie.
 
-   1. Voeg in het vak **code** de code toe aan de functie sjabloon, met inbegrip van de reactie en de nettolading die u wilt retour neren naar uw logische app nadat de functie is voltooid. Als u gereed bent, selecteert u **Maken**.
+   1. Voeg in het vak **code** de code toe aan de functie sjabloon, met inbegrip van de reactie en de nettolading die u wilt retour neren naar uw logische app nadat de functie is voltooid. Selecteer **Maken** als u klaar bent.
 
    Bijvoorbeeld:
 

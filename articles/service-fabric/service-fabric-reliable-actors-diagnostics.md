@@ -5,15 +5,15 @@ author: abhishekram
 ms.topic: conceptual
 ms.date: 10/26/2017
 ms.author: abhisram
-ms.openlocfilehash: a38a11d9cf062cd0a45890d43afe9b2530b2b7bb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ebaedb5369f3b39372262bfde526706e8d069418
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86258461"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789613"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-actors"></a>Diagnose- en prestatiecontrole voor betrouwbare actoren
-De Reliable Actors runtime verzendt gebeurtenissen van [Event source](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) en [prestatie meter items](/dotnet/api/system.diagnostics.performancecounter?view=dotnet-plat-ext-3.1). Deze bieden inzicht in hoe de runtime werkt en helpt u bij het oplossen van problemen en het controleren van prestaties.
+De Reliable Actors runtime verzendt gebeurtenissen van [Event source](/dotnet/api/system.diagnostics.tracing.eventsource) en [prestatie meter items](/dotnet/api/system.diagnostics.performancecounter). Deze bieden inzicht in hoe de runtime werkt en helpt u bij het oplossen van problemen en het controleren van prestaties.
 
 ## <a name="eventsource-events"></a>Event source-gebeurtenissen
 De naam van de Event source-provider voor de Reliable Actors runtime is ' micro soft-ServiceFabric-Actors '. Gebeurtenissen van deze gebeurtenis bron worden weer gegeven in het venster [diagnostische gebeurtenissen](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) wanneer de actor-toepassing [in Visual Studio wordt opgespoord](service-fabric-debugging-your-application.md).
@@ -50,7 +50,7 @@ De namen van de tellers voor de categorie `Service Fabric Actor` hebben de volge
 
 `ServiceFabricPartitionID_ActorsRuntimeInternalID`
 
-*ServiceFabricPartitionID* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks representatie wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) methode met de indelings specificatie "D".
+*ServiceFabricPartitionID* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks representatie wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) methode met de indelings specificatie "D".
 
 *ActorRuntimeInternalID* is de teken reeks representatie van een 64-bits geheel getal dat wordt gegenereerd door de Fabric actors-runtime voor intern gebruik. Dit is opgenomen in de exemplaar naam van het prestatie meter item om de uniekheid ervan te garanderen en te voor komen dat er conflicten ontstaan met andere instantie namen van prestatie meter items. Gebruikers moeten dit gedeelte van de exemplaar naam van het prestatie meter item niet interpreteren.
 
@@ -69,7 +69,7 @@ De namen van de tellers voor de categorie `Service Fabric Actor Method` hebben d
 
 *ActorsRuntimeMethodId* is de teken reeks representatie van een 32-bits geheel getal dat wordt gegenereerd door de Fabric actors-runtime voor intern gebruik. Dit is opgenomen in de exemplaar naam van het prestatie meter item om de uniekheid ervan te garanderen en te voor komen dat er conflicten ontstaan met andere instantie namen van prestatie meter items. Gebruikers moeten dit gedeelte van de exemplaar naam van het prestatie meter item niet interpreteren.
 
-*ServiceFabricPartitionID* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks representatie wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) methode met de indelings specificatie "D".
+*ServiceFabricPartitionID* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks representatie wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) methode met de indelings specificatie "D".
 
 *ActorRuntimeInternalID* is de teken reeks representatie van een 64-bits geheel getal dat wordt gegenereerd door de Fabric actors-runtime voor intern gebruik. Dit is opgenomen in de exemplaar naam van het prestatie meter item om de uniekheid ervan te garanderen en te voor komen dat er conflicten ontstaan met andere instantie namen van prestatie meter items. Gebruikers moeten dit gedeelte van de exemplaar naam van het prestatie meter item niet interpreteren.
 
@@ -162,5 +162,5 @@ Wanneer een client een methode aanroept via een actor-proxy object, resulteert d
 ## <a name="next-steps"></a>Volgende stappen
 * [Hoe Reliable Actors het Service Fabric platform gebruiken?](service-fabric-reliable-actors-platform.md)
 * [Referentie documentatie voor actor-API](/previous-versions/azure/dn971626(v=azure.100))
-* [Voorbeeld code](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
+* [Voorbeeldcode](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Event source-providers in PerfView](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource)

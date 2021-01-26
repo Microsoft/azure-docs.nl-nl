@@ -8,12 +8,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 10/05/2020
 ms.author: mbaldwin
-ms.openlocfilehash: e92b17a5743e983ca3e77ad18c0973b9f056dfbd
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 40ce5f55b4109fee0099110c17f02b33c3eff808
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98611165"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791421"
 ---
 # <a name="azure-key-vault-developers-guide"></a>Gids voor Azure Key Vault-ontwikkelaars
 
@@ -74,7 +74,7 @@ Voor meer informatie over Azure Identity client libarary raadpleegt u:
 |[Azure Identity SDK .NET](/dotnet/api/overview/azure/identity-readme)|[Azure Identity SDK python](/python/api/overview/azure/identity-readme)|[Azure Identity SDK java](/java/api/overview/azure/identity-readme)|[Azure Identity SDK java script](/javascript/api/overview/azure/identity-readme)|     
 
 >[!Note]
-> De [bibliotheek voor app-verificatie](https://docs.microsoft.com/dotnet/api/overview/azure/service-to-service-authentication) die is aanbevolen voor Key Vault .NET SDK-versie 3, die momenteel depracated is. Volg de [AppAuthentication naar Azure. richt lijnen voor identiteits migratie](https://docs.microsoft.com/dotnet/api/overview/azure/app-auth-migration) om naar Key Vault .NET SDK versie 4 te migreren.
+> De [bibliotheek voor app-verificatie](/dotnet/api/overview/azure/service-to-service-authentication) die is aanbevolen voor Key Vault .NET SDK-versie 3, die momenteel depracated is. Volg de [AppAuthentication naar Azure. richt lijnen voor identiteits migratie](/dotnet/api/overview/azure/app-auth-migration) om naar Key Vault .NET SDK versie 4 te migreren.
 
 Voor zelf studies over het verifiëren van Key Vault in toepassingen raadpleegt u:
 - [Verifiëren bij Key Vault in de toepassing die in de virtuele machine wordt gehost in .NET](./tutorial-net-virtual-machine.md)
@@ -89,7 +89,7 @@ Toegang tot sleutels, geheimen en certificaten wordt bepaald door het gegevens v
 
 | Azure CLI | PowerShell | REST-API | Resource Manager | .NET | Python | Java | Javascript |  
 |--|--|--|--|--|--|--|--|
-|[Verwijzing](/cli/azure/keyvault/key)<br>[Snelstartgids](../keys/quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault/)<br>[Snelstartgids](../keys/quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/#key-operations)|[Verwijzing](https://docs.microsoft.com/azure/templates/microsoft.keyvault/vaults/keys)<br>[Snelstartgids](../keys/quick-create-template.md)|[Verwijzing](/dotnet/api/azure.security.keyvault.keys)<br>[Snelstartgids](../keys/quick-create-net.md)|[Verwijzing](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Snelstartgids](../keys/quick-create-python.md)|[Verwijzing](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)<br>[Snelstartgids](../keys/quick-create-java.md)|[Verwijzing](/javascript/api/@azure/keyvault-keys/)<br>[Snelstartgids](../keys/quick-create-node.md)|
+|[Verwijzing](/cli/azure/keyvault/key)<br>[Snelstartgids](../keys/quick-create-cli.md)|[Verwijzing](/powershell/module/az.keyvault/)<br>[Snelstartgids](../keys/quick-create-powershell.md)|[Verwijzing](/rest/api/keyvault/#key-operations)|[Verwijzing](/azure/templates/microsoft.keyvault/vaults/keys)<br>[Snelstartgids](../keys/quick-create-template.md)|[Verwijzing](/dotnet/api/azure.security.keyvault.keys)<br>[Snelstartgids](../keys/quick-create-net.md)|[Verwijzing](/python/api/azure-mgmt-keyvault/azure.mgmt.keyvault)<br>[Snelstartgids](../keys/quick-create-python.md)|[Verwijzing](https://azuresdkdocs.blob.core.windows.net/$web/java/azure-security-keyvault-keys/4.2.0/index.html)<br>[Snelstartgids](../keys/quick-create-java.md)|[Verwijzing](/javascript/api/@azure/keyvault-keys/)<br>[Snelstartgids](../keys/quick-create-node.md)|
 
 **API'S en Sdk's van certificaten**
 

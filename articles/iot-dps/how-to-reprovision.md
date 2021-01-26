@@ -3,30 +3,22 @@ title: Apparaten opnieuw inrichten in azure IoT Hub Device Provisioning Service
 description: Meer informatie over het opnieuw inrichten van apparaten met het DPS-exemplaar (Device Provisioning Service) en waarom u dit mogelijk moet doen.
 author: wesmc7777
 ms.author: wesmc
-ms.date: 04/04/2019
+ms.date: 01/25/2021
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: e5cc5b557aa4dff793f7e87093eeb65028da4f8c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d704e8f9687f3987d80018d84b41c0fd519da172
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010942"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791893"
 ---
 # <a name="how-to-reprovision-devices"></a>Apparaten opnieuw inrichten
 
-Tijdens de levens cyclus van een IoT-oplossing is het gebruikelijk om apparaten te verplaatsen tussen IoT-hubs. De redenen hiervoor kunnen de volgende scenario's omvatten:
+Tijdens de levens cyclus van een IoT-oplossing is het gebruikelijk om apparaten te verplaatsen tussen IoT-hubs. In dit onderwerp vindt u hulp bij het configureren van beleids regels voor het opnieuw inrichten van oplossingen.
 
-* **Geolocatie**: wanneer een apparaat tussen locaties wordt verplaatst, wordt de netwerk latentie verbeterd doordat het apparaat dichter op elke locatie naar een IOT-hub wordt gemigreerd.
-
-* **Multitenancy: een** apparaat kan worden gebruikt binnen dezelfde IOT-oplossing, maar kan worden toegewezen aan of geleasd aan een nieuwe klant of klant site. Deze nieuwe klant kan worden verwerkt met behulp van een andere IoT-hub.
-
-* **Oplossings wijziging**: een apparaat kan worden verplaatst naar een nieuwe of bijgewerkte IOT-oplossing. Deze opnieuw toewijzen kan vereisen dat het apparaat communiceert met een nieuwe IoT-hub die is verbonden met andere back-uponderdelen. 
-
-* **Quarantaine**: vergelijkbaar met een oplossings wijziging. Een apparaat met een beschadigde, gemanipuleerd of verouderd kan opnieuw worden toegewezen aan een IoT-hub, waar alles kan worden bijgewerkt en vervolgens weer in overeenstemming kan worden gebracht. Zodra het apparaat correct werkt, wordt het opnieuw gemigreerd naar de hoofd hub.
-
-Zie IoT Hub voor meer informatie over het opnieuw inrichten van het [apparaat](concepts-device-reprovision.md).
+Zie IoT Hub voor het opnieuw inrichten van [apparaten](concepts-device-reprovision.md)voor meer gedetailleerde informatie over het opnieuw inrichten van scenario's.
 
 
 ## <a name="configure-the-enrollment-allocation-policy"></a>Het toewijzings beleid voor inschrijving configureren

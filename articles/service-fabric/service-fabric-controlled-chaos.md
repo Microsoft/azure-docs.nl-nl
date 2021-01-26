@@ -6,17 +6,17 @@ ms.topic: conceptual
 ms.date: 02/05/2018
 ms.author: motanv
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9e9127d9776169131c2ed7f4778052646e84f8b6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 34ec43593d50e359f09059cd3d51522df62cf567
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89013109"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789648"
 ---
 # <a name="induce-controlled-chaos-in-service-fabric-clusters"></a>Beheerde chaos in Service Fabric clusters induceren
 Grootschalige gedistribueerde systemen zoals Cloud infrastructuren zijn inherent onbetrouwbaar. Met Azure Service Fabric kunnen ontwikkel aars betrouw bare gedistribueerde services bovenop een onbetrouwbare infra structuur schrijven. Ontwikkel aars moeten de stabiliteit van hun services kunnen testen om robuuste gedistribueerde services boven op een onbetrouwbare infra structuur te schrijven, terwijl de onderliggende onbetrouwbare infra structuur in gecompliceerde status overgangen door problemen gaat.
 
-De [fout injectie en de cluster analyse service](./service-fabric-testability-overview.md) (ook wel bekend als de fout analyse service) biedt ontwikkel aars de mogelijkheid fouten te ontzeggen om hun services te testen. Deze gesimuleerde fouten, zoals het [opnieuw starten van een partitie](/powershell/module/servicefabric/start-servicefabricpartitionrestart?view=azureservicefabricps), kunnen helpen bij het uitoefenen van de meest voorkomende status overgangen. Doel gesimuleerde fouten worden echter bepaald door definitie en kunnen fouten veroorzaken die alleen worden weer gegeven in een moeilijk te voors pellen, lange en ingewikkelde volg orde van status overgangen. Voor een onzuivere test kunt u chaos gebruiken.
+De [fout injectie en de cluster analyse service](./service-fabric-testability-overview.md) (ook wel bekend als de fout analyse service) biedt ontwikkel aars de mogelijkheid fouten te ontzeggen om hun services te testen. Deze gesimuleerde fouten, zoals het [opnieuw starten van een partitie](/powershell/module/servicefabric/start-servicefabricpartitionrestart), kunnen helpen bij het uitoefenen van de meest voorkomende status overgangen. Doel gesimuleerde fouten worden echter bepaald door definitie en kunnen fouten veroorzaken die alleen worden weer gegeven in een moeilijk te voors pellen, lange en ingewikkelde volg orde van status overgangen. Voor een onzuivere test kunt u chaos gebruiken.
 
 Chaos simuleert periodieke, Interleaved fouten (zowel gefeliciteerd als zonder enige uitstel) in het hele cluster gedurende een langere periode. Een correcte fout bestaat uit een set Service Fabric-API-aanroepen, bijvoorbeeld een fout bij het opnieuw starten van de replica, omdat dit een sluiten is, gevolgd door een open op een replica. Verwijder de replica, verplaats de primaire replica en verplaats de secundaire replica naar een andere probleemloze fout die wordt veroorzaakt door chaos. Niet-verwerkings fouten zijn proces afsluiten, zoals het opnieuw starten van het knoop punt en het opnieuw starten van code pakket. 
 

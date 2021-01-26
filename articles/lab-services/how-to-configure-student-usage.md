@@ -3,18 +3,18 @@ title: Gebruiks instellingen in Labs van Azure Lab Services configureren
 description: Meer informatie over het configureren van het aantal studenten voor een lab, het ontvangen van ze met het lab, het aantal uren dat ze de virtuele machine mogen gebruiken en meer.
 ms.topic: article
 ms.date: 12/01/2020
-ms.openlocfilehash: 3b05246445aea708312891ec631a35da3bc1eb8e
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
+ms.openlocfilehash: 380a587eecb276c457b93ca3c3f3ac08b2239275
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602628"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791960"
 ---
 # <a name="add-and-manage-lab-users"></a>Labgebruikers toevoegen en beheren
 
 In dit artikel wordt beschreven hoe u gebruikers van studenten toevoegt aan een lab, ze registreert bij het lab, hoe u het aantal extra uren voor de virtuele machine (VM) kunt beheren. 
 
-Wanneer u gebruikers toevoegt, is de optie **toegang beperken** standaard ingeschakeld en, tenzij ze in de lijst met gebruikers staan, kunnen studenten zich niet bij het lab registreren, zelfs niet als ze een registratie koppeling hebben. Alleen gebruikers die worden weer gegeven, kunnen zich bij het lab registreren met de registratie koppeling die u verzendt. U kunt **toegang beperken** uitschakelen, waarmee studenten zich bij het lab kunnen registreren zolang ze de registratie koppeling hebben. 
+Wanneer u gebruikers toevoegt, wordt standaard de optie **Toegang beperken** ingeschakeld en studenten kunnen zich, tenzij ze in de lijst met gebruikers staan, niet bij het lab registreren, zelfs niet als ze een registratiekoppeling hebben. Alleen vermelde gebruikers kunnen zich registreren bij het lab door de registratiekoppeling te gebruiken die u verzendt. U kunt **Toegang beperken** uitschakelen, zodat studenten zich bij het lab kunnen registreren zolang ze de registratiekoppeling hebben. 
 
 In dit artikel wordt beschreven hoe u gebruikers toevoegt aan een lab.
 
@@ -24,17 +24,17 @@ In dit artikel wordt beschreven hoe u gebruikers toevoegt aan een lab.
 
 U kunt nu een test gebruikers lijst synchroniseren met een bestaande Azure Active Directory (Azure AD)-groep, zodat u niet hand matig gebruikers hoeft toe te voegen of te verwijderen. 
 
-Een Azure AD-groep kan worden gemaakt binnen de Azure Active Directory van uw organisatie om de toegang tot bedrijfs resources en Cloud-apps te beheren. Zie [Azure ad-groepen](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups)voor meer informatie. Als uw organisatie gebruikmaakt van Microsoft Office 365-of Azure-Services, heeft uw organisatie al beheerders die uw Azure Active Directory beheren. 
+Een Azure AD-groep kan worden gemaakt binnen de Azure Active Directory van uw organisatie om de toegang tot bedrijfsresources en cloud-apps te beheren. Zie [Azure AD-groepen](../active-directory/fundamentals/active-directory-manage-groups.md) voor meer informatie. Als uw organisatie gebruikmaakt van Microsoft Office 365 of Azure-services, heeft uw organisatie al beheerders die uw Azure Active Directory beheren. 
 
 ### <a name="sync-users-with-azure-ad-group"></a>Gebruikers synchroniseren met Azure AD-groep
 
 > [!IMPORTANT]
-> Zorg ervoor dat de gebruikers lijst leeg is. Als er bestaande gebruikers in een Lab zijn die hand matig zijn toegevoegd of via het importeren van een CSV-bestand, wordt de optie om het lab te synchroniseren met een bestaande groep niet weer gegeven. 
+> Zorg ervoor dat de gebruikerslijst leeg is. Als er bestaande gebruikers in een lab zijn die handmatig of via het importeren van een CSV-bestand zijn toegevoegd, wordt de optie om het lab te synchroniseren met een bestaande groep niet weergegeven. 
 
 1. Meld u aan bij de [Azure Lab Services-website](https://labs.azure.com/).
 1. Selecteer het lab waarmee u wilt werken.
-1. Selecteer in het linkerdeel venster de optie **gebruikers**. 
-1. Klik op **synchroniseren van groep**. 
+1. Selecteer in het linkerdeelvenster de optie **Gebruikers**. 
+1. Klik op **Synchroniseren vanuit groep**. 
 
     :::image type="content" source="./media/how-to-configure-student-usage/add-users-sync-group.png" alt-text="Gebruikers toevoegen door te synchroniseren vanuit een Azure AD-groep":::
     
@@ -42,55 +42,55 @@ Een Azure AD-groep kan worden gemaakt binnen de Azure Active Directory van uw or
     
     Als u een Azure AD-groep niet ziet in de lijst, kan dit de volgende oorzaken hebben:
 
-    -   Als u een gast gebruiker bent voor een Azure Active Directory (meestal als u buiten de organisatie bent die eigenaar is van Azure AD) en u niet kunt zoeken naar groepen in azure AD. In dit geval kunt u in dit geval geen Azure AD-groep aan het lab toevoegen. 
-    -   Azure AD-groepen die zijn gemaakt via teams, worden niet weer gegeven in deze lijst. U kunt de app Azure Lab Services toevoegen aan teams voor het rechtstreeks maken en beheren van Labs. Meer informatie over [het beheren van de gebruikers lijst van een Lab](how-to-manage-user-lists-within-teams.md)vindt u in teams. 
-1. Wanneer u de Azure AD-groep hebt opgenomen om uw Lab te synchroniseren met, klikt u op **toevoegen**.
-1. Zodra een Lab is gesynchroniseerd, haalt het iedereen in de Azure AD-groep in het Lab als gebruikers op en ziet u dat de lijst met gebruikers is bijgewerkt. Alleen de personen in deze Azure AD-groep hebben toegang tot uw Lab. De lijst met gebruikers wordt elke 24 uur vernieuwd, zodat deze overeenkomt met het laatste lidmaatschap van de Azure AD-groep. U kunt ook op de knop synchroniseren klikken op het tabblad gebruikers om hand matig te synchroniseren met de meest recente wijzigingen in de Azure AD-groep.
-1. De gebruikers uitnodigen voor uw Lab door te klikken op de knop **Alles uitnodigen** , waarmee een e-mail wordt verzonden naar alle gebruikers met de registratie koppeling naar het lab. 
+    -   Als u een gastgebruiker bent voor een Azure Active Directory (meestal als u van buiten de organisatie bent die eigenaar is van Azure AD) en u niet kunt zoeken naar groepen binnen de Azure-AD. In dit geval kunt u geen Azure AD-groep aan het lab toevoegen. 
+    -   Azure AD-groepen die zijn gemaakt via Teams, worden niet weergegeven in deze lijst. U kunt de app Azure Lab Services toevoegen aan Teams voor het rechtstreeks maken en beheren van labs. Zie voor meer informatie over [het beheren van de gebruikerslijst van een lab vanuit Teams](how-to-manage-user-lists-within-teams.md). 
+1. Wanneer u de Azure AD-groep hebt opgenomen om uw lab mee te synchroniseren, klikt u op **Toevoegen**.
+1. Zodra een lab is gesynchroniseerd, haalt het iedereen binnen de Azure AD-groep het lab in als gebruikers en ziet u dat de lijst met gebruikers is bijgewerkt. Alleen de personen in deze Azure AD-groep hebben toegang tot uw lab. De lijst met gebruikers wordt elke 24 uur vernieuwd, zodat deze overeenkomt met het meest recente lidmaatschap van de Azure AD-groep. U kunt ook op de knop Synchroniseren klikken op het tabblad Gebruikers om handmatig te synchroniseren met de meest recente wijzigingen in de Azure AD-groep.
+1. U kunt de gebruikers uitnodigen voor uw lab door te klikken op de knop **Iedereen uitnodigen**, waarmee een e-mail wordt verzonden naar alle gebruikers met de registratiekoppeling naar het lab. 
 
 ### <a name="automatic-management-of-virtual-machines-based-on-changes-to-the-azure-ad-group"></a>Automatisch beheer van virtuele machines op basis van wijzigingen in de Azure AD-groep 
 
 Zodra het lab is gesynchroniseerd met een Azure AD-groep, komt het aantal virtuele machines in het lab automatisch overeen met het aantal gebruikers in de groep. U kunt de lab-capaciteit niet meer hand matig bijwerken. Wanneer een gebruiker wordt toegevoegd aan de Azure AD-groep, voegt een Lab automatisch een virtuele machine voor die gebruiker toe. Wanneer een gebruiker wordt verwijderd uit de Azure AD-groep, wordt de virtuele machine van de gebruiker automatisch verwijderd uit het lab. 
 
-## <a name="add-users-manually-from-emails-or-csv-file"></a>Gebruikers hand matig toevoegen vanuit e-mail (s) of CSV-bestand
+## <a name="add-users-manually-from-emails-or-csv-file"></a>Gebruikers handmatig toevoegen vanuit e-mail(s) of CSV-bestand
 
-In deze sectie voegt u studenten hand matig toe (op e-mail adres of door een CSV-bestand te uploaden). 
+In deze sectie voegt u studenten handmatig toe (per e-mailadres of door een CSV-bestand te uploaden). 
 
-### <a name="add-users-by-email-address"></a>Gebruikers toevoegen op e-mail adres
+### <a name="add-users-by-email-address"></a>Per e-mailadres toevoegen
 
-1. Selecteer in het linkerdeel venster de optie **gebruikers**. 
-1. Klik op **gebruikers hand matig toevoegen**. 
+1. Selecteer in het linkerdeelvenster de optie **Gebruikers**. 
+1. Klik op **Gebruikers handmatig toevoegen**. 
 
-    :::image type="content" source="./media/how-to-configure-student-usage/add-users-manually.png" alt-text="Gebruikers hand matig toevoegen":::
-1. Selecteer **toevoegen per e-mail adres** (standaard), voer de e-mail adressen van studenten in op afzonderlijke regels of op één regel gescheiden door punt komma's. 
+    :::image type="content" source="./media/how-to-configure-student-usage/add-users-manually.png" alt-text="Gebruikers handmatig toevoegen":::
+1. Selecteer **Toevoegen per e-mailadres** (standaard), voer de e-mailadressen van de studenten in op afzonderlijke regels of op één regel, gescheiden door puntkomma's. 
 
-    :::image type="content" source="./media/how-to-configure-student-usage/add-users-email-addresses.png" alt-text="E-mail adressen van gebruikers toevoegen":::
+    :::image type="content" source="./media/how-to-configure-student-usage/add-users-email-addresses.png" alt-text="E-mailadressen van gebruikers toevoegen":::
 1. Selecteer **Opslaan**. 
 
-    In de lijst worden de e-mail adressen en statussen van de huidige gebruikers weer gegeven, ongeacht of ze zijn geregistreerd bij het lab of niet. 
+    In de lijst worden de e-mailadressen en statussen van de huidige gebruikers weergegeven, ongeacht of ze zijn geregistreerd bij het lab. 
 
     :::image type="content" source="./media/how-to-configure-student-usage/list-of-added-users.png" alt-text="Lijst met gebruikers":::
 
     > [!NOTE]
-    > Nadat de studenten zijn geregistreerd bij het lab, worden de namen weer gegeven in de lijst. De naam die wordt weer gegeven in de lijst, wordt samengesteld op basis van de voor-en achternaam van de studenten in Azure Active Directory. 
+    > Nadat de studenten zijn geregistreerd bij het lab, worden hun namen weergegeven in de lijst. De naam die wordt weergegeven in de lijst, wordt samengesteld op basis van de voor- en achternaam van de studenten in Azure Active Directory. 
 
 ### <a name="add-users-by-uploading-a-csv-file"></a>Gebruikers toevoegen door een CSV-bestand te uploaden
 
-U kunt ook gebruikers toevoegen door een CSV-bestand te uploaden dat hun e-mail adressen bevat. 
+U kunt ook gebruikers toevoegen door een CSV-bestand te uploaden dat hun e-mailadressen bevat. 
 
-Een CSV-tekst bestand wordt gebruikt voor het opslaan van gegevens in tabel vorm (getallen en tekst) met komma's gescheiden (CSV). In plaats van informatie op te slaan in kolom velden (zoals in werk bladen), slaat een CSV-bestand gegevens op, gescheiden door komma's. Elke regel in een CSV-bestand heeft hetzelfde aantal velden met door komma's gescheiden waarden. " U kunt Excel gebruiken om eenvoudig CSV-bestanden te maken en te bewerken.
+Een CSV-tekstbestand wordt gebruikt voor het opslaan van gegevens in tabelvorm (getallen en tekst) met komma's gescheiden (CSV). In plaats van informatie op te slaan in kolomvelden (zoals in werkbladen), slaat een CSV-bestand gegevens op, gescheiden door komma's. Elke regel in een CSV-bestand heeft hetzelfde aantal ‘velden’ met door komma's gescheiden waarden. U kunt Excel gebruiken om CSV-bestanden eenvoudig te maken en te bewerken.
 
-1. Maak in micro soft Excel een CSV-bestand met een lijst met e-mail adressen van studenten in één kolom.
+1. Maak in Microsoft Excel een CSV-bestand met een lijst met e-mailadressen van studenten in één kolom.
 
     :::image type="content" source="./media/how-to-configure-student-usage/csv-file-with-users.png" alt-text="Lijst met gebruikers in een CSV-bestand":::
-1. Selecteer aan de bovenkant van het deel venster **gebruikers** de optie **gebruikers toevoegen** en selecteer vervolgens **CSV uploaden**.
-1. Selecteer het CSV-bestand dat de e-mail adressen van studenten bevat en selecteer vervolgens **openen**.
+1. Selecteer aan de bovenkant van het deelvenster **Gebruikers** **Gebruikers toevoegen** en selecteer vervolgens **CSV uploaden**.
+1. Selecteer het CSV-bestand dat de e-mailadressen van studenten bevat en selecteer vervolgens **Openen**.
 
-    Het venster **gebruikers toevoegen** bevat de lijst met e-mail adressen uit het CSV-bestand. 
+    In het venster **Gebruikers toevoegen** wordt de lijst met e-mailadressen uit het CSV-bestand weergegeven. 
 1. Selecteer **Opslaan**. 
-1. In het deel venster **gebruikers** bekijkt u de lijst met toegevoegde studenten. 
+1. Bekijk in het deelvenster **Gebruikers** de lijst met toegevoegde studenten. 
 
-    :::image type="content" source="./media/how-to-configure-student-usage/list-of-added-users.png" alt-text="Lijst met toegevoegde gebruikers in het deel venster gebruikers":::
+    :::image type="content" source="./media/how-to-configure-student-usage/list-of-added-users.png" alt-text="Lijst met toegevoegde gebruikers in het deelvenster Gebruikers":::
 
 ## <a name="send-invitations-to-users"></a>Uitnodigingen voor gebruikers verzenden
 
@@ -102,7 +102,7 @@ Als de optie **toegang beperken** voor het lab is ingeschakeld, kunnen alleen ge
 
 Met deze methode wordt uitgelegd hoe u een e-mail met een registratie koppeling en een optioneel bericht naar alle vermelde studenten verzendt.
 
-1. Selecteer in **Users** het deel venster gebruikers **alle uitnodigingen**. 
+1. Selecteer in  het deel venster gebruikers **alle uitnodigingen**. 
 
     ![De knop Alles uitnodigen](./media/tutorial-setup-classroom-lab/invite-all-button.png)
 
@@ -161,7 +161,7 @@ In deze sectie kunt u de registratie koppeling vanuit de portal ophalen en verze
 
 U kunt een uur quotum voor elke student instellen door het volgende te doen: 
 
-1. Selecteer in **Users** het deel venster gebruikers **quotum per gebruiker: \<number> uur** op de werk balk. 
+1. Selecteer in  het deel venster gebruikers **quotum per gebruiker: \<number> uur** op de werk balk. 
 1. Geef in het venster **quotum per gebruiker** het aantal uren op dat u wilt toewijzen aan elke student buiten de geplande klasse tijd en selecteer vervolgens **Opslaan**.
 
     ![Het venster quotum per gebruiker](./media/how-to-configure-student-usage/quota-per-user.png)    

@@ -3,12 +3,12 @@ title: Azure Policy leren voor Kubernetes
 description: Lees hoe Azure Policy Rego gebruikt en beleids agent opent voor het beheren van clusters met Kubernetes in azure of on-premises.
 ms.date: 12/01/2020
 ms.topic: conceptual
-ms.openlocfilehash: e2b9253d8ce60d5dc77d406e3c9d0469539f2c77
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: f25b64bc28535d125c7883f16c9e747d6250ca96
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511328"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789735"
 ---
 # <a name="understand-azure-policy-for-kubernetes-clusters"></a>Azure Policy voor Kubernetes-clusters
 
@@ -411,7 +411,7 @@ Zoek de ingebouwde beleids definities voor het beheren van uw cluster met behulp
 
    - Als u Kubernetes-naam ruimten van beleids evaluatie wilt uitsluiten, geeft u de lijst met naam ruimten in de para meters van de **naam ruimte** op. Het wordt aanbevolen om: _uitvoeren-System_, _gate keeper-System_ en _Azure-Arc_ uit te sluiten.
 
-1. Selecteer **Controleren en maken**.
+1. Selecteer **Controleren + maken**.
 
 U kunt ook de Snelstartgids [een beleid toewijzen-Portal](../assign-policy-portal.md) gebruiken om een Kubernetes-beleid te zoeken en toe te wijzen. Zoek in plaats van het voor beeld ' vm's controleren ' naar een Kubernetes-beleids definitie.
 
@@ -463,7 +463,7 @@ Zie [debug Gate](https://github.com/open-policy-agent/gatekeeper#debugging) in d
 
 ## <a name="troubleshooting-the-add-on"></a>Problemen met de invoeg toepassing oplossen
 
-Zie de [sectie Kubernetes](/azure/governance/policy/troubleshoot/general#add-on-for-kubernetes-general-errors) van het artikel Azure Policy Troubleshooting (Engelstalig) voor meer informatie over het oplossen van problemen met de invoeg toepassing voor Kubernetes.
+Zie de [sectie Kubernetes](../troubleshoot/general.md#add-on-for-kubernetes-general-errors) van het artikel Azure Policy Troubleshooting (Engelstalig) voor meer informatie over het oplossen van problemen met de invoeg toepassing voor Kubernetes.
 
 ## <a name="remove-the-add-on"></a>De invoeg toepassing verwijderen
 

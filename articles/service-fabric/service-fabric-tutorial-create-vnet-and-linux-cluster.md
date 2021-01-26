@@ -4,12 +4,12 @@ description: Informatie over hoe u een Linux Service Fabric-cluster implementeer
 ms.topic: conceptual
 ms.date: 02/14/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 52eba2e5780b1a66f3884a764631908335372273
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
+ms.openlocfilehash: 77cc49c1b79e5c24e78a67a69493aa0b0059d565
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92738955"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791068"
 ---
 # <a name="deploy-a-linux-service-fabric-cluster-into-an-azure-virtual-network"></a>Een Linux Service Fabric-cluster implementeren in een virtueel Azure-netwerk
 
@@ -75,7 +75,7 @@ In de resource **Microsoft.Network/loadBalancers** wordt een load balancer gecon
 
 ### <a name="virtual-network-and-subnet"></a>Virtueel netwerk en subnet
 
-De namen van het virtuele netwerk en het subnet worden gedeclareerd in de sjabloonparameters.  Adresruimten van het virtuele netwerk en subnet worden ook gedeclareerd in de sjabloonparameters en geconfigureerd in de resource **Microsoft.Network/virtualNetworks** :
+De namen van het virtuele netwerk en het subnet worden gedeclareerd in de sjabloonparameters.  Adresruimten van het virtuele netwerk en subnet worden ook gedeclareerd in de sjabloonparameters en geconfigureerd in de resource **Microsoft.Network/virtualNetworks**:
 
 * virtuele netwerkadresruimte: 10.0.0.0/16
 * Service Fabric-subnetadresruimte: 10.0.2.0/24
@@ -86,7 +86,7 @@ Als er andere toepassingspoorten nodig zijn, moet u de resource Microsoft.Networ
 
 Het bestand **AzureDeploy. para meters** declareert veel waarden die worden gebruikt voor het implementeren van het cluster en de bijbehorende resources. Enkele van de parameters die u mogelijk moet wijzigen voor uw implementatie:
 
-|Parameter|Voorbeeldwaarde|Opmerkingen|
+|Parameter|Voorbeeldwaarde|Notities|
 |---|---||
 |adminUserName|vmadmin| De gebruikersnaam van de beheerder van de cluster-VM's. |
 |adminPassword|Password#1234| Het wachtwoord van de beheerder van de cluster-VM's.|
@@ -106,7 +106,7 @@ In de sjabloon in dit artikel wordt een cluster geïmplementeerd dat gebruikmaak
 
 ### <a name="create-a-cluster-using-an-existing-certificate"></a>Een cluster maken met behulp van een bestaand certificaat
 
-Het volgende script maakt gebruik van de opdracht en de sjabloon [az sf cluster create](/cli/azure/sf/cluster?view=azure-cli-latest) om een nieuw cluster te implementeren dat met een bestaand certificaat is beveiligd. De opdracht maakt ook een nieuwe sleutelkluis in Azure en uploadt uw certificaat.
+Het volgende script maakt gebruik van de opdracht en de sjabloon [az sf cluster create](/cli/azure/sf/cluster) om een nieuw cluster te implementeren dat met een bestaand certificaat is beveiligd. De opdracht maakt ook een nieuwe sleutelkluis in Azure en uploadt uw certificaat.
 
 ```azurecli
 ResourceGroupName="sflinuxclustergroup"
@@ -132,7 +132,7 @@ az sf cluster create --resource-group $ResourceGroupName --location $Location \
 
 ### <a name="create-a-cluster-using-a-new-self-signed-certificate"></a>Een cluster met een nieuw, zelfondertekend certificaat maken
 
-Het volgende script maakt gebruik van de opdracht [az sf cluster create](/cli/azure/sf/cluster?view=azure-cli-latest) en een sjabloon om een nieuw cluster te implementeren in Azure. Met de opdracht wordt ook een nieuwe sleutelkluis in Azure gemaakt, een nieuw zelfondertekend certificaat toegevoegd aan de sleutelkluis en het certificaatbestand lokaal gedownload.
+Het volgende script maakt gebruik van de opdracht [az sf cluster create](/cli/azure/sf/cluster) en een sjabloon om een nieuw cluster te implementeren in Azure. Met de opdracht wordt ook een nieuwe sleutelkluis in Azure gemaakt, een nieuw zelfondertekend certificaat toegevoegd aan de sleutelkluis en het certificaatbestand lokaal gedownload.
 
 ```azurecli
 ResourceGroupName="sflinuxclustergroup"
@@ -152,7 +152,7 @@ az sf cluster create --resource-group $ResourceGroupName --location $Location \
 
 ## <a name="connect-to-the-secure-cluster"></a>Verbinding maken met het beveiligde cluster
 
-Maak verbinding met het cluster met behulp van de Service Fabric CLI-opdracht `sfctl cluster select` en uw sleutel.  Opmerking: gebruik voor een zelfondertekend certificaat alleen de optie **--no-verify** .
+Maak verbinding met het cluster met behulp van de Service Fabric CLI-opdracht `sfctl cluster select` en uw sleutel.  Opmerking: gebruik voor een zelfondertekend certificaat alleen de optie **--no-verify**.
 
 ```console
 sfctl cluster select --endpoint https://aztestcluster.southcentralus.cloudapp.azure.com:19080 \

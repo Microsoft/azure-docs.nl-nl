@@ -3,17 +3,17 @@ title: Een Azure Service Fabric-cluster maken
 description: Meer informatie over het instellen van een beveiligd Service Fabric-cluster in azure met behulp van Azure Resource Manager.  U kunt een cluster maken met behulp van een standaard sjabloon of uw eigen cluster sjabloon gebruiken.
 ms.topic: conceptual
 ms.date: 08/16/2018
-ms.openlocfilehash: fd2c472d24f305e42f1706e5fc49168ccde2a580
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d4daa75fd9383bc19da1b09104ebddff5712c5b4
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96008664"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791808"
 ---
 # <a name="create-a-service-fabric-cluster-using-azure-resource-manager"></a>Een Service Fabric-cluster maken met behulp van Azure Resource Manager 
 > [!div class="op_single_selector"]
 > * [Azure Resource Manager](service-fabric-cluster-creation-via-arm.md)
-> * [Azure Portal](service-fabric-cluster-creation-via-portal.md)
+> * [Azure-portal](service-fabric-cluster-creation-via-portal.md)
 >
 >
 
@@ -34,7 +34,7 @@ In dit artikel gebruikt u de modules Service Fabric RM Power shell of Azure CLI 
 
 U kunt hier de referentie documentatie voor de Service Fabric-modules vinden:
 * [Az.ServiceFabric](/powershell/module/az.servicefabric)
-* [AZ SF CLI-module](/cli/azure/sf?view=azure-cli-latest)
+* [AZ SF CLI-module](/cli/azure/sf)
 
 ### <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 
@@ -285,6 +285,6 @@ Zie [micro soft. ServiceFabric/clusters-sjabloon verwijzing](/azure/templates/mi
 
 <!-- Links -->
 [azure-powershell]:https://docs.microsoft.com/powershell/azure/install-Az-ps
-[azure-CLI]:https://docs.microsoft.com/cli/azure/get-started-with-azure-cli?view=azure-cli-latest
+[azure-CLI]:https://docs.microsoft.com/cli/azure/get-started-with-azure-cli
 [service-fabric-cluster-security]: service-fabric-cluster-security.md
 [customize-your-cluster-template]: service-fabric-cluster-creation-create-template.md

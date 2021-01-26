@@ -2,13 +2,13 @@
 title: Koppelings sjablonen voor implementatie
 description: Hierin wordt beschreven hoe u gekoppelde sjablonen gebruikt in een Azure Resource Manager sjabloon (ARM-sjabloon) om een modulaire sjabloon oplossing te maken. Toont hoe parameter waarden worden door gegeven, geef een parameter bestand op en dynamisch gemaakte Url's.
 ms.topic: conceptual
-ms.date: 01/20/2021
-ms.openlocfilehash: dd810167e07f1bb23f9563936cb481652953ccd1
-ms.sourcegitcommit: a0c1d0d0906585f5fdb2aaabe6f202acf2e22cfc
+ms.date: 01/25/2021
+ms.openlocfilehash: 7d4df67b7f69b3e58799f45ad72bd9ed68540dc2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/21/2021
-ms.locfileid: "98624855"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790932"
 ---
 # <a name="using-linked-and-nested-templates-when-deploying-azure-resources"></a>Gekoppelde en geneste sjablonen gebruiken bij het implementeren van Azure-resources
 
@@ -111,6 +111,10 @@ U stelt het bereik in via de `expressionEvaluationOptions` eigenschap. De `expre
   },
   ...
 ```
+
+> [!NOTE]
+>
+> Wanneer Scope is ingesteld op `outer` , kunt u de functie niet gebruiken `reference` in de sectie outputs van een geneste sjabloon voor een resource die u in de geneste sjabloon hebt geïmplementeerd. Als u de waarden voor een geïmplementeerde resource in een geneste sjabloon wilt retour neren, gebruikt u `inner` bereik of converteert u uw geneste sjabloon naar een gekoppelde sjabloon.
 
 In de volgende sjabloon ziet u hoe sjabloon expressies worden omgezet volgens het bereik. Het bevat een variabele met `exampleVar` de naam die is gedefinieerd in zowel de bovenliggende sjabloon als de geneste sjabloon. Hiermee wordt de waarde van de variabele geretourneerd.
 
@@ -399,10 +403,6 @@ Het volgende fragment toont welke waarden veilig zijn en wat niet veilig is.
   ]
 }
 ```
-
-> [!NOTE]
->
-> Wanneer Scope is ingesteld op `outer` , kunt u de functie niet gebruiken `reference` in de sectie outputs van een geneste sjabloon voor een resource die u in de geneste sjabloon hebt geïmplementeerd. Als u de waarden voor een geïmplementeerde resource in een geneste sjabloon wilt retour neren, gebruikt u `inner` bereik of converteert u uw geneste sjabloon naar een gekoppelde sjabloon.
 
 ## <a name="linked-template"></a>Een gekoppelde sjabloon
 
@@ -797,7 +797,7 @@ az deployment group create --resource-group ExampleGroup --template-uri $url?$to
 
 In de volgende voor beelden ziet u veelvoorkomende toepassingen van gekoppelde sjablonen.
 
-|Hoofd sjabloon  |Een gekoppelde sjabloon |Description  |
+|Hoofd sjabloon  |Een gekoppelde sjabloon |Beschrijving  |
 |---------|---------| ---------|
 |[Hallo wereld](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworldparent.json) |[gekoppelde sjabloon](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/helloworld.json) | Retourneert een teken reeks uit een gekoppelde sjabloon. |
 |[Load Balancer met openbaar IP-adres](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip-parentloadbalancer.json) |[gekoppelde sjabloon](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/linkedtemplates/public-ip.json) |Hiermee wordt het open bare IP-adres uit de gekoppelde sjabloon geretourneerd en wordt die waarde ingesteld in load balancer. |

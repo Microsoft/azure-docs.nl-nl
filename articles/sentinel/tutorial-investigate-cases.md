@@ -12,20 +12,19 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 09/23/2019
+ms.date: 01/25/2021
 ms.author: yelevin
-ms.openlocfilehash: aa9160f01ed0040123bd8ac932cfd2443f557bb6
-ms.sourcegitcommit: df66dff4e34a0b7780cba503bb141d6b72335a96
+ms.openlocfilehash: 8853f3774bb35361746c8b706f38bc54079d74f7
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96511726"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790983"
 ---
 # <a name="tutorial-investigate-incidents-with-azure-sentinel"></a>Zelf studie: incidenten onderzoeken met Azure Sentinel
 
 > [!IMPORTANT]
-> De onderzoek grafiek is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
-
+> De onderzoek grafiek is nu beschikbaar in de **algemene Beschik baarheid**. 
 
 Deze zelf studie helpt u bij het onderzoeken van incidenten met Azure Sentinel. Nadat u uw gegevens bronnen hebt verbonden met Azure Sentinel, wilt u een melding ontvangen wanneer er iets verdacht is. Hiervoor kunt u met Azure Sentinel geavanceerde waarschuwings regels maken waarmee incidenten worden gegenereerd die u kunt toewijzen en onderzoeken.
 
@@ -113,10 +112,10 @@ De onderzoek grafiek gebruiken:
 
 Zodra u een bepaald incident hebt opgelost (bijvoorbeeld wanneer uw onderzoek de conclusie heeft bereikt), moet u de status van het incident instellen op **gesloten**. Wanneer u dit doet, wordt u gevraagd om het incident te classificeren door de reden op te geven dat u het wilt sluiten. Deze stap is verplicht. Klik op **classificatie selecteren** en kies een van de volgende opties in de vervolg keuzelijst:
 
-- Echte positieve verdachte activiteit
-- Goed aardig positief-verdacht maar verwacht
-- Onjuist positief-onjuiste waarschuwings logica
-- Onjuist positieve-onjuiste gegevens
+- Terecht-positief - verdachte activiteit
+- Goedaardig-positief - verdacht maar verwacht
+- Fout-positief - onjuiste waarschuwingslogica
+- Fout-positief - onjuiste gegevens
 - Onbepaald
 
 :::image type="content" source="media/tutorial-investigate-cases/closing-reasons-dropdown.png" alt-text="Scherm opname van de classificaties die beschikbaar zijn in de lijst classificatie selecteren.":::

@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 01/07/2021
 ms.author: alkohli
-ms.openlocfilehash: 5bbd02f9e15a4ee29e244b2a0307accd151ba487
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 411757f4ef4e33ccbc8a69ca2b40598b51c6d13b
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033945"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790830"
 ---
 # <a name="open-a-support-ticket-for-azure-stack-edge-pro-and-azure-data-box-gateway"></a>Open een ondersteunings ticket voor Azure Stack Edge Pro en Azure Data Box Gateway
 
@@ -39,7 +39,7 @@ Voer de volgende stappen uit om een ondersteunings aanvraag te maken:
     7. Kies op basis van het probleem type dat u hebt geselecteerd een **subtype** van een bijbehorend probleem.
     8. Selecteer **volgende: >>oplossingen**.
 
-        ![Basisinstellingen](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-support-request-1.png)
+        ![Basisbeginselen](./media/azure-stack-edge-contact-microsoft-support/data-box-edge-support-request-1.png)
 
 3. Voer op het tabblad **Details** de volgende stappen uit:
 
@@ -99,4 +99,4 @@ Nadat u een ondersteuningsticket hebt gemaakt, kunt u de voortgang van het ticke
 ## <a name="next-steps"></a>Volgende stappen
 
 Meer informatie over het [oplossen van problemen met Azure stack Edge Pro](azure-stack-edge-troubleshoot.md).
-Meer informatie over het [oplossen van problemen met data Box gateway](data-box-gateway-troubleshoot.md).
+Meer informatie over het [oplossen van problemen met data Box gateway](../databox-gateway/data-box-gateway-troubleshoot.md).

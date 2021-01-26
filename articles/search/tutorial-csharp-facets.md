@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 10/01/2020
+ms.date: 01/26/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ab15af07c5f63d375d8fdb4fc38e0853e207a0be
-ms.sourcegitcommit: 67e8e1caa8427c1d78f6426c70bf8339a8b4e01d
-ms.translationtype: HT
+ms.openlocfilehash: 44a05ed5b4386f2787a1c84dfeb61a5d539c7cb5
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/02/2020
-ms.locfileid: "91667279"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789800"
 ---
 # <a name="tutorial-add-faceted-navigation-using-the-net-sdk"></a>Zelfstudie: Facetnavigatie toevoegen met behulp van de .NET SDK
 
@@ -37,7 +37,7 @@ Een voltooide versie van de code in deze zelfstudie vindt u in het volgende proj
 
 ## <a name="prerequisites"></a>Vereisten
 
-* De oplossing [2a-add-paging (GitHub)](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v11/2a-add-paging). Dit project kan uw eigen versie zijn die is gebaseerd op de vorige zelfstudie, of een kopie van GitHub.
+* De oplossing [2a-add-paging (GitHub)](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v11/2a-add-paging). Dit project kan uw eigen versie zijn die is gebaseerd op de vorige zelfstudie of een kopie van GitHub.
 
 Deze zelfstudie is bijgewerkt voor het gebruik van het pakket [Azure.Search.Documents (versie 11)](https://www.nuget.org/packages/Azure.Search.Documents/). Zie het [codevoorbeeld Microsoft.Azure.Search (versie 10)](https://github.com/Azure-Samples/azure-search-dotnet-samples/tree/master/create-first-app/v10) voor een eerdere versie van de .NET SDK.
 

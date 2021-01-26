@@ -10,12 +10,12 @@ ms.topic: overview
 ms.custom: mvc
 ms.date: 10/01/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 5025c4ad81433b6eb18f5beded860625791ffce5
-ms.sourcegitcommit: 6109f1d9f0acd8e5d1c1775bc9aa7c61ca076c45
-ms.translationtype: HT
+ms.openlocfilehash: 4747c958b5e592458c14bbf4244953564c252678
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94445095"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790120"
 ---
 # <a name="about-azure-key-vault"></a>Over Azure Key Vault
 
@@ -25,7 +25,7 @@ Met Azure Key Vault kunt u de volgende problemen oplossen:
 - **Sleutelbeheer** - U kunt Azure Key Vault ook gebruiken als een oplossing voor sleutelbeheer. Met Azure Key Vault kunt u eenvoudig de versleutelingssleutels maken en beheren waarmee uw gegevens worden versleuteld. 
 - **Certificaatbeheer** - Azure Key Vault is ook een service waarmee u eenvoudig openbare en persoonlijke TLS/SSL-certificaten (Transport Layer Security/Secure Sockets Layer) kunt inrichten, beheren en implementeren voor gebruik met Azure en uw interne verbonden bronnen.
 
-Azure Key Vault heeft twee servicelagen: De Standard-laag, die wordt versleuteld met een softwaresleutel, en de Premium-laag, met sleutels die met HSM beveiligd zijn. Als u een vergelijking tussen de lagen Standard en Premium wilt zien, raadpleegt u de [pagina met prijzen voor Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/).
+Azure Key Vault heeft twee service lagen: standaard, die versleutelt met een software sleutel en een Premium-laag, waaronder met HSM beveiligde sleutels (Hardware Security module). Als u een vergelijking tussen de lagen Standard en Premium wilt zien, raadpleegt u de [pagina met prijzen voor Azure Key Vault](https://azure.microsoft.com/pricing/details/key-vault/).
 
 ## <a name="why-use-azure-key-vault"></a>Waarom zou ik Azure Key Vault gebruiken?
 

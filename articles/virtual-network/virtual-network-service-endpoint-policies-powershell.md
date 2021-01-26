@@ -17,16 +17,14 @@ ms.workload: infrastructure-services
 ms.date: 02/03/2020
 ms.author: rdhillon
 ms.custom: ''
-ms.openlocfilehash: 1d4fcc280ba2e34d2fa81584846441ad6fe81431
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d8e300c9be8f3e59dc9443bf1f1806e4228992ad
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "84708192"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790356"
 ---
 # <a name="manage-data-exfiltration-to-azure-storage-accounts-with-virtual-network-service-endpoint-policies-using-azure-powershell"></a>Gegevens exfiltration beheren om accounts te Azure Storage met het eindpunt beleid van een virtueel netwerk met behulp van Azure PowerShell
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 Met het eindpunt beleid van de virtuele netwerk service kunt u toegangs beheer Toep assen op Azure Storage accounts vanuit een virtueel netwerk via service-eind punten. Dit is een sleutel voor het beveiligen van uw workloads, het beheren van de opslag accounts die zijn toegestaan en het toestaan van gegevens exfiltration.
 In dit artikel leert u het volgende:
@@ -39,6 +37,8 @@ In dit artikel leert u het volgende:
 * Controleer de toegang tot het toegestane opslag account vanuit het subnet.
 * Controleren of de toegang is geweigerd voor het niet-toegestane opslag account van het subnet.
 
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
+
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
 [!INCLUDE [cloud-shell-try-it.md](../../includes/cloud-shell-try-it.md)]
@@ -47,7 +47,7 @@ Als u Power shell lokaal wilt installeren en gebruiken, moet u voor dit artikel 
 
 ## <a name="create-a-virtual-network"></a>Een virtueel netwerk maken
 
-Voordat u een virtueel netwerk maakt, moet u een resource groep maken voor het virtuele netwerk en alle andere resources die in dit artikel zijn gemaakt. Maak een resourcegroep met behulp van de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). In het volgende voor beeld wordt een resource groep met de naam *myResourceGroup*gemaakt: 
+Voordat u een virtueel netwerk maakt, moet u een resource groep maken voor het virtuele netwerk en alle andere resources die in dit artikel zijn gemaakt. Maak een resourcegroep met behulp van de opdracht [New-AzResourceGroup](/powershell/module/az.resources/new-azresourcegroup). In het volgende voor beeld wordt een resource groep met de naam *myResourceGroup* gemaakt: 
 
 ```azurepowershell-interactive
 New-AzResourceGroup `
@@ -124,7 +124,7 @@ $rule3 = New-AzNetworkSecurityRuleConfig `
   -SourcePortRange *
 ```
 
-Maak een netwerk beveiligings groep met [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup). In het volgende voor beeld wordt een netwerk beveiligings groep gemaakt met de naam *myNsgPrivate*.
+Maak een netwerkbeveiligingsgroep met [New-AzNetworkSecurityGroup](/powershell/module/az.network/new-aznetworksecuritygroup). In het volgende voor beeld wordt een netwerk beveiligings groep gemaakt met de naam *myNsgPrivate*.
 
 ```azurepowershell-interactive
 $nsg = New-AzNetworkSecurityGroup `

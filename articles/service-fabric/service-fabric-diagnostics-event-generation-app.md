@@ -5,12 +5,12 @@ author: srrengar
 ms.topic: conceptual
 ms.date: 11/21/2018
 ms.author: srrengar
-ms.openlocfilehash: e1871df962a26def8c12000f8b8bc0cf31bae9a0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a1df5d033701195f4fe5f6b7174f3883b84393ab
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86247656"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791270"
 ---
 # <a name="application-logging"></a>Toepassingslogboeken
 
@@ -22,11 +22,11 @@ Zie [logboek registratie toevoegen aan uw service Fabric-toepassing](service-fab
 
 ## <a name="application-insights-sdk"></a>Application Insights SDK
 
-Application Insights heeft een uitgebreide integratie met Service Fabric uit het vak. Gebruikers kunnen de AI Service Fabric nuget-pakketten toevoegen en gegevens en logboeken ontvangen die in de Azure Portal zijn gemaakt en verzameld. Daarnaast wordt gebruikers geadviseerd hun eigen telemetrie toe te voegen om de toepassingen te diagnosticeren en fouten op te sporen en te controleren welke services en delen van hun toepassing het meest worden gebruikt. De [TelemetryClient](/dotnet/api/microsoft.applicationinsights.telemetryclient?view=azure-dotnet) -klasse in de SDK biedt veel manieren om telemetrie in uw toepassingen bij te houden. Bekijk een voor beeld van het instrumenteren en toevoegen van Application Insights aan uw toepassing in onze zelf studie voor het [bewaken en diagnosticeren van een .NET-toepassing](service-fabric-tutorial-monitoring-aspnet.md)
+Application Insights heeft een uitgebreide integratie met Service Fabric uit het vak. Gebruikers kunnen de AI Service Fabric nuget-pakketten toevoegen en gegevens en logboeken ontvangen die in de Azure Portal zijn gemaakt en verzameld. Daarnaast wordt gebruikers geadviseerd hun eigen telemetrie toe te voegen om de toepassingen te diagnosticeren en fouten op te sporen en te controleren welke services en delen van hun toepassing het meest worden gebruikt. De [TelemetryClient](/dotnet/api/microsoft.applicationinsights.telemetryclient) -klasse in de SDK biedt veel manieren om telemetrie in uw toepassingen bij te houden. Bekijk een voor beeld van het instrumenteren en toevoegen van Application Insights aan uw toepassing in onze zelf studie voor het [bewaken en diagnosticeren van een .NET-toepassing](service-fabric-tutorial-monitoring-aspnet.md)
 
 ## <a name="eventsource"></a>Source
 
-Wanneer u een Service Fabric oplossing maakt op basis van een sjabloon in Visual Studio, wordt een door **Event source**afgeleide klasse (**ServiceEventSource** of **ActorEventSource**) gegenereerd. Er wordt een sjabloon gemaakt waarin u gebeurtenissen voor uw toepassing of service kunt toevoegen. De naam van de **Event source** **moet** uniek zijn en moet worden gewijzigd van de standaard sjabloon teken reeks mijn bedrijf- &lt; oplossings &gt; - &lt; project &gt; . Als er meerdere **Event source** -definities zijn die dezelfde naam gebruiken, treedt er een probleem op tijdens de uitvoering. Elke gedefinieerde gebeurtenis moet een unieke id hebben. Als een id niet uniek is, treedt er een runtime-fout op. Sommige organisaties wijzen een reeks waarden voor id's toe om conflicten tussen afzonderlijke ontwikkel teams te voor komen. Raadpleeg de [blog van Vance](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource) of de [MSDN-documentatie](/previous-versions/msp-n-p/dn774985(v=pandp.20))voor meer informatie.
+Wanneer u een Service Fabric oplossing maakt op basis van een sjabloon in Visual Studio, wordt een door **Event source** afgeleide klasse (**ServiceEventSource** of **ActorEventSource**) gegenereerd. Er wordt een sjabloon gemaakt waarin u gebeurtenissen voor uw toepassing of service kunt toevoegen. De naam van de **Event source** **moet** uniek zijn en moet worden gewijzigd van de standaard sjabloon teken reeks mijn bedrijf- &lt; oplossings &gt; - &lt; project &gt; . Als er meerdere **Event source** -definities zijn die dezelfde naam gebruiken, treedt er een probleem op tijdens de uitvoering. Elke gedefinieerde gebeurtenis moet een unieke id hebben. Als een id niet uniek is, treedt er een runtime-fout op. Sommige organisaties wijzen een reeks waarden voor id's toe om conflicten tussen afzonderlijke ontwikkel teams te voor komen. Raadpleeg de [blog van Vance](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource) of de [MSDN-documentatie](/previous-versions/msp-n-p/dn774985(v=pandp.20))voor meer informatie.
 
 ## <a name="aspnet-core-logging"></a>ASP.NET Core logboek registratie
 

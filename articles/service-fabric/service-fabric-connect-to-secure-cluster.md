@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe u client toegang tot een Service Fabric
 ms.topic: conceptual
 ms.date: 01/29/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2ce0325f7aebac92eb1e7deadd6f6875b75b3755
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 3a669f7400eb2daf2d71f6caed41560020699c58
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89008808"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791118"
 ---
 # <a name="connect-to-a-secure-cluster"></a>Verbinding maken met een beveiligd cluster
 
@@ -232,7 +232,7 @@ catch (Exception e)
 
 In het volgende voor beeld wordt gebruikgemaakt van micro soft. Identity model. clients. ActiveDirectory, versie: 2.19.208020213.
 
-Zie [micro soft. Identity model. clients. ActiveDirectory](/dotnet/api/microsoft.identitymodel.clients.activedirectory?view=azure-dotnet)voor meer informatie over het verkrijgen van Aad-tokens.
+Zie [micro soft. Identity model. clients. ActiveDirectory](/dotnet/api/microsoft.identitymodel.clients.activedirectory)voor meer informatie over het verkrijgen van Aad-tokens.
 
 ```csharp
 string tenantId = "C15CFCEA-02C1-40DC-8466-FBD0EE0B05D2";

@@ -5,15 +5,15 @@ author: suchiagicha
 ms.topic: conceptual
 ms.date: 06/29/2017
 ms.author: pepogors
-ms.openlocfilehash: 89a7a545dd334f892ee27b97995de40d7b6416dc
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9c7d466d6e8fd36b4445966b92ee753becf96c64
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86245922"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791758"
 ---
 # <a name="diagnostics-and-performance-monitoring-for-reliable-service-remoting"></a>Diagnose en prestatie bewaking voor betrouw bare service voor externe communicatie
-De betrouw bare ServiceRemoting-runtime verzendt  [prestatie meter items](/dotnet/api/system.diagnostics.performancecounter?view=dotnet-plat-ext-3.1). Deze bieden inzicht in de manier waarop de ServiceRemoting werkt en helpt bij het oplossen van problemen en het controleren van de prestaties.
+De betrouw bare ServiceRemoting-runtime verzendt  [prestatie meter items](/dotnet/api/system.diagnostics.performancecounter). Deze bieden inzicht in de manier waarop de ServiceRemoting werkt en helpt bij het oplossen van problemen en het controleren van de prestaties.
 
 
 ## <a name="performance-counters"></a>Prestatiemeteritems
@@ -36,7 +36,7 @@ De namen van de tellers voor de categorie `Service Fabric Service` hebben de vol
 
 `ServiceFabricPartitionID_ServiceReplicaOrInstanceId_ServiceRuntimeInternalID`
 
-*ServiceFabricPartitionID* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks representatie wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) methode met de indelings specificatie "D".
+*ServiceFabricPartitionID* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks representatie wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) methode met de indelings specificatie "D".
 
 *ServiceReplicaOrInstanceId* is de teken reeks representatie van de service Fabric replica/exemplaar-id waaraan het prestatie meter exemplaar is gekoppeld.
 
@@ -57,7 +57,7 @@ De namen van de tellers voor de categorie `Service Fabric Service Method` hebben
 
 *ServiceRuntimeMethodId* is de teken reeks representatie van een 32-bits geheel getal dat wordt gegenereerd door de Fabric service-runtime voor intern gebruik. Dit is opgenomen in de exemplaar naam van het prestatie meter item om de uniekheid ervan te garanderen en te voor komen dat er conflicten ontstaan met andere instantie namen van prestatie meter items. Gebruikers moeten dit gedeelte van de exemplaar naam van het prestatie meter item niet interpreteren.
 
-*ServiceFabricPartitionID* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks representatie wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) methode met de indelings specificatie "D".
+*ServiceFabricPartitionID* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks representatie wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) methode met de indelings specificatie "D".
 
 *ServiceReplicaOrInstanceId* is de teken reeks representatie van de service Fabric replica/exemplaar-id waaraan het prestatie meter exemplaar is gekoppeld.
 
@@ -91,5 +91,5 @@ Wanneer een client een methode aanroept via een Service proxy-object, resulteert
 | Service Fabric-service |Gemiddeld aantal milliseconden voor het serialiseren van antwoorden |Gebruikte tijd (in milliseconden) voor het serialiseren van het service-antwoord bericht bij de service voordat het antwoord naar de client wordt verzonden |
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Voorbeeld code](https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0)
+* [Voorbeeldcode](https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0)
 * [Event source-providers in PerfView](/archive/blogs/vancem/introduction-tutorial-logging-etw-events-in-c-system-diagnostics-tracing-eventsource)

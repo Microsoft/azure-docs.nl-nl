@@ -3,12 +3,12 @@ title: Azure-beveiligings basislijn voor Azure DevTest Labs
 description: Azure-beveiligings basislijn voor Azure DevTest Labs
 ms.topic: conceptual
 ms.date: 07/23/2020
-ms.openlocfilehash: eabb55956f97f40312c894ccabd7a341ecc5688c
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 09b4e28437c79961d53cf07b068e3169d20fe0c4
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202008"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789901"
 ---
 # <a name="azure-security-baseline-for-azure-devtest-labs"></a>Azure-beveiligings basislijn voor Azure DevTest Labs
 
@@ -619,7 +619,7 @@ Azure Marketplace-installatie kopieën voor virtuele machines die zijn gepublice
 
 - [Aanbevelingen voor de evaluatie van Azure Security Center-beveiligings problemen implementeren](../security-center/deploy-vulnerability-assessment-vm.md)
 - [Overzicht van Azure Automation status configuratie](../automation/automation-dsc-overview.md)
-- [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](../virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script.md)
+- [Voorbeeld van een script voor het uploaden van een VHD naar Azure om een nieuwe VM te maken](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-upload-generalized-script)
 - [Een image Factory maken in DevTest Labs](image-factory-create.md)
 
 **Azure Security Center bewaking:** Klikt

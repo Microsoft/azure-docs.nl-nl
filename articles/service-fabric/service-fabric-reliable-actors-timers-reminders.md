@@ -4,12 +4,12 @@ description: Inleiding tot timers en herinneringen voor Service Fabric Reliable 
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 2b97b15ca4eb287f8d8f2c1af932f22acafae546
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f77eb29c9146fe66d5d2b6073c33e30fbab649c2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89016543"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791791"
 ---
 # <a name="actor-timers-and-reminders"></a>Actor timers en herinneringen
 Actors kunnen periodiek werk op zichzelf plannen door timers of herinneringen te registreren. Dit artikel laat u zien hoe u timers en herinneringen kunt gebruiken en hoe u de verschillen tussen deze time-out.
@@ -131,7 +131,7 @@ Herinneringen zijn een mechanisme voor het activeren van permanente retour aanro
 > [!NOTE]
 > De betrouw baarheid van herinneringen is gebonden aan de betrouw baarheid van de status van de actor State-provider. Dit betekent dat voor actors waarvan de status persistentie is ingesteld op *none*, de herinneringen na een failover niet worden geactiveerd.
 
-Als u een herinnering wilt registreren, roept een actor de [`RegisterReminderAsync`](/dotnet/api/microsoft.servicefabric.actors.runtime.actorbase.registerreminderasync?view=azure-dotnet#remarks) methode aan die is gegeven in de basis klasse, zoals wordt weer gegeven in het volgende voor beeld:
+Als u een herinnering wilt registreren, roept een actor de [`RegisterReminderAsync`](/dotnet/api/microsoft.servicefabric.actors.runtime.actorbase.registerreminderasync#remarks) methode aan die is gegeven in de basis klasse, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```csharp
 protected override async Task OnActivateAsync()

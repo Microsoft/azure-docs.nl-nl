@@ -3,12 +3,12 @@ title: Knooppunten toevoegen en verwijderen in een beheerde Service Fabric-clust
 description: In deze zelfstudie leert u hoe u een knooppunttype van een beheerde Service Fabric-cluster toevoegt en verwijdert.
 ms.topic: tutorial
 ms.date: 09/28/2020
-ms.openlocfilehash: 51cc83b4accae5f2791ce378e30f6fa692446b1c
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.openlocfilehash: bb33512652677fc4e46d8ba3668dca985bbcfe01
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316213"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791237"
 ---
 # <a name="tutorial-add-and-remove-node-types-from-a-service-fabric-managed-cluster-preview"></a>Zelfstudie: Knooppunten toevoegen en verwijderen vanuit een beheerde Service Fabric-cluster (preview)
 
@@ -29,7 +29,7 @@ In dit deel van de reeks wordt het volgende uitgelegd:
 ## <a name="prerequisites"></a>Vereisten
 
 * Een beheerd Service Fabric-cluster (zie [*Een beheerd cluster implementeren*](tutorial-managed-cluster-deploy.md)).
-* [Azure PowerShell 4.7.0](/powershell/azure/release-notes-azureps?preserve-view=true&view=azps-4.7.0#azservicefabric) of hoger (zie [*Azure PowerShell installeren*](/powershell/azure/install-az-ps?preserve-view=true&view=azps-4.7.0)).
+* [Azure PowerShell 4.7.0](/powershell/azure/release-notes-azureps#azservicefabric) of hoger (zie [*Azure PowerShell installeren*](/powershell/azure/install-az-ps)).
 
 ## <a name="add-a-node-type-to-a-service-fabric-managed-cluster"></a>Een knooppunttype toevoegen aan een beheerde Service Fabric-cluster
 

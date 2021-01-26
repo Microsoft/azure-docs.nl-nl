@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 01/13/2021
 ms.author: alkohli
-ms.openlocfilehash: 91b3e2e86394c889f6fa40f527dd0dd212e1cb57
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 4c44fca7b443a4d289b7ac7e2e507a3c3f305089
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763092"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790780"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Zelfstudie: Azure Data Box bestellen
 
@@ -338,9 +338,9 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
 
 14. Selecteer een gebruikersidentiteit die u gaat gebruiken voor het beheren van de toegang tot deze resource. Kies **Een gebruikersidentiteit selecteren**. Selecteer in het deelvenster aan de rechterkant het abonnement en de beheerde identiteit die u wilt gebruiken. Kies dan de optie **Selecteren**.
 
-    Een door de gebruiker toegewezen beheerde identiteit is een zelfstandige Azure-resource die kan worden gebruikt voor het beheren van meerdere resources. Zie [Beheerde identiteitstypen](/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.  
+    Een door de gebruiker toegewezen beheerde identiteit is een zelfstandige Azure-resource die kan worden gebruikt voor het beheren van meerdere resources. Zie [Beheerde identiteitstypen](../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie.  
 
-    Als u een nieuwe beheerde identiteit wilt maken, volgt u de richtlijnen in [Een rol maken, weergeven, verwijderen of toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](/azure/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal).
+    Als u een nieuwe beheerde identiteit wilt maken, volgt u de richtlijnen in [Een rol maken, weergeven, verwijderen of toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](../active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
     
     ![Een gebruikersidentiteit selecteren](./media/data-box-deploy-ordered/customer-managed-key-10.png)
 

@@ -13,12 +13,12 @@ metadata:
   ms.topic: hub-page
   ms.date: 03/24/2020
   ms.author: trbye
-  ms.openlocfilehash: 62eb664d3987a4480be442817397d8969ec3a93e
-  ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
-  ms.translationtype: HT
+  ms.openlocfilehash: 05ceda4909a792b60733645b6816d384555c6925
+  ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 11/21/2020
-  ms.locfileid: "95018681"
+  ms.lasthandoff: 01/26/2021
+  ms.locfileid: "98791186"
 highlightedContent:
   items:
   - title: Wat is de Speech-service?
@@ -148,7 +148,7 @@ conceptualContent:
       url: speech-container-howto-on-premises.md
     - itemType: how-to-guide
       text: Speech Service-containers in Azure Container Instances
-      url: deploy-speech-on-container-instances.md
+      url: ../containers/azure-container-instance-recipe.md
     footerLink:
       text: Meer
       url: index-hosting.yml

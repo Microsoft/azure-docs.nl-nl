@@ -4,12 +4,12 @@ description: Inleiding tot het maken van een Microsoft Azure Service Fabric-toep
 ms.topic: conceptual
 ms.date: 07/10/2019
 ms.custom: sfrev, devx-track-csharp
-ms.openlocfilehash: 1de77f870bce5766ab704249034d6d7b6c8b098e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 45341c98a40cbcabfa8b96f2016f02f1755fe2b3
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89012735"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791524"
 ---
 # <a name="get-started-with-reliable-services"></a>Aan de slag met Reliable Services
 
@@ -25,7 +25,7 @@ Om aan de slag te gaan met Reliable Services hoeft u slechts enkele basis concep
 
 * **Service type**: dit is de service-implementatie. Het wordt gedefinieerd door de klasse die u schrijft `StatelessService` , en alle andere code of afhankelijkheden die erin worden gebruikt, samen met een naam en versie nummer.
 * **Benoemd service-exemplaar**: als u uw service wilt uitvoeren, maakt u benoemde instanties van uw service type, net zoals u object instanties van een klassetype maakt. Een service-exemplaar heeft een naam in de vorm van een URI met behulp van de ' Fabric:/' schema, zoals ' Fabric:/Mijntoep/MyService '.
-* **Servicehost: de**benoemde service-exemplaren die u maakt, moeten binnen een hostproces worden uitgevoerd. De servicehost is slechts een proces waarbij exemplaren van uw service kunnen worden uitgevoerd.
+* **Servicehost: de** benoemde service-exemplaren die u maakt, moeten binnen een hostproces worden uitgevoerd. De servicehost is slechts een proces waarbij exemplaren van uw service kunnen worden uitgevoerd.
 * **Service registratie**: registratie brengt alles samen. Het Service type moet worden geregistreerd bij de Service Fabric runtime in een servicehost om Service Fabric toe te staan dat er exemplaren van worden gemaakt om te worden uitgevoerd.  
 
 ## <a name="create-a-stateless-service"></a>Een stateless service maken
@@ -42,7 +42,7 @@ Maak vervolgens een stateless service project met behulp van **.net Core 2,0** m
 
 Uw oplossing bevat nu twee projecten:
 
-* *HelloWorld*. Dit is het *toepassings* project dat uw *Services*bevat. Het bevat ook het toepassings manifest waarmee de toepassing wordt beschreven, evenals een aantal Power shell-scripts die u helpen bij het implementeren van uw toepassing.
+* *HelloWorld*. Dit is het *toepassings* project dat uw *Services* bevat. Het bevat ook het toepassings manifest waarmee de toepassing wordt beschreven, evenals een aantal Power shell-scripts die u helpen bij het implementeren van uw toepassing.
 * *HelloWorldStateless*. Dit is het service project. Het bevat de stateless service-implementatie.
 
 ## <a name="implement-the-service"></a>De service implementeren
@@ -115,7 +115,7 @@ Service Fabric introduceert een nieuwe soort service die stateful is. Een statef
 
 Als u een item waarde wilt converteren van stateless naar Maxi maal beschikbaar en permanent, zelfs wanneer de service wordt verplaatst of opnieuw wordt opgestart, hebt u een stateful service nodig.
 
-In dezelfde *HelloWorld* -toepassing kunt u een nieuwe service toevoegen door met de rechter muisknop op de verwijzingen naar Services in het toepassings project te klikken en **toevoegen > nieuwe service Fabric service**te selecteren.
+In dezelfde *HelloWorld* -toepassing kunt u een nieuwe service toevoegen door met de rechter muisknop op de verwijzingen naar Services in het toepassings project te klikken en **toevoegen > nieuwe service Fabric service** te selecteren.
 
 ![Een service toevoegen aan uw Service Fabric-toepassing](media/service-fabric-reliable-services-quick-start/hello-stateful-NewService.png)
 
@@ -169,11 +169,11 @@ protected override async Task RunAsync(CancellationToken cancellationToken)
 var myDictionary = await this.StateManager.GetOrAddAsync<IReliableDictionary<string, long>>("myDictionary");
 ```
 
-[IReliableDictionary](/dotnet/api/microsoft.servicefabric.data.collections.ireliabledictionary-2?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliabledictionary_2) is een woorden lijst-implementatie die u kunt gebruiken om de status van de service op een betrouw bare manier op te slaan. Met Service Fabric en betrouw bare verzamelingen kunt u gegevens rechtstreeks in uw service opslaan zonder dat hiervoor een externe permanente opslag nodig is. Betrouw bare verzamelingen maken uw gegevens Maxi maal beschikbaar. Service Fabric dit te bereiken door meerdere *replica's* van uw service voor u te maken en te beheren. Het biedt ook een API die de complexiteit van het beheer van deze replica's en hun status overgangen opstelt.
+[IReliableDictionary](/dotnet/api/microsoft.servicefabric.data.collections.ireliabledictionary-2#microsoft_servicefabric_data_collections_ireliabledictionary_2) is een woorden lijst-implementatie die u kunt gebruiken om de status van de service op een betrouw bare manier op te slaan. Met Service Fabric en betrouw bare verzamelingen kunt u gegevens rechtstreeks in uw service opslaan zonder dat hiervoor een externe permanente opslag nodig is. Betrouw bare verzamelingen maken uw gegevens Maxi maal beschikbaar. Service Fabric dit te bereiken door meerdere *replica's* van uw service voor u te maken en te beheren. Het biedt ook een API die de complexiteit van het beheer van deze replica's en hun status overgangen opstelt.
 
 In betrouw bare verzamelingen kan elk .NET-type worden opgeslagen, inclusief uw aangepaste typen, met een aantal voor behoud:
 
-* Service Fabric uw status Maxi maal beschikbaar maakt door de status van de knoop punten te *repliceren* , en met betrouw bare verzamelingen worden uw gegevens opgeslagen op een lokale schijf op elke replica. Dit betekent dat alles dat is opgeslagen in betrouw bare verzamelingen *serialiseerbaar*moet zijn. Standaard gebruiken betrouw bare verzamelingen [Data](/dotnet/api/system.runtime.serialization.datacontractattribute?view=netcore-3.1) contract voor serialisatie, dus is het belang rijk om ervoor te zorgen dat uw typen worden [ondersteund door de Serialisatiefunctie voor het gegevens contract](/dotnet/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer) wanneer u de standaardserialisatiefunctie gebruikt.
+* Service Fabric uw status Maxi maal beschikbaar maakt door de status van de knoop punten te *repliceren* , en met betrouw bare verzamelingen worden uw gegevens opgeslagen op een lokale schijf op elke replica. Dit betekent dat alles dat is opgeslagen in betrouw bare verzamelingen *serialiseerbaar* moet zijn. Standaard gebruiken betrouw bare verzamelingen [Data](/dotnet/api/system.runtime.serialization.datacontractattribute) contract voor serialisatie, dus is het belang rijk om ervoor te zorgen dat uw typen worden [ondersteund door de Serialisatiefunctie voor het gegevens contract](/dotnet/framework/wcf/feature-details/types-supported-by-the-data-contract-serializer) wanneer u de standaardserialisatiefunctie gebruikt.
 * Objecten worden gerepliceerd voor hoge Beschik baarheid wanneer u trans acties doorvoert voor betrouw bare verzamelingen. Objecten die zijn opgeslagen in betrouw bare verzamelingen, worden in het lokale geheugen in uw service bewaard. Dit betekent dat u een lokale verwijzing naar het object hebt.
   
    Het is belang rijk dat u geen lokale exemplaren van deze objecten mutate zonder een update-bewerking uit te voeren op de betrouw bare verzameling in een trans actie. Dit komt doordat wijzigingen in lokale exemplaren van objecten niet automatisch worden gerepliceerd. U moet het object opnieuw toevoegen aan de woorden lijst of een van de *Update* methoden gebruiken in de woorden lijst.
@@ -198,7 +198,7 @@ Voor betrouw bare verzamelingen gelden veel dezelfde bewerkingen `System.Collect
 Betrouw bare verzamelings bewerkingen zijn *Transactioneel*, zodat u de status consistent kunt blijven tussen meerdere betrouw bare verzamelingen en bewerkingen. U kunt bijvoorbeeld een werk item uit een betrouw bare wachtrij verwijderen, een bewerking hierop uitvoeren en het resultaat opslaan in een betrouw bare woorden lijst, allemaal binnen één trans actie. Dit wordt behandeld als een Atomic-bewerking en garandeert dat de gehele bewerking slaagt of dat de hele bewerking wordt teruggedraaid. Als er een fout optreedt nadat u het item in de wachtrij hebt geplaatst, maar voordat u het resultaat opslaat, wordt de hele trans actie teruggedraaid en blijft het item in de wachtrij voor verwerking.
 
 ## <a name="run-the-application"></a>De toepassing uitvoeren
-We gaan nu terug naar de toepassing *HelloWorld* . U kunt nu uw services bouwen en implementeren. Wanneer u op **F5**drukt, wordt uw toepassing op uw lokale cluster gebouwd en geïmplementeerd.
+We gaan nu terug naar de toepassing *HelloWorld* . U kunt nu uw services bouwen en implementeren. Wanneer u op **F5** drukt, wordt uw toepassing op uw lokale cluster gebouwd en geïmplementeerd.
 
 Nadat de services zijn gestart, kunt u de gegenereerde gebeurtenissen van het Event Tracing for Windows (ETW) bekijken in een venster met **diagnostische gebeurtenissen** . Houd er rekening mee dat de weer gegeven gebeurtenissen afkomstig zijn van zowel de stateless service als de stateful service in de toepassing. U kunt de stroom onderbreken door te klikken op de knop **pause** . U kunt vervolgens de details van een bericht bekijken door dat bericht uit te breiden.
 

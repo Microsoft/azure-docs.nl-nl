@@ -7,19 +7,19 @@ ms.topic: how-to
 ms.date: 10/15/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: bbb959b6b1d71c81f7b920b3962f693716041e16
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d1d433c7db36a3f4fe5f528b7fbd17549bc08e4a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96016230"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791490"
 ---
 # <a name="expand-virtual-hard-disks-on-a-linux-vm-with-the-azure-cli"></a>Virtuele harde schijven op een Linux VM uitbreiden met de Azure CLI
 
 In dit artikel wordt beschreven hoe u beheerde schijven uitbreidt voor een virtuele Linux-machine (VM) met de Azure CLI. U kunt [gegevens schijven toevoegen](add-disk.md) om te voorzien in extra opslag ruimte, en u kunt ook een bestaande gegevens schijf uitbreiden. De standaard grootte van de virtuele harde schijf voor het besturings systeem (OS) is doorgaans 30 GB op een virtuele Linux-machine in Azure. 
 
 > [!WARNING]
-> Zorg er altijd voor dat het bestands systeem in orde is, dat het tabel type van de schijf partitie de nieuwe grootte ondersteunt en controleer of er een back-up van uw gegevens wordt gemaakt voordat u de bewerkingen voor het wijzigen van de schijf uitvoert. Zie [back-ups maken van virtuele Linux-machines in azure](tutorial-backup-vms.md)voor meer informatie. 
+> Zorg er altijd voor dat het bestands systeem in orde is, dat het tabel type van de schijf partitie de nieuwe grootte ondersteunt en controleer of er een back-up van uw gegevens wordt gemaakt voordat u de bewerkingen voor het wijzigen van de schijf uitvoert. Zie [Azure backup Quick](../../backup/quick-backup-vm-portal.md)start voor meer informatie. 
 
 ## <a name="expand-an-azure-managed-disk"></a>Een Azure Managed Disk uitbreiden
 Zorg ervoor dat u de nieuwste [Azure cli](/cli/azure/install-az-cli2) hebt geïnstalleerd en bent aangemeld bij een Azure-account met behulp van [AZ login](/cli/azure/reference-index#az-login).

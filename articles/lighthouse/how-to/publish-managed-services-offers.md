@@ -3,12 +3,12 @@ title: Een beheerde service aanbieding naar Azure Marketplace publiceren
 description: Meer informatie over het publiceren van een Managed Service-aanbod waarmee klanten naar Azure Lighthouse worden geleid.
 ms.date: 12/17/2020
 ms.topic: how-to
-ms.openlocfilehash: a003e671631e9f23654eb524c7c2d937339a9588
-ms.sourcegitcommit: d79513b2589a62c52bddd9c7bd0b4d6498805dbe
+ms.openlocfilehash: f6bd504185fab3fc698019a3eb8c530ba93f8abc
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/18/2020
-ms.locfileid: "97673151"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791370"
 ---
 # <a name="publish-a-managed-service-offer-to-azure-marketplace"></a>Een beheerde service aanbieding naar Azure Marketplace publiceren
 
@@ -18,7 +18,7 @@ In dit artikel leert u hoe u een aanbieding voor open bare of privé beheerde se
 
 U hebt een geldig [account in het partner centrum](../../marketplace/partner-center-portal/create-account.md) nodig om aanbiedingen te maken en te publiceren. Als u nog geen account hebt, wordt u door het [aanmeldings proces](https://aka.ms/joinmarketplace) geleid door de stappen voor het maken van een account in partner centrum en het inschrijven van het commerciële Marketplace-programma.
 
-Op basis van de [certificerings vereisten voor het beheerde service aanbod](/legal/marketplace/certification-policies#7004-business-requirements)moet u beschikken over een [Silver-of Gold-competentie voor het Cloud platform](/partner-center/learn-about-competencies) of van een Azure-expert- [MSP](https://partner.microsoft.com/membership/azure-expert-msp) om een beheerd service aanbod te kunnen publiceren. Telkens wanneer een klant uw aanbieding implementeert, moet u ook [een doel voor de lead invoeren die een record in uw CRM-systeem maakt](../../marketplace/partner-center-portal/create-new-managed-service-offer.md#customer-leads) .
+Op basis van de [certificerings vereisten voor het beheerde service aanbod](/legal/marketplace/certification-policies#7004-business-requirements)moet u beschikken over een [Silver-of Gold-competentie voor het Cloud platform](/partner-center/learn-about-competencies) of van een Azure-expert- [MSP](https://partner.microsoft.com/membership/azure-expert-msp) om een beheerd service aanbod te kunnen publiceren. Telkens wanneer een klant uw aanbieding implementeert, moet u ook [een doel voor de lead invoeren die een record in uw CRM-systeem maakt](../../marketplace/plan-managed-service-offer.md#customer-leads) .
 
 Uw Microsoft Partner Network-ID (MPN) wordt [automatisch gekoppeld](../../cost-management-billing/manage/link-partner-id.md) aan de aanbiedingen die u publiceert voor het bijhouden van invloed op de klant afspraken.
 
@@ -38,7 +38,7 @@ Aan de hand van de volgende tabel kunt u bepalen of u klanten wilt vrijgeven doo
 
 ## <a name="create-your-offer"></a>Uw aanbieding maken
 
-Zie [een beheerde service aanbieding maken](../../marketplace/partner-center-portal/create-new-managed-service-offer.md)voor gedetailleerde instructies voor het maken van uw aanbieding, inclusief alle informatie en assets die u moet opgeven.
+Zie [een beheerde service aanbieding maken](../../marketplace/plan-managed-service-offer.md)voor gedetailleerde instructies voor het maken van uw aanbieding, inclusief alle informatie en assets die u moet opgeven.
 
 Zie de [publicatie handleiding voor Azure Marketplace en AppSource](../../marketplace/overview.md)voor meer informatie over het algemene publicatie proces. U moet ook het [beleid voor commerciële Marketplace-certificerings](/legal/marketplace/certification-policies)instanties, met name de sectie [Managed Services](/legal/marketplace/certification-policies#700-managed-services) , bekijken.
 
@@ -49,7 +49,7 @@ Zodra een klant uw aanbieding heeft toegevoegd, kunnen ze een of meer abonnement
 
 ## <a name="publish-your-offer"></a>Uw aanbieding publiceren
 
-Zodra u alle secties hebt voltooid, is de volgende stap het publiceren van de aanbieding op Azure Marketplace. Selecteer de knop **publiceren** om het proces van het live-aanbod te initiëren. Meer informatie over dit proces vindt u [hier](../../marketplace/partner-center-portal/create-new-managed-service-offer.md#publish). 
+Zodra u alle secties hebt voltooid, is de volgende stap het publiceren van de aanbieding op Azure Marketplace. Selecteer de knop **publiceren** om het proces van het live-aanbod te initiëren. Meer informatie over dit proces vindt u [hier](../../marketplace/plan-managed-service-offer.md). 
 
 U kunt op elk gewenst moment [een bijgewerkte versie van uw aanbieding publiceren](../..//marketplace/partner-center-portal/update-existing-offer.md) . U kunt bijvoorbeeld een nieuwe functie definitie toevoegen aan een eerder gepubliceerde aanbieding. Als u dit doet, krijgen klanten die de aanbieding al hebben toegevoegd, een pictogram op de pagina [**service providers**](view-manage-service-providers.md) in de Azure Portal waarmee ze kunnen zien dat er een update beschikbaar is. Elke klant kan [de wijzigingen controleren](view-manage-service-providers.md#update-service-provider-offers) en besluiten of ze willen bijwerken naar de nieuwe versie. 
 

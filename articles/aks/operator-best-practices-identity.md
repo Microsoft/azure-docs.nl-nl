@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 07/07/2020
 ms.author: jpalma
 author: palma21
-ms.openlocfilehash: a63a756448f9c7202c79c3b4625fc99d4a90dc52
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 8e0c7324f5b73b3a2ac5e5fd6fa256202035077a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96014054"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790966"
 ---
 # <a name="best-practices-for-authentication-and-authorization-in-azure-kubernetes-service-aks"></a>Aanbevolen procedures voor verificatie en autorisatie in azure Kubernetes service (AKS)
 
@@ -98,39 +98,42 @@ Zie toegang tot het [cluster configuratie bestand beperken](control-kubeconfig-a
 2. Toegang tot de Kubernetes-API. Dit toegangs niveau wordt bepaald door [KUBERNETES RBAC](#use-kubernetes-role-based-access-control-kubernetes-rbac) (traditioneel) of door Azure RBAC te integreren met AKS voor Kubernetes-autorisatie.
 Zie [Azure RBAC gebruiken voor Kubernetes-autorisatie](manage-azure-rbac.md)voor meer informatie over het nauw keurig toekennen van machtigingen aan de KUBERNETES-API met behulp van Azure RBAC.
 
-## <a name="use-pod-identities"></a>Pod-identiteiten gebruiken
+## <a name="use-pod-managed-identities"></a>Door Pod beheerde identiteiten gebruiken
 
 **Richt lijnen voor best practices** : gebruik geen vaste referenties binnen de peulen of container installatie kopieën, omdat deze risico lopen op bloot stelling of misbruik. Gebruik in plaats daarvan pod-identiteiten om automatisch toegang aan te vragen met behulp van een centrale Azure AD-identiteits oplossing. Pod-identiteiten zijn alleen bedoeld voor gebruik met Linux-en container installatie kopieën.
 
+> [!NOTE]
+> Ondersteuning voor pod-beheerde identiteiten voor Windows-containers is binnenkort beschikbaar.
+
 Als er voor het eerst toegang nodig is tot andere Azure-Services, zoals Cosmos DB, Key Vault of Blob Storage, moet de pod toegangs referenties hebben. Deze toegangs referenties kunnen worden gedefinieerd met de container installatie kopie of worden geïnjecteerd als een Kubernetes-geheim, maar moeten hand matig worden gemaakt en toegewezen. De referenties worden vaak opnieuw gebruikt en worden niet regel matig geroteerd.
 
-Met beheerde identiteiten voor Azure-resources (momenteel geïmplementeerd als een gekoppeld AKS open source-project) kunt u automatisch toegang aanvragen tot services via Azure AD. U hoeft niet hand matig referenties voor het eerst te definiëren, in plaats daarvan een toegangs token in realtime aan te vragen en deze alleen te gebruiken voor toegang tot de toegewezen services. In AKS worden twee onderdelen geïmplementeerd door de cluster operator, zodat de beheerde identiteiten kunnen worden gebruikt:
+Door Pod beheerde identiteiten voor Azure-resources kunt u automatisch toegang vragen tot services via Azure AD. Pod-beheerde identiteiten zijn nu beschikbaar als preview-versie voor de Azure Kubernetes-service. Raadpleeg de documentatie voor het [gebruik van Azure Active Directory pod-beheerde identiteiten in de Azure Kubernetes-service (preview)]( https://docs.microsoft.com/azure/aks/use-azure-ad-pod-identity) om aan de slag te gaan. Met Pod-beheerde identiteiten kunt u niet hand matig referenties voor het eerst definiëren. in plaats daarvan wordt een toegangs token in realtime aangevraagd en kan het worden gebruikt voor toegang tot de toegewezen services. In AKS zijn er twee onderdelen waarmee de bewerkingen kunnen worden uitgevoerd voor het gebruik van de beheerde identiteiten:
 
 * **De node management Identity (NMI)-server** is een pod die als daemonset wordt uitgevoerd op elk knoop punt in het AKS-cluster. De NMI-server luistert naar pod-aanvragen voor Azure-Services.
-* **De Managed Identity controller (MIC)** is een centrale pod met machtigingen voor het opvragen van de KUBERNETES-API-server en voor het controleren van een Azure Identity-toewijzing die overeenkomt met een pod.
+* **De Azure-resource provider** voert een query uit op de Kubernetes API-server en controleert op een Azure Identity-toewijzing die overeenkomt met een pod.
 
-Wanneer een Peul toegang tot een Azure-service vraagt, worden de netwerk regels het verkeer omgeleid naar de NMI-server (node management Identity). De NMI-server identificeert de peulen die toegang aanvragen tot Azure-Services op basis van hun externe adres en query's uitvoeren op de beheerde identiteits controller (MIC). De microfoon controleert op Azure Identity-toewijzingen in het AKS-cluster en de NMI-server vraagt vervolgens een toegangs token van Azure Active Directory (AD) op op basis van de identiteits toewijzing van het pod. Azure AD biedt toegang tot de NMI-server, die wordt geretourneerd aan de pod. Dit toegangs token kan door de pod worden gebruikt om toegang tot services in azure te vragen.
+Wanneer een Peul toegang tot een Azure-service vraagt, worden de netwerk regels het verkeer omgeleid naar de NMI-server (node management Identity). De NMI-server identificeert de peulen die toegang aanvragen tot Azure-Services op basis van hun externe adres en query's uitvoeren op de Azure-resource provider. De Azure resource-provider controleert op Azure Identity-toewijzingen in het AKS-cluster en de NMI-server vraagt vervolgens een toegangs token van Azure Active Directory (AD) op op basis van de identiteits toewijzing van pod. Azure AD biedt toegang tot de NMI-server, die wordt geretourneerd aan de pod. Dit toegangs token kan door de pod worden gebruikt om toegang tot services in azure te vragen.
 
 In het volgende voor beeld maakt een ontwikkelaar een pod die gebruikmaakt van een beheerde identiteit om toegang aan te vragen bij Azure SQL Database:
 
 ![Met Pod-identiteiten kan een pod automatisch toegang tot andere services aanvragen](media/operator-best-practices-identity/pod-identities.png)
 
 1. De cluster operator maakt eerst een service account dat kan worden gebruikt voor het toewijzen van identiteiten wanneer per peul toegang tot Services wordt aangevraagd.
-1. De NMI-server en-microfoon worden geïmplementeerd voor het door sturen van pod-aanvragen voor toegangs tokens naar Azure AD.
+1. De NMI-server wordt geïmplementeerd voor het door sturen van pod-aanvragen, samen met de Azure-resource provider, voor toegangs tokens voor Azure AD.
 1. Een ontwikkelaar implementeert een pod met een beheerde identiteit die een toegangs token aanvraagt via de NMI-server.
 1. Het token wordt geretourneerd naar de Pod en wordt gebruikt voor toegang tot Azure SQL Database
 
 > [!NOTE]
-> Beheerde pod-identiteiten zijn een open-source project en worden niet ondersteund door de technische ondersteuning van Azure.
+> Pod-beheerde identiteiten bevindt zich momenteel in de preview-status.
 
-Zie [Azure Active Directory identiteiten voor Kubernetes-toepassingen voor][aad-pod-identity]het gebruik van pod-identiteiten.
+Zie [Azure Active Directory pod-Managed Identities gebruiken in azure Kubernetes service (preview)]( https://docs.microsoft.com/azure/aks/use-azure-ad-pod-identity)voor het gebruik van pod-beheerde identiteiten.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 Dit artikel Best practices is gericht op verificatie en autorisatie voor uw cluster en bronnen. Raadpleeg de volgende artikelen voor meer informatie over het implementeren van een aantal van deze aanbevolen procedures:
 
 * [Azure Active Directory integreren met AKS][aks-aad]
-* [Beheerde identiteiten gebruiken voor Azure-resources met AKS][aad-pod-identity]
+* [Azure Active Directory door Pod beheerde identiteiten gebruiken in azure Kubernetes service (preview)]( https://docs.microsoft.com/azure/aks/use-azure-ad-pod-identity)
 
 Zie voor meer informatie over cluster bewerkingen in AKS de volgende aanbevolen procedures:
 

@@ -9,12 +9,12 @@ ms.subservice: forms-recognizer
 ms.topic: how-to
 ms.date: 04/14/2020
 ms.author: pafarley
-ms.openlocfilehash: 985f9e741a1491a812c1d2b20de96381f8af3fa4
-ms.sourcegitcommit: dfc4e6b57b2cb87dbcce5562945678e76d3ac7b6
+ms.openlocfilehash: 084ca039e7f388a11e15b29c579606c6ed3086db
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/12/2020
-ms.locfileid: "97359843"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790424"
 ---
 # <a name="deploy-the-sample-labeling-tool"></a>Het voorbeeldhulpprogramma voor labelen implementeren
 
@@ -101,7 +101,7 @@ Volg deze stappen om een nieuwe resource te maken met behulp van de Azure Portal
 > Wanneer u uw web-app maakt, kunt u ook autorisatie/verificatie configureren. Dit is niet nodig om aan de slag te gaan. 
 
 > [!IMPORTANT]
-> Mogelijk moet u TLS inschakelen voor uw web-app om het adres weer te geven `https` . Volg de instructies in [een TLS-eind punt inschakelen](https://docs.microsoft.com/azure/container-instances/container-instances-container-group-ssl) om een zijspan wagen in te stellen dan TLS/SSL biedt voor uw web-app.
+> Mogelijk moet u TLS inschakelen voor uw web-app om het adres weer te geven `https` . Volg de instructies in [een TLS-eind punt inschakelen](../../container-instances/container-instances-container-group-ssl.md) om een zijspan wagen in te stellen dan TLS/SSL biedt voor uw web-app.
 
 ### <a name="azure-cli"></a>Azure CLI
 

@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/02/2020
-ms.openlocfilehash: b6fcc294c2b8c131d9a4a058c653ae1f64652ccf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 31885eba16d59e2e48a08f84c56271b84e6c565f
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91324855"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790915"
 ---
 # <a name="test-your-luis-app-in-the-luis-portal"></a>Uw LUIS-app testen in de LUIS-Portal
 
@@ -40,7 +40,7 @@ De test utterance mag niet exact hetzelfde zijn als een voor beeld van een uitin
     > [!div class="mx-imgBorder"]
     > ![App-pagina voor Train &-test](./media/luis-how-to-interactive-test/test.png)
 
-1. Voer een utterance in het tekstvak in en selecteer ENTER. U kunt net zoveel test uitingen als u wilt in de **test**typen, maar slechts één utterance tegelijk.
+1. Voer een utterance in het tekstvak in en selecteer ENTER. U kunt net zoveel test uitingen als u wilt in de **test** typen, maar slechts één utterance tegelijk.
 
 1. De utterance, de belangrijkste intentie en de score worden toegevoegd aan de lijst met uitingen onder het tekstvak.
 
@@ -63,7 +63,7 @@ U kunt de details van het test resultaat bekijken in het deel venster **inspecte
 
 ## <a name="add-to-example-utterances"></a>Toevoegen aan voor beeld uitingen
 
-In het deel venster inspectie kunt u de test utterance toevoegen aan een intentie door **toevoegen aan voor beeld uitingen**te selecteren.
+In het deel venster inspectie kunt u de test utterance toevoegen aan een intentie door **toevoegen aan voor beeld uitingen** te selecteren.
 
 ## <a name="disable-required-features"></a>Vereiste onderdelen uitschakelen
 
@@ -103,7 +103,7 @@ U kunt de actieve versie van uw app testen met de gepubliceerde versie van het [
 > ![Vergelijken met gepubliceerde](./media/luis-how-to-interactive-test/inspect-panel-compare.png)
 
 ## <a name="view-endpoint-json-in-test-panel"></a>JSON van eind punt weer geven in het test paneel
-U kunt de eindpunt-JSON weer geven die is geretourneerd voor de vergelijking door de **weer gave JSON**weer geven te selecteren.
+U kunt de eindpunt-JSON weer geven die is geretourneerd voor de vergelijking door de **weer gave JSON** weer geven te selecteren.
 
 > [!div class="mx-imgBorder"]
 > ![Gepubliceerd JSON-antwoord](./media/luis-how-to-interactive-test/inspect-panel-compare-json.png)
@@ -119,7 +119,7 @@ Als u meerdere LUIS-eind punten hebt, gebruikt u de koppeling **extra instelling
 
 
 ## <a name="batch-testing"></a>Batchgewijs testen
-Zie [concepten](luis-concept-batch-test.md) voor batch tests en leer [hoe u](luis-how-to-batch-test.md) een batch-uitingen kunt testen.
+Zie [concepten](./luis-how-to-batch-test.md) voor batch tests en leer [hoe u](luis-how-to-batch-test.md) een batch-uitingen kunt testen.
 
 ## <a name="next-steps"></a>Volgende stappen
 

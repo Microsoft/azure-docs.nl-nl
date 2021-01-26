@@ -3,12 +3,12 @@ title: Azure DevTest Labs gebruik in meerdere Labs en abonnementen
 description: Meer informatie over het rapporteren van Azure DevTest Labs gebruik over meerdere Labs en abonnementen.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 9640dc3fd74095a737f382994201dc5610af921a
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: d789b9849ec798a396e99420649792937422470f
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92152207"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789935"
 ---
 # <a name="report-azure-devtest-labs-usage-across-multiple-labs-and-subscriptions"></a>Rapport Azure DevTest Labs gebruik in meerdere Labs en abonnementen
 
@@ -82,5 +82,5 @@ Zodra het systeem is ingesteld en gegevens naar de lange termijn opslag worden v
     Selecteren gebruikers hoge prestaties (meer dure) VM-grootten?
 -   Welke Marketplace-installatie kopieën worden gebruikt?
 
-    Aangepaste installatie kopieën zijn de meest voorkomende VM-basis, moet een gemeen schappelijke installatie kopie archief worden gemaakt, zoals de [Galerie met gedeelde afbeeldingen](../virtual-machines/windows/shared-image-galleries.md) of [installatie kopie-Factory](image-factory-create.md).
+    Aangepaste installatie kopieën zijn de meest voorkomende VM-basis, moet een gemeen schappelijke installatie kopie archief worden gemaakt, zoals de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md) of [installatie kopie-Factory](image-factory-create.md).
 -   Welke aangepaste installatie kopieën worden er gebruikt of worden niet gebruikt?

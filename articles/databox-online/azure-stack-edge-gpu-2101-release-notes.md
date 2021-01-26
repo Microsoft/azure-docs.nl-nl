@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: article
 ms.date: 01/19/2021
 ms.author: alkohli
-ms.openlocfilehash: ce7568f346773f6b50f5601462bba479b457edce
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: d0b7f871b2ea62c810a6d20f6e20a5e8d3f6306e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98763437"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791910"
 ---
 # <a name="azure-stack-edge-2101-release-notes"></a>Release opmerkingen bij Azure Stack Edge 2101
 
@@ -59,7 +59,7 @@ In de volgende tabel vindt u een overzicht van de bekende problemen die in de vo
 
 | Nee. | Functie | Probleem | Tijdelijke oplossing/opmerkingen |
 | --- | --- | --- | --- |
-| **1.** |Azure Stack Edge Pro + Azure SQL | Voor het maken van SQL database is beheerders toegang vereist.   |Voer de volgende stappen uit in plaats van stap 1-2 in [https://docs.microsoft.com/azure/iot-edge/tutorial-store-data-sql-server#create-the-sql-database](https://docs.microsoft.com/azure/iot-edge/tutorial-store-data-sql-server#create-the-sql-database) . <ul><li>Schakel in de lokale gebruikers interface van uw apparaat Compute interface in. Selecteer **reken > poort # > inschakelen voor compute > van toepassing.**</li><li>Down load `sqlcmd` op de client computer van https://docs.microsoft.com/sql/tools/sqlcmd-utility </li><li>Maak verbinding met het IP-adres van de compute-interface (de poort die is ingeschakeld), waarbij een ', 1401 ' aan het einde van het adres wordt toegevoegd.</li><li>De laatste opdracht ziet er als volgt uit: sqlcmd-S {Interface IP}, 1401-U SA-P "Strong! Passw0rd".</li>Hierna moeten stap 3-4 van de huidige documentatie identiek zijn. </li></ul> |
+| **1.** |Azure Stack Edge Pro + Azure SQL | Voor het maken van SQL database is beheerders toegang vereist.   |Voer de volgende stappen uit in plaats van stap 1-2 in [https://docs.microsoft.com/azure/iot-edge/tutorial-store-data-sql-server#create-the-sql-database](../iot-edge/tutorial-store-data-sql-server.md#create-the-sql-database) . <ul><li>Schakel in de lokale gebruikers interface van uw apparaat Compute interface in. Selecteer **reken > poort # > inschakelen voor compute > van toepassing.**</li><li>Down load `sqlcmd` op de client computer van https://docs.microsoft.com/sql/tools/sqlcmd-utility </li><li>Maak verbinding met het IP-adres van de compute-interface (de poort die is ingeschakeld), waarbij een ', 1401 ' aan het einde van het adres wordt toegevoegd.</li><li>De laatste opdracht ziet er als volgt uit: sqlcmd-S {Interface IP}, 1401-U SA-P "Strong! Passw0rd".</li>Hierna moeten stap 3-4 van de huidige documentatie identiek zijn. </li></ul> |
 | **2.** |Vernieuwen| Incrementele wijzigingen in blobs die zijn hersteld via **vernieuwen** , worden niet ondersteund |Voor BLOB-eind punten kunnen gedeeltelijke updates van blobs na een vernieuwing ertoe leiden dat de updates niet worden geüpload naar de Cloud. Bijvoorbeeld volg orde van acties zoals:<ul><li>Maak een BLOB in de Cloud. Of verwijder een eerder geüploade blob van het apparaat.</li><li>Vernieuw de blob van de Cloud naar het apparaat met behulp van de functie voor vernieuwen.</li><li>Werk slechts een deel van de BLOB bij met Azure SDK REST Api's.</li></ul>Deze acties kunnen ertoe leiden dat de bijgewerkte secties van de BLOB niet worden bijgewerkt in de Cloud. <br>**Tijdelijke oplossing**: gebruik hulpprogram ma's zoals Robocopy of een gewone bestands kopie via Verkenner of opdracht regel om de hele blobs te vervangen.|
 |**3.**|Beperking|Als er tijdens het beperken een nieuwe schrijf bewerking naar het apparaat niet is toegestaan, mislukt de schrijf bewerkingen door de NFS-client met de fout ' permission denied '.| De volgende fout wordt weer gegeven:<br>`hcsuser@ubuntu-vm:~/nfstest$ mkdir test`<br>mkdir: kan directory ' test ' niet maken: de machtiging is geweigerd|
 |**4.**|Opname Blob Storage|Wanneer u AzCopy versie 10 gebruikt voor inslikken van Blob-opslag, voert u AzCopy uit met het volgende argument: `Azcopy <other arguments> --cap-mbps 2000`| Als deze limieten niet worden verstrekt voor AzCopy, kan er een groot aantal aanvragen naar het apparaat worden verzonden, wat leidt tot problemen met de service.|

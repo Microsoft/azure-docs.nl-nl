@@ -15,16 +15,14 @@ ms.workload: infrastructure
 ms.date: 03/13/2018
 ms.author: kumud
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 6ec552ea525abe6a84bb5e34e00ad317cae038bf
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d93efaedbb0596382b0601a17098311e075618b7
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89077837"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791977"
 ---
 # <a name="connect-virtual-networks-with-virtual-network-peering-using-powershell"></a>Virtuele netwerken verbinden met virtuele netwerk peering met behulp van Power shell
-
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 U kunt virtuele netwerken met elkaar verbinden met virtueel-netwerk peering. Wanneer virtuele netwerken als peers zijn gekoppeld, kunnen resources in beide virtuele netwerken met elkaar communiceren met dezelfde latentie en bandbreedte als wanneer de resources zich in hetzelfde virtuele netwerk zouden bevinden. In dit artikel leert u het volgende:
 
@@ -103,7 +101,7 @@ Add-AzVirtualNetworkPeering `
   -RemoteVirtualNetworkId $virtualNetwork2.Id
 ```
 
-In de uitvoer die wordt geretourneerd nadat de vorige opdracht is uitgevoerd, ziet u dat de **PeeringState** is *gestart*. De peering blijft in de *geïnitieerde* status totdat u de peering van *myVirtualNetwork2* naar *myVirtualNetwork1*maakt. Maak een peering van *myVirtualNetwork2* naar *myVirtualNetwork1*.
+In de uitvoer die wordt geretourneerd nadat de vorige opdracht is uitgevoerd, ziet u dat de **PeeringState** is *gestart*. De peering blijft in de *geïnitieerde* status totdat u de peering van *myVirtualNetwork2* naar *myVirtualNetwork1* maakt. Maak een peering van *myVirtualNetwork2* naar *myVirtualNetwork1*.
 
 ```azurepowershell-interactive
 Add-AzVirtualNetworkPeering `
@@ -172,7 +170,7 @@ Gebruik de volgende opdracht om een sessie met een extern bureau blad te maken m
 mstsc /v:<publicIpAddress>
 ```
 
-Er wordt een Remote Desktop Protocol-bestand (. RDP) gemaakt, gedownload naar uw computer en geopend. Voer de gebruikers naam en het wacht woord in (mogelijk moet u **meer opties**selecteren, vervolgens **een ander account gebruiken**om de referenties op te geven die u hebt ingevoerd tijdens het maken van de virtuele machine) en klik vervolgens op **OK**. Er wordt mogelijk een certificaatwaarschuwing weergegeven tijdens het aanmelden. Klik op **Ja** of **Doorgaan** om door te gaan met de verbinding.
+Er wordt een Remote Desktop Protocol-bestand (. RDP) gemaakt, gedownload naar uw computer en geopend. Voer de gebruikers naam en het wacht woord in (mogelijk moet u **meer opties** selecteren, vervolgens **een ander account gebruiken** om de referenties op te geven die u hebt ingevoerd tijdens het maken van de virtuele machine) en klik vervolgens op **OK**. Er wordt mogelijk een certificaatwaarschuwing weergegeven tijdens het aanmelden. Klik op **Ja** of **Doorgaan** om door te gaan met de verbinding.
 
 Schakel op de *myVm1* -VM de Internet Control Message Protocol (ICMP) in via de Windows Firewall zodat u in een latere stap deze VM kunt pingen vanuit *myVm2* met behulp van Power shell:
 

@@ -6,12 +6,12 @@ ms.suite: integration
 ms.reviewer: estfan, logicappspm
 ms.topic: conceptual
 ms.date: 12/07/2020
-ms.openlocfilehash: 7d43c128f0f587a32cc4b8673727579043f268eb
-ms.sourcegitcommit: 8c3a656f82aa6f9c2792a27b02bbaa634786f42d
+ms.openlocfilehash: ed1fe2885b1be28a03251bcfcecd08bdbd35adcf
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97629592"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790069"
 ---
 # <a name="set-up-logging-to-monitor-logic-apps-in-azure-security-center"></a>Logboek registratie instellen voor het bewaken van Logic apps in Azure Security Center
 
@@ -24,7 +24,7 @@ Wanneer u uw Logic Apps-resources in [Microsoft Azure Security Center](../securi
 
 * Een Azure-abonnement. Als u nog geen abonnement hebt, [maakt u een gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
 * Bestaande logische apps waarvoor [Diagnostische logboek registratie is ingeschakeld](#enable-diagnostic-logging).
-* Een Log Analytics-werk ruimte die is vereist om logboek registratie in te scha kelen voor uw logische app. Als u geen werk ruimte hebt, maakt u eerst [uw werk ruimte](/azure/azure-monitor/learn/quick-create-workspace).
+* Een Log Analytics-werk ruimte die is vereist om logboek registratie in te scha kelen voor uw logische app. Als u geen werk ruimte hebt, maakt u eerst [uw werk ruimte](../azure-monitor/learn/quick-create-workspace.md).
 
 ## <a name="enable-diagnostic-logging"></a>registratie in het diagnoselogboek inschakelen
 
@@ -37,7 +37,7 @@ Voordat u de status van de resource status voor uw Logic apps kunt bekijken, moe
 
 Als u niet zeker weet of uw Logic apps diagnostische logboek registratie hebben ingeschakeld, kunt u Security Center inchecken:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Voer in de zoek balk **Security Center** in en selecteer deze.
 1. Selecteer in het menu Security Center dashboard, onder **Algemeen**, de optie **aanbevelingen**.
 1. Zoek en selecteer in de tabel met beveiligings suggesties de optie **controle inschakelen en logboek registratie** &gt; **van Diagnostische logboeken in Logic apps moet zijn ingeschakeld** in de tabel met beveiligings controles.
@@ -47,7 +47,7 @@ Als u niet zeker weet of uw Logic apps diagnostische logboek registratie hebben 
 
 Nadat u [Diagnostische logboek registratie hebt ingeschakeld](#enable-diagnostic-logging), kunt u de integriteits status van uw Logic apps bekijken in Security Center.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Voer in de zoek balk **Security Center** in en selecteer deze.
 1. Selecteer in het menu Security Center dashboard onder **Algemeen** de optie **inventarisatie**.
 1. Filter op de pagina Inventariseer uw assets lijst om alleen Logic Apps resources weer te geven. Selecteer in het menu pagina de optie **resource typen** &gt; **Logic apps**.

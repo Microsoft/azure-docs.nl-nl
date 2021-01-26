@@ -4,12 +4,12 @@ description: De maximale hoeveelheid Beschik baarheid en consistentie bieden met
 ms.topic: article
 ms.date: 01/25/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5ffa2df992eb0c22aafbbb7436250405998d8073
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 884fe878b9524dcf8d97d1123dce35e02af34a24
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762804"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790746"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Beschikbaarheid en consistentie in Event Hubs
 
@@ -26,7 +26,7 @@ Brewer van theorema definieert consistentie en beschik baarheid als volgt:
 > [!NOTE]
 > De term **partitie** wordt gebruikt in verschillende contexten in Event hubs en Cap theorema. 
 > - Met **Event hubs** worden gebeurtenissen in een of meer partities ingedeeld. Partities zijn onafhankelijk en bevatten hun eigen reeks gegevens, maar ze groeien vaak met verschillende snelheden. Zie [Partities](event-hubs-features.md#partitions) voor meer informatie.
-> - In **Cap theorema** is een partitie een communicatie-afbreek binnen tussen knoop punten in een gedistribueerd systeem.
+> - In **Cap theorema** is een partitie een communicatie-afbreeking tussen knoop punten in een gedistribueerd systeem.
 
 ## <a name="partition-tolerance"></a>Partitie tolerantie
 Event Hubs is gebaseerd op een gepartitioneerd gegevens model. U kunt het aantal partities in uw Event Hub configureren tijdens de installatie, maar u kunt deze waarde later niet wijzigen. Omdat u partities moet gebruiken met Event Hubs, dient u een beslissing te nemen over de beschik baarheid en consistentie voor uw toepassing.

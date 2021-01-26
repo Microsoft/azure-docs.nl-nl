@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: references_regions
-ms.openlocfilehash: d858474eca34243a007d0d0ac1e023a4a0fab8ec
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 53be2f6795593bf44cafde149242b13ed4fdfe50
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98572337"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790474"
 ---
 # <a name="text-to-speech-rest-api"></a>REST API voor tekst-naar-spraak
 
@@ -60,11 +60,9 @@ Voordat u deze API gebruikt, moet u het volgende weten:
 | Korea - centraal | `https://koreacentral.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - noord-centraal | `https://northcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Europa - noord | `https://northeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| Zuid-Afrika - noord | `https://southafricanorth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - zuid-centraal | `https://southcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Azië - zuidoost | `https://southeastasia.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Verenigd Koninkrijk Zuid | `https://uksouth.tts.speech.microsoft.com/cognitiveservices/voices/list` |
-| VS - west-centraal | `https://westcentralus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | Europa -west | `https://westeurope.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - west | `https://westus.tts.speech.microsoft.com/cognitiveservices/voices/list` |
 | VS - west 2 | `https://westus2.tts.speech.microsoft.com/cognitiveservices/voices/list` |
@@ -279,5 +277,5 @@ Als de HTTP-status is `200 OK` , bevat de hoofd tekst van het antwoord een audio
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Een gratis Azure-account maken](https://azure.microsoft.com/free/cognitive-services/)
-- [Asynchrone synthese voor lange-vorm audio](quickstarts/text-to-speech/async-synthesis-long-form-audio.md)
+- [Asynchrone synthese voor lange-vorm audio](./long-audio-api.md)
 - [Aan de slag met Custom Voice](how-to-custom-voice.md)

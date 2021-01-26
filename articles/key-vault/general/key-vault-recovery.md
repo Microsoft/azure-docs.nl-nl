@@ -8,12 +8,12 @@ ms.author: mbaldwin
 author: msmbaldwin
 manager: rkarlin
 ms.date: 09/30/2020
-ms.openlocfilehash: 4a6b3e4c6354c292d000a307bc25f8532aa9a096
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: a8e8e791f0dbe18322ad43364ae4ffd09b430caf
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250788"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790381"
 ---
 # <a name="azure-key-vault-recovery-management-with-soft-delete-and-purge-protection"></a>Azure Key Vault herstel beheer met zacht verwijderen en de beveiliging opschonen
 
@@ -26,10 +26,15 @@ Zie voor meer informatie over Key Vault.
 ## <a name="prerequisites"></a>Vereisten
 
 * Een Azure-abonnement - [Een gratis abonnement maken](https://azure.microsoft.com/free/dotnet)
-* [Power shell-module](https://docs.microsoft.com/powershell/azure/install-az-ps).
+* [Power shell-module](/powershell/azure/install-az-ps).
 * [Azure-CLI](/cli/azure/install-azure-cli)
 * Een sleutelkluis: u kunt er een maken met behulp van [Azure Portal](../general/quick-create-portal.md), [Azure CLI](../general/quick-create-cli.md) of [Azure PowerShell](../general/quick-create-powershell.md)
-* De gebruiker heeft de volgende machtigingen nodig (op abonnements niveau) om bewerkingen uit te voeren op voorlopig verwijderde kluizen: | Micro soft. sleutel kluis/locaties/deletedVaults/lezen | De eigenschappen van een voorlopig verwijderde sleutel kluis weer geven | | Micro soft. de sleutel kluis/locaties/deletedVaults/verwijderen/actie | Een voorlopig verwijderde sleutel kluis leegmaken |
+* De gebruiker heeft de volgende machtigingen nodig (op abonnements niveau) om bewerkingen uit te voeren op voorlopig verwijderde kluizen:
+
+  | Machtiging | Beschrijving |
+  |---|---|
+  |Micro soft. de sleutel kluis/locaties/deletedVaults/lezen|De eigenschappen van een voorlopig verwijderde sleutel kluis weer geven|
+  |Microsoft.KeyVault/locations/deletedVaults/purge/action|Een voorlopig verwijderde sleutel kluis leegmaken|
 
 
 ## <a name="what-are-soft-delete-and-purge-protection"></a>Wat is zacht verwijderen en de beveiliging opschonen
@@ -50,7 +55,7 @@ Het **opschonen** van de beveiliging is zodanig ontworpen dat het verwijderen va
 
 Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.md) voor meer informatie over voorlopig verwijderen
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/azure-portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/azure-portal)
 
 ## <a name="verify-if-soft-delete-is-enabled-on-a-key-vault-and-enable-soft-delete"></a>Controleren of de functie voor voorlopig verwijderen is ingeschakeld voor een sleutel kluis en het voorlopig verwijderen inschakelen
 
@@ -390,8 +395,8 @@ Zie [Azure Key Vault overzicht van voorlopig verwijderen](soft-delete-overview.m
 
 ## <a name="next-steps"></a>Volgende stappen
 
-- [Azure Key Vault Power shell-cmdlets](https://docs.microsoft.com/powershell/module/az.keyvault)
-- [Azure CLI-opdrachten Key Vault](https://docs.microsoft.com/cli/azure/keyvault)
+- [Azure Key Vault Power shell-cmdlets](/powershell/module/az.keyvault)
+- [Azure CLI-opdrachten Key Vault](/cli/azure/keyvault)
 - [Back-up voor Azure Key Vault](backup.md)
 - [Key Vault-logboekregistratie inschakelen](howto-logging.md)
 - [Veilige toegang tot een sleutelkluis](secure-your-key-vault.md)

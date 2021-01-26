@@ -7,12 +7,12 @@ ms.subservice: cosmosdb-sql
 ms.topic: conceptual
 ms.date: 11/04/2020
 ms.author: tisande
-ms.openlocfilehash: c78e15a0656abd510bbc241d39ffd026afddfd96
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
+ms.openlocfilehash: c687b5b18c9cf7b0920b23f49e3c7a2607e0a89f
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96353660"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791017"
 ---
 # <a name="getting-started-with-sql-queries"></a>Aan de slag met SQL-query's
 [!INCLUDE[appliesto-sql-api](includes/appliesto-sql-api.md)]
@@ -187,7 +187,7 @@ In de voor gaande voor beelden worden verschillende aspecten van de Cosmos DB qu
 
 * Azure Cosmos DB biedt alleen ondersteuning voor JSON-items. Dit betekent dat het typesysteem en expressies alleen geschikt zijn voor JSON-typen. Zie voor meer informatie de [JSON-specificatie](https://www.json.org/).  
 
-* Een Cosmos-container is een schema-gratis verzameling van JSON-items. De relaties binnen en in container items worden impliciet vastgelegd door containment, niet op basis van primaire sleutel en refererende-sleutel relaties. Deze functie is belang rijk voor de objecten die verderop in dit artikel worden besproken.
+* Een Cosmos-container is een schema-gratis verzameling van JSON-items. De relaties binnen en in container items worden impliciet vastgelegd door containment, niet op basis van primaire sleutel en refererende-sleutel relaties. Deze functie is belang rijk voor de intra-item-samen voegingen die worden beschreven in [samen voegingen in azure Cosmos DB](sql-query-join.md).
 
 ## <a name="next-steps"></a>Volgende stappen
 

@@ -4,12 +4,12 @@ description: Hierin wordt beschreven hoe Reliable Actors op Reliable Services wo
 ms.topic: conceptual
 ms.date: 3/9/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: c3bd67e0f71e20a8b5a74b4b38e5b423a14dc08d
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: e204b47b7fa9f528341507c315c926159d524e13
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96575615"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789579"
 ---
 # <a name="how-reliable-actors-use-the-service-fabric-platform"></a>Hoe Reliable Actors het Service Fabric platform gebruiken?
 In dit artikel wordt uitgelegd hoe Reliable Actors werkt op het Azure Service Fabric-platform. Reliable Actors uitgevoerd in een framework dat wordt gehost in een implementatie van een stateful reliable-service met de naam *actor service*. De actor-service bevat alle onderdelen die nodig zijn voor het beheren van de levens cyclus en het verzenden van berichten voor uw actors:
@@ -89,7 +89,7 @@ Wanneer u GUID'S/UUID en teken reeksen gebruikt, worden de waarden gehasht naar 
 ## <a name="next-steps"></a>Volgende stappen
 * [Beheer van actor status](service-fabric-reliable-actors-state-management.md)
 * [Actor-levens cyclus en garbagecollection](service-fabric-reliable-actors-lifecycle.md)
-* [Naslag documentatie voor actors-API](/dotnet/api/microsoft.servicefabric.actors?view=azure-dotnet)
+* [Naslag documentatie voor actors-API](/dotnet/api/microsoft.servicefabric.actors)
 * [.NET-voorbeeld code](https://github.com/Azure-Samples/service-fabric-dotnet-getting-started)
 * [Java-voorbeeld code](https://github.com/Azure-Samples/service-fabric-java-getting-started)
 

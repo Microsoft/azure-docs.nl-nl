@@ -4,12 +4,12 @@ description: Meer informatie over het gebruik van ASP.NET Core in stateless en s
 ms.topic: conceptual
 ms.date: 10/12/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: ba5626d477bbd6aa07d89703cc37b157f4cfd4d5
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: a125c6a1972b51f518175a4c69248119f71ada7c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576788"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791591"
 ---
 # <a name="aspnet-core-in-azure-service-fabric-reliable-services"></a>ASP.NET Core in azure Service Fabric Reliable Services
 
@@ -190,7 +190,7 @@ Een dynamische poort die door een configuratie wordt toegewezen, `Endpoint` bied
 ## <a name="kestrel-in-reliable-services"></a>Kestrel in Reliable Services
 U kunt Kestrel in Reliable Services gebruiken door het NuGet-pakket **micro soft. ServiceFabric. AspNetCore. Kestrel** te importeren. Dit pakket bevat `KestrelCommunicationListener` een implementatie van `ICommunicationListener` . `KestrelCommunicationListener` Hiermee kunt u een ASP.NET Core WebHost in een betrouw bare service maken met behulp van Kestrel als de webserver.
 
-Kestrel is een cross-platform webserver voor ASP.NET Core. In tegens telling tot HTTP.sys gebruikt Kestrel geen gecentraliseerd eindpunt beheer. In tegens telling tot HTTP.sys biedt Kestrel geen ondersteuning voor het delen van poorten tussen meerdere processen. Elk exemplaar van Kestrel moet een unieke poort gebruiken. Zie de [Implementatie Details](/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.2)voor meer informatie over Kestrel.
+Kestrel is een cross-platform webserver voor ASP.NET Core. In tegens telling tot HTTP.sys gebruikt Kestrel geen gecentraliseerd eindpunt beheer. In tegens telling tot HTTP.sys biedt Kestrel geen ondersteuning voor het delen van poorten tussen meerdere processen. Elk exemplaar van Kestrel moet een unieke poort gebruiken. Zie de [Implementatie Details](/aspnet/core/fundamentals/servers/kestrel)voor meer informatie over Kestrel.
 
 ![Kestrel diagram][4]
 

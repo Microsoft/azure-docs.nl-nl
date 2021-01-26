@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 06/18/2020
 ms.author: victorh
-ms.openlocfilehash: 2b1b68b32ccd5a4dda0b71736da4e2d1e2566b6b
-ms.sourcegitcommit: fa807e40d729bf066b9b81c76a0e8c5b1c03b536
+ms.openlocfilehash: c65f32cc3ce56ddf3fd235de8c002528e7a3cebd
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/11/2020
-ms.locfileid: "97348013"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791439"
 ---
 # <a name="configure-azure-firewall-application-rules-with-sql-fqdns"></a>Azure Firewall-toepassingsregels met SQL-FQDN's configureren
 
@@ -96,7 +96,7 @@ Als u niet-standaardpoorten gebruikt voor SQL IaaS-verkeer, kunt u die poorten c
 3. Voeg de toepassings regel met het juiste protocol, de poort en de SQL FQDN toe en selecteer vervolgens **Opslaan**.
    ![toepassings regel met SQL FQDN](media/sql-fqdn-filtering/application-rule-sql.png)
 4. Toegang tot SQL vanaf een virtuele machine in een VNet waarmee het verkeer via de firewall wordt gefilterd. 
-5. Controleer of [Azure firewall logboeken](log-analytics-samples.md) het verkeer mag weer geven.
+5. Controleer of [Azure firewall logboeken](./firewall-workbook.md) het verkeer mag weer geven.
 
 ## <a name="next-steps"></a>Volgende stappen
 

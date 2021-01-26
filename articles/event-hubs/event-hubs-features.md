@@ -3,12 +3,12 @@ title: Overzicht van functies-Azure Event Hubs | Microsoft Docs
 description: In dit artikel vindt u informatie over de functies en terminologie van Azure Event Hubs.
 ms.topic: article
 ms.date: 06/23/2020
-ms.openlocfilehash: 60dc964d1b827eec75ee4f65a5776710e57fd6eb
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 8860a8aa83a17b12236dd47d79479a82846fa8a8
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98195786"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791943"
 ---
 # <a name="features-and-terminology-in-azure-event-hubs"></a>Functies en terminologie in azure Event Hubs
 
@@ -56,7 +56,7 @@ Gepubliceerde gebeurtenissen worden verwijderd uit een event hub op basis van ee
 >
 > [Event hubs Capture](event-hubs-capture-overview.md) kan rechtstreeks worden geïntegreerd met Azure Blob Storage en Azure data Lake Storage en met deze integratie kunnen ook [stromen rechtstreeks in azure Synapse worden geplaatst](store-captured-data-data-warehouse.md).
 >
-> Als u het patroon [gebeurtenis bronnen](https://docs.microsoft.com/azure/architecture/patterns/event-sourcing) wilt gebruiken voor uw toepassing, moet u uw strategie voor moment opnamen uitlijnen met de Bewaar limieten van Event hubs. Zorg dat u geen gerealiseerde weer gaven van onbewerkte gebeurtenissen opnieuw bouwt, te beginnen bij het begin van de tijd. Als uw toepassing al enige tijd en goed wordt gebruikt, zou u een surely van een dergelijke strategie kunnen maken, en uw projectie opbouwt het verloop tot en met jaren wijzigings gebeurtenissen tijdens het opsporen van de nieuwste en doorlopende wijzigingen. 
+> Als u het patroon [gebeurtenis bronnen](/azure/architecture/patterns/event-sourcing) wilt gebruiken voor uw toepassing, moet u uw strategie voor moment opnamen uitlijnen met de Bewaar limieten van Event hubs. Zorg dat u geen gerealiseerde weer gaven van onbewerkte gebeurtenissen opnieuw bouwt, te beginnen bij het begin van de tijd. Als uw toepassing al enige tijd en goed wordt gebruikt, zou u een surely van een dergelijke strategie kunnen maken, en uw projectie opbouwt het verloop tot en met jaren wijzigings gebeurtenissen tijdens het opsporen van de nieuwste en doorlopende wijzigingen. 
 
 
 ### <a name="publisher-policy"></a>Uitgeversbeleid

@@ -9,12 +9,12 @@ ms.date: 09/08/2020
 ms.topic: how-to
 ms.author: nitinme
 author: nitinme
-ms.openlocfilehash: b8382b76496976054ebb452e39866765d986ccbb
-ms.sourcegitcommit: 1bdcaca5978c3a4929cccbc8dc42fc0c93ca7b30
+ms.openlocfilehash: 8a4b86fb8fa5a87283178d957e07617b908e6286
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/13/2020
-ms.locfileid: "97368172"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790898"
 ---
 # <a name="sign-in-to-luis-portal"></a>Aanmelden bij de LUIS-portal
 
@@ -47,8 +47,8 @@ Gebruik dit artikel om aan de slag te gaan met de LUIS-Portal en een ontwerp bro
     * **Tenant naam** : de Tenant waaraan uw Azure-abonnement is gekoppeld. U kunt geen tenants van het bestaande venster wijzigen. U kunt de tenants wijzigen door dit venster te sluiten en de avatar te selecteren in de rechter bovenhoek van het scherm met uw initialen. Selecteer **een andere bron** voor het ontwerpen van de eerste om het venster opnieuw te openen.
     * **Naam van de Azure-resource groep** : een aangepaste naam voor de resource groep die u in uw abonnement hebt gekozen. Met resourcegroepen kunt u Azure-resources groeperen voor toegang en beheer. Als u momenteel geen resource groep in uw abonnement hebt, mag u er geen in de LUIS-portal maken. Ga naar [Azure Portal](https://ms.portal.azure.com/#create/Microsoft.ResourceGroup) om er nog een te maken, gaat u naar Luis om door te gaan met het aanmeldings proces.
     * **Azure-resource naam** : een aangepaste naam die u kiest, die wordt gebruikt als onderdeel van de URL voor uw ontwerp transacties. De resource naam mag alleen alfanumerieke tekens bevatten `-` en mag niet beginnen of eindigen met `-` . Als er andere symbolen in de naam zijn opgenomen, mislukt het maken van een resource.
-    * **Locatie** : Kies voor het schrijven van uw toepassingen op een van de [drie ontwerp locaties](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions) die momenteel worden ondersteund door Luis, waaronder: West-VS, Europa-West en Oost-Australië
-    * **Prijs categorie** : standaard wordt de prijs categorie F0 authoring geselecteerd, omdat dit de aanbevolen instelling is. Maak een door de [klant beheerde sleutel](https://docs.microsoft.com/azure/cognitive-services/luis/luis-encryption-of-data-at-rest#customer-managed-keys-for-language-understanding) van de Azure portal als u op zoek bent naar een extra beveiligingslaag.
+    * **Locatie** : Kies voor het schrijven van uw toepassingen op een van de [drie ontwerp locaties](./luis-reference-regions.md) die momenteel worden ondersteund door Luis, waaronder: West-VS, Europa-West en Oost-Australië
+    * **Prijs categorie** : standaard wordt de prijs categorie F0 authoring geselecteerd, omdat dit de aanbevolen instelling is. Maak een door de [klant beheerde sleutel](./luis-encryption-of-data-at-rest.md#customer-managed-keys-for-language-understanding) van de Azure portal als u op zoek bent naar een extra beveiligingslaag.
 8. U bent nu aangemeld bij LUIS. U kunt nu beginnen met het maken van toepassingen.
 
 ## <a name="troubleshooting"></a>Problemen oplossen

@@ -3,12 +3,12 @@ title: Een cluster op Windows beveiligen met behulp van certificaten
 description: Beveiligde communicatie binnen een Azure-Service Fabric zelfstandig of op een on-premises cluster, en tussen clients en het cluster.
 ms.topic: conceptual
 ms.date: 10/15/2017
-ms.openlocfilehash: 34ba457ce0f39705393962d5c5ec8fa11668f413
-ms.sourcegitcommit: c157b830430f9937a7fa7a3a6666dcb66caa338b
+ms.openlocfilehash: d75c644be47ea44f6a8a6ccac91b785af0132833
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94686120"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791034"
 ---
 # <a name="secure-a-standalone-cluster-on-windows-by-using-x509-certificates"></a>Een zelfstandige cluster in Windows beveiligen met behulp van X. 509-certificaten
 In dit artikel wordt beschreven hoe u de communicatie tussen de verschillende knoop punten van uw zelfstandige Windows-cluster kunt beveiligen. Ook wordt beschreven hoe u clients verifieert die verbinding maken met dit cluster met behulp van X. 509-certificaten. Verificatie zorgt ervoor dat alleen gemachtigde gebruikers toegang hebben tot het cluster en de geïmplementeerde toepassingen en beheer taken uitvoeren. Certificaat beveiliging moet worden ingeschakeld op het cluster als het cluster wordt gemaakt.  
@@ -355,7 +355,7 @@ $ConnectArgs = @{  ConnectionEndpoint = '10.7.0.5:19000';  X509Credential = $Tru
 Connect-ServiceFabricCluster $ConnectArgs
 ```
 
-U kunt vervolgens andere Power shell-opdrachten uitvoeren om met dit cluster te werken. U kunt bijvoorbeeld [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode?view=azureservicefabricps) uitvoeren om een lijst met knoop punten op dit beveiligde cluster weer te geven.
+U kunt vervolgens andere Power shell-opdrachten uitvoeren om met dit cluster te werken. U kunt bijvoorbeeld [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode) uitvoeren om een lijst met knoop punten op dit beveiligde cluster weer te geven.
 
 
 Als u het cluster wilt verwijderen, maakt u verbinding met het knoop punt op het cluster waar u het Service Fabric-pakket hebt gedownload, opent u een opdracht regel en gaat u naar de map pakket. Voer nu de volgende opdracht uit:

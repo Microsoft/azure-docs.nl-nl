@@ -5,12 +5,12 @@ ms.date: 06/10/2019
 ms.topic: conceptual
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: bb7708514de6a1d68ecad0c142d68c321293d728
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 41aa7f251bc12fd889a71f65da83c4730ebda9a7
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219620"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789630"
 ---
 # <a name="service-fabric-releases"></a>Service Fabric releases
 
@@ -18,7 +18,7 @@ ms.locfileid: "98219620"
 - <a href="https://github.com/Azure/service-fabric-issues" target="blank">Bijhouden van problemen</a> 
 - <a href="/azure/service-fabric/service-fabric-support" target="blank">Ondersteuningsopties</a> 
 - <a href="/azure/service-fabric/service-fabric-versions" target="blank">Ondersteunde versies</a> 
-- <a href="https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0" target="blank">Codevoorbeelden</a>
+- <a href="https://azure.microsoft.com/resources/samples/?service=service-fabric&sort=0" target="blank">Code voorbeelden</a>
 
 In dit artikel vindt u meer informatie over de nieuwste releases en updates voor de Service Fabric runtime en Sdk's.
 
@@ -117,7 +117,7 @@ We zullen onze geplande release datums ook bijwerken om aan te geven dat we dit 
 #### <a name="key-announcements"></a>Belang rijke aankondigingen
  - [**KeyVaultReference-ondersteuning voor toepassings geheimen (preview-versie)**](./service-fabric-keyvault-references.md): Service Fabric toepassingen die [beheerde identiteiten](./concepts-managed-identity.md) hebben ingeschakeld, kunnen nu rechtstreeks verwijzen naar een Key Vault geheime URL als omgevings variabele, toepassings parameter of container opslagplaats referentie. Service Fabric zal het geheim automatisch oplossen met behulp van de beheerde identiteit van de toepassing. 
      
-- **Verbeterde beveiliging van upgrades voor stateless Services**: als u de beschik baarheid tijdens een upgrade van een toepassing wilt garanderen, hebben we nieuwe configuraties geïntroduceerd om het [minimum aantal instanties te definiëren voor stateless Services](/dotnet/api/system.fabric.description.statelessservicedescription?view=azure-dotnet) die beschikbaar moeten worden gesteld. Voorheen was deze waarde 1 voor alle services en kan deze niet worden gewijzigd. Met deze nieuwe beveiligings controle per service kunt u ervoor zorgen dat uw services een minimum aantal exemplaren bewaren tijdens de upgrade van toepassingen, cluster upgrades en andere onderhouds werkzaamheden die afhankelijk zijn van de status-en veiligheids controles van Service Fabric.
+- **Verbeterde beveiliging van upgrades voor stateless Services**: als u de beschik baarheid tijdens een upgrade van een toepassing wilt garanderen, hebben we nieuwe configuraties geïntroduceerd om het [minimum aantal instanties te definiëren voor stateless Services](/dotnet/api/system.fabric.description.statelessservicedescription) die beschikbaar moeten worden gesteld. Voorheen was deze waarde 1 voor alle services en kan deze niet worden gewijzigd. Met deze nieuwe beveiligings controle per service kunt u ervoor zorgen dat uw services een minimum aantal exemplaren bewaren tijdens de upgrade van toepassingen, cluster upgrades en andere onderhouds werkzaamheden die afhankelijk zijn van de status-en veiligheids controles van Service Fabric.
   
 - [**Resource limieten voor gebruikers services**](./service-fabric-resource-governance.md#enforcing-the-resource-limits-for-user-services): gebruikers kunnen resource limieten instellen voor de gebruikers services op een knoop punt om te voor komen dat scenario's zoals bron uitputting van de service Fabric systeem services. 
   

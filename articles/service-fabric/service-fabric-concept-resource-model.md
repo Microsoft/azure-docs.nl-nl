@@ -3,12 +3,12 @@ title: Resource model van Azure Service Fabric-toepassing
 description: Dit artikel bevat een overzicht van het beheren van een Azure Service Fabric-toepassing met behulp van Azure Resource Manager.
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: f4fbd775ab479437c350dc24b9b5511f7a614c8b
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 0019f154f301d2b688d4c16c9adb36ec386adef2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576091"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790720"
 ---
 # <a name="service-fabric-application-resource-model"></a>Resource model van Service Fabric toepassing
 
@@ -171,13 +171,13 @@ U kunt een van de volgende redenen voor een upgrade uitvoeren van een toepassing
 
 Een toepassing verwijderen die is geïmplementeerd met het resource model van de toepassing in Resource Manager:
 
-1. Gebruik de cmdlet [Get-AzResource](/powershell/module/az.resources/get-azresource?view=azps-2.5.0) om de resource-id voor de toepassing op te halen:
+1. Gebruik de cmdlet [Get-AzResource](/powershell/module/az.resources/get-azresource) om de resource-id voor de toepassing op te halen:
 
     ```powershell
     Get-AzResource  -Name <String> | f1
     ```
 
-1. Gebruik de cmdlet [Remove-AzResource](/powershell/module/az.resources/remove-azresource?view=azps-2.5.0) om de toepassings resources te verwijderen:
+1. Gebruik de cmdlet [Remove-AzResource](/powershell/module/az.resources/remove-azresource) om de toepassings resources te verwijderen:
 
     ```powershell
     Remove-AzResource  -ResourceId <String> [-Force] [-ApiVersion <String>]

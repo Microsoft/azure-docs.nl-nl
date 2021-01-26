@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 10/29/2018
 ms.author: mcoskun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: a60ebff06562c12415b2a106a9a11127feb94dab
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2674d1285544e4bc9b6fcb3d0b2e6f4b607786a2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021983"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791608"
 ---
 # <a name="backup-and-restore-reliable-services-and-reliable-actors"></a>Back-up en herstel Reliable Services en Reliable Actors
 Azure Service Fabric is een platform met hoge Beschik baarheid dat de status van meerdere knoop punten repliceert om deze hoge Beschik baarheid te behouden.  Dus zelfs als één knoop punt in het cluster uitvalt, blijven de services beschikbaar. Hoewel deze door het platform verschafte redundantie mogelijk voldoende is voor sommige, is het wenselijk dat de service back-ups maakt van gegevens (naar een externe opslag).
@@ -150,7 +150,7 @@ Bijvoorbeeld, als het de volledige back-up bevat, de eerste incrementele en derd
 > 
 
 ## <a name="deleted-or-lost-service"></a>Service verwijderd of verloren
-Als een service wordt verwijderd, moet u eerst de service opnieuw maken voordat de gegevens kunnen worden hersteld.  Het is belang rijk om de service te maken met dezelfde configuratie, bijvoorbeeld voor het partitioneren van het schema, zodat de gegevens naadloos kunnen worden hersteld.  Zodra de service is ingeschakeld, moet de API voor het herstellen `OnDataLossAsync` van gegevens (hierboven) worden aangeroepen op elke partitie van deze service. Een manier om dit te bereiken, is door [FabricClient. TestManagementClient. StartPartitionDataLossAsync](/dotnet/api/system.fabric.fabricclient.testmanagementclient?view=azure-dotnet#System_Fabric_FabricClient_TestManagementClient_StartPartitionDataLossAsync_System_Guid_System_Fabric_PartitionSelector_System_Fabric_DataLossMode_) op elke partitie te gebruiken.  
+Als een service wordt verwijderd, moet u eerst de service opnieuw maken voordat de gegevens kunnen worden hersteld.  Het is belang rijk om de service te maken met dezelfde configuratie, bijvoorbeeld voor het partitioneren van het schema, zodat de gegevens naadloos kunnen worden hersteld.  Zodra de service is ingeschakeld, moet de API voor het herstellen `OnDataLossAsync` van gegevens (hierboven) worden aangeroepen op elke partitie van deze service. Een manier om dit te bereiken, is door [FabricClient. TestManagementClient. StartPartitionDataLossAsync](/dotnet/api/system.fabric.fabricclient.testmanagementclient#System_Fabric_FabricClient_TestManagementClient_StartPartitionDataLossAsync_System_Guid_System_Fabric_PartitionSelector_System_Fabric_DataLossMode_) op elke partitie te gebruiken.  
 
 Vanaf dit punt is de implementatie hetzelfde als het bovenstaande scenario. Elke partitie moet de meest recente relevante back-up herstellen vanuit de externe opslag. Een voor behoud is dat de partitie-ID nu is gewijzigd, omdat de runtime partitie-Id's dynamisch maakt. De service moet dus de juiste partitie gegevens en service naam opslaan om de juiste meest recente back-up te identificeren voor herstel vanaf elke partitie.
 
@@ -259,5 +259,5 @@ Totdat een service deze API met succes heeft voltooid (door het retour neren van
   - [Snelstartgids Reliable Services](service-fabric-reliable-services-quick-start.md)
   - [Reliable Services meldingen](service-fabric-reliable-services-notifications.md)
   - [Reliable Services configuratie](service-fabric-reliable-services-configuration.md)
-  - [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+  - [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)
   - [Periodic backup and restore in Azure Service Fabric](service-fabric-backuprestoreservice-quickstart-azurecluster.md) (Periodieke back-up en herstel in Azure Service Fabric)

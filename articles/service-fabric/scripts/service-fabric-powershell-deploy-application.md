@@ -14,12 +14,12 @@ ms.topic: sample
 ms.date: 01/18/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 145372fa872c481ec1a7c3de016c35fdc0f9d960
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 1d25ede5ae871eddd965594224b518ec42525451
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87083800"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791287"
 ---
 # <a name="deploy-an-application-to-a-service-fabric-cluster"></a>Een toepassing implementeren naar een Service Fabric-cluster
 
@@ -41,14 +41,14 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Opmerkingen |
 |---|---|
-|[Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps)| Hiermee wordt een verbinding gemaakt met een Service Fabric-cluster. |
-|[Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) | Hiermee wordt een toepassingspakket gekopieerd naar de installatiekopieopslag van het cluster.  |
-|[Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps)| Hiermee worden een toepassingstype en -versie in het cluster geregistreerd. |
-|[New-ServiceFabricApplication](/powershell/module/servicefabric/new-servicefabricapplication?view=azureservicefabricps)| Hiermee wordt een toepassing van een geregistreerd toepassingstype gemaakt. |
-| [Remove-ServiceFabricApplicationPackage](/powershell/module/servicefabric/remove-servicefabricapplicationpackage?view=azureservicefabricps) | Hiermee wordt een Service Fabric-toepassingspakket verwijderd uit de installatiekopieopslag.|
+|[Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster)| Hiermee wordt een verbinding gemaakt met een Service Fabric-cluster. |
+|[Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage) | Hiermee wordt een toepassingspakket gekopieerd naar de installatiekopieopslag van het cluster.  |
+|[Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype)| Hiermee worden een toepassingstype en -versie in het cluster geregistreerd. |
+|[New-ServiceFabricApplication](/powershell/module/servicefabric/new-servicefabricapplication)| Hiermee wordt een toepassing van een geregistreerd toepassingstype gemaakt. |
+| [Remove-ServiceFabricApplicationPackage](/powershell/module/servicefabric/remove-servicefabricapplicationpackage) | Hiermee wordt een Service Fabric-toepassingspakket verwijderd uit de installatiekopieopslag.|
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de [documentatie van Azure PowerShell](/powershell/azure/service-fabric/overview?view=azureservicefabricps) voor meer informatie over de Service Fabric PowerShell-module.
+Zie de [documentatie van Azure PowerShell](/powershell/azure/service-fabric/overview) voor meer informatie over de Service Fabric PowerShell-module.
 
 Meer PowerShell-voorbeelden voor Azure Service Fabric vindt u in de [voorbeelden van Azure PowerShell](../service-fabric-powershell-samples.md).

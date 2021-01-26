@@ -3,12 +3,12 @@ title: Toegang tot een delegatie verwijderen
 description: Meer informatie over het verwijderen van de toegang tot resources die aan een service provider voor Azure Lighthouse zijn overgedragen.
 ms.date: 12/03/2020
 ms.topic: how-to
-ms.openlocfilehash: d3442bb9fd2f6e7423fd4bf28cace1f7fd91ad80
-ms.sourcegitcommit: 4c89d9ea4b834d1963c4818a965eaaaa288194eb
+ms.openlocfilehash: 7218c8829c9b2500e8311fbb3d5e9ff4eb986529
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96608449"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791353"
 ---
 # <a name="remove-access-to-a-delegation"></a>Toegang tot een delegatie verwijderen
 
@@ -41,7 +41,7 @@ In het onderstaande voor beeld ziet u een toewijzing die de functie voor het ver
     ] 
 ```
 
-Deze rol kan ook worden geselecteerd in een **autorisatie** bij [het maken van een beheerde service aanbieding](../../marketplace/partner-center-portal/create-new-managed-service-offer.md#authorization) om te publiceren op Azure Marketplace.
+Deze rol kan ook worden geselecteerd in een **autorisatie** bij [het maken van een beheerde service aanbieding](../../marketplace/plan-managed-service-offer.md) om te publiceren op Azure Marketplace.
 
 Een gebruiker met deze machtiging kan een delegering op een van de volgende manieren verwijderen.
 

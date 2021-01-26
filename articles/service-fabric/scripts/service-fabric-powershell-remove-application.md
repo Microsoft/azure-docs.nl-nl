@@ -14,12 +14,12 @@ ms.topic: sample
 ms.date: 01/18/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 8b4b07288ce2c3570da5482a446b9418c7319011
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 686afa791df88382e3e5e1b2d233317c36bf1dd6
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87086197"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791303"
 ---
 # <a name="remove-an-application-from-a-service-fabric-cluster-using-powershell"></a>Een toepassing verwijderen uit een Service Fabric-cluster met behulp van PowerShell
 
@@ -37,11 +37,11 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [Remove-ServiceFabricApplication](/powershell/module/servicefabric/remove-servicefabricapplication?view=azureservicefabricps) | Hiermee verwijdert u een actief exemplaar van een Service Fabric-toepassing uit het cluster.  |
-| [Unregister-ServiceFabricApplicationType](/powershell/module/servicefabric/unregister-servicefabricapplicationtype?view=azureservicefabricps) | Hiermee wordt de registratie van een type en versie van een Service Fabric-toepassing in het cluster ongedaan gemaakt. |
+| [Remove-ServiceFabricApplication](/powershell/module/servicefabric/remove-servicefabricapplication) | Hiermee verwijdert u een actief exemplaar van een Service Fabric-toepassing uit het cluster.  |
+| [Unregister-ServiceFabricApplicationType](/powershell/module/servicefabric/unregister-servicefabricapplicationtype) | Hiermee wordt de registratie van een type en versie van een Service Fabric-toepassing in het cluster ongedaan gemaakt. |
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de [documentatie van Azure PowerShell](/powershell/azure/service-fabric/overview?view=azureservicefabricps) voor meer informatie over de Service Fabric PowerShell-module.
+Zie de [documentatie van Azure PowerShell](/powershell/azure/service-fabric/overview) voor meer informatie over de Service Fabric PowerShell-module.
 
 Meer PowerShell-voorbeelden voor Azure Service Fabric vindt u in de [voorbeelden van Azure PowerShell](../service-fabric-powershell-samples.md).

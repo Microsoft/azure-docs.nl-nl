@@ -3,12 +3,12 @@ title: Een delegatie bijwerken
 description: Meer informatie over het bijwerken van een delegering voor een klant die eerder is geboardd naar Azure Lighthouse.
 ms.date: 12/03/2020
 ms.topic: how-to
-ms.openlocfilehash: e204d1f3546e6e978f91c7e808065a388a4af4b3
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: eec5d1f2d34e8e3c9e0ded59cb111624b1981873
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97093414"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791336"
 ---
 # <a name="update-a-delegation"></a>Een delegatie bijwerken
 
@@ -58,9 +58,9 @@ Nadat de implementatie is voltooid, [controleert u of deze is geslaagd](onboard-
 
 ## <a name="updating-managed-service-offers"></a>De aanbiedingen van beheerde services worden bijgewerkt
 
-Als u uw klant hebt ingecheckt via een beheerde service aanbieding die is gepubliceerd op Azure Marketplace en u de autorisatie wilt bijwerken, kunt u de overdracht bijwerken door [een nieuwe versie van uw aanbieding te publiceren](../../marketplace/partner-center-portal/update-existing-offer.md) met de [autorisaties](../../marketplace/partner-center-portal/create-new-managed-service-offer.md#authorization) die u wilt gebruiken in het plan voor die klant. De klant kan vervolgens bijwerken naar de nieuwste versie in de Azure Portal.
+Als u uw klant hebt ingecheckt via een beheerde service aanbieding die is gepubliceerd op Azure Marketplace en u de autorisatie wilt bijwerken, kunt u de overdracht bijwerken door [een nieuwe versie van uw aanbieding te publiceren](../../marketplace/partner-center-portal/update-existing-offer.md) met de [autorisaties](../../marketplace/plan-managed-service-offer.md) die u wilt gebruiken in het plan voor die klant. De klant kan vervolgens bijwerken naar de nieuwste versie in de Azure Portal.
 
-Als u de beheer Tenant wilt wijzigen, moet u [een nieuwe beheerde service aanbieding maken en publiceren](../../marketplace/partner-center-portal/create-new-managed-service-offer.md) zodat de klant deze kan accepteren.
+Als u de beheer Tenant wilt wijzigen, moet u [een nieuwe beheerde service aanbieding maken en publiceren](../../marketplace/plan-managed-service-offer.md) zodat de klant deze kan accepteren.
 
 > [!TIP]
 > Zoals eerder vermeld, raden we u aan geen meerdere verschillende aanbiedingen te gebruiken tussen dezelfde klant en de Tenant beheren. Als u een nieuwe aanbieding voor dezelfde klant publiceert die dezelfde beheer Tenant gebruikt, moet u ervoor zorgen dat de eerdere aanbieding wordt verwijderd voordat de klant de nieuwe aanbieding aanvaardt.

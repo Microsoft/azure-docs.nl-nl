@@ -5,12 +5,12 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 9c258d8d0a7aa26c96ab4f64017770ebdd153e60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 8d99b4d1fbf227d850de387b7ca24dcd3fd40646
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86257511"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791152"
 ---
 # <a name="disaster-recovery-in-azure-service-fabric"></a>Herstel na nood geval in azure Service Fabric
 Een essentieel onderdeel van het leveren van hoge Beschik baarheid zorgt ervoor dat Services alle verschillende soorten fouten kunnen overlaten. Dit is vooral belang rijk voor storingen die ongepland zijn en buiten uw besturings element vallen. 
@@ -63,7 +63,7 @@ Ongeacht het type van de service, leidt het uitvoeren van één exemplaar tot ui
 Als u één storing wilt verwerken, kunt u het eenvoudigste doen door ervoor te zorgen dat uw services standaard worden uitgevoerd op meer dan één knoop punt. Zorg ervoor dat er `InstanceCount` meer dan 1 is voor stateless Services. Voor stateful Services is de minimale aanbeveling `TargetReplicaSetSize` `MinReplicaSetSize` ingesteld op 3. Wanneer u meer exemplaren van uw service code uitvoert, zorgt u ervoor dat de service een enkele fout automatisch kan verwerken. 
 
 ### <a name="handling-coordinated-failures"></a>Gecoördineerde fouten verwerken
-Gecoördineerde fouten in een cluster kunnen worden veroorzaakt door geplande of ongeplande infrastructuur fouten en wijzigingen, of geplande software wijzigingen. Service Fabric modellen infrastructuur zones die gecoördineerde fouten als *fout domeinen*ondervinden. Gebieden die gecoördineerde software wijzigingen zullen ondervinden, worden als *upgrade domeinen*gemodelleerd. Zie [een service Fabric cluster beschrijven met cluster resource manager](service-fabric-cluster-resource-manager-cluster-description.md)voor meer informatie over fout domeinen, upgrade domeinen en cluster topologie.
+Gecoördineerde fouten in een cluster kunnen worden veroorzaakt door geplande of ongeplande infrastructuur fouten en wijzigingen, of geplande software wijzigingen. Service Fabric modellen infrastructuur zones die gecoördineerde fouten als *fout domeinen* ondervinden. Gebieden die gecoördineerde software wijzigingen zullen ondervinden, worden als *upgrade domeinen* gemodelleerd. Zie [een service Fabric cluster beschrijven met cluster resource manager](service-fabric-cluster-resource-manager-cluster-description.md)voor meer informatie over fout domeinen, upgrade domeinen en cluster topologie.
 
 Service Fabric houdt standaard rekening met de fout-en upgrade domeinen bij het plannen waar uw services moeten worden uitgevoerd. Service Fabric probeert standaard om ervoor te zorgen dat uw services worden uitgevoerd op verschillende fout-en upgrade domeinen, zodat de services beschikbaar blijven als er geplande of ongeplande wijzigingen plaatsvinden. 
 
@@ -172,7 +172,7 @@ De volgende acties kunnen leiden tot gegevens verlies. Controleer voordat u deze
 >
 
 - Gebruik de `Repair-ServiceFabricPartition -PartitionId` `System.Fabric.FabricClient.ClusterManagementClient.RecoverPartitionAsync(Guid partitionId)` API of. Met deze API kunt u de ID van de partitie die uit het quorum verlies of het verlies van gegevens kan optreden, opgeven.
-- Als uw cluster veelvuldige storingen detecteert waardoor Services de status van een quorum verlies veroorzaken en mogelijk _gegevens verlies acceptabel is_, kunt u een geschikte [QuorumLossWaitDuration](/powershell/module/servicefabric/update-servicefabricservice?view=azureservicefabricps) -waarde opgeven, zodat uw service automatisch kan worden hersteld. Service Fabric wordt gewacht op de gegeven `QuorumLossWaitDuration` waarde (de standaard instelling is oneindig) voordat het herstel wordt uitgevoerd. Deze methode wordt *niet* aanbevolen omdat dit kan leiden tot onverwachte gegevens verlies.
+- Als uw cluster veelvuldige storingen detecteert waardoor Services de status van een quorum verlies veroorzaken en mogelijk _gegevens verlies acceptabel is_, kunt u een geschikte [QuorumLossWaitDuration](/powershell/module/servicefabric/update-servicefabricservice) -waarde opgeven, zodat uw service automatisch kan worden hersteld. Service Fabric wordt gewacht op de gegeven `QuorumLossWaitDuration` waarde (de standaard instelling is oneindig) voordat het herstel wordt uitgevoerd. Deze methode wordt *niet* aanbevolen omdat dit kan leiden tot onverwachte gegevens verlies.
 
 ## <a name="availability-of-the-service-fabric-cluster"></a>Beschik baarheid van het Service Fabric cluster
 Over het algemeen is het Service Fabric cluster een zeer gedistribueerde omgeving zonder storings punten. Als er een storing optreedt in een van de knoop punten, worden er geen Beschik baarheid of betrouwbaarheids problemen voor het cluster veroorzaakt, voornamelijk omdat de Service Fabric systeem services dezelfde richt lijnen volgen als hierboven. Dat wil zeggen dat ze altijd worden uitgevoerd met drie of meer replica's standaard, en systeem services die stateless worden uitgevoerd op alle knoop punten. 

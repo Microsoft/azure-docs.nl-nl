@@ -11,12 +11,12 @@ ms.topic: how-to
 ms.date: 05/05/2020
 ms.author: mbaldwin
 Customer intent: As a key vault administrator, I want to move my vault to another subscription.
-ms.openlocfilehash: d881394391b7967fe602155eefc9844e013de34e
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 23be8e667d435c2d91d32ebeac30b1e96b45a77e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724745"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790288"
 ---
 # <a name="moving-an-azure-key-vault-to-another-subscription"></a>Een Azure Key Vault verplaatsen naar een ander abonnement
 
@@ -29,7 +29,7 @@ ms.locfileid: "97724745"
 > Zorg ervoor dat u bekend bent met de gevolgen van deze wijziging en volg de richt lijnen in dit artikel zorgvuldig voordat u besluit sleutel kluis naar een nieuw abonnement te verplaatsen.
 > Als u gebruikmaakt van Managed Service Identities (MSI), raadpleegt u de instructies na het verplaatsen aan het einde van het document. 
 
-[Azure Key Vault](overview.md) wordt automatisch gekoppeld aan de standaard [Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis) Tenant-id voor het abonnement waarin deze is gemaakt. U vindt de Tenant-ID die is gekoppeld aan uw abonnement door deze [hand leiding](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)te volgen. Alle toegangs beleid-en rollen toewijzingen zijn ook gekoppeld aan deze Tenant-ID.  Als u uw Azure-abonnement verplaatst van Tenant A naar Tenant B, worden uw bestaande sleutel kluizen niet toegankelijk voor de service-principals (gebruikers en toepassingen) in Tenant B. U moet het volgende doen om dit probleem op te lossen:
+[Azure Key Vault](overview.md) wordt automatisch gekoppeld aan de standaard [Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md) Tenant-id voor het abonnement waarin deze is gemaakt. U vindt de Tenant-ID die is gekoppeld aan uw abonnement door deze [hand leiding](../../active-directory/fundamentals/active-directory-how-to-find-tenant.md)te volgen. Alle toegangs beleid-en rollen toewijzingen zijn ook gekoppeld aan deze Tenant-ID.  Als u uw Azure-abonnement verplaatst van Tenant A naar Tenant B, worden uw bestaande sleutel kluizen niet toegankelijk voor de service-principals (gebruikers en toepassingen) in Tenant B. U moet het volgende doen om dit probleem op te lossen:
 
 * De tenant-ID die is gekoppeld aan alle bestaande sleutelkluizen in het abonnement te wijzigen in tenant B.
 * Alle bestaande vermeldingen van het toegangsbeleid te verwijderen.
@@ -37,8 +37,8 @@ ms.locfileid: "97724745"
 
 Zie voor meer informatie over Azure Key Vault en Azure Active Directory
 - [Over Azure Key Vault](overview.md)
-- [Wat is Azure Active Directory](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-whatis)
-- [Een tenant-id vinden](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-how-to-find-tenant)
+- [Wat is Azure Active Directory](../../active-directory/fundamentals/active-directory-whatis.md)
+- [Een tenant-id vinden](../../active-directory/fundamentals/active-directory-how-to-find-tenant.md)
 
 ## <a name="limitations"></a>Beperkingen
 
@@ -49,11 +49,11 @@ Sommige service-principals (gebruikers en toepassingen) zijn gekoppeld aan een s
 
 ## <a name="prerequisites"></a>Vereisten
 
-* Toegang op [Inzender](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) niveau of hoger voor het huidige abonnement waar uw sleutel kluis bestaat. U kunt een rol toewijzen met behulp van [Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal), [Azure cli](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)of [Power shell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
-* Toegang op [Inzender](https://docs.microsoft.com/azure/role-based-access-control/built-in-roles#contributor) niveau of hoger voor het abonnement waar u de sleutel kluis wilt verplaatsen. U kunt een rol toewijzen met behulp van [Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal), [Azure cli](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)of [Power shell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell).
-* Een resource groep in het nieuwe abonnement. U kunt er een maken met behulp van [Azure Portal](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-portal), [Power shell](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-powershell)of [Azure cli](https://docs.microsoft.com/azure/azure-resource-manager/management/manage-resource-groups-cli).
+* Toegang op [Inzender](../../role-based-access-control/built-in-roles.md#contributor) niveau of hoger voor het huidige abonnement waar uw sleutel kluis bestaat. U kunt een rol toewijzen met behulp van [Azure Portal](../../role-based-access-control/role-assignments-portal.md), [Azure cli](../../role-based-access-control/role-assignments-cli.md)of [Power shell](../../role-based-access-control/role-assignments-powershell.md).
+* Toegang op [Inzender](../../role-based-access-control/built-in-roles.md#contributor) niveau of hoger voor het abonnement waar u de sleutel kluis wilt verplaatsen. U kunt een rol toewijzen met behulp van [Azure Portal](../../role-based-access-control/role-assignments-portal.md), [Azure cli](../../role-based-access-control/role-assignments-cli.md)of [Power shell](../../role-based-access-control/role-assignments-powershell.md).
+* Een resource groep in het nieuwe abonnement. U kunt er een maken met behulp van [Azure Portal](../../azure-resource-manager/management/manage-resource-groups-portal.md), [Power shell](../../azure-resource-manager/management/manage-resource-groups-powershell.md)of [Azure cli](../../azure-resource-manager/management/manage-resource-groups-cli.md).
 
-U kunt bestaande rollen controleren met behulp van [Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-portal), [Power shell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-powershell), [Azure cli](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-cli)of [rest API](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-list-rest).
+U kunt bestaande rollen controleren met behulp van [Azure Portal](../../role-based-access-control/role-assignments-list-portal.md), [Power shell](../../role-based-access-control/role-assignments-list-powershell.md), [Azure cli](../../role-based-access-control/role-assignments-list-cli.md)of [rest API](../../role-based-access-control/role-assignments-list-rest.md).
 
 
 ## <a name="moving-a-key-vault-to-a-new-subscription"></a>Een sleutel kluis verplaatsen naar een nieuw abonnement
@@ -96,7 +96,7 @@ az keyvault update -n myvault --set Properties.tenantId=$tenantId          # Upd
 ### <a name="update-access-policies-and-role-assignments"></a>Het toegangs beleid en de roltoewijzingen bijwerken
 
 > [!NOTE]
-> Als Key Vault gebruikmaakt van [Azure RBAC](https://docs.microsoft.com/azure/role-based-access-control/overview) -machtigings model. U moet ook sleutel kluis roltoewijzingen verwijderen. U kunt roltoewijzingen verwijderen met behulp van [Azure Portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal), [Azure cli](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)of [Power shell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell). 
+> Als Key Vault gebruikmaakt van [Azure RBAC](../../role-based-access-control/overview.md) -machtigings model. U moet ook sleutel kluis roltoewijzingen verwijderen. U kunt roltoewijzingen verwijderen met behulp van [Azure Portal](../../role-based-access-control/role-assignments-portal.md), [Azure cli](../../role-based-access-control/role-assignments-cli.md)of [Power shell](../../role-based-access-control/role-assignments-powershell.md). 
 
 Nu uw kluis is gekoppeld aan de juiste Tenant-ID en de oude toegangs beleidsregels of roltoewijzingen worden verwijderd, stelt u nieuwe toegangs beleidsregels of roltoewijzingen in.
 
@@ -106,9 +106,9 @@ Zie voor het toewijzen van beleid:
 - [Een toegangs beleid toewijzen met behulp van Power shell](assign-access-policy-powershell.md)
 
 Zie voor het toevoegen van roltoewijzingen:
-- [Roltoewijzing toevoegen met behulp van portal](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-portal)
-- [Roltoewijzing toevoegen met behulp van Azure CLI](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-cli)
-- [Roltoewijzing toevoegen met Power shell](https://docs.microsoft.com/azure/role-based-access-control/role-assignments-powershell)
+- [Roltoewijzing toevoegen met behulp van portal](../../role-based-access-control/role-assignments-portal.md)
+- [Roltoewijzing toevoegen met behulp van Azure CLI](../../role-based-access-control/role-assignments-cli.md)
+- [Roltoewijzing toevoegen met Power shell](../../role-based-access-control/role-assignments-powershell.md)
 
 
 ### <a name="update-managed-identities"></a>Beheerde identiteiten bijwerken

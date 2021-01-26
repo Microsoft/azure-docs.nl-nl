@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 5a4586c9c1be51b0ebbdebcf0c23289fc39f9eda
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: 263e45928642aa74d682fc490e424a24deeb8076
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485498"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790678"
 ---
 # <a name="placement-policies-for-service-fabric-services"></a>Plaatsings beleid voor service Fabric-Services
 Plaatsings beleid is extra regels die kunnen worden gebruikt voor het bepalen van de service plaatsing in enkele specifieke, minder algemene scenario's. Enkele voor beelden van deze scenario's zijn:
@@ -150,7 +150,7 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 >
 
 > [!NOTE]
-> Momenteel wordt het beleid alleen ondersteund voor stateless Services met de [activerings modus](/dotnet/api/system.fabric.description.servicepackageactivationmode?view=azure-dotnet)voor het ExclusiveProcess-service pakket.
+> Momenteel wordt het beleid alleen ondersteund voor stateless Services met de [activerings modus](/dotnet/api/system.fabric.description.servicepackageactivationmode)voor het ExclusiveProcess-service pakket.
 >
 
 > [!WARNING]
@@ -158,7 +158,7 @@ New-ServiceFabricService -ApplicationName $applicationName -ServiceName $service
 >
 
 > [!NOTE]
-> Het gebruik van een hoge waarde van [MinInstanceCount](/dotnet/api/system.fabric.description.statelessservicedescription.mininstancecount?view=azure-dotnet) met dit plaatsings beleid kan leiden tot vastgelopen toepassings upgrades. Als u bijvoorbeeld een cluster met vijf knoop punten hebt en InstanceCount = 10 hebt ingesteld, hebt u twee exemplaren per knoop punt. Als u MinInstanceCount = 9 instelt, kan een upgrade van de app worden vastgelopen. met MinInstanceCount = 8 kan dit worden vermeden.
+> Het gebruik van een hoge waarde van [MinInstanceCount](/dotnet/api/system.fabric.description.statelessservicedescription.mininstancecount) met dit plaatsings beleid kan leiden tot vastgelopen toepassings upgrades. Als u bijvoorbeeld een cluster met vijf knoop punten hebt en InstanceCount = 10 hebt ingesteld, hebt u twee exemplaren per knoop punt. Als u MinInstanceCount = 9 instelt, kan een upgrade van de app worden vastgelopen. met MinInstanceCount = 8 kan dit worden vermeden.
 >
 
 ## <a name="next-steps"></a>Volgende stappen

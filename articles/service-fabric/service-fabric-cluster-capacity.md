@@ -4,12 +4,12 @@ description: Knooppunt typen, duurzaamheid, betrouw baarheid en andere zaken waa
 ms.topic: conceptual
 ms.date: 05/21/2020
 ms.author: pepogors
-ms.openlocfilehash: 731dcfdf25efc4b2f44669dacd8a400037ed47f4
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 03ec9b411f13f22a74b864a745acfed922e78b12
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576329"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790695"
 ---
 # <a name="service-fabric-cluster-capacity-planning-considerations"></a>Overwegingen bij het plannen van Service Fabric cluster capaciteit
 
@@ -146,7 +146,7 @@ Hier volgt een aanbeveling bij het kiezen van de betrouwbaarheids categorie. Het
 | 7 of 8 | Goud |
 | 9 en Maxi maal | Platina |
 
-Wanneer u de grootte van uw cluster (de som van VM-exemplaren in alle knooppunt typen) verhoogt of verlaagt, kunt u overwegen de betrouw baarheid van het cluster bij te werken van de ene laag naar de andere. Hiermee worden de cluster upgrades geactiveerd die nodig zijn om het aantal replica sets van de systeem services te wijzigen. Wacht totdat de upgrade wordt uitgevoerd voordat u andere wijzigingen aanbrengt in het cluster, zoals het toevoegen van knoop punten.  U kunt de voortgang van de upgrade op Service Fabric Explorer controleren of door [Get-ServiceFabricClusterUpgrade](/powershell/module/servicefabric/get-servicefabricclusterupgrade?view=azureservicefabricps) uit te voeren
+Wanneer u de grootte van uw cluster (de som van VM-exemplaren in alle knooppunt typen) verhoogt of verlaagt, kunt u overwegen de betrouw baarheid van het cluster bij te werken van de ene laag naar de andere. Hiermee worden de cluster upgrades geactiveerd die nodig zijn om het aantal replica sets van de systeem services te wijzigen. Wacht totdat de upgrade wordt uitgevoerd voordat u andere wijzigingen aanbrengt in het cluster, zoals het toevoegen van knoop punten.  U kunt de voortgang van de upgrade op Service Fabric Explorer controleren of door [Get-ServiceFabricClusterUpgrade](/powershell/module/servicefabric/get-servicefabricclusterupgrade) uit te voeren
 
 ### <a name="capacity-planning-for-reliability"></a>Capaciteits planning voor betrouw baarheid
 

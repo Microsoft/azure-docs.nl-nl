@@ -11,19 +11,19 @@ ms.topic: conceptual
 ms.date: 01/08/2021
 ms.author: trbye
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1577d63822bdb21eff7fcbb3e1343243a3004409
-ms.sourcegitcommit: c4c554db636f829d7abe70e2c433d27281b35183
+ms.openlocfilehash: 70c5593f29b5e83d5d3f318179d365a9235849ca
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98033639"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790610"
 ---
 # <a name="speech-to-text-rest-api"></a>REST API voor spraak-naar-tekst
 
 Spraak-naar-tekst heeft twee verschillende REST-Api's. Elke API heeft een speciaal doel en maakt gebruik van verschillende sets van eind punten.
 
 De REST-to-text-Api's zijn:
-- [Spraak-naar-tekst rest API v 3.0](#speech-to-text-rest-api-v30) wordt gebruikt voor [batch-transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). v 3.0 is een [opvolger van v 2.0](/azure/cognitive-services/speech-service/migrate-v2-to-v3).
+- [Spraak-naar-tekst rest API v 3.0](#speech-to-text-rest-api-v30) wordt gebruikt voor [batch-transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). v 3.0 is een [opvolger van v 2.0](./migrate-v2-to-v3.md).
 - [Spraak-naar-tekst rest API voor korte audio](#speech-to-text-rest-api-for-short-audio) wordt gebruikt voor online transcriptie als alternatief voor de [spraak-SDK](speech-sdk.md). Aanvragen via deze API kunnen Maxi maal 60 seconden audio per aanvraag verzenden. 
 
 ## <a name="speech-to-text-rest-api-v30"></a>Spraak-naar-tekst REST API v 3.0
@@ -45,7 +45,7 @@ REST API v 3.0 bevat de volgende functies:
 
 Bekijk de voor beelden over het gebruik van REST API v 3.0 met de batch transcriptie is [dit artikel](batch-transcription.md).
 
-Zie How to Migrate to v 3.0 (Engelstalig) in [deze hand leiding](/azure/cognitive-services/speech-service/migrate-v2-to-v3)als u gebruikmaakt van spraak-naar-tekst rest API v 2.0.
+Zie How to Migrate to v 3.0 (Engelstalig) in [deze hand leiding](./migrate-v2-to-v3.md)als u gebruikmaakt van spraak-naar-tekst rest API v 2.0.
 
 Zie de [volledige naslag informatie](https://centralus.dev.cognitive.microsoft.com/docs/services/speech-to-text-api-v3-0)over spraak-naar-tekst rest API v 3.0.
 

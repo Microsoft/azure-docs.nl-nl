@@ -3,15 +3,15 @@ title: Een galerie met gedeelde afbeeldingen gebruiken in Azure Lab Services | M
 description: Informatie over het configureren van een Lab-account voor het gebruik van een galerie met gedeelde afbeeldingen zodat een gebruiker een installatie kopie kan delen met andere en een andere gebruiker kan de installatie kopie gebruiken om een sjabloon-VM in het lab te maken.
 ms.topic: article
 ms.date: 09/11/2020
-ms.openlocfilehash: d9f4e75163f591680cc8f85ac42c1b6ada5f2365
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 984cb4c47099928ffab327895a728cbe8a8f9604
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94647763"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791387"
 ---
 # <a name="use-a-shared-image-gallery-in-azure-lab-services"></a>Een galerie met gedeelde afbeeldingen gebruiken in Azure Lab Services
-In dit artikel wordt uitgelegd hoe docenten/Lab-beheerders een sjabloon installatie kopie van een virtuele machine kunnen opslaan in een [Galerie met gedeelde installatie kopieën](../virtual-machines/windows/shared-image-galleries.md) , zodat deze door anderen kunnen worden gebruikt om Labs te maken. 
+In dit artikel wordt uitgelegd hoe docenten/Lab-beheerders een sjabloon installatie kopie van een virtuele machine kunnen opslaan in een [Galerie met gedeelde installatie kopieën](../virtual-machines/shared-image-galleries.md) , zodat deze door anderen kunnen worden gebruikt om Labs te maken. 
 
 > [!IMPORTANT]
 > Bij het gebruik van een galerie met gedeelde afbeeldingen ondersteunt Azure Lab Services alleen installatie kopieën met minder dan 128 GB schijf ruimte op het besturings systeem. Installatie kopieën met meer dan 128 GB schijf ruimte of meerdere schijven worden niet weer gegeven in de lijst met installatie kopieën van virtuele machines tijdens het maken van het lab.
@@ -48,7 +48,7 @@ Nadat een galerie met gedeelde installatie kopieën is gekoppeld, kan een Lab-ac
     Nadat u de installatie kopie in de galerie met gedeelde afbeeldingen hebt opgeslagen, kunt u deze installatie kopie uit de galerie gebruiken bij het maken van een ander lab. U kunt ook een installatie kopie uploaden naar de galerie met gedeelde afbeeldingen buiten de context van een lab. Zie overzicht van de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-images-powershell.md)voor meer informatie. 
 
     > [!IMPORTANT]
-    > Wanneer u [een sjabloon afbeelding van een Lab](how-to-use-shared-image-gallery.md#save-an-image-to-the-shared-image-gallery) in Azure Lab Services opslaat in een galerie met gedeelde afbeeldingen, wordt de afbeelding geüpload naar de galerie als een **gespecialiseerde afbeelding**. [Gespecialiseerde installatie kopieën](../virtual-machines/windows/shared-image-galleries.md#generalized-and-specialized-images) blijven computerspecifieke informatie en gebruikers profielen. U kunt nog steeds rechtstreeks een gegeneraliseerde installatie kopie uploaden naar de galerie buiten Azure Lab Services.    
+    > Wanneer u [een sjabloon afbeelding van een Lab](how-to-use-shared-image-gallery.md#save-an-image-to-the-shared-image-gallery) in Azure Lab Services opslaat in een galerie met gedeelde afbeeldingen, wordt de afbeelding geüpload naar de galerie als een **gespecialiseerde afbeelding**. [Gespecialiseerde installatie kopieën](../virtual-machines/shared-image-galleries.md#generalized-and-specialized-images) blijven computerspecifieke informatie en gebruikers profielen. U kunt nog steeds rechtstreeks een gegeneraliseerde installatie kopie uploaden naar de galerie buiten Azure Lab Services.    
 
 ## <a name="use-an-image-from-the-shared-image-gallery"></a>Een installatie kopie uit de galerie met gedeelde afbeeldingen gebruiken
 Een docent kan een aangepaste installatie kopie kiezen die beschikbaar is in de galerie met gedeelde afbeeldingen voor de sjabloon tijdens het maken van een nieuwe lab.
@@ -60,4 +60,4 @@ Een docent kan een aangepaste installatie kopie kiezen die beschikbaar is in de 
 
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie [Galerie met gedeelde afbeeldingen](../virtual-machines/windows/shared-image-galleries.md)voor meer informatie over gedeelde afbeeldings galerieën.
+Zie [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md)voor meer informatie over gedeelde afbeeldings galerieën.

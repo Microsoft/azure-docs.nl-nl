@@ -3,12 +3,12 @@ title: 'Quickstart: Aangepaste gebeurtenissen verzenden naar een Azure-functie -
 description: 'Quickstart: Gebruik Azure Event Grid en Azure CLI of de portal om een onderwerp te publiceren en u te abonneren op deze gebeurtenis. Er wordt een Azure-functie gebruikt voor het eindpunt.'
 ms.date: 07/07/2020
 ms.topic: quickstart
-ms.openlocfilehash: aea52bcaa94d6f288e86e44e1a0f294796d8e4a3
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 4fe4753de41443a0537636933364c7b69b25cb27
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95996339"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791724"
 ---
 # <a name="quickstart-route-custom-events-to-an-azure-function-with-event-grid"></a>Quickstart: Aangepaste gebeurtenissen routeren naar een Azure-functie met Event Grid
 
@@ -19,7 +19,7 @@ Azure Event Grid is een gebeurtenisservice voor de cloud. Azure Functions is een
 ## <a name="create-azure-function"></a>Een Azure-functie maken
 Voordat u zich abonneert op het aangepaste onderwerp, gaan we een functie maken om de gebeurtenissen te verwerken. 
 
-1. Maak een functie-app maken met behulp van instructies in [Een functie-app maken](../azure-functions/functions-create-first-azure-function.md#create-a-function-app).
+1. Maak een functie-app maken met behulp van instructies in [Een functie-app maken](../azure-functions/functions-get-started.md).
 2. Maak een functie met behulp van de **Event Grid Trigger**. Selecteer Als dit de eerste keer is dat u deze trigger gebruikt, moet u mogelijk op Installeren klikken om de extensie te installeren.
     1. Selecteer op de pagina **Functie-app** **Functies** in het linkermenu, zoek **Event Grid** bij sjablonen en selecteer vervolgens **Azure Event Grid-trigger**. 
 

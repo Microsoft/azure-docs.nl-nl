@@ -3,12 +3,12 @@ title: Een .NET-app in een container implementeren in Azure Service Fabric
 description: Informatie over hoe u een bestaande .NET-toepassing in een container plaatst met behulp van Visual Studio en lokaal fouten opspoort in containers in Service Fabric. De in een container geplaatste toepassing wordt naar een Azure-containerregister gepusht en geïmplementeerd in een Service Fabric-cluster. Wanneer de toepassing is geïmplementeerd in Azure, gebruikt deze Azure SQL DB voor het persistent maken van gegevens.
 ms.topic: tutorial
 ms.date: 07/08/2019
-ms.openlocfilehash: 8be9de495fa6bc5689a2dba5384f5df3112cbb38
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-ms.translationtype: HT
+ms.openlocfilehash: 85e9b553000c52131c04502d496aa050b73d6d8a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96485519"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791659"
 ---
 # <a name="tutorial-deploy-a-net-application-in-a-windows-container-to-azure-service-fabric"></a>Zelfstudie: Een .NET-toepassing in een Windows-container implementeren in Azure Service Fabric
 
@@ -27,11 +27,12 @@ In deze zelfstudie leert u het volgende:
 
 ## <a name="prerequisites"></a>Vereisten
 
-1. Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-2. Installeer [Docker CE voor Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description) zodat u containers op Windows 10 kunt uitvoeren.
-3. Installeer [Service Fabric-runtime versie 6.2 of hoger](service-fabric-get-started.md) en de [Service Fabric SDK versie 3.1](service-fabric-get-started.md) of hoger.
-4. Installeer [Visual Studio 2019 versie 16.1](https://www.visualstudio.com/) of hoger met de **Azure-ontwikkelworkload** en de **ASP.NET-ontwikkelings- en webontwikkelingsworkloads**.
-5. Installeer [Azure PowerShell][link-azure-powershell-install]
+1. Als u nog geen abonnement op Azure hebt, [maak dan een gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F).
+2. Schakel Windows **-onderdelen Hyper-V** en **containers** in.
+3. Installeer [Docker CE voor Windows](https://store.docker.com/editions/community/docker-ce-desktop-windows?tab=description) zodat u containers op Windows 10 kunt uitvoeren.
+4. Installeer [Service Fabric-runtime versie 6.2 of hoger](service-fabric-get-started.md) en de [Service Fabric SDK versie 3.1](service-fabric-get-started.md) of hoger.
+5. Installeer [Visual Studio 2019 versie 16.1](https://www.visualstudio.com/) of hoger met de **Azure-ontwikkelworkload** en de **ASP.NET-ontwikkelings- en webontwikkelingsworkloads**.
+6. Installeer [Azure PowerShell][link-azure-powershell-install]
 
 ## <a name="download-and-run-fabrikam-fiber-callcenter"></a>Fabrikam Fiber CallCenter downloaden en uitvoeren
 
@@ -40,16 +41,6 @@ In deze zelfstudie leert u het volgende:
 2. Controleer of de toepassing Fabrikam Fiber CallCenter wordt opgebouwd en zonder fouten wordt uitgevoerd.  Start Visual Studio als een **beheerder** en open het bestand [FabrikamFiber.CallCenter.sln][link-fabrikam-github].  Druk op F5 om fouten op te sporen in de toepassing en de toepassing uit te voeren.
 
    ![Schermopname van de startpagina van de Fabrikam Fiber CallCenter-toepassing die wordt uitgevoerd op de lokale host. Op de pagina wordt een dashboard weergegeven met een lijst met ondersteuningsoproepen.][fabrikam-web-page]
-
-## <a name="containerize-the-application"></a>De toepassing in een container plaatsen
-
-1. Klik met de rechtermuisknop op het project **FabrikamFiber.Web** > **Add**  > **Container Orchestrator Support**.  Selecteer **Service Fabric** als de containerorchestrator en klik op **OK**.
-
-2. Klik op **Ja** als dat wordt gevraagd om Docker nu over te schakelen naar Windows-containers.
-
-   Het nieuwe Service Fabric-toepassingsproject **FabrikamFiber.CallCenterApplication** wordt in de oplossing gemaakt.  Er wordt een Dockerfile toegevoegd aan het bestaande **FabrikamFiber.Web**-project.  Ook wordt de map **PackageRoot** toegevoegd aan het project **FabrikamFiber.Web**, dat het servicemanifest en de instellingen voor de nieuwe FabrikamFiber.Web-service bevat.
-
-   De container is nu klaar om te worden gebouwd en verpakt in een Service Fabric-toepassing. Zodra u de installatiekopie van de container hebt gebouwd op uw computer, kunt u deze naar een containerregister pushen en naar elke host ophalen om te worden uitgevoerd.
 
 ## <a name="create-an-azure-sql-db"></a>Een Azure SQL DB maken
 
@@ -120,9 +111,42 @@ Werk in het project **FabrikamFiber.Web** de verbindingsreeks in het bestand **w
 >[!NOTE]
 >U een SQL Server naar keuze gebruiken voor lokale foutopsporing, zolang deze bereikbaar is vanaf de host. **localdb** biedt echter geen ondersteuning voor `container -> host`-communicatie. Als u een andere SQL-database wilt gebruiken tijdens het bouwen van een release-build van uw webtoepassing, voeg dan nog een verbindingsreeks toe aan uw *web.release.config*-bestand.
 
+## <a name="containerize-the-application"></a>De toepassing in een container plaatsen
+
+1. Klik met de rechtermuisknop op het project **FabrikamFiber.Web** > **Add**  > **Container Orchestrator Support**.  Selecteer **Service Fabric** als de containerorchestrator en klik op **OK**.
+
+2. Klik op **Ja** als dat wordt gevraagd om Docker nu over te schakelen naar Windows-containers.
+
+   Het nieuwe Service Fabric-toepassingsproject **FabrikamFiber.CallCenterApplication** wordt in de oplossing gemaakt.  Er wordt een Dockerfile toegevoegd aan het bestaande **FabrikamFiber.Web**-project.  Ook wordt de map **PackageRoot** toegevoegd aan het project **FabrikamFiber.Web**, dat het servicemanifest en de instellingen voor de nieuwe FabrikamFiber.Web-service bevat.
+
+   De container is nu klaar om te worden gebouwd en verpakt in een Service Fabric-toepassing. Zodra u de installatiekopie van de container hebt gebouwd op uw computer, kunt u deze naar een containerregister pushen en naar elke host ophalen om te worden uitgevoerd.
+
 ## <a name="run-the-containerized-application-locally"></a>De in een container geplaatste toepassing lokaal uitvoeren
 
 Druk op **F5** om de toepassing in een container uit te voeren en er fouten in op te sporen in het Service Fabric-ontwikkelingscluster. Klik op **Ja** als u een bericht ziet waarin wordt gevraagd om de groep 'ServiceFabricAllowedUsers' lees- en schrijfmachtigingen te verlenen voor de projectmap van Visual Studio.
+
+Als op F5 run een uitzonde ring wordt gegenereerd, zoals hieronder, is het juiste IP-adres niet toegevoegd aan de firewall van de Azure-data base.
+
+```text
+System.Data.SqlClient.SqlException
+HResult=0x80131904
+Message=Cannot open server 'fab-fiber-751718376' requested by the login. Client with IP address '123.456.789.012' is not allowed to access the server.  To enable access, use the Windows Azure Management Portal or run sp_set_firewall_rule on the master database to create a firewall rule for this IP address or address range.  It may take up to five minutes for this change to take effect.
+Source=.Net SqlClient Data Provider
+StackTrace:
+<Cannot evaluate the exception stack trace>
+```
+
+Voer de volgende opdracht uit om het juiste IP-adres toe te voegen aan de Azure data base-firewall.
+
+```powershell
+# The IP address of your development computer that accesses the SQL DB.
+$clientIPNew = "<client IP from the Error Message>"
+
+# Create the firewall rule to allow your development computer to access the server.
+New-AzSqlServerFirewallRule -ResourceGroupName $dbresourcegroupname `
+    -ServerName $servername `
+    -FirewallRuleName "AllowClientNew" -StartIpAddress $clientIPNew -EndIpAddress $clientIPNew
+```
 
 ## <a name="create-a-container-registry"></a>Een containerregister maken
 
@@ -151,7 +175,7 @@ U kunt:
 
 In deze zelfstudie wordt een cluster gemaakt vanuit Visual Studio, wat ideaal is voor testscenario's. Als u op een andere manier een cluster hebt gemaakt of een bestaand cluster gebruikt, kunt u uw verbindingseindpunt kopiëren en plakken, of kunt u het kiezen vanuit uw abonnement.
 
-Voordat u begint, opent u FabrikamFiber.Web->PackageRoot->ServiceManifest.xml in Solution Explorer. Noteer de poort voor de webfront-end die vermeld staat in **Eindpunt**.
+Open project fabrikamfiber. Web-> PackageRoot-> ServiceManifest.xml in de Solution Explorer voordat u begint. Noteer de poort voor de webfront-end die vermeld staat in **Eindpunt**.
 
 Als u het cluster maakt, gaat u als volgt te werk:
 
@@ -166,6 +190,9 @@ Als u het cluster maakt, gaat u als volgt te werk:
 
     c. Selecteer het tabblad **Certificaat**. Typ op dit tabblad een wachtwoord dat u wilt gebruiken om het certificaat van uw cluster te beschermen. Met dit certificaat is uw cluster beter beveiligd. U kunt ook het pad wijzigen waar u het certificaat wilt opslaan. Visual Studio kan het certificaat voor u importeren, aangezien dit een vereiste stap is om de toepassing naar het cluster te kunnen publiceren.
 
+    >[!NOTE]
+    >Houd rekening met het pad naar de map waarin dit certificaat is geïmporteerd. De volgende stap na het maken van het cluster is het importeren van dit certificaat.
+
     d. Selecteer het tabblad **VM-details**. Geef het wachtwoord op dat u wilt gebruiken voor de virtuele machines (VM's) die het cluster vormen. De gebruikersnaam en het wachtwoord kunnen worden gebruikt om een externe verbinding met de virtuele machines tot stand te brengen. U moet ook een VM-machinegrootte selecteren, en u kunt indien nodig de VM-installatiekopie wijzigen.
 
     > [!IMPORTANT]
@@ -176,6 +203,12 @@ Als u het cluster maakt, gaat u als volgt te werk:
     f. Wanneer u klaar bent met het wijzigen van de instellingen, selecteert u de knop **Maken**.
 
 5. Het maken duurt enkele minuten; in het uitvoervenster wordt aangegeven wanneer het cluster helemaal klaar is.
+
+## <a name="install-the-imported-certificate"></a>Het geïmporteerde certificaat installeren
+
+Installeer het certificaat dat is geïmporteerd als onderdeel van de stap voor het maken van het cluster naar de locatie van de **huidige gebruiker** en geef het wacht woord voor de persoonlijke sleutel op dat u hebt opgegeven.
+
+U kunt de installatie controleren door **gebruikers certificaten beheren** te openen via het configuratie scherm en te bevestigen dat het certificaat is geïnstalleerd onder **certificaten: huidige**  ->  **persoonlijke**  ->  **certificaten** van gebruiker. Het certificaat moet hetzelfde zijn als *[cluster naam]*. *[Cluster locatie]*. cloudapp.Azure.com, bijvoorbeeld *fabrikamfibercallcenter.southcentralus.cloudapp.Azure.com*. 
 
 ## <a name="allow-your-application-running-in-azure-to-access-sql-database"></a>Toestaan dat uw toepassing die in Azure wordt uitgevoerd toegang heeft tot SQL Database
 
@@ -233,9 +266,11 @@ Nu de toepassing klaar is, kunt u deze rechtstreeks vanuit Visual Studio impleme
 
 ![Uw toepassing publiceren][publish-app]
 
-Volg de voortgang van de implementatie in het uitvoervenster. Wanneer de toepassing is geïmplementeerd, opent u een browser en typt u het clusteradres en de toepassingspoort. Bijvoorbeeld `https://fabrikamfibercallcenter.southcentralus.cloudapp.azure.com:8659/`.
+Volg de voortgang van de implementatie in het uitvoervenster. Wanneer de toepassing is geïmplementeerd, opent u een browser en typt u het clusteradres en de toepassingspoort. Bijvoorbeeld `http://fabrikamfibercallcenter.southcentralus.cloudapp.azure.com:8659/`.
 
 ![Schermopname van de startpagina van de Fabrikam Fiber CallCenter-toepassing die wordt uitgevoerd op azure.com. Op de pagina wordt een dashboard weergegeven met een lijst met ondersteuningsoproepen.][fabrikam-web-page-deployed]
+
+Als de pagina niet kan worden geladen of als er niet wordt gevraagd om het certificaat, opent u het Explorer-pad, bijvoorbeeld `https://fabrikamfibercallcenter.southcentralus.cloudapp.azure.com:19080/Explorer` en selecteert u het zojuist geïnstalleerde certificaat.
 
 ## <a name="set-up-continuous-integration-and-deployment-cicd-with-a-service-fabric-cluster"></a>Continue integratie en implementatie (CI/CD) met een Service Fabric-cluster instellen
 

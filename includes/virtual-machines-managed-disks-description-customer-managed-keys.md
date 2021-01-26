@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 06/05/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: bf79fe8766d36fe59595be43250341d49b5460c8
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: ba50def51bcea4f477bea5cecbe5b1ed0409b01a
+ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "95562307"
+ms.lasthandoff: 01/25/2021
+ms.locfileid: "98792312"
 ---
 U kunt ervoor kiezen om versleuteling te beheren op het niveau van elke beheerde schijf, met uw eigen sleutels. Versleuteling aan de server zijde voor Managed disks met door de klant beheerde sleutels biedt een geïntegreerde ervaring met Azure Key Vault. U kunt [uw RSA-sleutels](../articles/key-vault/keys/hsm-protected-keys.md) importeren naar uw Key Vault of nieuwe RSA-sleutels in azure Key Vault genereren. 
 
@@ -22,8 +22,6 @@ Met Azure Managed disks wordt de versleuteling en ontsleuteling op een volledig 
 #### <a name="full-control-of-your-keys"></a>Volledig beheer van uw sleutels
 
 U moet toegang tot beheerde schijven in uw Key Vault verlenen om uw sleutels te gebruiken voor het versleutelen en ontsleutelen van de DEK. Op die manier kunt u uw gegevens en sleutels volledig beheren. U kunt uw sleutels uitschakelen of de toegang tot beheerde schijven op elk gewenst moment intrekken. U kunt ook het gebruik van de versleutelings sleutel met Azure Key Vault bewaking controleren om ervoor te zorgen dat alleen beheerde schijven of andere vertrouwde Azure-Services toegang krijgen tot uw sleutels.
-
-Wanneer u de sleutel uitschakelt of verwijdert, worden alle Vm's met schijven die deze sleutel gebruiken automatisch afgesloten. Daarna kan de virtuele machines niet worden gebruikt, tenzij de sleutel opnieuw wordt ingeschakeld of u een nieuwe sleutel toewijst.
 
 Voor Premium Ssd's, Standard Ssd's en Standard Hdd's: wanneer u uw sleutel uitschakelt of verwijdert, worden alle Vm's met schijven die gebruikmaken van die sleutel automatisch afgesloten. Daarna kan de virtuele machines niet worden gebruikt, tenzij de sleutel opnieuw wordt ingeschakeld of u een nieuwe sleutel toewijst.    
 

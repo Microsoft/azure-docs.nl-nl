@@ -4,12 +4,12 @@ description: In deze zelfstudie implementeert u een beheerd Service Fabric-clust
 ms.topic: tutorial
 ms.date: 08/27/2020
 ms.custom: references_regions
-ms.openlocfilehash: 0265a1393c697cbd767de13df1064a5eea957380
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.openlocfilehash: fd54e6f8c5272c3a8fe0e0162ca2e57968b24642
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316172"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98791708"
 ---
 # <a name="tutorial-deploy-a-service-fabric-managed-cluster-preview"></a>Zelfstudie: Een beheerd Service Fabric-cluster (preview) implementeren
 
@@ -37,7 +37,7 @@ Voor u met deze zelfstudie begint:
 
 * Installeer de [Service Fabric SDK en PowerShell-module](service-fabric-get-started.md).
 
-* Installeer [Azure PowerShell 4.7.0](/powershell/azure/release-notes-azureps?preserve-view=true&view=azps-4.7.0#azservicefabric) (of hoger).
+* Installeer [Azure PowerShell 4.7.0](/powershell/azure/release-notes-azureps#azservicefabric) (of hoger).
 
 ## <a name="connect-to-your-azure-account"></a>Verbinding maken met uw Azure-account
 

@@ -10,12 +10,12 @@ ms.subservice: general
 ms.topic: how-to
 ms.date: 12/18/2020
 ms.author: mbaldwin
-ms.openlocfilehash: 5fcb3226eebf39ab18fb3bb24f0521a0523748d4
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: bc9601dbea5c73c6909bd658f322c345143a526c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134174"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98790271"
 ---
 # <a name="azure-key-vault-logging"></a>Logboekregistratie voor Azure Key Vault
 
@@ -194,7 +194,7 @@ Zie [Azure Key Vault in Azure Monitor](../../azure-monitor/insights/key-vault-in
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Key Vault-logboekregistratie inschakelen](howto-logging.md)
-- [Azure Monitor](https://docs.microsoft.com/azure/azure-monitor/)
+- [Azure Monitor](../../azure-monitor/index.yml)
 - Zie [Azure Key Vault in een webtoepassing gebruiken](tutorial-net-create-vault-azure-web-app.md) voor een zelfstudie over het gebruik van Azure Key Vault in een .NET-webtoepassing.
 - Zie de [Ontwikkelaarshandleiding voor Azure Key Vault](developers-guide.md) voor het programmeren van verwijzingen.
 - Zie [Cmdlets voor Azure Key Vault](/powershell/module/az.keyvault/?view=azps-1.2.0#key_vault) voor een lijst met Azure PowerShell 1.0-cmdlets voor Azure Key Vault.

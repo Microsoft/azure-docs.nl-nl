@@ -8,22 +8,18 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 1f1a74f3a26a079039e68eb8e59fac4c18ff0c32
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 3564609d869bef090f0a3db5e6040ba0f5ad80b0
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219739"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796958"
 ---
 # <a name="source-control-in-azure-synapse-studio"></a>Broncode beheer in azure Synapse Studio
 
-Standaard worden auteurs van Azure Synapse Studio direct vergeleken met de Synapse-service. Deze ervaring heeft echter de volgende beperkingen:
+Standaard worden auteurs van Azure Synapse Studio direct vergeleken met de Synapse-service. Als u behoefte hebt aan samen werking met git voor broncode beheer, kunt u Synapse Studio gebruiken om uw werk ruimte te koppelen aan een Git-opslag plaats, Azure DevOps of GitHub. 
 
-- Synapse Studio bevat geen tijdelijke opslag voor het opslaan van uw wijzigingen. De enige manier om wijzigingen op te slaan en te delen is via het **publiceren** en alle wijzigingen worden rechtstreeks naar de Synapse-service gepubliceerd.
-
-- Synapse Studio is niet geoptimaliseerd voor samen werking en versie beheer.
-
-Met Synapse Studio kunt u uw werk ruimte koppelen aan een Git-opslag plaats, Azure DevOps of GitHub om de functionaliteit van broncode beheer te bieden. In dit artikel wordt beschreven hoe u een Synapse-werk ruimte configureert en werkt met git-opslag plaats ingeschakeld. En we hebben ook een aantal aanbevolen procedures en een hand leiding voor het oplossen van problemen gemarkeerd.
+In dit artikel wordt beschreven hoe u een Synapse-werk ruimte configureert en werkt met git-opslag plaats ingeschakeld. En we hebben ook een aantal aanbevolen procedures en een hand leiding voor het oplossen van problemen gemarkeerd.
 
 > [!NOTE]
 > Azure Synapse Studio Git-integratie is niet beschikbaar in de Azure Government Cloud.

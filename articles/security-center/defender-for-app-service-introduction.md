@@ -7,12 +7,12 @@ ms.date: 01/25/2021
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: c6d62cf7b93255336d87cec1d0fef2c567cde9f2
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 200e1fd7bfffef403fa459d3de13dc31145b8a33
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/26/2021
-ms.locfileid: "98791829"
+ms.locfileid: "98796635"
 ---
 # <a name="introduction-to-azure-defender-for-app-service"></a>Inleiding tot Azure Defender voor App Service
 
@@ -62,9 +62,9 @@ Azure Defender bewaakt een groot aantal bedreigingen voor uw App Service-resourc
 
 ### <a name="dangling-dns-detection"></a>Dangling DNS-detectie
 
-Azure Defender voor App Service identificeert ook eventuele DNS-vermeldingen die resteren in uw DNS-registratie-instantie wanneer een App Service website buiten gebruik wordt gesteld. dit worden Dangling DNS-vermeldingen genoemd. Op dit moment verwijst de DNS-vermelding naar een niet-bestaande resource en is uw subdomein kwetsbaar voor een overname. Azure Defender scant uw DNS-REGI ster niet op *bestaande* Dangling DNS-vermeldingen. u wordt gewaarschuwd wanneer een App Service website buiten gebruik wordt gesteld en het aangepaste domein (DNS-vermelding) niet wordt verwijderd.
+Azure Defender voor App Service identificeert ook eventuele DNS-vermeldingen die resteren in uw DNS-registratie-instantie wanneer een App Service website buiten gebruik wordt gesteld. dit worden Dangling DNS-vermeldingen genoemd. Wanneer u een website verwijdert en het aangepaste domein niet uit uw DNS-REGI ster verwijdert, verwijst de DNS-vermelding naar een niet-bestaande resource en is uw subdomein kwetsbaar voor een overname. Azure Defender scant uw DNS-REGI ster niet op *bestaande* Dangling DNS-vermeldingen. u wordt gewaarschuwd wanneer een App Service website buiten gebruik wordt gesteld en het aangepaste domein (DNS-vermelding) niet wordt verwijderd.
 
-De overname van subdomeinen is een veelvoorkomende bedreiging van hoge urgentie voor organisaties. Wanneer een Threat actor een DNS-vermelding van Dangling detecteert, maken ze hun eigen site op het doel adres. Het verkeer dat is bedoeld voor het domein van de organisatie, wordt vervolgens doorgestuurd naar de site van de Threat actor en kan dat verkeer gebruiken voor een breed scala aan schadelijke activiteiten. 
+De overname van subdomeinen is een veelvoorkomende bedreiging van hoge urgentie voor organisaties. Wanneer een Threat actor een DNS-vermelding van Dangling detecteert, maken ze hun eigen site op het doel adres. Het verkeer dat is bedoeld voor het domein van de organisatie, wordt vervolgens doorgestuurd naar de site van de Threat actor en kan dat verkeer gebruiken voor een breed scala aan schadelijke activiteiten.
 
 Dangling DNS-beveiliging is beschikbaar, ongeacht of uw domeinen worden beheerd met Azure DNS of een externe domein registratie en van toepassing zijn op App Service in Windows en Linux.
 
@@ -100,4 +100,4 @@ Raadpleeg de volgende artikelen voor gerelateerd materiaal:
 - Zie de [naslag tabel met waarschuwingen](alerts-reference.md#alerts-azureappserv)voor een lijst met de waarschuwingen voor Azure Defender voor app service.
 - Zie [App Service-plannen](https://azure.microsoft.com/pricing/details/app-service/plans/) voor meer informatie over App Service-plannen.
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md)
+> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)

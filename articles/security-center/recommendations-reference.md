@@ -1,18 +1,18 @@
 ---
 title: Referentietabel voor alle Azure Security Center-aanbevelingen
-description: In dit artikel vindt u beveiligingsaanbevelingen van Azure Security Center waarmee u uw resources kunt beveiligen.
+description: In dit artikel vindt u de aanbevelingen voor de beveiliging van Azure Security Center waarmee u uw resources kunt beschermen en beveiligen.
 author: memildin
 ms.service: security-center
 ms.topic: reference
-ms.date: 01/24/2021
+ms.date: 01/26/2021
 ms.author: memildin
 ms.custom: generated
-ms.openlocfilehash: cd72e904f659b7bd9c7e2df86b46fe20bd26ec33
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: f6d881036b0ebaa79d1052e41b8ec649bb1e8d6d
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757094"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797157"
 ---
 # <a name="security-recommendations---a-reference-guide"></a>Aanbevelingen voor beveiliging: een naslaggids
 
@@ -22,7 +22,7 @@ De aanbevelingen van Security Center zijn gebaseerd op de [beveiligings benchmar
 
 Zie [Aanbevelingen oplossen in Azure Security Center](security-center-remediate-recommendations.md) voor meer informatie over hoe u kunt reageren op deze aanbevelingen.
 
-Uw beveiligingsscore is gebaseerd op het aantal Security Center-aanbevelingen dat u hebt opgelost. Als u wilt bepalen welke aanbevelingen het eerst moeten worden afgehandeld, bekijkt u de ernst van elke aanbeveling en de mogelijke gevolgen hiervan voor uw beveiligingsscore.
+Uw beveiligde Score is gebaseerd op het aantal Security Center aanbevelingen dat u hebt voltooid. Als u wilt bepalen welke aanbevelingen het eerst moeten worden opgelost, bekijkt u de ernst van elke aanbeveling en de mogelijke gevolgen hiervan voor uw beveiligde Score.
 
 > [!TIP]
 > Als in de beschrijving van een aanbeveling 'Geen gerelateerd beleid' wordt vermeld, is dit meestal omdat deze aanbeveling afhankelijk is van een andere aanbeveling en het _bijbehorende_ beleid. De aanbeveling 'Endpoint Protection-statusfouten moeten worden hersteld...' is bijvoorbeeld afhankelijk van de aanbeveling die controleert of er een Endpoint Protection-oplossing is _geïnstalleerd_ ('Endpoint Protection-oplossing moet worden geïnstalleerd...'). De onderliggende aanbeveling heeft _wel_ een beleid.

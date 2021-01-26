@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/10/2020
 ms.author: memildin
-ms.openlocfilehash: 4ecd436b548c29c520a7538970d4d703cc8488d2
-ms.sourcegitcommit: daab0491bbc05c43035a3693a96a451845ff193b
-ms.translationtype: HT
+ms.openlocfilehash: 31472b0a0eedee03d5cfcb6ff47a97033a8c78e0
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "93027564"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796067"
 ---
 # <a name="enable-security-center-on-all-subscriptions-in-a-management-group"></a>Security Center inschakelen voor alle abonnementen in een beheergroep
 
@@ -25,7 +25,7 @@ U kunt Azure Policy gebruiken om Azure Security Center in te schakelen voor alle
 
 Een beheergroep en alle bijbehorende abonnementen registreren:
 
-1. Open Azure Policy als een gebruiker met machtigingen voor **Beveiligingsbeheerder** , en zoek naar de definitie **Azure Security Center inschakelen in uw abonnement**.
+1. Open Azure Policy als een gebruiker met machtigingen voor **Beveiligingsbeheerder**, en zoek naar de definitie **Azure Security Center inschakelen in uw abonnement**.
 
     :::image type="content" source="./media/security-center-get-started/enable-security-center-policy.png" alt-text="De Azure Policy-definitie Azure Security Center inschakelen voor uw abonnement":::
 
@@ -55,7 +55,7 @@ Een beheergroep en alle bijbehorende abonnementen registreren:
 
 Er zijn verschillende manieren waarop u de Azure Policy-definitie kunt wijzigen: 
 
-- **Naleving verschillend definiëren** : met het geleverde beleid worden alle abonnementen in de MG geclassificeerd die nog niet als niet-compatibel zijn geregistreerd bij Security Center. U kunt ervoor kiezen dit in te stellen voor alle abonnementen zonder Azure Defender.
+- **Naleving verschillend definiëren**: met het geleverde beleid worden alle abonnementen in de MG geclassificeerd die nog niet als niet-compatibel zijn geregistreerd bij Security Center. U kunt ervoor kiezen dit in te stellen voor alle abonnementen zonder Azure Defender.
 
     Met de geleverde definitie wordt *een van de* prijsinstellingen hieronder gedefinieerd als compatibel. Dit betekent dat een abonnement dat is ingesteld op Standard of Gratis, compatibel is.
 
@@ -88,7 +88,7 @@ Er zijn verschillende manieren waarop u de Azure Policy-definitie kunt wijzigen:
     },
     ```
 
-- **Definieer enkele Azure Defender-abonnementen die moeten worden toegepast bij het inschakelen van Security Center** : op basis van het geleverde beleid wordt Security Center ingeschakeld zonder een van de optionele Azure Defender-abonnementen. U kunt ervoor kiezen om een of meer hiervan in te schakelen.
+- **Definieer enkele Azure Defender-abonnementen die moeten worden toegepast bij het inschakelen van Security Center**: op basis van het geleverde beleid wordt Security Center ingeschakeld zonder een van de optionele Azure Defender-abonnementen. U kunt ervoor kiezen om een of meer hiervan in te schakelen.
 
     De sectie `deployment` van de geleverde definitie bevat een parameter `pricingTier`. Dit is standaard ingesteld op `free`, maar u kunt dit wijzigen. 
 
@@ -98,4 +98,4 @@ Er zijn verschillende manieren waarop u de Azure Policy-definitie kunt wijzigen:
 Nu u een volledige beheergroep hebt geregistreerd, schakelt u geavanceerde bescherming van Azure Defender in. 
 
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md)
+> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)

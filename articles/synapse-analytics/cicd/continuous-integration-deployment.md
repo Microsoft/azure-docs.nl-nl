@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 11/20/2020
 ms.author: liud
 ms.reviewer: pimorano
-ms.openlocfilehash: 7a665bf05167a6bdf20c7325c66a5d0e439aa7f1
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: ba5286b16b6e640e968b50174e39a05328e750a4
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223683"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797297"
 ---
 # <a name="continuous-integration-and-delivery-for-azure-synapse-workspace"></a>Continue integratie en levering voor Azure Synapse-werk ruimte
 
@@ -134,3 +134,13 @@ Als u gebruik wilt maken van Git-integratie met uw Synapse-werk ruimte en een CI
 -   **Groep voorbereiden voordat artefacten worden gemigreerd**. Als er een SQL-script of notitie blok is gekoppeld aan Pools in de werk ruimte ontwikkeling, worden dezelfde naam van Pools in verschillende omgevingen verwacht. 
 -   **Infra structuur als code (IaC)**. Beheer van de infra structuur (netwerken, virtuele machines, load balancers en verbindings topologie) in een beschrijvende model, gebruik dezelfde versie als DevOps-team voor de bron code. 
 -   **Andere**. Zie [Aanbevolen procedures voor ADF-artefacten](../../data-factory/continuous-integration-deployment.md#best-practices-for-cicd)
+
+## <a name="troubleshooting-artifacts-deployment"></a>Problemen met de implementatie van artefacten oplossen 
+
+### <a name="use-the-synapse-workspace-deployment-task"></a>De implementatie taak voor de Synapse-werk ruimte gebruiken
+
+In Synapse zijn alle soorten artefacten geen ARM-bronnen, die verschillen van de ADF. U kunt geen ARM-sjabloon implementatie taak gebruiken om Synapse artefacten te implementeren
+ 
+### <a name="unexpected-token-error-in-release"></a>Onverwachte token fout in de release
+
+Als uw parameter bestand parameter waarden bevat die niet worden voorafgegaan door de release pijplijn, kan het bestand niet worden geparseerd met de fout melding van een onverwacht token. U wordt aangeraden om para meters of de sleutel kluis te vervangen door para meters op te halen. U kunt ook dubbel escape-teken als tijdelijke oplossing.

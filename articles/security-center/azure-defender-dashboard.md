@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: how-to
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 35469c7a11d47e586187b55bde1e8ad8a0c94f5f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: bc54cc8dfc34db8aa88690c03ef0b18991e60776
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91448408"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797116"
 ---
 # <a name="the-azure-defender-dashboard"></a>Het Azure Defender-dash board
 
@@ -33,7 +33,7 @@ Het dash board bevat de volgende secties:
 
 1. **Azure Defender-dekking** : hier kunt u de typen resources zien die zich in uw abonnement bevinden en die in aanmerking komen voor beveiliging door Azure Defender. U kunt waar nodig ook een upgrade uitvoeren. Als u alle mogelijk in aanmerking komende resources wilt bijwerken, selecteert u **Alles bijwerken**.
 
-1. **Gebied voor beveiligings waarschuwingen** : wanneer Azure Defender een bedreiging in een wille keurig gebied van uw omgeving detecteert, wordt er een waarschuwing gegenereerd. Deze waarschuwingen bevatten details over de relevante bronnen, voorgestelde stappen voor herstel en soms ook de optie om een logische app te activeren. Als u ergens in deze grafiek selecteert, wordt de **pagina beveiligings waarschuwingen**geopend.
+1. **Gebied voor beveiligings waarschuwingen** : wanneer Azure Defender een bedreiging in een wille keurig gebied van uw omgeving detecteert, wordt er een waarschuwing gegenereerd. Deze waarschuwingen bevatten details over de relevante bronnen, voorgestelde stappen voor herstel en soms ook de optie om een logische app te activeren. Als u ergens in deze grafiek selecteert, wordt de **pagina beveiligings waarschuwingen** geopend.
 
 1. **Geavanceerde beveiliging** : Azure Defender bevat veel geavanceerde mogelijkheden voor beveiliging tegen bedreigingen voor virtuele machines, SQL-data bases, containers, webtoepassingen, uw netwerk en meer. In deze sectie over geavanceerde beveiliging ziet u de status van de resources in de geselecteerde abonnementen voor elk van deze beveiligingen. Selecteer een van de gewenste items om rechtstreeks naar het configuratie gebied voor dat beveiligings type te gaan.
 
@@ -49,4 +49,4 @@ In dit artikel hebt u geleerd over het Azure Defender-dash board.
 Zie [Inleiding tot Azure Defender](azure-defender.md) voor meer informatie over Azure Defender
 
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md)
+> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)

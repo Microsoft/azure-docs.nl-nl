@@ -229,3 +229,5 @@
       href: ../../virtual-wan/security-baseline.md
     - name: VPN Gateway-beveiligingsbasislijn
       href: ../../vpn-gateway/security-baseline.md
+    - name: Windows Virtual Desktop-beveiligings basislijn
+      href: ../../virtual-desktop/security-baseline.md

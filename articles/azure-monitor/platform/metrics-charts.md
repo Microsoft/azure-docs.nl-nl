@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 01/22/2019
 ms.author: vitalyg
 ms.subservice: metrics
-ms.openlocfilehash: b4feb177abbdbfb9666be0ea0746c8316acdf5ae
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 2f8dc9f53c36f59a152fc34361b3726ea2cc001c
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98250754"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797062"
 ---
 # <a name="advanced-features-of-the-azure-metrics-explorer"></a>Geavanceerde functies van de Azure Metrics Explorer
 
@@ -129,16 +129,19 @@ U kunt filters toep assen op grafieken waarvan de metrische gegevens dimensies h
 
    ![Scherm opname van de afmetingen (eigenschappen) die u kunt filteren.](./media/metrics-charts/028.png)
 
-3. Selecteer de dimensie waarden die u wilt gebruiken bij het uitzetten van de grafiek. In het volgende voor beeld worden de geslaagde opslag transacties gefilterd:
+3. Selecteer de operator die u wilt Toep assen op de dimensie (eigenschap). De standaard operator is = (is gelijk aan)
+
+   ![Scherm opname van de operator die u met het filter kunt gebruiken.](./media/metrics-charts/filter-operator.png)
+
+4. Selecteer welke dimensie waarden u wilt Toep assen op het filter bij het tekenen van de grafiek (in dit voor beeld ziet u hoe de geslaagde opslag transacties worden gefilterd):
 
    ![Scherm opname waarin de geslaagde gefilterde opslag transacties worden weer gegeven.](./media/metrics-charts/029.png)
 
-4. Selecteer buiten de **filter kiezer** om het venster te sluiten. De grafiek toont nu hoeveel opslag transacties zijn mislukt:
+5. Nadat u de filter waarden hebt geselecteerd, klikt u op een van de filter selectie vakjes om deze te sluiten. De grafiek toont nu hoeveel opslag transacties zijn mislukt:
 
    ![Scherm afbeelding die laat zien hoeveel opslag transacties zijn mislukt.](./media/metrics-charts/030.png)
 
-U kunt deze stappen herhalen om meerdere filters op dezelfde grafieken toe te passen.
-
+6. U kunt stap 1-5 herhalen om meerdere filters op dezelfde grafieken toe te passen.
 
 
 ## <a name="metric-splitting"></a>Metrische splitsing
@@ -158,9 +161,18 @@ U kunt een metriek per dimensie splitsen om te visualiseren hoe verschillende se
 
    In de grafiek worden nu meerdere regels weer gegeven, één voor elk dimensie segment:
 
-   ![Scherm opname van regels voor elk dimensie segment.](./media/metrics-charts/032.png)
+   ![Scherm opname waarin meerdere lijnen worden weer gegeven, één voor elk segment van de dimensie.](./media/metrics-charts/segment-dimension.png)
+   
+3. Kies een limiet voor het aantal waarden dat moet worden weer gegeven na het splitsen van de geselecteerde dimensie. De standaard limiet is 10, zoals wordt weer gegeven in het bovenstaande diagram. Het bereik van de limiet is 1-50.
+   
+   ![Scherm opname met de gesplitste limiet, waarmee het aantal waarden wordt beperkt na het splitsen.](./media/metrics-charts/segment-dimension-limit.png)
+   
+4. Kies de sorteer volgorde voor segmenten: oplopend of aflopend. De standaard selectie is Aflopend.
+   
+   ![Scherm opname van de sorteer volgorde op gesplitste waarden.](./media/metrics-charts/segment-dimension-sort.png)
 
-3. Selecteer buiten de **groeperings kiezer** om deze te sluiten.
+5. Klik ergens buiten de **groeperings kiezer** om het venster te sluiten.
+   
 
    > [!NOTE]
    > Als u segmenten wilt verbergen die niet relevant zijn voor uw scenario en om uw diagrammen gemakkelijker te kunnen lezen, moet u zowel filteren als splitsen gebruiken voor dezelfde dimensie.

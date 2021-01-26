@@ -6,14 +6,14 @@ author: alkohli
 ms.service: databox
 ms.subservice: disk
 ms.topic: troubleshooting
-ms.date: 04/19/2019
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: b950f80ba8c2bdbaf7a515dc1ce127b934723177
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 17b8d6de198746a79a50c4fbda805b364212e3c4
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85558559"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796055"
 ---
 # <a name="troubleshoot-issues-related-to-azure-data-box-blob-storage"></a>Problemen oplossen die verband houden met Azure Data Box Blob-opslag
 
@@ -65,6 +65,7 @@ Deze fouten zijn niet specifiek voor elke toepassing.
 |Foutbericht  |Aanbevolen actie |
 |---------|---------|
 |Er is een time-out opgestaan. |Meld u aan bij het Data Box apparaat en controleer of het is ontgrendeld. Telkens wanneer het apparaat opnieuw wordt opgestart, blijft het vergrendeld totdat iemand zich aanmeldt.|
+|De REST API verificatie mislukt met de fout: de verificatie van de aanvraag door de server is mislukt. Zorg ervoor dat de waarde van de autorisatie-header correct is opgemaakt, inclusief de hand tekening. Error code: AuthenticationFailed. |Een van de redenen waarom dit kan gebeuren wanneer de tijd van het apparaat niet wordt gesynchroniseerd met Azure. Als er een groot tijds verschil is, wordt de REST API verificatie verbroken wanneer u probeert gegevens te kopiëren naar de Data Box via de REST API. In dit geval kunt u de uitgaande UDP 123-poort openen om toegang toe te staan `time.windows.com` . Zodra de apparaattijd is gesynchroniseerd met de tijd van Azure, moet verificatie slagen. |
 
 ## <a name="next-steps"></a>Volgende stappen
 

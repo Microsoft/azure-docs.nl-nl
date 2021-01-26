@@ -5,46 +5,85 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: B2B
 ms.topic: conceptual
-ms.date: 09/11/2017
+ms.date: 01/21/2020
 ms.author: mimart
 author: msmimart
 manager: celestedg
 ms.reviewer: elisolMS
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: eccbbb22814788aaf06fa6fd10d8c376203c1d49
-ms.sourcegitcommit: 4064234b1b4be79c411ef677569f29ae73e78731
+ms.openlocfilehash: 42b3c3d4d474c61cbe472b4122ac2f80f218bf8d
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92892448"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797256"
 ---
 # <a name="conditional-access-for-b2b-collaboration-users"></a>Voorwaardelijke toegang voor B2B-samenwerkings gebruikers
 
-## <a name="multi-factor-authentication-for-b2b-users"></a>Multi-factor Authentication voor B2B-gebruikers
-Met Azure AD B2B-samen werking kunnen organisaties multi-factor Authentication (MFA)-beleid afdwingen voor B2B-gebruikers. Deze beleids regels kunnen worden afgedwongen op Tenant-, app-of individuele gebruikers niveau, op dezelfde manier als ze zijn ingeschakeld voor fulltime werk nemers en leden van de organisatie. MFA-beleids regels worden afgedwongen voor de resource organisatie.
+In dit artikel wordt beschreven hoe organisaties beleid voor voorwaardelijke toegang (CA) kunnen bereiken voor B2B-gast gebruikers om toegang te krijgen tot hun resources.
+>[!NOTE]
+>Deze verificatie-of autorisatie stroom is een andere bit voor gast gebruikers dan voor de bestaande gebruikers van die id-provider (IdP).
 
-Voorbeeld:
-1. Beheerder of informatie medewerker in bedrijf A verzoekt een gebruiker van bedrijf B naar een toepassing *Foo* in bedrijf A.
-2. Application *Foo* in bedrijf A is geconfigureerd om MFA te vereisen voor toegang.
-3. Wanneer de gebruiker van bedrijf B probeert toegang te krijgen tot de app *Foo* in het bedrijf een Tenant, wordt deze gevraagd een MFA-uitdaging te volt ooien.
-4. De gebruiker kan hun MFA instellen met bedrijf A en de optie MFA kiezen.
-5. Dit scenario werkt voor elke identiteit (Azure AD of MSA, bijvoorbeeld als gebruikers in bedrijf B een verificatie uitvoeren met sociale ID)
-6. Bedrijf A moet voldoende Premium Azure AD-licenties hebben die ondersteuning bieden voor MFA. De gebruiker van bedrijf B gebruikt deze licentie van bedrijf A.
+## <a name="authentication-flow-for-b2b-guest-users-from-an-external-directory"></a>Verificatie stroom voor B2B-gast gebruikers vanuit een externe map
 
-De uitnodigende pacht is altijd verantwoordelijk voor MFA voor gebruikers van de partner organisatie, zelfs als de partner organisatie MFA-mogelijkheden heeft.
+In het volgende diagram ziet u de stroom: ![ afbeelding toont de verificatie stroom voor B2B-gast gebruikers vanuit een externe map](./media/conditional-access-b2b/authentication-flow-b2b-guests.png)
 
-### <a name="setting-up-mfa-for-b2b-collaboration-users"></a>MFA instellen voor gebruikers van B2B-samen werking
-Als u wilt weten hoe gemakkelijk het is om MFA in te stellen voor gebruikers van B2B-samen werking, raadpleegt u de volgende video:
+| Stap | Beschrijving |
+|--------------|-----------------------|
+| 1. | De B2B-gast gebruiker vraagt toegang tot een bron. De resource leidt de gebruiker naar de resource Tenant, een vertrouwde IdP.|
+| 2. | De resource-Tenant identificeert de gebruiker als extern en leidt de gebruiker om naar de IdP van de B2B-gast gebruiker. De gebruiker voert primaire verificatie uit in het IdP.
+| 3. | De IdP van de B2B-gast gebruiker geeft een token door aan de gebruiker. De gebruiker wordt terug omgeleid naar de resource Tenant met het token. De resource-Tenant valideert het token en evalueert de gebruiker vervolgens op basis van het CA-beleid. De resource-Tenant kan bijvoorbeeld vereisen dat de gebruiker Azure Active Directory (AD) Multi-Factor Authentication uitvoert.
+| 4. | Als aan alle beleids regels voor de Tenant-CA van de resource is voldaan, wordt door de resource Tenant een eigen token uitgegeven en wordt de gebruiker omgeleid naar de bijbehorende resource.
+
+## <a name="authentication-flow-for-b2b-guest-users-with-one-time-passcode"></a>Verificatie stroom voor B2B-gast gebruikers met een eenmalige wachtwoord code
+
+In het volgende diagram ziet u de stroom: ![ afbeelding toont de verificatie stroom voor B2B-gast gebruikers met een eenmalige wachtwoord code](./media/conditional-access-b2b/authentication-flow-b2b-guests-otp.png)
+
+| Stap | Beschrijving |
+|--------------|-----------------------|
+| 1. |De gebruiker vraagt om toegang tot een bron in een andere Tenant. De resource leidt de gebruiker naar de resource Tenant, een vertrouwde IdP.|
+| 2. | De resource-Tenant identificeert de gebruiker als een [externe e-mail met een eenmalige wachtwoord code (OTP)](https://docs.microsoft.com/azure/active-directory/external-identities/one-time-passcode) en stuurt een e-mail met het otp-e-mail bericht naar de gebruiker.|
+| 3. | De gebruiker haalt de OTP op en verzendt de code. De resource-Tenant evalueert de gebruiker aan de hand van het CA-beleid.
+| 4. | Als aan alle CA-beleids regels wordt voldaan, geeft de resource-Tenant een token door en wordt de gebruiker omgeleid naar de bijbehorende resource. |
+
+>[!NOTE]
+>Als de gebruiker afkomstig is van een externe bron Tenant, is het niet mogelijk om de IdP CA-beleids regels van de B2B-gast gebruiker ook te evalueren. Vanaf nu is alleen het CA-beleid van de resource Tenant van toepassing op de gasten.
+
+## <a name="azure-ad-multi-factor-authentication-for-b2b-users"></a>Azure AD-Multi-Factor Authentication voor B2B-gebruikers
+
+Organisaties kunnen meerdere Azure AD Multi-Factor Authentication-beleid afdwingen voor hun B2B-gast gebruikers. Deze beleids regels kunnen worden afgedwongen op het niveau van de Tenant, app of individuele gebruiker op dezelfde manier als die voor fulltime werk nemers en leden van de organisatie.
+De resource-Tenant is altijd verantwoordelijk voor Azure AD-Multi-Factor Authentication voor gebruikers, zelfs als de organisatie van de gast gebruiker Multi-Factor Authentication mogelijkheden heeft. Hier volgt een voor beeld:
+
+1. Een beheerder of informatie medewerker in een bedrijf met de naam fabrikam nodigt een gebruiker van een ander bedrijf met de naam contoso uit om hun toepassing Woodgrove te gebruiken.
+
+2. De Woodgrove-app in Fabrikam is zodanig geconfigureerd dat Azure AD-Multi-Factor Authentication op de toegang is vereist.
+
+3. Wanneer de B2B-gast gebruiker van Contoso probeert toegang te krijgen tot Woodgrove in de fabrikam-Tenant, wordt deze gevraagd om de Azure AD-Multi-Factor Authentication uitdaging te volt ooien.
+
+4. De gast gebruiker kan vervolgens hun Azure AD-Multi-Factor Authentication instellen met Fabrikam en de opties selecteren.
+
+5. Dit scenario werkt voor elke identiteit: Azure AD of persoonlijk micro soft-account (MSA). Bijvoorbeeld, als gebruiker in contoso verifieert met sociale ID.
+
+6. Fabrikam moet voldoende Premium Azure AD-licenties hebben die Azure AD-Multi-Factor Authentication ondersteunen. De gebruiker van Contoso gebruikt deze licentie vervolgens van fabrikam. Zie het [facturerings model voor externe Azure AD-identiteiten](https://docs.microsoft.com/azure/active-directory/external-identities/external-identities-pricing) voor informatie over de B2B-licentie verlening.
+
+>[!NOTE]
+>Azure AD Multi-Factor Authentication wordt uitgevoerd bij de resource pacht om voorspel baarheid te garanderen.
+
+### <a name="set-up-azure-ad-multi-factor-authentication-for-b2b-users"></a>Azure AD-Multi-Factor Authentication instellen voor B2B-gebruikers
+
+Bekijk deze video voor het instellen van Azure AD-Multi-Factor Authentication voor gebruikers van B2B-samen werking:
 
 >[!VIDEO https://channel9.msdn.com/Blogs/Azure/b2b-conditional-access-setup/Player]
 
-### <a name="b2b-users-mfa-experience-for-offer-redemption"></a>B2B-gebruikers MFA-ervaring voor aanbiedings inwisseling
-Bekijk de volgende animatie om de aflossings ervaring te bekijken:
+### <a name="b2b-users-azure-ad-multi-factor-authentication-for-offer-redemption"></a>B2B-gebruikers Azure AD Multi-Factor Authentication voor aanbiedings inwisseling
+
+Bekijk de volgende video voor meer informatie over de inwisseling van Azure AD Multi-Factor Authentication:
 
 >[!VIDEO https://channel9.msdn.com/Blogs/Azure/MFA-redemption/Player]
 
-### <a name="mfa-reset-for-b2b-collaboration-users"></a>MFA-reset voor gebruikers van B2B-samen werking
-Op dit moment kan de beheerder alleen opnieuw controleren met behulp van de volgende Power shell-cmdlets voor B2B-samenwerkings gebruikers:
+### <a name="azure-ad-multi-factor-authentication-reset-for-b2b-users"></a>Azure AD Multi-Factor Authentication opnieuw instellen voor B2B-gebruikers
+
+Nu zijn de volgende Power shell-cmdlets beschikbaar om B2B-gast gebruikers te controleren:
 
 1. Verbinding maken met Azure AD
 
@@ -63,52 +102,57 @@ Op dit moment kan de beheerder alleen opnieuw controleren met behulp van de volg
    Get-MsolUser | where { $_.StrongAuthenticationMethods} | select UserPrincipalName, @{n="Methods";e={($_.StrongAuthenticationMethods).MethodType}}
    ```
 
-3. Stel de MFA-methode voor een specifieke gebruiker opnieuw in, zodat de B2B-samenwerkings gebruiker opnieuw proef methoden kan instellen. Voorbeeld:
+3. Stel de Azure AD Multi-Factor Authentication-methode voor een specifieke gebruiker opnieuw in, zodat de B2B-samenwerkings gebruiker opnieuw proef methoden kan instellen. 
+   Hier volgt een voorbeeld:
 
    ```
    Reset-MsolStrongAuthenticationMethodByUpn -UserPrincipalName gsamoogle_gmail.com#EXT#@ WoodGroveAzureAD.onmicrosoft.com
    ```
 
-### <a name="why-do-we-perform-mfa-at-the-resource-tenancy"></a>Waarom wordt MFA op de bron pacht uitgevoerd?
+## <a name="conditional-access-for-b2b-users"></a>Voorwaardelijke toegang voor B2B-gebruikers
 
-In de huidige release is MFA altijd in de resource pacht, om redenen van voorspel baarheid. Stel bijvoorbeeld dat een contoso-gebruiker (Sandra) wordt uitgenodigd voor fabrikam en fabrikam MFA voor B2B-gebruikers heeft ingeschakeld.
+Er zijn verschillende factoren die van invloed zijn op CA-beleid voor B2B-gast gebruikers.
 
-Als contoso beleid heeft ingeschakeld voor App1, maar niet App2, dan zien we mogelijk het volgende probleem als we de contoso MFA-claim in het token bekijken:
+### <a name="device-based-conditional-access"></a>Voorwaardelijke toegang op basis van het apparaat
 
-* Dag 1: een gebruiker heeft MFA in contoso en heeft toegang tot App1. vervolgens wordt er geen extra MFA-prompt weer gegeven in fabrikam.
+In CA is er een optie vereist om te vereisen dat het apparaat van een gebruiker [compatibel of hybride Azure AD is toegevoegd](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#device-state-preview). B2B-gast gebruikers kunnen alleen voldoen aan de naleving als de resource Tenant het apparaat kan beheren. Apparaten kunnen niet door meer dan één organisatie tegelijk worden beheerd. B2B-gast gebruikers kunnen niet voldoen aan de hybride Azure AD-deelname omdat ze geen on-premises AD-account hebben. Alleen als het apparaat van de gast gebruiker niet-beheerd is, kunnen ze hun apparaat registreren of inschrijven bij de resource Tenant en vervolgens het apparaat compatibel maken. De gebruiker kan dan voldoen aan het besturings element Grant.
 
-* Dag 2: de gebruiker heeft app 2 in contoso geopend, dus nu moet u bij het openen van Fabrikam zich registreren voor MFA.
+>[!Note]
+>Het is niet raadzaam een beheerd apparaat voor externe gebruikers te vereisen.
 
-Dit proces kan verwarrend zijn en kan ertoe leiden dat het aanmelden wordt voltooid.
+### <a name="mobile-application-management-policies"></a>Beleidsregels voor Mobile Application Management
 
-Ook als contoso een MFA-functionaliteit heeft, is het niet altijd het geval dat fabrikam het beleid van Contoso MFA vertrouwt.
+De CA verleent besturings elementen zoals **goedgekeurde client-apps vereisen** en **vereisen dat** het apparaat in de Tenant wordt geregistreerd. Deze besturings elementen kunnen alleen worden toegepast op [IOS-en Android-apparaten](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#device-platforms). Geen van deze besturings elementen kan echter worden toegepast op B2B-gast gebruikers als het apparaat van de gebruiker al wordt beheerd door een andere organisatie. Een mobiel apparaat kan niet in meer dan één Tenant tegelijk worden geregistreerd. Als het mobiele apparaat wordt beheerd door een andere organisatie, wordt de gebruiker geblokkeerd. Alleen als het apparaat van de gast gebruiker niet-beheerd is, kunnen ze hun apparaat registreren in de resource-Tenant. De gebruiker kan dan voldoen aan het besturings element Grant.  
 
-Ten slotte werkt resource Tenant MFA ook voor Msa's-en sociale Id's en voor partner-organisaties waarop MFA niet is ingesteld.
+>[!NOTE]
+>Het is niet raadzaam om een beveiligings beleid voor apps voor externe gebruikers te vereisen.
 
-Daarom moet de aanbeveling voor MFA voor B2B-gebruikers altijd MFA vereisen in de uitnodigende Tenant. Deze vereiste zou kunnen leiden tot dubbele MFA in sommige gevallen, maar wanneer toegang wordt verkregen tot de uitnodigende Tenant, is de ervaring voor eind gebruikers voorspelbaar: Sandra moet zich registreren voor MFA met de uitnodigende Tenant.
+### <a name="location-based-conditional-access"></a>Voorwaardelijke toegang op basis van locatie
 
-### <a name="device-based-location-based-and-risk-based-conditional-access-for-b2b-users"></a>Op apparaten gebaseerde, op locatie gebaseerde en op Risico's gebaseerde voorwaardelijke toegang voor B2B-gebruikers
+Het op [locatie gebaseerde beleid](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#locations) op basis van IP-adresbereiken kan worden afgedwongen als de uitgenodigde organisatie een vertrouwd IP-adres bereik kan maken dat de partner organisaties definieert.
 
-Wanneer contoso op apparaten gebaseerd beleid voor voorwaardelijke toegang voor hun bedrijfs gegevens inschakelt, wordt de toegang verhinderd vanaf apparaten die niet worden beheerd door Contoso en niet compatibel zijn met het contoso-apparaatbeleid.
+Beleids regels kunnen ook worden afgedwongen op basis van **geografische locaties**.
 
-Als het apparaat van de B2B-gebruiker niet wordt beheerd door contoso, wordt de toegang van B2B-gebruikers van de partner organisaties geblokkeerd in welke context deze beleids regels worden afgedwongen. Contoso kan echter uitsluitings lijsten maken met specifieke partner gebruikers om ze uit te sluiten van het beleid voor voorwaardelijke toegang op basis van apparaten.
+### <a name="risk-based-conditional-access"></a>Voorwaardelijke toegang op basis van risico
 
-#### <a name="mobile-application-management-policies-for-b2b"></a>Mobile Application Management-beleid voor B2B
+Het [beleid voor aanmeldings Risico's](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#sign-in-risk) wordt afgedwongen als de B2B-gast gebruiker voldoet aan de granting Control. Een organisatie kan bijvoorbeeld Azure AD Multi-Factor Authentication vereisen voor gemiddeld of hoog aanmeld risico. Als een gebruiker echter niet eerder is geregistreerd voor Azure AD-Multi-Factor Authentication in de resource-Tenant, wordt de gebruiker geblokkeerd. Dit wordt gedaan om te voor komen dat kwaadwillende gebruikers hun eigen Azure AD-Multi-Factor Authentication referenties registreren in de gebeurtenis die ze het wacht woord van een rechtmatig gebruikers veroorzaken.
 
-App-beveiligings beleid voor voorwaardelijke toegang kan niet worden toegepast op B2B-gebruikers omdat de uitnodigende organisatie geen zicht baarheid heeft in de thuis organisatie van de B2B-gebruiker.
+Het [beleid voor gebruikers Risico's](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#user-risk) kan echter niet worden omgezet in de resource-Tenant. Als u bijvoorbeeld een wacht woord moet wijzigen voor gast gebruikers met een hoog risico, worden ze geblokkeerd omdat het niet mogelijk is om wacht woorden opnieuw in te stellen in de resource directory.
 
-#### <a name="location-based-conditional-access-for-b2b"></a>Voorwaardelijke toegang op basis van locaties voor B2B
+### <a name="conditional-access-client-apps-condition"></a>Voor waarde voor client-apps voor voorwaardelijke toegang
 
-Op locatie gebaseerd beleid voor voorwaardelijke toegang kan worden afgedwongen voor B2B-gebruikers als de uitgenodigde organisatie een vertrouwd IP-adres bereik kan maken dat hun partner organisaties definieert.
+De voor [waarden voor client-apps](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-conditions#client-apps) gedragen zich hetzelfde voor B2B-gast gebruikers als voor elk ander type gebruiker. U kunt bijvoorbeeld voor komen dat gast gebruikers verouderde verificatie protocollen gebruiken.
 
-#### <a name="risk-based-conditional-access-for-b2b"></a>Voorwaardelijke toegang op basis van Risico's voor B2B
+### <a name="conditional-access-session-controls"></a>Sessie besturings elementen voor voorwaardelijke toegang
 
-Op dit moment kunnen aanmeldings beleid op basis van Risico's niet worden toegepast op B2B-gebruikers omdat de risico-evaluatie wordt uitgevoerd in de thuis organisatie van de B2B-gebruiker.
+[Sessie besturings elementen](https://docs.microsoft.com/azure/active-directory/conditional-access/concept-conditional-access-session) gedragen zich hetzelfde voor B2B-gast gebruikers als voor elk ander type gebruiker.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Raadpleeg de volgende artikelen over Azure AD B2B-samen werking:
+Zie voor meer informatie de volgende artikelen over Azure AD B2B-samen werking:
 
-* [Wat is Azure AD B2B-samenwerking?](what-is-b2b.md)
-* [Prijzen van externe identiteiten](external-identities-pricing.md)
-* [Veelgestelde vragen over Azure Active Directory B2B-samenwerking](faq.md)
+- [Wat is Azure AD B2B-samenwerking?](https://docs.microsoft.com/azure/active-directory/external-identities/what-is-b2b)
+- [Identiteitsbeveiliging en B2B-gebruikers](https://docs.microsoft.com/azure/active-directory/identity-protection/concept-identity-protection-b2b)
+- [Prijzen van externe identiteiten](https://azure.microsoft.com/pricing/details/active-directory/)
+- [Veelgestelde vragen (FAQ)](https://docs.microsoft.com/azure/active-directory/external-identities/faq)
+

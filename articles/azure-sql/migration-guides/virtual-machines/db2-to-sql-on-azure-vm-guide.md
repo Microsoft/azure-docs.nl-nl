@@ -3,19 +3,19 @@ title: DB2 om te SQL Server op virtuele machines van Azure (migratie handleiding
 description: Volg deze hand leiding voor het migreren van uw DB2-Server naar SQL Server op Azure-Vm's.
 ms.custom: ''
 ms.service: virtual-machines-sql
-ms.subservice: ''
+ms.subservice: migration-guide
 ms.devlang: ''
 ms.topic: how-to
 author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 5312ee08bad9d0b84e13c53fe4b1de59fad896f1
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: c3f3af6a1c114d6587992f79e95dcc0c1ccb41e6
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96326043"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797476"
 ---
 # <a name="migration-guide-db2-to-sql-server-on-azure-vms"></a>Migratie handleiding: DB2 naar SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -88,7 +88,7 @@ Voer de volgende stappen uit om het schema te converteren:
 1. Selecteer **verbinding maken met SQL Server**. 
     1. Voer de verbindings gegevens in om verbinding te maken met uw SQL Server-exemplaar op uw Azure-VM. 
     1. Kies ervoor om verbinding te maken met een bestaande Data Base op de doel server of geef een nieuwe naam op voor het maken van een nieuwe Data Base op de doel server. 
-    1. Selecteer **Verbinden**. 
+    1. Selecteer **Verbinding maken**. 
 
     :::image type="content" source="../../../../includes/media/virtual-machines-sql-server-connection-steps/rm-ssms-connect.png" alt-text="Verbinding maken met uw SQL Server op Azure VM":::
 
@@ -104,7 +104,7 @@ Voer de volgende stappen uit om het schema te converteren:
 1. Sla het project lokaal op voor een herbemiddeling van het offline schema. Selecteer **project opslaan** in het menu **bestand** . 
 
 
-## <a name="migrate"></a>Migreren
+## <a name="migrate"></a>Migrate
 
 Nadat u klaar bent met het beoordelen van uw data bases en eventuele verschillen hebt opgelost, is de volgende stap het uitvoeren van het migratie proces.
 

@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: tutorial
 ms.date: 01/13/2021
 ms.author: alkohli
-ms.openlocfilehash: 4c44fca7b443a4d289b7ac7e2e507a3c3f305089
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 26e8f08d4b901a9ea57da826d9441d23508c4a4c
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790780"
+ms.locfileid: "98797620"
 ---
 # <a name="tutorial-order-azure-data-box"></a>Zelfstudie: Azure Data Box bestellen
 
@@ -231,7 +231,7 @@ Voer de volgende stappen uit in Azure Portal om een apparaat te bestellen.
     |Bronland/-regio    |    Selecteer het land/de regio waar uw gegevens zich momenteel bevinden.         |
     |Doel-Azure-regio     |     Selecteer de Azure-regio waarnaar u uw gegevens wilt overdragen. <br> Ga naar [Beschikbaarheid in de regio](data-box-overview.md#region-availability) voor meer informatie.            |
 
-    ![Azure Data Box-importorder beginnen](media/data-box-deploy-ordered/select-data-box-import-04-b.png#lightbox)
+    [![Een Azure data Box import volgorde ](media/data-box-deploy-ordered/select-data-box-import-04-b.png) starten](media/data-box-deploy-ordered/select-data-box-import-04-b.png#lightbox)
 
 5. Selecteer **Data Box**. De maximale bruikbare capaciteit voor één bestelling is 80 TB. U kunt meerdere bestellingen doen voor grotere gegevensgrootten.
 

@@ -7,12 +7,12 @@ ms.custom: mvc
 ms.service: postgresql
 ms.topic: overview
 ms.date: 09/21/2020
-ms.openlocfilehash: 8bc303f619d145cc280e6caab65781bd42d1b314
-ms.sourcegitcommit: 3bcce2e26935f523226ea269f034e0d75aa6693a
-ms.translationtype: HT
+ms.openlocfilehash: db80ae66761e49ce90f25a22f0e74cf8a1300796
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/23/2020
-ms.locfileid: "92489690"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797237"
 ---
 # <a name="choose-the-right-postgresql-server-option-in-azure"></a>De juiste PostgreSQL-serveroptie in Azure kiezen
 
@@ -21,7 +21,7 @@ Met Azure kunnen de workloads van uw PostgreSQL-server in een gehoste VM-infrast
 Overweeg bij het nemen van uw beslissing de volgende drie opties in PaaS of kies voor virtuele Azure-machines (IaaS)
 - [Azure Database for PostgreSQL Single Server](./overview-single-server.md)
 - [Azure database for PostgreSQL Flexible Server](./flexible-server/overview.md)
-- [Azure database for PostgreSQL Hyperscale (Citus)]()
+- [Azure database for PostgreSQL Hyperscale (Citus)](hyperscale/index.yml)
 
 De optie **PostgreSQL op Azure-VM's** valt in de branchecategorie van IaaS. Met deze service kunt u een PostgreSQL-server uitvoeren in een volledig beheerde virtuele machine op het Azure-cloudplatform. Alle recente versies en edities van PostgreSQL kunnen worden geïnstalleerd op een virtuele IaaS-machine. Het belangrijkste verschil van Azure Database for PostgreSQL is dat PostgreSQL op virtuele machines van Azure controle biedt over de database-engine. Met deze controle gaat echter ook de verantwoordelijkheid voor het beheren van de VM's en veel databasebeheertaken gepaard. Deze taken omvatten het onderhouden van en toepassen van patches op databaseservers, gegevensherstel en ontwerp met hoge beschikbaarheid.
 

@@ -11,12 +11,12 @@ ms.reviewer: sawinark
 manager: mflasko
 ms.custom: seo-lt-2019
 ms.date: 07/08/2019
-ms.openlocfilehash: 5f1332255ae83a32f9b71d24d812b00fad9b7fa1
-ms.sourcegitcommit: fb3c846de147cc2e3515cd8219d8c84790e3a442
+ms.openlocfilehash: 34fd595a03f67201b303c94764668bf86a6c244b
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92637918"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796900"
 ---
 # <a name="troubleshoot-ssis-integration-runtime-management-in-azure-data-factory"></a>Problemen met SSIS Integration Runtime Management in Azure Data Factory oplossen
 
@@ -151,7 +151,7 @@ SSIS IR wordt regelmatig automatisch bijgewerkt. Er wordt een nieuwe Azure Batch
 
 Als het inrichten van SSIS IR mislukt, worden alle gemaakte resources verwijderd. Als er echter sprake is van een verwijderingsvergrendeling voor de resource op het niveau van het abonnement of de resourcegroep, worden Virtual Network-resources niet verwijderd zoals verwacht. Verwijder de verwijderingsvergrendeling en start de IR opnieuw om deze fout te herstellen.
 
-### <a name="vnetresourcegrouplockedduringstop"></a>VNetResourceGroupLockedDuringStop
+### <a name="vnetresourcegrouplockedduringstopvnetdeletelock"></a>VNetResourceGroupLockedDuringStop/VNetDeleteLock
 
 Als u SSIS IR stopt, worden alle aan Virtual Network gerelateerde resources verwijderd. Verwijderen kan echter mislukken als er sprake is van een verwijderingsvergrendeling voor de resource op het niveau van het abonnement of de resourcegroep. Ook hier wordt de verwijderingsvergrendeling beheerd en ingesteld door de klant. Daarom moet deze de verwijderingsvergrendeling verwijderen en SSIS IR opnieuw stoppen.
 

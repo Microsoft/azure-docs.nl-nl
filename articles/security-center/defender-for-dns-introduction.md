@@ -7,12 +7,12 @@ ms.date: 12/07/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 18d9cb3c64eb41b33a58b248f3826bd9a80c6d90
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
-ms.translationtype: HT
+ms.openlocfilehash: 957e39f7629337182c3e19a1a514c42883666301
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96754803"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797004"
 ---
 # <a name="introduction-to-azure-defender-for-dns"></a>Inleiding tot Azure Defender voor DNS
 
@@ -47,7 +47,7 @@ Een volledige lijst van de waarschuwingen die door Azure Defender voor DNS worde
 
 Azure Defender voor DNS gebruikt geen agents. 
 
-Als u uw DNS-laag wilt beveiligen, schakelt u Azure Defender voor DNS in voor elk van uw abonnementen, zoals wordt beschreven in [Azure Defender inschakelen](security-center-pricing.md).
+Als u uw DNS-laag wilt beveiligen, schakelt u Azure Defender voor DNS in voor elk van uw abonnementen, zoals wordt beschreven in [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender).
 
 
 ## <a name="next-steps"></a>Volgende stappen
@@ -57,4 +57,4 @@ In dit artikel bent u meer te weten gekomen over Azure Defender voor DNS. Raadpl
 - Beveiligingswaarschuwingen kunnen worden gegenereerd door Security Center of door Security Center worden ontvangen vanuit andere beveiligingsproducten. Als u al deze waarschuwingen wilt exporteren naar Azure Sentinel, een externe SIEM of een ander extern hulpprogramma, volgt u de instructies in [Waarschuwingen naar een SIEM exporteren](continuous-export.md).
 
 - > [!div class="nextstepaction"]
-    > [Azure Defender inschakelen](security-center-pricing.md)
+    > [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)

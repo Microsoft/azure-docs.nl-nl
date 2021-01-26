@@ -13,18 +13,18 @@ ms.date: 12/3/2020
 ms.author: hirsin
 ms.reviewer: nacanuma, jmprieur
 ms.custom: aaddev
-ms.openlocfilehash: 50a2f56824db67b73199439922e662339ff30872
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 22352f6d0c7dc48b98be5fcb4101f262adc480d6
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98755287"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98795629"
 ---
 # <a name="microsoft-identity-platform-application-authentication-certificate-credentials"></a>Referenties voor verificatie certificaat voor micro soft-identiteits platform
 
 Met het micro soft Identity-platform kan een toepassing eigen referenties voor verificatie gebruiken overal waar een client geheim kan worden gebruikt, bijvoorbeeld in de OAuth 2,0-  [client referenties toekenning](v2-oauth2-client-creds-grant-flow.md) flow en de OBO-stroom ( [on-of](v2-oauth2-on-behalf-of-flow.md) ---).
 
-Een van de referenties die een toepassing voor verificatie kan gebruiken is een [JSON Web token](./security-tokens.md#json-web-tokens-jwts-and-claims) (JWT)-verklaring die is ondertekend met een certificaat waarvan de toepassing eigenaar is.
+Een van de referenties die een toepassing voor verificatie kan gebruiken is een [JSON Web token](./security-tokens.md#json-web-tokens-and-claims) (JWT)-verklaring die is ondertekend met een certificaat waarvan de toepassing eigenaar is.
 
 ## <a name="assertion-format"></a>Bevestigings indeling
 

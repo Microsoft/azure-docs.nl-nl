@@ -10,14 +10,17 @@ ms.subservice: azure-sentinel
 ms.topic: conceptual
 ms.custom: mvc
 ms.date: 09/06/2020
-ms.openlocfilehash: fd3c8a08e5512d15be4dfb26ca3eff151d08386f
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: e31128687cfcc1f4e32879328ad3227182efb9ce
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94651359"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797362"
 ---
 # <a name="use-azure-sentinel-watchlists"></a>Gebruik Azure Sentinel Watchlists
+
+> [!IMPORTANT]
+> De functie Watchlists is momenteel beschikbaar als **Preview-versie**. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
 
 Azure Sentinel Watchlists maken het verzamelen van gegevens uit externe gegevens bronnen mogelijk voor correlatie met de gebeurtenissen in uw Azure-Sentinel-omgeving. Nadat u deze hebt gemaakt, kunt u Watchlists gebruiken in uw Zoek-, detectie-, bedreigings-en reactie playbooks. Watchlists worden opgeslagen in uw Azure-Sentinel-werk ruimte als naam/waarde-paren en worden in de cache geplaatst voor optimale query prestaties en lage latentie.
 
@@ -73,11 +76,43 @@ Veelvoorkomende scenario's voor het gebruik van Watchlists zijn:
 
     :::image type="content" source="./media/watchlists/sentinel-watchlist-queries-fields.png" alt-text="query's met watch list-velden" lightbox="./media/watchlists/sentinel-watchlist-queries-fields.png":::
     
+1. U kunt gegevens in elke tabel opvragen op basis van gegevens uit een watch list door de watch list te behandelen als een tabel voor samen voegingen en zoek opdrachten.
+
+    ```kusto
+    Heartbeat
+    | lookup kind=leftouter _GetWatchlist('IPlist') 
+     on $left.ComputerIP == $right.IPAddress
+    ```
+    :::image type="content" source="./media/watchlists/sentinel-watchlist-queries-join.png" alt-text="query's uitvoeren op watch list als zoeken":::
+
 ## <a name="use-watchlists-in-analytics-rules"></a>Watchlists gebruiken in Analytics-regels
 
 Als u Watchlists in Analytics-regels wilt gebruiken, gaat u vanuit het Azure Portal naar **Azure Sentinel**  >  **Configuration**  >  **Analytics** en maakt u een regel met behulp van de `_GetWatchlist('<watchlist>')` functie in de query.
 
-:::image type="content" source="./media/watchlists/sentinel-watchlist-analytics-rule.png" alt-text="Watchlists gebruiken in Analytics-regels" lightbox="./media/watchlists/sentinel-watchlist-analytics-rule.png":::
+1. In dit voor beeld maakt u een watch list met de naam ' ipwatchlist ' met de volgende waarden:
+
+    :::image type="content" source="./media/watchlists/create-watchlist.png" alt-text="lijst met vier items voor watch list":::
+
+    :::image type="content" source="./media/watchlists/sentinel-watchlist-new-2.png" alt-text="Watch list maken met vier items":::
+
+1. Maak vervolgens de Analytics-regel.  In dit voor beeld bevatten we alleen gebeurtenissen van IP-adressen in de watch list:
+
+    ```kusto
+    //Watchlist as a variable
+    let watchlist = (_GetWatchlist('ipwatchlist') | project IPAddress);
+    Heartbeat
+    | where ComputerIP in (watchlist)
+    ```
+    ```kusto
+    //Watchlist inline with the query
+    Heartbeat
+    | where ComputerIP in ( 
+        (_GetWatchlist('ipwatchlist')
+        | project IPAddress)
+    )
+    ```
+
+:::image type="content" source="./media/watchlists/sentinel-watchlist-analytics-rule-2.png" alt-text="Watchlists gebruiken in Analytics-regels":::
 
 ## <a name="view-list-of-watchlists-aliases"></a>Lijst met Watchlists-aliassen weer geven
 

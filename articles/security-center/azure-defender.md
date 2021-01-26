@@ -7,16 +7,14 @@ ms.date: 9/30/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: d9c8df4fe296bcd40f26847233fcd49bcab573c0
-ms.sourcegitcommit: d488a97dc11038d9cef77a0235d034677212c8b3
-ms.translationtype: HT
+ms.openlocfilehash: 23d00acc03ee879036a823f0c3d7fe2f67902e31
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/21/2020
-ms.locfileid: "97709441"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797016"
 ---
 # <a name="introduction-to-azure-defender"></a>Inleiding tot Azure Defender
-
-[!INCLUDE [Solorigate banner](../../includes/security-center-solorigate.md)]
 
 De twee grote pijlers van cloudbeveiliging zijn verwerkt in de functies van Azure Security Center:
 
@@ -101,4 +99,4 @@ Op de volgende pagina's vindt u meer informatie:
 In dit artikel bent u meer te weten gekomen over de voordelen van Azure Defender. 
 
 > [!div class="nextstepaction"]
-> [Azure Defender inschakelen](security-center-pricing.md)
+> [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)

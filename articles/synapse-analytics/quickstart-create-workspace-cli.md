@@ -9,12 +9,12 @@ ms.subservice: workspace
 ms.date: 08/25/2020
 ms.author: alehall
 ms.reviewer: jrasnick
-ms.openlocfilehash: 2658240e670e617f7296881f733ff369b9bf8f87
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: d4beef9383b8e51e1295639c18e745fd0fdf8588
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98219008"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98796941"
 ---
 # <a name="quickstart-create-an-azure-synapse-workspace-with-azure-cli"></a>Quickstart: Een Azure Synapse-werkruimte maken met Azure CLI
 
@@ -50,31 +50,12 @@ In deze quickstart leert u hoe u een Synapse-werkruimte maakt met behulp van Azu
     |SqlPassword| Kies een veilig wachtwoord.|
     |||
 
-2. Maak een resourcegroep als container voor uw Azure Synapse-werkruimte:
+1. Maak een resourcegroep als container voor uw Azure Synapse-werkruimte:
     ```azurecli
     az group create --name $SynapseResourceGroup --location $Region
     ```
-3. Haal de sleutel van het ADLS Gen2-opslagaccount op:
-    ```azurecli
-    StorageAccountKey=$(az storage account keys list \
-      --account-name $StorageAccountName \
-      | jq -r '.[0] | .value')
-    ```
-4. Haal de eindpunt-URL van het ADLS Gen2-opslagaccount op:
-    ```azurecli
-    StorageEndpointUrl=$(az storage account show \
-      --name $StorageAccountName \
-      --resource-group $StorageAccountResourceGroup \
-      | jq -r '.primaryEndpoints | .dfs')
-    ```
 
-5. (Optioneel) U kunt altijd controleren wat de sleutel en eindpunt-URL van uw ADLS Gen2-opslagaccount zijn:
-    ```azurecli
-    echo "Storage Account Key: $StorageAccountKey"
-    echo "Storage Endpoint URL: $StorageEndpointUrl"
-    ```
-
-6. Maak een Azure Synapse-werkruimte:
+1. Maak een Azure Synapse-werkruimte:
     ```azurecli
     az synapse workspace create \
       --name $SynapseWorkspaceName \
@@ -86,14 +67,14 @@ In deze quickstart leert u hoe u een Synapse-werkruimte maakt met behulp van Azu
       --location $Region
     ```
 
-7. Haal de Web-URL en Dev-URL van de Azure Synapse-werkruimte op:
+1. Haal de Web-URL en Dev-URL van de Azure Synapse-werkruimte op:
     ```azurecli
     WorkspaceWeb=$(az synapse workspace show --name $SynapseWorkspaceName --resource-group $SynapseResourceGroup | jq -r '.connectivityEndpoints | .web')
 
     WorkspaceDev=$(az synapse workspace show --name $SynapseWorkspaceName --resource-group $SynapseResourceGroup | jq -r '.connectivityEndpoints | .dev')
     ```
 
-8. Maak een firewallregel om vanaf uw computer toegang te krijgen tot de Azure Synapse-werkruimte:
+1. Maak een firewallregel om vanaf uw computer toegang te krijgen tot de Azure Synapse-werkruimte:
 
     ```azurecli
     ClientIP=$(curl -sb -H "Accept: application/json" "$WorkspaceDev" | jq -r '.message')
@@ -103,7 +84,7 @@ In deze quickstart leert u hoe u een Synapse-werkruimte maakt met behulp van Azu
     az synapse workspace firewall-rule create --end-ip-address $ClientIP --start-ip-address $ClientIP --name "Allow Client IP" --resource-group $SynapseResourceGroup --workspace-name $SynapseWorkspaceName
     ```
 
-9. Open de Web-URL van de Azure Synapse-werkruimte, die in de omgevingsvariabele `WorkspaceWeb` is opgeslagen, om toegang te krijgen tot uw werkruimte:
+1. Open de Web-URL van de Azure Synapse-werkruimte, die in de omgevingsvariabele `WorkspaceWeb` is opgeslagen, om toegang te krijgen tot uw werkruimte:
 
     ```azurecli
     echo "Open your Azure Synapse Workspace Web URL in the browser: $WorkspaceWeb"

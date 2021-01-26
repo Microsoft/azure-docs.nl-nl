@@ -10,12 +10,13 @@ ms.date: 05/12/2020
 ms.author: santoshc
 ms.reviewer: tamram
 ms.subservice: common
-ms.openlocfilehash: 5b4a1b1f27dff059090d78e24a6a0eca0bbbf01f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.custom: references_regions
+ms.openlocfilehash: 9afe58434d60280f635deab75b763077bc76b93c
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85514195"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797639"
 ---
 # <a name="configure-network-routing-preference-for-azure-storage-preview"></a>Netwerk routering configureren voor Azure Storage (preview-versie)
 
@@ -65,9 +66,36 @@ De verbindings reeksen voor de gepubliceerde route-specifieke eind punten kunnen
 
 Routerings voorkeur voor Azure Storage is beschikbaar in de volgende regio's:
 
-- Frankrijk - zuid
-- VS - noord-centraal
+- VS - centraal 
+- VS - centraal EUAP
+- VS - oost 
+- VS - oost 2
+- VS - oost 2 
+- VS-Oost 2 EUAP
+- VS - zuid-centraal
 - VS - west-centraal
+- VS - west 
+- VS - west 2 
+- Frankrijk - centraal 
+- Frankrijk - zuid 
+- Duitsland - noord 
+- Duitsland - west-centraal 
+- VS - noord-centraal
+- Europa - noord 
+- Noorwegen - oost 
+- Zwitserland - noord
+- Zwitserland - west
+- Verenigd Koninkrijk Zuid 
+- Verenigd Koninkrijk West 
+- Europa -west 
+- UAE - centraal
+- Azië - oost 
+- Azië - zuidoost 
+- Japan - oost 
+- Japan - west 
+- India - west
+- Australië - oost 
+- Australië - zuidoost 
 
 De volgende bekende problemen zijn van invloed op het voor beeld van de route ring-voor Azure Storage:
 

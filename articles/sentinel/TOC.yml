@@ -223,14 +223,26 @@
           href: bookmarks.md
         - name: Livestream gebruiken voor opsporing
           href: livestream.md
-        - name: Opsporingsquery's beheren met REST-API
-          href: hunting-with-rest-api.md
     - name: Azure Sentinel verwijderen
       href: offboard.md
 - name: Verwijzing (Nieuw!)
   items:
+    - name: Azure RBAC-rollen
+      items:
+        - name: Alle Azure-rollen
+          href: /azure/role-based-access-control/built-in-roles#all
+        - name: Azure-Sentinel-rollen
+          href: /azure/role-based-access-control/built-in-roles#security
     - name: REST-API’s
-      href: /rest/api/securityinsights/
+      items:
+        - name: Azure Sentinel REST-API
+          href: /rest/api/securityinsights/
+        - name: Opsporingsquery's beheren met REST-API
+          href: hunting-with-rest-api.md
+        - name: Watchlists beheren met REST-API
+          href: watchlist-with-rest-api.md
+    - name: De Logic Apps-connector van Azure Sentinel verkennen
+      href: /connectors/azuresentinel/
     - name: Netwerknormalisatieschema
       href: normalization-schema.md
     - name: UEBA-verrijkingen

@@ -3,20 +3,20 @@ title: Geavanceerde onderwerpen over toepassings upgrades
 description: In dit artikel vindt u een aantal geavanceerde onderwerpen met betrekking tot het bijwerken van een Service Fabric-toepassing.
 ms.topic: conceptual
 ms.date: 03/11/2020
-ms.openlocfilehash: cc2fdc8f99b74078bd8d5274cbe52265ab8455ae
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 6604300328f2d243077ba341a9028221438dce9d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022986"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98792045"
 ---
 # <a name="service-fabric-application-upgrade-advanced-topics"></a>Service Fabric toepassings upgrade: geavanceerde onderwerpen
 
 ## <a name="add-or-remove-service-types-during-an-application-upgrade"></a>Service typen toevoegen of verwijderen tijdens een toepassings upgrade
 
-Als een nieuw service type wordt toegevoegd aan een gepubliceerde toepassing als onderdeel van een upgrade, wordt het nieuwe service type toegevoegd aan de geïmplementeerde toepassing. Een dergelijke upgrade heeft geen invloed op een van de service-exemplaren die al deel uitmaken van de toepassing, maar er moet een exemplaar van het toegevoegde service type worden gemaakt voor het nieuwe service type om actief te zijn (Zie [New-ServiceFabricService](/powershell/module/servicefabric/new-servicefabricservice?view=azureservicefabricps)).
+Als een nieuw service type wordt toegevoegd aan een gepubliceerde toepassing als onderdeel van een upgrade, wordt het nieuwe service type toegevoegd aan de geïmplementeerde toepassing. Een dergelijke upgrade heeft geen invloed op een van de service-exemplaren die al deel uitmaken van de toepassing, maar er moet een exemplaar van het toegevoegde service type worden gemaakt voor het nieuwe service type om actief te zijn (Zie [New-ServiceFabricService](/powershell/module/servicefabric/new-servicefabricservice)).
 
-Daarnaast kunnen service typen uit een toepassing worden verwijderd als onderdeel van een upgrade. Alle service-exemplaren van het Service type to-to-remove moeten worden verwijderd voordat u kunt door gaan met de upgrade (Zie [Remove-ServiceFabricService](/powershell/module/servicefabric/remove-servicefabricservice?view=azureservicefabricps)).
+Daarnaast kunnen service typen uit een toepassing worden verwijderd als onderdeel van een upgrade. Alle service-exemplaren van het Service type to-to-remove moeten worden verwijderd voordat u kunt door gaan met de upgrade (Zie [Remove-ServiceFabricService](/powershell/module/servicefabric/remove-servicefabricservice)).
 
 ## <a name="avoid-connection-drops-during-stateless-service-planned-downtime"></a>Voor komen dat verbinding wordt verbroken tijdens stateless service geplande downtime
 
@@ -114,7 +114,7 @@ De genegeerde vertragings duur is alleen van toepassing op het aangeroepen upgra
 
 In de *bewaakte* modus past service Fabric status beleid toe om ervoor te zorgen dat de toepassing in orde is terwijl de upgrade wordt uitgevoerd. Als het status beleid wordt geschonden, wordt de upgrade opgeschort of automatisch teruggedraaid, afhankelijk van de opgegeven *FailureAction*.
 
-In de *UnmonitoredManual* -modus heeft de toepassings beheerder de volledige controle over de voortgang van de upgrade. Deze modus is handig bij het Toep assen van aangepaste beleids regels voor status evaluatie of het uitvoeren van niet-conventionele upgrades om de status controle volledig over te slaan (de toepassing is al in gegevens verlies). Een upgrade die in deze modus wordt uitgevoerd, wordt vanzelf onderbroken na het volt ooien van elk UD en moet expliciet worden hervat met behulp van [Resume-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/resume-servicefabricapplicationupgrade?view=azureservicefabricps). Wanneer een upgrade is onderbroken en klaar is om door de gebruiker te worden hervat, wordt in de upgrade status *RollforwardPending* weer gegeven (Zie [UpgradeState](/dotnet/api/system.fabric.applicationupgradestate?view=azure-dotnet)).
+In de *UnmonitoredManual* -modus heeft de toepassings beheerder de volledige controle over de voortgang van de upgrade. Deze modus is handig bij het Toep assen van aangepaste beleids regels voor status evaluatie of het uitvoeren van niet-conventionele upgrades om de status controle volledig over te slaan (de toepassing is al in gegevens verlies). Een upgrade die in deze modus wordt uitgevoerd, wordt vanzelf onderbroken na het volt ooien van elk UD en moet expliciet worden hervat met behulp van [Resume-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/resume-servicefabricapplicationupgrade). Wanneer een upgrade is onderbroken en klaar is om door de gebruiker te worden hervat, wordt in de upgrade status *RollforwardPending* weer gegeven (Zie [UpgradeState](/dotnet/api/system.fabric.applicationupgradestate)).
 
 Ten slotte is de *UnmonitoredAuto* -modus handig voor het uitvoeren van snelle upgrade iteraties tijdens service ontwikkeling of tests, omdat er geen gebruikers invoer is vereist en er geen beleids regels voor de status van de toepassing worden geëvalueerd.
 
@@ -180,7 +180,7 @@ HealthState            : Ok
 ApplicationParameters  : { "ImportantParameter" = "1"; "NewParameter" = "testBefore" }
 ```
 
-Voer nu een upgrade uit voor de toepassing met behulp van de cmdlet **Start-ServiceFabricApplicationUpgrade** . In dit voor beeld wordt een bewaakte upgrade weer gegeven, maar een niet-bewaakte upgrade kan ook worden gebruikt. Zie de [Naslag Gids voor Azure service Fabric Power shell-modules](/powershell/module/servicefabric/start-servicefabricapplicationupgrade?view=azureservicefabricps#parameters) voor een volledige beschrijving van de vlaggen die door deze cmdlet worden geaccepteerd
+Voer nu een upgrade uit voor de toepassing met behulp van de cmdlet **Start-ServiceFabricApplicationUpgrade** . In dit voor beeld wordt een bewaakte upgrade weer gegeven, maar een niet-bewaakte upgrade kan ook worden gebruikt. Zie de [Naslag Gids voor Azure service Fabric Power shell-modules](/powershell/module/servicefabric/start-servicefabricapplicationupgrade#parameters) voor een volledige beschrijving van de vlaggen die door deze cmdlet worden geaccepteerd
 
 ```PowerShell
 PS C:\> $appParams = @{ "ImportantParameter" = "2"; "NewParameter" = "testAfter"}
@@ -205,11 +205,11 @@ ApplicationParameters  : { "ImportantParameter" = "2"; "NewParameter" = "testAft
 
 ## <a name="roll-back-application-upgrades"></a>Upgrades van toepassingen terugdraaien
 
-Hoewel upgrades kunnen worden doorgevoerd in een van de drie modi (*bewaakt*, *UnmonitoredAuto* of *UnmonitoredManual*), kunnen ze alleen worden teruggedraaid in de modus *UnmonitoredAuto* of *UnmonitoredManual* . Terugdraaien in de *UnmonitoredAuto* -modus werkt op dezelfde manier als met de uitzonde ring dat de standaard waarde van *UpgradeReplicaSetCheckTimeout* verschilt-Zie [para meters](service-fabric-application-upgrade-parameters.md)voor de upgrade van de toepassing. Terugdraaien in de *UnmonitoredManual* -modus werkt op dezelfde manier als vooruit draaien: de terugdraai actie wordt na elke UD onderbroken en moet expliciet worden hervat met behulp van [Resume-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/resume-servicefabricapplicationupgrade?view=azureservicefabricps) om door te gaan met het terugdraaien.
+Hoewel upgrades kunnen worden doorgevoerd in een van de drie modi (*bewaakt*, *UnmonitoredAuto* of *UnmonitoredManual*), kunnen ze alleen worden teruggedraaid in de modus *UnmonitoredAuto* of *UnmonitoredManual* . Terugdraaien in de *UnmonitoredAuto* -modus werkt op dezelfde manier als met de uitzonde ring dat de standaard waarde van *UpgradeReplicaSetCheckTimeout* verschilt-Zie [para meters](service-fabric-application-upgrade-parameters.md)voor de upgrade van de toepassing. Terugdraaien in de *UnmonitoredManual* -modus werkt op dezelfde manier als vooruit draaien: de terugdraai actie wordt na elke UD onderbroken en moet expliciet worden hervat met behulp van [Resume-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/resume-servicefabricapplicationupgrade) om door te gaan met het terugdraaien.
 
-Terugdraai bewerkingen kunnen automatisch worden geactiveerd wanneer het status beleid van een upgrade in de *bewaakte* modus met een *FailureAction* van het *terugdraaien* is geschonden (Zie [para meters](service-fabric-application-upgrade-parameters.md)voor de upgrade van de toepassing) of expliciet gebruikmaakt van [Start-ServiceFabricApplicationRollback](/powershell/module/servicefabric/start-servicefabricapplicationrollback?view=azureservicefabricps).
+Terugdraai bewerkingen kunnen automatisch worden geactiveerd wanneer het status beleid van een upgrade in de *bewaakte* modus met een *FailureAction* van het *terugdraaien* is geschonden (Zie [para meters](service-fabric-application-upgrade-parameters.md)voor de upgrade van de toepassing) of expliciet gebruikmaakt van [Start-ServiceFabricApplicationRollback](/powershell/module/servicefabric/start-servicefabricapplicationrollback).
 
-Tijdens het terugdraaien kan de waarde van *UpgradeReplicaSetCheckTimeout* en de modus op elk gewenst moment nog steeds worden gewijzigd met behulp van [Update-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/update-servicefabricapplicationupgrade?view=azureservicefabricps).
+Tijdens het terugdraaien kan de waarde van *UpgradeReplicaSetCheckTimeout* en de modus op elk gewenst moment nog steeds worden gewijzigd met behulp van [Update-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/update-servicefabricapplicationupgrade).
 
 ## <a name="next-steps"></a>Volgende stappen
 Als u een [upgrade uitvoert van uw toepassing met behulp van Visual Studio](service-fabric-application-upgrade-tutorial.md) , wordt u begeleid bij een toepassings upgrade met Visual Studio.

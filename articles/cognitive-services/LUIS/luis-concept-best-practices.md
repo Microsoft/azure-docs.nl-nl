@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 05/17/2020
-ms.openlocfilehash: fc4475eb64744688e901d2b37e30632d044b0115
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: 2f6ed85416cc5d7c3c2baba2b2cfe489e301d7e5
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95019310"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788482"
 ---
 # <a name="best-practices-for-building-a-language-understanding-luis-app"></a>Aanbevolen procedures voor het bouwen van een LUIS-app (Language memorandum)
 Gebruik het ontwerp proces voor apps om uw LUIS-app te bouwen:
@@ -141,7 +141,7 @@ Gebruik het **controle punt uitingen** van het [actieve leer proces](luis-how-to
 
 ## <a name="do-monitor-the-performance-of-your-app"></a>Bewaak de prestaties van uw app.
 
-Bewaak de nauw keurigheid van de voor spelling met behulp van een [batch-testset](luis-concept-batch-test.md) .
+Bewaak de nauw keurigheid van de voor spelling met behulp van een [batch-testset](./luis-how-to-batch-test.md) .
 
 Bewaar een afzonderlijke set uitingen die niet worden gebruikt als [voor beeld uitingen](luis-concept-utterance.md) of endpoint uitingen. Blijf de app verbeteren voor uw testset. Pas de testset aan om echte gebruikers uitingen weer te geven. Gebruik deze testset om elke iteratie of versie van de app te evalueren.
 

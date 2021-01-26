@@ -4,12 +4,12 @@ description: Vind antwoorden op veelgestelde vragen over het maken van back-ups 
 ms.reviewer: vijayts
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: 56dcf29a5c703a72fd137a5f1bf129f568a03b4b
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: ca785e217da4355a44ffbb26b813d55d942c5c14
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98735806"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787617"
 ---
 # <a name="faq-about-sql-server-databases-that-are-running-on-an-azure-vm-backup"></a>Veelgestelde vragen over SQL Server-data bases die worden uitgevoerd op een back-up van Azure VM
 
@@ -101,7 +101,10 @@ U kunt de data base selecteren, waarvan de naam nu wordt gewijzigd en er beveili
 Een Data Base die u [aan een niet-beveiligd exemplaar toevoegt](backup-sql-server-database-azure-vms.md#enable-auto-protection) , wordt mogelijk niet direct weer gegeven onder beveiligde items. Dat komt doordat de detectie doorgaans om de 8 uur wordt uitgevoerd. U kunt echter direct nieuwe data bases detecteren en beveiligen als u hand matig een detectie uitvoert door **Rediscover db's** te selecteren, zoals wordt weer gegeven in de volgende afbeelding:
 
   ![Een nieuw toegevoegde data base hand matig detecteren](./media/backup-azure-sql-database/view-newly-added-database.png)
-  
+
+## <a name="can-i-protect-databases-on-virtual-machines-that-have-azure-disk-encryption-ade-enabled"></a>Kan ik data bases beveiligen op virtuele machines waarop Azure Disk Encryption (ADE) is ingeschakeld?
+Ja, u kunt data bases beveiligen op virtuele machines waarop Azure Disk Encryption (ADE) is ingeschakeld.
+
 ## <a name="can-i-protect-databases-that-have-tde-transparent-data-encryption-turned-on-and-will-the-database-stay-encrypted-through-the-entire-backup-process"></a>Kan ik data bases beveiligen waarvoor TDE (Transparent Data Encryption) is ingeschakeld en de data base wordt versleuteld met het hele back-upproces?
 
 Ja, Azure Backup ondersteunt back-ups van SQL Server-data bases of-server waarop TDE is ingeschakeld. Backup ondersteunt [TDe](/sql/relational-databases/security/encryption/transparent-data-encryption) met sleutels die worden beheerd door Azure, of met door de klant beheerde sleutels (BYOK).  Backup voert geen SQL-versleuteling uit als onderdeel van het back-upproces zodat de data base versleuteld blijft wanneer er een back-up wordt gemaakt.

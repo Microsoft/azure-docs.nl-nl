@@ -5,18 +5,18 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: troubleshooting
 ms.date: 05/06/2020
-ms.openlocfilehash: e803fa393d85f7f0b4849aed96356b7a4e77d83f
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.openlocfilehash: e4de77a8a56ce21511ad099af59a77e10ab1815d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "96000127"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787533"
 ---
 # <a name="language-understanding-frequently-asked-questions-faq"></a>Veelgestelde vragen (FAQ’s) over Language Understanding
 
 In dit artikel vindt u antwoorden op veelgestelde vragen over Language Understanding (LUIS).
 
-## <a name="whats-new"></a>Nieuw
+## <a name="whats-new"></a>Nieuwe functies
 
 Meer [informatie](whats-new.md) over wat er nieuw is in language UNDERSTANDING (Luis).
 
@@ -177,7 +177,7 @@ De fouten geven aan dat er een verschil is tussen de labels en de voor spellinge
 * Voeg meer labels toe om LUIS te helpen verbeteren.
 * Als u LUIS meer wilt weten, voegt u woordgroepen lijst functies toe die een serverspecifieke vocabulaire opleveren.
 
-Zie de zelf studie over [batch testen](luis-tutorial-batch-testing.md) .
+Zie de zelf studie over [batch testen](./luis-how-to-batch-test.md) .
 
 ### <a name="when-an-app-is-exported-then-reimported-into-a-new-app-with-a-new-app-id-the-luis-prediction-scores-are-different-why-does-this-happen"></a>Wanneer een app wordt geëxporteerd en vervolgens opnieuw in een nieuwe app (met een nieuwe app-ID) wordt geïmporteerd, zijn de LUIS-Voorspellings scores verschillend. Waarom gebeurt dit?
 
@@ -190,7 +190,7 @@ Bekijk [de trein met alle gegevens](luis-how-to-train.md#train-with-all-data).
 ## <a name="app-publishing"></a>App-publicatie
 
 ### <a name="what-is-the-tenant-id-in-the-add-a-key-to-your-app-window"></a>Wat is de Tenant-ID in het venster ' een sleutel toevoegen aan uw app '?
-In azure vertegenwoordigt een Tenant de client of organisatie die aan een service is gekoppeld. Zoek uw Tenant-id in de Azure Portal in het vak **Directory-id** door **Azure Active Directory**  >  **Manage**  >  **Eigenschappen** beheren te selecteren.
+In azure vertegenwoordigt een Tenant de client of organisatie die aan een service is gekoppeld. Zoek uw Tenant-id in de Azure Portal in het vak **Directory-id** door **Azure Active Directory**  >    >  **Eigenschappen** beheren te selecteren.
 
 ![Tenant-ID in de Azure Portal](./media/luis-manage-keys/luis-assign-key-tenant-id.png)
 

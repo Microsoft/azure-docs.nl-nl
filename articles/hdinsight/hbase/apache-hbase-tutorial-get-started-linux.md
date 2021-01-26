@@ -7,13 +7,13 @@ ms.reviewer: jasonh
 ms.service: hdinsight
 ms.topic: tutorial
 ms.custom: hdinsightactive,hdiseo17may2017
-ms.date: 04/14/2020
-ms.openlocfilehash: d24c63e3a2989173e718cd27fa43cecc50181047
-ms.sourcegitcommit: d767156543e16e816fc8a0c3777f033d649ffd3c
-ms.translationtype: HT
+ms.date: 01/22/2021
+ms.openlocfilehash: 3aff700493fbdc0c2b8a9a3dcb4dbbafe9b10761
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/26/2020
-ms.locfileid: "92533492"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788771"
 ---
 # <a name="tutorial-use-apache-hbase-in-azure-hdinsight"></a>Zelfstudie: Apache HBase gebruiken in Azure HDInsight
 
@@ -50,14 +50,14 @@ Voor de volgende procedure wordt een Azure Resource Manager-sjabloon gebruikt om
     |Resourcegroep|Maak een Azure-resourcebeheergroep of gebruik een bestaande.|
     |Locatie|Geef de locatie van de resourcegroep op. |
     |Clusternaam|Voer een naam in voor het HBase-cluster.|
-    |Gebruikersnaam en wachtwoord voor aanmelding bij cluster|De standaardaanmeldingsnaam is **admin** .|
-    |SSH-gebruikersnaam en SSH-wachtwoord|De standaardgebruikersnaam is **sshuser** .|
+    |Gebruikersnaam en wachtwoord voor aanmelding bij cluster|De standaardaanmeldingsnaam is **admin**.|
+    |SSH-gebruikersnaam en SSH-wachtwoord|De standaardgebruikersnaam is **sshuser**.|
 
     Andere parameters zijn optioneel.  
 
     Elk cluster is afhankelijk van een Azure Storage-account. Nadat u een cluster hebt verwijderd, blijven de gegevens in het opslagaccount. De naam van het standaardopslagaccount voor het cluster is de naam waaraan 'store' is toegevoegd. Deze is vastgelegd in de sectie met sjabloonvariabelen.
 
-3. Selecteer **Ik ga akkoord met de bovenstaande voorwaarden** en selecteer vervolgens **Kopen** . Het duurt ongeveer 20 minuten om een cluster te maken.
+3. Selecteer **Ik ga akkoord met de bovenstaande voorwaarden** en selecteer vervolgens **Kopen**. Het duurt ongeveer 20 minuten om een cluster te maken.
 
 Nadat een HBase-cluster is verwijderd, kunt u een ander HBase-cluster maken met de dezelfde standaard blob-container. Het nieuwe cluster haalt de HBase-tabellen op die u hebt gemaakt in het oorspronkelijke cluster. Om inconsistenties te voorkomen, wordt u aangeraden de HBase-tabellen uit te schakelen voordat u het cluster verwijdert.
 
@@ -332,7 +332,7 @@ HBase in HDInsight wordt geleverd met een webgebruikersinterface voor het bewake
 
 1. Selecteer **HBase** in het menu links.
 
-1. Selecteer **Snelkoppelingen** boven aan de pagina, wijs de actieve Zookeeper-knooppuntkoppeling aan en selecteer vervolgens **HBase Master UI** .  De interface wordt in een nieuw browsertabblad geopend:
+1. Selecteer **Snelkoppelingen** boven aan de pagina, wijs de actieve Zookeeper-knooppuntkoppeling aan en selecteer vervolgens **HBase Master UI**.  De interface wordt in een nieuw browsertabblad geopend:
 
    ![HDInsight Apache HBase HMaster-interface](./media/apache-hbase-tutorial-get-started-linux/hdinsight-hbase-hmaster-ui.png)
 
@@ -344,15 +344,21 @@ HBase in HDInsight wordt geleverd met een webgebruikersinterface voor het bewake
    - taken
    - softwarekenmerken
 
+## <a name="cluster-recreation"></a>Cluster recreatie
+
+Nadat een HBase-cluster is verwijderd, kunt u een ander HBase-cluster maken met de dezelfde standaard blob-container. Het nieuwe cluster haalt de HBase-tabellen op die u hebt gemaakt in het oorspronkelijke cluster. Om inconsistenties te voor komen, wordt u echter aangeraden de HBase-tabellen uit te scha kelen voordat u het cluster verwijdert. 
+
+U kunt de HBase-opdracht `disable 'Contacts'` gebruiken. 
+
 ## <a name="clean-up-resources"></a>Resources opschonen
 
-Om inconsistenties te voorkomen, wordt u aangeraden de HBase-tabellen uit te schakelen voordat u het cluster verwijdert. U kunt de HBase-opdracht `disable 'Contacts'` gebruiken. Als u deze toepassing verder niet meer gebruikt, verwijdert u het HBase-cluster dat u hebt gemaakt, via de volgende stappen:
+Als u deze toepassing verder niet meer gebruikt, verwijdert u het HBase-cluster dat u hebt gemaakt, via de volgende stappen:
 
 1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
 1. Typ **HDInsight** in het **Zoekvak** bovenaan.
-1. Selecteer onder **Services** de optie **HDInsight-clusters** .
+1. Selecteer onder **Services** de optie **HDInsight-clusters**.
 1. Klik in de lijst met HDInsight-clusters die wordt weergegeven, op de **...** naast het cluster dat u voor deze zelfstudie hebt gemaakt.
-1. Klik op **Verwijderen** . Klik op **Ja** .
+1. Klik op **Verwijderen**. Klik op **Ja**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

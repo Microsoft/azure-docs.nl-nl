@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: qna-maker
 ms.topic: conceptual
 ms.date: 11/09/2020
-ms.openlocfilehash: af9087f0dd45212ec88b620dcd965c895b86bbce
-ms.sourcegitcommit: 48e5379c373f8bd98bc6de439482248cd07ae883
+ms.openlocfilehash: baa071c8967c97cb5df2b8f522b3737436bdb359
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98108189"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787702"
 ---
 # <a name="manage-qna-maker-resources"></a>QnA Maker-resources beheren
 
@@ -114,7 +114,7 @@ De app service, die de QnA Maker Voorspellings runtime voor een gepubliceerde ke
 
 Als u de app voor Voorspellings eindpunt wilt laden, zelfs wanneer er geen verkeer is, stelt u de niet-actief in op altijd aan.
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Zoek en selecteer de app service van uw QnA Maker-resource. Deze heeft dezelfde naam als de QnA Maker resource, maar heeft een ander **type** app service.
 1. Zoek **instellingen** en selecteer **configuratie**.
 1. In het deel venster configuratie selecteert u **algemene instellingen**, vervolgens **altijd zoeken in** **en selecteert u** als waarde.
@@ -130,12 +130,12 @@ Meer informatie over het configureren van de App Service [algemene instellingen]
 ### <a name="configure-app-service-environment-to-host-qna-maker-app-service"></a>App Service Environment voor het hosten van QnA Maker configureren App Service
 De App Service Environment (ASE) kan worden gebruikt om QnA Maker app service te hosten. Volg de onderstaande stappen:
 
-1. Maak een App Service Environment en markeer deze als ' Extern '. Volg de [zelf studie](https://docs.microsoft.com/azure/app-service/environment/create-external-ase) voor instructies.
+1. Maak een App Service Environment en markeer deze als ' Extern '. Volg de [zelf studie](../../../app-service/environment/create-external-ase.md) voor instructies.
 2.  Maak een app-service in de App Service Environment.
     * Controleer de configuratie voor de app service en voeg ' PrimaryEndpointKey ' toe als een toepassings instelling. De waarde voor ' PrimaryEndpointKey ' moet worden ingesteld op ' \<app-name\> -PrimaryEndpointKey '. De naam van de app wordt gedefinieerd in de app service-URL. Als de app service-URL bijvoorbeeld ' mywebsite.myase.p.azurewebsite.net ' is, is de app-naam ' MyWebSite '. In dit geval moet de waarde voor ' PrimaryEndpointKey ' worden ingesteld op ' mywebsite-PrimaryEndpointKey '.
     * Maak een Azure Search-service.
     * Zorg ervoor dat Azure Search en app-instellingen op de juiste wijze zijn geconfigureerd. 
-      Volg deze [zelf studie](https://docs.microsoft.com/azure/cognitive-services/qnamaker/reference-app-service?tabs=v1#app-service).
+      Volg deze [zelf studie](../reference-app-service.md?tabs=v1#app-service).
 3.  De netwerk beveiligings groep die is gekoppeld aan de App Service Environment, bijwerken
     * Werk vooraf gemaakte regels voor inkomende beveiliging bij volgens uw vereisten.
     * Voeg een nieuwe regel voor binnenkomende beveiliging met bron als servicetag en bron service-tag toe als ' CognitiveServicesManagement '.

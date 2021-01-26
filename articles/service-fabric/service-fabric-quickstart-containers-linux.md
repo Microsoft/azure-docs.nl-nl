@@ -4,12 +4,12 @@ description: In deze snelstartgids maakt u een Docker-installatiekopie met uw to
 ms.topic: quickstart
 ms.date: 07/22/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 27d9c96643feb805a785e1e535cd8cac2602082b
-ms.sourcegitcommit: 8c7f47cc301ca07e7901d95b5fb81f08e6577550
-ms.translationtype: HT
+ms.openlocfilehash: f58b8feda0e88d8a5e7cddaabbc650b0f0ab3973
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/27/2020
-ms.locfileid: "92741924"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788159"
 ---
 # <a name="quickstart-deploy-linux-containers-to-service-fabric"></a>Quickstart: Linux-containers implementeren op Service Fabric
 
@@ -25,7 +25,7 @@ Dit zijn de vereisten voor het voltooien van deze snelstart:
 
 1. Als u nog geen abonnement op Azure hebt, [maakt u een gratis Azure-account](https://azure.microsoft.com/free/) voordat u begint.
 
-2. Installeer de [Azure CLI](/cli/azure/install-azure-cli-apt?view=azure-cli-latest)
+2. Installeer de [Azure CLI](/cli/azure/install-azure-cli-apt)
 
 3. Installeer de [Service Fabric-SDK en -CLI](service-fabric-get-started-linux.md#installation-methods)
 
@@ -89,7 +89,7 @@ Service Fabric biedt verschillende hulpmiddelen waarmee u een cluster en de bijb
 
 In deze quickstart gebruikt u de Service Fabric CLI en Service Fabric Explorer (een web-gebaseerde tool). Voor het gebruik van Service Fabric Explorer moet u het PFX-certificaatbestand importeren in de browser. Het PFX-bestand heeft standaard geen wachtwoord.
 
-Mozilla Firefox is de standaardbrowser in Ubuntu 16.04. U kunt het certificaat importeren in Firefox door te klikken op de menuknop in de rechterbovenhoek van uw browser en te klikken op **Opties** . Op de pagina **Voorkeuren** gebruikt u het zoekvak om te zoeken naar 'certificaten'. Klik op **Certificaten bekijken** , selecteer het tabblad **Uw certificaten** , klik op **Importeren** en volg de aanwijzingen om het certificaat te importeren.
+Mozilla Firefox is de standaardbrowser in Ubuntu 16.04. U kunt het certificaat importeren in Firefox door te klikken op de menuknop in de rechterbovenhoek van uw browser en te klikken op **Opties**. Op de pagina **Voorkeuren** gebruikt u het zoekvak om te zoeken naar 'certificaten'. Klik op **Certificaten bekijken**, selecteer het tabblad **Uw certificaten**, klik op **Importeren** en volg de aanwijzingen om het certificaat te importeren.
 
    ![Certificaat installeren in Firefox](./media/service-fabric-quickstart-containers-linux/install-cert-firefox.png)
 
@@ -101,13 +101,13 @@ Mozilla Firefox is de standaardbrowser in Ubuntu 16.04. U kunt het certificaat i
     sfctl cluster select --endpoint https://containertestcluster.eastus.cloudapp.azure.com:19080 --pem containertestcluster22019013100.pem --no-verify
     ```
 
-2. Gebruik het installatiescript om de stemtoepassingsdefinitie te kopiëren naar het cluster, het toepassingstype te registreren en een exemplaar van de toepassing te maken.  Het PEM-certificaatbestand moet zich bevinden in dezelfde map als het bestand *install.sh* .
+2. Gebruik het installatiescript om de stemtoepassingsdefinitie te kopiëren naar het cluster, het toepassingstype te registreren en een exemplaar van de toepassing te maken.  Het PEM-certificaatbestand moet zich bevinden in dezelfde map als het bestand *install.sh*.
 
     ```bash
     ./install.sh
     ```
 
-3. Open een webbrowser en ga naar het Service Fabric Explorer-eindpunt voor uw cluster. Het eind puntheeft de volgende indeling: **https://\<my-azure-service-fabric-cluster-url>: 19080/Explorer** ; bijvoorbeeld `https://containertestcluster.eastus.cloudapp.azure.com:19080/Explorer`. </br>
+3. Open een webbrowser en ga naar het Service Fabric Explorer-eindpunt voor uw cluster. Het eind puntheeft de volgende indeling: **https://\<my-azure-service-fabric-cluster-url>: 19080/Explorer**; bijvoorbeeld `https://containertestcluster.eastus.cloudapp.azure.com:19080/Explorer`. </br>
 
 4. Als u het **toepassings** knooppunt uitvouwt, ziet u nu een vermelding voor het type stemtoepassing en het exemplaar dat u hebt gemaakt.
 
@@ -143,13 +143,13 @@ Service Fabric-services kunnen eenvoudig worden geschaald in een cluster om plaa
 Voer de volgende stappen uit om de web-front-endservice te schalen:
 
 1. Open Service Fabric Explorer in het cluster, bijvoorbeeld `https://containertestcluster.eastus.cloudapp.azure.com:19080`.
-2. Klik op het weglatingsteken (drie punten) naast het knooppunt **fabric:/Voting/azurevotefront** in de structuurweergave en kies **Service schalen** .
+2. Klik op het weglatingsteken (drie punten) naast het knooppunt **fabric:/Voting/azurevotefront** in de structuurweergave en kies **Service schalen**.
 
     ![Starten van het schalen door Service Fabric Explorer][containersquickstartscale]
 
     U kunt er nu voor kiezen om het aantal exemplaren van de web-front-endservice te schalen.
 
-3. Wijzig het aantal in **2** en klik op **Service schalen** .
+3. Wijzig het aantal in **2** en klik op **Service schalen**.
 4. Klik op het knooppunt **fabric:/Voting/azurevotefront** in de structuurweergave en vouw het partitieknooppunt uit (aangegeven door een GUID).
 
     ![Het schalen van Service Fabric Explorer is voltooid][containersquickstartscaledone]
@@ -168,7 +168,7 @@ Gebruik het uninstall-script (uninstall.sh) dat is opgegeven in de sjabloon om h
 
 De eenvoudigste manier om het cluster en alle resources te verwijderen, is om de resourcegroep te verwijderen.
 
-Meld u aan bij Azure en selecteer de abonnements-id waarmee u het cluster wilt verwijderen. U kunt uw abonnements-id vinden door u aan te melden bij de Azure-portal. Verwijder de resourcegroep en alle clusterresources met behulp van de opdracht [az group delete](/cli/azure/group?view=azure-cli-latest).
+Meld u aan bij Azure en selecteer de abonnements-id waarmee u het cluster wilt verwijderen. U kunt uw abonnements-id vinden door u aan te melden bij de Azure-portal. Verwijder de resourcegroep en alle clusterresources met behulp van de opdracht [az group delete](/cli/azure/group).
 
 ```azurecli
 az login

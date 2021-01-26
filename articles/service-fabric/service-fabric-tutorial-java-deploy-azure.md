@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een Java Service Fabric-toepassing
 ms.topic: tutorial
 ms.date: 02/26/2018
 ms.custom: mvc, devx-track-java, devx-track-azurecli
-ms.openlocfilehash: c2e2b2883bfa01d3a36de5d58425449f6f973010
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: 48cb7df49fb918ebd30883edc573cc63b6e35e4a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97702154"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789394"
 ---
 # <a name="tutorial-deploy-a-java-application-to-a-service-fabric-cluster-in-azure"></a>Zelfstudie: Een Java-toepassing implementeren in een Service Fabric-cluster in Azure
 
@@ -35,7 +35,7 @@ In deze zelfstudiereeks leert u het volgende:
 Voor u met deze zelfstudie begint:
 
 * Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-* [Azure CLI installeren](/cli/azure/install-azure-cli?view=azure-cli-latest)
+* [Azure CLI installeren](/cli/azure/install-azure-cli)
 * Installeer Service Fabric-SDK voor [Mac](service-fabric-get-started-mac.md) of [Linux](service-fabric-get-started-linux.md)
 * [Installeer Python 3](https://wiki.python.org/moin/BeginnersGuide/Download)
 

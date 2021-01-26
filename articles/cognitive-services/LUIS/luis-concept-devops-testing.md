@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 06/3/2020
-ms.openlocfilehash: f002bfdd5aeb784b5b10b549389e663216fa0361
-ms.sourcegitcommit: 77ab078e255034bd1a8db499eec6fe9b093a8e4f
+ms.openlocfilehash: cd2fd8dc8c10864089b198db1ca1089f994a3ffb
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97561219"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788448"
 ---
 # <a name="testing-for-luis-devops"></a>Testen op LUIS DevOps
 
@@ -28,7 +28,7 @@ Er zijn twee verschillende soorten tests voor een LUIS-app die u moet uitvoeren 
 Dit soort tests is vergelijkbaar met [interactieve tests](./luis-concept-test.md) die u kunt uitvoeren in de [Luis-Portal](https://www.luis.ai/).
 
 - **Batch tests** : batch tests zijn een allesomvattende test op uw huidige getrainde model om de prestaties ervan te meten. In tegens telling tot eenheids tests is batch tests niet geslaagd | fouten testen. De verwachting met batch tests is niet dat elke test de verwachte intentie en verwachte entiteiten retourneert. In plaats daarvan helpt een batch-test u de nauw keurigheid van elke intentie en entiteit in uw app te bekijken, zodat u de tijd kunt vergelijken wanneer u verbeteringen aanbrengt.  
-Dit soort tests is hetzelfde als de [batch tests](./luis-concept-batch-test.md) die u interactief kunt uitvoeren in de Luis-Portal.
+Dit soort tests is hetzelfde als de [batch tests](./luis-how-to-batch-test.md) die u interactief kunt uitvoeren in de Luis-Portal.
 
 U kunt eenheids testen gebruiken vanaf het begin van uw project. Batch tests zijn alleen echt van waarde wanneer u het schema van uw LUIS-app hebt ontwikkeld en u aan de slag gaat met het verbeteren van de nauw keurigheid.
 
@@ -42,7 +42,7 @@ Wanneer u een set tests schrijft, moet u voor elke test het volgende definiëren
 * Verwachte intentie
 * Verwachte entiteiten.
 
-Gebruik de LUIS- [syntaxis voor batch bestanden](./luis-concept-batch-test.md#batch-syntax-template-for-intents-with-entities) voor het definiëren van een groep tests in een bestand met JSON-indeling. Bijvoorbeeld:
+Gebruik de LUIS- [syntaxis voor batch bestanden](./luis-how-to-batch-test.md#batch-syntax-template-for-intents-with-entities) voor het definiëren van een groep tests in een bestand met JSON-indeling. Bijvoorbeeld:
 
 ```JSON
 [
@@ -85,7 +85,7 @@ Bij eenheids tests is het een goed idee om te testen of uw belangrijkste entitei
 
 #### <a name="designing-batch-tests"></a>Batch tests ontwerpen
 
-Batch test sets moeten een groot aantal test cases bevatten, ontworpen om te testen in alle intenties en alle entiteiten in uw LUIS-app. Zie [batch tests in de Luis-Portal](./luis-concept-batch-test.md) voor meer informatie over het definiëren van een batch-testset.
+Batch test sets moeten een groot aantal test cases bevatten, ontworpen om te testen in alle intenties en alle entiteiten in uw LUIS-app. Zie [batch tests in de Luis-Portal](./luis-how-to-batch-test.md) voor meer informatie over het definiëren van een batch-testset.
 
 ### <a name="running-tests"></a>Tests uitvoeren
 
@@ -93,7 +93,7 @@ De LUIS-Portal biedt functies die u helpen bij interactieve tests:
 
 * [**Interactieve tests**](./luis-concept-test.md) bieden u de mogelijkheid om een voor beeld-utterance te verzenden en een antwoord te krijgen van Luis-herkende intenties en entiteiten. U kunt het succes van de test testen door visuele inspectie te controleren.
 
-* [**Batch tests**](./luis-concept-batch-test.md) gebruiken een batch test bestand als invoer om uw actieve getrainde versie te valideren om de nauw keurigheid van de voor spelling te meten. Met een batch test kunt u de nauw keurigheid van elke intentie en entiteit in uw actieve versie bekijken, waarbij de resultaten worden weer gegeven in een grafiek.
+* [**Batch tests**](./luis-how-to-batch-test.md) gebruiken een batch test bestand als invoer om uw actieve getrainde versie te valideren om de nauw keurigheid van de voor spelling te meten. Met een batch test kunt u de nauw keurigheid van elke intentie en entiteit in uw actieve versie bekijken, waarbij de resultaten worden weer gegeven in een grafiek.
 
 #### <a name="running-tests-in-an-automated-build-workflow"></a>Testen uitvoeren in een geautomatiseerde build-werk stroom
 

@@ -10,23 +10,23 @@ ms.topic: tutorial
 ms.date: 05/06/2020
 ms.author: mbaldwin
 ms.custom: devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 2504efcbd79ab0e43f958b86564709b6ac6295a6
-ms.sourcegitcommit: a89a517622a3886b3a44ed42839d41a301c786e0
-ms.translationtype: HT
+ms.openlocfilehash: 2960726cf687908e8e4aed9333fce490dd7ff006
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97733053"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788734"
 ---
 # <a name="tutorial-use-a-managed-identity-to-connect-key-vault-to-an-azure-web-app-in-net"></a>Zelfstudie: Een beheerde identiteit gebruiken om Key Vault te verbinden met een Azure-web-app in .NET
 
 [Azure Key Vault](./overview.md) biedt een manier om referenties en andere geheimen op te slaan met verbeterde beveiliging. Maar uw code moet worden geverifieerd bij Key Vault om deze op te halen. [Beheerde identiteiten voor Azure-resources](../../active-directory/managed-identities-azure-resources/overview.md) helpen bij het oplossen van dit probleem door Azure-services een automatisch beheerde identiteit in Azure Active Directory (Azure AD) te geven. U kunt deze identiteit gebruiken voor verificatie bij alle services die ondersteuning bieden voor Azure AD-verificatie, inclusief Key Vault, zonder dat u referenties in uw code hoeft weer te geven.
 
-In deze zelfstudie maakt en implementeert u een Azure-webtoepassing in [Azure App Service](https://docs.microsoft.com/azure/app-service/overview). U gebruikt een beheerde identiteit om de Azure-web-app te verifiëren bij een Azure-sleutelkluis, met behulp van de [Azure Key Vault-clientbibliotheek voor geheimen voor .NET](/dotnet/api/overview/azure/key-vault) en [Azure CLI](/cli/azure/get-started-with-azure-cli). Dezelfde basisprincipes zijn van toepassing wanneer u de ontwikkeltaal van uw keuze, Azure PowerShell en/of Azure Portal gebruikt.
+In deze zelfstudie maakt en implementeert u een Azure-webtoepassing in [Azure App Service](../../app-service/overview.md). U gebruikt een beheerde identiteit om de Azure-web-app te verifiëren bij een Azure-sleutelkluis, met behulp van de [Azure Key Vault-clientbibliotheek voor geheimen voor .NET](/dotnet/api/overview/azure/key-vault) en [Azure CLI](/cli/azure/get-started-with-azure-cli). Dezelfde basisprincipes zijn van toepassing wanneer u de ontwikkeltaal van uw keuze, Azure PowerShell en/of Azure Portal gebruikt.
 
 Voor meer informatie over Azure App Service-webtoepassingen en implementaties die in deze zelfstudie worden weergegeven, raadpleegt u:
-- [Overzicht van App Service](https://docs.microsoft.com/azure/app-service/overview)
-- [Een ASP.NET Core-web-app maken in Azure App Service](https://docs.microsoft.com/azure/app-service/quickstart-dotnetcore)
-- [Lokale Git-implementatie in Azure App Service](https://docs.microsoft.com/azure/app-service/deploy-local-git)
+- [Overzicht van App Service](../../app-service/overview.md)
+- [Een ASP.NET Core-web-app maken in Azure App Service](../../app-service/quickstart-dotnetcore.md)
+- [Lokale Git-implementatie in Azure App Service](../../app-service/deploy-local-git.md)
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -67,7 +67,7 @@ Ga in een webbrowser naar de app in `http://localhost:5000`.
 
 Het bericht 'Hallo wereld!' uit de voorbeeld-app wordt weergegeven op de pagina.
 
-Raadpleeg [Een ASP.NET Core-web-app maken in Azure App Service](https://docs.microsoft.com/azure/app-service/quickstart-dotnetcore) voor meer informatie over het maken van webtoepassingen voor Azure
+Raadpleeg [Een ASP.NET Core-web-app maken in Azure App Service](../../app-service/quickstart-dotnetcore.md) voor meer informatie over het maken van webtoepassingen voor Azure
 
 ## <a name="deploy-the-app-to-azure"></a>De app implementeren in Azure
 
@@ -228,7 +228,7 @@ http://<your-webapp-name>.azurewebsites.net
 
 Het bericht 'Hallo wereld!' dat u eerder hebt gezien toen u `http://localhost:5000` hebt bezocht, wordt weergegeven.
 
-Raadpleeg [Lokale Git-implementatie in Azure App Service](https://docs.microsoft.com/azure/app-service/deploy-local-git) voor meer informatie over het implementeren van webtoepassingen met behulp van Git
+Raadpleeg [Lokale Git-implementatie in Azure App Service](../../app-service/deploy-local-git.md) voor meer informatie over het implementeren van webtoepassingen met behulp van Git
  
 ## <a name="configure-the-web-app-to-connect-to-key-vault"></a>De web-app configureren om verbinding te maken met Key Vault
 
@@ -264,7 +264,7 @@ U kunt ook een toegangsbeleid toewijzen met behulp van [Azure Portal](./assign-a
 
 ### <a name="modify-the-app-to-access-your-key-vault"></a>De app wijzigen om toegang te krijgen tot uw sleutelkluis
 
-In deze zelfstudie gebruikt u de [Azure Key Vault-clientbibliotheek voor geheimen](https://docs.microsoft.com/dotnet/api/overview/azure/security.keyvault.secrets-readme) voor demonstratiedoeleinden. U kunt ook de [Azure Key Vault-clientbibliotheek voor certificaten](https://docs.microsoft.com/dotnet/api/overview/azure/security.keyvault.certificates-readme) of de [Azure Key Vault-bibliotheek voor sleutels](https://docs.microsoft.com/dotnet/api/overview/azure/security.keyvault.keys-readme) gebruiken.
+In deze zelfstudie gebruikt u de [Azure Key Vault-clientbibliotheek voor geheimen](/dotnet/api/overview/azure/security.keyvault.secrets-readme) voor demonstratiedoeleinden. U kunt ook de [Azure Key Vault-clientbibliotheek voor certificaten](/dotnet/api/overview/azure/security.keyvault.certificates-readme) of de [Azure Key Vault-bibliotheek voor sleutels](/dotnet/api/overview/azure/security.keyvault.keys-readme) gebruiken.
 
 #### <a name="install-the-packages"></a>De pakketten installeren
 

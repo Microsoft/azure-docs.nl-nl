@@ -9,16 +9,45 @@ ms.topic: reference
 ms.author: larryfr
 author: BlackMist
 ms.date: 09/10/2020
-ms.openlocfilehash: 11aa739beeb07c3de056d8a2430b556fcc40b178
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 6e92fb39845944898bebf6446c35f0932e13b5b8
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746727"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788872"
 ---
 # <a name="azure-machine-learning-release-notes"></a>Opmerkingen bij de release Azure Machine Learning
 
 In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga voor de volledige SDK-referentie-inhoud naar de hoofd pagina van de hand leiding van de Azure Machine Learning van de [**SDK voor python**](/python/api/overview/azure/ml/intro?preserve-view=true&view=azure-ml-py) .
+
+ ## <a name="2021-01-25"></a>2021-01-25
+
+### <a name="azure-machine-learning-sdk-for-python-v1210"></a>Azure Machine Learning SDK voor python v-1.21.0
++ **Oplossingen en verbeteringen voor oplossingen**
+  + **Azure-cli-ml**
+    + Help-tekst voor vaste CLI bij het gebruik van AmlCompute met UserAssigned-identiteit
+  + **azureml-contrib-automl-DNN-Vision**
+    + Knoppen voor implementeren en downloaden worden zichtbaar voor AutoML Vision-runs en modellen kunnen worden geïmplementeerd of gedownload, vergelijkbaar met andere AutoML-uitvoeringen. Er zijn twee nieuwe bestanden (scoring_file_v_1_0_0. py en conda_env_v_1_0_0. yml) die een script bevatten voor het uitvoeren van een deinterferentie en een yml-bestand om de Conda-omgeving opnieuw te maken. De naam van het bestand ' model. pth ' is ook gewijzigd om de extensie '. pt ' te gebruiken.
+  + **azureml-core**
+    + MSI-ondersteuning voor Azure-cli-ml
+    + Door de gebruiker toegewezen ondersteuning voor beheerde identiteit.
+    + Met deze wijziging moeten de klanten een door de gebruiker toegewezen identiteit kunnen opgeven die kan worden gebruikt voor het ophalen van de sleutel van de sleutel kluis van de klant voor versleuteling in rust.
+    +  Fix row_count = 0 voor het profiel van zeer grote bestanden-herstel fout in dubbele conversie voor door komma's gescheiden waarden met een witruimte opvulling
+    + Experimentele vlag verwijderen voor uitvoer gegevensset GA
+    + Documentatie over het ophalen van een specifieke versie van een model bijwerken
+    + Werk ruimte voor het bijwerken van toegang tot de gemengde modus toestaan in het geval van een persoonlijke koppeling
+    + Oplossing voor het verwijderen van aanvullende registratie voor het uitvoeren van de functie voor het hervatten van de gegevens
+    + CLI/SDK-ondersteuning toegevoegd voor het bijwerken van de toegewezen identiteit van de primaire gebruiker van de werk ruimte
+  + **azureml-interpret**
+    + bijgewerkt azureml-interpreteren om te interpreteren-Community 0.16.0
+    + geheugen optimalisaties voor uitleg client in azureml-interprete
+  + **azureml-train-automl-runtime**
+    + Streaming ingeschakeld voor ADB-uitvoeringen
+  + **azureml-train-core**
+    + Oplossing voor het verwijderen van aanvullende registratie voor het uitvoeren van de functie voor het hervatten van de gegevens
+  + **azureml-widgets**
+    + Klanten mogen geen wijzigingen zien in bestaande visualisaties voor het uitvoeren van gegevens met behulp van de widget en er wordt nu ondersteuning geboden als ze optioneel gebruikmaken van voorwaardelijke Hyper parameters.
+    + De widget gebruikers sessie bevat nu een gedetailleerde uitleg voor de reden dat een uitvoering zich in de wachtrij status bevindt.
 
 
  ## <a name="2021-01-11"></a>2021-01-11
@@ -118,7 +147,7 @@ In dit artikel vindt u meer informatie over Azure Machine Learning releases.  Ga
 ## <a name="2020-11-30"></a>2020-11-30
 ### <a name="azure-machine-learning-studio-notebooks-experience-november-update"></a>Ervaring met Azure Machine Learning Studio notitie blokken (update van november)
 + **Nieuwe functies**
-   + Systeem eigen terminal. Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de [Geïntegreerde Terminal.](https://docs.microsoft.com/azure/machine-learning/how-to-run-jupyter-notebooks#terminal)
+   + Systeem eigen terminal. Gebruikers hebben nu toegang tot een geïntegreerde Terminal en een Git-bewerking via de [Geïntegreerde Terminal.](./how-to-run-jupyter-notebooks.md#terminal)
   + Dubbele map 
   + Kostprijs berekening voor de vervolg keuzelijst compute 
   + Offline Compute-Pylance 

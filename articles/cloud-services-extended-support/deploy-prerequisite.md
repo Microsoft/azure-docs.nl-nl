@@ -8,12 +8,12 @@ ms.author: gachandw
 ms.reviewer: mimckitt
 ms.date: 10/13/2020
 ms.custom: ''
-ms.openlocfilehash: 28c7f2c0a61150b2014f669f37ac84ee3a94aebf
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: f112d0e96c6ff0caf3c5e3762304158f70963f14
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752155"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787026"
 ---
 # <a name="prerequisites-for-deploying-azure-cloud-services-extended-support"></a>Vereisten voor het implementeren van Azure Cloud Services (uitgebreide ondersteuning)
 
@@ -49,23 +49,23 @@ Voor een virtueel netwerk dat deel uitmaakt van dezelfde resource groep als de C
 #### <a name="virtual-network-located-in-same-resource-group"></a>Virtual Network zich in dezelfde resource groep bevinden
 ```xml
 <VirtualNetworkSite name="<vnet-name>"/> 
-<AddressAssignments> 
-<InstanceAddress roleName="<role-name>"> 
-<Subnets> 
-<Subnet name="<subnet-name>"/> 
-</Subnets> 
-</InstanceAddress> 
+  <AddressAssignments> 
+    <InstanceAddress roleName="<role-name>"> 
+     <Subnets> 
+       <Subnet name="<subnet-name>"/> 
+     </Subnets> 
+    </InstanceAddress> 
 ```
 
 #### <a name="virtual-network-located-in-different-resource-group"></a>Virtueel netwerk bevindt zich in een andere resource groep
 ```xml
 <VirtualNetworkSite name="/subscriptions/<sub-id>/resourceGroups/<rg-name>/providers/Microsoft.Network/virtualNetworks/<vnet-name>"/> 
-<AddressAssignments> 
-<InstanceAddress roleName="<role-name>"> 
-<Subnets> 
-<Subnet name="<subnet-name>"/> 
-</Subnets> 
-</InstanceAddress> 
+   <AddressAssignments> 
+     <InstanceAddress roleName="<role-name>"> 
+       <Subnets> 
+        <Subnet name="<subnet-name>"/> 
+       </Subnets> 
+     </InstanceAddress> 
 ```
 ### <a name="2-remove-the-old-plugins"></a>2) Verwijder de oude invoeg toepassingen
 

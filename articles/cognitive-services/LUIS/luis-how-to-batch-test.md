@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 12/29/2020
-ms.openlocfilehash: 0834b8f00e4c414b3a36314b80f6c99fb8f2aea2
-ms.sourcegitcommit: 19ffdad48bc4caca8f93c3b067d1cf29234fef47
+ms.openlocfilehash: b297330f3562babf9e83d36934827f7b92d5ea35
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97955209"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787009"
 ---
 # <a name="batch-testing-with-a-set-of-example-utterances"></a>Batch tests met een set voor beeld-uitingen
 
@@ -99,7 +99,7 @@ Het JSON-voorbeeldbestand bevat een uiting met een gelabelde entiteit om u een i
 
 Selecteer **resultaten weer geven** om de resultaten van de batch test te controleren. In de testresultaten wordt grafisch weergegeven hoe de testuitingen zijn voorspeld voor de actieve versie.
 
-In de batchgrafiek worden vier kwadranten met resultaten weergegeven. Rechts van de grafiek ziet u een filter. Het filter bevat intenties en entiteiten. Wanneer u een [sectie van de grafiek](luis-concept-batch-test.md#batch-test-results) of een punt in de grafiek selecteert, worden de gekoppelde uitingen weergegeven onder de grafiek.
+In de batchgrafiek worden vier kwadranten met resultaten weergegeven. Rechts van de grafiek ziet u een filter. Het filter bevat intenties en entiteiten. Wanneer u een [sectie van de grafiek](#review-batch-results-for-intents) of een punt in de grafiek selecteert, worden de gekoppelde uitingen weergegeven onder de grafiek.
 
 Bij het aanwijzen van de grafiek met de muisaanwijzer kunt u de weergave in de grafiek vergroten of verkleinen met een muiswiel. Dit is handig wanneer veel punten in het diagram zich dicht op elkaar bevinden.
 
@@ -166,7 +166,7 @@ De twee secties van de grafiek in het groen komen overeen met de verwachte voor 
 
 ## <a name="batch-testing-using-the-rest-api"></a>Batch testen met behulp van de REST API 
 
-Met LUIS kunt u batch testen met behulp van de LUIS-Portal en REST API. De eind punten voor de REST API worden hieronder weer gegeven. Zie [zelf studie: gegevens sets batch testen](luis-tutorial-batch-testing.md)voor meer informatie over batch tests met behulp van de Luis-Portal. Gebruik de volledige Url's hieronder en vervang de waarden van de tijdelijke aanduiding door uw eigen LUIS-Voorspellings sleutel en-eind punt. 
+Met LUIS kunt u batch testen met behulp van de LUIS-Portal en REST API. De eind punten voor de REST API worden hieronder weer gegeven. Zie [zelf studie: gegevens sets batch testen]()voor meer informatie over batch tests met behulp van de Luis-Portal. Gebruik de volledige Url's hieronder en vervang de waarden van de tijdelijke aanduiding door uw eigen LUIS-Voorspellings sleutel en-eind punt. 
 
 Vergeet niet om uw LUIS-sleutel toe te voegen aan `Ocp-Apim-Subscription-Key` in de kop en stel in `Content-Type` op `application/json` .
 
@@ -265,5 +265,3 @@ Als met testen wordt aangegeven dat uw LUIS-app de juiste intenties en entiteite
 
 * [Aanbevolen uitingen label met LUIS](luis-how-to-review-endpoint-utterances.md)
 * [Functies gebruiken om de prestaties van uw LUIS-app te verbeteren](luis-how-to-add-features.md)
-* [Meer informatie over batch tests met deze zelf studie](luis-tutorial-batch-testing.md)
-* [Meer informatie over het testen van batches](luis-concept-batch-test.md).

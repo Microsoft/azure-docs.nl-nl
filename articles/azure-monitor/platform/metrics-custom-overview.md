@@ -1,18 +1,18 @@
 ---
 title: Aangepaste metrische gegevens in Azure Monitor (preview-versie)
 description: Meer informatie over aangepaste metrische gegevens in Azure Monitor en hoe deze worden gemodelleerd.
-author: ancav
+author: anirudhcavale
 ms.author: ancav
 services: azure-monitor
 ms.topic: conceptual
-ms.date: 06/01/2020
+ms.date: 01/25/2021
 ms.subservice: metrics
-ms.openlocfilehash: 73c9b2bf8cf88ca5e8576c451c9d9ac5f0eae8a3
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ce081896292ec92c41dabc735df828ed167d86e7
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "88639899"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788499"
 ---
 # <a name="custom-metrics-in-azure-monitor-preview"></a>Aangepaste metrische gegevens in Azure Monitor (preview-versie)
 
@@ -76,7 +76,7 @@ Elk gegevens punt dat naar Azure Monitor wordt verzonden, moet worden gemarkeerd
 Naam ruimten zijn een manier om Vergelijk bare metrische gegevens te categoriseren of groeperen. Met behulp van naam ruimten kunt u isolatie verkrijgen tussen groepen metrische gegevens die verschillende inzichten of prestatie-indica toren kunnen verzamelen. U kunt bijvoorbeeld een naam ruimte hebben met de naam **contosomemorymetrics** die geheugen gebruik houdt van metrische gegevens die uw app profiel. Een andere naam ruimte met de naam **contosoapptransaction** kan alle metrische gegevens over gebruikers transacties in uw toepassing bijhouden.
 
 ### <a name="name"></a>Naam
-**Naam** is de naam van de metrische gegevens die worden gerapporteerd. Normaal gesp roken is de naam beschrijvend genoeg om te helpen bij het identificeren van wat wordt gemeten. Een voor beeld hiervan is een metrische waarde die het aantal door het geheugen gebruikte bytes op een bepaalde VM meet. Dit kan een metrische naam zijn, zoals het **geheugen bytes dat in gebruik**is.
+**Naam** is de naam van de metrische gegevens die worden gerapporteerd. Normaal gesp roken is de naam beschrijvend genoeg om te helpen bij het identificeren van wat wordt gemeten. Een voor beeld hiervan is een metrische waarde die het aantal door het geheugen gebruikte bytes op een bepaalde VM meet. Dit kan een metrische naam zijn, zoals het **geheugen bytes dat in gebruik** is.
 
 ### <a name="dimension-keys"></a>Dimensie sleutels
 Een dimensie is een sleutel-of waardepaar dat helpt bij het beschrijven van aanvullende kenmerken over de metrische gegevens die worden verzameld. Door de aanvullende kenmerken te gebruiken, kunt u meer informatie verzamelen over de metriek, waardoor u meer inzicht kunt krijgen. Zo kan de metrische **geheugen bytes in gebruik** bijvoorbeeld een dimensie sleutel hebben met de naam **process** waarmee wordt vastgelegd hoeveel bytes van geheugen elk proces op een virtuele machine gebruikt. Met deze sleutel kunt u de metrische gegevens filteren om te zien hoeveel geheugen-specifieke processen gebruikmaken van of om de vijf meest voorkomende processen te identificeren op basis van geheugen gebruik.
@@ -85,7 +85,7 @@ Dimensies zijn optioneel, niet alle metrische gegevens kunnen dimensies hebben. 
 ### <a name="dimension-values"></a>Dimensie waarden
 Bij het rapporteren van een metriek gegevens punt voor elke dimensie sleutel op de metrische waarde die wordt gerapporteerd, is er een overeenkomende dimensie waarde. Het is bijvoorbeeld mogelijk dat u het geheugen wilt rapporteren dat wordt gebruikt door de ContosoApp op uw virtuele machine:
 
-* De naam van de metriek zou **geheugen bytes in gebruik**zijn.
+* De naam van de metriek zou **geheugen bytes in gebruik** zijn.
 * De dimensie sleutel wordt **verwerkt**.
 * De dimensie waarde wordt **ContosoApp.exe**.
 
@@ -105,7 +105,6 @@ Als er bijvoorbeeld gedurende een minuut vier aanmeldings transacties voor uw ap
 |Trans actie 1|Trans actie 2|Trans actie 3|Trans actie 4|
 |---|---|---|---|
 |7 MS|4 MS|13 MS|16 MS|
-|
 
 De resulterende metrische publicatie voor Azure Monitor zou er als volgt uitzien:
 * Min: 4
@@ -134,7 +133,8 @@ In het volgende voor beeld maakt u een aangepaste metriek met de naam **geheugen
         "metric": "Memory Bytes in Use",
         "namespace": "Memory Profile",
         "dimNames": [
-          "Process"        ],
+          "Process"
+        ],
         "series": [
           {
             "dimValues": [
@@ -174,7 +174,7 @@ U hoeft geen aangepaste metriek vooraf te definiëren in Azure Monitor voordat d
 Nadat aangepaste metrische gegevens zijn verzonden naar Azure Monitor, kunt u ze via de Azure Portal door bladeren en query's uitvoeren via de Azure Monitor REST-Api's. U kunt ook waarschuwingen maken om u te waarschuwen wanneer aan bepaalde voor waarden wordt voldaan.
 
 > [!NOTE]
-> U moet een rol lezer of Inzender zijn om aangepaste metrische gegevens weer te geven.
+> U moet een rol lezer of Inzender zijn om aangepaste metrische gegevens weer te geven. Zie [bewakings lezer](../../role-based-access-control/built-in-roles.md#monitoring-reader). 
 
 ### <a name="browse-your-custom-metrics-via-the-azure-portal"></a>Door uw aangepaste metrische gegevens bladeren via de Azure Portal
 1.    Ga naar de [Azure Portal](https://portal.azure.com).
@@ -184,34 +184,19 @@ Nadat aangepaste metrische gegevens zijn verzonden naar Azure Monitor, kunt u ze
 5.    Selecteer de metrische naam ruimte voor uw aangepaste metrische gegevens.
 6.    Selecteer de aangepaste metriek.
 
+> [!NOTE]
+> Zie [aan de slag met Azure Metrics Explorer](./metrics-getting-started.md) voor meer informatie over het weer geven van metrische gegevens in de Azure Portal.
+
 ## <a name="supported-regions"></a>Ondersteunde regio’s
-Tijdens de open bare preview-periode is de mogelijkheid om aangepaste metrische gegevens te publiceren alleen beschikbaar in een subset van Azure-regio's. Deze beperking betekent dat metrische gegevens alleen voor resources in een van de ondersteunde regio's kunnen worden gepubliceerd. De volgende tabel bevat de set ondersteunde Azure-regio's voor aangepaste metrische gegevens. Ook worden de bijbehorende eind punten vermeld waarvoor metrische gegevens voor resources in deze regio's moeten worden gepubliceerd:
+Tijdens de open bare preview-periode is de mogelijkheid om aangepaste metrische gegevens te publiceren alleen beschikbaar in een subset van Azure-regio's. Deze beperking betekent dat metrische gegevens alleen voor resources in een van de ondersteunde regio's kunnen worden gepubliceerd. Zie [Azure-geografi](https://azure.microsoft.com/global-infrastructure/geographies/) voor meer informatie over Azure-regio's. De code van de Azure-regio die wordt gebruikt in de onderstaande eind punten is gewoon de naam van de regio met witruimte verwijderd de volgende tabel bevat de set ondersteunde Azure-regio's voor aangepaste metrische gegevens. Ook worden de bijbehorende eind punten vermeld waarvoor metrische gegevens voor resources in deze regio's moeten worden gepubliceerd:
 
 |Azure-regio |Voor voegsel regionale eind punt|
 |---|---|
-| **VS en Canada** | |
-|VS - west-centraal | https: \/ /westcentralus.monitoring.Azure.com |
-|West US 2       | https: \/ /westus2.monitoring.Azure.com |
-|VS - noord-centraal | https: \/ /northcentralus.monitoring.Azure.com
-|South Central US| https: \/ /southcentralus.monitoring.Azure.com |
-|Central US      | https: \/ /centralus.monitoring.Azure.com |
-|Canada - midden | https: \/ /canadacentral.monitoring.Azure.com |
-|VS - oost| https: \/ /eastus.monitoring.Azure.com |
-|VS - oost 2 | https: \/ /eastus2.monitoring.Azure.com |
-| **Europa** | |
-|Europa - noord    | https: \/ /northeurope.monitoring.Azure.com |
-|Europa -west     | https: \/ /westeurope.monitoring.Azure.com |
-|Verenigd Koninkrijk Zuid | https: \/ /uksouth.monitoring.Azure.com
-|Frankrijk - centraal | https: \/ /francecentral.monitoring.Azure.com |
-| **Afrika** | |
-|Zuid-Afrika - noord | https: \/ /southafricanorth.monitoring.Azure.com |
-| **Azië** | |
-|India - centraal | https: \/ /centralindia.monitoring.Azure.com |
-|Australië - oost | https: \/ /australiaeast.monitoring.Azure.com |
-|Japan East | https: \/ /japaneast.monitoring.Azure.com |
-|Azië - zuidoost  | https: \/ /southeastasia.monitoring.Azure.com |
-|Azië - oost | https: \/ /EastAsia.monitoring.Azure.com |
-|Korea - centraal   | https: \/ /koreacentral.monitoring.Azure.com |
+| Alle open bare Cloud regio's | https://<azure_region_code>. monitoring.azure.com |
+| **Azure Government** | |
+| VS (overheid) - Arizona | https: \/ /usgovarizona.monitoring.Azure.us |
+| **China** | |
+| China - oost 2 | https: \/ /chinaeast2.monitoring.Azure.cn |
 
 ## <a name="latency-and-storage-retention"></a>Latentie en opslag bewaren
 

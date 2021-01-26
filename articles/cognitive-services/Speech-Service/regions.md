@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 08/20/2020
 ms.author: panosper
 ms.custom: seodec18,references_regions
-ms.openlocfilehash: f11ccafd58cc64e6186ef590bbbccbfab3335ea4
-ms.sourcegitcommit: c538b6e4cf27b992500c079ad9c914c05d55eb7f
+ms.openlocfilehash: 646d29e72b91cd6afcde8e70ad8fd8715442b88e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/03/2021
-ms.locfileid: "97854856"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786788"
 ---
 # <a name="speech-service-supported-regions"></a>Ondersteunde regio's voor spraak Services
 
@@ -59,26 +59,26 @@ Beschik bare regio's voor **intentie herkenning** via de Speech SDK zijn de volg
 | Europa        | Europa -west      | `westeurope`         |
 | Noord-Amerika | VS - oost          | `eastus`             |
 | Noord-Amerika | VS - oost 2        | `eastus2`            |
-| Noord-Amerika | South Central US | `southcentralus`     |
+| Noord-Amerika | VS - zuid-centraal | `southcentralus`     |
 | Noord-Amerika | VS - west-centraal  | `westcentralus`      |
 | Noord-Amerika | VS - west          | `westus`             |
-| Noord-Amerika | West US 2        | `westus2`            |
-| Zuid-Amerika | Brazil South     | `brazilsouth`        |
+| Noord-Amerika | VS - west 2        | `westus2`            |
+| Zuid-Amerika | Brazilië - zuid     | `brazilsouth`        |
 
 Dit is een subset van de publicatie regio's die worden ondersteund door de [Language Understanding-service (Luis)](../luis/luis-reference-regions.md).
 
 ### <a name="voice-assistants"></a>Spraakassistenten
 
-De [spraak-SDK](speech-sdk.md) biedt ondersteuning voor **spraak assistent** -mogelijkheden via [directe line spraak](https://docs.microsoft.com/azure/cognitive-services/speech-service/direct-line-speech) in deze regio's:
+De [spraak-SDK](speech-sdk.md) biedt ondersteuning voor **spraak assistent** -mogelijkheden via [directe line spraak](./direct-line-speech.md) in deze regio's:
 
 | Wereld wijde regio | Regio           | Regio-id    |
 | ------------- | ---------------- | -------------------- |
 | Noord-Amerika | VS - west          | `westus`             |
-| Noord-Amerika | West US 2        | `westus2`            |
+| Noord-Amerika | VS - west 2        | `westus2`            |
 | Noord-Amerika | VS - oost          | `eastus`             |
 | Noord-Amerika | VS - oost 2        | `eastus2`            |
 | Noord-Amerika | VS - west-centraal  | `westcentralus`      |
-| Noord-Amerika | South Central US | `southcentralus`     |
+| Noord-Amerika | VS - zuid-centraal | `southcentralus`     |
 | Europa        | Europa -west      | `westeurope`         |
 | Europa        | Europa - noord     | `northeurope`        |
 | Azië          | Azië - oost        | `eastasia`           |

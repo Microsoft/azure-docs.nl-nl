@@ -9,18 +9,16 @@ adobe-target: true
 adobe-target-activity: DocsExp–377467–A/B– Quickstarts/Python App–12.11
 adobe-target-experience: Experience B
 adobe-target-content: ./quickstart-python-1
-ms.openlocfilehash: f60534f7d319bfe0b9e8e7bd4447770bcd6d45e3
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: 11e47e83da09699d60ada11539dbb2f000f075db
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134429"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788669"
 ---
 # <a name="quickstart-create-a-python-app-using-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken met behulp van Azure App Service in Linux
 
 In deze quickstart implementeert u een Python-web-app op [App Service op Linux](overview.md#app-service-on-linux), een uiterst schaalbare webhostingservice van Azure. Gebruik de lokale [Azure-opdrachtregelinterface (CLI)](/cli/azure/install-azure-cli) op een Mac-, Linux- of Windows-computer om een voorbeeld te implementeren met behulp van deFlask- of Django-frameworks. De web-app die u configureert, maakt gebruik van een gratis App Service-laag, zodat u geen kosten opdoet in de loop van dit artikel.
-
-Zie [Azure-terminologie in het kort](/azure/developer/python/cloud-azure-terminology?toc=/azure/app-service/toc.json) voor **definities van algemene termen**.
 
 > [!TIP]
 > Als u liever Visual Studio Code gebruikt, volgt u onze **[quickstart voor App Service van Visual Studio Code](/azure/developer/python/tutorial-deploy-app-service-on-linux-01)** .

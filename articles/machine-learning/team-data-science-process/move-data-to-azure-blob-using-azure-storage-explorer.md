@@ -1,6 +1,6 @@
 ---
 title: Blob Storage-gegevens verplaatsen met Azure Storage Explorer-team data Science process
-description: Meer informatie over het gebruik van Azure Storage Explorer voor het uploaden en downloaden van gegevens uit Azure Blob-opslag.
+description: Meer informatie over het gebruik van Azure Storage Explorer voor het uploaden en downloaden van gegevens van Azure Blob Storage.
 services: machine-learning
 author: marktab
 manager: marktab
@@ -11,15 +11,15 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: c5750132280d69c946ce180c51e4de6507549fcb
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: 53cb8cdd1c5f9824b07b16b8b6c70648603b9f38
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93318175"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788906"
 ---
 # <a name="move-data-to-and-from-azure-blob-storage-using-azure-storage-explorer"></a>Gegevens verplaatsen van en naar Azure Blob Storage met behulp van Azure Storage Explorer
-Azure Storage Explorer is een gratis hulp programma van micro soft waarmee u met Azure Storage gegevens kunt werken in Windows, macOS en Linux. In dit onderwerp wordt beschreven hoe u dit kunt gebruiken om gegevens uit Azure Blob-opslag te uploaden en te downloaden. Het hulp programma kan worden gedownload van [Microsoft Azure Storage Explorer](https://storageexplorer.com/).
+Azure Storage Explorer is een gratis hulp programma van micro soft waarmee u met Azure Storage gegevens kunt werken in Windows, macOS en Linux. In dit onderwerp wordt beschreven hoe u dit kunt gebruiken om gegevens van Azure Blob Storage te uploaden en te downloaden. Het hulp programma kan worden gedownload van [Microsoft Azure Storage Explorer](https://storageexplorer.com/).
 
 [!INCLUDE [blob-storage-tool-selector](../../../includes/machine-learning-blob-storage-tool-selector.md)]
 
@@ -27,7 +27,7 @@ Azure Storage Explorer is een gratis hulp programma van micro soft waarmee u met
 > Als u een VM gebruikt die is ingesteld met de scripts van [Data Science virtual machines in azure](../data-science-virtual-machine/overview.md), is Azure Storage Explorer al geïnstalleerd op de VM.
 > 
 > [!NOTE]
-> Raadpleeg Azure [BLOB-basis beginselen](../../storage/blobs/storage-quickstart-blobs-dotnet.md) en [Azure Blob-service](/rest/api/storageservices/Blob-Service-Concepts)voor een volledige inleiding tot Azure Blob-opslag.   
+> Raadpleeg Azure [BLOB-basis beginselen](../../storage/blobs/storage-quickstart-blobs-dotnet.md) en [Azure Blob-service](/rest/api/storageservices/Blob-Service-Concepts)voor een volledige inleiding tot Azure Blob Storage.   
 > 
 > 
 

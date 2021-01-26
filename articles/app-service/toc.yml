@@ -259,6 +259,8 @@
           href: troubleshoot-diagnostic-logs.md
         - name: Resourcegebeurtenissen ophalen
           href: get-resource-events.md
+        - name: Statuscontrole
+          href: monitor-instances-health-check.md
         - name: SSH-sessie openen naar Linux-container
           href: configure-linux-open-ssh-session.md
     - name: Een app beheren

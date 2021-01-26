@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.custom: hdinsightactive
 ms.topic: how-to
 ms.date: 11/28/2017
-ms.openlocfilehash: 2e6da1783c3bec4958783494cb6928f5a6a69a58
-ms.sourcegitcommit: 28c93f364c51774e8fbde9afb5aa62f1299e649e
+ms.openlocfilehash: 63d46298de2f480d97d25de2ec7e1ec78fbebd8d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97822349"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789460"
 ---
 # <a name="use-azure-toolkit-for-intellij-to-debug-apache-spark-applications-remotely-in-hdinsight-through-vpn"></a>Azure-toolkit voor IntelliJ gebruiken om fout opsporing uit te Apache Spark toepassingen op afstand in HDInsight via VPN
 
@@ -41,7 +41,7 @@ In dit artikel vindt u stapsgewijze richt lijnen voor het gebruik van de HDInsig
 
 Volg de instructies van de volgende koppelingen voor het maken van een virtueel Azure-netwerk en controleer vervolgens de connectiviteit tussen uw desktop computer en het virtuele netwerk:
 
-* [Maak een VNet met een site-naar-site-VPN-verbinding met behulp van de Azure Portal](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+* [Maak een VNet met een site-naar-site-VPN-verbinding met behulp van de Azure Portal](../../vpn-gateway/tutorial-site-to-site-portal.md)
 * [Een VNet maken met een site-naar-site-VPN-verbinding met behulp van Power shell](../../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md)
 * [Een punt-naar-site-verbinding met een virtueel netwerk configureren met behulp van Power shell](../../vpn-gateway/vpn-gateway-howto-point-to-site-rm-ps.md)
 

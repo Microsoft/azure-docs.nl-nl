@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: cd0b73dd22e5e2cab720bb1a33e58e25e517b1f6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f2a514af99baa2d828df1aee35a0e6339d39e617
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90604991"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788550"
 ---
 # <a name="azure-service-bus-trigger-for-azure-functions"></a>Azure Service Bus trigger voor Azure Functions
 
@@ -83,91 +83,6 @@ public static void Run(string myQueueItem,
 }
 ```
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-In het volgende voor beeld ziet u een Service Bus trigger binding in een *function.jsin* een bestand en een [Java script-functie](functions-reference-node.md) die gebruikmaakt van de binding. Met de functie worden [meta gegevens van berichten](#message-metadata) gelezen en wordt een service bus wachtrij bericht geregistreerd. 
-
-Hier vindt u de bindings gegevens in de *function.js* in het bestand:
-
-```json
-{
-"bindings": [
-    {
-    "queueName": "testqueue",
-    "connection": "MyServiceBusConnection",
-    "name": "myQueueItem",
-    "type": "serviceBusTrigger",
-    "direction": "in"
-    }
-],
-"disabled": false
-}
-```
-
-Hier volgt de Java script-script code:
-
-```javascript
-module.exports = function(context, myQueueItem) {
-    context.log('Node.js ServiceBus queue trigger function processed message', myQueueItem);
-    context.log('EnqueuedTimeUtc =', context.bindingData.enqueuedTimeUtc);
-    context.log('DeliveryCount =', context.bindingData.deliveryCount);
-    context.log('MessageId =', context.bindingData.messageId);
-    context.done();
-};
-```
-
-# <a name="python"></a>[Python](#tab/python)
-
-In het volgende voor beeld ziet u hoe u een Service Bus wachtrij bericht kunt lezen via een trigger.
-
-Een Service Bus binding wordt gedefinieerd in *function.jsop* waar *type* is ingesteld op `serviceBusTrigger` .
-
-```json
-{
-  "scriptFile": "__init__.py",
-  "bindings": [
-    {
-      "name": "msg",
-      "type": "serviceBusTrigger",
-      "direction": "in",
-      "queueName": "inputqueue",
-      "connection": "AzureServiceBusConnectionString"
-    }
-  ]
-}
-```
-
-De code in * _ \_ init_ \_ . py* declareert een para meter zoals `func.ServiceBusMessage` , waarmee u het wachtrij bericht in uw functie kunt lezen.
-
-```python
-import azure.functions as func
-
-import logging
-import json
-
-def main(msg: func.ServiceBusMessage):
-    logging.info('Python ServiceBus queue trigger processed message.')
-
-    result = json.dumps({
-        'message_id': msg.message_id,
-        'body': msg.get_body().decode('utf-8'),
-        'content_type': msg.content_type,
-        'expiration_time': msg.expiration_time,
-        'label': msg.label,
-        'partition_key': msg.partition_key,
-        'reply_to': msg.reply_to,
-        'reply_to_session_id': msg.reply_to_session_id,
-        'scheduled_enqueue_time': msg.scheduled_enqueue_time,
-        'session_id': msg.session_id,
-        'time_to_live': msg.time_to_live,
-        'to': msg.to,
-        'user_properties': msg.user_properties,
-        'metadata' : msg.metadata
-    })
-
-    logging.info(result)
-```
-
 # <a name="java"></a>[Java](#tab/java)
 
 De volgende Java-functie maakt gebruik `@ServiceBusQueueTrigger` van de aantekening van de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime) om de configuratie voor een service bus wachtrij trigger te beschrijven. De functie trekt het bericht dat in de wachtrij is geplaatst en voegt het toe aan de logboeken.
@@ -199,6 +114,120 @@ Java-functies kunnen ook worden geactiveerd wanneer een bericht wordt toegevoegd
     ) {
         context.getLogger().info(message);
     }
+```
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+In het volgende voor beeld ziet u een Service Bus trigger binding in een *function.jsin* een bestand en een [Java script-functie](functions-reference-node.md) die gebruikmaakt van de binding. Met de functie worden [meta gegevens van berichten](#message-metadata) gelezen en wordt een service bus wachtrij bericht geregistreerd.
+
+Hier vindt u de bindings gegevens in de *function.js* in het bestand:
+
+```json
+{
+"bindings": [
+    {
+    "queueName": "testqueue",
+    "connection": "MyServiceBusConnection",
+    "name": "myQueueItem",
+    "type": "serviceBusTrigger",
+    "direction": "in"
+    }
+],
+"disabled": false
+}
+```
+
+Hier volgt de Java script-script code:
+
+```javascript
+module.exports = function(context, myQueueItem) {
+    context.log('Node.js ServiceBus queue trigger function processed message', myQueueItem);
+    context.log('EnqueuedTimeUtc =', context.bindingData.enqueuedTimeUtc);
+    context.log('DeliveryCount =', context.bindingData.deliveryCount);
+    context.log('MessageId =', context.bindingData.messageId);
+    context.done();
+};
+```
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+In het volgende voor beeld ziet u een Service Bus trigger binding in een *function.jsin* een bestand en een [Power shell-functie](functions-reference-powershell.md) die gebruikmaakt van de binding. 
+
+Hier vindt u de bindings gegevens in de *function.js* in het bestand:
+
+```json
+{
+  "bindings": [
+    {
+      "name": "mySbMsg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "topicName": "mytopic",
+      "subscriptionName": "mysubscription",
+      "connection": "AzureServiceBusConnectionString"
+    }
+  ]
+}
+```
+
+Dit is de functie die wordt uitgevoerd wanneer een Service Bus bericht wordt verzonden.
+
+```powershell
+param([string] $mySbMsg, $TriggerMetadata)
+
+Write-Host "PowerShell ServiceBus queue trigger function processed message: $mySbMsg"
+```
+
+# <a name="python"></a>[Python](#tab/python)
+
+In het volgende voor beeld ziet u hoe u een Service Bus wachtrij bericht kunt lezen via een trigger.
+
+Een Service Bus binding wordt gedefinieerd in *function.jsop* waar *type* is ingesteld op `serviceBusTrigger` .
+
+```json
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "msg",
+      "type": "serviceBusTrigger",
+      "direction": "in",
+      "queueName": "inputqueue",
+      "connection": "AzureServiceBusConnectionString"
+    }
+  ]
+}
+```
+
+De code in *_\_ init_ \_ . py* declareert een para meter zoals `func.ServiceBusMessage` , waarmee u het wachtrij bericht in uw functie kunt lezen.
+
+```python
+import azure.functions as func
+
+import logging
+import json
+
+def main(msg: func.ServiceBusMessage):
+    logging.info('Python ServiceBus queue trigger processed message.')
+
+    result = json.dumps({
+        'message_id': msg.message_id,
+        'body': msg.get_body().decode('utf-8'),
+        'content_type': msg.content_type,
+        'expiration_time': msg.expiration_time,
+        'label': msg.label,
+        'partition_key': msg.partition_key,
+        'reply_to': msg.reply_to,
+        'reply_to_session_id': msg.reply_to_session_id,
+        'scheduled_enqueue_time': msg.scheduled_enqueue_time,
+        'session_id': msg.session_id,
+        'time_to_live': msg.time_to_live,
+        'to': msg.to,
+        'user_properties': msg.user_properties,
+        'metadata' : msg.metadata
+    })
+
+    logging.info(result)
 ```
 
 ---
@@ -268,14 +297,6 @@ Het Service Bus account dat moet worden gebruikt, wordt in de volgende volg orde
 
 Kenmerken worden niet ondersteund door C# Script.
 
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-Kenmerken worden niet ondersteund door JavaScript.
-
-# <a name="python"></a>[Python](#tab/python)
-
-Kenmerken worden niet ondersteund door Python.
-
 # <a name="java"></a>[Java](#tab/java)
 
 `ServiceBusQueueTrigger`Met de aantekening kunt u een functie maken die wordt uitgevoerd wanneer een service bus wachtrij bericht wordt gemaakt. Beschik bare configuratie opties zijn wachtrij naam en connection string naam.
@@ -283,6 +304,18 @@ Kenmerken worden niet ondersteund door Python.
 Met de `ServiceBusTopicTrigger` aantekening kunt u een onderwerp en een abonnement aanwijzen om te bepalen welke gegevens de functie activeren.
 
 Zie het [voor beeld](#example) van de trigger voor meer details.
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Kenmerken worden niet ondersteund door JavaScript.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Kenmerken worden niet ondersteund door Power shell.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Kenmerken worden niet ondersteund door Python.
 
 ---
 
@@ -313,8 +346,8 @@ De volgende parameter typen zijn beschikbaar voor het bericht in de wachtrij of 
 * `string` -Als het bericht tekst is.
 * `byte[]` -Nuttig voor binaire gegevens.
 * Een aangepast type: als het bericht JSON bevat, probeert Azure Functions de JSON-gegevens te deserialiseren.
-* `BrokeredMessage` -Geeft u het gegedeserialiseerde bericht met de methode [BrokeredMessage. GetBody \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
-* [`MessageReceiver`](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet) -Wordt gebruikt voor het ontvangen en bevestigen van berichten van de bericht container (vereist wanneer [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) is ingesteld op `false` )
+* `BrokeredMessage` -Geeft u het gegedeserialiseerde bericht met de methode [BrokeredMessage. GetBody \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1&preserve-view=true) .
+* [`MessageReceiver`](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet&preserve-view=true) -Wordt gebruikt voor het ontvangen en bevestigen van berichten van de bericht container (vereist wanneer [`autoComplete`](functions-bindings-service-bus-output.md#hostjson-settings) is ingesteld op `false` )
 
 Deze parameter typen zijn voor Azure Functions versie 1. x; voor 2. x en hoger gebruikt u [`Message`](/dotnet/api/microsoft.azure.servicebus.message) in plaats van `BrokeredMessage` .
 
@@ -325,23 +358,27 @@ De volgende parameter typen zijn beschikbaar voor het bericht in de wachtrij of 
 * `string` -Als het bericht tekst is.
 * `byte[]` -Nuttig voor binaire gegevens.
 * Een aangepast type: als het bericht JSON bevat, probeert Azure Functions de JSON-gegevens te deserialiseren.
-* `BrokeredMessage` -Geeft u het gegedeserialiseerde bericht met de methode [BrokeredMessage. GetBody \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1) .
+* `BrokeredMessage` -Geeft u het gegedeserialiseerde bericht met de methode [BrokeredMessage. GetBody \<T> ()](/dotnet/api/microsoft.servicebus.messaging.brokeredmessage.getbody?view=azure-dotnet#Microsoft_ServiceBus_Messaging_BrokeredMessage_GetBody__1&preserve-view=true) .
 
 Deze para meters zijn voor Azure Functions versie 1. x; voor 2. x en hoger gebruikt u [`Message`](/dotnet/api/microsoft.azure.servicebus.message) in plaats van `BrokeredMessage` .
-
-# <a name="javascript"></a>[JavaScript](#tab/javascript)
-
-Toegang tot de wachtrij of het onderwerp van het bericht met behulp van `context.bindings.<name from function.json>` . Het Service Bus bericht wordt door gegeven aan de functie als een teken reeks of een JSON-object.
-
-# <a name="python"></a>[Python](#tab/python)
-
-Het wachtrij bericht is beschikbaar voor de functie via een para meter getypeerd als `func.ServiceBusMessage` . Het Service Bus bericht wordt door gegeven aan de functie als een teken reeks of een JSON-object.
 
 # <a name="java"></a>[Java](#tab/java)
 
 Het binnenkomende Service Bus-bericht is beschikbaar via een `ServiceBusQueueMessage` of- `ServiceBusTopicMessage` para meter.
 
 [Zie het voor beeld voor meer informatie](#example).
+
+# <a name="javascript"></a>[JavaScript](#tab/javascript)
+
+Toegang tot de wachtrij of het onderwerp van het bericht met behulp van `context.bindings.<name from function.json>` . Het Service Bus bericht wordt door gegeven aan de functie als een teken reeks of een JSON-object.
+
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Het Service Bus-exemplaar is beschikbaar via de para meter die is geconfigureerd in de *function.jsvan* de bestands naam eigenschap.
+
+# <a name="python"></a>[Python](#tab/python)
+
+Het wachtrij bericht is beschikbaar voor de functie via een para meter getypeerd als `func.ServiceBusMessage` . Het Service Bus bericht wordt door gegeven aan de functie als een teken reeks of een JSON-object.
 
 ---
 
@@ -351,13 +388,13 @@ De verwerking van verontreinigde berichten kan niet worden beheerd of geconfigur
 
 ## <a name="peeklock-behavior"></a>PeekLock-gedrag
 
-De functions-runtime ontvangt een bericht in de [modus PeekLock](../service-bus-messaging/service-bus-performance-improvements.md#receive-mode). Het bericht wordt aangeroepen `Complete` als de functie is voltooid, of aanroepen `Abandon` als de functie mislukt. Als de functie langer dan de `PeekLock` time-out wordt uitgevoerd, wordt de vergren deling automatisch vernieuwd zolang de functie wordt uitgevoerd. 
+De functions-runtime ontvangt een bericht in de [modus PeekLock](../service-bus-messaging/service-bus-performance-improvements.md#receive-mode). Het bericht wordt aangeroepen `Complete` als de functie is voltooid, of aanroepen `Abandon` als de functie mislukt. Als de functie langer dan de `PeekLock` time-out wordt uitgevoerd, wordt de vergren deling automatisch vernieuwd zolang de functie wordt uitgevoerd.
 
-De `maxAutoRenewDuration` kan worden geconfigureerd in *host.jsop*, die wordt toegewezen aan [OnMessageOptions. MaxAutoRenewDuration](/dotnet/api/microsoft.azure.servicebus.messagehandleroptions.maxautorenewduration?view=azure-dotnet). Het maximum aantal dat is toegestaan voor deze instelling is 5 minuten volgens de Service Bus-documentatie, terwijl u de tijds limiet van functies kunt verhogen van de standaard waarde van 5 minuten tot 10 minuten. Voor Service Bus functies wilt u dat niet doen, omdat u de Service Bus vernieuwings limiet overschrijdt.
+De `maxAutoRenewDuration` kan worden geconfigureerd in *host.jsop*, die wordt toegewezen aan [OnMessageOptions. MaxAutoRenewDuration](/dotnet/api/microsoft.azure.servicebus.messagehandleroptions.maxautorenewduration?view=azure-dotnet&preserve-view=true). Het maximum aantal dat is toegestaan voor deze instelling is 5 minuten volgens de Service Bus-documentatie, terwijl u de tijds limiet van functies kunt verhogen van de standaard waarde van 5 minuten tot 10 minuten. Voor Service Bus functies wilt u dat niet doen, omdat u de Service Bus vernieuwings limiet overschrijdt.
 
 ## <a name="message-metadata"></a>Meta gegevens van bericht
 
-De trigger Service Bus biedt verschillende [Eigenschappen van meta gegevens](./functions-bindings-expressions-patterns.md#trigger-metadata). Deze eigenschappen kunnen worden gebruikt als onderdeel van binding expressies in andere bindingen of als para meters in uw code. Deze eigenschappen zijn leden van de [bericht](/dotnet/api/microsoft.azure.servicebus.message?view=azure-dotnet) klasse.
+De trigger Service Bus biedt verschillende [Eigenschappen van meta gegevens](./functions-bindings-expressions-patterns.md#trigger-metadata). Deze eigenschappen kunnen worden gebruikt als onderdeel van bindingsexpressies in andere bindingen of als parameters in uw code. Deze eigenschappen zijn leden van de [bericht](/dotnet/api/microsoft.azure.servicebus.message?view=azure-dotnet&preserve-view=true) klasse.
 
 |Eigenschap|Type|Beschrijving|
 |--------|----|-----------|

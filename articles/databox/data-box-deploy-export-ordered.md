@@ -8,12 +8,12 @@ ms.subservice: pod
 ms.topic: how-to
 ms.date: 12/18/2020
 ms.author: alkohli
-ms.openlocfilehash: aac1fb8e2da7a3c84b3abff47c8f476b9fb9049c
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 42476e2689cc503edc19e8e299a01ce922f1bf42
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704335"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789192"
 ---
 # <a name="tutorial-create-export-order-for-azure-data-box"></a>Zelf studie: export volgorde voor Azure Data Box maken
 
@@ -179,7 +179,7 @@ Voer de volgende stappen uit in de Azure-portal om een apparaat te bestellen.
 
 15. Selecteer een gebruikersidentiteit die u gaat gebruiken voor het beheren van de toegang tot deze resource. Kies **Een gebruikersidentiteit selecteren**. Selecteer in het deelvenster aan de rechterkant het abonnement en de beheerde identiteit die u wilt gebruiken. Kies dan de optie **Selecteren**.
 
-    Een door de gebruiker toegewezen beheerde identiteit is een zelfstandige Azure-resource die kan worden gebruikt voor het beheren van meerdere resources. Zie [Beheerde identiteitstypen](/azure/active-directory/managed-identities-azure-resources/overview) voor meer informatie.  
+    Een door de gebruiker toegewezen beheerde identiteit is een zelfstandige Azure-resource die kan worden gebruikt voor het beheren van meerdere resources. Zie [Beheerde identiteitstypen](../active-directory/managed-identities-azure-resources/overview.md) voor meer informatie.  
 
     Als u een nieuwe beheerde identiteit wilt maken, volgt u de richtlijnen in [Een rol maken, weergeven, verwijderen of toewijzen aan een door de gebruiker toegewezen beheerde identiteit met behulp van de Azure Portal](../../articles/active-directory/managed-identities-azure-resources/how-to-manage-ua-identity-portal.md).
     

@@ -1,6 +1,6 @@
 ---
-title: Voorbeeld gegevens in Azure Blob-opslag-team data Science process
-description: Bemonsterings gegevens die zijn opgeslagen in Azure Blob-opslag door deze programmatisch te downloaden en vervolgens te bemonsteren met procedures die zijn geschreven in python.
+title: 'Voorbeeld gegevens in Azure Blob Storage: team data Science process'
+description: Voorbeeld gegevens die zijn opgeslagen in Azure Blob Storage door deze programmatisch te downloaden en vervolgens te bemonsteren met procedures die zijn geschreven in python.
 services: machine-learning
 author: marktab
 manager: marktab
@@ -11,16 +11,16 @@ ms.topic: article
 ms.date: 01/10/2020
 ms.author: tdsp
 ms.custom: seodec18, previous-author=deguhath, previous-ms.author=deguhath
-ms.openlocfilehash: b190bf0c474640c07d84971069072d3af2faa66d
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
+ms.openlocfilehash: c5827a0e07e537b66684f852d8f3e1500cd9febb
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93321903"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788838"
 ---
-# <a name="sample-data-in-azure-blob-storage"></a><a name="heading"></a>Voorbeeldgegevens in Azure Blob-opslag
+# <a name="sample-data-in-azure-blob-storage"></a><a name="heading"></a>Voorbeeld gegevens in Azure Blob Storage
 
-In dit artikel wordt beschreven welke voorbeeld gegevens zijn opgeslagen in Azure Blob-opslag door deze programmatisch te downloaden en vervolgens te bemonsteren met procedures die zijn geschreven in python.
+In dit artikel worden de voorbeeld gegevens beschreven die zijn opgeslagen in Azure Blob Storage door deze programmatisch te downloaden en vervolgens te bemonsteren met procedures die zijn geschreven in python.
 
 **Waarom een voor beeld van uw gegevens?**
 Als de gegevensset die u wilt analyseren groot is, is het doorgaans een goed idee om de gegevens te verlagen om deze te verminderen tot een kleinere, maar representatieve en meer beheersbare grootte. Bemonstering vereenvoudigt het leren van gegevens, het verkennen en functie-engineering. De rol van het proces Cortana Analytics is om snel een prototype van de functies voor gegevens verwerking en machine learning modellen mogelijk te maken.
@@ -28,7 +28,7 @@ Als de gegevensset die u wilt analyseren groot is, is het doorgaans een goed ide
 Deze steekproef taak is een stap in het [team data Science process (TDSP)](./index.yml).
 
 ## <a name="download-and-down-sample-data"></a>Voorbeeld gegevens downloaden en verlagen
-1. Down load de gegevens uit Azure Blob-opslag met behulp van de Blob service uit de volgende python-voorbeeld code: 
+1. Down load de gegevens van Azure Blob Storage met behulp van de Blob service van de volgende python-voorbeeld code: 
 
     ```python
     from azure.storage.blob import BlobService

@@ -10,12 +10,12 @@ ms.subservice: certificates
 ms.topic: tutorial
 ms.date: 06/17/2020
 ms.author: sebansal
-ms.openlocfilehash: bbc232ed0bc9e9715f481fef8b7b3a1f8eeebe78
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
-ms.translationtype: HT
+ms.openlocfilehash: aa631f4c505200c2c8abc67d4e22ffbab23e015c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98059650"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789024"
 ---
 # <a name="create-and-merge-a-csr-in-key-vault"></a>Een CSR in Key Vault maken en samenvoegen
 
@@ -123,7 +123,7 @@ Voorbeeld
 
 - Hoe kan ik mijn CSR controleren of beheren?
 
-     Zie [Het maken van certificaten controleren en beheren](https://docs.microsoft.com/azure/key-vault/certificates/create-certificate-scenarios).
+     Zie [Het maken van certificaten controleren en beheren](./create-certificate-scenarios.md).
 
 - Wat als ik deze melding krijg: **Fouttype 'De openbare sleutel van het certificaat van de eindentiteit in de opgegeven X.509-certificaatinhoud komt niet overeen met het openbare gedeelte van de opgegeven persoonlijke sleutel. Controleer of het certificaat geldig is'** ?
 

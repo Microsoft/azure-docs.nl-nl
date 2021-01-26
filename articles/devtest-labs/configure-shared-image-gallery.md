@@ -3,27 +3,27 @@ title: Een galerie met gedeelde installatie kopieën configureren in Azure DevTe
 description: Meer informatie over het configureren van een galerie met gedeelde installatie kopieën in Azure DevTest Labs waarmee gebruikers tijdens het maken van Lab-bronnen toegang krijgen tot installatie kopieën van een gedeelde locatie.
 ms.topic: article
 ms.date: 06/26/2020
-ms.openlocfilehash: 96563b1dcfac171af38b229bb81d12b3afda2e2f
-ms.sourcegitcommit: 03713bf705301e7f567010714beb236e7c8cee6f
+ms.openlocfilehash: febcff640efc29eb4916250366641635f9d8721e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92327974"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788418"
 ---
 # <a name="configure-a-shared-image-gallery-in-azure-devtest-labs"></a>Een gedeelde galerie met installatiekopieën configureren in Azure DevTest Labs
-DevTest Labs ondersteunt nu de functie [gedeelde installatie kopie galerie](../virtual-machines/windows/shared-image-galleries.md) . Hiermee kunnen Lab-gebruikers toegang krijgen tot installatie kopieën vanaf een gedeelde locatie tijdens het maken van Lab-resources. Het helpt u ook om structuur en organisatie te bouwen rond uw door aangepaste beheerde VM-installatie kopieën. De functie Gedeelde afbeeldingen galerie ondersteunt:
+DevTest Labs ondersteunt nu de functie [gedeelde installatie kopie galerie](../virtual-machines/shared-image-galleries.md) . Hiermee kunnen Lab-gebruikers toegang krijgen tot installatie kopieën vanaf een gedeelde locatie tijdens het maken van Lab-resources. Het helpt u ook om structuur en organisatie te bouwen rond uw door aangepaste beheerde VM-installatie kopieën. De functie Gedeelde afbeeldingen galerie ondersteunt:
 
 - Beheerde algemene replicatie van installatie kopieën
 - Versie beheer en groepering van installatie kopieën voor eenvoudiger beheer
 - Maak uw installatie kopieën Maxi maal beschikbaar met ZRS-accounts (zone redundant Storage) in regio's die beschikbaarheids zones ondersteunen. ZRS biedt betere flexibiliteit tegen zonegebonden fouten.
 - Meerdere abonnementen delen, en zelfs tussen tenants, met behulp van Azure op rollen gebaseerd toegangs beheer (Azure RBAC).
 
-Zie de documentatie van de [Galerie met gedeelde afbeeldingen](../virtual-machines/windows/shared-image-galleries.md)voor meer informatie. 
+Zie de documentatie van de [Galerie met gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md)voor meer informatie. 
  
 Als u een groot aantal beheerde installatie kopieën hebt dat u wilt behouden en deze beschikbaar wilt maken in het hele bedrijf, kunt u een galerie met gedeelde afbeeldingen gebruiken als opslag plaats waarmee u gemakkelijk uw installatie kopieën kan bijwerken en delen. Als eigenaar van een lab kunt u een bestaande galerie met gedeelde afbeeldingen koppelen aan uw Lab. Zodra deze galerie is gekoppeld, kunnen Lab-gebruikers computers maken op basis van deze nieuwste installatie kopieën. Een belang rijk voor deel van deze functie is dat DevTest Labs nu het voor deel heeft van het delen van installatie kopieën in Labs, abonnementen en andere regio's. 
 
 > [!NOTE]
-> Zie voor meer informatie over de kosten die zijn gekoppeld aan de service voor de galerie met gedeelde afbeeldingen [facturering voor de galerie gedeelde afbeeldingen](../virtual-machines/windows/shared-image-galleries.md#billing).
+> Zie voor meer informatie over de kosten die zijn gekoppeld aan de service voor de galerie met gedeelde afbeeldingen [facturering voor de galerie gedeelde afbeeldingen](../virtual-machines/shared-image-galleries.md#billing).
 
 ## <a name="considerations"></a>Overwegingen
 - U kunt slechts één gedeelde installatie kopie galerie tegelijk aan een Lab koppelen. Als u een andere galerie wilt koppelen, moet u de bestaande Gallery loskoppelen en er een toevoegen. 
@@ -32,7 +32,7 @@ Als u een groot aantal beheerde installatie kopieën hebt dat u wilt behouden en
 - Hoewel in DevTest Labs automatisch een beste poging wordt gedaan om ervoor te zorgen dat de galerie met gedeelde afbeeldingen installatie kopieën repliceert naar de regio waarin het lab zich bevindt, is het niet altijd mogelijk. Om te voor komen dat gebruikers problemen hebben met het maken van Vm's van deze installatie kopieën, moet u ervoor zorgen dat de installatie kopieën al worden gerepliceerd naar de regio van het lab.
 
 ## <a name="use-azure-portal"></a>Azure Portal gebruiken
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 1. Selecteer **alle services** in het navigatie menu links.
 1. Selecteer **DevTest Labs** uit de lijst.
 1. Selecteer in de lijst met Labs uw **Lab**.
@@ -45,7 +45,7 @@ Als u een groot aantal beheerde installatie kopieën hebt dat u wilt behouden en
     ![Koppelen](./media/configure-shared-image-gallery/attach-options.png)
 1. Nadat de galerie met installatie kopieën is gekoppeld, selecteert u deze om naar de gekoppelde galerie te gaan. Configureer uw galerie om gedeelde installatie kopieën voor het maken van VM'S in **of uit** te scha kelen. Selecteer een galerie met installatie kopieën in de lijst om deze te configureren. 
 
-    Standaard **toestaan dat alle installatie kopieën worden gebruikt als basis van de virtuele machine** is ingesteld op **Ja**. Dit betekent dat alle beschik bare installatie kopieën in de galerie met gedeelde installatie kopieën beschikbaar zijn voor een test gebruiker bij het maken van een nieuwe VM van het lab. Als toegang tot bepaalde installatie kopieën moet worden beperkt, wijzigt u **alle installatie kopieën die moeten worden gebruikt als** **basis voor de**virtuele machine, en selecteert u de installatie kopieën die u wilt toestaan bij het maken van vm's en selecteert u vervolgens de knop **Opslaan** .
+    Standaard **toestaan dat alle installatie kopieën worden gebruikt als basis van de virtuele machine** is ingesteld op **Ja**. Dit betekent dat alle beschik bare installatie kopieën in de galerie met gedeelde installatie kopieën beschikbaar zijn voor een test gebruiker bij het maken van een nieuwe VM van het lab. Als toegang tot bepaalde installatie kopieën moet worden beperkt, wijzigt u **alle installatie kopieën die moeten worden gebruikt als** **basis voor de** virtuele machine, en selecteert u de installatie kopieën die u wilt toestaan bij het maken van vm's en selecteert u vervolgens de knop **Opslaan** .
 
     :::image type="content" source="./media/configure-shared-image-gallery/enable-disable.png" alt-text="Installatie kopieën in-of uitschakelen":::
 

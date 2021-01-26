@@ -4,12 +4,12 @@ description: In deze zelfstudie leert u hoe u een Service Fabric-cluster in Azur
 ms.topic: tutorial
 ms.date: 07/22/2019
 ms.custom: mvc, devx-track-azurecli
-ms.openlocfilehash: 063c83818ec2e98491f9062e936b9a1e7b2c4356
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: cdc7ba8d6c83ae72ffb8f1afae3954b3a46dc6ec
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97702171"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787991"
 ---
 # <a name="tutorial-scale-a-service-fabric-cluster-in-azure"></a>Zelfstudie: Een Service Fabric-cluster schalen in Azure
 
@@ -809,7 +809,7 @@ Nadat u een Service Fabric-cluster hebt gemaakt, kunt u de schaal van een cluste
 > [!WARNING]
 > Het wordt afgeraden om Remove-AzServiceFabricNodeType op frequente basis te gebruiken om een knooppunttype uit een productiecluster te verwijderen. Het is een gevaarlijke opdracht omdat hiermee de virtuele-machineschaalsetresource achter het knooppunttype wordt verwijderd. 
 
-Voer de cmdlet [Remove-AzServiceFabricNodeType](/powershell/module/az.servicefabric/remove-azservicefabricnodetype) uit om het knooppunttype te verwijderen.  Het knooppunttype moet Silver of Gold als [duurzaamheidsniveau][durability] hebben. Met de cmdlet wordt de schaalset verwijderd die aan het knooppunttype is gekoppeld; dit kan enige tijd duren.  Voer vervolgens de cmdlet [Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate?view=azureservicefabricps) uit op alle knooppunten om te verwijderen. Hiermee verwijdert u de knooppuntstatus en worden de knooppunten uit het cluster verwijderd. Als er services bestaan op de knooppunten, worden de services vervolgens eerst naar een ander knooppunt verplaatst. Als de clusterbeheerder geen knooppunt voor de replica/service kan vinden, wordt de bewerking vervolgens uitgesteld/geblokkeerd.
+Voer de cmdlet [Remove-AzServiceFabricNodeType](/powershell/module/az.servicefabric/remove-azservicefabricnodetype) uit om het knooppunttype te verwijderen.  Het knooppunttype moet Silver of Gold als [duurzaamheidsniveau][durability] hebben. Met de cmdlet wordt de schaalset verwijderd die aan het knooppunttype is gekoppeld; dit kan enige tijd duren.  Voer vervolgens de cmdlet [Remove-ServiceFabricNodeState](/powershell/module/servicefabric/remove-servicefabricnodestate) uit op alle knooppunten om te verwijderen. Hiermee verwijdert u de knooppuntstatus en worden de knooppunten uit het cluster verwijderd. Als er services bestaan op de knooppunten, worden de services vervolgens eerst naar een ander knooppunt verplaatst. Als de clusterbeheerder geen knooppunt voor de replica/service kan vinden, wordt de bewerking vervolgens uitgesteld/geblokkeerd.
 
 ```powershell
 $groupname = "sfclustertutorialgroup"

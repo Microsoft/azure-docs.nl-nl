@@ -3,12 +3,12 @@ title: Opzetten van een leslokaallab met Azure Lab Services | Microsoft Docs
 description: In deze zelfstudie gebruikt u Azure Lab Services om een leslokaallab in te stellen met virtuele machines die worden gebruikt door studenten in uw les.
 ms.topic: tutorial
 ms.date: 12/03/2020
-ms.openlocfilehash: 3abbf5221382b46dbf4e73f9f4dc3b639bc5ecbd
-ms.sourcegitcommit: c4246c2b986c6f53b20b94d4e75ccc49ec768a9a
-ms.translationtype: HT
+ms.openlocfilehash: 8093a1fd270cdba8bdccaf48737bf6737bdd394d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/04/2020
-ms.locfileid: "96602487"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787415"
 ---
 # <a name="tutorial-set-up-a-classroom-lab"></a>Zelfstudie: Een leslokaallab instellen 
 In deze zelfstudie stelt u een leslokaallab in met virtuele machines die worden gebruikt door studenten in het leslokaal.  
@@ -127,7 +127,7 @@ Wanneer u gebruikers toevoegt, wordt standaard de optie **Toegang beperken** ing
 
 U kunt een labgebruikerslijst synchroniseren met een bestaande Azure Active Directory (Azure AD)-groep, zodat u niet handmatig gebruikers hoeft toe te voegen of te verwijderen. 
 
-Een Azure AD-groep kan worden gemaakt binnen de Azure Active Directory van uw organisatie om de toegang tot bedrijfsresources en cloud-apps te beheren. Zie [Azure AD-groepen](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-manage-groups) voor meer informatie. Als uw organisatie gebruikmaakt van Microsoft Office 365 of Azure-services, heeft uw organisatie al beheerders die uw Azure Active Directory beheren. 
+Een Azure AD-groep kan worden gemaakt binnen de Azure Active Directory van uw organisatie om de toegang tot bedrijfsresources en cloud-apps te beheren. Zie [Azure AD-groepen](../active-directory/fundamentals/active-directory-manage-groups.md) voor meer informatie. Als uw organisatie gebruikmaakt van Microsoft Office 365 of Azure-services, heeft uw organisatie al beheerders die uw Azure Active Directory beheren. 
 
 > [!IMPORTANT]
 > Zorg ervoor dat de gebruikerslijst leeg is. Als er bestaande gebruikers in een lab zijn die handmatig of via het importeren van een CSV-bestand zijn toegevoegd, wordt de optie om het lab te synchroniseren met een bestaande groep niet weergegeven. 
@@ -204,4 +204,3 @@ In deze zelfstudie hebt u een lab voor uw klas in Azure gemaakt. Ga voor meer in
 
 > [!div class="nextstepaction"]
 > [Verbinding maken met een virtuele machine in het leslokaallab](tutorial-connect-virtual-machine-classroom-lab.md)
-

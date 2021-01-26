@@ -4,12 +4,12 @@ description: Meer informatie over het configureren van een op een host gebaseerd
 services: container-service
 ms.topic: article
 ms.date: 07/10/2020
-ms.openlocfilehash: 6b23bf285d89a5f3285825feef849b3d168ed62f
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.openlocfilehash: 531d1dc4169b5f4adecfb29c3e116049cb99c3c9
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762040"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787821"
 ---
 # <a name="host-based-encryption-on-azure-kubernetes-service-aks-preview"></a>Versleuteling op basis van een host op de Azure Kubernetes-service (AKS) (preview)
 
@@ -28,7 +28,7 @@ Deze functie kan alleen worden ingesteld tijdens het maken van het cluster of he
 - Controleer of u de `aks-preview` cli-extensie v 0.4.55 of hoger hebt geïnstalleerd
 - Zorg ervoor dat u de `EnableEncryptionAtHostPreview` functie vlag onder `Microsoft.ContainerService` ingeschakeld hebt.
 
-Als u versleuteling wilt gebruiken op de host voor uw Vm's of virtuele-machine schaal sets, moet u de functie inschakelen voor uw abonnement. Stuur een e-mail naar encryptionAtHost@microsoft.com met uw abonnement-id's om de functie in te scha kelen voor uw abonnementen.
+Als u versleuteling wilt gebruiken op de host voor uw Vm's of virtuele-machine schaal sets, moet u de functie inschakelen voor uw abonnement. Stuur een e-mail naar encryptionAtHost@microsoft .com met uw abonnement-id's om de functie in te schakelen voor uw abonnementen.
 
 ### <a name="register-encryptionathost--preview-features"></a>`EncryptionAtHost`Preview-functies registreren
 

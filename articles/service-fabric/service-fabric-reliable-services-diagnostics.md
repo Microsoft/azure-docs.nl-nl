@@ -3,15 +3,15 @@ title: Diagnostische gegevens over Azure Service Fabric stateful Reliable Servic
 description: Diagnostische functionaliteit voor stateful Reliable Services in azure Service Fabric
 ms.topic: conceptual
 ms.date: 8/24/2018
-ms.openlocfilehash: 5a3831dd4f8d5402980fac3daf8c35d9884c852d
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 774a771d0c9701076a5d6c070963bf6224a571dd
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91840758"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789327"
 ---
 # <a name="diagnostic-functionality-for-stateful-reliable-services"></a>Diagnosefunctionaliteit voor Stateful Reliable Services
-De Azure Service Fabric stateful Reliable Services StatefulServiceBase-klasse verzendt [Event source](/dotnet/api/system.diagnostics.tracing.eventsource?view=netcore-3.1) -gebeurtenissen die kunnen worden gebruikt om fouten in de service op te sporen, inzicht te krijgen in hoe de runtime werkt en om te helpen bij het oplossen van problemen.
+De Azure Service Fabric stateful Reliable Services StatefulServiceBase-klasse verzendt [Event source](/dotnet/api/system.diagnostics.tracing.eventsource) -gebeurtenissen die kunnen worden gebruikt om fouten in de service op te sporen, inzicht te krijgen in hoe de runtime werkt en om te helpen bij het oplossen van problemen.
 
 ## <a name="eventsource-events"></a>Event source-gebeurtenissen
 De naam van de Event source voor de stateful Reliable Services klasse StatefulServiceBase is ' micro soft-ServiceFabric-Services '. Gebeurtenissen van deze gebeurtenis bron worden weer gegeven in het venster [diagnostische gebeurtenissen](service-fabric-diagnostics-how-to-monitor-and-diagnose-services-locally.md#view-service-fabric-system-events-in-visual-studio) wanneer de service [fouten in Visual Studio worden opgespoord](service-fabric-debugging-your-application.md).
@@ -58,7 +58,7 @@ De namen van de tellers voor de categorie `Service Fabric Transactional Replicat
 
 `ServiceFabricPartitionId:ServiceFabricReplicaId`
 
-*ServiceFabricPartitionId* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks weergave wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) indelings specificatie "D".
+*ServiceFabricPartitionId* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks weergave wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) indelings specificatie "D".
 
 *ServiceFabricReplicaId* is de id die is gekoppeld aan een bepaalde replica van een betrouw bare service. De replica-ID is opgenomen in de exemplaar naam van het prestatie meter item om de uniekheid ervan te garanderen en te voor komen dat er conflicten ontstaan met andere prestatie meter exemplaren die worden gegenereerd door dezelfde partitie. Meer informatie over replica's en hun rol in reliable Services vindt u [hier](service-fabric-concepts-replica-lifecycle.md).
 
@@ -73,7 +73,7 @@ De namen van de tellers voor de categorie `Service Fabric TStore` hebben de volg
 
 `ServiceFabricPartitionId:ServiceFabricReplicaId:StateProviderId_PerformanceCounterInstanceDifferentiator_StateProviderName`
 
-*ServiceFabricPartitionId* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks weergave wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring?view=netcore-3.1#System_Guid_ToString_System_String_) indelings specificatie "D".
+*ServiceFabricPartitionId* is de teken reeks representatie van de service Fabric partitie-id waaraan het prestatie meter exemplaar is gekoppeld. De partitie-ID is een GUID en de teken reeks weergave wordt gegenereerd via de [`Guid.ToString`](/dotnet/api/system.guid.tostring#System_Guid_ToString_System_String_) indelings specificatie "D".
 
 *ServiceFabricReplicaId* is de id die is gekoppeld aan een bepaalde replica van een betrouw bare service. De replica-ID is opgenomen in de exemplaar naam van het prestatie meter item om de uniekheid ervan te garanderen en te voor komen dat er conflicten ontstaan met andere prestatie meter exemplaren die worden gegenereerd door dezelfde partitie. Meer informatie over replica's en hun rol in reliable Services vindt u [hier](service-fabric-concepts-replica-lifecycle.md).
 

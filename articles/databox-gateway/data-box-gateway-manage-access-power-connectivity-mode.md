@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: how-to
 ms.date: 10/14/2020
 ms.author: alkohli
-ms.openlocfilehash: 994e5a11cd3b42de339ed11a9d2517c81856e672
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: c4e2894d193309c169adbea96491e0754d479a8a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96581955"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786805"
 ---
 # <a name="manage-access-power-and-connectivity-mode-for-your-azure-data-box-gateway"></a>De toegang, de kracht en de connectiviteits modus voor uw Azure Data Box Gateway beheren
 
@@ -68,7 +68,7 @@ Bij het genereren van de activerings sleutel voor het apparaat of voor het uitvo
 
 U moet `User` toegang hebben tot de Active Directory Tenant, zodat u dit kunt doen `Read all directory objects` . Een gast gebruiker heeft geen machtigingen voor `Read all directory objects` . Als u een gast bent, worden bewerkingen zoals het genereren van een activerings sleutel, het maken van een share op uw apparaat en het maken van een gebruiker mislukt.
 
-Zie [Microsoft Graph permissions Reference](https://docs.microsoft.com/graph/permissions-reference)(Engelstalig) voor meer informatie over het verlenen van toegang aan gebruikers om de API te Microsoft Graph.
+Zie [Microsoft Graph permissions Reference](/graph/permissions-reference)(Engelstalig) voor meer informatie over het verlenen van toegang aan gebruikers om de API te Microsoft Graph.
 
 ### <a name="register-resource-providers"></a>Resourceprovider registreren
 
@@ -95,7 +95,7 @@ Voor een Data Box Gateway apparaat `Microsoft.DataBoxEdge` moet worden geregistr
 Register-AzResourceProvider -ProviderNamespace Microsoft.DataBoxEdge
 ```
 
-Zie [fouten voor de registratie van de resource provider oplossen](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-register-provider-errors)voor meer informatie over het registreren van een resource provider.
+Zie [fouten voor de registratie van de resource provider oplossen](../azure-resource-manager/templates/error-register-resource-provider.md)voor meer informatie over het registreren van een resource provider.
 
 ## <a name="manage-connectivity-mode"></a>Connectiviteits modus beheren
 

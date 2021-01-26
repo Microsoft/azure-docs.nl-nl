@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: how-to
 ms.date: 11/04/2020
 ms.author: victorh
-ms.openlocfilehash: 2dd1b51c6bcdbc531661d9ecf45d3d0282eb5b45
-ms.sourcegitcommit: 0b9fe9e23dfebf60faa9b451498951b970758103
+ms.openlocfilehash: 52c6ef9edfc42bf1ad3b3279e0fa4e19b4cf502c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/07/2020
-ms.locfileid: "94358844"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788261"
 ---
 # <a name="monitor-azure-firewall-logs-and-metrics"></a>Azure Firewall-logboeken en metrische gegevens bewaken
 
@@ -43,9 +43,9 @@ Nadat u deze procedure voor het inschakelen van diagnostische logboekregistratie
    * AzureFirewallDnsProxy
 
 
-3. Selecteer **Diagnostische instelling toevoegen**. Op de pagina **Diagnostische instellingen** staan de instellingen voor de diagnostische logboeken.
+3. Selecteer **Diagnostische instellingen toevoegen**. Op de pagina **Diagnostische instellingen** staan de instellingen voor de diagnostische logboeken.
 5. In dit voorbeeld worden de logboeken in Azure Monitor-logboeken opgeslagen, dus typ **Firewall Log Analytics** als naam.
-6. Selecteer **onder logboek** de optie **AzureFirewallApplicationRule** , **AzureFirewallNetworkRule** , **AzureFirewallThreatIntelLog** en **AzureFirewallDnsProxy** om de logboeken te verzamelen.
+6. Selecteer **onder logboek** de optie **AzureFirewallApplicationRule**, **AzureFirewallNetworkRule**, **AzureFirewallThreatIntelLog** en **AzureFirewallDnsProxy** om de logboeken te verzamelen.
 7. Selecteer **verzenden naar log Analytics** om uw werk ruimte te configureren.
 8. Selecteer uw abonnement.
 9. Selecteer **Opslaan**.
@@ -104,15 +104,15 @@ Als u diagnostische logboek registratie met Azure CLI wilt inschakelen, moet u d
 
 U kunt activiteitenlogboekgegevens bekijken en analyseren via een van de volgende methoden:
 
-* **Azure-hulpprogramma’s** : Haal informatie uit het activiteitenlogboek op via Azure PowerShell, de Azure CLI, de Azure REST-API of de Azure-portal. In het artikel [Activiteitsbewerkingen met Resource Manager](../azure-resource-manager/management/view-activity-logs.md) staan stapsgewijze instructies voor elke methode.
-* **Power BI** : Als u nog geen [Power BI](https://powerbi.microsoft.com/pricing)-account hebt, kunt u het gratis uitproberen. Door het [inhoudspakket voor Azure-activiteitenlogboeken voor Power BI](https://powerbi.microsoft.com/en-us/documentation/powerbi-content-pack-azure-audit-logs/) te gebruiken, kunt u uw gegevens analyseren met vooraf geconfigureerde dashboards die u kunt gebruiken zoals geleverd of kunt aanpassen.
-* **Azure-Sentinel** : u kunt Azure firewall-logboeken verbinden met Azure-Sentinel, zodat u logboek gegevens in werkmappen weer geven, ze kunt gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek te verbeteren. De Azure Firewall gegevens connector in azure Sentinel is momenteel beschikbaar als open bare preview. Zie [verbinding maken tussen gegevens van Azure firewall](../sentinel/connect-azure-firewall.md)voor meer informatie.
+* **Azure-hulpprogramma’s**: Haal informatie uit het activiteitenlogboek op via Azure PowerShell, de Azure CLI, de Azure REST-API of de Azure-portal. In het artikel [Activiteitsbewerkingen met Resource Manager](../azure-resource-manager/management/view-activity-logs.md) staan stapsgewijze instructies voor elke methode.
+* **Power BI**: Als u nog geen [Power BI](https://powerbi.microsoft.com/pricing)-account hebt, kunt u het gratis uitproberen. Door het [inhoudspakket voor Azure-activiteitenlogboeken voor Power BI](https://powerbi.microsoft.com/en-us/documentation/powerbi-content-pack-azure-audit-logs/) te gebruiken, kunt u uw gegevens analyseren met vooraf geconfigureerde dashboards die u kunt gebruiken zoals geleverd of kunt aanpassen.
+* **Azure-Sentinel**: u kunt Azure firewall-logboeken verbinden met Azure-Sentinel, zodat u logboek gegevens in werkmappen weer geven, ze kunt gebruiken om aangepaste waarschuwingen te maken en deze op te nemen om uw onderzoek te verbeteren. De Azure Firewall gegevens connector in azure Sentinel is momenteel beschikbaar als open bare preview. Zie [verbinding maken tussen gegevens van Azure firewall](../sentinel/connect-azure-firewall.md)voor meer informatie.
 
 ## <a name="view-and-analyze-the-network-and-application-rule-logs"></a>De logboeken voor netwerk- en toepassingsregels bekijken en analyseren
 
 [Azure Monitor-logboeken](../azure-monitor/insights/azure-networking-analytics.md) verzamelt de teller- en gebeurtenislogboekbestanden. Het omvat visualisaties en krachtige zoekmogelijkheden om uw logboeken te analyseren.
 
-Zie [Azure Firewall log Analytics](log-analytics-samples.md)-voor beelden voor Azure Firewall log Analytics-voorbeeld query's.
+Zie [Azure Firewall log Analytics](./firewall-workbook.md)-voor beelden voor Azure Firewall log Analytics-voorbeeld query's.
 
 [Azure firewall werkmap](firewall-workbook.md) biedt een flexibel canvas voor het Azure firewall van gegevens analyse. U kunt deze gebruiken om uitgebreide visuele rapporten te maken in de Azure Portal. U kunt tikken op meerdere firewalls die zijn geïmplementeerd in Azure en deze combi neren in Unified Interactive-ervaringen.
 

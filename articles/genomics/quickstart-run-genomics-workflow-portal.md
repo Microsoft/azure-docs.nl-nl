@@ -9,12 +9,12 @@ ms.service: genomics
 ms.topic: quickstart
 ms.date: 01/11/2019
 ms.custom: devx-track-python
-ms.openlocfilehash: 85665dbda2ed11ffa04b71e4317f2b34b83d317f
-ms.sourcegitcommit: 9eda79ea41c60d58a4ceab63d424d6866b38b82d
-ms.translationtype: HT
+ms.openlocfilehash: cefb0105a0a95d26aadea2a98fc4d3cec68ccc03
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96349364"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787348"
 ---
 # <a name="quickstart-run-a-workflow-through-the-microsoft-genomics-service"></a>Quickstart: Een werkstroom uitvoeren via de Microsoft Genomics-service
 
@@ -144,4 +144,4 @@ Nadat de werkstroom is voltooid, kunt u de uitvoerbestanden weergeven in uw Azur
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u voorbeeldinvoergegevens geüpload naar Azure Storage en een werkstroom verzonden naar de Microsoft Genomics-service via de Python-client voor `msgen`. Ga voor meer informatie over andere invoerbestandstypen die kunnen worden gebruikt met de Microsoft Genomics-service naar de volgende pagina's: [paired FASTQ](quickstart-input-pair-FASTQ.md) | [BAM](quickstart-input-BAM.md) | [Multiple FASTQ or BAM](quickstart-input-multiple.md) (gekoppelde FASTQ/BAM/Meerdere FASTQ of BAM). U kunt deze zelfstudie ook bekijken met behulp van ons [voorbeeld van Azure Notebooks](https://aka.ms/genomicsnotebook) door het bestand Genomics Tutorial.ipynb te downloaden en een notebooklezer, zoals [Jupyter](../notebooks/tutorial-create-run-jupyter-notebook.md), te gebruiken om het bestand te openen en door te nemen.
+In dit artikel hebt u voorbeeldinvoergegevens geüpload naar Azure Storage en een werkstroom verzonden naar de Microsoft Genomics-service via de Python-client voor `msgen`. Ga voor meer informatie over andere invoerbestandstypen die kunnen worden gebruikt met de Microsoft Genomics-service naar de volgende pagina's: [paired FASTQ](quickstart-input-pair-FASTQ.md) | [BAM](quickstart-input-BAM.md) | [Multiple FASTQ or BAM](quickstart-input-multiple.md) (gekoppelde FASTQ/BAM/Meerdere FASTQ of BAM). U kunt deze zelfstudie ook bekijken met behulp van ons [voorbeeld van Azure Notebooks](https://aka.ms/genomicsnotebook) door het bestand Genomics Tutorial.ipynb te downloaden en een notebooklezer, zoals [Jupyter](https://notebooks.azure.com), te gebruiken om het bestand te openen en door te nemen.

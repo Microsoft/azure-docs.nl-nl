@@ -5,12 +5,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: reference
 ms.date: 05/08/2020
-ms.openlocfilehash: cc7dac3767ca5c9e2429f4691a458f88ad1af707
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 7c65c8272172cab9f5361d16141bf7b229037480
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92151979"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786941"
 ---
 # <a name="language-understanding-glossary-of-common-vocabulary-and-concepts"></a>Taal informatie over woorden lijst met veelgestelde woorden en concepten
 In de woorden lijst Language Understanding (LUIS) worden de termen beschreven die u kunt tegen komen tijdens het werken met de LUIS-service.
@@ -50,12 +50,13 @@ De ontwerp resource heeft een ' soort ' van Azure `LUIS-Authoring` .
 
 ## <a name="batch-test"></a>Batch-test
 
-Batch tests zijn de mogelijkheid om de modellen van de huidige LUIS-app te valideren met een consistente en bekende testset van gebruikers uitingen. De batch test is gedefinieerd in een [JSON-bestand](luis-concept-batch-test.md#batch-file-format).
+Batch tests zijn de mogelijkheid om de modellen van de huidige LUIS-app te valideren met een consistente en bekende testset van gebruikers uitingen. De batch test is gedefinieerd in een [JSON-bestand](./luis-how-to-batch-test.md#batch-test-file).
+
 
 Zie ook:
-* [Concepten](luis-concept-batch-test.md)
+* [Concepten](./luis-how-to-batch-test.md)
 * Een batch [test uitvoeren](luis-how-to-batch-test.md)
-* [Zelf studie](luis-tutorial-batch-testing.md) -een batch test maken en uitvoeren
+* [Zelf studie](./luis-how-to-batch-test.md) -een batch test maken en uitvoeren
 
 ### <a name="f-measure"></a>F-meting
 
@@ -103,7 +104,7 @@ Een samen werker is conceptueel hetzelfde als een [mede werker](#contributor). A
 Een bijdrager is niet de [eigenaar](#owner) van de app, maar heeft dezelfde machtigingen voor het toevoegen, bewerken en verwijderen van de intenties, entiteiten, uitingen. Een Inzender biedt op rollen gebaseerd toegangs beheer van Azure (Azure RBAC) voor een LUIS-app.
 
 Zie ook:
-* [How-to](luis-how-to-collaborate.md#add-contributor-to-azure-authoring-resource) Mede werkers toevoegen
+* [](luis-how-to-collaborate.md#add-contributor-to-azure-authoring-resource) Mede werkers toevoegen
 
 ## <a name="descriptor"></a>Descriptor
 
@@ -194,7 +195,7 @@ In LUIS [labelt](label-entity-example-utterance.md) u een woord of woord groep i
 
 Zie de definitie voor de [toepassing (app)](#application-app).
 
-## <a name="model"></a>Modelleren
+## <a name="model"></a>Model
 
 A (machine geleerd) is een functie die een voor spelling van invoer gegevens maakt. In LUIS verwijzen we naar intentie-classificaties en entiteits uittreksels algemeen als ' modellen ' en verwijzen we naar een verzameling modellen die zijn getraind, gepubliceerd en samen met een ' app '.
 
@@ -240,7 +241,7 @@ De [Voorspellings sleutel](luis-how-to-azure-subscription.md) (voorheen bekend a
 
 Deze sleutel is niet de ontwerp sleutel. Als u een voor spelling-eindpunt sleutel hebt, moet deze worden gebruikt voor alle eindpunt aanvragen in plaats van de ontwerp sleutel. U kunt de huidige Voorspellings sleutel weer geven binnen de eind punt-URL onder aan de pagina Azure-resources in de LUIS-website. Het is de waarde van de naam/waarde-paar van het abonnement.
 
-### <a name="prediction-resource"></a>Voorspellings bron
+### <a name="prediction-resource"></a>Voorspellingsresource
 
 Uw LUIS-Voorspellings resource is een beheerbaar item dat beschikbaar is via Azure. De resource is uw toegang tot de bijbehorende voor spelling van de Azure-service. De resource bevat voor spellingen.
 
@@ -292,7 +293,7 @@ In LUIS [lijst entiteiten](reference-entity-list.md)kunt u een genormaliseerde w
 
 Het model retourneert de genormaliseerde waarde voor de entiteit wanneer er synoniemen worden weer gegeven in de invoer.
 
-## <a name="test"></a>Test
+## <a name="test"></a>Testen
 
 Als u een LUIS-app [test](luis-concept-test.md) , worden de voor spellingen van modellen weer gegeven.
 
@@ -305,7 +306,7 @@ Zie de [tijd zone van de vooraf gemaakte datetimeV2-entiteit wijzigen](luis-conc
 ## <a name="token"></a>Token
 Een [token](luis-language-support.md#tokenization) is de kleinste tekst eenheid die door Luis kan worden herkend. Dit wijkt enigszins af van de verschillende talen.
 
-Voor **Engels**is een token een doorlopende periode (geen spaties of lees tekens) van letters en cijfers. Een spatie is geen token.
+Voor **Engels** is een token een doorlopende periode (geen spaties of lees tekens) van letters en cijfers. Een spatie is geen token.
 
 |Woordgroep|Aantal tokens|Uitleg|
 |--|--|--|
@@ -326,7 +327,7 @@ Trainings gegevens zijn de informatie die nodig is voor het trainen van een mode
 
 Trainings fouten zijn voor spellingen van uw trainings gegevens die niet overeenkomen met hun labels.
 
-## <a name="utterance"></a>Utterance
+## <a name="utterance"></a>Uiting
 
 Een [utterance](luis-concept-utterance.md) is gebruikers invoer die korte tekst representatief is voor een zin in een gesprek. Het is een term in natuurlijke taal, zoals ' Book 2-tickets naar Seattle Next dinsdag '. Voor beelden van uitingen worden toegevoegd om het model en de voor spellingen van het model te trainen op nieuwe utterance tijdens runtime
 

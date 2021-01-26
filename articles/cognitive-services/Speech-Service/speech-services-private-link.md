@@ -10,12 +10,12 @@ ms.subservice: speech-service
 ms.topic: conceptual
 ms.date: 12/15/2020
 ms.author: alexeyo
-ms.openlocfilehash: 61be4b45df94c902c0473b94a6dd83237c72da3c
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: 51989a9219cdbfebf833c99849dba67c939cf77a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98196113"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786839"
 ---
 # <a name="use-speech-services-through-a-private-endpoint"></a>Spraak Services gebruiken via een persoonlijk eind punt
 
@@ -39,7 +39,7 @@ Voor privé-eind punten is een [aangepaste subdomeinnaam vereist voor Cognitive 
 >
 > Als uw spraak bron een groot aantal gekoppelde aangepaste modellen en projecten heeft die zijn gemaakt via [Speech Studio](https://speech.microsoft.com/), raden we u ten zeerste aan de configuratie te proberen met een test resource voordat u de resource wijzigt die in de productie omgeving wordt gebruikt.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 Als u een aangepaste domein naam wilt maken met behulp van de Azure Portal, voert u de volgende stappen uit:
 
@@ -293,7 +293,7 @@ Spraak Services hebben REST-Api's voor [spraak naar tekst](rest-speech-to-text.m
 Spraak-naar-tekst heeft twee REST-Api's. Elke API heeft een ander doel, maakt gebruik van verschillende eind punten en vereist een andere benadering wanneer u deze gebruikt in het scenario met het persoonlijke eind punt.
 
 De REST-to-text-Api's zijn:
-- [Spraak-naar-tekst rest API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30), die wordt gebruikt voor [Batch transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). v 3.0 is een [opvolger van v 2.0](/azure/cognitive-services/speech-service/migrate-v2-to-v3)
+- [Spraak-naar-tekst rest API v 3.0](rest-speech-to-text.md#speech-to-text-rest-api-v30), die wordt gebruikt voor [Batch transcriptie](batch-transcription.md) en [Custom speech](custom-speech-overview.md). v 3.0 is een [opvolger van v 2.0](./migrate-v2-to-v3.md)
 - [Spraak-naar-tekst rest API voor korte audio](rest-speech-to-text.md#speech-to-text-rest-api-for-short-audio), die wordt gebruikt voor online transcriptie 
 
 Het gebruik van de spraak-naar-tekst REST API voor korte audio en het REST API van tekst naar spraak in het scenario met het persoonlijke eind punt is hetzelfde. Dit komt overeen met de [Speech SDK-situatie](#speech-resource-with-a-custom-domain-name-and-a-private-endpoint-usage-with-the-speech-sdk) die verderop in dit artikel wordt beschreven. 

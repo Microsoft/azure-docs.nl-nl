@@ -7,12 +7,12 @@ ms.service: expressroute
 ms.topic: conceptual
 ms.date: 12/13/2019
 ms.author: duau
-ms.openlocfilehash: deb5f07340f44e7ae4da3372fd17e484d500e6ab
-ms.sourcegitcommit: 65cef6e5d7c2827cf1194451c8f26a3458bc310a
+ms.openlocfilehash: 1be7331b0c2309350316d1c88c54e6018400463c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98573255"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789344"
 ---
 # <a name="expressroute-faq"></a>Veelgestelde vragen ExpressRoute
 
@@ -227,7 +227,7 @@ Ja. U kunt Maxi maal 10 virtuele netwerken in hetzelfde abonnement als het circu
 
 Zie [een ExpressRoute-circuit delen over meerdere abonnementen](expressroute-howto-linkvnet-arm.md)voor meer informatie.
 
-### <a name="i-have-multiple-azure-subscriptions-associated-to-different-azure-active-directory-tenants-or-enterprise-agreement-enrollments-can-i-connect-virtual-networks-that-are-in-separate-tenants-and-enrollments-to-a-single-expressroute-circuit-not-in-the-same-tenant-or-enrollment"></a>Ik heb meerdere Azure-abonnementen gekoppeld aan verschillende Azure Active Directory tenants of Enterprise Agreement inschrijvingen. Kan ik virtuele netwerken die zich in afzonderlijke tenants en registraties bevinden, verbinden met een enkel ExpressRoute-circuit dat zich niet in dezelfde Tenant of inschrijving bevindt?
+### <a name="i-have-multiple-azure-subscriptions-associated-to-different-azure-active-directory-tenants-or-enterprise-agreement-enrollments-can-i-connect-virtual-networks-that-are-in-separate-tenants-and-enrollments-to-a-single-expressroute-circuit-not-in-the-same-tenant-or-enrollment"></a>Ik heb meerdere Azure-abonnementen gekoppeld aan verschillende Azure Active Directory tenants of Enterprise Overeenkomst inschrijvingen. Kan ik virtuele netwerken die zich in afzonderlijke tenants en registraties bevinden, verbinden met een enkel ExpressRoute-circuit dat zich niet in dezelfde Tenant of inschrijving bevindt?
 
 Ja. ExpressRoute-autorisaties kunnen abonnementen, tenants en inschrijvings grenzen hebben, zonder dat hiervoor aanvullende configuratie is vereist. Houd er rekening mee dat de kosten voor connectiviteit en band breedte voor het specifieke circuit worden toegepast op de eigenaar van het ExpressRoute-circuit. alle virtuele netwerken delen dezelfde band breedte.
 
@@ -256,7 +256,7 @@ Als u standaard routes adverteert, forceren we het verkeer naar services die wor
 
 ### <a name="can-virtual-networks-linked-to-the-same-expressroute-circuit-talk-to-each-other"></a>Kunnen virtuele netwerken die zijn gekoppeld aan hetzelfde ExpressRoute-circuit met elkaar communiceren?
 
-Ja. Virtuele machines die zijn geïmplementeerd in virtuele netwerken die zijn verbonden met hetzelfde ExpressRoute-circuit kunnen met elkaar communiceren. U kunt het beste de [peering van het virtuele netwerk](https://docs.microsoft.com/azure/virtual-network/virtual-network-peering-overview) instellen om deze communicatie te vergemakkelijken.
+Ja. Virtuele machines die zijn geïmplementeerd in virtuele netwerken die zijn verbonden met hetzelfde ExpressRoute-circuit kunnen met elkaar communiceren. U kunt het beste de [peering van het virtuele netwerk](../virtual-network/virtual-network-peering-overview.md) instellen om deze communicatie te vergemakkelijken.
 
 ### <a name="can-i-use-site-to-site-connectivity-for-virtual-networks-in-conjunction-with-expressroute"></a>Kan ik site-naar-site-connectiviteit voor virtuele netwerken gebruiken in combi natie met ExpressRoute?
 

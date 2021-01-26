@@ -4,12 +4,12 @@ description: Inleiding tot herbetreedbaarheid voor Service Fabric Reliable Actor
 ms.topic: conceptual
 ms.date: 11/02/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 9578b676e46d21fe5d30de92ad59c852a8b05f70
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: 90a8e9146d18d628fbf124307f1b79b912c9cef9
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915875"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789377"
 ---
 # <a name="reliable-actors-reentrancy"></a>Reliable Actors herbetreedbaarheid
 Met de Reliable Actors runtime kunt u standaard herbetreedbaarheid op basis van logische oproepen. Hiermee kunnen actors worden ingetrokken als ze zich in dezelfde aanroep context keten bevinden. Actor A verzendt bijvoorbeeld een bericht naar actor B, die een bericht naar actor C verzendt. Als onderdeel van de bericht verwerking, als actor C actor A aanroept, wordt het bericht weer gegeven, zodat het is toegestaan. Andere berichten die deel uitmaken van een andere aanroep context, worden geblokkeerd op actor A tot de verwerking is voltooid.
@@ -101,4 +101,4 @@ static class Program
 
 
 ## <a name="next-steps"></a>Volgende stappen
-* Meer informatie over herbetreedbaarheid in de [ACTOR API-referentie documentatie](/dotnet/api/microsoft.servicefabric.actors?view=azure-dotnet))
+* Meer informatie over herbetreedbaarheid in de [ACTOR API-referentie documentatie](/dotnet/api/microsoft.servicefabric.actors))

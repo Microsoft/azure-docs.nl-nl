@@ -3,18 +3,18 @@ title: Migratie projecten op schaal beheren met Azure Migrate
 description: Meer informatie over het effectief gebruiken van Azure Migrate op gedelegeerde klanten resources.
 ms.date: 12/4/2020
 ms.topic: how-to
-ms.openlocfilehash: 16b92f3aa4dc3bfcb71eb232170c4df30348f8db
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 53f7c390d9f16dcbccbb1d09f46e63fec13eee2d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095386"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788940"
 ---
 # <a name="manage-migration-projects-at-scale-with-azure-migrate"></a>Migratie projecten op schaal beheren met Azure Migrate
 
 Als service provider hebt u mogelijk meerdere tenants voor klanten in [Azure Lighthouse](../overview.md). Met Azure Lighthouse kunnen service providers bewerkingen tegelijk uitvoeren in meerdere Azure Active Directory (Azure AD)-tenants, waardoor beheer taken efficiënter worden.
 
-[Azure migrate](../../migrate/migrate-services-overview.md) biedt een gecentraliseerde hub voor het beoordelen en migreren van on-premises servers, infra structuur, toepassingen en gegevens in Azure. Over het algemeen moeten partners die op schaal en migratie voor meerdere klanten worden uitgevoerd, toegang krijgen tot elk abonnement van een klant door gebruik te maken van het [abonnement model van de CSP (Cloud Solution Provider)](/partner-center/customers-revoke-admin-privileges) of door [een gast gebruiker in de Tenant van de klant in](/azure/active-directory/external-identities/what-is-b2b)te stellen.
+[Azure migrate](../../migrate/migrate-services-overview.md) biedt een gecentraliseerde hub voor het beoordelen en migreren van on-premises servers, infra structuur, toepassingen en gegevens in Azure. Over het algemeen moeten partners die op schaal en migratie voor meerdere klanten worden uitgevoerd, toegang krijgen tot elk abonnement van een klant door gebruik te maken van het [abonnement model van de CSP (Cloud Solution Provider)](/partner-center/customers-revoke-admin-privileges) of door [een gast gebruiker in de Tenant van de klant in](../../active-directory/external-identities/what-is-b2b.md)te stellen.
 
 Met Azure Lighthouse-integratie met Azure Migrate kunnen service providers werk belastingen voor verschillende klanten op schaal detecteren, beoordelen en migreren, terwijl klanten volledige zicht baarheid en controle kunnen hebben over hun omgevingen. Service providers hebben via Azure gedelegeerd resource beheer één weer gave van alle Azure Migrate projecten die ze beheren op meerdere tenants van klanten.
 
@@ -39,7 +39,7 @@ Deze aanpak minimaliseert de context overschakelen voor service providers die ov
 De werk stroom voor dit model ziet er ongeveer als volgt uit:
 
 1. De klant is [onboarding van Azure Lighthouse](onboard-customer.md). De ingebouwde rol Inzender is vereist voor de identiteit die wordt gebruikt met Azure Migrate. Zie de voorbeeld sjabloon [gedelegeerde-Management-azmigrate](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/delegated-resource-management-azmigrate) voor een voor beeld met behulp van deze rol.
-1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Met deze gebruiker [maakt u een Azure migrate project](/azure/migrate/create-manage-projects)en selecteert u het juiste gedelegeerde klant abonnement.
+1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Met deze gebruiker [maakt u een Azure migrate project](../../migrate/create-manage-projects.md)en selecteert u het juiste gedelegeerde klant abonnement.
 1. De gebruiker [voert vervolgens stappen voor detectie en evaluatie uit](../../migrate/tutorial-discover-vmware.md).
 
    Voor virtuele VMware-machines kunt u, voordat u het apparaat configureert, de detectie beperken tot vCenter Server Data Centers, clusters, een map met clusters, hosts, een map van hosts of afzonderlijke Vm's. Als u het bereik wilt instellen, wijst u machtigingen toe voor het account dat het apparaat gebruikt voor toegang tot de vCenter Server. Dit is handig als de virtuele machines van meerdere klanten worden gehost op de Hyper Visor. U kunt het detectie bereik van Hyper-V niet beperken.
@@ -61,7 +61,7 @@ Met deze aanpak kunnen service providers snel migratie-en evaluatie projecten st
 De werk stroom voor dit model ziet er ongeveer als volgt uit:
 
 1. De klant is [onboarding van Azure Lighthouse](onboard-customer.md). De ingebouwde rol Inzender is vereist voor de identiteit die wordt gebruikt met Azure Migrate. Zie de voorbeeld sjabloon [gedelegeerde-Management-azmigrate](https://github.com/Azure/Azure-Lighthouse-samples/tree/master/templates/delegated-resource-management-azmigrate) voor een voor beeld met behulp van deze rol.
-1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Deze gebruiker [maakt een Azure migrate project](/azure/migrate/create-manage-projects) in een abonnement dat behoort tot de beheer-Tenant.
+1. De aangewezen gebruiker meldt zich aan bij de beheer Tenant in de Azure Portal en gaat vervolgens naar Azure Migrate. Deze gebruiker [maakt een Azure migrate project](../../migrate/create-manage-projects.md) in een abonnement dat behoort tot de beheer-Tenant.
 1. De gebruiker [voert vervolgens stappen voor detectie en evaluatie uit](../../migrate/tutorial-discover-vmware.md). De on-premises Vm's worden gedetecteerd en beoordeeld binnen het migratie project dat in de beheer Tenant is gemaakt en vervolgens van daaruit gemigreerd.
 
    Als u meerdere klanten beheert op dezelfde Hyper-V-host, kunt u alle werk belastingen tegelijk ontdekken. Klantspecifieke Vm's kunnen in dezelfde groep worden geselecteerd, een evaluatie kan worden gemaakt en de migratie kan worden uitgevoerd door het juiste abonnement van de klant te selecteren als doel bestemming. U hoeft het detectie bereik niet te beperken en u kunt een volledig overzicht van alle werk belastingen van de klant in één migratie project onderhouden.
@@ -80,4 +80,3 @@ Zie [Uw partner-id koppelen om de impact op gedelegeerde resources te volgen](pa
 
 - Meer informatie over [Azure migrate](../../migrate/migrate-services-overview.md).
 - Meer informatie over [beheerervaring in meerdere tenants](../concepts/cross-tenant-management-experience.md).
-

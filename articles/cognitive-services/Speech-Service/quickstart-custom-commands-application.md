@@ -11,12 +11,12 @@ ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: sausin
 ms.custom: references_regions
-ms.openlocfilehash: 2cc37cc66c06dc9e6997c6a031a9c60ad050c01a
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: ea32358aa86a6093cd72adf959d5fe731cf1e125
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98601759"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786873"
 ---
 # <a name="create-a-voice-assistant-using-custom-commands"></a>Een spraakassistent maken met aangepaste opdrachten
 
@@ -136,4 +136,4 @@ In het bereik van dit artikel gebruiken we de Windows Voice Assistant-client die
 
 ## <a name="next-steps"></a>Volgende stappen
 
-In dit artikel hebt u een bestaande toepassing gebruikt. In de sectie met [procedures](how-to-custom-commands-create-application-with-simple-commands.md)leert u hoe u een aangepaste opdrachten van een nieuwe toepassing kunt ontwerpen, ontwikkelen, opsporen, testen en integreren.
+In dit artikel hebt u een bestaande toepassing gebruikt. In de sectie met [procedures](./how-to-develop-custom-commands-application.md)leert u hoe u een aangepaste opdrachten van een nieuwe toepassing kunt ontwerpen, ontwikkelen, opsporen, testen en integreren.

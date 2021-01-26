@@ -7,12 +7,12 @@ ms.service: firewall
 ms.topic: conceptual
 ms.date: 10/08/2020
 ms.author: victorh
-ms.openlocfilehash: 6c71d9325ff7c1c5d2e7eff03a587a28335efd72
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 69eaf3ca60378afd810d712d85ea7ef732e41e3e
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94652141"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788227"
 ---
 # <a name="azure-firewall-features"></a>Azure Firewall-functies
 
@@ -29,7 +29,7 @@ Azure Firewall bevat de volgende functies:
 - [Regels voor het filteren van netwerkverkeer](#network-traffic-filtering-rules)
 - [FQDN-tags](#fqdn-tags)
 - [Servicetags](#service-tags)
-- [Informatie over bedreigingen](#threat-intelligence)
+- [Bedreigings informatie](#threat-intelligence)
 - [Ondersteuning voor uitgaande SNAT](#outbound-snat-support)
 - [Ondersteuning voor inkomende DNAT](#inbound-dnat-support)
 - [Meerdere openbare IP-adressen](#multiple-public-ip-addresses)
@@ -101,7 +101,7 @@ Dit maakt de volgende scenario's mogelijk:
 
 ## <a name="azure-monitor-logging"></a>Logboekregistratie van Azure Monitor
 
-Alle gebeurtenissen zijn geïntegreerd met Azure Monitor, zodat u logboeken kunt archiveren in een opslagaccount, gebeurtenissen kunt streamen naar uw Event Hub of deze kunt verzenden naar Azure Monitor-logboeken. Raadpleeg [Azure monitor-logboeken voor Azure firewall](log-analytics-samples.md)voor Azure monitor-logboek voorbeelden.
+Alle gebeurtenissen zijn geïntegreerd met Azure Monitor, zodat u logboeken kunt archiveren in een opslagaccount, gebeurtenissen kunt streamen naar uw Event Hub of deze kunt verzenden naar Azure Monitor-logboeken. Raadpleeg [Azure monitor-logboeken voor Azure firewall](./firewall-workbook.md)voor Azure monitor-logboek voorbeelden.
 
 Zie [Zelfstudie: Azure Firewall-logboeken en metrische gegevens bewaken](./firewall-diagnostics.md). 
 

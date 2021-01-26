@@ -7,12 +7,12 @@ ms.topic: reference
 ms.date: 02/19/2020
 ms.author: cshoe
 ms.custom: devx-track-csharp, devx-track-python
-ms.openlocfilehash: 2d0b66d2b4d89b512b34cb33a5607b471b7d1e84
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: 12e57361b9e275fc441df27a3a1381989d48751c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93040935"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788567"
 ---
 # <a name="azure-service-bus-output-binding-for-azure-functions"></a>Azure Service Bus uitvoer binding voor Azure Functions
 
@@ -87,6 +87,41 @@ public static async Task Run(TimerInfo myTimer, ILogger log, IAsyncCollector<str
 }
 ```
 
+# <a name="java"></a>[Java](#tab/java)
+
+In het volgende voor beeld ziet u een Java-functie die een bericht naar een Service Bus wachtrij verzendt wanneer het wordt `myqueue` geactiveerd door een HTTP-aanvraag.
+
+```java
+@FunctionName("httpToServiceBusQueue")
+@ServiceBusQueueOutput(name = "message", queueName = "myqueue", connection = "AzureServiceBusConnection")
+public String pushToQueue(
+  @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
+  final String message,
+  @HttpOutput(name = "response") final OutputBinding<T> result ) {
+      result.setValue(message + " has been sent.");
+      return message;
+ }
+```
+
+ Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@QueueOutput` annotatie voor functie parameters waarvan de waarde zou worden geschreven naar een service bus wachtrij.  Het parameter type moet zijn `OutputBinding<T>` , waarbij T een systeem eigen Java-type is van een POJO.
+
+Java-functies kunnen ook worden geschreven naar een Service Bus onderwerp. In het volgende voor beeld wordt met behulp `@ServiceBusTopicOutput` van de aantekening de configuratie voor de uitvoer binding beschreven. 
+
+```java
+@FunctionName("sbtopicsend")
+    public HttpResponseMessage run(
+            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
+            @ServiceBusTopicOutput(name = "message", topicName = "mytopicname", subscriptionName = "mysubscription", connection = "ServiceBusConnection") OutputBinding<String> message,
+            final ExecutionContext context) {
+        
+        String name = request.getBody().orElse("Azure Functions");
+
+        message.setValue(name);
+        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
+        
+    }
+```
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 In het volgende voor beeld ziet u een Service Bus uitvoer binding in een *function.jsin* een bestand en een [Java script-functie](functions-reference-node.md) die gebruikmaakt van de binding. De functie gebruikt een timer trigger om elke 15 seconden een wachtrij bericht te verzenden.
@@ -139,6 +174,39 @@ module.exports = function (context, myTimer) {
 };
 ```
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+In het volgende voor beeld ziet u een Service Bus uitvoer binding in een *function.jsin* een bestand en een [Power shell-functie](functions-reference-powershell.md) die gebruikmaakt van de binding. 
+
+Hier vindt u de bindings gegevens in de *function.js* in het bestand:
+
+```json
+{
+  "bindings": [
+    {
+      "type": "serviceBus",
+      "direction": "out",
+      "connection": "AzureServiceBusConnectionString",
+      "name": "outputSbMsg",
+      "queueName": "outqueue",
+      "topicName": "outtopic"
+    }
+  ]
+}
+```
+
+Hier ziet u de Power shell die een bericht maakt als uitvoer van de functie.
+
+```powershell
+param($QueueItem, $TriggerMetadata) 
+
+Push-OutputBinding -Name outputSbMsg -Value @{ 
+    name = $QueueItem.name 
+    employeeId = $QueueItem.employeeId 
+    address = $QueueItem.address 
+} 
+```
+
 # <a name="python"></a>[Python](#tab/python)
 
 In het volgende voor beeld ziet u hoe u kunt schrijven naar een Service Bus wachtrij in python.
@@ -189,41 +257,6 @@ def main(req: func.HttpRequest, msg: func.Out[str]) -> func.HttpResponse:
     return 'OK'
 ```
 
-# <a name="java"></a>[Java](#tab/java)
-
-In het volgende voor beeld ziet u een Java-functie die een bericht naar een Service Bus wachtrij verzendt wanneer het wordt `myqueue` geactiveerd door een HTTP-aanvraag.
-
-```java
-@FunctionName("httpToServiceBusQueue")
-@ServiceBusQueueOutput(name = "message", queueName = "myqueue", connection = "AzureServiceBusConnection")
-public String pushToQueue(
-  @HttpTrigger(name = "request", methods = {HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS)
-  final String message,
-  @HttpOutput(name = "response") final OutputBinding<T> result ) {
-      result.setValue(message + " has been sent.");
-      return message;
- }
-```
-
- Gebruik in de [runtime-bibliotheek van Java-functies](/java/api/overview/azure/functions/runtime)de `@QueueOutput` annotatie voor functie parameters waarvan de waarde zou worden geschreven naar een service bus wachtrij.  Het parameter type moet zijn `OutputBinding<T>` , waarbij T een systeem eigen Java-type is van een POJO.
-
-Java-functies kunnen ook worden geschreven naar een Service Bus onderwerp. In het volgende voor beeld wordt met behulp `@ServiceBusTopicOutput` van de aantekening de configuratie voor de uitvoer binding beschreven. 
-
-```java
-@FunctionName("sbtopicsend")
-    public HttpResponseMessage run(
-            @HttpTrigger(name = "req", methods = {HttpMethod.GET, HttpMethod.POST}, authLevel = AuthorizationLevel.ANONYMOUS) HttpRequestMessage<Optional<String>> request,
-            @ServiceBusTopicOutput(name = "message", topicName = "mytopicname", subscriptionName = "mysubscription", connection = "ServiceBusConnection") OutputBinding<String> message,
-            final ExecutionContext context) {
-        
-        String name = request.getBody().orElse("Azure Functions");
-
-        message.setValue(name);
-        return request.createResponseBuilder(HttpStatus.OK).body("Hello, " + name).build();
-        
-    }
-```
-
 ---
 
 ## <a name="attributes-and-annotations"></a>Kenmerken en aantekeningen
@@ -262,17 +295,21 @@ U kunt het- `ServiceBusAccount` kenmerk gebruiken om het service bus-account op 
 
 Kenmerken worden niet ondersteund door C# Script.
 
+# <a name="java"></a>[Java](#tab/java)
+
+De `ServiceBusQueueOutput` `ServiceBusTopicOutput` aantekeningen en zijn beschikbaar om een bericht te schrijven als een functie-uitvoer. De para meter die is gedecoreerd met deze annotaties moet worden gedeclareerd als een `OutputBinding<T>` WHERE `T` is het type dat overeenkomt met het type van het bericht.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Kenmerken worden niet ondersteund door JavaScript.
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Kenmerken worden niet ondersteund door Power shell.
+
 # <a name="python"></a>[Python](#tab/python)
 
 Kenmerken worden niet ondersteund door Python.
-
-# <a name="java"></a>[Java](#tab/java)
-
-De `ServiceBusQueueOutput` `ServiceBusTopicOutput` aantekeningen en zijn beschikbaar om een bericht te schrijven als een functie-uitvoer. De para meter die is gedecoreerd met deze annotaties moet worden gedeclareerd als een `OutputBinding<T>` WHERE `T` is het type dat overeenkomt met het type van het bericht.
 
 ---
 
@@ -330,15 +367,19 @@ Wanneer u werkt met C#-functies:
 
 * Als u toegang wilt krijgen tot de sessie-ID, maakt u een binding met een [`Message`](/dotnet/api/microsoft.azure.servicebus.message) type en gebruikt u de `sessionId` eigenschap.
 
+# <a name="java"></a>[Java](#tab/java)
+
+Gebruik de [Azure service bus SDK](../service-bus-messaging/index.yml) in plaats van de ingebouwde uitvoer binding.
+
 # <a name="javascript"></a>[JavaScript](#tab/javascript)
 
 Toegang tot de wachtrij of het onderwerp met behulp van `context.bindings.<name from function.json>` . U kunt een teken reeks, een byte matrix of een Java Script-object (gedeserialiseerd in JSON) toewijzen aan `context.binding.<name>` .
 
+# <a name="powershell"></a>[PowerShell](#tab/powershell)
+
+Uitvoer naar de Service Bus is beschikbaar via de `Push-OutputBinding` cmdlet waarbij u argumenten doorgeeft die overeenkomen met de naam die is opgegeven door de naam parameter van de binding in de *function.jsvoor* het bestand.
+
 # <a name="python"></a>[Python](#tab/python)
-
-Gebruik de [Azure service bus SDK](../service-bus-messaging/index.yml) in plaats van de ingebouwde uitvoer binding.
-
-# <a name="java"></a>[Java](#tab/java)
 
 Gebruik de [Azure service bus SDK](../service-bus-messaging/index.yml) in plaats van de ingebouwde uitvoer binding.
 
@@ -388,7 +429,7 @@ Als u hebt `isSessionsEnabled` ingesteld op `true` , `sessionHandlerOptions` wor
 |---------|---------|---------|
 |prefetchCount|0|Hiermee wordt het aantal berichten opgehaald of ingesteld dat de ontvanger van het bericht tegelijk kan aanvragen.|
 |maxAutoRenewDuration|00:05:00|De maximale duur waarbinnen de bericht vergrendeling automatisch wordt vernieuwd.|
-|Automatisch aanvullen|true|Hiermee wordt aangegeven of de trigger automatisch moet worden voltooid na de verwerking, of dat de functie code hand matig wordt aangeroepen.<br><br>De instelling in `false` wordt alleen ondersteund in C#.<br><br>Als deze `true` optie is ingesteld op, wordt het bericht automatisch door de trigger voltooid als de uitvoering van de functie is voltooid en wordt het bericht anders afgebroken.<br><br>Wanneer dit is ingesteld op `false` , bent u verantwoordelijk voor het aanroepen van [MessageReceiver](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet) -methoden om het bericht te volt ooien, te annuleren of deadletter. Als er een uitzonde ring wordt gegenereerd (en geen van de `MessageReceiver` methoden worden genoemd), blijft de vergren deling. Zodra de vergren deling is verlopen, wordt het bericht opnieuw in de wachtrij geplaatst `DeliveryCount` en wordt de vergren deling automatisch verlengd.<br><br>In functies zonder C # worden uitzonde ringen in de functie uitgevoerd in de runtime-aanroepen `abandonAsync` op de achtergrond. Als er geen uitzonde ring optreedt, `completeAsync` wordt deze op de achtergrond aangeroepen. |
+|Automatisch aanvullen|true|Hiermee wordt aangegeven of de trigger automatisch moet worden voltooid na de verwerking, of dat de functie code hand matig wordt aangeroepen.<br><br>De instelling in `false` wordt alleen ondersteund in C#.<br><br>Als deze `true` optie is ingesteld op, wordt het bericht automatisch door de trigger voltooid als de uitvoering van de functie is voltooid en wordt het bericht anders afgebroken.<br><br>Wanneer dit is ingesteld op `false` , bent u verantwoordelijk voor het aanroepen van [MessageReceiver](/dotnet/api/microsoft.azure.servicebus.core.messagereceiver?view=azure-dotnet&preserve-view=true) -methoden om het bericht te volt ooien, te annuleren of deadletter. Als er een uitzonde ring wordt gegenereerd (en geen van de `MessageReceiver` methoden worden genoemd), blijft de vergren deling. Zodra de vergren deling is verlopen, wordt het bericht opnieuw in de wachtrij geplaatst `DeliveryCount` en wordt de vergren deling automatisch verlengd.<br><br>In functies zonder C # worden uitzonde ringen in de functie uitgevoerd in de runtime-aanroepen `abandonAsync` op de achtergrond. Als er geen uitzonde ring optreedt, `completeAsync` wordt deze op de achtergrond aangeroepen. |
 |maxConcurrentCalls|16|Het maximum aantal gelijktijdige aanroepen naar de call back dat de bericht pomp moet initiëren per geschaald exemplaar. De functie runtime verwerkt standaard meerdere berichten tegelijk.|
 |maxConcurrentSessions|2000|Het maximum aantal sessies dat gelijktijdig kan worden verwerkt per geschaald exemplaar.|
 

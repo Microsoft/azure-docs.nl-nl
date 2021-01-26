@@ -1,5 +1,5 @@
 ---
-title: Volledige installatie Azure Media Player
+title: Volledige installatie van Azure Media Player
 description: Meer informatie over het instellen van de Azure Media Player.
 author: IngridAtMicrosoft
 ms.author: inhenkel
@@ -7,21 +7,26 @@ ms.service: media-services
 ms.topic: how-to
 ms.date: 04/20/2020
 ms.custom: devx-track-js
-ms.openlocfilehash: 15f5918748df80cec01ccf89835a0ef51da64529
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 13abe333bcf3f67ea1a1ba823c693deaa60bc723
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91296243"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98788804"
 ---
 # <a name="azure-media-player-full-setup"></a>Volledige installatie van Azure Media Player #
 
-Azure Media Player eenvoudig in te stellen. Het duurt slechts enkele ogen blikken voor het direct afspelen van media-inhoud vanaf uw Azure Media Services-account. Er worden ook voor [beelden](https://github.com/Azure-Samples/azure-media-player-samples) gegeven in de map met voor beelden van de release.
+Azure Media Player is eenvoudig in te stellen. Het duurt slechts enkele ogen blikken voor het direct afspelen van media-inhoud vanaf uw Azure Media Services-account. Er worden ook voor [beelden](https://github.com/Azure-Samples/azure-media-player-samples) gegeven in de map met voor beelden van de release.
 
+<!--//aka.ms/ampembed?url=https%3A%2F%2Fxpouyatdemo-euwe.streaming.media.azure.net%2Fc9b6ac82-c187-4882-a3d3-1a67204ac58e%2Fconnect2017-v3.ism%2Fmanifest-->
+
+Hier volgt een voor beeld van een AMS-video.
+
+> [!VIDEO https://aka.ms/ampembed?url=https%3A%2F%2Fxpouyatdemo-euwe.streaming.media.azure.net%2Fc9b6ac82-c187-4882-a3d3-1a67204ac58e%2Fconnect2017-v3.ism%2Fmanifest]
 
 ## <a name="step-1-include-the-javascript-and-css-files-in-the-head-of-your-page"></a>Stap 1: de Java script-en CSS-bestanden in de kop van uw pagina toevoegen ##
 
-Met Azure Media Player kunt u toegang krijgen tot de scripts van de gehoste CDN-versie. Het wordt vaak aanbevolen om Java script te plaatsen vóór het label voor de eind code `<body>` in plaats van de `<head>` , maar Azure Media Player bevat een ' HTML5-Shiv ', die in de kop moet staan voor oudere IE-versies om de video code als een geldig element te kunnen respecteren.
+Met Azure Media Player kunt u toegang krijgen tot de scripts van de gehoste CDN-versie. Het wordt vaak aanbevolen om Java script te plaatsen vóór het label voor de eind code `<body>` in plaats van de `<head>` , maar Azure Meia Player bevat een ' HTML5 Shiv ', die in de kop voor oudere versies van Internet Explorer moet zijn om de video code als een geldig element te kunnen respecteren.
 
 > [!NOTE]
 > Als u al een HTML5-Shiv gebruikt zoals [modernisering](https://modernizr.com/) , kunt u de Azure Media Player java script overal toevoegen. Zorg echter dat uw versie van de Moderniseringr de Shiv voor video bevat.
@@ -34,7 +39,7 @@ Met Azure Media Player kunt u toegang krijgen tot de scripts van de gehoste CDN-
 ```
 
 > [!IMPORTANT]
-> U moet de versie **niet** gebruiken `latest` in productie, omdat dit kan worden gewijzigd op aanvraag. Vervang door `latest` een versie van Azure Media Player. Vervang bijvoorbeeld `latest` door `2.1.1`. Van Azure Media Player-versies kan [hier](azure-media-player-changelog.md)een query worden uitgevoerd.
+> Gebruik **NIET** de `latest` versie in een productieomgeving, omdat deze op verzoek kan worden aangepast. Vervang door `latest` een versie van Azure Media Player. Vervang bijvoorbeeld `latest` door `2.1.1`. Op Azure Media Player-versies kunt u [hier](azure-media-player-changelog.md) een query uitvoeren.
 
 > [!NOTE]
 > Sinds de `1.2.0` release is het niet meer nodig om de locatie op te nemen in de technische terugval (de locatie wordt automatisch opgehaald uit het relatieve pad van het azuremediaplayer.min.js-bestand). U kunt de locatie van de technische terugvals wijzigen door het volgende script toe te voegen aan de `<head>` bovenstaande scripts.

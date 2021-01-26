@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 12/28/2020
 ms.author: yitoh
-ms.openlocfilehash: 86e4a111be7585373ecf4c2fe9508f2bfca7de16
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
+ms.openlocfilehash: a3f6c14b7ed2686a262f28510efb37068cfb9cb3
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97915076"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787295"
 ---
 # <a name="view-and-configure-ddos-protection-telemetry"></a>DDoS-beschermingstelemetrie bekijken en configureren
 
@@ -34,10 +34,10 @@ In deze zelfstudie leert u het volgende:
 > [!NOTE]
 > Terwijl er meerdere opties voor **aggregatie** worden weer gegeven op Azure Portal, worden alleen de aggregatie typen die in de onderstaande tabel staan vermeld, voor elke metriek ondersteund. Onze excuses voor deze Verwar ring en we werken eraan om dit op te lossen.
 
-De volgende [metrische gegevens](https://docs.microsoft.com/azure/azure-monitor/platform/metrics-supported#microsoftnetworkpublicipaddresses) zijn beschikbaar voor Azure DDoS Protection Standard. Deze metrische gegevens kunnen ook worden geëxporteerd via Diagnostische instellingen (Zie [logboek registratie voor diagnostische gegevens van DDoS weer geven en configureren](diagnostic-logging.md)).
+De volgende [metrische gegevens](../azure-monitor/platform/metrics-supported.md#microsoftnetworkpublicipaddresses) zijn beschikbaar voor Azure DDoS Protection Standard. Deze metrische gegevens kunnen ook worden geëxporteerd via Diagnostische instellingen (Zie [logboek registratie voor diagnostische gegevens van DDoS weer geven en configureren](diagnostic-logging.md)).
 
 
-| Gegevens | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Beschrijving |
+| Metrisch | Weergave naam voor metrische gegevens | Eenheid | Aggregatietype | Beschrijving |
 | --- | --- | --- | --- | --- |
 | ByteCount | Aantal bytes | Aantal | Totaal | Totaal aantal verzonden bytes binnen tijds periode |
 | BytesDroppedDDoS | Binnenkomende bytes verloren DDoS | BytesPerSecond | Maximum | Binnenkomende bytes verloren DDoS| 

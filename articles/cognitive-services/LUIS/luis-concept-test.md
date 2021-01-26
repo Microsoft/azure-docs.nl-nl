@@ -9,12 +9,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: conceptual
 ms.date: 10/10/2019
-ms.openlocfilehash: ef63bf68fec592b768986a1329663508443c514b
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b33f765e936d7c0db301a5b2fcf38ccaf137f771
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91535845"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787550"
 ---
 # <a name="testing-example-utterances-in-luis"></a>Test voorbeeld uitingen in LUIS
 
@@ -33,7 +33,7 @@ Zie de concepten van de [Voorspellings Score](luis-concept-prediction-score.md) 
 Interactieve tests worden uitgevoerd vanuit het **test** paneel van de Luis-Portal. U kunt een utterance invoeren om te zien hoe intenties en entiteiten worden geïdentificeerd en gescoord. Als LUIS de intenties en entiteiten niet voordicteert zoals u verwacht op een utterance in het deel venster testen, kopieert u deze naar de pagina **intentie** als een nieuwe utterance. Vervolgens labelt u de onderdelen van die utterance voor entiteiten en traint u LUIS. 
 
 ## <a name="batch-testing"></a>Batchgewijs testen
-Zie [batch testen](luis-concept-batch-test.md) als u meer dan één utterance per keer wilt testen.
+Zie [batch testen](./luis-how-to-batch-test.md) als u meer dan één utterance per keer wilt testen.
 
 ## <a name="endpoint-testing"></a>Eindpunt tests
 U kunt met behulp van het [eind punt](luis-glossary.md#endpoint) testen met Maxi maal twee versies van uw app. Als uw hoofd-of live-versie van uw app is ingesteld als het **productie** -eind punt, voegt u een tweede versie toe aan het **staging** -eind punt. Deze benadering biedt u drie versies van een utterance: het huidige model in het test venster van de [Luis](luis-reference-regions.md) -website en de twee versies van de twee verschillende eind punten. 

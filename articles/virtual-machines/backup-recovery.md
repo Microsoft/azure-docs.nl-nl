@@ -1,19 +1,19 @@
 ---
-title: Overzicht van back-upopties voor Linux-Vm's
-description: Overzicht van back-upopties voor virtuele Linux Azure-machines.
+title: Overzicht van back-upopties voor Vm's
+description: Overzicht van back-upopties voor Azure virtual machines.
 author: cynthn
 ms.service: virtual-machines
 ms.topic: conceptual
 ms.date: 8/03/2020
 ms.author: cynthn
-ms.openlocfilehash: c56adc852b504d3a0663a9607b3472cb3348e7a5
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 5a093de0a27c8379cb6eff9c2bc3867dfdc20db5
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972353"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787804"
 ---
-# <a name="backup-and-restore-options-for-linux-virtual-machines-in-azure"></a>Opties voor back-up en herstel voor virtuele Linux-machines in azure
+# <a name="backup-and-restore-options-for-virtual-machines-in-azure"></a>Opties voor back-up en herstel voor virtuele machines in azure
 
 U kunt uw gegevens beschermen door regelmatig back-ups te maken. Er zijn verschillende back-upopties beschikbaar voor virtuele machines, afhankelijk van uw gebruiks aanvraag.
 
@@ -21,7 +21,7 @@ U kunt uw gegevens beschermen door regelmatig back-ups te maken. Er zijn verschi
 
 Gebruik Azure Backup voor het maken van back-ups van virtuele Azure-machines waarop productie workloads worden uitgevoerd. Azure Backup ondersteunt toepassings consistente back-ups voor virtuele Windows-en Linux-machines. Azure Backup maakt herstelpunten die worden opgeslagen in geografisch redundante Recovery Services-kluizen. Wanneer u vanaf een herstelpunt herstelt, kunt u de hele VM of alleen specifieke bestanden herstellen. 
 
-Zie de zelf studie ' back-up maken van virtuele Azure-machines ' voor [Linux](./linux/tutorial-backup-vms.md) of [Windows](./windows/tutorial-backup-vms.md)voor een eenvoudige, praktische Inleiding tot Azure backup voor Azure-vm's.
+Zie de [Azure backup Quick](../backup/quick-backup-vm-portal.md)start voor een eenvoudige inleiding tot Azure backup voor virtuele machines van Azure.
 
 Zie [uw VM-back-upinfrastructuur plannen in azure](../backup/backup-azure-vms-introduction.md) voor meer informatie over de werking van Azure backup.
 
@@ -46,4 +46,4 @@ Zie voor meer informatie over het maken van moment opnamen:
 
 
 ## <a name="next-steps"></a>Volgende stappen
-U kunt Azure Backup uitproberen door de zelf studie ' back-up maken van virtuele Windows-machines ' te volgen voor [Linux](./linux/tutorial-backup-vms.md) of [Windows](./windows/tutorial-backup-vms.md).
+U kunt Azure Backup uitproberen door de [Azure backup Quick](../backup/quick-backup-vm-portal.md)start te volgen.

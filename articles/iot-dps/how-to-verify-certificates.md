@@ -7,12 +7,12 @@ ms.date: 02/26/2018
 ms.topic: conceptual
 ms.service: iot-dps
 services: iot-dps
-ms.openlocfilehash: 50e8dfd2998b50bfff7341e49ac4d0770c115166
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 2020205357c68e007a1a375c4853e8c04afd2019
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90530859"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98789057"
 ---
 # <a name="how-to-do-proof-of-possession-for-x509-ca-certificates-with-your-device-provisioning-service"></a>Een bewijs van het bezit van de X. 509 CA-certificaten met uw Device Provisioning Service
 
@@ -40,7 +40,7 @@ Voer de volgende stappen uit om een CA-certificaat te registreren bij uw inricht
 
 5. Klik op het certificaat dat u in de vorige stap hebt toegevoegd.
 
-6. Klik in **certificaat Details**op **verificatie code genereren**.
+6. Klik in **certificaat Details** op **verificatie code genereren**.
 
 7. De inrichtings service maakt een **verificatie code** die u kunt gebruiken om het eigendom van het certificaat te valideren. Kopieer de code naar het klem bord. 
 
@@ -58,7 +58,7 @@ Micro soft biedt hulpprogram ma's en voor beelden die u kunnen helpen bij het ma
 > [!IMPORTANT]
 > Naast het uitvoeren van een bewijs materiaal, kunt u met de Power shell-en bash-scripts die eerder zijn vermeld, basis certificaten, tussenliggende certificaten en blad certificaten maken die kunnen worden gebruikt om apparaten te verifiëren en in te richten. Deze certificaten moeten alleen worden gebruikt voor ontwikkeling. Ze mogen nooit worden gebruikt in een productie omgeving. 
 
-De Power shell-en bash-scripts die zijn opgenomen in de documentatie en Sdk's, zijn afhankelijk van [openssl](https://www.openssl.org/). U kunt ook OpenSSL of andere hulpprogram ma's van derden gebruiken om u te helpen bij het maken van een bewijs van eigendom. Zie het [gebruik van hulpprogram ma's in de sdk's](how-to-use-sdk-tools.md)voor meer informatie over hulp middelen die worden meegeleverd met de sdk's. 
+De Power shell-en bash-scripts die zijn opgenomen in de documentatie en Sdk's, zijn afhankelijk van [openssl](https://www.openssl.org/). U kunt ook OpenSSL of andere hulpprogram ma's van derden gebruiken om u te helpen bij het maken van een bewijs van eigendom. Zie [een X. 509-certificaat keten maken](tutorial-custom-hsm-enrollment-group-x509.md#create-an-x509-certificate-chain)voor een voor beeld van het gebruik van hulp middelen die worden meegeleverd met de sdk's. 
 
 
 ## <a name="upload-the-signed-verification-certificate"></a>Het ondertekende verificatie certificaat uploaden

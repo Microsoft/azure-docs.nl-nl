@@ -11,12 +11,12 @@ ms.service: cognitive-services
 ms.subservice: language-understanding
 ms.topic: how-to
 ms.date: 12/14/2020
-ms.openlocfilehash: 086bc17938064571e8759ecda633fb5f87d1060f
-ms.sourcegitcommit: 86acfdc2020e44d121d498f0b1013c4c3903d3f3
+ms.openlocfilehash: 3ff48ff5a3f46d8ec0fbf81b4cd20d20c217344b
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97616810"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787634"
 ---
 # <a name="migrate-to-an-azure-resource-authoring-key"></a>Migreren naar een Azure-resource bewerkings sleutel
 
@@ -81,7 +81,7 @@ Er `*` wordt een symbool weer gegeven naast de naam van de toepassing als u een 
    > ![Uw toepassingen exporteren.](./media/migrate-authoring-key/migration-export-apps.png)
 
 
-4. In het venster voor de migratie van regio's wordt u gevraagd om uw toepassingen te migreren naar een Azure-resource in dezelfde regio waarin ze zijn geschreven. LUIS heeft drie ontwerp regio's [en portals](https://docs.microsoft.com/azure/cognitive-services/luis/luis-reference-regions#luis-authoring-regions). In het venster worden de regio's weer gegeven waarin uw toepassingen zijn gemaakt. De weer gegeven migratie regio's kunnen afwijken, afhankelijk van de regionale portal die u gebruikt, en de apps die u hebt gemaakt. 
+4. In het venster voor de migratie van regio's wordt u gevraagd om uw toepassingen te migreren naar een Azure-resource in dezelfde regio waarin ze zijn geschreven. LUIS heeft drie ontwerp regio's [en portals](./luis-reference-regions.md#luis-authoring-regions). In het venster worden de regio's weer gegeven waarin uw toepassingen zijn gemaakt. De weer gegeven migratie regio's kunnen afwijken, afhankelijk van de regionale portal die u gebruikt, en de apps die u hebt gemaakt. 
 
    > [!div class="mx-imgBorder"]
    > ![Migratie van meerdere regio's.](./media/migrate-authoring-key/migration-regional-flow.png)

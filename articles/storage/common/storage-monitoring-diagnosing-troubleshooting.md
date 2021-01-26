@@ -9,12 +9,12 @@ ms.author: normesta
 ms.reviewer: fryu
 ms.subservice: common
 ms.custom: monitoring, devx-track-csharp
-ms.openlocfilehash: 18d36e37554a5d2b37488b7a1525f8290dc03da0
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 50d78e83bbbeb4b0252c83f9f52e94599ea6946c
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763265"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98787957"
 ---
 # <a name="monitor-diagnose-and-troubleshoot-microsoft-azure-storage"></a>Microsoft Azure Storage bewaken, problemen opsporen en oplossen
 [!INCLUDE [storage-selector-portal-monitoring-diagnosing-troubleshooting](../../../includes/storage-selector-portal-monitoring-diagnosing-troubleshooting.md)]
@@ -69,7 +69,7 @@ Als u dergelijke toepassingen wilt beheren, moet u ze proactief controleren en i
   * [Bijlage 4: Excel gebruiken om metrische gegevens weer te geven en te registreren]
   * [Bijlage 5: bewaking met Application Insights voor Azure DevOps]
 
-## <a name="introduction"></a><a name="introduction"></a>Introductie
+## <a name="introduction"></a><a name="introduction"></a>Inleiding
 In deze hand leiding wordt beschreven hoe u functies zoals Azure Opslaganalyse, logboek registratie aan client zijde in de Azure Storage-client bibliotheek en andere hulpprogram ma's van derden kunt gebruiken voor het identificeren, vaststellen en oplossen van Azure Storage gerelateerde problemen.
 
 ![Diagram waarin de gegevens stroom tussen client toepassingen en Azure Storage-services wordt weer gegeven.][1]
@@ -251,13 +251,13 @@ De opslag service genereert automatisch server aanvraag-Id's.
 >
 >
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 In het volgende code voorbeeld ziet u hoe u een aangepaste client aanvraag-ID gebruikt. 
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Monitoring.cs" id="Snippet_UseCustomRequestID":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 Als de opslag-client bibliotheek een **StorageException** in de client genereert, bevat de eigenschap **RequestInformation** een **RequestResult** -object met daarin een **ServiceRequestID** -eigenschap. U kunt ook toegang krijgen tot een **RequestResult** -object vanuit een **OperationContext** -exemplaar.
 
@@ -363,11 +363,11 @@ Mogelijke oorzaken voor de client lopen langzaam, zoals een beperkt aantal besch
 
 Voor de tabel-en wachtrij Services kan het Nagle-algoritme ook hoge **AverageE2ELatency** veroorzaken ten opzichte van **averageserverlatency aan**: Zie het [algoritme van post Nagle is niet geschikt voor kleine aanvragen](/archive/blogs/windowsazurestorage/nagles-algorithm-is-not-friendly-towards-small-requests)voor meer informatie. U kunt de Nagle-algoritme in code uitschakelen met behulp van de klasse **ServicePointManager** in de naam ruimte **System.net** . U moet dit doen voordat u aanroepen naar de tabel-of wachtrij Services in uw toepassing, omdat dit geen invloed heeft op verbindingen die al zijn geopend. Het volgende voor beeld wordt opgehaald uit de **Application_Start** -methode in een werk rollen.
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Monitoring.cs" id="Snippet_DisableNagle":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 ```csharp
 var storageAccount = CloudStorageAccount.Parse(connStr);
@@ -601,11 +601,11 @@ U kunt het Java script-probleem omzeilen door cross Origin Resource Sharing (COR
 
 In het volgende code voorbeeld ziet u hoe u de BLOB-service zo configureert dat Java script wordt uitgevoerd in het contoso-domein om toegang te krijgen tot een BLOB in de Blob Storage-service:
 
-# <a name="net-v12"></a>[.NET-V12](#tab/dotnet)
+# <a name="net-v12"></a>[.NET v12](#tab/dotnet)
 
 :::code language="csharp" source="~/azure-storage-snippets/blobs/howto/dotnet/dotnet-v12/Monitoring.cs" id="Snippet_ConfigureCORS":::
 
-# <a name="net-v11"></a>[.NET-V11](#tab/dotnet11)
+# <a name="net-v11"></a>[.NET v11](#tab/dotnet11)
 
 ```csharp
 CloudBlobClient client = new CloudBlobClient(blobEndpoint, new StorageCredentials(accountName, accountKey));
@@ -767,7 +767,7 @@ U kunt er ook voor kiezen om de TCP-gegevens weer te geven wanneer de toepassing
 >
 
 ### <a name="appendix-4-using-excel-to-view-metrics-and-log-data"></a><a name="appendix-4"></a>Bijlage 4: Excel gebruiken om metrische gegevens weer te geven en te registreren
-Met veel hulpprogram ma's kunt u de metrische gegevens van de opslag van Azure Table-opslag downloaden in een indeling met scheidings tekens, waardoor het eenvoudig wordt om de gegevens in Excel te laden voor weer gave en analyse. Gegevens van de opslag registratie van Azure Blob-opslag bevindt zich al in een indeling met scheidings tekens die u in Excel kunt laden. U moet echter wel de juiste kolom koppen toevoegen op basis van de gegevens in [Opslaganalyse logboek indeling](/rest/api/storageservices/Storage-Analytics-Log-Format) en [Opslaganalyse metrische tabel schema](/rest/api/storageservices/Storage-Analytics-Metrics-Table-Schema).
+Met veel hulpprogram ma's kunt u de metrische gegevens van de opslag van Azure Table-opslag downloaden in een indeling met scheidings tekens, waardoor het eenvoudig wordt om de gegevens in Excel te laden voor weer gave en analyse. Gegevens van de opslag registratie van Azure Blob Storage hebben al een indeling met scheidings tekens die u in Excel kunt laden. U moet echter wel de juiste kolom koppen toevoegen op basis van de gegevens in [Opslaganalyse logboek indeling](/rest/api/storageservices/Storage-Analytics-Log-Format) en [Opslaganalyse metrische tabel schema](/rest/api/storageservices/Storage-Analytics-Metrics-Table-Schema).
 
 Als u de gegevens van uw opslag logboek wilt importeren in Excel nadat u deze hebt gedownload van Blob Storage:
 

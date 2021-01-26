@@ -8,12 +8,12 @@ ms.date: 11/24/2020
 ms.service: key-vault
 ms.subservice: secrets
 ms.topic: quickstart
-ms.openlocfilehash: 9509f84b14a42180189a529282b5db348deab279
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: c1e8062210de1d7d99f57a4e0b155492f7dfdd9a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95920229"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785973"
 ---
 # <a name="use-key-vault-secrets-in-github-actions-workflows"></a>Key Vault-geheimen gebruiken in GitHub Actions-werkstromen
 
@@ -25,7 +25,7 @@ Met Key Vault-en GitHub Actions profiteert u zowel van de voordelen van een cent
 ## <a name="prerequisites"></a>Vereisten 
 - Een GitHub-account. Als u geen account hebt, kunt u zich registreren voor een [gratis](https://github.com/join) account.  
 - Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
-- Een Azure-app die is verbonden met een GitHub-opslagplaats. In dit voorbeeld wordt [Deploy containers to Azure App Service](https://docs.microsoft.com/azure/developer/javascript/tutorial-vscode-docker-node-01) (Containers implementeren in Azure App Service) gebruikt. 
+- Een Azure-app die is verbonden met een GitHub-opslagplaats. In dit voorbeeld wordt [Deploy containers to Azure App Service](/azure/developer/javascript/tutorial-vscode-docker-node-01) (Containers implementeren in Azure App Service) gebruikt. 
 - Een Azure-sleutelkluis.  U kunt een Azure-sleutelkluis maken met Azure Portal, Azure CLI of Azure PowerShell.
 
 ## <a name="workflow-file-overview"></a>Overzicht van werkstroom bestand

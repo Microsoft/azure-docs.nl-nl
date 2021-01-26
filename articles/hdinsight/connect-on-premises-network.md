@@ -8,12 +8,12 @@ ms.service: hdinsight
 ms.topic: how-to
 ms.custom: hdinsightactive
 ms.date: 03/04/2020
-ms.openlocfilehash: 71ef902e909e552ade5174196f291630bc242ca0
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 2a7b686bb0aae0b35b25cdd724925bab3c0a2e10
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005364"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786517"
 ---
 # <a name="connect-hdinsight-to-your-on-premises-network"></a>HDInsight verbinden met uw on-premises netwerk
 
@@ -52,7 +52,7 @@ In het volgende diagram zijn groene lijnen aanvragen voor bronnen die eindigen o
 
 Gebruik de volgende documenten voor meer informatie over het maken van een Azure-Virtual Network die is verbonden met uw on-premises netwerk:
 
-* [Azure Portal gebruiken](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md)
+* [Azure Portal gebruiken](../vpn-gateway/tutorial-site-to-site-portal.md)
 * [Azure PowerShell gebruiken](../vpn-gateway/vpn-gateway-create-site-to-site-rm-powershell.md)
 * [Azure CLI gebruiken](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-cli.md)
 
@@ -69,7 +69,7 @@ In deze stappen wordt gebruikgemaakt van de [Azure Portal](https://portal.azure.
 
     ![Een virtuele Ubuntu-machine maken](./media/connect-on-premises-network/azure-portal-create-resource.png)
 
-1. Selecteer **Compute**  >  **virtuele machine** berekenen om naar de pagina **een virtuele machine maken** te gaan.
+1. Selecteer   >  **virtuele machine** berekenen om naar de pagina **een virtuele machine maken** te gaan.
 
 1. Voer op het tabblad __basis beginselen__ de volgende gegevens in:  
   

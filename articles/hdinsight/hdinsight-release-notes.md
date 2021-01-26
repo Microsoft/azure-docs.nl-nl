@@ -8,12 +8,12 @@ ms.custom: hdinsightactive
 ms.service: hdinsight
 ms.topic: conceptual
 ms.date: 11/12/2020
-ms.openlocfilehash: d749c901b21651eec7b3e25ce111fb107e09b754
-ms.sourcegitcommit: 6d6030de2d776f3d5fb89f68aaead148c05837e2
+ms.openlocfilehash: 5c414a11085a6a37dee6be522dcf513e8990e5e2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97883347"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786348"
 ---
 # <a name="azure-hdinsight-release-notes"></a>Opmerkingen bij de release van Azure HDInsight
 
@@ -48,7 +48,7 @@ Vanaf november 16 2020 worden nieuwe klanten die clusters maken met behulp van s
 
 ## <a name="behavior-changes"></a>Gedrags wijzigingen
 ### <a name="add-nsg-rule-checking-before-scaling-operation"></a>Controle van NSG-regel toevoegen vóór schaal bewerking
-Met HDInsight zijn netwerk beveiligings groepen (Nsg's) en Udr's-controle (User-defined routes) toegevoegd met een schaal bewerking. Dezelfde validatie wordt uitgevoerd voor het schalen van clusters behalve bij het maken van het cluster. Deze validatie helpt onvoorspelbare fouten te voor komen. Als de validatie niet is geslaagd, mislukt het schalen. Zie [IP-adressen voor HDInsight-beheer](https://docs.microsoft.com/azure/hdinsight/hdinsight-management-ip-addresses)voor meer informatie over het correct configureren van Nsg's en udr's.
+Met HDInsight zijn netwerk beveiligings groepen (Nsg's) en Udr's-controle (User-defined routes) toegevoegd met een schaal bewerking. Dezelfde validatie wordt uitgevoerd voor het schalen van clusters behalve bij het maken van het cluster. Deze validatie helpt onvoorspelbare fouten te voor komen. Als de validatie niet is geslaagd, mislukt het schalen. Zie [IP-adressen voor HDInsight-beheer](./hdinsight-management-ip-addresses.md)voor meer informatie over het correct configureren van Nsg's en udr's.
 
 ## <a name="upcoming-changes"></a>Aanstaande wijzigingen
 De volgende wijzigingen worden uitgevoerd in toekomstige releases.
@@ -72,7 +72,7 @@ HDInsight blijft de betrouw baarheid en prestaties van het cluster verbeteren.
 Er is geen wijziging van de onderdeel versie voor deze versie. In [dit document](./hdinsight-component-versioning.md)vindt u de huidige versie van de onderdelen voor hdinsight 4,0 en hdinsight 3,6.
 
 ## <a name="known-issues"></a>Bekende problemen
-### <a name="prevent-hdinsight-cluster-vms-from-rebooting-periodically"></a>Voor komen dat Vm's van het HDInsight-cluster periodiek opnieuw opstarten
+### <a name="prevent-hdinsight-cluster-vms-from-rebooting-periodically"></a>Voorkomen dat VM's in HDInsight-cluster periodiek opnieuw opstarten
 
 Vanaf medio november 2020 hebt u mogelijk gedetecteerd dat de virtuele machines van het HDInsight-cluster op regel matige basis opnieuw worden opgestart. Dit kan worden veroorzaakt door:
 
@@ -84,4 +84,3 @@ HDInsight is het implementeren van oplossingen en het Toep assen van patch voor 
 https://hdiconfigactions.blob.core.windows.net/linuxospatchingrebootconfigv02/replace_cacert_script.sh
 https://healingscriptssa.blob.core.windows.net/healingscripts/ChangeOOMPolicyAndApplyLatestConfigForClamav.sh
 ```
-

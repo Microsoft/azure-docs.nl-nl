@@ -5,12 +5,12 @@ author: masnider
 ms.topic: conceptual
 ms.date: 08/18/2017
 ms.author: masnider
-ms.openlocfilehash: 162ad87f79109cf38d3d0013608812155c6988a7
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ea8fa6933052374721d8d205d5b07386c807ae2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86252246"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784593"
 ---
 # <a name="reliable-services-lifecycle-overview"></a>Overzicht van Reliable Services levenscyclus
 > [!div class="op_single_selector"]
@@ -41,7 +41,7 @@ De levens cyclus van een stateless service is eenvoudig. Dit is de volg orde van
     - De methode van de service `StatelessService.RunAsync()` wordt aangeroepen.
 3. Indien aanwezig, wordt de methode van de service `StatelessService.OnOpenAsync()` aangeroepen. Deze aanroep is een ongebruikelijke onderdrukking, maar is wel beschikbaar. Uitgebreide service-initialisatie taken kunnen op dit moment worden gestart.
 
-Denk eraan dat er geen volg orde is tussen de aanroepen om de listeners en **RunAsync**te maken en te openen. De listeners kunnen worden geopend voordat **RunAsync** wordt gestart. Op dezelfde manier kunt u **RunAsync** aanroepen voordat de communicatie-listeners zijn geopend of zelfs zijn gebouwd. Als een synchronisatie vereist is, wordt deze overgelaten als oefening voor de uitvoerder. Hier volgen enkele veelvoorkomende oplossingen:
+Denk eraan dat er geen volg orde is tussen de aanroepen om de listeners en **RunAsync** te maken en te openen. De listeners kunnen worden geopend voordat **RunAsync** wordt gestart. Op dezelfde manier kunt u **RunAsync** aanroepen voordat de communicatie-listeners zijn geopend of zelfs zijn gebouwd. Als een synchronisatie vereist is, wordt deze overgelaten als oefening voor de uitvoerder. Hier volgen enkele veelvoorkomende oplossingen:
 
   - Soms werken listeners niet totdat er een andere informatie is gemaakt of wordt uitgevoerd. Voor stateless Services kan dat werk doorgaans worden uitgevoerd op andere locaties, zoals de volgende: 
     - In de constructor van de service.
@@ -113,7 +113,7 @@ Service Fabric de primaire van een stateful service om verschillende redenen wij
 
 Services die de annulering niet op de juiste manier afhandelen, kunnen diverse problemen ondervinden. Deze bewerkingen zijn traag omdat Service Fabric wacht totdat de services op de juiste wijze worden gestopt. Dit kan uiteindelijk leiden tot mislukte upgrades die een time-out veroorzaken en terugdraaien. Het niet voldoen aan het annulerings token kan ook een niet-sluitende cluster veroorzaken. Clusters worden niet in rekening gebalanceerd omdat knoop punten warm zijn, maar de services kunnen niet worden gebalanceerd omdat het te lang duurt om ze elders te verplaatsen. 
 
-Omdat de services stateful zijn, is het ook waarschijnlijk dat ze de [betrouw bare verzamelingen](service-fabric-reliable-services-reliable-collections.md)gebruiken. In Service Fabric, wanneer een primaire laag wordt gedegradeerd, is een van de eerste dingen die schrijf toegang tot de onderliggende status is ingetrokken. Dit leidt tot een tweede set problemen die van invloed kunnen zijn op de levens cyclus van de service. De verzamelingen retour uitzonde ringen op basis van de timing en of de replica wordt verplaatst of afgesloten. Deze uitzonde ringen moeten correct worden afgehandeld. Uitzonde ringen die worden veroorzaakt door service Fabric vallen in permanente [( `FabricException` )](/dotnet/api/system.fabric.fabricexception?view=azure-dotnet) en tijdelijke [( `FabricTransientException` )](/dotnet/api/system.fabric.fabrictransientexception?view=azure-dotnet) categorieën. Permanente uitzonde ringen moeten worden vastgelegd en gegenereerd terwijl de tijdelijke uitzonde ringen opnieuw kunnen worden uitgevoerd op basis van een poging tot logica.
+Omdat de services stateful zijn, is het ook waarschijnlijk dat ze de [betrouw bare verzamelingen](service-fabric-reliable-services-reliable-collections.md)gebruiken. In Service Fabric, wanneer een primaire laag wordt gedegradeerd, is een van de eerste dingen die schrijf toegang tot de onderliggende status is ingetrokken. Dit leidt tot een tweede set problemen die van invloed kunnen zijn op de levens cyclus van de service. De verzamelingen retour uitzonde ringen op basis van de timing en of de replica wordt verplaatst of afgesloten. Deze uitzonde ringen moeten correct worden afgehandeld. Uitzonde ringen die worden veroorzaakt door service Fabric vallen in permanente [( `FabricException` )](/dotnet/api/system.fabric.fabricexception) en tijdelijke [( `FabricTransientException` )](/dotnet/api/system.fabric.fabrictransientexception) categorieën. Permanente uitzonde ringen moeten worden vastgelegd en gegenereerd terwijl de tijdelijke uitzonde ringen opnieuw kunnen worden uitgevoerd op basis van een poging tot logica.
 
 Het afhandelen van de uitzonde ringen die afkomstig zijn van het gebruik van de `ReliableCollections` in combi natie met Service levenscyclus gebeurtenissen is een belang rijk onderdeel van het testen en valideren van een betrouw bare service. U wordt aangeraden uw service altijd onder belasting te plaatsen tijdens het uitvoeren van upgrades en [chaos tests](service-fabric-controlled-chaos.md) voordat u de productie implementeert. Met deze eenvoudige stappen kunt u ervoor zorgen dat uw service correct is geïmplementeerd en levenscyclus gebeurtenissen correct verwerkt.
 

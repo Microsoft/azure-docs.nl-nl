@@ -8,12 +8,12 @@ ms.author: jehollan
 ms.reviewer: estfan, logicappspm
 ms.topic: article
 ms.date: 03/15/2018
-ms.openlocfilehash: 2fae7d2526e6c95efe83ca8fa742a6d92457b897
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 22e0c7304f7a53a86bc5c6739a2061352d738d29
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86520746"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784809"
 ---
 # <a name="create-a-streaming-customer-insights-dashboard-with-azure-logic-apps-and-azure-functions"></a>Maak een streaming-dash board voor klanten inzichten met Azure Logic Apps en Azure Functions
 
@@ -54,12 +54,12 @@ Als u de sentiment achter een bepaalde tekst wilt detecteren, kunt u [Azure Cogn
 
 4. Als u hierom wordt gevraagd, geeft u een geldige Cognitive Services sleutel op voor de Text Analytics-service.
 
-5. Selecteer onder **hoofd tekst van aanvraag**het **tekst veld Tweet** , waarmee de Tweet-tekst als invoer voor analyse wordt verstrekt.
+5. Selecteer onder **hoofd tekst van aanvraag** het **tekst veld Tweet** , waarmee de Tweet-tekst als invoer voor analyse wordt verstrekt.
 
 Nadat u de Tweet-gegevens en inzichten over de Tweet hebt opgehaald, kunt u nu verschillende andere relevante connectors en de bijbehorende acties gebruiken:
 
 * **Power bi-rijen toevoegen aan streaming-gegevensset**: binnenkomende tweets op een Power bi dash board weer geven.
-* **Azure data Lake-bestand**toevoegen: Voeg klant gegevens toe aan een Azure data Lake-gegevensset die in analyse taken moet worden meegenomen.
+* **Azure data Lake-bestand** toevoegen: Voeg klant gegevens toe aan een Azure data Lake-gegevensset die in analyse taken moet worden meegenomen.
 * **SQL-rijen toevoegen**: Sla gegevens op in een Data Base om deze later op te halen.
 * **Toegestane vertraging-bericht verzenden**: een vertragings kanaal melden over negatieve feedback waarvoor mogelijk actie is vereist.
 
@@ -67,7 +67,7 @@ U kunt ook een Azure-functie maken, zodat u aangepaste verwerking voor uw gegeve
 
 ## <a name="process-data-with-azure-functions"></a>Gegevens verwerken met Azure Functions
 
-Voordat u een functie maakt, maakt u een functie-app in uw Azure-abonnement. Voor uw logische app is het ook mogelijk om een functie rechtstreeks aan te roepen, de functie moet een binding met een HTTP-trigger hebben, bijvoorbeeld de **http trigger** -sjabloon. Meer informatie [over het maken van uw eerste functie-app en functie in de Azure Portal](../azure-functions/functions-create-first-azure-function.md).
+Voordat u een functie maakt, maakt u een functie-app in uw Azure-abonnement. Voor uw logische app is het ook mogelijk om een functie rechtstreeks aan te roepen, de functie moet een binding met een HTTP-trigger hebben, bijvoorbeeld de **http trigger** -sjabloon. Meer informatie [over het maken van uw eerste functie-app en functie in de Azure Portal](../azure-functions/functions-get-started.md).
 
 Voor dit scenario gebruikt u de Tweet-tekst als de aanvraag tekst voor uw Azure-functie. Definieer in uw functie code de logica die bepaalt of de Tweet-tekst een sleutel woord of een woord groep bevat. Zorg ervoor dat de functie zo eenvoudig of complex is als nodig is voor het scenario.
 Aan het einde van de functie retourneert een antwoord op de logische app met enkele gegevens, bijvoorbeeld een eenvoudige Booleaanse waarde, zoals `containsKeyword` of een complex object.
@@ -79,11 +79,11 @@ Wanneer u klaar bent, slaat u de functie op en voegt u de functie toe als een ac
 
 ## <a name="add-azure-function-to-logic-app"></a>Azure function toevoegen aan de logische app
 
-1. Kies in Logic app Designer de optie **nieuwe stap**onder de actie **sentiment detecteren** .
+1. Kies in Logic app Designer de optie **nieuwe stap** onder de actie **sentiment detecteren** .
 
 2. Zoek de **Azure functions** -connector en selecteer vervolgens de functie die u hebt gemaakt.
 
-3. Onder **aanvraag tekst**selecteert u **Tweet tekst**.
+3. Onder **aanvraag tekst** selecteert u **Tweet tekst**.
 
 ![Azure-functie stap is geconfigureerd][2]
 
@@ -100,7 +100,7 @@ U kunt als volgt eerdere run-runs bekijken in Visual Studio of de Azure Portal:
   > [!TIP]
   > Als u deze opdracht niet hebt in Visual Studio 2019, controleert u of u de nieuwste updates voor Visual Studio hebt.
 
-* Zoek in de Azure Portal uw logische app. Kies **overzicht**in het menu van de logische app. 
+* Zoek in de Azure Portal uw logische app. Kies **overzicht** in het menu van de logische app. 
 
 ## <a name="create-automated-deployment-templates"></a>Sjablonen voor automatische implementatie maken
 

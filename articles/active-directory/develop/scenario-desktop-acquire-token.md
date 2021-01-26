@@ -12,12 +12,12 @@ ms.workload: identity
 ms.date: 01/06/2021
 ms.author: jmprieur
 ms.custom: aaddev, devx-track-python
-ms.openlocfilehash: a2048a509bdbe11c948ac8eb2daa6e78013c2fa5
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: c58f4a553073eb3ed062ef9ec2a66c8e4f40e57b
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98753776"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785122"
 ---
 # <a name="desktop-app-that-calls-web-apis-acquire-a-token"></a>Bureau blad-app voor het aanroepen van web-Api's: een Token ophalen
 
@@ -451,7 +451,7 @@ In MSAL.NET moet u het volgende gebruiken:
 AcquireTokenByIntegratedWindowsAuth(IEnumerable<string> scopes)
 ```
 
-Normaal gesp roken hebt u slechts één para meter ( `scopes` ) nodig. Afhankelijk van de manier waarop de Windows-beheerder het beleid heeft ingesteld, is het mogelijk dat toepassingen op uw Windows-computer de aangemelde gebruiker niet kunnen opzoeken. In dat geval gebruikt u een tweede methode, `.WithUsername()` en geeft u de gebruikers naam van de aangemelde gebruiker door als UPN-indeling, bijvoorbeeld `joe@contoso.com` . In .NET Core is alleen de overbelasting van de gebruikers naam beschikbaar omdat het .NET Core-platform de gebruikers naam niet kan vragen aan het besturings systeem.
+Normaal gesp roken hebt u slechts één para meter ( `scopes` ) nodig. Afhankelijk van de manier waarop de Windows-beheerder het beleid heeft ingesteld, is het mogelijk dat toepassingen op uw Windows-computer de aangemelde gebruiker niet kunnen opzoeken. In dat geval gebruikt u een tweede methode, `.WithUsername()` en geeft u de gebruikers naam van de aangemelde gebruiker door als UPN-indeling, bijvoorbeeld `joe@contoso.com` .
 
 In het volgende voor beeld wordt het meest recente geval weer gegeven, met uitleg over het soort uitzonde ringen dat u kunt krijgen en de bijbehorende oplossingen.
 

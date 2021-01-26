@@ -4,7 +4,6 @@ description: Meer informatie over het maken van een virtuele machine met een pri
 services: virtual-network
 documentationcenter: na
 author: KumudD
-manager: twooley
 editor: ''
 tags: azure-resource-manager
 ms.assetid: d5f18929-15e3-40a2-9ee3-8188bc248ed8
@@ -17,18 +16,18 @@ ms.workload: infrastructure-services
 ms.date: 02/07/2019
 ms.author: kumud
 ms.custom: ''
-ms.openlocfilehash: 2825d8d9f8be7c56d7beea767a1afb7a290eafa2
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: 43c2e2c8905ca60e59caed3fdf1b4920f509fd88
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98222595"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783781"
 ---
 # <a name="create-a-virtual-machine-with-a-static-private-ip-address-using-powershell"></a>Een virtuele machine met een statisch privé-IP-adres maken met behulp van Power shell
 
-[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
-
 U kunt een virtuele machine (VM) met een statisch privé-IP-adres maken. Wijs een statisch privé-IP-adres toe in plaats van een dynamisch adres als u wilt selecteren welk adres van een subnet aan een virtuele machine wordt toegewezen. Meer informatie over [statische privé-IP-adressen](./public-ip-addresses.md#allocation-method). Zie [IP-adressen toevoegen, wijzigen of verwijderen](virtual-network-network-interface-addresses.md)voor meer informatie over het wijzigen van een privé-IP-adres dat is toegewezen aan een bestaande virtuele machine van dynamisch naar statisch of voor het werken met open bare IP-adressen.
+
+[!INCLUDE [updated-for-az](../../includes/updated-for-az.md)]
 
 ## <a name="create-a-virtual-machine"></a>Een virtuele machine maken
 

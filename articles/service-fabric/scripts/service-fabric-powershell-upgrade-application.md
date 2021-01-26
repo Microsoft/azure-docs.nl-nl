@@ -14,12 +14,12 @@ ms.topic: sample
 ms.date: 01/18/2018
 ms.author: atsenthi
 ms.custom: mvc
-ms.openlocfilehash: 1b04a0c4d2865cf72d9fbccb51f0f083872ea799
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 7b55dc6a400f936ac23b233e4c84a6b1aebf45cb
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87037879"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784694"
 ---
 # <a name="upgrade-a-service-fabric-application"></a>Een Service Fabric-toepassing upgraden
 
@@ -37,18 +37,18 @@ In dit script worden de volgende opdrachten gebruikt. Elke opdracht in de tabel 
 
 | Opdracht | Opmerkingen |
 |---|---|
-| [Get-ServiceFabricApplication](/powershell/module/servicefabric/get-servicefabricapplication?view=azureservicefabricps) | Hiermee worden alle toepassingen in het Service Fabric-cluster of wordt een specifieke toepassing opgehaald.  |
-| [Get-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/get-servicefabricapplicationupgrade?view=azureservicefabricps) | Hiermee wordt de status van een Service Fabric-toepassingsupgrade opgehaald. |
-| [Get-ServiceFabricApplicationType](/powershell/module/servicefabric/get-servicefabricapplicationtype?view=azureservicefabricps) | Hiermee worden de Service Fabric-toepassingstypen opgehaald die zijn geregistreerd in het Service Fabric-cluster. |
-| [Unregister-ServiceFabricApplicationType](/powershell/module/servicefabric/unregister-servicefabricapplicationtype?view=azureservicefabricps) | Hiermee wordt de registratie van een Service Fabric-toepassingstype opgeheven.  |
-| [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage?view=azureservicefabricps) | Hiermee wordt een Service Fabric-toepassingspakket gekopieerd naar de installatiekopieopslag.  |
-| [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype?view=azureservicefabricps) | Hiermee wordt een Service Fabric-toepassingstype geregistreerd. |
-| [Start-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/start-servicefabricapplicationupgrade?view=azureservicefabricps) | Hiermee wordt een Service Fabric-toepassing geüpgraded naar de opgegeven versie van het toepassingstype. |
-| [Remove-ServiceFabricApplicationPackage](/powershell/module/servicefabric/remove-servicefabricapplicationpackage?view=azureservicefabricps) | Hiermee wordt een Service Fabric-toepassingspakket verwijderd uit de installatiekopieopslag.|
+| [Get-ServiceFabricApplication](/powershell/module/servicefabric/get-servicefabricapplication) | Hiermee worden alle toepassingen in het Service Fabric-cluster of wordt een specifieke toepassing opgehaald.  |
+| [Get-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/get-servicefabricapplicationupgrade) | Hiermee wordt de status van een Service Fabric-toepassingsupgrade opgehaald. |
+| [Get-ServiceFabricApplicationType](/powershell/module/servicefabric/get-servicefabricapplicationtype) | Hiermee worden de Service Fabric-toepassingstypen opgehaald die zijn geregistreerd in het Service Fabric-cluster. |
+| [Unregister-ServiceFabricApplicationType](/powershell/module/servicefabric/unregister-servicefabricapplicationtype) | Hiermee wordt de registratie van een Service Fabric-toepassingstype opgeheven.  |
+| [Copy-ServiceFabricApplicationPackage](/powershell/module/servicefabric/copy-servicefabricapplicationpackage) | Hiermee wordt een Service Fabric-toepassingspakket gekopieerd naar de installatiekopieopslag.  |
+| [Register-ServiceFabricApplicationType](/powershell/module/servicefabric/register-servicefabricapplicationtype) | Hiermee wordt een Service Fabric-toepassingstype geregistreerd. |
+| [Start-ServiceFabricApplicationUpgrade](/powershell/module/servicefabric/start-servicefabricapplicationupgrade) | Hiermee wordt een Service Fabric-toepassing geüpgraded naar de opgegeven versie van het toepassingstype. |
+| [Remove-ServiceFabricApplicationPackage](/powershell/module/servicefabric/remove-servicefabricapplicationpackage) | Hiermee wordt een Service Fabric-toepassingspakket verwijderd uit de installatiekopieopslag.|
 
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de [documentatie van Azure PowerShell](/powershell/azure/service-fabric/overview?view=azureservicefabricps) voor meer informatie over de Service Fabric PowerShell-module.
+Zie de [documentatie van Azure PowerShell](/powershell/azure/service-fabric/overview) voor meer informatie over de Service Fabric PowerShell-module.
 
 Meer PowerShell-voorbeelden voor Azure Service Fabric vindt u in de [voorbeelden van Azure PowerShell](../service-fabric-powershell-samples.md).

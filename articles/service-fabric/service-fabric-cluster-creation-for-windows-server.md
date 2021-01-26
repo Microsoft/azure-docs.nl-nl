@@ -3,12 +3,12 @@ title: Een zelfstandige Azure Service Fabric-cluster maken
 description: Maak een Azure Service Fabric-cluster op elke machine (fysiek of virtueel) waarop Windows Server wordt uitgevoerd, ongeacht of deze zich on-premises of in een wille keurige Cloud bevindt.
 ms.topic: conceptual
 ms.date: 2/21/2019
-ms.openlocfilehash: 36883f2c8b09fa3f8f013e0267dafa2a8220e5d2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 41af655be07ccae2b66e75f5bfe87629cdb54924
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91843189"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785681"
 ---
 # <a name="create-a-standalone-cluster-running-on-windows-server"></a>Een zelfstandig cluster maken dat wordt uitgevoerd in Windows Server
 U kunt Azure Service Fabric gebruiken om Service Fabric-clusters te maken op alle virtuele machines of computers waarop Windows Server wordt uitgevoerd. Dit betekent dat u Service Fabric-toepassingen kunt implementeren en uitvoeren in elke omgeving met een set onderling verbonden Windows Server-computers, deze on-premises of met een Cloud provider. Service Fabric biedt een installatie pakket om Service Fabric clusters te maken die het zelfstandige Windows Server-pakket worden genoemd. Traditionele Service Fabric clusters op Azure zijn beschikbaar als beheerde service, terwijl zelfstandige Service Fabric clusters self-service zijn. Zie [Azure en zelfstandige service Fabric clusters vergelijken](./service-fabric-deploy-anywhere.md)voor meer informatie over de verschillen.
@@ -116,7 +116,7 @@ Het runtime pakket kan afzonderlijk worden gedownload, van een andere computer d
 *.\ClusterConfig.jsop* en *.\MicrosoftAzureServiceFabric.cab* zijn de paden naar respectievelijk de cluster configuratie en het bestand runtime. cab.
 
 ### <a name="step-2-connect-to-the-cluster"></a>Stap 2: verbinding maken met het cluster
-Maak verbinding met het cluster om te controleren of het cluster actief is en beschikbaar is. De Service Fabric PowerShell-module wordt met de runtime geïnstalleerd.  U kunt verbinding maken met het cluster vanaf een van de cluster knooppunten of vanaf een externe computer met de Service Fabric runtime.  De cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) brengt een verbinding met het cluster tot stand.
+Maak verbinding met het cluster om te controleren of het cluster actief is en beschikbaar is. De Service Fabric PowerShell-module wordt met de runtime geïnstalleerd.  U kunt verbinding maken met het cluster vanaf een van de cluster knooppunten of vanaf een externe computer met de Service Fabric runtime.  De cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) brengt een verbinding met het cluster tot stand.
 
 Als u verbinding wilt maken met een niet-beveiligd cluster, voert u de volgende Power shell-opdracht uit:
 
@@ -129,7 +129,7 @@ Bijvoorbeeld:
 Connect-ServiceFabricCluster -ConnectionEndpoint 192.13.123.234:19000
 ```
 
-Zie [Connect to a secure cluster](service-fabric-connect-to-secure-cluster.md) (Verbinding maken met een beveiligd cluster) voor meer voorbeelden van clusterverbindingen. Nadat u verbinding hebt gemaakt met het cluster, gebruikt u de cmdlet [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode?view=azureservicefabricps) om een lijst weer te geven van de knooppunten in het cluster, evenals statusinformatie voor elk knooppunt. **HealthState** moet *OK* zijn voor elk knooppunt.
+Zie [Connect to a secure cluster](service-fabric-connect-to-secure-cluster.md) (Verbinding maken met een beveiligd cluster) voor meer voorbeelden van clusterverbindingen. Nadat u verbinding hebt gemaakt met het cluster, gebruikt u de cmdlet [Get-ServiceFabricNode](/powershell/module/servicefabric/get-servicefabricnode) om een lijst weer te geven van de knooppunten in het cluster, evenals statusinformatie voor elk knooppunt. **HealthState** moet *OK* zijn voor elk knooppunt.
 
 ```powershell
 PS C:\temp\Microsoft.Azure.ServiceFabric.WindowsServer> Get-ServiceFabricNode |Format-Table

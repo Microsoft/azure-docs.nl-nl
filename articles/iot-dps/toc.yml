@@ -4,7 +4,7 @@
   items:
     - name: Wat is IoT Hub Device Provisioning Service?
       href: about-iot-dps.md
-- name: Snelstartgidsen
+- name: Quickstarts
   expanded: true
   items:
     - name: Een DPS instellen
@@ -124,8 +124,6 @@
       items:
         - name: Inschrijvingen beheren - Portal
           href: how-to-manage-enrollments.md
-        - name: Inschrijvingen beheren - Service-SDK's
-          href: how-to-manage-enrollments-sdks.md
         - name: Geverifieerde CA-certificaten configureren
           href: how-to-verify-certificates.md
         - name: Apparaatcertificaten vernieuwen
@@ -150,10 +148,6 @@
         - name: Windows
           href: ../iot-edge/how-to-auto-provision-simulated-device-windows.md
           maintainContext: true
-    - name: Attestation-mechanismen gebruiken met de SDK
-      href: use-hsm-with-sdk.md
-    - name: SDK-hulpprogramma's gebruiken voor ontwikkeling
-      href: how-to-use-sdk-tools.md
     - name: Aanvullende gegevens vanaf apparaten verzenden
       href: how-to-send-additional-data.md
     - name: Problemen oplossen

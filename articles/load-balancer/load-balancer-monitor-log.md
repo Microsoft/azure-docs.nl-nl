@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/05/2020
 ms.author: allensu
-ms.openlocfilehash: fcfd3da30ef9ace723b4204f5924591b1e2717f8
-ms.sourcegitcommit: 2ba6303e1ac24287762caea9cd1603848331dd7a
+ms.openlocfilehash: 59359cdd3e3c035d4cb6789295d41bb3908019bb
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97503162"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785817"
 ---
 # <a name="azure-monitor-logs-for-azure-standard-load-balancer"></a>Azure Monitor logboeken voor Azure Standard Load Balancer
 
@@ -39,7 +39,7 @@ De typen logboeken zijn:
 
 Activiteitenlogboekregistratie is automatisch ingeschakeld voor elke Resource Manager-resource. Schakel logboek registratie voor gebeurtenis-en status controle in om te beginnen met het verzamelen van de gegevens die beschikbaar zijn via deze logboeken. Voer de volgende stappen uit:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). Als u nog geen load balancer hebt, [maakt u een Load Balancer](./quickstart-load-balancer-standard-public-portal.md) voordat u doorgaat.
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). Als u nog geen load balancer hebt, [maakt u een Load Balancer](./quickstart-load-balancer-standard-public-portal.md) voordat u doorgaat.
 1. Selecteer in de portal **resource groepen**.
 2. Selecteer **\<resource-group-name>** waar uw Load Balancer is.
 3. Selecteer uw load balancer.
@@ -74,7 +74,7 @@ Activiteitenlogboekregistratie is automatisch ingeschakeld voor elke Resource Ma
 
 ## <a name="view-and-analyze-the-activity-log"></a>Het activiteitenlogboek bekijken en analyseren
 
-Het activiteiten logboek wordt standaard gegenereerd. U kunt de sjabloon zo configureren dat deze wordt geëxporteerd op abonnements niveau door [de instructies in dit artikel te volgen](https://docs.microsoft.com/azure/azure-monitor/platform/activity-log). Lees voor meer informatie over deze logboeken de [activiteiten logboeken weer geven om acties op het artikel resources te controleren](../azure-resource-manager/management/view-activity-logs.md) .
+Het activiteiten logboek wordt standaard gegenereerd. U kunt de sjabloon zo configureren dat deze wordt geëxporteerd op abonnements niveau door [de instructies in dit artikel te volgen](../azure-monitor/platform/activity-log.md). Lees voor meer informatie over deze logboeken de [activiteiten logboeken weer geven om acties op het artikel resources te controleren](../azure-resource-manager/management/view-activity-logs.md) .
 
 U kunt activiteiten logboek gegevens weer geven en analyseren met behulp van een van de volgende methoden:
 
@@ -112,5 +112,5 @@ De functie voor het exporteren van metrische gegevens naar Logboeken voor Azure 
 * Metrische gegevens voor gebruikte SNAT-poorten en toegewezen SNAT-poorten zijn momenteel niet beschikbaar voor exporteren als Logboeken.
 
 ## <a name="next-steps"></a>Volgende stappen
-* [Bekijk de beschik bare metrische gegevens voor uw load balancer](https://docs.microsoft.com/azure/load-balancer/load-balancer-standard-diagnostics)
-* [Query's maken en testen door Azure Monitor instructies te volgen](https://docs.microsoft.com/azure/azure-monitor/log-query/log-query-overview)
+* [Bekijk de beschik bare metrische gegevens voor uw load balancer](./load-balancer-standard-diagnostics.md)
+* [Query's maken en testen door Azure Monitor instructies te volgen](../azure-monitor/log-query/log-query-overview.md)

@@ -4,12 +4,12 @@ description: Gebruik de FabricClient-Api's om toepassingen te implementeren en t
 ms.topic: conceptual
 ms.date: 01/19/2018
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 565e6b8f23f159a5c231295694830917217a3d19
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 343a37c983b1d64a4b1986913d9d6fd648a113fe
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89009297"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785546"
 ---
 # <a name="deploy-and-remove-applications-using-fabricclient"></a>Toepassingen implementeren en verwijderen met FabricClient
 > [!div class="op_single_selector"]
@@ -47,7 +47,7 @@ FabricClient fabricClient = new FabricClient();
 ## <a name="upload-the-application-package"></a>Het toepassings pakket uploaden
 Stel dat u een toepassing met de naam *mijn toepassing* in Visual Studio bouwt en inpakt. De naam van het toepassings type die in de ApplicationManifest.xml wordt vermeld, is standaard ' MyApplicationType '.  Het toepassings pakket, dat het benodigde toepassings manifest, service manifesten en code/config/gegevens pakketten bevat, bevindt zich in *C:\Users \& lt; gebruikers naam &gt; \Documents\Visual Studio 2019 \ Projects\MyApplication\MyApplication\pkg\Debug*.
 
-Als u het toepassings pakket uploadt, wordt het op een locatie die toegankelijk is voor de interne Service Fabric-onderdelen. Service Fabric controleert het toepassings pakket tijdens de registratie van het toepassings pakket. Als u het toepassings pakket echter lokaal wilt controleren (dat wil zeggen, voordat u dit uploadt), gebruikt u de cmdlet [test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage?view=azureservicefabricps) .
+Als u het toepassings pakket uploadt, wordt het op een locatie die toegankelijk is voor de interne Service Fabric-onderdelen. Service Fabric controleert het toepassings pakket tijdens de registratie van het toepassings pakket. Als u het toepassings pakket echter lokaal wilt controleren (dat wil zeggen, voordat u dit uploadt), gebruikt u de cmdlet [test-ServiceFabricApplicationPackage](/powershell/module/servicefabric/test-servicefabricapplicationpackage) .
 
 De [CopyApplicationPackage](/dotnet/api/system.fabric.fabricclient.applicationmanagementclient.copyapplicationpackage) -API uploadt het toepassings pakket naar de Cluster installatie kopie opslag. 
 
@@ -92,7 +92,7 @@ Wanneer een bepaalde versie van een toepassings type niet meer nodig is, moet u 
 
 ## <a name="troubleshooting"></a>Problemen oplossen
 ### <a name="copy-servicefabricapplicationpackage-asks-for-an-imagestoreconnectionstring"></a>Copy-ServiceFabricApplicationPackage vraagt om een ImageStoreConnectionString
-De Service Fabric SDK-omgeving moet al de juiste standaard instellingen hebben ingesteld. Maar als dat nodig is, moet de ImageStoreConnectionString voor alle opdrachten overeenkomen met de waarde die het Service Fabric cluster gebruikt. U kunt de ImageStoreConnectionString vinden in het cluster manifest, opgehaald met de opdrachten [Get-ServiceFabricClusterManifest](/powershell/module/servicefabric/get-servicefabricclustermanifest?view=azureservicefabricps) en Get-ImageStoreConnectionStringFromClusterManifest:
+De Service Fabric SDK-omgeving moet al de juiste standaard instellingen hebben ingesteld. Maar als dat nodig is, moet de ImageStoreConnectionString voor alle opdrachten overeenkomen met de waarde die het Service Fabric cluster gebruikt. U kunt de ImageStoreConnectionString vinden in het cluster manifest, opgehaald met de opdrachten [Get-ServiceFabricClusterManifest](/powershell/module/servicefabric/get-servicefabricclustermanifest) en Get-ImageStoreConnectionStringFromClusterManifest:
 
 ```powershell
 PS C:\> Get-ImageStoreConnectionStringFromClusterManifest(Get-ServiceFabricClusterManifest)

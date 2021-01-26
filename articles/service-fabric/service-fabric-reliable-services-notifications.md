@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 6/29/2017
 ms.author: mcoskun
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4a336daf9bd7400d049233a22a04d64d561b42c9
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f5b48cc6cca2e143c48ed7bdfc99de936be2a227
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89021949"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784576"
 ---
 # <a name="reliable-services-notifications"></a>Reliable Services meldingen
 Met meldingen kunnen clients de wijzigingen bijhouden die worden aangebracht in een object waarin ze zijn geïnteresseerd. Twee typen objecten ondersteunen meldingen: *betrouw bare status Manager* en *betrouw bare woorden lijst*.
@@ -211,4 +211,4 @@ Hier volgen enkele dingen die u moet onthouden:
 * [Betrouwbare verzamelingen](service-fabric-work-with-reliable-collections.md)
 * [Reliable Services snel starten](service-fabric-reliable-services-quick-start.md)
 * [Back-up en herstel (nood herstel) Reliable Services](service-fabric-reliable-services-backup-restore.md)
-* [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+* [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

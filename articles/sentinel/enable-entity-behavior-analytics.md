@@ -12,25 +12,20 @@ ms.devlang: na
 ms.topic: how-to
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 10/28/2020
+ms.date: 01/25/2021
 ms.author: yelevin
-ms.openlocfilehash: 140228a65be166bc172e81267c4449b49621e02c
-ms.sourcegitcommit: 0dcafc8436a0fe3ba12cb82384d6b69c9a6b9536
+ms.openlocfilehash: 0dccd8ac4f852688bf7e59e7ed96c4458c08d18b
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94425776"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784725"
 ---
 # <a name="enable-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>UEBA (User and entity Behavior Analytics) inschakelen in azure Sentinel 
 
 > [!IMPORTANT]
 >
-> - De functies UEBA en Entity pages zijn nu **algemeen beschikbaar** in de volgende Azure Sentinel-geografische gebieden en regio's:
->    - Verenigde Staten Geografie
->    - Regio Oost-West
->    - Geografie van Australië
->
-> - In alle andere geografische gebieden en regio's blijven deze functies gedurende de **Preview** -periode. Zie de [aanvullende gebruiks voorwaarden voor Microsoft Azure previews](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+> - De functies UEBA en Entity pages zijn nu beschikbaar in de **algemene Beschik baarheid** in **_alle _ de_* Azure Sentinel-geografische gebieden en-regio's.
 
 ## <a name="prerequisites"></a>Vereisten
 
@@ -38,7 +33,7 @@ Om deze functie in of uit te scha kelen (deze vereisten zijn niet vereist voor h
 
 - Uw gebruiker moet lid zijn van de Azure Active Directory van uw organisatie en geen gast gebruiker.
 
-- Aan uw gebruiker moet de rol van **globale beheerder** of **beveiligings beheerder** zijn toegewezen in azure AD.
+- Aan uw gebruiker moeten de rollen _ *globale beheerder** of **beveiligings beheerder** zijn toegewezen in azure AD.
 
 - Aan uw gebruiker moet ten minste één van de volgende **Azure-rollen** zijn toegewezen (meer [informatie over Azure RBAC](roles.md)):
     - **Azure Sentinel contributor** op het niveau van de werk ruimte of de resource groep.

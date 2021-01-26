@@ -3,17 +3,17 @@ title: Richt lijnen voor betrouw bare verzamelingen
 description: Richt lijnen en aanbevelingen voor het gebruik van Service Fabric betrouw bare verzamelingen in een Azure Service Fabric-toepassing.
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 63e6de436bdaceed7f1d2a78e8385dd14bfc0ed6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: f12db76f324d07c178b49150d4e574476e7d9929
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86260923"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784322"
 ---
 # <a name="guidelines-and-recommendations-for-reliable-collections-in-azure-service-fabric"></a>Richt lijnen en aanbevelingen voor betrouw bare verzamelingen in azure Service Fabric
 Deze sectie bevat richt lijnen voor het gebruik van betrouw bare status Manager en betrouw bare verzamelingen. Het doel is om gebruikers te helpen veelvoorkomende Valk uilen te voor komen.
 
-De richt lijnen zijn ingedeeld als eenvoudige aanbevelingen met betrekking tot de voor *waarden.* *Dit* *kan van*pas *komen* .
+De richt lijnen zijn ingedeeld als eenvoudige aanbevelingen met betrekking tot de voor *waarden.* *Dit* *kan van* pas *komen* .
 
 * Wijzig geen object van het aangepaste type dat wordt geretourneerd door Lees bewerkingen (bijvoorbeeld `TryPeekAsync` of `TryGetValueAsync` ). Betrouw bare verzamelingen, net als gelijktijdige verzamelingen, retour neren een verwijzing naar de objecten en niet naar een kopie.
 * Kopieer het geretourneerde object van een aangepast type grondig voordat u het wijzigt. Aangezien structs en ingebouwde typen pass-by-value zijn, hoeft u geen diep gaande kopie te maken, tenzij deze velden of eigenschappen bevatten die u wilt wijzigen.
@@ -58,10 +58,10 @@ Houd rekening met het volgende als u wilt bepalen of u vluchtige betrouw bare ve
 * [Werken met betrouwbare verzamelingen](service-fabric-work-with-reliable-collections.md)
 * [Trans acties en vergren delingen](service-fabric-reliable-services-reliable-collections-transactions-locks.md)
 * Gegevens beheren
-  * [Back-ups maken en herstellen](service-fabric-reliable-services-backup-restore.md)
+  * [Back-up en herstel](service-fabric-reliable-services-backup-restore.md)
   * [Meldingen](service-fabric-reliable-services-notifications.md)
   * [Serialisatie en upgrade](service-fabric-application-upgrade-data-serialization.md)
   * [Configuratie van betrouw bare status Manager](service-fabric-reliable-services-configuration.md)
 * Andere
   * [Snelstartgids Reliable Services](service-fabric-reliable-services-quick-start.md)
-  * [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+  * [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

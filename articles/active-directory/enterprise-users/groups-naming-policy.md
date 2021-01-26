@@ -14,12 +14,12 @@ ms.author: curtand
 ms.reviewer: krbain
 ms.custom: it-pro;seo-update-azuread-jan
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: a4c1c30e4651136ada7264cad8ff4d3921c3aeeb
-ms.sourcegitcommit: 65db02799b1f685e7eaa7e0ecf38f03866c33ad1
+ms.openlocfilehash: 894a90c50f968c892a76160a7375f11fe09390d6
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96547913"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784996"
 ---
 # <a name="enforce-a-naming-policy-on-microsoft-365-groups-in-azure-active-directory"></a>Een naamgevings beleid afdwingen voor Microsoft 365 groepen in Azure Active Directory
 
@@ -72,6 +72,7 @@ Geblokkeerde woorden lijst regels:
 Als u een naamgevings beleid wilt configureren, is een van de volgende rollen vereist:
 - Globale beheerder
 - Groeps beheerder
+- Directory Writer
 
 
 Geselecteerde beheerders kunnen worden uitgesloten van dit beleid, in alle werk belastingen en eind punten van groepen, zodat ze groepen kunnen maken met behulp van geblokkeerde woorden en met hun eigen naamgevings regels. Hieronder ziet u de lijst met beheerders rollen die zijn uitgesloten van het groeps naamgevings beleid.

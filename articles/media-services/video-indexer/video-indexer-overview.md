@@ -10,12 +10,12 @@ ms.subservice: video-indexer
 ms.topic: article
 ms.date: 09/11/2020
 ms.author: juliako
-ms.openlocfilehash: 6b5a228c12cfc874673dda854de6d4dcc25f28c1
-ms.sourcegitcommit: 42a4d0e8fa84609bec0f6c241abe1c20036b9575
+ms.openlocfilehash: 06f5e19718445f44dd2302faf280f083cce0774f
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98014532"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98783798"
 ---
 # <a name="what-is-azure-media-services-video-indexer"></a>Wat is Azure Media Services Video Indexer?
 
@@ -115,6 +115,21 @@ U kunt op drie manieren toegang krijgen tot Video Indexer mogelijkheden:
     Zie [visuele objecten insluiten in uw toepassing](video-indexer-embed-widgets.md)voor meer informatie.
 
 Als u de website gebruikt, worden de inzichten toegevoegd als meta gegevens en worden ze weer gegeven in de portal. Als u Api's gebruikt, zijn de inzichten beschikbaar als JSON-bestand.
+
+## <a name="supported-browsers"></a>Ondersteunde browsers
+
+De volgende lijst bevat de ondersteunde browsers die u kunt gebruiken voor de Video Indexer website en voor uw apps die de widgets insluiten. In de lijst wordt ook de mini maal ondersteunde browser versie weer gegeven:
+
+- Rand, versie: 16
+- Firefox, versie: 54
+- Chrome, versie: 58
+- Safari, versie: 11
+- Opera, versie: 44
+- Opera Mobile, versie: 59
+- Android-browser, versie: 81
+- Samsung-browser, versie: 7
+- Chrome voor Android, versie: 87
+- Firefox voor Android, versie: 83
 
 ## <a name="next-steps"></a>Volgende stappen
 

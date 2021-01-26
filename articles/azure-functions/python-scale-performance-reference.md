@@ -4,12 +4,12 @@ description: Meer informatie over het ontwikkelen van Azure Functions-apps met b
 ms.topic: article
 ms.date: 10/13/2020
 ms.custom: devx-track-python
-ms.openlocfilehash: baa362f029678f266f154df912a9178a6626667d
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: e3bbdb8819062d45d071633e0208fb58a003da54
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97935866"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786103"
 ---
 # <a name="improve-throughput-performance-of-python-apps-in-azure-functions"></a>De doorvoer prestaties van python-apps in Azure Functions verbeteren
 
@@ -22,10 +22,10 @@ Standaard controleert Azure Functions automatisch de belasting van uw toepassing
 
 De standaard configuraties zijn geschikt voor de meeste toepassingen van Azure Functions. U kunt de prestaties van de door Voer van uw toepassingen echter verbeteren door configuraties te gebruiken op basis van uw werkbelasting profiel. De eerste stap is het begrijpen van het type werk belasting dat u uitvoert.
 
-|| I/O-gebonden werk belasting | CPU-gebonden werk belasting |
-|--| -- | -- |
-|Kenmerken van functie-app| <ul><li>De app moet veel gelijktijdige aanroepen verwerken.</li> <li> Met de app worden een groot aantal I/O-gebeurtenissen verwerkt, zoals netwerk aanroepen en lees-en schrijf bewerkingen van de schijf.</li> </ul>| <ul><li>App voert langlopende berekeningen uit, zoals het wijzigen van de grootte van afbeeldingen.</li> <li>App maakt gegevens transformatie.</li> </ul> |
-|Voorbeelden| <ul><li>Web-API's</li><ul> | <ul><li>Gegevensverwerking</li><li> Machine learning-interferentie</li><ul>|
+| Type werk belasting | Kenmerken van functie-app       | Voorbeelden                                          |
+| ------------- | ---------------------------------- | ------------------------------------------------- |
+| **I/O-gebonden**     | • Er moeten veel gelijktijdige aanroepen door de app worden afgehandeld.<br>• Met de app worden een groot aantal I/O-gebeurtenissen verwerkt, zoals netwerk aanroepen en lees-en schrijf bewerkingen van de schijf. | • Web-Api's                                          |
+| **CPU-gebonden**     | • App voert langlopende berekeningen uit, zoals het wijzigen van de grootte van afbeeldingen.<br>• De app heeft gegevens transformatie.                                                | • Gegevens verwerking<br>• Machine learning-interferentie<br> |
 
  
 Omdat de werk belasting van de werkelijke wereld meestal een combi natie van I/O-en CPU-gebonden is, moet u de app profileren onder realistische productie belasting.

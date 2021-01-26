@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 10/14/2020
 ms.author: alkohli
-ms.openlocfilehash: f6daee6d4cfc3c074e004fb3835f62218e48d9ff
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 3bf137f968082e677f45c20947793232b9181220
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96582383"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786609"
 ---
 # <a name="use-cases-for-azure-data-box-gateway"></a>Gebruiks voorbeelden voor Azure Data Box Gateway
 
@@ -40,7 +40,7 @@ Wanneer het apparaat wordt gevuld met gegevens, begint het met het beperken van 
 
 Gebruik Data Box Gateway wanneer u uw gegevens lange termijn in de Cloud wilt bewaren. U kunt de archief laag van de opslag gebruiken voor lange termijn retentie.
 
-De archief laag is geoptimaliseerd voor het opslaan van gegevens die zelden worden gebruikt gedurende ten minste 180 dagen. De archief laag biedt de laagste opslag kosten, maar heeft de hoogste toegangs kosten. Ga naar de [Access-laag](/azure/storage/blobs/storage-blob-storage-tiers#archive-access-tier)van het Archief voor meer informatie.
+De archief laag is geoptimaliseerd voor het opslaan van gegevens die zelden worden gebruikt gedurende ten minste 180 dagen. De archief laag biedt de laagste opslag kosten, maar heeft de hoogste toegangs kosten. Ga naar de [Access-laag](../storage/blobs/storage-blob-storage-tiers.md#archive-access-tier)van het Archief voor meer informatie.
 
 ### <a name="move-data-to-the-archive-tier"></a>Gegevens verplaatsen naar de laag archief
 
@@ -48,14 +48,14 @@ Voordat u begint, moet u ervoor zorgen dat u een actief Data Box Gateway apparaa
 
 - Gebruik het Data Box Gateway apparaat om gegevens te uploaden naar Azure via de gebruikelijke procedure voor het overdragen van [gegevens via data Box gateway](data-box-gateway-deploy-add-shares.md).
 - Nadat de gegevens zijn geüpload, moet u deze naar de laag archief verplaatsen. U kunt de BLOB-laag op twee manieren instellen: door een Azure PowerShell script of Azure Storage levenscyclus beheer beleid te gebruiken.  
-    - Als u Azure PowerShell gebruikt, volgt u deze [stappen](/azure/databox/data-box-how-to-set-data-tier#use-azure-powershell-to-set-the-blob-tier) om de gegevens naar de laag archief te verplaatsen.
+    - Als u Azure PowerShell gebruikt, volgt u deze [stappen](../databox/data-box-how-to-set-data-tier.md#use-azure-powershell-to-set-the-blob-tier) om de gegevens naar de laag archief te verplaatsen.
     - Als u Azure levenscyclus beheer gebruikt, voert u deze stappen uit om de gegevens naar de laag archief te verplaatsen.
-        - [Meld](/azure/storage/common/storage-lifecycle-management-concepts) u aan voor de preview-versie van de BLOB-levenscyclus beheer service om de laag Archive te gebruiken.
-        - Gebruik het volgende beleid om [gegevens op opname te archiveren](/azure/storage/blobs/storage-lifecycle-management-concepts#archive-data-after-ingest).
+        - [Meld](../storage/blobs/storage-lifecycle-management-concepts.md) u aan voor de preview-versie van de BLOB-levenscyclus beheer service om de laag Archive te gebruiken.
+        - Gebruik het volgende beleid om [gegevens op opname te archiveren](../storage/blobs/storage-lifecycle-management-concepts.md#archive-data-after-ingest).
 - Zodra de blobs zijn gemarkeerd als Archive, kunnen ze niet meer worden gewijzigd door de gateway, tenzij ze worden verplaatst naar de laag warm of koude. Als het bestand zich in de lokale opslag bevindt, worden de wijzigingen die zijn aangebracht in de lokale kopie (inclusief verwijderingen) niet geüpload naar de archief laag.
 - Als u gegevens in archief opslag wilt lezen, moet u de gegevens opnieuw laten worden gehydrateerd door de BLOB-laag te wijzigen in Hot of cool. Als [de share](data-box-gateway-manage-shares.md#refresh-shares) op de gateway wordt vernieuwd, wordt de BLOB niet opnieuw gehydrateerd.
 
-Meer informatie over het [beheren van Azure Blob Storage Lifecycle](/azure/storage/common/storage-lifecycle-management-concepts).
+Meer informatie over het [beheren van Azure Blob Storage Lifecycle](../storage/blobs/storage-lifecycle-management-concepts.md).
 
 ## <a name="initial-bulk-transfer-followed-by-incremental-transfer"></a>Eerste bulk overdracht, gevolgd door incrementele overdracht
 
@@ -65,10 +65,10 @@ Gebruik Data Box en Data Box Gateway samen wanneer u een grote hoeveelheid gegev
 
 Volg deze stappen om de gegevens te kopiëren naar Data Box en te uploaden naar Azure Storage.
 
-1. [Bestel uw data Box](/azure/databox/data-box-deploy-ordered).
-2. [Stel uw data Box](/azure/databox/data-box-deploy-set-up)in.
-3. [Gegevens kopiëren naar Data box via SMB](/azure/databox/data-box-deploy-copy-data).
-4. [Ga terug naar de data box, Controleer of de gegevens uploadt naar Azure](/azure/databox/data-box-deploy-picked-up).
+1. [Bestel uw data Box](../databox/data-box-deploy-ordered.md).
+2. [Stel uw data Box](../databox/data-box-deploy-set-up.md)in.
+3. [Gegevens kopiëren naar Data box via SMB](../databox/data-box-deploy-copy-data.md).
+4. [Ga terug naar de data box, Controleer of de gegevens uploadt naar Azure](../databox/data-box-deploy-picked-up.md).
 5. Zodra het uploaden van gegevens naar Azure is voltooid, moeten alle gegevens zich in azure Storage-containers bevindt. Ga in het opslag account voor Data Box naar de container voor de BLOB (en het bestand) om ervoor te zorgen dat alle gegevens worden gekopieerd. Noteer de naam van de container, zoals u deze naam later gebruikt. In de volgende scherm afbeelding wordt bijvoorbeeld de `databox` container voor de incrementele overdracht gebruikt.
 
     ![Container met gegevens op Data Box](media/data-box-gateway-use-cases/data-container.png)

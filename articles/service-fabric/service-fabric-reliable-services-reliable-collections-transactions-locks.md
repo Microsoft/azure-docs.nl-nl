@@ -3,12 +3,12 @@ title: Trans acties en vergrendelings modi in betrouw bare verzamelingen
 description: Azure Service Fabric betrouw bare status Manager en betrouw bare incasso transacties en vergren deling.
 ms.topic: conceptual
 ms.date: 5/1/2017
-ms.openlocfilehash: 57ca46047641b79d5e4c50ede4a27e16dcec5d89
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 5d2cbb517ea5ca45697cd9124b82e9ef13dd32db
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96576720"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784339"
 ---
 # <a name="transactions-and-lock-modes-in-azure-service-fabric-reliable-collections"></a>Trans acties en vergrendelings modi in azure Service Fabric reliable-verzamelingen
 
@@ -18,7 +18,7 @@ Een trans actie is een opeenvolging van bewerkingen die worden uitgevoerd als é
 
 * **Atomiciteit**: een trans actie moet een atoom werk eenheid zijn. Met andere woorden, alle wijzigingen in de gegevens worden uitgevoerd, of ze worden niet uitgevoerd.
 * **Consistentie**: wanneer u klaar bent, moet een trans actie alle gegevens in een consistente status laten staan. Alle interne gegevens structuren moeten aan het einde van de trans actie juist zijn.
-* **Isolatie**: wijzigingen aangebracht door gelijktijdige trans acties moeten worden geïsoleerd van de wijzigingen die zijn aangebracht door andere gelijktijdige trans acties. Het isolatie niveau dat voor een bewerking binnen een [ITransaction](/dotnet/api/microsoft.servicefabric.data.itransaction?view=azure-dotnet) wordt gebruikt, wordt bepaald door de [IReliableState](/dotnet/api/microsoft.servicefabric.data.ireliablestate?view=azure-dotnet) die de bewerking uitvoert.
+* **Isolatie**: wijzigingen aangebracht door gelijktijdige trans acties moeten worden geïsoleerd van de wijzigingen die zijn aangebracht door andere gelijktijdige trans acties. Het isolatie niveau dat voor een bewerking binnen een [ITransaction](/dotnet/api/microsoft.servicefabric.data.itransaction) wordt gebruikt, wordt bepaald door de [IReliableState](/dotnet/api/microsoft.servicefabric.data.ireliablestate) die de bewerking uitvoert.
 * **Duurzaamheid**: nadat een trans actie is voltooid, zijn de gevolgen ervan permanent aanwezig in het systeem. De wijzigingen blijven behouden, zelfs in het geval van een systeem fout.
 
 ### <a name="isolation-levels"></a>Isolatieniveaus
@@ -84,4 +84,4 @@ In dit geval is er een time-out opgestaan voor een of beide bewerkingen. In dit 
 * [Reliable Services meldingen](service-fabric-reliable-services-notifications.md)
 * [Back-up en herstel (nood herstel) Reliable Services](service-fabric-reliable-services-backup-restore.md)
 * [Configuratie van betrouw bare status Manager](service-fabric-reliable-services-configuration.md)
-* [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+* [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

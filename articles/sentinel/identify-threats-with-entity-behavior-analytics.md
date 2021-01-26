@@ -12,25 +12,20 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 08/19/2020
+ms.date: 01/25/2021
 ms.author: yelevin
-ms.openlocfilehash: 2326746d274c68225cd4c8569df6a20d6050ec1a
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 7944ea48feaca1eb8312e01d876bf9627af429d1
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900889"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784792"
 ---
 # <a name="identify-advanced-threats-with-user-and-entity-behavior-analytics-ueba-in-azure-sentinel"></a>Geavanceerde bedreigingen met UEBA (User and entity Behavior Analytics) identificeren in azure Sentinel
 
 > [!IMPORTANT]
 >
-> - De functies UEBA en Entity pages zijn nu **algemeen beschikbaar** in de volgende Azure Sentinel-geografische gebieden en regio's:
->    - Verenigde Staten Geografie
->    - Regio Oost-West
->    - Geografie van Australië
->
-> - In alle andere geografische gebieden en regio's blijven deze functies gedurende de **Preview**-periode. Zie de [**aanvullende gebruiks voorwaarden voor Microsoft Azure previews**](https://azure.microsoft.com/support/legal/preview-supplemental-terms/) voor aanvullende juridische voor waarden die van toepassing zijn op Azure-functies die in bèta, preview of op andere wijze nog niet beschikbaar zijn in algemene Beschik baarheid.
+> - De functies UEBA en Entity pages zijn nu beschikbaar in de **algemene Beschik baarheid** in **_alle _ de_* Azure Sentinel-geografische gebieden en-regio's.
 
 ## <a name="what-is-user-and-entity-behavior-analytics-ueba"></a>Wat is UEBA (User and entity Behavior Analytics)?
 
@@ -50,7 +45,7 @@ Omdat Azure Sentinel logboeken en waarschuwingen van alle verbonden gegevens bro
 
 Azure Sentinel is geïnspireerd op het paradigma van Gartner voor UEBA-oplossingen en biedt een "buiten-in" benadering, op basis van drie referentie frames:
 
-- **Use cases:** Door prioriteit te geven aan relevante aanvals vectoren en-scenario's op basis van beveiligings onderzoek dat is afgestemd op Security Research, uitgelijnd met het MITRE ATT&verzonken Framework van tactieken, technieken en subtechnieken die verschillende entiteiten als slacht offers, Perpetrators of draaiings punten in de Kill-keten plaatsen; Azure Sentinel richt zich specifiek op de meest waardevolle logboeken die elke gegevens bron kan bieden.
+- _ *Use cases:** door prioriteiten te stellen voor relevante aanvals vectoren en scenario's op basis van beveiligings onderzoek dat is afgestemd op het MITRE att&verzonken Framework van tactieken, technieken en subtechnieken die verschillende entiteiten als slacht offers, Perpetrators of draaiings punten in de Kill-keten plaatsen; Azure Sentinel richt zich specifiek op de meest waardevolle logboeken die elke gegevens bron kan bieden.
 
 - **Gegevens bronnen:** Hoewel Azure-gegevens bronnen voor het eerst worden ondersteund, worden de gegevens bronnen van derden op basis van de eerste en beste ondersteuning geselecteerd om gegevens te leveren die overeenkomen met onze bedreigings scenario's.
 

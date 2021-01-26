@@ -3,12 +3,12 @@ title: Inleiding tot betrouw bare verzamelingen
 description: Service Fabric stateful services bieden betrouw bare verzamelingen waarmee u Maxi maal beschik bare Cloud toepassingen kunt schrijven die Maxi maal beschikbaar zijn.
 ms.topic: conceptual
 ms.date: 3/10/2020
-ms.openlocfilehash: 6e0f39b994087fe44038e62e85326945589c719a
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7d705f81b4ad31559886e43226febcd4cf1d345d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86245123"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784373"
 ---
 # <a name="introduction-to-reliable-collections-in-azure-service-fabric-stateful-services"></a>Inleiding tot betrouw bare verzamelingen in azure Service Fabric stateful Services
 
@@ -40,9 +40,9 @@ De betrouw bare verzamelingen-Api's zijn een evolutie van gelijktijdige verzamel
 
 Vandaag, **micro soft. ServiceFabric. data. Collections** bevat drie verzamelingen:
 
-* [Betrouw bare woorden lijst](/dotnet/api/microsoft.servicefabric.data.collections.ireliabledictionary-2?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliabledictionary_2): vertegenwoordigt een gerepliceerde, transactionele en asynchrone verzameling sleutel-waardeparen. Net als bij **ConcurrentDictionary**kunnen zowel de sleutel als de waarde van elk type zijn.
-* [Betrouw bare wachtrij](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1?view=azure-dotnet#microsoft_servicefabric_data_collections_ireliablequeue_1): vertegenwoordigt een FIFO-wachtrij (een gerepliceerde, transactionele en asynchrone strikte first-out). Net als bij **ConcurrentQueue**kan de waarde van elk type zijn.
-* [Betrouw bare gelijktijdige wachtrij](service-fabric-reliable-services-reliable-concurrent-queue.md): vertegenwoordigt een gerepliceerde, transactionele en asynchrone bestel wachtrij voor Best effort voor hoge door voer. Net als bij de **ConcurrentQueue**kan de waarde van elk type zijn.
+* [Betrouw bare woorden lijst](/dotnet/api/microsoft.servicefabric.data.collections.ireliabledictionary-2#microsoft_servicefabric_data_collections_ireliabledictionary_2): vertegenwoordigt een gerepliceerde, transactionele en asynchrone verzameling sleutel-waardeparen. Net als bij **ConcurrentDictionary** kunnen zowel de sleutel als de waarde van elk type zijn.
+* [Betrouw bare wachtrij](/dotnet/api/microsoft.servicefabric.data.collections.ireliablequeue-1#microsoft_servicefabric_data_collections_ireliablequeue_1): vertegenwoordigt een FIFO-wachtrij (een gerepliceerde, transactionele en asynchrone strikte first-out). Net als bij **ConcurrentQueue** kan de waarde van elk type zijn.
+* [Betrouw bare gelijktijdige wachtrij](service-fabric-reliable-services-reliable-concurrent-queue.md): vertegenwoordigt een gerepliceerde, transactionele en asynchrone bestel wachtrij voor Best effort voor hoge door voer. Net als bij de **ConcurrentQueue** kan de waarde van elk type zijn.
 
 ## <a name="next-steps"></a>Volgende stappen
 
@@ -50,11 +50,11 @@ Vandaag, **micro soft. ServiceFabric. data. Collections** bevat drie verzameling
 * [Werken met betrouwbare verzamelingen](service-fabric-work-with-reliable-collections.md)
 * [Trans acties en vergren delingen](service-fabric-reliable-services-reliable-collections-transactions-locks.md)
 * Gegevens beheren
-  * [Back-ups maken en herstellen](service-fabric-reliable-services-backup-restore.md)
+  * [Back-up en herstel](service-fabric-reliable-services-backup-restore.md)
   * [Meldingen](service-fabric-reliable-services-notifications.md)
   * [Betrouwbare verzamelingserialisatie](service-fabric-reliable-services-reliable-collections-serialization.md)
   * [Serialisatie en upgrade](service-fabric-application-upgrade-data-serialization.md)
   * [Configuratie van betrouw bare status Manager](service-fabric-reliable-services-configuration.md)
 * Andere
   * [Snelstartgids Reliable Services](service-fabric-reliable-services-quick-start.md)
-  * [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+  * [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)

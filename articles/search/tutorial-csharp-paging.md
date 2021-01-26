@@ -7,14 +7,14 @@ author: HeidiSteen
 ms.author: heidist
 ms.service: cognitive-search
 ms.topic: tutorial
-ms.date: 09/30/2020
+ms.date: 01/26/2021
 ms.custom: devx-track-js, devx-track-csharp
-ms.openlocfilehash: a08756a1e3153aa69bd0e79dc23e88d4bf211e5d
-ms.sourcegitcommit: a2d8acc1b0bf4fba90bfed9241b299dc35753ee6
-ms.translationtype: HT
+ms.openlocfilehash: bad4bc4d0016b2898b315bfb9799dc8972be7b12
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/12/2020
-ms.locfileid: "91950683"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785867"
 ---
 # <a name="tutorial-add-paging-to-search-results-using-the-net-sdk"></a>Zelfstudie: Paginering toevoegen aan zoekresultaten met behulp van de .NET SDK
 
@@ -304,7 +304,7 @@ Zorg dat u de oplossing voor eenvoudige zoekpagina's open hebt.
     }
     ```
 
-1. De **RunQueryAsync**-methode die in de vorige les is geïntroduceerd, moet worden gewijzigd om de syntaxisfout op te lossen. We gebruiken de velden**Skip**, **Size** en **IncludeTotalResultCount** van de klasse [**SearchOptions**](/dotnet/api/azure.search.documents.searchoptions) om slechts één pagina met resultaten op te vragen, beginnend bij de instelling **Skip**. We moeten ook de pagineringsvariabelen voor onze weergave berekenen. Vervang de volledige methode door de volgende code.
+1. De **RunQueryAsync**-methode die in de vorige les is geïntroduceerd, moet worden gewijzigd om de syntaxisfout op te lossen. We gebruiken de velden **Skip**, **Size** en **IncludeTotalResultCount** van de klasse [**SearchOptions**](/dotnet/api/azure.search.documents.searchoptions) om slechts één pagina met resultaten op te vragen, beginnend bij de instelling **Skip**. We moeten ook de pagineringsvariabelen voor onze weergave berekenen. Vervang de volledige methode door de volgende code.
 
     ```csharp
     private async Task<ActionResult> RunQueryAsync(SearchData model, int page, int leftMostPage)
@@ -413,7 +413,7 @@ Om oneindig schuiven te implementeren, beginnen we met het project voordat een v
 
 ### <a name="add-paging-fields-to-the-model"></a>Pagineringsvelden toevoegen aan het model
 
-1. Voeg eerst een **paginerings**eigenschap toe aan de klasse **SearchData** (in het modelbestand SearchData.cs).
+1. Voeg eerst een **paginerings** eigenschap toe aan de klasse **SearchData** (in het modelbestand SearchData.cs).
 
     ```csharp
     // Record if the next page is requested.

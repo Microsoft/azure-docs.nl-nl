@@ -7,12 +7,12 @@ ms.reviewer: jehollan, klam, logicappspm
 ms.topic: article
 ms.date: 11/08/2019
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 25f761d85ebfd0ac16f182941c5b5c29636066bf
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a7df9ba1318f40de8af392cfaedbe51d7a5df755
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000331"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784930"
 ---
 # <a name="call-or-trigger-logic-apps-by-using-azure-functions-and-azure-service-bus"></a>Logische apps aanroepen of activeren met behulp van Azure Functions en Azure Service Bus
 
@@ -24,7 +24,7 @@ U kunt [Azure functions](../azure-functions/functions-overview.md) gebruiken om 
 
 * Een Azure Service Bus naam ruimte. Als u geen naam ruimte hebt, moet u [eerst uw naam ruimte maken](../service-bus-messaging/service-bus-create-namespace-portal.md).
 
-* Een functie-app, een container voor uw functies. Als u geen functie-app hebt, [maakt u eerst uw functie-app](../azure-functions/functions-create-first-azure-function.md)en zorgt u ervoor dat u .net selecteert als runtime stack.
+* Een functie-app, een container voor uw functies. Als u geen functie-app hebt, [maakt u eerst uw functie-app](../azure-functions/functions-get-started.md)en zorgt u ervoor dat u .net selecteert als runtime stack.
 
 * Basis kennis over [het maken van logische apps](../logic-apps/quickstart-create-first-logic-app-workflow.md)
 

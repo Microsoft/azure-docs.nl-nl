@@ -10,12 +10,12 @@ ms.author: mimart
 author: msmimart
 manager: celested
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 2472183673e5f06f5664a306a69d14c2eaf5f82d
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: 654206bccd25bf09fcdc5c3e7ee72ba97c75af2a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94949765"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785478"
 ---
 # <a name="set-up-identity-protection-and-conditional-access-in-azure-ad-b2c"></a>Identiteitsbeveiliging en voorwaardelijke toegang instellen in Azure AD B2C
 
@@ -94,9 +94,7 @@ Als u een beleid voor voorwaardelijke toegang wilt toevoegen op basis van de ris
 
 1. Selecteer **Voorwaardelijke toegang (preview)** onder **Beveiliging**. De pagina **Beleid voor voorwaardelijke toegang** wordt geopend. 
 
-1. Selecteer **Nieuw beleid** en volg de documentatie voor voorwaardelijke toegang van Azure AD om een nieuw beleid te maken. Hier volgt een voorbeeld:
-
-   - [Aanmelden met voorwaardelijke toegang op basis van risico's: Inschakelen met beleid voor voorwaardelijke toegang](../active-directory/conditional-access/howto-conditional-access-policy-risk.md#enable-with-conditional-access-policy)
+1. Selecteer **Nieuw beleid** en volg de documentatie voor voorwaardelijke toegang van Azure AD om een nieuw beleid te maken. Voor beleids regels op basis van Risico's moet u afzonderlijke beleids regels configureren op basis van [gebruikers risico](../active-directory/conditional-access/howto-conditional-access-policy-risk-user.md#enable-with-conditional-access-policy) of [aanmeldings risico](../active-directory/conditional-access/howto-conditional-access-policy-risk.md#enable-with-conditional-access-policy) , afhankelijk van het type risico dat u als voor waarde wilt gebruiken. Het is niet raadzaam beide risico typen in één beleids regel te gebruiken.
 
    > [!IMPORTANT]
    > Wanneer u de gebruikers selecteert waarop u het beleid wilt toepassen, selecteert u niet alleen **Alle gebruikers**, want u kunt uw eigen aanmelding dan blokkeren.

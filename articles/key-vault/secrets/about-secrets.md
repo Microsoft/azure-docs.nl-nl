@@ -10,12 +10,12 @@ ms.subservice: secrets
 ms.topic: overview
 ms.date: 09/04/2019
 ms.author: mbaldwin
-ms.openlocfilehash: 4ded48fe8f04d2cdba40650974fd5002d659e381
-ms.sourcegitcommit: e7152996ee917505c7aba707d214b2b520348302
-ms.translationtype: HT
+ms.openlocfilehash: 78e9c50cb0601f6be69ae61f3a8e02621c7dd808
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/20/2020
-ms.locfileid: "97705265"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786036"
 ---
 # <a name="about-azure-key-vault-secrets"></a>Over Azure Key Vault-geheimen
 
@@ -84,7 +84,7 @@ U kunt aanvullende toepassingsspecifieke metagegevens opgeven in de vorm van tag
 
 ## <a name="azure-storage-account-key-management"></a>Azure Storage-accountsleutelbeheer
 
-In Key Vault kunnen [Azure Storage-accountsleutels](https://docs.microsoft.com/azure/storage/common/storage-account-overview) worden beheerd:
+In Key Vault kunnen [Azure Storage-accountsleutels](../../storage/common/storage-account-overview.md) worden beheerd:
 
 - Intern kan Key Vault sleutels synchroniseren met een Azure Storage-account. 
 - Key Vault genereert de sleutels regelmatig opnieuw (roteren van sleutels).
@@ -92,7 +92,7 @@ In Key Vault kunnen [Azure Storage-accountsleutels](https://docs.microsoft.com/a
 - Key Vault beheert sleutels voor opslagaccounts en klassieke opslagaccounts.
 
 Zie voor meer informatie:
-- [Toegangssleutels voor opslagaccount](https://docs.microsoft.com/azure/storage/common/storage-account-keys-manage)
+- [Toegangssleutels voor opslagaccount](../../storage/common/storage-account-keys-manage.md)
 - [Beheer van opslagaccountsleutels in Azure Key Vault ](../secrets/overview-storage-keys.md))
 
 

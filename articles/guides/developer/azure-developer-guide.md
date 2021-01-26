@@ -14,12 +14,12 @@ ms.devlang: na
 ms.topic: article
 ms.date: 11/18/2019
 ms.author: glenga
-ms.openlocfilehash: 9999b2fa116a2336f8e50fb166e5d870ae4b5a5f
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: a193ccd060c75cf4031449ddf3318af6e4691436
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165056"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786466"
 ---
 # <a name="get-started-guide-for-azure-developers"></a>Introductiehandleiding voor Azure-ontwikkelaars
 
@@ -84,7 +84,7 @@ In plaats van dat u zich zorgen hoeft te maken over het bouwen en beheren van ee
 
 > **Wanneer gebruiken**: gebruik Azure functions wanneer u code hebt die wordt geactiveerd door andere Azure-Services, op webgebaseerde gebeurtenissen of op basis van een schema. U kunt ook functies gebruiken wanneer u de overhead van een volledig gehost project niet nodig hebt of wanneer u alleen wilt betalen voor de tijd dat uw code wordt uitgevoerd. Zie [Azure functions-overzicht](../../azure-functions/functions-overview.md)voor meer informatie.
 >
-> **Aan de slag**: Volg de zelf studie over functies Snelstartgids om [uw eerste functie te maken](../../azure-functions/functions-create-first-azure-function.md) vanuit de portal.
+> **Aan de slag**: Volg de zelf studie over functies Snelstartgids om [uw eerste functie te maken](../../azure-functions/functions-get-started.md) vanuit de portal.
 >
 > **Nu uitproberen**: met Azure functions kunt u uw code uitvoeren zonder dat u zich hoeft aan te melden voor een Azure-account. Probeer het nu op en [Maak uw eerste Azure-functie](https://tryappservice.azure.com/).
 

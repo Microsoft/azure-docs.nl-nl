@@ -4,12 +4,12 @@ description: Meer informatie over de serialisatie van Azure Service Fabric relia
 ms.topic: conceptual
 ms.date: 5/8/2017
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 1d29f5d3391bdea0b21997a392d4d2e053b7ec65
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 29bb9a2dfb028d223d63559b35735e78d7e6bcf8
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89018617"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784356"
 ---
 # <a name="reliable-collection-object-serialization-in-azure-service-fabric"></a>Betrouw bare serialisatie van verzamelings objecten in azure Service Fabric
 Betrouw bare verzamelingen repliceren en blijven hun items om ervoor te zorgen dat ze duurzaam zijn in de machine storingen en stroom uitval.
@@ -20,7 +20,7 @@ Betrouw bare status beheerder bevat ingebouwde serialisatiefuncties en kan aange
 
 ## <a name="built-in-serializers"></a>Ingebouwde Serialisatiefunctie
 
-Betrouw bare status Manager bevat een ingebouwde serialisatiefunctie voor een aantal algemene typen, zodat deze standaard efficiënt kunnen worden geserialiseerd. Voor andere typen is betrouw bare status beheer terugvallen op het gebruik van de [DataContractSerializer](/dotnet/api/system.runtime.serialization.datacontractserializer?view=netcore-3.1).
+Betrouw bare status Manager bevat een ingebouwde serialisatiefunctie voor een aantal algemene typen, zodat deze standaard efficiënt kunnen worden geserialiseerd. Voor andere typen is betrouw bare status beheer terugvallen op het gebruik van de [DataContractSerializer](/dotnet/api/system.runtime.serialization.datacontractserializer).
 Ingebouwde serialisatiefuncties zijn efficiënter omdat ze weten dat hun typen niet kunnen worden gewijzigd en ze hoeven geen informatie over het type op te nemen zoals de type naam ervan.
 
 Betrouw bare status Manager heeft ingebouwde serialisatiefunctie voor de volgende typen: 
@@ -140,7 +140,7 @@ Op deze manier kan elke versie zoveel mogelijk worden gelezen en over het rester
 
 ## <a name="next-steps"></a>Volgende stappen
   * [Serialisatie en upgrade](service-fabric-application-upgrade-data-serialization.md)
-  * [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections?view=azure-dotnet#microsoft_servicefabric_data_collections)
+  * [Naslag informatie voor ontwikkel aars voor betrouw bare verzamelingen](/dotnet/api/microsoft.servicefabric.data.collections#microsoft_servicefabric_data_collections)
   * Als u een [upgrade uitvoert van uw toepassing met behulp van Visual Studio](service-fabric-application-upgrade-tutorial.md) , wordt u begeleid bij een toepassings upgrade met Visual Studio.
   * Als u uw toepassing bijwerkt [met Power shell](service-fabric-application-upgrade-tutorial-powershell.md) , kunt u een toepassings upgrade uitvoeren met behulp van Power shell.
   * Bepalen hoe uw toepassing wordt bijgewerkt met behulp van [upgrade parameters](service-fabric-application-upgrade-parameters.md).

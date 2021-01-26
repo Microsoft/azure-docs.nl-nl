@@ -3,12 +3,12 @@ title: Een beheerd Service Fabric-cluster uitbreiden (preview)
 description: In deze zelfstudie leert u hoe u een knooppunttype van een beheer Service Fabric-cluster uitbreidt.
 ms.topic: tutorial
 ms.date: 09/28/2020
-ms.openlocfilehash: 01b299744d462496296884211eff08b7a9c64687
-ms.sourcegitcommit: ce8eecb3e966c08ae368fafb69eaeb00e76da57e
-ms.translationtype: HT
+ms.openlocfilehash: 769bcb339b2cc1419c7a3d92d0f08130029a9f95
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92316144"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785428"
 ---
 # <a name="tutorial-scale-out-a-service-fabric-managed-cluster-preview"></a>Zelfstudie: Een beheerd Service Fabric-cluster uitbreiden (preview)
 
@@ -28,7 +28,7 @@ In dit deel van de serie wordt het volgende uitgelegd:
 ## <a name="prerequisites"></a>Vereisten
 
 * Een beheerd Service Fabric-cluster (zie [*Een beheerd cluster implementeren*](tutorial-managed-cluster-deploy.md)).
-* [Azure PowerShell 4.7.0](/powershell/azure/release-notes-azureps?preserve-view=true&view=azps-4.7.0#azservicefabric) of hoger (zie [*Azure PowerShell installeren*](/powershell/azure/install-az-ps?preserve-view=true&view=azps-4.7.0)).
+* [Azure PowerShell 4.7.0](/powershell/azure/release-notes-azureps#azservicefabric) of hoger (zie [*Azure PowerShell installeren*](/powershell/azure/install-az-ps)).
 
 ## <a name="scale-a-service-fabric-managed-cluster"></a>Een beheerd Service Fabric-cluster schalen
 Wijzig het aantal instanties om het aantal knooppunten op het knooppunttype dat u wilt schalen, te verhogen of te verlagen. De namen van knooppunttypen vindt u in de Azure Resource Manager-sjabloon (ARM-sjabloon) van de clusterimplementatie of in de Service Fabric Explorer.  

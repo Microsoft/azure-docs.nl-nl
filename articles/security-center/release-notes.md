@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 01/25/2021
 ms.author: memildin
-ms.openlocfilehash: 349f0b72ad7f3cb98e8f4ae9105efa9718f0b11b
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: ee9a20d3e5bb6974676d6d7a8285a56247756f64
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98752238"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784944"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -39,6 +39,7 @@ De updates in januari zijn onder andere:
 - [Evaluatie van beveiligings problemen voor on-premises en multi-Cloud machines wordt uitgebracht voor algemene Beschik baarheid (GA)](#vulnerability-assessment-for-on-premise-and-multi-cloud-machines-is-released-for-general-availability-ga)
 - [Beveiligde score voor beheer groepen is nu beschikbaar als preview-versie](#secure-score-for-management-groups-is-now-available-in-preview)
 - [Secure Score-API wordt uitgebracht voor algemene Beschik baarheid (GA)](#secure-score-api-is-released-for-general-availability-ga)
+- [Dangling DNS-beveiligingen die zijn toegevoegd aan Azure Defender voor App Service](#dangling-dns-protections-added-to-azure-defender-for-app-service)
 - [Multi-Cloud connectors worden uitgebracht voor algemene Beschik baarheid (GA)](#multi-cloud-connectors-are-released-for-general-availability-ga)
 - [Volledige aanbevelingen uitsluiten van uw beveiligde score voor abonnementen en beheer groepen](#exempt-entire-recommendations-from-your-secure-score-for-subscriptions-and-management-groups)
 - [Gebruikers kunnen nu de Tenant-brede zicht baarheid aanvragen bij hun globale beheerder](#users-can-now-request-tenant-wide-visibility-from-their-global-administrator)
@@ -94,7 +95,7 @@ Belangrijkste functies:
 
 Op de pagina beveiligde Score worden nu de geaggregeerde beveiligde scores voor uw beheer groepen weer gegeven naast het abonnements niveau. Nu ziet u de lijst met beheer groepen in uw organisatie en de score voor elke beheer groep.
 
-:::image type="content" source="media/secure-score-security-controls/secure-score-management-groups.png" alt-text="Bekijk de beveiligde scores voor u-beheer groepen.":::
+:::image type="content" source="media/secure-score-security-controls/secure-score-management-groups.png" alt-text="De beveiligde scores voor uw beheer groepen weer geven.":::
 
 Meer informatie over [beveiligingsscore en besturingselementen voor beveiliging in Azure Security Center](secure-score-security-controls.md).
 
@@ -107,13 +108,28 @@ Zie [het gebied voor beveiligingsscores van onze GitHub-community](https://githu
 Meer informatie over [beveiligingsscore en besturingselementen voor beveiliging in Azure Security Center](secure-score-security-controls.md).
 
 
+### <a name="dangling-dns-protections-added-to-azure-defender-for-app-service"></a>Dangling DNS-beveiligingen die zijn toegevoegd aan Azure Defender voor App Service
+
+De overname van subdomeinen is een veelvoorkomende bedreiging van hoge urgentie voor organisaties. Een overname van een subdomein kan optreden wanneer u een DNS-record hebt die naar een website van een onvoorziene inrichting wijst. Dergelijke DNS-records worden ook wel ' Dangling DNS-vermeldingen genoemd. CNAME-records zijn met name gevoelig voor deze bedreiging. 
+
+Met de overname van subdomeinen kunnen bedreigings gegevens verkeer dat is bedoeld voor het domein van een organisatie, omleiden naar een site die schadelijke activiteiten uitvoert.
+
+Azure Defender voor App Service detecteert nu Dangling DNS-vermeldingen wanneer een App Service website buiten gebruik wordt gesteld. Dit is het moment waarop de DNS-vermelding verwijst naar een niet-bestaande resource en uw website kwetsbaar is voor een overname van een subdomein. Deze beveiligingen zijn beschikbaar, ongeacht of uw domeinen worden beheerd met Azure DNS of een extern domein registratie en van toepassing zijn op zowel App Service op Windows als App Service in Linux.
+
+Meer informatie:
+
+- [Naslag tabel voor app service-waarschuwing](alerts-reference.md#alerts-azureappserv) : bevat twee nieuwe Azure Defender-waarschuwingen die worden geactiveerd wanneer een DNS-vermelding van Dangling wordt gedetecteerd
+- [Dangling DNS-vermeldingen voor komen en de overname van subdomeinen voor komen](../security/fundamentals/subdomain-takeover.md) -informatie over de dreiging van de beveiliging van subdomeinen en het DNS-aspect van Dangling
+- [Inleiding tot Azure Defender voor App Service](defender-for-app-service-introduction.md)
+
+
 ### <a name="multi-cloud-connectors-are-released-for-general-availability-ga"></a>Multi-Cloud connectors worden uitgebracht voor algemene Beschik baarheid (GA)
 
 Veel workloads in de cloud beslaan meerdere cloudplatforms, dus moeten cloudbeveiligingsservices hetzelfde doen.
 
 Azure Security Center biedt bescherming voor workloads in Azure, Amazon Web Services (AWS) en Google Cloud Platform (GCP).
 
-Het verbinden van uw AWS-of GCP-accounts integreert de systeem eigen beveiligings Programma's, zoals AWS Security hub en GCP Security-opdracht centrum in Azure Security Center.
+Het koppelen van uw AWS-of GCP-accounts integreert de systeem eigen beveiligings Programma's, zoals AWS Security hub en GCP Security Command Center in Azure Security Center.
 
 Dit betekent dat Security Center zicht baarheid en bescherming biedt in alle grote Cloud omgevingen. Enkele van de voor delen van deze integratie:
 
@@ -153,7 +169,7 @@ Meer informatie over [het uitsluiten van resources en aanbevelingen van uw bevei
 
 ### <a name="users-can-now-request-tenant-wide-visibility-from-their-global-administrator"></a>Gebruikers kunnen nu de Tenant-brede zicht baarheid aanvragen bij hun globale beheerder
 
-Als een gebruiker geen machtigingen heeft om Security Center gegevens weer te geven, zien ze nu een koppelings aanvraag machtigingen van de globale beheerder van de organisatie. De aanvraag bevat de gewenste rol en de reden waarom het nodig is.
+Als een gebruiker geen machtigingen heeft om Security Center gegevens weer te geven, ziet u nu een koppeling om machtigingen aan te vragen bij de globale beheerder van de organisatie. De aanvraag bevat de gewenste rol en de reden waarom het nodig is.
 
 :::image type="content" source="media/security-center-management-groups/request-tenant-permissions.png" alt-text="Vaandel dat een gebruiker informeert, kan de machtigingen voor de hele Tenant aanvragen.":::
 
@@ -369,7 +385,7 @@ Deze hulpprogramma's zijn verbeterd en uitgebreid op de volgende manieren:
 
 - **Het deployifnotexist-beleid van continue export is verbeterd**. Het beleid is nu:
 
-    - **Controleer of de configuratie is ingeschakeld.** Als dat niet het geval is, wordt het beleid weergegeven als niet-compatibel en wordt er een compatibele resource gemaakt. Meer informatie over de meegeleverde Azure Policy-sjablonen vind u in het tabblad 'Implementeren op schaal met Azure Policy' in [Een continue export instellen](continuous-export.md#set-up-a-continuous-export).
+    - **Controleer of de configuratie is ingeschakeld.** Als dat niet het geval is, wordt het beleid weergegeven als niet-compatibel en wordt er een compatibele resource gemaakt. Meer informatie over de meegeleverde Azure Policy sjablonen vindt u in het tabblad ' implementeren op schaal met Azure Policy ' in [een continue export instellen](continuous-export.md#set-up-a-continuous-export).
 
     - **Ondersteuning voor het exporteren van beveiligingsresultaten.** Wanneer u de Azure Policy sjablonen gebruikt, kunt u uw continue export configureren om bevindingen op te stellen. Dit is relevant bij het exporteren van aanbevelingen met 'subaanbevelingen' (zoals bevindingen van scanners voor beveiligingsevaluatie) of specifieke systeemupdates voor de 'hoofdaanbeveling': "Systeemupdates moeten op uw computers worden geïnstalleerd".
     
@@ -389,7 +405,7 @@ Updates in november omvatten:
 - [Er zijn filters opgenomen in de lijst met aanbevelingen](#recommendations-list-now-includes-filters)
 - [De ervaring voor automatische inrichting is verbeterd en uitgebreid](#auto-provisioning-experience-improved-and-expanded)
 - [Beveiligingsscore is nu beschikbaar in continue export (preview)](#secure-score-is-now-available-in-continuous-export-preview)
-- [De aanbeveling 'Er moeten systeemupdates worden geïnstalleerd op uw computers' bevat nu subaanbevelingen](#system-updates-should-be-installed-on-your-machines-recommendation-now-includes-sub-recommendations)
+- [Aanbeveling ' systeem updates moeten worden geïnstalleerd op de computers ' bevat nu subaanbevelingen](#system-updates-should-be-installed-on-your-machines-recommendation-now-includes-subrecommendations)
 - [Op de pagina Beleidsbeheer in de Azure-portal wordt nu de status van standaardbeleidstoewijzingen weergegeven](#policy-management-page-in-the-azure-portal-now-shows-status-of-default-policy-assignments)
 
 ### <a name="29-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark"></a>Er zijn 29 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen
@@ -468,13 +484,13 @@ Met continue export van de beveiligingsscore kunt u wijzigingen in uw score in r
 Meer informatie over hoe u [Security Center-gegevens continue exporteert](continuous-export.md).
 
 
-### <a name="system-updates-should-be-installed-on-your-machines-recommendation-now-includes-sub-recommendations"></a>De aanbeveling 'Er moeten systeemupdates worden geïnstalleerd op uw computers' bevat nu subaanbevelingen
+### <a name="system-updates-should-be-installed-on-your-machines-recommendation-now-includes-subrecommendations"></a>Aanbeveling ' systeem updates moeten worden geïnstalleerd op de computers ' bevat nu subaanbevelingen
 
-De aanbeveling **Er moeten systeemupdates worden geïnstalleerd op uw computers** is verbeterd. De nieuwe versie omvat subaanbevelingen voor elke ontbrekende update en biedt de volgende verbeteringen:
+De aanbeveling **Er moeten systeemupdates worden geïnstalleerd op uw computers** is verbeterd. De nieuwe versie bevat subaanbevelingen voor elke ontbrekende update en biedt de volgende verbeteringen:
 
 - Een opnieuw ontworpen ervaring op de Azure Security Center-pagina's van Azure Portal. De pagina met aanbevelingsinformatie voor **Er moeten systeemupdates worden geïnstalleerd op uw computer** bevat de lijst met resultaten zoals hieronder wordt weergegeven. Wanneer u één resultaat selecteert, wordt het deelvenster Details geopend met een koppeling naar de herstelgegevens en een lijst met betrokken resources.
 
-    :::image type="content" source="./media/upcoming-changes/system-updates-should-be-installed-subassessment.png" alt-text="Een van de subaanbevelingen in de portalervaring openen voor de bijgewerkte aanbeveling":::
+    :::image type="content" source="./media/upcoming-changes/system-updates-should-be-installed-subassessment.png" alt-text="Het openen van een van de aanbevelingen in de portal-ervaring voor de bijgewerkte aanbeveling":::
 
 - Uitgebreide gegevens voor de aanbeveling van Azure Resource Graph (ARG). ARG is een Azure-service die is ontworpen voor efficiëntere resourceverkenning. U kunt ARG gebruiken om op schaal een query uit te voeren in een bepaalde set abonnementen, zodat u uw omgeving effectief kunt beheren. 
 
@@ -560,7 +576,7 @@ Voor Azure Security Center kunt u gebruikmaken van ARG en de [Kusto Query Langua
 - De assetvoorraad maakt gebruik van ARG
 - Er is een voorbeeld van een ARG-query gedocumenteerd voor het [identificeren van accounts zonder dat MFA (meervoudige verificatie) is ingeschakeld](security-center-identity-access.md#identify-accounts-without-multi-factor-authentication-mfa-enabled)
 
-ARG bevat tabellen met gegevens die u in uw query's kunt gebruiken.
+Binnen ARG zijn er tabellen met gegevens die u in uw query's kunt gebruiken.
 
 :::image type="content" source="./media/release-notes/azure-resource-graph-tables.png" alt-text="Azure Resource Graph Explorer en de beschikbare tabellen":::
 
@@ -716,7 +732,7 @@ Meer informatie vindt u in [Azure Defender voor Key Vault](defender-for-key-vaul
 
 Ondersteuning voor [Azure Files](../storage/files/storage-files-introduction.md) en [Azure Data Lake Storage Gen2](../storage/blobs/data-lake-storage-introduction.md) is nu algemeen beschikbaar.
 
-Vanaf 1 oktober 2020 gaan we kosten in rekening brengen voor de beveiliging van resources in deze services.
+Van 1 oktober 2020 beginnen we met de beveiliging van resources op deze services.
 
 Meer informatie vindt u in [Azure Defender voor Storage](defender-for-storage-introduction.md).
 
@@ -826,7 +842,7 @@ De volgende beveiligingsaanbevelingen met betrekking tot netwerkbeveiligingsgroe
 
 De preview-aanbeveling 'Beveiligingsbeleid voor pods moet worden gedefinieerd voor Kubernetes Services' wordt afgeschaft zoals beschreven in de documentatie van [Azure Kubernetes Service](../aks/use-pod-security-policies.md).
 
-De functie voor beveiligingsbeleid voor pods (preview) wordt afgeschaft en is na 15 oktober 2020 niet langer beschikbaar in Azure Policy voor AKS.
+De functie beveiligings beleid voor pod (preview) is ingesteld voor afschaffing en is na 15 oktober 2020 niet langer beschikbaar voor Azure Policy voor AKS.
 
 Nadat de functie voor beveiligingsbeleid voor pods (preview) is afgeschaft, moet u de functie op alle bestaande clusters uitschakelen met behulp van de afgeschafte functie om toekomstige clusterupgrades uit te voeren en de ondersteuning van Azure te kunnen blijven gebruiken.
 
@@ -973,4 +989,4 @@ De vroege fase van dit project bevat een beperkte preview en het toevoegen van n
 U kunt dit beleid veilig negeren en dit heeft geen invloed op uw omgeving. Als u het wilt inschakelen, meldt u zich voor de preview-versie aan op https://aka.ms/SecurityPrP en selecteert u een van de volgende opties:
 
 1. **Enkele preview-** : alleen deelnemen aan deze beperkte preview. Vermeld expliciet 'ASC doorlopend scannen' als de preview waaraan u wilt deelnemen.
-1. **Doorlopend programma**: om deel te nemen aan deze en toekomstige beperkte previews. U moet een profiel en een privacyverklaring invullen.
+1. **Doorlopend programma**: om deel te nemen aan deze en toekomstige beperkte previews. U moet een profiel en een privacyverklaring volt ooien.

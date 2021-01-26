@@ -7,12 +7,12 @@ ms.date: 1/20/2021
 ms.topic: how-to
 ms.service: iot-pnp
 services: iot-pnp
-ms.openlocfilehash: b7947eab93ebc8e523e163af601893522132e06a
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 4612e1236af5fbe47db9a3569e2f4da2378017e2
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98745664"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784894"
 ---
 # <a name="build-and-deploy-the-iot-plug-and-play-bridge"></a>De IoT Plug en Play-brug bouwen en implementeren
 
@@ -212,7 +212,7 @@ Voor het volt ooien van deze sectie hebt u een Azure IoT hub met een gratis of S
 
 Bij de stappen in deze sectie wordt ervan uitgegaan dat u de volgende ontwikkel omgeving op een Windows 10-computer hebt. Met deze hulpprogram ma's kunt u een IoT Edge module bouwen en implementeren op uw IoT Edge-apparaat:
 
-- Windows-subsysteem voor Linux (WSL) 2 met Ubuntu 18,04 LTS. Zie de [installatie handleiding voor het Windows-subsysteem voor Linux voor Windows 10](https://docs.microsoft.com/windows/wsl/install-win10)voor meer informatie.
+- Windows-subsysteem voor Linux (WSL) 2 met Ubuntu 18,04 LTS. Zie de [installatie handleiding voor het Windows-subsysteem voor Linux voor Windows 10](/windows/wsl/install-win10)voor meer informatie.
 - Docker Desktop voor Windows dat is geconfigureerd voor het gebruik van WSL 2. Zie [docker Desktop WSL 2 backend](https://docs.docker.com/docker-for-windows/wsl/)voor meer informatie.
 - [Visual Studio-code die in uw Windows-omgeving is geïnstalleerd](https://code.visualstudio.com/docs/setup/windows) en waarop de volgende drie uitbrei dingen zijn geïnstalleerd:
 

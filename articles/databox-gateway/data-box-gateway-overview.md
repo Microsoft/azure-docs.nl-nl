@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: overview
 ms.date: 08/21/2019
 ms.author: alkohli
-ms.openlocfilehash: aa68b746ef5c22c97fcfdcca889bf71577c19479
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
-ms.translationtype: HT
+ms.openlocfilehash: adb0e12b81701acbdb33018f055bfe8fda2efc52
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96583208"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786636"
 ---
 # <a name="what-is-azure-data-box-gateway"></a>Wat is Azure Data Box Gateway?
 
@@ -89,7 +89,7 @@ De Data Box Gateway-oplossing bestaat uit een Data Box Gateway-resource, een vir
 
 Het fysieke Data Box Gateway-apparaat, de Azure-resource en het doelopslagaccount waarnaar u gegevens overdraagt, hoeven zich niet allemaal in dezelfde regio te bevinden.
 
-- **Beschikbaarheid van resources**: ga voor een lijst van alle regio's waar de Azure Data Box Gateway-resource beschikbaar is naar [Azure-producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=databox). Data Box Gateway kan ook in de Azure Government Cloud worden geïmplementeerd. Zie [Wat is Azure Government?](https://docs.microsoft.com/azure/azure-government/documentation-government-welcome) voor meer informatie.
+- **Beschikbaarheid van resources**: ga voor een lijst van alle regio's waar de Azure Data Box Gateway-resource beschikbaar is naar [Azure-producten beschikbaar per regio](https://azure.microsoft.com/global-infrastructure/services/?regions=all&products=databox). Data Box Gateway kan ook in de Azure Government Cloud worden geïmplementeerd. Zie [Wat is Azure Government?](../azure-government/documentation-government-welcome.md) voor meer informatie.
 
 - **Doelopslagaccounts**: De opslagaccounts waarin de gegevens worden opgeslagen, zijn beschikbaar in alle Azure-regio’s.
 
@@ -101,4 +101,3 @@ Het fysieke Data Box Gateway-apparaat, de Azure-resource en het doelopslagaccoun
 - Lees de [Systeemvereisten voor Data Box Gateway](data-box-gateway-system-requirements.md).
 - Begrijp de [limieten voor Data Box Gateway](data-box-gateway-limits.md).
 - Implementeer [Azure Data Box Gateway](data-box-gateway-deploy-prep.md) in de Azure Portal.
-

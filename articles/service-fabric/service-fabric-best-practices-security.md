@@ -5,12 +5,12 @@ author: peterpogorski
 ms.topic: conceptual
 ms.date: 01/23/2019
 ms.author: pepogors
-ms.openlocfilehash: 90ffd1c01411982f56aed3332c499aa0c10b8a94
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b7af0a4c26a47644973e936eb37e221853d74c03
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86257600"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784660"
 ---
 # <a name="azure-service-fabric-security"></a>Azure Service Fabric-beveiliging 
 
@@ -56,7 +56,7 @@ Als u certificaten van een met co-locatie bewerkings sleutel wilt implementeren 
 
 ## <a name="apply-an-access-control-list-acl-to-your-certificate-for-your-service-fabric-cluster"></a>Een Access Control-lijst (ACL) Toep assen op uw certificaat voor uw Service Fabric cluster
 
-[Extensies voor virtuele-machine schaal sets](/cli/azure/vmss/extension?view=azure-cli-latest) Publisher micro soft. Azure. ServiceFabric wordt gebruikt voor het configureren van de beveiliging van uw knoop punten.
+[Extensies voor virtuele-machine schaal sets](/cli/azure/vmss/extension) Publisher micro soft. Azure. ServiceFabric wordt gebruikt voor het configureren van de beveiliging van uw knoop punten.
 Als u een ACL wilt Toep assen op uw certificaten voor uw Service Fabric cluster processen, gebruikt u de volgende eigenschappen van de Resource Manager-sjabloon:
 
 ```json

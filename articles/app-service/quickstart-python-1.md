@@ -6,18 +6,16 @@ ms.date: 09/22/2020
 ms.custom: seo-python-october2019, cli-validate, devx-track-python, devx-track-azurecli
 zone_pivot_groups: python-frameworks-01
 robots: noindex
-ms.openlocfilehash: ed2bd3f3bab81f6be56508a203600ec479cc20b6
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
-ms.translationtype: HT
+ms.openlocfilehash: ea320938f3e4f3b2d257947f605bb3b3f6f0886a
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98134480"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786205"
 ---
 # <a name="quickstart-create-a-python-app-in-azure-app-service-on-linux"></a>Quickstart: Een Python-app maken in Azure App Service op Linux
 
 In deze quickstart implementeert u een Python-web-app op [App Service op Linux](overview.md#app-service-on-linux), een uiterst schaalbare webhostingservice van Azure. Gebruik de lokale [Azure-opdrachtregelinterface (CLI)](/cli/azure/install-azure-cli) op een Mac-, Linux- of Windows-computer om een voorbeeld te implementeren met behulp van deFlask- of Django-frameworks. De web-app die u configureert, maakt gebruik van een gratis App Service-laag, zodat u geen kosten opdoet in de loop van dit artikel.
-
-Zie [Azure-terminologie in het kort](/azure/developer/python/cloud-azure-terminology?toc=/azure/app-service/toc.json) voor **definities van algemene termen**.
 
 > [!TIP]
 > Als u liever apps wilt implementeren via een IDE, raadpleegt u **[Python-apps implementeren in App Service vanuit Visual Studio Code](/azure/developer/python/tutorial-deploy-app-service-on-linux-01)** .

@@ -6,12 +6,12 @@ ms.topic: conceptual
 ms.date: 2/28/2018
 ms.author: gwallace
 ms.custom: devx-track-csharp
-ms.openlocfilehash: eeb2fd94e6b98bc9d89be22501406db9a8ba7773
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 7127d9906cfe1ba87241bd3810a9567e77bf0391
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89013160"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785495"
 ---
 # <a name="view-service-fabric-health-reports"></a>Service Fabric status rapporten weer geven
 Azure Service Fabric introduceert een [status model](service-fabric-health-introduction.md) met status entiteiten waarop systeem onderdelen en watchdog lokale voor waarden kunnen rapporteren die ze controleren. De [Health Store](service-fabric-health-introduction.md#health-store) aggregeert alle statusgegevens om te bepalen of de entiteiten in orde zijn.
@@ -37,7 +37,7 @@ Voor het demonstreren van deze opties gebruiken we een lokaal cluster met vijf k
 ## <a name="health-in-service-fabric-explorer"></a>Status in Service Fabric Explorer
 Service Fabric Explorer biedt een visuele weer gave van het cluster. In de onderstaande afbeelding ziet u dat:
 
-* De Application **Fabric:/WordCount** is rood (in fout) omdat er een fout gebeurtenis wordt gerapporteerd door **MyWatchdog** voor de **Beschik baarheid**van de eigenschap.
+* De Application **Fabric:/WordCount** is rood (in fout) omdat er een fout gebeurtenis wordt gerapporteerd door **MyWatchdog** voor de **Beschik baarheid** van de eigenschap.
 * Een van de services, **Fabric:/WordCount/WordCountService** is geel (in het waarschuwings bericht). De service is geconfigureerd met zeven replica's en het cluster heeft vijf knoop punten, waardoor er geen twee replica's kunnen worden geplaatst. Hoewel het hier niet wordt weer gegeven, is de service partitie geel vanwege een systeem rapport waarin wordt vermeld `System.FM` dat `Partition is below target replica or instance count` . De gele partitie activeert de service geel.
 * Het cluster is rood vanwege de toepassing rood.
 
@@ -56,7 +56,7 @@ Weer gave van het cluster met Service Fabric Explorer:
 >
 
 ## <a name="health-queries"></a>Status query's
-Service Fabric geeft statusquery's weer voor alle ondersteunde [entiteitstypes](service-fabric-health-introduction.md#health-entities-and-hierarchy). Ze kunnen worden geopend via de API met behulp van methoden op [FabricClient.HealthManager](/dotnet/api/system.fabric.fabricclient.healthmanager?view=azure-dotnet), PowerShell-cmdlets en REST. Deze query's retourneren gegevens over de status van de entiteit: de geaggregeerde status, de statusgebeurtenissen van de entiteit, de status van onderliggende items (indien van toepassing), de beschadigde evaluaties (wanneer de entiteit niet in orde is) en de statusstatistieken van onderliggende items (indien van toepassing).
+Service Fabric geeft statusquery's weer voor alle ondersteunde [entiteitstypes](service-fabric-health-introduction.md#health-entities-and-hierarchy). Ze kunnen worden geopend via de API met behulp van methoden op [FabricClient.HealthManager](/dotnet/api/system.fabric.fabricclient.healthmanager), PowerShell-cmdlets en REST. Deze query's retourneren gegevens over de status van de entiteit: de geaggregeerde status, de statusgebeurtenissen van de entiteit, de status van onderliggende items (indien van toepassing), de beschadigde evaluaties (wanneer de entiteit niet in orde is) en de statusstatistieken van onderliggende items (indien van toepassing).
 
 > [!NOTE]
 > Er wordt een status entiteit geretourneerd wanneer deze volledig is ingevuld in de Health Store. De entiteit moet actief zijn (niet verwijderd) en een systeem rapport hebben. De bovenliggende entiteiten in de hiërarchie keten moeten ook systeem rapporten hebben. Als aan een van deze voor waarden niet wordt voldaan, retour neren de status query's een [FabricException](/dotnet/api/system.fabric.fabricexception) met [FabricErrorCode](/dotnet/api/system.fabric.fabricerrorcode) `FabricHealthEntityNotFound` die laat zien waarom de entiteit niet is geretourneerd.
@@ -128,7 +128,7 @@ ClusterHealth clusterHealth = await fabricClient.HealthManager.GetClusterHealthA
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet [Get-ServiceFabricClusterHealth](/powershell/module/servicefabric/get-servicefabricclusterhealth)voor het ophalen van de cluster status. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+De cmdlet [Get-ServiceFabricClusterHealth](/powershell/module/servicefabric/get-servicefabricclusterhealth)voor het ophalen van de cluster status. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) .
 
 De status van het cluster is vijf knoop punten, de systeem toepassing en Fabric:/WordCount geconfigureerd zoals beschreven.
 
@@ -257,7 +257,7 @@ NodeHealth nodeHealth = await fabricClient.HealthManager.GetNodeHealthAsync(quer
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet voor het ophalen van de status van het knoop punt is [Get-ServiceFabricNodeHealth](/powershell/module/servicefabric/get-servicefabricnodehealth). Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+De cmdlet voor het ophalen van de status van het knoop punt is [Get-ServiceFabricNodeHealth](/powershell/module/servicefabric/get-servicefabricnodehealth). Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) .
 Met de volgende cmdlet wordt de status van het knoop punt opgehaald met behulp van een standaard status beleid:
 
 ```powershell
@@ -343,7 +343,7 @@ ApplicationHealth applicationHealth = await fabricClient.HealthManager.GetApplic
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet [Get-ServiceFabricApplicationHealth](/powershell/module/servicefabric/get-servicefabricapplicationhealth?view=azureservicefabricps)om de status van de toepassing op te halen. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+De cmdlet [Get-ServiceFabricApplicationHealth](/powershell/module/servicefabric/get-servicefabricapplicationhealth)om de status van de toepassing op te halen. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) .
 
 Met de volgende cmdlet wordt de status van de **Fabric:/WordCount-** toepassing geretourneerd:
 
@@ -473,7 +473,7 @@ ServiceHealth serviceHealth = await fabricClient.HealthManager.GetServiceHealthA
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet [Get-ServiceFabricServiceHealth](/powershell/module/servicefabric/get-servicefabricservicehealth)voor de service status is. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+De cmdlet [Get-ServiceFabricServiceHealth](/powershell/module/servicefabric/get-servicefabricservicehealth)voor de service status is. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) .
 
 Met de volgende cmdlet wordt de service status opgehaald met behulp van een standaard status beleid:
 
@@ -531,7 +531,7 @@ PartitionHealth partitionHealth = await fabricClient.HealthManager.GetPartitionH
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet [Get-ServiceFabricPartitionHealth](/powershell/module/servicefabric/get-servicefabricpartitionhealth)voor het ophalen van de status van de partitie. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+De cmdlet [Get-ServiceFabricPartitionHealth](/powershell/module/servicefabric/get-servicefabricpartitionhealth)voor het ophalen van de status van de partitie. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) .
 
 Met de volgende cmdlet krijgt u de status van alle partities van de **Fabric:/WordCount/WordCountService-** service en worden er filters uit de replica status opgehaald:
 
@@ -622,7 +622,7 @@ ReplicaHealth replicaHealth = await fabricClient.HealthManager.GetReplicaHealthA
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet [Get-ServiceFabricReplicaHealth](/powershell/module/servicefabric/get-servicefabricreplicahealth)voor het ophalen van de status van de replica. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+De cmdlet [Get-ServiceFabricReplicaHealth](/powershell/module/servicefabric/get-servicefabricreplicahealth)voor het ophalen van de status van de replica. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) .
 
 Met de volgende cmdlet wordt de status van de primaire replica opgehaald voor alle partities van de service:
 
@@ -667,7 +667,7 @@ DeployedApplicationHealth health = await fabricClient.HealthManager.GetDeployedA
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet [Get-ServiceFabricDeployedApplicationHealth](/powershell/module/servicefabric/get-servicefabricdeployedapplicationhealth?view=azureservicefabricps)voor het ophalen van de status van de geïmplementeerde toepassing. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) . Als u wilt weten waar een toepassing is geïmplementeerd, voert u [Get-ServiceFabricApplicationHealth](/powershell/module/servicefabric/get-servicefabricapplicationhealth?view=azureservicefabricps) uit en bekijkt u de onderliggende toepassingen van de toepassing.
+De cmdlet [Get-ServiceFabricDeployedApplicationHealth](/powershell/module/servicefabric/get-servicefabricdeployedapplicationhealth)voor het ophalen van de status van de geïmplementeerde toepassing. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) . Als u wilt weten waar een toepassing is geïmplementeerd, voert u [Get-ServiceFabricApplicationHealth](/powershell/module/servicefabric/get-servicefabricapplicationhealth) uit en bekijkt u de onderliggende toepassingen van de toepassing.
 
 Met de volgende cmdlet wordt de status opgehaald van de toepassing **Fabric:/WordCount** die is geïmplementeerd op **_Node_2**.
 
@@ -725,7 +725,7 @@ DeployedServicePackageHealth health = await fabricClient.HealthManager.GetDeploy
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet [Get-ServiceFabricDeployedServicePackageHealth](/powershell/module/servicefabric/get-servicefabricdeployedservicepackagehealth)voor het ophalen van de status van het geïmplementeerde service pakket. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) . Als u wilt zien waar een toepassing is geïmplementeerd, voert u [Get-ServiceFabricApplicationHealth](/powershell/module/servicefabric/get-servicefabricapplicationhealth?view=azureservicefabricps) uit en kijkt u naar de geïmplementeerde toepassingen. Als u wilt zien welke service pakketten zich in een toepassing bevinden, bekijkt u de onderliggende items van het geïmplementeerde service pakket in de [Get-ServiceFabricDeployedApplicationHealth-](/powershell/module/servicefabric/get-servicefabricdeployedapplicationhealth?view=azureservicefabricps) uitvoer.
+De cmdlet [Get-ServiceFabricDeployedServicePackageHealth](/powershell/module/servicefabric/get-servicefabricdeployedservicepackagehealth)voor het ophalen van de status van het geïmplementeerde service pakket. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) . Als u wilt zien waar een toepassing is geïmplementeerd, voert u [Get-ServiceFabricApplicationHealth](/powershell/module/servicefabric/get-servicefabricapplicationhealth) uit en kijkt u naar de geïmplementeerde toepassingen. Als u wilt zien welke service pakketten zich in een toepassing bevinden, bekijkt u de onderliggende items van het geïmplementeerde service pakket in de [Get-ServiceFabricDeployedApplicationHealth-](/powershell/module/servicefabric/get-servicefabricdeployedapplicationhealth) uitvoer.
 
 Met de volgende cmdlet wordt de status opgehaald van het **WordCountServicePkg** -service pakket van de toepassing **Fabric:/WordCount** die is geïmplementeerd op **_Node_2**. De entiteit heeft **System. hosting** rapporten voor een succes volle service-en ingangs punt activering en een geslaagde Service-type registratie.
 
@@ -858,7 +858,7 @@ var result = await fabricClient.HealthManager.GetClusterHealthChunkAsync(queryDe
 ```
 
 ### <a name="powershell"></a>PowerShell
-De cmdlet [Get-ServiceFabricClusterChunkHealth](/powershell/module/servicefabric/get-servicefabricclusterhealthchunk)voor het ophalen van de cluster status. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster?view=azureservicefabricps) .
+De cmdlet [Get-ServiceFabricClusterChunkHealth](/powershell/module/servicefabric/get-servicefabricclusterhealthchunk)voor het ophalen van de cluster status. Maak eerst verbinding met het cluster met behulp van de cmdlet [Connect-ServiceFabricCluster](/powershell/module/servicefabric/connect-servicefabriccluster) .
 
 De volgende code haalt alleen knoop punten op als deze een fout hebben, met uitzonde ring van een specifiek knoop punt, dat altijd moet worden geretourneerd.
 

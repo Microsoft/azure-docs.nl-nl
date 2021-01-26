@@ -8,12 +8,12 @@ ms.subservice: gateway
 ms.topic: article
 ms.date: 10/20/2020
 ms.author: alkohli
-ms.openlocfilehash: 11122b57a1971f328a8a83c3dea136813426c060
-ms.sourcegitcommit: 16c7fd8fe944ece07b6cf42a9c0e82b057900662
+ms.openlocfilehash: 13d3809611714992f24a66a96c22074e69fba9bd
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/03/2020
-ms.locfileid: "96582359"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98786653"
 ---
 # <a name="azure-data-box-gateway-security-and-data-protection"></a>Beveiligings-en gegevens beveiliging Azure Data Box Gateway
 
@@ -55,7 +55,7 @@ Zie [een activerings sleutel ophalen](data-box-gateway-deploy-prep.md#get-the-ac
 
 Wacht woorden zorgen ervoor dat alleen geautoriseerde gebruikers toegang hebben tot uw gegevens. Data Box Gateway apparaten worden opgestart met een vergrendelde status.
 
-U kunt het volgende doen:
+U kunt:
 
 - Verbinding maken met de lokale web-UI van het apparaat via een browser en vervolgens een wacht woord opgeven om zich aan te melden bij het apparaat.
 - Extern verbinding maken met de Power shell-interface van het apparaat via HTTP. Extern beheer is standaard ingeschakeld. Vervolgens kunt u het wacht woord van het apparaat opgeven om u aan te melden bij het apparaat. Zie [extern verbinding maken met uw data Box gateway apparaat](data-box-gateway-connect-powershell-interface.md#connect-to-the-powershell-interface)voor meer informatie.
@@ -85,7 +85,7 @@ In deze sectie worden de Data Box Gateway beveiligings functies beschreven die i
 
 Als u de virtuele schijven op uw Data Box Gateway virtuele machine wilt beveiligen, wordt u aangeraden BitLocker in te scha kelen. BitLocker is standaard niet ingeschakeld. Zie voor meer informatie:
 
-- [Instellingen voor ondersteuning van versleuteling in Hyper-V Manager](hhttps://docs.microsoft.com/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v#encryption-support-settings-in-hyper-v-manager)
+- [Instellingen voor ondersteuning van versleuteling in Hyper-V Manager](/windows-server/virtualization/hyper-v/learn-more/generation-2-virtual-machine-security-settings-for-hyper-v#encryption-support-settings-in-hyper-v-manager)
 - [BitLocker-ondersteuning op een virtuele machine](https://kb.vmware.com/s/article/2036142)
 
 ## <a name="manage-personal-information"></a>Persoonlijke gegevens beheren

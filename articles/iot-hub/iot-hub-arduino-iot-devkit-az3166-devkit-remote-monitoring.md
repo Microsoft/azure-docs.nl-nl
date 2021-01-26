@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.tgt_pltfrm: arduino
 ms.date: 02/02/2018
 ms.author: liydu
-ms.openlocfilehash: a5a69c35e5c7e33443c3810cad9ab4e21b048328
-ms.sourcegitcommit: dbe434f45f9d0f9d298076bf8c08672ceca416c6
+ms.openlocfilehash: 6912124ce8d1741731d625dccfea445417b2488d
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/17/2020
-ms.locfileid: "92148820"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98785013"
 ---
 # <a name="connect-mxchip-iot-devkit-to-azure-iot-remote-monitoring-solution-accelerator"></a>MXChip IoT DevKit verbinden met de oplossings versneller voor externe controle van Azure IoT
 
@@ -66,7 +66,7 @@ Een actief Azure-abonnement. Als u er geen hebt, kunt u zich registreren via een
   
    ![Apparaat met ID maken](media/iot-hub-arduino-iot-devkit-az3166-devkit-remote-monitoring/azure-iot-suite-new-device-configuration.png)
 
-8. Noteer **IOT hub hostnaam**en klik op **gereed**.
+8. Noteer **IOT hub hostnaam** en klik op **gereed**.
 
 ## <a name="open-the-remotemonitoring-sample"></a>Het RemoteMonitoring-voor beeld openen
 
@@ -79,10 +79,10 @@ Een actief Azure-abonnement. Als u er geen hebt, kunt u zich registreren via een
    * De introductie pagina van DevKit.
    * Arduino-voor beelden: praktijk voorbeelden om aan de slag te gaan met DevKit.
 
-4. Vouw de sectie **ARDUINO-voor beelden** aan de linkerkant uit, blader naar **voor beelden voor MXCHIP AZ3166 > AzureIoT**en selecteer **RemoteMonitoring**. Er wordt een nieuw versus code venster geopend met daarin een projectmap.
+4. Vouw de sectie **ARDUINO-voor beelden** aan de linkerkant uit, blader naar **voor beelden voor MXCHIP AZ3166 > AzureIoT** en selecteer **RemoteMonitoring**. Er wordt een nieuw versus code venster geopend met daarin een projectmap.
 
    > [!NOTE]
-   > Als u het deel venster sluit, kunt u het opnieuw openen. Gebruik `Ctrl+Shift+P` (macOS: `Cmd+Shift+P` ) om het opdracht palet te openen, typ **Arduino**en zoek en selecteer vervolgens **Arduino: voor beelden**.
+   > Als u het deel venster sluit, kunt u het opnieuw openen. Gebruik `Ctrl+Shift+P` (macOS: `Cmd+Shift+P` ) om het opdracht palet te openen, typ **Arduino** en zoek en selecteer vervolgens **Arduino: voor beelden**.
 
 ## <a name="provision-required-azure-services"></a>Vereiste Azure-Services inrichten
 
@@ -120,7 +120,7 @@ Wanneer de voor beeld-app wordt uitgevoerd, verzendt DevKit sensor gegevens over
 
 ## <a name="change-device-id"></a>Apparaat-ID wijzigen
 
-Als u de hardcoded **AZ3166** wilt wijzigen in een aangepaste apparaat-id in de code, wijzigt u de regel met code die wordt weer gegeven in het [voor beeld externe controle](../iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2.md).
+Als u de hardcoded **AZ3166** wilt wijzigen in een aangepaste apparaat-id in de code, wijzigt u de regel met code die wordt weer gegeven in het [voor beeld externe controle](/previous-versions/azure/iot-accelerators/iot-accelerators-arduino-iot-devkit-az3166-devkit-remote-monitoring-v2).
 
 ## <a name="problems-and-feedback"></a>Problemen en feedback
 

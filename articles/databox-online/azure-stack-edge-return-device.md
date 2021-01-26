@@ -8,12 +8,12 @@ ms.subservice: edge
 ms.topic: how-to
 ms.date: 07/27/2020
 ms.author: alkohli
-ms.openlocfilehash: 730774f33d43754d4ca198ed170159fa4f872e09
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 0c35bde40cac9629f084d69d52f119651b5655f7
+ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90903670"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98784474"
 ---
 # <a name="return-your-azure-stack-edge-pro-device"></a>Uw Azure Stack Edge Pro-apparaat retour neren
 
@@ -59,7 +59,7 @@ U kunt ook verbinding maken met de Power shell-interface van het apparaat en de 
 
 Voer de volgende stappen uit om het retour proces te starten.
 
-1. Ga in Azure Portal naar uw Azure Stack Edge Pro/Data Box Gateway-resource. In het **overzicht**gaat u naar de opdracht balk in het rechterdeel venster en selecteert u **apparaat retour neren**. 
+1. Ga in Azure Portal naar uw Azure Stack Edge Pro/Data Box Gateway-resource. In het **overzicht** gaat u naar de opdracht balk in het rechterdeel venster en selecteert u **apparaat retour neren**. 
 
     ![Apparaat 1 retour neren](media/azure-stack-edge-return-device/return-device-1.png)  
 
@@ -101,13 +101,13 @@ Voer de volgende stappen uit om het retour proces te starten.
 Als u een ophaling wilt plannen, voert u de volgende stappen uit.
 
 1. Schakel het apparaat uit. Ga in de lokale web-UI naar **onderhoud > energie-instellingen**.
-2. Selecteer **Afsluiten**. Wanneer u om bevestiging wordt gevraagd, klikt u op **Ja** om door te gaan. Zie [energie beheren](data-box-gateway-manage-access-power-connectivity-mode.md#manage-power)voor meer informatie.
+2. Selecteer **Afsluiten**. Wanneer u om bevestiging wordt gevraagd, klikt u op **Ja** om door te gaan. Zie [energie beheren](../databox-gateway/data-box-gateway-manage-access-power-connectivity-mode.md#manage-power)voor meer informatie.
 3. Koppel de stroom kabels los en verwijder alle netwerk kabels van het apparaat.
 4. Bereid het verzend pakket voor met behulp van uw eigen box of het lege vak dat u van Azure hebt ontvangen. Plaats het apparaat en de stroom snoeren die met het apparaat in het vak zijn geleverd.
 5. Breng het verzend label op dat u hebt ontvangen van Azure op het pakket.
 6. Maak een afspraak met een transportbedrijf voor het ophalen van de zending. Als u het apparaat in ons retourneert, kan uw provider UPS of FedEx zijn. Een ophaling plannen met UPS:
 
-    1. Bel met UPS in de buurt (gratis land-/regiospecifiek nummer).
+    1. Bel met UPS (gratis land-/regiospecifiek nummer).
     2. Neem in uw gesprek het tracerings nummer van omgekeerde verzen ding op zoals op het afgedrukte label wordt weer gegeven.
     3. Als het tracking nummer niet wordt vermeld, moet u een extra kosten betalen tijdens het ophalen.
 
@@ -131,7 +131,7 @@ Als u het apparaat hebt geactiveerd op basis van een ander abonnement of een and
 
 Voer de volgende stappen uit om het apparaat en de resource in Azure Portal te verwijderen.
 
-1. Ga in het Azure Portal naar uw resource en klik vervolgens op **overzicht**. Selecteer **verwijderen**op de opdracht balk.
+1. Ga in het Azure Portal naar uw resource en klik vervolgens op **overzicht**. Selecteer **verwijderen** op de opdracht balk.
 
     ![Verwijderen selecteren](media/azure-stack-edge-return-device/delete-resource-1.png)
 

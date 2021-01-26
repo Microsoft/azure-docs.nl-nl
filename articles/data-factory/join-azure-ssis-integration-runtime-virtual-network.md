@@ -11,12 +11,12 @@ author: swinarko
 ms.author: sawinark
 ms.reviewer: douglasl
 manager: mflasko
-ms.openlocfilehash: e73126cfc54294a7b9d54ff62c406d5e686ac470
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: a8928f9d52fd8e721ac770dda8f0cbf0162a0f61
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95982706"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797914"
 ---
 # <a name="join-an-azure-ssis-integration-runtime-to-a-virtual-network"></a>Een Azure-SSIS Integration Runtime samenvoegen met een virtueel netwerk
 
@@ -73,7 +73,10 @@ Als uw SSIS pakketten toegang tot Azure-resources die ondersteuning bieden voor 
 
 ## <a name="access-to-data-sources-protected-by-ip-firewall-rule"></a>Toegang tot gegevens bronnen die worden beveiligd door de IP-firewall regel
 
-Als uw SSIS pakketten toegang biedt tot gegevens archieven/resources die alleen specifieke statische open bare IP-adressen toestaan en u de toegang tot deze resources wilt beveiligen vanaf Azure-SSIS IR, kunt u uw eigen [open bare IP-adressen](../virtual-network/virtual-network-public-ip-address.md) voor Azure-SSIS IR meenemen tijdens het verbinden met een virtueel netwerk en vervolgens een IP-firewall regel toevoegen aan de relevante bronnen om toegang via deze IP-adressen toe te staan.
+Als uw SSIS pakketten toegang biedt tot gegevens archieven/resources die alleen specifieke statische open bare IP-adressen toestaan en u de toegang tot deze resources wilt beveiligen vanaf Azure-SSIS IR, kunt u [open bare IP-adressen](../virtual-network/virtual-network-public-ip-address.md) koppelen aan Azure-SSIS IR terwijl u deze toevoegt aan een virtueel netwerk, en vervolgens een IP-firewall regel toevoegen aan de relevante bronnen om toegang vanaf deze IP-adressen toe te staan. Er zijn twee alternatieve manieren om dit te doen: 
+
+- Wanneer u Azure-SSIS IR maakt, kunt u uw eigen open bare IP-adressen opnemen en deze opgeven via [Data Factory gebruikers interface of SDK](#join-the-azure-ssis-ir-to-a-virtual-network). Alleen de uitgaande Internet verbinding van Azure-SSIS IR gebruikt uw openbaar IP-adres en andere apparaten in het subnet worden niet gebruikt.
+- U kunt ook [Virtual Network NAT](../virtual-network/nat-overview.md) instellen voor het subnet dat Azure-SSIS IR wordt toegevoegd en alle uitgaande verbindingen in dit subnet zullen gebruikmaken van uw opgegeven open bare IP-adressen.
 
 In alle gevallen kan het virtuele netwerk alleen worden geïmplementeerd via het Azure Resource Manager-implementatie model.
 
@@ -338,7 +341,7 @@ Gebruik de portal om een Azure Resource Manager virtueel netwerk te configureren
 
 1. Start micro soft Edge of Google Chrome. Momenteel ondersteunen alleen deze webbrowsers de Data Factory-gebruikers interface. 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 
 1. Selecteer **meer services**. Filter voor en selecteer **virtuele netwerken**. 
 
@@ -368,7 +371,7 @@ Gebruik de portal om een klassiek virtueel netwerk te configureren voordat u pro
 
 1. Start micro soft Edge of Google Chrome. Momenteel ondersteunen alleen deze webbrowsers de Data Factory-gebruikers interface. 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com). 
+1. Meld u aan bij [Azure Portal](https://portal.azure.com). 
 
 1. Selecteer **meer services**. Filter voor en selecteer **virtuele netwerken (klassiek)**. 
 

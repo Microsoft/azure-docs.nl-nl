@@ -3,19 +3,19 @@ title: SQL Server SQL Server op virtuele machines van Azure (migratie handleidin
 description: Volg deze hand leiding voor het migreren van uw afzonderlijke SQL Server-data bases naar SQL Server op Azure Virtual Machines (Vm's).
 ms.custom: ''
 ms.service: virtual-machines-sql
-ms.subservice: ''
+ms.subservice: migration-guide
 ms.devlang: ''
 ms.topic: how-to
 author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: 3b0fdccd3eaf6e6bd94b595107022f738bdd8382
-ms.sourcegitcommit: 4295037553d1e407edeb719a3699f0567ebf4293
+ms.openlocfilehash: cc2a641cb017edace24db5df69bc4adf3a607524
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/30/2020
-ms.locfileid: "96325911"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797879"
 ---
 # <a name="migration-guide-sql-server-to-sql-server-on-azure-vms"></a>Migratie handleiding: SQL Server SQL Server op virtuele machines van Azure 
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -109,7 +109,7 @@ Het wordt ten zeerste aangeraden alle DMA-oplossingen tijdens het [na de migrati
 > Niet alle versies van SQL Server ondersteunen alle compatibiliteits modi. Controleer of uw [doel-SQL Server-versie](/sql/t-sql/statements/alter-database-transact-sql-compatibility-level) de gekozen database compatibiliteit ondersteunt. SQL Server 2019 biedt bijvoorbeeld geen ondersteuning voor data bases met niveau-90-compatibiliteit (SQL Server 2005). Voor deze data bases is ten minste een upgrade van het compatibiliteits niveau 100 vereist.
 >
 
-## <a name="migrate"></a>Migreren
+## <a name="migrate"></a>Migrate
 
 Nadat u de stappen voorafgaand aan de migratie hebt voltooid, bent u klaar om de gebruikers databases en-onderdelen te migreren. Migreer uw data bases met uw voorkeurs [migratie methode](sql-server-to-sql-on-azure-vm-migration-overview.md#migrate).  
 
@@ -152,7 +152,7 @@ De volgende tabel bevat een lijst met onderdelen en aanbevolen migratie methoden
 
 | **Functie** | **Onderdeel** | **Migratie methode (n)** |
 | --- | --- | --- |
-| **Databases** | Modelleren  | Script met SQL Server Management Studio |
+| **Databases** | Model  | Script met SQL Server Management Studio |
 || TempDB | Plan TempDB te verplaatsen naar de [tijdelijke schijf van de virtuele machine van Azure (SSD](../../virtual-machines/windows/performance-guidelines-best-practices.md#temporary-disk)) voor de beste prestaties. Zorg ervoor dat u een VM-grootte kiest die een voldoende lokale SSD heeft om uw TempDB te kunnen verwerken. |
 || Gebruikers databases met FileStream |  Gebruik de [back-up-en herstel](../../virtual-machines/windows/migrate-to-vm-from-sql-server.md#back-up-and-restore) methoden voor migratie. DMA biedt geen ondersteuning voor data bases met FileStream. |
 | **Beveiliging** | SQL Server-en Windows-aanmeldingen | Gebruik DMA om [Gebruikers aanmeldingen te migreren](/sql/dma/dma-migrateserverlogins). |

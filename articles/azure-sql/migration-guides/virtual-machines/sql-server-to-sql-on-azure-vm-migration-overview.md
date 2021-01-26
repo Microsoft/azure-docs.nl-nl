@@ -3,19 +3,19 @@ title: SQL Server SQL Server op Azure VM (migratie overzicht)
 description: Meer informatie over de verschillende migratie strategieën wanneer u uw SQL Server wilt migreren naar SQL Server op virtuele machines van Azure.
 ms.custom: ''
 ms.service: virtual-machines-sql
-ms.subservice: ''
+ms.subservice: migration-guide
 ms.devlang: ''
 ms.topic: how-to
 author: markjones-msft
 ms.author: markjon
 ms.reviewer: mathoma
 ms.date: 11/06/2020
-ms.openlocfilehash: d08cb2761a8d8010c455ff959d6c247e8b64ef20
-ms.sourcegitcommit: 6e2d37afd50ec5ee148f98f2325943bafb2f4993
+ms.openlocfilehash: 0eabb48aabcb50557b342385068807eb67a9b165
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/23/2020
-ms.locfileid: "97746572"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797852"
 ---
 # <a name="migration-overview-sql-server-to-sql-server-on-azure-vms"></a>Migratie overzicht: SQL Server SQL Server op virtuele machines van Azure
 [!INCLUDE[appliesto--sqlmi](../../includes/appliesto-sqlvm.md)]
@@ -24,7 +24,7 @@ Meer informatie over de verschillende migratie strategieën voor het migreren va
 
 U kunt SQL Server die on-premises of op worden uitgevoerd, migreren:
 
-- SQL Server op Virtual Machines  
+- SQL Server on Virtual Machines  
 - Amazon Web Services (AWS) EC2 
 - Amazon Relational Data Base service (AWS RDS) 
 - Compute Engine (Google Cloud Platform-GCP)
@@ -38,7 +38,7 @@ Migreer naar [SQL Server op Azure-virtual machines (vm's)](../../virtual-machine
 Bespaar op kosten door uw eigen licentie te nemen met het [Azure Hybrid Benefit-licentie model](../../virtual-machines/windows/licensing-model-azure-hybrid-benefit-ahb-change.md) of breid ondersteuning uit voor SQL Server 2008 en SQL Server 2008 R2 door [gratis beveiligings updates](../../virtual-machines/windows/sql-server-2008-extend-end-of-support.md)te downloaden. 
 
 
-## <a name="choosing-appropriate-target"></a>Geschikt doel kiezen
+## <a name="choose-appropriate-target"></a>Het juiste doel kiezen
 
 Azure Virtual Machines worden uitgevoerd in veel verschillende regio's van Azure en bieden ook diverse [machine grootten](../../../virtual-machines/sizes.md) en [opslag opties](../../../virtual-machines/disks-types.md). Raadpleeg de [richt lijnen voor prestaties voor SQL Server op Azure virtual machines](../../virtual-machines/windows/performance-guidelines-best-practices.md#vm-size-guidance)voor het bepalen van de juiste grootte van de virtuele machine en opslag voor uw SQL Server-workload. Om de grootte van de virtuele machine en de opslag vereisten voor uw workload te bepalen. het is raadzaam om deze grootte te bepalen door een Performance-Based [Azure migrate beoordeling](../../../migrate/concepts-assessment-calculation.md#types-of-assessments). Als dit geen beschik bare optie is, raadpleegt u het volgende artikel over het maken van uw eigen [basis lijn voor prestaties](https://azure.microsoft.com/services/virtual-machines/sql-server/).
 
@@ -77,7 +77,7 @@ De volgende tabel bevat informatie over de beschik bare methode voor de migratie
 | --- | --- | --- | --- | --- |
 | [Azure Migrate](../../../migrate/index.yml) | SQL Server 2008 SP4| SQL Server 2008 SP4| [Opslag limiet voor Azure VM](../../../index.yml) |  Bestaande SQL Server worden verplaatst naar een exemplaar van SQL Server op een virtuele Azure-machine. Kan werk belastingen voor de migratie van Maxi maal 35.000 Vm's schalen. <br /><br /> Bron server (s) blijven online-en onderhouds aanvragen tijdens de synchronisatie van Server gegevens en beperken de downtime. <br /><br /> **Automatisering & scripting**: [Azure site Recovery scripts](../../../migrate/how-to-migrate-at-scale.md) en [voor beeld van geschaalde migratie en planning voor Azure](/azure/cloud-adoption-framework/migrate/azure-best-practices/contoso-migration-scale)|
 
-## <a name="migrate"></a>Migreren  
+## <a name="migrate"></a>Migrate  
 
 Vanwege het gemak van de installatie is de aanbevolen migratie benadering om lokaal een lokale SQL Server [back-up](/sql/t-sql/statements/backup-transact-sql) te maken en het bestand vervolgens naar Azure te kopiëren. Deze methode ondersteunt grotere data bases (>1 TB) voor alle versies van SQL Server vanaf 2008 en grotere database back-ups (>1 TB). Voor data bases die beginnen met SQL Server 2014, die kleiner zijn dan 1 TB en die goede connectiviteit met Azure hebben, is [SQL Server back-up naar URL](/sql/relational-databases/backup-restore/sql-server-backup-to-url) de betere benadering. 
 

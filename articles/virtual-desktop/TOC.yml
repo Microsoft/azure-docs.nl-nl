@@ -120,6 +120,10 @@
       href: azure-monitor.md
     - name: Een plan voor herstel na noodgevallen opzetten
       href: disaster-recovery.md
+    - name: De KDC-proxy instellen
+      href: key-distribution-center-proxy.md
+    - name: De RD-gateway rol instellen
+      href: rd-gateway-role.md
 - name: Concepten
   items:
     - name: Ingebouwde rollen
@@ -170,6 +174,10 @@
       href: azure-monitor-glossary.md
     - name: Gegevenslocaties
       href: data-locations.md
+    - name: Beveiliging
+      items:
+        - name: Beveiligingsbasislijn
+          href: security-baseline.md
 - name: Problemen oplossen
   items:
     - name: 'Probleemoplossingsoverzicht, feedback en ondersteuning'

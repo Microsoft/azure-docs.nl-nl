@@ -8,15 +8,15 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 08/10/2020
+ms.date: 01/25/2021
 ms.author: juliako
 ms.custom: devx-track-js
-ms.openlocfilehash: 1bc751ae293abbb7aa330a99a4b66a917d150906
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: b13086e11e1181bba91a3255e68e9f8a32e78450
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95994975"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797777"
 ---
 # <a name="embed-video-indexer-widgets-in-your-apps"></a>Video Indexer widgets insluiten in uw apps
 
@@ -30,7 +30,7 @@ Vanaf versie 2 bevat de basis-URL van de widget de regio van het opgegeven accou
 
 De widget Inzichten bevat alle visuele inzichten die tijdens het indexeringsproces zijn opgehaald uit uw video. De cognitieve Insights-widget ondersteunt de volgende optionele URL-para meters:
 
-|Name|Definitie|Beschrijving|
+|Naam|Definitie|Beschrijving|
 |---|---|---|
 |`widgets` | Tekenreeksen gescheiden door komma's | Hiermee kunt u de inzichten bepalen die u wilt weer geven.<br/>Voor beeld: `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?widgets=people,keywords` alleen personen en tref woorden weer geven UI Insights.<br/>Beschik bare opties: personen, animatedCharacters, tref woorden, labels, gevoel, emoties, onderwerpen, keyframes, transcripten, OCR, sprekers, scènes en namedEntities.|
 |`controls`|Tekenreeksen gescheiden door komma's|Hiermee kunt u de besturings elementen beheren die u wilt weer geven.<br/>Voor beeld: Hiermee wordt `https://www.videoindexer.ai/embed/insights/<accountId>/<videoId>/?controls=search,download` alleen de zoek optie en de download knop weer gegeven.<br/>Beschik bare opties: zoeken, downloaden, voor instellingen en taal.|
@@ -43,7 +43,7 @@ De widget Inzichten bevat alle visuele inzichten die tijdens het indexeringsproc
 
 U kunt de Player-widget gebruiken om video te streamen met behulp van adaptieve bitsnelheid. De Player-widget ondersteunt de volgende optionele URL-para meters.
 
-|Name|Definitie|Beschrijving|
+|Naam|Definitie|Beschrijving|
 |---|---|---|
 |`t` | Seconden vanaf het begin | Hiermee wordt het afspelen van de speler vanaf het opgegeven tijd punt gestart.<br/> Bijvoorbeeld: `t=60`. |
 |`captions` | Een taal code | Haalt het bijschrift in de opgegeven taal op tijdens het laden van de widget zodat deze beschikbaar is in het menu **bijschriften** .<br/> Bijvoorbeeld: `captions=en-US`. |
@@ -57,7 +57,7 @@ U kunt de Player-widget gebruiken om video te streamen met behulp van adaptieve 
 
 U kunt de editor-widget gebruiken om nieuwe projecten te maken en de inzichten van een video te beheren. De editor-widget ondersteunt de volgende optionele URL-para meters.
 
-|Name|Definitie|Beschrijving|
+|Naam|Definitie|Beschrijving|
 |---|---|---|
 |`accessToken`<sup>*</sup> | Tekenreeks | Biedt toegang tot Video's die alleen voor komen in het account dat wordt gebruikt om de widget in te sluiten.<br> De editor-widget vereist de `accessToken` para meter. |
 |`language` | Een taal code | Hiermee bepaalt u de taal van de speler. De standaardwaarde is `en-US`.<br/>Bijvoorbeeld: `language=de-DE`. |
@@ -291,7 +291,7 @@ Standaard wordt de video afgespeeld met de speler. u kunt ervoor kiezen om niet 
 
 Zie de [code voorbeelden](https://github.com/Azure-Samples/media-services-video-indexer/tree/master/Embedding%20widgets) opslag plaats die voor beelden bevatten voor video INDEXER-API en widgets:
 
-| Bestand/map                       | Description                                |
+| Bestand/map                       | Beschrijving                                |
 |-----------------------------------|--------------------------------------------|
 | `azure-media-player`              | Video indexer video laden in een aangepaste Azure Media Player.                        |
 | `azure-media-player-vi-insights`  | Sluit VI Insights in met een aangepaste Azure Media Player.                             |
@@ -303,6 +303,10 @@ Zie de [code voorbeelden](https://github.com/Azure-Samples/media-services-video-
 | `embed-both-widgets`              | Sluit VI Player en inzichten toe en communiceer onderling.                      |
 | `url-generator`                   | Hiermee wordt een aangepaste insluit-URL voor widgets gegenereerd op basis van door de gebruiker opgegeven opties.             |
 | `html5-player`                    | Sluit VI Insights in met een standaard HTML5-Video speler.                           |
+
+## <a name="supported-browsers"></a>Ondersteunde browsers
+
+Zie [ondersteunde browsers](video-indexer-overview.md#supported-browsers)voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 

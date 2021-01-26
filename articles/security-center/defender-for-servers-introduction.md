@@ -7,12 +7,12 @@ ms.date: 9/23/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 711963a60d5c75031ff676a9c7f1db47f20fe895
-ms.sourcegitcommit: b6f3ccaadf2f7eba4254a402e954adf430a90003
-ms.translationtype: HT
+ms.openlocfilehash: b7457e258cf8a9936e9a63ab9eec9edc0b54d3eb
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92275250"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797728"
 ---
 # <a name="introduction-to-azure-defender-for-servers"></a>Inleiding tot Azure Defender voor servers
 
@@ -20,7 +20,7 @@ Azure Defender voor servers voegt bedreigingsdetectie en geavanceerde beveiligin
 
 Voor Windows wordt Azure Defender geïntegreerd met Azure-Services om uw op Windows gebaseerde computers te controleren en te beveiligen. Security Center toont de waarschuwingen en suggesties voor herstel van al deze services in een gemakkelijk te gebruiken indeling.
 
-Voor Linux verzamelt Azure Defender controlerecords van Linux-machines met behulp van **auditd** , een van de meest voorkomende Linux-controleframeworks. auditd maakt deel uit van de mainline-kernel. 
+Voor Linux verzamelt Azure Defender controlerecords van Linux-machines met behulp van **auditd**, een van de meest voorkomende Linux-controleframeworks. auditd maakt deel uit van de mainline-kernel. 
 
 
 ## <a name="what-are-the-benefits-of-azure-defender-for-servers"></a>Wat zijn de voordelen van Azure Defender voor servers?
@@ -32,9 +32,9 @@ De bedreigingsdetectie- en beveiligingsmogelijkheden van Azure Defender voor ser
     Wanneer Defender voor Eindpunten een bedreiging detecteert, wordt er een waarschuwing geactiveerd. De waarschuwing wordt weergegeven in Security Center. Vanuit Security Center kunt u ook naar de Defender voor Eindpunten-console draaien en een gedetailleerd onderzoek uitvoeren om het bereik van de aanval te ontdekken. Meer informatie over Microsoft Defender voor Eindpunten.
 
     > [!IMPORTANT]
-    > De **Microsoft Defender voor Eindpunten** -sensor wordt automatisch ingeschakeld voor Windows-servers die gebruikmaken van Security Center.
+    > De **Microsoft Defender voor Eindpunten**-sensor wordt automatisch ingeschakeld voor Windows-servers die gebruikmaken van Security Center.
 
-- **Scannen voor evaluatie van beveiligingsproblemen voor VM's** : de beveiligingsprobleemscanner van Azure Security Center werkt op basis van Qualys. 
+- **Scannen voor evaluatie van beveiligingsproblemen voor VM's**: de beveiligingsprobleemscanner van Azure Security Center werkt op basis van Qualys. 
 
     De scanner van Qualys is een van de toonaangevende hulpprogramma's voor het in realtime identificeren van beveiligings problemen in uw Azure Virtual Machines. U hebt geen Qualys-licentie of Qualys-account nodig. De scans worden naadloos uitgevoerd in Security Center. [Meer informatie](deploy-vulnerability-assessment-vm.md).
 
@@ -54,7 +54,7 @@ De bedreigingsdetectie- en beveiligingsmogelijkheden van Azure Defender voor ser
 
     Adaptieve netwerkbeveiliging biedt aanbevelingen voor verdere versterking van de NSG-regels. Het maakt gebruik van een machine learning-algoritme dat rekening houdt met werkelijk verkeer, bekende vertrouwde configuratie, bedreigingsinformatie en andere aanwijzingen voor aantasting, en geeft vervolgens aanbevelingen om alleen verkeer van bepaalde IP-/poort-tuples toe te staan. [Meer informatie](security-center-adaptive-network-hardening.md).
 
-- **Beveiliging van Docker-host** : Azure Security Center identificeert niet-beheerde containers die worden gehost op IaaS Linux-VM's of andere Linux-machines waarop Docker-containers worden uitgevoerd. Security Center evalueert doorlopend de configuraties van deze containers. Vervolgens worden ze vergeleken met de Docker-benchmark van het CIS (Center for Internet Security). Security Center bevat de volledige regelset van de CIS Docker-benchmark en waarschuwt u als uw containers niet voldoen aan een van de controles. [Meer informatie](harden-docker-hosts.md).
+- **Beveiliging van Docker-host**: Azure Security Center identificeert niet-beheerde containers die worden gehost op IaaS Linux-VM's of andere Linux-machines waarop Docker-containers worden uitgevoerd. Security Center evalueert doorlopend de configuraties van deze containers. Vervolgens worden ze vergeleken met de Docker-benchmark van het CIS (Center for Internet Security). Security Center bevat de volledige regelset van de CIS Docker-benchmark en waarschuwt u als uw containers niet voldoen aan een van de controles. [Meer informatie](harden-docker-hosts.md).
 
 - **Detectie van bestandsloze aanvallen (alleen Windows)** : aanvallen zonder bestanden injecteren schadelijke payloads in het geheugen, om detectie door schijfscantechnieken te voorkomen. De payload van de aanvaller blijft vervolgens achter in het geheugen met aangetaste processen en kan allerlei schadelijke activiteiten uitvoeren.
 
@@ -97,4 +97,4 @@ Raadpleeg de volgende artikelen voor gerelateerd materiaal:
 - Een waarschuwing kunt u altijd exporteren, ongeacht of deze door Security Center is gegenereerd of door Security Center is ontvangen vanuit een ander beveiligingsproduct. Als u uw waarschuwingen wilt exporteren naar Azure Sentinel, een extern SIEM of een ander extern hulpprogramma, volgt u de instructies in [Waarschuwingen naar een SIEM exporteren](continuous-export.md).
 
 - > [!div class="nextstepaction"]
-    > [Azure Defender inschakelen](security-center-pricing.md)
+    > [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)

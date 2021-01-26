@@ -7,12 +7,12 @@ ms.date: 12/07/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 5594e8225b615bf6e1af5077bd68422edbbeec19
-ms.sourcegitcommit: 80c1056113a9d65b6db69c06ca79fa531b9e3a00
-ms.translationtype: HT
+ms.openlocfilehash: 9591dae058a19cea73d88513b7c4ff4ab8f88045
+ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96905448"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98797754"
 ---
 # <a name="introduction-to-azure-defender-for-resource-manager"></a>Inleiding op Azure Defender voor Resource Manager
 
@@ -75,4 +75,4 @@ In dit artikel bent u meer te weten gekomen over Azure Defender voor Resource Ma
 - Beveiligingswaarschuwingen kunnen worden gegenereerd door Security Center of door Security Center worden ontvangen vanuit andere beveiligingsproducten. Als u al deze waarschuwingen wilt exporteren naar Azure Sentinel, een externe SIEM of een ander extern hulpprogramma, volgt u de instructies in [Waarschuwingen naar een SIEM exporteren](continuous-export.md).
 
 - > [!div class="nextstepaction"]
-    > [Azure Defender inschakelen](security-center-pricing.md)
+    > [Azure Defender inschakelen](security-center-pricing.md#enable-azure-defender)

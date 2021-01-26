@@ -1,15 +1,15 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Backup
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Backup. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 1f2f0fd879e7a31128a83687ddf7ed56668512f0
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 7a16493fd5f547ed9a2ac3891201d3aa160ecdc7
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704102"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98805429"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-backup"></a>Ingebouwde Azure Policy-definities voor Azure Backup
 

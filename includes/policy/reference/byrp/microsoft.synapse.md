@@ -2,15 +2,15 @@
 author: DCtheGeek
 ms.service: azure-policy
 ms.topic: include
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.author: dacoulte
 ms.custom: generated
-ms.openlocfilehash: 722c02dc47dfea1376f216e7f5335051aea85af6
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: bedb152a8fecfdb1ee699f431e4e43ef3ceed564
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98701314"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806142"
 ---
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
@@ -19,3 +19,4 @@ ms.locfileid: "98701314"
 |[Het virtuele netwerk van de beheerde werkruimte in Azure Synapse-werkruimten moet zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F2d9dbfa3-927b-4cf0-9d0f-08747f971650) |Als u een virtueel netwerk voor een beheerde werkruimte inschakelt zorgt u ervoor dat uw werkruimte binnen het netwerk is afgeschermd van andere werkruimten. Gegevensintegratie en Apache Spark-resources die zijn geïmplementeerd in dit virtuele netwerk, bieden ook isolatie op gebruikersniveau voor Apache Spark-activiteiten. |Controleren, Weigeren, Uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceManagedVnet_Audit.json) |
 |[Privé-eindpuntverbindingen met Azure Synapse-werkruimten moeten zijn ingeschakeld](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F72d11df1-dd8a-41f7-8925-b05b960ebafc) |Privé-eindpunten kunnen worden geconfigureerd om privé verbinding te maken met een Azure Synapse-werkruimte. Dit wordt gebruikt om een beveiligd communicatiekanaal af te dwingen voor de Azure Synapse-werkruimte. |Controle, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/SynapseWorkspaceUsePrivateLinks_Audit.json) |
 |[Door Synapse beheerde privé-eindpunten mogen alleen verbinding maken met resources in goedgekeurde Azure Active Directory-tenants](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F3a003702-13d2-4679-941b-937e58c443f0) |Beveilig uw Synapse-werkruimte door alleen verbindingen met resources in goedgekeurde Azure Active Directory-tenants (Azure AD) toe te staan. De goedgekeurde Azure AD-tenants kunnen worden gedefinieerd tijdens de beleidstoewijzing. |Controleren, uitgeschakeld, weigeren |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/Workspace_DataExfiltrationPrevention_Deny.json) |
+|[De evaluatie van beveiligings problemen moet worden ingeschakeld op uw Synapse-werk ruimten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F0049a6b3-a662-4f3e-8635-39cf44ace45a) |Ontdek, volg en herstel mogelijke beveiligings problemen door het configureren van terugkerende SQL-evaluatie scans op uw Synapse-werk ruimten. |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Synapse/ASC_SQLVulnerabilityAssessmentOnSynapse_Audit.json) |

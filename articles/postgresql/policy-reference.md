@@ -1,18 +1,18 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Database for PostgreSQL
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Database for PostgreSQL. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: reference
 author: jonels-msft
 ms.author: jonels
 ms.service: postgresql
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 43697fbc7df0af1d260e57dc202c9c8be871b59f
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: 66657b5d10a1b0249ddb46506f9cc6eab90a92f8
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703345"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806749"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-database-for-postgresql"></a>Ingebouwde Azure Policy-definities voor Azure Database for PostgreSQL
 

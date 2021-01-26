@@ -4,12 +4,12 @@ description: Voor komen dat gebruikers Azure-resources bijwerken of verwijderen 
 ms.topic: conceptual
 ms.date: 11/11/2020
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 53054f89c992139fbbd4f087d2a0344e26d97efc
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 0e8fc74b2da0c253ec9c5bf34ec7543398aea48f
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610196"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98802436"
 ---
 # <a name="lock-resources-to-prevent-unexpected-changes"></a>Resources vergrendelen om onverwachte wijzigingen te voorkomen
 
@@ -38,7 +38,7 @@ Het Toep assen van vergren delingen kan leiden tot onverwachte resultaten omdat 
 
 * Als u een vergren deling van een **resource groep** niet kunt verwijderen, voor komt u dat Azure Resource Manager [implementaties automatisch verwijdert](../templates/deployment-history-deletions.md) in de geschiedenis. Als u 800-implementaties in de geschiedenis bereikt, zullen uw implementaties mislukken.
 
-* Het is niet mogelijk om de vergren deling van de **resource groep** die is gemaakt door de **Azure backup-service** te verwijderen, waardoor back-ups mislukken. De service ondersteunt Maxi maal 18 herstel punten. Wanneer deze is vergrendeld, kan de back-upservice geen herstel punten opschonen. Zie [Veelgestelde vragen-back-ups maken van Azure vm's](../../backup/backup-azure-vm-backup-faq.md)voor meer informatie.
+* Het is niet mogelijk om de vergren deling van de **resource groep** die is gemaakt door de **Azure backup-service** te verwijderen, waardoor back-ups mislukken. De service ondersteunt Maxi maal 18 herstel punten. Wanneer deze is vergrendeld, kan de back-upservice geen herstel punten opschonen. Zie [Veelgestelde vragen-back-ups maken van Azure vm's](../../backup/backup-azure-vm-backup-faq.yml)voor meer informatie.
 
 * Een alleen-lezen vergrendeling voor een **abonnement** voor komt dat **Azure Advisor** goed werkt. Advisor kan de resultaten van de query's niet opslaan.
 
@@ -316,7 +316,7 @@ lockid=$(az lock show --name LockSite --resource-group exampleresourcegroup  --o
 az lock delete --ids $lockid
 ```
 
-### <a name="rest-api"></a>REST-API
+### <a name="rest-api"></a>REST API
 
 U kunt geïmplementeerde resources vergren delen met de [rest API voor beheer vergrendelingen](/rest/api/resources/managementlocks). Met de REST API kunt u vergren delingen maken en verwijderen, en informatie over bestaande vergren delingen ophalen.
 

@@ -79,7 +79,7 @@
         - name: 'Veelgestelde vragen: back-upcentrum'
           href: backup-center-faq.yml
         - name: 'Veelgestelde vragen: Azure VM Backup'
-          href: backup-azure-vm-backup-faq.md
+          href: backup-azure-vm-backup-faq.yml
         - name: 'Veelgestelde vragen: MARS-agent'
           href: backup-azure-file-folder-backup-faq.md
         - name: 'Veelgestelde vragen: back-ups maken van Azure Files'

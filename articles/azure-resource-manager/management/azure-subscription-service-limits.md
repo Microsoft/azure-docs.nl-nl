@@ -3,12 +3,12 @@ title: Limieten en quota voor Azure-abonnementen
 description: Biedt een lijst met algemene Azure-abonnementen en service limieten, quota's en beperkingen. Dit artikel bevat informatie over het verhogen van de limieten en maximum waarden.
 ms.topic: conceptual
 ms.date: 09/02/2020
-ms.openlocfilehash: 20de08ee30deae74954f2857b4de756b8cf46f08
-ms.sourcegitcommit: f6f928180504444470af713c32e7df667c17ac20
+ms.openlocfilehash: baef641a741d12185029436e5a74039427c69f68
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/07/2021
-ms.locfileid: "97964185"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98802906"
 ---
 # <a name="azure-subscription-and-service-limits-quotas-and-constraints"></a>Limieten, quota's en beperkingen voor het Azure-abonnement en de Azure-service
 
@@ -402,7 +402,7 @@ Zie [grootten van virtuele machines](../../virtual-machines/sizes.md?toc=%2fazur
 
 #### <a name="disk-encryption-sets"></a>Schijf versleutelings sets
 
-Er is een limiet van 50 schijf versleutelings sets per regio, per abonnement. Zie de documentatie over versleuteling voor virtuele [Linux](../../virtual-machines/disk-encryption.md#restrictions) -of [Windows](../../virtual-machines/disk-encryption.md#restrictions) -machines voor meer informatie. Neem contact op met de ondersteuning van Azure als u het quotum wilt verhogen.
+Er is een limiet van 1000 schijf versleutelings sets per regio, per abonnement. Zie de documentatie over versleuteling voor virtuele [Linux](../../virtual-machines/disk-encryption.md#restrictions) -of [Windows](../../virtual-machines/disk-encryption.md#restrictions) -machines voor meer informatie. Neem contact op met de ondersteuning van Azure als u het quotum wilt verhogen.
 
 ### <a name="managed-virtual-machine-disks"></a>Beheerde schijven van virtuele machines
 

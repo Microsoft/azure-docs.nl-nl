@@ -1,19 +1,19 @@
 ---
 title: Ingebouwde beleids definities voor Azure Stack Edge
 description: Een lijst met Azure Policy ingebouwde beleids definities voor Azure Stack Edge. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
 ms.service: databox
 ms.subservice: edge
 author: alkohli
 ms.author: alkohli
-ms.openlocfilehash: 072916cb59dc50aeb48f77a01237311dc01392b5
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: e99b44023018b8a6e7c77ced6bc8f9ce182545cc
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98701832"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806028"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-stack-edge"></a>Azure Policy ingebouwde definities voor Azure Stack Edge
 

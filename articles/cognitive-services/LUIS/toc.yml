@@ -191,7 +191,7 @@
           href: luis-how-to-azure-subscription.md
         - name: Instellingen voor app en versie
           href: how-to-application-settings-portal.md
-        - name: Auteurs en samenwerkers
+        - name: Auteurs en mede werkers
           displayName: 'access, transfer, AAD, tenant, Azure AD, consent, RBAC, admin, role-based access control, ownership, import'
           href: luis-how-to-collaborate.md
         - name: Met versies
@@ -405,7 +405,7 @@
       href: 'https://go.microsoft.com/fwlink/?linkid=2092089'
     - name: Woordenlijst
       href: luis-glossary.md
-    - name: Problemen oplossen
+    - name: Probleemoplossing
       href: troubleshooting.md
       displayName: 'FAQ, import'
     - name: Prijzen en beperkingen

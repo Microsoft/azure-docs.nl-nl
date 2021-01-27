@@ -8,12 +8,12 @@ ms.topic: how-to
 ms.date: 11/26/2018
 ms.author: cynthn
 ms.custom: devx-track-azurepowershell
-ms.openlocfilehash: 1b29cdda66186587c43471d6d6e819dfbde658e8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: dacf34d7098472e98c7f68f7f60fa9bac1a4e5ec
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89075017"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875768"
 ---
 # <a name="how-to-connect-and-sign-on-to-an-azure-virtual-machine-running-windows"></a>Verbinding maken en aanmelden bij een virtuele machine van Azure waarop Windows wordt uitgevoerd
 U gebruikt de knop **Verbinden** in Azure Portal om een Extern bureaublad-sessie (RDP) te starten vanaf een Windows-computer. Eerst maakt u verbinding met de virtuele machine en meldt u zich aan.
@@ -24,7 +24,7 @@ Als u vanaf een Mac verbinding wilt maken met een Windows-VM, moet u een RDP-cli
 1. Ga naar de [Azure Portal](https://portal.azure.com/) om verbinding te maken met een virtuele machine. Zoek en selecteer **virtuele machines**.
 2. Selecteer de virtuele machine in de lijst.
 3. Selecteer op het begin van de pagina virtuele machine **verbinding maken**.
-4. Selecteer op de pagina **verbinding maken met virtuele machine** **RDP**en selecteer vervolgens het juiste **IP-adres** en **poort nummer**. In de meeste gevallen moeten het IP-adres en de standaard poort worden gebruikt. Selecteer **RDP-bestand downloaden**. Als er een just-in-time-beleid is ingesteld voor de VM, moet u eerst de knop **toegang aanvragen** selecteren om toegang aan te vragen voordat u het RDP-bestand kunt downloaden. Zie [toegang tot virtuele machines beheren met de just-in-time-beleids regels](../../security-center/security-center-just-in-time.md)voor meer informatie over het just-in-time-beleid.
+4. Selecteer op de pagina **verbinding maken met virtuele machine** **RDP** en selecteer vervolgens het juiste **IP-adres** en **poort nummer**. In de meeste gevallen moeten het IP-adres en de standaard poort worden gebruikt. Selecteer **RDP-bestand downloaden**. Als er een just-in-time-beleid is ingesteld voor de VM, moet u eerst de knop **toegang aanvragen** selecteren om toegang aan te vragen voordat u het RDP-bestand kunt downloaden. Zie [toegang tot virtuele machines beheren met de just-in-time-beleids regels](../../security-center/security-center-just-in-time.md)voor meer informatie over het just-in-time-beleid.
 5. Open het gedownloade RDP-bestand en selecteer **Verbinden** wanneer dit wordt gevraagd. Er wordt een waarschuwing weer gegeven dat het `.rdp` bestand van een onbekende uitgever is. Dit is normaal. Selecteer in het venster **verbinding met extern bureaublad** de optie **verbinding maken** om door te gaan.
    
     ![Schermafbeelding met waarschuwing over een onbekende uitgever](./media/connect-logon/rdp-warn.png)
@@ -41,7 +41,7 @@ Als u vanaf een Mac verbinding wilt maken met een Windows-VM, moet u een RDP-cli
 
 
    > [!TIP]
-   > Als de knop **verbinden** in de portal grijs wordt weer gegeven en u niet met Azure bent verbonden via een [snelle route](../../expressroute/expressroute-introduction.md) of een [site-naar-site-VPN-](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md) verbinding, moet u een openbaar IP-adres maken en toewijzen aan uw virtuele machine voordat u RDP kunt gebruiken. Zie [open bare IP-adressen in azure](../../virtual-network/public-ip-addresses.md)voor meer informatie.
+   > Als de knop **verbinden** in de portal grijs wordt weer gegeven en u niet met Azure bent verbonden via een [snelle route](../../expressroute/expressroute-introduction.md) of een [site-naar-site-VPN-](../../vpn-gateway/tutorial-site-to-site-portal.md) verbinding, moet u een openbaar IP-adres maken en toewijzen aan uw virtuele machine voordat u RDP kunt gebruiken. Zie [open bare IP-adressen in azure](../../virtual-network/public-ip-addresses.md)voor meer informatie.
    > 
    > 
 
@@ -64,4 +64,4 @@ Get-AzRemoteDesktopFile -ResourceGroupName "RgName" -Name "VmName" -LocalPath "C
 ```
 
 ## <a name="next-steps"></a>Volgende stappen
-Zie [problemen met extern bureaublad verbindingen oplossen](../troubleshooting/troubleshoot-rdp-connection.md?toc=/azure/virtual-machines/windows/toc.json)als u problemen ondervindt bij het maken van verbinding. 
+Zie [problemen met extern bureaublad verbindingen oplossen](../troubleshooting/troubleshoot-rdp-connection.md?toc=/azure/virtual-machines/windows/toc.json)als u problemen ondervindt bij het maken van verbinding.

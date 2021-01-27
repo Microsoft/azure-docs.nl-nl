@@ -8,12 +8,12 @@ ms.date: 09/08/2020
 ms.author: brendm
 ms.custom: devx-track-java
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: 37753265afa7e76e87dbcdc5893595bea66798f4
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: 4e9c84efe7b96cf61a69c54e3f5ecbc469ac7d8d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98610247"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874139"
 ---
 # <a name="prepare-an-application-for-deployment-in-azure-spring-cloud"></a>Een toepassing voorbereiden voor implementatie in azure lente-Cloud
 
@@ -151,7 +151,7 @@ Spring boot-versie | Lente-Cloud versie
 2.4.1 + | 2020.0.0
 
 > [!NOTE]
-> We hebben een probleem geïdentificeerd met een Spring boot-2.4.0 voor TLS-verificatie tussen uw apps en Eureka. gebruik 2.4.1 of hoger. Raadpleeg de [Veelgestelde vragen](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) over de tijdelijke oplossing als u 2.4.0T.
+> We hebben een probleem geïdentificeerd met een Spring boot-2.4.0 voor TLS-verificatie tussen uw apps en Eureka. gebruik 2.4.1 of hoger. Raadpleeg de [Veelgestelde vragen](./spring-cloud-faq.md?pivots=programming-language-java#development) over de tijdelijke oplossing als u 2.4.0T.
 
 ### <a name="dependencies-for-spring-boot-version-2223"></a>Afhankelijkheden voor Spring boot-versie 2.2/2.3
 

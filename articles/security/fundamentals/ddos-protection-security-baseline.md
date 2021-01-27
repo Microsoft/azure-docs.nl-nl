@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 08/05/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: cbc22f9b55f8d20880b43516a2a5bc8f55d389f5
-ms.sourcegitcommit: 1140ff2b0424633e6e10797f6654359947038b8d
+ms.openlocfilehash: b4b2a3bf8c9a3a2e2ec7f1b22785a037f8dedc60
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97814496"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98873957"
 ---
 # <a name="azure-security-baseline-for-azure-ddos-protection-standard"></a>Azure-beveiligings basislijn voor Azure DDoS Protection Standard
 
@@ -38,7 +38,7 @@ Deze beveiligings basislijn is van toepassing op de richt lijnen [Azure Security
 
 Schakel Diagnostische instellingen voor Azure-activiteiten logboek in en verzend de logboeken naar een Log Analytics-werk ruimte, een Azure Event Hub of een Azure-opslag account voor archivering. Met activiteiten Logboeken kunt u inzicht krijgen in de bewerkingen die zijn uitgevoerd op uw Azure-cache voor redis-exemplaren op het niveau van het besturings vlak. Met Azure-activiteiten logboek gegevens kunt u bepalen wat voor schrijf bewerkingen (PUT, POST, DELETE) die worden uitgevoerd op het niveau van de Control-instantie voor uw Azure DDoS Protection-instanties, de ' wat, wie en wanneer ' zijn.
 
-- [Diagnostische logboek registratie voor DDoS weer geven en configureren](../../ddos-protection/diagnostic-logging.md)
+- [Registratie in DDoS-diagnoselogboek bekijken en configureren](../../ddos-protection/diagnostic-logging.md)
 
 - [Diagnostische instellingen voor Azure-activiteiten logboek inschakelen](../../azure-monitor/platform/activity-log.md)
 
@@ -164,7 +164,7 @@ Daarnaast kunt u aanbevelingen van Azure Security Center of ingebouwde Azure-bel
 
 **Richt lijnen**: gebruik een beveiligd, door Azure beheerd werk station waarop azure AD multi-factor Authentication (MFA) is ingeschakeld om u aan te melden en uw Azure klanten-lockbox-aanvragen te configureren.
 
-- [Een beveiligd, door Azure beheerd werk station implementeren](../../active-directory/devices/howto-azure-managed-workstation.md)
+- [Een beveiligd, door Azure beheerd werk station implementeren](/security/compass/privileged-access-deployment)
 
 - [Planning van een cloudimplementatie van Azure AD Multi-Factor Authentication](../../active-directory/authentication/howto-mfa-getstarted.md)
 

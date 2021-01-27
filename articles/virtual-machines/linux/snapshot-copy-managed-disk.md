@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 07/11/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 6374108247b9bfb950c42495b13b501ded8a02d2
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: d041f864c6c8cd3ae9c522d79447d71c86f9ac04
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96015958"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875601"
 ---
 # <a name="create-a-snapshot-using-the-portal-or-azure-cli"></a>Een moment opname maken met behulp van de portal of Azure CLI
 
@@ -58,7 +58,7 @@ az snapshot list \
 
 ## <a name="use-azure-portal"></a>Azure Portal gebruiken 
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com).
 2. Klik in de linkerbovenhoek op **een resource maken** en zoek naar een **moment opname**. Selecteer **moment opname** in de zoek resultaten.
 3. Klik op de Blade **moment opname** op **maken**.
 4. Voer een **naam** in voor de moment opname.
@@ -70,5 +70,4 @@ az snapshot list \
 
 ## <a name="next-steps"></a>Volgende stappen
 
- Een virtuele machine maken op basis van een moment opname door een beheerde schijf te maken op basis van de moment opname en vervolgens de nieuwe beheerde schijf als de besturingssysteem schijf te koppelen. Zie voor meer informatie het script [een virtuele machine maken op basis van een moment opname](./../scripts/virtual-machines-linux-cli-sample-create-vm-from-snapshot.md?toc=%2fcli%2fmodule%2ftoc.json) .
-
+ Een virtuele machine maken op basis van een moment opname door een beheerde schijf te maken op basis van de moment opname en vervolgens de nieuwe beheerde schijf als de besturingssysteem schijf te koppelen. Zie voor meer informatie het script [een virtuele machine maken op basis van een moment opname](/previous-versions/azure/virtual-machines/scripts/virtual-machines-linux-cli-sample-create-vm-from-snapshot?toc=%2fcli%2fmodule%2ftoc.json) .

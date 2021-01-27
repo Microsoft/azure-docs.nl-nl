@@ -2,13 +2,13 @@
 title: Variabelen in sjablonen
 description: Hierin wordt beschreven hoe u variabelen definieert in een Azure Resource Manager sjabloon (ARM-sjabloon).
 ms.topic: conceptual
-ms.date: 11/24/2020
-ms.openlocfilehash: 7f782f9c7d3107472a74fcab73290c4cebf73693
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 01/26/2021
+ms.openlocfilehash: feecc4b5df77e6a3bf51294cb12aabf44899dde5
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97934659"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874431"
 ---
 # <a name="variables-in-arm-template"></a>Variabelen in ARM-sjabloon
 
@@ -16,9 +16,11 @@ In dit artikel wordt beschreven hoe u variabelen definieert en gebruikt in uw Az
 
 Met Resource Manager worden variabelen omgezet voordat de implementatie bewerkingen worden gestart. Wanneer de variabele wordt gebruikt in de sjabloon, wordt deze door de Resource Manager vervangen door de omgezette waarde.
 
-De indeling van elke variabele moet overeenkomen met een van de [gegevens typen](template-syntax.md#data-types).
-
 ## <a name="define-variable"></a>Variabele definiëren
+
+Geef bij het definiëren van een variabele een waarde of een sjabloon expressie op die wordt omgezet in een [gegevens type](template-syntax.md#data-types). U kunt de waarde van een para meter of een andere variabele gebruiken bij het samen stellen van de variabele.
+
+U kunt [sjabloon functies](template-functions.md) gebruiken in de declaratie van variabelen, maar u kunt de functie [Reference](template-functions-resource.md#reference) of een van de functies van de [lijst](template-functions-resource.md#list) niet gebruiken. Met deze functies wordt de runtime status van een resource opgehaald en kunnen niet worden uitgevoerd voordat de implementatie van variabelen wordt opgelost.
 
 In het volgende voor beeld ziet u een definitie van een variabele. Er wordt een teken reeks waarde voor de naam van een opslag account gemaakt. Er worden verschillende sjabloon functies gebruikt om een parameter waarde op te halen en deze aan een unieke teken reeks toe te voegen.
 
@@ -27,8 +29,6 @@ In het volgende voor beeld ziet u een definitie van een variabele. Er wordt een 
   "storageName": "[concat(toLower(parameters('storageNamePrefix')), uniqueString(resourceGroup().id))]"
 },
 ```
-
-U kunt de functie [Reference](template-functions-resource.md#reference) of een van de [lijst](template-functions-resource.md#list) functies in de sectie niet gebruiken `variables` . Met deze functies wordt de runtime status van een resource opgehaald en kunnen niet worden uitgevoerd voordat de implementatie van variabelen wordt opgelost.
 
 ## <a name="use-variable"></a>Variabele gebruiken
 
@@ -44,56 +44,20 @@ In de sjabloon verwijst u naar de waarde voor de para meter met behulp van de fu
 ]
 ```
 
+## <a name="example-template"></a>Voorbeeld sjabloon
+
+Met de volgende sjabloon worden geen resources geïmplementeerd. Er wordt alleen een aantal manieren voor het declareren van variabelen weer gegeven.
+
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/variables.json":::
+
 ## <a name="configuration-variables"></a>Configuratie variabelen
 
-U kunt variabelen definiëren die gerelateerde waarden bevatten voor het configureren van een omgeving. U definieert de variabele als een object met de waarden. In het volgende voor beeld ziet u een object dat waarden voor twee omgevingen bevat: **test** en **Prod**.
+U kunt variabelen definiëren die gerelateerde waarden bevatten voor het configureren van een omgeving. U definieert de variabele als een object met de waarden. In het volgende voor beeld ziet u een object dat waarden voor twee omgevingen bevat: **test** en **Prod**. U geeft een van deze waarden door tijdens de implementatie.
 
-```json
-"variables": {
-  "environmentSettings": {
-    "test": {
-      "instanceSize": "Small",
-      "instanceCount": 1
-    },
-    "prod": {
-      "instanceSize": "Large",
-      "instanceCount": 4
-    }
-  }
-},
-```
-
-In `parameters` maakt u een waarde die aangeeft welke configuratie waarden moeten worden gebruikt.
-
-```json
-"parameters": {
-  "environmentName": {
-    "type": "string",
-    "allowedValues": [
-      "test",
-      "prod"
-    ]
-  }
-},
-```
-
-Als u instellingen voor de opgegeven omgeving wilt ophalen, gebruikt u de variabele en de para meter samen.
-
-```json
-"[variables('environmentSettings')[parameters('environmentName')].instanceSize]"
-```
-
-## <a name="example-templates"></a>Voorbeeld sjablonen
-
-In de volgende voor beelden ziet u scenario's voor het gebruik van variabelen.
-
-|Template  |Beschrijving  |
-|---------|---------|
-| [variabele definities](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variables.json) | Toont de verschillende typen variabelen. De sjabloon implementeert geen resources. Er worden variabele waarden gemaakt en deze waarden worden geretourneerd. |
-| [configuratie variabele](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/variablesconfigurations.json) | Toont het gebruik van een variabele die configuratie waarden definieert. De sjabloon implementeert geen resources. Er worden variabele waarden gemaakt en deze waarden worden geretourneerd. |
-| [netwerk beveiligings regels](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) en [parameter bestand](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json) | Hiermee wordt een matrix gemaakt met de juiste indeling voor het toewijzen van beveiligings regels aan een netwerk beveiligings groep. |
+:::code language="json" source="~/resourcemanager-templates/azure-resource-manager/variablesconfigurations.json":::
 
 ## <a name="next-steps"></a>Volgende stappen
 
 * Zie [inzicht krijgen in de structuur en syntaxis van arm-sjablonen](template-syntax.md)voor meer informatie over de beschik bare eigenschappen voor variabelen.
 * Zie [Best practices-Varia bles](template-best-practices.md#variables)(Engelstalig) voor aanbevelingen voor het maken van variabelen.
+* Zie [netwerk beveiligings regels](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.json) en [parameter bestand](https://github.com/Azure/azure-docs-json-samples/blob/master/azure-resource-manager/multipleinstance/multiplesecurityrules.parameters.json)voor een voorbeeld sjabloon waarmee beveiligings regels worden toegewezen aan een netwerk beveiligings groep.

@@ -8,12 +8,12 @@ ms.service: storage
 ms.topic: troubleshooting
 ms.date: 07/28/2020
 ms.author: delhan
-ms.openlocfilehash: 4e87e99f16a89cab95f9bd07b75b80f1c13d47f1
-ms.sourcegitcommit: 5e762a9d26e179d14eb19a28872fb673bf306fa7
+ms.openlocfilehash: 9a20db58846ca48afb4fb256adae58e1fccdff3a
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/05/2021
-ms.locfileid: "97900651"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875733"
 ---
 # <a name="azure-storage-explorer-troubleshooting-guide"></a>Gids voor probleemoplossing voor Azure Storage Explorer
 
@@ -61,8 +61,8 @@ Als u geen rol hebt die machtigingen voor een beheer laag verleent, kan Storage 
 Als u toegang wilt krijgen tot BLOB-containers of-wacht rijen, kunt u deze resources koppelen met uw Azure-referenties.
 
 1. Open het dialoog venster verbinding maken.
-2. Selecteer een resource toevoegen via Azure Active Directory (Azure AD). Selecteer Volgende.
-3. Selecteer het gebruikers account en de Tenant die zijn gekoppeld aan de resource waaraan u wilt koppelen. Selecteer Volgende.
+2. Selecteer een resource toevoegen via Azure Active Directory (Azure AD). Selecteer Next.
+3. Selecteer het gebruikers account en de Tenant die zijn gekoppeld aan de resource waaraan u wilt koppelen. Selecteer Next.
 4. Selecteer het resource type, voer de URL in voor de resource en voer een unieke weergave naam in voor de verbinding. Selecteer volgende en vervolgens verbinding maken.
 
 Voor andere resource typen hebben we momenteel geen oplossing met betrekking tot Azure RBAC. Als tijdelijke oplossing kunt u een SAS-URI aanvragen om [aan uw resource te koppelen](../../vs-azure-tools-storage-manage-with-storage-explorer.md?tabs=linux#use-a-shared-access-signature-uri).
@@ -70,13 +70,13 @@ Voor andere resource typen hebben we momenteel geen oplossing met betrekking tot
 ### <a name="recommended-azure-built-in-roles"></a>Aanbevolen ingebouwde rollen van Azure
 
 Er zijn verschillende ingebouwde rollen van Azure die de machtigingen kunnen bieden die nodig zijn om Storage Explorer te gebruiken. Enkele van deze rollen zijn:
-- [Eigenaar](/azure/role-based-access-control/built-in-roles#owner): alles beheren, inclusief toegang tot resources.
-- [Inzender](/azure/role-based-access-control/built-in-roles#contributor): alles beheren, met uitzonde ring van toegang tot resources.
-- [Lezer](/azure/role-based-access-control/built-in-roles#reader): bronnen lezen en weer geven.
-- [Inzender voor het opslag account](/azure/role-based-access-control/built-in-roles#storage-account-contributor): volledig beheer van opslag accounts.
-- [Eigenaar](/azure/role-based-access-control/built-in-roles#storage-blob-data-owner)van de opslag-BLOB-gegevens: volledige toegang tot Azure Storage BLOB-containers en-gegevens.
-- [Inzender voor gegevens](/azure/role-based-access-control/built-in-roles#storage-blob-data-contributor)van de opslag-blob: Lees-, schrijf-en verwijder Azure Storage containers en blobs.
-- [Gegevens lezer](/azure/role-based-access-control/built-in-roles#storage-blob-data-reader)van de opslag-Blob: Azure Storage containers en blobs voor lezen en weer geven.
+- [Eigenaar](../../role-based-access-control/built-in-roles.md#owner): alles beheren, inclusief toegang tot resources.
+- [Inzender](../../role-based-access-control/built-in-roles.md#contributor): alles beheren, met uitzonde ring van toegang tot resources.
+- [Lezer](../../role-based-access-control/built-in-roles.md#reader): bronnen lezen en weer geven.
+- [Inzender voor het opslag account](../../role-based-access-control/built-in-roles.md#storage-account-contributor): volledig beheer van opslag accounts.
+- [Eigenaar](../../role-based-access-control/built-in-roles.md#storage-blob-data-owner)van de opslag-BLOB-gegevens: volledige toegang tot Azure Storage BLOB-containers en-gegevens.
+- [Inzender voor gegevens](../../role-based-access-control/built-in-roles.md#storage-blob-data-contributor)van de opslag-blob: Lees-, schrijf-en verwijder Azure Storage containers en blobs.
+- [Gegevens lezer](../../role-based-access-control/built-in-roles.md#storage-blob-data-reader)van de opslag-Blob: Azure Storage containers en blobs voor lezen en weer geven.
 
 > [!NOTE]
 > De Inzender rollen eigenaar, Inzender en opslag account verlenen toegang tot de sleutel tot het account.

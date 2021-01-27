@@ -6,12 +6,12 @@ ms.service: container-service
 ms.topic: conceptual
 ms.date: 09/22/2020
 ms.author: amgowda
-ms.openlocfilehash: b4b6c04a1e35031387a006b6350ebf6cbe502fee
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 51e2095b0df8fdc965926c6c612c45f582c9b9d2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90995886"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874481"
 ---
 # <a name="frequently-asked-questions-about-confidential-computing-nodes-on-azure-kubernetes-service-aks"></a>Veelgestelde vragen over de knoop punten van vertrouwelijke computing in azure Kubernetes service (AKS)
 
@@ -24,6 +24,10 @@ SLA niet op tijdens de preview-versie van het product zoals [hier](https://azure
 ## <a name="what-is-attestation-and-how-can-we-do-attestation-of-apps-running-in-enclaves"></a>Wat is Attestation en hoe kunnen we nagaan of apps worden uitgevoerd in enclaves? 
 
 Attestation is het proces van het demonstreren en valideren of een stukje software op de juiste manier is geïnstantieerd op het specifieke hardwareplatform. Het zorgt er ook voor dat het bewijs kan worden geverifieerd om zekerheid te geven dat het wordt uitgevoerd op een veilig platform en niet is geknoeid. [Meer](attestation.md) informatie over hoe Attestation wordt uitgevoerd voor enclave-apps.
+
+## <a name="can-i-enable-accelerated-networking-with-azure-confidential-computing-aks-clusters"></a>Kan ik versneld netwerken met AKS-clusters van Azure vertrouwelijk computing inschakelen? 
+
+Nee. Versnelde netwerken worden niet ondersteund op vertrouwelijke computer knooppunten op AKS. Zorg ervoor dat versneld netwerken zijn uitgeschakeld in uw implementatie. 
 
 ## <a name="can-i-bring-my-existing-containerized-applications-and-run-it-on-aks-with-azure-confidential-computing"></a>Kan ik mijn bestaande toepassingen in de container plaatsen en deze uitvoeren op AKS met Azure vertrouwelijk computing? 
 

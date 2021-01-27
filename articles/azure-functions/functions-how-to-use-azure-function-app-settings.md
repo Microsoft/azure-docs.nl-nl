@@ -5,12 +5,12 @@ ms.assetid: 81eb04f8-9a27-45bb-bf24-9ab6c30d205c
 ms.topic: conceptual
 ms.date: 04/13/2020
 ms.custom: cc996988-fb4f-47, devx-track-azurecli
-ms.openlocfilehash: 4db6abeb3e6f4a07780268a6455177e0ca237205
-ms.sourcegitcommit: fc401c220eaa40f6b3c8344db84b801aa9ff7185
+ms.openlocfilehash: 5080d16a7b14506b24e07e2ee4ba862c645f83a8
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98598478"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875446"
 ---
 # <a name="manage-your-function-app"></a>Uw functie-app beheren 
 
@@ -37,6 +37,8 @@ Toepassings instellingen kunnen worden beheerd vanuit de [Azure Portal](function
 Deze instellingen worden versleuteld opgeslagen. Zie [beveiliging van toepassings instellingen](security-concepts.md#application-settings)voor meer informatie.
 
 # <a name="portal"></a>[Portal](#tab/portal)
+
+Zie aan [de slag in de Azure Portal](#get-started-in-the-azure-portal)om de toepassings instellingen te vinden. 
 
 Op het tabblad **Toepassings instellingen** worden instellingen onderhouden die worden gebruikt door de functie-app. U moet **waarden weer geven** selecteren om de waarden in de portal weer te geven. Als u een instelling wilt toevoegen in de portal, selecteert u **nieuwe toepassings instelling** en voegt u het nieuwe sleutel-waardepaar toe.
 

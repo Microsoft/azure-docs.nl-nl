@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: how-to
 ms.date: 10/22/2020
-ms.openlocfilehash: 3ba43b83166b5548dee4ea4e52c7411db48d23f5
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 62ca32ab4e348e1488fbb87672e582436b91d05d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98567272"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875006"
 ---
 # <a name="register-and-scan-azure-synapse-analytics"></a>Azure Synapse Analytics registreren en controleren
 
@@ -45,7 +45,7 @@ Er zijn drie manieren om verificatie voor Azure Synapse Analytics in te stellen:
 
 ### <a name="managed-identity-recommended"></a>Beheerde identiteit (aanbevolen) 
    
-Uw controle sfeer liggen-account heeft een eigen beheerde identiteit die in principe uw controle sfeer liggen-naam is wanneer u deze hebt gemaakt. U moet een Azure AD-gebruiker maken in azure Synapse Analytics (voorheen SQL DW) met de exacte naam van de beheerde identiteit van de controle sfeer liggen door de vereisten en zelf studie te volgen voor het [maken van Azure AD-gebruikers met Azure AD-toepassingen](/azure/azure-sql/database/authentication-aad-service-principal-tutorial).
+Uw controle sfeer liggen-account heeft een eigen beheerde identiteit die in principe uw controle sfeer liggen-naam is wanneer u deze hebt gemaakt. U moet een Azure AD-gebruiker maken in azure Synapse Analytics (voorheen SQL DW) met de exacte naam van de beheerde identiteit van de controle sfeer liggen door de vereisten en zelf studie te volgen voor het [maken van Azure AD-gebruikers met Azure AD-toepassingen](../azure-sql/database/authentication-aad-service-principal-tutorial.md).
 
 Voorbeeld van een SQL-syntaxis om een gebruiker te maken en machtiging te geven:
 
@@ -87,7 +87,7 @@ Het is vereist om de toepassings-ID en het geheim van de Service-Principal op te
 
 #### <a name="granting-the-service-principal-access-to-your-azure-synapse-analytics-formerly-sql-dw"></a>De Service-Principal toegang verlenen tot uw Azure Synapse Analytics (voorheen SQL DW)
 
-Daarnaast moet u ook een Azure AD-gebruiker maken in azure Synapse Analytics door de vereisten en zelf studie te volgen voor het [maken van Azure AD-gebruikers met Azure AD-toepassingen](https://docs.microsoft.com/azure/azure-sql/database/authentication-aad-service-principal-tutorial). Voorbeeld van een SQL-syntaxis om een gebruiker te maken en machtiging te geven:
+Daarnaast moet u ook een Azure AD-gebruiker maken in azure Synapse Analytics door de vereisten en zelf studie te volgen voor het [maken van Azure AD-gebruikers met Azure AD-toepassingen](../azure-sql/database/authentication-aad-service-principal-tutorial.md). Voorbeeld van een SQL-syntaxis om een gebruiker te maken en machtiging te geven:
 
 ```sql
 CREATE USER [ServicePrincipalName] FROM EXTERNAL PROVIDER
@@ -140,4 +140,3 @@ Ga als volgt te werk op het scherm **bronnen registreren (Azure Synapse Analytic
 
 - [Bladeren door de Azure Purview-gegevenscatalogus](how-to-browse-catalog.md)
 - [Zoeken in de Azure Purview-gegevenscatalogus](how-to-search-catalog.md)
-

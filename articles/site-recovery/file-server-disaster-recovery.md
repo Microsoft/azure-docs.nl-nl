@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 07/31/2019
 ms.author: sharrai
 ms.custom: mvc
-ms.openlocfilehash: 1c88a7e78d37556f0f1f89e16154dc1808f24323
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9cef163c1b53360222ca32a827552fa361e9dd40
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89425514"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98874244"
 ---
 # <a name="protect-a-file-server-by-using-azure-site-recovery"></a>Een bestandsserver beveiligen met behulp van Azure Site Recovery 
 
@@ -77,7 +77,7 @@ Omdat Site Recovery-replicatie toepassingsagnostisch is, is de verwachting dat d
 
 
 
-**Connectiviteit tussen sites**: er moet een directe verbinding tussen de on-premises site en het Azure-netwerk tot stand worden gebracht om communicatie tussen servers toe te staan. Gebruik een beveiligde site-to-site VPN-verbinding met een virtueel Azure-netwerk die wordt gebruikt als noodherstelsite. Zie [Een site-to-site VPN-verbinding tot stand brengen tussen een on-premises site en een virtueel Azure-netwerk](../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md).
+**Connectiviteit tussen sites**: er moet een directe verbinding tussen de on-premises site en het Azure-netwerk tot stand worden gebracht om communicatie tussen servers toe te staan. Gebruik een beveiligde site-to-site VPN-verbinding met een virtueel Azure-netwerk die wordt gebruikt als noodherstelsite. Zie [Een site-to-site VPN-verbinding tot stand brengen tussen een on-premises site en een virtueel Azure-netwerk](../vpn-gateway/tutorial-site-to-site-portal.md).
 
 **Active Directory**: DFSR is afhankelijk van Active Directory. Dit betekent dat de Active Directory-forest met lokale domeincontrollers is uitgebreid naar de noodherstelsite in Azure. Zelfs als u niet gebruikmaakt van DFSR, moet u deze stappen nemen als de beoogde gebruiker toegang moet krijgen of geverifieerd moet worden voor toegang. Zie [On-premises Active Directory uitbreiden naar Azure](./site-recovery-active-directory.md) voor meer informatie.
 

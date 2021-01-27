@@ -10,12 +10,12 @@ ms.date: 10/26/2020
 ms.author: normesta
 ms.reviewer: fryu
 ms.custom: monitoring, devx-track-csharp, devx-track-azurecli
-ms.openlocfilehash: 2af4f5467cb0f604f16d1faf841618a14d292806
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: cc1e4bf44827f82b3ca592e41fc3e6640f36e1bb
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585731"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98875141"
 ---
 # <a name="monitoring-azure-files"></a>Bewakings Azure Files
 
@@ -266,7 +266,7 @@ U kunt metrische gegevens analyseren voor Azure Storage met metrische gegevens u
 
 Voor metrische gegevens die dimensies ondersteunen, kunt u de metriek filteren met de gewenste dimensie waarde.  Zie [metrische dimensies](storage-files-monitoring-reference.md#metrics-dimensions)voor een volledige lijst met de dimensies die Azure Storage ondersteunt. De metrische gegevens voor Azure Files bevinden zich in de volgende naam ruimten: 
 
-- Micro soft. Storage/Storage accounts
+- Microsoft.Storage/storageAccounts
 - Micro soft. Storage/Storage accounts/fileServices
 
 Zie [Azure monitor ondersteunde metrische gegevens](../../azure-monitor/platform/metrics-supported.md#microsoftstoragestorageaccountsfileservices)voor een lijst met alle Azure monitor metrische gegevens over ondersteuning, waaronder Azure files.
@@ -677,6 +677,6 @@ De volgende tabel bevat enkele voor beelden van scenario's om te controleren en 
 - [Azure-resources bewaken met Azure Monitor](../../azure-monitor/insights/monitor-azure-resource.md)
 - [Migratie van Azure Storage metrieken](../common/storage-metrics-migration.md)
 - [Een Azure Files-implementatie plannen](./storage-files-planning.md)
-- [Azure Files implementeren](./storage-files-deployment-guide.md)
+- [Azure Files implementeren](./storage-how-to-create-file-share.md)
 - [Problemen met Azure Files in Windows oplossen](./storage-troubleshoot-windows-file-connection-problems.md)
 - [Problemen met Azure Files in Linux oplossen](./storage-troubleshoot-linux-file-connection-problems.md)

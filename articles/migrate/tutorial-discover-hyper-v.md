@@ -7,12 +7,12 @@ ms.manager: abhemraj
 ms.topic: tutorial
 ms.date: 09/14/2020
 ms.custom: mvc
-ms.openlocfilehash: eb10001436d3184b89aa064ec82fcd1f56bea931
-ms.sourcegitcommit: ca215fa220b924f19f56513fc810c8c728dff420
+ms.openlocfilehash: 7c3bca9e5ad87c681fc38a5c618331a3f7a97ae1
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/19/2021
-ms.locfileid: "98566928"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897507"
 ---
 # <a name="tutorial-discover-hyper-v-vms-with-server-assessment"></a>Zelfstudie: Virtuele Hyper-V-machines detecteren met Azure Migrate-serverevaluatie
 
@@ -83,7 +83,7 @@ U kunt Hyper-V-hosts hand matig voorbereiden of een script gebruiken. De voorber
 
 **Stap** | **Script** | **Handmatig**
 --- | --- | ---
-De vereisten voor de host controleren | Controleert of op de host een ondersteunde versie van Hyper-V en de Hyper-V-rol wordt uitgevoerd.<br/><br/>Hiermee schakelt u de WinRM-service in en opent u poort 5985 (HTTP) en 5986 (HTTPS) op de host (vereist voor de verzameling metagegevens). | Op deze host moet Windows Server 2019 R2, Windows Server 2016 of Windows Server 2012 R2 worden uitgevoerd.<br/><br/> Controleer of binnenkomende verbindingen zijn toegestaan op WinRM-poort 5985 (HTTP), zodat het apparaat verbinding kan maken om metagegevens en prestatiegegevens van de virtuele machine te verzamelen tijdens een Common Information Model-sessie (CIM).
+De vereisten voor de host controleren | Controleert of op de host een ondersteunde versie van Hyper-V en de Hyper-V-rol wordt uitgevoerd.<br/><br/>Hiermee schakelt u de WinRM-service in en opent u poort 5985 (HTTP) en 5986 (HTTPS) op de host (vereist voor de verzameling metagegevens). | Op deze host moet Windows Server 2019 R2, Windows Server 2016 of Windows Server 2012 R2 worden uitgevoerd.<br/><br/> Controleer of binnenkomende verbindingen zijn toegestaan op WinRM-poort 5985 (HTTP), zodat het apparaat verbinding kan maken om metagegevens en prestatiegegevens van de virtuele machine te verzamelen tijdens een Common Information Model-sessie (CIM).<br/><br/> Het script wordt momenteel niet ondersteund op hosts met een niet-Engelse land instelling.  
 PowerShell-versie bevestigen | Controleert of u het script uitvoert op een ondersteunde PowerShell-versie. | Controleer of u PowerShell versie 4.0 of hoger uitvoert op de Hyper-V-host.
 Een account maken | Verifieert of u de juiste machtigingen hebt op de Hyper-V-host.<br/><br/> Hiermee kunt u een lokaal gebruikers account met de juiste machtigingen maken. | Optie 1: Maak een account met beheerderstoegang op de Hyper-V-hostmachine.<br/><br/> Optie 2: Bereid een lokaal beheerdersaccount of een domeinbeheerdersaccount voor en voeg het account toe aan deze groepen: Gebruikers van extern beheer, Hyper-V-beheerders, en Prestatiemetergebruikers.
 Externe communicatie met PowerShell inschakelen | Hiermee stelt u externe communicatie van PowerShell in op elke host, zodat het Azure Migrate-apparaat PowerShell-opdrachten op de host kan uitvoeren via een WinRM-verbinding. | Als u op elke host wilt instellen, opent u een Power shell-console als beheerder en voert u de volgende opdracht uit: ``` powershell Enable-PSRemoting -force ```

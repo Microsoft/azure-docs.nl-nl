@@ -7,17 +7,16 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 11/11/2020
 ms.author: cynthn
-ms.openlocfilehash: 1efb512923caed97126bdb4ee6267c6a9b57f251
-ms.sourcegitcommit: 1cf157f9a57850739adef72219e79d76ed89e264
+ms.openlocfilehash: bf13d5c0caeb0bf31a383cd23155a6856c81c53b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94594938"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897388"
 ---
 # <a name="how-to-tag-a-virtual-machine-in-azure-using-powershell"></a>Een virtuele machine in azure labelen met behulp van Power shell
 
 In dit artikel wordt beschreven hoe u een virtuele machine in azure kunt labelen met behulp van Power shell. Tags zijn door de gebruiker gedefinieerde sleutel/waarde-paren die rechtstreeks kunnen worden geplaatst op een resource of resource groep. Azure ondersteunt momenteel Maxi maal 50 Tags per resource en resource groep. Labels kunnen worden geplaatst op een resource op het moment dat ze worden gemaakt of worden toegevoegd aan een bestaande resource. Als u een virtuele machine wilt labelen met behulp van de Azure CLI, raadpleegt u [een virtuele machine in azure labelen met behulp van de Azure cli](tag-cli.md).
-
 
 Gebruik de `Get-AzVM` cmdlet om de huidige lijst met tags voor uw virtuele machine weer te geven.
 
@@ -84,8 +83,7 @@ Environment   Production
 Location      MyLocation
 ```
 
-
-**Volgende stappen**
+### <a name="next-steps"></a>Volgende stappen
 
 - Zie [Azure Resource Manager Overview](../azure-resource-manager/management/overview.md) en [Tags gebruiken om uw Azure-resources te organiseren](../azure-resource-manager/management/tag-resources.md)voor meer informatie over het coderen van uw Azure-resources.
-- Als u wilt zien hoe Tags u kunnen helpen bij het beheren van uw gebruik van Azure-resources, raadpleegt u [inzicht in uw Azure-factuur](../cost-management-billing/understand/review-individual-bill.md) en [krijgt u inzicht in uw Microsoft Azure Resource verbruik](../cost-management-billing/manage/usage-rate-card-overview.md).
+- Zie [informatie over uw Azure-factuur](../cost-management-billing/understand/review-individual-bill.md)als u wilt weten hoe Tags u kunnen helpen bij het beheren van uw gebruik van Azure-resources.

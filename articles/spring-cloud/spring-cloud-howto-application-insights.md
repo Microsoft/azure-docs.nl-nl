@@ -7,12 +7,12 @@ ms.service: spring-cloud
 ms.topic: how-to
 ms.date: 12/04/2020
 ms.custom: devx-track-java
-ms.openlocfilehash: fb1c6f2b541e537bcb52c55fcfd87bbebe37b8e5
-ms.sourcegitcommit: beacda0b2b4b3a415b16ac2f58ddfb03dd1a04cf
+ms.openlocfilehash: c4871c3de8028eec1b6184c1d03ac2180b50f57d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97831938"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881347"
 ---
 # <a name="application-insights-java-in-process-agent-in-azure-spring-cloud-preview"></a>Application Insights Java In-Process-agent in azure lente Cloud (preview-versie)
 
@@ -83,7 +83,7 @@ Klik in het navigatie deel venster links op **Application Insights** om naar de 
 
   [![IPA 8](media/spring-cloud-application-insights/petclinic-microservices-live-metrics.jpg)](media/spring-cloud-application-insights/petclinic-microservices-live-metrics.jpg)
 
-* Klik in het navigatie deel venster links op **Beschik baarheid** om de beschik baarheid en reactie snelheid van web-apps te bewaken door [beschikbaarheids tests te maken in Application Insights](/azure/azure-monitor/app/monitor-web-app-availability).
+* Klik in het navigatie deel venster links op **Beschik baarheid** om de beschik baarheid en reactie snelheid van web-apps te bewaken door [beschikbaarheids tests te maken in Application Insights](../azure-monitor/app/monitor-web-app-availability.md).
 
   [![IPA 9](media/spring-cloud-application-insights/petclinic-microservices-availability.jpg)](media/spring-cloud-application-insights/petclinic-microservices-availability.jpg)
 
@@ -140,7 +140,7 @@ az spring-cloud app-insights update --disable –name "assignedName" –resource
 
 ```
 
-## <a name="see-also"></a>Zie tevens
+## <a name="see-also"></a>Zie ook
 * [Gedistribueerde tracering gebruiken met Azure Spring Cloud](spring-cloud-tutorial-distributed-tracing.md)
 * [Logboeken en metrische gegevens analyseren](diagnostic-services.md)
 * [Logboeken in real-time streamen](spring-cloud-howto-log-streaming.md)

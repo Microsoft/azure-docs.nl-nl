@@ -4,12 +4,12 @@ description: Kiezen uit de beschik bare VM-grootten en versies van besturings sy
 ms.topic: conceptual
 ms.date: 11/24/2020
 ms.custom: seodec18
-ms.openlocfilehash: 8bb54a4db62f56f442f7cec81e6768241a05ffee
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 59218361c5fff51b33131fdd2455c599dd12b06a
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95895227"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897490"
 ---
 # <a name="choose-a-vm-size-and-image-for-compute-nodes-in-an-azure-batch-pool"></a>Een VM-grootte en-afbeelding kiezen voor reken knooppunten in een Azure Batch pool
 
@@ -35,40 +35,38 @@ Batch-Pools in de virtuele-machine configuratie ondersteunen bijna alle [VM-groo
 | DC | Niet ondersteund |
 | Dv2, DSv2 | Alle grootten |
 | Dv3, Dsv3 | Alle grootten |
-| Dav4<sup>1</sup> | Alle grootten |
-| Dasv4<sup>1</sup> | Alle grootten |
+| Dav4 | Alle grootten |
+| Dasv4 | Alle grootten |
 | Ddv4, Ddsv4 |  Alle grootten |
 | Dv4, Dsv4 | Niet ondersteund |
 | Ev3, Esv3 | Alle grootten, met uitzonde ring van E64is_v3 |
-| Eav4<sup>1</sup> | Alle grootten |
-| Easv4<sup>1</sup> | Alle grootten |
+| Eav4 | Alle grootten |
+| Easv4 | Alle grootten |
 | Edv4, Edsv4 |  Alle grootten |
 | Ev4, Esv4 | Niet ondersteund |
 | F, FS | Alle grootten |
 | Fsv2 | Alle grootten |
 | G, GS | Alle grootten |
 | H | Alle grootten |
-| HB<sup>1</sup> | Alle grootten |
-| HBv2<sup>1</sup> | Alle grootten |
-| HC<sup>1</sup> | Alle grootten |
+| HB | Alle grootten |
+| HBv2 | Alle grootten |
+| KM | Alle grootten |
 | Ls | Alle grootten |
-| Lsv2<sup>1</sup> | Alle grootten |
-| M<sup>1</sup> | Alle grootten |
-| Mv2<sup>1, 2</sup> | Alle grootten |
+| Lsv2 | Alle grootten |
+| M | Alle grootten |
+| Mv2<sup>1</sup> | Alle grootten |
 | NC | Alle grootten |
-| NCv2<sup>1</sup> | Alle grootten |
-| NCv3<sup>1</sup> | Alle grootten |
+| NCv2 | Alle grootten |
+| NCv3 | Alle grootten |
 | NCasT4_v3 | Geen-nog niet beschikbaar |
-| ND<sup>1</sup> | Alle grootten |
-| NDv2<sup>1</sup> | Geen-nog niet beschikbaar |
+| ND | Alle grootten |
+| NDv2 | Geen-nog niet beschikbaar |
 | NV | Alle grootten |
-| NVv3<sup>1</sup> | Alle grootten |
-| NVv4<sup>1</sup> | Alle grootten |
+| NVv3 | Alle grootten |
+| NVv4 | Alle grootten |
 | SAP HANA | Niet ondersteund |
 
-<sup>1</sup> deze VM-serie kan worden toegewezen in batch-Pools in de configuratie van de virtuele machine, maar u moet een nieuw batch-account maken en een specifieke [quota verhoging](batch-quota-limit.md#increase-a-quota)aanvragen. Deze beperking wordt verwijderd zodra vCPU quotum per VM-serie volledig wordt ondersteund voor batch-accounts.
-
-<sup>2</sup> deze VM-serie kan alleen worden gebruikt met VM-installatie kopieën van generatie 2.
+<sup>1</sup> deze VM-serie kan alleen worden gebruikt met VM-installatie kopieën van generatie 2.
 
 ### <a name="using-generation-2-vm-images"></a>VM-installatie kopieën van generatie 2 gebruiken
 

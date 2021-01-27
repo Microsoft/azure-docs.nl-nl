@@ -1,5 +1,5 @@
 ---
-title: Azure CLI-voorbeeldscript - De referenties van uw account opnieuw instellen | Microsoft Docs
+title: Voor beeld van Azure CLI-script-uw account referenties opnieuw instellen
 description: Gebruik het Azure CLI-script om de referenties van uw account opnieuw in te stellen en de app.config-instellingen terug te krijgen.
 services: media-services
 documentationcenter: ''
@@ -15,12 +15,12 @@ ms.workload: na
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: da997ec71655231876749d9f3aa65ba06fd3a1f8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: 2b9b95af79b8aac11f56fe576f860d719b5fb50e
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89295832"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897676"
 ---
 # <a name="azure-cli-example-reset-the-account-credentials"></a>Voorbeeld van Azure CLI: De referenties voor het account opnieuw instellen
 

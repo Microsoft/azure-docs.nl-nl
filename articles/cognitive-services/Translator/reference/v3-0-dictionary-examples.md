@@ -3,19 +3,19 @@ title: Voor beelden van Translator Dictionary-methode
 titleSuffix: Azure Cognitive Services
 description: De voor beelden van de vertaler-woorden lijst biedt voor beelden die laten zien hoe termen in de woorden lijst in de context worden gebruikt.
 services: cognitive-services
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: reference
 ms.date: 01/21/2020
-ms.author: swmachan
-ms.openlocfilehash: 1fe5a5669173733e3d0cf1b56b9997d15a3ff138
-ms.sourcegitcommit: 10d00006fec1f4b69289ce18fdd0452c3458eca5
+ms.author: lajanuar
+ms.openlocfilehash: e7f0e106c1ca154dcd54990395430b3e0f6c536f
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/21/2020
-ms.locfileid: "95021300"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98895506"
 ---
 # <a name="translator-30-dictionary-examples"></a>Vertaler 3,0: Dictionary-voor beelden
 
@@ -33,7 +33,7 @@ https://api.cognitive.microsofttranslator.com/dictionary/examples?api-version=3.
 
 Aanvraag parameters die zijn door gegeven voor de query reeks zijn:
 
-| Query parameter | Description |
+| Query parameter | Beschrijving |
 | --------- | ----------- |
 | api-versie <img width=200/> | **Vereiste para meter**.<br/>De versie van de API die door de client is aangevraagd. Waarde moet zijn `3.0` . |
 | from | **Vereiste para meter**.<br/>Geeft de taal van de invoer tekst aan. De bron taal moet een van de [ondersteunde talen](./v3-0-languages.md) zijn die in het `dictionary` bereik zijn opgenomen. |

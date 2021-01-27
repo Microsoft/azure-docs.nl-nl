@@ -7,12 +7,12 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 1/24/2018
 ms.author: mimckitt
-ms.openlocfilehash: 444c6a9c131916a2a07f41fd5c1ff38fc1e7bfb2
-ms.sourcegitcommit: f5b8410738bee1381407786fcb9d3d3ab838d813
+ms.openlocfilehash: 8268e305946a19f4f74ff790e680d6bd3faa2b29
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98210321"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881432"
 ---
 # <a name="how-to-deploy-windows-10-on-azure-with-multitenant-hosting-rights"></a>Windows 10 implementeren op Azure met multi tenant-hosting rechten 
 Voor klanten met Windows 10 Enter prise E3/E5 per gebruiker of Windows Virtual Desktop Access per gebruiker (licenties voor gebruikers abonnement of licenties voor gebruikers abonnementen), kunt u met multi tenant hosting rechten voor Windows 10 uw Windows 10-licenties naar de Cloud brengen en Windows 10-Virtual Machines op Azure uitvoeren zonder dat u voor een andere licentie betaalt. Zie [multi tenant-hosting voor Windows 10](https://www.microsoft.com/en-us/CloudandHosting/licensing_sca.aspx)voor meer informatie.
@@ -39,7 +39,7 @@ rs5-pro                     Windows-10 MicrosoftWindowsDesktop eastus
 rs5-pron                    Windows-10 MicrosoftWindowsDesktop eastus  
 ```
 
-Zie [Azure Marketplace-VM-installatie kopieën zoeken en gebruiken met Azure PowerShell](https://docs.microsoft.com/azure/virtual-machines/windows/cli-ps-findimage) voor meer informatie over beschik bare afbeeldingen
+Zie [Azure Marketplace-VM-installatie kopieën zoeken en gebruiken met Azure PowerShell](./cli-ps-findimage.md) voor meer informatie over beschik bare afbeeldingen
 
 ## <a name="qualify-for-multi-tenant-hosting-rights"></a>Kom in aanmerking voor multi tenant-hosting rechten 
 Om in aanmerking te komen voor multi tenant-hosting rechten en om Windows 10-installatie kopieën uit te voeren op Azure-gebruikers, moet een van de volgende abonnementen zijn: 

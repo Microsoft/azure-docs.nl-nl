@@ -1,29 +1,11 @@
 ---
-title: Overzicht van Azure Media Services v3
-titleSuffix: Azure Media Services
-description: Een algemeen overzicht van Azure Media Services v3 met koppelingen naar quickstarts, zelfstudies en codevoorbeelden.
-services: media-services
-documentationcenter: na
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-tags: ''
-keywords: azure media services, stream, uitzenden, live, offline
-ms.service: media-services
-ms.devlang: multiple
-ms.topic: overview
-ms.tgt_pltfrm: multiple
-ms.workload: media
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.custom: mvc
-ms.openlocfilehash: 01ec0c7c0d2d060bbd930a099fe3db54de6cb150
-ms.sourcegitcommit: 96918333d87f4029d4d6af7ac44635c833abb3da
-ms.translationtype: HT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 11/04/2020
-ms.locfileid: "93308965"
+Titel: Azure Media Services v3-overzicht: Azure Media Services beschrijving: een overzicht op hoog niveau van Azure Media Services V3 met koppelingen naar Quick starts, zelf studies en code voorbeelden.
+Services: Media Services documentationcenter: na Auteur: IngridAtMicrosoft Manager: femila editor: ' ' Tags: ' ' tref woorden: Azure Media Services, stream, broadcast, Live, offline
+
+MS. service: Media-Services MS. devlang: meerdere MS. topic: overzicht ms.tgt_pltfrm: meerdere MS. workload: medium MS. date: 08/31/2020 MS. Author: inhenkel MS. Custom: MVC
+#<a name="customer-intent-as-a-developer-or-a-content-provider-i-want-to-encode-stream-on-demand-or-live-analyze-my-media-content-so-that-my-customers-can-view-the-content-on-a-wide-variety-of-browsers-and-devices-gain-valuable-insights-from-recorded-content"></a>Klant intentie: als ontwikkelaar of een inhouds provider, ik wil coderen, streamen (op aanvraag of Live), mijn media-inhoud analyseren zodat mijn klanten het volgende kunnen doen: Bekijk de inhoud van een groot aantal browsers en apparaten, krijg waardevolle inzichten van opgenomen inhoud.
 ---
+
 # <a name="azure-media-services-v3-overview"></a>Overzicht van Azure Media Services v3
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]

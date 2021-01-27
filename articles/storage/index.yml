@@ -10,12 +10,12 @@ metadata:
   author: twooley
   ms.author: twooley
   ms.date: 05/01/2020
-  ms.openlocfilehash: e7b4fc7988621c996966c77bf9dd9b74b60afe86
-  ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
-  ms.translationtype: HT
+  ms.openlocfilehash: 886f61206bdc87dc5283a46e50ff438041be1a2f
+  ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+  ms.translationtype: MT
   ms.contentlocale: nl-NL
-  ms.lasthandoff: 12/02/2020
-  ms.locfileid: "96491992"
+  ms.lasthandoff: 01/27/2021
+  ms.locfileid: "98878473"
 highlightedContent:
   items:
   - title: Inleiding in de belangrijkste opslagservices
@@ -95,7 +95,7 @@ additionalContent:
         text: Meer informatie >
     - title: Online gegevensoverdracht (on-premises naar Azure)
       links:
-      - url: ../databox-online/data-box-gateway-overview.md
+      - url: ../databox-gateway/data-box-gateway-overview.md
         text: Probleemloze gegevensoverdracht naar Azure (Data Box Gateway)
       - url: ../databox-online/azure-stack-edge-overview.md
         text: Gegevens lokaal verwerken voor overdracht naar Azure (Azure Stack Edge)

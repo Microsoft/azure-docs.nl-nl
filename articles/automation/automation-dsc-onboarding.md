@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.topic: conceptual
 ms.date: 12/10/2019
 manager: carmonm
-ms.openlocfilehash: ae268534a18a921cca012881fa172261c7ba1063
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: c0dc68bd7dacf0cd7f4be9732d45831e2dbb712c
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186398"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897000"
 ---
 # <a name="enable-azure-automation-state-configuration"></a>Configuratie van Azure Automation status inschakelen
 
@@ -40,7 +40,7 @@ De configuratie van een virtuele Azure-machine via de [Azure Portal](https://por
 
 4. Als op de computer de gewenste uitbrei ding voor Power shell niet is geïnstalleerd en de energie status actief is, klikt u op **verbinding maken**.
 
-5. Voer onder **registratie**de [lokale Power shell DSC-Configuration Manager waarden](/powershell/scripting/dsc/managing-nodes/metaConfig) in die vereist zijn voor uw use-case. U kunt desgewenst een knooppunt configuratie invoeren om aan de virtuele machine toe te wijzen.
+5. Voer onder **registratie** de [lokale Power shell DSC-Configuration Manager waarden](/powershell/scripting/dsc/managing-nodes/metaConfig) in die vereist zijn voor uw use-case. U kunt desgewenst een knooppunt configuratie invoeren om aan de virtuele machine toe te wijzen.
 
 ![VM inschakelen](./media/automation-dsc-onboarding/DSC_Onboarding_6.png)
 
@@ -73,7 +73,7 @@ U kunt Windows-servers met on-premises of in andere Cloud omgevingen (waaronder 
    Set-DscLocalConfigurationManager -Path C:\Users\joe\Desktop\DscMetaConfigs -ComputerName MyServer1, MyServer2
    ```
 
-1. Als u de Power shell DSC-webconfiguraties niet op afstand kunt Toep assen, kopieert u de map met de **configuratie** van de werkmap naar de machines die u inschakelt. Voeg vervolgens code toe om [set-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager?view=powershell-5.1) lokaal op de computers aan te roepen.
+1. Als u de Power shell DSC-webconfiguraties niet op afstand kunt Toep assen, kopieert u de map met de **configuratie** van de werkmap naar de machines die u inschakelt. Voeg vervolgens code toe om [set-DscLocalConfigurationManager](/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager) lokaal op de computers aan te roepen.
 1. Controleer met behulp van de Azure Portal of cmdlets of de computers worden weer gegeven als status configuratie knooppunten die zijn geregistreerd in uw Azure Automation-account.
 
 ## <a name="enable-physicalvirtual-linux-machines"></a>Fysieke/virtuele Linux-machines inschakelen
@@ -123,7 +123,7 @@ Als u een machine voor status configuratie wilt inschakelen, kunt u een [DSC-con
 > [!NOTE]
 > DSC-mailconfiguraties bevatten de geheimen die nodig zijn om een machine in een Automation-account in te scha kelen voor beheer. Zorg ervoor dat u de DSC-configuratie die u maakt op de juiste wijze beveiligt, of verwijder ze na gebruik.
 
-Proxy ondersteuning voor-configuratie wordt beheerd door de [lokale Configuration Manager](/powershell/scripting/dsc/managing-nodes/metaconfig?view=powershell-7), de Windows Power shell DSC-engine. De LCM wordt uitgevoerd op alle doel knooppunten en is verantwoordelijk voor het aanroepen van de configuratie resources die zijn opgenomen in een DSC-configuratie script. U kunt ondersteuning voor proxy in een-configuratie opnemen door definities van en eigenschappen toe te voegen aan de hand van `ProxyURL` `ProxyCredential` de `ConfigurationRepositoryWeb` `ResourceRepositoryWeb` elementen, en `ReportServerWeb` . Een voor beeld van de URL-instelling is `ProxyURL = "http://172.16.3.6:3128";` . De `ProxyCredential` eigenschap wordt ingesteld op een `PSCredential` object, zoals beschreven in [referenties beheren in azure Automation](shared-resources/credentials.md). 
+Proxy ondersteuning voor-configuratie wordt beheerd door de [lokale Configuration Manager](/powershell/scripting/dsc/managing-nodes/metaconfig), de Windows Power shell DSC-engine. De LCM wordt uitgevoerd op alle doel knooppunten en is verantwoordelijk voor het aanroepen van de configuratie resources die zijn opgenomen in een DSC-configuratie script. U kunt ondersteuning voor proxy in een-configuratie opnemen door definities van en eigenschappen toe te voegen aan de hand van `ProxyURL` `ProxyCredential` de `ConfigurationRepositoryWeb` `ResourceRepositoryWeb` elementen, en `ReportServerWeb` . Een voor beeld van de URL-instelling is `ProxyURL = "http://172.16.3.6:3128";` . De `ProxyCredential` eigenschap wordt ingesteld op een `PSCredential` object, zoals beschreven in [referenties beheren in azure Automation](shared-resources/credentials.md). 
 
 ### <a name="generate-dsc-metaconfigurations-using-a-dsc-configuration"></a>DSC-mailconfiguraties genereren met behulp van een DSC-configuratie
 
@@ -260,7 +260,7 @@ Proxy ondersteuning voor-configuratie wordt beheerd door de [lokale Configuratio
 Als de standaard instellingen van de Power shell DSC-functie overeenkomen met uw use-case en u wilt dat computers worden opgehaald van en rapporteren aan Azure Automation status configuratie, kunt u de benodigde DSC-standaard configuraties meer genereren met behulp van de Azure Automation-cmdlets.
 
 1. Open de Power shell-console of VSCode als beheerder op een computer in uw lokale omgeving.
-2. Maak verbinding met Azure Resource Manager via [Connect-AzAccount](/powershell/module/Az.Accounts/Connect-AzAccount?view=azps-3.7.0).
+2. Maak verbinding met Azure Resource Manager via [Connect-AzAccount](/powershell/module/Az.Accounts/Connect-AzAccount).
 3. Down load de Power shell DSC-configuratie voor de computers die u wilt inschakelen op basis van het Automation-account waarin u knoop punten instelt.
 
    ```powershell
@@ -319,13 +319,13 @@ De status van de configuratie-uitbrei ding voor de gewenste Azure-VM weer geven:
 1. Navigeer in het Azure Portal naar de virtuele machine die wordt ingeschakeld.
 2. Klik op **uitbrei dingen** onder **instellingen**. 
 3. Selecteer nu **DSC** of **DSCForLinux**, afhankelijk van uw besturings systeem. 
-4. Klik op **gedetailleerde status weer geven**voor meer informatie.
+4. Klik op **gedetailleerde status weer geven** voor meer informatie.
 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Zie aan de slag [met de configuratie van de Azure Automation-status](automation-dsc-getting-started.md)om aan de slag te gaan.
 - Zie [DSC-configuraties compileren in azure Automation status configuratie](automation-dsc-compile.md)voor meer informatie over het compileren van DSC-configuraties zodat u ze aan doel knooppunten kunt toewijzen.
-- Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+- Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
 - Zie [prijzen voor Azure Automation status configuratie](https://azure.microsoft.com/pricing/details/automation/)voor prijs informatie.
 - Zie voor een voor beeld van het gebruik van Azure Automation status configuratie in een pijp lijn voor continue implementatie een [continue implementatie met Choco lade instellen](automation-dsc-cd-chocolatey.md).
 - Zie [problemen met de configuratie van Azure Automation status oplossen](./troubleshoot/desired-state-configuration.md)voor informatie over het oplossen van problemen.

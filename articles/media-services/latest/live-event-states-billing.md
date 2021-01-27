@@ -1,5 +1,5 @@
 ---
-title: Live gebeurtenis statussen en facturering in Azure Media Services | Microsoft Docs
+title: Live gebeurtenis statussen en facturering in Azure Media Services
 description: Dit onderwerp bevat een overzicht van Azure Media Services statussen en facturering van Live-gebeurtenissen.
 services: media-services
 documentationcenter: ''
@@ -13,18 +13,18 @@ ms.devlang: ne
 ms.topic: conceptual
 ms.date: 10/26/2020
 ms.author: inhenkel
-ms.openlocfilehash: 2d3d3f5c56bd42aeb148c19fefebc0e7d364cd1c
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
+ms.openlocfilehash: c9fa12e1ee3778d0865c75662064bd4067e56d89
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92782362"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897812"
 ---
 # <a name="live-event-states-and-billing"></a>Live gebeurtenis statussen en facturering
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
 
-In Azure Media Services begint de facturering van een live-gebeurtenis zodra de status verandert in **actief** of **stand-by** . U wordt gefactureerd, zelfs als er geen video door de service wordt getransporteerd. Als u de live-gebeurtenis van facturering wilt stoppen, moet u de live-gebeurtenis beëindigen. Live transcriptie wordt gefactureerd op dezelfde manier als de live-gebeurtenis.
+In Azure Media Services begint de facturering van een live-gebeurtenis zodra de status verandert in **actief** of **stand-by**. U wordt gefactureerd, zelfs als er geen video door de service wordt getransporteerd. Als u de live-gebeurtenis van facturering wilt stoppen, moet u de live-gebeurtenis beëindigen. Live transcriptie wordt gefactureerd op dezelfde manier als de live-gebeurtenis.
 
 Wanneer **LiveEventEncodingType** voor uw [live-gebeurtenis](/rest/api/media/liveevents) is ingesteld op Standard of Premium1080p, wordt met Media Services automatisch elke live gebeurtenis afgesloten die nog 12 uur na het invoeren van de invoer wordt **uitgevoerd** , en worden er geen **Live uitvoer** s uitgevoerd. Er worden echter nog steeds kosten in rekening gebracht voor de tijd dat de live-gebeurtenis de status **actief** heeft.
 

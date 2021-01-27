@@ -8,12 +8,12 @@ ms.service: private-link
 ms.topic: how-to
 ms.date: 09/02/2020
 ms.author: allensu
-ms.openlocfilehash: 5cbfd90ca65a1fb75c9cbe5602ac2a69741e378f
-ms.sourcegitcommit: c95e2d89a5a3cf5e2983ffcc206f056a7992df7d
+ms.openlocfilehash: 7812d0f2e42dfed6cdd661244b77969297093a5d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/24/2020
-ms.locfileid: "96017233"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879170"
 ---
 # <a name="use-azure-firewall-to-inspect-traffic-destined-to-a-private-endpoint"></a>Azure Firewall gebruiken om verkeer te controleren dat is bestemd voor een persoonlijk eind punt
 
@@ -92,7 +92,7 @@ Er zijn enkele beperkingen ten aanzien van de implementatie: een migratie naar e
 Deze architectuur kan worden geïmplementeerd als u verbinding met uw on-premises netwerk hebt geconfigureerd met behulp van: 
 
 * [ExpressRoute](..\expressroute\expressroute-introduction.md)
-* [VPN van site naar site](..\vpn-gateway\vpn-gateway-howto-site-to-site-resource-manager-portal.md) 
+* [VPN van site naar site](../vpn-gateway/tutorial-site-to-site-portal.md) 
 
 Als uw beveiligings vereisten client verkeer vereisen voor services die worden weer gegeven via persoonlijke eind punten om te worden gerouteerd via een beveiligings apparaat, implementeert u dit scenario.
 
@@ -163,7 +163,7 @@ Vervang de volgende para meters in de stappen door de onderstaande informatie:
 
 ### <a name="create-virtual-machine"></a>Virtuele machine maken
 
-1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een**  >  **Compute**  >  **virtuele machine** voor het berekenen van een resource maken.
+1. Selecteer in de linkerbovenhoek van het scherm in het Azure Portal **een**  >    >  **virtuele machine** voor het berekenen van een resource maken.
 
 2. Typ of selecteer in **Een virtuele machine maken - Basisprincipes** de volgende gegevens:
 
@@ -274,14 +274,14 @@ In deze sectie maakt u een persoonlijke SQL Database.
     | Resourcegroep | Selecteer **myResourceGroup**. U hebt deze resourcegroep in de vorige sectie gemaakt.|
     | **Databasedetails** |  |
     | Databasenaam  | Voer **mydatabase** in.  |
-    | server | Selecteer **nieuwe maken** en voer de onderstaande gegevens in.    |
+    | Server | Selecteer **nieuwe maken** en voer de onderstaande gegevens in.    |
     | Servernaam | Voer **mydbserver** in. Voer een unieke naam in als deze naam wordt gebruikt.   |
     | Aanmeldgegevens van serverbeheerder | Voer een naam in voor uw keuze. |
     | Wachtwoord    |    Voer een wachtwoord naar keuze in.    |
     | Wachtwoord bevestigen | Voer het wachtwoord opnieuw in    |
     | Locatie    | Selecteer **(VS) Zuid-Centraal VS**.    |
     | Elastische SQL-pool wilt gebruiken    | Laat de standaardwaarde **Nee** staan. |
-    | Compute en opslag | Behoud de standaard **Algemeen GEN5, 2 vCores, 32 GB opslag ruimte**. |
+    | Berekening en opslag | Behoud de standaard **Algemeen GEN5, 2 vCores, 32 GB opslag ruimte**. |
     |||
 
 3. Selecteer **Controleren + maken**. De pagina **Beoordelen en maken** wordt weergegeven, waar uw configuratie wordt gevalideerd in Azure.
@@ -361,7 +361,7 @@ In deze sectie worden virtuele netwerken **myVMVNet** en **myPEVNet** met **myAz
     | ------- | ----- |
     | Naam van de peering van myAzFwVNet naar extern virtueel netwerk | Voer **myAzFwVNet-to-myVMVNet in**. |
     | **Details van peer** |  |
-    | Implementatie model van het virtuele netwerk  | Behoud de standaard **Resource Manager**.  |
+    | Implementatiemodel voor het virtuele netwerk  | Behoud de standaard **Resource Manager**.  |
     | Ik weet wat mijn Resource-ID is | Schakel dit selectievakje niet in.    |
     | Abonnement | Selecteer uw abonnement.    |
     | Virtueel netwerk | Selecteer **myVMVNet**. |
@@ -387,7 +387,7 @@ In deze sectie worden virtuele netwerken **myVMVNet** en **myPEVNet** met **myAz
     | ------- | ----- |
     | Naam van de peering van myAzFwVNet naar extern virtueel netwerk | Voer **myAzFwVNet-to-myPEVNet in**. |
     | **Details van peer** |  |
-    | Implementatie model van het virtuele netwerk  | Behoud de standaard **Resource Manager**.  |
+    | Implementatiemodel voor het virtuele netwerk  | Behoud de standaard **Resource Manager**.  |
     | Ik weet wat mijn Resource-ID is | Schakel dit selectievakje niet in.    |
     | Abonnement | Selecteer uw abonnement.    |
     | Virtueel netwerk | Selecteer **myPEVNet**. |
@@ -458,15 +458,15 @@ Deze regel staat communicatie toe via de firewall die we in de vorige stappen he
     | ------- | ----- |
     | Naam | Voer **SQLPrivateEndpoint** in. |
     | Prioriteit | Voer **100** in. |
-    | Actie | Voer **toestaan** in. |
+    | Bewerking | Voer **toestaan** in. |
     | **Regels** |  |
     | **FQDN-tags** | |
-    | Name  | Leeg laten.  |
+    | Naam  | Leeg laten.  |
     | Brontype | Wijzig het standaard **IP-adres**.    |
     | Bron | Leeg laten. |
     | FQDN-tags | De standaard instelling **0** behouden. |
     | **Doel-FQDN-naam** | |
-    | Name | Voer **SQLPrivateEndpoint** in.    |
+    | Naam | Voer **SQLPrivateEndpoint** in.    |
     | Brontype | Wijzig het standaard **IP-adres**. |
     | Bron | Voer **10.1.0.0/16** in. |
     | Protocol: poort | Voer **MSSQL: 1433** in. |
@@ -483,7 +483,7 @@ In deze sectie maakt u een route tabel met een aangepaste route.
 
 De route verzendt verkeer van het **myVM** -subnet naar de adres ruimte van het virtuele netwerk **myPEVNet**, via de Azure firewall.
 
-1. Selecteer in het menu van Azure Portal of op de **Startpagina** de optie **Een resource maken**.
+1. Selecteer in het menu van de Azure-portal of op de **startpagina** de optie **Een resource maken**.
 
 2. Typ **route tabel** in het zoekvak en druk op **Enter**.
 
@@ -498,7 +498,7 @@ De route verzendt verkeer van het **myVM** -subnet naar de adres ruimte van het 
     | Resourcegroep | Selecteer **myResourceGroup**.  |
     | **Exemplaardetails** |  |
     | Regio | Selecteer **Zuid-Centraal VS**. |
-    | Name | Voer **het VM-AzureFirewall in**. |
+    | Naam | Voer **het VM-AzureFirewall in**. |
     | Gateway routes door geven | Selecteer **Nee**. |
 
 5. Selecteer **Controleren + maken**. De pagina **Beoordelen en maken** wordt weergegeven, waar uw configuratie wordt gevalideerd in Azure.

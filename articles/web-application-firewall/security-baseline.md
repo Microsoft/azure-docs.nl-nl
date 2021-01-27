@@ -7,12 +7,12 @@ ms.topic: conceptual
 ms.date: 10/13/2020
 ms.author: mbaldwin
 ms.custom: subject-security-benchmark
-ms.openlocfilehash: b44ea6f55717712cfba4045205e02bd9f2b851df
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 4bda3622c1bb1cb66e83b82df0d13cbfee9e20a3
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202654"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878118"
 ---
 # <a name="azure-security-baseline-for-azure-web-application-firewall"></a>Azure-beveiligings basislijn voor Azure Web Application firewall
 
@@ -406,7 +406,7 @@ Volg Security Center aanbevelingen voor het versleutelen van de rest en de versl
 
 De Azure-WAF, in preventie modus, blokkeert inbreuken en aanvallen die worden gedetecteerd door de regels. De aanvaller krijgt een uitzondering '403 onbevoegde toegang' en de verbinding wordt verbroken. In de preventiemodus worden dergelijke aanvallen vastgelegd in de WAF-logboeken.
 
-- [Overzicht van de integratie tussen Application Gateway en Azure Security Center](../application-gateway/application-gateway-integration-security-center.md#overview)
+- [Overzicht van de integratie tussen Application Gateway en Azure Security Center](../security-center/security-center-partner-integration.md)
 
 - [WAF modi op Application Gateway](ag/ag-overview.md#waf-modes)
 

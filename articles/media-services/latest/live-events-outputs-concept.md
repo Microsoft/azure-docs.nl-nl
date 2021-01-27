@@ -1,25 +1,9 @@
 ---
-title: Live Events en live outputs concepten in Azure Media Services v3
-titleSuffix: Azure Media Services
-description: Dit onderwerp bevat een overzicht van Live Events en live outputs in Azure Media Services v3.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: ne
-ms.topic: conceptual
-ms.date: 10/23/2020
-ms.author: inhenkel
-ms.openlocfilehash: a74dcb3cae74605e747a63f8fbb102404d8cc80e
-ms.sourcegitcommit: c2dd51aeaec24cd18f2e4e77d268de5bcc89e4a7
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94741821"
+Titel: Live Events en live output concepten in Azure Media Services V3: Azure Media Services beschrijving: in dit onderwerp vindt u een overzicht van Live Events en live outputs in Azure Media Services v3.
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila editor: ' '
+
+MS. service: Media-Services MS. workload: media ms.tgt_pltfrm: na MS. devlang: ne MS. topic: conceptuele MS. date: 10/23/2020 MS. Author: inhenkel
+
 ---
 # <a name="live-events-and-live-outputs-in-media-services"></a>Livegebeurtenissen en live-uitvoer in Media Services
 
@@ -150,7 +134,7 @@ U kunt niet-vanity-URL's en vanity-URL's gebruiken.
     |---|---|---|
     |REST|[Eigenschappen. vanityUrl](/rest/api/media/liveevents/create#liveevent)|[LiveEventInput. accessToken](/rest/api/media/liveevents/create#liveeventinput)|
     |CLI|[--Vanity-URL](/cli/azure/ams/live-event?view=azure-cli-latest#az-ams-live-event-create)|[--Access-token](/cli/azure/ams/live-event?view=azure-cli-latest#optional-parameters)|
-    |.NET|[LiveEvent.VanityUrl](/dotnet/api/microsoft.azure.management.media.models.liveevent.md?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[LiveEventInput. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
+    |.NET|[LiveEvent.VanityUrl](/dotnet/api/microsoft.azure.management.media.models.liveevent?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEvent_VanityUrl)|[LiveEventInput. AccessToken](/dotnet/api/microsoft.azure.management.media.models.liveeventinput.accesstoken?view=azure-dotnet#Microsoft_Azure_Management_Media_Models_LiveEventInput_AccessToken)|
 
 ### <a name="live-ingest-url-naming-rules"></a>Naamgevingsregels voor live-opname-URL's
 

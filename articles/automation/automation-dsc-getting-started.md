@@ -9,12 +9,12 @@ ms.author: magoedte
 ms.date: 04/15/2019
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 0e98078fe2799d1c524190c8ced36588f35498b4
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25f5e92aa8aa211782bc238781c59b9ca0511173
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86186432"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897238"
 ---
 # <a name="get-started-with-azure-automation-state-configuration"></a>Aan de slag met de configuratie van de Azure Automation-status
 
@@ -100,7 +100,7 @@ Zie [DSC-configuraties](/powershell/scripting/dsc/configurations/configurations)
 1. Klik aan de linkerkant op **alle resources** en vervolgens op de naam van uw Automation-account.
 1. Klik op de pagina Automation-account op **State Configuration (DSC)** onder **configuratie beheer**.
 1. Klik op de pagina status configuratie (DSC) op het tabblad **configuraties** en klik vervolgens op **TestConfig**. Dit is de naam van de eerder geïmporteerde configuratie.
-1. Klik in het deel venster TestConfig-configuratie op **compileren**en klik vervolgens op **Ja**. Hiermee wordt een compilatie taak gestart.
+1. Klik in het deel venster TestConfig-configuratie op **compileren** en klik vervolgens op **Ja**. Hiermee wordt een compilatie taak gestart.
 
    ![Scherm afbeelding van de knop compileren TestConfig-configuratie pagina](./media/automation-dsc-getting-started/CompileConfig.png)
 
@@ -115,7 +115,7 @@ Nadat u een compilatie hebt gestart, kunt u deze weer geven in de tegel **compil
 1. Klik aan de linkerkant op **alle resources** en vervolgens op de naam van uw Automation-account.
 1. Klik op de pagina Automation-account op **State Configuration (DSC)** onder **configuratie beheer**.
 1. Klik op de pagina status configuratie (DSC) op het tabblad **configuraties** en klik vervolgens op **TestConfig**. Dit is de naam van de eerder geïmporteerde configuratie.
-1. Selecteer onder **compilatie taken**de compilatie taak die u wilt weer geven. Het deel venster Compilatie taak wordt geopend, met de naam van de datum waarop de compilatie taak is gestart.
+1. Selecteer onder **compilatie taken** de compilatie taak die u wilt weer geven. Het deel venster Compilatie taak wordt geopend, met de naam van de datum waarop de compilatie taak is gestart.
 
    ![Scherm afbeelding van de pagina compilatie taak](./media/automation-dsc-getting-started/CompilationJob.png)
 
@@ -151,7 +151,7 @@ U kunt status configuratie gebruiken voor het beheren van virtuele Azure-machine
 
 2. Selecteer op de pagina registratie de naam van de knooppunt configuratie die in het veld **knooppunt configuratie naam** moet worden toegepast op de virtuele machine. Het opgeven van een naam op dit punt is optioneel. U kunt de toegewezen knooppunt configuratie wijzigen nadat u het knoop punt hebt ingeschakeld.
 
-3. Controleer **indien nodig het knoop punt voor opnieuw opstarten**en klik vervolgens op **OK**.
+3. Controleer **indien nodig het knoop punt voor opnieuw opstarten** en klik vervolgens op **OK**.
 
    ![Scherm afbeelding van de Blade registratie](./media/automation-dsc-getting-started/RegisterVM.png)
 
@@ -237,4 +237,4 @@ Als u een knoop punt niet meer wilt beheren met status configuratie, kunt u de r
 - Als u de functie voor Vm's in uw omgeving wilt inschakelen, raadpleegt u de [configuratie van Azure Automation-status inschakelen](automation-dsc-onboarding.md).
 - Zie [Windows Power shell desired state Configuration Overview](/powershell/scripting/dsc/overview/overview)(Engelstalig) voor meer informatie over Power shell DSC.
 - Zie [prijzen voor Azure Automation status configuratie](https://azure.microsoft.com/pricing/details/automation/)voor prijs informatie.
-- Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+- Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.

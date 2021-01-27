@@ -1,6 +1,5 @@
 ---
 title: Terminologie en concepten Media Services
-titleSuffix: Azure Media Services
 description: Meer informatie over terminologie en concepten voor Azure Media Services.
 services: media-servicesgit
 documentationcenter: ''
@@ -13,12 +12,12 @@ ms.topic: conceptual
 ms.date: 08/31/2020
 ms.author: inhenkel
 ms.custom: seodec18
-ms.openlocfilehash: 5564051ae11a1237cc924ee6bf557e3c85d8866a
-ms.sourcegitcommit: 77afc94755db65a3ec107640069067172f55da67
+ms.openlocfilehash: b425cd9268b336a8926e4fad9cb1f288f4fe3e87
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98696410"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897914"
 ---
 # <a name="media-services-terminology-and-concepts"></a>Terminologie en concepten Media Services
 
@@ -36,7 +35,7 @@ De basis concepten die in deze onderwerpen worden beschreven, moeten worden geco
 
 ## <a name="media-services-v3-terminology"></a>Media Services v3-terminologie
 
-|Term|Beschrijving|
+|Termijn|Beschrijving|
 |---|---|
 |Live-gebeurtenis|Een **live-gebeurtenis** vertegenwoordigt een pijp lijn voor opname, code ring (optioneel) en het verpakken van live streams van video, audio en realtime meta gegevens.<br/><br/>Voor klanten die migreren van Media Services v2 Api's, vervangt de **live-gebeurtenis** de **kanaal** entiteit in v2. Zie voor meer informatie [migreren van v2 naar v3](migrate-v-2-v-3-migration-introduction.md).|
 |Streaming-eind punt/verpakking/oorsprong|Een **streaming-eind punt** vertegenwoordigt een dynamische (just-in-time) verpakkings-en bron service die uw Live-en on-demand-inhoud rechtstreeks aan een client speler kan leveren. Er wordt een van de algemene protocollen voor streaming media (HLS of DASH) gebruikt. Daarnaast biedt het **streaming-eind punt** dynamische code ring (just-in-time) voor toonaangevende Digital Rights Management systemen (DRMs).<br/><br/>In de media streaming-industrie wordt deze service meestal een **packager** of **Origin** genoemd.  Andere veelvoorkomende termen in de branche voor deze mogelijkheid zijn JITP (just-in-time-packager) of JITE (just-in-time-Encryption).

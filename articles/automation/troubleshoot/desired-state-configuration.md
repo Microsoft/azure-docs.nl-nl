@@ -2,19 +2,15 @@
 title: Configuratie problemen met Azure Automation status oplossen
 description: In dit artikel leest u hoe u problemen met de configuratie van Azure Automationes oplost en oplost.
 services: automation
-ms.service: automation
 ms.subservice: ''
-author: mgoedtel
-ms.author: magoedte
 ms.date: 04/16/2019
-ms.topic: conceptual
-manager: carmonm
-ms.openlocfilehash: 8043369ebfef23ed84ccff8e7428fbd2048e10b0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.topic: troubleshooting
+ms.openlocfilehash: e6caf3fed708e89b55a88719ca5358f6174c2ac8
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187214"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896525"
 ---
 # <a name="troubleshoot-azure-automation-state-configuration-issues"></a>Configuratie problemen met Azure Automation status oplossen
 
@@ -42,7 +38,7 @@ De [xDscDiagnostics](https://github.com/PowerShell/xDscDiagnostics) -module kan 
 
 U kunt de `xDscDiagnostics` module installeren op uw lokale computer door de instructies te volgen in [de module stabiele versie installeren](https://github.com/PowerShell/xDscDiagnostics#install-the-stable-version-module).
 
-Als u de `xDscDiagnostics` module op uw Azure-machine wilt installeren, gebruikt u [invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand?view=azps-3.7.0). U kunt ook de optie **opdracht uitvoeren** in de Azure Portal gebruiken door de stappen in [Power shell-scripts uit te voeren in uw Windows-VM met de opdracht uitvoeren](../../virtual-machines/windows/run-command.md).
+Als u de `xDscDiagnostics` module op uw Azure-machine wilt installeren, gebruikt u [invoke-AzVMRunCommand](/powershell/module/az.compute/invoke-azvmruncommand). U kunt ook de optie **opdracht uitvoeren** in de Azure Portal gebruiken door de stappen in [Power shell-scripts uit te voeren in uw Windows-VM met de opdracht uitvoeren](../../virtual-machines/windows/run-command.md).
 
 Zie voor meer informatie over het gebruik van **XDSCDIAGNOSTICS** [DSC-logboeken analyseren met behulp van xDscDiagnostics](/powershell/scripting/dsc/troubleshooting/troubleshooting#using-xdscdiagnostics-to-analyze-dsc-logs). Zie ook [xDscDiagnostics-cmdlets](https://github.com/PowerShell/xDscDiagnostics#cmdlets).
 
@@ -66,13 +62,13 @@ Deze fout is een tijdelijk probleem dat is gepland om te worden opgelost.
 
 ### <a name="resolution"></a>Oplossing
 
-Gebruik de cmdlet [Remove-AzAutomationDscConfiguration](/powershell/module/Az.Automation/Remove-AzAutomationDscConfiguration?view=azps-3.7.0) om de configuratie te verwijderen.
+Gebruik de cmdlet [Remove-AzAutomationDscConfiguration](/powershell/module/Az.Automation/Remove-AzAutomationDscConfiguration) om de configuratie te verwijderen.
 
 ## <a name="scenario-failed-to-register-the-dsc-agent"></a><a name="failed-to-register-agent"></a>Scenario: de DSC-agent kan niet worden geregistreerd
 
 ### <a name="issue"></a>Probleem
 
-Wanneer u DscLocalConfigurationManager of een andere DSC-cmdlet hebt [ingesteld](/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager?view=powershell-5.1) , wordt de volgende fout weer gegeven:
+Wanneer u DscLocalConfigurationManager of een andere DSC-cmdlet hebt [ingesteld](/powershell/module/psdesiredstateconfiguration/set-dsclocalconfigurationmanager) , wordt de volgende fout weer gegeven:
 
 ```error
 Registration of the Dsc Agent with the server
@@ -111,7 +107,7 @@ VM has reported a failure when processing extension 'Microsoft.Powershell.DSC / 
 
 Dit probleem wordt veroorzaakt door een onjuist of verlopen certificaat. Zie [een knoop punt opnieuw registreren](../automation-dsc-onboarding.md#re-register-a-node).
 
-Dit probleem kan ook worden veroorzaakt door een proxy configuratie waarmee geen toegang tot ***. Azure-Automation.net**wordt toegestaan. Zie [configuratie van particuliere netwerken](../automation-dsc-overview.md#network-planning)voor meer informatie. 
+Dit probleem kan ook worden veroorzaakt door een proxy configuratie waarmee geen toegang tot **_. Azure-Automation.net_* wordt toegestaan. Zie [configuratie van particuliere netwerken](../automation-dsc-overview.md#network-planning)voor meer informatie. 
 
 ### <a name="resolution"></a>Oplossing
 
@@ -120,12 +116,12 @@ Voer de volgende stappen uit om het mislukte DSC-knoop punt opnieuw te registrer
 #### <a name="step-1-unregister-the-node"></a>Stap 1: de registratie van het knoop punt ongedaan maken
 
 1. Ga in het Azure Portal naar de **Start**  >  **Automation-accounts** > (uw Automation-account) > **State Configuration (DSC)**.
-1. Selecteer **knoop punten**en selecteer het knoop punt dat problemen ondervindt.
+1. Selecteer **knoop punten** en selecteer het knoop punt dat problemen ondervindt.
 1. Selecteer **registratie ongedaan** maken om de registratie van het knoop punt ongedaan te maken.
 
 #### <a name="step-2-uninstall-the-dsc-extension-from-the-node"></a>Stap 2: de DSC-uitbrei ding verwijderen uit het knoop punt
 
-1. Ga in het Azure Portal naar de **Home**  >  **virtuele machine** van de thuis computer > (knoop punt mislukt) >- **extensies**.
+1. Ga in het Azure Portal naar de   >  **virtuele machine** van de thuis computer > (knoop punt mislukt) >- **extensies**.
 1. Selecteer **micro soft. Power shell. DSC**, de Power shell DSC-uitbrei ding.
 1. Selecteer **verwijderen** om de extensie te verwijderen.
 
@@ -152,10 +148,10 @@ If (($certs.Count) -gt 0)
 #### <a name="step-4-reregister-the-failing-node"></a>Stap 4: de registratie van het knoop punt mislukt
 
 1. Ga in het Azure Portal naar de **Start**  >  **Automation-accounts** > (uw Automation-account) > **State Configuration (DSC)**.
-1. **Knoop punten**selecteren.
+1. **Knoop punten** selecteren.
 1. Selecteer **Toevoegen**.
 1. Selecteer het knoop punt dat niet werkt.
-1. Selecteer **verbinding maken**en selecteer de gewenste opties.
+1. Selecteer **verbinding maken** en selecteer de gewenste opties.
 
 ## <a name="scenario-node-is-in-failed-status-with-a-not-found-error"></a><a name="failed-not-found"></a>Scenario: het knoop punt heeft de status mislukt met de fout ' niet gevonden '
 
@@ -177,7 +173,7 @@ Deze fout treedt doorgaans op wanneer het knoop punt is toegewezen aan een confi
 * U kunt een knooppunt configuratie toewijzen aan een knoop punt met behulp van de Azure Portal of met een Power shell-cmdlet.
 
   * Ga in het Azure Portal naar de **Start**  >  **Automation-accounts** > (uw Automation-account) > **State Configuration (DSC)**. Selecteer vervolgens een knoop punt en selecteer **knooppunt configuratie toewijzen**.
-  * Gebruik de cmdlet [set-AzAutomationDscNode](/powershell/module/Az.Automation/Set-AzAutomationDscNode?view=azps-3.7.0) .
+  * Gebruik de cmdlet [set-AzAutomationDscNode](/powershell/module/Az.Automation/Set-AzAutomationDscNode) .
 
 ## <a name="scenario-no-node-configurations-mof-files-were-produced-when-a-configuration-was-compiled"></a><a name="no-mof-files"></a>Scenario: er zijn geen knooppunt configuraties (MOF-bestanden) geproduceerd tijdens het compileren van een configuratie
 
@@ -259,7 +255,7 @@ Deze fout treedt doorgaans op wanneer aan het knoop punt een naam voor de knoopp
 
 ### <a name="issue"></a>Probleem
 
-Wanneer u een knoop punt registreert met behulp [van Regi ster-AzAutomationDSCNode](/powershell/module/az.automation/register-azautomationdscnode?view=azps-3.7.0) of [REGI ster-AzureRMAutomationDSCNode](/powershell/module/azurerm.automation/register-azurermautomationdscnode?view=azurermps-6.13.0), wordt de volgende fout weer gegeven:
+Wanneer u een knoop punt registreert met behulp [van Regi ster-AzAutomationDSCNode](/powershell/module/az.automation/register-azautomationdscnode) of [REGI ster-AzureRMAutomationDSCNode](/powershell/module/azurerm.automation/register-azurermautomationdscnode), wordt de volgende fout weer gegeven:
 
 ```error
 One or more errors occurred.
@@ -338,7 +334,7 @@ DSC-configuraties die lange tijd duren om te compileren, kunnen deze fout veroor
 
 ### <a name="resolution"></a>Oplossing
 
-U kunt ervoor zorgen dat uw DSC-configuraties sneller worden geparseerd door expliciet de `ModuleName` para meter op te nemen voor de aanroepen van de [import-dscresource bieden](/powershell/scripting/dsc/configurations/import-dscresource?view=powershell-5.1) .
+U kunt ervoor zorgen dat uw DSC-configuraties sneller worden geparseerd door expliciet de `ModuleName` para meter op te nemen voor de aanroepen van de [import-dscresource bieden](/powershell/scripting/dsc/configurations/import-dscresource) .
 
 ## <a name="next-steps"></a>Volgende stappen
 

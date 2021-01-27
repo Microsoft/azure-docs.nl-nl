@@ -1,26 +1,9 @@
 ---
-title: Live transcriptie
-titleSuffix: Azure Media Services
-description: Meer informatie over Azure Media Services Live transcriptie.
-services: media-services
-documentationcenter: ''
-author: IngridAtMicrosoft
-manager: femila
-editor: ''
-ms.service: media-services
-ms.workload: media
-ms.tgt_pltfrm: na
-ms.devlang: ne
-ms.topic: how-to
-ms.date: 08/31/2020
-ms.author: inhenkel
-ms.openlocfilehash: c3465e294af104c4d9c3b34960f5e95cf41e7cb8
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: MT
-ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291412"
+Titel: Live transcriptie: beschrijving van Azure Media Services: meer informatie over Azure Media Services Live transcriptie.  
+Services: Media Services documentationcenter: ' ' Auteur: IngridAtMicrosoft Manager: femila-editor: ' MS. service: Media-Services MS. workload: media ms.tgt_pltfrm: na MS. devlang: ne MS. onderwerp: How-to MS. date: 08/31/2020 MS. Author: inhenkel
+
 ---
+
 # <a name="live-transcription-preview"></a>Live transcriptie (preview-versie)
 
 [!INCLUDE [media services api v3 logo](./includes/v3-hr.md)]
@@ -39,10 +22,10 @@ Live transcriptie is beschikbaar in de volgende regio's:
 - Europa -west
 - Europa - noord
 - VS - oost
-- Central US
+- VS - centraal
 - VS - zuid-centraal
 - VS - west 2
-- Brazil South
+- Brazilië - zuid
 
 Dit is de lijst met beschik bare talen die kunnen worden getranscribeerd. Gebruik de taal code in de API.
 

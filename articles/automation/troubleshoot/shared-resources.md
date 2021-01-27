@@ -2,18 +2,15 @@
 title: Problemen met Azure Automation gedeelde bronnen oplossen
 description: In dit artikel leest u hoe u problemen met Azure Automation gedeelde bronnen kunt oplossen en oplossen.
 services: automation
-author: mgoedtel
-ms.author: magoedte
+ms.subservice: ''
 ms.date: 03/12/2019
-ms.topic: conceptual
-ms.service: automation
-manager: carmonm
-ms.openlocfilehash: c6bdc09d37cf29458346eaea360b4cd9e0d1226f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.topic: troubleshooting
+ms.openlocfilehash: c4ede0bffedc256f4af621d4945ebbbea0f8a4b6
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187163"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896288"
 ---
 # <a name="troubleshoot-shared-resource-issues"></a>Problemen met gedeelde bronnen oplossen
 
@@ -33,7 +30,7 @@ Omdat het importeren van Power shell-modules een complexe werk proces is, kan ee
 
 #### <a name="resolution"></a>Oplossing
 
-Om dit probleem op te lossen, moet u de module verwijderen die vastzit met de cmdlet [Remove-AzAutomationModule](/powershell/module/Az.Automation/Remove-AzAutomationModule?view=azps-3.7.0) . U kunt de module vervolgens opnieuw importeren.
+Om dit probleem op te lossen, moet u de module verwijderen die vastzit met de cmdlet [Remove-AzAutomationModule](/powershell/module/Az.Automation/Remove-AzAutomationModule) . U kunt de module vervolgens opnieuw importeren.
 
 ```azurepowershell-interactive
 Remove-AzAutomationModule -Name ModuleName -ResourceGroupName ExampleResourceGroup -AutomationAccountName ExampleAutomationAccount -Force
@@ -70,7 +67,7 @@ Enkele veelvoorkomende redenen waarom een module mogelijk niet met succes kan wo
 * De structuur komt niet overeen met de structuur die nodig is voor automatisering.
 * De module is afhankelijk van een andere module die niet is geïmplementeerd in uw Automation-account.
 * De afhankelijkheden van de module ontbreken in de map.
-* De cmdlet [New-AzAutomationModule](/powershell/module/Az.Automation/New-AzAutomationModule?view=azps-3.7.0) wordt gebruikt om de module te uploaden, en u hebt niet het volledige opslagpad gegeven of u hebt de module niet geladen met behulp van een openbaar toegankelijke URL.
+* De cmdlet [New-AzAutomationModule](/powershell/module/Az.Automation/New-AzAutomationModule) wordt gebruikt om de module te uploaden, en u hebt niet het volledige opslagpad gegeven of u hebt de module niet geladen met behulp van een openbaar toegankelijke URL.
 
 #### <a name="resolution"></a>Oplossing
 

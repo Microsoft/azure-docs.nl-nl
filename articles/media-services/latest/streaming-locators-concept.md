@@ -1,5 +1,5 @@
 ---
-title: Streaming-locators in Azure Media Services | Microsoft Docs
+title: Streaming-locators in Azure Media Services
 description: In dit artikel wordt uitgelegd wat streaming-locators zijn en hoe deze worden gebruikt door Azure Media Services.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: conceptual
 ms.date: 03/04/2020
 ms.author: inhenkel
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 68df5256949db44b2b347002570c64d1aa0d55ea
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 9b711b9a6923a1923562a282dcaffe7cecb0c58b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89297957"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898135"
 ---
 # <a name="streaming-locators"></a>Streaming-locators
 
@@ -25,7 +25,7 @@ Om video's in de uitvoerasset beschikbaar te maken voor clients om af te spelen,
 
 Het proces van het maken van een **streaming-locator** wordt publiceren genoemd. De **streaming-Locator** is standaard onmiddellijk geldig nadat u de API-aanroepen hebt uitgevoerd en de laatste keer totdat deze is verwijderd, tenzij u de optionele begin-en eind tijden configureert. 
 
-Wanneer u een **streaming-Locator**maakt, moet u een **assetnaam** en een naam voor het **streaming-beleid** opgeven. Zie de volgende onderwerpen voor meer informatie:
+Wanneer u een **streaming-Locator** maakt, moet u een **assetnaam** en een naam voor het **streaming-beleid** opgeven. Zie de volgende onderwerpen voor meer informatie:
 
 * [Assets](assets-concept.md)
 * [Streaming-beleid](streaming-policy-concept.md)

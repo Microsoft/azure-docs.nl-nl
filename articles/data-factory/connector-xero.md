@@ -9,14 +9,14 @@ ms.reviewer: douglasl
 ms.service: data-factory
 ms.workload: data-services
 ms.topic: conceptual
-ms.date: 10/29/2020
+ms.date: 01/26/2021
 ms.author: jingwang
-ms.openlocfilehash: 342d0aabe2222393f33aa4ce93646da9f29cf1fb
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 3f8c74f36c1c441e00b808954ce7f7710d3fbd52
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92926458"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879962"
 ---
 # <a name="copy-data-from-xero-using-azure-data-factory"></a>Gegevens kopiëren van Xero met behulp van Azure Data Factory
 
@@ -35,11 +35,8 @@ U kunt gegevens van Xero kopiëren naar elk ondersteund Sink-gegevens archief. Z
 
 Deze Xero-connector ondersteunt met name:
 
-- Xero [persoonlijke toepassing](https://developer.xero.com/documentation/getting-started/getting-started-guide) , maar geen open bare toepassing.
+- OAuth 2,0 en OAuth 1,0-verificatie. Voor OAuth 1,0 biedt de connector ondersteuning voor Xero- [persoonlijke toepassingen](https://developer.xero.com/documentation/getting-started/getting-started-guide) , maar niet voor open bare toepassingen.
 - Alle Xero-tabellen (API-eind punten), behalve ' rapporten '.
-- OAuth 1,0 en OAuth 2,0-verificatie.
-
-Azure Data Factory biedt een ingebouwd stuur programma om connectiviteit mogelijk te maken. u hoeft dus niet hand matig een stuur programma te installeren met behulp van deze connector.
 
 ## <a name="getting-started"></a>Aan de slag
 
@@ -58,10 +55,10 @@ De volgende eigenschappen worden ondersteund voor Xero gekoppelde service:
 | **_Onder `connectionProperties` :_* _ | | |
 | host | Het eind punt van de Xero-server ( `api.xero.com` ).  | Ja |
 | authenticationType | Toegestane waarden zijn `OAuth_2.0` en `OAuth_1.0` . | Ja |
-| consumerKey | De consumenten sleutel die is gekoppeld aan de Xero-toepassing. Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
-| privateKey | De persoonlijke sleutel uit het. pem-bestand dat is gegenereerd voor uw persoonlijke Xero-toepassing, vindt u in [een openbaar/persoonlijk sleutel paar maken](https://developer.xero.com/documentation/auth-and-limits/create-publicprivate-key). Opmerking: _ *het genereren van privatekey. pem met numbits van 512* * met `openssl genrsa -out privatekey.pem 512` , 1024 wordt niet ondersteund. Voeg alle tekst uit het. pem-bestand toe, inclusief de Unix-regel eindigt op (\n), zie voor beeld hieronder.<br/>Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
+| consumerKey | Geef voor OAuth 2,0 de _ *client-id** op voor uw Xero-toepassing.<br>Geef voor OAuth 1,0 de consument sleutel op die is gekoppeld aan de Xero-toepassing.<br>Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
+| privateKey | Geef voor OAuth 2,0 het **client geheim** op voor uw Xero-toepassing.<br>Voor OAuth 1,0 geeft u de persoonlijke sleutel op uit het. pem-bestand dat is gegenereerd voor uw persoonlijke Xero-toepassing. Zie [een openbaar/persoonlijk sleutel paar maken](https://developer.xero.com/documentation/auth-and-limits/create-publicprivate-key). Opmerking voor **het genereren van privatekey. pem met numbits van 512** met `openssl genrsa -out privatekey.pem 512` , wordt 1024 niet ondersteund. Voeg alle tekst uit het. pem-bestand toe, inclusief de Unix-regel eindigt op (\n), zie voor beeld hieronder.<br/><br>Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja |
 | tenantId | De Tenant-ID die is gekoppeld aan uw Xero-toepassing. Van toepassing op OAuth 2,0-verificatie.<br>Meer informatie over het ophalen van de Tenant-ID van [de tenants die u gemachtigd bent om toegang te krijgen](https://developer.xero.com/documentation/oauth2/auth-flow)tot de sectie. | Ja voor OAuth 2,0-verificatie |
-| refreshToken | Van toepassing op OAuth 2,0-verificatie.<br/>Het OAuth 2,0-vernieuwings token is gekoppeld aan de Xero-toepassing en wordt gebruikt voor het vernieuwen van het toegangs token. het toegangs token verloopt na 30 minuten. Meer informatie over hoe de Xero-autorisatie stroom werkt en hoe u het vernieuwings token kunt ophalen uit [dit artikel](https://developer.xero.com/documentation/oauth2/auth-flow). Als u een vernieuwings token wilt ophalen, moet u het [offline_access bereik](https://developer.xero.com/documentation/oauth2/scopes)aanvragen. <br/>**Bekende beperking** : Opmerking Xero stelt het vernieuwings token opnieuw in nadat het is gebruikt voor het vernieuwen van het toegangs token. Voor een operationele werk belasting moet u voordat elke Kopieer activiteit wordt uitgevoerd, een geldig vernieuwings token instellen voor het gebruik van ADF.<br/>Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja voor OAuth 2,0-verificatie |
+| refreshToken | Van toepassing op OAuth 2,0-verificatie.<br/>Het OAuth 2,0-vernieuwings token is gekoppeld aan de Xero-toepassing en wordt gebruikt voor het vernieuwen van het toegangs token. het toegangs token verloopt na 30 minuten. Meer informatie over hoe de Xero-autorisatie stroom werkt en hoe u het vernieuwings token kunt ophalen uit [dit artikel](https://developer.xero.com/documentation/oauth2/auth-flow). Als u een vernieuwings token wilt ophalen, moet u het [offline_access bereik](https://developer.xero.com/documentation/oauth2/scopes)aanvragen. <br/>**Bekende beperking**: Opmerking Xero stelt het vernieuwings token opnieuw in nadat het is gebruikt voor het vernieuwen van het toegangs token. Voor een operationele werk belasting moet u voordat elke Kopieer activiteit wordt uitgevoerd, een geldig vernieuwings token instellen voor het gebruik van ADF.<br/>Markeer dit veld als SecureString om het veilig op te slaan in Data Factory, of om te [verwijzen naar een geheim dat is opgeslagen in azure Key Vault](store-credentials-in-key-vault.md). | Ja voor OAuth 2,0-verificatie |
 | useEncryptedEndpoints | Hiermee geeft u op of de eind punten van de gegevens bron moeten worden versleuteld met HTTPS. De standaardwaarde is waar.  | Nee |
 | useHostVerification | Hiermee geeft u op of de hostnaam in het certificaat van de server moet overeenkomen met de hostnaam van de server bij het maken van verbinding via TLS. De standaardwaarde is waar.  | Nee |
 | usePeerVerification | Hiermee wordt aangegeven of de identiteit van de server moet worden gecontroleerd wanneer er verbinding wordt gemaakt via TLS. De standaardwaarde is waar.  | Nee |
@@ -79,11 +76,11 @@ De volgende eigenschappen worden ondersteund voor Xero gekoppelde service:
                 "authenticationType":"OAuth_2.0", 
                 "consumerKey": {
                     "type": "SecureString",
-                    "value": "<consumer key>"
+                    "value": "<client ID>"
                 },
                 "privateKey": {
                     "type": "SecureString",
-                    "value": "<private key>"
+                    "value": "<client secret>"
                 },
                 "tenantId": "<tenant ID>", 
                 "refreshToken": {
@@ -139,7 +136,7 @@ Voeg alle tekst uit het. pem-bestand toe, inclusief de Unix-regel eindigt op (\n
 
 Zie het artikel [gegevens sets](concepts-datasets-linked-services.md) voor een volledige lijst met secties en eigenschappen die beschikbaar zijn voor het definiëren van gegevens sets. Deze sectie bevat een lijst met eigenschappen die worden ondersteund door de Xero-gegevensset.
 
-Als u gegevens van Xero wilt kopiëren, stelt u de eigenschap type van de gegevensset in op **XeroObject** . De volgende eigenschappen worden ondersteund:
+Als u gegevens van Xero wilt kopiëren, stelt u de eigenschap type van de gegevensset in op **XeroObject**. De volgende eigenschappen worden ondersteund:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |
@@ -169,7 +166,7 @@ Zie het artikel [pijp lijnen](concepts-pipelines-activities.md) voor een volledi
 
 ### <a name="xero-as-source"></a>Xero als bron
 
-Als u gegevens wilt kopiëren uit Xero, stelt u het bron type in de Kopieer activiteit in op **XeroSource** . De volgende eigenschappen worden ondersteund in de sectie **bron** van de Kopieer activiteit:
+Als u gegevens wilt kopiëren uit Xero, stelt u het bron type in de Kopieer activiteit in op **XeroSource**. De volgende eigenschappen worden ondersteund in de sectie **bron** van de Kopieer activiteit:
 
 | Eigenschap | Beschrijving | Vereist |
 |:--- |:--- |:--- |

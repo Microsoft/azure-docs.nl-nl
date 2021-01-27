@@ -8,12 +8,12 @@ ms.date: 10/23/2020
 ms.author: brendm
 ms.custom: devx-track-java, devx-track-azurecli
 zone_pivot_groups: programming-languages-spring-cloud
-ms.openlocfilehash: a1732f42ea95c16cdec7a1d7569c954667e52cb4
-ms.sourcegitcommit: ea551dad8d870ddcc0fee4423026f51bf4532e19
-ms.translationtype: HT
+ms.openlocfilehash: 416f997475e35f8e784679ca0826f7af38d756c7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/07/2020
-ms.locfileid: "96750897"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880301"
 ---
 # <a name="quickstart-deploy-your-first-azure-spring-cloud-application"></a>Quickstart: Uw eerste Azure Spring Cloud-toepassing implementeren
 
@@ -351,9 +351,6 @@ https://start.spring.io/#!type=maven-project&language=java&platformVersion=2.3.4
 ```
 
   ![Initializr-pagina](media/spring-cloud-quickstart-java/initializr-page.png)
-
-> [!NOTE]
-> We hebben een probleem geïdentificeerd met Spring Boot 2.4 in TLS-verificatie tussen uw apps en Eureka, en werken momenteel samen met de Spring-community om dit op te lossen. Raadpleeg onze [Veelgestelde vragen](https://docs.microsoft.com/azure/spring-cloud/spring-cloud-faq?pivots=programming-language-java#development) voor de tijdelijke oplossing.
 
 1. Klik op **Genereren** wanneer alle afhankelijkheden zijn ingesteld. Download het pakket en pak het uit. Maak vervolgens een webcontroller voor een eenvoudige webtoepassing door `src/main/java/com/example/hellospring/HelloController.java` als volgt toe te voegen:
 

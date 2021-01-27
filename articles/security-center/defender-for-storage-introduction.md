@@ -7,12 +7,12 @@ ms.date: 9/22/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: b338b8ee93fb24cff54968630d4ff00deca0b64b
-ms.sourcegitcommit: e15c0bc8c63ab3b696e9e32999ef0abc694c7c41
-ms.translationtype: HT
+ms.openlocfilehash: 675751433657a7d630d0c42482716702f520ff82
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97606722"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881381"
 ---
 # <a name="introduction-to-azure-defender-for-storage"></a>Inleiding tot Azure Defender for Storage
 
@@ -54,7 +54,7 @@ Beveiligingswaarschuwingen worden geactiveerd in het geval van:
 Waarschuwingen bevatten details over het incident waardoor ze zijn geactiveerd evenals aanbevelingen voor het onderzoeken en oplossen van bedreigingen. Waarschuwingen kunnen worden geëxporteerd naar Azure Sentinel, een SIEM-hulpprogramma van derden of een ander extern hulpprogramma.
 
 > [!TIP]
-> Het is een best practice om [Azure Defender voor opslag te configureren](https://docs.microsoft.com/azure/storage/common/azure-defender-storage-configure?tabs=azure-security-center) op abonnementsniveau, maar u kunt het ook [configureren voor afzonderlijke opslagaccounts](https://docs.microsoft.com/azure/storage/common/azure-defender-storage-configure?tabs=azure-portal).
+> Het is een best practice om [Azure Defender voor opslag te configureren](../storage/common/azure-defender-storage-configure.md?tabs=azure-security-center) op abonnementsniveau, maar u kunt het ook [configureren voor afzonderlijke opslagaccounts](../storage/common/azure-defender-storage-configure.md?tabs=azure-portal).
 
 
 ## <a name="what-is-hash-reputation-analysis-for-malware"></a>Wat is hashreputatieanalyse voor malware?

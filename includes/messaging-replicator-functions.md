@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 12/12/2020
 ms.author: spelluru
 ms.custom: include file
-ms.openlocfilehash: 279a00a6146d756e6a518dbf86b88f471d170b3a
-ms.sourcegitcommit: 7e97ae405c1c6c8ac63850e1b88cf9c9c82372da
+ms.openlocfilehash: 1ce983ee739a4a124a93c7913f092b23dfec3cbd
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/29/2020
-ms.locfileid: "97805648"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98900881"
 ---
 ## <a name="what-is-a-replication-task"></a>Wat is een replicatie taak?
 
@@ -22,30 +22,30 @@ De meeste replicatie taken sturen gebeurtenissen ongewijzigd door en voeren Maxi
 
 Replicatie taken zijn in het algemeen stateless, wat betekent dat ze geen status of andere neven effecten delen in opeenvolgende of parallelle uitvoeringen van een taak. Dit geldt ook voor batch verwerking en koppelen, die beide kunnen worden geïmplementeerd boven op de bestaande status van een stroom. 
 
-Dit maakt het verschil tussen replicatie taken en aggregatie taken, die in het algemeen stateful zijn, en zijn het domein van analyse frameworks en-services zoals [Azure stream Analytics](/azure/stream-analytics/stream-analytics-introduction).
+Dit maakt het verschil tussen replicatie taken en aggregatie taken, die in het algemeen stateful zijn, en zijn het domein van analyse frameworks en-services zoals [Azure stream Analytics](../articles/stream-analytics/stream-analytics-introduction.md).
 
 ## <a name="replication-applications-and-tasks-in-azure-functions"></a>Replicatie toepassingen en taken in Azure Functions
 
-In Azure Functions wordt een replicatie taak geïmplementeerd met behulp van een [trigger](/azure/azure-functions/functions-triggers-bindings) waarmee een of meer invoer berichten worden opgehaald uit een geconfigureerde bron en een [uitvoer binding](/azure/azure-functions/functions-triggers-bindings#binding-direction) waarmee berichten die worden gekopieerd van de bron naar een geconfigureerd doel worden doorgestuurd. 
+In Azure Functions wordt een replicatie taak geïmplementeerd met behulp van een [trigger](../articles/azure-functions/functions-triggers-bindings.md) waarmee een of meer invoer berichten worden opgehaald uit een geconfigureerde bron en een [uitvoer binding](../articles/azure-functions/functions-triggers-bindings.md#binding-direction) waarmee berichten die worden gekopieerd van de bron naar een geconfigureerd doel worden doorgestuurd. 
 
 | Trigger  | Uitvoer |
 |----------|--------|
-| [Trigger voor Azure Event Hubs](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-hubs-trigger?tabs=csharp) | [Azure Event hubs-uitvoer binding](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-hubs-output?tabs=csharp) |
-| [Azure Service Bus trigger](https://docs.microsoft.com/azure/azure-functions/functions-bindings-service-bus-trigger?tabs=csharp) | [Uitvoer binding Azure Service Bus](https://docs.microsoft.com/azure/azure-functions/functions-bindings-service-bus-output?tabs=csharp)
-| [Trigger voor Azure IoT Hub](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-iot-trigger?tabs=csharp) | [Azure IoT Hub-uitvoer binding](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-iot-output?tabs=csharp)
-| [Azure Event Grid trigger](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-grid-trigger?tabs=csharp) | [Uitvoer binding Azure Event Grid](https://docs.microsoft.com/azure/azure-functions/functions-bindings-event-grid-output?tabs=csharp)
-| [Azure Queue Storage-trigger](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-queue-trigger?tabs=csharp) | [Azure Queue Storage-uitvoer binding](https://docs.microsoft.com/azure/azure-functions/functions-bindings-storage-queue-output?tabs=csharp)
+| [Trigger voor Azure Event Hubs](../articles/azure-functions/functions-bindings-event-hubs-trigger.md?tabs=csharp) | [Azure Event hubs-uitvoer binding](../articles/azure-functions/functions-bindings-event-hubs-output.md?tabs=csharp) |
+| [Azure Service Bus trigger](../articles/azure-functions/functions-bindings-service-bus-trigger.md?tabs=csharp) | [Uitvoer binding Azure Service Bus](../articles/azure-functions/functions-bindings-service-bus-output.md?tabs=csharp)
+| [Trigger voor Azure IoT Hub](../articles/azure-functions/functions-bindings-event-iot-trigger.md?tabs=csharp) | [Azure IoT Hub-uitvoer binding](../articles/azure-functions/functions-bindings-event-iot-output.md?tabs=csharp)
+| [Azure Event Grid trigger](../articles/azure-functions/functions-bindings-event-grid-trigger.md?tabs=csharp) | [Uitvoer binding Azure Event Grid](../articles/azure-functions/functions-bindings-event-grid-output.md?tabs=csharp)
+| [Azure Queue Storage-trigger](../articles/azure-functions/functions-bindings-storage-queue-trigger.md?tabs=csharp) | [Azure Queue Storage-uitvoer binding](../articles/azure-functions/functions-bindings-storage-queue-output.md?tabs=csharp)
 | [Apache Kafka trigger](https://github.com/azure/azure-functions-kafka-extension) | [Uitvoer binding Apache Kafka](https://github.com/azure/azure-functions-kafka-extension)
 | [Trigger voor RabbitMQ](https://github.com/azure/azure-functions-rabbitmq-extension) | [RabbitMQ-uitvoer binding](https://github.com/azure/azure-functions-rabbitmq-extension) 
-| | [Azure Notification Hubs-uitvoer binding](https://docs.microsoft.com/azure/azure-functions/functions-bindings-notification-hubs)
-||[Uitvoer binding van Azure signalerings service](https://docs.microsoft.com/azure/azure-functions/functions-bindings-signalr-service-output?tabs=csharp)
-||[Twilio SendGrid-uitvoer binding](https://docs.microsoft.com/azure/azure-functions/functions-bindings-sendgrid?tabs=csharp)
+| | [Azure Notification Hubs-uitvoer binding](../articles/azure-functions/functions-bindings-notification-hubs.md)
+||[Uitvoer binding van Azure signalerings service](../articles/azure-functions/functions-bindings-signalr-service-output.md?tabs=csharp)
+||[Twilio SendGrid-uitvoer binding](../articles/azure-functions/functions-bindings-sendgrid.md?tabs=csharp)
 
 Replicatie taken worden in de replicatie toepassing geïmplementeerd met dezelfde implementatie methoden als andere Azure Functions-toepassingen. U kunt meerdere taken in dezelfde toepassing configureren. 
 
 Met Azure Functions Premium kunnen meerdere replicatie toepassingen dezelfde onderliggende resource groep (een App Service plan) delen. Dit betekent dat u in .NET eenvoudig termijnen-replicatie taken kunt uitvoeren met replicatie taken die in Java zijn geschreven, bijvoorbeeld. Dit is belang rijk als u gebruik wilt maken van specifieke bibliotheken zoals Apache Camel die alleen beschikbaar zijn voor Java, en als dit de beste optie is voor een bepaald integratie traject, zelfs al hebt u meestal een andere taal en runtime voor andere replicatie taken. 
 
-Indien beschikbaar, moet u de voor keur geven aan de batch gerichte triggers over triggers die afzonderlijke gebeurtenissen of berichten leveren. u moet altijd de volledige gebeurtenis of bericht structuur verkrijgen in plaats van te vertrouwen op de [para meters voor de bindings expressies](https://docs.microsoft.com/azure/azure-functions/functions-bindings-expressions-patterns)van Azure function.
+Indien beschikbaar, moet u de voor keur geven aan de batch gerichte triggers over triggers die afzonderlijke gebeurtenissen of berichten leveren. u moet altijd de volledige gebeurtenis of bericht structuur verkrijgen in plaats van te vertrouwen op de [para meters voor de bindings expressies](../articles/azure-functions/functions-bindings-expressions-patterns.md)van Azure function.
 
 De naam van de functie moet overeenkomen met het paar van de bron en het doel waarmee u verbinding maakt, en u moet voor voegsel verwijzingen naar verbindings reeksen of andere configuratie-elementen in de toepassings configuratie bestanden met die naam. 
 
@@ -57,17 +57,17 @@ Voor eenvoudige replicatie taken waarmee berichten tussen Event Hubs en Service 
 
 ### <a name="retry-policy"></a>Beleid voor opnieuw proberen
 
-Als u gegevens verlies tijdens Beschik baarheid wilt voor komen aan beide zijden van een replicatie functie, moet u het beleid voor opnieuw proberen zodanig configureren dat dit krachtig is. Raadpleeg de [documentatie van Azure functions over nieuwe pogingen](/azure/azure-functions/functions-bindings-error-pages) om het beleid voor opnieuw proberen te configureren. 
+Als u gegevens verlies tijdens Beschik baarheid wilt voor komen aan beide zijden van een replicatie functie, moet u het beleid voor opnieuw proberen zodanig configureren dat dit krachtig is. Raadpleeg de [documentatie van Azure functions over nieuwe pogingen](../articles/azure-functions/functions-bindings-error-pages.md) om het beleid voor opnieuw proberen te configureren. 
 
 De beleids instellingen die zijn gekozen voor de voorbeeld projecten in de voor beeld- [opslag plaats](https://github.com/Azure-Samples/azure-messaging-replication-dotnet) , configureren een exponentiële uitstel-strategie met intervallen van vijf seconden tot 15 minuten met oneindige pogingen om gegevens verlies te voor komen. 
 
-Bekijk voor Service Bus de sectie [' de ondersteuning voor nieuwe pogingen op het niveau van de trigger gebruiken '](/azure/azure-functions/functions-bindings-error-pages#using-retry-support-on-top-of-trigger-resilience) voor meer informatie over de interactie van triggers en het maximum aantal bezorgingen dat voor de wachtrij is gedefinieerd.
+Bekijk voor Service Bus de sectie [' de ondersteuning voor nieuwe pogingen op het niveau van de trigger gebruiken '](../articles/azure-functions/functions-bindings-error-pages.md#using-retry-support-on-top-of-trigger-resilience) voor meer informatie over de interactie van triggers en het maximum aantal bezorgingen dat voor de wachtrij is gedefinieerd.
 
 ### <a name="setting-up-a-replication-application-host"></a>Een replicatie-toepassingshost instellen
 
 Een replicatie toepassing is een host voor uitvoering van een of meer replicatie taken. 
 
-Het is een Azure Functions toepassing die is geconfigureerd om te worden uitgevoerd op het verbruiks abonnement of (aanbevolen) in een Azure Functions Premium-abonnement. Alle replicatie toepassingen moeten worden uitgevoerd onder een door het [systeem of de gebruiker toegewezen beheerde identiteit](/azure/app-service/overview-managed-identity). 
+Het is een Azure Functions toepassing die is geconfigureerd om te worden uitgevoerd op het verbruiks abonnement of (aanbevolen) in een Azure Functions Premium-abonnement. Alle replicatie toepassingen moeten worden uitgevoerd onder een door het [systeem of de gebruiker toegewezen beheerde identiteit](../articles/app-service/overview-managed-identity.md). 
 
 Met de gekoppelde Azure Resource Manager-sjablonen (ARM) kunt u een replicatie toepassing maken en configureren met:
 
@@ -129,15 +129,15 @@ Met de hulp methoden kunt u eenvoudig repliceren tussen Event Hubs en Service Bu
 
 ### <a name="monitoring"></a>Bewaking
 
-Raadpleeg de [sectie bewaking](https://docs.microsoft.com/azure/azure-functions/configure-monitoring) van de Azure functions-documentatie voor meer informatie over het bewaken van uw replicatie-app.
+Raadpleeg de [sectie bewaking](../articles/azure-functions/configure-monitoring.md) van de Azure functions-documentatie voor meer informatie over het bewaken van uw replicatie-app.
 
-Een bijzonder handig visueel hulp programma voor het controleren van replicatie taken is het Application Insights [toepassings overzicht](https://docs.microsoft.com/azure/azure-monitor/app/app-map)dat automatisch wordt gegenereerd op basis van de vastgelegde bewakings gegevens en waarmee de betrouw baarheid en prestaties van de bron-en doel overdrachten van de replicatie taak kunnen worden geverkennen.
+Een bijzonder handig visueel hulp programma voor het controleren van replicatie taken is het Application Insights [toepassings overzicht](../articles/azure-monitor/app/app-map.md)dat automatisch wordt gegenereerd op basis van de vastgelegde bewakings gegevens en waarmee de betrouw baarheid en prestaties van de bron-en doel overdrachten van de replicatie taak kunnen worden geverkennen.
 
-Voor direct diagnostische gegevens kunt u werken met het portal-hulp programma voor [Live Metrics](https://docs.microsoft.com/azure/azure-monitor/app/live-stream) . Dit biedt een laag latentie van de logboek gegevens.
+Voor direct diagnostische gegevens kunt u werken met het portal-hulp programma voor [Live Metrics](../articles/azure-monitor/app/live-stream.md) . Dit biedt een laag latentie van de logboek gegevens.
 
 ## <a name="next-steps"></a>Volgende stappen
 
-* [Azure Functions implementaties](/azure/azure-functions/functions-deployment-technologies)
-* [Diagnostische gegevens Azure Functions](/azure/azure-functions/functions-diagnostics)
-* [Azure Functions-netwerk opties](/azure/azure-functions/functions-networking-options)
-* [Azure Application Insights](/azure/azure-monitor/app/app-insights-overview)
+* [Azure Functions implementaties](../articles/azure-functions/functions-deployment-technologies.md)
+* [Diagnostische gegevens Azure Functions](../articles/azure-functions/functions-diagnostics.md)
+* [Azure Functions-netwerk opties](../articles/azure-functions/functions-networking-options.md)
+* [Azure Application Insights](../articles/azure-monitor/app/app-insights-overview.md)

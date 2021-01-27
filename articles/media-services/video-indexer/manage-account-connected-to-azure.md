@@ -8,14 +8,14 @@ manager: femila
 ms.service: media-services
 ms.subservice: video-indexer
 ms.topic: article
-ms.date: 12/16/2019
+ms.date: 01/14/2021
 ms.author: juliako
-ms.openlocfilehash: 5b9ec1c04dd90af9d9380a1f4d30386c8f9cc3ed
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 25025efe5254442c4862563ce329cfae69e7d033
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "79499667"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898440"
 ---
 # <a name="manage-a-video-indexer-account-connected-to-azure"></a>Een Video Indexer-account beheren dat is verbonden met Azure
 
@@ -28,7 +28,7 @@ In dit artikel wordt beschreven hoe u een Video Indexer-account kunt beheren dat
 
 Verbind uw Video Indexer-account met Azure, zoals beschreven in [verbonden met Azure](connect-to-azure.md).
 
-Zorg ervoor dat u voldoet aan de [vereisten](connect-to-azure.md#prerequisites) en Lees [overwegingen](connect-to-azure.md#considerations) in het artikel.
+Zorg ervoor dat u voldoet aan de [vereisten](connect-to-azure.md#prerequisites-for-connecting-to-azure) en Lees [overwegingen](connect-to-azure.md#azure-media-services-considerations) in het artikel.
 
 ## <a name="examine-account-settings"></a>Account instellingen controleren
 

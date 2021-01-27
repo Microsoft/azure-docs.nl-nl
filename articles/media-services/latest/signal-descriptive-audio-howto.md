@@ -1,5 +1,5 @@
 ---
-title: Beschrijvende audio sporen met Azure Media Services v3 | Microsoft Docs
+title: Beschrijvende audio sporen met Azure Media Services v3
 description: Volg de stappen in deze zelf studie voor het uploaden van een bestand, het coderen van de video, het toevoegen van beschrijvende geluids sporen en het streamen van uw inhoud met Media Services v3.
 services: media-services
 documentationcenter: ''
@@ -12,12 +12,12 @@ ms.topic: how-to
 ms.custom: devx-track-csharp
 ms.date: 08/31/2020
 ms.author: inhenkel
-ms.openlocfilehash: 0bd2002e8f6f233361dd85cc08cfbd97ca23ed60
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 155e79f8d42988d8498c52c0f930bc03bc599cf0
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89291259"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898215"
 ---
 # <a name="signal-descriptive-audio-tracks"></a>Beschrijvende geluids sporen voor signalen
 
@@ -36,7 +36,7 @@ In dit artikel wordt beschreven hoe u een video codeert, een alleen-audio-MP4-be
 
 ## <a name="create-an-input-asset-and-upload-a-local-file-into-it"></a>Een invoerasset maken en er een lokaal bestand in uploaden 
 
-Met de functie **CreateInputAsset** wordt een nieuwe [invoerasset](/rest/api/media/assets) gemaakt en het opgegeven lokale videobestand wordt hierin geladen. Deze **Asset** wordt gebruikt als invoer voor uw coderings taak. In Media Services v3 kan de invoer van een **taak** een **Asset**zijn of inhoud die u beschikbaar maakt voor uw Media Services-account via https-url's. 
+Met de functie **CreateInputAsset** wordt een nieuwe [invoerasset](/rest/api/media/assets) gemaakt en het opgegeven lokale videobestand wordt hierin geladen. Deze **Asset** wordt gebruikt als invoer voor uw coderings taak. In Media Services v3 kan de invoer van een **taak** een **Asset** zijn of inhoud die u beschikbaar maakt voor uw Media Services-account via https-url's. 
 
 Zie [dit artikel](job-input-from-http-how-to.md) voor meer informatie over het coderen van een HTTPS-URL.  
 

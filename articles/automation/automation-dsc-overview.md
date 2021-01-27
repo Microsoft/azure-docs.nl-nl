@@ -7,15 +7,15 @@ ms.service: automation
 ms.subservice: dsc
 author: mgoedtel
 ms.author: magoedte
-ms.date: 06/22/2020
+ms.date: 01/26/2021
 ms.topic: conceptual
 manager: carmonm
-ms.openlocfilehash: 437a917e0f9b6e7a7370e828c8e3ee95218cea3f
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 752d7f86941967c218b3a57fa163698b9f502057
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87079737"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897017"
 ---
 # <a name="azure-automation-state-configuration-overview"></a>Overzicht van Azure Automation status configuratie
 
@@ -37,7 +37,7 @@ Als u de configuratie van de computer niet wilt beheren vanuit de Cloud, kunt u 
 
 Azure Automation status configuratie biedt verschillende voor delen ten opzichte van het gebruik van DSC buiten Azure. Met deze service kan de schaal baarheid van duizenden machines snel en eenvoudig worden uitgebreid vanaf een centrale, veilige locatie. U kunt computers eenvoudig inschakelen, ze declaratieve configuraties toewijzen en rapporten weer geven waarin de naleving van elke computer wordt aangegeven met de gewenste status die u opgeeft.
 
-De Azure Automation State Configuration-service is van DSC wat Azure Automation runbooks zijn voor het uitvoeren van Power shell-scripts. Met andere woorden, op dezelfde manier als Azure Automation u bij het beheren van Power shell-scripts, kunt u ook DSC-configuraties beheren. 
+De Azure Automation State Configuration-service is van DSC wat Azure Automation runbooks zijn voor het uitvoeren van Power shell-scripts. Met andere woorden, op dezelfde manier als Azure Automation u bij het beheren van Power shell-scripts, kunt u ook DSC-configuraties beheren.
 
 ### <a name="built-in-pull-server"></a>Ingebouwde pull-server
 
@@ -83,20 +83,11 @@ Voor alle Linux-knoop punten die worden uitgevoerd in azure, wordt [Power shell 
 
 ### <a name="configuration-of-private-networks"></a><a name="network-planning"></a>Configuratie van particuliere netwerken
 
-Als uw knoop punten zich in een particulier netwerk bevinden, zijn de volgende poort en Url's vereist. Deze resources bieden netwerk connectiviteit voor het beheerde knoop punt en toestaan dat DSC communiceert met Azure Automation.
-
-* Poort: alleen TCP 443 vereist voor uitgaande internet toegang
-* Globale URL: ***. Azure-Automation.net**
-* Globale URL van US Gov-Virginia: ***. Azure-Automation.us**
-* Agent service: **https:// \<workspaceId\> . agentsvc.Azure-Automation.net**
-
-Als u gebruikmaakt van DSC-resources die communiceren tussen knoop punten, zoals de [WaitFor *-resources](/powershell/scripting/dsc/reference/resources/windows/waitForAllResource), moet u ook verkeer tussen knoop punten toestaan. Raadpleeg de documentatie voor elke DSC-resource voor meer informatie over deze netwerk vereisten.
-
-Zie [TLS 1,2 Enforcement voor Azure Automation](automation-managing-data.md#tls-12-enforcement-for-azure-automation)voor meer informatie over de client vereisten voor TLS 1,2.
+Controleer [Azure Automation netwerk configuratie](automation-network-configuration.md#hybrid-runbook-worker-and-state-configuration) voor gedetailleerde informatie over de poorten, url's en andere netwerk gegevens die nodig zijn voor knoop punten in een particulier netwerk.
 
 #### <a name="proxy-support"></a>Proxy ondersteuning
 
-Proxy ondersteuning voor de DSC-agent is beschikbaar in Windows versie 1809 en hoger. Deze optie wordt ingeschakeld door de waarden voor `ProxyURL` en `ProxyCredential` Eigenschappen in te stellen in het- [configuratie script](automation-dsc-onboarding.md#generate-dsc-metaconfigurations) dat wordt gebruikt voor het registreren van knoop punten. 
+Proxy ondersteuning voor de DSC-agent is beschikbaar in Windows versie 1809 en hoger. Deze optie wordt ingeschakeld door de waarden voor `ProxyURL` en `ProxyCredential` Eigenschappen in te stellen in het- [configuratie script](automation-dsc-onboarding.md#generate-dsc-metaconfigurations) dat wordt gebruikt voor het registreren van knoop punten.
 
 >[!NOTE]
 >Azure Automation status configuratie biedt geen ondersteuning voor DSC-proxy voor eerdere versies van Windows.
@@ -114,4 +105,4 @@ Het is raadzaam om de adressen te gebruiken die worden vermeld in de tabel [DNS-
 - Zie [DSC-configuraties compileren in azure Automation status configuratie](automation-dsc-compile.md)voor meer informatie over het compileren van DSC-configuraties zodat u ze aan doel knooppunten kunt toewijzen.
 - Zie [continue implementatie instellen met chocolade](automation-dsc-cd-chocolatey.md)voor een voor beeld van het gebruik van Azure Automation status configuratie in een pijp lijn voor continue implementatie.
 - Zie [prijzen voor Azure Automation status configuratie](https://azure.microsoft.com/pricing/details/automation/)voor prijs informatie.
-- Zie [Az.Automation](/powershell/module/az.automation/?view=azps-3.7.0#automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.
+- Zie [Az.Automation](/powershell/module/az.automation) voor een naslagdocumentatie voor een PowerShell-cmdlet.

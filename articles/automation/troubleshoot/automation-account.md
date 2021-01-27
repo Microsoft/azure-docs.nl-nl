@@ -2,18 +2,15 @@
 title: Problemen met Azure Automation-account oplossen
 description: In dit artikel leest u hoe u problemen met een Azure-account oplost en oplost.
 services: automation
-author: mgoedtel
-ms.author: magoedte
+ms.subservice: ''
 ms.date: 03/24/2020
-ms.topic: conceptual
-ms.service: automation
-manager: carmonm
-ms.openlocfilehash: edd57d3d77432f3bb37872ee26f414b56398cae0
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.topic: troubleshooting
+ms.openlocfilehash: 06c15136e9d2fabdf50031c8b4be455cf2f7bbca
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "86187282"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896576"
 ---
 # <a name="troubleshoot-azure-automation-account-issues"></a>Problemen met Azure Automation-account oplossen
 
@@ -39,9 +36,9 @@ Voer de volgende stappen uit in de Azure Portal om de resource provider Automati
 
 1. Ga in uw browser naar de [Azure Portal](https://portal.azure.com).
 
-2. Ga naar **abonnementen**en selecteer uw abonnement.   
+2. Ga naar **abonnementen** en selecteer uw abonnement.   
 
-3. Onder **instellingen**selecteert u **resource providers**.
+3. Onder **instellingen** selecteert u **resource providers**.
 
 4. Controleer in de lijst met resource providers of de resource provider **micro soft. Automation** is geregistreerd.
 

@@ -14,12 +14,12 @@ ms.author: rolyon
 ms.reviewer: vincesm
 ms.custom: it-pro, fasttrack-edit
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: 40269f6b1553d73af43b4cf86127eaa97524dd57
-ms.sourcegitcommit: 6272bc01d8bdb833d43c56375bab1841a9c380a5
+ms.openlocfilehash: 535b49cb20d60bd9ab294543b82bdb24b040eb7b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98740904"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879474"
 ---
 # <a name="administrator-role-permissions-in-azure-active-directory"></a>Machtigingen voor beheerdersrollen in Azure Active Directory
 
@@ -429,7 +429,7 @@ Gebruikers met deze rol kunnen waarschuwingen beheren en algemene alleen-lezen t
 In | Wel
 --- | ---
 [Microsoft 365 Security Center](https://protection.office.com) | Alle machtigingen van de rol beveiligings lezer<br>Waarschuwingen voor beveiligings Risico's weer geven, onderzoeken en hierop reageren
-Identity Protection Center | Alle machtigingen van de rol beveiligings lezer<br>Daarnaast is de mogelijkheid om alle bewerkingen voor identiteits beveiliging uit te voeren, met uitzonde ring van het opnieuw instellen van wacht woorden
+Azure AD-identiteitsbeveiliging | Alle machtigingen van de rol beveiligings lezer<br>Daarnaast kan de mogelijkheid worden geboden om alle bewerkingen voor identiteits beveiliging uit te voeren, behalve voor het opnieuw instellen van wacht woorden en het configureren van waarschuwingen.
 [Privileged Identity Management](../privileged-identity-management/pim-configure.md) | Alle machtigingen van de rol beveiligings lezer
 [Office 365 Security & compliance Center](https://support.office.com/article/About-Office-365-admin-roles-da585eea-f576-4f55-a1e0-87090b6aaa9d) | Alle machtigingen van de rol beveiligings lezer<br>Beveiligings waarschuwingen weer geven, onderzoeken en hierop reageren
 Windows Defender ATP en EDR | Alle machtigingen van de rol beveiligings lezer<br>Beveiligings waarschuwingen weer geven, onderzoeken en hierop reageren

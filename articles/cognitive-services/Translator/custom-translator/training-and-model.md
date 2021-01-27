@@ -2,19 +2,19 @@
 title: Wat is training en model? -Aangepaste vertaler
 titleSuffix: Azure Cognitive Services
 description: Een model is het systeem, dat vertalingen biedt voor een specifiek taal paar. Het resultaat van een geslaagde training is een model. Bij het trainen van een model zijn drie wederzijds exclusieve gegevens sets vereist voor de trainings gegevensset, het afstemmen van de gegevensset en het testen van de gegevensset.
-author: swmachan
+author: laujan
 manager: nitinme
 ms.service: cognitive-services
 ms.subservice: translator-text
 ms.topic: conceptual
 ms.date: 08/17/2020
-ms.author: swmachan
-ms.openlocfilehash: 1765aaed3c0562da13c539845bfe19f6f85ed4ef
-ms.sourcegitcommit: 22da82c32accf97a82919bf50b9901668dc55c97
+ms.author: lajanuar
+ms.openlocfilehash: 62a444b66d50579c601077751b0700aa954b34c0
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/08/2020
-ms.locfileid: "94369015"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897931"
 ---
 # <a name="what-are-trainings-and-models"></a>Wat zijn trainingen en modellen?
 

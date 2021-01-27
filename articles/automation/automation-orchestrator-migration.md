@@ -5,12 +5,12 @@ services: automation
 ms.subservice: process-automation
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: a47f720344a16d0f77559d6aabfb2b0245e62976
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6ee4a09df0f95cb809db0e5c0e63d195ee5cfdff
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89426330"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896932"
 ---
 # <a name="migrate-from-orchestrator-to-azure-automation-beta"></a>Migreren van Orchestrator naar Azure Automation (bèta)
 
@@ -24,7 +24,7 @@ De eerste stap bij de migratie is het downloaden van de [System Center Orchestra
 
 ## <a name="import-the-standard-activities-module"></a>De module Standard activities importeren
 
-Importeer de [module Standard activities](/system-center/orchestrator/standard-activities?view=sc-orch-2019) in azure Automation. Dit omvat geconverteerde versies van Standard Orchestrator-activiteiten die voor het converteren van grafische runbooks kunnen worden gebruikt.
+Importeer de [module Standard activities](/system-center/orchestrator/standard-activities) in azure Automation. Dit omvat geconverteerde versies van Standard Orchestrator-activiteiten die voor het converteren van grafische runbooks kunnen worden gebruikt.
 
 ## <a name="import-orchestrator-integration-modules"></a>Orchestrator-integratie modules importeren
 
@@ -32,7 +32,7 @@ Micro soft biedt [integratie pakketten](/previous-versions/system-center/packs/h
 
 ## <a name="convert-integration-packs"></a>Integratie pakketten converteren
 
-Gebruik het [conversie pakket Converter](/system-center/orchestrator/orch-integration-toolkit/integration-pack-wizard?view=sc-orch-2019) om integratie pakketten te converteren die zijn gemaakt met behulp van de [Orchestrator Integration Toolkit (OIT)](/previous-versions/system-center/developer/hh855853(v=msdn.10)) naar op Power shell gebaseerde integratie modules die in azure Automation of Service Management Automation kunnen worden geïmporteerd. Wanneer u het integratie pakket conversieprogramma uitvoert, wordt een wizard weer gegeven waarmee u een integratie pakket bestand (. OIP) kunt selecteren. De wizard geeft een lijst van de activiteiten die zijn opgenomen in dat integratie pakket en Hiermee kunt u selecteren welke activiteiten moeten worden gemigreerd. Wanneer u de wizard voltooit, wordt er een integratie module gemaakt die een bijbehorende cmdlet bevat voor elk van de activiteiten in het oorspronkelijke integratie pakket.
+Gebruik het [conversie pakket Converter](/system-center/orchestrator/orch-integration-toolkit/integration-pack-wizard) om integratie pakketten te converteren die zijn gemaakt met behulp van de [Orchestrator Integration Toolkit (OIT)](/previous-versions/system-center/developer/hh855853(v=msdn.10)) naar op Power shell gebaseerde integratie modules die in azure Automation of Service Management Automation kunnen worden geïmporteerd. Wanneer u het integratie pakket conversieprogramma uitvoert, wordt een wizard weer gegeven waarmee u een integratie pakket bestand (. OIP) kunt selecteren. De wizard geeft een lijst van de activiteiten die zijn opgenomen in dat integratie pakket en Hiermee kunt u selecteren welke activiteiten moeten worden gemigreerd. Wanneer u de wizard voltooit, wordt er een integratie module gemaakt die een bijbehorende cmdlet bevat voor elk van de activiteiten in het oorspronkelijke integratie pakket.
 
 > [!NOTE]
 > U kunt het integratie pakket conversie programma niet gebruiken om integratie pakketten te converteren die niet met OIT zijn gemaakt. Er zijn ook enkele integratie pakketten van micro soft die momenteel niet met dit hulp programma kunnen worden geconverteerd. Geconverteerde versies van deze integratie pakketten worden ter down load gedownload zodat ze kunnen worden geïnstalleerd in Azure Automation of Service Management Automation.
@@ -118,7 +118,7 @@ De reden hiervoor is dat deze strategie het beste spiegelt van de functionalitei
 
 ### <a name="invoke-runbook-activity"></a>Runbook-activiteit aanroepen
 
-Runbooks in Orchestrator starten andere runbooks met de `Invoke Runbook` activiteit. Als het runbook dat wordt geconverteerd, deze activiteit bevat en de `Wait for completion` optie is ingesteld, wordt er een runbook-activiteit voor gemaakt in het geconverteerde runbook.  Als de `Wait for completion` optie niet is ingesteld, wordt er een werk stroom script activiteit gemaakt die [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook?view=azps-3.7.0) gebruikt om het runbook te starten. Nadat u het geconverteerde runbook in Azure Automation hebt geïmporteerd, moet u deze activiteit wijzigen met de informatie die is opgegeven in de activiteit.
+Runbooks in Orchestrator starten andere runbooks met de `Invoke Runbook` activiteit. Als het runbook dat wordt geconverteerd, deze activiteit bevat en de `Wait for completion` optie is ingesteld, wordt er een runbook-activiteit voor gemaakt in het geconverteerde runbook.  Als de `Wait for completion` optie niet is ingesteld, wordt er een werk stroom script activiteit gemaakt die [Start-AzAutomationRunbook](/powershell/module/az.automation/start-azautomationrunbook) gebruikt om het runbook te starten. Nadat u het geconverteerde runbook in Azure Automation hebt geïmporteerd, moet u deze activiteit wijzigen met de informatie die is opgegeven in de activiteit.
 
 ## <a name="create-orchestrator-assets"></a>Orchestrator-assets maken
 

@@ -4,48 +4,36 @@ description: De maximale hoeveelheid Beschik baarheid en consistentie bieden met
 ms.topic: article
 ms.date: 01/25/2021
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 884fe878b9524dcf8d97d1123dce35e02af34a24
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 2fdb62e953230a38a26d22e136789fea52c8ee8c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98790746"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882192"
 ---
 # <a name="availability-and-consistency-in-event-hubs"></a>Beschikbaarheid en consistentie in Event Hubs
-
-## <a name="overview"></a>Overzicht
-Azure Event Hubs maakt gebruik van een [partitie model](event-hubs-scalability.md#partitions) om Beschik baarheid en parallel Lise ring binnen één event hub te verbeteren. Als een Event Hub bijvoorbeeld vier partities heeft en een van deze partities wordt verplaatst van de ene server naar de andere in een taak verdeling, kunt u nog steeds vanuit drie andere partities verzenden en ontvangen. Daarnaast kunt u met meer partities meer gelijktijdige lezers uw gegevens laten verwerken, waardoor uw geaggregeerde door Voer wordt verbeterd. Meer informatie over de gevolgen van het partitioneren en best Ellen in een gedistribueerd systeem is een essentieel aspect van het oplossings ontwerp.
-
-Zie de [Cap theorema](https://en.wikipedia.org/wiki/CAP_theorem), ook wel bekend als theorema van Brewer, om de afweging tussen volg orde en beschik baarheid te verklaren. In deze theorema wordt de keuze beschreven tussen consistentie, Beschik baarheid en partitie tolerantie. Dit geeft aan dat voor de systemen die door netwerk zijn gepartitioneerd, altijd de consistentie en beschik baarheid worden verzorgd.
-
-Brewer van theorema definieert consistentie en beschik baarheid als volgt:
-* Partitie tolerantie: de mogelijkheid van een systeem voor gegevens verwerking om gegevens te blijven verwerken, zelfs als er een partitie fout optreedt.
-* Beschik baarheid: een niet-mislukt knoop punt retourneert binnen een redelijke hoeveelheid tijd (zonder fouten of time-outs) een redelijke reactie.
-* Consistentie: een lees bewerking is gegarandeerd de meest recente schrijf bewerking voor een bepaalde client te retour neren.
-
-> [!NOTE]
-> De term **partitie** wordt gebruikt in verschillende contexten in Event hubs en Cap theorema. 
-> - Met **Event hubs** worden gebeurtenissen in een of meer partities ingedeeld. Partities zijn onafhankelijk en bevatten hun eigen reeks gegevens, maar ze groeien vaak met verschillende snelheden. Zie [Partities](event-hubs-features.md#partitions) voor meer informatie.
-> - In **Cap theorema** is een partitie een communicatie-afbreeking tussen knoop punten in een gedistribueerd systeem.
-
-## <a name="partition-tolerance"></a>Partitie tolerantie
-Event Hubs is gebaseerd op een gepartitioneerd gegevens model. U kunt het aantal partities in uw Event Hub configureren tijdens de installatie, maar u kunt deze waarde later niet wijzigen. Omdat u partities moet gebruiken met Event Hubs, dient u een beslissing te nemen over de beschik baarheid en consistentie voor uw toepassing.
+Dit artikel bevat informatie over de beschik baarheid en consistentie die worden ondersteund door Azure Event Hubs. 
 
 ## <a name="availability"></a>Beschikbaarheid
-De eenvoudigste manier om aan de slag te gaan met Event Hubs is het standaard gedrag te gebruiken. 
+Azure Event Hubs verspreidt het risico op onherstelbare storingen van afzonderlijke computers of zelfs volledige racks voor clusters die meerdere fout domeinen binnen een Data Center omvatten. Het implementeert transparante detectie van fouten en failover-mechanismen, zodat de service binnen de gegarandeerde service niveaus blijft werken en normaal gesp roken zonder merk bare onderbrekingen wanneer dergelijke fouten optreden. Als een Event Hubs naam ruimte is gemaakt met de optie ingeschakeld voor [beschikbaarheids zones](../availability-zones/az-overview.md), wordt het uitval risico verder verdeeld over drie fysiek gescheiden faciliteiten en heeft de service voldoende capaciteits reserves om direct te kunnen omgaan met het volledige, onherstelbaar verlies van de volledige faciliteit. Zie [Azure Event hubs-geo-nood herstel](event-hubs-geo-dr.md)voor meer informatie.
 
-#### <a name="azuremessagingeventhubs-500-or-later"></a>[Azure. Messa ging. Event hubs (5.0.0 of hoger)](#tab/latest)
-Als u een nieuw **[EventHubProducerClient](/dotnet/api/azure.messaging.eventhubs.producer.eventhubproducerclient)** -object maakt en de methode **[SendAsync](/dotnet/api/azure.messaging.eventhubs.producer.eventhubproducerclient.sendasync)** gebruikt, worden uw gebeurtenissen automatisch gedistribueerd tussen partities in uw event hub. Dit gedrag zorgt voor de grootste hoeveelheid tijd.
-
-#### <a name="microsoftazureeventhubs-410-or-earlier"></a>[Micro soft. Azure. Event hubs (4.1.0 of eerder)](#tab/old)
-Als u een nieuw **[EventHubClient](/dotnet/api/microsoft.azure.eventhubs.eventhubclient)** -object maakt en de **[Verzend](/dotnet/api/microsoft.azure.eventhubs.eventhubclient.sendasync#Microsoft_Azure_EventHubs_EventHubClient_SendAsync_Microsoft_Azure_EventHubs_EventData_)** methode gebruikt, worden uw gebeurtenissen automatisch gedistribueerd tussen partities in uw event hub. Dit gedrag zorgt voor de grootste hoeveelheid tijd.
-
----
-
-Voor use-cases waarvoor de maximale hoeveelheid tijd is vereist, heeft dit model de voor keur.
+Wanneer een client toepassing gebeurtenissen naar een Event Hub verzendt, worden gebeurtenissen automatisch gedistribueerd tussen partities in uw Event Hub. Als een partitie om een of andere reden niet beschikbaar is, worden gebeurtenissen verdeeld over de resterende partities. Dit gedrag zorgt voor de grootste hoeveelheid tijd. Voor use-cases waarvoor de maximale hoeveelheid tijd is vereist, is dit model in plaats van het verzenden van gebeurtenissen naar een specifieke partitie. Zie [Partities](event-hubs-scalability.md#partitions) voor meer informatie.
 
 ## <a name="consistency"></a>Consistentie
-In sommige scenario's kan de volg orde van gebeurtenissen belang rijk zijn. Het is bijvoorbeeld mogelijk dat u wilt dat uw back-end-systeem een update opdracht verwerkt vóór een opdracht verwijderen. In dit geval kunt u de partitie sleutel instellen voor een gebeurtenis of een `PartitionSender` object gebruiken (als u de oude bibliotheek van micro soft. Azure. Messa ging gebruikt) om alleen gebeurtenissen naar een bepaalde partitie te verzenden. Dit zorgt ervoor dat wanneer deze gebeurtenissen worden gelezen uit de partitie, ze in de juiste volg orde worden gelezen. 
+In sommige scenario's kan de volg orde van gebeurtenissen belang rijk zijn. Het is bijvoorbeeld mogelijk dat u wilt dat uw back-end-systeem een update opdracht verwerkt vóór een opdracht verwijderen. In dit scenario verzendt een client toepassing gebeurtenissen naar een specifieke partitie, zodat de volg orde wordt behouden. Wanneer een consumenten toepassing deze gebeurtenissen van de partitie verbruikt, worden deze in volg orde gelezen. 
+
+Houd er bij deze configuratie rekening mee dat als de specifieke partitie waarnaar u wilt verzenden niet beschikbaar is, er een fout bericht wordt weer gegeven. Als u geen affiniteit hebt voor een enkele partitie, stuurt de Event Hubs-service uw gebeurtenis naar de volgende beschik bare partitie.
+
+Een mogelijke oplossing om te zorgen voor bestellingen, terwijl ook de maximale tijd wordt gemaximaliseerd, is het verzamelen van gebeurtenissen als onderdeel van de toepassing voor het verwerken van gebeurtenissen. De eenvoudigste manier om dit te bereiken is door uw gebeurtenis te stem pelen met een aangepaste volgorde nummer eigenschap.
+
+In dit scenario verzendt de producer-client gebeurtenissen naar een van de beschik bare partities in uw Event Hub en stelt het overeenkomstige Volg nummer van uw toepassing in. Voor deze oplossing moet de status worden behouden door de verwerkings toepassing, maar geeft uw afzenders een eind punt dat waarschijnlijk beschikbaar is.
+
+## <a name="appendix"></a>Bijlage
+
+### <a name="net-examples"></a>.NET-voor beelden
+
+#### <a name="send-events-to-a-specific-partition"></a>Gebeurtenissen verzenden naar een specifieke partitie
+Stel de partitie sleutel voor een gebeurtenis in of gebruik een `PartitionSender` object (als u de oude bibliotheek van micro soft. Azure. Messa ging gebruikt) om alleen gebeurtenissen naar een bepaalde partitie te verzenden. Dit zorgt ervoor dat wanneer deze gebeurtenissen worden gelezen uit de partitie, ze in de juiste volg orde worden gelezen. 
 
 Zie [code migreren van PartitionSender naar EventHubProducerClient voor het publiceren van gebeurtenissen naar een partitie](https://github.com/Azure/azure-sdk-for-net/blob/master/sdk/eventhub/Azure.Messaging.EventHubs/MigrationGuide.md#migrating-code-from-partitionsender-to-eventhubproducerclient-for-publishing-events-to-a-partition)als u gebruikmaakt van de nieuwere **Azure. Messa ging. Event hubs** -bibliotheek.
 
@@ -92,9 +80,8 @@ finally
 
 ---
 
-Houd er bij deze configuratie rekening mee dat als de specifieke partitie waarnaar u wilt verzenden niet beschikbaar is, er een fout bericht wordt weer gegeven. Als u geen affiniteit hebt voor een enkele partitie, stuurt de Event Hubs-service uw gebeurtenis naar de volgende beschik bare partitie.
-
-Een mogelijke oplossing om te zorgen voor bestellingen, terwijl ook de maximale tijd wordt gemaximaliseerd, is het verzamelen van gebeurtenissen als onderdeel van de toepassing voor het verwerken van gebeurtenissen. De eenvoudigste manier om dit te bereiken is door uw gebeurtenis te stem pelen met een aangepaste volgorde nummer eigenschap. In de volgende code ziet u een voorbeeld:
+### <a name="set-a-sequence-number"></a>Een Volg nummer instellen
+In het volgende voor beeld wordt uw gebeurtenis stem pels met een aangepaste Sequence Number-eigenschap. 
 
 #### <a name="azuremessagingeventhubs-500-or-later"></a>[Azure. Messa ging. Event hubs (5.0.0 of hoger)](#tab/latest)
 

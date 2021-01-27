@@ -1,16 +1,16 @@
 ---
-author: hophanms
-ms.author: hophan
+author: amberz
 ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: include
 ms.date: 1/20/2021
-ms.openlocfilehash: ac83f455d2af82c3f6970077fccb17f07e53cccc
+ms.author: amberz
+ms.openlocfilehash: bf872feae9c3a7ca94e5252872adee2b653f5524
 ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98900891"
+ms.locfileid: "98896105"
 ---
 ## <a name="creating-and-running-a-scan"></a>Een scan maken en uitvoeren
 
@@ -27,19 +27,19 @@ Doe het volgende om een nieuwe scan te maken en uit te voeren:
 
 1. Selecteer de referentie om verbinding te maken met uw gegevensbron. 
 
-   :::image type="content" source="media/manage-scans/set-up-scan.png" alt-text="Scan instellen":::
+   :::image type="content" source="media/manage-scans/set-up-scan-data-explorer.png" alt-text="Scan instellen":::
 
 1. U kunt uw scan uitbreiden naar specifieke del van de gegevensbron, bijvoorbeeld mappen, verzamelingen of schema's, door de juiste items in de lijst aan te vinken.
 
-   :::image type="content" source="media/manage-scans/scope-your-scan.png" alt-text="Het bereik van uw scan opgeven":::
+   :::image type="content" source="media/manage-scans/scope-your-scan-data-explorer.png" alt-text="Het bereik van uw scan opgeven":::
 
 1. Selecteer een scanregelset voor uw scan. U kunt kiezen tussen de systeemstandaard, de bestaande aangepaste regelset, of een nieuwe maken.
 
-   :::image type="content" source="media/manage-scans/scan-rule-set.png" alt-text="Scanregelset":::
+   :::image type="content" source="media/manage-scans/scan-rule-set-data-explorer.png" alt-text="Scanregelset":::
 
 1. Kies de scantrigger. U kunt een schema instellen of de scan eenmalig uitvoeren.
 
-   :::image type="content" source="media/manage-scans/trigger-scan.png" alt-text="activeren":::
+   :::image type="content" source="media/manage-scans/trigger-scan-data-explorer.png" alt-text="activeren":::
 
 1. Controleer uw scan en selecteer **Opslaan en uitvoeren**.
 

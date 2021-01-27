@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: how-to
 ms.date: 09/22/2020
 ms.author: alzam
-ms.openlocfilehash: 8fcc79991918aecfc26933f2ef5b6e80ea7fa88c
-ms.sourcegitcommit: 4f4a2b16ff3a76e5d39e3fcf295bca19cff43540
+ms.openlocfilehash: e25ef7f55492be4ee491b9ebbbef4aa1eb03c80b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/30/2020
-ms.locfileid: "93043425"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898084"
 ---
 # <a name="create-an-azure-active-directory-ad-tenant-for-p2s-openvpn-protocol-connections"></a>Een Azure Active Directory-Tenant (AD) maken voor P2S OpenVPN-protocol verbindingen
 
@@ -55,7 +55,7 @@ Een P2S-configuratie definieert de parameters om verbinding te maken met externe
 
     ![Scherm afbeelding toont het bewerken van een virtuele hub die is geselecteerd in het menu.](media/openvpn-azure-ad-tenant-multi-app/p2s4.jpg)
 
-3. Klik op **virtuele hub bewerken** .
+3. Klik op **virtuele hub bewerken**.
 
 4. Schakel het selectie vakje een **punt-naar-site-gateway insluiten** in en selecteer de gewenste **Gateway-schaal eenheid** .
 
@@ -63,7 +63,7 @@ Een P2S-configuratie definieert de parameters om verbinding te maken met externe
 
 5. Voer de **adres groep** in van waaruit de VPN-clients IP-adressen worden toegewezen.
 
-6. Klik op **Bevestigen** .
+6. Klik op **Bevestigen**.
 
 7. De bewerking kan dertig minuten duren.
 
@@ -71,9 +71,9 @@ Een P2S-configuratie definieert de parameters om verbinding te maken met externe
 
 Gebruik het VPN-profiel om uw clients te configureren.
 
-1. Klik op de pagina voor uw virtuele WAN op **VPN-configuraties voor gebruikers** .
+1. Klik op de pagina voor uw virtuele WAN op **VPN-configuraties voor gebruikers**.
 
-2. Klik boven aan de pagina op **VPN-configuratie voor gebruiker downloaden** .
+2. Klik boven aan de pagina op **VPN-configuratie voor gebruiker downloaden**.
 
 3. Wanneer het bestand gereed is, klikt u op de koppeling om het te downloaden.
 
@@ -99,7 +99,7 @@ Gebruik deze [koppeling](https://go.microsoft.com/fwlink/?linkid=2117554) om de 
 
 #### <a name="to-import-a-client-profile"></a><a name="import"></a>Een client profiel importeren
 
-1. Selecteer op de pagina **importeren** .
+1. Selecteer op de pagina **importeren**.
 
     ![Scherm afbeelding toont importeren geselecteerd in het plus menu.](./media/openvpn-azure-ad-tenant-multi-app/import/import1.jpg)
 
@@ -107,7 +107,7 @@ Gebruik deze [koppeling](https://go.microsoft.com/fwlink/?linkid=2117554) om de 
 
     ![Scherm afbeelding toont een geopend dialoog venster waarin u een bestand kunt selecteren.](./media/openvpn-azure-ad-tenant-multi-app/import/import2.jpg)
 
-3. Geef de naam van het profiel op en selecteer **Opslaan** .
+3. Geef de naam van het profiel op en selecteer **Opslaan**.
 
     ![Scherm afbeelding toont de toegevoegde verbindings naam en de knop Opslaan geselecteerd.](./media/openvpn-azure-ad-tenant-multi-app/import/import3.jpg)
 
@@ -115,13 +115,13 @@ Gebruik deze [koppeling](https://go.microsoft.com/fwlink/?linkid=2117554) om de 
 
     ![Scherm afbeelding toont de knop verbinding maken voor de voor de verbinding die u zojuist hebt gemaakt.](./media/openvpn-azure-ad-tenant-multi-app/import/import4.jpg)
 
-5. Zodra de verbinding is gemaakt, wordt het pictogram groen en vervolgens **verbonden** .
+5. Zodra de verbinding is gemaakt, wordt het pictogram groen en vervolgens **verbonden**.
 
     ![Scherm afbeelding toont de verbinding met een verbonden status met de optie voor het verbreken van de koppeling.](./media/openvpn-azure-ad-tenant-multi-app/import/import5.jpg)
 
 #### <a name="to-delete-a-client-profile"></a><a name="delete"></a>Een client profiel verwijderen
 
-1. Selecteer het beletsel teken (...) naast het client profiel dat u wilt verwijderen. Selecteer vervolgens **verwijderen** .
+1. Selecteer het beletsel teken (...) naast het client profiel dat u wilt verwijderen. Selecteer vervolgens **verwijderen**.
 
     ![Scherm afbeelding toont verwijderen geselecteerd in het menu.](./media/openvpn-azure-ad-tenant-multi-app/delete/delete1.jpg)
 
@@ -131,11 +131,19 @@ Gebruik deze [koppeling](https://go.microsoft.com/fwlink/?linkid=2117554) om de 
 
 #### <a name="to-diagnose-connection-issues"></a><a name="diagnose"></a>Verbindings problemen vaststellen
 
-1. Als u verbindings problemen wilt vaststellen, kunt u het hulp programma voor **diagnose** gebruiken. Selecteer het beletsel teken (...) naast de VPN-verbinding die u wilt diagnosticeren om het menu weer te geven. Selecteer vervolgens **diagnose** .
+1. Als u verbindings problemen wilt vaststellen, kunt u het hulp programma voor **diagnose** gebruiken. Selecteer het beletsel teken (...) naast de VPN-verbinding die u wilt diagnosticeren om het menu weer te geven. Selecteer vervolgens **diagnose**.
 
     ![Scherm opname bevat de optie diagnose geselecteerd in het menu.](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose1.jpg)
 
-2. Selecteer op de pagina **Eigenschappen van verbinding** de optie **diagnose uitvoeren** .
+2. Selecteer op de pagina **Eigenschappen van verbinding** de optie **diagnose uitvoeren**.
+
+    ![Scherm afbeelding toont de knop diagnose uitvoeren voor een verbinding.](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose2.jpg)
+
+3. Meld u aan met uw referenties.
+
+    ![problemen oplossen 3](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose3.jpg)
+
+4. Bekijk de resultaten van de diagnose.
 
     ![Scherm afbeelding toont de knop diagnose uitvoeren voor een verbinding.](./media/openvpn-azure-ad-tenant-multi-app/diagnose/diagnose2.jpg)
 

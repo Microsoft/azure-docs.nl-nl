@@ -7,12 +7,12 @@ ms.topic: conceptual
 author: bwren
 ms.author: bwren
 ms.date: 10/08/2020
-ms.openlocfilehash: bc229974cf14ba364e5e7111dc1d2704e03c3635
-ms.sourcegitcommit: 4d48a54d0a3f772c01171719a9b80ee9c41c0c5d
+ms.openlocfilehash: 2ca8a814fbaf2d8c257d094f81d17a5c871793b0
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/24/2021
-ms.locfileid: "98746795"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878932"
 ---
 # <a name="azure-monitor-frequently-asked-questions"></a>Veelgestelde vragen over Azure Monitor
 
@@ -380,6 +380,12 @@ Gebruik één resource voor alle onderdelen of rollen in één bedrijfs systeem.
 * Als er geen script aan de client zijde is, kunt u [cookies instellen op de server](https://apmtips.com/posts/2016-07-09-tracking-users-in-api-apps/).
 * Als een echte gebruiker uw site in verschillende browsers gebruikt of als u in-private/incognito Browse of verschillende computers gebruikt, worden deze meerdere keren geteld.
 * Als u een aangemelde gebruiker op verschillende computers en browsers wilt identificeren, voegt u een aanroep toe aan [setAuthenticatedUserContext ()](app/api-custom-events-metrics.md#authenticated-users).
+
+### <a name="how-does-application-insights-generate-device-information-browser-os-language-model"></a>Hoe Application Insights apparaatgegevens genereren (browser, besturings systeem, taal, model)?
+
+De browser geeft de teken reeks van de gebruikers agent door in de HTTP-header van de aanvraag en de Application Insights opname service gebruikt [ua parser](https://github.com/ua-parser/uap-core) om de velden te genereren die u ziet in de gegevens tabellen en-functies. Als gevolg hiervan kunnen Application Insights gebruikers deze velden niet wijzigen.
+
+Af en toe kunnen deze gegevens ontbreken of onjuist zijn als de gebruiker of de onderneming het verzenden van gebruikers agent in browser instellingen uitschakelt. Daarnaast mag de [regex-expressie voor UA-parsers](https://github.com/ua-parser/uap-core/blob/master/regexes.yaml) niet alle apparaatgegevens bevatten of kan Application Insights mogelijk de nieuwste updates niet hebben toegepast.
 
 ### <a name="have-i-enabled-everything-in-application-insights"></a><a name="q17"></a> Heb ik alles in Application Insights ingeschakeld?
 | Wat u moet zien | Hoe kan ik het downloaden? | Waarom u wilt |

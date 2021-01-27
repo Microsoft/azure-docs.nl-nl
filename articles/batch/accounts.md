@@ -2,13 +2,13 @@
 title: Batch-accounts en Azure Storage accounts
 description: Meer informatie over Azure Batch-accounts en hoe ze worden gebruikt vanuit een ontwikkelings oogpunt.
 ms.topic: conceptual
-ms.date: 05/12/2020
-ms.openlocfilehash: 20a2a28d0eaa2c7997ea93e66d07ecb99bf297a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.date: 01/26/2021
+ms.openlocfilehash: 83108a265f91c9feef2fab424f1819939c2d58c9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "83791146"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98896745"
 ---
 # <a name="batch-accounts-and-azure-storage-accounts"></a>Batch-accounts en Azure Storage accounts
 
@@ -20,9 +20,10 @@ Alle verwerkingen en resources zijn gekoppeld aan een batch-account. Als uw toep
 
 U kunt in één batch-account meerdere batch-workloads uitvoeren. U kunt ook uw workloads verdelen over batch-accounts die deel uitmaken van hetzelfde abonnement, maar zich in verschillende Azure-regio's bevinden.
 
+U kunt een batch-account maken met behulp van de [Azure Portal](batch-account-create-portal.md) of via een programma, zoals met de [Batch Management .net-bibliotheek](batch-management-dotnet.md). Wanneer u het account maakt, kunt u een gekoppeld Azure-opslagaccount maken waarin u taakgerelateerde invoer- en uitvoergegevens of toepassingen kunt opslaan.
+
 [!INCLUDE [batch-account-mode-include](../../includes/batch-account-mode-include.md)]
 
-U kunt een batch-account maken met behulp van de [Azure Portal](batch-account-create-portal.md) of via een programma, zoals met de [Batch Management .net-bibliotheek](batch-management-dotnet.md). Wanneer u het account maakt, kunt u een gekoppeld Azure-opslagaccount maken waarin u taakgerelateerde invoer- en uitvoergegevens of toepassingen kunt opslaan.
 
 ## <a name="azure-storage-accounts"></a>Azure Storage-accounts
 
@@ -41,4 +42,5 @@ U kunt een opslagaccount koppelen aan uw Batch-account. Dit kunt u doen tijdens 
 ## <a name="next-steps"></a>Volgende stappen
 
 - Meer informatie over [knoop punten en groepen](nodes-and-pools.md).
-- Meer informatie over het maken van een batch-account met behulp van de [Azure Portal](batch-account-create-portal.md).
+- Meer informatie over het maken en beheren van batch-accounts met behulp van de [Azure Portal](batch-account-create-portal.md) of [Batch Management .net](batch-management-dotnet.md).
+- Meer informatie over het gebruik van [privé-eind punten](private-connectivity.md) met Azure batch accounts.

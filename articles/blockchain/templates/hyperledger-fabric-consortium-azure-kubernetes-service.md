@@ -4,12 +4,12 @@ description: Een Hyperledger Fabric consortium-netwerk implementeren en configur
 ms.date: 01/08/2021
 ms.topic: how-to
 ms.reviewer: ravastra
-ms.openlocfilehash: 1ab5b9fadfbb0f1c9c1cdf25ee319c7775a593ed
-ms.sourcegitcommit: 31cfd3782a448068c0ff1105abe06035ee7b672a
+ms.openlocfilehash: c0e7f3e7ab83f64cebd990de57d48c97891edb7f
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/10/2021
-ms.locfileid: "98060313"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897255"
 ---
 # <a name="deploy-hyperledger-fabric-consortium-on-azure-kubernetes-service"></a>Hyperledger Fabric consortium implementeren op Azure Kubernetes service
 
@@ -72,7 +72,7 @@ Als u aan de slag wilt gaan met de implementatie van Hyperledger Fabric-netwerk 
 
     ![Scherm opname van het tabblad basis beginselen.](./media/hyperledger-fabric-consortium-azure-kubernetes-service/create-for-hyperledger-fabric-basics.png)
 
-3. Voer de volgende gegevens in:
+3. Voer de volgende details in:
     - **Abonnement**: Kies de naam van het abonnement waarin u de Hyperledger Fabric-netwerk onderdelen wilt implementeren.
     - **Resource groep**: Maak een nieuwe resource groep of kies een bestaande lege resource groep. Alle resources die zijn geïmplementeerd als onderdeel van de sjabloon, worden in de resource groep bewaard.
     - **Regio**: Kies de Azure-regio waar u het Azure Kubernetes service-cluster wilt implementeren voor de Hyperledger Fabric-onderdelen. De sjabloon is beschikbaar in alle regio's waar AKS beschikbaar is. Kies een regio waar uw abonnement niet de quotum limiet van de virtuele machine (VM) aanneemt.
@@ -81,7 +81,7 @@ Als u aan de slag wilt gaan met de implementatie van Hyperledger Fabric-netwerk 
 
     ![Scherm opname van het tabblad Fabric Settings.](./media/hyperledger-fabric-consortium-azure-kubernetes-service/create-for-hyperledger-fabric-settings.png)
 
-5. Voer de volgende gegevens in:
+5. Voer de volgende details in:
     - **Organisatie naam**: Voer de naam in van de Hyperledger Fabric-organisatie, die vereist is voor diverse bewerkingen voor gegevenslaag. De naam van de organisatie moet uniek zijn per implementatie.
     - **Infrastructuur netwerk onderdeel**: Kies **bestellingen service** of **peer-knoop punten** op basis van het block chain-netwerk onderdeel dat u wilt instellen.
     - **Aantal knoop punten**: de volgende twee typen knoop punten zijn:
@@ -100,7 +100,7 @@ Als u aan de slag wilt gaan met de implementatie van Hyperledger Fabric-netwerk 
 
     ![Scherm opname van het tabblad K S cluster Settings.](./media/hyperledger-fabric-consortium-azure-kubernetes-service/create-for-hyperledger-fabric-aks-cluster-settings-1.png)
 
-7. Voer de volgende gegevens in:
+7. Voer de volgende details in:
     - **Kubernetes-cluster naam**: Wijzig de naam van het AKS-cluster, indien nodig. Dit veld wordt vooraf ingevuld op basis van het resource voorvoegsel dat wordt gegeven.
     - **Kubernetes-versie**: Kies de versie van Kubernetes die in het cluster wordt geïmplementeerd. Op basis van de regio die u hebt geselecteerd op het tabblad **basis beginselen** , kunnen de beschik bare ondersteunde versies worden gewijzigd.
     - **DNS-voor voegsel**: Voer een voor voegsel voor de Domain Name System (DNS)-naam in voor het AKS-cluster. U gebruikt DNS om verbinding te maken met de Kubernetes-API wanneer u containers beheert nadat u het cluster hebt gemaakt.
@@ -317,7 +317,7 @@ CC_VERSION=<chaincodeVersion>
 # Language in which chaincode is written. Supported languages are 'node', 'golang', and 'java'  
 # Default value is 'golang'  
 CC_LANG=<chaincodeLanguage>  
-# CC_PATH contains the path where your chaincode is placed.
+# CC_PATH contains the path where your chaincode is placed. This is the absolute path to the chaincode project root directory.
 # If you are using chaincode_example02 to validate then CC_PATH=“/home/<username>/azhlfTool/samples/chaincode/src/chaincode_example02/go”
 CC_PATH=<chaincodePath>  
 # Channel on which chaincode will be instantiated/invoked/queried  

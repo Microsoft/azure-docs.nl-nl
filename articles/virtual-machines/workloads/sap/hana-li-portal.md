@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 12/31/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: e5adb8edbeafa4d77e24bf865338e111c455cb80
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: b03f3f93e8f829c6ab7dec965850117895a8b52d
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827509"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882481"
 ---
 # <a name="azure-hana-large-instances-control-through-azure-portal"></a>Beheer van grote Azure HANA-exemplaren via de Azure-portal
 
@@ -94,7 +94,7 @@ Extra gegevens aan de rechter kant is de revisie van de HANA-stempel met grote i
 - Revisie 4
 
 Revisie 4 is de nieuwste architectuur van HANA grote instanties met grote verbeteringen in de netwerk latentie tussen virtuele Azure-machines en HANA grote instantie-eenheden die zijn geïmplementeerd in revisie 4 stem pels of rijen.
-In de rechter benedenhoek van het overzicht wordt een andere zeer belang rijke informatie gevonden met de naam van de Azure proximity-plaatsings groep die automatisch wordt gemaakt voor elke geïmplementeerde waarde van de grote instantie van HANA. Er moet naar deze plaatsings groep worden verwezen bij het implementeren van de Azure-Vm's die als host fungeren voor de SAP-toepassingslaag. Door gebruik te maken van de [Azure proximity-plaatsings groep](../../linux/co-location.md) die is gekoppeld aan de Hana-eenheid voor grote instanties, zorgt u ervoor dat de virtuele Azure-machines dicht bij elkaar liggen op de Hana grote instantie-eenheid. Hoe proximity-plaatsings groepen kunnen worden gebruikt om de SAP-toepassingslaag te vinden in hetzelfde Azure-Data Center als revisie 4 gehoste HANA grote instantie-eenheden, worden beschreven in [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
+In de rechter benedenhoek van het overzicht wordt een andere zeer belang rijke informatie gevonden met de naam van de Azure proximity-plaatsings groep die automatisch wordt gemaakt voor elke geïmplementeerde waarde van de grote instantie van HANA. Er moet naar deze plaatsings groep worden verwezen bij het implementeren van de Azure-Vm's die als host fungeren voor de SAP-toepassingslaag. Door gebruik te maken van de [Azure proximity-plaatsings groep](../../co-location.md) die is gekoppeld aan de Hana-eenheid voor grote instanties, zorgt u ervoor dat de virtuele Azure-machines dicht bij elkaar liggen op de Hana grote instantie-eenheid. Hoe proximity-plaatsings groepen kunnen worden gebruikt om de SAP-toepassingslaag te vinden in hetzelfde Azure-Data Center als revisie 4 gehoste HANA grote instantie-eenheden, worden beschreven in [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
 
 Een aanvullend veld in de rechter kolom van de koptekst geeft informatie over de energie status van de HANA grote instantie-eenheid.
 

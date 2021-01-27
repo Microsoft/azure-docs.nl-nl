@@ -14,12 +14,12 @@ ms.workload: infrastructure
 ms.date: 07/15/2019
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: c1403c514f5a278fd406769f1d5271cc95a5c1df
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 5ed932488551918bb0bfeb7dc9ffcb2f59b6d152
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98195735"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878898"
 ---
 # <a name="sap-hana-large-instances-network-architecture"></a>Netwerk architectuur van SAP HANA (grote exemplaren)
 
@@ -76,7 +76,7 @@ De verschillen met SAP-implementaties in azure zijn:
 
 Met revisie 3 van HANA grote instantie stempels kan de netwerk latentie tussen virtuele machines en HANA grote instantie-eenheden hoger zijn dan een typische latentie van een snelle retour duur van VM-naar-VM-netwerk. Afhankelijk van de Azure-regio, kunnen de gemeten waarden groter zijn dan de latentie van 0,7 MS die is geclassificeerd als onder gemiddeld in [SAP Note #1100926-Veelgestelde vragen: netwerk prestaties](https://launchpad.support.sap.com/#/notes/1100926/E). Afhankelijk van de Azure-regio en het hulp programma voor het meten van de round-trip latentie tussen een Azure-VM en de HANA-eenheid voor grote instanties, kan de gemeten latentie tot en met 2 milliseconden zijn. Klanten implementeren echter op SAP HANA gebaseerde productie-SAP-toepassingen met succes op SAP HANA grote instantie. Zorg ervoor dat u uw bedrijfs processen grondig test in azure HANA grote exemplaren. Met een nieuwe functionaliteit, het ExpressRoute snelle pad, kan de netwerk latentie tussen HANA grote instanties en virtuele machines in azure aanzienlijk verminderen (zie hieronder). 
 
-Met revisie 4 van HANA grote instantie tempels, is de netwerk latentie tussen virtuele Azure-machines die zijn geïmplementeerd in nabij de HANA-stempel van de grote instantie, in het gestuit om te voldoen aan het gemiddelde of beter dan de gemiddelde classificatie zoals beschreven in [SAP Note #1100926-Veelgestelde vragen: netwerk prestaties als het](https://launchpad.support.sap.com/#/notes/1100926/E) snelle pad van Azure ExpressRoute is geconfigureerd (zie hieronder). Als u virtuele Azure-machines in een nabijheid wilt implementeren in HANA grote instantie-eenheden van Revision 4, moet u gebruikmaken van [Azure proximity placement groups](../../linux/co-location.md). Hoe proximity-plaatsings groepen kunnen worden gebruikt om de SAP-toepassingslaag te vinden in hetzelfde Azure-Data Center als revisie 4 gehoste HANA grote instantie-eenheden, worden beschreven in [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
+Met revisie 4 van HANA grote instantie tempels, is de netwerk latentie tussen virtuele Azure-machines die zijn geïmplementeerd in nabij de HANA-stempel van de grote instantie, in het gestuit om te voldoen aan het gemiddelde of beter dan de gemiddelde classificatie zoals beschreven in [SAP Note #1100926-Veelgestelde vragen: netwerk prestaties als het](https://launchpad.support.sap.com/#/notes/1100926/E) snelle pad van Azure ExpressRoute is geconfigureerd (zie hieronder). Als u virtuele Azure-machines in een nabijheid wilt implementeren in HANA grote instantie-eenheden van Revision 4, moet u gebruikmaken van [Azure proximity placement groups](../../co-location.md). Hoe proximity-plaatsings groepen kunnen worden gebruikt om de SAP-toepassingslaag te vinden in hetzelfde Azure-Data Center als revisie 4 gehoste HANA grote instantie-eenheden, worden beschreven in [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
 
 Als u een deterministische netwerk latentie tussen Vm's en HANA grote instanties wilt bieden, is de keuze van de SKU van de ExpressRoute-gateway essentieel. In tegens telling tot de verkeers patronen tussen on-premises en virtuele machines, kan het verkeers patroon tussen Vm's en HANA grote instanties kleine, maar hoge bursts van aanvragen en gegevens volumes ontwikkelen. Om dergelijke bursts goed te kunnen afhandelen, wordt het gebruik van de Ultra Performance gateway-SKU sterk aangeraden. Het gebruik van de Ultra Performance gateway-SKU als een ExpressRoute-gateway is verplicht voor de klasse type II van HANA grote instanties.
 

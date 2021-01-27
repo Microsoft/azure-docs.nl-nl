@@ -8,12 +8,12 @@ ms.date: 07/18/2018
 ms.author: rogarana
 ms.subservice: disks
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 96586be8be466acf09121518fb71ea1b8ba9d983
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 7e618475d7d0160bce5aee39c267bb191a3a9f0a
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98203198"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897136"
 ---
 # <a name="how-to-detach-a-data-disk-from-a-linux-virtual-machine"></a>Een gegevensschijf loskoppelen van een virtuele Linux-machine
 
@@ -119,3 +119,4 @@ De schijf blijft in de opslag, maar is niet meer gekoppeld aan een virtuele mach
 ## <a name="next-steps"></a>Volgende stappen
 Als u de gegevens schijf opnieuw wilt gebruiken, kunt u [deze gewoon koppelen aan een andere virtuele machine](add-disk.md).
 
+Als u de schijf wilt verwijderen, zodat u geen opslag kosten meer opneemt, raadpleegt u niet [-gekoppelde door Azure beheerde en onbeheerde schijven zoeken en verwijderen-Azure Portal](../disks-find-unattached-portal.md).

@@ -1,5 +1,5 @@
 ---
-title: 'Stap 1: inzicht krijgen in de voor delen van migreren naar Media Services API v3 | Microsoft Docs'
+title: 'Stap 1: inzicht krijgen in de voor delen van migreren naar Media Services API v3'
 description: In dit artikel vindt u een overzicht van de voor delen van het migreren van Media Services v2 naar v3.
 services: media-services
 author: IngridAtMicrosoft
@@ -9,12 +9,12 @@ ms.topic: conceptual
 ms.workload: media
 ms.date: 1/14/2020
 ms.author: inhenkel
-ms.openlocfilehash: c1e3fae35ff249b4435cf2fdcd2bf691bc393d56
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 5980da900cd1394d5d9a9ddf99063662cad3c88b
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98690439"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898372"
 ---
 # <a name="step-1---understand-the-benefits-of-migrating-to-media-services-api-v3"></a>Stap 1: inzicht krijgen in de voor delen van migreren naar Media Services API v3
 
@@ -34,7 +34,7 @@ Er zijn belang rijke verbeteringen aangebracht in Media Services met v3.
 
 | **V3-functie** | **Voordeel** |
 | --- | --- |
-| **Azure Portal** | |
+| **Azure-portal** | |
 | Azure Portal updates | Het Azure Portal is bijgewerkt met het beheer van v3 API-entiteiten. Klanten kunnen de portal gebruiken om live streamen te starten, v3-transformatie taken te verzenden, beleids regels voor inhouds beveiliging te beheren, streaming-eind punten, API-toegang verkrijgen, gekoppelde opslag accounts beheren en bewakings taken uitvoeren. |
 | **Accounts en opslag** | |
 | Op rollen gebaseerd toegangs beheer (RBAC) van Azure | Klanten kunnen nu hun eigen rollen definiëren en toegang tot elke entiteit beheren in de Media Services ARM-API. Zo kunt u de toegang tot resources beheren via AAD-accounts. |

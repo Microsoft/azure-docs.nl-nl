@@ -11,12 +11,12 @@ author: lobrien
 ms.date: 8/25/2020
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy21q1
-ms.openlocfilehash: 9eb07721f9d507d69de10b6de6c8c2a358dab020
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 5dc14873f8863332d37a6ced6ce4013e76640dea
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97034085"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879390"
 ---
 # <a name="publish-and-track-machine-learning-pipelines"></a>machine learning pijp lijnen publiceren en bijhouden
 
@@ -32,7 +32,7 @@ Machine learning-pijp lijnen zijn herbruikbare werk stromen voor machine learnin
 
 * [Configureer uw ontwikkel omgeving](how-to-configure-environment.md) om de Azure machine learning SDK te installeren, of gebruik een [Azure machine learning reken instantie](concept-compute-instance.md) met de SDK al geïnstalleerd
 
-* Een machine learning pijp lijn maken en uitvoeren, zoals in de volgende [zelf studie: een Azure machine learning pijp lijn bouwen voor batch scores](tutorial-pipeline-batch-scoring-classification.md). Zie voor andere opties [machine learning pijp lijnen maken en uitvoeren met Azure machine learning SDK](how-to-create-your-first-pipeline.md)
+* Een machine learning pijp lijn maken en uitvoeren, zoals in de volgende [zelf studie: een Azure machine learning pijp lijn bouwen voor batch scores](tutorial-pipeline-batch-scoring-classification.md). Zie voor andere opties [machine learning pijp lijnen maken en uitvoeren met Azure machine learning SDK](./how-to-create-machine-learning-pipelines.md)
 
 ## <a name="publish-a-pipeline"></a>Een pijp lijn publiceren
 

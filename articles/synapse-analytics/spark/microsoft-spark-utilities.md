@@ -10,12 +10,12 @@ ms.date: 09/10/2020
 ms.author: ruxu
 ms.reviewer: ''
 zone_pivot_groups: programming-languages-spark-all-minus-sql
-ms.openlocfilehash: d2e9e306e979f569819568650b25d49278997ede
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 262177d8cde3a5eee2721f2af8a0511c205da9b9
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98878524"
+ms.locfileid: "98890526"
 ---
 # <a name="introduction-to-microsoft-spark-utilities"></a>Inleiding tot micro soft Spark-Hulpprogram Ma's
 
@@ -122,13 +122,45 @@ spark.conf.set(f"fs.azure.sas.$blob_container_name.$blob_account_name.blob.core.
 
 ::: zone-end
 
-<!-- :::zone pivot = "programming-language-csharp"
+:::zone pivot = "programming-language-csharp"
+
+
+### <a name="configure-access-to-azure-blob-storage"></a>Toegang tot Azure Blob Storage configureren  
+
+Synapse maakt gebruik van **Shared Access Signature (SAS)** voor toegang tot Azure Blob Storage. Om te voor komen dat SAS-sleutels in de code worden weer gegeven, kunt u het beste een nieuwe gekoppelde service in de Synapse-werk ruimte maken voor het Azure Blob Storage-account dat u wilt openen.
+
+Volg deze stappen om een nieuwe gekoppelde service voor een Azure Blob Storage-account toe te voegen:
+
+1. Open [Azure Synapse Studio](https://web.azuresynapse.net/).
+2. Selecteer **beheren** in het linkerdeel venster en selecteer **gekoppelde services** onder de **externe verbindingen**.
+3. Zoek in **Azure Blob Storage** in het deel venster **nieuwe gekoppelde service** aan de rechter kant.
+4. Selecteer **Doorgaan**.
+5. Selecteer de Azure Blob Storage-account om de naam van de gekoppelde service te openen en te configureren. Suggesties voor het gebruik van de **account sleutel** voor de **verificatie methode**.
+6. Selecteer **verbinding testen** om te controleren of de instellingen juist zijn.
+7. Selecteer eerste **maken** en klik op **Alles publiceren** om uw wijzigingen op te slaan. 
+
+U kunt toegang krijgen tot gegevens op Azure Blob Storage met Synapse Spark via de volgende URL:
+
+<code>wasb[s]://<container_name>@<storage_account_name>.blob.core.windows.net/<path></code>
+
+Hier volgt een code voorbeeld:
 
 ```csharp
+var blob_account_name = "";  // replace with your blob name
+var blob_container_name = "";     // replace with your container name
+var blob_relative_path = "";  // replace with your relative folder path
+var linked_service_name = "";    // replace with your linked service name
+var blob_sas_token = Credentials.GetConnectionStringOrCreds(linked_service_name);
+
+spark.SparkContext.GetConf().Set($"fs.azure.sas.{blob_container_name}.{blob_account_name}.blob.core.windows.net", blob_sas_token);
+
+var wasbs_path = $"wasbs://{blob_container_name}@{blob_account_name}.blob.core.windows.net/{blob_relative_path}";
+
+Console.WriteLine(wasbs_path);
 
 ```
 
-::: zone-end -->
+::: zone-end 
  
 ###  <a name="configure-access-to-azure-key-vault"></a>Toegang tot Azure Key Vault configureren
 

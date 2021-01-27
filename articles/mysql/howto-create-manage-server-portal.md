@@ -1,21 +1,25 @@
 ---
 title: Server-Azure Portal-Azure Database for MySQL beheren
 description: Meer informatie over het beheren van een Azure Database for MySQL-server vanuit de Azure Portal.
-author: savjani
-ms.author: pariks
+author: Bashar-MSFT
+ms.author: bahusse
 ms.service: mysql
 ms.topic: how-to
-ms.date: 3/18/2020
-ms.openlocfilehash: e29e823834ec813a8389cea220cffc7633aa7103
-ms.sourcegitcommit: 6ab718e1be2767db2605eeebe974ee9e2c07022b
+ms.date: 1/26/2021
+ms.openlocfilehash: 83876f77e0d7ffc0ae20bc5a545c1f18f53f4a8f
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/12/2020
-ms.locfileid: "94541450"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98897982"
 ---
 # <a name="manage-an-azure-database-for-mysql-server-using-the-azure-portal"></a>Een Azure Database for MySQL-server beheren met behulp van de Azure Portal
 
 Dit artikel laat u zien hoe u uw Azure Database for MySQL-servers kunt beheren. Beheer taken zijn onder andere berekening en opslag schalen, beheerders wachtwoord opnieuw instellen en server details weer geven.
+
+> [!NOTE]
+> Dit artikel bevat verwijzingen naar de term _Slave_, een term die door micro soft niet meer wordt gebruikt. Zodra de term uit de software wordt verwijderd, verwijderen we deze uit dit artikel.
+>
 
 ## <a name="sign-in"></a>Aanmelden
 
@@ -35,7 +39,7 @@ U kunt schalen van Algemeen naar geoptimaliseerd voor geheugen en vice versa. Wi
 
 1. Selecteer uw server in de Azure Portal. Selecteer de **prijs categorie** die u in de sectie **instellingen** bevindt.
 
-2. Selecteer **Algemeen** of **geoptimaliseerd geheugen** , afhankelijk van wat u wilt schalen.
+2. Selecteer **Algemeen** of **geoptimaliseerd geheugen**, afhankelijk van wat u wilt schalen.
 
    :::image type="content" source="./media/howto-create-manage-server-portal/change-pricing-tier.png" alt-text="Scherm opname van Azure Portal om de laag basis, Algemeen of geoptimaliseerd voor geheugen te kiezen in Azure Database for MySQL":::
 
@@ -83,6 +87,13 @@ U kunt het wacht woord van de beheerdersrol wijzigen met behulp van de Azure Por
    :::image type="content" source="./media/howto-create-manage-server-portal/reset-password.png" alt-text="Scherm opname van Azure Portal om uw wacht woord opnieuw in te stellen en op te slaan in Azure Database for MySQL":::
 
 3. Selecteer **OK** om het nieuwe wacht woord op te slaan.
+ 
+
+> [!IMPORTANT]
+> Als u het wacht woord voor de server beheerder opnieuw instelt, worden de beheerders bevoegdheden voor de server automatisch opnieuw ingesteld op standaard. Overweeg het opnieuw instellen van het wacht woord voor de server beheerder als u per ongeluk een of meer van de beheerders bevoegdheden voor de server hebt ingetrokken.
+   
+> [!NOTE]
+> De server beheerder gebruiker heeft standaard de volgende bevoegdheden: selecteren, invoegen, bijwerken, verwijderen, maken, verwijderen, opnieuw laden, verwerken, verwijzingen, INDEX, wijzigen, data BASEs weer geven, tijdelijke tabellen maken, tabellen vergren delen, uitvoeren, replicatie slave, replicatie CLIENT, weer gave, gebruiker weer geven, gebeurtenis, TRIGGER
 
 ## <a name="delete-a-server"></a>Een server verwijderen
 

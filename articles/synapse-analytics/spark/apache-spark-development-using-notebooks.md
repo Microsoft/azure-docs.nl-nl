@@ -10,12 +10,12 @@ ms.date: 10/19/2020
 ms.author: ruxu
 ms.reviewer: ''
 ms.custom: devx-track-python
-ms.openlocfilehash: 7bb0b9b4645be7e548fe116d9e9a2c92fae7dc96
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
+ms.openlocfilehash: 57999ce53e536d422e6502a77aaccdc66b4c5077
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98120951"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898491"
 ---
 # <a name="create-develop-and-maintain-synapse-studio-notebooks-in-azure-synapse-analytics"></a>Synapse Studio-notitie blokken maken, ontwikkelen en onderhouden in azure Synapse Analytics
 
@@ -298,11 +298,13 @@ Annuleren van alle actieve cellen is nog niet beschikbaar voor de preview-versie
 
 # <a name="classical-notebook"></a>[Klassiek notebook](#tab/classical)
 
-Niet ondersteund.
+Wordt niet ondersteund.
 
 # <a name="preview-notebook"></a>[Voor beeld van notebook](#tab/preview)
 
 U kunt ```%run <notebook path>``` de opdracht Magic gebruiken om te verwijzen naar een andere notebook binnen de context van het huidige notitie blok. Alle variabelen die zijn gedefinieerd in de referentie notitieblok, zijn beschikbaar in het huidige notitie blok. ```%run``` de opdracht Magic ondersteunt geneste aanroepen, maar biedt geen ondersteuning voor recursieve aanroepen. Er wordt een uitzonde ring weer gegeven als de diepte van de verklaring groter is dan vijf. ```%run``` de opdracht ondersteunt momenteel alleen om een pad naar een notitie blok door te geven als para meter. 
+
+Bijvoorbeeld: ``` %run /path/notebookA ```.
 
 ---
 
@@ -489,7 +491,7 @@ Net als Jupyter-notebooks hebben Azure Synapse Studio-notebooks een modale gebru
 
 Met behulp van de volgende sneltoetsen kunt u eenvoudig navigeren en code uitvoeren in azure Synapse-notebooks.
 
-| Actie |Synapse Studio-notebook-snelkoppelingen  |
+| Bewerking |Synapse Studio-notebook-snelkoppelingen  |
 |--|--|
 |Voer de huidige cel uit en selecteer hieronder | SHIFT + ENTER |
 |De huidige cel uitvoeren en onder invoegen | ALT + ENTER |
@@ -506,7 +508,7 @@ Met behulp van de volgende sneltoetsen kunt u eenvoudig navigeren en code uitvoe
 
 # <a name="preview-notebook"></a>[Voor beeld van notebook](#tab/preview)
 
-| Actie |Synapse Studio-notebook-snelkoppelingen  |
+| Bewerking |Synapse Studio-notebook-snelkoppelingen  |
 |--|--|
 |Voer de huidige cel uit en selecteer hieronder | SHIFT + ENTER |
 |De huidige cel uitvoeren en onder invoegen | ALT + ENTER |
@@ -527,7 +529,7 @@ Met behulp van de volgende sneltoetsen kunt u eenvoudig navigeren en code uitvoe
 
 Met de volgende sneltoetsen kunt u gemakkelijker code in azure Synapse-notebooks navigeren en uitvoeren in de bewerkings modus.
 
-| Actie |Synapse Studio-notebook-snelkoppelingen  |
+| Bewerking |Synapse Studio-notebook-snelkoppelingen  |
 |--|--|
 |Cursor omhoog verplaatsen | Omhoog |
 |Cursor omlaag verplaatsen|Buiten gebruik|

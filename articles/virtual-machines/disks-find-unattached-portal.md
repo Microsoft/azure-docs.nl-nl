@@ -4,19 +4,19 @@ description: Het zoeken van niet-gekoppelde, door Azure beheerde en onbeheerde (
 author: roygara
 ms.service: virtual-machines
 ms.topic: how-to
-ms.date: 06/01/2020
+ms.date: 01/26/2021
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 6632d65fa07788e35b24c2f957e713f824f6b091
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 4d31ce4b6086c44de913afd1083bae25fa3d44cd
+ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87542735"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98898152"
 ---
 # <a name="find-and-delete-unattached-azure-managed-and-unmanaged-disks---azure-portal"></a>Niet-gekoppelde door Azure beheerde en onbeheerde schijven zoeken en verwijderen-Azure Portal
 
-Wanneer u een virtuele machine (VM) in azure verwijdert, worden schijven die zijn gekoppeld aan de VM standaard niet verwijderd. Dit helpt om gegevens verlies te voor komen vanwege de onbedoelde verwijdering van Vm's. Nadat een virtuele machine is verwijderd, blijft u betalen voor niet-gekoppelde schijven. In dit artikel leest u hoe u niet-gekoppelde schijven zoekt en verwijdert met behulp van de Azure Portal en overbodige kosten kunt verlagen.
+Wanneer u een virtuele machine (VM) in azure verwijdert, worden schijven die zijn gekoppeld aan de VM standaard niet verwijderd. Dit helpt om gegevens verlies te voor komen vanwege de onbedoelde verwijdering van Vm's. Nadat een virtuele machine is verwijderd, blijft u betalen voor niet-gekoppelde schijven. In dit artikel leest u hoe u niet-gekoppelde schijven zoekt en verwijdert met behulp van de Azure Portal en overbodige kosten kunt verlagen. Verwijderingen zijn permanent, u kunt geen gegevens herstellen wanneer u een schijf verwijdert.
 
 ## <a name="managed-disks-find-and-delete-unattached-disks"></a>Managed disks: niet-gekoppelde schijven zoeken en verwijderen
 
@@ -45,17 +45,17 @@ Als u niet-beheerde schijven hebt die niet zijn gekoppeld aan een virtuele machi
 
     Er wordt een lijst met al uw onbeheerde schijven weer gegeven. Een schijf met **-** in de kolom **gekoppeld aan** is een niet-gekoppelde schijf.
 
-    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-attached-to.png" alt-text="Scherm afbeelding van een afzonderlijke Blade Managed disks. In deze Blade ziet u dat de status van de schijf niet-gekoppeld is. U kunt deze schijf verwijderen als u de gegevens niet langer hoeft te bewaren":::
+    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-attached-to.png" alt-text="Scherm opname van de Blade niet-beheerde schijven. Schijven in deze Blade die de kolom gekoppeld aan hebben, zijn niet gekoppeld.":::
 
 1. Selecteer de niet-gekoppelde schijf die u wilt verwijderen, waarna de Blade van de schijf wordt geopend.
 
 1. Op de Blade van de schijf kunt u bevestigen dat deze niet is gekoppeld, omdat deze nog steeds is **gekoppeld aan** **-** .
 
-    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-select-blade.png" alt-text="Scherm afbeelding van een afzonderlijke Blade Managed disks. In deze Blade ziet u dat de status van de schijf niet-gekoppeld is. U kunt deze schijf verwijderen als u de gegevens niet langer hoeft te bewaren":::
+    :::image type="content" source="media/disks-find-unattached-portal/unmanaged-disk-unattached-select-blade.png" alt-text="Scherm afbeelding van een afzonderlijke niet-beheerde schijf. De waarde wordt als gekoppeld aan toegevoegd als deze niet is gekoppeld. Als u deze schijf gegevens niet meer nodig hebt, kunt u deze verwijderen.":::
 
 1. Selecteer **Verwijderen**.
 
-    :::image type="content" source="media/disks-find-unattached-portal/delete-unmanaged-disk-unattached.png" alt-text="Scherm afbeelding van een afzonderlijke Blade Managed disks. In deze Blade ziet u dat de status van de schijf niet-gekoppeld is. U kunt deze schijf verwijderen als u de gegevens niet langer hoeft te bewaren":::
+    :::image type="content" source="media/disks-find-unattached-portal/delete-unmanaged-disk-unattached.png" alt-text="Scherm opname van een afzonderlijke niet-beheerde schijf als markering voor verwijderen.":::
 
 ## <a name="next-steps"></a>Volgende stappen
 

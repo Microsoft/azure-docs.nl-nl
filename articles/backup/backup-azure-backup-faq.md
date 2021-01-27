@@ -3,12 +3,12 @@ title: Antwoorden op veelgestelde vragen
 description: 'Antwoorden op veelgestelde vragen over de functies van Azure Backup, waaronder de Recovery Services-kluis, waarvan een back-up kan worden gemaakt, hoe het werkt, versleuteling en limieten. '
 ms.topic: conceptual
 ms.date: 07/07/2019
-ms.openlocfilehash: dbe6ce95427b559c037e38525f9f48195a2a76a4
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: f819440001180a3c446f366e61e3ac0f983fa67f
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98703416"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806649"
 ---
 # <a name="azure-backup---frequently-asked-questions"></a>Azure Backup - veelgestelde vragen
 
@@ -70,7 +70,7 @@ In het geval van een [GRS](azure-backup-glossary.md#grs) -kluis zonder [CRR](azu
 
 ### <a name="where-can-i-find-common-questions-about-the-azure-backup-agent-for-azure-vm-backup"></a>Waar vind ik veelgestelde vragen over de Azure Backup-agent voor Azure VM Backup?
 
-- Lees deze [Veelgestelde vragen](backup-azure-vm-backup-faq.md) voor informatie over de agent die wordt uitgevoerd op Azure-VM’s.
+- Lees deze [Veelgestelde vragen](backup-azure-vm-backup-faq.yml) voor informatie over de agent die wordt uitgevoerd op Azure-VM’s.
 - Lees deze [Veelgestelde vragen](backup-azure-file-folder-backup-faq.md) voor informatie over de agent die wordt gebruikt voor het maken van back-ups van Azure-bestandsmappen.
 
 ## <a name="general-backup"></a>Algemene back-up
@@ -236,5 +236,5 @@ De sleutel die wordt gebruikt om de back-upgegevens te versleutelen, is alleen b
 
 Lees de andere veelgestelde vragen:
 
-- [Veelgestelde vragen](backup-azure-vm-backup-faq.md) over Azure VM-back-ups.
+- [Veelgestelde vragen](backup-azure-vm-backup-faq.yml) over Azure VM-back-ups.
 - [Veelgestelde vragen](backup-azure-file-folder-backup-faq.md) over de Azure Backup-agent

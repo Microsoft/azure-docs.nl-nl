@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 01/14/2021
 ms.author: allensu
-ms.openlocfilehash: 49e1b45ca3953d008542c2ed508537d1a3ea0bf3
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: a7b55981514ea216f251a0819c1881d58013a0f6
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98218974"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806444"
 ---
 # <a name="azure-private-endpoint-dns-configuration"></a>DNS-configuratie van Azure-privé-eindpunt
 
@@ -72,7 +72,7 @@ Voor Azure-Services gebruikt u de aanbevolen zone namen zoals beschreven in de v
 | Azure Event Grid (micro soft. EventGrid/topics)/topic | privatelink.eventgrid.azure.net | eventgrid.azure.net |
 | Azure Event Grid (micro soft. EventGrid/domeinen)/domein | privatelink.eventgrid.azure.net | eventgrid.azure.net |
 | Azure-Web Apps (micro soft. web/sites)/sites | privatelink.azurewebsites.net | azurewebsites.net |
-| Azure Machine Learning (micro soft. MachineLearningServices/werk ruimten)/werk ruimte | privatelink.api.azureml.ms | api.azureml.ms |
+| Azure Machine Learning (micro soft. MachineLearningServices/werk ruimten)/amlworkspace | privatelink.api.azureml.ms | api.azureml.ms |
 | IoT Hub (micro soft. devices/IotHubs)/IotHub | privatelink.azure-devices.net | azure-devices.net |
 | Signa lering (micro soft. SignalRService/Signalr)/signaal sterkte | privatelink.service.signalr.net | service.signalr.net |
 | Azure Monitor (micro soft. Insights/privateLinkScopes)/azuremonitor | privatelink.monitor.azure.com<br/> privatelink.oms.opinsights.azure.com <br/> privatelink.ods.opinsights.azure.com <br/> privatelink.agentsvc.azure-automation.net | monitor.azure.com<br/> oms.opinsights.azure.com<br/> ods.opinsights.azure.com<br/> agentsvc.azure-automation.net |

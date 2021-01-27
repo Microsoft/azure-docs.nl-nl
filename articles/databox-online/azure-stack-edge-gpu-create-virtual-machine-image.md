@@ -6,24 +6,24 @@ author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 12/08/2020
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: fd55110bbfaed72051bfc388692421cd8209609d
-ms.sourcegitcommit: 799f0f187f96b45ae561923d002abad40e1eebd6
+ms.openlocfilehash: 0985779aeb14fd4f3d6a12cf152e4c63c909d613
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/24/2020
-ms.locfileid: "97763797"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806685"
 ---
 # <a name="create-custom-vm-images-for-your-azure-stack-edge-pro-device"></a>Aangepaste VM-installatiekopiën maken voor uw Azure Stack Edge Pro-apparaat
 
 <!--[!INCLUDE [applies-to-skus](../../includes/azure-stack-edge-applies-to-all-sku.md)]-->
 
-Om VM's te implementeren op uw Azure Stack Edge Pro-apparaat, moet u aangepaste VM-installatiekopieën kunnen maken om VM's mee te maken. In dit artikel worden de stappen beschreven die nodig zijn voor het maken van aangepaste Linux- of Windows VM-installatiekopieën die u kunt gebruiken om VM's te implementeren op uw Azure Stack Edge Pro-apparaat.
+Om VM's te implementeren op uw Azure Stack Edge Pro-apparaat, moet u aangepaste VM-installatiekopieën kunnen maken om VM's mee te maken. In dit artikel worden de stappen beschreven die nodig zijn voor het maken van aangepaste Linux-of Windows VM-installatie kopieën die u kunt gebruiken om Vm's te implementeren op uw Azure Stack Edge Pro-apparaat.
 
 ## <a name="vm-image-workflow"></a>Werkstroom voor VM-installatiekopie
 
-Voor deze werkstroom moet u een virtuele machine maken in Azure, de VM aanpassen, generaliseren en vervolgens de VHD downloaden die hoort bij de virtuele machine. Deze gegeneraliseerde VHD wordt geüpload naar Azure Stack Edge Pro en er wordt een beheerde schijf gemaakt op basis van die VHD. Vervolgens wordt er een installatiekopie gemaakt van de beheerde schijf en tot slot worden er op basis van die installatiekopie VM's gemaakt.   
+Voor deze werkstroom moet u een virtuele machine maken in Azure, de VM aanpassen, generaliseren en vervolgens de VHD downloaden die hoort bij de virtuele machine. Deze gegeneraliseerde VHD wordt geüpload naar Azure Stack Edge Pro. Er wordt een beheerde schijf gemaakt op basis van die VHD. Er wordt een installatie kopie gemaakt op basis van de beheerde schijf. En ten slotte worden virtuele machines gemaakt op basis van die installatie kopie.
 
 Ga voor meer informatie naar [Een VM op uw Azure Stack Edge Pro-apparaat implementeren met behulp van Azure PowerShell](azure-stack-edge-gpu-deploy-virtual-machine-powershell.md).
 
@@ -76,7 +76,7 @@ Gebruik deze VHD om nu een virtuele machine te maken en te implementeren op uw A
 |[Ubuntu Server](https://azuremarketplace.microsoft.com/marketplace/apps/canonical.ubuntuserver) |Ubuntu Server is de meest populaire Linux-distributie voor cloudomgevingen ter wereld.|Canonical|
 |[Debian 8 "Jessie"](https://azuremarketplace.microsoft.com/marketplace/apps/credativ.debian) |Debian GNU/Linux is een van de populairste Linux-distributies.     |credativ|
 
-Ga voor een volledige lijst met installatiekopiën op de Azure Marketplace die kunnen werken (nog niet getest) naar [Azure Marketplace-items die beschikbaar zijn voor Azure Stack Hub](/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1910).
+Ga voor een volledige lijst met installatiekopiën op de Azure Marketplace die kunnen werken (nog niet getest) naar [Azure Marketplace-items die beschikbaar zijn voor Azure Stack Hub](/azure-stack/operator/azure-stack-marketplace-azure-items?view=azs-1910&preserve-view=true).
 
 
 ## <a name="next-steps"></a>Volgende stappen

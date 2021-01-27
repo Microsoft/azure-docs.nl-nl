@@ -2,13 +2,13 @@
 title: Beheerde identiteiten voor Azure-resources met Service Bus
 description: In dit artikel wordt beschreven hoe u beheerde identiteiten gebruikt om toegang te krijgen tot Azure Service Bus entiteiten (wacht rijen, onderwerpen en abonnementen).
 ms.topic: article
-ms.date: 10/21/2020
-ms.openlocfilehash: 1efcd3c48e7e4a431a0c72c4b3b84531b44e973e
-ms.sourcegitcommit: 6906980890a8321dec78dd174e6a7eb5f5fcc029
+ms.date: 01/21/2021
+ms.openlocfilehash: 22be57a0108b6a8511a64165ad365675d006fb8f
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/22/2020
-ms.locfileid: "92425528"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98808243"
 ---
 # <a name="authenticate-a-managed-identity-with-azure-active-directory-to-access-azure-service-bus-resources"></a>Een beheerde identiteit verifiëren met Azure Active Directory om toegang te krijgen tot Azure Service Bus bronnen
 [Beheerde identiteiten voor Azure-resources](../active-directory/managed-identities-azure-resources/overview.md) is een functie van meerdere Azure waarmee u een beveiligde identiteit kunt maken die is gekoppeld aan de implementatie waaronder uw toepassings code wordt uitgevoerd. U kunt deze identiteit vervolgens koppelen aan de toegangs beheer rollen die aangepaste machtigingen verlenen om toegang te krijgen tot specifieke Azure-resources die uw toepassing nodig heeft.
@@ -45,7 +45,7 @@ Voordat u een Azure-rol toewijst een beveiligingsprincipal, moet u het toegangsb
 
 In de volgende lijst worden de niveaus beschreven waarmee u toegang tot Service Bus resources kunt bereiken, te beginnen met het smalle bereik:
 
-- **Wachtrij**, **onderwerp**of **abonnement**: roltoewijzing is van toepassing op de specifieke service bus entiteit. Op dit moment biedt de Azure Portal geen ondersteuning voor het toewijzen van gebruikers/groepen/beheerde identiteiten aan Service Bus Azure-rollen op abonnements niveau. Hier volgt een voor beeld van het gebruik van de Azure CLI-opdracht: [AZ-Role-Assignment-Create](/cli/azure/role/assignment?#az-role-assignment-create) om een identiteit toe te wijzen aan een service bus Azure-rol: 
+- **Wachtrij**, **onderwerp** of **abonnement**: roltoewijzing is van toepassing op de specifieke service bus entiteit. Op dit moment biedt de Azure Portal geen ondersteuning voor het toewijzen van gebruikers/groepen/beheerde identiteiten aan Service Bus Azure-rollen op abonnements niveau. Hier volgt een voor beeld van het gebruik van de Azure CLI-opdracht: [AZ-Role-Assignment-Create](/cli/azure/role/assignment?#az-role-assignment-create) om een identiteit toe te wijzen aan een service bus Azure-rol: 
 
     ```azurecli
     az role assignment create \
@@ -107,18 +107,20 @@ Als u een rol aan een Service Bus naam ruimte wilt toewijzen, gaat u naar de naa
 1. Ga in het Azure Portal naar uw Service Bus naam ruimte en geef het **overzicht** voor de naam ruimte weer. 
 1. Selecteer **Access Control (IAM)** in het menu links om instellingen voor toegangs beheer voor de naam ruimte service bus weer te geven.
 1.  Selectter het tabblad **Roltoewijzingen** om de lijst met roltoewijzingen te zien.
-3.  Selecteer **toevoegen** om een nieuwe rol toe te voegen.
-4.  Selecteer op de pagina **roltoewijzing toevoegen** de Azure service bus rollen die u wilt toewijzen. Zoek vervolgens naar de service-identiteit die u hebt geregistreerd om de rol toe te wijzen.
-    
-    ![Pagina roltoewijzing toevoegen](./media/service-bus-managed-service-identity/add-role-assignment-page.png)
-5.  Selecteer **Opslaan**. De identiteit waaraan u de rol hebt toegewezen, wordt weer gegeven onder die rol. In de volgende afbeelding ziet u bijvoorbeeld dat de service-identiteit de Azure Service Bus gegevens eigenaar heeft.
-    
-    ![Identiteit die aan een rol is toegewezen](./media/service-bus-managed-service-identity/role-assigned.png)
+3.  Selecteer **toevoegen** en selecteer vervolgens **functie toewijzing toevoegen**.
+4.  Voer op de pagina **roltoewijzing toevoegen** de volgende stappen uit:
+    1. Selecteer bij **rol** de service bus rol die u wilt toewijzen. In dit voor beeld is het **Azure service bus eigenaar** van de gegevens.
+    1. Selecteer **app service** onder door het **systeem toegewezen beheerde identiteit** voor het veld **toegang toewijzen aan** . 
+    1. Selecteer het **abonnement** waarin de beheerde identiteit voor de web-app is gemaakt.
+    1. Selecteer de **beheerde identiteit** voor de web-app die u hebt gemaakt. De standaard naam voor de identiteit is hetzelfde als de naam van de web-app. 
+    1. Selecteer vervolgens **Opslaan**.
+        
+        ![Pagina roltoewijzing toevoegen](./media/service-bus-managed-service-identity/add-role-assignment-page.png)
 
-Zodra u de rol hebt toegewezen, heeft de webtoepassing toegang tot de Service Bus entiteiten onder het gedefinieerde bereik. 
+    Zodra u de rol hebt toegewezen, heeft de webtoepassing toegang tot de Service Bus entiteiten onder het gedefinieerde bereik. 
 
-
-
+    > [!NOTE]
+    > Zie [Services die beheerde identiteiten voor Azure-resources ondersteunen](../active-directory/managed-identities-azure-resources/services-support-managed-identities.md)voor een lijst met services die beheerde identiteiten ondersteunen.
 
 ### <a name="run-the-app"></a>De app uitvoeren
 Wijzig nu de standaard pagina van de ASP.NET-toepassing die u hebt gemaakt. U kunt de code van de webtoepassing van [deze github-opslag plaats](https://github.com/Azure-Samples/app-service-msi-servicebus-dotnet)gebruiken.  

@@ -1,15 +1,15 @@
 ---
 title: Ingebouwde beleidsdefinities voor Azure Resource Manager
 description: Toont ingebouwde Azure Policy-beleidsdefinities voor Azure Resource Manager. Deze ingebouwde beleidsdefinities bieden algemene benaderingen voor het beheren van uw Azure-resources.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: reference
 ms.custom: subject-policy-reference
-ms.openlocfilehash: 069263a0c12dfd439c3fbf9215bb275b0a1526b1
-ms.sourcegitcommit: 75041f1bce98b1d20cd93945a7b3bd875e6999d0
+ms.openlocfilehash: ee66f9641d63af604d592c8b0436675b612e1b56
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98704590"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98808297"
 ---
 # <a name="azure-policy-built-in-definitions-for-azure-resource-manager"></a>Ingebouwde Azure Policy-definities voor Azure Resource Manager
 

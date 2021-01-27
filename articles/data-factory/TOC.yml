@@ -796,6 +796,10 @@
       href: /python/api/overview/azure/datafactory
 - name: Resources
   items:
+    - name: Overzicht van gereserveerde capaciteit van gegevens stroom
+      href: data-flow-reserved-capacity-overview.md
+    - name: Gegevens stroom begrijpen reserverings kosten
+      href: data-flow-understand-reservation-charges.md
     - name: Whitepapers
       href: whitepapers.md
     - name: Veelgestelde vragen

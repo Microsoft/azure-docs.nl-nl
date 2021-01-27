@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-linux
 ms.workload: infrastructure-services
 ms.date: 10/05/2020
 ms.author: depadia
-ms.openlocfilehash: da04e7704274336f7f92237c1d7c30459caa7bc8
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.openlocfilehash: a7361dafce30b07e76d971bdcda41cf4b3cd9e6e
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936478"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806175"
 ---
 # <a name="sap-businessobjects-bi-platform-deployment-guide-for-linux-on-azure"></a>Handleiding voor SAP BusinessObjects BI-platformimplementatie voor Linux in Azure
 
@@ -555,7 +555,7 @@ In de volgende sectie wordt beschreven hoe u een strategie voor back-up en herst
 
 In Azure is de eenvoudigste manier om back-ups te maken van toepassings servers en alle gekoppelde schijven is door gebruik te maken van [Azure backup](../../../backup/backup-overview.md) -service. Het biedt onafhankelijke en geïsoleerde back-ups om onbedoelde vernietiging van de gegevens op uw Vm's te bewaken. Back-ups worden opgeslagen in een Recovery Services-kluis met ingebouwd beheer van herstelpunten. Configuratie en schalen zijn eenvoudig, back-ups worden geoptimaliseerd en kunnen eenvoudig worden hersteld wanneer dat nodig is.
 
-Als onderdeel van het back-upproces wordt er een moment opname gemaakt en worden de gegevens overgedragen naar de Recovery service-kluis zonder dat dit van invloed is op de werk belasting van de productie. De moment opname biedt een verschillend consistentie niveau, zoals beschreven in [consistentie artikel over moment opnamen](../../../backup/backup-azure-vms-introduction.md#snapshot-consistency) . U kunt er ook voor kiezen om een back-up te maken van de subset van de gegevens schijven in de virtuele machine met behulp van de functie voor back-up en herstel Zie back-updocument van [Azure VM](../../../backup/backup-azure-vms-introduction.md) en [Veelgestelde vragen over back-ups van virtuele machines van Azure](../../../backup/backup-azure-vm-backup-faq.md)voor meer informatie.
+Als onderdeel van het back-upproces wordt er een moment opname gemaakt en worden de gegevens overgedragen naar de Recovery service-kluis zonder dat dit van invloed is op de werk belasting van de productie. De moment opname biedt een verschillend consistentie niveau, zoals beschreven in [consistentie artikel over moment opnamen](../../../backup/backup-azure-vms-introduction.md#snapshot-consistency) . U kunt er ook voor kiezen om een back-up te maken van de subset van de gegevens schijven in de virtuele machine met behulp van de functie voor back-up en herstel Zie back-updocument van [Azure VM](../../../backup/backup-azure-vms-introduction.md) en [Veelgestelde vragen over back-ups van virtuele machines van Azure](../../../backup/backup-azure-vm-backup-faq.yml)voor meer informatie.
 
 #### <a name="backup--restore-for-file-repository-server"></a>Back-up & herstellen voor de bestands opslagplaats server
 

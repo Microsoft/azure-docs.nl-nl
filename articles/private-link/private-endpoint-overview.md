@@ -7,12 +7,12 @@ ms.service: private-link
 ms.topic: conceptual
 ms.date: 06/18/2020
 ms.author: allensu
-ms.openlocfilehash: ac4763a2d79059eb2608595b616c945af274627e
-ms.sourcegitcommit: 1756a8a1485c290c46cc40bc869702b8c8454016
+ms.openlocfilehash: 88d44f4f8cedbad604eb59cde91f4eed79918c0f
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/09/2020
-ms.locfileid: "96928508"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806667"
 ---
 # <a name="what-is-azure-private-endpoint"></a>Wat is een privé-eindpunt van Azure?
 
@@ -24,7 +24,7 @@ Een privé-eindpunt in Azure is een netwerkinterface waarmee u privé en veilig 
 
 |Eigenschap  |Beschrijving |
 |---------|---------|
-|Name    |    Een unieke naam binnen de resource groep.      |
+|Naam    |    Een unieke naam binnen de resource groep.      |
 |Subnet    |  Het subnet voor het implementeren en toewijzen van privé-IP-adressen van een virtueel netwerk. Zie de sectie beperkingen in dit artikel voor meer informatie over het subnet.         |
 |Persoonlijke koppelings bron    |   De bron van de persoonlijke koppeling om verbinding te maken met behulp van de resource-ID of alias, uit de lijst met beschik bare typen. Er wordt een unieke netwerk-id gegenereerd voor al het verkeer dat wordt verzonden naar deze bron.       |
 |Subresource van doel   |      De subresource waarmee verbinding moet worden gemaakt. Elk resource type voor een persoonlijke koppeling heeft verschillende opties om te selecteren op basis van voor keur.    |
@@ -78,7 +78,7 @@ Een persoonlijke koppelings bron is het doel doel van een gegeven persoonlijk ei
 |**Azure Event Grid** | Micro soft. EventGrid/topics    | onderwerp |
 |**Azure Event Grid** | Micro soft. EventGrid/domeinen    | domein |
 |**Azure App Service** | Micro soft. web/sites    | sites |
-|**Azure Machine Learning** | Micro soft. MachineLearningServices/werk ruimten    | werkruimte |
+|**Azure Machine Learning** | Micro soft. MachineLearningServices/werk ruimten    | amlworkspace |
 |**SignalR** | Microsoft.SignalRService/SignalR    | signalR |
 |**Azure Monitor** | Micro soft. Insights/privateLinkScopes    | azuremonitor |
 |**Cognitive Services** | (Micro soft. CognitiveServices/accounts    | account |
@@ -89,9 +89,9 @@ Een persoonlijke koppelings bron is het doel doel van een gegeven persoonlijk ei
   
  
 ## <a name="network-security-of-private-endpoints"></a>Netwerk beveiliging van privé-eind punten 
-Wanneer u privé-eind punten voor Azure-Services gebruikt, wordt het verkeer beveiligd met een specifieke persoonlijke koppelings bron. Het platform voert een toegangs controle uit om netwerk verbindingen te valideren die alleen de opgegeven persoonlijke koppelings bron bereiken. Als u toegang wilt krijgen tot extra resources binnen dezelfde Azure-service, zijn er extra persoonlijke eind punten vereist. 
+Wanneer u privé-eind punten voor Azure-Services gebruikt, wordt het verkeer beveiligd met een specifieke persoonlijke koppelings bron. Het platform voert een toegangscontrole uit om netwerkverbindingen te valideren die alleen de opgegeven persoonlijke koppelingsresource bereiken. Als u toegang wilt krijgen tot extra resources binnen dezelfde Azure-service, zijn er extra persoonlijke eind punten vereist. 
  
-U kunt uw workloads volledig vergren delen voor het openen van open bare eind punten om verbinding te maken met een ondersteunde Azure-service. Dit besturings element biedt een extra netwerkbeveiligingslaag aan uw resources door een ingebouwde exfiltration-beveiliging te bieden waarmee toegang tot andere resources die worden gehost op dezelfde Azure-service, wordt voor komen. 
+U kunt uw workloads volledig vergren delen voor het openen van open bare eind punten om verbinding te maken met een ondersteunde Azure-service. Dit besturingselement biedt een extra netwerkbeveiligingslaag aan uw resources door een ingebouwde exfiltration-beveiliging te bieden. Hiermee wordt toegang voorkomen tot andere resources die worden gehost op dezelfde Azure-service. 
  
 ## <a name="access-to-a-private-link-resource-using-approval-workflow"></a>Toegang tot een persoonlijke koppelings bron via een goedkeurings werk stroom 
 U kunt verbinding maken met een persoonlijke koppelings bron met behulp van de volgende verbindings goedkeurings methoden:

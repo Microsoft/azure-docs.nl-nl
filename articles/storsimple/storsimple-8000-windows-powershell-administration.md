@@ -4,20 +4,20 @@ description: Meer informatie over het gebruik van Windows PowerShell voor StorSi
 author: alkohli
 ms.service: storsimple
 ms.topic: how-to
-ms.date: 01/09/2018
+ms.date: 01/25/2021
 ms.author: alkohli
-ms.openlocfilehash: 65e9657c3948d8ce5883cd33ca8720f501352105
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: e41d2e531a051738a31325b4ea33961bfb39e7f9
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "95995421"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98808034"
 ---
 # <a name="use-windows-powershell-for-storsimple-to-administer-your-device"></a>Een apparaat beheren met Windows PowerShell voor StorSimple
 
 ## <a name="overview"></a>Overzicht
 
-Windows PowerShell voor StorSimple biedt een opdracht regel interface die u kunt gebruiken om uw Microsoft Azure StorSimple-apparaat te beheren. Zoals de naam suggereert, is dit een op Windows Power shell gebaseerde opdracht regel interface die is ingebouwd in een beperkte runs Pace. Vanuit het perspectief van de gebruiker op de opdracht regel wordt een beperkte runs Pace weer gegeven als een niet-toegankelijke versie van Windows Power shell. Met het behoud van enkele van de basis mogelijkheden van Windows Power shell beschikt deze interface over extra specifieke cmdlets die zijn gericht op het beheer van uw Microsoft Azure StorSimple-apparaat.
+Windows PowerShell voor StorSimple biedt een opdracht regel interface die u kunt gebruiken om uw Microsoft Azure StorSimple-apparaat te beheren. Zoals de naam suggereert, is dit een op Windows Power shell gebaseerde opdracht regel interface die is ingebouwd in een beperkte runs Pace. Vanuit het perspectief van de gebruiker op de opdracht regel wordt een beperkte runs Pace weer gegeven als een niet-toegankelijke versie van Windows Power shell. Hoewel enkele van de basis mogelijkheden van Windows Power shell behouden, heeft deze interface andere, speciale cmdlets die zijn gericht op het beheer van uw Microsoft Azure StorSimple-apparaat.
 
 In dit artikel worden de Windows PowerShell voor StorSimple functies beschreven, met inbegrip van de manier waarop u verbinding kunt maken met deze interface en koppelingen bevat naar stapsgewijze procedures of werk stromen die u kunt uitvoeren met deze interface. De werk stromen bevatten het registreren van uw apparaat, het configureren van de netwerk interface op het apparaat, het installeren van updates waarvoor het apparaat in de onderhouds modus moet zijn, de status van het apparaat wijzigen en eventuele problemen oplossen die zich kunnen voordoen.
 
@@ -28,8 +28,8 @@ Na het lezen van dit artikel kunt u het volgende doen:
 * Hulp krijgen in Windows PowerShell voor StorSimple.
 
 > [!NOTE]
-> * Met Windows PowerShell voor StorSimple-cmdlets kunt u uw StorSimple-apparaat vanuit een seriële console of extern beheren via Windows Power shell Remoting. Voor meer informatie over elk van de afzonderlijke cmdlets die in deze interface kunnen worden gebruikt, gaat u naar de [cmdlet-naslag voor Windows PowerShell voor StorSimple](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps).
-> * De Azure PowerShell StorSimple-cmdlets zijn een andere verzameling cmdlets waarmee u StorSimple service-en migratie taken kunt automatiseren vanaf de opdracht regel. Voor meer informatie over de Azure PowerShell-cmdlets voor StorSimple gaat u naar de naslag informatie voor de [Azure StorSimple-cmdlet](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0&viewFallbackFrom=azuresmps-3.7.0#azure).
+> * Met Windows PowerShell voor StorSimple-cmdlets kunt u uw StorSimple-apparaat vanuit een seriële console of extern beheren via Windows Power shell Remoting. Voor meer informatie over elk van de afzonderlijke cmdlets die in deze interface kunnen worden gebruikt, gaat u naar de [cmdlet-naslag voor Windows PowerShell voor StorSimple](/powershell/module/hcs/?viewFallbackFrom=winserverr2-ps&preserve-view=true).
+> * De Azure PowerShell StorSimple-cmdlets zijn een andere verzameling cmdlets waarmee u StorSimple service-en migratie taken kunt automatiseren vanaf de opdracht regel. Voor meer informatie over de Azure PowerShell-cmdlets voor StorSimple gaat u naar de naslag informatie voor de [Azure StorSimple-cmdlet](/powershell/module/servicemanagement/azure.service/?view=azuresmps-4.0.0&viewFallbackFrom=azuresmps-3.7.0&preserve-view=true#azure).
 
 
 U kunt de Windows PowerShell voor StorSimple met een van de volgende methoden openen:
@@ -48,7 +48,7 @@ Zorg ervoor dat u de volgende PuTTy-instellingen gebruikt om vanuit de seriële 
 #### <a name="to-configure-putty"></a>PuTTy configureren
 
 1. Selecteer in het dialoog venster PuTTy opnieuw **configureren** in het deel venster **categorie** de optie **toetsen bord**.
-2. Zorg ervoor dat de volgende opties zijn geselecteerd (dit zijn de standaard instellingen wanneer u een nieuwe sessie start).
+2. Zorg ervoor dat de volgende opties (de standaard instellingen bij het starten van een nieuwe sessie) zijn geselecteerd.
    
    | Toetsenbord item | Selecteer |
    | --- | --- |
@@ -89,12 +89,15 @@ In de volgende afbeelding ziet u de verschillende runs Pace-opties die beschikba
 
 U kunt kiezen uit de volgende instellingen:
 
-1. **Aanmelden met volledige toegang** Met deze optie kunt u verbinding maken (met de juiste referenties) naar de **SSAdminConsole** runs Pace op de lokale controller. (De lokale controller is de controller waartoe u momenteel toegang hebt via de seriële console van uw StorSimple-apparaat.) Deze optie kan ook worden gebruikt om Microsoft Ondersteuning toegang te geven tot een onbeperkte runs Pace (een ondersteunings sessie) om mogelijke problemen met het apparaat op te lossen. Nadat u optie 1 hebt gebruikt om u aan te melden, kunt u de Microsoft Ondersteuning-Engineer toegang geven tot een onbeperkte runs Pace door een specifieke cmdlet uit te voeren. Zie [een ondersteunings sessie starten](storsimple-8000-contact-microsoft-support.md#start-a-support-session-in-windows-powershell-for-storsimple)voor meer informatie.
+1. **Meld u aan met volledige toegang.**
+   Met deze optie kunt u verbinding maken (met de juiste referenties) naar de **SSAdminConsole** runs Pace op de lokale controller. (De lokale controller is de controller waartoe u momenteel toegang hebt via de seriële console van uw StorSimple-apparaat.) Deze optie kan ook worden gebruikt om Microsoft Ondersteuning toegang te geven tot een onbeperkte runs Pace (een ondersteunings sessie) om mogelijke problemen met het apparaat op te lossen. Nadat u optie 1 hebt gebruikt om u aan te melden, kunt u de Microsoft Ondersteuning-Engineer toegang geven tot een onbeperkte runs Pace door een specifieke cmdlet uit te voeren. Zie [een ondersteunings sessie starten](storsimple-8000-contact-microsoft-support.md#start-a-support-session-in-windows-powershell-for-storsimple)voor meer informatie.
    
-2. **Meld u aan bij peer controller met volledige toegang** Deze optie is hetzelfde als optie 1, behalve dat u verbinding kunt maken (met de juiste referenties) naar de **SSAdminConsole** runs Pace op de peer controller. Omdat het StorSimple-apparaat een apparaat met hoge Beschik baarheid is met twee controllers in een actief-passieve configuratie, verwijst peer naar de andere controller in het apparaat dat u via de seriële console hebt geopend.
+2. **Meld u aan bij peer controller met volledige toegang.**
+   Deze optie is hetzelfde als optie 1, behalve dat u verbinding kunt maken (met de juiste referenties) naar de **SSAdminConsole** runs Pace op de peer controller. Omdat het StorSimple-apparaat een apparaat met hoge Beschik baarheid is met twee controllers in een actief-passieve configuratie, verwijst peer naar de andere controller in het apparaat dat u via de seriële console hebt geopend.
    Net als bij optie 1 kan deze optie ook worden gebruikt om Microsoft Ondersteuning toegang te geven tot onbegrensde runs Pace op een peer controller.
 
-3. **Verbinding maken met beperkte toegang** Deze optie wordt gebruikt om toegang te krijgen tot de Windows Power shell-interface in de beperkte modus. U wordt niet gevraagd om toegangs referenties. Deze optie maakt verbinding met een meer beperkte runs Pace vergeleken met de opties 1 en 2.  Enkele van de taken die beschikbaar zijn via optie 1 en **kunnen niet* worden uitgevoerd in deze runs Pace:
+3. **Verbinding maken met beperkte toegang.**
+   Deze optie wordt gebruikt om toegang te krijgen tot de Windows Power shell-interface in de beperkte modus. U wordt niet gevraagd om toegangs referenties. Deze optie maakt verbinding met een meer beperkte runs Pace vergeleken met de opties 1 en 2.  Enkele van de taken die beschikbaar zijn via optie 1 en die *niet kunnen* worden uitgevoerd in deze runs Pace zijn:
    
    * Herstellen naar de fabrieks instellingen
    * Het wacht woord wijzigen
@@ -105,7 +108,8 @@ U kunt kiezen uit de volgende instellingen:
      > [!NOTE]
      > Dit is de voorkeurs optie als u het beheerders wachtwoord van het apparaat verg eten bent en u geen verbinding kunt maken via optie 1 of 2.
 
-4. **Taal wijzigen** Met deze optie kunt u de weergave taal van de Windows Power shell-interface wijzigen. De ondersteunde talen zijn Engels, Japans, Russisch, Frans, Zuid-Koreaans, Spaans, Italiaans, Duits, Chinees en Portugees.
+4. **Taal wijzigen.**
+   Met deze optie kunt u de weergave taal van de Windows Power shell-interface wijzigen. De ondersteunde talen zijn Engels, Japans, Russisch, Frans, Zuid-Koreaans, Spaans, Italiaans, Duits, Chinees en Portugees.
 
 ## <a name="connect-remotely-to-storsimple-using-windows-powershell-for-storsimple"></a>Extern verbinding maken met StorSimple met behulp van Windows PowerShell voor StorSimple
 
@@ -124,10 +128,10 @@ U kunt HTTP of HTTPS gebruiken om verbinding te maken via externe communicatie m
 
 ## <a name="connection-security-considerations"></a>Beveiligings overwegingen voor de verbinding
 
-Houd rekening met het volgende wanneer u beslist hoe u verbinding maakt met Windows PowerShell voor StorSimple:
+Houd rekening met de volgende factoren wanneer u beslist hoe u verbinding maakt met Windows PowerShell voor StorSimple:
 
 * Rechtstreeks verbinding maken met de seriële console van het apparaat is beveiligd, maar het maken van verbinding met de seriële console via netwerk switches is niet. Wees voorzichtig met het beveiligings risico wanneer u verbinding maakt met het apparaat via netwerk switches.
-* Het maken van een verbinding via een HTTP-sessie kan meer beveiliging bieden dan via het netwerk verbinding maken via de seriële console. Hoewel dit niet de veiligste methode is, is het acceptabel voor vertrouwde netwerken.
+* Het maken van een verbinding via een HTTP-sessie kan meer beveiliging bieden dan via het netwerk verbinding maken via de seriële console. Hoewel een HTTP-sessie niet de veiligste verbindings methode is, is deze acceptabel in vertrouwde netwerken.
 * Het maken van een verbinding via een HTTPS-sessie is de veiligste en aanbevolen optie.
 
 ## <a name="administer-your-storsimple-device-using-windows-powershell-for-storsimple"></a>Uw StorSimple-apparaat beheren met Windows PowerShell voor StorSimple
@@ -151,9 +155,9 @@ De volgende tabel bevat een samen vatting van alle algemene beheer taken en comp
 
 In Windows PowerShell voor StorSimple is cmdlet Help beschikbaar. Er is ook een up-to-date versie van deze Help beschikbaar, die u kunt gebruiken om de Help op uw systeem bij te werken.
 
-Hulp krijgen in deze interface is vergelijkbaar met die in Windows Power shell en de meeste Help-gerelateerde cmdlets werken. U vindt Help voor Windows Power shell online: [micro soft. Power shell. core](/powershell/module/Microsoft.PowerShell.Core/).
+Hulp in deze interface is vergelijkbaar met het verkrijgen van ondersteuning in Windows Power shell, en de meeste Help-gerelateerde cmdlets werken wel. U vindt Help voor Windows Power shell online: [micro soft. Power shell. core](/powershell/module/Microsoft.PowerShell.Core/).
 
-Hier volgt een korte beschrijving van de Help-informatie voor deze Windows Power shell-interface, inclusief informatie over het bijwerken van de Help.
+<!--The following is a brief description of the types of Help for this Windows PowerShell interface, including how to update the Help. - OK to remove? Transition not needed.-->
 
 ### <a name="to-get-help-for-a-cmdlet"></a>Help voor een cmdlet verkrijgen
 
@@ -169,7 +173,7 @@ U kunt de Help eenvoudig bijwerken in de Windows Power shell-interface. Voer de 
 1. Start Windows Power shell met de optie **als administrator uitvoeren** .
 2. Typ het volgende achter de opdracht prompt:  `Update-Help`
 3. De bijgewerkte Help-bestanden worden geïnstalleerd.
-4. Nadat de Help-bestanden zijn geïnstalleerd, typt u: `Get-Help Get-Command` . Hiermee wordt een lijst met cmdlets weer gegeven waarvoor Help beschikbaar is.
+4. Nadat de Help-bestanden zijn geïnstalleerd, typt `Get-Help Get-Command` u: om een lijst met cmdlets weer te geven waarvoor Help beschikbaar is.
 
 > [!NOTE]
 > Als u een lijst wilt weer geven met alle beschik bare cmdlets in een runs Pace, meldt u zich aan bij de bijbehorende menu optie en voert u de `Get-Command` cmdlet uit.

@@ -12,12 +12,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 10/20/2020
 ms.author: memildin
-ms.openlocfilehash: 9fde0ecd8b6670e43aa3970b2df27a402b9c1a5c
-ms.sourcegitcommit: 3c8964a946e3b2343eaf8aba54dee41b89acc123
+ms.openlocfilehash: 4b8141d99d654705450a14767b04ae6265766af9
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98747237"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98807085"
 ---
 # <a name="protect-your-endpoints-with-security-centers-integrated-edr-solution-microsoft-defender-for-endpoint"></a>Bescherm uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt
 
@@ -43,7 +43,8 @@ Micro soft Defender voor eind punt is een holistische, Cloud geleverde endpoint-
 | Releasestatus:                  | Algemeen verkrijgbaar (GA)                                                                                                                                                                                                                                                                                      |
 | Prijzen:                        | [Azure Defender voor servers](security-center-pricing.md) is vereist                                                                                                                                                                                                                                             |
 | Ondersteunde platformen:            | Azure-machines met Windows<br>Azure-Arc-machines met Windows|
-| Ondersteunde versies van Windows:  |  • Security Center detectie ondersteunt Windows Server 2016, 2012 R2 en 2008 R2 SP1<br> • Server eindpunt bewaking met behulp van deze integratie is uitgeschakeld voor Office 365 GCC-klanten<br> • Geen ondersteuning voor Windows Server 2019, Windows 10 1703 (en nieuwer) of Linux|
+| Ondersteunde versies van Windows:  |  • Security Center detectie ondersteunt Windows Server 2016, 2012 R2 en 2008 R2 SP1<br> • Server eindpunt bewaking met behulp van deze integratie is uitgeschakeld voor Office 365 GCC-klanten|
+| Niet-ondersteunde besturings systemen:  |  • Windows Server 2019<br> • Windows 10<br> • Linux|
 | Vereiste rollen en machtigingen: | De integratie: **beveiligings beheerder** of **eigenaar** inschakelen/uitschakelen<br>MDATP-waarschuwingen weer geven in Security Center: **beveiligings lezer**, **lezer**, **Inzender voor resource groep**, **eigenaar van resource groep**, **beveiligings beheerder**, **abonnements eigenaar** of **mede werker** van het abonnement|
 | Clouds:                         | ![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov<br>![Nee](./media/icons/no-icon.png) GCC-klanten die werk belastingen uitvoeren in wereld wijde Azure-Clouds                                                        |
 |                                 |                                                                                                                                                                                                                                                                                                               |
@@ -105,7 +106,7 @@ Nadat u de locatie hebt geconfigureerd, kunt u deze niet meer wijzigen. Als u uw
 Een goed aardige micro soft Defender for Endpoint-test waarschuwing genereren:
 
 1. Maak een map ' C:\test-MDATP-test '.
-1. Gebruik Extern bureaublad om toegang te krijgen tot een virtuele machine met Windows Server 2012 R2 of een virtuele machine met Windows Server 2016.
+1. Gebruik Extern bureaublad om toegang te krijgen tot uw computer.
 1. Open een opdrachtregelvenster.
 1. Kopieer de volgende opdracht bij de prompt en voer deze uit. Het opdracht prompt venster wordt automatisch gesloten.
 

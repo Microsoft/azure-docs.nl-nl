@@ -1,19 +1,19 @@
 ---
 title: VM's implementeren op uw GPU-apparaat voor Azure Stack Edge Pro via Azure CLI en Python
-description: Hierin wordt beschreven hoe u virtuele machines (VM's) maakt en beheert op een GPU-apparaat voor Azure Stack Edge Pro met behulp van Azure CLI en Python.
+description: Hierin wordt beschreven hoe u virtuele machines (Vm's) maakt en beheert op een Azure Stack Edge Pro GPU-apparaat met behulp van Azure CLI en python.
 services: databox
 author: alkohli
 ms.service: databox
 ms.subservice: edge
 ms.topic: how-to
-ms.date: 09/07/2020
+ms.date: 01/22/2021
 ms.author: alkohli
-ms.openlocfilehash: 54a4a938be18d39993652cecb87b3604e268fcef
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: daf44afbb322cb30ab3a663dce4e935aefa7be13
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98678950"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98808062"
 ---
 # <a name="deploy-vms-on-your-azure-stack-edge-pro-gpu-device-using-azure-cli-and-python"></a>VM's implementeren op uw GPU-apparaat voor Azure Stack Edge Pro met behulp van Azure CLI en Python
 
@@ -29,7 +29,7 @@ De implementatiewerkstroom wordt afgebeeld in het volgende diagram.
 
 ![VM-implementatiewerkstroom](media/azure-stack-edge-gpu-deploy-virtual-machine-powershell/vm-workflow-r.svg)
 
-Een overzicht op hoog niveau van de implementatiewerkstroom is als volgt:
+De samen vatting van het hoge niveau van de implementatie werk stroom is als volgt:
 
 1. Verbinding maken met Azure Resource Manager
 2. Een resourcegroep maken
@@ -70,9 +70,9 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
 3. U hebt alle certificaten gemaakt en geïnstalleerd op uw Azure Stack Edge Pro-apparaat en in het vertrouwensarchief van uw client. Volg de procedure die wordt beschreven in [Stap 2: Certificaten maken en installeren](azure-stack-edge-j-series-connect-resource-manager.md#step-2-create-and-install-certificates).
 
-4. U hebt een met Base-64 versleuteld *.CER*-certificaat (PEM-indeling) gemaakt voor uw Azure Stack Edge Pro-apparaat. Dit is al geüpload als een handtekeningketen op het apparaat en is geïnstalleerd in het basisvertrouwensarchief op uw client. Dit certificaat is ook vereist in *PEM*-indeling om Python te laten werken op deze client.
+4. U hebt een met Base-64 versleuteld *.CER*-certificaat (PEM-indeling) gemaakt voor uw Azure Stack Edge Pro-apparaat. Dat certificaat is al geüpload als een handtekening keten op het apparaat en is geïnstalleerd in het vertrouwde basis archief op uw client. Dit certificaat is ook vereist in *PEM*-indeling om Python te laten werken op deze client.
 
-    Converteer dit certificaat naar de PEM-indeling met behulp van de opdracht `certutil`. U moet deze opdracht uitvoeren in de map met uw certificaat.
+    Converteer dit certificaat naar `pem` een indeling met behulp van de `certutil` opdracht. U moet deze opdracht uitvoeren in de map met uw certificaat.
 
     ```powershell
     certutil.exe <SourceCertificateName.cer> <DestinationCertificateName.pem>
@@ -86,9 +86,9 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
     CertUtil: -encode command completed successfully.
     PS C:\Certificates>
     ```    
-    U kunt dit PEM-bestand ook later toevoegen aan het Python-archief.
+    U kunt deze ook `pem` later toevoegen aan de python-opslag.
 
-5. U hebt het IP-adres van het apparaat toegewezen in uw **netwerkpagina** in de lokale web-UI van het apparaat. U moet dit IP-adres toevoegen aan:
+5. U hebt het IP-adres van het apparaat toegewezen in uw **netwerkpagina** in de lokale web-UI van het apparaat. Dit IP-adres toevoegen aan:
 
     - Het hostbestand op de client, OF
     - De DNS-serverconfiguratie
@@ -117,11 +117,11 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
 ### <a name="verify-profile-and-install-azure-cli"></a>Profiel controleren en Azure CLI installeren
 
-<!--1. Verify the API profile of the client and identify which version of the modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](/azure-stack/user/azure-stack-version-profiles?view=azs-1908#azure-resource-manager-api-profiles).-->
+<!--1. Verify the API profile of the client and identify which version of the modules and libraries to include on your client. In this example, the client system will be running Azure Stack 1904 or later. For more information, see [Azure Resource Manager API profiles](/azure-stack/user/azure-stack-version-profiles?view=azs-1908&preserve-view=true#azure-resource-manager-api-profiles).-->
 
 1. Installeer Azure CLI op uw clientcomputer. In dit voorbeeld is Azure CLI 2.0.80 geïnstalleerd. Als u de versie van Azure CLI wilt controleren, voert u de opdracht `az --version` uit.
 
-    Hier volgt een voorbeeld van de uitvoer van de bovenstaande opdracht:
+    Hier volgt een voor beeld van uitvoer van de bovenstaande opdracht:
 
     ```output
     PS C:\windows\system32> az --version
@@ -149,7 +149,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
     Als u Azure CLI nog niet hebt, kunt u Azure CLI downloaden en [installeren in Windows](/cli/azure/install-azure-cli-windows). U kunt Azure CLI uitvoeren via de Windows-opdrachtprompt of via Windows PowerShell.
 
-2. Noteer de locatie van Python voor de CLI. U hebt deze nodig om de locatie van het basisvertrouwensarchief voor certificaten voor Azure CLI te bepalen.
+2. Noteer de locatie van Python voor de CLI. U hebt de python-locatie nodig om de locatie van het vertrouwde basis certificaat Archief voor Azure CLI te bepalen.
 
 3. Om het voorbeeldscript uit te voeren dat in dit artikel wordt gebruikt, hebt u de volgende Python-bibliotheekversies nodig:
 
@@ -203,7 +203,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
 
 1. Zoek de locatie van het certificaat op de computer. De locatie kan variëren, afhankelijk van waar u `az cli` hebt geïnstalleerd. Voer Windows PowerShell uit als beheerder. Schakel over naar het pad waar `az cli` Python heeft geïnstalleerd: `C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2\python.exe`.
 
-    Als u de certificaatlocatie wilt ophalen, voert u de volgende opdracht in:
+    Als u de certificaat locatie wilt ophalen, typt u de volgende opdracht:
 
     ```powershell
     .\python -c "import certifi; print(certifi.where())"
@@ -266,7 +266,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
     $ENV:ADAL_PYTHON_SSL_NO_VERIFY = 1
     ```
 
-2. Stel omgevingsvariabelen in voor het script voor het Azure Resource Manager-eindpunt, de locatie waar de resources zijn gemaakt en het pad naar de locatie van de bron-VHD. De locatie van de resources is hetzelfde op alle Azure Stack Edge Pro-apparaten en is ingesteld op `dbelocal`. U moet ook de adresvoorvoegsels en het privé-IP-adres opgeven. De volgende omgevingsvariabelen zijn waarden die zijn gebaseerd op uw waarden, met uitzondering van `AZURE_RESOURCE_LOCATION`, die moeten worden vastgelegd op `"dbelocal"`.
+2. Stel omgevingsvariabelen in voor het script voor het Azure Resource Manager-eindpunt, de locatie waar de resources zijn gemaakt en het pad naar de locatie van de bron-VHD. De locatie van de resources is hetzelfde op alle Azure Stack Edge Pro-apparaten en is ingesteld op `dbelocal`. U moet ook de adresvoorvoegsels en het privé-IP-adres opgeven. De volgende omgevings variabelen zijn waarden die zijn gebaseerd op uw waarden, met uitzonde ring van `AZURE_RESOURCE_LOCATION` , die moeten worden ingesteld op `"dbelocal"` .
 
     ```powershell
     $ENV:ARM_ENDPOINT = "https://management.team3device.teatraining1.com"
@@ -319,9 +319,9 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
     ```powershell
     PS C:\Certificates> az login -u EdgeARMuser
     ```
-   Nadat u de aanmeldingsopdracht hebt gebruikt, wordt u om een wachtwoord gevraagd. Voer het Azure Resource Manager-wachtwoord in.
+   Nadat u de aanmeldings opdracht hebt gebruikt, wordt u gevraagd een wacht woord op te vragen. Voer het Azure Resource Manager-wachtwoord in.
 
-   Hier volgt een voorbeeld van de uitvoer van een geslaagde aanmelding na het invoeren van het wachtwoord:  
+   Hier volgt een voor beeld van de uitvoer van een geslaagde aanmelding na het opgeven van het wacht woord:  
    
    ```output
    PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2> az login -u EdgeARMuser
@@ -342,7 +342,7 @@ Voordat u een virtuele machine op uw Azure Stack Edge Pro-apparaat gaat maken en
    ]
    PS C:\Program Files (x86)\Microsoft SDKs\Azure\CLI2>
    ```
-   Noteer de waarden voor `id` en `tenantId`, omdat deze overeenkomen met respectievelijk de Azure Resource Manager-abonnements-id en de Azure Resource Manager-tenant-id, en in een latere stap worden gebruikt.
+   Noteer de `id` `tenantId` waarden en als deze waarden overeenkomen met uw Azure Resource Manager-abonnement-id en Azure Resource Manager Tenant-id respectievelijk en worden gebruikt in de volgende stap.
        
    De volgende omgevingsvariabelen moeten worden ingesteld voor correcte werking als *service-principal*:
 

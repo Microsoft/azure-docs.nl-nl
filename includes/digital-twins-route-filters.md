@@ -5,12 +5,12 @@ ms.service: digital-twins
 ms.topic: include
 ms.date: 12/04/2020
 ms.author: baanders
-ms.openlocfilehash: e06e660a43aaa0ff5eb79bc00bd8a5d2c61c6580
-ms.sourcegitcommit: 8dd8d2caeb38236f79fe5bfc6909cb1a8b609f4a
+ms.openlocfilehash: d93f484e318c10489eb1db3e9c65c6e0c7479c90
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/08/2021
-ms.locfileid: "98045309"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98859842"
 ---
 | Bestandsnaam | Beschrijving | Filter tekst schema | Ondersteunde waarden | 
 | --- | --- | --- | --- |
@@ -23,17 +23,13 @@ ms.locfileid: "98045309"
 | Specificatie versie | De versie van het gebeurtenis schema dat u gebruikt | `specversion = '<version>'` | De versie moet zijn `1.0` . Dit geeft de CloudEvents-schema versie 1,0 |
 | Meldings tekst | Verwijzen naar een eigenschap in het `data` veld van een melding | `$body.<property>` | Zie [*How-to: informatie over gebeurtenis gegevens*](../articles/digital-twins/how-to-interpret-event-data.md) voor voor beelden van meldingen. Naar een eigenschap in het `data` veld kan worden verwezen met `$body`
 
-Houd er rekening mee dat u meerdere filters kunt toevoegen aan een aanvraag als volgt: 
-
-:::code language="json" source="~/digital-twins-docs-samples/api-requests/filter-multiple.json":::
-
 De volgende gegevens typen worden ondersteund als waarden die worden geretourneerd door verwijzingen naar de bovenstaande gegevens:
 
 | Gegevenstype | Voorbeeld |
 |-|-|-|
 |**Tekenreeks**| `STARTS_WITH($body.$metadata.$model, 'dtmi:example:com:floor')` <br> `CONTAINS(subject, '<twinID>')`|
 |**Geheel getal**|`$body.errorCode > 200`|
-|**Dubbelklik**|`$body.temperature <= 5.5`|
+|**Dubbel**|`$body.temperature <= 5.5`|
 |**BOOL**|`$body.poweredOn = true`|
 |**Null**|`$body.prop != null`|
 

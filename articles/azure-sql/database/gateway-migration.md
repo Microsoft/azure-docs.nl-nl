@@ -10,12 +10,12 @@ author: rohitnayakmsft
 ms.author: rohitna
 ms.reviewer: vanto
 ms.date: 07/01/2019
-ms.openlocfilehash: 0542d7e0ea204d1e9279e89c9f36b9bc6c6c88fa
-ms.sourcegitcommit: 16887168729120399e6ffb6f53a92fde17889451
+ms.openlocfilehash: c34410fcb5e1992f8b7a358801a354a1e1cf190c
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/13/2021
-ms.locfileid: "98165855"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98808007"
 ---
 # <a name="azure-sql-database-traffic-migration-to-newer-gateways"></a>Azure SQL Database verkeer migratie naar nieuwere gateways
 [!INCLUDE[appliesto-sqldb](../includes/appliesto-sqldb.md)]
@@ -27,6 +27,13 @@ Klanten worden op de hoogte gesteld via e-mail en in het Azure Portal goed van e
 ## <a name="status-updates"></a>Status updates
 
 # <a name="in-progress"></a>[Actief](#tab/in-progress-ip)
+## <a name="february-2021"></a>Februari 2021
+Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
+
+- VS-centraal: 13.89.169.20
+
+Deze SQL-gateways beginnen met het accepteren van klant verkeer op 28 februari 2021.
+
 ## <a name="january-2021"></a>Januari 2021
 Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
 
@@ -41,7 +48,7 @@ Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
 - Korea-centraal: 52.231.17.22, 52.231.17.23
 - India-West: 104.211.144.4
 
-Deze SQL-gateways beginnen met het accepteren van klant verkeer op 31 januari 2021
+Deze SQL-gateways beginnen met het accepteren van klant verkeer op 31 januari 2021.
 
 # <a name="completed"></a>[Voltooid](#tab/completed-ip)
 De volgende gateway migraties zijn voltooid: 
@@ -101,17 +108,17 @@ Nieuwe SQL-gateways worden toegevoegd aan de volgende regio's:
 Deze SQL-gateways beginnen het accepteren van klant verkeer op 10 augustus 2020. 
 
 ### <a name="october-2019"></a>Oktober 2019
-- Brazil South
+- Brazilië - zuid
 - VS - west
 - Europa -west
 - VS - oost
-- Central US
+- VS - centraal
 - Azië - zuidoost
-- South Central US
+- VS - zuid-centraal
 - Europa - noord
 - VS - noord-centraal
 - Japan - west
-- Japan East
+- Japan - oost
 - VS - oost 2
 - Azië - oost
 

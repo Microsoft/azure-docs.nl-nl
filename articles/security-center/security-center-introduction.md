@@ -12,14 +12,14 @@ ms.topic: overview
 ms.custom: mvc
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/24/2021
+ms.date: 01/26/2021
 ms.author: memildin
-ms.openlocfilehash: 3ed290cc35195dfb02db9fbb72f092f6f4688291
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 9f39988375f58f75dad2b623cd3d937022a072e7
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757302"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806190"
 ---
 # <a name="what-is-azure-security-center"></a>Wat is Azure Security Center?
 
@@ -105,9 +105,8 @@ De beveiliging tegen bedreigingen van Security Center bevat een complete analyse
 
 ### <a name="integration-with-microsoft-defender-for-endpoint"></a>Integratie met Microsoft Defender voor Eindpunt
 
-Security Center omvat automatische, systeemeigen integratie met Microsoft Defender voor Eindpunt. Dit betekent dat uw Windows- en Linux-computers zonder enige configuratie volledig zijn geïntegreerd met de aanbevelingen en evaluaties van Security Center.
+Azure Defender voor servers bevat automatische, systeem eigen integratie met micro soft Defender voor eind punt. Meer informatie over [het beveiligen van uw eind punten met de geïntegreerde EDR-oplossing van Security Center: micro soft Defender voor eind punt](security-center-wdatp.md)
 
-Bovendien kunt u met Security Center het beleid voor toepassingsbeheer automatiseren in serveromgevingen. Met de adaptieve toepassingsregelaars in Security Center kunt u end-to-end apps in een goedkeuringslijst opnemen voor al uw Windows-servers. U hoeft geen regels te maken en op schendingen te controleren. Dit wordt allemaal automatisch voor u gedaan.
 
 ### <a name="protect-paas"></a>PaaS beveiligen
 

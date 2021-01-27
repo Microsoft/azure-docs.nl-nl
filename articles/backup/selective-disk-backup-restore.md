@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over selectieve back-ups en herst
 ms.topic: conceptual
 ms.date: 07/17/2020
 ms.custom: references_regions , devx-track-azurecli
-ms.openlocfilehash: 1f4d27563cf292632c6b14c82e36542b86c5d356
-ms.sourcegitcommit: 02b1179dff399c1aa3210b5b73bf805791d45ca2
+ms.openlocfilehash: 38ead1591bf2ecadc8bfca5875ac1fa3e69d56ef
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98127716"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806371"
 ---
 # <a name="selective-disk-backup-and-restore-for-azure-virtual-machines"></a>Back-up en herstel van selectieve schijven voor virtuele Azure-machines
 
@@ -337,4 +337,4 @@ De functie Selectieve schijf back-up is een mogelijkheid die boven op de back-up
 ## <a name="next-steps"></a>Volgende stappen
 
 - [Ondersteuningsmatrix voor back-ups van virtuele Azure-machines](backup-support-matrix-iaas.md)
-- [Veelgestelde vragen: back-ups maken van virtuele Azure-machines](backup-azure-vm-backup-faq.md)
+- [Veelgestelde vragen: back-ups maken van virtuele Azure-machines](backup-azure-vm-backup-faq.yml)

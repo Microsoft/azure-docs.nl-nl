@@ -1,15 +1,15 @@
 ---
 title: Nalevingsdetails van de regelgeving voor CIS Microsoft Azure Foundations Benchmark
 description: Informatie over het ingebouwde initiatief voor naleving van regelgeving in CIS Microsoft Azure Foundations Benchmark. Elke beheeroptie wordt toegewezen aan een of meer Azure Policy-definities die helpen bij de evaluatie.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 0e1c63f92809b6afa1f6d2e61b8ae169f9eec07d
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 85467c086225c4d9e7699debb9871dbd197ebfd2
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685643"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98807076"
 ---
 # <a name="details-of-the-cis-microsoft-azure-foundations-benchmark-regulatory-compliance-built-in-initiative"></a>Informatie over het ingebouwde initiatief voor naleving van regelgeving in CIS Microsoft Azure Foundations Benchmark
 
@@ -135,7 +135,7 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
-|[Beveiligingsproblemen moeten worden opgelost met een oplossing voor evaluatie van beveiligingsproblemen](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F760a85ff-6162-42b3-8d70-698e268f648c) |Hiermee worden beveiligingsproblemen die door de oplossing voor evaluatie van beveiligingsproblemen zijn gedetecteerd en virtuele machines zonder oplossing voor evaluatie van beveiligingsproblemen bewaakt als aanbevelingen in Azure Security Center. |AuditIfNotExists, uitgeschakeld |[3.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_VMVulnerabilities_Audit.json) |
+|[A vulnerability assessment solution should be enabled on your virtual machines](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F501541f7-f7e7-4cd6-868c-4190fdad3ac9) (Er moet een oplossing voor de evaluatie van beveiligingsproblemen op uw virtuele machines worden ingeschakeld) |Controleert virtuele machines om te detecteren of er een ondersteunde oplossing voor de evaluatie van beveiligingsproblemen op wordt uitgevoerd. Een kernonderdeel van elk cyberrisico en beveiligingsprogramma is het identificeren en analyseren van beveiligingsproblemen. De standaardprijscategorie van Azure Security Center omvat het scannen van beveiligingsproblemen voor uw virtuele machines, zonder extra kosten. Daarnaast kan dit hulpprogramma automatisch worden geïmplementeerd. |AuditIfNotExists, uitgeschakeld |[2.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_ServerVulnerabilityAssessment_Audit.json) |
 
 ### <a name="ensure-asc-default-policy-setting-monitor-jit-network-access-is-not-disabled"></a>Zorg ervoor dat de standaardbeleidsinstelling voor "JIT-netwerktoegang bewaken" van de ASC niet is "uitgeschakeld"
 
@@ -176,14 +176,6 @@ Dit ingebouwde initiatief wordt geïmplementeerd als onderdeel van het [blauwdru
 |Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
 |---|---|---|---|
 |[Abonnementen moeten een e-mailadres van contactpersonen voor beveiligingsproblemen bevatten](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2F4f4f78b8-e367-4b10-a341-d9a4ad5cf1c7) |Om ervoor te zorgen dat de relevante personen in uw organisatie worden gewaarschuwd wanneer er sprake is van een mogelijke schending van de beveiliging in een van uw abonnementen, moet u een veiligheidscontact instellen die e-mailmeldingen van Security Center ontvangt. |AuditIfNotExists, uitgeschakeld |[1.0.1](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Security_contact_email.json) |
-
-### <a name="ensure-that-security-contact-phone-number-is-set"></a>Controleer of het ‘telefoonnummer’ van de contactpersoon voor beveiliging is ingesteld
-
-**Id**: **Eigendom** van CIS Azure 2.17: Klant
-
-|Naam<br /><sub>(Azure-portal)</sub> |Beschrijving |Gevolg(en) |Versie<br /><sub>(GitHub)</sub> |
-|---|---|---|---|
-|[U moet een telefoonnummer van de contactpersoon voor beveiliging opgeven voor uw abonnement](https://portal.azure.com/#blade/Microsoft_Azure_Policy/PolicyDetailBlade/definitionId/%2Fproviders%2FMicrosoft.Authorization%2FpolicyDefinitions%2Fb4d66858-c922-44e3-9566-5cdb7a7be744) |Een telefoonnummer invoeren om meldingen te ontvangen wanneer Azure Security Center gecompromitteerde resources detecteert |AuditIfNotExists, uitgeschakeld |[1.0.0](https://github.com/Azure/azure-policy/blob/master/built-in-policies/policyDefinitions/Security%20Center/ASC_Security_contact_phone_number.json) |
 
 ### <a name="ensure-that-send-email-notification-for-high-severity-alerts-is-set-to-on"></a>Zorg dat 'E-mailmelding voor waarschuwingen met hoge urgentie verzenden' is ingesteld op 'ingeschakeld'
 

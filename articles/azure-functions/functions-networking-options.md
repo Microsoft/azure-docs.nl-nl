@@ -1,16 +1,16 @@
 ---
 title: Netwerkopties van Azure Functions
 description: Een overzicht van alle beschik bare netwerk opties in Azure Functions.
-author: jeffhollan
+author: cachai2
 ms.topic: conceptual
-ms.date: 10/27/2020
-ms.author: jehollan
-ms.openlocfilehash: f4d7611f285535680469f3a334ab889b0b644bfe
-ms.sourcegitcommit: 2aa52d30e7b733616d6d92633436e499fbe8b069
+ms.date: 1/21/2021
+ms.author: cachai
+ms.openlocfilehash: 2c3f207e98f574bb6c43f87d34b0a404e263e83c
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97936857"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806984"
 ---
 # <a name="azure-functions-networking-options"></a>Netwerkopties van Azure Functions
 
@@ -85,12 +85,9 @@ Als u een hoger beveiligings niveau wilt bieden, kunt u een aantal Azure-Service
 
 Zie [service-eind punten voor virtueel netwerk](../virtual-network/virtual-network-service-endpoints-overview.md)voor meer informatie.
 
-## <a name="restrict-your-storage-account-to-a-virtual-network-preview"></a>Uw opslag account beperken tot een virtueel netwerk (preview-versie)
+## <a name="restrict-your-storage-account-to-a-virtual-network"></a>Uw opslag account beperken tot een virtueel netwerk 
 
-Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag.  U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt.  Deze preview-functie werkt momenteel alleen met Windows Premium-abonnementen in Europa-west.  Een functie instellen met een opslag account die is beperkt tot een particulier netwerk:
-
-> [!NOTE]
-> Het beperken van het opslag account is momenteel alleen geschikt voor Premium-functies met behulp van Windows in Europa-west
+Wanneer u een functie-app maakt, moet u een Azure Storage-account voor algemeen gebruik maken of koppelen dat ondersteuning biedt voor blob-, wachtrij-en tabel opslag.  U kunt dit opslag account vervangen door een abonnement dat is beveiligd met Service-eind punten of een persoonlijk eind punt.  Deze functie werkt momenteel alleen met Windows Premium-abonnementen.  Een functie instellen met een opslag account die is beperkt tot een particulier netwerk:
 
 1. Maak een functie met een opslag account waarvoor geen service-eind punten zijn ingeschakeld.
 1. Configureer de functie om verbinding te maken met uw virtuele netwerk.

@@ -1,15 +1,15 @@
 ---
 title: Lijst met ingebouwde beleidsdefinities
 description: Lijst met ingebouwde beleidsdefinities voor Azure Policy. Categorieën zijn tags, naleving van regelgeving, Key Vault, Kubernetes, gastconfiguratie en meer.
-ms.date: 01/21/2021
+ms.date: 01/25/2021
 ms.topic: sample
 ms.custom: generated
-ms.openlocfilehash: 3b29a4c86ee61247fa3caeb542e08a4ac24ff8c4
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 9fcb66fbb7fdd94de0d265d19c547ca1567417e7
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98685806"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98807596"
 ---
 # <a name="azure-policy-built-in-policy-definitions"></a>Ingebouwde beleidsdefinities voor Azure Policy
 
@@ -116,6 +116,10 @@ De naam van elke ingebouwde beleidsdefinitie is gekoppeld aan de beleidsdefiniti
 ## <a name="guest-configuration"></a>Gastconfiguratie
 
 [!INCLUDE [azure-policy-reference-policies-guest-configuration](../../../../includes/policy/reference/bycat/policies-guest-configuration.md)]
+
+## <a name="hdinsight"></a>HDInsight
+
+[!INCLUDE [azure-policy-reference-policies-hdinsight](../../../../includes/policy/reference/bycat/policies-hdinsight.md)]
 
 ## <a name="internet-of-things"></a>Internet of Things
 

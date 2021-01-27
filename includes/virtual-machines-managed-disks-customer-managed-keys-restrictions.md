@@ -8,12 +8,12 @@ ms.topic: include
 ms.date: 08/24/2020
 ms.author: rogarana
 ms.custom: include file
-ms.openlocfilehash: b660d3a0d49de80ed85cfbdcdf8e28b9828cbf26
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 75acbb30c2bf811b7ae72d6939b9f164554fdd32
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91545165"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98859729"
 ---
 - Alleen [software-en HSM RSA-sleutels](../articles/key-vault/keys/about-keys.md) met een grootte van 2.048 bits, 3.072-bits en 4.096 bits worden ondersteund, geen andere sleutels of grootten.
     - Voor [HSM](../articles/key-vault/keys/hsm-protected-keys.md) -sleutels is de **Premium** -laag van Azure-sleutel kluizen vereist.
@@ -22,5 +22,5 @@ ms.locfileid: "91545165"
 - Alle resources met betrekking tot uw door de klant beheerde sleutels (Azure Key kluizen, schijf versleutelings sets, Vm's, schijven en moment opnamen) moeten zich in hetzelfde abonnement en dezelfde regio bevinden.
 - Schijven, moment opnamen en installatie kopieën die zijn versleuteld met door de klant beheerde sleutels, kunnen niet worden verplaatst naar een andere resource groep en een ander abonnement.
 - Beheerde schijven die momenteel of eerder zijn versleuteld met Azure Disk Encryption kunnen niet worden versleuteld met door de klant beheerde sleutels.
-- Kan Maxi maal 50 schijf versleutelings sets per regio per abonnement maken.
+- Kan Maxi maal 1000 schijf versleutelings sets per regio per abonnement maken.
 - Zie [Preview: door de klant beheerde sleutels gebruiken voor het versleutelen van afbeeldingen](../articles/virtual-machines/image-version-encryption.md)voor meer informatie over het gebruik van door de klant beheerde sleutels met galerieën met gedeelde afbeeldingen.

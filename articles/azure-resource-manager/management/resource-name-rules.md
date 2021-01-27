@@ -2,13 +2,13 @@
 title: Naamgevings beperkingen voor resources
 description: Hier worden de regels en beperkingen voor het benoemen van Azure-resources weer gegeven.
 ms.topic: conceptual
-ms.date: 12/29/2020
-ms.openlocfilehash: bd8ba72d43b7e3e5a9145d756741436f0a49e18b
-ms.sourcegitcommit: 3c3ec8cd21f2b0671bcd2230fc22e4b4adb11ce7
+ms.date: 01/26/2021
+ms.openlocfilehash: d298688dbd13cc32c9cca078b5e20e6a5f054450
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98762489"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806881"
 ---
 # <a name="naming-rules-and-restrictions-for-azure-resources"></a>Naamgevingsregels en -beperkingen voor Azure-resources
 
@@ -635,7 +635,7 @@ In de volgende tabellen verwijst de term alfanumeriek naar:
 > | --- | --- | --- | --- |
 > | managedInstances | internationaal | 1-63 | Kleine letters, cijfers en afbreek streepjes.<br><br>Kan niet beginnen of eindigen met een afbreek streepje. <br><br> Geen speciale tekens, zoals `@` . |
 > | Server | internationaal | 1-63 | Kleine letters, cijfers en afbreek streepjes.<br><br>Kan niet beginnen of eindigen met een afbreek streepje. |
-> | servers/beheerders | server |  | Moet zijn `ActiveDirectory` . <br><br> Geen speciale tekens, zoals `@` .|
+> | servers/beheerders | server |  | Moet zijn `ActiveDirectory` . |
 > | servers/data bases | server | 1-128 | Kan niet gebruiken:<br>`<>*%&:\/?`<br><br>Kan niet eindigen met een punt of spatie. |
 > | servers/data bases/syncGroups | database | 1-150 | Alfanumerieke tekens, afbreek streepjes en onderstrepings tekens. |
 > | servers/elasticPools | server | 1-128 | Kan niet gebruiken:<br>`<>*%&:\/?`<br><br>Kan niet eindigen met een punt of spatie. |

@@ -11,12 +11,12 @@ ms.workload: identity
 ms.topic: tutorial
 ms.date: 12/07/2020
 ms.author: jeedes
-ms.openlocfilehash: 977213480bfd5dfa85acd34df30071cc486e5c63
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: d9e348d456d517cd20e899648b9e92b3cd802ffb
+ms.sourcegitcommit: fc8ce6ff76e64486d5acd7be24faf819f0a7be1d
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98727777"
+ms.lasthandoff: 01/26/2021
+ms.locfileid: "98806307"
 ---
 # <a name="tutorial-integrate-bynder-with-azure-active-directory"></a>Zelfstudie: Bynder integreren met Azure Active Directory
 
@@ -81,7 +81,7 @@ Volg deze stappen om eenmalige aanmelding van Azure AD in te schakelen in Azure 
     
     Voor een standaarddomein: `https://<company name>.getbynder.com`
     
-    Voor een aangepast domain: `https;//<subdomain>.<domain>.com`
+    Voor een aangepast domain: `https://<subdomain>.<domain>.com`
 
     b. In het tekstvak **Antwoord-URL** typt u een URL met het volgende patroon:
     

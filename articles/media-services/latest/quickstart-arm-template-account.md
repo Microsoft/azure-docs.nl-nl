@@ -13,12 +13,12 @@ ms.topic: quickstart
 ms.date: 11/24/2020
 ms.author: inhenkel
 ms.custom: subject-armqs
-ms.openlocfilehash: 6a23c3a20e79fe6fff7de8faccf4e4ef78f02585
-ms.sourcegitcommit: d22a86a1329be8fd1913ce4d1bfbd2a125b2bcae
-ms.translationtype: HT
+ms.openlocfilehash: 541a4c17a3212f711be7e2cf096ce3a2d632ee64
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/26/2020
-ms.locfileid: "96185030"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879643"
 ---
 # <a name="quickstart-media-services-account-arm-template"></a>Quickstart: ARM-sjabloon van Azure Media Services-account
 
@@ -41,7 +41,7 @@ Lezers die ervaring hebben met ARM-sjablonen kunnen doorgaan met de [sectie over
 
 Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free/?WT.mc_id=A261C142F) aan voordat u begint.
 
-Als u nog nooit een ARM-sjabloon hebt geïmplementeerd, is het handig om meer te weten te komen over [Azure ARM-sjablonen](https://docs.microsoft.com/azure/azure-resource-manager/templates/) en de [zelfstudie](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-powershell) te doen.
+Als u nog nooit een ARM-sjabloon hebt geïmplementeerd, is het handig om meer te weten te komen over [Azure ARM-sjablonen](../../azure-resource-manager/templates/index.yml) en de [zelfstudie](../../azure-resource-manager/templates/template-tutorial-create-first-template.md?tabs=azure-powershell) te doen.
 
 ## <a name="review-the-template"></a>De sjabloon controleren
 
@@ -118,8 +118,8 @@ The syntax for the JSON code fence is:
 
 Er worden drie soorten Azure-resources gedefinieerd in de sjabloon:
 
-- [Microsoft.Media/mediaservices](https://docs.microsoft.com/azure/templates/microsoft.media/mediaservices): een Media Services-account maken
-- [Microsoft.Storage/storageAccounts](https://docs.microsoft.com/azure/templates/microsoft.storage/storageaccounts): een opslagaccount maken
+- [Microsoft.Media/mediaservices](/azure/templates/microsoft.media/mediaservices): een Media Services-account maken
+- [Microsoft.Storage/storageAccounts](/azure/templates/microsoft.storage/storageaccounts): een opslagaccount maken
 
 ## <a name="set-the-account"></a>Het account instellen
 
@@ -277,4 +277,4 @@ az group delete --name {name of the resource group}
 Voor meer informatie over het gebruik van een ARM-sjabloon door het proces te volgen voor het maken van een sjabloon met parameters, variabelen en meer, kunt u de zelfstudie raadplegen
 
 > [!div class="nextstepaction"]
-> [Zelfstudie: uw eerste ARM-sjabloon maken en implementeren](/azure/azure-resource-manager/templates/template-tutorial-create-first-template)
+> [Zelfstudie: uw eerste ARM-sjabloon maken en implementeren](../../azure-resource-manager/templates/template-tutorial-create-first-template.md)

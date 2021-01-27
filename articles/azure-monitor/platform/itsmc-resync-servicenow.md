@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: nolavime
 ms.author: nolavime
 ms.date: 01/17/2021
-ms.openlocfilehash: aede7e3dec886d6a6213c64b386cacd725dd74f5
-ms.sourcegitcommit: 61d2b2211f3cc18f1be203c1bc12068fc678b584
+ms.openlocfilehash: 1b2e914057aa72934524cc4977e3d2292394d0b7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/18/2021
-ms.locfileid: "98562791"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98882044"
 ---
 # <a name="how-to-manually-fix-sync-problems"></a>Synchronisatie problemen hand matig oplossen
 
@@ -22,16 +22,16 @@ Gebruik het volgende synchronisatie proces om de verbinding opnieuw te activeren
 
 1. Zoek naar de oplossing in de bovenste Zoek banner en selecteer vervolgens de relevante oplossingen
 
-    ![Scherm afbeelding met de bovenste Zoek banner en waar u de relevante oplossingen kunt selecteren.](media/itsmc-resync-servicenow/solution-search-8bit.png)
+    ![Scherm afbeelding met de bovenste Zoek banner en waar u de relevante oplossingen kunt selecteren.](media/itsmc-resync-servicenow/solution-search-8-bit.png)
 
 1. Kies in het scherm oplossing de optie Alles selecteren in het abonnements filter en filter vervolgens op ' Service Desk '
 
-    ![Scherm afbeelding die laat zien waar u selecteert selecteren en waar u wilt filteren op Service Desk.](media/itsmc-resync-servicenow/solutions-list-8bit.png)
+    ![Scherm afbeelding die laat zien waar u selecteert selecteren en waar u wilt filteren op Service Desk.](media/itsmc-resync-servicenow/solutions-list-8-bit.png)
 
 1. Selecteer de oplossing van uw ITSM-verbinding.
 1. Selecteer ITSM-verbinding in het linkerdeel blad.
 
-    ![Scherm afbeelding die laat zien waar u ITSM-verbindingen selecteert.](media/itsmc-resync-servicenow/itsm-connector-8bit.png)
+    ![Scherm afbeelding die laat zien waar u ITSM-verbindingen selecteert.](media/itsmc-resync-servicenow/itsm-connector-8-bit.png)
 
 1. Selecteer elke connector in de lijst. 
     1. Klik op de naam van de connector om deze te configureren
@@ -41,10 +41,10 @@ Gebruik het volgende synchronisatie proces om de verbinding opnieuw te activeren
 
     1. Klik op synchroniseren
 
-       ![Scherm opname van de knop synchroniseren.](media/itsmc-resync-servicenow/resync-8bit2.png)
+       ![Scherm opname van de knop synchroniseren.](media/itsmc-resync-servicenow/resync-8-bit-2.png)
 
     1. Klik op opslaan
 
-        ![Nieuwe verbinding](media/itsmc-resync-servicenow/save-8bit.png)
+        ![Nieuwe verbinding](media/itsmc-resync-servicenow/save-8-bit.png)
 
 f.    Bekijk de meldingen om te zien of het proces is gestart.

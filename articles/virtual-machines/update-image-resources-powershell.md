@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 04/27/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: c6bc4fea05f79c446f318eb4cbc86beb160ea108
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d480d880d9b26666f393c179efa953b653c80c3e
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82797004"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881988"
 ---
 # <a name="list-update-and-delete-image-resources-using-powershell"></a>Afbeeldings bronnen weer geven, bijwerken en verwijderen met Power shell 
 
@@ -26,4 +26,4 @@ U kunt de resources van uw gedeelde afbeeldingen galerie beheren met Azure Power
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Met [Azure Image Builder (preview)](./linux/image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md).
+Met [Azure Image Builder (preview)](./image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md).

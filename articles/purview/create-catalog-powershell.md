@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: quickstart
 ms.date: 11/23/2020
-ms.openlocfilehash: 7db546ec9038403bd9e34f637e9d9de368277d52
-ms.sourcegitcommit: cc13f3fc9b8d309986409276b48ffb77953f4458
-ms.translationtype: HT
+ms.openlocfilehash: 0698295688a4587a704e8cdba0a4796e8d1e6fcd
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97400299"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879996"
 ---
 # <a name="quickstart-create-an-azure-purview-account-using-azure-powershellazure-cli"></a>Quickstart: Een Azure Purview-account maken met behulp van Azure PowerShell/Azure CLI
 
@@ -27,9 +27,9 @@ Deze quickstart laat zien hoe u een Azure Purview-account maakt met Azure PowerS
 
 * Het gebruikersaccount waarmee u zich bij Azure aanmeldt, moet lid zijn van de rol Inzender of Eigenaar, of moet een beheerder van het Azure-abonnement zijn.
 
-* Uw eigen [Azure Active Directory-tenant](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant).
+* Uw eigen [Azure Active Directory-tenant](../active-directory/fundamentals/active-directory-access-create-new-tenant.md).
 
-* Installeer Azure PowerShell of Azure CLI op uw clientcomputer om de sjabloon te implementeren: [Implementatie via de opdrachtregel](https://docs.microsoft.com/azure/azure-resource-manager/templates/template-tutorial-create-first-template?tabs=azure-cli#command-line-deployment)
+* Installeer Azure PowerShell of Azure CLI op uw clientcomputer om de sjabloon te implementeren: [Implementatie via de opdrachtregel](../azure-resource-manager/templates/template-tutorial-create-first-template.md?tabs=azure-cli#command-line-deployment)
 
 ## <a name="sign-in-to-azure"></a>Aanmelden bij Azure
 

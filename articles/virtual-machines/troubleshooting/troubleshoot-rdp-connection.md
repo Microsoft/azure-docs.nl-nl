@@ -15,12 +15,12 @@ ms.tgt_pltfrm: vm-windows
 ms.topic: troubleshooting
 ms.date: 03/23/2018
 ms.author: akjosh
-ms.openlocfilehash: 66e4ea622f546981d1f0651b20368590e59056d3
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 33bd7c82568f836e498a05411d2b3cf1c6a950b9
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201617"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878626"
 ---
 # <a name="troubleshoot-remote-desktop-connections-to-an-azure-virtual-machine"></a>Problemen met Extern bureaublad verbindingen met een virtuele machine van Azure oplossen
 De RDP-verbinding (Remote Desktop Protocol) met uw Windows Azure VM (Virtual Machine) kan om verschillende redenen worden onderbroken, waardoor u geen toegang hebt tot uw VM. Het probleem kan in Extern bureaublad in de VM zitten, in de netwerkverbinding of in de Extern bureaublad-client in de hostcomputer. In dit artikel wordt u door sommige van de meest voorkomende methoden geleid om RDP-verbindingsfouten op te lossen. 
@@ -46,7 +46,7 @@ Probeer na elke stap voor het oplossen van problemen opnieuw verbinding te maken
 Blijf lezen als u gedetailleerde stappen en uitleg nodig hebt. Controleer of lokale netwerk apparatuur, zoals routers en firewalls, de uitgaande TCP-poort 3389 niet blokkeert, zoals vermeld in [gedetailleerde scenario's voor het oplossen van problemen met RDP](detailed-troubleshoot-rdp.md).
 
 > [!TIP]
-> Als de knop **verbinden** voor uw virtuele machine grijs wordt weer gegeven in de portal en u niet met Azure bent verbonden via een [snelle route](../../expressroute/expressroute-introduction.md) of een [site-naar-site-VPN-](../../vpn-gateway/vpn-gateway-howto-site-to-site-resource-manager-portal.md) verbinding, moet u een openbaar IP-adres maken en toewijzen aan uw virtuele machine voordat u RDP kunt gebruiken. Er is meer informatie over [openbare IP-adressen in Azure](../../virtual-network/public-ip-addresses.md) beschikbaar.
+> Als de knop **verbinden** voor uw virtuele machine grijs wordt weer gegeven in de portal en u niet met Azure bent verbonden via een [snelle route](../../expressroute/expressroute-introduction.md) of een [site-naar-site-VPN-](../../vpn-gateway/tutorial-site-to-site-portal.md) verbinding, moet u een openbaar IP-adres maken en toewijzen aan uw virtuele machine voordat u RDP kunt gebruiken. Er is meer informatie over [openbare IP-adressen in Azure](../../virtual-network/public-ip-addresses.md) beschikbaar.
 
 
 ## <a name="ways-to-troubleshoot-rdp-issues"></a>Manieren om RDP-problemen op te lossen
@@ -245,7 +245,7 @@ Er kan een specifiek fout bericht worden weer gegeven wanneer u probeert verbind
 * [Windows-beveiligings fout: uw referenties werken niet](troubleshoot-specific-rdp-errors.md#wincred).
 * [Deze computer kan geen verbinding maken met de externe computer](troubleshoot-specific-rdp-errors.md#rdpconnect).
 
-## <a name="additional-resources"></a>Aanvullende resources
+## <a name="additional-resources"></a>Aanvullende bronnen
 Lees de gedetailleerde [hand leiding voor het oplossen extern bureaublad van problemen](detailed-troubleshoot-rdp.md)als er geen van deze fouten optrad en u nog steeds geen verbinding met de virtuele machine kunt maken via Extern bureaublad.
 * Zie [problemen oplossen met toegang tot een toepassing die wordt uitgevoerd op](./troubleshoot-app-connection.md?toc=/azure/virtual-machines/linux/toc.json)een virtuele machine van Azure voor informatie over het oplossen van problemen bij het openen van toepassingen die op een VM worden uitgevoerd.
 * Zie [problemen met ssh-verbindingen met een virtuele Linux-machine in azure oplossen](./troubleshoot-ssh-connection.md?toc=/azure/virtual-machines/linux/toc.json)als u problemen ondervindt met het gebruik van Secure Shell (SSH) om verbinding te maken met een virtuele Linux-machine in Azure.

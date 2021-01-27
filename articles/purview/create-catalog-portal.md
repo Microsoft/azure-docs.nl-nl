@@ -7,12 +7,12 @@ ms.service: purview
 ms.subservice: purview-data-catalog
 ms.topic: quickstart
 ms.date: 10/23/2020
-ms.openlocfilehash: 6aeb4e29390b5b456d3aa820e4b3b8be762dbddd
-ms.sourcegitcommit: aacbf77e4e40266e497b6073679642d97d110cda
-ms.translationtype: HT
+ms.openlocfilehash: dea881acc4cec90c4a8ad6169d94734f24d5b759
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98115783"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98880030"
 ---
 # <a name="quickstart-create-an-azure-purview-account-in-the-azure-portal"></a>Quickstart: Een Azure Purview-account maken in Azure Portal
 
@@ -25,7 +25,7 @@ In deze quickstart gaat u een Azure Purview-account maken.
 
 * Een Azure-account met een actief abonnement. [Gratis een account maken](https://azure.microsoft.com/free/?WT.mc_id=A261C142F)
 
-* Uw eigen [Azure Active Directory-tenant](https://docs.microsoft.com/azure/active-directory/fundamentals/active-directory-access-create-new-tenant).
+* Uw eigen [Azure Active Directory-tenant](../active-directory/fundamentals/active-directory-access-create-new-tenant.md).
 
 * Uw account moet gemachtigd zijn om resources te maken in het abonnement
 
@@ -35,7 +35,7 @@ In deze quickstart gaat u een Azure Purview-account maken.
     > U hoeft deze stap niet uit te voeren als u niet beschikt over Azure Policy, of als er geen bestaand Azure-beleid is dat het maken van een **opslagaccount** en **EventHub-naamruimte** blokkeert.
 
     1. Ga naar Azure Portal en zoek op **beleid**
-    1. Volg [Een aangepaste beleidsdefinitie maken](https://docs.microsoft.com/azure/governance/policy/tutorials/create-custom-policy-definition) of wijzig bestaand beleid om twee uitzonderingen toe te voegen aan operator `not` en tag `resourceBypass`:
+    1. Volg [Een aangepaste beleidsdefinitie maken](../governance/policy/tutorials/create-custom-policy-definition.md) of wijzig bestaand beleid om twee uitzonderingen toe te voegen aan operator `not` en tag `resourceBypass`:
 
         ```json
         {
@@ -83,7 +83,7 @@ In deze quickstart gaat u een Azure Purview-account maken.
 
         :::image type="content" source="./media/create-catalog-portal/policy-definition.png" alt-text="Schermopname die laat zien hoe u een beleidsdefinitie kunt maken.":::
 
-    1. [Maak een beleidstoewijzing](https://docs.microsoft.com/azure/governance/policy/assign-policy-portal) met behulp van het aangepaste beleid dat is gemaakt.
+    1. [Maak een beleidstoewijzing](../governance/policy/assign-policy-portal.md) met behulp van het aangepaste beleid dat is gemaakt.
 
         [ ![Schermopname die laat zien hoe u een beleidstoewijzing kunt maken](./media/create-catalog-portal/policy-assignment.png)](./media/create-catalog-portal/policy-assignment.png#lightbox)
 
@@ -155,7 +155,7 @@ Als u op Toevoegen klikt en twee opties ziet die als uitgeschakeld zijn gemarkee
 
 1. Selecteer **Roltoewijzing toevoegen**.
 
-1. Raadpleeg [Catalogusmachtigingen](catalog-permissions.md) en [Toepassings- en service-principal-objecten in Azure Active Directory](https://docs.microsoft.com/azure/active-directory/develop/app-objects-and-service-principals) voor meer informatie over het roltype **Purview-gegevenscurator** of **Purview-gegevensbronbeheerder**, afhankelijk van waar de service-principal voor wordt gebruikt.
+1. Raadpleeg [Catalogusmachtigingen](catalog-permissions.md) en [Toepassings- en service-principal-objecten in Azure Active Directory](../active-directory/develop/app-objects-and-service-principals.md) voor meer informatie over het roltype **Purview-gegevenscurator** of **Purview-gegevensbronbeheerder**, afhankelijk van waar de service-principal voor wordt gebruikt.
 
 1. Laat bij **Toegang toewijzen aan** de standaardwaarde **Gebruiker, groep of service-principal** staan.
 

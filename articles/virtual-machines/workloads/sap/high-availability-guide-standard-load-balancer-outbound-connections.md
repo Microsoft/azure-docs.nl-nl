@@ -16,12 +16,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure-services
 ms.date: 12/01/2020
 ms.author: radeltch
-ms.openlocfilehash: 525c705db81dc0f152c8dbc55de5ebac841e5d57
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: 62b235fa9ea84409a5c29609a5dc0fde1671684c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98201736"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98878762"
 ---
 # <a name="public-endpoint-connectivity-for-virtual-machines-using-azure-standard-load-balancer-in-sap-high-availability-scenarios"></a>Connectiviteit van open bare eind punten voor Virtual Machines met behulp van Azure Standard Load Balancer in scenario's met hoge Beschik baarheid van SAP
 
@@ -45,8 +45,8 @@ SAP-systemen bevatten vaak gevoelige Bedrijfs gegevens. Het is zelden acceptabel
 
 Voor beelden van scenario's waarbij toegang tot het open bare Azure-eind punt is vereist:  
 - De Azure Fence-agent vereist toegang tot **Management.Azure.com** en **login.microsoftonline.com**  
-- [Azure Backup](https://docs.microsoft.com/azure/backup/tutorial-backup-sap-hana-db#set-up-network-connectivity)
-- [Azure Site Recovery](https://docs.microsoft.com/azure/site-recovery/azure-to-azure-about-networking#outbound-connectivity-for-urls)  
+- [Azure Backup](../../../backup/tutorial-backup-sap-hana-db.md#set-up-network-connectivity)
+- [Azure Site Recovery](../../../site-recovery/azure-to-azure-about-networking.md#outbound-connectivity-for-urls)  
 - De open bare opslag plaats gebruiken voor het patchen van het besturings systeem
 - De SAP-toepassings gegevens stroom vereist mogelijk een uitgaande verbinding naar het open bare eind punt
 

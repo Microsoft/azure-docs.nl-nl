@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.reviewer: akjosh
-ms.openlocfilehash: fd541b9ff65a5417bff21c0293f4d62f5b6791a7
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: b198c094ffd5f2113603fc9d8d2fb1c4e5cd6fe1
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91972846"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881954"
 ---
 # <a name="create-a-vm-using-a-generalized-image"></a>Een virtuele machine maken met behulp van een gegeneraliseerde installatie kopie 
 
@@ -146,7 +146,7 @@ New-AzVM `
 
 
 ## <a name="next-steps"></a>Volgende stappen
-Met [Azure Image Builder (preview)](./windows/image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./windows/image-builder-gallery-update-image-version.md). 
+Met [Azure Image Builder (preview)](./image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./windows/image-builder-gallery-update-image-version.md). 
 
 U kunt ook een resource voor de galerie met gedeelde afbeeldingen maken met behulp van sjablonen. Er zijn verschillende Azure-quickstart-sjablonen beschikbaar: 
 
@@ -155,4 +155,4 @@ U kunt ook een resource voor de galerie met gedeelde afbeeldingen maken met behu
 - [Een installatiekopieversie maken in een gedeelde installatiekopiegalerie](https://azure.microsoft.com/resources/templates/101-sig-image-version-create/)
 - [Een VM maken van een installatiekopieversie](https://azure.microsoft.com/resources/templates/101-vm-from-sig/)
 
-Zie het [overzicht](./windows/shared-image-galleries.md)voor meer informatie over gedeelde afbeeldings galerieën. Als u problemen ondervindt, raadpleegt u [problemen met de galerie met gedeelde afbeeldingen oplossen](troubleshooting-shared-images.md).
+Zie het [overzicht](./shared-image-galleries.md)voor meer informatie over gedeelde afbeeldings galerieën. Als u problemen ondervindt, raadpleegt u [problemen met de galerie met gedeelde afbeeldingen oplossen](troubleshooting-shared-images.md).

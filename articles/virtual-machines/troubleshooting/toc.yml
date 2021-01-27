@@ -39,8 +39,6 @@
       href: restart-resize-error-troubleshooting.md
     - name: 'Services opnieuw starten, afsluiten of stoppen'
       href: boot-error-troubleshoot-windows.md
-    - name: Problemen met een volledige OS-schijf in een virtuele Linux-machine
-      href: os-disk-full-linux.md
 - name: Onverwacht opnieuw opstarten
   items:
     - name: Onverwacht opnieuw opstarten van VM's met gekoppelde VHD's
@@ -153,7 +151,7 @@
         - name: Een algemene fout oplossen
           href: troubleshoot-rdp-general-error.md
         - name: Verificatiefouten oplossen
-          href: troubleshoot-authentication-error-rdp-vm.md
+          href: /troubleshoot/azure/virtual-machines/cannot-connect-rdp-azure-vm
         - name: Problemen met Azure VM RDP-verbinding oplossen op basis van gebeurtenis-id
           href: event-id-troubleshoot-vm-rdp-connecton.md
         - name: Een RDP-fout in de VM oplossen die verband houdt met het statische IP-adres

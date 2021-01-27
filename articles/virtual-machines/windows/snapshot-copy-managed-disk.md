@@ -9,12 +9,12 @@ ms.topic: how-to
 ms.date: 10/08/2018
 ms.author: rogarana
 ms.subservice: disks
-ms.openlocfilehash: 255b34fc683628846d2776d9db7a0fbe8fe32a45
-ms.sourcegitcommit: 2bd0a039be8126c969a795cea3b60ce8e4ce64fc
+ms.openlocfilehash: dd19729f8b119946a12220d4b0c434f0b039989a
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98202076"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98879660"
 ---
 # <a name="create-a-snapshot-using-the-portal-or-powershell"></a>Een moment opname maken met behulp van de portal of Power shell
 
@@ -82,4 +82,4 @@ De volgende stappen laten zien hoe u de VHD-schijf kopieert en de configuratie v
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Een virtuele machine maken op basis van een moment opname door een beheerde schijf te maken op basis van een moment opname en vervolgens de nieuwe beheerde schijf als de besturingssysteem schijf te koppelen. Zie het voor beeld in [een VM maken van een moment opname met Power shell](./../scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot.md)voor meer informatie.
+Een virtuele machine maken op basis van een moment opname door een beheerde schijf te maken op basis van een moment opname en vervolgens de nieuwe beheerde schijf als de besturingssysteem schijf te koppelen. Zie het voor beeld in [een VM maken van een moment opname met Power shell](/previous-versions/azure/virtual-machines/scripts/virtual-machines-windows-powershell-sample-create-vm-from-snapshot)voor meer informatie.

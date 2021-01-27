@@ -9,16 +9,16 @@ ms.workload: infrastructure
 ms.date: 05/04/2020
 ms.author: cynthn
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 090b041c605c2328add8b46a97b6f151bae268c6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: ec589848625e1114dedd8c58b41f7ecbc991f311
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "87501079"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98881971"
 ---
 # <a name="create-a-vm-from-a-generalized-image-version-using-the-cli"></a>Een virtuele machine maken op basis van een gegeneraliseerde installatie kopie met behulp van de CLI
 
-Een virtuele machine maken op basis van een [gegeneraliseerde installatie kopie-versie](./linux/shared-image-galleries.md#generalized-and-specialized-images) die is opgeslagen in een galerie met gedeelde afbeeldingen. Als u een virtuele machine wilt maken met behulp van een gespecialiseerde installatie kopie, raadpleegt u [een virtuele machine maken op basis van een gespecialiseerde installatie kopie](vm-specialized-image-version-powershell.md). 
+Een virtuele machine maken op basis van een [gegeneraliseerde installatie kopie-versie](./shared-image-galleries.md#generalized-and-specialized-images) die is opgeslagen in een galerie met gedeelde afbeeldingen. Als u een virtuele machine wilt maken met behulp van een gespecialiseerde installatie kopie, raadpleegt u [een virtuele machine maken op basis van een gespecialiseerde installatie kopie](vm-specialized-image-version-powershell.md). 
 
 
 ## <a name="get-the-image-id"></a>De afbeeldings-ID ophalen
@@ -31,7 +31,7 @@ gallery=myGallery
 az sig image-definition list --resource-group $resourceGroup --gallery-name $gallery --query "[].[name, id]" --output tsv
 ```
 
-## <a name="create-the-vm"></a>De virtuele machine maken
+## <a name="create-the-vm"></a>De VM maken
 
 Maak een VM met [az vm create](/cli/azure/vm#az-vm-create). Als u de meest recente versie van de installatie kopie wilt gebruiken, stelt `--image` u de id van de definitie van de installatie kopie in. 
 
@@ -59,4 +59,4 @@ U kunt ook een specifieke versie gebruiken met de versie-ID van de installatie k
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Met [Azure Image Builder (preview)](./linux/image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md). 
+Met [Azure Image Builder (preview)](./image-builder-overview.md) kunt u het maken van de installatie kopie versie automatiseren, maar u kunt deze zelfs gebruiken om [een nieuwe installatie kopie versie te maken op basis van een bestaande versie van de installatie kopie](./linux/image-builder-gallery-update-image-version.md).

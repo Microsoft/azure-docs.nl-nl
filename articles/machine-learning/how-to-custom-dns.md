@@ -11,12 +11,12 @@ author: jhirono
 ms.date: 11/20/2020
 ms.topic: conceptual
 ms.custom: how-to
-ms.openlocfilehash: 8d3145639d2d4fb64bdb374f1dea0a7b70e4151c
-ms.sourcegitcommit: a4533b9d3d4cd6bb6faf92dd91c2c3e1f98ab86a
+ms.openlocfilehash: 2215c47fcd250a9ac1d6621f7e4b434bd33b3832
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/22/2020
-ms.locfileid: "97724711"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871092"
 ---
 # <a name="how-to-use-your-workspace-with-a-custom-dns-server"></a>Werkruimte gebruiken met een aangepaste DNS-server
 
@@ -70,7 +70,7 @@ Gebruik een van de volgende methoden om de interne IP-adressen voor de FQDN-name
 > [!NOTE]
 > De volledig gekwalificeerde domein namen en IP-adressen verschillen op basis van uw configuratie. De GUID-waarde in de domein naam is bijvoorbeeld specifiek voor uw werk ruimte.
 
-# <a name="azure-cli"></a>[Azure CLI](#tab/azure-cli)
+# <a name="azure-cli"></a>[Azure-CLI](#tab/azure-cli)
 
 ```azurecli
 az network private-endpoint show --endpoint-name <endpoint> --resource-group <resource-group> --query 'customDnsConfigs[*].{FQDN: fqdn, IPAddress: ipAddresses[0]}' --output table
@@ -116,4 +116,4 @@ De informatie die door alle methoden wordt geretourneerd, is hetzelfde. een lijs
 
 Zie het [overzicht van Virtual Network](how-to-network-security-overview.md)voor meer informatie over het gebruik van Azure machine learning met een virtueel netwerk.
 
-Zie voor meer informatie over het integreren van persoonlijke eind punten in uw DNS-configuratie [Azure private endpoint DNS-configuratie](https://docs.microsoft.com/azure/private-link/private-endpoint-dns).
+Zie voor meer informatie over het integreren van persoonlijke eind punten in uw DNS-configuratie [Azure private endpoint DNS-configuratie](../private-link/private-endpoint-dns.md).

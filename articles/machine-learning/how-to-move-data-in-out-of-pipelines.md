@@ -10,12 +10,12 @@ author: lobrien
 ms.date: 01/11/2021
 ms.topic: conceptual
 ms.custom: how-to, contperf-fy20q4, devx-track-python, data4ml
-ms.openlocfilehash: 7285ab338e978f0de467f79bbce1d41409683b1e
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: 80a995b488f335ac2eb60ae18621acb2b1df58e2
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98132950"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871533"
 ---
 # <a name="moving-data-into-and-between-ml-pipeline-steps-python"></a>Gegevens verplaatsen naar en tussen ML-pijplijnstappen (Python)
 
@@ -53,7 +53,7 @@ U hebt het volgende nodig:
 
 - Een aantal bestaande gegevens. In dit artikel wordt een kort overzicht gegeven van het gebruik van een [Azure Blob-container](../storage/blobs/storage-blobs-overview.md).
 
-- Optioneel: een bestaande machine learning pijp lijn, zoals de pijplijn die wordt beschreven in [machine learning pijp lijnen maken en uitvoeren met Azure machine learning SDK](how-to-create-your-first-pipeline.md).
+- Optioneel: een bestaande machine learning pijp lijn, zoals de pijplijn die wordt beschreven in [machine learning pijp lijnen maken en uitvoeren met Azure machine learning SDK](./how-to-create-machine-learning-pipelines.md).
 
 ## <a name="use-dataset-objects-for-pre-existing-data"></a>`Dataset`Objecten gebruiken voor bestaande gegevens 
 
@@ -154,7 +154,7 @@ ds = Dataset.get_by_name(workspace=ws, name='mnist_opendataset')
 
 ## <a name="use-outputfiledatasetconfig-for-intermediate-data"></a>Gebruiken `OutputFileDatasetConfig` voor tussenliggende gegevens
 
-Hoewel `Dataset` objecten alleen persistente gegevens vertegenwoordigen, [`OutputFileDatasetConfig`](https://docs.microsoft.com/python/api/azureml-core/azureml.data.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true) kunnen object (en) worden gebruikt voor tijdelijke gegevens uitvoer van pijplijn stappen **en** permanente uitvoer gegevens. `OutputFileDatasetConfig` biedt ondersteuning voor het schrijven van gegevens naar Blob Storage, file share, adlsgen1 of adlsgen2. Het ondersteunt zowel de koppel modus als de upload modus. In de modus koppelen worden bestanden die naar de gekoppelde Directory zijn geschreven, permanent opgeslagen wanneer het bestand wordt gesloten. In de upload modus worden bestanden die naar de uitvoermap worden geschreven, aan het einde van de taak geüpload. Als de taak mislukt of wordt geannuleerd, wordt de uitvoermap niet geüpload.
+Hoewel `Dataset` objecten alleen persistente gegevens vertegenwoordigen, [`OutputFileDatasetConfig`](/python/api/azureml-core/azureml.data.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py) kunnen object (en) worden gebruikt voor tijdelijke gegevens uitvoer van pijplijn stappen **en** permanente uitvoer gegevens. `OutputFileDatasetConfig` biedt ondersteuning voor het schrijven van gegevens naar Blob Storage, file share, adlsgen1 of adlsgen2. Het ondersteunt zowel de koppel modus als de upload modus. In de modus koppelen worden bestanden die naar de gekoppelde Directory zijn geschreven, permanent opgeslagen wanneer het bestand wordt gesloten. In de upload modus worden bestanden die naar de uitvoermap worden geschreven, aan het einde van de taak geüpload. Als de taak mislukt of wordt geannuleerd, wordt de uitvoermap niet geüpload.
 
  `OutputFileDatasetConfig` het standaard gedrag van het object is om te schrijven naar de standaard gegevens opslag van de werk ruimte. Geef uw `OutputFileDatasetConfig` objecten door aan uw `PythonScriptStep` met de `arguments` para meter.
 
@@ -184,7 +184,7 @@ OutputFileDatasetConfig(name="clean_data", destination=blob_store).as_upload(ove
 
 ### <a name="use-outputfiledatasetconfig-as-outputs-of-a-training-step"></a>Gebruiken `OutputFileDatasetConfig` als uitvoer van een trainings stap
 
-Binnen de pijp lijn `PythonScriptStep` kunt u de beschik bare uitvoer paden ophalen met behulp van de argumenten van het programma. Als deze stap het eerst is en de uitvoer gegevens initialiseert, moet u de Directory maken op het opgegeven pad. Vervolgens kunt u de bestanden die u wilt opnemen in de opslaan `OutputFileDatasetConfig` .
+In de `PythonScriptStep`van uw pijplijn kunt u de beschikbare uitvoerpaden ophalen met behulp van de argumenten van het programma. Als dit de eerste stap is en hiermee de uitvoergegevens worden geïnitialiseerd, moet u de map in het opgegeven pad maken. Vervolgens kunt u de bestanden die u wilt opnemen in de opslaan `OutputFileDatasetConfig` .
 
 ```python
 parser = argparse.ArgumentParser()
@@ -244,4 +244,4 @@ step1_output_ds = step1_output_data.register_on_complete(name='processed_data',
 ## <a name="next-steps"></a>Volgende stappen
 
 * [Een Azure machine learning-gegevensset maken](how-to-create-register-datasets.md)
-* [machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK](how-to-create-your-first-pipeline.md)
+* [machine learning-pijp lijnen maken en uitvoeren met Azure Machine Learning SDK](./how-to-create-machine-learning-pipelines.md)

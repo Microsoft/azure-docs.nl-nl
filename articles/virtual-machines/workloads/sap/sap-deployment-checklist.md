@@ -16,12 +16,12 @@ ms.workload: infrastructure
 ms.date: 08/10/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: ca2a844364d11dbb5ac2a244945e07d8ca725c1c
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 944e687c27d46a9cf3250cb21024b4e5a52dc62c
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98728437"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871516"
 ---
 # <a name="sap-workloads-on-azure-planning-and-deployment-checklist"></a>SAP-workloads op Azure: controle lijst voor planning en implementatie
 
@@ -137,7 +137,7 @@ U wordt aangeraden een volledige HADR-oplossing en beveiligings ontwerp in te st
         - Test en evalueer de netwerk latentie tussen de virtuele machines van de SAP-toepassingslaag en de DBMS-Vm's op basis van SAP-ondersteunings opmerkingen [#500235](https://launchpad.support.sap.com/#/notes/500235) en [#1100926](https://launchpad.support.sap.com/#/notes/1100926/E). Controleer de resultaten op basis van de richt lijnen voor netwerk latentie in [SAP-ondersteunings opmerking #1100926](https://launchpad.support.sap.com/#/notes/1100926/E). De netwerk latentie moet in het gemiddelde of het goede bereik liggen. Uitzonde ringen zijn van toepassing op verkeer tussen Vm's en HANA grote instantie-eenheden, zoals beschreven in [dit artikel](./hana-network-architecture.md#networking-architecture-for-hana-large-instance).
         - Zorg ervoor dat ILB-implementaties zijn ingesteld om direct server return te gebruiken. Met deze instelling wordt de latentie verminderd wanneer Azure ILBs wordt gebruikt voor configuraties met hoge Beschik baarheid op de DBMS-laag.
         - Als u Azure Load Balancer samen met Linux-gast besturingssystemen gebruikt, controleert u of de para meter van het Linux-netwerk **net.IPv4.tcp_timestamps** is ingesteld op **0**. Deze aanbeveling is in conflict met aanbevelingen in oudere versies van [SAP note #2382421](https://launchpad.support.sap.com/#/notes/2382421). De SAP-notitie wordt nu bijgewerkt met de status dat deze para meter moet worden ingesteld op **0** om te kunnen werken met Azure load balancers.
-        - Overweeg het gebruik van [Azure proximity placement groups](../../linux/co-location.md) om een optimale netwerk latentie te verkrijgen. Zie voor meer informatie [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
+        - Overweeg het gebruik van [Azure proximity placement groups](../../co-location.md) om een optimale netwerk latentie te verkrijgen. Zie voor meer informatie [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
    4. Hoge Beschik baarheid en implementaties voor herstel na nood gevallen.
         - Als u de SAP-toepassingslaag implementeert zonder een specifieke Azure-beschikbaarheids zone te definiëren, moet u ervoor zorgen dat alle virtuele machines waarop SAP-dialoog instanties of middleware-exemplaren van één SAP-systeem worden uitgevoerd, worden geïmplementeerd in een [beschikbaarheidsset](../../manage-availability.md).
         - Als u geen hoge Beschik baarheid voor SAP Central-Services en het DBMS nodig hebt, kunt u deze Vm's implementeren in dezelfde beschikbaarheidsset als de SAP-toepassingslaag.
@@ -209,7 +209,7 @@ Tijdens deze fase implementeert u doorgaans Ontwikkel systemen, eenheids test sy
 8.  Raadpleeg [de SAP-website](https://www.sap.com/dmc/exp/2014-09-02-hana-hardware/enEN/iaas.html#categories=Microsoft%20Azure) voor nieuwe met Hana gecertificeerde Sku's in Azure. Vergelijk de prijs van nieuwe Sku's met de prijzen die u voor gebruik hebt gepland. Breng uiteindelijk de benodigde wijzigingen aan voor het gebruik ervan met de beste prijs-prestatie verhouding.
 9.  Uw implementatie scripts aanpassen om nieuwe VM-typen te gebruiken en nieuwe Azure-functies te integreren die u wilt gebruiken.
 10. Na de implementatie van de-infra structuur test en evalueert u de netwerk latentie tussen de virtuele machines van de SAP-toepassingslaag en de DBMS-Vm's op basis van SAP-ondersteunings opmerkingen [#500235](https://launchpad.support.sap.com/#/notes/500235) en [#1100926](https://launchpad.support.sap.com/#/notes/1100926/E). Controleer de resultaten op basis van de richt lijnen voor netwerk latentie in [SAP-ondersteunings opmerking #1100926](https://launchpad.support.sap.com/#/notes/1100926/E). De netwerk latentie moet in het gemiddelde of het goede bereik liggen. Uitzonde ringen zijn van toepassing op verkeer tussen Vm's en HANA grote instantie-eenheden, zoals beschreven in [dit artikel](./hana-network-architecture.md#networking-architecture-for-hana-large-instance). Zorg ervoor dat geen van de beperkingen die worden vermeld in [overwegingen voor azure virtual machines DBMS-implementatie voor SAP-workloads](./dbms_guide_general.md#azure-network-considerations) en [SAP Hana infrastructuur configuraties en-bewerkingen op Azure van](./hana-vm-operations.md) toepassing zijn op uw implementatie.
-11. Zorg ervoor dat uw virtuele machines worden geïmplementeerd in de juiste [Azure proximity-plaatsings groep](../../linux/co-location.md), zoals beschreven in [Azure-plaatsings groepen voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
+11. Zorg ervoor dat uw virtuele machines worden geïmplementeerd in de juiste [Azure proximity-plaatsings groep](../../co-location.md), zoals beschreven in [Azure-plaatsings groepen voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
 11. Voer alle andere controles uit die worden vermeld voor de concept fase testen voordat u de werk belasting toepast.
 12. Als de werk belasting van toepassing is, noteert u het Resource verbruik van de systemen in Azure. Vergelijk dit verbruik met records van uw oude platform. Pas de VM-grootte van toekomstige implementaties aan als u ziet dat er grote verschillen zijn. Houd er rekening mee dat bij het krimpen, opslag en netwerk bandbreedte van Vm's ook worden gereduceerd.
     - [Grootten voor Windows Virtual Machines in Azure](../../sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)
@@ -251,7 +251,7 @@ In deze fase verzamelt u wat u hebt ervaren en geleerd tijdens uw implementaties
     - Er bevinden zich geen [virtuele Azure-netwerk apparaten](https://azure.microsoft.com/solutions/network-appliances/) in het communicatie traject tussen de SAP-toepassing en de DBMS-laag van SAP-systemen op basis van SAP NetWeaver, hybris of S/4HANA.
     - Met de regels voor toepassings beveiligings groepen en netwerk beveiligings groepen kan de communicatie naar wens worden gecommuniceerd en wordt de communicatie, indien nodig, worden geblokkeerd.
     - Time-outinstellingen zijn juist ingesteld, zoals eerder is beschreven.
-    - Virtuele machines worden geïmplementeerd in de juiste [Azure proximity-plaatsings groep](../../linux/co-location.md), zoals beschreven in [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
+    - Virtuele machines worden geïmplementeerd in de juiste [Azure proximity-plaatsings groep](../../co-location.md), zoals beschreven in [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
     - De netwerk latentie tussen de virtuele machines van de SAP-toepassingslaag en de DBMS Vm's wordt getest en gevalideerd zoals beschreven in de SAP-ondersteunings opmerkingen [#500235](https://launchpad.support.sap.com/#/notes/500235) en [#1100926](https://launchpad.support.sap.com/#/notes/1100926/E). Controleer de resultaten op basis van de richt lijnen voor netwerk latentie in [SAP-ondersteunings opmerking #1100926](https://launchpad.support.sap.com/#/notes/1100926/E). De netwerk latentie moet in het gemiddelde of het goede bereik liggen. Uitzonde ringen zijn van toepassing op verkeer tussen Vm's en HANA grote instantie-eenheden, zoals beschreven in [dit artikel](./hana-network-architecture.md#networking-architecture-for-hana-large-instance).
     - Versleuteling is geïmplementeerd indien nodig en met de juiste versleutelings methode.
     - Interfaces en andere toepassingen kunnen verbinding maken met de zojuist geïmplementeerde infra structuur.

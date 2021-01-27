@@ -7,16 +7,16 @@ ms.topic: how-to
 ms.workload: infrastructure-services
 ms.date: 04/24/2020
 ms.author: cynthn
-ms.openlocfilehash: 6a14e2bd7385430c3d0fbec06259a876af556e38
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 45d7977dda4870be9a087b3277dd1db828c91178
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96010721"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871431"
 ---
 # <a name="create-a-proximity-placement-group-using-the-portal"></a>Een nabijheidsplaatsingsgroep maken met behulp van de portal
 
-Als u virtuele machines zo dicht mogelijk wilt ophalen, moet u deze implementeren in een [proximity-plaatsings groep](co-location.md#proximity-placement-groups).
+Als u virtuele machines zo dicht mogelijk wilt ophalen, moet u deze implementeren in een [proximity-plaatsings groep](../co-location.md#proximity-placement-groups).
 
 Een proximity-plaatsings groep is een logische groepering die wordt gebruikt om ervoor te zorgen dat Azure Compute-resources zich fysiek dicht bij elkaar bevinden. Proximity-plaatsings groepen zijn handig voor werk belastingen waarbij lage latentie een vereiste is.
 
@@ -77,4 +77,3 @@ Als de virtuele machine deel uitmaakt van de Beschikbaarheidsset, moet u de besc
 ## <a name="next-steps"></a>Volgende stappen
 
 U kunt ook de [Azure PowerShell](proximity-placement-groups.md) gebruiken om proximity-plaatsings groepen te maken.
-

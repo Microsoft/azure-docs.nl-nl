@@ -10,12 +10,12 @@ ms.author: laobri
 author: lobrien
 ms.date: 01/12/2021
 ms.custom: devx-track-python
-ms.openlocfilehash: a6ee4c08a7ecf9bcfcbc9cf6f630efe126248e9f
-ms.sourcegitcommit: 0aec60c088f1dcb0f89eaad5faf5f2c815e53bf8
+ms.openlocfilehash: e3f92f445068b98c12069577ddf61a71568e403b
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98185703"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871550"
 ---
 # <a name="what-are-azure-machine-learning-pipelines"></a>Wat zijn Azure Machine Learning pijp lijnen?
 
@@ -118,7 +118,7 @@ pipeline_run = experiment.submit(pipeline)
 pipeline_run.wait_for_completion()
 ```
 
-Het fragment begint met algemene Azure Machine Learning objecten, a `Workspace` , a `Datastore` , een [ComputeTarget](/python/api/azureml-core/azureml.core.computetarget?preserve-view=true&view=azure-ml-py)en een `Experiment` . Vervolgens maakt de code de objecten die moeten worden bewaard `input_data` en `output_data` . Het `input_data` is een exemplaar van [FileDataset](https://docs.microsoft.com/python/api/azureml-core/azureml.data.filedataset?view=azure-ml-py&preserve-view=true) en de `output_data` is een exemplaar van  [OutputFileDatasetConfig](https://docs.microsoft.com/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig?view=azure-ml-py&preserve-view=true). Voor `OutputFileDatasetConfig` het standaard gedrag is het kopiëren van de uitvoer naar de `workspaceblobstore` gegevens opslag onder het pad `/dataset/{run-id}/{output-name}` , waarbij `run-id` de id van de uitvoeringsrun is en `output-name` een automatisch gegenereerde waarde als niet is opgegeven door de ontwikkelaar.
+Het fragment begint met algemene Azure Machine Learning objecten, a `Workspace` , a `Datastore` , een [ComputeTarget](/python/api/azureml-core/azureml.core.computetarget?preserve-view=true&view=azure-ml-py)en een `Experiment` . Vervolgens maakt de code de objecten die moeten worden bewaard `input_data` en `output_data` . Het `input_data` is een exemplaar van [FileDataset](/python/api/azureml-core/azureml.data.filedataset?preserve-view=true&view=azure-ml-py) en de `output_data` is een exemplaar van  [OutputFileDatasetConfig](/python/api/azureml-core/azureml.data.output_dataset_config.outputfiledatasetconfig?preserve-view=true&view=azure-ml-py). Voor `OutputFileDatasetConfig` het standaard gedrag is het kopiëren van de uitvoer naar de `workspaceblobstore` gegevens opslag onder het pad `/dataset/{run-id}/{output-name}` , waarbij `run-id` de id van de uitvoeringsrun is en `output-name` een automatisch gegenereerde waarde als niet is opgegeven door de ontwikkelaar.
 
 De matrix `steps` bevat één element, een `PythonScriptStep` dat de gegevens objecten gaat gebruiken en wordt uitgevoerd op de `compute_target` . Vervolgens maakt de code een instantie `Pipeline` van het object zelf, waarbij de werk ruimte en de stappen matrix worden door gegeven. De aanroep om `experiment.submit(pipeline)` de Azure ml-pijplijn uitvoering te starten. De aanroep naar `wait_for_completion()` blokken tot de pijp lijn is voltooid. 
 
@@ -149,7 +149,7 @@ De belangrijkste voor delen van het gebruik van pijp lijnen voor uw machine lear
 
 Azure Machine Learning-pijp lijnen zijn een krachtige faciliteit die in de vroege ontwikkel stadia waarde begint te leveren. De waarde neemt toe naarmate het team en project groeien. In dit artikel wordt uitgelegd hoe u pijp lijnen kunt opgeven met de Azure Machine Learning python SDK en die zijn georganiseerd op Azure. U hebt een eenvoudige bron code gezien en deze is geïntroduceerd in een aantal van de `PipelineStep` beschik bare klassen. U moet een idee hebben van het gebruik van Azure Machine Learning pijp lijnen en hoe Azure deze uitvoert. 
 
-+ Meer informatie over het [maken van uw eerste pijp lijn](how-to-create-your-first-pipeline.md).
++ Meer informatie over het [maken van uw eerste pijp lijn](./how-to-create-machine-learning-pipelines.md).
 
 + Meer informatie over het [uitvoeren van batch voorspellingen voor grote gegevens](tutorial-pipeline-batch-scoring-classification.md ).
 

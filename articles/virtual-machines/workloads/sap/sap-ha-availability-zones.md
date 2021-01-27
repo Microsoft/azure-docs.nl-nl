@@ -17,12 +17,12 @@ ms.workload: infrastructure-services
 ms.date: 12/29/2020
 ms.author: juergent
 ms.custom: H1Hack27Feb2017
-ms.openlocfilehash: 7418e5578450367e9fa37a87adb6e7036619877b
-ms.sourcegitcommit: 42922af070f7edf3639a79b1a60565d90bb801c0
+ms.openlocfilehash: e098256a43add6df026ab136bcd6a6b549c147e7
+ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97827445"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98871312"
 ---
 # <a name="sap-workload-configurations-with-azure-availability-zones"></a>SAP-werkbelastingconfiguraties met Azure-beschikbaarheidszones
 Naast de implementatie van de verschillende SAP Architecture-lagen in azure-beschikbaarheids sets, kunt u ook de meer recent geïntroduceerde [Azure-beschikbaarheidszones](../../../availability-zones/az-overview.md) gebruiken voor implementaties van SAP-workloads. Een Azure-beschikbaarheids zone wordt gedefinieerd als: "unieke fysieke locaties binnen een regio. Elke zone bestaat uit een of meer data centers die zijn uitgerust met onafhankelijke voeding, koeling en netwerken. Azure-beschikbaarheidszones zijn niet in alle regio's beschikbaar. Voor Azure-regio's die Beschikbaarheidszones bieden, controleert u de [Azure Region-kaart](https://azure.microsoft.com/global-infrastructure/geographies/). In deze kaart wordt weer gegeven welke regio's er Beschikbaarheidszones bieden of aangekondigd zijn. 
@@ -56,7 +56,7 @@ Wanneer u Azure-Vm's implementeert in Beschikbaarheidszones en failover-oplossin
 
 - U moet [Azure Managed disks](https://azure.microsoft.com/services/managed-disks/) gebruiken wanneer u implementeert in azure-beschikbaarheidszones. 
 - De toewijzing van zone-inventarisaties aan de fysieke zones wordt vastgesteld op basis van een Azure-abonnement. Als u verschillende abonnementen gebruikt om uw SAP-systemen te implementeren, moet u de ideale zones voor elk abonnement definiëren.
-- U kunt geen Azure-beschikbaarheids sets implementeren binnen een Azure-beschikbaarheids zone, tenzij u [Azure proximity placement Group](../../linux/co-location.md)gebruikt. De manier waarop u de SAP-DBMS-laag en de centrale Services in meerdere zones kunt implementeren en tegelijkertijd de SAP-toepassingslaag implementeert met behulp van beschikbaarheids sets en nog steeds dicht nabij de grenzen van de Vm's wordt beschreven in het artikel [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md). Als u geen gebruik maakt van Azure proximity placement groups, moet u een of de andere kiezen als een implementatie raamwerk voor virtuele machines.
+- U kunt geen Azure-beschikbaarheids sets implementeren binnen een Azure-beschikbaarheids zone, tenzij u [Azure proximity placement Group](../../co-location.md)gebruikt. De manier waarop u de SAP-DBMS-laag en de centrale Services in meerdere zones kunt implementeren en tegelijkertijd de SAP-toepassingslaag implementeert met behulp van beschikbaarheids sets en nog steeds dicht nabij de grenzen van de Vm's wordt beschreven in het artikel [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md). Als u geen gebruik maakt van Azure proximity placement groups, moet u een of de andere kiezen als een implementatie raamwerk voor virtuele machines.
 - U kunt geen [Azure Basic-Load Balancer](../../../load-balancer/load-balancer-overview.md) gebruiken om failover-cluster oplossingen te maken op basis van Windows Server failover clustering of Linux pacemaker. In plaats daarvan moet u de [Azure Standard Load Balancer-SKU](../../../load-balancer/load-balancer-standard-availability-zones.md)gebruiken.
 
 
@@ -119,7 +119,7 @@ Azure-regio's waarbij deze SAP-implementatie architectuur voor meerdere zones ni
 - Frankrijk - centraal 
 - Zuid-Afrika - noord
 - Canada - midden
-- Japan East
+- Japan - oost
 
 Afhankelijk van wat u bereid bent te verdragen voor de uitvoerings tijd, verschillen andere regio's die niet worden vermeld, kunnen ook worden gekwalificeerd.
 
@@ -130,7 +130,7 @@ Een vereenvoudigd schema van een actieve/actieve implementatie in twee zones kan
 
 De volgende overwegingen zijn van toepassing op deze configuratie:
 
-- Als u geen gebruik maakt van [Azure proximity placement Group](../../linux/co-location.md), behandelt u de Azure-beschikbaarheidszones als fout-en update domeinen voor alle virtuele machines, omdat beschikbaarheids sets niet in azure-beschikbaarheidszones kunnen worden geïmplementeerd.
+- Als u geen gebruik maakt van [Azure proximity placement Group](../../co-location.md), behandelt u de Azure-beschikbaarheidszones als fout-en update domeinen voor alle virtuele machines, omdat beschikbaarheids sets niet in azure-beschikbaarheidszones kunnen worden geïmplementeerd.
 - Als u zonegebonden-implementaties voor de DBMS-laag en de centrale Services wilt combi neren, maar Azure-beschikbaarheids sets voor de toepassingslaag wilt gebruiken, moet u Azure-proximity-groepen gebruiken zoals beschreven in het artikel [Azure proximity placement groups voor optimale netwerk latentie met SAP-toepassingen](sap-proximity-placement-scenarios.md).
 - Voor de load balancers van de failover-clusters van SAP Central Services en de DBMS-laag moet u de [standaard-SKU Azure Load Balancer](../../../load-balancer/load-balancer-standard-availability-zones.md)gebruiken. De basis Load Balancer werkt niet in verschillende zones.
 - Het virtuele Azure-netwerk dat u hebt geïmplementeerd om het SAP-systeem te hosten, samen met de bijbehorende subnetten, is uitgerekt over zones. U hebt geen afzonderlijke virtuele netwerken nodig voor elke zone.
@@ -156,12 +156,12 @@ Azure-regio's waarbij dit type implementatie architectuur in verschillende zones
 
 - Azië - zuidoost
 - Australië - oost
-- Brazil South
+- Brazilië - zuid
 - Duitsland - west-centraal
 - Zuid-Afrika - noord
 - Frankrijk - centraal 
 - Canada - midden
-- Japan East
+- Japan - oost
 
 
 De basis indeling van de architectuur ziet er als volgt uit:

@@ -1,14 +1,14 @@
 ---
 title: 'Quickstart: Een blauwdruk maken met PowerShell'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren met de PowerShell.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: 339cd4628cda5f469a783db02c10f86259c93941
-ms.sourcegitcommit: eb6bef1274b9e6390c7a77ff69bf6a3b94e827fc
-ms.translationtype: HT
+ms.openlocfilehash: 65d573d0aec7d5f292bc985483e1f12c350ae03a
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/05/2020
-ms.locfileid: "89051488"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918276"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-powershell"></a>Quickstart: Een Azure Blueprint definiëren en toewijzen met PowerShell
 
@@ -16,9 +16,9 @@ Als u leert hoe u blauwdrukken maakt en toewijst, kunnen er algemene patronen wo
 
 ## <a name="prerequisites"></a>Vereisten
 
-Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free) aan voordat u begint.
-
-Als deze nog niet is geïnstalleerd, volgt u de instructies in [De module Az.Blueprint toevoegen](./how-to/manage-assignments-ps.md#add-the-azblueprint-module) om de module **Az.Blueprint** van de PowerShell Gallery te installeren en te valideren.
+- Als u nog geen abonnement op Azure hebt, maak dan een [gratis account](https://azure.microsoft.com/free) aan voordat u begint.
+- Als deze nog niet is geïnstalleerd, volgt u de instructies in [De module Az.Blueprint toevoegen](./how-to/manage-assignments-ps.md#add-the-azblueprint-module) om de module **Az.Blueprint** van de PowerShell Gallery te installeren en te valideren.
+- Als u nog geen Azure-blauw drukken hebt gebruikt, registreert u de resource provider via Azure PowerShell met `Register-AzResourceProvider -ProviderNamespace Microsoft.Blueprint` .
 
 [!INCLUDE [cloud-shell-try-it.md](../../../includes/cloud-shell-try-it.md)]
 
@@ -29,7 +29,7 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
 > [!NOTE]
 > Wanneer u de PowerShell gebruikt, wordt het object _blauwdruk_ eerst gemaakt. Voor elk _artefact_ dat wordt toegevoegd en parameters bevat, moeten de parameters vooraf worden gedefinieerd in de eerste _blauwdruk_.
 
-1. Maak het eerste _blauwdruk_object. Met de parameter **BlueprintFile** wordt een JSON-bestand genomen dat eigenschappen van de blauwdruk bevat, te maken resourcegroepen en alle parameters op blauwdrukniveau. De parameters worden tijdens het toewijzen ingesteld en gebruikt door de artefacten die in latere stappen worden toegevoegd.
+1. Maak het eerste _blauwdruk_ object. Met de parameter **BlueprintFile** wordt een JSON-bestand genomen dat eigenschappen van de blauwdruk bevat, te maken resourcegroepen en alle parameters op blauwdrukniveau. De parameters worden tijdens het toewijzen ingesteld en gebruikt door de artefacten die in latere stappen worden toegevoegd.
 
    - JSON-bestand - blueprint.json
 

@@ -4,14 +4,13 @@ description: In dit artikel leest u hoe u Updatebeheer kunt gebruiken voor het b
 services: automation
 ms.subservice: update-management
 ms.topic: conceptual
-ms.date: 07/28/2020
-ms.custom: mvc
-ms.openlocfilehash: 24dcb501872aabf9fac3da0cccc2a1af9c9b06ff
-ms.sourcegitcommit: 8d8deb9a406165de5050522681b782fb2917762d
+ms.date: 01/27/2021
+ms.openlocfilehash: c86c9049bc0afc81f5dfd8553d2aa98cfd4b1a46
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/20/2020
-ms.locfileid: "92222367"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915979"
 ---
 # <a name="manage-updates-and-patches-for-your-vms"></a>Updates en patches voor uw virtuele machines beheren
 
@@ -35,11 +34,13 @@ Updatebeheer gebruikt een scope configuratie in de werk ruimte om de computers t
 
 Voordat u software-updates op uw computers implementeert, controleert u de resultaten van de update nalevings beoordeling voor ingeschakelde machines. Voor elke software-update wordt de nalevings status vastgelegd en nadat de evaluatie is voltooid, wordt deze in bulk verzameld en doorgestuurd naar Azure Monitor Logboeken.
 
-Op een Windows-computer wordt de compatibiliteits scan standaard elke 12 uur uitgevoerd. Naast de geplande scan wordt de controle op update vereisten binnen 15 minuten van de Log Analytics-agent voor Windows opnieuw gestart, vóór de installatie van de update en na de installatie van de update gestart. Het is ook belang rijk om onze aanbevelingen te lezen over [het configureren van de Windows Update-client](configure-wuagent.md) met updatebeheer om problemen te voor komen die ervoor zorgen dat deze niet goed kunnen worden beheerd.
+Op een Windows-computer wordt de compatibiliteits scan standaard elke 12 uur uitgevoerd en wordt deze binnen 15 minuten van de Log Analytics-agent voor Windows opnieuw opgestart. De evaluatie gegevens worden vervolgens doorgestuurd naar de werk ruimte en de **Update** tabel vernieuwd. Vóór en na de installatie van de update wordt een update nalevings scan uitgevoerd om ontbrekende updates te identificeren, maar worden de resultaten niet gebruikt voor het bijwerken van de beoordelings gegevens in de tabel.
+
+Het is belang rijk om onze aanbevelingen te lezen over [het configureren van de Windows Update-client](configure-wuagent.md) met updatebeheer om te voor komen dat deze problemen kunnen worden beheerd.
 
 Voor een Linux-computer wordt standaard elk uur de compatibiliteits scan uitgevoerd. Als de Log Analytics-agent voor Linux opnieuw is gestart, wordt een nalevings scan binnen 15 minuten gestart.
 
-De compliantie resultaten worden weer gegeven in Updatebeheer voor elke computer die wordt beoordeeld. Voor een nieuwe machine die is ingeschakeld voor beheer, kan het tot 30 minuten duren voordat er in het dash board bijgewerkte gegevens worden weer gegeven.
+De compliantie resultaten worden weer gegeven in Updatebeheer voor elke computer die wordt beoordeeld. Het kan tot 30 minuten duren voordat het dash board bijgewerkte gegevens van een nieuwe machine weergeeft die is ingeschakeld voor beheer.
 
 Bekijk de [controle van software-updates](view-update-assessments.md) voor meer informatie over het weer geven van compliantie resultaten.
 

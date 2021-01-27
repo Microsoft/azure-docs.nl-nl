@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 2876339d1c11802bf47e5f1bd660fe5d07568410
-ms.sourcegitcommit: 2488894b8ece49d493399d2ed7c98d29b53a5599
+ms.openlocfilehash: 06440c49971c1347e2bad11fcc186220b21e0145
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98065368"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917457"
 ---
 # <a name="dav4-and-dasv4-series"></a>Dav4- en Dasv4-serie
 
@@ -26,6 +26,7 @@ De Dav4-serie en de Dasv4-serie zijn nieuwe grootten die gebruikmaken van de 2.3
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 <br>
 
 De grootte van de Dav4-serie is gebaseerd op de 2.35 GHz AMD EPYC<sup>TM</sup> 7452-processor die een maximale maximum frequentie van 3.35 GHz kan bereiken. De grootte van de Dav4-serie biedt een combi natie van vCPU, geheugen en tijdelijke opslag voor de meeste productiewerk belastingen. Gegevensschijfopslag wordt apart van virtuele machines in rekening gebracht. Als u Premium SSD wilt gebruiken, gebruikt u de Dasv4-grootten. De prijs-en facturerings meters voor Dasv4-grootten zijn gelijk aan die van de Dav4-serie.
@@ -49,6 +50,7 @@ De grootte van de Dav4-serie is gebaseerd op de 2.35 GHz AMD EPYC<sup>TM</sup> 7
 [Livemigratie](maintenance-and-updates.md): ondersteund<br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 <br>
 
 De grootte van de Dasv4-serie is gebaseerd op de 2.35 GHz AMD EPYC<sup>TM</sup> 7452-processor die een hogere maximum frequentie van 3.35 GHz kan bereiken en Premium SSD kan gebruiken. De grootte van de Dasv4-serie biedt een combi natie van vCPU, geheugen en tijdelijke opslag voor de meeste productiewerk belastingen.

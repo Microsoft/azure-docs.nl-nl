@@ -1,14 +1,14 @@
 ---
 title: Resourcewijzigingen ophalen
 description: Meer informatie over hoe u kunt zoeken wanneer een resource is gewijzigd, een lijst met de gewijzigde eigenschappen ophalen en de verschillen evalueren.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: how-to
-ms.openlocfilehash: 70213caeaf71e1adc5a11ec0e9cbadfea032dca4
-ms.sourcegitcommit: 957c916118f87ea3d67a60e1d72a30f48bad0db6
+ms.openlocfilehash: 58dcb7256b0876d5e7fa9d7569db102538f92bab
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/19/2020
-ms.locfileid: "92203463"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917418"
 ---
 # <a name="get-resource-changes"></a>Resourcewijzigingen ophalen
 
@@ -144,7 +144,7 @@ Elke gedetecteerde wijzigings gebeurtenis voor de **resourceId** heeft de volgen
 - **changeId** : deze waarde is uniek voor die bron. Hoewel de **changeId** -teken reeks soms andere eigenschappen kan bevatten, is het alleen gegarandeerd uniek.
 - **beforeSnapshot** : bevat de **snapshotId** en de **tijds tempel** van de resource momentopname die is gemaakt voordat een wijziging is gedetecteerd.
 - **afterSnapshot** : bevat de **snapshotId** en de **tijds tempel** van de resource momentopname die is gemaakt nadat een wijziging is gedetecteerd.
-- **Change type** : beschrijft het type wijziging dat is gedetecteerd voor de hele wijzigings record tussen de **beforeSnapshot** en **afterSnapshot**. Waarden zijn: _maken_, _bijwerken_en _verwijderen_. De **propertyChanges** -eigenschaps matrix wordt alleen opgenomen als **Change type** is _bijgewerkt_.
+- **Change type** : beschrijft het type wijziging dat is gedetecteerd voor de hele wijzigings record tussen de **beforeSnapshot** en **afterSnapshot**. Waarden zijn: _maken_, _bijwerken_ en _verwijderen_. De **propertyChanges** -eigenschaps matrix wordt alleen opgenomen als **Change type** is _bijgewerkt_.
 - **propertyChanges** -deze matrix met eigenschappen bevat alle bron eigenschappen die zijn bijgewerkt tussen de **BeforeSnapshot** en de **afterSnapshot**:
   - **PropertyName** : de naam van de resource-eigenschap die is gewijzigd.
   - **changeCategory** -Hiermee wordt beschreven wat de wijziging heeft aangebracht. Waarden zijn: _systeem_ en _gebruiker_.

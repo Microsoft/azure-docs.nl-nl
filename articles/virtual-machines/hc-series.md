@@ -8,12 +8,12 @@ ms.topic: conceptual
 ms.date: 10/09/2020
 ms.author: amverma
 ms.reviewer: jushiman
-ms.openlocfilehash: 254e8591892fe08e8f05c49ed47a4cb00da16e78
-ms.sourcegitcommit: 50802bffd56155f3b01bfb4ed009b70045131750
+ms.openlocfilehash: 86fd90a5979a876313694583709a64e74c116154
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91930183"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917030"
 ---
 # <a name="hc-series"></a>HC-serie
 
@@ -27,6 +27,7 @@ Virtuele machines met de HC-serie 100 GB/sec Mellanox EDR InfiniBand. Deze Vm's 
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 <br>
 
 | Grootte | vCPU | Processor | Geheugen (GiB) | Geheugen bandbreedte GB/s | Basis-CPU-frequentie (GHz) | Frequentie van alle kernen (GHz, piek) | Frequentie met één kern geheugen (GHz, piek) | RDMA-prestaties (GB/s) | MPI-ondersteuning | Tijdelijke opslag (GiB) | Max. aantal gegevensschijven | Maximum aantal Ethernet-Vnic's |
@@ -37,9 +38,9 @@ Virtuele machines met de HC-serie 100 GB/sec Mellanox EDR InfiniBand. Deze Vm's 
 
 ## <a name="other-sizes"></a>Andere grootten
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

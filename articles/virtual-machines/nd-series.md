@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: f37341233eec45a22fe92450e69d486e61f26eb4
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: 6428f3eafc9d19060fb065082ea3cbe06bb74d81
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585306"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917000"
 ---
 # <a name="nd-series"></a>ND-serie
 
@@ -23,6 +23,7 @@ De virtuele machines uit de ND-serie vormen een nieuwe toevoeging aan de GPU-fam
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): niet ondersteund<br>
 NVIDIA NVLink Interconnect: niet ondersteund<br>
 
 > [!IMPORTANT]
@@ -51,9 +52,9 @@ Als u ervoor kiest om de NVIDIA GPU-Stuur Programma's hand matig te installeren,
 
 ## <a name="other-sizes"></a>Andere grootten
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

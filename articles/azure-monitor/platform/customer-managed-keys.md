@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: yossi-y
 ms.author: yossiy
 ms.date: 01/10/2021
-ms.openlocfilehash: b6836eee7e0e6ccbfa2628e0e371152f31ddf9d2
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 9d8d37e1b161dfc8344d7ff03bc0093d23f86101
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757539"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917829"
 ---
 # <a name="azure-monitor-customer-managed-key"></a>Door de klant beheerde sleutel van Azure Monitor 
 
@@ -30,9 +30,6 @@ Door de klant beheerde sleutel wordt geleverd op [toegewezen clusters](../log-qu
 De gegevens die in de afgelopen 14 dagen zijn opgenomen, worden ook opgeslagen in de Hot-cache (met SSD-back-ups) voor een efficiënte query-engine bewerking. Deze gegevens blijven versleuteld met micro soft-sleutels, ongeacht de configuratie van de door de klant beheerde sleutel, maar uw controle over SSD-gegevens voldoet aan de [sleutel intrekking](#key-revocation). Er wordt gewerkt aan SSD-gegevens die zijn versleuteld met door de klant beheerde sleutel in de eerste helft van 2021.
 
 Log Analytics toegewezen clusters gebruiken een [prijs model](../log-query/logs-dedicated-clusters.md#cluster-pricing-model) voor capaciteits reservering, te beginnen bij 1000 GB per dag.
-
-> [!IMPORTANT]
-> Als gevolg van tijdelijke capaciteits beperkingen, moet u zich vooraf registreren bij voordat u een cluster maakt. Gebruik uw contact personen in micro soft of open de ondersteunings aanvraag om uw abonnementen-Id's te registreren.
 
 ## <a name="how-customer-managed-key-works-in-azure-monitor"></a>Hoe door de klant beheerde sleutel werkt in Azure Monitor
 
@@ -68,7 +65,6 @@ De volgende regels zijn van toepassing:
 
 ### <a name="customer-managed-key-provisioning-steps"></a>Stappen voor het inrichten van Customer-Managed sleutels
 
-1. Uw abonnement registreren zodat het cluster kan worden gemaakt
 1. Azure Key Vault maken en de sleutel opslaan
 1. Cluster maken
 1. Machtigingen verlenen aan uw Key Vault
@@ -81,7 +77,7 @@ Configuratie van door de klant beheerde sleutel wordt niet ondersteund in Azure 
 
 Sommige van de configuratie stappen worden asynchroon uitgevoerd, omdat ze niet snel kunnen worden voltooid. De `status` in-reactie kan een van de volgende zijn: ' InProgress ', ' Updating ', ' deleted ', ' geslaagd ' of ' failed ' met de fout code.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
@@ -107,10 +103,6 @@ Authorization: Bearer <token>
 ```
 
 ---
-
-### <a name="allowing-subscription"></a>Abonnement toestaan
-
-Gebruik uw contact personen in micro soft of open de ondersteunings aanvraag in Log Analytics om uw abonnementen-Id's op te geven.
 
 ## <a name="storing-encryption-key-kek"></a>Versleutelings sleutel opslaan (KEK)
 
@@ -180,7 +172,7 @@ KeyVaultProperties in cluster bijwerken met sleutel-id-Details.
 
 De bewerking is asynchroon en kan enige tijd duren.
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
@@ -301,7 +293,7 @@ Wanneer u uw eigen opslag (BYOS) meebrengt en deze aan uw werk ruimte koppelt, w
 
 Een opslag account voor een *query* aan uw werk ruimte koppelen: *opgeslagen Zoek opdrachten* query's worden opgeslagen in uw opslag account. 
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
@@ -345,7 +337,7 @@ Na de configuratie wordt een nieuwe *opgeslagen zoek opdracht* opgeslagen in uw 
 
 Een opslag account voor *waarschuwingen* aan uw werk ruimte koppelen: query's voor *logboek waarschuwingen* worden opgeslagen in uw opslag account. 
 
-# <a name="azure-portal"></a>[Azure Portal](#tab/portal)
+# <a name="azure-portal"></a>[Azure-portal](#tab/portal)
 
 N.v.t.
 
@@ -432,7 +424,7 @@ Customer-Managed sleutel wordt op toegewezen cluster gegeven en deze bewerkingen
 
   - U kunt door de klant beheerde sleutel niet gebruiken met door de gebruiker toegewezen beheerde identiteit als uw Key Vault zich in Private-Link (vNet) bevindt. In dit scenario kunt u door het systeem toegewezen beheerde identiteit gebruiken.
 
-## <a name="troubleshooting"></a>Probleemoplossing
+## <a name="troubleshooting"></a>Problemen oplossen
 
 - Gedrag met Key Vault Beschik baarheid
   - In normale werking: opslag caches AEK gedurende korte tijd en terugvallen op Key Vault om regel matig de vertraging op te lossen.

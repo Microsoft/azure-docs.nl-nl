@@ -1,14 +1,14 @@
 ---
 title: 'Zelfstudie: Nieuwe resources beveiligen met vergrendelingen'
 description: In deze zelfstudie gebruikt u de opties voor resourcevergrendeling Alleen-lezen en Niet verwijderen in Azure Blueprints om nieuwe geïmplementeerde resources te beveiligen.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: tutorial
-ms.openlocfilehash: 3ed75a1dee925f2a55ac46705a171bec5fc1d30e
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: c671d641982ba833b54586c1b33979a97747396b
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89048567"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915404"
 ---
 # <a name="tutorial-protect-new-resources-with-azure-blueprints-resource-locks"></a>Zelfstudie: Nieuwe resources beveiligen met resourcevergrendelingen in Azure Blueprints
 
@@ -187,7 +187,7 @@ Door de toewijzing wordt de resourcegroep _TestingBPLocks_ gemaakt en tevens het
 
 1. Selecteer de weigeringstoewijzing en selecteer vervolgens aan de linkerkant de pagina **Geweigerde machtigingen**.
 
-   Met de weigeringstoewijzing worden alle bewerkingen met het **\*** en de configuratie **Actie** voorkomen, maar wordt leestoegang toegestaan door **\*/read** via **NotActions** uit te sluiten.
+   De weigering-toewijzing voor komt dat alle bewerkingen met de configuratie **\* *_ en _*** van de actie worden uitgevoerd, maar biedt wel lees toegang door **\* /Read** uit te **sluiten.**
 
 1. Selecteer via de breadcrumb in Azure Portal de optie **TestingBPLocks - Toegangsbeheer (IAM)** . Selecteer vervolgens aan de linkerkant de pagina **Overzicht** en vervolgens de knop **Resourcegroep verwijderen**. Voer de naam **TestingBPLocks** in om de verwijdering te bevestigen en selecteer vervolgens **Verwijderen** onder aan het deelvenster.
 

@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 04/07/2020
 ms.author: jushiman
-ms.openlocfilehash: b4de2ec68d3cd10dfc4e95c6c2232837a7fca626
-ms.sourcegitcommit: d103a93e7ef2dde1298f04e307920378a87e982a
+ms.openlocfilehash: 0c279916eb25c5ffe0b0b655818dd1a07849e582
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/13/2020
-ms.locfileid: "91975753"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917454"
 ---
 # <a name="mv2-series"></a>Mv2-serie
 
@@ -26,6 +26,7 @@ Mv2-serie VM-functie Intel® Hyper-Threading technologie
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Write Accelerator](./how-to-enable-write-accelerator.md): ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 <br>
 
 |Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maximale doorvoer voor schijven met caching en tijdelijke opslag: IOPS / MBps (cachegrootte in GiB) | Max. doorvoer voor schijf zonder caching: IOPS/MBps | Max. aantal NIC's | Verwachte netwerk bandbreedte (Mbps) |
@@ -48,9 +49,9 @@ Mv2-serie VM-functie Intel® Hyper-Threading technologie
 
 ## <a name="other-sizes-and-information"></a>Andere grootten en informatie
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

@@ -1,14 +1,14 @@
 ---
 title: "Zelfstudie: Query's beheren in Azure-portal"
 description: In deze zelfstudie maakt u een Resource Graph-query en deelt u de nieuwe query met anderen in het Azure-portal.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: tutorial
-ms.openlocfilehash: 98d4c7d0493686a45bdfef9d85823432cb637a66
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
-ms.translationtype: HT
+ms.openlocfilehash: 7240a843cfa041137b28284e396c8a4b62a81926
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057923"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916676"
 ---
 # <a name="tutorial-create-and-share-an-azure-resource-graph-query-in-the-azure-portal"></a>Zelfstudie: Een Azure Resource Graph-query maken en delen in het Azure-portal
 
@@ -88,7 +88,7 @@ In tegenstelling tot een persoonlijke query is een gedeelde query een resource v
 
 1. Selecteer **Opslaan** aan de onderkant van het deelvenster **Query opslaan**. De titel van het tabblad verandert van **Query 1** naar **Aantal vm's per besturingssysteem**. De eerste keer dat de resourcegroep **resource-graph-query's** wordt gebruikt, duurt het opslaan langer dan verwacht, omdat de resourcegroep wordt gemaakt.
    
-   :::image type="content" source="../media/create-share-query/save-shared-query-window.png" alt-text="Sla de nieuwe query op met de knop Opslaan" border="false":::
+   :::image type="content" source="../media/create-share-query/save-shared-query-window.png" alt-text="De nieuwe query opslaan als een gedeelde query" border="false":::
 
    > [!NOTE] 
    > U kunt het selectievakje **Publiceren naar resourcegroep resource-graph-query's** uitschakelen als u de naam van een bestaande resourcegroep wilt opgeven om de query in op te slaan. Als u de standaardnaam van de resourcegroep gebruikt voor query's, zijn de gedeelde query's eenvoudiger te vinden. Ook is zo het doel van die resourcegroep duidelijker. U kunt er echter om beveiligingsredenen op basis van bestaande machtigingen voor kiezen een bestaande resourcegroep te selecteren.
@@ -97,7 +97,7 @@ In tegenstelling tot een persoonlijke query is een gedeelde query een resource v
 
 1. Selecteer **Een query openen**. Controleer of het type is ingesteld op **Gedeelde query** en dat de combinatie van **Abonnement** en **Resourcegroep** overeenkomen met waar u de query hebt opgeslagen. Nu verschijnt het item **Aantal vm's per besturingssysteem** in de lijst met **Querynamen**. Selecteer de titelkoppeling van de opgeslagen query om deze te laden in een nieuw tabblad met de naam van die query. Omdat het een gedeelde query is, wordt er in het tabblad naast de naam een pictogram weergegeven om aan te geven dat de query is gedeeld.
 
-   :::image type="content" source="../media/create-share-query/show-saved-shared-query.png" alt-text="Sla de nieuwe query op met de knop Opslaan" border="false":::
+   :::image type="content" source="../media/create-share-query/show-saved-shared-query.png" alt-text="De gedeelde query met pictogram weergeven" border="false":::
 
    > [!NOTE] 
    > Wanneer een opgeslagen query is geopend en het tabblad de naam weergeeft, wordt met de knop **Opslaan** de query bijgewerkt met alle aangebrachte wijzigingen. Om een nieuwe opgeslagen query te maken, selecteert u **Opslaan als** en gaat u door alsof u een nieuwe query opslaat.

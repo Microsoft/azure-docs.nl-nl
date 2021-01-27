@@ -1,14 +1,14 @@
 ---
 title: Veelvoorkomende fouten oplossen
 description: Meer informatie over het oplossen van problemen met het maken van beleids definities, de diverse Sdk's en de invoeg toepassing voor Kubernetes.
-ms.date: 12/01/2020
+ms.date: 01/26/2021
 ms.topic: troubleshooting
-ms.openlocfilehash: 6f31f6e6f8d24f83f44dc14112f1bdc90c8af859
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 0a64346188696cc7cc16d832474ec4ee6befdae2
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98897068"
+ms.locfileid: "98917740"
 ---
 # <a name="troubleshoot-errors-with-using-azure-policy"></a>Fouten bij het gebruik van Azure Policy oplossen
 
@@ -36,13 +36,14 @@ Er wordt een onjuiste of niet-bestaande alias gebruikt in een beleids definitie.
 
 #### <a name="resolution"></a>Oplossing
 
-Controleer eerst of de Resource Manager-eigenschap een alias heeft. Als u de beschik bare aliassen wilt opzoeken, gaat u naar [Azure Policy-extensie voor Visual Studio code](../how-to/extension-for-vscode.md) of de SDK. Als de alias voor een resource manager-eigenschap niet bestaat, maakt u een ondersteunings ticket.
+Controleer eerst of de Resource Manager-eigenschap een alias heeft. Als u de beschik bare aliassen wilt opzoeken, gaat u naar [Azure Policy-extensie voor Visual Studio code](../how-to/extension-for-vscode.md) of de SDK.
+Als de alias voor een resource manager-eigenschap niet bestaat, maakt u een ondersteunings ticket.
 
 ### <a name="scenario-evaluation-details-arent-up-to-date"></a>Scenario: evaluatie Details zijn niet up-to-date
 
 #### <a name="issue"></a>Probleem
 
-Een resource heeft de status *niet gestart* , of de compatibiliteits Details zijn niet actueel.
+Een resource heeft de status _niet gestart_ , of de compatibiliteits Details zijn niet actueel.
 
 #### <a name="cause"></a>Oorzaak
 
@@ -90,7 +91,8 @@ Een resource waarvan u verwacht dat Azure Policy worden uitgevoerd, heeft geen a
 
 #### <a name="cause"></a>Oorzaak
 
-De beleids toewijzing is geconfigureerd voor de [**enforcementMode**](../concepts/assignment-structure.md#enforcement-mode) -instelling _uitgeschakeld_. Hoewel **enforcementMode** is uitgeschakeld, wordt het beleids effect niet afgedwongen en is er geen vermelding in het activiteiten logboek.
+De beleids toewijzing is geconfigureerd voor de [**enforcementMode**](../concepts/assignment-structure.md#enforcement-mode) -instelling _uitgeschakeld_.
+Hoewel **enforcementMode** is uitgeschakeld, wordt het beleids effect niet afgedwongen en is er geen vermelding in het activiteiten logboek.
 
 #### <a name="resolution"></a>Oplossing
 
@@ -101,7 +103,7 @@ Los het afdwingen van uw beleids toewijzing op door de volgende handelingen uit 
 1. Zie [evaluatie scan op aanvraag](../how-to/get-compliance-data.md#on-demand-evaluation-scan)om een nieuwe evaluatie scan te starten met Azure PowerShell of de rest API.
 1. Zorg ervoor dat de toewijzings parameters en het toewijzings bereik correct zijn ingesteld en dat **enforcementMode** is _ingeschakeld_.
 1. Selecteer de [beleidsdefinitiemodus](../concepts/definition-structure.md#mode):
-   - De modus moet `all` voor alle resource typen zijn.
+   - De modus moet gelden `all` voor alle resource typen.
    - De modus moet zijn `indexed` als de beleids definitie controleert op Tags of locatie.
 1. Zorg ervoor dat het bereik van de resource niet wordt [uitgesloten](../concepts/assignment-structure.md#excluded-scopes) of [uitgezonderd](../concepts/exemption-structure.md).
 1. Controleer of de resource lading overeenkomt met de beleids logica. U kunt dit doen door [een HTTP-archief (HAR)-tracering](../../../azure-portal/capture-browser-trace.md) vast te leggen of door de eigenschappen van de Azure Resource Manager sjabloon (arm-sjabloon) te controleren.
@@ -186,7 +188,7 @@ De beleids definities die eerder zijn gebruikt in de DeployIfNotExists-definitie
 
 #### <a name="resolution"></a>Oplossing
 
-De definities die eerder het probleem hebben veroorzaakt, worden weer gegeven als *[deprecated]* en worden vervangen door beleids definities waarmee de vereisten worden beheerd zonder dat door de gebruiker toegewezen beheerde identiteiten worden verwijderd. Er is een hand matige stap vereist. Verwijder bestaande beleids toewijzingen die zijn gemarkeerd als *[afgeschaft]* en vervang deze door het bijgewerkte vereisten beleid en beleids definities die dezelfde naam hebben als de oorspronkelijke.
+De definities die eerder het probleem hebben veroorzaakt, worden weer gegeven als _\[ afgeschaft \]_ en worden vervangen door beleids definities waarmee de vereisten worden beheerd zonder dat door de gebruiker toegewezen beheerde identiteiten worden verwijderd. Er is een hand matige stap vereist. Verwijder bestaande beleids toewijzingen die zijn gemarkeerd als _\[ afgeschaft \]_ en vervang deze door het bijgewerkte vereisten beleid en beleids definities die dezelfde naam hebben als de oorspronkelijke.
 
 Zie voor een gedetailleerde beschrijving het blog bericht [belang rijke wijziging is uitgebracht voor controle beleid voor gast configuratie](https://techcommunity.microsoft.com/t5/azure-governance-and-management/important-change-released-for-guest-configuration-audit-policies/ba-p/1655316).
 
@@ -226,11 +228,11 @@ De invoeg toepassing kan het Azure Policy service-eind punt niet bereiken en ret
 Deze fout treedt op wanneer _add-pod-Identity_ is geïnstalleerd op het cluster en de _uitvoeren-systeem_ -peul niet wordt uitgesloten in _Aad-pod-Identity_.
 
 Het _Aad-pod-Identity_ component node Managed Identity (NMI) peul wijzigt de knoop punten ' iptables om aanroepen naar het eind punt van de meta gegevens van het Azure-exemplaar te onderscheppen. Deze instelling betekent dat elke aanvraag die wordt gedaan aan het eind punt van de meta gegevens, wordt onderschept door NMI, zelfs als de pod geen _Aad-pod-identiteit_ gebruikt.
-De *AzurePodIdentityException* -CUSTOMRESOURCEDEFINITION (CRD) kan worden geconfigureerd om _Aad-pod-identiteit_ te informeren dat elke aanvraag naar een eind punt van de meta gegevens die afkomstig is van een pod die overeenkomt met de labels die in de CRD zijn gedefinieerd, moet worden geproxyd zonder enige verwerking in NMI.
+De _AzurePodIdentityException_ -CUSTOMRESOURCEDEFINITION (CRD) kan worden geconfigureerd om _Aad-pod-identiteit_ te informeren dat elke aanvraag naar een eind punt van de meta gegevens die afkomstig is van een pod die overeenkomt met de labels die in de CRD zijn gedefinieerd, moet worden geproxyd zonder enige verwerking in NMI.
 
 #### <a name="resolution"></a>Oplossing
 
-Sluit het systeem, die het `kubernetes.azure.com/managedby: aks` label bevat in _uitvoeren-_ naam ruimte in _Aad-pod-identiteit_ uit door de *AzurePodIdentityException* CRD te configureren.
+Sluit het systeem, die het `kubernetes.azure.com/managedby: aks` label bevat in _uitvoeren-_ naam ruimte in _Aad-pod-identiteit_ uit door de _AzurePodIdentityException_ CRD te configureren.
 
 Zie [de pod-identiteit van Azure Active Directory (Azure AD) voor een specifieke pod/toepassing uitschakelen](https://azure.github.io/aad-pod-identity/docs/configure/application_exception)voor meer informatie.
 
@@ -264,11 +266,11 @@ spec:
 De invoeg toepassing kan het Azure Policy service-eind punt bereiken, maar in de logboeken van de invoeg toepassing wordt een van de volgende fouten weer gegeven:
 
 - `The resource provider 'Microsoft.PolicyInsights' is not registered in subscription '{subId}'. See
-https://aka.ms/policy-register-subscription for how to register subscriptions.`
+  https://aka.ms/policy-register-subscription for how to register subscriptions.`
 
 - `policyinsightsdataplane.BaseClient#CheckDataPolicyCompliance: Failure responding to request:
-StatusCode=500 -- Original Error: autorest/azure: Service returned an error. Status=500
-Code="InternalServerError" Message="Encountered an internal server error.`
+  StatusCode=500 -- Original Error: autorest/azure: Service returned an error. Status=500
+  Code="InternalServerError" Message="Encountered an internal server error.`
 
 #### <a name="cause"></a>Oorzaak
 

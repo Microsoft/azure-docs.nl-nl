@@ -4,12 +4,12 @@ description: In dit artikel vindt u informatie over het maken en configureren va
 ms.topic: conceptual
 ms.date: 05/30/2019
 ms.custom: references_regions
-ms.openlocfilehash: 3ba9f47da4a4c9719c313ba196ca121f8cde54ad
-ms.sourcegitcommit: ea17e3a6219f0f01330cf7610e54f033a394b459
+ms.openlocfilehash: 51d095ab68bc9277cb610bd226039ffbde8d7ddf
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/14/2020
-ms.locfileid: "97387731"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915723"
 ---
 # <a name="create-and-configure-a-recovery-services-vault"></a>Een Recovery Services kluis maken en configureren
 
@@ -46,9 +46,9 @@ Met de herstel optie **Cross Region Restore (CRR)** kunt u gegevens herstellen i
 
 Het ondersteunt de volgende gegevens bronnen:
 
-- Azure-VM's
-- SQL-data bases die worden gehost op virtuele machines van Azure
-- SAP HANA-data bases die worden gehost op virtuele machines van Azure
+- Virtuele Azure-machines (algemene Beschik baarheid)
+- SQL-data bases die worden gehost op virtuele machines van Azure (preview)
+- SAP HANA data bases die worden gehost op virtuele machines van Azure (preview-versie)
 
 Met de functie voor het terugzetten van meerdere regio's kunt u:
 
@@ -65,11 +65,12 @@ Aangezien dit proces zich op het opslag niveau bevindt, zijn er [prijs implicati
 >Voordat u begint:
 >
 >- Bekijk de [ondersteunings matrix](backup-support-matrix.md#cross-region-restore) voor een lijst met ondersteunde beheerde typen en regio's.
->- De functie voor het terugzetten van meerdere regio's (CRR) wordt nu weer gegeven in alle open bare Azure-regio's.
+>- De functie voor het terugzetten van meerdere regio's (CRR) voor Azure-Vm's is nu algemeen beschikbaar in alle open bare Azure-regio's.
+>- Het terugzetten van meerdere regio's voor SQL-en SAP HANA-data bases is in de preview-versie van alle open bare Azure-regio's.
 >- CRR is een opt-in-functie op kluis niveau voor elke GRS-kluis (standaard uitgeschakeld).
 >- Na het inbrengen kan het tot 48 uur duren voordat de back-upitems beschikbaar zijn in secundaire regio's.
 >- Momenteel wordt CRR voor Azure-Vm's alleen ondersteund voor Azure Resource Manager Azure-Vm's. Klassieke Azure-Vm's worden niet ondersteund.  Wanneer extra beheer typen CRR ondersteunen, worden ze **automatisch** Inge schreven.
->- Het terugzetten van meerdere regio's kan op dit moment niet worden teruggedraaid naar GRS of LRS zodra de beveiliging voor de eerste keer wordt gestart.
+>- Het terugzetten van meerdere regio's **kan op dit moment niet worden teruggedraaid** naar GRS of LRS zodra de beveiliging voor de eerste keer wordt gestart.
 
 ### <a name="configure-cross-region-restore"></a>Herstel van meerdere regio's configureren
 

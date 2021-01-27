@@ -8,14 +8,14 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 07/12/2020
 ms.author: memildin
-ms.openlocfilehash: 55e9d2d1af863084b080c2de7833712413221050
-ms.sourcegitcommit: 6a350f39e2f04500ecb7235f5d88682eb4910ae8
+ms.openlocfilehash: 60ae36d80e34f27ed68c679f47edacf3e402417c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/01/2020
-ms.locfileid: "96445639"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916147"
 ---
-# <a name="secure-your-management-ports-with-just-in-time-access"></a>Beheerpoorten beveiligen met just-in-time-toegang
+# <a name="secure-your-management-ports-with-just-in-time-access"></a>Beveilig uw beheer poorten met Just-in-time-toegang
 
 Vergrendel inkomend verkeer naar uw Azure-Virtual Machines met Azure Security Center de VM-toegangs functie (just-in-time) van de virtuele machine. Dit vermindert het risico op aanvallen en biedt eenvoudige toegang wanneer u verbinding moet maken met een virtuele machine.
 
@@ -33,7 +33,7 @@ Op deze pagina leert u hoe u JIT kunt toevoegen in uw beveiligings programma. U 
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Algemeen verkrijgbaar (GA)|
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|[Azure Defender voor servers](defender-for-servers-introduction.md) is vereist|
 |Ondersteunde Vm's:|![Ja ](./media/icons/yes-icon.png) virtuele machines die via Azure Resource Manager worden geïmplementeerd.<br>![Er zijn geen ](./media/icons/no-icon.png) vm's geïmplementeerd met klassieke implementatie modellen. Meer [informatie over deze implementatie modellen](../azure-resource-manager/management/deployment-models.md).<br>![Geen ](./media/icons/no-icon.png) vm's die worden beveiligd door Azure-firewalls die worden beheerd door [Azure firewall Manager](../firewall-manager/overview.md)|
 |Vereiste rollen en machtigingen:|Met de rollen **lezer** en **SECURITYREADER** kunnen de JIT-status en-para meters worden weer gegeven.<br>Als u aangepaste rollen wilt maken die met JIT kunnen werken, raadpleegt u de [machtigingen die nodig zijn voor het configureren en gebruiken van JIT?](just-in-time-explained.md#what-permissions-are-needed-to-configure-and-use-jit).<br>Gebruik het [script set-JitLeastPrivilegedRole](https://github.com/Azure/Azure-Security-Center/tree/master/Powershell%20scripts/JIT%20Custom%20Role) op de pagina's van de Security Center github-Community om een rol met een beperkte bevoegdheid te maken voor gebruikers die JIT-toegang moeten aanvragen voor een virtuele machine en geen andere JIT-bewerkingen kunnen uitvoeren.|

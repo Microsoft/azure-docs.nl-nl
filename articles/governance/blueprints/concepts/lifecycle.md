@@ -1,14 +1,14 @@
 ---
 title: Inzicht in de levens cyclus van een blauw druk
 description: Meer informatie over de levens cyclus van de definitie van een blauw druk en informatie over elke fase, inclusief het bijwerken en verwijderen van blauw druk-toewijzingen.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: conceptual
-ms.openlocfilehash: c1de2cf869362154b112c3eef74ed1fb0db3a993
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 721a198b5732af01c6712e86bc0c8e8ef543b404
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89049703"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918514"
 ---
 # <a name="understand-the-lifecycle-of-an-azure-blueprint"></a>Inzicht in de levens cyclus van een Azure Blueprint
 
@@ -34,7 +34,7 @@ Een blauw druk maken en bewerken met de [Azure Portal](../create-blueprint-porta
 
 ## <a name="publishing-a-blueprint"></a>Een blauw druk publiceren
 
-Zodra alle geplande wijzigingen zijn aangebracht in een blauw druk in de **concept** modus, kan deze worden **gepubliceerd** en beschikbaar worden gemaakt voor toewijzing. De **gepubliceerde** versie van de blauw druk kan niet worden gewijzigd. Na **publicatie**wordt de blauw druk weer gegeven met een ander pictogram dan **concept** blauw drukken en wordt het gegeven versie nummer weer gegeven in de kolom **meest recente versie** .
+Zodra alle geplande wijzigingen zijn aangebracht in een blauw druk in de **concept** modus, kan deze worden **gepubliceerd** en beschikbaar worden gemaakt voor toewijzing. De **gepubliceerde** versie van de blauw druk kan niet worden gewijzigd. Na **publicatie** wordt de blauw druk weer gegeven met een ander pictogram dan **concept** blauw drukken en wordt het gegeven versie nummer weer gegeven in de kolom **meest recente versie** .
 
 Een blauw druk publiceren met de [Azure Portal](../create-blueprint-portal.md#publish-a-blueprint) of [rest API](../create-blueprint-rest-api.md#publish-a-blueprint).
 

@@ -4,12 +4,12 @@ description: Meer informatie over het configureren van Azure CNI (Advanced)-netw
 services: container-service
 ms.topic: article
 ms.date: 06/03/2019
-ms.openlocfilehash: 58c2c597c7a75c801af91cd735561071250bda2c
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
+ms.openlocfilehash: 0a6ea45156477c0d0e95b9d345cffe1a75c773b6
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96000569"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917804"
 ---
 # <a name="configure-azure-cni-networking-in-azure-kubernetes-service-aks"></a>Azure CNI-netwerken configureren in azure Kubernetes service (AKS)
 
@@ -63,7 +63,7 @@ Het maximum aantal peulen per knoop punt in een AKS-cluster is 250. Het *maximum
 | -- | :--: | :--: | -- |
 | Azure CLI | 110 | 30 | Ja (Maxi maal 250) |
 | Resource Manager-sjabloon | 110 | 30 | Ja (Maxi maal 250) |
-| Portal | 110 | 30 | No |
+| Portal | 110 | 30 | Nee |
 
 ### <a name="configure-maximum---new-clusters"></a>Maximum aantal nieuwe clusters configureren
 
@@ -96,6 +96,8 @@ Wanneer u een AKS-cluster maakt, kunnen de volgende para meters worden geconfigu
 **Virtueel netwerk**: het virtuele netwerk waarin u het Kubernetes-cluster wilt implementeren. Als u een nieuw virtueel netwerk voor uw cluster wilt maken, selecteert u *nieuwe maken* en volgt u de stappen in de sectie *virtueel netwerk maken* . Zie [Azure-abonnement en service limieten, quota's en beperkingen](../azure-resource-manager/management/azure-subscription-service-limits.md#azure-resource-manager-virtual-networking-limits)voor meer informatie over de limieten en quota's voor een virtueel Azure-netwerk.
 
 **Subnet**: het subnet binnen het virtuele netwerk waar u het cluster wilt implementeren. Als u een nieuw subnet in het virtuele netwerk voor uw cluster wilt maken, selecteert u *nieuwe maken* en volgt u de stappen in de sectie *subnet maken* . Het adres bereik voor hybride connectiviteit mag niet overlappen met andere virtuele netwerken in uw omgeving.
+
+**Azure Network-invoeg toepassing**: wanneer de Azure Network-invoeg toepassing wordt gebruikt, is de interne Load Balancer-service met ' ExternalTrafficPolicy = local ' niet toegankelijk vanaf vm's met een IP-adres in clusterCIDR dat niet tot AKS cluster behoort.
 
 **Adres bereik** van de Kubernetes-service: dit is de set virtuele IP-adressen die Kubernetes toewijst aan interne [Services][services] in uw cluster. U kunt elk persoonlijk adres bereik gebruiken dat voldoet aan de volgende vereisten:
 

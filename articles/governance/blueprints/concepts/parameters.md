@@ -1,14 +1,14 @@
 ---
 title: Gebruik para meters voor het maken van dynamische blauw drukken
 description: Meer informatie over statische en dynamische para meters en hoe u deze kunt gebruiken om veilig en dynamisch blauw drukken te maken.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: conceptual
-ms.openlocfilehash: b6cefe7ec75ec622cb341d8f12edfd9c0cfa66e6
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 5dbf7ec02e89eac791ec3e17202a5ab13a04b81d
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89651947"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918531"
 ---
 # <a name="creating-dynamic-blueprints-through-parameters"></a>Dynamische blauw drukken via para meters maken
 
@@ -47,7 +47,7 @@ Zie [Key Vault Overview](../../../key-vault/general/overview.md)voor meer inform
 
 ### <a name="static-parameters"></a>Statische para meters
 
-Een parameter waarde die in de definitie van een blauw druk is gedefinieerd, wordt een **statische para meter**genoemd, omdat bij elk gebruik van de blauw druk het artefact wordt geïmplementeerd met die statische waarde. In het voor beeld van de resource groep is het niet logisch voor de naam van de resource groep. Dit kan zinvol zijn voor de locatie. Vervolgens wordt bij elke toewijzing van de blauw druk de resource groep gemaakt, ongeacht hoe deze wordt aangeroepen tijdens de toewijzing, op dezelfde locatie. Met deze flexibiliteit kunt u selectief selecteren in wat u definieert als vereist en wat kan worden gewijzigd tijdens de toewijzing.
+Een parameter waarde die in de definitie van een blauw druk is gedefinieerd, wordt een **statische para meter** genoemd, omdat bij elk gebruik van de blauw druk het artefact wordt geïmplementeerd met die statische waarde. In het voor beeld van de resource groep is het niet logisch voor de naam van de resource groep. Dit kan zinvol zijn voor de locatie. Vervolgens wordt bij elke toewijzing van de blauw druk de resource groep gemaakt, ongeacht hoe deze wordt aangeroepen tijdens de toewijzing, op dezelfde locatie. Met deze flexibiliteit kunt u selectief selecteren in wat u definieert als vereist en wat kan worden gewijzigd tijdens de toewijzing.
 
 #### <a name="setting-static-parameters-in-the-portal"></a>Statische para meters instellen in de portal
 
@@ -63,9 +63,9 @@ Een parameter waarde die in de definitie van een blauw druk is gedefinieerd, wor
 
    :::image type="content" source="../media/parameters/parameter-column.png" alt-text="Scherm afbeelding van de definitie van een blauw druk en de ' X van Y-para meters ingevuld ' gemarkeerd." border="false":::
 
-1. Op de pagina **artefact bewerken** worden de opties weer gegeven die geschikt zijn voor het geselecteerde artefact. Elke para meter op het artefact heeft een titel, een waarde box en een selectie vakje. Stel het selectie vakje in op uitgeschakeld om er een **statische para meter**van te maken. In het onderstaande voor beeld is alleen _locatie_ een **statische para meter** als deze is uitgeschakeld en de _naam van de resource groep_ is ingeschakeld.
+1. Op de pagina **artefact bewerken** worden de opties weer gegeven die geschikt zijn voor het geselecteerde artefact. Elke para meter op het artefact heeft een titel, een waarde box en een selectie vakje. Stel het selectie vakje in op uitgeschakeld om er een **statische para meter** van te maken. In het onderstaande voor beeld is alleen _locatie_ een **statische para meter** als deze is uitgeschakeld en de _naam van de resource groep_ is ingeschakeld.
 
-   :::image type="content" source="../media/parameters/static-parameter.png" alt-text="Scherm afbeelding van de definitie van een blauw druk en de ' X van Y-para meters ingevuld ' gemarkeerd." border="false":::
+   :::image type="content" source="../media/parameters/static-parameter.png" alt-text="Scherm opname van statische para meters op een blauw druk artefact." border="false":::
 
 #### <a name="setting-static-parameters-from-rest-api"></a>Statische para meters instellen van REST API
 
@@ -134,7 +134,7 @@ In dit voor beeld maakt de eigenschap **principalIds** gebruik van de para meter
 
 ##### <a name="artifact-level-parameter"></a>Para meter voor artefact niveau
 
-Het maken van **statische para meters** voor een artefact is vergelijkbaar, maar heeft een rechte waarde in plaats van de functie te gebruiken `parameters()` . In het volgende voor beeld worden twee statische para meters, **tagName** en **tagValue**gemaakt. De waarde op elk wordt rechtstreeks gegeven en gebruikt geen functie aanroep.
+Het maken van **statische para meters** voor een artefact is vergelijkbaar, maar heeft een rechte waarde in plaats van de functie te gebruiken `parameters()` . In het volgende voor beeld worden twee statische para meters, **tagName** en **tagValue** gemaakt. De waarde op elk wordt rechtstreeks gegeven en gebruikt geen functie aanroep.
 
 - REST API-URI
 
@@ -176,11 +176,11 @@ Het tegenovergestelde van een statische para meter is een **dynamische para mete
 
 1. Zoek de sectie **artefact parameters** op de pagina **blauw** drukken. Elk artefact met ten minste één **dynamische para meter** geeft het artefact en de configuratie opties weer. Geef de vereiste waarden voor de para meters op voordat u de blauw druk toewijst. In het onderstaande voor beeld is _name_ een **dynamische para meter** die moet worden gedefinieerd voor het volt ooien van de blauw druk-toewijzing.
 
-   :::image type="content" source="../media/parameters/dynamic-parameter.png" alt-text="Scherm afbeelding van de definitie van een blauw druk en de ' X van Y-para meters ingevuld ' gemarkeerd." border="false":::
+   :::image type="content" source="../media/parameters/dynamic-parameter.png" alt-text="Scherm afbeelding van het instellen van dynamische para meters tijdens de toewijzing van blauw drukken." border="false":::
 
 #### <a name="setting-dynamic-parameters-from-rest-api"></a>Dynamische para meters instellen van REST API
 
-Het instellen van **dynamische para meters** tijdens de toewijzing wordt uitgevoerd door de waarde rechtstreeks in te voeren. In plaats van een functie te gebruiken, zoals [para meters ()](../reference/blueprint-functions.md#parameters), is de opgegeven waarde een juiste teken reeks. Artefacten voor een resource groep worden gedefinieerd met een sjabloon naam, **naam**en **locatie** -eigenschappen. Alle andere para meters voor opgenomen artefacten worden gedefinieerd onder **para meters** met een **\<name\>** sleutel paar en een **waarde** . Als de blauw druk is geconfigureerd voor een dynamische para meter die niet wordt opgegeven tijdens de toewijzing, mislukt de toewijzing.
+Het instellen van **dynamische para meters** tijdens de toewijzing wordt uitgevoerd door de waarde rechtstreeks in te voeren. In plaats van een functie te gebruiken, zoals [para meters ()](../reference/blueprint-functions.md#parameters), is de opgegeven waarde een juiste teken reeks. Artefacten voor een resource groep worden gedefinieerd met een sjabloon naam, **naam** en **locatie** -eigenschappen. Alle andere para meters voor opgenomen artefacten worden gedefinieerd onder **para meters** met een **\<name\>** sleutel paar en een **waarde** . Als de blauw druk is geconfigureerd voor een dynamische para meter die niet wordt opgegeven tijdens de toewijzing, mislukt de toewijzing.
 
 - REST API-URI
 

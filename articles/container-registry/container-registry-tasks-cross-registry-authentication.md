@@ -3,12 +3,12 @@ title: Verificatie tussen het REGI ster van de ACR-taak
 description: Een Azure Container Registry taak (ACR Task) configureren om toegang te krijgen tot een ander persoonlijk Azure container Registry met behulp van een beheerde identiteit voor Azure-resources
 ms.topic: article
 ms.date: 07/06/2020
-ms.openlocfilehash: 0e8e2690113167ad68ef1fc0bbef322491997c76
-ms.sourcegitcommit: 25d1d5eb0329c14367621924e1da19af0a99acf1
+ms.openlocfilehash: 789d2c141f8b7c3f2eb8daa31d99090e3d028a43
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/16/2021
-ms.locfileid: "98251145"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915825"
 ---
 # <a name="cross-registry-authentication-in-an-acr-task-using-an-azure-managed-identity"></a>Verificatie tussen het REGI ster in een ACR-taak met behulp van een door Azure beheerde identiteit 
 
@@ -55,7 +55,7 @@ De stappen voor dit voor beeld van een [taken met meerdere stappen](container-re
 version: v1.1.0
 steps:
 # Replace mybaseregistry with the name of your registry containing the base image
-  - build: -t $Registry/hello-world:$ID  https://github.com/Azure-Samples/acr-build-helloworld-node.git -f Dockerfile-app --build-arg REGISTRY_NAME=mybaseregistry.azurecr.io
+  - build: -t $Registry/hello-world:$ID  https://github.com/Azure-Samples/acr-build-helloworld-node.git#main -f Dockerfile-app --build-arg REGISTRY_NAME=mybaseregistry.azurecr.io
   - push: ["$Registry/hello-world:$ID"]
 ```
 

@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: dcfbacb788225d936b236c901e9477a9bbb23b94
-ms.sourcegitcommit: d2d1c90ec5218b93abb80b8f3ed49dcf4327f7f4
+ms.openlocfilehash: ecbccf2ba9f49699b89782cfb687f5790841eb9e
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/16/2020
-ms.locfileid: "97585289"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918299"
 ---
 # <a name="updated-ndv2-series"></a>Bijgewerkte NDv2-serie
 
@@ -38,6 +38,7 @@ De NDv2 is in de praktijk opgebouwd voor zowel reken kundige, intense schaling (
 [Livemigratie](maintenance-and-updates.md): niet ondersteund<br>
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 2<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 InfiniBand: ondersteund<br>
 NVIDIA NVLink Interconnect: ondersteund<br>
 <br>
@@ -58,9 +59,9 @@ Als u ervoor kiest om de NVIDIA GPU-Stuur Programma's hand matig te installeren,
 
 ## <a name="other-sizes"></a>Andere grootten
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

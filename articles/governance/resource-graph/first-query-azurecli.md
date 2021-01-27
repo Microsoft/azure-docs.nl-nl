@@ -1,15 +1,15 @@
 ---
 title: 'Quickstart: Uw eerste Azure CLI-query'
 description: In deze quickstart volgt u de stappen om de Resource Graph-extensie voor Azure CLI in te schakelen en uw eerste query uit te voeren.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: quickstart
 ms.custom: devx-track-azurecli
-ms.openlocfilehash: 216972fb3c64efa22dc4d344e5021a3c2da74266
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
-ms.translationtype: HT
+ms.openlocfilehash: 5111f59eb760afda4e206837ca5bdf8bcc201338
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056767"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917821"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-cli"></a>Quickstart: Uw eerste Resource Graph-query uitvoeren met Azure CLI
 

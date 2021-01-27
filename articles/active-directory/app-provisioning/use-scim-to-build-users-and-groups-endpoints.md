@@ -1,27 +1,22 @@
 ---
-title: Een SCIM-eind punt bouwen voor het inrichten van gebruikers voor apps vanuit Azure AD
-description: Met System for Cross-domain Identity Management (SCIM) wordt het automatisch inrichten van gebruikers gestandaardiseerd. Leer hoe u een SCIM-eind punt ontwikkelt, uw SCIM-API integreert met Azure Active Directory en beginnen met het automatiseren van het inrichten van gebruikers en groepen in uw Cloud toepassingen.
+title: Een SCIM-eind punt bouwen om gebruikers in te richten op apps van Azure Active Directory
+description: Met System for Cross-domain Identity Management (SCIM) wordt het automatisch inrichten van gebruikers gestandaardiseerd. Leer hoe u een SCIM-eind punt ontwikkelt, uw SCIM-API integreert met Azure Active Directory en begin met het automatiseren van het inrichten van gebruikers en groepen in uw Cloud toepassingen met Azure Active Directory.
 services: active-directory
-documentationcenter: ''
-author: msmimart
+author: kenwith
 manager: CelesteDG
 ms.service: active-directory
 ms.subservice: app-provisioning
 ms.workload: identity
-ms.tgt_pltfrm: na
-ms.devlang: na
 ms.topic: conceptual
-ms.date: 03/07/2020
-ms.author: mimart
+ms.date: 01/27/2021
+ms.author: kenwith
 ms.reviewer: arvinh
-ms.custom: aaddev;it-pro;seohack1
-ms.collection: M365-identity-device-management
-ms.openlocfilehash: 1ae36af981b113d44ac1b8fd45a1d084760b0294
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 34fa76197c4e08cffd1d8c66d6877b3e427e9fd6
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98900161"
+ms.locfileid: "98918141"
 ---
 # <a name="tutorial-develop-a-sample-scim-endpoint"></a>Zelf studie: een voor beeld van een SCIM-eind punt ontwikkelen
 
@@ -30,68 +25,8 @@ Niemand wil zelf een nieuw eind punt bouwen, dus we hebben een [verwijzings code
 In deze zelfstudie leert u het volgende:
 
 > [!div class="checklist"]
-> * De referentie code downloaden
 > * Uw SCIM-eind punt implementeren in azure
 > * Uw SCIM-eind punt testen
-
-De eindpunt mogelijkheden, inclusief:
-
-|Eindpunt|Beschrijving|
-|---|---|
-|`/User`|RUWE bewerkingen uitvoeren voor een gebruikers resource: **maken**, **bijwerken**, **verwijderen**, **ophalen**, **weer geven**, **filteren**|
-|`/Group`|RUWE bewerkingen uitvoeren op een groeps resource: **maken**, **bijwerken**, **verwijderen**, **ophalen**, **weer geven**, **filteren**|
-|`/Schemas`|Een of meer ondersteunde schema's ophalen.<br/><br/>De set kenmerken van een resource die wordt ondersteund door elke service provider kan variëren, bijvoorbeeld: de service provider A ondersteunt ' naam ', ' titel ' en ' e-mail berichten ' terwijl service provider B ' naam ', ' titel ' en ' phoneNumbers ' ondersteunt voor gebruikers.|
-|`/ResourceTypes`|Ondersteunde resource typen ophalen.<br/><br/>Het aantal en de typen resources die worden ondersteund door elke service provider kan variëren, bijvoorbeeld service provider A ondersteunt gebruikers terwijl service provider B gebruikers en groepen ondersteunt.|
-|`/ServiceProviderConfig`|De SCIM-configuratie van de service provider ophalen<br/><br/>De SCIM-functies die worden ondersteund door elke service provider kunnen variëren, bijvoorbeeld service provider A ondersteunt patch bewerkingen terwijl service provider B patch bewerkingen en schema detectie ondersteunt.|
-
-## <a name="download-the-reference-code"></a>De referentie code downloaden
-
-De [referentie code](https://github.com/AzureAD/SCIMReferenceCode) die moet worden gedownload, omvat de volgende projecten:
-
-- **Microsoft.SystemForCrossDomainIdentityManagement**, de .net core MVC Web API om een scim-API te bouwen en in te richten
-- **Micro soft. scim. WebHostSample**, een werkend voor beeld van een scim-eind punt
-
-De projecten bevatten de volgende mappen en bestanden:
-
-|Bestand/map|Beschrijving|
-|-|-|
-|Map met **schema's**| De modellen voor de **gebruikers** -en **groeps** resources samen met enkele abstracte klassen, zoals geschematiseerde voor gedeelde functionaliteit.<br/><br/> Een map **Attributes** die de klassedefinities bevat voor complexe kenmerken van **gebruikers** en **groepen** , zoals adressen.|
-|Map **service** | Bevat logica voor acties die betrekking hebben op de manier waarop resources worden opgevraagd en bijgewerkt.<br/><br/> De referentie code bevat services voor het retour neren van gebruikers en groepen.<br/><br/>De map **controllers** bevat de verschillende scim-eind punten. Bron controllers bevatten HTTP-woorden om ruwe bewerkingen uit te voeren op de resource (**Get**, **post**, **put**, **patch**, **Delete**). Controllers zijn afhankelijk van services om de acties uit te voeren.|
-|Map **protocol**|Bevat logica voor acties die betrekking hebben op de manier waarop bronnen worden geretourneerd volgens de SCIM RFC, zoals:<br/><ul><li>Het retour neren van meerdere resources als een lijst.</li><li>Alleen specifieke resources worden geretourneerd op basis van een filter.</li><li>Een query omzetten in een lijst met gekoppelde lijsten met één filter.</li><li>Een PATCH-aanvraag omzetten in een bewerking met kenmerken die betrekking hebben op het pad naar de waarde.</li><li>Het definiëren van het type bewerking dat kan worden gebruikt om wijzigingen toe te passen op Resource-objecten.</li></ul>|
-|`Microsoft.SystemForCrossDomainIdentityManagement`| Voorbeeld bron code.|
-|`Microsoft.SCIM.WebHostSample`| Voorbeeld implementatie van de SCIM-bibliotheek.|
-|*.gitignore*|Definieer wat u wilt negeren tijdens het door voeren.|
-|*CHANGELOG.md*|Lijst met wijzigingen in het voor beeld.|
-|*CONTRIBUTING.md*|Richt lijnen voor het bijdragen aan het voor beeld.|
-|*README.md*|Dit **Leesmij** -bestand.|
-|*HOUDERS*|De licentie voor het voor beeld.|
-
-> [!NOTE]
-> Deze code is bedoeld om te helpen bij het bouwen van een SCIM-eind punt en wordt **als zodanig** gegeven. De opgenomen referenties hebben geen garantie voor actieve maintainence of ondersteuning.
->
-> Op dit project is de [Microsoft Open Source Code of Conduct](https://opensource.microsoft.com/codeofconduct/) (Microsoft Open Source-gedragscode) van toepassing. Omdat de [bijdragen](https://github.com/AzureAD/SCIMReferenceCode/wiki/Contributing-Overview) van de Community welkom zijn bij het bouwen en onderhouden van de opslag plaats, en als andere open-source bijdragen, gaat u akkoord met een CLA (Contributor-licentie overeenkomst). Deze overeenkomst verklaart dat u beschikt over de rechten voor het gebruik van uw bijdrage, Zie [micro soft open source](https://cla.opensource.microsoft.com)voor meer informatie.
->
-> Raadpleeg de [Veelgestelde vragen over de gedragscode](https://opensource.microsoft.com/codeofconduct/faq/) voor meer informatie of neem contact op met [opencode@microsoft.com](mailto:opencode@microsoft.com) als u meer vragen of opmerkingen hebt.
-
-###  <a name="use-multiple-environments"></a>Meerdere omgevingen gebruiken
-
-De opgenomen SCIM-code maakt gebruik van een ASP.NET Core omgeving voor het beheren van de autorisatie voor gebruik in ontwikkeling en na de implementatie raadpleegt [u meerdere omgevingen gebruiken in ASP.net core](https://docs.microsoft.com/aspnet/core/fundamentals/environments?view=aspnetcore-3.1).
-
-```csharp
-private readonly IWebHostEnvironment _env;
-...
-
-public void ConfigureServices(IServiceCollection services)
-{
-    if (_env.IsDevelopment())
-    {
-        ...
-    }
-    else
-    {
-        ...
-    }
-```
 
 ## <a name="deploy-your-scim-endpoint-in-azure"></a>Uw SCIM-eind punt implementeren in azure
 
@@ -139,7 +74,7 @@ Vermijd onveilige methoden, zoals gebruikers naam en wacht woord, voor een veili
 > [!NOTE]
 > De autorisatie methoden in de opslag plaats zijn alleen bedoeld voor test doeleinden. Wanneer u integreert met Azure AD, kunt u de autorisatie richtlijnen bekijken, het [inrichten plannen voor een scim-eind punt](https://docs.microsoft.com/azure/active-directory/app-provisioning/use-scim-to-provision-users-and-groups#authorization-for-provisioning-connectors-in-the-application-gallery). 
 
-De ontwikkel omgeving maakt functies die onveilig zijn voor productie, zoals referentie code, om het gedrag van de validatie van het beveiligings token te beheren. De token validatie code is geconfigureerd voor het gebruik van een zelf-ondertekend beveiligings token en de handtekening sleutel wordt opgeslagen in het configuratie bestand. Zie de para meter **token: IssuerSigningKey** in de *appsettings.Development.jsvoor* het bestand.
+De ontwikkel omgeving maakt functies die onveilig zijn voor productie, zoals referentie code, om het gedrag van de validatie van het beveiligings token te beheren. De token validatie code is geconfigureerd voor het gebruik van een zelfondertekend beveiligings token en de handtekening sleutel wordt opgeslagen in het configuratie bestand. Zie de para meter **token: IssuerSigningKey** in de *appsettings.Development.jsvoor* het bestand.
 
 ```json
 "Token": {
@@ -206,7 +141,7 @@ Dat is alles. U kunt nu de **postman** -verzameling uitvoeren om de functionalit
 
 ## <a name="next-steps"></a>Volgende stappen
 
-Zie de [scim-client implementatie](http://www.simplecloud.info/#Implementations2)voor het ontwikkelen van een scim-compatibel gebruikers-en groeps eindpunt met interoperabiliteit voor een client.
+Zie de [scim-client implementatie](http://www.simplecloud.info/#Implementations2)als u een scim-compatibel gebruikers-en groeps eindpunt wilt ontwikkelen met interoperabiliteit voor een client.
 
 > [!div class="nextstepaction"]
 > [Zelf studie: inrichten opstellen en plannen voor een scim-eind punt](use-scim-to-provision-users-and-groups.md) 

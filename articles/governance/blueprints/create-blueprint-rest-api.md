@@ -1,14 +1,14 @@
 ---
 title: 'Quickstart: Een blauwdruk maken met de REST-API'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren met de REST API.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: aa25a65b20b295045b52a49c8c47fb8849c3cba3
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
-ms.translationtype: HT
+ms.openlocfilehash: eaf6dbb2ff14106ba8d2798d86a8f093855de85e
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056971"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915621"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-rest-api"></a>Quickstart: Een Azure Blueprint definiëren en toewijzen met REST API
 
@@ -65,7 +65,7 @@ In elke REST API-URI zijn er verschillende variabelen die worden gebruikt en die
 > [!NOTE]
 > Blauwdrukken kunnen ook worden gemaakt op abonnementsniveau. Zie [voorbeeld van het maken van een blauwdruk op abonnementsniveau](/rest/api/blueprints/blueprints/createorupdate#subscriptionblueprint) voor een voorbeeld.
 
-1. Maak het eerste _blauwdruk_object. De **Aanvraagbody** bevat eigenschappen van de blauwdruk, te maken resourcegroepen en alle parameters op blauwdrukniveau. De parameters worden tijdens het toewijzen ingesteld en gebruikt door de artefacten die in latere stappen worden toegevoegd.
+1. Maak het eerste _blauwdruk_ object. De **Aanvraagbody** bevat eigenschappen van de blauwdruk, te maken resourcegroepen en alle parameters op blauwdrukniveau. De parameters worden tijdens het toewijzen ingesteld en gebruikt door de artefacten die in latere stappen worden toegevoegd.
 
    - REST API-URI
 

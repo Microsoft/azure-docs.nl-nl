@@ -9,12 +9,12 @@ ms.subservice: overview
 ms.date: 10/28/2020
 ms.author: saveenr
 ms.reviewer: jrasnick
-ms.openlocfilehash: bff15cbc8827f4a0eb09a243e01b2cdb95ba5f2f
-ms.sourcegitcommit: b39cf769ce8e2eb7ea74cfdac6759a17a048b331
+ms.openlocfilehash: 7882fc6a6823a93d09c04a8ae2c19005df4843d8
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/22/2021
-ms.locfileid: "98681350"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917090"
 ---
 # <a name="what-is-azure-synapse-analytics"></a>Wat is Azure Synapse Analytics?
 
@@ -26,8 +26,7 @@ Zakelijke analyses moeten op grote schaal worden uitgevoerd op elk soort gegeven
 
 ### <a name="industry-leading-sql"></a>Toonaangevende SQL
 
-* **Synapse SQL** is een gedistribueerd querysysteem waarmee ondernemingen scenario's voor datawarehousing en gegevensvirtualisatie kunnen implementeren, met behulp van bekende T-SQL-standaardversies. Ook worden de mogelijkheden van SQL uitgebreid om scenario's wat betreft streaming- en machine learning aan te pakken.
-
+* **Synapse SQL** is een gedistribueerd query systeem voor T-SQL waarmee data warehouse-en data Virtualization-Scenario's en T-SQL kunnen worden geadresseerd en machine learning scenario's worden uitgebreid.
 * Synapse SQL biedt zowel **serverloze** als **toegewezen** resourcemodellen, waarmee u de opties voor verbruik en facturering kunt aanpassen aan uw behoeften. Voor voorspelbare prestaties en kosten kunt u toegewezen SQL-pools maken om verwerkingskracht te reserveren voor gegevens die zijn opgeslagen in SQL-tabellen. Voor niet-geplande of bursty werkbelastingen gebruikt u het altijd beschikbare, serverloze SQL-eindpunt.
 * Gebruik ingebouwde **streamingmogelijkheden** om gegevens van gegevensbronnen in de cloud in SQL-tabellen te plaatsen
 * Integreer AI met SQL door **machine learning**-modellen te gebruiken om gegevens een score te geven met behulp van de [functie T-SQL PREDICT](/sql/t-sql/queries/predict-transact-sql?view=azure-sqldw-latest&preserve-view=true)

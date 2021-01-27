@@ -1,15 +1,15 @@
 ---
 title: Werken met grote gegevenssets
 description: Meer informatie over het ophalen, opmaken, pagina's en overs laan van records in grote gegevens sets tijdens het werken met Azure resource Graph.
-ms.date: 09/30/2020
+ms.date: 01/27/2021
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 59f69738bf9fe25cb739539b7a1f93e4499d781a
-ms.sourcegitcommit: e7179fa4708c3af01f9246b5c99ab87a6f0df11c
+ms.openlocfilehash: 1eaabfdd78712966f3b21d869259a312db31b7bc
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/30/2020
-ms.locfileid: "97826023"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917687"
 ---
 # <a name="working-with-large-azure-resource-data-sets"></a>Werken met grote Azure-resource gegevens sets
 
@@ -65,7 +65,7 @@ In de [rest API](/rest/api/azureresourcegraph/resourcegraph(2019-04-01)/resource
 ## <a name="paging-results"></a>Resultaten pagineren
 
 Wanneer een resultaatset moet worden opgesplitst in kleinere sets records voor verwerking of omdat een resultaatset de Maxi maal toegestane waarde van _1000_ geretourneerde records zou overschrijden, gebruikt u paginering. De [rest API](/rest/api/azureresourcegraph/resourcegraph(2019-04-01)/resources/resources) 
- **QueryResponse** biedt waarden om aan te geven dat een resultatenset is opgesplitst: **resultTruncated** en **$skipToken**. **resultTruncated** is een Booleaanse waarde die de Consumer informeert als er geen aanvullende records worden geretourneerd in het antwoord. Deze voor waarde kan ook worden geïdentificeerd wanneer de eigenschap **Count** kleiner is dan de eigenschap **totalRecords** . **totalRecords** definieert het aantal records dat overeenkomt met de query.
+ **QueryResponse** biedt waarden om aan te geven dat een resultatenset is opgesplitst: **resultTruncated** en **$skipToken**. **resultTruncated** is een Booleaanse waarde die de Consumer informeert als er meer records zijn die niet zijn geretourneerd in het antwoord. Deze voor waarde kan ook worden geïdentificeerd wanneer de eigenschap **Count** kleiner is dan de eigenschap **totalRecords** . **totalRecords** definieert het aantal records dat overeenkomt met de query.
 
  **resultTruncated** is **waar** als de paginerings optie is uitgeschakeld of niet mogelijk is omdat `id` er minder resources beschikbaar zijn dan een query vraagt. Wanneer **resultTruncated** **True** is, wordt de eigenschap **$skipToken** niet ingesteld.
 

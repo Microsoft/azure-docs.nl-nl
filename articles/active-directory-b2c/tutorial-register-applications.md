@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: tutorial
-ms.date: 04/10/2020
+ms.date: 01/27/2021
 ms.custom: project-no-code
 ms.author: mimart
 ms.subservice: B2C
-ms.openlocfilehash: 84a3ef7b41b17e85c594213246211d45911ac56a
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
-ms.translationtype: HT
+ms.openlocfilehash: a39230cc65db6ef12b6fa4364454aeb434efddf6
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94953046"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918209"
 ---
 # <a name="tutorial-register-a-web-application-in-azure-active-directory-b2c"></a>Zelfstudie: Een webtoepassing registreren in Azure Active Directory B2C
 
@@ -98,6 +98,14 @@ Voor een webtoepassing moet u een toepassingsgeheim maken. Dit geheim wordt door
 1. Selecteer **Opslaan** om de sleutel weer te geven. Noteer de waarde van **App-sleutel**. U gebruikt deze waarde als het toepassingsgeheim in de code van uw toepassing.
 
 * * *
+
+## <a name="enable-id-token-implicit-grant"></a>Impliciete toekenning van ID-token inschakelen
+
+Het definiëren van de kenmerken van de impliciete toekenning is dat tokens, zoals ID-en toegangs tokens, direct van Azure AD B2C naar de toepassing worden geretourneerd. Voor web-apps, zoals ASP.NET Core web-apps en [https://jwt.ms](https://jwt.ms) , die een ID-token rechtstreeks vanuit het autorisatie-eind punt aanvragen, schakelt u de impliciete toekennings stroom in de app-registratie in.
+
+1. Selecteer hiervoor **Verificatie** in het linkermenu onder **Beheren**.
+1. Schakel onder impliciete toekenning de selectie vakjes **toegangs tokens** en **id-tokens** in.
+1. Selecteer **Opslaan**.
 
 ## <a name="next-steps"></a>Volgende stappen
 

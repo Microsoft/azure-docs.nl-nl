@@ -3,12 +3,12 @@ title: Overzicht van Azure Disk Backup
 description: Meer informatie over de back-upoplossing voor Azure-schijven.
 ms.topic: conceptual
 ms.date: 01/07/2021
-ms.openlocfilehash: d73c431fdc2b2906dc1d3d9485bded9449b2f2ba
-ms.sourcegitcommit: 78ecfbc831405e8d0f932c9aafcdf59589f81978
+ms.openlocfilehash: 4db2a5f3f02322f18fcf9203c3560905cde86996
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/23/2021
-ms.locfileid: "98733027"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915505"
 ---
 # <a name="overview-of-azure-disk-backup-in-preview"></a>Overzicht van back-ups van Azure-schijf (in preview-versie)
 
@@ -53,7 +53,7 @@ Overweeg Azure Disk Backup in scenario's waarin:
 
 ## <a name="how-the-backup-and-restore-process-works"></a>Hoe het back-up-en herstel proces werkt
 
-- De eerste stap bij het configureren van back-ups voor Azure-bestands shares is het maken van een [back-upkluis](backup-vault-overview.md). De kluis biedt een geconsolideerde weer gave van de back-ups die zijn geconfigureerd voor verschillende werk belastingen.
+- De eerste stap bij het configureren van back-ups voor Azure Managed disks is het maken van een [back-upkluis](backup-vault-overview.md). De kluis biedt een geconsolideerde weer gave van de back-ups die zijn geconfigureerd voor verschillende werk belastingen.
 
 - Maak vervolgens een back-upbeleid waarmee u de back-upfrequentie en de Bewaar periode kunt configureren.
 

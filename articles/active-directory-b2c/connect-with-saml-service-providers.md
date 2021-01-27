@@ -8,16 +8,16 @@ manager: celestedg
 ms.service: active-directory
 ms.workload: identity
 ms.topic: how-to
-ms.date: 11/16/2020
+ms.date: 01/17/2021
 ms.author: mimart
 ms.subservice: B2C
 ms.custom: fasttrack-edit
-ms.openlocfilehash: 80e6dbdc02b68c279452127933532106b0f78ab8
-ms.sourcegitcommit: ad677fdb81f1a2a83ce72fa4f8a3a871f712599f
+ms.openlocfilehash: 96a72dbc0e45ebd50a49000ae66e3713cb28aa9a
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/17/2020
-ms.locfileid: "97654656"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916915"
 ---
 # <a name="register-a-saml-application-in-azure-ad-b2c"></a>Een SAML-toepassing registreren in Azure AD B2C
 
@@ -71,28 +71,9 @@ Als u een vertrouwens relatie tussen uw service provider en Azure AD B2C wilt ma
 
 U kunt een certificaat gebruiken dat is uitgegeven door een open bare certificerings instantie of, voor deze zelf studie, een zelfondertekend certificaat.
 
-### <a name="11-prepare-a-self-signed-certificate"></a>1,1 een zelfondertekend certificaat voorbereiden
+### <a name="11-create-a-self-signed-certificate"></a>1,1 een zelfondertekend certificaat maken
 
-Als u nog geen certificaat hebt, kunt u een zelfondertekend certificaat gebruiken voor deze zelf studie. In Windows kunt u de cmdlet [New-SelfSignedCertificate](/powershell/module/pkiclient/new-selfsignedcertificate) van Power shell gebruiken voor het genereren van een certificaat.
-
-1. Voer deze Power shell-opdracht uit om een zelfondertekend certificaat te genereren. Wijzig het `-Subject` argument naar wens voor uw toepassing en Azure AD B2C Tenant naam. U kunt ook de `-NotAfter` datum aanpassen om een andere verloop tijd voor het certificaat op te geven.
-
-    ```PowerShell
-    New-SelfSignedCertificate `
-        -KeyExportPolicy Exportable `
-        -Subject "CN=yourappname.yourtenant.onmicrosoft.com" `
-        -KeyAlgorithm RSA `
-        -KeyLength 2048 `
-        -KeyUsage DigitalSignature `
-        -NotAfter (Get-Date).AddMonths(12) `
-        -CertStoreLocation "Cert:\CurrentUser\My"
-    ```
-
-1. Open **gebruikers certificaten beheren**  >  **huidige gebruiker**  >  **persoonlijke**  >  **certificaten**  >  *yourappname.yourtenant.onmicrosoft.com*
-1. Selecteer de **actie** certificaat >  >  **alle taken**  >  **exporteren**
-1. Selecteer **Ja**  >  **volgende**  >  **Ja, de persoonlijke sleutel exporteren**  >  **volgende**
-1. De standaard instellingen voor de **export bestands indeling** accepteren
-1. Geef een wacht woord op voor het certificaat
+[!INCLUDE [active-directory-b2c-create-self-signed-certificate](../../includes/active-directory-b2c-create-self-signed-certificate.md)]
 
 ### <a name="12-upload-the-certificate"></a>1,2 het certificaat uploaden
 
@@ -443,7 +424,7 @@ De volgende opties voor SAML-Relying Party (RP) worden ondersteund via uw eigen 
 
 Een SAML-token is een beveiligings token dat is uitgegeven door Azure AD B2C nadat het aanmelden is geslaagd. Het bevat informatie over de gebruiker, de service provider waarvoor het token is bedoeld, de hand tekening en de geldigheids duur. De volgende tabel geeft een lijst van de claims en eigenschappen die u kunt verwachten in een SAML-token dat is uitgegeven door Azure AD B2C.
 
-|Element  |Eigenschap  |Opmerkingen  |
+|Element  |Eigenschap  |Notities  |
 |---------|---------|---------|
 |`<Response>`| `ID` | Een automatisch gegenereerde unieke id van het antwoord. | 
 |`<Response>`| `InResponseTo` | De ID van de SAML-aanvraag waarnaar dit bericht wordt gestuurd. | 

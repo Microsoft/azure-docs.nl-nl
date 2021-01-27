@@ -1,14 +1,14 @@
 ---
 title: 'Quickstart: Een blauwdruk maken in de portal'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren via Azure Portal.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: bb9aeb4d4b96227f7bf7296854c56df4058fbe69
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: 75a4e9deca4859ac8b9f302fcb62ecc1d12dd8c9
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96022527"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918327"
 ---
 # <a name="quickstart-define-and-assign-a-blueprint-in-the-portal"></a>Een blauwdruk definiëren en toewijzen in de portal
 

@@ -7,12 +7,12 @@ ms.date: 9/12/2020
 ms.topic: overview
 ms.service: security-center
 manager: rkarlin
-ms.openlocfilehash: 76b83a608c7178b42b762d5fd5bb94d14a6ee41b
-ms.sourcegitcommit: 95c2cbdd2582fa81d0bfe55edd32778ed31e0fe8
+ms.openlocfilehash: a19e90a15991cdc03999bf43d5bece63325aab05
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98797768"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916571"
 ---
 # <a name="introduction-to-azure-defender-for-kubernetes"></a>Inleiding tot Azure Defender for Kubernetes
 
@@ -28,7 +28,7 @@ Detectie van bedreigingen op hostniveau voor uw Linux AKS-knooppunten is beschik
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Algemeen verkrijgbaar (GA)|
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|Voor **Azure Defender for Kubernetes** gelden de prijzen op de [pagina Prijzen](security-center-pricing.md)|
 |Vereiste rollen en machtigingen:|**Beveiligingsbeheerder** kan waarschuwingen negeren.<br>**Beveiligingslezer** kan bevindingen bekijken.|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|

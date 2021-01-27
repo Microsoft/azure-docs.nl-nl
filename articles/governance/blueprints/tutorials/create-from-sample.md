@@ -1,14 +1,14 @@
 ---
 title: 'Zelfstudie: Blauwdrukvoorbeeld voor een nieuwe omgeving'
 description: In deze zelfstudie gebruikt u een blauwdrukvoorbeeld om een blauwdrukdefinitie te maken waarmee twee resourcegroepen worden ingesteld, en wordt voor elk hiervan een roltoewijzing geconfigureerd.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: tutorial
-ms.openlocfilehash: 891240dcafe0cbfbfab4ff1fd415cba4abf682a5
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
-ms.translationtype: HT
+ms.openlocfilehash: aea3760128221d42e092e4ca45200874d54da54a
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89048729"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915550"
 ---
 # <a name="tutorial-create-an-environment-from-a-blueprint-sample"></a>Zelfstudie: Een omgeving maken op basis van een blauwdrukvoorbeeld
 
@@ -144,7 +144,7 @@ Met de blauwdruktoewijzing worden de artefacten gemaakt en bijgehouden die zijn 
 
 1. Selecteer de weigeringstoewijzing en selecteer vervolgens aan de linkerkant de pagina **Geweigerde machtigingen**.
 
-   Met de weigeringstoewijzing worden alle bewerkingen met **\*** en de configuratie **Actie** voorkomen, maar wordt leestoegang toegestaan door **\*/read** via **NotActions** uit te sluiten.
+   De weiger toewijzing voor komt dat alle bewerkingen met de configuratie **\* *_ en _*** van de actie worden uitgevoerd, maar biedt Lees toegang door **\* /Read** uit te **sluiten.**
 
 1. Selecteer via de breadcrumb van Azure Portal de optie **PreProductionRG - Toegangsbeheer (IAM)** . Selecteer vervolgens aan de linkerkant de pagina **Overzicht** en vervolgens de knop **Resourcegroep verwijderen**. Voer de naam _PreProductionRG_ in om de verwijdering te bevestigen, en selecteer vervolgens onderaan het deelvenster de optie **Verwijderen**.
 

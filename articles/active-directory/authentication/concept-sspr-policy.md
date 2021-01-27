@@ -5,19 +5,19 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: authentication
 ms.topic: conceptual
-ms.date: 10/05/2020
+ms.date: 01/27/2021
 ms.author: justinha
 author: justinha
 manager: daveba
 ms.reviewer: rhicock
 ms.collection: M365-identity-device-management
 ms.custom: contperf-fy20q4
-ms.openlocfilehash: 980e830716b66b63c8f2dc6e641a88af26d44871
-ms.sourcegitcommit: 3ea45bbda81be0a869274353e7f6a99e4b83afe2
+ms.openlocfilehash: 80be5ca22f3dfb673f09327108e66fccc9de6ddd
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97027061"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918040"
 ---
 # <a name="password-policies-and-account-restrictions-in-azure-active-directory"></a>Wachtwoord beleid en account beperkingen in Azure Active Directory
 
@@ -75,6 +75,7 @@ Voor het twee-poort beleid zijn twee soorten verificatie gegevens vereist, zoals
   * Laag1-ondersteuning voor partner
   * Laag2-ondersteuning voor partner
   * Exchange-beheerder
+  * Postvak beheerder
   * Skype voor Bedrijven-beheerder
   * Gebruikersbeheerder
   * Schrijvers van mappen
@@ -85,10 +86,12 @@ Voor het twee-poort beleid zijn twee soorten verificatie gegevens vereist, zoals
   * Beveiligingsbeheerder
   * Beheerder voor bevoorrechte rollen
   * Intune-beheerder
+  * Lokale beheerder van lid van Azure AD-apparaat
   * Service beheerder van de toepassings proxy
   * Dynamics 365-beheerder
   * Power BI-servicebeheerder
   * Verificatie beheerder
+  * Wachtwoordbeheerder
   * Beheerder voor geprivilegieerde authenticatie
 
 * Als er 30 dagen zijn verstreken in een proef abonnement; of

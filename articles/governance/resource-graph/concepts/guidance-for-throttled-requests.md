@@ -1,15 +1,15 @@
 ---
 title: Richtlijnen voor vertraagde aanvragen
 description: Meer informatie over Group, sprei ding, pagineren en query's parallel om te voor komen dat aanvragen worden beperkt door Azure resource Graph.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: conceptual
 ms.custom: devx-track-csharp
-ms.openlocfilehash: 4a8ba991d13b9be221e67f2ff1e393fb01f8a2d4
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
+ms.openlocfilehash: ddd3cf4d411733e831c94039c3bc9aeaf0e95271
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92056171"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917704"
 ---
 # <a name="guidance-for-throttled-requests-in-azure-resource-graph"></a>Richt lijnen voor vertraagde aanvragen in azure resource Graph
 
@@ -42,7 +42,7 @@ Als u een voor beeld wilt van het gebruik van de kopteksten voor _uitstel_ op qu
 
 ## <a name="grouping-queries"></a>Query's groeperen
 
-Het groeperen van query's op het abonnement, de resource groep of de afzonderlijke resource is efficiënter dan gelijktijdig query's. De quota kosten van een grotere query zijn vaak lager dan de quota kosten van veel kleine en doel query's. De groeps grootte wordt aanbevolen om minder dan _300_te zijn.
+Het groeperen van query's op het abonnement, de resource groep of de afzonderlijke resource is efficiënter dan gelijktijdig query's. De quota kosten van een grotere query zijn vaak lager dan de quota kosten van veel kleine en doel query's. De groeps grootte wordt aanbevolen om minder dan _300_ te zijn.
 
 - Voor beeld van een slecht geoptimaliseerde benadering
 
@@ -233,7 +233,7 @@ Omdat Azure resource Graph Maxi maal 1000 vermeldingen in één query antwoord r
 
 Als u na het uitvoeren van de bovenstaande aanbevelingen wilt worden beperkt, neemt u contact op met het team [resourcegraphsupport@microsoft.com](mailto:resourcegraphsupport@microsoft.com) .
 
-Geef de volgende gegevens op:
+Geef de volgende details op:
 
 - Uw specifieke gebruiks voorbeeld-en Business-stuur programma moeten een hogere beperkings limiet hebben.
 - Hoeveel resources hebt u toegang tot? Hoeveel van de retour neren van één query

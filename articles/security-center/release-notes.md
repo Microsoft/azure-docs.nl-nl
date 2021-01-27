@@ -10,14 +10,14 @@ ms.devlang: na
 ms.topic: reference
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 01/25/2021
+ms.date: 01/27/2021
 ms.author: memildin
-ms.openlocfilehash: ee9a20d3e5bb6974676d6d7a8285a56247756f64
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: 5dd58dd5f43481184b17ca4bdd694a1df76697db
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98784944"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916457"
 ---
 # <a name="whats-new-in-azure-security-center"></a>Wat is er nieuw in Azure Security Center?
 
@@ -46,6 +46,7 @@ De updates in januari zijn onder andere:
 - [Er zijn 35 preview-aanbevelingen toegevoegd om de dekking van Azure Security Benchmark te verhogen](#35-preview-recommendations-added-to-increase-coverage-of-azure-security-benchmark)
 - [CSV-export van een gefilterde lijst met aanbevelingen](#csv-export-of-filtered-list-of-recommendations)
 - [' Niet van toepassing ' bronnen die nu zijn gerapporteerd als ' compatibel ' in Azure Policy-evaluaties](#not-applicable-resources-now-reported-as-compliant-in-azure-policy-assessments)
+- [Wekelijkse moment opnamen van beveiligde scores en nalevings gegevens van de regelgeving exporteren met doorlopend exporteren (preview)](#export-weekly-snapshots-of-secure-score-and-regulatory-compliance-data-with-continuous-export-preview)
 
 
 ### <a name="azure-security-benchmark-is-now-the-default-policy-initiative-for-azure-security-center"></a>Azure Security Bench Mark is nu het standaard beleids initiatief voor Azure Security Center
@@ -224,6 +225,18 @@ Voorheen werden resources die zijn geëvalueerd voor een aanbeveling en **niet v
 Dit is alleen van invloed op Azure Policy, waar het aantal compatibele resources zal toenemen. Het is niet van invloed om uw beveiligingsscore in Azure Security Center.
 
 
+### <a name="export-weekly-snapshots-of-secure-score-and-regulatory-compliance-data-with-continuous-export-preview"></a>Wekelijkse moment opnamen van beveiligde scores en nalevings gegevens van de regelgeving exporteren met doorlopend exporteren (preview)
+
+We hebben een nieuwe preview-functie toegevoegd aan de [continue export](continuous-export.md) tools voor het exporteren van wekelijkse moment opnamen van beveiligde scores en nalevings gegevens voor de regelgeving.
+
+Wanneer u een continue export definieert, stelt u de export frequentie in:
+
+:::image type="content" source="media/release-notes/export-frequency.png" alt-text="De frequentie van uw continue export kiezen":::
+
+- **Streaming** – beoordelingen worden in realtime verzonden wanneer de status van een resource wordt bijgewerkt (als er geen updates worden uitgevoerd, worden er geen gegevens verzonden).
+- **Moment opnamen** : er wordt elke week een moment opname gemaakt van de huidige status van alle nalevings evaluaties (dit is een preview-functie voor wekelijkse moment opnamen van beveiligde scores en nalevings gegevens voor regelgeving).
+
+Meer informatie over de volledige mogelijkheden van deze functie in het [voortdurend exporteren van Security Center gegevens](continuous-export.md)
 
 ## <a name="december-2020"></a>December 2020
 

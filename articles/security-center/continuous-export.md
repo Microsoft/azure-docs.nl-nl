@@ -8,12 +8,12 @@ ms.service: security-center
 ms.topic: how-to
 ms.date: 12/24/2020
 ms.author: memildin
-ms.openlocfilehash: 823992ba6d3b175c8d20a001f8298a5c4af9a1ae
-ms.sourcegitcommit: 8be279f92d5c07a37adfe766dc40648c673d8aa8
+ms.openlocfilehash: 845ff6f0905b232b9ec68dbe127ef7f47a6ad898
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/31/2020
-ms.locfileid: "97832706"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916778"
 ---
 # <a name="continuously-export-security-center-data"></a>Security Center-gegevens continu exporteren
 
@@ -25,6 +25,8 @@ Met **doorlopend exporteren** kunt u volledig aanpassen *wat* wordt geëxporteer
 - Alle problemen met de ernst van gemiddeld of op het hoogste niveau van de scan van beveiligings lekken van uw SQL-servers worden verzonden naar een specifieke Log Analytics-werk ruimte
 - Specifieke aanbevelingen worden naar een event hub of Log Analytics werk ruimte bezorgd wanneer ze worden gegenereerd 
 - De beveiligde score voor een abonnement wordt verzonden naar een Log Analytics werkruimte wanneer de score voor een besturings element wordt gewijzigd door 0,01 of meer 
+
+Hoewel de functie *doorlopend* wordt genoemd, is er ook een optie voor het exporteren van wekelijkse moment opnamen van beveiligde scores of nalevings gegevens.
 
 In dit artikel wordt beschreven hoe u doorlopend exporteren naar Log Analytics werk ruimten of Azure Event Hubs kunt configureren.
 
@@ -39,7 +41,7 @@ In dit artikel wordt beschreven hoe u doorlopend exporteren naar Log Analytics w
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Algemeen verkrijgbaar (GA)|
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|Gratis|
 |Vereiste rollen en machtigingen:|<ul><li>**Beveiligings beheerder** of- **eigenaar** voor de resource groep</li><li>Schrijf machtigingen voor de doel resource</li><li>Als u het Azure Policy beleid ' DeployIfNotExist ' gebruikt dat hieronder wordt beschreven, hebt u ook machtigingen nodig voor het toewijzen van beleid</li></ul>|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov, andere overheden<br>![Ja](./media/icons/yes-icon.png) Gov China (naar Event hub)|
@@ -78,12 +80,16 @@ De onderstaande stappen zijn nodig om een doorlopende export naar Log Analytics 
     Hier ziet u de export opties. Er is een tabblad voor elk beschik bare export doel. 
 
 1. Selecteer het gegevens type dat u wilt exporteren en kies uit de filters voor elk type (bijvoorbeeld alleen waarschuwingen met hoge Ernst exporteren).
+1. Selecteer de juiste export frequentie:
+    - **Streaming** – beoordelingen worden in realtime verzonden wanneer de status van een resource wordt bijgewerkt (als er geen updates worden uitgevoerd, worden er geen gegevens verzonden).
+    - **Moment opnamen** : er wordt elke week een moment opname gemaakt van de huidige status van alle nalevings evaluaties (dit is een preview-functie voor wekelijkse moment opnamen van beveiligde scores en nalevings gegevens voor regelgeving).
+
 1. Als uw selectie echter een van deze aanbevelingen bevat, kunt u de evaluatie van de beveiligings lekken samen met hen opnemen:
     - De conclusies van de evaluatie van beveiligings problemen voor uw SQL-data bases moeten worden hersteld
     - De resultaten van evaluatie van beveiligings problemen op uw SQL-servers op computers moeten worden hersteld (preview-versie)
     - Beveiligingsproblemen met installatiekopieën in Azure Container Registry moeten worden hersteld (mogelijk gemaakt door Qualys)
     - Beveiligingsproblemen op uw virtuele machines moeten worden hersteld
-    - Er moeten systeemupdates op uw computers zijn geïnstalleerd
+    - Er moeten systeemupdates op uw computers worden geïnstalleerd
 
     Schakel de optie **beveiligings resultaten bevatten** in om de resultaten op te vragen met deze aanbevelingen.
 

@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: 65aab240dd0be97aafa370883aa953f8eb766cf2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: b3419b54fa18058583d81909f7fca0f20dc4b0dd
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91650745"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917130"
 ---
 # <a name="av2-series"></a>Av2-serie
 
@@ -24,6 +24,7 @@ De virtuele machines uit de Av2-serie kunnen worden geïmplementeerd op diverse 
 [Livemigratie](maintenance-and-updates.md): ondersteund <br>
 [Updates voor geheugen behoud](maintenance-and-updates.md): ondersteund <br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 <br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): niet ondersteund<br>
 <br>
 
 | Grootte | vCore | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Maximale tijdelijke opslag doorvoer: IOPS/MBps lezen/MBps schrijven | Maximum aantal gegevens schijven/door Voer: IOPS | Max. aantal NIC's | Verwachte netwerk bandbreedte (Mbps)
@@ -40,9 +41,9 @@ De virtuele machines uit de Av2-serie kunnen worden geïmplementeerd op diverse 
 
 ## <a name="other-sizes-and-information"></a>Andere grootten en informatie
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

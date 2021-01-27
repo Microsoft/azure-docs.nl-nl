@@ -4,12 +4,12 @@ description: Bevat een samenvatting van ondersteuningsinstellingen en -beperking
 ms.topic: conceptual
 ms.date: 02/17/2019
 ms.custom: references_regions
-ms.openlocfilehash: 833837c317d22bf031aee4608ff4c93775736a34
-ms.sourcegitcommit: 5cdd0b378d6377b98af71ec8e886098a504f7c33
+ms.openlocfilehash: 9e20c21694678acf7be13ccbbe9cce9af38c32c5
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/25/2021
-ms.locfileid: "98757437"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98915706"
 ---
 # <a name="support-matrix-for-azure-backup"></a>Ondersteunings matrix voor Azure Backup
 
@@ -150,8 +150,8 @@ Azure Backup de functie voor het terugzetten van meerdere regio's heeft toegevoe
 
 | Type back-upbeheer | Ondersteund                                                    | Ondersteunde regio's |
 | ---------------------- | ------------------------------------------------------------ | ----------------- |
-| Azure VM               | Ondersteund voor virtuele Azure-machines met zowel beheerde als onbeheerde schijven. Niet ondersteund voor klassieke virtuele machines. | Alle open bare Azure-regio's.  |
-| SQL-/SAP HANA | Ja                                                          | Alle open bare regio's behalve Frank rijk |
+| Azure VM               | Ondersteund voor virtuele Azure-machines met zowel beheerde als onbeheerde schijven. Niet ondersteund voor klassieke virtuele machines. | Beschikbaar in alle open bare Azure-regio's, met uitzonde ring van Frankrijk-centraal, Australië-centraal, Zuid-Afrika-noord, UAE-noord, Zwitserland-noord, Duitsland-west-centraal, Noor wegen Oost. <br>Neem contact op met de voor informatie over het gebruik in deze regio's [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) |
+| SQL-/SAP HANA | In preview                                                      | Beschikbaar in alle open bare Azure-regio's, met uitzonde ring van Frankrijk-centraal, Australië-centraal, Zuid-Afrika-noord, UAE-noord, Zwitserland-noord, Duitsland-west-centraal, Noor wegen Oost. <br>Neem contact op met de voor informatie over het gebruik in deze regio's [AskAzureBackupTeam@microsoft.com](mailto:AskAzureBackupTeam@microsoft.com) |
 | MARS-agent/on-premises  | Nee                                                           | N.v.t.               |
 | AFS (Azure-bestands shares)                 | Nee                                                           | N.v.t.               |
 

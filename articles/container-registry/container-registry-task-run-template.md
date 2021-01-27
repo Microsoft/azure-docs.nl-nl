@@ -3,12 +3,12 @@ title: Snelle taak uitvoeren met sjabloon
 description: Een ACR-taak in een wachtrij plaatsen om een installatie kopie te bouwen met behulp van een Azure Resource Manager sjabloon
 ms.topic: article
 ms.date: 04/22/2020
-ms.openlocfilehash: 7ad40d2e925d5e1443af9bce4115d45b0e8c06e1
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 6e8023c088ac328c2b6e95fccd0230c4d40325c1
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "82927765"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916062"
 ---
 # <a name="run-acr-tasks-using-resource-manager-templates"></a>ACR-taken uitvoeren met behulp van Resource Manager-sjablonen
 
@@ -42,7 +42,7 @@ Voor dit voor beeld geeft u waarden op voor de volgende sjabloon parameters:
 |Parameter  |Waarde  |
 |---------|---------|
 |registerpad     |De unieke naam van het REGI ster dat is gemaakt         |
-|opslag plaats     |Doel opslagplaats voor Build-taak        |
+|repository     |Doel opslagplaats voor Build-taak        |
 |taskRunName     |De naam van de taak uitvoering, waarmee de afbeeldings code wordt opgegeven |
 |sourceLocation     |Externe context voor de taak maken, bijvoorbeeld https://github.com/Azure-Samples/acr-build-helloworld-node . De Dockerfile in de opslag plaats root bouwt een container installatie kopie voor een kleine Node.js web-app. Gebruik, indien gewenst, uw Fork van de opslag plaats als de context van de build.         |
 
@@ -58,12 +58,12 @@ az deployment group create \
     registryName=mycontainerregistry \
     repository=helloworld-node \
     taskRunName=testrun \
-    sourceLocation=https://github.com/Azure-Samples/acr-build-helloworld-node.git
+    sourceLocation=https://github.com/Azure-Samples/acr-build-helloworld-node.git#main
  ```
 
 Met de vorige opdracht worden de para meters door gegeven aan de opdracht regel. Geef ze desgewenst een voor een [parameter bestand](../azure-resource-manager/templates/parameter-files.md)door.
 
-### <a name="verify-deployment"></a>Implementatie verifiëren
+### <a name="verify-deployment"></a>Implementatie controleren
 
 Nadat de implementatie is voltooid, controleert u of de installatie kopie is gemaakt door [AZ ACR repository show-Tags][az-acr-repository-show-tags]uit te voeren:
 
@@ -112,7 +112,7 @@ De uitvoer toont het logboek voor taak uitvoering.
 U kunt ook het logboek voor taak uitvoering weer geven in de Azure Portal. 
 
 1. Ga naar het container register
-2. Onder **Services**selecteert u **taken**  >  **uitvoeren**.
+2. Onder **Services** selecteert u **taken**  >  **uitvoeren**.
 3. Selecteer de run-ID, in dit geval *Ca1*. 
 
 In de portal wordt het taak uitvoer logboek weer gegeven.
@@ -182,12 +182,12 @@ Voor dit voor beeld geeft u waarden op voor de volgende sjabloon parameters:
 |Parameter  |Waarde  |
 |---------|---------|
 |registerpad     |Naam van het REGI ster waarin de installatie kopie is gemaakt  |
-|opslag plaats     |Doel opslagplaats voor Build-taak        |
+|repository     |Doel opslagplaats voor Build-taak        |
 |taskRunName     |De naam van de taak uitvoering, waarmee de afbeeldings code wordt opgegeven |
 |userAssignedIdentity |Resource-ID van de door de gebruiker toegewezen identiteit die in de taak is ingeschakeld|
 |customRegistryIdentity | De client-ID van de door de gebruiker toegewezen identiteit die in de taak wordt gebruikt voor verificatie met een aangepast REGI ster |
 |customRegistry |De naam van de aanmeldings server van het aangepaste REGI ster dat in de taak wordt geopend, bijvoorbeeld *mybaseregistry.azurecr.io*|
-|sourceLocation     |Externe context voor de taak build, bijvoorbeeld * https://github.com/ \<your-GitHub-ID\> /ACR-build-HelloWorld-node.* |
+|sourceLocation     |Externe context voor de taak build, bijvoorbeeld *https://github.com/ \<your-GitHub-ID\> /ACR-build-HelloWorld-node.* |
 |dockerFilePath | Het pad naar de Dockerfile in de externe context, die wordt gebruikt om de installatie kopie te bouwen. |
 
 ### <a name="deploy-the-template"></a>De sjabloon implementeren
@@ -204,14 +204,14 @@ az deployment group create \
     taskRunName=basetask \
     userAssignedIdentity=$resourceID \
     customRegistryIdentity=$clientID \
-    sourceLocation=https://github.com/<your-GitHub-ID>/acr-build-helloworld-node.git \
+    sourceLocation=https://github.com/<your-GitHub-ID>/acr-build-helloworld-node.git#main \
     dockerFilePath=Dockerfile-test \
     customRegistry=mybaseregistry.azurecr.io
 ```
 
 Met de vorige opdracht worden de para meters door gegeven aan de opdracht regel. Geef ze desgewenst een voor een [parameter bestand](../azure-resource-manager/templates/parameter-files.md)door.
 
-### <a name="verify-deployment"></a>Implementatie verifiëren
+### <a name="verify-deployment"></a>Implementatie controleren
 
 Nadat de implementatie is voltooid, controleert u of de installatie kopie is gemaakt door [AZ ACR repository show-Tags][az-acr-repository-show-tags]uit te voeren:
 

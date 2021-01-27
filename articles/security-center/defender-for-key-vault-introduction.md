@@ -8,12 +8,12 @@ ms.topic: overview
 ms.service: security-center
 ms.custom: references_regions
 manager: rkarlin
-ms.openlocfilehash: 91a0ea19f53d1da7631154cb71f96e495cc93857
-ms.sourcegitcommit: 400f473e8aa6301539179d4b320ffbe7dfae42fe
-ms.translationtype: HT
+ms.openlocfilehash: b1dd559db2d736fa27de2884d2fe82edaaeaaf3c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/28/2020
-ms.locfileid: "92788992"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916639"
 ---
 # <a name="introduction-to-azure-defender-for-key-vault"></a>Inleiding tot Azure Defender voor Key Vault
 
@@ -25,7 +25,7 @@ Schakel **Azure Defender voor Key Vault** in voor geavanceerde Azure-beveiliging
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Algemeen verkrijgbaar (GA)|
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|Voor **Azure Defender voor Key Vault** gelden de prijzen op de [pagina Prijzen](security-center-pricing.md)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
 |||

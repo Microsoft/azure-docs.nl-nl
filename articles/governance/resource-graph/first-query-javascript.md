@@ -1,15 +1,15 @@
 ---
 title: 'Quickstart: Uw eerste JavaScript-query'
 description: In deze quickstart voert u de stappen uit om de Resource Graph-bibliotheek voor JavaScript in te schakelen en uw eerste query uit te voeren.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: quickstart
 ms.custom: devx-track-js
-ms.openlocfilehash: 194097594340e2f34433c07185c6132f8a13c845
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
-ms.translationtype: HT
+ms.openlocfilehash: 97cbd9ddf65a4135f55304f6dd67c704c6fcac5d
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057413"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98917518"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-javascript"></a>Quickstart: Uw eerste Resource Graph-query uitvoeren met JavaScript
 

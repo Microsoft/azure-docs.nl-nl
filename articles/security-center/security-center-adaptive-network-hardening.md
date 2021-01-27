@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 03/11/2020
 ms.author: memildin
-ms.openlocfilehash: e2b17e15c5548b4c9b93a62a7d4dfe62ff44404c
-ms.sourcegitcommit: f88074c00f13bcb52eaa5416c61adc1259826ce7
+ms.openlocfilehash: ca60d5afa38a560492c8574aadd43d6170eca253
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/21/2020
-ms.locfileid: "92341750"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916181"
 ---
 # <a name="adaptive-network-hardening-in-azure-security-center"></a>Adaptieve netwerk beveiliging in Azure Security Center
 Meer informatie over het configureren van adaptieve netwerk beveiliging in Security Center.
@@ -26,7 +26,7 @@ Meer informatie over het configureren van adaptieve netwerk beveiliging in Secur
 ## <a name="availability"></a>Beschikbaarheid
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Algemeen verkrijgbaar (GA)|
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|[Azure Defender voor servers](defender-for-servers-introduction.md) is vereist|
 |Vereiste rollen en machtigingen:|Schrijfmachtigingen op de NSG's van de computer|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Nee](./media/icons/no-icon.png) Nationaal/onafhankelijk (overheid van de VS, China, andere overheden)|
@@ -60,7 +60,7 @@ Stel bijvoorbeeld dat de bestaande NSG-regel verkeer van 140.20.30.10/24 op poor
       * **Er zijn onvoldoende gegevens beschikbaar**: voor het genereren van nauw keurige aanbevelingen voor het beveiligen van de beveiliging is Security Center ten minste 30 dagen aan verkeers gegevens vereist.
       * **VM wordt niet beveiligd door Azure Defender**: alleen vm's die zijn beveiligd met [Azure Defender voor servers](defender-for-servers-introduction.md) komen in aanmerking voor deze functie.
 
-    :::image type="content" source="./media/security-center-adaptive-network-hardening/recommendation-details-page.png" alt-text="Toegang tot de hulpprogram ma's voor adaptieve netwerk beveiliging":::
+    :::image type="content" source="./media/security-center-adaptive-network-hardening/recommendation-details-page.png" alt-text="De pagina Details van de aanbevelingen voor het aanbevelen van adaptieve netwerk beveiliging moet worden toegepast op Internet gerichte virtuele machines":::
 
 1. Op het tabblad **beschadigde bronnen** selecteert u een virtuele machine om de waarschuwingen en de aanbevolen beveiligings regels weer te geven die moeten worden toegepast.
 
@@ -78,12 +78,12 @@ Stel bijvoorbeeld dat de bestaande NSG-regel verkeer van 140.20.30.10/24 op poor
     > [!TIP]
     > Als de toegestane bron-IP-bereiken als ' geen ' worden weer gegeven, betekent dit dat de aanbevolen regel een regel voor *weigeren* is, anders is dit een regel voor *toestaan* .
 
-    :::image type="content" source="./media/security-center-adaptive-network-hardening/hardening-alerts.png" alt-text="Toegang tot de hulpprogram ma's voor adaptieve netwerk beveiliging":::
+    :::image type="content" source="./media/security-center-adaptive-network-hardening/hardening-alerts.png" alt-text="Regels voor adaptieve netwerk beveiliging beheren":::
 
       > [!NOTE]
       > De afgedwongen regels worden toegevoegd aan de NSG (s) die de virtuele machine beveiligen. (Een virtuele machine kan worden beveiligd door een NSG die is gekoppeld aan de NIC of het subnet waarin de virtuele machine zich bevindt, of beide)
 
-### <a name="modify-a-rule"></a>Een regel <a name ="modify-rule"> </a> wijzigen
+### <a name="modify-a-rule"></a>Een regel <a name ="modify-rule"></a> wijzigen
 
 Mogelijk wilt u de para meters van een regel die is aanbevolen wijzigen. Het is bijvoorbeeld mogelijk dat u de aanbevolen IP-bereiken wilt wijzigen.
 
@@ -108,7 +108,7 @@ Enkele belang rijke richt lijnen voor het wijzigen van een adaptieve netwerk bep
 1. In het venster **regel bewerken** werkt u de details bij die u wilt wijzigen en klikt u op **Opslaan**.
 
    > [!NOTE]
-   > Nadat u op **Opslaan**hebt geklikt, is de regel gewijzigd. *U hebt deze echter niet toegepast op de NSG.* Als u deze wilt Toep assen, moet u de regel in de lijst selecteren en vervolgens **afdwingen** selecteren (zoals in de volgende stap wordt uitgelegd).
+   > Nadat u op **Opslaan** hebt geklikt, is de regel gewijzigd. *U hebt deze echter niet toegepast op de NSG.* Als u deze wilt Toep assen, moet u de regel in de lijst selecteren en vervolgens **afdwingen** selecteren (zoals in de volgende stap wordt uitgelegd).
 
    ![Opslaan selecteren](./media/security-center-adaptive-network-hardening/edit-hard-rule3.png)
 
@@ -116,7 +116,7 @@ Enkele belang rijke richt lijnen voor het wijzigen van een adaptieve netwerk bep
 
     ![regel afdwingen](./media/security-center-adaptive-network-hardening/enforce-hard-rule.png)
 
-### <a name="add-a-new-rule"></a>Een nieuwe regel <a name ="add-rule"> </a> toevoegen
+### <a name="add-a-new-rule"></a>Een nieuwe regel <a name ="add-rule"></a> toevoegen
 
 U kunt een regel ' toestaan ' toevoegen die niet wordt aanbevolen door Security Center.
 
@@ -132,14 +132,14 @@ U kunt een regel ' toestaan ' toevoegen die niet wordt aanbevolen door Security 
 1. Voer in het venster **nieuwe regel** de details in en klik op **toevoegen**.
 
    > [!NOTE]
-   > Nadat u op **toevoegen**hebt geklikt, is de regel toegevoegd en wordt deze weer gegeven met de andere aanbevolen regels. U hebt deze echter niet toegepast op de NSG. Als u deze wilt activeren, moet u de regel in de lijst selecteren en op **afdwingen** klikken (zoals in de volgende stap wordt uitgelegd).
+   > Nadat u op **toevoegen** hebt geklikt, is de regel toegevoegd en wordt deze weer gegeven met de andere aanbevolen regels. U hebt deze echter niet toegepast op de NSG. Als u deze wilt activeren, moet u de regel in de lijst selecteren en op **afdwingen** klikken (zoals in de volgende stap wordt uitgelegd).
 
 3. Als u de nieuwe regel wilt Toep assen, selecteert u de nieuwe regel in de lijst en klikt u op **afdwingen**.
 
     ![regel afdwingen](./media/security-center-adaptive-network-hardening/enforce-hard-rule.png)
 
 
-### <a name="delete-a-rule"></a>Een regel <a name ="delete-rule"> </a> verwijderen
+### <a name="delete-a-rule"></a>Een regel <a name ="delete-rule"></a> verwijderen
 
 Als dat nodig is, kunt u een aanbevolen regel voor de huidige sessie verwijderen. U kunt bijvoorbeeld bepalen dat het Toep assen van een voorgestelde regel legitiem verkeer kan blok keren.
 

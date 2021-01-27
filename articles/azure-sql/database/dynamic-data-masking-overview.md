@@ -12,12 +12,12 @@ ms.author: datrigan
 ms.reviewer: vanto
 ms.date: 01/25/2021
 tags: azure-synpase
-ms.openlocfilehash: 0f92d8dbfe423efa58231831fe012a27e45f9208
-ms.sourcegitcommit: a055089dd6195fde2555b27a84ae052b668a18c7
+ms.openlocfilehash: b10b00e724324779eb753bfefccce77a5eb2a39d
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/26/2021
-ms.locfileid: "98787685"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918074"
 ---
 # <a name="dynamic-data-masking"></a>Dynamische gegevensmaskering 
 [!INCLUDE[appliesto-sqldb-sqlmi-asa](../includes/appliesto-sqldb-sqlmi-asa.md)]
@@ -26,7 +26,7 @@ Azure SQL Database, Azure SQL Managed instance en Azure Synapse Analytics bieden
 
 Dynamische gegevensmaskering helpt onbevoegde toegang tot gevoelige gegevens te voorkomen, doordat klanten kunnen aangeven hoeveel van de gevoelige gegevens mag worden vrijgegeven, met minimale gevolgen voor de toepassingslaag. Dit is een beveiligingsfunctie op basis van beleid. De gevoelige gegevens in de resultatenset van een query die is uitgevoerd op toegewezen databasevelden worden verborgen, terwijl de gegevens in de database niet worden gewijzigd.
 
-Een service medewerker in Call Center kan bijvoorbeeld aanroepers identificeren met verschillende cijfers van hun e-mail adres, maar deze gegevens items mogen niet volledig worden blootgesteld aan de service medewerker. Er kan een maskerings regel worden gedefinieerd waarmee het e-mail adres in de resultatenset van een wille keurige query wordt gemaskeerd. Een ander voor beeld is dat er een geschikt gegevens masker kan worden gedefinieerd om persoonlijke gegevens te beveiligen, zodat een ontwikkelaar productie omgevingen kan opvragen voor het oplossen van problemen zonder dat nalevings voorschriften worden geschonden.
+Een service medewerker bij een Call Center kan bijvoorbeeld een beller identificeren door meerdere tekens van het e-mail adres te bevestigen, maar het volledige e-mail adres mag niet worden onthuld aan de mede werker van de service. Er kan een maskerings regel worden gedefinieerd waarmee het e-mail adres in de resultatenset van een wille keurige query wordt gemaskeerd. Een ander voor beeld is dat er een geschikt gegevens masker kan worden gedefinieerd om persoonlijke gegevens te beveiligen, zodat een ontwikkelaar productie omgevingen kan opvragen voor het oplossen van problemen zonder dat nalevings voorschriften worden geschonden.
 
 ## <a name="dynamic-data-masking-basics"></a>Basis beginselen van dynamische gegevens maskering
 

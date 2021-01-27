@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 12/23/2020
 ms.author: memildin
-ms.openlocfilehash: c9d11f1ddc3e1dd2239bdfce9c41f58fe9e20497
-ms.sourcegitcommit: fc23b4c625f0b26d14a5a6433e8b7b6fb42d868b
+ms.openlocfilehash: d741aad2e97b211e42dc6c8b6176f102703acc5b
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/17/2021
-ms.locfileid: "98539965"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916486"
 ---
 # <a name="azure-defender-for-sql-servers-on-machines"></a>Azure Defender voor SQL-servers op computers 
 
@@ -30,7 +30,7 @@ U ziet waarschuwingen wanneer er verdachte database activiteiten, potentiële kw
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Algemeen verkrijgbaar (GA)|
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|**Azure Defender voor SQL-servers op computers** wordt gefactureerd zoals wordt weer gegeven op [de pagina met prijzen](security-center-pricing.md)|
 |Beveiligde SQL-versies:|Azure SQL Server (alle versies die worden gedekt door micro soft support)|
 |Clouds:|![Ja](./media/icons/yes-icon.png) Commerciële clouds<br>![Ja](./media/icons/yes-icon.png) US Gov<br>![Nee](./media/icons/no-icon.png) China Gov, Other Gov|

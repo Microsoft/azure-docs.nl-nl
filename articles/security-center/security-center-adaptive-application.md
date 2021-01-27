@@ -13,12 +13,12 @@ ms.tgt_pltfrm: na
 ms.workload: na
 ms.date: 08/06/2020
 ms.author: memildin
-ms.openlocfilehash: 473353c3f61d1096beb11c521c08ac723d54b780
-ms.sourcegitcommit: 3af12dc5b0b3833acb5d591d0d5a398c926919c8
+ms.openlocfilehash: 103f2c87cf9d14f81462fed145ff8df3d69bfca0
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/11/2021
-ms.locfileid: "98071596"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98916130"
 ---
 # <a name="use-adaptive-application-controls-to-reduce-your-machines-attack-surfaces"></a>Besturings elementen voor adaptieve toepassingen gebruiken om de kwets bare Opper vlakken van uw computers te verminderen
 
@@ -50,7 +50,7 @@ Door lijsten met bekende veilige toepassingen te definiëren en waarschuwingen t
 
 |Aspect|Details|
 |----|:----|
-|Releasestatus:|Algemeen verkrijgbaar (GA)|
+|Releasestatus:|Algemene Beschik baarheid (GA)|
 |Prijzen:|[Azure Defender voor servers](defender-for-servers-introduction.md) is vereist|
 |Ondersteunde machines:|![Ja ](./media/icons/yes-icon.png) Azure-en niet-Azure-machines met Windows en Linux<br>![Ja ](./media/icons/yes-icon.png) [Azure Arc](../azure-arc/index.yml) -machines|
 |Vereiste rollen en machtigingen:|**Beveiligings lezers** en **lezers** rollen kunnen zowel groepen als de lijsten met bekende veilige toepassingen weer geven<br>**Inzender** -en **beveiligings beheerders** rollen kunnen zowel groepen bewerken als de lijsten met bekende veilige toepassingen|

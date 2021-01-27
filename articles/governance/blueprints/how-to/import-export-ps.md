@@ -1,18 +1,18 @@
 ---
 title: Blauw drukken importeren en exporteren met Power shell
 description: Meer informatie over het werken met uw blauw drukken-definities als code. Delen, broncode beheer en beheren met de opdrachten exporteren en importeren.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: how-to
-ms.openlocfilehash: 87e8f00013fec3abb8132f92c1c717f152d1e264
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: a5b1adda0b02e2e2490441c5958ca9334febc24c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89051437"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919983"
 ---
 # <a name="import-and-export-blueprint-definitions-with-powershell"></a>Blauw druk-definities importeren en exporteren met Power shell
 
-Azure-blauw drukken kan volledig worden beheerd via Azure Portal. Als organisaties in hun gebruik van Azure-blauw drukken beginnen, moeten ze denken aan de definities van blauw druk als beheerde code. Dit concept wordt vaak aangeduid als een infra structuur als code (IaC). Uw blauw drukken-definities behandelen als code biedt meer voor delen dan wat Azure Portal biedt. Deze voor delen zijn onder andere:
+Azure-blauw drukken kan volledig worden beheerd via Azure Portal. Als organisaties in hun gebruik van Azure-blauw drukken beginnen, moeten ze denken aan de definities van blauw druk als beheerde code. Dit concept wordt vaak aangeduid als een infra structuur als code (IaC). Uw blauw drukken-definities behandelen als code biedt meer voor delen dan wat Azure Portal biedt. Dit zijn enkele voordelen:
 
 - Blauw druk-definities delen
 - Back-ups maken van uw blauw drukken-definities

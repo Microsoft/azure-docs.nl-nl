@@ -5,18 +5,18 @@ services: active-directory
 ms.service: active-directory
 ms.subservice: compliance
 ms.topic: how-to
-ms.date: 12/02/2020
+ms.date: 01/27/2020
 ms.author: joflore
 author: MicrosoftGuyJFlo
 manager: daveba
 ms.reviewer: jocastel
 ms.collection: M365-identity-device-management
-ms.openlocfilehash: f3e64b0af455ab1f84653093b26654530ee3dfab
-ms.sourcegitcommit: c7153bb48ce003a158e83a1174e1ee7e4b1a5461
+ms.openlocfilehash: 95fe70c774b933113c94125d227976e32a9e353f
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98232774"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919626"
 ---
 # <a name="azure-active-directory-terms-of-use"></a>Gebruiks voorwaarden van Azure Active Directory
 
@@ -26,7 +26,7 @@ Het beleid voor gebruiks voorwaarden van Azure AD biedt een eenvoudige methode d
 
 ## <a name="overview-videos"></a>Overzicht Video's
 
-In de volgende video vindt u een kort overzicht van de gebruiks voorwaarden.
+De volgende video biedt een kort overzicht van de beleids regels voor gebruiks voorwaarden.
 
 >[!VIDEO https://www.youtube.com/embed/tj-LK0abNao]
 
@@ -183,7 +183,7 @@ Gebruik de volgende procedure om aan de slag te gaan met Azure AD-audit logboeke
 
 ## <a name="what-terms-of-use-looks-like-for-users"></a>Welke gebruiks voorwaarden zijn er voor gebruikers?
 
-Zodra het beleid voor de gebruiks voorwaarden is gemaakt en afgedwongen, zien gebruikers, die binnen het bereik vallen, het volgende scherm tijdens het aanmelden.
+Zodra u een beleid voor gebruiks voorwaarden maakt en afdwingt, zien gebruikers, die binnen het bereik vallen, het volgende scherm tijdens het aanmelden.
 
 ![Voor beeld van gebruiks voorwaarden die worden weer gegeven wanneer een gebruiker zich aanmeldt](./media/terms-of-use/user-tou.png)
 
@@ -191,7 +191,7 @@ Gebruikers kunnen het beleid voor gebruiks voorwaarden bekijken en, indien nodig
 
 ![Weer gave van gebruiks voorwaarden met Zoom knoppen](./media/terms-of-use/zoom-buttons.png)
 
-In het volgende scherm ziet u hoe het beleid voor gebruiks voorwaarden op mobiele apparaten kijkt.
+In het volgende scherm ziet u hoe een beleid voor gebruiks voorwaarden op mobiele apparaten kijkt.
 
 ![Voor beeld van gebruiks voorwaarden die worden weer gegeven wanneer een gebruiker zich aanmeldt op een mobiel apparaat](./media/terms-of-use/mobile-tou.png)
 
@@ -226,7 +226,7 @@ U kunt enkele details van beleids regels voor gebruik bewerken, maar niet wijzig
     - Evaluatie U kunt **een bestaand gebruiks document bijwerken**
     - U kunt een taal toevoegen aan een bestaande gebruiks voorwaarden
 
-   Als er andere instellingen zijn die u wilt wijzigen, zoals een PDF-document, moeten gebruikers toestemming geven op elk apparaat, voor het verlopen van berichten, de duur voor het opnieuw accepteren of het beleid voor voorwaardelijke toegang. u moet een nieuw beleid voor gebruiks voorwaarden maken.
+   Als er andere instellingen zijn die u wilt wijzigen, zoals een PDF-document, moet u gebruikers toestemming geven op elk apparaat, verlopend of verlopen, duur vóór heracceptatie of beleid voor voorwaardelijke toegang. u dient een nieuw beleid voor gebruiks voorwaarden te maken.
 
     ![Bewerken met andere taal opties ](./media/terms-of-use/edit-terms-use.png)
 
@@ -249,7 +249,7 @@ U kunt enkele details van beleids regels voor gebruik bewerken, maar niet wijzig
 7.  Wanneer u de nieuwe PDF hebt geüpload en u hebt besloten op opnieuw accepteren, klikt u onder aan het deel venster op toevoegen.
 8.  U ziet nu de meest recente versie in de kolom document.
 
-## <a name="view-previous-versions-of-a-terms-of-use"></a>Eerdere versies van de gebruiks voorwaarden weer geven
+## <a name="view-previous-versions-of-a-tou"></a>Eerdere versies van een gebruiks voorwaarden weer geven
 
 1.  Meld u aan bij Azure en navigeer naar **Gebruiksrechtovereenkomst** op https://aka.ms/catou.
 2.  Selecteer het beleid voor gebruiks voorwaarden waarvoor u een versie geschiedenis wilt weer geven.
@@ -269,9 +269,9 @@ U kunt enkele details van beleids regels voor gebruik bewerken, maar niet wijzig
 5.  U kunt ook een specifieke versie selecteren in de vervolg keuzelijst **versie**  om te zien wie de specifieke versie heeft geaccepteerd.
 
 
-## <a name="add-a-terms-of-use-language"></a>Een taal voor de gebruiks voorwaarden toevoegen
+## <a name="add-a-tou-language"></a>Een taal voor de gebruiksrecht overeenkomst toevoegen
 
-In de volgende procedure wordt beschreven hoe u een taal voor de gebruiks voorwaarden kunt toevoegen.
+In de volgende procedure wordt beschreven hoe u een taal van de gebruiksrecht overeenkomst toevoegt.
 
 1. Meld u aan bij Azure en navigeer naar **Gebruiksrechtovereenkomst** op [https://aka.ms/catou](https://aka.ms/catou).
 1. Selecteer de gebruiksrecht overeenkomst die u wilt bewerken.
@@ -344,9 +344,13 @@ Met de volgende procedure kunt u oude beleids regels voor gebruiks voorwaarden v
 
    Het is niet meer mogelijk om het beleid voor gebruiks voorwaarden te zien.
 
-## <a name="deleted-users-and-active-terms-of-use"></a>Verwijderde gebruikers en actieve gebruiks voorwaarden
+## <a name="user-acceptance-record-deletion"></a>Verwijdering van gebruikers acceptatie records
 
-Standaard blijft een verwijderde gebruiker gedurende 30 dagen in Azure AD aanwezig met de status Verwijderd. In deze periode kan de gebruiker eventueel door een beheerder worden teruggezet. Na dertig dagen wordt die gebruiker definitief verwijderd. Daarnaast kan een globale beheerder met behulp van de Azure Active Directory-Portal expliciet [een onlangs verwijderde gebruiker permanent verwijderen](../fundamentals/active-directory-users-restore.md) voordat die periode wordt bereikt. Een gebruiker is definitief verwijderd. volgende gegevens over die gebruiker worden verwijderd uit het beleid voor actieve gebruiks voorwaarden. Controle-informatie over verwijderde gebruikers blijft in het auditlogboek aanwezig.
+Gebruikers acceptatie records worden verwijderd:
+
+- Wanneer de beheerder de gebruiks voorwaarden expliciet verwijdert. Als dit gebeurt, worden alle acceptatie records die zijn gekoppeld aan die specifieke gebruiks voorwaarden ook verwijderd.
+- Wanneer de Tenant de Azure Active Directory Premium licentie kwijtraakt.
+- Wanneer de Tenant wordt verwijderd.
 
 ## <a name="policy-changes"></a>Beleidswijzigingen
 

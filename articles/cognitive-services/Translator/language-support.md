@@ -10,12 +10,12 @@ ms.subservice: translator-text
 ms.topic: reference
 ms.date: 06/10/2020
 ms.author: lajanuar
-ms.openlocfilehash: a218888a094c30b7672fd22c255f6a352422b878
-ms.sourcegitcommit: 100390fefd8f1c48173c51b71650c8ca1b26f711
+ms.openlocfilehash: 935a9e92de88c2519dc1a1042315d204e8f60099
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98896847"
+ms.locfileid: "98919915"
 ---
 # <a name="language-and-region-support-for-text-and-speech-translation"></a>Ondersteuning van talen en regio's voor tekst-en spraak omzetting
 
@@ -68,6 +68,7 @@ Translator ondersteunt de volgende talen voor tekst vertaling.
 | Hongaars | `hu` |
 | IJslands | `is` |
 | Indonesisch | `id` |
+| Inuktitut | `iu` |
 | Iers | `ga` |
 | Italiaans | `it` |
 | Japans | `ja` |

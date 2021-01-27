@@ -2,13 +2,13 @@
 title: Zelfstudie - On-premises omgevingen peeren met een privécloud
 description: Meer informatie over hoe u ExpressRoute Global Reach-peering maakt met een privécloud in een Azure VMware Solution.
 ms.topic: tutorial
-ms.date: 1/5/2021
-ms.openlocfilehash: 613aece6ed548f70840349e017de4416883d6cf3
-ms.sourcegitcommit: 67b44a02af0c8d615b35ec5e57a29d21419d7668
-ms.translationtype: HT
+ms.date: 01/27/2021
+ms.openlocfilehash: e7b1e349f67fe63f63183c0ff6d1522498c65f8c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/06/2021
-ms.locfileid: "97913155"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918718"
 ---
 # <a name="tutorial-peer-on-premises-environments-to-a-private-cloud"></a>Zelfstudie: On-premises omgevingen peeren met een privécloud
 
@@ -33,7 +33,7 @@ Raadpleeg de documentatie over het [inschakelen van connectiviteit in verschille
 - Vastgelegde connectiviteit naar en van een Azure VMware Solution-privécloud met een ExpressRoute-circuit die is gekoppeld aan een ExpressRoute-gateway in een virtueel Azure-netwerk (VNet). Dit is _circuit 2_ vanuit procedures voor peering.  
 - Een afzonderlijk, functionerend ExpressRoute-circuit dat wordt gebruikt om on-premises omgevingen te verbinden met Azure. Dit is _circuit 1_ vanuit het perspectief van de procedures voor peering.
 - Een/29 niet-overlappend [blok met netwerkadressen](../expressroute/expressroute-routing.md#ip-addresses-used-for-peerings) voor de ExpressRoute Global Reach-peering.
-- Controleer of alle routers, inclusief de service van de ExpressRoute-provider, ASN (Autonomous System Number) van 4 bytes ondersteunen. Azure VMware Solution maakt gebruik van openbare ASN's van 4 bytes om routes te adverteren.
+- Zorg ervoor dat alle gateways, met inbegrip van de service van de ExpressRoute-provider, 4-bytes autonoom systeem nummer (ASN) ondersteunen. De Azure VMware-oplossing maakt gebruik van 4-byte open bare Asn's voor het adverteren van routes.
 
 > [!TIP]
 > In de context van deze vereisten is uw on-premises ExpressRoute-circuit _circuit 1_ en het ExpressRoute-circuit van de privécloud in een ander abonnement _circuit 2_. 

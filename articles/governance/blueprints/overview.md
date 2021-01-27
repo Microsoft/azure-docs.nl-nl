@@ -1,14 +1,14 @@
 ---
 title: Overzicht van Azure Blueprints
 description: Azure Blueprints is een service in waarmee u artefacten kunt maken, definiëren en implementeren in uw Azure-omgeving.
-ms.date: 09/30/2020
+ms.date: 01/27/2021
 ms.topic: overview
-ms.openlocfilehash: 0dbf5ab54b694399c9d15cce84e8eca34a5d924e
-ms.sourcegitcommit: b437bd3b9c9802ec6430d9f078c372c2a411f11f
-ms.translationtype: HT
+ms.openlocfilehash: f4ba77f5fcb376bf600d94997b0d6ba569f04f82
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91892724"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919339"
 ---
 # <a name="what-is-azure-blueprints"></a>Wat is Azure Blueprints?
 
@@ -31,7 +31,7 @@ Bijna alles dat u voor implementatie in Azure Blueprints wilt opnemen, kan worde
 
 Met Azure Blueprints blijft de relatie tussen de blauwdrukdefinitie (wat _moet worden_ geïmplementeerd) en de blauwdruktoewijzing (wat _is_ geïmplementeerd) behouden. Deze verbinding ondersteunt verbeterde tracering en controle van implementaties. Met Azure Blueprints kunt u bovendien in één keer een upgrade uitvoeren van meerdere abonnementen die zijn onderworpen aan dezelfde blauwdruk.
 
-U hoeft niet te kiezen tussen een ARM-sjabloon en een blauwdruk. Elke blauwdruk kan bestaan uit nul of meer ARM-sjabloon_artefacten_. Deze ondersteuning betekent dat eerdere inspanningen om een ​​bibliotheek met ARM-sjablonen te ontwikkelen en te onderhouden, in Blueprints kunnen worden hergebruikt.
+U hoeft niet te kiezen tussen een ARM-sjabloon en een blauwdruk. Elke blauwdruk kan bestaan uit nul of meer ARM-sjabloon _artefacten_. Deze ondersteuning betekent dat eerdere inspanningen om een ​​bibliotheek met ARM-sjablonen te ontwikkelen en te onderhouden, in Blueprints kunnen worden hergebruikt.
 
 ## <a name="how-its-different-from-azure-policy"></a>Wat is het verschil met Azure Policy?
 

@@ -10,12 +10,12 @@ ms.subservice: sql-dw
 ms.date: 02/02/2019
 ms.author: anvang
 ms.reviewer: jrasnick
-ms.openlocfilehash: 1c5bc4400e99fb1c24e321e623aaee523b9c7383
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e1565d4f7792dca5242965d11c58faa90e2222d3
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "85210980"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920372"
 ---
 # <a name="use-maintenance-schedules-to-manage-service-updates-and-maintenance"></a>Onderhouds planningen gebruiken voor het beheren van service-updates en-onderhoud
 
@@ -38,7 +38,7 @@ Dankzij de integratie met Service Health meldingen en de Resource Health control
 Er wordt een melding van 24 uur voorgeschoten vóór alle onderhouds gebeurtenissen die niet voor de DWC400c en lagere lagen zijn.
 
 > [!NOTE]
-> In het geval dat er een essentiële update moet worden geïmplementeerd, kunnen geavanceerde meldings tijden aanzienlijk worden verkleind.
+> In het geval dat er een essentiële update moet worden geïmplementeerd, kunnen geavanceerde meldings tijden aanzienlijk worden verkleind. Dit kan zich voordoen buiten een geïdentificeerd onderhouds venster vanwege de kritieke aard van de update.
 
 Als u een voorschot bericht hebt ontvangen dat er onderhoud plaatsvindt, maar onderhoud niet kan worden uitgevoerd tijdens de periode in de melding, ontvangt u een melding over annulering. Het onderhoud wordt vervolgens hervat tijdens de volgende geplande onderhouds periode.
 
@@ -54,9 +54,9 @@ Standaard wordt voor alle nieuw gemaakte data warehouse-instanties een primair e
 
 Voer de volgende stappen uit om de onderhouds planning weer te geven die is toegepast op uw Synapse SQL-groep:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Selecteer de Synapse-SQL-groep die u wilt weer geven.
-3. De geselecteerde Synapse SQL-pool wordt geopend op de Blade overzicht. De onderhouds planning die wordt toegepast op het Data Warehouse wordt onder **onderhouds planning**weer gegeven.
+3. De geselecteerde Synapse SQL-pool wordt geopend op de Blade overzicht. De onderhouds planning die wordt toegepast op het Data Warehouse wordt onder **onderhouds planning** weer gegeven.
 
 ![Blade overzicht](./media/maintenance-scheduling/clear-overview-blade.PNG)
 
@@ -70,7 +70,7 @@ Het primaire en het secundaire Windows-venster moeten verschillende datumbereike
 
 Voer de volgende stappen uit om de onderhouds planning voor uw Synapse SQL-groep te wijzigen:
 
-1. Meld u aan bij de [Azure-portal](https://portal.azure.com/).
+1. Meld u aan bij [Azure Portal](https://portal.azure.com/).
 2. Selecteer de Synapse-SQL-groep die u wilt bijwerken. De pagina wordt geopend op de Blade overzicht.
 Open de pagina voor onderhouds plannings instellingen door de koppeling **overzicht van onderhouds planning** te selecteren op de Blade overzicht. U kunt ook de optie **onderhouds planning** selecteren in het menu resource aan de linkerkant.
 

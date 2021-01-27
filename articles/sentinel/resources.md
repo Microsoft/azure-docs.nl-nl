@@ -13,14 +13,14 @@ ms.devlang: na
 ms.topic: conceptual
 ms.tgt_pltfrm: na
 ms.workload: na
-ms.date: 12/02/2019
+ms.date: 01/27/2021
 ms.author: yelevin
-ms.openlocfilehash: 2465cf74dbf4fbf074aed8f8e4097a236e628425
-ms.sourcegitcommit: 8e7316bd4c4991de62ea485adca30065e5b86c67
+ms.openlocfilehash: 11c5c77623fcc693210d5a42bf94c968e884fec3
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/17/2020
-ms.locfileid: "94660641"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920017"
 ---
 # <a name="useful-resources-for-working-with-azure-sentinel"></a>Nuttige bronnen voor het werken met Azure Sentinel
 
@@ -28,7 +28,7 @@ ms.locfileid: "94660641"
 
 Dit artikel bevat een lijst met bronnen die u kunnen helpen om meer informatie te krijgen over het werken met Azure Sentinel.
 
-Azure Logic Apps-connectors: <https://docs.microsoft.com/connectors/>
+- **Azure Logic apps-connectors**: <https://docs.microsoft.com/connectors/>
 
 
 ## <a name="auditing-and-reporting"></a>Controle en rapportage
@@ -86,10 +86,25 @@ U kunt deze gegevens weer geven door deze vanuit het Azure-activiteiten logboek 
 
 ## <a name="blogs-and-forums"></a>Blogs en forums
 
-Plaats uw vragen op de [TechCommunity ruimte](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bd-p/AzureSentinel) voor Azure Sentinel.
+Onze gebruikers horen graag!
 
-Bekijk Azure Sentinel-blog berichten van de [TechCommunity](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bg-p/AzureSentinelBlog) en [Microsoft Azure](https://azure.microsoft.com/blog/tag/azure-sentinel/).
+- Plaats **uw vragen** op de [TechCommunity ruimte](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bd-p/AzureSentinel) voor Azure Sentinel. 
+
+- **Suggesties voor verbeteringen verzenden** via ons [gebruikers spraak](https://feedback.azure.com/forums/920458-azure-sentinel) programma.
+
+- **Bekijk en geef een opmerking** over onze onderverklikker blog berichten van Azure:
+
+    - [TechCommunity](https://techcommunity.microsoft.com/t5/Azure-Sentinel/bg-p/AzureSentinelBlog) 
+    - [Microsoft Azure](https://azure.microsoft.com/blog/tag/azure-sentinel/)
+
+Zie voor meer informatie over de beveiliging en naleving van Azure de [Microsoft Azure beveiligings-en nalevings blog](https://techcommunity.microsoft.com/t5/microsoft-security-and/bg-p/MicrosoftSecurityandCompliance).
 
 
 ## <a name="next-steps"></a>Volgende stappen
-In dit document hebt u een lijst met resources die handig zijn wanneer u met Azure Sentinel werkt. U vindt aanvullende informatie over de beveiliging en naleving van Azure in de [Microsoft Azure beveiligings-en nalevings blog](/archive/blogs/azuresecurity/).
+
+> [!div class="nextstepaction"]
+> [Gebruik gecertificeerd.](/learn/paths/security-ops-sentinel/)
+
+> [!div class="nextstepaction"]
+> [Gebruiks Case verhalen van klanten lezen](https://customers.microsoft.com/en-us/search?sq=%22Azure%20Sentinel%20%22&ff=&p=0&so=story_publish_date%20desc)
+

@@ -1,14 +1,14 @@
 ---
 title: 'Quickstart: Uw eerste portalquery'
 description: In deze quickstart volgt u de stappen om uw eerste query vanuit de Azure-portal uit te voeren met behulp van Azure Resource Graph Explorer.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: b5f5203b3842ebc3edbd97bca1ca3c101f47e397
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
-ms.translationtype: HT
+ms.openlocfilehash: cb62a1ae3a29a7aae793fcee6fd896fe0260dc10
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057379"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920094"
 ---
 # <a name="quickstart-run-your-first-resource-graph-query-using-azure-resource-graph-explorer"></a>Quickstart: Uw eerste Resource Graph-query uitvoeren met Azure Resource Graph Explorer
 
@@ -94,7 +94,7 @@ Als u voorbeelden van Resource Graph-query's wilt bekijken of als u wilt weten h
 
 - [Resource Graph Explorer-voorbeelddashboard 2](https://github.com/Azure-Samples/Governance/blob/master/src/resource-graph/portal-dashboards/sample-2/resourcegraphexplorer-sample-2.json)
 
-  :::image type="content" source="./media/arge-sample2-small.png" alt-text="Voorbeeldafbeelding van voorbeelddashboard 1" lightbox="./media/arge-sample2-large.png":::
+  :::image type="content" source="./media/arge-sample2-small.png" alt-text="Voorbeeldafbeelding van voorbeelddashboard 2" lightbox="./media/arge-sample2-large.png":::
 
 > [!NOTE]
 > De aantallen en grafieken in de bovenstaande schermafbeeldingen van de voorbeelddashboards kunnen per Azure-omgeving verschillen.

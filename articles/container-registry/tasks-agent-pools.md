@@ -4,12 +4,12 @@ description: Stel een toegewezen Compute pool (agent groep) in het REGI ster in 
 ms.topic: article
 ms.date: 10/12/2020
 ms.custom: references_regions, devx-track-azurecli
-ms.openlocfilehash: 94956af14aad2b62e6455f443329bcd3232095c0
-ms.sourcegitcommit: 0a9df8ec14ab332d939b49f7b72dea217c8b3e1e
+ms.openlocfilehash: eeb9a71854f52da5c1a9f4befae93c377ad67b05
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/18/2020
-ms.locfileid: "94844911"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920304"
 ---
 # <a name="run-an-acr-task-on-a-dedicated-agent-pool"></a>Een ACR-taak uitvoeren op een toegewezen agent groep
 
@@ -95,11 +95,11 @@ Taak agent-Pools hebben toegang tot de volgende Azure-Services nodig. De volgend
 
 | Richting | Protocol | Bron         | Bronpoort | Doel          | Doel poort | Gebruikt    |
 |-----------|----------|----------------|-------------|----------------------|-----------|---------|
-| Uitgaand  | TCP      | VirtualNetwork | Elk         | AzureKeyVault        | 443       | Standaard |
-| Uitgaand  | TCP      | VirtualNetwork | Elk         | Storage              | 443       | Standaard |
-| Uitgaand  | TCP      | VirtualNetwork | Elk         | EventHub             | 443       | Standaard |
-| Uitgaand  | TCP      | VirtualNetwork | Elk         | AzureActiveDirectory | 443       | Standaard |
-| Uitgaand  | TCP      | VirtualNetwork | Elk         | AzureMonitor         | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Alle         | AzureKeyVault        | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Alle         | Storage              | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Alle         | EventHub             | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Alle         | AzureActiveDirectory | 443       | Standaard |
+| Uitgaand  | TCP      | VirtualNetwork | Alle         | AzureMonitor         | 443       | Standaard |
 
 > [!NOTE]
 > Als uw taken extra resources van het open bare Internet vereisen, voegt u de bijbehorende regels toe. Er zijn bijvoorbeeld aanvullende regels nodig voor het uitvoeren van een docker-taak waarmee de basis installatie kopieën worden opgehaald uit docker hub of een NuGet-pakket wordt hersteld.
@@ -139,7 +139,7 @@ az acr build \
     --agent-pool myagentpool \
     --image myimage:mytag \
     --file Dockerfile \
-    https://github.com/Azure-Samples/acr-build-helloworld-node.git
+    https://github.com/Azure-Samples/acr-build-helloworld-node.git#main
 ```
 
 ### <a name="automatically-triggered-task"></a>Automatisch geactiveerde taak
@@ -153,7 +153,7 @@ az acr task create \
     --image myimage:mytag \
     --schedule "0 21 * * *" \
     --file Dockerfile \
-    --context https://github.com/Azure-Samples/acr-build-helloworld-node.git \
+    --context https://github.com/Azure-Samples/acr-build-helloworld-node.git#main \
     --commit-trigger-enabled false
 ```
 

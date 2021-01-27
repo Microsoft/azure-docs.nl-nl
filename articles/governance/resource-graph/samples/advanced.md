@@ -1,14 +1,14 @@
 ---
 title: Voorbeelden van geavanceerde query's
 description: Gebruik Azure Resource Graph voor het uitvoeren van enkele geavanceerde query's, waaronder het werken met kolommen, het opvragen van alle gebruikte tags en het vinden van resources met behulp van reguliere expressies.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: sample
-ms.openlocfilehash: dff4b06cc5cf4385820c7f6251efaae792d9c22d
-ms.sourcegitcommit: a43a59e44c14d349d597c3d2fd2bc779989c71d7
-ms.translationtype: HT
+ms.openlocfilehash: b0a13fb798a9403b240c97fb207bf9b76e01028f
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/25/2020
-ms.locfileid: "96005398"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918867"
 ---
 # <a name="advanced-resource-graph-query-samples"></a>Geavanceerde queryvoorbeelden van Resource Graph
 

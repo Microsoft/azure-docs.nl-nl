@@ -6,12 +6,12 @@ ms.topic: conceptual
 author: rboucher
 ms.author: robb
 ms.date: 09/16/2020
-ms.openlocfilehash: a5cbbed3881433121f5ab811082969bc3c6c4f7f
-ms.sourcegitcommit: 8a74ab1beba4522367aef8cb39c92c1147d5ec13
+ms.openlocfilehash: adcc894db630bba11e84e2f277705d2f31caf7dc
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/20/2021
-ms.locfileid: "98609941"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920220"
 ---
 # <a name="azure-monitor-logs-dedicated-clusters"></a>Azure Monitor logboeken toegewezen clusters
 
@@ -25,9 +25,6 @@ De mogelijkheden die toegewezen clusters vereisen zijn:
 - **[Meerdere werk ruimten](../log-query/cross-workspace-query.md)** : als een klant meer dan één werk ruimte gebruikt voor productie, kan het zinvol zijn om een toegewezen cluster te gebruiken. Query's in meerdere werk ruimten worden sneller uitgevoerd als alle werk ruimten zich op hetzelfde cluster bevinden. Het kan ook rendabeler zijn om toegewezen cluster te gebruiken, omdat de toegewezen capaciteits reserverings lagen rekening houden met alle cluster opname en van toepassing zijn op alle werk ruimten, zelfs als ze klein zijn en niet in aanmerking komen voor de korting voor capaciteits reservering.
 
 Voor toegewezen clusters moeten klanten een capaciteit van ten minste 1 TB gegevens opname per dag door voeren. Migratie naar een toegewezen cluster is eenvoudig. Er is geen gegevens verlies of onderbreking van de service. 
-
-> [!IMPORTANT]
-> Toegewezen clusters zijn goedgekeurd en volledig ondersteund voor productie-implementaties. Vanwege tijdelijke capaciteits beperkingen, hebben we echter uw voorafgaande registratie nodig voor het gebruik van de functie. Gebruik uw contact personen in micro soft om uw abonnementen-Id's op te geven.
 
 ## <a name="management"></a>Beheer 
 

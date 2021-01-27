@@ -4,12 +4,12 @@ description: Meer informatie over het verbinden van privé met een Azure Batch-a
 ms.topic: how-to
 ms.date: 09/28/2020
 ms.custom: references_regions
-ms.openlocfilehash: 38d92d787a8d01dd3f87e1cdcacd336982c8c910
-ms.sourcegitcommit: 1d6ec4b6f60b7d9759269ce55b00c5ac5fb57d32
+ms.openlocfilehash: d2e9d36e9e964f2e9f9a5a986fbf55d19b3069d8
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/13/2020
-ms.locfileid: "94579552"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920000"
 ---
 # <a name="use-private-endpoints-with-azure-batch-accounts"></a>Privé-eindpunten gebruiken met Azure Batch-accounts
 
@@ -20,7 +20,7 @@ Met behulp van een [persoonlijke Azure-koppeling](../private-link/private-link-o
 Met persoonlijke koppeling kunnen gebruikers toegang krijgen tot een Azure Batch-account vanuit het virtuele netwerk of via een peered virtueel netwerk. Resources die zijn toegewezen aan een privé koppeling, zijn ook on-premises toegankelijk via privé-peering via VPN of [Azure ExpressRoute](../expressroute/expressroute-introduction.md). U kunt verbinding maken met een Azure Batch account dat is geconfigureerd met een persoonlijke koppeling met behulp van de [automatische of hand matige goedkeurings methode](../private-link/private-endpoint-overview.md#access-to-a-private-link-resource-using-approval-workflow).
 
 > [!IMPORTANT]
-> Ondersteuning voor particuliere connectiviteit in Azure Batch is momenteel beschikbaar voor alle open bare regio's, met uitzonde ring van Duitsland-centraal en Duitsland-noordoost.
+> Ondersteuning voor particuliere connectiviteit in Azure Batch is momenteel beschikbaar voor alle regio's, met uitzonde ring van Duitsland-centraal, Duitsland-noordoost, China-oost, China-oost 2, China-noord en China-noord 2.
 
 In dit artikel worden de stappen beschreven voor het maken van een persoonlijk batch-account en het openen met behulp van een persoonlijk eind punt.
 
@@ -37,10 +37,10 @@ Gebruik de volgende stappen om een persoonlijk batch-account te maken met behulp
 6. Stel in het deel venster **resource** het **resource type** in op **Microsoft.BatCH/batchAccounts**. Selecteer het persoonlijke batch-account dat u wilt openen en selecteer vervolgens **volgende: Configuratie**.
    :::image type="content" source="media/private-connectivity/create-private-endpoint.png" alt-text="Een persoonlijk eind punt maken-resource venster":::
 7. Voer in het deel venster **configuratie** de volgende gegevens in of Selecteer deze:
-   - **Virtueel netwerk** : Selecteer uw virtuele netwerk.
-   - **Subnet** : Selecteer uw subnet.
-   - **Integreren met een privé-DNS-zone** : Selecteer **Ja**. Als u privé wilt verbinden met uw persoonlijke eind punt, moet u een DNS-record hebben. We raden u aan uw persoonlijke eind punt te integreren met een privé-DNS-zone. U kunt ook uw eigen DNS-servers gebruiken of DNS-records maken met behulp van de host-bestanden op uw virtuele machines.
-   - **Privé-DNS zone** : Selecteer privatelink. \<region\> . batch.azure.com. De privé-DNS-zone wordt automatisch bepaald. U kunt deze niet wijzigen met behulp van de Azure Portal.
+   - **Virtueel netwerk**: Selecteer uw virtuele netwerk.
+   - **Subnet**: Selecteer uw subnet.
+   - **Integreren met een privé-DNS-zone**: Selecteer **Ja**. Als u privé wilt verbinden met uw persoonlijke eind punt, moet u een DNS-record hebben. We raden u aan uw persoonlijke eind punt te integreren met een privé-DNS-zone. U kunt ook uw eigen DNS-servers gebruiken of DNS-records maken met behulp van de host-bestanden op uw virtuele machines.
+   - **Privé-DNS zone**: Selecteer privatelink. \<region\> . batch.azure.com. De privé-DNS-zone wordt automatisch bepaald. U kunt deze niet wijzigen met behulp van de Azure Portal.
 8. Selecteer **controleren + maken** en wacht tot de configuratie is gevalideerd door Azure.
 9. Als u het bericht **Validatie geslaagd** ziet, selecteert u **Maken**.
 

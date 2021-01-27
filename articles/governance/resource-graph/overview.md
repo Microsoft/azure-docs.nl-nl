@@ -1,14 +1,14 @@
 ---
 title: Overzicht van Azure Resource Graph
 description: Meer informatie over hoe u met de Azure Resource Graph-service complexe query's op schaal kunt uitvoeren op resources in abonnementen en tenants.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: overview
-ms.openlocfilehash: 8e61dadc44a2b07066f7bac761c366c746cef1f1
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
-ms.translationtype: HT
+ms.openlocfilehash: b5df124d07b8ecfb20f5dec08830d8156e8df2cd
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057770"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919138"
 ---
 # <a name="what-is-azure-resource-graph"></a>Wat is Azure Resource Graph?
 

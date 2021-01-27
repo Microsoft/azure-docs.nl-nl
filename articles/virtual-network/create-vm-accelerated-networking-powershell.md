@@ -14,12 +14,12 @@ ms.tgt_pltfrm: vm-windows
 ms.workload: infrastructure
 ms.date: 04/15/2020
 ms.author: gsilva
-ms.openlocfilehash: b3728a2b67529bab0900d42b3e39140d9329bc83
-ms.sourcegitcommit: d59abc5bfad604909a107d05c5dc1b9a193214a8
+ms.openlocfilehash: b0ebb75530858a589c3166e21261e2f737fff50d
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/14/2021
-ms.locfileid: "98223632"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919966"
 ---
 # <a name="create-a-windows-vm-with-accelerated-networking-using-azure-powershell"></a>Een Windows-VM met versneld netwerken maken met behulp van Azure PowerShell
 
@@ -61,11 +61,9 @@ De volgende distributies worden direct ondersteund vanuit de Azure-galerie:
 
 ### <a name="supported-vm-instances"></a>Ondersteunde VM-exemplaren
 
-Versnelde netwerken worden ondersteund in de meeste algemene doel stellingen en met Compute geoptimaliseerde exemplaar grootten met twee of meer virtuele Cpu's (Vcpu's).  Deze ondersteunde reeksen zijn: dv2/DSv2 en F/FS.
+Versnelde netwerken worden ondersteund in de meeste algemene doel stellingen en met Compute geoptimaliseerde exemplaar grootten met twee of meer Vcpu's. Op instanties die HyperThreading ondersteunen, wordt versneld netwerken ondersteund op VM-exemplaren met vier of meer Vcpu's. 
 
-Op instanties die HyperThreading ondersteunen, wordt versneld netwerken ondersteund op VM-exemplaren met vier of meer Vcpu's. Ondersteunde reeksen zijn: D/Dsv3, D/Dsv4, da/Dasv4, E/Esv3, EA/Easv4, Fsv2, Lsv2, MS/MMS en MS/Mmsv2.
-
-Zie [grootten voor virtuele Windows-machines in azure](../virtual-machines/sizes.md?toc=%2fazure%2fvirtual-network%2ftoc.json)voor meer informatie over VM-exemplaren.
+Ondersteuning voor versneld netwerken vindt u in de documentatie over de grootte van de afzonderlijke [virtuele machines](../virtual-machines/sizes.md) . 
 
 ### <a name="custom-images"></a>Aangepaste installatiekopieën
 

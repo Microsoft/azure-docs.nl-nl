@@ -13,12 +13,12 @@ ms.custom:
 - mqtt
 - 'Role: Cloud Development'
 - 'Role: IoT Device'
-ms.openlocfilehash: 1792535fab79ed20bdf77f96b4fc39f13b0c7bbb
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: e2578b47d27ef062d83ba8621a49e9a8f439897c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "90015994"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919022"
 ---
 # <a name="reference---choose-a-communication-protocol"></a>Referentie-Kies een communicatie protocol
 
@@ -42,7 +42,7 @@ De volgende tabel bevat de aanbevelingen op hoog niveau voor uw keuze van het Pr
 
 Houd rekening met de volgende punten wanneer u uw protocol kiest voor communicatie aan de apparaten:
 
-* **Patroon van Cloud naar apparaat**. HTTPS heeft geen efficiënte manier voor het implementeren van server push. Wanneer u HTTPS gebruikt, worden de apparaten gecontroleerd IoT Hub voor Cloud-naar-apparaat-berichten. Deze aanpak is inefficiënt voor zowel het apparaat als het IoT Hub. Onder de huidige HTTPS-richt lijnen moet elk apparaat elke 25 minuten een poll voor berichten ontvangen. MQTT en AMQP ondersteunings server push bij het ontvangen van Cloud-naar-apparaat-berichten. Ze scha kelen onmiddellijke push berichten van IoT Hub naar het apparaat. Als leverings latentie een probleem is, zijn MQTT of AMQP de beste protocollen om te gebruiken. Voor zelden verbonden apparaten werkt HTTPS ook.
+* **Patroon van Cloud naar apparaat**. HTTPS heeft geen efficiënte manier voor het implementeren van server push. Wanneer u HTTPS gebruikt, worden de apparaten gecontroleerd IoT Hub voor Cloud-naar-apparaat-berichten. Deze aanpak is inefficiënt voor zowel het apparaat als het IoT Hub. Onder de huidige HTTPS-richt lijnen moet elk apparaat elke 25 minuten een poll voor berichten ontvangen. Het uitgeven van meer HTTPS resulteert in IoT Hub het beperken van de aanvragen. MQTT en AMQP ondersteunings server push bij het ontvangen van Cloud-naar-apparaat-berichten. Ze scha kelen onmiddellijke push berichten van IoT Hub naar het apparaat. Als leverings latentie een probleem is, zijn MQTT of AMQP de beste protocollen om te gebruiken. Voor zelden verbonden apparaten werkt HTTPS ook.
 
 * **Veld gateways**. MQTT en HTTPS ondersteunen per TLS-verbinding slechts één apparaat-ID, plus referenties. Daarom worden deze protocollen niet ondersteund voor [veld Gateway scenario's](iot-hub-devguide-endpoints.md#field-gateways) waarvoor multiplex berichten moeten worden gebruikt met meerdere apparaat-id's over een enkele of een pool van upstream-verbindingen naar IOT hub. Dergelijke gateways kunnen gebruikmaken van een protocol dat ondersteuning biedt voor meerdere apparaat-id's per verbinding, zoals AMQP, voor hun upstream-verkeer.
 

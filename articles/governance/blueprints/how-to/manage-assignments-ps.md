@@ -1,14 +1,14 @@
 ---
 title: Toewijzingen beheren met Power shell
 description: Meer informatie over het beheren van blauw druk-toewijzingen met de officiële Azure blauw drukken Power shell-module, AZ. blauw druk.
-ms.date: 08/27/2020
+ms.date: 01/27/2021
 ms.topic: how-to
-ms.openlocfilehash: 3bcb3731bd1270497945fa86406d08b2f9750c85
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: d60fb887e07b4697b8e86a4e2fd74a735ac0bb58
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "89051403"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919373"
 ---
 # <a name="how-to-manage-assignments-with-powershell"></a>Toewijzingen beheren met Power shell
 
@@ -49,7 +49,7 @@ De Azure blauw drukken-module voor Power shell is **AZ. blauw druk**.
 ## <a name="get-blueprint-definitions"></a>Blauw drukken-definities ophalen
 
 De eerste stap bij het werken met een toewijzing wordt vaak een verwijzing naar de definitie van een blauw druk opgehaald.
-De `Get-AzBlueprint` cmdlet haalt een of meer blauw drukken-definities op. De cmdlet kan blauw drukken-definities ophalen van een beheer groep met `-ManagementGroupId {mgId}` of een abonnement met `-SubscriptionId {subId}` . De para meter **name** haalt een blauw druk-definitie op, maar moet worden gebruikt met **ManagementGroupId** of **SubscriptionId**. **Versie** kan worden gebruikt met **naam** om duidelijk te zijn over welke blauw druk-definitie wordt geretourneerd. In plaats van **versie**wordt de `-LatestPublished` meest recent gepubliceerde versie door de switch oppakken.
+De `Get-AzBlueprint` cmdlet haalt een of meer blauw drukken-definities op. De cmdlet kan blauw drukken-definities ophalen van een beheer groep met `-ManagementGroupId {mgId}` of een abonnement met `-SubscriptionId {subId}` . De para meter **name** haalt een blauw druk-definitie op, maar moet worden gebruikt met **ManagementGroupId** of **SubscriptionId**. **Versie** kan worden gebruikt met **naam** om duidelijk te zijn over welke blauw druk-definitie wordt geretourneerd. In plaats van **versie** wordt de `-LatestPublished` meest recent gepubliceerde versie door de switch oppakken.
 
 In het volgende voor beeld worden `Get-AzBlueprint` alle versies van een blauw druk-definitie met de naam ' 101-blauw drukken-definitie-abonnement ' opgehaald van een specifiek abonnement dat wordt weer gegeven als `{subId}` :
 
@@ -153,7 +153,7 @@ Als de blauw druk toewijzing nog niet bestaat, kunt u deze maken met de `New-AzB
 - **Para meter** (optioneel)
   - Een [hash-tabel](/powershell/module/microsoft.powershell.core/about/about_hash_tables) met sleutel-waardeparen voor het instellen van [dynamische para meters](../concepts/parameters.md#dynamic-parameters) voor de toewijzing van de blauw druk
   - De standaard waarde voor een dynamische para meter is de **DefaultValue** in de definitie
-  - Als er geen para meter is ingesteld en geen **DefaultValue**heeft, is de para meter niet optioneel
+  - Als er geen para meter is ingesteld en geen **DefaultValue** heeft, is de para meter niet optioneel
 
     > [!NOTE]
     > De **para meter** biedt geen ondersteuning voor secureStrings.
@@ -161,14 +161,14 @@ Als de blauw druk toewijzing nog niet bestaat, kunt u deze maken met de `New-AzB
 - **ResourceGroupParameter** (optioneel)
   - Een [hash-tabel](/powershell/module/microsoft.powershell.core/about/about_hash_tables) met bron groeps artefacten
   - Elke tijdelijke aanduiding voor een resource groeps artefact heeft sleutel/waarde-paren voor het dynamisch instellen van de **naam** en **locatie** van het bron groeps artefact
-  - Als er geen para meter voor een resource groep is ingesteld en geen **DefaultValue**heeft, is de para meter van de resource groep niet optioneel
+  - Als er geen para meter voor een resource groep is ingesteld en geen **DefaultValue** heeft, is de para meter van de resource groep niet optioneel
 - **AssignmentFile** (optioneel)
   - Het pad naar de weer gave van een JSON-bestand van een blauw druk-toewijzing
-  - Deze para meter maakt deel uit van een Power shell-parameterset die alleen de **naam**, **blauw druk**en **SubscriptionId**bevat, plus de algemene para meters.
+  - Deze para meter maakt deel uit van een Power shell-parameterset die alleen de **naam**, **blauw druk** en **SubscriptionId** bevat, plus de algemene para meters.
 
 ### <a name="example-1-provide-parameters"></a>Voor beeld 1: para meters opgeven
 
-In het volgende voor beeld wordt een nieuwe toewijzing gemaakt van versie 1,1 van de blauw druk-definitie ' My-blauw ' die is opgehaald met `Get-AzBlueprint` , wordt de locatie van het beheerde identiteits-en toewijzings object ingesteld op ' westus2 ', worden de resources met _AllResourcesReadOnly_vergrendeld en worden de hash-tabellen ingesteld voor zowel **para meter** -als **ResourceGroupParameter** op een specifiek abonnement dat wordt weer gegeven als `{subId}` :
+In het volgende voor beeld wordt een nieuwe toewijzing gemaakt van versie 1,1 van de blauw druk-definitie ' My-blauw ' die is opgehaald met `Get-AzBlueprint` , wordt de locatie van het beheerde identiteits-en toewijzings object ingesteld op ' westus2 ', worden de resources met _AllResourcesReadOnly_ vergrendeld en worden de hash-tabellen ingesteld voor zowel **para meter** -als **ResourceGroupParameter** op een specifiek abonnement dat wordt weer gegeven als `{subId}` :
 
 ```azurepowershell-interactive
 # Login first with Connect-AzAccount if not using Cloud Shell
@@ -250,7 +250,7 @@ Voor een voor beeld van het definitie bestand van de JSON-toewijzing voor een do
 
 ## <a name="update-blueprint-assignments"></a>Blauw druk-toewijzingen bijwerken
 
-Soms is het nodig om een blauw druk-toewijzing bij te werken die al is gemaakt. De `Set-AzBlueprintAssignment` cmdlet verwerkt deze actie. De cmdlet krijgt de meeste van de para meters die door de cmdlet worden gebruikt `New-AzBlueprintAssignment` , waardoor alles dat is ingesteld voor de toewijzing, kan worden bijgewerkt. De uitzonde ringen zijn de _naam_, _blauw druk_en _SubscriptionId_. Alleen de beschik bare waarden worden bijgewerkt.
+Soms is het nodig om een blauw druk-toewijzing bij te werken die al is gemaakt. De `Set-AzBlueprintAssignment` cmdlet verwerkt deze actie. De cmdlet krijgt de meeste van de para meters die door de cmdlet worden gebruikt `New-AzBlueprintAssignment` , waardoor alles dat is ingesteld voor de toewijzing, kan worden bijgewerkt. De uitzonde ringen zijn de _naam_, _blauw druk_ en _SubscriptionId_. Alleen de beschik bare waarden worden bijgewerkt.
 
 Zie [regels voor het bijwerken van toewijzingen](./update-existing-assignments.md#rules-for-updating-assignments)voor informatie over wat er gebeurt bij het bijwerken van een blauw druk-toewijzing.
 
@@ -281,7 +281,7 @@ Zie [regels voor het bijwerken van toewijzingen](./update-existing-assignments.m
 - **Para meter** (optioneel)
   - Een [hash-tabel](/powershell/module/microsoft.powershell.core/about/about_hash_tables) met sleutel-waardeparen voor het instellen van [dynamische para meters](../concepts/parameters.md#dynamic-parameters) voor de toewijzing van de blauw druk
   - De standaard waarde voor een dynamische para meter is de **DefaultValue** in de definitie
-  - Als er geen para meter is ingesteld en geen **DefaultValue**heeft, is de para meter niet optioneel
+  - Als er geen para meter is ingesteld en geen **DefaultValue** heeft, is de para meter niet optioneel
 
     > [!NOTE]
     > De **para meter** biedt geen ondersteuning voor secureStrings.
@@ -289,7 +289,7 @@ Zie [regels voor het bijwerken van toewijzingen](./update-existing-assignments.m
 - **ResourceGroupParameter** (optioneel)
   - Een [hash-tabel](/powershell/module/microsoft.powershell.core/about/about_hash_tables) met bron groeps artefacten
   - Elke tijdelijke aanduiding voor een resource groeps artefact heeft sleutel/waarde-paren voor het dynamisch instellen van de **naam** en **locatie** van het bron groeps artefact
-  - Als er geen para meter voor een resource groep is ingesteld en geen **DefaultValue**heeft, is de para meter van de resource groep niet optioneel
+  - Als er geen para meter voor een resource groep is ingesteld en geen **DefaultValue** heeft, is de para meter van de resource groep niet optioneel
 
 In het volgende voor beeld wordt de toewijzing van versie 1,1 van de blauw druk-definitie ' mijn-blauw druk ' bijgewerkt met `Get-AzBlueprint` door de vergrendelings modus te wijzigen:
 

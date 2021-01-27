@@ -1,18 +1,18 @@
 ---
 title: Overzicht van blauwdrukvoorbeeld van Azure Security-benchmark
 description: Overzicht van het blauwdrukvoorbeeld van de Azure Security-benchmark. Met dit blauwdrukvoorbeeld kunnen klanten specifieke beheeropties bekijken.
-ms.date: 10/14/2020
+ms.date: 01/27/2021
 ms.topic: sample
-ms.openlocfilehash: 6b147ffd4efbf814b6119f5d7e90dc7af2ea2687
-ms.sourcegitcommit: 1b47921ae4298e7992c856b82cb8263470e9e6f9
-ms.translationtype: HT
+ms.openlocfilehash: 38a50970999965b6a86b8ce8882006c169f2dc5a
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/14/2020
-ms.locfileid: "92057583"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919236"
 ---
 # <a name="azure-security-benchmark-blueprint-sample"></a>Blauwdrukvoorbeeld van Azure Security-benchmark
 
-Het blauwdrukvoorbeeld voor de Azure Security-benchmark biedt handvatten voor governance met [Azure Policy](../../policy/overview.md), waarmee u bepaalde beheeropties van de [Azure Security-benchmark](../../../security/benchmarks/overview.md) kunt evalueren. Deze blauwdruk helpt klanten een kernset met beleid te implementeren voor architectuur die in Azure is geïmplementeerd en waarin zij beheeropties van de Azure Security-benchmark willen implementeren.
+Het voor beeld van Azure Security Bench Mark blauw drukken biedt governance-rails met [Azure Policy](../../policy/overview.md) waarmee u specifieke [Azure Security Bench Mark v1](../../../security/benchmarks/overview.md) -besturings elementen kunt beoordelen. Deze blauwdruk helpt klanten een kernset met beleid te implementeren voor architectuur die in Azure is geïmplementeerd en waarin zij beheeropties van de Azure Security-benchmark willen implementeren.
 
 ## <a name="control-mapping"></a>Toewijzing van beheeropties
 
@@ -37,7 +37,7 @@ Implementeer eerst het blauwdrukvoorbeeld door een nieuwe blauwdruk in uw omgevi
 
 1. Op de pagina **Aan de slag** aan de linkerkant selecteert u de knop **Maken** onder _Een blauwdruk maken_.
 
-1. Zoek het blauwdrukvoorbeeld **Azure Security-benchmark** onder _Andere voorbeelden_ en selecteer de naam om dit voorbeeld te selecteren.
+1. Zoek het voor beeld van **Azure Security Bench Mark v1** blauw druk onder _andere voor beelden_ en selecteer de naam om dit voor beeld te selecteren.
 
 1. Voer de _Basisinstellingen_ van het blauwdrukvoorbeeld in:
 

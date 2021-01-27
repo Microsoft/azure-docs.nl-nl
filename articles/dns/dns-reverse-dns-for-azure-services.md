@@ -11,12 +11,12 @@ ms.tgt_pltfrm: na
 ms.workload: infrastructure-services
 ms.date: 05/29/2017
 ms.author: rohink
-ms.openlocfilehash: 3adbf34e4c19a76c2b5b2b1968c7821f37965929
-ms.sourcegitcommit: cd9754373576d6767c06baccfd500ae88ea733e4
+ms.openlocfilehash: c72e17e601ebf87b0f344a4723159ae22abc81d1
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/20/2020
-ms.locfileid: "94965626"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919864"
 ---
 # <a name="configure-reverse-dns-for-services-hosted-in-azure"></a>Omgekeerde DNS configureren voor services die worden gehost in azure
 
@@ -33,7 +33,7 @@ Voordat u dit artikel leest, moet u bekend zijn met dit [overzicht van omgekeerd
 In Azure DNS worden reken bronnen (zoals virtuele machines, schaal sets voor virtuele machines of Service Fabric clusters) weer gegeven via een PublicIpAddress-resource. Omgekeerde DNS-Zoek opdrachten worden geconfigureerd met de eigenschap ReverseFqdn van de PublicIpAddress.
 
 
-Omgekeerde DNS wordt momenteel niet ondersteund voor de Azure App Service.
+Omgekeerde DNS wordt momenteel niet ondersteund voor de Azure App Service en Application Gateway.
 
 ## <a name="validation-of-reverse-dns-records"></a>Validatie van omgekeerde DNS-records
 

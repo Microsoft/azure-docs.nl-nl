@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 02/03/2020
 ms.author: jushiman
-ms.openlocfilehash: ba971919037230cb6c09e627fde448647063b5b9
-ms.sourcegitcommit: d60976768dec91724d94430fb6fc9498fdc1db37
+ms.openlocfilehash: a08b5db19aab19402aa3c93cfa23ce7b39a0a838
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/02/2020
-ms.locfileid: "96498418"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918685"
 ---
 # <a name="lsv2-series"></a>Lsv2-serie
 
@@ -32,6 +32,7 @@ De Lsv2-serie biedt een hoge door Voer, lage latentie, rechtstreeks toegewezen l
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 Bursting: ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen (GiB) | Tijdelijke schijf<sup>1</sup> (GIB) | NVMe-schijven<sup>2</sup> | NVMe-schijf doorvoer<sup>3</sup> (IOPS lezen/Mbps) | Door Voer van gegevens schijf in cache (IOPs/MBps)<sup>4</sup> | Max. door Voer van gegevens schijf met burst uncache (IOPs/MBps)<sup>5</sup>| Maximum aantal gegevens schijven | Max. aantal NIC's | Verwachte netwerk bandbreedte (Mbps) |
@@ -75,9 +76,9 @@ voor <sup>6</sup> vm's met meer dan 64 vcpu's is een van de volgende ondersteund
 
 ## <a name="other-sizes-and-information"></a>Andere grootten en informatie
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

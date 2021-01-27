@@ -7,12 +7,12 @@ ms.subservice: sizes
 ms.topic: conceptual
 ms.date: 03/31/2020
 ms.author: jushiman
-ms.openlocfilehash: fe63f9d5a9d215a31a56d7214170d86f46a4e4a2
-ms.sourcegitcommit: 829d951d5c90442a38012daaf77e86046018e5b9
+ms.openlocfilehash: 972eaf3aa20324bc68ce24d2b7c0db041bb8baa4
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/09/2020
-ms.locfileid: "91653652"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98918633"
 ---
 # <a name="m-series"></a>M-serie
 
@@ -27,6 +27,7 @@ Intel Hyper-Threading-technologie van de M-serie-VM &reg; .
 [Updates](maintenance-and-updates.md)voor het behouden van geheugen: niet ondersteund<br>
 [Ondersteuning](generation-2.md)voor het genereren van vm's: generatie 1 en 2<br>
 [Write Accelerator](./how-to-enable-write-accelerator.md): ondersteund<br>
+[Versneld netwerken](../virtual-network/create-vm-accelerated-networking-cli.md): ondersteund<br>
 <br>
 
 | Grootte | vCPU | Geheugen: GiB | Tijdelijke opslag (SSD) GiB | Max. aantal gegevensschijven | Maxi maal cache geheugen en tijdelijke opslag doorvoer: IOPS/MBps (cache grootte in GiB) | Maxi maal aantal niet-opgeslagen schijf doorvoer: IOPS/MBps | Max. aantal NIC's|Verwachte netwerk bandbreedte (Mbps) |
@@ -46,7 +47,7 @@ Intel Hyper-Threading-technologie van de M-serie-VM &reg; .
 | Standard_M128 <sup>1</sup>     | 128 | 2048   | 14336 | 64 | 250000/1600 (2456)  | 80000/2000 | 8|32000 |
 | Standard_M128m <sup>1</sup>    | 128 | 3892   | 14336 | 64 | 250000/1600 (2456)  | 80000/2000 | 8|32000 |
 
-<sup>1</sup> voor meer dan 64 vCPU is een van deze ondersteunde gast-besturings systemen vereist: Windows Server 2016, Ubuntu 16,04 LTS, SLES 12 SP2 en Red Hat Enterprise Linux, CentOS 7,3 of Oracle Linux 7,3 met Lis 4.2.1.
+<sup>1</sup> voor meer dan 64 vCPU is een van de volgende ondersteunde gast versies vereist: Windows Server 2016, Ubuntu 16,04 LTS, SLES 12 SP2 en Red Hat Enterprise Linux, CentOS 7,3 of Oracle Linux 7,3 met Lis 4.2.1.
 
 <sup>2</sup> exemplaar is geïsoleerd voor hardware, speciaal voor één klant.
 
@@ -54,9 +55,9 @@ Intel Hyper-Threading-technologie van de M-serie-VM &reg; .
 
 ## <a name="other-sizes-and-information"></a>Andere grootten en informatie
 
-- [Algemeen doel](sizes-general.md)
-- [Geoptimaliseerd geheugen](sizes-memory.md)
-- [Geoptimaliseerde opslag](sizes-storage.md)
+- [Algemeen gebruik](sizes-general.md)
+- [Geoptimaliseerd voor geheugen](sizes-memory.md)
+- [Geoptimaliseerd voor opslag](sizes-storage.md)
 - [Geoptimaliseerde GPU](sizes-gpu.md)
 - [Krachtig rekenvermogen](sizes-hpc.md)
 - [Vorige generaties](sizes-previous-gen.md)

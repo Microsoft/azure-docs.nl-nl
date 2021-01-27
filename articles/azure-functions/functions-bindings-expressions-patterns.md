@@ -6,16 +6,16 @@ ms.topic: reference
 ms.custom: devx-track-csharp
 ms.date: 02/18/2019
 ms.author: cshoe
-ms.openlocfilehash: 161e3e7fbc5b343ee73142f0e968367c3cbfaa6b
-ms.sourcegitcommit: dd45ae4fc54f8267cda2ddf4a92ccd123464d411
+ms.openlocfilehash: 7245b0c0fb1e96959ef5dca4992cf52a38accb58
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 10/29/2020
-ms.locfileid: "92927410"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98920287"
 ---
 # <a name="azure-functions-binding-expression-patterns"></a>Expressie patronen voor de binding Azure Functions
 
-Een van de krach tigste functies van [Triggers en bindingen](./functions-triggers-bindings.md) is *binding expressies* . In de *function.jsop* bestand en in functie parameters en code kunt u expressies gebruiken die worden omgezet in waarden van verschillende bronnen.
+Een van de krach tigste functies van [Triggers en bindingen](./functions-triggers-bindings.md) is *binding expressies*. In de *function.jsop* bestand en in functie parameters en code kunt u expressies gebruiken die worden omgezet in waarden van verschillende bronnen.
 
 De meeste expressies worden geïdentificeerd door ze tussen accolades te plaatsen. Bijvoorbeeld, in een functie voor wachtrij activering, wordt `{queueTrigger}` omgezet in de tekst van de wachtrij berichten. Als de `path` eigenschap voor een BLOB-uitvoer binding is `container/{queueTrigger}` en de functie wordt geactiveerd door een wachtrij bericht `HelloWorld` , wordt een BLOB gemaakt met de naam `HelloWorld` .
 
@@ -164,6 +164,7 @@ Een Azure Queue-opslag trigger ondersteunt bijvoorbeeld de volgende eigenschappe
 Deze meta gegevens waarden zijn toegankelijk in *function.jsvoor* bestands eigenschappen. Stel bijvoorbeeld dat u een wachtrij trigger gebruikt en dat het wachtrij bericht de naam bevat van een blob die u wilt lezen. In het *function.js* bestand kunt u de `queueTrigger` eigenschap meta gegevens gebruiken in de `path` eigenschap blob, zoals wordt weer gegeven in het volgende voor beeld:
 
 ```json
+{
   "bindings": [
     {
       "name": "myQueueItem",
@@ -179,6 +180,7 @@ Deze meta gegevens waarden zijn toegankelijk in *function.jsvoor* bestands eigen
       "connection": "MyStorageConnection"
     }
   ]
+}
 ```
 
 Details van eigenschappen van meta gegevens voor elke trigger worden beschreven in het bijbehorende referentie artikel. Zie meta gegevens van de [wachtrij activeren](functions-bindings-storage-queue-trigger.md#message-metadata)voor een voor beeld. Documentatie is ook beschikbaar op het tabblad **integreren** van de portal, in de sectie **documentatie** onder het gedeelte bindings configuratie.  
@@ -292,7 +294,7 @@ public class BlobName
 
 ## <a name="create-guids"></a>GUID'S maken
 
-Met de `{rand-guid}` bindings expressie maakt u een GUID. Met het volgende BLOB-pad in een `function.json` bestand maakt u een blob met een naam als *50710cb5-84b9-4d87-9d83-a03d6976a682.txt* .
+Met de `{rand-guid}` bindings expressie maakt u een GUID. Met het volgende BLOB-pad in een `function.json` bestand maakt u een blob met een naam als *50710cb5-84b9-4d87-9d83-a03d6976a682.txt*.
 
 ```json
 {
@@ -305,7 +307,7 @@ Met de `{rand-guid}` bindings expressie maakt u een GUID. Met het volgende BLOB-
 
 ## <a name="current-time"></a>Huidige tijd
 
-De bindings expressie wordt `DateTime` omgezet in `DateTime.UtcNow` . Met het volgende BLOB-pad in een `function.json` bestand maakt u een blob met een naam als *2018-02-16T17-59-55Z.txt* .
+De bindings expressie wordt `DateTime` omgezet in `DateTime.UtcNow` . Met het volgende BLOB-pad in een `function.json` bestand maakt u een blob met een naam als *2018-02-16T17-59-55Z.txt*.
 
 ```json
 {

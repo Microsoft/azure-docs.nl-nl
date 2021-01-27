@@ -1,14 +1,14 @@
 ---
 title: 'Quickstart: Een blauwdruk maken met de Azure CLI'
 description: In deze quickstart gebruikt u Azure Blueprints om artefacten te maken, te definiëren en te implementeren met de Azure CLI.
-ms.date: 01/26/2021
+ms.date: 01/27/2021
 ms.topic: quickstart
-ms.openlocfilehash: a0e44925bdec78b8b02a50c8b3f91db0bb764976
-ms.sourcegitcommit: aaa65bd769eb2e234e42cfb07d7d459a2cc273ab
+ms.openlocfilehash: 6ce3031c93f973c2efb251fad371a6f3750ae0fd
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
 ms.lasthandoff: 01/27/2021
-ms.locfileid: "98875191"
+ms.locfileid: "98920237"
 ---
 # <a name="quickstart-define-and-assign-an-azure-blueprint-with-azure-cli"></a>Quickstart: Een Azure Blueprint definiëren en toewijzen met Azure CLI
 
@@ -167,6 +167,9 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
         --parameters artifacts\policyTags.json
      ```
 
+     > [!NOTE]
+     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` `/` voor parameter waarden die het pad bevatten. In dit geval wordt de waarde voor **para meters** `artifacts/policyTags.json` .
+
 1. Voeg nog een beleidstoewijzing toe voor de Storage-tag (gebruik hierbij de parameter _storageAccountType_ opnieuw) aan het abonnement. Deze aanvullende beleidstoewijzingsartefact laat zien dat een in de blauwdruk gedefinieerde parameter door meer dan één artefact kan worden gebruikt. In dit voorbeeld wordt **storageAccountType** gebruikt voor het instellen van een tag op de resourcegroep. Deze waarde geeft informatie over het opslagaccount dat in de volgende stap wordt gemaakt. In dit voorbeeld wordt het ingebouwde beleid _Tag met standaardwaarde op resourcegroepen toepassen_ met een GUID van `49c88fc8-6fd1-46fd-a676-f12d1d3a4c71` gebruikt.
 
    - JSON-bestand-artifacts\policyStorageTags.json
@@ -193,6 +196,9 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
         --description 'Apply storage tag and the parameter also used by the template to resource groups' \
         --parameters artifacts\policyStorageTags.json
      ```
+
+     > [!NOTE]
+     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` `/` voor parameter waarden die het pad bevatten. In dit geval wordt de waarde voor **para meters** `artifacts/policyStorageTags.json` .
 
 1. Voeg een sjabloon toe onder resourcegroep. De parameter **template** voor een ARM-sjabloon bevat de normale JSON-onderdelen van de sjabloon. De sjabloon maakt ook opnieuw gebruik van de blauwdrukparameters **storageAccountType**, **tagName** en **tagValue** door ze allemaal door te geven aan de sjabloon. De blauwdrukparameters zijn voor de sjabloon beschikbaar door de parameter **parameters** te gebruiken. Binnen de sjabloon-JSON wordt dat sleutel-waardepaar gebruikt om de waarde in te voeren. De namen van de blauwdruk- en sjabloonparameters kunnen dezelfde zijn.
 
@@ -276,6 +282,9 @@ De eerste stap bij het definiëren van een standaardpatroon voor naleving bestaa
         --parameters artifacts\templateStorageParams.json \
         --resource-group-art 'storageRG'
      ```
+
+     > [!NOTE]
+     > Wanneer u `az blueprint` op een Mac gebruikt, vervangt u door `\` `/` voor parameter waarden die het pad bevatten. In dit geval wordt de waarde voor de **sjabloon** weer `artifacts/templateStorage.json` en worden **para meters** weer `artifacts/templateStorageParams.json` .
 
 1. Voeg een roltoewijzing toe onder resourcegroep. Net als bij de vorige vermelding van een roltoewijzing wordt in het onderstaande voorbeeld de definitie-id van de rol **Eigenaar** gebruikt en krijgt deze een andere parameter van de blauwdruk. In dit voorbeeld wordt de ingebouwde rol van _Eigenaar_ met een GUID van `8e3af657-a8ff-443c-a75c-2fe8c4bcb635` gebruikt.
 

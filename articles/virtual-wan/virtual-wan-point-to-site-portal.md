@@ -7,12 +7,12 @@ ms.service: virtual-wan
 ms.topic: tutorial
 ms.date: 11/09/2020
 ms.author: cherylmc
-ms.openlocfilehash: e7e65d5d2941765df98b3bf3b7fb8ff2e89b7e9f
-ms.sourcegitcommit: 17b36b13857f573639d19d2afb6f2aca74ae56c1
-ms.translationtype: HT
+ms.openlocfilehash: 1876ab86e6f4c46edc23361dd884d8b32328f36c
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
+ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 11/10/2020
-ms.locfileid: "94411198"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919060"
 ---
 # <a name="tutorial-create-a-user-vpn-connection-using-azure-virtual-wan"></a>Zelfstudie: Een VPN-verbinding voor gebruikers maken met Azure Virtual WAN
 
@@ -24,6 +24,7 @@ In deze zelfstudie leert u het volgende:
 > * Een virtueel WAN maken
 > * Een P2S-configuratie maken
 > * Een virtuele hub maken
+> * Client adres groepen kiezen
 > * DNS-servers opgeven
 > * Het configuratiepakket voor het VPN-clientprofiel genereren
 > * VPN-clients configureren
@@ -49,6 +50,11 @@ Een punt-naar-site-configuratie (P2S) definieert de parameters om verbinding te 
 
 [!INCLUDE [Create hub](../../includes/virtual-wan-p2s-hub-include.md)]
 
+
+## <a name="choose-p2s-client-address-pools"></a><a name="chooseclientpools"></a> Kies P2S-client adres groepen
+
+[!INCLUDE [Choose pools](../../includes/virtual-wan-allocating-p2s-pools.md)]
+
 ## <a name="specify-dns-server"></a><a name="dns"></a>DNS-servers opgeven
 
 U kunt deze instelling configureren tijdens het maken van de hub of deze wijzigen op een later tijdstip. Zoek de virtuele hub om deze te wijzigen. Selecteer onder **Gebruikers-VPN (punt-naar-site)** **configureren** en voer het/de IP-adress(sen) van de DNS-server in het/de tekstvak(ken) **Aangepaste DNS-servers** in. U kunt maximaal 5 DNS-servers opgeven.
@@ -73,6 +79,8 @@ Zodra u klaar bent met het configureren van uw client, kunt u verbinding maken.
 1. Navigeer naar uw virtuele WAN.
 1. Op de pagina **Overzicht** vertegenwoordigt elk punt op de kaart een hub.
 1. In de sectie **Hubs en verbindingen** vindt u informatie over de hubstatus, site, regio, VPN-verbindingsstatus en verzonden en ontvangen bytes.
+
+
 
 ## <a name="clean-up-resources"></a><a name="cleanup"></a>Resources opschonen
 

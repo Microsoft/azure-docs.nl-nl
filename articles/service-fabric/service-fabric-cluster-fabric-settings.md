@@ -3,12 +3,12 @@ title: Instellingen van Azure Service Fabric cluster wijzigen
 description: In dit artikel worden de infrastructuur instellingen en het Fabric-upgrade beleid beschreven dat u kunt aanpassen.
 ms.topic: reference
 ms.date: 08/30/2019
-ms.openlocfilehash: c055ad1dad8b9574c8d811284a34619ee3648a10
-ms.sourcegitcommit: 5db975ced62cd095be587d99da01949222fc69a3
+ms.openlocfilehash: 34a63a86bc10a787ef077b9067c3fba5a9e4da25
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 12/10/2020
-ms.locfileid: "97095267"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919779"
 ---
 # <a name="customize-service-fabric-cluster-settings"></a>Instellingen voor Service Fabric-cluster aanpassen
 In dit artikel worden de verschillende infrastructuur instellingen voor uw Service Fabric cluster beschreven die u kunt aanpassen. Voor clusters die worden gehost in azure, kunt u instellingen aanpassen via de [Azure Portal](https://portal.azure.com) of met behulp van een Azure Resource Manager sjabloon. Zie [de configuratie van een Azure-cluster upgraden](service-fabric-cluster-config-upgrade-azure.md)voor meer informatie. Voor zelfstandige clusters past u de instellingen aan door de *ClusterConfig.jsin* het bestand bij te werken en een configuratie-upgrade uit te voeren op uw cluster. Zie [de configuratie van een zelfstandig cluster upgraden](service-fabric-cluster-config-upgrade-windows-server.md)voor meer informatie.
@@ -521,7 +521,7 @@ Hier volgt een lijst met infrastructuur instellingen die u kunt aanpassen, geord
 |AutoDetectAvailableResources|BOOL, default is TRUE|Statisch|Met deze configuratie wordt de automatische detectie geactiveerd van beschik bare bronnen op het knoop punt (CPU en geheugen) wanneer deze configuratie is ingesteld op True, worden de werkelijke capaciteit gelezen en gecorrigeerd als de gebruiker onjuiste knooppunt capaciteit heeft opgegeven of deze niet heeft gedefinieerd als deze configuratie is ingesteld op false. er wordt een waarschuwing weer gegeven dat de gebruiker onjuiste knooppunt capaciteit heeft opgegeven. maar we zullen deze niet corrigeren. Dit betekent dat de gebruiker de capaciteit wil opgeven die is opgegeven als > dan het knoop punt echt heeft of als de capaciteit niet is gedefinieerd. Er wordt een onbeperkte capaciteit aangenomen |
 |BalancingDelayAfterNewNode | Tijd in seconden, standaard waarde is 120 |Dynamisch|Geef een tijds duur in seconden op. Start geen taak verdeling binnen deze periode na het toevoegen van een nieuw knoop punt. |
 |BalancingDelayAfterNodeDown | Tijd in seconden, standaard waarde is 120 |Dynamisch|Geef een tijds duur in seconden op. Onderhouds activiteiten binnen deze periode niet starten na een gebeurtenis omlaag in een knoop punt. |
-|BlockNodeInUpgradeConstraintPriority | Int, standaard is 0 |Dynamisch|Bepaalt de prioriteit van de capaciteits beperking: 0: hard; 1: zacht; negatief: negeren  |
+|BlockNodeInUpgradeConstraintPriority | Int, standaard is-1 |Dynamisch|Bepaalt de prioriteit van de capaciteits beperking: 0: hard; 1: zacht; negatief: negeren  |
 |CapacityConstraintPriority | Int, standaard is 0 | Dynamisch|Bepaalt de prioriteit van de capaciteits beperking: 0: hard; 1: zacht; negatief: negeren. |
 |ConsecutiveDroppedMovementsHealthReportLimit | Int, standaard waarde is 20 | Dynamisch|Hiermee definieert u het aantal opeenvolgende keren dat door ResourceBalancer verzonden bewegingen worden verwijderd voordat diagnostische gegevens worden uitgevoerd en status waarschuwingen worden verzonden. Negatief: er zijn geen waarschuwingen verzonden onder deze voor waarde. |
 |ConstraintFixPartialDelayAfterNewNode | Tijd in seconden, standaard waarde is 120 |Dynamisch| Geef een tijds duur in seconden op. DDo geen FaultDomain-en upgrade Domain-beperkings schendingen binnen deze periode oplossen na het toevoegen van een nieuw knoop punt. |

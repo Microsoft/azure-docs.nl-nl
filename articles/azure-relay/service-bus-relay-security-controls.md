@@ -3,12 +3,12 @@ title: Beveiligings controles voor Azure Relay
 description: In deze artikelen vindt u een controle lijst met ingebouwde beveiligings controles voor het evalueren van Azure Relay.
 ms.topic: conceptual
 ms.date: 06/23/2020
-ms.openlocfilehash: 5d55026bfb6e3d6fe955a540b7596a85707398d6
-ms.sourcegitcommit: 431bf5709b433bb12ab1f2e591f1f61f6d87f66c
+ms.openlocfilehash: ce5053366ac1d3536a152610d8ed7f76fad62b84
+ms.sourcegitcommit: 436518116963bd7e81e0217e246c80a9808dc88c
 ms.translationtype: MT
 ms.contentlocale: nl-NL
-ms.lasthandoff: 01/12/2021
-ms.locfileid: "98133341"
+ms.lasthandoff: 01/27/2021
+ms.locfileid: "98919575"
 ---
 # <a name="security-controls-for-azure-relay"></a>Beveiligings controles voor Azure Relay
 
@@ -20,8 +20,8 @@ In dit artikel worden de beveiligings besturings elementen gedocumenteerd die zi
 
 | Beveiligingsmaatregelen | Ja/Nee | Notities | Documentatie |
 |---|---|--|--|
-| Ondersteuning voor privé-eind punten| Nee |  |   |
-| Ondersteuning voor netwerk isolatie en firewalling| Nee |  |   |
+| Ondersteuning voor privé-eind punten| Ja |  |   |
+| Ondersteuning voor netwerk isolatie en firewalling| Ja |  |   |
 | Ondersteuning voor geforceerde tunneling| N.v.t. | Relay is de TLS-tunnel  |   |
 
 ## <a name="monitoring--logging"></a>& logboek registratie controleren
@@ -39,7 +39,7 @@ In dit artikel worden de beveiligings besturings elementen gedocumenteerd die zi
 | Verificatie| Ja | Via SAS. | [Verificatie en autorisatie Azure Relay](relay-authentication-and-authorization.md) |
 | Autorisatie|  Ja | Via SAS. | [Verificatie en autorisatie Azure Relay](relay-authentication-and-authorization.md) |
 
-## <a name="data-protection"></a>Gegevensbescherming
+## <a name="data-protection"></a>Gegevensbeveiliging
 
 | Beveiligingsmaatregelen | Ja/Nee | Notities | Documentatie |
 |---|---|--|--|

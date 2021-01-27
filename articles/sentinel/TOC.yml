@@ -225,7 +225,7 @@
           href: livestream.md
     - name: Azure Sentinel verwijderen
       href: offboard.md
-- name: Verwijzing (Nieuw!)
+- name: Naslaginformatie
   items:
     - name: Azure RBAC-rollen
       items:
@@ -241,10 +241,20 @@
           href: hunting-with-rest-api.md
         - name: Watchlists beheren met REST-API
           href: watchlist-with-rest-api.md
+    - name: Referentie voor Azure Monitor gegevens
+      href: /azure/azure-monitor/reference/
     - name: De Logic Apps-connector van Azure Sentinel verkennen
       href: /connectors/azuresentinel/
     - name: Netwerknormalisatieschema
       href: normalization-schema.md
+    - name: Verwijzing naar gegevens bron schema
+      href: data-source-schema-reference.md
+    - name: Kusto-querytaal
+      items:
+        - name: Overzicht van Kusto-query's
+          href: /azure/data-explorer/kusto/query/
+        - name: Naslag informatie voor Kusto-query taal
+          href: /azure/data-explorer/kql-quick-reference
     - name: UEBA-verrijkingen
       href: ueba-enrichments.md
 - name: Resources
